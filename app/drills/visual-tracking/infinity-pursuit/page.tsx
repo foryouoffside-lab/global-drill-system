@@ -1,5 +1,6 @@
 import InfinityPursuitClient from './InfinityPursuitClientLoader';
 import DrillGuide from '@/components/drill/DrillGuide';
+import DrillFooter from '@/components/drill/DrillFooter';
 import { getAlternateLanguages } from '@/lib/i18n/locales';
 import { pickSources } from '@/lib/drillSources';
 
@@ -347,8 +348,9 @@ export default function InfinityPursuitPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
 
-      <InfinityPursuitClient copy={{ title: "Infinity Pursuit", subtitle: "Figure-8 Eye Tracking Exercise" }} />
+      <InfinityPursuitClient copy={{ title: "Infinity Pursuit", subtitle: "Figure-eight eye tracking and smooth pursuit exercise for binocular coordination, gaze stability, and visual tracking accuracy" }} />
       <DrillGuide guide={guide} />
+      <DrillFooter />
     </>
   );
 }

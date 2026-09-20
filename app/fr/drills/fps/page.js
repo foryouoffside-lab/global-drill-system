@@ -6,18 +6,18 @@ import { getLocalizedDrill } from '@/lib/i18n/drillNames';
 const fpsDrills = DRILLS.filter((d) => d.category === 'fps');
 
 export const metadata = {
-  title: 'Améliorer son Aim FPS – Aim Trainer en Ligne | SkillDrills',
-  description: 'Entraîneur de visée gratuit pour Valorant, CS2 et Apex. 15 exercices de flick shots, tracking, contrôle du recul et réflexes directement sur navigateur.',
+  title: 'Entraînement de visée FPS gratuit | SkillDrills',
+  description: '15 exercices gratuits pour Valorant, CS2 et Apex : flick, tracking, contrôle du recul et réflexes dans le navigateur.',
   keywords: [
-    'améliorer son aim fps', 'entraînement visée valorant', 'cs2 entraînement shoot',
-    'flick shots exercices', 'tracking visée fps', 'placement du réticule',
-    'sensibilité souris shooter', 'aim trainer en ligne gratuit', 'test réflexe gaming',
-    'contrôle du recul en ligne', 'viser bras ou poignet', 'micro ajustements visée',
-    'précision souris test', 'calculateur edpi valorant', 'aim trainer navigateur sans téléchargement'
+    'entraînement de visée', 'améliorer son aim FPS', 'aim trainer gratuit',
+    'entraînement visée Valorant', 'aim trainer CS2', 'exercices de flick',
+    'tracking visée FPS', 'placement du réticule', 'sensibilité souris shooter',
+    'test réflexe gaming', 'contrôle du recul', 'viser bras ou poignet',
+    'micro-ajustements visée', 'eDPI Valorant', 'aim trainer navigateur gratuit'
   ],
   openGraph: {
-    title: 'Améliorer son Aim FPS – Aim Trainer en Ligne | SkillDrills',
-    description: 'Entraîneur de visée gratuit pour Valorant, CS2 et Apex. 15 exercices de flick shots, tracking, contrôle du recul et réflexes directement sur navigateur.',
+    title: 'Entraînement de visée FPS gratuit | SkillDrills',
+    description: '15 exercices gratuits pour Valorant, CS2 et Apex : flick, tracking, contrôle du recul et réflexes dans le navigateur.',
     type: 'website',
     url: 'https://skilldrills.online/fr/drills/fps',
     siteName: 'SkillDrills',
@@ -26,8 +26,8 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Améliorer son Aim FPS – Aim Trainer en Ligne | SkillDrills',
-    description: 'Entraîneur de visée gratuit pour Valorant, CS2 et Apex. 15 exercices professionnels sur navigateur.',
+    title: 'Entraînement de visée FPS gratuit | SkillDrills',
+    description: '15 exercices gratuits de visée pour Valorant, CS2 et Apex dans le navigateur.',
     images: ['https://skilldrills.online/icons/icon-512x512.png'],
   },
   robots: { index: true, follow: true },
@@ -50,9 +50,11 @@ const breadcrumbSchema = {
 const collectionSchema = {
   "@context": "https://schema.org",
   "@type": "CollectionPage",
-  "name": "Aim Trainer FPS Gratuit – Centre d'Entraînement en Ligne",
+  "inLanguage": "fr-FR",
+  "dateModified": "2026-09-20",
+  "name": "Entraînement de visée FPS gratuit (15 exercices)",
   "url": "https://skilldrills.online/fr/drills/fps",
-  "description": `15 exercices professionnels de visée pour Valorant, CS2 et Apex Legends. Flicks balistiques, tracking continu, contrôle du recul, rotations 180° et réflexes. Sans téléchargement ni inscription.`,
+  "description": `15 exercices gratuits pour Valorant, CS2 et Apex : flick, tracking, contrôle du recul, changement de cible et réflexes dans le navigateur.`,
   "author": { "@type": "Organization", "name": "SkillDrills" },
   "hasPart": fpsDrills.map((drill) => {
     const loc = getLocalizedDrill(drill.href, 'fr', drill.name);
@@ -67,6 +69,8 @@ const collectionSchema = {
 const faqSchema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
+  "inLanguage": "fr-FR",
+  "dateModified": "2026-09-20",
   "mainEntity": [
     {
       "@type": "Question",

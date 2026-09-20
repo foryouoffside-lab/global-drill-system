@@ -1,25 +1,26 @@
 import StaircaseStepClient from '@/app/drills/visual-tracking/staircase-step/StaircaseStepClientLoader';
 import DrillGuide from '@/components/drill/DrillGuide';
 import RelatedDrills from '@/components/drill/RelatedDrills';
+import DrillFooter from '@/components/drill/DrillFooter';
 import { getAlternateLanguages } from '@/lib/i18n/locales';
 import { pickSources } from '@/lib/drillSources';
 
 export const metadata = {
-  title: "Vertikales Augentraining – Stufen-Tracking | SkillDrills",
-  description: "Trainieren Sie vertikale Blickfolgebewegungen und Höhensakkaden entlang stufenförmiger Zickzack-Bahnen. Mittelhirn-Stimulation online. Kostenlos.",
+  title: "Vertikale Blickverfolgung bei Höhenwechsel | SkillDrills",
+  description: "Verfolge ein stufenförmig auf und ab bewegtes Ziel. Kostenlose Browserübung mit Blickverzögerung, Zielverlust und Seitenvergleich.",
   keywords: [
-    "vertikales blicktracking uebung",
-    "stufenfoermige blickverfolgung",
-    "vertikale blickfolge augentraining",
-    "hoehenunterschied aim training",
-    "vertikale blicksakkaden ueben",
-    "mittelhirn rimlf stimulation",
-    "vertikale blickmotorik test",
-    "esports recoil blickkontrolle",
-    "augengymnastik vertikal",
-    "fangssakkaden hoehensteuerung",
-    "vertikale blickstabilisierung",
-    "stufenweises sehtraining"
+    "vertikale Blickverfolgung Übung",
+    "Blick nach oben unten Augen Übung",
+    "Augentraining vertikal",
+    "Höhenwechsel Ziel verfolgen",
+    "vertikale Augenbewegung Training",
+    "Blickfolgebewegung vertikal",
+    "stufenförmige Zielbahn",
+    "Blickverzögerung messen",
+    "Zielverlust Blickübung",
+    "dynamisches Sehen vertikal",
+    "Blicksprünge nach oben unten",
+    "visuelles Tracking vertikal"
   ],
   alternates: {
     canonical: "https://skilldrills.online/de/drills/visual-tracking/staircase-step",
@@ -27,8 +28,8 @@ export const metadata = {
   },
   robots: { index: true, follow: true },
   openGraph: {
-    title: "Vertikales Augentraining – Stufen-Tracking | SkillDrills",
-    description: "Trainieren Sie vertikale Blickfolgebewegungen und Höhensakkaden entlang stufenförmiger Zickzack-Bahnen. Mittelhirn-Stimulation online. Kostenlos.",
+    title: "Vertikale Blickverfolgung bei Höhenwechsel | SkillDrills",
+    description: "Verfolge ein stufenförmig auf und ab bewegtes Ziel. Kostenlose Browserübung mit Blickverzögerung, Zielverlust und Seitenvergleich.",
     url: "https://skilldrills.online/de/drills/visual-tracking/staircase-step",
     siteName: "SkillDrills",
     locale: "de_DE",
@@ -36,8 +37,8 @@ export const metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Vertikales Augentraining – Stufen-Tracking | SkillDrills",
-    description: "Trainieren Sie vertikale Blickfolgebewegungen und Höhensakkaden entlang stufenförmiger Zickzack-Bahnen. Mittelhirn-Stimulation online. Kostenlos.",
+    title: "Vertikale Blickverfolgung bei Höhenwechsel | SkillDrills",
+    description: "Verfolge ein stufenförmig auf und ab bewegtes Ziel. Kostenlose Browserübung mit Blickverzögerung, Zielverlust und Seitenvergleich.",
   },
 };
 
@@ -84,7 +85,7 @@ const softwareApplicationSchema = {
     "name": "SkillDrills",
     "url": "https://skilldrills.online"
   },
-  "dateModified": "2026-09-15"
+  "dateModified": "2026-09-20"
 };
 
 const webAppSchema = {
@@ -100,7 +101,7 @@ const webAppSchema = {
     "priceCurrency": "USD"
   },
   "url": "https://skilldrills.online/de/drills/visual-tracking/staircase-step",
-  "dateModified": "2026-09-15"
+  "dateModified": "2026-09-20"
 };
 
 const videoGameSchema = {
@@ -115,7 +116,7 @@ const videoGameSchema = {
     "Visuelles Training"
   ],
   "gamePlatform": [
-    "Web Browser",
+    "Webbrowser",
     "Desktop",
     "Mobile"
   ],
@@ -124,7 +125,8 @@ const videoGameSchema = {
     "@type": "Offer",
     "price": "0",
     "priceCurrency": "USD"
-  }
+  },
+  "dateModified": "2026-09-20"
 };
 
 const howToSchema = {
@@ -132,7 +134,7 @@ const howToSchema = {
   "@type": "HowTo",
   "name": "Anleitung für das stufenförmige vertikale Augentraining",
   "description": "Schritt-für-Schritt-Anleitung zur Steigerung der vertikalen Blickfolgegüte und Höhensakkadenpräzision entlang mehrteiliger Treppenbahnen.",
-  "dateModified": "2026-09-15",
+  "dateModified": "2026-09-20",
   "step": [
     {
       "@type": "HowToStep",
@@ -168,10 +170,11 @@ const howToSchema = {
 const faqSchema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
+  "dateModified": "2026-09-20",
   "mainEntity": [
     {
       "@type": "Question",
-      "name": "Was ist das stufenförmige vertikale Augentraining (Staircase Step)?",
+      "name": "Was ist das stufenförmige vertikale Augentraining?",
       "acceptedAnswer": {
         "@type": "Answer",
         "text": "Ein spezialisiertes okulomotorisches Trainingsprogramm, bei dem ein Zielobjekt einer vertikalen Zickzack-Stufenbahn folgt. Es verbindet kontinuierliche diagonale Blickfolgebewegungen mit abrupten Richtungswechseln an den Stufenkanten und trainiert gezielt die vertikale Augenmotorik bei fixiertem Kopf."
@@ -258,7 +261,7 @@ const guide = {
     "Das menschliche Blickmotorik-System (Oculomotor System) verfügt über grundlegend getrennte neuroanatomische Leitungsbahnen für horizontale und vertikale Augenbewegungen. Während horizontale Blickfolgen und Sakkaden über Netzwerke der pontinen Formatio reticularis (PPRF) gesteuert werden, unterliegt die vertikale Blickmotorik der exklusiven Kontrolle spezialisierter Mittelhirn-Kerne – insbesondere des rostralen interstitiellen Kerns des medialen Längsbündels (riMLF) und des Cajal-Kerns (Büttner-Ennever & Horn, 1997).",
     "Psychophysikalische Messungen (Rottach et al., 1996; Ke et al., 2013) belegen, dass die vertikale Blickfolge von Natur aus einen signifikant niedrigeren Geschwindigkeitsgewinn (Gain), längere Reaktionslatenzen und eine stärkere Phasenverzögerung als die horizontale Blickfolge aufweist. Zudem besteht eine ausgeprägte Richtungsasymmetrie: Die Verfolgung nach oben (Elevation) bricht bei Geschwindigkeitssteigerungen deutlich schneller ein und löst mehr kompensatorische Fangsakkaden (Catch-up Saccades) aus als die Verfolgung nach unten.",
     "Da moderne Zivilisationsgewohnheiten wie Lesen, Smartphone-Nutzung und Breitbildmonitore das Sehsystem fast ausschließlich horizontal fordern, verbleiben die vertikalen neuronalen Schaltkreise in einem Zustand relativer Unterstimulation. Dieses Ungleichgewicht führt bei schnellen Höhenwechseln – etwa beim Visieren auf vertikal springende Gegner in E-Sport-Titeln oder beim Verfolgen hoch aufsteigender Bälle im Sport – zu sichtbarem Blickzittern und Kontrollverlust.",
-    "Der Trainingsdrill 'Staircase Step' konditioniert genau diese vernachlässigten Signalwege. Durch das Steuern eines Reizes entlang mehrstufiger Zickzack-Stufenbahnen kombiniert die Übung kontinuierliche diagonale Blickfolgebewegungen mit abrupten Verzögerungen und Re-Targeting-Sakkaden an rechtwinkligen Kanten (Collewijn & Tamminga, 1984; Lisberger, 2010). Bei minimaler Latenz auf 144Hz+-Displays (Woods et al., 2015) stärkt dieser Drill die synaptische Plastizität des Mittelhirns. Alle Ergebnisse verbleiben sicher in Ihrem lokalen Browser."
+    "Dieses Training beansprucht genau diese vernachlässigten Signalwege. Durch das Steuern eines Reizes entlang mehrstufiger Zickzack-Stufenbahnen kombiniert die Übung kontinuierliche diagonale Blickfolgebewegungen mit abrupten Verzögerungen und Re-Targeting-Sakkaden an rechtwinkligen Kanten (Collewijn & Tamminga, 1984; Lisberger, 2010). Bei minimaler Latenz auf 144Hz+-Displays (Woods et al., 2015) stärkt dieser Drill die synaptische Plastizität des Mittelhirns. Alle Ergebnisse verbleiben sicher in Ihrem lokalen Browser."
   ],
   benchmarks: {
     title: "Leistungsstandards für vertikale Blickverfolgung & Höhensakkaden",
@@ -310,6 +313,12 @@ const guide = {
       ]
     }
   ],
+  steps: [
+    { title: "In der Mitte beginnen", text: "Sitze 50–70 cm vom Bildschirm entfernt, halte den Kopf ruhig und warte auf den Start der ersten Stufe." },
+    { title: "Auf- und Abbewegung verfolgen", text: "Richte die Aufmerksamkeit auf die Zielhöhe und verfolge schräge Abschnitte sowie vertikale Wechsel ohne Kopfbewegung." },
+    { title: "An der Kante neu erfassen", text: "Bremse vor einer Stufenkante leicht ab und führe den Blick mit einer kleinen Korrektur zum nächsten Zielpunkt zurück." },
+    { title: "Tempo erst bei Stabilität erhöhen", text: "Erhöhe die Geschwindigkeit erst, wenn Zielverluste und Blickverzögerung abnehmen, und vergleiche danach die Messwerte." }
+  ],
   deviceCalibration: {
     title: "Ergonomie- und Hardware-Vorgaben für vertikales Augentraining",
     points: [
@@ -321,7 +330,7 @@ const guide = {
   },
   faqs: [
     {
-      q: "Was ist das stufenförmige vertikale Augentraining (Staircase Step)?",
+      q: "Was ist das stufenförmige vertikale Augentraining?",
       a: "Ein spezialisiertes okulomotorisches Trainingsprogramm, bei dem ein Zielobjekt einer vertikalen Zickzack-Stufenbahn folgt. Es verbindet kontinuierliche diagonale Blickfolgebewegungen mit abrupten Richtungswechseln an den Stufenkanten und trainiert gezielt die vertikale Augenmotorik bei fixiertem Kopf."
     },
     {
@@ -401,15 +410,16 @@ export default function StaircaseStepDePage() {
 
       <StaircaseStepClient
         copy={{
-          title: "Stufenförmiges Blicktracking",
-          subtitle: "Vertikales Augentraining & Höhensakkaden",
-          description: "Folgen Sie einem Zielobjekt entlang stufenförmiger vertikaler Zickzack-Bahnen zur Aktivierung der Mittelhirn-Signalwege (riMLF). Isolieren Sie die Augenmuskeln ohne Kopfbewegung und optimieren Sie Höhensakkaden und Blickfolgebewegungen bei Kantenrichtungswechseln."
+          title: "Vertikale Blickverfolgung",
+          subtitle: "Übung für Höhenwechsel und Zielwiedererfassung",
+          description: "Verfolge ein stufenförmig auf und ab bewegtes Ziel und erfasse Blickverzögerung und Zielverluste. Halte den Kopf ruhig und prüfe die Wiedererfassung an jeder Kante."
         }}
       />
       <DrillGuide guide={guide} />
       <div className="max-w-6xl mx-auto px-4 pb-12">
         <RelatedDrills currentCategory="visual-tracking" currentHref="https://skilldrills.online/de/drills/visual-tracking/staircase-step" />
       </div>
+      <DrillFooter />
     </>
   );
 }

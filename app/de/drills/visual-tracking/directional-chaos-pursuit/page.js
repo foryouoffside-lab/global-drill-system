@@ -1,5 +1,6 @@
 import DirectionalChaosPursuitClient from '@/app/drills/visual-tracking/directional-chaos-pursuit/DirectionalChaosPursuitClientLoader';
 import DrillGuide from '@/components/drill/DrillGuide';
+import DrillFooter from '@/components/drill/DrillFooter';
 import RelatedDrills from '@/components/drill/RelatedDrills';
 import { getAlternateLanguages } from '@/lib/i18n/locales';
 import { pickSources } from '@/lib/drillSources';
@@ -7,32 +8,32 @@ import { pickSources } from '@/lib/drillSources';
 // ============================================================
 // GERMAN SEARCH KEYWORD RESEARCH & INTENT CLUSTERING
 // Primary query: "chaotische augenfolgebewegungen" (Erratic pursuit eye movement)
-// Secondary:    "Sakkadische Rückholbewegung", "unvorhersehbares tracking training", "blickverfolgung reflex"
+// Secondary:    "Sakkadische Rückholbewegung", "reaktives Augentraining", "Blickverfolgung Reflex"
 // LSI / Domain:  "augenfolgebewegung training", "sakkaden training", "retinaler schlupf",
-//               "strafe tracking aim", "dynamische sehkraft", "foveale refixation"
-// Authentic Domain Terms: Chaotische Augenfolgebewegungen, Sakkadische Rückholbewegung (Catch-up Saccade), Glatte Augenfolgebewegung (Smooth Pursuit), Retinaler Schlupf (Retinal Slip), Foveale Refixation, Reaktive visuelle Rückkopplung (Closed-loop Feedback), Frontales Augenfeld (FEF)
+//               "plötzliche Richtungswechsel", "dynamische Sehkraft", "foveale Refixation"
+// Authentic Domain Terms: Chaotische Augenfolgebewegungen, Sakkadische Rückholbewegung, Glatte Augenfolgebewegung, Retinaler Schlupf, Foveale Refixation, Reaktive visuelle Rückkopplung, Frontales Augenfeld (FEF)
 // ============================================================
 
 export const metadata = {
-  title: "Chaotische Augenfolgebewegung – Chaos Pursuit | SkillDrills",
-  description: "Kostenloses Training für chaotische Augenfolgebewegungen: Trainiere sofortige Refixation und sakkadische Rückholung bei unvorhersehbaren Richtungswechseln.",
+  title: "Dynamisches Sehen | Reaktive Blickverfolgung | SkillDrills",
+  description: "Kostenloses Augentraining für plötzliche Richtungswechsel: Verfolge ein unvorhersehbares Ziel, übe Blicksprünge und schnelle Refixation.",
   keywords: [
-    "chaotische augenfolgebewegungen",
-    "Sakkadische Rückholbewegung",
-    "unvorhersehbares tracking training",
-    "blickverfolgung reflex",
-    "augenfolgebewegung training",
-    "sakkaden training",
-    "retinaler schlupf",
-    "strafe tracking aim",
-    "dynamische sehkraft",
-    "foveale refixation",
-    "visuelle reaktionszeit",
-    "esport sehtraining"
+    "dynamisches Sehen Training",
+    "reaktives Augentraining",
+    "Blickverfolgung Training",
+    "plötzliche Richtungswechsel",
+    "Sakkaden Training",
+    "Blicksprünge üben",
+    "schnelle Refixation",
+    "visuelle Reaktionszeit",
+    "foveale Refixation",
+    "Augenfolgebewegung",
+    "Blickstabilität",
+    "Sehtraining kostenlos"
   ],
   openGraph: {
-    title: "Chaotische Augenfolgebewegung – Chaos Pursuit | SkillDrills",
-    description: "Wissenschaftliches Training für chaotische Augenfolgebewegungen und reaktive sakkadische Rückholung. Trainieren Sie die sofortige Refixation unvorhersehbarer Richtungswechsel für eSport und Sport.",
+    title: "Dynamisches Sehen | Reaktive Blickverfolgung | SkillDrills",
+    description: "Folge einem unvorhersehbaren Ziel und trainiere schnelle Refixation bei plötzlichen Richtungswechseln kostenlos im Browser.",
     type: "website",
     url: "https://skilldrills.online/de/drills/visual-tracking/directional-chaos-pursuit",
     siteName: "SkillDrills",
@@ -40,8 +41,8 @@ export const metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Chaotische Augenfolgebewegung – Chaos Pursuit | SkillDrills",
-    description: "Kostenloses okulomotorisches Training zur Beherrschung unvorhersehbarer Ausweichbewegungen und blitzschneller Blick-Refixation.",
+    title: "Dynamisches Sehen | Reaktive Blickverfolgung | SkillDrills",
+    description: "Trainiere dynamisches Sehen und schnelle Blick-Refixation bei unvorhersehbaren Zielbewegungen.",
   },
   robots: { index: true, follow: true },
   alternates: {
@@ -57,16 +58,16 @@ const breadcrumbSchema = {
     { "@type": "ListItem", "position": 1, "name": "Startseite", "item": "https://skilldrills.online/de" },
     { "@type": "ListItem", "position": 2, "name": "Übungen", "item": "https://skilldrills.online/de/drills" },
     { "@type": "ListItem", "position": 3, "name": "Blickverfolgung & Sehtraining", "item": "https://skilldrills.online/de/drills/visual-tracking" },
-    { "@type": "ListItem", "position": 4, "name": "Chaotische Augenfolgebewegung (Directional Chaos)", "item": "https://skilldrills.online/de/drills/visual-tracking/directional-chaos-pursuit" }
+    { "@type": "ListItem", "position": 4, "name": "Chaotische Augenfolgebewegung", "item": "https://skilldrills.online/de/drills/visual-tracking/directional-chaos-pursuit" }
   ]
 };
 
 const softwareApplicationSchema = {
   "@context": "https://schema.org",
   "@type": "SoftwareApplication",
-  "name": "Chaotische Augenfolgebewegung – Unvorhersehbare Zielverfolgung (Directional Chaos Pursuit)",
+  "name": "Chaotische Augenfolgebewegung – Unvorhersehbare Zielverfolgung",
   "applicationCategory": "HealthApplication",
-  "operatingSystem": "Web Browser",
+  "operatingSystem": "Webbrowser",
   "url": "https://skilldrills.online/de/drills/visual-tracking/directional-chaos-pursuit",
   "offers": {
     "@type": "Offer",
@@ -80,36 +81,37 @@ const softwareApplicationSchema = {
     "Echtzeit-Visualisierung mit Ziel-Trails, Scanlines und Helligkeitsanpassungen",
     "Vollständige clientseitige Datenverarbeitung ohne Serverübertragung"
   ],
-  "dateModified": "2026-09-15"
+  "dateModified": "2026-09-20"
 };
 
 const webAppSchema = {
   "@context": "https://schema.org",
   "@type": "WebApplication",
   "name": "Chaotische Augenfolgebewegung – Sakkadische Rückholung Online Trainer | SkillDrills",
-  "alternateName": "Directional Chaos Pursuit Germany",
+  "alternateName": "Chaotische Augenfolgebewegung",
   "url": "https://skilldrills.online/de/drills/visual-tracking/directional-chaos-pursuit",
-  "dateModified": "2026-09-15",
-  "description": "Wissenschaftlich fundierter Online-Trainer für reaktives okulomotorisches Tracking. Schult die sofortige visuelle Fehlerkorrektur und Fovea-Zentrierung bei unvorhersehbaren Reizverläufen.",
+  "dateModified": "2026-09-20",
+  "description": "Wissenschaftlich fundierter Online-Trainer für reaktive okulomotorische Blickverfolgung. Schult die sofortige visuelle Fehlerkorrektur und Fovea-Zentrierung bei unvorhersehbaren Reizverläufen.",
   "applicationCategory": "EducationalApplication",
   "operatingSystem": "All",
   "browserRequirements": "Moderner Webbrowser mit Unterstützung für HTML5 Canvas",
   "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
   "author": { "@type": "Organization", "name": "SkillDrills", "url": "https://skilldrills.online" },
   "isAccessibleForFree": true,
-  "learningResourceType": "Educational Game",
+  "learningResourceType": "Sehtraining-Spiel",
   "teaches": "Chaotische Augenfolgebewegung, Sakkadische Rückholbewegung, Retinaler Schlupf, Foveale Refixation, Reaktive Blickmotorik"
 };
 
 const videoGameSchema = {
   "@context": "https://schema.org",
   "@type": "VideoGame",
-  "name": "Chaotische Augenfolgebewegung – Unvorhersehbare Zielverfolgung (Directional Chaos Pursuit)",
+  "name": "Chaotische Augenfolgebewegung – Unvorhersehbare Zielverfolgung",
   "url": "https://skilldrills.online/de/drills/visual-tracking/directional-chaos-pursuit",
   "description": "Kostenloses interaktives Sehtraining-Spiel. Verfolgen Sie ein chaotisch abprallendes Ziel und trainieren Sie Ihre okulomotorische Reflex- und Haltefähigkeit.",
-  "genre": ["Eye Tracking", "Visual Training", "Reaction Speed"],
-  "gamePlatform": ["Web Browser", "Desktop", "Mobile"],
+  "genre": ["Blickverfolgung", "Sehtraining", "Reaktionstraining"],
+  "gamePlatform": ["Webbrowser", "Computer", "Mobilgerät"],
   "applicationCategory": "Game",
+  "dateModified": "2026-09-20",
   "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
 };
 
@@ -117,8 +119,8 @@ const howToSchema = {
   "@context": "https://schema.org",
   "@type": "HowTo",
   "name": "Anleitung für das Training chaotischer Augenfolgebewegungen",
-  "dateModified": "2026-09-15",
-  "description": "Schritt-für-Schritt-Anleitung zur optimalen Durchführung des chaotischen Tracking- und Sakkaden-Rückholtrainings.",
+  "dateModified": "2026-09-20",
+  "description": "Schritt-für-Schritt-Anleitung zur optimalen Durchführung der chaotischen Blickverfolgung und des Sakkaden-Rückholtrainings.",
   "step": [
     {
       "@type": "HowToStep",
@@ -154,19 +156,19 @@ const howToSchema = {
 const faqSchema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
-  "dateModified": "2026-09-15",
+  "dateModified": "2026-09-20",
   "mainEntity": [
     {
       "@type": "Question",
-      "name": "Was ist das Training für chaotische Augenfolgebewegungen (Directional Chaos Pursuit)?",
+      "name": "Was ist das Training für chaotische Augenfolgebewegungen?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Directional Chaos Pursuit ist ein hochspezifisches okulomotorisches Trainingsmodul, bei dem sich der Stimulus in stochastisch variierenden Richtungen und Geschwindigkeiten bewegt. Da keine harmonischen Vorhersagemodelle greifen, wird die neuronale Verschaltung zwischen retinaler Fehlererkennung und sofortiger Korrektursakkade unter realen Reaktionsbedingungen geschult (Bahill et al., 1980)."
+        "text": "Die Übung für chaotische Augenfolgebewegungen ist ein hochspezifisches okulomotorisches Trainingsmodul, bei dem sich der Stimulus in stochastisch variierenden Richtungen und Geschwindigkeiten bewegt. Da keine harmonischen Vorhersagemodelle greifen, wird die neuronale Verschaltung zwischen retinaler Fehlererkennung und sofortiger Korrektursakkade unter realen Reaktionsbedingungen geschult (Bahill et al., 1980)."
       }
     },
     {
       "@type": "Question",
-      "name": "Was versteht man unter einer sakkadischen Rückholbewegung (Catch-up Saccade)?",
+      "name": "Was versteht man unter einer sakkadischen Rückholbewegung?",
       "acceptedAnswer": {
         "@type": "Answer",
         "text": "Wenn ein Ziel abrupt abbiegt oder beschleunigt, reicht die Maximalgeschwindigkeit der glatten Augenfolgebewegung (ca. 30°/s) nicht aus, und das Bild rutscht von der Fovea ab (retinaler Schlupf). Das Sehzentrum im Gehirn berechnet diesen Positionsfehler und feuert nach ca. 150–200 ms eine ballistische Korrektursakkade ab, um das Ziel wieder ins Schärfezentrum zu bugsieren (Krauzlis, 2004; Barnes, 2008)."
@@ -174,18 +176,18 @@ const faqSchema = {
     },
     {
       "@type": "Question",
-      "name": "Wie unterscheidet sich chaotisches Tracking von periodischen Bahnen (Lissajous, Sinus)?",
+      "name": "Wie unterscheidet sich chaotische Blickverfolgung von periodischen Bahnen (Lissajous, Sinus)?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Bei periodischen Bewegungen baut das Kleinhirn ein internes Vorwärtsmodell auf, das die sensorische Verzögerung kompensiert. Bei chaotischen Bahnen versagt jede Antizipation. Das visuelle System ist gezwungen, in einer reinen geschlossenen Feedback-Schleife (Closed-Loop) rein reaktiv auf visuelle Reize zu antworten (Robinson, 1965)."
+        "text": "Bei periodischen Bewegungen baut das Kleinhirn ein internes Vorwärtsmodell auf, das die sensorische Verzögerung kompensiert. Bei chaotischen Bahnen versagt jede Antizipation. Das visuelle System ist gezwungen, in einer reinen geschlossenen Rückkopplungsschleife rein reaktiv auf visuelle Reize zu antworten (Robinson, 1965)."
       }
     },
     {
       "@type": "Question",
-      "name": "Welchen konkreten Nutzen hat diese Übung für FPS-Gamer (z. B. ADAD-Strafe Tracking)?",
+      "name": "Welchen konkreten Nutzen hat diese Übung für FPS-Spieler bei unvorhersehbaren Richtungswechseln?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "In Spielen wie Overwatch 2 oder Apex Legends wechseln Gegner im Nahkampf permanent unvorhersehbar die Richtung (Strafe-Spam). Ein geschultes Sakkaden-Rückholvermögen reduziert die Reaktionsverzögerung beim Richtungswechsel drastisch, sodass das Fadenkreuz ohne langes Nachziehen sofort wieder auf der Hitbox einrastet (Yang et al., 2025)."
+        "text": "In Spielen wie Overwatch 2 oder Apex Legends wechseln Gegner im Nahkampf permanent unvorhersehbar die Richtung. Ein geschultes Sakkaden-Rückholvermögen reduziert die Reaktionsverzögerung beim Richtungswechsel drastisch, sodass das Fadenkreuz ohne langes Nachziehen sofort wieder auf der Trefferzone einrastet (Yang et al., 2025)."
       }
     },
     {
@@ -214,7 +216,7 @@ const faqSchema = {
     },
     {
       "@type": "Question",
-      "name": "Welchen Einfluss hat die Bildwiederholfrequenz (Hz) des Monitors auf das chaotische Tracking?",
+      "name": "Welchen Einfluss hat die Bildwiederholfrequenz (Hz) des Monitors auf die chaotische Blickverfolgung?",
       "acceptedAnswer": {
         "@type": "Answer",
         "text": "Eine hohe Bildwiederholrate ist bei chaotischen Bewegungen extrem wichtig. Während bei 60 Hz zwischen den Einzelbildern 16,7 ms vergehen, liefert ein 144-Hz- oder 240-Hz-Monitor alle 4 bis 7 ms eine frische Position. Dies ermöglicht es dem visuellen Kortex, den neuen Bewegungsvektor bis zu 12 ms früher wahrzunehmen und die Korrektursakkade schneller auszulösen (Woods et al., 2015)."
@@ -242,9 +244,9 @@ const faqSchema = {
 const guideProps = {
   heading: "Neurowissenschaftliche Grundlagen chaotischer Augenfolgebewegungen & Sakkaden-Rückholung",
   intro: [
-    "Das Training chaotischer Augenfolgebewegungen (Directional Chaos Pursuit) konfrontiert das okulomotorische System mit Reizen, deren Geschwindigkeitsvektoren und Abbiegewinkel stochastisch wechseln. Im Gegensatz zu zyklischen oder linearen Bewegungsmustern, bei denen prädiktive interne Modelle des Kleinhirns die sensorischen Latenzen überbrücken, wird hier eine rein reaktive Blickverfolgung im geschlossenen Regelkreis (Closed-Loop-Feedback) erzwungen (Bahill, Iandolo, & Troost, 1980).",
-    "Sakkadische Rückholbewegung und Gain-Wiederherstellung: Vollzieht das Ziel eine plötzliche Richtungsänderung, übersteigt die Winkelgeschwindigkeit die maximale Arbeitsgrenze der glatten Folgebewegung (ca. 30°/s). Das Netzhautbild rutscht aus der Fovea centralis ab (retinaler Schlupf). Die visuelle Großhirnrinde und der Colliculus superior berechnen den Vektorfehler und feuern nach einer Latenzzeit von 150 bis 200 ms eine kompensatorische Korrektursakkade (Catch-up Saccade) ab (Rashbass, 1961; Krauzlis, 2004). Die Schnelligkeit, mit der das Ziel danach wieder stabil in einer glatten Folgebewegung geführt werden kann, definiert die dynamische Sehkraft.",
-    "Bedeutung für professionellen eSport und High-Speed-Ballsportarten: In taktischen Ego-Shootern setzen Gegner komplexe Ausweichmanöver (ADAD-Strafing) ein, um das Fadenkreuz des Gegners abzuschütteln (Yang et al., 2025). Auch im Ballsport (z. B. Squash, Tennis, Fußball) treten permanente unvorhersehbare Flugbahnänderungen auf (Appelbaum & Erickson, 2018). Dieses Training konditioniert die äußeren Augenmuskeln und die frontalen Augenfelder darauf, Zielabrisse minimal zu halten und Auslenkungen verzögerungsfrei zu parieren.",
+    "Das Training chaotischer Augenfolgebewegungen konfrontiert das okulomotorische System mit Reizen, deren Geschwindigkeitsvektoren und Abbiegewinkel stochastisch wechseln. Im Gegensatz zu zyklischen oder linearen Bewegungsmustern, bei denen prädiktive interne Modelle des Kleinhirns die sensorischen Latenzen überbrücken, wird hier eine rein reaktive Blickverfolgung in einer geschlossenen Rückkopplungsschleife erzwungen (Bahill, Iandolo, & Troost, 1980).",
+    "Sakkadische Rückholbewegung und Wiederherstellung des Verfolgungsgewinns: Vollzieht das Ziel eine plötzliche Richtungsänderung, übersteigt die Winkelgeschwindigkeit die maximale Arbeitsgrenze der glatten Folgebewegung (ca. 30°/s). Das Netzhautbild rutscht aus der Fovea centralis ab (retinaler Schlupf). Die visuelle Großhirnrinde und der Colliculus superior berechnen den Vektorfehler und feuern nach einer Latenzzeit von 150 bis 200 ms eine kompensatorische Korrektursakkade ab (Rashbass, 1961; Krauzlis, 2004). Die Schnelligkeit, mit der das Ziel danach wieder stabil in einer glatten Folgebewegung geführt werden kann, definiert die dynamische Sehkraft.",
+    "Bedeutung für professionellen eSport und schnelle Ballsportarten: In taktischen Ego-Shootern setzen Gegner komplexe seitliche Ausweichmanöver ein, um das Fadenkreuz des Gegners abzuschütteln (Yang et al., 2025). Auch im Ballsport (z. B. Squash, Tennis, Fußball) treten permanente unvorhersehbare Flugbahnänderungen auf (Appelbaum & Erickson, 2018). Dieses Training konditioniert die äußeren Augenmuskeln und die frontalen Augenfelder darauf, Zielabrisse minimal zu halten und Auslenkungen verzögerungsfrei zu parieren.",
     "Einfluss der Hardware und optimale Testbedingungen: Da plötzliche Richtungswechsel eine blitzschnelle visuelle Erkennung der ersten Bewegungsframes erfordern, sind Monitore mit 144 Hz oder 240 Hz klassischen 60-Hz-Geräten deutlich überlegen (Woods et al., 2015). Ein stabiler Sitzabstand von 50–70 cm und ein fixierter Kopf stellen sicher, dass vestibuläre Kompensationsmechanismen ausgeschaltet bleiben. Alle Testeinstellungen und Messwerte verbleiben privat im Browser des Nutzers."
   ],
   benchmarks: {
@@ -252,7 +254,7 @@ const guideProps = {
     headers: ["Leistungsstufe", "Ziel-Geschwindigkeit (Speed Multiplier)", "Sakkadische Rückholzeit & Blickstabilität", "Okulomotorisches & Neuronales Profil"],
     rows: [
       ["Stufe 1: Apex Reaktiv – Absolute Spitzenreflexe", "Ab 2.0x Ultra-Speed", "Korrektursakkade trifft unmittelbar nach dem Richtungswechsel ein; sofortige bruchlose Fixation auf neuem Vektor.", "Höchste synaptische Übertragungsgeschwindigkeit zwischen Fovea und okulomotorischen Zentren. Profi-Niveau in eSport und Reaktionssport."],
-      ["Stufe 2: Exzellente Sakkaden-Rückholung", "1.4x – 1.9x High-Speed", "Schnelle und präzise Re-Zentrierung auch bei abrupten Richtungswechseln; geringe Nachschwingungen.", "Ausgezeichnete Rekrutierung der äußeren Augenmuskeln. Schnelle Anpassung an unregelmäßige Strafe-Bewegungen."],
+      ["Stufe 2: Exzellente Sakkaden-Rückholung", "1.4x – 1.9x hohe Geschwindigkeit", "Schnelle und präzise Re-Zentrierung auch bei abrupten Richtungswechseln; geringe Nachschwingungen.", "Ausgezeichnete Rekrutierung der äußeren Augenmuskeln. Schnelle Anpassung an unregelmäßige seitliche Ausweichbewegungen."],
       ["Stufe 3: Solider Leistungsstandard", "1.0x – 1.3x Standardbereich", "Verlässliche Verfolgung bei normaler Geschwindigkeit; bei extrem spitzen Wendungen tritt eine kurze Verzögerung auf.", "Typischer Leistungsbereich gesunder Erwachsener. Vollkommen ausreichend für Freizeitsport und normales Gaming."],
       ["Stufe 4: Verzögerte Refixation – Trainingsbedarf", "0.7x – 0.9x Niedrigbereich", "Ziel wird bei fast jedem Richtungswechsel vollständig verloren; mehrere Sakkaden notwendig, um Anschluss zu finden.", "Verzögerte sensorimotorische Signalverarbeitung bei Richtungswechseln. Gezieltes Training im niedrigen Geschwindigkeitsbereich angeraten."],
       ["Stufe 5: Erhöhte Latenz – Einsteigerbereich", "Unter 0.7x", "Blickbewegungen hängen stark hinterher oder irren unkoordiniert über den Bildschirm.", "Grundlegende Okulomotorik sollte zunächst bei langsamen, kontrollierten Richtungswechseln aufgebaut werden."]
@@ -295,12 +297,12 @@ const guideProps = {
   faqs: faqSchema.mainEntity.map(e => ({ q: e.name, a: e.acceptedAnswer.text })),
   sources: pickSources('bahill1980', 'barnes2008', 'krauzlis2004', 'robinson1965', 'rashbass1961', 'woods2015'),
   related: [
-    { href: "/de/drills/visual-tracking/constant-slow-pursuit", label: "Langsame Augenfolgebewegung (Constant Slow)" },
-    { href: "/de/drills/visual-tracking/sine-wave-pursuit", label: "Sinuswellen-Verfolgungstraining (Sine Wave)" },
-    { href: "/de/drills/visual-tracking/infinity-pursuit", label: "Achter-Schleifen-Blickübung (Infinity)" },
-    { href: "/de/drills/visual-tracking/predictive-pursuit", label: "Prädiktive Blickverfolgung (Predictive)" },
-    { href: "/de/drills/visual-tracking/dynamic-evasion-pursuit", label: "Dynamische Zielausweichung (Dynamic Evasion)" },
-    { href: "/de/drills/visual-tracking/ghosting-suppress-pursuit", label: "Blickstabilisierung gegen Nachbilder (Ghosting Suppress)" }
+    { href: "/de/drills/visual-tracking/constant-slow-pursuit", label: "Langsame Augenfolgebewegung" },
+    { href: "/de/drills/visual-tracking/sine-wave-pursuit", label: "Sinuswellen-Verfolgungstraining" },
+    { href: "/de/drills/visual-tracking/infinity-pursuit", label: "Achter-Schleifen-Blickübung" },
+    { href: "/de/drills/visual-tracking/predictive-pursuit", label: "Prädiktive Blickverfolgung" },
+    { href: "/de/drills/visual-tracking/dynamic-evasion-pursuit", label: "Dynamische Zielausweichung" },
+    { href: "/de/drills/visual-tracking/ghosting-suppress-pursuit", label: "Blickstabilisierung gegen Nachbilder" }
   ]
 };
 
@@ -335,13 +337,14 @@ export default function LocalizedPage() {
         copy={{
           title: "Chaotische Augenfolgebewegung – Unvorhersehbare Zielverfolgung",
           subtitle: "Sakkadische Rückholbewegung & Reaktives Blickverfolgungs-Training",
-          description: "Bei unvorhersehbaren, chaotischen Richtungswechseln wird das prädiktive Vorwärtsmodell des Kleinhirns ausgeschaltet und eine reine reaktive visuelle Rückkopplung erzwungen (Bahill et al., 1980). Sobald das Ziel die Fovea verlässt, feuert das okulomotorische System blitzschnelle Korrektursakkaden (Catch-up Saccades), um das Ziel zu refixieren und den Folgebewegungs-Gain wiederherzustellen (Barnes, 2008; Krauzlis, 2004)."
+          description: "Bei unvorhersehbaren, chaotischen Richtungswechseln wird das prädiktive Vorwärtsmodell des Kleinhirns ausgeschaltet und eine reine reaktive visuelle Rückkopplung erzwungen (Bahill et al., 1980). Sobald das Ziel die Fovea verlässt, feuert das okulomotorische System blitzschnelle Korrektursakkaden, um das Ziel zu refixieren und den Verfolgungsgewinn wiederherzustellen (Barnes, 2008; Krauzlis, 2004)."
         }}
       />
       <DrillGuide guide={guideProps} />
       <div className="max-w-6xl mx-auto px-4 pb-12">
         <RelatedDrills currentCategory="visual-tracking" currentHref="https://skilldrills.online/de/drills/visual-tracking/directional-chaos-pursuit" />
       </div>
+      <DrillFooter />
     </>
   );
 }

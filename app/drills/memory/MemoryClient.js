@@ -26,6 +26,7 @@ import { useTranslation } from '@/lib/i18n/useTranslation';
 import { hasLocalizedRoute } from '@/lib/i18n/locales';
 import { getLocalizedDrill } from '@/lib/i18n/drillNames';
 import { isIdleFrameSkippable } from '@/lib/performance';
+import { getMemoryHubUi } from '@/lib/i18n/memoryHubNative';
 
 const memDrills = DRILLS.filter(d => d.category === 'memory');
 
@@ -76,8 +77,9 @@ const orderedMemoryDrills = sortByInterest(
   )
 );
 
-export default function MemoryClient({ faqs = [] }) {
-  const { locale, t, localizeHref } = useTranslation();
+export default function MemoryClient({ faqs = [], copy = null }) {
+  const { locale, t, localizeHref } = useTranslation({});
+  const ui = copy || getMemoryHubUi(locale);
   const [isClient, setIsClient] = useState(false);
   const [drillLevels, setDrillLevels] = useState({});
   const canvasRef = useRef(null);
@@ -218,7 +220,7 @@ export default function MemoryClient({ faqs = [] }) {
                 className="flex items-center gap-1.5 hover:text-indigo-400 transition-colors"
               >
                 <Home className="w-3.5 h-3.5" />
-                <span>{t('ui.nav.hq', 'HQ')}</span>
+                <span>{ui.breadcrumbHome}</span>
               </Link>
             </li>
             <li><ChevronRight className="w-3 h-3 text-hairline-2" /></li>
@@ -227,13 +229,13 @@ export default function MemoryClient({ faqs = [] }) {
                 href={hasLocalizedRoute(locale, '/drills') ? localizeHref('/drills') : '/drills'}
                 className="hover:text-indigo-400 transition-colors"
               >
-                {t('ui.nav.drills', 'DRILLS')}
+                {ui.breadcrumbDrills}
               </Link>
             </li>
             <li><ChevronRight className="w-3 h-3 text-hairline-2" /></li>
             <li>
               <span className="text-indigo-400 font-bold" aria-current="page">
-                {t('header.memory', 'MEMORY')}
+                {ui.breadcrumbCurrent}
               </span>
             </li>
           </ol>
@@ -242,10 +244,10 @@ export default function MemoryClient({ faqs = [] }) {
         {/* Page heading */}
         <div className="mb-8">
           <h1 className="text-2xl sm:text-3xl font-bold tracking-tight text-ink-1">
-            {t('hubs.memory.h1', 'Memory Training & Recall')}
+            {ui.h1}
           </h1>
           <p className="mt-2 text-sm sm:text-base text-ink-2 leading-relaxed">
-            {t('hubs.memory.desc', 'Train working memory recall buffers, digit recall span, and spatial pattern traces.')}
+            {ui.intro}
           </p>
         </div>
 
@@ -253,11 +255,11 @@ export default function MemoryClient({ faqs = [] }) {
         <Reveal>
           <DrillCarousel
             headingId="memory-drills"
-            heading={t('hubs.memory.drillsHeading', 'Memory drills')}
+            heading={ui.drillsHeading}
             accent="indigo"
             icon={Brain}
             showcase
-            allLabel={t('ui.viewAll', 'View all')}
+            allLabel={ui.viewAll}
             drills={orderedMemoryDrills.map((drill) => {
               const fallbackTagline = getDrillTagline(drill.href, drill.description);
               const localized = getLocalizedDrill(drill.href, locale, drill.name, fallbackTagline);
@@ -280,12 +282,13 @@ export default function MemoryClient({ faqs = [] }) {
             <div className="flex items-center gap-2 mb-6">
               <Layers className="w-5 h-5 text-indigo-400" />
               <h2 className="text-base sm:text-lg font-semibold tracking-tight text-ink-1">
-                Memory Training Domains
+                {ui.domainsTitle}
               </h2>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
-              {memoryCategories.map((cat) => {
+              {memoryCategories.map((cat, categoryIndex) => {
                 const Icon = cat.icon;
+                const localizedCategory = ui.categories?.[categoryIndex] || cat;
                 return (
                   <div
                     key={cat.folderName}
@@ -298,15 +301,15 @@ export default function MemoryClient({ faqs = [] }) {
                         </div>
                         <div>
                           <h3 className="text-sm font-semibold tracking-tight text-ink-1">
-                            {cat.name}
+                            {localizedCategory.name}
                           </h3>
                           <span className="text-xs font-medium text-indigo-400">
-                            {cat.drills.length} {cat.drills.length === 1 ? 'Drill' : 'Drills'}
+                            {cat.drills.length} {cat.drills.length === 1 ? ui.drill : ui.drills}
                           </span>
                         </div>
                       </div>
                       <p className="text-xs text-ink-2 leading-relaxed mb-4">
-                        {cat.description}
+                        {localizedCategory.description}
                       </p>
                     </div>
 
@@ -347,7 +350,7 @@ export default function MemoryClient({ faqs = [] }) {
             <div className="flex items-center gap-2 mb-6">
               <Sparkles className="w-5 h-5 text-indigo-400" />
               <h2 className="text-base sm:text-lg font-semibold tracking-tight text-ink-1">
-                Engine &amp; Hardware Optimization
+                {ui.hardwareTitle}
               </h2>
             </div>
 
@@ -357,10 +360,10 @@ export default function MemoryClient({ faqs = [] }) {
                   <Clock className="w-4 h-4" />
                 </div>
                 <h3 className="text-sm font-semibold tracking-tight text-ink-1 mb-1.5">
-                  Sub-Frame Sequence Sync
+                  {ui.hardware[0].title}
                 </h3>
                 <p className="text-2xs text-ink-3 leading-relaxed">
-                  Decoupled rendering intervals present visual and auditory stimulus items with zero frame tearing or drift, guaranteeing consistent cognitive retention testing.
+                  {ui.hardware[0].description}
                 </p>
               </div>
 
@@ -369,10 +372,10 @@ export default function MemoryClient({ faqs = [] }) {
                   <Cpu className="w-4 h-4" />
                 </div>
                 <h3 className="text-sm font-semibold tracking-tight text-ink-1 mb-1.5">
-                  Adaptive Span Scaler
+                  {ui.hardware[1].title}
                 </h3>
                 <p className="text-2xs text-ink-3 leading-relaxed">
-                  Real-time cognitive load matrices continuously monitor trial accuracy to dynamically increase N-back depth or span limits precisely at your performance boundary.
+                  {ui.hardware[1].description}
                 </p>
               </div>
 
@@ -381,10 +384,10 @@ export default function MemoryClient({ faqs = [] }) {
                   <ShieldCheck className="w-4 h-4" />
                 </div>
                 <h3 className="text-sm font-semibold tracking-tight text-ink-1 mb-1.5">
-                  Encrypted Local Persistence
+                  {ui.hardware[2].title}
                 </h3>
                 <p className="text-2xs text-ink-3 leading-relaxed">
-                  All streak history, trial timings, and memory milestones remain safely encapsulated in your browser&apos;s local store. Zero cloud latency, zero tracking overhead.
+                  {ui.hardware[2].description}
                 </p>
               </div>
             </div>
@@ -398,7 +401,7 @@ export default function MemoryClient({ faqs = [] }) {
               <div className="flex items-center gap-2 mb-6">
                 <Sparkles className="w-5 h-5 text-indigo-400" />
               <h2 className="text-base sm:text-lg font-semibold tracking-tight text-ink-1">
-                  {t('home.faqTitle', 'Frequently Asked Questions')}
+                  {ui.faqTitle}
                 </h2>
               </div>
 
@@ -431,15 +434,15 @@ export default function MemoryClient({ faqs = [] }) {
             className="inline-flex items-center gap-2 text-xs font-mono uppercase font-bold text-ink-3 hover:text-ink-1 transition-colors"
           >
             <ArrowLeft className="w-4 h-4" />
-            {t('ui.returnToAllSectors', 'Return to All Sectors')}
+            {ui.returnAll}
           </Link>
         </div>
       </div>
 
       <StickyMobileCta
         href={hasLocalizedRoute(locale, '/drills/memory/short-term-memory/digit-span') ? localizeHref('/drills/memory/short-term-memory/digit-span') : '/drills/memory/short-term-memory/digit-span'}
-        label={t('hubs.memory.startCta', 'Start Memory Drill')}
-        categoryName={t('header.memory', 'Memory')}
+        label={ui.startDrill}
+        categoryName={ui.breadcrumbCurrent}
       />
       <SiteFooter />
     </div>

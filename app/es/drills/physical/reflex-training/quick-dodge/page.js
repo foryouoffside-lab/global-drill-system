@@ -22,27 +22,27 @@ import { pickSources } from '@/lib/drillSources';
 // ============================================================
 
 export const metadata = {
-  title: "Juego de Esquivar con el Ratón – Reflejos | SkillDrills",
-  description: "Juego de esquivar con el ratón online gratis. Esquiva proyectiles veloces con el cursor para medir reflejos motores y tiempo de evasión en el PC.",
+  title: "Juego de esquivar con el ratón | Reflejos",
+  description: "Juego gratis de esquivar con el ratón. Evita proyectiles, sobrevive más tiempo y entrena reflejos y control preciso del cursor.",
   keywords: [
-    "juego de esquivar con el raton",
+    "juego de esquivar con el ratón",
     "juegos de esquivar con el mouse",
     "test de reflejos esquivar",
     "juego de esquivar proyectiles",
-    "entrenar reflejos raton",
-    "juegos de habilidad con el raton",
-    "prueba de reflejos y velocidad de reaccion",
-    "entrenamiento de micro movimiento raton",
-    "juegos para mejorar reflejos pc",
-    "coordinacion ojo mano reflejos juego"
+    "entrenar reflejos con el ratón",
+    "juegos de habilidad con el ratón",
+    "prueba de reflejos y velocidad de reacción",
+    "control preciso del cursor",
+    "juegos para mejorar reflejos en PC",
+    "coordinación ojo-mano y reflejos"
   ],
   alternates: {
     canonical: 'https://skilldrills.online/es/drills/physical/reflex-training/quick-dodge',
     languages: getAlternateLanguages('/drills/physical/reflex-training/quick-dodge'),
   },
   openGraph: {
-    title: "Juego de Esquivar con el Ratón – Reflejos | SkillDrills",
-    description: "Juego de esquivar con el ratón online gratis. Esquiva proyectiles veloces con el cursor para medir reflejos motores y tiempo de evasión en el PC.",
+    title: "Juego de esquivar con el ratón | Reflejos",
+    description: "Juego gratis de esquivar con el ratón. Evita proyectiles, sobrevive más tiempo y entrena reflejos y control preciso del cursor.",
     url: 'https://skilldrills.online/es/drills/physical/reflex-training/quick-dodge',
     siteName: 'SkillDrills',
     locale: 'es_ES',
@@ -50,8 +50,8 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: "Juego de Esquivar con el Ratón – Reflejos | SkillDrills",
-    description: "Juego de esquivar con el ratón online gratis. Esquiva proyectiles veloces con el cursor para medir reflejos motores y tiempo de evasión en el PC.",
+    title: "Juego de esquivar con el ratón | Reflejos",
+    description: "Juego gratis de esquivar con el ratón. Evita proyectiles, sobrevive más tiempo y entrena reflejos y control preciso del cursor.",
   },
   robots: { index: true, follow: true },
 };
@@ -93,6 +93,10 @@ const softwareApplicationSchema = {
   "name": "Juego de Esquivar con el Ratón y Simulador de Evasión Cinética",
   "applicationCategory": "HealthApplication",
   "operatingSystem": "All",
+  "url": "https://skilldrills.online/es/drills/physical/reflex-training/quick-dodge",
+  "description": "Juego gratis para esquivar proyectiles con el ratón y entrenar reflejos y control preciso del cursor.",
+  "inLanguage": "es-ES",
+  "dateModified": "2026-09-20",
   "offers": {
     "@type": "Offer",
     "price": "0",
@@ -104,6 +108,10 @@ const webApplicationSchema = {
   "@context": "https://schema.org",
   "@type": "WebApplication",
   "name": "Simulador de Esquiva de Proyectiles y Modelos Predictivos Cerebelares",
+  "url": "https://skilldrills.online/es/drills/physical/reflex-training/quick-dodge",
+  "description": "Drill de navegador para esquivar proyectiles y practicar reflejos, tiempo de reacción y control del ratón.",
+  "inLanguage": "es-ES",
+  "dateModified": "2026-09-20",
   "browserRequirements": "Requires JavaScript and HTML5 Canvas support",
   "genre": "Training, Reflex, Evasion, Esports"
 };
@@ -111,8 +119,11 @@ const webApplicationSchema = {
 const videoGameSchema = {
   "@context": "https://schema.org",
   "@type": "VideoGame",
-  "name": "Quick Dodge Cursor Evasion Challenge",
+  "name": "Juego de Esquivar con el Ratón y Test de Reflejos",
   "gamePlatform": "Web Browser",
+  "url": "https://skilldrills.online/es/drills/physical/reflex-training/quick-dodge",
+  "inLanguage": "es-ES",
+  "dateModified": "2026-09-20",
   "applicationSubCategory": "Esports Motor Chronometry Drill"
 };
 
@@ -328,8 +339,8 @@ export default function LocalizedQuickDodgePageEs() {
       />
       <QuickDodgeClient
         copy={{
-          title: "Juego de Esquivar con el Ratón & Test de Reflejos",
-          subtitle: "Esquiva Cinética de Proyectiles y Modelos Predictivos • 15 Niveles de Dificultad",
+          title: "Juego de Esquivar con el Ratón",
+          subtitle: "Esquiva proyectiles y sobrevive más",
           description: "Esquivar a un perseguidor es una cuestión de predicción, no de simple reacción: en el momento en que observas dónde está, ya ha cambiado de posición. Las maniobras rápidas se planifican de antemano mediante modelos internos cerebelares (Kawato, 1999) en vez de rectificarse en pleno vuelo, dado que la visión precisa de 100 a 150 ms para intervenir (Woodworth, 1899). Conforme la velocidad escala, la ventana de corrección se extingue y solo la predicción garantiza el éxito.",
           badge: "Test de Esquiva y Reflejos",
           hudLabels: {

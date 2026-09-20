@@ -208,7 +208,6 @@ export function generateSessionCard({
 
   // Stats — 2x2 grid
   const gridStats = (stats || []).slice(0, 4);
-  const cols = gridStats.length > 2 ? 2 : gridStats.length;
   const rowYs = [250, 320];
 
   gridStats.forEach((s, i) => {

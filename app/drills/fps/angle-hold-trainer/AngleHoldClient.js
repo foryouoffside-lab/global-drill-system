@@ -750,7 +750,7 @@ export default function AngleHoldClient({ copy = null }) {
   return (
     <div className="min-h-screen bg-[#050508] text-white flex flex-col font-sans select-none">
       {/* ── MAIN CONTENT AREA ── */}
-      <main className="flex-1 max-w-6xl w-full mx-auto px-4 py-6 flex flex-col gap-6">
+      <main className="flex-1 max-w-6xl w-full mx-auto px-4 pt-6 pb-0 flex flex-col gap-6">
         {/* Title */}
         {!isFullscreen && (
           <div className="flex flex-col gap-1">
@@ -765,7 +765,7 @@ export default function AngleHoldClient({ copy = null }) {
               )}
             </h1>
             <p className="text-[13px] text-slate-400 leading-relaxed">
-              {copy?.caption || t('angleHold.caption', 'Angle holding tests your simple reaction latency and trigger discipline when holding chokepoints against peeking opponents. Rather than dynamic flicking, defensive angle holding isolates visual onset reaction time and pre-aim offset geometry to neutralize peeker’s advantage in tactical shooters.')}
+              {copy?.caption || t('angleHold.caption', 'Angle holding tests your reaction latency and trigger discipline against peeking opponents.')}
             </p>
           </div>
         )}
@@ -905,6 +905,7 @@ export default function AngleHoldClient({ copy = null }) {
           <div className="[&>div]:!mt-0">
             <DrillAccordion
               id="rules"
+              singleLineTitle
               title={copy?.accordionRulesTitle || t('angleHold.accordionRulesTitle', 'Drill Instructions & Scoring System')}
               isOpen={openAccordion === 'rules'}
               onToggle={() => setOpenAccordion(openAccordion === 'rules' ? null : 'rules')}
@@ -918,6 +919,7 @@ export default function AngleHoldClient({ copy = null }) {
 
             <DrillAccordion
               id="about"
+              singleLineTitle
               title={copy?.accordionAboutTitle || t('angleHold.accordionAboutTitle', 'About Angle Hold Pro')}
               isOpen={openAccordion === 'about'}
               onToggle={() => setOpenAccordion(openAccordion === 'about' ? null : 'about')}
@@ -928,7 +930,7 @@ export default function AngleHoldClient({ copy = null }) {
                     <Crosshair className="w-4 h-4 text-orange-400" /> {copy?.overviewTitle || t('angleHold.overviewTitle', 'What Is Crosshair Placement & Angle Holding?')}
                   </h3>
                   <p className="text-sm leading-relaxed mb-3 text-gray-300">
-                    {copy?.overviewLead || 'Holding an angle means reacting to an opponent who appears exactly where you are already aiming. A typical adult reacts to one expected visual stimulus in 200–250 ms, and having to decide whether to shoot adds more, because reaction time rises with the number of alternatives (Donders, 1868; Hick, 1952).'}
+                    {copy?.overviewLead || 'Holding an angle means reacting to an opponent who appears exactly where you are already aiming. A typical adult reacts to one expected visual stimulus in 200–250 ms, and having to decide whether to shoot adds more, because reaction time rises with the number of alternatives (Donders, 1868; Hick, 1952). Rather than dynamic flicking, defensive angle holding isolates that visual onset reaction time and pre-aim offset geometry to neutralize peeker’s advantage in tactical shooters.'}
                   </p>
                   {(copy?.aboutIntro || ABOUT_INTRO).map((para, i) => (
                     <p key={i} className={`text-sm leading-relaxed text-gray-300 ${i < (copy?.aboutIntro || ABOUT_INTRO).length - 1 ? "mb-3" : ""}`}>{para}</p>

@@ -1,38 +1,39 @@
 import DynamicEvasionPursuitClient from '@/app/drills/visual-tracking/dynamic-evasion-pursuit/DynamicEvasionPursuitClientLoader';
 import DrillGuide from '@/components/drill/DrillGuide';
+import DrillFooter from '@/components/drill/DrillFooter';
 import RelatedDrills from '@/components/drill/RelatedDrills';
 import { getAlternateLanguages } from '@/lib/i18n/locales';
 import { pickSources } from '@/lib/drillSources';
 
 // ============================================================
 // KOREAN SEARCH KEYWORD RESEARCH & INTENT CLUSTERING
-// Primary query: "회피 표적 추적 훈련" / "동적 회피 시선 추적" (Evasive target pursuit tracking)
-// Secondary:    "에임 트래킹 반응속도", "반응형 안구 운동 훈련", "스트레이프 추적 에임"
+// Primary query: "동체시력 테스트" / "회피 표적 추적 훈련"
+// Secondary:    "급선회 표적 추적", "시선 재포착", "보정 사케드", "반응형 안구 운동"
 // LSI / Domain:  "급선회 타깃 추적", "보정 사케드 훈련", "동체시력 순발력",
 //               "중심와 재포착", "원활추종 게인 복구", "망막 슬립 제어", "FPS 반사신경 훈련"
-// Authentic Domain Terms: 표적 회피 추적(Dynamic Evasion Pursuit), 보정 사케드(Catch-up Saccade), 원활추종 게인(Pursuit Gain), 망막 슬립(Retinal Slip), 전두안운동야(FEF), 상구(Superior Colliculus)
+// Authentic Domain Terms: 표적 회피 추적, 보정 사케드, 원활추종 게인, 망막 슬립, 전두안운동야(FEF), 상구
 // ============================================================
 
 export const metadata = {
-  title: "회피 표적 추적 훈련・동체시력 에임 테스트 – 급선회 타깃 재포착 | SkillDrills",
-  description: "직선 비행 중 돌발적으로 급선회하며 조준을 회피하는 타깃을 신속히 재포착하는 리액티브 안구 추적 및 동체시력 훈련. 망막 슬립 억제와 보정 사케드, 원활추종 게인 복원력을 극대화합니다. 무료 이용.",
+  title: "동체시력 테스트・급선회 표적 추적 | SkillDrills",
+  description: "갑자기 급선회하는 표적을 시선으로 재포착하세요. 보정 사케드와 동체시력, 반응형 안구 운동을 연습하는 무료 브라우저 훈련입니다.",
   keywords: [
+    "동체시력 테스트",
+    "동체시력 훈련",
     "회피 표적 추적 훈련",
-    "동적 회피 시선 추적",
-    "에임 트래킹 반응속도",
-    "반응형 안구 운동 훈련",
-    "스트레이프 추적 에임",
-    "급선회 타깃 추적",
+    "급선회 표적 추적",
+    "시선 재포착",
     "보정 사케드 훈련",
+    "반응형 안구 운동",
     "동체시력 순발력",
     "중심와 재포착",
-    "원활추종 게인 복구",
     "망막 슬립 제어",
-    "FPS 반사신경 훈련"
+    "시각 반응 훈련",
+    "무료 눈 운동"
   ],
   openGraph: {
-    title: "회피 표적 추적 훈련・동체시력 에임 테스트 – 급선회 타깃 재포착 | SkillDrills",
-    description: "직선 비행 중 돌발적으로 급선회하며 조준을 회피하는 타깃을 신속히 재포착하는 리액티브 안구 추적 및 동체시력 훈련. 망막 슬립 억제와 보정 사케드, 원활추종 게인 복원력을 극대화합니다.",
+    title: "동체시력 테스트・급선회 표적 추적 | SkillDrills",
+    description: "갑자기 급선회하는 표적을 시선으로 재포착하며 동체시력과 보정 사케드를 연습하는 무료 브라우저 훈련입니다.",
     type: "website",
     url: "https://skilldrills.online/ko/drills/visual-tracking/dynamic-evasion-pursuit",
     siteName: "SkillDrills",
@@ -40,8 +41,8 @@ export const metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "회피 표적 추적 훈련・동체시력 에임 테스트 – 급선회 타깃 재포착 | SkillDrills",
-    description: "돌발적인 급선회로 조준을 피하는 회피 타깃을 안구로 즉시 재포착하는 무료 온라인 리액티브 동체시력 드릴.",
+    title: "동체시력 테스트・급선회 표적 추적 | SkillDrills",
+    description: "급선회하는 표적을 눈으로 재포착하고 시선 반응과 보정 사케드를 연습하는 무료 온라인 훈련입니다.",
   },
   robots: { index: true, follow: true },
   alternates: {
@@ -64,9 +65,9 @@ const breadcrumbSchema = {
 const softwareApplicationSchema = {
   "@context": "https://schema.org",
   "@type": "SoftwareApplication",
-  "name": "회피 표적 추적 훈련・동체시력 리액티브 에임 테스트 (Dynamic Evasion Pursuit)",
+  "name": "회피 표적 추적 훈련・동체시력 반응 테스트",
   "applicationCategory": "HealthApplication",
-  "operatingSystem": "Web Browser",
+  "operatingSystem": "웹 브라우저",
   "url": "https://skilldrills.online/ko/drills/visual-tracking/dynamic-evasion-pursuit",
   "offers": {
     "@type": "Offer",
@@ -77,39 +78,40 @@ const softwareApplicationSchema = {
   "featureList": [
     "직선 등속 순항과 불시의 고각 회피 브레이크를 결합한 실시간 회피 시뮬레이션",
     "0.5배속부터 9.0배속까지 정밀 속도 제어 및 밀리초 단위 시선 고정 타이머",
-    "타깃 잔상 트레일, CRT 주사선, 발광(Glow) 효과 시각화 옵션",
+    "타깃 잔상, CRT 주사선, 발광 효과 시각화 옵션",
     "외부 서버 통신 없는 완전한 클라이언트 단 로컬 데이터 저장"
   ],
-  "dateModified": "2026-09-15"
+  "dateModified": "2026-09-20"
 };
 
 const webAppSchema = {
   "@context": "https://schema.org",
   "@type": "WebApplication",
   "name": "회피 표적 추적 훈련 – 동체시력 리액티브 에임 온라인 트레이너 | SkillDrills",
-  "alternateName": "Dynamic Evasion Pursuit Korea",
+  "alternateName": "회피 표적 추적 훈련",
   "url": "https://skilldrills.online/ko/drills/visual-tracking/dynamic-evasion-pursuit",
-  "dateModified": "2026-09-15",
+  "dateModified": "2026-09-20",
   "description": "무료 온라인 동체시력・리액티브 안구 추적 트레이닝. 급격한 회피 꺾기에 맞서 즉각 보정 사케드를 발동하고 중심와 고정 및 원활추종 게인을 복원하는 반사신경 도구.",
   "applicationCategory": "EducationalApplication",
-  "operatingSystem": "All",
+  "operatingSystem": "웹 브라우저",
   "browserRequirements": "HTML5 Canvas를 지원하는 최신 웹 브라우저",
   "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
   "author": { "@type": "Organization", "name": "SkillDrills", "url": "https://skilldrills.online" },
   "isAccessibleForFree": true,
-  "learningResourceType": "Educational Game",
+  "learningResourceType": "시각 훈련 게임",
   "teaches": "회피 표적 추적, 보정 사케드, 원활추종 게인 복원, 망막 슬립 억제, 리액티브 에임"
 };
 
 const videoGameSchema = {
   "@context": "https://schema.org",
   "@type": "VideoGame",
-  "name": "회피 표적 추적 훈련・동체시력 리액티브 에임 테스트 (Dynamic Evasion Pursuit)",
+  "name": "회피 표적 추적 훈련・동체시력 반응 테스트",
   "url": "https://skilldrills.online/ko/drills/visual-tracking/dynamic-evasion-pursuit",
   "description": "급선회 회피 기동을 반복하는 표적을 시선과 조준선으로 지속 포착하여 시각 반사 신경과 재포착 순발력을 기르는 무료 웹 게임.",
-  "genre": ["Eye Tracking", "Visual Training", "Aim Trainer"],
-  "gamePlatform": ["Web Browser", "Desktop", "Mobile"],
+  "genre": ["안구 추적 훈련", "시각 기능 훈련", "반응 속도 게임"],
+  "gamePlatform": ["웹 브라우저", "컴퓨터", "휴대전화"],
   "applicationCategory": "Game",
+  "dateModified": "2026-09-20",
   "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
 };
 
@@ -117,7 +119,7 @@ const howToSchema = {
   "@context": "https://schema.org",
   "@type": "HowTo",
   "name": "회피 표적 추적 및 리액티브 시선 재포착 트레이닝 진행 방법",
-  "dateModified": "2026-09-15",
+  "dateModified": "2026-09-20",
   "description": "돌발적으로 급선회하는 회피 타깃에 맞서 시선을 신속히 재배치하고 추적 게인을 복구하기 위한 단계별 가이드.",
   "step": [
     {
@@ -154,11 +156,11 @@ const howToSchema = {
 const faqSchema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
-  "dateModified": "2026-09-15",
+  "dateModified": "2026-09-20",
   "mainEntity": [
     {
       "@type": "Question",
-      "name": "회피 표적 추적 훈련(Dynamic Evasion Pursuit)이란 무엇인가요?",
+      "name": "회피 표적 추적 훈련이란 무엇인가요?",
       "acceptedAnswer": {
         "@type": "Answer",
         "text": "이 훈련은 직선 경로로 이동하던 타깃이 돌발적으로 고각 급선회(회피 기동)를 일으킬 때 안구 운동만으로 신속하게 추적을 유지하는 신경 시각 드릴입니다. 연속적인 궤적 예측이 차단되므로 망막 슬립의 즉시 감지, 보정 사케드 발동, 그리고 신규 이동 벡터로의 원활추종 게인 복원 루프를 집중적으로 강화합니다(Rashbass, 1961; Bahill et al., 1980)."
@@ -174,7 +176,7 @@ const faqSchema = {
     },
     {
       "@type": "Question",
-      "name": "회피 급선회 시 일어나는 '보정 사케드(Catch-up Saccade)'의 신경학적 기전은?",
+      "name": "회피 급선회 시 일어나는 보정 사케드의 신경학적 기전은?",
       "acceptedAnswer": {
         "@type": "Answer",
         "text": "표적이 급각도로 방향을 꺾으면 원활추종 안구운동의 생리학적 한계 속도(약 30°/s)를 즉각 넘어서면서 상이 망막 중심와에서 벗어납니다. 이 오차 신호를 수신한 전두안운동야(FEF)와 상구는 약 150~200ms의 잠복기를 거쳐 표적 위치로 시선을 순간 도약시켜 중심와로 되돌려놓는 보정 사케드를 발사합니다(Krauzlis, 2004; Barnes, 2008)."
@@ -182,7 +184,7 @@ const faqSchema = {
     },
     {
       "@type": "Question",
-      "name": "불규칙 안구 추적(Directional Chaos Pursuit)과 본 훈련의 차이점은 무엇인가요?",
+      "name": "불규칙 안구 추적과 본 훈련의 차이점은 무엇인가요?",
       "acceptedAnswer": {
         "@type": "Answer",
         "text": "불규칙 카오스 추적은 매 프레임마다 미세한 가속도가 무작위로 변동하는 연속 곡선 드리프트인 반면, 동적 회피 추적은 뚜렷한 직선 등속 구간과 주기적 불시 고각 급선회로 구성됩니다. 미세한 손떨림 보정보다는 격렬한 방향 전환에 대한 다이내믹한 시선 회복 속도에 특화되어 있습니다."
@@ -193,7 +195,7 @@ const faqSchema = {
       "name": "FPS 게임(에이펙스 레전드, 오버워치, 발로란트)의 스트레이프 대응에 왜 결정적인가요?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "교전 중 적이 급격한 좌우 무빙(ADAD Strafe)이나 슬라이딩으로 조준선을 벗어나려 할 때 에임이 표적 뒤에 처지는 '반응 랙'을 대폭 단축시킵니다. 회피를 감지하고 보정 사케드로 에임을 끌어당기는 시간이 단축되어 적 히트박스에 지속적인 화력을 투사할 수 있습니다(Yang et al., 2025)."
+        "text": "교전 중 적이 급격한 좌우 움직임이나 슬라이딩으로 조준선을 벗어나려 할 때 조준선이 표적 뒤에 처지는 반응 지연을 대폭 단축시킵니다. 회피를 감지하고 보정 사케드로 조준선을 끌어당기는 시간이 줄어들어 적 표적을 계속 따라갈 수 있습니다(Yang et al., 2025)."
       }
     },
     {
@@ -242,20 +244,20 @@ const faqSchema = {
 const guideProps = {
   heading: "표적 회피 운동 추적과 사케드 회복의 신경 운동 과학 기준",
   intro: [
-    "동적 표적 회피 추적(Dynamic Evasion Pursuit)은 직선 경로를 이동하는 표적이 불시에 고각 급선회(Directional Break)를 일으켜 조준을 벗어날 때, 시각 운동계가 실시간으로 대응하여 시선을 재일치시키는 고난도 동체시력 과제입니다. 직선이나 원운동처럼 경로가 예측 가능한 자극과 달리, 소뇌의 예측 모델(Feedforward Model)을 차단하고 오직 감각 피드백에만 의존하는 반사적 재포착 능력을 한계까지 연마합니다(Bahill, Iandolo, & Troost, 1980; Robinson, 1965).",
-    "망막 슬립의 발생과 보정 사케드・원활추종 게인의 이중 운동 제어: 표적이 예기치 않게 회피 각도로 꺾이는 순간, 부드러운 안구 추종(원활추종)의 물리적 한계 속도(약 30°/s)를 즉각 넘어서며 표적 상이 중심와에서 탈락합니다(망막 슬립). 이 위치 및 속도 오차 신호를 수신한 전두안운동야(FEF)와 상구는 약 150~200ms의 잠복기를 거쳐 표적 위치로 시선을 순간 도약시키는 '보정 사케드(Catch-up Saccade)'를 강제 방출합니다(Rashbass, 1961; Krauzlis, 2004). 도약 착탄 직후 시선 흔들림을 억제하고 즉각 새로운 방향의 원활추종 게인(Gain = 안구속도 / 표적속도)을 복원하는 능력이 전체 동체시력의 민첩성을 결정합니다(Barnes, 2008).",
-    "e스포츠 및 대인 구기 스포츠에서의 실전 전이 가치: FPS 게임에서 적의 고속 좌우 무빙(ADAD Strafe)이나 슬라이딩, 축구·테니스·농구 등 대인 종목에서 불시의 페인트 동작이나 굴절 바운드에 직면했을 때 시야의 탈락 시간을 밀리초 단위로 단축하는 능력은 경기력을 좌우합니다(Yang et al., 2025; Appelbaum & Erickson, 2018). 본 드릴은 고각 급선회를 지속적으로 노출하여 외안근의 반사적 협응력과 시각 피질의 정보 처리 효율을 극대화합니다.",
+    "동적 표적 회피 추적은 직선 경로를 이동하는 표적이 불시에 급선회하여 조준을 벗어날 때, 시각 운동계가 실시간으로 대응하여 시선을 재일치시키는 고난도 동체시력 과제입니다. 직선이나 원운동처럼 경로가 예측 가능한 자극과 달리, 소뇌의 예측 모델을 차단하고 오직 감각 피드백에만 의존하는 반사적 재포착 능력을 한계까지 연마합니다(Bahill, Iandolo, & Troost, 1980; Robinson, 1965).",
+    "망막 슬립의 발생과 보정 사케드・원활추종 게인의 이중 운동 제어: 표적이 예기치 않게 회피 각도로 꺾이는 순간, 부드러운 안구 추종의 물리적 한계 속도(약 30°/s)를 즉각 넘어서며 표적 상이 중심와에서 탈락합니다(망막 슬립). 이 위치 및 속도 오차 신호를 수신한 전두안운동야(FEF)와 상구는 약 150~200ms의 잠복기를 거쳐 표적 위치로 시선을 순간 도약시키는 보정 사케드를 방출합니다(Rashbass, 1961; Krauzlis, 2004). 도약 착탄 직후 시선 흔들림을 억제하고 즉각 새로운 방향의 원활추종 게인을 복원하는 능력이 전체 동체시력의 민첩성을 결정합니다(Barnes, 2008).",
+    "e스포츠 및 대인 구기 스포츠에서의 실전 전이 가치: FPS 게임에서 적의 고속 좌우 움직임이나 슬라이딩, 축구·테니스·농구 등 대인 종목에서 불시의 페인트 동작이나 굴절 바운드에 직면했을 때 시야의 탈락 시간을 밀리초 단위로 단축하는 능력은 경기력을 좌우합니다(Yang et al., 2025; Appelbaum & Erickson, 2018). 본 드릴은 고각 급선회를 지속적으로 노출하여 외안근의 반사적 협응력과 시각 피질의 정보 처리를 단련합니다.",
     "하드웨어 정밀도 및 두부 고정 환경의 표준화: 급선회 감지에서 디스플레이의 프레임 갱신 주기는 결정적입니다. 일반 60Hz 모니터는 프레임 간격이 16.7ms로 길어 급선회의 첫 순간이 흐려지지만, 144Hz 이상의 고주사율 환경에서는 4ms 안팎으로 첫 회피 프레임을 선명히 전달하여 반응 잠복기를 앞당깁니다(Woods et al., 2015). 또한 머리를 고정하여 전정안구반사(VOR)를 억제함으로써 외안근 고유의 순발력을 훈련할 수 있습니다(Leigh & Zee, 2015). 모든 훈련 데이터는 브라우저 로컬 저장소에 안전하게 유지됩니다."
   ],
   benchmarks: {
     title: "회피 표적 추적 및 리액티브 시선 재포착 평가 기준 (에디토리얼 가이드)",
-    headers: ["숙련도 등급", "목표 속도 배율 (Speed Multiplier)", "회피 급선회 시 사케드 회복 특성", "신경 반응 및 동체시력 프로필"],
+    headers: ["숙련도 등급", "목표 속도 배율", "회피 급선회 시 사케드 회복 특성", "신경 반응 및 동체시력 프로필"],
     rows: [
-      ["티어 1: 최상위 프로 리액티브 (Apex Reactive)", "2.0x 이상의 초고속 영역", "급선회 직후 최단 잠복기(150ms 미만)로 보정 사케드가 착탄하며 오버슈트 없이 즉각 원활추종 복귀.", "최고 수준의 시각 피질-상구 정보 전달력. 프로 e스포츠 선수 및 최상위 구기 선수 수준."],
-      ["티어 2: 우수 시선 회복 (Superior Agility)", "1.4x – 1.9x 고속 영역", "급격한 회피 꺾기에도 1~2프레임 내에 시선을 되돌리며 매끄럽게 추적 상태 유지 가능.", "우수한 외안근 순발력과 망막 슬립 감지력. 고티어 FPS 교전 스트레이프에 완벽 대응."],
-      ["티어 3: 표준 성인 기준 (Solid Baseline)", "1.0x – 1.3x 표준 영역", "표준 속도의 회피 기동을 안정적으로 추적하나 급선회 시 순간적인 타깃 놓침과 지연 발생.", "건강한 성인의 표준적인 시각 운동 반응 수준. 일상적인 스포츠 및 캐주얼 게임에 적합."],
-      ["티어 4: 회복 지연・요연습 (Developing Recovery)", "0.7x – 0.9x 저속 영역", "표적이 회피 턴을 돌 때마다 시야에서 완전히 놓치며 여러 번의 사케드를 거쳐 늦게 회복.", "돌발 방향 전환에 대한 신경 전달 지연. 저속 영역에서 신속히 시선을 튕겨내는 반복 연습 필요."],
-      ["티어 5: 추적 불안정 초심자 (High Latency)", "0.7x 미만", "표적의 급선회를 쫓아가지 못하고 이전 직선 경로 위에 시선이 그대로 멈춰 서 있는 상태.", "머리를 완전히 고정하고 저속 급선회 표적을 안구만으로 쫓는 기초 훈련부터 시작 필요."]
+      ["1단계: 최상위 반응형", "2.0x 이상의 초고속 영역", "급선회 직후 최단 잠복기(150ms 미만)로 보정 사케드가 착탄하며 오버슈트 없이 즉각 원활추종 복귀.", "최고 수준의 시각 피질·상구 정보 전달력. 프로 e스포츠 선수 및 최상위 구기 선수 수준."],
+      ["2단계: 우수 시선 회복", "1.4x – 1.9x 고속 영역", "급격한 회피 꺾기에도 1~2프레임 내에 시선을 되돌리며 매끄럽게 추적 상태 유지 가능.", "우수한 외안근 순발력과 망막 슬립 감지력. 고티어 FPS의 급격한 좌우 움직임에 대응."],
+      ["3단계: 표준 성인 기준", "1.0x – 1.3x 표준 영역", "표준 속도의 회피 기동을 안정적으로 추적하나 급선회 시 순간적인 표적 놓침과 지연 발생.", "건강한 성인의 표준적인 시각 운동 반응 수준. 일상적인 스포츠 및 게임에 적합."],
+      ["4단계: 회복 지연・반복 필요", "0.7x – 0.9x 저속 영역", "표적이 회피 턴을 돌 때마다 시야에서 완전히 놓치며 여러 번의 사케드를 거쳐 늦게 회복.", "돌발 방향 전환에 대한 신경 전달 지연. 저속 영역에서 신속히 시선을 튕겨내는 반복 연습 필요."],
+      ["5단계: 추적 불안정 초심자", "0.7x 미만", "표적의 급선회를 쫓아가지 못하고 이전 직선 경로 위에 시선이 그대로 멈춰 서 있는 상태.", "머리를 완전히 고정하고 저속 급선회 표적을 안구만으로 쫓는 기초 훈련부터 시작 필요."]
     ],
     note: "본 기준은 회피 운동 자극 하에서의 안구 역학 및 사케드 회복 제어 연구(Bahill et al., 1980; Rashbass, 1961; Krauzlis, 2004; Barnes, 2008)를 바탕으로 설정된 편집 기준입니다."
   },
@@ -295,12 +297,12 @@ const guideProps = {
   faqs: faqSchema.mainEntity.map(e => ({ q: e.name, a: e.acceptedAnswer.text })),
   sources: pickSources('bahill1980', 'rashbass1961', 'krauzlis2004', 'robinson1965', 'barnes2008', 'woods2015'),
   related: [
-    { href: "/ko/drills/visual-tracking/constant-slow-pursuit", label: "정속 저속 추종 안구 훈련 (Constant Slow)" },
-    { href: "/ko/drills/visual-tracking/directional-chaos-pursuit", label: "카오스 방향 추적 훈련 (Directional Chaos)" },
-    { href: "/ko/drills/visual-tracking/sine-wave-pursuit", label: "사인파 추종 훈련 (Sine Wave)" },
-    { href: "/ko/drills/visual-tracking/infinity-pursuit", label: "8자 루프 안구 추적 훈련 (Infinity)" },
-    { href: "/ko/drills/visual-tracking/predictive-pursuit", label: "예측 시선 추적 (Predictive)" },
-    { href: "/ko/drills/visual-tracking/ghosting-suppress-pursuit", label: "시선 고정 안정성 훈련 (Ghosting Suppress)" }
+    { href: "/ko/drills/visual-tracking/constant-slow-pursuit", label: "정속 저속 추종 안구 훈련" },
+    { href: "/ko/drills/visual-tracking/directional-chaos-pursuit", label: "카오스 방향 추적 훈련" },
+    { href: "/ko/drills/visual-tracking/sine-wave-pursuit", label: "사인파 추종 훈련" },
+    { href: "/ko/drills/visual-tracking/infinity-pursuit", label: "8자 루프 안구 추적 훈련" },
+    { href: "/ko/drills/visual-tracking/predictive-pursuit", label: "예측 시선 추적" },
+    { href: "/ko/drills/visual-tracking/ghosting-suppress-pursuit", label: "시선 고정 안정성 훈련" }
   ]
 };
 
@@ -333,15 +335,16 @@ export default function LocalizedPage() {
       />
       <DynamicEvasionPursuitClient
         copy={{
-          title: "회피 표적 추적 훈련・동체시력 리액티브 에임 테스트",
+          title: "회피 표적 추적 훈련・동체시력 반응 테스트",
           subtitle: "급선회 타깃 재포착 & 반사적 안구운동 훈련",
-          description: "능동적으로 회피 급선회하는 표적을 추적할 때는 직선 구간의 원활추종과 급격한 방향 브레이크 시점의 보정 사케드(Catch-up Saccade) 간의 신속한 전환이 핵심입니다(Rashbass, 1961). 표적이 조준을 벗어나는 찰나, 약 150~200ms의 감각운동 신경 지연을 최소화하여 즉시 중심와에 재일치시키고 추종 게인을 복원합니다(Krauzlis, 2004; Barnes, 2008)."
+          description: "능동적으로 회피 급선회하는 표적을 추적할 때는 직선 구간의 원활추종과 급격한 방향 전환 시점의 보정 사케드 사이를 빠르게 전환해야 합니다(Rashbass, 1961). 표적이 조준을 벗어나는 찰나, 약 150~200ms의 감각운동 신경 지연을 최소화하여 즉시 중심와에 재일치시키고 추종 게인을 복원합니다(Krauzlis, 2004; Barnes, 2008)."
         }}
       />
       <DrillGuide guide={guideProps} />
       <div className="max-w-6xl mx-auto px-4 pb-12">
         <RelatedDrills currentCategory="visual-tracking" currentHref="https://skilldrills.online/ko/drills/visual-tracking/dynamic-evasion-pursuit" />
       </div>
+      <DrillFooter />
     </>
   );
 }

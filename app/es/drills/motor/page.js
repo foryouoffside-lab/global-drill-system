@@ -6,18 +6,18 @@ import { getLocalizedDrill } from '@/lib/i18n/drillNames';
 const motorDrills = DRILLS.filter((d) => d.category === 'motor');
 
 export const metadata = {
-  title: 'Precisión del Ratón & Test de CPS | SkillDrills',
-  description: 'Entrenamiento motor y puntería online. 9 ejercicios científicos para velocidad de clic (CPS), pulso firme, velocidad de teclado y coordinación mano-ojo.',
+  title: 'Precisión del ratón y puntería | SkillDrills',
+  description: '9 ejercicios gratis en el navegador para precisión del ratón, puntería, CPS, velocidad del teclado y coordinación mano-ojo.',
   keywords: [
-    'test de precisión del mouse online', 'aim trainer gratis', 'test de cps clicks por segundo',
-    'velocidad de clic prueba online', 'test de pulso firme raton', 'test de velocidad de teclado online',
-    'test de ghosting teclado', 'test de chattering teclado mecanico', 'ejercicios de coordinacion mano ojo',
-    'control micromotor del mouse', 'jitter click test gratis', 'butterfly click tecnica entrenamiento',
-    'juego del laberinto del pulso', 'mejorar precision mouse fps', 'calculadora edpi sensibilidad raton'
+    'test de precisión del ratón', 'entrenamiento de puntería', 'test CPS', 'coordinación mano-ojo',
+    'velocidad del teclado', 'control del cursor', 'entrenador de puntería gratis',
+    'precisión del ratón', 'clics por segundo', 'ejercicios de coordinación motora',
+    'entrenamiento de mano firme', 'test de seguimiento del ratón', 'puntería FPS',
+    'velocidad de escritura', 'ejercicios motores gratis'
   ],
   openGraph: {
-    title: 'Precisión del Ratón & Test de CPS | SkillDrills',
-    description: 'Entrenamiento motor y puntería online. 9 ejercicios científicos para velocidad de clic (CPS), pulso firme, velocidad de teclado y coordinación mano-ojo.',
+    title: 'Precisión del ratón y puntería | SkillDrills',
+    description: '9 ejercicios gratis en el navegador para precisión del ratón, puntería, CPS, velocidad del teclado y coordinación mano-ojo.',
     type: 'website',
     url: 'https://skilldrills.online/es/drills/motor',
     siteName: 'SkillDrills',
@@ -26,8 +26,8 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Precisión del Ratón & Test de CPS | SkillDrills',
-    description: 'Velocidad de clic (CPS), pulso firme, test de teclado y puntería de precisión: 9 ejercicios científicos gratis en el navegador.',
+    title: 'Precisión del ratón y puntería | SkillDrills',
+    description: '9 ejercicios gratis en el navegador para precisión del ratón, puntería, CPS, velocidad del teclado y coordinación mano-ojo.',
     images: ['https://skilldrills.online/icons/icon-512x512.png'],
   },
   robots: { index: true, follow: true },
@@ -50,9 +50,11 @@ const breadcrumbSchema = {
 const collectionSchema = {
   "@context": "https://schema.org",
   "@type": "CollectionPage",
-  "name": "Precisión de Ratón & Habilidades Motoras (9 Ejercicios)",
+  "inLanguage": "es-ES",
+  "dateModified": "2026-09-20",
+  "name": "Test de precisión del ratón y entrenamiento de puntería (9 ejercicios)",
   "url": "https://skilldrills.online/es/drills/motor",
-  "description": "9 ejercicios interactivos para velocidad de clic (CPS), puntería de precisión, supresión de temblor, test de teclado y coordinación mano-ojo.",
+  "description": "9 ejercicios gratis en el navegador para precisión del ratón, puntería, CPS, velocidad del teclado y coordinación mano-ojo.",
   "author": { "@type": "Organization", "name": "SkillDrills" },
   "hasPart": motorDrills.map((drill) => {
     const loc = getLocalizedDrill(drill.href, 'es', drill.name);
@@ -71,6 +73,8 @@ const collectionSchema = {
 const faqSchema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
+  "inLanguage": "es-ES",
+  "dateModified": "2026-09-20",
   "mainEntity": [
     {
       "@type": "Question",

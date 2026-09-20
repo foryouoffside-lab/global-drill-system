@@ -11,8 +11,8 @@ import { pickSources } from '@/lib/drillSources';
 // on the same day the motor and visual sweeps returned 100% null. Re-measure
 // before acting on any of these terms. Phrases are kept; numbers are not.
 // SEO RESEARCH FINDINGS — agility-ladder
-// PRIMARY:  "agility ladder drills"          — High-volume athletic/fitness query (volume unmeasured)
-//           "motor sequencing training"      — Technical motor control phrase (volume unmeasured)
+// PRIMARY:  "agility ladder drills" / "agility ladder exercises"
+//           "footwork agility drills"       — Athletic sequence intent (volume unmeasured)
 // SECONDARY / LSI:
 //           "agility ladder exercises"       — Broad exercise intent (volume unmeasured)
 //           "footwork agility drills"        — Speed & footwork intent (volume unmeasured)
@@ -30,8 +30,8 @@ import { pickSources } from '@/lib/drillSources';
 // ============================================================
 
 export const metadata = {
-  title: 'Agility Ladder Drills – Free Footwork Sequencing Trainer',
-  description: 'Free online agility ladder drills. Master bilateral motor sequencing, footwork timing, and rhythmic alternating cursor sweeps across scrolling rungs.',
+  title: 'Agility Ladder Drills | SkillDrills',
+  description: 'Free agility ladder drills online. Follow alternating rungs to train footwork timing, motor sequencing, bilateral coordination, and rhythmic control.',
   keywords: [
     'agility ladder drills',
     'motor sequencing training',
@@ -46,8 +46,8 @@ export const metadata = {
     'esports footwork training',
   ],
   openGraph: {
-    title: 'Agility Ladder Drills – Free Footwork Sequencing Trainer | SkillDrills',
-    description: 'Free online agility ladder drills. Master bilateral motor sequencing, footwork timing, and rhythmic alternating cursor sweeps across scrolling rungs.',
+    title: 'Agility Ladder Drills | SkillDrills',
+    description: 'Free agility ladder drills online. Follow alternating rungs to train footwork timing, motor sequencing, bilateral coordination, and rhythmic control.',
     type: 'article',
     url: 'https://skilldrills.online/drills/physical/fitness/agility-ladder',
     siteName: 'SkillDrills',
@@ -55,8 +55,8 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Agility Ladder Drills – Free Footwork Sequencing Trainer | SkillDrills',
-    description: 'Free online agility ladder drills. Master bilateral motor sequencing, footwork timing, and rhythmic alternating cursor sweeps across scrolling rungs.',
+    title: 'Agility Ladder Drills | SkillDrills',
+    description: 'Free agility ladder drills online. Follow alternating rungs to train footwork timing, motor sequencing, bilateral coordination, and rhythmic control.',
   },
   robots: { index: true, follow: true },
   alternates: {
@@ -88,7 +88,8 @@ const softwareApplicationSchema = {
   description: 'Free online agility ladder and motor sequencing drill. Execute rapid left-right alternating cursor sweeps across descending rungs with millisecond rhythm precision.',
   url: 'https://skilldrills.online/drills/physical/fitness/agility-ladder',
   publisher: { '@type': 'Organization', name: 'SkillDrills', url: 'https://skilldrills.online' },
-  dateModified: '2026-09-05',
+  inLanguage: 'en',
+  dateModified: '2026-09-20',
 };
 
 const webApplicationSchema = {
@@ -100,12 +101,15 @@ const webApplicationSchema = {
   browserRequirements: 'Requires modern web browser with HTML5 Canvas and pointer input support',
   offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
   url: 'https://skilldrills.online/drills/physical/fitness/agility-ladder',
-  dateModified: '2026-09-05',
+  inLanguage: 'en',
+  dateModified: '2026-09-20',
 };
 
 const faqSchema = {
   '@context': 'https://schema.org',
   '@type': 'FAQPage',
+  inLanguage: 'en',
+  dateModified: '2026-09-20',
   mainEntity: [
     {
       '@type': 'Question',
@@ -199,6 +203,8 @@ const videoGameSchema = {
   genre: ['Action', 'Brain Game', 'Reflex Game', 'Coordination'],
   gamePlatform: ['Web Browser', 'Desktop', 'Mobile'],
   applicationCategory: 'Game',
+  inLanguage: 'en',
+  dateModified: '2026-09-20',
   offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
 };
 
@@ -318,7 +324,7 @@ export default function AgilityLadderPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(howToSchema) }}
       />
-      <MotorSequencingClient copy={{ title: 'Agility Ladder Drills', subtitle: 'Footwork Agility & Motor Sequencing Trainer' }} />
+      <MotorSequencingClient copy={{ title: 'Agility Ladder Drills', subtitle: 'Follow alternating rungs with steady footwork and rhythm' }} />
       <DrillGuide {...guideProps} />
       
     </>

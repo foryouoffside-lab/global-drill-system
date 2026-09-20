@@ -2,28 +2,25 @@ import EliteNeuroSwitchClient from '@/app/drills/cognitive/processing-speed/reac
 import { getAlternateLanguages } from '@/lib/i18n/locales';
 import DrillGuide from '@/components/drill/DrillGuide';
 import RelatedDrills from '@/components/drill/RelatedDrills';
+import DrillFooter from '@/components/drill/DrillFooter';
 import { pickSources } from '@/lib/drillSources';
 
 export const metadata = {
-  title: "Test de Tiempo de Reacción de Elección – CRT | SkillDrills",
-  description: "Test de tiempo de reacción de elección online gratis: Mide tu velocidad de toma de decisiones, discriminación visual y flexibilidad cognitiva sin registro.",
+  title: "Tiempo de Reacción de Elección | Velocidad de Decisión | SkillDrills",
+  description: "Test gratuito de tiempo de reacción de elección: selecciona el objetivo según una regla cambiante. Practica decisión visual; no es clínico.",
   keywords: [
-    "test de tiempo de reaccion",
-    "tiempo de reaccion de eleccion",
-    "test tiempo de reaccion online",
-    "ley de hick test",
-    "test de velocidad de decision",
-    "velocidad de procesamiento cognitivo",
-    "test de discriminacion visual",
-    "entrenamiento de reflejos cognitivos",
-    "tiempo de reaccion simple vs eleccion",
-    "test de agilidad mental gratis",
-    "ejercicios de toma de decisiones rapidas",
-    "test neurocognitivo tiempo de reaccion"
+    "test de reacción",
+    "test de reacción online",
+    "tiempo de reacción",
+    "tiempo de reacción de elección",
+    "test de reflejos",
+    "velocidad de decisión",
+    "discriminación visual",
+    "ley de Hick"
   ],
   openGraph: {
-    title: "Test de Tiempo de Reacción de Elección – CRT | SkillDrills",
-    description: "Test de tiempo de reacción de elección online gratis: Mide tu velocidad de toma de decisiones, discriminación visual y flexibilidad cognitiva sin registro.",
+    title: "Tiempo de Reacción de Elección | Velocidad de Decisión | SkillDrills",
+    description: "Test gratuito de tiempo de reacción de elección: selecciona el objetivo según una regla cambiante. Practica decisión visual; no es clínico.",
     type: 'article',
     url: 'https://skilldrills.online/es/drills/cognitive/processing-speed/reaction-time',
     siteName: 'SkillDrills',
@@ -31,8 +28,8 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: "Test de Tiempo de Reacción de Elección – CRT | SkillDrills",
-    description: "Test de tiempo de reacción de elección online gratis: Mide tu velocidad de toma de decisiones, discriminación visual y flexibilidad cognitiva sin registro.",
+    title: "Tiempo de Reacción de Elección | Velocidad de Decisión | SkillDrills",
+    description: "Test gratuito de tiempo de reacción de elección: selecciona el objetivo según una regla cambiante. Practica decisión visual; no es clínico.",
   },
   robots: { index: true, follow: true },
   alternates: {
@@ -91,7 +88,7 @@ const softwareApplicationSchema = {
     "url": "https://skilldrills.online"
   },
   "inLanguage": "es-ES",
-  "dateModified": "2026-09-16"
+    "dateModified": "2026-09-20"
 };
 
 const webApplicationSchema = {
@@ -108,7 +105,7 @@ const webApplicationSchema = {
   },
   "url": "https://skilldrills.online/es/drills/cognitive/processing-speed/reaction-time",
   "inLanguage": "es-ES",
-  "dateModified": "2026-09-16"
+    "dateModified": "2026-09-20"
 };
 
 const videoGameSchema = {
@@ -326,11 +323,39 @@ export default function EnhancedPageEs() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(howToSchema) }}
       />
-      <EliteNeuroSwitchClient copy={{ title: "Test de Tiempo de Reacción de Elección" }} />
+      <EliteNeuroSwitchClient
+        copy={{
+          title: "Test de Reacción",
+          subtitle: "Elige el objetivo según el color activo y entrena la velocidad de decisión",
+          startTitle: "Test de Reacción",
+          startSubtitle: "Reacción de elección • Velocidad de decisión",
+          stageCaption: "Pulsa el objetivo que coincide con la regla activa. Los colores y la regla cambian rápido.",
+          rulesTitle: "Instrucciones del ejercicio y puntuación",
+          aboutTitle: "¿Qué mide el test de reacción?",
+          faqTitle: "Preguntas frecuentes",
+          labels: { score: "Puntuación", time: "Tiempo", level: "Nivel", bestScore: "Mejor puntuación", timeLeft: "Tiempo restante", rule: "REGLA", ready: "PREPÁRATE", accuracy: "Precisión", hits: "Aciertos", peakLevel: "Nivel máximo", maxCombo: "Combo máximo" },
+          ruleBanner: { RED: "OBJETIVO ROJO", BLUE: "OBJETIVO AZUL" },
+          aboutLead: "El tiempo de reacción de elección es el intervalo necesario para seleccionar la respuesta correcta entre varios estímulos. Al aumentar las alternativas, suele aumentar el tiempo de decisión, como explica la ley de Hick.",
+          aboutText: "Este ejercicio combina discriminación visual, lectura de la regla y respuesta motora. El resultado también incluye la latencia de la pantalla, el dispositivo de entrada y el navegador. Como la regla cambia, cada objetivo exige una nueva decisión.",
+          aboutCards: [
+            { title: "¿Para quién sirve?", desc: "Para jugadores, estudiantes y cualquier persona que quiera practicar decisiones visuales rápidas con precisión." },
+            { title: "Habilidades entrenadas", desc: "Reacción de elección, discriminación visual, ejecución motora y atención ante cambios de regla." },
+            { title: "Agilidad al cambiar", desc: "El color activo cambia para estimular la actualización rápida de tu mapa de respuesta." }
+          ],
+          rulesItems: [
+            { num: "1", text: "Regla activa", highlight: "ROJO / AZUL", result: "Sigue el aviso superior" },
+            { num: "2", text: "Objetivo correcto", highlight: "+100 pts.", result: "Bono de combo y nivel" },
+            { num: "3", text: "Cambio de regla", highlight: "Automático", result: "Acelera con el nivel" },
+            { num: "4", text: "Objetivo erróneo / tiempo", highlight: "Reinicia el combo", result: "−0,8 s con penalización" }
+          ],
+          faqItems: faqSchema.mainEntity.map((e) => ({ q: e.name, a: e.acceptedAnswer.text }))
+        }}
+      />
       <DrillGuide {...guideProps} />
       <div className="max-w-6xl mx-auto px-4 pb-12">
         <RelatedDrills currentCategory="cognitive" currentHref="https://skilldrills.online/es/drills/cognitive/processing-speed/reaction-time" />
       </div>
+      <DrillFooter />
     </>
   );
 }

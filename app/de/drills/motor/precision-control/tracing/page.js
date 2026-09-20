@@ -6,12 +6,12 @@ import DrillFooter from '@/components/drill/DrillFooter';
 import { pickSources } from '@/lib/drillSources';
 
 export const metadata = {
-  title: 'Maus-Tracing-Spiel – Pfad-Verfolgung & Feinmotorik-Test',
-  description: 'Kostenloses Maus-Tracing-Spiel zur Schulung der Feinmotorik. Halte den Cursor auf der Spur, um Handruhe, Pfadtreue und Tracking-Stabilität zu testen.',
-  keywords: ["Maus Tracing Spiel", "Maus Pfad Verfolgen Test", "Feinmotorik Maus Spiel", "Maus Tracking Trainer", "Smooth Pursuit Augenbewegung", "Maus Ruhige Hand Test", "Hand-Auge-Koordination Maus", "Maus Praezision Test", "FPS Tracking Aim", "Aim Trainer Kostenlos"],
+  title: 'Maus-Tracking-Test | Pfad folgen | SkillDrills',
+  description: 'Folge einer bewegten Welle mit dem Cursor und trainiere Spurtreue, flüssige Mausbewegung und Feinmotorik. Kostenlos im Browser.',
+  keywords: ['Maus-Tracking-Test', 'Maus Pfad verfolgen', 'Maus-Tracing-Spiel', 'Feinmotorik Maus', 'Maus Spurtreue', 'Maus Tracking Trainer', 'Cursor verfolgen', 'Hand-Auge-Koordination Maus', 'Maus Präzisionstraining', 'FPS Tracking Aim', 'flüssige Mausbewegung', 'Mausbewegung üben'],
   openGraph: {
-    title: 'Maus-Tracing-Spiel – Pfad-Verfolgung & Feinmotorik-Test | SkillDrills',
-    description: 'Kostenloses Maus-Tracing-Spiel zur Schulung der Feinmotorik. Halte den Cursor auf der Spur, um Handruhe, Pfadtreue und Tracking-Stabilität zu testen.',
+    title: 'Maus-Tracking-Test | Pfad folgen | SkillDrills',
+    description: 'Folge einer bewegten Welle mit dem Cursor und trainiere Spurtreue, flüssige Mausbewegung und Feinmotorik. Kostenlos im Browser.',
     type: 'article',
     url: 'https://skilldrills.online/de/drills/motor/precision-control/tracing',
     siteName: 'SkillDrills',
@@ -19,8 +19,8 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Maus-Tracing-Spiel – Pfad-Verfolgung & Feinmotorik-Test | SkillDrills',
-    description: 'Kostenloses Maus-Tracing-Spiel zur Schulung der Feinmotorik. Halte den Cursor auf der Spur, um Handruhe, Pfadtreue und Tracking-Stabilität zu testen.',
+    title: 'Maus-Tracking-Test | Pfad folgen | SkillDrills',
+    description: 'Folge einer bewegten Welle mit dem Cursor und trainiere Spurtreue, flüssige Mausbewegung und Feinmotorik. Kostenlos im Browser.',
   },
   robots: { index: true, follow: true },
   alternates: {
@@ -79,7 +79,7 @@ const softwareApplicationSchema = {
     "url": "https://skilldrills.online"
   },
   "inLanguage": "de-DE",
-  "dateModified": "2026-09-11"
+  "dateModified": "2026-09-20"
 };
 
 const webApplicationSchema = {
@@ -96,12 +96,13 @@ const webApplicationSchema = {
   },
   "url": "https://skilldrills.online/de/drills/motor/precision-control/tracing",
   "inLanguage": "de-DE",
-  "dateModified": "2026-09-11"
+  "dateModified": "2026-09-20"
 };
 
 const videoGameSchema = {
   "@context": "https://schema.org",
   "@type": "VideoGame",
+  "inLanguage": "de-DE",
   "name": "Maus-Tracing-Spiel – Dynamische Pfadverfolgung und Feinmotorik-Game",
   "url": "https://skilldrills.online/de/drills/motor/precision-control/tracing",
   "description": "Kostenloses Maus-Tracing-Spiel zur Schulung der Feinmotorik. Halte den Mauszeiger kontinuierlich auf der sich bewegenden Spur, um Handruhe, Pfadtreue und Tracking-Stabilität zu messen.",
@@ -119,12 +120,15 @@ const videoGameSchema = {
     "@type": "Offer",
     "price": "0",
     "priceCurrency": "EUR"
-  }
+  },
+  "dateModified": "2026-09-20"
 };
 
 const faqSchema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
+  "inLanguage": "de-DE",
+  "dateModified": "2026-09-20",
   "mainEntity": [
     {
       "@type": "Question",
@@ -212,6 +216,8 @@ const faqSchema = {
 const howToSchema = {
   "@context": "https://schema.org",
   "@type": "HowTo",
+  "inLanguage": "de-DE",
+  "dateModified": "2026-09-20",
   "name": "Maus-Tracing-Spiel – Pfad-Verfolgung & Feinmotorik-Präzisionstest",
   "description": "Kostenloses Maus-Tracing-Spiel zur Schulung der Feinmotorik. Halte den Mauszeiger kontinuierlich auf der sich bewegenden Spur, um Handruhe, Pfadtreue und Tracking-Stabilität zu messen.",
   "step": [
@@ -287,8 +293,8 @@ const guideProps = {
 };
 
 const deCopy = {
-  title: "Maus-Tracing-Spiel",
-  subtitle: "Kontinuierliches Roh-Tracking • 45s Timer",
+  title: "Maus-Tracking-Test",
+  subtitle: "Kontinuierliches Tracking • 45 s",
   startButtonText: "Training Starten",
   trainAgain: "Erneut Trainieren",
   shareTitle: "Ergebnis Teilen",

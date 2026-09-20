@@ -7,39 +7,34 @@ import { pickSources } from '@/lib/drillSources';
 
 // ============================================================
 // SEO RESEARCH FINDINGS — France & Francophonie (FR / FR-FR / FR-CA)
-// Primary Intent: test de temps de réaction, test de réflexe en ligne, temps de réaction souris
-// French Gaming & Athletic Context: Test de réflexe en millisecondes, chronométrie mentale pour CS2, Valorant et LoL
-// High-Demand, Low-Competition Target Keywords:
-//   - "test de temps de réaction" (Core French query for reaction time test)
-//   - "test de réflexe en ligne" (Online reflex test)
-//   - "temps de réaction souris" (Mouse reaction time)
-//   - "mesurer son temps de réaction" (Measure reaction time)
-//   - "test de réflexe souris gamer" (Gamer mouse reflex test)
-//   - "test réflexe millisecondes" (Millisecond reflex test)
-//   - "temps de réaction moyen humain" (Human average reaction time)
-//   - "test réflexe fps valorant" (Esports FPS reflex test)
+// LIVE RESEARCH (2026-09-20): Bing returned 0 exact / 18 broad for
+// "temps de réaction" and 0 for the longer tested variants. Google Suggest
+// surfaces test en ligne, souris, clavier, humain, and rapidité de réaction.
+// French SERPs use test de temps de réaction, test de réaction, and réflexes;
+// no French volume or #1 ranking is claimed.
 // ============================================================
 
 export const metadata = {
-  title: "Test Temps de Réaction – Mesure de Réflexe | SkillDrills",
-  description: "Test de temps de réaction en ligne gratuit : mesurez votre vitesse de réaction visuelle en millisecondes (ms) et comparez vos scores aux benchmarks.",
+  title: "Test de temps de réaction en ligne | SkillDrills",
+  description: "Test de temps de réaction gratuit : mesurez vos réflexes visuels en millisecondes, comparez la moyenne de plusieurs essais et observez votre régularité dans le navigateur.",
   keywords: [
     "test de temps de réaction",
-    "test de réflexe en ligne",
+    "test de réaction en ligne",
+    "temps de réaction",
+    "test de temps de réaction en ligne",
     "temps de réaction souris",
-    "mesurer son temps de réaction",
-    "test de réflexe souris gamer",
-    "test réflexe millisecondes",
-    "temps de réaction moyen humain",
-    "test réflexe fps valorant"
+    "test de réaction clavier",
+    "test de rapidité de réaction",
+    "temps de réponse",
+    "réflexes visuels"
   ],
   alternates: {
     canonical: 'https://skilldrills.online/fr/drills/reaction-speed/reaction-time-test',
     languages: getAlternateLanguages('/drills/reaction-speed/reaction-time-test'),
   },
   openGraph: {
-    title: "Test Temps de Réaction – Mesure de Réflexe | SkillDrills",
-    description: "Test de temps de réaction en ligne gratuit : mesurez votre vitesse de réaction visuelle en millisecondes (ms) et comparez vos scores aux benchmarks.",
+    title: "Test de temps de réaction en ligne | SkillDrills",
+    description: "Mesurez vos réflexes visuels en millisecondes, répétez plusieurs essais et comparez votre moyenne et votre régularité.",
     url: 'https://skilldrills.online/fr/drills/reaction-speed/reaction-time-test',
     siteName: 'SkillDrills',
     locale: 'fr_FR',
@@ -47,8 +42,8 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: "Test Temps de Réaction – Mesure de Réflexe | SkillDrills",
-    description: "Mesurez votre vitesse de réaction visuelle en millisecondes (ms) en ligne gratuitement. Évaluez vos réflexes sans latence logicielle.",
+    title: "Test de temps de réaction en ligne | SkillDrills",
+    description: "Mesurez votre vitesse de réaction visuelle en millisecondes en ligne gratuitement, avec des repères clairs sur la latence de l'appareil.",
   },
   robots: { index: true, follow: true },
 };
@@ -103,7 +98,7 @@ const softwareApplicationSchema = {
     "url": "https://skilldrills.online/fr"
   },
   "inLanguage": "fr",
-  "dateModified": "2026-09-12"
+  "dateModified": "2026-09-20"
 };
 
 const webApplicationSchema = {
@@ -120,7 +115,7 @@ const webApplicationSchema = {
   },
   "url": "https://skilldrills.online/fr/drills/reaction-speed/reaction-time-test",
   "inLanguage": "fr",
-  "dateModified": "2026-09-12"
+  "dateModified": "2026-09-20"
 };
 
 const videoGameSchema = {
@@ -268,6 +263,8 @@ const faqSchema = {
   ]
 };
 
+faqSchema.mainEntity = faqSchema.mainEntity.slice(0, 10);
+
 const howToSchema = {
   "@context": "https://schema.org",
   "@type": "HowTo",
@@ -382,8 +379,9 @@ export default function LocalizedReactionTimeTestPageFr() {
       />
       <ReactionTimeTestWrapper
         copy={{
-          title: "Test de Temps de Réaction & Réflexes en Ligne",
-          caption: "Chronométrie Mentale & Vitesse de Réaction Visuelle • Précision à la Milliseconde"
+          title: "Test de temps de réaction",
+          subtitle: "Mesurez vos réflexes visuels en millisecondes",
+          caption: "Cliquez dès que le signal apparaît pour mesurer votre temps de réaction visuelle.",
         }}
       />
       <DrillGuide {...reactionGuide} />

@@ -5,25 +5,25 @@ import RelatedDrills from '@/components/drill/RelatedDrills';
 import { pickSources } from '@/lib/drillSources';
 
 export const metadata = {
-  title: "Augentraining: Dynamische Sehschärfe Test | SkillDrills",
-  description: "Kostenloses Augentraining online: Fange beschleunigte, abprallende Ziele mit prädiktiver Blickverfolgung ab. Messe dynamische Sehschärfe kostenlos.",
+  title: "Zielverfolgung | Auge-Hand-Koordination | SkillDrills",
+  description: "Kostenloses Training für Zielverfolgung und Auge-Hand-Koordination: Fange bewegte Ziele ab und übe Blickfolge und Timing. Kein Diagnosetest.",
   keywords: [
-    "Augentraining Online",
-    "Visuelle Reaktionszeit Test",
-    "Dynamische Sehschärfe Test",
-    "Maus Tracking Test",
-    "Auge Hand Koordination",
-    "bewegliches ziel abfangen",
-    "smooth pursuit augenbewegung",
-    "kinetisches zieltracking",
-    "vorhaltemaß ballistik test",
-    "reaktionsspiel zielverfolgung",
-    "blickfolge test",
-    "e-sport aim tracking"
+    "Zielverfolgung",
+    "Auge-Hand-Koordination",
+    "Auge-Hand-Koordination Test",
+    "bewegtes Ziel",
+    "bewegte Ziele verfolgen",
+    "kinetisches Zieltracking",
+    "Blickfolge",
+    "Reaktionstest Zielverfolgung",
+    "dynamische Sehschärfe",
+    "Ziel abfangen",
+    "visuelles Tracking",
+    "E-Sport Aim Tracking"
   ],
   openGraph: {
-    title: "Augentraining: Dynamische Sehschärfe Test | SkillDrills",
-    description: "Trainiere dynamische Sehschärfe, prädiktive Trajektorienberechnung und Smooth-Pursuit-Augenbewegungen online.",
+    title: "Zielverfolgung | Auge-Hand-Koordination | SkillDrills",
+    description: "Trainiere Zielverfolgung, Blickfolge und Auge-Hand-Koordination mit bewegten Zielen. Kostenlos im Browser und kein Diagnosetest.",
     type: 'article',
     url: 'https://skilldrills.online/de/drills/visual/tracking-accuracy/moving-target',
     siteName: 'SkillDrills',
@@ -31,8 +31,8 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: "Augentraining: Dynamische Sehschärfe Test | SkillDrills",
-    description: "Kostenloses kinetisches Zieltracking-Training zur Steigerung von Blickfolge und Abfanggenauigkeit.",
+    title: "Zielverfolgung | Auge-Hand-Koordination | SkillDrills",
+    description: "Kostenloses Training für kinetisches Zieltracking, Blickfolge und präzises Abfangen bewegter Ziele.",
   },
   robots: { index: true, follow: true },
   alternates: {
@@ -68,7 +68,7 @@ const softwareApplicationSchema = {
     "Kontinuierlich ansteigende Fluggeschwindigkeit bei schrumpfender Zielgröße",
     "Lokale Speicherung der Leistungskennzahlen ohne externe Telemetrie"
   ],
-  "dateModified": "2026-09-05"
+  "dateModified": "2026-09-20"
 };
 
 const webAppSchema = {
@@ -77,7 +77,7 @@ const webAppSchema = {
   "name": "Kinetischer Zielinterzeptions-Test — Blicktracking Online | SkillDrills",
   "alternateName": "Moving Target Pro",
   "url": "https://skilldrills.online/de/drills/visual/tracking-accuracy/moving-target",
-  "dateModified": "2026-09-05",
+  "dateModified": "2026-09-20",
   "description": "Kostenloses Online-Augentraining: Fange beschleunigte, abprallende Zielkugeln mit prädiktivem Vorhaltemaß auf dem Canvas ab.",
   "applicationCategory": "EducationalApplication",
   "operatingSystem": "All",
@@ -105,7 +105,7 @@ const howToSchema = {
   "@context": "https://schema.org",
   "@type": "HowTo",
   "name": "So trainierst du mit dem Bewegten Ziel Abfang-Test",
-  "dateModified": "2026-09-05",
+  "dateModified": "2026-09-20",
   "description": "4-Schritte-Anleitung zur Optimierung von Blickfolge, Flugbahn-Antizipation und Treffsicherheit.",
   "step": [
     {
@@ -142,7 +142,7 @@ const howToSchema = {
 const faqSchema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
-  "dateModified": "2026-09-05",
+  "dateModified": "2026-09-20",
   "mainEntity": [
     {
       "@type": "Question",
@@ -228,7 +228,7 @@ const faqSchema = {
 };
 
 const movingTargetGuide = {
-  heading: "Wissenschaftliche Grundlagen der kinetischen Zielverfolgung & Trajektorien-Interzeption",
+  heading: "Zielverfolgung und Auge-Hand-Koordination trainieren",
   intro: [
     "Das präzise Abfangen dynamischer Ziele ist eine elementare senso-motorische Kernkompetenz in Ballsportarten, im Motorsport, in der Luftfahrt und im wettbewerbsorientierten E-Sport. Das erfolgreiche Treffen eines beschleunigten Objekts verlangt die lückenlose Synchronisation von stetigen Blickfolgebewegungen, prädiktiver Bahnextrapolation und feinstabgestimmtem Bewegungstiming.",
     "Die neuronale Verarbeitung visueller Bewegung beginnt in richtungsselektiven Neuronen des mittleren temporalen Areals (MT/V5) und des medialen superioren temporalen Areals (MST). Diese Zentren berechnen Geschwindigkeits- und Richtungsvektoren und leiten Steuersignale an das frontale Augenfeld (FEF) und die Purkinje-Zellen des Kleinhirns weiter, um den Blickgewinn aufrechtzuerhalten (Krauzlis, 2004).",
@@ -236,7 +236,7 @@ const movingTargetGuide = {
     "Untersuchungen von Land & McLeod (2000) im Hochleistungssport belegen, dass Spitzenathleten ein bewegtes Objekt nicht passiv verfolgen, sondern antizipatorische Blicksprünge zu künftigen Abprall- und Treffpunkten ausführen. Genau diese Fähigkeit schult dieser Drill unter Realzeit-Bedingungen."
   ],
   benchmarks: {
-    title: "Leistungsstufen der kinetischen Zielinterzeption (Wissenschaftliche Richtwerte)",
+    title: "Orientierungswerte für Zielverfolgung und Abfanggenauigkeit",
     headers: ["Leistungsband", "Pacing-Zeitfenster", "Punkte & Combo-Schwelle", "Visuelles Tracking- & Interzeptionsprofil"],
     rows: [
       ["Tier 1: Apex Kinetischer Interzeptor", "< 0.25s Zeitfenster", "16.000+ Pkt. | Combo 25x+", "Profi-Blickfolge; makellose Geschwindigkeits-Extrapolation ohne Sakkaden-Latenz. Typisch für Spitzen-Gamer und Kampfjetpiloten."],
@@ -248,7 +248,7 @@ const movingTargetGuide = {
     note: "Diese Richtwerte basieren auf Verfolgungspsychophysik und Interzeptionschronometrie (Rashbass, 1961; Krauzlis, 2004; Land & McLeod, 2000; Bahill et al., 1980; Woods et al., 2015). Ergebnisse skalieren mit Monitor-Bildwiederholrate und Maus-Abtastrate."
   },
   techniques: {
-    title: "Methoden zur Perfektionierung der Zielinterzeption",
+    title: "Bewegte Ziele verfolgen und das Abfang-Timing verbessern",
     items: [
       {
         name: "Prädiktives Vorhaltemaß (Rashbass-Geschwindigkeitsanpassung)",
@@ -301,7 +301,7 @@ export default function KineticInterceptPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(howToSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(videoGameSchema) }} />
-      <KineticInterceptClient copy={{ title: "Augentraining: Dynamische Sehschärfe Test" }} />
+      <KineticInterceptClient copy={{ title: "Zielverfolgung" }} />
       <DrillGuide guide={movingTargetGuide} />
       <div className="max-w-6xl mx-auto px-4 pb-12">
         <RelatedDrills currentCategory="visual" currentHref="https://skilldrills.online/de/drills/visual/tracking-accuracy/moving-target" />

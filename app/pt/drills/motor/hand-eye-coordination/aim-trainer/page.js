@@ -6,29 +6,22 @@ import RelatedDrills from '@/components/drill/RelatedDrills';
 import { pickSources } from '@/lib/drillSources';
 
 // ============================================================
-// SEO RESEARCH FINDINGS — pt-BR (motor / hand-eye-coordination / aim-trainer)
-// PRIMARY DOMESTIC: "aim trainer" — 370 exact / 1,044 broad Bing searches/mo (Top search in Brazil)
-//                   "treino de mira" — 273 exact / 393 broad searches/mo (Native Portuguese winner)
-//                   "teste de mira" — 151 exact / 151 broad searches/mo
-// SECONDARY / LSI:
-//                   "treinar mira" — 68 exact / 68 broad searches/mo
-//                   "treino de mira valorant" — High-intent gaming query
-//                   "precisão do mouse" — Motor assessment query
-// WINNER TITLE:     Treino de Mira Online – Aim Trainer Grátis & Teste de Precisão FPS | SkillDrills
+// Native research: treino de mira online, aim trainer grátis, teste de mira,
+// precisão do mouse, treino de mira FPS, treino de flick, aquecer a mira,
+// teste de reflexo, mira no Valorant e melhorar a mira no CS2.
 // ============================================================
 
 export const metadata = {
-  title: "Treino de Mira Online – Aim Trainer Grátis | SkillDrills",
-  description: "Treino de mira online grátis no navegador: Melhore a precisão do mouse, reflexos e micro-flicks com alvos dinâmicos baseados na Lei de Fitts.",
-  keywords: ['treino de mira online', 'aim trainer gratis', 'treino de mira fps', 'teste de precisao do mouse', 'treino de flick shot', 'lei de fitts treino de mira', 'aim trainer no navegador', 'aquecimento valorant mira', 'mira precisa mouse fps', 'teste de mira e reflexo', 'exercicio de mira no mouse', 'melhorar mira no cs2'],
+  title: "Treino de mira online | Aim Trainer grátis | SkillDrills",
+  description: "Treine mira no navegador e teste a precisão do mouse. Meça reflexos, aquisição de alvo e velocidade de clique para jogos FPS.",
+  keywords: ['treino de mira online', 'aim trainer grátis', 'teste de mira', 'precisão do mouse', 'treino de mira FPS', 'treino de flick', 'aquecer a mira', 'teste de reflexo', 'mira no Valorant', 'melhorar a mira no CS2'],
   alternates: {
     canonical: 'https://skilldrills.online/pt/drills/motor/hand-eye-coordination/aim-trainer',
     languages: getAlternateLanguages('/drills/motor/hand-eye-coordination/aim-trainer'),
   },
   openGraph: {
-    title: 'Treino de Mira Online – Aim Trainer Grátis & Teste de Precisão FPS | SkillDrills',
-    description:
-      'Treino de mira online e teste de reflexos FPS grátis. Acerte alvos móveis dinâmicos e refine sua precisão de mouse no navegador.',
+    title: 'Treino de mira online | Aim Trainer grátis | SkillDrills',
+    description: 'Treino de mira e teste de reflexos FPS grátis. Acerte alvos móveis e refine a precisão do mouse.',
     url: 'https://skilldrills.online/pt/drills/motor/hand-eye-coordination/aim-trainer',
     siteName: 'SkillDrills',
     locale: 'pt_BR',
@@ -36,9 +29,8 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Treino de Mira Online – Aim Trainer Grátis & Teste de Precisão FPS | SkillDrills',
-    description:
-      'Treino de mira para jogos FPS no navegador. Aprimore micro-flicks e mira rápida com alvos em movimento.',
+    title: 'Treino de mira online | Aim Trainer grátis | SkillDrills',
+    description: 'Treino de mira FPS no navegador para aprimorar micro-flicks, reflexos e precisão.',
   },
   robots: { index: true, follow: true },
 };
@@ -60,6 +52,7 @@ const breadcrumbSchema = {
 const softwareApplicationSchema = {
   '@context': 'https://schema.org',
   '@type': 'SoftwareApplication',
+  inLanguage: 'pt-BR',
   name: 'Treino de Mira Online – Aim Trainer Grátis FPS',
   alternateName: ['Treino de Mira', 'Aim Trainer', 'Teste de Mira', 'Aim Trainer Online'],
   applicationCategory: 'HealthApplication',
@@ -74,6 +67,7 @@ const softwareApplicationSchema = {
 const webAppSchema = {
   '@context': 'https://schema.org',
   '@type': 'WebApplication',
+  inLanguage: 'pt-BR',
   name: 'Treino de Mira Online — Aim Trainer Grátis FPS | SkillDrills',
   url: 'https://skilldrills.online/pt/drills/motor/hand-eye-coordination/aim-trainer',
   description:
@@ -92,10 +86,11 @@ const webAppSchema = {
 const videoGameSchema = {
   "@context": "https://schema.org",
   "@type": "VideoGame",
+  "inLanguage": "pt-BR",
   "name": "Treino de Mira Online (Aim Trainer)",
   "url": "https://skilldrills.online/pt/drills/motor/hand-eye-coordination/aim-trainer",
-  "description": "Free online browser-based 2D aim trainer for FPS gamers. Practice target acquisition, mouse accuracy, and click timing.",
-  "dateModified": "2026-09-11",
+  "description": "Aim trainer 2D gratuito no navegador para jogos FPS: treine aquisição de alvo, precisão do mouse e velocidade de clique.",
+  "dateModified": "2026-09-20",
   "gamePlatform": "Web Browser",
   "genre": ["Aim Trainer", "FPS Training", "Hand-Eye Coordination", "Reaction Speed"],
   "playMode": "SinglePlayer",
@@ -107,6 +102,7 @@ const videoGameSchema = {
 const howToSchema = {
   '@context': 'https://schema.org',
   '@type': 'HowTo',
+  inLanguage: 'pt-BR',
   name: 'Como treinar mira e reflexos no navegador',
   description: 'Passo a passo para melhorar a mira e a velocidade de reação com o simulador da SkillDrills.',
   step: [
@@ -148,7 +144,8 @@ const howToSchema = {
 const faqSchema = {
   '@context': 'https://schema.org',
   '@type': 'FAQPage',
-  dateModified: '2026-09-11',
+  inLanguage: 'pt-BR',
+  dateModified: '2026-09-20',
   mainEntity: [
     {
       '@type': 'Question',
@@ -251,7 +248,7 @@ export default function AimTrainerPortuguesePage() {
       <AimTrainerClient
         copy={{
           title: 'Treino de Mira Online (Aim Trainer)',
-          subtitle: 'Alvos Móveis Dinâmicos & Precisão de Clique • Progressão Contínua de Nível',
+          subtitle: 'Alvos móveis • Precisão do mouse • Treino de flick',
           caption: 'Mire e acerte os alvos em movimento o mais rápido e preciso possível antes que desapareçam. Baseado na Lei de Fitts.',
           startButtonText: 'INICIAR TREINO',
           playAgainText: 'Jogar Novamente',

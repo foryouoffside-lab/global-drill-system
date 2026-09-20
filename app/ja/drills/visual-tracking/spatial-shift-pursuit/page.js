@@ -1,5 +1,6 @@
 import SpatialShiftPursuitClient from '@/app/drills/visual-tracking/spatial-shift-pursuit/SpatialShiftPursuitClientLoader';
 import DrillGuide from '@/components/drill/DrillGuide';
+import DrillFooter from '@/components/drill/DrillFooter';
 import RelatedDrills from '@/components/drill/RelatedDrills';
 import { getAlternateLanguages } from '@/lib/i18n/locales';
 import { pickSources } from '@/lib/drillSources';
@@ -14,25 +15,25 @@ import { pickSources } from '@/lib/drillSources';
 // ============================================================
 
 export const metadata = {
-  title: "空間シフト追従トレーニング・視野座標系適応 – 視界ブレ抑制 | SkillDrills",
-  description: "空間参照系（リファレンスフレーム）が突発的に回転・シフトする過酷な視覚環境で、ターゲットをロストせずに追従し続ける無料アイトラッキング練習。後頭頂皮質の座標変換能と視覚適応力を強化。登録不要。",
+  title: "視界ブレ追従トレーニング｜空間認知ドリル | SkillDrills",
+  description: "画面や視野が動く中で標的を追う無料ブラウザ練習。空間認知、再捕捉までの時間、位置ずれを記録。",
   keywords: [
     "視界ブレ エイム 練習",
     "空間シフト 追従",
-    "空間認知 動体視力 トレーニング",
-    "座標系 再編 視線",
+    "動体視力トレーニング",
+    "動体視力テスト",
+    "深視力 トレーニング",
+    "ビジョン トレーニング",
+    "空間認知 視線",
+    "視野ズレ 練習",
     "カメラ移動 エイム 安定化",
-    "頭頂葉 空間リマッピング",
-    "リファレンスフレーム 変換",
-    "網膜座標系 頭部中心座標系",
-    "急激な視野ズレ 克服",
-    "弾道的サッケード 再捕捉",
-    "後頭頂皮質 視覚適応",
-    "空間座標リマッピング 練習"
+    "視線 再捕捉 練習",
+    "画面揺れ 標的追従",
+    "動く画面 追視"
   ],
   openGraph: {
-    title: "空間シフト追従トレーニング・視野座標系適応 – 視界ブレ抑制 | SkillDrills",
-    description: "空間参照系が急変する動的環境でターゲットを再捕捉し続ける無料オンライン視覚適応力トレーニング。",
+    title: "視界ブレ追従トレーニング｜空間認知ドリル | SkillDrills",
+    description: "画面や視野が動く中で標的を追う無料ブラウザ練習。空間認知、再捕捉までの時間、位置ずれを記録。",
     type: "website",
     url: "https://skilldrills.online/ja/drills/visual-tracking/spatial-shift-pursuit",
     siteName: "SkillDrills",
@@ -40,8 +41,8 @@ export const metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "空間シフト追従トレーニング・視野座標系適応 – 視界ブレ抑制 | SkillDrills",
-    description: "視野ズレ・カメラ回転・爆風エフェクト下でも標的を中心窩で捉え続けるための適応的アイトラッキング練習。",
+    title: "視界ブレ追従トレーニング｜空間認知ドリル | SkillDrills",
+    description: "画面や視野が動く中で標的を追う無料ブラウザ練習。空間認知、再捕捉までの時間、位置ずれを記録。",
   },
   robots: { index: true, follow: true },
   alternates: {
@@ -72,32 +73,33 @@ const softwareApplicationSchema = {
   "url": "https://skilldrills.online/ja/drills/visual-tracking/spatial-shift-pursuit",
   "publisher": { "@type": "Organization", "name": "SkillDrills", "url": "https://skilldrills.online/ja" },
   "inLanguage": "ja",
-  "dateModified": "2026-09-15"
+  "dateModified": "2026-09-20"
 };
 
 const webAppSchema = {
   "@context": "https://schema.org",
   "@type": "WebApplication",
-  "name": "空間シフトパシュートトラッカー (SkillDrills Spatial Shift Pursuit)",
+  "name": "視界ブレ追従トラッカー",
   "applicationCategory": "EducationalApplication",
   "operatingSystem": "All",
   "browserRequirements": "HTML5 Canvas対応ブラウザ（Chrome, Edge, Firefox, Safari）",
   "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
   "url": "https://skilldrills.online/ja/drills/visual-tracking/spatial-shift-pursuit",
   "inLanguage": "ja",
-  "dateModified": "2026-09-15"
+  "dateModified": "2026-09-20"
 };
 
 const videoGameSchema = {
   "@context": "https://schema.org",
   "@type": "VideoGame",
-  "name": "空間シフト追従エイムトレーニング (Spatial Shift Pursuit)",
+  "name": "視界ブレ追従エイムトレーニング",
   "url": "https://skilldrills.online/ja/drills/visual-tracking/spatial-shift-pursuit",
   "description": "画面揺れや激しい視点移動の中でも標的をロストせず、弾道サッケードと即座のスムーズ追従を結合させるFPS向け適応型エイムゲーム。",
-  "genre": ["Aim Trainer", "Eye Tracking", "Vision Training", "Esports Drill"],
+  "genre": ["エイム練習", "視線追従", "ビジョントレーニング", "視覚ドリル"],
   "gamePlatform": ["Web Browser", "Desktop", "Mobile"],
   "applicationCategory": "Game",
-  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+  "dateModified": "2026-09-20"
 };
 
 const howToSchema = {
@@ -130,7 +132,8 @@ const howToSchema = {
       "name": "新座標系でのスムーズパシュート即時再開",
       "text": "着地と同時に新座標系における標的の速度ベクトルと眼球速度を同期させ、追従利得1.0をミリ秒単位で再確立します。"
     }
-  ]
+  ],
+  "dateModified": "2026-09-20"
 };
 
 const faqSchema = {
@@ -217,7 +220,8 @@ const faqSchema = {
         "text": "はい。後頭頂皮質と前頭眼野のシナプス可塑性（Plasticity）により、繰り返しの訓練で座標変換に必要な神経計算ステップが自動化され、どんなに視界が激しく揺れても標的を瞬時に中心窩へ吸着できるようになります。"
       }
     }
-  ]
+  ],
+  "dateModified": "2026-09-20"
 };
 
 const guideProps = {
@@ -279,12 +283,12 @@ const guideProps = {
   })),
   sources: pickSources('krauzlis2004', 'findlay1999', 'robinson1965', 'rashbass1961', 'kahlon1996', 'woods2015'),
   related: [
-    { href: "/ja/drills/visual-tracking/constant-slow-pursuit", label: "低速追従眼球運動トレーニング (Constant Slow)" },
-    { href: "/ja/drills/visual-tracking/directional-chaos-pursuit", label: "カオス方向追従テスト (Directional Chaos)" },
-    { href: "/ja/drills/visual-tracking/dynamic-evasion-pursuit", label: "リアクティブ追従訓練 (Dynamic Evasion)" },
-    { href: "/ja/drills/visual-tracking/ghosting-suppress-pursuit", label: "残像抑制固視トレーニング (Ghosting Suppress)" },
-    { href: "/ja/drills/visual-tracking/infinity-pursuit", label: "8の字眼球運動トレーニング (Infinity)" },
-    { href: "/ja/drills/visual-tracking/predictive-pursuit", label: "遮蔽軌道予測テスト (Predictive Pursuit)" }
+    { href: "/ja/drills/visual-tracking/constant-slow-pursuit", label: "低速追従眼球運動トレーニング" },
+    { href: "/ja/drills/visual-tracking/directional-chaos-pursuit", label: "方向変化の追従テスト" },
+    { href: "/ja/drills/visual-tracking/dynamic-evasion-pursuit", label: "回避標的の追従訓練" },
+    { href: "/ja/drills/visual-tracking/ghosting-suppress-pursuit", label: "残像抑制固視トレーニング" },
+    { href: "/ja/drills/visual-tracking/infinity-pursuit", label: "8の字眼球運動トレーニング" },
+    { href: "/ja/drills/visual-tracking/predictive-pursuit", label: "遮蔽軌道予測テスト" }
   ]
 };
 
@@ -318,9 +322,9 @@ export default function JapaneseSpatialShiftPursuitPage() {
 
       <SpatialShiftPursuitClient
         copy={{
-          title: "空間シフト追従トレーニング・視野座標系適応テスト：視界ブレ抑制と空間リマッピング",
-          subtitle: "空間参照枠の急激な変位・回転に後頭頂皮質を同期させる適応型スムーズパシュート",
-          description: "空間参照系（リファレンスフレーム）が突発的に回転・シフトする動的視覚環境で、ターゲットをロストせずに追従し続ける無料アイトラッキング練習。網膜座標系から空間座標系への超高速リマッピングを駆動し、FPSの画面揺れや激しい視点移動下でのエイム安定性を極限まで高めます。登録不要・ブラウザで即座に測定可能。"
+          title: "視界ブレ追従トレーニング",
+          subtitle: "動く画面で標的を追う空間認知ドリル",
+          description: "画面や視野が動く中で標的を追い、再捕捉までの時間と位置ずれを記録する無料ブラウザ練習です。"
         }}
       />
 
@@ -329,6 +333,8 @@ export default function JapaneseSpatialShiftPursuitPage() {
       <div className="max-w-6xl mx-auto px-4 pb-12">
         <RelatedDrills currentCategory="visual-tracking" currentHref="https://skilldrills.online/ja/drills/visual-tracking/spatial-shift-pursuit" />
       </div>
+
+      <DrillFooter />
     </>
   );
 }

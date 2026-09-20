@@ -1,5 +1,6 @@
 import MomentumTeleportPursuitClient from '@/app/drills/visual-tracking/momentum-teleport-pursuit/MomentumTeleportPursuitClientLoader';
 import DrillGuide from '@/components/drill/DrillGuide';
+import DrillFooter from '@/components/drill/DrillFooter';
 import RelatedDrills from '@/components/drill/RelatedDrills';
 import { getAlternateLanguages } from '@/lib/i18n/locales';
 import { pickSources } from '@/lib/drillSources';
@@ -14,25 +15,25 @@ import { pickSources } from '@/lib/drillSources';
 // ============================================================
 
 export const metadata = {
-  title: "Rastreamento de Alvo Teleportado – Momentum | SkillDrills",
-  description: "Treine rastreamento visual de alvos teleportados com inercia: desenvolva sacadas rapidas de reaquisição e reconexao de busca suave gratis no navegador.",
+  title: "Rastreamento de Alvo Teleportado | SkillDrills",
+  description: "Pratique rastreamento ocular, reacquisição visual e sacadas rápidas quando um alvo muda de posição e mantém seu movimento.",
   keywords: [
-    "rastreamento de alvo teleportado",
-    "treino de mira alvos teleportados",
-    "reaquisição sacádica treino",
-    "rastreamento visual com inércia",
-    "exercício ocular de sacadas rápidas",
-    "movimento sacádico ocular",
-    "perseguição visual suave",
-    "recuperação foveal rápida",
-    "mira reflexa para fps",
-    "visão dinâmica mira rápida",
-    "estabilidade ocular em saltos",
-    "antecipação motora ocular"
+    "alvo teleportado rastreamento ocular",
+    "sacadas rastreamento ocular",
+    "reaquisição visual",
+    "movimento sacádico",
+    "fixação visual",
+    "seguimento ocular",
+    "treino de visão dinâmica",
+    "alvo móvel mudança súbita",
+    "exercício oculomotor online",
+    "treino de mira com alvo móvel",
+    "recaptura visual rápida",
+    "perseguição ocular contínua"
   ],
   openGraph: {
-    title: "Rastreamento de Alvo Teleportado – Momentum | SkillDrills",
-    description: "Treine rastreamento visual de alvos teleportados com inercia: desenvolva sacadas rapidas de reaquisição e reconexao de busca suave gratis no navegador.",
+    title: "Rastreamento de Alvo Teleportado | SkillDrills",
+    description: "Pratique rastreamento ocular, reacquisição visual e sacadas rápidas quando um alvo muda de posição e mantém seu movimento.",
     type: "website",
     url: "https://skilldrills.online/pt/drills/visual-tracking/momentum-teleport-pursuit",
     siteName: "SkillDrills",
@@ -40,8 +41,8 @@ export const metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Rastreamento de Alvo Teleportado – Momentum | SkillDrills",
-    description: "Treine rastreamento visual de alvos teleportados com inercia: desenvolva sacadas rapidas de reaquisição e reconexao de busca suave gratis no navegador.",
+    title: "Rastreamento de Alvo Teleportado | SkillDrills",
+    description: "Pratique reacquisição visual e sacadas rápidas quando um alvo muda de posição e mantém seu movimento.",
   },
   robots: { index: true, follow: true },
   alternates: {
@@ -57,7 +58,7 @@ const breadcrumbSchema = {
     { "@type": "ListItem", "position": 1, "name": "Início", "item": "https://skilldrills.online/pt" },
     { "@type": "ListItem", "position": 2, "name": "Treinos", "item": "https://skilldrills.online/pt/drills" },
     { "@type": "ListItem", "position": 3, "name": "Rastreamento Visual", "item": "https://skilldrills.online/pt/drills/visual-tracking" },
-    { "@type": "ListItem", "position": 4, "name": "Rastreamento de Alvo Teleportado – Momentum", "item": "https://skilldrills.online/pt/drills/visual-tracking/momentum-teleport-pursuit" }
+    { "@type": "ListItem", "position": 4, "name": "Rastreamento de Alvo Teleportado", "item": "https://skilldrills.online/pt/drills/visual-tracking/momentum-teleport-pursuit" }
   ]
 };
 
@@ -65,6 +66,7 @@ const softwareApplicationSchema = {
   "@context": "https://schema.org",
   "@type": "SoftwareApplication",
   "name": "Treino de Rastreamento de Alvo Teleportado com Inércia",
+  "dateModified": "2026-09-20",
   "operatingSystem": "Navegador Web",
   "applicationCategory": "HealthApplication",
   "offers": {
@@ -79,9 +81,10 @@ const webAppSchema = {
   "@context": "https://schema.org",
   "@type": "WebApplication",
   "name": "Aplicativo de Rastreamento de Alvos Teleportados",
+  "dateModified": "2026-09-20",
   "url": "https://skilldrills.online/pt/drills/visual-tracking/momentum-teleport-pursuit",
   "applicationCategory": "SportsApplication",
-  "operatingSystem": "Todos os navegadores modernos",
+  "operatingSystem": "Navegador",
   "browserRequirements": "Requer suporte a JavaScript e HTML5 Canvas"
 };
 
@@ -89,15 +92,17 @@ const videoGameSchema = {
   "@context": "https://schema.org",
   "@type": "VideoGame",
   "name": "Rastreamento de Alvo Teleportado com Inércia",
+  "dateModified": "2026-09-20",
   "description": "Exercício de precisão visual onde alvos móveis saltam subitamente pelo espaço preservando seus vetores de aceleração e direção.",
   "genre": ["Treino de Mira", "Avaliação Oculomotora", "Treino de Reflexos"],
-  "playMode": "SinglePlayer",
-  "gamePlatform": "Navegador Web"
+  "playMode": "Um jogador",
+  "gamePlatform": "Navegador"
 };
 
 const howToSchema = {
   "@context": "https://schema.org",
   "@type": "HowTo",
+  "dateModified": "2026-09-20",
   "name": "Como Treinar a Reaquisição Sacádica com Alvos Teleportados",
   "description": "Protocolo neurofisiológico passo a passo para recapturar alvos com saltos espaciais preservando velocidade e continuidade visual.",
   "step": [
@@ -131,6 +136,7 @@ const howToSchema = {
 const faqSchema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
+  "dateModified": "2026-09-20",
   "mainEntity": [
     {
       "@type": "Question",
@@ -153,7 +159,7 @@ const faqSchema = {
       "name": "Como este exercício melhora o desempenho em jogos de tiro (FPS)?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Em jogos como Valorant, Overwatch e Apex Legends, oponentes utilizam dashes e teletransportes. Treinar a reaquisição instantânea elimina o tempo de hesitação visual ao reenquadrar a mira."
+        "text": "Em jogos como Valorant, Overwatch e Apex Legends, oponentes usam deslocamentos bruscos e teletransportes. Treinar a reaquisição imediata reduz a hesitação visual ao reenquadrar a mira."
       }
     },
     {
@@ -185,7 +191,7 @@ const faqSchema = {
       "name": "O que é erro de aterrissagem sacádica (dysmetria)?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "É quando a sacada primária atinge um ponto antes ou além do alvo, exigindo uma micro-sacada corretiva. O treino repetitivo afina a calibração cerebelar e reduz essa margem de erro a zero."
+        "text": "É quando o primeiro movimento do olhar chega antes ou depois do alvo e precisa de uma correção. A página registra esse desvio para comparação entre sessões; não promete eliminar o erro nem diagnosticar dismetria."
       }
     },
     {
@@ -209,7 +215,7 @@ const faqSchema = {
       "name": "Como o treino frequente estimula a neuroplasticidade ocular?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "A combinação frequente de sacadas e perseguição estimula o flóculo cerebelar e os circuitos fronto-estriatais, aprimorando a acuidade visual dinâmica e a velocidade de reação (Bahill et al., 1980)."
+        "text": "A repetição pode ajudar a familiarizar você com a tarefa, mas esta página não mede neuroplasticidade nem comprova melhora de acuidade ou velocidade de reação. Compare sessões nas mesmas condições e pare se houver desconforto."
       }
     }
   ]
@@ -218,18 +224,18 @@ const faqSchema = {
 const guideProps = {
   heading: "Diretrizes Neurofisiológicas de Rastreamento com Inércia e Teletransporte",
   intro: [
-    "Em ambientes dinâmicos e competitivos, alvos visuais frequentemente sofrem deslocamentos repentinos, desvios e oclusões espaciais. Essas descontinuidades exigem que o sistema visual humano coordene com perfeição dois subsistemas motores distintos: as sacadas balísticas para reencontrar a posição espacial do alvo e a perseguição suave contínua para acompanhar seu vetor de velocidade (Rashbass, 1961; Findlay & Walker, 1999).",
-    "O exercício de Rastreamento de Alvo Teleportado isola especificamente esse mecanismo neuromuscular. O alvo salta instantaneamente para uma nova coordenada da tela preservando sua velocidade e ângulo direcional. Para obter excelência, os circuitos oculomotores devem disparar uma sacada de correção milimétrica e restabelecer imediatamente a velocidade de perseguição no ponto de aterrissagem sem atraso (Bahill et al., 1980; Barnes, 2008).",
-    "Fatores de latência de exibição e amostragem de entrada (1000Hz vs 125Hz) influenciam a precisão percebida, conforme demonstrado por Woods et al. (2015). Todo o processamento métrico ocorre localmente em seu navegador com privacidade total."
+    "Quando um alvo muda de posição de forma repentina, o olhar precisa encontrá-lo novamente e depois acompanhar seu movimento. A sacada é o salto rápido entre pontos de fixação; a perseguição ocular é o movimento contínuo que acompanha um alvo. O exercício pratica a transição entre os dois, sem ser um exame clínico.",
+    "O alvo desta tarefa muda de coordenada e mantém uma indicação de movimento. Observe se você o reencontra diretamente ou faz pequenas correções antes de retomar o acompanhamento. Esse resultado depende da tela, da distância, da velocidade e do estado de atenção.",
+    "A latência de exibição pode alterar o tempo percebido, por isso compare apenas sessões feitas no mesmo dispositivo e configuração. As métricas ficam no navegador; reduza a velocidade ou pare se surgirem dor, visão dupla, náusea ou tontura."
   ],
   benchmarks: {
     title: "Métricas de Reaquisição de Alvo e Sincronização de Inércia",
-    headers: ["Nível de Desempenho", "Latência de Reaquisição (Foveação)", "Erro de Aterrissagem (Overshoot)", "Sincronização de Inércia (Ganho)", "Perfil Neurofisiológico"],
+    headers: ["Nível", "Tempo para reencontrar o alvo", "Erro ao chegar", "Sincronização do movimento", "Leitura prática"],
     rows: [
-      ["Elite (Pro-Aiming & E-Sports)", "< 140 ms", "< 3% (bloqueio milimétrico)", "97%+", "Precisão balística impecável. Conexão imediata à perseguição suave sem hesitações ou busca oscilatória."],
+      ["Elite (Atletas e esportistas)", "< 140 ms", "< 3% (bloqueio milimétrico)", "97%+", "Precisão balística impecável. Conexão imediata à perseguição suave sem hesitações ou busca oscilatória."],
       ["Avançado (Nível Competitivo)", "140 – 180 ms", "3% – 6%", "91% – 96%", "Reaquisição espacial veloz. Micro-sacada corretiva mínima com alta fidelidade de vetor de velocidade."],
       ["Competente (Adulto Saudável)", "181 – 240 ms", "7% – 14%", "80% – 90%", "Padrão de referência saudável. Pequeno intervalo refratário após a sacada seguido de condução estável."],
-      ["Em Desenvolvimento", "241 – 320 ms", "15% – 24%", "68% – 79%", "Atraso perceptível na deflagração do salto ocular. Erros de overshoot frequentes exigindo múltiplas correções."],
+      ["Em Desenvolvimento", "241 – 320 ms", "15% – 24%", "68% – 79%", "Atraso perceptível na deflagração do salto ocular. Erros por excesso frequentes exigindo múltiplas correções."],
       ["Iniciante / Necessita Treino", "> 320 ms", "> 24%", "< 68%", "Dificuldade severa em saltos de grande amplitude. Presença de compensação cervical indesejada."]
     ],
     note: "※ Valores de referência obtidos em testes a 50–70 cm de distância com velocidades de 1,0x a 2,0x ao longo de 60 segundos. A latência de reaquisição afere o intervalo entre o teletransporte e o reenquadramento estável da fóvea."
@@ -273,12 +279,12 @@ const guideProps = {
   })),
   sources: pickSources('rashbass1961', 'bahill1980', 'findlay1999', 'krauzlis2004', 'barnes2008', 'woods2015'),
   related: [
-    { href: "/pt/drills/visual-tracking/constant-slow-pursuit", label: "Perseguição Ocular Suave Contínua (Constant Slow)" },
-    { href: "/pt/drills/visual-tracking/directional-chaos-pursuit", label: "Rastreamento com Caos Direcional (Directional Chaos)" },
-    { href: "/pt/drills/visual-tracking/dynamic-evasion-pursuit", label: "Perseguição Evasiva Reativa (Dynamic Evasion)" },
-    { href: "/pt/drills/visual-tracking/ghosting-suppress-pursuit", label: "Estabilidade de Fixação Ocular (Ghosting Suppress)" },
-    { href: "/pt/drills/visual-tracking/infinity-pursuit", label: "Treino Ocular em Oito Infinito (Infinity)" },
-    { href: "/pt/drills/visual-tracking/predictive-pursuit", label: "Rastreamento Ocular Preditivo (Predictive)" }
+    { href: "/pt/drills/visual-tracking/constant-slow-pursuit", label: "Perseguição ocular suave contínua" },
+    { href: "/pt/drills/visual-tracking/directional-chaos-pursuit", label: "Rastreamento com mudanças de direção" },
+    { href: "/pt/drills/visual-tracking/dynamic-evasion-pursuit", label: "Perseguição evasiva reativa" },
+    { href: "/pt/drills/visual-tracking/ghosting-suppress-pursuit", label: "Estabilidade da fixação ocular" },
+    { href: "/pt/drills/visual-tracking/infinity-pursuit", label: "Exercício ocular em oito" },
+    { href: "/pt/drills/visual-tracking/predictive-pursuit", label: "Rastreamento ocular preditivo" }
   ]
 };
 
@@ -294,9 +300,9 @@ export default function PortugueseMomentumTeleportPage() {
 
       <MomentumTeleportPursuitClient
         copy={{
-          title: "Treino de Rastreamento de Alvos Teleportados com Inércia",
-          subtitle: "Avaliação Oculomotora de Sacadas Balísticas e Reconexão de Perseguição Suave",
-          description: "Treino visual avançado para alvos que mantêm vetores de velocidade e se teleportam abruptamente na tela. Desenvolva a rápida alternância entre sacadas de alta velocidade e perseguição contínua sem desvios oscilatórios. Grátis no navegador."
+          title: "Rastreamento de Alvo Teleportado",
+          subtitle: "Reaquisição visual e seguimento do movimento",
+          description: "Encontre novamente um alvo que muda de posição e retome o acompanhamento do seu movimento. Compare tempo, precisão e conforto sem transformar o resultado em diagnóstico."
         }}
       />
 
@@ -305,6 +311,7 @@ export default function PortugueseMomentumTeleportPage() {
       <div className="max-w-6xl mx-auto px-4 pb-12">
         <RelatedDrills currentCategory="visual-tracking" currentHref="https://skilldrills.online/pt/drills/visual-tracking/momentum-teleport-pursuit" />
       </div>
+      <DrillFooter />
     </>
   );
 }

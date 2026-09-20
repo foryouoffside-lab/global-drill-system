@@ -20,6 +20,7 @@ import useUnexpectedExitGuard from '../../../../../lib/useUnexpectedExitGuard';
 import DrillFooter from '../../../../../components/drill/DrillFooter';
 import DrillCountdown from '../../../../../components/drill/DrillCountdown';
 import DrillAccordion from '../../../../../components/drill/DrillAccordion';
+import DrillRuleItem from '../../../../../components/drill/DrillRuleItem';
 import FpsStartCard from '../../../../../components/drill/FpsStartCard';
 import useImmersiveMode from '@/lib/useImmersiveMode';
 
@@ -576,7 +577,7 @@ export default function StabilityChallengeClient({ copy = {} } = {}) {
   return (
     <div className="min-h-screen bg-[#050508] text-white flex flex-col font-sans select-none">
       {/* ── MAIN CONTENT AREA ── */}
-      <main className="flex-1 max-w-6xl w-full mx-auto px-4 py-6 flex flex-col gap-6">
+      <main className="flex-1 max-w-6xl w-full mx-auto px-4 pt-6 pb-0 flex flex-col gap-6">
         {/* Title & Header */}
         {!isFullscreen && (
           <div className="flex flex-col gap-1">
@@ -588,9 +589,6 @@ export default function StabilityChallengeClient({ copy = {} } = {}) {
                 </span>
               )}
             </h1>
-            <p className="text-[13px] text-slate-400 leading-relaxed">
-              Holding something steady against a force that keeps pushing it off centre is a continuous correction task, never a finished one. Standing balance works the same way: quiet standing is not motionless but a constant loop of small corrections around a drifting centre of pressure (Winter, 1995), organised into a few stereotyped strategies rather than improvised each time (Nashner &amp; McCollum, 1985). Vision needs roughly 100&ndash;150 ms to influence a movement already under way (Woodworth, 1899), so the faster the disturbance, the more you have to anticipate instead of react. This drill runs that loop through a mouse cursor &mdash; it trains the correction habit, and does not measure physical balance.
-            </p>
           </div>
         )}
 
@@ -777,15 +775,13 @@ export default function StabilityChallengeClient({ copy = {} } = {}) {
             <DrillAccordion
               id="rules"
               title={copy?.rulesTitle || "Drill Instructions & Scoring System"}
+              singleLineTitle
               isOpen={openAccordion === 'rules'}
               onToggle={() => setOpenAccordion(openAccordion === 'rules' ? null : 'rules')}
             >
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-2.5 sm:gap-3 font-sans">
                 {(copy?.rulesItems || RULES_ITEMS).map((item, i) => (
-                  <div key={i} className="bg-black p-4 rounded-xl border border-white/10">
-                    <p className="text-sm font-bold text-white mb-1">{item.title}</p>
-                    <p className="text-xs text-gray-300 leading-relaxed">{item.text}</p>
-                  </div>
+                  <DrillRuleItem key={i} num={item.num || String(i + 1)} title={item.title} detail={item.text} />
                 ))}
               </div>
             </DrillAccordion>
@@ -793,6 +789,7 @@ export default function StabilityChallengeClient({ copy = {} } = {}) {
             <DrillAccordion
               id="about"
               title={copy?.aboutTitle || "About Stability Challenge"}
+              singleLineTitle
               isOpen={openAccordion === 'about'}
               onToggle={() => setOpenAccordion(openAccordion === 'about' ? null : 'about')}
             >
@@ -805,7 +802,7 @@ export default function StabilityChallengeClient({ copy = {} } = {}) {
                     {copy?.aboutIntro || "The Stability Challenge is a fine motor resistance tracking and postural equilibrium exercise. Dynamic wind force vectors continuously push your crosshair away from the center, requiring precise counter-directional mouse input to maintain central safe ring alignment."}
                   </p>
                   <p className="text-sm leading-relaxed text-gray-300">
-                    {copy?.aboutScience || "Grounded in Nashner & McCollum's (1985) postural synergy models and David A. Winter's (1995) perturbation balance principles, the drill forces your motor cortex to recruit closed-loop visual feedback corrections (Woodworth 1899). As your score rises, safe ring radii contract from 45px down to 20px while force magnitudes accelerate up to 850 strength units, testing high-frequency micro-adjustments and isometric stability under pressure."}
+                    {copy?.aboutScience || "Grounded in Nashner & McCollum's (1985) postural synergy models and David A. Winter's (1995) perturbation balance principles, the drill forces your motor cortex to recruit closed-loop visual feedback corrections (Woodworth 1899). As your score rises, safe ring radii contract from 45px down to 20px while force magnitudes accelerate up to 850 strength units, testing high-frequency micro-adjustments and isometric stability under pressure. Standing balance works the same way: quiet standing is not motionless but a constant loop of small corrections around a drifting centre of pressure (Winter, 1995), organised into a few stereotyped strategies rather than improvised each time (Nashner & McCollum, 1985). Vision needs roughly 100–150 ms to influence a movement already under way (Woodworth, 1899), so the faster the disturbance, the more you have to anticipate instead of react. This drill runs that loop through a mouse cursor — it trains the correction habit, and does not measure physical balance."}
                   </p>
                 </div>
 

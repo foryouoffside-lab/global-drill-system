@@ -6,21 +6,19 @@ import RelatedDrills from '@/components/drill/RelatedDrills';
 import DrillFooter from '@/components/drill/DrillFooter';
 
 export const metadata = {
-  title: "Entrenamiento de Giro 180° – Reflejos | SkillDrills",
-  description: "Entrena giros rápidos de 180 grados, detección periférica y reacción ante flancos en el navegador. Mejora tu puntería y control de alfombrilla en FPS.",
+  title: "Entrenamiento giro 180° | Puntería FPS | SkillDrills",
+  description: "Entrenamiento gratis de giro 180° en navegador: detecta objetivos con visión periférica, gira rápido y frena el ratón con precisión.",
   keywords: [
-    "entrenamiento de giro 180 fps",
+    "entrenamiento de giro 180 grados",
     "giro de 180 grados mira",
-    "giro brusco 180 grados valorant",
-    "como hacer giros de 180 en cs2",
-    "entrenar vision periferica fps",
-    "esquivar flashbang entrenamiento",
-    "aim trainer 180 grados",
-    "girar rapido en fps con el raton",
-    "reaccion a la espalda fps entrenamiento",
-    "control de espacio alfombrilla raton",
-    "entrenamiento de reaccion de flanco fps",
-    "tiro reactivo 180 grados pc"
+    "visión periférica FPS",
+    "puntería FPS",
+    "entrenamiento de puntería online",
+    "girar rápido en FPS con el ratón",
+    "reacción a flancos FPS",
+    "control de espacio alfombrilla ratón",
+    "entrenamiento de reflejos Valorant",
+    "aim trainer 180 grados"
   ],
   alternates: {
     canonical: "https://skilldrills.online/es/drills/fps/180-degree-awareness",
@@ -31,8 +29,8 @@ export const metadata = {
     follow: true,
   },
   openGraph: {
-    title: "Entrenamiento de Giro 180° – Reflejos | SkillDrills",
-    description: "Entrena giros rápidos de 180 grados, detección periférica y reacción ante flancos en el navegador. Mejora tu puntería y control de alfombrilla en FPS.",
+    title: "Entrenamiento giro 180° | Puntería FPS | SkillDrills",
+    description: "Detecta objetivos con visión periférica, gira 180° y frena el ratón con precisión en este entrenamiento FPS gratuito.",
     url: "https://skilldrills.online/es/drills/fps/180-degree-awareness",
     siteName: 'SkillDrills',
     locale: 'es_ES',
@@ -40,8 +38,8 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: "Entrenamiento de Giro 180° – Reflejos | SkillDrills",
-    description: "Entrena giros rápidos de 180 grados, detección periférica y reacción ante flancos en el navegador. Mejora tu puntería y control de alfombrilla en FPS.",
+    title: "Entrenamiento giro 180° | Puntería FPS | SkillDrills",
+    description: "Detecta objetivos con visión periférica, gira 180° y frena el ratón con precisión en este entrenamiento FPS gratuito.",
   },
 };
 
@@ -66,7 +64,7 @@ export default function AwarenessDrillEsPage() {
     "description": "Simulador interactivo de giros de 180 grados para FPS. Desarrolla velocidad de brazo, reflejos contra flancos y visión periférica.",
     "genre": "Entrenamiento FPS / Percepción Espacial",
     "url": "https://skilldrills.online/es/drills/fps/180-degree-awareness",
-    "dateModified": "2026-09-16",
+    "dateModified": "2026-09-20",
     "publisher": {
       "@type": "Organization",
       "name": "SkillDrills",
@@ -100,13 +98,13 @@ export default function AwarenessDrillEsPage() {
     "applicationCategory": "Game",
     "url": "https://skilldrills.online/es/drills/fps/180-degree-awareness",
     "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
-    "dateModified": "2026-09-16"
+    "dateModified": "2026-09-20"
   };
 
   const faqSchema = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
-    "dateModified": "2026-09-16",
+    "dateModified": "2026-09-20",
     "mainEntity": [
       {
         "@type": "Question",
@@ -225,9 +223,9 @@ export default function AwarenessDrillEsPage() {
   };
 
   const awarenessGuideEs = {
-    heading: "Guía de Giro 180° y Benchmarks Psicomotores de Orientación",
+    heading: "Guía de Entrenamiento de Giro 180° y Benchmarks Psicomotores",
     intro: [
-      "El giro de 180° es una tarea sensoriomotora multimodal que demanda una sincronización milimétrica entre detección visual periférica, sacadas oculares y biomecánica balística de las extremidades. En la neurobiología humana, los bastones de la retina periférica captan cambios intensos de luminancia y movimiento más allá de los 90° respecto a la línea visual, activando sacadas mediante el colículo superior (Rayner, 1998; Leigh & Zee, 2015).",
+      "El entrenamiento de giro 180° sigue una secuencia clara: detectar un objetivo en el borde con visión periférica, girar con el brazo y detener la mira sobre el blanco. Así se practica la respuesta a un flanco sin premiar un giro rápido que termine fuera del objetivo.",
       "La ejecución de un giro de 180° responde al modelo de impulso motor en dos fases (Elliott et al., 2010): un barrido balístico en bucle abierto ejecutado por hombro y codo que cubre entre el 80% y el 90% del arco de giro, seguido por el frenado muscular antagonista para evitar el sobreimpulso (Schmidt et al., 1979). Bajo la Ley de Fitts (Fitts, 1954), la gran amplitud angular eleva el índice de dificultad, por lo que el stopping power y el espacio en la alfombrilla son fundamentales.",
       "La medición cronométrica se efectúa con la función de alta resolución performance.now() mediante la API Pointer Lock de HTML5. Las diferencias menores a 5 ms corresponden a fluctuaciones normales de temporizadores y refresco de pantalla. Disponer de un ratón a 1000 Hz de sondeo y monitor de altos hercios minimiza la cuantización de entrada y refleja fielmente tu velocidad de reacción (Woods et al., 2015).",
       "Medición de rendimiento: cada movimiento y clic se procesa en tu propio ordenador con reloj de alta precisión. Mantener constantes el DPI, la sensibilidad y el espacio físico entre sesiones te permitirá asentar una memoria muscular sólida."
@@ -289,9 +287,9 @@ export default function AwarenessDrillEsPage() {
   };
 
   const copyEs = {
-    h1Keyword: "Entrenamiento de Giro 180°",
-    h1Suffix: " — Reflejos y Puntería FPS",
-    subtitle: "Entrena detección periférica de amenazas, flicks de gran ángulo y frenado muscular en giros de 180 grados.",
+    h1Keyword: "Entrenamiento de giro 180°",
+    h1Suffix: " — Puntería y Reflejos FPS",
+    subtitle: "Detecta amenazas con visión periférica, gira con amplitud y frena la mira sobre el objetivo.",
     statScore: "Puntos",
     statTime: "Tiempo",
     statAccuracy: "Precisión",
@@ -346,7 +344,7 @@ export default function AwarenessDrillEsPage() {
       <div className="max-w-4xl mx-auto px-4 pb-12">
         <RelatedDrills
           currentCategory="fps"
-          currentHref="/drills/fps/180-degree-awareness"
+          currentHref="/es/drills/fps/180-degree-awareness"
           locale="es"
         />
       </div>

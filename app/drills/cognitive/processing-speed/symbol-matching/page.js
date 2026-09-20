@@ -1,18 +1,19 @@
 import SymbolMatchingClient from './SymbolMatchingClientLoader';
 import { getAlternateLanguages } from '@/lib/i18n/locales';
 import DrillGuide from '@/components/drill/DrillGuide';
+import DrillFooter from '@/components/drill/DrillFooter';
 import { pickSources } from '@/lib/drillSources';
 
 export const metadata = {
-  title: "Symbol Digit Modalities Test – SDMT Online | SkillDrills",
-  description: "Free Symbol Digit Modalities Test (SDMT) online: Evaluate cognitive processing speed, visual scanning efficiency, and working associative memory.",
-  keywords: ["symbol matching test", "symbol digit modalities test", "sdmt test online", "digit symbol substitution test", "dsst test online", "processing speed test", "cognitive processing speed", "visual scanning test", "associative memory test",
+  title: "Symbol Matching Test Online | SDMT-Style Processing Speed Drill | SkillDrills",
+  description: "Free symbol matching test online inspired by SDMT: practise visual scanning, symbol-to-digit lookup, and processing speed in your browser. Non-clinical.",
+  keywords: ["symbol matching test online", "symbol matching test", "symbol digit modalities test", "sdmt test online", "digit symbol substitution test", "dsst test online", "processing speed test", "cognitive processing speed", "visual scanning test", "associative memory test",
     "sdmt cognitive assessment",
     "symbol matching speed game",
     "free neuropsychological test online"],
   openGraph: {
-    title: "Symbol Digit Modalities Test – SDMT Online | SkillDrills",
-    description: "Free Symbol Digit Modalities Test (SDMT) online: Evaluate cognitive processing speed, visual scanning efficiency, and working associative memory.",
+    title: "Symbol Matching Test Online | SDMT-Style Processing Speed Drill | SkillDrills",
+    description: "Free symbol matching test online inspired by SDMT: practise visual scanning, symbol-to-digit lookup, and processing speed in your browser. Non-clinical.",
     type: 'article',
     url: 'https://skilldrills.online/drills/cognitive/processing-speed/symbol-matching',
     siteName: 'SkillDrills',
@@ -20,8 +21,8 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: "Symbol Digit Modalities Test – SDMT Online | SkillDrills",
-    description: "Free Symbol Digit Modalities Test (SDMT) online: Evaluate cognitive processing speed, visual scanning efficiency, and working associative memory.",
+    title: "Symbol Matching Test Online | SDMT-Style Processing Speed Drill | SkillDrills",
+    description: "Free symbol matching test online inspired by SDMT: practise visual scanning, symbol-to-digit lookup, and processing speed in your browser. Non-clinical.",
   },
   robots: { index: true, follow: true },
   alternates: {
@@ -80,7 +81,7 @@ const softwareApplicationSchema = {
     "url": "https://skilldrills.online"
   },
   "inLanguage": "en-US",
-  "dateModified": "2026-09-11"
+  "dateModified": "2026-09-20"
 };
 
 const webApplicationSchema = {
@@ -97,7 +98,7 @@ const webApplicationSchema = {
   },
   "url": "https://skilldrills.online/drills/cognitive/processing-speed/symbol-matching",
   "inLanguage": "en-US",
-  "dateModified": "2026-09-11"
+  "dateModified": "2026-09-20"
 };
 
 const videoGameSchema = {
@@ -117,6 +118,7 @@ const videoGameSchema = {
     "Mobile"
   ],
   "applicationCategory": "Game",
+  "dateModified": "2026-09-20",
   "offers": {
     "@type": "Offer",
     "price": "0",
@@ -315,8 +317,9 @@ export default function EnhancedPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(howToSchema) }}
       />
-      <SymbolMatchingClient copy={{ title: "Symbol Digit Modalities Test" }} />
+      <SymbolMatchingClient copy={{ title: "Symbol Matching Test", subtitle: "SDMT-style symbol matching for processing speed, visual scanning, and associative working memory" }} />
       <DrillGuide {...guideProps} />
+      <DrillFooter />
     </>
   );
 }

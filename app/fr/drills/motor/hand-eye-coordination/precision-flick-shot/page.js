@@ -6,25 +6,16 @@ import RelatedDrills from '@/components/drill/RelatedDrills';
 import { pickSources } from '@/lib/drillSources';
 
 export const metadata = {
-  title: 'Test de Flick Shot – Précision de Souris FPS | SkillDrills',
-  description: 'Test de flick shot et precision de souris gratuit: Evaluez la vitesse balistique, le freinage moteur et la precision plein centre pour CS2 et Valorant.',
+  title: 'Entraînement flick | Test de visée souris | SkillDrills',
+  description: 'Entraînez votre flick en ligne et mesurez la précision de votre souris, le temps d’acquisition et les tirs au centre pour les FPS.',
   keywords: [
-    'flick aim trainer',
-    'test de flick shot',
-    'test precision souris',
-    'entrainement flick shot fps',
-    'precision souris valorant',
-    'entrainement aim cs2',
-    'micro flick trainer',
-    'tir reflexe souris test',
-    'vitesse acquisition cible',
-    'precision curseur test en ligne',
-    'entrainement de visee souris',
-    'flick shot gratuit navigateur',
+    'entraînement à la visée', 'test précision souris', 'test de visée FPS', 'entraînement flick',
+    'précision souris', 'acquisition de cible', 'tir réflexe souris', 'micro-ajustement visée',
+    'aim trainer gratuit', 'entraînement CS2', 'entraînement Valorant', 'test de visée en ligne',
   ],
   openGraph: {
-    title: 'Test de Flick Shot – Précision de Souris FPS | SkillDrills',
-    description: 'Test de flick shot et precision de souris gratuit: Evaluez la vitesse balistique, le freinage moteur et la precision plein centre pour CS2 et Valorant.',
+    title: 'Entraînement flick | Test de visée souris | SkillDrills',
+    description: 'Entraînez votre flick en ligne et mesurez la précision de votre souris, le temps d’acquisition et les tirs au centre pour les FPS.',
     type: 'article',
     url: 'https://skilldrills.online/fr/drills/motor/hand-eye-coordination/precision-flick-shot',
     siteName: 'SkillDrills',
@@ -32,8 +23,8 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Test de Flick Shot – Précision de Souris FPS | SkillDrills',
-    description: 'Test de flick shot et precision de souris gratuit: Evaluez la vitesse balistique, le freinage moteur et la precision plein centre pour CS2 et Valorant.',
+    title: 'Entraînement flick | Test de visée souris | SkillDrills',
+    description: 'Entraînez votre flick en ligne et mesurez la précision de votre souris, le temps d’acquisition et les tirs au centre pour les FPS.',
   },
   robots: { index: true, follow: true },
   alternates: {
@@ -83,7 +74,8 @@ const softwareApplicationSchema = {
   description: 'Outil en ligne gratuit d entraînement au flick shot. Évaluez la vitesse de déplacement balistique, le freinage moteur et les tirs plein centre.',
   url: 'https://skilldrills.online/fr/drills/motor/hand-eye-coordination/precision-flick-shot',
   publisher: { '@type': 'Organization', name: 'SkillDrills', url: 'https://skilldrills.online' },
-  dateModified: '2026-09-16',
+  inLanguage: 'fr-FR',
+  dateModified: '2026-09-20',
 };
 
 const webApplicationSchema = {
@@ -93,7 +85,8 @@ const webApplicationSchema = {
   browserRequirements: 'Nécessite HTML5 Canvas et JavaScript activé',
   url: 'https://skilldrills.online/fr/drills/motor/hand-eye-coordination/precision-flick-shot',
   applicationCategory: 'EducationalApplication',
-  dateModified: '2026-09-16',
+  inLanguage: 'fr-FR',
+  dateModified: '2026-09-20',
 };
 
 const videoGameSchema = {
@@ -105,13 +98,15 @@ const videoGameSchema = {
   genre: ['Tir', 'Réflexes', 'Esport'],
   gamePlatform: ['Web Browser', 'Desktop'],
   applicationCategory: 'Game',
+  inLanguage: 'fr-FR',
   offers: { '@type': 'Offer', price: '0', priceCurrency: 'EUR' },
 };
 
 const faqSchema = {
   '@context': 'https://schema.org',
   '@type': 'FAQPage',
-  dateModified: '2026-09-16',
+  inLanguage: 'fr-FR',
+  dateModified: '2026-09-20',
   mainEntity: [
     {
       '@type': 'Question',
@@ -199,6 +194,7 @@ const faqSchema = {
 const howToSchema = {
   '@context': 'https://schema.org',
   '@type': 'HowTo',
+  inLanguage: 'fr-FR',
   name: 'Comment s entraîner aux flick shots et à la précision souris',
   description: 'Méthodologie progressive pour maîtriser les déplacements balistiques, les tirs plein centre et le freinage moteur.',
   step: [
@@ -329,7 +325,7 @@ const guideProps = {
 
 const copyFr = {
   title: "Flick Shot de Précision – Test de Visée et Précision Souris",
-  subtitle: "Déclin des Cibles & Micro-Flicks Plein Centre • Progression Infinie",
+  subtitle: "Précision du flick · tirs au centre",
   startButtonText: "DÉMARRER LE DRILL",
   playAgainText: "Rejouer",
   shareText: "Partager le score",

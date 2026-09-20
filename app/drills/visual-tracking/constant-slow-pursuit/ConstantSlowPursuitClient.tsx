@@ -4,7 +4,6 @@ import React, { useState, useEffect, useRef, useCallback } from 'react';
 import Link from 'next/link';
 import { Play, RefreshCw, Timer, Share2, LogOut, Check, Sun, Moon, Volume2, VolumeX, Target, Trophy, TrendingUp, Zap } from 'lucide-react';
 
-import DrillFooter from '../../../../components/drill/DrillFooter';
 import DrillCountdown from '../../../../components/drill/DrillCountdown';
 import DrillAccordion from '../../../../components/drill/DrillAccordion';
 import ZigZagPathPursuitStartCard from '../../../../components/drill/ZigZagPathPursuitStartCard';
@@ -14,6 +13,7 @@ import { generateSessionCard, shareScoreCard } from '../../../../components/Shar
 import { getPlayerName } from '../../../../lib/leaderboard';
 import useUnexpectedExitGuard from '../../../../lib/useUnexpectedExitGuard';
 import useImmersiveMode from '@/lib/useImmersiveMode';
+import { getConstantSlowPursuitUi } from '@/lib/i18n/drills/constantSlowPursuitNative';
 
 const STORAGE_KEY = 'skilldrills_visual_tracking_constant_slow_pursuit_v2';
 
@@ -50,7 +50,8 @@ const saveData = (data: { totalSessions: number }) => {
   } catch (e) {}
 };
 
-export default function ConstantSlowPursuitClient({ copy }: { copy?: { title?: string; subtitle?: string } } = {}) {
+export default function ConstantSlowPursuitClient({ copy }: { copy?: Record<string, any> } = {}) {
+  const ui = copy || getConstantSlowPursuitUi().constantSlowPursuit;
   const [gameState, setGameState] = useState<'start' | 'countdown' | 'playing' | 'gameOver'>('start');
   const [isFullscreen, setIsFullscreen] = useState<boolean>(false);
   useImmersiveMode(isFullscreen); // locks the page behind while the drill fills the screen
@@ -81,6 +82,7 @@ export default function ConstantSlowPursuitClient({ copy }: { copy?: { title?: s
   const animationRef = useRef<number | null>(null);
   const countdownTimeoutsRef = useRef<NodeJS.Timeout[]>([]);
   const timerIntervalRef = useRef<NodeJS.Timeout | null>(null);
+  const mousePosRef = useRef<{ x: number; y: number; active: boolean }>({ x: 0, y: 0, active: false });
 
   const trackingState = useRef({
     angle: 0,
@@ -144,29 +146,29 @@ export default function ConstantSlowPursuitClient({ copy }: { copy?: { title?: s
     const url = 'https://skilldrills.online/drills/visual-tracking/constant-slow-pursuit';
     try {
       const canvas = generateSessionCard({
-        drillName: 'Constant Slow Pursuit',
-        badgeText: 'Smooth Pursuit Calibrated',
+        drillName: ui.title,
+        badgeText: ui.calibrated,
         stats: [
-          { label: 'Session Time', value: `${selectedDuration}s` },
-          { label: 'Base Speed', value: `${speedMultiplier.toFixed(1)}x` },
-          { label: 'Math Line', value: mathInvisible ? 'Invisible' : 'Visible' },
-          { label: 'Speed Acceleration', value: randomSpeed ? 'Enabled' : 'Fixed' },
+          { label: ui.sessionTime, value: `${selectedDuration}s` },
+          { label: ui.baseSpeed, value: `${speedMultiplier.toFixed(1)}x` },
+          { label: ui.hideLine, value: mathInvisible ? ui.enabled : ui.fixed },
+          { label: ui.acceleration, value: randomSpeed ? ui.enabled : ui.fixed },
         ],
         playerName: getPlayerName(),
       });
       await shareScoreCard(url, canvas);
     } catch (e) {
-      const text = 'Constant Slow Pursuit — Free Visual Tracking & Gaze Stability Drill!';
+      const text = ui.shareText.replace('{score}', speedMultiplier.toFixed(1));
       if (typeof navigator !== 'undefined' && navigator.share) {
         try {
-          await navigator.share({ title: 'Constant Slow Pursuit - Smooth Pursuit Eye Exercise', text, url });
+          await navigator.share({ title: ui.shareTitle, text, url });
         } catch (e) {}
       } else if (typeof navigator !== 'undefined' && navigator.clipboard) {
         navigator.clipboard.writeText(url);
         alert('Drill link copied to clipboard!');
       }
     }
-  }, [selectedDuration, speedMultiplier, mathInvisible, randomSpeed]);
+  }, [selectedDuration, speedMultiplier, mathInvisible, randomSpeed, ui]);
 
   const handleExitDrill = useCallback(async () => {
     markIntentionalExit();
@@ -182,6 +184,26 @@ export default function ConstantSlowPursuitClient({ copy }: { copy?: { title?: s
     active: gameState === 'playing' || gameState === 'countdown',
     onUnexpectedExit: handleExitDrill,
   });
+
+  // Direct Exit Lifecycle: Esc and Fullscreen Exit (R6)
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'Escape' && (gameState === 'playing' || gameState === 'countdown')) {
+        handleExitDrill();
+      }
+    };
+    const handleFullscreenChange = () => {
+      if (!document.fullscreenElement && isFullscreen) {
+        handleExitDrill();
+      }
+    };
+    window.addEventListener('keydown', handleKeyDown);
+    document.addEventListener('fullscreenchange', handleFullscreenChange);
+    return () => {
+      window.removeEventListener('keydown', handleKeyDown);
+      document.removeEventListener('fullscreenchange', handleFullscreenChange);
+    };
+  }, [gameState, isFullscreen, handleExitDrill]);
 
   // Complete Drill Session cleanly
   const endGame = useCallback(() => {
@@ -210,6 +232,7 @@ export default function ConstantSlowPursuitClient({ copy }: { copy?: { title?: s
     setUiTimeLeft(selectedDuration);
     trackingState.current.angle = 0;
     trackingState.current.trail = [];
+    mousePosRef.current = { x: 0, y: 0, active: false };
 
     // Countdown sequence: 3 -> 2 -> 1 -> GO with Audio Cues
     setGameState('countdown');
@@ -365,6 +388,36 @@ export default function ConstantSlowPursuitClient({ copy }: { copy?: { title?: s
         }
       }
 
+      // Render Tactical Pro White Crosshair (R5)
+      if (mousePosRef.current.active && gameState === 'playing') {
+        const mx = mousePosRef.current.x;
+        const my = mousePosRef.current.y;
+        ctx.save();
+        ctx.strokeStyle = '#ffffff';
+        ctx.lineWidth = 1.5;
+        ctx.shadowColor = 'rgba(0, 0, 0, 0.9)';
+        ctx.shadowBlur = 3;
+
+        // Crosshair arms (14px outer radius, 4px gap)
+        ctx.beginPath();
+        ctx.moveTo(mx, my - 4);
+        ctx.lineTo(mx, my - 14);
+        ctx.moveTo(mx, my + 4);
+        ctx.lineTo(mx, my + 14);
+        ctx.moveTo(mx - 4, my);
+        ctx.lineTo(mx - 14, my);
+        ctx.moveTo(mx + 4, my);
+        ctx.lineTo(mx + 14, my);
+        ctx.stroke();
+
+        // Center dot (2px radius)
+        ctx.fillStyle = '#ffffff';
+        ctx.beginPath();
+        ctx.arc(mx, my, 2, 0, Math.PI * 2);
+        ctx.fill();
+        ctx.restore();
+      }
+
       animationRef.current = requestAnimationFrame(draw);
     };
 
@@ -393,9 +446,9 @@ export default function ConstantSlowPursuitClient({ copy }: { copy?: { title?: s
         {!isFullscreen && (
           <div className="flex flex-col gap-1">
             <h1 className="text-2xl sm:text-3xl font-black tracking-tight text-white">
-              <span data-seo-kw="1">{copy?.title || "Constant Slow Pursuit"}</span>
+              <span data-seo-kw="1">{ui.title}</span>
               <span className="block text-sm font-semibold text-slate-400 mt-0.5 normal-case tracking-normal">
-                {copy?.subtitle || "Smooth Pursuit Eye Exercise"}
+                {ui.subtitle}
               </span>
             </h1>
           </div>
@@ -405,23 +458,23 @@ export default function ConstantSlowPursuitClient({ copy }: { copy?: { title?: s
         {!isFullscreen && (
           <div className="grid grid-cols-4 gap-2 w-full -mb-2">
             <div className="bg-[#0d0d18] border border-white/5 rounded-xl p-2.5 text-center">
-              <div className="text-[10px] uppercase font-bold text-slate-500 tracking-wider">Status</div>
+              <div className="text-[10px] uppercase font-bold text-slate-500 tracking-wider">{ui.status}</div>
               <div className="text-lg sm:text-xl font-black text-red-400 tabular-nums">
-                {gameState === 'playing' ? 'TRACKING' : gameState === 'gameOver' ? 'COMPLETE' : 'STANDBY'}
+                {gameState === 'playing' ? ui.tracking : gameState === 'gameOver' ? ui.complete : ui.standby}
               </div>
             </div>
             <div className="bg-[#0d0d18] border border-white/5 rounded-xl p-2.5 text-center">
-              <div className="text-[10px] uppercase font-bold text-slate-500 tracking-wider">Time Left</div>
+              <div className="text-[10px] uppercase font-bold text-slate-500 tracking-wider">{ui.timeLeft}</div>
               <div className={`text-lg sm:text-xl font-black tabular-nums ${uiTimeLeft <= 10 && gameState === 'playing' ? 'text-red-400 animate-pulse' : 'text-white'}`}>
                 {uiTimeLeft}s
               </div>
             </div>
             <div className="bg-[#0d0d18] border border-white/5 rounded-xl p-2.5 text-center">
-              <div className="text-[10px] uppercase font-bold text-slate-500 tracking-wider">Speed</div>
+              <div className="text-[10px] uppercase font-bold text-slate-500 tracking-wider">{ui.speed}</div>
               <div className="text-lg sm:text-xl font-black text-indigo-400 tabular-nums">{speedMultiplier.toFixed(1)}x</div>
             </div>
             <div className="bg-[#0d0d18] border border-white/5 rounded-xl p-2.5 text-center">
-              <div className="text-[10px] uppercase font-bold text-slate-500 tracking-wider">Sessions</div>
+              <div className="text-[10px] uppercase font-bold text-slate-500 tracking-wider">{ui.sessions}</div>
               <div className="text-lg sm:text-xl font-black text-amber-400 tabular-nums">{totalTrials}</div>
             </div>
           </div>
@@ -430,7 +483,7 @@ export default function ConstantSlowPursuitClient({ copy }: { copy?: { title?: s
         {/* Game Stage Container */}
         <div 
           ref={containerRef} 
-          className={`overflow-hidden flex flex-col transition-all duration-150 select-none border border-white/10 ${
+          className={`overflow-hidden flex flex-col select-none border border-white/10 ${
             dayMode ? 'bg-[#ffffff]' : 'bg-[#080811]'
           } ${dayMode ? 'text-slate-900' : 'text-white'} ${
             isFullscreen ? 'fixed inset-0 z-[100] w-screen h-[100dvh] rounded-none border-none flex flex-col items-center justify-center' : 'w-full rounded-2xl aspect-video min-h-[460px] md:min-h-[500px] max-h-[88vh] max-md:aspect-[3/4] max-md:min-h-[420px] max-md:max-h-[76vh] relative overflow-hidden flex flex-col'
@@ -440,7 +493,7 @@ export default function ConstantSlowPursuitClient({ copy }: { copy?: { title?: s
           {/* IN-BOX OVERLAY HUD: LABELLED TIMER, AS EVERY OTHER DRILL */}
           {gameState === 'playing' && (
             <div className="absolute top-4 right-4 z-30 pointer-events-none text-right">
-              <p className={`text-[10px] font-semibold uppercase tracking-wider ${dayMode ? 'text-slate-500' : 'text-white/50'}`}>Time Left</p>
+              <p className={`text-[10px] font-semibold uppercase tracking-wider ${dayMode ? 'text-slate-500' : 'text-white/50'}`}>{ui.timeLeft}</p>
               <p className={`text-3xl sm:text-4xl font-black font-sans tabular-nums leading-none ${uiTimeLeft <= 10 ? 'text-red-400 animate-pulse' : (dayMode ? 'text-slate-900' : 'text-white/90')}`}>
                 {uiTimeLeft}s
               </p>
@@ -460,7 +513,7 @@ export default function ConstantSlowPursuitClient({ copy }: { copy?: { title?: s
                   });
                 }}
                 className="p-2.5 rounded-full bg-black/60 border border-white/10 text-slate-400 hover:text-white transition-colors cursor-pointer"
-                title="Toggle Sound"
+                title={ui.sound}
               >
                 {soundEnabled ? <Volume2 className="w-4 h-4 text-blue-400" /> : <VolumeX className="w-4 h-4 text-slate-500" />}
               </button>
@@ -470,7 +523,28 @@ export default function ConstantSlowPursuitClient({ copy }: { copy?: { title?: s
           {/* CANVAS */}
           <canvas 
             ref={canvasRef} 
-            className="block absolute top-0 left-0 w-full h-full z-10 pointer-events-none" 
+            onPointerMove={(e) => {
+              const rect = e.currentTarget.getBoundingClientRect();
+              mousePosRef.current = {
+                x: e.clientX - rect.left,
+                y: e.clientY - rect.top,
+                active: true,
+              };
+            }}
+            onPointerLeave={() => {
+              mousePosRef.current.active = false;
+            }}
+            onPointerDown={(e) => {
+              const rect = e.currentTarget.getBoundingClientRect();
+              mousePosRef.current = {
+                x: e.clientX - rect.left,
+                y: e.clientY - rect.top,
+                active: true,
+              };
+            }}
+            className={`block absolute top-0 left-0 w-full h-full z-10 ${
+              gameState === 'playing' ? 'cursor-none pointer-events-auto' : 'pointer-events-none'
+            }`}
           />
 
           {/* START CARD */}
@@ -498,12 +572,13 @@ export default function ConstantSlowPursuitClient({ copy }: { copy?: { title?: s
               onDayModeToggle={() => setDayMode(!dayMode)}
               isMobile={isMobile}
               onStart={enterDrill}
+              copy={ui}
             />
           )}
 
           {/* COUNTDOWN OVERLAY */}
           {gameState === 'countdown' && (
-            <DrillCountdown value={countdownValue} subtitle="GET READY" accent="#ef4444" />
+            <DrillCountdown value={countdownValue} subtitle={ui.getReady} accent="#ef4444" />
           )}
 
           {/* END SCREEN */}
@@ -516,10 +591,10 @@ export default function ConstantSlowPursuitClient({ copy }: { copy?: { title?: s
                   <Check className="w-6 h-6 text-white" />
                 </div>
                 <div className="text-lg sm:text-2xl font-black text-white text-center tracking-tight leading-tight mt-1">
-                  SESSION COMPLETE
+                  {ui.sessionComplete}
                 </div>
                 <div className="text-[10px] uppercase tracking-widest text-slate-400 text-center font-bold">
-                  Smooth Pursuit Calibrated
+                  {ui.calibrated}
                 </div>
               </div>
 
@@ -530,19 +605,19 @@ export default function ConstantSlowPursuitClient({ copy }: { copy?: { title?: s
                 <div className="grid grid-cols-2 gap-2">
                   <div className="bg-black border border-white/5 p-2.5 rounded-xl text-center">
                     <p className="text-sm sm:text-base font-black text-white">{selectedDuration}s</p>
-                    <p className="text-[8px] font-bold uppercase tracking-wider text-gray-400 mt-0.5">Session Time</p>
+                    <p className="text-[8px] font-bold uppercase tracking-wider text-gray-400 mt-0.5">{ui.sessionTime}</p>
                   </div>
                   <div className="bg-black border border-white/5 p-2.5 rounded-xl text-center">
                     <p className="text-sm sm:text-base font-black text-white">{speedMultiplier.toFixed(1)}x</p>
-                    <p className="text-[8px] font-bold uppercase tracking-wider text-gray-400 mt-0.5">Base Speed</p>
+                    <p className="text-[8px] font-bold uppercase tracking-wider text-gray-400 mt-0.5">{ui.baseSpeed}</p>
                   </div>
                   <div className="bg-black border border-white/5 p-2.5 rounded-xl text-center">
                     <p className="text-sm sm:text-base font-black text-white">{totalTrials}</p>
-                    <p className="text-[8px] font-bold uppercase tracking-wider text-gray-400 mt-0.5">Sessions Completed</p>
+                    <p className="text-[8px] font-bold uppercase tracking-wider text-gray-400 mt-0.5">{ui.sessionsCompleted}</p>
                   </div>
                   <div className="bg-black border border-white/5 p-2.5 rounded-xl text-center">
-                    <p className="text-xs sm:text-sm font-black text-white">{randomSpeed ? 'Enabled' : 'Fixed'}</p>
-                    <p className="text-[8px] font-bold uppercase tracking-wider text-gray-400 mt-0.5">Speed Acceleration</p>
+                    <p className="text-xs sm:text-sm font-black text-white">{randomSpeed ? ui.enabled : ui.fixed}</p>
+                    <p className="text-[8px] font-bold uppercase tracking-wider text-gray-400 mt-0.5">{ui.acceleration}</p>
                   </div>
                 </div>
 
@@ -553,13 +628,13 @@ export default function ConstantSlowPursuitClient({ copy }: { copy?: { title?: s
                     onClick={enterDrill} 
                     className="flex-1 py-3 rounded-[13px] bg-gradient-to-r from-red-600 to-rose-600 text-white font-bold text-xs uppercase tracking-wide cursor-pointer transition-transform active:scale-[0.98] shadow-md flex items-center justify-center gap-1.5"
                   >
-                    <RefreshCw className="w-3.5 h-3.5" /> Play Again
+                    <RefreshCw className="w-3.5 h-3.5" /> {ui.playAgain}
                   </button>
                   <button 
                     type="button"
                     onClick={sharePage} 
                     className="w-11 flex-shrink-0 rounded-[13px] bg-white/[0.04] border border-white/10 flex items-center justify-center text-slate-400 hover:text-white cursor-pointer active:scale-90 transition-transform" 
-                    title="Share Score"
+                    title={ui.shareScore}
                   >
                     <Share2 className="w-4 h-4" />
                   </button>
@@ -567,7 +642,7 @@ export default function ConstantSlowPursuitClient({ copy }: { copy?: { title?: s
                     type="button"
                     onClick={handleExitDrill} 
                     className="w-11 flex-shrink-0 rounded-[13px] bg-white/[0.04] border border-white/10 flex items-center justify-center text-slate-400 hover:text-white cursor-pointer active:scale-90 transition-transform" 
-                    title="Return to Options"
+                    title={ui.returnOptions}
                   >
                     <LogOut className="w-4 h-4 text-red-400" />
                   </button>
@@ -582,7 +657,7 @@ export default function ConstantSlowPursuitClient({ copy }: { copy?: { title?: s
         {/* Drill Caption */}
         {!isFullscreen && (
           <p className="text-xs text-slate-400 leading-relaxed -mt-2">
-            Track the moving target smoothly along the continuous Lissajous curve at low velocity.
+            {ui.caption}
           </p>
         )}
 
@@ -591,62 +666,36 @@ export default function ConstantSlowPursuitClient({ copy }: { copy?: { title?: s
           <div className="[&>div]:!mt-0">
             <DrillAccordion
               id="rules"
-              title="Drill Instructions & Settings"
+              title={ui.rules}
               isOpen={openAccordion === 'rules'}
               onToggle={() => setOpenAccordion(openAccordion === 'rules' ? null : 'rules')}
             >
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <RuleItem num="1" text="Foveal Pursuit" highlight="Pure Visual" result="Keep eyes locked on target" />
-                <RuleItem num="2" text="Time Adjusting" highlight={`${selectedDuration}s Duration`} result="Customizable session timer" />
-                <RuleItem num="3" text="Hide Line" highlight={mathInvisible ? "Enabled (Invisible)" : "Disabled (Visible)"} result="Toggle path guide lines" />
-                <RuleItem num="4" text="Random Speed" highlight={randomSpeed ? "Enabled Acceleration" : "Disabled Velocity"} result="Erratic acceleration control" />
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-3 font-sans">
+                {[
+                  { num: "1", text: ui.ruleItems[0].title, highlight: ui.ruleItems[0].detail, result: ui.ruleItems[0].badge },
+                  { num: "2", text: ui.ruleItems[1].title, highlight: `${selectedDuration}s ${ui.sessionTime}`, result: ui.ruleItems[1].badge },
+                  { num: "3", text: ui.ruleItems[2].title, highlight: mathInvisible ? `${ui.enabled} (${ui.hideLine})` : ui.fixed, result: ui.ruleItems[2].badge },
+                  { num: "4", text: ui.ruleItems[3].title, highlight: randomSpeed ? ui.enabled : ui.fixed, result: ui.ruleItems[3].badge }
+                ].map((item) => (
+                  <RuleItem key={item.num} num={item.num} text={item.text} highlight={item.highlight} result={item.result} />
+                ))}
               </div>
             </DrillAccordion>
 
             <DrillAccordion
               id="about"
-              title="About Constant Slow Pursuit"
+              title={ui.about}
               isOpen={openAccordion === 'about'}
               onToggle={() => setOpenAccordion(openAccordion === 'about' ? null : 'about')}
             >
               <div className="space-y-4">
                 <p className="text-sm leading-relaxed text-slate-300">
-                  Smooth pursuit is the continuous voluntary movement of the eyes to keep a moving target centered on the fovea (Rashbass, 1961). At low tracking velocities, maintaining smooth gaze requires high neural gain across cortico-cerebellar circuits; if gaze falls behind, the brain triggers abrupt catch-up saccades (Krauzlis, 2004; Robinson, 1965). Pursuit tracks a target accurately up to roughly 30&deg;/s; past that the eye falls behind and needs catch-up saccades (Krauzlis, 2004).
+                  {ui.aboutText}
                 </p>
               </div>
             </DrillAccordion>
           </div>
         )}
-
-        {/* RELATED DRILLS GRID */}
-        {!isFullscreen && (
-          <section className="mt-4">
-            <h2 className="text-sm font-bold text-slate-400 uppercase tracking-wider mb-3">
-              Related Visual Drills
-            </h2>
-            <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
-              {RELATED_DRILLS.map((drill) => (
-                <Link
-                  key={drill.id}
-                  href={drill.href}
-                  className="group bg-[#0c0c16] border border-white/5 hover:border-red-500/40 rounded-xl p-3.5 transition-all duration-200 hover:-translate-y-0.5 flex flex-col justify-between"
-                >
-                  <div>
-                    <div className="text-[10px] font-bold text-red-400 uppercase tracking-wider mb-1">{drill.cat}</div>
-                    <div className="text-xs font-bold text-white group-hover:text-red-300 transition-colors">{drill.name}</div>
-                    <div className="text-[11px] text-slate-400 mt-1 line-clamp-2 leading-relaxed">{drill.desc}</div>
-                  </div>
-                  <div className="text-[10px] font-bold text-slate-500 group-hover:text-red-400 mt-3 flex items-center gap-1 transition-colors">
-                    Train Drill <span>→</span>
-                  </div>
-                </Link>
-              ))}
-            </div>
-          </section>
-        )}
-
-        {/* SITE FOOTER */}
-        {!isFullscreen && <DrillFooter />}
 
       </main>
     </div>
@@ -656,13 +705,15 @@ export default function ConstantSlowPursuitClient({ copy }: { copy?: { title?: s
 // === Subcomponents ===
 function RuleItem({ num, text, highlight = '', result }: { num: string; text: string; highlight?: string; result: string }) {
   return (
-    <div className="flex items-center gap-4 bg-black p-4 rounded-xl border border-white/10 shadow-sm font-sans">
-      <div className="w-8 h-8 rounded-xl bg-white/10 border border-white/20 flex items-center justify-center text-white text-base font-black shadow-lg flex-shrink-0">{num}</div>
-      <div className="flex-1 flex flex-col sm:flex-row sm:items-center justify-between gap-2">
-        <p className="text-sm font-medium text-gray-100 font-sans">
-          {text}{highlight && <span className="font-black text-white"> ({highlight})</span>}
+    <div className="flex items-center gap-3 bg-black px-3.5 py-2.5 rounded-xl border border-white/10 shadow-sm font-sans min-w-0">
+      <div className="w-7 h-7 rounded-lg bg-white/10 border border-white/20 flex items-center justify-center text-white text-xs font-black shadow-lg flex-shrink-0">
+        {num}
+      </div>
+      <div className="flex-1 flex items-center justify-between gap-2 min-w-0">
+        <p className="text-xs sm:text-sm font-medium text-gray-100 font-sans truncate">
+          {text}{highlight && <span className="font-bold text-white"> ({highlight})</span>}
         </p>
-        <div className="text-xs font-black px-3 py-1.5 rounded-lg bg-[#050811] border border-white/10 text-white whitespace-nowrap shadow-inner tracking-wide text-center sm:text-left">
+        <div className="text-[11px] sm:text-xs font-bold px-2.5 py-1 rounded-lg bg-[#050811] border border-white/10 text-white whitespace-nowrap shadow-inner tracking-wide flex-shrink-0">
           {result}
         </div>
       </div>

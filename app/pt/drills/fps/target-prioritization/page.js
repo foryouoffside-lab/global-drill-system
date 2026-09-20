@@ -6,21 +6,19 @@ import { getAlternateLanguages } from '@/lib/i18n/locales';
 import { pickSources } from '@/lib/drillSources';
 
 export const metadata = {
-  title: "Treino de Priorização de Alvos – Mira FPS | SkillDrills",
-  description: "Treine priorização de alvos, avaliação de ameaças e disciplina de gatilho no navegador. Domine a mira decisiva para Valorant e CS2 gratuitamente.",
+  title: "Treino de Mira | Seleção de Alvos | SkillDrills",
+  description: "Treino de mira grátis no navegador: escolha o alvo mais perigoso e pratique ordem de alvos, decisão tática e controle do disparo.",
   keywords: [
-    "treino de priorizacao de alvos",
-    "priorizacao de alvos fps",
-    "avaliacao de ameacas fps",
-    "controle de impulso tiro",
-    "como escolher alvo no tiroteio",
-    "treino de tomada de decisao fps",
-    "disciplina de gatilho fps",
-    "selecao de alvos valorant",
-    "treinador de mira cognitiva",
-    "identificacao de alvos shooter",
-    "treino de reflexo go no go",
-    "exercicio de priorizacao de alvos"
+    "treino de mira",
+    "treino de mira online",
+    "treino de mira valorant",
+    "seleção de alvos",
+    "seleção de alvos Valorant",
+    "priorização de alvos FPS",
+    "avaliação de ameaças",
+    "decisão tática FPS",
+    "disciplina de gatilho",
+    "treino de decisão sob pressão"
   ],
   alternates: {
     canonical: "https://skilldrills.online/pt/drills/fps/target-prioritization",
@@ -31,8 +29,8 @@ export const metadata = {
     follow: true,
   },
   openGraph: {
-    title: "Treino de Priorização de Alvos – Mira FPS | SkillDrills",
-    description: "Treine priorização de alvos, avaliação de ameaças e disciplina de gatilho no navegador. Domine a mira decisiva para Valorant e CS2 gratuitamente.",
+    title: "Treino de Mira | Seleção de Alvos | SkillDrills",
+    description: "Treino de mira grátis no navegador: escolha o alvo mais perigoso e pratique ordem de alvos, decisão tática e controle do disparo.",
     url: "https://skilldrills.online/pt/drills/fps/target-prioritization",
     siteName: 'SkillDrills',
     locale: 'pt_BR',
@@ -40,8 +38,8 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: "Treino de Priorização de Alvos – Mira FPS | SkillDrills",
-    description: "Treine priorização de alvos, avaliação de ameaças e disciplina de gatilho no navegador. Domine a mira decisiva para Valorant e CS2 gratuitamente.",
+    title: "Treino de Mira | Seleção de Alvos | SkillDrills",
+    description: "Treino de mira grátis no navegador: escolha o alvo mais perigoso e pratique ordem de alvos, decisão tática e controle do disparo.",
   },
 };
 
@@ -52,17 +50,17 @@ export default function TargetPrioritizationPtPage() {
     "itemListElement": [
       { "@type": "ListItem", "position": 1, "name": "SkillDrills", "item": "https://skilldrills.online/pt" },
       { "@type": "ListItem", "position": 2, "name": "Treinos FPS", "item": "https://skilldrills.online/pt/drills/fps" },
-      { "@type": "ListItem", "position": 3, "name": "Priorização de Alvos", "item": "https://skilldrills.online/pt/drills/fps/target-prioritization" }
+      { "@type": "ListItem", "position": 3, "name": "Treino de mira - seleção de alvos", "item": "https://skilldrills.online/pt/drills/fps/target-prioritization" }
     ]
   };
 
   const softwareSchema = {
     "@context": "https://schema.org",
     "@type": "SoftwareApplication",
-    "name": "Treino de Priorização de Alvos FPS",
+    "name": "Treino de mira - seleção de alvos",
     "applicationCategory": "GameApplication",
     "operatingSystem": "Web Browser",
-    "dateModified": "2026-09-16",
+    "dateModified": "2026-09-20",
     "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
     "description": "Treinador cognitivo de priorização de alvos, tomada de decisão sob pressão e inibição motora de disparo (Go/No-Go) para jogos de tiro competitivo.",
     "genre": "Treinamento FPS / Mira Cognitiva e Decisão",
@@ -77,22 +75,22 @@ export default function TargetPrioritizationPtPage() {
   const webAppSchema = {
     "@context": "https://schema.org",
     "@type": "WebApplication",
-    "name": "Treino de Priorização de Alvos FPS",
+    "name": "Treino de mira - seleção de alvos",
     "url": "https://skilldrills.online/pt/drills/fps/target-prioritization",
     "description": "Treinador cognitivo de priorização de alvos, tomada de decisão sob pressão e inibição motora de disparo (Go/No-Go) para jogos de tiro competitivo.",
     "applicationCategory": "Game",
     "operatingSystem": "Web Browser",
     "browserRequirements": "Requer suporte a HTML5 Canvas e Pointer Lock API",
-    "dateModified": "2026-09-16"
+    "dateModified": "2026-09-20"
   };
 
   const videoGameSchema = {
     "@context": "https://schema.org",
     "@type": "VideoGame",
-    "name": "Treino de Priorização de Alvos FPS",
+    "name": "Treino de mira - seleção de alvos",
     "url": "https://skilldrills.online/pt/drills/fps/target-prioritization",
     "description": "Treinador cognitivo de priorização de alvos, tomada de decisão sob pressão e inibição motora de disparo (Go/No-Go) para jogos de tiro competitivo.",
-    "dateModified": "2026-09-16",
+    "dateModified": "2026-09-20",
     "gamePlatform": "Web Browser",
     "genre": ["Treinamento FPS", "Aim Trainer", "Priorização de Alvos"],
     "playMode": "SinglePlayer",
@@ -104,7 +102,7 @@ export default function TargetPrioritizationPtPage() {
   const faqSchema = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
-    "dateModified": "2026-09-16",
+    "dateModified": "2026-09-20",
     "mainEntity": [
       {
         "@type": "Question",
@@ -227,9 +225,9 @@ export default function TargetPrioritizationPtPage() {
   };
 
   const targetPrioritizationGuide = {
-    heading: "Guia de Priorização de Alvos FPS e Biomecânica da Decisão sob Pressão",
+    heading: "Treino de Mira e Seleção de Alvos sob Pressão",
     intro: [
-      "O Treino de Priorização de Alvos é um simulador de tomada de decisão perceptual-cognitiva desenvolvido para condicionar a avaliação instantânea de ameaças, filtragem de atenção e inibição motora de disparo. Em jogos táticos de tiro contemporâneos — sobretudo Valorant, Counter-Strike 2, Rainbow Six Siege e Apex Legends — os confrontos com múltiplos adversários são resolvidos pela ordem de engajamento: o jogador que neutraliza a ameaça mais perigosa primeiro sobrevive.",
+      "O treino de mira com seleção de alvos pratica a decisão de escolher o inimigo mais perigoso antes do disparo. Este drill mede avaliação de ameaças, filtragem da atenção e controle do tiro quando vários adversários aparecem em Valorant e CS2.",
       "A base neuropsicológica da inibição da resposta motora foi elucidada por Gordon D. Logan & William B. Cowan (1984) no clássico modelo horse-race: quando um sinal de parada surge, o processo de inibição compete contra o processo motor em andamento. Cancelar um tiro já planejado exige circuitos neurais específicos no córtex pré-frontal e gânglios da base, explicando por que atirar em pânico é tão comum entre amadores.",
       "Expandindo os fundamentos da cronometria mental de Franciscus Cornelis Donders (1868/1969) sobre tempos de reação de escolha e a teoria de integração de características de Anne Treisman & Garry Gelade (1980), este exercício força o cérebro a classificar alvos visualmente por nível de perigo antes de liberar a ordem motora para o dedo disparar.",
       "Ao incorporar o modelo de atenção de Michael I. Posner (1990), os paradigmas de rastreamento espacial de C. Shawn Green & Daphne Bavelier (2003) e cronometria digital de baixa latência (Woods et al., 2015), o treino extingue o disparo por impulso e desenvolve mira tática de alto nível.",
@@ -292,9 +290,9 @@ export default function TargetPrioritizationPtPage() {
   };
 
   const copyPt = {
-    h1Keyword: "Treino de Priorização de Alvos",
-    h1Suffix: " – Tomada de Decisão FPS",
-    subtitle: "Treine avaliação de ameaças, filtragem cognitiva e inibição de disparo com métricas em tempo real.",
+    h1Keyword: "Treino de mira",
+    h1Suffix: " - Seleção de alvos FPS",
+    subtitle: "Escolha o alvo mais perigoso e controle o disparo em situações de pressão direto no navegador.",
     statScore: "Pontuação",
     statTime: "Tempo",
     statAccuracy: "Precisão",
@@ -302,7 +300,7 @@ export default function TargetPrioritizationPtPage() {
     statThreatsCleared: "Ameaças Eliminadas",
     statMaxCombo: "Combo Máximo",
     statPeakLevel: "Nivel Máximo",
-    startTitle: "Priorização de Alvos Pro",
+    startTitle: "Treino de mira - seleção de alvos",
     startSubtitle: "Avaliação de Ameaças · Filtragem Cognitiva · Dificuldade Dinâmica",
     getReady: "PREPARE-SE",
     toggleFlash: "Alternar Flash de Erro",
@@ -317,7 +315,7 @@ export default function TargetPrioritizationPtPage() {
       { num: "3", text: "Unidade Amiga", highlight: "Verde (NÃO DISPARAR)", result: "Tiro amigo ou erro zera combo" },
       { num: "4", text: "Subir de Nível", highlight: "+1 / 1400 PTS", result: "Escalonamento Contínuo" }
     ],
-    aboutTitle: "Sobre a Priorização de Alvos no FPS",
+    aboutTitle: "Sobre treino de mira e seleção de alvos",
     aboutHeading: "O que é Priorização de Alvos?",
     aboutText: "Priorização de alvos é a capacidade executiva de escolher em frações de segundo qual ameaça abater primeiro enquanto retém o tiro contra todo o resto. Interromper uma ação motora já iniciada é um processo biológico próprio que compete com a ordem de disparo (Logan & Cowan, 1984) — razão pela qual segurar o tiro é mais difícil do que disparar."
   };
@@ -353,7 +351,7 @@ export default function TargetPrioritizationPtPage() {
       <div className="max-w-4xl mx-auto px-4 pb-12">
         <RelatedDrills
           currentCategory="fps"
-          currentHref="/drills/fps/target-prioritization"
+          currentHref="/pt/drills/fps/target-prioritization"
           locale="pt"
         />
       </div>

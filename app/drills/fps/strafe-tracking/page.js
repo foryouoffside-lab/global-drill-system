@@ -331,9 +331,8 @@ export default function StrafeTrackingPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(howToSchema) }}
       />
       <StrafeTrackingClient copy={copyEn} />
-      <DrillGuide guide={strafeTrackingGuide} />
+      <DrillGuide guide={strafeTrackingGuide} singleLineTitles />
       <DrillFooter />
     </>
   );
 }
-

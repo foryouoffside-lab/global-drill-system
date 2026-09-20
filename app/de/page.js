@@ -1,7 +1,9 @@
 import HomePageClient from '../HomePageClient';
+import { DRILLS } from '@/lib/drillsRegistry';
 import { getAlternateLanguages } from '@/lib/i18n/locales';
+import { buildHomeMetadata, buildHomeSchema } from '@/lib/i18n/siteLandingSeoNative';
 
-export const metadata = {
+const legacyMetadata = {
   title: 'Kostenloser Aim Trainer & Gehirntraining Online',
   description: 'Verbessere dein Aiming in Valorant, CS2, Reaktionszeit, CPS und Gedächtnis mit 81+ kostenlosen Übungen direkt im Browser.',
   keywords: ['Aim Trainer Kostenlos', 'Aiming Übung Valorant', 'Reaktionstest Online', 'CPS Test', 'Gedächtnistraining', 'Maus Präzision'],
@@ -18,8 +20,17 @@ export const metadata = {
   },
 };
 
+export const metadata = {
+  ...legacyMetadata,
+  ...buildHomeMetadata('de', 'https://skilldrills.online/de', DRILLS.length, getAlternateLanguages('/de')),
+};
+
+const homeSchema = buildHomeSchema('de', 'https://skilldrills.online/de', DRILLS.length);
+
 export default function LocalizedHomePage() {
   return (
+    <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(homeSchema) }} />
     <HomePageClient
       copy={{
         srH2: 'SkillDrills - Kostenloser Aim Trainer und Gehirntraining',
@@ -121,5 +132,6 @@ export default function LocalizedHomePage() {
         },
       }}
     />
+    </>
   );
 }

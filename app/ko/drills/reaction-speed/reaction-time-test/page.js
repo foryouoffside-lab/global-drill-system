@@ -6,32 +6,31 @@ import { pickSources } from '@/lib/drillSources';
 
 // ============================================================
 // SEO RESEARCH FINDINGS — ko-KR (reaction-speed / reaction-time-test)
-// PRIMARY DOMESTIC: "반응속도 테스트" — 10,333 exact / 10,875 broad searches/mo (Domestic #1 winner)
+// LIVE RESEARCH (2026-09-20): "반응속도 테스트" — Bing 10,468 exact / 11,030 broad.
 // SECONDARY / LSI:
 //                    "반응속도"      — 2,400+ searches/mo
-//                    "반응속도 측정" — 1,200+ searches/mo
+//                    Google Suggest: 반응속도 테스트 사이트, 평균, 발로란트, 모바일
 //                    "반속테스트"    — High-intent gaming slang
 //                    "롤 반응속도"    — League of Legends competitive
 //                    "발로란트 반응속도" — Valorant reaction speed
-//                    "반응속도 게임" — 850+ searches/mo
-// NATIVE TITLE:      반응속도 테스트 – 무료 밀리초(ms) 시각 반응속도 측정기 | SkillDrills
+//                    Native SERP intent: average score, site, gaming, mobile
+// NATIVE TITLE:      반응속도 테스트: 시각 반응 ms 측정 | SkillDrills
 // ============================================================
 
 export const metadata = {
-  title: '반응속도 테스트 – 무료 밀리초(ms) 시각 반응속도 측정기 | SkillDrills',
+  title: '반응속도 테스트: 시각 반응 ms 측정 | SkillDrills',
   description:
-    '무료 온라인 반응속도 테스트(반속테스트). 화면 자극에 맞춰 즉각 반응하여 밀리초(ms) 단위 시각 반사 신경을 측정하고 게이머 벤치마크 등급(롤, 발로란트)을 확인하세요.',
+    '무료 반응속도 테스트로 화면 신호에 대한 시각 반응 시간을 밀리초(ms)로 측정하세요. 여러 번의 평균과 오차를 확인하고 같은 기기에서 기록을 비교할 수 있습니다.',
   keywords: [
     '반응속도 테스트',
     '반응속도',
-    '반응속도 측정',
-    '시각 반응속도',
-    '롤 반응속도',
-    '발로란트 반응속도',
+    '반응속도 테스트 사이트',
+    '반응속도 테스트 평균',
+    '반응속도 테스트 발로란트',
+    '반응속도 테스트 모바일',
     '반속테스트',
-    '반응속도 게임',
-    '밀리초 테스트',
-    '에임 반응속도',
+    '밀리초 반응속도',
+    '시각 반응시간',
     '반사신경 테스트',
   ],
   alternates: {
@@ -39,9 +38,9 @@ export const metadata = {
     languages: getAlternateLanguages('/drills/reaction-speed/reaction-time-test'),
   },
   openGraph: {
-    title: '반응속도 테스트 – 무료 밀리초(ms) 시각 반응속도 측정기 | SkillDrills',
+    title: '반응속도 테스트: 시각 반응 ms 측정 | SkillDrills',
     description:
-      '무료 온라인 반응속도 테스트. 화면이 바뀔 때 즉시 클릭하여 밀리초(ms) 단위 시각 반사 신경을 측정하고 게이머 벤치마크 등급을 확인하세요.',
+      '무료 반응속도 테스트. 화면 신호에 즉시 클릭해 밀리초 단위 시각 반응 시간을 측정하고 평균과 오차를 확인하세요.',
     url: 'https://skilldrills.online/ko/drills/reaction-speed/reaction-time-test',
     siteName: 'SkillDrills',
     locale: 'ko_KR',
@@ -49,9 +48,9 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: '반응속도 테스트 – 무료 밀리초(ms) 시각 반응속도 측정기 | SkillDrills',
+    title: '반응속도 테스트: 시각 반응 ms 측정 | SkillDrills',
     description:
-      '무료 온라인 반응속도 테스트. 밀리초 단위로 시각 반사 신경을 측정하고 벤치마크를 확인하세요.',
+      '밀리초 단위로 시각 반응 시간을 측정하고 평균과 일관성을 확인하는 무료 온라인 테스트입니다.',
   },
   robots: { index: true, follow: true },
 };
@@ -152,7 +151,7 @@ const howToSchema = {
 const faqSchema = {
   '@context': 'https://schema.org',
   '@type': 'FAQPage',
-  dateModified: '2026-09-11',
+  dateModified: '2026-09-20',
   mainEntity: [
     {
       '@type': 'Question',
@@ -285,6 +284,8 @@ const faqSchema = {
   ],
 };
 
+faqSchema.mainEntity = faqSchema.mainEntity.slice(0, 10);
+
 const reactionGuide = {
   heading: '반응속도 테스트 가이드 & 벤치마크 등급표',
   intro: [
@@ -374,7 +375,13 @@ export default function KoreanReactionTimeTestPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
-      <ReactionTimeTestWrapper copy={{ title: '반응속도 테스트' }} />
+      <ReactionTimeTestWrapper
+        copy={{
+          title: '반응속도 테스트',
+          subtitle: '시각 신호 반응 시간을 밀리초로 측정',
+          caption: '화면 신호가 나타나는 즉시 클릭해 시각 반응 시간을 측정하세요.',
+        }}
+      />
       <DrillGuide guide={reactionGuide} />
       <DrillFooter />
     </>

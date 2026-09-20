@@ -6,37 +6,21 @@ import DrillFooter from '@/components/drill/DrillFooter';
 import { pickSources } from '@/lib/drillSources';
 
 // ============================================================
-// SEO RESEARCH FINDINGS — tracing (Portuguese: Jogo de Traçado do Mouse)
-// PRIMARY:  "jogo de rastreamento do mouse"   — Rastreamento e coordenação
-//           "teste de rastreamento do mouse"  — Diagnostic query
-// SECONDARY / LSI:
-//           "teste de precisão de traçado mouse" — Path accuracy
-//           "treino de mira contínua mouse"      — Aim tracking
-//           "controle motor fino traçado"        — Fine motor control
-//           "smooth pursuit rastreamento visual" — Psychophysics query
-//           "lei de direção de accot-zhai"       — Steering Law
+// Native keyword research: docs/seo/research/tracing-2026-09-20.md
 // ============================================================
 
 export const metadata = {
-  title: 'Jogo de Traçado do Mouse – Teste de Precisão e Rastreamento',
-  description: 'Jogo de traçado do mouse online grátis. Acompanhe a onda sinuosa com o cursor para treinar rastreamento contínuo (smooth pursuit) e controle motor fino.',
+  title: 'Teste de rastreamento do mouse | Seguir linha | SkillDrills',
+  description: 'Siga uma onda em movimento com o cursor e treine rastreamento contínuo, precisão do traçado e controle motor fino. Grátis no navegador.',
   keywords: [
-    'jogo de rastreamento do mouse',
-    'teste de rastreamento do mouse',
-    'teste de precisão de traçado mouse',
-    'treino de mira contínua mouse',
-    'controle motor fino traçado',
-    'smooth pursuit rastreamento visual',
-    'lei de direção de accot-zhai',
-    'estabilidade de traçado do cursor',
-    'exercício de mira suave fps',
-    'teste de fluidez motora mouse',
-    'jogo de seguir a linha com mouse',
-    'coordenação visomotora traçado',
+    'teste de rastreamento do mouse', 'seguir linha com mouse', 'jogo de traçar com mouse',
+    'teste de precisão de traçado', 'treino de mira contínua', 'controle motor fino',
+    'rastreamento do cursor', 'precisão do traçado', 'exercício de mira suave',
+    'teste de fluidez motora mouse', 'jogo de seguir a linha', 'coordenação visomotora',
   ],
   openGraph: {
-    title: 'Jogo de Traçado do Mouse – Teste de Precisão e Rastreamento | SkillDrills',
-    description: 'Jogo de traçado do mouse online grátis. Acompanhe a onda sinuosa com o cursor para treinar rastreamento contínuo (smooth pursuit) e controle motor fino.',
+    title: 'Teste de rastreamento do mouse | Seguir linha | SkillDrills',
+    description: 'Siga uma onda em movimento com o cursor e treine rastreamento contínuo, precisão do traçado e controle motor fino. Grátis no navegador.',
     type: 'article',
     url: 'https://skilldrills.online/pt/drills/motor/precision-control/tracing',
     siteName: 'SkillDrills',
@@ -44,8 +28,8 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Jogo de Traçado do Mouse – Teste de Precisão e Rastreamento | SkillDrills',
-    description: 'Jogo de traçado do mouse online grátis. Acompanhe a onda sinuosa com o cursor para treinar rastreamento contínuo (smooth pursuit) e controle motor fino.',
+    title: 'Teste de rastreamento do mouse | Seguir linha | SkillDrills',
+    description: 'Siga uma onda em movimento com o cursor e treine rastreamento contínuo, precisão do traçado e controle motor fino. Grátis no navegador.',
   },
   robots: { index: true, follow: true },
   alternates: {
@@ -68,6 +52,7 @@ const breadcrumbSchema = {
 const softwareApplicationSchema = {
   '@context': 'https://schema.org',
   '@type': 'SoftwareApplication',
+  inLanguage: 'pt-BR',
   name: 'Jogo de Traçado do Mouse – Teste de Precisão Motora',
   applicationCategory: 'HealthApplication',
   operatingSystem: 'All',
@@ -75,36 +60,41 @@ const softwareApplicationSchema = {
   description: 'Ferramenta interativa de avaliação motora para manter o cursor sobre uma onda em movimento contínuo sem desvios.',
   url: 'https://skilldrills.online/pt/drills/motor/precision-control/tracing',
   publisher: { '@type': 'Organization', name: 'SkillDrills', url: 'https://skilldrills.online/pt' },
-  dateModified: '2026-09-05',
+  dateModified: '2026-09-20',
 };
 
 const webApplicationSchema = {
   '@context': 'https://schema.org',
   '@type': 'WebApplication',
+  inLanguage: 'pt-BR',
   name: 'Jogo de Rastreamento Contínuo Online',
   applicationCategory: 'GameApplication',
   operatingSystem: 'All',
   browserRequirements: 'Navegador moderno com suporte a HTML5 Canvas e Pointer Events',
   offers: { '@type': 'Offer', price: '0', priceCurrency: 'BRL' },
   url: 'https://skilldrills.online/pt/drills/motor/precision-control/tracing',
-  dateModified: '2026-09-05',
+  dateModified: '2026-09-20',
 };
 
 const videoGameSchema = {
   '@context': 'https://schema.org',
   '@type': 'VideoGame',
+  inLanguage: 'pt-BR',
   name: 'Treino de Traçado e Fluidez de Cursor',
   url: 'https://skilldrills.online/pt/drills/motor/precision-control/tracing',
   description: 'Jogo de precisão cinética para desenvolver rastreamento contínuo suave e eliminar microtremores involuntários.',
   genre: ['Precision Game', 'Action', 'Esports Training'],
   gamePlatform: ['Web Browser', 'Desktop', 'Mobile'],
   applicationCategory: 'Game',
-  offers: { '@type': 'Offer', price: '0', priceCurrency: 'BRL' }
+  offers: { '@type': 'Offer', price: '0', priceCurrency: 'BRL' },
+  dateModified: '2026-09-20',
 };
 
 const faqSchema = {
   '@context': 'https://schema.org',
   '@type': 'FAQPage',
+  inLanguage: 'pt-BR',
+  dateModified: '2026-09-20',
   mainEntity: [
     {
       '@type': 'Question',
@@ -192,6 +182,8 @@ const faqSchema = {
 const howToSchema = {
   '@context': 'https://schema.org',
   '@type': 'HowTo',
+  inLanguage: 'pt-BR',
+  dateModified: '2026-09-20',
   name: 'Como treinar traçado e rastreamento contínuo no mouse',
   description: 'Guia passo a passo para aprimorar perseguição suave e eliminar solavancos no cursor.',
   step: [
@@ -313,8 +305,8 @@ const guideProps = {
 };
 
 const ptCopy = {
-  title: "Jogo de Traçado do Mouse",
-  subtitle: "Rastreamento Contínuo Bruto • Cronômetro 45s",
+  title: "Teste de Rastreamento do Mouse",
+  subtitle: "Rastreamento contínuo • 45 s",
   startButtonText: "Iniciar Treino",
   trainAgain: "Treinar Novamente",
   shareTitle: "Compartilhar Pontuação",

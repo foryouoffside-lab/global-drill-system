@@ -349,7 +349,7 @@ export default function TriangularPursuitPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
 
-      <TriangularPursuitClient copy={{ title: "Triangular Pursuit", subtitle: "Eye Tracking Accuracy Drill" }} />
+      <TriangularPursuitClient copy={{ title: "Triangular Pursuit", subtitle: "Triangular eye tracking accuracy drill for smooth pursuit, sharp corner turns, saccade control, and visual coordination" }} />
       <DrillGuide guide={guide} />
     </>
   );

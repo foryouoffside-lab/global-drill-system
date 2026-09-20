@@ -5,23 +5,19 @@ import RelatedDrills from '@/components/drill/RelatedDrills';
 import { pickSources } from '@/lib/drillSources';
 
 // ============================================================
-// SEO RESEARCH FINDINGS — de-DE (n-back)
-// PRIMARY:  "n-back test online"          — High intent German query (15 suggestions: online, free)
-//           "dual n back online"          — High volume intent
-//           "n back test"                 — Core query
-// SECONDARY / LSI:
-//           "n back test online free"     — Cost / access query
-//           "arbeitsgedächtnis test online"— Cognitive domain query
-//           "arbeitsgedächtnis training"  — Training query
+// Native research (2026-09-20): Bing de-DE exact demand was 8 for
+// "N-Back Test" and 7 for "dual n-back". Current German results also use
+// "Arbeitsgedächtnis-Test" for the intent qualifier; this is not a claim of
+// high volume or guaranteed ranking.
 // ============================================================
 
 export const metadata = {
-  title: "N-Back Test Online – Arbeitsgedächtnis | SkillDrills",
-  description: "Kostenloser N-Back Test online: Trainiere dein Arbeitsgedächtnis und die kontinuierliche Informationsaktualisierung bei 2-Back und 3-Back im Browser.",
-  keywords: ['n-back test online', 'arbeitsgedaechtnis test', 'dual n-back online', 'n-back aufgabe', 'arbeitsgedaechtnis training', '3-back test', 'fluide intelligenz n-back', 'informationsaktualisierung test', 'n-back gedaechtnistraining', 'exekutive funktionen test', 'kognitives n-back training', 'arbeitsgedaechtniskapazitaet'],
+  title: "N-Back Test online | Arbeitsgedächtnis | SkillDrills",
+  description: "N-Back-Test online: Prüfe die Aktualisierung des Arbeitsgedächtnisses in 2-Back und 3-Back direkt im Browser – kostenlos und ohne Anmeldung.",
+  keywords: ['n-back test online', 'n-back test', 'arbeitsgedächtnis-test', 'dual n-back', 'n-back aufgabe', 'arbeitsgedächtnis training', '2-back test', '3-back test', 'arbeitsgedächtnis online', 'kognitives training n-back'],
   openGraph: {
-    title: "N-Back Test Online – Kostenloses Arbeitsgedächtnis-Training | SkillDrills",
-    description: "Kostenloser N-Back Test online. Trainieren Sie Ihr Arbeitsgedächtnis und die kontinuierliche Informationsaktualisierung bei 2-Back, 3-Back und darüber hinaus im Browser.",
+    title: "N-Back Test online | Arbeitsgedächtnis | SkillDrills",
+    description: "N-Back-Test online: Prüfe die Aktualisierung des Arbeitsgedächtnisses in 2-Back und 3-Back direkt im Browser – kostenlos.",
     type: "website",
     url: "https://skilldrills.online/de/drills/memory/working-memory/n-back",
     siteName: "SkillDrills",
@@ -29,8 +25,8 @@ export const metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "N-Back Test Online – Kostenloses Arbeitsgedächtnis-Training | SkillDrills",
-    description: "Kostenloser N-Back Test online. Trainieren Sie Ihr Arbeitsgedächtnis und die kontinuierliche Informationsaktualisierung bei 2-Back, 3-Back und darüber hinaus im Browser.",
+    title: "N-Back Test online | Arbeitsgedächtnis | SkillDrills",
+    description: "N-Back-Test online: Prüfe die Aktualisierung des Arbeitsgedächtnisses in 2-Back und 3-Back direkt im Browser – kostenlos.",
   },
   robots: { index: true, follow: true },
   alternates: {
@@ -59,6 +55,7 @@ const webAppSchema = {
   "operatingSystem": "All",
   "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
   "author": { "@type": "Organization", "name": "SkillDrills" },
+  "sameAs": "https://de.wikipedia.org/wiki/N-back",
   "isAccessibleForFree": true,
   "dateModified": "2026-09-11",
   "educationalUse": ["Arbeitsgedächtnis-Kapazität", "Informationsaktualisierung", "Exekutive Funktionen", "Fluide Intelligenz"]
@@ -221,8 +218,9 @@ const faqSchema = {
 };
 
 const nBackClientCopyDe = {
-  h1Keyword: "N-Back Test Online",
-  h1Suffix: " – Arbeitsgedächtnis-Training",
+  h1Keyword: "N-Back Test online",
+  h1Suffix: " – Arbeitsgedächtnis",
+  subtitle: "2-Back-Training für laufende Informationsaktualisierung",
   caption: "Die N-Back-Aufgabe verlangt die kontinuierliche Entscheidung, ob der aktuelle Reiz mit dem vor N Schritten gezeigten übereinstimmt. Gemäß dem Arbeitsgedächtnismodell von Baddeley & Hitch (1974) kombiniert dies simultane Speicherung und aktive Aktualisierung.",
   statScore: "Punkte",
   statTime: "Zeit",
@@ -235,7 +233,7 @@ const nBackClientCopyDe = {
   btnMatch: "TREFFER (MATCH)",
   btnNoMatch: "KEIN TREFFER",
   startTitle: "Dual N-Back Training Pro",
-  startSubtitle: "Arbeitsgedächtnis • Sequenzaktualisierung",
+  startSubtitle: "Arbeitsgedächtnis • 2-Back",
   countdownSubtitle: "BEREITMACHEN",
   newBest: "NEUER REKORD",
   pointsLabel: "Punkte",

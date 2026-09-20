@@ -1,31 +1,30 @@
-import SaccadicGalleryClient from '@/app/drills/reaction-speed/saccadic-gallery/SaccadicGalleryClient';
+import SaccadicGalleryWrapper from '@/app/drills/reaction-speed/saccadic-gallery/SaccadicGalleryWrapperLoader';
 import { getAlternateLanguages } from '@/lib/i18n/locales';
 import DrillGuide from '@/components/drill/DrillGuide';
+import DrillFooter from '@/components/drill/DrillFooter';
 import RelatedDrills from '@/components/drill/RelatedDrills';
 import { pickSources } from '@/lib/drillSources';
 
 // ============================================================
 // SEO RESEARCH FINDINGS — de-DE (reaction-speed / saccadic-gallery)
-// PRIMARY DOMESTIC: "Sakkaden Sehtraining" / "Sakkadentraining Online"
-// SECONDARY / LSI:
-//   "Sakkadische Augenbewegungen" / "Blicksprünge trainieren"
-//   "Augenbeweglichkeit Übungen" / "Reaktionszeit Augen"
+// PRIMARY DOMESTIC: Google Suggest expands "Augentraining" into Übungen and online
+// Secondary native phrasing: "Blicksprünge trainieren"; specialist Sakkaden terms remain supporting entities
 // ============================================================
 
 export const metadata = {
-  title: 'Sakkaden Sehtraining – Schnelle Augenreflexe | SkillDrills',
+  title: 'Augentraining Online · Blicksprünge trainieren | SkillDrills',
   description:
-    'Kostenloses Sakkadentraining online. Trainiere schnelle Blicksprünge (Sakkaden) zwischen Zielpunkten für schnellere visuelle Zielerfassung im Browser.',
+    'Kostenloses Augentraining online: Trainiere Blicksprünge zwischen Zielpunkten für schnellere visuelle Zielerfassung im Browser.',
   keywords: [
-    'sakkaden sehtraining',
-    'sakkadentraining online',
-    'sakkadische augenbewegungen',
+    'augentraining online',
+    'augentraining übungen',
     'blicksprünge trainieren',
-    'augenbeweglichkeit übungen',
-    'reaktionszeit augen',
-    'periphere wahrnehmung',
+    'augenbewegungen trainieren',
+    'sakkadentraining',
+    'sakkadische augenbewegungen',
+    'sehtraining online',
+    'visuelles training',
     'zielerfassung trainieren',
-    'dynamisches sehtraining',
     'augenkoordination',
   ],
   alternates: {
@@ -33,9 +32,9 @@ export const metadata = {
     languages: getAlternateLanguages('/drills/reaction-speed/saccadic-gallery'),
   },
   openGraph: {
-    title: 'Sakkaden Sehtraining – Schnelle Augenreflexe | SkillDrills',
+    title: 'Augentraining Online · Blicksprünge trainieren | SkillDrills',
     description:
-      'Kostenloses Sakkadentraining online. Trainiere blitzschnelle Blicksprünge (Sakkaden) zwischen Zielpunkten zur Verbesserung der Reaktionsschnelligkeit.',
+      'Trainiere Blicksprünge zwischen Zielpunkten und verbessere visuelle Zielerfassung mit einem kostenlosen Browser-Drill.',
     type: 'article',
     url: 'https://skilldrills.online/de/drills/reaction-speed/saccadic-gallery',
     siteName: 'SkillDrills',
@@ -43,9 +42,9 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Sakkaden Sehtraining – Schnelle Augenreflexe | SkillDrills',
+    title: 'Augentraining Online · Blicksprünge trainieren | SkillDrills',
     description:
-      'Kostenloses Sakkaden-Sehtraining online. Trainiere Blicksprünge und Reaktionsschnelligkeit im Browser.',
+      'Kostenloses Augentraining im Browser: Blicksprünge üben und Ziele schneller erfassen.',
   },
   robots: { index: true, follow: true },
 };
@@ -57,15 +56,15 @@ const breadcrumbSchema = {
     { '@type': 'ListItem', position: 1, name: 'SkillDrills Startseite', item: 'https://skilldrills.online/de' },
     { '@type': 'ListItem', position: 2, name: 'Drills Übersicht', item: 'https://skilldrills.online/de/drills' },
     { '@type': 'ListItem', position: 3, name: 'Reaktionsschnelligkeit', item: 'https://skilldrills.online/de/drills/reaction-speed' },
-    { '@type': 'ListItem', position: 4, name: 'Sakkaden Sehtraining', item: 'https://skilldrills.online/de/drills/reaction-speed/saccadic-gallery' },
+    { '@type': 'ListItem', position: 4, name: 'Augentraining Online · Blicksprünge trainieren', item: 'https://skilldrills.online/de/drills/reaction-speed/saccadic-gallery' },
   ],
 };
 
 const softwareApplicationSchema = {
   '@context': 'https://schema.org',
   '@type': 'SoftwareApplication',
-  name: 'Sakkaden Sehtraining – Schnelle Augenbewegungen & Reaktions-Drill',
-  alternateName: ['Sakkadentraining Online', 'Blicksprung Test', 'Visualtraining Esports'],
+  name: 'Augentraining Online · Blicksprünge trainieren',
+  alternateName: ['Augentraining online', 'Blicksprünge trainieren', 'Sakkadentraining', 'Visuelles Training'],
   applicationCategory: 'HealthApplication',
   operatingSystem: 'All',
   offers: { '@type': 'Offer', price: '0', priceCurrency: 'EUR' },
@@ -78,7 +77,7 @@ const softwareApplicationSchema = {
 const webAppSchema = {
   '@context': 'https://schema.org',
   '@type': 'WebApplication',
-  name: 'Sakkaden Sehtraining — Schnelle Augenbewegungen | SkillDrills',
+  name: 'Augentraining Online · Blicksprünge trainieren | SkillDrills',
   url: 'https://skilldrills.online/de/drills/reaction-speed/saccadic-gallery',
   description:
     'Kostenloses Reaktionsspiel zum Training sakkadischer Augenbewegungen, peripherer Wahrnehmung und fovealer Fixierung im Browser.',
@@ -95,7 +94,7 @@ const webAppSchema = {
 const videoGameSchema = {
   '@context': 'https://schema.org',
   '@type': 'VideoGame',
-  name: 'Sakkaden Sehtraining - Schnelle Blicksprünge & Reaktions-Drill',
+  name: 'Augentraining - Blicksprünge trainieren',
   url: 'https://skilldrills.online/de/drills/reaction-speed/saccadic-gallery',
   description: 'Trainieren von schnellen Augenbewegungen und präziser Zielerfassung im Browser.',
   genre: ['Vision Training', 'Action', 'Esports Training'],
@@ -144,7 +143,7 @@ const howToSchema = {
 const faqSchema = {
   '@context': 'https://schema.org',
   '@type': 'FAQPage',
-  dateModified: '2026-09-15',
+  dateModified: '2026-09-20',
   mainEntity: [
     {
       '@type': 'Question',
@@ -229,6 +228,7 @@ const faqSchema = {
   ],
 };
 
+faqSchema.mainEntity = faqSchema.mainEntity.slice(0, 10);
 const saccadicGuide = {
   heading: 'Leitfaden: Sakkadische Augenbewegungen & Visuelles Scan-Training',
   intro: [
@@ -319,11 +319,12 @@ export default function GermanSaccadicGalleryPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
-      <SaccadicGalleryClient copy={{ title: 'Sakkaden Sehtraining' }} />
+      <SaccadicGalleryWrapper copy={{ title: 'Augentraining Online · Blicksprünge trainieren', subtitle: 'Blicksprünge · Schnelle Zielerfassung', caption: 'Führe den Blick schnell zwischen Zielen und klicke jedes präzise an.' }} />
       <DrillGuide guide={saccadicGuide} />
       <div className="max-w-6xl mx-auto px-4 pb-12">
         <RelatedDrills currentCategory="reaction-speed" currentHref="https://skilldrills.online/de/drills/reaction-speed/saccadic-gallery" />
       </div>
+      <DrillFooter />
     </>
   );
 }

@@ -703,7 +703,7 @@ export default function FlowStateClient({ copy = null }) {
   return (
     <div className="min-h-screen bg-[#050508] text-white flex flex-col font-sans select-none">
       {/* ── MAIN CONTENT AREA ── */}
-      <main className="flex-1 max-w-6xl w-full mx-auto px-4 py-6 flex flex-col gap-6">
+      <main className="flex-1 max-w-6xl w-full mx-auto px-4 pt-6 pb-0 flex flex-col gap-6">
         {/* Title */}
         {!isFullscreen && (
           <div className="flex flex-col gap-1">
@@ -847,6 +847,7 @@ export default function FlowStateClient({ copy = null }) {
           <div className="[&>div]:!mt-0">
             <DrillAccordion
               id="rules"
+              singleLineTitle
               title={copy?.rulesTitle || "Drill Instructions & Scoring System"}
               isOpen={openAccordion === 'rules'}
               onToggle={() => setOpenAccordion(openAccordion === 'rules' ? null : 'rules')}
@@ -860,6 +861,7 @@ export default function FlowStateClient({ copy = null }) {
 
             <DrillAccordion
               id="about"
+              singleLineTitle
               title={copy?.aboutTitle || "About Flow State Trainer"}
               isOpen={openAccordion === 'about'}
               onToggle={() => setOpenAccordion(openAccordion === 'about' ? null : 'about')}

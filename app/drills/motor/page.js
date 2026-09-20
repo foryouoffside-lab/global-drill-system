@@ -2,35 +2,21 @@ import MotorDrillsClient from './MotorDrillsClient';
 import { getAlternateLanguages } from '@/lib/i18n/locales';
 
 export const metadata = {
-  title: 'Mouse Precision & Hand Eye Coordination Drills - Free',
-  description: 'Free aim trainer and motor skills drills online. 8 hand eye coordination, movement speed, and precision control tests. No sign-up.',
+  title: 'Mouse Precision Training & Aim Drills | SkillDrills',
+  description: 'Free browser drills for mouse accuracy, aim control, CPS clicking, keyboard speed, and hand-eye coordination. No sign-up.',
   keywords: [
-    'free aim trainer', 'aim trainer online', 'motor skills drills', 'motor skills training',
-    'hand eye coordination training', 'hand eye coordination game', 'hand eye coordination test',
-    'mouse accuracy test', 'mouse precision training', 'mouse precision game',
-    'click accuracy test', 'click speed test', 'cps test online',
-    'reaction time test', 'reaction time training', 'reflex test online',
-    'fine motor skills', 'fine motor skills training', 'fine motor skills game',
-    'flick training', 'flick shot training', 'flick training online',
-    'finger speed test', 'finger dexterity test', 'finger sequencing drill',
-    'steady hand game', 'mouse tracing game', 'drag and drop game',
-    'rhythm click game', 'timing accuracy game', 'synchronization drill',
-    'FPS training online', 'gaming aim practice', 'esports training game',
-    'Valorant aim trainer', 'CS2 aim training', 'Apex aim trainer',
-    'keyboard recognition trainer', 'keybind speed trainer', 'keyboard layout trainer',
-    'free motor training', 'online motor drills', 'precision control training',
-    'movement speed drill', 'timing accuracy drill', 'coordination training',
-    'skilldrills motor', 'skilldrills aim', 'free online skill training',
-    'no download motor game', 'browser skill game', 'instant motor training',
-    'motor skills game online', 'precision mouse training',
-    'hand eye coordination exercises', 'how to improve mouse accuracy',
-    'clicks per second test', 'cps test average', 'fitts law mouse accuracy',
-    'finger dexterity exercises', 'steady hand test tremor control',
-    'sub pixel mouse precision', 'fine motor skills games',
+    'mouse precision training', 'mouse accuracy test', 'aim trainer online',
+    'motor skills drills', 'hand eye coordination training', 'click speed test',
+    'cps test online', 'keyboard speed test', 'fine motor skills training',
+    'flick training', 'finger dexterity test', 'steady hand game',
+    'mouse tracing game', 'drag and drop game', 'reaction time training',
+    'FPS aim practice', 'esports aim training', 'precision control drills',
+    'cursor control training', 'movement speed drills', 'coordination exercises',
+    'free browser motor drills', 'no download aim trainer', 'how to improve mouse accuracy',
   ],
   openGraph: {
-    title: 'Mouse Precision & Hand Eye Coordination Drills | SkillDrills',
-    description: 'Free aim trainer and motor skills drills. 8 hand eye coordination, click speed, and precision control tests. No sign-up.',
+    title: 'Mouse Precision Training & Aim Drills | SkillDrills',
+    description: 'Free browser drills for mouse accuracy, aim control, CPS clicking, keyboard speed, and hand-eye coordination. No sign-up.',
     type: 'website',
     url: 'https://skilldrills.online/drills/motor',
     siteName: 'SkillDrills',
@@ -44,8 +30,8 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Mouse Precision & Hand Eye Coordination Drills | SkillDrills',
-    description: 'Free aim trainer and motor skills drills. 8 hand eye coordination, click speed, and precision control tests. No sign-up.',
+    title: 'Mouse Precision Training & Aim Drills | SkillDrills',
+    description: 'Free browser drills for mouse accuracy, aim control, CPS clicking, keyboard speed, and hand-eye coordination. No sign-up.',
     images: ['https://skilldrills.online/icons/icon-512x512.png'],
   },
   robots: { index: true, follow: true },
@@ -58,6 +44,8 @@ export const metadata = {
 const faqSchema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
+  "inLanguage": "en-US",
+  "dateModified": "2026-09-20",
   "mainEntity": [
     {
       "@type": "Question",
@@ -138,9 +126,11 @@ const breadcrumbSchema = {
 const collectionSchema = {
   "@context": "https://schema.org",
   "@type": "CollectionPage",
-  "name": "Free Aim Trainer & Motor Skills Drills - Mouse Precision Online",
+  "inLanguage": "en-US",
+  "dateModified": "2026-09-20",
+  "name": "Mouse Precision Training & Aim Drills",
   "url": "https://skilldrills.online/drills/motor",
-  "description": "8 free motor skills drills and aim trainer games online. Hand eye coordination, click speed tests, flick training, and precision control drills. No sign-up required.",
+  "description": "9 free browser drills for mouse accuracy, aim control, CPS clicking, keyboard speed, and hand-eye coordination. No sign-up required.",
   "author": { "@type": "Organization", "name": "SkillDrills", "url": "https://skilldrills.online" },
   "hasPart": [
     // Hand-Eye Coordination (3 Drills)

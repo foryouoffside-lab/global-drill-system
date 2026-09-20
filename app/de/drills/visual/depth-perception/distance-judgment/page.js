@@ -5,38 +5,34 @@ import { getAlternateLanguages } from '@/lib/i18n/locales';
 import { pickSources } from '@/lib/drillSources';
 
 // ============================================================
-// SEO RESEARCH FINDINGS — distance-judgment (German: Räumliches Sehen)
-// PRIMARY:  "Räumliches Sehen Test"          — Core diagnostic query
-//           "Tiefenwahrnehmung Test Online"  — High intent visual query
+// SEO RESEARCH FINDINGS — distance-judgment (German native search)
+// PRIMARY:  "räumliches Sehen Test"          — Natural optometry phrasing
+//           "Tiefensehen Test"               — Direct depth-perception intent
 // SECONDARY / LSI:
-//           "Stereosehen Test"               — Clinical stereopsis search
-//           "Entfernungsschätzung Übung"     — Distance estimation
-//           "Sehtest räumliches Sehen"       — Driver license / occupational check
-//           "Tiefensehen Führerschein"       — License visual requirement
-//           "Optisches Looming"              — Expansion rate perception
-//           "Howard-Dolman-Test"             — Classic rod test
+//           "Stereosehen"                    — Clinical stereopsis search
+//           "Entfernung einschätzen"         — Practical distance estimation
+//           "Sehtest räumliches Sehen online" — Browser intent
+//           "Tiefenwahrnehmung testen"       — Plain-language query
 // ============================================================
 
 export const metadata = {
-  title: 'Räumliches Sehen Test – Tiefenwahrnehmung & Stereosehen',
-  description: 'Kostenloser Test für räumliches Sehen online. Trainiere Entfernungsschätzung und optisches Looming bei herannahenden Zielen. Wissenschaftlicher Sehtest.',
+  title: 'Räumliches Sehen Test online | Entfernungen üben | SkillDrills',
+  description: 'Kostenloser Test für räumliches Sehen und Tiefensehen. Übe Entfernungsschätzung mit einem bewegten Ziel im Browser; kein medizinischer Sehtest.',
   keywords: [
-    'Räumliches Sehen Test',
-    'Tiefenwahrnehmung Test Online',
-    'Stereosehen Test',
-    'Entfernungsschätzung Übung',
-    'Sehtest räumliches Sehen',
+    'räumliches Sehen Test',
+    'Tiefensehen Test',
+    'Stereosehen',
+    'Sehtest räumliches Sehen online',
+    'Tiefenwahrnehmung testen',
+    'Entfernung einschätzen',
+    'Entfernungsschätzung üben',
+    '3D Sehtest',
+    'räumliche Wahrnehmung',
     'Tiefensehen Führerschein',
-    'Optisches Looming Wahrnehmung',
-    'Howard-Dolman-Test',
-    'Entfernung schätzen lernen',
-    '3D Sehen Test',
-    'Augenabstand Sehtest',
-    'Tiefenschärfe Auge trainieren',
   ],
   openGraph: {
-    title: 'Räumliches Sehen Test – Tiefenwahrnehmung & Stereosehen | SkillDrills',
-    description: 'Kostenloser Test für räumliches Sehen online. Trainiere Entfernungsschätzung und optisches Looming bei herannahenden Zielen. Wissenschaftlicher Sehtest.',
+    title: 'Räumliches Sehen Test online | Entfernungen üben | SkillDrills',
+    description: 'Kostenloser Test für räumliches Sehen und Tiefensehen. Übe Entfernungsschätzung mit einem bewegten Ziel im Browser; kein medizinischer Sehtest.',
     type: 'article',
     url: 'https://skilldrills.online/de/drills/visual/depth-perception/distance-judgment',
     siteName: 'SkillDrills',
@@ -44,8 +40,8 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Räumliches Sehen Test – Tiefenwahrnehmung & Stereosehen | SkillDrills',
-    description: 'Kostenloser Test für räumliches Sehen online. Trainiere Entfernungsschätzung und optisches Looming bei herannahenden Zielen. Wissenschaftlicher Sehtest.',
+    title: 'Räumliches Sehen Test online | Entfernungen üben | SkillDrills',
+    description: 'Kostenloser Test für räumliches Sehen und Tiefensehen. Übe Entfernungsschätzung mit einem bewegten Ziel im Browser; kein medizinischer Sehtest.',
   },
   robots: { index: true, follow: true },
   alternates: {
@@ -227,7 +223,7 @@ const faqSchema = {
 };
 
 const distanceGuideDe = {
-  heading: 'Standards für räumliches Sehen & Tiefenwahrnehmung',
+  heading: 'Räumliches Sehen testen: Entfernungsschätzung und Tiefensehen',
   intro: [
     'Tiefenwahrnehmung (Stereosehen und räumliches Urteilsvermögen) ist die sensorische und neurologische Fähigkeit, den Raum dreidimensional zu erfassen und Entfernungen, räumliche Tiefenstaffelungen sowie Annäherungsgeschwindigkeiten von Objekten präzise zu beurteilen. Im Motorsport, in der Luftfahrt, beim Führen von Nutzfahrzeugen (Führerschein-Sehtest nach FeV) und im wettbewerbsorientierten E-Sport entscheidet diese Fähigkeit im Bruchteil einer Sekunde über erfolgreiches Abfangen oder folgenschwere Kollisionen.',
     'Dieser Drill operationalisiert die geometrischen Grundlagen des klassischen Howard-Dolman-Stereoapparats (Howard, 1919) und der ökologischen Optik von David N. Lee (1976) sowie David Regan & Kenneth I. Beverley (1978). Durch das Projizieren einer dreidimensionalen Kugel entlang eines virtuellen Tunnels auf eine feste Referenzebene trainiert der Drill das visuelle System, optische Expansionsraten (Looming) und die geschätzte Kontaktzeit (Time-to-Contact, τ) unter stetig ansteigenden Geschwindigkeiten exakt zu berechnen.',
@@ -235,7 +231,7 @@ const distanceGuideDe = {
     'Datenschutz & Transparenz: SkillDrills erfasst keinerlei personenbezogene Daten, diagnostische Sehprofile oder zentrale Telemetrie. Sämtliche Bestleistungen, Fehlerquoten und Levelstufen verbleiben ausschließlich im lokalen Speicher (LocalStorage) Ihres Webbrowsers.'
   ],
   benchmarks: {
-    title: 'Referenztabelle für Tiefenwahrnehmung & Abfanggenauigkeit',
+    title: 'Orientierungswerte für Tiefensehen und Zielgenauigkeit',
     headers: ['Leistungsstufe', 'Mittlere Tiefenabweichung', 'Punkte & Level', 'Visuelles Profil'],
     rows: [
       ['Tier 1: Apex Stereoskopie-Meister', 'Unter 5,0 % Fehler', '1500+ Pkt | Level 7+', 'Exzellente Looming-Wahrnehmung, perfekte zeitliche Koinzidenz.'],
@@ -246,7 +242,7 @@ const distanceGuideDe = {
     ],
   },
   protocols: {
-    title: 'Trainingsprotokolle zur Schärfung des räumlichen Sehens',
+    title: 'Übungen für räumliches Sehen und Entfernungsschätzung',
     items: [
       {
         title: 'Protokoll 1: Optische Expansion & TTC-Kalkulation (Lee 1976)',
@@ -294,14 +290,14 @@ const distanceGuideDe = {
 
 const copyDe = {
   title: 'Räumliches Sehen Test',
-  subtitle: 'Tiefenwahrnehmung & 3D-Interzeptions-Labor',
+  subtitle: 'Tiefensehen & Entfernung üben',
   caption: 'Tiefenwahrnehmung ist die Beurteilung von Entfernung und räumlicher Reihenfolge. Auf einem flachen Bildschirm wird vor allem die optische Expansionsrate (Lee, 1976; Regan & Beverley, 1978) gemessen — die Geschwindigkeit, mit der das Bild auf der Netzhaut wächst, bestimmt die Time-to-Contact ohne Vorkenntnis von Größe oder Distanz.',
   statScore: 'Punkte',
   statTime: 'Zeit',
   statLevel: 'Level',
   statBestScore: 'Rekord',
   startTitle: 'Räumliches Sehen Pro',
-  startSubtitle: '3D-Tiefenbeurteilung • Optischer Interzeptionsdrill',
+  startSubtitle: 'Bewegtes Ziel: Entfernung einschätzen und treffen',
   startBtn: 'Test starten',
   getReady: 'BEREITMACHEN',
   newBest: 'NEUER REKORD',

@@ -2,10 +2,11 @@ import VisualTrackingDrillsClient from '@/app/drills/visual-tracking/VisualTrack
 import { DRILLS } from '@/lib/drillsRegistry';
 import { getAlternateLanguages } from '@/lib/i18n/locales';
 import { getLocalizedDrill } from '@/lib/i18n/drillNames';
+import { buildVisualTrackingHubMetadata, getVisualTrackingHubCollectionFields, getVisualTrackingHubFaqFields } from '@/lib/i18n/visualTrackingHubNative';
 
 const trackingDrills = DRILLS.filter((d) => d.category === 'visual-tracking');
 
-export const metadata = {
+const legacyMetadata = {
   title: '동체시력 훈련 & 시각 추적 도감 – 무료 안구 운동 | SkillDrills',
   description: '온라인 무료 동체시력 훈련 및 시각 추적 프로그램. 부드러운 안구 추종(Smooth Pursuit), 궤적 예측, 주변시 등 14가지 과학적 안구 훈련을 바로 시작하세요.',
   keywords: [
@@ -37,6 +38,8 @@ export const metadata = {
   },
 };
 
+export const metadata = { ...legacyMetadata, ...buildVisualTrackingHubMetadata('ko', 'https://skilldrills.online/ko/drills/visual-tracking', trackingDrills.length, getAlternateLanguages('/ko/drills/visual-tracking')) };
+
 const breadcrumbSchema = {
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
@@ -54,6 +57,7 @@ const collectionSchema = {
   "url": "https://skilldrills.online/ko/drills/visual-tracking",
   "description": "부드러운 안구 추종(Smooth Pursuit), 사인파 추적, 무한대 궤적, 탄도 예측, 주변시 등 14가지 전문 안구 운동 프로그램을 무료로 제공합니다.",
   "author": { "@type": "Organization", "name": "SkillDrills" },
+  ...getVisualTrackingHubCollectionFields('ko', trackingDrills.length),
   "hasPart": trackingDrills.map((drill) => {
     const loc = getLocalizedDrill(drill.href, 'ko', drill.name);
     return {
@@ -135,14 +139,17 @@ const faqSchema = {
   ]
 };
 
+const { additions, ...faqFields } = getVisualTrackingHubFaqFields('ko');
+const enrichedFaqSchema = { ...faqSchema, ...faqFields, mainEntity: [...faqSchema.mainEntity, ...additions] };
+
 export default function LocalizedVisualTrackingDrillsClientPage() {
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(collectionSchema) }} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(enrichedFaqSchema) }} />
       <VisualTrackingDrillsClient
-        faqs={faqSchema.mainEntity.map((e) => ({ q: e.name, a: e.acceptedAnswer.text }))}
+        faqs={enrichedFaqSchema.mainEntity.map((e) => ({ q: e.name, a: e.acceptedAnswer.text }))}
       />
     </>
   );

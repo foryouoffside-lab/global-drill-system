@@ -6,7 +6,7 @@ import { pickSources } from '@/lib/drillSources';
 
 // ============================================================
 // SEO RESEARCH FINDINGS — Brazil & Portugal (BR / PT)
-// Primary Intent: jogo de memoria visual, teste de memoria de trabalho visual, teste de coordenacao motora fina
+// Native SERP intent: jogo de memória visual online, teste de memória espacial, memória de sequência
 // Portuguese Context: Memorização de padrões geométricos vetoriais e reprodução motora sob pressão de tempo
 // High-Demand, Low-Competition Target Keywords:
 //   - "jogo de memoria visual online" (High-volume brain game query)
@@ -22,27 +22,27 @@ import { pickSources } from '@/lib/drillSources';
 // ============================================================
 
 export const metadata = {
-  title: 'Jogo de Memória Visual – Padrões Espaciais | SkillDrills',
-  description: 'Jogo de memória visual e espacial gratuito. Memorize trajetos complexos entre pontos para treinar sua memória de trabalho e coordenação motora no PC.',
+  title: 'Jogo de Memória Visual | Teste Espacial | SkillDrills',
+  description: 'Jogo grátis de memória visual no navegador. Memorize um caminho piscando, trace o padrão e treine memória espacial, sequência e coordenação do mouse.',
   keywords: [
-    "jogo de memoria visual online",
-    "teste de memoria de trabalho visual",
-    "teste de coordenacao motora fina",
-    "jogo de memorizar sequencia",
-    "teste de coordenacao viso motora",
-    "memorizar padroes geometricos",
-    "memoria espacial e controle de recoil",
-    "treino de traco vetorial",
-    "agilidade motora sequencial",
-    "bloco de notas visuoespacial treino"
+    "jogo de memória visual online",
+    "teste de memória visual",
+    "memória espacial",
+    "teste de memória de sequência",
+    "teste de memória visuoespacial",
+    "jogo de memorizar sequência",
+    "coordenação visomotora",
+    "memorizar padrões geométricos",
+    "traçar padrões no navegador",
+    "memória de trabalho visual"
   ],
   alternates: {
     canonical: 'https://skilldrills.online/pt/drills/physical/coordination/complex-pattern',
     languages: getAlternateLanguages('/drills/physical/coordination/complex-pattern'),
   },
   openGraph: {
-    title: 'Jogo de Memória Visual – Padrões Espaciais | SkillDrills',
-    description: 'Jogo de memória visual e espacial gratuito. Memorize trajetos complexos entre pontos para treinar sua memória de trabalho e coordenação motora no PC.',
+    title: 'Jogo de Memória Visual | Teste Espacial | SkillDrills',
+    description: 'Memorize um caminho piscando, trace o padrão e pratique memória espacial e coordenação do mouse em um jogo grátis no navegador.',
     url: 'https://skilldrills.online/pt/drills/physical/coordination/complex-pattern',
     siteName: 'SkillDrills',
     locale: 'pt_BR',
@@ -50,8 +50,8 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Jogo de Memória Visual – Padrões Espaciais | SkillDrills',
-    description: 'Jogo de memória visual e espacial gratuito. Memorize trajetos complexos entre pontos para treinar sua memória de trabalho e coordenação motora no PC.',
+    title: 'Jogo de Memória Visual | Teste Espacial | SkillDrills',
+    description: 'Memorize um caminho piscando, trace o padrão e pratique memória espacial e coordenação do mouse em um jogo grátis no navegador.',
   },
   robots: { index: true, follow: true },
 };
@@ -98,7 +98,10 @@ const softwareApplicationSchema = {
     "price": "0",
     "priceCurrency": "USD"
   },
-  "description": "Ferramenta cognitiva e motora para avaliar e expandir a memória de trabalho visoespacial através da memorização de padrões geométricos e traçado de vetores de alta precisão."
+  "description": "Ferramenta cognitiva e motora para avaliar e expandir a memória de trabalho visoespacial através da memorização de padrões geométricos e traçado de vetores de alta precisão.",
+  "url": "https://skilldrills.online/pt/drills/physical/coordination/complex-pattern",
+  "inLanguage": "pt-BR",
+  "dateModified": "2026-09-20"
 };
 
 const webApplicationSchema = {
@@ -113,7 +116,9 @@ const webApplicationSchema = {
     "@type": "Offer",
     "price": "0",
     "priceCurrency": "USD"
-  }
+  },
+  "inLanguage": "pt-BR",
+  "dateModified": "2026-09-20"
 };
 
 const videoGameSchema = {
@@ -123,12 +128,16 @@ const videoGameSchema = {
   "url": "https://skilldrills.online/pt/drills/physical/coordination/complex-pattern",
   "description": "Jogo de habilidade mental e motora onde o jogador memoriza vértices geométricos e os reproduz com o mouse em alta velocidade.",
   "genre": ["Action", "Brain Game", "Reflex Game", "Coordination"],
-  "gamePlatform": ["Web Browser", "Desktop", "Mobile"]
+  "gamePlatform": ["Web Browser", "Desktop", "Mobile"],
+  "inLanguage": "pt-BR",
+  "dateModified": "2026-09-20"
 };
 
 const faqSchema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
+  "inLanguage": "pt-BR",
+  "dateModified": "2026-09-20",
   "mainEntity": [
     {
       "@type": "Question",
@@ -333,8 +342,8 @@ export default function ComplexPatternPtPage() {
       />
       <ComplexPatternClient
         copy={{
-          title: 'Jogo de Memória Visual – Padrões Espaciais | SkillDrills',
-          subtitle: 'Jogo de Memória Visual – Padrões Espaciais | SkillDrills',
+          title: 'Jogo de Memória Visual',
+          subtitle: 'Memorize o caminho e trace o padrão',
           hudLabels: {
             score: "Pontos",
             time: "Tempo",

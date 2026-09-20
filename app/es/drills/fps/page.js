@@ -6,18 +6,18 @@ import { getLocalizedDrill } from '@/lib/i18n/drillNames';
 const fpsDrills = DRILLS.filter((d) => d.category === 'fps');
 
 export const metadata = {
-  title: 'Mejorar Puntería FPS – Aim Trainer Online | SkillDrills',
-  description: 'Aim Trainer gratis para Valorant, CS2 y Apex. 15 ejercicios de flicks, tracking, control de retroceso y reflejos directamente en tu navegador.',
+  title: 'Entrenamiento de puntería FPS | SkillDrills',
+  description: '15 ejercicios gratis para Valorant, CS2 y Apex: flicks, tracking, control de retroceso y reflejos en tu navegador.',
   keywords: [
-    'mejorar puntería fps', 'entrenar puntería valorant', 'cs2 puntería entrenamiento',
-    'flick shots ejercicios', 'tracking puntería', 'colocación de la mira',
-    'sensibilidad ratón shooter', 'aim trainer online gratis', 'reflejos gaming test',
-    'control de retroceso online', 'apuntar con brazo o muñeca', 'microajustes puntería',
-    'precisión de ratón test', 'calculadora edpi shooter', 'aim trainer navegador gratis'
+    'entrenamiento de puntería', 'mejorar puntería FPS', 'aim trainer gratis',
+    'puntería Valorant', 'puntería CS2', 'ejercicios de flicks',
+    'tracking de puntería', 'colocación de la mira', 'sensibilidad ratón shooter',
+    'test de reflejos gaming', 'control de retroceso', 'apuntar con brazo o muñeca',
+    'microajustes de puntería', 'eDPI shooter', 'aim trainer navegador gratis'
   ],
   openGraph: {
-    title: 'Mejorar Puntería FPS – Aim Trainer Online | SkillDrills',
-    description: 'Aim Trainer gratis para Valorant, CS2 y Apex. 15 ejercicios de flicks, tracking, control de retroceso y reflejos directamente en tu navegador.',
+    title: 'Entrenamiento de puntería FPS | SkillDrills',
+    description: '15 ejercicios gratis para Valorant, CS2 y Apex: flicks, tracking, control de retroceso y reflejos en tu navegador.',
     type: 'website',
     url: 'https://skilldrills.online/es/drills/fps',
     siteName: 'SkillDrills',
@@ -26,8 +26,8 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Mejorar Puntería FPS – Aim Trainer Online | SkillDrills',
-    description: 'Entrenador de puntería gratis para Valorant, CS2 y Apex. 15 ejercicios profesionales en tu navegador.',
+    title: 'Entrenamiento de puntería FPS | SkillDrills',
+    description: '15 ejercicios gratis de puntería para Valorant, CS2 y Apex en tu navegador.',
     images: ['https://skilldrills.online/icons/icon-512x512.png'],
   },
   robots: { index: true, follow: true },
@@ -50,9 +50,11 @@ const breadcrumbSchema = {
 const collectionSchema = {
   "@context": "https://schema.org",
   "@type": "CollectionPage",
-  "name": "Entrenador de Puntería FPS Gratis – Centro de Entrenamiento Online",
+  "inLanguage": "es-ES",
+  "dateModified": "2026-09-20",
+  "name": "Entrenamiento de puntería FPS (15 ejercicios)",
   "url": "https://skilldrills.online/es/drills/fps",
-  "description": `15 ejercicios profesionales de puntería para Valorant, CS2 y Apex Legends. Flick shots, seguimiento (tracking), control de retroceso, giros de 180° y reflejos. Sin descargas ni registros.`,
+  "description": `15 ejercicios gratis para Valorant, CS2 y Apex: flicks, tracking, control de retroceso, cambio de objetivos y reflejos en tu navegador.`,
   "author": { "@type": "Organization", "name": "SkillDrills" },
   "hasPart": fpsDrills.map((drill) => {
     const loc = getLocalizedDrill(drill.href, 'es', drill.name);
@@ -67,6 +69,8 @@ const collectionSchema = {
 const faqSchema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
+  "inLanguage": "es-ES",
+  "dateModified": "2026-09-20",
   "mainEntity": [
     {
       "@type": "Question",

@@ -23,27 +23,26 @@ import { pickSources } from '@/lib/drillSources';
 // ============================================================
 
 export const metadata = {
-  title: 'Test de CPS – Clicks Por Segundo & Velocidad | SkillDrills',
-  description: 'Test de CPS online gratis. Mide tus clicks por segundo, velocidad de cliqueo, cadencia y resistencia de dedos en una prueba de 45 segundos sin registros.',
+  title: 'Test de CPS | Clics por segundo | SkillDrills',
+  description: 'Mide tus clics por segundo (CPS) y tu resistencia durante 45 segundos. Test gratuito en el navegador, sin registro.',
   keywords: [
-    'test de cps',
-    'cps test',
-    'clicks por segundo',
+    'test de CPS',
+    'test de velocidad de clics',
+    'clics por segundo',
+    'test de clic rápido',
+    'velocidad de clic del ratón',
     'contador de clics',
-    'click speed test',
-    'test cps',
-    'test de clicks',
-    'clicks por segundo test',
-    'velocidad de clic mouse',
-    'prueba de clicks por segundo',
     'jitter click',
     'butterfly click',
-    'minecraft pvp cps',
+    'Minecraft PvP CPS',
+    'resistencia de clic',
+    'prueba de clics por segundo',
+    'entrenamiento de clics rápidos',
   ],
   openGraph: {
-    title: 'Test de CPS – Clicks Por Segundo & Velocidad | SkillDrills',
+    title: 'Test de CPS | Clics por segundo | SkillDrills',
     description:
-      'Test de CPS online gratis. Mide tus clicks por segundo, velocidad de cliqueo, cadencia de pulsación y resistencia de dedos en una prueba de 45 segundos.',
+      'Test gratuito de CPS y resistencia de clic durante 45 segundos en el navegador.',
     type: 'article',
     url: 'https://skilldrills.online/es/drills/motor/movement-speed/rapid-tapping',
     siteName: 'SkillDrills',
@@ -51,9 +50,9 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Test de CPS – Clicks Por Segundo & Velocidad | SkillDrills',
+    title: 'Test de CPS | Clics por segundo | SkillDrills',
     description:
-      'Test de CPS online gratis. Mide tus clicks por segundo, velocidad de cliqueo, cadencia de pulsación y resistencia de dedos en una prueba de 45 segundos.',
+      'Mide tus clics por segundo y tu resistencia con un test gratuito.',
   },
   robots: { index: true, follow: true },
   alternates: {
@@ -88,7 +87,7 @@ const softwareApplicationSchema = {
   url: 'https://skilldrills.online/es/drills/motor/movement-speed/rapid-tapping',
   publisher: { '@type': 'Organization', name: 'SkillDrills', url: 'https://skilldrills.online' },
   inLanguage: 'es-ES',
-  dateModified: '2026-09-11',
+  dateModified: '2026-09-20',
 };
 
 const webApplicationSchema = {
@@ -102,12 +101,13 @@ const webApplicationSchema = {
   offers: { '@type': 'Offer', price: '0', priceCurrency: 'EUR' },
   url: 'https://skilldrills.online/es/drills/motor/movement-speed/rapid-tapping',
   inLanguage: 'es-ES',
-  dateModified: '2026-09-11',
+  dateModified: '2026-09-20',
 };
 
 const videoGameSchema = {
   '@context': 'https://schema.org',
   '@type': 'VideoGame',
+  inLanguage: 'es-ES',
   name: 'Test de CPS – Test de Velocidad de Clics y Clics por Segundo',
   url: 'https://skilldrills.online/es/drills/motor/movement-speed/rapid-tapping',
   description: 'Test de CPS – Test de Velocidad de Clics y Clics por Segundo',
@@ -121,6 +121,8 @@ const videoGameSchema = {
 const faqSchema = {
   '@context': 'https://schema.org',
   '@type': 'FAQPage',
+  inLanguage: 'es-ES',
+  dateModified: '2026-09-20',
   mainEntity: [
     {
       '@type': 'Question',
@@ -208,6 +210,8 @@ const faqSchema = {
 const howToSchema = {
   '@context': 'https://schema.org',
   '@type': 'HowTo',
+  inLanguage: 'es-ES',
+  dateModified: '2026-09-20',
   name: 'Test de CPS – Test de Velocidad de Clics y Clics por Segundo',
   description: 'Test de CPS – Test de Velocidad de Clics y Clics por Segundo',
   step: [
@@ -337,7 +341,7 @@ const esCopy = {
   cpsRate: "CPS Actual",
   bestScore: "Mejor Puntuación",
   startButtonText: "Comenzar Entrenamiento",
-  startSubtitle: "Entrenador de Velocidad de Clic • Entrada Directa 1:1",
+  startSubtitle: "CPS y resistencia de clic • 45 s",
   getReady: "PREPÁRATE",
   playAgain: "Entrenar de Nuevo",
   shareTitle: "Compartir Puntuación",

@@ -6,18 +6,18 @@ import { getLocalizedDrill } from '@/lib/i18n/drillNames';
 const fpsDrills = DRILLS.filter((d) => d.category === 'fps');
 
 export const metadata = {
-  title: '無料エイム練習 – VALORANT・CS2・Apex エイムトレーナー | SkillDrills',
-  description: 'ブラウザでインストール不要の無料FPSエイム練習サイト。VALORANT、CS2、Apex対応の15種類の本格ドリル（フリック、追いエイム、反動制御、反射神経）。',
+  title: 'FPSエイム練習・無料エイムトレーナー | SkillDrills',
+  description: 'VALORANT・CS2・Apex向け無料FPSエイム練習15種。フリック、追いエイム、リコイル制御、反応速度をブラウザで鍛えます。',
   keywords: [
-    'エイム練習 無料', 'VALORANT エイム練習', 'Apex エイム練習',
-    'CS2 エイム練習', '無料 エイムトレーナー', 'フリックエイム 練習',
-    '追いエイム 練習', 'トラッキング エイム', 'プリエイム 練習',
-    'ヘッドライン 合わせ方', '反動制御 練習', '反射神経 テスト',
+    'エイム練習', '無料 エイム練習', 'VALORANT エイム練習',
+    'Apex エイム練習', 'CS2 エイム練習', '無料 エイムトレーナー',
+    'フリック練習', '追いエイム', '置きエイム',
+    'リコイル制御', '反応速度 テスト', 'クロスヘア 合わせ方',
     '腕エイム 手首エイム', 'eDPI 感度設定', 'ブラウザ エイム練習'
   ],
   openGraph: {
-    title: '無料エイム練習 – VALORANT・CS2・Apex エイムトレーナー | SkillDrills',
-    description: 'ブラウザでインストール不要の無料FPSエイム練習サイト。VALORANT、CS2、Apex対応の15種類の本格ドリル（フリック、追いエイム、反動制御、反射神経）。',
+    title: 'FPSエイム練習・無料エイムトレーナー | SkillDrills',
+    description: 'VALORANT・CS2・Apex向け無料FPSエイム練習15種。フリック、追いエイム、リコイル制御、反応速度をブラウザで鍛えます。',
     type: 'website',
     url: 'https://skilldrills.online/ja/drills/fps',
     siteName: 'SkillDrills',
@@ -26,8 +26,8 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: '無料エイム練習 – VALORANT・CS2・Apex エイムトレーナー | SkillDrills',
-    description: 'ブラウザでインストール不要の無料FPSエイム練習サイト。15種類の本格ドリル。',
+    title: 'FPSエイム練習・無料エイムトレーナー | SkillDrills',
+    description: 'VALORANT・CS2・Apex向け無料FPSエイム練習15種をブラウザで始められます。',
     images: ['https://skilldrills.online/icons/icon-512x512.png'],
   },
   robots: { index: true, follow: true },
@@ -50,9 +50,11 @@ const breadcrumbSchema = {
 const collectionSchema = {
   "@context": "https://schema.org",
   "@type": "CollectionPage",
-  "name": "無料FPSエイム練習 – オンラインエイムトレーナー総合ハブ",
+  "inLanguage": "ja-JP",
+  "dateModified": "2026-09-20",
+  "name": "FPSエイム練習・無料エイムトレーナー（15種）",
   "url": "https://skilldrills.online/ja/drills/fps",
-  "description": `15種類の専門FPSエイムトレーニングドリル。フリックショット、追いエイム（トラッキング）、リコイル制御、180度振り向き。VALORANT、CS2、Apex Legends完全対応。登録不要・ブラウザ即時プレイ。`,
+  "description": `VALORANT・CS2・Apex向け無料FPSエイム練習15種。フリック、追いエイム、リコイル制御、ターゲット切替と反応練習をブラウザで始められます。`,
   "author": { "@type": "Organization", "name": "SkillDrills" },
   "hasPart": fpsDrills.map((drill) => {
     const loc = getLocalizedDrill(drill.href, 'ja', drill.name);
@@ -67,6 +69,8 @@ const collectionSchema = {
 const faqSchema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
+  "inLanguage": "ja-JP",
+  "dateModified": "2026-09-20",
   "mainEntity": [
     {
       "@type": "Question",
@@ -147,4 +151,3 @@ export default function JapaneseFPSHubPage() {
     </>
   );
 }
-

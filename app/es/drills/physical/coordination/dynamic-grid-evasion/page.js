@@ -6,7 +6,7 @@ import { pickSources } from '@/lib/drillSources';
 
 // ============================================================
 // INVESTIGACIÓN DE PALABRAS CLAVE NATIVAS (SERP ESPAÑA / LATAM)
-// Búsquedas de alta intención y baja competencia:
+// Clusters nativos revisados por intención; competencia aún no medida:
 // - "juego de esquivar con el raton" (Búsqueda principal de agilidad y reflejos)
 // - "test de vision periferica online gratis" (Evaluación visual y psicométrica)
 // - "juegos de esquivar obstaculos con el cursor" (Intención lúdica y entrenamiento)
@@ -18,27 +18,27 @@ import { pickSources } from '@/lib/drillSources';
 // ============================================================
 
 export const metadata = {
-  title: "Juego de Esquivar Ratón – Visión Periférica | SkillDrills",
-  description: "Juego de esquivar con el ratón gratis. Detecta explosiones en la cuadrícula 3x3 y escapa a zonas seguras para entrenar visión periférica y reflejos en PC.",
+  title: "Juego de reflejos con ratón | SkillDrills",
+  description: "Juego gratis de reflejos con ratón. Detecta zonas peligrosas en la cuadrícula 3x3 y muévete a una casilla segura para entrenar reacciones periféricas.",
   keywords: [
-    "juego de esquivar con el raton",
-    "test de vision periferica online gratis",
-    "juegos de esquivar obstaculos con el cursor",
+    "juego de esquivar con el ratón",
+    "test de visión periférica online",
+    "juego de reflejos",
+    "juegos de esquivar obstáculos con el cursor",
     "entrenamiento de reflejos espaciales",
-    "esquivar habilidades lol juego",
-    "test de atencion visual periferica",
-    "juego de reaccion y evasion rapida",
-    "ejercicios de vision periferica y reflejos",
-    "esquiva de skillshots",
-    "reflejos de raton juego"
+    "test de atención visual periférica",
+    "juego de reacción y evasión rápida",
+    "ejercicios de visión periférica y reflejos",
+    "esquivar skillshots",
+    "reflejos de ratón juego"
   ],
   alternates: {
     canonical: 'https://skilldrills.online/es/drills/physical/coordination/dynamic-grid-evasion',
     languages: getAlternateLanguages('/drills/physical/coordination/dynamic-grid-evasion'),
   },
   openGraph: {
-    title: "Juego de Esquivar Ratón – Visión Periférica | SkillDrills",
-    description: "Juego de esquivar con el ratón gratis. Detecta explosiones en la cuadrícula 3x3 y escapa a zonas seguras para entrenar visión periférica y reflejos en PC.",
+    title: "Juego de reflejos con ratón | SkillDrills",
+    description: "Juego gratis de reflejos con ratón. Detecta zonas peligrosas en la cuadrícula 3x3 y muévete a una casilla segura para entrenar reacciones periféricas.",
     url: 'https://skilldrills.online/es/drills/physical/coordination/dynamic-grid-evasion',
     siteName: 'SkillDrills',
     locale: 'es_ES',
@@ -46,8 +46,8 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: "Juego de Esquivar Ratón – Visión Periférica | SkillDrills",
-    description: "Juego de esquivar con el ratón gratis. Detecta explosiones en la cuadrícula 3x3 y escapa a zonas seguras para entrenar visión periférica y reflejos en PC.",
+    title: "Juego de reflejos con ratón | SkillDrills",
+    description: "Juego gratis de reflejos con ratón. Detecta zonas peligrosas en la cuadrícula 3x3 y muévete a una casilla segura para entrenar reacciones periféricas.",
   },
   robots: { index: true, follow: true },
 };
@@ -102,7 +102,7 @@ const softwareApplicationSchema = {
     "url": "https://skilldrills.online/es"
   },
   "inLanguage": "es-ES",
-  "dateModified": "2026-09-12"
+  "dateModified": "2026-09-20"
 };
 
 const webApplicationSchema = {
@@ -119,7 +119,7 @@ const webApplicationSchema = {
   },
   "url": "https://skilldrills.online/es/drills/physical/coordination/dynamic-grid-evasion",
   "inLanguage": "es-ES",
-  "dateModified": "2026-09-12"
+  "dateModified": "2026-09-20"
 };
 
 const videoGameSchema = {
@@ -140,6 +140,8 @@ const videoGameSchema = {
     "Mobile"
   ],
   "applicationCategory": "Game",
+  "inLanguage": "es-ES",
+  "dateModified": "2026-09-20",
   "offers": {
     "@type": "Offer",
     "price": "0",
@@ -150,7 +152,8 @@ const videoGameSchema = {
 const faqSchema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
-  "dateModified": "2026-09-12",
+  "inLanguage": "es-ES",
+  "dateModified": "2026-09-20",
   "mainEntity": [
     {
       "@type": "Question",
@@ -358,8 +361,8 @@ export default function DynamicGridEvasionPageEs() {
       />
       <DynamicGridEvasionClient
         copy={{
-          title: "Juego de Esquivar con el Ratón & Visión Periférica",
-          subtitle: "Evasión Dinámica en Cuadrícula 3x3 & Reflejos Espaciales • 15 Niveles",
+          title: "Juego de reflejos con ratón",
+          subtitle: "Detecta el peligro y muévete a una casilla segura • 15 niveles",
           hudLabels: {
             score: "Puntuación",
             timeLeft: "Tiempo Restante",

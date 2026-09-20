@@ -5,29 +5,29 @@ import RelatedDrills from '@/components/drill/RelatedDrills';
 import { pickSources } from '@/lib/drillSources';
 
 export const metadata = {
-  title: "Test Smooth Pursuit: Poursuite Oculaire | SkillDrills",
-  description: "Test de poursuite oculaire continue (Smooth Pursuit) gratuit en ligne. Évaluez la stabilité du regard, le glissement rétinien et la motilité oculaire.",
+  title: "Poursuite Oculaire | Suivi Visuel | SkillDrills",
+  description: "Entraînement gratuit de poursuite oculaire : gardez le regard et le curseur sur une cible mobile. Pratiquez le suivi visuel. Pas un diagnostic.",
   keywords: [
-    "test de poursuite oculaire continue",
-    "test smooth pursuit en ligne",
-    "entraînement oculomoteur",
+    "poursuite oculaire",
+    "poursuite visuelle",
+    "poursuite lisse",
+    "poursuite lente",
+    "suivi visuel",
+    "suivi de cible mobile",
     "mouvements oculaires de poursuite",
-    "motilité oculaire test",
-    "suppression des saccades de rattrapage",
-    "stabilité du regard fovéal",
-    "glissement rétinien vision",
-    "exercices de vision sportive",
-    "précision de suivi de cible",
-    "neuro-ophtalmologie regard",
-    "aim tracking entraînement visuel"
+    "entraînement oculomoteur",
+    "coordination œil-main",
+    "suivi de regard",
+    "aim tracking",
+    "test smooth pursuit"
   ],
   alternates: {
     canonical: "https://skilldrills.online/fr/drills/visual/tracking-accuracy/pursuit-tracker",
     languages: getAlternateLanguages('/drills/visual/tracking-accuracy/pursuit-tracker'),
   },
   openGraph: {
-    title: "Test Smooth Pursuit: Poursuite Oculaire | SkillDrills",
-    description: "Test de poursuite oculaire continue (Smooth Pursuit) gratuit en ligne. Évaluez la stabilité du regard, le glissement rétinien et la motilité oculaire.",
+    title: "Poursuite Oculaire | Suivi Visuel | SkillDrills",
+    description: "Gardez le regard et le curseur sur une cible mobile pour pratiquer la poursuite oculaire et le suivi visuel. Pas un diagnostic.",
     url: "https://skilldrills.online/fr/drills/visual/tracking-accuracy/pursuit-tracker",
     type: "website",
     locale: "fr_FR",
@@ -36,8 +36,8 @@ export const metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Test Smooth Pursuit: Poursuite Oculaire | SkillDrills",
-    description: "Test de poursuite oculaire continue (Smooth Pursuit) gratuit en ligne. Évaluez la stabilité du regard, le glissement rétinien et la motilité oculaire.",
+    title: "Poursuite Oculaire | Suivi Visuel | SkillDrills",
+    description: "Entraînez la poursuite oculaire et la stabilité du regard dans le navigateur. Les résultats varient selon l'écran et la souris.",
     images: ["https://skilldrills.online/og-default.svg"],
   },
 };
@@ -53,7 +53,7 @@ const guideData = {
     "Ce banc de test web s'appuie sur la précision sub-milliseconde de l'API performance.now() et sur un moteur de rendu subpixel pour quantifier en temps réel le temps passé sur la cible (Time on Target), la dérive moyenne et la série maximale de maintien continu sur 45 secondes. Un entraînement régulier de poursuite oculaire optimise la synergie motrice main-œil, offrant des gains directs pour le tracking aim dans les fast-FPS, l'interception de trajectoires dans les sports de balle et le confort visuel sur écran."
   ],
   benchmarks: {
-    title: "Grille d'Évaluation Standardisée en Poursuite Oculaire Smooth Pursuit",
+    title: "Repères de poursuite oculaire et de suivi visuel",
     headers: ["Niveau / Rang", "Temps sur la Cible (Time-on-Target)", "Précision Moyenne de Poursuite", "Suppression des Saccades", "Palier Neurophysiologique"],
     rows: [
       ["Palier 1 : Élite Mondiale (Top 1%)", "≥ 88%", "≥ 92%", "≥ 95% Suppression", "Poursuite fluide continue sans faille, glissement rétinien quasi nul. Modèle interne cérébelleux parfaitement calibré (Lisberger, 2010)."],
@@ -65,7 +65,7 @@ const guideData = {
     note: "Établi d'après la littérature neuro-ophtalmologique et biomécanique sportive (Rashbass 1961 ; Krauzlis 2004 ; Leigh & Zee 2015 ; Lisberger 2010)."
   },
   techniques: {
-    title: "Principes Moteurs pour Perfectionner la Poursuite Oculaire",
+    title: "Comment stabiliser le suivi visuel",
     items: [
       {
         name: "Ancrage Fovéal sur le Bord Avant",
@@ -309,7 +309,7 @@ export default function PursuitTrackerPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
 
       <main className="container mx-auto px-4 py-8 max-w-5xl">
-        <AutoPursuitClient copy={{ title: "Test de Poursuite Oculaire Continue (Smooth Pursuit)", subtitle: "Poursuite Oculaire Lisse & Précision Motrice" }} />
+        <AutoPursuitClient copy={{ title: "Poursuite Oculaire", subtitle: "Suivi Visuel" }} />
         <DrillGuide guide={guideData} />
         <RelatedDrills related={guideData.related} />
       </main>

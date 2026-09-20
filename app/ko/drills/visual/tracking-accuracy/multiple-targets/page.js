@@ -5,23 +5,25 @@ import RelatedDrills from '@/components/drill/RelatedDrills';
 import { pickSources } from '@/lib/drillSources';
 
 export const metadata = {
-  title: "다중 객체 추적 MOT 테스트: 주변시 훈련 | SkillDrills",
-  description: "인지심리학 표준 MOT(다중 객체 추적) 무료 온라인 검사. 복수의 이동 표적을 동시에 추적하여 주변시와 분할 주의력, 공간 작업기억을 극대화하세요.",
+  title: "다중 객체 추적 테스트 | 주변시 훈련 | SkillDrills",
+  description: "여러 움직이는 표적을 동시에 따라가는 무료 다중 객체 추적 테스트. 주변시와 분할 주의력을 연습하세요. 의료 검사가 아닙니다.",
   keywords: [
     "다중 객체 추적",
-    "MOT 테스트",
     "다중 물체 추적",
     "주변시 훈련",
-    "분할 주의력 검사",
+    "분할 주의력",
+    "시각적 주의력",
     "공간 작업기억",
-    "동체시력 다중 추적",
-    "파일럿 시야 검사",
-    "FPS 주변시 훈련",
-    "피리신 MOT"
+    "여러 표적 동시에 추적",
+    "MOT 테스트",
+    "움직이는 표적 추적",
+    "FPS 주변시",
+    "시각 인지 훈련",
+    "동체시력 다중 추적"
   ],
   openGraph: {
-    title: "다중 객체 추적 MOT 테스트: 주변시 훈련 | SkillDrills",
-    description: "인지심리학 표준 MOT 과제를 활용한 무료 온라인 주변시 훈련. 동일한 형태의 고속 이동 구체 속에서 지정된 복수의 타깃을 동시에 추적하고 공간 작업기억을 극대화하세요.",
+    title: "다중 객체 추적 테스트 | 주변시 훈련 | SkillDrills",
+    description: "여러 움직이는 표적을 동시에 따라가는 무료 다중 객체 추적 테스트. 주변시와 분할 주의력을 연습하세요.",
     type: 'article',
     url: 'https://skilldrills.online/ko/drills/visual/tracking-accuracy/multiple-targets',
     siteName: 'SkillDrills',
@@ -29,8 +31,8 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: "다중 객체 추적 MOT 테스트: 주변시 훈련 | SkillDrills",
-    description: "인지심리학 표준 MOT 과제를 활용한 무료 온라인 주변시 훈련. 시야의 넓이와 분할 주의력을 과학적으로 측정하세요.",
+    title: "다중 객체 추적 테스트 | 주변시 훈련 | SkillDrills",
+    description: "여러 움직이는 표적을 동시에 추적하며 시각적 주의력과 공간 작업기억을 연습하세요.",
   },
   robots: { index: true, follow: true },
   alternates: {
@@ -70,7 +72,7 @@ const breadcrumbSchema = {
     {
       "@type": "ListItem",
       "position": 5,
-      "name": "다중 객체 추적 MOT 테스트 (주변시 훈련)",
+      "name": "다중 객체 추적 테스트 (주변시 훈련)",
       "item": "https://skilldrills.online/ko/drills/visual/tracking-accuracy/multiple-targets"
     }
   ]
@@ -79,7 +81,7 @@ const breadcrumbSchema = {
 const softwareApplicationSchema = {
   "@context": "https://schema.org",
   "@type": "SoftwareApplication",
-  "name": "SkillDrills 다중 객체 추적 MOT 테스트・주변시 훈련기",
+  "name": "SkillDrills 다중 객체 추적·주변시 훈련",
   "applicationCategory": "HealthApplication",
   "operatingSystem": "Any",
   "browserRequirements": "HTML5 Canvas 지원 최신 웹 브라우저",
@@ -94,7 +96,7 @@ const softwareApplicationSchema = {
 const webApplicationSchema = {
   "@context": "https://schema.org",
   "@type": "WebApplication",
-  "name": "무료 온라인 다중 객체 추적 MOT 테스트",
+  "name": "무료 온라인 다중 객체 추적 테스트",
   "url": "https://skilldrills.online/ko/drills/visual/tracking-accuracy/multiple-targets",
   "applicationCategory": "GameApplication",
   "genre": ["다중 객체 추적", "주변시 훈련", "MOT 테스트", "시각 주의력 검사"],
@@ -105,9 +107,9 @@ const webApplicationSchema = {
 const videoGameSchema = {
   "@context": "https://schema.org",
   "@type": "VideoGame",
-  "name": "다중 객체 추적 챌린지 (GhostLink Multiple Targets)",
+  "name": "다중 객체 추적 MOT 챌린지 (GhostLink)",
   "description": "화면을 가로지르는 여러 동일 구체 중 지정된 타깃군을 놓치지 않고 동시에 추적하는 전문 비전 트레이닝 게임.",
-  "genre": ["Vision Training", "Esports Reaction", "Cognitive Drill"],
+  "genre": ["주변시 훈련", "시각적 주의력", "인지 훈련"],
   "playMode": "SinglePlayer",
   "applicationCategory": "Game"
 };
@@ -202,7 +204,7 @@ const faqSchema = {
 const howToSchema = {
   "@context": "https://schema.org",
   "@type": "HowTo",
-  "name": "다중 객체 추적 MOT 테스트 공략 단계 및 최고 점수 가이드",
+  "name": "다중 객체 추적 테스트 실전 단계",
   "description": "다수의 고속 이동 타깃을 동시에 놓치지 않고 추적하여 최고 등급과 넓은 주변시 능력을 획득하는 4단계 실전 공략법.",
   "step": [
     {
@@ -238,7 +240,7 @@ const howToSchema = {
 
 const guideData = {
   eyebrow: "시각 인지 심리학 및 주변시 신경과학 가이드",
-  heading: "다중 객체 추적 MOT 테스트 – 주변시와 시공간 작업기억의 병렬 처리",
+  heading: "다중 객체 추적 테스트: 주변시와 분할 주의력을 연습하는 법",
   intro: [
     "다중 객체 추적 과제(Multiple Object Tracking, MOT)는 인지심리학자 제논 피리신(Zenon Pylyshyn, 1988)에 의해 고안된, 인간의 병렬적 시각 정보 처리 한계를 측정하는 대표적인 인지 패러다임입니다. 외형이 완전히 동일한 여러 이동 객체들 사이에서 사전에 지정된 복수의 타깃을, 불규칙한 궤적으로 교차 운동하는 다수의 방해 자극(Distractor) 속에서도 단 한 번도 놓치지 않고 지속적으로 추적하는 능력을 평가합니다.",
     "인지신경과학 연구에 따르면 MOT 수행은 대뇌 피질의 광범위한 배측 주의 네트워크, 특히 후두정구(Intraparietal Sulcus, IPS), 전두안야(Frontal Eye Fields, FEF), 상구(Superior Colliculus)의 동시 신경 발화에 의해 지배됩니다(Cavanagh & Alvarez, 2005). 인간의 뇌는 개별 물체의 세부 형태를 언어적으로 기억하는 것이 아니라, 망막 좌표와 무관하게 작동하는 시각 인덱스(FINST: Feature-blind Visual Index) 포인터를 동시에 3~4개 위치에 투사하여 병렬 추적을 수행합니다.",
@@ -246,7 +248,7 @@ const guideData = {
     "본 시스템은 최신 HTML5 Canvas 그래픽스 파이프라인을 통해 객체 개수, 이동 속도, 교차 빈도를 밀리초 단위로 제어합니다. 체계적인 MOT 훈련은 시야가 극도로 좁아지는 터널 비전을 해소하고, 축구·농구 등 구기 종목에서의 코트 비전, FPS 게임에서의 난전 맵 리딩 및 상황 판단력(Situational Awareness), 나아가 일상 운전 시 돌발 상황에 대한 위험 인지 속도를 비약적으로 끌어올립니다."
   ],
   benchmarks: {
-    title: "다중 객체 추적(MOT) 표준 성과 벤치마크 기준",
+    title: "다중 객체 추적·주변시 참고 기준",
     headers: ["평가 등급 / 티어", "동시 추적 가능 타깃 수", "최대 추적 속도 적응", "정답률 / 정확도", "신경인지 도달 수준"],
     rows: [
       ["신인류 / 프로 특급 (상위 1%)", "5 – 6개", "고속 (400 px/s 이상)", "92% 이상", "기하학적 무게중심 고정 및 대뇌 반구 자원의 완전 분할 병렬 처리 (Cavanagh & Alvarez, 2005)"],
@@ -258,7 +260,7 @@ const guideData = {
     note: "인지신경과학 및 스포츠 시각인지 문헌(Pylyshyn 1988; Cavanagh & Alvarez 2005; Green & Bavelier 2006; Faubert 2013)에 기반한 객관적 평가 기준입니다."
   },
   techniques: {
-    title: "다중 객체 추적 능력을 극대화하는 4대 실전 기법",
+    title: "여러 표적을 놓치지 않고 추적하는 4가지 방법",
     items: [
       {
         name: "무게중심 소프트 포커스 기법 (Centroid Soft-Focus Fixation)",
@@ -328,7 +330,7 @@ export default function LocalizedMultipleTargetsKoPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
 
-      <GhostLinkClient copy={{ title: "다중 객체 추적 MOT 테스트 (주변시 훈련)", subtitle: "복수 타깃 동시 추적 및 시공간 주의력 검사" }} />
+      <GhostLinkClient copy={{ title: "다중 객체 추적", subtitle: "주변시·분할 주의력 훈련" }} />
       <DrillGuide guide={guideData} />
       <div className="max-w-6xl mx-auto px-4 pb-12">
         <RelatedDrills currentCategory="visual" currentHref="https://skilldrills.online/ko/drills/visual/tracking-accuracy/multiple-targets" />

@@ -6,21 +6,18 @@ import { getAlternateLanguages } from '@/lib/i18n/locales';
 import { pickSources } from '@/lib/drillSources';
 
 export const metadata = {
-  title: "Priorisation des Cibles FPS – Visée Décisive | SkillDrills",
-  description: "Entraînez la priorisation des cibles, l'analyse des menaces et la discipline de tir. Maîtrisez la décision tactique pour Valorant et CS2.",
+  title: "Aim Trainer | Priorisation des Cibles | SkillDrills",
+  description: "Aim trainer gratuit dans le navigateur : choisissez la cible la plus dangereuse et entraînez l'ordre des cibles, la décision et le contrôle du tir.",
   keywords: [
-    "priorisation des cibles fps",
-    "entrainement priorisation de cibles",
-    "evaluation des menaces fps",
-    "controle d inhibition de tir",
-    "comment choisir sa cible en shoot",
-    "prise de decision tir fps",
-    "discipline de tir shooter",
-    "selection de cibles valorant",
-    "aim trainer cognitif gratuit",
-    "identification de cibles fps",
-    "entrainement go no go fps",
-    "exercice priorisation de cibles"
+    "aim trainer",
+    "aim trainer en ligne",
+    "aim trainer gratuit",
+    "priorisation des cibles",
+    "sélection de cibles Valorant",
+    "évaluation des menaces FPS",
+    "décision tactique FPS",
+    "discipline de tir",
+    "entraînement de visée Valorant"
   ],
   alternates: {
     canonical: "https://skilldrills.online/fr/drills/fps/target-prioritization",
@@ -31,8 +28,8 @@ export const metadata = {
     follow: true,
   },
   openGraph: {
-    title: "Priorisation des Cibles FPS – Visée Décisive | SkillDrills",
-    description: "Entraînez la priorisation des cibles, l'analyse des menaces et la discipline de tir. Maîtrisez la décision tactique pour Valorant et CS2.",
+    title: "Aim Trainer | Priorisation des Cibles | SkillDrills",
+    description: "Aim trainer gratuit dans le navigateur : choisissez la cible la plus dangereuse et entraînez l'ordre des cibles, la décision et le contrôle du tir.",
     url: "https://skilldrills.online/fr/drills/fps/target-prioritization",
     siteName: 'SkillDrills',
     locale: 'fr_FR',
@@ -40,8 +37,8 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: "Priorisation des Cibles FPS – Visée Décisive | SkillDrills",
-    description: "Entraînez la priorisation des cibles, l'analyse des menaces et la discipline de tir. Maîtrisez la décision tactique pour Valorant et CS2.",
+    title: "Aim Trainer | Priorisation des Cibles | SkillDrills",
+    description: "Aim trainer gratuit dans le navigateur : choisissez la cible la plus dangereuse et entraînez l'ordre des cibles, la décision et le contrôle du tir.",
   },
 };
 
@@ -52,17 +49,17 @@ export default function TargetPrioritizationFrPage() {
     "itemListElement": [
       { "@type": "ListItem", "position": 1, "name": "SkillDrills", "item": "https://skilldrills.online/fr" },
       { "@type": "ListItem", "position": 2, "name": "Entraînement FPS", "item": "https://skilldrills.online/fr/drills/fps" },
-      { "@type": "ListItem", "position": 3, "name": "Priorisation des Cibles", "item": "https://skilldrills.online/fr/drills/fps/target-prioritization" }
+      { "@type": "ListItem", "position": 3, "name": "Aim Trainer - priorisation des cibles", "item": "https://skilldrills.online/fr/drills/fps/target-prioritization" }
     ]
   };
 
   const softwareSchema = {
     "@context": "https://schema.org",
     "@type": "SoftwareApplication",
-    "name": "Entraîneur de Priorisation des Cibles FPS",
+    "name": "Aim Trainer - priorisation des cibles",
     "applicationCategory": "GameApplication",
     "operatingSystem": "Web Browser",
-    "dateModified": "2026-09-16",
+    "dateModified": "2026-09-20",
     "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
     "description": "Entraîneur cognitif de priorisation de cibles, évaluation des menaces et contrôle d'inhibition motrice (Go/No-Go) pour shooters compétitifs.",
     "genre": "Entraînement FPS / Visée Cognitive et Prise de Décision",
@@ -77,22 +74,22 @@ export default function TargetPrioritizationFrPage() {
   const webAppSchema = {
     "@context": "https://schema.org",
     "@type": "WebApplication",
-    "name": "Entraîneur de Priorisation des Cibles FPS",
+    "name": "Aim Trainer - priorisation des cibles",
     "url": "https://skilldrills.online/fr/drills/fps/target-prioritization",
     "description": "Entraîneur cognitif de priorisation de cibles, évaluation des menaces et contrôle d'inhibition motrice (Go/No-Go) pour shooters compétitifs.",
     "applicationCategory": "Game",
     "operatingSystem": "Web Browser",
     "browserRequirements": "Nécessite le support HTML5 Canvas et Pointer Lock API",
-    "dateModified": "2026-09-16"
+    "dateModified": "2026-09-20"
   };
 
   const videoGameSchema = {
     "@context": "https://schema.org",
     "@type": "VideoGame",
-    "name": "Entraîneur de Priorisation des Cibles FPS",
+    "name": "Aim Trainer - priorisation des cibles",
     "url": "https://skilldrills.online/fr/drills/fps/target-prioritization",
     "description": "Entraîneur cognitif de priorisation de cibles, évaluation des menaces et contrôle d'inhibition motrice (Go/No-Go) pour shooters compétitifs.",
-    "dateModified": "2026-09-16",
+    "dateModified": "2026-09-20",
     "gamePlatform": "Web Browser",
     "genre": ["Entraînement FPS", "Aim Trainer", "Priorisation des Cibles"],
     "playMode": "SinglePlayer",
@@ -104,7 +101,7 @@ export default function TargetPrioritizationFrPage() {
   const faqSchema = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
-    "dateModified": "2026-09-16",
+    "dateModified": "2026-09-20",
     "mainEntity": [
       {
         "@type": "Question",
@@ -227,9 +224,9 @@ export default function TargetPrioritizationFrPage() {
   };
 
   const targetPrioritizationGuide = {
-    heading: "Guide de la Priorisation de Cibles FPS et Prise de Décision Tactique",
+    heading: "Aim Trainer et Priorisation des Cibles sous Pression",
     intro: [
-      "L'Entraîneur de Priorisation de Cibles est un exercice perceptivo-cognitif mis au point pour développer la vitesse d'évaluation des menaces, le filtrage de l'attention et l'inhibition motrice de tir. Dans les shooters tactiques modernes — tout particulièrement Valorant, Counter-Strike 2, Rainbow Six Siege et Apex Legends — l'issue des escarmouches contre plusieurs adversaires dépend de l'ordre d'engagement : le combattant qui neutralise la menace la plus critique en premier prend le dessus.",
+      "Un aim trainer avec priorisation des cibles travaille la décision de choisir l'ennemi le plus dangereux avant de tirer. Ce drill mesure l'évaluation des menaces, le filtrage de l'attention et le contrôle du tir lorsque plusieurs adversaires apparaissent dans Valorant et CS2.",
       "Le mécanisme neurobiologique de l'inhibition motrice a été documenté par Gordon D. Logan et William B. Cowan (1984) au travers du modèle horse-race : quand un signal d'arrêt se manifeste, l'ordre d'inhibition entre en compétition avec la commande motrice déjà initiée. Interrompre un geste en cours requiert des circuits spécifiques au niveau du cortex préfrontal, ce qui explique la fréquence des tirs réflexes désastreux chez les débutants.",
       "En combinant la chronométrie mentale de Franciscus Cornelis Donders (1868/1969) relative aux temps de réaction de choix et la théorie d'intégration des traits d'Anne Treisman et Garry Gelade (1980), cet entraînement force le système visuel à hiérarchiser les cibles selon leur dangerosité avant d'autoriser la pression sur la souris.",
       "En associant le modèle attentionnel de Michael I. Posner (1990), les recherches spatiales de C. Shawn Green et Daphne Bavelier (2003) et la mesure numérique à haute résolution (Woods et al., 2015), l'exercice éradique les tirs de panique pour instaurer une visée sélective et clinique en compétition.",
@@ -292,9 +289,9 @@ export default function TargetPrioritizationFrPage() {
   };
 
   const copyFr = {
-    h1Keyword: "Priorisation des Cibles FPS",
-    h1Suffix: " – Prise de Décision",
-    subtitle: "Entraînez l'évaluation des menaces, le filtrage cognitif et l'inhibition du tir avec analyse en temps réel.",
+    h1Keyword: "Aim Trainer",
+    h1Suffix: " – Priorisation des Cibles FPS",
+    subtitle: "Choisissez la cible la plus dangereuse et contrôlez votre tir sous pression dans le navigateur.",
     statScore: "Score",
     statTime: "Temps",
     statAccuracy: "Précision",
@@ -302,7 +299,7 @@ export default function TargetPrioritizationFrPage() {
     statThreatsCleared: "Menaces Éliminées",
     statMaxCombo: "Combo Max",
     statPeakLevel: "Niveau Record",
-    startTitle: "Priorisation des Cibles Pro",
+    startTitle: "Aim Trainer - priorisation des cibles",
     startSubtitle: "Évaluation des Menaces · Filtrage Cognitif · Niveaux Dynamiques",
     getReady: "PRÉPAREZ-VOUS",
     toggleFlash: "Basculer le Flash d'Échec",
@@ -317,7 +314,7 @@ export default function TargetPrioritizationFrPage() {
       { num: "3", text: "Unité Alliée", highlight: "Vert (NE PAS TIRER)", result: "Tir allié ou manqué réinitialise combo" },
       { num: "4", text: "Niveau Supérieur", highlight: "+1 / 1400 PTS", result: "Progression Dynamique Continue" }
     ],
-    aboutTitle: "À Propos de la Priorisation de Cibles FPS",
+    aboutTitle: "À propos de l'aim trainer et de la priorisation des cibles",
     aboutHeading: "Qu'est-ce que la Priorisation des Cibles ?",
     aboutText: "La priorisation des cibles est la compétence exécutive qui permet de sélectionner en une fraction de seconde la menace à abattre tout en retenant son tir sur le reste de la scène. Interrompre un geste déjà enclenché constitue un processus neurobiologique indépendant qui rivalise avec l'ordre de tir (Logan & Cowan, 1984) — c'est pourquoi retenir son tir est bien plus difficile que presser la détente."
   };
@@ -353,7 +350,7 @@ export default function TargetPrioritizationFrPage() {
       <div className="max-w-4xl mx-auto px-4 pb-12">
         <RelatedDrills
           currentCategory="fps"
-          currentHref="/drills/fps/target-prioritization"
+          currentHref="/fr/drills/fps/target-prioritization"
           locale="fr"
         />
       </div>

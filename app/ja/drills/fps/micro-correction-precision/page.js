@@ -6,21 +6,19 @@ import { getAlternateLanguages } from '@/lib/i18n/locales';
 import RelatedDrills from '@/components/drill/RelatedDrills';
 
 export const metadata = {
-  title: "マイクロフリック練習 – エイム微調整トレーナー | SkillDrills",
-  description: "ブラウザで無料プレイできるマイクロフリック練習。初弾フリック後の微小なエイムズレの即時修正、指先による終末減速、ヘッドショット精度を科学的に強化します。",
+  title: "エイム練習 | マイクロフリック微調整 | SkillDrills",
+  description: "無料ブラウザのエイム練習で、初弾フリック後の微調整と指先の減速を鍛えます。VALORANT・CS2のヘッドショット精度を記録。",
   keywords: [
-    "マイクロフリック 練習",
+    "エイム練習",
+    "エイム練習 ブラウザ",
+    "エイム練習 valorant",
     "マイクロフリック",
     "エイム 微調整",
-    "FPS 微調整",
     "ヘッドショット 精度 練習",
-    "VALORANT マイクロフリック",
-    "CS2 エイム微調整",
     "エイムトレーナー 無料",
     "微小エイム 補正",
     "ヘッドショット 微調整",
-    "マウス 減速 コントロール",
-    "指先 エイム コントロール"
+    "マウス 減速 コントロール"
   ],
   alternates: {
     canonical: "https://skilldrills.online/ja/drills/fps/micro-correction-precision",
@@ -31,8 +29,8 @@ export const metadata = {
     follow: true,
   },
   openGraph: {
-    title: "マイクロフリック練習 – エイム微調整トレーナー | SkillDrills",
-    description: "一次フリック直後の微小な位置ズレを瞬時に修正する無料ブラウザFPSエイムトレーナー。VALORANTやCS2のヘッドショット精度を劇的に向上させます。",
+    title: "エイム練習 | マイクロフリック微調整 | SkillDrills",
+    description: "無料ブラウザのエイム練習で、初弾フリック後の微調整と指先の減速を鍛えます。VALORANT・CS2のヘッドショット精度を記録。",
     url: "https://skilldrills.online/ja/drills/fps/micro-correction-precision",
     siteName: 'SkillDrills',
     locale: 'ja_JP',
@@ -40,8 +38,8 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: "マイクロフリック練習 – エイム微調整トレーナー | SkillDrills",
-    description: "一次フリック直後の微小な位置ズレを瞬時に修正する無料ブラウザFPSエイムトレーナー。VALORANTやCS2のヘッドショット精度を劇的に向上させます。",
+    title: "エイム練習 | マイクロフリック微調整 | SkillDrills",
+    description: "無料ブラウザのエイム練習で、初弾フリック後の微調整と指先の減速を鍛えます。VALORANT・CS2のヘッドショット精度を記録。",
   },
 };
 
@@ -52,17 +50,17 @@ export default function MicroCorrectionJaPage() {
     "itemListElement": [
       { "@type": "ListItem", "position": 1, "name": "SkillDrills", "item": "https://skilldrills.online/ja" },
       { "@type": "ListItem", "position": 2, "name": "FPSエイム練習", "item": "https://skilldrills.online/ja/drills/fps" },
-      { "@type": "ListItem", "position": 3, "name": "マイクロフリック", "item": "https://skilldrills.online/ja/drills/fps/micro-correction-precision" }
+      { "@type": "ListItem", "position": 3, "name": "エイム練習 - マイクロフリック微調整", "item": "https://skilldrills.online/ja/drills/fps/micro-correction-precision" }
     ]
   };
 
   const softwareSchema = {
     "@context": "https://schema.org",
     "@type": "SoftwareApplication",
-    "name": "マイクロフリック 練習",
+    "name": "エイム練習 - マイクロフリック微調整",
     "applicationCategory": "GameApplication",
     "operatingSystem": "Web Browser",
-    "dateModified": "2026-09-05",
+    "dateModified": "2026-09-20",
     "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
     "description": "初期フリック後の微小な位置ズレ修正、指先減速制御、ヘッドショット精度を鍛える無料ブラウザFPSエイムトレーナー。",
     "genre": "FPS Training / Micro-Correction",
@@ -77,7 +75,7 @@ export default function MicroCorrectionJaPage() {
   const webAppSchema = {
     "@context": "https://schema.org",
     "@type": "WebApplication",
-    "name": "マイクロフリック 練習",
+    "name": "エイム練習 - マイクロフリック微調整",
     "url": "https://skilldrills.online/ja/drills/fps/micro-correction-precision",
     "applicationCategory": "GameApplication",
     "operatingSystem": "All",
@@ -93,10 +91,10 @@ export default function MicroCorrectionJaPage() {
   const videoGameSchema = {
     "@context": "https://schema.org",
     "@type": "VideoGame",
-    "name": "マイクロフリック 練習",
+    "name": "エイム練習 - マイクロフリック微調整",
     "url": "https://skilldrills.online/ja/drills/fps/micro-correction-precision",
     "description": "初期フリック後の微小な位置ズレ修正、指先減速制御、ヘッドショット精度を鍛える無料ブラウザFPSエイムトレーナー。",
-    "dateModified": "2026-09-05",
+    "dateModified": "2026-09-20",
     "gamePlatform": "Web Browser",
     "genre": ["FPS Training", "Aim Trainer", "Micro Correction"],
     "playMode": "SinglePlayer",
@@ -108,7 +106,7 @@ export default function MicroCorrectionJaPage() {
   const faqSchema = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
-    "dateModified": "2026-09-05",
+    "dateModified": "2026-09-20",
     "mainEntity": [
       {
         "@type": "Question",
@@ -227,10 +225,10 @@ export default function MicroCorrectionJaPage() {
   };
 
   const microCorrectionGuide = {
-    heading: "マイクロフリック 練習 実践マニュアル",
+    heading: "エイム練習とマイクロフリック微調整ガイド",
     subtitle: "一次フリック直後の微小な位置ズレ修正、終末摩擦減速、そしてヘッドショット精度を科学的プロトコルで極める",
     intro: [
-      "マイクロフリック（Micro-Correction Aiming）は、視覚標的捕捉における二次微調整フェーズを単離・測定し、精密に習熟するための生体力学的トレーニングドリルです。VALORANTやCounter-Strike 2、Rainbow Six Siegeといった競技タクティカルFPSのハイレベルな撃ち合いでは、わずか5〜25ピクセル（1度未満）の微小な照準修正の速度と精度が勝敗を直結して決定づけます。",
+      "エイム練習は、初弾フリックで目標付近へ移動したあと、照準を短く止めて中心へ合わせる動作を反復する練習です。このドリルは小さな標的への最後の微調整時間と命中率を記録し、VALORANT・CS2でのオーバーフリックと遅い補正を減らします。",
       "急速な目標指向運動を支配する理論的枠組みは、Robert S. Woodworth（1899）が提唱した二段階モデルに端を発します。目標へ向けて四肢を急加速させる初期の開ループ弾道インパルス（Open-loop ballistic impulse）と、連続的な感覚フィードバックによって精密誘導される終末閉ループ制御フェーズ（Closed-loop control）の組み合わせです。この速度と精度のトレードオフはPaul M. Fitts（1954）のフィッツの法則によって数学的に定式化され、移動時間は目標距離と標的幅の比率に応じて対数関数的に増大します（ID = log2(2D / W)）。",
       "その後、David E. Meyerら（1988）が提唱した確率的最適化サブムーブメントモデル（Stochastic Optimized Submovement Model）により、人間の運動制御系は過度な慣性オーバーシュートを防ぐため、一次動作を標的境界のわずかに手前または近傍に着地させ、その直後に極めて迅速な二次微修正動作（Submovement）を繰り出して座標誤差を解消するよう運動計画を構築することが実証されました。",
       "終末固視フェーズにおいて、人間の眼球運動系はマイクロサッカード（振幅1度未満の不随意微小跳躍運動）を展開し、網膜の神経受容を更新して中心窩を高周波の視覚標的に正確に位置合わせします（Rolfs, 2009; Martinez-Conde et al., 2004）。本ドリルはポインターロックによる生のマウス入力と performance.now() によるデジタル時間測定（Woods et al., 2015）を同期させ、終末の照準振動や行き過ぎ（オーバーフリック）を完全に排除してロボットのような精密ヘッドショットを実現します。",
@@ -331,8 +329,8 @@ export default function MicroCorrectionJaPage() {
 
       <MicroCorrectionClient
         copy={{
-          h1Keyword: "マイクロフリック 練習",
-          h1Suffix: " - エイム微調整・ヘッドショット精度トレーナー",
+          h1Keyword: "エイム練習",
+          h1Suffix: " - マイクロフリック・微調整トレーナー",
           subtitle: "初弾フリック後の微小なエイムズレを即時修正し、指先の終末減速とヘッドショット精度を強化します。",
           statScore: "スコア",
           statTime: "残り時間",
@@ -341,7 +339,7 @@ export default function MicroCorrectionJaPage() {
           statAvgCorrection: "平均微修正",
           statMaxCombo: "最大コンボ",
           statPeakLevel: "最高レベル",
-          startTitle: "マイクロフリック 練習",
+          startTitle: "エイム練習 - マイクロフリック微調整",
           startSubtitle: "生入力キャリブレーション • エンドレス難易度進行",
           getReady: "準備完了",
           toggleFlash: "ミスフラッシュ切替",
@@ -354,7 +352,7 @@ export default function MicroCorrectionJaPage() {
             { num: "3", text: "レベル進行", highlight: "+1Lv / 1,400点", result: "連続縮小適応" },
             { num: "4", text: "ミス / 制限時間", highlight: "ペナルティ", result: "コンボリセット (-0.6秒)" }
           ],
-          aboutTitle: "マイクロフリック 練習について",
+          aboutTitle: "エイム練習とマイクロフリック微調整について",
           aboutHeading: "マイクロフリック（微調整エイム）とは？",
           aboutText: "ほとんどのエイム動作は単一ではなく二段階で構成されます。初速の素早い弾道フリックと、着弾直前の微小な減速・位置修正動作です（Woodworth, 1899; Meyer et al., 1988）。本ドリルはこの勝敗を決定づける「第2フェーズ（微調整）」を集中的に鍛え上げます。"
         }}
@@ -364,7 +362,7 @@ export default function MicroCorrectionJaPage() {
       <div className="max-w-4xl mx-auto px-4 pb-12">
         <RelatedDrills
           currentCategory="fps"
-          currentHref="/drills/fps/micro-correction-precision"
+          currentHref="/ja/drills/fps/micro-correction-precision"
           locale="ja"
         />
       </div>

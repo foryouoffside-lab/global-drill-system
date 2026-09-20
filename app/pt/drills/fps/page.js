@@ -6,18 +6,18 @@ import { getLocalizedDrill } from '@/lib/i18n/drillNames';
 const fpsDrills = DRILLS.filter((d) => d.category === 'fps');
 
 export const metadata = {
-  title: 'Treino de Mira FPS – Aim Trainer Online | SkillDrills',
-  description: 'Treino de mira grátis para Valorant, CS2 e Apex. 15 exercícios de flick shots, tracking, controle de recoil e reflexos diretamente no seu navegador.',
+  title: 'Treino de mira FPS grátis | SkillDrills',
+  description: '15 exercícios grátis para Valorant, CS2 e Apex: flick, tracking, controle de recoil e reflexos no navegador.',
   keywords: [
-    'treino de mira fps', 'como melhorar a mira no valorant', 'treino de mira cs2',
-    'flick shot treino', 'tracking de mira fps', 'posicionamento de mira',
-    'sensibilidade do mouse gamer', 'aim trainer online grátis', 'teste de reflexo gamer',
-    'controle de recoil online', 'mirar com braço ou pulso', 'microajustes de mira',
-    'teste de precisão do mouse', 'calculadora edpi valorant', 'aim trainer navegador sem download'
+    'treino de mira', 'treino de mira FPS', 'aim trainer online',
+    'como melhorar a mira no Valorant', 'treino de mira CS2', 'flick treino',
+    'tracking de mira', 'posicionamento da mira', 'sensibilidade do mouse gamer',
+    'teste de reflexo gamer', 'controle de recoil', 'mirar com braço ou pulso',
+    'microajustes de mira', 'eDPI Valorant', 'treino de mira sem download'
   ],
   openGraph: {
-    title: 'Treino de Mira FPS – Aim Trainer Online | SkillDrills',
-    description: 'Treino de mira grátis para Valorant, CS2 e Apex. 15 exercícios de flick shots, tracking, controle de recoil e reflexos diretamente no seu navegador.',
+    title: 'Treino de mira FPS grátis | SkillDrills',
+    description: '15 exercícios grátis para Valorant, CS2 e Apex: flick, tracking, controle de recoil e reflexos no navegador.',
     type: 'website',
     url: 'https://skilldrills.online/pt/drills/fps',
     siteName: 'SkillDrills',
@@ -26,8 +26,8 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Treino de Mira FPS – Aim Trainer Online | SkillDrills',
-    description: 'Treino de mira grátis para Valorant, CS2 e Apex. 15 exercícios profissionais no seu navegador.',
+    title: 'Treino de mira FPS grátis | SkillDrills',
+    description: '15 exercícios grátis de mira para Valorant, CS2 e Apex no navegador.',
     images: ['https://skilldrills.online/icons/icon-512x512.png'],
   },
   robots: { index: true, follow: true },
@@ -50,9 +50,11 @@ const breadcrumbSchema = {
 const collectionSchema = {
   "@context": "https://schema.org",
   "@type": "CollectionPage",
-  "name": "Treino de Mira FPS Grátis – Centro de Treinamento Online",
+  "inLanguage": "pt-BR",
+  "dateModified": "2026-09-20",
+  "name": "Treino de mira FPS grátis (15 exercícios)",
   "url": "https://skilldrills.online/pt/drills/fps",
-  "description": `15 exercícios profissionais de mira para Valorant, CS2 e Apex Legends. Flicks balísticos, tracking contínuo, controle de recoil, giros de 180° e reflexos. Sem download nem cadastro.`,
+  "description": `15 exercícios grátis para Valorant, CS2 e Apex: flick, tracking, controle de recoil, troca de alvos e reflexos no navegador.`,
   "author": { "@type": "Organization", "name": "SkillDrills" },
   "hasPart": fpsDrills.map((drill) => {
     const loc = getLocalizedDrill(drill.href, 'pt', drill.name);
@@ -67,6 +69,8 @@ const collectionSchema = {
 const faqSchema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
+  "inLanguage": "pt-BR",
+  "dateModified": "2026-09-20",
   "mainEntity": [
     {
       "@type": "Question",
@@ -147,4 +151,3 @@ export default function PortugueseFPSHubPage() {
     </>
   );
 }
-

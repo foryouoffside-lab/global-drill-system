@@ -541,7 +541,7 @@ export default function DistanceJudgmentClient({ copy = null }) {
               </span>
             </h1>
             <p className="text-sm text-slate-400 mb-4 leading-relaxed">
-              {copy?.caption || "Depth perception is judging how far away things are and in what order. Two cues carry most of it: binocular disparity, the small difference between the images from your two eyes — which random-dot stereograms showed is enough on its own, with no other cue present, to produce a sense of depth (Julesz, 1971) — and optical expansion, the rate at which an approaching object's image grows on the retina, which specifies time-to-contact without your needing to know the object's size or speed (Lee, 1976; Regan & Beverley, 1978). A flat monitor removes the first cue, so a browser test measures the second: this drill times your judgement of expansion and intercept, not your stereo acuity, which needs the two-rod apparatus Howard (1919) described."}
+              {copy?.caption || "Depth perception is judging how far away things are and in what order."}
             </p>
           </div>
         )}
@@ -794,7 +794,7 @@ export default function DistanceJudgmentClient({ copy = null }) {
                       <Brain className="w-4 h-4 text-cyan-400" /> What Is Distance Judgment Training?
                     </h3>
                     <p className="text-sm leading-relaxed mb-3">
-                      <strong>Distance Judgment Training</strong> develops binocular stereoscopic depth perception and visual intercept timing. The drill projects a 3D sphere along a deep visual tunnel toward a target depth plane.
+                      <strong>Distance Judgment Training</strong> develops binocular stereoscopic depth perception and visual intercept timing. The drill projects a 3D sphere along a deep visual tunnel toward a target depth plane. Two cues carry most of it: binocular disparity, the small difference between the images from your two eyes — which random-dot stereograms showed is enough on its own, with no other cue present, to produce a sense of depth (Julesz, 1971) — and optical expansion, the rate at which an approaching object's image grows on the retina, which specifies time-to-contact without your needing to know the object's size or speed (Lee, 1976; Regan & Beverley, 1978). A flat monitor removes the first cue, so a browser test measures the second: this drill times your judgement of expansion and intercept, not your stereo acuity, which needs the two-rod apparatus Howard (1919) described.
                     </p>
                     <p className="text-sm leading-relaxed">
                       By training your visual cortex to calculate looming velocity and relative depth cues under accelerating speeds, you enhance spatial awareness and intercept precision.

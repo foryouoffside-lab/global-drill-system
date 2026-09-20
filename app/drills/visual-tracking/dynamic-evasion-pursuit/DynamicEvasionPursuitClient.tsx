@@ -4,7 +4,6 @@ import React, { useState, useEffect, useRef, useCallback } from 'react';
 import Link from 'next/link';
 import { Play, RefreshCw, Timer, Share2, LogOut, Check, Sun, Moon, Volume2, VolumeX, Target, Trophy, TrendingUp, Zap } from 'lucide-react';
 
-import DrillFooter from '../../../../components/drill/DrillFooter';
 import DrillCountdown from '../../../../components/drill/DrillCountdown';
 import DrillAccordion from '../../../../components/drill/DrillAccordion';
 import ZigZagPathPursuitStartCard from '../../../../components/drill/ZigZagPathPursuitStartCard';
@@ -73,6 +72,7 @@ export default function DynamicEvasionPursuitClient({ copy }: { copy?: { title?:
   const animationRef = useRef<number | null>(null);
   const countdownTimeoutsRef = useRef<NodeJS.Timeout[]>([]);
   const timerIntervalRef = useRef<NodeJS.Timeout | null>(null);
+  const mousePosRef = useRef<{ x: number; y: number; active: boolean }>({ x: 0, y: 0, active: false });
 
   const trackingState = useRef({
     px: 0,
@@ -179,6 +179,26 @@ export default function DynamicEvasionPursuitClient({ copy }: { copy?: { title?:
     onUnexpectedExit: handleExitDrill,
   });
 
+  // Direct Exit Lifecycle: Esc and Fullscreen Exit (R6)
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'Escape' && (gameState === 'playing' || gameState === 'countdown')) {
+        handleExitDrill();
+      }
+    };
+    const handleFullscreenChange = () => {
+      if (!document.fullscreenElement && isFullscreen) {
+        handleExitDrill();
+      }
+    };
+    window.addEventListener('keydown', handleKeyDown);
+    document.addEventListener('fullscreenchange', handleFullscreenChange);
+    return () => {
+      window.removeEventListener('keydown', handleKeyDown);
+      document.removeEventListener('fullscreenchange', handleFullscreenChange);
+    };
+  }, [gameState, isFullscreen, handleExitDrill]);
+
   // Complete Drill Session cleanly
   const endGame = useCallback(() => {
     if (animationRef.current) cancelAnimationFrame(animationRef.current);
@@ -216,6 +236,7 @@ export default function DynamicEvasionPursuitClient({ copy }: { copy?: { title?:
       timer: 0,
       trail: []
     };
+    mousePosRef.current = { x: 0, y: 0, active: false };
 
     // Countdown sequence: 3 -> 2 -> 1 -> GO with Audio Cues
     setGameState('countdown');
@@ -394,6 +415,36 @@ export default function DynamicEvasionPursuitClient({ copy }: { copy?: { title?:
         }
       }
 
+      // Render Tactical Pro White Crosshair (R5)
+      if (mousePosRef.current.active && gameState === 'playing') {
+        const mx = mousePosRef.current.x;
+        const my = mousePosRef.current.y;
+        ctx.save();
+        ctx.strokeStyle = '#ffffff';
+        ctx.lineWidth = 1.5;
+        ctx.shadowColor = 'rgba(0, 0, 0, 0.9)';
+        ctx.shadowBlur = 3;
+
+        // Crosshair arms (14px outer radius, 4px gap)
+        ctx.beginPath();
+        ctx.moveTo(mx, my - 4);
+        ctx.lineTo(mx, my - 14);
+        ctx.moveTo(mx, my + 4);
+        ctx.lineTo(mx, my + 14);
+        ctx.moveTo(mx - 4, my);
+        ctx.lineTo(mx - 14, my);
+        ctx.moveTo(mx + 4, my);
+        ctx.lineTo(mx + 14, my);
+        ctx.stroke();
+
+        // Center dot (2px radius)
+        ctx.fillStyle = '#ffffff';
+        ctx.beginPath();
+        ctx.arc(mx, my, 2, 0, Math.PI * 2);
+        ctx.fill();
+        ctx.restore();
+      }
+
       animationRef.current = requestAnimationFrame(draw);
     };
 
@@ -427,9 +478,6 @@ export default function DynamicEvasionPursuitClient({ copy }: { copy?: { title?:
                 {copy?.subtitle || "Reactive Eye Tracking Drill"}
               </span>
             </h1>
-            <p className="text-[13px] text-slate-400 leading-relaxed">
-              {copy?.description || "Dynamic evasion pursuit exercises your ability to re-acquire visual targets executing abrupt directional vector turns without warning (Rashbass, 1961). Because the sudden direction cut breaks smooth pursuit velocity matching, your oculomotor system must immediately fire a corrective catch-up saccade and re-establish continuous foveal tracking (Bahill et al., 1980; Krauzlis, 2004). Because pursuit only tracks accurately to roughly 30°/s, an abrupt cut leaves the eye behind and forces a corrective saccade before smooth tracking can resume (Krauzlis, 2004)."}
-            </p>
           </div>
         )}
 
@@ -462,7 +510,7 @@ export default function DynamicEvasionPursuitClient({ copy }: { copy?: { title?:
         {/* Game Stage Container */}
         <div 
           ref={containerRef} 
-          className={`overflow-hidden flex flex-col transition-all duration-150 select-none border border-white/10 ${
+          className={`overflow-hidden flex flex-col select-none border border-white/10 ${
             dayMode ? 'bg-[#ffffff]' : 'bg-[#080811]'
           } ${dayMode ? 'text-slate-900' : 'text-white'} ${
             isFullscreen ? 'fixed inset-0 z-[100] w-screen h-[100dvh] rounded-none border-none flex flex-col items-center justify-center' : 'w-full rounded-2xl aspect-video min-h-[460px] md:min-h-[500px] max-h-[88vh] max-md:aspect-[3/4] max-md:min-h-[420px] max-md:max-h-[76vh] relative overflow-hidden flex flex-col'
@@ -502,7 +550,28 @@ export default function DynamicEvasionPursuitClient({ copy }: { copy?: { title?:
           {/* CANVAS */}
           <canvas 
             ref={canvasRef} 
-            className="block absolute top-0 left-0 w-full h-full z-10 pointer-events-none" 
+            onPointerMove={(e) => {
+              const rect = e.currentTarget.getBoundingClientRect();
+              mousePosRef.current = {
+                x: e.clientX - rect.left,
+                y: e.clientY - rect.top,
+                active: true,
+              };
+            }}
+            onPointerLeave={() => {
+              mousePosRef.current.active = false;
+            }}
+            onPointerDown={(e) => {
+              const rect = e.currentTarget.getBoundingClientRect();
+              mousePosRef.current = {
+                x: e.clientX - rect.left,
+                y: e.clientY - rect.top,
+                active: true,
+              };
+            }}
+            className={`block absolute top-0 left-0 w-full h-full z-10 ${
+              gameState === 'playing' ? 'cursor-none pointer-events-auto' : 'pointer-events-none'
+            }`}
           />
 
           {/* START CARD */}
@@ -620,45 +689,22 @@ export default function DynamicEvasionPursuitClient({ copy }: { copy?: { title?:
               isOpen={openAccordion === 'rules'}
               onToggle={() => setOpenAccordion(openAccordion === 'rules' ? null : 'rules')}
             >
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <RuleItem num="1" text="Evasive Pursuit" highlight="Pure Visual" result="Re-acquire evasive target" />
-                <RuleItem num="2" text="Time Adjusting" highlight={`${selectedDuration}s Duration`} result="Customizable session timer" />
-                <RuleItem num="3" text="Hide Line" highlight={mathInvisible ? "Enabled (Invisible)" : "Disabled (Visible)"} result="Toggle path guide lines" />
-                <RuleItem num="4" text="Random Speed" highlight={randomSpeed ? "Enabled Acceleration" : "Disabled Velocity"} result="Erratic acceleration control" />
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-3 font-sans">
+                {[
+                  { num: "1", text: "Evasive Pursuit", highlight: "Pure Visual", result: "Re-acquire evasive target" },
+                  { num: "2", text: "Time Adjusting", highlight: `${selectedDuration}s Duration`, result: "Customizable session timer" },
+                  { num: "3", text: "Hide Line", highlight: mathInvisible ? "Enabled (Invisible)" : "Disabled (Visible)", result: "Toggle path guide lines" },
+                  { num: "4", text: "Random Speed", highlight: randomSpeed ? "Enabled Acceleration" : "Disabled Velocity", result: "Erratic acceleration control" }
+                ].map((item) => (
+                  <RuleItem key={item.num} num={item.num} text={item.text} highlight={item.highlight} result={item.result} />
+                ))}
               </div>
+            </DrillAccordion>
+            <DrillAccordion id="about" title="About Dynamic Evasion Pursuit" isOpen={openAccordion === 'about'} onToggle={() => setOpenAccordion(openAccordion === 'about' ? null : 'about')}>
+              <p className="text-sm text-slate-300 leading-relaxed">{copy?.description || "Dynamic evasion pursuit exercises your ability to re-acquire visual targets executing abrupt directional vector turns without warning (Rashbass, 1961). Because the sudden direction cut breaks smooth pursuit velocity matching, your oculomotor system must immediately fire a corrective catch-up saccade and re-establish continuous foveal tracking (Bahill et al., 1980; Krauzlis, 2004). Because pursuit only tracks accurately to roughly 30°/s, an abrupt cut leaves the eye behind and forces a corrective saccade before smooth tracking can resume (Krauzlis, 2004)."}</p>
             </DrillAccordion>
           </div>
         )}
-
-        {/* RELATED DRILLS GRID */}
-        {!isFullscreen && (
-          <section className="mt-4">
-            <h2 className="text-sm font-bold text-slate-400 uppercase tracking-wider mb-3">
-              Related Visual Drills
-            </h2>
-            <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
-              {RELATED_DRILLS.map((drill) => (
-                <Link
-                  key={drill.id}
-                  href={drill.href}
-                  className="group bg-[#0c0c16] border border-white/5 hover:border-red-500/40 rounded-xl p-3.5 transition-all duration-200 hover:-translate-y-0.5 flex flex-col justify-between"
-                >
-                  <div>
-                    <div className="text-[10px] font-bold text-red-400 uppercase tracking-wider mb-1">{drill.cat}</div>
-                    <div className="text-xs font-bold text-white group-hover:text-red-300 transition-colors">{drill.name}</div>
-                    <div className="text-[11px] text-slate-400 mt-1 line-clamp-2 leading-relaxed">{drill.desc}</div>
-                  </div>
-                  <div className="text-[10px] font-bold text-slate-500 group-hover:text-red-400 mt-3 flex items-center gap-1 transition-colors">
-                    Train Drill <span>→</span>
-                  </div>
-                </Link>
-              ))}
-            </div>
-          </section>
-        )}
-
-        {/* SITE FOOTER */}
-        {!isFullscreen && <DrillFooter />}
 
       </main>
     </div>
@@ -668,13 +714,15 @@ export default function DynamicEvasionPursuitClient({ copy }: { copy?: { title?:
 // === Subcomponents ===
 function RuleItem({ num, text, highlight = '', result }: { num: string; text: string; highlight?: string; result: string }) {
   return (
-    <div className="flex items-center gap-4 bg-black p-4 rounded-xl border border-white/10 shadow-sm font-sans">
-      <div className="w-8 h-8 rounded-xl bg-white/10 border border-white/20 flex items-center justify-center text-white text-base font-black shadow-lg flex-shrink-0">{num}</div>
-      <div className="flex-1 flex flex-col sm:flex-row sm:items-center justify-between gap-2">
-        <p className="text-sm font-medium text-gray-100 font-sans">
-          {text}{highlight && <span className="font-black text-white"> ({highlight})</span>}
+    <div className="flex items-center gap-3 bg-black px-3.5 py-2.5 rounded-xl border border-white/10 shadow-sm font-sans min-w-0">
+      <div className="w-7 h-7 rounded-lg bg-white/10 border border-white/20 flex items-center justify-center text-white text-xs font-black shadow-lg flex-shrink-0">
+        {num}
+      </div>
+      <div className="flex-1 flex items-center justify-between gap-2 min-w-0">
+        <p className="text-xs sm:text-sm font-medium text-gray-100 font-sans truncate">
+          {text}{highlight && <span className="font-bold text-white"> ({highlight})</span>}
         </p>
-        <div className="text-xs font-black px-3 py-1.5 rounded-lg bg-[#050811] border border-white/10 text-white whitespace-nowrap shadow-inner tracking-wide text-center sm:text-left">
+        <div className="text-[11px] sm:text-xs font-bold px-2.5 py-1 rounded-lg bg-[#050811] border border-white/10 text-white whitespace-nowrap shadow-inner tracking-wide flex-shrink-0">
           {result}
         </div>
       </div>

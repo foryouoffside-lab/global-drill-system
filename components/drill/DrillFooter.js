@@ -1,6 +1,17 @@
-import React from 'react';
+'use client';
+
+import React, { useEffect, useState } from 'react';
+import { createPortal } from 'react-dom';
 
 export default function DrillFooter() {
+  const [mounted, setMounted] = useState(false);
+  const [footerRoot, setFooterRoot] = useState(null);
+
+  useEffect(() => {
+    setFooterRoot(document.getElementById('drill-footer-root'));
+    setMounted(true);
+  }, []);
+
   const socialLinks = [
     {
       name: 'Instagram',
@@ -42,7 +53,7 @@ export default function DrillFooter() {
     },
   ];
 
-  return (
+  const footer = (
     <footer className="mt-12 py-8 border-t border-white/10 flex flex-col items-center justify-center gap-4 text-center text-sm text-gray-400">
       <p className="text-xs text-gray-500 max-w-md px-4">
         Found a bug or have feedback? Message us on social with the drill name — we read every one.
@@ -66,4 +77,7 @@ export default function DrillFooter() {
       </p>
     </footer>
   );
+
+  if (!mounted || !footerRoot) return null;
+  return createPortal(footer, footerRoot);
 }

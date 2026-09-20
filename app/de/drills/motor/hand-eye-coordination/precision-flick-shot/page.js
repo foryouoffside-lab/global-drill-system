@@ -6,25 +6,16 @@ import RelatedDrills from '@/components/drill/RelatedDrills';
 import { pickSources } from '@/lib/drillSources';
 
 export const metadata = {
-  title: 'Flick Aim Trainer – Maus Zielgenauigkeit Test | SkillDrills',
-  description: 'Kostenloser Flick Aim Trainer im Browser: Trainiere blitzschnelle Zielerfassung, Stopp-Präzision und Schuss-Timing für CS2 und Valorant ohne Download.',
+  title: 'Flick Aim Trainer | Mausgenauigkeit testen | SkillDrills',
+  description: 'Kostenloser Flick-Aim-Trainer im Browser: Teste Mausgenauigkeit, Zielerfassung und Trefferquote für FPS, CS2 und VALORANT ohne Download.',
   keywords: [
-    'flick aim trainer',
-    'maus zielgenauigkeit test',
-    'flick shot training',
-    'maus genauigkeit test',
-    'aim trainer kostenlos',
-    'maus praezision test',
-    'fps aim training',
-    'micro flick trainer',
-    'reaktionsschnelligkeit maus',
-    'aiming test online',
-    'cs2 flick shot test',
-    'valorant aim uebung',
+    'Flick Aim Trainer', 'Mausgenauigkeit testen', 'Mauspräzision', 'Aim Trainer kostenlos',
+    'Zielgenauigkeit testen', 'Flick Shot Training', 'FPS Aim Training', 'Zielerfassung trainieren',
+    'Klickgenauigkeit Maus', 'CS2 Aim Training', 'Valorant Aim Training', 'Micro Flick Trainer',
   ],
   openGraph: {
-    title: 'Flick Aim Trainer – Maus Zielgenauigkeit Test | SkillDrills',
-    description: 'Kostenloser Flick Aim Trainer im Browser: Trainiere blitzschnelle Zielerfassung, Stopp-Präzision und Schuss-Timing für CS2 und Valorant ohne Download.',
+    title: 'Flick Aim Trainer | Mausgenauigkeit testen | SkillDrills',
+    description: 'Kostenloser Flick-Aim-Trainer im Browser: Teste Mausgenauigkeit, Zielerfassung und Trefferquote für FPS, CS2 und VALORANT ohne Download.',
     type: 'article',
     url: 'https://skilldrills.online/de/drills/motor/hand-eye-coordination/precision-flick-shot',
     siteName: 'SkillDrills',
@@ -32,8 +23,8 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Flick Aim Trainer – Maus Zielgenauigkeit Test | SkillDrills',
-    description: 'Kostenloser Flick Aim Trainer im Browser: Trainiere blitzschnelle Zielerfassung, Stopp-Präzision und Schuss-Timing für CS2 und Valorant ohne Download.',
+    title: 'Flick Aim Trainer | Mausgenauigkeit testen | SkillDrills',
+    description: 'Kostenloser Flick-Aim-Trainer im Browser: Teste Mausgenauigkeit, Zielerfassung und Trefferquote für FPS, CS2 und VALORANT ohne Download.',
   },
   robots: { index: true, follow: true },
   alternates: {
@@ -83,7 +74,8 @@ const softwareApplicationSchema = {
   description: 'Kostenloses Browsertool zur Messung von ballistischer Flick-Geschwindigkeit, Bulls-Eye-Trefferrate und Stopp-Kontrolle.',
   url: 'https://skilldrills.online/de/drills/motor/hand-eye-coordination/precision-flick-shot',
   publisher: { '@type': 'Organization', name: 'SkillDrills', url: 'https://skilldrills.online' },
-  dateModified: '2026-09-16',
+  inLanguage: 'de-DE',
+  dateModified: '2026-09-20',
 };
 
 const webApplicationSchema = {
@@ -93,7 +85,8 @@ const webApplicationSchema = {
   browserRequirements: 'Benötigt HTML5 Canvas und modernes JavaScript',
   url: 'https://skilldrills.online/de/drills/motor/hand-eye-coordination/precision-flick-shot',
   applicationCategory: 'EducationalApplication',
-  dateModified: '2026-09-16',
+  inLanguage: 'de-DE',
+  dateModified: '2026-09-20',
 };
 
 const videoGameSchema = {
@@ -105,13 +98,15 @@ const videoGameSchema = {
   genre: ['Shooter-Training', 'Reaktion', 'Esports'],
   gamePlatform: ['Web Browser', 'Desktop'],
   applicationCategory: 'Game',
+  inLanguage: 'de-DE',
   offers: { '@type': 'Offer', price: '0', priceCurrency: 'EUR' },
 };
 
 const faqSchema = {
   '@context': 'https://schema.org',
   '@type': 'FAQPage',
-  dateModified: '2026-09-16',
+  inLanguage: 'de-DE',
+  dateModified: '2026-09-20',
   mainEntity: [
     {
       '@type': 'Question',
@@ -199,6 +194,7 @@ const faqSchema = {
 const howToSchema = {
   '@context': 'https://schema.org',
   '@type': 'HowTo',
+  inLanguage: 'de-DE',
   name: 'Anleitung: Präzises Flick-Shot-Training für Shooter',
   description: 'Schritt-für-Schritt-Methode zur Perfektionierung von ballistischen Flicks, Bulls-Eye-Präzision und Cursor-Abbremsung.',
   step: [
@@ -329,7 +325,7 @@ const guideProps = {
 
 const copyDe = {
   title: "Flick Aim Trainer – Maus Zielgenauigkeit Test",
-  subtitle: "Zielverfall & Volltreffer-Mikroflicks • Unbegrenzte Stufenprogression",
+  subtitle: "Flick-Präzision · Zielerfassung messen",
   startButtonText: "DRILL STARTEN",
   playAgainText: "Nochmal spielen",
   shareText: "Ergebnis teilen",

@@ -6,21 +6,17 @@ import { pickSources } from '@/lib/drillSources';
 import DrillFooter from '@/components/drill/DrillFooter';
 
 export const metadata = {
-  title: "Tiempo de Reacción FPS – Reflejos de Tiro | SkillDrills",
-  description: "Mide tu tiempo de reacción en shooters en milisegundos. Perfecciona el reflejo de clic y la retención de ángulos para ganar duelos en CS2 y Valorant.",
+  title: "Test de Reflejos | Tiempo de Reacción FPS | SkillDrills",
+  description: "Test de reflejos gratis en navegador: mide el tiempo entre el estímulo visual y el clic para entrenar reacciones FPS.",
   keywords: [
-    "test de tiempo de reaccion fps",
-    "tiempo de respuesta clic raton",
-    "como mejorar reflejos en valorant",
-    "entrenar reflejos shooters gratis",
-    "tiempo de reaccion cs2 milisegundos",
-    "como aguantar angulos en cs2",
-    "test de velocidad de gatillo",
-    "latencia de reaccion visual fps",
-    "ejercicios de tiempo de reaccion pc",
-    "entrenador de reflejos online",
-    "disparo de reaccion rapida fps",
-    "como disparar mas rapido shooters"
+    "test de reflejos",
+    "test de reflejos online",
+    "test de reflejos gaming",
+    "test de tiempo de reacción",
+    "tiempo de reacción FPS",
+    "test reacción click",
+    "reflejos gamer",
+    "reacción rápida FPS"
   ],
   alternates: {
     canonical: "https://skilldrills.online/es/drills/fps/instant-response",
@@ -31,8 +27,8 @@ export const metadata = {
     follow: true,
   },
   openGraph: {
-    title: "Tiempo de Reacción FPS – Reflejos de Tiro | SkillDrills",
-    description: "Mide tu tiempo de reacción en shooters en milisegundos. Perfecciona el reflejo de clic y la retención de ángulos para ganar duelos en CS2 y Valorant.",
+    title: "Test de Reflejos | Tiempo de Reacción FPS | SkillDrills",
+    description: "Test de reflejos gratis en navegador: mide el tiempo entre el estímulo visual y el clic para entrenar reacciones FPS.",
     url: "https://skilldrills.online/es/drills/fps/instant-response",
     siteName: 'SkillDrills',
     locale: 'es_ES',
@@ -40,8 +36,8 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: "Tiempo de Reacción FPS – Reflejos de Tiro | SkillDrills",
-    description: "Mide tu tiempo de reacción en shooters en milisegundos. Perfecciona el reflejo de clic y la retención de ángulos para ganar duelos en CS2 y Valorant.",
+    title: "Test de Reflejos | Tiempo de Reacción FPS | SkillDrills",
+    description: "Test de reflejos gratis en navegador: mide el tiempo entre el estímulo visual y el clic para entrenar reacciones FPS.",
   },
 };
 
@@ -52,14 +48,14 @@ export default function InstantResponseEsPage() {
     "itemListElement": [
       { "@type": "ListItem", "position": 1, "name": "SkillDrills", "item": "https://skilldrills.online/es" },
       { "@type": "ListItem", "position": 2, "name": "Entrenamientos FPS", "item": "https://skilldrills.online/es/drills/fps" },
-      { "@type": "ListItem", "position": 3, "name": "Test de Tiempo de Reacción FPS", "item": "https://skilldrills.online/es/drills/fps/instant-response" }
+      { "@type": "ListItem", "position": 3, "name": "Test de reflejos - reacción FPS", "item": "https://skilldrills.online/es/drills/fps/instant-response" }
     ]
   };
 
   const webAppSchema = {
     "@context": "https://schema.org",
     "@type": "WebApplication",
-    "name": "Test de Tiempo de Reacción FPS Online",
+    "name": "Test de reflejos para FPS",
     "url": "https://skilldrills.online/es/drills/fps/instant-response",
     "applicationCategory": "GameApplication",
     "operatingSystem": "All",
@@ -75,14 +71,14 @@ export default function InstantResponseEsPage() {
   const softwareSchema = {
     "@context": "https://schema.org",
     "@type": "SoftwareApplication",
-    "name": "Simulador de Reacción Inmediata SkillDrills",
+    "name": "Test de reflejos SkillDrills",
     "applicationCategory": "GameApplication",
     "operatingSystem": "Web Browser",
     "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
     "description": "Entrenador científico de reflejos y latencia de clic para jugadores de shooters tácticos competitivos.",
     "genre": "Entrenamiento FPS / Reflejos",
     "url": "https://skilldrills.online/es/drills/fps/instant-response",
-    "dateModified": "2026-09-05",
+    "dateModified": "2026-09-20",
     "publisher": {
       "@type": "Organization",
       "name": "SkillDrills",
@@ -93,7 +89,7 @@ export default function InstantResponseEsPage() {
   const videoGameSchema = {
     "@context": "https://schema.org",
     "@type": "VideoGame",
-    "name": "Entrenamiento de Reacción Rápida FPS",
+    "name": "Test de reflejos - reacción FPS",
     "url": "https://skilldrills.online/es/drills/fps/instant-response",
     "description": "Simulador dinámico con estímulos visuales y fintas diseñado para optimizar el aguante de ángulos y el clic reflejo.",
     "gamePlatform": "Web Browser",
@@ -101,13 +97,13 @@ export default function InstantResponseEsPage() {
     "playMode": "SinglePlayer",
     "applicationCategory": "Game",
     "operatingSystem": "Web Browser",
-    "dateModified": "2026-09-05"
+    "dateModified": "2026-09-20"
   };
 
   const faqSchema = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
-    "dateModified": "2026-09-05",
+    "dateModified": "2026-09-20",
     "mainEntity": [
       {
         "@type": "Question",
@@ -230,13 +226,13 @@ export default function InstantResponseEsPage() {
   };
 
   const copyEs = {
-    h1Keyword: "Test de Tiempo de Reacción FPS",
-    h1Suffix: " – Reflejos de Tiro",
+    h1Keyword: "Test de Reflejos",
+    h1Suffix: " — tiempo de reacción FPS",
     statScore: "Puntuación",
     statTime: "Tiempo Restante",
     statAccuracy: "Precisión",
     statBestScore: "Récord Personal",
-    startTitle: "Test de Tiempo de Reacción FPS",
+    startTitle: "Test de Reflejos",
     startSubtitle: "Latencia visual y velocidad de clic • Progresión dinámica",
     getReady: "Prepararse",
     pausedTitle: "Pausado",
@@ -248,14 +244,14 @@ export default function InstantResponseEsPage() {
       { num: "3", text: "Subida de Nivel", highlight: "+1 Nivel / 1400 PTS", result: "Ventanas Adaptativas" },
       { num: "4", text: "Fallo / Pre-disparo", highlight: "Penalización", result: "Reinicio Combo (-0.8s)" }
     ],
-    aboutTitle: "Acerca del Test de Tiempo de Reacción FPS",
+    aboutTitle: "Sobre el test de reflejos y la reacción FPS",
     aboutHeading: "¿Cómo funciona la medición de reflejos en shooters?"
   };
 
   const instantResponseGuide = {
-    heading: "Guía de Tiempo de Reacción en Shooters y Puntos de Referencia",
+    heading: "Test de Reflejos para Reacciones FPS",
     intro: [
-      "El tiempo de reacción en shooters en primera persona es el intervalo cronológico entre la aparición de un estímulo visual en pantalla y la pulsación física del interruptor del ratón. En la cronometría psicofísica clásica (Donders, 1868), esta respuesta abarca cuatro fases biológicas: transducción en los fotorreceptores retinianos, conducción axonal hacia el córtex visual, activación del córtex motor y transmisión hacia los músculos flexores del dedo.",
+      "Un test de reflejos mide el intervalo entre un estímulo visual y el clic del jugador. Este drill registra la latencia en milisegundos para comparar reacciones en duelos de CS2, Valorant y otros FPS.",
       "La concentración espacial focalizada desempeña un rol crucial para minimizar dicho retraso. Según los trabajos experimentales de Michael Posner (1990), pre-activar la atención sobre el punto exacto de aparición reduce entre 20 y 30 ms el tiempo de procesamiento cortical frente a una visión periférica desenfocada. En duelos cerrados de Valorant y CS2, esa franja temporal determina la victoria en el primer intercambio de balas.",
       "La latencia de los periféricos y la sincronización del software imponen limitaciones cuantitativas. Esta herramienta se fundamenta en performance.now() para registrar marcas de alta fidelidad (Woods et al., 2015). En un entorno competitivo con panel de 240 Hz (4.17 ms por cuadro) y ratón a 1000 Hz (1.0 ms de respuesta USB), el retraso técnico se reduce al mínimo imprescindible para evaluar el tiempo reflejo puro.",
       "Metodología en tu equipo: los clics se miden de forma local en tu navegador sin transferir registros a servidores remotos. Los navegadores introducen una discretización temporal de ~1 ms por seguridad contra ataques Spectre, y los monitores muestran fotogramas a cadencias fijas (16.7 ms a 60 Hz frente a 4.1 ms a 240 Hz). Para analizar tu progreso, realiza las pruebas en un mismo equipo de trabajo."

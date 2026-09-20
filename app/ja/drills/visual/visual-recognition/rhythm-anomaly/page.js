@@ -5,31 +5,34 @@ import RelatedDrills from '@/components/drill/RelatedDrills';
 import { pickSources } from '@/lib/drillSources';
 
 export const metadata = {
-  title: "視覚リズムテスト: 時間分解能・点滅弁別トレーニング | SkillDrills",
-  description: "36マスの点滅グリッドから位相のズレた異常セルを最速検出する無料視覚リズムテスト。網膜マグノ細胞の時間分解能と動的フリッカー弁別能力を正確に測定・強化。",
+  title: "フリッカーテスト | 視覚の時間分解能 | SkillDrills",
+  description: "36マスの点滅グリッドから位相のズレたセルを探す無料フリッカーテスト。ちらつきの識別と視覚的な時間分解能を練習できます。医療検査ではありません。",
   keywords: [
-    "視覚リズムテスト",
-    "時間分解能 測定",
-    "フリッカー弁別テスト",
-    "臨界フリッカー融合頻度 CFF",
-    "点滅アノマリー 検知",
-    "時間的位相差 検出",
-    "マグノ細胞 視覚機能",
-    "動的視覚タイミング 訓練",
-    "時間知覚 テスト",
+    "フリッカーテスト",
+    "ちらつき検査",
+    "フリッカー値",
+    "視覚の時間分解能",
+    "点滅刺激",
+    "点滅識別",
+    "視覚タイミング",
+    "視覚認知トレーニング",
+    "位相差検出",
+    "時間知覚テスト",
+    "視覚リズム",
+    "視覚的時間分解能",
     "視覚周期性 識別"
 ],
   openGraph: {
-    title: "視覚リズムテスト: 時間分解能・点滅弁別トレーニング | SkillDrills",
-    description: "36マスの点滅グリッドから位相のズレた異常セルを最速検出する無料視覚リズムテスト。大細胞系M経路の時間分解能とフリッカー弁別能力をオンラインで測定・強化。",
+    title: "フリッカーテスト | 視覚の時間分解能 | SkillDrills",
+    description: "点滅グリッドで位相差を見つけ、ちらつきの識別と視覚タイミングを練習できます。",
     type: "website",
     url: "https://skilldrills.online/ja/drills/visual/visual-recognition/rhythm-anomaly",
     siteName: "SkillDrills",
   },
   twitter: {
     card: "summary_large_image",
-    title: "視覚リズムテスト: 時間分解能・点滅弁別トレーニング | SkillDrills",
-    description: "36マスの点滅グリッドから位相のズレた異常セルを最速検出する無料視覚リズムテスト。大細胞系M経路の時間分解能とフリッカー弁別能力をオンラインで測定・強化。",
+    title: "フリッカーテスト | 視覚の時間分解能 | SkillDrills",
+    description: "点滅グリッドで位相差を見つけ、ちらつきの識別と視覚タイミングを練習できます。",
   },
   robots: { index: true, follow: true },
   alternates: {
@@ -45,40 +48,40 @@ const breadcrumbSchema = {
     { "@type": "ListItem", "position": 1, "name": "SkillDrills", "item": "https://skilldrills.online/ja/" },
     { "@type": "ListItem", "position": 2, "name": "視覚トレーニング", "item": "https://skilldrills.online/ja/drills/visual" },
     { "@type": "ListItem", "position": 3, "name": "視覚認識", "item": "https://skilldrills.online/ja/drills/visual/visual-recognition" },
-    { "@type": "ListItem", "position": 4, "name": "視覚リズムアノマリーテスト – 時間分解能訓練", "item": "https://skilldrills.online/ja/drills/visual/visual-recognition/rhythm-anomaly" }
+      { "@type": "ListItem", "position": 4, "name": "フリッカーテスト（視覚の時間分解能）", "item": "https://skilldrills.online/ja/drills/visual/visual-recognition/rhythm-anomaly" }
   ]
 };
 
 const softwareApplicationSchema = {
   "@context": "https://schema.org",
   "@type": "SoftwareApplication",
-  "name": "視覚リズムアノマリーテスト – 時間分解能訓練",
+  "name": "フリッカーテスト・視覚の時間分解能",
   "applicationCategory": "HealthApplication",
   "operatingSystem": "All",
   "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
   "description": "無料のオンライン視覚リズム＆時間分解能テスト。6x6の脈動する36セルから位相の狂った異常セルを素早く検出するタイムアタック測定。",
   "url": "https://skilldrills.online/ja/drills/visual/visual-recognition/rhythm-anomaly",
   "publisher": { "@type": "Organization", "name": "SkillDrills", "url": "https://skilldrills.online" },
-  "dateModified": "2026-09-05"
+  "dateModified": "2026-09-20"
 };
 
 const webApplicationSchema = {
   "@context": "https://schema.org",
   "@type": "WebApplication",
-  "name": "視覚リズム＆時間分解能アノマリーテスト",
+  "name": "無料オンライン視覚時間分解能トレーニング",
   "browserRequirements": "Requires HTML5 canvas and JavaScript",
   "url": "https://skilldrills.online/ja/drills/visual/visual-recognition/rhythm-anomaly",
   "applicationCategory": "EducationalApplication",
-  "dateModified": "2026-09-05"
+  "dateModified": "2026-09-20"
 };
 
 const videoGameSchema = {
   "@context": "https://schema.org",
   "@type": "VideoGame",
-  "name": "視覚リズムアノマリー弁別ゲーム",
+  "name": "点滅リズムの視覚弁別チャレンジ",
   "url": "https://skilldrills.online/ja/drills/visual/visual-recognition/rhythm-anomaly",
   "description": "無料の視覚タイミング＆点滅周波数弁別ゲーム。脈動する光学グリッドから位相や周期の異なる異常セルを瞬時に見極めてタップ。",
-  "genre": ["Action", "Brain Game", "Timing Game"],
+  "genre": ["フリッカーテスト", "視覚の時間分解能", "視覚認知トレーニング"],
   "gamePlatform": ["Web Browser", "Desktop", "Mobile"],
   "applicationCategory": "Game",
   "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
@@ -87,9 +90,9 @@ const videoGameSchema = {
 const howToSchema = {
   "@context": "https://schema.org",
   "@type": "HowTo",
-  "name": "視覚リズム弁別と異常点滅の検出能力を高めるトレーニング法",
+  "name": "フリッカーテストで視覚の時間分解能を練習する方法",
   "description": "視覚心理物理学に基づき、網膜の大細胞系神経および大脳視覚野の時間分解能を極限まで引き上げる4段階の実践プロトコル。",
-  "dateModified": "2026-09-05",
+  "dateModified": "2026-09-20",
   "step": [
     {
       "@type": "HowToStep",
@@ -125,11 +128,11 @@ const howToSchema = {
 const faqSchema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
-  "dateModified": "2026-09-05",
+  "dateModified": "2026-09-20",
   "mainEntity": [
     {
       "@type": "Question",
-      "name": "視覚リズムテスト（Rhythm Anomaly Drill）は何を測定しますか？",
+"name": "視覚リズムテストは何を測定しますか？",
       "acceptedAnswer": {
         "@type": "Answer",
         "text": "視覚的時間周波数の弁別力と時間分解能を測定します。36個の脈動セルの中から、位相や点滅周期がわずかにズレた異常セルを瞬時に見抜く能力を評価します。"
@@ -221,7 +224,7 @@ export default function RhythmAnomalyLocalePage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(howToSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(videoGameSchema) }} />
-      <RhythmAnomalyClient copy={{ title: "視覚リズムアノマリー弁別ゲーム" }} />
+      <RhythmAnomalyClient copy={{ title: "フリッカーテスト", subtitle: "視覚の時間分解能と点滅識別" }} />
       <DrillGuide
         eyebrow="時間心理物理学 & 視覚クロノメトリー"
         title="視覚リズム・フリッカー融合・時間周波数弁別の神経科学"
@@ -242,9 +245,9 @@ export default function RhythmAnomalyLocalePage() {
             <strong>高次皮質バインディング限界（約2〜5Hz）：</strong> 刺激の正体を意識的に同定し、複数の特徴を1つの対象として結合する処理には大脳皮質の反復的フィードバックが必要であり、毎秒2〜5サイクルという極めて遅い速度で作動します (Holcombe, 2009)。
           </li>
         </ul>
-        <p dangerouslySetInnerHTML={{ __html: `Rhythm Anomalyはこの2つのシステムをつなぐ神経的架け橋を鍛え上げます。観察者は初期の大細胞系フリッカー感度によって異常候補を瞬時に検出し、ターゲットのパルス周期が完了する前にトップダウンの注意確認を電光石火で完遂しなければなりません。` }} />
+<p dangerouslySetInnerHTML={{ __html: `このドリルはこの2つのシステムをつなぐ神経的架け橋を鍛え上げます。観察者は初期の大細胞系フリッカー感度によって異常候補を瞬時に検出し、ターゲットのパルス周期が完了する前にトップダウンの注意確認を電光石火で完遂しなければなりません。` }} />
 
-        <h3>時間積分窓（Temporal Integration Window）とエントロピーノイズ</h3>
+<h3>時間積分窓とエントロピーノイズ</h3>
         <p dangerouslySetInnerHTML={{ __html: `人間の視覚系は、約30〜100ミリ秒という短い時間窓（時間積分窓）の中で光を合算します (Burr, 1980; Woods et al., 2015)。この窓の中で生じた光は1つの連続した像として認識されます。ドリル中に散発する『エントロピー閃光』は、この積分窓にランダムなノイズを混入させます。これにより、単なる明るさの瞬きに惑わされず、真の正弦波的な周期変動を抽出する能力が強制的に強化されます (Burr, 1980; Posner, 1980)。` }} />
 
         <h3>視覚時間分解能 性能ベンチマーク（45秒脈動グリッド）</h3>
@@ -325,7 +328,7 @@ export default function RhythmAnomalyLocalePage() {
         <h3>よくある質問 (FAQ)</h3>
         <div className="space-y-4 my-6">
           <div>
-            <h4 className="font-semibold text-white">視覚リズムテスト（Rhythm Anomaly Drill）は何を測定しますか？</h4>
+<h4 className="font-semibold text-white">視覚リズムテストは何を測定しますか？</h4>
             <p className="text-slate-300 mt-1">
               視覚的時間周波数の弁別力と時間分解能を測定します。36個の脈動セルの中から、位相や点滅周期がわずかにズレた異常セルを瞬時に見抜く能力を評価します。
             </p>

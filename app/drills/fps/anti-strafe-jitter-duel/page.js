@@ -333,7 +333,7 @@ export default function AntiStrafeJitterPage() {
           ]
         }}
       />
-      <DrillGuide guide={antiStrafeGuide} />
+      <DrillGuide guide={antiStrafeGuide} singleLineTitles />
       <DrillFooter />
     </>
   );

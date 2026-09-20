@@ -5,23 +5,25 @@ import RelatedDrills from '@/components/drill/RelatedDrills';
 import { pickSources } from '@/lib/drillSources';
 
 export const metadata = {
-  title: "MOTテスト: 多目標追跡＆周辺視野トレーニング | SkillDrills",
-  description: "無料オンラインMOT（複数物体追跡）テスト。動く複数の標的を同時に追従し、周辺視野の広さ、分割的視覚注意、空間作業記憶を科学的に測定・強化します。",
+  title: "複数対象追跡テスト | 周辺視野トレーニング | SkillDrills",
+  description: "複数の動く標的を同時に追う無料MOTテスト。周辺視野と分割的視覚注意を練習できます。医療検査ではありません。",
   keywords: [
+    "複数対象追跡",
+    "多目標追跡",
+    "MOT テスト",
+    "複数オブジェクト追跡",
     "周辺視野 トレーニング",
-    "多目標追従 MOT",
-    "複数物体追跡 テスト",
-    "動体視覚追跡",
-    "MOT テスト 無料",
-    "分割的視覚注意",
+    "視覚的注意",
     "空間ワーキングメモリ",
+    "動くもの 同時に追う",
+    "MOT トレーニング",
     "動体視力 トレーニング",
-    "パイロット 視野検査",
-    "FPS 視野の広さ"
+    "視野 注意力",
+    "複数物体追跡"
   ],
   openGraph: {
-    title: "MOTテスト: 多目標追跡＆周辺視野トレーニング | SkillDrills",
-    description: "認知心理学の標準MOT課題を活用した無料オンライン周辺視野トレーニング。同一形状の高速移動球の中から指定ターゲットを同時に追尾し、分割的視覚注意と空間作業記憶を鍛えます。",
+    title: "複数対象追跡テスト | 周辺視野トレーニング | SkillDrills",
+    description: "複数の動く標的を同時に追う無料MOTテスト。周辺視野と分割的視覚注意を練習できます。",
     type: 'article',
     url: 'https://skilldrills.online/ja/drills/visual/tracking-accuracy/multiple-targets',
     siteName: 'SkillDrills',
@@ -29,8 +31,8 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: "MOTテスト: 多目標追跡＆周辺視野トレーニング | SkillDrills",
-    description: "認知心理学の標準MOT課題を活用した無料オンライン周辺視野トレーニング。視野の広さと空間ワーキングメモリを科学的に測定。",
+    title: "複数対象追跡テスト | 周辺視野トレーニング | SkillDrills",
+    description: "複数の動く標的を同時に追う無料MOTテスト。視覚的注意と空間ワーキングメモリを練習できます。",
   },
   robots: { index: true, follow: true },
   alternates: {
@@ -70,7 +72,7 @@ const breadcrumbSchema = {
     {
       "@type": "ListItem",
       "position": 5,
-      "name": "多目標追従 MOT テスト (周辺視野トレーニング)",
+      "name": "複数対象追跡テスト (周辺視野トレーニング)",
       "item": "https://skilldrills.online/ja/drills/visual/tracking-accuracy/multiple-targets"
     }
   ]
@@ -79,7 +81,7 @@ const breadcrumbSchema = {
 const softwareApplicationSchema = {
   "@context": "https://schema.org",
   "@type": "SoftwareApplication",
-  "name": "SkillDrills 周辺視野トレーニング・多目標追従 MOT 測定器",
+  "name": "SkillDrills 複数対象追跡・周辺視野トレーナー",
   "applicationCategory": "HealthApplication",
   "operatingSystem": "Any",
   "browserRequirements": "HTML5 Canvas対応の最新ウェブブラウザ",
@@ -94,7 +96,7 @@ const softwareApplicationSchema = {
 const webApplicationSchema = {
   "@context": "https://schema.org",
   "@type": "WebApplication",
-  "name": "無料オンライン多目標追従 MOT テスト",
+  "name": "無料オンライン複数対象追跡 MOT テスト",
   "url": "https://skilldrills.online/ja/drills/visual/tracking-accuracy/multiple-targets",
   "applicationCategory": "GameApplication",
   "genre": ["周辺視野トレーニング", "多目標追跡", "視覚的注意検査", "動体視力ゲーム"],
@@ -105,9 +107,9 @@ const webApplicationSchema = {
 const videoGameSchema = {
   "@context": "https://schema.org",
   "@type": "VideoGame",
-  "name": "多目標追従 MOT チャレンジ (GhostLink Multiple Targets)",
+  "name": "複数対象追跡 MOT チャレンジ (GhostLink)",
   "description": "画面内を跳ね回る複数の同一球体の中から指定されたターゲット群を同時に見失わずに追尾する本格ビジョントレーニングゲーム。",
-  "genre": ["Vision Training", "Esports Reaction", "Cognitive Drill"],
+  "genre": ["周辺視野トレーニング", "視覚的注意", "認知トレーニング"],
   "playMode": "SinglePlayer",
   "applicationCategory": "Game"
 };
@@ -202,7 +204,7 @@ const faqSchema = {
 const howToSchema = {
   "@context": "https://schema.org",
   "@type": "HowTo",
-  "name": "周辺視野トレーニング・多目標追従 MOT テストの攻略ステップ",
+  "name": "複数対象追跡テストの実践ステップ",
   "description": "複数の移動ターゲットを同時に見失わずに追跡し、最高スコアと周辺視野認知能力を獲得するための4段階実践ガイド。",
   "step": [
     {
@@ -238,7 +240,7 @@ const howToSchema = {
 
 const guideData = {
   eyebrow: "視覚認知心理学＆周辺視野神経科学ガイド",
-  heading: "多目標追従 MOT テスト – 周辺視野と空間作業記憶の並列処理機構",
+  heading: "複数対象追跡テスト：周辺視野と視覚的注意を鍛える方法",
   intro: [
     "多目標追従課題（Multiple Object Tracking, MOT）は、認知心理学者ゼノン・ピリシン（Zenon Pylyshyn, 1988）によって考案された、人間の並列的視覚情報処理の限界を測る金字塔的パラダイムです。外見が完全に同一の複数の移動オブジェクト群の中で、事前に指定された複数の目標（ターゲット）を、ランダムな交差運動を繰り返す多数の妨害刺激（ディストラクター）の中から一度も見失うことなく追尾し続ける能力を評価します。",
     "認知神経科学の研究によると、MOTの遂行は大脳皮質の広範な注意ネットワーク、特に後頭頂皮質（Intraparietal Sulcus: IPS）、前頭眼野（Frontal Eye Fields: FEF）、上丘の協調的な同期発火によって支えられています（Cavanagh & Alvarez, 2005）。人間は個々の物体を言語的・特徴的に記憶しているのではなく、網膜上の座標とは独立した注意のポインタ（FINST: Feature-blind Visual Index）を同時に最大3〜4箇所へ投射することで並列追跡を可能にしています。",
@@ -246,7 +248,7 @@ const guideData = {
     "本テストは、最新のHTML5 Canvasグラフィックパイプラインを用い、オブジェクト数、移動速度、交差頻度をミリ秒単位で動的に制御します。日々のシステマティックなMOTトレーニングは、視野狭窄（トンネルビジョン）を解消し、球技スポーツにおけるコートビジョン、FPSゲームでの索敵・乱戦状況判断力（Situational Awareness）、さらには日常の自動車運転における危険察知速度を劇的に向上させます。"
   ],
   benchmarks: {
-    title: "多目標追従・動体視覚追尾ベンチマーク基準",
+    title: "複数対象追跡と周辺視野の参考基準",
     headers: ["評価ランク / 階級", "同時追尾可能ターゲット数", "最大追跡速度適応", "正答率 / 精度", "神経生理学的到達レベル"],
     rows: [
       ["神業 / プロ特級 (Top 1%)", "5 – 6個", "高速（400 px/s以上）", "92% 以上", "幾何学的重心固定と大脳半球リソースの完全分離並列処理 (Cavanagh & Alvarez, 2005)"],
@@ -258,7 +260,7 @@ const guideData = {
     note: "認知神経科学およびスポーツ視覚認知文献（Pylyshyn 1988; Cavanagh & Alvarez 2005; Green & Bavelier 2006; Faubert 2013）に基づく客観的パフォーマンス基準です。"
   },
   techniques: {
-    title: "多目標追従能力を飛躍させる4大実践アプローチ",
+    title: "複数の標的を見失わずに追う4つの方法",
     items: [
       {
         name: "幾何学的重心注視ソフトフォーカス法 (Centroid Soft-Focus Fixation)",
@@ -328,7 +330,7 @@ export default function LocalizedMultipleTargetsJaPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
 
-      <GhostLinkClient copy={{ title: "周辺視野トレーニング・多目標追従 MOT テスト", subtitle: "複数目標同時追跡＆動体視覚注意検査" }} />
+      <GhostLinkClient copy={{ title: "複数対象追跡", subtitle: "周辺視野トレーニング" }} />
       <DrillGuide guide={guideData} />
       <div className="max-w-6xl mx-auto px-4 pb-12">
         <RelatedDrills currentCategory="visual" currentHref="https://skilldrills.online/ja/drills/visual/tracking-accuracy/multiple-targets" />

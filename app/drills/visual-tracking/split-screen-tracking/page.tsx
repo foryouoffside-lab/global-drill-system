@@ -1,5 +1,6 @@
 import SplitScreenTrackingClient from './SplitScreenTrackingClientLoader';
 import DrillGuide from '@/components/drill/DrillGuide';
+import DrillFooter from '@/components/drill/DrillFooter';
 import { getAlternateLanguages } from '@/lib/i18n/locales';
 import { pickSources } from '@/lib/drillSources';
 
@@ -306,8 +307,9 @@ export default function SplitScreenTrackingPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
 
-      <SplitScreenTrackingClient copy={{ title: "Split-Screen Tracking", subtitle: "Divided Attention Eye Test" }} />
+      <SplitScreenTrackingClient copy={{ title: "Split-Screen Tracking", subtitle: "Divided attention eye test for tracking two moving targets across horizontal and vertical paths at the same time" }} />
       <DrillGuide guide={guide} />
+      <DrillFooter />
     </>
   );
 }

@@ -6,25 +6,16 @@ import RelatedDrills from '@/components/drill/RelatedDrills';
 import { pickSources } from '@/lib/drillSources';
 
 export const metadata = {
-  title: 'Teste Drag and Drop – Precisão de Mouse | SkillDrills',
-  description: 'Teste de drag and drop online gratis no navegador: Treine a precisao ao arrastar o mouse, desaceleracao do cursor e liberacao espacial com a Lei de Accot-Zhai.',
+  title: 'Teste de arrastar e soltar | Precisão do mouse | SkillDrills',
+  description: 'Teste de arrastar e soltar no navegador. Meça precisão ao arrastar, tempo de movimento e o momento certo de soltar o alvo.',
   keywords: [
-    'drag and drop test',
-    'teste de drag and drop',
-    'treino de mouse drag',
-    'arrastar e soltar teste',
-    'precisao do mouse arrastar',
-    'controle de cursor teste',
-    'treino de mouse rts',
-    'teste de coordenacao motora mouse',
-    'desaceleracao de mouse fps',
-    'treino de inventario fps',
-    'teste de mouse online',
-    'agilidade motora mouse',
+    'teste de arrastar e soltar', 'teste de arrastar mouse', 'controle do mouse', 'precisão ao arrastar',
+    'treino de arrastar e soltar', 'teste de mouse online', 'coordenação olho-mão mouse', 'velocidade de arrastar e soltar',
+    'teste de precisão do mouse', 'arrastar e soltar no navegador', 'controle de cursor', 'treino de mouse',
   ],
   openGraph: {
-    title: 'Teste Drag and Drop – Precisão de Mouse | SkillDrills',
-    description: 'Teste de drag and drop online gratis no navegador: Treine a precisao ao arrastar o mouse, desaceleracao do cursor e liberacao espacial com a Lei de Accot-Zhai.',
+    title: 'Teste de arrastar e soltar | Precisão do mouse | SkillDrills',
+    description: 'Teste de arrastar e soltar no navegador. Meça precisão ao arrastar, tempo de movimento e o momento certo de soltar o alvo.',
     type: 'article',
     url: 'https://skilldrills.online/pt/drills/motor/hand-eye-coordination/drag-and-drop',
     siteName: 'SkillDrills',
@@ -32,8 +23,8 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Teste Drag and Drop – Precisão de Mouse | SkillDrills',
-    description: 'Teste de drag and drop online gratis no navegador: Treine a precisao ao arrastar o mouse, desaceleracao do cursor e liberacao espacial com a Lei de Accot-Zhai.',
+    title: 'Teste de arrastar e soltar | Precisão do mouse | SkillDrills',
+    description: 'Teste de arrastar e soltar no navegador. Meça precisão ao arrastar, tempo de movimento e o momento certo de soltar o alvo.',
   },
   robots: { index: true, follow: true },
   alternates: {
@@ -83,7 +74,8 @@ const softwareApplicationSchema = {
   description: 'Ferramenta online gratuita para aprimorar precisão de arrasto do cursor, desaceleração motora e tempo de liberação.',
   url: 'https://skilldrills.online/pt/drills/motor/hand-eye-coordination/drag-and-drop',
   publisher: { '@type': 'Organization', name: 'SkillDrills', url: 'https://skilldrills.online' },
-  dateModified: '2026-09-16',
+  inLanguage: 'pt-BR',
+  dateModified: '2026-09-20',
 };
 
 const webApplicationSchema = {
@@ -93,7 +85,8 @@ const webApplicationSchema = {
   browserRequirements: 'Requer HTML5 Canvas e JavaScript ativado',
   url: 'https://skilldrills.online/pt/drills/motor/hand-eye-coordination/drag-and-drop',
   applicationCategory: 'EducationalApplication',
-  dateModified: '2026-09-16',
+  inLanguage: 'pt-BR',
+  dateModified: '2026-09-20',
 };
 
 const videoGameSchema = {
@@ -105,13 +98,15 @@ const videoGameSchema = {
   genre: ['Precisão', 'Coordenação Motora', 'Treino Esports'],
   gamePlatform: ['Web Browser', 'Desktop'],
   applicationCategory: 'Game',
+  inLanguage: 'pt-BR',
   offers: { '@type': 'Offer', price: '0', priceCurrency: 'BRL' },
 };
 
 const faqSchema = {
   '@context': 'https://schema.org',
   '@type': 'FAQPage',
-  dateModified: '2026-09-16',
+  inLanguage: 'pt-BR',
+  dateModified: '2026-09-20',
   mainEntity: [
     {
       '@type': 'Question',
@@ -199,6 +194,7 @@ const faqSchema = {
 const howToSchema = {
   '@context': 'https://schema.org',
   '@type': 'HowTo',
+  inLanguage: 'pt-BR',
   name: 'Como treinar precisão de drag and drop com mouse',
   description: 'Guia prático para aprimorar desaceleração de cursor, sustentação de clique e soltura precisa.',
   step: [
@@ -323,7 +319,7 @@ const guideProps = {
 
 const copyPt = {
   title: "Teste Drag and Drop – Precisão de Mouse",
-  subtitle: "Arrastar e Soltar Espacial de Precisão • Progressão em 15 Níveis",
+  subtitle: "Precisão ao arrastar · alvo no lugar certo",
   startButtonText: "INICIAR DRILL",
   playAgainText: "Jogar novamente",
   shareText: "Compartilhar resultado",

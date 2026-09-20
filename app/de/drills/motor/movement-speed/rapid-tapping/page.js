@@ -18,26 +18,26 @@ import { pickSources } from '@/lib/drillSources';
 // ============================================================
 
 export const metadata = {
-  title: 'CPS Test – Klickgeschwindigkeit & CPS Messen | SkillDrills',
-  description: 'Kostenloser CPS Test im Browser: Miss Klicks pro Sekunde (CPS), teste Jitter- und Butterfly-Clicking sowie Ausdauer über 45 Sekunden ohne Installation.',
+  title: 'CPS-Test | Klickgeschwindigkeit messen | SkillDrills',
+  description: 'Teste deine Klicks pro Sekunde (CPS) und deine Klick-Ausdauer 45 Sekunden lang – kostenlos im Browser, ohne Download.',
   keywords: [
-    'CPS Test',
-    'cps test',
-    'klickgeschwindigkeit test',
-    'klicks pro sekunde',
-    'klick test',
-    'maus klick test',
-    'klickgeschwindigkeit messen',
-    'jitter clicking',
-    'butterfly clicking',
-    'minecraft cps test',
-    'fingerausdauer tasten',
+    'CPS-Test',
+    'Klickgeschwindigkeit Test',
+    'Klicks pro Sekunde',
+    'Maus Klick Test',
+    'Klickgeschwindigkeit messen',
+    'Jitter-Klicken',
+    'Butterfly-Klicken',
+    'Minecraft CPS',
+    'Klick-Ausdauer trainieren',
     'schnell klicken üben',
+    'Klicktest online',
+    'CPS Klicktest',
   ],
   openGraph: {
-    title: 'CPS Test – Klickgeschwindigkeit & CPS Messen | SkillDrills',
+    title: 'CPS-Test | Klickgeschwindigkeit messen | SkillDrills',
     description:
-      'Kostenloser CPS Test online im Browser. Miss deine Klicks pro Sekunde (CPS), teste Klickgeschwindigkeit, Jitter- und Butterfly-Clicking sowie Fingerausdauer.',
+      'Kostenloser Browser-Test für Klicks pro Sekunde und 45 Sekunden Klick-Ausdauer.',
     type: 'article',
     url: 'https://skilldrills.online/de/drills/motor/movement-speed/rapid-tapping',
     siteName: 'SkillDrills',
@@ -45,9 +45,9 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'CPS Test – Klickgeschwindigkeit & CPS Messen | SkillDrills',
+    title: 'CPS-Test | Klickgeschwindigkeit messen | SkillDrills',
     description:
-      'Kostenloser CPS Test online im Browser. Miss deine Klicks pro Sekunde (CPS), teste Klickgeschwindigkeit, Jitter- und Butterfly-Clicking sowie Fingerausdauer.',
+      'CPS und Klick-Ausdauer 45 Sekunden lang kostenlos im Browser testen.',
   },
   robots: { index: true, follow: true },
   alternates: {
@@ -82,7 +82,7 @@ const softwareApplicationSchema = {
   url: 'https://skilldrills.online/de/drills/motor/movement-speed/rapid-tapping',
   publisher: { '@type': 'Organization', name: 'SkillDrills', url: 'https://skilldrills.online' },
   inLanguage: 'de-DE',
-  dateModified: '2026-09-11',
+  dateModified: '2026-09-20',
 };
 
 const webApplicationSchema = {
@@ -96,12 +96,13 @@ const webApplicationSchema = {
   offers: { '@type': 'Offer', price: '0', priceCurrency: 'EUR' },
   url: 'https://skilldrills.online/de/drills/motor/movement-speed/rapid-tapping',
   inLanguage: 'de-DE',
-  dateModified: '2026-09-11',
+  dateModified: '2026-09-20',
 };
 
 const videoGameSchema = {
   '@context': 'https://schema.org',
   '@type': 'VideoGame',
+  inLanguage: 'de-DE',
   name: 'CPS Test – Kostenloser Klickgeschwindigkeitstest (Klicks pro Sekunde)',
   url: 'https://skilldrills.online/de/drills/motor/movement-speed/rapid-tapping',
   description: 'CPS Test – Kostenloser Klickgeschwindigkeitstest (Klicks pro Sekunde)',
@@ -115,6 +116,8 @@ const videoGameSchema = {
 const faqSchema = {
   '@context': 'https://schema.org',
   '@type': 'FAQPage',
+  inLanguage: 'de-DE',
+  dateModified: '2026-09-20',
   mainEntity: [
     {
       '@type': 'Question',
@@ -202,6 +205,8 @@ const faqSchema = {
 const howToSchema = {
   '@context': 'https://schema.org',
   '@type': 'HowTo',
+  inLanguage: 'de-DE',
+  dateModified: '2026-09-20',
   name: 'CPS Test – Kostenloser Klickgeschwindigkeitstest (Klicks pro Sekunde)',
   description: 'CPS Test – Kostenloser Klickgeschwindigkeitstest (Klicks pro Sekunde)',
   step: [
@@ -331,7 +336,7 @@ const deCopy = {
   cpsRate: "Aktuelle CPS",
   bestScore: "Bestergebnis",
   startButtonText: "Training Starten",
-  startSubtitle: "CPS-Klickgeschwindigkeitstrainer • 1:1 Rohe Mauseingabe",
+  startSubtitle: "CPS und Klick-Ausdauer • 45 s",
   getReady: "BEREIT MACHEN",
   playAgain: "Erneut Trainieren",
   shareTitle: "Ergebnis Teilen",

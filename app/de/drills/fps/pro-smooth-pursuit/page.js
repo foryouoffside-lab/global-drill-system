@@ -6,21 +6,19 @@ import RelatedDrills from '@/components/drill/RelatedDrills';
 import DrillFooter from '@/components/drill/DrillFooter';
 
 export const metadata = {
-  title: "Smooth Pursuit Aim Trainer – Kurven-Tracking | SkillDrills",
-  description: "Kostenloser Smooth Pursuit Aim Trainer. Trainiere kontinuierliches Kurven-Tracking und flüssige Mausführung für High-TTK-Shooter wie Apex und Overwatch 2.",
+  title: "Aim Trainer | Smooth-Tracking üben | SkillDrills",
+  description: "Kostenloser Aim Trainer im Browser: Übe flüssiges Tracking bewegter Ziele für Apex, Overwatch 2 und FPS.",
   keywords: [
-    "Smooth Pursuit Aim Trainer",
-    "Smooth Tracking Training",
-    "Kurven-Tracking FPS",
-    "Lissajous Tracking Übung",
-    "Aim Zittern verhindern",
-    "Apex Legends Tracking üben",
-    "Overwatch 2 Tracking Aim",
-    "Blickfolgebewegungen FPS",
-    "Flüssiges Zielen lernen",
-    "High-TTK Aim Trainer",
-    "Unterarm Stabilisierung Aim",
-    "Aim Trainer kostenlos"
+    "Aim Trainer",
+    "aim trainer valorant",
+    "aim trainer browser",
+    "aim tracking trainer",
+    "Smooth Tracking",
+    "Tracking üben",
+    "FPS Aim Training",
+    "Aim Trainer CS2",
+    "bewegte Ziele aim",
+    "Aim Trainer online"
   ],
   alternates: {
     canonical: "https://skilldrills.online/de/drills/fps/pro-smooth-pursuit",
@@ -31,8 +29,8 @@ export const metadata = {
     follow: true,
   },
   openGraph: {
-    title: "Smooth Pursuit Aim Trainer – Kurven-Tracking | SkillDrills",
-    description: "Kostenloser Smooth Pursuit Aim Trainer. Trainiere kontinuierliches Kurven-Tracking und flüssige Mausführung für High-TTK-Shooter wie Apex und Overwatch 2.",
+    title: "Aim Trainer | Smooth-Tracking üben | SkillDrills",
+    description: "Flüssiges Tracking bewegter Ziele trainieren: kostenloser Aim Trainer für Apex, Overwatch 2 und FPS im Browser.",
     url: "https://skilldrills.online/de/drills/fps/pro-smooth-pursuit",
     siteName: 'SkillDrills',
     locale: 'de_DE',
@@ -40,8 +38,8 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: "Smooth Pursuit Aim Trainer – Kurven-Tracking | SkillDrills",
-    description: "Kostenloser Smooth Pursuit Aim Trainer. Trainiere kontinuierliches Kurven-Tracking und flüssige Mausführung für High-TTK-Shooter wie Apex und Overwatch 2.",
+    title: "Aim Trainer | Smooth-Tracking üben | SkillDrills",
+    description: "Flüssiges Tracking bewegter Ziele trainieren: kostenloser Aim Trainer für Apex, Overwatch 2 und FPS im Browser.",
   },
 };
 
@@ -52,14 +50,14 @@ export default function GermanProSmoothPursuitPage() {
     "itemListElement": [
       { "@type": "ListItem", "position": 1, "name": "SkillDrills", "item": "https://skilldrills.online/de" },
       { "@type": "ListItem", "position": 2, "name": "FPS Training", "item": "https://skilldrills.online/de/drills/fps" },
-      { "@type": "ListItem", "position": 3, "name": "Smooth Pursuit Aim Trainer", "item": "https://skilldrills.online/de/drills/fps/pro-smooth-pursuit" }
+      { "@type": "ListItem", "position": 3, "name": "Aim Trainer - Smooth-Tracking", "item": "https://skilldrills.online/de/drills/fps/pro-smooth-pursuit" }
     ]
   };
 
   const webAppSchema = {
     "@context": "https://schema.org",
     "@type": "WebApplication",
-    "name": "Smooth Pursuit Aim Trainer",
+    "name": "Aim Trainer - Smooth-Tracking",
     "url": "https://skilldrills.online/de/drills/fps/pro-smooth-pursuit",
     "applicationCategory": "GameApplication",
     "operatingSystem": "All",
@@ -76,10 +74,10 @@ export default function GermanProSmoothPursuitPage() {
   const softwareSchema = {
     "@context": "https://schema.org",
     "@type": "SoftwareApplication",
-    "name": "Smooth Pursuit Aim Trainer",
+    "name": "Aim Trainer - Smooth-Tracking",
     "applicationCategory": "GameApplication",
     "operatingSystem": "Web Browser",
-    "dateModified": "2026-09-15",
+    "dateModified": "2026-09-20",
     "inLanguage": "de",
     "offers": { "@type": "Offer", "price": "0", "priceCurrency": "EUR" },
     "description": "Kostenlose Trainingssoftware für kontinuierliche Blickfolgebewegungen, Kurven-Tracking und Unterarm-Stabilisierung für kompetitive Shooter.",
@@ -95,10 +93,10 @@ export default function GermanProSmoothPursuitPage() {
   const videoGameSchema = {
     "@context": "https://schema.org",
     "@type": "VideoGame",
-    "name": "Smooth Pursuit Aim Trainer",
+    "name": "Aim Trainer - Smooth-Tracking",
     "url": "https://skilldrills.online/de/drills/fps/pro-smooth-pursuit",
     "description": "Kostenlose Trainingssoftware für kontinuierliche Blickfolgebewegungen, Kurven-Tracking und Unterarm-Stabilisierung für kompetitive Shooter.",
-    "dateModified": "2026-09-15",
+    "dateModified": "2026-09-20",
     "inLanguage": "de",
     "gamePlatform": "Web Browser",
     "genre": ["FPS Training", "Aim Trainer", "Smooth Pursuit"],
@@ -111,7 +109,7 @@ export default function GermanProSmoothPursuitPage() {
   const faqSchema = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
-    "dateModified": "2026-09-15",
+    "dateModified": "2026-09-20",
     "mainEntity": [
       {
         "@type": "Question",
@@ -234,9 +232,9 @@ export default function GermanProSmoothPursuitPage() {
   };
 
   const proSmoothPursuitGuide = {
-    heading: "Smooth Pursuit Aim Trainer Guide & Tracking-Biomechanik",
+    heading: "Aim Trainer für Smooth-Tracking und bewegte Ziele",
     intro: [
-      "Der Smooth Pursuit Aim Trainer ist eine empirisch entwickelte sensomotorische Trainingsübung zur Perfektionierung kontinuierlicher Augenfolgebewegungen, dem Lesen harmonischer Lissajous-Kurven und zitterfreier Unterarm-Stabilisierung. In modernen High-TTK-Shootern wie Apex Legends, Overwatch 2 und The Finals entscheidet die sogenannte Treffer-Uptime über den Ausgang von Duellen: Schützen müssen das Fadenkreuz über mehrere Sekunden hinweg ununterbrochen auf agil manövrierenden Zielen halten.",
+      "Ein Aim Trainer für Smooth-Tracking trainiert die ruhige, kontinuierliche Führung des Fadenkreuzes auf bewegten Zielen. Dieser Drill nutzt Lissajous-Kurven, um die Tracking-Stabilität und Treffer-Uptime in Apex, Overwatch 2 und anderen FPS zu messen.",
       "Die neurobiologischen Grundlagen der Blickfolgebewegung wurden maßgeblich von Richard J. Krauzlis (2004) entschlüsselt: Oszillierende Augenbewegungen werden über kortikale Rückkopplungsschleifen zwischen dem medialen superioren temporalen Areal (MST), dem frontalen Augenfeld (FEF) und dem primären visuellen Bewegungskortex (MT/V5) reguliert. Statt bloß passiv zu reagieren, modelliert dieser neuronale Schaltkreis Geschwindigkeitsvektoren voraus, um die Augenmuskulatur in Echtzeit anzusteuern.",
       "Bereits 1961 bewies Cyril Rashbass in wegweisenden psychophysischen Experimenten, dass Blickfolgebewegungen und Sakkaden anatomisch wie funktional getrennt agieren: Sakkaden springen auf Positionsfehler an, während Smooth Pursuit rein auf visuelle Geschwindigkeitsdifferenzen (Netzhaut-Schlupf) reagiert. Versuchen Spieler, einem bewegten Ziel mit ruckartigen Mini-Flicks hinterherzujagen, unterbrechen sie diesen geschlossenen Regelkreis und provozieren unfreiwillige Korrektursakkaden, die das Fadenkreuz unruhig zucken lassen.",
       "Durch die Verbindung harmonischer Lissajous-Koordinaten mit den Prinzipien des fovealen Blick-Voraus-Führens (Land & McLeod, 2000), dynamischer Aufmerksamkeits-Erweiterung (Green & Bavelier, 2003) und digitaler Hochfrequenz-Chronometrie (Woods et al., 2015) schult dieser Trainer das vollständige Lösen von Unterarmverkrampfungen und das Führen eines lasergleichen Trefferstrahls.",
@@ -299,13 +297,13 @@ export default function GermanProSmoothPursuitPage() {
   };
 
   const copyDe = {
-    h1Keyword: "Smooth Pursuit Aim Trainer",
-    h1Suffix: " – Kurven-Tracking",
+    h1Keyword: "Aim Trainer",
+    h1Suffix: " – Smooth-Tracking üben",
     statScore: "Punkte",
     statTime: "Verbleibende Zeit",
     statAccuracy: "Tracking-Präzision",
     statBestScore: "Highscore",
-    startTitle: "Pro Smooth Pursuit",
+    startTitle: "Aim Trainer",
     startSubtitle: "Lissajous-Kurven Smooth Pursuit • Stufenlose Progression",
     getReady: "BEREIT MACHEN",
     stageCaption: "Führe dein Fadenkreuz kontinuierlich und ohne Ruckeln auf dem oszillierenden Ziel entlang flüssiger Kurvenbahnen.",
@@ -316,7 +314,7 @@ export default function GermanProSmoothPursuitPage() {
       { num: "3", text: "Levelaufstieg", highlight: "+1 Level / 1400 PTS", result: "Adaptive Kurven" },
       { num: "4", text: "Zielverlust-Strafe", highlight: "1.0s Zielverlust", result: "Combo-Reset (-0.6s)" }
     ],
-    aboutTitle: "Über den Smooth Pursuit Aim Trainer"
+    aboutTitle: "Über den Aim Trainer und Smooth-Tracking"
   };
 
   return (

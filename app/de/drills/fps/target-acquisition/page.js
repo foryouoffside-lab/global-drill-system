@@ -5,37 +5,22 @@ import { getAlternateLanguages } from '@/lib/i18n/locales';
 import RelatedDrills from '@/components/drill/RelatedDrills';
 import DrillFooter from '@/components/drill/DrillFooter';
 
-// ============================================================
-// GERMAN SEARCH KEYWORD RESEARCH & INTENT CLUSTERING (DACH)
-// Primary queries: "Zielerfassung FPS Training" (Natural domestic query for target acquisition)
-//                  "Target Acquisition Aiming" (Established technical shooter search term in DACH)
-// Secondary:       "Erster Schuss Genauigkeit", "Gegner schneller erkennen FPS",
-//                  "Visuelle Zielerkennung Shooter", "First Shot Precision CS2",
-//                  "Valorant Gegner Erfassen", "Maus Zielerfassung Übung",
-//                  "Target Selection Aim Training", "Schnelles Anvisieren FPS"
-// Domain / LSI:    "Merkmals-Integrations-Theorie" (Treisman & Gelade 1980), "Guided Search Modell" (Wolfe 2007),
-//                  "Fitts Gesetz" (Fitts 1954), "Submovement-Theorie" (Meyer et al. 1988),
-//                  "Pop-Out-Effekt", "Foveale Fixation", "Peripheres Scanning", "Kontrastunterscheidung"
-// Authentic Domain Terms: Zielerfassung, Target Acquisition, Erster Schuss, Kontrast-Erkennung,
-//                         Visuelles Scanning, Foveale Fixierung
-// ============================================================
-
 export const metadata = {
-  title: "Zielerfassung FPS Training – First Shot Aim | SkillDrills",
-  description: "Kostenloses Zielerfassungs-Training im Browser: Trainiere visuelle Zielerkennung, Kontrastunterscheidung und präzise erste Schüsse für CS2 und Valorant.",
+  title: "Valorant Aim Trainer - Zielerfassung & First Shot | SkillDrills",
+  description: "Kostenloser Valorant Aim Trainer im Browser: Erkenne Ziele schneller, übe Zielerfassung und verbessere deine First-Shot-Accuracy für CS2 und Valorant.",
   keywords: [
-    "Zielerfassung FPS Training",
-    "Target Acquisition Aiming",
+    "Valorant Aim Trainer",
+    "Aim Trainer",
+    "Zielerfassung",
+    "Zielerkennung FPS",
     "Erster Schuss Genauigkeit",
-    "Gegner schneller erkennen FPS",
-    "Visuelle Zielerkennung Shooter",
-    "Erster Schuss Präzision CS2",
-    "Valorant Gegner Erfassen",
-    "Maus Zielerfassung Übung",
-    "Target Selection Aim Training",
-    "Schnelles Anvisieren FPS",
-    "Erster Treffer Aim Training",
-    "Gegner Identifikation Shooter"
+    "First Shot Accuracy",
+    "Gegner schneller erkennen",
+    "Target Switching",
+    "Kontrast-Erkennung",
+    "Fadenkreuz Platzierung",
+    "CS2 Aim Training",
+    "FPS Zielerfassung"
   ],
   alternates: {
     canonical: "https://skilldrills.online/de/drills/fps/target-acquisition",
@@ -46,8 +31,8 @@ export const metadata = {
     follow: true,
   },
   openGraph: {
-    title: "Zielerfassung FPS Training – First Shot Aim | SkillDrills",
-    description: "Kostenloses Zielerfassungs-Training im Browser: Trainiere visuelle Zielerkennung, Kontrastunterscheidung und präzise erste Schüsse für CS2 und Valorant.",
+    title: "Valorant Aim Trainer - Zielerfassung & First Shot | SkillDrills",
+    description: "Kostenloser Valorant Aim Trainer im Browser: Erkenne Ziele schneller, übe Zielerfassung und verbessere deine First-Shot-Accuracy für CS2 und Valorant.",
     url: "https://skilldrills.online/de/drills/fps/target-acquisition",
     siteName: 'SkillDrills',
     locale: 'de_DE',
@@ -55,8 +40,8 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: "Zielerfassung FPS Training – First Shot Aim | SkillDrills",
-    description: "Kostenloses Zielerfassungs-Training im Browser: Trainiere visuelle Zielerkennung, Kontrastunterscheidung und präzise erste Schüsse für CS2 und Valorant.",
+    title: "Valorant Aim Trainer - Zielerfassung & First Shot | SkillDrills",
+    description: "Kostenloser Valorant Aim Trainer im Browser: Erkenne Ziele schneller, übe Zielerfassung und verbessere deine First-Shot-Accuracy für CS2 und Valorant.",
   },
 };
 
@@ -74,7 +59,7 @@ export default function TargetAcquisitionDePage() {
   const softwareSchema = {
     "@context": "https://schema.org",
     "@type": "SoftwareApplication",
-    "name": "Zielerfassung FPS Training – First Shot Aim",
+    "name": "Valorant Aim Trainer - Zielerfassung & First Shot",
     "applicationCategory": "GameApplication",
     "operatingSystem": "Web Browser",
     "offers": { "@type": "Offer", "price": "0", "priceCurrency": "EUR" }
@@ -102,7 +87,7 @@ export default function TargetAcquisitionDePage() {
   const faqSchema = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
-    "dateModified": "2026-09-15",
+    "dateModified": "2026-09-20",
     "mainEntity": [
       {
         "@type": "Question",
@@ -221,10 +206,10 @@ export default function TargetAcquisitionDePage() {
   };
 
   const targetAcquisitionGuideDe = {
-    heading: "Zielerfassung FPS Training – Wissenschaftlicher Leitfaden",
+    heading: "Valorant Aim Trainer: Zielerfassung und First-Shot-Accuracy",
     subtitle: "Visuelle Erkennungsgeschwindigkeit, Kontrastdiskriminierung und fehlerfreie Erstschuss-Präzision für CS2 und Valorant",
     intro: [
-      "Der Zielerfassungs-Trainer (Target Acquisition Aim Trainer) ist ein hochspezialisiertes perzeptiv-kognitives Test- und Trainingsprogramm zur Maximierung der visuellen Reaktionsgeschwindigkeit, Kontrastdiskriminierung und Erstschuss-Präzision. In taktischen Wettkampf-Shootern wie Valorant, Counter-Strike 2 und Rainbow Six Siege entscheidet sich das Duell in den ersten 300 Millisekunden des Sichtkontakts: Derjenige, der die gegnerische Silhouette als Erster identifiziert, fokussiert und den Kopfschuss setzt, gewinnt den Raumvorteil.",
+      "Wer einen Valorant Aim Trainer für Zielerfassung sucht, trainiert hier den Ablauf vom visuellen Erkennen einer Bedrohung bis zum präzisen ersten Schuss. Das Drill misst Zielerkennung, Bedrohungsentscheidung und First-Shot-Accuracy für Valorant, Counter-Strike 2 und Rainbow Six Siege, wo die ersten 300 Millisekunden des Sichtkontakts den Duellausgang prägen.",
       "Die theoretische Grundlage der visuellen Objekterkennung und Zielsuche formulierten Anne Treisman und Garry Gelade (1980) in ihrer Merkmals-Integrations-Theorie (Feature-Integration Theory). Treisman wies nach, dass elementare optische Merkmale wie Leuchtdichtekontrast, Farbunterschiede (Pop-Out) und Kantenorientierung zunächst vorattentiv und vollkommen parallel über das gesamte Sehfeld extrahiert werden. Erst wenn die fokussierte räumliche Aufmerksamkeit auf eine präzise Koordinate gerichtet wird, verschmelzen diese Einzeleigenschaften zu einer identifizierbaren Bedrohung.",
       "In Erweiterung der parallelen Informationsverarbeitung beschreibt Jeremy M. Wolfes (1994, 2007) Guided-Search-Modell, wie kognitive Erwartungshaltungen (Top-Down) und sensorische Salienz-Karten (Bottom-Up) interagieren, um die visuelle Aufmerksamkeit zu priorisieren. Durch gezieltes Training der Kontrastdiskriminierung lernt der primäre visuelle Kortex, irrelevante visuelle Störsignale und Hintergrundelemente schlagartig zu verwerfen, wodurch die Latenz zwischen Zielerscheinen und motorischem Bewegungsantritt signifikant sinkt.",
       "Unter Einbeziehung von Paul M. Fitts’ (1954) motorischem Index of Difficulty, David E. Meyer et al.s (1988) Stochastic Optimized Submovement Model und digitaler Präzisionschronometrie (Woods et al., 2015) trainiert dieser Drill Spieler darin, kognitive Zögerlichkeit zu eliminieren, messerscharfe primäre Flicks auszuführen und eine unerschütterliche Erstschuss-Präzision unter Matchdruck zu verankern.",
@@ -286,9 +271,9 @@ export default function TargetAcquisitionDePage() {
   };
 
   const copyDe = {
-    h1Keyword: "Zielerfassung FPS Training",
-    h1Suffix: " – First Shot Precision",
-    subtitle: "Trainiere visuelle Zielerkennung, Kontrast-Diskrimination und Erstschuss-Präzision mit Echtzeit-Feedback.",
+    h1Keyword: "Valorant Aim Trainer",
+    h1Suffix: " – Zielerfassung & First Shot",
+    subtitle: "Trainiere Zielerkennung, Bedrohungsentscheidung und präzise erste Schüsse direkt im Browser.",
     statScore: "Punkte",
     statTime: "Zeit",
     statAccuracy: "Präzision",
@@ -360,7 +345,7 @@ export default function TargetAcquisitionDePage() {
       <div className="max-w-4xl mx-auto px-4 pb-12">
         <RelatedDrills
           currentCategory="fps"
-          currentHref="/drills/fps/target-acquisition"
+          currentHref="/de/drills/fps/target-acquisition"
           locale="de"
         />
       </div>

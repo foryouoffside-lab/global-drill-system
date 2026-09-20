@@ -1,7 +1,6 @@
 'use client';
 
 import React, { useState, useEffect, useRef, useCallback } from 'react';
-import Link from 'next/link';
 import { Target, Volume2, VolumeX, Users, TrendingUp, Zap, ZapOff } from 'lucide-react';
 
 import { isIdleFrameSkippable } from '@/lib/performance';
@@ -14,14 +13,32 @@ import { getPlayerName } from '../../../../../lib/leaderboard';
 import { getFpsScoreGrade, getComboMultiplier } from '../../../../../lib/scoringEngine';
 import { getDifficultyProgress, getStartLevel, ramp } from '../../../../../lib/drillDifficulty';
 import useDrillFlash from '../../../../../lib/useDrillFlash';
+import useHitBurst from '../../../../../lib/useHitBurst';
 import useUnexpectedExitGuard from '../../../../../lib/useUnexpectedExitGuard';
-import DrillFooter from '../../../../../components/drill/DrillFooter';
 import DrillCountdown from '../../../../../components/drill/DrillCountdown';
 import DrillAccordion from '../../../../../components/drill/DrillAccordion';
 import DrillFlashOverlay from '../../../../../components/drill/DrillFlashOverlay';
 import FpsStartCard from '../../../../../components/drill/FpsStartCard';
 import DrillResultCard from '../../../../../components/drill/DrillResultCard';
 import useImmersiveMode from '@/lib/useImmersiveMode';
+
+function RuleItem({ num, text, highlight = '', result }) {
+  return (
+    <div className="flex items-center gap-3 bg-black px-3.5 py-2.5 rounded-xl border border-white/10 shadow-sm font-sans min-w-0">
+      <div className="w-7 h-7 rounded-lg bg-white/10 border border-white/20 flex items-center justify-center text-white text-xs font-black shadow-lg flex-shrink-0">
+        {num}
+      </div>
+      <div className="flex-1 flex items-center justify-between gap-2 min-w-0">
+        <p className="text-xs sm:text-sm font-medium text-gray-100 font-sans truncate">
+          {text}{highlight && <span className="font-bold text-white"> ({highlight})</span>}
+        </p>
+        <div className="text-[11px] sm:text-xs font-bold px-2.5 py-1 rounded-lg bg-[#050811] border border-white/10 text-white whitespace-nowrap shadow-inner tracking-wide flex-shrink-0">
+          {result}
+        </div>
+      </div>
+    </div>
+  );
+}
 
 // ============================================================
 // TUNING CONSTANTS
@@ -60,10 +77,10 @@ const getLevelConfig = (level, combo = 0) => {
 };
 
 const RULES_ITEMS = [
-  { title: "Dynamic Target Rule", text: "Pay close attention to the active top rule banner (e.g. 'TAP RED' or 'TAP BLUE'). Tap ONLY the target matching the active rule (+100 PTS × Combo × Level multiplier, +0.6s)." },
-  { title: "Performance Rule Switching", text: "As your performance improves and level increases, the rule dynamically switches between RED and BLUE targets." },
-  { title: "Rapid Target Shift", text: "Target nodes shift positions continuously to train visual discrimination and choice reaction speed." },
-  { title: "Streak & Penalty Rules", text: "Tapping the wrong target node or letting the active target time out resets your combo streak. A 0.8s time deduction applies when enabled in settings." }
+  { num: "1", text: "Dynamic Rule", highlight: "TAP RED / TAP BLUE", result: "Follow the active top banner" },
+  { num: "2", text: "Correct Target Hit", highlight: "+100 PTS", result: "× Combo × Level (+0.6s per hit)" },
+  { num: "3", text: "Rule Switching", highlight: "Auto-Flips", result: "Switches faster as level climbs" },
+  { num: "4", text: "Wrong Target / Timeout", highlight: "Resets Combo", result: "−0.8s when penalties enabled" }
 ];
 
 const ABOUT_TEXT = `Reaction Time (Dynamic Choice Discrimination) evaluates rapid visual reflex latencies and cognitive flexibility under high-speed execution pressure. Grounded in choice reaction time paradigms, this drill measures motor response speed while training the prefrontal cortex to adapt when rules switch dynamically.
@@ -85,16 +102,27 @@ const FAQ_ITEMS = [
   { q: "Is this reaction time test free?", a: "Yes. This reaction time test on SkillDrills is completely free. No registration, downloads, or subscriptions required. It runs entirely in your browser on both desktop and mobile devices." }
 ];
 
-const RELATED_DRILLS = [
-  { id: "symbol-matching", name: "Symbol Matching", cat: "Processing Speed", desc: "Match rapid symbol pairs under strict time pressure.", href: "/drills/cognitive/processing-speed/symbol-matching" },
-  { id: "rsvp-reader", name: "RSVP Speed Reader", cat: "Processing Speed", desc: "Process rapid serial visual presentation text streams.", href: "/drills/cognitive/processing-speed/rsvp-reader" },
-  { id: "concentration-grid", name: "Schulte Table Trainer", cat: "Focus", desc: "Scan and tap sequential numbers on expanding grid matrices.", href: "/drills/cognitive/focus/concentration-grid" },
-  { id: "distraction-fighter", name: "Distraction Fighter", cat: "Focus", desc: "Filter out high-interference Stroop visual distractors.", href: "/drills/cognitive/focus/distraction-fighter" },
-  { id: "multi-tasking", name: "Multitasking Test", cat: "Attention", desc: "Track dual independent target streams under speed pressure.", href: "/drills/cognitive/attention/multi-tasking" },
-  { id: "concentration-stamina", name: "Focus Test", cat: "Attention", desc: "Sustain continuous visual focus through prolonged high-density sequences.", href: "/drills/cognitive/attention/concentration-stamina" }
-];
-
 export default function EliteNeuroSwitchClient({ copy } = {}) {
+  const labels = {
+    score: copy?.labels?.score || 'Score',
+    time: copy?.labels?.time || 'Time',
+    level: copy?.labels?.level || 'Level',
+    bestScore: copy?.labels?.bestScore || 'Best Score',
+    timeLeft: copy?.labels?.timeLeft || 'Time Left',
+    rule: copy?.labels?.rule || 'RULE',
+    ready: copy?.labels?.ready || 'GET READY',
+    accuracy: copy?.labels?.accuracy || 'Accuracy',
+    hits: copy?.labels?.hits || 'Hits',
+    peakLevel: copy?.labels?.peakLevel || 'Peak Level',
+    maxCombo: copy?.labels?.maxCombo || 'Max Combo',
+  };
+  const aboutCards = copy?.aboutCards || [
+    { title: 'Who Should Use This?', desc: 'Competitive gamers and esports players who need split-second target discrimination, drivers and pilots training hazard response, and anyone wanting sharper visual-motor reflexes under rule-switching pressure.' },
+    { title: 'Skills Improved', desc: 'Choice reaction time, visual discrimination speed, motor response execution, and resistance to interference from non-target stimuli.' },
+    { title: 'Rule-Switch Agility', desc: 'Every rule flip forces your prefrontal cortex to update its active response mapping on the fly, training rapid cognitive set-shifting alongside raw reflex speed.' },
+  ];
+  const faqItems = copy?.faqItems || FAQ_ITEMS;
+  const aboutText = copy?.aboutText || ABOUT_TEXT;
   const [gameState, setGameState] = useState('start'); // 'start' | 'countdown' | 'playing' | 'gameOver'
   const [isFullscreen, setIsFullscreen] = useState(false);
   useImmersiveMode(isFullscreen); // locks the page behind while the drill fills the screen
@@ -158,6 +186,7 @@ export default function EliteNeuroSwitchClient({ copy } = {}) {
   });
 
   const { flashes, triggerFlash } = useDrillFlash();
+  const { bursts, spawnBurst } = useHitBurst();
 
   // Storage loading & sound init
   useEffect(() => {
@@ -189,9 +218,32 @@ export default function EliteNeuroSwitchClient({ copy } = {}) {
     startingRef.current = false;
     gameActiveRef.current = false;
 
+    if (typeof document !== 'undefined' && document.fullscreenElement) {
+      document.exitFullscreen().catch(() => {});
+    }
     setIsFullscreen(false);
     setGameState('start');
   }, []);
+
+  useEffect(() => {
+    if (gameState !== 'playing' && gameState !== 'countdown') return;
+    const handleKeyDown = (e) => {
+      if (e.key === 'Escape') {
+        handleExitDrill();
+      }
+    };
+    const handleFullscreenChange = () => {
+      if (!document.fullscreenElement && isFullscreen) {
+        handleExitDrill();
+      }
+    };
+    window.addEventListener('keydown', handleKeyDown);
+    document.addEventListener('fullscreenchange', handleFullscreenChange);
+    return () => {
+      window.removeEventListener('keydown', handleKeyDown);
+      document.removeEventListener('fullscreenchange', handleFullscreenChange);
+    };
+  }, [gameState, isFullscreen, handleExitDrill]);
 
   const { markIntentionalExit } = useUnexpectedExitGuard({
     active: gameState === 'playing' || gameState === 'countdown',
@@ -343,6 +395,9 @@ export default function EliteNeuroSwitchClient({ copy } = {}) {
     const currentRule = eng.activeRule;
 
     if (clickedColor === currentRule) {
+      const hitPos = clickedColor === 'RED' ? eng.redTarget : eng.blueTarget;
+      spawnBurst(hitPos.x, hitPos.y, 36, clickedColor === 'RED' ? '#ef4444' : '#3b82f6');
+
       eng.successfulHits += 1;
       eng.hitsOnCurrentRule += 1;
       eng.combo += 1;
@@ -482,15 +537,18 @@ export default function EliteNeuroSwitchClient({ copy } = {}) {
   }, [uiScore, analytics]);
 
   return (
-    <div className="min-h-screen bg-[#050508] text-white flex flex-col font-sans select-none">
+    <div className="bg-[#050508] text-white flex flex-col font-sans select-none">
       {/* ── MAIN CONTENT AREA ── */}
       <main className="flex-1 max-w-6xl w-full mx-auto px-4 py-6 flex flex-col gap-6">
         {/* Title */}
         {!isFullscreen && (
           <div className="flex flex-col gap-1">
-            <h1 className="text-2xl sm:text-3xl font-black tracking-tight text-white">
+            <h1 className="text-xl sm:text-3xl font-black tracking-tight text-white whitespace-nowrap overflow-hidden text-ellipsis">
               <span data-seo-kw="1">{copy?.title || "Neuro Speed & Reflex Test"}</span>
             </h1>
+            <p className="text-xs sm:text-sm text-slate-400 font-medium">
+              {copy?.subtitle || "Choice reaction time test for identifying targets quickly, resisting distractions, and improving processing speed"}
+            </p>
           </div>
         )}
 
@@ -498,10 +556,10 @@ export default function EliteNeuroSwitchClient({ copy } = {}) {
         {!isFullscreen && (
           <div className="grid grid-cols-4 gap-2 w-full -mb-2">
             {[
-              { label: 'Score', value: uiScore, color: 'text-red-400' },
-              { label: 'Time', value: `${uiTimeLeft}s`, color: uiTimeLeft <= 10 ? 'text-red-400 animate-pulse' : 'text-white' },
-              { label: 'Level', value: `L${uiLevel}`, color: 'text-indigo-400' },
-              { label: 'Best Score', value: bestScore, color: 'text-amber-400' },
+              { label: labels.score, value: uiScore, color: 'text-red-400' },
+              { label: labels.time, value: `${uiTimeLeft}s`, color: uiTimeLeft <= 10 ? 'text-red-400 animate-pulse' : 'text-white' },
+              { label: labels.level, value: `L${uiLevel}`, color: 'text-indigo-400' },
+              { label: labels.bestScore, value: bestScore, color: 'text-amber-400' },
             ].map((card) => (
               <div key={card.label} className="border border-white/[0.06] bg-white/[0.015] px-2 py-2 rounded-xl text-center">
                 <div className="text-[10px] font-bold tracking-wider uppercase text-slate-500">{card.label}</div>
@@ -527,7 +585,7 @@ export default function EliteNeuroSwitchClient({ copy } = {}) {
               {/* Top Left: Score */}
               <div className="absolute top-4 left-4 z-30 pointer-events-none flex flex-col gap-1">
                 <div>
-                  <p className="text-[10px] font-semibold uppercase tracking-wider text-white/50">Score</p>
+                  <p className="text-[10px] font-semibold uppercase tracking-wider text-white/50">{labels.score}</p>
                   <p className="text-2xl sm:text-3xl font-black text-white tabular-nums leading-tight">{uiScore}</p>
                 </div>
               </div>
@@ -535,16 +593,16 @@ export default function EliteNeuroSwitchClient({ copy } = {}) {
               {/* Active Target Rule Banner at Top Center */}
               <div className="absolute top-4 left-1/2 -translate-x-1/2 z-30 pointer-events-none">
                 <div className="bg-black/75 backdrop-blur-md px-4 py-1.5 rounded-xl border border-white/10 flex items-center gap-2 shadow-lg">
-                  <span className="text-[10px] sm:text-xs font-bold text-slate-400 uppercase">RULE:</span>
+                  <span className="text-[10px] sm:text-xs font-bold text-slate-400 uppercase">{labels.rule}:</span>
                   <span className={`text-xs sm:text-sm font-black uppercase tracking-wider ${activeRule === 'RED' ? 'text-red-400' : 'text-cyan-400'}`}>
-                    TAP {activeRule} TARGET
+                    {copy?.ruleBanner?.[activeRule] || ('TAP ' + activeRule + ' TARGET')}
                   </span>
                 </div>
               </div>
 
               {/* Top Right: Time Left */}
               <div className="absolute top-4 right-4 z-30 pointer-events-none text-right">
-                <p className="text-[10px] font-semibold uppercase tracking-wider text-white/50">Time Left</p>
+                <p className="text-[10px] font-semibold uppercase tracking-wider text-white/50">{labels.timeLeft}</p>
                 <p className={`text-2xl sm:text-3xl font-black tabular-nums leading-tight ${uiTimeLeft <= 10 ? 'text-red-400 animate-pulse' : 'text-white'}`}>{uiTimeLeft}s</p>
               </div>
             </>
@@ -617,6 +675,16 @@ export default function EliteNeuroSwitchClient({ copy } = {}) {
                     <div className="w-2.5 h-2.5 rounded-full bg-white" />
                   </div>
                 </button>
+
+                {/* Hit-impact bursts */}
+                {bursts.map((b) => (
+                  <div key={b.id} className="absolute z-40 pointer-events-none" style={{ left: `${b.x}%`, top: `${b.y}%`, transform: 'translate(-50%,-50%)' }}>
+                    <div className="fx-hit-ring" style={{ left: -b.r, top: -b.r, width: b.r * 2, height: b.r * 2, borderWidth: 3, borderColor: b.color }} />
+                    {b.sparks.map((s, i) => (
+                      <div key={i} className="fx-hit-spark" style={{ left: -3, top: -3, width: 6, height: 6, background: b.color, '--tx': `${s.dx}px`, '--ty': `${s.dy}px` }} />
+                    ))}
+                  </div>
+                ))}
               </div>
             </div>
           )}
@@ -626,8 +694,8 @@ export default function EliteNeuroSwitchClient({ copy } = {}) {
             <FpsStartCard
               icon={Target}
               accent="red"
-              title="Reaction Time"
-              subtitle="Choice Discrimination • Reflex Latency"
+              title={copy?.startTitle || 'Reaction Time'}
+              subtitle={copy?.startSubtitle || 'Choice Discrimination • Reflex Latency'}
               isTouchOnlyDevice={false}
               onStart={enterDrill}
             />
@@ -635,7 +703,7 @@ export default function EliteNeuroSwitchClient({ copy } = {}) {
 
           {/* COUNTDOWN OVERLAY */}
           {gameState === 'countdown' && (
-            <DrillCountdown value={countdownValue} subtitle="GET READY" />
+            <DrillCountdown value={countdownValue} subtitle={labels.ready} />
           )}
 
           {/* UNIVERSAL RESULT CARD */}
@@ -646,10 +714,10 @@ export default function EliteNeuroSwitchClient({ copy } = {}) {
               score={uiScore}
               isNewBest={isNewBest}
               stats={[
-                { label: 'Accuracy', value: analytics.accuracy, suffix: '%' },
-                { label: 'Hits', value: analytics.successfulHits },
-                { label: 'Peak Level', value: `Lv. ${analytics.finalLevel}` },
-                { label: 'Max Combo', value: analytics.maxCombo, suffix: 'x' },
+                { label: labels.accuracy, value: analytics.accuracy, suffix: '%' },
+                { label: labels.hits, value: analytics.successfulHits },
+                { label: labels.peakLevel, value: `Lv. ${analytics.finalLevel}` },
+                { label: labels.maxCombo, value: analytics.maxCombo, suffix: 'x' },
               ]}
               onPlayAgain={enterDrill}
               onShare={shareResult}
@@ -662,7 +730,7 @@ export default function EliteNeuroSwitchClient({ copy } = {}) {
         {/* Stage Caption */}
         {!isFullscreen && (
           <p className="text-xs text-slate-400 leading-relaxed -mt-2">
-            Tap the target matching the active top rule banner as targets and colors switch rapidly.
+            {copy?.stageCaption || 'Tap the target matching the active top rule banner as targets and colors switch rapidly.'}
           </p>
         )}
 
@@ -671,23 +739,26 @@ export default function EliteNeuroSwitchClient({ copy } = {}) {
           <div className="[&>div]:!mt-0">
             <DrillAccordion
               id="rules"
-              title="Drill Instructions & Scoring System"
+              title={copy?.rulesTitle || 'Drill Instructions & Scoring System'}
               isOpen={openAccordion === 'rules'}
               onToggle={() => setOpenAccordion(openAccordion === 'rules' ? null : 'rules')}
             >
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
-                {RULES_ITEMS.map((item, i) => (
-                  <div key={i} className="bg-black p-4 rounded-xl border border-white/10">
-                    <p className="text-sm font-bold text-white mb-1">{item.title}</p>
-                    <p className="text-xs text-gray-300 leading-relaxed">{item.text}</p>
-                  </div>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-3 font-sans">
+                {(copy?.rulesItems || RULES_ITEMS).map((item, i) => (
+                  <RuleItem
+                    key={i}
+                    num={item.num || String(i + 1)}
+                    text={item.text || item.title}
+                    highlight={item.highlight || ''}
+                    result={item.result || (item.text ? item.text.slice(0, 24) : 'Active')}
+                  />
                 ))}
               </div>
             </DrillAccordion>
 
             <DrillAccordion
               id="about"
-              title="About Reaction Time"
+              title={copy?.aboutTitle || 'About Reaction Time'}
               isOpen={openAccordion === 'about'}
               onToggle={() => setOpenAccordion(openAccordion === 'about' ? null : 'about')}
             >
@@ -695,48 +766,36 @@ export default function EliteNeuroSwitchClient({ copy } = {}) {
                 <section>
                   <div className="space-y-4">
                     <p className="text-sm leading-relaxed text-gray-300">
-                      Choice reaction time is how long it takes to pick the right response from several options. It rises roughly logarithmically with the number of alternatives &mdash; Hick&rsquo;s law &mdash; so four choices cost more than two, but not twice as much (Hick, 1952; Hyman, 1953).
+                      {copy?.aboutLead || 'Choice reaction time is how long it takes to pick the right response from several options. It rises roughly logarithmically with the number of alternatives — Hick’s law — so four choices cost more than two, but not twice as much (Hick, 1952; Hyman, 1953).'}
                     </p>
-                    {ABOUT_TEXT.split('\n\n').map((para, i) => (
+                    {aboutText.split('\n\n').map((para, i) => (
                       <p key={i} className="text-sm leading-relaxed text-gray-300">{para}</p>
                     ))}
                   </div>
                 </section>
 
                 <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-                  <div className="p-4 rounded-xl border border-gray-800 bg-white/[0.02]">
-                    <div className="flex items-center gap-2.5 mb-2">
-                      <div className="w-7 h-7 rounded-lg bg-blue-600 flex items-center justify-center"><Users className="w-3.5 h-3.5 text-white" /></div>
-                      <h5 className="text-xs font-bold text-white">Who Should Use This?</h5>
+                  {aboutCards.map((card, i) => (
+                    <div key={i} className="p-4 rounded-xl border border-gray-800 bg-white/[0.02]">
+                      <div className="flex items-center gap-2.5 mb-2">
+                        <div className="w-7 h-7 rounded-lg bg-blue-600 flex items-center justify-center"><Users className="w-3.5 h-3.5 text-white" /></div>
+                        <h5 className="text-xs font-bold text-white">{card.title}</h5>
+                      </div>
+                      <p className="text-xs text-gray-300 leading-relaxed">{card.desc}</p>
                     </div>
-                    <p className="text-xs text-gray-300 leading-relaxed">Competitive gamers and esports players who need split-second target discrimination, drivers and pilots training hazard response, and anyone wanting sharper visual-motor reflexes under rule-switching pressure.</p>
-                  </div>
-                  <div className="p-4 rounded-xl border border-gray-800 bg-white/[0.02]">
-                    <div className="flex items-center gap-2.5 mb-2">
-                      <div className="w-7 h-7 rounded-lg bg-emerald-600 flex items-center justify-center"><TrendingUp className="w-3.5 h-3.5 text-white" /></div>
-                      <h5 className="text-xs font-bold text-white">Skills Improved</h5>
-                    </div>
-                    <p className="text-xs text-gray-300 leading-relaxed">Choice reaction time, visual discrimination speed, motor response execution, and resistance to interference from non-target stimuli.</p>
-                  </div>
-                  <div className="p-4 rounded-xl border border-gray-800 bg-white/[0.02]">
-                    <div className="flex items-center gap-2.5 mb-2">
-                      <div className="w-7 h-7 rounded-lg bg-purple-600 flex items-center justify-center"><Zap className="w-3.5 h-3.5 text-white" /></div>
-                      <h5 className="text-xs font-bold text-white">Rule-Switch Agility</h5>
-                    </div>
-                    <p className="text-xs text-gray-300 leading-relaxed">Every rule flip forces your prefrontal cortex to update its active response mapping on the fly, training rapid cognitive set-shifting alongside raw reflex speed.</p>
-                  </div>
+                  ))}
                 </div>
               </div>
             </DrillAccordion>
 
             <DrillAccordion
               id="faq"
-              title="Frequently Asked Questions"
+              title={copy?.faqTitle || 'Frequently Asked Questions'}
               isOpen={openAccordion === 'faq'}
               onToggle={() => setOpenAccordion(openAccordion === 'faq' ? null : 'faq')}
             >
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                {FAQ_ITEMS.map((item, i) => (
+                {faqItems.map((item, i) => (
                   <div key={i} className="bg-[#05060b] border border-gray-800 rounded-xl p-5">
                     <h4 className="text-sm font-bold text-gray-200 mb-2">{item.q}</h4>
                     <p className="text-xs text-gray-400 leading-relaxed">{item.a}</p>
@@ -746,37 +805,6 @@ export default function EliteNeuroSwitchClient({ copy } = {}) {
             </DrillAccordion>
           </div>
         )}
-
-        {/* RELATED DRILLS GRID */}
-        {!isFullscreen && (
-          <section className="mt-4">
-            <h2 className="text-sm font-bold text-slate-400 uppercase tracking-wider mb-3">
-              Related Cognitive Drills
-            </h2>
-            <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
-              {RELATED_DRILLS.map((drill) => (
-                <Link
-                  key={drill.id}
-                  href={drill.href}
-                  className="group bg-[#0c0c16] border border-white/5 hover:border-red-500/40 rounded-xl p-3.5 transition-all duration-200 hover:-translate-y-0.5 flex flex-col justify-between"
-                >
-                  <div>
-                    <div className="text-[10px] font-bold text-red-400 uppercase tracking-wider mb-1">{drill.cat}</div>
-                    <div className="text-xs font-bold text-white group-hover:text-red-300 transition-colors">{drill.name}</div>
-                    <div className="text-[11px] text-slate-400 mt-1 line-clamp-2 leading-relaxed">{drill.desc}</div>
-                  </div>
-                  <div className="text-[10px] font-bold text-slate-500 group-hover:text-red-400 mt-3 flex items-center gap-1 transition-colors">
-                    Train Drill <span>→</span>
-                  </div>
-                </Link>
-              ))}
-            </div>
-          </section>
-        )}
-
-        {/* SITE FOOTER */}
-        {!isFullscreen && <DrillFooter />}
-
       </main>
     </div>
   );

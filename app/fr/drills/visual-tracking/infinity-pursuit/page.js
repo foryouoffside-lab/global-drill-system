@@ -1,25 +1,26 @@
 import InfinityPursuitClient from '@/app/drills/visual-tracking/infinity-pursuit/InfinityPursuitClientLoader';
 import DrillGuide from '@/components/drill/DrillGuide';
+import DrillFooter from '@/components/drill/DrillFooter';
 import RelatedDrills from '@/components/drill/RelatedDrills';
 import { getAlternateLanguages } from '@/lib/i18n/locales';
 import { pickSources } from '@/lib/drillSources';
 
 export const metadata = {
-  title: "Exercice Oculaire du Huit Couché – Infinity | SkillDrills",
-  description: "Exercice gratuit de poursuite oculaire en huit couché : renforcez le passage de la ligne médiane, la coordination binoculaire et la motricité en ligne.",
+  title: "Exercice Oculaire en Huit | SkillDrills",
+  description: "Exercice oculaire en huit couché pour pratiquer poursuite visuelle, coordination binoculaire et passage de la ligne médiane. Gratuit en ligne.",
   keywords: [
-    "exercice oculaire du huit couché",
-    "entraînement poursuite en huit",
-    "coordination oculaire binoculaire",
-    "franchissement de la ligne médiane yeux",
-    "poursuite visuelle en lemniscate",
-    "gymnastique oculaire huit infini",
-    "motricité oculaire exercice gratuit",
-    "test poursuite visuelle en ligne",
+    "exercice oculaire en huit",
+    "poursuite visuelle en huit",
+    "huit couché",
+    "coordination binoculaire",
+    "franchissement de la ligne médiane",
+    "mouvement des yeux",
+    "poursuite fluide",
+    "exercice des yeux en forme de huit",
+    "exercice oculaire gratuit en ligne",
     "entraînement visuel sportif",
-    "stabilité fovéale sur courbes fluides",
-    "visée tracking réactive esports",
-    "acuité visuelle dynamique test"
+    "suivi visuel en huit",
+    "coordination œil-main"
   ],
   alternates: {
     canonical: "https://skilldrills.online/fr/drills/visual-tracking/infinity-pursuit",
@@ -27,8 +28,8 @@ export const metadata = {
   },
   robots: { index: true, follow: true },
   openGraph: {
-    title: "Exercice Oculaire du Huit Couché – Infinity | SkillDrills",
-    description: "Exercice gratuit de poursuite oculaire en huit couché : renforcez le passage de la ligne médiane, la coordination binoculaire et la motricité en ligne.",
+    title: "Exercice Oculaire en Huit | SkillDrills",
+    description: "Exercice oculaire en huit couché pour pratiquer poursuite visuelle, coordination binoculaire et passage de la ligne médiane. Gratuit en ligne.",
     url: "https://skilldrills.online/fr/drills/visual-tracking/infinity-pursuit",
     siteName: "SkillDrills",
     locale: "fr_FR",
@@ -36,8 +37,8 @@ export const metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Exercice Oculaire du Huit Couché – Infinity | SkillDrills",
-    description: "Exercice gratuit de poursuite oculaire en huit couché : renforcez le passage de la ligne médiane, la coordination binoculaire et la motricité en ligne.",
+    title: "Exercice Oculaire en Huit | SkillDrills",
+    description: "Exercice oculaire en huit couché pour pratiquer poursuite visuelle, coordination binoculaire et passage de la ligne médiane. Gratuit en ligne.",
   },
 };
 
@@ -69,9 +70,10 @@ const breadcrumbSchema = {
 const softwareApplicationSchema = {
   "@context": "https://schema.org",
   "@type": "SoftwareApplication",
-  "name": "Poursuite en Huit Infini – Entraînement Oculaire",
+  "name": "Exercice Oculaire en Huit – Poursuite Visuelle",
+  "dateModified": "2026-09-20",
   "applicationCategory": "HealthApplication",
-  "operatingSystem": "Web Browser",
+  "operatingSystem": "Navigateur",
   "offers": {
     "@type": "Offer",
     "price": "0",
@@ -82,11 +84,12 @@ const softwareApplicationSchema = {
 const webAppSchema = {
   "@context": "https://schema.org",
   "@type": "WebApplication",
-  "name": "Test de Poursuite Oculaire en Huit Couché et Ligne Médiane",
+  "name": "Poursuite Oculaire en Huit Couché et Ligne Médiane",
+  "dateModified": "2026-09-20",
   "url": "https://skilldrills.online/fr/drills/visual-tracking/infinity-pursuit",
   "applicationCategory": "SportsApplication",
-  "operatingSystem": "All",
-  "browserRequirements": "Requires JavaScript. Requires HTML5 Canvas.",
+  "operatingSystem": "Navigateur",
+  "browserRequirements": "JavaScript et Canvas HTML5 requis.",
   "offers": {
     "@type": "Offer",
     "price": "0",
@@ -97,10 +100,11 @@ const webAppSchema = {
 const videoGameSchema = {
   "@context": "https://schema.org",
   "@type": "VideoGame",
-  "name": "Infinity Pursuit – Entraîneur Visuel en Lemniscate",
-  "description": "Entraîneur visuel sur navigateur pour harmoniser la motricité oculaire binoculaire le long de trajectoires en huit couché sans saccades parasites.",
-  "genre": ["Outil d'Entraînement Oculaire", "Entraînement Visuel Sportif", "Aim Trainer"],
-  "playMode": "SinglePlayer",
+  "name": "Entraînement de Poursuite Oculaire en Huit",
+  "dateModified": "2026-09-20",
+  "description": "Entraînement visuel dans le navigateur pour pratiquer la coordination binoculaire sur une trajectoire continue en huit couché.",
+  "genre": ["Entraînement oculaire", "Vision sportive", "Poursuite visuelle"],
+  "playMode": "Un joueur",
   "applicationCategory": "Game"
 };
 
@@ -108,6 +112,7 @@ const howToSchema = {
   "@context": "https://schema.org",
   "@type": "HowTo",
   "name": "Comment Réaliser l’Exercice du Huit Couché pour les Yeux",
+  "dateModified": "2026-09-20",
   "description": "Protocole pour entraîner la poursuite fluide et la coordination binoculaire le long de la lemniscate de Bernoulli.",
   "step": [
     {
@@ -144,53 +149,54 @@ const howToSchema = {
 const faqSchema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
+  "dateModified": "2026-09-20",
   "mainEntity": [
     {
       "@type": "Question",
-      "name": "Qu’est-ce que l’exercice de poursuite en huit infini (Infinity Pursuit) ?",
+      "name": "Qu’est-ce que l’exercice oculaire en huit couché ?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "C’est un entraînement de motricité oculaire guidant le regard le long de la lemniscate de Bernoulli (huit couché), stimulant les six paires de muscles extraoculaires et le franchissement continu de la ligne médiane."
+        "text": "C’est une pratique visuelle où les deux yeux suivent une cible qui parcourt un huit couché. Elle permet d’observer la continuité du regard et le passage central, sans remplacer un bilan clinique."
       }
     },
     {
       "@type": "Question",
-      "name": "Pourquoi le franchissement de la ligne médiane visuelle est-il fondamental ?",
+      "name": "Pourquoi observer le franchissement de la ligne médiane ?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "La ligne médiane sépare les hémichamps visuels et requiert un transfert rapide de données inter-hémisphériques via le corps calleux. Sans entraînement, le regard subit souvent des saccades parasites ou des micro-blocages au centre."
+        "text": "Le passage central fait changer la cible de côté dans le champ visuel. L’observer aide à repérer les hésitations ou les sauts pendant la séance, sans transformer cette observation en diagnostic."
       }
     },
     {
       "@type": "Question",
-      "name": "Quels muscles oculaires travaillent sur cette trajectoire en huit couché ?",
+      "name": "Comment les yeux participent-ils à la trajectoire en huit couché ?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Les six muscles extraoculaires de chaque œil (droits interne, externe, supérieur, inférieur, ainsi que grands et petits obliques) sont sollicités en alternance continue pour négocier les courbures diagonales."
+        "text": "Les muscles extraoculaires de chaque œil coordonnent des mouvements horizontaux, verticaux et diagonaux pour garder la cible dans le regard. L’exercice pratique le contrôle visuel et ne promet ni renforcement ni traitement."
       }
     },
     {
       "@type": "Question",
-      "name": "Que représente le gain de poursuite (Pursuit Gain) ?",
+      "name": "Que signifie suivre la cible avec stabilité ?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Le gain de poursuite est le rapport entre la vitesse angulaire de l'œil et celle de la cible. Une valeur de 1,0 représente un suivi parfait. Sous 0,80, le regard décroche et exige des saccades de rattrapage (Barnes, 2008)."
+        "text": "Cela signifie garder le regard près de la cible pendant la courbe, avec peu de pertes ou de corrections. La mesure de la page sert à comparer des séances identiques et n’est pas une mesure clinique universelle."
       }
     },
     {
       "@type": "Question",
-      "name": "Quel est l’intérêt de cet exercice pour la visée dans les jeux vidéo (FPS) ?",
+      "name": "Cet exercice peut-il aider à suivre des cibles dans un jeu ?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Dans les jeux avec déplacements verticaux et courbes, les cibles décrivent des arcs complexes. L'exercice en huit fluidifie le tracking en supprimant les à-coups mécaniques lors des transitions diagonales."
+        "text": "Il propose une tâche contrôlée pour pratiquer la continuité du regard dans les courbes. Le transfert vers un jeu dépend de l’entraînement spécifique et de chaque personne ; aucune amélioration de visée n’est garantie."
       }
     },
     {
       "@type": "Question",
-      "name": "Pourquoi faut-il maintenir la tête strictement immobile ?",
+      "name": "Pourquoi garder la tête stable pendant l’exercice ?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Bouger la tête active le réflexe vestibulo-oculaire (RVO), compensant le suivi par l'oreille interne. Garder la tête fixe force les muscles oculaires à supporter l'intégralité de l'effort neuromuscular."
+        "text": "Une tête stable permet de mieux observer ce que les yeux suivent seuls et de comparer les séances. Ne raidissez pas la nuque : relâchez-la et arrêtez en cas de douleur ou de vertige."
       }
     },
     {
@@ -198,7 +204,7 @@ const faqSchema = {
       "name": "Quel temps de pratique quotidienne est recommandé ?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Nous recommandons 5 à 10 minutes quotidiennes (5 à 8 séries de 60 secondes). Des formats courts et réguliers favorisent l'apprentissage moteur tout en préservant les yeux de la fatigue visuelle."
+        "text": "Commencez par une ou deux séries d’environ 60 secondes et reposez-vous entre elles. Augmentez seulement si le regard reste confortable ; il n’existe pas de dose quotidienne universelle."
       }
     },
     {
@@ -206,7 +212,7 @@ const faqSchema = {
       "name": "Cet exercice aide-t-il à réduire la fatigue oculaire devant les écrans ?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Oui. Le travail bureautique fige le regard sur des plans statiques. Trazar des trajectoires amples en huit étire les muscles extraoculaires et détend la mise au point fovéale."
+        "text": "Cela peut servir de pause active pour varier un regard fixé sur l’écran, mais aucun soulagement n’est garanti. En cas de gêne persistante, de douleur ou de vision double, arrêtez et consultez."
       }
     },
     {
@@ -214,15 +220,15 @@ const faqSchema = {
       "name": "Existe-t-il un transfert vers les sports réels comme le tennis ou le football ?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Absolument. Les trajectoires de balles aériennes et brossées combinent courbures et variations d'angles. Une poursuite binoculaire affûtée permet de maintenir la fovéa sur la trajectoire sans temps mort."
+        "text": "La tâche ne reproduit qu’une partie du suivi d’une trajectoire. Les sports demandent aussi anticipation, profondeur, réaction et décision ; utilisez-la comme complément, pas comme remplacement."
       }
     },
     {
       "@type": "Question",
-      "name": "Ce test de poursuite en huit est-il gratuit et confidentiel ?",
+      "name": "L’exercice en huit est-il gratuit et comment le pratiquer en sécurité ?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Oui, ce test fonctionne gratuitement et directement dans votre navigateur web sans création de compte, et toutes vos métriques de suivi restent enregistrées localement sur votre terminal."
+        "text": "L’outil est gratuit et fonctionne dans le navigateur sans compte obligatoire. Pratiquez à un rythme confortable, clignez naturellement et arrêtez en cas de douleur, vision double, nausée ou vertige ; demandez conseil si cela persiste."
       }
     }
   ]
@@ -231,29 +237,45 @@ const faqSchema = {
 const guideProps = {
   heading: "Bases Neurophysiologiques de la Lemniscate et de la Coordination Binoculaire",
   intro: [
-    "La trajectoire en forme de huit couché (lemniscate de Bernoulli) constitue l'un des exercices les plus complets pour évaluer et développer la motricité oculaire. Contrairement aux déplacements purement horizontaux ou verticaux, la lemniscate impose l'activation coordonnée et continue des six muscles extraoculaires selon des vecteurs hélicoïdaux et diagonaux réguliers (Robinson, 1965 ; Barnes, 2008).",
-    "Neurodynamique du Franchissement de la Ligne Médiane : au centre de la courbe, la cible traverse le méridien vertical fovéal. Ce franchissement exige un transfert rapide d'informations inter-hémisphériques entre les cortex visuels et moteurs via le corps calleux (Leigh & Zee, 2015). Chez les sujets non entraînés, le gain de poursuite fluide chute fréquemment à ce niveau, provoquant des saccades de compensation.",
-    "Fréquence d'Affichage et Fluidité Cinétique : les écrans à 144 Hz ou plus assurent un rendu ultra-fluide avec des temps de trame inférieurs à 6,9 ms (Woods et al., 2015). L'application s'exécute intégralement dans le navigateur avec un stockage strictement local de vos performances."
+    "La figure en huit couché, aussi appelée lemniscate, réunit des courbes diagonales et des passages par le centre dans une tâche de poursuite visuelle. La cible se déplace continûment afin de pratiquer un regard qui reste accroché sans transformer chaque virage en une suite de sauts. Il s’agit d’un exercice visuel, pas d’un examen ophtalmologique ou orthoptique.",
+    "Le passage central permet d’observer la transition entre les hémichamps visuels droit et gauche. Gardez la cible nette et notez si le regard quitte la trajectoire, effectue un petit saut ou nécessite une pause. Cette observation décrit la séance et ne permet pas de poser un diagnostic binoculaire ou neurologique.",
+    "La réponse dépend de la distance à l’écran, de la taille de la cible, du rafraîchissement et de la fatigue. Utilisez un affichage confortable, clignez naturellement et privilégiez la régularité à la vitesse. En cas de douleur, vision double, nausée ou vertige, arrêtez et demandez un avis professionnel."
+  ],
+  techniques: {
+    title: "Quatre techniques pour suivre un huit couché",
+    items: [
+      { name: "Repère central", desc: "Commencez par percevoir le croisement central avant de suivre toute la boucle.", tips: "Gardez le buste calme, respirez naturellement et ralentissez si vous perdez la cible." },
+      { name: "Courbe continue", desc: "Laissez les yeux accompagner la courbe sans anticiper la boucle suivante par un saut.", tips: "Regardez la cible présente ; n’essayez pas de couvrir tout le parcours d’un seul coup." },
+      { name: "Symétrie des côtés", desc: "Comparez la boucle gauche et la boucle droite au cours de la même séance.", tips: "Si un côté est plus difficile, répétez lentement et notez l’écart sans forcer." },
+      { name: "Progression mesurée", desc: "Augmentez la vitesse seulement si la trajectoire reste stable et confortable.", tips: "Faites une courte série, regardez au loin pour récupérer, puis revenez au dernier niveau confortable." }
+    ]
+  },
+  steps: [
+    "Asseyez-vous le dos soutenu et placez l’écran à une distance confortable, sans rapprocher le visage.",
+    "Réglez la luminosité et la taille de la fenêtre pour voir la cible nettement ; relâchez et stabilisez la tête.",
+    "Commencez à la vitesse la plus lente et suivez le point lumineux avec les deux yeux en clignant normalement.",
+    "Observez le passage au centre et ralentissez si le regard saute ou si la tête commence à bouger.",
+    "Notez la précision et le confort, reposez les yeux en regardant au loin, puis répétez ou augmentez d’un niveau."
   ],
   benchmarks: {
-    title: "Métriques de Performance en Huit Couché (Lemniscate Pursuit Benchmarks)",
-    headers: ["Niveau de Performance", "Gain de Poursuite (Pursuit Gain)", "Taux de Saccades à la Ligne Médiane", "Précision de Trajectoire", "Profil Neurophysiologique"],
+    title: "Repères de performance sur le huit couché",
+    headers: ["Niveau", "Suivi de la cible", "Pertes au centre", "Précision du parcours", "Lecture pratique"],
     rows: [
-      ["Élite (Athlètes Professionnels & Esports)", "0,96 – 1,02", "< 2% (Glissement Parfait)", "98%+", "Coordination neuromusculaire sans faille. Aucune saccade au croisement ; modèle prédictif cérébelleux synchronisé (Barnes, 2008)."],
-      ["Avancé (Niveau Compétitif)", "0,90 – 0,95", "2% – 5%", "92% – 97%", "Remarquable stabilité de la poursuite fluide. Déphasage minime uniquement aux sommets extrêmes ; ancrage fovéal solide (Krauzlis, 2004)."],
-      ["Compétent (Adultes Sains)", "0,80 – 0,89", "6% – 12%", "82% – 91%", "Bon niveau fonctionnel pour les tâches du quotidien. Saccades occasionnelles de rattrapage au centre ou dans les virages serrés."],
-      ["En Développement (Fatigue / Latence)", "0,68 – 0,79", "13% – 22%", "70% – 81%", "Retard de poursuite perceptible ; ruptures saccadiques répétées ; signes de fatigue musculaire ou de compensation cervicale."],
-      ["Débutant / Instabilité", "< 0,68", "> 22%", "< 70%", "La poursuite fluide décroche fréquemment ; le regard recherche la cible par à-coups ; entraînement à basse vitesse conseillé."]
+      ["Très stable", "Cible presque toujours suivie", "Rares", "98 % ou plus", "Rythme confortable ; repère personnel, pas un diagnostic."],
+      ["Stable", "Suivi continu", "Peu nombreuses", "92–97 %", "Bonne constance ; essayez une légère progression de vitesse."],
+      ["Fonctionnel", "Quelques corrections", "Occasionnelles", "82–91 %", "Base adaptée aux séances lentes et à l’observation des changements."],
+      ["En développement", "Retards perceptibles", "Fréquentes", "70–81 %", "Ralentissez, reposez-vous et comparez des séances aux conditions identiques."],
+      ["Instable", "Cible souvent perdue", "Nombreuses", "Moins de 70 %", "Revenez à la vitesse lente et arrêtez en cas d’inconfort visuel."]
     ],
-    note: "※ Valeurs normatives déterminées pour une distance de visionnage de 50 à 70 cm. Le gain de poursuite correspond au ratio vitesse angulaire de l'œil / vitesse de la cible (idéal = 1,0) d'après Barnes (2008) et Leigh & Zee (2015)."
+    note: "Ces fourchettes servent à comparer vos propres séances avec le même écran et la même distance ; elles ne sont pas des normes cliniques. Le suivi de la cible ne mesure ni l’acuité visuelle ni une maladie."
   },
   faqs: faqSchema.mainEntity.map(e => ({ q: e.name, a: e.acceptedAnswer.text })),
   sources: pickSources('barnes2008', 'krauzlis2004', 'robinson1965', 'leighzee2015', 'woods2015', 'salthouse1980'),
   related: [
-    { href: "/fr/drills/visual-tracking/constant-slow-pursuit", label: "Poursuite Oculaire Lente (Constant Slow)" },
-    { href: "/fr/drills/visual-tracking/directional-chaos-pursuit", label: "Poursuite Chaotique Directionnelle (Chaos Pursuit)" },
-    { href: "/fr/drills/visual-tracking/dynamic-evasion-pursuit", label: "Poursuite Évasive Dynamique (Dynamic Evasion)" },
-    { href: "/fr/drills/visual-tracking/sine-wave-pursuit", label: "Poursuite en Onde Sinusoïdale (Sine Wave)" }
+    { href: "/fr/drills/visual-tracking/constant-slow-pursuit", label: "Poursuite oculaire lente" },
+    { href: "/fr/drills/visual-tracking/directional-chaos-pursuit", label: "Poursuite directionnelle variable" },
+    { href: "/fr/drills/visual-tracking/dynamic-evasion-pursuit", label: "Poursuite évasive dynamique" },
+    { href: "/fr/drills/visual-tracking/sine-wave-pursuit", label: "Poursuite en onde sinusoïdale" }
   ]
 };
 
@@ -286,15 +308,16 @@ export default function InfinityPursuitPageFr() {
       />
       <InfinityPursuitClient
         copy={{
-          title: "Poursuite en Huit Infini – Entraînement Oculaire",
-          subtitle: "Coordination Binoculaire et Franchissement de la Ligne Médiane",
-          description: "Exercice de poursuite fluide continue le long de la lemniscate de Bernoulli. Renforce la coordination des six muscles extraoculaires et la stabilité fovéale sans rupture saccadique au franchissement du méridien central (Robinson, 1965; Barnes, 2008)."
+          title: "Exercice Oculaire en Huit",
+          subtitle: "Poursuite visuelle et coordination binoculaire",
+          description: "Suivez une cible sur un huit couché, observez le passage de la ligne médiane et pratiquez une poursuite fluide à un rythme confortable."
         }}
       />
       <DrillGuide guide={guideProps} />
       <div className="max-w-6xl mx-auto px-4 pb-12">
         <RelatedDrills currentCategory="visual-tracking" currentHref="https://skilldrills.online/fr/drills/visual-tracking/infinity-pursuit" />
       </div>
+      <DrillFooter />
     </>
   );
 }

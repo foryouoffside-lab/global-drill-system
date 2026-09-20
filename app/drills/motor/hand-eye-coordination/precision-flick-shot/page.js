@@ -332,7 +332,7 @@ const guideProps = {
 
 const copyEn = {
   title: "Precision Flick Shot",
-  subtitle: "Target Decay & Bulls-Eye Micro-Flicks • Endless Level Progression",
+  subtitle: "Precision flick aim drill for hitting shrinking targets, improving micro-corrections, and building accurate mouse control",
   startButtonText: "START DRILL",
   playAgainText: "Play Again",
   shareText: "Share Score",

@@ -6,20 +6,18 @@ import RelatedDrills from '@/components/drill/RelatedDrills';
 import DrillFooter from '@/components/drill/DrillFooter';
 
 export const metadata = {
-    title: "180度 振り向き 練習 – 振り向きエイム・周辺視野 | SkillDrills",
-  description: "ブラウザで無料プレイできる180度振り向きエイム練習。画面端や背後のターゲットに対する周辺視野認識、肘と肩を使った大振りフリック、終末制動力を科学的に強化します。",
+    title: "180度 エイム練習 | 振り向きトレーナー | SkillDrills",
+  description: "無料ブラウザで180度の振り向きエイムを練習。周辺視野で端の標的を捉え、大きなフリックを止める力を鍛えます。",
   keywords: [
+    "180度 エイム練習",
     "180度 振り向き 練習",
-    "振り向き 練習 FPS",
-    "180度 フリック",
-    "FPS 振り向き 計算",
     "振り向き エイム",
     "周辺視野 エイム練習",
+    "フリックエイム",
+    "追いエイム",
     "VALORANT 振り向き 練習",
     "CS2 振り向き 練習",
-    "エイムトレーナー 無料",
-    "180度 エイム",
-    "フラッシュ 回避 練習",
+    "エイム練習 無料 ブラウザ",
     "マウス 振り向き 練習"
   ],
   alternates: {
@@ -31,8 +29,8 @@ export const metadata = {
     follow: true,
   },
   openGraph: {
-      title: "180度 振り向き 練習 – 振り向きエイム・周辺視野 | SkillDrills",
-    description: "画面端や背後の敵を瞬時に捉える180度振り向きエイム練習。周辺視野認識と大振りフリックの初弾精度を高める無料ブラウザFPSエイムトレーナー。",
+      title: "180度 エイム練習 | 振り向きトレーナー | SkillDrills",
+    description: "周辺視野で端の標的を捉え、180度振り向き後の初弾を止める無料ブラウザFPSエイム練習。",
     url: "https://skilldrills.online/ja/drills/fps/180-degree-awareness",
     siteName: 'SkillDrills',
     locale: 'ja_JP',
@@ -40,8 +38,8 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-      title: "180度 振り向き 練習 – 振り向きエイム・周辺視野 | SkillDrills",
-    description: "画面端や背後の敵を瞬時に捉える180度振り向きエイム練習。周辺視野認識と大振りフリックの初弾精度を高める無料ブラウザFPSエイムトレーナー。",
+    title: "180度 エイム練習 | 振り向きトレーナー | SkillDrills",
+    description: "周辺視野で端の標的を捉え、180度振り向き後の初弾を止める無料ブラウザFPSエイム練習。",
   },
 };
 
@@ -66,7 +64,7 @@ export default function AwarenessDrillJaPage() {
     "description": "大角度の振り向きエイム、周辺視野刺激に対する即時反応、および高速減速制御を鍛える無料ブラウザFPSエイムトレーナー。",
     "genre": "FPS Training / Situational Awareness",
     "url": "https://skilldrills.online/ja/drills/fps/180-degree-awareness",
-    "dateModified": "2026-09-05",
+    "dateModified": "2026-09-20",
     "publisher": {
       "@type": "Organization",
       "name": "SkillDrills",
@@ -100,13 +98,13 @@ export default function AwarenessDrillJaPage() {
     "applicationCategory": "Game",
     "url": "https://skilldrills.online/ja/drills/fps/180-degree-awareness",
     "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
-    "dateModified": "2026-09-05"
+    "dateModified": "2026-09-20"
   };
 
   const faqSchema = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
-    "dateModified": "2026-09-05",
+    "dateModified": "2026-09-20",
     "mainEntity": [
       {
         "@type": "Question",
@@ -225,9 +223,9 @@ export default function AwarenessDrillJaPage() {
   };
 
   const awarenessGuide = {
-    heading: "180度振り向き練習ガイド & 空間認識バイオメカニクス",
+    heading: "180度エイム練習ガイド & 空間認識バイオメカニクス",
     intro: [
-      "180度スナップターゲティングは、周辺視野での刺激検知、眼球サッカード運動、そして上肢の弾道運動が極めて高い次元で統合された多感覚運動タスクです。人間の視覚系において、網膜周辺部の桿体細胞は中心視野から90度以上離れた広角の輝度変化や動きを高感度で検知し、上丘を介して素早い定位サッカードを誘発します (Rayner, 1998; Leigh & Zee, 2015)。",
+      "180度のエイム練習は、画面端の動きを周辺視野で察知し、腕全体の大きなフリックで振り向き、標的上で照準を止める練習です。ゲーム内の裏取り対応を、視覚の気づき・振り向き・初弾の停止という再現可能な動作に分けて反復できます。",
       "周辺視野での検知を180度の仮想空間反転へと変換するためには、二成分運動制御モデル（Two-Component Model）が作動します (Elliott et al., 2010)。肩と肘の推進力による開ループ弾道スワイプが要求回転角の80〜90%を一気にカバーし、直後に拮抗筋の強力なブレーキ制動によって照準の行き過ぎ（オーバーシュート）を抑制します (Schmidt et al., 1979)。フィッツの法則 (Fitts, 1954) に従えば、移動角振幅（D）が大きいほど難易度指数（Index of Difficulty）は上昇するため、制動力の制御とマウスパッド空間のキャリブレーションが極めて重要になります。",
       "本ドリルのクロノメトリーは、HTML5 Pointer Lock API配下でブラウザの performance.now() 高精度タイマーを用いて計測されます (Woods et al., 2015)。1000Hz以上のマウスポーリングレートと高リフレッシュレートモニターを併用することで、入力遅延やカーソル加速の歪みを完全に排除した客観的な空間反応データを取得できます。",
       "測定仕様について：すべてのイベントはお使いの端末の performance.now() 高分解能クロックによって完全にローカルで記録され、外部へスコアが送信されることはありません。ブラウザのタイマー解像度制限（Spectre対策で通常約1ms）およびディスプレイのリフレッシュ間隔（60Hzで約16.7ms、144Hzで約6.9ms、240Hzで約4.1ms）による量子化誤差が生じるため、5ms未満の微小な差異は測定誤差として扱い、他者の環境との比較よりも同一環境での自己記録の推移を重視してください (Woods et al., 2015)。"
@@ -317,9 +315,9 @@ export default function AwarenessDrillJaPage() {
 
       <AwarenessDrillClient
         copy={{
-          h1Keyword: "180度 振り向き 練習",
+          h1Keyword: "180度 エイム練習",
           h1Suffix: " - 振り向きエイム・周辺視野トレーナー",
-          subtitle: "周辺視野による高速敵探知、大角度フリック移行、180度振り向きの終末制動力を訓練。",
+          subtitle: "周辺視野で標的を捉え、大きなフリックで振り向き、初弾を正確に止める練習です。",
           statScore: "スコア",
           statTime: "残り時間",
           statAccuracy: "命中率",
@@ -345,7 +343,7 @@ export default function AwarenessDrillJaPage() {
       <div className="max-w-4xl mx-auto px-4 pb-12">
         <RelatedDrills
           currentCategory="fps"
-          currentHref="/drills/fps/180-degree-awareness"
+          currentHref="/ja/drills/fps/180-degree-awareness"
           locale="ja"
         />
       </div>

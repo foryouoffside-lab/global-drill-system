@@ -37,6 +37,23 @@ export const metadata = {
   },
 };
 
+Object.assign(metadata, {
+  title: '反応速度・敏捷性トレーニング | 無料フィジカルドリル | SkillDrills',
+  description: '反応速度テスト、フットワーク、バランス、運動協調をブラウザで練習できる11種類の無料ドリル。',
+  keywords: ['反応速度テスト', '反射神経 トレーニング', '敏捷性 トレーニング', 'フットワーク 練習', 'バランス トレーニング', '手と目の協調', '運動協調 トレーニング', '回避ゲーム', '無料 ブラウザ トレーニング', 'スポーツ 反応練習'],
+  openGraph: {
+    ...metadata.openGraph,
+    title: '反応速度・敏捷性トレーニング | 無料フィジカルドリル | SkillDrills',
+    description: '反応速度、フットワーク、バランス、運動協調を練習できる11種類の無料ブラウザドリル。',
+  },
+  twitter: {
+    ...metadata.twitter,
+    title: '反応速度・敏捷性トレーニング | SkillDrills',
+    description: '反応速度と敏捷性を練習できる11種類の無料フィジカルドリル。',
+  },
+  alternates: { ...metadata.alternates, languages: getAlternateLanguages('/drills/physical') },
+});
+
 const breadcrumbSchema = {
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
@@ -50,6 +67,8 @@ const breadcrumbSchema = {
 const collectionSchema = {
   "@context": "https://schema.org",
   "@type": "CollectionPage",
+  "inLanguage": "ja",
+  "dateModified": "2026-09-20",
   "name": "身体反射・瞬発力トレーニングドリル (11種)",
   "url": "https://skilldrills.online/ja/drills/physical",
   "description": "11種類の科学的身体反射、動的バランステスト、手眼協調性、敏捷性ラダー、弾幕回避トレーニング。",
@@ -71,6 +90,8 @@ const collectionSchema = {
 const faqSchema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
+  "inLanguage": "ja",
+  "dateModified": "2026-09-20",
   "mainEntity": [
     {
       "@type": "Question",
@@ -138,6 +159,19 @@ const faqSchema = {
     }
   ]
 };
+
+faqSchema.mainEntity.push(
+  {
+    "@type": "Question",
+    "name": "フィジカルトレーニング一覧には何種類のドリルがありますか？",
+    "acceptedAnswer": { "@type": "Answer", "text": "一覧には反応・回避、敏捷性、協調運動、バランスの4分野に分かれた11種類のブラウザドリルがあります。カードから各ドリルの説明と練習方法を開けます。" }
+  },
+  {
+    "@type": "Question",
+    "name": "ブラウザの反応トレーニングは実際の体力トレーニングの代わりになりますか？",
+    "acceptedAnswer": { "@type": "Answer", "text": "いいえ。画面上のドリルは視覚的なタイミング、判断速度、操作の正確さ、動作の順序づけを練習するものです。筋力、瞬発力、柔軟性、競技練習の代わりではなく補助として使います。" }
+  }
+);
 
 export default function PhysicalDrillsPage() {
   return (

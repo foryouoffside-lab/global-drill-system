@@ -5,33 +5,35 @@ import RelatedDrills from '@/components/drill/RelatedDrills';
 import { pickSources } from '@/lib/drillSources';
 
 export const metadata = {
-  title: "Test de Recherche Visuelle: Balayage Conjonctif | SkillDrills",
-  description: "Test de recherche visuelle et de balayage conjonctif gratuit. Repérez la cible parmi 96 distracteurs denses et optimisez votre attention sélective en 45s.",
+  title: "Recherche Visuelle | Attention Sélective | SkillDrills",
+  description: "Test de recherche visuelle gratuit : repérez une cible parmi les distracteurs et entraînez attention sélective, balayage et contrôle de l’interférence.",
   keywords: [
+    "recherche visuelle",
     "test de recherche visuelle",
-    "recherche visuelle conjonctive",
-    "balayage visuel test",
-    "théorie de l'intégration des caractéristiques",
-    "attention sélective visuelle",
-    "discrimination de cibles visuelles",
-    "inspection visuelle en ligne",
-    "vitesse d'exploration visuelle",
-    "charge perceptive lavie",
-    "test de symboles visuels",
-    "repérage visuel rapide",
-    "temps de recherche visuelle"
+    "attention visuelle sélective",
+    "tâche de recherche visuelle",
+    "attention sélective",
+    "balayage visuel",
+    "test d'attention visuelle",
+    "cible et distracteurs",
+    "recherche conjonctive",
+    "vitesse de recherche visuelle",
+    "test de symboles",
+    "entraînement attention",
+    "contrôle de l'interférence",
+    "trouver des lettres"
 ],
   openGraph: {
-    title: "Test de Recherche Visuelle: Balayage Conjonctif | SkillDrills",
-    description: "Test de recherche visuelle et de balayage conjonctif gratuit. Repérez la cible parmi 96 distracteurs denses et optimisez votre attention sélective en 45s.",
+    title: "Recherche Visuelle | Attention Sélective | SkillDrills",
+    description: "Repérez une cible parmi les distracteurs et entraînez attention sélective, balayage visuel et contrôle de l’interférence.",
     type: "website",
     url: "https://skilldrills.online/fr/drills/visual/visual-recognition/visual-search",
     siteName: "SkillDrills",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Test de Recherche Visuelle: Balayage Conjonctif | SkillDrills",
-    description: "Test de recherche visuelle et de balayage conjonctif gratuit. Repérez la cible parmi 96 distracteurs denses et optimisez votre attention sélective en 45s.",
+    title: "Recherche Visuelle | Attention Sélective | SkillDrills",
+    description: "Entraînement de recherche visuelle parmi des caractères similaires.",
   },
   robots: { index: true, follow: true },
   alternates: {
@@ -61,7 +63,7 @@ const softwareApplicationSchema = {
   "description": "Évaluation gratuite de recherche visuelle conjonctive. Balayez une grille dense de 96 lettres avec distracteurs pivotés pour mesurer votre latence et attention sélective.",
   "url": "https://skilldrills.online/fr/drills/visual/visual-recognition/visual-search",
   "publisher": { "@type": "Organization", "name": "SkillDrills", "url": "https://skilldrills.online" },
-  "dateModified": "2026-09-05"
+  "dateModified": "2026-09-20"
 };
 
 const webApplicationSchema = {
@@ -71,7 +73,7 @@ const webApplicationSchema = {
   "browserRequirements": "Requires HTML5 canvas and JavaScript",
   "url": "https://skilldrills.online/fr/drills/visual/visual-recognition/visual-search",
   "applicationCategory": "EducationalApplication",
-  "dateModified": "2026-09-05"
+  "dateModified": "2026-09-20"
 };
 
 const videoGameSchema = {
@@ -91,7 +93,7 @@ const howToSchema = {
   "@type": "HowTo",
   "name": "Comment développer sa vitesse de recherche visuelle et de balayage conjonctif",
   "description": "Améliorez votre latence d'acquisition de cible, votre intégration de caractéristiques et votre attention sélective grâce à notre protocole scientifique en 4 étapes.",
-  "dateModified": "2026-09-05",
+  "dateModified": "2026-09-20",
   "step": [
     {
       "@type": "HowToStep",
@@ -127,7 +129,7 @@ const howToSchema = {
 const faqSchema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
-  "dateModified": "2026-09-05",
+  "dateModified": "2026-09-20",
   "mainEntity": [
     {
       "@type": "Question",
@@ -142,7 +144,7 @@ const faqSchema = {
       "name": "Quelle est la différence fondamentale entre recherche simple et recherche conjonctive ?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "La recherche simple repose sur un attribut saillant unique et produit un pop-out instantané. La recherche conjonctive exige d'associer plusieurs traits, ce qui impose une inspection sérielle attentive de chaque candidat (Treisman & Gelade, 1980)."
+        "text": "La recherche simple repose sur un attribut saillant unique et fait ressortir instantanément la cible. La recherche conjonctive exige d'associer plusieurs traits, ce qui impose une inspection sérielle attentive de chaque candidat (Treisman & Gelade, 1980)."
       }
     },
     {
@@ -223,25 +225,25 @@ export default function VisualSearchLocalePage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(howToSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(videoGameSchema) }} />
-      <VisualSearchClient copy={{ title: "Jeu de Recherche Visuelle et de Balayage Conjonctif" }} />
+      <VisualSearchClient copy={{ title: "Recherche Visuelle", subtitle: "Repérez la cible parmi les distracteurs" }} />
       <DrillGuide
         eyebrow="Psychophysique Cognitive & Attention Visuelle"
-        title="La Science de la Recherche Visuelle, Intégration des Caractéristiques & Attention Sélective"
+        title="Recherche visuelle et attention sélective en pratique"
         sources={sources}
       >
         <p dangerouslySetInnerHTML={{ __html: `Dans les environnements visuels naturels, les cibles se présentent rarement de façon isolée. Qu'il s'agisse de scruter un écran radar de contrôle aérien, de relire des textes denses ou de repérer un adversaire embusqué dans un FPS tactique, le système visuel humain doit discriminer des signaux pertinents immergés dans un encombrement visuel dense. En psychophysique visuelle, cette aptitude est évaluée via des <strong>paradigmes de recherche visuelle</strong>, qui mesurent comment l'attention spatiale interagit avec les cartes corticales de caractéristiques au fil du temps (Treisman &amp; Gelade, 1980 ; Wolfe, 1994).` }} />
 
-        <h3>Théorie de l&apos;Intégration des Caractéristiques : Pop-Out Parallèle vs. Recherche Conjonctive</h3>
+        <h3>Théorie de l&apos;Intégration des Caractéristiques : Saillance Parallèle vs. Recherche Conjonctive</h3>
         <p dangerouslySetInnerHTML={{ __html: `La psychophysique visuelle classique divise les mécanismes de recherche en deux régimes fondamentaux selon la saillance et la composition des traits de la cible :` }} />
         <ul className="list-disc pl-5 space-y-2 my-3 text-slate-300">
           <li>
-            <strong>Recherche de Caractéristique (Pop-Out Parallèle) :</strong> Lorsqu'une cible diffère des distracteurs par une seule propriété continue (comme un cercle rouge parmi des carrés bleus), les neurones précoces de l'aire V1 détectent l'écart simultanément sur l'ensemble du champ visuel. Le temps de réaction demeure constant quelle que soit la quantité de distracteurs (Treisman &amp; Gelade, 1980 ; Wolfe, 1994).
+            <strong>Recherche de Caractéristique (Saillance Parallèle) :</strong> Lorsqu'une cible diffère des distracteurs par une seule propriété continue (comme un cercle rouge parmi des carrés bleus), les neurones précoces de l'aire V1 détectent l'écart simultanément sur l'ensemble du champ visuel. Le temps de réaction demeure constant quelle que soit la quantité de distracteurs (Treisman &amp; Gelade, 1980 ; Wolfe, 1994).
           </li>
           <li>
             <strong>Recherche Conjonctive (Liaison Sérielle &amp; Guidée) :</strong> Lorsque la cible est définie par une combinaison de caractéristiques qui se recoupent avec les éléments environnants (comme identifier un 'C' parmi des 'O', 'Q' et 'G' orientés aléatoirement), les mécanismes préattentionnels parallèles ne peuvent résoudre la cible seuls. Le cortex visuel doit déployer l'attention focale séquentiellement de cellule en cellule, provoquant une augmentation linéaire du temps de réponse proportionnelle à la taille du stimulus (Treisman &amp; Gelade, 1980 ; Duncan &amp; Humphreys, 1989).
           </li>
         </ul>
-        <p dangerouslySetInnerHTML={{ __html: `Ce phénomène met en lumière ce que les neuroscientifiques cognitifs nomment le <em>problème de la liaison visuelle (binding problem)</em> : alors que les aires visuelles précoces traitent l'orientation, la courbure et la fermeture dans des cartes de traits modulaires séparées, synthétiser ces données disparates en un percept d'objet unifié exige une allocation attentionnelle active médiée par le cortex pariétal postérieur et les champs oculaires frontaux (Treisman &amp; Gelade, 1980 ; Wolfe, 1994).` }} />
+        <p dangerouslySetInnerHTML={{ __html: `Ce phénomène met en lumière ce que les neuroscientifiques cognitifs nomment le <em>problème de la liaison visuelle</em> : alors que les aires visuelles précoces traitent l'orientation, la courbure et la fermeture dans des cartes de traits modulaires séparées, synthétiser ces données disparates en un percept d'objet unifié exige une allocation attentionnelle active médiée par le cortex pariétal postérieur et les champs oculaires frontaux (Treisman &amp; Gelade, 1980 ; Wolfe, 1994).` }} />
 
         <h3>Homogénéité des Distracteurs &amp; Efficacité du Balayage (Duncan &amp; Humphreys, 1989)</h3>
         <p dangerouslySetInnerHTML={{ __html: `Dans leurs travaux séminaux sur l'efficacité de la recherche visuelle, Duncan et Humphreys (1989) ont établi que la performance dépend de deux relations perceptives critiques :` }} />
@@ -338,7 +340,7 @@ export default function VisualSearchLocalePage() {
           <div>
             <h4 className="font-semibold text-white">Quelle est la différence fondamentale entre recherche simple et recherche conjonctive ?</h4>
             <p className="text-slate-300 mt-1">
-              La recherche simple repose sur un attribut saillant unique et produit un pop-out instantané. La recherche conjonctive exige d&apos;associer plusieurs traits, ce qui impose une inspection sérielle attentive de chaque candidat (Treisman & Gelade, 1980).
+              La recherche simple repose sur un attribut saillant unique et fait ressortir instantanément la cible. La recherche conjonctive exige d&apos;associer plusieurs traits, ce qui impose une inspection sérielle attentive de chaque candidat (Treisman & Gelade, 1980).
             </p>
           </div>
           <div>

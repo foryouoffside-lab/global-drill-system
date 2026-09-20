@@ -5,25 +5,25 @@ import RelatedDrills from '@/components/drill/RelatedDrills';
 import { pickSources } from '@/lib/drillSources';
 
 export const metadata = {
-  title: "Test de Reacción a la Luz: Reflejos Visuales | SkillDrills",
-  description: "Test de reacción a la luz gratis online. Mide tu tiempo de reacción visual simple en milisegundos frente a la media de 200-250 ms. Sin registro.",
+  title: "Test de reflejos online | Tiempo de reacción visual | SkillDrills",
+  description: "Test de reflejos online gratis: mide tu tiempo de reacción visual en milisegundos ante una señal luminosa. El resultado depende de la pantalla y no es un diagnóstico médico.",
   keywords: [
-    "test de reacción a la luz",
-    "test de tiempo de reacción visual",
-    "test de reflejos visuales online",
-    "tiempo de reacción simple srt",
-    "latencia óptico-motora milisegundos",
-    "prueba del destello de luz reflejos",
-    "entrenamiento de reflejos para gaming",
-    "ley de pieron luminancia reacción",
-    "cronometría mental velocidad de respuesta",
-    "fototransducción retiniana tiempo motor",
-    "test de reflejos rápidos gratis",
-    "velocidad de reacción simple"
+    "test de reflejos",
+    "test de reflejos online",
+    "test de tiempo de reacción",
+    "tiempo de reacción visual",
+    "test de reacción visual",
+    "tiempo de reacción en milisegundos",
+    "test de reflejos gratis",
+    "test de reacción online",
+    "reflejos visuales para gaming",
+    "reacción ante señal luminosa",
+    "tiempo de reacción simple SRT",
+    "entrenar velocidad de reacción"
   ],
   openGraph: {
-    title: "Test de Reacción a la Luz: Reflejos Visuales | SkillDrills",
-    description: "Calcula tu tiempo de reacción visual simple ante destellos estroboscópicos con precisión en milisegundos online gratis.",
+    title: "Test de reflejos online | Tiempo de reacción visual | SkillDrills",
+    description: "Mide el intervalo entre una señal luminosa y tu clic en milisegundos, con varias rondas para comparar tu consistencia.",
     type: 'article',
     url: 'https://skilldrills.online/es/drills/visual/reaction-speed/light-reaction',
     siteName: 'SkillDrills',
@@ -31,8 +31,8 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: "Test de Reacción a la Luz: Reflejos Visuales | SkillDrills",
-    description: "Mide y entrena tu velocidad de reflejos visuales ante destellos de luz en milisegundos sin coste alguno.",
+    title: "Test de reflejos online | Tiempo de reacción visual | SkillDrills",
+    description: "Entrena tus reflejos visuales con un estímulo luminoso imprevisible y sigue tus tiempos dentro del navegador.",
   },
   robots: { index: true, follow: true },
   alternates: {
@@ -228,7 +228,7 @@ const faqSchema = {
 };
 
 const lightReactionGuide = {
-  heading: "Cronometría Neurocognitiva de los Reflejos Visuales y Latencia Simple (SRT)",
+  heading: "Test de reflejos online: entiende tu tiempo de reacción visual",
   intro: [
     "El tiempo de reacción simple (SRT) cuantifica el retardo psicomotor elemental que separa la presentación de un estímulo visual imprevisto de la activación motora inmediata. En el atletismo de pista, el automovilismo, las artes marciales y el esport competitivo, diferencias de escasos milisegundos determinan fintas defensivas, salidas fulgurantes y contragolpes letales.",
     "La respuesta neuromuscular encadena cuatro fases fisiológicas cardinales: (1) fototransducción retiniana (~20–40 ms por isomerización de la rodopsina), (2) propagación aferente por el tracto óptico hacia el córtex visual primario V1 (~30–50 ms), (3) preparación perceptiva y motriz en áreas parietales y motoras suplementarias (~50–80 ms), y (4) descarga eferente por el haz corticoespinal para contraer los flexores digitales (~30–50 ms), configurando el rango biológico estándar de 200–250 ms (Kosinski, 2008; Jain et al., 2015; Shelton & Kumar, 2010).",
@@ -236,7 +236,7 @@ const lightReactionGuide = {
     "Metodología y Estándares de Medición: Los estímulos y las pulsaciones se cronometran con la API de alta resolución performance.now(). Las tolerancias por tasa de refresco del display y el sondeo USB (Woods et al., 2015) se compensan para garantizar resultados fieles y de tratamiento local."
   ],
   benchmarks: {
-    title: "Baremos de Latencia de Reacción Visual (Referencia Científica SRT)",
+    title: "Referencia del tiempo de reacción visual en navegador",
     headers: ["Banda de Rendimiento", "Latencia Media (ms)", "Puntuación y Umbral Combo", "Perfil Neuromuscular y de Reflejo"],
     rows: [
       ["Tier 1: Reflejo Neural Apex", "< 180 ms", "15.000+ PTS | Combo 28x+", "Excitabilidad sobresaliente de la corteza motora; velocidad de conducción piramidal propia de velocistas olímpicos y jugadores de élite."],
@@ -248,7 +248,7 @@ const lightReactionGuide = {
     note: "Estos baremos se fundamentan en la cronometría clásica y la psicofísica del tiempo de reacción (Kosinski, 2008; Woods et al., 2015; Pins & Bonnet, 1996; Jain et al., 2015). Las marcas varían por biorritmos circadianos, cafeína y características de la pantalla."
   },
   techniques: {
-    title: "Técnicas Prácticas para Acelerar los Reflejos Visuales",
+    title: "Cómo entrenar reflejos sin confundir la latencia del dispositivo",
     items: [
       {
         name: "Preactivación Foveal y Fijación Central",
@@ -301,7 +301,7 @@ export default function StrobeLatencyPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(howToSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(videoGameSchema) }} />
-      <StrobeLatencyClient copy={{ title: "Test de Reacción a la Luz: Reflejos Visuales" }} />
+      <StrobeLatencyClient copy={{ title: "Test de reflejos (reacción visual)", startCardTitle: "Test de reflejos", startCardSubtitle: "Responde al destello en milisegundos" }} />
       <DrillGuide guide={lightReactionGuide} />
       <div className="max-w-6xl mx-auto px-4 pb-12">
         <RelatedDrills currentCategory="visual" currentHref="https://skilldrills.online/es/drills/visual/reaction-speed/light-reaction" />

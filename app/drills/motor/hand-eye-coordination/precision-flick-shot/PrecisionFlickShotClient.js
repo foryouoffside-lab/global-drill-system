@@ -710,10 +710,8 @@ export default function PrecisionFlickShotClient({ copy } = {}) {
           <div className="flex flex-col gap-1">
             <h1 className="text-2xl sm:text-3xl font-black tracking-tight text-white">
               <span data-seo-kw="1">{copy?.title || "Precision Flick Shot"}</span>
+              <span className="block text-sm font-semibold text-slate-400 mt-1">{copy?.subtitle || "Precision flick aim drill for hitting shrinking targets, improving micro-corrections, and building accurate mouse control"}</span>
             </h1>
-            <p className="text-[13px] text-slate-400 leading-relaxed">
-              A flick shot is a single fast mouse movement that snaps the crosshair onto a target in one motion instead of sliding onto it. A movement that fast is made of two parts &mdash; a ballistic impulse that covers most of the distance, then a slower visually guided correction that closes what is left (Woodworth, 1899; Meyer et al., 1988) &mdash; which is why overshooting a target costs more time than starting the flick slightly slower. Your display bounds the measurement: at 60 Hz a new target can only appear every 16.7 ms, against 6.9 ms at 144 Hz (Woods et al., 2015).
-            </p>
           </div>
         )}
 
@@ -738,7 +736,7 @@ export default function PrecisionFlickShotClient({ copy } = {}) {
         <div 
           ref={containerRef} 
           onContextMenu={(e) => { if (gameActiveRef.current) e.preventDefault(); }}
-          className={`overflow-hidden flex flex-col transition-all duration-150 select-none bg-[#080811] text-white ${
+          className={`overflow-hidden flex flex-col select-none bg-[#080811] text-white ${
             isFullscreen 
               ? "fixed inset-0 z-[100] w-screen h-[100dvh] bg-[#050508] flex flex-col items-center justify-center" 
               : "w-full rounded-2xl aspect-video min-h-[460px] md:min-h-[500px] max-h-[88vh] max-md:portrait:aspect-[3/4] max-md:portrait:min-h-[420px] max-md:portrait:max-h-[76vh] max-md:landscape:min-h-[340px] max-md:landscape:max-h-[85vh] bg-[#080811] border border-white/10 relative overflow-hidden flex flex-col"
@@ -876,7 +874,7 @@ export default function PrecisionFlickShotClient({ copy } = {}) {
                       Precision Flick Shot is a high-speed motor coordination drill engineered to test and refine rapid mouse flicks, target acquisition speed, and center-click timing under extreme temporal pressure.
                     </p>
                     <p className="text-sm leading-relaxed text-gray-300">
-                      Target snapping is governed by the Stochastic Optimized Submovement Model (Meyer et al., 1988) and Woodworth&apos;s two-component hypothesis. Every flick begins with an open-loop ballistic motor impulse followed by a visual feedback deceleration phase. Training center-ring bulls-eyes forces the motor cortex to suppress endpoint distribution noise and minimize corrective secondary sub-movements.
+                      Target snapping is governed by the Stochastic Optimized Submovement Model (Meyer et al., 1988) and Woodworth&apos;s two-component hypothesis. Every flick begins with an open-loop ballistic motor impulse followed by a visual feedback deceleration phase. Training center-ring bulls-eyes forces the motor cortex to suppress endpoint distribution noise and minimize corrective secondary sub-movements. A movement that fast is made of two parts &mdash; a ballistic impulse that covers most of the distance, then a slower visually guided correction that closes what is left (Woodworth, 1899; Meyer et al., 1988) &mdash; which is why overshooting a target costs more time than starting the flick slightly slower. Your display bounds the measurement: at 60 Hz a new target can only appear every 16.7 ms, against 6.9 ms at 144 Hz (Woods et al., 2015).
                     </p>
                   </div>
 

@@ -6,7 +6,7 @@ import { pickSources } from '@/lib/drillSources';
 
 // ============================================================
 // RECHERCHE DE MOTS-CLÉS NATIFS (SERP FRANCE / FR-FR)
-// Requêtes à forte intention sportive et psychomotrice :
+// Clusters natifs à intention sportive; concurrence non mesurée :
 // - "exercices échelle d'agilité" (Requête dominante entraînement et footwork)
 // - "échelle de rythme exercices" (Cadence neuromusculaire et coordination)
 // - "échelle de vélocité entraînement" (Vitesse d'appuis en football et athlétisme)
@@ -18,10 +18,10 @@ import { pickSources } from '@/lib/drillSources';
 // ============================================================
 
 export const metadata = {
-  title: "Échelle d'Agilité – Travail des Appuis | SkillDrills",
-  description: "Exercices d'échelle d'agilité en ligne gratuits. Développez votre vitesse d'appuis, coordination motrice et jeu de jambes pour le football et le sport.",
+  title: "Exercices d'échelle d'agilité | SkillDrills",
+  description: "Exercices gratuits d'échelle d'agilité en ligne. Suivez des appuis alternés pour travailler le jeu de jambes, le rythme et la coordination bilatérale.",
   keywords: [
-    "exercices echelle d'agilite",
+    "exercices échelle d'agilité",
     "echelle de rythme exercices",
     "echelle de velocite entrainement",
     "travail des appuis et vivacite",
@@ -30,15 +30,16 @@ export const metadata = {
     "rythme counter strafe",
     "test de vitesse et vivacite",
     "sequencage moteur reflexe",
-    "jeu de rythme moteur"
+    "jeu de rythme moteur",
+    "vitesse des appuis exercice"
   ],
   alternates: {
     canonical: 'https://skilldrills.online/fr/drills/physical/fitness/agility-ladder',
     languages: getAlternateLanguages('/drills/physical/fitness/agility-ladder'),
   },
   openGraph: {
-    title: "Échelle d'Agilité – Travail des Appuis | SkillDrills",
-    description: "Exercices d'échelle d'agilité en ligne gratuits. Développez votre vitesse d'appuis, coordination motrice et jeu de jambes pour le football et le sport.",
+    title: "Exercices d'échelle d'agilité | SkillDrills",
+    description: "Exercices gratuits d'échelle d'agilité en ligne. Suivez des appuis alternés pour travailler le jeu de jambes, le rythme et la coordination bilatérale.",
     url: 'https://skilldrills.online/fr/drills/physical/fitness/agility-ladder',
     siteName: 'SkillDrills',
     locale: 'fr_FR',
@@ -46,8 +47,8 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: "Échelle d'Agilité – Travail des Appuis | SkillDrills",
-    description: "Exercices d'échelle d'agilité en ligne gratuits. Développez votre vitesse d'appuis, coordination motrice et jeu de jambes pour le football et le sport.",
+    title: "Exercices d'échelle d'agilité | SkillDrills",
+    description: "Exercices gratuits d'échelle d'agilité en ligne. Suivez des appuis alternés pour travailler le jeu de jambes, le rythme et la coordination bilatérale.",
   },
   robots: { index: true, follow: true },
 };
@@ -102,7 +103,7 @@ const softwareApplicationSchema = {
     "url": "https://skilldrills.online/fr"
   },
   "inLanguage": "fr-FR",
-  "dateModified": "2026-09-12"
+  "dateModified": "2026-09-20"
 };
 
 const webApplicationSchema = {
@@ -119,7 +120,7 @@ const webApplicationSchema = {
   },
   "url": "https://skilldrills.online/fr/drills/physical/fitness/agility-ladder",
   "inLanguage": "fr-FR",
-  "dateModified": "2026-09-12"
+  "dateModified": "2026-09-20"
 };
 
 const videoGameSchema = {
@@ -140,6 +141,8 @@ const videoGameSchema = {
     "Mobile"
   ],
   "applicationCategory": "Game",
+  "inLanguage": "fr-FR",
+  "dateModified": "2026-09-20",
   "offers": {
     "@type": "Offer",
     "price": "0",
@@ -150,7 +153,8 @@ const videoGameSchema = {
 const faqSchema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
-  "dateModified": "2026-09-12",
+  "inLanguage": "fr-FR",
+  "dateModified": "2026-09-20",
   "mainEntity": [
     {
       "@type": "Question",
@@ -358,8 +362,8 @@ export default function AgilityLadderPageFr() {
       />
       <MotorSequencingClient
         copy={{
-          title: "Exercices d'Échelle d'Agilité & Footwork",
-          subtitle: "Séquençage Moteur Bilatéral & Cadence Rythmique • 15 Niveaux",
+          title: "Exercices d'échelle d'agilité",
+          subtitle: "Suivez des appuis alternés en rythme • 15 niveaux",
           hudLabels: {
             score: "Score",
             timeLeft: "Temps Restant",

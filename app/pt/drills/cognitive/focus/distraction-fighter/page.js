@@ -1,33 +1,30 @@
 import DistractionFighterClient from '@/app/drills/cognitive/focus/distraction-fighter/DistractionFighterClientLoader';
 import DrillGuide from '@/components/drill/DrillGuide';
 import RelatedDrills from '@/components/drill/RelatedDrills';
+import DrillFooter from '@/components/drill/DrillFooter';
 import { getAlternateLanguages } from '@/lib/i18n/locales';
 import { pickSources } from '@/lib/drillSources';
 
 export const metadata = {
-  title: "Teste de Stroop Online – Foco e Inibição | SkillDrills",
-  description: "Teste de Stroop online grátis: avalie sua inibição cognitiva e atenção seletiva nomeando a cor da fonte enquanto ignora o significado da palavra escrita.",
+  title: "Teste de Stroop | Atenção Seletiva | SkillDrills",
+  description: "Teste de Stroop grátis no navegador: escolha a cor da tinta, não a palavra. Um autocheck cognitivo não clínico.",
   keywords: [
     "teste de stroop",
     "teste de stroop online",
-    "efeito stroop",
-    "teste de atencao seletiva",
-    "inibicao cognitiva teste",
-    "teste de cores e palavras",
-    "interferencia de stroop",
-    "exercicios de foco e concentracao",
-    "treino de controle inibitorio",
-    "teste psicologico stroop gratis",
-    "treinamento de agilidade mental",
-    "teste de reflexo e foco online"
+    "teste de stroop o que avalia",
+    "teste de stroop cores e palavras",
+    "efeito stroop teste",
+    "efeito stroop explicação",
+    "atenção seletiva",
+    "controle inibitório"
   ],
   alternates: {
     canonical: "https://skilldrills.online/pt/drills/cognitive/focus/distraction-fighter",
     languages: getAlternateLanguages('/drills/cognitive/focus/distraction-fighter')
   },
   openGraph: {
-    title: "Teste de Stroop Online – Foco e Inibição | SkillDrills",
-    description: "Teste de Stroop online grátis: avalie sua inibição cognitiva e atenção seletiva nomeando a cor da fonte enquanto ignora o significado da palavra escrita.",
+    title: "Teste de Stroop | Atenção Seletiva | SkillDrills",
+    description: "Teste de Stroop grátis no navegador: escolha a cor da tinta, não a palavra. Um autocheck cognitivo não clínico.",
     url: "https://skilldrills.online/pt/drills/cognitive/focus/distraction-fighter",
     siteName: "SkillDrills",
     locale: "pt_BR",
@@ -35,8 +32,8 @@ export const metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Teste de Stroop Online – Foco e Inibição | SkillDrills",
-    description: "Teste de Stroop online grátis: avalie sua inibição cognitiva e atenção seletiva nomeando a cor da fonte enquanto ignora o significado da palavra escrita."
+    title: "Teste de Stroop | Atenção Seletiva | SkillDrills",
+    description: "Teste de Stroop grátis no navegador: escolha a cor da tinta, não a palavra. Um autocheck cognitivo não clínico."
   }
 };
 
@@ -57,6 +54,7 @@ export default function DistractionFighterPagePT() {
     "@context": "https://schema.org",
     "@type": "SoftwareApplication",
     "name": "Teste de Stroop Trainer",
+    "dateModified": "2026-09-20",
     "applicationCategory": "HealthApplication",
     "operatingSystem": "Any",
     "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
@@ -67,6 +65,7 @@ export default function DistractionFighterPagePT() {
     "@context": "https://schema.org",
     "@type": "WebApplication",
     "name": "Teste de Stroop Online Interativo",
+    "dateModified": "2026-09-20",
     "url": "https://skilldrills.online/pt/drills/cognitive/focus/distraction-fighter",
     "applicationCategory": "TrainingTool",
     "browserRequirements": "Requires JavaScript. HTML5 Canvas compatible."
@@ -77,6 +76,7 @@ export default function DistractionFighterPagePT() {
     "@type": "VideoGame",
     "name": "Desafio de Inibição Cognitiva de Stroop",
     "gamePlatform": "Web Browser",
+    "dateModified": "2026-09-20",
     "genre": ["Brain Training", "Cognitive Drill", "Focus Training"]
   };
 
@@ -311,6 +311,7 @@ export default function DistractionFighterPagePT() {
           locale="pt"
         />
       </div>
+      <DrillFooter />
     </>
   );
 }

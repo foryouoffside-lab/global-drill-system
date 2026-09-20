@@ -6,41 +6,38 @@ import { pickSources } from '@/lib/drillSources';
 
 // ============================================================
 // SEO RESEARCH FINDINGS — pt-BR (reaction-speed / reaction-time-test)
-// PRIMARY DOMESTIC: "teste de reflexo"   — 225 exact searches/mo (Domestic #1 winner)
-//                    "reaction time test" — 222 exact searches/mo (Domestic #2 query)
-//                    "tempo de reação"    — 144 exact searches/mo
+// LIVE RESEARCH (2026-09-20): "teste de reflexo" — Bing 183 exact / 183 broad;
+//                    "teste de reação" — 165 exact / 165 broad;
+//                    "tempo de reação" — 49 exact / 49 broad.
 // SECONDARY / LSI:
-//                    "teste de reação"    — 90+ searches/mo
-//                    "teste de reflexos online" — Utility intent
-//                    "medir reflexo"      — Action intent
-//                    "teste de mira e reflexo" — FPS intent
-// NATIVE TITLE:      Teste de Reflexo e Tempo de Reação – Medidor em Milissegundos (ms) | SkillDrills
+//                    Google Suggest: mouse, click, F1, Valorant, and FPS modifiers.
+// NATIVE TITLE:      Teste de reflexo: tempo de reação em ms | SkillDrills
 // ============================================================
 
 export const metadata = {
-  title: 'Teste de Reflexo & Tempo de Reação Online | SkillDrills',
+  title: 'Teste de reflexo: tempo de reação em ms | SkillDrills',
   description:
-    'Teste de reflexo online grátis. Meça seu tempo de reação visual em milissegundos (ms) e compare sua média com benchmarks científicos no navegador.',
+    'Faça um teste de reflexo grátis: meça seu tempo de reação visual em milissegundos, veja a média de várias tentativas e compare sua consistência no navegador.',
   keywords: [
     'teste de reflexo',
     'teste de reação',
     'tempo de reação',
-    'teste de tempo de reação',
-    'teste de reflexos online',
-    'medir reflexo',
-    'teste reflexo milissegundos',
-    'teste de mira e reflexo',
+    'teste de reflexo online',
+    'teste de reflexo mouse',
+    'teste de reflexo para fps',
+    'teste de reflexo valorant',
+    'teste de reação visual',
+    'reflexos em milissegundos',
     'velocidade de reação',
-    'treino de reflexo fps',
   ],
   alternates: {
     canonical: 'https://skilldrills.online/pt/drills/reaction-speed/reaction-time-test',
     languages: getAlternateLanguages('/drills/reaction-speed/reaction-time-test'),
   },
   openGraph: {
-    title: 'Teste de Reflexo & Tempo de Reação Online | SkillDrills',
+    title: 'Teste de reflexo: tempo de reação em ms | SkillDrills',
     description:
-      'Teste de reflexo online grátis. Meça sua velocidade de reação visual em milissegundos (ms) e compare com benchmarks científicos no navegador.',
+      'Teste seus reflexos online, meça o tempo de reação visual em milissegundos e compare média e consistência no navegador.',
     url: 'https://skilldrills.online/pt/drills/reaction-speed/reaction-time-test',
     siteName: 'SkillDrills',
     locale: 'pt_BR',
@@ -48,9 +45,9 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Teste de Reflexo & Tempo de Reação Online | SkillDrills',
+    title: 'Teste de reflexo: tempo de reação em ms | SkillDrills',
     description:
-      'Meça seus reflexos e tempo de reação visual em milissegundos (ms) online grátis. Teste com precisão e confira sua classificação no navegador.',
+      'Meça seus reflexos e o tempo de reação visual em milissegundos. Faça várias tentativas e confira sua média sem baixar nada.',
   },
   robots: { index: true, follow: true },
 };
@@ -151,7 +148,7 @@ const howToSchema = {
 const faqSchema = {
   '@context': 'https://schema.org',
   '@type': 'FAQPage',
-  dateModified: '2026-09-11',
+  dateModified: '2026-09-20',
   mainEntity: [
     {
       '@type': 'Question',
@@ -284,6 +281,8 @@ const faqSchema = {
   ],
 };
 
+faqSchema.mainEntity = faqSchema.mainEntity.slice(0, 10);
+
 const reactionGuide = {
   heading: 'Guia do Teste de Reflexo & Padrões Científicos',
   intro: [
@@ -373,7 +372,13 @@ export default function PortugueseReactionTimeTestPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
-      <ReactionTimeTestWrapper copy={{ title: 'Teste de Reflexo' }} />
+      <ReactionTimeTestWrapper
+        copy={{
+          title: 'Teste de Reflexo',
+          subtitle: 'Meça o tempo de reação visual em milissegundos',
+          caption: 'Clique assim que o sinal aparecer para medir seus reflexos visuais.',
+        }}
+      />
       <DrillGuide guide={reactionGuide} />
       <DrillFooter />
     </>

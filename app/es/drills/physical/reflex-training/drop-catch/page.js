@@ -6,7 +6,7 @@ import { pickSources } from '@/lib/drillSources';
 
 // ============================================================
 // SEO RESEARCH FINDINGS — Spain & Latin America (ES / ES-ES / ES-MX)
-// Primary Intent: test de la regla tiempo de reaccion, prueba de la regla reflejos, test de tiempo de reaccion online
+// Primary Intent: test de la regla, test de tiempo de reacción, test de reflejos online
 // Hispanic Athletic/Academic Context: Test de la regla de Nelson adaptado digitalmente con paradigma Go/No-Go y blancos en caída libre
 // High-Demand, Low-Competition Target Keywords:
 //   - "test de la regla tiempo de reaccion" (Classic physical testing query)
@@ -22,27 +22,26 @@ import { pickSources } from '@/lib/drillSources';
 // ============================================================
 
 export const metadata = {
-  title: "Test de la Regla – Tiempo de Reacción | SkillDrills",
-  description: "Test de la regla online gratis. Atrapa objetos en caída libre para medir tu tiempo de reacción en milisegundos y entrenar reflejos rápidos en el PC.",
+  title: "Test de la Regla | Tiempo de Reacción",
+  description: "Test de la regla gratis en el navegador: atrapa objetivos verdes, evita señuelos rojos y practica tu tiempo de reacción en milisegundos.",
   keywords: [
-    "test de la regla tiempo de reaccion",
-    "prueba de la regla reflejos",
+    "test de la regla",
+    "test de reacción con regla",
     "test de tiempo de reaccion online",
     "medir tiempo de reaccion online",
-    "test go no go online",
-    "tiempo de reaccion de eleccion",
-    "test de reflejos y control de impulsos",
-    "mejorar tiempo de reaccion fps",
-    "ejercicios de reflejos visuales",
-    "prueba de reaccion discriminativa"
+    "test de reflejos online",
+    "tiempo de reacción con regla",
+    "medir tiempo de reacción",
+    "test de reacción motora",
+    "caída de regla"
   ],
   alternates: {
     canonical: 'https://skilldrills.online/es/drills/physical/reflex-training/drop-catch',
     languages: getAlternateLanguages('/drills/physical/reflex-training/drop-catch'),
   },
   openGraph: {
-    title: "Test de la Regla – Tiempo de Reacción | SkillDrills",
-    description: "Test de la regla online gratis. Atrapa objetos en caída libre para medir tu tiempo de reacción en milisegundos y entrenar reflejos rápidos en el PC.",
+    title: "Test de la Regla | Tiempo de Reacción",
+    description: "Atrapa objetivos verdes y evita señuelos rojos en un test de la regla gratuito para practicar reflejos y reacción visual.",
     url: 'https://skilldrills.online/es/drills/physical/reflex-training/drop-catch',
     siteName: 'SkillDrills',
     locale: 'es_ES',
@@ -50,8 +49,8 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: "Test de la Regla – Tiempo de Reacción | SkillDrills",
-    description: "Test de la regla online gratis. Atrapa objetos en caída libre para medir tu tiempo de reacción en milisegundos y entrenar reflejos rápidos en el PC.",
+    title: "Test de la Regla | Tiempo de Reacción",
+    description: "Atrapa objetivos verdes y evita señuelos rojos en un test de la regla gratuito para practicar reflejos y reacción visual.",
   },
   robots: { index: true, follow: true },
 };
@@ -98,22 +97,34 @@ const softwareApplicationSchema = {
     "price": "0",
     "priceCurrency": "USD"
   },
+  "description": "Test de la regla digital para atrapar objetivos verdes, evitar señuelos rojos y practicar el tiempo de reacción visual.",
+  "url": "https://skilldrills.online/es/drills/physical/reflex-training/drop-catch",
+  "inLanguage": "es-ES",
+  "dateModified": "2026-09-20"
 };
 
 const webApplicationSchema = {
   "@context": "https://schema.org",
   "@type": "WebApplication",
-  "name": "Simulador de Caída Libre, Tiempo de Reacción y Paradigma Go/No-Go",
-  "browserRequirements": "Requires JavaScript and HTML5 Canvas support",
-  "genre": "Training, Reflex, Reaction Time, Sports Science"
+  "name": "Test de la Regla y Entrenamiento de Reflejos",
+  "url": "https://skilldrills.online/es/drills/physical/reflex-training/drop-catch",
+  "description": "Entrenamiento de reacción visual en el navegador con objetivos verdes que caen y señuelos rojos.",
+  "applicationCategory": "GameApplication",
+  "operatingSystem": "Web Browser",
+  "browserRequirements": "Requiere JavaScript y soporte para HTML5 Canvas",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+  "inLanguage": "es-ES",
+  "dateModified": "2026-09-20"
 };
 
 const videoGameSchema = {
   "@context": "https://schema.org",
   "@type": "VideoGame",
-  "name": "Reflex Drop Catch & Impulse Restraint Drill",
+  "name": "Drop Catch: juego de reflejos y reacción",
+  "url": "https://skilldrills.online/es/drills/physical/reflex-training/drop-catch",
+  "description": "Atrapa objetivos verdes e ignora los señuelos rojos en un juego de reacción visual.",
   "gamePlatform": "Web Browser",
-  "applicationSubCategory": "Esports Motor Chronometry Drill"
+  "applicationSubCategory": "Entrenamiento de reacción motora"
 };
 
 const faqSchema = {
@@ -329,7 +340,7 @@ export default function LocalizedDropCatchPageEs() {
       <DropCatchClient
         copy={{
           title: "Test de la Regla & Tiempo de Reacción Online",
-          subtitle: "Discriminación Visual y Control de Impulsos • Dificultad con Escalado Continuo",
+          subtitle: "Atrapa objetivos verdes, evita señuelos rojos",
           description: "La prueba de la regla y caída libre evalúa la rapidez de respuesta ante un objeto en descenso y la disciplina para contener el clic cuando procede. La intercepción no exige calcular distancia y velocidad de forma aislada: la imagen retiniana en expansión precisa el tiempo de contacto por sí misma (Lee, 1976). La contención responde a otro proceso — la orden de actuar y la de detenerse disputan una carrera interna y vence la más rápida (Logan & Cowan, 1984). La reacción visual simple consume entre 200 y 250 ms antes de cualquier movimiento (Woods et al., 2015).",
           hudLabels: {
             score: "Puntuación",

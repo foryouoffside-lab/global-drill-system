@@ -56,6 +56,14 @@ export const metadata = {
   robots: { index: true, follow: true },
 };
 
+Object.assign(metadata, {
+  title: 'Sprungkrafttraining online | Sprungfolge-Spiel | SkillDrills',
+  description: 'Kostenloses Sprungkraft- und Sprungfolge-Spiel im Browser. Dosieren Sie den Absprung, steuern Sie die Flugbahn und treffen Sie bewegte Ziele im richtigen Timing.',
+  keywords: ['Sprungkrafttraining', 'Sprungkoordination', 'Sprungfolge', 'plyometrisches Training', 'Vertikalsprung Training', 'Sprungspiel', 'Reaktionsschnelligkeit Sprung', 'Flugbahn Training', 'Sprung Timing', 'Koordination Sprung'],
+  openGraph: { ...metadata.openGraph, title: 'Sprungkrafttraining online | Sprungfolge-Spiel | SkillDrills', description: 'Kostenloses Sprungkraft- und Sprungfolge-Spiel im Browser. Dosieren Sie den Absprung, steuern Sie die Flugbahn und treffen Sie bewegte Ziele im richtigen Timing.' },
+  twitter: { ...metadata.twitter, title: 'Sprungkrafttraining online | Sprungfolge-Spiel | SkillDrills', description: 'Kostenloses Sprungkraft- und Sprungfolge-Spiel im Browser. Dosieren Sie den Absprung, steuern Sie die Flugbahn und treffen Sie bewegte Ziele im richtigen Timing.' },
+});
+
 const breadcrumbSchema = {
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
@@ -106,7 +114,7 @@ const softwareApplicationSchema = {
     "url": "https://skilldrills.online/de"
   },
   "inLanguage": "de",
-  "dateModified": "2026-09-12"
+  "dateModified": "2026-09-20"
 };
 
 const webApplicationSchema = {
@@ -123,7 +131,7 @@ const webApplicationSchema = {
   },
   "url": "https://skilldrills.online/de/drills/physical/fitness/jump-sequence",
   "inLanguage": "de",
-  "dateModified": "2026-09-12"
+  "dateModified": "2026-09-20"
 };
 
 const videoGameSchema = {
@@ -144,6 +152,8 @@ const videoGameSchema = {
     "Mobile"
   ],
   "applicationCategory": "Game",
+  "inLanguage": "de",
+  "dateModified": "2026-09-20",
   "offers": {
     "@type": "Offer",
     "price": "0",
@@ -154,7 +164,8 @@ const videoGameSchema = {
 const faqSchema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
-  "dateModified": "2026-09-12",
+  "inLanguage": "de",
+  "dateModified": "2026-09-20",
   "mainEntity": [
     {
       "@type": "Question",

@@ -5,23 +5,25 @@ import RelatedDrills from '@/components/drill/RelatedDrills';
 import { pickSources } from '@/lib/drillSources';
 
 export const metadata = {
-  title: "視覚探索テスト: エントロピックグリッド | SkillDrills",
-  description: "100セルグリッドと動的ノイズの中から指定コードを最速特定する無料視覚探索テスト。選択的視覚注意、周辺視野スキャン、情報処理速度を科学的に強化します。",
+  title: "視覚探索トレーニング | 選択的注意テスト | SkillDrills",
+  description: "100セルの変化するグリッドから指定コードを探す無料視覚探索ドリル。選択的注意と視覚的走査を練習できます。医療検査ではありません。",
   keywords: [
     "視覚探索",
+    "選択的注意",
     "視覚的注意",
-    "選択的注意 テスト",
     "視覚探索課題",
-    "動的ノイズ 探索",
+    "視覚的走査",
+    "集中力 グリッド",
     "周辺視野 スキャン",
-    "集中力グリッド テスト",
-    "特徴統合 トレイスマン",
-    "認知負荷 理論",
-    "情報処理速度 テスト"
+    "動的ノイズ",
+    "情報処理速度",
+    "認知トレーニング",
+    "シュルテグリッド",
+    "視覚認知"
   ],
   openGraph: {
-    title: "視覚探索テスト・動的グリッド探索トレーニング – 視覚的注意＆ノイズ識別測定 | SkillDrills",
-    description: "高密度な100セルグリッドと動的に変化する背景ノイズの中で、指定されたコードを最速特定する無料視覚探索ドリル。選択的注意と周辺視野スキャンを鍛えます。",
+    title: "視覚探索トレーニング | 選択的注意テスト | SkillDrills",
+    description: "変化する100セルグリッドから指定コードを探す無料ドリル。選択的注意と視覚的走査を練習できます。",
     type: 'article',
     url: 'https://skilldrills.online/ja/drills/visual/visual-recognition/entropic-grid',
     siteName: 'SkillDrills',
@@ -29,8 +31,8 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: "視覚探索テスト・動的グリッド探索トレーニング – 視覚的注意＆ノイズ識別測定 | SkillDrills",
-    description: "高密度グリッドと動的ノイズの中で指定コードを最速特定する無料視覚探索ドリル。選択的注意力を科学的に測定・強化。",
+    title: "視覚探索トレーニング | 選択的注意テスト | SkillDrills",
+    description: "変化するグリッドから指定コードを見つけ、視覚的注意と情報処理速度を練習できます。",
   },
   robots: { index: true, follow: true },
   alternates: {
@@ -70,7 +72,7 @@ const breadcrumbSchema = {
     {
       "@type": "ListItem",
       "position": 5,
-      "name": "動的グリッド視覚探索テスト (エントロピックグリッド)",
+      "name": "視覚探索トレーニング (変化するグリッド)",
       "item": "https://skilldrills.online/ja/drills/visual/visual-recognition/entropic-grid"
     }
   ]
@@ -79,7 +81,7 @@ const breadcrumbSchema = {
 const softwareApplicationSchema = {
   "@context": "https://schema.org",
   "@type": "SoftwareApplication",
-  "name": "SkillDrills 視覚探索テスト・動的グリッド測定器",
+  "name": "SkillDrills 視覚探索・選択的注意トレーナー",
   "applicationCategory": "HealthApplication",
   "operatingSystem": "Any",
   "browserRequirements": "HTML5 Canvas対応の最新ウェブブラウザ",
@@ -94,10 +96,10 @@ const softwareApplicationSchema = {
 const webApplicationSchema = {
   "@context": "https://schema.org",
   "@type": "WebApplication",
-  "name": "無料オンライン視覚探索トレーニング (エントロピックグリッド)",
+  "name": "無料オンライン視覚探索トレーニング",
   "url": "https://skilldrills.online/ja/drills/visual/visual-recognition/entropic-grid",
   "applicationCategory": "GameApplication",
-  "genre": ["視覚探索", "選択的注意 テスト", "視覚的注意", "認知心理学ドリル"],
+  "genre": ["視覚探索", "選択的注意", "視覚的注意"],
   "browserRequirements": "Requires HTML5 Canvas and JavaScript",
   "inLanguage": "ja-JP"
 };
@@ -105,9 +107,9 @@ const webApplicationSchema = {
 const videoGameSchema = {
   "@context": "https://schema.org",
   "@type": "VideoGame",
-  "name": "エントロピックグリッド・ビジュアルサーチ (Entropic Grid Visual Search)",
+  "name": "変化するグリッド視覚探索チャレンジ",
   "description": "100セルの動的マトリクス内で周期的に変化する背景ノイズをかき分け、指示された英数字ターゲットコードを最速でクリックする知覚スピード測定ゲーム。",
-  "genre": ["Cognitive Drill", "Vision Training", "Esports Reaction"],
+  "genre": ["視覚探索", "選択的注意", "視覚的注意"],
   "playMode": "SinglePlayer",
   "applicationCategory": "Game"
 };
@@ -202,7 +204,7 @@ const faqSchema = {
 const howToSchema = {
   "@context": "https://schema.org",
   "@type": "HowTo",
-  "name": "動的グリッド視覚探索テストの攻略ステップとハイスコア手順",
+  "name": "変化するグリッド視覚探索テストの実践ステップ",
   "description": "100セルの動的ノイズグリッドから目的のコードを電光石火で特定するための4段階実践ガイド。",
   "step": [
     {
@@ -238,7 +240,7 @@ const howToSchema = {
 
 const guideData = {
   eyebrow: "認知心理学＆選択的注意制御ガイド",
-  heading: "視覚探索テスト – 動的グリッドにおける特徴統合とノイズ遮断機構",
+  heading: "視覚探索テスト：変化するグリッドで選択的注意を鍛える",
   intro: [
     "視覚探索（Visual Search）は、無数の不要な情報や妨害刺激（ディストラクター）が密集する環境の中から、特定の目標刺激（ターゲット）を迅速かつ正確に検出する人間の最も基本的な視覚認知機能です。認知心理学の古典的基盤であるアン・トレイスマンの特徴統合理論（Feature Integration Theory: FIT, Treisman & Gelade, 1980）によると、人間の視覚系は色や線分傾きなどの単純な物理特徴を並列的・無意識に前注意段階（Preattentive Stage）で処理しますが、複数の特徴が組み合わさった複合刺激の認識には集中的な空間的注意の結合が必要です。",
     "ジェレミー・ウォルフのガイド探索モデル（Guided Search 4.0, Wolfe, 2007）では、ボトムアップの刺激顕著性（目立つ要素）と、探すべき目標の心象イメージに基づくトップダウンの注意バイアスが相互作用して『優先度マップ（Priority Map）』が構築されます。エントロピックグリッド課題のように、100個のセルに定期的に動的ノイズが走る高エントロピー環境下では、背景の変化がボトムアップ注意を激しく混乱させます。これに打ち勝つためには、前頭前皮質と後頭頂皮質が連携して強力なトップダウン抑制をかけ、目標文字以外の信号を脳内で能動的に消去しなければなりません（Duncan & Humphreys, 1989）。",
@@ -247,7 +249,7 @@ const guideData = {
     "本テストは、HTML5の高精度タイマー（performance.now()）を用いて目標発見ごとの反応潜時、累積特定数、誤クリックによるペナルティを統合した総合スコアリングを45秒間にわたり実施します。日々の体系的な動的グリッド探索トレーニングは、視覚的クラッター（雑然とした情報）への耐性を飛躍的に高め、FPSゲームでの高速索敵、混雑した道路での危険標識察知、そして大量のドキュメントを精査する情報処理能力を劇的に研ぎ澄まします。"
   ],
   benchmarks: {
-    title: "動的視覚探索・選択的注意ベンチマーク基準",
+    title: "視覚探索と選択的注意の参考基準",
     headers: ["評価ランク / 階級", "コード特定成功数 (45秒)", "平均探索固視潜時", "ノイズ識別精度", "神経認知的処理段階"],
     rows: [
       ["神業 / プロ特級 (Top 1%)", "18回 以上", "< 180 ms", "96% 以上", "並列的ポップアウト抽出とトップダウン型ガイド探索の完全融合 (Wolfe, 2007)"],
@@ -259,7 +261,7 @@ const guideData = {
     note: "認知心理学および視覚探索理論文献（Treisman & Gelade 1980; Wolfe 2007; Duncan & Humphreys 1989; Posner 1980）に基づく客観的パフォーマンス基準です。"
   },
   techniques: {
-    title: "視覚探索スピードを飛躍させる4大実践テクニック",
+    title: "グリッドの標的を速く正確に見つける4つの方法",
     items: [
       {
         name: "並列ポップアウト特徴抽出 (Parallel Pop-Out Feature Extraction)",
@@ -329,7 +331,7 @@ export default function LocalizedEntropicGridJaPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
 
-      <EntropicGridClient copy={{ title: "視覚探索テスト・動的グリッド探索トレーニング", subtitle: "動的ノイズ遮断＆選択的視覚注意検査" }} />
+      <EntropicGridClient copy={{ title: "視覚探索トレーニング", subtitle: "選択的注意と視覚的走査" }} />
       <DrillGuide guide={guideData} />
       <div className="max-w-6xl mx-auto px-4 pb-12">
         <RelatedDrills currentCategory="visual" currentHref="https://skilldrills.online/ja/drills/visual/visual-recognition/entropic-grid" />

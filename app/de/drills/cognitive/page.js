@@ -6,18 +6,17 @@ import { getLocalizedDrill } from '@/lib/i18n/drillNames';
 const cognitiveDrills = DRILLS.filter((d) => d.category === 'cognitive');
 
 export const metadata = {
-  title: 'Gehirntraining & Kognitives Training Kostenlos | SkillDrills',
-  description: 'Kostenloses Gehirntraining & kognitives Training online. 8 wissenschaftliche Drills für Konzentration, Verarbeitungsgeschwindigkeit & Schulte-Gitter.',
+  title: 'Gehirntraining & Konzentration online | SkillDrills',
+  description: 'Kostenlose Browser-Drills für Konzentration, Gedächtnis, Reaktionszeit und Verarbeitungsgeschwindigkeit. 8 Übungen ohne Anmeldung.',
   keywords: [
-    'Gehirntraining kostenlos online', 'Kognitives Training online', 'Konzentrationstraining online',
-    'Aufmerksamkeitstraining PC', 'Verarbeitungsgeschwindigkeit Test', 'Stroop Test online kostenlos',
-    'Schulte Tabelle online', 'Geteiltes Aufmerksamkeit Training', 'Arbeitsgedächtnis trainieren',
-    'Exekutive Funktionen stärken', 'Gehirnjogging Übungen kostenlos', 'Multitasking Fähigkeit testen',
-    'Mentale Agilität Training', 'Esports Kognitionstraining', 'Demenz Vorbeugung Gehirntraining'
+    'Gehirntraining kostenlos', 'Gehirnjogging', 'Konzentrationstest online', 'kognitives Training',
+    'Gedächtnistraining', 'Reaktionszeit testen', 'Verarbeitungsgeschwindigkeit Test',
+    'Stroop Test', 'Schulte Tabelle', 'Aufmerksamkeit trainieren', 'Arbeitsgedächtnis trainieren',
+    'Gehirnspiele online', 'Denksport kostenlos', 'geteilte Aufmerksamkeit Test', 'mentale Agilität'
   ],
   openGraph: {
-    title: 'Gehirntraining & Kognitives Training Kostenlos | SkillDrills',
-    description: 'Kostenloses Gehirntraining & kognitives Training online. 8 wissenschaftliche Drills für Konzentration, Verarbeitungsgeschwindigkeit & Schulte-Gitter.',
+    title: 'Gehirntraining & Konzentration online | SkillDrills',
+    description: 'Kostenlose Browser-Drills für Konzentration, Gedächtnis, Reaktionszeit und Verarbeitungsgeschwindigkeit. 8 Übungen ohne Anmeldung.',
     type: 'website',
     url: 'https://skilldrills.online/de/drills/cognitive',
     siteName: 'SkillDrills',
@@ -26,8 +25,8 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Gehirntraining & Kognitives Training Kostenlos | SkillDrills',
-    description: 'Konzentration, Stroop-Effekt, Verarbeitungsgeschwindigkeit und Schulte-Tabellen: 8 wissenschaftliche Drills kostenlos im Browser.',
+    title: 'Gehirntraining & Konzentration online | SkillDrills',
+    description: '8 kognitive Übungen für Konzentration, Gedächtnis, Reaktion und Verarbeitungsgeschwindigkeit kostenlos im Browser.',
     images: ['https://skilldrills.online/icons/icon-512x512.png'],
   },
   robots: { index: true, follow: true },
@@ -50,6 +49,8 @@ const breadcrumbSchema = {
 const collectionSchema = {
   "@context": "https://schema.org",
   "@type": "CollectionPage",
+  "inLanguage": "de-DE",
+  "dateModified": "2026-09-20",
   "name": "Kostenloses Gehirntraining & Kognitive Übungen (8 Drills)",
   "url": "https://skilldrills.online/de/drills/cognitive",
   "description": "8 wissenschaftliche Drills für selektive Aufmerksamkeit, Arbeitsgedächtnis, Stroop-Interferenz, visuelle Verarbeitungsgeschwindigkeit und Schulte-Tabellen.",
@@ -67,6 +68,8 @@ const collectionSchema = {
 const faqSchema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
+  "inLanguage": "de-DE",
+  "dateModified": "2026-09-20",
   "mainEntity": [
     {
       "@type": "Question",

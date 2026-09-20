@@ -6,29 +6,22 @@ import RelatedDrills from '@/components/drill/RelatedDrills';
 import { pickSources } from '@/lib/drillSources';
 
 // ============================================================
-// SEO RESEARCH FINDINGS — de-DE (motor / hand-eye-coordination / aim-trainer)
-// PRIMARY DOMESTIC: "aim trainer" — 917 exact / 1,376 broad Bing searches/mo (Domestic #1 winner in Germany)
-//                   "aim test" — 77 exact / 81 broad searches/mo
-//                   "aim trainer online" — 23 exact / 30 broad searches/mo
-// SECONDARY / LSI:
-//                   "valorant aim trainer" — 64 exact searches/mo
-//                   "maus präzision testen" — Gaming mouse accuracy query
-//                   "reaktionstest" — General speed query
-// WINNER TITLE:     Aim Trainer Online – Kostenloser FPS Aim Test & Maus-Präzisionstraining | SkillDrills
+// Native research: Aim Trainer online, Aim Trainer kostenlos, Mauspräzision testen,
+// FPS Aim Training, Zielerfassung, Micro-Flick Training, Aim Test, Reaktionstest Maus,
+// Valorant Aim Training und CS2 Aim Trainer.
 // ============================================================
 
 export const metadata = {
-  title: "Aim Trainer Online – FPS Maus-Präzision | SkillDrills",
-  description: "Kostenloser Aim Trainer online im Browser: Trainiere Mauspräzision, Micro-Flicks und Reaktionsgeschwindigkeit nach Fitts Gesetz ohne Installation.",
-  keywords: ['aim trainer online', 'fps aim trainer kostenlos', 'maus praezisionstraining', 'aim test online', 'micro flick training', 'fitts gesetz aim', 'aim trainer browser', 'zielerfassung test', 'reaktionszeit maus test', 'aimbot training legal', 'valorant aim warm up', 'cs2 aim trainer online'],
+  title: "Aim Trainer online | Mauspräzision testen | SkillDrills",
+  description: "Kostenloser Aim Trainer im Browser: Teste Mauspräzision, Zielerfassung und Klicktempo für FPS, CS2 und VALORANT ohne Download.",
+  keywords: ['aim trainer online', 'aim trainer kostenlos', 'mauspräzision testen', 'fps aim training', 'zielerfassung', 'micro-flick training', 'aim test', 'reaktionstest maus', 'valorant aim training', 'cs2 aim trainer'],
   alternates: {
     canonical: 'https://skilldrills.online/de/drills/motor/hand-eye-coordination/aim-trainer',
     languages: getAlternateLanguages('/drills/motor/hand-eye-coordination/aim-trainer'),
   },
   openGraph: {
-    title: 'Aim Trainer Online – Kostenloser FPS Aim Test & Maus-Präzisionstraining | SkillDrills',
-    description:
-      'Kostenloser FPS Aim Trainer im Browser. Verbessere deine Maus-Präzision und Klick-Timing mit dynamischer Schwierigkeitsskalierung.',
+    title: 'Aim Trainer online | Mauspräzision testen | SkillDrills',
+    description: 'Kostenloses FPS-Aim-Training im Browser für Mauspräzision, Zielerfassung und Klicktempo.',
     url: 'https://skilldrills.online/de/drills/motor/hand-eye-coordination/aim-trainer',
     siteName: 'SkillDrills',
     locale: 'de_DE',
@@ -36,9 +29,8 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Aim Trainer Online – Kostenloser FPS Aim Test & Maus-Präzisionstraining | SkillDrills',
-    description:
-      'Kostenloses Maus-Präzisionstraining im Browser. Trainiere Micro-Flicks und Treffsicherheit für Taktik-Shooter.',
+    title: 'Aim Trainer online | Mauspräzision testen | SkillDrills',
+    description: 'Browsertraining für Mauspräzision, Micro-Flicks und Treffsicherheit in FPS-Spielen.',
   },
   robots: { index: true, follow: true },
 };
@@ -60,6 +52,7 @@ const breadcrumbSchema = {
 const softwareApplicationSchema = {
   '@context': 'https://schema.org',
   '@type': 'SoftwareApplication',
+  inLanguage: 'de-DE',
   name: 'Aim Trainer Online – Kostenloser FPS Aim Test',
   alternateName: ['Aim Trainer', 'FPS Aim Trainer', 'Maus Präzisionstest', 'Aim Trainer Online'],
   applicationCategory: 'HealthApplication',
@@ -74,6 +67,7 @@ const softwareApplicationSchema = {
 const webAppSchema = {
   '@context': 'https://schema.org',
   '@type': 'WebApplication',
+  inLanguage: 'de-DE',
   name: 'Aim Trainer Online — Kostenloses FPS Präzisionstraining | SkillDrills',
   url: 'https://skilldrills.online/de/drills/motor/hand-eye-coordination/aim-trainer',
   description:
@@ -92,10 +86,11 @@ const webAppSchema = {
 const videoGameSchema = {
   "@context": "https://schema.org",
   "@type": "VideoGame",
+  "inLanguage": "de-DE",
   "name": "Aim Trainer Online",
   "url": "https://skilldrills.online/de/drills/motor/hand-eye-coordination/aim-trainer",
-  "description": "Free online browser-based 2D aim trainer for FPS gamers. Practice target acquisition, mouse accuracy, and click timing.",
-  "dateModified": "2026-09-11",
+  "description": "Kostenloser browserbasierter 2D-Aim-Trainer für FPS-Spieler: Trainiere Zielerfassung, Mauspräzision und Klicktempo.",
+  "dateModified": "2026-09-20",
   "gamePlatform": "Web Browser",
   "genre": ["Aim Trainer", "FPS Training", "Hand-Eye Coordination", "Reaction Speed"],
   "playMode": "SinglePlayer",
@@ -107,6 +102,7 @@ const videoGameSchema = {
 const howToSchema = {
   '@context': 'https://schema.org',
   '@type': 'HowTo',
+  inLanguage: 'de-DE',
   name: 'Anleitung zum Aim Training im Browser',
   description: 'Schritt-für-Schritt-Anleitung zur Steigerung deiner Zielgenauigkeit mit dem SkillDrills Aim Trainer.',
   step: [
@@ -148,7 +144,8 @@ const howToSchema = {
 const faqSchema = {
   '@context': 'https://schema.org',
   '@type': 'FAQPage',
-  dateModified: '2026-09-11',
+  inLanguage: 'de-DE',
+  dateModified: '2026-09-20',
   mainEntity: [
     {
       '@type': 'Question',
@@ -251,7 +248,7 @@ export default function AimTrainerGermanPage() {
       <AimTrainerClient
         copy={{
           title: 'Aim Trainer Online',
-          subtitle: 'Dynamische Zielerfassung & Präzises Klick-Timing • Endlose Level-Progression',
+          subtitle: 'Zielerfassung • Mauspräzision • Micro-Flick-Training',
           caption: 'Erfasse und klicke sich bewegende Ziele so schnell und präzise wie möglich, bevor sie verschwinden. Basiert auf Fitts Gesetz.',
           startButtonText: 'TRAINING STARTEN',
           playAgainText: 'Erneut Spielen',

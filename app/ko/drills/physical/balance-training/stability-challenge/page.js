@@ -6,7 +6,7 @@ import { pickSources } from '@/lib/drillSources';
 
 // ============================================================
 // SEO RESEARCH FINDINGS — South Korea (KR / KO)
-// Primary Intent: 마우스 흔들림 보정, 에임 흔들림 방지, 마우스 손떨림 및 균형감각 테스트
+// Native SERP intent: 마우스 에임 안정성, 에임 흔들림 보정, 마우스 정밀도 테스트
 // Target Queries:
 //   - "마우스 흔들림 보정" (High-intent mouse shake/jitter correction)
 //   - "에임 흔들림" / "발로란트 에임 흔들림" (Aim jitter & recoil displacement)
@@ -16,27 +16,27 @@ import { pickSources } from '@/lib/drillSources';
 // ============================================================
 
 export const metadata = {
-  title: "마우스 흔들림 보정 & 에임 안정성 테스트 – 무료 균형 감각 훈련 | SkillDrills",
-  description: "무료 온라인 마우스 흔들림 보정 및 에임 안정성 테스트. 무작위 외력과 바람 저항 벡터에 맞서 크로스헤어를 안전 구역 중앙에 유지하며 신경근 제동력과 자세 평형 감각을 과학적으로 단련합니다.",
+  title: "마우스 에임 안정성 테스트 | SkillDrills",
+  description: "무료 브라우저 에임 훈련. 움직이는 힘에 맞서 조준선을 중앙에 유지하며 마우스 손떨림, 반동 제어, 정밀 조작을 연습하세요.",
   keywords: [
-    "마우스 흔들림 보정",
-    "에임 흔들림",
-    "마우스 커서 흔들림",
-    "온라인 균형감각 테스트",
     "마우스 에임 안정성",
-    "마우스 제동력 훈련",
-    "발로란트 에임 흔들림",
-    "반동 제어 훈련",
+    "에임 흔들림 보정",
     "마우스 손떨림 보정",
-    "외력 저항 에임 훈련"
+    "마우스 정밀도 테스트",
+    "온라인 균형감각 테스트",
+    "마우스 반동 제어 훈련",
+    "발로란트 에임 안정성",
+    "커서 흔들림 줄이기",
+    "에임 안정화 연습",
+    "FPS 마우스 조작 연습"
   ],
   alternates: {
     canonical: 'https://skilldrills.online/ko/drills/physical/balance-training/stability-challenge',
     languages: getAlternateLanguages('/drills/physical/balance-training/stability-challenge'),
   },
   openGraph: {
-    title: "마우스 흔들림 보정 & 에임 안정성 테스트 – 무료 균형 감각 훈련 | SkillDrills",
-    description: "무료 온라인 마우스 흔들림 보정 및 에임 안정성 테스트. 무작위 외력과 바람 저항 벡터에 맞서 크로스헤어를 안전 구역 중앙에 유지하며 신경근 제동력과 자세 평형 감각을 과학적으로 단련합니다.",
+    title: "마우스 에임 안정성 테스트 | SkillDrills",
+    description: "조준선을 중앙에 유지하는 무료 브라우저 훈련으로 손떨림, 반동 제어, 마우스 정밀 조작을 연습하세요.",
     url: 'https://skilldrills.online/ko/drills/physical/balance-training/stability-challenge',
     siteName: 'SkillDrills',
     locale: 'ko_KR',
@@ -44,8 +44,8 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: "마우스 흔들림 보정 & 에임 안정성 테스트 – 무료 균형 감각 훈련 | SkillDrills",
-    description: "무료 온라인 마우스 흔들림 보정 및 에임 안정성 테스트. 무작위 외력과 바람 저항 벡터에 맞서 크로스헤어를 안전 구역 중앙에 유지하며 신경근 제동력과 자세 평형 감각을 과학적으로 단련합니다.",
+    title: "마우스 에임 안정성 테스트 | SkillDrills",
+    description: "조준선을 중앙에 유지하는 무료 브라우저 훈련으로 손떨림, 반동 제어, 마우스 정밀 조작을 연습하세요.",
   },
   robots: { index: true, follow: true },
 };
@@ -100,7 +100,7 @@ const softwareApplicationSchema = {
     "url": "https://skilldrills.online/ko"
   },
   "inLanguage": "ko",
-  "dateModified": "2026-09-12"
+  "dateModified": "2026-09-20"
 };
 
 const webApplicationSchema = {
@@ -117,7 +117,7 @@ const webApplicationSchema = {
   },
   "url": "https://skilldrills.online/ko/drills/physical/balance-training/stability-challenge",
   "inLanguage": "ko",
-  "dateModified": "2026-09-12"
+  "dateModified": "2026-09-20"
 };
 
 const videoGameSchema = {
@@ -141,13 +141,16 @@ const videoGameSchema = {
     "@type": "Offer",
     "price": "0",
     "priceCurrency": "USD"
-  }
+  },
+  "inLanguage": "ko",
+  "dateModified": "2026-09-20"
 };
 
 const faqSchema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
-  "dateModified": "2026-09-12",
+  "inLanguage": "ko",
+  "dateModified": "2026-09-20",
   "mainEntity": [
     {
       "@type": "Question",
@@ -362,8 +365,8 @@ export default function StabilityChallengeKoPage() {
       />
       <StabilityChallengeClient
         copy={{
-          title: "마우스 흔들림 보정 & 에임 안정성 테스트",
-          subtitle: "외력 저항 벡터 상쇄 및 크로스헤어 미세 제동력 훈련",
+          title: "마우스 에임 안정성 테스트",
+          subtitle: "흔들리는 조준선을 중앙에 유지하기",
           rules: [
             { title: "중앙 안전 구역 사수", text: "동적으로 밀려오는 외력(바람 저항)에 맞서 조준선을 중앙 원 안에 안정적으로 유지하세요." },
             { title: "콤보 가속 배율 시스템", text: "안전 구역 내에서 흔들림 없이 유지할수록 콤보 배율이 최대 3.0배까지 상승하여 점수가 폭발합니다." },

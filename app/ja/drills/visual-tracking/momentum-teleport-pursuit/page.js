@@ -1,5 +1,6 @@
 import MomentumTeleportPursuitClient from '@/app/drills/visual-tracking/momentum-teleport-pursuit/MomentumTeleportPursuitClientLoader';
 import DrillGuide from '@/components/drill/DrillGuide';
+import DrillFooter from '@/components/drill/DrillFooter';
 import RelatedDrills from '@/components/drill/RelatedDrills';
 import { getAlternateLanguages } from '@/lib/i18n/locales';
 import { pickSources } from '@/lib/drillSources';
@@ -14,25 +15,25 @@ import { pickSources } from '@/lib/drillSources';
 // ============================================================
 
 export const metadata = {
-  title: "テレポート追従エイムトレーニング・サッケード再捕捉テスト – 瞬間移動標的捕捉＆慣性追従 | SkillDrills",
-  description: "突発的にテレポート（位置跳躍）する標的を跳躍性眼球運動（サッケード）で即座に再捕捉し、速度慣性を予測して滑動性追従へ同期させる無料アイトラッキング練習。登録不要。",
+  title: "瞬間移動標的の視線再捕捉 | SkillDrills",
+  description: "瞬間移動する標的をサッケードで見つけ直し、動きの追視へ戻る無料の眼球運動トレーニング。ブラウザで練習できます。",
   keywords: [
-    "テレポート エイム 練習",
-    "サッケード再捕捉 トレーニング",
-    "瞬間移動 視覚追従",
-    "動体視力 視線跳躍 訓練",
-    "ターゲット再捕捉 練習",
-    "慣性追従 動体視力",
-    "サッケード着地 エイム",
-    "フリック サッケード 追従",
-    "FPS テレポート 対策",
-    "視線再配置 トレーニング",
-    "跳躍先読み訓練",
-    "視線跳躍 反射神経 測定"
+    "瞬間移動 標的 眼球運動",
+    "サッカード 再捕捉",
+    "視線ジャンプ 標的追跡",
+    "眼球運動 トレーニング",
+    "動体視力 トレーニング",
+    "視標 追視",
+    "予測性サッカード",
+    "視線再配置 練習",
+    "標的を見失う 再捕捉",
+    "動く標的 視線追従",
+    "サッカード 追視",
+    "無料 視線追従 練習"
   ],
   openGraph: {
-    title: "テレポート追従エイムトレーニング・サッケード再捕捉テスト – 瞬間移動標的捕捉＆慣性追従 | SkillDrills",
-    description: "突発的にテレポート（位置跳躍）する標的を跳躍性眼球運動（サッケード）で即座に再捕捉し、速度慣性を予測して滑動性追従へ同期させる無料アイトラッキング練習。",
+    title: "瞬間移動標的の視線再捕捉 | SkillDrills",
+    description: "瞬間移動する標的を見つけ直し、動きの追視へ戻る無料の眼球運動トレーニング。",
     type: "website",
     url: "https://skilldrills.online/ja/drills/visual-tracking/momentum-teleport-pursuit",
     siteName: "SkillDrills",
@@ -40,8 +41,8 @@ export const metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "テレポート追従エイムトレーニング・サッケード再捕捉テスト – 瞬間移動標的捕捉＆慣性追従 | SkillDrills",
-    description: "瞬間移動する標的へ瞬時にサッケード跳躍し、速度慣性を引き継いで滑動追従へ移行するハイブリッド動体視力訓練。",
+    title: "瞬間移動標的の再捕捉練習 | SkillDrills",
+    description: "位置が変わった標的を見つけ直し、動きの追視へ戻る練習です。",
   },
   robots: { index: true, follow: true },
   alternates: {
@@ -66,13 +67,13 @@ const softwareApplicationSchema = {
   "@type": "SoftwareApplication",
   "name": "テレポート追従エイムトレーニング・サッケード再捕捉テスト",
   "applicationCategory": "HealthApplication",
-  "operatingSystem": "All",
+  "operatingSystem": "ブラウザ",
   "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
   "description": "瞬間移動（テレポート）する標的へ瞬時にサッケード跳躍し、速度慣性を引き継いで滑動追従へ移行するハイブリッド動体視力テスト・トレーニングツール。",
   "url": "https://skilldrills.online/ja/drills/visual-tracking/momentum-teleport-pursuit",
   "publisher": { "@type": "Organization", "name": "SkillDrills", "url": "https://skilldrills.online/ja" },
   "inLanguage": "ja",
-  "dateModified": "2026-09-15"
+  "dateModified": "2026-09-20"
 };
 
 const webAppSchema = {
@@ -80,12 +81,12 @@ const webAppSchema = {
   "@type": "WebApplication",
   "name": "テレポート追従エイムトレーニング・サッケード再捕捉テスト – 瞬間移動標的捕捉＆慣性追従 | SkillDrills",
   "applicationCategory": "EducationalApplication",
-  "operatingSystem": "All",
+  "operatingSystem": "ブラウザ",
   "browserRequirements": "HTML5 Canvas対応ブラウザ（Chrome, Edge, Firefox, Safari）",
   "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
   "url": "https://skilldrills.online/ja/drills/visual-tracking/momentum-teleport-pursuit",
   "inLanguage": "ja",
-  "dateModified": "2026-09-15"
+  "dateModified": "2026-09-20"
 };
 
 const videoGameSchema = {
@@ -94,8 +95,9 @@ const videoGameSchema = {
   "name": "テレポート追従エイムトレーニング・サッケード再捕捉テスト",
   "url": "https://skilldrills.online/ja/drills/visual-tracking/momentum-teleport-pursuit",
   "description": "画面内を突発テレポートする慣性ターゲットへ瞬時に視線を跳躍させ、着地直後から滑らかに追従を再開するリアクティブアイトラッキングゲーム。",
-  "genre": ["Action", "Brain Game", "Eye Tracking", "Vision Training"],
-  "gamePlatform": ["Web Browser", "Desktop", "Mobile"],
+  "genre": ["眼球運動トレーニング", "スポーツビジョン", "視線再捕捉"],
+  "gamePlatform": ["ブラウザ"],
+  "dateModified": "2026-09-20",
   "applicationCategory": "Game",
   "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
 };
@@ -103,6 +105,7 @@ const videoGameSchema = {
 const howToSchema = {
   "@context": "https://schema.org",
   "@type": "HowTo",
+  "dateModified": "2026-09-20",
   "name": "テレポート追従エイムトレーニングの測定・実践手順",
   "description": "突発的な空間跳躍標的に対してサッケード再捕捉と慣性追従を正しく成立させる4段階のステップ。",
   "step": [
@@ -140,6 +143,7 @@ const howToSchema = {
 const faqSchema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
+  "dateModified": "2026-09-20",
   "mainEntity": [
     {
       "@type": "Question",
@@ -170,7 +174,7 @@ const faqSchema = {
       "name": "視線が跳躍している最中は画面が見えていない（サッケード抑制）というのは本当ですか？",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "はい。人間がサッケード眼球運動を行っている最中（約20〜40ミリ秒間）、網膜像のブレによって脳が眩惑されるのを防ぐため、視覚入力が大脳皮質レベルで一時的に遮断される生理現象（サッケード抑制 / Saccadic Suppression）が起こります。そのため着地直後のわずかなミリ秒でいかに素早く視覚認識を再開し、動いている標的を再ロックできるかが極めて重要になります。"
+        "text": "はい。人間がサッケード眼球運動を行っている最中（約20〜40ミリ秒間）、網膜像のブレによって脳が眩惑されるのを防ぐため、視覚入力が大脳皮質レベルで一時的に遮断される生理現象（サッケード抑制）が起こります。そのため着地直後のわずかなミリ秒でいかに素早く視覚認識を再開し、動いている標的を再捕捉できるかが極めて重要になります。"
       }
     },
     {
@@ -227,14 +231,14 @@ const faqSchema = {
 const guideProps = {
   heading: "テレポート追従エイムトレーニング・サッケード再捕捉の神経科学基準",
   intro: [
-    "モーメンタム・テレポート追従（Momentum Teleport Pursuit）とは、速度慣性を持って移動する標的が突発的に別の空間座標へ瞬間跳躍した際、大角度の弾道性サッケード（跳躍眼球運動）で新位置を再捕捉し、着地した瞬間に標的の速度ベクトルを小脳から引き出して滑動性追従（スムーズパシュート）へと復帰させる複合型アイトラッキング課題です。空間的な位置不連続性と連続的な速度慣性が同時に課される極めて過酷な環境において、人間の視覚運動制御系の限界性能を測定・強化します（Rashbass, 1961; Findlay & Walker, 1999）。",
+    "瞬間移動標的の視線再捕捉は、動いていた標的が別の座標へ移ったあと、サッケードで見つけ直し、その動きの追視へ戻る課題です。位置の変化と連続した動きを同時に扱いますが、眼の病気を調べたり治療したりする検査ではありません。",
     "位置変位系（サッケード）と速度追尾系（パシュート）の神経的分離と統合：Rashbass（1961）が解明した通り、視覚運動系は標的の『位置誤差（網膜位置ステップ）』を中脳上丘（Superior Colliculus）と前頭眼野（FEF）を介したサッケード回路で即座にキャンセルし、一方の『網膜スリップ速度』をMT/MST野から小脳片葉・前庭小脳へと伝達されるパシュート回路で制御します。テレポート発生時、視覚系はこれら2つの独立した運動プログラムをミリ秒単位で連動させ、サッケードの着地減速パルスが終了したまさにその瞬間に目標速度に一致したパシュートパルスを出力しなければなりません（Krauzlis, 2004）。",
-    "サッケード抑制（Saccadic Suppression）と着地直後の速度記憶保持：眼球が毎秒数百度の猛スピードで空間を跳躍している最中は、脳幹網様体による能動的ゲーティングによって視覚入力が一時的に抑制されます（Bahill et al., 1980）。着地後に視覚がクリアになった瞬間、標的の新しい運動状態を目視確認してからパシュートを開始すると、神経伝達遅延（約100〜130ms）によって視線は必ず後方へ取り残されます。これを防ぐためには、テレポート前に観察した速度ベクトルを小脳内部モデル内に短時間保持（Velocity Memory Cache）し、着地と同時に予期的に眼球を加速させる高度な認知的先読みが不可欠です（Barnes, 2008）。",
+    "サッケード抑制と着地直後の速度記憶保持：眼球が毎秒数百度の猛スピードで空間を跳躍している最中は、脳幹網様体による能動的ゲーティングによって視覚入力が一時的に抑制されます（Bahill et al., 1980）。着地後に視覚が明瞭になった瞬間、標的の新しい運動状態を目視確認してから追視を開始すると、神経伝達遅延（約100〜130ms）によって視線は必ず後方へ取り残されます。これを防ぐためには、瞬間移動前に観察した速度ベクトルを小脳内部モデル内に短時間保持し、着地と同時に予期的に眼球を加速させる高度な認知的先読みが不可欠です（Barnes, 2008）。",
     "FPSエイムにおける『フリック後トラッキング断絶』の解消と競技応用：多くのFPSプレイヤーは、突発的に現れた敵へ初弾フリック（サッケード）を当てることは得意でも、フリック着地直後に敵が移動している方向へ視線が硬直し、敵を見失う『フリック後トラッキングの断絶』という致命的な課題を抱えています。本ドリルはテレポートを繰り返す標的に対し、フリックの着地と同時に吸い付くようなトラッキングへ移行する神経回路を徹底的に反復強化します。Apex LegendsやOverwatchのような高速立体機動シューターにおいて、ブリンクスキルやポータル通過後の敵を瞬時に削り切るエイム力を授けます（Woods et al., 2015）。"
   ],
   benchmarks: {
-    title: "テレポート再捕捉・慣性追従パフォーマンス評価指標 (Teleport Re-acquisition Benchmarks)",
-    headers: ["習熟度クラス", "サッケード再捕捉潜時 (Re-acquisition)", "着地オーバーシュート率", "慣性同期効率 (Velocity Match)", "神経生理学的達成水準"],
+    title: "瞬間移動標的の再捕捉・追視パフォーマンス指標",
+    headers: ["習熟度", "標的を見つけ直す時間", "到着時のずれ", "動きの同期", "実践的な見方"],
     rows: [
       ["エリート (プロエイマー級)", "140ms 未満", "3% 未満 (神速静止)", "97% 以上", "卓越した弾道サッケード制御。テレポート着地直後に標的速度へ完全同期し、視線迷いが皆無"],
       ["アドバンス (競技ゲーマー級)", "140 ～ 180ms", "3% ～ 6%", "91% ～ 96%", "迅速なサッケード再捕捉。着地時にごくわずかな補正が見られる程度で、高いトラッキング復帰力を維持"],
@@ -283,12 +287,12 @@ const guideProps = {
   })),
   sources: pickSources('rashbass1961', 'bahill1980', 'findlay1999', 'krauzlis2004', 'barnes2008', 'woods2015'),
   related: [
-    { href: "/ja/drills/visual-tracking/constant-slow-pursuit", label: "低速追従眼球運動トレーニング (Constant Slow)" },
-    { href: "/ja/drills/visual-tracking/directional-chaos-pursuit", label: "カオス方向追従テスト (Directional Chaos)" },
-    { href: "/ja/drills/visual-tracking/dynamic-evasion-pursuit", label: "リアクティブ追従訓練 (Dynamic Evasion)" },
-    { href: "/ja/drills/visual-tracking/ghosting-suppress-pursuit", label: "残像抑制固視トレーニング (Ghosting Suppress)" },
-    { href: "/ja/drills/visual-tracking/infinity-pursuit", label: "8の字眼球運動トレーニング (Infinity)" },
-    { href: "/ja/drills/visual-tracking/predictive-pursuit", label: "予測アイトラッキング (Predictive)" }
+    { href: "/ja/drills/visual-tracking/constant-slow-pursuit", label: "低速視線追従トレーニング" },
+    { href: "/ja/drills/visual-tracking/directional-chaos-pursuit", label: "方向変化の視線追従" },
+    { href: "/ja/drills/visual-tracking/dynamic-evasion-pursuit", label: "動く標的の追従訓練" },
+    { href: "/ja/drills/visual-tracking/ghosting-suppress-pursuit", label: "残像を抑える固視訓練" },
+    { href: "/ja/drills/visual-tracking/infinity-pursuit", label: "8の字眼球運動トレーニング" },
+    { href: "/ja/drills/visual-tracking/predictive-pursuit", label: "予測視線追従トレーニング" }
   ]
 };
 
@@ -304,9 +308,9 @@ export default function JapaneseMomentumTeleportPage() {
 
       <MomentumTeleportPursuitClient
         copy={{
-          title: "テレポート追従エイムトレーニング：瞬間移動標的のサッケード再捕捉と慣性追従",
-          subtitle: "空間座標跳躍に対する弾道サッケードと着地後滑動追従（Post-saccadic Pursuit）の統合テスト",
-          description: "画面内を一定の運動慣性で移動しながら突発的に異なる座標へテレポート（瞬間跳躍）するターゲットを追尾するハイブリッド動体視力テスト。位置跳躍（ステップ変位）を弾道サッケードで埋め、着地直後に標的の速度ベクトルと眼球速度を即座に一致させる神経機構（Rashbass, 1961; Findlay & Walker, 1999）を強化。サッケード抑制直後の視覚再開と小脳の速度記憶（Barnes, 2008）を鍛えます。無料・ブラウザで即座に測定可能。"
+          title: "瞬間移動標的の視線再捕捉",
+          subtitle: "見つけ直して動きの追視へ戻る練習",
+          description: "位置が変わった標的を見つけ直し、その後の動きを追視します。時間、正確さ、快適さを同じ条件で比較できます。"
         }}
       />
 
@@ -315,6 +319,7 @@ export default function JapaneseMomentumTeleportPage() {
       <div className="max-w-6xl mx-auto px-4 pb-12">
         <RelatedDrills currentCategory="visual-tracking" currentHref="https://skilldrills.online/ja/drills/visual-tracking/momentum-teleport-pursuit" />
       </div>
+      <DrillFooter />
     </>
   );
 }

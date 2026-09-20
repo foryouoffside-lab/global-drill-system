@@ -2,28 +2,29 @@ import KeyboardRecognitionClient from '@/app/drills/motor/movement-speed/keyboar
 import { getAlternateLanguages } from '@/lib/i18n/locales';
 import DrillGuide from '@/components/drill/DrillGuide';
 import RelatedDrills from '@/components/drill/RelatedDrills';
+import DrillFooter from '@/components/drill/DrillFooter';
 import { pickSources } from '@/lib/drillSources';
 
 export const metadata = {
-  title: '키보드 반응속도 테스트 – 온라인 키 입력 속도 측정 | SkillDrills',
-  description: '무료 온라인 키보드 반응속도 테스트 및 키 바인드 훈련기. 화면의 키 프롬프트를 보고 즉각 타건하여 선택 반응 시간(Choice RT)과 키보드 머슬 메모리를 측정하세요.',
+  title: '키보드 반응속도 테스트 | 키 입력 속도 | SkillDrills',
+  description: '화면에 뜬 키를 눌러 키보드 반응속도와 선택 반응 시간을 측정하는 무료 테스트. 브라우저에서 바로 시작하세요.',
   keywords: [
     '키보드 반응속도 테스트',
-    '키보드 반응속도 측정',
     '키 입력 속도 테스트',
+    '키 입력 반응 테스트',
+    '키보드 레이턴시 테스트',
     '키 바인드 연습',
     '게이밍 키보드 반응속도',
-    '키보드 타건 반응속도',
     '선택 반응 시간 테스트',
-    '키보드 머슬 메모리',
-    '키보드 억제 제어 훈련',
+    '키보드 CPS 테스트',
+    '키보드 타건 속도 측정',
     '발로란트 키 바인드 연습',
-    '롤 스킬 키 반응속도',
-    '타자 반응속도 측정',
+    'WASD 반응속도 테스트',
+    '키보드 반사신경 테스트',
   ],
   openGraph: {
-    title: '키보드 반응속도 테스트 – 온라인 키 입력 속도 측정 | SkillDrills',
-    description: '무료 온라인 키보드 반응속도 테스트 및 키 바인드 훈련기. 화면의 키 프롬프트를 보고 즉각 타건하여 선택 반응 시간(Choice RT)과 키보드 머슬 메모리를 측정하세요.',
+    title: '키보드 반응속도 테스트 | 키 입력 속도 | SkillDrills',
+    description: '화면에 뜬 키를 눌러 반응속도와 선택 반응 시간을 측정하는 무료 테스트.',
     type: 'article',
     url: 'https://skilldrills.online/ko/drills/motor/movement-speed/keyboard-recognition',
     siteName: 'SkillDrills',
@@ -31,8 +32,8 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: '키보드 반응속도 테스트 – 온라인 키 입력 속도 측정 | SkillDrills',
-    description: '무료 온라인 키보드 반응속도 테스트 및 키 바인드 훈련기.',
+    title: '키보드 반응속도 테스트 | 키 입력 속도 | SkillDrills',
+    description: '표시된 키를 눌러 키보드 반응속도를 측정하는 무료 테스트.',
   },
   robots: { index: true, follow: true },
   alternates: {
@@ -55,32 +56,35 @@ const breadcrumbSchema = {
 const softwareApplicationSchema = {
   '@context': 'https://schema.org',
   '@type': 'SoftwareApplication',
-  name: '키보드 반응속도 테스트 – 키 바인드 훈련기',
+  inLanguage: 'ko-KR',
+  name: '키보드 반응속도 테스트 – 키 입력 훈련기',
   applicationCategory: 'HealthApplication',
   operatingSystem: 'All',
   offers: { '@type': 'Offer', price: '0', priceCurrency: 'KRW' },
   description: '브라우저 기반 무료 키보드 반응속도 측정기. 선택 반응 시간(Choice RT), 키보드 공간 인지, 함정 프롬프트 억제 제어 능력을 과학적으로 측정합니다.',
   url: 'https://skilldrills.online/ko/drills/motor/movement-speed/keyboard-recognition',
   publisher: { '@type': 'Organization', name: 'SkillDrills', url: 'https://skilldrills.online' },
-  dateModified: '2026-09-05',
+  dateModified: '2026-09-20',
 };
 
 const webApplicationSchema = {
   '@context': 'https://schema.org',
   '@type': 'WebApplication',
+  inLanguage: 'ko-KR',
   name: '키보드 반응속도 테스트',
   applicationCategory: 'GameApplication',
   operatingSystem: 'All',
   browserRequirements: 'HTML5 Canvas 및 JavaScript 지원 필요',
   offers: { '@type': 'Offer', price: '0', priceCurrency: 'KRW' },
   url: 'https://skilldrills.online/ko/drills/motor/movement-speed/keyboard-recognition',
-  dateModified: '2026-09-05',
+  dateModified: '2026-09-20',
 };
 
 const videoGameSchema = {
   '@context': 'https://schema.org',
   '@type': 'VideoGame',
-  name: '키보드 반응속도 테스트 – 온라인 키 바인드 훈련기',
+  inLanguage: 'ko-KR',
+  name: '키보드 반응속도 테스트 – 온라인 키 입력 훈련기',
   url: 'https://skilldrills.online/ko/drills/motor/movement-speed/keyboard-recognition',
   description: "힉의 법칙(Hick's Law)에 기반하여 시각적 키 프롬프트에 대응하는 선택 반응 시간을 측정합니다.",
   genre: ['Keyboard Game', 'Action', 'Esports Training'],
@@ -92,6 +96,8 @@ const videoGameSchema = {
 const faqSchema = {
   '@context': 'https://schema.org',
   '@type': 'FAQPage',
+  inLanguage: 'ko-KR',
+  dateModified: '2026-09-20',
   mainEntity: [
     {
       '@type': 'Question',
@@ -179,6 +185,8 @@ const faqSchema = {
 const howToSchema = {
   '@context': 'https://schema.org',
   '@type': 'HowTo',
+  inLanguage: 'ko-KR',
+  dateModified: '2026-09-20',
   name: '키보드 반응속도 및 키 바인드 머슬 메모리 훈련 방법',
   description: '키보드 선택 반응속도와 반사 신경을 극대화하기 위한 단계별 트레이닝 가이드.',
   step: [

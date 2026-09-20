@@ -6,20 +6,20 @@ import { getAlternateLanguages } from '@/lib/i18n/locales';
 import { pickSources } from '@/lib/drillSources';
 
 export const metadata = {
-  title: "반동 제어 연습 – FPS 스프레이 조절 트레이너 | SkillDrills",
-  description: "무료 브라우저 FPS 반동 제어(Recoil Control) 및 스프레이 조절 훈련. 수직 마우스 드래그 속도와 총기별 스프레이 패턴 보정 능력을 단련하여 배그, 발로란트, CS2의 집탄율을 극대화하세요.",
+  title: "반동 제어 연습 | FPS 스프레이 컨트롤 | SkillDrills",
+  description: "무료 브라우저 반동 제어 연습으로 총기별 스프레이 패턴을 익히고 배그·발로란트·CS2 집탄율을 높이세요.",
   keywords: [
     "반동 제어 연습",
-    "FPS 반동 조절 훈련",
-    "배틀그라운드 반동 연습",
-    "에이펙스 반동 제어",
-    "스프레이 제어 연습",
+    "반동 제어",
+    "리코일 연습",
+    "스프레이 제어",
+    "FPS 반동 제어",
+    "반동 제어 테스트",
+    "배그 반동 제어",
     "발로란트 반동 제어",
-    "CS2 스프레이 연습",
+    "CS2 반동 제어",
+    "스프레이 패턴 연습",
     "수직 반동 제어",
-    "에임 트레이너 무료",
-    "에임 반동 제어",
-    "스프레이 패턴 잡는 법",
     "집탄율 향상 훈련"
   ],
   alternates: {
@@ -31,8 +31,8 @@ export const metadata = {
     follow: true,
   },
   openGraph: {
-    title: "반동 제어 연습 – FPS 스프레이 조절 트레이너 | SkillDrills",
-    description: "총기별 반동 패턴과 수직 마우스 드래그 속도를 훈련하는 무료 브라우저 FPS 반동 조절 및 스프레이 제어 트레이너.",
+    title: "반동 제어 연습 | FPS 스프레이 컨트롤 | SkillDrills",
+    description: "총기별 반동 패턴과 수직 드래그를 익히는 무료 브라우저 반동 제어·스프레이 컨트롤 훈련.",
     url: "https://skilldrills.online/ko/drills/fps/recoil-control",
     siteName: 'SkillDrills',
     locale: 'ko_KR',
@@ -40,8 +40,8 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: "반동 제어 연습 – FPS 스프레이 조절 트레이너 | SkillDrills",
-    description: "총기별 반동 패턴과 수직 마우스 드래그 속도를 훈련하는 무료 브라우저 FPS 반동 조절 및 스프레이 제어 트레이너.",
+    title: "반동 제어 연습 | FPS 스프레이 컨트롤 | SkillDrills",
+    description: "총기별 반동 패턴과 수직 드래그를 익히는 무료 브라우저 반동 제어·스프레이 컨트롤 훈련.",
   },
 };
 
@@ -78,7 +78,7 @@ export default function RecoilControlKoPage() {
     "name": "반동 제어 연습 (Recoil Control Trainer)",
     "applicationCategory": "GameApplication",
     "operatingSystem": "Web Browser",
-    "dateModified": "2026-09-11",
+    "dateModified": "2026-09-20",
     "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
     "description": "총기 반동 패턴, 수직 마우스 드래그 속도, 수평 스프레이 상쇄를 훈련하는 무료 브라우저 FPS 반동 제어 트레이너.",
     "genre": "FPS Training / Recoil & Spray Control",
@@ -96,7 +96,7 @@ export default function RecoilControlKoPage() {
     "name": "반동 제어 연습 (Recoil Control Trainer)",
     "url": "https://skilldrills.online/ko/drills/fps/recoil-control",
     "description": "총기 반동 패턴, 수직 마우스 드래그 속도, 수평 스프레이 상쇄를 훈련하는 무료 브라우저 FPS 반동 제어 트레이너.",
-    "dateModified": "2026-09-11",
+    "dateModified": "2026-09-20",
     "gamePlatform": "Web Browser",
     "genre": ["FPS Training", "Aim Trainer", "Recoil Control"],
     "playMode": "SinglePlayer",
@@ -108,7 +108,7 @@ export default function RecoilControlKoPage() {
   const faqSchema = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
-    "dateModified": "2026-09-11",
+    "dateModified": "2026-09-20",
     "mainEntity": [
       {
         "@type": "Question",
@@ -232,7 +232,7 @@ export default function RecoilControlKoPage() {
 
   const copyKo = {
     h1Keyword: "반동 제어 연습",
-    h1Suffix: " - FPS 스프레이 조절 트레이너",
+    h1Suffix: " - FPS 스프레이 컨트롤",
     statScore: "점수",
     statTime: "남은 시간",
     statAccuracy: "정확도",
@@ -245,7 +245,7 @@ export default function RecoilControlKoPage() {
       { num: "3", text: "레벨 상승 메커니즘", highlight: "1400점당 +1 레벨", result: "속도 및 반동 증가" },
       { num: "4", text: "탄창 사격 규율", highlight: "명중률 40% 미만 시", result: "콤보 초기화 (-0.6초)" }
     ],
-    aboutTitle: "반동 제어 및 스프레이 패턴 과학",
+    aboutTitle: "반동 제어와 스프레이 컨트롤 정보",
     aboutIntro: [
       "반동 제어 훈련은 연사 사격 시 총기의 상향 반동과 좌우 탄튐에 맞서 마우스를 지속적으로 미세 조작하는 감각 운동 능력을 배양합니다.",
       "초탄 수직 하향 드래그와 후반 수평 탄튐 상쇄(카운터 스티어링)를 운동 피질에 각인시켜 배틀그라운드, 발로란트, CS2 실전에서 완벽한 집탄을 실현합니다."
@@ -267,9 +267,9 @@ export default function RecoilControlKoPage() {
   };
 
   const recoilGuideKo = {
-    heading: "반동 제어 훈련 생체역학 가이드 및 성능 벤치마크",
+    heading: "반동 제어 연습과 FPS 스프레이 컨트롤 가이드",
     intro: [
-      "반동 제어 트레이너(Recoil Control Trainer)는 총기 고유의 스프레이 패턴, 수직 상승 속도, 수평 흔들림을 상쇄하는 근육 기억을 구축하는 전문 에임 훈련 도구입니다. 카운터 스트라이크 2, 발로란트, 배틀그라운드, 에이펙스 레전드 등 실전 FPS에서는 초탄 헤드샷 한 발로 끝나지 않는 난전이 빈번합니다. 적의 변칙 무빙 속에서도 풀오토 연사를 꽂아 넣는 집탄 제어력이 승패를 가릅니다.",
+      "이 반동 제어 연습은 총기별 스프레이 패턴과 수직 상승을 마우스 드래그로 보정하는 FPS 훈련입니다. 카운터 스트라이크 2, 발로란트, 배틀그라운드, 에이펙스 레전드에서 초탄 이후에도 집탄을 유지해야 하는 교전을 반복하며 실제 플레이에 필요한 스프레이 컨트롤 감각을 익힙니다.",
       "고속 반동 제어의 운동 학습 기전은 Schmidt & Lee(2011)의 일반화 운동 프로그램(GMP 이론)으로 설명됩니다. 10발의 탄환이 700ms 이내에 발사되는 초고속 환경에서는 시각 피드백을 보고 반응할 시간적 여유가 없으므로, 운동 피질에 내재화된 불변 매개변수를 갖는 개방 루프 운동이 즉각 실행되어야 합니다.",
       "이 과정은 Woodworth(1899)의 2성분 조준 모델 및 Meyer et al.(1988)의 최적 하위운동 모델과 일치합니다: 초반 탄도학적 수직 하향 드래그에 이어, 수평 탄튐과 적의 회피에 반응하는 미세 시각 추종 폐루프 보정이 결합되어 극강의 명중률이 완성됩니다.",
       "운동 정밀도는 피츠의 법칙(Fitts, 1954)과 슈미트의 충격량 변동성 모델(Schmidt et al., 1979)을 따릅니다: 마우스를 과도하게 강하게 잡아당기면 근육의 운동 변동성이 커져 오히려 집탄이 망가집니다. 본 도구는 performance.now() 디지털 크로노메트리(Woods et al., 2015)를 적용하여 일정한 속도의 매끄러운 드래그 습관을 정착시킵니다.",

@@ -6,21 +6,19 @@ import { getAlternateLanguages } from '@/lib/i18n/locales';
 import RelatedDrills from '@/components/drill/RelatedDrills';
 
 export const metadata = {
-  title: "Tracking Zigzag – Puntería Contra Movimiento | SkillDrills",
-  description: "Entrena tracking contra zigzag y slide cancels en el navegador. Elimina el overshoot de tu mira y domina objetivos evasivos en Apex Legends y Warzone.",
+  title: "Aim Trainer | Tracking en Zigzag | SkillDrills",
+  description: "Aim trainer gratis en navegador: sigue movimientos en zigzag y slide cancels, y controla el overshoot en duelos FPS.",
   keywords: [
-    "entrenamiento de tracking zigzag",
-    "punteria contra movimiento evasivo",
-    "como seguir enemigos en apex",
-    "tracking de slide cancel warzone",
-    "evitar overshoot en punteria",
-    "tracking de objetivos rapidos fps",
-    "ejercicios de tracking para shooters",
-    "punteria contra movimiento irregular",
-    "como mejorar tracking en overwatch",
-    "cambios de direccion punteria raton",
-    "entrenador de tracking gratis navegador",
-    "duelos de corto alcance fps punteria"
+    "aim trainer",
+    "aim trainer online",
+    "aim trainer valorant",
+    "aim trainer web",
+    "tracking en zigzag",
+    "movimiento evasivo",
+    "slide cancel",
+    "puntería contra movimiento",
+    "tracking apex",
+    "tracking warzone"
   ],
   alternates: {
     canonical: "https://skilldrills.online/es/drills/fps/anti-zigzag-movement-trainer",
@@ -31,8 +29,8 @@ export const metadata = {
     follow: true,
   },
   openGraph: {
-    title: "Tracking Zigzag – Puntería Contra Movimiento | SkillDrills",
-    description: "Entrena tracking contra zigzag y slide cancels en el navegador. Elimina el overshoot de tu mira y domina objetivos evasivos en Apex Legends y Warzone.",
+      title: "Aim Trainer | Tracking en Zigzag | SkillDrills",
+    description: "Aim trainer gratis en navegador: sigue movimientos en zigzag y slide cancels, y controla el overshoot en duelos FPS.",
     url: "https://skilldrills.online/es/drills/fps/anti-zigzag-movement-trainer",
     siteName: 'SkillDrills',
     locale: 'es_ES',
@@ -40,8 +38,8 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: "Tracking Zigzag – Puntería Contra Movimiento | SkillDrills",
-    description: "Entrena tracking contra zigzag y slide cancels en el navegador. Elimina el overshoot de tu mira y domina objetivos evasivos en Apex Legends y Warzone.",
+      title: "Aim Trainer | Tracking en Zigzag | SkillDrills",
+    description: "Aim trainer gratis en navegador: sigue movimientos en zigzag y slide cancels, y controla el overshoot en duelos FPS.",
   },
 };
 
@@ -52,14 +50,14 @@ export default function AntiZigzagEsPage() {
     "itemListElement": [
       { "@type": "ListItem", "position": 1, "name": "SkillDrills", "item": "https://skilldrills.online/es" },
       { "@type": "ListItem", "position": 2, "name": "Entrenamientos FPS", "item": "https://skilldrills.online/es/drills/fps" },
-      { "@type": "ListItem", "position": 3, "name": "Entrenamiento Anti-Zigzag", "item": "https://skilldrills.online/es/drills/fps/anti-zigzag-movement-trainer" }
+      { "@type": "ListItem", "position": 3, "name": "Aim Trainer - tracking en zigzag", "item": "https://skilldrills.online/es/drills/fps/anti-zigzag-movement-trainer" }
     ]
   };
 
   const webAppSchema = {
     "@context": "https://schema.org",
     "@type": "WebApplication",
-    "name": "Anti-Zigzag Aim Trainer",
+    "name": "Aim Trainer - tracking en zigzag",
     "url": "https://skilldrills.online/es/drills/fps/anti-zigzag-movement-trainer",
     "applicationCategory": "GameApplication",
     "operatingSystem": "All",
@@ -75,10 +73,10 @@ export default function AntiZigzagEsPage() {
   const softwareSchema = {
     "@context": "https://schema.org",
     "@type": "SoftwareApplication",
-    "name": "Anti-Zigzag Aim Trainer",
+    "name": "Aim Trainer - tracking en zigzag",
     "applicationCategory": "GameApplication",
     "operatingSystem": "Web Browser",
-    "dateModified": "2026-09-16",
+    "dateModified": "2026-09-20",
     "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
     "description": "Domina el tracking reactivo contra desplazamientos evasivos impredecibles, zigs-zags en V y slide cancels con entrada pura de ratón.",
     "genre": "Entrenamiento FPS / Anti-Zigzag",
@@ -93,10 +91,10 @@ export default function AntiZigzagEsPage() {
   const videoGameSchema = {
     "@context": "https://schema.org",
     "@type": "VideoGame",
-    "name": "Anti-Zigzag Aim Trainer",
+    "name": "Aim Trainer - tracking en zigzag",
     "url": "https://skilldrills.online/es/drills/fps/anti-zigzag-movement-trainer",
     "description": "Entrenador de puntería para tracking reactivo contra movimiento evasivo, zigzags y slide cancels en el navegador.",
-    "dateModified": "2026-09-16",
+    "dateModified": "2026-09-20",
     "gamePlatform": "Web Browser",
     "genre": ["Entrenamiento FPS", "Entrenador de Puntería", "Tracking Reactivo"],
     "playMode": "SinglePlayer",
@@ -108,7 +106,7 @@ export default function AntiZigzagEsPage() {
   const faqSchema = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
-    "dateModified": "2026-09-16",
+    "dateModified": "2026-09-20",
     "mainEntity": [
       {
         "@type": "Question",
@@ -231,9 +229,9 @@ export default function AntiZigzagEsPage() {
   };
 
   const esGuide = {
-    heading: "Guía de Entrenamiento Anti-Zigzag & Biomecánica del Tracking Evasivo",
+    heading: "Aim Trainer para Tracking en Zigzag y Movimiento Evasivo",
     intro: [
-      "En shooters competitivos con dinámicas avanzadas de movimiento —como Apex Legends, Call of Duty: Warzone y Overwatch 2—, los oponentes de alto nivel emplean carreras oblicuas en zigzag, slide cancels y saltos agachados para romper el anclaje de la retícula y generar desincronización visuomotora. Mientras que el tracking suave lineal (Smooth Pursuit) aprovecha la previsibilidad de una trayectoria continua (Krauzlis, 2004), el seguimiento de zigzags somete al aparato motor a una tarea de dirección continua regida por leyes de velocidad-precisión dinámicas (Fitts, 1954; Accot & Zhai, 1997). Aunque los jugadores experimentados muestran una resolución temporal y campo atencional superiores (Green & Bavelier, 2003), los cambios angulares bruscos provocan un deslizamiento retiniano agudo (Rashbass, 1961) que exige desaceleración inmediata y reorientación de muñeca.",
+      "Un aim trainer para tracking en zigzag practica mantener la mira sobre el objetivo durante cambios de dirección, slide cancels y movimiento evasivo. Este drill mide inversiones de sentido, control del overshoot y tiempo de contacto en duelos de Apex, Warzone y Overwatch 2.",
       "El error técnico predominante en tiradores menos experimentados al enfrentarse a evasiones es el overshoot en el ápice externo del giro. Cuando un enemigo traza un zigzag en V, su velocidad horizontal desciende a cero en el vértice exterior antes de acelerar nuevamente cruzando el centro. Intentar perseguir ese giro extremo provoca que la mira salga proyectada y los músculos antagonistas se bloqueen. Los jugadores de élite aplican el anclaje V-Crossover: fijan el foco visual en el corredor central y efectúan microajustes progresivos igualando velocidad en cuanto el enemigo regresa al eje de tiro.",
       "Anti-Zigzag Aim Trainer opera directamente en navegadores modernos mediante la API Pointer Lock de HTML5, con traslación 1:1 de hardware, cronometría por performance.now() y ausencia absoluta de filtrado de ratón. Al neutralizar la variabilidad de muestreo USB (Woods et al., 2015) y evaluar el daño por permanencia continua (dwell time) frente a frecuencias crecientes de cambio de rumbo, este ejercicio desarrolla la calma sensoriomotora requerida para erradicar las sacudidas de pánico y dominar los enfrentamientos más escurridizos.",
       "Criterios de medición: cada cálculo de permanencia se realiza en cliente mediante el temporizador de alta resolución performance.now() del navegador. Factores contextuales: los navegadores redondean marcas temporales a ~1 ms por seguridad contra exploits de microarquitectura; los monitores cuantifican los estímulos en función del refresco (16,7 ms a 60 Hz, 6,9 ms a 144 Hz, 4,1 ms a 240 Hz). El sondeo del ratón añade ~1 ms a 1000 Hz. Variaciones por debajo de 5 ms representan ruido técnico; evalúa tu rendimiento comparando sesiones sobre la misma máquina."
@@ -322,7 +320,7 @@ export default function AntiZigzagEsPage() {
       />
       <AntiZigzagClient
         copy={{
-          startTitle: "Movimiento Anti-Zigzag",
+          startTitle: "Aim Trainer - tracking en zigzag",
           startSubtitle: "Tracking Reactivo • Progresión Infinita de Niveles",
           getReady: "PREPÁRATE",
           pausedTitle: "PAUSADO",
@@ -335,7 +333,9 @@ export default function AntiZigzagEsPage() {
             { num: "3", text: "Progresión de Nivel", highlight: "+1 Nivel / 1400 PTS", result: "Zigzag Adaptativo" },
             { num: "4", text: "Escape de Objetivo", highlight: "Tiempo Expirado", result: "Reinicia Combo (-0.6s)" }
           ],
-          aboutTitle: "Acerca del Entrenamiento de Tracking Anti-Zigzag"
+          h1Keyword: "Aim Trainer",
+          h1Suffix: " — tracking en zigzag",
+          aboutTitle: "Sobre el aim trainer y el tracking en zigzag"
         }}
       />
       <DrillGuide guide={esGuide} />

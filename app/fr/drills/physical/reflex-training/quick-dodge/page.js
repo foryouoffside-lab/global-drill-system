@@ -19,8 +19,8 @@ import { pickSources } from '@/lib/drillSources';
 // ============================================================
 
 export const metadata = {
-  title: "Jeu d'Esquive Souris – Test de Réflexes | SkillDrills",
-  description: "Jeu d'esquive souris gratuit en ligne. Évitez les projectiles au curseur pour tester vos réflexes et votre temps de réaction motrice.",
+  title: "Jeu d’esquive à la souris | Test de réflexes",
+  description: "Jeu d’esquive à la souris gratuit. Évitez les projectiles, survivez plus longtemps et entraînez vos réflexes au navigateur.",
   keywords: [
     "jeu d'esquive souris",
     "jeu pour esquiver à la souris",
@@ -28,22 +28,27 @@ export const metadata = {
     "jeu d'esquive de projectiles",
     "entraînement réflexes souris",
     "micro-mouvements souris esport",
-    "bullet hell entraînement souris en ligne",
-    "temps de réaction moteur esquive",
     "esquive de projectiles en ligne",
-    "jeu de réflexes souris gratuit"
+    "temps de réaction moteur esquive",
+    "jeu de réflexes souris gratuit",
+    "contrôle précis du curseur"
   ],
   alternates: {
     canonical: 'https://skilldrills.online/fr/drills/physical/reflex-training/quick-dodge',
     languages: getAlternateLanguages('/drills/physical/reflex-training/quick-dodge'),
   },
   openGraph: {
-    title: "Jeu d'Esquive Souris – Test de Réflexes | SkillDrills",
-    description: "Évitez la saturation cinétique de projectiles grâce à la simulation cérébelleuse prédictive. Test neuro-moteur interactif en ligne avec métriques en direct.",
+    title: "Jeu d’esquive à la souris | Test de réflexes",
+    description: "Jeu d’esquive à la souris gratuit. Évitez les projectiles, survivez plus longtemps et entraînez vos réflexes au navigateur.",
     url: 'https://skilldrills.online/fr/drills/physical/reflex-training/quick-dodge',
     siteName: 'SkillDrills',
     locale: 'fr_FR',
     type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: "Jeu d’esquive à la souris | Test de réflexes",
+    description: "Évitez les projectiles, survivez plus longtemps et entraînez vos réflexes dans ce jeu gratuit au navigateur.",
   },
 };
 
@@ -84,6 +89,9 @@ const softwareApplicationSchema = {
   "name": "Jeu d'Esquive Souris & Test de Réflexes d'Évasion",
   "applicationCategory": "GameApplication",
   "operatingSystem": "Any",
+  "url": "https://skilldrills.online/fr/drills/physical/reflex-training/quick-dodge",
+  "inLanguage": "fr-FR",
+  "dateModified": "2026-09-20",
   "offers": {
     "@type": "Offer",
     "price": "0",
@@ -99,7 +107,9 @@ const webApplicationSchema = {
   "url": "https://skilldrills.online/fr/drills/physical/reflex-training/quick-dodge",
   "applicationCategory": "HealthApplication",
   "browserRequirements": "Requires JavaScript. Requires HTML5 Canvas support.",
-  "description": "Module interactif pour entraîner la coordination visuo-motrice et l'évitement cinétique à haute vitesse."
+  "description": "Module interactif pour entraîner la coordination visuo-motrice et l'évitement cinétique à haute vitesse.",
+  "inLanguage": "fr-FR",
+  "dateModified": "2026-09-20"
 };
 
 const videoGameSchema = {
@@ -107,6 +117,9 @@ const videoGameSchema = {
   "@type": "VideoGame",
   "name": "Jeu d'Esquive Souris & Test de Réflexes d'Évasion",
   "description": "Simulateur cinétique d'évitement de projectiles évaluant la capacité d'anticipation motrice et la précision micrométrique du curseur.",
+  "url": "https://skilldrills.online/fr/drills/physical/reflex-training/quick-dodge",
+  "inLanguage": "fr-FR",
+  "dateModified": "2026-09-20",
   "genre": ["Action", "Reflex Game", "Esports Trainer"],
   "playMode": "SinglePlayer"
 };
@@ -318,8 +331,8 @@ export default function LocalizedQuickDodgePageFr() {
       />
       <QuickDodgeClient
         copy={{
-          title: "Jeu d'Esquive Souris & Test de Réflexes",
-          subtitle: "Évitement Cinétique de Projectiles & Modèles Prédictifs • 15 Niveaux de Difficulté",
+          title: "Jeu d’Esquive à la Souris",
+          subtitle: "Évitez les projectiles, survivez plus longtemps",
           description: "Esquiver des projectiles relève de la prédiction, non de la simple réaction : le temps que vos yeux perçoivent leur trajectoire, ils ont déjà progressé. Les trajectoires rapides se planifient en amont via les modèles prédictifs cérébelleux (Kawato, 1999), car la vision afférente requiert 100 à 150 ms pour intervenir (Woodworth, 1899). Lorsque la cadence s'accélère, la fenêtre de correction s'évanouit et seule l'anticipation assure la survie.",
           badge: "Test d'Esquive & Réflexes",
           hudLabels: {

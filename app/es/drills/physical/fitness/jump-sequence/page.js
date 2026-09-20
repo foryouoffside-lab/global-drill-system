@@ -52,6 +52,14 @@ export const metadata = {
   robots: { index: true, follow: true },
 };
 
+Object.assign(metadata, {
+  title: 'Pliometría y Salto Vertical | Juego de Reflejos | SkillDrills',
+  description: 'Juego gratuito de pliometría y salto vertical en el navegador. Ajusta el impulso, controla la trayectoria aérea y acierta objetivos móviles con ritmo y coordinación.',
+  keywords: ['pliometría', 'entrenamiento de salto vertical', 'ejercicios de salto', 'coordinación en el salto', 'tiempo de suspensión', 'juego de reflejos', 'juego de salto', 'timing de salto', 'trayectoria aérea', 'reacción deportiva'],
+  openGraph: { ...metadata.openGraph, title: 'Pliometría y Salto Vertical | Juego de Reflejos | SkillDrills', description: 'Juego gratuito de pliometría y salto vertical en el navegador. Ajusta el impulso, controla la trayectoria aérea y acierta objetivos móviles con ritmo y coordinación.' },
+  twitter: { ...metadata.twitter, title: 'Pliometría y Salto Vertical | Juego de Reflejos | SkillDrills', description: 'Juego gratuito de pliometría y salto vertical en el navegador. Ajusta el impulso, controla la trayectoria aérea y acierta objetivos móviles con ritmo y coordinación.' },
+});
+
 const breadcrumbSchema = {
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
@@ -102,7 +110,7 @@ const softwareApplicationSchema = {
     "url": "https://skilldrills.online/es"
   },
   "inLanguage": "es-ES",
-  "dateModified": "2026-09-12"
+  "dateModified": "2026-09-20"
 };
 
 const webApplicationSchema = {
@@ -119,7 +127,7 @@ const webApplicationSchema = {
   },
   "url": "https://skilldrills.online/es/drills/physical/fitness/jump-sequence",
   "inLanguage": "es-ES",
-  "dateModified": "2026-09-12"
+  "dateModified": "2026-09-20"
 };
 
 const videoGameSchema = {
@@ -140,6 +148,8 @@ const videoGameSchema = {
     "Mobile"
   ],
   "applicationCategory": "Game",
+  "inLanguage": "es-ES",
+  "dateModified": "2026-09-20",
   "offers": {
     "@type": "Offer",
     "price": "0",
@@ -150,7 +160,8 @@ const videoGameSchema = {
 const faqSchema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
-  "dateModified": "2026-09-12",
+  "inLanguage": "es-ES",
+  "dateModified": "2026-09-20",
   "mainEntity": [
     {
       "@type": "Question",

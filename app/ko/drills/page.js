@@ -2,8 +2,9 @@ import DrillsDirectoryClient from '@/app/drills/DrillsDirectoryClient';
 import { DRILLS } from '@/lib/drillsRegistry';
 import { getAlternateLanguages } from '@/lib/i18n/locales';
 import { getLocalizedDrill } from '@/lib/i18n/drillNames';
+import { buildDirectoryMetadata, getDirectoryCollectionFields } from '@/lib/i18n/siteLandingSeoNative';
 
-export const metadata = {
+const legacyMetadata = {
   title: '에임 연습 & 두뇌 훈련 82종 무료 드릴 모음 | SkillDrills',
   description: '8개 핵심 카테고리 82종 이상의 무료 온라인 피지컬 훈련. 발로란트 에임 연습, 반응속도 테스트, 시각 추적, 기억력 게임, 인지 능력 향상 드릴을 설치 없이 브라우저에서 즉시 시작하세요.',
   keywords: [
@@ -38,6 +39,11 @@ export const metadata = {
     canonical: 'https://skilldrills.online/ko/drills',
     languages: getAlternateLanguages('/ko/drills'),
   },
+};
+
+export const metadata = {
+  ...legacyMetadata,
+  ...buildDirectoryMetadata('ko', 'https://skilldrills.online/ko/drills', DRILLS.length, getAlternateLanguages('/ko/drills')),
 };
 
 const breadcrumbSchema = {
@@ -140,6 +146,8 @@ const faqSchema = {
     }
   ]
 };
+
+Object.assign(collectionSchema, getDirectoryCollectionFields('ko', DRILLS.length));
 
 export default function LocalizedDirectoryPage() {
   return (

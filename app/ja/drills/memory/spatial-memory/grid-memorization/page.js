@@ -5,12 +5,12 @@ import RelatedDrills from '@/components/drill/RelatedDrills';
 import { pickSources } from '@/lib/drillSources';
 
 export const metadata = {
-  title: "瞬間記憶テスト・視覚記憶検査 – グリッドパターン記憶ゲーム | SkillDrills",
-  description: "無料の瞬間記憶テスト（視覚記憶検査）。4×4から5×5の拡張グリッドパターンを1.5秒で記憶し、視覚キャッシュ容量と空間チャンキング能力を測定・トレーニング。",
-  keywords: ['瞬間記憶テスト', '視覚記憶 テスト', '瞬間記憶 トレーニング', 'グリッド記憶', '視覚的作業記憶', 'パターン記憶 テスト', '空間記憶 検査', 'メモリーマトリクス', '視覚キャッシュ 容量', '短期視覚記憶 ゲーム', '空間チャンキング', '脳トレ 記憶力 テスト'],
+  title: "瞬間記憶テスト｜視覚記憶ゲーム | SkillDrills",
+  description: "無料の瞬間記憶テスト。グリッドで一瞬だけ光るマスの位置を覚え、同じパターンを再現して視覚記憶と空間記憶を鍛えます。",
+  keywords: ['瞬間記憶テスト', '視覚記憶テスト', '視覚記憶ゲーム', '空間記憶テスト', 'グリッド記憶', 'パターン記憶テスト', 'メモリーマトリクス', '記憶力トレーニング', '短期視覚記憶', '視覚的作業記憶'],
   openGraph: {
-    title: "瞬間記憶テスト（視覚記憶テスト）- 無料ブラウザグリッドパターン記憶 | SkillDrills",
-    description: "無料の瞬間記憶テスト（Visual Memory Test / 視覚記憶検査）。4×4から5×5の拡張グリッドパターンを1.5秒で瞬間記憶し、視覚キャッシュ容量と空間チャンキング能力を測定・トレーニング。登録不要・ブラウザですぐプレイ可能。",
+    title: "瞬間記憶テスト｜視覚記憶ゲーム | SkillDrills",
+    description: "無料の瞬間記憶テスト。グリッドで一瞬だけ光るマスの位置を覚え、同じパターンを再現します。",
     type: 'website',
     url: 'https://skilldrills.online/ja/drills/memory/spatial-memory/grid-memorization',
     siteName: 'SkillDrills',
@@ -18,8 +18,8 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: "瞬間記憶テスト（視覚記憶テスト）- 無料ブラウザグリッドパターン記憶 | SkillDrills",
-    description: "無料の瞬間記憶テスト（Visual Memory Test / 視覚記憶検査）。4×4から5×5の拡張グリッドパターンを1.5秒で瞬間記憶し、視覚キャッシュ容量と空間チャンキング能力を測定・トレーニング。登録不要・ブラウザですぐプレイ可能。",
+    title: "瞬間記憶テスト｜視覚記憶ゲーム | SkillDrills",
+    description: "無料の瞬間記憶テスト。グリッドで一瞬だけ光るマスの位置を覚え、同じパターンを再現します。",
   },
   robots: { index: true, follow: true },
   alternates: {
@@ -48,6 +48,7 @@ const webAppSchema = {
   "operatingSystem": "All",
   "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
   "author": { "@type": "Organization", "name": "SkillDrills" },
+  "sameAs": "https://ja.wikipedia.org/wiki/%E8%A6%96%E8%A6%9A%E8%A8%98%E6%86%B6",
   "isAccessibleForFree": true,
   "dateModified": "2026-09-11"
 };
@@ -292,23 +293,23 @@ const gridGuide = {
   sources: pickSources('cowan2001', 'baddeley2000', 'logie1995', 'corsi1972', 'luck1997', 'milner1971', 'woods2015'),
   related: [
   {
-    "href": "/drills/memory/working-memory/n-back",
+    "href": "/ja/drills/memory/working-memory/n-back",
     "label": "3-Back ワーキングメモリ課題"
   },
   {
-    "href": "/drills/cognitive/focus/concentration-grid",
+    "href": "/ja/drills/cognitive/focus/concentration-grid",
     "label": "シュルテテーブル（集中力グリッド）"
   },
   {
-    "href": "/drills/memory/short-term-memory/digit-span",
+    "href": "/ja/drills/memory/short-term-memory/digit-span",
     "label": "数唱記憶スパンテスト"
   },
   {
-    "href": "/drills/reaction-speed/reaction-time-test",
+    "href": "/ja/drills/reaction-speed/reaction-time-test",
     "label": "反射神経・反応速度テスト"
   },
   {
-    "href": "/drills/reaction-speed/reflex-training-drill",
+    "href": "/ja/drills/reaction-speed/reflex-training-drill",
     "label": "反射神経ゲーム"
   }
 ]
@@ -343,7 +344,8 @@ export default function LocalizedGridMemorizationPage() {
       />
       <GridMemorizationClient copy={{
         "h1Keyword": "瞬間記憶テスト",
-        "h1Suffix": " – 無料グリッドパターン視覚記憶ゲーム",
+        "h1Suffix": "（視覚記憶ゲーム）",
+        "subtitle": "光るマスの位置を覚えてパターンを再現",
         "caption": "視覚性作業記憶（ワーキングメモリ）は一度に約4つの独立したオブジェクトを保持でき、その制限は詳細度ではなくオブジェクトの個数に依存します（Luck & Vogel, 1997）。静的なグリッドパターンは形態と配置の受動的保持領域である視覚キャッシュ（Visual Cache）を直接測定・テストします（Logie, 1995）。",
         "statScore": "スコア",
         "statTime": "残り時間",
@@ -352,7 +354,7 @@ export default function LocalizedGridMemorizationPage() {
         "hudScore": "スコア",
         "hudTime": "時間",
         "startTitle": "グリッド瞬間記憶 Pro",
-        "startSubtitle": "空間短期記憶 • パターン再生トレーニング",
+        "startSubtitle": "視覚記憶 • グリッド",
         "countdownSubtitle": "準備してください",
         "newBest": "自己新記録",
         "pointsLabel": "ポイント",

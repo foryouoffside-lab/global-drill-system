@@ -1,5 +1,6 @@
 import DistractionFighterClient from './DistractionFighterClientLoader';
 import DrillGuide from '@/components/drill/DrillGuide';
+import DrillFooter from '@/components/drill/DrillFooter';
 import { pickSources } from '@/lib/drillSources';
 import { getAlternateLanguages } from '@/lib/i18n/locales';
 
@@ -14,6 +15,11 @@ import { getAlternateLanguages } from '@/lib/i18n/locales';
 // INTENT:     Cognitive tool intent (color-word interference task)
 // TITLE:      Stroop Test Online - Free Color Word Interference Game
 // ============================================================
+
+/* The historical volume notes above are not treated as current ranking evidence.
+   This pass uses live SERP observations and native-language terminology only;
+   no position, volume, or low-competition claim is published without first-party
+   Search Console/Trends data. */
 
 const breadcrumbSchema = {
   "@context": "https://schema.org",
@@ -38,7 +44,7 @@ const webAppSchema = {
   "description": "Free online distraction resistance and inhibitory control game based on the Stroop color-word interference task.",
   "author": { "@type": "Organization", "name": "SkillDrills", "url": "https://skilldrills.online" },
   "isAccessibleForFree": true,
-  "dateModified": "2026-09-11"
+  "dateModified": "2026-09-20"
 };
 
 const softwareSchema = {
@@ -51,7 +57,7 @@ const softwareSchema = {
   "description": "Free online distraction resistance and inhibitory control game. Fight off visual distractors, train Stroop-effect resistance, and strengthen your ability to maintain focus on primary targets in cognitively noisy environments.",
   "genre": "Cognitive Brain Training / Inhibitory Control",
   "url": "https://skilldrills.online/drills/cognitive/focus/distraction-fighter",
-  "dateModified": "2026-09-11",
+  "dateModified": "2026-09-20",
   "publisher": { "@type": "Organization", "name": "SkillDrills", "url": "https://skilldrills.online" }
 };
 
@@ -61,7 +67,7 @@ const videoGameSchema = {
   "name": "Stroop Test Online — Distraction Fighter Game",
   "url": "https://skilldrills.online/drills/cognitive/focus/distraction-fighter",
   "description": "Online color-word interference game based on the Stroop test paradigm. Train cognitive inhibition and selective attention under timed pressure.",
-  "dateModified": "2026-09-11",
+  "dateModified": "2026-09-20",
   "gamePlatform": "Web Browser",
   "genre": ["Cognitive Training", "Brain Games", "Stroop Test", "Inhibitory Control"],
   "playMode": "SinglePlayer",
@@ -165,9 +171,16 @@ const howToSchema = {
 };
 
 export const metadata = {
-  title: "Stroop Test Online – Color Word Interference | SkillDrills",
-  description: "Free Stroop test online. Name the ink color while the written word says something else - the classic selective-attention and interference task.",
+  title: "Stroop Test Online | Color-Word Interference | SkillDrills",
+  description: "Free Stroop test online: choose the ink color, ignore the word, and practice selective attention and response inhibition. Non-clinical.",
   keywords: [
+    "stroop test online",
+    "stroop effect test",
+    "color word test",
+    "selective attention test",
+    "inhibitory control test",
+    "stroop test free",
+    "color word interference",
     "ignore distractions game",
     "focus games online free",
     "distraction training",
@@ -176,7 +189,7 @@ export const metadata = {
     "block out distractions",
     "concentration games",
     "distraction test online",
-    "Stroop test online free",
+    "stroop test score",
     "inhibitory control training",
     "how to resist distractions",
     "flanker task online free",
@@ -194,8 +207,8 @@ export const metadata = {
   },
   robots: { index: true, follow: true },
   openGraph: {
-    title: "Stroop Test Online - Free Color Word Interference Game | SkillDrills",
-    description: "Free Stroop test online. Name the ink color while the written word says something else - the classic selective-attention and interference task.",
+    title: "Stroop Test Online | Color-Word Interference | SkillDrills",
+    description: "Free Stroop test online: choose the ink color, ignore the word, and practice selective attention and response inhibition. Non-clinical.",
     url: "https://skilldrills.online/drills/cognitive/focus/distraction-fighter",
     siteName: 'SkillDrills',
     locale: 'en_US',
@@ -203,8 +216,8 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: "Stroop Test Online - Free Color Word Interference Game | SkillDrills",
-    description: "Free Stroop test online. Name the ink color while the written word says something else - the classic selective-attention and interference task.",
+    title: "Stroop Test Online | Color-Word Interference | SkillDrills",
+    description: "Free Stroop test online: choose the ink color, ignore the word, and practice selective attention and response inhibition. Non-clinical.",
   },
 };
 
@@ -243,7 +256,7 @@ const distractionfighterGuide = {
 
 const copyEn = {
   title: "Stroop Test",
-  subtitle: "Stroop Test Online — Color Word Interference Task",
+  subtitle: "Stroop color word interference test for selective attention, impulse control, and cognitive inhibition under time pressure",
 };
 
 export default function DistractionFighterPage() {
@@ -260,6 +273,7 @@ export default function DistractionFighterPage() {
         faqs={faqSchema.mainEntity.map((e) => ({ q: e.name, a: e.acceptedAnswer.text }))}
       />
       <DrillGuide guide={distractionfighterGuide} />
+      <DrillFooter />
     </>
   );
 }

@@ -1,25 +1,26 @@
 import SpatialShiftPursuitClient from '@/app/drills/visual-tracking/spatial-shift-pursuit/SpatialShiftPursuitClientLoader';
 import DrillGuide from '@/components/drill/DrillGuide';
+import DrillFooter from '@/components/drill/DrillFooter';
 import RelatedDrills from '@/components/drill/RelatedDrills';
 import { getAlternateLanguages } from '@/lib/i18n/locales';
 import { pickSources } from '@/lib/drillSources';
 
 export const metadata = {
-  title: "Seguimiento con Cambio Espacial – SkillDrills",
-  description: "Entrena el control oculomotor adaptativo ante desplazamientos del marco de referencia. Optimiza el remapero de coordenadas visuales gratis.",
+  title: "Seguimiento visual con cambio espacial | SkillDrills",
+  description: "Sigue un objetivo mientras cambia el campo visual. Ejercicio gratuito en navegador con reacción, readquisición y error de posición.",
   keywords: [
-    "entrenamiento de seguimiento con cambio espacial",
-    "remapero de coordenadas oculares",
-    "ejercicio ocular marco de referencia",
-    "estabilidad visual rotacion espacial",
-    "recuperacion sacadica del blanco",
-    "control oculomotor adaptativo",
-    "transformacion de referencia visual",
-    "entrenamiento con temblor de pantalla",
-    "agilidad visual de transicion",
-    "ejercicio de rastreo adaptativo",
-    "precision foveal ante giros bruscos",
-    "entrenamiento de reflejos visuales"
+    "cambio espacial seguimiento visual",
+    "remapeo visual ejercicio",
+    "pantalla temblando puntería",
+    "seguir objetivo con campo visual móvil",
+    "atención espacial entrenamiento",
+    "readquisición visual ejercicio",
+    "cambio de marco visual",
+    "seguimiento con pantalla en movimiento",
+    "coordinación ojo objetivo",
+    "error de posición visual",
+    "seguimiento visual de objetivos",
+    "entrenamiento de puntería"
   ],
   alternates: {
     canonical: "https://skilldrills.online/es/drills/visual-tracking/spatial-shift-pursuit",
@@ -27,8 +28,8 @@ export const metadata = {
   },
   robots: { index: true, follow: true },
   openGraph: {
-    title: "Seguimiento con Cambio Espacial – SkillDrills",
-    description: "Entrena el control oculomotor adaptativo ante desplazamientos del marco de referencia. Optimiza el remapero de coordenadas visuales gratis.",
+    title: "Seguimiento visual con cambio espacial | SkillDrills",
+    description: "Sigue un objetivo mientras cambia el campo visual. Ejercicio gratuito en navegador con reacción, readquisición y error de posición.",
     url: "https://skilldrills.online/es/drills/visual-tracking/spatial-shift-pursuit",
     siteName: 'SkillDrills',
     locale: 'es_ES',
@@ -36,8 +37,8 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: "Seguimiento con Cambio Espacial – SkillDrills",
-    description: "Entrena el control oculomotor adaptativo ante desplazamientos del marco de referencia. Optimiza el remapero de coordenadas visuales gratis.",
+    title: "Seguimiento visual con cambio espacial | SkillDrills",
+    description: "Sigue un objetivo mientras cambia el campo visual. Ejercicio gratuito en navegador con reacción, readquisición y error de posición.",
   },
 };
 
@@ -83,7 +84,8 @@ const softwareApplicationSchema = {
     "price": "0.00",
     "priceCurrency": "USD"
   },
-  "description": "Herramienta de agilidad visual que acondiciona la corteza parietal posterior en la reconfiguracion de coordenadas bajo variaciones de marco espacial."
+  "description": "Herramienta de práctica visual para observar la recuperación de la mirada ante cambios del marco espacial.",
+  "dateModified": "2026-09-20"
 };
 
 const webAppSchema = {
@@ -93,17 +95,19 @@ const webAppSchema = {
   "url": "https://skilldrills.online/es/drills/visual-tracking/spatial-shift-pursuit",
   "applicationCategory": "SportsApplication",
   "operatingSystem": "Todos los navegadores modernos",
-  "browserRequirements": "Requiere soporte para JavaScript y HTML5 Canvas"
+  "browserRequirements": "Requiere soporte para JavaScript y HTML5 Canvas",
+  "dateModified": "2026-09-20"
 };
 
 const videoGameSchema = {
   "@context": "https://schema.org",
   "@type": "VideoGame",
-  "name": "Spatial Shift Pursuit",
+  "name": "Seguimiento visual con cambio espacial",
   "description": "Reto de coordinacion oculomotora donde el usuario preserva la fijacion visual ante desplazamientos y rotaciones bruscas del entorno.",
   "genre": ["Entrenamiento Visual", "Seguimiento Ocular", "Entrenamiento de Reflejos"],
   "playMode": "SinglePlayer",
-  "gamePlatform": "Navegador Web"
+  "gamePlatform": "Navegador Web",
+  "dateModified": "2026-09-20"
 };
 
 const howToSchema = {
@@ -136,7 +140,8 @@ const howToSchema = {
       "name": "Reanude el Seguimiento Suave",
       "text": "Acople el frenado de la sacada directamente con la velocidad angular del blanco para garantizar fluidez visual."
     }
-  ]
+  ],
+  "dateModified": "2026-09-20"
 };
 
 const faqSchema = {
@@ -223,7 +228,8 @@ const faqSchema = {
         "text": "Los monitores de 144Hz o superiores proporcionan una transicion grafica limpia sin estelas, permitiendo calcular el desplazamiento espacial con mayor exactitud (Woods et al., 2015)."
       }
     }
-  ]
+  ],
+  "dateModified": "2026-09-20"
 };
 
 const guideProps = {
@@ -270,18 +276,24 @@ const guideProps = {
       }
     ]
   },
+  steps: [
+    { title: "Fija el objetivo inicial", text: "Colócate a una distancia cómoda y sigue el objetivo sin mover la cabeza." },
+    { title: "Observa el cambio del campo", text: "Cuando la pantalla se desplace, identifica primero la dirección del movimiento del conjunto." },
+    { title: "Recupera el objetivo", text: "Lleva la mirada directamente a la nueva posición y observa el tiempo de readquisición." },
+    { title: "Reanuda el seguimiento", text: "Al encontrarlo de nuevo, sigue su trayectoria y compara precisión y error de posición." }
+  ],
   faqs: faqSchema.mainEntity.map(item => ({
     q: item.name,
     a: item.acceptedAnswer.text
   })),
   sources: pickSources('krauzlis2004', 'findlay1999', 'robinson1965', 'rashbass1961', 'kahlon1996', 'woods2015'),
   related: [
-    { href: "/es/drills/visual-tracking/constant-slow-pursuit", label: "Seguimiento Lento Continuo (Constant Slow)" },
-    { href: "/es/drills/visual-tracking/directional-chaos-pursuit", label: "Seguimiento en Caos Direccional (Directional Chaos)" },
-    { href: "/es/drills/visual-tracking/dynamic-evasion-pursuit", label: "Seguimiento con Evasión Dinámica (Dynamic Evasion)" },
-    { href: "/es/drills/visual-tracking/ghosting-suppress-pursuit", label: "Supresión de Imágenes Fantasma (Ghosting Suppress)" },
-    { href: "/es/drills/visual-tracking/infinity-pursuit", label: "Ejercicio Ocular en Forma de Ocho (Infinity)" },
-    { href: "/es/drills/visual-tracking/sine-wave-pursuit", label: "Seguimiento en Onda Sinusoidal (Sine Wave)" }
+    { href: "/es/drills/visual-tracking/constant-slow-pursuit", label: "Seguimiento ocular lento y continuo" },
+    { href: "/es/drills/visual-tracking/directional-chaos-pursuit", label: "Seguimiento con cambios de dirección" },
+    { href: "/es/drills/visual-tracking/dynamic-evasion-pursuit", label: "Seguimiento de objetivos evasivos" },
+    { href: "/es/drills/visual-tracking/ghosting-suppress-pursuit", label: "Supresión de imágenes fantasma" },
+    { href: "/es/drills/visual-tracking/infinity-pursuit", label: "Ejercicio ocular en forma de ocho" },
+    { href: "/es/drills/visual-tracking/sine-wave-pursuit", label: "Seguimiento en onda sinusoidal" }
   ]
 };
 
@@ -295,11 +307,12 @@ export default function SpatialShiftPursuitPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(howToSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
 
-      <SpatialShiftPursuitClient copy={{ title: "Seguimiento con Cambio Espacial", subtitle: "Entrenamiento Oculomotor Adaptativo" }} />
+      <SpatialShiftPursuitClient copy={{ title: "Seguimiento visual con cambio espacial", subtitle: "Sigue un objetivo mientras cambia el campo visual" }} />
       <DrillGuide guide={guideProps} />
       <div className="max-w-6xl mx-auto px-4 pb-12">
         <RelatedDrills currentCategory="visual-tracking" currentHref="https://skilldrills.online/es/drills/visual-tracking/spatial-shift-pursuit" />
       </div>
+      <DrillFooter />
     </>
   );
 }

@@ -1,15 +1,17 @@
 import DividedAttentionClient from './DividedAttentionClientLoader';
 import { getAlternateLanguages } from '@/lib/i18n/locales';
 import DrillGuide from '@/components/drill/DrillGuide';
+import RelatedDrills from '@/components/drill/RelatedDrills';
+import DrillFooter from '@/components/drill/DrillFooter';
 import { pickSources } from '@/lib/drillSources';
 
 export const metadata = {
-  title: "Divided Attention Test – Dual-Task Focus | SkillDrills",
-  description: "Test your divided attention and dual-task capacity online. Track moving visual targets while processing numerical streams in this free split-focus drill.",
-  keywords: ["divided attention test", "divided attention test online", "dual task test", "dual task training", "split attention test", "divided attention task", "divided attention training", "split focus brain game", "cognitive multitasking test", "dual visual tracking test", "multimodal attention test", "simultaneous processing test", "psychological refractory period test", "attention training online", "free cognitive brain games"],
+  title: "Divided Attention Test Online | Dual Task | SkillDrills",
+  description: "Free divided attention test online: track a moving target while classifying numbers in a dual-task focus drill. Non-clinical practice.",
+  keywords: ["divided attention test online", "dual task test", "dual task training", "multitasking test", "split attention test", "divided attention task", "dual visual tracking test", "simultaneous processing test", "attention sharing test", "cognitive multitasking drill"],
   openGraph: {
-    title: "Divided Attention Test – Dual-Task Focus | SkillDrills",
-    description: "Test your divided attention and dual-task capacity online. Track moving visual targets while processing numerical streams in this free split-focus drill.",
+    title: "Divided Attention Test Online | Dual Task | SkillDrills",
+    description: "Free divided attention test online: track a moving target while classifying numbers in a dual-task focus drill. Non-clinical practice.",
     type: 'article',
     url: 'https://skilldrills.online/drills/cognitive/attention/divided-attention',
     siteName: 'SkillDrills',
@@ -17,8 +19,8 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: "Divided Attention Test – Dual-Task Focus | SkillDrills",
-    description: "Test your divided attention and dual-task capacity online. Track moving visual targets while processing numerical streams in this free split-focus drill.",
+    title: "Divided Attention Test Online | Dual Task | SkillDrills",
+    description: "Free divided attention test online: track a moving target while classifying numbers in a dual-task focus drill. Non-clinical practice.",
   },
   robots: { index: true, follow: true },
   alternates: {
@@ -77,7 +79,7 @@ const softwareApplicationSchema = {
     "url": "https://skilldrills.online"
   },
   "inLanguage": "en-US",
-  "dateModified": "2026-09-11"
+  "dateModified": "2026-09-20"
 };
 
 const webApplicationSchema = {
@@ -94,7 +96,7 @@ const webApplicationSchema = {
   },
   "url": "https://skilldrills.online/drills/cognitive/attention/divided-attention",
   "inLanguage": "en-US",
-  "dateModified": "2026-09-11"
+  "dateModified": "2026-09-20"
 };
 
 const videoGameSchema = {
@@ -312,8 +314,12 @@ export default function EnhancedPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(howToSchema) }}
       />
-      <DividedAttentionClient copy={{ title: "Divided Attention Test" }} />
+      <DividedAttentionClient copy={{ title: "Divided Attention Test", subtitle: "Track a moving target while classifying numbers in a dual-task focus challenge" }} />
       <DrillGuide {...guideProps} />
+      <div className="max-w-6xl mx-auto px-4 pb-12">
+        <RelatedDrills currentCategory="cognitive" currentHref="https://skilldrills.online/drills/cognitive/attention/divided-attention" />
+      </div>
+      <DrillFooter />
     </>
   );
 }

@@ -767,13 +767,14 @@ export default function InstantResponseClient({ copy = null }) {
   return (
     <div className="min-h-screen bg-[#050508] text-white flex flex-col font-sans select-none">
       {/* ── MAIN CONTENT AREA ── */}
-      <main className="flex-1 max-w-6xl w-full mx-auto px-4 py-6 flex flex-col gap-6">
+      <main className="flex-1 max-w-6xl w-full mx-auto px-4 pt-6 pb-0 flex flex-col gap-6">
         {/* Title */}
         {!isFullscreen && (
           <div className="flex flex-col gap-1">
             <h1 className="text-2xl sm:text-3xl font-black tracking-tight text-white">
               <span data-seo-kw="1">{copy?.h1Keyword || "FPS Reaction Time Test"}</span>
               {copy?.h1Suffix !== undefined ? copy.h1Suffix : " — Gaming Reflex Trainer"}
+              <span className="block text-sm font-semibold text-slate-400 mt-1">{copy?.subtitle || "FPS reaction time test for visual reflex speed, click latency, and trigger discipline in competitive gaming"}</span>
             </h1>
           </div>
         )}
@@ -914,6 +915,7 @@ export default function InstantResponseClient({ copy = null }) {
           <div className="[&>div]:!mt-0">
             <DrillAccordion
               id="rules"
+              singleLineTitle
               title={copy?.rulesTitle || "Drill Instructions & Scoring System"}
               isOpen={openAccordion === 'rules'}
               onToggle={() => setOpenAccordion(openAccordion === 'rules' ? null : 'rules')}
@@ -927,6 +929,7 @@ export default function InstantResponseClient({ copy = null }) {
 
             <DrillAccordion
               id="about"
+              singleLineTitle
               title={copy?.aboutTitle || "About Instant Response Pro"}
               isOpen={openAccordion === 'about'}
               onToggle={() => setOpenAccordion(openAccordion === 'about' ? null : 'about')}

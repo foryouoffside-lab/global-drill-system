@@ -6,21 +6,19 @@ import RelatedDrills from '@/components/drill/RelatedDrills';
 import DrillFooter from '@/components/drill/DrillFooter';
 
 export const metadata = {
-  title: "FPS 반응속도 테스트 – 에임 반사신경·클릭 속도 | SkillDrills",
-  description: "브라우저에서 무료로 측정하는 FPS 반응속도 테스트. 시각 자극 인지부터 클릭까지의 반사신경 잠복기(ms)를 밀리초 단위로 정밀 측정하고, 페인트 사격 억제와 앵글 홀드 반응을 극대화합니다.",
+  title: "반응속도 테스트 | FPS 클릭 반응 측정 | SkillDrills",
+  description: "무료 브라우저 반응속도 테스트로 시각 신호부터 클릭까지의 시간을 측정하고 FPS 교전 반응을 비교하세요.",
   keywords: [
-    "FPS 반응속도 테스트",
-    "에임 반응속도 측정",
+    "반응속도 테스트",
     "반응속도 테스트 게임",
+    "반응속도 테스트 사이트",
+    "반응속도 테스트 평균",
+    "반응속도 테스트 발로란트",
+    "FPS 반응속도",
     "클릭 반응속도",
-    "발로란트 반응속도 테스트",
-    "카스2 반응속도",
-    "FPS 반사신경 훈련",
-    "에임 트레이너 무료",
-    "트리거 반응속도",
-    "인스턴트 에임 반응",
-    "FPS 반사신경 측정",
-    "앵글 홀드 반응속도"
+    "에임 반응속도",
+    "반사신경 테스트",
+    "FPS 반사신경 측정"
   ],
   alternates: {
     canonical: "https://skilldrills.online/ko/drills/fps/instant-response",
@@ -31,8 +29,8 @@ export const metadata = {
     follow: true,
   },
   openGraph: {
-    title: "FPS 반응속도 테스트 – 에임 반사신경·클릭 속도 | SkillDrills",
-    description: "시각 자극에 대한 클릭 반응 시간(ms)을 정밀 측정하고 페인트 사격을 억제하는 무료 브라우저 FPS 에임 반사신경 트레이너.",
+    title: "반응속도 테스트 | FPS 클릭 반응 측정 | SkillDrills",
+    description: "무료 브라우저 반응속도 테스트로 시각 신호부터 클릭까지의 시간을 측정하고 FPS 교전 반응을 비교하세요.",
     url: "https://skilldrills.online/ko/drills/fps/instant-response",
     siteName: 'SkillDrills',
     locale: 'ko_KR',
@@ -40,8 +38,8 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: "FPS 반응속도 테스트 – 에임 반사신경·클릭 속도 | SkillDrills",
-    description: "시각 자극에 대한 클릭 반응 시간(ms)을 정밀 측정하고 페인트 사격을 억제하는 무료 브라우저 FPS 에임 반사신경 트레이너.",
+    title: "반응속도 테스트 | FPS 클릭 반응 측정 | SkillDrills",
+    description: "무료 브라우저 반응속도 테스트로 시각 신호부터 클릭까지의 시간을 측정하고 FPS 교전 반응을 비교하세요.",
   },
 };
 
@@ -52,7 +50,7 @@ export default function InstantResponseKoPage() {
     "itemListElement": [
       { "@type": "ListItem", "position": 1, "name": "SkillDrills", "item": "https://skilldrills.online/ko" },
       { "@type": "ListItem", "position": 2, "name": "FPS 에임 트레이너", "item": "https://skilldrills.online/ko/drills/fps" },
-      { "@type": "ListItem", "position": 3, "name": "FPS 반응속도 테스트", "item": "https://skilldrills.online/ko/drills/fps/instant-response" }
+      { "@type": "ListItem", "position": 3, "name": "반응속도 테스트 - FPS 클릭 반응", "item": "https://skilldrills.online/ko/drills/fps/instant-response" }
     ]
   };
 
@@ -62,7 +60,7 @@ export default function InstantResponseKoPage() {
     "name": "FPS 반응속도 테스트",
     "applicationCategory": "GameApplication",
     "operatingSystem": "Web Browser",
-    "dateModified": "2026-09-05",
+    "dateModified": "2026-09-20",
     "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
     "description": "시각 자극 인지, 신경 전달 잠복기, 클릭 반사 속도를 밀리초 단위로 정밀 측정하고 훈련하는 무료 브라우저 FPS 반사신경 드릴.",
     "genre": "FPS Training / Reaction Speed",
@@ -96,7 +94,7 @@ export default function InstantResponseKoPage() {
     "name": "FPS 반응속도 테스트",
     "url": "https://skilldrills.online/ko/drills/fps/instant-response",
     "description": "시각 자극 인지, 신경 전달 잠복기, 클릭 반사 속도를 밀리초 단위로 정밀 측정하고 훈련하는 무료 브라우저 FPS 반사신경 드릴.",
-    "dateModified": "2026-09-05",
+    "dateModified": "2026-09-20",
     "gamePlatform": "Web Browser",
     "genre": ["FPS Training", "Reaction Trainer", "Aim Trainer"],
     "playMode": "SinglePlayer",
@@ -108,7 +106,7 @@ export default function InstantResponseKoPage() {
   const faqSchema = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
-    "dateModified": "2026-09-05",
+    "dateModified": "2026-09-20",
     "mainEntity": [
       {
         "@type": "Question",
@@ -227,9 +225,9 @@ export default function InstantResponseKoPage() {
   };
 
   const instantResponseGuide = {
-    heading: "FPS 반응속도 테스트 가이드 & 멘탈 크로노메트리 벤치마크",
+    heading: "반응속도 테스트와 FPS 클릭 반응 가이드",
     intro: [
-      "FPS 반응속도 테스트는 FPS 게이머의 순수 감각운동 반사 잠복기(Mental Chronometry)를 객관적으로 측정하고 훈련하기 위해 설계된 과학적 훈련 도구입니다. 발로란트나 카스2 같은 전술 슈팅 게임에서 앵글 홀드 교전의 승패는 찰나의 반응속도에 의해 결정됩니다.",
+      "반응속도 테스트는 화면 신호를 인지한 뒤 클릭하기까지의 감각운동 시간을 측정하는 훈련입니다. 이 드릴은 시각 신호부터 첫 클릭까지의 지연을 기록해 발로란트·카운터스트라이크2 같은 FPS 교전 반응을 비교합니다.",
       "멘탈 크로노메트리의 학문적 기원은 네덜란드 안과의사 프란시스쿠스 돈데르스(1868)의 감산법에서 시작되었습니다. 단 하나의 자극에 대해 즉각 반응하는 '단순 반응 시간(Type A)'은 인간 대뇌 피질과 중추신경계의 순수한 정보 전달 능력을 보여줍니다.",
       "본 트레이너는 HTML5 Pointer Lock API 환경에서 브라우저의 performance.now() 고해상도 타임스탬프를 통해 밀리초 단위로 측정됩니다 (Woods et al., 2015). 조준선 이동 거리가 개입되는 플릭 훈련과 달리, 순수한 시각 감지부터 격발 명령까지의 신경 잠복기만을 정확히 분리 측정합니다.",
       "측정 방식 안내: 모든 반응 시간은 브라우저의 performance.now() 고정밀 클록을 통해 기기 내부에서 로컬로 측정되며 서버로 전송되지 않습니다. 브라우저 보안 타이머 완화(Spectre 방지, 통상 약 1ms) 및 디스플레이 주사율(60Hz 기준 약 16.7ms, 144Hz 기준 약 6.9ms, 240Hz 기준 약 4.1ms)에 따른 오차가 존재하므로 5ms 미만의 차이는 측정 노이즈로 간주하고 동일 기기 내에서의 기록 향상 추이를 비교하는 것이 바람직합니다 (Woods et al., 2015)."
@@ -318,13 +316,13 @@ export default function InstantResponseKoPage() {
       />
       <InstantResponseClient
         copy={{
-          h1Keyword: "FPS 반응속도 테스트",
-          h1Suffix: " - 에임 반사신경·클릭 속도 측정",
+          h1Keyword: "반응속도 테스트",
+          h1Suffix: " - FPS 클릭 반응 측정",
           statScore: "점수",
           statTime: "남은 시간",
           statAccuracy: "명중률",
           statBestScore: "최고 점수",
-          startTitle: "FPS 반응속도 테스트",
+          startTitle: "반응속도 테스트",
           startSubtitle: "시각 반응 잠복기 & 반사신경 • 무한 난이도 진행",
           getReady: "준비 완료",
           pausedTitle: "일시 정지됨",
@@ -337,7 +335,7 @@ export default function InstantResponseKoPage() {
             { num: "3", text: "레벨 난이도 진행", highlight: "+1 레벨 / 1400 PTS", result: "적응형 노출시간" },
             { num: "4", text: "조기 격발 / 빗맞힘", highlight: "실패 페널티", result: "콤보 리셋 (-0.8s)" }
           ],
-          aboutTitle: "FPS 반응속도 테스트 정보",
+          aboutTitle: "반응속도 테스트와 FPS 반응 정보",
           aboutHeading: "FPS 반응속도 훈련이란 무엇인가요?"
         }}
       />

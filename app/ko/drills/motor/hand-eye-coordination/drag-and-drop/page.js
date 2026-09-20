@@ -6,25 +6,16 @@ import RelatedDrills from '@/components/drill/RelatedDrills';
 import { pickSources } from '@/lib/drillSources';
 
 export const metadata = {
-  title: '드래그 앤 드롭 연습・마우스 조작 트레이너 – 드래그 정밀도 및 속도 테스트 | SkillDrills',
-  description: '무료 브라우저 드래그 앤 드롭 마우스 트레이닝 도구. 타깃 오브젝트를 클릭한 채로 끌어서 목표 지점에 정확히 놓는 정밀 드래그 속도와 제어력을 정밀 측정합니다.',
+  title: '드래그 앤 드롭 연습 | 마우스 드래그 테스트 | SkillDrills',
+  description: '무료 브라우저 드래그 앤 드롭 연습. 마우스 드래그 정확도, 놓기 타이밍, 타깃 정렬을 측정하며 조작 감각을 키우세요.',
   keywords: [
-    '드래그 앤 드롭 테스트',
-    '마우스 드래그 연습',
-    '드래그 정밀도 측정',
-    '마우스 조작 연습',
-    '마우스 트레이너',
-    '인벤토리 드래그 연습',
-    '마우스 제어 테스트',
-    'RTS 마우스 연습',
-    '드래그 속도 테스트',
-    '마우스 정확도',
-    '마우스 끌기 연습',
-    '에임 브레이킹 연습',
+    '드래그 앤 드롭 연습', '마우스 드래그 테스트', '마우스 조작 연습', '마우스 정밀도 테스트',
+    '드래그 정밀도', '드래그 앤 드롭 마우스 연습', '마우스 끌기 연습', '드래그 속도 테스트',
+    '마우스 제어 테스트', '드래그 앤 드롭 게임', '인벤토리 드래그 연습', '마우스 정확도',
   ],
   openGraph: {
-    title: '드래그 앤 드롭 연습・마우스 조작 트레이너 – 드래그 정밀도 및 속도 테스트 | SkillDrills',
-    description: '무료 브라우저 드래그 앤 드롭 마우스 트레이닝 도구. 타깃 오브젝트를 클릭한 채로 끌어서 목표 지점에 정확히 놓는 정밀 드래그 속도와 제어력을 정밀 측정합니다.',
+    title: '드래그 앤 드롭 연습 | 마우스 드래그 테스트 | SkillDrills',
+    description: '무료 브라우저 드래그 앤 드롭 연습. 마우스 드래그 정확도, 놓기 타이밍, 타깃 정렬을 측정하며 조작 감각을 키우세요.',
     type: 'article',
     url: 'https://skilldrills.online/ko/drills/motor/hand-eye-coordination/drag-and-drop',
     siteName: 'SkillDrills',
@@ -32,8 +23,8 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: '드래그 앤 드롭 연습・마우스 조작 트레이너 – 드래그 정밀도 및 속도 테스트 | SkillDrills',
-    description: '무료 브라우저 드래그 앤 드롭 마우스 트레이닝 도구. 타깃 오브젝트를 클릭한 채로 끌어서 목표 지점에 정확히 놓는 정밀 드래그 속도와 제어력을 정밀 측정합니다.',
+    title: '드래그 앤 드롭 연습 | 마우스 드래그 테스트 | SkillDrills',
+    description: '무료 브라우저 드래그 앤 드롭 연습. 마우스 드래그 정확도, 놓기 타이밍, 타깃 정렬을 측정하며 조작 감각을 키우세요.',
   },
   robots: { index: true, follow: true },
   alternates: {
@@ -83,7 +74,8 @@ const softwareApplicationSchema = {
   description: '브라우저 기반 무료 드래그 앤 드롭 정밀도 측정 도구. 마우스 커서 감속 제어, 연속 운반 및 릴리스 타이밍을 정밀 분석합니다.',
   url: 'https://skilldrills.online/ko/drills/motor/hand-eye-coordination/drag-and-drop',
   publisher: { '@type': 'Organization', name: 'SkillDrills', url: 'https://skilldrills.online' },
-  dateModified: '2026-09-16',
+  inLanguage: 'ko-KR',
+  dateModified: '2026-09-20',
 };
 
 const webApplicationSchema = {
@@ -93,7 +85,8 @@ const webApplicationSchema = {
   browserRequirements: 'HTML5 Canvas 및 자바스크립트 지원 최신 브라우저',
   url: 'https://skilldrills.online/ko/drills/motor/hand-eye-coordination/drag-and-drop',
   applicationCategory: 'EducationalApplication',
-  dateModified: '2026-09-16',
+  inLanguage: 'ko-KR',
+  dateModified: '2026-09-20',
 };
 
 const videoGameSchema = {
@@ -105,13 +98,15 @@ const videoGameSchema = {
   genre: ['정밀도 게임', '액션', 'e스포츠 트레이닝'],
   gamePlatform: ['Web Browser', 'Desktop'],
   applicationCategory: 'Game',
+  inLanguage: 'ko-KR',
   offers: { '@type': 'Offer', price: '0', priceCurrency: 'KRW' },
 };
 
 const faqSchema = {
   '@context': 'https://schema.org',
   '@type': 'FAQPage',
-  dateModified: '2026-09-16',
+  inLanguage: 'ko-KR',
+  dateModified: '2026-09-20',
   mainEntity: [
     {
       '@type': 'Question',
@@ -199,6 +194,7 @@ const faqSchema = {
 const howToSchema = {
   '@context': 'https://schema.org',
   '@type': 'HowTo',
+  inLanguage: 'ko-KR',
   name: '드래그 앤 드롭 마우스 정밀도 훈련 프로토콜',
   description: '마우스 커서 감속 제어, 공간적 운반 궤적 최적화, 정밀 릴리스 타이밍 4단계 훈련.',
   step: [
@@ -323,7 +319,7 @@ const guideProps = {
 
 const copyKo = {
   title: "드래그 앤 드롭 연습・마우스 조작 트레이너",
-  subtitle: "공간 드래그 앤 드롭 타깃 정렬 • 15단계 레벨 스케일링",
+  subtitle: "드래그 정확도 · 타깃 정렬 측정",
   startButtonText: "훈련 시작",
   playAgainText: "다시 도전",
   shareText: "결과 공유",

@@ -2,28 +2,29 @@ import KeyboardRecognitionClient from '@/app/drills/motor/movement-speed/keyboar
 import { getAlternateLanguages } from '@/lib/i18n/locales';
 import DrillGuide from '@/components/drill/DrillGuide';
 import RelatedDrills from '@/components/drill/RelatedDrills';
+import DrillFooter from '@/components/drill/DrillFooter';
 import { pickSources } from '@/lib/drillSources';
 
 export const metadata = {
-  title: 'Test de Réaction Clavier – Vitesse de Touches | SkillDrills',
-  description: 'Test de réaction et vitesse de clavier gratuit. Mesurez votre temps de réponse aux touches, réflexes sur keybinds et mémoire musculaire sur navigateur.',
+  title: 'Réaction clavier | Test de touches | SkillDrills',
+  description: 'Appuyez sur la touche affichée pour mesurer votre réaction, votre précision et vos raccourcis. Test gratuit dans le navigateur.',
   keywords: [
-    'test de vitesse de clavier',
-    'entrainement reflexe clavier',
-    'test de reaction clavier en ligne',
-    'entrainement raccourcis clavier gaming',
-    'memoire musculaire clavier',
-    'temps de reaction frappe clavier',
-    'test de reflexes gamer clavier',
-    'vitesse de frappe de touches',
-    'entrainement touches gamer zqsd',
-    'test d inhibition de frappe',
-    'agilite motrice clavier',
-    'test reflexe frappe instantanee',
+    'test de réaction clavier',
+    'test vitesse clavier',
+    'temps de réponse touche',
+    'test clavier en ligne',
+    'latence clavier',
+    'vitesse de frappe clavier',
+    'entraînement touches gaming',
+    'test de réflexes gamer clavier',
+    'raccourcis clavier gaming',
+    'test de touche clavier',
+    'réaction des doigts clavier',
+    'test de réponse clavier',
   ],
   openGraph: {
-    title: 'Test de Réaction Clavier – Vitesse de Touches | SkillDrills',
-    description: 'Test de réaction et vitesse de clavier gratuit. Mesurez votre temps de réponse aux touches, réflexes sur keybinds et mémoire musculaire sur navigateur.',
+    title: 'Réaction clavier | Test de touches | SkillDrills',
+    description: 'Mesurez réaction, précision et raccourcis en appuyant sur la touche affichée dans le navigateur.',
     type: 'article',
     url: 'https://skilldrills.online/fr/drills/motor/movement-speed/keyboard-recognition',
     siteName: 'SkillDrills',
@@ -31,8 +32,8 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Test de Réaction Clavier – Vitesse de Touches | SkillDrills',
-    description: 'Test de réaction et vitesse de clavier gratuit. Mesurez votre temps de réponse aux touches et vos réflexes sur keybinds.',
+    title: 'Réaction clavier | Test de touches | SkillDrills',
+    description: 'Test gratuit de réaction clavier et de touches dans le navigateur.',
   },
   robots: { index: true, follow: true },
   alternates: {
@@ -48,39 +49,42 @@ const breadcrumbSchema = {
     { '@type': 'ListItem', position: 1, name: 'SkillDrills', item: 'https://skilldrills.online/fr' },
     { '@type': 'ListItem', position: 2, name: 'Contrôle Moteur', item: 'https://skilldrills.online/fr/drills/motor' },
     { '@type': 'ListItem', position: 3, name: 'Vitesse de Mouvement', item: 'https://skilldrills.online/fr/drills/motor/movement-speed' },
-    { '@type': 'ListItem', position: 4, name: 'Test de Réaction Clavier', item: 'https://skilldrills.online/fr/drills/motor/movement-speed/keyboard-recognition' },
+    { '@type': 'ListItem', position: 4, name: 'Réaction Clavier', item: 'https://skilldrills.online/fr/drills/motor/movement-speed/keyboard-recognition' },
   ],
 };
 
 const softwareApplicationSchema = {
   '@context': 'https://schema.org',
   '@type': 'SoftwareApplication',
-  name: 'Test de Réaction Clavier – Entraîneur de Keybinds',
+  inLanguage: 'fr-FR',
+  name: 'Réaction Clavier – Test de Touches',
   applicationCategory: 'HealthApplication',
   operatingSystem: 'All',
   offers: { '@type': 'Offer', price: '0', priceCurrency: 'EUR' },
   description: 'Test de vitesse et réflexes de touches gratuit sur navigateur. Mesurez temps de réaction de choix, mémoire musculaire et contrôle inhibiteur.',
   url: 'https://skilldrills.online/fr/drills/motor/movement-speed/keyboard-recognition',
   publisher: { '@type': 'Organization', name: 'SkillDrills', url: 'https://skilldrills.online' },
-  dateModified: '2026-09-05',
+  dateModified: '2026-09-20',
 };
 
 const webApplicationSchema = {
   '@context': 'https://schema.org',
   '@type': 'WebApplication',
+  inLanguage: 'fr-FR',
   name: 'Test de Réaction Clavier',
   applicationCategory: 'GameApplication',
   operatingSystem: 'All',
   browserRequirements: 'Nécessite le support HTML5 Canvas et JavaScript',
   offers: { '@type': 'Offer', price: '0', priceCurrency: 'EUR' },
   url: 'https://skilldrills.online/fr/drills/motor/movement-speed/keyboard-recognition',
-  dateModified: '2026-09-05',
+  dateModified: '2026-09-20',
 };
 
 const videoGameSchema = {
   '@context': 'https://schema.org',
   '@type': 'VideoGame',
-  name: 'Test de Réaction Clavier – Réflexes Gamer',
+  inLanguage: 'fr-FR',
+  name: 'Réaction Clavier – Réflexes Gamer',
   url: 'https://skilldrills.online/fr/drills/motor/movement-speed/keyboard-recognition',
   description: 'Mesurez la rapidité avec laquelle vous pressez la touche requise en réponse à des stimuli visuels selon la loi de Hick.',
   genre: ['Keyboard Game', 'Action', 'Esports Training'],
@@ -92,6 +96,8 @@ const videoGameSchema = {
 const faqSchema = {
   '@context': 'https://schema.org',
   '@type': 'FAQPage',
+  inLanguage: 'fr-FR',
+  dateModified: '2026-09-20',
   mainEntity: [
     {
       '@type': 'Question',
@@ -179,6 +185,8 @@ const faqSchema = {
 const howToSchema = {
   '@context': 'https://schema.org',
   '@type': 'HowTo',
+  inLanguage: 'fr-FR',
+  dateModified: '2026-09-20',
   name: 'Comment Développer sa Vitesse de Frappe et ses Réflexes Clavier',
   description: 'Procédure pour perfectionner ses temps de réponse aux touches et son contrôle inhibiteur.',
   step: [
@@ -332,6 +340,7 @@ export default function FrenchKeyboardRecognitionPage() {
       <div className="max-w-6xl mx-auto px-4 pb-12">
         <RelatedDrills currentCategory="motor" currentHref="/drills/motor/movement-speed/keyboard-recognition" />
       </div>
+      <DrillFooter />
     </>
   );
 }

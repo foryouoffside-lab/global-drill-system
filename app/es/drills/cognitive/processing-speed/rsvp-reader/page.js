@@ -2,28 +2,16 @@ import RSVPReaderClient from '@/app/drills/cognitive/processing-speed/rsvp-reade
 import { getAlternateLanguages } from '@/lib/i18n/locales';
 import DrillGuide from '@/components/drill/DrillGuide';
 import RelatedDrills from '@/components/drill/RelatedDrills';
+import DrillFooter from '@/components/drill/DrillFooter';
 import { pickSources } from '@/lib/drillSources';
 
 export const metadata = {
-  title: "Lector RSVP – Test de Velocidad de Lectura WPM | SkillDrills",
-  description: "Lector RSVP y test de lectura rápida online gratis: Elimina saltos sacádicos oculares y entrena tu velocidad léxica y comprensión hasta 850 WPM sin registro.",
-  keywords: [
-    "lector rsvp",
-    "lectura rapida online",
-    "test de velocidad de lectura",
-    "presentacion visual serial rapida",
-    "test palabras por minuto wpm",
-    "punto de reconocimiento optimo orp",
-    "entrenamiento de lectura rapida gratis",
-    "procesamiento lexico visual",
-    "lector rsvp online gratis",
-    "ejercicios de lectura veloz",
-    "test comprension lectora online",
-    "medidor de velocidad lectora"
-  ],
+  title: "Lectura Rápida | Lector RSVP | SkillDrills",
+  description: "Entrenamiento de lectura rápida gratis: procesa palabras en un punto fijo y sigue PPM y precisión. No es una prueba clínica.",
+  keywords: ["lectura rápida", "test de velocidad de lectura", "velocidad de lectura", "lector rápido online", "RSVP lectura", "palabras por minuto", "entrenamiento de lectura rápida"],
   openGraph: {
-    title: "Lector RSVP – Test de Velocidad de Lectura WPM | SkillDrills",
-    description: "Lector RSVP y test de lectura rápida online gratis: Elimina saltos sacádicos oculares y entrena tu velocidad léxica y comprensión hasta 850 WPM sin registro.",
+    title: "Lectura Rápida | Lector RSVP | SkillDrills",
+    description: "Entrenamiento de lectura rápida gratis: procesa palabras en un punto fijo y sigue PPM y precisión. No es una prueba clínica.",
     type: 'article',
     url: 'https://skilldrills.online/es/drills/cognitive/processing-speed/rsvp-reader',
     siteName: 'SkillDrills',
@@ -31,8 +19,8 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: "Lector RSVP – Test de Velocidad de Lectura WPM | SkillDrills",
-    description: "Lector RSVP y test de lectura rápida online gratis: Elimina saltos sacádicos oculares y entrena tu velocidad léxica y comprensión hasta 850 WPM sin registro.",
+    title: "Lectura Rápida | Lector RSVP | SkillDrills",
+    description: "Entrenamiento de lectura rápida gratis: procesa palabras en un punto fijo y sigue PPM y precisión. No es una prueba clínica.",
   },
   robots: { index: true, follow: true },
   alternates: {
@@ -91,7 +79,7 @@ const softwareApplicationSchema = {
     "url": "https://skilldrills.online"
   },
   "inLanguage": "es-ES",
-  "dateModified": "2026-09-16"
+  "dateModified": "2026-09-20"
 };
 
 const webApplicationSchema = {
@@ -108,7 +96,7 @@ const webApplicationSchema = {
   },
   "url": "https://skilldrills.online/es/drills/cognitive/processing-speed/rsvp-reader",
   "inLanguage": "es-ES",
-  "dateModified": "2026-09-16"
+  "dateModified": "2026-09-20"
 };
 
 const videoGameSchema = {
@@ -128,6 +116,7 @@ const videoGameSchema = {
     "Mobile"
   ],
   "applicationCategory": "Game",
+  "dateModified": "2026-09-20",
   "offers": {
     "@type": "Offer",
     "price": "0",
@@ -326,11 +315,38 @@ export default function EnhancedPageEs() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(howToSchema) }}
       />
-      <RSVPReaderClient copy={{ title: "Lector RSVP – Test de Velocidad de Lectura" }} />
+      <RSVPReaderClient
+        copy={{
+          title: "Lectura rápida",
+          subtitle: "Procesa palabras en un punto fijo y entrena tu velocidad de lectura",
+          startTitle: "Entrenamiento RSVP",
+          startSubtitle: "Reconocimiento de palabras • Enfoque ORP",
+          stageCaption: "Las palabras aparecen en el centro. Pulsa cuando aparezca la palabra objetivo.",
+          rulesTitle: "Instrucciones del ejercicio y puntuación",
+          aboutTitle: "¿Qué es la lectura RSVP?",
+          faqTitle: "Preguntas frecuentes",
+          labels: { score: "Puntos", time: "Tiempo", speed: "Velocidad", bestScore: "Mejor puntuación", timeLeft: "Tiempo restante", targetWord: "Palabra objetivo", detected: "OBJETIVO DETECTADO", ready: "PREPÁRATE", accuracy: "Precisión", hits: "Aciertos", errors: "Errores", points: "Puntos", playAgain: "Jugar de nuevo" },
+          aboutLead: "RSVP muestra las palabras una a una en el mismo punto de la pantalla. Reduce parte de los saltos oculares, pero la comprensión puede bajar cuando el ritmo aumenta.",
+          aboutText: "Este ejercicio entrena el reconocimiento de palabras en el punto óptimo de reconocimiento (ORP). PPM describe el ritmo de presentación; la latencia de la pantalla y del toque también influye. 850 PPM es el nivel superior del ejercicio, no una promesa de comprensión general a esa velocidad.",
+          aboutCards: [
+            { title: "¿Para quién sirve?", desc: "Para estudiantes, profesionales y personas que leen mucho o quieren practicar lectura rápida." },
+            { title: "¿Qué habilidades entrena?", desc: "Reconocimiento de palabras, memoria de trabajo y atención sostenida ante información visual rápida." },
+            { title: "Ritmo progresivo", desc: "Cinco niveles de 250 a 850 PPM suben el ritmo mientras controlas la precisión." }
+          ],
+          rulesItems: [
+            { num: "1", text: "Palabra objetivo", highlight: "Banner superior", result: "Encontrarla en el flujo central" },
+            { num: "2", text: "Foco ORP", highlight: "Reduce los movimientos oculares", result: "Lee en el mismo punto" },
+            { num: "3", text: "Objetivo detectado", highlight: "+100 puntos", result: "Pulsa el botón de detección" },
+            { num: "4", text: "Nivel de ritmo", highlight: "250 → 850 PPM", result: "Cinco niveles de dificultad" }
+          ],
+          faqItems: faqSchema.mainEntity.map((e) => ({ q: e.name, a: e.acceptedAnswer.text }))
+        }}
+      />
       <DrillGuide {...guideProps} />
       <div className="max-w-6xl mx-auto px-4 pb-12">
         <RelatedDrills currentCategory="cognitive" currentHref="https://skilldrills.online/es/drills/cognitive/processing-speed/rsvp-reader" />
       </div>
+      <DrillFooter />
     </>
   );
 }

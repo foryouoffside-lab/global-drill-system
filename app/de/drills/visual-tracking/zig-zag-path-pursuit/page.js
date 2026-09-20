@@ -5,25 +5,25 @@ import { getAlternateLanguages } from '@/lib/i18n/locales';
 import { pickSources } from '@/lib/drillSources';
 
 export const metadata = {
-  title: "Zickzack-Blickverfolgung – Zickzack-Tracking | SkillDrills",
-  description: "Trainieren Sie Blickfolge und Fangsakkaden an Zickzack-Vektorbahnen. Meistern Sie abrupte Richtungswechsel und Kanten-Tracking online. Kostenlos.",
+  title: "Zickzack-Blickverfolgung | SkillDrills",
+  description: "Verfolge ein Ziel auf einer Zickzackbahn. Kostenlose Übung für Blickfolge, Richtungswechsel und Zielverluste.",
   keywords: [
-    "zickzack blickverfolgung uebung",
-    "zickzack tracking training",
-    "richtungswechsel augentraining",
-    "fangsakkaden knickpunkte",
-    "saegezahn blickfolgebewegung",
-    "antagonistische muskelbremsung",
-    "dynamische blickstabilisierung",
-    "sportvisus augenuebung",
-    "okulomotorik zickzack drill",
-    "blicksteuerung richtungswechsel",
-    "augenmuskeltraining richtungswechsel online",
-    "visuelle reaktionszeit augentest"
+    "Zickzack Blickverfolgung Übung",
+    "Zickzack Augentraining",
+    "Blickfolgebewegung Richtungswechsel",
+    "Augenbewegungen Zickzack",
+    "Blickverfolgung Übung online",
+    "Augentraining schnelle Richtungswechsel",
+    "visuelles Training Zickzack",
+    "Blickfolge Zielverlust reduzieren",
+    "Augenübung für Sportler",
+    "okulomotorisches Training Zickzack",
+    "visuelle Reaktionszeit Übung",
+    "kostenloses Augentraining online"
   ],
   openGraph: {
-    title: "Zickzack-Blickverfolgung – Zickzack-Tracking | SkillDrills",
-    description: "Trainieren Sie Blickfolge und Fangsakkaden an Zickzack-Vektorbahnen. Meistern Sie abrupte Richtungswechsel und Kanten-Tracking online. Kostenlos.",
+    title: "Zickzack-Blickverfolgung | SkillDrills",
+    description: "Verfolge ein Ziel auf einer Zickzackbahn. Kostenlose Übung für Blickfolge, Richtungswechsel und Zielverluste.",
     url: 'https://skilldrills.online/de/drills/visual-tracking/zig-zag-path-pursuit',
     siteName: 'SkillDrills',
     locale: 'de_DE',
@@ -31,8 +31,8 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: "Zickzack-Blickverfolgung – Zickzack-Tracking | SkillDrills",
-    description: "Trainieren Sie Blickfolge und Fangsakkaden an Zickzack-Vektorbahnen. Meistern Sie abrupte Richtungswechsel und Kanten-Tracking online. Kostenlos.",
+    title: "Zickzack-Blickverfolgung | SkillDrills",
+    description: "Verfolge ein Ziel auf einer Zickzackbahn. Kostenlose Übung für Blickfolge, Richtungswechsel und Zielverluste.",
   },
   robots: { index: true, follow: true },
   alternates: {
@@ -75,7 +75,7 @@ const breadcrumbSchema = {
 const softwareApplicationSchema = {
   "@context": "https://schema.org",
   "@type": "SoftwareApplication",
-  "name": "Zickzack-Blickverfolgung – Zickzack-Tracking",
+  "name": "Zickzack-Blickverfolgung",
   "applicationCategory": "HealthApplication",
   "operatingSystem": "All",
   "offers": {
@@ -83,20 +83,20 @@ const softwareApplicationSchema = {
     "price": "0",
     "priceCurrency": "USD"
   },
-  "description": "Trainieren Sie Blickfolge und Fangsakkaden an Zickzack-Vektorbahnen. Meistern Sie abrupte Richtungswechsel und Kanten-Tracking online.",
+  "description": "Trainieren Sie Blickfolge und Fangsakkaden an Zickzack-Vektorbahnen. Meistern Sie abrupte Richtungswechsel und Zielverluste online.",
   "url": "https://skilldrills.online/de/drills/visual-tracking/zig-zag-path-pursuit",
   "publisher": {
     "@type": "Organization",
     "name": "SkillDrills",
     "url": "https://skilldrills.online"
   },
-  "dateModified": "2026-09-15"
+  "dateModified": "2026-09-20"
 };
 
 const webAppSchema = {
   "@context": "https://schema.org",
   "@type": "WebApplication",
-  "name": "Zickzack-Blickverfolgung – Zickzack-Tracking",
+  "name": "Zickzack-Blickverfolgung",
   "applicationCategory": "EducationalApplication",
   "operatingSystem": "All",
   "browserRequirements": "Benötigt HTML5 Canvas und JavaScript-fähigen Browser",
@@ -106,26 +106,27 @@ const webAppSchema = {
     "priceCurrency": "USD"
   },
   "url": "https://skilldrills.online/de/drills/visual-tracking/zig-zag-path-pursuit",
-  "dateModified": "2026-09-15"
+  "dateModified": "2026-09-20"
 };
 
 const videoGameSchema = {
   "@context": "https://schema.org",
   "@type": "VideoGame",
-  "name": "Zickzack-Blickverfolgung – Zickzack-Tracking",
+  "name": "Zickzack-Blickverfolgung",
   "url": "https://skilldrills.online/de/drills/visual-tracking/zig-zag-path-pursuit",
-  "description": "Trainieren Sie Blickfolge und Fangsakkaden an Zickzack-Vektorbahnen. Meistern Sie abrupte Richtungswechsel und Kanten-Tracking online.",
+  "description": "Trainieren Sie Blickfolge und Fangsakkaden an Zickzack-Vektorbahnen. Meistern Sie abrupte Richtungswechsel und Zielverluste online.",
   "genre": [
     "Action",
     "Augentraining",
     "Aim Trainer"
   ],
   "gamePlatform": [
-    "Web Browser",
+    "Webbrowser",
     "Desktop",
-    "Mobile"
+    "Mobil"
   ],
   "applicationCategory": "Game",
+  "dateModified": "2026-09-20",
   "offers": {
     "@type": "Offer",
     "price": "0",
@@ -138,13 +139,13 @@ const howToSchema = {
   "@type": "HowTo",
   "name": "Anleitung zum Zickzack-Blickverfolgungstraining",
   "description": "Methodischer 4-Schritte-Leitfaden zur Koordination stetiger Blickfolgebewegungen und reaktiver Fangsakkaden an hochfrequenten Zickzack-Scheitelpunkten.",
-  "dateModified": "2026-09-15",
+  "dateModified": "2026-09-20",
   "step": [
     {
       "@type": "HowToStep",
       "position": 1,
       "name": "Zickzack-Parameter konfigurieren",
-      "text": "Wählen Sie Sessiondauer (30 bis 120 Sekunden), Zielgeschwindigkeit, Punktgröße und Farbe. Aktivieren Sie 'Hide Line' zur Ausschaltung visueller Führungslinien.",
+      "text": "Wählen Sie Sessiondauer (30 bis 120 Sekunden), Zielgeschwindigkeit, Punktgröße und Farbe. Aktivieren Sie 'Hilfslinie ausblenden' zur Ausschaltung visueller Führungslinien.",
       "url": "https://skilldrills.online/de/drills/visual-tracking/zig-zag-path-pursuit#step-1"
     },
     {
@@ -165,7 +166,7 @@ const howToSchema = {
       "@type": "HowToStep",
       "position": 4,
       "name": "Progression mit Geschwindigkeit und Zufallstempo",
-      "text": "Erhöhen Sie den Geschwindigkeitsmultiplikator und schalten Sie 'Random Speed' hinzu, um dynamische, unvorhersehbare Rhythmuswechsel zu trainieren.",
+      "text": "Erhöhen Sie den Geschwindigkeitsmultiplikator und schalten Sie 'Zufallstempo' hinzu, um dynamische, unvorhersehbare Rhythmuswechsel zu trainieren.",
       "url": "https://skilldrills.online/de/drills/visual-tracking/zig-zag-path-pursuit#step-4"
     }
   ]
@@ -174,18 +175,19 @@ const howToSchema = {
 const faqSchema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
+  "dateModified": "2026-09-20",
   "mainEntity": [
     {
       "@type": "Question",
-      "name": "Was ist die Zickzack-Blickverfolgung (Zig-Zag Path Pursuit)?",
+      "name": "Was ist die Zickzack-Blickverfolgung?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Zig-Zag Path Pursuit ist ein okulomotorisches Visualtraining, bei dem ein Stimulus entlang einer alternierenden Zickzack-Trajektorie verfolgt wird. Es schult den Wechsel zwischen stetiger Blickfolgebewegung (Smooth Pursuit) und antagonistischer Augenmuskelbremsung an hochfrequenten Knickpunkten (de Brouwer et al., 2002)."
+        "text": "Die Zickzack-Blickverfolgung ist ein okulomotorisches Visualtraining, bei dem ein Stimulus entlang einer alternierenden Zickzack-Trajektorie verfolgt wird. Sie schult den Wechsel zwischen stetiger Blickfolgebewegung und antagonistischer Augenmuskelbremsung an hochfrequenten Knickpunkten (de Brouwer et al., 2002)."
       }
     },
     {
       "@type": "Question",
-      "name": "Worin liegt der Unterschied zwischen polygonalem und Zickzack-Tracking?",
+      "name": "Worin liegt der Unterschied zwischen polygonaler Blickverfolgung und Zickzack-Blickverfolgung?",
       "acceptedAnswer": {
         "@type": "Answer",
         "text": "Während ein Dreieck nur 3 Ecken pro Umlauf aufweist, erzeugt der Zickzack-Pfad eine dichte, pausenlose Abfolge von 120°-Richtungsbrüchen. Agonistische und antagonistische Augenmuskeln (Rectus medialis/lateralis) müssen in rascher Folge Brems- und Beschleunigungskräfte austauschen (Krauzlis, 2004)."
@@ -233,7 +235,7 @@ const faqSchema = {
     },
     {
       "@type": "Question",
-      "name": "Welchen Trainingseffekt erzielt das Ausblenden der Leitlinie (Hide Line)?",
+      "name": "Welchen Trainingseffekt erzielt das Ausblenden der Leitlinie?",
       "acceptedAnswer": {
         "@type": "Answer",
         "text": "Ohne Orientierungslinie muss das visuelle System die räumlichen Koordinaten der Knickpunkte rein intern im Kleinhirn und prämotorischen Kortex antizipieren. Die sensomotorische Vorwärtssteuerung wird dadurch maximal gefordert (Orban de Xivry & Lefèvre, 2007)."
@@ -249,7 +251,7 @@ const faqSchema = {
     },
     {
       "@type": "Question",
-      "name": "Welche Hirnstrukturen passen sich bei regelmäßigem Zickzack-Tracking an?",
+      "name": "Welche Hirnstrukturen passen sich bei regelmäßiger Zickzack-Blickverfolgung an?",
       "acceptedAnswer": {
         "@type": "Answer",
         "text": "Das frontale Augenfeld (FEF), das supplementäre Augenfeld (SEF) sowie die Lobuli VI-VII des Kleinhirnwurms optimieren ihre Feedbackschleifen. Das Zusammenspiel von Agonist und Antagonist wird millisekundengenau synchronisiert und okulärer Jitter dauerhaft eliminiert (Krauzlis, 2004)."
@@ -261,10 +263,10 @@ const faqSchema = {
 const guide = {
   heading: "Zickzack-Blickverfolgung – Richtungswechsel-Training: Antagonistische Augenmuskelbremsung und Fangsakkaden",
   intro: [
-    "Das Nachverfolgen visueller Reize entlang einer mehrgliedrigen, alternierenden Zickzack- oder Sägezahn-Trajektorie stellt den ultimativen Härtetest für das Zusammenspiel von stetiger Blickfolgebewegung (Smooth Pursuit) und abrupter Vektorumkehr dar. Entlang der geraden Schrägsegmente feuern horizontale und vertikale Augenmuskelgruppen in präziser Synchronisation, um den retinalen Schlupf auf null zu minimieren. Doch im Moment des spitzen Knickpunkts müssen die bisherigen Beschleunigungsmuskeln schlagartig als elastische Bremsen fungieren, während die Antagonisten explosionsartig kontrahieren (Krauzlis, 2004).",
-    "Die wesentliche Hürde dieses hochfrequenten Bewegungsmusters liegt in der sensomotorischen Übertragungslatenz des Menschen (~100 bis 150 ms). Bis die Information über den plötzlichen Richtungswechsel des Stimulus über die Fovea und das Sehzentrum im Mittelhirn ankommt, treibt die mechanische Trägheit der Augen den Blick über den Scheitelpunkt hinaus (Overshoot). Wie Arbeiten von de Brouwer et al. (2002) und Orban de Xivry & Lefèvre (2007) demonstrieren, schaltet das Zentralnervensystem an solchen Kanten blitzschnell von Folgebewegung auf Fangsakkaden (Catch-up Saccades) um, koordiniert über die frontalen Augenfelder (FEF).",
+    "Das Nachverfolgen visueller Reize entlang einer mehrgliedrigen, alternierenden Zickzack- oder Sägezahn-Trajektorie stellt den ultimativen Härtetest für das Zusammenspiel von stetiger Blickfolgebewegung und abrupter Vektorumkehr dar. Entlang der geraden Schrägsegmente feuern horizontale und vertikale Augenmuskelgruppen in präziser Synchronisation, um den retinalen Schlupf auf null zu minimieren. Doch im Moment des spitzen Knickpunkts müssen die bisherigen Beschleunigungsmuskeln schlagartig als elastische Bremsen fungieren, während die Antagonisten explosionsartig kontrahieren (Krauzlis, 2004).",
+    "Die wesentliche Hürde dieses hochfrequenten Bewegungsmusters liegt in der sensomotorischen Übertragungslatenz des Menschen (~100 bis 150 ms). Bis die Information über den plötzlichen Richtungswechsel des Stimulus über die Fovea und das Sehzentrum im Mittelhirn ankommt, treibt die mechanische Trägheit der Augen den Blick über den Scheitelpunkt hinaus. Wie Arbeiten von de Brouwer et al. (2002) und Orban de Xivry & Lefèvre (2007) demonstrieren, schaltet das Zentralnervensystem an solchen Kanten blitzschnell von Folgebewegung auf Fangsakkaden um, koordiniert über die frontalen Augenfelder (FEF).",
     "Systematisches Training an Zickzack-Bahnen baut im Kleinhirn hochpräzise interne Vorwärtsmodelle (Internal Forward Models) auf (Bennett & Barnes, 2006; Barnes, 2008). Dadurch wird das okulomotorische System befähigt, bereits 30 bis 40 ms vor Erreichen des Scheitelpunkts einen prädiktiven Bremsimpuls zu setzen. Der Blick 'haftet' regelrecht am Knickpunkt und wird mit einer einzigen, hochpräzisen Sakkade ohne zittrige Nachkorrekturen auf das nächste Bewegungssegment überführt. Okulärer Jitter wird eliminiert und die visuelle Sehschärfe bleibt ununterbrochen erhalten.",
-    "Die Übung 'Zickzack-Blickverfolgung (Zig-Zag Path Pursuit)' wurde entwickelt, um diese hochdynamische Vektorkontrolle online zu trainieren. Durch das wiederholte Bewältigen spitzer Richtungswechsel eliminieren Sie Unruhe und Reaktionsverzögerungen beim Tracking unregelmäßig manövrierender Ziele. Nutzen Sie 'Hide Line' für reines internes Raumtracking und 'Random Speed' zur Ausschaltung starrer Rhythmusmuster.",
+    "Die Übung 'Zickzack-Blickverfolgung' wurde entwickelt, um diese hochdynamische Vektorkontrolle online zu trainieren. Durch das wiederholte Bewältigen spitzer Richtungswechsel eliminieren Sie Unruhe und Reaktionsverzögerungen bei unregelmäßig manövrierenden Zielen. Nutzen Sie 'Hilfslinie ausblenden' für reines internes Raumtraining und 'Zufallstempo' zur Ausschaltung starrer Rhythmusmuster.",
     "Hardware-Latenz und Messmethodik: Die Hardware-Latenz unterliegt der Bildschirmquantisierung (~16,7 ms bei 60 Hz, ~6,9 ms bei 144 Hz, ~4,1 ms bei 240 Hz) sowie den Polling-Intervallen der Eingabegeräte (~8 ms bei 125 Hz vs. ~1 ms bei 1.000 Hz), wie von Woods et al. (2015) dokumentiert. Alle Leistungsdaten und Reaktionsprofile werden ausschließlich lokal im Browser-Speicher (localStorage) gesichert und niemals extern übertragen."
   ],
   benchmarks: {
@@ -275,10 +277,16 @@ const guide = {
       ["Meister / Höchste Richtungsdisziplin (Master)", "2.5x〜3.5x", "Fehler < 22px (nur minimale Mikrosakkaden)", "Latenz < 140ms (geschmeidige Umkehr)", "Top 8%"],
       ["Fortgeschritten / Wettkampfniveau (Advanced)", "1.8x〜2.5x", "Fehler < 38px (schnelle Wiedererfassung)", "Latenz < 180ms (solide Richtungswechsel)", "Top 25%"],
       ["Mittelstufe / Grundlegend geübt (Intermediate)", "1.2x〜1.8x", "Fehler 38〜70px (Überschwinger & Kurvenschneiden)", "Latenz 180〜240ms (mehrere Korrekturen)", "Mittlere 45%"],
-      ["Einsteiger / Untrainiert (Novice)", "0.5x〜1.2x", "Fehler > 70px (völliger Zielverlust an Knickpunkten)", "Latenz > 250ms (ausgeprägter Overshoot)", "Basisniveau"]
+      ["Einsteiger / Untrainiert", "0.5x〜1.2x", "Fehler > 70px (völliger Zielverlust an Knickpunkten)", "Latenz > 250ms (ausgeprägtes Überschwingen)", "Basisniveau"]
     ],
     note: "Die Richtwerte basieren auf de Brouwer et al. (2002) zur Dynamik von Fangsakkaden sowie Krauzlis (2004) zur neuronalen Steuerung bei abrupten Geschwindigkeits- und Richtungsumkehren."
   },
+  steps: [
+    { title: "Das Ziel mittig erfassen", text: "Halten Sie den Kopf ruhig und verfolgen Sie das Ziel im ersten diagonalen Abschnitt." },
+    { title: "Die Gerade bis zum Ende verfolgen", text: "Folgen Sie jedem Abschnitt ohne Abkürzung bis zum Knickpunkt." },
+    { title: "Vor dem Richtungswechsel bremsen", text: "Verringern Sie den Blickimpuls vor der Umkehr, damit der Blick die Ecke nicht überschießt." },
+    { title: "Tempo erst bei stabiler Genauigkeit erhöhen", text: "Steigern Sie die Geschwindigkeit erst, wenn Zielverluste und Knickpunktfehler stabil bleiben." }
+  ],
   techniques: [
     {
       title: "Gleichmäßige Muskelspannung und Entspannung auf linearen Schrägsegmenten",
@@ -290,7 +298,7 @@ const guide = {
       ]
     },
     {
-      title: "Prädiktives Bremsen vor dem Knickpunkt (Anti-Overshoot)",
+      title: "Prädiktives Bremsen vor dem Knickpunkt gegen Überschwingen",
       description: "Aktivieren Sie kurz vor Erreichen des spitzen Scheitelpunkts die cerebelläre Vorwärtsbremse. Verhindern Sie, dass die Bewegungsträgheit den Blick unkontrolliert über die Ecke schiebt.",
       tips: [
         "Fokussieren Sie etwa 30 ms vor dem Knickpunkt die beginnende Geschwindigkeitsdrosselung des Ziels",
@@ -308,7 +316,7 @@ const guide = {
       ]
     },
     {
-      title: "Aktivierung des internen geometrischen Taktes mit Hide Line",
+      title: "Aktivierung des internen geometrischen Taktes ohne Hilfslinie",
       description: "Blenden Sie die Pfadlinie aus, um die räumlichen Koordinaten des Zickzack-Musters rein intern im Gedächtnis abzubilden. Nutzen Sie den rhythmischen Takt (links, rechts, links, rechts) zur mentalen Vorhersage.",
       tips: [
         "Leiten Sie aus der Bildschirmbreite und dem Wendewinkel die Raumkoordinaten des nächsten Umkehrpunkts ab",
@@ -328,11 +336,11 @@ const guide = {
   },
   faqs: [
     {
-      "q": "Was ist die Zickzack-Blickverfolgung (Zig-Zag Path Pursuit)?",
-      "a": "Zig-Zag Path Pursuit ist ein okulomotorisches Visualtraining, bei dem ein Stimulus entlang einer alternierenden Zickzack-Trajektorie verfolgt wird. Es schult den Wechsel zwischen stetiger Blickfolgebewegung (Smooth Pursuit) und antagonistischer Augenmuskelbremsung an hochfrequenten Knickpunkten (de Brouwer et al., 2002)."
+      "q": "Was ist die Zickzack-Blickverfolgung?",
+      "a": "Die Zickzack-Blickverfolgung ist ein okulomotorisches Visualtraining, bei dem ein Stimulus entlang einer alternierenden Zickzack-Trajektorie verfolgt wird. Sie schult den Wechsel zwischen stetiger Blickfolgebewegung und antagonistischer Augenmuskelbremsung an hochfrequenten Knickpunkten (de Brouwer et al., 2002)."
     },
     {
-      "q": "Worin liegt der Unterschied zwischen polygonalem und Zickzack-Tracking?",
+      "q": "Worin liegt der Unterschied zwischen polygonaler Blickverfolgung und Zickzack-Blickverfolgung?",
       "a": "Während ein Dreieck nur 3 Ecken pro Umlauf aufweist, erzeugt der Zickzack-Pfad eine dichte, pausenlose Abfolge von 120°-Richtungsbrüchen. Agonistische und antagonistische Augenmuskeln (Rectus medialis/lateralis) müssen in rascher Folge Brems- und Beschleunigungskräfte austauschen (Krauzlis, 2004)."
     },
     {
@@ -356,7 +364,7 @@ const guide = {
       "a": "Empfohlen werden 2 bis 3 Sätze von jeweils 45 bis 60 Sekunden Dauer (insgesamt ca. 3 bis 5 Minuten täglich). Kurze, hochintensive Wiederholungen verhindern okuläre Ermüdung und festigen die neuronale Steuerung am wirksamsten."
     },
     {
-      "q": "Welchen Trainingseffekt erzielt das Ausblenden der Leitlinie (Hide Line)?",
+      "q": "Welchen Trainingseffekt erzielt das Ausblenden der Leitlinie?",
       "a": "Ohne Orientierungslinie muss das visuelle System die räumlichen Koordinaten der Knickpunkte rein intern im Kleinhirn und prämotorischen Kortex antizipieren. Die sensomotorische Vorwärtssteuerung wird dadurch maximal gefordert (Orban de Xivry & Lefèvre, 2007)."
     },
     {
@@ -364,7 +372,7 @@ const guide = {
       "a": "Die Bildwiederholzeit sinkt von 16,7 ms (60Hz) auf 6,9 ms (144Hz) bzw. 4,2 ms (240Hz). Dies reduziert Bewegungsunschärfe an den spitzen Umkehrpunkten drastisch und erlaubt perfekt getimte Bremsimpulse (Woods et al., 2015)."
     },
     {
-      "q": "Welche Hirnstrukturen passen sich bei regelmäßigem Zickzack-Tracking an?",
+      "q": "Welche Hirnstrukturen passen sich bei regelmäßiger Zickzack-Blickverfolgung an?",
       "a": "Das frontale Augenfeld (FEF), das supplementäre Augenfeld (SEF) sowie die Lobuli VI-VII des Kleinhirnwurms optimieren ihre Feedbackschleifen. Das Zusammenspiel von Agonist und Antagonist wird millisekundengenau synchronisiert und okulärer Jitter dauerhaft eliminiert (Krauzlis, 2004)."
     }
   ],
@@ -400,9 +408,9 @@ export default function LocalizedPage() {
       />
 
       <ZigZagPathPursuitClient copy={{
-        title: "Zickzack-Blickverfolgung (Richtungswechsel-Training)",
-        subtitle: "Mehrgliedrige Zickzack-Umkehr – Antagonistische Bremsung & Fangsakkaden",
-        description: "Verfolgen Sie ein Ziel entlang alternierender Zickzack-Trajektorien und trainieren Sie foveale Blickfolge gekoppelt mit reaktiven Fangsakkaden an scharfen Knickpunkten. Perfektioniert die antagonistische Muskelbremsung und minimiert okuläres Überschwingen (de Brouwer et al., 2002; Krauzlis, 2004)."
+        title: "Zickzack-Blickverfolgung",
+        subtitle: "Diagonale Blickfolge und schnelle Umkehr",
+        description: "Verfolge ein Ziel auf einer Zickzackbahn und prüfe Blickverluste und Fehler an den Knickpunkten."
       }} />
       <DrillGuide guide={guide} />
       <div className="max-w-6xl mx-auto px-4 pb-12">

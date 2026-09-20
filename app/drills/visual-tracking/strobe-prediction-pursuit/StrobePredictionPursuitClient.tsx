@@ -6,6 +6,7 @@ import { Play, RefreshCw, Timer, Share2, LogOut, Check, Sun, Moon, Volume2, Volu
 
 import DrillFooter from '../../../../components/drill/DrillFooter';
 import DrillCountdown from '../../../../components/drill/DrillCountdown';
+import DrillAccordion from '../../../../components/drill/DrillAccordion';
 import ZigZagPathPursuitStartCard from '../../../../components/drill/ZigZagPathPursuitStartCard';
 import { drillAudio } from '../../../../lib/drillAudio';
 import { drawTacticalTarget } from '../../../../lib/canvasFx';
@@ -422,9 +423,6 @@ export default function StrobePredictionPursuitClient({ copy }: { copy?: { title
                 {copy?.subtitle || "Strobe Vision Training Drill"}
               </span>
             </h1>
-            <p className="mt-2 text-xs sm:text-sm text-slate-300 leading-relaxed">
-              {copy?.description || "Strobe prediction pursuit conditions visual extrapolation and predictive gaze tracking by intermittently occluding a moving target in cyclic dark phases. By compelling the brain to maintain ocular pursuit across sensory interruptions, this drill strengthens forward cerebellar kinetic models and improves anticipatory timing (Appelbaum et al., 2011; Bennett et al., 2007). Here the target is hidden for one third of every strobe cycle (60 frames visible, 30 dark). When a tracked target is briefly occluded the eyes do not stop: velocity decays during the blank and re-accelerates before it reappears (Bennett et al., 2007)."}
-            </p>
           </div>
         )}
 
@@ -457,7 +455,7 @@ export default function StrobePredictionPursuitClient({ copy }: { copy?: { title
         {/* Game Stage Container */}
         <div 
           ref={containerRef} 
-          className={`overflow-hidden flex flex-col transition-all duration-150 select-none border border-white/10 ${
+          className={`overflow-hidden flex flex-col select-none border border-white/10 ${
             dayMode ? 'bg-[#ffffff]' : 'bg-[#080811]'
           } ${dayMode ? 'text-slate-900' : 'text-white'} ${
             isFullscreen ? 'fixed inset-0 z-[100] w-screen h-[100dvh] rounded-none border-none flex flex-col items-center justify-center' : 'w-full rounded-2xl aspect-video min-h-[460px] md:min-h-[500px] max-h-[88vh] max-md:aspect-[3/4] max-md:min-h-[420px] max-md:max-h-[76vh] relative overflow-hidden flex flex-col'
@@ -606,32 +604,9 @@ export default function StrobePredictionPursuitClient({ copy }: { copy?: { title
 
         </div>
 
-        {/* RELATED DRILLS GRID */}
-        {!isFullscreen && (
-          <section className="mt-4">
-            <h2 className="text-sm font-bold text-slate-400 uppercase tracking-wider mb-3">
-              Related Visual Drills
-            </h2>
-            <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
-              {RELATED_DRILLS.map((drill) => (
-                <Link
-                  key={drill.id}
-                  href={drill.href}
-                  className="group bg-[#0c0c16] border border-white/5 hover:border-red-500/40 rounded-xl p-3.5 transition-all duration-200 hover:-translate-y-0.5 flex flex-col justify-between"
-                >
-                  <div>
-                    <div className="text-[10px] font-bold text-red-400 uppercase tracking-wider mb-1">{drill.cat}</div>
-                    <div className="text-xs font-bold text-white group-hover:text-red-300 transition-colors">{drill.name}</div>
-                    <div className="text-[11px] text-slate-400 mt-1 line-clamp-2 leading-relaxed">{drill.desc}</div>
-                  </div>
-                  <div className="text-[10px] font-bold text-slate-500 group-hover:text-red-400 mt-3 flex items-center gap-1 transition-colors">
-                    Train Drill <span>→</span>
-                  </div>
-                </Link>
-              ))}
-            </div>
-          </section>
-        )}
+        {!isFullscreen && <DrillAccordion id="about" title="About Strobe Prediction Pursuit" isOpen={openAccordion === 'about'} onToggle={() => setOpenAccordion(openAccordion === 'about' ? null : 'about')}>
+          <p className="text-sm text-slate-300 leading-relaxed">{copy?.description || "Strobe prediction pursuit conditions visual extrapolation and predictive gaze tracking by intermittently occluding a moving target in cyclic dark phases. By compelling the brain to maintain ocular pursuit across sensory interruptions, this drill strengthens forward cerebellar kinetic models and improves anticipatory timing (Appelbaum et al., 2011; Bennett et al., 2007). Here the target is hidden for one third of every strobe cycle (60 frames visible, 30 dark). When a tracked target is briefly occluded the eyes do not stop: velocity decays during the blank and re-accelerates before it reappears (Bennett et al., 2007)."}</p>
+        </DrillAccordion>}
 
         {/* SITE FOOTER */}
         {!isFullscreen && <DrillFooter />}

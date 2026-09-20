@@ -489,10 +489,8 @@ export default function PathTracingClient({ copy = null }) {
               {copy?.h1Prefix || null}
               <span data-seo-kw="1">{copy?.h1Keyword || "Path Tracing Memory Test"}</span>
               {copy?.h1Suffix || null}
+              <span className="block text-sm font-semibold text-slate-400 mt-1">{copy?.subtitle || "Path tracing memory test for watching spatial routes, retracing them in order, and improving visual recall"}</span>
             </h1>
-            <p className="text-[13px] text-slate-400 leading-relaxed">
-              {copy?.subtitle || "Spatial span is the longest sequence of positions you can retrace in order. The Corsi block-tapping task, the standard measure, puts most adults around five to seven steps (Milner, 1971; Corsi, 1972), and it draws on a different store from verbal digit span (Logie, 1995)."}
-            </p>
           </div>
         )}
 
@@ -774,7 +772,7 @@ export default function PathTracingClient({ copy = null }) {
                   <Brain className="w-4 h-4 text-amber-400" /> What Is Path Tracing Training?
                 </h3>
                 <p className="text-sm leading-relaxed mb-3">
-                  <strong>Path Tracing Training</strong> is an advanced spatial sequence memory drill designed to measure route tracing capacity. The <strong>Path Tracing drill</strong> demonstrates animated step paths on 3x3 to 7x7 matrices, testing your ability to lock in and retrace directional routes in exact order.
+                  <strong>Path Tracing Training</strong> is an advanced spatial sequence memory drill designed to measure route tracing capacity. The <strong>Path Tracing drill</strong> demonstrates animated step paths on 3x3 to 7x7 matrices, testing your ability to lock in and retrace directional routes in exact order. The Corsi block-tapping task, the standard measure of spatial span, puts most adults around five to seven steps (Milner, 1971; Corsi, 1972), and it draws on a different store from verbal digit span (Logie, 1995).
                 </p>
                 <p className="text-sm leading-relaxed">
                   By practicing <strong>sequential spatial chunking</strong>, you expand your visual short-term memory buffer and increase your route navigation speed under time pressure.

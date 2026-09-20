@@ -1,25 +1,26 @@
 import SplitScreenTrackingClient from '@/app/drills/visual-tracking/split-screen-tracking/SplitScreenTrackingClientLoader';
 import DrillGuide from '@/components/drill/DrillGuide';
 import RelatedDrills from '@/components/drill/RelatedDrills';
+import DrillFooter from '@/components/drill/DrillFooter';
 import { getAlternateLanguages } from '@/lib/i18n/locales';
 import { pickSources } from '@/lib/drillSources';
 
 export const metadata = {
-  title: "Split-Screen Augentraining – Duales Tracking | SkillDrills",
-  description: "Trainieren Sie geteilte Aufmerksamkeit durch simultane Verfolgung zweier orthogonaler Zielobjekte. Bilaterales Blickfolgetraining online. Kostenlos.",
+  title: "Geteilte Aufmerksamkeit: Blickverfolgung | SkillDrills",
+  description: "Verfolge zwei bewegte Ziele in getrennten Bildschirmbereichen. Kostenlose Browserübung mit Ankerstabilität und Seitenvergleich.",
   keywords: [
-    "split screen augentraining",
-    "geteilte aufmerksamkeit blickverfolgung",
-    "bilaterales blickfolgetraining",
-    "duale zielverfolgung auge",
-    "peripheres blickfeld trennung",
-    "tunnelblick abbauen uebungen",
-    "multiple object tracking drill",
-    "esports minimap blickfuehrung",
-    "visuelle aufmerksamkeit teilen",
-    "hemisphaerenunabhaengige blickmotorik",
-    "bilaterale visuelle aufmerksamkeit",
-    "duales blickverfolgungstraining"
+    "geteilte Aufmerksamkeit Blickverfolgung",
+    "bilaterales Blickfolgetraining",
+    "duale Zielverfolgung Auge",
+    "peripheres Blickfeld Übung",
+    "visuelle Aufmerksamkeit teilen",
+    "mehrere Ziele verfolgen",
+    "Blickverfolgung zwei Ziele",
+    "Blickanker Stabilität Training",
+    "geteilte Aufmerksamkeit visuell",
+    "Übung gegen Tunnelblick",
+    "visuelles Scanning Training",
+    "parallele Zielverfolgung"
   ],
   alternates: {
     canonical: "https://skilldrills.online/de/drills/visual-tracking/split-screen-tracking",
@@ -27,8 +28,8 @@ export const metadata = {
   },
   robots: { index: true, follow: true },
   openGraph: {
-    title: "Split-Screen Augentraining – Duales Tracking | SkillDrills",
-    description: "Trainieren Sie geteilte Aufmerksamkeit durch simultane Verfolgung zweier orthogonaler Zielobjekte. Bilaterales Blickfolgetraining online. Kostenlos.",
+    title: "Geteilte Aufmerksamkeit: Blickverfolgung | SkillDrills",
+    description: "Verfolge zwei bewegte Ziele in getrennten Bildschirmbereichen. Kostenlose Browserübung mit Ankerstabilität und Seitenvergleich.",
     url: "https://skilldrills.online/de/drills/visual-tracking/split-screen-tracking",
     siteName: "SkillDrills",
     locale: "de_DE",
@@ -36,8 +37,8 @@ export const metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Split-Screen Augentraining – Duales Tracking | SkillDrills",
-    description: "Trainieren Sie geteilte Aufmerksamkeit durch simultane Verfolgung zweier orthogonaler Zielobjekte. Bilaterales Blickfolgetraining online. Kostenlos.",
+    title: "Geteilte Aufmerksamkeit: Blickverfolgung | SkillDrills",
+    description: "Verfolge zwei bewegte Ziele in getrennten Bildschirmbereichen. Kostenlose Browserübung mit Ankerstabilität und Seitenvergleich.",
   },
 };
 
@@ -84,7 +85,7 @@ const softwareApplicationSchema = {
     "name": "SkillDrills",
     "url": "https://skilldrills.online"
   },
-  "dateModified": "2026-09-15"
+  "dateModified": "2026-09-20"
 };
 
 const webAppSchema = {
@@ -100,7 +101,7 @@ const webAppSchema = {
     "priceCurrency": "USD"
   },
   "url": "https://skilldrills.online/de/drills/visual-tracking/split-screen-tracking",
-  "dateModified": "2026-09-15"
+  "dateModified": "2026-09-20"
 };
 
 const videoGameSchema = {
@@ -124,7 +125,8 @@ const videoGameSchema = {
     "@type": "Offer",
     "price": "0",
     "priceCurrency": "USD"
-  }
+  },
+  "dateModified": "2026-09-20"
 };
 
 const howToSchema = {
@@ -132,7 +134,7 @@ const howToSchema = {
   "@type": "HowTo",
   "name": "Anleitung für das Split-Screen Augentraining",
   "description": "Schritt-für-Schritt-Anleitung zur gleichzeitigen Erfassung zweier orthogonal bewegter Reize zur Maximierung der bilateralen visuellen Aufmerksamkeit.",
-  "dateModified": "2026-09-15",
+  "dateModified": "2026-09-20",
   "step": [
     {
       "@type": "HowToStep",
@@ -249,7 +251,8 @@ const faqSchema = {
         "text": "Bei 144Hz (6,9 ms Frame-Intervall) oder 240Hz (4,2 ms) werden beide orthogonalen Ziele mit minimalem Bewegungsunschärfe- und Quantisierungsfehler dargestellt (Woods et al., 2015). Dies eliminiert hardwarebedingte Ruckler und stellt sicher, dass das Gehirn saubere biologische Bewegungssignale verarbeitet."
       }
     }
-  ]
+  ],
+  "dateModified": "2026-09-20"
 };
 
 const guide = {
@@ -319,6 +322,12 @@ const guide = {
       "Körperausrichtung: Stellen Sie sicher, dass die vertikale Bildschirmmitte exakt mit Ihrer Nasen- und Körpermitte fluchtet, um asymmetrische Parallaxenfehler zu vermeiden."
     ]
   },
+  steps: [
+    { title: "Blick auf die Mittellinie richten", text: "Blicke weich auf die Bildschirmmitte und erfasse beide Ziele ohne eines direkt zu fixieren." },
+    { title: "Beide Bewegungen trennen", text: "Lies die vertikale Bewegung links und die horizontale Bewegung rechts als getrennte Rhythmen." },
+    { title: "Zielverluste vergleichen", text: "Prüfe nach jeder Runde, welche Seite verloren ging und ob der zentrale Blickanker gehalten wurde." },
+    { title: "Geschwindigkeit schrittweise erhöhen", text: "Erhöhe das Tempo erst, wenn Genauigkeit und Seitenbalance stabil bleiben." }
+  ],
   faqs: [
     {
       q: "Was ist das Split-Screen Augentraining (Split-Screen Tracking)?",
@@ -401,15 +410,16 @@ export default function SplitScreenTrackingDePage() {
 
       <SplitScreenTrackingClient
         copy={{
-          title: "Split-Screen Augentraining",
-          subtitle: "Geteilte Aufmerksamkeit & Bilaterale Blickverfolgung",
-          description: "Konditionieren Sie geteilte visuelle Aufmerksamkeit durch die simultane Verfolgung zweier orthogonal bewegter Zielobjekte auf geteiltem Bildschirm. Erweitern Sie Ihre verdeckte Aufmerksamkeit über beide Gehirnhälften hinweg, vermeiden Sie Tunnelblick und stärken Sie die parallele Bewegungswahrnehmung."
+          title: "Geteilte Aufmerksamkeit: Blickverfolgung",
+          subtitle: "Zwei Ziele in getrennten Bildschirmbereichen",
+          description: "Verfolge zwei bewegte Ziele in getrennten Bereichen und beobachte Blickanker, Seitenvergleich und Zielverluste in einer kostenlosen Browserübung."
         }}
       />
       <DrillGuide guide={guide} />
       <div className="max-w-6xl mx-auto px-4 pb-12">
         <RelatedDrills currentCategory="visual-tracking" currentHref="https://skilldrills.online/de/drills/visual-tracking/split-screen-tracking" />
       </div>
+      <DrillFooter />
     </>
   );
 }

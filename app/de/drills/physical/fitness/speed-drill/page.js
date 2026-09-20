@@ -56,6 +56,14 @@ export const metadata = {
   robots: { index: true, follow: true },
 };
 
+Object.assign(metadata, {
+  title: 'Reaktionstest | Klickgeschwindigkeit & Zieltrainer | SkillDrills',
+  description: 'Kostenloser Reaktionstest im Browser. Klicken Sie schrumpfende Ziele schnell und präzise, um Reaktionszeit, Zielerfassung und Klickgeschwindigkeit zu trainieren.',
+  keywords: ['Reaktionstest', 'Reaktionszeit Test', 'Klickgeschwindigkeitstest', 'Klicks pro Sekunde Test', 'Ziel-Trainer', 'Reflex Test', 'Maus Klicktest', 'Klickgenauigkeit', 'schnelle Klicks', 'Reaktionsspiel'],
+  openGraph: { ...metadata.openGraph, title: 'Reaktionstest | Klickgeschwindigkeit & Zieltrainer | SkillDrills', description: 'Kostenloser Reaktionstest im Browser. Klicken Sie schrumpfende Ziele schnell und präzise, um Reaktionszeit, Zielerfassung und Klickgeschwindigkeit zu trainieren.' },
+  twitter: { ...metadata.twitter, title: 'Reaktionstest | Klickgeschwindigkeit & Zieltrainer | SkillDrills', description: 'Kostenloser Reaktionstest im Browser. Klicken Sie schrumpfende Ziele schnell und präzise, um Reaktionszeit, Zielerfassung und Klickgeschwindigkeit zu trainieren.' },
+});
+
 const breadcrumbSchema = {
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
@@ -106,7 +114,7 @@ const softwareApplicationSchema = {
     "url": "https://skilldrills.online/de"
   },
   "inLanguage": "de",
-  "dateModified": "2026-09-12"
+  "dateModified": "2026-09-20"
 };
 
 const webApplicationSchema = {
@@ -123,7 +131,7 @@ const webApplicationSchema = {
   },
   "url": "https://skilldrills.online/de/drills/physical/fitness/speed-drill",
   "inLanguage": "de",
-  "dateModified": "2026-09-12"
+  "dateModified": "2026-09-20"
 };
 
 const videoGameSchema = {
@@ -144,6 +152,8 @@ const videoGameSchema = {
     "Mobile"
   ],
   "applicationCategory": "Game",
+  "inLanguage": "de",
+  "dateModified": "2026-09-20",
   "offers": {
     "@type": "Offer",
     "price": "0",
@@ -154,7 +164,8 @@ const videoGameSchema = {
 const faqSchema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
-  "dateModified": "2026-09-12",
+  "inLanguage": "de",
+  "dateModified": "2026-09-20",
   "mainEntity": [
     {
       "@type": "Question",
@@ -364,8 +375,8 @@ export default function LocalizedSpeedDrillPageDe() {
       />
       <SpeedDrillClient
         copy={{
-          title: "Klickgeschwindigkeit Test & Speed Drill",
-          subtitle: "Schrumpfende Ziele abfangen & ballistische Flicks • 15 dynamische Level",
+          title: "Reaktionstest",
+          subtitle: "Schrumpfende Ziele schnell und präzise treffen",
           hudLabels: {
             score: "Punkte",
             time: "Zeit",

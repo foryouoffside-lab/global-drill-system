@@ -1,15 +1,16 @@
 import EliteNeuroSwitchClient from './EliteNeuroSwitchClientLoader';
 import { getAlternateLanguages } from '@/lib/i18n/locales';
 import DrillGuide from '@/components/drill/DrillGuide';
+import DrillFooter from '@/components/drill/DrillFooter';
 import { pickSources } from '@/lib/drillSources';
 
 export const metadata = {
-  title: "Choice Reaction Time Test – Decision Speed | SkillDrills",
-  description: "Free choice reaction time test online. Measure decision-making latency, visual discrimination speed, and cognitive flexibility under dynamic rule switching.",
-  keywords: ["reaction time test", "choice reaction time test", "reaction time test online", "decision speed test", "mental processing speed", "hick's law test", "visual reaction time", "cognitive reflex test", "neuro speed test", "cognitive processing speed test", "visual discrimination reaction test", "choice reaction time task online"],
+  title: "Choice Reaction Test Online | Decision Speed | SkillDrills",
+  description: "Free choice reaction test online: match targets to a changing rule and practise decision speed, visual discrimination, and accuracy. Non-clinical.",
+  keywords: ["choice reaction test online", "choice reaction time test", "reaction time test", "reaction time test online", "decision speed test", "visual reaction time", "cognitive processing speed", "Hick's law test", "reaction test browser"],
   openGraph: {
-    title: "Choice Reaction Time Test – Decision Speed | SkillDrills",
-    description: "Free choice reaction time test online. Measure decision-making latency, visual discrimination speed, and cognitive flexibility under dynamic rule switching.",
+    title: "Choice Reaction Test Online | Decision Speed | SkillDrills",
+    description: "Free choice reaction test online: match targets to a changing rule and practise decision speed, visual discrimination, and accuracy. Non-clinical.",
     type: 'article',
     url: 'https://skilldrills.online/drills/cognitive/processing-speed/reaction-time',
     siteName: 'SkillDrills',
@@ -17,8 +18,8 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: "Choice Reaction Time Test – Decision Speed | SkillDrills",
-    description: "Free choice reaction time test online. Measure decision-making latency, visual discrimination speed, and cognitive flexibility under dynamic rule switching.",
+    title: "Choice Reaction Test Online | Decision Speed | SkillDrills",
+    description: "Free choice reaction test online: match targets to a changing rule and practise decision speed, visual discrimination, and accuracy. Non-clinical.",
   },
   robots: { index: true, follow: true },
   alternates: {
@@ -52,7 +53,7 @@ const breadcrumbSchema = {
     {
       "@type": "ListItem",
       "position": 4,
-      "name": "Reaction Time Test",
+      "name": "Choice Reaction Test Online",
       "item": "https://skilldrills.online/drills/cognitive/processing-speed/reaction-time"
     }
   ]
@@ -77,13 +78,13 @@ const softwareApplicationSchema = {
     "url": "https://skilldrills.online"
   },
   "inLanguage": "en-US",
-  "dateModified": "2026-09-11"
+    "dateModified": "2026-09-20"
 };
 
 const webApplicationSchema = {
   "@context": "https://schema.org",
   "@type": "WebApplication",
-  "name": "Neuro Speed & Reflex Test",
+  "name": "Choice Reaction Test Online",
   "applicationCategory": "GameApplication",
   "operatingSystem": "All",
   "browserRequirements": "Requires a modern web browser with JavaScript support",
@@ -94,7 +95,7 @@ const webApplicationSchema = {
   },
   "url": "https://skilldrills.online/drills/cognitive/processing-speed/reaction-time",
   "inLanguage": "en-US",
-  "dateModified": "2026-09-11"
+    "dateModified": "2026-09-20"
 };
 
 const videoGameSchema = {
@@ -114,6 +115,7 @@ const videoGameSchema = {
     "Mobile"
   ],
   "applicationCategory": "Game",
+  "dateModified": "2026-09-20",
   "offers": {
     "@type": "Offer",
     "price": "0",
@@ -248,7 +250,7 @@ const howToSchema = {
 const guideProps = {
   sources: pickSources('donders1969', 'hick1952', 'hyman1953', 'der2006', 'woods2015'),
   intro: {
-    title: "Neuro Speed & Reflex Test",
+    title: "Choice Reaction Time Test Guide & Decision Speed Benchmarks",
     paragraphs: [
       "Free choice reaction time test online. Measure decision-making latency, visual discrimination speed, and cognitive flexibility under dynamic rule-switching pressure.",
       "Simple reaction time (SRT) requires responding to a single predictable stimulus (~200ms). Choice reaction time introduces a decision-making stage, increasing latency to ~250–350ms (Donders, 1868).",
@@ -312,8 +314,9 @@ export default function EnhancedPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(howToSchema) }}
       />
-      <EliteNeuroSwitchClient copy={{ title: "Neuro Speed & Reflex Test" }} />
+      <EliteNeuroSwitchClient copy={{ title: "Choice Reaction Test", subtitle: "Choice reaction time drill for decision speed, visual discrimination, and accurate rule switching" }} />
       <DrillGuide {...guideProps} />
+      <DrillFooter />
     </>
   );
 }

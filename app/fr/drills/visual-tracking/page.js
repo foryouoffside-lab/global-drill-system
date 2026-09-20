@@ -2,10 +2,11 @@ import VisualTrackingDrillsClient from '@/app/drills/visual-tracking/VisualTrack
 import { DRILLS } from '@/lib/drillsRegistry';
 import { getAlternateLanguages } from '@/lib/i18n/locales';
 import { getLocalizedDrill } from '@/lib/i18n/drillNames';
+import { buildVisualTrackingHubMetadata, getVisualTrackingHubCollectionFields, getVisualTrackingHubFaqFields } from '@/lib/i18n/visualTrackingHubNative';
 
 const trackingDrills = DRILLS.filter((d) => d.category === 'visual-tracking');
 
-export const metadata = {
+const legacyMetadata = {
   title: 'Poursuite Oculaire & Acuité Visuelle Dynamique | SkillDrills',
   description: 'Exercices de poursuite oculaire et acuité visuelle dynamique en ligne gratuits. 14 entraînements scientifiques : motricité oculaire et vision périphérique.',
   keywords: [
@@ -37,6 +38,8 @@ export const metadata = {
   },
 };
 
+export const metadata = { ...legacyMetadata, ...buildVisualTrackingHubMetadata('fr', 'https://skilldrills.online/fr/drills/visual-tracking', trackingDrills.length, getAlternateLanguages('/fr/drills/visual-tracking')) };
+
 const breadcrumbSchema = {
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
@@ -54,6 +57,7 @@ const collectionSchema = {
   "url": "https://skilldrills.online/fr/drills/visual-tracking",
   "description": "14 entraînements scientifiques de poursuite oculaire continue (Smooth Pursuit), trajectoires sinusoïdales, prédiction balistique et vision périphérique.",
   "author": { "@type": "Organization", "name": "SkillDrills" },
+  ...getVisualTrackingHubCollectionFields('fr', trackingDrills.length),
   "hasPart": trackingDrills.map((drill) => {
     const loc = getLocalizedDrill(drill.href, 'fr', drill.name);
     return {
@@ -135,14 +139,17 @@ const faqSchema = {
   ]
 };
 
+const { additions, ...faqFields } = getVisualTrackingHubFaqFields('fr');
+const enrichedFaqSchema = { ...faqSchema, ...faqFields, mainEntity: [...faqSchema.mainEntity, ...additions] };
+
 export default function LocalizedVisualTrackingDrillsClientPage() {
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(collectionSchema) }} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(enrichedFaqSchema) }} />
       <VisualTrackingDrillsClient
-        faqs={faqSchema.mainEntity.map((e) => ({ q: e.name, a: e.acceptedAnswer.text }))}
+        faqs={enrichedFaqSchema.mainEntity.map((e) => ({ q: e.name, a: e.acceptedAnswer.text }))}
       />
     </>
   );

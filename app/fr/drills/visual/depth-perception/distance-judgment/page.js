@@ -5,37 +5,35 @@ import { getAlternateLanguages } from '@/lib/i18n/locales';
 import { pickSources } from '@/lib/drillSources';
 
 // ============================================================
-// SEO RESEARCH FINDINGS — distance-judgment (French: Perception de la Profondeur)
-// PRIMARY:  "test de perception de la profondeur" — Core query
-//           "appréciation des distances test"     — Practical driving test
+// SEO RESEARCH FINDINGS — distance-judgment (French native search)
+// PRIMARY:  "test de perception de la profondeur" — Consumer utility intent
+//           "vision stéréoscopique"                — Clinical vision term
 // SECONDARY / LSI:
-//           "test de vision stéréoscopique"       — Clinical stereopsis
-//           "test du sens du relief en ligne"     — Relief and depth
-//           "estimation de distance visuelle"     — Estimation query
-//           "expansion optique looming"           — Optical looming
-//           "test de howard-dolman"               — Classical test
+//           "stéréopsie"                           — Ophthalmic terminology
+//           "appréciation des distances"           — Natural practical phrase
+//           "test de profondeur en ligne"           — Browser intent
+//           "vision en relief"                      — Common supporting term
 // ============================================================
 
 export const metadata = {
-  title: 'Test de Perception de la Profondeur – Relief et Distances',
-  description: 'Test de perception de la profondeur en ligne gratuit. Évaluez votre appréciation des distances et votre précision d\'interception par expansion optique (TTC).',
+  title: 'Test de perception de la profondeur en ligne | SkillDrills',
+  description: 'Test gratuit de perception de la profondeur et de vision stéréoscopique. Entraînez l’appréciation des distances avec une cible mobile; ce test n’est pas un diagnostic.',
   keywords: [
     'test de perception de la profondeur',
-    'appréciation des distances test',
-    'test de vision stéréoscopique',
-    'test du sens du relief en ligne',
+    'vision stéréoscopique',
+    'stéréopsie',
+    'appréciation des distances',
+    'test de profondeur en ligne',
+    'vision en relief',
+    'test de stéréopsie en ligne',
     'estimation de distance visuelle',
-    'expansion optique looming',
-    'temps avant contact ttc',
-    'test de howard-dolman',
-    'vision tridimensionnelle test',
-    'perception spatiale des yeux',
-    'coordination visuo-motrice distance',
-    'évaluation acuité stéréoscopique',
+    'vision tridimensionnelle',
+    'perception spatiale',
+    'test de Howard-Dolman',
   ],
   openGraph: {
-    title: 'Test de Perception de la Profondeur – Relief et Distances | SkillDrills',
-    description: 'Test de perception de la profondeur en ligne gratuit. Évaluez votre appréciation des distances et votre précision d\'interception par expansion optique (TTC).',
+    title: 'Test de perception de la profondeur en ligne | SkillDrills',
+    description: 'Test gratuit de perception de la profondeur et de vision stéréoscopique. Entraînez l’appréciation des distances avec une cible mobile; ce test n’est pas un diagnostic.',
     type: 'article',
     url: 'https://skilldrills.online/fr/drills/visual/depth-perception/distance-judgment',
     siteName: 'SkillDrills',
@@ -43,8 +41,8 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Test de Perception de la Profondeur – Relief et Distances | SkillDrills',
-    description: 'Test de perception de la profondeur en ligne gratuit. Évaluez votre appréciation des distances et votre précision d\'interception par expansion optique (TTC).',
+    title: 'Test de perception de la profondeur en ligne | SkillDrills',
+    description: 'Test gratuit de perception de la profondeur et de vision stéréoscopique. Entraînez l’appréciation des distances avec une cible mobile; ce test n’est pas un diagnostic.',
   },
   robots: { index: true, follow: true },
   alternates: {
@@ -226,7 +224,7 @@ const faqSchema = {
 };
 
 const distanceGuideFr = {
-  heading: 'Critères d\'Évaluation de la Perception de Profondeur',
+  heading: 'Test de perception de la profondeur et appréciation des distances',
   intro: [
     'La perception de la profondeur (vision stéréoscopique et sens du relief) est la fonction sensorielle et neurologique permettant d\'interpréter l\'environnement en trois dimensions et de jauger avec une rigueur absolue la distance, le volume et la trajectoire des objets en mouvement. Dans le sport de haut niveau (tennis, baseball, sports mécaniques), l\'aviation, la conduite d\'urgence et l\'eSport compétitif, estimer une distance à la milliseconde près fait la différence entre une interception parfaite et une collision critique.',
     'Ce drill transpose fidèlement sur le web les principes optiques de l\'appareil stéréoscopique classique de Howard-Dolman (Howard, 1919) et la théorie écologique de l\'expansion optique de David N. Lee (1976) ainsi que David Regan & Kenneth I. Beverley (1978). En projetant une sphère 3D le long d\'un tunnel virtuel vers un plan de référence fixe, l\'exercice entraîne le cortex visuel à extraire le taux de grossissement rétinien (looming) et à calculer le temps de contact résiduel (Time-to-Contact, τ) sous des vitesses d\'approche croissantes.',
@@ -234,7 +232,7 @@ const distanceGuideFr = {
     'Confidentialité et Protection des Données : SkillDrills ne collecte aucune donnée personnelle, aucun bilan ophtalmologique ni aucune métrique d\'usage centralisée. L\'ensemble de vos scores, records et niveaux franchis reste strictement confiné dans le stockage local (LocalStorage) de votre navigateur.'
   ],
   benchmarks: {
-    title: 'Barème de Référence en Perception de Profondeur',
+    title: 'Repères de performance en perception de la profondeur',
     headers: ['Niveau de Maîtrise', 'Erreur Moyenne de Profondeur', 'Points & Niveau', 'Profil Visuo-Moteur'],
     rows: [
       ['Tier 1 : Maître Stéréoscopique Apex', 'Moins de 5,0% d\'erreur', '1500+ pts | Niveau 7+', 'Sensibilité hors pair à l\'expansion optique ; synchronisation infaillible.'],
@@ -245,7 +243,7 @@ const distanceGuideFr = {
     ],
   },
   protocols: {
-    title: 'Protocoles pour Développer l\'Appréciation des Distances',
+    title: 'Comment entraîner l’appréciation des distances',
     items: [
       {
         title: 'Protocole 1 : Analyse du Taux d\'Expansion Optique (Lee 1976)',
@@ -293,14 +291,14 @@ const distanceGuideFr = {
 
 const copyFr = {
   title: 'Test de Perception de la Profondeur',
-  subtitle: 'Appréciation des Distances et Interception 3D',
+  subtitle: 'Vision 3D et appréciation des distances',
   caption: 'La perception de la profondeur permet d\'évaluer l\'éloignement et l\'ordre des objets. Sur un écran plat, le taux d\'expansion optique (Lee, 1976; Regan & Beverley, 1978) permet de mesurer le temps avant contact (TTC) sans nécessiter la connaissance de la taille de l\'objet.',
   statScore: 'Points',
   statTime: 'Temps',
   statLevel: 'Niveau',
   statBestScore: 'Record',
   startTitle: 'Appréciation des Distances Pro',
-  startSubtitle: 'Vision 3D • Interception Visuelle en Relief',
+  startSubtitle: 'Entraînez le timing avec une cible en mouvement',
   startBtn: 'Démarrer le Test',
   getReady: 'PRÉPAREZ-VOUS',
   newBest: 'NOUVEAU RECORD',

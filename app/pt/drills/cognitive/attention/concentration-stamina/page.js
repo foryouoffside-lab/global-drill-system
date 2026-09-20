@@ -2,28 +2,29 @@ import ConcentrationStaminaClient from '@/app/drills/cognitive/attention/concent
 import { getAlternateLanguages } from '@/lib/i18n/locales';
 import DrillGuide from '@/components/drill/DrillGuide';
 import RelatedDrills from '@/components/drill/RelatedDrills';
+import DrillFooter from '@/components/drill/DrillFooter';
 import { pickSources } from '@/lib/drillSources';
 
 export const metadata = {
-  title: "Teste de Concentração – Atenção Sustentada | SkillDrills",
-  description: "Teste de concentração e atenção sustentada online grátis: Meça declínio de vigilância, foco contínuo e controle inibitório sob pressão temporal.",
+  title: "Teste de Concentração | Atenção Sustentada | SkillDrills",
+  description: "Teste grátis de concentração no navegador: avalie atenção sustentada, controle inibitório e troca de regras. Não é diagnóstico clínico.",
   keywords: [
-    "teste de concentracao",
-    "teste de atencao sustentada",
-    "teste cpt online",
-    "teste de foco e atencao",
-    "teste de fadiga mental",
+    "teste de concentração",
+    "teste de concentração online grátis",
+    "teste de concentração online",
+    "atenção sustentada",
+    "teste de atenção",
+    "teste de foco e atenção",
     "teste de vigilância cognitiva",
-    "resistencia a distracao teste",
-    "treino de foco mental gratis",
-    "teste de deficit de atencao online",
-    "controle inibitorio e foco",
-    "teste neuropsicologico de atencao",
-    "exercicio de concentracao prolongada"
+    "teste de concentração dividida",
+    "treino de foco mental grátis",
+    "controle inibitório e foco",
+    "teste CPT online",
+    "exercício de concentração prolongada"
   ],
   openGraph: {
-    title: "Teste de Concentração – Atenção Sustentada | SkillDrills",
-    description: "Teste de concentração e atenção sustentada online grátis: Meça declínio de vigilância, foco contínuo e controle inibitório sob pressão temporal.",
+    title: "Teste de Concentração | Atenção Sustentada | SkillDrills",
+    description: "Teste grátis de concentração no navegador: avalie atenção sustentada, controle inibitório e troca de regras. Não é diagnóstico clínico.",
     type: 'article',
     url: 'https://skilldrills.online/pt/drills/cognitive/attention/concentration-stamina',
     siteName: 'SkillDrills',
@@ -31,8 +32,8 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: "Teste de Concentração – Atenção Sustentada | SkillDrills",
-    description: "Teste de concentração e atenção sustentada online grátis: Meça declínio de vigilância, foco contínuo e controle inibitório sob pressão temporal.",
+    title: "Teste de Concentração | Atenção Sustentada | SkillDrills",
+    description: "Teste grátis de concentração no navegador: avalie atenção sustentada, controle inibitório e troca de regras. Não é diagnóstico clínico.",
   },
   robots: { index: true, follow: true },
   alternates: {
@@ -91,7 +92,7 @@ const softwareApplicationSchema = {
     "url": "https://skilldrills.online"
   },
   "inLanguage": "pt-BR",
-  "dateModified": "2026-09-16"
+      "dateModified": "2026-09-20"
 };
 
 const webApplicationSchema = {
@@ -108,7 +109,7 @@ const webApplicationSchema = {
   },
   "url": "https://skilldrills.online/pt/drills/cognitive/attention/concentration-stamina",
   "inLanguage": "pt-BR",
-  "dateModified": "2026-09-16"
+  "dateModified": "2026-09-20"
 };
 
 const videoGameSchema = {
@@ -262,9 +263,9 @@ const howToSchema = {
 const guideProps = {
   sources: pickSources('mackworth1948', 'parasuraman1979', 'robertson1997', 'monsell2003', 'broadbent1958', 'woods2015'),
   intro: {
-    title: "Neurociência da Atenção Sustentada & Declínio de Vigilância de Mackworth",
+    title: "Teste de Concentração e Atenção Sustentada: Guia",
     paragraphs: [
-      "A atenção sustentada (vigilância contínua) é a faculdade neurobiológica de manter o foco seletivo em estímulos relevantes ao longo de períodos operacionais estendidos.",
+      "Este teste grátis de concentração registra atenção sustentada, controle inibitório e troca de regras como uma autoavaliação não clínica. O resultado varia com o estado do dia e a familiaridade e não substitui avaliação profissional.",
       "Desde os experimentos pioneiros de Norman Mackworth (1948) com operadores de radar, a literatura documenta que a eficiência de detecção decai sistematicamente após 20 a 30 minutos em virtude da habituação sináptica e exaustão dos reservatórios de atenção no córtex pré-frontal e lobo parietal (Parasuraman, 1979; Robertson et al., 1997).",
       "Para aumentar a complexidade ecológica, este drill introduz alternâncias dinâmicas de regras a cada 10 segundos, exigindo supressão da inércia de resposta e flexibilidade de reconfiguração cognitiva em tempo real (Monsell, 2003).",
     ],
@@ -326,11 +327,17 @@ export default function EnhancedPagePt() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(howToSchema) }}
       />
-      <ConcentrationStaminaClient copy={{ title: "Teste de Concentração e Atenção Sustentada" }} />
+      <ConcentrationStaminaClient copy={{
+        title: "Teste de Concentração | Atenção Sustentada", subtitle: "Autoavaliação não clínica de foco contínuo, identificação de alvos e controle inibitório",
+        statScore: "Pontos", statTime: "Tempo", statLevel: "Nível", statBest: "Melhor pontuação", ruleLabel: "Regra", vowels: "Vogais (A E I O U)", primes: "Primos (2 3 5 7)", startTitle: "Teste de Concentração", startSubtitle: "Atenção sustentada • Treino no formato CPT", getReady: "Prepare-se", flashTitle: "Flash de erro", soundTitle: "Som", newBest: "Novo recorde", points: "Pontos", accuracy: "Precisão", misses: "Erros", peakLevel: "Nível máximo", playAgain: "Jogar novamente", shareScore: "Compartilhar pontuação", exitDrill: "Sair do treino",
+        caption: "Reaja apenas aos estímulos que correspondem à regra ativa e filtre as distrações quando a regra mudar.", rulesTitle: "Instruções e sistema de pontuação", ruleItems: [{ text: "Regra do alvo", highlight: "Muda a cada 10s", result: "Vogais ↔ Primos" }, { text: "Alvo correto", highlight: "+100 PTS", result: "Toque ou espaço" }, { text: "Não alvo", highlight: "Inibir", result: "Ignore o diferente" }, { text: "Alarme falso", highlight: "Penalidade", result: "Afeta a precisão" }],
+        aboutTitle: "Sobre o teste de concentração", aboutLead: "A atenção sustentada pode cair durante a observação prolongada de sinais raros. Este teste curto registra troca de regras, identificação de alvos e erros como autoavaliação não clínica.", aboutText: "Atenção sustentada é a capacidade de selecionar sinais relevantes em uma sequência repetitiva. Repita nas mesmas condições e acompanhe a evolução dos pontos e erros.\n\nSono, estresse, tela e familiaridade alteram o resultado; ele não substitui avaliação profissional.", audienceTitle: "Para quem serve?", audienceText: "Para estudantes antes de provas longas, jogadores que querem manter precisão e pessoas que precisam sustentar o foco no trabalho.", skillsTitle: "Habilidades treinadas", skillsText: "Atenção sustentada, identificação de alvos, vigilância sob fadiga e controle de impulsos.", flexibilityTitle: "Flexibilidade cognitiva", flexibilityText: "A troca entre vogais e números primos a cada 10 segundos treina a alternância rápida entre regras."
+      }} />
       <DrillGuide {...guideProps} />
       <div className="max-w-6xl mx-auto px-4 pb-12">
         <RelatedDrills currentCategory="cognitive" currentHref="https://skilldrills.online/pt/drills/cognitive/attention/concentration-stamina" />
       </div>
+      <DrillFooter />
     </>
   );
 }

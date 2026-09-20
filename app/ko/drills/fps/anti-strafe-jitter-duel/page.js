@@ -6,21 +6,19 @@ import { getAlternateLanguages } from '@/lib/i18n/locales';
 import RelatedDrills from '@/components/drill/RelatedDrills';
 
 export const metadata = {
-    title: "무빙 트래킹 에임 연습 – ADAD 지터 트래커 | SkillDrills",
-  description: "브라우저에서 무료로 즐기는 무빙 트래킹 에임 연습. 예측 불가능한 고빈도 ADAD 좌우 무빙과 근거리 지터 교전에서 크로스헤어를 목표에 고정하는 리액티브 트래킹을 과학적으로 단련합니다.",
+    title: "에임 연습 | 무빙 트래킹·ADAD 대응 | SkillDrills",
+  description: "무료 브라우저 에임 연습으로 예측하기 어려운 좌우 무빙을 따라가며 근거리 트래킹과 방향 전환 반응을 측정하세요.",
   keywords: [
-    "무빙 트래킹 에임 연습",
-    "ADAD 무빙 연습",
-    "근거리 트래킹 에임",
+    "에임 연습",
+    "에임 연습 발로란트",
+    "에임 연습 게임",
+    "트래킹 에임",
     "트래킹 에임 연습",
-    "지터 에임 연습",
-    "에이펙스 무빙 트래킹",
-    "오버워치 트래킹 에임",
-    "발로란트 무빙샷 대처",
-    "리액티브 트래킹 연습",
-    "좌우 무빙 추적",
-    "근접 교전 에임",
-    "에임 트레이너 무료"
+    "무빙 트래킹",
+    "ADAD 무빙",
+    "지터 에임",
+    "리액티브 트래킹",
+    "오버워치 트래킹"
   ],
   alternates: {
     canonical: "https://skilldrills.online/ko/drills/fps/anti-strafe-jitter-duel",
@@ -31,8 +29,8 @@ export const metadata = {
     follow: true,
   },
   openGraph: {
-      title: "무빙 트래킹 에임 연습 – ADAD 지터 트래커 | SkillDrills",
-    description: "예측 불가능한 고빈도 ADAD 좌우 무빙을 놓치지 않고 추적하는 리액티브 트래킹 트레이너. 근거리 교전 트래킹 정확도 향상.",
+      title: "에임 연습 | 무빙 트래킹·ADAD 대응 | SkillDrills",
+    description: "무료 브라우저 에임 연습으로 예측하기 어려운 좌우 무빙을 따라가며 근거리 트래킹과 방향 전환 반응을 측정하세요.",
     url: "https://skilldrills.online/ko/drills/fps/anti-strafe-jitter-duel",
     siteName: 'SkillDrills',
     locale: 'ko_KR',
@@ -40,8 +38,8 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-      title: "무빙 트래킹 에임 연습 – ADAD 지터 트래커 | SkillDrills",
-    description: "예측 불가능한 고빈도 ADAD 좌우 무빙을 놓치지 않고 추적하는 리액티브 트래킹 트레이너. 근거리 교전 트래킹 정확도 향상.",
+      title: "에임 연습 | 무빙 트래킹·ADAD 대응 | SkillDrills",
+    description: "무료 브라우저 에임 연습으로 예측하기 어려운 좌우 무빙을 따라가며 근거리 트래킹과 방향 전환 반응을 측정하세요.",
   },
 };
 
@@ -52,17 +50,17 @@ export default function AntiStrafeJitterKoPage() {
     "itemListElement": [
       { "@type": "ListItem", "position": 1, "name": "SkillDrills", "item": "https://skilldrills.online/ko" },
       { "@type": "ListItem", "position": 2, "name": "FPS 에임 트레이너", "item": "https://skilldrills.online/ko/drills/fps" },
-      { "@type": "ListItem", "position": 3, "name": "무빙 트래킹 에임 연습", "item": "https://skilldrills.online/ko/drills/fps/anti-strafe-jitter-duel" }
+      { "@type": "ListItem", "position": 3, "name": "에임 연습 - 무빙 트래킹", "item": "https://skilldrills.online/ko/drills/fps/anti-strafe-jitter-duel" }
     ]
   };
 
   const softwareSchema = {
     "@context": "https://schema.org",
     "@type": "SoftwareApplication",
-    "name": "무빙 트래킹 에임 연습",
+    "name": "에임 연습 - 무빙 트래킹",
     "applicationCategory": "GameApplication",
     "operatingSystem": "Web Browser",
-    "dateModified": "2026-09-05",
+    "dateModified": "2026-09-20",
     "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
     "description": "급격한 ADAD 좌우 방향 전환 무빙에 대한 리액티브 트래킹과 미세 보정 능력을 향상시키는 무료 브라우저 FPS 에임 트레이너.",
     "genre": "FPS Training / Anti-Strafe",
@@ -77,7 +75,7 @@ export default function AntiStrafeJitterKoPage() {
   const webAppSchema = {
     "@context": "https://schema.org",
     "@type": "WebApplication",
-    "name": "무빙 트래킹 에임 연습",
+    "name": "에임 연습 - 무빙 트래킹",
     "url": "https://skilldrills.online/ko/drills/fps/anti-strafe-jitter-duel",
     "applicationCategory": "GameApplication",
     "operatingSystem": "All",
@@ -93,10 +91,10 @@ export default function AntiStrafeJitterKoPage() {
   const videoGameSchema = {
     "@context": "https://schema.org",
     "@type": "VideoGame",
-    "name": "무빙 트래킹 에임 연습",
+    "name": "에임 연습 - 무빙 트래킹",
     "url": "https://skilldrills.online/ko/drills/fps/anti-strafe-jitter-duel",
     "description": "급격한 ADAD 좌우 방향 전환 무빙에 대한 리액티브 트래킹과 미세 보정 능력을 향상시키는 무료 브라우저 FPS 에임 트레이너.",
-    "dateModified": "2026-09-05",
+    "dateModified": "2026-09-20",
     "gamePlatform": "Web Browser",
     "genre": ["FPS Training", "Aim Trainer", "Reactive Tracking"],
     "playMode": "SinglePlayer",
@@ -108,7 +106,7 @@ export default function AntiStrafeJitterKoPage() {
   const faqSchema = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
-    "dateModified": "2026-09-05",
+    "dateModified": "2026-09-20",
     "mainEntity": [
       {
         "@type": "Question",
@@ -227,9 +225,9 @@ export default function AntiStrafeJitterKoPage() {
   };
 
   const antiStrafeGuide = {
-    heading: "무빙 트래킹 에임 가이드 & 리액티브 추적 생체역학",
+    heading: "에임 연습과 무빙 트래킹·ADAD 대응 가이드",
     intro: [
-      "초근접전 교전에서 승패를 가르는 결정적 요인은 상대의 ADAD 좌우 무빙, 앉기 연타, 순간적인 속도 반전에 대한 트래킹 정확도입니다. 일정한 벡터를 따라 매끄럽게 움직이는 대상을 쫓는 스무스 퍼슈트(Krauzlis, 2004)와 달리, 리액티브 트래킹은 망막의 위치 오차를 지속해서 감지하고 신속하게 운동을 반전시키는 능력을 필요로 합니다 (Rashbass, 1961). 게이머는 뛰어난 시각 주의력과 동체시력을 보유하고 있지만 (Green & Bavelier, 2003), 예측 불가능한 방향 전환에는 필연적인 신경생리학적 지연이 따릅니다.",
+      "에임 연습에서 무빙 트래킹은 예측하기 어려운 ADAD 좌우 전환을 따라가며 조준선을 목표에 유지하는 훈련입니다. 이 드릴은 근거리 지터와 방향 반전을 측정해 에이펙스·오버워치2 교전의 리액티브 트래킹을 안정화합니다.",
       "목표가 급격히 방향을 바꿀 때 발생하는 '망막 슬립'을 인간의 뇌는 사전에 예측할 수 없으므로, 감속 인지, 피질 명령, 손의 제동 브레이크, 역방향 가속의 연쇄 과정을 거쳐야 합니다. 에이펙스 레전드나 오버워치 2처럼 TTK가 긴 하이퍼 FPS에서는 단발 사격보다 지속적인 조준선 유지 시간(Uptime)이 승률을 결정합니다.",
       "본 트레이너는 HTML5 Pointer Lock API 환경에서 1:1 하드웨어 좌표와 performance.now() 고해상도 시계를 통해 측정됩니다 (Woods et al., 2015). 마우스 폴링 지터와 보간 지연을 없애고, 힘을 뺀 길항근 제어와 전환 시의 오버슈팅 억제를 완벽하게 훈련합니다.",
       "측정 방식 안내: 모든 반응 시간은 브라우저의 performance.now() 고정밀 클록을 통해 기기 내부에서 로컬로 측정되며 서버로 전송되지 않습니다. 브라우저 보안 타이머 완화(Spectre 방지, 통상 약 1ms) 및 디스플레이 주사율(60Hz 기준 약 16.7ms, 144Hz 기준 약 6.9ms, 240Hz 기준 약 4.1ms)에 따른 오차가 존재하므로 5ms 미만의 차이는 측정 노이즈로 간주하고 동일 기기 내에서의 기록 향상 추이를 비교하는 것이 바람직합니다 (Woods et al., 2015)."
@@ -318,13 +316,13 @@ export default function AntiStrafeJitterKoPage() {
       />
       <AntiStrafeJitterClient
         copy={{
-          h1Keyword: "무빙 트래킹 에임 연습",
-          h1Suffix: " - ADAD 지터 트래커",
+          h1Keyword: "에임 연습",
+          h1Suffix: " - 무빙 트래킹·ADAD 대응",
           statScore: "점수",
           statTime: "남은 시간",
           statAccuracy: "추적 정확도",
           statBestScore: "최고 점수",
-          startTitle: "무빙 트래킹 에임 연습 (ADAD 지터)",
+          startTitle: "에임 연습 - 무빙 트래킹",
           startSubtitle: "적 무빙 궤적 반응형 리딩 • 무한 난이도 진행",
           getReady: "준비 완료",
           pausedTitle: "일시 정지됨",
@@ -337,7 +335,7 @@ export default function AntiStrafeJitterKoPage() {
             { num: "3", text: "레벨 상승", highlight: "+1 레벨 / 1400점", result: "가변 지터 가속" },
             { num: "4", text: "이탈 페널티", highlight: "1.0초 타깃 이탈", result: "콤보 초기화 (-0.6초)" }
           ],
-          aboutTitle: "무빙 트래킹 에임 훈련 정보",
+          aboutTitle: "에임 연습과 무빙 트래킹 정보",
           aboutHeading: "리액티브 트래킹(무빙 추적)이란 무엇인가요?"
         }}
       />

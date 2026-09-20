@@ -1,5 +1,6 @@
 import SineWavePursuitClient from '@/app/drills/visual-tracking/sine-wave-pursuit/SineWavePursuitClientLoader';
 import DrillGuide from '@/components/drill/DrillGuide';
+import DrillFooter from '@/components/drill/DrillFooter';
 import RelatedDrills from '@/components/drill/RelatedDrills';
 import { getAlternateLanguages } from '@/lib/i18n/locales';
 import { pickSources } from '@/lib/drillSources';
@@ -14,25 +15,23 @@ import { pickSources } from '@/lib/drillSources';
 // ============================================================
 
 export const metadata = {
-  title: "사인파 안구 운동 훈련・곡선 추적 에임 – 정현파 원활추종 | SkillDrills",
-  description: "수평 및 수직 정현파(사인파) 주기 진동을 따라 부드럽게 시선을 제어하는 무료 안구 훈련. 반환점 가감속 제어와 150ms 신경 전달 위상 지연(Lag)을 제로화하는 동체시력 강화. 무설치 웹 테스트.",
+  title: "사인파 안구 추적 훈련 | SkillDrills",
+  description: "정현파 표적을 가로와 세로로 따라가는 무료 브라우저 훈련. 추적 지연, 속도 일치, 반환점 오차를 기록합니다.",
   keywords: [
-    "사인파 안구 운동",
-    "곡선 에임 연습",
+    "사인파 안구 운동 훈련",
     "정현파 원활추종",
-    "위상 지연 극복",
     "상하 안구 추적",
-    "방향 전환 에임",
-    "조화 진동 안구운동",
-    "소뇌 내부 주기 모델",
-    "반환점 감속 제어",
-    "제로 위상 지연",
-    "추종 게인 1.0",
-    "정현파 시각 추적 훈련"
+    "방향 전환 시선 훈련",
+    "안구 운동 위상 지연",
+    "곡선 표적 추적",
+    "정현파 시각 추적",
+    "움직이는 표적 따라가기",
+    "추적 속도 일치 테스트",
+    "반환점 시선 훈련"
   ],
   openGraph: {
-    title: "사인파 안구 운동 훈련・곡선 추적 에임 – 정현파 원활추종 | SkillDrills",
-    description: "사인파 곡선 궤적의 주기적 가감속에 시선을 동기화하여 위상 지연을 극복하는 무료 온라인 비전 트레이닝.",
+    title: "사인파 안구 추적 훈련 | SkillDrills",
+    description: "정현파 표적을 가로와 세로로 따라가는 무료 브라우저 훈련. 추적 지연, 속도 일치, 반환점 오차를 기록합니다.",
     type: "website",
     url: "https://skilldrills.online/ko/drills/visual-tracking/sine-wave-pursuit",
     siteName: "SkillDrills",
@@ -40,8 +39,8 @@ export const metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "사인파 안구 운동 훈련・곡선 추적 에임 – 정현파 원활추종 | SkillDrills",
-    description: "소뇌의 내부 주기 모델을 활성화하여 곡선 궤적의 신경 위상 지연을 제로로 단축하는 과학적 안구 추적 훈련.",
+    title: "사인파 안구 추적 훈련 | SkillDrills",
+    description: "주기적으로 움직이는 표적을 따라가며 속도 일치와 반환점 위치 오차를 확인하는 짧은 훈련입니다.",
   },
   robots: { index: true, follow: true },
   alternates: {
@@ -72,7 +71,7 @@ const softwareApplicationSchema = {
   "url": "https://skilldrills.online/ko/drills/visual-tracking/sine-wave-pursuit",
   "publisher": { "@type": "Organization", "name": "SkillDrills", "url": "https://skilldrills.online/ko" },
   "inLanguage": "ko",
-  "dateModified": "2026-09-15"
+  "dateModified": "2026-09-20"
 };
 
 const webAppSchema = {
@@ -85,12 +84,13 @@ const webAppSchema = {
   "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
   "url": "https://skilldrills.online/ko/drills/visual-tracking/sine-wave-pursuit",
   "inLanguage": "ko",
-  "dateModified": "2026-09-15"
+  "dateModified": "2026-09-20"
 };
 
 const videoGameSchema = {
   "@context": "https://schema.org",
   "@type": "VideoGame",
+  "dateModified": "2026-09-20",
   "name": "사인파 곡선 에임 훈련 (Sine Wave Pursuit)",
   "url": "https://skilldrills.online/ko/drills/visual-tracking/sine-wave-pursuit",
   "description": "파도치듯 상하좌우로 불규칙하게 진동하는 적의 움직임을 자석처럼 매끄럽게 물고 늘어지는 e스포츠 트래킹 에임 훈련 게임.",
@@ -103,6 +103,7 @@ const videoGameSchema = {
 const howToSchema = {
   "@context": "https://schema.org",
   "@type": "HowTo",
+  "dateModified": "2026-09-20",
   "name": "사인파 안구 운동 및 곡선 에임 훈련 방법",
   "description": "주기적 사인파 궤적에 소뇌의 내부 발진기를 동조시켜 위상 지연 없이 추종 게인을 1.0으로 유지하는 4단계 훈련 프로토콜.",
   "step": [
@@ -136,6 +137,7 @@ const howToSchema = {
 const faqSchema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
+  "dateModified": "2026-09-20",
   "mainEntity": [
     {
       "@type": "Question",
@@ -318,9 +320,9 @@ export default function KoreanSineWavePursuitPage() {
 
       <SineWavePursuitClient
         copy={{
-          title: "사인파 안구 운동 훈련・곡선 추적 에임 테스트: 조화 진동과 제로 위상 지연",
-          subtitle: "정현파의 연속적인 가감속과 주기적 방향 반전에 소뇌를 동기화하는 원활추종 훈련",
-          description: "수평 및 수직 정현파(사인파) 주기 진동을 따라 부드럽게 시선을 제어하는 무료 안구 훈련. 중심 평형점의 최고 속도와 양 끝 반환점의 감속 변곡점을 완벽 동조시켜, 130~150ms의 생리학적 위상 지연(Lag)을 제로화합니다. 등록 불필요・웹에서 즉시 측정 가능."
+          title: "사인파 안구 추적 훈련",
+          subtitle: "주기적으로 움직이는 표적을 가로와 세로로 따라가기",
+          description: "정현파 표적을 따라가며 중앙 통과와 반환점의 속도 변화를 관찰합니다. 훈련 후 추적 일치도와 위치 오차를 확인할 수 있습니다. 무료 브라우저 훈련입니다."
         }}
       />
 
@@ -329,6 +331,8 @@ export default function KoreanSineWavePursuitPage() {
       <div className="max-w-6xl mx-auto px-4 pb-12">
         <RelatedDrills currentCategory="visual-tracking" currentHref="https://skilldrills.online/ko/drills/visual-tracking/sine-wave-pursuit" />
       </div>
+
+      <DrillFooter />
     </>
   );
 }

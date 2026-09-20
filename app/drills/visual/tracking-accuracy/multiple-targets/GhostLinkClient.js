@@ -643,7 +643,7 @@ diagnostics = "Low target identification accuracy. Anchor your gaze centrally an
               <span data-seo-kw="1">{copy?.title || "Multiple Object Tracking Test"}</span>
             </h1>
             <p className="text-[13px] text-slate-400 leading-relaxed">
-              A multiple object tracking (MOT) test asks you to follow several moving targets among identical moving distractors, then identify them at the end. Most people can track about four or five independent targets at once, and accuracy falls away sharply beyond that (Pylyshyn &amp; Storm, 1988). The limit is attentional rather than optical &mdash; the eyes cannot fixate five things at once, so the tracking is done by attention split across locations (Cavanagh &amp; Alvarez, 2005).
+              A multiple object tracking (MOT) test asks you to follow several moving targets among identical moving distractors, then identify them at the end.
             </p>
           </div>
         )}
@@ -899,7 +899,7 @@ diagnostics = "Low target identification accuracy. Anchor your gaze centrally an
                     <Brain className="w-4 h-4 text-purple-400" /> What Is Multi-Object Tracking?
                   </h3>
                   <p className="text-sm leading-relaxed mb-3 text-slate-300">
-                    <strong>Multiple Object Tracking (MOT)</strong> forces the brain to isolate, store, and continuously update spatial coordinates of multiple identical moving objects in real time, even through chaotic bouncing collisions.
+                    <strong>Multiple Object Tracking (MOT)</strong> forces the brain to isolate, store, and continuously update spatial coordinates of multiple identical moving objects in real time, even through chaotic bouncing collisions. Most people can track about four or five independent targets at once, and accuracy falls away sharply beyond that (Pylyshyn &amp; Storm, 1988). The limit is attentional rather than optical &mdash; the eyes cannot fixate five things at once, so the tracking is done by attention split across locations (Cavanagh &amp; Alvarez, 2005).
                   </p>
                   <p className="text-sm leading-relaxed text-slate-300">
                     By expanding peripheral visual focus and maintaining tracking resolution, you sharpen divided attention required for esports, driving, and fast-paced sports.

@@ -5,9 +5,9 @@ import { getAlternateLanguages } from '@/lib/i18n/locales';
 import { pickSources } from '@/lib/drillSources';
 
 export const metadata = {
-  title: "空間記憶テスト・物体位置記憶検査 – 空間配置再生 | SkillDrills",
-  description: "無料の空間記憶テスト（Object Location Memory Test / 物体位置記憶課題）。拡大する3×3〜7×7グリッド上の絵文字物体の配置を1.5秒で瞬間記憶し、指定された目標の座標を正確に特定。空間位置記憶と視覚特徴結合能を測定・鍛える認知ドリル。登録不要。",
-  keywords: ['空間記憶テスト', '空間記憶', '物体位置記憶', '空間ワーキングメモリ', '位置記憶 検査', '視空間記憶 トレーニング', 'オブジェクトロケーション テスト', '配置記憶 ゲーム', '空間認知能力 測定', '脳トレ 空間記憶', 'シルバーマン イールズ 課題', '視覚特徴結合 テスト'],
+  title: "空間記憶テスト｜物体位置記憶 | SkillDrills",
+  description: "無料の空間記憶テスト。グリッド上の物体があった位置を覚え、表示が消えたあと指定された場所を再現して空間記憶を鍛えます。",
+  keywords: ['空間記憶テスト', '物体位置記憶', '位置記憶テスト', '空間認知トレーニング', '空間視覚ゲーム', '配置記憶ゲーム', '視空間記憶', '空間ワーキングメモリ', '物体の位置記憶', '脳トレ 空間記憶'],
   alternates: {
     canonical: "https://skilldrills.online/ja/drills/memory/spatial-memory/object-location",
     languages: getAlternateLanguages('/drills/memory/spatial-memory/object-location', 'ja'),
@@ -17,8 +17,8 @@ export const metadata = {
     follow: true,
   },
   openGraph: {
-    title: "空間記憶テスト (物体位置記憶テスト) - 無料認知トレーニング | SkillDrills",
-    description: "無料の空間記憶テスト（Object Location Memory Test / 物体位置記憶課題）。拡大する3×3〜7×7グリッド上の絵文字物体の配置を1.5秒で瞬間記憶し、指定された目標の座標を正確に特定。空間位置記憶と視覚特徴結合能を測定・鍛える認知ドリル。登録不要。",
+    title: "空間記憶テスト｜物体位置記憶 | SkillDrills",
+    description: "グリッド上の物体の位置を覚え、表示が消えたあと指定された場所を再現する無料の空間記憶ゲームです。",
     url: "https://skilldrills.online/ja/drills/memory/spatial-memory/object-location",
     siteName: 'SkillDrills',
     locale: 'ja_JP',
@@ -26,8 +26,8 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: "空間記憶テスト (物体位置記憶テスト) - 無料認知トレーニング | SkillDrills",
-    description: "無料の空間記憶テスト（Object Location Memory Test / 物体位置記憶課題）。拡大する3×3〜7×7グリッド上の絵文字物体の配置を1.5秒で瞬間記憶し、指定された目標の座標を正確に特定。空間位置記憶と視覚特徴結合能を測定・鍛える認知ドリル。登録不要。",
+    title: "空間記憶テスト｜物体位置記憶 | SkillDrills",
+    description: "グリッド上の物体の位置を覚え、表示が消えたあと指定された場所を再現する無料の空間記憶ゲームです。",
   },
 };
 
@@ -71,6 +71,7 @@ export default function LocalizedObjectLocationPage() {
     "description": "拡大グリッド上の物体配置を瞬間記憶し目標座標を特定することで、空間位置記憶、視覚特徴結合、および認知地図形成能力を測定する無料ブラウザ神経心理学テスト。",
     "dateModified": "2026-09-05",
     "applicationCategory": "GameApplication",
+    "sameAs": "https://ja.wikipedia.org/wiki/%E7%A9%BA%E9%96%93%E8%A8%98%E6%86%B6",
     "operatingSystem": "All",
     "isAccessibleForFree": true,
     "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
@@ -311,23 +312,23 @@ export default function LocalizedObjectLocationPage() {
     sources: pickSources('cowan2001', 'baddeley2000', 'logie1995', 'luck1997', 'tolman1948', 'eals1994', 'woods2015'),
     related: [
       {
-            "href": "/drills/memory/spatial-memory/grid-memorization",
+            "href": "/ja/drills/memory/spatial-memory/grid-memorization",
             "label": "瞬間記憶テスト (Visual Memory Test)"
       },
       {
-            "href": "/drills/memory/spatial-memory/path-tracing",
+            "href": "/ja/drills/memory/spatial-memory/path-tracing",
             "label": "パストレーシング記憶テスト (Path Tracing)"
       },
       {
-            "href": "/drills/memory/short-term-memory/digit-span",
+            "href": "/ja/drills/memory/short-term-memory/digit-span",
             "label": "数唱テスト (Digit Span)"
       },
       {
-            "href": "/drills/memory/short-term-memory/word-recall",
+            "href": "/ja/drills/memory/short-term-memory/word-recall",
             "label": "単語記憶テスト (Verbal Memory)"
       },
       {
-            "href": "/drills/memory/working-memory/n-back",
+            "href": "/ja/drills/memory/working-memory/n-back",
             "label": "nバック課題 (Dual N-Back)"
       }
 ]
@@ -362,8 +363,8 @@ export default function LocalizedObjectLocationPage() {
       <ObjectLocationClient
         copy={{
         "h1Keyword": "空間記憶テスト",
-        "h1Suffix": " (物体位置記憶テスト)",
-        "subtitle": "物体位置記憶（Object-location memory）は「何がどこにあったか」を保持する能力です。Eals & Silverman (1994) は物体配列を用いてこれを測定し、他の視覚性作業記憶課題と同様に約4項目の容量限界に直面することを明らかにしました（Luck & Vogel, 1997）。",
+        "h1Suffix": "（物体位置記憶）",
+        "subtitle": "グリッド上の物体があった位置を再現",
         "statScore": "スコア",
         "statTime": "残り時間",
         "statLevel": "レベル",
@@ -372,7 +373,7 @@ export default function LocalizedObjectLocationPage() {
         "memorizePrompt": "物体の配置を記憶してください",
         "targetPrompt": "目標:",
         "startTitle": "物体位置記憶 Pro",
-        "startSubtitle": "空間位置記憶 • 配置再生テスト",
+        "startSubtitle": "空間記憶 • 位置再現",
         "countdownSubtitle": "準備してください",
         "newBest": "自己新記録",
         "pointsLabel": "ポイント",

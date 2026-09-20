@@ -1,25 +1,26 @@
 import DirectionalChaosPursuitClient from '@/app/drills/visual-tracking/directional-chaos-pursuit/DirectionalChaosPursuitClientLoader';
 import DrillGuide from '@/components/drill/DrillGuide';
+import DrillFooter from '@/components/drill/DrillFooter';
 import RelatedDrills from '@/components/drill/RelatedDrills';
 import { getAlternateLanguages } from '@/lib/i18n/locales';
 import { pickSources } from '@/lib/drillSources';
 
 export const metadata = {
-  title: "Poursuite Oculaire Chaotique – Chaos Pursuit | SkillDrills",
-  description: "Entraînement gratuit de poursuite oculaire chaotique : développez la réactivité des saccades et la refixation fovéale sur trajectoires imprévisibles.",
+  title: "Poursuite Oculaire Réactive | SkillDrills",
+  description: "Rattrapez une cible qui change de direction et de vitesse. Travaillez la réactivité visuelle, les saccades et la vision dynamique en ligne.",
   keywords: [
-    "poursuite visuelle chaotique",
-    "entraînement saccades de rattrapage",
-    "test motricité oculaire réactive",
-    "poursuite oculaire erratique",
-    "refixation fovéale rapide",
-    "tracking visuel imprévisible",
-    "gymnastique oculaire réflexe",
-    "réflexe oculomoteur exercice",
-    "visée tracking réactive esports",
-    "acuité visuelle dynamique test gratuit",
-    "coordination oculomotrice en ligne",
-    "stabilisation du regard dynamique"
+    "poursuite oculaire",
+    "suivi visuel réactif",
+    "saccades de rattrapage",
+    "trajectoire imprévisible",
+    "réactivité visuelle",
+    "vision dynamique exercice",
+    "refixation fovéale",
+    "mouvements oculaires exercice",
+    "agilité visuelle en ligne",
+    "coordination œil-main",
+    "suivi de cible",
+    "test visuel gratuit"
   ],
   alternates: {
     canonical: "https://skilldrills.online/fr/drills/visual-tracking/directional-chaos-pursuit",
@@ -27,8 +28,8 @@ export const metadata = {
   },
   robots: { index: true, follow: true },
   openGraph: {
-    title: "Poursuite Oculaire Chaotique – Chaos Pursuit | SkillDrills",
-    description: "Entraînement gratuit de poursuite oculaire chaotique : développez la réactivité des saccades et la refixation fovéale sur trajectoires imprévisibles.",
+    title: "Poursuite Oculaire Réactive | SkillDrills",
+    description: "Rattrapez une cible qui change de direction et de vitesse. Travaillez la réactivité visuelle, les saccades et la vision dynamique en ligne.",
     url: "https://skilldrills.online/fr/drills/visual-tracking/directional-chaos-pursuit",
     siteName: "SkillDrills",
     locale: "fr_FR",
@@ -36,8 +37,8 @@ export const metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Poursuite Oculaire Chaotique – Chaos Pursuit | SkillDrills",
-    description: "Entraînement gratuit de poursuite oculaire chaotique : développez la réactivité des saccades et la refixation fovéale sur trajectoires imprévisibles.",
+    title: "Poursuite Oculaire Réactive | SkillDrills",
+    description: "Rattrapez une cible imprévisible et entraînez la réactivité du regard gratuitement en ligne.",
   },
 };
 
@@ -71,7 +72,8 @@ const softwareApplicationSchema = {
   "@type": "SoftwareApplication",
   "name": "Poursuite Chaotique Directionnelle – Entraînement Oculaire",
   "applicationCategory": "HealthApplication",
-  "operatingSystem": "Web Browser",
+  "operatingSystem": "Navigateur",
+  "dateModified": "2026-09-20",
   "offers": {
     "@type": "Offer",
     "price": "0",
@@ -86,7 +88,8 @@ const webAppSchema = {
   "url": "https://skilldrills.online/fr/drills/visual-tracking/directional-chaos-pursuit",
   "applicationCategory": "SportsApplication",
   "operatingSystem": "All",
-  "browserRequirements": "Requires JavaScript. Requires HTML5 Canvas.",
+  "browserRequirements": "JavaScript et Canvas HTML5 requis",
+  "dateModified": "2026-09-20",
   "offers": {
     "@type": "Offer",
     "price": "0",
@@ -97,16 +100,18 @@ const webAppSchema = {
 const videoGameSchema = {
   "@context": "https://schema.org",
   "@type": "VideoGame",
-  "name": "Directional Chaos Pursuit – Entraîneur de Motricité Oculaire",
+  "name": "Poursuite Chaotique Directionnelle – Entraîneur de Motricité Oculaire",
   "description": "Entraîneur visuel réflexe sur navigateur pour suivre des cibles aux trajectoires imprévisibles sans anticipation motrice.",
-  "genre": ["Outil d'Entraînement Oculaire", "Entraînement Visuel Sportif", "Aim Trainer"],
-  "playMode": "SinglePlayer",
-  "applicationCategory": "Game"
+  "genre": ["Entraînement de la motricité oculaire", "Entraînement visuel sportif", "Entraînement à la visée"],
+  "playMode": "Un joueur",
+  "applicationCategory": "Game",
+  "dateModified": "2026-09-20"
 };
 
 const howToSchema = {
   "@context": "https://schema.org",
   "@type": "HowTo",
+  "dateModified": "2026-09-20",
   "name": "Comment Entraîner la Récupération Saccadique en Poursuite Chaotique",
   "description": "Protocole pour conditionner des réflexes visuo-moteurs réactifs rapides face à des mouvements erratiques.",
   "step": [
@@ -144,10 +149,11 @@ const howToSchema = {
 const faqSchema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
+  "dateModified": "2026-09-20",
   "mainEntity": [
     {
       "@type": "Question",
-      "name": "Qu’est-ce que l’exercice de poursuite chaotique directionnelle (Directional Chaos Pursuit) ?",
+      "name": "Qu’est-ce que l’exercice de poursuite chaotique directionnelle ?",
       "acceptedAnswer": {
         "@type": "Answer",
         "text": "C’est un exercice de motricité oculaire avancée où la cible subit des variations de vitesse imprévisibles et des rebonds stochastiques, neutralisant les modèles prédictifs cérébelleux pour forcer un contrôle réflexe en boucle fermée."
@@ -155,7 +161,7 @@ const faqSchema = {
     },
     {
       "@type": "Question",
-      "name": "Qu’appelle-t-on une saccade de rattrapage (Catch-up Saccade) ?",
+      "name": "Qu’appelle-t-on une saccade de rattrapage ?",
       "acceptedAnswer": {
         "@type": "Answer",
         "text": "Lorsqu’une cible change brutalement de vecteur, sa vitesse dépasse les limites de la poursuite fluide (~30°/s), créant un glissement rétinien. Le colliculus supérieur déclenche alors un saut oculaire balistique de 150 à 200 ms pour replacer la cible sur la fovéa."
@@ -171,10 +177,10 @@ const faqSchema = {
     },
     {
       "@type": "Question",
-      "name": "Quel est l’intérêt direct de cet entraînement pour le tracking dans les jeux de tir (FPS) ?",
+      "name": "Quel est l’intérêt direct de cet entraînement pour le suivi dans les jeux de tir (FPS) ?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Dans des jeux comme Apex Legends, Overwatch 2 ou CS2, les adversaires utilisent des strafes imprévisibles pour casser la visée. Cet entraînement réduit la désorientation visuelle et accélère la réacquisition fovéale des cibles mobiles."
+        "text": "Dans des jeux comme Apex Legends, Overwatch 2 ou CS2, les adversaires utilisent des déplacements latéraux imprévisibles pour casser la visée. Cet entraînement réduit la désorientation visuelle et accélère la réacquisition fovéale des cibles mobiles."
       }
     },
     {
@@ -231,8 +237,8 @@ const faqSchema = {
 const guideProps = {
   heading: "Bases Neuroscientifiques de la Poursuite Oculaire Chaotique et des Saccades",
   intro: [
-    "La plupart des exercices de suivi visuel recourent à des figures géométriques prévisibles, ce qui permet aux circuits cérébelleux de remplacer la boucle sensorielle en temps réel par une commande motrice prédictive (Bahill, Iandolo, & Troost, 1980). La Poursuite Chaotique Directionnelle (Directional Chaos Pursuit) élimine ce raccourci : des perturbations vectorielles continues et des rebonds aléatoires empêchent toute prédiction, contraignant les centres oculomoteurs à opérer en boucle réflexe fermée (Closed-Loop Tracking).",
-    "Dynamique des Saccades de Rattrapage et Glissement Rétinien : dès qu'une rupture ou une accélération imprévue survient, la vitesse angulaire dépasse la capacité de la poursuite fluide (~30°/s), projetant l'image hors de la fovéa centrale. Le cortex visuel et le colliculus supérieur mesurent l'erreur de position et déclenchent une saccade corrective (Catch-up Saccade) en 150 à 200 ms (Rashbass, 1961 ; Krauzlis, 2004 ; Barnes, 2008). La rapidité avec laquelle le regard recentre la cible et rétablit le gain continu définit l'agilité oculomotrice de haut niveau.",
+    "La plupart des exercices de suivi visuel recourent à des figures géométriques prévisibles, ce qui permet aux circuits cérébelleux de remplacer la boucle sensorielle en temps réel par une commande motrice prédictive (Bahill, Iandolo, & Troost, 1980). La Poursuite Chaotique Directionnelle élimine ce raccourci : des perturbations vectorielles continues et des rebonds aléatoires empêchent toute prédiction, contraignant les centres oculomoteurs à opérer dans une boucle réflexe de rétroaction.",
+    "Dynamique des Saccades de Rattrapage et Glissement Rétinien : dès qu'une rupture ou une accélération imprévue survient, la vitesse angulaire dépasse la capacité de la poursuite fluide (~30°/s), projetant l'image hors de la fovéa centrale. Le cortex visuel et le colliculus supérieur mesurent l'erreur de position et déclenchent une saccade corrective en 150 à 200 ms (Rashbass, 1961 ; Krauzlis, 2004 ; Barnes, 2008). La rapidité avec laquelle le regard recentre la cible et rétablit le niveau de poursuite définit l'agilité oculomotrice de haut niveau.",
     "Latence Matérielle et Échantillonnage Temporel : les écrans standards à 60 Hz ajoutent jusqu'à 16,7 ms de latence d'affichage, tandis que les dalles à 144 Hz ou 240 Hz réduisent ce délai sous 4,2 ms (Woods et al., 2015). Cet outil fonctionne intégralement dans le navigateur, assurant la protection absolue de vos données avec un stockage exclusivement local."
   ],
   benchmarks: {
@@ -247,13 +253,45 @@ const guideProps = {
     ],
     note: "Barèmes établis d’après la cinématique oculomotrice et la correction saccadique sous perturbations chaotiques (Bahill et al., 1980 ; Barnes, 2008 ; Krauzlis, 2004 ; Robinson, 1965)."
   },
+  techniques: {
+    title: "Quatre techniques pour améliorer la récupération saccadique",
+    items: [
+      {
+        name: "Stabilisez la tête pour isoler la motricité oculaire",
+        desc: "Garder la tête et la mâchoire immobiles réduit la participation du réflexe vestibulo-oculaire et laisse la correction du regard aux muscles oculomoteurs externes.",
+        tips: "Asseyez-vous à 50–70 cm de l’écran, posez les pieds au sol et faites une pause en cas de brûlure ou de vision double."
+      },
+      {
+        name: "Lisez le nouveau vecteur avant de refixer le regard",
+        desc: "Après un virage, la rétine périphérique détecte le glissement avant que la fovéa ne retrouve la cible. Une saccade brève et dirigée est plus efficace qu’un balayage de l’écran.",
+        tips: "Observez le premier déplacement après le changement puis sautez vers le centre probable de la cible sans suivre sa traînée."
+      },
+      {
+        name: "Réagissez au mouvement visible sans anticiper",
+        desc: "La trajectoire ne répétant pas un schéma fiable, deviner le prochain virage augmente les erreurs directionnelles. L’exercice doit s’appuyer sur l’information qui vient d’apparaître.",
+        tips: "Si vous attendez une courbe connue, réduisez la vitesse et réagissez uniquement au déplacement réellement observé."
+      },
+      {
+        name: "Progressez par vitesse et repos mesurés",
+        desc: "La qualité de la refixation compte davantage qu’une vitesse élevée avec des pertes constantes. Des séries courtes permettent de comparer la stabilité sans accumuler la fatigue.",
+        tips: "Commencez à 1.0x, augmentez par petits paliers lorsque la cible est récupérée régulièrement et reposez vos yeux entre les séries."
+      }
+    ]
+  },
+  steps: [
+    "Asseyez-vous à 50–70 cm de l’écran, alignez votre posture et gardez la tête et la mâchoire immobiles.",
+    "Commencez à 1.0x pendant une série de 60 secondes pour observer la fréquence des pertes de cible.",
+    "Lorsque la cible tourne, détectez le nouveau vecteur en vision périphérique et déclenchez une courte saccade pour recentrer la fovéa.",
+    "Reprenez la poursuite continue dès que la cible est retrouvée ; ne balayez pas l’écran au hasard.",
+    "Effectuez 5 à 8 séries avec des pauses, notez la vitesse à laquelle la stabilité baisse et utilisez-la pour régler la séance suivante."
+  ],
   faqs: faqSchema.mainEntity.map(e => ({ q: e.name, a: e.acceptedAnswer.text })),
   sources: pickSources('bahill1980', 'barnes2008', 'krauzlis2004', 'robinson1965', 'rashbass1961', 'woods2015'),
   related: [
-    { href: "/fr/drills/visual-tracking/constant-slow-pursuit", label: "Poursuite Oculaire Lente (Constant Slow)" },
-    { href: "/fr/drills/visual-tracking/sine-wave-pursuit", label: "Poursuite en Onde Sinusoïdale (Sine Wave)" },
-    { href: "/fr/drills/visual-tracking/infinity-pursuit", label: "Poursuite en Huit Infini (Figure-8)" },
-    { href: "/fr/drills/visual-tracking/dynamic-evasion-pursuit", label: "Poursuite Évasive Dynamique (Dynamic Evasion)" }
+    { href: "/fr/drills/visual-tracking/constant-slow-pursuit", label: "Poursuite Oculaire Lente" },
+    { href: "/fr/drills/visual-tracking/sine-wave-pursuit", label: "Poursuite en Onde Sinusoïdale" },
+    { href: "/fr/drills/visual-tracking/infinity-pursuit", label: "Poursuite en Huit Infini" },
+    { href: "/fr/drills/visual-tracking/dynamic-evasion-pursuit", label: "Poursuite Évasive Dynamique" }
   ]
 };
 
@@ -295,6 +333,7 @@ export default function DirectionalChaosPursuitPageFr() {
       <div className="max-w-6xl mx-auto px-4 pb-12">
         <RelatedDrills currentCategory="visual-tracking" currentHref="https://skilldrills.online/fr/drills/visual-tracking/directional-chaos-pursuit" />
       </div>
+      <DrillFooter />
     </>
   );
 }

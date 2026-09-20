@@ -2,6 +2,7 @@ import ConcentrationGridClient from '@/app/drills/cognitive/focus/concentration-
 import { getAlternateLanguages } from '@/lib/i18n/locales';
 import DrillGuide from '@/components/drill/DrillGuide';
 import RelatedDrills from '@/components/drill/RelatedDrills';
+import DrillFooter from '@/components/drill/DrillFooter';
 import { pickSources } from '@/lib/drillSources';
 
 // ============================================================
@@ -19,8 +20,8 @@ import { pickSources } from '@/lib/drillSources';
 // ============================================================
 
 export const metadata = {
-  title: "슐테 테이블 – 무료 온라인 주변시야 집중력 격자 | SkillDrills",
-  description: "무료 온라인 슐테 테이블(Schulte Table) 훈련 사이트. 확장되는 숫자 격자를 순서대로 터치하여 주변 시야 확장, 시각 탐색 속도 및 속독 집중력을 단련하세요.",
+  title: "슐테 테이블 | 집중력 격자 훈련 | SkillDrills",
+  description: "무료 브라우저 슐테 테이블에서 숫자를 순서대로 찾아보세요. 주변 시야와 시각 탐색을 연습하는 비임상 자기 점검입니다.",
   keywords: [
     "슐테 테이블",
     "슐테 표",
@@ -72,7 +73,7 @@ export default function ConcentrationGridPageKo() {
     "name": "슐테 테이블 온라인 (집중력 격자)",
     "applicationCategory": "EducationalApplication",
     "operatingSystem": "Web Browser",
-    "dateModified": "2026-09-15",
+    "dateModified": "2026-09-20",
     "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
     "description": "설치 없이 웹 브라우저에서 실행되는 무료 슐테 테이블(Schulte Table) 및 집중력 격자 훈련 도구.",
     "genre": "인지 훈련 / 주변 시야 / 집중력",
@@ -90,7 +91,7 @@ export default function ConcentrationGridPageKo() {
     "name": "슐테 테이블 온라인 (집중력 격자)",
     "applicationCategory": "EducationalApplication",
     "operatingSystem": "Web Browser",
-    "dateModified": "2026-09-15",
+    "dateModified": "2026-09-20",
     "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
     "browserRequirements": "HTML5 Canvas, JavaScript 지원 웹 브라우저",
     "description": "설치 없이 웹 브라우저에서 실행되는 무료 슐테 테이블(Schulte Table) 및 집중력 격자 훈련 도구.",
@@ -103,7 +104,7 @@ export default function ConcentrationGridPageKo() {
     "name": "슐테 테이블 온라인 (집중력 격자)",
     "url": "https://skilldrills.online/ko/drills/cognitive/focus/concentration-grid",
     "description": "무작위로 배치된 숫자를 순서대로 터치하여 주변 시야와 시각 탐색 속도를 강화하는 인지 훈련 게임.",
-    "dateModified": "2026-09-15",
+    "dateModified": "2026-09-20",
     "gamePlatform": "Web Browser",
     "genre": ["인지 훈련", "주변 시야", "슐테 테이블", "집중력 격자"],
     "playMode": "SinglePlayer",
@@ -115,7 +116,7 @@ export default function ConcentrationGridPageKo() {
   const faqSchema = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
-    "dateModified": "2026-09-15",
+    "dateModified": "2026-09-20",
     "mainEntity": [
       {
         "@type": "Question",
@@ -373,6 +374,7 @@ export default function ConcentrationGridPageKo() {
           locale="ko"
         />
       </div>
+      <DrillFooter />
     </>
   );
 }

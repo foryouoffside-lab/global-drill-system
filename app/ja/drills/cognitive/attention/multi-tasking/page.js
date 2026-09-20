@@ -2,11 +2,12 @@ import DualTargetFlowClient from '@/app/drills/cognitive/attention/multi-tasking
 import { getAlternateLanguages } from '@/lib/i18n/locales';
 import DrillGuide from '@/components/drill/DrillGuide';
 import RelatedDrills from '@/components/drill/RelatedDrills';
+import DrillFooter from '@/components/drill/DrillFooter';
 import { pickSources } from '@/lib/drillSources';
 
 export const metadata = {
-  title: "マルチタスクテスト・二重ターゲット追従 – 並行処理能力診断 | SkillDrills",
-  description: "無料ブラウザ完結のマルチタスクテスト。対向方向に流れる2つの独立した図形ストリームを両視野で同時に監視し、タスク切り替えコストと大脳半球間の協調処理能力を精密測定。",
+  title: "マルチタスクテスト | 二重ターゲット追従 | SkillDrills",
+  description: "無料ブラウザで二つのターゲットを同時に追従するマルチタスク練習。医学的診断ではない認知セルフチェックです。",
   keywords: ["マルチタスク 練習", "マルチタスク テスト", "二重ターゲット 追従", "並行処理 能力 測定", "タスク切り替え コスト", "認知的柔軟性 テスト", "両視野 追従 訓練", "脳トレ マルチタスク", "注意配分 テスト", "大脳半球 協調 検査", "視覚ストリーム 処理", "情報処理速度 測定"],
   openGraph: {
     title: "マルチタスクテスト・二重ターゲット追従 – 並行処理能力診断 | SkillDrills",
@@ -78,7 +79,7 @@ const softwareApplicationSchema = {
     "url": "https://skilldrills.online"
   },
   "inLanguage": "ja-JP",
-  "dateModified": "2026-09-11"
+  "dateModified": "2026-09-20"
 };
 
 const webApplicationSchema = {
@@ -95,7 +96,7 @@ const webApplicationSchema = {
   },
   "url": "https://skilldrills.online/ja/drills/cognitive/attention/multi-tasking",
   "inLanguage": "ja-JP",
-  "dateModified": "2026-09-11"
+  "dateModified": "2026-09-20"
 };
 
 const videoGameSchema = {
@@ -313,11 +314,26 @@ export default function LocalizedCognitivePage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(howToSchema) }}
       />
-      <DualTargetFlowClient copy={{ title: "マルチタスクテスト・二重ターゲット追従 – 並行処理能力診断" }} />
+      <DualTargetFlowClient copy={{
+        title: "マルチタスクテスト", subtitle: "二つのターゲットを同時に追従する認知トレーニング",
+        statScore: "スコア", statTime: "時間", timeLeft: "残り時間", statLevel: "レベル", statBest: "ベストスコア",
+        startTitle: "マルチタスクテスト", startSubtitle: "二重ストリーム・周辺フォーカス", getReady: "準備してください", accuracy: "正確度", hits: "成功", peakLevel: "最高レベル", maxCombo: "最大コンボ",
+        caption: "反対方向に動く二つのターゲットストリームから、同じ図形を見つけて素早くタップします。",
+        rulesTitle: "ドリルの手順とスコア基準", ruleItems: [
+          { text: "左のターゲット", highlight: "+スコア", result: "表示された図形をクリック" },
+          { text: "右のターゲット", highlight: "コンボ", result: "両方の流れを追従" },
+          { text: "誤反応を抑える", highlight: "正確さ", result: "違う図形は無視" },
+          { text: "速度に適応", highlight: "レベル上昇", result: "速くなっても両側を維持" },
+        ],
+        aboutTitle: "マルチタスクと二重ターゲット追従", aboutLead: "二つの視覚ストリームを追従する非臨床の認知セルフチェックです。実生活の万能なマルチタスク能力ではなく、練習中の切替速度と両側の正確さを見ます。",
+        audienceTitle: "おすすめの人", audienceText: "ゲーム中に複数の画面要素を見る人、学習者、同時に入る情報を整理したい人に向いています。",
+        skillsTitle: "鍛える力", skillsText: "両側の視覚追従、周辺ターゲット検出、注意の切替、実行機能の調整を練習します。", flexibilityTitle: "課題切替の速さ", flexibilityText: "レベルが上がると速度とルールが変わるため、二つの流れを素早く正確に切り替えます。"
+      }} />
       <DrillGuide {...guideProps} />
       <div className="max-w-6xl mx-auto px-4 pb-12">
         <RelatedDrills currentCategory="cognitive" currentHref="https://skilldrills.online/ja/drills/cognitive/attention/multi-tasking" />
       </div>
+      <DrillFooter />
     </>
   );
 }

@@ -5,31 +5,34 @@ import RelatedDrills from '@/components/drill/RelatedDrills';
 import { pickSources } from '@/lib/drillSources';
 
 export const metadata = {
-  title: "시각 리듬 검사: 시간 분해능 및 펄스 판별 훈련 | SkillDrills",
-  description: "36셀 맥동 격자 속에서 위상과 주기가 다른 이상 펄스를 즉각 식별하는 무료 시각 리듬 검사. 인간 망막의 거대세포 시간 분해능을 측정하고 반응 속도를 높이세요.",
+  title: "시각 리듬 검사 | 깜빡임 구별 | SkillDrills",
+  description: "36셀 맥동 격자에서 위상차가 있는 셀을 찾는 무료 시각 리듬 훈련. 깜빡임 구별과 시각적 시간 판별을 연습하세요. 의료 검사가 아닙니다.",
   keywords: [
     "시각 리듬 검사",
-    "시간 분해능 테스트",
+    "깜빡임 검사",
     "플리커 검사",
-    "깜빡임 판별 검사",
-    "임계 융합 빈도 CFF",
-    "시각 타이밍 인지 훈련",
-    "펄스 위상차 판별",
-    "거대세포 경로 시각 훈련",
+    "시각 시간 분해능",
+    "시각적 시간 판별",
+    "깜빡임 구별",
+    "맥동 자극",
+    "위상차 감지",
+    "시각 타이밍 훈련",
+    "시지각 훈련",
     "이상 펄스 탐지",
+    "시각 변별력",
     "동적 시각 반응속도"
 ],
   openGraph: {
-    title: "시각 리듬 검사: 시간 분해능 및 펄스 판별 훈련 | SkillDrills",
-    description: "36셀 맥동 격자 기반 무료 시각 리듬 검사. 대세포 시각 경로의 깜빡임 변별력, 위상차 감지, 동적 시각 타이밍 능력을 온라인에서 측정하고 강화하세요.",
+    title: "시각 리듬 검사 | 깜빡임 구별 | SkillDrills",
+    description: "맥동 격자에서 위상차를 찾고 깜빡임 구별과 시각 타이밍을 연습하세요.",
     type: "website",
     url: "https://skilldrills.online/ko/drills/visual/visual-recognition/rhythm-anomaly",
     siteName: "SkillDrills",
   },
   twitter: {
     card: "summary_large_image",
-    title: "시각 리듬 검사: 시간 분해능 및 펄스 판별 훈련 | SkillDrills",
-    description: "36셀 맥동 격자 기반 무료 시각 리듬 검사. 대세포 시각 경로의 깜빡임 변별력, 위상차 감지, 동적 시각 타이밍 능력을 온라인에서 측정하고 강화하세요.",
+    title: "시각 리듬 검사 | 깜빡임 구별 | SkillDrills",
+    description: "맥동 격자에서 위상차를 찾고 깜빡임 구별과 시각 타이밍을 연습하세요.",
   },
   robots: { index: true, follow: true },
   alternates: {
@@ -45,40 +48,40 @@ const breadcrumbSchema = {
     { "@type": "ListItem", "position": 1, "name": "SkillDrills", "item": "https://skilldrills.online/ko/" },
     { "@type": "ListItem", "position": 2, "name": "시각 훈련", "item": "https://skilldrills.online/ko/drills/visual" },
     { "@type": "ListItem", "position": 3, "name": "시각 인지", "item": "https://skilldrills.online/ko/drills/visual/visual-recognition" },
-    { "@type": "ListItem", "position": 4, "name": "시각 리듬 아노말리 검사 – 시간 분해능 훈련", "item": "https://skilldrills.online/ko/drills/visual/visual-recognition/rhythm-anomaly" }
+      { "@type": "ListItem", "position": 4, "name": "시각 리듬 검사 (깜빡임 구별)", "item": "https://skilldrills.online/ko/drills/visual/visual-recognition/rhythm-anomaly" }
   ]
 };
 
 const softwareApplicationSchema = {
   "@context": "https://schema.org",
   "@type": "SoftwareApplication",
-  "name": "시각 리듬 아노말리 검사 – 시간 분해능 훈련",
+  "name": "시각 리듬 검사·깜빡임 구별 훈련",
   "applicationCategory": "HealthApplication",
   "operatingSystem": "All",
   "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
   "description": "무료 온라인 시각 리듬 및 시간 분해능 검사. 6x6 그리드의 36개 펄스 셀 중 위상이 어긋난 이상 셀을 타임어택 방식으로 신속하게 찾아내세요.",
   "url": "https://skilldrills.online/ko/drills/visual/visual-recognition/rhythm-anomaly",
   "publisher": { "@type": "Organization", "name": "SkillDrills", "url": "https://skilldrills.online" },
-  "dateModified": "2026-09-05"
+  "dateModified": "2026-09-20"
 };
 
 const webApplicationSchema = {
   "@context": "https://schema.org",
   "@type": "WebApplication",
-  "name": "시각 리듬 & 시간 분해능 판별 검사",
+  "name": "무료 온라인 시각 시간 분해능 훈련",
   "browserRequirements": "Requires HTML5 canvas and JavaScript",
   "url": "https://skilldrills.online/ko/drills/visual/visual-recognition/rhythm-anomaly",
   "applicationCategory": "EducationalApplication",
-  "dateModified": "2026-09-05"
+  "dateModified": "2026-09-20"
 };
 
 const videoGameSchema = {
   "@context": "https://schema.org",
   "@type": "VideoGame",
-  "name": "시각 리듬 아노말리 판별 게임",
+  "name": "맥동 격자 시각 구별 챌린지",
   "url": "https://skilldrills.online/ko/drills/visual/visual-recognition/rhythm-anomaly",
   "description": "무료 시각 타이밍 및 플리커 감지 훈련 게임. 맥동하는 광학 격자에서 위상과 주기가 어긋난 이상 펄스를 찾아내어 반응속도를 극대화하세요.",
-  "genre": ["Action", "Brain Game", "Timing Game"],
+  "genre": ["시각 리듬 검사", "깜빡임 구별", "시지각 훈련"],
   "gamePlatform": ["Web Browser", "Desktop", "Mobile"],
   "applicationCategory": "Game",
   "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
@@ -87,9 +90,9 @@ const videoGameSchema = {
 const howToSchema = {
   "@context": "https://schema.org",
   "@type": "HowTo",
-  "name": "시각 리듬 변별력과 이상 펄스 탐지 능력을 훈련하는 방법",
+  "name": "시각 리듬 검사로 깜빡임 구별을 연습하는 방법",
   "description": "과학적 시각 타이밍 검사를 통해 안구 망막의 대세포 신경망과 대뇌 시각 피질의 시간 분해능을 극대화하는 4단계 실전 프로토콜.",
-  "dateModified": "2026-09-05",
+  "dateModified": "2026-09-20",
   "step": [
     {
       "@type": "HowToStep",
@@ -125,11 +128,11 @@ const howToSchema = {
 const faqSchema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
-  "dateModified": "2026-09-05",
+  "dateModified": "2026-09-20",
   "mainEntity": [
     {
       "@type": "Question",
-      "name": "시각 리듬 검사(Rhythm Anomaly Drill)는 무엇을 측정하나요?",
+"name": "시각 리듬 검사는 무엇을 측정하나요?",
       "acceptedAnswer": {
         "@type": "Answer",
         "text": "시각 시간 주파수 변별력과 시간 분해능을 측정합니다. 36개의 맥동 셀 중 위상과 깜빡임 주기가 미세하게 어긋난 이상 셀을 얼마나 신속하고 정확하게 식별하는지 평가합니다."
@@ -177,7 +180,7 @@ const faqSchema = {
     },
     {
       "@type": "Question",
-      "name": "무작위 엔트로피 섬광(Entropy Scramble)의 목적은 무엇인가요?",
+"name": "무작위 엔트로피 섬광의 목적은 무엇인가요?",
       "acceptedAnswer": {
         "@type": "Answer",
         "text": "순간적인 밝기 변화만으로 타겟을 찾는 편법을 차단하고, 뇌가 단발성 노이즈와 진짜 주기적인 정현파 진동을 능동적으로 구분하도록 강제하기 위한 시각 잡음 장치입니다."
@@ -221,7 +224,7 @@ export default function RhythmAnomalyLocalePage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(howToSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(videoGameSchema) }} />
-      <RhythmAnomalyClient copy={{ title: "시각 리듬 아노말리 판별 게임" }} />
+      <RhythmAnomalyClient copy={{ title: "시각 리듬 검사", subtitle: "깜빡임 구별과 시각 시간 분해능" }} />
       <DrillGuide
         eyebrow="시간 심리물리학 & 시각 크로노메트리"
         title="시각 리듬, 플리커 융합 빈도 및 시간 주파수 변별력의 신경과학"
@@ -242,9 +245,9 @@ export default function RhythmAnomalyLocalePage() {
             <strong>대뇌 피질 고수준 결합 한계(~2–5 Hz):</strong> 자극의 정체를 의식적으로 식별하고 다중 특징을 하나의 통합된 객체로 인지하는 데는 초당 2~5주기로 작동하는 느린 피질 되먹임 루프가 필요합니다 (Holcombe, 2009).
           </li>
         </ul>
-        <p dangerouslySetInnerHTML={{ __html: `리듬 아노말리(Rhythm Anomaly) 훈련은 이 두 시스템을 잇는 신경학적 교량을 정밀하게 단련합니다. 훈련자는 조기 대세포 명멸 감수성을 통해 이상 펄스 후보를 전주의적으로 포착한 후, 펄스 주기가 끝나기 전에 하향식 주의 검증을 전광석화처럼 완수해야 합니다.` }} />
+<p dangerouslySetInnerHTML={{ __html: `이 훈련은 두 시스템을 잇는 신경학적 교량을 정밀하게 단련합니다. 훈련자는 조기 대세포 명멸 감수성을 통해 이상 펄스 후보를 전주의적으로 포착한 후, 펄스 주기가 끝나기 전에 하향식 주의 검증을 전광석화처럼 완수해야 합니다.` }} />
 
-        <h3>시간 적분 창(Temporal Integration Window)과 엔트로피 노이즈</h3>
+<h3>시간 적분 창과 엔트로피 노이즈</h3>
         <p dangerouslySetInnerHTML={{ __html: `인간의 시각계는 약 30~100밀리초의 짧은 시간 창 동안 유입되는 빛을 하나로 통합합니다 (Burr, 1980; Woods et al., 2015). 이 적분 창 내에서 발생하는 자극들은 단일 시각 사건으로 융합됩니다. 본 훈련에서 무작위로 발생하는 '엔트로피 섬광'은 시각 적분 창에 일시적 잡음을 주입하여, 단순한 순간 광량 변화에 의존하는 것을 방지하고 뇌가 진정한 정현파 주기성을 판별하도록 훈련합니다 (Burr, 1980; Posner, 1980).` }} />
 
         <h3>시각 시간 분해능 등급 기준 (45초 맥동 격자)</h3>
@@ -325,7 +328,7 @@ export default function RhythmAnomalyLocalePage() {
         <h3>자주 묻는 질문 (FAQ)</h3>
         <div className="space-y-4 my-6">
           <div>
-            <h4 className="font-semibold text-white">시각 리듬 검사(Rhythm Anomaly Drill)는 무엇을 측정하나요?</h4>
+<h4 className="font-semibold text-white">시각 리듬 검사는 무엇을 측정하나요?</h4>
             <p className="text-slate-300 mt-1">
               시각 시간 주파수 변별력과 시간 분해능을 측정합니다. 36개의 맥동 셀 중 위상과 깜빡임 주기가 미세하게 어긋난 이상 셀을 얼마나 신속하고 정확하게 식별하는지 평가합니다.
             </p>
@@ -361,7 +364,7 @@ export default function RhythmAnomalyLocalePage() {
             </p>
           </div>
           <div>
-            <h4 className="font-semibold text-white">무작위 엔트로피 섬광(Entropy Scramble)의 목적은 무엇인가요?</h4>
+<h4 className="font-semibold text-white">무작위 엔트로피 섬광의 목적은 무엇인가요?</h4>
             <p className="text-slate-300 mt-1">
               순간적인 밝기 변화만으로 타겟을 찾는 편법을 차단하고, 뇌가 단발성 노이즈와 진짜 주기적인 정현파 진동을 능동적으로 구분하도록 강제하기 위한 시각 잡음 장치입니다.
             </p>

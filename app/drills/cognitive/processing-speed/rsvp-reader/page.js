@@ -1,18 +1,19 @@
 import RSVPReaderClient from './RSVPReaderClientLoader';
 import { getAlternateLanguages } from '@/lib/i18n/locales';
 import DrillGuide from '@/components/drill/DrillGuide';
+import DrillFooter from '@/components/drill/DrillFooter';
 import { pickSources } from '@/lib/drillSources';
 
 export const metadata = {
-  title: "RSVP Speed Reader – Reading Speed Test | SkillDrills",
-  description: "Free RSVP speed reader and reading speed test. Test visual token processing speed, eliminate saccadic eye movements, and train reading speed up to 850 WPM.",
-  keywords: ["reading speed test", "rsvp speed reader", "rapid serial visual presentation", "speed reading test online", "wpm reading test", "words per minute test", "lexical processing speed", "optimal recognition point", "visual reading speed",
+  title: "Reading Speed Test Online | RSVP Reader | SkillDrills",
+  description: "Free reading speed test online using RSVP: train fixed-point word recognition, measure WPM, and practise reading fluency in your browser. Non-clinical.",
+  keywords: ["reading speed test online", "reading speed test", "rsvp speed reader", "rapid serial visual presentation", "speed reading test", "wpm reading test", "words per minute test", "reading fluency test", "optimal recognition point", "visual reading speed",
     "speed reading app free",
     "reading comprehension speed",
     "text processing drill"],
   openGraph: {
-    title: "RSVP Speed Reader – Reading Speed Test | SkillDrills",
-    description: "Free RSVP speed reader and reading speed test. Test visual token processing speed, eliminate saccadic eye movements, and train reading speed up to 850 WPM.",
+    title: "Reading Speed Test Online | RSVP Reader | SkillDrills",
+    description: "Free reading speed test online using RSVP: train fixed-point word recognition, measure WPM, and practise reading fluency in your browser. Non-clinical.",
     type: 'article',
     url: 'https://skilldrills.online/drills/cognitive/processing-speed/rsvp-reader',
     siteName: 'SkillDrills',
@@ -20,8 +21,8 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: "RSVP Speed Reader – Reading Speed Test | SkillDrills",
-    description: "Free RSVP speed reader and reading speed test. Test visual token processing speed, eliminate saccadic eye movements, and train reading speed up to 850 WPM.",
+    title: "Reading Speed Test Online | RSVP Reader | SkillDrills",
+    description: "Free reading speed test online using RSVP: train fixed-point word recognition, measure WPM, and practise reading fluency in your browser. Non-clinical.",
   },
   robots: { index: true, follow: true },
   alternates: {
@@ -80,7 +81,7 @@ const softwareApplicationSchema = {
     "url": "https://skilldrills.online"
   },
   "inLanguage": "en-US",
-  "dateModified": "2026-09-11"
+  "dateModified": "2026-09-20"
 };
 
 const webApplicationSchema = {
@@ -97,7 +98,7 @@ const webApplicationSchema = {
   },
   "url": "https://skilldrills.online/drills/cognitive/processing-speed/rsvp-reader",
   "inLanguage": "en-US",
-  "dateModified": "2026-09-11"
+  "dateModified": "2026-09-20"
 };
 
 const videoGameSchema = {
@@ -117,6 +118,7 @@ const videoGameSchema = {
     "Mobile"
   ],
   "applicationCategory": "Game",
+  "dateModified": "2026-09-20",
   "offers": {
     "@type": "Offer",
     "price": "0",
@@ -315,8 +317,9 @@ export default function EnhancedPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(howToSchema) }}
       />
-      <RSVPReaderClient copy={{ title: "Reading Speed Test" }} />
+      <RSVPReaderClient copy={{ title: "Reading Speed Test", subtitle: "RSVP reading speed test for WPM, fixed-point word recognition, and visual reading fluency" }} />
       <DrillGuide {...guideProps} />
+      <DrillFooter />
     </>
   );
 }

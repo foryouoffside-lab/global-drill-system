@@ -6,25 +6,25 @@ import DrillFooter from '@/components/drill/DrillFooter';
 import { pickSources } from '@/lib/drillSources';
 
 export const metadata = {
-  title: 'Test de CPS – Clics Par Seconde & Vitesse | SkillDrills',
-  description: 'Test de CPS gratuit en ligne. Mesurez vos clics par seconde, votre vitesse de frappe de souris, jitter clicking et endurance des doigts sur 45 secondes.',
+  title: 'Test CPS | Vitesse de clic | SkillDrills',
+  description: 'Mesurez vos clics par seconde (CPS) et votre endurance sur 45 secondes. Test gratuit dans le navigateur.',
   keywords: [
-    'test de cps',
-    'cps test francais',
+    'test CPS',
     'test de vitesse de clic',
-    'clics par seconde test',
-    'compteur de clics par seconde',
-    'test de clics souris',
-    'test jitter click',
-    'butterfly click test',
-    'vitesse de frappe souris',
-    'test de clic minecraft',
-    'mesurer son cps en ligne',
-    'entrainement de clics rapides',
+    'clics par seconde',
+    'test de clic souris',
+    'vitesse de clic',
+    'compteur de clics',
+    'jitter click',
+    'butterfly click',
+    'CPS Minecraft',
+    'mesurer son CPS en ligne',
+    'test de clic rapide',
+    'endurance de clic',
   ],
   openGraph: {
-    title: 'Test de CPS – Clics Par Seconde & Vitesse | SkillDrills',
-    description: 'Test de CPS gratuit en ligne. Mesurez vos clics par seconde, votre vitesse de frappe de souris, jitter clicking et endurance des doigts sur 45 secondes.',
+    title: 'Test CPS | Vitesse de clic | SkillDrills',
+    description: 'Test gratuit de CPS et d’endurance de clic dans le navigateur pendant 45 secondes.',
     type: 'article',
     url: 'https://skilldrills.online/fr/drills/motor/movement-speed/rapid-tapping',
     siteName: 'SkillDrills',
@@ -32,8 +32,8 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Test de CPS – Clics Par Seconde & Vitesse | SkillDrills',
-    description: 'Test de CPS gratuit en ligne. Mesurez vos clics par seconde et votre vitesse de frappe de souris.',
+    title: 'Test CPS | Vitesse de clic | SkillDrills',
+    description: 'Mesurez vos clics par seconde et votre endurance avec un test gratuit.',
   },
   robots: { index: true, follow: true },
   alternates: {
@@ -56,6 +56,7 @@ const breadcrumbSchema = {
 const softwareApplicationSchema = {
   '@context': 'https://schema.org',
   '@type': 'SoftwareApplication',
+  inLanguage: 'fr-FR',
   name: 'Test de CPS – Compteur de Clics Par Seconde',
   applicationCategory: 'HealthApplication',
   operatingSystem: 'All',
@@ -63,24 +64,26 @@ const softwareApplicationSchema = {
   description: 'Test de CPS en ligne gratuit. Évaluez votre fréquence de clics par seconde (CPS), votre endurance musculaire et vos pics d’accélération sur 45 secondes.',
   url: 'https://skilldrills.online/fr/drills/motor/movement-speed/rapid-tapping',
   publisher: { '@type': 'Organization', name: 'SkillDrills', url: 'https://skilldrills.online' },
-  dateModified: '2026-09-05',
+  dateModified: '2026-09-20',
 };
 
 const webApplicationSchema = {
   '@context': 'https://schema.org',
   '@type': 'WebApplication',
+  inLanguage: 'fr-FR',
   name: 'Test de CPS en Ligne',
   applicationCategory: 'GameApplication',
   operatingSystem: 'All',
   browserRequirements: 'Nécessite le support HTML5 Canvas et JavaScript',
   offers: { '@type': 'Offer', price: '0', priceCurrency: 'EUR' },
   url: 'https://skilldrills.online/fr/drills/motor/movement-speed/rapid-tapping',
-  dateModified: '2026-09-05',
+  dateModified: '2026-09-20',
 };
 
 const videoGameSchema = {
   '@context': 'https://schema.org',
   '@type': 'VideoGame',
+  inLanguage: 'fr-FR',
   name: 'Test de CPS – Entraînement Clics Rapides',
   url: 'https://skilldrills.online/fr/drills/motor/movement-speed/rapid-tapping',
   description: 'Mesurez vos clics par seconde et votre régularité motrice sur une session interactive de 45 secondes.',
@@ -93,6 +96,8 @@ const videoGameSchema = {
 const faqSchema = {
   '@context': 'https://schema.org',
   '@type': 'FAQPage',
+  inLanguage: 'fr-FR',
+  dateModified: '2026-09-20',
   mainEntity: [
     {
       '@type': 'Question',
@@ -180,6 +185,8 @@ const faqSchema = {
 const howToSchema = {
   '@context': 'https://schema.org',
   '@type': 'HowTo',
+  inLanguage: 'fr-FR',
+  dateModified: '2026-09-20',
   name: 'Comment Développer sa Vitesse de Clic (CPS) et son Endurance',
   description: 'Guide méthodologique pour augmenter votre cadence de frappe et maîtriser les techniques de clic avancées.',
   step: [
@@ -309,7 +316,7 @@ const frCopy = {
   cpsRate: "CPS Actuel",
   bestScore: "Meilleur Score",
   startButtonText: "Démarrer l'Entraînement",
-  startSubtitle: "Entraîneur de Vitesse de Clic • Entrée Brute Matérielle 1:1",
+  startSubtitle: "CPS et endurance de clic • 45 s",
   getReady: "PRÉPAREZ-VOUS",
   playAgain: "Recommencer",
   shareTitle: "Partager le Score",

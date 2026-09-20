@@ -2,16 +2,17 @@ import DividedAttentionClient from '@/app/drills/cognitive/attention/divided-att
 import { getAlternateLanguages } from '@/lib/i18n/locales';
 import DrillGuide from '@/components/drill/DrillGuide';
 import RelatedDrills from '@/components/drill/RelatedDrills';
+import DrillFooter from '@/components/drill/DrillFooter';
 import { pickSources } from '@/lib/drillSources';
 
 export const metadata = {
-  title: "주의분할 테스트・이중과제 훈련 – 듀얼태스크 인지능력 측정 | SkillDrills",
-  description: "무료 브라우저 주의분할(이중과제) 테스트 도구. 움직이는 시각 표적 추적과 연속 숫자 분류를 동시에 수행하여 심리적 불응기(PRP)와 대뇌의 병목 정보처리 능력을 밀리초 단위로 정밀 측정합니다.",
-  keywords: ["주의분할 테스트", "이중과제 훈련", "분할 주의력 검사", "듀얼태스크 연습", "멀티태스킹 뇌 훈련", "심리적 불응기", "주의집중력 분할", "시지각 동시처리", "인지속도 검사", "뇌 기능 트레이닝",
+  title: "분할 주의력 테스트 | 이중과제 훈련 | SkillDrills",
+  description: "무료 브라우저 분할 주의력 테스트로 움직이는 표적 추적과 숫자 분류를 동시에 연습하세요. 의료 진단이 아닌 인지 자기 점검입니다.",
+  keywords: ["분할 주의력 테스트", "분할주의력 검사", "이중과제 훈련", "듀얼태스크 연습", "멀티태스킹 뇌 훈련", "주의력 분할", "시지각 동시처리", "인지속도 검사", "뇌 기능 트레이닝",
     "분할주의력훈련",
     "듀얼태스크검사"],
   openGraph: {
-    title: "주의분할 테스트・이중과제 훈련 – 듀얼태스크 인지능력 측정 | SkillDrills",
+    title: "분할 주의력 테스트・이중과제 훈련 – 듀얼태스크 인지능력 측정 | SkillDrills",
     description: "무료 브라우저 주의분할(이중과제) 테스트 도구. 움직이는 시각 표적 추적과 연속 숫자 분류를 동시에 수행하여 심리적 불응기(PRP)와 대뇌의 병목 정보처리 능력을 밀리초 단위로 정밀 측정합니다.",
     type: 'article',
     url: 'https://skilldrills.online/ko/drills/cognitive/attention/divided-attention',
@@ -20,7 +21,7 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: "주의분할 테스트・이중과제 훈련 – 듀얼태스크 인지능력 측정 | SkillDrills",
+    title: "분할 주의력 테스트・이중과제 훈련 – 듀얼태스크 인지능력 측정 | SkillDrills",
     description: "무료 브라우저 주의분할(이중과제) 테스트 도구. 움직이는 시각 표적 추적과 연속 숫자 분류를 동시에 수행하여 심리적 불응기(PRP)와 대뇌의 병목 정보처리 능력을 밀리초 단위로 정밀 측정합니다.",
   },
   robots: { index: true, follow: true },
@@ -80,7 +81,7 @@ const softwareApplicationSchema = {
     "url": "https://skilldrills.online"
   },
   "inLanguage": "ko-KR",
-  "dateModified": "2026-09-11"
+  "dateModified": "2026-09-20"
 };
 
 const webApplicationSchema = {
@@ -97,7 +98,7 @@ const webApplicationSchema = {
   },
   "url": "https://skilldrills.online/ko/drills/cognitive/attention/divided-attention",
   "inLanguage": "ko-KR",
-  "dateModified": "2026-09-11"
+  "dateModified": "2026-09-20"
 };
 
 const videoGameSchema = {
@@ -315,11 +316,28 @@ export default function LocalizedCognitivePage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(howToSchema) }}
       />
-      <DividedAttentionClient copy={{ title: "주의분할 테스트・이중과제 훈련 – 듀얼태스크 인지능력 측정" }} />
+      <DividedAttentionClient copy={{
+        title: "분할 주의력 테스트",
+        subtitle: "움직이는 표적과 숫자를 동시에 처리하는 이중과제 훈련",
+        statScore: "점수", statTime: "시간", timeLeft: "남은 시간", statLevel: "레벨", statBest: "최고 점수",
+        match: "판정", evenNumbers: "짝수", tapEven: "짝수일 때 누르기", startTitle: "분할 주의력 테스트", startSubtitle: "이중과제 · 집중 전환",
+        getReady: "준비하세요", dualAccuracy: "통합 정확도", hits: "성공", misses: "실수", peakLevel: "최고 레벨",
+        caption: "움직이는 표적을 추적하면서 숫자 흐름에서 짝수를 동시에 판정하세요.",
+        rulesTitle: "드릴 안내 및 점수 기준", ruleItems: [
+          { text: "표적 맞히기", highlight: "+시간", result: "움직이는 표적 클릭" },
+          { text: "짝수 판정", highlight: "정확히 누르기", result: "짝수일 때 판정" },
+          { text: "홀수 무시", highlight: "오입력 없음", result: "홀수에는 누르지 않기" },
+          { text: "두 채널 균형", highlight: "콤보 유지", result: "추적과 판정 모두 정확하게" },
+        ],
+        aboutTitle: "분할 주의력 테스트와 이중과제 훈련", aboutLead: "이 드릴은 움직이는 시각 표적 추적과 숫자 분류를 동시에 요구하는 비임상 인지 자기 점검입니다.",
+        audienceTitle: "추천 대상", audienceText: "게임 중 미니맵과 목표를 함께 보는 플레이어, 학습자, 여러 입력을 빠르게 처리해야 하는 사람에게 적합합니다.",
+        skillsTitle: "훈련하는 능력", skillsText: "이중과제 처리, 시각 추적, 숫자 판단, 주의 자원 배분을 연습합니다.", flexibilityTitle: "병렬 처리", flexibilityText: "두 정보 흐름을 번갈아 확인하면서 한쪽의 정확도가 무너지지 않도록 조절합니다."
+      }} />
       <DrillGuide {...guideProps} />
       <div className="max-w-6xl mx-auto px-4 pb-12">
         <RelatedDrills currentCategory="cognitive" currentHref="https://skilldrills.online/ko/drills/cognitive/attention/divided-attention" />
       </div>
+      <DrillFooter />
     </>
   );
 }

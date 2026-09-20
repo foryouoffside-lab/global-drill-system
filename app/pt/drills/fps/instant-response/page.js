@@ -6,21 +6,18 @@ import { pickSources } from '@/lib/drillSources';
 import DrillFooter from '@/components/drill/DrillFooter';
 
 export const metadata = {
-  title: "Tempo de Reação FPS – Treino de Reflexo | SkillDrills",
-  description: "Teste seu tempo de reação no FPS em milissegundos. Aperfeiçoe os reflexos de clique e segure ângulos com precisão para vencer duelos no CS2 e Valorant.",
+  title: "Teste de Reflexo | Tempo de Reação FPS | SkillDrills",
+  description: "Teste de reflexo grátis no navegador: meça o tempo entre o estímulo visual e o clique para treinar reações em FPS.",
   keywords: [
-    "teste de tempo de reacao fps",
-    "tempo de resposta clique mouse",
-    "como melhorar o reflexo no valorant",
-    "treino de reflexo fps gratis",
-    "tempo de reacao cs2 milissegundos",
-    "como segurar pixel no cs2",
-    "teste de velocidade do dedo clique",
-    "latencia visual jogos de tiro",
-    "exercicios de tempo de reacao pc",
-    "treinador de reflexos online",
-    "reacao de primeiro tiro fps",
-    "como atirar mais rapido fps"
+    "teste de reflexo",
+    "teste de reflexo click",
+    "teste de reflexo para fps",
+    "teste de reflexo mouse",
+    "teste de tempo de reação",
+    "tempo de reação fps",
+    "reflexo gamer",
+    "reação rápida fps",
+    "teste reflexo online"
   ],
   alternates: {
     canonical: "https://skilldrills.online/pt/drills/fps/instant-response",
@@ -31,8 +28,8 @@ export const metadata = {
     follow: true,
   },
   openGraph: {
-    title: "Tempo de Reação FPS – Treino de Reflexo | SkillDrills",
-    description: "Teste seu tempo de reação no FPS em milissegundos. Aperfeiçoe os reflexos de clique e segure ângulos com precisão para vencer duelos no CS2 e Valorant.",
+    title: "Teste de Reflexo | Tempo de Reação FPS | SkillDrills",
+    description: "Teste de reflexo grátis no navegador: meça o tempo entre o estímulo visual e o clique para treinar reações em FPS.",
     url: "https://skilldrills.online/pt/drills/fps/instant-response",
     siteName: 'SkillDrills',
     locale: 'pt_BR',
@@ -40,8 +37,8 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: "Tempo de Reação FPS – Treino de Reflexo | SkillDrills",
-    description: "Teste seu tempo de reação no FPS em milissegundos. Aperfeiçoe os reflexos de clique e segure ângulos com precisão para vencer duelos no CS2 e Valorant.",
+    title: "Teste de Reflexo | Tempo de Reação FPS | SkillDrills",
+    description: "Teste de reflexo grátis no navegador: meça o tempo entre o estímulo visual e o clique para treinar reações em FPS.",
   },
 };
 
@@ -52,14 +49,14 @@ export default function InstantResponsePtPage() {
     "itemListElement": [
       { "@type": "ListItem", "position": 1, "name": "SkillDrills", "item": "https://skilldrills.online/pt" },
       { "@type": "ListItem", "position": 2, "name": "Treinos de FPS", "item": "https://skilldrills.online/pt/drills/fps" },
-      { "@type": "ListItem", "position": 3, "name": "Teste de Tempo de Reação FPS", "item": "https://skilldrills.online/pt/drills/fps/instant-response" }
+      { "@type": "ListItem", "position": 3, "name": "Teste de reflexo - reação FPS", "item": "https://skilldrills.online/pt/drills/fps/instant-response" }
     ]
   };
 
   const webAppSchema = {
     "@context": "https://schema.org",
     "@type": "WebApplication",
-    "name": "Teste de Tempo de Reação FPS Online",
+    "name": "Teste de reflexo para FPS",
     "url": "https://skilldrills.online/pt/drills/fps/instant-response",
     "applicationCategory": "GameApplication",
     "operatingSystem": "All",
@@ -75,14 +72,14 @@ export default function InstantResponsePtPage() {
   const softwareSchema = {
     "@context": "https://schema.org",
     "@type": "SoftwareApplication",
-    "name": "Simulador de Reação Instantânea SkillDrills",
+    "name": "Teste de reflexo SkillDrills",
     "applicationCategory": "GameApplication",
     "operatingSystem": "Web Browser",
     "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
     "description": "Ferramenta psicomotora para medição da latência de estímulo visual e resposta de clique em shooters competitivos.",
     "genre": "Treino FPS / Reflexos",
     "url": "https://skilldrills.online/pt/drills/fps/instant-response",
-    "dateModified": "2026-09-05",
+    "dateModified": "2026-09-20",
     "publisher": {
       "@type": "Organization",
       "name": "SkillDrills",
@@ -93,7 +90,7 @@ export default function InstantResponsePtPage() {
   const videoGameSchema = {
     "@context": "https://schema.org",
     "@type": "VideoGame",
-    "name": "Treino de Reação Instantânea FPS",
+    "name": "Teste de reflexo - reação FPS",
     "url": "https://skilldrills.online/pt/drills/fps/instant-response",
     "description": "Exercício de reflexo com alvos estroboscópicos e fintas visuais para treinar contenção de disparo e retenção de ângulos.",
     "gamePlatform": "Web Browser",
@@ -101,13 +98,13 @@ export default function InstantResponsePtPage() {
     "playMode": "SinglePlayer",
     "applicationCategory": "Game",
     "operatingSystem": "Web Browser",
-    "dateModified": "2026-09-05"
+    "dateModified": "2026-09-20"
   };
 
   const faqSchema = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
-    "dateModified": "2026-09-05",
+    "dateModified": "2026-09-20",
     "mainEntity": [
       {
         "@type": "Question",
@@ -230,13 +227,13 @@ export default function InstantResponsePtPage() {
   };
 
   const copyPt = {
-    h1Keyword: "Teste de Tempo de Reação FPS",
-    h1Suffix: " – Treino de Reflexo",
+    h1Keyword: "Teste de Reflexo",
+    h1Suffix: " — tempo de reação FPS",
     statScore: "Pontuação",
     statTime: "Tempo Restante",
     statAccuracy: "Precisão",
     statBestScore: "Recorde Pessoal",
-    startTitle: "Teste de Tempo de Reação FPS",
+    startTitle: "Teste de Reflexo",
     startSubtitle: "Latência visual & reflexo de clique • Dificuldade adaptativa",
     getReady: "Preparar",
     pausedTitle: "Pausado",
@@ -249,14 +246,14 @@ export default function InstantResponsePtPage() {
       { num: "3", text: "Progressão de Nível", highlight: "+1 Nível / 1400 PTS", result: "Janelas Adaptativas" },
       { num: "4", text: "Disparo Antecipado", highlight: "Penalidade", result: "Reset de Combo (-0.8s)" }
     ],
-    aboutTitle: "Sobre o Teste de Tempo de Reação FPS",
+    aboutTitle: "Sobre o teste de reflexo e reação FPS",
     aboutHeading: "Como funciona o teste de reflexo para FPS?"
   };
 
   const instantResponseGuide = {
-    heading: "Guia Científico de Tempo de Reação em FPS e Benchmarks de Reflexo",
+    heading: "Teste de Reflexo para Reações FPS",
     intro: [
-      "O tempo de reação no tiro em primeira pessoa é o intervalo cronométrico decorrido entre a emissão de um estímulo visual luminoso na tela e a deflagração mecânica do clique pelo indicador. Na cronometria mental clássica (Donders, 1868), essa resposta simples envolve quatro etapas fisiológicas sequenciais: transdução retiniana, condução axônica até o córtex visual primário, processamento no córtex motor e condução descendente até os músculos da mão.",
+      "O teste de reflexo mede o intervalo entre um estímulo visual e o clique do jogador. Este drill registra a latência em milissegundos para comparar reações em duelos de CS2, Valorant e outros FPS.",
       "A atenção espacial focalizada desempenha papel determinante na redução desse atraso. De acordo com os experimentos de Michael Posner (1990), ancorar a atenção no ponto de expectativa reduz em até 20 a 30 ms o tempo de processamento cortical em relação a uma observação periférica dispersa. Em termos competitivos no Valorant e no CS2, essa diferença define quem ganha a troca de tiros ao segurar um ângulo.",
       "A latência da cadeia de hardware e o relógio digital do sistema impõem limites à medição prática. Este teste emprega o temporizador de alta precisão performance.now() da API do navegador (Woods et al., 2015). Em um ecossistema competitivo moderno com monitor de 240 Hz (4,17 ms por quadro) e mouse de 1000 Hz (1,0 ms por relatório USB), o atraso instrumental é reduzido ao mínimo para avaliar o tempo biológico puro.",
       "Medição técnica no seu navegador: todos os eventos de clique são cronometrados localmente sem transmissão para servidores de rede. Por razões de mitigação de vulnerabilidades Spectre, navegadores discretizam o relógio em ~1 ms, e telas operam em frequências fixas (16,7 ms a 60 Hz contra 4,1 ms a 240 Hz). Para comparações rigorosas, avalie sua evolução em condições de hardware idênticas."

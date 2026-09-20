@@ -337,10 +337,9 @@ export default function RecoilControlPage() {
 
       <RecoilControlClient copy={copyEn} />
 
-      <DrillGuide guide={recoilControlGuide} />
+      <DrillGuide guide={recoilControlGuide} singleLineTitles />
 
       <DrillFooter />
     </>
   );
 }
-

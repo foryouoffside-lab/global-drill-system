@@ -5,25 +5,27 @@ import RelatedDrills from '@/components/drill/RelatedDrills';
 import { pickSources } from '@/lib/drillSources';
 
 export const metadata = {
-  title: "数唱テスト・デジットスパン – 音韻ループ・数字記憶測定 | SkillDrills",
-  description: "無料のオンライン数唱課題（Digit Span Test / 数唱検査）。ランダムに点滅する数字シーケンスを記憶し、音韻ループ容量と短期記憶スパンを測定・トレーニング。",
+  title: "数唱テスト｜数字記憶・ワーキングメモリ | SkillDrills",
+  description: "無料の数唱テスト。表示される数字の列を覚え、同じ順番で入力して数字記憶とワーキングメモリを測定・練習できます。",
   keywords: [
-    "数唱課題",
     "数唱テスト",
-    "デジットスパン",
+    "数唱課題",
+    "数字記憶テスト",
+    "デジットスパンテスト",
+    "数字記憶ゲーム",
+    "ワーキングメモリ 数字",
+    "短期記憶 数字",
+    "数字 覚える テスト",
+    "記憶力トレーニング 数字",
     "音韻ループ テスト",
-    "作業記憶 測定",
-    "数字 記憶 ゲーム",
-    "短期記憶 スパン 検査",
-    "チャンキング 記憶術",
-    "脳トレ 数字記憶",
-    "WAIS 数唱検査",
-    "記憶容量 測定",
-    "系列位置効果 テスト"
+    "記憶スパン 測定",
+    "数字列 記憶",
+    "順番記憶 テスト",
+    "無料 脳トレ 数字"
   ],
   openGraph: {
-    title: "数唱テスト・デジットスパン – 音韻ループ・数字記憶測定 | SkillDrills",
-    description: "無料のオンライン数唱課題（Digit Span Test / 数唱検査）。ランダムに点滅する数字シーケンスを記憶し、音韻ループ容量と短期記憶スパンを測定・トレーニング。",
+    title: "数唱テスト｜数字記憶・ワーキングメモリ | SkillDrills",
+    description: "無料の数唱テスト。表示される数字の列を覚え、同じ順番で入力して数字記憶とワーキングメモリを測定・練習できます。",
     type: 'website',
     url: 'https://skilldrills.online/ja/drills/memory/short-term-memory/digit-span',
     siteName: 'SkillDrills',
@@ -31,8 +33,8 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: "数唱テスト・デジットスパン – 音韻ループ・数字記憶測定 | SkillDrills",
-    description: "無料のオンライン数唱課題（Digit Span Test / 数唱検査）。ランダムに点滅する数字シーケンスを記憶し、音韻ループ容量と短期記憶スパンを測定・トレーニング。",
+    title: "数唱テスト｜数字記憶・ワーキングメモリ | SkillDrills",
+    description: "無料の数唱テスト。表示される数字の列を覚え、同じ順番で入力して数字記憶とワーキングメモリを測定・練習できます。",
   },
   robots: { index: true, follow: true },
   alternates: {
@@ -62,6 +64,7 @@ const webAppSchema = {
   "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
   "author": { "@type": "Organization", "name": "SkillDrills" },
   "isAccessibleForFree": true,
+  "sameAs": ["https://ja.wikipedia.org/wiki/ワーキングメモリ"],
   "dateModified": "2026-09-11"
 };
 
@@ -305,23 +308,23 @@ const digitSpanGuide = {
   sources: pickSources('miller1956', 'cowan2001', 'baddeley1974', 'baddeley2000', 'logie1995', 'woods2015'),
   related: [
   {
-    "href": "/drills/memory/working-memory/n-back",
+    "href": "/ja/drills/memory/working-memory/n-back",
     "label": "3-Back ワーキングメモリ課題"
   },
   {
-    "href": "/drills/memory/spatial-memory/grid-memorization",
+    "href": "/ja/drills/memory/spatial-memory/grid-memorization",
     "label": "瞬間記憶テスト（グリッド記憶）"
   },
   {
-    "href": "/drills/cognitive/focus/concentration-grid",
+    "href": "/ja/drills/cognitive/focus/concentration-grid",
     "label": "シュルテテーブル（集中力グリッド）"
   },
   {
-    "href": "/drills/reaction-speed/reaction-time-test",
+    "href": "/ja/drills/reaction-speed/reaction-time-test",
     "label": "反射神経・反応速度テスト"
   },
   {
-    "href": "/drills/reaction-speed/reflex-training-drill",
+    "href": "/ja/drills/reaction-speed/reflex-training-drill",
     "label": "反射神経ゲーム"
   }
 ]
@@ -355,9 +358,10 @@ export default function LocalizedDigitSpanPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
       <DigitSpanClient copy={{
-        "h1Keyword": "数唱課題・数唱テスト",
-        "h1Suffix": " – 無料デジットスパン数字記憶ゲーム",
-        "caption": "次々と表示される数字シーケンスを記憶し、同じ順番で正確に入力してください。",
+        "h1Keyword": "数唱テスト",
+        "h1Suffix": "｜数字記憶・ワーキングメモリ",
+        "subtitle": "数字の列を覚えて同じ順番で入力",
+        "caption": "表示される数字の列を覚え、消えたあとに同じ順番で正確に入力してください。",
         "statScore": "スコア",
         "statTime": "残り時間",
         "statSpan": "スパン",
@@ -368,7 +372,7 @@ export default function LocalizedDigitSpanPage() {
         "memorizeTitle": "数字シーケンスを記憶",
         "evaluating": "判定中...",
         "startTitle": "数唱課題 Pro",
-        "startSubtitle": "数字短期記憶 • シーケンス再生テスト",
+        "startSubtitle": "数字記憶 • ワーキングメモリ練習",
         "countdownSubtitle": "準備してください",
         "newBest": "自己新記録",
         "pointsLabel": "ポイント",

@@ -6,18 +6,18 @@ import { getLocalizedDrill } from '@/lib/i18n/drillNames';
 const motorDrills = DRILLS.filter((d) => d.category === 'motor');
 
 export const metadata = {
-  title: 'Maus-Präzision & CPS Test: Motorik Training | SkillDrills',
-  description: 'Kostenloses Motorik- & Klick-Training online. 9 wissenschaftliche Drills für Klickgeschwindigkeit (CPS), ruhige Hand, Tastatur-Speed & Zielgenauigkeit.',
+  title: 'Maus-Präzisionstest & Aim-Training | SkillDrills',
+  description: 'Kostenlose Browser-Drills für Mausgenauigkeit, Aim-Kontrolle, CPS, Tastaturtempo und Hand-Auge-Koordination.',
   keywords: [
-    'Maus Präzision Test online', 'Aim Trainer kostenlos deutsch', 'CPS Test Klickgeschwindigkeit',
-    'Klicks pro Sekunde testen', 'Maus Handzittern Test', 'Tastatur Geschwindigkeitstest online',
-    'Tastatur Ghosting Test', 'Tastatur Chattering testen', 'Hand-Auge-Koordination Übungen',
-    'Maus Feinkoordination trainieren', 'Jitter Click Test kostenlos', 'Butterfly Click Technik lernen',
-    'Heißer Draht Spiel online', 'FPS Maus Genauigkeit verbessern', 'eDPI Rechner Maus Empfindlichkeit'
+    'Maus-Präzisionstest', 'Aim-Training', 'CPS-Test', 'Mausgenauigkeit',
+    'Hand-Auge-Koordination', 'Tastatur Geschwindigkeit', 'Maus Präzisionstraining',
+    'Cursor Kontrolle', 'Feinmotorik Maus', 'ruhige Hand Training',
+    'Klickgeschwindigkeit testen', 'Fingerfertigkeit Training', 'Maus Tracking Test',
+    'Aim Trainer Browser', 'Maus Sensitivität'
   ],
   openGraph: {
-    title: 'Maus-Präzision & CPS Test: Motorik Training | SkillDrills',
-    description: 'Kostenloses Motorik- & Klick-Training online. 9 wissenschaftliche Drills für Klickgeschwindigkeit (CPS), ruhige Hand, Tastatur-Speed & Zielgenauigkeit.',
+    title: 'Maus-Präzisionstest & Aim-Training | SkillDrills',
+    description: 'Kostenlose Browser-Drills für Mausgenauigkeit, Aim-Kontrolle, CPS, Tastaturtempo und Hand-Auge-Koordination.',
     type: 'website',
     url: 'https://skilldrills.online/de/drills/motor',
     siteName: 'SkillDrills',
@@ -26,8 +26,8 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Maus-Präzision & CPS Test: Motorik Training | SkillDrills',
-    description: 'Klickgeschwindigkeit (CPS), ruhige Hand, Tastatur-Testing und Aim-Präzision: 9 wissenschaftliche Drills kostenlos im Browser trainieren.',
+    title: 'Maus-Präzisionstest & Aim-Training | SkillDrills',
+    description: 'Kostenlose Browser-Drills für Mausgenauigkeit, Aim-Kontrolle, CPS, Tastaturtempo und Hand-Auge-Koordination.',
     images: ['https://skilldrills.online/icons/icon-512x512.png'],
   },
   robots: { index: true, follow: true },
@@ -50,9 +50,11 @@ const breadcrumbSchema = {
 const collectionSchema = {
   "@context": "https://schema.org",
   "@type": "CollectionPage",
-  "name": "Maus-Präzision & Motorik-Drills (9 Übungen)",
+  "inLanguage": "de-DE",
+  "dateModified": "2026-09-20",
+  "name": "Maus-Präzisionstest & Aim-Training (9 Übungen)",
   "url": "https://skilldrills.online/de/drills/motor",
-  "description": "9 interaktive Übungen für Klickgeschwindigkeit (CPS), Aim-Präzision, Tremor-Unterdrückung, Tastatur-Testing und feinmotorische Hand-Auge-Koordination.",
+  "description": "Kostenlose Browser-Drills für Mausgenauigkeit, Aim-Kontrolle, CPS, Tastaturtempo und Hand-Auge-Koordination.",
   "author": { "@type": "Organization", "name": "SkillDrills" },
   "hasPart": motorDrills.map((drill) => {
     const loc = getLocalizedDrill(drill.href, 'de', drill.name);
@@ -71,6 +73,8 @@ const collectionSchema = {
 const faqSchema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
+  "inLanguage": "de-DE",
+  "dateModified": "2026-09-20",
   "mainEntity": [
     {
       "@type": "Question",

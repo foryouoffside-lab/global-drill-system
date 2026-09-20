@@ -344,7 +344,7 @@ export default function GhostLinkPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(videoGameSchema) }} />
-      <GhostLinkClient copy={{ title: "Multiple Object Tracking Test" }} />
+      <GhostLinkClient copy={{ title: "Multiple Object Tracking Test", subtitle: "Multiple object tracking test for remembering target identities among moving distractors and improving visual attention" }} />
       <DrillGuide guide={multipleTargetsGuide} />
     </>
   );

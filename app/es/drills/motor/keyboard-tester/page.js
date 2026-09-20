@@ -5,27 +5,23 @@ import DrillGuide from '@/components/drill/DrillGuide';
 import RelatedDrills from '@/components/drill/RelatedDrills';
 
 export const metadata = {
-  title: 'Test de Teclado Online – Comprobador de Teclas | SkillDrills',
-  description:
-    'Prueba cada tecla de tu teclado online gratis en el navegador. Detecta teclas que no funcionan, mide el ghosting y key rollover sin instalar programas.',
+  title: 'Test de teclado online | Teclas y ghosting | SkillDrills',
+  description: 'Prueba tu teclado gratis en el navegador: comprueba teclas, ghosting, rollover y fallos sin instalar programas.',
   keywords: [
-    'test de teclado',
-    'probar teclado online',
-    'comprobador de teclas',
-    'test de teclado mecanico',
-    'test ghosting teclado',
-    'key rollover test',
-    'teclado chattering test',
-    'teclas que no funcionan test',
-    'test de pulsaciones teclado',
-    'verificar teclado online',
-    'test de teclado gaming',
-    'comprobar teclado gratis',
+    'test de teclado online',
+    'probar teclado',
+    'comprobar teclas',
+    'tecla no funciona',
+    'tecla atascada',
+    'test de ghosting',
+    'test de rollover',
+    'test teclado mecánico',
+    'teclado gaming',
+    'teclas simultáneas',
   ],
   openGraph: {
-    title: 'Test de Teclado Online – Comprobador de Teclas | SkillDrills',
-    description:
-      'Prueba cada tecla de tu teclado online gratis en el navegador. Detecta teclas que no funcionan, mide el ghosting y key rollover sin instalar programas.',
+    title: 'Test de teclado online | Teclas y ghosting | SkillDrills',
+    description: 'Comprueba teclas, ghosting y rollover en el navegador con un diagnóstico rápido y gratuito.',
     type: 'article',
     url: 'https://skilldrills.online/es/drills/motor/keyboard-tester',
     siteName: 'SkillDrills',
@@ -33,9 +29,8 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Test de Teclado Online – Comprobador de Teclas | SkillDrills',
-    description:
-      'Prueba cada tecla de tu teclado online gratis en el navegador. Detecta teclas que no funcionan, mide el ghosting y key rollover sin instalar programas.',
+    title: 'Test de teclado online | Teclas y ghosting | SkillDrills',
+    description: 'Test de teclado para detectar teclas defectuosas, ghosting y problemas de entradas simultáneas.',
   },
   robots: { index: true, follow: true },
   alternates: {
@@ -67,6 +62,7 @@ const breadcrumbSchema = {
 const webApplicationSchema = {
   '@context': 'https://schema.org',
   '@type': 'WebApplication',
+  inLanguage: 'es-ES',
   name: 'Test de Teclado Online',
   alternateName: ['Comprobador de Teclado', 'Test de Teclas'],
   applicationCategory: 'UtilitiesApplication',
@@ -77,29 +73,31 @@ const webApplicationSchema = {
     'Herramienta web gratuita para probar teclas, detectar interruptores atascados, evaluar key rollover y verificar eventos.',
   url: 'https://skilldrills.online/es/drills/motor/keyboard-tester',
   publisher: { '@type': 'Organization', name: 'SkillDrills', url: 'https://skilldrills.online' },
-  dateModified: '2026-09-16',
+  dateModified: '2026-09-20',
 };
 
 const softwareSchema = {
   '@context': 'https://schema.org',
   '@type': 'SoftwareApplication',
+  inLanguage: 'es-ES',
   name: 'Comprobador de Teclado y Test de Ghosting Online',
   applicationCategory: 'UtilitiesApplication',
   operatingSystem: 'Web Browser',
   offers: { '@type': 'Offer', price: '0', priceCurrency: 'EUR' },
   description: 'Herramienta web gratuita para probar pulsaciones, detectar teclas atascadas y medir key rollover.',
   url: 'https://skilldrills.online/es/drills/motor/keyboard-tester',
-  dateModified: '2026-09-16',
+  dateModified: '2026-09-20',
   publisher: { '@type': 'Organization', name: 'SkillDrills', url: 'https://skilldrills.online' }
 };
 
 const videoGameSchema = {
   '@context': 'https://schema.org',
   '@type': 'VideoGame',
+  inLanguage: 'es-ES',
   name: 'Comprobador de Teclado y Diagnóstico de Pulsaciones',
   url: 'https://skilldrills.online/es/drills/motor/keyboard-tester',
   description: 'Herramienta interactiva para verificar la respuesta de interruptores y combinaciones de teclas.',
-  dateModified: '2026-09-16',
+  dateModified: '2026-09-20',
   gamePlatform: 'Web Browser',
   genre: ['Test de Teclado', 'Utilidades', 'Diagnóstico de Hardware'],
   playMode: 'SinglePlayer',
@@ -111,6 +109,7 @@ const videoGameSchema = {
 const howToSchema = {
   '@context': 'https://schema.org',
   '@type': 'HowTo',
+  inLanguage: 'es-ES',
   name: 'Cómo probar las teclas del teclado online',
   description: 'Guía paso a paso para comprobar el funcionamiento de teclas, detectar fallos y medir el rollover.',
   step: [
@@ -148,7 +147,8 @@ const howToSchema = {
 const faqSchema = {
   '@context': 'https://schema.org',
   '@type': 'FAQPage',
-  dateModified: '2026-09-16',
+  inLanguage: 'es-ES',
+  dateModified: '2026-09-20',
   mainEntity: [
     {
       '@type': 'Question',
@@ -231,6 +231,48 @@ const faqSchema = {
       },
     },
   ],
+};
+
+const SPANISH_COPY = {
+  title: 'Test de teclado online',
+  subtitle: 'Comprobar teclas • Ghosting • Rollover',
+  intro: 'Pulsa cada tecla del teclado para confirmar que se registra correctamente.',
+  keysConfirmed: 'Teclas confirmadas',
+  rollover: 'Rollover',
+  capturing: 'Capturando teclas',
+  paused: 'Pausado',
+  reset: 'Reiniciar',
+  captureNotice: 'La captura de teclas está activa. Pulsa Mayús + Esc o haz clic en «Capturando» para liberar el teclado.',
+  lastKeyEvent: 'Último evento de tecla',
+  eventCode: 'event.code',
+  eventKey: 'event.key',
+  keyCode: 'keyCode',
+  location: 'Ubicación',
+  autoRepeat: 'Repetición automática',
+  yes: 'Sí',
+  no: 'No',
+  space: '(espacio)',
+  pressAnyKey: 'Pulsa cualquier tecla para ver qué recibe el navegador.',
+  keysNotOnLayout: 'Teclas fuera de la distribución seleccionada',
+  notYetConfirmed: 'Aún no confirmadas',
+  allConfirmed: 'Se han registrado todas las teclas de la distribución. El teclado funciona correctamente.',
+  untestedSingular: 'tecla pendiente de pulsar. Si no responde tras varias pulsaciones firmes, conviene revisarla.',
+  untestedPlural: 'teclas pendientes de pulsar. Si alguna no responde tras varias pulsaciones firmes, conviene revisarla.',
+  mobileWarning: 'Esta herramienta necesita un teclado físico. Ábrela en un ordenador portátil o de sobremesa, o conecta un teclado externo.',
+  aboutTitle: 'Sobre el test de teclado',
+  aboutP1: 'Cada tecla se ilumina al registrarse y queda verde cuando ya ha sido confirmada. Las teclas que nunca se iluminan pueden indicar un interruptor averiado, una tecla atascada o un problema del controlador.',
+  aboutP2: 'No se sube ni se guarda ningún dato.',
+  howTitle: 'Cómo probar el teclado',
+  howStep1: 'Pulsa cada tecla una vez, recorriendo las filas de izquierda a derecha.',
+  howStep2: 'La tecla se vuelve cian mientras la mantienes pulsada y verde después de registrarse.',
+  howStep3: 'Observa cómo se vacía la lista «Aún no confirmadas». Las teclas que queden son sospechosas.',
+  howStep4: 'Mantén varias teclas pulsadas para leer el número máximo de entradas simultáneas.',
+  rolloverTitle: 'Key rollover y ghosting',
+  rolloverP1: 'El rollover indica cuántas teclas puede comunicar el teclado al mismo tiempo. Muchos teclados de membrana registran entre dos y seis; las pulsaciones adicionales pueden descartarse. Los teclados NKRO informan de todas las teclas pulsadas.',
+  rolloverP2: 'Mantén varias teclas y observa el valor de rollover. Si deja de subir con tres o cuatro, es el límite del teclado, no necesariamente un fallo. Algunas combinaciones del sistema nunca llegan al navegador.',
+  limitsTitle: 'Qué no puede diagnosticar este test',
+  limitsP1: 'La página solo ve lo que recibe el navegador: el final de la cadena formada por interruptor, controlador, cable o conexión inalámbrica, controlador del sistema y sistema operativo. No puede señalar qué componente concreto falla.',
+  limitsP2: 'El sistema operativo intercepta Alt+Tab y Ctrl+Alt+Supr antes de que lleguen al navegador. F5, F11 y F12 se reservan para funciones del navegador. Que falten esas combinaciones es normal y no demuestra un fallo físico.',
 };
 
 const guideProps = {
@@ -325,7 +367,7 @@ export default function KeyboardTesterPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
-      <KeyboardTesterClient />
+      <KeyboardTesterClient copy={SPANISH_COPY} />
       <DrillGuide {...guideProps} />
       <div className="max-w-6xl mx-auto px-4 pb-12">
         <RelatedDrills currentCategory="motor" currentHref="/es/drills/motor/keyboard-tester" />

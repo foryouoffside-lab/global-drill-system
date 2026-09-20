@@ -5,31 +5,35 @@ import RelatedDrills from '@/components/drill/RelatedDrills';
 import { pickSources } from '@/lib/drillSources';
 
 export const metadata = {
-  title: "시각 탐색 검사: 결합 특징 및 표적 탐지 훈련 | SkillDrills",
-  description: "96개 고밀도 회전 방해 문자 속에서 표적을 초고속 식별하는 무료 온라인 시각 탐색 검사. 트레이스먼 특징 통합 모델로 시각 스캐닝 속도와 선택적 주의력을 극대화하세요.",
+  title: "글자 찾기 테스트 | 시각 탐색·선택적 주의 | SkillDrills",
+  description: "회전된 96개 문자 속에서 표적을 찾는 무료 글자 찾기 테스트입니다. 시각 탐색과 선택적 주의력, 시각 변별력을 연습하세요. 의료 진단용이 아닙니다.",
   keywords: [
+    "글자 찾기 테스트",
+    "숨은 글자 찾기",
+    "시각 탐색",
     "시각 탐색 검사",
+    "시각 변별력",
+    "시각적 주의력",
+    "선택적 주의력",
+    "주의력 테스트",
+    "문자 찾기",
+    "표적 탐지",
+    "시각 스캐닝",
     "결합 특징 탐색",
-    "특징 통합 이론",
-    "선택적 시각 주의력",
-    "표적 탐지 검사",
-    "주변시 스캐닝 훈련",
-    "시각 스캔 속도",
-    "기호 탐색 검사",
-    "시각 자극 인지",
-    "인지 탐색 과제"
+    "집중력 훈련",
+    "틀린 글자 찾기"
 ],
   openGraph: {
-    title: "시각 탐색 검사: 결합 특징 및 표적 탐지 훈련 | SkillDrills",
-    description: "96개 고밀도 회전 방해 문자 속에서 표적을 초고속 식별하는 무료 온라인 시각 탐색 검사. 트레이스먼 특징 통합 모델로 시각 스캐닝 속도와 선택적 주의력을 극대화하세요.",
+    title: "글자 찾기 테스트 | 시각 탐색·선택적 주의 | SkillDrills",
+    description: "회전된 문자 속에서 표적을 찾으며 시각 탐색과 선택적 주의력을 연습하는 무료 온라인 과제입니다.",
     type: "website",
     url: "https://skilldrills.online/ko/drills/visual/visual-recognition/visual-search",
     siteName: "SkillDrills",
   },
   twitter: {
     card: "summary_large_image",
-    title: "시각 탐색 검사: 결합 특징 및 표적 탐지 훈련 | SkillDrills",
-    description: "96개 고밀도 회전 방해 문자 속에서 표적을 초고속 식별하는 무료 온라인 시각 탐색 검사. 트레이스먼 특징 통합 모델로 시각 스캐닝 속도와 선택적 주의력을 극대화하세요.",
+    title: "글자 찾기 테스트 | 시각 탐색·선택적 주의 | SkillDrills",
+    description: "글자 속 표적을 찾는 시각 탐색 연습입니다.",
   },
   robots: { index: true, follow: true },
   alternates: {
@@ -59,7 +63,7 @@ const softwareApplicationSchema = {
   "description": "무료 온라인 결합 시각 탐색 검사. 회전된 방해 문자가 가득한 고밀도 12x8 격자에서 표적을 탐색하여 시각 처리 속도와 주의력을 측정합니다.",
   "url": "https://skilldrills.online/ko/drills/visual/visual-recognition/visual-search",
   "publisher": { "@type": "Organization", "name": "SkillDrills", "url": "https://skilldrills.online" },
-  "dateModified": "2026-09-05"
+  "dateModified": "2026-09-20"
 };
 
 const webApplicationSchema = {
@@ -69,7 +73,7 @@ const webApplicationSchema = {
   "browserRequirements": "Requires HTML5 canvas and JavaScript",
   "url": "https://skilldrills.online/ko/drills/visual/visual-recognition/visual-search",
   "applicationCategory": "EducationalApplication",
-  "dateModified": "2026-09-05"
+  "dateModified": "2026-09-20"
 };
 
 const videoGameSchema = {
@@ -89,7 +93,7 @@ const howToSchema = {
   "@type": "HowTo",
   "name": "시각 탐색 속도와 결합 특징 스캐닝 능력을 훈련하는 방법",
   "description": "앤 트레이스먼과 제레미 울프의 인지 심리학 모델에 기반한 4단계 과학적 시각 스캐닝 훈련 가이드.",
-  "dateModified": "2026-09-05",
+  "dateModified": "2026-09-20",
   "step": [
     {
       "@type": "HowToStep",
@@ -125,11 +129,11 @@ const howToSchema = {
 const faqSchema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
-  "dateModified": "2026-09-05",
+  "dateModified": "2026-09-20",
   "mainEntity": [
     {
       "@type": "Question",
-      "name": "시각 탐색 검사(Visual Search Test)는 무엇을 측정하나요?",
+      "name": "시각 탐색 검사는 무엇을 측정하나요?",
       "acceptedAnswer": {
         "@type": "Answer",
         "text": "고밀도 자극 배열 속에서 표적을 찾아내는 시각 스캐닝 속도, 결합 특징 처리 효율성, 선택적 주의력을 종합적으로 평가합니다. 96개의 회전된 방해 문자 속에서 목표를 얼마나 빨리 식별하는지 측정합니다."
@@ -153,7 +157,7 @@ const faqSchema = {
     },
     {
       "@type": "Question",
-      "name": "울프의 안내 탐색(Guided Search) 이론은 실제 탐색에 어떻게 적용되나요?",
+      "name": "울프의 안내 탐색 이론은 실제 탐색에 어떻게 적용되나요?",
       "acceptedAnswer": {
         "@type": "Answer",
         "text": "뇌가 맹목적으로 찾는 대신, 초기 시각 피질의 특징 정보로 우선순위 지도를 만들어 가능성이 높은 위치로 안구 도약을 우선 유도합니다 (Wolfe, 1994)."
@@ -169,7 +173,7 @@ const faqSchema = {
     },
     {
       "@type": "Question",
-      "name": "라비의 지각 부하 이론(Perceptual Load Theory)이란 무엇인가요?",
+      "name": "라비의 지각 부하 이론이란 무엇인가요?",
       "acceptedAnswer": {
         "@type": "Answer",
         "text": "감각 정보 부하가 높을수록 뇌의 지각 대역폭이 꽉 차서 딴생각이나 무관한 외부 자극에 한눈을 팔지 못하고 과제에만 완벽히 몰입하게 된다는 인지 이론입니다 (Lavie, 1995)."
@@ -221,13 +225,13 @@ export default function VisualSearchLocalePage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(howToSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(videoGameSchema) }} />
-      <VisualSearchClient copy={{ title: "시각 탐색: 결합 스캐닝 훈련" }} />
+      <VisualSearchClient copy={{ title: "글자 찾기·시각 탐색", subtitle: "회전된 글자 속에서 표적 찾기" }} />
       <DrillGuide
         eyebrow="시각 인지 심리학 & 주의력 메커니즘"
-        title="시각 탐색, 특징 통합 이론 및 선택적 주의 집중의 신경과학"
+        title="글자 찾기로 연습하는 시각 탐색과 선택적 주의력"
         sources={sources}
       >
-        <p dangerouslySetInnerHTML={{ __html: `자연계의 실제 시각 환경에서 탐색 대상이 완전히 고립된 상태로 주어지는 경우는 거의 없습니다. 공항 활주로의 레이더 관제, 방대한 분량의 인쇄물 교정, 택티컬 FPS에서 엄폐물 사이로 찰나에 시야를 확보하는 적 식별에 이르기까지, 인간의 시각 시스템은 고밀도 시각 클러터(Visual Clutter) 속에서 핵심 신호를 밀리초 단위로 분별해야 합니다. 시각 심리물리학에서는 이러한 능력을 <strong>시각 탐색 패러다임</strong>을 통해 정밀 측정하며, 공간 주의가 시간 경과에 따라 감각 특징 지도와 어떻게 상호작용하는지를 규명해 왔습니다 (Treisman &amp; Gelade, 1980; Wolfe, 1994).` }} />
+        <p dangerouslySetInnerHTML={{ __html: `자연계의 실제 시각 환경에서 탐색 대상이 완전히 고립된 상태로 주어지는 경우는 거의 없습니다. 공항 활주로의 레이더 관제, 방대한 분량의 인쇄물 교정, 택티컬 FPS에서 엄폐물 사이로 찰나에 시야를 확보하는 적 식별에 이르기까지, 인간의 시각 시스템은 고밀도 시각적 혼잡 속에서 핵심 신호를 밀리초 단위로 분별해야 합니다. 시각 심리물리학에서는 이러한 능력을 <strong>시각 탐색 패러다임</strong>을 통해 정밀 측정하며, 공간 주의가 시간 경과에 따라 감각 특징 지도와 어떻게 상호작용하는지를 규명해 왔습니다 (Treisman &amp; Gelade, 1980; Wolfe, 1994).` }} />
 
         <h3>특징 통합 이론: 병렬적 팝아웃 vs 순차적 결합 탐색</h3>
         <p dangerouslySetInnerHTML={{ __html: `고전적 시각 심리물리학은 표적의 현저성과 특징 구성에 따라 시각 탐색을 두 가지 핵심 처리 체계로 구분합니다:` }} />
@@ -239,7 +243,7 @@ export default function VisualSearchLocalePage() {
             <strong>결합 탐색 (직렬 및 유도 결합):</strong> 표적이 주변 방해 문자와 부분적으로 겹치는 복합 특징들의 조합(예: 불규칙하게 회전된 'O', 'Q', 'G' 속에서 'C' 찾기)으로 정의될 경우, 병렬적 전주의 기제만으로는 표적을 식별할 수 없습니다. 시각 피질은 후보 셀들을 향해 공간 주의를 순차적으로 이동시켜야 하므로, 자극 집합 크기에 정비례하여 반응 시간이 선형적으로 증가합니다 (Treisman &amp; Gelade, 1980; Duncan &amp; Humphreys, 1989).
           </li>
         </ul>
-        <p dangerouslySetInnerHTML={{ __html: `이 현상은 인지신경과학에서 <em>시각 결합 문제(Visual Binding Problem)</em>로 정의되는 신경학적 도전 과제를 보여줍니다. 초기 시각 피질이 방향, 곡률, 폐쇄성을 서로 분리된 모듈형 특징 지도에서 처리하는 반면, 이를 하나의 통일된 객체 지각으로 융합하기 위해서는 후두정엽 피질과 전두안야(FEF)가 중개하는 능동적인 공간 주의 배분이 반드시 요구됩니다 (Treisman &amp; Gelade, 1980; Wolfe, 1994).` }} />
+        <p dangerouslySetInnerHTML={{ __html: `이 현상은 인지신경과학에서 <em>시각 결합 문제</em>로 정의되는 신경학적 도전 과제를 보여줍니다. 초기 시각 피질이 방향, 곡률, 폐쇄성을 서로 분리된 모듈형 특징 지도에서 처리하는 반면, 이를 하나의 통일된 객체 지각으로 융합하기 위해서는 후두정엽 피질과 전두안야(FEF)가 중개하는 능동적인 공간 주의 배분이 반드시 요구됩니다 (Treisman &amp; Gelade, 1980; Wolfe, 1994).` }} />
 
         <h3>방해 자극 동질성 및 탐색 효율성 (Duncan &amp; Humphreys, 1989)</h3>
         <p dangerouslySetInnerHTML={{ __html: `시각 탐색 효율성에 관한 던컨과 험프리스(Duncan &amp; Humphreys, 1989)의 기념비적 연구는, 탐색 수행력이 단순한 특징 결합뿐 아니라 두 가지 결정적인 지각 관계에 의해 지배된다는 점을 입증했습니다:` }} />
@@ -254,7 +258,7 @@ export default function VisualSearchLocalePage() {
 
         <h3>주의 줌렌즈 모델 &amp; 지각 부하 이론 (Lavie, 1995; Eriksen &amp; St. James, 1986)</h3>
         <p dangerouslySetInnerHTML={{ __html: `공간 주의의 줌렌즈 모델(Eriksen &amp; St. James, 1986)에 따르면, 시각 주의는 조리개 직경을 가변적으로 조절할 수 있는 스포트라이트처럼 작동합니다. 96개 셀 전체를 조망하도록 초점을 넓히면 처리 해상도가 저하되며, 단일 셀로 초점을 좁히면 주변 시야 범위를 희생하는 대신 해상도가 극대화됩니다.` }} />
-        <p dangerouslySetInnerHTML={{ __html: `나아가 닐리 라비의 지각 부하 이론(Perceptual Load Theory, Lavie, 1995)은 인지적 주의 산만성이 감각 대역폭의 소비량에 달려 있음을 증명합니다. 저부하 조건에서는 잉여 주의 용량이 과제와 무관한 자극으로 비자발적으로 누출되지만, 96개 문자가 빽빽한 12x8 격자판에서 45초 타임어택을 수행하는 고부하 조건에서는 인지 처리 용량이 완전히 포화되어 엄격한 선택적 주의가 강제되고 불필요한 잡념이 신경화학적으로 억제됩니다 (Lavie, 1995; Bacon &amp; Egeth, 1994).` }} />
+        <p dangerouslySetInnerHTML={{ __html: `나아가 닐리 라비의 지각 부하 이론(Lavie, 1995)은 인지적 주의 산만성이 감각 대역폭의 소비량에 달려 있음을 설명합니다. 저부하 조건에서는 잉여 주의 용량이 과제와 무관한 자극으로 비자발적으로 누출되지만, 96개 문자가 빽빽한 12x8 격자판에서 45초 타임어택을 수행하는 고부하 조건에서는 선택적 주의가 더 강하게 요구됩니다 (Lavie, 1995; Bacon &amp; Egeth, 1994).` }} />
 
         <h3>시각 탐색 지연 시간 및 처리율 기준표 (96셀 격자)</h3>
         <p dangerouslySetInnerHTML={{ __html: `아래의 기준표는 96셀(12x8) 격자에서 45초 동안 진행되는 표준화된 테스트 결과를 객관적으로 해석하기 위한 편집 지침입니다:` }} />
@@ -328,7 +332,7 @@ export default function VisualSearchLocalePage() {
         <h3>자주 묻는 질문 (FAQ)</h3>
         <div className="space-y-4 my-6">
           <div>
-            <h4 className="font-semibold text-white">시각 탐색 검사(Visual Search Test)는 무엇을 측정하나요?</h4>
+            <h4 className="font-semibold text-white">시각 탐색 검사는 무엇을 측정하나요?</h4>
             <p className="text-slate-300 mt-1">
               고밀도 자극 배열 속에서 표적을 찾아내는 시각 스캐닝 속도, 결합 특징 처리 효율성, 선택적 주의력을 종합적으로 평가합니다. 96개의 회전된 방해 문자 속에서 목표를 얼마나 빨리 식별하는지 측정합니다.
             </p>
@@ -346,7 +350,7 @@ export default function VisualSearchLocalePage() {
             </p>
           </div>
           <div>
-            <h4 className="font-semibold text-white">울프의 안내 탐색(Guided Search) 이론은 실제 탐색에 어떻게 적용되나요?</h4>
+            <h4 className="font-semibold text-white">울프의 안내 탐색 이론은 실제 탐색에 어떻게 적용되나요?</h4>
             <p className="text-slate-300 mt-1">
               뇌가 맹목적으로 찾는 대신, 초기 시각 피질의 특징 정보로 우선순위 지도를 만들어 가능성이 높은 위치로 안구 도약을 우선 유도합니다 (Wolfe, 1994).
             </p>
@@ -358,7 +362,7 @@ export default function VisualSearchLocalePage() {
             </p>
           </div>
           <div>
-            <h4 className="font-semibold text-white">라비의 지각 부하 이론(Perceptual Load Theory)이란 무엇인가요?</h4>
+            <h4 className="font-semibold text-white">라비의 지각 부하 이론이란 무엇인가요?</h4>
             <p className="text-slate-300 mt-1">
               감각 정보 부하가 높을수록 뇌의 지각 대역폭이 꽉 차서 딴생각이나 무관한 외부 자극에 한눈을 팔지 못하고 과제에만 완벽히 몰입하게 된다는 인지 이론입니다 (Lavie, 1995).
             </p>

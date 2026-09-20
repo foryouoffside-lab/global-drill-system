@@ -22,8 +22,8 @@ import { pickSources } from '@/lib/drillSources';
 // ============================================================
 
 export const metadata = {
-  title: "マウス避けるゲーム＆反射神経弾幕テスト – 無料回避ドリル | SkillDrills",
-  description: "無料オンラインマウス避けるゲーム。四方から迫る高速弾幕をカーソルで極限まで回避し、川人小脳内部モデルに基づく軌道予測と超精密なマイクロムービングを科学的に鍛えます。",
+  title: "マウス避けゲーム｜無料の反射神経テスト",
+  description: "無料のマウス避けゲーム。迫る弾幕をカーソルでかわし、反射神経と回避操作をブラウザで練習できます。",
   keywords: [
     "マウス 避ける ゲーム",
     "反射神経 避ける ゲーム",
@@ -41,8 +41,8 @@ export const metadata = {
     languages: getAlternateLanguages('/drills/physical/reflex-training/quick-dodge'),
   },
   openGraph: {
-    title: "マウス避けるゲーム＆反射神経弾幕テスト – 無料回避ドリル | SkillDrills",
-    description: "無料オンラインマウス避けるゲーム。四方から迫る高速弾幕をカーソルで極限まで回避し、川人小脳内部モデルに基づく軌道予測と超精密なマイクロムービングを科学的に鍛えます。",
+    title: "マウス避けゲーム｜無料の反射神経テスト",
+    description: "無料のマウス避けゲーム。迫る弾幕をカーソルでかわし、反射神経と回避操作をブラウザで練習できます。",
     url: 'https://skilldrills.online/ja/drills/physical/reflex-training/quick-dodge',
     siteName: 'SkillDrills',
     locale: 'ja_JP',
@@ -50,8 +50,8 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: "マウス避けるゲーム＆反射神経弾幕テスト – 無料回避ドリル | SkillDrills",
-    description: "無料オンラインマウス避けるゲーム。四方から迫る高速弾幕をカーソルで極限まで回避し、川人小脳内部モデルに基づく軌道予測と超精密なマイクロムービングを科学的に鍛えます。",
+    title: "マウス避けゲーム｜無料の反射神経テスト",
+    description: "無料のマウス避けゲーム。迫る弾幕をカーソルでかわし、反射神経と回避操作をブラウザで練習できます。",
   },
   robots: { index: true, follow: true },
 };
@@ -93,6 +93,10 @@ const softwareApplicationSchema = {
   "name": "マウス避けるゲーム及び弾幕回避シミュレーター",
   "applicationCategory": "HealthApplication",
   "operatingSystem": "All",
+  "url": "https://skilldrills.online/ja/drills/physical/reflex-training/quick-dodge",
+  "description": "迫る弾幕をカーソルでかわし、反射神経とマウス操作を練習する無料ゲームです。",
+  "inLanguage": "ja",
+  "dateModified": "2026-09-20",
   "offers": {
     "@type": "Offer",
     "price": "0",
@@ -104,6 +108,10 @@ const webApplicationSchema = {
   "@context": "https://schema.org",
   "@type": "WebApplication",
   "name": "弾幕回避及び小脳順モデル予測訓練ツール",
+  "url": "https://skilldrills.online/ja/drills/physical/reflex-training/quick-dodge",
+  "description": "マウスで迫る弾幕を回避し、動体視力と予測的なカーソル操作を鍛えるブラウザドリルです。",
+  "inLanguage": "ja",
+  "dateModified": "2026-09-20",
   "browserRequirements": "Requires JavaScript and HTML5 Canvas support",
   "genre": "Training, Reflex, Evasion, Esports"
 };
@@ -111,8 +119,11 @@ const webApplicationSchema = {
 const videoGameSchema = {
   "@context": "https://schema.org",
   "@type": "VideoGame",
-  "name": "Quick Dodge Danmaku Cursor Evasion Challenge",
+  "name": "マウス避けゲーム・弾幕回避テスト",
   "gamePlatform": "Web Browser",
+  "url": "https://skilldrills.online/ja/drills/physical/reflex-training/quick-dodge",
+  "inLanguage": "ja",
+  "dateModified": "2026-09-20",
   "applicationSubCategory": "Esports Motor Chronometry Drill"
 };
 
@@ -328,8 +339,8 @@ export default function LocalizedQuickDodgePageJa() {
       />
       <QuickDodgeClient
         copy={{
-          title: "マウス避けるゲーム＆反射神経弾幕テスト",
-          subtitle: "小脳順モデル軌道予測＆キネティック弾幕回避 • 15段階難易度スケーリング",
+          title: "マウス避けゲーム",
+          subtitle: "迫る弾幕をマウスでかわす",
           description: "迫り来る弾幕を回避することは反応の問題ではなく予測の問題です。視覚フィードバックが運動に介入するには約100〜150msを要するため（Woodworth, 1899）、高速弾の回避は小脳による未来軌道の事前シミュレーション（Kawato, 1999）に基づく計画された弾道制御で完結します。弾速が増すにつれ修正可能な時間窓は消え去り、純粋な予測のみが残ります。",
           badge: "反射神経弾幕テスト",
           hudLabels: {

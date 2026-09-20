@@ -6,21 +6,21 @@ import { getAlternateLanguages } from '@/lib/i18n/locales';
 import RelatedDrills from '@/components/drill/RelatedDrills';
 
 export const metadata = {
-  title: "Treino de Controle de Recoil – Spray FPS | SkillDrills",
-  description: "Treine controle de recoil e padrões de spray no navegador. Domine a compensação vertical e transferências de tiro para CS2 e Valorant gratuitamente.",
+  title: "Controle de Recoil | Treino de Spray FPS | SkillDrills",
+  description: "Treino grátis de controle de recoil no navegador: pratique padrões de spray e compensação para CS2, Valorant e outros FPS.",
   keywords: [
-    "treino de controle de recoil",
-    "controle de recoil cs2",
-    "como controlar recoil valorant",
-    "treinar spray de armas fps",
-    "puxar o mouse recoil",
+    "controle de recoil",
+    "controle de recuo",
+    "controle de spray",
+    "treino de recoil",
+    "padrão de spray",
+    "treino de spray FPS",
+    "recoil CS2",
+    "recoil Valorant",
+    "compensação de recuo",
     "treinador de recoil online",
-    "padrao de spray cs2",
-    "ajuste de recoil mouse",
-    "treino de spray transfer",
-    "recoil compensacao fps",
-    "como diminuir recuo de mira",
-    "treinador de mira de recuo gratis"
+    "controle de recuo vertical",
+    "controle de recuo horizontal"
   ],
   alternates: {
     canonical: "https://skilldrills.online/pt/drills/fps/recoil-control",
@@ -31,8 +31,8 @@ export const metadata = {
     follow: true,
   },
   openGraph: {
-    title: "Treino de Controle de Recoil – Spray FPS | SkillDrills",
-    description: "Treine controle de recoil e padrões de spray no navegador. Domine a compensação vertical e transferências de tiro para CS2 e Valorant gratuitamente.",
+    title: "Controle de Recoil | Treino de Spray FPS | SkillDrills",
+    description: "Treino grátis de controle de recoil no navegador: pratique padrões de spray e compensação para CS2, Valorant e outros FPS.",
     url: "https://skilldrills.online/pt/drills/fps/recoil-control",
     siteName: 'SkillDrills',
     locale: 'pt_BR',
@@ -40,8 +40,8 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: "Treino de Controle de Recoil – Spray FPS | SkillDrills",
-    description: "Treine controle de recoil e padrões de spray no navegador. Domine a compensação vertical e transferências de tiro para CS2 e Valorant gratuitamente.",
+    title: "Controle de Recoil | Treino de Spray FPS | SkillDrills",
+    description: "Treino grátis de controle de recoil no navegador: pratique padrões de spray e compensação para CS2, Valorant e outros FPS.",
   },
 };
 
@@ -117,7 +117,7 @@ export default function RecoilControlPage() {
   const faqSchema = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
-    "dateModified": "2026-09-16",
+    "dateModified": "2026-09-20",
     "mainEntity": [
       {
         "@type": "Question",
@@ -237,7 +237,7 @@ export default function RecoilControlPage() {
 
   const copyPt = {
     h1Keyword: "Controle de Recoil",
-    h1Suffix: " – Treinador de Spray FPS",
+    h1Suffix: " – Treino de Spray FPS",
     caption: "Controle o recuo vertical e horizontal da arma arrastando o mouse no padrão inverso para manter a dispersão no alvo.",
     statScore: "Pontuação",
     statTime: "Tempo",
@@ -247,7 +247,7 @@ export default function RecoilControlPage() {
     statReloading: "RECARREGANDO...",
     pausedTitle: "Jogo Pausado",
     pausedPrompt: "Clique na tela para reengajar a trava do cursor do mouse.",
-    startTitle: "Treinador Profissional de Recoil",
+    startTitle: "Treino de Controle de Recoil",
     startSubtitle: "Padrões de Spray e Compensação Motora • Progressão Contínua",
     startButtonText: "INICIAR TREINO DE RECOIL",
     getReady: "PREPARE-SE",
@@ -263,15 +263,15 @@ export default function RecoilControlPage() {
       { num: "3", text: "Progressão de Nível", highlight: "+1 Nível / 1400 PTS", result: "Escala Velocidade e Recoil" },
       { num: "4", text: "Disciplina de Carregador", highlight: "<40% Penalidade", result: "Zera Combo (-0,6s)" }
     ],
-    aboutTitle: "Sobre o Treino de Controle de Recoil",
+    aboutTitle: "Sobre o Controle de Recoil e Spray",
     aboutHeading: "O que é o Controle de Recoil (Recuo)?",
     aboutText: "O recuo em atiradores modernos é um deslocamento ascendente e lateral progressivo do cano a cada disparo consecutivo. O controle de recoil exige programas motores antecipatórios de circuito aberto (Schmidt & Lee, 2011), onde a mão compensa mecanicamente a trajetória inversa antes mesmo do retorno do feedback visual."
   };
 
   const recoilControlGuide = {
-    heading: "Guia de Controle de Recoil & Padrões de Spray em Atiradores FPS",
+    heading: "Guia de Controle de Recoil e Padrões de Spray FPS",
     intro: [
-      "O Treinador Profissional de Controle de Recoil é um ambiente de treino psicomotor desenhado para isolar, calibrar e condicionar a compensação mecânica de armas automáticas. Em atiradores táticos e dinâmicos como Counter-Strike 2, Valorant, Apex Legends e PUBG, o agrupamento exato dos disparos define a letalidade de qualquer confronto direto.",
+      "Este treino de controle de recoil desenvolve a compensação vertical e horizontal necessária para manter padrões de spray compactos. Em CS2, Valorant, Apex Legends e PUBG, o agrupamento dos disparos define a eficiência do confronto direto.",
       "Ao contrário de ajustes pontuais guiados por feedback visual contínuo, a cadência de fogo de fuzis automáticos (600 a 900 tiros por minuto) produz impactos a cada 66 a 100 milissegundos. Como a latência do reflexo visual humano é de aproximadamente 200 ms, compensar o recuo depende prioritariamente de Programas Motores Generalizados (GMP) de circuito aberto (Schmidt & Lee, 2011; Wolpert & Kawato, 1998) pré-programados na memória muscular.",
       "A dinâmica do exercício ensina a modular duas fases críticas: uma descida vertical uniforme na primeira metade do carregador e micro-ajustes horizontais com inversão direcional na segunda metade. Isso reproduz a cinemática autêntica dos padrões de spray mais emblemáticos dos eSports competitivos.",
       "Utilizando a API de Pointer Lock aliada à cronometria de alta resolução via performance.now() (Woods et al., 2015), o simulador calcula a precisão balística de cada projétil em relação ao centro de massa do alvo, permitindo refinar a suavidade do arrasto e erradicar sobrecompensações desnecessárias.",

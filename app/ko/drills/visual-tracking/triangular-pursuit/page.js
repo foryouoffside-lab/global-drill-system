@@ -5,25 +5,25 @@ import { getAlternateLanguages } from '@/lib/i18n/locales';
 import { pickSources } from '@/lib/drillSources';
 
 export const metadata = {
-  title: "삼각형 안구 추적 훈련・다각형 에임 정밀도 테스트 | SkillDrills",
-  description: "삼각형 기하 궤적을 순환하는 표적을 추적하여 3개 꼭짓점에서의 급격한 보정 단속운동과 선형 원활추종을 결합 훈련하는 안구 운동 드릴. 무료.",
+  title: "삼각형 시선 추적 훈련 | SkillDrills",
+  description: "삼각 궤적 표적을 따라가는 무료 브라우저 훈련. 대각선 추적, 모서리 재포착, 추적 오차와 표적 손실을 기록합니다.",
   keywords: [
-    "삼각형 안구 추적 훈련",
-    "다각형 에임 연습",
-    "꼭짓점 재포착 단속운동",
-    "원활추종 급격한 방향전환",
+    "삼각형 시선 추적 훈련",
+    "삼각 궤적 안구 운동",
+    "삼각형 표적 추적",
+    "동체시력 방향 전환",
     "대각선 시선 이동 훈련",
-    "망막 미끄러짐 보정 에임",
-    "동체시력 다각형 추적",
-    "스포츠 비전 안구운동",
-    "반응속도 눈 운동 테스트",
-    "시기능 시각 반응 훈련",
-    "삼각 궤적 시선 추종 연습",
-    "온라인 동체시력 측정 드릴"
+    "모서리 재포착 시선 훈련",
+    "꼭짓점 표적 추적",
+    "시선 추적 오차 측정",
+    "표적 손실 시선 연습",
+    "삼각형 에임 연습",
+    "수직 수평 안구 협응",
+    "온라인 동체시력 측정"
   ],
   openGraph: {
-    title: "삼각형 안구 추적 훈련・다각형 에임 정밀도 테스트 | SkillDrills",
-    description: "삼각형 기하 궤적을 순환하는 표적을 추적하여 3개 꼭짓점에서의 급격한 보정 단속운동과 선형 원활추종을 결합 훈련하는 안구 운동 드릴. 무료.",
+    title: "삼각형 시선 추적 훈련 | SkillDrills",
+    description: "삼각 궤적 표적을 따라가는 무료 브라우저 훈련. 대각선 추적, 모서리 재포착, 추적 오차와 표적 손실을 기록합니다.",
     url: 'https://skilldrills.online/ko/drills/visual-tracking/triangular-pursuit',
     siteName: 'SkillDrills',
     locale: 'ko_KR',
@@ -31,8 +31,8 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: "삼각형 안구 추적 훈련・다각형 에임 정밀도 테스트 | SkillDrills",
-    description: "삼각형 기하 궤적을 순환하는 표적을 추적하여 3개 꼭짓점에서의 급격한 보정 단속운동과 선형 원활추종을 결합 훈련하는 안구 운동 드릴. 무료.",
+    title: "삼각형 시선 추적 훈련 | SkillDrills",
+    description: "삼각 궤적 표적을 따라가는 무료 브라우저 훈련. 대각선 추적, 모서리 재포착, 추적 오차와 표적 손실을 기록합니다.",
   },
   robots: { index: true, follow: true },
   alternates: {
@@ -90,7 +90,7 @@ const softwareApplicationSchema = {
     "name": "SkillDrills",
     "url": "https://skilldrills.online"
   },
-  "dateModified": "2026-09-15"
+  "dateModified": "2026-09-20"
 };
 
 const webAppSchema = {
@@ -106,7 +106,7 @@ const webAppSchema = {
     "priceCurrency": "USD"
   },
   "url": "https://skilldrills.online/ko/drills/visual-tracking/triangular-pursuit",
-  "dateModified": "2026-09-15"
+  "dateModified": "2026-09-20"
 };
 
 const videoGameSchema = {
@@ -121,16 +121,17 @@ const videoGameSchema = {
     "에임 트레이너"
   ],
   "gamePlatform": [
-    "Web Browser",
-    "Desktop",
-    "Mobile"
+    "웹 브라우저",
+    "데스크톱",
+    "모바일"
   ],
   "applicationCategory": "Game",
   "offers": {
     "@type": "Offer",
     "price": "0",
     "priceCurrency": "USD"
-  }
+  },
+  "dateModified": "2026-09-20"
 };
 
 const howToSchema = {
@@ -138,13 +139,13 @@ const howToSchema = {
   "@type": "HowTo",
   "name": "삼각형 안구 추적 훈련 진행 방법",
   "description": "닫힌 삼각형 궤도 상에서 등속 대각선 원활추종과 3개 예각 꼭짓점에서의 보정 단속운동을 연동하여 안구 기하학적 추적 정밀도를 극대화하는 4단계.",
-  "dateModified": "2026-09-15",
+  "dateModified": "2026-09-20",
   "step": [
     {
       "@type": "HowToStep",
       "position": 1,
       "name": "기하학적 트래킹 옵션 구성",
-      "text": "세션 진행 시간(30~120초), 표적의 기준 이동 속도 배율, 타깃 크기 및 색상을 지정합니다. 고난도 훈련을 위해 'Hide Line(궤적 숨김)' 옵션을 켤 수 있습니다.",
+      "text": "세션 진행 시간(30~120초), 표적의 기준 이동 속도 배율, 타깃 크기 및 색상을 지정합니다. 고난도 훈련을 위해 '궤적 숨김' 옵션을 켤 수 있습니다.",
       "url": "https://skilldrills.online/ko/drills/visual-tracking/triangular-pursuit#step-1"
     },
     {
@@ -165,7 +166,7 @@ const howToSchema = {
       "@type": "HowToStep",
       "position": 4,
       "name": "속도 배율 및 무작위 가속 부하 점진적 증대",
-      "text": "코너 착지 오차가 안정화되면 속도 배율을 높이고, 'Random Speed'를 활성화하여 불규칙한 가감속 환경에서도 흔들리지 않는 안구 운동 제어력을 완성합니다.",
+      "text": "코너 착지 오차가 안정화되면 속도 배율을 높이고, '무작위 속도'를 활성화하여 불규칙한 가감속 환경에서도 흔들리지 않는 안구 운동 제어력을 완성합니다.",
       "url": "https://skilldrills.online/ko/drills/visual-tracking/triangular-pursuit#step-4"
     }
   ]
@@ -174,13 +175,14 @@ const howToSchema = {
 const faqSchema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
+  "dateModified": "2026-09-20",
   "mainEntity": [
     {
       "@type": "Question",
-      "name": "삼각형 안구 추적 훈련(Triangular Pursuit)이란 무엇인가요?",
+        "name": "삼각형 안구 추적 훈련이란 무엇인가요?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "정삼각형의 닫힌 기하 궤적을 따라 순환하는 표적을 중심와로 추적하는 훈련입니다. 대각선 직선 구간에서의 부드러운 원활추종(Smooth Pursuit)과 3곳의 60도 예각 꼭짓점에서 발생하는 순간적인 보정 단속운동(Catch-up Saccade)을 정밀하게 결합 조율합니다 (de Brouwer et al., 2002)."
+        "text": "정삼각형의 닫힌 기하 궤적을 따라 순환하는 표적을 중심와로 추적하는 훈련입니다. 대각선 직선 구간에서의 부드러운 원활추종과 3곳의 60도 예각 꼭짓점에서 발생하는 순간적인 보정 단속운동을 정밀하게 결합 조율합니다 (de Brouwer et al., 2002)."
       }
     },
     {
@@ -261,10 +263,10 @@ const faqSchema = {
 const guide = {
   heading: "삼각형 안구 추적 훈련・다각형 에임 정밀도 테스트: 예각 선회와 제동 단속운동의 신경 적응",
   intro: [
-    "삼각형과 같은 닫힌 기하 다각형 궤적을 따라 순환하는 시각 표적을 주시하는 과제는, 수평 및 수직 외안근군 간의 극도로 정밀한 동적 협응을 요구합니다. 정삼각형의 직선 변을 표적이 주행할 때 안구 운동 제어계는 대각선 방향의 원활추종(Smooth Pursuit)을 전개합니다. 이를 위해서는 뇌교의 수평 주시 회로(PPRF)와 중뇌의 수직 주시 회로(riMLF)가 밀리초 단위로 정확히 조율된 신경 방전을 방출하고, 소뇌 소엽에서 이를 합성해야 합니다 (Orban de Xivry & Lefèvre, 2007).",
+    "삼각형과 같은 닫힌 기하 다각형 궤적을 따라 순환하는 시각 표적을 주시하는 과제는, 수평 및 수직 외안근군 간의 극도로 정밀한 동적 협응을 요구합니다. 정삼각형의 직선 변을 표적이 주행할 때 안구 운동 제어계는 대각선 방향의 원활추종을 전개합니다. 이를 위해서는 뇌교의 수평 주시 회로(PPRF)와 중뇌의 수직 주시 회로(riMLF)가 밀리초 단위로 정확히 조율된 신경 방전을 방출하고, 소뇌 소엽에서 이를 합성해야 합니다 (Orban de Xivry & Lefèvre, 2007).",
     "이러한 운동 제어에서 가장 중대한 신경생리학적 과제는 삼각형의 예각 꼭짓점(60도 코너)에 표적이 도달하는 순간 발생합니다. 직선 주행에서 급격한 각도 전환이 일어날 때, 기존 주행 방향의 망막 슬립 속도는 급감하고 위치 오차(Position Error)는 폭발적으로 증가합니다. de Brouwer et al. (2002)과 Heinen et al. (2005)의 연구에 따르면, 이러한 불연속 지점에서는 전두안야(FEF) 및 보완안야(SEF)의 신경 회로가 가동되어 순간 슬립과 위치 오차를 종합 연산한 보정 단속운동(Catch-up Saccade)을 점화합니다.",
     "훈련되지 않은 일반인의 경우, 관성에 밀려 시선이 꼭짓점 바깥으로 튕겨 나가는 오버슈트(Overshoot)를 겪거나, 반대로 다음 경로를 성급하게 예측하여 꼭짓점 안쪽으로 시선을 가로지르는 숏컷(Cutting Corners) 현상이 발생합니다. 두 경우 모두 표적이 중심와를 벗어나며 수차례의 불안정한 교정 사케드가 뒤따릅니다. 그러나 지속적인 다각형 안구 운동 훈련을 진행하면 소뇌의 내부 순모델(Internal Forward Model)이 강화되어, 꼭짓점 직전에서 원활추종 속도를 선제적으로 감속시키고 전환 후 새로운 궤적 레그로 지체 없이 시선을 안착시키는 능력을 획득하게 됩니다 (Bennett & Barnes, 2006; Barnes, 2008).",
-    "본 '삼각형 안구 추적(Triangular Pursuit)' 드릴은 이러한 기하학적 안구 민첩성을 웹 환경에서 체계적으로 단련하도록 설계되었습니다. 정삼각형 궤도를 회전하는 표적을 추적하며 직선 등속 추종과 3개 코너에서의 급감속·재가속 제어력을 동시에 극대화할 수 있습니다. 'Hide Line(궤적 숨김)' 모드를 켜면 안내선을 완전히 제거한 순수 감각운동 추종 능력을 테스트할 수 있으며, 'Random Speed'를 통해 기계적 타이밍 암기를 배제한 실전 적응 훈련이 가능합니다.",
+      "본 '삼각형 안구 추적' 드릴은 이러한 기하학적 안구 민첩성을 웹 환경에서 체계적으로 단련하도록 설계되었습니다. 정삼각형 궤도를 회전하는 표적을 추적하며 직선 등속 추종과 3개 코너에서의 급감속·재가속 제어력을 동시에 높일 수 있습니다. '궤적 숨김' 모드에서는 안내선을 제거한 감각운동 추종 능력을 확인할 수 있으며, '무작위 속도'에서는 기계적 타이밍 암기를 피하고 실전 적응력을 점검할 수 있습니다.",
     "하드웨어 지연 시간 및 측정 환경 안내: 화면 갱신 주기는 디스플레이 주사율(60Hz 기준 약 16.7ms, 144Hz 기준 약 6.9ms, 240Hz 기준 약 4.1ms) 및 입력 기기의 폴링 레이트(125Hz 기준 약 8ms 대 1,000Hz 기준 약 1ms)에 의해 시간적 양자화가 발생합니다 (Woods et al., 2015). 본 훈련의 모든 점수와 반응 데이터는 사용자의 브라우저 로컬 저장소(localStorage)에만 안전하게 보관되며 외부 서버로 전송되지 않습니다."
   ],
   benchmarks: {
@@ -308,14 +310,20 @@ const guide = {
       ]
     },
     {
-      title: "Hide Line(궤적 숨김)을 통한 내재적 기하학 멘탈 모델 활성화",
-      description: "시각 보조선이 보일 때는 감각적 의존도가 높아집니다. 설정에서 'Hide Line'을 켜서 보이지 않는 정삼각형의 3개 꼭짓점 좌표를 뇌 속에서 3차원적으로 재구성하며 추적하는 능력을 단련합니다.",
+      title: "궤적 숨김을 통한 내재적 기하학 모델 활성화",
+      description: "시각 보조선이 보일 때는 감각적 의존도가 높아집니다. 설정에서 '궤적 숨김'을 켜서 보이지 않는 정삼각형의 3개 꼭짓점 좌표를 머릿속으로 재구성하며 추적하는 능력을 단련합니다.",
       tips: [
         "화면 모서리와 중앙 공간을 기준으로 가상의 삼각형 꼭짓점 3개를 마음속에 배치",
         "표적 속도로부터 '하나, 둘, 셋' 리듬 템포를 체득하여 박자에 맞춰 꼭짓점을 공략",
         "안내선 숨김 모드에서도 꼭짓점 착지 오차가 20px 이하로 유지될 때까지 반복 숙달"
       ]
     }
+  ],
+  steps: [
+    { title: "중앙에서 표적 잡기", text: "화면에서 50~70cm 떨어져 머리를 고정하고 삼각 궤도의 첫 변을 지나는 표적을 따라갑니다." },
+    { title: "대각선 변을 부드럽게 추적하기", text: "목을 움직이지 않고 표적의 진행 방향을 보며 삼각형의 직선 구간을 일정하게 추적합니다." },
+    { title: "꼭짓점에서 감속하고 재포착하기", text: "60도 모서리에 가까워지면 속도를 조금 줄이고 통과 직후 다음 변으로 시선을 되돌립니다." },
+    { title: "정확도가 안정된 뒤 속도 높이기", text: "모서리 오버슈트와 표적 손실이 줄어든 다음 속도 배율이나 예측하기 어려운 움직임을 추가합니다." }
   ],
   deviceCalibration: {
     title: "다각형 추적 및 꼭짓점 단속운동을 위한 하드웨어・인체공학 기준",
@@ -328,8 +336,8 @@ const guide = {
   },
   faqs: [
     {
-      "q": "삼각형 안구 추적 훈련(Triangular Pursuit)이란 무엇인가요?",
-      "a": "정삼각형의 닫힌 기하 궤적을 따라 순환하는 표적을 중심와로 추적하는 훈련입니다. 대각선 직선 구간에서의 부드러운 원활추종(Smooth Pursuit)과 3곳의 60도 예각 꼭짓점에서 발생하는 순간적인 보정 단속운동(Catch-up Saccade)을 정밀하게 결합 조율합니다 (de Brouwer et al., 2002)."
+      "q": "삼각형 안구 추적 훈련이란 무엇인가요?",
+      "a": "정삼각형의 닫힌 기하 궤적을 따라 순환하는 표적을 중심와로 추적하는 훈련입니다. 대각선 직선 구간에서의 부드러운 원활추종과 3곳의 60도 예각 꼭짓점에서 발생하는 순간적인 보정 단속운동을 정밀하게 결합 조율합니다 (de Brouwer et al., 2002)."
     },
     {
       "q": "원형이나 단순 선형 추적보다 삼각형 등 다각형 궤적 추적이 왜 더 어려운가요?",
@@ -400,9 +408,9 @@ export default function LocalizedPage() {
       />
 
       <TriangularPursuitClient copy={{
-        title: "삼각형 안구 추적 훈련 (다각형 예각 트래킹)",
-        subtitle: "3개 꼭짓점 급선회・직선 원활추종과 보정 단속운동 통합 훈련",
-        description: "정삼각형 기하학적 궤적을 순환하는 표적을 주시하며, 대각선 선형 구간의 등속 원활추종과 3개 예각(60도) 꼭짓점에서의 순간적인 보정 단속운동(Catch-up Saccade)을 연동 훈련하는 고급 안구 운동 드릴입니다. 각속도 급변에 대한 소뇌의 순모델 제어력과 꼭짓점에서의 오버슈트 억제력을 극대화합니다 (de Brouwer et al., 2002; Orban de Xivry & Lefèvre, 2007)."
+        title: "삼각형 시선 추적 훈련",
+        subtitle: "대각선 추적과 모서리 재포착",
+        description: "삼각 궤적 표적을 따라가며 모서리 재포착과 시선 오차를 확인합니다."
       }} />
       <DrillGuide guide={guide} />
       <div className="max-w-6xl mx-auto px-4 pb-12">

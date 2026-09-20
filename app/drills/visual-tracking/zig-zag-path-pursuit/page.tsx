@@ -349,7 +349,7 @@ export default function ZigZagPathPursuitPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
 
-      <ZigZagPathPursuitClient copy={{ title: "Zig-Zag Path Pursuit", subtitle: "Eye Tracking Coordination Drill" }} />
+      <ZigZagPathPursuitClient copy={{ title: "Zig-Zag Path Pursuit", subtitle: "Zig-zag eye tracking and smooth pursuit drill for improving rapid direction changes, visual reaction speed, and aim control" }} />
       <DrillGuide guide={guide} />
     </>
   );

@@ -15,7 +15,8 @@ import { getFpsScoreGrade, getComboMultiplier } from '../../../../lib/scoringEng
 import { getDifficultyProgress, getStartLevel, ramp } from '../../../../lib/drillDifficulty';
 import useDrillFlash from '../../../../lib/useDrillFlash';
 import useUnexpectedExitGuard from '../../../../lib/useUnexpectedExitGuard';
-import { drawTacticalTarget, createHitRing, drawHitRings, type HitRing } from '@/lib/canvasFx';
+import { drawTacticalTarget, createHitRing, drawHitRings } from '@/lib/canvasFx';
+import { getMarketDoorsUi } from '@/lib/i18n/drills/marketDoorsPursuit';
 import DrillCountdown from '../../../../components/drill/DrillCountdown';
 import DrillAccordion from '../../../../components/drill/DrillAccordion';
 import DrillFlashOverlay from '../../../../components/drill/DrillFlashOverlay';
@@ -104,7 +105,8 @@ const getLevelConfig = (level: number, combo = 0) => {
 type Particle = { x: number; y: number; vx: number; vy: number; color: string; life: number };
 type Door = { x: number; y: number; w: number; h: number };
 
-export default function MarketDoorsPursuitClient({ copy }: { copy?: { title?: string } } = {}) {
+export default function MarketDoorsPursuitClient({ copy }: { copy?: Record<string, any> } = {}) {
+  const ui = copy || getMarketDoorsUi().marketDoorsPursuit;
   const [gameState, setGameState] = useState<'start' | 'countdown' | 'playing' | 'gameOver'>('start');
   const [isFullscreen, setIsFullscreen] = useState<boolean>(false);
   useImmersiveMode(isFullscreen); // locks the page behind while the drill fills the screen
@@ -160,7 +162,7 @@ export default function MarketDoorsPursuitClient({ copy }: { copy?: { title?: st
     timeLeft: DRILL_DURATION,
     screenShake: 0,
     particles: [] as Particle[],
-    hitRings: [] as HitRing[],
+    hitRings: [] as ReturnType<typeof createHitRing>[],
     doors: [] as Door[],
     target: {
       active: false,
@@ -733,7 +735,7 @@ export default function MarketDoorsPursuitClient({ copy }: { copy?: { title?: st
         score: uiScore,
         accuracy: analytics.accuracy,
         speed: analytics.avgReactionTime,
-        drillName: 'Corner Checking Trainer',
+        drillName: ui.title,
         rank: analytics.grade?.letter || 'A',
         rankName: analytics.grade?.label || 'ELITE REFLEX',
         playerName: getPlayerName(),
@@ -743,15 +745,15 @@ export default function MarketDoorsPursuitClient({ copy }: { copy?: { title?: st
       });
 
       await shareScoreCard(canvas, {
-        title: 'Corner Checking Trainer — My Score',
-        text: `I scored ${uiScore} (Grade: ${analytics.grade?.letter || 'A'}, Lv. ${analytics.finalLevel}) on Corner Checking Trainer at SkillDrills!`,
+        title: ui.shareTitle,
+        text: ui.shareText.replace('{score}', String(uiScore)),
         url
       });
     } catch (err) {
       if (navigator.share) {
         navigator.share({
-          title: 'Corner Checking Trainer',
-          text: `I scored ${uiScore} on Corner Checking Trainer! Can you beat my score?`,
+          title: ui.title,
+          text: ui.shareText.replace('{score}', String(uiScore)),
           url
         }).catch(() => {});
       }
@@ -764,7 +766,7 @@ export default function MarketDoorsPursuitClient({ copy }: { copy?: { title?: st
       {/* Mobile Orientation Alert */}
       {isMobile && isPortrait && (
         <div className="w-full bg-amber-500/10 border-b border-amber-500/20 px-4 py-2 text-center text-xs text-amber-300 flex items-center justify-center gap-2">
-          <span>Rotate to landscape mode for a wider horizontal doorway sweep field.</span>
+          <span>{ui.rotate}</span>
         </div>
       )}
 
@@ -775,10 +777,10 @@ export default function MarketDoorsPursuitClient({ copy }: { copy?: { title?: st
         {!isFullscreen && (
           <div className="flex flex-col gap-1">
             <h1 className="text-2xl sm:text-3xl font-black tracking-tight text-white">
-              <span data-seo-kw="1">{copy?.title || "Corner Checking Trainer"}</span>
+              <span data-seo-kw="1">{ui.title}</span>
             </h1>
             <p className="text-[13px] text-slate-400 leading-relaxed">
-              Corner checking is clearing one angle at a time so only one threat can see you at once. Each shift of gaze to a new angle is a saccade lasting 20&ndash;40&nbsp;ms (Rayner, 1998), followed by roughly 200&nbsp;ms to react to whatever it reveals.
+              {ui.caption}
             </p>
           </div>
         )}
@@ -787,10 +789,10 @@ export default function MarketDoorsPursuitClient({ copy }: { copy?: { title?: st
         {!isFullscreen && (
           <div className="grid grid-cols-4 gap-2 w-full -mb-2">
             {[
-              { label: 'Score', value: uiScore, tone: 'text-white' },
-              { label: 'Time', value: `${uiTimeLeft}s`, tone: uiTimeLeft <= 10 ? 'text-red-400 animate-pulse' : 'text-white' },
-              { label: 'Level', value: `L${uiLevel}`, tone: 'text-indigo-400' },
-              { label: 'Best Score', value: bestScore, tone: 'text-amber-400' },
+              { label: ui.score, value: uiScore, tone: 'text-white' },
+              { label: ui.time, value: `${uiTimeLeft}s`, tone: uiTimeLeft <= 10 ? 'text-red-400 animate-pulse' : 'text-white' },
+              { label: ui.level, value: `L${uiLevel}`, tone: 'text-indigo-400' },
+              { label: ui.bestScore, value: bestScore, tone: 'text-amber-400' },
             ].map((s) => (
               <div key={s.label} className="rounded-lg border border-white/[0.06] bg-white/[0.015] px-2 py-2 text-center">
                 <div className="text-[9.5px] uppercase font-semibold text-slate-500 tracking-[0.12em]">{s.label}</div>
@@ -814,11 +816,11 @@ export default function MarketDoorsPursuitClient({ copy }: { copy?: { title?: st
           {(gameState === 'playing' || gameState === 'countdown') && (
             <>
               <div className="absolute top-4 left-4 z-30 pointer-events-none flex flex-col">
-                <p className="text-[10px] font-semibold uppercase tracking-wider text-white/50">Score</p>
+                <p className="text-[10px] font-semibold uppercase tracking-wider text-white/50">{ui.score}</p>
                 <p className="text-2xl sm:text-3xl font-black text-white tabular-nums leading-tight">{uiScore}</p>
               </div>
               <div className="absolute top-4 right-4 z-30 pointer-events-none text-right">
-                <p className="text-[10px] font-semibold uppercase tracking-wider text-white/50">Time Left</p>
+                <p className="text-[10px] font-semibold uppercase tracking-wider text-white/50">{ui.timeLeft}</p>
                 <p className={`text-2xl sm:text-3xl font-black tabular-nums leading-tight ${uiTimeLeft <= 10 ? 'text-red-400 animate-pulse' : 'text-white'}`}>{uiTimeLeft}s</p>
               </div>
             </>
@@ -837,7 +839,7 @@ export default function MarketDoorsPursuitClient({ copy }: { copy?: { title?: st
                   });
                 }}
                 className="p-2.5 rounded-full bg-black/60 border border-white/10 text-slate-400 hover:text-white transition-colors cursor-pointer"
-                title="Toggle Miss Flash"
+                title={ui.missFlash}
               >
                 {flashEnabled ? <Zap className="w-4 h-4 text-red-400" /> : <ZapOff className="w-4 h-4 text-slate-500" />}
               </button>
@@ -851,7 +853,7 @@ export default function MarketDoorsPursuitClient({ copy }: { copy?: { title?: st
                   });
                 }}
                 className="p-2.5 rounded-full bg-black/60 border border-white/10 text-slate-400 hover:text-white transition-colors cursor-pointer"
-                title="Toggle Sound"
+                title={ui.sound}
               >
                 {soundEnabled ? <Volume2 className="w-4 h-4 text-red-400" /> : <VolumeX className="w-4 h-4 text-slate-500" />}
               </button>
@@ -881,8 +883,8 @@ export default function MarketDoorsPursuitClient({ copy }: { copy?: { title?: st
             <FpsStartCard
               icon={Target}
               accent="red"
-              title="Corner Checking Trainer"
-              subtitle="Doorway Clearing • Saccadic Sweeps"
+              title={ui.title}
+              subtitle={ui.subtitle}
               isTouchOnlyDevice={false}
               onStart={enterDrill}
             />
@@ -890,7 +892,7 @@ export default function MarketDoorsPursuitClient({ copy }: { copy?: { title?: st
 
           {/* COUNTDOWN OVERLAY */}
           {gameState === 'countdown' && (
-            <DrillCountdown value={countdownValue} subtitle="GET READY" />
+            <DrillCountdown value={countdownValue} subtitle={ui.getReady} />
           )}
 
           {/* UNIVERSAL RESULT CARD */}
@@ -901,10 +903,10 @@ export default function MarketDoorsPursuitClient({ copy }: { copy?: { title?: st
               score={uiScore}
               isNewBest={isNewBest}
               stats={[
-                { label: 'Accuracy', value: analytics.accuracy, suffix: '%' },
-                { label: 'Avg Reaction', value: analytics.avgReactionTime, suffix: 'ms' },
-                { label: 'Peak Level', value: `Lv. ${analytics.finalLevel}` },
-                { label: 'Max Combo', value: analytics.maxCombo, suffix: 'x' },
+                { label: ui.accuracy, value: analytics.accuracy, suffix: '%' },
+                { label: ui.avgReaction, value: analytics.avgReactionTime, suffix: 'ms' },
+                { label: ui.peakLevel, value: `Lv. ${analytics.finalLevel}` },
+                { label: ui.maxCombo, value: analytics.maxCombo, suffix: 'x' },
               ]}
               onPlayAgain={enterDrill}
               onShare={sharePage}
@@ -919,15 +921,15 @@ export default function MarketDoorsPursuitClient({ copy }: { copy?: { title?: st
           <div className="[&>div]:!mt-0">
             <DrillAccordion
               id="rules"
-              title="Drill Instructions & Scoring System"
+              title={ui.rules}
               isOpen={openAccordion === 'rules'}
               onToggle={() => setOpenAccordion(openAccordion === 'rules' ? null : 'rules')}
             >
               <div className="grid grid-cols-1 md:grid-cols-2 gap-3 font-sans">
-                {RULES_ITEMS.map((item) => (
+                {ui.ruleItems.map((item: { title: string; detail: string; badge: string }, index: number) => (
                   <RuleItem
-                    key={item.num}
-                    num={item.num}
+                    key={item.title}
+                    num={String(index + 1)}
                     title={item.title}
                     detail={item.detail}
                     badge={item.badge}
@@ -938,20 +940,20 @@ export default function MarketDoorsPursuitClient({ copy }: { copy?: { title?: st
 
             <DrillAccordion
               id="about"
-              title="About Corner Checking Trainer"
+              title={ui.about}
               isOpen={openAccordion === 'about'}
               onToggle={() => setOpenAccordion(openAccordion === 'about' ? null : 'about')}
             >
               <div className="space-y-8 font-sans">
                 <section>
                   <h3 className="text-base font-bold text-white mb-2 flex items-center gap-2">
-                    <Eye className="w-4 h-4 text-red-400" /> What Is Corner Checking & Doorway Clearing?
+                    <Eye className="w-4 h-4 text-red-400" /> {ui.aboutHeading}
                   </h3>
                   <p className="text-sm leading-relaxed mb-3 text-gray-300">
-                    <strong>Corner Checking Trainer</strong> conditions rapid horizontal saccades and corner-checking reflexes across 5 structured entry portals. When clearing choke points in tactical shooters, moving your crosshair smoothly from doorway to doorway while immediately clicking emerging enemies determines round outcomes.
+                    {ui.aboutP1}
                   </p>
                   <p className="text-sm leading-relaxed text-gray-300">
-                    Training your visual focus across structured horizontal entry points prevents over-flicking and builds consistent horizontal crosshair tracking habits.
+                    {ui.aboutP2}
                   </p>
                 </section>
 
@@ -959,23 +961,23 @@ export default function MarketDoorsPursuitClient({ copy }: { copy?: { title?: st
                   <div className="p-4 rounded-xl border border-white/[0.07] bg-white/[0.012]">
                     <div className="flex items-center gap-2.5 mb-2">
                       <div className="w-7 h-7 rounded-lg bg-red-600 flex items-center justify-center"><Users className="w-3.5 h-3.5 text-white" /></div>
-                      <h4 className="text-xs font-bold text-white">Who Should Use This?</h4>
+                      <h4 className="text-xs font-bold text-white">{ui.who}</h4>
                     </div>
-                    <p className="text-xs text-slate-300 leading-relaxed">Competitive gamers training corner checking, horizontal saccadic clearing, and entry fragging.</p>
+                    <p className="text-xs text-slate-300 leading-relaxed">{ui.whoText}</p>
                   </div>
                   <div className="p-4 rounded-xl border border-white/[0.07] bg-white/[0.012]">
                     <div className="flex items-center gap-2.5 mb-2">
                       <div className="w-7 h-7 rounded-lg bg-emerald-600 flex items-center justify-center"><TrendingUp className="w-3.5 h-3.5 text-white" /></div>
-                      <h4 className="text-xs font-bold text-white">Horizontal Gaze Sweeping</h4>
+                      <h4 className="text-xs font-bold text-white">{ui.sweep}</h4>
                     </div>
-                    <p className="text-xs text-slate-300 leading-relaxed">Builds consistent horizontal eye scans across structured entryway intervals without vertical drift.</p>
+                    <p className="text-xs text-slate-300 leading-relaxed">{ui.sweepText}</p>
                   </div>
                   <div className="p-4 rounded-xl border border-white/[0.07] bg-white/[0.012]">
                     <div className="flex items-center gap-2.5 mb-2">
                       <div className="w-7 h-7 rounded-lg bg-blue-600 flex items-center justify-center"><Zap className="w-3.5 h-3.5 text-white" /></div>
-                      <h4 className="text-xs font-bold text-white">Doorway Target Interception</h4>
+                      <h4 className="text-xs font-bold text-white">{ui.interception}</h4>
                     </div>
-                    <p className="text-xs text-slate-300 leading-relaxed">Reinforces rapid micro-adjustments and click precision when enemies emerge inside entry choke points.</p>
+                    <p className="text-xs text-slate-300 leading-relaxed">{ui.interceptionText}</p>
                   </div>
                 </div>
               </div>
@@ -989,33 +991,6 @@ export default function MarketDoorsPursuitClient({ copy }: { copy?: { title?: st
           </div>
         )}
 
-        {/* RELATED DRILLS GRID */}
-        {!isFullscreen && (
-          <section className="mt-4">
-            <h2 className="text-sm font-bold text-slate-400 uppercase tracking-wider mb-3">
-              Related Reaction Speed Drills
-            </h2>
-            <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
-              {RELATED_DRILLS.map((drill) => (
-                <Link
-                  key={drill.id}
-                  href={drill.href}
-                  className="group bg-[#0c0c16] border border-white/5 hover:border-red-500/40 rounded-xl p-3.5 transition-all duration-200 hover:-translate-y-0.5 flex flex-col justify-between"
-                >
-                  <div>
-                    <div className="text-[10px] font-bold text-red-400 uppercase tracking-wider mb-1">{drill.cat}</div>
-                    <div className="text-xs font-bold text-white group-hover:text-red-300 transition-colors">{drill.name}</div>
-                    <div className="text-[11px] text-slate-400 mt-1 line-clamp-2 leading-relaxed">{drill.desc}</div>
-                  </div>
-                  <div className="text-[10px] font-bold text-slate-500 group-hover:text-red-400 mt-3 flex items-center gap-1 transition-colors">
-                    Train Drill <span>→</span>
-                  </div>
-                </Link>
-              ))}
-            </div>
-          </section>
-        )}
-
       </main>
     </div>
   );
@@ -1024,7 +999,7 @@ export default function MarketDoorsPursuitClient({ copy }: { copy?: { title?: st
 // === Subcomponents ===
 function RuleItem({ num, title, detail, badge }: { num: string; title: string; detail: string; badge: string }) {
   return (
-    <div className="flex items-center justify-between gap-3 bg-black px-4 py-3 rounded-xl border border-white/10 shadow-sm font-sans">
+    <div className="flex items-center justify-between gap-3 bg-black px-4 py-3 rounded-xl border border-white/10 shadow-sm font-sans min-w-0">
       <div className="flex items-center gap-3 min-w-0">
         <div className="w-7 h-7 rounded-lg bg-white/10 border border-white/20 flex items-center justify-center text-white text-xs font-black shrink-0">
           {num}
@@ -1034,7 +1009,7 @@ function RuleItem({ num, title, detail, badge }: { num: string; title: string; d
           <span className="text-xs text-white/50 truncate hidden sm:inline">{detail}</span>
         </div>
       </div>
-      <div className="text-xs font-black px-2.5 py-1 rounded-md bg-[#050811] border border-white/10 text-white shrink-0">
+      <div className="text-xs font-black px-2.5 py-1 rounded-md bg-[#050811] border border-white/10 text-white whitespace-nowrap shrink-0">
         {badge}
       </div>
     </div>

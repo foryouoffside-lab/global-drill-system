@@ -1,6 +1,7 @@
 import DistractionFighterClient from '@/app/drills/cognitive/focus/distraction-fighter/DistractionFighterClientLoader';
 import DrillGuide from '@/components/drill/DrillGuide';
 import RelatedDrills from '@/components/drill/RelatedDrills';
+import DrillFooter from '@/components/drill/DrillFooter';
 import { getAlternateLanguages } from '@/lib/i18n/locales';
 import { pickSources } from '@/lib/drillSources';
 
@@ -19,23 +20,21 @@ import { pickSources } from '@/lib/drillSources';
 // ============================================================
 
 export const metadata = {
-  title: "Stroop-Test Online – Farb-Wort-Interferenz | SkillDrills",
-  description: "Kostenloser Stroop-Test online: Messe kognitive Inhibition und selektive Aufmerksamkeit beim Farb-Wort-Interferenztest direkt im Browser ohne Anmeldung.",
+  title: "Stroop-Test | Selektive Aufmerksamkeit | SkillDrills",
+  description: "Kostenloser Stroop-Test im Browser: Wähle die Schriftfarbe statt des Wortes. Kein klinischer Test, sondern ein kognitiver Selbstcheck.",
   keywords: [
     "Stroop-Test",
     "Stroop-Test online",
-    "Stroop-Effekt",
-    "Farb-Wort-Interferenz",
-    "Kognitive Inhibition",
-    "Selektive Aufmerksamkeit Test",
-    "Konzentrationstest kostenlos",
-    "Stroop Test online kostenlos",
-    "Gehirntraining Konzentration",
-    "Impulskontrolle trainieren"
+    "stroop test online kostenlos",
+    "stroop test farben",
+    "stroop test auswertung",
+    "Stroop-Effekt-Test",
+    "selektive Aufmerksamkeit",
+    "kognitive Inhibition"
   ],
   openGraph: {
-    title: "Stroop-Test Online – Farb-Wort-Interferenz | SkillDrills",
-    description: "Kostenloser Stroop-Test online: Messe kognitive Inhibition und selektive Aufmerksamkeit beim Farb-Wort-Interferenztest direkt im Browser ohne Anmeldung.",
+    title: "Stroop-Test | Selektive Aufmerksamkeit | SkillDrills",
+    description: "Kostenloser Stroop-Test im Browser: Wähle die Schriftfarbe statt des Wortes. Kein klinischer Test, sondern ein kognitiver Selbstcheck.",
     type: "website",
     url: "https://skilldrills.online/de/drills/cognitive/focus/distraction-fighter",
     siteName: "SkillDrills",
@@ -43,8 +42,8 @@ export const metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Stroop-Test Online – Farb-Wort-Interferenz | SkillDrills",
-    description: "Kostenloser Stroop-Test online: Messe kognitive Inhibition und selektive Aufmerksamkeit beim Farb-Wort-Interferenztest direkt im Browser ohne Anmeldung.",
+    title: "Stroop-Test | Selektive Aufmerksamkeit | SkillDrills",
+    description: "Kostenloser Stroop-Test im Browser: Wähle die Schriftfarbe statt des Wortes. Kein klinischer Test, sondern ein kognitiver Selbstcheck.",
   },
   robots: { index: true, follow: true },
   alternates: {
@@ -70,7 +69,7 @@ export default function DistractionFighterPageDe() {
     "name": "Stroop-Test Online (Farb-Wort-Interferenz)",
     "applicationCategory": "EducationalApplication",
     "operatingSystem": "Web Browser",
-    "dateModified": "2026-09-15",
+    "dateModified": "2026-09-20",
     "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
     "description": "Kostenloser interaktiver Online-Stroop-Test zur Messung von kognitiver Inhibition, selektiver Aufmerksamkeit und Impulskontrolle.",
     "genre": "Kognitives Training / Aufmerksamkeit / Stroop-Effekt",
@@ -88,7 +87,7 @@ export default function DistractionFighterPageDe() {
     "name": "Stroop-Test Online (Farb-Wort-Interferenz)",
     "applicationCategory": "EducationalApplication",
     "operatingSystem": "Web Browser",
-    "dateModified": "2026-09-15",
+    "dateModified": "2026-09-20",
     "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
     "browserRequirements": "HTML5, JavaScript fähiger Webbrowser",
     "description": "Kostenloser interaktiver Online-Stroop-Test zur Messung von kognitiver Inhibition, selektiver Aufmerksamkeit und Impulskontrolle.",
@@ -101,7 +100,7 @@ export default function DistractionFighterPageDe() {
     "name": "Stroop-Test Online (Farb-Wort-Interferenz)",
     "url": "https://skilldrills.online/de/drills/cognitive/focus/distraction-fighter",
     "description": "Kostenloser browserbasierter Stroop-Test. Bestimme die Schriftfarbe inkongruenter Farbwörter und unterdrücke automatisierte Leseimpulse.",
-    "dateModified": "2026-09-15",
+    "dateModified": "2026-09-20",
     "gamePlatform": "Web Browser",
     "genre": ["Kognitives Training", "Gehirntraining", "Stroop-Test", "Aufmerksamkeit"],
     "playMode": "SinglePlayer",
@@ -113,7 +112,7 @@ export default function DistractionFighterPageDe() {
   const faqSchema = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
-    "dateModified": "2026-09-15",
+    "dateModified": "2026-09-20",
     "mainEntity": [
       {
         "@type": "Question",
@@ -356,6 +355,7 @@ export default function DistractionFighterPageDe() {
           locale="de"
         />
       </div>
+      <DrillFooter />
     </>
   );
 }

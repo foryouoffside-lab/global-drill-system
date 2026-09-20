@@ -6,21 +6,21 @@ import DrillFooter from '@/components/drill/DrillFooter';
 import { pickSources } from '@/lib/drillSources';
 
 export const metadata = {
-  title: "Entrenamiento de Flick Shot – Puntería Rápida | SkillDrills",
-  description: "Entrena flick shot y puntería rápida en el navegador. Perfecciona la aceleración balística y el frenado de ratón para dar headshots en CS2 y Valorant.",
+  title: "Aim Trainer - Entrenamiento de puntería | SkillDrills",
+  description: "Entrenador de puntería gratuito en el navegador para practicar flicks y primeros disparos en Valorant y CS2. Mide puntuación, tiempo y precisión.",
   keywords: [
-    "entrenamiento de flick shot",
-    "punteria rapida shooters",
-    "como mejorar el flick en valorant",
-    "practicar flick aim shooters",
-    "entrenar disparos rapidos cs2",
-    "como frenar el raton en un flick",
-    "ejercicios de snap aim online",
-    "punteria de reaccion rapida fps",
-    "como hacer flick shots precisos",
-    "entrenar precision de primer disparo",
-    "rutina de flick shot navegador",
-    "aim trainer flick gratis"
+    "aim trainer",
+    "entrenador de puntería",
+    "aim trainer online",
+    "entrenamiento de puntería",
+    "entrenamiento de puntería FPS",
+    "puntería Valorant",
+    "entrenamiento de flick",
+    "práctica de puntería FPS",
+    "precisión primer disparo",
+    "flick aim",
+    "test de puntería",
+    "entrenador de puntería gratis"
   ],
   alternates: {
     canonical: "https://skilldrills.online/es/drills/fps/flick-shot-training",
@@ -31,8 +31,8 @@ export const metadata = {
     follow: true,
   },
   openGraph: {
-    title: "Entrenamiento de Flick Shot – Puntería Rápida | SkillDrills",
-    description: "Entrena flick shot y puntería rápida en el navegador. Perfecciona la aceleración balística y el frenado de ratón para dar headshots en CS2 y Valorant.",
+    title: "Aim Trainer - Entrenamiento de puntería | SkillDrills",
+    description: "Entrenador de puntería gratuito en el navegador para practicar flicks y primeros disparos en Valorant y CS2. Mide puntuación, tiempo y precisión.",
     url: "https://skilldrills.online/es/drills/fps/flick-shot-training",
     siteName: 'SkillDrills',
     locale: 'es_ES',
@@ -40,8 +40,8 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: "Entrenamiento de Flick Shot – Puntería Rápida | SkillDrills",
-    description: "Entrena flick shot y puntería rápida en el navegador. Perfecciona la aceleración balística y el frenado de ratón para dar headshots en CS2 y Valorant.",
+    title: "Aim Trainer - Entrenamiento de puntería | SkillDrills",
+    description: "Entrenador de puntería gratuito en el navegador para practicar flicks y primeros disparos en Valorant y CS2. Mide puntuación, tiempo y precisión.",
   },
 };
 
@@ -52,14 +52,14 @@ export default function FlickShotEsPage() {
     "itemListElement": [
       { "@type": "ListItem", "position": 1, "name": "SkillDrills", "item": "https://skilldrills.online/es" },
       { "@type": "ListItem", "position": 2, "name": "Entrenamientos FPS", "item": "https://skilldrills.online/es/drills/fps" },
-      { "@type": "ListItem", "position": 3, "name": "Entrenamiento de Flick Shot", "item": "https://skilldrills.online/es/drills/fps/flick-shot-training" }
+      { "@type": "ListItem", "position": 3, "name": "Aim Trainer y Flick", "item": "https://skilldrills.online/es/drills/fps/flick-shot-training" }
     ]
   };
 
   const webAppSchema = {
     "@context": "https://schema.org",
     "@type": "WebApplication",
-    "name": "Entrenador de Flick Shot Online",
+    "name": "Aim Trainer y Flick",
     "url": "https://skilldrills.online/es/drills/fps/flick-shot-training",
     "applicationCategory": "GameApplication",
     "operatingSystem": "All",
@@ -69,20 +69,20 @@ export default function FlickShotEsPage() {
       "price": "0",
       "priceCurrency": "USD"
     },
-    "description": "Entrenador de flick shot y puntería rápida gratuito para navegadores. Mejora la aceleración balística y el frenado de ratón para CS2, Valorant y Apex Legends."
+    "description": "Entrenador de puntería y flick gratuito en el navegador para practicar precisión, frenado del ratón y primeros disparos en FPS."
   };
 
   const softwareSchema = {
     "@context": "https://schema.org",
     "@type": "SoftwareApplication",
-    "name": "Entrenador de Flick Shot SkillDrills",
+    "name": "Aim Trainer y Flick SkillDrills",
     "applicationCategory": "GameApplication",
     "operatingSystem": "Web Browser",
     "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
-    "description": "Herramienta científica de calibración biomecánica y puntería de choque para jugadores competitivos de shooters tácticos.",
+    "description": "Herramienta de entrenamiento de puntería y flick para jugadores competitivos de FPS, con puntuación, tiempo y precisión.",
     "genre": "Entrenamiento FPS / Puntería Rápida",
     "url": "https://skilldrills.online/es/drills/fps/flick-shot-training",
-    "dateModified": "2026-09-05",
+    "dateModified": "2026-09-20",
     "publisher": {
       "@type": "Organization",
       "name": "SkillDrills",
@@ -93,21 +93,21 @@ export default function FlickShotEsPage() {
   const videoGameSchema = {
     "@context": "https://schema.org",
     "@type": "VideoGame",
-    "name": "Entrenamiento de Flick Shot FPS",
+    "name": "Aim Trainer y Flick FPS",
     "url": "https://skilldrills.online/es/drills/fps/flick-shot-training",
-    "description": "Simulador interactivo de puntería con dianas esféricas dinámicas enfocado en reducir el tiempo de adquisición de objetivos y mejorar el primer tiro.",
+    "description": "Simulador interactivo de puntería con objetivos dinámicos para practicar el tiempo de adquisición y la precisión del primer disparo.",
     "gamePlatform": "Web Browser",
     "genre": ["Entrenamiento FPS", "Entrenador de Puntería"],
     "playMode": "SinglePlayer",
     "applicationCategory": "Game",
     "operatingSystem": "Web Browser",
-    "dateModified": "2026-09-05"
+    "dateModified": "2026-09-20"
   };
 
   const faqSchema = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
-    "dateModified": "2026-09-05",
+    "dateModified": "2026-09-20",
     "mainEntity": [
       {
         "@type": "Question",
@@ -226,9 +226,9 @@ export default function FlickShotEsPage() {
   };
 
   const flickGuide = {
-    heading: "Guía de Entrenamiento de Flick Shot y Control Biomecánico",
+    heading: "Aim Trainer: práctica de Flick y puntería FPS",
     intro: [
-      "El flick shot (o puntería balística) es el proceso neuromuscular de traducir una fijación ocular en una trayectoria motora directa del brazo y la muñeca. En psicomotricidad aplicada, el modelo de dos componentes de Elliott et al. (2010) explica este movimiento: una fase balística inicial en bucle abierto que cubre la mayor parte del trayecto, seguida de una fase en bucle cerrado de retroalimentación visual para corregir milimétricamente el punto de impacto.",
+      "Para quien busca un aim trainer, el flick es el movimiento rápido que lleva la retícula hasta un objetivo y termina con un frenado limpio antes del primer disparo. En FPS como Valorant, CS2 y Apex Legends, entrenar esta combinación de velocidad y precisión ayuda a responder cuando el objetivo aparece fuera del centro.",
       "Conforme a la Ley de Fitts (Fitts, 1954), la duración del movimiento depende de la dificultad de la tarea: ID = log2(2D/W), donde la distancia al objetivo (D) y su diámetro (W) determinan el tiempo necesario. El entrenamiento deliberado optimiza la desaceleración muscular antagonista (Schmidt et al., 1979), permitiendo detener el cursor en seco sobre el centro sin oscilaciones de retroceso.",
       "La latencia de los componentes y la precisión del temporizador en el navegador influyen directamente en la medición. Este entrenador utiliza performance.now() para registrar cada evento con exactitud de microsegundos. Con un ratón de 1000 Hz de sondeo (1.0 ms) y monitores de alta frecuencia (144 Hz a 6.94 ms, 240 Hz a 4.17 ms), el jitter de cuantificación se minimiza para medir el tiempo real de adquisición sensoriomotora (Woods et al., 2015).",
       "Medición técnica en tu dispositivo: cada pulsación se cronometra localmente con el reloj de alta resolución del navegador, sin enviar registros a servidores externos. Recuerda que los navegadores limitan la resolución a aproximadamente 1 ms por mitigaciones de Spectre, y los monitores muestran fotogramas a intervalos fijos (16.7 ms a 60 Hz frente a 4.1 ms a 240 Hz). Evalúa tu mejora comparando tus marcas en un mismo equipo."
@@ -333,9 +333,9 @@ export default function FlickShotEsPage() {
       />
       <ProFlickClient
         copy={{
-          h1Keyword: "Entrenamiento de Flick Shot",
-          h1Suffix: " – Puntería Rápida y Precisión",
-          subtitle: "Entrena snap aim, memoria motora balística, adquisición de blancos y frenado de ratón con métricas en tiempo real.",
+          h1Keyword: "Aim Trainer",
+          h1Suffix: " - Entrenamiento de puntería",
+          subtitle: "Practica flicks y primeros disparos para Valorant y CS2 directamente en el navegador.",
           statScore: "Puntuación",
           statTime: "Tiempo Restante",
           statAccuracy: "Precisión",
@@ -367,7 +367,7 @@ export default function FlickShotEsPage() {
       <div className="max-w-4xl mx-auto px-4 pb-12">
         <RelatedDrills
           currentCategory="fps"
-          currentHref="/drills/fps/flick-shot-training"
+          currentHref="/es/drills/fps/flick-shot-training"
           locale="es"
         />
       </div>

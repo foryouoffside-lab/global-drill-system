@@ -2,10 +2,11 @@ import VisualTrackingDrillsClient from '@/app/drills/visual-tracking/VisualTrack
 import { DRILLS } from '@/lib/drillsRegistry';
 import { getAlternateLanguages } from '@/lib/i18n/locales';
 import { getLocalizedDrill } from '@/lib/i18n/drillNames';
+import { buildVisualTrackingHubMetadata, getVisualTrackingHubCollectionFields, getVisualTrackingHubFaqFields } from '@/lib/i18n/visualTrackingHubNative';
 
 const trackingDrills = DRILLS.filter((d) => d.category === 'visual-tracking');
 
-export const metadata = {
+const legacyMetadata = {
   title: '動体視力トレーニング & 視覚追跡 – 無料の眼球運動ドリル | SkillDrills',
   description: 'ブラウザで今すぐできる無料の動体視力トレーニング・視覚追跡ドリル。滑動性追従眼球運動（Smooth Pursuit）、弾道軌道予測、周辺視野拡大など14種類の本格ビジョントレーニング。',
   keywords: [
@@ -37,6 +38,8 @@ export const metadata = {
   },
 };
 
+export const metadata = { ...legacyMetadata, ...buildVisualTrackingHubMetadata('ja', 'https://skilldrills.online/ja/drills/visual-tracking', trackingDrills.length, getAlternateLanguages('/ja/drills/visual-tracking')) };
+
 const breadcrumbSchema = {
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
@@ -54,6 +57,7 @@ const collectionSchema = {
   "url": "https://skilldrills.online/ja/drills/visual-tracking",
   "description": "滑動性追従眼球運動（Smooth Pursuit）、正弦波トラッキング、無限軌道、弾道予測、周辺視野など14種類の本格ビジョントレーニングを無料提供。",
   "author": { "@type": "Organization", "name": "SkillDrills" },
+  ...getVisualTrackingHubCollectionFields('ja', trackingDrills.length),
   "hasPart": trackingDrills.map((drill) => {
     const loc = getLocalizedDrill(drill.href, 'ja', drill.name);
     return {
@@ -135,14 +139,17 @@ const faqSchema = {
   ]
 };
 
+const { additions, ...faqFields } = getVisualTrackingHubFaqFields('ja');
+const enrichedFaqSchema = { ...faqSchema, ...faqFields, mainEntity: [...faqSchema.mainEntity, ...additions] };
+
 export default function LocalizedVisualTrackingDrillsClientPage() {
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(collectionSchema) }} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(enrichedFaqSchema) }} />
       <VisualTrackingDrillsClient
-        faqs={faqSchema.mainEntity.map((e) => ({ q: e.name, a: e.acceptedAnswer.text }))}
+        faqs={enrichedFaqSchema.mainEntity.map((e) => ({ q: e.name, a: e.acceptedAnswer.text }))}
       />
     </>
   );

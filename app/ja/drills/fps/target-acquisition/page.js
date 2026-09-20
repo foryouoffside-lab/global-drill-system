@@ -6,21 +6,21 @@ import RelatedDrills from '@/components/drill/RelatedDrills';
 import DrillFooter from '@/components/drill/DrillFooter';
 
 export const metadata = {
-  title: "ターゲット捕捉 エイム練習 – 初弾精度トレーナー | SkillDrills",
-  description: "ブラウザで無料プレイできるターゲット捕捉エイム練習。視覚的な敵識別スピード、脅威判別、プレッシャー下での初弾フリック精度を科学的に強化します。",
+  title: "VALORANT エイム練習 - ターゲット捕捉トレーナー | SkillDrills",
+  description: "ブラウザですぐできる無料のVALORANTエイム練習。敵の発見・識別から初弾クリックまでの速さと命中率を測定します。",
   keywords: [
-    "ターゲット捕捉 エイム",
-    "初弾 エイム 練習",
-    "ターゲット捕捉 エイム練習",
-    "初弾 精度 練習",
-    "ターゲット アクジション",
-    "FPS 索敵練習",
-    "VALORANT 初弾ヘッドショット",
-    "CS2 索敵 エイム",
-    "エイムトレーナー 無料",
-    "初弾 エイム 速度",
-    "ターゲット 識別 練習",
-    "VALORANT 初弾 練習"
+    "VALORANT エイム練習",
+    "ヴァロラント エイム練習",
+    "ターゲット捕捉",
+    "索敵 練習",
+    "初弾精度",
+    "置きエイム 練習",
+    "敵 発見 FPS",
+    "ターゲット識別",
+    "エイムトレーナー",
+    "初弾ヘッドショット",
+    "エイム練習 無料 ブラウザ",
+    "ターゲットスイッチング"
   ],
   alternates: {
     canonical: "https://skilldrills.online/ja/drills/fps/target-acquisition",
@@ -31,8 +31,8 @@ export const metadata = {
     follow: true,
   },
   openGraph: {
-    title: "ターゲット捕捉 エイム練習 – 初弾精度トレーナー | SkillDrills",
-    description: "視覚的なターゲット捕捉速度、特徴対比の識別能力、高精度な初弾フリックエイムを鍛える無料ブラウザFPSエイムトレーナー。",
+    title: "VALORANT エイム練習 - ターゲット捕捉トレーナー | SkillDrills",
+    description: "ブラウザですぐできる無料のVALORANTエイム練習。敵の発見・識別から初弾クリックまでの速さと命中率を測定します。",
     url: "https://skilldrills.online/ja/drills/fps/target-acquisition",
     siteName: 'SkillDrills',
     locale: 'ja_JP',
@@ -40,8 +40,8 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: "ターゲット捕捉 エイム練習 – 初弾精度トレーナー | SkillDrills",
-    description: "視覚的なターゲット捕捉速度、特徴対比の識別能力、高精度な初弾フリックエイムを鍛える無料ブラウザFPSエイムトレーナー。",
+    title: "VALORANT エイム練習 - ターゲット捕捉トレーナー | SkillDrills",
+    description: "ブラウザですぐできる無料のVALORANTエイム練習。敵の発見・識別から初弾クリックまでの速さと命中率を測定します。",
   },
 };
 
@@ -59,10 +59,10 @@ export default function TargetAcquisitionJaPage() {
   const softwareSchema = {
     "@context": "https://schema.org",
     "@type": "SoftwareApplication",
-    "name": "ターゲット捕捉 エイム練習",
+    "name": "VALORANT エイム練習 - ターゲット捕捉トレーナー",
     "applicationCategory": "GameApplication",
     "operatingSystem": "Web Browser",
-    "dateModified": "2026-09-05",
+    "dateModified": "2026-09-20",
     "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
     "description": "視覚的ターゲット識別速度、脅威の優先順位判定、初弾ヘッドショット精度を鍛える無料ブラウザFPSエイムトレーナー。",
     "genre": "FPS Training / Target Acquisition",
@@ -77,7 +77,7 @@ export default function TargetAcquisitionJaPage() {
   const webAppSchema = {
     "@context": "https://schema.org",
     "@type": "WebApplication",
-    "name": "ターゲット捕捉 エイム練習",
+    "name": "VALORANT エイム練習 - ターゲット捕捉トレーナー",
     "url": "https://skilldrills.online/ja/drills/fps/target-acquisition",
     "applicationCategory": "GameApplication",
     "operatingSystem": "All",
@@ -93,10 +93,10 @@ export default function TargetAcquisitionJaPage() {
   const videoGameSchema = {
     "@context": "https://schema.org",
     "@type": "VideoGame",
-    "name": "ターゲット捕捉 エイム練習",
+    "name": "VALORANT エイム練習 - ターゲット捕捉トレーナー",
     "url": "https://skilldrills.online/ja/drills/fps/target-acquisition",
     "description": "視覚的ターゲット識別速度、脅威の優先順位判定、初弾ヘッドショット精度を鍛える無料ブラウザFPSエイムトレーナー。",
-    "dateModified": "2026-09-05",
+    "dateModified": "2026-09-20",
     "gamePlatform": "Web Browser",
     "genre": ["FPS Training", "Aim Trainer", "Target Acquisition"],
     "playMode": "SinglePlayer",
@@ -108,7 +108,7 @@ export default function TargetAcquisitionJaPage() {
   const faqSchema = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
-    "dateModified": "2026-09-05",
+    "dateModified": "2026-09-20",
     "mainEntity": [
       {
         "@type": "Question",
@@ -227,10 +227,10 @@ export default function TargetAcquisitionJaPage() {
   };
 
   const targetAcquisitionGuide = {
-    title: "ターゲット捕捉 エイム練習 実践マニュアル",
+    title: "VALORANT エイム練習：ターゲット捕捉と初弾精度ガイド",
     subtitle: "視覚識別スピード、特徴対比の判別力、そして初弾ヘッドショット精度を科学的プロトコルで極限まで高める",
     intro: [
-      "ターゲット捕捉エイムトレーナー（Target Acquisition Aim Trainer）は、一瞬の視覚検出、特徴コントラスト識別、そして初弾必中のヘッドショット精度を鍛え上げるために設計された知覚・認知運動ドリルです。VALORANTやCounter-Strike 2、Rainbow Six SiegeなどのタクティカルFPSでは、射線が通った最初の300ミリ秒で勝敗が決します。敵の危険なシルエットを誰よりも早く発見・識別し、瞬時に照準を吸い付かせた者が撃ち合いを制します。",
+      "VALORANT エイム練習を探しているFPSプレイヤー向けに、このドリルは敵の発見・識別から初弾クリックまでの時間と命中率を測定します。ターゲット捕捉と初弾精度を一緒に鍛え、VALORANT、Counter-Strike 2、Rainbow Six Siegeで射線が通った最初の300ミリ秒の判断と照準を安定させます。",
       "視覚探索と物体認識の理論的基盤は、Anne TreismanとGarry Gelade（1980）が提唱した「特徴統合理論（Feature-Integration Theory）」によって確立されました。トレイスマンは、輝度コントラストや色相のポップアウト、輪郭のエッジ方向といった低次視覚特徴が、視野全体にわたって前注意的（Preattentively）かつ並列に抽出されることを実証しました。焦点を絞った空間的注意が特定の座標に向けられて初めて、これらの特徴が統合され、認識可能な敵性脅威として把握されます。",
       "この並列処理メカニズムを発展させたJeremy M. Wolfe（1994, 2007）の「ガイド探索モデル（Guided Search）」は、トップダウンの認知的予測とボトムアップの感覚的顕著性マップが融合して視覚的注意の優先順位を決定するプロセスを詳述しています。明暗コントラストの識別訓練を反復することで、視覚野は背景の雑音や低コントラストの妨害刺激を瞬時に遮断することを学習し、標的の出現から筋肉の動作開始までの潜時を大幅に短縮します。",
       "Paul M. Fitts（1954）の運動難易度法則、David E. Meyerら（1988）の確率的最適化サブムーブメント理論、そして高分解能デジタル時間計測（Woods et al., 2015）を統合することで、本ドリルはプレイヤーの認知的躊躇を排除し、鋭い一次弾道フリックの実行と競技プレッシャー下での安定した初弾精度を定着させます。",
@@ -319,9 +319,9 @@ export default function TargetAcquisitionJaPage() {
       />
       <TargetAcquisitionClient
         copy={{
-          h1Keyword: "ターゲット捕捉 エイム練習",
-          h1Suffix: " - 初弾精度・索敵エイムトレーナー",
-          subtitle: "視覚的ターゲット検出、脅威弁別、初弾フリック精度をリアルタイムフィードバックで鍛えます。",
+          h1Keyword: "VALORANT エイム練習",
+          h1Suffix: " - ターゲット捕捉トレーナー",
+          subtitle: "敵の発見から初弾クリックまでをブラウザで測定・練習できます。",
           statScore: "スコア",
           statTime: "残り時間",
           statAccuracy: "命中率",
@@ -353,7 +353,7 @@ export default function TargetAcquisitionJaPage() {
       <div className="max-w-4xl mx-auto px-4 pb-12">
         <RelatedDrills
           currentCategory="fps"
-          currentHref="/drills/fps/target-acquisition"
+          currentHref="/ja/drills/fps/target-acquisition"
           locale="ja"
         />
       </div>

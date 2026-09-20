@@ -19,27 +19,27 @@ import { pickSources } from '@/lib/drillSources';
 // ============================================================
 
 export const metadata = {
-  title: "目と手の協応トレーニング・協調運動テスト – 無料視覚運動連動ゲーム | SkillDrills",
-  description: "無料オンライン目と手の協応トレーニング＆協調運動テスト。画面中央の正中線を交差する対角ノードを瞬時に繋ぎ、脳梁を通じた両側性協調制御と手先の精密なフリック操作を科学的に鍛えます。",
+  title: "目と手の協応テスト｜協調運動ゲーム | SkillDrills",
+  description: "無料の目と手の協応テスト・協調運動ゲーム。正中線を越える対角ノードをつなぎ、両側性の運動制御とマウス操作の精度を鍛えます。",
   keywords: [
-    "目と手の協応 トレーニング",
+    "目と手の協応 テスト",
     "目と手の協調運動",
-    "協調運動 トレーニング",
-    "目と手の協応 動作",
     "協調運動 テスト",
+    "目と手の協応 トレーニング",
+    "手と目の協調 ゲーム",
     "目と手の協応",
     "正中線交差 ドリル",
     "両側統合 トレーニング",
-    "対角線 フリック エイム",
-    "手先 協調運動"
+    "対角線 マウス 操作",
+    "運動協調性 テスト"
   ],
   alternates: {
     canonical: 'https://skilldrills.online/ja/drills/physical/coordination/cross-body-movement',
     languages: getAlternateLanguages('/drills/physical/coordination/cross-body-movement'),
   },
   openGraph: {
-    title: "目と手の協応トレーニング・協調運動テスト – 無料視覚運動連動ゲーム | SkillDrills",
-    description: "無料オンライン目と手の協応トレーニング＆協調運動テスト。画面中央の正中線を交差する対角ノードを瞬時に繋ぎ、脳梁を通じた両側性協調制御と手先の精密なフリック操作を科学的に鍛えます。",
+    title: "目と手の協応テスト｜協調運動ゲーム | SkillDrills",
+    description: "無料の目と手の協応テスト・協調運動ゲーム。正中線を越える対角ノードをつなぎ、両側性の運動制御とマウス操作の精度を鍛えます。",
     url: 'https://skilldrills.online/ja/drills/physical/coordination/cross-body-movement',
     siteName: 'SkillDrills',
     locale: 'ja_JP',
@@ -47,8 +47,8 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: "目と手の協応トレーニング・協調運動テスト – 無料視覚運動連動ゲーム | SkillDrills",
-    description: "無料オンライン目と手の協応トレーニング＆協調運動テスト。画面中央の正中線を交差する対角ノードを瞬時に繋ぎ、脳梁を通じた両側性協調制御と手先の精密なフリック操作を科学的に鍛えます。",
+    title: "目と手の協応テスト｜協調運動ゲーム | SkillDrills",
+    description: "無料の目と手の協応テスト・協調運動ゲーム。正中線を越える対角ノードをつなぎ、両側性の運動制御とマウス操作の精度を鍛えます。",
   },
   robots: { index: true, follow: true },
 };
@@ -103,7 +103,7 @@ const softwareApplicationSchema = {
     "url": "https://skilldrills.online/ja"
   },
   "inLanguage": "ja",
-  "dateModified": "2026-09-12"
+  "dateModified": "2026-09-20"
 };
 
 const webApplicationSchema = {
@@ -120,7 +120,7 @@ const webApplicationSchema = {
   },
   "url": "https://skilldrills.online/ja/drills/physical/coordination/cross-body-movement",
   "inLanguage": "ja",
-  "dateModified": "2026-09-12"
+  "dateModified": "2026-09-20"
 };
 
 const videoGameSchema = {
@@ -141,6 +141,8 @@ const videoGameSchema = {
     "Mobile"
   ],
   "applicationCategory": "Game",
+  "inLanguage": "ja",
+  "dateModified": "2026-09-20",
   "offers": {
     "@type": "Offer",
     "price": "0",
@@ -151,7 +153,8 @@ const videoGameSchema = {
 const faqSchema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
-  "dateModified": "2026-09-12",
+  "inLanguage": "ja",
+  "dateModified": "2026-09-20",
   "mainEntity": [
     {
       "@type": "Question",
@@ -359,8 +362,8 @@ export default function CrossBodyMovementPageJa() {
       />
       <CrossBodyMovementClient
         copy={{
-          title: "目と手の協応トレーニング・協調運動テスト",
-          subtitle: "正中線交差＆両側性運動制御ドリル • 15段階",
+          title: "目と手の協応テスト",
+          subtitle: "正中線を越える対角操作 • 15段階",
           rulesTitle: "目と手の協応トレーニングのルール＆スコア採点基準",
           rules: [
             { title: "開始ノードの活性化", text: "画面の端に表示される水色の開始ノード（A）にカーソルを合わせ、接続ベクトルを起動します。" },

@@ -5,8 +5,8 @@ import { pickSources } from '@/lib/drillSources';
 
 // ============================================================
 // SEO RESEARCH FINDINGS — complex-pattern
-// PRIMARY:  "pattern memory game"        — High-intent spatial memory game (~1,000+ searches/mo)
-//           "visual memory training"     — Core cognitive skill phrase (~140/mo)
+// PRIMARY:  "visual memory test"         — Interactive recall intent (volume unmeasured)
+//           "pattern memory game"        — Core browser game phrase (volume unmeasured)
 // SECONDARY / LSI:
 //           "pattern memory test"        — Diagnostic evaluation query
 //           "visual memory game"         — Gamified recall phrase
@@ -23,23 +23,23 @@ import { pickSources } from '@/lib/drillSources';
 // ============================================================
 
 export const metadata = {
-  title: 'Pattern Memory Game – Free Visual & Spatial Memory Training',
-  description: 'Free pattern memory game. Memorize increasingly complex paths and redraw them to train visuospatial memory and motor coordination.',
+  title: 'Visual Memory Test | Pattern Memory Game | SkillDrills',
+  description: 'Free browser visual memory test. Memorize a flashing path, redraw it accurately, and train spatial recall, working memory, and mouse coordination.',
   keywords: [
+    'visual memory test',
     'pattern memory game',
-    'visual memory training',
-    'pattern memory test',
-    'visual memory game',
     'spatial memory game',
+    'visual pattern memory',
+    'sequence memory test',
+    'path memory game',
+    'memory tracing game',
     'working memory training',
-    'pattern recognition game',
-    'memory drawing game',
-    'free online visual memory test',
-    'trace path memory training online',
+    'visual spatial memory test',
+    'free browser memory game',
   ],
   openGraph: {
-    title: 'Pattern Memory Game – Free Visual & Spatial Memory Training | SkillDrills',
-    description: 'Free pattern memory game. Memorize increasingly complex paths and redraw them to train visuospatial memory and motor coordination.',
+    title: 'Visual Memory Test | Pattern Memory Game | SkillDrills',
+    description: 'Memorize a flashing path, redraw it accurately, and train spatial recall, working memory, and mouse coordination in a free browser game.',
     type: 'article',
     url: 'https://skilldrills.online/drills/physical/coordination/complex-pattern',
     siteName: 'SkillDrills',
@@ -47,8 +47,8 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Pattern Memory Game – Free Visual & Spatial Memory Training | SkillDrills',
-    description: 'Free pattern memory game. Memorize increasingly complex paths and redraw them to train visuospatial memory and motor coordination.',
+    title: 'Visual Memory Test | Pattern Memory Game | SkillDrills',
+    description: 'Memorize a flashing path, redraw it accurately, and train spatial recall, working memory, and mouse coordination in a free browser game.',
   },
   robots: { index: true, follow: true },
   alternates: {
@@ -80,7 +80,8 @@ const softwareApplicationSchema = {
   description: 'Free online pattern memory game and spatial coordination drill. Memorize geometric paths and trace them accurately from memory to expand working memory capacity.',
   url: 'https://skilldrills.online/drills/physical/coordination/complex-pattern',
   publisher: { '@type': 'Organization', name: 'SkillDrills', url: 'https://skilldrills.online' },
-  dateModified: '2026-09-05',
+  inLanguage: 'en',
+  dateModified: '2026-09-20',
 };
 
 const webApplicationSchema = {
@@ -92,12 +93,15 @@ const webApplicationSchema = {
   browserRequirements: 'Requires modern web browser with HTML5 Canvas and pointer input support',
   offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
   url: 'https://skilldrills.online/drills/physical/coordination/complex-pattern',
-  dateModified: '2026-09-05',
+  inLanguage: 'en',
+  dateModified: '2026-09-20',
 };
 
 const faqSchema = {
   '@context': 'https://schema.org',
   '@type': 'FAQPage',
+  inLanguage: 'en',
+  dateModified: '2026-09-20',
   mainEntity: [
     {
       '@type': 'Question',
@@ -187,11 +191,13 @@ const videoGameSchema = {
   '@type': 'VideoGame',
   name: 'Pattern Memory Game',
   url: 'https://skilldrills.online/drills/physical/coordination/complex-pattern',
-  description: 'Free pattern memory game. Memorize increasingly complex paths and redraw them to train visuospatial memory and motor coordination.',
+  description: 'Free browser visual memory test: memorize a flashing path, redraw it accurately, and train spatial recall and mouse coordination.',
   genre: ['Action', 'Brain Game', 'Reflex Game', 'Coordination'],
   gamePlatform: ['Web Browser', 'Desktop', 'Mobile'],
   applicationCategory: 'Game',
   offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
+  inLanguage: 'en',
+  dateModified: '2026-09-20',
 };
 
 const howToSchema = {
@@ -310,7 +316,7 @@ export default function ComplexPatternPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(howToSchema) }}
       />
-      <ComplexPatternClient copy={{ title: 'Pattern Memory Game', subtitle: 'Complex Pattern Tracking & Path Reproduction' }} />
+      <ComplexPatternClient copy={{ title: 'Visual Memory Test', subtitle: 'Memorize the path, then redraw it accurately' }} />
       <DrillGuide {...guideProps} />
       
     </>

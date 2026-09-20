@@ -5,21 +5,23 @@ import { getAlternateLanguages } from '@/lib/i18n/locales';
 import { pickSources } from '@/lib/drillSources';
 
 export const metadata = {
-  title: "Test de Memoria Verbal – Recuerdo de Palabras | SkillDrills",
-  description: "Test de memoria verbal online gratis: Memoriza listas de palabras, comprueba el efecto de posición serial y entrena tu memoria de trabajo en el navegador.",
+  title: "Test de memoria verbal online | Palabras | SkillDrills",
+  description: "Test gratis de memoria verbal: memoriza una lista de palabras, recuérdalas libremente y entrena tu memoria de trabajo desde el navegador.",
   keywords: [
     "test de memoria verbal",
+    "test de memoria de palabras",
+    "recordar palabras",
+    "recuerdo libre",
+    "retención de palabras",
     "memoria verbal a corto plazo",
-    "test de recuerdo libre",
-    "efecto de posicion serial test",
-    "evaluacion de memoria verbal",
-    "juego de recordar palabras",
     "memoria de trabajo verbal",
-    "agrupamiento semantico palabras",
-    "test de retencion verbal",
-    "ejercicios de memoria verbal",
-    "test neuropsicologico verbal",
-    "juego de recuerdo libre"
+    "efecto de posición serial",
+    "test de recuerdo de palabras",
+    "ejercicio de memoria verbal",
+    "agrupamiento semántico",
+    "test de memoria gratis",
+    "lista de palabras memoria",
+    "memoria de palabras online"
   ],
   alternates: {
     canonical: "https://skilldrills.online/es/drills/memory/short-term-memory/word-recall",
@@ -30,8 +32,8 @@ export const metadata = {
     follow: true,
   },
   openGraph: {
-    title: "Test de Memoria Verbal – Recuerdo de Palabras | SkillDrills",
-    description: "Test de memoria verbal online gratis: Memoriza listas de palabras, comprueba el efecto de posición serial y entrena tu memoria de trabajo en el navegador.",
+    title: "Test de memoria verbal online | Palabras | SkillDrills",
+    description: "Test gratis de memoria verbal: memoriza una lista de palabras, recuérdalas libremente y entrena tu memoria de trabajo desde el navegador.",
     url: "https://skilldrills.online/es/drills/memory/short-term-memory/word-recall",
     siteName: 'SkillDrills',
     locale: 'es_ES',
@@ -39,8 +41,8 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: "Test de Memoria Verbal – Recuerdo de Palabras | SkillDrills",
-    description: "Test de memoria verbal online gratis: Memoriza listas de palabras, comprueba el efecto de posición serial y entrena tu memoria de trabajo en el navegador.",
+    title: "Test de memoria verbal online | Palabras | SkillDrills",
+    description: "Test gratis de memoria verbal: memoriza una lista de palabras, recuérdalas libremente y entrena tu memoria de trabajo desde el navegador.",
   },
 };
 
@@ -86,6 +88,7 @@ export default function LocalizedWordRecallPage() {
     "applicationCategory": "GameApplication",
     "operatingSystem": "All",
     "isAccessibleForFree": true,
+    "sameAs": ["https://es.wikipedia.org/wiki/Capacidad_de_memoria"],
     "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
   };
 
@@ -320,11 +323,11 @@ export default function LocalizedWordRecallPage() {
     faqs: faqSchema.mainEntity.map(e => ({ q: e.name, a: e.acceptedAnswer.text })),
     sources: pickSources('craik1972', 'murdock1962', 'tulving1962', 'woods2015'),
     related: [
-      { href: "/drills/memory/short-term-memory/digit-span", label: "Digit Span Memory Test" },
-      { href: "/drills/memory/short-term-memory/color-sequence", label: "Color Memory Game" },
-      { href: "/drills/memory/spatial-memory/grid-memorization", label: "Visual Memory Test" },
-      { href: "/drills/memory/spatial-memory/object-location", label: "Object Location Memory Test" },
-      { href: "/drills/memory/working-memory/n-back", label: "3-Back Working Memory Test" }
+      { href: "/es/drills/memory/short-term-memory/digit-span", label: "Test de dígitos" },
+      { href: "/es/drills/memory/short-term-memory/color-sequence", label: "Juego de colores" },
+      { href: "/es/drills/memory/spatial-memory/grid-memorization", label: "Test de memoria visual" },
+      { href: "/es/drills/memory/spatial-memory/object-location", label: "Memoria de ubicaciones" },
+      { href: "/es/drills/memory/working-memory/n-back", label: "Test N-Back" }
     ]
   };
 
@@ -355,9 +358,9 @@ export default function LocalizedWordRecallPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(howToSchema) }}
       />
       <WordRecallClient copy={{
-          "h1Keyword": "Test de Memoria Verbal",
-          "h1Suffix": " – Juego de Recuerdo de Palabras Gratis",
-          "subtitle": "El recuerdo libre de una lista de palabras nunca es uniforme: recuerdas mejor las primeras y las últimas palabras y peor las del medio, el efecto de posición serial que Murdock (1962) formuló. La profundidad del procesamiento semántico (Craik & Lockhart, 1972) importa más que el tiempo que pasas mirándolas.",
+          "h1Keyword": "Test de memoria verbal",
+          "h1Suffix": " – Recuerdo de palabras",
+          "subtitle": "Memoriza palabras y recuérdalas libremente",
           "statScore": "Puntos",
           "statTime": "Tiempo",
           "statWords": "Palabras",
@@ -372,7 +375,7 @@ export default function LocalizedWordRecallPage() {
           "feedbackPhase": "EVALUACIÓN DEL RECUERDO",
           "extraWordsLabel": "Palabras incorrectas o sobrantes escritas:",
           "startTitle": "Recuerdo Verbal Pro",
-          "startSubtitle": "Memoria Verbal a Corto Plazo • Recuerdo Libre",
+          "startSubtitle": "Memoria verbal • recuerdo libre",
           "countdownSubtitle": "PREPÁRATE",
           "newBest": "NUEVO RÉCORD",
           "pointsLabel": "Puntos",
@@ -465,7 +468,7 @@ export default function LocalizedWordRecallPage() {
       <div className="max-w-4xl mx-auto px-4 pb-12">
         <RelatedDrills
           currentCategory="memory"
-          currentHref="/drills/memory/short-term-memory/word-recall"
+          currentHref="/es/drills/memory/short-term-memory/word-recall"
           locale="es"
         />
       </div>

@@ -1,25 +1,26 @@
 import StaircaseStepClient from '@/app/drills/visual-tracking/staircase-step/StaircaseStepClientLoader';
 import DrillGuide from '@/components/drill/DrillGuide';
 import RelatedDrills from '@/components/drill/RelatedDrills';
+import DrillFooter from '@/components/drill/DrillFooter';
 import { getAlternateLanguages } from '@/lib/i18n/locales';
 import { pickSources } from '@/lib/drillSources';
 
 export const metadata = {
-  title: "Poursuite Oculaire Verticale – SkillDrills",
-  description: "Conditionnez la poursuite oculaire verticale et les saccades delevation sur trajectoires en marches descalier. Entrainement gratuit en ligne.",
+  title: "Poursuite oculaire verticale | SkillDrills",
+  description: "Suivez une cible qui monte et descend par paliers. Exercice gratuit avec retard du regard, pertes de cible et précision verticale.",
   keywords: [
-    "entrainement poursuite oculaire verticale",
-    "exercice oculaire en escalier",
-    "mouvement oculaire vertical saccadique",
-    "controle de visee verticale reflexe",
-    "gain de vitesse oculaire vertical",
-    "stimulation du mesencephale rimlf",
-    "stabilite du regard en elevation",
-    "entrainement de visee verticale fps",
-    "exercice de poursuite en zigzag",
-    "focalisation oculaire trajectoires angulaires",
-    "agilite oculaire pour sports aeriens",
-    "entrainement visuel controle de recul"
+    "poursuite oculaire verticale exercice",
+    "mouvements oculaires verticaux entraînement",
+    "suivi de haut en bas",
+    "entraînement de visée verticale",
+    "poursuite visuelle par paliers",
+    "mouvement oculaire vertical",
+    "suivre une cible qui monte et descend",
+    "attention visuelle verticale",
+    "retard du regard mesurer",
+    "perte de cible visuelle",
+    "exercice de poursuite oculaire",
+    "vision dynamique entraînement"
   ],
   alternates: {
     canonical: "https://skilldrills.online/fr/drills/visual-tracking/staircase-step",
@@ -27,8 +28,8 @@ export const metadata = {
   },
   robots: { index: true, follow: true },
   openGraph: {
-    title: "Poursuite Oculaire Verticale – SkillDrills",
-    description: "Conditionnez la poursuite oculaire verticale et les saccades delevation sur trajectoires en marches descalier. Entrainement gratuit en ligne.",
+    title: "Poursuite oculaire verticale | SkillDrills",
+    description: "Suivez une cible qui monte et descend par paliers. Exercice gratuit avec retard du regard, pertes de cible et précision verticale.",
     url: "https://skilldrills.online/fr/drills/visual-tracking/staircase-step",
     siteName: 'SkillDrills',
     locale: 'fr_FR',
@@ -36,8 +37,8 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: "Poursuite Oculaire Verticale – SkillDrills",
-    description: "Conditionnez la poursuite oculaire verticale et les saccades delevation sur trajectoires en marches descalier. Entrainement gratuit en ligne.",
+    title: "Poursuite oculaire verticale | SkillDrills",
+    description: "Suivez une cible qui monte et descend par paliers. Exercice gratuit avec retard du regard, pertes de cible et précision verticale.",
   },
 };
 
@@ -83,7 +84,8 @@ const softwareApplicationSchema = {
     "price": "0.00",
     "priceCurrency": "USD"
   },
-  "description": "Programme dentrainement oculomoteur vertical stimulant les circuits du mesencephale (riMLF) pour perfectionner le gain de poursuite et les saccades delevation."
+  "description": "Programme dentrainement oculomoteur vertical stimulant les circuits du mesencephale (riMLF) pour perfectionner le gain de poursuite et les saccades delevation.",
+  "dateModified": "2026-09-20"
 };
 
 const webAppSchema = {
@@ -93,17 +95,19 @@ const webAppSchema = {
   "url": "https://skilldrills.online/fr/drills/visual-tracking/staircase-step",
   "applicationCategory": "SportsApplication",
   "operatingSystem": "Tous les navigateurs modernes",
-  "browserRequirements": "Nécessite le support de JavaScript et HTML5 Canvas"
+  "browserRequirements": "Nécessite le support de JavaScript et HTML5 Canvas",
+  "dateModified": "2026-09-20"
 };
 
 const videoGameSchema = {
   "@context": "https://schema.org",
   "@type": "VideoGame",
-  "name": "Staircase Step",
+  "name": "Poursuite oculaire par paliers",
   "description": "Defi visuel de motricite oculaire evaluant la stabilite foveale lors du suivi de cibles traversant des rampes et des marches orthogonales.",
   "genre": ["Entraînement Visuel", "Poursuite Verticale", "Entraînement des Réflexes"],
   "playMode": "SinglePlayer",
-  "gamePlatform": "Navigateur Web"
+  "gamePlatform": "Navigateur Web",
+  "dateModified": "2026-09-20"
 };
 
 const howToSchema = {
@@ -111,6 +115,7 @@ const howToSchema = {
   "@type": "HowTo",
   "name": "Comment Entraîner la Poursuite Verticale en Marches d'Escalier",
   "description": "Protocole methodologique pour accroitre le gain de poursuite verticale et reussir les transitions dangles droits sans compensations du cou.",
+  "dateModified": "2026-09-20",
   "step": [
     {
       "@type": "HowToStep",
@@ -142,13 +147,14 @@ const howToSchema = {
 const faqSchema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
+  "dateModified": "2026-09-20",
   "mainEntity": [
     {
       "@type": "Question",
-      "name": "Qu'est-ce que l'exercice Staircase Step ?",
+      "name": "Qu'est-ce que la poursuite oculaire par paliers ?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Le Staircase Step renforce la poursuite oculaire verticale et les saccades delevation le long de paliers orthogonaux en escalier, activant les noyaux mesencephaliques (Büttner-Ennever & Horn, 1997)."
+        "text": "Cet exercice renforce la poursuite oculaire verticale et les saccades d'élévation le long de paliers orthogonaux, en sollicitant les noyaux mésencéphaliques (Büttner-Ennever & Horn, 1997)."
       }
     },
     {
@@ -231,7 +237,7 @@ const guideProps = {
   intro: [
     "Lappareil moteur oculaire humain recourt a des circuits neuroanatomiques rigoureusement dissocies selon que les developpements sopèrent sur le plan horizontal ou vertical. Alors que les trajectoires laterales transitent par la formation reticulaire pontique paramediane (PPRF), la coordination verticale releve de noyaux tres specialises du mesencephale, principalement le noyau interstitiel rostral du faisceau longitudinal median (riMLF) et le noyau de Cajal (Büttner-Ennever & Horn, 1997).",
     "Les analyses cliniques et psychophysiques (Rottach et al., 1996; Ke et al., 2013) attestent que la poursuite oculaire verticale accuse naturellement un gain de vitesse inferieur, des delais de reaction allonges et des dephasages plus notables que son homologue horizontal. En outre, une asymetrie directionnelle majeure apparait : le suivi vers le haut (elevation) samenuise promptement lors des accelerations, appelant des saccades correctrices anticipees.",
-    "Lecran large et les activites ordinaires sous-sollicitent constamment laxe vertical de la vision. Lexercice Staircase Step remédie a cette dissymetrie en propulsant le regard sur des profils en zigzag complexes, couplant poursuite fluide sur plans obliques et saccades de re-ciblage nettes sur chaque arrete orthogonale (Collewijn & Tamminga, 1984; Lisberger, 2010)."
+    "L'écran large et les activités ordinaires sous-sollicitent constamment l'axe vertical de la vision. Cet exercice remédie à cette dissymétrie en propulsant le regard sur des profils en zigzag complexes, couplant poursuite fluide sur plans obliques et saccades de reciblage nettes sur chaque arête orthogonale (Collewijn & Tamminga, 1984; Lisberger, 2010)."
   ],
   benchmarks: {
     title: "Grille d'Évaluation de la Poursuite Verticale et Saccades en Paliers",
@@ -270,18 +276,24 @@ const guideProps = {
       }
     ]
   },
+  steps: [
+    { title: "Commencez au centre", text: "Placez-vous à 50–70 cm de l’écran, gardez la tête immobile et attendez le départ de la première portion." },
+    { title: "Suivez les montées et descentes", text: "Donnez la priorité à la hauteur de la cible et accompagnez les portions obliques sans compenser avec le cou." },
+    { title: "Récupérez le regard aux angles", text: "Ralentissez légèrement avant chaque angle et effectuez une petite correction si la cible sort du regard." },
+    { title: "Augmentez le rythme avec contrôle", text: "Montez d’un niveau seulement lorsque les pertes et le retard du regard diminuent, puis comparez les mesures." }
+  ],
   faqs: faqSchema.mainEntity.map(item => ({
     q: item.name,
     a: item.acceptedAnswer.text
   })),
   sources: pickSources('buttner1997', 'rottach1996', 'ke2013', 'collewijn1984', 'lisberger2010', 'woods2015'),
   related: [
-    { href: "/fr/drills/visual-tracking/constant-slow-pursuit", label: "Exercice de Poursuite Lente Constante (Constant Slow)" },
-    { href: "/fr/drills/visual-tracking/directional-chaos-pursuit", label: "Poursuite en Chaos Directionnel (Directional Chaos)" },
-    { href: "/fr/drills/visual-tracking/dynamic-evasion-pursuit", label: "Poursuite avec Évasion Dynamique (Dynamic Evasion)" },
-    { href: "/fr/drills/visual-tracking/ghosting-suppress-pursuit", label: "Suppression d'Images Fantômes (Ghosting Suppress)" },
-    { href: "/fr/drills/visual-tracking/infinity-pursuit", label: "Exercice Oculaire en Huit (Infinity)" },
-    { href: "/fr/drills/visual-tracking/sine-wave-pursuit", label: "Poursuite Oculaire en Onde Sinusoïdale (Sine Wave)" }
+    { href: "/fr/drills/visual-tracking/constant-slow-pursuit", label: "Exercice de poursuite lente constante" },
+    { href: "/fr/drills/visual-tracking/directional-chaos-pursuit", label: "Poursuite en chaos directionnel" },
+    { href: "/fr/drills/visual-tracking/dynamic-evasion-pursuit", label: "Poursuite avec évasion dynamique" },
+    { href: "/fr/drills/visual-tracking/ghosting-suppress-pursuit", label: "Suppression d'images fantômes" },
+    { href: "/fr/drills/visual-tracking/infinity-pursuit", label: "Exercice oculaire en huit" },
+    { href: "/fr/drills/visual-tracking/sine-wave-pursuit", label: "Poursuite oculaire en onde sinusoïdale" }
   ]
 };
 
@@ -295,11 +307,12 @@ export default function StaircaseStepPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(howToSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
 
-      <StaircaseStepClient copy={{ title: "Poursuite en Marches d'Escalier", subtitle: "Exercice Oculaire Vertical et Saccadique" }} />
+      <StaircaseStepClient copy={{ title: "Poursuite oculaire verticale", subtitle: "Exercice pour les montées, descentes et reprises de cible" }} />
       <DrillGuide guide={guideProps} />
       <div className="max-w-6xl mx-auto px-4 pb-12">
         <RelatedDrills currentCategory="visual-tracking" currentHref="https://skilldrills.online/fr/drills/visual-tracking/staircase-step" />
       </div>
+      <DrillFooter />
     </>
   );
 }

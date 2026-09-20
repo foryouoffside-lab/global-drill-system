@@ -6,37 +6,21 @@ import DrillFooter from '@/components/drill/DrillFooter';
 import { pickSources } from '@/lib/drillSources';
 
 // ============================================================
-// SEO RESEARCH FINDINGS — tracing (Spanish: Juego de Trazado con Ratón)
-// PRIMARY:  "juego de trazado con ratón"      — Core query
-//           "test de seguimiento de ratón"   — Diagnostic query
-// SECONDARY / LSI:
-//           "prueba de trazado y precisión ratón" — Precision test
-//           "entrenamiento de puntería suave"     — Smooth aim training
-//           "control motor fino trazado"          — Fine motor control
-//           "seguimiento ocular suave pursuit"    — Psychophysics query
-//           "ley de dirección de accot-zhai"      — Steering Law
+// Native keyword research: docs/seo/research/tracing-2026-09-20.md
 // ============================================================
 
 export const metadata = {
-  title: 'Juego de Trazado con Ratón – Test de Precisión y Tracking',
-  description: 'Juego de trazado con ratón online gratis. Sigue la onda continua con el cursor para entrenar seguimiento suave (smooth pursuit) y control motor fino.',
+  title: 'Test de seguimiento del ratón | Trazado | SkillDrills',
+  description: 'Sigue una onda en movimiento con el cursor y entrena seguimiento suave, precisión del trazado y control motor fino. Gratis en el navegador.',
   keywords: [
-    'juego de trazado con ratón',
-    'test de seguimiento de ratón',
-    'prueba de trazado y precisión ratón',
-    'entrenamiento de puntería suave',
-    'control motor fino trazado',
-    'seguimiento ocular suave pursuit',
-    'ley de dirección de accot-zhai',
-    'estabilidad de cursor continuo',
-    'juego de seguir la línea ratón',
-    'ejercicios de tracking ratón fps',
-    'coordinación visomotora trazado',
-    'precisión de trazado sinusoidal',
+    'test de seguimiento del ratón', 'seguir una línea con el ratón', 'juego de trazado con ratón',
+    'prueba de trazado y precisión', 'seguimiento de cursor', 'control motor fino',
+    'entrenamiento de puntería suave', 'precisión del trazado', 'juego de seguir la línea',
+    'tracking ratón fps', 'coordinación visomotora', 'trazado de onda con ratón',
   ],
   openGraph: {
-    title: 'Juego de Trazado con Ratón – Test de Precisión y Tracking | SkillDrills',
-    description: 'Juego de trazado con ratón online gratis. Sigue la onda continua con el cursor para entrenar seguimiento suave (smooth pursuit) y control motor fino.',
+    title: 'Test de seguimiento del ratón | Trazado | SkillDrills',
+    description: 'Sigue una onda en movimiento con el cursor y entrena seguimiento suave, precisión del trazado y control motor fino. Gratis en el navegador.',
     type: 'article',
     url: 'https://skilldrills.online/es/drills/motor/precision-control/tracing',
     siteName: 'SkillDrills',
@@ -44,8 +28,8 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Juego de Trazado con Ratón – Test de Precisión y Tracking | SkillDrills',
-    description: 'Juego de trazado con ratón online gratis. Sigue la onda continua con el cursor para entrenar seguimiento suave (smooth pursuit) y control motor fino.',
+    title: 'Test de seguimiento del ratón | Trazado | SkillDrills',
+    description: 'Sigue una onda en movimiento con el cursor y entrena seguimiento suave, precisión del trazado y control motor fino. Gratis en el navegador.',
   },
   robots: { index: true, follow: true },
   alternates: {
@@ -68,6 +52,7 @@ const breadcrumbSchema = {
 const softwareApplicationSchema = {
   '@context': 'https://schema.org',
   '@type': 'SoftwareApplication',
+  inLanguage: 'es-ES',
   name: 'Juego de Trazado con Ratón – Test de Precisión Motora',
   applicationCategory: 'HealthApplication',
   operatingSystem: 'All',
@@ -75,36 +60,41 @@ const softwareApplicationSchema = {
   description: 'Herramienta interactiva de evaluación motora para guiar el cursor sobre una onda sinuosa en movimiento constante.',
   url: 'https://skilldrills.online/es/drills/motor/precision-control/tracing',
   publisher: { '@type': 'Organization', name: 'SkillDrills', url: 'https://skilldrills.online/es' },
-  dateModified: '2026-09-05',
+  dateModified: '2026-09-20',
 };
 
 const webApplicationSchema = {
   '@context': 'https://schema.org',
   '@type': 'WebApplication',
+  inLanguage: 'es-ES',
   name: 'Juego de Seguimiento Continuo Online',
   applicationCategory: 'GameApplication',
   operatingSystem: 'All',
   browserRequirements: 'Navegador moderno con soporte para HTML5 Canvas y Pointer Events',
   offers: { '@type': 'Offer', price: '0', priceCurrency: 'EUR' },
   url: 'https://skilldrills.online/es/drills/motor/precision-control/tracing',
-  dateModified: '2026-09-05',
+  dateModified: '2026-09-20',
 };
 
 const videoGameSchema = {
   '@context': 'https://schema.org',
   '@type': 'VideoGame',
+  inLanguage: 'es-ES',
   name: 'Entrenamiento de Trazado y Fluidez con Ratón',
   url: 'https://skilldrills.online/es/drills/motor/precision-control/tracing',
   description: 'Juego de precisión cinética que potencia el seguimiento suave y suprime microtemblores involuntarios.',
   genre: ['Precision Game', 'Action', 'Esports Training'],
   gamePlatform: ['Web Browser', 'Desktop', 'Mobile'],
   applicationCategory: 'Game',
-  offers: { '@type': 'Offer', price: '0', priceCurrency: 'EUR' }
+  offers: { '@type': 'Offer', price: '0', priceCurrency: 'EUR' },
+  dateModified: '2026-09-20',
 };
 
 const faqSchema = {
   '@context': 'https://schema.org',
   '@type': 'FAQPage',
+  inLanguage: 'es-ES',
+  dateModified: '2026-09-20',
   mainEntity: [
     {
       '@type': 'Question',
@@ -192,6 +182,8 @@ const faqSchema = {
 const howToSchema = {
   '@context': 'https://schema.org',
   '@type': 'HowTo',
+  inLanguage: 'es-ES',
+  dateModified: '2026-09-20',
   name: 'Cómo entrenar el trazado y el seguimiento continuo con ratón',
   description: 'Protocolo metódico para perfeccionar el seguimiento suave y suprimir sacudidas del cursor.',
   step: [
@@ -313,8 +305,8 @@ const guideProps = {
 };
 
 const esCopy = {
-  title: "Juego de Trazado con Ratón",
-  subtitle: "Seguimiento Continuo sin Filtros • Temporizador 45s",
+  title: "Test de Seguimiento del Ratón",
+  subtitle: "Seguimiento continuo • 45 s",
   startButtonText: "Comenzar Entrenamiento",
   trainAgain: "Entrenar de Nuevo",
   shareTitle: "Compartir Puntuación",

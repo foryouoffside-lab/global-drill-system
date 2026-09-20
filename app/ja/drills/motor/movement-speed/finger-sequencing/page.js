@@ -6,25 +6,25 @@ import DrillFooter from '@/components/drill/DrillFooter';
 import { pickSources } from '@/lib/drillSources';
 
 export const metadata = {
-  title: 'シーケンスエイム練習・連続クリック速度測定 – 指先運動制御診断 | SkillDrills',
-  description: '番号順に素早くターゲットをクリックするシーケンスエイム練習＆連続クリック速度診断ツール。視覚的順序認識と運動計画、指先と手首の連続打鍵スピードを総合測定。',
+  title: 'ターゲット切替エイム練習・順番クリック | SkillDrills',
+  description: '番号順にターゲットをクリックし、切り替え速度と正確さを測る無料のエイム練習。ブラウザですぐ遊べます。',
   keywords: [
-    'シーケンス エイム 練習',
-    '連続ターゲット クリック',
-    '番号順 クリック テスト',
-    'シーケンス クリック',
-    'マウス 連続 操作',
-    'ターゲット スイッチング 練習',
-    '指先 スピード テスト',
-    'クリック 速度 測定',
-    'エイム 反応速度 テスト',
+    'ターゲット切り替え 練習',
+    'エイム練習',
+    '順番クリック テスト',
+    '連続クリック 速度',
+    '番号順 クリック',
+    'マウス クリック 速度測定',
     'FPS ターゲット切り替え',
     'エイム 精度 トレーニング',
-    '運動制御 診断',
+    '指先 スピード テスト',
+    'マウス操作 練習',
+    '視覚 順序認識',
+    'クリック 正確さ テスト',
   ],
   openGraph: {
-    title: 'シーケンスエイム練習・連続クリック速度測定 – 指先運動制御診断 | SkillDrills',
-    description: '番号順に素早くターゲットをクリックするシーケンスエイム練習＆連続クリック速度診断ツール。視覚的順序認識と運動計画、指先と手首の連続打鍵スピードを総合測定。',
+    title: 'ターゲット切替エイム練習・順番クリック | SkillDrills',
+    description: '番号順にターゲットをクリックし、切り替え速度と正確さを測る無料のエイム練習。',
     type: 'article',
     url: 'https://skilldrills.online/ja/drills/motor/movement-speed/finger-sequencing',
     siteName: 'SkillDrills',
@@ -32,8 +32,8 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'シーケンスエイム練習・連続クリック速度測定 – 指先運動制御診断 | SkillDrills',
-    description: '番号順に素早くターゲットをクリックするシーケンスエイム練習＆連続クリック速度診断ツール。',
+    title: 'ターゲット切替エイム練習・順番クリック | SkillDrills',
+    description: '番号順のターゲット切り替えを測る無料エイム練習。',
   },
   robots: { index: true, follow: true },
   alternates: {
@@ -49,39 +49,42 @@ const breadcrumbSchema = {
     { '@type': 'ListItem', position: 1, name: 'SkillDrills', item: 'https://skilldrills.online/ja' },
     { '@type': 'ListItem', position: 2, name: '運動制御トレーニング', item: 'https://skilldrills.online/ja/drills/motor' },
     { '@type': 'ListItem', position: 3, name: '動作速度', item: 'https://skilldrills.online/ja/drills/motor/movement-speed' },
-    { '@type': 'ListItem', position: 4, name: 'シーケンスエイム練習', item: 'https://skilldrills.online/ja/drills/motor/movement-speed/finger-sequencing' },
+    { '@type': 'ListItem', position: 4, name: 'ターゲット切替エイム練習', item: 'https://skilldrills.online/ja/drills/motor/movement-speed/finger-sequencing' },
   ],
 };
 
 const softwareApplicationSchema = {
   '@context': 'https://schema.org',
   '@type': 'SoftwareApplication',
-  name: 'シーケンスエイム練習・連続クリック速度測定',
+  inLanguage: 'ja-JP',
+  name: 'ターゲット切替エイム練習・順番クリック',
   applicationCategory: 'HealthApplication',
   operatingSystem: 'All',
   offers: { '@type': 'Offer', price: '0', priceCurrency: 'JPY' },
   description: '無料のブラウザ型シーケンスエイムトレーナー。番号順ターゲット切り替え、軌道最適化、指先の連打と正確性を測定。',
   url: 'https://skilldrills.online/ja/drills/motor/movement-speed/finger-sequencing',
   publisher: { '@type': 'Organization', name: 'SkillDrills', url: 'https://skilldrills.online' },
-  dateModified: '2026-09-05',
+  dateModified: '2026-09-20',
 };
 
 const webApplicationSchema = {
   '@context': 'https://schema.org',
   '@type': 'WebApplication',
-  name: 'シーケンス エイム トレーナー',
+  inLanguage: 'ja-JP',
+  name: 'ターゲット切替エイムトレーナー',
   applicationCategory: 'GameApplication',
   operatingSystem: 'All',
   browserRequirements: 'HTML5 CanvasおよびJavaScriptのサポートが必要',
   offers: { '@type': 'Offer', price: '0', priceCurrency: 'JPY' },
   url: 'https://skilldrills.online/ja/drills/motor/movement-speed/finger-sequencing',
-  dateModified: '2026-09-05',
+  dateModified: '2026-09-20',
 };
 
 const videoGameSchema = {
   '@context': 'https://schema.org',
   '@type': 'VideoGame',
-  name: 'シーケンス エイム トレーナー – 指先スピードテスト',
+  inLanguage: 'ja-JP',
+  name: 'ターゲット切替エイム – 指先スピードテスト',
   url: 'https://skilldrills.online/ja/drills/motor/movement-speed/finger-sequencing',
   description: '連続運動プログラム理論に基づき、指定順序での標的切り替え速度を測定します。',
   genre: ['Aim Game', 'Action', 'Esports Training'],
@@ -93,6 +96,8 @@ const videoGameSchema = {
 const faqSchema = {
   '@context': 'https://schema.org',
   '@type': 'FAQPage',
+  inLanguage: 'ja-JP',
+  dateModified: '2026-09-20',
   mainEntity: [
     {
       '@type': 'Question',
@@ -180,6 +185,8 @@ const faqSchema = {
 const howToSchema = {
   '@context': 'https://schema.org',
   '@type': 'HowTo',
+  inLanguage: 'ja-JP',
+  dateModified: '2026-09-20',
   name: 'シーケンスエイムと指先速度のトレーニング手順',
   description: '順序付けられたターゲット切り替えと連続クリックを極めるためのステップバイステップガイド。',
   step: [
@@ -302,14 +309,14 @@ const guideProps = {
 };
 
 const jaCopy = {
-  title: "シーケンスエイム練習",
+  title: "ターゲット切替エイム",
   desc: "シーケンス・ターゲットスイッチングは、最も近い目標ではなく指定された順序でノードを素早く正確に撃ち抜く高度なエイム練習です。Lashley(1951)およびKeele(1968)の一連の運動プログラミング理論に基づき、軌道計画とマイクロフリックの連動精度を鍛え上げます。",
   score: "スコア",
   timeLeft: "残り時間",
   accuracy: "命中率",
   bestScore: "自己ベスト",
   startButtonText: "トレーニング開始",
-  startSubtitle: "指先精密制御・連続シーケンス軌道 • 1:1 生マウス入力対応",
+  startSubtitle: "ターゲット切替と順番クリック • 1:1 生入力",
   getReady: "準備してください",
   rulesTitle: "訓練手順とスコア換算方式",
   rulesItems: [

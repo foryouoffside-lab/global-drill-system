@@ -5,31 +5,35 @@ import RelatedDrills from '@/components/drill/RelatedDrills';
 import { pickSources } from '@/lib/drillSources';
 
 export const metadata = {
-  title: "視覚探索テスト: 結合特徴スキャン＆標的検出 | SkillDrills",
-  description: "96個の回転妨害文字から指定標的を最速で見つけ出す無料視覚探索テスト。特徴統合理論に基づく高密度マトリクスで選択的注意と周辺視野スキャン速度を測定・強化。",
+  title: "文字探しテスト | 視覚探索・選択的注意 | SkillDrills",
+  description: "回転した96個の文字から標的を探す無料の文字探しテスト。視覚探索と選択的注意、視覚走査の速さを練習できます。診断用ではありません。",
   keywords: [
+    "文字探し",
+    "文字探し 無料",
+    "視覚探索",
     "視覚探索テスト",
-    "結合特徴探索",
-    "特徴統合理論 トレイスマン",
-    "選択的視覚注意 測定",
-    "視覚走査トレーニング",
-    "目標検出テスト",
-    "周辺視野スキャン",
-    "視覚探索速度",
-    "符号探索 検査",
-    "視覚的注意 集中力"
+    "視覚的注意",
+    "視覚注意",
+    "選択的注意",
+    "視覚走査",
+    "注意力トレーニング",
+    "ターゲット検出",
+    "結合探索",
+    "周辺視野",
+    "記号探し",
+    "文字探し テスト"
 ],
   openGraph: {
-    title: "視覚探索テスト: 結合特徴スキャン＆標的検出 | SkillDrills",
-    description: "96個の回転妨害文字から指定標的を最速で見つけ出す無料視覚探索テスト。特徴統合理論に基づく高密度マトリクスで選択的注意と周辺視野スキャン速度を測定・強化。",
+    title: "文字探しテスト | 視覚探索・選択的注意 | SkillDrills",
+    description: "回転した文字の中から標的を探し、視覚探索と選択的注意を練習する無料オンライン課題。",
     type: "website",
     url: "https://skilldrills.online/ja/drills/visual/visual-recognition/visual-search",
     siteName: "SkillDrills",
   },
   twitter: {
     card: "summary_large_image",
-    title: "視覚探索テスト: 結合特徴スキャン＆標的検出 | SkillDrills",
-    description: "96個の回転妨害文字から指定標的を最速で見つけ出す無料視覚探索テスト。特徴統合理論に基づく高密度マトリクスで選択的注意と周辺視野スキャン速度を測定・強化。",
+    title: "文字探しテスト | 視覚探索・選択的注意 | SkillDrills",
+    description: "文字の中から標的を見つける視覚探索トレーニング。",
   },
   robots: { index: true, follow: true },
   alternates: {
@@ -59,7 +63,7 @@ const softwareApplicationSchema = {
   "description": "無料のオンライン結合視覚探索テスト。回転妨害文字が密集する12x8マトリクスから指定標的を素早く発見し、視覚探索速度と選択的注意力を測定。",
   "url": "https://skilldrills.online/ja/drills/visual/visual-recognition/visual-search",
   "publisher": { "@type": "Organization", "name": "SkillDrills", "url": "https://skilldrills.online" },
-  "dateModified": "2026-09-05"
+  "dateModified": "2026-09-20"
 };
 
 const webApplicationSchema = {
@@ -69,7 +73,7 @@ const webApplicationSchema = {
   "browserRequirements": "Requires HTML5 canvas and JavaScript",
   "url": "https://skilldrills.online/ja/drills/visual/visual-recognition/visual-search",
   "applicationCategory": "EducationalApplication",
-  "dateModified": "2026-09-05"
+  "dateModified": "2026-09-20"
 };
 
 const videoGameSchema = {
@@ -89,7 +93,7 @@ const howToSchema = {
   "@type": "HowTo",
   "name": "視覚探索速度と結合特徴スキャン能力を向上させるトレーニング法",
   "description": "トレイスマンの特徴統合理論とウォルフのガイド探索モデルに裏付けられた4段階の科学的スキャン実践プロトコル。",
-  "dateModified": "2026-09-05",
+  "dateModified": "2026-09-20",
   "step": [
     {
       "@type": "HowToStep",
@@ -125,11 +129,11 @@ const howToSchema = {
 const faqSchema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
-  "dateModified": "2026-09-05",
+  "dateModified": "2026-09-20",
   "mainEntity": [
     {
       "@type": "Question",
-      "name": "視覚探索テスト（Visual Search Test）とはどのような検査ですか？",
+      "name": "視覚探索テストとはどのような検査ですか？",
       "acceptedAnswer": {
         "@type": "Answer",
         "text": "高密度に散らばった妨害刺激の中から目標となるシンボルを特定する視覚走査速度、特徴統合効率、選択的注意力を測定するテストです。96個の回転文字から指定標的を45秒間で探します。"
@@ -169,7 +173,7 @@ const faqSchema = {
     },
     {
       "@type": "Question",
-      "name": "ラヴィの知覚負荷理論（Perceptual Load Theory）とは？",
+      "name": "ラヴィの知覚負荷理論とは？",
       "acceptedAnswer": {
         "@type": "Answer",
         "text": "課題の感覚的負荷が高いほど脳の処理リソースが完全に消費され、課題と無関係な刺激や雑念が遮断されて驚異的な集中状態が生まれるという理論です (Lavie, 1995)。"
@@ -221,10 +225,10 @@ export default function VisualSearchLocalePage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(howToSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(videoGameSchema) }} />
-      <VisualSearchClient copy={{ title: "視覚探索：結合特徴スキャントレーニング" }} />
+      <VisualSearchClient copy={{ title: "文字探し・視覚探索", subtitle: "回転した文字から標的を見つける" }} />
       <DrillGuide
         eyebrow="認知心理学 & 視覚探索メカニズム"
-        title="視覚探索・特徴統合理論・選択的注意の神経科学"
+        title="文字探しで鍛える視覚探索と選択的注意"
         sources={sources}
       >
         <p dangerouslySetInnerHTML={{ __html: `自然界の視覚環境において、探索対象が単独で孤立して現れることは極めて稀です。空港のレーダー監視、複雑な文書の校正、遮蔽物から一瞬だけ身を乗り出すFPSの敵プレイヤー索敵など、人間の視覚系は密集した視覚クラッター（雑然とした情報）の中から重要シグナルをミリ秒単位で弁別しなければなりません。視覚心理物理学では、この能力を<strong>視覚探索パラダイム</strong>を通じて評価し、空間的注意が特徴マップと時間軸上でどのように相互作用するかを解明してきました (Treisman &amp; Gelade, 1980; Wolfe, 1994)。` }} />
@@ -254,7 +258,7 @@ export default function VisualSearchLocalePage() {
 
         <h3>ズームレンズモデル &amp; 知覚負荷理論 (Lavie, 1995; Eriksen &amp; St. James, 1986)</h3>
         <p dangerouslySetInnerHTML={{ __html: `エリックセンのズームレンズモデル（Eriksen &amp; St. James, 1986）によれば、空間的注意は照射径を自在に伸縮できるスポットライトのように機能します。96セル全体へと照射野を広げると処理解像度は低下し、単一セルへと絞り込むと解像度は極限まで高まります。` }} />
-        <p dangerouslySetInnerHTML={{ __html: `さらにニリ・ラヴィの知覚負荷理論（Perceptual Load Theory, Lavie, 1995）は、注意の散漫さが感覚リソースの消費量に依存することを証明しています。負荷の低い条件下では余剰の注意が無関係な刺激へと漏れ出しますが、96文字の高密度マトリクス下で45秒の制限時間に追われる高負荷環境では、認知的処理帯域が完全に飽和し、雑念の混入が神経化学的にシャットアウトされます (Lavie, 1995; Bacon &amp; Egeth, 1994)。` }} />
+        <p dangerouslySetInnerHTML={{ __html: `さらにニリ・ラヴィの知覚負荷理論（Lavie, 1995）は、注意の散漫さが感覚リソースの消費量に依存することを説明します。負荷の低い条件下では余剰の注意が無関係な刺激へと漏れ出しますが、96文字の高密度マトリクス下で45秒の制限時間に追われる高負荷環境では、認知的処理帯域が飽和し、課題への集中が求められます (Lavie, 1995; Bacon &amp; Egeth, 1994)。` }} />
 
         <h3>視覚探索潜時・スコア性能基準（96セルマトリクス）</h3>
         <p dangerouslySetInnerHTML={{ __html: `以下の基準帯は、96セル（12x8）マトリクスにおける45秒間の客観的スコアを読み解くためのエディトリアル指標です：` }} />
@@ -328,7 +332,7 @@ export default function VisualSearchLocalePage() {
         <h3>よくある質問 (FAQ)</h3>
         <div className="space-y-4 my-6">
           <div>
-            <h4 className="font-semibold text-white">視覚探索テスト（Visual Search Test）とはどのような検査ですか？</h4>
+            <h4 className="font-semibold text-white">視覚探索テストとはどのような検査ですか？</h4>
             <p className="text-slate-300 mt-1">
               高密度に散らばった妨害刺激の中から目標となるシンボルを特定する視覚走査速度、特徴統合効率、選択的注意力を測定するテストです。96個の回転文字から指定標的を45秒間で探します。
             </p>
@@ -358,7 +362,7 @@ export default function VisualSearchLocalePage() {
             </p>
           </div>
           <div>
-            <h4 className="font-semibold text-white">ラヴィの知覚負荷理論（Perceptual Load Theory）とは？</h4>
+            <h4 className="font-semibold text-white">ラヴィの知覚負荷理論とは？</h4>
             <p className="text-slate-300 mt-1">
               課題の感覚的負荷が高いほど脳の処理リソースが完全に消費され、課題と無関係な刺激や雑念が遮断されて驚異的な集中状態が生まれるという理論です (Lavie, 1995)。
             </p>

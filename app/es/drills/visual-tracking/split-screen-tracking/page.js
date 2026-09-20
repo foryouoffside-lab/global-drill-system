@@ -1,25 +1,26 @@
 import SplitScreenTrackingClient from '@/app/drills/visual-tracking/split-screen-tracking/SplitScreenTrackingClientLoader';
 import DrillGuide from '@/components/drill/DrillGuide';
 import RelatedDrills from '@/components/drill/RelatedDrills';
+import DrillFooter from '@/components/drill/DrillFooter';
 import { getAlternateLanguages } from '@/lib/i18n/locales';
 import { pickSources } from '@/lib/drillSources';
 
 export const metadata = {
-  title: "Seguimiento en Pantalla Dividida – SkillDrills",
-  description: "Entrena la atencion visual dividida siguiendo dos objetivos ortogonales en pantalla dividida. Ejercicio ocular bilateral gratis sin registro.",
+  title: "Seguimiento visual en pantalla dividida | SkillDrills",
+  description: "Sigue dos objetivos en zonas separadas de la pantalla. Ejercicio gratuito con atención dividida, anclaje visual y error lateral.",
   keywords: [
-    "entrenamiento de atencion dividida pantalla dividida",
+    "entrenamiento de atención dividida pantalla dividida",
     "seguimiento visual en pantalla dividida",
-    "ejercicio ocular de atencion bilateral",
-    "vision periferica simultanea",
-    "rastreo ortogonal dual de blancos",
-    "seguimiento de multiples objetivos mot",
-    "evitar vision de tunel ejercicio",
-    "coordinacion visual bihemisferica",
-    "rastreo con pantalla dividida",
-    "agilidad visual de atencion difusa",
-    "ejercicio de enfoque periferico dual",
-    "entrenamiento de vision periferica gaming"
+    "ejercicio ocular de atención bilateral",
+    "visión periférica simultánea",
+    "seguimiento de múltiples objetivos",
+    "ejercicios de atención dividida",
+    "evitar visión de túnel ejercicio",
+    "coordinación visual bilateral",
+    "seguimiento con pantalla dividida",
+    "atención visual dividida entrenamiento",
+    "ejercicio de enfoque periférico",
+    "entrenamiento de visión periférica para juegos"
   ],
   alternates: {
     canonical: "https://skilldrills.online/es/drills/visual-tracking/split-screen-tracking",
@@ -27,8 +28,8 @@ export const metadata = {
   },
   robots: { index: true, follow: true },
   openGraph: {
-    title: "Seguimiento en Pantalla Dividida – SkillDrills",
-    description: "Entrena la atencion visual dividida siguiendo dos objetivos ortogonales en pantalla dividida. Ejercicio ocular bilateral gratis sin registro.",
+    title: "Seguimiento visual en pantalla dividida | SkillDrills",
+    description: "Sigue dos objetivos en zonas separadas de la pantalla. Ejercicio gratuito con atención dividida, anclaje visual y error lateral.",
     url: "https://skilldrills.online/es/drills/visual-tracking/split-screen-tracking",
     siteName: 'SkillDrills',
     locale: 'es_ES',
@@ -36,8 +37,8 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: "Seguimiento en Pantalla Dividida – SkillDrills",
-    description: "Entrena la atencion visual dividida siguiendo dos objetivos ortogonales en pantalla dividida. Ejercicio ocular bilateral gratis sin registro.",
+    title: "Seguimiento visual en pantalla dividida | SkillDrills",
+    description: "Sigue dos objetivos en zonas separadas de la pantalla. Ejercicio gratuito con atención dividida, anclaje visual y error lateral.",
   },
 };
 
@@ -83,7 +84,8 @@ const softwareApplicationSchema = {
     "price": "0.00",
     "priceCurrency": "USD"
   },
-  "description": "Herramienta de atencion visual dividida disenada para acondicionar el rastreo bimodal bilateral de blancos ortogonales sin dispersión sacádica."
+  "description": "Herramienta de práctica visual para observar atención dividida y seguimiento bilateral.",
+  "dateModified": "2026-09-20"
 };
 
 const webAppSchema = {
@@ -93,7 +95,8 @@ const webAppSchema = {
   "url": "https://skilldrills.online/es/drills/visual-tracking/split-screen-tracking",
   "applicationCategory": "SportsApplication",
   "operatingSystem": "Todos los navegadores modernos",
-  "browserRequirements": "Requiere soporte para JavaScript y HTML5 Canvas"
+  "browserRequirements": "Requiere soporte para JavaScript y HTML5 Canvas",
+  "dateModified": "2026-09-20"
 };
 
 const videoGameSchema = {
@@ -103,7 +106,8 @@ const videoGameSchema = {
   "description": "Reto de atencion visual dividida que exige seguir simultaneamente dos objetivos independientes en planos ortogonales.",
   "genre": ["Entrenamiento Visual", "Atención Dividida", "Entrenamiento de Reflejos"],
   "playMode": "SinglePlayer",
-  "gamePlatform": "Navegador Web"
+  "gamePlatform": "Navegador Web",
+  "dateModified": "2026-09-20"
 };
 
 const howToSchema = {
@@ -136,7 +140,8 @@ const howToSchema = {
       "name": "Suprima el Salto Sacádico Involuntario",
       "text": "Evite alternar la mirada de un lado a otro para no generar supresion sacadica que interrumpa la vision continua."
     }
-  ]
+  ],
+  "dateModified": "2026-09-20"
 };
 
 const faqSchema = {
@@ -223,7 +228,8 @@ const faqSchema = {
         "text": "Se aconsejan de 2 a 3 series de 60 segundos al dia (unos 5 minutos en total). Intervalos cortos y exigentes afianzan la adaptacion sin saturar el cerebro."
       }
     }
-  ]
+  ],
+  "dateModified": "2026-09-20"
 };
 
 const guideProps = {
@@ -270,18 +276,24 @@ const guideProps = {
       }
     ]
   },
+  steps: [
+    { title: "Fija la línea central", text: "Mira suavemente al centro de la pantalla y percibe ambos objetivos sin fijarte directamente en uno." },
+    { title: "Separa los dos movimientos", text: "Lee el movimiento vertical de la izquierda y el horizontal de la derecha como ritmos independientes." },
+    { title: "Compara las pérdidas laterales", text: "Después de cada ronda, comprueba qué objetivo se perdió y si se mantuvo el anclaje central." },
+    { title: "Aumenta la velocidad poco a poco", text: "Sube la velocidad solo cuando la precisión y el equilibrio entre lados sean constantes." }
+  ],
   faqs: faqSchema.mainEntity.map(item => ({
     q: item.name,
     a: item.acceptedAnswer.text
   })),
   sources: pickSources('pylyshyn1988', 'alvarez2005', 'green2006', 'cavanagh2005', 'woods2015', 'leigh2015'),
   related: [
-    { href: "/es/drills/visual-tracking/constant-slow-pursuit", label: "Seguimiento Lento Continuo (Constant Slow)" },
-    { href: "/es/drills/visual-tracking/directional-chaos-pursuit", label: "Seguimiento en Caos Direccional (Directional Chaos)" },
-    { href: "/es/drills/visual-tracking/dynamic-evasion-pursuit", label: "Seguimiento con Evasión Dinámica (Dynamic Evasion)" },
-    { href: "/es/drills/visual-tracking/ghosting-suppress-pursuit", label: "Supresión de Imágenes Fantasma (Ghosting Suppress)" },
-    { href: "/es/drills/visual-tracking/infinity-pursuit", label: "Ejercicio Ocular en Forma de Ocho (Infinity)" },
-    { href: "/es/drills/visual-tracking/sine-wave-pursuit", label: "Seguimiento en Onda Sinusoidal (Sine Wave)" }
+    { href: "/es/drills/visual-tracking/constant-slow-pursuit", label: "Seguimiento ocular lento y continuo" },
+    { href: "/es/drills/visual-tracking/directional-chaos-pursuit", label: "Seguimiento con cambios de dirección" },
+    { href: "/es/drills/visual-tracking/dynamic-evasion-pursuit", label: "Seguimiento de objetivos evasivos" },
+    { href: "/es/drills/visual-tracking/ghosting-suppress-pursuit", label: "Supresión de imágenes fantasma" },
+    { href: "/es/drills/visual-tracking/infinity-pursuit", label: "Ejercicio ocular en forma de ocho" },
+    { href: "/es/drills/visual-tracking/sine-wave-pursuit", label: "Seguimiento en onda sinusoidal" }
   ]
 };
 
@@ -295,11 +307,12 @@ export default function SplitScreenTrackingPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(howToSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
 
-      <SplitScreenTrackingClient copy={{ title: "Seguimiento en Pantalla Dividida", subtitle: "Prueba de Atención Visual Dividida" }} />
+      <SplitScreenTrackingClient copy={{ title: "Seguimiento visual en pantalla dividida", subtitle: "Sigue dos objetivos en zonas separadas" }} />
       <DrillGuide guide={guideProps} />
       <div className="max-w-6xl mx-auto px-4 pb-12">
         <RelatedDrills currentCategory="visual-tracking" currentHref="https://skilldrills.online/es/drills/visual-tracking/split-screen-tracking" />
       </div>
+      <DrillFooter />
     </>
   );
 }

@@ -52,6 +52,14 @@ export const metadata = {
   robots: { index: true, follow: true },
 };
 
+Object.assign(metadata, {
+  title: 'Pliométrie & Détente Verticale | Jeu de Réflexes | SkillDrills',
+  description: "Jeu gratuit de pliométrie et détente verticale dans le navigateur. Dosez l'impulsion, guidez la trajectoire aérienne et interceptez des cibles mobiles avec rythme et coordination.",
+  keywords: ['pliométrie', 'détente verticale', 'exercices de saut', 'entraînement au saut', 'coordination du saut', 'temps de suspension', 'jeu de réflexes', 'jeu de saut', 'timing du saut', 'trajectoire aérienne'],
+  openGraph: { ...metadata.openGraph, title: 'Pliométrie & Détente Verticale | Jeu de Réflexes | SkillDrills', description: "Jeu gratuit de pliométrie et détente verticale dans le navigateur. Dosez l'impulsion, guidez la trajectoire aérienne et interceptez des cibles mobiles avec rythme et coordination." },
+  twitter: { ...metadata.twitter, title: 'Pliométrie & Détente Verticale | Jeu de Réflexes | SkillDrills', description: "Jeu gratuit de pliométrie et détente verticale dans le navigateur. Dosez l'impulsion, guidez la trajectoire aérienne et interceptez des cibles mobiles avec rythme et coordination." },
+});
+
 const breadcrumbSchema = {
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
@@ -102,7 +110,7 @@ const softwareApplicationSchema = {
     "url": "https://skilldrills.online/fr"
   },
   "inLanguage": "fr-FR",
-  "dateModified": "2026-09-12"
+  "dateModified": "2026-09-20"
 };
 
 const webApplicationSchema = {
@@ -119,7 +127,7 @@ const webApplicationSchema = {
   },
   "url": "https://skilldrills.online/fr/drills/physical/fitness/jump-sequence",
   "inLanguage": "fr-FR",
-  "dateModified": "2026-09-12"
+  "dateModified": "2026-09-20"
 };
 
 const videoGameSchema = {
@@ -140,6 +148,8 @@ const videoGameSchema = {
     "Mobile"
   ],
   "applicationCategory": "Game",
+  "inLanguage": "fr-FR",
+  "dateModified": "2026-09-20",
   "offers": {
     "@type": "Offer",
     "price": "0",
@@ -150,7 +160,8 @@ const videoGameSchema = {
 const faqSchema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
-  "dateModified": "2026-09-12",
+  "inLanguage": "fr-FR",
+  "dateModified": "2026-09-20",
   "mainEntity": [
     {
       "@type": "Question",

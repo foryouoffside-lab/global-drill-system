@@ -2,17 +2,16 @@ import EliteNeuroSwitchClient from '@/app/drills/cognitive/processing-speed/reac
 import { getAlternateLanguages } from '@/lib/i18n/locales';
 import DrillGuide from '@/components/drill/DrillGuide';
 import RelatedDrills from '@/components/drill/RelatedDrills';
+import DrillFooter from '@/components/drill/DrillFooter';
 import { pickSources } from '@/lib/drillSources';
 
 export const metadata = {
-  title: "선택 반응시간 테스트・판단 속도 측정 – 힉의 법칙 인지속도 | SkillDrills",
-  description: "무료 브라우저 선택 반응시간(CRT) 측정 도구. 동적으로 뒤바뀌는 색상 규칙을 식별하고 올바른 표적을 타격하여 두뇌의 시지각 분별 속도와 의사결정 지연 시간을 밀리초 단위로 평가합니다.",
-  keywords: ["선택 반응시간 테스트", "판단 속도 측정", "힉의 법칙 인지속도", "반응속도 테스트 무료", "의사결정 속도 검사", "인지 처리속도 테스트", "반사신경 검사 온라인", "선택 반응 과제", "두뇌 인지 유연성", "CRT 테스트",
-    "돈더스 반응시간",
-    "선택 반응시간 평균"],
+  title: "반응속도 테스트 | 선택 반응 시간 훈련 | SkillDrills",
+  description: "무료 브라우저 반응속도 테스트: 바뀌는 규칙에 맞는 표적을 골라 선택 반응 시간과 판단 속도를 연습합니다. 임상 검사가 아닙니다.",
+  keywords: ["반응속도 테스트", "반응속도 테스트 무료", "반응속도 테스트 온라인", "선택 반응 시간", "선택 반응 테스트", "판단 속도", "반응속도 측정", "인지 처리 속도"],
   openGraph: {
-    title: "선택 반응시간 테스트・판단 속도 측정 – 힉의 법칙 인지속도 | SkillDrills",
-    description: "무료 브라우저 선택 반응시간(CRT) 측정 도구. 동적으로 뒤바뀌는 색상 규칙을 식별하고 올바른 표적을 타격하여 두뇌의 시지각 분별 속도와 의사결정 지연 시간을 밀리초 단위로 평가합니다.",
+    title: "반응속도 테스트 | 선택 반응 시간 훈련 | SkillDrills",
+    description: "무료 브라우저 반응속도 테스트: 바뀌는 규칙에 맞는 표적을 골라 선택 반응 시간과 판단 속도를 연습합니다. 임상 검사가 아닙니다.",
     type: 'article',
     url: 'https://skilldrills.online/ko/drills/cognitive/processing-speed/reaction-time',
     siteName: 'SkillDrills',
@@ -20,8 +19,8 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: "선택 반응시간 테스트・판단 속도 측정 – 힉의 법칙 인지속도 | SkillDrills",
-    description: "무료 브라우저 선택 반응시간(CRT) 측정 도구. 동적으로 뒤바뀌는 색상 규칙을 식별하고 올바른 표적을 타격하여 두뇌의 시지각 분별 속도와 의사결정 지연 시간을 밀리초 단위로 평가합니다.",
+    title: "반응속도 테스트 | 선택 반응 시간 훈련 | SkillDrills",
+    description: "무료 브라우저 반응속도 테스트: 바뀌는 규칙에 맞는 표적을 골라 선택 반응 시간과 판단 속도를 연습합니다. 임상 검사가 아닙니다.",
   },
   robots: { index: true, follow: true },
   alternates: {
@@ -80,7 +79,7 @@ const softwareApplicationSchema = {
     "url": "https://skilldrills.online"
   },
   "inLanguage": "ko-KR",
-  "dateModified": "2026-09-11"
+    "dateModified": "2026-09-20"
 };
 
 const webApplicationSchema = {
@@ -97,7 +96,7 @@ const webApplicationSchema = {
   },
   "url": "https://skilldrills.online/ko/drills/cognitive/processing-speed/reaction-time",
   "inLanguage": "ko-KR",
-  "dateModified": "2026-09-11"
+    "dateModified": "2026-09-20"
 };
 
 const videoGameSchema = {
@@ -315,11 +314,39 @@ export default function LocalizedCognitivePage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(howToSchema) }}
       />
-      <EliteNeuroSwitchClient copy={{ title: "선택 반응시간 테스트・판단 속도 측정 – 힉의 법칙 인지속도" }} />
+      <EliteNeuroSwitchClient
+        copy={{
+          title: "반응속도 테스트",
+          subtitle: "색상 규칙 전환에 맞춰 표적을 고르는 선택 반응·판단 속도 훈련",
+          startTitle: "반응속도 테스트",
+          startSubtitle: "선택 반응 • 판단 속도",
+          stageCaption: "상단 규칙과 같은 색 표적을 빠르게 누르세요. 규칙과 색상이 계속 바뀝니다.",
+          rulesTitle: "드릴 안내 및 점수 시스템",
+          aboutTitle: "반응속도 테스트란?",
+          faqTitle: "자주 묻는 질문",
+          labels: { score: "점수", time: "시간", level: "레벨", bestScore: "최고 점수", timeLeft: "남은 시간", rule: "규칙", ready: "준비", accuracy: "정확도", hits: "성공 횟수", peakLevel: "최고 레벨", maxCombo: "최대 콤보" },
+          ruleBanner: { RED: "빨간 표적", BLUE: "파란 표적" },
+          aboutLead: "선택 반응시간은 여러 자극 중 규칙에 맞는 반응을 고르는 데 걸리는 시간입니다. 선택지가 늘면 판단 시간도 대체로 로그 형태로 증가한다는 힉의 법칙과 관련됩니다.",
+          aboutText: "이 드릴은 두 색 표적을 구별하고 현재 규칙에 맞는 표적을 선택하는 과정을 측정합니다. 점수에는 시각 처리, 판단, 손가락 움직임, 기기 지연이 함께 반영됩니다. 단순 반응 테스트와 달리 규칙이 바뀌므로 색을 본 뒤 올바른 행동을 선택해야 합니다.",
+          aboutCards: [
+            { title: "누구에게 유용한가요?", desc: "게이머, 학생, 운전자처럼 빠른 시각 판단과 정확한 반응을 연습하려는 사람에게 적합합니다." },
+            { title: "훈련하는 능력", desc: "선택 반응시간, 시각적 분별, 운동 반응, 규칙 전환에 대한 주의력을 연습합니다." },
+            { title: "규칙 전환 민첩성", desc: "활성 색상 규칙이 바뀔 때 반응 기준을 빠르게 갱신하는 능력을 자극합니다." }
+          ],
+          rulesItems: [
+            { num: "1", text: "활성 규칙", highlight: "빨강 / 파랑", result: "상단 배너 따르기" },
+            { num: "2", text: "정답 표적", highlight: "+100점", result: "콤보·레벨 배율 적용" },
+            { num: "3", text: "규칙 전환", highlight: "자동 변경", result: "레벨이 오를수록 빨라짐" },
+            { num: "4", text: "오답 / 시간 초과", highlight: "콤보 초기화", result: "설정 시 -0.8초" }
+          ],
+          faqItems: faqSchema.mainEntity.map((e) => ({ q: e.name, a: e.acceptedAnswer.text }))
+        }}
+      />
       <DrillGuide {...guideProps} />
       <div className="max-w-6xl mx-auto px-4 pb-12">
         <RelatedDrills currentCategory="cognitive" currentHref="https://skilldrills.online/ko/drills/cognitive/processing-speed/reaction-time" />
       </div>
+      <DrillFooter />
     </>
   );
 }

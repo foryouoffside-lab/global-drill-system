@@ -2,17 +2,16 @@ import ConcentrationStaminaClient from '@/app/drills/cognitive/attention/concent
 import { getAlternateLanguages } from '@/lib/i18n/locales';
 import DrillGuide from '@/components/drill/DrillGuide';
 import RelatedDrills from '@/components/drill/RelatedDrills';
+import DrillFooter from '@/components/drill/DrillFooter';
 import { pickSources } from '@/lib/drillSources';
 
 export const metadata = {
-  title: "Konzentrationstest – Daueraufmerksamkeit | SkillDrills",
-  description: "Kostenloser Online-Konzentrationstest (CPT): Teste Daueraufmerksamkeit, Impulskontrolle und kognitive Ausdauer bei dynamischen Regelwechseln direkt im Browser.",
-  keywords: ["Konzentrationstest", "Daueraufmerksamkeit Test", "CPT Test Online", "Aufmerksamkeitsspanne Test", "Vigilanztest Online", "Konzentrationsfahigkeit Test", "Impulskontrolle Test", "Gehirntraining Konzentration", "Fokus Test Kostenlos", "Aufmerksamkeitsdefizit Test",
-    "konzentrationstest online kostenlos",
-    "vigilanz aufmerksamkeit test"],
+  title: "Konzentrationstest | Daueraufmerksamkeit | SkillDrills",
+  description: "Kostenloser Konzentrationstest im Browser: Prüfe Daueraufmerksamkeit, Impulskontrolle und Regelwechsel. Kein klinischer Diagnosetest.",
+  keywords: ["Konzentrationstest", "Konzentrationstest online", "Konzentrationstest kostenlos", "Daueraufmerksamkeit Test", "Aufmerksamkeitstest", "Vigilanztest online", "Impulskontrolle Test", "Fokus Test kostenlos", "Gehirntraining Konzentration", "CPT Test online", "Konzentration üben"],
   openGraph: {
-    title: "Konzentrationstest – Daueraufmerksamkeit | SkillDrills",
-    description: "Kostenloser Online-Konzentrationstest (CPT): Teste Daueraufmerksamkeit, Impulskontrolle und kognitive Ausdauer bei dynamischen Regelwechseln direkt im Browser.",
+    title: "Konzentrationstest | Daueraufmerksamkeit | SkillDrills",
+    description: "Kostenloser Konzentrationstest im Browser: Prüfe Daueraufmerksamkeit, Impulskontrolle und Regelwechsel. Kein klinischer Diagnosetest.",
     type: 'article',
     url: 'https://skilldrills.online/de/drills/cognitive/attention/concentration-stamina',
     siteName: 'SkillDrills',
@@ -20,8 +19,8 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: "Konzentrationstest – Daueraufmerksamkeit | SkillDrills",
-    description: "Kostenloser Online-Konzentrationstest (CPT): Teste Daueraufmerksamkeit, Impulskontrolle und kognitive Ausdauer bei dynamischen Regelwechseln direkt im Browser.",
+    title: "Konzentrationstest | Daueraufmerksamkeit | SkillDrills",
+    description: "Kostenloser Konzentrationstest im Browser: Prüfe Daueraufmerksamkeit, Impulskontrolle und Regelwechsel. Kein klinischer Diagnosetest.",
   },
   robots: { index: true, follow: true },
   alternates: {
@@ -80,7 +79,7 @@ const softwareApplicationSchema = {
     "url": "https://skilldrills.online"
   },
   "inLanguage": "de-DE",
-  "dateModified": "2026-09-11"
+      "dateModified": "2026-09-20"
 };
 
 const webApplicationSchema = {
@@ -97,7 +96,7 @@ const webApplicationSchema = {
   },
   "url": "https://skilldrills.online/de/drills/cognitive/attention/concentration-stamina",
   "inLanguage": "de-DE",
-  "dateModified": "2026-09-11"
+  "dateModified": "2026-09-20"
 };
 
 const videoGameSchema = {
@@ -251,9 +250,9 @@ const howToSchema = {
 const guideProps = {
   sources: pickSources('mackworth1948', 'parasuraman1979', 'robertson1997', 'monsell2003', 'broadbent1958', 'woods2015'),
   intro: {
-    title: "Konzentrationstest – Daueraufmerksamkeit & CPT Test Online",
+    title: "Konzentrationstest und Daueraufmerksamkeit: Leitfaden",
     paragraphs: [
-      "Kostenloser Online-Konzentrationstest (Continuous Performance Test). Teste deine Daueraufmerksamkeit, Impulskontrolle und kognitive Ausdauer bei dynamischen Regelwechseln.",
+      "Dieser kostenlose Konzentrationstest im Browser erfasst Daueraufmerksamkeit, Impulskontrolle und Regelwechsel als nicht-klinische Selbstprüfung. Die Ergebnisse hängen von Tagesform und Übung ab und ersetzen keine medizinische Diagnostik.",
       "Dass die menschliche Signalerkennungsleistung bei monotoner Uberwachung bereits nach 20 bis 30 Minuten drastisch nachlasst.",
       "Weil das standige Umschalten alle 10 Sekunden das Arbeitsgedachtnis fordert und task-set inertia (Monsell, 2003) uberwinden muss.",
     ],
@@ -315,11 +314,17 @@ export default function LocalizedCognitivePage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(howToSchema) }}
       />
-      <ConcentrationStaminaClient copy={{ title: "Konzentrationstest – Daueraufmerksamkeit & CPT Test Online" }} />
+      <ConcentrationStaminaClient copy={{
+        title: "Konzentrationstest | Daueraufmerksamkeit", subtitle: "Nicht-klinische Selbstprüfung für Daueraufmerksamkeit, Zielerkennung und Impulskontrolle",
+        statScore: "Punkte", statTime: "Restzeit", statLevel: "Level", statBest: "Highscore", ruleLabel: "Regel", vowels: "Vokale (A E I O U)", primes: "Primzahlen (2 3 5 7)", startTitle: "Konzentrationstest", startSubtitle: "Daueraufmerksamkeit • CPT-Training", getReady: "Bereit machen", flashTitle: "Fehlblitz", soundTitle: "Ton", newBest: "Neuer Highscore", points: "Punkte", accuracy: "Genauigkeit", misses: "Fehler", peakLevel: "Höchstes Level", playAgain: "Erneut spielen", shareScore: "Score teilen", exitDrill: "Training beenden",
+        caption: "Reagiere nur auf Reize, die zur aktiven Regel passen, und unterdrücke Ablenkungen bei jedem Regelwechsel.", rulesTitle: "Anleitung und Punktesystem", ruleItems: [{ text: "Zielregel", highlight: "Wechselt alle 10 Sekunden", result: "Vokale ↔ Primzahlen" }, { text: "Zieltreffer", highlight: "+100 PKT", result: "Tippen oder Leertaste" }, { text: "Kein Ziel", highlight: "Unterdrücken", result: "Nicht reagieren" }, { text: "Fehlreaktion", highlight: "Strafe", result: "Beeinflusst Genauigkeit" }],
+        aboutTitle: "Über den Konzentrationstest", aboutLead: "Bei längerer Überwachung seltener Signale kann Daueraufmerksamkeit sinken. Diese kurze Selbstprüfung erfasst Regelwechsel, Zielerkennung und Fehlreaktionen; sie ist kein klinischer Diagnosetest.", aboutText: "Daueraufmerksamkeit bedeutet, wichtige Signale auch in einer monotonen Reizfolge zuverlässig zu erkennen. Wiederhole den Test unter gleichen Bedingungen und beobachte deinen Verlauf.\n\nSchlaf, Stress, Bildschirm und Vertrautheit beeinflussen das Ergebnis; interpretiere es nicht als medizinische Diagnose.", audienceTitle: "Für wen ist der Test geeignet?", audienceText: "Für Lernende vor langen Prüfungen, Gamer mit konstantem Präzisionsbedarf und Menschen in Berufen mit hoher Wachsamkeit.", skillsTitle: "Trainierte Fähigkeiten", skillsText: "Daueraufmerksamkeit, Zielerkennung, Wachsamkeit unter Ermüdung und Impulskontrolle.", flexibilityTitle: "Kognitive Flexibilität", flexibilityText: "Der Wechsel zwischen Vokalen und Primzahlen alle 10 Sekunden trainiert schnelles Umschalten zwischen Aufgabenregeln."
+      }} />
       <DrillGuide {...guideProps} />
       <div className="max-w-6xl mx-auto px-4 pb-12">
         <RelatedDrills currentCategory="cognitive" currentHref="https://skilldrills.online/de/drills/cognitive/attention/concentration-stamina" />
       </div>
+      <DrillFooter />
     </>
   );
 }

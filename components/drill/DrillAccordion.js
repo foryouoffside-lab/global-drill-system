@@ -3,7 +3,7 @@
 import React from 'react';
 import { ChevronDown } from 'lucide-react';
 
-export default function DrillAccordion({ id, title, subtitle = null, icon: Icon = null, iconColor = 'text-emerald-400', iconBg = 'bg-emerald-500/10 border-emerald-500/20', isOpen, onToggle, children }) {
+export default function DrillAccordion({ id, title, subtitle = null, icon: Icon = null, iconColor = 'text-emerald-400', iconBg = 'bg-emerald-500/10 border-emerald-500/20', singleLineTitle = true, isOpen, onToggle, children }) {
   return (
     <div className="mt-2.5 border border-white/[0.07] bg-white/[0.012] rounded-xl overflow-hidden transition-colors duration-200 hover:border-white/[0.11]">
       <button 
@@ -13,14 +13,14 @@ export default function DrillAccordion({ id, title, subtitle = null, icon: Icon 
         id={`accordion-header-${id}`}
         className="w-full px-5 py-4 flex items-center justify-between text-left focus:outline-none hover:bg-white/[0.02] transition-colors cursor-pointer"
       >
-        <div className="flex items-center gap-3">
+        <div className="flex items-center gap-3 min-w-0">
           {Icon && (
             <div className={`p-2 rounded-lg border ${iconBg} ${iconColor}`}>
               <Icon className="w-5 h-5" />
             </div>
           )}
-          <div>
-            <h2 className="text-[15px] font-bold text-white tracking-tight">{title}</h2>
+          <div className="min-w-0">
+            <h2 className={`text-[15px] font-bold text-white tracking-tight ${singleLineTitle ? 'truncate whitespace-nowrap' : ''}`}>{title}</h2>
             {subtitle && <p className="text-xs text-gray-300 mt-0.5">{subtitle}</p>}
           </div>
         </div>

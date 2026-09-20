@@ -22,18 +22,18 @@ import { pickSources } from '@/lib/drillSources';
 // ============================================================
 
 export const metadata = {
-  title: "Jogo de Desviar o Mouse – Teste de Reflexos | SkillDrills",
-  description: "Jogo de desviar o mouse online grátis. Esquive-se de projéteis velozes com o cursor para medir reflexos motores e tempo de reação no navegador.",
+  title: "Jogo de Desviar o Mouse | Teste de Reflexos",
+  description: "Jogo de desviar o mouse grátis no navegador. Esquive projéteis, sobreviva mais tempo e treine reflexos e controle fino.",
   keywords: [
     "jogo de desviar o mouse",
     "jogo de desviar com o mouse",
     "teste de reflexo desviar",
     "jogo de esquiva mouse",
-    "treino de reflexo mouse",
+    "treino de reflexo com mouse",
     "teste de reflexos online",
-    "jogo de desviar de projeteis",
-    "treino de micro movimentacao mouse",
-    "coordenação motora fina mouse",
+    "jogo de desviar de projéteis",
+    "controle fino do mouse",
+    "coordenação motora com mouse",
     "teste de agilidade e reflexo"
   ],
   alternates: {
@@ -41,8 +41,8 @@ export const metadata = {
     languages: getAlternateLanguages('/drills/physical/reflex-training/quick-dodge'),
   },
   openGraph: {
-    title: "Jogo de Desviar o Mouse – Teste de Reflexos | SkillDrills",
-    description: "Jogo de desviar o mouse online grátis. Esquive-se de projéteis velozes com o cursor para medir reflexos motores e tempo de reação no navegador.",
+    title: "Jogo de Desviar o Mouse | Teste de Reflexos",
+    description: "Jogo de desviar o mouse grátis no navegador. Esquive projéteis, sobreviva mais tempo e treine reflexos e controle fino.",
     url: 'https://skilldrills.online/pt/drills/physical/reflex-training/quick-dodge',
     siteName: 'SkillDrills',
     locale: 'pt_BR',
@@ -50,8 +50,8 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: "Jogo de Desviar o Mouse – Teste de Reflexos | SkillDrills",
-    description: "Jogo de desviar o mouse online grátis. Esquive-se de projéteis velozes com o cursor para medir reflexos motores e tempo de reação no navegador.",
+    title: "Jogo de Desviar o Mouse | Teste de Reflexos",
+    description: "Jogo de desviar o mouse grátis no navegador. Esquive projéteis, sobreviva mais tempo e treine reflexos e controle fino.",
   },
   robots: { index: true, follow: true },
 };
@@ -93,6 +93,10 @@ const softwareApplicationSchema = {
   "name": "Jogo de Desviar o Mouse e Treinador de Esquiva Kinetica",
   "applicationCategory": "HealthApplication",
   "operatingSystem": "All",
+  "url": "https://skilldrills.online/pt/drills/physical/reflex-training/quick-dodge",
+  "description": "Jogo grátis para desviar de projéteis com o mouse e treinar reflexos, sobrevivência e controle fino.",
+  "inLanguage": "pt-BR",
+  "dateModified": "2026-09-20",
   "offers": {
     "@type": "Offer",
     "price": "0",
@@ -104,6 +108,10 @@ const webApplicationSchema = {
   "@context": "https://schema.org",
   "@type": "WebApplication",
   "name": "Simulador de Esquiva de Projéteis e Modelos Preditivos Cerebelares",
+  "url": "https://skilldrills.online/pt/drills/physical/reflex-training/quick-dodge",
+  "description": "Drill de navegador para desviar de projéteis e praticar reflexos, tempo de reação e controle do mouse.",
+  "inLanguage": "pt-BR",
+  "dateModified": "2026-09-20",
   "browserRequirements": "Requires JavaScript and HTML5 Canvas support",
   "genre": "Training, Reflex, Evasion, Esports"
 };
@@ -111,8 +119,11 @@ const webApplicationSchema = {
 const videoGameSchema = {
   "@context": "https://schema.org",
   "@type": "VideoGame",
-  "name": "Quick Dodge Cursor Evasion Challenge",
+  "name": "Jogo de Desviar o Mouse e Teste de Reflexos",
   "gamePlatform": "Web Browser",
+  "url": "https://skilldrills.online/pt/drills/physical/reflex-training/quick-dodge",
+  "inLanguage": "pt-BR",
+  "dateModified": "2026-09-20",
   "applicationSubCategory": "Esports Motor Chronometry Drill"
 };
 
@@ -328,8 +339,8 @@ export default function LocalizedQuickDodgePagePt() {
       />
       <QuickDodgeClient
         copy={{
-          title: "Jogo de Desviar o Mouse & Teste de Reflexos",
-          subtitle: "Esquiva Cinética de Projéteis e Modelos Preditivos • 15 Níveis de Dificuldade",
+          title: "Jogo de Desviar o Mouse",
+          subtitle: "Desvie dos projéteis e sobreviva mais",
           description: "Desviar de um perseguidor é um problema de previsão, não de mera reação: no momento em que você enxerga onde ele está, ele já se moveu. Movimentos rápidos são planejados antecipadamente por modelos internos do cerebelo (Kawato, 1999) em vez de corrigidos continuamente em voo, pois a visão necessita de 100 a 150 ms para intervir (Woodworth, 1899). Conforme a velocidade sobe, a margem de correção desaparece e apenas a predição assegura a sobrevivência.",
           badge: "Teste de Esquiva e Reflexos",
           hudLabels: {

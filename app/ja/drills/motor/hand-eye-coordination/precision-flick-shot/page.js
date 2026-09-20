@@ -6,25 +6,16 @@ import RelatedDrills from '@/components/drill/RelatedDrills';
 import { pickSources } from '@/lib/drillSources';
 
 export const metadata = {
-  title: 'フリックエイム練習・マウス精度テスト – 反射フリック速度と着弾精度診断 | SkillDrills',
-  description: '無料ブラウザ完結のフリックエイム練習・マウス精度テストツール。ターゲットへの瞬時エイム（フリックショット）、着弾時間、停止精度、ミス率をミリ秒単位で精密測定。Apex・VALORANT・Overwatchのエイム向上に。',
+  title: 'フリックエイム練習｜マウス精度テスト | SkillDrills',
+  description: '無料のブラウザ型エイム練習。フリック精度、ターゲット捕捉時間、着弾率を測定し、FPSの初弾エイムを鍛えます。',
   keywords: [
-    'フリック エイム 練習',
-    'エイム 精度 テスト',
-    'フリックショット 練習',
-    'マウス 精度 テスト',
-    'フリック エイム',
-    'エイム 練習',
-    'マイクロフリック',
-    'FPS エイム 練習',
-    'フリック 速度 測定',
-    'マウス エイム トレーナー',
-    '反動 制御 エイム',
-    '初弾 命中 テスト',
+    'フリックエイム練習', 'エイム練習', 'エイムテスト', 'マウス精度テスト',
+    'フリックショット練習', 'FPS エイム練習', '初弾命中テスト', 'ターゲット切り替え練習',
+    'フリック速度測定', 'マウスエイム練習', 'マイクロフリック', '着弾精度テスト',
   ],
   openGraph: {
-    title: 'フリックエイム練習・マウス精度テスト – 反射フリック速度と着弾精度診断 | SkillDrills',
-    description: '無料ブラウザ完結のフリックエイム練習・マウス精度テストツール。ターゲットへの瞬時エイム（フリックショット）、着弾時間、停止精度、ミス率をミリ秒単位で精密測定。Apex・VALORANT・Overwatchのエイム向上に。',
+    title: 'フリックエイム練習｜マウス精度テスト | SkillDrills',
+    description: '無料のブラウザ型エイム練習。フリック精度、ターゲット捕捉時間、着弾率を測定し、FPSの初弾エイムを鍛えます。',
     type: 'article',
     url: 'https://skilldrills.online/ja/drills/motor/hand-eye-coordination/precision-flick-shot',
     siteName: 'SkillDrills',
@@ -32,8 +23,8 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'フリックエイム練習・マウス精度テスト – 反射フリック速度と着弾精度診断 | SkillDrills',
-    description: '無料ブラウザ完結のフリックエイム練習・マウス精度テストツール。ターゲットへの瞬時エイム（フリックショット）、着弾時間、停止精度、ミス率をミリ秒単位で精密測定。Apex・VALORANT・Overwatchのエイム向上に。',
+    title: 'フリックエイム練習｜マウス精度テスト | SkillDrills',
+    description: '無料のブラウザ型エイム練習。フリック精度、ターゲット捕捉時間、着弾率を測定し、FPSの初弾エイムを鍛えます。',
   },
   robots: { index: true, follow: true },
   alternates: {
@@ -83,7 +74,8 @@ const softwareApplicationSchema = {
   description: 'ブラウザ上で完結する無料フリックエイム測定ツール。弾道的スナップ速度、ブルズアイ中心着弾率、減速ブレーキ制御を解析。',
   url: 'https://skilldrills.online/ja/drills/motor/hand-eye-coordination/precision-flick-shot',
   publisher: { '@type': 'Organization', name: 'SkillDrills', url: 'https://skilldrills.online' },
-  dateModified: '2026-09-16',
+  inLanguage: 'ja-JP',
+  dateModified: '2026-09-20',
 };
 
 const webApplicationSchema = {
@@ -93,7 +85,8 @@ const webApplicationSchema = {
   browserRequirements: 'HTML5 CanvasおよびJavaScript対応ブラウザ',
   url: 'https://skilldrills.online/ja/drills/motor/hand-eye-coordination/precision-flick-shot',
   applicationCategory: 'EducationalApplication',
-  dateModified: '2026-09-16',
+  inLanguage: 'ja-JP',
+  dateModified: '2026-09-20',
 };
 
 const videoGameSchema = {
@@ -105,13 +98,15 @@ const videoGameSchema = {
   genre: ['射撃ゲーム', 'アクション', 'eスポーツトレーニング'],
   gamePlatform: ['Web Browser', 'Desktop'],
   applicationCategory: 'Game',
+  inLanguage: 'ja-JP',
   offers: { '@type': 'Offer', price: '0', priceCurrency: 'JPY' },
 };
 
 const faqSchema = {
   '@context': 'https://schema.org',
   '@type': 'FAQPage',
-  dateModified: '2026-09-16',
+  inLanguage: 'ja-JP',
+  dateModified: '2026-09-20',
   mainEntity: [
     {
       '@type': 'Question',
@@ -199,6 +194,7 @@ const faqSchema = {
 const howToSchema = {
   '@context': 'https://schema.org',
   '@type': 'HowTo',
+  inLanguage: 'ja-JP',
   name: '高精度フリックショットトレーニング方法',
   description: '弾道的マウスクリック、ブルズアイ中心着弾、減速ブレーキング習得のための4ステップ。',
   step: [
@@ -329,7 +325,7 @@ const guideProps = {
 
 const copyJa = {
   title: "フリックエイム練習・マウス精度テスト",
-  subtitle: "ターゲット減衰 & ブルズアイ・マイクロフリック • 無制限レベル進行",
+  subtitle: "フリック精度 · 初弾命中率を測定",
   startButtonText: "訓練開始",
   playAgainText: "もう一度挑戦",
   shareText: "スコアを共有",

@@ -6,25 +6,16 @@ import RelatedDrills from '@/components/drill/RelatedDrills';
 import { pickSources } from '@/lib/drillSources';
 
 export const metadata = {
-  title: '플릭 에임 연습・마우스 정확도 테스트 – 순간 반응 에임 및 정밀도 측정 | SkillDrills',
-  description: '브라우저에서 바로 즐기는 무료 플릭 에임 연습 및 마우스 정확도 테스트. 타깃을 향한 순간 스냅 이동, 중심 타격 정밀도, 플릭 반응 속도를 밀리초 단위로 진단하여 발로란트 및 오버워치 에임 능력을 극대화합니다.',
+  title: '플릭샷 에임 연습 | 마우스 정확도 테스트 | SkillDrills',
+  description: '무료 브라우저 플릭샷 에임 연습. 타깃 포착 시간, 명중률, 불스아이 비율을 측정하고 발로란트·오버워치 에임을 연습하세요.',
   keywords: [
-    '플릭 에임 연습',
-    '마우스 정확도 테스트',
-    '플릭샷 연습',
-    '에임 연습',
-    '에임 트레이너',
-    '발로란트 에임 연습',
-    '플릭 에임',
-    '마우스 반응속도',
-    '에임 정밀도',
-    'FPS 플릭 연습',
-    '끌어치기 연습',
-    '에임 브레이킹',
+    '플릭샷 에임 연습', '에임 테스트', '마우스 에임 연습', '마우스 정확도 테스트',
+    '조준 연습', '플릭샷 정확도 테스트', '발로란트 에임 연습', '표적 전환 연습',
+    '끌어치기 연습', '에임 정밀도', 'FPS 에임 트레이너', '중심 명중률',
   ],
   openGraph: {
-    title: '플릭 에임 연습・마우스 정확도 테스트 – 순간 반응 에임 및 정밀도 측정 | SkillDrills',
-    description: '브라우저에서 바로 즐기는 무료 플릭 에임 연습 및 마우스 정확도 테스트. 타깃을 향한 순간 스냅 이동, 중심 타격 정밀도, 플릭 반응 속도를 밀리초 단위로 진단하여 발로란트 및 오버워치 에임 능력을 극대화합니다.',
+    title: '플릭샷 에임 연습 | 마우스 정확도 테스트 | SkillDrills',
+    description: '무료 브라우저 플릭샷 에임 연습. 타깃 포착 시간, 명중률, 불스아이 비율을 측정하고 발로란트·오버워치 에임을 연습하세요.',
     type: 'article',
     url: 'https://skilldrills.online/ko/drills/motor/hand-eye-coordination/precision-flick-shot',
     siteName: 'SkillDrills',
@@ -32,8 +23,8 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: '플릭 에임 연습・마우스 정확도 테스트 – 순간 반응 에임 및 정밀도 측정 | SkillDrills',
-    description: '브라우저에서 바로 즐기는 무료 플릭 에임 연습 및 마우스 정확도 테스트. 타깃을 향한 순간 스냅 이동, 중심 타격 정밀도, 플릭 반응 속도를 밀리초 단위로 진단하여 발로란트 및 오버워치 에임 능력을 극대화합니다.',
+    title: '플릭샷 에임 연습 | 마우스 정확도 테스트 | SkillDrills',
+    description: '무료 브라우저 플릭샷 에임 연습. 타깃 포착 시간, 명중률, 불스아이 비율을 측정하고 발로란트·오버워치 에임을 연습하세요.',
   },
   robots: { index: true, follow: true },
   alternates: {
@@ -83,7 +74,8 @@ const softwareApplicationSchema = {
   description: '브라우저 기반 무료 플릭 에임 트레이너. 탄도학적 스냅 속도, 불스아이 중심 타격률, 감속 제어 능력을 측정합니다.',
   url: 'https://skilldrills.online/ko/drills/motor/hand-eye-coordination/precision-flick-shot',
   publisher: { '@type': 'Organization', name: 'SkillDrills', url: 'https://skilldrills.online' },
-  dateModified: '2026-09-16',
+  inLanguage: 'ko-KR',
+  dateModified: '2026-09-20',
 };
 
 const webApplicationSchema = {
@@ -93,7 +85,8 @@ const webApplicationSchema = {
   browserRequirements: 'HTML5 Canvas 및 자바스크립트 지원 최신 브라우저',
   url: 'https://skilldrills.online/ko/drills/motor/hand-eye-coordination/precision-flick-shot',
   applicationCategory: 'EducationalApplication',
-  dateModified: '2026-09-16',
+  inLanguage: 'ko-KR',
+  dateModified: '2026-09-20',
 };
 
 const videoGameSchema = {
@@ -105,13 +98,15 @@ const videoGameSchema = {
   genre: ['슈팅 게임', '액션', 'e스포츠 트레이닝'],
   gamePlatform: ['Web Browser', 'Desktop'],
   applicationCategory: 'Game',
+  inLanguage: 'ko-KR',
   offers: { '@type': 'Offer', price: '0', priceCurrency: 'KRW' },
 };
 
 const faqSchema = {
   '@context': 'https://schema.org',
   '@type': 'FAQPage',
-  dateModified: '2026-09-16',
+  inLanguage: 'ko-KR',
+  dateModified: '2026-09-20',
   mainEntity: [
     {
       '@type': 'Question',
@@ -199,6 +194,7 @@ const faqSchema = {
 const howToSchema = {
   '@context': 'https://schema.org',
   '@type': 'HowTo',
+  inLanguage: 'ko-KR',
   name: '플릭 에임 및 마우스 정밀 타격 훈련 가이드',
   description: '탄도학적 마우스 스냅, 불스아이 중심 타격, 감속 브레이킹 완성 4단계 훈련.',
   step: [
@@ -329,7 +325,7 @@ const guideProps = {
 
 const copyKo = {
   title: "플릭 에임 연습・마우스 정확도 테스트",
-  subtitle: "동적 타깃 축소 & 불스아이 마이크로 플릭 • 무제한 레벨 스케일링",
+  subtitle: "플릭 정확도 · 중심 명중률 측정",
   startButtonText: "훈련 시작",
   playAgainText: "다시 도전",
   shareText: "결과 공유",

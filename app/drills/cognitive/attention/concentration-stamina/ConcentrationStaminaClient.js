@@ -13,13 +13,30 @@ import { getFpsScoreGrade } from '../../../../../lib/scoringEngine';
 import { getDifficultyProgress, getStartLevel } from '../../../../../lib/drillDifficulty';
 import useDrillFlash from '../../../../../lib/useDrillFlash';
 import useUnexpectedExitGuard from '../../../../../lib/useUnexpectedExitGuard';
-import DrillFooter from '../../../../../components/drill/DrillFooter';
 import DrillCountdown from '../../../../../components/drill/DrillCountdown';
 import DrillAccordion from '../../../../../components/drill/DrillAccordion';
 import DrillFlashOverlay from '../../../../../components/drill/DrillFlashOverlay';
 import FpsStartCard from '../../../../../components/drill/FpsStartCard';
 import generateShareCard, { shareScoreCard } from '../../../../../components/ShareScoreCard';
 import useImmersiveMode from '@/lib/useImmersiveMode';
+
+function RuleItem({ num, text, highlight = '', result }) {
+  return (
+    <div className="flex items-center gap-3 bg-black px-3.5 py-2.5 rounded-xl border border-white/10 shadow-sm font-sans min-w-0">
+      <div className="w-7 h-7 rounded-lg bg-white/10 border border-white/20 flex items-center justify-center text-white text-xs font-black shadow-lg flex-shrink-0">
+        {num}
+      </div>
+      <div className="flex-1 flex items-center justify-between gap-2 min-w-0">
+        <p className="text-xs sm:text-sm font-medium text-gray-100 font-sans truncate">
+          {text}{highlight && <span className="font-bold text-white"> ({highlight})</span>}
+        </p>
+        <div className="text-[11px] sm:text-xs font-bold px-2.5 py-1 rounded-lg bg-[#050811] border border-white/10 text-white whitespace-nowrap shadow-inner tracking-wide flex-shrink-0">
+          {result}
+        </div>
+      </div>
+    </div>
+  );
+}
 
 // ============================================================
 // TUNING CONSTANTS
@@ -56,12 +73,6 @@ const saveData = (data) => {
 // ============================================================
 // ACCORDION DATA
 // ============================================================
-const RULES_ITEMS = [
-  { title: "Dynamic Rule Switching", text: "Target rule shifts every 10 seconds between VOWELS (A, E, I, O, U) and PRIMES (2, 3, 5, 7)." },
-  { title: "Target Tap & Spacebar", text: "Tap screen or press Spacebar as soon as a target stimulus matching the active rule appears." },
-  { title: "Inhibitory Control", text: "Ignore non-matching stimuli. False alarms and missed targets count against your accuracy, but never end the session early." }
-];
-
 const ABOUT_TEXT = `Attention Span Test (Concentration Stamina) is an advanced Continuous Performance Test (CPT) designed to evaluate sustained visual attention, working memory updating, and task-set switching under speed pressure. Originating from cognitive psychology and ergonomics, continuous stamina tests challenge the brain's executive control network to maintain high vigilance over extended sequences.
 
 By requiring instantaneous categorization of incoming visual stimuli while periodically switching target rules, the drill trains cognitive flexibility, impulse suppression, and focus stability under cognitive fatigue.`;
@@ -247,16 +258,6 @@ export default function ConcentrationStaminaClient({ copy } = {}) {
     }, 120);
   }, [spawnStimulus, triggerFlash]);
 
-  // Keyboard spacebar listener
-  useEffect(() => {
-    const handleKeyDown = (e) => {
-      if ((e.code === 'Space' || e.code === 'Enter') && phaseRef.current === 'playing') {
-        handleInteraction(e);
-      }
-    };
-    window.addEventListener('keydown', handleKeyDown);
-    return () => window.removeEventListener('keydown', handleKeyDown);
-  }, [handleInteraction]);
 
   const handleCountdownComplete = useCallback(() => {
     setPhase('playing');
@@ -338,20 +339,56 @@ export default function ConcentrationStaminaClient({ copy } = {}) {
     countdownTimeoutsRef.current = [t1, t2, t3, t4];
   }, [clearAllTimers, handleCountdownComplete]);
 
+  const { markIntentionalExit } = useUnexpectedExitGuard({
+    active: phase === 'playing' || phase === 'countdown',
+    onUnexpectedExit: () => {
+      countdownTimeoutsRef.current.forEach(clearTimeout);
+      countdownTimeoutsRef.current = [];
+      clearAllTimers();
+      setIsFullscreen(false);
+      phaseRef.current = 'start';
+      setPhase('start');
+    },
+  });
+
   const handleExitDrill = useCallback(async () => {
     markIntentionalExit();
     countdownTimeoutsRef.current.forEach(clearTimeout);
     countdownTimeoutsRef.current = [];
     clearAllTimers();
+    if (typeof document !== 'undefined' && document.fullscreenElement) {
+      try {
+        await document.exitFullscreen();
+      } catch (err) {}
+    }
     setIsFullscreen(false);
     phaseRef.current = 'start';
     setPhase('start');
-  }, [clearAllTimers]);
+  }, [clearAllTimers, markIntentionalExit]);
 
-  const { markIntentionalExit } = useUnexpectedExitGuard({
-    active: phase === 'playing' || phase === 'countdown',
-    onUnexpectedExit: handleExitDrill,
-  });
+  // Keyboard and Fullscreen Lifecycle (Rule 6)
+  useEffect(() => {
+    const handleKeyDown = (e) => {
+      if (e.key === 'Escape') {
+        handleExitDrill();
+        return;
+      }
+      if ((e.code === 'Space' || e.code === 'Enter') && phaseRef.current === 'playing') {
+        handleInteraction(e);
+      }
+    };
+    const handleFullscreenChange = () => {
+      if (!document.fullscreenElement && isFullscreen) {
+        handleExitDrill();
+      }
+    };
+    window.addEventListener('keydown', handleKeyDown);
+    document.addEventListener('fullscreenchange', handleFullscreenChange);
+    return () => {
+      window.removeEventListener('keydown', handleKeyDown);
+      document.removeEventListener('fullscreenchange', handleFullscreenChange);
+    };
+  }, [handleExitDrill, handleInteraction, isFullscreen]);
 
   const gradeInfo = endSummary ? getFpsScoreGrade(endSummary.score, ELITE_SCORE) : null;
 
@@ -385,10 +422,8 @@ export default function ConcentrationStaminaClient({ copy } = {}) {
           <div className="flex flex-col">
             <h1 className="text-2xl sm:text-3xl font-black tracking-tight text-white">
               <span data-seo-kw="1">{copy?.title || "Concentration Stamina – Attention Span Test"}</span>
+              <span className="block text-sm font-semibold text-slate-400 mt-1">{copy?.subtitle || "Attention span test for sustained focus, target discrimination, and cognitive endurance under time pressure"}</span>
             </h1>
-            <p className="mt-3 text-sm text-slate-400 leading-relaxed">
-              Take this free attention span test to measure your sustained vigilance, target discrimination, and rule-switching stamina under speed pressure. Evaluates cognitive endurance across alternating classification rules, scoring accuracy and misses rather than raw reaction speed.
-            </p>
           </div>
         )}
 
@@ -396,10 +431,10 @@ export default function ConcentrationStaminaClient({ copy } = {}) {
         {!isFullscreen && (
           <div className="grid grid-cols-4 gap-2 w-full -mb-2">
             {[
-              { label: 'Score', value: score, tone: 'text-indigo-400' },
-              { label: 'Time', value: `${Math.ceil(timeRemaining)}s`, tone: timeRemaining <= 10 ? 'text-red-400 animate-pulse' : 'text-white' },
-              { label: 'Level', value: `L${level}`, tone: 'text-indigo-400' },
-              { label: 'Best Score', value: bestScore, tone: 'text-amber-400' },
+              { label: copy?.statScore || 'Score', value: score, tone: 'text-indigo-400' },
+              { label: copy?.statTime || 'Time', value: `${Math.ceil(timeRemaining)}s`, tone: timeRemaining <= 10 ? 'text-red-400 animate-pulse' : 'text-white' },
+              { label: copy?.statLevel || 'Level', value: `L${level}`, tone: 'text-indigo-400' },
+              { label: copy?.statBest || 'Best Score', value: bestScore, tone: 'text-amber-400' },
             ].map((s) => (
               <div key={s.label} className="rounded-lg border border-white/[0.06] bg-white/[0.015] px-2 py-2 text-center">
                 <div className="text-[9.5px] uppercase font-semibold text-slate-500 tracking-[0.12em]">{s.label}</div>
@@ -426,21 +461,21 @@ export default function ConcentrationStaminaClient({ copy } = {}) {
             <>
               {/* Score - Top Left */}
               <div className="absolute top-4 left-4 z-30 pointer-events-none flex flex-col items-start gap-0.5">
-                <p className="text-[10px] font-semibold uppercase tracking-wider text-white/50">Score</p>
+                <p className="text-[10px] font-semibold uppercase tracking-wider text-white/50">{copy?.statScore || 'Score'}</p>
                 <p className="text-2xl sm:text-3xl font-black text-white tabular-nums leading-tight">{score}</p>
               </div>
 
               {/* Active Rule - Centered at Top */}
               <div className="absolute top-4 left-1/2 -translate-x-1/2 z-30 pointer-events-none">
                 <div className="flex items-center gap-2 bg-indigo-950/80 backdrop-blur-md px-3.5 py-1.5 rounded-xl border border-indigo-500/30 shadow-lg">
-                  <span className="text-xs font-bold text-indigo-300">Rule:</span>
-                  <span className="text-xs sm:text-sm font-black text-white">{activeRule === 'VOWELS' ? 'VOWELS (A E I O U)' : 'PRIMES (2 3 5 7)'}</span>
+                  <span className="text-xs font-bold text-indigo-300">{copy?.ruleLabel || 'Rule'}:</span>
+                  <span className="text-xs sm:text-sm font-black text-white">{activeRule === 'VOWELS' ? (copy?.vowels || 'VOWELS (A E I O U)') : (copy?.primes || 'PRIMES (2 3 5 7)')}</span>
                 </div>
               </div>
 
               {/* Time - Top Right */}
               <div className="absolute top-4 right-4 z-30 pointer-events-none text-right">
-                <p className="text-[10px] font-semibold uppercase tracking-wider text-white/50">Time</p>
+                <p className="text-[10px] font-semibold uppercase tracking-wider text-white/50">{copy?.statTime || 'Time'}</p>
                 <p className={`text-2xl sm:text-3xl font-black tabular-nums leading-tight ${timeRemaining <= 10 ? 'text-red-400 animate-pulse' : 'text-white'}`}>{Math.ceil(timeRemaining)}s</p>
               </div>
             </>
@@ -451,8 +486,8 @@ export default function ConcentrationStaminaClient({ copy } = {}) {
             <FpsStartCard
               icon={Brain}
               accent="indigo"
-              title="Attention Span Test"
-              subtitle="Concentration Stamina • Continuous Performance Test"
+              title={copy?.startTitle || "Attention Span Test"}
+              subtitle={copy?.startSubtitle || "Concentration Stamina • Continuous Performance Test"}
               isTouchOnlyDevice={false}
               onStart={enterDrill}
             />
@@ -460,7 +495,7 @@ export default function ConcentrationStaminaClient({ copy } = {}) {
 
           {/* COUNTDOWN OVERLAY */}
           {phase === 'countdown' && (
-            <DrillCountdown value={countdownValue} subtitle="GET READY" />
+            <DrillCountdown value={countdownValue} subtitle={copy?.getReady || "GET READY"} />
           )}
 
           {/* IN-GAME HUD SOUND + FLASH TOGGLES (header's toggle is hidden while fullscreen) */}
@@ -476,7 +511,7 @@ export default function ConcentrationStaminaClient({ copy } = {}) {
                   });
                 }}
                 className="p-2.5 rounded-full bg-black/60 border border-white/10 text-slate-400 hover:text-white transition-colors cursor-pointer"
-                title="Toggle Miss Flash"
+                title={copy?.flashTitle || "Toggle Miss Flash"}
               >
                 {flashEnabled ? <Zap className="w-4 h-4 text-red-400" /> : <ZapOff className="w-4 h-4 text-slate-500" />}
               </button>
@@ -489,7 +524,7 @@ export default function ConcentrationStaminaClient({ copy } = {}) {
                   drillAudio.setEnabled(next);
                 }}
                 className="p-2.5 rounded-full bg-black/60 border border-white/10 text-slate-400 hover:text-white transition-colors cursor-pointer"
-                title="Toggle Sound"
+                title={copy?.soundTitle || "Toggle Sound"}
               >
                 {soundEnabled ? <Volume2 className="w-4 h-4 text-indigo-400" /> : <VolumeX className="w-4 h-4 text-slate-500" />}
               </button>
@@ -520,7 +555,7 @@ export default function ConcentrationStaminaClient({ copy } = {}) {
               <div className="w-[36%] flex flex-col items-center justify-center gap-1 border-r border-white/5 px-4" style={{ background: 'radial-gradient(ellipse 260px 200px at 50% 30%, rgba(99,102,241,.12), transparent 70%)' }}>
                 {endSummary.isNewBest && (
                   <span className="text-[9.5px] font-bold text-yellow-400 bg-yellow-500/10 border border-yellow-500/25 px-2.5 py-0.5 rounded-full mb-1 animate-pulse">
-                    NEW BEST
+                    {copy?.newBest || 'NEW BEST'}
                   </span>
                 )}
                 <div className="text-5xl sm:text-6xl font-black leading-none" style={{ color: gradeInfo.color }}>
@@ -532,7 +567,7 @@ export default function ConcentrationStaminaClient({ copy } = {}) {
                 <div className="text-3xl sm:text-4xl font-black text-white mt-2 tabular-nums">
                   {endSummary.score.toLocaleString()}
                 </div>
-                <div className="text-[9px] uppercase tracking-widest text-slate-500">Points</div>
+                  <div className="text-[9px] uppercase tracking-widest text-slate-500">{copy?.points || 'Points'}</div>
               </div>
 
               {/* Right Stats & Actions Panel */}
@@ -542,15 +577,15 @@ export default function ConcentrationStaminaClient({ copy } = {}) {
                 <div className="grid grid-cols-3 gap-2">
                   <div className="bg-black border border-white/5 p-2.5 rounded-xl text-center">
                     <p className="text-sm sm:text-base font-black text-white">{endSummary.accuracy}%</p>
-                    <p className="text-[7.5px] sm:text-[8.5px] font-bold uppercase tracking-wider text-gray-400 mt-0.5">Accuracy</p>
+                    <p className="text-[7.5px] sm:text-[8.5px] font-bold uppercase tracking-wider text-gray-400 mt-0.5">{copy?.accuracy || 'Accuracy'}</p>
                   </div>
                   <div className="bg-black border border-white/5 p-2.5 rounded-xl text-center">
                     <p className="text-sm sm:text-base font-black text-white">{endSummary.misses}</p>
-                    <p className="text-[7.5px] sm:text-[8.5px] font-bold uppercase tracking-wider text-gray-400 mt-0.5">Misses</p>
+                    <p className="text-[7.5px] sm:text-[8.5px] font-bold uppercase tracking-wider text-gray-400 mt-0.5">{copy?.misses || 'Misses'}</p>
                   </div>
                   <div className="bg-black border border-white/5 p-2.5 rounded-xl text-center">
                     <p className="text-sm sm:text-base font-black text-white">Lv. {endSummary.peakLevel}</p>
-                    <p className="text-[7.5px] sm:text-[8.5px] font-bold uppercase tracking-wider text-gray-400 mt-0.5">Peak Level</p>
+                    <p className="text-[7.5px] sm:text-[8.5px] font-bold uppercase tracking-wider text-gray-400 mt-0.5">{copy?.peakLevel || 'Peak Level'}</p>
                   </div>
                 </div>
 
@@ -560,19 +595,19 @@ export default function ConcentrationStaminaClient({ copy } = {}) {
                     onClick={enterDrill} 
                     className="flex-1 py-3 rounded-[13px] bg-gradient-to-r from-indigo-500 to-cyan-600 text-white font-bold text-xs uppercase tracking-wide cursor-pointer transition-transform active:scale-[0.98] shadow-md flex items-center justify-center gap-1.5"
                   >
-                    <RefreshCw className="w-3.5 h-3.5" /> Play Again
+                    <RefreshCw className="w-3.5 h-3.5" /> {copy?.playAgain || 'Play Again'}
                   </button>
                   <button 
                     onClick={shareResult} 
                     className="w-11 flex-shrink-0 rounded-[13px] bg-white/[0.04] border border-white/10 flex items-center justify-center text-slate-400 hover:text-white cursor-pointer active:scale-90 transition-transform" 
-                    title="Share Score"
+                    title={copy?.shareScore || "Share Score"}
                   >
                     <Share2 className="w-4 h-4" />
                   </button>
                   <button 
                     onClick={handleExitDrill} 
                     className="w-11 flex-shrink-0 rounded-[13px] bg-white/[0.04] border border-white/10 flex items-center justify-center text-slate-400 hover:text-white cursor-pointer active:scale-90 transition-transform" 
-                    title="Exit Drill"
+                    title={copy?.exitDrill || "Exit Drill"}
                   >
                     <ArrowLeft className="w-4 h-4 text-red-400" />
                   </button>
@@ -586,7 +621,7 @@ export default function ConcentrationStaminaClient({ copy } = {}) {
         {/* Stage Caption */}
         {!isFullscreen && (
           <p className="text-xs text-slate-400 leading-relaxed -mt-2">
-            React quickly to stimuli that match the active rule while filtering out distractors as rules switch dynamically.
+            {copy?.caption || 'React quickly to stimuli that match the active rule while filtering out distractors as rules switch dynamically.'}
           </p>
         )}
 
@@ -595,23 +630,21 @@ export default function ConcentrationStaminaClient({ copy } = {}) {
         <div className="[&>div]:!mt-0">
         <DrillAccordion
           id="rules"
-          title="Drill Instructions & Scoring System"
+          title={copy?.rulesTitle || "Drill Instructions & Scoring System"}
           isOpen={openAccordion === 'rules'}
           onToggle={() => setOpenAccordion(openAccordion === 'rules' ? null : 'rules')}
         >
           <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
-            {RULES_ITEMS.map((item, i) => (
-              <div key={i} className="bg-black p-4 rounded-xl border border-white/10">
-                <p className="text-sm font-bold text-white mb-1">{item.title}</p>
-                <p className="text-xs text-gray-300 leading-relaxed">{item.text}</p>
-              </div>
-            ))}
+            <RuleItem num="1" text={copy?.ruleItems?.[0]?.text || "Target Rule"} highlight={copy?.ruleItems?.[0]?.highlight || "Switches Every 10s"} result={copy?.ruleItems?.[0]?.result || "VOWELS ↔ PRIMES"} />
+            <RuleItem num="2" text={copy?.ruleItems?.[1]?.text || "Target Hit"} highlight={copy?.ruleItems?.[1]?.highlight || "+100 PTS"} result={copy?.ruleItems?.[1]?.result || "Tap or Spacebar"} />
+            <RuleItem num="3" text={copy?.ruleItems?.[2]?.text || "Non-Target"} highlight={copy?.ruleItems?.[2]?.highlight || "Inhibit"} result={copy?.ruleItems?.[2]?.result || "Ignore Non-Match"} />
+            <RuleItem num="4" text={copy?.ruleItems?.[3]?.text || "False Alarm"} highlight={copy?.ruleItems?.[3]?.highlight || "Penalty"} result={copy?.ruleItems?.[3]?.result || "Counts vs Accuracy"} />
           </div>
         </DrillAccordion>
 
         <DrillAccordion
           id="about"
-          title="About the Attention Span Test"
+          title={copy?.aboutTitle || "About the Attention Span Test"}
           isOpen={openAccordion === 'about'}
           onToggle={() => setOpenAccordion(openAccordion === 'about' ? null : 'about')}
         >
@@ -619,7 +652,7 @@ export default function ConcentrationStaminaClient({ copy } = {}) {
             <section>
               <div className="space-y-4">
                 <p className="text-sm leading-relaxed text-gray-300">
-                  Sustained attention decays measurably the longer you watch for a rare signal: Mackworth (1948) found detection accuracy dropping within the first 30 minutes of a monitoring task, and the decline is steeper when the events come faster or the memory load is higher (Parasuraman, 1979). This drill compresses that vigilance decrement into a short session.
+                  {copy?.aboutLead || 'Sustained attention decays measurably the longer you watch for a rare signal: Mackworth (1948) found detection accuracy dropping within the first 30 minutes of a monitoring task, and the decline is steeper when the events come faster or the memory load is higher (Parasuraman, 1979). This drill compresses that vigilance decrement into a short session, evaluating cognitive endurance across alternating classification rules and scoring accuracy and misses rather than raw reaction speed.'}
                 </p>
                 {ABOUT_TEXT.split('\n\n').map((para, i) => (
                   <p key={i} className="text-sm leading-relaxed text-gray-300">{para}</p>
@@ -631,23 +664,23 @@ export default function ConcentrationStaminaClient({ copy } = {}) {
               <div className="p-4 rounded-xl border border-gray-800 bg-white/[0.02]">
                 <div className="flex items-center gap-2.5 mb-2">
                   <div className="w-7 h-7 rounded-lg bg-blue-600 flex items-center justify-center"><Users className="w-3.5 h-3.5 text-white" /></div>
-                  <h4 className="text-xs font-bold text-white">Who Should Use This?</h4>
+                  <h4 className="text-xs font-bold text-white">{copy?.audienceTitle || 'Who Should Use This?'}</h4>
                 </div>
-                <p className="text-xs text-gray-300 leading-relaxed">Students preparing for long exams, competitive gamers who need consistent accuracy deep into matches, and professionals in high-vigilance roles who must sustain focus for extended periods.</p>
+                <p className="text-xs text-gray-300 leading-relaxed">{copy?.audienceText || 'Students preparing for long exams, competitive gamers who need consistent accuracy deep into matches, and professionals in high-vigilance roles who must sustain focus for extended periods.'}</p>
               </div>
               <div className="p-4 rounded-xl border border-gray-800 bg-white/[0.02]">
                 <div className="flex items-center gap-2.5 mb-2">
                   <div className="w-7 h-7 rounded-lg bg-emerald-600 flex items-center justify-center"><TrendingUp className="w-3.5 h-3.5 text-white" /></div>
-                  <h4 className="text-xs font-bold text-white">Skills Improved</h4>
+                  <h4 className="text-xs font-bold text-white">{copy?.skillsTitle || 'Skills Improved'}</h4>
                 </div>
-                <p className="text-xs text-gray-300 leading-relaxed">Sustained attention, target discrimination, vigilance under fatigue, and resistance to the vigilance decrement over long sessions.</p>
+                <p className="text-xs text-gray-300 leading-relaxed">{copy?.skillsText || 'Sustained attention, target discrimination, vigilance under fatigue, and resistance to the vigilance decrement over long sessions.'}</p>
               </div>
               <div className="p-4 rounded-xl border border-gray-800 bg-white/[0.02]">
                 <div className="flex items-center gap-2.5 mb-2">
                   <div className="w-7 h-7 rounded-lg bg-purple-600 flex items-center justify-center"><Repeat className="w-3.5 h-3.5 text-white" /></div>
-                  <h4 className="text-xs font-bold text-white">Cognitive Flexibility</h4>
+                  <h4 className="text-xs font-bold text-white">{copy?.flexibilityTitle || 'Cognitive Flexibility'}</h4>
                 </div>
-                <p className="text-xs text-gray-300 leading-relaxed">Every 10-second rule switch between VOWELS and PRIMES forces you to re-categorize stimuli on the fly, training rapid task-set switching.</p>
+                <p className="text-xs text-gray-300 leading-relaxed">{copy?.flexibilityText || 'Every 10-second rule switch between VOWELS and PRIMES forces you to re-categorize stimuli on the fly, training rapid task-set switching.'}</p>
               </div>
             </div>
           </div>
@@ -655,9 +688,6 @@ export default function ConcentrationStaminaClient({ copy } = {}) {
           </div>
         )}
       </main>
-
-      {/* FOOTER */}
-      {!isFullscreen && <DrillFooter />}
     </div>
   );
 }

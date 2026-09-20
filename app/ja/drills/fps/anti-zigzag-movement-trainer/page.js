@@ -6,21 +6,19 @@ import { getAlternateLanguages } from '@/lib/i18n/locales';
 import RelatedDrills from '@/components/drill/RelatedDrills';
 
 export const metadata = {
-  title: "ジグザグ移動 練習 – スライディング追従エイム | SkillDrills",
-  description: "ブラウザで無料プレイできるジグザグ移動・スライディング追従エイム練習。Apex LegendsやWarzoneの不規則な切り返しやスライディングキャンセルに追従し、照準の行き過ぎ（オーバーシュート）を防ぎます。",
+  title: "エイム練習 | ジグザグ移動・トラッキング | SkillDrills",
+  description: "無料ブラウザのエイム練習で、ジグザグ移動やスライディングの切り返しを追い、照準の行き過ぎを測定します。",
   keywords: [
-    "ジグザグ移動 練習",
-    "スライディング トラッキング",
-    "ジグザグ エイム 練習",
-    "Apex スライディング エイム",
-    "Warzone スライディング 追従",
-    "リアクティブ トラッキング",
+    "エイム練習",
+    "エイム練習 ブラウザ",
+    "エイム練習 apex",
+    "エイム練習 valorant",
+    "ジグザグ移動",
+    "キャラコン",
+    "スライディングキャンセル",
     "トラッキング エイム 練習",
     "不規則移動 エイム",
-    "敵の切り返し 追従",
-    "オーバーシュート 改善",
-    "エイムトレーナー 無料",
-    "近距離 エイム 合わせ方"
+    "オーバーシュート 改善"
   ],
   alternates: {
     canonical: "https://skilldrills.online/ja/drills/fps/anti-zigzag-movement-trainer",
@@ -31,8 +29,8 @@ export const metadata = {
     follow: true,
   },
   openGraph: {
-    title: "ジグザグ移動 練習 – スライディング追従エイム | SkillDrills",
-    description: "ブラウザで無料プレイできるジグザグ移動・スライディング追従エイム練習。Apex LegendsやWarzoneの不規則な切り返しやスライディングキャンセルに追従し、照準の行き過ぎ（オーバーシュート）を防ぎます。",
+    title: "エイム練習 | ジグザグ移動・トラッキング | SkillDrills",
+    description: "無料ブラウザのエイム練習で、ジグザグ移動やスライディングの切り返しを追い、照準の行き過ぎを測定します。",
     url: "https://skilldrills.online/ja/drills/fps/anti-zigzag-movement-trainer",
     siteName: 'SkillDrills',
     locale: 'ja_JP',
@@ -40,8 +38,8 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: "ジグザグ移動 練習 – スライディング追従エイム | SkillDrills",
-    description: "ブラウザで無料プレイできるジグザグ移動・スライディング追従エイム練習。Apex LegendsやWarzoneの不規則な切り返しやスライディングキャンセルに追従し、照準の行き過ぎ（オーバーシュート）を防ぎます。",
+    title: "エイム練習 | ジグザグ移動・トラッキング | SkillDrills",
+    description: "無料ブラウザのエイム練習で、ジグザグ移動やスライディングの切り返しを追い、照準の行き過ぎを測定します。",
   },
 };
 
@@ -52,17 +50,17 @@ export default function AntiZigzagJaPage() {
     "itemListElement": [
       { "@type": "ListItem", "position": 1, "name": "SkillDrills", "item": "https://skilldrills.online/ja" },
       { "@type": "ListItem", "position": 2, "name": "FPSエイム練習", "item": "https://skilldrills.online/ja/drills/fps" },
-      { "@type": "ListItem", "position": 3, "name": "ジグザグ移動 練習", "item": "https://skilldrills.online/ja/drills/fps/anti-zigzag-movement-trainer" }
+      { "@type": "ListItem", "position": 3, "name": "エイム練習 - ジグザグ移動", "item": "https://skilldrills.online/ja/drills/fps/anti-zigzag-movement-trainer" }
     ]
   };
 
   const softwareSchema = {
     "@context": "https://schema.org",
     "@type": "SoftwareApplication",
-    "name": "ジグザグ移動 練習",
+    "name": "エイム練習 - ジグザグ移動",
     "applicationCategory": "GameApplication",
     "operatingSystem": "Web Browser",
-    "dateModified": "2026-09-05",
+    "dateModified": "2026-09-20",
     "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
     "description": "急激なジグザグ方向転換やスライディング移動に照準を合わせ続ける無料ブラウザFPSリアクティブトラッキングドリル。",
     "genre": "FPS Training / Anti-Zigzag",
@@ -77,7 +75,7 @@ export default function AntiZigzagJaPage() {
   const webAppSchema = {
     "@context": "https://schema.org",
     "@type": "WebApplication",
-    "name": "ジグザグ移動 練習",
+    "name": "エイム練習 - ジグザグ移動",
     "url": "https://skilldrills.online/ja/drills/fps/anti-zigzag-movement-trainer",
     "applicationCategory": "GameApplication",
     "operatingSystem": "All",
@@ -93,10 +91,10 @@ export default function AntiZigzagJaPage() {
   const videoGameSchema = {
     "@context": "https://schema.org",
     "@type": "VideoGame",
-    "name": "ジグザグ移動 練習",
+    "name": "エイム練習 - ジグザグ移動",
     "url": "https://skilldrills.online/ja/drills/fps/anti-zigzag-movement-trainer",
     "description": "急激なジグザグ方向転換やスライディング移動に照準を合わせ続ける無料ブラウザFPSリアクティブトラッキングドリル。",
-    "dateModified": "2026-09-05",
+    "dateModified": "2026-09-20",
     "gamePlatform": "Web Browser",
     "genre": ["FPS Training", "Aim Trainer", "Reactive Tracking"],
     "playMode": "SinglePlayer",
@@ -108,7 +106,7 @@ export default function AntiZigzagJaPage() {
   const faqSchema = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
-    "dateModified": "2026-09-05",
+    "dateModified": "2026-09-20",
     "mainEntity": [
       {
         "@type": "Question",
@@ -231,13 +229,13 @@ export default function AntiZigzagJaPage() {
   };
 
   const copy = {
-    h1Keyword: "ジグザグ移動 練習",
-    h1Suffix: " - スライディング追従エイムトレーナー",
+    h1Keyword: "エイム練習",
+    h1Suffix: " - ジグザグ移動・トラッキング",
     statScore: "スコア",
     statTime: "残り時間",
     statAccuracy: "トラッキング精度",
     statBestScore: "自己ベスト",
-    startTitle: "ジグザグ移動 練習",
+    startTitle: "エイム練習 - ジグザグ移動",
     startSubtitle: "急激な切り返し反応 • スライディング追従 • エンドレス難易度",
     getReady: "準備完了",
     pausedTitle: "一時停止",
@@ -250,13 +248,13 @@ export default function AntiZigzagJaPage() {
       { num: "3", text: "レベル進行", highlight: "+1 レベル / 1400 PTS", result: "可変ジグザグ加速" },
       { num: "4", text: "ターゲット喪失", highlight: "生存時間終了", result: "コンボリセット (-0.6秒)" }
     ],
-    aboutTitle: "ジグザグ移動・スライディング追従エイムについて",
+    aboutTitle: "エイム練習とジグザグ移動について",
   };
 
   const jaGuide = {
-    heading: "ジグザグ移動・スライディング追従エイムの科学とベンチマーク",
+    heading: "エイム練習とジグザグ移動・リアクティブトラッキングガイド",
     intro: [
-      "Apex Legends、Call of Duty: Warzone、Overwatch 2などの高速な競技FPSでは、対戦相手は直線的な移動ではなく、斜め方向への激しいジグザグステップ、スライディングキャンセル、レレレ移動（ADAD屈伸）を織り交ぜてクロスヘアのロックを外し、視覚運動の同期崩れ（desynchronization）を誘発します。線形な等速滑走性眼球運動（Smooth Pursuit）が連続した予測可能な軌道に依存するのに対し（Krauzlis, 2004）、ジグザグ追従は動的な速度と正確性のトレードオフ（Fitts, 1954; Accot & Zhai, 1997）に支配される連続ステアリングタスクを運動系に要求します。アクションゲーム熟練者は視覚的注意、空間解像度、時間的追跡帯域幅が著しく優れていますが（Green & Bavelier, 2003）、ターゲットが突然斜めのベクトル反転を実行すると急性網膜スリップ（Rashbass, 1961）が発生し、サブセカンド単位の減速と多軸手首再配向が不可欠となります。",
+      "エイム練習の中でもジグザグ移動対策は、スライディングの切り返しを追いながらレティクルを敵に保つ練習です。このドリルは不規則な方向反転と照準の行き過ぎを測定し、Apex・Warzoneのリアクティブトラッキングを安定させます。",
       "回避運動に対して初級者が犯す最大の機械的エラーは、ターゲットが描く外側の折り返し頂点（Apex）を無理にフリックで追い越してしまう『オーバーフリック（過剰エイム）』です。敵がV字パターンでジグザグに動く際、進行方向の最外殻頂点で瞬間速度はゼロに減速し、直後に逆方向の中央回廊へ向けて急加速します。外側の極限を力任せに追跡すると深刻なオーバーシュートと拮抗筋の反発・硬直が発生します。トッププロは中央の『V字交差回廊アンカリング』を駆使し、視覚の焦点を中央軸に維持しながら、敵が照準を横切るタイミングに合わせて速度同調型の滑らかな微調整を実行します。",
       "Anti-Zigzag Aim Trainer（アンチジグザグ・エイムトレーナー）は、HTML5 Pointer Lock APIによるRAW 1:1ハードウェア座標マッピング、performance.now()高精度クロノメトリー、およびマウス加速・スムージング完全無効化のもとで動作します。USBポーリングジッターを抑制し（Woods et al., 2015）、段階的に周波数が上昇するジグザグ運動に対して連続滞留時間（Dwell Time）判定を行うことで、パニックフリックを抑制し、高難度の回避銃撃戦を制するための純粋な感覚運動抑制能力を鍛え上げます。",
       "測定方法とハードウェア遅延について：すべてのトラッキングイベントはブラウザのperformance.now()高解像度クロックによって端末内でのみタイムスタンプされ、外部サーバーへのスコア送信は一切行われません。ブラウザタイマーはSpectre緩和策により約1ms単位に丸められており、ディスプレイはリフレッシュレートに応じて視覚変化を量子化します（60Hzで約16.7ms、144Hzで6.9ms、240Hzで4.1ms、Woods et al., 2015）。マウスのポーリングレートは125Hzで約8ms、1000Hzで約1msの遅延を加えます。そのため5ms未満の差異は測定ノイズとして扱い、他者の環境と比較するのではなく、同一ハードウェア環境での自己記録の推移を追跡してください。"

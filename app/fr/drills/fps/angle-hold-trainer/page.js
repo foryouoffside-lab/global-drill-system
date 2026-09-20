@@ -6,9 +6,12 @@ import { getAlternateLanguages } from '@/lib/i18n/locales';
 import { pickSources } from '@/lib/drillSources';
 
 export const metadata = {
-  title: "Placement du Viseur – Tenue de Ligne FPS | SkillDrills",
-  description: "Entraînez le placement du viseur et la tenue de ligne sur PC. Calibrez votre distance au mur et neutralisez le peeker advantage sur CS2 et Valorant.",
+  title: "Aim Trainer | Placement du Viseur | SkillDrills",
+  description: "Aim trainer gratuit dans le navigateur : entraînez le placement du viseur, la tenue d'angle, l'écart au mur et la réaction au peek.",
   keywords: [
+    "aim trainer",
+    "aim trainer en ligne",
+    "aim trainer gratuit",
     "placement du viseur entraînement",
     "comment tenir une ligne valorant",
     "tenir un angle cs2",
@@ -16,11 +19,7 @@ export const metadata = {
     "entraînement pre aim fps",
     "distance du viseur par rapport au mur",
     "viseur à hauteur de tête",
-    "temps de réaction tenue de ligne",
-    "punir les peekers fps entraînement",
-    "tenue de coin cs2 entraînement",
-    "entraînement réflexe pour les angles",
-    "simulateur de tenue de ligne fps"
+    "entraînement réflexe pour les angles"
   ],
   alternates: {
     canonical: "https://skilldrills.online/fr/drills/fps/angle-hold-trainer",
@@ -31,8 +30,8 @@ export const metadata = {
     follow: true,
   },
   openGraph: {
-    title: "Placement du Viseur – Tenue de Ligne FPS | SkillDrills",
-    description: "Entraînez le placement du viseur et la tenue de ligne sur PC. Calibrez votre distance au mur et neutralisez le peeker advantage sur CS2 et Valorant.",
+    title: "Aim Trainer | Placement du Viseur | SkillDrills",
+    description: "Aim trainer gratuit dans le navigateur : entraînez le placement du viseur, la tenue d'angle, l'écart au mur et la réaction au peek.",
     url: "https://skilldrills.online/fr/drills/fps/angle-hold-trainer",
     siteName: 'SkillDrills',
     locale: 'fr_FR',
@@ -40,8 +39,8 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: "Placement du Viseur – Tenue de Ligne FPS | SkillDrills",
-    description: "Entraînez le placement du viseur et la tenue de ligne sur PC. Calibrez votre distance au mur et neutralisez le peeker advantage sur CS2 et Valorant.",
+    title: "Aim Trainer | Placement du Viseur | SkillDrills",
+    description: "Aim trainer gratuit dans le navigateur : entraînez le placement du viseur, la tenue d'angle, l'écart au mur et la réaction au peek.",
   },
 };
 
@@ -52,21 +51,21 @@ export default function FrenchAngleHoldPage() {
     "itemListElement": [
       { "@type": "ListItem", "position": 1, "name": "SkillDrills", "item": "https://skilldrills.online/fr" },
       { "@type": "ListItem", "position": 2, "name": "Drills de FPS", "item": "https://skilldrills.online/fr/drills/fps" },
-      { "@type": "ListItem", "position": 3, "name": "Placement du Viseur", "item": "https://skilldrills.online/fr/drills/fps/angle-hold-trainer" }
+      { "@type": "ListItem", "position": 3, "name": "Aim Trainer - placement du viseur", "item": "https://skilldrills.online/fr/drills/fps/angle-hold-trainer" }
     ]
   };
 
   const webAppSchema = {
     "@context": "https://schema.org",
     "@type": "WebApplication",
-    "name": "Angle Hold Pro",
+    "name": "Aim Trainer - placement du viseur",
     "applicationCategory": "GameApplication",
     "operatingSystem": "Web Browser",
     "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
     "description": "Entraîneur en ligne de placement de viseur, de tenue de ligne défensive et de pré-visée pour les jeux de tir tactiques.",
     "genre": "Entraînement FPS / Placement du Viseur",
     "url": "https://skilldrills.online/fr/drills/fps/angle-hold-trainer",
-    "dateModified": "2026-09-16",
+    "dateModified": "2026-09-20",
     "publisher": {
       "@type": "Organization",
       "name": "SkillDrills",
@@ -77,14 +76,14 @@ export default function FrenchAngleHoldPage() {
   const softwareSchema = {
     "@context": "https://schema.org",
     "@type": "SoftwareApplication",
-    "name": "Angle Hold Pro",
+    "name": "Aim Trainer - placement du viseur",
     "applicationCategory": "GameApplication",
     "operatingSystem": "Web Browser",
     "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
     "description": "Simulateur interactif de tenue de ligne et de discipline de tir pour contrer le peeker's advantage sur CS2 et Valorant.",
     "genre": "Entraînement FPS / Placement du Viseur",
     "url": "https://skilldrills.online/fr/drills/fps/angle-hold-trainer",
-    "dateModified": "2026-09-16",
+    "dateModified": "2026-09-20",
     "publisher": {
       "@type": "Organization",
       "name": "SkillDrills",
@@ -95,7 +94,7 @@ export default function FrenchAngleHoldPage() {
   const videoGameSchema = {
     "@context": "https://schema.org",
     "@type": "VideoGame",
-    "name": "Angle Hold Pro",
+    "name": "Aim Trainer - placement du viseur",
     "url": "https://skilldrills.online/fr/drills/fps/angle-hold-trainer",
     "description": "Simulateur interactif de réflexes et de placement de réticule aux angles pour les jeux de tir compétitifs.",
     "gamePlatform": "Web Browser",
@@ -103,13 +102,13 @@ export default function FrenchAngleHoldPage() {
     "playMode": "SinglePlayer",
     "applicationCategory": "Game",
     "operatingSystem": "Web Browser",
-    "dateModified": "2026-09-16"
+    "dateModified": "2026-09-20"
   };
 
   const faqSchema = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
-    "dateModified": "2026-09-16",
+    "dateModified": "2026-09-20",
     "mainEntity": [
       {
         "@type": "Question",
@@ -232,9 +231,9 @@ export default function FrenchAngleHoldPage() {
   };
 
   const angleHoldGuideFr = {
-    heading: "Guide de Placement du Viseur et Tenue de Ligne — Latence et Géométrie",
+    heading: "Aim Trainer pour Placement du Viseur et Tenue d'Angle",
     intro: [
-      "La tenue de ligne défensive est une discipline fondamentale du tir tactique régie par le temps de réaction simple de Donders (Donders, 1868) et la discrimination cognitive Go/No-Go. Contrairement au tir par flick qui requiert deux phases d'accélération et de décélération motrice (Woodworth, 1899; Meyer et al., 1988), tenir une ligne pré-aligne le réticule sur le plan horizontal de la tête, transformant une recherche spatiale 2D en une pure synchronisation temporelle de clic 1D.",
+      "Un aim trainer pour le placement du viseur travaille le réticule à hauteur de tête avant l'apparition de l'adversaire à l'angle. Ce drill mesure l'écart au mur, la tenue d'angle et la réaction au peek pour stabiliser les duels sur Valorant et CS2.",
       "Sur les réseaux multijoueurs (tels que le sub-tick de CS2 et l'infrastructure de Valorant), le délai d'acheminement des paquets engendre le peeker's advantage : T_advantage = (RTT_peeker / 2) + (RTT_holder / 2) + T_interp. Pour compenser ce déficit, le défenseur doit écarter son viseur de l'arête du mur selon D_offset = v_peeker × T_reaction, permettant à l'attaquant d'entrer dans le réticule pile au moment où le tir se déclenche.",
       "La précision motrice obéit à la loi de Fitts (Fitts, 1954) : rajouter des microcorrections de dernière seconde produit du bruit moteur parasite. Angle Hold Pro s'appuie sur des horodatages de haute précision via performance.now() et une synchronisation à l'écran pour mesurer avec rigueur votre discipline de tir et votre discernement face aux feintes (Hick, 1952; Woods et al., 2015).",
       "Évaluation des performances : chaque tir et chaque réaction sont mesurés en local sur votre appareil. Maintenez les mêmes réglages de sensibilité et d'espace de bureau d'une session à l'autre pour forger une mémoire kinesthésique durable."
@@ -296,8 +295,8 @@ export default function FrenchAngleHoldPage() {
 
   const copyFr = {
     h1Prefix: null,
-    h1Keyword: "Placement du Viseur",
-    h1Suffix: " — Tenue de Ligne FPS",
+    h1Keyword: "Aim Trainer",
+    h1Suffix: " — placement du viseur et angles",
     subtitle: "Entraînement à la Tenue d'Angle et Défense contre le Peeker's Advantage",
     rulesItems: [
       { num: "1", text: "Tir Réussi", highlight: "+100 PTS (+0,6s)", result: "×Combo Mult" },

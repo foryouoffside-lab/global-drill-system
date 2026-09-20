@@ -2,17 +2,18 @@ import SymbolMatchingClient from '@/app/drills/cognitive/processing-speed/symbol
 import { getAlternateLanguages } from '@/lib/i18n/locales';
 import DrillGuide from '@/components/drill/DrillGuide';
 import RelatedDrills from '@/components/drill/RelatedDrills';
+import DrillFooter from '@/components/drill/DrillFooter';
 import { pickSources } from '@/lib/drillSources';
 
 export const metadata = {
-  title: "기호 숫자 매칭 인지속도・SDMT 인지 검사 – 정보처리속도 테스트 | SkillDrills",
-  description: "무료 온라인 기호 숫자 매칭 인지 검사(SDMT). 고유 기호와 숫자의 매핑 관계를 신속히 대조하여 정보 처리 속도, 시각 탐색 효율성, 단기 연상 기억력을 정밀하게 측정합니다.",
+  title: "기호 숫자 검사 | SDMT 방식 처리속도 훈련 | SkillDrills",
+  description: "무료 브라우저 기호 숫자 검사: SDMT 방식의 기호-숫자 매칭으로 정보처리속도와 시각 탐색을 연습합니다. 임상 검사가 아닙니다.",
   keywords: ["기호 숫자 매칭 인지속도", "SDMT 인지 검사", "정보처리속도 테스트", "기호 쓰기 검사 온라인", "DSST 테스트", "시각 탐색 검사", "단기 연상기억 훈련", "두뇌 인지속도 측정", "신경심리 검사 무료", "성인 뇌 반응속도",
     "기호숫자검사",
     "웨슬러 인지처리속도"],
   openGraph: {
-    title: "기호 숫자 매칭 인지속도・SDMT 인지 검사 – 정보처리속도 테스트 | SkillDrills",
-    description: "무료 온라인 기호 숫자 매칭 인지 검사(SDMT). 고유 기호와 숫자의 매핑 관계를 신속히 대조하여 정보 처리 속도, 시각 탐색 효율성, 단기 연상 기억력을 정밀하게 측정합니다.",
+    title: "기호 숫자 검사 | SDMT 방식 처리속도 훈련 | SkillDrills",
+    description: "무료 브라우저 기호 숫자 검사: SDMT 방식의 기호-숫자 매칭으로 정보처리속도와 시각 탐색을 연습합니다. 임상 검사가 아닙니다.",
     type: 'article',
     url: 'https://skilldrills.online/ko/drills/cognitive/processing-speed/symbol-matching',
     siteName: 'SkillDrills',
@@ -20,8 +21,8 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: "기호 숫자 매칭 인지속도・SDMT 인지 검사 – 정보처리속도 테스트 | SkillDrills",
-    description: "무료 온라인 기호 숫자 매칭 인지 검사(SDMT). 고유 기호와 숫자의 매핑 관계를 신속히 대조하여 정보 처리 속도, 시각 탐색 효율성, 단기 연상 기억력을 정밀하게 측정합니다.",
+    title: "기호 숫자 검사 | SDMT 방식 처리속도 훈련 | SkillDrills",
+    description: "무료 브라우저 기호 숫자 검사: SDMT 방식의 기호-숫자 매칭으로 정보처리속도와 시각 탐색을 연습합니다. 임상 검사가 아닙니다.",
   },
   robots: { index: true, follow: true },
   alternates: {
@@ -80,7 +81,7 @@ const softwareApplicationSchema = {
     "url": "https://skilldrills.online"
   },
   "inLanguage": "ko-KR",
-  "dateModified": "2026-09-11"
+  "dateModified": "2026-09-20"
 };
 
 const webApplicationSchema = {
@@ -97,7 +98,7 @@ const webApplicationSchema = {
   },
   "url": "https://skilldrills.online/ko/drills/cognitive/processing-speed/symbol-matching",
   "inLanguage": "ko-KR",
-  "dateModified": "2026-09-11"
+  "dateModified": "2026-09-20"
 };
 
 const videoGameSchema = {
@@ -117,6 +118,7 @@ const videoGameSchema = {
     "Mobile"
   ],
   "applicationCategory": "Game",
+  "dateModified": "2026-09-20",
   "offers": {
     "@type": "Offer",
     "price": "0",
@@ -315,11 +317,38 @@ export default function LocalizedCognitivePage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(howToSchema) }}
       />
-      <SymbolMatchingClient copy={{ title: "기호 숫자 매칭 인지속도・SDMT 인지 검사 – 정보처리속도 테스트" }} />
+      <SymbolMatchingClient
+        copy={{
+          title: "기호 숫자 검사",
+          subtitle: "기호와 숫자의 대응을 빠르게 찾아 정보처리속도를 연습합니다",
+          startTitle: "기호 숫자 매칭",
+          stageCaption: "중앙의 표적 기호를 위 키와 비교한 뒤 맞는 숫자를 누르세요.",
+          rulesTitle: "드릴 안내 및 점수 시스템",
+          aboutTitle: "기호 숫자 매칭이란?",
+          faqTitle: "자주 묻는 질문",
+          readyLabel: "준비",
+          labels: { score: "점수", time: "시간", level: "레벨", bestScore: "최고 점수", timeLeft: "남은 시간", targetSymbol: "표적 기호", accuracy: "정확도", hits: "적중", misses: "실수", peakLevel: "최고 레벨" },
+          aboutLead: "기호 숫자 과제는 제한 시간 안에 기호와 숫자의 대응을 찾아 지식보다 정보처리속도와 시각 탐색을 연습합니다. 이 드릴은 임상 도구가 아닌 연습용 게임입니다.",
+          aboutText: "이 드릴은 SDMT와 DSST에서 볼 수 있는 기호-숫자 대응 형식을 참고합니다. 키를 확인하고 표적 기호에 맞는 숫자를 선택하면서 시각 탐색, 연상기억, 선택 반응을 반복합니다. 점수는 이 게임의 수행을 나타내며 의료적 판단이나 진단이 아닙니다.",
+          aboutCards: [
+            { title: "누구에게 유용한가요?", desc: "정보처리속도와 시각 탐색을 집중적으로 연습하고 싶은 학생, 직장인, 게이머에게 유용합니다." },
+            { title: "훈련하는 능력", desc: "시각 탐색, 기호-숫자 연상기억, 선택 반응, 반복 과제에서의 지속 집중력을 연습합니다." },
+            { title: "매번 바뀌는 키", desc: "세션마다 기호-숫자 키가 바뀌어 단순 암기보다 실제 대응과 탐색을 사용하게 합니다." }
+          ],
+          rulesItems: [
+            { num: "1", text: "기호-숫자 키", highlight: "6개 대응", result: "상단 키에서 숫자 확인" },
+            { num: "2", text: "표적 기호", highlight: "+100점", result: "콤보·레벨 배수 적용" },
+            { num: "3", text: "틀린 숫자", highlight: "콤보 초기화", result: "설정 시 시간 차감" },
+            { num: "4", text: "연속 기록·패널티", highlight: "시간 초과·오입력", result: "활성화 시 −0.8초" }
+          ],
+          faqItems: faqSchema.mainEntity.map((e) => ({ q: e.name, a: e.acceptedAnswer.text }))
+        }}
+      />
       <DrillGuide {...guideProps} />
       <div className="max-w-6xl mx-auto px-4 pb-12">
         <RelatedDrills currentCategory="cognitive" currentHref="https://skilldrills.online/ko/drills/cognitive/processing-speed/symbol-matching" />
       </div>
+      <DrillFooter />
     </>
   );
 }

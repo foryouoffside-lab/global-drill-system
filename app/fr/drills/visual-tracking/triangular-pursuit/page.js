@@ -5,29 +5,30 @@ import { getAlternateLanguages } from '@/lib/i18n/locales';
 import { pickSources } from '@/lib/drillSources';
 
 export const metadata = {
-  title: "Poursuite Oculaire Triangulaire – SkillDrills",
-  description: "Entraînez la poursuite visuelle le long de vecteurs triangulaires et les saccades de virage aux sommets. Test oculomoteur gratuit pour sportifs et gamers.",
+  title: "Poursuite visuelle triangulaire | SkillDrills",
+  description: "Suivez une cible sur une route triangulaire. Exercice gratuit pour suivi diagonal, erreur aux angles et pertes de cible.",
   keywords: [
-    "poursuite visuelle triangulaire",
-    "entraînement oculomoteur trajectoire polygonale",
-    "exercices de poursuite et saccades oculaires",
-    "précision du regard dans les angles aigus",
-    "saccades de rattrapage changement de direction",
-    "stabilisation du regard et réflexes visuels",
-    "test de motricité oculaire en ligne",
-    "coordination oculomotrice sportive",
-    "freinage et accélération du regard sport",
-    "exercices pour dynamiser la vision",
-    "entraînement à la trajectoire brisée réflexes",
-    "test de précision oculomotrice gratuit"
+    "poursuite visuelle triangulaire exercice",
+    "mouvements oculaires triangulaires entraînement",
+    "suivre une cible en triangle",
+    "poursuite visuelle diagonale",
+    "poursuite aux angles",
+    "erreur du regard aux sommets",
+    "réacquisition de cible triangulaire",
+    "exercice de coordination oculaire",
+    "saccades changement de direction",
+    "perte de cible visuelle",
+    "agilité visuelle sportive",
+    "entraînement visuel dans le navigateur"
   ],
   alternates: {
     canonical: "https://skilldrills.online/fr/drills/visual-tracking/triangular-pursuit",
-    languages: getAlternateLanguages('drills/visual-tracking/triangular-pursuit')
+    languages: getAlternateLanguages('/drills/visual-tracking/triangular-pursuit')
   },
+  robots: { index: true, follow: true },
   openGraph: {
-    title: "Poursuite Oculaire Triangulaire – SkillDrills",
-    description: "Entraînez la poursuite visuelle le long de vecteurs triangulaires et les saccades de virage aux sommets. Test oculomoteur gratuit pour sportifs et gamers.",
+    title: "Poursuite visuelle triangulaire | SkillDrills",
+    description: "Suivez une cible sur une route triangulaire. Exercice gratuit pour suivi diagonal, erreur aux angles et pertes de cible.",
     url: "https://skilldrills.online/fr/drills/visual-tracking/triangular-pursuit",
     siteName: "SkillDrills",
     locale: "fr_FR",
@@ -35,8 +36,8 @@ export const metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Poursuite Oculaire Triangulaire – SkillDrills",
-    description: "Entraînez la poursuite visuelle le long de vecteurs triangulaires et les saccades de virage aux sommets. Test oculomoteur gratuit pour sportifs et gamers."
+    title: "Poursuite visuelle triangulaire | SkillDrills",
+    description: "Suivez une cible sur une route triangulaire. Exercice gratuit pour suivi diagonal, erreur aux angles et pertes de cible."
   }
 };
 
@@ -67,7 +68,8 @@ export default function TriangularPursuitPageFR() {
     "applicationCategory": "HealthApplication",
     "operatingSystem": "Any",
     "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
-    "description": "Entraînement neurocognitif de poursuite continue et saccades de rattrapage le long d une trajectoire polygonale fermée."
+    "description": "Entraînement neurocognitif de poursuite continue et saccades de rattrapage le long d une trajectoire polygonale fermée.",
+    "dateModified": "2026-09-20"
   };
 
   const webAppSchema = {
@@ -76,15 +78,17 @@ export default function TriangularPursuitPageFR() {
     "name": "Exercice de Poursuite Vectorielle Triangulaire",
     "url": "https://skilldrills.online/fr/drills/visual-tracking/triangular-pursuit",
     "applicationCategory": "TrainingTool",
-    "browserRequirements": "Requires JavaScript. HTML5 Canvas compatible."
+    "browserRequirements": "Nécessite JavaScript et la compatibilité HTML5 Canvas.",
+    "dateModified": "2026-09-20"
   };
 
   const videoGameSchema = {
     "@context": "https://schema.org",
     "@type": "VideoGame",
     "name": "Défi de Poursuite Triangulaire",
-    "gamePlatform": "Web Browser",
-    "genre": ["Visual Training", "Eye Tracking Drill", "Esports Reflex"]
+    "gamePlatform": "Navigateur web",
+    "genre": ["Entraînement visuel", "Exercice de poursuite oculaire", "Réflexes pour l esports"],
+    "dateModified": "2026-09-20"
   };
 
   const howToSchema = {
@@ -92,6 +96,7 @@ export default function TriangularPursuitPageFR() {
     "@type": "HowTo",
     "name": "Comment Réaliser la Poursuite Oculaire Triangulaire",
     "description": "Méthode pour maîtriser le freinage fovéal et la réacquisition aux angles aigus de 60 degrés.",
+    "dateModified": "2026-09-20",
     "step": [
       {
         "@type": "HowToStep",
@@ -119,6 +124,7 @@ export default function TriangularPursuitPageFR() {
   const faqSchema = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
+    "dateModified": "2026-09-20",
     "mainEntity": [
       {
         "@type": "Question",
@@ -209,7 +215,7 @@ export default function TriangularPursuitPageFR() {
       "Le suivi visuel le long de polygones géométriques fermés requiert une coordination continue et ultra-précise entre les groupes musculaires extraoculaires horizontaux et verticaux. Lorsqu'une cible se déplace le long des côtés d'un triangle équilatéral, le système oculomoteur engage une poursuite oculaire lisse sur des vecteurs diagonaux non cardinaux, obligeant le tronc cérébral à équilibrer les signaux pontiques horizontaux (PPRF) avec les commandes motrices mésencéphaliques verticales (riMLF; Orban de Xivry & Lefèvre, 2007).",
       "Le principal défi neurophysiologique réside dans les trois sommets aigus de 60 degrés. À chaque virage abrupt, la vitesse de glissement rétinien s'effondre instantanément tandis que l'erreur de positionnement fovéal s'accroît brutalement. Les travaux pionniers de de Brouwer et al. (2002) et Heinen et al. (2005) ont démontré que les saccades de rattrapage (catch-up saccades) sont déclenchées par un calcul neuronal combinant l'écart de position et le glissement rétinien instantané, orchestré par les champs oculaires frontaux (FEF) et supplémentaires (SEF).",
       "Sans entraînement oculomoteur adapté, le regard a tendance à dépasser les sommets aigus par inertie (overshoot) ou à couper les angles prématurément, ce qui entraîne de multiples saccades correctives désordonnées et dégrade l'acuité dynamique. En revanche, la pratique régulière du suivi polygonal active les modèles internes prédictifs du cervelet (Bennett & Barnes, 2006; Barnes, 2008), permettant une décélération anticipée avant chaque sommet et une réacquisition fovéale ultra-rapide sur le vecteur suivant.",
-      "L'exercice de Poursuite Triangulaire (Triangular Pursuit) développe cette agilité visuelle directement dans votre navigateur. En suivant la cible le long d'une trajectoire triangulaire continue, vous entraînez conjointement la poursuite diagonale à vitesse constante et le recalage net aux sommets. Les options comme masquer la ligne ('Hide Line') suppriment les repères spatiaux pour tester le contrôle sensorimoteur pur, tandis que la vitesse aléatoire ('Random Speed') déjoue les habitudes de cadence mécanique.",
+      "L'exercice de poursuite visuelle triangulaire développe cette agilité visuelle directement dans votre navigateur. En suivant la cible le long d'une trajectoire triangulaire continue, vous entraînez conjointement la poursuite diagonale à vitesse constante et le recalage net aux sommets. L'option qui masque la ligne supprime les repères spatiaux pour tester le contrôle sensorimoteur pur, tandis que la vitesse aléatoire déjoue les habitudes de cadence mécanique.",
       "Méthodologie de mesure et latence matérielle : Les mesures temporelles et d'adhésion visuelle intègrent la quantification de rafraîchissement d'écran (~16,7 ms à 60 Hz, ~6,9 ms à 144 Hz, ~4,1 ms à 240 Hz) ainsi que les intervalles de scrutation des périphériques (~8 ms à 125 Hz contre ~1 ms à 1 000 Hz), comme documenté par Woods et al. (2015). L'ensemble de vos scores et métriques reste exclusivement stocké dans le stockage local (localStorage) de votre navigateur, garantissant une confidentialité totale sans transmission télémétrique."
     ],
     benchmarks: {
@@ -224,6 +230,12 @@ export default function TriangularPursuitPageFR() {
       ],
       note: "Barèmes établis d après de Brouwer et al. (2002) sur la dynamique des saccades de rattrapage et Heinen et al. (2005) sur le contrôle moteur lors de virages angulaires aigus."
     },
+    steps: [
+      { title: "Fixez la cible au centre", text: "Gardez la tête stable et suivez du regard le début de la trajectoire triangulaire." },
+      { title: "Suivez chaque côté en diagonale", text: "Accompagnez le segment droit sans couper l angle et gardez le regard au centre de la cible." },
+      { title: "Freinez aux sommets", text: "Ralentissez avant l angle de 60 degrés et faites une courte correction pour entrer sur le côté suivant." },
+      { title: "Augmentez la vitesse avec contrôle", text: "Montez le multiplicateur seulement lorsque l erreur aux angles et les pertes de cible restent stables." }
+    ],
     instructions: [
       "Fixez la cible fovéale et suivez le segment rectiligne sans bouger le cou.",
       "Calibrez la décélération à l approche immédiate de chaque sommet du triangle.",
@@ -267,9 +279,9 @@ export default function TriangularPursuitPageFR() {
 
       <TriangularPursuitClient
         copy={{
-          title: "Poursuite Triangulaire",
-          subtitle: "Entraînement Oculomoteur en Trajectoire Polygonale",
-          description: "Poursuivez une cible sur une trajectoire polygonale fermée et maîtrisez la transition immédiate entre poursuite visuelle continue et saccades de virage aux sommets de 60 degrés."
+          title: "Poursuite visuelle triangulaire",
+          subtitle: "Exercice diagonal et reprise aux angles",
+          description: "Suivez une cible sur une route triangulaire et mesurez l erreur aux angles et les pertes de cible."
         }}
       />
       <DrillGuide guide={guide} />

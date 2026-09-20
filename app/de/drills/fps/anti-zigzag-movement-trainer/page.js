@@ -6,21 +6,19 @@ import { getAlternateLanguages } from '@/lib/i18n/locales';
 import RelatedDrills from '@/components/drill/RelatedDrills';
 
 export const metadata = {
-  title: "Anti-Zigzag Aim Trainer – Zickzack Tracking | SkillDrills",
-  description: "Kostenloser Anti-Zigzag-Trainer im Browser: Meistere reaktives Tracking gegen Zickzack-Ausweichbewegungen und Slide-Cancels für Apex Legends und Warzone.",
+  title: "Aim Trainer | Zickzack-Tracking | SkillDrills",
+  description: "Kostenloser Aim Trainer im Browser: Trainiere Tracking gegen Zickzack-Bewegungen und Slide-Cancels in Apex, Valorant und Warzone.",
   keywords: [
-    "Anti-Zigzag Aim Trainer",
-    "Zickzack Aiming Training",
+    "Aim Trainer",
+    "aim trainer valorant",
+    "aim trainer browser",
+    "Zickzack Tracking",
     "Ausweichbewegung Tracking",
-    "Gleitabbruch Tracking",
-    "Zickzack Bewegung Tracken",
-    "Reaktives Tracking Apex",
-    "V-Crossover Tracking",
-    "Zickzack Tracking Übungen",
-    "Fadenkreuz Überschwingen verhindern",
-    "Fadenkreuz Abbremsen Übung",
-    "Nahkampf Tracking Warzone",
-    "Richtungswechsel Fadenkreuz"
+    "Slide-Cancel Tracking",
+    "reaktives Tracking",
+    "Fadenkreuz Überschwingen",
+    "Richtungswechsel Aiming",
+    "Aim Training online"
   ],
   alternates: {
     canonical: "https://skilldrills.online/de/drills/fps/anti-zigzag-movement-trainer",
@@ -31,8 +29,8 @@ export const metadata = {
     follow: true,
   },
   openGraph: {
-    title: "Anti-Zigzag Aim Trainer – Zickzack Tracking | SkillDrills",
-    description: "Kostenloser Anti-Zigzag-Trainer im Browser: Meistere reaktives Tracking gegen Zickzack-Ausweichbewegungen und Slide-Cancels für Apex Legends und Warzone.",
+    title: "Aim Trainer | Zickzack-Tracking | SkillDrills",
+    description: "Kostenloser Aim Trainer im Browser: Trainiere Tracking gegen Zickzack-Bewegungen und Slide-Cancels in Apex, Valorant und Warzone.",
     url: "https://skilldrills.online/de/drills/fps/anti-zigzag-movement-trainer",
     siteName: 'SkillDrills',
     locale: 'de_DE',
@@ -40,8 +38,8 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: "Anti-Zigzag Aim Trainer – Zickzack Tracking | SkillDrills",
-    description: "Kostenloser Anti-Zigzag-Trainer im Browser: Meistere reaktives Tracking gegen Zickzack-Ausweichbewegungen und Slide-Cancels für Apex Legends und Warzone.",
+    title: "Aim Trainer | Zickzack-Tracking | SkillDrills",
+    description: "Kostenloser Aim Trainer im Browser: Trainiere Tracking gegen Zickzack-Bewegungen und Slide-Cancels in Apex, Valorant und Warzone.",
   },
 };
 
@@ -52,17 +50,17 @@ export default function AntiZigzagDePage() {
     "itemListElement": [
       { "@type": "ListItem", "position": 1, "name": "SkillDrills", "item": "https://skilldrills.online/de" },
       { "@type": "ListItem", "position": 2, "name": "FPS Drills", "item": "https://skilldrills.online/de/drills/fps" },
-      { "@type": "ListItem", "position": 3, "name": "Anti-Zigzag Trainer", "item": "https://skilldrills.online/de/drills/fps/anti-zigzag-movement-trainer" }
+      { "@type": "ListItem", "position": 3, "name": "Aim Trainer - Zickzack-Tracking", "item": "https://skilldrills.online/de/drills/fps/anti-zigzag-movement-trainer" }
     ]
   };
 
   const softwareSchema = {
     "@context": "https://schema.org",
     "@type": "SoftwareApplication",
-    "name": "Anti-Zigzag Aim Trainer",
+    "name": "Aim Trainer - Zickzack-Tracking",
     "applicationCategory": "GameApplication",
     "operatingSystem": "Web Browser",
-    "dateModified": "2026-09-05",
+    "dateModified": "2026-09-20",
     "offers": { "@type": "Offer", "price": "0", "priceCurrency": "EUR" },
     "description": "Kostenloses Browsertraining zur Beherrschung reaktiven Trackings gegen unberechenbare Zickzack-Ausweichmanöver und Slide-Cancels.",
     "genre": "FPS Training / Anti-Zigzag",
@@ -77,7 +75,7 @@ export default function AntiZigzagDePage() {
   const webAppSchema = {
     "@context": "https://schema.org",
     "@type": "WebApplication",
-    "name": "Anti-Zigzag Aim Trainer",
+    "name": "Aim Trainer - Zickzack-Tracking",
     "url": "https://skilldrills.online/de/drills/fps/anti-zigzag-movement-trainer",
     "applicationCategory": "GameApplication",
     "operatingSystem": "All",
@@ -93,10 +91,10 @@ export default function AntiZigzagDePage() {
   const videoGameSchema = {
     "@context": "https://schema.org",
     "@type": "VideoGame",
-    "name": "Anti-Zigzag Aim Trainer",
+    "name": "Aim Trainer - Zickzack-Tracking",
     "url": "https://skilldrills.online/de/drills/fps/anti-zigzag-movement-trainer",
     "description": "Kostenloses Browsertraining zur Beherrschung reaktiven Trackings gegen unberechenbare Zickzack-Ausweichmanöver und Slide-Cancels.",
-    "dateModified": "2026-09-05",
+    "dateModified": "2026-09-20",
     "gamePlatform": "Web Browser",
     "genre": ["FPS Training", "Aim Trainer", "Reactive Tracking"],
     "playMode": "SinglePlayer",
@@ -108,7 +106,7 @@ export default function AntiZigzagDePage() {
   const faqSchema = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
-    "dateModified": "2026-09-05",
+    "dateModified": "2026-09-20",
     "mainEntity": [
       {
         "@type": "Question",
@@ -231,9 +229,9 @@ export default function AntiZigzagDePage() {
   };
 
   const antiZigzagGuide = {
-    heading: "Anti-Zigzag Aim Training Guide & Biomechanik des Ausweichtrackings",
+    heading: "Aim Trainer für Zickzack-Tracking und Ausweichbewegungen",
     intro: [
-      "In kompetitiven Ego-Shootern mit dynamischen Bewegungsmechaniken – wie Apex Legends, Call of Duty: Warzone und Overwatch 2 – setzen geschickte Gegner auf unregelmäßige Zickzack-Läufe, Slide-Canceling und Hocksprünge, um das Fadenkreuz des Angreifers abzuschütteln und visuo-motorische Desynchronisation hervorzurufen. Während lineares Folgetracking (Smooth Pursuit) auf der Vorhersehbarkeit einer kontinuierlichen Flugbahn beruht (Krauzlis, 2004), zwingt Zickzack-Tracking das motorische System in eine fortlaufende Steuerungsaufgabe unter dynamischen Geschwindigkeits-Genauigkeits-Grenzen (Fitts, 1954; Accot & Zhai, 1997). Zwar verfügen erfahrene Gamer über gesteigerte visuelle Aufmerksamkeit und Kontrastschärfe (Green & Bavelier, 2003), doch bei abrupten schrägen Richtungswechseln erfährt das Sehsystem akuten retinalen Schlupf (Rashbass, 1961), der blitzschnelle Abbremsung und mehrachsige Handgelenksanpassungen fordert.",
+      "Ein Aim Trainer für Zickzack-Tracking übt, das Fadenkreuz bei unberechenbaren Ausweichbewegungen und Slide-Cancels auf dem Ziel zu halten. Dieser Drill misst Richtungswechsel, Overshoot-Kontrolle und Tracking-Uptime für Apex, Valorant und Warzone.",
       "Der fundamentale mechanische Fehler ungeübter Schützen bei Ausweichbewegungen ist das Über-Flicken hinter den äußeren Scheitelpunkten der gegnerischen Kurve. Führt ein Gegner ein Zickzack-Muster in V-Form aus, fällt seine Geschwindigkeit am äußeren Umkehrpunkt für einen Sekundenbruchteil auf null ab, bevor er beschleunigt zurück durch die Mitte zieht. Wer versucht, den Wendepunkt hektisch zu jagen, überschießt unweigerlich und gerät in antagonistische Muskelblockaden. Elite-Tracker nutzen stattdessen das 'V-Crossover-Anchoring': Sie verankern ihren visuellen Fokus nahe der Mittelachse und vollziehen feine, geschwindigkeitsangepasste Mikro-Korrekturen, während der Gegner durch das Fadenkreuz zurückkehrt.",
       "Der Anti-Zigzag Aim Trainer läuft direkt im modernen Webbrowser über die HTML5 Pointer Lock API mit nativer 1:1-Hardwareübertragung, performance.now()-Chronometrie und ohne künstliche Mausglättung. Durch die Minimierung von USB-Abfrage-Jitter (Woods et al., 2015) und das Trainieren kontinuierlicher Dwell-Time-Schadensmechaniken gegen steigende Zickzack-Frequenzen konditioniert diese Übung die notwendige sensomotorische Ruhe, um Panik-Flicks abzubauen und Ausweichduelle souverän zu dominieren.",
       "Messmethodik: Alle Tracking-Ereignisse werden clientseitig über die performance.now()-Hochpräzisionsuhr deines Browsers erfasst – absolut verzögerungsfrei ohne Server-Latenzen. Zu berücksichtigen: Browser runden Zeitstempel aus Sicherheitsgründen (Spectre-Schutz) auf ca. 1 ms; Bildschirme quantisieren visuelle Reize über die Bildwiederholrate (16,7 ms bei 60 Hz, 6,9 ms bei 144 Hz, 4,1 ms bei 240 Hz). Die USB-Abfragerate fügt bei 1000 Hz ca. 1 ms hinzu. Latenzunterschiede unter 5 ms stellen messtechnisches Rauschen dar; vergleiche Trainingsläufe stets auf identischer Hardware."
@@ -322,13 +320,13 @@ export default function AntiZigzagDePage() {
       />
       <AntiZigzagClient
         copy={{
-          h1Keyword: "Anti-Zigzag Aim Trainer",
-          h1Suffix: " – Ausweichbewegung & Zickzack-Tracking",
+          h1Keyword: "Aim Trainer",
+          h1Suffix: " – Zickzack-Tracking & Ausweichen",
           statScore: "Punkte",
           statTime: "Zeit",
           statAccuracy: "Präzision",
           statBestScore: "Highscore",
-          startTitle: "Anti-Zigzag Movement",
+          startTitle: "Aim Trainer - Zickzack-Tracking",
           startSubtitle: "Reaktives Tracking • Endlose Levelprogression",
           getReady: "BEREIT MACHEN",
           pausedTitle: "PAUSIERT",
@@ -341,7 +339,7 @@ export default function AntiZigzagDePage() {
             { num: "3", text: "Levelprogression", highlight: "+1 Stufe / 1400 PKT", result: "Adaptives Zickzack-Tempo" },
             { num: "4", text: "Zielverlust", highlight: "Lebensdauer abgelaufen", result: "Setzt Combo zurück (-0,6s)" }
           ],
-          aboutTitle: "Über Anti-Zigzag Movement Tracking"
+          aboutTitle: "Über Aim Trainer und Zickzack-Tracking"
         }}
       />
       <DrillGuide guide={antiZigzagGuide} />

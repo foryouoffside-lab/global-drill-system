@@ -6,6 +6,11 @@
   html {
     -webkit-text-size-adjust: 100%;
     text-size-adjust: 100%;
+    @apply bg-canvas;
+  }
+
+  .fonts-pending h1 {
+    visibility: hidden;
   }
 
   body {
@@ -81,6 +86,20 @@
 @media (prefers-reduced-motion: reduce) {
   .marquee-track { animation: none; }
   .marquee-viewport { overflow-x: auto; }
+}
+
+/* Keep the handoff from every drill client to its guide compact. The footer
+   is portalled after the page content, so no bottom padding is needed here. */
+#drills-main-content main.flex-1 {
+  padding-bottom: 0 !important;
+}
+
+/* Drill clients use min-h-screen for standalone use. Inside a page that also
+   renders the guide below them, that minimum height becomes an empty block
+   between the accordions and the guide. Let the client end at its content. */
+#drills-main-content > div.min-h-screen:has(> main.flex-1),
+#main-content > div.min-h-screen:has(> main.flex-1) {
+  min-height: 0 !important;
 }
 
 /* ─────────────────────────────────────────────────────────────────────────────
@@ -7876,6 +7895,13 @@
   54%, 72% { opacity: 1; transform: translate(-50%, 0); }
   80%, 100% { opacity: 0; transform: translate(-50%, -4px); }
 }
+
+/* Hit-impact burst (ring + spark) for DOM-based drill targets — see lib/useHitBurst.js */
+@keyframes fxHitRing { 0% { transform:scale(.32); opacity:.95; } 100% { transform:scale(1); opacity:0; } }
+.fx-hit-ring { position:absolute; border-radius:50%; border-style:solid; pointer-events:none; animation: fxHitRing .45s ease-out forwards; }
+
+@keyframes fxHitSpark { 0% { transform:translate(0,0) scale(1); opacity:1; } 100% { transform:translate(var(--tx), var(--ty)) scale(.25); opacity:0; } }
+.fx-hit-spark { position:absolute; border-radius:50%; pointer-events:none; animation: fxHitSpark .45s ease-out forwards; }
 
 /* Reduced Motion Override for All Reaction-Speed Previews */
 @media (prefers-reduced-motion: reduce) {

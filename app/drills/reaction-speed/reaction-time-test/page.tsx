@@ -370,7 +370,7 @@ export default function ReactionTimeTestPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
-      <ReactionTimeTestWrapper copy={{ title: 'Reaction Time Test' }} />
+      <ReactionTimeTestWrapper copy={{ title: 'Reaction Time Test', subtitle: 'Visual reaction time test for measuring reflex speed, click latency, and response accuracy in milliseconds' }} />
       <DrillGuide guide={reactionGuide} />
       <DrillFooter />
     </>

@@ -6,7 +6,7 @@ import { pickSources } from '@/lib/drillSources';
 
 // ============================================================
 // SEO RESEARCH FINDINGS — Brazil & Portugal (BR / PT)
-// Primary Intent: como parar de tremer a mira, teste de precisão do mouse, controle de recoil
+// Native SERP intent: treino de mira online grátis, teste de precisão do mouse, estabilidade da mira
 // Portuguese Context: Como parar de tremer a mira no Valorant/CS2 e treino de estabilidade motora contra forças externas
 // High-Demand, Low-Competition Target Keywords:
 //   - "como parar de tremer a mira" (Top intent for mouse jitter & hand shake)
@@ -22,27 +22,27 @@ import { pickSources } from '@/lib/drillSources';
 // ============================================================
 
 export const metadata = {
-  title: 'Estabilidade de Mira – Teste de Firmeza | SkillDrills',
-  description: 'Teste de estabilidade de mira e firmeza do mouse grátis. Mantenha o retículo no centro contra vetores de força e elimine tremores para jogos de tiro no PC.',
+  title: 'Estabilidade de Mira | Teste de Precisão | SkillDrills',
+  description: 'Treino grátis de mira no navegador. Mantenha o retículo no centro contra forças móveis e pratique firmeza, controle de recoil e precisão do mouse.',
   keywords: [
+    "treino de mira online grátis",
+    "teste de precisão do mouse",
     "como parar de tremer a mira",
-    "teste de precisao do mouse",
-    "controle de recoil cs2",
+    "controle de recoil",
     "treino de estabilidade de mira",
-    "teste de estabilidade do mouse",
-    "estabilidade de mira valorant",
-    "equilibrio postural e controle motor",
-    "resistencia a forcas externas mouse",
-    "sensibilidade e estabilidade do cursor",
-    "treino de compensacao de recuo"
+    "estabilidade da mira Valorant",
+    "teste de mira FPS",
+    "controle do mouse",
+    "rastreio estável de mira",
+    "mira firme no CS2"
   ],
   alternates: {
     canonical: 'https://skilldrills.online/pt/drills/physical/balance-training/stability-challenge',
     languages: getAlternateLanguages('/drills/physical/balance-training/stability-challenge'),
   },
   openGraph: {
-    title: 'Estabilidade de Mira – Teste de Firmeza | SkillDrills',
-    description: 'Teste de estabilidade de mira e firmeza do mouse grátis. Mantenha o retículo no centro contra vetores de força e elimine tremores para jogos de tiro no PC.',
+    title: 'Estabilidade de Mira | Teste de Precisão | SkillDrills',
+    description: 'Mantenha o retículo centrado e pratique firmeza, controle de recoil e precisão do mouse em um treino grátis no navegador.',
     url: 'https://skilldrills.online/pt/drills/physical/balance-training/stability-challenge',
     siteName: 'SkillDrills',
     locale: 'pt_BR',
@@ -50,8 +50,8 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Estabilidade de Mira – Teste de Firmeza | SkillDrills',
-    description: 'Teste de estabilidade de mira e firmeza do mouse grátis. Mantenha o retículo no centro contra vetores de força e elimine tremores para jogos de tiro no PC.',
+    title: 'Estabilidade de Mira | Teste de Precisão | SkillDrills',
+    description: 'Mantenha o retículo centrado e pratique firmeza, controle de recoil e precisão do mouse em um treino grátis no navegador.',
   },
   robots: { index: true, follow: true },
 };
@@ -98,7 +98,10 @@ const softwareApplicationSchema = {
     "price": "0",
     "priceCurrency": "USD"
   },
-  "description": "Ferramenta biomecânica de precisão motora e resistência a perturbações externas, desenhada para eliminar tremores no mouse e aprimorar a estabilidade de mira em FPS."
+  "description": "Ferramenta biomecânica de precisão motora e resistência a perturbações externas, desenhada para eliminar tremores no mouse e aprimorar a estabilidade de mira em FPS.",
+  "url": "https://skilldrills.online/pt/drills/physical/balance-training/stability-challenge",
+  "inLanguage": "pt-BR",
+  "dateModified": "2026-09-20"
 };
 
 const webApplicationSchema = {
@@ -113,7 +116,9 @@ const webApplicationSchema = {
     "@type": "Offer",
     "price": "0",
     "priceCurrency": "USD"
-  }
+  },
+  "inLanguage": "pt-BR",
+  "dateModified": "2026-09-20"
 };
 
 const videoGameSchema = {
@@ -123,12 +128,16 @@ const videoGameSchema = {
   "url": "https://skilldrills.online/pt/drills/physical/balance-training/stability-challenge",
   "description": "Jogo de resistência neuromuscular onde o jogador estabiliza a mira no centro contra forças contínuas de arrasto.",
   "genre": ["Action", "Sports Game", "Reflex Game", "Motor Training"],
-  "gamePlatform": ["Web Browser", "Desktop", "Mobile"]
+  "gamePlatform": ["Web Browser", "Desktop", "Mobile"],
+  "inLanguage": "pt-BR",
+  "dateModified": "2026-09-20"
 };
 
 const faqSchema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
+  "inLanguage": "pt-BR",
+  "dateModified": "2026-09-20",
   "mainEntity": [
     {
       "@type": "Question",
@@ -333,8 +342,8 @@ export default function StabilityChallengePtPage() {
       />
       <StabilityChallengeClient
         copy={{
-          title: 'Estabilidade de Mira – Teste de Firmeza | SkillDrills',
-          subtitle: 'Estabilidade de Mira – Teste de Firmeza | SkillDrills',
+          title: 'Estabilidade de Mira',
+          subtitle: 'Mantenha o retículo no centro contra a força',
           hudLabels: {
             score: "Pontos",
             time: "Tempo",

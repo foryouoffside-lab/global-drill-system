@@ -1,5 +1,6 @@
 import InfinityPursuitClient from '@/app/drills/visual-tracking/infinity-pursuit/InfinityPursuitClientLoader';
 import DrillGuide from '@/components/drill/DrillGuide';
+import DrillFooter from '@/components/drill/DrillFooter';
 import RelatedDrills from '@/components/drill/RelatedDrills';
 import { getAlternateLanguages } from '@/lib/i18n/locales';
 import { pickSources } from '@/lib/drillSources';
@@ -14,25 +15,25 @@ import { pickSources } from '@/lib/drillSources';
 // ============================================================
 
 export const metadata = {
-  title: "8の字眼球運動トレーニング・インフィニティ追従テスト – 両眼協調＆正中線交差 | SkillDrills",
-  description: "ベルヌーイのレムニスケート（8の字軌道）に沿って視線を滑らかに巡らせ、全6外眼筋の複合連動と正中線交差時の両眼協調性を鍛えるビジョントレーニング。無料・登録不要。",
+  title: "8の字眼球運動トレーニング | SkillDrills",
+  description: "8の字の動く標的を両眼で追い、視線追従と正中線通過を練習する無料の眼球運動トレーニング。ブラウザで実践できます。",
   keywords: [
-    "8の字 眼球運動",
-    "8の字 目の体操",
-    "両眼協調性 トレーニング",
-    "正中線交差 視覚トレーニング",
+    "8の字 眼球運動 トレーニング",
+    "フィギュアエイトトレーニング",
+    "視線追従 眼球運動",
+    "追従性眼球運動",
+    "正中線 目の運動",
+    "両眼協調 トレーニング",
+    "動体視力 8の字",
     "ビジョントレーニング 8の字",
-    "ベルヌーイのレムニスケート 追従",
-    "滑動性追従 8の字",
-    "外眼筋 バランス 運動",
-    "動体視力 8の字 トレーニング",
-    "斜め視線 動体視力",
+    "眼球運動 トレーニング",
     "視線ジャンプ 抑制",
-    "アイトラッキング 8の字"
+    "アイトラッキング 8の字",
+    "無料 視線追従 練習"
   ],
   openGraph: {
-    title: "8の字眼球運動トレーニング・インフィニティ追従テスト – 両眼協調＆正中線交差 | SkillDrills",
-    description: "ベルヌーイのレムニスケート（8の字軌道）に沿って視線を滑らかに巡らせ、全6外眼筋の複合連動と正中線交差時の両眼協調性を鍛えるビジョントレーニング。",
+    title: "8の字眼球運動トレーニング | SkillDrills",
+    description: "8の字の動く標的を両眼で追い、視線追従と正中線通過を練習する無料の眼球運動トレーニング。",
     type: "website",
     url: "https://skilldrills.online/ja/drills/visual-tracking/infinity-pursuit",
     siteName: "SkillDrills",
@@ -40,8 +41,8 @@ export const metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "8の字眼球運動トレーニング・インフィニティ追従テスト – 両眼協調＆正中線交差 | SkillDrills",
-    description: "8の字無限軌道を滑らかに追従し、正中線交差時の視線飛びを抑えて両眼協調性を高める無料オンライントレーニング。",
+    title: "8の字視線追従トレーニング | SkillDrills",
+    description: "8の字の軌道を滑らかに追い、中心を通るときの視線の乱れを観察する無料トレーニング。",
   },
   robots: { index: true, follow: true },
   alternates: {
@@ -66,13 +67,13 @@ const softwareApplicationSchema = {
   "@type": "SoftwareApplication",
   "name": "8の字眼球運動トレーニング・インフィニティ視覚追従テスト",
   "applicationCategory": "HealthApplication",
-  "operatingSystem": "All",
+  "operatingSystem": "ブラウザ",
   "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
   "description": "ベルヌーイのレムニスケート（8の字無限ループ）に沿って全6外眼筋を連動させ、正中線交差と滑動追従ゲインを鍛える無料ビジョントレーニングツール。",
   "url": "https://skilldrills.online/ja/drills/visual-tracking/infinity-pursuit",
   "publisher": { "@type": "Organization", "name": "SkillDrills", "url": "https://skilldrills.online/ja" },
   "inLanguage": "ja",
-  "dateModified": "2026-09-15"
+  "dateModified": "2026-09-20"
 };
 
 const webAppSchema = {
@@ -80,12 +81,12 @@ const webAppSchema = {
   "@type": "WebApplication",
   "name": "8の字眼球運動トレーニング・インフィニティ視覚追従テスト – 両眼協調＆正中線交差スムーズパシュート | SkillDrills",
   "applicationCategory": "EducationalApplication",
-  "operatingSystem": "All",
+  "operatingSystem": "ブラウザ",
   "browserRequirements": "HTML5 Canvas対応ブラウザ（Chrome, Edge, Firefox, Safari）",
   "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
   "url": "https://skilldrills.online/ja/drills/visual-tracking/infinity-pursuit",
   "inLanguage": "ja",
-  "dateModified": "2026-09-15"
+  "dateModified": "2026-09-20"
 };
 
 const videoGameSchema = {
@@ -94,8 +95,9 @@ const videoGameSchema = {
   "name": "8の字眼球運動トレーニング・インフィニティ視覚追従テスト",
   "url": "https://skilldrills.online/ja/drills/visual-tracking/infinity-pursuit",
   "description": "8の字レムニスケート軌道上を連続移動するターゲットを中心窩でロックし、滑動性追従運動と正中線交差能力を測定・強化するアイトラッキングゲーム。",
-  "genre": ["Action", "Brain Game", "Eye Tracking", "Vision Training"],
-  "gamePlatform": ["Web Browser", "Desktop", "Mobile"],
+  "genre": ["眼球運動トレーニング", "スポーツビジョン", "視線追従"],
+  "gamePlatform": ["ブラウザ"],
+  "dateModified": "2026-09-20",
   "applicationCategory": "Game",
   "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
 };
@@ -103,6 +105,7 @@ const videoGameSchema = {
 const howToSchema = {
   "@context": "https://schema.org",
   "@type": "HowTo",
+  "dateModified": "2026-09-20",
   "name": "8の字眼球運動トレーニングの測定・実践手順",
   "description": "ベルヌーイのレムニスケート軌道を用いて両眼協調性と正中線交差追従力を正しく向上させる4段階のステップ。",
   "step": [
@@ -140,6 +143,7 @@ const howToSchema = {
 const faqSchema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
+  "dateModified": "2026-09-20",
   "mainEntity": [
     {
       "@type": "Question",
@@ -159,7 +163,7 @@ const faqSchema = {
     },
     {
       "@type": "Question",
-      "name": "「正中線交差（Midline Crossing）」で視線がブレやすいのはなぜですか？",
+      "name": "正中線を通るときに視線がぶれやすいのはなぜですか？",
       "acceptedAnswer": {
         "@type": "Answer",
         "text": "視線が視野の中央（身体の正中線）を横切る際、網膜から視覚入力を受け取る大脳半球の担当領域が左半球から右半球（またはその逆）へと切り替わります。大脳皮質間を連絡する脳梁を介した情報伝達にわずかな遅延や処理負荷が生じると、滑動性追従（スムーズパシュート）が途切れ、代償として不随意な視線跳躍（補正サッケード）が混入しやすくなります。この交差部を滑らかに通過できるよう訓練することが本ドリルの主目的です。"
@@ -227,14 +231,14 @@ const faqSchema = {
 const guideProps = {
   heading: "8の字眼球運動・インフィニティ視覚追従の神経眼科学基準",
   intro: [
-    "数学者ヤコブ・ベルヌーイによって提唱されたレムニスケート（Lemniscate）曲線は、単一の平面上で曲率と進行方向が連続的に滑らかに反転する無限ループ（∞）の幾何学軌道です。人間の視覚運動系において、この8の字軌道を正確に眼球のみで追尾する動作は、内直筋・外直筋（水平運動）、上直筋・下直筋（垂直運動）、そして上斜筋・下斜筋（回旋・斜角運動）の全6対の外眼筋が途切れることなく連続的に力配分を変化させる極めて高度な神経筋制御を要求します（Robinson, 1965）。大脳皮質の側頭頭頂後頭野（MT/MST野）で計算された移動速度ベクトルは、前頭眼野（FEF）および小脳片葉・傍片葉へと伝達され、網膜像のズレ（網膜スリップ）をゼロに近づける滑動性追従運動（Smooth Pursuit）をリアルタイムに生成します。",
-    "8の字軌道追従における最大の認知的障壁は、左右のループが交差する「視覚的身体正中線（Visual Midline）」の通過時に発生します。視線が右視野から左視野、あるいは左から右へと中心軸を横断する瞬間、網膜からの視覚信号を処理する主要な大脳半球が対側へと切り替わります（Leigh & Zee, 2015）。脳梁（Corpus Callosum）を介した左右半球間の神経情報転移にわずかでも遅延やノイズが存在すると、滑らかな追従眼球運動が瞬間的に破綻し、視線が標的から遅れて飛びつく「補正サッケード（Catch-up Saccade）」が混入します。本ドリルでこの正中線通過時の滑動ゲインを維持する反復訓練を行うことで、左右大脳半球の協調伝達速度が研ぎ澄まされ、中心視野における視線の引っかかりが根本から解消されます。",
-    "レムニスケート軌道は一定速度の円運動とは異なり、外側の大きなループ旋回部から中心の交差点に向かって接近するにつれて動径ベクトルと曲率半径がダイナミックに変化します。この軌道を一定の角速度ではなく滑らかに追従するためには、小脳内の内部モデルがターゲットの物理運動方程式を先読みし、眼球回転速度を連続的に加減速させる「予期的追従制御（Predictive Pursuit Gain Control）」が不可欠です（Barnes, 2008）。標的の現在位置のみに受動的に反応するフィードバック制御だけでは約100〜130ミリ秒の神経伝達遅延により必ず中心窩から標的が脱落しますが、8の字軌道を繰り返し周回することで小脳の前向き内部モデルが最適化され、遅延のない完全な中心窩ロックが実現されます（Krauzlis, 2004）。",
-    "8の字眼球運動は、神経眼科学やビジョントレーニングにおいて長年にわたり両眼協調不全や斜位の改善に用いられてきた実績ある訓練法です。近年ではFPS（Apex Legends, Overwatch等）のトッププロやプロアスリートの動体視力強化ルーティンとしても急速に普及しています。多方向へ跳躍・スライディングする立体機動の敵に対しても、眼球運動の軸ブレや正中線での視線ジャンプを起こさず吸い付くようなクロスヘア制御を維持できるようになります。さらに、現代人の大半が抱える長時間の固定画面凝視による外眼筋の過緊張（VDT症候群）に対し、8の字の滑らかな全方位運動は外眼筋の血流を促し、調節痙攣と眼精疲労を劇的に緩和させるリカバリー効果も発揮します（Woods et al., 2015）。"
+    "8の字、つまりベルヌーイのレムニスケートは、左右の曲線と中央の交差を一つの軌道にまとめた形です。動く標的を眼球だけで追うと、水平・垂直・斜めの視線移動が連続します。ここではその動きの仕組みを学びますが、眼の病気を調べたり治療したりする検査ではありません。",
+    "左右のループが交わる中央では、視線が右側と左側の視野を行き来します。標的を見失う、視線が小さく跳ぶ、中央で止まるといった変化を観察すると、どの部分が難しいかを同じ条件で比較できます。これらは練習中の観察であり、診断結果ではありません。",
+    "動きやすさは画面との距離、標的の大きさ、表示の滑らかさ、疲労によって変わります。速さよりも楽に追えることを優先し、自然にまばたきしてください。痛み、複視、吐き気、めまいが出たら中止し、症状が続く場合は医療専門家に相談しましょう。",
+    "読書やスポーツへの効果を一律に約束することはできません。このページは、動く標的への視線追従を短時間で練習し、記録を同じ条件で振り返るためのものです。"
   ],
   benchmarks: {
-    title: "8の字眼球運動・インフィニティ追従パフォーマンス指標 (Lemniscate Pursuit Benchmarks)",
-    headers: ["習熟度クラス", "追従ゲイン (Pursuit Gain)", "正中線サッケード混入率", "軌道追従効率 (Trajectory Efficiency)", "神経生理学的達成水準"],
+     title: "8の字眼球運動・視線追従のパフォーマンス指標",
+     headers: ["習熟度", "標的への追従", "正中線での視線跳び", "軌道の正確さ", "実践的な見方"],
     rows: [
       ["エリート (プロアスリート級)", "0.96 ～ 1.02", "2% 未満 (完全平滑)", "98% 以上", "全外眼筋の完全な協調。正中線交差時もサッケード混入が皆無で小脳内部モデルが完璧に同期"],
       ["アドバンス (競技ゲーマー級)", "0.90 ～ 0.95", "2% ～ 5%", "92% ～ 97%", "高い滑動追従安定性。急激な曲率変化に対してわずかな位相遅延が見られる程度で中心窩ロックを維持"],
@@ -248,22 +252,22 @@ const guideProps = {
     title: "8の字無限軌道追従ゲインと正中線交差を極める4大テクニック",
     items: [
       {
-        name: "頸部固定と純粋な外眼筋運動の単離 (Cervical Stabilization & Ocular Isolation)",
+        name: "頭部を安定させて眼球だけで追う",
         desc: "顎の下に軽く指先を当て、頭部が1ミリも動いていないことを触覚で確認しながら、眼球のみを動かしてください。頸部を静止させることで前庭動眼反射（VOR）が遮断され、大脳・小脳から外眼筋へと送られる純粋な運動神経指令のみが集中的に鍛えられます。",
         tips: "首筋の力を完全に抜き、モニター中央と自分の鼻先を結ぶラインを意識的にロックしましょう。"
       },
       {
-        name: "中央ノード（正中線）進入前の予期的速度適応 (Anticipatory Speed Modulation)",
+        name: "中央の交差前に速度を整える",
         desc: "8の字の中央交差点を通過する直前、ターゲットは外側ループから直線的な加速を伴って中心へと突入します。ターゲットが中心ノードに差し掛かる約50ミリ秒前から、視線を交差点の数ピクセル先へと滑らかに滑らせる意識を持ち、脳梁を介した半球間情報転移の遅延を予測的に相殺してください。",
         tips: "中心を通る瞬間は『見る』のではなく『視線が自然に通過していく』イメージを持つとサッケードが激減します。"
       },
       {
-        name: "外側ループ頂点での最大動径トレース (Full Radial Extension at Loop Apices)",
+        name: "外側のループを省略せず追う",
         desc: "標的の外側接線まで中心窩を密着させ、外眼筋（特に上斜筋・下斜筋）の最大伸展域まで丁寧に視線を導くことで、視野周辺部における動体視力の死角を完全に排除できます。",
         tips: "ループの端で視線が内側をショートカットしようとする衝動を意識的に抑制してください。"
       },
       {
-        name: "速度ラダー法と20-20-20疲労マネジメント (Velocity Ladder & Recovery Protocol)",
+        name: "速度を段階的に上げて休む",
         desc: "まずは1.0xで60秒間、一度も視線がブレない完璧なセッションを達成してください。その後0.2x刻みで速度を上げ、限界に達したら20秒間遠方の景色を眺めて毛様体筋と外眼筋を弛緩させる「20-20-20ルール」を徹底してください。",
         tips: "目の乾きや疲労を感じたら無理をせず、まばたきを意識的に増やして涙液層を保ちましょう。"
       }
@@ -283,12 +287,12 @@ const guideProps = {
   })),
   sources: pickSources('robinson1965', 'leigh2015', 'barnes2008', 'krauzlis2004', 'woods2015'),
   related: [
-    { href: "/ja/drills/visual-tracking/constant-slow-pursuit", label: "低速追従眼球運動トレーニング (Constant Slow)" },
-    { href: "/ja/drills/visual-tracking/directional-chaos-pursuit", label: "カオス方向追従テスト (Directional Chaos)" },
-    { href: "/ja/drills/visual-tracking/dynamic-evasion-pursuit", label: "リアクティブ追従訓練 (Dynamic Evasion)" },
-    { href: "/ja/drills/visual-tracking/ghosting-suppress-pursuit", label: "残像抑制固視トレーニング (Ghosting Suppress)" },
-    { href: "/ja/drills/visual-tracking/sine-wave-pursuit", label: "正弦波追従トレーニング (Sine Wave)" },
-    { href: "/ja/drills/visual-tracking/predictive-pursuit", label: "予測アイトラッキング (Predictive)" }
+    { href: "/ja/drills/visual-tracking/constant-slow-pursuit", label: "低速視線追従トレーニング" },
+    { href: "/ja/drills/visual-tracking/directional-chaos-pursuit", label: "方向変化の視線追従" },
+    { href: "/ja/drills/visual-tracking/dynamic-evasion-pursuit", label: "動く標的の追従訓練" },
+    { href: "/ja/drills/visual-tracking/ghosting-suppress-pursuit", label: "残像を抑える固視訓練" },
+    { href: "/ja/drills/visual-tracking/sine-wave-pursuit", label: "正弦波の視線追従" },
+    { href: "/ja/drills/visual-tracking/predictive-pursuit", label: "予測視線追従トレーニング" }
   ]
 };
 
@@ -304,9 +308,9 @@ export default function JapaneseInfinityPursuitPage() {
 
       <InfinityPursuitClient
         copy={{
-          title: "8の字眼球運動トレーニング：両眼協調と正中線交差インフィニティ追従",
-          subtitle: "ベルヌーイのレムニスケート軌道による滑動性眼球運動・両眼視統合ビジョントレーニング",
-          description: "ベルヌーイのレムニスケート（8の字無限軌道）に沿って視線を滑らかに巡らせる眼球運動トレーニング。水平・垂直・斜め方向の複合的な外眼筋群を滑動性追従（スムーズパシュート）で連動させ、正中線（体の中心軸）を視線が通過する際の両眼協調性の崩れやサッケード（視線跳躍）の混入を抑制します（Robinson, 1965; Leigh & Zee, 2015）。無料・ブラウザで即座に測定可能。"
+          title: "8の字眼球運動トレーニング",
+          subtitle: "視線追従と正中線通過の練習",
+          description: "8の字の軌道を動く標的を両眼で追い、中央を通るときの視線の連続性を練習します。無理のない速度で記録を比較できます。"
         }}
       />
 
@@ -315,6 +319,7 @@ export default function JapaneseInfinityPursuitPage() {
       <div className="max-w-6xl mx-auto px-4 pb-12">
         <RelatedDrills currentCategory="visual-tracking" currentHref="https://skilldrills.online/ja/drills/visual-tracking/infinity-pursuit" />
       </div>
+      <DrillFooter />
     </>
   );
 }

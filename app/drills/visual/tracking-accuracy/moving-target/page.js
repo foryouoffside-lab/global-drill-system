@@ -344,7 +344,7 @@ export default function KineticInterceptPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(videoGameSchema) }} />
-      <KineticInterceptClient copy={{ title: "Moving Target Intercept Test" }} />
+      <KineticInterceptClient copy={{ title: "Moving Target Intercept Test", subtitle: "Moving target reaction and aim drill for clicking fast targets as they cross the screen from different angles" }} />
       <DrillGuide guide={movingTargetGuide} />
     </>
   );

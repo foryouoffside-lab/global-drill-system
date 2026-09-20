@@ -403,10 +403,8 @@ export default function NBackClient({ copy = null }) {
               {copy?.h1Prefix || null}
               <span data-seo-kw="1">{copy?.h1Keyword || "N-Back Working Memory Test"}</span>
               {copy?.h1Suffix || null}
+              <span className="block text-sm font-semibold text-slate-400 mt-1">{copy?.subtitle || "N-back working memory test for comparing letters across steps and improving focus, recall, and cognitive processing speed"}</span>
             </h1>
-            <p className="text-[13px] text-slate-400 leading-relaxed">
-              {copy?.caption || "The n-back task asks whether the current item matches the one n steps earlier, so you have to hold a short list and update it continuously at the same time. That combination of storage plus manipulation is what working memory means in Baddeley and Hitch's (1974) model, and its capacity sits near four items (Cowan, 2001)."}
-            </p>
           </div>
         )}
 
@@ -663,7 +661,7 @@ export default function NBackClient({ copy = null }) {
                   <Brain className="w-4 h-4 text-cyan-400" /> What Is N-Back Training?
                 </h3>
                 <p className="text-sm leading-relaxed mb-3">
-                  <strong>N-Back Training</strong> is the gold-standard cognitive working memory paradigm used across neuroscientific research to measure fluid intelligence and memory updating capacity. The <strong>N-Back Working Memory Test</strong> presents continuous stimulus streams, requiring you to determine whether the current item matches the item presented &apos;N&apos; steps ago.
+                  <strong>N-Back Training</strong> is the gold-standard cognitive working memory paradigm used across neuroscientific research to measure fluid intelligence and memory updating capacity. The <strong>N-Back Working Memory Test</strong> presents continuous stimulus streams, requiring you to determine whether the current item matches the item presented &apos;N&apos; steps ago. You have to hold a short list and update it continuously at the same time, and that combination of storage plus manipulation is what working memory means in Baddeley and Hitch&apos;s (1974) model, with its capacity sitting near four items (Cowan, 2001).
                 </p>
                 <p className="text-sm leading-relaxed">
                   By practicing <strong>working memory updating</strong>, you expand your executive control buffer and strengthen information manipulation speed under time pressure.

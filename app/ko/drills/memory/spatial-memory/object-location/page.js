@@ -5,9 +5,9 @@ import { getAlternateLanguages } from '@/lib/i18n/locales';
 import { pickSources } from '@/lib/drillSources';
 
 export const metadata = {
-  title: "공간 기억력 테스트・물체 위치 기억 검사 – 위치 회상 | SkillDrills",
-  description: "무료 온라인 공간 기억력 테스트(사물 위치 기억 검사). 확장되는 격자 위 사물 위치를 1.5초 만에 기억하고 목표 좌표를 찾아 시공간 결합 능력을 측정하세요.",
-  keywords: ['공간 기억력 테스트', '공간기억검사', '물체 위치 기억', '시공간 작업기억', '사물 위치 기억 테스트', '시각 공간 기억력', '위치 기억 검사', '오브젝트 로케이션 테스트', '공간 인지 능력 검사', '두뇌 인지 훈련', '좌표 기억력 테스트', '실버만 일스 테스트'],
+  title: "공간 기억력 테스트 | 물체 위치 기억 | SkillDrills",
+  description: "무료 공간 기억력 테스트: 격자에서 물체가 있던 위치를 기억하고 화면이 사라진 뒤 같은 위치를 찾아 시공간 기억력을 훈련하세요.",
+  keywords: ['공간 기억력 테스트', '공간 기억력 검사', '물체 위치 기억', '시공간 작업기억', '사물 위치 기억 테스트', '시각 공간 기억력', '위치 기억력 검사', '공간 인지 훈련', '좌표 기억력 테스트', '공간 기억력 게임'],
   alternates: {
     canonical: "https://skilldrills.online/ko/drills/memory/spatial-memory/object-location",
     languages: getAlternateLanguages('/drills/memory/spatial-memory/object-location', 'ko'),
@@ -17,8 +17,8 @@ export const metadata = {
     follow: true,
   },
   openGraph: {
-    title: "공간 기억력 테스트 (물체 위치 기억 검사) - 무료 인지 훈련 | SkillDrills",
-    description: "무료 온라인 공간 기억력 테스트 (Object Location Memory Test / 사물 위치 기억 검사). 확장되는 3x3~7x7 격자 위 사물 이모지의 위치를 1.5초 만에 순간 기억하고 지정된 목표 좌표를 신속하게 찾아 시각-공간 결합 능력을 측정하세요. 회원가입 불필요.",
+    title: "공간 기억력 테스트 | 물체 위치 기억 | SkillDrills",
+    description: "격자에서 물체 위치를 기억하고 화면이 사라진 뒤 목표 위치를 찾는 무료 공간 기억력 게임입니다.",
     url: "https://skilldrills.online/ko/drills/memory/spatial-memory/object-location",
     siteName: 'SkillDrills',
     locale: 'ko_KR',
@@ -26,8 +26,8 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: "공간 기억력 테스트 (물체 위치 기억 검사) - 무료 인지 훈련 | SkillDrills",
-    description: "무료 온라인 공간 기억력 테스트 (Object Location Memory Test / 사물 위치 기억 검사). 확장되는 3x3~7x7 격자 위 사물 이모지의 위치를 1.5초 만에 순간 기억하고 지정된 목표 좌표를 신속하게 찾아 시각-공간 결합 능력을 측정하세요. 회원가입 불필요.",
+    title: "공간 기억력 테스트 | 물체 위치 기억 | SkillDrills",
+    description: "격자에서 물체 위치를 기억하고 화면이 사라진 뒤 목표 위치를 찾는 무료 공간 기억력 게임입니다.",
   },
 };
 
@@ -71,6 +71,7 @@ export default function LocalizedObjectLocationPage() {
     "description": "확장되는 격자 매트릭스 위 사물 위치를 순간 기억하고 목표 좌표를 찾는 공간 위치 기억, 시각-공간 특징 결합 및 인지 지도 형성 검사.",
     "dateModified": "2026-09-05",
     "applicationCategory": "GameApplication",
+    "sameAs": "https://ko.wikipedia.org/wiki/%EA%B3%B5%EA%B0%84_%EA%B8%B0%EC%96%B5",
     "operatingSystem": "All",
     "isAccessibleForFree": true,
     "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
@@ -311,23 +312,23 @@ export default function LocalizedObjectLocationPage() {
     sources: pickSources('cowan2001', 'baddeley2000', 'logie1995', 'luck1997', 'tolman1948', 'eals1994', 'woods2015'),
     related: [
       {
-            "href": "/drills/memory/spatial-memory/grid-memorization",
+            "href": "/ko/drills/memory/spatial-memory/grid-memorization",
             "label": "순간 기억 테스트 (Visual Memory)"
       },
       {
-            "href": "/drills/memory/spatial-memory/path-tracing",
+            "href": "/ko/drills/memory/spatial-memory/path-tracing",
             "label": "경로 추적 기억력 (Path Tracing)"
       },
       {
-            "href": "/drills/memory/short-term-memory/digit-span",
+            "href": "/ko/drills/memory/short-term-memory/digit-span",
             "label": "숫자 기억력 테스트 (Digit Span)"
       },
       {
-            "href": "/drills/memory/short-term-memory/word-recall",
+            "href": "/ko/drills/memory/short-term-memory/word-recall",
             "label": "단어 기억력 테스트 (Verbal Memory)"
       },
       {
-            "href": "/drills/memory/working-memory/n-back",
+            "href": "/ko/drills/memory/working-memory/n-back",
             "label": "n백 테스트 (Dual N-Back)"
       }
 ]
@@ -362,8 +363,8 @@ export default function LocalizedObjectLocationPage() {
       <ObjectLocationClient
         copy={{
         "h1Keyword": "공간 기억력 테스트",
-        "h1Suffix": " (물체 위치 기억 검사)",
-        "subtitle": "물체 위치 기억(Object-location memory)은 무엇이 어디에 있었는지를 기억하는 핵심 능력입니다. Eals와 Silverman(1994)은 이와 같은 사물 배열 과제를 통해 이를 입증했으며, 다른 시각 작업기억 과제와 마찬가지로 약 4개 항목의 용량 한계에 직면합니다(Luck & Vogel, 1997).",
+        "h1Suffix": " 물체 위치 기억",
+        "subtitle": "격자에서 물체가 있던 위치를 다시 찾는 훈련",
         "statScore": "점수",
         "statTime": "남은 시간",
         "statLevel": "레벨",
@@ -372,7 +373,7 @@ export default function LocalizedObjectLocationPage() {
         "memorizePrompt": "사물의 위치를 기억하세요",
         "targetPrompt": "목표:",
         "startTitle": "물체 위치 기억 Pro",
-        "startSubtitle": "공간 위치 기억 • 배치 회상 테스트",
+        "startSubtitle": "공간 기억력 • 위치 회상",
         "countdownSubtitle": "준비하세요",
         "newBest": "최고 기록 달성",
         "pointsLabel": "포인트",

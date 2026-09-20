@@ -21,9 +21,13 @@ import { getAlternateLanguages } from '@/lib/i18n/locales';
 // ============================================================
 
 export const metadata = {
-  title: 'Senso Spiel Online – Farben Reihenfolge merken | SkillDrills',
-  description: 'Kostenloses Senso-Spiel online: Merke dir die wachsende Farb-Reihenfolge und teste dein visuelles Arbeitsgedächtnis direkt im Browser ohne Anmeldung.',
+  title: 'Senso Spiel online | Farbsequenz merken | SkillDrills',
+  description: 'Senso-Spiel kostenlos im Browser: Merke dir eine wachsende Folge aus Farben und Tönen und wiederhole sie in der richtigen Reihenfolge.',
   keywords: [
+    'senso online kostenlos',
+    'farbsequenz spiel',
+    'farbenfolge merken',
+    'simon spiel online',
     'senso spiel online',
     'farben merken spiel',
     'simon says spiel online',
@@ -46,8 +50,8 @@ export const metadata = {
     follow: true,
   },
   openGraph: {
-    title: 'Senso Spiel Online – Farben Reihenfolge merken | SkillDrills',
-    description: 'Kostenloses Senso-Spiel online: Merke dir die wachsende Farb-Reihenfolge und teste dein visuelles Arbeitsgedächtnis direkt im Browser ohne Anmeldung.',
+    title: 'Senso Spiel online | Farbsequenz merken | SkillDrills',
+    description: 'Senso-Spiel kostenlos im Browser: Merke dir eine wachsende Folge aus Farben und Tönen und wiederhole sie in der richtigen Reihenfolge.',
     url: 'https://skilldrills.online/de/drills/memory/short-term-memory/color-sequence',
     siteName: 'SkillDrills',
     locale: 'de_DE',
@@ -55,14 +59,14 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Senso Spiel Online – Farben Reihenfolge merken | SkillDrills',
-    description: 'Kostenloses Senso-Spiel online: Merke dir die wachsende Farb-Reihenfolge und teste dein visuelles Arbeitsgedächtnis direkt im Browser ohne Anmeldung.',
+    title: 'Senso Spiel online | Farbsequenz merken | SkillDrills',
+    description: 'Senso-Spiel kostenlos im Browser: Merke dir eine wachsende Folge aus Farben und Tönen und wiederhole sie in der richtigen Reihenfolge.',
   },
 };
 
 const copyDe = {
-  title: 'Senso-Spiel',
-  subtitle: 'Farben merken & Visueller Sequenzgedächtnis-Test',
+  title: 'Senso-Spiel online',
+  subtitle: 'Farbenfolge merken und exakt wiederholen',
   caption: 'Beobachte und reproduziere die aufleuchtende Farb-Reihenfolge in exakter Abfolge. Mit jeder erfolgreichen Runde wächst die Sequenz.',
   statScore: 'Punkte',
   statTime: 'Restzeit',
@@ -111,6 +115,7 @@ export default function GermanColorSequencePage() {
     operatingSystem: 'Web Browser',
     dateModified: '2026-09-15',
     offers: { '@type': 'Offer', price: '0', priceCurrency: 'EUR' },
+    sameAs: ['https://de.wikipedia.org/wiki/Senso_%28Spiel%29'],
     description: 'Kostenloses Online-Senso-Spiel zum Testen und Trainieren des visuellen Arbeitsgedächtnisses, der Chunking-Fähigkeit und der sequenziellen Merkspanne.',
     genre: 'Cognitive Training / Visual Working Memory',
     url: 'https://skilldrills.online/de/drills/memory/short-term-memory/color-sequence',

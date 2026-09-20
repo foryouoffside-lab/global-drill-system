@@ -5,9 +5,9 @@ import { getAlternateLanguages } from '@/lib/i18n/locales';
 import { pickSources } from '@/lib/drillSources';
 
 export const metadata = {
-  title: "Teste de Memória Espacial – Localização | SkillDrills",
-  description: "Teste de memória espacial online grátis: Memorize a posição de objetos em grades de 3x3 a 7x7 em 1,5s e localize coordenadas alvo sem cadastro.",
-  keywords: ['teste de memoria espacial', 'memoria espacial exercicios', 'memoria de localizacao de objetos', 'teste de memoria visoespacial', 'object location memory test', 'teste de retencao espacial', 'memoria de trabalho visoespacial', 'exercicio de memoria de posicao', 'teste silverman eals', 'jogo de memoria espacial online', 'avaliacao neurocognitiva espacial', 'mapeamento cognitivo treino'],
+  title: "Teste de memória espacial online | SkillDrills",
+  description: "Teste sua memória espacial online: memorize onde cada objeto estava na grade e encontre as posições após uma breve exibição.",
+  keywords: ['teste de memória espacial', 'memória espacial online', 'memória de localização de objetos', 'memória visuoespacial', 'teste de posições', 'memória de trabalho visuoespacial', 'localização de objetos', 'exercício de memória espacial', 'jogo de memória espacial', 'treino de memória espacial'],
   alternates: {
     canonical: "https://skilldrills.online/pt/drills/memory/spatial-memory/object-location",
     languages: getAlternateLanguages('/drills/memory/spatial-memory/object-location', 'pt'),
@@ -17,8 +17,8 @@ export const metadata = {
     follow: true,
   },
   openGraph: {
-    title: "Teste de Memória Espacial (Localização de Objetos) - Jogo Grátis | SkillDrills",
-    description: "Teste de memória espacial online grátis (memória de localização de objetos / Object Location Memory). Memorize a posição de objetos em grades de 3x3 a 7x7 em 1,5 segundo e localize as coordenadas do alvo com precisão. Sem cadastro.",
+    title: "Teste de memória espacial online | SkillDrills",
+    description: "Memorize a posição dos objetos na grade e encontre o local-alvo após uma breve exibição, sem cadastro.",
     url: "https://skilldrills.online/pt/drills/memory/spatial-memory/object-location",
     siteName: 'SkillDrills',
     locale: 'pt_BR',
@@ -26,8 +26,8 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: "Teste de Memória Espacial (Localização de Objetos) - Jogo Grátis | SkillDrills",
-    description: "Teste de memória espacial online grátis (memória de localização de objetos / Object Location Memory). Memorize a posição de objetos em grades de 3x3 a 7x7 em 1,5 segundo e localize as coordenadas do alvo com precisão. Sem cadastro.",
+    title: "Teste de memória espacial online | SkillDrills",
+    description: "Memorize a posição dos objetos na grade e encontre o local-alvo após uma breve exibição, sem cadastro.",
   },
 };
 
@@ -71,6 +71,7 @@ export default function LocalizedObjectLocationPage() {
     "description": "Avaliação neuropsicológica interativa de ligação de características visuais e espaciais (Feature Binding), mapas cognitivos e retenção de coordenadas em grades progressivas.",
     "dateModified": "2026-09-05",
     "applicationCategory": "GameApplication",
+    "sameAs": "https://pt.wikipedia.org/wiki/Mem%C3%B3ria_espacial",
     "operatingSystem": "All",
     "isAccessibleForFree": true,
     "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
@@ -311,23 +312,23 @@ export default function LocalizedObjectLocationPage() {
     sources: pickSources('cowan2001', 'baddeley2000', 'logie1995', 'luck1997', 'tolman1948', 'eals1994', 'woods2015'),
     related: [
       {
-            "href": "/drills/memory/spatial-memory/grid-memorization",
+            "href": "/pt/drills/memory/spatial-memory/grid-memorization",
             "label": "Teste de Memória Visual (Memory Matrix)"
       },
       {
-            "href": "/drills/memory/spatial-memory/path-tracing",
+            "href": "/pt/drills/memory/spatial-memory/path-tracing",
             "label": "Teste de Memória de Trajetória (Path Tracing)"
       },
       {
-            "href": "/drills/memory/short-term-memory/digit-span",
+            "href": "/pt/drills/memory/short-term-memory/digit-span",
             "label": "Teste de Dígitos (Digit Span)"
       },
       {
-            "href": "/drills/memory/short-term-memory/word-recall",
+            "href": "/pt/drills/memory/short-term-memory/word-recall",
             "label": "Teste de Memória Verbal (Word Recall)"
       },
       {
-            "href": "/drills/memory/working-memory/n-back",
+            "href": "/pt/drills/memory/working-memory/n-back",
             "label": "Teste Dual N-Back"
       }
 ]
@@ -361,9 +362,9 @@ export default function LocalizedObjectLocationPage() {
       />
       <ObjectLocationClient
         copy={{
-        "h1Keyword": "Teste de Memória Espacial",
-        "h1Suffix": " (Localização de Objetos)",
-        "subtitle": "A memória de localização de objetos guarda o que estava em cada lugar. Eals e Silverman (1994) avaliaram essa capacidade com matrizes de objetos muito semelhantes a esta, encontrando o mesmo limite biológico de cerca de quatro itens da memória operacional visual (Luck & Vogel, 1997).",
+        "h1Keyword": "Teste de memória espacial online",
+        "h1Suffix": " – Localização de objetos",
+        "subtitle": "Memorize onde cada objeto estava na grade",
         "statScore": "Pontuação",
         "statTime": "Tempo",
         "statLevel": "Nível",
@@ -372,7 +373,7 @@ export default function LocalizedObjectLocationPage() {
         "memorizePrompt": "MEMORIZE AS POSIÇÕES DOS OBJETOS",
         "targetPrompt": "ALVO:",
         "startTitle": "Localização de Objetos Pro",
-        "startSubtitle": "Memória Espacial • Evocação de Posições",
+        "startSubtitle": "Memória espacial • Posições",
         "countdownSubtitle": "PREPARE-SE",
         "newBest": "NOVO RECORDE",
         "pointsLabel": "Pontos",

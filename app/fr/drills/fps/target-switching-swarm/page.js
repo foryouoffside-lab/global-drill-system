@@ -6,21 +6,21 @@ import { getAlternateLanguages } from '@/lib/i18n/locales';
 import { pickSources } from '@/lib/drillSources';
 
 export const metadata = {
-  title: 'Target Switching FPS – Changement de Cibles | SkillDrills',
-  description: "Entraînez le target switching et le changement de cible. Éliminez l'hésitation et maîtrisez les spray transfers sur CS2 et Valorant gratuitement.",
+  title: 'Aim Trainer Valorant - Changement de cible | SkillDrills',
+  description: "Aim trainer gratuit dans le navigateur : entraînez les changements rapides de cible, les transitions et le spray transfer sur Valorant et CS2.",
   keywords: [
-    'target switching aim trainer',
-    'changement de cible fps',
-    'entrainement de visee fps',
-    'spray transfer cs2',
-    'visee multi cibles valorant',
-    'flick rapide enchaine',
-    'entrainement reflexe fps',
+    'aim trainer Valorant',
+    'changement de cible FPS',
+    'target switching',
+    'changement rapide de cible',
+    'spray transfer Valorant',
+    'entraînement de visée FPS',
+    'transition de cible',
+    'flick enchaîné',
+    'visée multi cibles',
     'aim trainer gratuit',
-    'transition de cible shooter',
-    'precision souris gaming',
-    'viser rapidement fps',
-    'vitesse d acquisition cible'
+    'vitesse de changement de cible',
+    'précision souris gaming'
   ],
   alternates: {
     canonical: 'https://skilldrills.online/fr/drills/fps/target-switching-swarm',
@@ -31,8 +31,8 @@ export const metadata = {
     follow: true,
   },
   openGraph: {
-    title: 'Target Switching FPS – Changement de Cibles | SkillDrills',
-    description: "Entraînez le target switching et le changement de cible. Éliminez l'hésitation et maîtrisez les spray transfers sur CS2 et Valorant gratuitement.",
+    title: 'Aim Trainer Valorant - Changement de cible | SkillDrills',
+    description: "Aim trainer gratuit dans le navigateur : entraînez les changements rapides de cible, les transitions et le spray transfer sur Valorant et CS2.",
     url: 'https://skilldrills.online/fr/drills/fps/target-switching-swarm',
     siteName: 'SkillDrills',
     locale: 'fr_FR',
@@ -40,8 +40,8 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Target Switching FPS – Changement de Cibles | SkillDrills',
-    description: "Entraînez le target switching et le changement de cible. Éliminez l'hésitation et maîtrisez les spray transfers sur CS2 et Valorant gratuitement.",
+    title: 'Aim Trainer Valorant - Changement de cible | SkillDrills',
+    description: "Aim trainer gratuit dans le navigateur : entraînez les changements rapides de cible, les transitions et le spray transfer sur Valorant et CS2.",
   },
 };
 
@@ -59,7 +59,7 @@ export default function TargetSwitchingSwarmFrPage() {
   const softwareSchema = {
     "@context": "https://schema.org",
     "@type": "SoftwareApplication",
-    "name": "Entraîneur de Target Switching FPS SkillDrills",
+    "name": "Aim Trainer Valorant - Changement de cible",
     "applicationCategory": "GameApplication",
     "operatingSystem": "Any (Web Browser)",
     "offers": {
@@ -73,7 +73,7 @@ export default function TargetSwitchingSwarmFrPage() {
   const webAppSchema = {
     "@context": "https://schema.org",
     "@type": "WebApplication",
-    "name": "Target Switching Swarm – Visée et Changement de Cible",
+    "name": "Aim Trainer Valorant - Changement de cible",
     "url": "https://skilldrills.online/fr/drills/fps/target-switching-swarm",
     "browserRequirements": "Requires Pointer Lock API and WebGL support",
     "applicationCategory": "ShooterTraining",
@@ -86,7 +86,7 @@ export default function TargetSwitchingSwarmFrPage() {
   const videoGameSchema = {
     "@context": "https://schema.org",
     "@type": "VideoGame",
-    "name": "Target Switching Swarm",
+    "name": "Aim Trainer Valorant - Changement de cible",
     "description": "Simulateur d'essaim de cibles dynamiques pour développer la vitesse d'enchaînement, le spray transfer et supprimer l'hésitation cognitive post-élimination.",
     "genre": ["First-Person Shooter", "Aim Trainer", "Reaction Training"],
     "playMode": "SinglePlayer",
@@ -219,9 +219,9 @@ export default function TargetSwitchingSwarmFrPage() {
   };
 
   const targetSwitchingGuide = {
-    heading: "Guide de Target Switching & Cinématique Multi-Cibles en FPS",
+    heading: "Aim Trainer Valorant : changement de cible et spray transfer",
     intro: [
-      "Le Target Switching Swarm est un exercice d'entraînement moteur et d'indexation visuelle conçu pour conditionner des transitions ultra-rapides et sans hésitation entre plusieurs cibles adverses. Dans les jeux de tir tactiques comme Counter-Strike 2 et Valorant, ou les jeux dynamiques comme Apex Legends, les situations d'action ne se limitent que rarement à des duels 1v1 isolés. Remporter des rounds décisifs exige d'abattre un premier adversaire et de basculer instantanément sur une seconde cible sans subir de délai cognitif post-élimination.",
+      "Pour qui cherche un aim trainer Valorant, ce drill mesure le passage d'une cible éliminée à la suivante sans pause de confirmation. Il entraîne les changements rapides entre plusieurs cibles, le spray transfer et le flick enchaîné pour Valorant, CS2 et Apex Legends.",
       "La psychophysique du target switching repose sur la loi de Fitts (Fitts, 1954) et sur le modèle stochastique des sous-mouvements optimisés de David E. Meyer et al. (1988). Selon cette approche, un mouvement de visée comprend un sous-mouvement balistique primaire couvrant environ 90% de la trajectoire, suivi de micro-ajustements secondaires guidés par la rétroaction visuelle. Les joueurs novices perdent 100 à 250 ms immobiles après chaque tir pour s'assurer que l'ennemi est bien tombé. Les joueurs d'élite déclenchent la saccade oculaire vers la cible suivante avant même la fin de l'impact précédent.",
       "L'indexation visuelle dans un groupe dense fait appel aux mécanismes d'intégration des caractéristiques et de recherche visuelle préattentionnelle (Anne M. Treisman & Garry Gelade, 1980 ; Jeremy M. Wolfe, 2007). Le cortex visuel humain suit plusieurs repères spatiaux simultanément (théorie FINST), permettant d'organiser des trajets optimisés entre cibles adjacentes afin de minimiser la distance angulaire parcourue par le poignet.",
       "Mesure de vos performances : chaque clic est horodaté à l'aide de l'horloge haute résolution performance.now() du navigateur, localement sur votre machine — aucune donnée n'est envoyée vers l'extérieur. Précision matérielle : les navigateurs arrondissent les minuteurs (~1 ms) pour bloquer les failles Spectre, et les écrans affichent l'image à intervalles fixes (16,7 ms à 60 Hz, 6,9 ms à 144 Hz, 4,1 ms à 240 Hz ; Woods et al., 2015). Le taux de rafraîchissement de la souris induit environ 8 ms à 125 Hz contre 1 ms à 1000 Hz. Les écarts sous 5 ms relèvent de la marge de mesure."
@@ -293,9 +293,9 @@ export default function TargetSwitchingSwarmFrPage() {
 
       <TargetSwitchingSwarmClient
         copy={{
-          h1Keyword: "Entraînement Target Switching FPS",
-          h1Suffix: " – Changement de Cibles et Spray Transfer",
-          subtitle: "Entraînez les transitions rapides de cibles, les spray transfers et l'indexation visuelle sans pause de réajustement.",
+          h1Keyword: "Aim Trainer Valorant",
+          h1Suffix: " – Changement de cible",
+          subtitle: "Entraînez les changements rapides entre cibles et le spray transfer sans perdre la précision.",
           statScore: "Score",
           statTime: "Temps",
           statAccuracy: "Précision",
@@ -320,7 +320,7 @@ export default function TargetSwitchingSwarmFrPage() {
       <div className="max-w-4xl mx-auto px-4 pb-12">
         <RelatedDrills
           currentCategory="fps"
-          currentHref="/drills/fps/target-switching-swarm"
+          currentHref="/fr/drills/fps/target-switching-swarm"
           locale="fr"
         />
       </div>

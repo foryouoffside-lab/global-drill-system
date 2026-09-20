@@ -6,21 +6,21 @@ import { getAlternateLanguages } from '@/lib/i18n/locales';
 import { pickSources } from '@/lib/drillSources';
 
 export const metadata = {
-  title: 'Visée Verticale FPS – Suivi Aérien et Axe Y | SkillDrills',
-  description: "Entraînez la visée verticale et le suivi aérien. Maîtrisez l'axe Y et les trajectoires paraboliques sur Apex Legends et Overwatch 2 gratuitement.",
+  title: 'Aim Trainer - Tracking vertical FPS | SkillDrills',
+  description: "Aim trainer gratuit dans le navigateur : entraînez le tracking vertical, l'axe Y et le suivi de cibles aériennes sur Apex et Overwatch 2.",
   keywords: [
-    'visee verticale fps',
-    'entrainement de visee verticale',
-    'tracking vertical shooter',
-    'suivi aerien apex legends',
-    'controle de souris axe y',
+    'tracking vertical FPS',
+    'visée verticale FPS',
+    'suivi aérien',
+    'suivi vertical Apex',
+    'contrôle souris axe Y',
     'vertical aim trainer',
-    'trajectoire parabolique overwatch',
+    'trajectoire parabolique Overwatch',
     'smooth pursuit vertical',
     'aim trainer gratuit',
-    'precision souris verticale',
-    'sensibilite verticale souris',
-    'tir aerien fps'
+    'précision souris verticale',
+    'sensibilité verticale souris',
+    'tir aérien FPS'
   ],
   alternates: {
     canonical: 'https://skilldrills.online/fr/drills/fps/vertical-air-track',
@@ -31,8 +31,8 @@ export const metadata = {
     follow: true,
   },
   openGraph: {
-    title: 'Visée Verticale FPS – Suivi Aérien et Axe Y | SkillDrills',
-    description: "Entraînez la visée verticale et le suivi aérien. Maîtrisez l'axe Y et les trajectoires paraboliques sur Apex Legends et Overwatch 2 gratuitement.",
+    title: 'Aim Trainer - Tracking vertical FPS | SkillDrills',
+    description: "Aim trainer gratuit dans le navigateur : entraînez le tracking vertical, l'axe Y et le suivi de cibles aériennes sur Apex et Overwatch 2.",
     url: 'https://skilldrills.online/fr/drills/fps/vertical-air-track',
     siteName: 'SkillDrills',
     locale: 'fr_FR',
@@ -40,8 +40,8 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Visée Verticale FPS – Suivi Aérien et Axe Y | SkillDrills',
-    description: "Entraînez la visée verticale et le suivi aérien. Maîtrisez l'axe Y et les trajectoires paraboliques sur Apex Legends et Overwatch 2 gratuitement.",
+    title: 'Aim Trainer - Tracking vertical FPS | SkillDrills',
+    description: "Aim trainer gratuit dans le navigateur : entraînez le tracking vertical, l'axe Y et le suivi de cibles aériennes sur Apex et Overwatch 2.",
   },
 };
 
@@ -52,14 +52,14 @@ export default function VerticalAirTrackFrPage() {
     "itemListElement": [
       { "@type": "ListItem", "position": 1, "name": "SkillDrills", "item": "https://skilldrills.online/fr" },
       { "@type": "ListItem", "position": 2, "name": "Entraînements FPS", "item": "https://skilldrills.online/fr/drills/fps" },
-      { "@type": "ListItem", "position": 3, "name": "Vertical Air-Track", "item": "https://skilldrills.online/fr/drills/fps/vertical-air-track" }
+      { "@type": "ListItem", "position": 3, "name": "Tracking vertical FPS", "item": "https://skilldrills.online/fr/drills/fps/vertical-air-track" }
     ]
   };
 
   const softwareSchema = {
     "@context": "https://schema.org",
     "@type": "SoftwareApplication",
-    "name": "Entraîneur de Visée Verticale FPS SkillDrills",
+    "name": "Aim Trainer - Tracking vertical et suivi aérien",
     "applicationCategory": "GameApplication",
     "operatingSystem": "Any (Web Browser)",
     "offers": {
@@ -73,7 +73,7 @@ export default function VerticalAirTrackFrPage() {
   const webAppSchema = {
     "@context": "https://schema.org",
     "@type": "WebApplication",
-    "name": "Vertical Air-Track – Entraînement au Suivi Vertical",
+    "name": "Aim Trainer - Tracking vertical et suivi aérien",
     "url": "https://skilldrills.online/fr/drills/fps/vertical-air-track",
     "browserRequirements": "Requires Pointer Lock API and WebGL support",
     "applicationCategory": "ShooterTraining",
@@ -86,7 +86,7 @@ export default function VerticalAirTrackFrPage() {
   const videoGameSchema = {
     "@context": "https://schema.org",
     "@type": "VideoGame",
-    "name": "Vertical Air-Track",
+    "name": "Aim Trainer - Tracking vertical et suivi aérien",
     "description": "Simulateur de suivi de cibles aériennes sous contrainte gravitationnelle pour perfectionner la motricité sur l'axe Y et intercepter les cibles volantes.",
     "genre": ["First-Person Shooter", "Aim Trainer", "Reaction Training"],
     "playMode": "SinglePlayer",
@@ -219,9 +219,9 @@ export default function VerticalAirTrackFrPage() {
   };
 
   const verticalAirTrackGuide = {
-    heading: "Guide de Visée Verticale FPS & Poursuite Parabolique Aérienne",
+    heading: "Aim Trainer : tracking vertical, axe Y et suivi aérien",
     intro: [
-      "Le Vertical Aim Trainer (Vertical Air-Track) est un exercice de contrôle neuromusculaire de pointe conçu pour isoler et développer la précision sur l'axe Y, la prédiction d'arcs gravitationnels et l'interception de cibles aériennes. Dans les fast-FPS compétitifs modernes tels qu'Apex Legends, Overwatch 2, Halo Infinite et Destiny 2, les adversaires exploitent en permanence la verticalité à l'aide de tremplins (jump pads), de grappins, d'ascenseurs gravitationnels et de chutes de hauteur pour déstabiliser le placement horizontal habituel du réticule.",
+      "Pour qui cherche un aim trainer de tracking vertical, ce drill mesure le temps et la précision pour suivre des cibles aériennes sur l'axe Y. Il entraîne la poursuite fluide, la prédiction des trajectoires de chute et le contrôle de la souris pour Apex Legends et Overwatch 2 dans le navigateur.",
       "La neurophysiologie de la poursuite visuelle verticale se distingue fondamentalement du plan horizontal. Richard J. Krauzlis (2004) a démontré que la poursuite oculaire continue (smooth pursuit) sur le plan vertical recrute des voies spécifiques dans le vermis cérébelleux et le tronc cérébral, affichant une sensibilité accrue aux micro-tremblements moteurs causée par l'asymétrie biomécanique du membre supérieur. Cyril Rashbass (1961) a prouvé que la poursuite continue est guidée par l'écart de vitesse rétinienne (retinal slip) plutôt que par une simple erreur de position statique, exigeant un ajustement permanent de la vitesse angulaire.",
       "Le suivi et l'interception de cibles en suspension exigent d'intégrer intuitivement les lois de l'accélération gravitationnelle (g = 9,81 m/s²). Comme l'ont démontré Peter R. Cavanagh et al. (1984) ainsi que Michael F. Land & Peter McLeod (2000), le système visuo-moteur humain anticipe la décélération de la trajectoire parabolique à l'apex du saut et son accélération exponentielle lors de la descente. Les joueurs qui négligent cette courbure cinétique accusent un retard systématique lors des phases de chute libre.",
       "En éliminant tout recours aux balayages horizontaux et en isolant rigoureusement la trajectoire sur l'axe vertical grâce à la chronométrie numérique haute précision de performance.now() (Woods et al., 2015), cet entraînement comble le fossé entre les réflexes musculaires bidimensionnels et la maîtrise du ciblage tridimensionnel à 360 degrés.",
@@ -294,8 +294,8 @@ export default function VerticalAirTrackFrPage() {
 
       <VerticalAirTrackClient
         copy={{
-          h1Keyword: "Visée Verticale FPS",
-          h1Suffix: " – Suivi Aérien et Maîtrise de l'Axe Y",
+          h1Keyword: "Aim Trainer - Tracking vertical",
+          h1Suffix: " – Suivi aérien FPS",
           statScore: "Score",
           statTime: "Temps",
           statAccuracy: "Précision",
@@ -344,7 +344,7 @@ export default function VerticalAirTrackFrPage() {
       <div className="max-w-6xl w-full mx-auto px-4 pb-12">
         <RelatedDrills
           currentCategory="fps"
-          currentHref="/drills/fps/vertical-air-track"
+          currentHref="/fr/drills/fps/vertical-air-track"
           locale="fr"
         />
       </div>

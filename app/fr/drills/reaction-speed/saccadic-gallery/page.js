@@ -1,41 +1,41 @@
-import SaccadicGalleryClient from '@/app/drills/reaction-speed/saccadic-gallery/SaccadicGalleryClient';
+import SaccadicGalleryWrapper from '@/app/drills/reaction-speed/saccadic-gallery/SaccadicGalleryWrapperLoader';
 import { getAlternateLanguages } from '@/lib/i18n/locales';
 import DrillGuide from '@/components/drill/DrillGuide';
+import DrillFooter from '@/components/drill/DrillFooter';
 import RelatedDrills from '@/components/drill/RelatedDrills';
 import { pickSources } from '@/lib/drillSources';
 
 // ============================================================
 // SEO RESEARCH FINDINGS — fr-FR (reaction-speed / saccadic-gallery)
-// PRIMARY DOMESTIC: "exercices saccadiques" / "mouvements saccadiques"
-// SECONDARY / LSI:
-//   "entraînement saccadique" / "sauts oculaires rapides" / "balayage visuel"
-//   "agilité oculaire" / "vitesse de réaction visuelle"
+// PRIMARY DOMESTIC: Google Suggest expands "entraînement visuel" into sportif and exercice visuel
+// Native SERPs use entraînement visuel, balayage visuel and coordination œil-main; specialist terms stay secondary
 // ============================================================
 
 export const metadata = {
-  title: 'Exercices Saccadiques – Mouvements Oculaires | SkillDrills',
+  title: 'Entraînement Visuel · Exercices Oculaires | SkillDrills',
   description:
-    'Exercices saccadiques gratuits en ligne. Entraînez les sauts oculaires rapides entre cibles pour accélérer le balayage visuel et l acquisition de cibles.',
+    'Entraînement visuel gratuit en ligne : déplacez le regard entre les cibles pour travailler balayage visuel, réaction et coordination œil-main.',
   keywords: [
+    'entraînement visuel',
+    'entraînement visuel sportif',
+    'exercice visuel',
+    'exercices oculaires',
+    'balayage visuel',
     'exercices saccadiques',
     'mouvements saccadiques',
-    'entraînement saccadique',
     'sauts oculaires rapides',
-    'balayage visuel',
-    'agilité oculaire',
+    'agilité visuelle',
     'vitesse de réaction visuelle',
-    'coordination oculaire',
-    'acquisition de cibles',
-    'fixation fovéale',
+    'coordination œil-main',
   ],
   alternates: {
     canonical: 'https://skilldrills.online/fr/drills/reaction-speed/saccadic-gallery',
     languages: getAlternateLanguages('/drills/reaction-speed/saccadic-gallery'),
   },
   openGraph: {
-    title: 'Exercices Saccadiques – Mouvements Oculaires | SkillDrills',
+    title: 'Entraînement Visuel · Exercices Oculaires | SkillDrills',
     description:
-      'Exercices saccadiques gratuits en ligne. Entraînez vos sauts oculaires pour développer votre agilité visuelle.',
+      'Déplacez le regard entre des cibles et entraînez balayage visuel, réaction et coordination œil-main dans le navigateur.',
     type: 'article',
     url: 'https://skilldrills.online/fr/drills/reaction-speed/saccadic-gallery',
     siteName: 'SkillDrills',
@@ -43,9 +43,9 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Exercices Saccadiques – Mouvements Oculaires | SkillDrills',
+    title: 'Entraînement Visuel · Exercices Oculaires | SkillDrills',
     description:
-      'Exercices saccadiques gratuits dans le navigateur. Améliorez la vitesse de vos sauts oculaires et vos réflexes.',
+      'Exercice visuel gratuit : alternez le regard entre les cibles et travaillez votre réaction visuelle.',
   },
   robots: { index: true, follow: true },
 };
@@ -57,15 +57,15 @@ const breadcrumbSchema = {
     { '@type': 'ListItem', position: 1, name: 'SkillDrills Accueil', item: 'https://skilldrills.online/fr' },
     { '@type': 'ListItem', position: 2, name: 'Hub des Exercices', item: 'https://skilldrills.online/fr/drills' },
     { '@type': 'ListItem', position: 3, name: 'Vitesse de Réaction', item: 'https://skilldrills.online/fr/drills/reaction-speed' },
-    { '@type': 'ListItem', position: 4, name: 'Exercices Saccadiques', item: 'https://skilldrills.online/fr/drills/reaction-speed/saccadic-gallery' },
+    { '@type': 'ListItem', position: 4, name: 'Entraînement Visuel · Exercices Oculaires', item: 'https://skilldrills.online/fr/drills/reaction-speed/saccadic-gallery' },
   ],
 };
 
 const softwareApplicationSchema = {
   '@context': 'https://schema.org',
   '@type': 'SoftwareApplication',
-  name: 'Exercices Saccadiques en Ligne – Entraînement Oculaire',
-  alternateName: ['Simulateur de Mouvements Saccadiques', 'Entraînement Saccadique', 'Test d Agilité Oculaire'],
+  name: 'Entraînement Visuel · Exercices Oculaires',
+  alternateName: ['Entraînement visuel', 'Entraînement visuel sportif', 'Exercice visuel', 'Exercices saccadiques'],
   applicationCategory: 'HealthApplication',
   operatingSystem: 'All',
   offers: { '@type': 'Offer', price: '0', priceCurrency: 'EUR' },
@@ -78,7 +78,7 @@ const softwareApplicationSchema = {
 const webAppSchema = {
   '@context': 'https://schema.org',
   '@type': 'WebApplication',
-  name: 'Exercices Saccadiques — Mouvements Oculaires | SkillDrills',
+  name: 'Entraînement Visuel · Exercices Oculaires | SkillDrills',
   url: 'https://skilldrills.online/fr/drills/reaction-speed/saccadic-gallery',
   description:
     'Entraînement saccadique gratuit pour développer la vitesse de saut oculaire et l acquisition fovéale directement dans le navigateur.',
@@ -95,7 +95,7 @@ const webAppSchema = {
 const videoGameSchema = {
   '@context': 'https://schema.org',
   '@type': 'VideoGame',
-  name: 'Exercices Saccadiques - Jeu de Réflexes Oculaires',
+  name: 'Entraînement Visuel - Jeu de Sauts Oculaires',
   url: 'https://skilldrills.online/fr/drills/reaction-speed/saccadic-gallery',
   description: 'Jeu interactif pour mesurer et affûter la vitesse des sauts oculaires et les réflexes visuels.',
   genre: ['Vision Training', 'Action', 'Esports Training'],
@@ -144,7 +144,7 @@ const howToSchema = {
 const faqSchema = {
   '@context': 'https://schema.org',
   '@type': 'FAQPage',
-  dateModified: '2026-09-15',
+  dateModified: '2026-09-20',
   mainEntity: [
     {
       '@type': 'Question',
@@ -229,6 +229,7 @@ const faqSchema = {
   ],
 };
 
+faqSchema.mainEntity = faqSchema.mainEntity.slice(0, 10);
 const saccadicGuide = {
   heading: 'Guide des Exercices Saccadiques : Vélocité des Sauts Oculaires et Fixation Fovéale',
   intro: [
@@ -319,11 +320,12 @@ export default function FrenchSaccadicGalleryPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
-      <SaccadicGalleryClient copy={{ title: 'Exercices Saccadiques' }} />
+      <SaccadicGalleryWrapper copy={{ title: 'Entraînement Visuel · Exercices Oculaires', subtitle: 'Sauts du Regard · Acquisition Visuelle', caption: 'Déplacez rapidement le regard entre les cibles et cliquez avec précision.' }} />
       <DrillGuide guide={saccadicGuide} />
       <div className="max-w-6xl mx-auto px-4 pb-12">
         <RelatedDrills currentCategory="reaction-speed" currentHref="https://skilldrills.online/fr/drills/reaction-speed/saccadic-gallery" />
       </div>
+      <DrillFooter />
     </>
   );
 }

@@ -6,21 +6,21 @@ import { getAlternateLanguages } from '@/lib/i18n/locales';
 import { pickSources } from '@/lib/drillSources';
 
 export const metadata = {
-  title: 'Target Switching FPS – Cambio Rápido de Blanco | SkillDrills',
-  description: 'Entrena target switching y cambio rápido de blancos en el navegador. Elimina la duda tras cada baja y domina spray transfers en Valorant y CS2 gratis.',
+  title: 'Aim Trainer Valorant - Cambio de objetivos | SkillDrills',
+  description: 'Aim trainer gratis en el navegador: practica cambios rápidos de objetivo, transiciones continuas y spray transfer en Valorant y CS2.',
   keywords: [
-    'target switching aim trainer',
-    'cambio de objetivo fps',
-    'entrenamiento de punteria fps',
-    'spray transfer cs2',
-    'cambio de blanco valorant',
-    'flick continuo shooter',
-    'punteria rapida multi blanco',
+    'aim trainer Valorant',
+    'cambio de objetivos Valorant',
+    'cambio de objetivo FPS',
+    'target switching',
+    'spray transfer CS2',
+    'entrenamiento de puntería FPS',
+    'cambio rápido de blancos',
+    'transición de objetivos',
+    'flick continuo',
+    'puntería multiobjetivo',
     'entrenador de mira gratis',
-    'transicion de objetivos',
-    'reflejos de disparo fps',
-    'control de retroceso y cambio',
-    'precision de raton'
+    'velocidad de cambio de objetivo'
   ],
   alternates: {
     canonical: 'https://skilldrills.online/es/drills/fps/target-switching-swarm',
@@ -31,8 +31,8 @@ export const metadata = {
     follow: true,
   },
   openGraph: {
-    title: 'Target Switching FPS – Cambio Rápido de Blanco | SkillDrills',
-    description: 'Entrena target switching y cambio rápido de blancos en el navegador. Elimina la duda tras cada baja y domina spray transfers en Valorant y CS2 gratis.',
+    title: 'Aim Trainer Valorant - Cambio de objetivos | SkillDrills',
+    description: 'Aim trainer gratis en el navegador: practica cambios rápidos de objetivo, transiciones continuas y spray transfer en Valorant y CS2.',
     url: 'https://skilldrills.online/es/drills/fps/target-switching-swarm',
     siteName: 'SkillDrills',
     locale: 'es_ES',
@@ -40,8 +40,8 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Target Switching FPS – Cambio Rápido de Blanco | SkillDrills',
-    description: 'Entrena target switching y cambio rápido de blancos en el navegador. Elimina la duda tras cada baja y domina spray transfers en Valorant y CS2 gratis.',
+    title: 'Aim Trainer Valorant - Cambio de objetivos | SkillDrills',
+    description: 'Aim trainer gratis en el navegador: practica cambios rápidos de objetivo, transiciones continuas y spray transfer en Valorant y CS2.',
   },
 };
 
@@ -59,7 +59,7 @@ export default function TargetSwitchingSwarmEsPage() {
   const softwareSchema = {
     "@context": "https://schema.org",
     "@type": "SoftwareApplication",
-    "name": "Entrenador de Target Switching FPS SkillDrills",
+    "name": "Aim Trainer Valorant - Cambio de objetivos",
     "applicationCategory": "GameApplication",
     "operatingSystem": "Any (Web Browser)",
     "offers": {
@@ -73,7 +73,7 @@ export default function TargetSwitchingSwarmEsPage() {
   const webAppSchema = {
     "@context": "https://schema.org",
     "@type": "WebApplication",
-    "name": "Target Switching Swarm – Puntería y Cambio de Objetivos",
+    "name": "Aim Trainer Valorant - Cambio de objetivos",
     "url": "https://skilldrills.online/es/drills/fps/target-switching-swarm",
     "browserRequirements": "Requires Pointer Lock API and WebGL support",
     "applicationCategory": "ShooterTraining",
@@ -86,7 +86,7 @@ export default function TargetSwitchingSwarmEsPage() {
   const videoGameSchema = {
     "@context": "https://schema.org",
     "@type": "VideoGame",
-    "name": "Target Switching Swarm",
+    "name": "Aim Trainer Valorant - Cambio de objetivos",
     "description": "Simulador de enjambre de objetivos dinámicos para perfeccionar la velocidad de transición motora, spray transfer y erradicar pausas cognitivas.",
     "genre": ["First-Person Shooter", "Aim Trainer", "Reaction Training"],
     "playMode": "SinglePlayer",
@@ -219,9 +219,9 @@ export default function TargetSwitchingSwarmEsPage() {
   };
 
   const targetSwitchingGuide = {
-    heading: "Guía de Target Switching & Cinemática de Múltiples Blancos en FPS",
+    heading: "Aim Trainer Valorant: cambio de objetivos y spray transfer",
     intro: [
-      "Target Switching Swarm es un entrenamiento motriz y de indexación visual concebido para automatizar transiciones veloces y fluidas entre múltiples enemigos hostiles. En shooters tácticos como Counter-Strike 2 y Valorant, o juegos vertiginosos como Apex Legends, los combates no suelen ser aislados duelos 1v1. Ganar rondas cruciales exige aniquilar al primer adversario y encadenar de inmediato un cambio de blanco fulminante hacia un segundo enemigo sin vacilación cognitiva.",
+      "Para quien busca un aim trainer Valorant, este drill mide el cambio de la mira desde un enemigo recién abatido hacia el siguiente objetivo sin pausa de confirmación. Practica cambios rápidos entre varios blancos, spray transfer y flick continuo para Valorant, CS2 y Apex Legends.",
       "La psicofísica del cambio de objetivo está fundamentada en la Ley de Fitts (Fitts, 1954) y en el modelo estocástico de submovimientos optimizados de David E. Meyer et al. (1988). Según estos principios, un movimiento de puntería consta de una fase balística inicial que recorre cerca del 90% de la distancia, continuada por microajustes correctivos guiados visualmente. Los jugadores aficionados pierden de 100 a 250 ms tras cada baja observando la animación del impacto. Los tiradores de élite ya han iniciado el movimiento ocular sacádico hacia el siguiente objetivo antes de finalizar el disparo anterior.",
       "El procesamiento de enjambres poblados depende de la integración de características y de la búsqueda visual preatencional (Anne M. Treisman & Garry Gelade, 1980; Jeremy M. Wolfe, 2007). El córtex visual humano registra múltiples marcadores espaciales en paralelo (teoría FINST), lo que permite estructurar rutas cinemáticas eficientes entre blancos vecinos, optimizando la trayectoria angular del ratón.",
       "Metodología de medición: todos los clics y transiciones se cronometran con el reloj de alta resolución performance.now() del navegador, ejecutándose íntegramente de manera local en tu equipo. Consideraciones técnicas: los navegadores redondean los temporizadores (~1 ms) por mitigación de Spectre y los monitores actualizan la imagen a intervalos fijos (16,7 ms a 60 Hz, 6,9 ms a 144 Hz, 4,1 ms a 240 Hz; Woods et al., 2015). El polling rate del ratón añade unos 8 ms a 125 Hz frente a 1 ms a 1000 Hz. Diferencias inferiores a 5 ms corresponden al margen normal de hardware."
@@ -293,9 +293,9 @@ export default function TargetSwitchingSwarmEsPage() {
 
       <TargetSwitchingSwarmClient
         copy={{
-          h1Keyword: "Entrenamiento de Target Switching FPS",
-          h1Suffix: " – Cambio Rápido de Blanco y Spray Transfer",
-          subtitle: "Entrena transiciones rápidas entre objetivos, spray transfers e indexación visual sin pausas de reajuste.",
+          h1Keyword: "Aim Trainer Valorant",
+          h1Suffix: " - Cambio de objetivos",
+          subtitle: "Practica cambios rápidos entre objetivos y spray transfer sin perder precisión en el navegador.",
           statScore: "Puntos",
           statTime: "Tiempo",
           statAccuracy: "Precisión",
@@ -320,7 +320,7 @@ export default function TargetSwitchingSwarmEsPage() {
       <div className="max-w-4xl mx-auto px-4 pb-12">
         <RelatedDrills
           currentCategory="fps"
-          currentHref="/drills/fps/target-switching-swarm"
+          currentHref="/es/drills/fps/target-switching-swarm"
           locale="es"
         />
       </div>

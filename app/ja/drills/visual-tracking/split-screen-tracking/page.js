@@ -1,25 +1,26 @@
 import SplitScreenTrackingClient from '@/app/drills/visual-tracking/split-screen-tracking/SplitScreenTrackingClientLoader';
 import DrillGuide from '@/components/drill/DrillGuide';
 import RelatedDrills from '@/components/drill/RelatedDrills';
+import DrillFooter from '@/components/drill/DrillFooter';
 import { getAlternateLanguages } from '@/lib/i18n/locales';
 import { pickSources } from '@/lib/drillSources';
 
 export const metadata = {
-  title: "画面分割アイトラッキング・分割性注意追従テスト | SkillDrills",
-  description: "左右の視野で直交移動する2つの目標を同時に捉える画面分割アイトラッキング訓練。両半球の分割性注意と潜在的空間注意を強化し視野狭窄を防止。無料。",
+  title: "画面分割追視トレーニング｜分割注意力ドリル | SkillDrills",
+  description: "左右の動く標的を同時に追う無料ブラウザ練習。視線アンカー、左右差、標的ロストを記録。",
   keywords: [
     "画面分割 アイトラッキング",
+    "分割注意力 トレーニング",
     "二重注意 視覚追従",
-    "分割性注意 トレーニング",
-    "両視野 並列視覚追尾",
+    "画面分割 動体視力 テスト",
     "マルチターゲット 視線分離",
     "周辺視野 動体視力",
-    "視野狭窄 改善 トレーニング",
-    "FPS ミニマップ 視線移動 練習",
-    "複眼視覚 トレーニング",
-    "大脳半球 視覚独立処理",
     "分割視野 視線制御",
-    "画面分割 動体視力 テスト"
+    "左右の標的 同時追視",
+    "画面上の動き 注意力",
+    "FPS ミニマップ 視線移動 練習",
+    "視覚的注意 練習",
+    "複数標的 追跡トレーニング"
   ],
   alternates: {
     canonical: "https://skilldrills.online/ja/drills/visual-tracking/split-screen-tracking",
@@ -27,8 +28,8 @@ export const metadata = {
   },
   robots: { index: true, follow: true },
   openGraph: {
-    title: "画面分割アイトラッキング・分割性注意追従テスト | SkillDrills",
-    description: "左右の視野で直交移動する2つの目標を同時に捉える画面分割アイトラッキング訓練。両半球の分割性注意と潜在的空間注意を強化し視野狭窄を防止。無料。",
+    title: "画面分割追視トレーニング｜分割注意力ドリル | SkillDrills",
+    description: "左右の動く標的を同時に追う無料ブラウザ練習。視線アンカー、左右差、標的ロストを記録。",
     url: "https://skilldrills.online/ja/drills/visual-tracking/split-screen-tracking",
     siteName: "SkillDrills",
     locale: "ja_JP",
@@ -36,8 +37,8 @@ export const metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "画面分割アイトラッキング・分割性注意追従テスト | SkillDrills",
-    description: "左右の視野で直交移動する2つの目標を同時に捉える画面分割アイトラッキング訓練。両半球の分割性注意と潜在的空間注意を強化し視野狭窄を防止。無料。",
+    title: "画面分割追視トレーニング｜分割注意力ドリル | SkillDrills",
+    description: "左右の動く標的を同時に追う無料ブラウザ練習。視線アンカー、左右差、標的ロストを記録。",
   },
 };
 
@@ -84,7 +85,7 @@ const softwareApplicationSchema = {
     "name": "SkillDrills",
     "url": "https://skilldrills.online"
   },
-  "dateModified": "2026-09-15"
+  "dateModified": "2026-09-20"
 };
 
 const webAppSchema = {
@@ -100,7 +101,7 @@ const webAppSchema = {
     "priceCurrency": "USD"
   },
   "url": "https://skilldrills.online/ja/drills/visual-tracking/split-screen-tracking",
-  "dateModified": "2026-09-15"
+  "dateModified": "2026-09-20"
 };
 
 const videoGameSchema = {
@@ -124,7 +125,8 @@ const videoGameSchema = {
     "@type": "Offer",
     "price": "0",
     "priceCurrency": "USD"
-  }
+  },
+  "dateModified": "2026-09-20"
 };
 
 const howToSchema = {
@@ -132,7 +134,7 @@ const howToSchema = {
   "@type": "HowTo",
   "name": "画面分割アイトラッキング訓練の進め方",
   "description": "画面分割下で直交する二目標を同時に追従し、分割性視覚注意と潜在的視野拡大を最大化する4ステップ。",
-  "dateModified": "2026-09-15",
+  "dateModified": "2026-09-20",
   "step": [
     {
       "@type": "HowToStep",
@@ -249,7 +251,8 @@ const faqSchema = {
         "text": "一般的な60Hz（フレーム更新間隔約16.7ms）に比べ、144Hz（約6.9ms）や240Hz（約4.2ms）のモニターでは直交移動する2目標の軌道が滑らかに描画され、運動ブラーや表示量子化遅延が極小化されます（Woods et al., 2015）。これにより網膜スリップエラーの誤認が減少し、純粋な脳神経レベルの注意分割訓練が可能となります。"
       }
     }
-  ]
+  ],
+  "dateModified": "2026-09-20"
 };
 
 const guide = {
@@ -319,6 +322,12 @@ const guide = {
       "入力デバイスと着座姿勢：モニターの中央境界線が身体の正中面（正中矢状面）と完全に直交するよう頭部と椅子の位置を調整し、左右の視差・非対称性を排除。"
     ]
   },
+  steps: [
+    { title: "中央の境界線に視線を置く", text: "画面中央を柔らかく見て、左右の標的を直接見つめずに動きを捉えます。" },
+    { title: "左右の動きを分けて読む", text: "左の上下運動と右の左右運動を別々のリズムとして観察します。" },
+    { title: "左右のロストを記録する", text: "どちらの標的を見失ったか、中央アンカーが崩れたかをセッションごとに確認します。" },
+    { title: "速度を少しずつ上げる", text: "左右差が安定してから速度倍率を上げ、精度を保ったまま難度を進めます。" }
+  ],
   faqs: [
     {
       q: "画面分割アイトラッキング訓練（Split-Screen Tracking）とは何ですか？",
@@ -401,15 +410,16 @@ export default function SplitScreenTrackingJaPage() {
 
       <SplitScreenTrackingClient
         copy={{
-          title: "画面分割アイトラッキング",
-          subtitle: "分割性注意追従テスト・両視野並列追尾",
-          description: "画面中央で分割された領域において、直交する垂直・水平ベクトルで独立移動する二目標を同時に監視する画面分割アイトラッキング訓練。中心視野を固定したまま潜在的空間注意を両大脳半球へ均等に配分し、視野狭窄を防止しながら並列視覚情報処理を強化します。"
+          title: "画面分割追視トレーニング",
+          subtitle: "左右の標的を追う分割注意力ドリル",
+          description: "左右の動く標的を同時に追い、視線アンカー、左右差、標的ロストを記録する無料ブラウザ練習です。"
         }}
       />
       <DrillGuide guide={guide} />
       <div className="max-w-6xl mx-auto px-4 pb-12">
         <RelatedDrills currentCategory="visual-tracking" currentHref="https://skilldrills.online/ja/drills/visual-tracking/split-screen-tracking" />
       </div>
+      <DrillFooter />
     </>
   );
 }

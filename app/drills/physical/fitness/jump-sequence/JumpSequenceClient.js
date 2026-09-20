@@ -21,6 +21,7 @@ import useUnexpectedExitGuard from '../../../../../lib/useUnexpectedExitGuard';
 import DrillFooter from '../../../../../components/drill/DrillFooter';
 import DrillCountdown from '../../../../../components/drill/DrillCountdown';
 import DrillAccordion from '../../../../../components/drill/DrillAccordion';
+import DrillRuleItem from '../../../../../components/drill/DrillRuleItem';
 import FpsStartCard from '../../../../../components/drill/FpsStartCard';
 import useImmersiveMode from '@/lib/useImmersiveMode';
 
@@ -69,7 +70,7 @@ const ABOUT_SECTIONS = [
     icon: Target,
     title: "Stretch-Shortening Cycle & Vertical Impulse Regulation",
     subtitle: "Biomechanical force potentiation and launch velocity calibration",
-    content: "Jump sequence training demands precise regulation of vertical takeoff impulse through neuromuscular stretch-shortening mechanics (Komi, 2000). By varying ground charge duration, the motor cortex modulates elastic energy storage in lower-limb extensor groups, translating force into reproducible ballistic flight parabolas."
+    content: "Jump sequence training demands precise regulation of vertical takeoff impulse through neuromuscular stretch-shortening mechanics (Komi, 2000). By varying ground charge duration, the motor cortex modulates elastic energy storage in lower-limb extensor groups, translating force into reproducible ballistic flight parabolas. This is a cursor interception drill: it trains that prediction, and does not measure vertical jump or stretch-shortening cycle mechanics, which need force-plate measurement (Komi, 2000)."
   },
   {
     icon: Move,
@@ -81,7 +82,7 @@ const ABOUT_SECTIONS = [
     icon: Eye,
     title: "Optical Tau & Dynamic Aerial Target Interception",
     subtitle: "Time-to-contact estimation under erratic target acceleration",
-    content: "Interception timing is governed by optical tau (τ), the inverse rate of retinal image expansion (Lee, 1976). As target velocity escalates from 120 px/s up to 900 px/s, the visual cortex must extrapolate non-linear intersection coordinates before initiating jump liftoff."
+    content: "Interception timing is governed by optical tau (τ), the inverse rate of retinal image expansion (Lee, 1976). As target velocity escalates from 120 px/s up to 900 px/s, the visual cortex must extrapolate non-linear intersection coordinates before initiating jump liftoff. The visual system can read time-to-contact directly from the rate at which an approaching object's image expands, without needing to know its size or speed (Lee, 1976), and the movement itself is planned in advance from an internal model rather than steered by feedback once it is airborne (Kawato, 1999)."
   },
   {
     icon: Activity,
@@ -708,9 +709,6 @@ export default function JumpSequenceClient({ copy = {} } = {}) {
                 </span>
               )}
             </h1>
-            <p className="text-xs sm:text-sm text-slate-400 mt-2 leading-relaxed">
-              Intercepting something that is falling means predicting where it will be, not reacting to where it is. The visual system can read time-to-contact directly from the rate at which an approaching object&apos;s image expands, without needing to know its size or speed (Lee, 1976), and the movement itself is planned in advance from an internal model rather than steered by feedback once it is airborne (Kawato, 1999). This is a cursor interception drill: it trains that prediction, and does not measure vertical jump or stretch-shortening cycle mechanics, which need force-plate measurement (Komi, 2000).
-            </p>
           </div>
         )}
 
@@ -740,7 +738,7 @@ export default function JumpSequenceClient({ copy = {} } = {}) {
         <div 
           ref={containerRef} 
           onContextMenu={(e) => { if (gameActiveRef.current) e.preventDefault(); }}
-          className={`overflow-hidden flex flex-col transition-all duration-150 select-none bg-[#080811] text-white border border-white/10 ${
+          className={`overflow-hidden flex flex-col select-none bg-[#080811] text-white border border-white/10 ${
             isFullscreen 
               ? 'fixed inset-0 z-[100] w-screen h-[100dvh] bg-[#080811] rounded-none border-none flex flex-col items-center justify-center' 
               : 'w-full rounded-2xl bg-[#080811] aspect-video min-h-[460px] sm:min-h-[500px] max-h-[88vh] relative overflow-hidden flex flex-col'
@@ -905,12 +903,9 @@ export default function JumpSequenceClient({ copy = {} } = {}) {
               isOpen={openAccordion === 'rules'}
               onToggle={() => setOpenAccordion(openAccordion === 'rules' ? null : 'rules')}
             >
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-2.5 sm:gap-3 font-sans">
                 {(copy?.rules || RULES_ITEMS).map((item, i) => (
-                  <div key={i} className="bg-black p-4 rounded-xl border border-white/10">
-                    <p className="text-sm font-bold text-white mb-1">{item.title}</p>
-                    <p className="text-xs text-gray-300 leading-relaxed">{item.text}</p>
-                  </div>
+                  <DrillRuleItem key={i} num={item.num || String(i + 1)} title={item.title} detail={item.text} />
                 ))}
               </div>
             </DrillAccordion>

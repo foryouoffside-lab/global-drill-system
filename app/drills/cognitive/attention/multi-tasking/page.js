@@ -1,15 +1,17 @@
 import DualTargetFlowClient from './DualTargetFlowClientLoader';
 import { getAlternateLanguages } from '@/lib/i18n/locales';
 import DrillGuide from '@/components/drill/DrillGuide';
+import RelatedDrills from '@/components/drill/RelatedDrills';
+import DrillFooter from '@/components/drill/DrillFooter';
 import { pickSources } from '@/lib/drillSources';
 
 export const metadata = {
-  title: "Multitasking Test – Dual-Stream Attention | SkillDrills",
-  description: "Free online multitasking test: Track simultaneous visual streams and process dual inputs under speed pressure in this cognitive attention drill.",
-  keywords: ["multitasking test", "multitasking test online", "dual task test", "dual stream tracking", "attention switching test", "task switching drill", "cognitive flexibility test", "brain multitasking game", "split attention test", "bilateral visual tracking", "executive function drill", "dual target flow"],
+  title: "Multitasking Test Online | Dual Task Focus | SkillDrills",
+  description: "Free multitasking test online: track two visual streams and maintain accuracy during a dual-task focus drill. Non-clinical practice.",
+  keywords: ["multitasking test online", "dual task test", "divided attention test", "dual stream tracking", "task switching test", "cognitive flexibility test", "multitasking brain game", "parallel visual tracking", "executive function drill", "dual target training"],
   openGraph: {
-    title: "Multitasking Test – Dual-Stream Attention | SkillDrills",
-    description: "Free online multitasking test: Track simultaneous visual streams and process dual inputs under speed pressure in this cognitive attention drill.",
+    title: "Multitasking Test Online | Dual Task Focus | SkillDrills",
+    description: "Free multitasking test online: track two visual streams and maintain accuracy during a dual-task focus drill. Non-clinical practice.",
     type: 'article',
     url: 'https://skilldrills.online/drills/cognitive/attention/multi-tasking',
     siteName: 'SkillDrills',
@@ -17,8 +19,8 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: "Multitasking Test – Dual-Stream Attention | SkillDrills",
-    description: "Free online multitasking test: Track simultaneous visual streams and process dual inputs under speed pressure in this cognitive attention drill.",
+    title: "Multitasking Test Online | Dual Task Focus | SkillDrills",
+    description: "Free multitasking test online: track two visual streams and maintain accuracy during a dual-task focus drill. Non-clinical practice.",
   },
   robots: { index: true, follow: true },
   alternates: {
@@ -77,7 +79,7 @@ const softwareApplicationSchema = {
     "url": "https://skilldrills.online"
   },
   "inLanguage": "en-US",
-  "dateModified": "2026-09-11"
+  "dateModified": "2026-09-20"
 };
 
 const webApplicationSchema = {
@@ -94,7 +96,7 @@ const webApplicationSchema = {
   },
   "url": "https://skilldrills.online/drills/cognitive/attention/multi-tasking",
   "inLanguage": "en-US",
-  "dateModified": "2026-09-11"
+  "dateModified": "2026-09-20"
 };
 
 const videoGameSchema = {
@@ -312,8 +314,12 @@ export default function EnhancedPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(howToSchema) }}
       />
-      <DualTargetFlowClient copy={{ title: "Multitasking Test" }} />
+      <DualTargetFlowClient copy={{ title: "Multitasking Test", subtitle: "Track two visual streams and maintain accuracy during a dual-task focus challenge" }} />
       <DrillGuide {...guideProps} />
+      <div className="max-w-6xl mx-auto px-4 pb-12">
+        <RelatedDrills currentCategory="cognitive" currentHref="https://skilldrills.online/drills/cognitive/attention/multi-tasking" />
+      </div>
+      <DrillFooter />
     </>
   );
 }

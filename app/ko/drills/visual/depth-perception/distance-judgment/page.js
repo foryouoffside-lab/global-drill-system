@@ -5,38 +5,38 @@ import { getAlternateLanguages } from '@/lib/i18n/locales';
 import { pickSources } from '@/lib/drillSources';
 
 // ============================================================
-// SEO RESEARCH FINDINGS — distance-judgment (Korean: 원근감 테스트 / 입체시 검사)
-// PRIMARY:  "원근감 테스트"                  — Core perceptual search query
-//           "입체시 검사"                    — Clinical stereopsis term
+// SEO RESEARCH FINDINGS — distance-judgment (Korean native search)
+// PRIMARY:  "입체시 검사"                    — Clinical stereopsis term
+//           "심시력 검사"                    — Korean depth-distance term
+//           "깊이 지각 테스트"                — Plain-language depth-perception intent
 // SECONDARY / LSI:
 //           "심시력 검사"                    — Driver license / heavy machine test
 //           "거리 감각 테스트"                — Distance judgment query
-//           "거리 조절 능력 훈련"            — Vision training query
-//           "시지각 공간 지각력"              — Spatial perception
-//           "옵티컬 루밍 훈련"                — Optical looming
+//           "심시력 검사 연습"                — Practical training intent
+//           "입체시 검사 온라인"              — Browser intent
+//           "원근감 테스트"                  — Secondary visual-language term
 //           "하워드 돌먼 테스트"              — Howard-Dolman test
 // ============================================================
 
 export const metadata = {
-  title: '원근감 테스트 – 무료 온라인 입체시 & 거리 감각 측정 검사',
-  description: '접근하는 목표물의 거리를 정밀하게 포착하는 무료 온라인 원근감 테스트. 광학적 루밍 팽창률과 도달 시간(TTC)을 계산하여 거리 감각과 입체시를 측정합니다.',
+  title: '입체시 검사 온라인 | 심시력·거리감 훈련 | SkillDrills',
+  description: '입체시 검사와 심시력 연습을 위한 무료 온라인 시각 드릴. 다가오는 목표물의 거리감과 도달 타이밍을 측정하며, 의료 진단용 검사는 아닙니다.',
   keywords: [
-    '원근감 테스트',
     '입체시 검사',
     '심시력 검사',
-    '거리 감각 테스트',
-    '거리 조절 능력 훈련',
-    '시지각 공간 지각력',
-    '옵티컬 루밍 훈련',
+    '깊이 지각 테스트',
+    '심시력 검사 연습',
+    '입체시 검사 온라인',
+    '거리감 테스트',
+    '원근감 테스트',
     '하워드 돌먼 테스트',
-    '동체 원근감 측정',
     '운전면허 심시력 연습',
-    '눈 피로 거리 초점',
-    '양안 시차 입체시',
+    '양안시 입체시',
+    '시지각 공간 지각력',
   ],
   openGraph: {
-    title: '원근감 테스트 – 무료 온라인 입체시 & 거리 감각 측정 검사 | SkillDrills',
-    description: '접근하는 목표물의 거리를 정밀하게 포착하는 무료 온라인 원근감 테스트. 광학적 루밍 팽창률과 도달 시간(TTC)을 계산하여 거리 감각과 입체시를 측정합니다.',
+    title: '입체시 검사 온라인 | 심시력·거리감 훈련 | SkillDrills',
+    description: '입체시 검사와 심시력 연습을 위한 무료 온라인 시각 드릴. 다가오는 목표물의 거리감과 도달 타이밍을 측정하며, 의료 진단용 검사는 아닙니다.',
     type: 'article',
     url: 'https://skilldrills.online/ko/drills/visual/depth-perception/distance-judgment',
     siteName: 'SkillDrills',
@@ -44,8 +44,8 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: '원근감 테스트 – 무료 온라인 입체시 & 거리 감각 측정 검사 | SkillDrills',
-    description: '접근하는 목표물의 거리를 정밀하게 포착하는 무료 온라인 원근감 테스트. 광학적 루밍 팽창률과 도달 시간(TTC)을 계산하여 거리 감각과 입체시를 측정합니다.',
+    title: '입체시 검사 온라인 | 심시력·거리감 훈련 | SkillDrills',
+    description: '입체시 검사와 심시력 연습을 위한 무료 온라인 시각 드릴. 다가오는 목표물의 거리감과 도달 타이밍을 측정하며, 의료 진단용 검사는 아닙니다.',
   },
   robots: { index: true, follow: true },
   alternates: {
@@ -227,7 +227,7 @@ const faqSchema = {
 };
 
 const distanceGuideKo = {
-  heading: '원근감 및 공간 입체시 평가 기준',
+  heading: '입체시 검사와 심시력 거리감 훈련 기준',
   intro: [
     '원근감(깊이 지각 및 입체시)은 시각 피질과 안구 운동 신경계가 외부 공간을 3차원으로 통합하여 물체 간의 상대적 거리, 체적, 그리고 동적 이동 궤적을 밀리초 단위로 정확히 판단하는 고차원적 인지 능력입니다. 모터스포츠, 항공기 조종, 운전면허 적성검사(대형·특수면허 입체시 검사), 그리고 하이퍼 FPS e스포츠에서 찰나의 거리 판단은 성공적인 인터셉트와 치명적인 충돌 사고를 가르는 절대적 기준이 됩니다.',
     '본 드릴은 Harvey J. Howard(1919)가 비행 적성 선별을 위해 개발한 하워드-돌먼 삼간법(Howard-Dolman apparatus)의 기하학적 원리와 David N. Lee(1976), David Regan & Kenneth I. Beverley(1978)의 생태학적 시각 팽창 이론(Optical Looming 및 접촉 여유시간 τ)을 정밀하게 웹 브라우저 상에 구현했습니다. 원경에서 다가오는 3D 타겟 구체가 중앙의 기준 심도 링과 완벽히 일치하는 순간을 낚아챔으로써 동적 거리 지각력과 반응 타이밍을 집중 훈련합니다.',
@@ -235,7 +235,7 @@ const distanceGuideKo = {
     '데이터 투명성 및 개인정보 보호: SkillDrills는 어떠한 개인정보, 안과적 진단 수치, 세션 로그도 외부 서버로 전송하거나 수집하지 않습니다. 달성한 모든 최고 기록, 오차율 및 레벨 진행 상태는 사용자의 웹 브라우저 로컬 저장소(LocalStorage)에만 안전하게 보관됩니다.'
   ],
   benchmarks: {
-    title: '원근감 판정 기준표 (자체 평가 가이드)',
+    title: '입체시·거리감 판정 기준표 (연습용 가이드)',
     headers: ['등급', '평균 오차율', '점수 및 레벨', '시각 운동 신경 프로필'],
     rows: [
       ['Tier 1: 최상위 입체시 마스터', '5.0% 미만 오차', '1,500점 이상 | 레벨 7+', '탁월한 루밍 감지력, 오차 없는 완벽한 타이밍 추출.'],
@@ -246,7 +246,7 @@ const distanceGuideKo = {
     ],
   },
   protocols: {
-    title: '원근감과 거리 판정 능력을 향상시키는 훈련 수칙',
+    title: '심시력 검사 연습을 위한 거리감 훈련 수칙',
     items: [
       {
         title: '수칙 1: 광학적 팽창률(루밍)과 도달 시점 계산 집중',
@@ -293,15 +293,15 @@ const distanceGuideKo = {
 };
 
 const copyKo = {
-  title: '원근감 테스트',
-  subtitle: '3D 공간 거리 판정 & 시지각 인터셉트 훈련',
+  title: '입체시 검사 온라인',
+  subtitle: '심시력·거리감 훈련 드릴',
   caption: '원근감은 물체가 얼마나 멀리 있는지, 앞뒤 관계를 판단하는 시각 기능입니다. 평면 모니터에서는 망막상의 크기 팽창 속도(Lee, 1976; Regan & Beverley, 1978)를 통해 물체의 실제 크기나 거리를 몰라도 도달 시간(TTC)을 정확히 계산하는 능력을 측정합니다.',
   statScore: '점수',
   statTime: '남은 시간',
   statLevel: '레벨',
   statBestScore: '최고 기록',
   startTitle: '원근감 측정 프로',
-  startSubtitle: '3D 공간 거리 판정 • 동체 원근감 측정 드릴',
+  startSubtitle: '다가오는 목표물의 거리감·타이밍 연습',
   startBtn: '테스트 시작',
   getReady: '준비하세요',
   newBest: '신기록 달성',

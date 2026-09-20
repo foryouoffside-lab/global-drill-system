@@ -5,33 +5,34 @@ import RelatedDrills from '@/components/drill/RelatedDrills';
 import { pickSources } from '@/lib/drillSources';
 
 export const metadata = {
-  title: "Test de Rythme Visuel & Discrimination | SkillDrills",
-  description: "Test de rythme visuel et de discrimination temporelle gratuit en ligne. Détectez la cellule en déphasage dans la grille de 36 cellules et boostez vos réflexes.",
+  title: "Discrimination Temporelle | Rythme Visuel | SkillDrills",
+  description: "Test gratuit de discrimination temporelle visuelle : trouvez la cellule en déphasage dans une grille pulsante de 36 cellules. Pas un examen médical.",
   keywords: [
-    "test de rythme visuel",
     "discrimination temporelle visuelle",
-    "fréquence critique de fusion",
-    "perception du déphasage visuel",
-    "détection d'anomalie de pulsation",
+    "test de rythme visuel",
+    "scintillement visuel",
     "résolution temporelle visuelle",
-    "voie magnocellulaire vision",
-    "acuité visuelle temporelle",
+    "fréquence critique de fusion",
     "test de clignotement visuel",
-    "test de timing visuel",
-    "psychophysique temporelle vision",
+    "déphasage visuel",
+    "détection de pulsations",
+    "entraînement de la perception visuelle",
+    "grille pulsante",
+    "cellule en déphasage",
+    "perception temporelle du mouvement",
     "perception du scintillement"
 ],
   openGraph: {
-    title: "Test de Rythme Visuel & Discrimination | SkillDrills",
-    description: "Entraînez votre discrimination temporelle, détection d'asynchronie visuelle et perception périphérique avec cette matrice de 36 cellules pulsantes.",
+    title: "Discrimination Temporelle | Rythme Visuel | SkillDrills",
+    description: "Trouvez la cellule en déphasage dans une grille pulsante et pratiquez la discrimination temporelle visuelle.",
     type: "website",
     url: "https://skilldrills.online/fr/drills/visual/visual-recognition/rhythm-anomaly",
     siteName: "SkillDrills",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Test de Rythme Visuel & Discrimination | SkillDrills",
-    description: "Entraînez votre discrimination temporelle, détection d'asynchronie visuelle et perception périphérique avec cette matrice de 36 cellules pulsantes.",
+    title: "Discrimination Temporelle | Rythme Visuel | SkillDrills",
+    description: "Trouvez la cellule en déphasage dans une grille pulsante et pratiquez la discrimination temporelle visuelle.",
   },
   robots: { index: true, follow: true },
   alternates: {
@@ -47,40 +48,40 @@ const breadcrumbSchema = {
     { "@type": "ListItem", "position": 1, "name": "SkillDrills", "item": "https://skilldrills.online/fr/" },
     { "@type": "ListItem", "position": 2, "name": "Entraînement Visuel", "item": "https://skilldrills.online/fr/drills/visual" },
     { "@type": "ListItem", "position": 3, "name": "Reconnaissance Visuelle", "item": "https://skilldrills.online/fr/drills/visual/visual-recognition" },
-    { "@type": "ListItem", "position": 4, "name": "Test de Rythme Visuel et de Discrimination Temporelle", "item": "https://skilldrills.online/fr/drills/visual/visual-recognition/rhythm-anomaly" }
+    { "@type": "ListItem", "position": 4, "name": "Discrimination temporelle visuelle (grille pulsante)", "item": "https://skilldrills.online/fr/drills/visual/visual-recognition/rhythm-anomaly" }
   ]
 };
 
 const softwareApplicationSchema = {
   "@context": "https://schema.org",
   "@type": "SoftwareApplication",
-  "name": "Test de Rythme Visuel et de Discrimination Temporelle",
+  "name": "Test de discrimination temporelle visuelle",
   "applicationCategory": "HealthApplication",
   "operatingSystem": "All",
   "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
   "description": "Exercice gratuit de discrimination temporelle visuelle. Matrice 6x6 avec 36 cellules pulsantes. Repérez la cellule en déphasage en mode contre-la-montre de 45 secondes.",
   "url": "https://skilldrills.online/fr/drills/visual/visual-recognition/rhythm-anomaly",
   "publisher": { "@type": "Organization", "name": "SkillDrills", "url": "https://skilldrills.online" },
-  "dateModified": "2026-09-05"
+  "dateModified": "2026-09-20"
 };
 
 const webApplicationSchema = {
   "@context": "https://schema.org",
   "@type": "WebApplication",
-  "name": "Test d'Anomalie de Rythme Visuel",
+  "name": "Test gratuit de rythme visuel",
   "browserRequirements": "Requires HTML5 canvas and JavaScript",
   "url": "https://skilldrills.online/fr/drills/visual/visual-recognition/rhythm-anomaly",
   "applicationCategory": "EducationalApplication",
-  "dateModified": "2026-09-05"
+  "dateModified": "2026-09-20"
 };
 
 const videoGameSchema = {
   "@context": "https://schema.org",
   "@type": "VideoGame",
-  "name": "Jeu de Discrimination de Rythme Visuel",
+  "name": "Défi de pulsations visuelles déphasées",
   "url": "https://skilldrills.online/fr/drills/visual/visual-recognition/rhythm-anomaly",
   "description": "Jeu gratuit de perception temporelle et de détection de scintillement. Identifiez les déphasages subtils dans des matrices optiques pulsantes.",
-  "genre": ["Action", "Brain Game", "Timing Game"],
+  "genre": ["Discrimination temporelle visuelle", "Rythme visuel", "Perception visuelle"],
   "gamePlatform": ["Web Browser", "Desktop", "Mobile"],
   "applicationCategory": "Game",
   "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
@@ -89,9 +90,9 @@ const videoGameSchema = {
 const howToSchema = {
   "@context": "https://schema.org",
   "@type": "HowTo",
-  "name": "Comment entraîner la discrimination temporelle et la détection d'anomalies de rythme",
+  "name": "Comment entraîner la discrimination temporelle visuelle",
   "description": "Perfectionnez votre acuité temporelle, votre sensibilité au scintillement et votre reconnaissance des déphasages grâce à notre protocole scientifique en 4 étapes.",
-  "dateModified": "2026-09-05",
+  "dateModified": "2026-09-20",
   "step": [
     {
       "@type": "HowToStep",
@@ -127,7 +128,7 @@ const howToSchema = {
 const faqSchema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
-  "dateModified": "2026-09-05",
+  "dateModified": "2026-09-20",
   "mainEntity": [
     {
       "@type": "Question",
@@ -223,7 +224,7 @@ export default function RhythmAnomalyLocalePage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(howToSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(videoGameSchema) }} />
-      <RhythmAnomalyClient copy={{ title: "Jeu de Discrimination de Rythme Visuel" }} />
+      <RhythmAnomalyClient copy={{ title: "Discrimination Temporelle Visuelle", subtitle: "Rythme visuel et détection du déphasage" }} />
       <DrillGuide
         eyebrow="Psychophysique Temporelle & Chronométrie Visuelle"
         title="La Science du Rythme Visuel, Fusion du Scintillement & Discrimination de Fréquence Temporelle"
@@ -244,7 +245,7 @@ export default function RhythmAnomalyLocalePage() {
             <strong>Limite corticale de liaison consciente (~2–5 Hz) :</strong> L&apos;identification cognitive formelle et l&apos;assemblage des traits visuels reposent sur des boucles récurrentes lentes oscillant entre 2 et 5 cycles par seconde (Holcombe, 2009).
           </li>
         </ul>
-        <p dangerouslySetInnerHTML={{ __html: `Le drill Rhythm Anomaly développe précisément la passerelle fonctionnelle entre ces deux réseaux : l&apos;observateur doit exploiter la sensibilité magnocellulaire précoce pour isoler la cellule discordante, puis opérer une validation attentionnelle descendante (top-down) avant la fin de l&apos;onde de pulsation.` }} />
+<p dangerouslySetInnerHTML={{ __html: `Cet exercice développe précisément la passerelle fonctionnelle entre ces deux réseaux : l&apos;observateur doit exploiter la sensibilité magnocellulaire précoce pour isoler la cellule discordante, puis opérer une validation attentionnelle descendante avant la fin de l&apos;onde de pulsation.` }} />
 
         <h3>Fenêtres d&apos;Intégration Temporelle & Bruit d&apos;Entropie</h3>
         <p dangerouslySetInnerHTML={{ __html: `Le système visuel intègre les signaux lumineux sur des fenêtres d'environ 30 à 100 millisecondes (Burr, 1980; Woods et al., 2015). Les stimuli qui surviennent au sein d'une même fenêtre fusionnent en une seule impression sensorielle. Les éclairs d'entropie aléatoires injectent un bruit stochastique dans cette fenêtre, forçant le cerveau à discriminer une véritable périodicité sinusoïdale d'un simple éclat isolé de luminosité (Burr, 1980; Posner, 1980).` }} />

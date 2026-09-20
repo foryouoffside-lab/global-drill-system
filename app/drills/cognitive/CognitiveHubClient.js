@@ -266,12 +266,12 @@ export default function CognitiveHubClient({ faqs = [] }) {
         {/* Page heading — crisp white typography, no images */}
         <div className="mb-8">
           <h1 className="text-2xl sm:text-3xl font-bold tracking-tight text-ink-1">
-            {t("hubs.cognitive.h1", "Cognitive Brain Training & Decision Speed")}
+            {t("hubs.cognitive.h1", "Free Cognitive Training & Brain Games")}
           </h1>
           <p className="mt-2 text-sm sm:text-base text-ink-2 leading-relaxed">
             {t(
               "hubs.cognitive.desc",
-              "Train selective focus, distraction inhibition, rapid task switching, and processing speed."
+              "Free browser drills for attention, concentration, memory, reaction time, and processing speed."
             )}
           </p>
         </div>
@@ -387,7 +387,7 @@ export default function CognitiveHubClient({ faqs = [] }) {
                   Millisecond-Precision Stimulus Timers
                 </h3>
                 <p className="text-2xs text-ink-3 leading-relaxed">
-                  High-precision monotonic performance timers track visual cues and interference onset at the browser's native ~1ms resolution, preventing frame-delayed reaction measurements.
+                  High-precision monotonic performance timers track visual cues and interference onset at the browser&apos;s native ~1ms resolution, preventing frame-delayed reaction measurements.
                 </p>
               </div>
 

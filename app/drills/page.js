@@ -1,13 +1,14 @@
 import DrillsDirectoryClient from './DrillsDirectoryClient';
 import { DRILLS } from '@/lib/drillsRegistry';
 import { getAlternateLanguages } from '@/lib/i18n/locales';
+import { buildDirectoryMetadata, getDirectoryCollectionFields, getDirectoryFaqSchema } from '@/lib/i18n/siteLandingSeoNative';
 
 // GSC (180d): this URL takes 29 impr for "online drills" (pos 14.7) and 23 for
 // "drills online" (pos 10.6) without the phrase appearing in the title at all.
 const TITLE = `Free Online Drills - ${DRILLS.length} Skill Training Drills`;
 const DESCRIPTION = `Browse ${DRILLS.length}+ free training drills across 8 categories. FPS aim trainer, cognitive brain training, visual tracking, memory games, reaction speed and more.`;
 
-export const metadata = {
+const legacyMetadata = {
   title: TITLE,
   description: DESCRIPTION,
   alternates: {
@@ -37,6 +38,13 @@ export const metadata = {
   },
 };
 
+export const metadata = {
+  ...legacyMetadata,
+  ...buildDirectoryMetadata('en', 'https://skilldrills.online/drills', DRILLS.length, getAlternateLanguages('/drills')),
+};
+
+const directoryFaqSchema = getDirectoryFaqSchema('en');
+
 export default function DrillsPage() {
   const breadcrumbSchema = {
     '@context': 'https://schema.org',
@@ -59,12 +67,16 @@ export default function DrillsPage() {
       url: `https://skilldrills.online${d.href}`,
     })),
   };
+  Object.assign(collectionSchema, getDirectoryCollectionFields('en', DRILLS.length));
 
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(collectionSchema) }} />
-      <DrillsDirectoryClient />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(directoryFaqSchema) }} />
+      <DrillsDirectoryClient
+        faqs={directoryFaqSchema.mainEntity.map((item) => ({ q: item.name, a: item.acceptedAnswer.text }))}
+      />
     </>
   );
 }

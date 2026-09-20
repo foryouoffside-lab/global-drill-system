@@ -1,5 +1,6 @@
 import SineWavePursuitClient from './SineWavePursuitClientLoader';
 import DrillGuide from '@/components/drill/DrillGuide';
+import DrillFooter from '@/components/drill/DrillFooter';
 import { getAlternateLanguages } from '@/lib/i18n/locales';
 import { pickSources } from '@/lib/drillSources';
 
@@ -288,8 +289,9 @@ export default function SineWavePursuitPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(howToSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
 
-      <SineWavePursuitClient copy={{ title: "Sine Wave Pursuit", subtitle: "Smooth Pursuit Eye Training" }} />
+      <SineWavePursuitClient copy={{ title: "Sine Wave Pursuit", subtitle: "Smooth pursuit eye training along a sine wave to build gaze stability, rhythm control, and continuous visual tracking" }} />
       <DrillGuide guide={guide} />
+      <DrillFooter />
     </>
   );
 }

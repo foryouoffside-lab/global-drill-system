@@ -5,21 +5,23 @@ import { getAlternateLanguages } from '@/lib/i18n/locales';
 import { pickSources } from '@/lib/drillSources';
 
 export const metadata = {
-  title: "単語記憶テスト・言語性記憶検査 – 単語再生能力測定 | SkillDrills",
-  description: "無料のオンライン単語記憶テスト（単語自由再生課題）。提示される単語リストを記憶し、系列位置効果と意味的チャンキングを活用して言語性短期記憶を測定・トレーニング。",
+  title: "単語記憶テスト｜自由再生・言語性記憶 | SkillDrills",
+  description: "無料の単語記憶テスト。単語リストを覚えて自由に再生し、言語性記憶とワーキングメモリをブラウザで練習できます。",
   keywords: [
     "単語記憶テスト",
-    "単語記憶",
+    "単語自由再生テスト",
+    "言語性記憶",
+    "単語暗記テスト",
+    "単語記憶課題",
+    "単語リスト 記憶",
+    "言語性ワーキングメモリ",
+    "短期記憶 単語",
     "単語記憶ゲーム",
-    "言語性記憶 検査",
-    "単語自由再生 課題",
+    "自由再生法 検査",
     "系列位置効果 テスト",
     "意味的チャンキング",
-    "言語性 ワーキングメモリ",
-    "短期記憶 単語",
-    "語彙記憶力 測定",
-    "脳トレ 単語記憶",
-    "自由再生法 検査"
+    "記憶力トレーニング 単語",
+    "言葉 記憶力 テスト"
   ],
   alternates: {
     canonical: "https://skilldrills.online/ja/drills/memory/short-term-memory/word-recall",
@@ -30,8 +32,8 @@ export const metadata = {
     follow: true,
   },
   openGraph: {
-    title: "単語記憶テスト・言語性記憶検査 – 単語再生能力測定 | SkillDrills",
-    description: "無料のオンライン単語記憶テスト（単語自由再生課題）。提示される単語リストを記憶し、系列位置効果と意味的チャンキングを活用して言語性短期記憶を測定・トレーニング。",
+    title: "単語記憶テスト｜自由再生・言語性記憶 | SkillDrills",
+    description: "無料の単語記憶テスト。単語リストを覚えて自由に再生し、言語性記憶とワーキングメモリをブラウザで練習できます。",
     url: "https://skilldrills.online/ja/drills/memory/short-term-memory/word-recall",
     siteName: 'SkillDrills',
     locale: 'ja_JP',
@@ -39,8 +41,8 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: "単語記憶テスト・言語性記憶検査 – 単語再生能力測定 | SkillDrills",
-    description: "無料のオンライン単語記憶テスト（単語自由再生課題）。提示される単語リストを記憶し、系列位置効果と意味的チャンキングを活用して言語性短期記憶を測定・トレーニング。",
+    title: "単語記憶テスト｜自由再生・言語性記憶 | SkillDrills",
+    description: "無料の単語記憶テスト。単語リストを覚えて自由に再生し、言語性記憶とワーキングメモリをブラウザで練習できます。",
   },
 };
 
@@ -69,6 +71,7 @@ export default function LocalizedWordRecallPage() {
     "description": "提示された単語リストを記憶し自由再生で入力することで、言語性短期記憶、作業記憶容量、および意味的符号化効率を測定する無料ブラウザ神経心理学テスト。",
     "genre": "Cognitive Assessment / Verbal Memory",
     "url": "https://skilldrills.online/ja/drills/memory/short-term-memory/word-recall",
+    "sameAs": ["https://ja.wikipedia.org/wiki/%E3%83%AF%E3%83%BC%E3%82%AD%E3%83%B3%E3%82%B0%E3%83%A1%E3%83%A2%E3%83%AA"],
     "publisher": {
       "@type": "Organization",
       "name": "SkillDrills",
@@ -320,11 +323,11 @@ export default function LocalizedWordRecallPage() {
     faqs: faqSchema.mainEntity.map(e => ({ q: e.name, a: e.acceptedAnswer.text })),
     sources: pickSources('craik1972', 'murdock1962', 'tulving1962', 'woods2015'),
     related: [
-      { href: "/drills/memory/short-term-memory/digit-span", label: "Digit Span Memory Test" },
-      { href: "/drills/memory/short-term-memory/color-sequence", label: "Color Memory Game" },
-      { href: "/drills/memory/spatial-memory/grid-memorization", label: "Visual Memory Test" },
-      { href: "/drills/memory/spatial-memory/object-location", label: "Object Location Memory Test" },
-      { href: "/drills/memory/working-memory/n-back", label: "3-Back Working Memory Test" }
+      { href: "/ja/drills/memory/short-term-memory/digit-span", label: "数唱記憶テスト" },
+      { href: "/ja/drills/memory/short-term-memory/color-sequence", label: "色順番記憶ゲーム" },
+      { href: "/ja/drills/memory/spatial-memory/grid-memorization", label: "視覚記憶テスト" },
+      { href: "/ja/drills/memory/spatial-memory/object-location", label: "位置記憶テスト" },
+      { href: "/ja/drills/memory/working-memory/n-back", label: "Nバック作業記憶テスト" }
     ]
   };
 
@@ -355,9 +358,9 @@ export default function LocalizedWordRecallPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(howToSchema) }}
       />
       <WordRecallClient copy={{
-          "h1Keyword": "単語記憶テスト・単語再生テスト",
-          "h1Suffix": " – 無料言語性記憶ゲーム",
-          "subtitle": "単語リストの自由再生は均一ではありません。初頭と末尾の単語が最も記憶に残り、中間部は忘却しやすいという系列位置効果（Murdock, 1962）が生じます。凝視時間よりも深い意味的処理（Craik & Lockhart, 1972）が保持を決定します。",
+          "h1Keyword": "単語記憶テスト",
+          "h1Suffix": "｜自由再生・言語性記憶",
+          "subtitle": "単語リストを覚えて自由に再生",
           "statScore": "スコア",
           "statTime": "残り時間",
           "statWords": "単語数",
@@ -372,7 +375,7 @@ export default function LocalizedWordRecallPage() {
           "feedbackPhase": "再生結果の判定",
           "extraWordsLabel": "余分または誤って入力された単語:",
           "startTitle": "単語記憶 Pro",
-          "startSubtitle": "言語性短期記憶 • 単語自由再生テスト",
+          "startSubtitle": "単語記憶 • 自由再生",
           "countdownSubtitle": "準備してください",
           "newBest": "自己新記録",
           "pointsLabel": "ポイント",
@@ -464,7 +467,7 @@ export default function LocalizedWordRecallPage() {
       <div className="max-w-4xl mx-auto px-4 pb-12">
         <RelatedDrills
           currentCategory="memory"
-          currentHref="/drills/memory/short-term-memory/word-recall"
+          currentHref="/ja/drills/memory/short-term-memory/word-recall"
           locale="ja"
         />
       </div>

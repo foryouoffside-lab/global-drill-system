@@ -6,18 +6,18 @@ import { getLocalizedDrill } from '@/lib/i18n/drillNames';
 const fpsDrills = DRILLS.filter((d) => d.category === 'fps');
 
 export const metadata = {
-  title: 'Kostenloser Aim Trainer – FPS Aiming Online | SkillDrills',
-  description: 'Kostenloser Online-Aim-Trainer für Valorant, CS2 & Apex. 15 Profi-Übungen: Flick-Shots, Tracking, Recoil Control und Reaktionszeit direkt im Browser.',
+  title: 'Aim-Training & kostenloser FPS-Trainer | SkillDrills',
+  description: 'Kostenlose FPS-Aim-Übungen für Valorant, CS2 und Apex: Flicks, Tracking, Recoil Control und Reaktion direkt im Browser.',
   keywords: [
-    'Aim Trainer Kostenlos', 'Aiming verbessern Valorant', 'CS2 Aim Training',
-    'Maus Zielgenauigkeit', 'Flick Shot Übung', 'Tracking Aiming',
-    'Fadenkreuz Platzierung', 'Mausempfindlichkeit einstellen', 'FPS Reflexe Trainieren',
-    'Recoil Kontrolle online', 'Arm Aiming Handgelenk', 'Zielgenauigkeit Test',
+    'Aim Trainer kostenlos', 'Aim-Training', 'Aiming verbessern',
+    'Valorant Aim Training', 'CS2 Aim Training', 'Flick-Shots üben',
+    'Tracking trainieren', 'Recoil Kontrolle', 'Reaktionszeit testen',
+    'Fadenkreuz Platzierung', 'Maus Sensitivität', 'Zielgenauigkeit Test',
     'Maus Präzision verbessern', 'eDPI Rechner Shooter', 'Browser Aim Trainer'
   ],
   openGraph: {
-    title: 'Kostenloser Aim Trainer – FPS Aiming Online | SkillDrills',
-    description: 'Kostenloser Online-Aim-Trainer für Valorant, CS2 & Apex. 15 Profi-Übungen: Flick-Shots, Tracking, Recoil Control und Reaktionszeit direkt im Browser.',
+    title: 'Aim-Training & kostenloser FPS-Trainer | SkillDrills',
+    description: 'Kostenlose FPS-Aim-Übungen für Valorant, CS2 und Apex: Flicks, Tracking, Recoil Control und Reaktion direkt im Browser.',
     type: 'website',
     url: 'https://skilldrills.online/de/drills/fps',
     siteName: 'SkillDrills',
@@ -26,8 +26,8 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Kostenloser Aim Trainer – FPS Aiming Online | SkillDrills',
-    description: 'Kostenloser Online-Aim-Trainer für Valorant, CS2 & Apex. 15 Profi-Übungen direkt im Browser.',
+    title: 'Aim-Training & kostenloser FPS-Trainer | SkillDrills',
+    description: 'Kostenlose FPS-Aim-Übungen für Valorant, CS2 und Apex direkt im Browser.',
     images: ['https://skilldrills.online/icons/icon-512x512.png'],
   },
   robots: { index: true, follow: true },
@@ -50,9 +50,11 @@ const breadcrumbSchema = {
 const collectionSchema = {
   "@context": "https://schema.org",
   "@type": "CollectionPage",
-  "name": "Kostenloser FPS Aim Trainer – Online Aiming Hub",
+  "inLanguage": "de-DE",
+  "dateModified": "2026-09-20",
+  "name": "Aim-Training & kostenloser FPS-Trainer (15 Übungen)",
   "url": "https://skilldrills.online/de/drills/fps",
-  "description": `15 professionelle FPS-Aim-Training-Drills für Valorant, CS2 und Apex Legends. Flick-Shots, Tracking, Recoil Control, Reaktionsgeschwindigkeit und Fadenkreuz-Platzierung. Kostenlos und ohne Installation im Browser.`,
+  "description": `Kostenlose FPS-Aim-Übungen für Valorant, CS2 und Apex: Flicks, Tracking, Recoil Control, Target Switching und Reaktion direkt im Browser.`,
   "author": { "@type": "Organization", "name": "SkillDrills" },
   "hasPart": fpsDrills.map((drill) => {
     const loc = getLocalizedDrill(drill.href, 'de', drill.name);
@@ -67,6 +69,8 @@ const collectionSchema = {
 const faqSchema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
+  "inLanguage": "de-DE",
+  "dateModified": "2026-09-20",
   "mainEntity": [
     {
       "@type": "Question",
@@ -147,4 +151,3 @@ export default function GermanFPSHubPage() {
     </>
   );
 }
-

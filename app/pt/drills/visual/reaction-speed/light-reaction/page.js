@@ -5,25 +5,25 @@ import RelatedDrills from '@/components/drill/RelatedDrills';
 import { pickSources } from '@/lib/drillSources';
 
 export const metadata = {
-  title: "Teste de Reação à Luz: Reflexo Visual Online | SkillDrills",
-  description: "Teste de reação à luz online grátis. Meça seu tempo de reação visual simples em milissegundos contra a média de 200-250 ms. Sem cadastro.",
+  title: "Teste de reflexo online | Tempo de reação visual | SkillDrills",
+  description: "Teste de reflexo online grátis: meça seu tempo de reação visual em milissegundos diante de um sinal luminoso. Resultado depende da tela e do dispositivo; não é exame médico.",
   keywords: [
-    "teste de reação à luz",
-    "teste de tempo de reação visual",
-    "teste de reflexo visual online",
-    "tempo de reação simples srt",
-    "latência ótico-motora milissegundos",
-    "teste do flash de luz reflexo",
-    "treino de reflexos para jogos",
-    "lei de pieron luminância reação",
-    "cronometria mental velocidade visual",
-    "fototransdução retiniana tempo de resposta",
-    "teste de reflexo rápido grátis",
-    "velocidade de reação simples"
+    "teste de reflexo",
+    "teste de reflexo online",
+    "teste de tempo de reação",
+    "tempo de reação visual",
+    "teste de reação visual",
+    "tempo de reação em milissegundos",
+    "teste de reflexo grátis",
+    "teste de reação online",
+    "reflexo visual para jogos",
+    "reação a sinal luminoso",
+    "tempo de reação simples SRT",
+    "treino de velocidade de reação"
   ],
   openGraph: {
-    title: "Teste de Reação à Luz: Reflexo Visual Online | SkillDrills",
-    description: "Meça seu tempo de reação visual simples e latência neuromuscular a flashes em milissegundos gratuitamente.",
+    title: "Teste de reflexo online | Tempo de reação visual | SkillDrills",
+    description: "Meça o tempo entre o sinal luminoso e o clique em milissegundos, com várias tentativas para comparar sua consistência.",
     type: 'article',
     url: 'https://skilldrills.online/pt/drills/visual/reaction-speed/light-reaction',
     siteName: 'SkillDrills',
@@ -31,8 +31,8 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: "Teste de Reação à Luz: Reflexo Visual Online | SkillDrills",
-    description: "Teste de reflexo óptico de alta precisão em milissegundos para atletas e gamers.",
+    title: "Teste de reflexo online | Tempo de reação visual | SkillDrills",
+    description: "Treine o reflexo visual com um estímulo luminoso imprevisível e acompanhe seus tempos no navegador.",
   },
   robots: { index: true, follow: true },
   alternates: {
@@ -228,7 +228,7 @@ const faqSchema = {
 };
 
 const lightReactionGuide = {
-  heading: "Cronometria dos Reflexos Visuais e Padrões de Tempo de Reação Simples",
+  heading: "Teste de reflexo online: como entender seu tempo de reação visual",
   intro: [
     "O tempo de reação simples (SRT) representa a latência psicomotora elementar entre a apresentação repentina de um único estímulo visual e a execução de uma liberação motora reflexa. Em provas de corrida, esportes de luta, automobilismo e e-sports de tiro tático, frações de milissegundo determinam esquivas defensivas, largadas e contragolpes.",
     "A cascata neuromuscular subjacente envolve quatro estágios fisiológicos sequenciais: (1) fototransdução retiniana (~20–40 ms pela isomerização da rodopsina), (2) condução aferente ao longo do trato óptico via núcleo geniculado lateral até o córtex visual primário V1 (~30–50 ms), (3) preparação perceptiva e motora no córtex parietal e motor suplementar (~50–80 ms), e (4) condução eferente pela via corticoespinhal para contrair a musculatura flexora dos dedos (~30–50 ms), consolidando a faixa média humana saudável de 200–250 ms (Kosinski, 2008; Jain et al., 2015; Shelton & Kumar, 2010).",
@@ -236,7 +236,7 @@ const lightReactionGuide = {
     "Metodologia e Precisão Temporal: As exibições de luz e os cliques do usuário são capturados pela API de alta resolução performance.now(). Latências de quantização de tela e varredura USB (Woods et al., 2015) são calibradas para oferecer leitura confiável com retenção exclusivamente local."
   ],
   benchmarks: {
-    title: "Faixas de Latência de Reação Visual (Balanço Científico SRT)",
+    title: "Referência de tempo de reação visual no navegador",
     headers: ["Nível de Desempenho", "Latência Média (ms)", "Pontuação e Combo Limiar", "Perfil Neuromuscular e de Reflexo"],
     rows: [
       ["Tier 1: Reflexo Neural Apex", "< 180 ms", "15.000+ PTS | Combo 28x+", "Excitabilidade extrema do córtex motor; condução corticoespinhal otimizada típica de velocistas de elite e pró-players."],
@@ -248,7 +248,7 @@ const lightReactionGuide = {
     note: "Estes parâmetros baseiam-se na literatura clássica de cronometria mental humana e psicofísica visual (Kosinski, 2008; Woods et al., 2015; Pins & Bonnet, 1996; Jain et al., 2015). Variações decorrem de fatores circadianos, cafeína e frequência do monitor."
   },
   techniques: {
-    title: "Técnicas para Acelerar a Velocidade de Reação Visual",
+    title: "Como treinar o tempo de reação sem confundir latência do aparelho",
     items: [
       {
         name: "Pré-Ativação Foveal e Fixação Central",
@@ -301,7 +301,7 @@ export default function StrobeLatencyPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(howToSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(videoGameSchema) }} />
-      <StrobeLatencyClient copy={{ title: "Teste de Reação à Luz: Reflexo Visual Online" }} />
+      <StrobeLatencyClient copy={{ title: "Teste de reflexo (reação visual)", startCardTitle: "Teste de reflexo", startCardSubtitle: "Reaja ao sinal luminoso em milissegundos" }} />
       <DrillGuide guide={lightReactionGuide} />
       <div className="max-w-6xl mx-auto px-4 pb-12">
         <RelatedDrills currentCategory="visual" currentHref="https://skilldrills.online/pt/drills/visual/reaction-speed/light-reaction" />

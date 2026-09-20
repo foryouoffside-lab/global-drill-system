@@ -37,6 +37,23 @@ export const metadata = {
   },
 };
 
+Object.assign(metadata, {
+  title: 'Reaktion & Agilität | Online-Drills | SkillDrills',
+  description: '11 kostenlose Browser-Drills für Reaktionszeit, Fußarbeit, Gleichgewicht, Koordination und schnelle Zielentscheidungen.',
+  keywords: ['Reaktionstest online', 'Agilitätstraining', 'Koordinationstraining', 'Gleichgewichtstraining', 'Fußarbeit Training', 'Reaktionsfähigkeit', 'Hand-Auge-Koordination', 'Ausweichspiel', 'Sporttraining online', 'kostenlose Fitnessübungen online'],
+  openGraph: {
+    ...metadata.openGraph,
+    title: 'Reaktion & Agilität | Online-Drills | SkillDrills',
+    description: '11 kostenlose Browser-Drills für Reaktionszeit, Fußarbeit, Gleichgewicht und Koordination.',
+  },
+  twitter: {
+    ...metadata.twitter,
+    title: 'Reaktion & Agilität | SkillDrills',
+    description: 'Reaktionszeit, Agilität und Koordination mit 11 kostenlosen Browser-Drills trainieren.',
+  },
+  alternates: { ...metadata.alternates, languages: getAlternateLanguages('/drills/physical') },
+});
+
 const breadcrumbSchema = {
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
@@ -50,6 +67,8 @@ const breadcrumbSchema = {
 const collectionSchema = {
   "@context": "https://schema.org",
   "@type": "CollectionPage",
+  "inLanguage": "de",
+  "dateModified": "2026-09-20",
   "name": "Agility- & Reflextraining Online (11 Übungen)",
   "url": "https://skilldrills.online/de/drills/physical",
   "description": "11 wissenschaftliche Online-Übungen für Reaktionsschnelligkeit, Gleichgewicht, Hand-Auge-Koordination, Ausweichen und Beinarbeit.",
@@ -71,6 +90,8 @@ const collectionSchema = {
 const faqSchema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
+  "inLanguage": "de",
+  "dateModified": "2026-09-20",
   "mainEntity": [
     {
       "@type": "Question",
@@ -138,6 +159,19 @@ const faqSchema = {
     }
   ]
 };
+
+faqSchema.mainEntity.push(
+  {
+    "@type": "Question",
+    "name": "Wie viele Übungen enthält der Bereich für körperliches Training?",
+    "acceptedAnswer": { "@type": "Answer", "text": "Der Bereich enthält 11 Browser-Drills aus vier Schwerpunkten: Reaktion und Ausweichen, Agilität und Fitness, Koordination und Wege sowie Gleichgewicht und Stabilität. Jede Karte führt zur passenden Übung." }
+  },
+  {
+    "@type": "Question",
+    "name": "Ersetzen Browser-Drills das Training von Kraft und Gleichgewicht?",
+    "acceptedAnswer": { "@type": "Answer", "text": "Nein. Die Übungen trainieren visuelles Timing, Entscheidungsgeschwindigkeit, Steuerungsgenauigkeit und Bewegungsabfolgen. Krafttraining, Plyometrie, Mobilität und sportartspezifisches Coaching werden dadurch ergänzt, nicht ersetzt." }
+  }
+);
 
 export default function PhysicalDrillsPage() {
   return (

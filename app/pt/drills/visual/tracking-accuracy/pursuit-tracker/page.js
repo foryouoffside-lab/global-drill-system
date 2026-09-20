@@ -5,29 +5,29 @@ import RelatedDrills from '@/components/drill/RelatedDrills';
 import { pickSources } from '@/lib/drillSources';
 
 export const metadata = {
-  title: "Smooth Pursuit Test: Perseguição Ocular | SkillDrills",
-  description: "Teste de perseguição ocular suave (Smooth Pursuit) grátis online. Meça acurácia de rastreamento contínuo e reflexos oculomotores. Treine precisão visual.",
+  title: "Perseguição Ocular | Rastreamento Visual | SkillDrills",
+  description: "Treino gratuito de perseguição ocular: mantenha o olhar e o cursor em um alvo móvel. Pratique rastreamento visual. Não é diagnóstico clínico.",
   keywords: [
-    "teste de perseguição ocular suave",
-    "teste smooth pursuit online",
-    "treino de rastreamento ocular",
+    "perseguição ocular",
+    "perseguição suave",
+    "rastreamento visual",
+    "teste de rastreamento ocular",
     "movimento ocular de perseguição",
-    "acurácia de rastreamento visual",
-    "treinamento oculomotor",
-    "coordenação olho-mão tracking",
-    "exercícios para visão esportiva",
-    "avaliação da motilidade ocular",
-    "supressão de sacadas visuais",
-    "teste de mira contínua",
-    "neuroftalmologia visão dinâmica"
+    "alvo em movimento",
+    "coordenação olho-mão",
+    "treino visual",
+    "rastreamento de alvo",
+    "mira contínua",
+    "teste smooth pursuit",
+    "treinamento oculomotor"
   ],
   alternates: {
     canonical: "https://skilldrills.online/pt/drills/visual/tracking-accuracy/pursuit-tracker",
     languages: getAlternateLanguages('/drills/visual/tracking-accuracy/pursuit-tracker'),
   },
   openGraph: {
-    title: "Smooth Pursuit Test: Perseguição Ocular | SkillDrills",
-    description: "Teste de perseguição ocular suave (Smooth Pursuit) grátis online. Meça acurácia de rastreamento contínuo e reflexos oculomotores. Treine precisão visual.",
+    title: "Perseguição Ocular | Rastreamento Visual | SkillDrills",
+    description: "Mantenha o olhar e o cursor em um alvo móvel para praticar perseguição ocular e rastreamento visual. Não é diagnóstico clínico.",
     url: "https://skilldrills.online/pt/drills/visual/tracking-accuracy/pursuit-tracker",
     type: "website",
     locale: "pt_PT",
@@ -36,8 +36,8 @@ export const metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Smooth Pursuit Test: Perseguição Ocular | SkillDrills",
-    description: "Teste de perseguição ocular suave (Smooth Pursuit) grátis online. Meça acurácia de rastreamento contínuo e reflexos oculomotores. Treine precisão visual.",
+    title: "Perseguição Ocular | Rastreamento Visual | SkillDrills",
+    description: "Treine perseguição suave e estabilidade do olhar no navegador. Os resultados variam conforme a tela e o mouse.",
     images: ["https://skilldrills.online/og-default.svg"],
   },
 };
@@ -53,7 +53,7 @@ const guideData = {
     "Este sistema de treino avalia via performance.now() de alta resolução e renderização subpixel métricas fundamentais como tempo no alvo (Time on Target), erro angular médio e a maior sequência de contato ininterrupto durante sessões de 45 segundos. A prática continuada de perseguição ocular refina a conexão neuromuscular olho-mão, proporcionando benefícios tangíveis no tracking aim de jogos de tiro em primeira pessoa, na leitura de trajetórias em esportes coletivos e na redução da fadiga visual prolongada."
   ],
   benchmarks: {
-    title: "Classificação Padronizada de Desempenho em Smooth Pursuit",
+    title: "Referência de desempenho em perseguição ocular",
     headers: ["Nível / Categoria", "Tempo no Alvo (Time-on-Target)", "Acurácia Média de Rastreamento", "Supressão de Sacadas", "Marco Neurofisiológico"],
     rows: [
       ["Nível 1: Elite Mundial (Top 1%)", "≥ 88%", "≥ 92%", "≥ 95% Supressão", "Perseguição contínua sem esforço, deslizamento retiniano quase nulo. Modelo interno cerebelar perfeitamente ajustado (Lisberger, 2010)."],
@@ -65,7 +65,7 @@ const guideData = {
     note: "Fundamentado em estudos neuroftalmológicos e de ciências do esporte (Rashbass 1961; Krauzlis 2004; Leigh & Zee 2015; Lisberger 2010)."
   },
   techniques: {
-    title: "Princípios Motores para Aprimorar o Rastreamento Ocular",
+    title: "Princípios motores para melhorar o rastreamento ocular",
     items: [
       {
         name: "Ancoragem Foveal na Borda Dianteira",
@@ -309,7 +309,7 @@ export default function PursuitTrackerPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
 
       <main className="container mx-auto px-4 py-8 max-w-5xl">
-        <AutoPursuitClient copy={{ title: "Smooth Pursuit Eye-Tracking Test", subtitle: "Perseguição Ocular Contínua & Coordenação Motora" }} />
+        <AutoPursuitClient copy={{ title: "Perseguição Ocular", subtitle: "Rastreamento Visual" }} />
         <DrillGuide guide={guideData} />
         <RelatedDrills related={guideData.related} />
       </main>

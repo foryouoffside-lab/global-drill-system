@@ -5,9 +5,13 @@ import { pickSources } from '@/lib/drillSources';
 import { getAlternateLanguages } from '@/lib/i18n/locales';
 
 export const metadata = {
-  title: "Juego Simón Online – Memoria de Colores | SkillDrills",
-  description: "Juego Simón online gratis: Memoriza secuencias de colores en expansión y pon a prueba tu memoria de trabajo visual directamente en el navegador sin descargas.",
+  title: "Juego Simón online | Secuencia de colores | SkillDrills",
+  description: "Juega a Simón online gratis: observa una secuencia creciente de colores y sonidos y repítela en el mismo orden desde el navegador.",
   keywords: [
+    "juego Simón",
+    "Simón online",
+    "memoria de colores",
+    "secuencia de colores",
     "juego de simon dice online",
     "juego de memoria de colores",
     "juego simon online gratis",
@@ -30,8 +34,8 @@ export const metadata = {
     follow: true,
   },
   openGraph: {
-    title: "Juego Simón Online – Memoria de Colores | SkillDrills",
-    description: "Juego Simón online gratis: Memoriza secuencias de colores en expansión y pon a prueba tu memoria de trabajo visual directamente en el navegador sin descargas.",
+    title: "Juego Simón online | Secuencia de colores | SkillDrills",
+    description: "Juega a Simón online gratis: observa una secuencia creciente de colores y sonidos y repítela en el mismo orden desde el navegador.",
     url: "https://skilldrills.online/es/drills/memory/short-term-memory/color-sequence",
     siteName: 'SkillDrills',
     locale: 'es_ES',
@@ -39,8 +43,8 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: "Juego Simón Online – Memoria de Colores | SkillDrills",
-    description: "Juego Simón online gratis: Memoriza secuencias de colores en expansión y pon a prueba tu memoria de trabajo visual directamente en el navegador sin descargas.",
+    title: "Juego Simón online | Secuencia de colores | SkillDrills",
+    description: "Juega a Simón online gratis: observa una secuencia creciente de colores y sonidos y repítela en el mismo orden desde el navegador.",
   },
 };
 
@@ -84,7 +88,8 @@ export default function SpanishColorSequencePage() {
     "applicationCategory": "GameApplication",
     "operatingSystem": "All",
     "isAccessibleForFree": true,
-    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "EUR" }
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "EUR" },
+    "sameAs": ["https://es.wikipedia.org/wiki/Simon_%28juego%29"]
   };
 
   const videoGameSchema = {
@@ -224,8 +229,8 @@ export default function SpanishColorSequencePage() {
   };
 
   const esCopy = {
-    title: 'Juego Simón Online',
-    subtitle: 'Test de Memoria Operativa Visual y Retencion de Secuencias de Colores',
+    title: 'Juego Simón online',
+    subtitle: 'Memoriza colores y repite la secuencia exacta',
     caption: 'Observa y reproduce la secuencia luminosa de colores en el orden exacto a medida que el patron se expande.',
     statScore: 'Puntuacion',
     statTime: 'Tiempo',

@@ -19,21 +19,21 @@ import { pickSources } from '@/lib/drillSources';
 // ============================================================
 
 export const metadata = {
-  title: "Strafe Tracking Übung – FPS Tracking Aim | SkillDrills",
-  description: "Kostenlose Strafe-Tracking-Übung im Browser. Trainiere reaktives Zielen auf AD-Strafes, Smooth Pursuit und schnelle Richtungswechsel für Apex und CS2.",
+  title: "Tracking Aim Training | Strafe-Übung | SkillDrills",
+  description: "Kostenloses Tracking-Aim-Training im Browser: Übe AD-Strafes, Richtungswechsel und reaktives Zielen für Apex und CS2.",
   keywords: [
-    "Strafe Tracking Übung",
     "Tracking Aim Training",
-    "Gegner Bewegung verfolgen",
+    "Strafe Tracking Übung",
+    "Tracking Aim Training online",
+    "CS2 Aim Tracking Training",
+    "Apex Tracking Übungen",
+    "Gegnerbewegung verfolgen",
     "Maus Tracking lernen",
     "Aim Trainer Strafe",
     "AD-Strafe Ausweichen",
-    "Smoothness Aim Training",
-    "Tracking Aim CS2",
-    "Apex Tracking Übungen",
-    "Zielen bei Bewegung Shooter",
-    "Maus Zielverfolgung üben",
-    "FPS Fadenkreuz Zielverfolgung"
+    "Richtungswechsel FPS",
+    "Zielverfolgung FPS",
+    "reaktives Zielen üben"
   ],
   alternates: {
     canonical: "https://skilldrills.online/de/drills/fps/strafe-tracking",
@@ -44,8 +44,8 @@ export const metadata = {
     follow: true,
   },
   openGraph: {
-    title: "Strafe Tracking Übung – FPS Tracking Aim | SkillDrills",
-    description: "Kostenlose Strafe-Tracking-Übung im Browser. Trainiere reaktives Zielen auf AD-Strafes, Smooth Pursuit und schnelle Richtungswechsel für Apex und CS2.",
+    title: "Tracking Aim Training | Strafe-Übung | SkillDrills",
+    description: "Kostenloses Tracking-Aim-Training im Browser: Übe AD-Strafes, Richtungswechsel und reaktives Zielen für Apex und CS2.",
     url: "https://skilldrills.online/de/drills/fps/strafe-tracking",
     siteName: 'SkillDrills',
     locale: 'de_DE',
@@ -53,8 +53,8 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: "Strafe Tracking Übung – FPS Tracking Aim | SkillDrills",
-    description: "Kostenlose Strafe-Tracking-Übung im Browser. Trainiere reaktives Zielen auf AD-Strafes, Smooth Pursuit und schnelle Richtungswechsel für Apex und CS2.",
+    title: "Tracking Aim Training | Strafe-Übung | SkillDrills",
+    description: "Kostenloses Tracking-Aim-Training im Browser: Übe AD-Strafes, Richtungswechsel und reaktives Zielen für Apex und CS2.",
   },
 };
 
@@ -75,7 +75,7 @@ export default function StrafeTrackingDePage() {
     "name": "Strafe Tracking Trainer",
     "applicationCategory": "GameApplication",
     "operatingSystem": "Web Browser",
-    "dateModified": "2026-09-15",
+    "dateModified": "2026-09-20",
     "offers": { "@type": "Offer", "price": "0", "priceCurrency": "EUR" },
     "description": "Kostenloser Browser-Trainer zur Beherrschung von Strafe-Tracking, Blickfolgebewegungen und Richtungswechseln.",
     "genre": "FPS Training / Strafe Tracking",
@@ -109,7 +109,7 @@ export default function StrafeTrackingDePage() {
     "name": "Strafe Tracking Trainer",
     "url": "https://skilldrills.online/de/drills/fps/strafe-tracking",
     "description": "Kostenloser Browser-Trainer zur Beherrschung von Strafe-Tracking, Blickfolgebewegungen und Richtungswechseln.",
-    "dateModified": "2026-09-15",
+    "dateModified": "2026-09-20",
     "gamePlatform": "Web Browser",
     "genre": ["FPS Training", "Strafe Tracking", "Aim Trainer"],
     "playMode": "SinglePlayer",
@@ -121,7 +121,7 @@ export default function StrafeTrackingDePage() {
   const faqSchema = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
-    "dateModified": "2026-09-15",
+    "dateModified": "2026-09-20",
     "mainEntity": [
       {
         "@type": "Question",
@@ -240,10 +240,10 @@ export default function StrafeTrackingDePage() {
   };
 
   const strafeGuideDe = {
-    heading: "Strafe Tracking Guide & Biomechanische Benchmarks",
+    heading: "Leitfaden für Tracking Aim und Strafe-Übungen",
     subtitle: "Wissenschaftliche Trainingsmethodik für reaktive Blickfolgebewegungen, minimale Umkehrlatenz und maximale Verweildauer auf unberechenbaren Zielen",
     intro: [
-      "Der Strafe Tracking Aim Trainer ist ein spezialisiertes neuromuskuläres Trainingsmodul zur gezielten Isolierung und Verfeinerung des reaktiven lateralen Trackings gegen unberechenbare ADAD-Ausweichbewegungen. In modernen kompetitiven First-Person-Shootern – allen voran Apex Legends, Overwatch 2, The Finals und Call of Duty – entscheiden Schusswechsel primär über das Tracking-Uptime-Verhältnis: den kontinuierlichen prozentualen Zeitanteil, in dem das Fadenkreuz lückenlos auf dem gegnerischen Modell einrastet, während dieser unregelmäßige Richtungswechsel, Duck-Spams und unvorhersehbare Strafe-Ketten vollführt.",
+      "Dieses Tracking-Aim-Training isoliert reaktives laterales Tracking gegen unberechenbare ADAD-Ausweichbewegungen. In Apex Legends, Overwatch 2, The Finals und Call of Duty entscheidet die Zeit, in der das Fadenkreuz trotz Richtungswechseln auf dem Gegner bleibt, über die Trefferleistung.",
       "Das neurophysiologische Fundament der visuellen Bewegungsfolge wurde maßgeblich von Richard J. Krauzlis (2004) entschlüsselt. Er zeigte auf, wie das Gehirn glatte Blickfolgebewegungen (Smooth Pursuit) über reziproke neuronale Schaltkreise zwischen dem primären visuellen Bewegungskortex (MT/V5), dem medialen superioren temporalen Areal (MST) und dem frontalen Augenfeld (FEF) steuert. Registrieren diese Areale Zielbewegungen, berechnen sie in Echtzeit den retinalen Geschwindigkeitsfehler (Retinal Velocity Error), um okulomotorische und manuelle motorische Systeme synchron auf Verfolgungskurs zu halten.",
       "In einer klassischen Entdeckung der visuellen Psychophysik bewies Cyril Rashbass (1961), dass glatte Blickfolgebewegungen und Sakkaden von fundamental getrennten physiologischen Subsystemen gesteuert werden: Sakkaden reagieren auf Positionsverschiebungen, wohingegen Smooth Pursuit ausschließlich auf retinale Geschwindigkeitsdifferenzen (Retinal Slip) anspricht. Versuchen Spieler im Schusswechsel, gegnerische Richtungswechsel vorab zu 'erraten', provozieren sie unwillkürliche Aufholsakkaden, die unweigerlich zu massivem Übersteuern (Overshoot) und ruckartigem Zielzittern führen.",
       "Durch die Synthese von Michael I. Posners (1990) Modell der orientierenden Aufmerksamkeit, den räumlichen Tracking-Paradigmen von C. Shawn Green & Daphne Bavelier (2003) sowie digitaler Niedriglatenz-Chronometrie (Woods et al., 2015) trainiert dieser Drill Spieler darauf, voreiliges Raten konsequent zu unterdrücken, isometrische Unterarmspannungen abzubauen und rein reaktive, seidenweiche Blickfolgebewegungen über hochdynamische Geschwindigkeitsvektoren zu etablieren.",
@@ -305,8 +305,8 @@ export default function StrafeTrackingDePage() {
   };
 
   const copyDe = {
-    h1Keyword: "Strafe Tracking Übung",
-    h1Suffix: " – FPS Tracking Aim Trainer",
+    h1Keyword: "Tracking Aim Training",
+    h1Suffix: " – Strafe-Übung FPS",
     caption: "Tracking Aiming ist die kontinuierliche Verfolgung eines unberechenbar ausweichenden Gegners. Da die menschliche visuelle Richtungsreaktion rund 120 bis 160 ms Latenz aufweist (Rashbass, 1961; Krauzlis, 2004), führt geschmeidige Geschwindigkeitsanpassung zu weitaus höherer Trefferdichte als hektisches Raten.",
     statStatus: "Status",
     statusTracking: "Ziel erfasst",
@@ -318,7 +318,7 @@ export default function StrafeTrackingDePage() {
     statScore: "Punkte",
     pausedTitle: "Pausiert",
     pausedPrompt: "Klicke in den Bildschirm, um die Mauszeiger-Sperre zu reaktivieren und fortzufahren.",
-    startTitle: "Pro Strafe Tracking",
+    startTitle: "Tracking Aim Training",
     startSubtitle: "Unberechenbare AD-Strafes & direkte Rohdaten-Eingabe • Dynamische Levelprogression",
     startButtonText: "Training starten",
     getReady: "Bereithalten",
@@ -336,7 +336,7 @@ export default function StrafeTrackingDePage() {
       { num: "3", text: "Levelprogression", highlight: "+1 Stufe / 1400 PKT", result: "Adaptives Strafing" },
       { num: "4", text: "Abreiß-Strafe", highlight: "1,0s Zielverlust", result: "Setzt Combo zurück (-0,6s)" }
     ],
-    aboutTitle: "Über das Strafe Tracking Training",
+    aboutTitle: "Über Tracking Aim und Strafe-Training",
     whatIsTitle: "Was ist Strafe Tracking (Aim Tracking)?",
     whatIsLead: "Strafe Tracking ist die Fähigkeit, das Fadenkreuz auf einem unvorhersehbar ausweichenden Ziel arretiert zu halten. Die glatte Blickfolge des Menschen funktioniert bis zu einer Winkelgeschwindigkeit von etwa 30°/Sekunde; bei abrupten Richtungswechseln entsteht eine unvermeidliche Reaktionslatenz von 130–160 ms (Rashbass, 1961; Krauzlis, 2004).",
     aboutIntro: [

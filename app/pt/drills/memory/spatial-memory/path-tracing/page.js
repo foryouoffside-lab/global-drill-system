@@ -5,9 +5,9 @@ import { getAlternateLanguages } from '@/lib/i18n/locales';
 import { pickSources } from '@/lib/drillSources';
 
 export const metadata = {
-  title: "Teste de Memória Sequencial – Blocos de Corsi | SkillDrills",
-  description: "Teste de memória sequencial online grátis: Memorize trajetórias em grades de 3x3 a 7x7 e reproduza na ordem exata sem cadastro no navegador.",
-  keywords: ['teste de memoria sequencial', 'teste dos blocos de corsi', 'memoria sequencial de trajetorias', 'path tracing teste online', 'empan espacial corsi teste', 'memoria de trabalho visuoespacial', 'jogo de memoria sequencial', 'reproducao de trajetorias', 'teste psicologico blocos de corsi', 'treino de memoria de rota', 'memoria motora sequencial', 'avaliacao cognitiva visoespacial'],
+  title: "Teste de Corsi online | Memória espacial | SkillDrills",
+  description: "Teste sua memória espacial: memorize uma sequência de blocos iluminados e toque neles na mesma ordem, direto no navegador.",
+  keywords: ['teste de Corsi', 'teste dos blocos de Corsi', 'blocos de Corsi', 'memória sequencial', 'span visuoespacial', 'memória de trabalho visuoespacial', 'teste de memória espacial', 'sequência espacial', 'treino de memória espacial', 'teste Corsi online'],
   alternates: {
     canonical: "https://skilldrills.online/pt/drills/memory/spatial-memory/path-tracing",
     languages: getAlternateLanguages('/drills/memory/spatial-memory/path-tracing', 'pt'),
@@ -17,8 +17,8 @@ export const metadata = {
     follow: true,
   },
   openGraph: {
-    title: "Teste de Memória Sequencial (Blocos de Corsi) - Jogo Grátis | SkillDrills",
-    description: "Teste de memória sequencial online grátis (teste dos blocos de corsi / Path Tracing). Memorize trajetórias em grade de 3x3 a 7x7 e reproduza na ordem exata. Avalie seu span de memória espacial. Sem cadastro.",
+    title: "Teste de Corsi online | Memória espacial",
+    description: "Memorize blocos iluminados e toque neles na mesma ordem. Teste gratuito de memória espacial no navegador, sem cadastro.",
     url: "https://skilldrills.online/pt/drills/memory/spatial-memory/path-tracing",
     siteName: 'SkillDrills',
     locale: 'pt_BR',
@@ -26,8 +26,8 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: "Teste de Memória Sequencial (Blocos de Corsi) - Jogo Grátis | SkillDrills",
-    description: "Teste de memória sequencial online grátis (teste dos blocos de corsi / Path Tracing). Memorize trajetórias em grade de 3x3 a 7x7 e reproduza na ordem exata. Avalie seu span de memória espacial. Sem cadastro.",
+    title: "Teste de Corsi online | Memória espacial",
+    description: "Memorize blocos iluminados e toque neles na mesma ordem. Teste gratuito de memória espacial no navegador, sem cadastro.",
   },
 };
 
@@ -73,7 +73,8 @@ export default function LocalizedPathTracingPage() {
     "applicationCategory": "GameApplication",
     "operatingSystem": "All",
     "isAccessibleForFree": true,
-    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+    "sameAs": ["https://soundary.life/pt/test/spatial-span", "https://pt.wikipedia.org/wiki/Mem%C3%B3ria_espacial"]
   };
 
   const videoGameSchema = {
@@ -311,23 +312,23 @@ export default function LocalizedPathTracingPage() {
     sources: pickSources('corsi1972', 'milner1971', 'logie1995', 'cowan2001', 'baddeley2000', 'miller1956', 'simon1974', 'kessels2000', 'woods2015'),
     related: [
       {
-            "href": "/drills/memory/spatial-memory/grid-memorization",
+            "href": "/pt/drills/memory/spatial-memory/grid-memorization",
             "label": "Teste de Memória Visual (Memory Matrix)"
       },
       {
-            "href": "/drills/memory/spatial-memory/object-location",
+            "href": "/pt/drills/memory/spatial-memory/object-location",
             "label": "Teste de Memória Espacial (Object Location)"
       },
       {
-            "href": "/drills/memory/short-term-memory/digit-span",
+            "href": "/pt/drills/memory/short-term-memory/digit-span",
             "label": "Teste de Dígitos (Digit Span)"
       },
       {
-            "href": "/drills/memory/short-term-memory/word-recall",
+            "href": "/pt/drills/memory/short-term-memory/word-recall",
             "label": "Teste de Memória Verbal (Word Recall)"
       },
       {
-            "href": "/drills/memory/working-memory/n-back",
+            "href": "/pt/drills/memory/working-memory/n-back",
             "label": "Teste Dual N-Back"
       }
 ]
@@ -361,16 +362,16 @@ export default function LocalizedPathTracingPage() {
       />
       <PathTracingClient
         copy={{
-        "h1Keyword": "Teste de Memória Sequencial",
-        "h1Suffix": " (Blocos de Corsi)",
-        "subtitle": "O span espacial é a maior sequência de posições que você consegue repetir na ordem exata. O clássico teste dos blocos de Corsi situa a média de adultos entre cinco e sete passos (Milner, 1971; Corsi, 1972), recrutando sistemas cerebrais distintos do span verbal de dígitos (Logie, 1995).",
+        "h1Keyword": "Teste de Corsi online",
+        "h1Suffix": " – Memória espacial",
+        "subtitle": "Memorize blocos iluminados e repita a sequência exata.",
         "statScore": "Pontuação",
         "statTime": "Tempo",
         "statLevel": "Nível",
         "statBestScore": "Melhor Récord",
         "levelPrefix": "Nv.",
         "startTitle": "Traçado de Rotas Pro",
-        "startSubtitle": "Memória Sequencial • Blocos de Corsi",
+        "startSubtitle": "Memória espacial • Corsi",
         "countdownSubtitle": "PREPARE-SE",
         "newBest": "NOVO RECORDE",
         "pointsLabel": "Pontos",

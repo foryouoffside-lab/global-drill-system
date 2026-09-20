@@ -344,7 +344,7 @@ export default function StrobeLatencyPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(videoGameSchema) }} />
-      <StrobeLatencyClient copy={{ title: "Light Reaction Reflex Test" }} />
+      <StrobeLatencyClient copy={{ title: "Light Reaction Reflex Test", subtitle: "Light reaction time test for clicking when a central target flashes and measuring visual response speed" }} />
       <DrillGuide guide={lightReactionGuide} />
     </>
   );

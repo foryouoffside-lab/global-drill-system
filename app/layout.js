@@ -105,6 +105,11 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en" className={`scroll-smooth font-sans ${inter.variable}`}>
       <head>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `(function(){var d=document.documentElement;d.classList.add('fonts-pending');function r(){d.classList.remove('fonts-pending');}if(document.fonts&&document.fonts.ready){document.fonts.ready.then(r).catch(r);setTimeout(r,150);}else{r();}})();`,
+          }}
+        />
         {/* next/font/google self-hosts Inter at build time, so nothing is ever
             fetched from fonts.googleapis.com or fonts.gstatic.com at runtime.
             Preconnecting to them opened TLS connections that were never used
@@ -145,6 +150,7 @@ export default function RootLayout({ children }) {
         <main id="main-content">
           {children}
         </main>
+        <div id="drill-footer-root" />
         
         <Analytics />
         <SpeedInsights />

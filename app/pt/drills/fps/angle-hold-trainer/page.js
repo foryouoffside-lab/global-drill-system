@@ -6,21 +6,20 @@ import { getAlternateLanguages } from '@/lib/i18n/locales';
 import { pickSources } from '@/lib/drillSources';
 
 export const metadata = {
-  title: "Posicionamento de Mira – Treino de Ângulos | SkillDrills",
-  description: "Treine posicionamento de mira e marcação de ângulos no navegador. Calibre o espaçamento da parede e neutralize o peeker advantage no CS2 e Valorant.",
+  title: "Treino de Mira | Posicionamento de Mira | SkillDrills",
+  description: "Treino de mira grátis no navegador: pratique posicionamento de mira, retenção de ângulos, espaçamento da parede e reação ao peek.",
   keywords: [
-    "posicionamento de mira treino",
+    "treino de mira",
+    "treino de mira online",
+    "treino de mira valorant",
+    "posicionamento de mira",
     "como segurar angulo fps",
     "treino de marcar pixel valorant",
     "pre aim treino cs2",
     "peeker advantage como marcar",
     "distancia da mira na parede",
     "mira na altura da cabeca",
-    "tempo de reacao abrir pixel",
-    "como punir peeker fps",
-    "marcar pixel cs2 treino",
-    "treino de reflexo para esquinas",
-    "treinador de mira de retencao"
+    "treino de reflexo para esquinas"
   ],
   alternates: {
     canonical: "https://skilldrills.online/pt/drills/fps/angle-hold-trainer",
@@ -31,8 +30,8 @@ export const metadata = {
     follow: true,
   },
   openGraph: {
-    title: "Posicionamento de Mira – Treino de Ângulos | SkillDrills",
-    description: "Treine posicionamento de mira e marcação de ângulos no navegador. Calibre o espaçamento da parede e neutralize o peeker advantage no CS2 e Valorant.",
+    title: "Treino de Mira | Posicionamento de Mira | SkillDrills",
+    description: "Treino de mira grátis no navegador: pratique posicionamento de mira, retenção de ângulos, espaçamento da parede e reação ao peek.",
     url: "https://skilldrills.online/pt/drills/fps/angle-hold-trainer",
     siteName: 'SkillDrills',
     locale: 'pt_BR',
@@ -40,8 +39,8 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: "Posicionamento de Mira – Treino de Ângulos | SkillDrills",
-    description: "Treine posicionamento de mira e marcação de ângulos no navegador. Calibre o espaçamento da parede e neutralize o peeker advantage no CS2 e Valorant.",
+    title: "Treino de Mira | Posicionamento de Mira | SkillDrills",
+    description: "Treino de mira grátis no navegador: pratique posicionamento de mira, retenção de ângulos, espaçamento da parede e reação ao peek.",
   },
 };
 
@@ -52,21 +51,21 @@ export default function PortugueseAngleHoldPage() {
     "itemListElement": [
       { "@type": "ListItem", "position": 1, "name": "SkillDrills", "item": "https://skilldrills.online/pt" },
       { "@type": "ListItem", "position": 2, "name": "Treinos de FPS", "item": "https://skilldrills.online/pt/drills/fps" },
-      { "@type": "ListItem", "position": 3, "name": "Posicionamento de Mira", "item": "https://skilldrills.online/pt/drills/fps/angle-hold-trainer" }
+      { "@type": "ListItem", "position": 3, "name": "Treino de mira - posicionamento de mira", "item": "https://skilldrills.online/pt/drills/fps/angle-hold-trainer" }
     ]
   };
 
   const webAppSchema = {
     "@context": "https://schema.org",
     "@type": "WebApplication",
-    "name": "Angle Hold Pro",
+    "name": "Treino de mira - posicionamento de mira",
     "applicationCategory": "GameApplication",
     "operatingSystem": "Web Browser",
     "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
     "description": "Treinador online de posicionamento de mira, marcação defensiva de cantos e pré-mira para jogadores de FPS tático.",
     "genre": "Treino de FPS / Posicionamento de Mira",
     "url": "https://skilldrills.online/pt/drills/fps/angle-hold-trainer",
-    "dateModified": "2026-09-16",
+    "dateModified": "2026-09-20",
     "publisher": {
       "@type": "Organization",
       "name": "SkillDrills",
@@ -77,14 +76,14 @@ export default function PortugueseAngleHoldPage() {
   const softwareSchema = {
     "@context": "https://schema.org",
     "@type": "SoftwareApplication",
-    "name": "Angle Hold Pro",
+    "name": "Treino de mira - posicionamento de mira",
     "applicationCategory": "GameApplication",
     "operatingSystem": "Web Browser",
     "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
     "description": "Simulador interativo de retenção de ângulos e disciplina de mira para neutralizar a vantagem do peeker em CS2 e Valorant.",
     "genre": "Treino de FPS / Posicionamento de Mira",
     "url": "https://skilldrills.online/pt/drills/fps/angle-hold-trainer",
-    "dateModified": "2026-09-16",
+    "dateModified": "2026-09-20",
     "publisher": {
       "@type": "Organization",
       "name": "SkillDrills",
@@ -95,7 +94,7 @@ export default function PortugueseAngleHoldPage() {
   const videoGameSchema = {
     "@context": "https://schema.org",
     "@type": "VideoGame",
-    "name": "Angle Hold Pro",
+    "name": "Treino de mira - posicionamento de mira",
     "url": "https://skilldrills.online/pt/drills/fps/angle-hold-trainer",
     "description": "Treinador interativo de mira e reação a cantos para jogos de tiro tático.",
     "gamePlatform": "Web Browser",
@@ -103,13 +102,13 @@ export default function PortugueseAngleHoldPage() {
     "playMode": "SinglePlayer",
     "applicationCategory": "Game",
     "operatingSystem": "Web Browser",
-    "dateModified": "2026-09-16"
+    "dateModified": "2026-09-20"
   };
 
   const faqSchema = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
-    "dateModified": "2026-09-16",
+    "dateModified": "2026-09-20",
     "mainEntity": [
       {
         "@type": "Question",
@@ -232,9 +231,9 @@ export default function PortugueseAngleHoldPage() {
   };
 
   const angleHoldGuidePt = {
-    heading: "Guia de Posicionamento de Mira e Retenção de Ângulos — Latência e Geometria",
+    heading: "Treino de Mira para Posicionamento e Retenção de Ângulos",
     intro: [
-      "A retenção defensiva de ângulos é uma disciplina de tiro tático governada pelo tempo de reação simples de Donders (Donders, 1868) e pela discriminação cognitiva Go/No-Go. Ao contrário do tiro por flick que exige impulsos motores de aceleração e desaceleração (Woodworth, 1899; Meyer et al., 1988), segurar um ângulo pré-alinha o retículo no plano horizontal da cabeça, convertendo uma busca espacial 2D em um problema temporal de timing de clique 1D.",
+      "O treino de mira para posicionamento pratica deixar o retículo na altura da cabeça antes do inimigo aparecer na esquina. Este drill mede espaçamento da parede, retenção de ângulos e reação ao peek para tornar os duelos de Valorant e CS2 mais consistentes.",
       "Em arquiteturas de rede multijogador (como o sub-tick do CS2 e os servidores de 128 ticks do Valorant), a latência gera a assimetria conhecida como peeker's advantage: T_advantage = (RTT_peeker / 2) + (RTT_holder / 2) + T_interp. Para neutralizar esse déficit, o defensor deve afastar a mira da quina em D_offset = v_peeker × T_reação, permitindo que o atacante cruze o retículo exatamente no instante em que o clique mecânico ocorre.",
       "A precisão motora segue os princípios da Lei de Fitts (Fitts, 1954): microcorreções introduzidas durante a espera geram ruído neuromuscular. O Angle Hold Pro emprega marcas de tempo de performance.now() e sincronização com a taxa de quadros da tela para oferecer uma avaliação rigorosa de disciplina de gatilho e discriminação de fake peeks (Hick, 1952; Woods et al., 2015).",
       "Como medir seu desempenho: cada tiro é registrado localmente com o relógio de alta precisão do navegador. Diferenças menores que 5 ms são ruídos esperados de temporização. Mantenha as mesmas configurações de sensibilidade física e espaço no mousepad para consolidar respostas confiáveis."
@@ -296,8 +295,8 @@ export default function PortugueseAngleHoldPage() {
 
   const copyPt = {
     h1Prefix: null,
-    h1Keyword: "Posicionamento de Mira",
-    h1Suffix: " — Treino de Ângulos",
+    h1Keyword: "Treino de mira",
+    h1Suffix: " — posicionamento e ângulos",
     subtitle: "Treino de Marcação de Pixel e Defesa contra Peeker's Advantage",
     rulesItems: [
       { num: "1", text: "Acerto no Peek", highlight: "+100 PTS (+0,6s)", result: "×Multiplicador" },

@@ -1,25 +1,26 @@
 import InfinityPursuitClient from '@/app/drills/visual-tracking/infinity-pursuit/InfinityPursuitClientLoader';
 import DrillGuide from '@/components/drill/DrillGuide';
+import DrillFooter from '@/components/drill/DrillFooter';
 import RelatedDrills from '@/components/drill/RelatedDrills';
 import { getAlternateLanguages } from '@/lib/i18n/locales';
 import { pickSources } from '@/lib/drillSources';
 
 export const metadata = {
-  title: "Exercício Ocular do Oito Deitado – Infinity | SkillDrills",
-  description: "Exercício gratuito de rastreamento ocular em oito deitado: aprimore o cruzamento da linha média, coordenação binocular e perseguição lenta no navegador.",
+  title: "Exercício Ocular em Oito | SkillDrills",
+  description: "Exercício ocular em oito deitado para praticar rastreamento ocular, perseguição suave e coordenação binocular. Grátis no navegador.",
   keywords: [
-    "exercício ocular do oito deitado",
-    "treino de movimento ocular em 8",
-    "coordenação ocular bilateral",
-    "cruzamento da linha média visual",
-    "perseguição contínua lemniscata",
-    "exercício de motilidade ocular binocular",
-    "ginástica para os olhos 8 infinito",
-    "teste de rastreamento visual online",
-    "treinamento de visão esportiva grátis",
-    "estabilidade foveal em curvas",
-    "treino de foco dinâmico para gamers",
-    "acuidade visual dinâmica do olhar"
+    "exercício ocular oito deitado",
+    "exercício de figura 8 para os olhos",
+    "rastreamento ocular",
+    "coordenação binocular",
+    "cruzamento da linha média",
+    "movimento ocular",
+    "perseguição suave",
+    "figura do oito com os olhos",
+    "exercício ocular online grátis",
+    "treino de visão esportiva",
+    "acompanhamento visual em oito",
+    "coordenação olho-mão"
   ],
   alternates: {
     canonical: "https://skilldrills.online/pt/drills/visual-tracking/infinity-pursuit",
@@ -27,8 +28,8 @@ export const metadata = {
   },
   robots: { index: true, follow: true },
   openGraph: {
-    title: "Exercício Ocular do Oito Deitado – Infinity | SkillDrills",
-    description: "Exercício gratuito de rastreamento ocular em oito deitado: aprimore o cruzamento da linha média, coordenação binocular e perseguição lenta no navegador.",
+    title: "Exercício Ocular em Oito | SkillDrills",
+    description: "Exercício ocular em oito deitado para praticar rastreamento ocular, perseguição suave e coordenação binocular. Grátis no navegador.",
     url: "https://skilldrills.online/pt/drills/visual-tracking/infinity-pursuit",
     siteName: "SkillDrills",
     locale: "pt_BR",
@@ -36,8 +37,8 @@ export const metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Exercício Ocular do Oito Deitado – Infinity | SkillDrills",
-    description: "Exercício gratuito de rastreamento ocular em oito deitado: aprimore o cruzamento da linha média, coordenação binocular e perseguição lenta no navegador.",
+    title: "Exercício Ocular em Oito | SkillDrills",
+    description: "Exercício ocular em oito deitado para praticar rastreamento ocular, perseguição suave e coordenação binocular. Grátis no navegador.",
   },
 };
 
@@ -69,9 +70,10 @@ const breadcrumbSchema = {
 const softwareApplicationSchema = {
   "@context": "https://schema.org",
   "@type": "SoftwareApplication",
-  "name": "Perseguição em Oito Infinito – Rastreamento Ocular",
+  "name": "Exercício Ocular em Oito – Rastreamento Ocular",
+  "dateModified": "2026-09-20",
   "applicationCategory": "HealthApplication",
-  "operatingSystem": "Web Browser",
+  "operatingSystem": "Navegador",
   "offers": {
     "@type": "Offer",
     "price": "0",
@@ -82,11 +84,12 @@ const softwareApplicationSchema = {
 const webAppSchema = {
   "@context": "https://schema.org",
   "@type": "WebApplication",
-  "name": "Teste de Rastreamento Ocular em Oito Deitado e Cruzamento da Linha Média",
+  "name": "Rastreamento Ocular em Oito Deitado e Cruzamento da Linha Média",
+  "dateModified": "2026-09-20",
   "url": "https://skilldrills.online/pt/drills/visual-tracking/infinity-pursuit",
   "applicationCategory": "SportsApplication",
-  "operatingSystem": "All",
-  "browserRequirements": "Requires JavaScript. Requires HTML5 Canvas.",
+  "operatingSystem": "Navegador",
+  "browserRequirements": "Requer JavaScript e Canvas HTML5.",
   "offers": {
     "@type": "Offer",
     "price": "0",
@@ -97,10 +100,11 @@ const webAppSchema = {
 const videoGameSchema = {
   "@context": "https://schema.org",
   "@type": "VideoGame",
-  "name": "Infinity Pursuit – Treinador Ocular de Lemniscata",
-  "description": "Treinador visual no navegador para sincronizar a motilidade ocular binocular em trajetórias harmônicas de oito deitado sem saltos sacádicos.",
-  "genre": ["Aparato de Treinamento Ocular", "Treinador de Visão Esportiva", "Aim Trainer"],
-  "playMode": "SinglePlayer",
+  "name": "Treino de Perseguição Ocular em Oito",
+  "dateModified": "2026-09-20",
+  "description": "Treino visual no navegador para praticar a coordenação binocular em uma trajetória contínua de oito deitado.",
+  "genre": ["Treino ocular", "Visão esportiva", "Rastreamento visual"],
+  "playMode": "Um jogador",
   "applicationCategory": "Game"
 };
 
@@ -108,6 +112,7 @@ const howToSchema = {
   "@context": "https://schema.org",
   "@type": "HowTo",
   "name": "Como Realizar o Exercício do Oito Deitado para os Olhos",
+  "dateModified": "2026-09-20",
   "description": "Protocolo para treinar a perseguição ocular contínua e a coordenação binocular ao longo da lemniscata de Bernoulli.",
   "step": [
     {
@@ -144,53 +149,54 @@ const howToSchema = {
 const faqSchema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
+  "dateModified": "2026-09-20",
   "mainEntity": [
     {
       "@type": "Question",
-      "name": "O que é o exercício de Perseguição em Oito Infinito (Infinity Pursuit)?",
+      "name": "O que é o exercício ocular em oito deitado?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "É um exercício de motilidade ocular avançada que guia os olhos continuamente pela lemniscata de Bernoulli (oito deitado), coordenando os seis pares de músculos extraoculares e treinando a passagem fluida pela linha média."
+        "text": "É uma prática visual em que os dois olhos acompanham um alvo que percorre uma figura de oito deitado. Ela permite observar a continuidade do olhar e a passagem pelo centro, mas não substitui uma avaliação clínica."
       }
     },
     {
       "@type": "Question",
-      "name": "Por que o cruzamento da linha média (midline crossing) é tão importante?",
+      "name": "Por que observar o cruzamento da linha média?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "A linha média vertical marca a transição neurológica entre os campos visuais esquerdo e direito, exigindo transferência de informação inter-hemisférica via corpo caloso. Pessoas destreinadas sofrem hesitações ou sacadas involuntárias nessa junção."
+        "text": "A passagem pelo centro muda continuamente o lado do campo visual que o alvo ocupa. Observar esse trecho ajuda a identificar hesitações ou saltos do olhar dentro da sessão, sem transformar o resultado em diagnóstico."
       }
     },
     {
       "@type": "Question",
-      "name": "Quais músculos oculares são fortalecidos na trajetória em oito deitado?",
+      "name": "Como os olhos participam da trajetória em oito deitado?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Todos os seis músculos extraoculares (reto medial, reto lateral, reto superior, reto inferior, oblíquo superior e oblíquo inferior) trabalham em perfeita alternância recíproca durante a rotação nos laços inclinados."
+        "text": "Os músculos extraoculares de cada olho coordenam movimentos horizontais, verticais e diagonais para manter o alvo na visão. O exercício pratica controle do olhar; não é correto prometer fortalecimento ou tratamento de uma doença."
       }
     },
     {
       "@type": "Question",
-      "name": "O que significa o ganho de perseguição (Pursuit Gain)?",
+      "name": "O que significa acompanhar o alvo com estabilidade?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "O ganho de perseguição é a razão entre a velocidade angular do olho e a velocidade angular do alvo. O valor ideal é 1,0 (sincronização perfeita). Valores abaixo de 0,80 indicam atraso e necessidade de sacadas corretivas (Barnes, 2008)."
+        "text": "Significa manter o olhar próximo do alvo durante a curva, com poucas perdas ou correções. A métrica da página é uma referência de treino nas mesmas condições e não uma medida clínica universal."
       }
     },
     {
       "@type": "Question",
-      "name": "De que maneira este treino melhora o desempenho em jogos (FPS e esports)?",
+      "name": "Este treino pode ajudar quem acompanha alvos em jogos?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Em jogos com movimentação complexa tridimensional, adversários realizam curvas diagonais e trocas de plano. O treino em oito elimina solavancos na mira durante transições diagonais e perseguições curvilíneas."
+        "text": "Ele oferece uma tarefa controlada para praticar a continuidade do olhar em curvas. Qualquer transferência para jogos depende da prática específica, do descanso e da habilidade individual; a página não promete melhorar a mira."
       }
     },
     {
       "@type": "Question",
-      "name": "Por que é fundamental manter a cabeça fixa durante o exercício?",
+      "name": "Por que manter a cabeça estável durante o exercício?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Virar a cabeça ativa o reflexo vestíbulo-ocular (RVO), permitindo que o ouvido interno faça o trabalho de acompanhamento mecânico. Manter o queixo estático força o sistema ocular intrínseco a executar 100% da motilidade."
+        "text": "A cabeça estável deixa mais claro o que os olhos conseguem acompanhar sozinhos e torna as sessões comparáveis. Não force uma imobilidade rígida: relaxe o pescoço e pare se surgir dor ou tontura."
       }
     },
     {
@@ -198,7 +204,7 @@ const faqSchema = {
       "name": "Qual é a recomendação ideal de tempo de prática diária?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Sugerimos de 5 a 10 minutos diários (5 a 8 blocos de 60 segundos). Séries curtas e intensas previnem a fadiga muscular e promovem a neuroplasticidade sináptica no córtex frontal e cerebelar."
+        "text": "Comece com uma ou duas séries curtas de cerca de 60 segundos, com pausa entre elas. Aumente apenas se o olhar continuar confortável; não há uma dose diária universal para este exercício."
       }
     },
     {
@@ -206,7 +212,7 @@ const faqSchema = {
       "name": "O exercício auxilia na redução do cansaço visual de telas de computador?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Sim. A maior parte das atividades digitais mantém o foco ocular em pontos estáticos. A trajetória em oito deitado promove alongamento dinâmico dos músculos extraoculares, estimulando a circulação e aliviando a tensão foveal."
+        "text": "Pode funcionar como uma pausa ativa para variar um olhar preso à tela, mas não há garantia de aliviar a fadiga. Para desconforto persistente, visão dupla ou dor, interrompa a prática e procure um profissional."
       }
     },
     {
@@ -214,15 +220,15 @@ const faqSchema = {
       "name": "Existe benefício para esportes tradicionais de campo e quadra?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Sim. No tênis, beisebol, futebol e automobilismo, a trajetória de bolas e veículos envolve curvas contínuas com variação de profundidade e cruzamento do campo visual central. A agilidade binocular aprimora a leitura espacial."
+        "text": "A tarefa reproduz apenas uma parte do acompanhamento de uma trajetória. Esportes reais também exigem antecipação, profundidade, reação e decisões; use o exercício como complemento, não como substituto do treino esportivo."
       }
     },
     {
       "@type": "Question",
-      "name": "O treino de perseguição em oito infinito é gratuito e seguro?",
+      "name": "O exercício ocular em oito é gratuito e como usar com segurança?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Sim, a ferramenta é totalmente gratuita, funciona diretamente no navegador web sem rastreadores ou cadastro, e todos os seus índices de fluidez e tempo permanecem armazenados unicamente no seu dispositivo."
+        "text": "A ferramenta é gratuita e funciona no navegador, sem exigir cadastro. Use em ritmo confortável, pisque normalmente e pare diante de dor, visão dupla, náusea ou tontura; procure orientação profissional se os sintomas persistirem."
       }
     }
   ]
@@ -231,29 +237,45 @@ const faqSchema = {
 const guideProps = {
   heading: "Fundamentos Neurofisiológicos da Lemniscata e Coordenação Binocular",
   intro: [
-    "A trajetória em oito deitado (lemniscata de Bernoulli) representa um dos padrões mais completos para a avaliação e desenvolvimento do sistema oculomotor humano. Ao contrário de movimentos estritamente horizontais ou verticais, a lemniscata exige a combinação sinérgica e contínua de todos os seis músculos extraoculares em vetores diagonais e helicoidais harmônicos (Robinson, 1965; Barnes, 2008).",
-    "Neurodinâmica do Cruzamento da Linha Média: no centro da curva, o alvo cruza o meridiano vertical de fixação binocular. Esse momento demanda rápida transferência de dados inter-hemisféricos entre os córtices visuais e motores de ambos os hemisférios cerebrais através do corpo caloso (Leigh & Zee, 2015). Em indivíduos não condicionados, o ganho de perseguição lenta costuma colapsar nesse ponto, gerando sacadas intrusivas ou micro-pausas que desestabilizam o foco foveal.",
-    "Hardware e Fluidez Visual: taxas de atualização de 144 Hz ou superiores proporcionam trajetórias temporais hiper-suaves, reduzindo a quantização de movimento para menos de 6,9 ms (Woods et al., 2015). O exercício opera 100% no navegador, respeitando a privacidade absoluta com gravação estritamente local."
+    "A figura do oito deitado, também chamada de lemniscata, combina curvas diagonais e passagens pelo centro em uma única tarefa de perseguição visual. O alvo se move continuamente para que você pratique manter a fixação sem transformar cada curva em uma sequência de saltos do olhar. A página treina uma habilidade visual; não substitui avaliação com oftalmologista ou ortoptista.",
+    "O ponto central é útil para observar a transição entre os campos visuais direito e esquerdo. Ao atravessar a linha média, mantenha o alvo nítido e note se o olhar perde a trajetória, faz um pequeno salto ou precisa de uma pausa. Esse registro descreve o desempenho no exercício, não diagnostica uma alteração neurológica ou binocular.",
+    "A resposta percebida depende da distância da tela, do tamanho do alvo, da taxa de atualização e da fadiga. Use uma tela confortável, pisque normalmente e priorize regularidade em vez de velocidade. As métricas ficam no dispositivo; se surgir dor, visão dupla, náusea ou tontura, pare e procure orientação profissional."
+  ],
+  techniques: {
+    title: "Quatro técnicas para a perseguição visual em oito",
+    items: [
+      { name: "Âncora no centro", desc: "Comece percebendo o cruzamento central antes de tentar acompanhar a volta inteira.", tips: "Mantenha o tronco quieto, pisque sem prender a respiração e reduza a velocidade se perder o ponto." },
+      { name: "Curva contínua", desc: "Deixe os olhos acompanharem a curva sem antecipar o próximo laço com um salto.", tips: "Olhe para o alvo atual; não tente enxergar o caminho inteiro de uma vez." },
+      { name: "Simetria dos dois lados", desc: "Compare a passagem pelo laço esquerdo e pelo laço direito na mesma sessão.", tips: "Se um lado parecer mais difícil, repita em ritmo lento e registre a diferença sem forçar." },
+      { name: "Progressão controlada", desc: "Aumente a velocidade apenas quando a trajetória continuar estável e confortável.", tips: "Faça uma sessão curta, descanse olhando para longe e retorne ao último nível confortável." }
+    ]
+  },
+  steps: [
+    "Sente-se com as costas apoiadas e deixe a tela a uma distância confortável, sem aproximar o rosto.",
+    "Ajuste o brilho e o tamanho da janela para enxergar o alvo com nitidez; mantenha a cabeça relaxada e estável.",
+    "Comece na velocidade mais baixa e acompanhe o ponto luminoso com os dois olhos, piscando normalmente.",
+    "Observe com atenção a passagem pelo centro e reduza a velocidade se o olhar começar a saltar ou se você mover a cabeça.",
+    "Registre a precisão e o conforto percebido, faça uma pausa olhando para longe e só então repita ou avance um nível."
   ],
   benchmarks: {
-    title: "Métricas de Desempenho em Oito Deitado (Lemniscate Pursuit Benchmarks)",
-    headers: ["Nível de Desempenho", "Ganho de Perseguição (Pursuit Gain)", "Taxa de Sacadas na Linha Média", "Precisão de Trajetória", "Nível Neurofisiológico"],
+    title: "Métricas de desempenho no oito deitado",
+    headers: ["Nível", "Acompanhamento do alvo", "Perdas no centro", "Precisão da trajetória", "Leitura prática"],
     rows: [
-      ["Elite (Atletas Profissionais & Esports)", "0,96 – 1,02", "< 2% (Deslizamento Contínuo)", "98%+", "Coordenação neuromuscular perfeita. Ausência de sacadas na linha média; modelo cerebelar preditivo perfeitamente calibrado (Barnes, 2008)."],
-      ["Avançado (Nível Competitivo)", "0,90 – 0,95", "2% – 5%", "92% – 97%", "Excelente estabilidade da perseguição lenta. Mínimo retardo de fase apenas nos ápices extremos; travamento foveal sólido (Krauzlis, 2004)."],
-      ["Competente (Adultos Saudáveis)", "0,80 – 0,89", "6% – 12%", "82% – 91%", "Padrão funcional sólido para o dia a dia. Sacadas ocasionais de correção ao cruzar o centro ou nas curvas de raio apertado."],
-      ["Em Desenvolvimento (Fadiga / Latência)", "0,68 – 0,79", "13% – 22%", "70% – 81%", "Atraso perceptível de perseguição; quebras sacádicas recorrentes; indícios de fadiga muscular ocular ou compensação cervical."],
-      ["Iniciante / Instabilidade", "< 0,68", "> 22%", "< 70%", "A perseguição contínua falha frequentemente; o olhar salta em busca do alvo; recomenda-se treino básico em velocidades lentas."]
+      ["Muito estável", "Alvo quase sempre acompanhado", "Raras", "98% ou mais", "Ritmo confortável; use como referência pessoal, não como diagnóstico."],
+      ["Estável", "Acompanhamento contínuo", "Poucas", "92%–97%", "Boa consistência; teste uma pequena progressão de velocidade."],
+      ["Funcional", "Algumas correções", "Ocasionalmente", "82%–91%", "Base adequada para repetir sessões lentas e observar evolução."],
+      ["Em desenvolvimento", "Atrasos perceptíveis", "Frequentes", "70%–81%", "Diminua o ritmo, faça pausas e compare apenas sessões feitas nas mesmas condições."],
+      ["Instável", "Perde o alvo com frequência", "Muitas", "Abaixo de 70%", "Volte ao ritmo mais lento; interrompa se houver desconforto visual."]
     ],
-    note: "※ Baremos de referência estabelecidos com distância de observação entre 50 e 70 cm. O ganho de perseguição é calculado pela razão entre a velocidade angular dos olhos e a velocidade angular do alvo (ideal = 1,0) segundo Barnes (2008) e Leigh & Zee (2015)."
+    note: "As faixas são referências internas para comparar sessões na mesma tela e distância; não são valores normativos clínicos. O acompanhamento do alvo não mede acuidade visual nem confirma uma condição médica."
   },
   faqs: faqSchema.mainEntity.map(e => ({ q: e.name, a: e.acceptedAnswer.text })),
   sources: pickSources('barnes2008', 'krauzlis2004', 'robinson1965', 'leighzee2015', 'woods2015', 'salthouse1980'),
   related: [
-    { href: "/pt/drills/visual-tracking/constant-slow-pursuit", label: "Perseguição Ocular Lenta (Constant Slow)" },
-    { href: "/pt/drills/visual-tracking/directional-chaos-pursuit", label: "Perseguição Caótica Direcional (Chaos Pursuit)" },
-    { href: "/pt/drills/visual-tracking/dynamic-evasion-pursuit", label: "Perseguição Evasiva Dinâmica (Dynamic Evasion)" },
-    { href: "/pt/drills/visual-tracking/sine-wave-pursuit", label: "Rastreamento em Onda Senoidal (Sine Wave)" }
+    { href: "/pt/drills/visual-tracking/constant-slow-pursuit", label: "Perseguição ocular lenta" },
+    { href: "/pt/drills/visual-tracking/directional-chaos-pursuit", label: "Perseguição direcional variável" },
+    { href: "/pt/drills/visual-tracking/dynamic-evasion-pursuit", label: "Perseguição evasiva dinâmica" },
+    { href: "/pt/drills/visual-tracking/sine-wave-pursuit", label: "Rastreamento em onda senoidal" }
   ]
 };
 
@@ -286,15 +308,16 @@ export default function InfinityPursuitPagePt() {
       />
       <InfinityPursuitClient
         copy={{
-          title: "Perseguição em Oito Infinito – Rastreamento Ocular",
-          subtitle: "Treino de Coordenação Binocular e Cruzamento da Linha Média",
-          description: "Exercício de perseguição suave contínua na curva de Bernoulli. Condiciona a alternância precisa dos seis músculos extraoculares e a estabilidade visual sem quebras sacádicas durante o cruzamento do meridiano central (Robinson, 1965; Barnes, 2008)."
+          title: "Exercício Ocular em Oito",
+          subtitle: "Rastreamento ocular e coordenação binocular",
+          description: "Acompanhe um alvo em uma figura de oito deitado, observe a passagem pela linha média e pratique uma perseguição visual suave em ritmo confortável."
         }}
       />
       <DrillGuide guide={guideProps} />
       <div className="max-w-6xl mx-auto px-4 pb-12">
         <RelatedDrills currentCategory="visual-tracking" currentHref="https://skilldrills.online/pt/drills/visual-tracking/infinity-pursuit" />
       </div>
+      <DrillFooter />
     </>
   );
 }

@@ -1,53 +1,23 @@
 import TracingClient from './TracingClientLoader';
 import { getAlternateLanguages } from '@/lib/i18n/locales';
 import DrillGuide from '@/components/drill/DrillGuide';
-import RelatedDrills from '@/components/drill/RelatedDrills';
 import DrillFooter from '@/components/drill/DrillFooter';
 import { pickSources } from '@/lib/drillSources';
 
-// ============================================================
-// SEO RESEARCH FINDINGS — tracing (motor-tracing)
-// PRIMARY:  "mouse tracing game"          — Core query (~3,600+ searches/mo)
-//           "mouse tracking game"         — Tracking / aim training synonym
-// SECONDARY / LSI:
-//           "wave tracing game"           — Trajectory filament term
-//           "cursor tracing game"         — Pointer path following query
-//           "mouse tracking exercise"     — Skill drill / training search
-//           "cursor tracking drill"       — Kinematic tracking phrase
-//           "smooth mouse movement"       — Motor control & smoothness query
-//           "smooth cursor game"          — Flow state / precision game
-//           "flow state training game"    — Cognitive-motor focus search
-//           "mouse precision training"    — Fine motor coordination
-//           "fine motor control game"     — Clinical / occupational term
-//           "aim smoothing game"          — FPS smoothness routine
-//           "smooth pursuit training"     — Psychophysics / visual tracking
-// LOCALES:
-//           ja: "マウス トレース ゲーム" (Mouse Tracing Game / Cursor Tracking)
-//           ko: "마우스 트레이싱 게임" (Mouse Tracing Game / Wave Tracking)
-//           de: "maus tracing spiel" (Mouse Tracing Game / Tracking Drill)
-// ============================================================
+// Native keyword research: docs/seo/research/tracing-2026-09-20.md
 
 export const metadata = {
-  title: 'Mouse Tracing Game – Free Wave Tracking & Precision Drill',
-  description: 'Free online mouse tracing game. Follow a moving wave with your cursor to train smooth pursuit tracking and fine cursor control. No sign-up.',
+  title: 'Mouse Tracking Test | Tracing Game | SkillDrills',
+  description: 'Free browser mouse tracking test: follow a moving wave to train smooth cursor control, path accuracy, and fine motor coordination.',
   keywords: [
-    'mouse tracing game',
-    'mouse tracking game',
-    'wave tracing game',
-    'cursor tracing game',
-    'mouse tracking exercise',
-    'cursor tracking drill',
-    'smooth mouse movement',
-    'smooth cursor game',
-    'flow state training game',
-    'mouse precision training',
-    'fine motor control game',
-    'aim smoothing game',
-    'smooth pursuit training',
+    'mouse tracking test', 'mouse tracing game', 'cursor tracking test',
+    'wave tracing game', 'cursor tracing game', 'mouse tracking exercise',
+    'smooth mouse movement', 'smooth cursor control', 'mouse precision training',
+    'fine motor control game', 'aim smoothing game', 'smooth pursuit training',
   ],
   openGraph: {
-    title: 'Mouse Tracing Game – Free Wave Tracking & Precision Drill | SkillDrills',
-    description: 'Free online mouse tracing game. Follow a moving wave with your cursor to train smooth pursuit tracking and fine cursor control. No sign-up.',
+    title: 'Mouse Tracking Test | Tracing Game | SkillDrills',
+    description: 'Free browser mouse tracking test: follow a moving wave to train smooth cursor control, path accuracy, and fine motor coordination.',
     type: 'article',
     url: 'https://skilldrills.online/drills/motor/precision-control/tracing',
     siteName: 'SkillDrills',
@@ -55,8 +25,8 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Mouse Tracing Game – Free Wave Tracking & Precision Drill | SkillDrills',
-    description: 'Free online mouse tracing game. Follow a moving wave with your cursor to train smooth pursuit tracking and fine cursor control. No sign-up.',
+    title: 'Mouse Tracking Test | Tracing Game | SkillDrills',
+    description: 'Free browser mouse tracking test: follow a moving wave to train smooth cursor control, path accuracy, and fine motor coordination.',
   },
   robots: { index: true, follow: true },
   alternates: {
@@ -81,6 +51,7 @@ const breadcrumbSchema = {
 const softwareApplicationSchema = {
   '@context': 'https://schema.org',
   '@type': 'SoftwareApplication',
+  inLanguage: 'en-US',
   name: 'Mouse Tracing Game – Wave Tracking Precision Trainer',
   applicationCategory: 'HealthApplication',
   operatingSystem: 'All',
@@ -88,36 +59,41 @@ const softwareApplicationSchema = {
   description: 'Free browser-based mouse tracing game and smooth pursuit tracking drill. Follow an accelerating continuous wave filament with a 22px tolerance band to measure fine motor steadiness, velocity modulation, and flow integrity.',
   url: 'https://skilldrills.online/drills/motor/precision-control/tracing',
   publisher: { '@type': 'Organization', name: 'SkillDrills', url: 'https://skilldrills.online' },
-  dateModified: '2026-09-05',
+  dateModified: '2026-09-20',
 };
 
 const webApplicationSchema = {
   '@context': 'https://schema.org',
   '@type': 'WebApplication',
+  inLanguage: 'en-US',
   name: 'Wave Tracing Trainer',
   applicationCategory: 'GameApplication',
   operatingSystem: 'All',
   browserRequirements: 'Requires modern web browser with HTML5 Canvas and continuous high-polling pointer input',
   offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
   url: 'https://skilldrills.online/drills/motor/precision-control/tracing',
-  dateModified: '2026-09-05',
+  dateModified: '2026-09-20',
 };
 
 const videoGameSchema = {
   '@context': 'https://schema.org',
   '@type': 'VideoGame',
+  inLanguage: 'en-US',
   name: 'Mouse Tracing Game – Wave Tracking & Precision Drill',
   url: 'https://skilldrills.online/drills/motor/precision-control/tracing',
   description: 'Follow a moving wave with your cursor to train smooth pursuit tracking and fine cursor control.',
   genre: ['Tracking Game', 'Action', 'Esports Training'],
   gamePlatform: ['Web Browser', 'Desktop', 'Mobile'],
   applicationCategory: 'Game',
-  offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' }
+  offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
+  dateModified: '2026-09-20',
 };
 
 const faqSchema = {
   '@context': 'https://schema.org',
   '@type': 'FAQPage',
+  inLanguage: 'en-US',
+  dateModified: '2026-09-20',
   mainEntity: [
     {
       '@type': 'Question',
@@ -205,6 +181,8 @@ const faqSchema = {
 const howToSchema = {
   '@context': 'https://schema.org',
   '@type': 'HowTo',
+  inLanguage: 'en-US',
+  dateModified: '2026-09-20',
   name: 'How to Train Mouse Tracing and Smooth Tracking Precision',
   description: 'Step-by-step training protocol for developing continuous smooth pursuit and eliminating corrective micro-jitter.',
   step: [
@@ -327,7 +305,7 @@ const guideProps = {
 
 const copyEn = {
   title: "Mouse Tracing Game",
-  subtitle: "Raw Input Continuous Tracking • 45s Timer",
+  subtitle: "Cursor tracking & smooth tracing • 45s",
   startButtonText: "Start Drill",
   trainAgain: "Train Again",
   shareTitle: "Share Score",
@@ -377,9 +355,6 @@ export default function TracingPage() {
       />
       <TracingClient copy={copyEn} />
       <DrillGuide {...guideProps} />
-      <div className="max-w-6xl w-full mx-auto px-4 pb-12">
-        <RelatedDrills currentCategory="motor" currentHref="/drills/motor/precision-control/tracing" />
-      </div>
       <DrillFooter />
     </>
   );

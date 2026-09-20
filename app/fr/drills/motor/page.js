@@ -6,18 +6,18 @@ import { getLocalizedDrill } from '@/lib/i18n/drillNames';
 const motorDrills = DRILLS.filter((d) => d.category === 'motor');
 
 export const metadata = {
-  title: 'Précision de Souris & Test CPS en Ligne | SkillDrills',
-  description: 'Entraînement moteur et visée en ligne. 9 exercices scientifiques pour vitesse de clic (CPS), main ferme, vitesse de frappe et coordination œil-main.',
+  title: 'Précision souris et entraînement visée | SkillDrills',
+  description: '9 exercices gratuits dans le navigateur pour précision de la souris, visée, CPS, vitesse au clavier et coordination œil-main.',
   keywords: [
-    'test de précision souris en ligne', 'aim trainer gratuit en ligne', 'test cps vitesse de clic',
-    'clics par seconde test', 'test tremblement main souris', 'test vitesse frappe clavier en ligne',
-    'test ghosting clavier en ligne', 'test chattering clavier mecanique', 'exercices coordination main oeil',
-    'contrôle micromoteur souris', 'jitter click test gratuit', 'technique butterfly click entraînement',
-    'jeu du fil chaud en ligne', 'améliorer précision souris fps', 'calculateur edpi sensibilité souris'
+    'test de précision souris', 'entraînement de visée', 'test CPS', 'coordination œil-main',
+    'vitesse de frappe', 'contrôle du curseur', 'entraîneur de visée gratuit',
+    'précision de la souris', 'clics par seconde', 'exercices de motricité',
+    'entraînement main sûre', 'test de suivi souris', 'visée FPS',
+    'vitesse clavier', 'exercices moteurs gratuits'
   ],
   openGraph: {
-    title: 'Précision de Souris & Test CPS en Ligne | SkillDrills',
-    description: 'Entraînement moteur et visée en ligne. 9 exercices scientifiques pour vitesse de clic (CPS), main ferme, vitesse de frappe et coordination œil-main.',
+    title: 'Précision souris et entraînement visée | SkillDrills',
+    description: '9 exercices gratuits dans le navigateur pour précision de la souris, visée, CPS, vitesse au clavier et coordination œil-main.',
     type: 'website',
     url: 'https://skilldrills.online/fr/drills/motor',
     siteName: 'SkillDrills',
@@ -26,8 +26,8 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Précision de Souris & Test CPS en Ligne | SkillDrills',
-    description: 'Vitesse de clic (CPS), main ferme, test de clavier et visée de précision : 9 exercices scientifiques gratuits dans le navigateur.',
+    title: 'Précision souris et entraînement visée | SkillDrills',
+    description: '9 exercices gratuits dans le navigateur pour précision de la souris, visée, CPS, vitesse au clavier et coordination œil-main.',
     images: ['https://skilldrills.online/icons/icon-512x512.png'],
   },
   robots: { index: true, follow: true },
@@ -50,9 +50,11 @@ const breadcrumbSchema = {
 const collectionSchema = {
   "@context": "https://schema.org",
   "@type": "CollectionPage",
-  "name": "Précision de Souris & Contrôle Moteur (9 Exercices)",
+  "inLanguage": "fr-FR",
+  "dateModified": "2026-09-20",
+  "name": "Test de précision souris et entraînement de visée (9 exercices)",
   "url": "https://skilldrills.online/fr/drills/motor",
-  "description": "9 exercices interactifs pour la vitesse de clic (CPS), la visée de précision, la suppression des tremblements, le test clavier et la coordination œil-main.",
+  "description": "9 exercices gratuits dans le navigateur pour précision de la souris, visée, CPS, vitesse au clavier et coordination œil-main.",
   "author": { "@type": "Organization", "name": "SkillDrills" },
   "hasPart": motorDrills.map((drill) => {
     const loc = getLocalizedDrill(drill.href, 'fr', drill.name);
@@ -71,6 +73,8 @@ const collectionSchema = {
 const faqSchema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
+  "inLanguage": "fr-FR",
+  "dateModified": "2026-09-20",
   "mainEntity": [
     {
       "@type": "Question",

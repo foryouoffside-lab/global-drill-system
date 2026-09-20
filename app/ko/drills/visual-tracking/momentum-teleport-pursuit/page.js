@@ -1,5 +1,6 @@
 import MomentumTeleportPursuitClient from '@/app/drills/visual-tracking/momentum-teleport-pursuit/MomentumTeleportPursuitClientLoader';
 import DrillGuide from '@/components/drill/DrillGuide';
+import DrillFooter from '@/components/drill/DrillFooter';
 import RelatedDrills from '@/components/drill/RelatedDrills';
 import { getAlternateLanguages } from '@/lib/i18n/locales';
 import { pickSources } from '@/lib/drillSources';
@@ -14,25 +15,25 @@ import { pickSources } from '@/lib/drillSources';
 // ============================================================
 
 export const metadata = {
-  title: "순간이동 에임 연습・타겟 재포착 안구 추적 테스트 – 도약 안구운동 & 관성 추종 | SkillDrills",
-  description: "화면 곳곳으로 순간이동하는 표적을 번개 같은 사케드(도약 안구운동)로 즉각 재포착하고, 궤적 관성을 예측하여 원활추종으로 연결하는 무료 브라우저 시각 훈련. 무설치.",
+  title: "순간이동 표적 시선 재포착 | SkillDrills",
+  description: "순간이동하는 표적을 사케드로 다시 찾고 움직임 추적으로 돌아가는 무료 안구 운동 훈련입니다.",
   keywords: [
-    "순간이동 에임 연습",
-    "타겟 재포착 훈련",
-    "사케드 도약 추적",
-    "관성 예측 에임 트레이닝",
-    "동체시력 도약 안구운동",
-    "위치 이동 타깃 추적",
-    "순간이동 적 트래킹",
-    "플릭 사케드 연계 훈련",
-    "FPS 점멸 대응 에임",
-    "시선 재배치 훈련",
-    "도약 후 원활추종 복귀",
-    "에임 재포착 안구운동"
+    "순간이동 표적 시선 추적",
+    "사케드 안구 운동",
+    "표적 재포착",
+    "시선 점프 훈련",
+    "안구 운동 훈련",
+    "동체시력 훈련",
+    "추종 안구 운동",
+    "위치가 바뀐 표적 추적",
+    "시선 재배치 연습",
+    "움직이는 표적 다시 찾기",
+    "시선 추적 온라인 훈련",
+    "무료 사케드 훈련"
   ],
   openGraph: {
-    title: "순간이동 에임 연습・타겟 재포착 안구 추적 테스트 – 도약 안구운동 & 관성 추종 | SkillDrills",
-    description: "화면 곳곳으로 순간이동하는 표적을 번개 같은 사케드(도약 안구운동)로 즉각 재포착하고, 궤적 관성을 예측하여 원활추종으로 연결하는 무료 브라우저 시각 훈련.",
+    title: "순간이동 표적 시선 재포착 | SkillDrills",
+    description: "순간이동하는 표적을 다시 찾고 움직임 추적으로 돌아가는 무료 안구 운동 훈련입니다.",
     type: "website",
     url: "https://skilldrills.online/ko/drills/visual-tracking/momentum-teleport-pursuit",
     siteName: "SkillDrills",
@@ -40,8 +41,8 @@ export const metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "순간이동 에임 연습・타겟 재포착 안구 추적 테스트 – 도약 안구운동 & 관성 추종 | SkillDrills",
-    description: "순간이동하는 표적을 신속한 도약 안구운동으로 재포착하고 관성 속도를 즉각 동기화하는 복합 동체시력 훈련.",
+    title: "순간이동 표적 재포착 연습 | SkillDrills",
+    description: "위치가 바뀐 표적을 다시 찾고 움직임 추적으로 돌아가는 연습입니다.",
   },
   robots: { index: true, follow: true },
   alternates: {
@@ -66,13 +67,13 @@ const softwareApplicationSchema = {
   "@type": "SoftwareApplication",
   "name": "순간이동 에임 연습・타겟 재포착 안구 추적 테스트",
   "applicationCategory": "HealthApplication",
-  "operatingSystem": "All",
+  "operatingSystem": "브라우저",
   "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
   "description": "순간이동(텔레포트)하는 표적을 신속한 도약 안구운동으로 재포착하고 관성 속도를 즉각 동기화하는 무료 브라우저 동체시력 훈련 도구.",
   "url": "https://skilldrills.online/ko/drills/visual-tracking/momentum-teleport-pursuit",
   "publisher": { "@type": "Organization", "name": "SkillDrills", "url": "https://skilldrills.online/ko" },
   "inLanguage": "ko",
-  "dateModified": "2026-09-15"
+  "dateModified": "2026-09-20"
 };
 
 const webAppSchema = {
@@ -80,12 +81,12 @@ const webAppSchema = {
   "@type": "WebApplication",
   "name": "순간이동 에임 연습・타겟 재포착 안구 추적 테스트 – 도약 안구운동 & 관성 추종 | SkillDrills",
   "applicationCategory": "EducationalApplication",
-  "operatingSystem": "All",
+  "operatingSystem": "브라우저",
   "browserRequirements": "HTML5 Canvas 지원 브라우저 (Chrome, Edge, Firefox, Safari)",
   "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
   "url": "https://skilldrills.online/ko/drills/visual-tracking/momentum-teleport-pursuit",
   "inLanguage": "ko",
-  "dateModified": "2026-09-15"
+  "dateModified": "2026-09-20"
 };
 
 const videoGameSchema = {
@@ -94,8 +95,9 @@ const videoGameSchema = {
   "name": "순간이동 에임 연습・타겟 재포착 안구 추적 테스트",
   "url": "https://skilldrills.online/ko/drills/visual-tracking/momentum-teleport-pursuit",
   "description": "화면을 돌발 순간이동하는 관성 타깃을 향해 즉각 시선을 도약시키고 착지 직후 매끄럽게 추적을 재개하는 리액티브 아이 트래킹 게임.",
-  "genre": ["Action", "Brain Game", "Eye Tracking", "Vision Training"],
-  "gamePlatform": ["Web Browser", "Desktop", "Mobile"],
+  "genre": ["안구 운동 훈련", "스포츠 시각 훈련", "시선 재포착"],
+  "gamePlatform": ["브라우저"],
+  "dateModified": "2026-09-20",
   "applicationCategory": "Game",
   "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
 };
@@ -103,6 +105,7 @@ const videoGameSchema = {
 const howToSchema = {
   "@context": "https://schema.org",
   "@type": "HowTo",
+  "dateModified": "2026-09-20",
   "name": "순간이동 에임 연습 및 타겟 재포착 훈련 4단계 절차",
   "description": "돌발적인 공간 도약 표적에 대해 사케드 재포착과 관성 원활추종을 정확히 성공시키는 체계적 훈련 가이드.",
   "step": [
@@ -140,6 +143,7 @@ const howToSchema = {
 const faqSchema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
+  "dateModified": "2026-09-20",
   "mainEntity": [
     {
       "@type": "Question",
@@ -170,12 +174,12 @@ const faqSchema = {
       "name": "시선이 빠르게 점프하는 도중에는 화면이 보이지 않는다(사케드 억제)는 것이 사실인가요?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "사실입니다. 안구가 초당 수백 도의 고속으로 회전하는 동안(약 20~40밀리초) 망막에 맺히는 상이 심하게 번져 뇌가 혼란에 빠지는 것을 막기 위해 시각 정보 입력을 대뇌 수준에서 일시 차단하는 '사케드 억제(Saccadic Suppression)'가 일어납니다. 따라서 착지 직후 몇 밀리초 안에 얼마나 신속하게 시지각을 회복하여 움직이는 타깃을 재포착하느냐가 승패를 결정합니다."
+        "text": "사실입니다. 안구가 초당 수백 도의 고속으로 회전하는 동안(약 20~40밀리초) 망막에 맺히는 상이 심하게 번져 뇌가 혼란에 빠지는 것을 막기 위해 시각 정보 입력을 대뇌 수준에서 일시 차단하는 '사케드 억제'가 일어납니다. 따라서 착지 직후 몇 밀리초 안에 얼마나 신속하게 시지각을 회복하여 움직이는 표적을 재포착하느냐가 승패를 결정합니다."
       }
     },
     {
       "@type": "Question",
-      "name": "순간이동한 타깃으로 시선을 던질 때 왜 목표를 지나치는 오버슈트(Overshoot)가 발생하나요?",
+      "name": "순간이동한 표적을 볼 때 목표를 지나치는 이유는 무엇인가요?",
       "acceptedAnswer": {
         "@type": "Answer",
         "text": "신규 좌표까지의 거리에 대해 소뇌가 계산한 안구 운동 출력 크기가 과도하거나, 착지 직전에 안구를 감속시키는 길항 외안근의 제동 타이밍이 늦기 때문입니다. 타깃이 착지한 지점을 무작정 쫓아가기보다, 도약 거리에 따른 정확한 제동 펄스를 소뇌가 자동 생성할 수 있도록 반복 측정을 통해 신경 오차를 보정해야 합니다."
@@ -227,14 +231,14 @@ const faqSchema = {
 const guideProps = {
   heading: "순간이동 에임 연습・타겟 재포착과 관성 추종의 신경과학 기준",
   intro: [
-    "모멘텀 텔레포트 추적(Momentum Teleport Pursuit)은 속도 관성을 유지한 채 이동하던 표적이 돌발적으로 상이한 공간 좌표로 순간이동했을 때, 대각도의 탄도학적 도약 안구운동(사케드)으로 새 위치를 재포착하고, 착지한 순간 표적의 속도 벡터를 소뇌에서 인출하여 원활추종(스무스 퍼슈트)으로 복귀시키는 복합 시각 훈련입니다. 공간적 위치 불연속성과 연속적 속도 관성이 공존하는 극한의 환경에서 인간 시각 운동 제어계의 한계 성능을 계측하고 단련합니다(Rashbass, 1961; Findlay & Walker, 1999).",
+    "순간이동 표적 시선 재포착은 움직이던 표적이 다른 위치로 바뀐 뒤 시선으로 다시 찾고, 이어지는 움직임을 따라가는 과제입니다. 사케드와 추종 안구운동의 전환을 연습하지만 임상 검사나 시력 치료가 아닙니다.",
     "위치 변위 기전(사케드)과 속도 추종 기전(퍼슈트)의 신경학적 분리와 통합: Rashbass(1961)가 증명한 바와 같이, 시각계는 표적의 '위치 오차(망막 위치 스텝)'를 중뇌 상구(Superior Colliculus) 및 전두안야(FEF) 기반의 사케드 회로로 즉각 상쇄하고, '망막 슬립 속도'는 MT/MST 영역에서 소뇌 편엽으로 이어지는 퍼슈트 회로로 조절합니다. 텔레포트가 일어나는 순간, 시각계는 이 두 가지 상이한 운동 프로그램을 밀리초 단위로 연동시켜 사케드의 감속 펄스가 끝나는 정확한 시점에 표적 속도와 일치하는 퍼슈트 펄스를 출력해야 합니다(Krauzlis, 2004).",
-    "사케드 억제(Saccadic Suppression)와 착지 직후 속도 기억의 보존: 안구가 초당 수백 도로 공간을 가로지르는 동안에는 뇌간 망양체의 능동적 게이팅에 의해 시각 입력이 일시적으로 차단됩니다(Bahill et al., 1980). 도약이 끝나고 시각이 맑아진 순간 표적의 새로운 움직임을 눈으로 확인한 뒤 추적을 시작하면, 신경 전달 지연(약 100~130ms)으로 인해 시선은 반드시 뒤로 처지게 됩니다. 이를 방지하려면 텔레포트 전에 관찰했던 속도 벡터를 소뇌 내부 모델에 단기 보존(Velocity Memory Cache)하고, 착지와 동시에 선제적으로 안구를 가속하는 인지적 예측 제어가 필수적입니다(Barnes, 2008).",
+    "사케드 억제와 착지 직후 속도 기억의 보존: 안구가 초당 수백 도로 공간을 가로지르는 동안에는 뇌간 망양체의 능동적 게이팅에 의해 시각 입력이 일시적으로 차단됩니다(Bahill et al., 1980). 도약이 끝나고 시각이 맑아진 순간 표적의 새로운 움직임을 눈으로 확인한 뒤 추적을 시작하면, 신경 전달 지연(약 100~130ms)으로 인해 시선은 반드시 뒤로 처지게 됩니다. 이를 방지하려면 순간이동 전에 관찰했던 속도 벡터를 소뇌 내부 모델에 잠시 보존하고, 착지와 동시에 선제적으로 안구를 가속하는 인지적 예측 제어가 필수적입니다(Barnes et al., 2008).",
     "FPS 에임의 '플릭 후 트래킹 단절' 극복과 e스포츠 실전 적용: 대다수의 FPS 게이머들은 갑자기 나타난 적에게 초탄 플릭(사케드)을 맞추는 데는 능숙하지만, 플릭 착지 직후 적이 이동하는 방향으로 에임이 굳어버리며 적을 놓치는 '플릭 후 트래킹 단절'이라는 고질적 문제에 직면합니다. 본 드릴은 텔레포트를 거듭하는 타깃을 통해 플릭의 안착과 동시에 매끄러운 트래킹으로 이어지는 신경 회로를 철저히 반복 단련합니다. 에이펙스 레전드, 오버워치 등 고속 기동 FPS에서 점멸기나 대시 스킬을 쓴 적을 지체 없이 추격하여 궤멸시키는 결정력을 부여합니다(Woods et al., 2015)."
   ],
   benchmarks: {
-    title: "순간이동 타겟 재포착・관성 추종 성능 평가지표 (Teleport Re-acquisition Benchmarks)",
-    headers: ["숙련도 등급", "사케드 재포착 잠복기 (Re-acquisition)", "착지 오버슈트율", "관성 동기화 효율 (Velocity Match)", "신경생리학적 도달 수준"],
+    title: "순간이동 표적 재포착・움직임 추적 성능 지표",
+    headers: ["숙련도", "표적을 다시 찾는 시간", "도착 시 오차", "움직임 동기화", "실용적 해석"],
     rows: [
       ["엘리트 (프로 에이머급)", "140ms 미만", "3% 미만 (순간 정지)", "97% 이상", "탁월한 탄도 사케드 제어. 텔레포트 착지 직후 표적 속도에 완전 동기화되며 시선 흔들림 전무"],
       ["상급 (랭커 게이머급)", "140 ～ 180ms", "3% ～ 6%", "91% ～ 96%", "신속한 사케드 재포착. 착지 시 극미한 보정만 관찰되는 수준으로 높은 트래킹 복귀력 유지"],
@@ -283,12 +287,12 @@ const guideProps = {
   })),
   sources: pickSources('rashbass1961', 'bahill1980', 'findlay1999', 'krauzlis2004', 'barnes2008', 'woods2015'),
   related: [
-    { href: "/ko/drills/visual-tracking/constant-slow-pursuit", label: "저속 안구 운동 훈련 (Constant Slow)" },
-    { href: "/ko/drills/visual-tracking/directional-chaos-pursuit", label: "카오스 방향 전환 추적 (Directional Chaos)" },
-    { href: "/ko/drills/visual-tracking/dynamic-evasion-pursuit", label: "회피 표적 추적 훈련 (Dynamic Evasion)" },
-    { href: "/ko/drills/visual-tracking/ghosting-suppress-pursuit", label: "잔상 억제 시선 고정 훈련 (Ghosting Suppress)" },
-    { href: "/ko/drills/visual-tracking/infinity-pursuit", label: "8자 안구 운동 훈련 (Infinity)" },
-    { href: "/ko/drills/visual-tracking/predictive-pursuit", label: "가림 구간 예측 추적 (Predictive)" }
+    { href: "/ko/drills/visual-tracking/constant-slow-pursuit", label: "저속 시선 추적 훈련" },
+    { href: "/ko/drills/visual-tracking/directional-chaos-pursuit", label: "방향 변화 시선 추적" },
+    { href: "/ko/drills/visual-tracking/dynamic-evasion-pursuit", label: "움직이는 표적 추적 훈련" },
+    { href: "/ko/drills/visual-tracking/ghosting-suppress-pursuit", label: "잔상 억제 시선 고정 훈련" },
+    { href: "/ko/drills/visual-tracking/infinity-pursuit", label: "8자 안구 운동 훈련" },
+    { href: "/ko/drills/visual-tracking/predictive-pursuit", label: "가림 구간 예측 추적" }
   ]
 };
 
@@ -304,9 +308,9 @@ export default function KoreanMomentumTeleportPage() {
 
       <MomentumTeleportPursuitClient
         copy={{
-          title: "순간이동 에임 연습: 타겟 재포착 안구 추적과 관성 예측 트레이닝",
-          subtitle: "공간 도약에 대응하는 탄도 사케드와 착지 직후 원활추종(Post-saccadic Pursuit) 통합 테스트",
-          description: "일정한 속도 관성을 유지하며 화면 곳곳으로 돌발 순간이동(텔레포트)하는 표적을 추적하는 하이브리드 동체시력 검사. 위치 변화(스텝 변위)를 탄도학적 도약 안구운동(사케드)으로 단번에 좁히고, 착지 즉시 표적의 속도 벡터와 안구 각속도를 동기화하는 신경계 통합 기전(Rashbass, 1961; Findlay & Walker, 1999)을 단련합니다. 사케드 억제 직후의 시각 회복과 소뇌의 관성 기억(Barnes, 2008)을 극대화합니다. 무료・무설치."
+          title: "순간이동 표적 시선 재포착",
+          subtitle: "다시 찾고 움직임 추적으로 돌아가기",
+          description: "위치가 바뀐 표적을 다시 찾은 뒤 이어지는 움직임을 추적합니다. 시간, 정확도, 편안함을 같은 조건에서 비교하세요."
         }}
       />
 
@@ -315,6 +319,7 @@ export default function KoreanMomentumTeleportPage() {
       <div className="max-w-6xl mx-auto px-4 pb-12">
         <RelatedDrills currentCategory="visual-tracking" currentHref="https://skilldrills.online/ko/drills/visual-tracking/momentum-teleport-pursuit" />
       </div>
+      <DrillFooter />
     </>
   );
 }

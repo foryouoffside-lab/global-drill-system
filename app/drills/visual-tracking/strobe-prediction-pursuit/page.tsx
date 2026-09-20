@@ -306,7 +306,7 @@ export default function StrobePredictionPursuitPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
 
-      <StrobePredictionPursuitClient copy={{ title: "Strobe Prediction Pursuit", subtitle: "Stroboscopic Vision Training" }} />
+      <StrobePredictionPursuitClient copy={{ title: "Strobe Prediction Pursuit", subtitle: "Stroboscopic vision training drill for predicting target position during flashes, blank intervals, and visual occlusion" }} />
       <DrillGuide guide={guide} />
     </>
   );

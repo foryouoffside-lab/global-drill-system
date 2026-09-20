@@ -8,7 +8,7 @@ import { pickSources } from '@/lib/drillSources';
 // SEO RESEARCH FINDINGS — Germany (DE)
 // Primary Intent: Koordinationsleiter Übungen, Koordinationsleiter Fußball, Beinarbeit Trainieren, Schnelligkeitstraining
 // German Context: Beinarbeit & Rhythmus im Fußball/Handball/Tennis & eSports Counter-Strafing
-// High-Demand, Low-Competition Target Keywords:
+// Target clusters from native sports and footwork search language; competition is unmeasured:
 //   - "Koordinationsleiter Übungen" (High-intent athletic agility ladder exercises)
 //   - "Koordinationsleiter Fußball" (Sport-specific agility search)
 //   - "Beinarbeit Trainieren" (Footwork agility training)
@@ -22,12 +22,12 @@ import { pickSources } from '@/lib/drillSources';
 // ============================================================
 
 export const metadata = {
-  title: "Koordinationsleiter Übungen – Beinarbeit | SkillDrills",
-  description: 'Kostenlose Koordinationsleiter-Übungen online. Trainiere Beinarbeit, Schrittfolgen und neuromuskuläre Schnelligkeit für Fußball und Sport im Browser.',
+  title: "Koordinationsleiter Übungen | SkillDrills",
+  description: 'Kostenlose Koordinationsleiter-Übungen online. Folge abwechselnden Sprossen und trainiere Beinarbeit, Schrittfolgen, Tempo und Rhythmus im Browser.',
   keywords: [
     "Koordinationsleiter Übungen",
     "Koordinationsleiter Fußball",
-    "Beinarbeit Trainieren",
+    "Reaktionsleiter Training",
     "Schnelligkeitstraining Übungen",
     "Agility Leiter Training",
     "Motorische Sequenzierung",
@@ -41,8 +41,8 @@ export const metadata = {
     languages: getAlternateLanguages('/drills/physical/fitness/agility-ladder'),
   },
   openGraph: {
-    title: "Koordinationsleiter Übungen & Beinarbeit Trainieren – Agility-Leiter-Spiel | SkillDrills",
-    description: "Kostenloses Online-Training für Koordinationsleiter-Übungen & Beinarbeit. Meistern Sie alternierende Sprossenwechsel und motorische Rhythmusprogramme am Bildschirm.",
+    title: "Koordinationsleiter Übungen | SkillDrills",
+    description: "Kostenlose Koordinationsleiter-Übungen online. Folge abwechselnden Sprossen und trainiere Beinarbeit, Schrittfolgen, Tempo und Rhythmus im Browser.",
     url: 'https://skilldrills.online/de/drills/physical/fitness/agility-ladder',
     siteName: 'SkillDrills',
     locale: 'de_DE',
@@ -50,8 +50,8 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: "Koordinationsleiter Übungen & Beinarbeit Trainieren – Agility-Leiter-Spiel | SkillDrills",
-    description: "Kostenloses Online-Training für Koordinationsleiter-Übungen & Beinarbeit. Meistern Sie alternierende Sprossenwechsel und motorische Rhythmusprogramme am Bildschirm.",
+    title: "Koordinationsleiter Übungen | SkillDrills",
+    description: "Kostenlose Koordinationsleiter-Übungen online. Folge abwechselnden Sprossen und trainiere Beinarbeit, Schrittfolgen, Tempo und Rhythmus im Browser.",
   },
   robots: { index: true, follow: true },
 };
@@ -106,7 +106,7 @@ const softwareApplicationSchema = {
     "url": "https://skilldrills.online/de"
   },
   "inLanguage": "de",
-  "dateModified": "2026-09-12"
+  "dateModified": "2026-09-20"
 };
 
 const webApplicationSchema = {
@@ -123,7 +123,7 @@ const webApplicationSchema = {
   },
   "url": "https://skilldrills.online/de/drills/physical/fitness/agility-ladder",
   "inLanguage": "de",
-  "dateModified": "2026-09-12"
+  "dateModified": "2026-09-20"
 };
 
 const videoGameSchema = {
@@ -144,6 +144,8 @@ const videoGameSchema = {
     "Mobile"
   ],
   "applicationCategory": "Game",
+  "inLanguage": "de-DE",
+  "dateModified": "2026-09-20",
   "offers": {
     "@type": "Offer",
     "price": "0",
@@ -154,7 +156,8 @@ const videoGameSchema = {
 const faqSchema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
-  "dateModified": "2026-09-12",
+  "inLanguage": "de-DE",
+  "dateModified": "2026-09-20",
   "mainEntity": [
     {
       "@type": "Question",
@@ -362,8 +365,8 @@ export default function AgilityLadderPageDe() {
       />
       <MotorSequencingClient
         copy={{
-          title: "Koordinationsleiter-Training",
-          subtitle: "Motorische Sequenzierung & Rhythmus-Beinarbeit • 15 Level",
+          title: "Koordinationsleiter Übungen",
+          subtitle: "Abwechselnde Sprossen mit Tempo und Rhythmus • 15 Level",
           rulesTitle: "Trainingsregeln & Punktesystem",
           rules: [
             { title: "4-Sprossen-Sequenz meistern", text: "Durchqueren Sie die Sprossen der herabscrollenden Leiter in exakter Links-Rechts-Folge (1→2→3→4)." },

@@ -329,7 +329,7 @@ export default function VerticalAirTrackPage() {
           ]
         }}
       />
-      <DrillGuide guide={verticalAirTrackGuide} />
+      <DrillGuide guide={verticalAirTrackGuide} singleLineTitles />
       <DrillFooter />
     </>
   );

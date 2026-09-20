@@ -5,9 +5,9 @@ import { getAlternateLanguages } from '@/lib/i18n/locales';
 import { pickSources } from '@/lib/drillSources';
 
 export const metadata = {
-  title: "Räumlicher Gedächtnistest – Objektposition | SkillDrills",
-  description: "Kostenloser räumlicher Gedächtnistest online: Merke dir Objektpositionen auf dem Gitter in 1,5s und lokalisiere Zielkoordinaten ohne Anmeldung.",
-  keywords: ['raeumlicher gedaechtnistest', 'objektposition gedaechtnis', 'raeumliches vorstellungsvermoegen test', 'visuell raeumliches arbeitsgedaechtnis', 'object location memory test', 'silverman eals test', 'objektplatzierung merken', 'raeumliche orientierung test', 'wo war was test online', 'koordinaten gedaechtnistraining', 'matrix positionsgdaechtnis', 'raeumliche erinnerungsfaehigkeit'],
+  title: "Räumlicher Gedächtnistest online | SkillDrills",
+  description: "Teste dein räumliches Gedächtnis online: Merke dir, wo Objekte im Raster waren, und finde ihre Position nach kurzer Einblendung wieder.",
+  keywords: ['räumlicher gedächtnistest', 'räumliches gedächtnis', 'gedächtnisraster', 'objektposition merken', 'objektlokalisierung', 'visuell-räumliches arbeitsgedächtnis', 'positionsgedächtnis', 'räumliche orientierung test', 'räumliches gedächtnistraining', 'wo war was test'],
   alternates: {
     canonical: "https://skilldrills.online/de/drills/memory/spatial-memory/object-location",
     languages: getAlternateLanguages('/drills/memory/spatial-memory/object-location', 'de'),
@@ -17,8 +17,8 @@ export const metadata = {
     follow: true,
   },
   openGraph: {
-    title: "Räumliches Gedächtnistest (Objektposition) - Kostenloser Online-Test | SkillDrills",
-    description: "Kostenloser räumliches Gedächtnis Test (Objekt-Positions-Gedächtnis / Object Location Memory). Prägen Sie sich Anordnungen von Objekten auf 3x3 bis 7x7 Rastern in 1,5 Sekunden ein und lokalisieren Sie Zielkoordinaten präzise. Ohne Anmeldung.",
+    title: "Räumlicher Gedächtnistest online | SkillDrills",
+    description: "Merke dir Objektpositionen im Raster und finde die gesuchte Stelle nach kurzer Einblendung wieder – kostenlos im Browser.",
     url: "https://skilldrills.online/de/drills/memory/spatial-memory/object-location",
     siteName: 'SkillDrills',
     locale: 'de_DE',
@@ -26,8 +26,8 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: "Räumliches Gedächtnistest (Objektposition) - Kostenloser Online-Test | SkillDrills",
-    description: "Kostenloser räumliches Gedächtnis Test (Objekt-Positions-Gedächtnis / Object Location Memory). Prägen Sie sich Anordnungen von Objekten auf 3x3 bis 7x7 Rastern in 1,5 Sekunden ein und lokalisieren Sie Zielkoordinaten präzise. Ohne Anmeldung.",
+    title: "Räumlicher Gedächtnistest online | SkillDrills",
+    description: "Merke dir Objektpositionen im Raster und finde die gesuchte Stelle nach kurzer Einblendung wieder – kostenlos im Browser.",
   },
 };
 
@@ -71,6 +71,7 @@ export default function LocalizedObjectLocationPage() {
     "description": "Interaktiver neuropsychologischer Test zur Erfassung von Objekt-Orts-Bindung (Feature Binding), räumlicher Orientierung und Matrix-Positionswiedergabe auf expandierenden Rastern.",
     "dateModified": "2026-09-05",
     "applicationCategory": "GameApplication",
+    "sameAs": "https://de.wikipedia.org/wiki/R%C3%A4umliches_Ged%C3%A4chtnis",
     "operatingSystem": "All",
     "isAccessibleForFree": true,
     "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
@@ -311,23 +312,23 @@ export default function LocalizedObjectLocationPage() {
     sources: pickSources('cowan2001', 'baddeley2000', 'logie1995', 'luck1997', 'tolman1948', 'eals1994', 'woods2015'),
     related: [
       {
-            "href": "/drills/memory/spatial-memory/grid-memorization",
+            "href": "/de/drills/memory/spatial-memory/grid-memorization",
             "label": "Visueller Gedächtnistest (Memory Matrix)"
       },
       {
-            "href": "/drills/memory/spatial-memory/path-tracing",
+            "href": "/de/drills/memory/spatial-memory/path-tracing",
             "label": "Pfade-Nachzeichnen Test (Path Tracing)"
       },
       {
-            "href": "/drills/memory/short-term-memory/digit-span",
+            "href": "/de/drills/memory/short-term-memory/digit-span",
             "label": "Zahlenspannen-Test (Digit Span)"
       },
       {
-            "href": "/drills/memory/short-term-memory/word-recall",
+            "href": "/de/drills/memory/short-term-memory/word-recall",
             "label": "Verbaler Gedächtnistest (Word Recall)"
       },
       {
-            "href": "/drills/memory/working-memory/n-back",
+            "href": "/de/drills/memory/working-memory/n-back",
             "label": "Dual N-Back Test"
       }
 ]
@@ -361,9 +362,9 @@ export default function LocalizedObjectLocationPage() {
       />
       <ObjectLocationClient
         copy={{
-        "h1Keyword": "Räumliches Gedächtnistest",
-        "h1Suffix": " (Objektposition)",
-        "subtitle": "Das Objekt-Positions-Gedächtnis speichert, was sich wo befand. Eals und Silverman (1994) maßen diese Fähigkeit mit Objektanordnungen wie dieser, die wie andere visuelle Arbeitsgedächtnisaufgaben bei etwa vier Objekten an ihre Kapazitätsgrenze stößt (Luck & Vogel, 1997).",
+        "h1Keyword": "Räumlicher Gedächtnistest online",
+        "h1Suffix": " – Objektposition",
+        "subtitle": "Objekte im Raster merken und wiederfinden",
         "statScore": "Punkte",
         "statTime": "Zeit",
         "statLevel": "Level",
@@ -372,7 +373,7 @@ export default function LocalizedObjectLocationPage() {
         "memorizePrompt": "OBJEKTPOSITIONEN EINPRÄGEN",
         "targetPrompt": "ZIEL:",
         "startTitle": "Objektposition Pro",
-        "startSubtitle": "Räumliches Gedächtnis • Positionserkennung",
+        "startSubtitle": "Räumliches Gedächtnis • Objektposition",
         "countdownSubtitle": "BEREITMACHEN",
         "newBest": "NEUER REKORD",
         "pointsLabel": "Punkte",

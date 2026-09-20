@@ -6,20 +6,20 @@ import { getAlternateLanguages } from '@/lib/i18n/locales';
 import { pickSources } from '@/lib/drillSources';
 
 export const metadata = {
-  title: "Crosshair Placement Training – Winkel halten | SkillDrills",
-  description: "Kostenloser Crosshair Placement Trainer. Optimiere Wandabstand, Kopfhöhe und Reaktionszeit, um den Peeker-Advantage in CS2 und Valorant auszukontern.",
+  title: "Aim Trainer | Crosshair Placement | SkillDrills",
+  description: "Kostenloser Aim Trainer im Browser: Übe Crosshair Placement, Winkel halten, Wandabstand und Reaktion auf Peeks in Valorant und CS2.",
   keywords: [
-    "Crosshair Placement Übung",
+    "Aim Trainer",
+    "Aim Trainer Valorant",
+    "Aim Trainer Browser",
+    "Crosshair Placement",
     "Winkel halten FPS",
+    "Winkel halten",
     "Fadenkreuz-Platzierung üben",
     "Pre-Aiming Übung",
     "Peeker Advantage auskontern",
-    "Crosshair Placement Valorant",
-    "CS2 Winkel halten",
     "Wandabstand Aiming",
     "Kopfhöhe Fadenkreuz",
-    "Klick-Timing Shooter",
-    "Fadenkreuz Trainer kostenlos",
     "Reaktionszeit Ecken halten"
   ],
   alternates: {
@@ -31,8 +31,8 @@ export const metadata = {
     follow: true,
   },
   openGraph: {
-    title: "Crosshair Placement Training – Winkel halten | SkillDrills",
-    description: "Kostenloser Crosshair Placement Trainer. Optimiere Wandabstand, Kopfhöhe und Reaktionszeit, um den Peeker-Advantage in CS2 und Valorant auszukontern.",
+    title: "Aim Trainer | Crosshair Placement | SkillDrills",
+    description: "Kostenloser Aim Trainer im Browser: Übe Crosshair Placement, Winkel halten, Wandabstand und Reaktion auf Peeks in Valorant und CS2.",
     url: "https://skilldrills.online/de/drills/fps/angle-hold-trainer",
     siteName: 'SkillDrills',
     locale: 'de_DE',
@@ -40,8 +40,8 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: "Crosshair Placement Training – Winkel halten | SkillDrills",
-    description: "Kostenloser Crosshair Placement Trainer. Optimiere Wandabstand, Kopfhöhe und Reaktionszeit, um den Peeker-Advantage in CS2 und Valorant auszukontern.",
+    title: "Aim Trainer | Crosshair Placement | SkillDrills",
+    description: "Kostenloser Aim Trainer im Browser: Übe Crosshair Placement, Winkel halten, Wandabstand und Reaktion auf Peeks in Valorant und CS2.",
   },
 };
 
@@ -52,14 +52,14 @@ export default function GermanAngleHoldPage() {
     "itemListElement": [
       { "@type": "ListItem", "position": 1, "name": "SkillDrills", "item": "https://skilldrills.online/de" },
       { "@type": "ListItem", "position": 2, "name": "FPS Training", "item": "https://skilldrills.online/de/drills/fps" },
-      { "@type": "ListItem", "position": 3, "name": "Crosshair Placement Training", "item": "https://skilldrills.online/de/drills/fps/angle-hold-trainer" }
+      { "@type": "ListItem", "position": 3, "name": "Aim Trainer - Crosshair Placement", "item": "https://skilldrills.online/de/drills/fps/angle-hold-trainer" }
     ]
   };
 
   const webAppSchema = {
     "@context": "https://schema.org",
     "@type": "WebApplication",
-    "name": "Angle Hold Pro",
+    "name": "Aim Trainer - Crosshair Placement",
     "applicationCategory": "GameApplication",
     "operatingSystem": "Web Browser",
     "inLanguage": "de",
@@ -67,7 +67,7 @@ export default function GermanAngleHoldPage() {
     "description": "Kostenloser browserbasierter Crosshair-Placement-Trainer für taktische FPS. Trainiere Wandabstand, Kopfhöhe und Pre-Aiming gegen Peeker's Advantage.",
     "genre": "FPS Training / Crosshair Placement",
     "url": "https://skilldrills.online/de/drills/fps/angle-hold-trainer",
-    "dateModified": "2026-09-15",
+    "dateModified": "2026-09-20",
     "publisher": {
       "@type": "Organization",
       "name": "SkillDrills",
@@ -78,7 +78,7 @@ export default function GermanAngleHoldPage() {
   const softwareSchema = {
     "@context": "https://schema.org",
     "@type": "SoftwareApplication",
-    "name": "Angle Hold Pro",
+    "name": "Aim Trainer - Crosshair Placement",
     "applicationCategory": "GameApplication",
     "operatingSystem": "Web Browser",
     "inLanguage": "de",
@@ -86,7 +86,7 @@ export default function GermanAngleHoldPage() {
     "description": "Kostenlose Trainingssoftware für defensive Fadenkreuz-Platzierung, Wandabstands-Kompensation und Reaktionslatenz gegen hervorbrechende Gegner.",
     "genre": "FPS Training / Crosshair Placement",
     "url": "https://skilldrills.online/de/drills/fps/angle-hold-trainer",
-    "dateModified": "2026-09-15",
+    "dateModified": "2026-09-20",
     "publisher": {
       "@type": "Organization",
       "name": "SkillDrills",
@@ -97,7 +97,7 @@ export default function GermanAngleHoldPage() {
   const videoGameSchema = {
     "@context": "https://schema.org",
     "@type": "VideoGame",
-    "name": "Angle Hold Pro",
+    "name": "Aim Trainer - Crosshair Placement",
     "url": "https://skilldrills.online/de/drills/fps/angle-hold-trainer",
     "description": "Kostenloses interaktives FPS-Trainingsspiel zur Perfektionierung von Crosshair Placement, Trigger-Disziplin und Winkelhaltung in CS2 und Valorant.",
     "inLanguage": "de",
@@ -106,13 +106,13 @@ export default function GermanAngleHoldPage() {
     "playMode": "SinglePlayer",
     "applicationCategory": "Game",
     "operatingSystem": "Web Browser",
-    "dateModified": "2026-09-15"
+    "dateModified": "2026-09-20"
   };
 
   const faqSchema = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
-    "dateModified": "2026-09-15",
+    "dateModified": "2026-09-20",
     "mainEntity": [
       {
         "@type": "Question",
@@ -235,9 +235,9 @@ export default function GermanAngleHoldPage() {
   };
 
   const angleHoldGuide = {
-    heading: "Crosshair Placement & Winkel halten Guide – Reaktionslatenz & Geometrie",
+    heading: "Aim Trainer für Crosshair Placement und Winkel halten",
     intro: [
-      "Das Halten defensiver Winkel ist eine fundamentale Schießdisziplin taktischer Shooter, die physiologisch auf der einfachen visuellen Reaktionszeit nach F.C. Donders (Donders, 1868) sowie kognitiven Go/No-Go-Diskriminationen basiert. Im Gegensatz zu dynamischen Ziel-Flicks, die einen zweiphasigen motorischen Bewegungsimpuls aus ballistischer Beschleunigung und visueller Nachkorrektur erfordern (Woodworth, 1899; Meyer et al., 1988), verankert das Pre-Aiming das Fadenkreuz bereits statisch auf der horizontalen Kopfebene. Hierdurch transformiert sich das Duell von einer zweidimensionalen räumlichen Koordinatensuche in einen eindimensionalen zeitlichen Klick-Impuls.",
+      "Ein Aim Trainer für Crosshair Placement übt das Vorhalten auf Kopfhöhe, bevor ein Gegner um die Ecke peekt. Dieser Drill misst Wandabstand, Winkelhalten und Klickreaktion, damit Valorant- und CS2-Duelle weniger von hektischen Korrekturflicks abhängen.",
       "In modernen Online-Shooter-Netcodes (wie Valves CS2 Sub-Tick-Architektur oder Riot Games' Valorant-Infrastruktur) erzeugt der serielle Pakettransport eine asymmetrische Latenzverzögerung, den sogenannten Peeker's Advantage: T_advantage = (RTT_peeker / 2) + (RTT_holder / 2) + T_interp. Ein um die Ecke stürmender Angreifer sieht den stationären Verteidiger stets vor dem Moment, in dem die Positionsdaten den Client des Verteidigers erreichen. Um dieses Latenzdefizit systematisch zu neutralisieren, müssen stationäre Verteidiger ihr Fadenkreuz mit berechnetem Wandabstand vorhalten: D_offset = v_peeker × T_reaktion. Das Ziel läuft dadurch exakt in die Visierlinie, während der Schuss bricht.",
       "Präzise Klick-Auslösungen unterliegen dem Fitts'schen Gesetz (Fitts, 1954) und den Gesetzmäßigkeiten motorischer Impulsvariabilität: Jede während des Haltens erzwungene manuelle Mauskorrektur führt zu sensorischem Rauschen und erhöht die Fehlerquote drastisch. Angle Hold Pro isoliert das Klick-Timing vollständig von korrigierenden Mikrobewegungen. Mithilfe von high-resolution Chronometrie via performance.now(), 1000-Hz-Mausabfrage und Bildwiederholraten-Synchronisation wird Eingabe-Jitter minimiert (Woods et al., 2015), um Trigger-Disziplin und Reaktionslatenz unter psychologischem Zeitdruck präzise zu analysieren (Hick, 1952).",
       "Messmethodik: Jedes Ereignis wird mit dem hochauflösenden Zeitstempel performance.now() des Browsers lokal erfasst – es erfolgt kein externer Daten-Upload. Beachte messtechnische Rahmenbedingungen: Browser-Timer werden aus Sicherheitsgründen (Spectre-Mitigation) auf etwa 1 ms gerundet. Monitore quantisieren Reize auf ihr Bildintervall (~16,7 ms bei 60 Hz, 6,9 ms bei 144 Hz und 4,1 ms bei 240 Hz nach Woods et al., 2015). Differenzen unter 5 ms stellen physikalisches Messrauschen dar. Vergleiche deine Ergebnisse daher am besten auf demselben Hardwaresystem."
@@ -299,11 +299,11 @@ export default function GermanAngleHoldPage() {
 
   const copyDe = {
     h1Prefix: null,
-    h1Keyword: "Crosshair Placement & Winkel halten Trainer",
-    h1Suffix: null,
+    h1Keyword: "Aim Trainer",
+    h1Suffix: " – Crosshair Placement & Winkel halten",
     subtitle: "FPS Pre-Aiming Training & Peeker's Advantage Verteidigung",
     caption: "Kostenloses Training für defensive Fadenkreuz-Platzierung und Reaktionszeit beim Halten von Winkeln. Optimiere deinen Wandabstand und dein Klick-Timing, um Peeker's Advantage in CS2 und Valorant mit wissenschaftlicher Präzision zu neutralisieren.",
-    startTitle: "Angle Hold Pro (Winkel halten)",
+    startTitle: "Aim Trainer - Crosshair Placement",
     startSubtitle: "Crosshair Placement • Wandabstand • Trigger-Disziplin",
     statScore: "Punkte",
     statTime: "Verbleibende Zeit",
@@ -315,7 +315,7 @@ export default function GermanAngleHoldPage() {
     getReady: "FADENKREUZ POSITIONIEREN",
     bottomCaption: "Halte das Fadenkreuz mit berechnetem Wandabstand auf Kopfhöhe und klicke präzise, sobald der Gegner die Visierlinie kreuzt.",
     accordionRulesTitle: "Trainingsregeln & Punktesystem",
-    accordionAboutTitle: "Über Crosshair Placement & Winkel halten (Angle Hold Pro)",
+    accordionAboutTitle: "Über Aim Trainer und Crosshair Placement",
     overviewTitle: "Prinzipien der defensiven Fadenkreuz-Platzierung",
     overviewLead: "Winkel halten bedeutet, das Fadenkreuz genau dort zu verankern, wo der gegnerische Kopf beim Peeken erscheinen wird. Die menschliche einfache visuelle Reaktionszeit beträgt rund 180–240 ms. Durch korrektes Vorhalten (Pre-Aiming) eliminierst du motorische Flicks und reduzierst das Duell auf einen reinen temporalen Klick-Impuls (Donders, 1868; Hick, 1952).",
     rulesItems: [

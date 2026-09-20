@@ -1,6 +1,7 @@
 'use client';
 
 import React from 'react';
+import { useTranslation } from '@/lib/i18n/useTranslation';
 import { AlertCircle, Play } from 'lucide-react';
 
 // Static, fully-literal per-accent Tailwind classes — never string-concatenated at
@@ -242,6 +243,7 @@ export default function FpsStartCard({
   onStart,
   maxWidthClassName = 'max-w-[380px]',
 }) {
+  const { t } = useTranslation();
   const a = getAccent(accent);
 
   return (
@@ -331,9 +333,9 @@ export default function FpsStartCard({
           ) : (
             <button
               onClick={onStart}
-              className={`w-full py-[11px] rounded-[13px] bg-gradient-to-r ${a.buttonGradient} font-bold text-[12.5px] tracking-wide active:scale-[0.97] transition-transform ${a.buttonGlow} cursor-pointer text-white flex items-center justify-center gap-2 mt-0.5`}
+              className={`w-full py-[11px] rounded-[13px] bg-gradient-to-r ${a.buttonGradient} font-bold text-[12.5px] tracking-wide uppercase active:scale-[0.97] transition-transform ${a.buttonGlow} cursor-pointer text-white flex items-center justify-center gap-2 mt-0.5`}
             >
-              <Play className="w-4 h-4 fill-white" /> START DRILL
+              <Play className="w-4 h-4 fill-white" /> {t('ui.start', 'Start Drill')}
             </button>
           )}
         </div>

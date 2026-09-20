@@ -1,6 +1,7 @@
 import DistractionFighterClient from '@/app/drills/cognitive/focus/distraction-fighter/DistractionFighterClientLoader';
 import DrillGuide from '@/components/drill/DrillGuide';
 import RelatedDrills from '@/components/drill/RelatedDrills';
+import DrillFooter from '@/components/drill/DrillFooter';
 import { getAlternateLanguages } from '@/lib/i18n/locales';
 import { pickSources } from '@/lib/drillSources';
 
@@ -19,23 +20,21 @@ import { pickSources } from '@/lib/drillSources';
 // ============================================================
 
 export const metadata = {
-  title: "스트룹 검사 – 무료 온라인 인지 억제 집중력 테스트 | SkillDrills",
-  description: "무료 온라인 스트룹 검사(Stroop Test) 사이트. 글자의 의미를 무시하고 글자 색상을 빠르게 판단하여 인지 억제 조절 능력과 선택적 주의 집중력을 단련하세요.",
+  title: "스트룹 테스트 | 선택적 주의력 훈련 | SkillDrills",
+  description: "무료 브라우저 스트룹 테스트에서 단어가 아닌 글자 색을 선택하세요. 선택적 주의와 반응 억제를 연습하는 비임상 자기 점검입니다.",
   keywords: [
     "스트룹 검사",
-    "스트룹 효과",
     "스트룹 테스트 온라인",
-    "인지 억제 검사",
-    "선택적 주의력 검사",
-    "집중력 테스트 게임",
-    "충동 억제 훈련",
-    "뇌 인지 훈련 무료",
-    "전두엽 기능 검사",
-    "정보 처리 속도 테스트"
+    "스트룹 테스트 하기",
+    "스트룹 테스트 사이트",
+    "스트룹 효과 실험",
+    "스트룹 효과 게임",
+    "인지 억제 테스트",
+    "선택적 주의력 테스트"
   ],
   openGraph: {
-    title: "스트룹 검사 – 무료 온라인 인지 억제 집중력 테스트 | SkillDrills",
-    description: "무료 온라인 스트룹 검사(Stroop Test) 사이트. 글자의 의미를 무시하고 글자 색상을 빠르게 판단하여 인지 억제 조절 능력과 선택적 주의 집중력을 단련하세요.",
+    title: "스트룹 테스트 | 선택적 주의력 훈련 | SkillDrills",
+    description: "무료 브라우저 스트룹 테스트에서 단어가 아닌 글자 색을 선택하세요. 선택적 주의와 반응 억제를 연습하는 비임상 자기 점검입니다.",
     type: "website",
     url: "https://skilldrills.online/ko/drills/cognitive/focus/distraction-fighter",
     siteName: "SkillDrills",
@@ -43,8 +42,8 @@ export const metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "스트룹 검사 – 무료 온라인 인지 억제 집중력 테스트 | SkillDrills",
-    description: "무료 온라인 스트룹 검사(Stroop Test) 사이트. 글자의 의미를 무시하고 글자 색상을 빠르게 판단하여 인지 억제 조절 능력과 선택적 주의 집중력을 단련하세요.",
+    title: "스트룹 테스트 | 선택적 주의력 훈련 | SkillDrills",
+    description: "무료 브라우저 스트룹 테스트에서 단어가 아닌 글자 색을 선택하세요. 선택적 주의와 반응 억제를 연습하는 비임상 자기 점검입니다.",
   },
   robots: { index: true, follow: true },
   alternates: {
@@ -70,7 +69,7 @@ export default function DistractionFighterPageKo() {
     "name": "스트룹 검사 온라인 (Stroop Test)",
     "applicationCategory": "EducationalApplication",
     "operatingSystem": "Web Browser",
-    "dateModified": "2026-09-15",
+    "dateModified": "2026-09-20",
     "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
     "description": "설치 없이 웹 브라우저에서 실행되는 무료 온라인 스트룹 검사(Stroop Test). 인지 억제 조절 능력과 선택적 주의력을 측정하고 단련합니다.",
     "genre": "인지 훈련 / 스트룹 효과 / 억제 조절",
@@ -88,7 +87,7 @@ export default function DistractionFighterPageKo() {
     "name": "스트룹 검사 온라인 (Stroop Test)",
     "applicationCategory": "EducationalApplication",
     "operatingSystem": "Web Browser",
-    "dateModified": "2026-09-15",
+    "dateModified": "2026-09-20",
     "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
     "browserRequirements": "HTML5, JavaScript 지원 웹 브라우저",
     "description": "설치 없이 웹 브라우저에서 실행되는 무료 온라인 스트룹 검사(Stroop Test). 인지 억제 조절 능력과 선택적 주의력을 측정하고 단련합니다.",
@@ -101,7 +100,7 @@ export default function DistractionFighterPageKo() {
     "name": "스트룹 검사 온라인 (Stroop Test)",
     "url": "https://skilldrills.online/ko/drills/cognitive/focus/distraction-fighter",
     "description": "글자의 물리적 색상과 의미가 일치하지 않는 자극을 통해 전두엽 인지 억제 조절력을 훈련하는 뇌 인지 게임.",
-    "dateModified": "2026-09-15",
+    "dateModified": "2026-09-20",
     "gamePlatform": "Web Browser",
     "genre": ["인지 훈련", "두뇌 게임", "스트룹 검사", "집중력"],
     "playMode": "SinglePlayer",
@@ -113,7 +112,7 @@ export default function DistractionFighterPageKo() {
   const faqSchema = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
-    "dateModified": "2026-09-15",
+    "dateModified": "2026-09-20",
     "mainEntity": [
       {
         "@type": "Question",
@@ -356,6 +355,7 @@ export default function DistractionFighterPageKo() {
           locale="ko"
         />
       </div>
+      <DrillFooter />
     </>
   );
 }

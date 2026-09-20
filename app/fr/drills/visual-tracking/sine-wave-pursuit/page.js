@@ -1,25 +1,24 @@
 import SineWavePursuitClient from '@/app/drills/visual-tracking/sine-wave-pursuit/SineWavePursuitClientLoader';
 import DrillGuide from '@/components/drill/DrillGuide';
+import DrillFooter from '@/components/drill/DrillFooter';
 import RelatedDrills from '@/components/drill/RelatedDrills';
 import { getAlternateLanguages } from '@/lib/i18n/locales';
 import { pickSources } from '@/lib/drillSources';
 
 export const metadata = {
-  title: "Entraînement Oculaire Sinusoïdal – SkillDrills",
-  description: "Suivez des trajectoires sinusoidales harmoniques. Ameliorez le gain de vitesse et eliminez le dephasage sensoriel sans inscription.",
+  title: "Poursuite oculaire sinusoïdale | SkillDrills",
+  description: "Suivez une cible mobile sinusoïdale horizontalement et verticalement. Exercice gratuit avec décalage de phase et écart de position.",
   keywords: [
-    "entrainement oculaire sinusoidal",
-    "poursuite visuelle sinusoidale",
-    "exercice oculaire onde sinusoide",
-    "poursuite visuelle harmonique",
-    "gain de vitesse oculaire",
-    "controle oculomoteur rythmique",
-    "synchronisation cerebelleuse vision",
-    "dephasage zero poursuite oculaire",
-    "suppression des saccades de rattrapage",
-    "exercice de stabilite du regard",
-    "poursuite cible oscillante",
-    "entrainement coordination visuelle"
+    "poursuite oculaire sinusoïdale",
+    "suivi oculaire sinusoïdal",
+    "exercice de poursuite visuelle",
+    "suivre une cible mobile",
+    "décalage de phase visuel",
+    "gain de poursuite oculaire",
+    "poursuite visuelle horizontale",
+    "poursuite visuelle verticale",
+    "cible oscillante exercice",
+    "écart de position du regard"
   ],
   alternates: {
     canonical: "https://skilldrills.online/fr/drills/visual-tracking/sine-wave-pursuit",
@@ -27,8 +26,8 @@ export const metadata = {
   },
   robots: { index: true, follow: true },
   openGraph: {
-    title: "Entraînement Oculaire Sinusoïdal – SkillDrills",
-    description: "Suivez des trajectoires sinusoidales harmoniques. Ameliorez le gain de vitesse et eliminez le dephasage sensoriel sans inscription.",
+    title: "Poursuite oculaire sinusoïdale | SkillDrills",
+    description: "Suivez une cible mobile sinusoïdale horizontalement et verticalement. Exercice gratuit avec décalage de phase et écart de position.",
     url: "https://skilldrills.online/fr/drills/visual-tracking/sine-wave-pursuit",
     siteName: 'SkillDrills',
     locale: 'fr_FR',
@@ -36,8 +35,8 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: "Entraînement Oculaire Sinusoïdal – SkillDrills",
-    description: "Suivez des trajectoires sinusoidales harmoniques. Ameliorez le gain de vitesse et eliminez le dephasage sensoriel sans inscription.",
+    title: "Poursuite oculaire sinusoïdale | SkillDrills",
+    description: "Exercice court pour suivre une cible périodique et observer l écart de vitesse et de position au changement de direction.",
   },
 };
 
@@ -75,6 +74,7 @@ const breadcrumbSchema = {
 const softwareApplicationSchema = {
   "@context": "https://schema.org",
   "@type": "SoftwareApplication",
+  "dateModified": "2026-09-20",
   "name": "Entraînement Oculaire Sinusoïdal",
   "operatingSystem": "Navigateur Web",
   "applicationCategory": "HealthApplication",
@@ -89,6 +89,7 @@ const softwareApplicationSchema = {
 const webAppSchema = {
   "@context": "https://schema.org",
   "@type": "WebApplication",
+  "dateModified": "2026-09-20",
   "name": "Exercice de Poursuite Sinusoïdale",
   "url": "https://skilldrills.online/fr/drills/visual-tracking/sine-wave-pursuit",
   "applicationCategory": "SportsApplication",
@@ -99,6 +100,7 @@ const webAppSchema = {
 const videoGameSchema = {
   "@context": "https://schema.org",
   "@type": "VideoGame",
+  "dateModified": "2026-09-20",
   "name": "Sine Wave Pursuit",
   "description": "Exercice de poursuite oculaire continue entrainant la foveation sur des cibles soumises a des oscillations harmoniques.",
   "genre": ["Entraînement Visuel", "Poursuite Lente", "Entraînement des Réflexes"],
@@ -109,6 +111,7 @@ const videoGameSchema = {
 const howToSchema = {
   "@context": "https://schema.org",
   "@type": "HowTo",
+  "dateModified": "2026-09-20",
   "name": "Comment Maîtriser la Poursuite Harmonique Sinusoïdale",
   "description": "Protocole methodologique pour verrouiller la phase cerebelleuse et supprimer le retard sensoriel sur trajectoires ondulatoires.",
   "step": [
@@ -142,6 +145,7 @@ const howToSchema = {
 const faqSchema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
+  "dateModified": "2026-09-20",
   "mainEntity": [
     {
       "@type": "Question",
@@ -270,18 +274,26 @@ const guideProps = {
       }
     ]
   },
+  steps: [
+    "Installez-vous à environ 50–70 cm de l écran et gardez la tête stable et confortable.",
+    "Commencez à la vitesse la plus basse pour repérer l amplitude et le rythme de l onde.",
+    "Suivez la cible au passage central et ralentissez doucement au point d inversion.",
+    "Faites une séance courte et arrêtez-vous en cas de fatigue ou d inconfort visuel.",
+    "Consultez ensuite le gain de poursuite, le déphasage et l écart de position."
+  ],
+  audience: "Personnes souhaitant pratiquer la poursuite oculaire d une cible périodique à l écran, sans remplacer un bilan professionnel.",
   faqs: faqSchema.mainEntity.map(item => ({
     q: item.name,
     a: item.acceptedAnswer.text
   })),
   sources: pickSources('stark1962', 'robinson1965', 'rashbass1961', 'bahill1980', 'barnes2008', 'woods2015'),
   related: [
-    { href: "/fr/drills/visual-tracking/constant-slow-pursuit", label: "Exercice de Poursuite Lente Constante (Constant Slow)" },
-    { href: "/fr/drills/visual-tracking/directional-chaos-pursuit", label: "Poursuite en Chaos Directionnel (Directional Chaos)" },
-    { href: "/fr/drills/visual-tracking/dynamic-evasion-pursuit", label: "Poursuite avec Évasion Dynamique (Dynamic Evasion)" },
-    { href: "/fr/drills/visual-tracking/ghosting-suppress-pursuit", label: "Suppression d'Images Fantômes (Ghosting Suppress)" },
-    { href: "/fr/drills/visual-tracking/infinity-pursuit", label: "Exercice Oculaire en Huit (Infinity)" },
-    { href: "/fr/drills/visual-tracking/momentum-teleport-pursuit", label: "Poursuite avec Téléportation et Inertie (Momentum)" }
+    { href: "/fr/drills/visual-tracking/constant-slow-pursuit", label: "Exercice de poursuite lente continue" },
+    { href: "/fr/drills/visual-tracking/directional-chaos-pursuit", label: "Poursuite lors de changements de direction" },
+    { href: "/fr/drills/visual-tracking/dynamic-evasion-pursuit", label: "Poursuite d une cible évasive" },
+    { href: "/fr/drills/visual-tracking/ghosting-suppress-pursuit", label: "Suppression des images résiduelles" },
+    { href: "/fr/drills/visual-tracking/infinity-pursuit", label: "Exercice oculaire en huit" },
+    { href: "/fr/drills/visual-tracking/momentum-teleport-pursuit", label: "Poursuite d une cible qui saute" }
   ]
 };
 
@@ -295,11 +307,12 @@ export default function SineWavePursuitPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(howToSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
 
-      <SineWavePursuitClient copy={{ title: "Poursuite Sinusoïdale", subtitle: "Entraînement Oculaire Harmonique" }} />
+      <SineWavePursuitClient copy={{ title: "Poursuite oculaire sinusoïdale", subtitle: "Suivez une cible périodique horizontalement et verticalement" }} />
       <DrillGuide guide={guideProps} />
       <div className="max-w-6xl mx-auto px-4 pb-12">
         <RelatedDrills currentCategory="visual-tracking" currentHref="https://skilldrills.online/fr/drills/visual-tracking/sine-wave-pursuit" />
       </div>
+      <DrillFooter />
     </>
   );
 }

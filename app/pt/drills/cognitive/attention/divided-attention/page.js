@@ -2,11 +2,12 @@ import DividedAttentionClient from '@/app/drills/cognitive/attention/divided-att
 import { getAlternateLanguages } from '@/lib/i18n/locales';
 import DrillGuide from '@/components/drill/DrillGuide';
 import RelatedDrills from '@/components/drill/RelatedDrills';
+import DrillFooter from '@/components/drill/DrillFooter';
 import { pickSources } from '@/lib/drillSources';
 
 export const metadata = {
-  title: "Teste de Atenção Dividida – Foco Duplo | SkillDrills",
-  description: "Teste de atenção dividida e dupla tarefa online grátis: Monitore alvos visuais em movimento e classifique sequências numéricas simultaneamente sem cadastro.",
+  title: "Teste de Atenção Dividida | Dupla Tarefa | SkillDrills",
+  description: "Teste grátis de atenção dividida no navegador: acompanhe um alvo e classifique números ao mesmo tempo. Não é diagnóstico clínico.",
   keywords: [
     "teste de atencao dividida",
     "atencao dividida exercicios",
@@ -91,7 +92,7 @@ const softwareApplicationSchema = {
     "url": "https://skilldrills.online"
   },
   "inLanguage": "pt-BR",
-  "dateModified": "2026-09-16"
+  "dateModified": "2026-09-20"
 };
 
 const webApplicationSchema = {
@@ -108,7 +109,7 @@ const webApplicationSchema = {
   },
   "url": "https://skilldrills.online/pt/drills/cognitive/attention/divided-attention",
   "inLanguage": "pt-BR",
-  "dateModified": "2026-09-16"
+  "dateModified": "2026-09-20"
 };
 
 const videoGameSchema = {
@@ -326,11 +327,27 @@ export default function EnhancedPagePt() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(howToSchema) }}
       />
-      <DividedAttentionClient copy={{ title: "Teste de Atenção Dividida – Foco Duplo" }} />
+      <DividedAttentionClient copy={{
+        title: "Teste de Atenção Dividida", subtitle: "Acompanhe um alvo e classifique números ao mesmo tempo",
+        statScore: "Pontos", statTime: "Tempo", timeLeft: "Tempo restante", statLevel: "Nível", statBest: "Melhor pontuação",
+        match: "Classificar", evenNumbers: "NÚMEROS PARES", tapEven: "Toque nos pares", startTitle: "Teste de Atenção Dividida", startSubtitle: "Dupla tarefa · foco alternado",
+        getReady: "Prepare-se", dualAccuracy: "Precisão dupla", hits: "Acertos", misses: "Erros", peakLevel: "Maior nível",
+        caption: "Acompanhe o alvo em movimento e classifique simultaneamente os números pares no fluxo lateral.",
+        rulesTitle: "Instruções e pontuação", ruleItems: [
+          { text: "Acerte o alvo", highlight: "+tempo", result: "Clique no alvo móvel" },
+          { text: "Classifique os pares", highlight: "Resposta correta", result: "Pressione quando for par" },
+          { text: "Ignore os ímpares", highlight: "Sem erro", result: "Não pressione nos ímpares" },
+          { text: "Equilibre os canais", highlight: "Mantenha o combo", result: "Una rastreamento e classificação" },
+        ],
+        aboutTitle: "Sobre atenção dividida e dupla tarefa", aboutLead: "Este é um autocheck cognitivo não clínico que combina rastreamento visual com classificação numérica para observar o desempenho dos dois canais.",
+        audienceTitle: "Para quem é", audienceText: "Para jogadores que acompanham minimapa e alvo, estudantes e pessoas que precisam lidar rapidamente com várias entradas.",
+        skillsTitle: "Habilidades treinadas", skillsText: "Processamento em dupla tarefa, rastreamento visual, decisão numérica e distribuição da atenção.", flexibilityTitle: "Processamento paralelo", flexibilityText: "Alterne entre os dois fluxos sem deixar a precisão de um canal cair."
+      }} />
       <DrillGuide {...guideProps} />
       <div className="max-w-6xl mx-auto px-4 pb-12">
         <RelatedDrills currentCategory="cognitive" currentHref="https://skilldrills.online/pt/drills/cognitive/attention/divided-attention" />
       </div>
+      <DrillFooter />
     </>
   );
 }

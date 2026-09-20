@@ -6,38 +6,21 @@ import DrillFooter from '@/components/drill/DrillFooter';
 import { pickSources } from '@/lib/drillSources';
 
 // ============================================================
-// SEO RESEARCH FINDINGS — steady-hand (Korean: 전기충격 미로게임 / 손떨림 테스트)
-// PRIMARY:  "전기충격 미로게임"              — Authentic Korean game intent
-//           "손떨림 테스트"                  — High intent diagnostic query
-// SECONDARY / LSI:
-//           "마우스 정밀도 테스트"            — Precision benchmark query
-//           "마우스 컨트롤 연습"              — Motor control practice
-//           "에임 안정성 테스트"              — Esports stability search
-//           "마우스 미로 통과 게임"          — Corridor navigation game
-//           "미세 운동 신경 조절"            — Fine motor control query
-//           "스티어링 법칙"                  — Accot-Zhai Steering Law
+// Native keyword research: docs/seo/research/steady-hand-2026-09-20.md
 // ============================================================
 
 export const metadata = {
-  title: '전기충격 미로게임 – 무료 온라인 손떨림 & 마우스 정밀도 테스트',
-  description: '벽에 닿지 않고 좁아지는 미로 통로를 탈출하는 무료 전기충격 미로게임. 생리적 손떨림 억제와 마우스 미세 운동 조절 능력을 정밀하게 측정합니다. 아콧-자이 스티어링 법칙 적용.',
+  title: '마우스 정밀도 테스트 | 손 안정성 | SkillDrills',
+  description: '마우스 커서로 좁은 경로를 따라가며 정밀도와 손 안정성을 측정하는 무료 브라우저 테스트.',
   keywords: [
-    '전기충격 미로게임',
-    '손떨림 테스트',
-    '마우스 정밀도 테스트',
-    '마우스 컨트롤 연습',
-    '에임 안정성 테스트',
-    '마우스 미로 통과 게임',
-    '손떨림 측정',
-    '미세 운동 신경 조절',
-    '스티어링 법칙',
-    '정밀 마우스 제어',
-    'FPS 미세 에임 연습',
-    '손의 안정성 훈련',
+    '마우스 정밀도 테스트', '커서 정확도 테스트', '손 안정성 테스트',
+    '마우스 경로 추적', '미세 운동 조절', '마우스 정밀 조작',
+    '커서 제어 테스트', '마우스 미로 게임', '통로 따라가기',
+    '손 떨림 제어', '게이밍 마우스 정밀도', '마우스 조작 연습',
   ],
   openGraph: {
-    title: '전기충격 미로게임 – 무료 온라인 손떨림 & 마우스 정밀도 테스트 | SkillDrills',
-    description: '벽에 닿지 않고 좁아지는 미로 통로를 탈출하는 무료 전기충격 미로게임. 생리적 손떨림 억제와 마우스 미세 운동 조절 능력을 정밀하게 측정합니다. 아콧-자이 스티어링 법칙 적용.',
+    title: '마우스 정밀도 테스트 | 손 안정성 | SkillDrills',
+    description: '마우스 커서로 좁은 경로를 따라가며 정밀도와 손 안정성을 측정하는 무료 브라우저 테스트.',
     type: 'article',
     url: 'https://skilldrills.online/ko/drills/motor/precision-control/steady-hand',
     siteName: 'SkillDrills',
@@ -45,8 +28,8 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: '전기충격 미로게임 – 무료 온라인 손떨림 & 마우스 정밀도 테스트 | SkillDrills',
-    description: '벽에 닿지 않고 좁아지는 미로 통로를 탈출하는 무료 전기충격 미로게임. 생리적 손떨림 억제와 마우스 미세 운동 조절 능력을 정밀하게 측정합니다. 아콧-자이 스티어링 법칙 적용.',
+    title: '마우스 정밀도 테스트 | 손 안정성 | SkillDrills',
+    description: '마우스 커서로 좁은 경로를 따라가며 정밀도와 손 안정성을 측정하는 무료 브라우저 테스트.',
   },
   robots: { index: true, follow: true },
   alternates: {
@@ -71,6 +54,7 @@ const breadcrumbSchema = {
 const softwareApplicationSchema = {
   '@context': 'https://schema.org',
   '@type': 'SoftwareApplication',
+  inLanguage: 'ko-KR',
   name: '전기충격 미로게임 – 마우스 정밀도 및 손떨림 측정기',
   applicationCategory: 'HealthApplication',
   operatingSystem: 'All',
@@ -78,36 +62,41 @@ const softwareApplicationSchema = {
   description: '브라우저에서 바로 즐기는 무료 온라인 전기충격 미로게임. 좁아지는 통로를 벽에 닿지 않고 통과하여 생리적 손떨림 억제력과 마우스 미세 운동 정밀도를 측정합니다.',
   url: 'https://skilldrills.online/ko/drills/motor/precision-control/steady-hand',
   publisher: { '@type': 'Organization', name: 'SkillDrills', url: 'https://skilldrills.online/ko' },
-  dateModified: '2026-09-05',
+  dateModified: '2026-09-20',
 };
 
 const webApplicationSchema = {
   '@context': 'https://schema.org',
   '@type': 'WebApplication',
+  inLanguage: 'ko-KR',
   name: '전기충격 미로게임 온라인',
   applicationCategory: 'GameApplication',
   operatingSystem: 'All',
   browserRequirements: 'HTML5 Canvas 및 고속 포인터 이벤트를 지원하는 최신 웹 브라우저',
   offers: { '@type': 'Offer', price: '0', priceCurrency: 'KRW' },
   url: 'https://skilldrills.online/ko/drills/motor/precision-control/steady-hand',
-  dateModified: '2026-09-05',
+  dateModified: '2026-09-20',
 };
 
 const videoGameSchema = {
   '@context': 'https://schema.org',
   '@type': 'VideoGame',
+  inLanguage: 'ko-KR',
   name: '전기충격 미로게임 & 마우스 정밀 제어 드릴',
   url: 'https://skilldrills.online/ko/drills/motor/precision-control/steady-hand',
   description: '벽에 닿지 않고 커서를 통과시키는 온라인 미로 게임. 미세 운동 조절력과 손떨림 저항성을 측정 및 단련합니다.',
   genre: ['Precision Game', 'Action', 'Esports Training'],
   gamePlatform: ['Web Browser', 'Desktop', 'Mobile'],
   applicationCategory: 'Game',
-  offers: { '@type': 'Offer', price: '0', priceCurrency: 'KRW' }
+  offers: { '@type': 'Offer', price: '0', priceCurrency: 'KRW' },
+  dateModified: '2026-09-20',
 };
 
 const faqSchema = {
   '@context': 'https://schema.org',
   '@type': 'FAQPage',
+  inLanguage: 'ko-KR',
+  dateModified: '2026-09-20',
   mainEntity: [
     {
       '@type': 'Question',
@@ -195,6 +184,8 @@ const faqSchema = {
 const howToSchema = {
   '@context': 'https://schema.org',
   '@type': 'HowTo',
+  inLanguage: 'ko-KR',
+  dateModified: '2026-09-20',
   name: '전기충격 미로게임으로 마우스 정밀도와 손떨림을 훈련하는 방법',
   description: '좁아지는 코스를 벽 접촉 없이 완주하고 스티어링 효율을 극대화하는 단계별 프로토콜.',
   step: [
@@ -316,8 +307,8 @@ const guideProps = {
 };
 
 const koCopy = {
-  h1Keyword: '전기충격 미로게임',
-  h1Suffix: ' (손떨림 & 마우스 정밀도 테스트)',
+  h1Keyword: '마우스 정밀도 테스트',
+  h1Suffix: ' (손 안정성 & 경로 추적)',
   caption: '전기충격 미로게임은 벽에 단 한 번도 닿지 않고 좁아지는 발광 통로를 따라 커서를 골인 지점까지 인도하여 마우스 미세 운동 조절력과 손떨림 안정성을 측정합니다. 아콧-자이 스티어링 법칙(1997)과 우드워스 폐루프 피드백 모델(1899)에 기반합니다.',
   statLaps: '클리어 랩',
   statTime: '남은 시간',
@@ -326,7 +317,7 @@ const koCopy = {
   pausedTitle: '일시 중지됨',
   pausedPrompt: '화면을 클릭하여 커서를 고정하고 게임을 재개하세요.',
   startTitle: '전기충격 미로게임',
-  startSubtitle: '마우스 미세 운동 정밀도 & 통로 협소화 • 45초 제한',
+  startSubtitle: '손 안정성과 경로 정밀도 • 45초',
   startBtn: '훈련 시작',
   countdownSubtitle: '집중하세요',
   newBest: '신기록 달성',

@@ -5,9 +5,9 @@ import { getAlternateLanguages } from '@/lib/i18n/locales';
 import { pickSources } from '@/lib/drillSources';
 
 export const metadata = {
-  title: "順番記憶テスト・コルシブロック課題 – 空間系列再生 | SkillDrills",
-  description: "無料の順番記憶テスト（コルシブロックテスト / Path Tracing）。点灯するタイルの移動軌跡を記憶し、提示された正確な順序でなぞることで空間系列記憶とインナー・スクライブの作業記憶スパンを測定・強化。登録不要。",
-  keywords: ['順番記憶テスト', '順番記憶', '順番記憶 ゲーム', 'コルシブロックテスト', '空間系列記憶', 'パストレーシング テスト', '移動軌跡 記憶', '空間ワーキングメモリ 検査', '視空間系列 課題', 'インナースクライブ 訓練', '短期系列記憶 測定', '脳トレ 順序記憶'],
+  title: "コルシブロックテスト｜順番記憶 | SkillDrills",
+  description: "無料のコルシブロックテスト。光るブロックの位置と順番を覚え、同じ順序でタップする視空間記憶の課題です。",
+  keywords: ['コルシブロックテスト', 'コルシブロック課題', '順番記憶テスト', '視空間記憶', '空間ワーキングメモリ', 'ブロックタッピング', '位置と順番 記憶', '視空間ワーキングメモリ トレーニング', '空間系列記憶', '脳トレ 順番記憶'],
   alternates: {
     canonical: "https://skilldrills.online/ja/drills/memory/spatial-memory/path-tracing",
     languages: getAlternateLanguages('/drills/memory/spatial-memory/path-tracing', 'ja'),
@@ -17,8 +17,8 @@ export const metadata = {
     follow: true,
   },
   openGraph: {
-    title: "順番記憶テスト (コルシブロック課題) - 無料認知トレーニング | SkillDrills",
-    description: "無料の順番記憶テスト（コルシブロックテスト / Path Tracing）。点灯するタイルの移動軌跡を記憶し、提示された正確な順序でなぞることで空間系列記憶とインナー・スクライブの作業記憶スパンを測定・強化。登録不要。",
+    title: "コルシブロックテスト｜視空間記憶",
+    description: "光るブロックの位置と順番を覚え、同じ順序でタップ。無料で試せる視空間ワーキングメモリのブラウザ課題です。",
     url: "https://skilldrills.online/ja/drills/memory/spatial-memory/path-tracing",
     siteName: 'SkillDrills',
     locale: 'ja_JP',
@@ -26,8 +26,8 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: "順番記憶テスト (コルシブロック課題) - 無料認知トレーニング | SkillDrills",
-    description: "無料の順番記憶テスト（コルシブロックテスト / Path Tracing）。点灯するタイルの移動軌跡を記憶し、提示された正確な順序でなぞることで空間系列記憶とインナー・スクライブの作業記憶スパンを測定・強化。登録不要。",
+    title: "コルシブロックテスト｜視空間記憶",
+    description: "光るブロックの位置と順番を覚え、同じ順序でタップ。無料で試せる視空間ワーキングメモリのブラウザ課題です。",
   },
 };
 
@@ -73,7 +73,8 @@ export default function LocalizedPathTracingPage() {
     "applicationCategory": "GameApplication",
     "operatingSystem": "All",
     "isAccessibleForFree": true,
-    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+    "sameAs": ["https://origamia.info/brain-training/corsi-block-task.html", "https://www.labvanced.com/content/research/ja/tasks/corsi-block-tapping-task"]
   };
 
   const videoGameSchema = {
@@ -311,23 +312,23 @@ export default function LocalizedPathTracingPage() {
     sources: pickSources('corsi1972', 'milner1971', 'logie1995', 'cowan2001', 'baddeley2000', 'miller1956', 'simon1974', 'kessels2000', 'woods2015'),
     related: [
       {
-            "href": "/drills/memory/spatial-memory/grid-memorization",
+            "href": "/ja/drills/memory/spatial-memory/grid-memorization",
             "label": "瞬間記憶テスト (Visual Memory Test)"
       },
       {
-            "href": "/drills/memory/spatial-memory/object-location",
+            "href": "/ja/drills/memory/spatial-memory/object-location",
             "label": "空間記憶テスト (Object Location Test)"
       },
       {
-            "href": "/drills/memory/short-term-memory/digit-span",
+            "href": "/ja/drills/memory/short-term-memory/digit-span",
             "label": "数唱テスト (Digit Span)"
       },
       {
-            "href": "/drills/memory/short-term-memory/word-recall",
+            "href": "/ja/drills/memory/short-term-memory/word-recall",
             "label": "単語記憶テスト (Verbal Memory)"
       },
       {
-            "href": "/drills/memory/working-memory/n-back",
+            "href": "/ja/drills/memory/working-memory/n-back",
             "label": "nバック課題 (Dual N-Back)"
       }
 ]
@@ -361,16 +362,16 @@ export default function LocalizedPathTracingPage() {
       />
       <PathTracingClient
         copy={{
-        "h1Keyword": "順番記憶テスト",
-        "h1Suffix": " (コルシブロック課題)",
-        "subtitle": "空間スパンは、順序通りに再現できる最長の移動シーケンスです。標準的な神経心理学指標であるコルシブロック課題では健常な成人の平均スパンは約5〜7ステップであり（Milner, 1971; Corsi, 1972）、言語性の数唱とは異なる脳内領域で処理されます（Logie, 1995）。",
+        "h1Keyword": "コルシブロックテスト",
+        "h1Suffix": "（順番記憶）",
+        "subtitle": "光るブロックの位置と順番を覚えて、同じ順序でタップ。",
         "statScore": "スコア",
         "statTime": "残り時間",
         "statLevel": "レベル",
         "statBestScore": "ベストスコア",
         "levelPrefix": "Lv.",
         "startTitle": "順番記憶 Pro",
-        "startSubtitle": "空間系列記憶 • コルシブロック課題",
+        "startSubtitle": "視空間記憶 • コルシ課題",
         "countdownSubtitle": "準備してください",
         "newBest": "自己新記録",
         "pointsLabel": "ポイント",

@@ -334,7 +334,7 @@ export default function FlowStatePage() {
           ]
         }}
       />
-      <DrillGuide guide={flowStateGuide} />
+      <DrillGuide guide={flowStateGuide} singleLineTitles />
       <DrillFooter />
     </>
   );

@@ -1,5 +1,6 @@
 import PeripheralPingPursuitClient from './PeripheralPingPursuitClientLoader';
 import DrillGuide from '@/components/drill/DrillGuide';
+import DrillFooter from '@/components/drill/DrillFooter';
 import { getAlternateLanguages } from '@/lib/i18n/locales';
 import { pickSources } from '@/lib/drillSources';
 
@@ -288,8 +289,9 @@ export default function PeripheralPingPursuitPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(howToSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
 
-      <PeripheralPingPursuitClient copy={{ title: "Peripheral Ping Pursuit", subtitle: "Peripheral Vision Training Drill" }} />
+      <PeripheralPingPursuitClient copy={{ title: "Peripheral Ping Pursuit", subtitle: "Peripheral vision reaction training and eye tracking drill for detecting fast targets without breaking central fixation" }} />
       <DrillGuide guide={guide} />
+      <DrillFooter />
     </>
   );
 }

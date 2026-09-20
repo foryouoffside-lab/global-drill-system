@@ -23,6 +23,7 @@ import useUnexpectedExitGuard from '../../../../../lib/useUnexpectedExitGuard';
 import DrillFooter from '../../../../../components/drill/DrillFooter';
 import DrillCountdown from '../../../../../components/drill/DrillCountdown';
 import DrillAccordion from '../../../../../components/drill/DrillAccordion';
+import DrillRuleItem from '../../../../../components/drill/DrillRuleItem';
 import FpsStartCard from '../../../../../components/drill/FpsStartCard';
 import useImmersiveMode from '@/lib/useImmersiveMode';
 
@@ -67,7 +68,9 @@ const ABOUT_TEXT = `The Reflex Game Online (Quick Dodge) tests raw reaction spee
 
 As your score increases, the level scales up to Level 15+. Obstacle speed accelerates from 300 px/s up to 1600+ px/s, and enemy spawn density grows exponentially.
 
-Successfully dodging threats builds huge combo multipliers and accelerates your score climb across a fixed 45-second session.`;
+Successfully dodging threats builds huge combo multipliers and accelerates your score climb across a fixed 45-second session.
+
+By the time you see where a pursuer is, it has moved. Fast movements are planned in advance from an internal model of how the limb and the target will behave, not corrected continuously in flight (Kawato, 1999), because vision needs roughly 100–150 ms to alter a movement already under way (Woodworth, 1899). As the threats speed up, the window for a mid-course correction closes and only the prediction is left.`;
 
 // Rapid difficulty parameters formula driven by drillDifficulty
 const getLevelConfig = (level, combo = 0) => {
@@ -612,13 +615,7 @@ export default function QuickDodgeClient({ copy = {} } = {}) {
                 </span>
               )}
             </h1>
-              <span className="text-[11px] font-semibold text-red-400/90 bg-red-500/10 border border-red-500/20 px-2 py-0.5 rounded-full" data-seo-kw="1">
-                Reflex Game Online
-              </span>
             </div>
-            <p className="text-xs sm:text-sm text-slate-400 leading-relaxed">
-              {copy?.description || "Dodging a pursuer is a prediction problem rather than a reaction one: by the time you see where it is, it has moved. Fast movements are planned in advance from an internal model of how the limb and the target will behave, not corrected continuously in flight (Kawato, 1999), because vision needs roughly 100–150 ms to alter a movement already under way (Woodworth, 1899). As the threats speed up, the window for a mid-course correction closes and only the prediction is left."}
-            </p>
           </div>
         )}
 
@@ -648,7 +645,7 @@ export default function QuickDodgeClient({ copy = {} } = {}) {
         <div 
           ref={containerRef} 
           onContextMenu={(e) => { if (gameActiveRef.current) e.preventDefault(); }}
-          className={`overflow-hidden flex flex-col transition-all duration-150 select-none bg-[#080811] text-white border border-white/10 ${
+          className={`overflow-hidden flex flex-col select-none bg-[#080811] text-white border border-white/10 ${
             isFullscreen 
               ? 'fixed inset-0 z-[100] w-screen h-[100dvh] bg-[#080811] rounded-none border-none flex flex-col items-center justify-center' 
               : 'w-full rounded-2xl bg-[#080811] aspect-video min-h-[460px] sm:min-h-[500px] max-h-[88vh] relative overflow-hidden flex flex-col'
@@ -813,15 +810,9 @@ export default function QuickDodgeClient({ copy = {} } = {}) {
               isOpen={openAccordion === 'rules'}
               onToggle={() => setOpenAccordion(openAccordion === 'rules' ? null : 'rules')}
             >
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-2.5 sm:gap-3 font-sans">
                 {(copy?.rulesItems || RULES_ITEMS).map((item, i) => (
-                  <div key={i} className="bg-black p-4 rounded-xl border border-white/10">
-                    <h3 className="text-sm font-bold text-white mb-1 flex items-center gap-2">
-                      <Target className="w-4 h-4 text-red-400" />
-                      {item.title}
-                    </h3>
-                    <p className="text-xs text-gray-300 leading-relaxed">{item.text}</p>
-                  </div>
+                  <DrillRuleItem key={i} num={item.num || String(i + 1)} title={item.title} detail={item.text} />
                 ))}
               </div>
             </DrillAccordion>

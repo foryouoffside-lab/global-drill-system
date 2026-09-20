@@ -1,14 +1,16 @@
 import ConcentrationGridClient from './ConcentrationGridClientLoader';
 import { getAlternateLanguages } from '@/lib/i18n/locales';
 import DrillGuide from '@/components/drill/DrillGuide';
+import RelatedDrills from '@/components/drill/RelatedDrills';
+import DrillFooter from '@/components/drill/DrillFooter';
 import { pickSources } from '@/lib/drillSources';
 
 // ============================================================
 // SEO RESEARCH FINDINGS — concentration-grid
-// PRIMARY:  "concentration grid"             — Proven Bing Winner (pos 4.8, 127+ impr)
-//           "schulte table"                  — High-intent global query
+// PRIMARY:  "schulte table"                  — high-intent visual-search query
+//           "concentration grid"             — matching drill-format query
 // SECONDARY / LSI:
-//           "the concentration grid"         — Direct Bing top clicker
+//           "the concentration grid"         — direct-format query
 //           "concentration grid online"      — High-intent web query
 //           "concentration grids"            — High volume plural query
 //           "schulte table online"           — High-intent web query
@@ -21,13 +23,13 @@ import { pickSources } from '@/lib/drillSources';
 // ============================================================
 
 export const metadata = {
-  title: "Concentration Grid – Schulte Table Trainer | SkillDrills",
-  description: "Train peripheral vision and visual search speed online. Tap sequential numbers on expanding Schulte tables and concentration grids. Free, no sign-up.",
+  title: "Schulte Table Online | Concentration Grid | SkillDrills",
+  description: "Free Schulte table online: find sequential numbers on expanding grids to practice visual search, focus, and peripheral scanning. Non-clinical.",
   keywords: [
-    "schulte table",
+    "schulte table online",
     "schulte table trainer",
     "concentration grid",
-    "schulte table online",
+    "schulte table",
     "concentration grid test",
     "concentration grid online",
     "visual search speed",
@@ -40,8 +42,8 @@ export const metadata = {
     "saccadic eye movement training"
   ],
   openGraph: {
-    title: "Concentration Grid – Schulte Table Trainer | SkillDrills",
-    description: "Train peripheral vision and visual search speed online. Tap sequential numbers on expanding Schulte tables and concentration grids. Free, no sign-up.",
+    title: "Schulte Table Online | Concentration Grid | SkillDrills",
+    description: "Free Schulte table online: find sequential numbers on expanding grids to practice visual search, focus, and peripheral scanning. Non-clinical.",
     type: "website",
     url: "https://skilldrills.online/drills/cognitive/focus/concentration-grid",
     siteName: "SkillDrills",
@@ -49,8 +51,8 @@ export const metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Concentration Grid – Schulte Table Trainer | SkillDrills",
-    description: "Train peripheral vision and visual search speed online. Tap sequential numbers on expanding Schulte tables and concentration grids. Free, no sign-up.",
+    title: "Schulte Table Online | Concentration Grid | SkillDrills",
+    description: "Free Schulte table online: find sequential numbers on expanding grids to practice visual search, focus, and peripheral scanning. Non-clinical.",
   },
   robots: { index: true, follow: true },
   alternates: {
@@ -83,7 +85,7 @@ const webAppSchema = {
   "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
   "author": { "@type": "Organization", "name": "SkillDrills" },
   "isAccessibleForFree": true,
-  "dateModified": "2026-09-05",
+  "dateModified": "2026-09-20",
   "educationalUse": ["Visual Search Speed", "Peripheral Span Expansion", "Saccadic Efficiency", "Sustained Attention"]
 };
 
@@ -97,7 +99,7 @@ const softwareSchema = {
   "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
   "description": "An interactive web-based cognitive trainer that tests visual search speed and sustained attention by tapping sequential numbers on expanding grids.",
   "genre": "Cognitive Training / Visual Search",
-  "dateModified": "2026-09-11",
+  "dateModified": "2026-09-20",
   "author": { "@type": "Organization", "name": "SkillDrills" }
 };
 
@@ -302,7 +304,7 @@ const videoGameSchema = {
   "name": "Concentration Grid – Schulte Table Trainer Online",
   "url": "https://skilldrills.online/drills/cognitive/focus/concentration-grid",
   "description": "Sequential number search on expanding Schulte tables and concentration grids. Train peripheral vision and visual search speed.",
-  "dateModified": "2026-09-11",
+  "dateModified": "2026-09-20",
   "gamePlatform": "Web Browser",
   "genre": ["Cognitive Training", "Visual Search", "Schulte Table", "Concentration Grid"],
   "playMode": "SinglePlayer",
@@ -314,6 +316,7 @@ const videoGameSchema = {
 const copyEn = {
   h1Keyword: "Concentration Grid",
   h1Suffix: " — Schulte Table Trainer Online",
+  subtitle: "Schulte table concentration test for faster visual scanning, number search, and focused attention",
 };
 
 export default function ConcentrationGridPage() {
@@ -346,6 +349,10 @@ export default function ConcentrationGridPage() {
 
       <ConcentrationGridClient copy={copyEn} />
       <DrillGuide guide={concentrationGridGuide} />
+      <div className="max-w-6xl mx-auto px-4 pb-12">
+        <RelatedDrills currentCategory="cognitive" currentHref="https://skilldrills.online/drills/cognitive/focus/concentration-grid" />
+      </div>
+      <DrillFooter />
     </>
   );
 }

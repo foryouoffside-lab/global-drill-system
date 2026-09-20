@@ -6,21 +6,19 @@ import RelatedDrills from '@/components/drill/RelatedDrills';
 import DrillFooter from '@/components/drill/DrillFooter';
 
 export const metadata = {
-  title: "Entraînement Demi-Tour 180° – Visée FPS | SkillDrills",
-  description: "Entraînez les demi-tours à 180 degrés, la vision périphérique et la réaction aux attaques de dos. Perfectionnez vos flicks et votre vitesse sur CS2.",
+  title: "Entraînement demi-tour 180° | Visée FPS | SkillDrills",
+  description: "Entraînement gratuit au demi-tour 180° dans le navigateur : repérez la cible en vision périphérique, tournez et freinez proprement.",
   keywords: [
-    "entraînement demi-tour 180 fps",
-    "tir réflexe 180 degrés valorant",
-    "comment faire un 180 en fps",
-    "entraînement vision périphérique fps",
-    "esquiver les flashbangs cs2 entraînement",
-    "visée 180 degrés souris pc",
-    "réflexe prise à revers fps",
-    "rotation rapide souris fps entraînement",
+    "entraînement demi-tour 180 degrés",
+    "vision périphérique FPS",
+    "visée FPS",
+    "entraînement de visée en ligne",
+    "demi-tour souris FPS",
+    "rotation rapide souris FPS",
+    "réaction aux attaques de dos",
     "espace tapis de souris rotation 180",
-    "simulateur de visée 180 degrés gratuit",
-    "entraînement visée 180 degrés",
-    "temps de réaction demi-tour souris"
+    "entraînement visée Valorant",
+    "aim trainer 180 degrés"
   ],
   alternates: {
     canonical: "https://skilldrills.online/fr/drills/fps/180-degree-awareness",
@@ -31,8 +29,8 @@ export const metadata = {
     follow: true,
   },
   openGraph: {
-    title: "Entraînement Demi-Tour 180° – Visée FPS | SkillDrills",
-    description: "Entraînez les demi-tours à 180 degrés, la vision périphérique et la réaction aux attaques de dos. Perfectionnez vos flicks et votre vitesse sur CS2.",
+    title: "Entraînement demi-tour 180° | Visée FPS | SkillDrills",
+    description: "Repérez une cible en vision périphérique, tournez à 180° et arrêtez le viseur avec précision dans ce drill FPS gratuit.",
     url: "https://skilldrills.online/fr/drills/fps/180-degree-awareness",
     siteName: 'SkillDrills',
     locale: 'fr_FR',
@@ -40,8 +38,8 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: "Entraînement Demi-Tour 180° – Visée FPS | SkillDrills",
-    description: "Entraînez les demi-tours à 180 degrés, la vision périphérique et la réaction aux attaques de dos. Perfectionnez vos flicks et votre vitesse sur CS2.",
+    title: "Entraînement demi-tour 180° | Visée FPS | SkillDrills",
+    description: "Repérez une cible en vision périphérique, tournez à 180° et arrêtez le viseur avec précision dans ce drill FPS gratuit.",
   },
 };
 
@@ -66,7 +64,7 @@ export default function AwarenessDrillFrPage() {
     "description": "Simulateur interactif de demi-tour 180 degrés pour FPS. Améliorez votre vitesse de bras, votre réaction aux attaques dorsales et votre vision périphérique.",
     "genre": "Entraînement FPS / Conscience Spatiale",
     "url": "https://skilldrills.online/fr/drills/fps/180-degree-awareness",
-    "dateModified": "2026-09-16",
+    "dateModified": "2026-09-20",
     "publisher": {
       "@type": "Organization",
       "name": "SkillDrills",
@@ -100,13 +98,13 @@ export default function AwarenessDrillFrPage() {
     "applicationCategory": "Game",
     "url": "https://skilldrills.online/fr/drills/fps/180-degree-awareness",
     "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
-    "dateModified": "2026-09-16"
+    "dateModified": "2026-09-20"
   };
 
   const faqSchema = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
-    "dateModified": "2026-09-16",
+    "dateModified": "2026-09-20",
     "mainEntity": [
       {
         "@type": "Question",
@@ -225,9 +223,9 @@ export default function AwarenessDrillFrPage() {
   };
 
   const awarenessGuideFr = {
-    heading: "Guide de Demi-Tour 180° et Repères Psychomoteurs Spatiaux",
+    heading: "Guide d'Entraînement Demi-Tour 180° et Repères Psychomoteurs",
     intro: [
-      "La visée par demi-tour à 180° est une tâche sensorimotrice complexe nécessitant une synergie parfaite entre détection visuelle périphérique, saccades oculaires d'orientation et biomécanique balistique des membres supérieurs. En neurobiologie, les bâtonnets de la rétine périphérique détectent les variations brusques de luminance et de mouvement à plus de 90° de l'axe visuel, déclenchant des saccades réflexes via le colliculus supérieur (Rayner, 1998; Leigh & Zee, 2015).",
+      "L'entraînement au demi-tour 180° suit une séquence simple : repérer une cible au bord de l'écran en vision périphérique, tourner avec le bras puis arrêter le viseur sur la cible. Il reproduit la réponse à une attaque dans le dos sans confondre vitesse de rotation et précision finale.",
       "Transformer cette détection en un demi-tour virtuel de 180° repose sur le modèle moteur à deux composantes (Elliott et al., 2010) : un balayage balistique en boucle ouverte initié par l'épaule et le coude couvrant 80% à 90% de la trajectoire, suivi immédiatement du freinage musculaire antagoniste pour neutraliser tout dépassement (Schmidt et al., 1979). Selon la loi de Fitts (Fitts, 1954), l'amplitude angulaire accrue élève l'indice de difficulté, rendant le pouvoir d'arrêt (stopping power) et l'espace sur le tapis prépondérants.",
       "La chronométrie numérique repose sur performance.now() et l'API HTML5 Pointer Lock. Les différences inférieures à 5 ms relèvent du bruit de quantification standard. Un taux d'interrogation de 1000 Hz et un moniteur à rafraîchissement élevé garantissent une mesure rigoureuse de votre vitesse d'acquisition spatiale (Woods et al., 2015).",
       "Mesure de la performance : chaque rotation et tir est chronométré localement sur votre machine sans téléversement. Conservez la même sensibilité (cm/360°) et un positionnement stable pour forger des automatismes musculaires durables."
@@ -289,9 +287,9 @@ export default function AwarenessDrillFrPage() {
   };
 
   const copyFr = {
-    h1Keyword: "Entraînement Demi-Tour 180°",
+    h1Keyword: "Entraînement demi-tour 180°",
     h1Suffix: " — Visée et Réflexes FPS",
-    subtitle: "Entraînez la détection périphérique, les flicks grand angle et le freinage terminal lors de demi-tours à 180°.",
+    subtitle: "Repérez la menace en vision périphérique, tournez largement et freinez le viseur sur la cible.",
     statScore: "Score",
     statTime: "Temps",
     statAccuracy: "Précision",
@@ -346,7 +344,7 @@ export default function AwarenessDrillFrPage() {
       <div className="max-w-4xl mx-auto px-4 pb-12">
         <RelatedDrills
           currentCategory="fps"
-          currentHref="/drills/fps/180-degree-awareness"
+          currentHref="/fr/drills/fps/180-degree-awareness"
           locale="fr"
         />
       </div>

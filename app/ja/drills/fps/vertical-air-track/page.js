@@ -21,21 +21,21 @@ import { pickSources } from '@/lib/drillSources';
 // ============================================================
 
 export const metadata = {
-  title: "垂直 エイム 練習 – 無料ブラウザFPS縦エイム・空中トラッキングトレーナー | SkillDrills",
-  description: "無料のブラウザFPS垂直エイム・空中トラッキング練習ツール。重力に従って放物線を描くターゲットの落下軌道予測、Y軸マウス操作、空中でのスムーズパシュートを強化。Apex LegendsやOverwatch 2の対空戦に最適。",
+  title: "Apex 縦エイム練習 - 空中トラッキング | SkillDrills",
+  description: "ブラウザで無料のApex縦エイム練習。空中ターゲットを追い、Y軸マウス操作と落下軌道の予測精度を測定します。",
   keywords: [
-    '垂直 エイム 練習',
-    '縦 エイム',
-    'トラッキング エイム 練習',
-    '空中 トラッキング 練習',
-    '縦エイム トレーニング',
-    'FPS 垂直 エイム',
-    'エイム 練習 ブラウザ',
-    'apex 縦 エイム',
+    'Apex 縦エイム練習',
+    '縦エイム',
+    '追いエイム 練習',
+    '空中トラッキング',
+    'Apex エイム練習',
+    '垂直 トラッキング',
+    'エイム練習 無料 ブラウザ',
     'エイムトレーナー 無料',
     'Y軸 マウス操作',
-    '空中戦 エイム練習',
-    'オーバーウォッチ 対空エイム'
+    'オーバーウォッチ 対空エイム',
+    '落下ターゲット 練習',
+    '縦トラッキング'
   ],
   alternates: {
     canonical: "https://skilldrills.online/ja/drills/fps/vertical-air-track",
@@ -46,8 +46,8 @@ export const metadata = {
     follow: true,
   },
   openGraph: {
-    title: "垂直 エイム 練習 – 無料ブラウザFPS縦エイム・空中トラッキングトレーナー | SkillDrills",
-    description: "無料のブラウザFPS垂直エイム・空中トラッキング練習ツール。重力に従って放物線を描くターゲットの落下軌道予測、Y軸マウス操作、空中でのスムーズパシュートを強化。Apex LegendsやOverwatch 2の対空戦に最適。",
+    title: "Apex 縦エイム練習 - 空中トラッキング | SkillDrills",
+    description: "ブラウザで無料のApex縦エイム練習。空中ターゲットを追い、Y軸マウス操作と落下軌道の予測精度を測定します。",
     url: "https://skilldrills.online/ja/drills/fps/vertical-air-track",
     siteName: 'SkillDrills',
     locale: 'ja_JP',
@@ -55,8 +55,8 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: "垂直 エイム 練習 – 無料ブラウザFPS縦エイム・空中トラッキングトレーナー | SkillDrills",
-    description: "無料のブラウザFPS垂直エイム・空中トラッキング練習ツール。重力に従って放物線を描くターゲットの落下軌道予測、Y軸マウス操作、空中でのスムーズパシュートを強化。Apex LegendsやOverwatch 2の対空戦に最適。",
+    title: "Apex 縦エイム練習 - 空中トラッキング | SkillDrills",
+    description: "ブラウザで無料のApex縦エイム練習。空中ターゲットを追い、Y軸マウス操作と落下軌道の予測精度を測定します。",
   },
 };
 
@@ -74,10 +74,10 @@ export default function VerticalAirTrackPageJa() {
   const softwareSchema = {
     "@context": "https://schema.org",
     "@type": "SoftwareApplication",
-    "name": "垂直 エイム 練習 (Vertical Aim Trainer)",
+    "name": "Apex 縦エイム練習 - 空中トラッキング",
     "applicationCategory": "GameApplication",
     "operatingSystem": "Web Browser",
-    "dateModified": "2026-09-11",
+    "dateModified": "2026-09-20",
     "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
     "description": "無料のブラウザFPS垂直エイム・空中トラッキング練習ツール。重力加速度に従う放物線ターゲットの追従とY軸マウスコントロールを鍛えるウォームアップアプリ。",
     "genre": "FPS Training / Vertical Tracking",
@@ -92,10 +92,10 @@ export default function VerticalAirTrackPageJa() {
   const webAppSchema = {
     "@context": "https://schema.org",
     "@type": "WebApplication",
-    "name": "垂直 エイム 練習 (Vertical Aim Trainer)",
+    "name": "Apex 縦エイム練習 - 空中トラッキング",
     "applicationCategory": "GameApplication",
     "operatingSystem": "Web Browser",
-    "dateModified": "2026-09-11",
+    "dateModified": "2026-09-20",
     "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
     "browserRequirements": "Pointer Lock API、JavaScript、HTML5 Canvas対応ブラウザ",
     "description": "無料のブラウザFPS垂直エイム・空中トラッキング練習ツール。重力加速度に従う放物線ターゲットの追従とY軸マウスコントロールを鍛えるウォームアップアプリ。",
@@ -105,10 +105,10 @@ export default function VerticalAirTrackPageJa() {
   const videoGameSchema = {
     "@context": "https://schema.org",
     "@type": "VideoGame",
-    "name": "垂直 エイム 練習 (Vertical Aim Trainer)",
+    "name": "Apex 縦エイム練習 - 空中トラッキング",
     "url": "https://skilldrills.online/ja/drills/fps/vertical-air-track",
     "description": "無料のブラウザFPS垂直エイム・空中トラッキング練習ツール。重力加速度に従う放物線ターゲットの追従とY軸マウスコントロールを鍛えるウォームアップアプリ。",
-    "dateModified": "2026-09-11",
+    "dateModified": "2026-09-20",
     "gamePlatform": "Web Browser",
     "genre": ["FPS Training", "Aim Trainer", "Vertical Tracking"],
     "playMode": "SinglePlayer",
@@ -120,7 +120,7 @@ export default function VerticalAirTrackPageJa() {
   const faqSchema = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
-    "dateModified": "2026-09-11",
+    "dateModified": "2026-09-20",
     "mainEntity": [
       {
         "@type": "Question",
@@ -243,9 +243,9 @@ export default function VerticalAirTrackPageJa() {
   };
 
   const verticalAirTrackGuide = {
-    heading: "垂直 エイム 練習ガイド & 放物線滞空トラッキング理論",
+    heading: "Apex 縦エイム練習：空中トラッキングと落下軌道",
     intro: [
-      "垂直 エイム 練習（Vertical Air-Track）は、マウスのY軸追従精度、重力放物線の落下予測、空中迎撃コントロールを極限まで高めるために設計された高度なFPSモータースキル訓練ドリルです。Apex LegendsやOverwatch 2、Halo Infiniteなどの立体高速移動シューターでは、ジャンプパッドやフック、高低差地形を利用して水平のクロスヘア配置を崩す戦術が頻繁に用いられます。",
+      "Apex 縦エイム練習を探しているFPSプレイヤー向けに、このドリルは上下に動く空中ターゲットへ照準を追従させる時間と精度を測定します。Y軸のマウス操作、落下軌道の予測、空中トラッキングをブラウザでまとめて練習できます。",
       "上下（垂直）方向のスムーズパシュート（滑動性眼球運動）の神経機構は、左右の水平運動とは大きく異なります。Richard J. Krauzlis（2004）の研究により、垂直方向の視覚追従は小脳虫部や脳幹の固有経路を介しており、手根骨・前腕骨格の非対称性から運動ブレ（ジッター）が生じやすいことが判明しています。またCyril Rashbass（1961）が証明したように、滑らかな追従運動はターゲットの位置誤差ではなく「速度誤差（網膜スリップ）」によって駆動されるため、カクカクしたフリックではなく連続的な速度一致が不可欠です。",
       "滞空する敵を確実に捉えるには、重力加速度（g = 9.81 m/s²）の物理挙動を身体感覚に落とし込む必要があります。Peter R. Cavanaghら（1984）およびMichael F. Land & Peter McLeod（2000）の分析によると、熟練した迎撃者はジャンプの最高到達点（頂点）での減速と、その後の急速な落下加速を事前に予測して眼球と四肢を先行連動させています。",
       "本ドリルは水平方向の補助を排除し純粋なY軸運動のみを分離。高精度なperformance.now()デジタル時間計測（Woods et al., 2015）によって、水平エイムと真の360度立体トラッキング能力の架け橋を築きます。",
@@ -335,8 +335,8 @@ export default function VerticalAirTrackPageJa() {
       />
       <VerticalAirTrackClient
         copy={{
-          h1Keyword: "垂直 エイム 練習",
-          h1Suffix: " – 無料ブラウザFPS縦エイムトレーナー",
+          h1Keyword: "Apex 縦エイム練習",
+          h1Suffix: " - 空中トラッキング",
           statScore: "スコア",
           statTime: "制限時間",
           statAccuracy: "トラッキング命中率",
@@ -385,7 +385,7 @@ export default function VerticalAirTrackPageJa() {
       <div className="max-w-6xl w-full mx-auto px-4 pb-12">
         <RelatedDrills
           currentCategory="fps"
-          currentHref="/drills/fps/vertical-air-track"
+          currentHref="/ja/drills/fps/vertical-air-track"
           locale="ja"
         />
       </div>

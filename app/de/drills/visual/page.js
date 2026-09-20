@@ -37,6 +37,15 @@ export const metadata = {
   },
 };
 
+Object.assign(metadata, {
+  title: 'Dynamisches Sehen & visuelle Suche | SkillDrills',
+  description: '9 kostenlose Browser-Drills für dynamisches Sehen, visuelle Suche, Reaktionszeit, Zielverfolgung und Tiefenwahrnehmung.',
+  keywords: ['dynamisches Sehen', 'visuelle Suche Test', 'Reaktionstest online', 'peripheres Sehen Training', 'Augenbewegungen Training', 'Tiefenwahrnehmung Test', 'visuelle Reaktion', 'mehrere Objekte verfolgen', 'kostenloses Sehtraining online'],
+  openGraph: { ...metadata.openGraph, title: 'Dynamisches Sehen & visuelle Suche | SkillDrills', description: '9 kostenlose Browser-Drills für dynamisches Sehen, visuelle Suche, Reaktionszeit und Zielverfolgung.' },
+  twitter: { ...metadata.twitter, title: 'Dynamisches Sehen & visuelle Suche | SkillDrills', description: 'Dynamisches Sehen und visuelle Suche mit 9 kostenlosen Drills trainieren.' },
+  alternates: { ...metadata.alternates, languages: getAlternateLanguages('/drills/visual') },
+});
+
 const breadcrumbSchema = {
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
@@ -50,6 +59,8 @@ const breadcrumbSchema = {
 const collectionSchema = {
   "@context": "https://schema.org",
   "@type": "CollectionPage",
+  "inLanguage": "de",
+  "dateModified": "2026-09-20",
   "name": "Visuelle Wahrnehmung & Augentraining (9 Übungen)",
   "url": "https://skilldrills.online/de/drills/visual",
   "description": "9 interaktive Übungen für dynamische Sehschärfe, stereoskopisches Tiefensehen, Augenfolgebewegung, visuelle Suche und Reaktionszeit.",
@@ -71,6 +82,8 @@ const collectionSchema = {
 const faqSchema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
+  "inLanguage": "de",
+  "dateModified": "2026-09-20",
   "mainEntity": [
     {
       "@type": "Question",
@@ -138,6 +151,11 @@ const faqSchema = {
     }
   ]
 };
+
+faqSchema.mainEntity.push(
+  { "@type": "Question", "name": "Wie viele Übungen enthält der Bereich für visuelles Training?", "acceptedAnswer": { "@type": "Answer", "text": "Der Bereich enthält 9 Browser-Drills in drei Schwerpunkten: Reaktion und Impulskontrolle, Zielverfolgung und Augenbewegung sowie Erkennung und Tiefenwahrnehmung. Jede Karte öffnet die passende Übung." } },
+  { "@type": "Question", "name": "Ersetzen visuelle Browser-Drills einen Sehtest beim Augenarzt?", "acceptedAnswer": { "@type": "Answer", "text": "Nein. Sie üben wiederholbare Aufgaben zu Reaktion, Verfolgung, Suche und räumlichem Urteil. Sie diagnostizieren weder Sehschärfe noch Augenerkrankungen und ersetzen keine Untersuchung durch Fachpersonal." } }
+);
 
 export default function VisualDrillsPage() {
   return (

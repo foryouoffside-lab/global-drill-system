@@ -5,27 +5,23 @@ import DrillGuide from '@/components/drill/DrillGuide';
 import RelatedDrills from '@/components/drill/RelatedDrills';
 
 export const metadata = {
-  title: 'Test Clavier en Ligne – Testeur de Touches | SkillDrills',
-  description:
-    'Testez chaque touche de votre clavier en ligne gratuitement. Détection des touches défectueuses, test anti-ghosting et rollover sans installation.',
+  title: 'Test clavier en ligne | Touches et ghosting | SkillDrills',
+  description: 'Testez votre clavier dans le navigateur : vérifiez les touches, le chattering, l’anti-ghosting et le rollover sans installation.',
   keywords: [
-    'test clavier',
-    'testeur de clavier',
-    'keyboard tester',
-    'test touche clavier',
-    'tester son clavier',
-    'clavier azerty test',
-    'anti ghosting test',
-    'test clavier mecanique',
-    'testeur de touches',
-    'verifier touche clavier',
+    'test clavier en ligne',
+    'testeur clavier',
+    'tester les touches',
+    'touche morte',
+    'touche bloquée',
+    'test anti-ghosting',
     'test rollover clavier',
-    'test clavier en ligne gratuit',
+    'clavier AZERTY',
+    'clavier gamer',
+    'touche qui ne répond plus',
   ],
   openGraph: {
-    title: 'Test Clavier en Ligne – Testeur de Touches | SkillDrills',
-    description:
-      'Testez chaque touche de votre clavier en ligne gratuitement. Détection des touches défectueuses, test anti-ghosting et rollover sans installation.',
+    title: 'Test clavier en ligne | Touches et ghosting | SkillDrills',
+    description: 'Testez les touches, le ghosting et le rollover directement dans le navigateur, sans téléchargement.',
     type: 'article',
     url: 'https://skilldrills.online/fr/drills/motor/keyboard-tester',
     siteName: 'SkillDrills',
@@ -33,9 +29,8 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Test Clavier en Ligne – Testeur de Touches | SkillDrills',
-    description:
-      'Testez chaque touche de votre clavier en ligne gratuitement. Détection des touches défectueuses, test anti-ghosting et rollover sans installation.',
+    title: 'Test clavier en ligne | Touches et ghosting | SkillDrills',
+    description: 'Diagnostic clavier gratuit pour repérer les touches mortes, le chattering et les entrées simultanées.',
   },
   robots: { index: true, follow: true },
   alternates: {
@@ -67,6 +62,7 @@ const breadcrumbSchema = {
 const webApplicationSchema = {
   '@context': 'https://schema.org',
   '@type': 'WebApplication',
+  inLanguage: 'fr-FR',
   name: 'Testeur de Clavier en Ligne',
   alternateName: ['Test Clavier', 'Vérificateur de Touches'],
   applicationCategory: 'UtilitiesApplication',
@@ -77,29 +73,31 @@ const webApplicationSchema = {
     'Outil web gratuit pour tester vos touches, détecter les pannes matérielles, mesurer le key rollover et vérifier l anti-ghosting.',
   url: 'https://skilldrills.online/fr/drills/motor/keyboard-tester',
   publisher: { '@type': 'Organization', name: 'SkillDrills', url: 'https://skilldrills.online' },
-  dateModified: '2026-09-16',
+  dateModified: '2026-09-20',
 };
 
 const softwareSchema = {
   '@context': 'https://schema.org',
   '@type': 'SoftwareApplication',
+  inLanguage: 'fr-FR',
   name: 'Testeur de Clavier et Anti-Ghosting en Ligne',
   applicationCategory: 'UtilitiesApplication',
   operatingSystem: 'Web Browser',
   offers: { '@type': 'Offer', price: '0', priceCurrency: 'EUR' },
   description: 'Outil gratuit en ligne pour tester la frappe, détecter les touches bloquées et vérifier le rollover.',
   url: 'https://skilldrills.online/fr/drills/motor/keyboard-tester',
-  dateModified: '2026-09-16',
+  dateModified: '2026-09-20',
   publisher: { '@type': 'Organization', name: 'SkillDrills', url: 'https://skilldrills.online' }
 };
 
 const videoGameSchema = {
   '@context': 'https://schema.org',
   '@type': 'VideoGame',
+  inLanguage: 'fr-FR',
   name: 'Testeur de Clavier et Rollover',
   url: 'https://skilldrills.online/fr/drills/motor/keyboard-tester',
   description: 'Outil interactif de diagnostic pour tester les commutateurs et les frappes simultanées.',
-  dateModified: '2026-09-16',
+  dateModified: '2026-09-20',
   gamePlatform: 'Web Browser',
   genre: ['Testeur de Clavier', 'Utilitaires', 'Diagnostic Matériel'],
   playMode: 'SinglePlayer',
@@ -111,6 +109,7 @@ const videoGameSchema = {
 const howToSchema = {
   '@context': 'https://schema.org',
   '@type': 'HowTo',
+  inLanguage: 'fr-FR',
   name: 'Comment tester les touches de son clavier en ligne',
   description: 'Guide pratique pour détecter les touches inopérantes, le ghosting et le chattering.',
   step: [
@@ -148,7 +147,8 @@ const howToSchema = {
 const faqSchema = {
   '@context': 'https://schema.org',
   '@type': 'FAQPage',
-  dateModified: '2026-09-16',
+  inLanguage: 'fr-FR',
+  dateModified: '2026-09-20',
   mainEntity: [
     {
       '@type': 'Question',
@@ -231,6 +231,48 @@ const faqSchema = {
       },
     },
   ],
+};
+
+const FRENCH_COPY = {
+  title: 'Test clavier en ligne',
+  subtitle: 'Tester les touches • Ghosting • Rollover',
+  intro: 'Appuyez sur chaque touche pour vérifier qu’elle est correctement reconnue.',
+  keysConfirmed: 'Touches confirmées',
+  rollover: 'Rollover',
+  capturing: 'Capture des touches',
+  paused: 'En pause',
+  reset: 'Réinitialiser',
+  captureNotice: 'La capture des touches est active. Appuyez sur Maj + Échap ou cliquez sur « Capture des touches » pour libérer le clavier.',
+  lastKeyEvent: 'Dernier événement de touche',
+  eventCode: 'event.code',
+  eventKey: 'event.key',
+  keyCode: 'keyCode',
+  location: 'Position',
+  autoRepeat: 'Répétition automatique',
+  yes: 'Oui',
+  no: 'Non',
+  space: '(espace)',
+  pressAnyKey: 'Appuyez sur une touche pour voir ce que reçoit le navigateur.',
+  keysNotOnLayout: 'Touches absentes de la disposition choisie',
+  notYetConfirmed: 'Pas encore confirmées',
+  allConfirmed: 'Toutes les touches de la disposition ont été reconnues. Votre clavier fonctionne.',
+  untestedSingular: 'touche reste à tester. Si elle ne répond pas après plusieurs pressions fermes, vérifiez-la.',
+  untestedPlural: 'touches restent à tester. Si l’une ne répond pas après plusieurs pressions fermes, vérifiez-la.',
+  mobileWarning: 'Cet outil nécessite un clavier physique. Ouvrez-le sur un ordinateur ou branchez un clavier externe.',
+  aboutTitle: 'À propos du test clavier',
+  aboutP1: 'Chaque touche s’allume lorsqu’elle est reconnue et reste verte après confirmation. Une touche qui ne s’allume jamais peut signaler un switch défectueux, une touche bloquée ou un problème de pilote.',
+  aboutP2: 'Aucune donnée n’est envoyée ni enregistrée.',
+  howTitle: 'Comment tester votre clavier',
+  howStep1: 'Appuyez une fois sur chaque touche, ligne par ligne, de gauche à droite.',
+  howStep2: 'La touche devient cyan pendant la pression puis verte après sa première détection.',
+  howStep3: 'Vérifiez que la liste « Pas encore confirmées » se vide. Les touches restantes sont à examiner.',
+  howStep4: 'Maintenez plusieurs touches pour lire le nombre maximal de pressions simultanées.',
+  rolloverTitle: 'Key rollover et anti-ghosting',
+  rolloverP1: 'Le rollover désigne le nombre de touches qu’un clavier peut signaler en même temps. Beaucoup de claviers à membrane en reconnaissent deux à six avant d’ignorer les suivantes. Les claviers NKRO signalent chaque touche pressée.',
+  rolloverP2: 'Maintenez plusieurs touches et observez la valeur de rollover. Si elle cesse de monter à trois ou quatre, il s’agit de la limite du clavier, pas forcément d’une panne. Certaines combinaisons système n’atteignent jamais le navigateur.',
+  limitsTitle: 'Ce que ce test ne peut pas diagnostiquer',
+  limitsP1: 'La page observe le signal reçu par le navigateur, au bout de la chaîne switch, contrôleur, câble ou liaison sans fil, pilote et système. Elle ne peut pas identifier le composant précis qui provoque une absence de signal.',
+  limitsP2: 'Le système intercepte Alt+Tab et Ctrl+Alt+Suppr avant le navigateur. F5, F11 et F12 restent réservées aux fonctions du navigateur. Leur absence est normale et ne prouve pas une panne matérielle.',
 };
 
 const guideProps = {
@@ -325,7 +367,7 @@ export default function KeyboardTesterPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
-      <KeyboardTesterClient />
+      <KeyboardTesterClient copy={FRENCH_COPY} defaultLayout="azerty" />
       <DrillGuide {...guideProps} />
       <div className="max-w-6xl mx-auto px-4 pb-12">
         <RelatedDrills currentCategory="motor" currentHref="/fr/drills/motor/keyboard-tester" />

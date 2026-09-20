@@ -1,5 +1,6 @@
 import MomentumTeleportPursuitClient from '@/app/drills/visual-tracking/momentum-teleport-pursuit/MomentumTeleportPursuitClientLoader';
 import DrillGuide from '@/components/drill/DrillGuide';
+import DrillFooter from '@/components/drill/DrillFooter';
 import RelatedDrills from '@/components/drill/RelatedDrills';
 import { getAlternateLanguages } from '@/lib/i18n/locales';
 import { pickSources } from '@/lib/drillSources';
@@ -14,25 +15,25 @@ import { pickSources } from '@/lib/drillSources';
 // ============================================================
 
 export const metadata = {
-  title: "Seguimiento de Blanco Teletransportado – SkillDrills",
-  description: "Entrena seguimiento visual de blancos con inercia y teletransporte: mejora la reincorporacion sacadica rapida y persecucion suave gratis en el navegador.",
+  title: "Seguimiento de Blanco Teletransportado | SkillDrills",
+  description: "Practica seguimiento ocular, relocalización visual y sacadas rápidas cuando un objetivo cambia de posición y conserva su movimiento.",
   keywords: [
-    "seguimiento de blanco teletransportado",
-    "entrenamiento de punteria al teletransporte",
-    "reincorporacion sacadica ocular",
-    "seguimiento visual con inercia",
-    "ejercicio de sacadas oculares rapidas",
-    "movimiento sacadico de correccion",
-    "persecucion ocular suave",
-    "fijacion foveal rapida",
-    "reflejos visuales para shooters",
-    "coordinacion ojo raton teletransporte",
-    "control oculomotor dinamico",
-    "recuperacion de blanco visual"
+    "objetivo teletransportado seguimiento ocular",
+    "movimientos sacádicos seguimiento ocular",
+    "relocalización visual",
+    "sacadas oculares",
+    "fijación visual",
+    "seguimiento de objetivos",
+    "entrenamiento visual dinámico",
+    "objetivo móvil cambio repentino",
+    "ejercicio oculomotor online",
+    "entrenamiento de puntería con objetivo móvil",
+    "recaptura visual rápida",
+    "persecución ocular continua"
   ],
   openGraph: {
-    title: "Seguimiento de Blanco Teletransportado – SkillDrills",
-    description: "Entrena seguimiento visual de blancos con inercia y teletransporte: mejora la reincorporacion sacadica rapida y persecucion suave gratis en el navegador.",
+    title: "Seguimiento de Blanco Teletransportado | SkillDrills",
+    description: "Practica seguimiento ocular, relocalización visual y sacadas rápidas cuando un objetivo cambia de posición y conserva su movimiento.",
     type: "website",
     url: "https://skilldrills.online/es/drills/visual-tracking/momentum-teleport-pursuit",
     siteName: "SkillDrills",
@@ -40,8 +41,8 @@ export const metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Seguimiento de Blanco Teletransportado – SkillDrills",
-    description: "Entrena seguimiento visual de blancos con inercia y teletransporte: mejora la reincorporacion sacadica rapida y persecucion suave gratis en el navegador.",
+    title: "Seguimiento de Blanco Teletransportado | SkillDrills",
+    description: "Practica relocalización visual y sacadas rápidas cuando un objetivo cambia de posición y conserva su movimiento.",
   },
   robots: { index: true, follow: true },
   alternates: {
@@ -65,6 +66,7 @@ const softwareApplicationSchema = {
   "@context": "https://schema.org",
   "@type": "SoftwareApplication",
   "name": "Entrenamiento de Seguimiento de Blanco Teletransportado con Inercia",
+  "dateModified": "2026-09-20",
   "operatingSystem": "Navegador Web",
   "applicationCategory": "HealthApplication",
   "offers": {
@@ -79,9 +81,10 @@ const webAppSchema = {
   "@context": "https://schema.org",
   "@type": "WebApplication",
   "name": "Aplicación de Seguimiento de Blancos Teletransportados",
+  "dateModified": "2026-09-20",
   "url": "https://skilldrills.online/es/drills/visual-tracking/momentum-teleport-pursuit",
   "applicationCategory": "SportsApplication",
-  "operatingSystem": "Todos los navegadores modernos",
+  "operatingSystem": "Navegador",
   "browserRequirements": "Requiere compatibilidad con JavaScript y HTML5 Canvas"
 };
 
@@ -89,15 +92,17 @@ const videoGameSchema = {
   "@context": "https://schema.org",
   "@type": "VideoGame",
   "name": "Seguimiento de Blanco Teletransportado con Inercia",
+  "dateModified": "2026-09-20",
   "description": "Ejercicio visual de alta precisión donde blancos dinámicos saltan bruscamente de coordenadas conservando sus vectores de inercia y velocidad.",
   "genre": ["Entrenamiento de Puntería", "Evaluación Oculomotora", "Entrenamiento de Reflejos"],
-  "playMode": "SinglePlayer",
-  "gamePlatform": "Navegador Web"
+  "playMode": "Un jugador",
+  "gamePlatform": "Navegador"
 };
 
 const howToSchema = {
   "@context": "https://schema.org",
   "@type": "HowTo",
+  "dateModified": "2026-09-20",
   "name": "Cómo Entrenar la Reincorporación Sacádica con Blancos Teletransportados",
   "description": "Protocolo neurofisiológico estructurado para recapturar blancos con saltos espaciales conservando continuidad de movimiento foveal.",
   "step": [
@@ -131,6 +136,7 @@ const howToSchema = {
 const faqSchema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
+  "dateModified": "2026-09-20",
   "mainEntity": [
     {
       "@type": "Question",
@@ -185,7 +191,7 @@ const faqSchema = {
       "name": "¿Qué es la dismetría o error de aterrizaje sacádico?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Es el desvío por exceso (overshoot) o defecto (undershoot) respecto a la coordenada final, requiriendo una micro-sacada de ajuste. La práctica regular entrena la calibración cerebelar reduciendo dicho error."
+        "text": "Es el desvío por exceso o por defecto respecto a la coordenada final, requiriendo una microsacada de ajuste. La práctica regular permite observar si ese error disminuye con el tiempo."
       }
     },
     {
@@ -209,7 +215,7 @@ const faqSchema = {
       "name": "¿Cómo potencia la neuroplasticidad la práctica ocular repetitiva?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Coordinar de forma iterativa sacadas balísticas y persecución suave estimula el flóculo cerebelar y las vías corticoestriadas, incrementando la agudeza visual dinámica y la estabilidad del enfoque (Bahill et al., 1980)."
+        "text": "La repetición puede familiarizarte con la tarea, pero esta página no mide neuroplasticidad ni demuestra una mejora de agudeza o velocidad de reacción. Compara sesiones en las mismas condiciones y detente si aparece incomodidad."
       }
     }
   ]
@@ -218,15 +224,15 @@ const faqSchema = {
 const guideProps = {
   heading: "Directrices Científicas de Seguimiento Ocular con Inercia y Saltos Espaciales",
   intro: [
-    "En entornos dinámicos e interactivos, los objetivos rara vez siguen trayectorias lineales ininterrumpidas. Los rebotes súbitos, cambios de posición y oclusiones obligan al sistema visual humano a articular de manera coordinada dos subsistemas motores distintos: las sacadas balísticas para relocalizar el objetivo y la persecución suave continua para igualar su velocidad (Rashbass, 1961; Findlay & Walker, 1999).",
-    "El ejercicio de Seguimiento de Blanco Teletransportado aísla con exactitud esta dinámica neuromuscular. El blanco cambia de ubicación en un instante conservando su vector de inercia y dirección. Para dominar el ejercicio, los circuitos oculomotores deben lanzar una sacada correctora directa y sincronizar de inmediato la velocidad de persecución foveal al aterrizar sin oscilaciones intermedias (Bahill et al., 1980; Barnes, 2008).",
-    "La latencia de entrada y la cuantización de visualización en monitores estándar inciden en la precisión de reincorporación (Woods et al., 2015). Las métricas se procesan íntegramente en la memoria de tu navegador con plena privacidad."
+    "Cuando un objetivo cambia de posición de forma repentina, la mirada debe encontrarlo de nuevo y después seguir su movimiento. Una sacada es un salto rápido entre puntos de fijación; el seguimiento ocular es el movimiento continuo que acompaña a un objetivo. Este ejercicio practica la transición entre ambos y no es una prueba clínica.",
+    "El objetivo cambia de coordenada y conserva una indicación de movimiento. Observa si lo recuperas directamente o necesitas pequeñas correcciones antes de continuar. El resultado depende de la pantalla, la distancia, la velocidad y tu estado de atención.",
+    "La latencia de la pantalla puede cambiar el tiempo percibido, así que compara solo sesiones hechas con el mismo dispositivo y configuración. Las métricas se procesan en el navegador; baja la velocidad o detente ante dolor, visión doble, náusea o mareo."
   ],
   benchmarks: {
     title: "Métricas de Reincorporación Espacial y Sincronización de Inercia",
-    headers: ["Nivel de Rendimiento", "Latencia de Reincorporación (Foveación)", "Desvío de Aterrizaje (Overshoot)", "Sincronización Cinética (Ganancia)", "Perfil Neurofisiológico"],
+    headers: ["Nivel", "Tiempo para reencontrar el objetivo", "Desvío al llegar", "Sincronización del movimiento", "Lectura práctica"],
     rows: [
-      ["Élite (Pro-Aiming & Deportes)", "< 140 ms", "< 3% (bloqueo foveal exacto)", "97%+", "Precisión balística impecable. Transición instantánea a la persecución suave sin oscilaciones de búsqueda."],
+      ["Élite (Deporte y competición)", "< 140 ms", "< 3% (bloqueo foveal exacto)", "97%+", "Precisión balística impecable. Transición instantánea a la persecución suave sin oscilaciones de búsqueda."],
       ["Avanzado (Nivel Competitivo)", "140 – 180 ms", "3% – 6%", "91% – 96%", "Rápida recuperación espacial. Micro-sacada correctora mínima con alta fidelidad cinemática tras el aterrizaje."],
       ["Competente (Adulto Sano)", "181 – 240 ms", "7% – 14%", "80% – 90%", "Parámetro estándar saludable. Breve periodo refractario pos-sacádico seguido de persecución estable."],
       ["En Desarrollo", "241 – 320 ms", "15% – 24%", "68% – 79%", "Retraso perceptible en el salto ocular. Desvíos frecuentes por exceso requiriendo múltiples correcciones."],
@@ -273,12 +279,12 @@ const guideProps = {
   })),
   sources: pickSources('rashbass1961', 'bahill1980', 'findlay1999', 'krauzlis2004', 'barnes2008', 'woods2015'),
   related: [
-    { href: "/es/drills/visual-tracking/constant-slow-pursuit", label: "Seguimiento Ocular Suave Continuo (Constant Slow)" },
-    { href: "/es/drills/visual-tracking/directional-chaos-pursuit", label: "Seguimiento con Caos Direccional (Directional Chaos)" },
-    { href: "/es/drills/visual-tracking/dynamic-evasion-pursuit", label: "Persecución Evasiva Reactiva (Dynamic Evasion)" },
-    { href: "/es/drills/visual-tracking/ghosting-suppress-pursuit", label: "Estabilidad de Fijación Ocular (Ghosting Suppress)" },
-    { href: "/es/drills/visual-tracking/infinity-pursuit", label: "Ejercicio Ocular en Ocho Infinito (Infinity)" },
-    { href: "/es/drills/visual-tracking/predictive-pursuit", label: "Seguimiento Ocular Predictivo (Predictive)" }
+    { href: "/es/drills/visual-tracking/constant-slow-pursuit", label: "Seguimiento ocular suave continuo" },
+    { href: "/es/drills/visual-tracking/directional-chaos-pursuit", label: "Seguimiento con cambios de dirección" },
+    { href: "/es/drills/visual-tracking/dynamic-evasion-pursuit", label: "Persecución evasiva reactiva" },
+    { href: "/es/drills/visual-tracking/ghosting-suppress-pursuit", label: "Estabilidad de la fijación ocular" },
+    { href: "/es/drills/visual-tracking/infinity-pursuit", label: "Ejercicio ocular en ocho" },
+    { href: "/es/drills/visual-tracking/predictive-pursuit", label: "Seguimiento ocular predictivo" }
   ]
 };
 
@@ -294,9 +300,9 @@ export default function SpanishMomentumTeleportPage() {
 
       <MomentumTeleportPursuitClient
         copy={{
-          title: "Seguimiento de Blancos Teletransportados con Inercia",
-          subtitle: "Evaluación Oculomotora de Sacadas Balísticas y Reconexión de Persecución Suave",
-          description: "Entrenamiento visual avanzado para blancos que conservan vectores de velocidad y se teletransportan bruscamente en pantalla. Optimiza la alternancia rápida entre sacadas balísticas y persecución continua sin oscilaciones parásitas. Gratuito en el navegador."
+          title: "Seguimiento de Blanco Teletransportado",
+          subtitle: "Relocalización visual y seguimiento del movimiento",
+          description: "Encuentra de nuevo un objetivo que cambia de posición y retoma el seguimiento de su movimiento. Compara tiempo, precisión y comodidad sin convertir el resultado en un diagnóstico."
         }}
       />
 
@@ -305,6 +311,7 @@ export default function SpanishMomentumTeleportPage() {
       <div className="max-w-6xl mx-auto px-4 pb-12">
         <RelatedDrills currentCategory="visual-tracking" currentHref="https://skilldrills.online/es/drills/visual-tracking/momentum-teleport-pursuit" />
       </div>
+      <DrillFooter />
     </>
   );
 }

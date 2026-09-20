@@ -353,9 +353,8 @@ export default function TargetPrioritizationPage() {
           aboutText: "Target prioritization is choosing which threat to shoot while holding fire on everything else. Stopping an action you have already started is its own process, racing the one that launched it (Logan & Cowan, 1984) — which is why cancelling a shot is harder than taking one."
         }}
       />
-      <DrillGuide guide={targetPrioritizationGuide} />
+      <DrillGuide guide={targetPrioritizationGuide} singleLineTitles />
       <DrillFooter />
     </>
   );
 }
-

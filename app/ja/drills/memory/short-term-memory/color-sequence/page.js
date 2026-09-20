@@ -21,9 +21,13 @@ import { getAlternateLanguages } from '@/lib/i18n/locales';
 // ============================================================
 
 export const metadata = {
-  title: 'サイモンゲーム – 無料オンライン色と順番の記憶力テスト | SkillDrills',
-  description: '無料のオンラインサイモンゲーム（Simon Game）。光る色の順番を記憶して再現し、視覚的ワーキングメモリと短期記憶容量を測定・強化。ブラウザですぐにプレイ。',
+  title: 'サイモンゲーム｜色順番記憶 | SkillDrills',
+  description: '無料のサイモンゲーム。光る色と音の順番を覚え、同じ順序でタップして視覚ワーキングメモリを鍛えます。',
   keywords: [
+    'サイモンゲーム',
+    '色と順番の記憶',
+    '色順番記憶',
+    '記憶力ゲーム',
     'サイモンゲーム オンライン',
     '色 記憶 ゲーム',
     '順番 記憶 テスト',
@@ -46,8 +50,8 @@ export const metadata = {
     follow: true,
   },
   openGraph: {
-    title: 'サイモンゲーム – 無料オンライン色と順番の記憶力テスト | SkillDrills',
-    description: '無料のオンラインサイモンゲーム（Simon Game）。光る色の順番を記憶して再現し、視覚的ワーキングメモリと短期記憶容量を測定・強化。ブラウザですぐにプレイ。',
+    title: 'サイモンゲーム｜色順番記憶 | SkillDrills',
+    description: '無料のサイモンゲーム。光る色と音の順番を覚え、同じ順序でタップして視覚ワーキングメモリを鍛えます。',
     url: 'https://skilldrills.online/ja/drills/memory/short-term-memory/color-sequence',
     siteName: 'SkillDrills',
     locale: 'ja_JP',
@@ -55,14 +59,14 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'サイモンゲーム – 無料オンライン色と順番の記憶力テスト | SkillDrills',
-    description: '無料のオンラインサイモンゲーム（Simon Game）。光る色の順番を記憶して再現し、視覚的ワーキングメモリと短期記憶容量を測定・強化。ブラウザですぐにプレイ。',
+    title: 'サイモンゲーム｜色順番記憶 | SkillDrills',
+    description: '無料のサイモンゲーム。光る色と音の順番を覚え、同じ順序でタップして視覚ワーキングメモリを鍛えます。',
   },
 };
 
 const copyJa = {
   title: 'サイモンゲーム',
-  subtitle: '色と順番の記憶力＆視覚ワーキングメモリ測定',
+  subtitle: '光る色の順番を覚えて同じ順序でタップ',
   caption: '点灯する色の順番と音を集中して記憶し、同じ順番でタップして再現。ラウンドごとに長くなるシーケンスに挑戦。',
   statScore: 'スコア',
   statTime: '残り時間',
@@ -111,6 +115,7 @@ export default function JapaneseColorSequencePage() {
     operatingSystem: 'Web Browser',
     dateModified: '2026-09-15',
     offers: { '@type': 'Offer', price: '0', priceCurrency: 'JPY' },
+    sameAs: ['https://en.wikipedia.org/wiki/Simon_%28game%29'],
     description: '無料のオンラインサイモンゲーム。視覚的ワーキングメモリ容量、連続パターン符号化、チャンキング戦略、瞬間的注意力の上限を測定・鍛練します。',
     genre: 'Cognitive Training / Visual Working Memory',
     url: 'https://skilldrills.online/ja/drills/memory/short-term-memory/color-sequence',

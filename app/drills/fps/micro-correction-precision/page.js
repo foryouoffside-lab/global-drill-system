@@ -358,7 +358,7 @@ export default function MicroCorrectionPage() {
         }}
       />
 
-      <DrillGuide guide={microCorrectionGuide} />
+      <DrillGuide guide={microCorrectionGuide} singleLineTitles />
       <DrillFooter />
     </>
   );

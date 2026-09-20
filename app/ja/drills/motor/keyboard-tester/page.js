@@ -5,27 +5,23 @@ import DrillGuide from '@/components/drill/DrillGuide';
 import RelatedDrills from '@/components/drill/RelatedDrills';
 
 export const metadata = {
-  title: 'キーボードテスト – オンラインで全キー動作確認・チャタリング検査 | SkillDrills',
-  description:
-    'ブラウザ上で今すぐ使える無料キーボードテスト。キーの反応・チャタリング（二重入力）・Nキーロールオーバー（同時押し）・故障をインストール不要で即座に診断します。日本語配列（JIS）対応。',
+  title: 'キーボードテスト｜キー動作・チャタリング検査 | SkillDrills',
+  description: '無料のキーボードテストでキーの反応、チャタリング、同時押し、JIS配列をブラウザで確認します。',
   keywords: [
     'キーボードテスト',
-    'キーボード テスト',
-    'キーボードテスト 日本語配列',
-    'キーボードチェック',
-    'キーボードチェッカー',
+    'キーボード 動作確認',
+    'キー入力テスト',
+    'チャタリング検査',
+    '同時押しテスト',
+    'キーロールオーバー',
+    'JISキーボード テスト',
+    'キーが反応しない',
+    'キーボード ゴースト対策',
     'キーボード検査',
-    'キーボードテスト オンライン',
-    'キーボード 入力 テスト',
-    'キーボード チャタリング テスト',
-    'キーボード 同時押し テスト',
-    'キー入力 確認',
-    'ノートパソコン キーボード テスト',
   ],
   openGraph: {
-    title: 'キーボードテスト – オンラインで全キー動作確認・チャタリング検査 | SkillDrills',
-    description:
-      'ブラウザ上で今すぐ使える無料キーボードテスト。キーの反応・チャタリング（二重入力）・Nキーロールオーバー（同時押し）・故障を即座に診断。日本語配列（JIS）対応。',
+    title: 'キーボードテスト｜キー動作・チャタリング検査 | SkillDrills',
+    description: '無料ブラウザでキーの反応、チャタリング、同時押しを診断。JIS配列にも対応します。',
     type: 'article',
     url: 'https://skilldrills.online/ja/drills/motor/keyboard-tester',
     siteName: 'SkillDrills',
@@ -33,9 +29,8 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'キーボードテスト – オンラインで全キー動作確認・チャタリング検査 | SkillDrills',
-    description:
-      'ブラウザ上で今すぐ使える無料キーボードテスト。キーの反応・チャタリング（二重入力）・Nキーロールオーバー（同時押し）・故障を即座に診断。日本語配列（JIS）対応。',
+    title: 'キーボードテスト｜キー動作・チャタリング検査 | SkillDrills',
+    description: 'ブラウザの無料キーボードテスト。キー入力と同時押しの不具合を確認できます。',
   },
   robots: { index: true, follow: true },
   alternates: {
@@ -132,30 +127,32 @@ const webApplicationSchema = {
   url: 'https://skilldrills.online/ja/drills/motor/keyboard-tester',
   publisher: { '@type': 'Organization', name: 'SkillDrills', url: 'https://skilldrills.online' },
   inLanguage: 'ja-JP',
-  dateModified: '2026-09-11',
+  dateModified: '2026-09-20',
 };
 
 
 const softwareSchema = {
   '@context': 'https://schema.org',
   '@type': 'SoftwareApplication',
+  inLanguage: 'ja-JP',
   name: 'キーボードテスト (Keyboard Tester Online)',
   applicationCategory: 'UtilitiesApplication',
   operatingSystem: 'Web Browser',
   offers: { '@type': 'Offer', price: '0', priceCurrency: 'JPY' },
   description: 'ブラウザ上で動作する無料キーボードテストツール。JIS日本語配列対応、チャタリング検出、同時押し確認。',
   url: 'https://skilldrills.online/ja/drills/motor/keyboard-tester',
-  dateModified: '2026-09-11',
+  dateModified: '2026-09-20',
   publisher: { '@type': 'Organization', name: 'SkillDrills', url: 'https://skilldrills.online' }
 };
 
 const videoGameSchema = {
   '@context': 'https://schema.org',
   '@type': 'VideoGame',
+  inLanguage: 'ja-JP',
   name: 'キーボードテスト & キーロールオーバー確認ツール',
   url: 'https://skilldrills.online/ja/drills/motor/keyboard-tester',
   description: '全キーの動作確認とNキーロールオーバーをブラウザで診断するWebアプリ。',
-  dateModified: '2026-09-11',
+  dateModified: '2026-09-20',
   gamePlatform: 'Web Browser',
   genre: ['キーボードテスト', 'ユーティリティ', 'ハードウェア診断'],
   playMode: 'SinglePlayer',
@@ -167,6 +164,7 @@ const videoGameSchema = {
 const howToSchema = {
   '@context': 'https://schema.org',
   '@type': 'HowTo',
+  inLanguage: 'ja-JP',
   name: 'オンラインキーボードテストの4つの診断手順',
   description: 'キーの反応確認、チャタリングの検出、同時押しロールオーバーの診断手順。',
   step: [
@@ -204,6 +202,8 @@ const howToSchema = {
 const faqSchema = {
   '@context': 'https://schema.org',
   '@type': 'FAQPage',
+  inLanguage: 'ja-JP',
+  dateModified: '2026-09-20',
   mainEntity: [
     {
       '@type': 'Question',
@@ -242,7 +242,7 @@ const faqSchema = {
 
 const JAPANESE_COPY = {
   title: 'キーボードテスト',
-  subtitle: '無料オンライン キーボード動作確認・チャタリング検査 (JIS日本語配列対応)',
+  subtitle: 'キー動作・チャタリング・同時押し検査',
   intro:
     'キーボードのすべてのキーを押してテストしてください。入力が認識されたキーはリアルタイムで点灯し、正常に動作したキーは緑色のまま保持されます。何度押しても反応しないキーは、スイッチの故障や接触不良の可能性があります。個人情報の送信や保存は一切行われません。',
   keysConfirmed: '確認済みキー',

@@ -6,7 +6,7 @@ import { pickSources } from '@/lib/drillSources';
 
 // ============================================================
 // SEO RESEARCH FINDINGS — Japan (JP / JA)
-// Primary Intent: エイム 安定させる, マウス 安定性 テスト, エイム ぶれ 矯正, リコイル 練習 ブラウザ
+// Native SERP intent: エイム練習 ブラウザ, エイム安定 練習, マウス 安定性 テスト, リコイル 制御 練習
 // Target Queries:
 //   - "エイム 安定 練習 ブラウザ" (Aim stability browser practice)
 //   - "マウス 安定性 テスト" (Mouse stability test online)
@@ -17,27 +17,27 @@ import { pickSources } from '@/lib/drillSources';
 // ============================================================
 
 export const metadata = {
-  title: "エイム安定化・マウスブレ矯正テスト – 無料姿勢制御＆反動制御練習 | SkillDrills",
-  description: "無料オンラインマウス安定性テスト。不規則な風圧・外力ベクトルに抗してレティクルを中央サークル内に維持し、FPSの反動制御（リコイル）と手ブレ抑制・平衡感覚を科学的に鍛えます。",
+  title: "エイム安定化｜マウス安定性テスト | SkillDrills",
+  description: "無料ブラウザのエイム練習。外力で動くレティクルを中央に保ち、手ブレ・リコイル制御とマウス安定性を鍛えます。",
   keywords: [
-    "エイム 安定 練習 ブラウザ",
+    "エイム練習 ブラウザ",
+    "エイム安定 練習",
     "マウス 安定性 テスト",
     "エイム ぶれ 矯正",
-    "valorant エイム 安定",
-    "リコイル 練習 ブラウザ",
-    "マウス 手ブレ 補正 fps",
-    "平衡感覚 テスト オンライン",
+    "リコイル 制御 練習",
+    "マウス 手ブレ 補正",
+    "レティクル 安定",
     "反動制御 練習",
-    "エイム 安定させる",
-    "外力抵抗 エイム練習"
+    "エイム 安定化",
+    "FPS エイム 練習"
   ],
   alternates: {
     canonical: 'https://skilldrills.online/ja/drills/physical/balance-training/stability-challenge',
     languages: getAlternateLanguages('/drills/physical/balance-training/stability-challenge'),
   },
   openGraph: {
-    title: "エイム安定化・マウスブレ矯正テスト – 無料姿勢制御＆反動制御練習 | SkillDrills",
-    description: "無料オンラインマウス安定性テスト。不規則な風圧・外力ベクトルに抗してレティクルを中央サークル内に維持し、FPSの反動制御（リコイル）と手ブレ抑制・平衡感覚を科学的に鍛えます。",
+    title: "エイム安定化｜マウス安定性テスト | SkillDrills",
+    description: "動くレティクルを中央に保つ無料のブラウザ練習。手ブレ、リコイル制御、マウスの安定性を確認できます。",
     url: 'https://skilldrills.online/ja/drills/physical/balance-training/stability-challenge',
     siteName: 'SkillDrills',
     locale: 'ja_JP',
@@ -45,8 +45,8 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: "エイム安定化・マウスブレ矯正テスト – 無料姿勢制御＆反動制御練習 | SkillDrills",
-    description: "無料オンラインマウス安定性テスト。不規則な風圧・外力ベクトルに抗してレティクルを中央サークル内に維持し、FPSの反動制御（リコイル）と手ブレ抑制・平衡感覚を科学的に鍛えます。",
+    title: "エイム安定化｜マウス安定性テスト | SkillDrills",
+    description: "動くレティクルを中央に保つ無料のブラウザ練習。手ブレ、リコイル制御、マウスの安定性を確認できます。",
   },
   robots: { index: true, follow: true },
 };
@@ -101,7 +101,7 @@ const softwareApplicationSchema = {
     "url": "https://skilldrills.online/ja"
   },
   "inLanguage": "ja",
-  "dateModified": "2026-09-12"
+  "dateModified": "2026-09-20"
 };
 
 const webApplicationSchema = {
@@ -118,7 +118,7 @@ const webApplicationSchema = {
   },
   "url": "https://skilldrills.online/ja/drills/physical/balance-training/stability-challenge",
   "inLanguage": "ja",
-  "dateModified": "2026-09-12"
+  "dateModified": "2026-09-20"
 };
 
 const videoGameSchema = {
@@ -142,13 +142,16 @@ const videoGameSchema = {
     "@type": "Offer",
     "price": "0",
     "priceCurrency": "USD"
-  }
+  },
+  "inLanguage": "ja",
+  "dateModified": "2026-09-20"
 };
 
 const faqSchema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
-  "dateModified": "2026-09-12",
+  "inLanguage": "ja",
+  "dateModified": "2026-09-20",
   "mainEntity": [
     {
       "@type": "Question",
@@ -363,8 +366,8 @@ export default function StabilityChallengeJaPage() {
       />
       <StabilityChallengeClient
         copy={{
-          title: "エイム安定化・マウスブレ矯正テスト",
-          subtitle: "外力ベクトル相殺＆レティクル微細制動トレーニング",
+          title: "エイム安定化テスト",
+          subtitle: "レティクルを中央に保ち、手ブレを抑える",
           rules: [
             { title: "中央セーフゾーンの死守", text: "ランダムに押し寄せる外力（風圧抵抗）に抗い、照準を中央のセーフリング内に維持してください。" },
             { title: "コンボ倍率加速システム", text: "セーフゾーン内でブレずに維持するほどコンボ倍率が最大3.0倍まで上昇し、スコアが加速します。" },

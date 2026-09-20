@@ -20,18 +20,18 @@ import { pickSources } from '@/lib/drillSources';
 // ============================================================
 
 export const metadata = {
-  title: "마우스 피하기 & 동체시력 테스트 게임 – 무료 주변시 회피 훈련 | SkillDrills",
-  description: "무료 온라인 마우스 피하기 및 동체시력 테스트 게임. 3x3 격자에서 번쩍이는 폭발 위험 구역을 주변시로 감지하고 안전 구역으로 즉각 플릭 회피하여 공간 반사신경과 탈출 반응속도를 과학적으로 단련합니다.",
+  title: "반응속도 테스트 게임 | 마우스 피하기 | SkillDrills",
+  description: "무료 반응속도 테스트 게임과 마우스 피하기 훈련. 3x3 격자의 위험 구역을 주변시로 감지하고 안전 칸으로 이동하며 반사신경을 단련합니다.",
   keywords: [
-    "마우스 피하기 게임",
-    "동체시력 테스트 게임",
-    "동체시력 반응속도 테스트",
+    "반응속도 테스트",
     "반응속도 테스트 게임",
+    "동체시력 테스트",
+    "동체시력 테스트 게임",
+    "마우스 피하기 게임",
+    "주변시 훈련",
     "주변시 훈련 게임",
-    "마우스 커서 피하기",
-    "위험 회피 반응 훈련",
-    "동체시력 훈련 사이트",
     "롤 스킬 피하기 훈련",
+    "위험 회피 반응 훈련",
     "공간 반사신경 테스트"
   ],
   alternates: {
@@ -39,8 +39,8 @@ export const metadata = {
     languages: getAlternateLanguages('/drills/physical/coordination/dynamic-grid-evasion'),
   },
   openGraph: {
-    title: "마우스 피하기 & 동체시력 테스트 게임 – 무료 주변시 회피 훈련 | SkillDrills",
-    description: "무료 온라인 마우스 피하기 및 동체시력 테스트 게임. 3x3 격자에서 번쩍이는 폭발 위험 구역을 주변시로 감지하고 안전 구역으로 즉각 플릭 회피하여 공간 반사신경과 탈출 반응속도를 과학적으로 단련합니다.",
+    title: "반응속도 테스트 게임 | 마우스 피하기 | SkillDrills",
+    description: "무료 반응속도 테스트 게임과 마우스 피하기 훈련. 3x3 격자의 위험 구역을 주변시로 감지하고 안전 칸으로 이동하며 반사신경을 단련합니다.",
     url: 'https://skilldrills.online/ko/drills/physical/coordination/dynamic-grid-evasion',
     siteName: 'SkillDrills',
     locale: 'ko_KR',
@@ -48,8 +48,8 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: "마우스 피하기 & 동체시력 테스트 게임 – 무료 주변시 회피 훈련 | SkillDrills",
-    description: "무료 온라인 마우스 피하기 및 동체시력 테스트 게임. 3x3 격자에서 번쩍이는 폭발 위험 구역을 주변시로 감지하고 안전 구역으로 즉각 플릭 회피하여 공간 반사신경과 탈출 반응속도를 과학적으로 단련합니다.",
+    title: "반응속도 테스트 게임 | 마우스 피하기 | SkillDrills",
+    description: "무료 반응속도 테스트 게임과 마우스 피하기 훈련. 3x3 격자의 위험 구역을 주변시로 감지하고 안전 칸으로 이동하며 반사신경을 단련합니다.",
   },
   robots: { index: true, follow: true },
 };
@@ -104,7 +104,7 @@ const softwareApplicationSchema = {
     "url": "https://skilldrills.online/ko"
   },
   "inLanguage": "ko",
-  "dateModified": "2026-09-12"
+  "dateModified": "2026-09-20"
 };
 
 const webApplicationSchema = {
@@ -121,7 +121,7 @@ const webApplicationSchema = {
   },
   "url": "https://skilldrills.online/ko/drills/physical/coordination/dynamic-grid-evasion",
   "inLanguage": "ko",
-  "dateModified": "2026-09-12"
+  "dateModified": "2026-09-20"
 };
 
 const videoGameSchema = {
@@ -142,6 +142,8 @@ const videoGameSchema = {
     "Mobile"
   ],
   "applicationCategory": "Game",
+  "inLanguage": "ko",
+  "dateModified": "2026-09-20",
   "offers": {
     "@type": "Offer",
     "price": "0",
@@ -152,7 +154,8 @@ const videoGameSchema = {
 const faqSchema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
-  "dateModified": "2026-09-12",
+  "inLanguage": "ko",
+  "dateModified": "2026-09-20",
   "mainEntity": [
     {
       "@type": "Question",
@@ -360,8 +363,8 @@ export default function DynamicGridEvasionPageKo() {
       />
       <DynamicGridEvasionClient
         copy={{
-          title: "마우스 피하기 & 동체시력 테스트",
-          subtitle: "3x3 격자 위험 구역 회피 및 주변시 반사 훈련 • 15레벨",
+          title: "반응속도 테스트 게임",
+          subtitle: "위험 구역을 피해 안전 칸으로 이동 • 15레벨",
           rulesTitle: "마우스 피하기 훈련 규칙 및 점수 체계",
           rules: [
             { title: "주황색 경고 펄스 감지", text: "매 웨이브마다 폭발이 임박한 위험 셀들이 주황색 테두리로 점멸합니다." },

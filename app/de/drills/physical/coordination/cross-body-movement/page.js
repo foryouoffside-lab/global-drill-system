@@ -19,27 +19,27 @@ import { pickSources } from '@/lib/drillSources';
 // ============================================================
 
 export const metadata = {
-  title: "Hand-Auge-Koordination Test – Koordination | SkillDrills",
-  description: "Kostenloser Hand-Auge-Koordinationstest online. Verbinde Nodes auf dem Bildschirm und trainiere bilaterale Koordination und diagonale Präzision im Browser.",
+  title: "Hand-Auge-Koordination Test | SkillDrills",
+  description: "Kostenloser Hand-Auge-Koordinationstest online. Verbinde diagonale Nodes über die Körpermitte und trainiere bilaterale Koordination sowie Mauspräzision.",
   keywords: [
     "Hand-Auge-Koordination Trainieren",
     "Hand-Auge-Koordination Test",
-    "Hand-Auge-Koordination Spiele Online",
+    "Hand-Auge-Koordination Spiel",
     "Auge-Hand-Koordination Übungen",
     "Bilaterale Koordination Übungen",
     "Feinmotorik Koordination Test",
-    "Mittellinien Überkreuzung Training",
-    "Koordinationstraining Maus",
-    "Diagonale Flicks Üben",
-    "Hand Auge Koordination Verbessern"
+    "Mittellinie Überkreuzen Übung",
+    "Koordinationstest online",
+    "Maus Koordination Training",
+    "Diagonale Mausbewegung"
   ],
   alternates: {
     canonical: 'https://skilldrills.online/de/drills/physical/coordination/cross-body-movement',
     languages: getAlternateLanguages('/drills/physical/coordination/cross-body-movement'),
   },
   openGraph: {
-    title: "Hand-Auge-Koordination Test – Koordination | SkillDrills",
-    description: "Kostenloser Hand-Auge-Koordinationstest online. Verbinde Nodes auf dem Bildschirm und trainiere bilaterale Koordination und diagonale Präzision im Browser.",
+    title: "Hand-Auge-Koordination Test | SkillDrills",
+    description: "Kostenloser Hand-Auge-Koordinationstest online. Verbinde diagonale Nodes über die Körpermitte und trainiere bilaterale Koordination sowie Mauspräzision.",
     url: 'https://skilldrills.online/de/drills/physical/coordination/cross-body-movement',
     siteName: 'SkillDrills',
     locale: 'de_DE',
@@ -47,8 +47,8 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: "Hand-Auge-Koordination Test – Koordination | SkillDrills",
-    description: "Kostenloser Hand-Auge-Koordinationstest online. Verbinde Nodes auf dem Bildschirm und trainiere bilaterale Koordination und diagonale Präzision im Browser.",
+    title: "Hand-Auge-Koordination Test | SkillDrills",
+    description: "Kostenloser Hand-Auge-Koordinationstest online. Verbinde diagonale Nodes über die Körpermitte und trainiere bilaterale Koordination sowie Mauspräzision.",
   },
   robots: { index: true, follow: true },
 };
@@ -103,7 +103,7 @@ const softwareApplicationSchema = {
     "url": "https://skilldrills.online/de"
   },
   "inLanguage": "de",
-  "dateModified": "2026-09-12"
+  "dateModified": "2026-09-20"
 };
 
 const webApplicationSchema = {
@@ -120,7 +120,7 @@ const webApplicationSchema = {
   },
   "url": "https://skilldrills.online/de/drills/physical/coordination/cross-body-movement",
   "inLanguage": "de",
-  "dateModified": "2026-09-12"
+  "dateModified": "2026-09-20"
 };
 
 const videoGameSchema = {
@@ -141,6 +141,8 @@ const videoGameSchema = {
     "Mobile"
   ],
   "applicationCategory": "Game",
+  "inLanguage": "de-DE",
+  "dateModified": "2026-09-20",
   "offers": {
     "@type": "Offer",
     "price": "0",
@@ -151,7 +153,8 @@ const videoGameSchema = {
 const faqSchema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
-  "dateModified": "2026-09-12",
+  "inLanguage": "de-DE",
+  "dateModified": "2026-09-20",
   "mainEntity": [
     {
       "@type": "Question",
@@ -359,8 +362,8 @@ export default function CrossBodyMovementPageDe() {
       />
       <CrossBodyMovementClient
         copy={{
-          title: "Hand-Auge-Koordination Test & Spiel",
-          subtitle: "Bilaterale Koordination & Mittellinien-Überkreuzung • 15 Level",
+          title: "Hand-Auge-Koordination Test",
+          subtitle: "Diagonale Kontrolle über die Körpermitte • 15 Level",
           rulesTitle: "Trainingsregeln & Punktesystem für Hand-Auge-Koordination",
           rules: [
             { title: "Startknoten A aktivieren", text: "Bewege den Cursor auf den cyanfarbenen Startknoten am Bildschirmrand, um den Verbindungsvektor zu initialisieren." },

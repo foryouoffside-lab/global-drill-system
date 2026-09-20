@@ -5,24 +5,19 @@ import RelatedDrills from '@/components/drill/RelatedDrills';
 import { pickSources } from '@/lib/drillSources';
 
 // ============================================================
-// SEO RESEARCH FINDINGS — ko-KR (n-back)
-// PRIMARY:  "n-back 연습 사이트"          — High intent Korean search (15 Google suggestions)
-//           "n-back 게임"                 — High volume query
-//           "n-back"                      — Base query
-// SECONDARY / LSI:
-//           "n-back 게임 연습 사이트"     — Long-tail high conversion query
-//           "n-back 훈련"                 — Practice query
-//           "듀얼 n-back"                 — Dual N-back query
-//           "작업기억 훈련"               — Cognitive domain query
+// Native research (2026-09-20): Bing ko-KR returned 0 exact / 0 broad for
+// "엔백 테스트" and "작업기억 테스트". Current Korean app results use
+// "듀얼 N-백", "작업기억력", and brain-training/game intent; no high-volume
+// or guaranteed-ranking claim is made.
 // ============================================================
 
 export const metadata = {
-  title: "N-Back 게임・작업기억 훈련 도구 – 듀얼 N-Back | SkillDrills",
-  description: "무료 온라인 N-Back 게임 및 연습 사이트. 연속 제시되는 문자 자극이 N단계 전과 일치하는지 판별하여 작업기억(Working Memory) 용량 갱신 능력과 유동성 지능을 뇌과학적으로 훈련하세요.",
-  keywords: ['n-back 연습 사이트', 'n-back 게임', 'n-back 게임 연습 사이트', '작업기억 훈련', '듀얼 n-back', 'n백 테스트', '작업기억력 테스트', '유동성 지능 훈련', '두뇌 인지 훈련', '작업기억 갱신', '집중력 기억력 검사', 'n-back 온라인'],
+  title: "듀얼 N-백 | 작업기억 훈련 게임 | SkillDrills",
+  description: "무료 듀얼 N-백 훈련 게임: N단계 전 자극을 비교하며 작업기억 갱신과 집중력을 브라우저에서 연습하세요.",
+  keywords: ['듀얼 N-백', 'N-백 게임', 'N-백 훈련', '작업기억력', '작업기억 훈련', '작업기억 갱신', 'N백 테스트', '두뇌 훈련 게임', '기억력 훈련', 'N-백 온라인'],
   openGraph: {
-    title: "N-Back 게임 및 연습 사이트 - 무료 작업기억 훈련 도구 | SkillDrills",
-    description: "무료 온라인 N-Back 게임 및 연습 사이트. 연속 제시되는 문자 자극이 N단계 전과 일치하는지 판별하여 작업기억(Working Memory) 용량 갱신 능력과 유동성 지능을 뇌과학적으로 훈련하세요.",
+    title: "듀얼 N-백 | 작업기억 훈련 게임 | SkillDrills",
+    description: "무료 듀얼 N-백 훈련 게임: N단계 전 자극을 비교하며 작업기억 갱신을 브라우저에서 연습하세요.",
     type: "website",
     url: "https://skilldrills.online/ko/drills/memory/working-memory/n-back",
     siteName: "SkillDrills",
@@ -30,8 +25,8 @@ export const metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "N-Back 게임 및 연습 사이트 - 무료 작업기억 훈련 도구 | SkillDrills",
-    description: "무료 온라인 N-Back 게임 및 연습 사이트. 연속 제시되는 문자 자극이 N단계 전과 일치하는지 판별하여 작업기억(Working Memory) 용량 갱신 능력과 유동성 지능을 뇌과학적으로 훈련하세요.",
+    title: "듀얼 N-백 | 작업기억 훈련 게임 | SkillDrills",
+    description: "무료 듀얼 N-백 훈련 게임: N단계 전 자극을 비교하며 작업기억 갱신을 브라우저에서 연습하세요.",
   },
   robots: { index: true, follow: true },
   alternates: {
@@ -60,6 +55,7 @@ const webAppSchema = {
   "operatingSystem": "All",
   "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
   "author": { "@type": "Organization", "name": "SkillDrills" },
+  "sameAs": "https://ko.wikipedia.org/wiki/N-back",
   "isAccessibleForFree": true,
   "dateModified": "2026-09-11",
   "educationalUse": ["작업기억 용량", "연속 정보 갱신", "실행 제어 기능", "유동성 지능"]
@@ -222,8 +218,9 @@ const faqSchema = {
 };
 
 const nBackClientCopyKo = {
-  h1Keyword: "N-Back 게임 및 연습 사이트",
-  h1Suffix: " (작업기억 훈련)",
+  h1Keyword: "듀얼 N-백",
+  h1Suffix: " 작업기억 게임",
+  subtitle: "N단계 전 자극을 비교하는 갱신 훈련",
   caption: "N-Back 과제는 현재 자극이 정확히 N단계 전에 제시된 것과 일치하는지 판별하는 신경인지 평가입니다. 배들리와 히치(Baddeley & Hitch, 1974)의 작업기억 모델에 근거하여 정보의 보관과 능동적 갱신을 동시에 요구합니다.",
   statScore: "점수",
   statTime: "남은 시간",
@@ -236,7 +233,7 @@ const nBackClientCopyKo = {
   btnMatch: "일치 (MATCH)",
   btnNoMatch: "불일치 (NO MATCH)",
   startTitle: "듀얼 N-Back 트레이닝 프로",
-  startSubtitle: "작업기억 용량 • 연속 정보 갱신 훈련",
+  startSubtitle: "작업기억 • 2-백",
   countdownSubtitle: "준비하세요",
   newBest: "최고 기록 달성",
   pointsLabel: "획득 점수",

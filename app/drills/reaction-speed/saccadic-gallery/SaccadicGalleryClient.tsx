@@ -15,13 +15,15 @@ import { getFpsScoreGrade, getComboMultiplier } from '../../../../lib/scoringEng
 import { getDifficultyProgress, getStartLevel, ramp } from '../../../../lib/drillDifficulty';
 import useDrillFlash from '../../../../lib/useDrillFlash';
 import useUnexpectedExitGuard from '../../../../lib/useUnexpectedExitGuard';
-import DrillFooter from '../../../../components/drill/DrillFooter';
 import DrillCountdown from '../../../../components/drill/DrillCountdown';
 import DrillAccordion from '../../../../components/drill/DrillAccordion';
 import DrillFlashOverlay from '../../../../components/drill/DrillFlashOverlay';
 import FpsStartCard from '../../../../components/drill/FpsStartCard';
 import DrillResultCard from '../../../../components/drill/DrillResultCard';
 import useImmersiveMode from '@/lib/useImmersiveMode';
+import { drawTacticalTarget, createHitRing, drawHitRings } from '@/lib/canvasFx';
+import { useTranslation } from '@/lib/i18n/useTranslation';
+import { SACCADIC_GALLERY_I18N } from '@/lib/i18n/drills/saccadicGallery';
 
 // ============================================================
 // TUNING CONSTANTS
@@ -74,10 +76,17 @@ const getLevelConfig = (level: number, combo = 0) => {
   };
 };
 
-type Particle = { x: number; y: number; vx: number; vy: number; color: string; life: number };
-type RingBurst = { x: number; y: number; startR: number; maxR: number; life: number; maxLife: number; color: string };
+const RULES_ITEMS = [
+  { num: '1', textKey: 'saccadicGallery.rule1Text', text: 'Hit Active Nodes', highlightKey: 'saccadicGallery.rule1Highlight', highlight: '+100 PTS', resultKey: 'saccadicGallery.rule1Result', result: '× Combo × Level bonus (+0.6s clock per hit)' },
+  { num: '2', textKey: 'saccadicGallery.rule2Text', text: 'Combo & Heat System', highlightKey: 'saccadicGallery.rule2Highlight', highlight: 'Up to 3.0x Multiplier', resultKey: 'saccadicGallery.rule2Result', result: 'Higher streaks speed up node jump cadence' },
+  { num: '3', textKey: 'saccadicGallery.rule3Text', text: 'Level Progression', highlightKey: 'saccadicGallery.rule3Highlight', highlight: 'Continuous Scaling', resultKey: 'saccadicGallery.rule3Result', result: 'Targets shrink and exposure windows shorten' },
+  { num: '4', textKey: 'saccadicGallery.rule4Text', text: 'Miss & Timeout Rules', highlightKey: 'saccadicGallery.rule4HighlightZero', highlight: 'Zero Penalties (Default)', resultKey: 'saccadicGallery.rule4ResultZero', result: 'Resets combo. Time penalty is opt-in via settings' },
+];
 
-export default function SaccadicGalleryClient({ copy }: { copy?: { title?: string } } = {}) {
+type Particle = { x: number; y: number; vx: number; vy: number; color: string; life: number };
+
+export default function SaccadicGalleryClient({ copy }: { copy?: { title?: string; subtitle?: string; caption?: string } } = {}) {
+  const { t } = useTranslation(SACCADIC_GALLERY_I18N);
   const [gameState, setGameState] = useState<'start' | 'countdown' | 'playing' | 'gameOver'>('start');
   const [isFullscreen, setIsFullscreen] = useState<boolean>(false);
   useImmersiveMode(isFullscreen); // locks the page behind while the drill fills the screen
@@ -119,6 +128,7 @@ export default function SaccadicGalleryClient({ copy }: { copy?: { title?: strin
   const countdownTimeoutsRef = useRef<NodeJS.Timeout[]>([]);
   const bestLevelRunRef = useRef(1);
   const lastTimeRef = useRef(DRILL_DURATION);
+  const mousePosRef = useRef<{ x: number; y: number; active: boolean }>({ x: 0, y: 0, active: false });
 
   const engine = useRef({
     score: 0,
@@ -132,7 +142,7 @@ export default function SaccadicGalleryClient({ copy }: { copy?: { title?: strin
     timeLeft: DRILL_DURATION,
     screenShake: 0,
     particles: [] as Particle[],
-    rings: [] as RingBurst[],
+    hitRings: [] as ReturnType<typeof createHitRing>[],
     target: {
       active: false,
       x: 0,
@@ -202,6 +212,26 @@ export default function SaccadicGalleryClient({ copy }: { copy?: { title?: strin
     active: gameState === 'playing' || gameState === 'countdown',
     onUnexpectedExit: handleExitDrill,
   });
+
+  // Handle direct escape key and fullscreenchange lifecycle
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'Escape' && (gameState === 'playing' || gameState === 'countdown')) {
+        handleExitDrill();
+      }
+    };
+    const handleFullscreenChange = () => {
+      if (!document.fullscreenElement && isFullscreen && (gameState === 'playing' || gameState === 'countdown')) {
+        handleExitDrill();
+      }
+    };
+    window.addEventListener('keydown', handleKeyDown);
+    document.addEventListener('fullscreenchange', handleFullscreenChange);
+    return () => {
+      window.removeEventListener('keydown', handleKeyDown);
+      document.removeEventListener('fullscreenchange', handleFullscreenChange);
+    };
+  }, [gameState, isFullscreen, handleExitDrill]);
 
   // Complete Drill Session cleanly
   const endGame = useCallback(() => {
@@ -311,6 +341,8 @@ export default function SaccadicGalleryClient({ copy }: { copy?: { title?: strin
     lastTimeRef.current = DRILL_DURATION;
     setIsNewBest(false);
 
+    mousePosRef.current = { x: 0, y: 0, active: false };
+
     engine.current = {
       score: 0,
       level: startLevel,
@@ -323,7 +355,7 @@ export default function SaccadicGalleryClient({ copy }: { copy?: { title?: strin
       timeLeft: DRILL_DURATION,
       screenShake: 0,
       particles: [],
-      rings: [],
+      hitRings: [],
       target: {
         active: false,
         x: 0, y: 0, radius: 24, spawnTime: 0, ttl: 1200, nodeIndex: -1
@@ -398,9 +430,9 @@ export default function SaccadicGalleryClient({ copy }: { copy?: { title?: strin
         setUiCombo(e.combo);
         drillAudio.playHit();
 
-        // Particles explosion (colored to match the target's own rendered body)
-        const hitColor = TARGET_FILL_COLOR;
-        for (let i = 0; i < 10; i++) {
+        // Particles explosion (14 particles with combo color shift)
+        const hitColor = e.combo >= 10 ? '#34d399' : e.combo >= 5 ? '#f59e0b' : TARGET_FILL_COLOR;
+        for (let i = 0; i < 14; i++) {
           const angle = Math.random() * Math.PI * 2;
           const spd = 2 + Math.random() * 4;
           e.particles.push({
@@ -413,16 +445,8 @@ export default function SaccadicGalleryClient({ copy }: { copy?: { title?: strin
           });
         }
 
-        // Ring Burst Effect
-        e.rings.push({
-          x: e.target.x,
-          y: e.target.y,
-          startR: e.target.radius * 0.4,
-          maxR: e.target.radius * 2.6,
-          life: 0.28,
-          maxLife: 0.28,
-          color: hitColor
-        });
+        // Ring Burst Effect (canonical dual expanding rings)
+        e.hitRings.push(createHitRing(e.target.x, e.target.y, e.target.radius, hitColor));
 
         e.target.active = false;
         const delay = config.spawnDelayMin + Math.random() * (config.spawnDelayMax - config.spawnDelayMin);
@@ -566,78 +590,11 @@ export default function SaccadicGalleryClient({ copy }: { copy?: { title?: strin
 
       // Draw active target
       if (e.target.active) {
-        const t = e.target;
-        const r = t.radius;
-        const remaining = Math.max(0, 1 - (now - t.spawnTime) / t.ttl);
-        ctx.save();
-
-        // Depleting countdown ring
-        ctx.globalAlpha = 0.5;
-        ctx.strokeStyle = remaining < 0.3 ? '#ef4444' : '#ffffff';
-        ctx.lineWidth = 2;
-        ctx.beginPath();
-        ctx.arc(t.x, t.y, r + 8, -Math.PI / 2, -Math.PI / 2 + remaining * Math.PI * 2);
-        ctx.stroke();
-
-        // Ghost outer ring
-        ctx.globalAlpha = 0.2;
-        ctx.strokeStyle = '#ef4444';
-        ctx.lineWidth = 1.0;
-        ctx.beginPath();
-        ctx.arc(t.x, t.y, r + 5, 0, Math.PI * 2);
-        ctx.stroke();
-
-        // Tactical outer ring
-        ctx.globalAlpha = 0.55;
-        ctx.strokeStyle = '#ef4444';
-        ctx.lineWidth = 1.8;
-        ctx.beginPath();
-        ctx.arc(t.x, t.y, r, 0, Math.PI * 2);
-        ctx.stroke();
-
-        // Filled red body with subtle glow
-        ctx.globalAlpha = 0.88;
-        ctx.shadowColor = TARGET_FILL_COLOR;
-        ctx.shadowBlur = 14;
-        ctx.fillStyle = TARGET_FILL_COLOR;
-        ctx.beginPath();
-        ctx.arc(t.x, t.y, r * 0.82, 0, Math.PI * 2);
-        ctx.fill();
-        ctx.shadowBlur = 0;
-
-        // Highlight sheen
-        ctx.globalAlpha = 0.3;
-        ctx.fillStyle = '#ffffff';
-        ctx.beginPath();
-        ctx.arc(t.x - r * 0.2, t.y - r * 0.2, r * 0.28, 0, Math.PI * 2);
-        ctx.fill();
-
-        // Bright white center core
-        ctx.globalAlpha = 1.0;
-        ctx.fillStyle = '#ffffff';
-        ctx.beginPath();
-        ctx.arc(t.x, t.y, Math.max(2.5, r * 0.18), 0, Math.PI * 2);
-        ctx.fill();
-
-        ctx.restore();
+        drawTacticalTarget(ctx, e.target.x, e.target.y, e.target.radius, TARGET_FILL_COLOR);
       }
 
       // Ring Bursts Draw
-      for (let i = e.rings.length - 1; i >= 0; i--) {
-        const ring = e.rings[i];
-        ring.life -= dt;
-        if (ring.life <= 0) { e.rings.splice(i, 1); continue; }
-        const progress = 1 - ring.life / ring.maxLife;
-        const currentR = ring.startR + (ring.maxR - ring.startR) * progress;
-        ctx.save();
-        ctx.globalAlpha = (ring.life / ring.maxLife) * 0.75;
-        ctx.strokeStyle = ring.color;
-        ctx.lineWidth = 2.5;
-        ctx.beginPath();
-        ctx.arc(ring.x, ring.y, currentR, 0, Math.PI * 2);
-        ctx.stroke();
-        ctx.restore();
-      }
+      drawHitRings(ctx, e.hitRings, dt);
 
       // Particles Update & Draw
       for (let i = e.particles.length - 1; i >= 0; i--) {
@@ -656,6 +613,31 @@ export default function SaccadicGalleryClient({ copy }: { copy?: { title?: strin
         ctx.fill();
       }
       ctx.globalAlpha = 1.0;
+
+      // Tactical Pro White Crosshair
+      if (mousePosRef.current.active && gameState === 'playing') {
+        const { x: mx, y: my } = mousePosRef.current;
+        ctx.save();
+        ctx.shadowColor = 'rgba(0, 0, 0, 0.9)';
+        ctx.shadowBlur = 3;
+        ctx.strokeStyle = '#ffffff';
+        ctx.lineWidth = 1.5;
+
+        // 4 crosshair arms: 14px outer, 4px inner gap
+        ctx.beginPath();
+        ctx.moveTo(mx, my - 14); ctx.lineTo(mx, my - 4);
+        ctx.moveTo(mx, my + 4);  ctx.lineTo(mx, my + 14);
+        ctx.moveTo(mx - 14, my); ctx.lineTo(mx - 4, my);
+        ctx.moveTo(mx + 4, my);  ctx.lineTo(mx + 14, my);
+        ctx.stroke();
+
+        // Center dot
+        ctx.fillStyle = '#ffffff';
+        ctx.beginPath();
+        ctx.arc(mx, my, 2, 0, Math.PI * 2);
+        ctx.fill();
+        ctx.restore();
+      }
 
       ctx.restore();
       animationRef.current = requestAnimationFrame(draw);
@@ -677,7 +659,7 @@ export default function SaccadicGalleryClient({ copy }: { copy?: { title?: strin
         score: uiScore,
         accuracy: analytics.accuracy,
         speed: analytics.avgReactionTime,
-        drillName: 'Saccadic Gallery',
+        drillName: t('saccadicGallery.title', 'Saccadic Eye Exercises'),
         rank: analytics.grade?.letter || 'A',
         rankName: analytics.grade?.label || 'ELITE REFLEX',
         playerName: getPlayerName(),
@@ -687,20 +669,21 @@ export default function SaccadicGalleryClient({ copy }: { copy?: { title?: strin
       });
 
       await shareScoreCard(canvas, {
-        title: 'Saccadic Gallery — My Score',
-        text: `I scored ${uiScore} (Grade: ${analytics.grade?.letter || 'A'}, Lv. ${analytics.finalLevel}) on Saccadic Gallery at SkillDrills!`,
+        title: t('saccadicGallery.scoreShareTitle', 'Saccadic Gallery — My Score'),
+        text: t('saccadicGallery.scoreShareText', 'I scored {score} (Grade: {grade}, Lv. {level}) on Saccadic Gallery at SkillDrills!')
+          .replace('{score}', String(uiScore)).replace('{grade}', analytics.grade?.letter || 'A').replace('{level}', String(analytics.finalLevel)),
         url
       });
     } catch (err) {
       if (navigator.share) {
         navigator.share({
-          title: 'Saccadic Gallery',
-          text: `I scored ${uiScore} on Saccadic Gallery! Can you beat my score?`,
+          title: t('saccadicGallery.scoreShareTitleShort', 'Saccadic Gallery'),
+          text: t('saccadicGallery.scoreShareTextShort', 'I scored {score} on Saccadic Gallery! Can you beat my score?').replace('{score}', String(uiScore)),
           url
         }).catch(() => {});
       }
     }
-  }, [uiScore, analytics]);
+  }, [uiScore, analytics, t]);
 
   return (
     <div className="min-h-screen bg-[#050508] text-white flex flex-col font-sans select-none">
@@ -708,7 +691,7 @@ export default function SaccadicGalleryClient({ copy }: { copy?: { title?: strin
       {/* Mobile Orientation Alert */}
       {isMobile && isPortrait && (
         <div className="w-full bg-amber-500/10 border-b border-amber-500/20 px-4 py-2 text-center text-xs text-amber-300 flex items-center justify-center gap-2">
-          <span>Rotate to landscape mode for a wider saccadic eye sweep field.</span>
+          <span>{t('saccadicGallery.rotateLandscape', 'Rotate to landscape mode for a wider visual sweep field.')}</span>
         </div>
       )}
 
@@ -719,10 +702,10 @@ export default function SaccadicGalleryClient({ copy }: { copy?: { title?: strin
         {!isFullscreen && (
           <div className="flex flex-col gap-1">
             <h1 className="text-2xl sm:text-3xl font-black tracking-tight text-white">
-              <span data-seo-kw="1">{copy?.title || "Saccadic Eye Exercises"}</span>
+              <span data-seo-kw="1">{copy?.title || t('saccadicGallery.title', 'Saccadic Eye Exercises')}</span>
             </h1>
             <p className="text-[13px] text-slate-400 leading-relaxed">
-              A saccade is a rapid jump of both eyes between fixation points, reaching 200&ndash;700&deg;/s and lasting 20&ndash;40&nbsp;ms &mdash; among the fastest movements the human body produces (Rayner, 1998). These exercises train how quickly and accurately you make them.
+              {copy?.caption || t('saccadicGallery.caption', 'Shift your gaze between targets quickly and click each one with precision.')}
             </p>
           </div>
         )}
@@ -731,10 +714,10 @@ export default function SaccadicGalleryClient({ copy }: { copy?: { title?: strin
         {!isFullscreen && (
           <div className="grid grid-cols-4 gap-2 w-full -mb-2">
             {[
-              { label: 'Score', value: uiScore, color: 'text-red-400' },
-              { label: 'Time', value: `${uiTimeLeft}s`, color: uiTimeLeft <= 10 ? 'text-red-400 animate-pulse' : 'text-white' },
-              { label: 'Level', value: `L${uiLevel}`, color: 'text-indigo-400' },
-              { label: 'Best Score', value: bestScore, color: 'text-amber-400' },
+              { label: t('saccadicGallery.score', 'Score'), value: uiScore, color: 'text-red-400' },
+              { label: t('saccadicGallery.time', 'Time'), value: `${uiTimeLeft}s`, color: uiTimeLeft <= 10 ? 'text-red-400 animate-pulse' : 'text-white' },
+              { label: t('saccadicGallery.level', 'Level'), value: `L${uiLevel}`, color: 'text-indigo-400' },
+              { label: t('saccadicGallery.bestScore', 'Best Score'), value: bestScore, color: 'text-amber-400' },
             ].map(card => (
               <div key={card.label} className="border border-white/[0.06] bg-white/[0.015] px-2 py-2 rounded-xl text-center">
                 <div className="text-[10px] font-bold tracking-wider uppercase text-slate-500">{card.label}</div>
@@ -758,11 +741,11 @@ export default function SaccadicGalleryClient({ copy }: { copy?: { title?: strin
           {(gameState === 'playing' || gameState === 'countdown') && (
             <>
               <div className="absolute top-4 left-4 z-30 pointer-events-none flex flex-col">
-                <p className="text-[10px] font-semibold uppercase tracking-wider text-white/50">Score</p>
+                <p className="text-[10px] font-semibold uppercase tracking-wider text-white/50">{t('saccadicGallery.score', 'Score')}</p>
                 <p className="text-2xl sm:text-3xl font-black text-white tabular-nums leading-tight">{uiScore}</p>
               </div>
               <div className="absolute top-4 right-4 z-30 pointer-events-none text-right">
-                <p className="text-[10px] font-semibold uppercase tracking-wider text-white/50">Time Left</p>
+                <p className="text-[10px] font-semibold uppercase tracking-wider text-white/50">{t('saccadicGallery.timeLeft', 'Time Left')}</p>
                 <p className={`text-2xl sm:text-3xl font-black tabular-nums leading-tight ${uiTimeLeft <= 10 ? 'text-red-400 animate-pulse' : 'text-white'}`}>{uiTimeLeft}s</p>
               </div>
             </>
@@ -781,7 +764,7 @@ export default function SaccadicGalleryClient({ copy }: { copy?: { title?: strin
                   });
                 }}
                 className="p-2.5 rounded-full bg-black/60 border border-white/10 text-slate-400 hover:text-white transition-colors cursor-pointer"
-                title="Toggle Miss Flash"
+                title={t('saccadicGallery.toggleMissFlash', 'Toggle Miss Flash')}
               >
                 {flashEnabled ? <Zap className="w-4 h-4 text-red-400" /> : <ZapOff className="w-4 h-4 text-slate-500" />}
               </button>
@@ -795,7 +778,7 @@ export default function SaccadicGalleryClient({ copy }: { copy?: { title?: strin
                   });
                 }}
                 className="p-2.5 rounded-full bg-black/60 border border-white/10 text-slate-400 hover:text-white transition-colors cursor-pointer"
-                title="Toggle Sound"
+                title={t('saccadicGallery.toggleSound', 'Toggle Sound')}
               >
                 {soundEnabled ? <Volume2 className="w-4 h-4 text-red-400" /> : <VolumeX className="w-4 h-4 text-slate-500" />}
               </button>
@@ -805,8 +788,19 @@ export default function SaccadicGalleryClient({ copy }: { copy?: { title?: strin
           {/* CANVAS */}
           <canvas 
             ref={canvasRef} 
-            onPointerDown={(e) => handleCanvasInteraction(e.clientX, e.clientY)}
-            className="block absolute top-0 left-0 w-full h-full z-10 cursor-crosshair touch-none" 
+            onPointerDown={(e) => {
+              const rect = e.currentTarget.getBoundingClientRect();
+              mousePosRef.current = { x: e.clientX - rect.left, y: e.clientY - rect.top, active: true };
+              handleCanvasInteraction(e.clientX, e.clientY);
+            }}
+            onPointerMove={(e) => {
+              const rect = e.currentTarget.getBoundingClientRect();
+              mousePosRef.current = { x: e.clientX - rect.left, y: e.clientY - rect.top, active: true };
+            }}
+            onPointerLeave={() => {
+              mousePosRef.current.active = false;
+            }}
+            className={`block absolute top-0 left-0 w-full h-full z-10 touch-none ${gameState === 'playing' ? 'cursor-none' : 'cursor-crosshair'}`}
           />
 
           {/* START CARD */}
@@ -814,8 +808,8 @@ export default function SaccadicGalleryClient({ copy }: { copy?: { title?: strin
             <FpsStartCard
               icon={Target}
               accent="red"
-              title="Saccadic Gallery"
-              subtitle="Ballistic Eye Shifts • Rapid Acquisition"
+              title={copy?.title || t('saccadicGallery.title', 'Saccadic Eye Exercises')}
+              subtitle={copy?.subtitle || t('saccadicGallery.subtitle', 'Rapid Gaze Shifts • Visual Acquisition')}
               isTouchOnlyDevice={false}
               onStart={enterDrill}
             />
@@ -823,7 +817,7 @@ export default function SaccadicGalleryClient({ copy }: { copy?: { title?: strin
 
           {/* COUNTDOWN OVERLAY */}
           {gameState === 'countdown' && (
-            <DrillCountdown value={countdownValue} subtitle="GET READY" />
+            <DrillCountdown value={countdownValue} subtitle={t('saccadicGallery.getReady', 'GET READY')} />
           )}
 
           {/* UNIVERSAL RESULT CARD */}
@@ -834,10 +828,10 @@ export default function SaccadicGalleryClient({ copy }: { copy?: { title?: strin
               score={uiScore}
               isNewBest={isNewBest}
               stats={[
-                { label: 'Accuracy', value: analytics.accuracy, suffix: '%' },
-                { label: 'Avg Reaction', value: analytics.avgReactionTime, suffix: 'ms' },
-                { label: 'Peak Level', value: `Lv. ${analytics.finalLevel}` },
-                { label: 'Max Combo', value: analytics.maxCombo, suffix: 'x' },
+                { label: t('saccadicGallery.accuracy', 'Accuracy'), value: analytics.accuracy, suffix: '%' },
+                { label: t('saccadicGallery.avgReaction', 'Avg Reaction'), value: analytics.avgReactionTime, suffix: 'ms' },
+                { label: t('saccadicGallery.peakLevel', 'Peak Level'), value: `Lv. ${analytics.finalLevel}` },
+                { label: t('saccadicGallery.maxCombo', 'Max Combo'), value: analytics.maxCombo, suffix: 'x' },
               ]}
               onPlayAgain={enterDrill}
               onShare={sharePage}
@@ -852,39 +846,39 @@ export default function SaccadicGalleryClient({ copy }: { copy?: { title?: strin
           <div className="[&>div]:!mt-0">
             <DrillAccordion
               id="rules"
-              title="Drill Instructions & Scoring System"
+              title={t('saccadicGallery.rulesTitle', 'Drill Instructions & Scoring System')}
               isOpen={openAccordion === 'rules'}
               onToggle={() => setOpenAccordion(openAccordion === 'rules' ? null : 'rules')}
             >
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 font-sans">
-                <RuleItem num="1" text="Hit Active Nodes" highlight="+100 PTS" result="× Combo × Level bonus (+0.6s clock per hit)" />
-                <RuleItem num="2" text="Combo & Heat System" highlight="Up to 3.0x Multiplier" result="Higher streaks speed up node jump cadence" />
-                <RuleItem num="3" text="Level Progression" highlight="Continuous Scaling" result="Targets shrink and exposure windows shorten" />
-                <RuleItem 
-                  num="4" 
-                  text="Miss & Timeout Rules" 
-                  highlight={penaltyEnabled ? "-0.8s Penalty" : "Zero Penalties (Default)"} 
-                  result={penaltyEnabled ? "Deducts 0.8s & resets combo" : "Resets combo. Time penalty is opt-in via settings"} 
-                />
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-3 font-sans">
+                {RULES_ITEMS.map((item) => (
+                  <RuleItem
+                    key={item.num}
+                    num={item.num}
+                    text={t(item.textKey, item.text)}
+                    highlight={item.num === '4' && penaltyEnabled ? t('saccadicGallery.rule4HighlightPenalty', '-0.8s Penalty') : t(item.highlightKey, item.highlight)}
+                    result={item.num === '4' && penaltyEnabled ? t('saccadicGallery.rule4ResultPenalty', 'Deducts 0.8s & resets combo') : t(item.resultKey, item.result)}
+                  />
+                ))}
               </div>
             </DrillAccordion>
 
             <DrillAccordion
               id="about"
-              title="About Saccadic Gallery"
+              title={t('saccadicGallery.aboutTitle', 'About Saccadic Gallery')}
               isOpen={openAccordion === 'about'}
               onToggle={() => setOpenAccordion(openAccordion === 'about' ? null : 'about')}
             >
               <div className="space-y-8 font-sans">
                 <section>
                   <h3 className="text-base font-bold text-white mb-2 flex items-center gap-2">
-                    <Eye className="w-4 h-4 text-red-400" /> What Is Saccadic Eye Movement & Gallery Training?
+                    <Eye className="w-4 h-4 text-red-400" /> {t('saccadicGallery.aboutHeading', 'What Is Saccadic Eye Movement & Gallery Training?')}
                   </h3>
                   <p className="text-sm leading-relaxed mb-3 text-gray-300">
-                    <strong>Saccadic Gallery</strong> trains ballistic eye movements — rapid, simultaneous movements of both eyes in the same direction between phases of fixation. In competitive gaming, saccadic speed governs how quickly your gaze snaps to spotted enemies across different screen regions.
+                    {t('saccadicGallery.aboutP1', 'Saccadic Gallery trains rapid eye movements between fixation points. In competitive games, saccadic speed influences how quickly your gaze reaches targets across different screen regions.')}
                   </p>
                   <p className="text-sm leading-relaxed text-gray-300">
-                    Repeatedly shifting focus across grid nodes under dynamic time constraints develops high-speed visual acquisition and precise hand-eye coordination.
+                    {t('saccadicGallery.aboutP2', 'Repeatedly shifting focus across timed nodes develops visual acquisition and hand-eye coordination without claiming to diagnose or treat an eye condition.')}
                   </p>
                 </section>
 
@@ -892,59 +886,29 @@ export default function SaccadicGalleryClient({ copy }: { copy?: { title?: strin
                   <div className="p-4 rounded-xl border border-gray-800 bg-white/[0.02]">
                     <div className="flex items-center gap-2.5 mb-2">
                       <div className="w-7 h-7 rounded-lg bg-red-600 flex items-center justify-center"><Users className="w-3.5 h-3.5 text-white" /></div>
-                      <h4 className="text-xs font-bold text-white">Who Should Use This?</h4>
+                      <h4 className="text-xs font-bold text-white">{t('saccadicGallery.audienceTitle', 'Who Should Use This?')}</h4>
                     </div>
-                    <p className="text-xs text-gray-300 leading-relaxed">Gamers and esports athletes sharpening rapid gaze acquisition, ballistic saccades, and first-shot accuracy.</p>
+                    <p className="text-xs text-gray-300 leading-relaxed">{t('saccadicGallery.audienceDesc', 'Gamers and esports athletes sharpening rapid gaze acquisition, visual scanning, and first-shot accuracy.')}</p>
                   </div>
                   <div className="p-4 rounded-xl border border-gray-800 bg-white/[0.02]">
                     <div className="flex items-center gap-2.5 mb-2">
                       <div className="w-7 h-7 rounded-lg bg-emerald-600 flex items-center justify-center"><TrendingUp className="w-3.5 h-3.5 text-white" /></div>
-                      <h4 className="text-xs font-bold text-white">Saccadic Gaze Calibration</h4>
+                      <h4 className="text-xs font-bold text-white">{t('saccadicGallery.calibrationTitle', 'Saccadic Gaze Calibration')}</h4>
                     </div>
-                    <p className="text-xs text-gray-300 leading-relaxed">Conditions ocular muscles to execute ballistic gaze shifts across screen sectors with zero foveal latency.</p>
+                    <p className="text-xs text-gray-300 leading-relaxed">{t('saccadicGallery.calibrationDesc', 'Practise controlled gaze shifts across screen sectors while keeping each fixation brief and accurate.')}</p>
                   </div>
                   <div className="p-4 rounded-xl border border-gray-800 bg-white/[0.02]">
                     <div className="flex items-center gap-2.5 mb-2">
                       <div className="w-7 h-7 rounded-lg bg-blue-600 flex items-center justify-center"><Zap className="w-3.5 h-3.5 text-white" /></div>
-                      <h4 className="text-xs font-bold text-white">Rapid Target Acquisition</h4>
+                      <h4 className="text-xs font-bold text-white">{t('saccadicGallery.acquisitionTitle', 'Rapid Target Acquisition')}</h4>
                     </div>
-                    <p className="text-xs text-gray-300 leading-relaxed">Enhances trigger response timing immediately upon completing ballistic eye shifts to new target nodes.</p>
+                    <p className="text-xs text-gray-300 leading-relaxed">{t('saccadicGallery.acquisitionDesc', 'Build faster visual-to-motor timing when a new target appears.')}</p>
                   </div>
                 </div>
               </div>
             </DrillAccordion>
           </div>
         )}
-
-        {/* RELATED DRILLS GRID */}
-        {!isFullscreen && (
-          <section className="mt-4">
-            <h2 className="text-sm font-bold text-slate-400 uppercase tracking-wider mb-3">
-              Related Reaction Speed Drills
-            </h2>
-            <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
-              {RELATED_DRILLS.map((drill) => (
-                <Link
-                  key={drill.id}
-                  href={drill.href}
-                  className="group bg-[#0c0c16] border border-white/5 hover:border-red-500/40 rounded-xl p-3.5 transition-all duration-200 hover:-translate-y-0.5 flex flex-col justify-between"
-                >
-                  <div>
-                    <div className="text-[10px] font-bold text-red-400 uppercase tracking-wider mb-1">{drill.cat}</div>
-                    <div className="text-xs font-bold text-white group-hover:text-red-300 transition-colors">{drill.name}</div>
-                    <div className="text-[11px] text-slate-400 mt-1 line-clamp-2 leading-relaxed">{drill.desc}</div>
-                  </div>
-                  <div className="text-[10px] font-bold text-slate-500 group-hover:text-red-400 mt-3 flex items-center gap-1 transition-colors">
-                    Train Drill <span>→</span>
-                  </div>
-                </Link>
-              ))}
-            </div>
-          </section>
-        )}
-
-        {/* SITE FOOTER */}
-        {!isFullscreen && <DrillFooter />}
 
       </main>
     </div>
@@ -954,13 +918,15 @@ export default function SaccadicGalleryClient({ copy }: { copy?: { title?: strin
 // === Subcomponents ===
 function RuleItem({ num, text, highlight = '', result }: { num: string; text: string; highlight?: string; result: string }) {
   return (
-    <div className="flex items-center gap-4 bg-black p-4 rounded-xl border border-white/10 shadow-sm font-sans">
-      <div className="w-8 h-8 rounded-xl bg-white/10 border border-white/20 flex items-center justify-center text-white text-base font-black shadow-lg flex-shrink-0">{num}</div>
-      <div className="flex-1 flex flex-col sm:flex-row sm:items-center justify-between gap-2">
-        <p className="text-sm font-medium text-gray-100 font-sans">
+    <div className="flex items-center gap-3 bg-black px-4 py-3 rounded-xl border border-white/10 shadow-sm font-sans min-w-0">
+      <div className="w-7 h-7 rounded-lg bg-white/10 border border-white/20 flex items-center justify-center text-white text-xs font-black shadow-lg flex-shrink-0">
+        {num}
+      </div>
+      <div className="flex-1 flex items-center justify-between gap-2 min-w-0">
+        <p className="text-xs sm:text-sm font-medium text-gray-100 font-sans truncate">
           {text}{highlight && <span className="font-black text-white"> ({highlight})</span>}
         </p>
-        <div className="text-xs font-black px-3 py-1.5 rounded-lg bg-[#050811] border border-white/10 text-white whitespace-nowrap shadow-inner tracking-wide text-center sm:text-left">
+        <div className="text-xs font-black px-2.5 py-1 rounded-lg bg-[#050811] border border-white/10 text-white whitespace-nowrap shadow-inner tracking-wide flex-shrink-0">
           {result}
         </div>
       </div>

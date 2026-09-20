@@ -6,7 +6,7 @@ import { pickSources } from '@/lib/drillSources';
 
 // ============================================================
 // SEO RESEARCH FINDINGS — Germany (DE / DE)
-// Primary Intent: Maus Präzision Testen, Maus Stabilitätstest Online, Mauszeiger Zittern Beseitigen
+// Native SERP intent: Aim-Trainer kostenlos online, Maus-Präzision, Fadenkreuz stabilisieren
 // Target Queries:
 //   - "Maus Präzision Testen Online" (Mouse precision test online)
 //   - "Maus Stabilitätstest Online" (Mouse stability test)
@@ -17,27 +17,27 @@ import { pickSources } from '@/lib/drillSources';
 // ============================================================
 
 export const metadata = {
-  title: 'Maus Stabilitätstest – Balance & Präzision | SkillDrills',
-  description: 'Kostenloser Maus-Stabilitätstest online. Halte das Fadenkreuz gegen dynamische Windkräfte stabil und trainiere Fadenkreuz-Kontrolle direkt im Browser.',
+  title: 'Maus-Stabilitätstest | Aim präzise halten | SkillDrills',
+  description: 'Kostenloser Browser-Drill für stabile Mausführung. Halte das Fadenkreuz gegen bewegte Kräfte zentriert und trainiere Jitter- sowie Recoil-Kontrolle.',
   keywords: [
-    'Maus Präzision Testen Online',
-    'Maus Stabilitätstest Online',
-    'Mauszeiger Zittern Beseitigen',
-    'Maus Genauigkeit Testen',
-    'Gleichgewichtssinn Trainieren Online',
-    'Recoil Kontrolle Übungen',
-    'Fadenkreuz Stabilisierung',
-    'Hand Auge Koordination Training',
-    'Maus Test Online Kostenlos',
-    'maus gleichgewichtstest',
+    'aim trainer kostenlos online',
+    'maus präzisionstest online',
+    'mauszeiger zittern beseitigen',
+    'fadenkreuz stabilisieren',
+    'recoil kontrolle übung',
+    'aim stabilität trainieren',
+    'maus tracking test',
+    'hand auge koordination training',
+    'cursor stabilität test',
+    'maus ruhig halten',
   ],
   alternates: {
     canonical: 'https://skilldrills.online/de/drills/physical/balance-training/stability-challenge',
     languages: getAlternateLanguages('/drills/physical/balance-training/stability-challenge'),
   },
   openGraph: {
-    title: 'Maus Stabilitätstest – Balance & Präzision | SkillDrills',
-    description: 'Kostenloser Maus-Stabilitätstest online. Halte das Fadenkreuz gegen dynamische Windkräfte stabil und trainiere Fadenkreuz-Kontrolle direkt im Browser.',
+    title: 'Maus-Stabilitätstest | Aim präzise halten | SkillDrills',
+    description: 'Halte das Fadenkreuz zentriert und trainiere Maus-Jitter, Recoil-Kontrolle und präzise Zielsteuerung im kostenlosen Browser-Drill.',
     url: 'https://skilldrills.online/de/drills/physical/balance-training/stability-challenge',
     siteName: 'SkillDrills',
     locale: 'de_DE',
@@ -45,8 +45,8 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Maus Stabilitätstest – Balance & Präzision | SkillDrills',
-    description: 'Kostenloser Maus-Stabilitätstest online. Halte das Fadenkreuz gegen dynamische Windkräfte stabil und trainiere Fadenkreuz-Kontrolle direkt im Browser.',
+    title: 'Maus-Stabilitätstest | Aim präzise halten | SkillDrills',
+    description: 'Halte das Fadenkreuz zentriert und trainiere Maus-Jitter, Recoil-Kontrolle und präzise Zielsteuerung im kostenlosen Browser-Drill.',
   },
   robots: { index: true, follow: true },
 };
@@ -101,7 +101,7 @@ const softwareApplicationSchema = {
     "url": "https://skilldrills.online/de"
   },
   "inLanguage": "de",
-  "dateModified": "2026-09-12"
+  "dateModified": "2026-09-20"
 };
 
 const webApplicationSchema = {
@@ -118,7 +118,7 @@ const webApplicationSchema = {
   },
   "url": "https://skilldrills.online/de/drills/physical/balance-training/stability-challenge",
   "inLanguage": "de",
-  "dateModified": "2026-09-12"
+  "dateModified": "2026-09-20"
 };
 
 const videoGameSchema = {
@@ -142,13 +142,16 @@ const videoGameSchema = {
     "@type": "Offer",
     "price": "0",
     "priceCurrency": "USD"
-  }
+  },
+  "inLanguage": "de",
+  "dateModified": "2026-09-20"
 };
 
 const faqSchema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
-  "dateModified": "2026-09-12",
+  "inLanguage": "de",
+  "dateModified": "2026-09-20",
   "mainEntity": [
     {
       "@type": "Question",
@@ -363,8 +366,8 @@ export default function StabilityChallengeDePage() {
       />
       <StabilityChallengeClient
         copy={{
-          title: "Maus Präzision & Stabilitätstest",
-          subtitle: "Kraftvektor-Kompensation & Fadenkreuz-Stabilisierung",
+          title: "Maus-Stabilitätstest",
+          subtitle: "Fadenkreuz stabil halten gegen bewegte Kräfte",
           rules: [
             { title: "Sicherheitskreis halten", text: "Halte das Fadenkreuz gegen stochastische Wind- und Kraftvektoren im zentralen Sicherheitsring." },
             { title: "Combo-Multiplikator aufbauen", text: "Je länger du das Fadenkreuz ununterbrochen im Zentrum stabilisierst, desto höher steigt der Combo-Multiplikator (bis zu 3.0x)." },

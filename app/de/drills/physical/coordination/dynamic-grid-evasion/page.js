@@ -21,27 +21,27 @@ import { pickSources } from '@/lib/drillSources';
 // ============================================================
 
 export const metadata = {
-  title: "Reaktionstest Kostenlos – Raster-Ausweichen | SkillDrills",
-  description: "Kostenloser Online-Reaktionstest. Weiche im Gefahrenraster Explosionszonen periphär aus und trainiere Reaktionszeit sowie Reflexe direkt im Browser.",
+  title: "Reaktionstest online | Raster-Ausweichspiel | SkillDrills",
+  description: "Kostenloser Reaktionstest online und Raster-Ausweichspiel. Erkennen Sie Gefahren im 3x3-Gitter und wechseln Sie schnell in sichere Felder für periphere Reaktionen.",
   keywords: [
-    "Reaktionstest Online Kostenlos",
-    "Reflexe Trainieren Online",
-    "Peripheres Sehen Trainieren",
-    "Reaktionstest Spiel",
-    "Gefahrenzone Ausweichen",
-    "Maus Reaktionstest",
-    "Hand-Auge-Koordination Trainieren",
-    "Fitts Gesetz Training",
-    "Treisman Merkmalsintegration",
-    "LoL Skillshot Ausweichen"
+    "Reaktionstest online kostenlos",
+    "Reaktionszeit Test",
+    "peripheres Sehen Test",
+    "Ausweichspiel",
+    "Maus Ausweichspiel",
+    "Reaktionsspiel online",
+    "3x3 Raster Spiel",
+    "räumliche Reaktion",
+    "Reflex Test",
+    "Reaktionszeit peripheres Sehen"
   ],
   alternates: {
     canonical: 'https://skilldrills.online/de/drills/physical/coordination/dynamic-grid-evasion',
     languages: getAlternateLanguages('/drills/physical/coordination/dynamic-grid-evasion'),
   },
   openGraph: {
-    title: "Reaktionstest Online Kostenlos – Dynamisches Raster-Ausweichtraining | SkillDrills",
-    description: "Kostenloser Online-Reaktionstest & Raster-Ausweichtraining. Trainieren Sie periphere Reizverarbeitung, Raumorientierung und ballistische Fluchtbewegungen im 3x3-Gitter.",
+    title: "Reaktionstest online | Raster-Ausweichspiel | SkillDrills",
+    description: "Kostenloser Reaktionstest online und Raster-Ausweichspiel. Erkennen Sie Gefahren im 3x3-Gitter und wechseln Sie schnell in sichere Felder für periphere Reaktionen.",
     url: 'https://skilldrills.online/de/drills/physical/coordination/dynamic-grid-evasion',
     siteName: 'SkillDrills',
     locale: 'de_DE',
@@ -49,8 +49,8 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: "Reaktionstest Online Kostenlos – Dynamisches Raster-Ausweichtraining | SkillDrills",
-    description: "Kostenloser Online-Reaktionstest & Raster-Ausweichtraining. Trainieren Sie periphere Reizverarbeitung, Raumorientierung und ballistische Fluchtbewegungen im 3x3-Gitter.",
+    title: "Reaktionstest online | Raster-Ausweichspiel | SkillDrills",
+    description: "Kostenloser Reaktionstest online und Raster-Ausweichspiel. Erkennen Sie Gefahren im 3x3-Gitter und wechseln Sie schnell in sichere Felder für periphere Reaktionen.",
   },
   robots: { index: true, follow: true },
 };
@@ -105,7 +105,7 @@ const softwareApplicationSchema = {
     "url": "https://skilldrills.online/de"
   },
   "inLanguage": "de",
-  "dateModified": "2026-09-12"
+  "dateModified": "2026-09-20"
 };
 
 const webApplicationSchema = {
@@ -122,7 +122,7 @@ const webApplicationSchema = {
   },
   "url": "https://skilldrills.online/de/drills/physical/coordination/dynamic-grid-evasion",
   "inLanguage": "de",
-  "dateModified": "2026-09-12"
+  "dateModified": "2026-09-20"
 };
 
 const videoGameSchema = {
@@ -143,6 +143,8 @@ const videoGameSchema = {
     "Mobile"
   ],
   "applicationCategory": "Game",
+  "inLanguage": "de-DE",
+  "dateModified": "2026-09-20",
   "offers": {
     "@type": "Offer",
     "price": "0",
@@ -153,7 +155,8 @@ const videoGameSchema = {
 const faqSchema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
-  "dateModified": "2026-09-12",
+  "inLanguage": "de-DE",
+  "dateModified": "2026-09-20",
   "mainEntity": [
     {
       "@type": "Question",
@@ -361,8 +364,8 @@ export default function DynamicGridEvasionGermanPage() {
       />
       <DynamicGridEvasionClient
         copy={{
-          title: "Dynamisches Raster-Ausweichtraining",
-          subtitle: "3x3-Gefahrenraster & periphere Reaktionszeit • 15 Level",
+          title: "Reaktionstest online",
+          subtitle: "Gefahren erkennen und sicher ausweichen • 15 Level",
           rulesTitle: "Trainingsregeln & Punktesystem",
           rules: [
             { title: "Gefahrenwarnung erkennen", text: "In jeder Welle blinken bedrohte Zellen mit einer bernsteinfarbenen Warnumrandung auf." },

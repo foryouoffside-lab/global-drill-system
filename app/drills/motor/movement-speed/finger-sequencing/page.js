@@ -1,7 +1,6 @@
 import FingerSequencingClient from './FingerSequencingClientLoader';
 import { getAlternateLanguages } from '@/lib/i18n/locales';
 import DrillGuide from '@/components/drill/DrillGuide';
-import RelatedDrills from '@/components/drill/RelatedDrills';
 import DrillFooter from '@/components/drill/DrillFooter';
 import { pickSources } from '@/lib/drillSources';
 
@@ -376,9 +375,6 @@ export default function FingerSequencingPage() {
       />
       <FingerSequencingClient copy={copyEn} />
       <DrillGuide {...guideProps} />
-      <div className="max-w-6xl mx-auto px-4 pb-12">
-        <RelatedDrills currentCategory="motor" currentHref="/drills/motor/movement-speed/finger-sequencing" />
-      </div>
       <DrillFooter />
     </>
   );

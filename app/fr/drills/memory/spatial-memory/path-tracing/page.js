@@ -5,21 +5,19 @@ import { getAlternateLanguages } from '@/lib/i18n/locales';
 import { pickSources } from '@/lib/drillSources';
 
 export const metadata = {
-  title: "Test des Blocs de Corsi – Mémoire Séquentielle | SkillDrills",
-  description: "Test des blocs de corsi en ligne gratuit: Memorisez les trajectoires animees sur grille et reproduisez les sequences dans l ordre exact sans inscription.",
+  title: "Test des blocs de Corsi en ligne | SkillDrills",
+  description: "Teste ton empan visuo-spatial en ligne : mémorise les blocs éclairés et reproduis la séquence dans le même ordre.",
   keywords: [
-    "test des blocs de corsi",
-    "test memoire sequentielle visuelle",
-    "test empan de corsi en ligne",
-    "memoire de travail viso-spatiale",
-    "exercice path tracing gratuit",
-    "test de trajectoire spatiale",
-    "scribe interne memoire test",
-    "reproduction de sequence motrice",
-    "evaluation memoire spatio-temporelle",
-    "jeu memoire de parcours en ligne",
-    "test neuropsychologique de corsi",
-    "entrainement memoire visuo-motrice"
+    "test des blocs de Corsi",
+    "test de Corsi en ligne",
+    "empan visuo-spatial",
+    "mémoire séquentielle spatiale",
+    "mémoire de travail visuo-spatiale",
+    "blocs de Corsi",
+    "test mémoire spatiale",
+    "séquence de positions",
+    "entraînement mémoire spatiale",
+    "tapotement de blocs"
   ],
   alternates: {
     canonical: "https://skilldrills.online/fr/drills/memory/spatial-memory/path-tracing",
@@ -30,8 +28,8 @@ export const metadata = {
     follow: true,
   },
   openGraph: {
-    title: "Test des Blocs de Corsi – Mémoire Séquentielle | SkillDrills",
-    description: "Test des blocs de corsi en ligne gratuit: Memorisez les trajectoires animees sur grille et reproduisez les sequences dans l ordre exact sans inscription.",
+    title: "Test des blocs de Corsi en ligne | Empan visuo-spatial",
+    description: "Mémorise les blocs éclairés et reproduis la séquence dans le même ordre. Test gratuit de mémoire spatiale, sans inscription.",
     url: "https://skilldrills.online/fr/drills/memory/spatial-memory/path-tracing",
     siteName: 'SkillDrills',
     locale: 'fr_FR',
@@ -39,8 +37,8 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: "Test des Blocs de Corsi – Mémoire Séquentielle | SkillDrills",
-    description: "Test des blocs de corsi en ligne gratuit: Memorisez les trajectoires animees sur grille et reproduisez les sequences dans l ordre exact sans inscription.",
+    title: "Test des blocs de Corsi en ligne | Empan visuo-spatial",
+    description: "Mémorise les blocs éclairés et reproduis la séquence dans le même ordre. Test gratuit de mémoire spatiale, sans inscription.",
   },
 };
 
@@ -113,7 +111,8 @@ const webAppSchema = {
     "name": "SkillDrills"
   },
   "isAccessibleForFree": true,
-  "dateModified": "2026-09-16"
+  "dateModified": "2026-09-16",
+  "sameAs": ["https://neurabrain.app/fr/test/corsi-block", "https://fr.wikipedia.org/wiki/M%C3%A9moire_de_travail"]
 };
 
 const videoGameSchema = {
@@ -319,11 +318,11 @@ const pathTracingGuide = {
   faqs: faqSchema.mainEntity.map(e => ({ q: e.name, a: e.acceptedAnswer.text })),
   sources: pickSources('corsi1972', 'milner1971', 'logie1995', 'cowan2001', 'baddeley2000', 'miller1956', 'simon1974', 'kessels2000', 'woods2015'),
   related: [
-    { href: "/drills/memory/spatial-memory/grid-memorization", label: "Test de Mémoire Visuelle" },
-    { href: "/drills/memory/spatial-memory/object-location", label: "Test de Mémoire de Localisation" },
-    { href: "/drills/memory/short-term-memory/digit-span", label: "Test d'Empan Numérique" },
-    { href: "/drills/memory/short-term-memory/word-recall", label: "Test de Mémoire Verbale" },
-    { href: "/drills/memory/working-memory/n-back", label: "Test de Mémoire de Travail N-Back" }
+    { href: "/fr/drills/memory/spatial-memory/grid-memorization", label: "Test de Mémoire Visuelle" },
+    { href: "/fr/drills/memory/spatial-memory/object-location", label: "Test de Mémoire de Localisation" },
+    { href: "/fr/drills/memory/short-term-memory/digit-span", label: "Test d'Empan Numérique" },
+    { href: "/fr/drills/memory/short-term-memory/word-recall", label: "Test de Mémoire Verbale" },
+    { href: "/fr/drills/memory/working-memory/n-back", label: "Test de Mémoire de Travail N-Back" }
   ]
 };
 
@@ -356,16 +355,16 @@ export default function PathTracingFrenchPage() {
       />
       <PathTracingClient
         copy={{
-          "h1Keyword": "Test des Blocs de Corsi",
-          "h1Suffix": " (Mémoire Séquentielle)",
-          "subtitle": "L'empan spatial correspond à la plus longue séquence de positions qu'il est possible de reproduire dans l'ordre exact. Le test de Corsi établit la moyenne des adultes sains entre cinq et sept étapes (Milner, 1971; Corsi, 1972) via le scribe interne (Logie, 1995).",
+          "h1Keyword": "Test des blocs de Corsi en ligne",
+          "h1Suffix": " – Empan visuo-spatial",
+          "subtitle": "Mémorise les blocs éclairés et reproduis la séquence exacte.",
           "statScore": "Score",
           "statTime": "Temps",
           "statLevel": "Niveau",
           "statBestScore": "Meilleur Score",
           "levelPrefix": "Niv.",
           "startTitle": "Suivi de Trajectoire Pro",
-          "startSubtitle": "Mémoire spatiale séquentielle • Blocs de Corsi",
+          "startSubtitle": "Mémoire spatiale • Corsi",
           "countdownSubtitle": "PRÉPAREZ-VOUS",
           "newBest": "NOUVEAU RECORD",
           "pointsLabel": "Points",

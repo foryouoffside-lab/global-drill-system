@@ -6,21 +6,17 @@ import RelatedDrills from '@/components/drill/RelatedDrills';
 import DrillFooter from '@/components/drill/DrillFooter';
 
 export const metadata = {
-  title: "ターゲット優先度 エイム練習 – 脅威度判定トレーナー | SkillDrills",
-  description: "ブラウザで無料プレイできるターゲット優先度エイム練習。マルチターゲット交戦における脅威評価、注意フィルタリング、味方誤射の抑制制御（Go/No-Go）を科学的に鍛えます。",
+  title: "エイム練習 | ターゲット選択・脅威判定 | SkillDrills",
+  description: "無料ブラウザのエイム練習で、複数の敵から危険な相手を先に選び、撃たない判断の速さを測定します。",
   keywords: [
-    "ターゲット優先度 エイム",
-    "ターゲット優先度 エイム練習",
+    "エイム練習",
+    "エイム練習 ブラウザ",
+    "エイム練習 valorant",
+    "ターゲット選択",
+    "ターゲット優先度",
     "脅威判定 練習",
-    "FPS 識別射撃",
-    "VALORANT ターゲット選択",
-    "CS2 優先順位 エイム",
-    "射撃抑制 トレーニング",
-    "誤射防止 エイム練習",
-    "敵味方 識別 エイム",
-    "エイムトレーナー 無料",
-    "FPS ターゲット優先度",
-    "索敵 射撃判断 練習"
+    "索敵 射撃判断 練習",
+    "プリエイム"
   ],
   alternates: {
     canonical: "https://skilldrills.online/ja/drills/fps/target-prioritization",
@@ -31,8 +27,8 @@ export const metadata = {
     follow: true,
   },
   openGraph: {
-    title: "ターゲット優先度 エイム練習 – 脅威度判定トレーナー | SkillDrills",
-    description: "マルチターゲット交戦での脅威評価スピード、視覚的注意フィルタリング、射撃抑制制御を鍛える無料ブラウザFPSエイムトレーナー。",
+    title: "エイム練習 | ターゲット選択・脅威判定 | SkillDrills",
+    description: "無料ブラウザのエイム練習で、複数の敵から危険な相手を先に選び、撃たない判断の速さを測定します。",
     url: "https://skilldrills.online/ja/drills/fps/target-prioritization",
     siteName: 'SkillDrills',
     locale: 'ja_JP',
@@ -40,8 +36,8 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: "ターゲット優先度 エイム練習 – 脅威度判定トレーナー | SkillDrills",
-    description: "マルチターゲット交戦での脅威評価スピード、視覚的注意フィルタリング、射撃抑制制御を鍛える無料ブラウザFPSエイムトレーナー。",
+    title: "エイム練習 | ターゲット選択・脅威判定 | SkillDrills",
+    description: "無料ブラウザのエイム練習で、複数の敵から危険な相手を先に選び、撃たない判断の速さを測定します。",
   },
 };
 
@@ -52,17 +48,17 @@ export default function TargetPrioritizationJaPage() {
     "itemListElement": [
       { "@type": "ListItem", "position": 1, "name": "SkillDrills", "item": "https://skilldrills.online/ja" },
       { "@type": "ListItem", "position": 2, "name": "FPSエイム練習", "item": "https://skilldrills.online/ja/drills/fps" },
-      { "@type": "ListItem", "position": 3, "name": "ターゲット優先度", "item": "https://skilldrills.online/ja/drills/fps/target-prioritization" }
+      { "@type": "ListItem", "position": 3, "name": "エイム練習 - ターゲット選択", "item": "https://skilldrills.online/ja/drills/fps/target-prioritization" }
     ]
   };
 
   const softwareSchema = {
     "@context": "https://schema.org",
     "@type": "SoftwareApplication",
-    "name": "ターゲット優先度 エイム練習",
+    "name": "エイム練習 - ターゲット選択と脅威判定",
     "applicationCategory": "GameApplication",
     "operatingSystem": "Web Browser",
-    "dateModified": "2026-09-05",
+    "dateModified": "2026-09-20",
     "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
     "description": "乱戦時の脅威評価スピード、味方誤射の抑制、優先ターゲット選択能力を高める無料ブラウザFPSエイムトレーナー。",
     "genre": "FPS Training / Target Prioritization",
@@ -77,7 +73,7 @@ export default function TargetPrioritizationJaPage() {
   const webAppSchema = {
     "@context": "https://schema.org",
     "@type": "WebApplication",
-    "name": "ターゲット優先度 エイム練習",
+    "name": "エイム練習 - ターゲット選択と脅威判定",
     "url": "https://skilldrills.online/ja/drills/fps/target-prioritization",
     "applicationCategory": "GameApplication",
     "operatingSystem": "All",
@@ -93,10 +89,10 @@ export default function TargetPrioritizationJaPage() {
   const videoGameSchema = {
     "@context": "https://schema.org",
     "@type": "VideoGame",
-    "name": "ターゲット優先度 エイム練習",
+    "name": "エイム練習 - ターゲット選択と脅威判定",
     "url": "https://skilldrills.online/ja/drills/fps/target-prioritization",
     "description": "乱戦時の脅威評価スピード、味方誤射の抑制、優先ターゲット選択能力を高める無料ブラウザFPSエイムトレーナー。",
-    "dateModified": "2026-09-05",
+    "dateModified": "2026-09-20",
     "gamePlatform": "Web Browser",
     "genre": ["FPS Training", "Aim Trainer", "Target Prioritization"],
     "playMode": "SinglePlayer",
@@ -108,7 +104,7 @@ export default function TargetPrioritizationJaPage() {
   const faqSchema = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
-    "dateModified": "2026-09-05",
+    "dateModified": "2026-09-20",
     "mainEntity": [
       {
         "@type": "Question",
@@ -231,10 +227,10 @@ export default function TargetPrioritizationJaPage() {
   };
 
   const targetPrioritizationGuide = {
-    heading: "ターゲット優先度 エイム練習 実践マニュアル",
+    heading: "エイム練習とターゲット選択・脅威判定ガイド",
     subtitle: "乱戦時の脅威評価スピード、妨害刺激抑制、そして冷静な射撃抑制制御を科学的プロトコルで極限まで高める",
     intro: [
-      "ターゲット優先度（Target Prioritization）エイムトレーナーは、瞬時の脅威評価、視覚的妨害刺激の抑制、そしてエグゼクティブな運動抑制（射撃ストップ制御）を極限まで高める高度な知覚認知エイムドリルです。VALORANT、Counter-Strike 2、Rainbow Six Siege、Apex LegendsなどのタクティカルFPSでは、クラッチ状況の生存率は単純なフリックの物理速度だけでなくターゲット選別能力に依存します。どの敵を最優先で排除すべきかを瞬時に判断し、優先度の低い囮や味方プレイヤーへの誤射衝動を能動的に抑制できるかが勝敗を決定づけます。",
+      "エイム練習は、複数の敵が見える場面で最も危険な相手を先に選び、撃たない対象へのクリックを止める練習です。このドリルは脅威判定と射撃抑制を測定し、VALORANT・CS2の乱戦で判断を安定させます。",
       "運動抑制と意思決定制御の神経基盤は、Logan and Cowan（1984）のストップシグナルパラダイムによって確立されました。彼らの『競馬モデル（Horse-Race Model）』は、行動実行プロセス（Go）と行動抑制プロセス（Stop）が前頭葉—大脳基底核ネットワークにおいて互いに独立して速度を競い合っていることを実証しました。射撃抑制の訓練を欠くプレイヤーはプレッシャー下でパニック射撃に陥り、標的の敵味方識別が完了する前に反射的に人差し指を動かしてしまいます。",
       "視覚的フィルタリングの生体力学的メカニズムは、Donald E. Broadbent（1958）およびAnne Treisman（1964）の選択的注意フィルター／減衰モデルによって定式化されました。複数の視覚刺激が網膜の処理リソースを巡って競合する際、脳はトップダウンの注意ゲーティング機構（Posner & Petersen, 1990）を作動させ、非脅威的な周辺運動を抑制しつつ、最も差し迫った脅威ベクトルへと中心窩の注意を集中させます。",
       "本ドリルは、F.C. Donders（1868）のGo/No-Go弁別反応時間モデルとperformance.now()高精度デジタルクロノメトリ（Woods et al., 2015）を統合し、単なるマウス操作と競技プレッシャー下でのリアルタイムな戦術的意思決定速度との間のギャップを完璧に架橋します。",
@@ -324,9 +320,9 @@ export default function TargetPrioritizationJaPage() {
       />
       <TargetPrioritizationClient
         copy={{
-          h1Keyword: "ターゲット優先度 エイム練習",
-          h1Suffix: " - 脅威度判定・射撃抑制エイムトレーナー",
-          subtitle: "複数の脅威評価、視覚的注意フィルタリング、射撃抑制（Go/No-Go）をリアルタイムフィードバックで鍛えます。",
+          h1Keyword: "エイム練習",
+          h1Suffix: " - ターゲット選択・脅威判定",
+          subtitle: "複数の敵から優先目標を選び、撃たない判断をブラウザで測定・練習できます。",
           statScore: "スコア",
           statTime: "残り時間",
           statAccuracy: "命中率",
@@ -334,7 +330,7 @@ export default function TargetPrioritizationJaPage() {
           statThreatsCleared: "撃破脅威数",
           statMaxCombo: "最大コンボ",
           statPeakLevel: "最高レベル",
-          startTitle: "ターゲット優先度",
+          startTitle: "エイム練習 - ターゲット選択",
           startSubtitle: "脅威評価 & 認知フィルタリング • エンドレス難易度進行",
           getReady: "準備完了",
           toggleFlash: "ミスフラッシュ切替",
@@ -349,7 +345,7 @@ export default function TargetPrioritizationJaPage() {
             { num: "3", text: "味方ユニット", highlight: "緑 (射撃禁止)", result: "誤射・ミスでコンボリセット" },
             { num: "4", text: "レベル進行", highlight: "+1 / 1400点", result: "スポーン密度・速度の継続増加" }
           ],
-          aboutTitle: "ターゲット優先度 エイム練習について",
+          aboutTitle: "エイム練習とターゲット選択について",
           aboutHeading: "ターゲット優先度（Target Prioritization）とは？",
           aboutText: "ターゲット優先度とは、視界内の複数の目標から脅威度や役割に基づいて瞬時に撃つべき敵を選択し、同時に味方や不要なオブジェクトへの射撃を抑制する高度な認知運動能力です。開始した運動を途中で止める抑制制御は独自のレースモデル（Logan & Cowan, 1984）に基づき、射撃を実行すること以上に精密な神経制御が求められます。"
         }}
@@ -358,7 +354,7 @@ export default function TargetPrioritizationJaPage() {
       <div className="max-w-4xl mx-auto px-4 pb-12">
         <RelatedDrills
           currentCategory="fps"
-          currentHref="/drills/fps/target-prioritization"
+          currentHref="/ja/drills/fps/target-prioritization"
           locale="ja"
         />
       </div>

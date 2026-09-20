@@ -5,25 +5,25 @@ import RelatedDrills from '@/components/drill/RelatedDrills';
 import { pickSources } from '@/lib/drillSources';
 
 export const metadata = {
-  title: "Rastreamento de Alvo Móvel: Visão Dinâmica | SkillDrills",
-  description: "Teste de rastreamento de alvo em movimento grátis. Intercepte esferas dinâmicas em trajetórias aceleradas para medir perseguição ocular suave.",
+  title: "Rastreamento Visual | Alvo Móvel | SkillDrills",
+  description: "Treino gratuito de rastreamento visual: acompanhe alvos móveis, preveja a trajetória e intercepte no momento certo. Não é diagnóstico clínico.",
   keywords: [
-    "teste de rastreamento de alvo em movimento",
-    "teste de acuidade visual dinâmica",
+    "rastreamento visual",
+    "teste de rastreamento visual",
+    "perseguição visual",
+    "perseguição ocular",
+    "alvo em movimento",
+    "interceptação de alvo",
+    "coordenação olho-mão",
+    "visão dinâmica",
     "treino de mira em alvo móvel",
-    "perseguição ocular suave teste",
-    "interceptação de alvo dinâmico",
-    "coordenação olho-mão alvos em movimento",
-    "teste de visão dinâmica online",
-    "antecipação de trajetória reflexo",
-    "treino de tracking fps",
-    "movimento sacádico e perseguição visual",
-    "teste de velocidade de rastreamento visual",
-    "visão periférica e interceptação motora"
+    "velocidade de rastreamento",
+    "trajetória de alvo",
+    "perseguição lenta"
   ],
   openGraph: {
-    title: "Rastreamento de Alvo Móvel: Visão Dinâmica | SkillDrills",
-    description: "Intercepte alvos móveis acelerados e meça a perseguição ocular suave e a acuidade visual dinâmica gratuitamente.",
+    title: "Rastreamento Visual | Alvo Móvel | SkillDrills",
+    description: "Acompanhe alvos móveis, preveja trajetórias e pratique perseguição visual e coordenação olho-mão gratuitamente no navegador.",
     type: 'article',
     url: 'https://skilldrills.online/pt/drills/visual/tracking-accuracy/moving-target',
     siteName: 'SkillDrills',
@@ -31,8 +31,8 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: "Rastreamento de Alvo Móvel: Visão Dinâmica | SkillDrills",
-    description: "Treino de rastreamento cinético e interceptação de alvos móveis em tempo real.",
+    title: "Rastreamento Visual | Alvo Móvel | SkillDrills",
+    description: "Treine rastreamento visual, previsão de trajetória e interceptação de alvos móveis em tempo real.",
   },
   robots: { index: true, follow: true },
   alternates: {
@@ -68,7 +68,7 @@ const softwareApplicationSchema = {
     "Velocidade progressiva com retração das caixas de colisão dos alvos",
     "Armazenamento puramente local no navegador com zero telemetria externa"
   ],
-  "dateModified": "2026-09-05"
+  "dateModified": "2026-09-20"
 };
 
 const webAppSchema = {
@@ -77,7 +77,7 @@ const webAppSchema = {
   "name": "Teste de Interceptação de Alvo Móvel — Visão Dinâmica | SkillDrills",
   "alternateName": "Moving Target Pro",
   "url": "https://skilldrills.online/pt/drills/visual/tracking-accuracy/moving-target",
-  "dateModified": "2026-09-05",
+  "dateModified": "2026-09-20",
   "description": "Treino online gratuito de rastreamento cinético de alvos. Intercepte esferas aceleradas que ricocheteiam na tela com precisão motora.",
   "applicationCategory": "EducationalApplication",
   "operatingSystem": "All",
@@ -105,7 +105,7 @@ const howToSchema = {
   "@context": "https://schema.org",
   "@type": "HowTo",
   "name": "Como Treinar com o Teste de Alvo Móvel",
-  "dateModified": "2026-09-05",
+  "dateModified": "2026-09-20",
   "description": "Guia de 4 passos para desenvolver a perseguição ocular suave, a predição de trajetórias e a precisão de interceptação.",
   "step": [
     {
@@ -142,7 +142,7 @@ const howToSchema = {
 const faqSchema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
-  "dateModified": "2026-09-05",
+  "dateModified": "2026-09-20",
   "mainEntity": [
     {
       "@type": "Question",
@@ -228,7 +228,7 @@ const faqSchema = {
 };
 
 const movingTargetGuide = {
-  heading: "Ciência do Rastreamento Cinético e da Interceptação de Trajetórias",
+  heading: "Rastreamento visual e interceptação de alvos móveis",
   intro: [
     "A interceptação dinâmica de alvos representa uma faculdade sensoriomotora fundamental no esporte de alto rendimento, automobilismo, aviação e e-sports competitivos. Atingir com precisão um objeto acelerado em trajetória não-linear exige coordenação entre movimentos de perseguição ocular suave, extrapolação preditiva e controle motor de malha fechada.",
     "A neurobiologia do rastreamento cinético reside nos neurônios com seletividade direcional da área visual temporal média (MT/V5) e temporal superior medial (MST). Essas estruturas computam vetores de velocidade e enviam comandos para os campos oculares frontais (FEF) e os núcleos pontinos, que por sua vez acionam o cerebelo para manter o ganho de rastreamento ocular (Krauzlis, 2004).",
@@ -236,7 +236,7 @@ const movingTargetGuide = {
     "Ademais, as pesquisas de Land & McLeod (2000) em atletas de esportes com bola comprovam que rebatedores de elite não rastreiam o projétil de forma contínua em todo o trajeto; eles realizam sacadas antecipatórias para os locais prováveis de quique e janelas de rebatida. Este drill exercita exatamente essa capacidade de previsão milimétrica."
   ],
   benchmarks: {
-    title: "Faixas de Desempenho em Interceptação de Alvo Móvel (Referência Científica)",
+    title: "Referência de rastreamento e precisão de interceptação",
     headers: ["Nível de Desempenho", "Janela de Pacing", "Pontuação & Combo Limiar", "Perfil de Rastreamento e Interceptação"],
     rows: [
       ["Tier 1: Interceptor Cinético Apex", "< 0.25s Janela", "16.000+ PTS | Combo 25x+", "Perseguição suave de elite; extrapolação vetorial perfeita sem atraso de sacada corretiva. Nível de pilotos e pró-players."],
@@ -248,7 +248,7 @@ const movingTargetGuide = {
     note: "Estes parâmetros baseiam-se na psicofísica da perseguição suave e cronometria de interceptação (Rashbass, 1961; Krauzlis, 2004; Land & McLeod, 2000; Bahill et al., 1980; Woods et al., 2015). Desempenho varia com a taxa de atualização do monitor e polling do mouse."
   },
   techniques: {
-    title: "Técnicas Práticas para Otimizar a Interceptação de Alvos",
+    title: "Como acompanhar alvos móveis e melhorar a previsão de trajetória",
     items: [
       {
         name: "Mira com Antecipação Vetorial (Ajuste de Rashbass)",
@@ -301,7 +301,7 @@ export default function KineticInterceptPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(howToSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(videoGameSchema) }} />
-      <KineticInterceptClient copy={{ title: "Rastreamento de Alvo Móvel: Visão Dinâmica" }} />
+      <KineticInterceptClient copy={{ title: "Rastreamento Visual" }} />
       <DrillGuide guide={movingTargetGuide} />
       <div className="max-w-6xl mx-auto px-4 pb-12">
         <RelatedDrills currentCategory="visual" currentHref="https://skilldrills.online/pt/drills/visual/tracking-accuracy/moving-target" />

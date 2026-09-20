@@ -6,46 +6,38 @@ import { pickSources } from '@/lib/drillSources';
 
 // ============================================================
 // SEO RESEARCH FINDINGS — ja-JP (reaction-speed / reaction-time-test)
-// PRIMARY DOMESTIC: "反射神経テスト" — 2,526 exact / 2,681 broad searches/mo (Domestic #1 winner)
-//                    "反応速度テスト" — 1,811 exact / 1,811 broad searches/mo (Domestic #2 winner)
-//                    Combined >4,330 searches/mo
+// LIVE RESEARCH (2026-09-20): current Bing exact checks returned 0 for the tested
+// spaced variants; Google Suggest and Japanese SERPs surface 反応速度テスト,
+// 反射神経テスト, 無料, FPS, スマホ, マウス, and クリック modifiers.
 // SECONDARY / LSI:
-//                    "反射神経 ゲーム"  — 680+ searches/mo
-//                    "反応速度 測定"    — 320+ searches/mo
-//                    "反射神経 測定"    — 240+ searches/mo
-//                    "ミリ秒 測定"      — 180+ searches/mo
-//                    "fps 反応速度"    — FPS/VALORANT/Apex high-intent
-//                    "動体視力 反応速度" — Visual chronometry queries
-// DUAL-WINNER TITLE: 反射神経テスト・反応速度テスト – 無料ミリ秒(ms)測定＆診断ゲーム | SkillDrills
+// DUAL-INTENT TITLE: 反応速度テスト｜反射神経をms測定 | SkillDrills
 // ============================================================
 
 export const metadata = {
-  title: '反射神経テスト・反応速度テスト – 無料ミリ秒(ms)測定＆診断ゲーム | SkillDrills',
+  title: '反応速度テスト｜反射神経をms測定 | SkillDrills',
   description:
-    '無料オンライン反射神経テスト・反応速度テスト。合図に合わせてクリックし、視覚反射スピードをミリ秒(ms)単位で高精度測定。平均タイム比較、ゲーマーランク判定表（VALORANT・Apex）、科学的反射神経メカニズムを解説。',
+    '無料の反応速度テストで、画面の合図に反応する時間をミリ秒（ms）で測定。複数回の平均と誤差を見ながら反射神経をチェックできます。',
   keywords: [
     '反射神経テスト',
     '反応速度テスト',
-    '反射神経',
-    '反応速度',
-    '反射神経 ゲーム',
+    '反応速度テスト 無料',
+    '反応速度テスト fps',
+    '反応速度テスト スマホ',
+    'マウス 反応速度 テスト',
+    'クリック 反応速度 テスト',
     '反応速度 測定',
+    'ミリ秒 反応速度',
+    '反射神経 ゲーム',
     '反射神経 測定',
-    'ミリ秒 測定',
-    'fps 反応速度',
-    'エイム 反応速度',
-    '動体視力 反応速度',
-    '反射速度',
-    'リアクションタイム テスト',
   ],
   alternates: {
     canonical: 'https://skilldrills.online/ja/drills/reaction-speed/reaction-time-test',
     languages: getAlternateLanguages('/drills/reaction-speed/reaction-time-test'),
   },
   openGraph: {
-    title: '反射神経テスト・反応速度テスト – 無料ミリ秒(ms)測定＆診断ゲーム | SkillDrills',
+    title: '反応速度テスト｜反射神経をms測定 | SkillDrills',
     description:
-      '無料オンライン反射神経テスト・反応速度テスト。合図に合わせてクリックし、視覚反射スピードをミリ秒(ms)単位で高精度測定。平均タイムやランク判定も完備。',
+      '画面の合図に合わせてクリックし、視覚反応の速さをミリ秒で測定。平均、誤差、ベンチマークをブラウザで確認できます。',
     url: 'https://skilldrills.online/ja/drills/reaction-speed/reaction-time-test',
     siteName: 'SkillDrills',
     locale: 'ja_JP',
@@ -53,9 +45,9 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: '反射神経テスト・反応速度テスト – 無料ミリ秒(ms)測定＆診断ゲーム | SkillDrills',
+    title: '反応速度テスト｜反射神経をms測定 | SkillDrills',
     description:
-      '無料オンライン反射神経テスト・反応速度テスト。ミリ秒単位で視覚反射スピードを測定し、平均と比較。',
+      '反応速度をミリ秒単位で測定し、複数回の平均と一貫性を確認できる無料テストです。',
   },
   robots: { index: true, follow: true },
 };
@@ -156,7 +148,7 @@ const howToSchema = {
 const faqSchema = {
   '@context': 'https://schema.org',
   '@type': 'FAQPage',
-  dateModified: '2026-09-11',
+  dateModified: '2026-09-20',
   mainEntity: [
     {
       '@type': 'Question',
@@ -289,6 +281,8 @@ const faqSchema = {
   ],
 };
 
+faqSchema.mainEntity = faqSchema.mainEntity.slice(0, 10);
+
 const reactionGuide = {
   heading: '反射神経テスト・反応速度テスト ガイド＆ランク判定基準',
   intro: [
@@ -379,7 +373,13 @@ export default function JapaneseReactionTimeTestPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
-      <ReactionTimeTestWrapper copy={{ title: '反射神経テスト・反応速度テスト' }} />
+      <ReactionTimeTestWrapper
+        copy={{
+          title: '反応速度テスト',
+          subtitle: '反射神経をミリ秒単位で測定',
+          caption: '画面の合図が出た瞬間にクリックして、視覚反応時間を測定します。',
+        }}
+      />
       <DrillGuide guide={reactionGuide} />
       <DrillFooter />
     </>

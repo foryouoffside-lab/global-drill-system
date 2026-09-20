@@ -5,20 +5,20 @@ import { getAlternateLanguages } from '@/lib/i18n/locales';
 import { pickSources } from '@/lib/drillSources';
 
 export const metadata = {
-  title: "스트로브 동체시력 훈련・점멸 가림 궤적 예측 테스트 | SkillDrills",
-  description: "주기적 암전(스트로브) 속에서 사라진 표적의 이동 궤적을 뇌내 보간하여 선행 추종하는 동체시력 훈련. 스트로브 안경의 효과를 구현하여 선행 시선과 공간 작업기억을 극대화. 무료.",
+  title: "스트로브 시각 훈련｜동체시력 예측 연습 | SkillDrills",
+  description: "점멸로 가려지는 표적의 궤적을 예측하는 무료 브라우저 훈련. 재등장 오차와 추적 연속성을 기록합니다.",
   keywords: [
     "스트로브 시각 훈련",
     "동체시력 점멸 훈련",
-    "가림 궤적 예측 에임",
     "스트로브 안경 시력 훈련",
-    "순간 시각 인지 예측",
-    "소뇌 예측 모델 안구 훈련",
-    "FPS 스모크 관통 에임",
+    "가림 궤적 예측",
+    "점멸 표적 추적",
+    "시각 보간 훈련",
+    "예측 시선 추적",
     "단속적 시각 차단 운동",
-    "선행 시선 추종",
     "속도 기억 안구 훈련",
-    "스트로브 동체시력 테스트",
+    "동체시력 예측 테스트",
+    "재등장 표적 오차",
     "점멸 가림 시각 추종"
   ],
   alternates: {
@@ -27,8 +27,8 @@ export const metadata = {
   },
   robots: { index: true, follow: true },
   openGraph: {
-    title: "스트로브 동체시력 훈련・점멸 가림 궤적 예측 테스트 | SkillDrills",
-    description: "주기적 암전(스트로브) 속에서 사라진 표적의 이동 궤적을 뇌내 보간하여 선행 추종하는 동체시력 훈련. 스트로브 안경의 효과를 구현하여 선행 시선과 공간 작업기억을 극대화. 무료.",
+    title: "스트로브 시각 훈련｜동체시력 예측 연습 | SkillDrills",
+    description: "점멸로 가려지는 표적의 궤적을 예측하는 무료 브라우저 훈련. 재등장 오차와 추적 연속성을 기록합니다.",
     url: "https://skilldrills.online/ko/drills/visual-tracking/strobe-prediction-pursuit",
     siteName: "SkillDrills",
     locale: "ko_KR",
@@ -36,8 +36,8 @@ export const metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "스트로브 동체시력 훈련・점멸 가림 궤적 예측 테스트 | SkillDrills",
-    description: "주기적 암전(스트로브) 속에서 사라진 표적의 이동 궤적을 뇌내 보간하여 선행 추종하는 동체시력 훈련. 스트로브 안경의 효과를 구현하여 선행 시선과 공간 작업기억을 극대화. 무료.",
+    title: "스트로브 시각 훈련｜동체시력 예측 연습 | SkillDrills",
+    description: "점멸로 가려지는 표적의 궤적을 예측하는 무료 브라우저 훈련. 재등장 오차와 추적 연속성을 기록합니다.",
   },
 };
 
@@ -84,7 +84,7 @@ const softwareApplicationSchema = {
     "name": "SkillDrills",
     "url": "https://skilldrills.online"
   },
-  "dateModified": "2026-09-15"
+  "dateModified": "2026-09-20"
 };
 
 const webAppSchema = {
@@ -100,7 +100,7 @@ const webAppSchema = {
     "priceCurrency": "USD"
   },
   "url": "https://skilldrills.online/ko/drills/visual-tracking/strobe-prediction-pursuit",
-  "dateModified": "2026-09-15"
+  "dateModified": "2026-09-20"
 };
 
 const videoGameSchema = {
@@ -124,7 +124,8 @@ const videoGameSchema = {
     "@type": "Offer",
     "price": "0",
     "priceCurrency": "USD"
-  }
+  },
+  "dateModified": "2026-09-20"
 };
 
 const howToSchema = {
@@ -132,7 +133,7 @@ const howToSchema = {
   "@type": "HowTo",
   "name": "스트로브 가림 궤적 예측 추적 훈련 진행 방법",
   "description": "주기적으로 암전되는 표적의 소실 구간을 뇌내에서 능동적으로 보간하고 선행 시선을 동기화하는 4단계 훈련 프로토콜.",
-  "dateModified": "2026-09-15",
+  "dateModified": "2026-09-20",
   "step": [
     {
       "@type": "HowToStep",
@@ -168,6 +169,7 @@ const howToSchema = {
 const faqSchema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
+  "dateModified": "2026-09-20",
   "mainEntity": [
     {
       "@type": "Question",
@@ -310,6 +312,12 @@ const guide = {
       ]
     }
   ],
+  steps: [
+    { title: "빛이 켜질 때 속도 읽기", text: "표적이 보이는 동안 진행 방향과 속도를 파악하고 머리를 고정해 시선의 기준을 만듭니다." },
+    { title: "암전 중에도 궤적 예측하기", text: "표적이 사라져도 시선을 멈추지 말고 직전 움직임을 바탕으로 다시 나타날 위치까지 따라갑니다." },
+    { title: "재등장 순간의 오차 확인하기", text: "표적이 돌아온 순간 앞뒤로 얼마나 벗어났는지 확인하고 다음 암전에서 속도를 조금 조절합니다." },
+    { title: "안정된 뒤 난도 높이기", text: "짧은 세트로 연습하고 재등장 시 표적 손실이 줄어든 뒤 속도나 차단 난도를 한 단계 높입니다." }
+  ],
   deviceCalibration: {
     title: "스트로브 예측 추적을 위한 하드웨어 환경 및 인체공학적 세팅",
     points: [
@@ -402,8 +410,8 @@ export default function StrobePredictionPursuitKoPage() {
       <StrobePredictionPursuitClient
         copy={{
           title: "스트로브 예측 추적",
-          subtitle: "동체시력 훈련・점멸 가림 궤적 예측 테스트",
-          description: "움직이는 표적이 주기적으로 완전 암전되는 가운데 사라진 궤적을 뇌내에서 능동적으로 보간하여 선행 추종하는 스트로브 동체시력 훈련. 스트로브 안경의 원리를 구현하여 소뇌의 운동 예측 모델과 공간 작업기억을 극대화합니다."
+          subtitle: "점멸 가림 속 동체시력 예측 연습",
+          description: "점멸로 보이지 않는 표적의 궤적을 예측하고 재등장 시선 오차와 표적 손실을 기록합니다."
         }}
       />
       <DrillGuide guide={guide} />

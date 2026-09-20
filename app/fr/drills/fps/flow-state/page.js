@@ -6,21 +6,19 @@ import { pickSources } from '@/lib/drillSources';
 import RelatedDrills from '@/components/drill/RelatedDrills';
 
 export const metadata = {
-  title: "Entraînement Focus FPS – Viser en État de Flow | SkillDrills",
-  description: "Entraînez la concentration mentale et la visée continue sur PC. Entrez dans la zone pour éliminer les hésitations et réussir vos duels sur CS2 et Valorant.",
+  title: "Concentration FPS | Entraînement de Flow | SkillDrills",
+  description: "Entraînement gratuit de concentration FPS : gardez un rythme de visée stable, adaptez le défi et mesurez votre tracking fluide.",
   keywords: [
-    "entraînement concentration fps",
-    "état de flow visée",
-    "comment entrer dans la zone valorant",
-    "focus mental jeux de tir",
+    "entraînement concentration FPS",
+    "état de flow jeu",
+    "entrer dans la zone Valorant",
+    "concentration pour jouer aux FPS",
     "visée en état de flow",
-    "garder son calme en clutch cs2",
-    "exercices endurance mentale fps",
-    "entraînement tracking fluide",
-    "hypofrontalité transitoire visée",
-    "comment ne pas perdre son focus",
-    "routine de préparation mentale gaming",
-    "simulateur de visée gratuit pc"
+    "tracking fluide",
+    "garder son focus sur CS2",
+    "routine mentale gaming",
+    "endurance mentale FPS",
+    "aim trainer flow gratuit"
   ],
   alternates: {
     canonical: "https://skilldrills.online/fr/drills/fps/flow-state",
@@ -31,8 +29,8 @@ export const metadata = {
     follow: true,
   },
   openGraph: {
-    title: "Entraînement Focus FPS – Viser en État de Flow | SkillDrills",
-    description: "Entraînez la concentration mentale et la visée continue sur PC. Entrez dans la zone pour éliminer les hésitations et réussir vos duels sur CS2 et Valorant.",
+    title: "Concentration FPS | Entraînement de Flow | SkillDrills",
+    description: "Gardez un rythme de visée stable et réduisez les distractions dans cet entraînement FPS gratuit. Adaptez le défi et mesurez votre tracking.",
     url: "https://skilldrills.online/fr/drills/fps/flow-state",
     siteName: 'SkillDrills',
     locale: 'fr_FR',
@@ -40,8 +38,8 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: "Entraînement Focus FPS – Viser en État de Flow | SkillDrills",
-    description: "Entraînez la concentration mentale et la visée continue sur PC. Entrez dans la zone pour éliminer les hésitations et réussir vos duels sur CS2 et Valorant.",
+    title: "Concentration FPS | Entraînement de Flow | SkillDrills",
+    description: "Gardez un rythme de visée stable et réduisez les distractions dans cet entraînement FPS gratuit. Adaptez le défi et mesurez votre tracking.",
   },
 };
 
@@ -52,14 +50,14 @@ export default function FlowStateFrPage() {
     "itemListElement": [
       { "@type": "ListItem", "position": 1, "name": "SkillDrills", "item": "https://skilldrills.online/fr" },
       { "@type": "ListItem", "position": 2, "name": "Entraînements FPS", "item": "https://skilldrills.online/fr/drills/fps" },
-      { "@type": "ListItem", "position": 3, "name": "Entraînement Focus FPS", "item": "https://skilldrills.online/fr/drills/fps/flow-state" }
+      { "@type": "ListItem", "position": 3, "name": "Concentration FPS", "item": "https://skilldrills.online/fr/drills/fps/flow-state" }
     ]
   };
 
   const webAppSchema = {
     "@context": "https://schema.org",
     "@type": "WebApplication",
-    "name": "Entraîneur de Focus et État de Flow FPS",
+    "name": "Concentration FPS",
     "url": "https://skilldrills.online/fr/drills/fps/flow-state",
     "applicationCategory": "GameApplication",
     "operatingSystem": "All",
@@ -75,14 +73,14 @@ export default function FlowStateFrPage() {
   const softwareSchema = {
     "@context": "https://schema.org",
     "@type": "SoftwareApplication",
-    "name": "Entraîneur de Flow State SkillDrills",
+    "name": "Concentration FPS",
     "applicationCategory": "GameApplication",
     "operatingSystem": "Web Browser",
     "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
     "description": "Outil d'évaluation psychomotrice et d'induction de concentration profonde pour les joueurs compétitifs de jeux de tir.",
     "genre": "Entraînement FPS / Focus Mental",
     "url": "https://skilldrills.online/fr/drills/fps/flow-state",
-    "dateModified": "2026-09-05",
+    "dateModified": "2026-09-20",
     "publisher": {
       "@type": "Organization",
       "name": "SkillDrills",
@@ -93,7 +91,7 @@ export default function FlowStateFrPage() {
   const videoGameSchema = {
     "@context": "https://schema.org",
     "@type": "VideoGame",
-    "name": "Entraîneur d'État de Flow",
+    "name": "Concentration FPS",
     "url": "https://skilldrills.online/fr/drills/fps/flow-state",
     "description": "Exercice de précision avec courbes de Bézier continues développé pour stimuler l'attention ininterrompue et fluidifier la visée.",
     "gamePlatform": "Web Browser",
@@ -101,13 +99,13 @@ export default function FlowStateFrPage() {
     "playMode": "SinglePlayer",
     "applicationCategory": "Game",
     "operatingSystem": "Web Browser",
-    "dateModified": "2026-09-05"
+    "dateModified": "2026-09-20"
   };
 
   const faqSchema = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
-    "dateModified": "2026-09-05",
+    "dateModified": "2026-09-20",
     "mainEntity": [
       {
         "@type": "Question",
@@ -230,8 +228,8 @@ export default function FlowStateFrPage() {
   };
 
   const copyFr = {
-    h1Keyword: "Entraînement Focus FPS",
-    h1Suffix: " – Viser en État de Flow",
+    h1Keyword: "Concentration FPS",
+    h1Suffix: " – Entraînement de Flow",
     statScore: "Score",
     statTime: "Temps Restant",
     statAccuracy: "Précision de Suivi",
@@ -253,9 +251,9 @@ export default function FlowStateFrPage() {
   };
 
   const flowStateGuide = {
-    heading: "Guide d'Induction du Flow et Repères de Concentration Cognitive",
+    heading: "Guide de Concentration FPS et Benchmarks de l'État de Flow",
     intro: [
-      "L'Entraîneur d'État de Flow associe neurosciences motrices et psychologie cognitive pour développer l'attention soutenue, l'endurance mentale et le suivi oculaire continu. D'après les travaux fondateurs de Mihaly Csikszentmihalyi (1975, 1990), le flow se manifeste lorsque l'ampleur du défi équilibre exactement le niveau de compétence du joueur, faisant taire le doute et la dispersion d'esprit.",
+      "L'entraînement de concentration FPS consiste à suivre une cible avec un rythme stable, réduire les distractions et adapter le défi à son niveau réel. Ce drill mesure la précision du tracking et l'endurance attentionnelle ; il ne promet pas de créer le flow à volonté, mais révèle quand le focus et le contrôle diminuent.",
       "L'hypothèse d'hypofrontalité transitoire de Dietrich (2004) détaille la dynamique cérébrale de cet état : en atténuant temporairement le contrôle analytique du cortex préfrontal dorsolatéral (DLPFC), le cerveau délègue la visée aux ganglions de la base et au cervelet. Dans les jeux de tir, ce mécanisme libère les gestes de l'hésitation et autorise des micro-corrections réflexes instantanées.",
       "S'appuyant sur l'horloge performance.now() du navigateur à haute précision temporelle (Woods et al., 2015) et des trajectoires continues en courbes de Bézier (Krauzlis, 2004; Posner & Petersen, 1990), cet outil développe l'endurance de visée sans installation requise.",
       "Mesure technique sur votre appareil : chaque événement est horodaté localement via le navigateur sans transmission de métriques vers des serveurs distants. Rappelez-vous que les navigateurs appliquent une discrétisation de ~1 ms pour contrer les failles de temporisation et que les écrans actualisent l'image par pas réguliers (16,7 ms à 60 Hz contre 4,1 ms à 240 Hz). Mesurez vos progrès en comparant vos performances sur le même poste."
@@ -361,7 +359,7 @@ export default function FlowStateFrPage() {
       />
       <FlowStateClient copy={copyFr} />
       <div className="max-w-6xl mx-auto px-4 w-full pb-12">
-        <RelatedDrills currentCategory="fps" currentHref="/drills/fps/flow-state" locale="fr" />
+        <RelatedDrills currentCategory="fps" currentHref="/fr/drills/fps/flow-state" locale="fr" />
       </div>
       <DrillGuide guide={flowStateGuide} />
       <DrillFooter />

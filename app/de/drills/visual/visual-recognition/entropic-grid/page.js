@@ -5,23 +5,25 @@ import RelatedDrills from '@/components/drill/RelatedDrills';
 import { pickSources } from '@/lib/drillSources';
 
 export const metadata = {
-  title: "Visuelle Suche Test: Entropic Grid | SkillDrills",
-  description: "Kostenloser Visuelle Suche Test: Finde Zielzeichen in einer 100-Zellen-Matrix unter dynamischem Rauschen. Trainiere selektive Aufmerksamkeit online.",
+  title: "Visuelle Suche | Selektive Aufmerksamkeit | SkillDrills",
+  description: "Kostenloses visuelles Suchtraining: Finde Zielzeichen in einer 10×10-Matrix trotz wechselnder Ablenker. Übe selektive Aufmerksamkeit. Kein Diagnosetest.",
   keywords: [
-    "visuelle suche test",
-    "selektive aufmerksamkeit test",
-    "visuelle aufmerksamkeit training",
-    "entropic grid",
-    "visuelle reizfilterung",
-    "merkmalsintegration theorie",
-    "periphere rasterabtastung",
-    "informationsverarbeitungsgeschwindigkeit",
-    "esports visual search",
-    "aim scanning test"
+    "visuelle Suche",
+    "visuelle Aufmerksamkeit",
+    "selektive Aufmerksamkeit",
+    "visuelles Scannen",
+    "Konzentration Raster",
+    "Aufmerksamkeitstest",
+    "Störreize filtern",
+    "Merkmalsintegration",
+    "visuelle Suchgeschwindigkeit",
+    "Informationsverarbeitungsgeschwindigkeit",
+    "peripheres Sehen",
+    "kognitives Training"
   ],
   openGraph: {
-    title: "Visuelle Suche Test – Entropic Grid & Selektive Aufmerksamkeit Online | SkillDrills",
-    description: "Wissenschaftlicher Visuelle Suche Test in 100-Zellen-Matrix unter dynamischem Hintergrundrauschen. Trainiere selektive Aufmerksamkeit und periphere Reizfilterung kostenlos online.",
+    title: "Visuelle Suche | Selektive Aufmerksamkeit | SkillDrills",
+    description: "Finde Zielzeichen in einer wechselnden 10×10-Matrix und übe selektive Aufmerksamkeit und visuelles Scannen.",
     type: 'article',
     url: 'https://skilldrills.online/de/drills/visual/visual-recognition/entropic-grid',
     siteName: 'SkillDrills',
@@ -29,8 +31,8 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: "Visuelle Suche Test – Entropic Grid & Selektive Aufmerksamkeit Online | SkillDrills",
-    description: "Wissenschaftlicher Visuelle Suche Test unter dynamischem Hintergrundrauschen. Trainiere selektive Aufmerksamkeit und kognitive Filterung.",
+    title: "Visuelle Suche | Selektive Aufmerksamkeit | SkillDrills",
+    description: "Finde Zielzeichen im wechselnden Raster und trainiere visuelle Aufmerksamkeit und Reizfilterung im Browser.",
   },
   robots: { index: true, follow: true },
   alternates: {
@@ -70,7 +72,7 @@ const breadcrumbSchema = {
     {
       "@type": "ListItem",
       "position": 5,
-      "name": "Visuelle Suche Test (Entropic Grid)",
+      "name": "Visuelle Suche (wechselndes Raster)",
       "item": "https://skilldrills.online/de/drills/visual/visual-recognition/entropic-grid"
     }
   ]
@@ -79,7 +81,7 @@ const breadcrumbSchema = {
 const softwareApplicationSchema = {
   "@context": "https://schema.org",
   "@type": "SoftwareApplication",
-  "name": "SkillDrills Visuelle Suche & Entropic Grid Messung",
+  "name": "SkillDrills Visuelle Suche und selektive Aufmerksamkeit",
   "applicationCategory": "HealthApplication",
   "operatingSystem": "Any",
   "browserRequirements": "HTML5 Canvas fähiger Webbrowser",
@@ -94,7 +96,7 @@ const softwareApplicationSchema = {
 const webApplicationSchema = {
   "@context": "https://schema.org",
   "@type": "WebApplication",
-  "name": "Kostenloses Visuelle Suche Training (Entropic Grid)",
+  "name": "Kostenloses Training für visuelle Suche",
   "url": "https://skilldrills.online/de/drills/visual/visual-recognition/entropic-grid",
   "applicationCategory": "GameApplication",
   "genre": ["Visuelle Suche Test", "Selektive Aufmerksamkeit Test", "Kognitives Training", "Periphere Wahrnehmung"],
@@ -105,9 +107,9 @@ const webApplicationSchema = {
 const videoGameSchema = {
   "@context": "https://schema.org",
   "@type": "VideoGame",
-  "name": "Entropic Grid Visuelle Suche (Visual Search Paradigm)",
+  "name": "Visuelle-Suche-Challenge im wechselnden Raster",
   "description": "Finde und klicke vorgegebene alphanumerische Zielcodes in einer 100-Zellen-Matrix gegen dynamisch wechselndes Hintergrundrauschen unter Zeitdruck.",
-  "genre": ["Cognitive Drill", "Vision Training", "Esports Reaction"],
+  "genre": ["Visuelle Suche", "Selektive Aufmerksamkeit", "Visuelles Scannen"],
   "playMode": "SinglePlayer",
   "applicationCategory": "Game"
 };
@@ -202,7 +204,7 @@ const faqSchema = {
 const howToSchema = {
   "@context": "https://schema.org",
   "@type": "HowTo",
-  "name": "Strategie-Leitfaden für den Entropic Grid Visuelle Suche Test",
+  "name": "Anleitung für die visuelle Suche im wechselnden Raster",
   "description": "Schritt-für-Schritt-Anleitung zur Erzielung von Spitzenwerten im dynamischen 100-Zellen-Suchtest.",
   "step": [
     {
@@ -238,7 +240,7 @@ const howToSchema = {
 
 const guideData = {
   eyebrow: "Kognitionspsychologie & Selektive Aufmerksamkeitskontrolle",
-  heading: "Visuelle Suche Test – Merkmalsintegration und Reizfilterung in dynamischen Rastern",
+  heading: "Visuelle Suche: Selektive Aufmerksamkeit im wechselnden Raster trainieren",
   intro: [
     "Die visuelle Suche (Visual Search) beschreibt die fundamentale menschliche Fähigkeit, ein definiertes Zielobjekt (Target) inmitten zahlreicher ablenkender Störreize (Distraktoren) präzise und zeitnah zu lokalisieren. Laut Anne Treismans bahnbrechender Merkmalsintegrationstheorie (Feature Integration Theory: FIT, Treisman & Gelade, 1980) verarbeitet das visuelle System elementare Attribute wie Farbe oder Linienneigung zunächst unbewusst und parallel in einer präattentiven Phase. Erst die fokussierte, ortsbezogene Aufmerksamkeit bindet diese Merkmale zusammen, um komplexe Konfigurationen wie Buchstaben und Zahlen zweifelsfrei zu entschlüsseln.",
     "Im Guided-Search-Modell (Wolfe, 1994; Wolfe, 2007) interagieren stimulusgetriebene Bottom-Up-Auffälligkeiten mit zielorientierten Top-Down-Vorgaben, um im Gehirn eine sogenannte 'Prioritätskarte' (Priority Map) aufzubauen. Im Entropic-Grid-Szenario erzeugen 100 Zellen mit zyklisch wechselndem Rauschen eine extrem hohe visuelle Entropie, die das Bottom-Up-System massiv überflutet. Um hier erfolgreich zu agieren, müssen der dorsolaterale präfrontale Kortex und parietale Netzwerke starke inhibitorische Signale aussenden, die irrelevante Rauschreize aktiv tilgen (Duncan & Humphreys, 1989).",
@@ -247,7 +249,7 @@ const guideData = {
     "Dieses webbasierte Trainingssystem erfasst anhand moderner performance.now()-Mikrotimer die individuelle Suchlatenz, Trefferrate und Fehlerquoten über 45-Sekunden-Zyklen. Ein regelmäßiges Training im Entropic Grid stärkt die sensorische Filterkapazität unter extremem visuellem Clutter – mit direktem Transfer auf das Scanning in taktischen Shootern, die Gefahrenerkennung im Straßenverkehr sowie die effiziente Auswertung komplexer Datenstrukturen."
   ],
   benchmarks: {
-    title: "Benchmark-Kriterien für Visuelle Suche & Selektive Aufmerksamkeit",
+    title: "Orientierungswerte für visuelle Suche und selektive Aufmerksamkeit",
     headers: ["Leistungsstufe / Rang", "Erfolgreiche Treffer (45 Sek.)", "Mittlere Suchfixations-Latenz", "Rauschfilter-Genauigkeit", "Neurokognitive Verarbeitungsstufe"],
     rows: [
       ["Elite / Profi-Klasse (Top 1%)", "18+ Treffer", "< 180 ms", "> 96%", "Perfekte Synthese aus paralleler Pop-out-Erkennung und zielgerichteter Top-Down-Suche (Wolfe, 2007)"],
@@ -259,7 +261,7 @@ const guideData = {
     note: "Objektive Leistungswerte basierend auf der kognitionswissenschaftlichen Literatur zur visuellen Aufmerksamkeit (Treisman & Gelade 1980; Wolfe 2007; Duncan & Humphreys 1989; Posner 1980)."
   },
   techniques: {
-    title: "4 wissenschaftlich fundierte Techniken zur Maximierung der Suchgeschwindigkeit",
+    title: "Zielzeichen schneller finden und Ablenker ausblenden",
     items: [
       {
         name: "Parallele Pop-Out-Merkmalsextraktion (Parallel Pop-Out Feature Extraction)",
@@ -329,7 +331,7 @@ export default function LocalizedEntropicGridDePage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
 
-      <EntropicGridClient copy={{ title: "Visuelle Suche Test – Entropic Grid Training", subtitle: "Dynamische Rauschfilterung & Selektive Aufmerksamkeit" }} />
+      <EntropicGridClient copy={{ title: "Visuelle Suche", subtitle: "Selektive Aufmerksamkeit und visuelles Scannen" }} />
       <DrillGuide guide={guideData} />
       <div className="max-w-6xl mx-auto px-4 pb-12">
         <RelatedDrills currentCategory="visual" currentHref="https://skilldrills.online/de/drills/visual/visual-recognition/entropic-grid" />

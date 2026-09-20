@@ -1,15 +1,17 @@
 import ConcentrationStaminaClient from './ConcentrationStaminaClientLoader';
 import { getAlternateLanguages } from '@/lib/i18n/locales';
 import DrillGuide from '@/components/drill/DrillGuide';
+import RelatedDrills from '@/components/drill/RelatedDrills';
+import DrillFooter from '@/components/drill/DrillFooter';
 import { pickSources } from '@/lib/drillSources';
 
 export const metadata = {
-  title: "Attention Span Test – Concentration Stamina | SkillDrills",
-  description: "Free attention span test online: Measure continuous visual focus, vigilance decay, and rule-switching stamina under speed pressure in this cognitive drill.",
-  keywords: ["attention span test", "concentration stamina", "focus test online", "continuous performance test", "vigilance test", "sustained attention test", "cpt test online", "concentration span test", "mental stamina test", "executive control test", "adhd focus test", "cognitive endurance drill"],
+  title: "Attention Span Test Online | Sustained Focus | SkillDrills",
+  description: "Free browser attention span test for sustained focus, target detection, response inhibition, and rule switching. Non-clinical practice.",
+  keywords: ["attention span test online", "attention test online", "sustained attention test", "concentration test online", "continuous performance test", "vigilance test", "response inhibition test", "focus training", "cognitive endurance drill", "rule switching test"],
   openGraph: {
-    title: "Attention Span Test – Concentration Stamina | SkillDrills",
-    description: "Free attention span test online: Measure continuous visual focus, vigilance decay, and rule-switching stamina under speed pressure in this cognitive drill.",
+    title: "Attention Span Test Online | Sustained Focus | SkillDrills",
+    description: "Free browser attention span test for sustained focus, target detection, response inhibition, and rule switching. Non-clinical practice.",
     type: 'article',
     url: 'https://skilldrills.online/drills/cognitive/attention/concentration-stamina',
     siteName: 'SkillDrills',
@@ -17,8 +19,8 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: "Attention Span Test – Concentration Stamina | SkillDrills",
-    description: "Free attention span test online: Measure continuous visual focus, vigilance decay, and rule-switching stamina under speed pressure in this cognitive drill.",
+    title: "Attention Span Test Online | Sustained Focus | SkillDrills",
+    description: "Free browser attention span test for sustained focus, target detection, response inhibition, and rule switching. Non-clinical practice.",
   },
   robots: { index: true, follow: true },
   alternates: {
@@ -77,7 +79,7 @@ const softwareApplicationSchema = {
     "url": "https://skilldrills.online"
   },
   "inLanguage": "en-US",
-  "dateModified": "2026-09-11"
+  "dateModified": "2026-09-20"
 };
 
 const webApplicationSchema = {
@@ -94,7 +96,7 @@ const webApplicationSchema = {
   },
   "url": "https://skilldrills.online/drills/cognitive/attention/concentration-stamina",
   "inLanguage": "en-US",
-  "dateModified": "2026-09-11"
+  "dateModified": "2026-09-20"
 };
 
 const videoGameSchema = {
@@ -312,8 +314,12 @@ export default function EnhancedPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(howToSchema) }}
       />
-      <ConcentrationStaminaClient copy={{ title: "Concentration Stamina – Attention Span Test" }} />
+      <ConcentrationStaminaClient copy={{ title: "Concentration Stamina – Attention Span Test", subtitle: "Attention span test for sustained focus, target discrimination, and cognitive endurance under time pressure" }} />
       <DrillGuide {...guideProps} />
+      <div className="max-w-6xl mx-auto px-4 pb-12">
+        <RelatedDrills currentCategory="cognitive" currentHref="https://skilldrills.online/drills/cognitive/attention/concentration-stamina" />
+      </div>
+      <DrillFooter />
     </>
   );
 }

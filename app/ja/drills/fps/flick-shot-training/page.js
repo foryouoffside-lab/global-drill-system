@@ -6,20 +6,18 @@ import RelatedDrills from '@/components/drill/RelatedDrills';
 import DrillFooter from '@/components/drill/DrillFooter';
 
 export const metadata = {
-  title: "フリック エイム 練習 – スナップショット初弾精度 | SkillDrills",
-  description: "ブラウザで無料プレイできるフリックエイム練習。ランダムに出現する標的に素早く照準を合わせるスナップエイム、運動記憶、マウス終末制動力を鍛えてVALORANTやCS2の初弾ヘッドショット精度を高めます。",
+  title: "エイム練習 - フリックエイムトレーナー | SkillDrills",
+  description: "ブラウザですぐできる無料のエイム練習。VALORANT・CS2向けにフリックとスナップエイムを練習し、スコアと命中率を確認できます。",
   keywords: [
-    "フリック エイム 練習",
-    "フリック エイム",
-    "フリックショット 練習",
-    "スナップ エイム 向上",
-    "VALORANT フリック 練習",
-    "CS2 フリック エイム",
+    "エイム練習",
+    "エイム練習 無料 ブラウザ",
+    "VALORANT エイム練習",
+    "フリック練習",
+    "フリックエイム",
+    "スナップエイム",
+    "置きエイム 練習",
     "初弾ヘッドショット 練習",
-    "エイムトレーナー 無料",
     "急停止 エイム",
-    "フリック エイム コツ",
-    "エイム練習 ブラウザ",
     "オーバーフリック 改善"
   ],
   alternates: {
@@ -31,8 +29,8 @@ export const metadata = {
     follow: true,
   },
   openGraph: {
-    title: "フリック エイム 練習 – スナップショット初弾精度 | SkillDrills",
-    description: "ブラウザで無料プレイできるフリックエイム練習。ランダムに出現する標的に素早く照準を合わせるスナップエイム、運動記憶、マウス終末制動力を鍛えてVALORANTやCS2の初弾ヘッドショット精度を高めます。",
+    title: "エイム練習 - フリックエイムトレーナー | SkillDrills",
+    description: "ブラウザですぐできる無料のエイム練習。VALORANT・CS2向けにフリックとスナップエイムを練習し、スコアと命中率を確認できます。",
     url: "https://skilldrills.online/ja/drills/fps/flick-shot-training",
     siteName: 'SkillDrills',
     locale: 'ja_JP',
@@ -40,8 +38,8 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: "フリック エイム 練習 – スナップショット初弾精度 | SkillDrills",
-    description: "ブラウザで無料プレイできるフリックエイム練習。ランダムに出現する標的に素早く照準を合わせるスナップエイム、運動記憶、マウス終末制動力を鍛えてVALORANTやCS2の初弾ヘッドショット精度を高めます。",
+    title: "エイム練習 - フリックエイムトレーナー | SkillDrills",
+    description: "ブラウザですぐできる無料のエイム練習。VALORANT・CS2向けにフリックとスナップエイムを練習し、スコアと命中率を確認できます。",
   },
 };
 
@@ -52,19 +50,19 @@ export default function FlickShotJaPage() {
     "itemListElement": [
       { "@type": "ListItem", "position": 1, "name": "SkillDrills", "item": "https://skilldrills.online/ja" },
       { "@type": "ListItem", "position": 2, "name": "FPSエイム練習", "item": "https://skilldrills.online/ja/drills/fps" },
-      { "@type": "ListItem", "position": 3, "name": "フリック エイム", "item": "https://skilldrills.online/ja/drills/fps/flick-shot-training" }
+      { "@type": "ListItem", "position": 3, "name": "エイム練習・フリック", "item": "https://skilldrills.online/ja/drills/fps/flick-shot-training" }
     ]
   };
 
   const softwareSchema = {
     "@context": "https://schema.org",
     "@type": "SoftwareApplication",
-    "name": "フリック エイム 練習",
+    "name": "エイム練習・フリックトレーナー",
     "applicationCategory": "GameApplication",
     "operatingSystem": "Web Browser",
-    "dateModified": "2026-09-05",
+    "dateModified": "2026-09-20",
     "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
-    "description": "スナップエイム、弾道運動記憶、マウスパッド制動力を鍛える無料ブラウザFPSエイムトレーナー。",
+    "description": "ブラウザでフリックとスナップエイムを練習し、スコアと命中率を確認できる無料のFPSエイム練習サイト。",
     "genre": "FPS Training / Flick Shot",
     "url": "https://skilldrills.online/ja/drills/fps/flick-shot-training",
     "publisher": {
@@ -77,7 +75,7 @@ export default function FlickShotJaPage() {
   const webAppSchema = {
     "@context": "https://schema.org",
     "@type": "WebApplication",
-    "name": "フリック エイム 練習",
+    "name": "エイム練習・フリックトレーナー",
     "url": "https://skilldrills.online/ja/drills/fps/flick-shot-training",
     "applicationCategory": "GameApplication",
     "operatingSystem": "All",
@@ -87,16 +85,16 @@ export default function FlickShotJaPage() {
       "price": "0",
       "priceCurrency": "USD"
     },
-    "description": "スナップエイム、弾道運動記憶、マウスパッド制動力を鍛える無料ブラウザFPSエイムトレーナー。"
+    "description": "ブラウザでフリックとスナップエイムを練習し、スコアと命中率を確認できる無料のFPSエイム練習サイト。"
   };
 
   const videoGameSchema = {
     "@context": "https://schema.org",
     "@type": "VideoGame",
-    "name": "フリック エイム 練習",
+    "name": "エイム練習・フリックトレーナー",
     "url": "https://skilldrills.online/ja/drills/fps/flick-shot-training",
-    "description": "スナップエイム、弾道運動記憶、マウスパッド制動力を鍛える無料ブラウザFPSエイムトレーナー。",
-    "dateModified": "2026-09-05",
+    "description": "ブラウザでフリックとスナップエイムを練習し、スコアと命中率を確認できる無料のFPSエイム練習サイト。",
+    "dateModified": "2026-09-20",
     "gamePlatform": "Web Browser",
     "genre": ["FPS Training", "Aim Trainer", "Flick Shot"],
     "playMode": "SinglePlayer",
@@ -108,7 +106,7 @@ export default function FlickShotJaPage() {
   const faqSchema = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
-    "dateModified": "2026-09-05",
+    "dateModified": "2026-09-20",
     "mainEntity": [
       {
         "@type": "Question",
@@ -227,10 +225,10 @@ export default function FlickShotJaPage() {
   };
 
   const flickGuide = {
-    heading: "フリック エイム 練習 実践マニュアル",
+    heading: "エイム練習：フリックエイム測定とFPS照準ガイド",
     subtitle: "スナップエイムの初速加速、筋運動記憶、そして標的上でピタリと止める終末制動力を科学的に極める",
     intro: [
-      "フリックエイム（Flick Aim）は、視覚で捉えた標的の座標へ瞬時に照準を弾き飛ばし、最短時間で初弾を叩き込む競技FPSの最も象徴的な基本スキルです。VALORANTやCS2、Apex Legendsにおいて、想定外の角度から飛び出した敵とのファイトを制するには、正確無比なフリックエイムが不可欠です。",
+      "エイム練習を始めたいFPSプレイヤーにとって、フリックエイムは視覚で捉えた標的へ照準を素早く移し、最短時間で初弾を当てる基本スキルです。VALORANTやCS2、Apex Legendsで想定外の角度から現れる敵に対応するには、フリックの速さと命中率を一緒に鍛える必要があります。",
       "精神運動科学において、人間の目標指向運動は「二段階モデル」（Elliott et al., 2010）に従います。最初の開ループ（オープンループ）弾道運動で距離の大部分（約80〜90%）を一気に跳躍し、標的直前の閉ループ（クローズドループ）視覚フィードバックによって微細な終末修正を完了させます。",
       "Paul M. Fitts（1954）の運動制御法則（Fitts's Law）が証明するように、移動距離が長く標的が小さいほど難易度指数（ID）は対数関数的に増大します。本ドリルでは、Richard A. Schmidtら（1979）の主動筋・拮抗筋パルス制御論と高精度デジタル時間計測（Woods et al., 2015）を融合し、オーバーシュートのない機械的ブレーキング能力を養います。",
       "計測精度について：本ドリルはブラウザの performance.now() 高分解能タイマーを用い、デバイス上で完結して測定されます。ディスプレイのリフレッシュレート（60Hzなら約16.7ms、144Hzなら約6.9ms、240Hzなら約4.1ms）による表示遅延が生じるため、5ms未満の微小なブレはハードウェア起因の測定ノイズとして扱い、同一環境での推移を比較してください。"
@@ -318,9 +316,9 @@ export default function FlickShotJaPage() {
       />
       <ProFlickClient
         copy={{
-          h1Keyword: "フリック エイム 練習",
-          h1Suffix: " - スナップエイム・初弾精度トレーナー",
-          subtitle: "スナップエイム、弾道運動記憶、ターゲット捕捉、終末制動力をリアルタイムフィードバックで鍛えます。",
+          h1Keyword: "エイム練習",
+          h1Suffix: " - フリックエイムトレーナー",
+          subtitle: "VALORANT・CS2向けのフリックと初弾エイムをブラウザですぐ練習できます。",
           statScore: "スコア",
           statTime: "残り時間",
           statAccuracy: "命中率",
@@ -352,7 +350,7 @@ export default function FlickShotJaPage() {
       <div className="max-w-4xl mx-auto px-4 pb-12">
         <RelatedDrills
           currentCategory="fps"
-          currentHref="/drills/fps/flick-shot-training"
+          currentHref="/ja/drills/fps/flick-shot-training"
           locale="ja"
         />
       </div>

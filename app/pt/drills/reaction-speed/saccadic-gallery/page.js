@@ -1,41 +1,40 @@
-import SaccadicGalleryClient from '@/app/drills/reaction-speed/saccadic-gallery/SaccadicGalleryClient';
+import SaccadicGalleryWrapper from '@/app/drills/reaction-speed/saccadic-gallery/SaccadicGalleryWrapperLoader';
 import { getAlternateLanguages } from '@/lib/i18n/locales';
 import DrillGuide from '@/components/drill/DrillGuide';
+import DrillFooter from '@/components/drill/DrillFooter';
 import RelatedDrills from '@/components/drill/RelatedDrills';
 import { pickSources } from '@/lib/drillSources';
 
 // ============================================================
 // SEO RESEARCH FINDINGS — pt-BR (reaction-speed / saccadic-gallery)
-// PRIMARY DOMESTIC: "exercicios sacadicos online" / "movimentos sacadicos"
-// SECONDARY / LSI:
-//   "treino de sacadas" / "saltos oculares rapidos" / "varredura visual"
-//   "agilidade visual ocular" / "tempo de reacao visual"
+// PRIMARY DOMESTIC: Google Suggest expands "treino de visão" into visão periférica and visão de jogo
+// Bing returned exact 0 for the specialist and peripheral seeds; use native visual-training language, not invented volume
 // ============================================================
 
 export const metadata = {
-  title: 'Exercícios Sacádicos Online – Treino Ocular | SkillDrills',
+  title: 'Treino de Visão Periférica Online | SkillDrills',
   description:
-    'Exercícios sacádicos online grátis. Treine saltos oculares rápidos entre alvos fixos para acelerar a varredura visual e a aquisição de alvos no navegador.',
+    'Treino de visão periférica grátis no navegador. Mude o olhar entre alvos e pratique varredura visual, reação e coordenação olho-mão.',
   keywords: [
-    'exercicios sacadicos online',
-    'movimentos sacadicos',
-    'treino de sacadas',
-    'saltos oculares rapidos',
+    'treino de visão',
+    'treino de visão periférica',
+    'treino de visão de jogo',
+    'visão periférica treino',
     'varredura visual',
-    'agilidade visual ocular',
-    'tempo de reacao visual',
-    'coordenacao ocular',
-    'aquisicao de alvos',
-    'treino de foco visual',
+    'movimentos sacádicos',
+    'exercícios sacádicos',
+    'agilidade visual',
+    'tempo de reação visual',
+    'coordenação olho-mão',
   ],
   alternates: {
     canonical: 'https://skilldrills.online/pt/drills/reaction-speed/saccadic-gallery',
     languages: getAlternateLanguages('/drills/reaction-speed/saccadic-gallery'),
   },
   openGraph: {
-    title: 'Exercícios Sacádicos Online – Treino Ocular | SkillDrills',
+    title: 'Treino de Visão Periférica Online | SkillDrills',
     description:
-      'Exercícios sacádicos online grátis. Treine saltos oculares rápidos entre alvos para melhorar sua agilidade visual.',
+      'Mude o olhar entre alvos e pratique visão periférica, reação visual e coordenação olho-mão gratuitamente no navegador.',
     type: 'article',
     url: 'https://skilldrills.online/pt/drills/reaction-speed/saccadic-gallery',
     siteName: 'SkillDrills',
@@ -43,9 +42,9 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Exercícios Sacádicos Online – Treino Ocular | SkillDrills',
+    title: 'Treino de Visão Periférica Online | SkillDrills',
     description:
-      'Exercícios sacádicos gratuitos no navegador. Aumente a velocidade dos seus saltos oculares e reflexos.',
+      'Treino de visão grátis: alterne o olhar entre alvos e pratique sua reação visual.',
   },
   robots: { index: true, follow: true },
 };
@@ -57,15 +56,15 @@ const breadcrumbSchema = {
     { '@type': 'ListItem', position: 1, name: 'SkillDrills Início', item: 'https://skilldrills.online/pt' },
     { '@type': 'ListItem', position: 2, name: 'Hub de Exercícios', item: 'https://skilldrills.online/pt/drills' },
     { '@type': 'ListItem', position: 3, name: 'Velocidade de Reação', item: 'https://skilldrills.online/pt/drills/reaction-speed' },
-    { '@type': 'ListItem', position: 4, name: 'Exercícios Sacádicos', item: 'https://skilldrills.online/pt/drills/reaction-speed/saccadic-gallery' },
+    { '@type': 'ListItem', position: 4, name: 'Treino de Visão Periférica Online', item: 'https://skilldrills.online/pt/drills/reaction-speed/saccadic-gallery' },
   ],
 };
 
 const softwareApplicationSchema = {
   '@context': 'https://schema.org',
   '@type': 'SoftwareApplication',
-  name: 'Exercícios Sacádicos Online – Treino de Saltos Oculares',
-  alternateName: ['Treino Sacádico Online', 'Simulador de Movimentos Sacádicos', 'Teste de Agilidade Ocular'],
+  name: 'Treino de Visão Periférica Online',
+  alternateName: ['Treino de visão', 'Treino de visão periférica', 'Treino de visão de jogo', 'Exercícios sacádicos'],
   applicationCategory: 'HealthApplication',
   operatingSystem: 'All',
   offers: { '@type': 'Offer', price: '0', priceCurrency: 'BRL' },
@@ -78,7 +77,7 @@ const softwareApplicationSchema = {
 const webAppSchema = {
   '@context': 'https://schema.org',
   '@type': 'WebApplication',
-  name: 'Exercícios Sacádicos Online — Treino Ocular | SkillDrills',
+  name: 'Treino de Visão Periférica Online | SkillDrills',
   url: 'https://skilldrills.online/pt/drills/reaction-speed/saccadic-gallery',
   description:
     'Treino de movimentos sacádicos gratuito no navegador para aprimorar a velocidade de saltos oculares e aquisição periférica.',
@@ -95,7 +94,7 @@ const webAppSchema = {
 const videoGameSchema = {
   '@context': 'https://schema.org',
   '@type': 'VideoGame',
-  name: 'Exercícios Sacádicos - Jogo de Reflexos Oculares',
+  name: 'Treino de Visão Periférica - Jogo Visual',
   url: 'https://skilldrills.online/pt/drills/reaction-speed/saccadic-gallery',
   description: 'Treino interativo de velocidade de salto ocular e pontaria visual no navegador.',
   genre: ['Vision Training', 'Action', 'Esports Training'],
@@ -144,7 +143,7 @@ const howToSchema = {
 const faqSchema = {
   '@context': 'https://schema.org',
   '@type': 'FAQPage',
-  dateModified: '2026-09-15',
+  dateModified: '2026-09-20',
   mainEntity: [
     {
       '@type': 'Question',
@@ -229,6 +228,7 @@ const faqSchema = {
   ],
 };
 
+faqSchema.mainEntity = faqSchema.mainEntity.slice(0, 10);
 const saccadicGuide = {
   heading: 'Guia de Exercícios Sacádicos: Velocidade de Saltos Oculares e Fixação Foveal',
   intro: [
@@ -319,11 +319,12 @@ export default function PortugueseSaccadicGalleryPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
-      <SaccadicGalleryClient copy={{ title: 'Exercícios Sacádicos Online' }} />
+      <SaccadicGalleryWrapper copy={{ title: 'Treino de Visão Periférica Online', subtitle: 'Saltos do Olhar · Aquisição Visual', caption: 'Mude o olhar rapidamente entre os alvos e clique em cada um com precisão.' }} />
       <DrillGuide guide={saccadicGuide} />
       <div className="max-w-6xl mx-auto px-4 pb-12">
         <RelatedDrills currentCategory="reaction-speed" currentHref="https://skilldrills.online/pt/drills/reaction-speed/saccadic-gallery" />
       </div>
+      <DrillFooter />
     </>
   );
 }

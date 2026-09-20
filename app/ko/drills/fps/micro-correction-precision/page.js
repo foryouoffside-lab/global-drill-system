@@ -6,21 +6,19 @@ import { getAlternateLanguages } from '@/lib/i18n/locales';
 import RelatedDrills from '@/components/drill/RelatedDrills';
 
 export const metadata = {
-  title: "마이크로 플릭 연습 – 에임 미세조정 트레이너 | SkillDrills",
-  description: "무료 브라우저 마이크로 플릭 에임 트레이너. 초기 플릭 후 목표 중심의 미세 오차를 번개처럼 보정하고 손끝 감속 제어 및 헤드샷 정밀도를 과학적으로 훈련합니다.",
+  title: "에임 연습 | 마이크로 플릭 미세조정 | SkillDrills",
+  description: "무료 브라우저 에임 연습으로 초기 플릭 뒤 미세조정과 손끝 감속을 훈련하세요. 발로란트·CS2 헤드샷 정밀도를 측정합니다.",
   keywords: [
-    "마이크로 플릭 연습",
-    "에임 미세조정",
+    "에임 연습",
+    "에임 연습 게임",
+    "에임 연습 발로란트",
     "마이크로 플릭",
-    "발로란트 에임 미세조정",
+    "에임 미세조정",
     "FPS 헤드샷 에임 연습",
-    "마이크로 에임 트레이너",
-    "CS2 마이크로 플릭",
     "무료 에임 연습",
     "헤드샷 미세조정",
-    "에임 브레이킹 연습",
     "마우스 감속 제어",
-    "초정밀 에임 훈련"
+    "CS2 마이크로 플릭"
   ],
   alternates: {
     canonical: "https://skilldrills.online/ko/drills/fps/micro-correction-precision",
@@ -31,8 +29,8 @@ export const metadata = {
     follow: true,
   },
   openGraph: {
-    title: "마이크로 플릭 연습 – 에임 미세조정 트레이너 | SkillDrills",
-    description: "초기 플릭 직후의 미세한 조준 오차를 정밀 보정하는 무료 브라우저 FPS 에임 트레이너. 발로란트와 CS2 헤드샷 적중률을 비약적으로 끌어올립니다.",
+    title: "에임 연습 | 마이크로 플릭 미세조정 | SkillDrills",
+    description: "무료 브라우저 에임 연습으로 초기 플릭 뒤 미세조정과 손끝 감속을 훈련하세요. 발로란트·CS2 헤드샷 정밀도를 측정합니다.",
     url: "https://skilldrills.online/ko/drills/fps/micro-correction-precision",
     siteName: 'SkillDrills',
     locale: 'ko_KR',
@@ -40,8 +38,8 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: "마이크로 플릭 연습 – 에임 미세조정 트레이너 | SkillDrills",
-    description: "초기 플릭 직후의 미세한 조준 오차를 정밀 보정하는 무료 브라우저 FPS 에임 트레이너. 발로란트와 CS2 헤드샷 적중률을 비약적으로 끌어올립니다.",
+    title: "에임 연습 | 마이크로 플릭 미세조정 | SkillDrills",
+    description: "무료 브라우저 에임 연습으로 초기 플릭 뒤 미세조정과 손끝 감속을 훈련하세요. 발로란트·CS2 헤드샷 정밀도를 측정합니다.",
   },
 };
 
@@ -52,17 +50,17 @@ export default function MicroCorrectionKoPage() {
     "itemListElement": [
       { "@type": "ListItem", "position": 1, "name": "SkillDrills", "item": "https://skilldrills.online/ko" },
       { "@type": "ListItem", "position": 2, "name": "FPS 에임 훈련", "item": "https://skilldrills.online/ko/drills/fps" },
-      { "@type": "ListItem", "position": 3, "name": "마이크로 플릭", "item": "https://skilldrills.online/ko/drills/fps/micro-correction-precision" }
+      { "@type": "ListItem", "position": 3, "name": "에임 연습 - 마이크로 플릭 미세조정", "item": "https://skilldrills.online/ko/drills/fps/micro-correction-precision" }
     ]
   };
 
   const softwareSchema = {
     "@context": "https://schema.org",
     "@type": "SoftwareApplication",
-    "name": "마이크로 플릭 연습",
+    "name": "에임 연습 - 마이크로 플릭 미세조정",
     "applicationCategory": "GameApplication",
     "operatingSystem": "Web Browser",
-    "dateModified": "2026-09-05",
+    "dateModified": "2026-09-20",
     "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
     "description": "초기 플릭 후 목표 중심의 미세 오차 보정, 손끝 감속 제동, 헤드샷 정확도를 극대화하는 무료 브라우저 FPS 에임 트레이너.",
     "genre": "FPS Training / Micro-Correction",
@@ -77,7 +75,7 @@ export default function MicroCorrectionKoPage() {
   const webAppSchema = {
     "@context": "https://schema.org",
     "@type": "WebApplication",
-    "name": "마이크로 플릭 연습",
+    "name": "에임 연습 - 마이크로 플릭 미세조정",
     "url": "https://skilldrills.online/ko/drills/fps/micro-correction-precision",
     "applicationCategory": "GameApplication",
     "operatingSystem": "All",
@@ -93,10 +91,10 @@ export default function MicroCorrectionKoPage() {
   const videoGameSchema = {
     "@context": "https://schema.org",
     "@type": "VideoGame",
-    "name": "마이크로 플릭 연습",
+    "name": "에임 연습 - 마이크로 플릭 미세조정",
     "url": "https://skilldrills.online/ko/drills/fps/micro-correction-precision",
     "description": "초기 플릭 후 목표 중심의 미세 오차 보정, 손끝 감속 제동, 헤드샷 정확도를 극대화하는 무료 브라우저 FPS 에임 트레이너.",
-    "dateModified": "2026-09-05",
+    "dateModified": "2026-09-20",
     "gamePlatform": "Web Browser",
     "genre": ["FPS Training", "Aim Trainer", "Micro Correction"],
     "playMode": "SinglePlayer",
@@ -108,7 +106,7 @@ export default function MicroCorrectionKoPage() {
   const faqSchema = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
-    "dateModified": "2026-09-05",
+    "dateModified": "2026-09-20",
     "mainEntity": [
       {
         "@type": "Question",
@@ -227,10 +225,10 @@ export default function MicroCorrectionKoPage() {
   };
 
   const microCorrectionGuide = {
-    heading: "마이크로 플릭 연습 실전 가이드",
+    heading: "에임 연습과 마이크로 플릭 미세조정 가이드",
     subtitle: "초기 플릭 직후의 미세 조준 보정, 종단 마찰 감속 제동, 그리고 빗나가지 않는 헤드샷 정밀도를 완성하는 과학적 방법론",
     intro: [
-      "마이크로 플릭(Micro-Correction Aim Trainer)은 시각적 표적 획득에서 발생하는 2차 미세 조정 단계를 단련하고 표준화하기 위해 설계된 실증적 감각운동 훈련 드릴입니다. 발로란트(Valorant), 카운터스트라이크 2(CS2), 레인보우 식스 시즈와 같은 최고 수준의 전술 슈팅 게임에서는 불과 5~25픽셀(1도 미만)에 불과한 미세한 조준선 수정 속도가 라운드의 승패를 완전히 가릅니다.",
+      "에임 연습은 초기 플릭으로 목표 근처에 도달한 뒤 조준선을 짧게 멈추고 중심을 맞추는 과정을 반복하는 훈련입니다. 이 드릴은 작은 표적의 마지막 미세조정 시간과 적중률을 기록해 발로란트·CS2에서 오버플릭과 늦은 보정을 줄이는 데 집중합니다.",
       "목표 지향적 고속 운동을 지배하는 이론적 기틀은 Robert S. Woodworth(1899)의 기념비적인 2원 모델에서 확립되었습니다. 즉, 사지를 시각 자극 방향으로 강하게 가속하는 초기 개루프(Open-loop) 탄도 임펄스와, 지속적인 감각 피드백에 의해 안내되는 후속 폐루프(Closed-loop) 제어 단계입니다. 이러한 속도-정확도 상충 관계는 Paul M. Fitts(1954)의 피츠 법칙(Fitts's Law)으로 수학적 공식화되었으며, 운동 시간은 표적 거리와 표적 폭의 비율에 따라 로그 함수적으로 증가합니다(ID = log2(2D / W)).",
       "이후 David E. Meyer 등(1988)의 확률적 최적화 하위운동 모델(Stochastic Optimized Submovement Model)은 인간의 운동 제어 체계가 과도한 관성 오버슈트를 방지하기 위해 1차 주운동을 표적 경계의 직전이나 근방에 안착시킨 후, 연속되는 신속한 교정 하위운동(Submovements)을 통해 좌표 오차를 즉각 해소하도록 프로그래밍되어 있음을 증명했습니다.",
       "시야가 목표에 완전히 고정되는 종단 주시 단계에서, 인간의 안구운동계는 미세 도약(Microsaccades; 1도 미만의 무의식적 미세 안구 도약)을 생성하여 망막의 신경 표상을 갱신하고 중심와를 고주파수 시각 표적 정중앙에 정렬합니다(Rolfs, 2009; Martinez-Conde et al., 2004). 본 훈련은 로우 포인터 락(Raw Pointer Lock) 하드웨어 입력과 performance.now() 디지털 정밀 시계(Woods et al., 2015)를 결합하여 에임 감속 시의 미세 진동과 오버플릭 밀림을 억제하고 정밀한 헤드샷 능력을 체화하도록 돕습니다.",
@@ -331,8 +329,8 @@ export default function MicroCorrectionKoPage() {
 
       <MicroCorrectionClient
         copy={{
-          h1Keyword: "마이크로 플릭 연습",
-          h1Suffix: " - 에임 미세조정 & 헤드샷 정밀도 트레이너",
+          h1Keyword: "에임 연습",
+          h1Suffix: " - 마이크로 플릭 & 미세조정 트레이너",
           subtitle: "초기 플릭 후 목표 중심의 미세 오차를 즉각 보정하고 손끝 감속 제어 및 헤드샷 정밀도를 훈련합니다.",
           statScore: "점수",
           statTime: "남은 시간",
@@ -341,7 +339,7 @@ export default function MicroCorrectionKoPage() {
           statAvgCorrection: "평균 미세보정",
           statMaxCombo: "최대 콤보",
           statPeakLevel: "최고 레벨",
-          startTitle: "마이크로 플릭 연습",
+          startTitle: "에임 연습 - 마이크로 플릭 미세조정",
           startSubtitle: "원시 입력 캘리브레이션 • 무한 레벨 난이도 진행",
           getReady: "준비",
           toggleFlash: "미스 플래시 켜기/끄기",
@@ -354,7 +352,7 @@ export default function MicroCorrectionKoPage() {
             { num: "3", text: "레벨 상승", highlight: "+1 레벨 / 1,400점", result: "가변 축소 난이도" },
             { num: "4", text: "미스 / 초과", highlight: "페널티", result: "콤보 리셋 (-0.6초)" }
           ],
-          aboutTitle: "마이크로 플릭 에임 트레이너 소개",
+          aboutTitle: "에임 연습과 마이크로 플릭 미세조정 소개",
           aboutHeading: "마이크로 플릭(에임 미세조정)이란?",
           aboutText: "대부분의 조준 운동은 하나의 동작이 아닌 두 단계로 이루어집니다. 빠른 탄도학적 초기 플릭과 착탄 직전의 감속 및 미세 위치 보정입니다(Woodworth, 1899; Meyer et al., 1988). 이 드릴은 실제 헤드샷 승패를 판가름하는 두 번째 단계, 즉 미세조정 능력을 극대화합니다."
         }}
@@ -364,7 +362,7 @@ export default function MicroCorrectionKoPage() {
       <div className="max-w-4xl mx-auto px-4 pb-12">
         <RelatedDrills
           currentCategory="fps"
-          currentHref="/drills/fps/micro-correction-precision"
+          currentHref="/ko/drills/fps/micro-correction-precision"
           locale="ko"
         />
       </div>

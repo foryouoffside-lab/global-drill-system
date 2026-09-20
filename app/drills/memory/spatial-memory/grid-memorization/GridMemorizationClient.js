@@ -424,10 +424,8 @@ export default function GridMemorizationClient({ copy = null }) {
               {copy?.h1Prefix || null}
               <span data-seo-kw="1">{copy?.h1Keyword || "Visual Memory Test"}</span>
               {copy?.h1Suffix || null}
+              <span className="block text-sm font-semibold text-slate-400 mt-1">{copy?.subtitle || "Visual grid memory test for memorizing cell patterns and rebuilding spatial layouts with accuracy"}</span>
             </h1>
-            <p className="text-[13px] text-slate-400 leading-relaxed">
-              {copy?.caption || "Visual working memory stores roughly four objects at once, and the limit is the number of objects rather than the detail in each (Luck & Vogel, 1997). Static grid patterns test the visual cache, the passive store for form and layout (Logie, 1995)."}
-            </p>
           </div>
         )}
 
@@ -692,7 +690,7 @@ export default function GridMemorizationClient({ copy = null }) {
                   <Brain className="w-4 h-4 text-purple-400" /> What Is Grid Memorization Training?
                 </h3>
                 <p className="text-sm leading-relaxed mb-3">
-                  <strong>Grid Memorization Training</strong> is a core spatial working memory exercise designed to measure visual pattern recall. The <strong>Grid Memorization drill</strong> presents illuminated cell patterns on 4x4 to 5x5 matrices, testing your ability to encode spatial maps and recreate them accurately.
+                  <strong>Grid Memorization Training</strong> is a core spatial working memory exercise designed to measure visual pattern recall. The <strong>Grid Memorization drill</strong> presents illuminated cell patterns on 4x4 to 5x5 matrices, testing your ability to encode spatial maps and recreate them accurately. Visual working memory stores roughly four objects at once, and the limit is the number of objects rather than the detail in each (Luck & Vogel, 1997). Static grid patterns test the visual cache, the passive store for form and layout (Logie, 1995).
                 </p>
                 <p className="text-sm leading-relaxed">
                   By practicing <strong>spatial shape chunking</strong>, you expand your visual short-term memory buffer and increase your pattern recognition speed under time pressure.

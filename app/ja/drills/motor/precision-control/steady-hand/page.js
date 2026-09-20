@@ -6,39 +6,21 @@ import DrillFooter from '@/components/drill/DrillFooter';
 import { pickSources } from '@/lib/drillSources';
 
 // ============================================================
-// SEO RESEARCH FINDINGS — steady-hand (Japanese: イライラ棒)
-// PRIMARY:  "イライラ棒"                    — 185 Google Suggest queries in JP
-//           "イライラ棒 ゲーム"              — High volume gaming intent
-// SECONDARY / LSI:
-//           "イライラ棒 ゲーム 無料"          — Commercial free-to-play intent
-//           "イライラ棒 ゲーム ブラウザ"       — Browser HTML5 canvas demand
-//           "電撃イライラ棒 ゲーム"           — Cultural legacy query
-//           "イライラ棒 オンライン"           — Web app search
-//           "マウス 精度 テスト"              — Precision benchmark query
-//           "手ぶれ 測定"                    — Physiological tremor assessment
-//           "ステアリングの法則"              — Accot-Zhai Steering Law
+// Native keyword research: docs/seo/research/steady-hand-2026-09-20.md
 // ============================================================
 
 export const metadata = {
-  title: 'イライラ棒 – 無料オンライン電撃イライラ棒・マウス精度テスト',
-  description: 'ブラウザで遊べる無料イライラ棒ゲーム。周回ごとに狭まる電撃コースを壁に触れずクリアし、マウス操作の精度と手ブレを測定。Accot-Zhaiのステアリング法則準拠。',
+  title: 'マウス精度テスト | 手の安定性 | SkillDrills',
+  description: 'カーソルで狭いコースをたどり、マウス精度と手の安定性を測る無料テスト。',
   keywords: [
-    'イライラ棒',
-    'イライラ棒 ゲーム',
-    'イライラ棒 ゲーム 無料',
-    'イライラ棒 ゲーム ブラウザ',
-    '電撃イライラ棒 ゲーム',
-    'イライラ棒 オンライン',
-    'マウス 精度 テスト',
-    '手ぶれ 測定',
-    'マウス 操作 練習',
-    'ステアリングの法則',
-    'エイム 練習 マウス',
-    '微細運動 テスト',
+    'マウス精度テスト', 'カーソル精度', '手の安定性', 'イライラ棒',
+    'マウス 軌跡 テスト', '微細運動', 'カーソル操作 練習',
+    '狭いコース トレーニング', 'マウス迷路', 'マウス操作 精度',
+    '手ぶれ コントロール', '精密マウス操作',
   ],
   openGraph: {
-    title: 'イライラ棒 – 無料オンライン電撃イライラ棒・マウス精度テスト | SkillDrills',
-    description: 'ブラウザで遊べる無料イライラ棒ゲーム。周回ごとに狭まる電撃コースを壁に触れずクリアし、マウス操作の精度と手ブレを測定。Accot-Zhaiのステアリング法則準拠。',
+    title: 'マウス精度テスト | 手の安定性 | SkillDrills',
+    description: 'カーソルで狭いコースをたどり、マウス精度と手の安定性を測る無料テスト。',
     type: 'article',
     url: 'https://skilldrills.online/ja/drills/motor/precision-control/steady-hand',
     siteName: 'SkillDrills',
@@ -46,8 +28,8 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'イライラ棒 – 無料オンライン電撃イライラ棒・マウス精度テスト | SkillDrills',
-    description: 'ブラウザで遊べる無料イライラ棒ゲーム。周回ごとに狭まる電撃コースを壁に触れずクリアし、マウス操作の精度と手ブレを測定。Accot-Zhaiのステアリング法則準拠。',
+    title: 'マウス精度テスト | 手の安定性 | SkillDrills',
+    description: 'カーソルで狭いコースをたどり、マウス精度と手の安定性を測る無料テスト。',
   },
   robots: { index: true, follow: true },
   alternates: {
@@ -72,6 +54,7 @@ const breadcrumbSchema = {
 const softwareApplicationSchema = {
   '@context': 'https://schema.org',
   '@type': 'SoftwareApplication',
+  inLanguage: 'ja-JP',
   name: 'イライラ棒 – マウス精度・手ブレ測定ゲーム',
   applicationCategory: 'HealthApplication',
   operatingSystem: 'All',
@@ -79,37 +62,42 @@ const softwareApplicationSchema = {
   description: 'ブラウザで遊べる無料のオンライン電撃イライラ棒ゲーム。周回クリアごとに狭小化するコースを壁に触れずに進み、手の震え（生理的手振戦）の抑制とマウス微細運動精度を科学的に評価。',
   url: 'https://skilldrills.online/ja/drills/motor/precision-control/steady-hand',
   publisher: { '@type': 'Organization', name: 'SkillDrills', url: 'https://skilldrills.online/ja' },
-  dateModified: '2026-09-05',
+  dateModified: '2026-09-20',
 };
 
 const webApplicationSchema = {
   '@context': 'https://schema.org',
   '@type': 'WebApplication',
+  inLanguage: 'ja-JP',
   name: '電撃イライラ棒 オンライン',
   applicationCategory: 'GameApplication',
   operatingSystem: 'All',
   browserRequirements: 'HTML5 CanvasおよびPointer Events APIに対応した最新のWebブラウザ',
   offers: { '@type': 'Offer', price: '0', priceCurrency: 'JPY' },
   url: 'https://skilldrills.online/ja/drills/motor/precision-control/steady-hand',
-  dateModified: '2026-09-05',
+  dateModified: '2026-09-20',
 };
 
 const videoGameSchema = {
   '@context': 'https://schema.org',
   '@type': 'VideoGame',
+  inLanguage: 'ja-JP',
   name: 'イライラ棒・ステディハンド精密マウス操作ゲーム',
   url: 'https://skilldrills.online/ja/drills/motor/precision-control/steady-hand',
   description: '壁に触れずにカーソルを進めるオンラインイライラ棒ゲーム。微細運動制御と手の震え耐性を測定・強化。',
   genre: ['Precision Game', 'Action', 'Esports Training'],
   gamePlatform: ['Web Browser', 'Desktop', 'Mobile'],
   applicationCategory: 'Game',
-  offers: { '@type': 'Offer', price: '0', priceCurrency: 'JPY' }
+  offers: { '@type': 'Offer', price: '0', priceCurrency: 'JPY' },
+  dateModified: '2026-09-20',
 };
 
 
 const faqSchema = {
   '@context': 'https://schema.org',
   '@type': 'FAQPage',
+  inLanguage: 'ja-JP',
+  dateModified: '2026-09-20',
   mainEntity: [
     {
       '@type': 'Question',
@@ -198,6 +186,8 @@ const faqSchema = {
 const howToSchema = {
   '@context': 'https://schema.org',
   '@type': 'HowTo',
+  inLanguage: 'ja-JP',
+  dateModified: '2026-09-20',
   name: 'イライラ棒でマウス精度と手ブレ抑制をトレーニングする手順',
   description: '狭小化するコースをぶれずに完走し、ステアリング効率と微細運動精度を最大化するための段階的プロトコル。',
   step: [
@@ -319,8 +309,8 @@ const guideProps = {
 };
 
 const jaCopy = {
-  h1Keyword: 'イライラ棒',
-  h1Suffix: ' (Steady Hand Game)',
+  h1Keyword: 'マウス精度テスト',
+  h1Suffix: '（手の安定性・イライラ棒）',
   caption: 'イライラ棒ゲームは、壁に一度も触れずに狭い電撃コースに沿ってカーソルをゴールまで導くことで、反射速度ではなく微細運動の安定性を精密に測定します。難易度はステアリングの法則（Accot & Zhai, 1997）に支配されており、通路の通過時間は長さを通路幅で割った値に比例します。中心線上をキープする動作は閉ループ課題であり、運動中も視覚が絶え間なく手の軌道を修正し続けます（Woodworth, 1899）。',
   statLaps: 'クリア周回数',
   statTime: '残り時間',
@@ -329,7 +319,7 @@ const jaCopy = {
   pausedTitle: '一時停止中',
   pausedPrompt: '画面をクリックしてカーソルを固定し、再開してください。',
   startTitle: '電撃イライラ棒',
-  startSubtitle: 'マウス微細運動精度・狭窄コース追従 • 45秒制限',
+  startSubtitle: '手の安定性とコース精度 • 45秒',
   startBtn: 'イライラ棒を開始',
   countdownSubtitle: 'コースに集中',
   newBest: '新記録達成',

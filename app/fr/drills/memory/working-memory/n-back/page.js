@@ -5,21 +5,19 @@ import { getAlternateLanguages } from '@/lib/i18n/locales';
 import { pickSources } from '@/lib/drillSources';
 
 export const metadata = {
-  title: "Test N-Back en Ligne – Mémoire de Travail | SkillDrills",
-  description: "Test N-back en ligne gratuit: Entrainez votre memoire de travail et la mise a jour continue de l information a 2-back et 3-back sans inscription.",
+  title: "Test N-Back en ligne | Mémoire de travail | SkillDrills",
+  description: "Fais le test N-Back en ligne, gratuitement : entraîne la mise à jour de la mémoire de travail en 2-back et 3-back, sans inscription.",
   keywords: [
     "test n-back en ligne",
-    "memoire de travail test",
-    "dual n-back francais",
-    "tache n-back",
-    "entrainement memoire de travail",
-    "test 3-back gratuit",
-    "intelligence fluide n-back",
-    "mise a jour memoire de travail",
-    "test n-back gratuit",
-    "controle executif test",
-    "exercice dual n-back en ligne",
-    "evaluation cognitive n-back"
+    "test n-back",
+    "mémoire de travail",
+    "dual n-back",
+    "tâche n-back",
+    "entraînement mémoire de travail",
+    "test 2-back",
+    "test 3-back",
+    "test de mémoire en ligne",
+    "entraînement cognitif"
   ],
   alternates: {
     canonical: "https://skilldrills.online/fr/drills/memory/working-memory/n-back",
@@ -30,8 +28,8 @@ export const metadata = {
     follow: true,
   },
   openGraph: {
-    title: "Test N-Back en Ligne – Mémoire de Travail | SkillDrills",
-    description: "Test N-back en ligne gratuit: Entrainez votre memoire de travail et la mise a jour continue de l information a 2-back et 3-back sans inscription.",
+    title: "Test N-Back en ligne | Mémoire de travail | SkillDrills",
+    description: "Fais le test N-Back en ligne, gratuitement : entraîne la mise à jour de la mémoire de travail en 2-back et 3-back.",
     url: "https://skilldrills.online/fr/drills/memory/working-memory/n-back",
     siteName: 'SkillDrills',
     locale: 'fr_FR',
@@ -39,8 +37,8 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: "Test N-Back en Ligne – Mémoire de Travail | SkillDrills",
-    description: "Test N-back en ligne gratuit: Entrainez votre memoire de travail et la mise a jour continue de l information a 2-back et 3-back sans inscription.",
+    title: "Test N-Back en ligne | Mémoire de travail | SkillDrills",
+    description: "Fais le test N-Back en ligne, gratuitement : entraîne la mise à jour de la mémoire de travail en 2-back et 3-back.",
   },
 };
 
@@ -112,6 +110,7 @@ const webAppSchema = {
     "@type": "Organization",
     "name": "SkillDrills"
   },
+  "sameAs": "https://fr.wikipedia.org/wiki/N-back",
   "isAccessibleForFree": true,
   "dateModified": "2026-09-16"
 };
@@ -261,8 +260,9 @@ const faqSchema = {
 };
 
 const nBackClientCopyFr = {
-  h1Keyword: "Test N-Back en Ligne",
-  h1Suffix: " – Entraînement de Mémoire de Travail",
+  h1Keyword: "Test N-Back en ligne",
+  h1Suffix: " – Mémoire de travail",
+  subtitle: "Exercice 2-back pour actualiser les lettres en continu",
   caption: "La tâche N-Back exige d'évaluer en continu si le stimulus actuel coïncide avec celui d'il y a N étapes. Selon le modèle de Baddeley & Hitch (1974), cette épreuve associe stockage tampon temporaire et actualisation active.",
   statScore: "Score",
   statTime: "Temps",
@@ -275,7 +275,7 @@ const nBackClientCopyFr = {
   btnMatch: "CORRESPONDANCE (MATCH)",
   btnNoMatch: "AUCUN MATCH",
   startTitle: "Entraînement N-Back Pro",
-  startSubtitle: "Mémoire de travail • Mise à jour séquentielle",
+  startSubtitle: "Mémoire de travail • 2-Back",
   countdownSubtitle: "PRÉPAREZ-VOUS",
   newBest: "NOUVEAU RECORD",
   pointsLabel: "Points",

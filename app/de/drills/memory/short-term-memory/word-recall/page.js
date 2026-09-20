@@ -5,21 +5,23 @@ import { getAlternateLanguages } from '@/lib/i18n/locales';
 import { pickSources } from '@/lib/drillSources';
 
 export const metadata = {
-  title: "Verbaler Gedächtnistest – Wortlisten-Recall | SkillDrills",
-  description: "Kostenloser verbaler Gedächtnistest online: Präge dir Wortlisten ein, überwinde den seriellen Positionseffekt und trainiere dein Arbeitsgedächtnis im Browser.",
+  title: "Wortgedächtnis Test online | Wörter merken | SkillDrills",
+  description: "Kostenloser Wortgedächtnis-Test: Merke dir eine Wortliste, rufe die Wörter frei ab und trainiere dein verbales Arbeitsgedächtnis im Browser.",
   keywords: [
-    "verbales gedaechtnis test",
-    "wortliste gedaechtnis test",
-    "verbaler gedaechtnistest",
-    "freie wiedergabe test",
-    "serieller positionseffekt test",
-    "woerter merken spiel",
-    "kurzzeitgedaechtnis woerter test",
-    "verbales arbeitsgedaechtnis",
+    "wortgedächtnis test online",
+    "wortgedächtnis test",
+    "verbaler gedächtnistest",
+    "wörter merken test",
+    "wortliste gedächtnis",
+    "freier abruf test",
+    "serielle position test",
+    "verbales arbeitsgedächtnis",
     "wortabruf test online",
-    "semantisches chunking lernen",
-    "gedaechtnistraining woerter",
-    "verbal memory test online"
+    "kurzzeitgedächtnis wörter",
+    "semantisches chunking",
+    "gedächtnistraining wörter",
+    "wortlisten lernen",
+    "verbale merkfähigkeit"
   ],
   alternates: {
     canonical: "https://skilldrills.online/de/drills/memory/short-term-memory/word-recall",
@@ -30,8 +32,8 @@ export const metadata = {
     follow: true,
   },
   openGraph: {
-    title: "Verbaler Gedächtnistest – Wortlisten-Recall | SkillDrills",
-    description: "Kostenloser verbaler Gedächtnistest online: Präge dir Wortlisten ein, überwinde den seriellen Positionseffekt und trainiere dein Arbeitsgedächtnis im Browser.",
+    title: "Wortgedächtnis Test online | Wörter merken | SkillDrills",
+    description: "Kostenloser Wortgedächtnis-Test: Merke dir eine Wortliste, rufe die Wörter frei ab und trainiere dein verbales Arbeitsgedächtnis im Browser.",
     url: "https://skilldrills.online/de/drills/memory/short-term-memory/word-recall",
     siteName: 'SkillDrills',
     locale: 'de_DE',
@@ -39,8 +41,8 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: "Verbaler Gedächtnistest – Wortlisten-Recall | SkillDrills",
-    description: "Kostenloser verbaler Gedächtnistest online: Präge dir Wortlisten ein, überwinde den seriellen Positionseffekt und trainiere dein Arbeitsgedächtnis im Browser.",
+    title: "Wortgedächtnis Test online | Wörter merken | SkillDrills",
+    description: "Kostenloser Wortgedächtnis-Test: Merke dir eine Wortliste, rufe die Wörter frei ab und trainiere dein verbales Arbeitsgedächtnis im Browser.",
   },
 };
 
@@ -86,6 +88,7 @@ export default function LocalizedWordRecallPage() {
     "applicationCategory": "GameApplication",
     "operatingSystem": "All",
     "isAccessibleForFree": true,
+  "sameAs": ["https://de.wikipedia.org/wiki/Arbeitsged%C3%A4chtnis"],
     "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
   };
 
@@ -320,11 +323,11 @@ export default function LocalizedWordRecallPage() {
     faqs: faqSchema.mainEntity.map(e => ({ q: e.name, a: e.acceptedAnswer.text })),
     sources: pickSources('craik1972', 'murdock1962', 'tulving1962', 'woods2015'),
     related: [
-      { href: "/drills/memory/short-term-memory/digit-span", label: "Digit Span Memory Test" },
-      { href: "/drills/memory/short-term-memory/color-sequence", label: "Color Memory Game" },
-      { href: "/drills/memory/spatial-memory/grid-memorization", label: "Visual Memory Test" },
-      { href: "/drills/memory/spatial-memory/object-location", label: "Object Location Memory Test" },
-      { href: "/drills/memory/working-memory/n-back", label: "3-Back Working Memory Test" }
+      { href: "/de/drills/memory/short-term-memory/digit-span", label: "Zahlenspannen-Test" },
+      { href: "/de/drills/memory/short-term-memory/color-sequence", label: "Senso-Spiel" },
+      { href: "/de/drills/memory/spatial-memory/grid-memorization", label: "Visueller Gedächtnistest" },
+      { href: "/de/drills/memory/spatial-memory/object-location", label: "Objekt-Ortungstest" },
+      { href: "/de/drills/memory/working-memory/n-back", label: "3-Back-Arbeitsgedächtnistest" }
     ]
   };
 
@@ -355,9 +358,9 @@ export default function LocalizedWordRecallPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(howToSchema) }}
       />
       <WordRecallClient copy={{
-          "h1Keyword": "Verbaler Gedächtnistest",
-          "h1Suffix": " – Kostenloser Wortlisten-Recall Test",
-          "subtitle": "Die freie Wiedergabe einer Wortliste verläuft nie gleichmäßig: Anfangs- und Endwörter werden am besten erinnert, während die Mitte dem seriellen Positionseffekt (Murdock, 1962) zum Opfer fällt. Tiefe semantische Verarbeitung (Craik & Lockhart, 1972) schlägt oberflächliches Anstarren.",
+          "h1Keyword": "Wortgedächtnis-Test",
+          "h1Suffix": " – Wörter merken und abrufen",
+          "subtitle": "Wortliste merken und frei wiedergeben",
           "statScore": "Punkte",
           "statTime": "Zeit",
           "statWords": "Wörter",
@@ -372,7 +375,7 @@ export default function LocalizedWordRecallPage() {
           "feedbackPhase": "ERGEBNISAUSWERTUNG",
           "extraWordsLabel": "Überflüssige oder falsch eingegebene Wörter:",
           "startTitle": "Wort-Recall Pro",
-          "startSubtitle": "Verbales Kurzzeitgedächtnis • Freie Wortwiedergabe",
+          "startSubtitle": "Wortgedächtnis • freier Abruf",
           "countdownSubtitle": "BEREITMACHEN",
           "newBest": "NEUER REKORD",
           "pointsLabel": "Punkte",
@@ -465,7 +468,7 @@ export default function LocalizedWordRecallPage() {
       <div className="max-w-4xl mx-auto px-4 pb-12">
         <RelatedDrills
           currentCategory="memory"
-          currentHref="/drills/memory/short-term-memory/word-recall"
+          currentHref="/de/drills/memory/short-term-memory/word-recall"
           locale="de"
         />
       </div>

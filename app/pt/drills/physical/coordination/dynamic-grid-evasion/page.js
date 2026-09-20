@@ -6,7 +6,7 @@ import { pickSources } from '@/lib/drillSources';
 
 // ============================================================
 // PESQUISA DE PALAVRAS-CHAVE NATIVAS (SERP BRASIL / PT-BR)
-// Termos de busca de alta intenção e baixa concorrência:
+// Clusters nativos revisados por intenção; concorrência ainda não medida:
 // - "jogo de desviar do mouse" (Busca de alta intenção gamer e reflexo)
 // - "jogo de esquiva mouse reflexo" (Treino de agilidade psicomotora)
 // - "teste de visao periferica online" (Avaliação de campo visual e atenção)
@@ -18,18 +18,21 @@ import { pickSources } from '@/lib/drillSources';
 // ============================================================
 
 export const metadata = {
-  title: "Jogo de Desviar do Mouse – Esquiva & Reflexos | SkillDrills",
-  description: "Jogo de desviar do mouse online grátis. Detecte explosões na grade 3x3 e mova o cursor para células seguras para treinar visão periférica e reflexos no PC.",
+  title: "Teste de Reflexo | Jogo de Esquiva | SkillDrills",
+  description: "Teste de reflexo grátis e jogo de esquiva online. Detecte zonas perigosas na grade 3x3 e mova o cursor para células seguras para treinar reflexos.",
   keywords: [
+    "teste de reflexo",
+    "teste de visão periférica online",
     "jogo de desviar do mouse",
     "jogo de esquiva mouse reflexo",
-    "teste de visao periferica online",
     "treino de reflexo e desvio",
     "desviar de habilidades jogo",
     "teste de atencao espacial e reflexo",
     "jogo de agilidade com mouse",
-    "treino de micro esquiva e flick",
-    "esquiva de skillshot treino",
+    "treino de visão periférica",
+    "jogo de reflexo",
+    "teste de atenção espacial",
+    "jogo de agilidade com mouse",
     "reflexo espacial teste"
   ],
   alternates: {
@@ -37,8 +40,8 @@ export const metadata = {
     languages: getAlternateLanguages('/drills/physical/coordination/dynamic-grid-evasion'),
   },
   openGraph: {
-    title: "Jogo de Desviar do Mouse – Esquiva & Reflexos | SkillDrills",
-    description: "Jogo de desviar do mouse online grátis. Detecte explosões na grade 3x3 e mova o cursor para células seguras para treinar visão periférica e reflexos no PC.",
+    title: "Teste de Reflexo | Jogo de Esquiva | SkillDrills",
+    description: "Teste de reflexo grátis e jogo de esquiva online. Detecte zonas perigosas na grade 3x3 e mova o cursor para células seguras para treinar reflexos.",
     url: 'https://skilldrills.online/pt/drills/physical/coordination/dynamic-grid-evasion',
     siteName: 'SkillDrills',
     locale: 'pt_BR',
@@ -46,8 +49,8 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: "Jogo de Desviar do Mouse – Esquiva & Reflexos | SkillDrills",
-    description: "Jogo de desviar do mouse online grátis. Detecte explosões na grade 3x3 e mova o cursor para células seguras para treinar visão periférica e reflexos no PC.",
+    title: "Teste de Reflexo | Jogo de Esquiva | SkillDrills",
+    description: "Teste de reflexo grátis e jogo de esquiva online. Detecte zonas perigosas na grade 3x3 e mova o cursor para células seguras para treinar reflexos.",
   },
   robots: { index: true, follow: true },
 };
@@ -102,7 +105,7 @@ const softwareApplicationSchema = {
     "url": "https://skilldrills.online/pt"
   },
   "inLanguage": "pt-BR",
-  "dateModified": "2026-09-12"
+  "dateModified": "2026-09-20"
 };
 
 const webApplicationSchema = {
@@ -119,7 +122,7 @@ const webApplicationSchema = {
   },
   "url": "https://skilldrills.online/pt/drills/physical/coordination/dynamic-grid-evasion",
   "inLanguage": "pt-BR",
-  "dateModified": "2026-09-12"
+  "dateModified": "2026-09-20"
 };
 
 const videoGameSchema = {
@@ -140,6 +143,8 @@ const videoGameSchema = {
     "Mobile"
   ],
   "applicationCategory": "Game",
+  "inLanguage": "pt-BR",
+  "dateModified": "2026-09-20",
   "offers": {
     "@type": "Offer",
     "price": "0",
@@ -150,7 +155,8 @@ const videoGameSchema = {
 const faqSchema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
-  "dateModified": "2026-09-12",
+  "inLanguage": "pt-BR",
+  "dateModified": "2026-09-20",
   "mainEntity": [
     {
       "@type": "Question",
@@ -358,8 +364,8 @@ export default function DynamicGridEvasionPagePt() {
       />
       <DynamicGridEvasionClient
         copy={{
-          title: "Jogo de Desviar do Mouse & Teste de Visão Periférica",
-          subtitle: "Esquiva Dinâmica em Grade 3x3 & Reflexos Espaciais • 15 Níveis",
+          title: "Teste de Reflexo",
+          subtitle: "Detecte o perigo e mova-se para uma célula segura • 15 níveis",
           hudLabels: {
             score: "Pontuação",
             timeLeft: "Tempo Restante",

@@ -6,21 +6,21 @@ import { getAlternateLanguages } from '@/lib/i18n/locales';
 import RelatedDrills from '@/components/drill/RelatedDrills';
 
 export const metadata = {
-  title: "Control de Retroceso FPS – Spray Pattern | SkillDrills",
-  description: "Entrena el control de retroceso y patrones de spray en tu navegador. Domina la compensación vertical y ráfagas para CS2 y Valorant gratis.",
+  title: "Control de Retroceso | Entrenamiento FPS | SkillDrills",
+  description: "Entrenamiento gratis de control de retroceso en navegador: practica patrones de spray y compensación para CS2, Valorant y otros FPS.",
   keywords: [
-    "control de retroceso fps",
-    "entrenamiento de recoil cs2",
-    "controlar spray valorant",
-    "como controlar el retroceso raton",
-    "entrenar spray pattern cs2",
-    "bajar el raton retroceso",
+    "control de retroceso",
+    "control de recoil",
+    "control de spray",
+    "entrenamiento de recoil",
+    "patrones de spray",
+    "spray FPS",
+    "retroceso CS2",
+    "retroceso Valorant",
+    "compensación de retroceso",
     "entrenador de recoil gratis",
-    "compensacion de retroceso fps",
-    "spray transfer entrenamiento",
-    "patron de dispersion de armas",
-    "mejorar precision de rafaga",
-    "entrenar retroceso armas pc"
+    "control de retroceso vertical",
+    "control de retroceso horizontal"
   ],
   alternates: {
     canonical: "https://skilldrills.online/es/drills/fps/recoil-control",
@@ -31,8 +31,8 @@ export const metadata = {
     follow: true,
   },
   openGraph: {
-    title: "Control de Retroceso FPS – Spray Pattern | SkillDrills",
-    description: "Entrena el control de retroceso y patrones de spray en tu navegador. Domina la compensación vertical y ráfagas para CS2 y Valorant gratis.",
+    title: "Control de Retroceso | Entrenamiento FPS | SkillDrills",
+    description: "Entrenamiento gratis de control de retroceso en navegador: practica patrones de spray y compensación para CS2, Valorant y otros FPS.",
     url: "https://skilldrills.online/es/drills/fps/recoil-control",
     siteName: 'SkillDrills',
     locale: 'es_ES',
@@ -40,8 +40,8 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: "Control de Retroceso FPS – Spray Pattern | SkillDrills",
-    description: "Entrena el control de retroceso y patrones de spray en tu navegador. Domina la compensación vertical y ráfagas para CS2 y Valorant gratis.",
+    title: "Control de Retroceso | Entrenamiento FPS | SkillDrills",
+    description: "Entrenamiento gratis de control de retroceso en navegador: practica patrones de spray y compensación para CS2, Valorant y otros FPS.",
   },
 };
 
@@ -117,7 +117,7 @@ export default function RecoilControlPage() {
   const faqSchema = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
-    "dateModified": "2026-09-16",
+    "dateModified": "2026-09-20",
     "mainEntity": [
       {
         "@type": "Question",
@@ -237,7 +237,7 @@ export default function RecoilControlPage() {
 
   const copyEs = {
     h1Keyword: "Control de Retroceso",
-    h1Suffix: " – Entrenador de Spray FPS",
+    h1Suffix: " – Entrenamiento de Spray FPS",
     caption: "Controla el retroceso vertical y lateral arrastrando el ratón en la dirección opuesta al patrón de disparo.",
     statScore: "Puntuación",
     statTime: "Tiempo",
@@ -247,7 +247,7 @@ export default function RecoilControlPage() {
     statReloading: "RECARGANDO...",
     pausedTitle: "Juego Pausado",
     pausedPrompt: "Haz clic en la pantalla para reactivar el bloqueo de cursor.",
-    startTitle: "Entrenador Profesional de Retroceso",
+    startTitle: "Entrenamiento de Control de Retroceso",
     startSubtitle: "Patrones de Spray y Compensación Motora • Progresión Continua",
     startButtonText: "INICIAR ENTRENAMIENTO",
     getReady: "PREPÁRATE",
@@ -263,15 +263,15 @@ export default function RecoilControlPage() {
       { num: "3", text: "Progresión de Nivel", highlight: "+1 Nivel / 1400 PTS", result: "Escala Velocidad y Retroceso" },
       { num: "4", text: "Disciplina de Cargador", highlight: "<40% Penalización", result: "Reinicia Combo (-0.6s)" }
     ],
-    aboutTitle: "Sobre el Entrenamiento de Retroceso",
+    aboutTitle: "Sobre el Control de Retroceso y Spray",
     aboutHeading: "¿Qué es el Control de Retroceso (Recoil)?",
     aboutText: "El retroceso es el movimiento ascendente y lateral acumulativo que experimenta el arma al disparar en ráfagas. Su control demanda programas motores de bucle abierto (Schmidt & Lee, 2011) que corrigen la trayectoria por anticipación muscular sin depender del retardo visual."
   };
 
   const recoilControlGuide = {
-    heading: "Guía de Control de Retroceso & Padrón de Spray en Shooters FPS",
+    heading: "Guía de Control de Retroceso y Patrones de Spray FPS",
     intro: [
-      "El Entrenador Profesional de Control de Retroceso es un simulador psicomotor concebido para aislar y perfeccionar la compensación mecánica en armas automáticas. En títulos tácticos y de alta movilidad como CS2, Valorant, Apex Legends y PUBG, la concentración del spray decide de forma fulminante los tiroteos.",
+      "Este entrenamiento de control de retroceso desarrolla la compensación vertical y horizontal necesaria para mantener patrones de spray compactos. En CS2, Valorant, Apex Legends y PUBG, la agrupación de los disparos decide muchos enfrentamientos.",
       "A diferencia de los ajustes finos pausados, las armas de fuego sostenido operan a cadencias de entre 600 y 900 disparos por minuto, expulsando un proyectil cada 66 a 100 ms. Puesto que la respuesta visual humana promedia los 200 ms, compensar el retroceso depende de Programas Motores Generalizados (GMP) de circuito abierto (Schmidt & Lee, 2011; Wolpert & Kawato, 1998) grabados en la memoria muscular.",
       "El módulo condiciona al tirador en dos etapas críticas: un arrastre vertical uniforme durante los primeros 10 tiros y una modulación lateral compensatoria durante el resto del cargador, simulando las dinámicas auténticas del armamento de competición.",
       "Mediante la API de Pointer Lock y cronometría de alta resolución con performance.now() (Woods et al., 2015), la herramienta mide el agrupamiento milimétrico de los impactos respecto al centro de masa para eliminar sobrecompensaciones y tirones involuntarios.",

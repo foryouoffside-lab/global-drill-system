@@ -27,6 +27,7 @@ import useUnexpectedExitGuard from '../../../../../lib/useUnexpectedExitGuard';
 import DrillFooter from '../../../../../components/drill/DrillFooter';
 import DrillAccordion from '../../../../../components/drill/DrillAccordion';
 import DrillCountdown from '../../../../../components/drill/DrillCountdown';
+import DrillRuleItem from '../../../../../components/drill/DrillRuleItem';
 import FpsStartCard from '../../../../../components/drill/FpsStartCard';
 import DrillResultCard from '../../../../../components/drill/DrillResultCard';
 import useImmersiveMode from '@/lib/useImmersiveMode';
@@ -90,19 +91,19 @@ const ABOUT_SECTIONS = [
     icon: Eye,
     title: "Gravitational Acceleration & Optical Tau Interception",
     subtitle: "Time-to-contact calculations under non-linear vertical acceleration",
-    content: "Falling targets accelerate continuously due to gravity. The human visual system estimates interception windows using optical tau (τ), the inverse relative rate of retinal image expansion (Lee, 1976). Accurate tau estimation enables players to predict the exact millisecond and vertical coordinate of interception before the target exits the capture boundary."
+    content: "Falling targets accelerate continuously due to gravity. The human visual system estimates interception windows using optical tau (τ), the inverse relative rate of retinal image expansion (Lee, 1976). Accurate tau estimation enables players to predict the exact millisecond and vertical coordinate of interception before the target exits the capture boundary. Catching does not require calculating distance and speed separately: the expanding retinal image specifies time-to-contact on its own (Lee, 1976)."
   },
   {
     icon: ShieldAlert,
     title: "Inhibitory Impulse Control & Horse-Race Stop Signals",
     subtitle: "Logan countermanding paradigm and pre-frontal motor inhibition",
-    content: "The presentation of deceptive red decoys triggers an internal \'horse-race\' between the prepotent \'Go\' motor impulse (clicking) and the inhibitory \'Stop\' process (Logan et al., 1984). Successful practitioners suppress premature ballistic finger twitches until the visual cortex discriminates color and pattern identity."
+    content: "The presentation of deceptive red decoys triggers an internal \'horse-race\' between the prepotent \'Go\' motor impulse (clicking) and the inhibitory \'Stop\' process (Logan et al., 1984). Successful practitioners suppress premature ballistic finger twitches until the visual cortex discriminates color and pattern identity. Withholding is a different mechanism — going and stopping race each other, and whichever finishes first wins (Logan & Cowan, 1984)."
   },
   {
     icon: Zap,
     title: "Donders Type C Discrimination Reaction Chronometry",
     subtitle: "Stimulus classification latency prior to motor initiation",
-    content: "Unlike simple reflex tests, Drop Catch embodies Franciscus Donders\'s (1868) Type C reaction task: multiple visual stimuli are presented, but response must be restricted strictly to target items while withholding response to decoys, extending sensory-motor processing by 80–120ms."
+    content: "Unlike simple reflex tests, Drop Catch embodies Franciscus Donders\'s (1868) Type C reaction task: multiple visual stimuli are presented, but response must be restricted strictly to target items while withholding response to decoys, extending sensory-motor processing by 80–120ms. Simple visual reaction alone costs about 200–250 ms before either can start (Woods et al., 2015)."
   },
   {
     icon: Target,
@@ -650,14 +651,11 @@ export default function DropCatchClient({ copy = {} } = {}) {
             <h1 className="text-2xl sm:text-3xl font-black tracking-tight text-white">
               <span data-seo-kw="1">{copy?.title || "Drop Catch Reflex Test"}</span>
               {copy?.subtitle && (
-                <span className="block text-sm font-semibold text-slate-400 mt-1">
+                <span className="block text-sm font-semibold text-slate-400 mt-1 whitespace-nowrap">
                   {copy.subtitle}
                 </span>
               )}
             </h1>
-            <p className="text-xs sm:text-sm text-slate-400 mt-2 leading-relaxed">
-              {copy?.description || "A drop catch test measures how quickly you can respond to a falling object, and how reliably you can hold back when you should not respond at all. Catching does not require calculating distance and speed separately: the expanding retinal image specifies time-to-contact on its own (Lee, 1976). Withholding is a different mechanism — going and stopping race each other, and whichever finishes first wins (Logan & Cowan, 1984). Simple visual reaction alone costs about 200–250 ms before either can start (Woods et al., 2015)."}
-            </p>
           </div>
         )}
 
@@ -687,7 +685,7 @@ export default function DropCatchClient({ copy = {} } = {}) {
         <div 
           ref={containerRef} 
           onContextMenu={(e) => { if (gameActiveRef.current) e.preventDefault(); }}
-          className={`overflow-hidden flex flex-col transition-all duration-150 select-none bg-[#080811] text-white border border-white/10 ${
+          className={`overflow-hidden flex flex-col select-none bg-[#080811] text-white border border-white/10 ${
             isFullscreen 
               ? 'fixed inset-0 z-[100] w-screen h-[100dvh] bg-[#080811] rounded-none border-none flex flex-col items-center justify-center' 
               : 'w-full rounded-2xl bg-[#080811] aspect-video min-h-[460px] sm:min-h-[500px] max-h-[88vh] relative overflow-hidden flex flex-col'
@@ -799,12 +797,9 @@ export default function DropCatchClient({ copy = {} } = {}) {
               isOpen={openAccordion === 'rules'}
               onToggle={() => setOpenAccordion(openAccordion === 'rules' ? null : 'rules')}
             >
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-2.5 sm:gap-3 font-sans">
                 {(copy?.rulesItems || RULES_ITEMS).map((item, i) => (
-                  <div key={i} className="bg-black p-4 rounded-xl border border-white/10">
-                    <p className="text-sm font-bold text-white mb-1">{item.title}</p>
-                    <p className="text-xs text-gray-300 leading-relaxed">{item.text}</p>
-                  </div>
+                  <DrillRuleItem key={i} num={item.num || String(i + 1)} title={item.title} detail={item.text} />
                 ))}
               </div>
             </DrillAccordion>

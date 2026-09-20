@@ -5,12 +5,12 @@ import RelatedDrills from '@/components/drill/RelatedDrills';
 import { pickSources } from '@/lib/drillSources';
 
 export const metadata = {
-  title: "Test de Memoria Visual – Juego de Matriz | SkillDrills",
-  description: "Test de memoria visual online gratis: Memoriza patrones matriciales en cuadrículas y evalúa tu retención visoespacial y chunking directo en el navegador.",
-  keywords: ['test de memoria visual', 'juegos de memoria visual', 'test de memoria de patrones', 'memoria espacial test', 'juego de memoria en cuadricula', 'matriz de memoria visual', 'memoria visoespacial test', 'capacidad de memoria visual', 'entrenamiento de memoria visual', 'test de chunking visoespacial', 'amplitud de memoria visual', 'evaluacion memoria de trabajo'],
+  title: "Test de memoria visual online | SkillDrills",
+  description: "Pon a prueba tu memoria visual online: memoriza patrones iluminados en una cuadrícula y reprodúcelos directamente en el navegador.",
+  keywords: ['test de memoria visual', 'memoria visual test', 'test de memoria espacial', 'juego de memoria visual', 'matriz de memoria', 'memoria visoespacial', 'patrones visuales', 'memoria de trabajo visual', 'test de memoria online', 'entrenamiento de memoria visual'],
   openGraph: {
-    title: "Test de Memoria Visual Online (Juego de Cuadrícula) - Gratis | SkillDrills",
-    description: "Test de memoria visual online gratis (juego de memoria en cuadrícula). Memoriza patrones matriciales en tableros de 4x4 a 5x5 en 1,5 segundos y evalúa tu retención visoespacial y chunking mental. Sin registro, directo en tu navegador.",
+    title: "Test de memoria visual online | SkillDrills",
+    description: "Pon a prueba tu memoria visual online: memoriza patrones iluminados en una cuadrícula y reprodúcelos directamente en el navegador.",
     type: 'website',
     url: 'https://skilldrills.online/es/drills/memory/spatial-memory/grid-memorization',
     siteName: 'SkillDrills',
@@ -18,8 +18,8 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: "Test de Memoria Visual Online (Juego de Cuadrícula) - Gratis | SkillDrills",
-    description: "Test de memoria visual online gratis (juego de memoria en cuadrícula). Memoriza patrones matriciales en tableros de 4x4 a 5x5 en 1,5 segundos y evalúa tu retención visoespacial y chunking mental. Sin registro, directo en tu navegador.",
+    title: "Test de memoria visual online | SkillDrills",
+    description: "Pon a prueba tu memoria visual online: memoriza patrones iluminados en una cuadrícula y reprodúcelos directamente en el navegador.",
   },
   robots: { index: true, follow: true },
   alternates: {
@@ -48,6 +48,7 @@ const webAppSchema = {
   "operatingSystem": "All",
   "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
   "author": { "@type": "Organization", "name": "SkillDrills" },
+  "sameAs": "https://es.wikipedia.org/wiki/Memoria_espacial",
   "isAccessibleForFree": true,
   "dateModified": "2026-09-11"
 };
@@ -292,23 +293,23 @@ const gridGuide = {
   sources: pickSources('cowan2001', 'baddeley2000', 'logie1995', 'corsi1972', 'luck1997', 'milner1971', 'woods2015'),
   related: [
   {
-    "href": "/drills/memory/working-memory/n-back",
+    "href": "/es/drills/memory/working-memory/n-back",
     "label": "Test N-Back (Memoria de Trabajo)"
   },
   {
-    "href": "/drills/cognitive/focus/concentration-grid",
+    "href": "/es/drills/cognitive/focus/concentration-grid",
     "label": "Tabla de Schulte (Cuadrícula de Concentración)"
   },
   {
-    "href": "/drills/memory/short-term-memory/digit-span",
+    "href": "/es/drills/memory/short-term-memory/digit-span",
     "label": "Test de Dígitos (Span de Memoria)"
   },
   {
-    "href": "/drills/reaction-speed/reaction-time-test",
+    "href": "/es/drills/reaction-speed/reaction-time-test",
     "label": "Test de Reflejos (Tiempo de Reacción)"
   },
   {
-    "href": "/drills/reaction-speed/reflex-training-drill",
+    "href": "/es/drills/reaction-speed/reflex-training-drill",
     "label": "Juego de Reflejos (Multi-Objetivo)"
   }
 ]
@@ -342,8 +343,9 @@ export default function LocalizedGridMemorizationPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
       <GridMemorizationClient copy={{
-        "h1Keyword": "Test de Memoria Visual",
-        "h1Suffix": " – Juego de Memoria de Patrones en Cuadrícula",
+        "h1Keyword": "Test de memoria visual online",
+        "h1Suffix": " – Matriz de memoria",
+        "subtitle": "Memoriza patrones iluminados en una cuadrícula",
         "caption": "La memoria de trabajo visual almacena aproximadamente cuatro objetos distintos a la vez; el cuello de botella es la cantidad de objetos y no el nivel de detalle (Luck & Vogel, 1997). Las cuadrículas matriciales estáticas evalúan el 'caché visual', el almacén pasivo de formas y disposición espacial (Logie, 1995).",
         "statScore": "Puntos",
         "statTime": "Tiempo",
@@ -352,7 +354,7 @@ export default function LocalizedGridMemorizationPage() {
         "hudScore": "Puntos",
         "hudTime": "Tiempo",
         "startTitle": "Memoria Visual Pro",
-        "startSubtitle": "Memoria a Corto Plazo Espacial • Retención de Patrones",
+        "startSubtitle": "Memoria visual • Matriz",
         "countdownSubtitle": "PREPÁRATE",
         "newBest": "NUEVO RÉCORD",
         "pointsLabel": "Puntos",

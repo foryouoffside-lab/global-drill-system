@@ -6,7 +6,7 @@ import { pickSources } from '@/lib/drillSources';
 
 // ============================================================
 // INVESTIGACIÓN DE PALABRAS CLAVE NATIVAS (SERP ESPAÑA / LATAM)
-// Búsquedas de alta intención deportiva y de coordinación:
+// Clusters nativos revisados por intención; competencia aún no medida:
 // - "ejercicios escalera de agilidad" (Búsqueda principal de entrenamiento funcional)
 // - "entrenamiento escalera de velocidad" (Acondicionamiento físico y velocidad)
 // - "escalera de coordinacion ejercicios" (Coordinación psicomotriz y juego de pies)
@@ -18,10 +18,10 @@ import { pickSources } from '@/lib/drillSources';
 // ============================================================
 
 export const metadata = {
-  title: "Escalera de Agilidad – Ejercicios Footwork | SkillDrills",
-  description: 'Ejercicios con escalera de agilidad online gratis. Entrena secuencias de pasos, juego de pies rápido y coordinación neuromuscular para fútbol y atletismo.',
+  title: "Ejercicios de escalera de agilidad | SkillDrills",
+  description: 'Ejercicios gratis de escalera de agilidad online. Sigue pasos alternos para entrenar juego de pies, ritmo, coordinación bilateral y velocidad.',
   keywords: [
-    "ejercicios escalera de agilidad",
+    "ejercicios de escalera de agilidad",
     "entrenamiento escalera de velocidad",
     "escalera de coordinacion ejercicios",
     "ejercicios de footwork y agilidad",
@@ -30,15 +30,16 @@ export const metadata = {
     "ritmo de counter strafe",
     "secuenciacion motora bilateral",
     "juego de pies y agilidad",
-    "test de velocidad de pies"
+    "test de velocidad de pies",
+    "velocidad de pies ejercicios"
   ],
   alternates: {
     canonical: 'https://skilldrills.online/es/drills/physical/fitness/agility-ladder',
     languages: getAlternateLanguages('/drills/physical/fitness/agility-ladder'),
   },
   openGraph: {
-    title: "Escalera de Agilidad – Ejercicios Footwork | SkillDrills",
-    description: 'Ejercicios con escalera de agilidad online gratis. Entrena secuencias de pasos, juego de pies rápido y coordinación neuromuscular para fútbol y atletismo.',
+    title: "Ejercicios de escalera de agilidad | SkillDrills",
+    description: 'Ejercicios gratis de escalera de agilidad online. Sigue pasos alternos para entrenar juego de pies, ritmo, coordinación bilateral y velocidad.',
     url: 'https://skilldrills.online/es/drills/physical/fitness/agility-ladder',
     siteName: 'SkillDrills',
     locale: 'es_ES',
@@ -46,8 +47,8 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: "Escalera de Agilidad – Ejercicios Footwork | SkillDrills",
-    description: 'Ejercicios con escalera de agilidad online gratis. Entrena secuencias de pasos, juego de pies rápido y coordinación neuromuscular para fútbol y atletismo.',
+    title: "Ejercicios de escalera de agilidad | SkillDrills",
+    description: 'Ejercicios gratis de escalera de agilidad online. Sigue pasos alternos para entrenar juego de pies, ritmo, coordinación bilateral y velocidad.',
   },
   robots: { index: true, follow: true },
 };
@@ -102,7 +103,7 @@ const softwareApplicationSchema = {
     "url": "https://skilldrills.online/es"
   },
   "inLanguage": "es-ES",
-  "dateModified": "2026-09-12"
+  "dateModified": "2026-09-20"
 };
 
 const webApplicationSchema = {
@@ -119,7 +120,7 @@ const webApplicationSchema = {
   },
   "url": "https://skilldrills.online/es/drills/physical/fitness/agility-ladder",
   "inLanguage": "es-ES",
-  "dateModified": "2026-09-12"
+  "dateModified": "2026-09-20"
 };
 
 const videoGameSchema = {
@@ -140,6 +141,8 @@ const videoGameSchema = {
     "Mobile"
   ],
   "applicationCategory": "Game",
+  "inLanguage": "es-ES",
+  "dateModified": "2026-09-20",
   "offers": {
     "@type": "Offer",
     "price": "0",
@@ -150,7 +153,8 @@ const videoGameSchema = {
 const faqSchema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
-  "dateModified": "2026-09-12",
+  "inLanguage": "es-ES",
+  "dateModified": "2026-09-20",
   "mainEntity": [
     {
       "@type": "Question",
@@ -358,8 +362,8 @@ export default function AgilityLadderPageEs() {
       />
       <MotorSequencingClient
         copy={{
-          title: "Ejercicios de Escalera de Agilidad & Footwork",
-          subtitle: "Secuenciación Motora Bilateral & Cadencia Rítmica • 15 Niveles",
+          title: "Ejercicios de escalera de agilidad",
+          subtitle: "Sigue pasos alternos con ritmo • 15 niveles",
           hudLabels: {
             score: "Puntuación",
             timeLeft: "Tiempo Restante",

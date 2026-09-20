@@ -6,25 +6,16 @@ import RelatedDrills from '@/components/drill/RelatedDrills';
 import { pickSources } from '@/lib/drillSources';
 
 export const metadata = {
-  title: 'Test de Drag and Drop – Precisión con el Ratón | SkillDrills',
-  description: 'Test de drag and drop online gratis: Entrena precision al arrastrar el raton, frenado del cursor y soltado espacial segun la Ley de Accot-Zhai en el navegador.',
+  title: 'Prueba de arrastre | Precisión del ratón | SkillDrills',
+  description: 'Practica arrastrar y soltar en el navegador. Mide la precisión del ratón, el tiempo de movimiento y el momento de soltar el objetivo.',
   keywords: [
-    'drag and drop test',
-    'test de drag and drop',
-    'entrenar arrastrar y soltar',
-    'precision raton arrastrar',
-    'test control de cursor',
-    'prueba de coordinacion raton',
-    'entrenamiento raton rts',
-    'frenado de raton fps',
-    'gestion de inventario fps',
-    'test de motricidad fina raton',
-    'juego de precision raton',
-    'test de raton online',
+    'prueba de arrastre del ratón', 'arrastrar y soltar', 'precisión del ratón', 'control del cursor',
+    'test de arrastre', 'prueba de arrastrar y soltar', 'entrenamiento de arrastre', 'arrastre del ratón online',
+    'test de control del ratón', 'coordinación mano-ojo ratón', 'test de motricidad fina ratón', 'juego de precisión ratón',
   ],
   openGraph: {
-    title: 'Test de Drag and Drop – Precisión con el Ratón | SkillDrills',
-    description: 'Test de drag and drop online gratis: Entrena precision al arrastrar el raton, frenado del cursor y soltado espacial segun la Ley de Accot-Zhai en el navegador.',
+    title: 'Prueba de arrastre | Precisión del ratón | SkillDrills',
+    description: 'Practica arrastrar y soltar en el navegador. Mide la precisión del ratón, el tiempo de movimiento y el momento de soltar el objetivo.',
     type: 'article',
     url: 'https://skilldrills.online/es/drills/motor/hand-eye-coordination/drag-and-drop',
     siteName: 'SkillDrills',
@@ -32,8 +23,8 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Test de Drag and Drop – Precisión con el Ratón | SkillDrills',
-    description: 'Test de drag and drop online gratis: Entrena precision al arrastrar el raton, frenado del cursor y soltado espacial segun la Ley de Accot-Zhai en el navegador.',
+    title: 'Prueba de arrastre | Precisión del ratón | SkillDrills',
+    description: 'Practica arrastrar y soltar en el navegador. Mide la precisión del ratón, el tiempo de movimiento y el momento de soltar el objetivo.',
   },
   robots: { index: true, follow: true },
   alternates: {
@@ -83,7 +74,8 @@ const softwareApplicationSchema = {
   description: 'Herramienta online gratuita para evaluar y perfeccionar el arrastre, desaceleración y sincronización de soltado del ratón.',
   url: 'https://skilldrills.online/es/drills/motor/hand-eye-coordination/drag-and-drop',
   publisher: { '@type': 'Organization', name: 'SkillDrills', url: 'https://skilldrills.online' },
-  dateModified: '2026-09-16',
+  inLanguage: 'es-ES',
+  dateModified: '2026-09-20',
 };
 
 const webApplicationSchema = {
@@ -93,7 +85,8 @@ const webApplicationSchema = {
   browserRequirements: 'Requiere HTML5 Canvas y soporte para JavaScript',
   url: 'https://skilldrills.online/es/drills/motor/hand-eye-coordination/drag-and-drop',
   applicationCategory: 'EducationalApplication',
-  dateModified: '2026-09-16',
+  inLanguage: 'es-ES',
+  dateModified: '2026-09-20',
 };
 
 const videoGameSchema = {
@@ -105,13 +98,15 @@ const videoGameSchema = {
   genre: ['Precisión', 'Coordinación Motora', 'Esports'],
   gamePlatform: ['Web Browser', 'Desktop'],
   applicationCategory: 'Game',
+  inLanguage: 'es-ES',
   offers: { '@type': 'Offer', price: '0', priceCurrency: 'EUR' },
 };
 
 const faqSchema = {
   '@context': 'https://schema.org',
   '@type': 'FAQPage',
-  dateModified: '2026-09-16',
+  inLanguage: 'es-ES',
+  dateModified: '2026-09-20',
   mainEntity: [
     {
       '@type': 'Question',
@@ -199,6 +194,7 @@ const faqSchema = {
 const howToSchema = {
   '@context': 'https://schema.org',
   '@type': 'HowTo',
+  inLanguage: 'es-ES',
   name: 'Protocolo de entrenamiento de precisión en drag and drop',
   description: 'Entrenamiento sistemático para perfeccionar desaceleración de cursor, arrastre estable y soltado certero.',
   step: [
@@ -323,7 +319,7 @@ const guideProps = {
 
 const copyEs = {
   title: "Test de Drag and Drop – Precisión con el Ratón",
-  subtitle: "Arrastre y Soltado Espacial de Blancos • Progresión de 15 Niveles",
+  subtitle: "Precisión al arrastrar · objetivo en su sitio",
   startButtonText: "INICIAR DRILL",
   playAgainText: "Jugar de nuevo",
   shareText: "Compartir resultado",

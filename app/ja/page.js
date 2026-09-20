@@ -1,7 +1,9 @@
 import HomePageClient from '../HomePageClient';
+import { DRILLS } from '@/lib/drillsRegistry';
 import { getAlternateLanguages } from '@/lib/i18n/locales';
+import { buildHomeMetadata, buildHomeSchema } from '@/lib/i18n/siteLandingSeoNative';
 
-export const metadata = {
+const legacyMetadata = {
   title: '無料エイム練習＆反射神経・脳トレトレーナー',
   description: '登録不要・ブラウザで今すぐプレイ可能な80以上の無料トレーニングドリル。VALORANTやCS2向けのエイム練習、反射神経テスト、CPSテスト。',
   keywords: [
@@ -20,8 +22,17 @@ export const metadata = {
   },
 };
 
+export const metadata = {
+  ...legacyMetadata,
+  ...buildHomeMetadata('ja', 'https://skilldrills.online/ja', DRILLS.length, getAlternateLanguages('/ja')),
+};
+
+const homeSchema = buildHomeSchema('ja', 'https://skilldrills.online/ja', DRILLS.length);
+
 export default function JapaneseHomePage() {
   return (
+    <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(homeSchema) }} />
     <HomePageClient
       copy={{
         srH2: 'SkillDrills - 無料の脳トレ＆エイムトレーナープラットフォーム',
@@ -123,5 +134,6 @@ export default function JapaneseHomePage() {
         },
       }}
     />
+    </>
   );
 }

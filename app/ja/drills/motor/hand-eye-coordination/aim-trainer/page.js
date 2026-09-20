@@ -6,31 +6,22 @@ import RelatedDrills from '@/components/drill/RelatedDrills';
 import { pickSources } from '@/lib/drillSources';
 
 // ============================================================
-// SEO RESEARCH FINDINGS — ja-JP (motor / hand-eye-coordination / aim-trainer)
-// PRIMARY DOMESTIC: "エイム練習" — 1,379 exact / 1,706 broad Bing searches/mo (Domestic #1 winner)
-//                   "エイム練習 無料 ブラウザ" — 255 exact searches/mo
-//                   "置きエイム" — 699 exact searches/mo
-// SECONDARY / LSI:
-//                   "aim練習" — 119 exact searches/mo
-//                   "エイムラボ 無料 ブラウザ" — 82 exact searches/mo
-//                   "aim trainer" — 93 exact / 347 broad searches/mo
-//                   "valorant 置きエイム 練習" — 183 searches/mo
-// WINNER TITLE:     エイム練習 – 無料ブラウザFPSエイムトレーナー・マウス精度測定 | SkillDrills
+// Native research: エイム練習, 無料 ブラウザ エイム練習, エイムトレーナー,
+// マウス精度テスト, フリックエイム練習, 置きエイム練習, 追いエイム,
+// 初弾命中率, ターゲット切り替え, VALORANT エイム練習.
 // ============================================================
 
 export const metadata = {
-  title: 'エイム練習 – 無料ブラウザFPSエイムトレーナー・マウス精度測定 | SkillDrills',
-  description:
-    '登録不要・ブラウザで今すぐできる無料FPSエイム練習ツール。小さくなる動的ターゲットを連続撃破し、マイクロフリック精度と初弾捕捉速度をフィッツの法則に基づき強化。VALORANT、Apex Legends、CS2のウォームアップに最適。',
-  keywords: ['エイム練習', 'エイムトレーナー', 'fps エイム 練習', 'マウス 精度 テスト', 'エイム練習 無料 ブラウザ', 'フリックショット 練習', 'フィッツの法則 エイム', 'valorant エイム練習', '初弾 命中率 トレーニング', '反動制御 エイム 練習', 'apex ウォームアップ エイム', 'エイム 反応速度 測定'],
+  title: 'エイム練習｜無料ブラウザエイムトレーナー | SkillDrills',
+  description: '無料のブラウザ型エイム練習。動くターゲットでマウス精度、フリック速度、初弾の捕捉を測定します。',
+  keywords: ['エイム練習', '無料 ブラウザ エイム練習', 'エイムトレーナー', 'マウス精度テスト', 'フリックエイム練習', '置きエイム練習', '追いエイム', '初弾命中率', 'ターゲット切り替え', 'VALORANT エイム練習'],
   alternates: {
     canonical: 'https://skilldrills.online/ja/drills/motor/hand-eye-coordination/aim-trainer',
     languages: getAlternateLanguages('/drills/motor/hand-eye-coordination/aim-trainer'),
   },
   openGraph: {
-    title: 'エイム練習 – 無料ブラウザFPSエイムトレーナー・マウス精度測定 | SkillDrills',
-    description:
-      '無料オンラインFPSエイム練習。動くターゲットを素早く正確にクリックしてマウス精度とフリック速度を測定・強化。インストール不要。',
+    title: 'エイム練習｜無料ブラウザエイムトレーナー | SkillDrills',
+    description: '無料ブラウザのエイム練習。動くターゲットでマウス精度とフリック速度を測定。',
     url: 'https://skilldrills.online/ja/drills/motor/hand-eye-coordination/aim-trainer',
     siteName: 'SkillDrills',
     locale: 'ja_JP',
@@ -38,9 +29,8 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'エイム練習 – 無料ブラウザFPSエイムトレーナー・マウス精度測定 | SkillDrills',
-    description:
-      '無料ブラウザFPSエイム練習。マイクロフリックと初弾マウス精度を鍛える動的エイムトレーナー。',
+    title: 'エイム練習｜無料ブラウザエイムトレーナー | SkillDrills',
+    description: '無料ブラウザでエイム練習。マイクロフリックと初弾のマウス精度を鍛えます。',
   },
   robots: { index: true, follow: true },
 };
@@ -62,6 +52,7 @@ const breadcrumbSchema = {
 const softwareApplicationSchema = {
   '@context': 'https://schema.org',
   '@type': 'SoftwareApplication',
+  inLanguage: 'ja-JP',
   name: 'エイム練習 – 無料ブラウザFPSエイムトレーナー',
   alternateName: ['エイム練習', 'FPSエイムトレーナー', 'マウス精度テスト', 'Aim Trainer Online'],
   applicationCategory: 'HealthApplication',
@@ -76,6 +67,7 @@ const softwareApplicationSchema = {
 const webAppSchema = {
   '@context': 'https://schema.org',
   '@type': 'WebApplication',
+  inLanguage: 'ja-JP',
   name: 'エイム練習 — 無料オンラインFPSエイムトレーナー | SkillDrills',
   url: 'https://skilldrills.online/ja/drills/motor/hand-eye-coordination/aim-trainer',
   description:
@@ -94,10 +86,11 @@ const webAppSchema = {
 const videoGameSchema = {
   "@context": "https://schema.org",
   "@type": "VideoGame",
+  "inLanguage": "ja-JP",
   "name": "エイム練習 (Aim Trainer)",
   "url": "https://skilldrills.online/ja/drills/motor/hand-eye-coordination/aim-trainer",
-  "description": "Free online browser-based 2D aim trainer for FPS gamers. Practice target acquisition, mouse accuracy, and click timing.",
-  "dateModified": "2026-09-11",
+  "description": "ブラウザでマウス精度、ターゲット捕捉、クリックタイミングを鍛える無料の2Dエイム練習ツールです。",
+  "dateModified": "2026-09-20",
   "gamePlatform": "Web Browser",
   "genre": ["Aim Trainer", "FPS Training", "Hand-Eye Coordination", "Reaction Speed"],
   "playMode": "SinglePlayer",
@@ -109,6 +102,7 @@ const videoGameSchema = {
 const howToSchema = {
   '@context': 'https://schema.org',
   '@type': 'HowTo',
+  inLanguage: 'ja-JP',
   name: 'ブラウザでのエイム練習方法と手順',
   description: 'SkillDrillsの無料エイム練習ツールを使ってマウス精度とフリック速度を鍛える手順。',
   step: [
@@ -150,7 +144,8 @@ const howToSchema = {
 const faqSchema = {
   '@context': 'https://schema.org',
   '@type': 'FAQPage',
-  dateModified: '2026-09-11',
+  inLanguage: 'ja-JP',
+  dateModified: '2026-09-20',
   mainEntity: [
     {
       '@type': 'Question',
@@ -253,7 +248,7 @@ export default function AimTrainerJapanesePage() {
       <AimTrainerClient
         copy={{
           title: 'エイム練習 (Aim Trainer)',
-          subtitle: '動くターゲットへの瞬時エイム・クリック精度測定・無制限レベル進行',
+          subtitle: '動く標的へのエイム・マウス精度・フリック練習',
           caption: '小さくなりながら移動するターゲットを消滅前に素早く正確にクリック。フィッツの法則に基づく動的難易度調整。',
           startButtonText: '訓練開始',
           playAgainText: 'もう一度挑戦',

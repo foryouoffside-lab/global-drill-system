@@ -6,21 +6,23 @@ import { getAlternateLanguages } from '@/lib/i18n/locales';
 import RelatedDrills from '@/components/drill/RelatedDrills';
 
 export const metadata = {
-  title: "Micro Corrección de Puntería – Headshot FPS | SkillDrills",
-  description: "Entrena la micro corrección de puntería y desaceleración en tu navegador. Domina micro ajustes y precisión de headshots en Valorant y CS2 gratis.",
+  title: "Aim Trainer | Microajustes de Puntería FPS | SkillDrills",
+  description: "Aim trainer gratis en navegador: practica microajustes tras el flick, frenado de mira y precisión de headshots para Valorant y CS2.",
   keywords: [
-    "entrenamiento de micro correccion",
-    "micro ajustes de punteria valorant",
+    "aim trainer",
+    "aim trainer online",
+    "aim trainer valorant",
+    "microajustes de puntería",
+    "micro corrección de puntería",
     "micro flicks cs2",
     "ajuste fino de punteria raton",
     "entrenar precision de headshot",
     "frenado de mira fps",
     "control de micro movimientos raton",
-    "aim trainer micro ajuste precision",
-    "como mejorar micro correcciones valorant",
-    "precision de clic tactico",
-    "parada de mira cs2",
-    "micro flicks punteria gratis"
+    "frenado de mira fps",
+    "precisión de headshot",
+    "entrenamiento de puntería",
+    "aim trainer gratis"
   ],
   alternates: {
     canonical: "https://skilldrills.online/es/drills/fps/micro-correction-precision",
@@ -31,8 +33,8 @@ export const metadata = {
     follow: true,
   },
   openGraph: {
-    title: "Micro Corrección de Puntería – Headshot FPS | SkillDrills",
-    description: "Entrena la micro corrección de puntería y desaceleración en tu navegador. Domina micro ajustes y precisión de headshots en Valorant y CS2 gratis.",
+    title: "Aim Trainer | Microajustes de Puntería FPS | SkillDrills",
+    description: "Aim trainer gratis en navegador: practica microajustes tras el flick, frenado de mira y precisión de headshots para Valorant y CS2.",
     url: "https://skilldrills.online/es/drills/fps/micro-correction-precision",
     siteName: 'SkillDrills',
     locale: 'es_ES',
@@ -40,8 +42,8 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: "Micro Corrección de Puntería – Headshot FPS | SkillDrills",
-    description: "Entrena la micro corrección de puntería y desaceleración en tu navegador. Domina micro ajustes y precisión de headshots en Valorant y CS2 gratis.",
+    title: "Aim Trainer | Microajustes de Puntería FPS | SkillDrills",
+    description: "Aim trainer gratis en navegador: practica microajustes tras el flick, frenado de mira y precisión de headshots para Valorant y CS2.",
   },
 };
 
@@ -65,7 +67,7 @@ export default function MicroCorrectionPage() {
       {
         "@type": "ListItem",
         "position": 3,
-        "name": "Micro Corrección de Puntería",
+         "name": "Aim Trainer - microajustes de puntería",
         "item": "https://skilldrills.online/es/drills/fps/micro-correction-precision"
       }
     ]
@@ -74,7 +76,7 @@ export default function MicroCorrectionPage() {
   const webAppSchema = {
     "@context": "https://schema.org",
     "@type": "WebApplication",
-    "name": "Entrenador de Micro Corrección de Puntería SkillDrills",
+    "name": "Aim Trainer - microajustes y headshots",
     "url": "https://skilldrills.online/es/drills/fps/micro-correction-precision",
     "applicationCategory": "GameApplication",
     "operatingSystem": "Any",
@@ -89,7 +91,7 @@ export default function MicroCorrectionPage() {
   const softwareSchema = {
     "@context": "https://schema.org",
     "@type": "SoftwareApplication",
-    "name": "Entrenamiento de Micro Corrección de Puntería",
+    "name": "Aim Trainer - microajustes y headshots",
     "applicationCategory": "GameApplication",
     "operatingSystem": "Web Browser",
     "offers": {
@@ -117,7 +119,7 @@ export default function MicroCorrectionPage() {
   const faqSchema = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
-    "dateModified": "2026-09-16",
+    "dateModified": "2026-09-20",
     "mainEntity": [
       {
         "@type": "Question",
@@ -236,8 +238,8 @@ export default function MicroCorrectionPage() {
   };
 
   const copyEs = {
-    h1Keyword: "Micro Corrección de Puntería",
-    h1Suffix: " – Headshot FPS & Precisión",
+    h1Keyword: "Aim Trainer",
+    h1Suffix: " – Microajustes de Puntería FPS",
     subtitle: "Domina la desaceleración terminal y los micro ajustes inmediatos para maximizar la precisión de tus disparos a la cabeza.",
     statScore: "Puntuación",
     statTime: "Tiempo",
@@ -246,7 +248,7 @@ export default function MicroCorrectionPage() {
     statAvgCorrection: "Corrección Media",
     statMaxCombo: "Combo Máximo",
     statPeakLevel: "Nivel Máximo",
-    startTitle: "Micro Corrección de Puntería",
+    startTitle: "Aim Trainer - microajustes y headshots",
     startSubtitle: "Entrada Directa de Hardware • Progresión Continua y Desaceleración",
     getReady: "PREPÁRATE",
     toggleFlash: "Alternar Flash de Fallo",
@@ -259,15 +261,15 @@ export default function MicroCorrectionPage() {
       { num: "3", text: "Subida de Nivel", highlight: "+1 Nivel / 1.400 pts", result: "Escalado adaptativo" },
       { num: "4", text: "Fallo / Tiempo", highlight: "Penalización", result: "Reseteo combo (-0,6s)" }
     ],
-    aboutTitle: "Sobre el Entrenamiento de Micro Corrección",
+    aboutTitle: "Sobre el aim trainer y los microajustes",
     aboutHeading: "¿Qué es la Micro Corrección de Puntería?",
     aboutText: "La mayoría de los movimientos de apuntado se componen de dos fases: un desplazamiento balístico inicial y un micro ajuste correctivo guiado por la visión (Woodworth, 1899; Meyer et al., 1988). Este ejercicio entrena sistemáticamente la segunda fase, donde se decide la precisión letal de los headshots."
   };
 
   const microCorrectionGuide = {
-    heading: "Guía de Micro Corrección de Puntería & Cronometría de Precisión",
+    heading: "Guía de Aim Trainer y Microajustes de Puntería",
     intro: [
-      "El Entrenador de Micro Corrección de Puntería es una herramienta sensoriomotora diseñada para aislar, calibrar y perfeccionar la fase secundaria de ajuste fino en el tiro visual. En juegos tácticos de élite como Valorant, Counter-Strike 2 y Rainbow Six Siege, las rondas se resuelven por correcciones diminutas de entre 5 y 25 píxeles.",
+      "Un aim trainer con microajustes practica la fase final de un movimiento balístico: después de llegar cerca del objetivo, frenas y realizas un ajuste corto para centrar la retícula. Este drill aísla esa fase, mide el tiempo entre el objetivo ancla y el micro objetivo y revela cuándo la velocidad provoca una segunda corrección.",
       "La base científica de los movimientos dirigidos hacia un objetivo fue establecida originalmente por Robert S. Woodworth (1899) con su célebre modelo de dos componentes: un impulso balístico en bucle abierto que proyecta la mano hacia el estímulo, sucedido por una fase de control en bucle cerrado guiada por retroalimentación sensorial continua. Esta dinámica fue cuantificada por la Ley de Fitts (1954), que describe el tiempo de movimiento según la distancia y la anchura de la diana.",
       "Posteriormente, David E. Meyer et al. (1988) formularon el Modelo de Submovimientos Optimizados Estocásticos, demostrando que el sistema motor humano planea los movimientos principales para quedar justo en el margen del blanco, apoyándose en micro submovimientos rápidos para corregir la discrepancia de coordenadas sin sufrir una desaceleración incontrolada.",
       "En la fase final de fijación foveal, los ojos recurren a microsacadas (Rolfs, 2009; Martinez-Conde et al., 2004) —pequeños movimientos involuntarios de alta frecuencia— para refrescar la retina y centrar los detalles visuales. Este entrenador combina bloqueo de puntero con cronometría de alta resolución mediante performance.now() (Woods et al., 2015) para erradicar el overflick y consolidar una precisión letal con consistencia robótica.",
@@ -370,7 +372,7 @@ export default function MicroCorrectionPage() {
       <div className="max-w-4xl mx-auto px-4 pb-12">
         <RelatedDrills
           currentCategory="fps"
-          currentHref="/drills/fps/micro-correction-precision"
+          currentHref="/es/drills/fps/micro-correction-precision"
           locale="es"
         />
       </div>

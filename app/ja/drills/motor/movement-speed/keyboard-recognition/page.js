@@ -2,28 +2,29 @@ import KeyboardRecognitionClient from '@/app/drills/motor/movement-speed/keyboar
 import { getAlternateLanguages } from '@/lib/i18n/locales';
 import DrillGuide from '@/components/drill/DrillGuide';
 import RelatedDrills from '@/components/drill/RelatedDrills';
+import DrillFooter from '@/components/drill/DrillFooter';
 import { pickSources } from '@/lib/drillSources';
 
 export const metadata = {
-  title: 'キーボード練習 – ブラインドタッチと打鍵反応速度テスト | SkillDrills',
-  description: '無料のオンラインキーボード練習ツール。画面のプロンプトに合わせて手元を見ずに打鍵し、キーボード配列の把握力、ブラインドタッチ、打鍵反応速度を測定・訓練。登録不要で即プレイ。',
+  title: 'キーボード反応速度テスト | キー入力測定 | SkillDrills',
+  description: '表示されたキーを押して反応時間と入力の正確さを測る無料テスト。ブラウザですぐ始められます。',
   keywords: [
-    'キーボード練習',
-    'ブラインドタッチ 練習',
-    'キーボード配列',
-    'キーボード練習 無料',
-    'キーバインド 練習',
     'キーボード 反応速度 テスト',
+    'キー反応 テスト',
+    '反応速度測定 キー版',
+    'WASD トレーナー',
+    'キーバインド 練習',
     '打鍵 速度 測定',
-    'キー 反応速度',
-    'ゲーミング キーバインド',
-    '選択反応時間 テスト',
     'タイピング 反応速度',
+    'キーボード レイテンシ テスト',
+    'キー入力 正確さ',
+    'ゲーミング キーボード 反応',
+    '選択反応時間 テスト',
     '指先 運動制御',
   ],
   openGraph: {
-    title: 'キーボード練習 – ブラインドタッチと打鍵反応速度テスト | SkillDrills',
-    description: '無料のオンラインキーボード練習ツール。画面のプロンプトに合わせて手元を見ずに打鍵し、キーボード配列の把握力、ブラインドタッチ、打鍵反応速度を測定・訓練。',
+    title: 'キーボード反応速度テスト | キー入力測定 | SkillDrills',
+    description: '表示されたキーを押して反応時間と正確さを測る無料テスト。',
     type: 'article',
     url: 'https://skilldrills.online/ja/drills/motor/movement-speed/keyboard-recognition',
     siteName: 'SkillDrills',
@@ -31,8 +32,8 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'キーボード練習 – ブラインドタッチと打鍵反応速度テスト | SkillDrills',
-    description: '無料のオンラインキーボード練習ツール。画面のプロンプトに合わせて手元を見ずに打鍵。',
+    title: 'キーボード反応速度テスト | キー入力測定 | SkillDrills',
+    description: '表示されたキーへの反応速度を測る無料のブラウザテスト。',
   },
   robots: { index: true, follow: true },
   alternates: {
@@ -48,39 +49,42 @@ const breadcrumbSchema = {
     { '@type': 'ListItem', position: 1, name: 'SkillDrills', item: 'https://skilldrills.online/ja' },
     { '@type': 'ListItem', position: 2, name: '運動制御トレーニング', item: 'https://skilldrills.online/ja/drills/motor' },
     { '@type': 'ListItem', position: 3, name: '動作速度', item: 'https://skilldrills.online/ja/drills/motor/movement-speed' },
-    { '@type': 'ListItem', position: 4, name: 'キーボード練習', item: 'https://skilldrills.online/ja/drills/motor/movement-speed/keyboard-recognition' },
+    { '@type': 'ListItem', position: 4, name: 'キーボード反応速度テスト', item: 'https://skilldrills.online/ja/drills/motor/movement-speed/keyboard-recognition' },
   ],
 };
 
 const softwareApplicationSchema = {
   '@context': 'https://schema.org',
   '@type': 'SoftwareApplication',
-  name: 'キーボード練習 – ブラインドタッチと打鍵反応速度テスト',
+  inLanguage: 'ja-JP',
+  name: 'キーボード反応速度テスト – キー入力測定',
   applicationCategory: 'HealthApplication',
   operatingSystem: 'All',
   offers: { '@type': 'Offer', price: '0', priceCurrency: 'JPY' },
   description: 'ブラウザで動作する無料のキーボード反応速度測定・キーバインド練習ツール。選択反応時間（Choice RT）、空間認識、誤打鍵抑制能力を測定。',
   url: 'https://skilldrills.online/ja/drills/motor/movement-speed/keyboard-recognition',
   publisher: { '@type': 'Organization', name: 'SkillDrills', url: 'https://skilldrills.online' },
-  dateModified: '2026-09-05',
+  dateModified: '2026-09-20',
 };
 
 const webApplicationSchema = {
   '@context': 'https://schema.org',
   '@type': 'WebApplication',
-  name: 'キーボード練習ツール',
+  inLanguage: 'ja-JP',
+  name: 'キーボード反応速度テスト',
   applicationCategory: 'GameApplication',
   operatingSystem: 'All',
   browserRequirements: 'HTML5 CanvasおよびJavaScriptのサポートが必要',
   offers: { '@type': 'Offer', price: '0', priceCurrency: 'JPY' },
   url: 'https://skilldrills.online/ja/drills/motor/movement-speed/keyboard-recognition',
-  dateModified: '2026-09-05',
+  dateModified: '2026-09-20',
 };
 
 const videoGameSchema = {
   '@context': 'https://schema.org',
   '@type': 'VideoGame',
-  name: 'キーボード練習 – キーバインド反応速度テスト',
+  inLanguage: 'ja-JP',
+  name: 'キーボード反応速度 – キーバインドテスト',
   url: 'https://skilldrills.online/ja/drills/motor/movement-speed/keyboard-recognition',
   description: 'ヒックの法則に基づき、プロンプトに対応する選択打鍵反応速度を測定します。',
   genre: ['Keyboard Game', 'Action', 'Esports Training'],
@@ -92,6 +96,8 @@ const videoGameSchema = {
 const faqSchema = {
   '@context': 'https://schema.org',
   '@type': 'FAQPage',
+  inLanguage: 'ja-JP',
+  dateModified: '2026-09-20',
   mainEntity: [
     {
       '@type': 'Question',
@@ -179,6 +185,8 @@ const faqSchema = {
 const howToSchema = {
   '@context': 'https://schema.org',
   '@type': 'HowTo',
+  inLanguage: 'ja-JP',
+  dateModified: '2026-09-20',
   name: 'キーボード反応速度とキーバインド反射のトレーニング方法',
   description: 'キーボードの打鍵速度、手元を見ないブラインド操作、および反応抑制力を高める手順。',
   step: [
@@ -332,6 +340,7 @@ export default function JapaneseKeyboardRecognitionPage() {
       <div className="max-w-6xl mx-auto px-4 pb-12">
         <RelatedDrills currentCategory="motor" currentHref="/drills/motor/movement-speed/keyboard-recognition" />
       </div>
+      <DrillFooter />
     </>
   );
 }

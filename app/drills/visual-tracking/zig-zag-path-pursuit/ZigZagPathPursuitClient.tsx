@@ -6,6 +6,7 @@ import { RefreshCw, Share2, LogOut, Check, Volume2, VolumeX } from 'lucide-react
 
 import DrillFooter from '../../../../components/drill/DrillFooter';
 import DrillCountdown from '../../../../components/drill/DrillCountdown';
+import DrillAccordion from '../../../../components/drill/DrillAccordion';
 import ZigZagPathPursuitStartCard from '../../../../components/drill/ZigZagPathPursuitStartCard';
 import { drillAudio } from '../../../../lib/drillAudio';
 import { drawTacticalTarget } from '../../../../lib/canvasFx';
@@ -44,6 +45,7 @@ const saveData = (data: { totalSessions: number }) => {
 export default function ZigZagPathPursuitClient({ copy }: { copy?: { title?: string; subtitle?: string; description?: string } } = {}) {
   const [gameState, setGameState] = useState<'start' | 'countdown' | 'playing' | 'gameOver'>('start');
   const [isFullscreen, setIsFullscreen] = useState<boolean>(false);
+  const [openAccordion, setOpenAccordion] = useState<string | null>(null);
   useImmersiveMode(isFullscreen); // locks the page behind while the drill fills the screen
   const [soundEnabled, setSoundEnabled] = useState<boolean>(true);
   const [isMobile, setIsMobile] = useState<boolean>(false);
@@ -433,9 +435,6 @@ export default function ZigZagPathPursuitClient({ copy }: { copy?: { title?: str
                 {copy?.subtitle || "Eye Tracking Coordination Drill"}
               </span>
             </h1>
-            <p className="mt-2 text-xs sm:text-sm text-slate-300 leading-relaxed">
-              {copy?.description || "Zig-zag path pursuit conditions multi-vector foveal tracking and rapid catch-up saccades by guiding gaze along an alternating multi-segment polyline. Navigating sharp diagonal inflection points trains predictive ocular motor coordination and dynamic visual acuity (de Brouwer et al., 2002; Orban de Xivry & Lefèvre, 2007). Pursuit holds to roughly 30°/s on each straight leg, and every reversal exceeds it, so the eye alternates between smooth tracking and catch-up saccades (Krauzlis, 2004)."}
-            </p>
           </div>
         )}
 
@@ -468,7 +467,7 @@ export default function ZigZagPathPursuitClient({ copy }: { copy?: { title?: str
         {/* Game Stage Container */}
         <div 
           ref={containerRef} 
-          className={`overflow-hidden flex flex-col transition-all duration-150 select-none border border-white/10 ${
+          className={`overflow-hidden flex flex-col select-none border border-white/10 ${
             dayMode ? 'bg-[#ffffff]' : 'bg-[#080811]'
           } ${dayMode ? 'text-slate-900' : 'text-white'} ${
             isFullscreen ? 'fixed inset-0 z-[100] w-screen h-[100dvh] rounded-none border-none flex flex-col items-center justify-center' : 'w-full rounded-2xl aspect-video min-h-[460px] md:min-h-[500px] max-h-[88vh] max-md:aspect-[3/4] max-md:min-h-[420px] max-md:max-h-[76vh] relative overflow-hidden flex flex-col'
@@ -617,31 +616,17 @@ export default function ZigZagPathPursuitClient({ copy }: { copy?: { title?: str
 
         </div>
 
-        {/* RELATED DRILLS GRID */}
         {!isFullscreen && (
-          <section className="mt-4">
-            <h2 className="text-sm font-bold text-slate-400 uppercase tracking-wider mb-3">
-              Related Visual Drills
-            </h2>
-            <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
-              {RELATED_DRILLS.map((drill) => (
-                <Link
-                  key={drill.id}
-                  href={drill.href}
-                  className="group bg-[#0c0c16] border border-white/5 hover:border-red-500/40 rounded-xl p-3.5 transition-all duration-200 hover:-translate-y-0.5 flex flex-col justify-between"
-                >
-                  <div>
-                    <div className="text-[10px] font-bold text-red-400 uppercase tracking-wider mb-1">{drill.cat}</div>
-                    <div className="text-xs font-bold text-white group-hover:text-red-300 transition-colors">{drill.name}</div>
-                    <div className="text-[11px] text-slate-400 mt-1 line-clamp-2 leading-relaxed">{drill.desc}</div>
-                  </div>
-                  <div className="text-[10px] font-bold text-slate-500 group-hover:text-red-400 mt-3 flex items-center gap-1 transition-colors">
-                    Train Drill <span>→</span>
-                  </div>
-                </Link>
-              ))}
-            </div>
-          </section>
+          <DrillAccordion
+            id="about"
+            title="About Zig-Zag Path Pursuit"
+            isOpen={openAccordion === 'about'}
+            onToggle={() => setOpenAccordion(openAccordion === 'about' ? null : 'about')}
+          >
+            <p className="text-sm text-slate-300 leading-relaxed">
+              {copy?.description || "Zig-zag path pursuit conditions multi-vector foveal tracking and rapid catch-up saccades by guiding gaze along an alternating multi-segment polyline. Navigating sharp diagonal inflection points trains predictive ocular motor coordination and dynamic visual acuity (de Brouwer et al., 2002; Orban de Xivry & Lefèvre, 2007). Pursuit holds to roughly 30°/s on each straight leg, and every reversal exceeds it, so the eye alternates between smooth tracking and catch-up saccades (Krauzlis, 2004)."}
+            </p>
+          </DrillAccordion>
         )}
 
         {/* SITE FOOTER */}

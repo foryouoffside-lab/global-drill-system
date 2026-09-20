@@ -1,5 +1,6 @@
 import PredictivePursuitClient from '@/app/drills/visual-tracking/predictive-pursuit/PredictivePursuitClientLoader';
 import DrillGuide from '@/components/drill/DrillGuide';
+import DrillFooter from '@/components/drill/DrillFooter';
 import RelatedDrills from '@/components/drill/RelatedDrills';
 import { getAlternateLanguages } from '@/lib/i18n/locales';
 import { pickSources } from '@/lib/drillSources';
@@ -14,25 +15,23 @@ import { pickSources } from '@/lib/drillSources';
 // ============================================================
 
 export const metadata = {
-  title: "Prädiktives Tracking Training – Predictive | SkillDrills",
-  description: "Kostenloses prädiktives Tracking: Trainiere Vorhersage verdeckter Zielbahnen, zerebelläre Vorwärtsmodelle und antizipative Blickführung direkt im Browser.",
+  title: "Prädiktive Blickverfolgung | SkillDrills",
+  description: "Verfolge ein bewegtes Ziel und schätze seine Position nach kurzer Verdeckung. Kostenlose Browserübung mit Reaktionszeit und Abweichung.",
   keywords: [
-    "prädiktives tracking training",
-    "flugbahn vorhersage augentraining",
-    "vorhaltemaß training online",
-    "antizipatorische blickführung",
-    "okkludierte zielverfolgung",
-    "zielvorhersage uebungen",
-    "zerebelläres vorwärtsmodell",
-    "mentale vektorextrapolation",
-    "visuelle okklusion",
-    "feedforward blicksteuerung",
-    "visuelles arbeitsgedächtnis",
-    "antizipatives blickverhalten test"
+    "prädiktives Sehen trainieren",
+    "Blickfolge Vorhersage",
+    "Flugbahn vorhersagen Augentraining",
+    "visuelle Antizipation Training",
+    "Ziel unter Verdeckung verfolgen",
+    "Vorhaltemaß üben",
+    "Blickverfolgung Übung",
+    "Okklusion Training",
+    "Zielbahn vorhersagen",
+    "visuelles Arbeitsgedächtnis Übung"
   ],
   openGraph: {
-    title: "Prädiktives Tracking Training – Predictive | SkillDrills",
-    description: "Extrapoliere verdeckte Flugbahnen im Kopf und überwinde sensorimotorische Latenzen mit zerebellärer Feedforward-Blicksteuerung.",
+    title: "Prädiktive Blickverfolgung | SkillDrills",
+    description: "Verfolge ein bewegtes Ziel und schätze seine Position nach kurzer Verdeckung. Kostenlose Browserübung mit Reaktionszeit und Abweichung.",
     type: "website",
     url: "https://skilldrills.online/de/drills/visual-tracking/predictive-pursuit",
     siteName: "SkillDrills",
@@ -40,8 +39,8 @@ export const metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Prädiktives Tracking Training – Predictive | SkillDrills",
-    description: "Wissenschaftliches Augentraining zur Vorhersage von Bewegungsvektoren bei visueller Verdeckung.",
+    title: "Prädiktive Blickverfolgung | SkillDrills",
+    description: "Kurze Browserübung für Blickfolge und Flugbahnvorhersage bei visueller Verdeckung. Miss Reaktionszeit und Positionsabweichung.",
   },
   robots: { index: true, follow: true },
   alternates: {
@@ -72,30 +71,31 @@ const softwareApplicationSchema = {
   "url": "https://skilldrills.online/de/drills/visual-tracking/predictive-pursuit",
   "publisher": { "@type": "Organization", "name": "SkillDrills", "url": "https://skilldrills.online/de" },
   "inLanguage": "de",
-  "dateModified": "2026-09-15"
+  "dateModified": "2026-09-20"
 };
 
 const webAppSchema = {
   "@context": "https://schema.org",
   "@type": "WebApplication",
-  "name": "Prädiktiver Blickführungstracker (SkillDrills Predictive Pursuit)",
+  "name": "Prädiktiver Blickführungstracker",
   "applicationCategory": "EducationalApplication",
   "operatingSystem": "All",
   "browserRequirements": "HTML5 Canvas fähiger Browser (Chrome, Edge, Firefox, Safari)",
   "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
   "url": "https://skilldrills.online/de/drills/visual-tracking/predictive-pursuit",
   "inLanguage": "de",
-  "dateModified": "2026-09-15"
+  "dateModified": "2026-09-20"
 };
 
 const videoGameSchema = {
   "@context": "https://schema.org",
   "@type": "VideoGame",
-  "name": "Prädiktives Tracking Training (Predictive Pursuit)",
+  "dateModified": "2026-09-20",
+  "name": "Training für prädiktive Blickverfolgung",
   "url": "https://skilldrills.online/de/drills/visual-tracking/predictive-pursuit",
   "description": "Kognitives Aim- und Sehtrainingstool für E-Sportler und Athleten zur Perfektionierung von Vorhaltemaß und Antizipation verdeckter Zielbewegungen.",
-  "genre": ["Aim Trainer", "Eye Tracking", "Vision Training", "Esports Drill"],
-  "gamePlatform": ["Web Browser", "Desktop", "Mobile"],
+  "genre": ["Zielübungen", "Blickverfolgung", "Sehtraining", "Wettkampftraining"],
+  "gamePlatform": ["Webbrowser", "Desktop", "Mobilgerät"],
   "applicationCategory": "Game",
   "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
 };
@@ -103,6 +103,7 @@ const videoGameSchema = {
 const howToSchema = {
   "@context": "https://schema.org",
   "@type": "HowTo",
+  "dateModified": "2026-09-20",
   "name": "Anleitung zur Schulung prädiktiver Blickfolgebewegungen und Vektorextrapolation",
   "description": "Methodisches Trainingsprotokoll zur Überwindung retinaler Latenzen durch zerebelläre Flugbahninterpolation.",
   "step": [
@@ -136,10 +137,11 @@ const howToSchema = {
 const faqSchema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
+  "dateModified": "2026-09-20",
   "mainEntity": [
     {
       "@type": "Question",
-      "name": "Was versteht man unter prädiktiver Blickverfolgung (Predictive Smooth Pursuit) und wie unterscheidet sie sich vom reaktiven Verfolgen?",
+      "name": "Was versteht man unter prädiktiver Blickverfolgung und wie unterscheidet sie sich vom reaktiven Verfolgen?",
       "acceptedAnswer": {
         "@type": "Answer",
         "text": "Die Weiterleitung visueller Signale von der Netzhaut über den primären visuellen Kortex bis zu den okulomotorischen Kernen benötigt rund 130 bis 150 Millisekunden. Bei rein reaktivem Verfolgen hinkt das Auge bewegten Zielen zwangsläufig hinterher (Retinal Slip). Prädiktive Blickfolge nutzt interne Modelle im Kleinhirn und den frontalen Augenfeldern (FEF), um die künftige Trajektorie vorauszuahnen und das Auge synchron oder vorauslaufend anzusteuern (Barnes, 2008)."
@@ -171,7 +173,7 @@ const faqSchema = {
     },
     {
       "@type": "Question",
-      "name": "Was ist ein 'zerebelläres Vorwärtsmodell (Internal Forward Model)' im Kleinhirn?",
+      "name": "Was ist ein zerebelläres Vorwärtsmodell im Kleinhirn?",
       "acceptedAnswer": {
         "@type": "Answer",
         "text": "Das Kleinhirn (Cerebellum) nutzt Efferenzkopien motorischer Befehle, um physikalische Konsequenzen im Raum vorauszuberechnen (Robinson, 1965; Krauzlis, 2004). Ist dieses neuronale Modell gut trainiert, weiß das Sehsystem exakt, wo sich ein Objekt in 200 oder 500 Millisekunden befinden wird, selbst ohne permanente sensorische Bestätigung."
@@ -179,10 +181,10 @@ const faqSchema = {
     },
     {
       "@type": "Question",
-      "name": "Worin liegt der Unterschied zwischen Training mit sichtbarer Leitlinie und 'Hide Line'?",
+      "name": "Worin liegt der Unterschied zwischen sichtbarer und ausgeblendeter Leitlinie?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Mit eingeblendeter Leitlinie stützt sich das Gehirn auf statische visuelle Raumkoordinaten. Im Modus 'Hide Line' hingegen muss das Gehirn die Trajektorie rein anhand des anfänglichen Geschwindigkeitsvektors im Arbeitsgedächtnis extrapolieren, was den maximalen Lerneffekt für reale Spiel- und Sportszenarien erzeugt."
+        "text": "Mit eingeblendeter Leitlinie stehen zusätzliche Raumhinweise zur Verfügung. Bei ausgeblendeter Leitlinie wird die Bahn stärker aus Richtung und Geschwindigkeit geschätzt; die Ergebnisse beider Modi lassen sich vergleichen."
       }
     },
     {
@@ -229,8 +231,8 @@ const guideProps = {
     "Dieser Drill (Predictive Pursuit) fordert das Sehsystem durch stetig wechselnde Flugbahnen und die Option zur Ausblendung der Leitlinie ('Hide Line') heraus, die Bahn rein mental zu extrapolieren. Athleten schulen damit die Fähigkeit, das Fadenkreuz oder die Sehachse exakt an die Austrittsstelle zu befördern, noch bevor das Ziel für das Auge physisch wieder sichtbar wird."
   ],
   benchmarks: {
-    title: "Standard-Benchmarks für Bahn-Extrapolation & Okklusions-Präzision (Occlusion Gain)",
-    headers: ["Leistungsstufe", "Extrapolations-Genauigkeit (%)", "Austritts-Landeabweichung", "Blickfolge-Gain (Pursuit Gain)", "Prädiktives Profil"],
+    title: "Richtwerte für Bahnvorhersage und Genauigkeit bei Verdeckung",
+    headers: ["Stufe", "Genauigkeit der Bahnvorhersage (%)", "Abweichung beim Austritt", "Übereinstimmung der Blickfolge", "Merkmal der Vorhersage"],
     rows: [
       ["Elite", "Über 94%", "Unter 15 px (Perfekte Landung)", "0.95 – 1.02", "Vollständiges zerebelläres Vorwärtsmodell & latenzfreies Vorhaltemaß"],
       ["Meister", "86% – 93%", "15 px – 28 px", "0.88 – 0.94", "Exzellente Vektorextrapolation mit minimaler Korrektur"],
@@ -241,25 +243,25 @@ const guideProps = {
     note: "※ Messwerte basieren auf 1080p Auflösung, Geschwindigkeit 1.0x–1.5x im Modus 'Hide Line'. Bewertet wird das Verhältnis von fovealer Zielankunft ohne nachgelagerte Korrektursakkade."
   },
   techniques: {
-    title: "Vier Kerntechniken für fehlerfreie Flugbahnextrapolation und Vorhaltemaß",
+    title: "Vier Kerntechniken für Bahnvorhersage und Vorhaltemaß",
     items: [
       {
-        name: "Initialvektor-Erfassung (Vector Encoding)",
+        name: "Anfangsgeschwindigkeit und Richtung erfassen",
         desc: "Fokussiere das Ziel in den ersten 100 bis 200 Millisekunden nach dem Start mit maximaler Schärfe. Das Kleinhirn benötigt exakte Startparameter (Winkel und Beschleunigung), um die mentale Simulation der Flugbahn präzise aufzubauen.",
         tips: "Achte nicht auf die Zielgrafik, sondern darauf, wie schnell der Punkt relativ zum Raumhintergrund gleitet."
       },
       {
-        name: "Mentale Bahnextrapolation (Mental Vector Extrapolation)",
+        name: "Verdeckte Strecke gedanklich fortführen",
         desc: "Wenn das Ziel verdeckt wird, halte die Augen keinesfalls an. Führe den Blick mit unveränderter, gleichmäßiger Geschwindigkeit auf der gedachten Linie zur erwarteten Austrittszone weiter.",
         tips: "Schau nicht dorthin, wo das Ziel verschwunden ist, sondern gleite mit dem Blick voraus in den leeren Raum."
       },
       {
-        name: "Unterdrückung von Such-Sakkaden (Saccadic Suppression Control)",
+        name: "Blick während der Verdeckung stabil halten",
         desc: "Bei Sichtverlust neigt das Gehirn dazu, unruhige Blicksprünge (Sakkaden) auszuführen, um nach dem Objekt zu fahnden. Jede Sakkade unterbricht jedoch die Reizverarbeitung. Bewahre eine ruhige, gleichmäßige Blickführung.",
         tips: "Stelle dir vor, dein Blick gleite auf einer unsichtbaren Magnetschiene vollkommen ruckelfrei durch die Dunkelzone."
       },
       {
-        name: "Fehlerbasierte Feedforward-Kalibrierung (Error-Driven Feedback Loop)",
+        name: "Abweichung beim Wiederauftauchen prüfen",
         desc: "Sobald das Ziel wieder sichtbar wird, registriere blitzschnell, ob dein Blick dem Ziel voraus war (Überprädiktion) oder hinterherhinkte (Unterprädiktion). Das Kleinhirn nutzt diesen Fehlerwert zur sofortigen Feinjustierung der Synapsen.",
         tips: "Analysiere Fehlschläge nüchtern: 'Zu weit vorne = nächstes Mal etwas langsamer führen; zu weit hinten = mutiger vorausgehen'."
       }
@@ -279,12 +281,12 @@ const guideProps = {
   })),
   sources: pickSources('barnes2008', 'bennett2003', 'kowler1989', 'krauzlis2004', 'robinson1965', 'woods2015'),
   related: [
-    { href: "/de/drills/visual-tracking/constant-slow-pursuit", label: "Konstantes langsames Blickfolgetraining (Constant Slow)" },
-    { href: "/de/drills/visual-tracking/directional-chaos-pursuit", label: "Richtungs-Chaos Blickverfolgung (Directional Chaos)" },
-    { href: "/de/drills/visual-tracking/dynamic-evasion-pursuit", label: "Dynamische Ausweich-Blickverfolgung (Dynamic Evasion)" },
-    { href: "/de/drills/visual-tracking/ghosting-suppress-pursuit", label: "Nachbild-Unterdrückung Blickverfolgung (Ghosting Suppress)" },
-    { href: "/de/drills/visual-tracking/infinity-pursuit", label: "Liegende Acht Augentraining (Infinity)" },
-    { href: "/de/drills/visual-tracking/momentum-teleport-pursuit", label: "Momentum-Teleport Tracking (Momentum Teleport)" }
+    { href: "/de/drills/visual-tracking/constant-slow-pursuit", label: "Konstantes langsames Blickfolgetraining" },
+    { href: "/de/drills/visual-tracking/directional-chaos-pursuit", label: "Blickverfolgung bei Richtungswechseln" },
+    { href: "/de/drills/visual-tracking/dynamic-evasion-pursuit", label: "Blickverfolgung bei Ausweichbewegungen" },
+    { href: "/de/drills/visual-tracking/ghosting-suppress-pursuit", label: "Blickstabilität bei Nachbildern" },
+    { href: "/de/drills/visual-tracking/infinity-pursuit", label: "Augentraining mit einer liegenden Acht" },
+    { href: "/de/drills/visual-tracking/momentum-teleport-pursuit", label: "Blickverfolgung bei plötzlichem Sprung" }
   ]
 };
 
@@ -318,9 +320,9 @@ export default function GermanPredictivePursuitPage() {
 
       <PredictivePursuitClient
         copy={{
-          title: "Prädiktives Tracking Training: Flugbahn-Vorhersage & Antizipative Blickführung",
-          subtitle: "Zerebelläre Vorwärtsmodelle, mentale Vektorextrapolation und Okklusionstracking",
-          description: "Kostenloses Online-Augentraining zur Vorhersage verdeckter Zielbahnen (Okklusion). Trainiere zerebelläre Vorwärtsmodelle, visuelles Arbeitsgedächtnis und antizipative Blickführung ohne Verzögerung. Überwinde die sensomotorische Latenz von 130–150 ms durch präzise Feedforward-Blicksteuerung für Shooter und Ballsport. Sofort im Browser startbar."
+          title: "Prädiktive Blickverfolgung bei Verdeckung",
+          subtitle: "Bewegte Ziele verfolgen und ihre Position nach kurzer Verdeckung einschätzen",
+          description: "Verfolge ein bewegtes Ziel und schätze seine Position während einer kurzen Verdeckung. Prüfe danach Reaktionszeit und Positionsabweichung. Die kostenlose Übung startet direkt im Browser."
         }}
       />
 
@@ -329,6 +331,8 @@ export default function GermanPredictivePursuitPage() {
       <div className="max-w-6xl mx-auto px-4 pb-12">
         <RelatedDrills currentCategory="visual-tracking" currentHref="https://skilldrills.online/de/drills/visual-tracking/predictive-pursuit" />
       </div>
+
+      <DrillFooter />
     </>
   );
 }

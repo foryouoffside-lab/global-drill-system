@@ -37,6 +37,23 @@ export const metadata = {
   },
 };
 
+Object.assign(metadata, {
+  title: 'Test de réflexes & agilité | SkillDrills',
+  description: '11 exercices gratuits dans le navigateur pour temps de réaction, vivacité, équilibre, coordination motrice et esquive.',
+  keywords: ['test de réflexes', 'entraînement agilité', 'temps de réaction test', 'coordination motrice', 'équilibre corporel', 'vivacité sportive', 'coordination œil-main', 'jeu d’esquive', 'entraînement sportif en ligne', 'exercices réflexes gratuits'],
+  openGraph: {
+    ...metadata.openGraph,
+    title: 'Test de réflexes & agilité | SkillDrills',
+    description: '11 exercices gratuits dans le navigateur pour réflexes, temps de réaction, vivacité et coordination motrice.',
+  },
+  twitter: {
+    ...metadata.twitter,
+    title: 'Test de réflexes & agilité | SkillDrills',
+    description: 'Entraînez réflexes, vivacité, équilibre et coordination avec 11 exercices gratuits.',
+  },
+  alternates: { ...metadata.alternates, languages: getAlternateLanguages('/drills/physical') },
+});
+
 const breadcrumbSchema = {
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
@@ -50,6 +67,8 @@ const breadcrumbSchema = {
 const collectionSchema = {
   "@context": "https://schema.org",
   "@type": "CollectionPage",
+  "inLanguage": "fr",
+  "dateModified": "2026-09-20",
   "name": "Entraînement d'Agilité & Réflexes (11 Exercices)",
   "url": "https://skilldrills.online/fr/drills/physical",
   "description": "11 exercices interactifs pour le temps de réaction, l'équilibre, la coordination motrice, l'échelle de rythme et l'esquive d'obstacles.",
@@ -71,6 +90,8 @@ const collectionSchema = {
 const faqSchema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
+  "inLanguage": "fr",
+  "dateModified": "2026-09-20",
   "mainEntity": [
     {
       "@type": "Question",
@@ -138,6 +159,19 @@ const faqSchema = {
     }
   ]
 };
+
+faqSchema.mainEntity.push(
+  {
+    "@type": "Question",
+    "name": "Combien d’exercices contient la catégorie d’entraînement physique ?",
+    "acceptedAnswer": { "@type": "Answer", "text": "La catégorie réunit 11 exercices dans le navigateur autour de quatre axes : réflexes et esquive, vivacité et condition physique, coordination et trajectoires, puis équilibre et stabilité. Chaque carte ouvre l’exercice associé." }
+  },
+  {
+    "@type": "Question",
+    "name": "Les exercices de réflexes dans le navigateur remplacent-ils l’entraînement physique ?",
+    "acceptedAnswer": { "@type": "Answer", "text": "Non. Ils travaillent le timing visuel, la vitesse de décision, la précision du contrôle et l’enchaînement des mouvements. Ils complètent, sans les remplacer, la force, la pliométrie, la mobilité et l’entraînement propre à un sport." }
+  }
+);
 
 export default function PhysicalDrillsPage() {
   return (

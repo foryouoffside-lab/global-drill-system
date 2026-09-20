@@ -5,25 +5,25 @@ import RelatedDrills from '@/components/drill/RelatedDrills';
 import { pickSources } from '@/lib/drillSources';
 
 export const metadata = {
-  title: "Seguimiento de Blancos: Visión Dinámica | SkillDrills",
-  description: "Test de seguimiento de blancos móviles gratis. Intercepta objetivos dinámicos y evalúa persecución ocular suave y cálculo de trayectoria online.",
+  title: "Seguimiento Visual | Objetivo Móvil | SkillDrills",
+  description: "Entrenamiento gratuito de seguimiento visual: sigue objetivos móviles, predice su trayectoria e intercepta en el momento justo. No es diagnóstico.",
   keywords: [
-    "test de seguimiento de blancos móviles",
-    "test de agudeza visual dinámica",
-    "entrenamiento de puntería objetivo en movimiento",
-    "seguimiento ocular suave test",
-    "intercepción de objetivos dinámicos",
-    "coordinación ojo-mano blancos móviles",
-    "test de visión dinámica online",
-    "anticipación de trayectoria visual",
-    "entrenamiento de tracking fps",
-    "movimientos sacádicos y persecución visual",
-    "test de velocidad de rastreo visual",
-    "visión cinética e intercepción motora"
+    "seguimiento visual",
+    "test de seguimiento visual",
+    "seguimiento de objetivos móviles",
+    "objetivo en movimiento",
+    "intercepción de objetivos",
+    "persecución ocular",
+    "coordinación ojo-mano",
+    "visión dinámica",
+    "entrenamiento de puntería objetivo móvil",
+    "trayectoria visual",
+    "rastreo de blancos",
+    "velocidad de seguimiento"
   ],
   openGraph: {
-    title: "Seguimiento de Blancos: Visión Dinámica | SkillDrills",
-    description: "Intercepta blancos móviles y mide la persecución ocular suave y la agudeza visual dinámica online.",
+    title: "Seguimiento Visual | Objetivo Móvil | SkillDrills",
+    description: "Sigue objetivos móviles, predice trayectorias y practica coordinación ojo-mano gratis en el navegador. No sustituye una evaluación clínica.",
     type: 'article',
     url: 'https://skilldrills.online/es/drills/visual/tracking-accuracy/moving-target',
     siteName: 'SkillDrills',
@@ -31,8 +31,8 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: "Seguimiento de Blancos: Visión Dinámica | SkillDrills",
-    description: "Entrenamiento cinético online para mejorar el seguimiento ocular y la intercepción de blancos.",
+    title: "Seguimiento Visual | Objetivo Móvil | SkillDrills",
+    description: "Entrena el seguimiento visual, la predicción de trayectorias y la intercepción de objetivos móviles.",
   },
   robots: { index: true, follow: true },
   alternates: {
@@ -68,7 +68,7 @@ const softwareApplicationSchema = {
     "Aceleración progresiva y reducción del tamaño de los blancos por nivel",
     "Procesamiento local seguro en el navegador sin transmisión de datos"
   ],
-  "dateModified": "2026-09-05"
+  "dateModified": "2026-09-20"
 };
 
 const webAppSchema = {
@@ -77,7 +77,7 @@ const webAppSchema = {
   "name": "Test de Intercepción de Blancos Móviles — Visión Dinámica | SkillDrills",
   "alternateName": "Moving Target Pro",
   "url": "https://skilldrills.online/es/drills/visual/tracking-accuracy/moving-target",
-  "dateModified": "2026-09-05",
+  "dateModified": "2026-09-20",
   "description": "Test online gratis de seguimiento visual cinético. Intercepta esferas en movimiento acelerado dentro del canvas con cálculo predictivo.",
   "applicationCategory": "EducationalApplication",
   "operatingSystem": "All",
@@ -105,7 +105,7 @@ const howToSchema = {
   "@context": "https://schema.org",
   "@type": "HowTo",
   "name": "Cómo Entrenar con el Test de Blancos Móviles",
-  "dateModified": "2026-09-05",
+  "dateModified": "2026-09-20",
   "description": "Protocolo de 4 fases para desarrollar la persecución ocular suave, el cálculo de trayectorias y la precisión motora.",
   "step": [
     {
@@ -142,7 +142,7 @@ const howToSchema = {
 const faqSchema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
-  "dateModified": "2026-09-05",
+  "dateModified": "2026-09-20",
   "mainEntity": [
     {
       "@type": "Question",
@@ -228,7 +228,7 @@ const faqSchema = {
 };
 
 const movingTargetGuide = {
-  heading: "Ciencia del Rastreo Cinético y la Intercepción de Trayectorias",
+  heading: "Seguimiento visual e intercepción de objetivos móviles",
   intro: [
     "La intercepción dinámica de objetivos constituye una destreza sensoriomotora básica en deportes de alto rendimiento, aviación, artes marciales y esports tácticos. Acertar sobre un blanco en aceleración y trayectoria variable exige sincronizar movimientos oculares de persecución suave, extrapolación espacial y correcciones motoras en bucle cerrado.",
     "El procesamiento neuronal del movimiento se origina en neuronas selectivas a la dirección del área visual temporal media (MT/V5) y temporal superior medial (MST). Estas áreas calculan los vectores de velocidad y proyectan señales hacia los campos oculares frontales (FEF) y el cerebelo para mantener la ganancia de seguimiento (Krauzlis, 2004).",
@@ -236,7 +236,7 @@ const movingTargetGuide = {
     "Asimismo, las investigaciones de Land & McLeod (2000) en deportistas de raqueta revelan que los jugadores expertos no persiguen la pelota en todo momento, sino que efectúan sacadas anticipatorias hacia los puntos de rebote calculados. Este ejercicio entrena con exactitud esa competencia predictiva bajo presión temporal."
   ],
   benchmarks: {
-    title: "Baremos de Intercepción de Blancos Móviles (Referencia Científica)",
+    title: "Referencia de seguimiento y precisión de intercepción",
     headers: ["Banda de Rendimiento", "Ventana de Pacing", "Puntuación y Umbral Combo", "Perfil de Seguimiento e Intercepción"],
     rows: [
       ["Tier 1: Interceptor Cinético Apex", "< 0.25s Ventana", "16.000+ PTS | Combo 25x+", "Persecución suave de élite; extrapolación perfecta sin retraso de sacada correctora. Nivel de pilotos y profesionales."],
@@ -248,7 +248,7 @@ const movingTargetGuide = {
     note: "Estos baremos se fundamentan en la psicofísica del seguimiento ocular y la cronometría de intercepción (Rashbass, 1961; Krauzlis, 2004; Land & McLeod, 2000; Bahill et al., 1980; Woods et al., 2015). Las marcas varían según la tasa de refresco de la pantalla y el ratón."
   },
   techniques: {
-    title: "Técnicas Clave para Perfeccionar la Intercepción de Blancos",
+    title: "Cómo seguir objetivos móviles y predecir su trayectoria",
     items: [
       {
         name: "Anticipación Vectorial de la Trayectoria (Regla de Rashbass)",
@@ -301,7 +301,7 @@ export default function KineticInterceptPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(howToSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(videoGameSchema) }} />
-      <KineticInterceptClient copy={{ title: "Seguimiento de Blancos: Visión Dinámica" }} />
+      <KineticInterceptClient copy={{ title: "Seguimiento Visual" }} />
       <DrillGuide guide={movingTargetGuide} />
       <div className="max-w-6xl mx-auto px-4 pb-12">
         <RelatedDrills currentCategory="visual" currentHref="https://skilldrills.online/es/drills/visual/tracking-accuracy/moving-target" />

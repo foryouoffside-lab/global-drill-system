@@ -1,25 +1,26 @@
 import StaircaseStepClient from '@/app/drills/visual-tracking/staircase-step/StaircaseStepClientLoader';
 import DrillGuide from '@/components/drill/DrillGuide';
 import RelatedDrills from '@/components/drill/RelatedDrills';
+import DrillFooter from '@/components/drill/DrillFooter';
 import { getAlternateLanguages } from '@/lib/i18n/locales';
 import { pickSources } from '@/lib/drillSources';
 
 export const metadata = {
-  title: "Rastreamento Ocular Vertical – SkillDrills",
-  description: "Condicione o seguimento ocular vertical e sacadas de elevacao ao longo de degraus angulares. Treino oculomotor no mesencefalo gratuito online.",
+  title: "Rastreamento ocular vertical | SkillDrills",
+  description: "Acompanhe um alvo que sobe e desce em degraus. Treino gratuito no navegador com atraso do olhar, perdas e precisão vertical.",
   keywords: [
-    "treino de rastreamento ocular vertical",
-    "exercicio ocular em degraus escada",
-    "movimento ocular vertical sacadico",
-    "controle de mira vertical reflexos",
-    "ganho de velocidade ocular vertical",
-    "estimulacao do mesencefalo rimlf",
-    "estabilidade visual de elevacao",
-    "treino de mira vertical fps",
-    "exercicio de seguimento em ziguezague",
-    "foco ocular em trajetorias angulares",
-    "agilidade ocular para esportes aereos",
-    "treino visual para controle de recuo"
+    "rastreamento ocular vertical treino",
+    "visão dinâmica vertical treino",
+    "seguimento ocular para cima e para baixo",
+    "treino de mira vertical",
+    "rastreamento visual em degraus",
+    "movimento ocular vertical",
+    "acompanhar alvo subindo descendo",
+    "treino de atenção visual vertical",
+    "atraso do olhar medir",
+    "perda de alvo visual",
+    "exercício de perseguição ocular",
+    "treino de visão dinâmica"
   ],
   alternates: {
     canonical: "https://skilldrills.online/pt/drills/visual-tracking/staircase-step",
@@ -27,8 +28,8 @@ export const metadata = {
   },
   robots: { index: true, follow: true },
   openGraph: {
-    title: "Rastreamento Ocular Vertical – SkillDrills",
-    description: "Condicione o seguimento ocular vertical e sacadas de elevacao ao longo de degraus angulares. Treino oculomotor no mesencefalo gratuito online.",
+    title: "Rastreamento ocular vertical | SkillDrills",
+    description: "Acompanhe um alvo que sobe e desce em degraus. Treino gratuito no navegador com atraso do olhar, perdas e precisão vertical.",
     url: "https://skilldrills.online/pt/drills/visual-tracking/staircase-step",
     siteName: 'SkillDrills',
     locale: 'pt_PT',
@@ -36,8 +37,8 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: "Rastreamento Ocular Vertical – SkillDrills",
-    description: "Condicione o seguimento ocular vertical e sacadas de elevacao ao longo de degraus angulares. Treino oculomotor no mesencefalo gratuito online.",
+    title: "Rastreamento ocular vertical | SkillDrills",
+    description: "Acompanhe um alvo que sobe e desce em degraus. Treino gratuito no navegador com atraso do olhar, perdas e precisão vertical.",
   },
 };
 
@@ -83,7 +84,8 @@ const softwareApplicationSchema = {
     "price": "0.00",
     "priceCurrency": "USD"
   },
-  "description": "Treino oculomotor vertical que estimula as vias do mesencefalo (riMLF) para otimizar o ganho de seguimento vertical e a precisao de sacadas angulares."
+  "description": "Treino oculomotor vertical que estimula as vias do mesencefalo (riMLF) para otimizar o ganho de seguimento vertical e a precisao de sacadas angulares.",
+  "dateModified": "2026-09-20"
 };
 
 const webAppSchema = {
@@ -93,17 +95,19 @@ const webAppSchema = {
   "url": "https://skilldrills.online/pt/drills/visual-tracking/staircase-step",
   "applicationCategory": "SportsApplication",
   "operatingSystem": "Todos os navegadores modernos",
-  "browserRequirements": "Requer suporte a JavaScript e HTML5 Canvas"
+  "browserRequirements": "Requer suporte a JavaScript e HTML5 Canvas",
+  "dateModified": "2026-09-20"
 };
 
 const videoGameSchema = {
   "@context": "https://schema.org",
   "@type": "VideoGame",
-  "name": "Staircase Step",
+  "name": "Rastreamento ocular em degraus",
   "description": "Exercicio de agilidade ocular vertical onde o praticante foveia alvos que percorrem rampas e degraus ortogonais.",
   "genre": ["Treino Visual", "Seguimento Ocular Vertical", "Treino de Reflexos"],
   "playMode": "SinglePlayer",
-  "gamePlatform": "Navegador Web"
+  "gamePlatform": "Navegador Web",
+  "dateModified": "2026-09-20"
 };
 
 const howToSchema = {
@@ -111,6 +115,7 @@ const howToSchema = {
   "@type": "HowTo",
   "name": "Como Treinar o Rastreamento Vertical em Degraus",
   "description": "Guia metódico para aprimorar o seguimento ocular vertical e as sacadas de elevação sem desvios cervicais.",
+  "dateModified": "2026-09-20",
   "step": [
     {
       "@type": "HowToStep",
@@ -142,13 +147,14 @@ const howToSchema = {
 const faqSchema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
+  "dateModified": "2026-09-20",
   "mainEntity": [
     {
       "@type": "Question",
-      "name": "O que e o exercicio Staircase Step?",
+      "name": "O que é o exercício de rastreamento em degraus?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "O Staircase Step exercita o seguimento ocular vertical e sacadas de elevacao conduzindo o olhar ao longo de trajetorias em degraus ortogonais, fortalecendo circuitos do mesencefalo (Büttner-Ennever & Horn, 1997)."
+        "text": "Este exercício trabalha o seguimento ocular vertical e as sacadas de elevação, conduzindo o olhar por trajetórias em degraus e treinando circuitos do mesencéfalo (Büttner-Ennever & Horn, 1997)."
       }
     },
     {
@@ -231,7 +237,7 @@ const guideProps = {
   intro: [
     "O aparelho oculomotor humano apoia-se em circuitos neuroanatomicos estritamente diferenciados para movimentos horizontais e verticais. Enquanto os deslocamentos laterais sao mediados pela formacao reticular pontina paramediana (PPRF), a motricidade vertical encontra-se sob tutela exclusiva de nucleos especializados do mesencefalo – destacando-se o nucleo intersticial rostral do fasciculo longitudinal medial (riMLF) e o nucleo de Cajal (Büttner-Ennever & Horn, 1997).",
     "Ensaios psicofisicos (Rottach et al., 1996; Ke et al., 2013) demonstram que o seguimento ocular vertical exibe intrinsecamente um ganho de velocidade menor, latencias de resposta mais longas e atrasos de fase mais acentuados do que o seguimento horizontal. Adicionalmente, verifica-se uma assimetria funcional marcante: o movimento de elevacao ocular degrada-se com maior rapidez a velocidades elevadas, desencadeando sacadas de compensacao prematuras.",
-    "Os habitos digitais cotidianos estimulam predominantemente o eixo visual horizontal, deixando as conexoes neurais verticais em relativo subtreino. O exercicio Staircase Step desafia essa assimetria guiando o olhar ao longo de percursos em degraus ziguezagueantes, combinando seguimento continuo em planos inclinados com sacadas de correcao imediata nas quinas de transicao (Collewijn & Tamminga, 1984; Lisberger, 2010)."
+    "Os hábitos digitais cotidianos estimulam predominantemente o eixo visual horizontal, deixando as conexões neurais verticais em relativo subtreino. Este exercício desafia essa assimetria guiando o olhar ao longo de percursos em degraus ziguezagueantes, combinando seguimento contínuo em planos inclinados com sacadas de correção imediata nas quinas de transição (Collewijn & Tamminga, 1984; Lisberger, 2010)."
   ],
   benchmarks: {
     title: "Tabela de Classificação em Seguimento Vertical e Sacadas em Degraus",
@@ -270,18 +276,24 @@ const guideProps = {
       }
     ]
   },
+  steps: [
+    { title: "Comece no centro da tela", text: "Sente-se a 50–70 cm da tela, mantenha a cabeça imóvel e espere o alvo iniciar o primeiro trecho." },
+    { title: "Acompanhe as subidas e descidas", text: "Priorize a altura do alvo e siga as partes diagonais e as mudanças verticais sem compensar com o pescoço." },
+    { title: "Recupere o olhar nas quinas", text: "Diminua um pouco antes da quina do degrau e faça uma pequena correção quando o alvo sair do foco." },
+    { title: "Aumente o ritmo com estabilidade", text: "Só suba uma etapa de velocidade depois que as perdas e o atraso do olhar diminuírem; compare os registros." }
+  ],
   faqs: faqSchema.mainEntity.map(item => ({
     q: item.name,
     a: item.acceptedAnswer.text
   })),
   sources: pickSources('buttner1997', 'rottach1996', 'ke2013', 'collewijn1984', 'lisberger2010', 'woods2015'),
   related: [
-    { href: "/pt/drills/visual-tracking/constant-slow-pursuit", label: "Exercício de Seguimento Ocular Lento (Constant Slow)" },
-    { href: "/pt/drills/visual-tracking/directional-chaos-pursuit", label: "Rastreamento em Caos Direcional (Directional Chaos)" },
-    { href: "/pt/drills/visual-tracking/dynamic-evasion-pursuit", label: "Seguimento com Evasão Dinâmica (Dynamic Evasion)" },
-    { href: "/pt/drills/visual-tracking/ghosting-suppress-pursuit", label: "Supressão de Imagem Fantasma (Ghosting Suppress)" },
-    { href: "/pt/drills/visual-tracking/infinity-pursuit", label: "Exercício Ocular em Oito (Infinity Pursuit)" },
-    { href: "/pt/drills/visual-tracking/sine-wave-pursuit", label: "Rastreamento em Onda Senoidal (Sine Wave)" }
+    { href: "/pt/drills/visual-tracking/constant-slow-pursuit", label: "Exercício de seguimento ocular lento" },
+    { href: "/pt/drills/visual-tracking/directional-chaos-pursuit", label: "Rastreamento com mudanças de direção" },
+    { href: "/pt/drills/visual-tracking/dynamic-evasion-pursuit", label: "Seguimento de alvo com evasão" },
+    { href: "/pt/drills/visual-tracking/ghosting-suppress-pursuit", label: "Supressão de imagem fantasma" },
+    { href: "/pt/drills/visual-tracking/infinity-pursuit", label: "Exercício ocular em oito" },
+    { href: "/pt/drills/visual-tracking/sine-wave-pursuit", label: "Rastreamento em onda senoidal" }
   ]
 };
 
@@ -295,11 +307,12 @@ export default function StaircaseStepPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(howToSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
 
-      <StaircaseStepClient copy={{ title: "Trajetória em Degraus", subtitle: "Exercício Ocular Vertical e Sacádico" }} />
+      <StaircaseStepClient copy={{ title: "Rastreamento ocular vertical", subtitle: "Exercício para subidas, descidas e retomada do alvo" }} />
       <DrillGuide guide={guideProps} />
       <div className="max-w-6xl mx-auto px-4 pb-12">
         <RelatedDrills currentCategory="visual-tracking" currentHref="https://skilldrills.online/pt/drills/visual-tracking/staircase-step" />
       </div>
+      <DrillFooter />
     </>
   );
 }

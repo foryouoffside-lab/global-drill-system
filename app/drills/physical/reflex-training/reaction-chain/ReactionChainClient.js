@@ -22,6 +22,7 @@ import useUnexpectedExitGuard from '../../../../../lib/useUnexpectedExitGuard';
 import DrillFooter from '../../../../../components/drill/DrillFooter';
 import DrillCountdown from '../../../../../components/drill/DrillCountdown';
 import DrillAccordion from '../../../../../components/drill/DrillAccordion';
+import DrillRuleItem from '../../../../../components/drill/DrillRuleItem';
 import FpsStartCard from '../../../../../components/drill/FpsStartCard';
 import useImmersiveMode from '@/lib/useImmersiveMode';
 
@@ -52,16 +53,16 @@ const saveData = (data) => {
 // ACCORDION DATA
 // ============================================================
 const RULES_ITEMS = [
-  { title: "Kinetic Arrest (+50 PTS)", text: "Intercept incoming nodes and stop your cursor completely (ARREST READY) to score 50 points per hit." },
-  { title: "Combo Multiplier (up to 3.0x)", text: "Chain arrests without errors to multiply score gains up to 3.0x max." },
-  { title: "Slice-Through & Miss Errors", text: "Moving while over a node or missing it resets your combo streak without score deduction." },
-  { title: "Brutal Speed Scaling", text: "As your score increases, node speeds accelerate up to 1800 px/s with smaller radiuses." }
+  { num: "1", text: "Kinetic Arrest", highlight: "+50 PTS", result: "Stop cursor completely inside a node (ARREST READY)" },
+  { num: "2", text: "Combo Multiplier", highlight: "Up to 3.0x", result: "Chain arrests without errors" },
+  { num: "3", text: "Slice-Through / Miss", highlight: "Resets Combo", result: "No score deduction" },
+  { num: "4", text: "Speed Scaling", highlight: "Up to 1800 px/s", result: "Nodes shrink and accelerate with score" }
 ];
 
 // ============================================================
 // MAIN COMPONENT
 // ============================================================
-export default function ReactionChainClient({ copy = {} } = {}) {
+export default function ReactionChainClient({ copy = {}, children } = {}) {
   const [gameState, setGameState] = useState('start'); // 'start' | 'countdown' | 'playing' | 'gameOver'
   const [isFullscreen, setIsFullscreen] = useState(false);
   useImmersiveMode(isFullscreen); // locks the page behind while the drill fills the screen
@@ -119,6 +120,7 @@ export default function ReactionChainClient({ copy = {} } = {}) {
     totalAttempts: 0,
     totalFrames: 0,
     hitRings: [],
+    particles: [],
     screenShake: 0,
     logicalWidth: 800,
     logicalHeight: 450
@@ -252,6 +254,16 @@ export default function ReactionChainClient({ copy = {} } = {}) {
         nodeColor = '#38bdf8';
       }
       e.hitRings.push(createHitRing(arrestedNode.x, arrestedNode.y, arrestedNode.r, nodeColor));
+
+      for (let i = 0; i < 8; i++) {
+        const angle = Math.random() * Math.PI * 2;
+        const speed = 2 + Math.random() * 3;
+        e.particles.push({
+          x: arrestedNode.x, y: arrestedNode.y,
+          vx: Math.cos(angle) * speed, vy: Math.sin(angle) * speed,
+          life: 1.0, color: nodeColor,
+        });
+      }
     }
 
     e.nodes.splice(nodeIndex, 1);
@@ -372,6 +384,7 @@ export default function ReactionChainClient({ copy = {} } = {}) {
       totalAttempts: 0,
       totalFrames: 0,
       hitRings: [],
+      particles: [],
       screenShake: 0,
       logicalWidth: w,
       logicalHeight: h
@@ -609,6 +622,18 @@ export default function ReactionChainClient({ copy = {} } = {}) {
 
       drawHitRings(ctx, e.hitRings, dt);
 
+      for (let i = e.particles.length - 1; i >= 0; i--) {
+        const p = e.particles[i];
+        p.x += p.vx; p.y += p.vy; p.life -= dt * 2.5;
+        if (p.life <= 0) { e.particles.splice(i, 1); continue; }
+        ctx.globalAlpha = p.life;
+        ctx.fillStyle = p.color;
+        ctx.beginPath();
+        ctx.arc(p.x, p.y, 2.5, 0, Math.PI * 2);
+        ctx.fill();
+      }
+      ctx.globalAlpha = 1.0;
+
       // CROSSHAIR DRAWING (WITHOUT GLOW)
       const ch = e.crosshair;
       if (ch.initialized && (gameState === 'playing' || gameState === 'start')) {
@@ -701,22 +726,12 @@ export default function ReactionChainClient({ copy = {} } = {}) {
       <main className="flex-1 max-w-6xl w-full mx-auto px-4 py-6 flex flex-col gap-6">
         {/* Title */}
         {!isFullscreen && (
-          <div className="flex flex-col gap-2">
-            <div className="flex items-center gap-2">
-              <h1 className="text-2xl sm:text-3xl font-black tracking-tight text-white">
+          <div className="flex flex-col gap-1">
+            <h1 className="text-2xl sm:text-3xl font-black tracking-tight text-white">
               <span data-seo-kw="1">{copy?.title || "Reaction Chain Trainer"}</span>
-              {copy?.subtitle && (
-                <span className="block text-sm font-semibold text-slate-400 mt-1">
-                  {copy.subtitle}
-                </span>
-              )}
             </h1>
-              <span className="text-[11px] font-semibold text-emerald-400/90 bg-emerald-500/10 border border-emerald-500/20 px-2 py-0.5 rounded-full" data-seo-kw="1">
-                {copy?.badge || "Impulse Control Reflex Game"}
-              </span>
-            </div>
-            <p className="text-xs sm:text-sm text-slate-400 leading-relaxed">
-              {copy?.description || "Stopping a fast movement exactly on a target is harder than starting one. Going and stopping behave like a race between two independent processes, and whichever finishes first determines whether the action is completed or cancelled (Logan & Cowan, 1984). A rapid aimed movement also arrives in two parts — a ballistic impulse covering most of the distance, then a slower visually guided correction (Woodworth, 1899) — so overshooting costs far more time than setting off slightly slower."}
+            <p className="text-xs sm:text-sm text-slate-400 font-medium">
+              {copy?.subtitle || "Impulse Arrest & Motor Inhibition • 15 Levels"}
             </p>
           </div>
         )}
@@ -747,7 +762,7 @@ export default function ReactionChainClient({ copy = {} } = {}) {
         <div
           ref={containerRef}
           onContextMenu={(e) => { if (gameActiveRef.current) e.preventDefault(); }}
-          className={`overflow-hidden flex flex-col transition-all duration-150 select-none bg-[#080811] text-white ${
+          className={`overflow-hidden flex flex-col select-none bg-[#080811] text-white ${
             isFullscreen
               ? 'fixed inset-0 z-[100] w-screen h-[100dvh] bg-[#080811] rounded-none border-none flex flex-col items-center justify-center'
               : 'w-full rounded-2xl bg-[#080811] aspect-video min-h-[460px] sm:min-h-[500px] max-h-[88vh] relative overflow-hidden flex flex-col'
@@ -914,15 +929,17 @@ export default function ReactionChainClient({ copy = {} } = {}) {
               isOpen={openAccordion === 'rules'}
               onToggle={() => setOpenAccordion(openAccordion === 'rules' ? null : 'rules')}
             >
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-2.5 sm:gap-3 font-sans">
                 {(copy?.rulesItems || RULES_ITEMS).map((item, i) => (
-                  <div key={i} className="bg-black p-4 rounded-xl border border-white/10">
-                    <h3 className="text-sm font-bold text-white mb-1 flex items-center gap-2">
-                      <Target className="w-4 h-4 text-emerald-400" />
-                      {item.title}
-                    </h3>
-                    <p className="text-xs text-gray-300 leading-relaxed">{item.text}</p>
-                  </div>
+                  <DrillRuleItem
+                    key={i}
+                    num={item.num || String(i + 1)}
+                    text={item.text}
+                    highlight={item.highlight}
+                    result={item.result}
+                    title={item.title}
+                    detail={item.title ? item.text : undefined}
+                  />
                 ))}
               </div>
             </DrillAccordion>
@@ -934,6 +951,9 @@ export default function ReactionChainClient({ copy = {} } = {}) {
               onToggle={() => setOpenAccordion(openAccordion === 'about' ? null : 'about')}
             >
               <div className="space-y-6">
+                <p className="text-xs sm:text-sm leading-relaxed text-gray-300">
+                  {copy?.description || "Stopping a fast movement exactly on a target is harder than starting one. Going and stopping behave like a race between two independent processes, and whichever finishes first determines whether the action is completed or cancelled (Logan & Cowan, 1984). A rapid aimed movement also arrives in two parts — a ballistic impulse covering most of the distance, then a slower visually guided correction (Woodworth, 1899) — so overshooting costs far more time than setting off slightly slower."}
+                </p>
                 <section>
                   <h3 className="text-sm font-bold text-white mb-2 flex items-center gap-2">
                     <Brain className="w-4 h-4 text-emerald-400" />
@@ -991,7 +1011,10 @@ export default function ReactionChainClient({ copy = {} } = {}) {
           </div>
         )}
 
-        {/* ── FOOTER ── */}
+        {/* ── SERVER-RENDERED CONTENT (DrillGuide, RelatedDrills, etc.) — passed as children so it lands above the footer, not after it ── */}
+        {!isFullscreen && children}
+
+        {/* ── FOOTER (true bottom — nothing renders after this) ── */}
         {!isFullscreen && <DrillFooter />}
 
       </main>

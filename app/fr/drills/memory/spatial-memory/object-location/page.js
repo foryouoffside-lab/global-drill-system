@@ -5,21 +5,19 @@ import { getAlternateLanguages } from '@/lib/i18n/locales';
 import { pickSources } from '@/lib/drillSources';
 
 export const metadata = {
-  title: "Test de Mémoire Spatiale – Localisation | SkillDrills",
-  description: "Test de memoire spatiale en ligne gratuit: Memorisez la position des objets sur grille en 1,5s et retrouvez les coordonnees cibles sans inscription.",
+  title: "Test de mémoire spatiale en ligne | SkillDrills",
+  description: "Teste ta mémoire spatiale en ligne : mémorise la position des objets dans une grille et retrouve chaque emplacement après un bref affichage.",
   keywords: [
-    "test de memoire spatiale",
-    "memoire de localisation des objets",
-    "test empan spatial en ligne",
-    "exercice memoire viso-spatiale",
-    "test silverman et eals",
-    "memoire topographique exercice",
-    "memoire de travail spatiale test",
+    "test de mémoire spatiale",
+    "mémoire de localisation des objets",
+    "mémoire visuo-spatiale",
+    "test de mémoire des positions",
+    "test de mémoire en ligne",
+    "mémoire de travail spatiale",
     "test de positionnement visuel",
-    "evaluation memoire spatiale gratuite",
-    "jeu de memoire spatiale en ligne",
-    "test d orientation spatiale",
-    "retention de coordonnees spatiales"
+    "jeu de mémoire spatiale",
+    "entraînement mémoire spatiale",
+    "rappel de coordonnées"
   ],
   alternates: {
     canonical: "https://skilldrills.online/fr/drills/memory/spatial-memory/object-location",
@@ -30,8 +28,8 @@ export const metadata = {
     follow: true,
   },
   openGraph: {
-    title: "Test de Mémoire Spatiale – Localisation | SkillDrills",
-    description: "Test de memoire spatiale en ligne gratuit: Memorisez la position des objets sur grille en 1,5s et retrouvez les coordonnees cibles sans inscription.",
+    title: "Test de mémoire spatiale en ligne | SkillDrills",
+    description: "Mémorise la position des objets dans la grille et retrouve l’emplacement cible après une brève exposition.",
     url: "https://skilldrills.online/fr/drills/memory/spatial-memory/object-location",
     siteName: 'SkillDrills',
     locale: 'fr_FR',
@@ -39,8 +37,8 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: "Test de Mémoire Spatiale – Localisation | SkillDrills",
-    description: "Test de memoire spatiale en ligne gratuit: Memorisez la position des objets sur grille en 1,5s et retrouvez les coordonnees cibles sans inscription.",
+    title: "Test de mémoire spatiale en ligne | SkillDrills",
+    description: "Mémorise la position des objets dans la grille et retrouve l’emplacement cible après une brève exposition.",
   },
 };
 
@@ -91,7 +89,8 @@ const softwareSchema = {
   "author": {
     "@type": "Organization",
     "name": "SkillDrills"
-  }
+  },
+  "sameAs": "https://fr.wikipedia.org/wiki/M%C3%A9moire_spatiale"
 };
 
 const webAppSchema = {
@@ -319,11 +318,11 @@ const objectLocationGuide = {
   faqs: faqSchema.mainEntity.map(e => ({ q: e.name, a: e.acceptedAnswer.text })),
   sources: pickSources('cowan2001', 'baddeley2000', 'logie1995', 'luck1997', 'tolman1948', 'eals1994', 'woods2015'),
   related: [
-    { href: "/drills/memory/spatial-memory/grid-memorization", label: "Test de Mémoire Visuelle" },
-    { href: "/drills/memory/spatial-memory/path-tracing", label: "Test de Mémorisation de Trajet" },
-    { href: "/drills/memory/short-term-memory/digit-span", label: "Test d'Empan Numérique" },
-    { href: "/drills/memory/short-term-memory/word-recall", label: "Test de Mémoire Verbale" },
-    { href: "/drills/memory/working-memory/n-back", label: "Test de Mémoire de Travail N-Back" }
+    { href: "/fr/drills/memory/spatial-memory/grid-memorization", label: "Test de Mémoire Visuelle" },
+    { href: "/fr/drills/memory/spatial-memory/path-tracing", label: "Test de Mémorisation de Trajet" },
+    { href: "/fr/drills/memory/short-term-memory/digit-span", label: "Test d'Empan Numérique" },
+    { href: "/fr/drills/memory/short-term-memory/word-recall", label: "Test de Mémoire Verbale" },
+    { href: "/fr/drills/memory/working-memory/n-back", label: "Test de Mémoire de Travail N-Back" }
   ]
 };
 
@@ -356,9 +355,9 @@ export default function ObjectLocationFrenchPage() {
       />
       <ObjectLocationClient
         copy={{
-          "h1Keyword": "Test de Mémoire Spatiale",
-          "h1Suffix": " (Localisation d'Objets)",
-          "subtitle": "La mémoire de localisation d'objets retient ce qui se trouvait à quel endroit. Eals et Silverman (1994) ont mesuré cette compétence via des agencements d'objets, dont la capacité se heurte à une limite de quatre unités intégrées (Luck & Vogel, 1997).",
+          "h1Keyword": "Test de mémoire spatiale en ligne",
+          "h1Suffix": " – Position des objets",
+          "subtitle": "Mémorise où se trouve chaque objet dans la grille",
           "statScore": "Score",
           "statTime": "Temps",
           "statLevel": "Niveau",
@@ -367,7 +366,7 @@ export default function ObjectLocationFrenchPage() {
           "memorizePrompt": "MÉMORISEZ LES EMPLACEMENTS DES OBJETS",
           "targetPrompt": "CIBLE :",
           "startTitle": "Localisation d'Objets Pro",
-          "startSubtitle": "Mémoire spatiale • Reconnaissance de coordonnées",
+          "startSubtitle": "Mémoire spatiale • Positions",
           "countdownSubtitle": "PRÉPAREZ-VOUS",
           "newBest": "NOUVEAU RECORD",
           "pointsLabel": "Points",

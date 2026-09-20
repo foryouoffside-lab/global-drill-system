@@ -6,21 +6,19 @@ import RelatedDrills from '@/components/drill/RelatedDrills';
 import DrillFooter from '@/components/drill/DrillFooter';
 
 export const metadata = {
-  title: "FPS 反応速度 テスト – クリック反射神経測定 | SkillDrills",
-  description: "ブラウザで無料測定できるFPS反応速度テスト。視覚刺激検知からクリックまでの反射神経潜時（ms）をミリ秒単位で精密測定し、フェイントを見極める射撃自制心と置きエイム反応を科学的に強化します。",
+  title: "反応速度テスト | FPSクリック反応測定 | SkillDrills",
+  description: "無料ブラウザの反応速度テストで、視覚刺激からクリックまでの時間を測り、FPSの撃ち合いに必要な反応を確認します。",
   keywords: [
-    "FPS 反応速度 テスト",
-    "反応速度 テスト FPS",
-    "エイム 反応速度 測定",
-    "反射神経 テスト ゲーム",
-    "VALORANT 反応速度 テスト",
-    "CS2 反応速度",
-    "クリック 反応速度",
-    "エイムトレーナー 無料",
-    "トリガー 反応速度",
-    "FPS 反射速度 測定",
-    "インスタント エイム",
-    "置きエイム 反応速度"
+    "反応速度テスト",
+    "反応速度 テスト",
+    "反応速度 テスト 無料",
+    "反応速度 テスト fps",
+    "クリック 反応速度 テスト",
+    "マウス 反応速度 テスト",
+    "反射神経テスト",
+    "FPS 反応速度",
+    "プロゲーマー 反応速度",
+    "反応速度 テスト ブラウザ"
   ],
   alternates: {
     canonical: "https://skilldrills.online/ja/drills/fps/instant-response",
@@ -31,8 +29,8 @@ export const metadata = {
     follow: true,
   },
   openGraph: {
-    title: "FPS 反応速度 テスト – クリック反射神経測定 | SkillDrills",
-    description: "視覚刺激に対する反射神経とクリック反応速度をミリ秒単位で測定。置きエイムと飛び出し反応を高める無料ブラウザFPS反射神経トレーナー。",
+    title: "反応速度テスト | FPSクリック反応測定 | SkillDrills",
+    description: "視覚刺激からクリックまでの反応時間をミリ秒で測定。置きエイムと飛び出し反応を確認できる無料ブラウザドリル。",
     url: "https://skilldrills.online/ja/drills/fps/instant-response",
     siteName: 'SkillDrills',
     locale: 'ja_JP',
@@ -40,8 +38,8 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: "FPS 反応速度 テスト – クリック反射神経測定 | SkillDrills",
-    description: "視覚刺激に対する反射神経とクリック反応速度をミリ秒単位で測定。置きエイムと飛び出し反応を高める無料ブラウザFPS反射神経トレーナー。",
+    title: "反応速度テスト | FPSクリック反応測定 | SkillDrills",
+    description: "視覚刺激からクリックまでの反応時間をミリ秒で測定。置きエイムと飛び出し反応を確認できる無料ブラウザドリル。",
   },
 };
 
@@ -52,17 +50,17 @@ export default function InstantResponseJaPage() {
     "itemListElement": [
       { "@type": "ListItem", "position": 1, "name": "SkillDrills", "item": "https://skilldrills.online/ja" },
       { "@type": "ListItem", "position": 2, "name": "FPSエイム練習", "item": "https://skilldrills.online/ja/drills/fps" },
-      { "@type": "ListItem", "position": 3, "name": "FPS 反応速度 テスト", "item": "https://skilldrills.online/ja/drills/fps/instant-response" }
+      { "@type": "ListItem", "position": 3, "name": "反応速度テスト - FPSクリック反応", "item": "https://skilldrills.online/ja/drills/fps/instant-response" }
     ]
   };
 
   const softwareSchema = {
     "@context": "https://schema.org",
     "@type": "SoftwareApplication",
-    "name": "FPS 反応速度 テスト",
+    "name": "反応速度テスト - FPSクリック反応",
     "applicationCategory": "GameApplication",
     "operatingSystem": "Web Browser",
-    "dateModified": "2026-09-05",
+    "dateModified": "2026-09-20",
     "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
     "description": "視覚刺激認知、神経伝達潜時、クリック反射速度をミリ秒単位で高精度測定・訓練する無料ブラウザFPS反射神経ドリル。",
     "genre": "FPS Training / Reaction Speed",
@@ -77,7 +75,7 @@ export default function InstantResponseJaPage() {
   const webAppSchema = {
     "@context": "https://schema.org",
     "@type": "WebApplication",
-    "name": "FPS 反応速度 テスト",
+    "name": "反応速度テスト - FPSクリック反応",
     "url": "https://skilldrills.online/ja/drills/fps/instant-response",
     "applicationCategory": "GameApplication",
     "operatingSystem": "All",
@@ -93,10 +91,10 @@ export default function InstantResponseJaPage() {
   const videoGameSchema = {
     "@context": "https://schema.org",
     "@type": "VideoGame",
-    "name": "FPS 反応速度 テスト",
+    "name": "反応速度テスト - FPSクリック反応",
     "url": "https://skilldrills.online/ja/drills/fps/instant-response",
     "description": "視覚刺激認知、神経伝達潜時、クリック反射速度をミリ秒単位で高精度測定・訓練する無料ブラウザFPS反射神経ドリル。",
-    "dateModified": "2026-09-05",
+    "dateModified": "2026-09-20",
     "gamePlatform": "Web Browser",
     "genre": ["FPS Training", "Reaction Trainer", "Aim Trainer"],
     "playMode": "SinglePlayer",
@@ -108,7 +106,7 @@ export default function InstantResponseJaPage() {
   const faqSchema = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
-    "dateModified": "2026-09-05",
+    "dateModified": "2026-09-20",
     "mainEntity": [
       {
         "@type": "Question",
@@ -227,9 +225,9 @@ export default function InstantResponseJaPage() {
   };
 
   const instantResponseGuide = {
-    heading: "FPS 反応速度 テスト ガイド & 精神時間測定指標",
+    heading: "反応速度テストとFPSクリック反応ガイド",
     intro: [
-      "FPS 反応速度 テストは、FPSにおける純粋な感覚運動反射潜時（Mental Chronometry）を客観測定・研ぎ澄ますための科学的トレーニングドリルです。VALORANTやCS2などのタクティカルシューターにおいて、置きエイムの勝敗はコンマ数秒の反応速度で決します。",
+      "反応速度テストは、画面の合図を認識してクリックするまでの感覚運動時間を測る練習です。このドリルは視覚刺激から最初のクリックまでを記録し、Apex・VALORANTなどFPSの撃ち合いに必要な反応を確認します。",
       "精神時間測定学の基礎はオランダの眼科医フランシスクス・ドンデルス (1868) の減算法によって確立されました。単一の刺激に対して反射的に指を動かす「単純反応時間（Type A）」は、人間の大脳皮質および中枢神経系が持つ純粋な情報伝達帯域幅をダイレクトに反映します。",
       "本ドリルはHTML5 Pointer Lock API配下でブラウザの performance.now() 高精度タイムスタンプを用いて計測されます (Woods et al., 2015)。照準の移動距離を伴うフリック練習とは異なり、純粋な視覚検知から運動出力までの神経潜時を単離し、ランダム待機時間とフェイント刺激によってヤマ張り（プリファイア）を徹底的に排除します。",
       "測定仕様について：すべてのイベントはお使いの端末の performance.now() 高分解能クロックによって完全にローカルで記録され、外部へスコアが送信されることはありません。ブラウザのタイマー解像度制限（Spectre対策で通常約1ms）およびディスプレイのリフレッシュ間隔（60Hzで約16.7ms、144Hzで約6.9ms、240Hzで約4.1ms）による量子化誤差が生じるため、5ms未満の微小な差異は測定誤差として扱い、他者の環境との比較よりも同一環境での自己記録の推移を重視してください (Woods et al., 2015)。"
@@ -318,13 +316,13 @@ export default function InstantResponseJaPage() {
       />
       <InstantResponseClient
         copy={{
-          h1Keyword: "FPS 反応速度 テスト",
-          h1Suffix: " - 反射神経・クリック反応速度測定",
+          h1Keyword: "反応速度テスト",
+          h1Suffix: " - FPSクリック反応",
           statScore: "スコア",
           statTime: "残り時間",
           statAccuracy: "命中率",
           statBestScore: "自己ベスト",
-          startTitle: "FPS 反応速度 テスト",
+          startTitle: "反応速度テスト",
           startSubtitle: "視覚反射潜時 & トリガー速度 • エンドレス難易度進行",
           getReady: "準備完了",
           pausedTitle: "一時停止中",
@@ -337,7 +335,7 @@ export default function InstantResponseJaPage() {
             { num: "3", text: "レベル難易度進行", highlight: "+1 レベル / 1400 PTS", result: "適応型露出時間" },
             { num: "4", text: "早期射撃 / ミス", highlight: "失敗ペナルティ", result: "コンボリセット (-0.8s)" }
           ],
-          aboutTitle: "FPS 反応速度 テストについて",
+          aboutTitle: "反応速度テストとFPS反応について",
           aboutHeading: "FPS反応速度トレーニングとは？"
         }}
       />

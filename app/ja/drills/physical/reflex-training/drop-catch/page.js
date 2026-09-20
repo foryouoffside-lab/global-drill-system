@@ -6,43 +6,34 @@ import { pickSources } from '@/lib/drillSources';
 
 // ============================================================
 // SEO RESEARCH FINDINGS — Japan (JP / JA)
-// Primary Intent: 定規 落とし ゲーム, 反射神経 測定 ものさし, 物差し 反応速度, 選択反応時間 テスト
+// Primary Intent: 定規落としゲーム, 定規落とし 反応時間, 反応速度テスト
 // Japanese Context: 学校や部活の「定規落としテスト」をデジタル高精度化・Go/No-Go判定＆赤色デコイ抑制
-// High-Demand, Low-Competition Target Keywords:
-//   - "定規 落とし ゲーム" (Classic viral school ruler drop query)
-//   - "反射神経 測定 ものさし" (Ruler reflex measurement query)
-//   - "物差し 反応速度" (Ruler reaction speed test query)
-//   - "反射神経 測定 ゲーム" (Reflex measuring interactive game query)
-//   - "反射神経 ゲーム 無料" (High-intent free reflex game query)
-//   - "反射神経 ゲーム ブラウザ" (Browser-based reflex training query)
-//   - "選択反応時間 テスト" (Donders Type C choice reaction time query)
-//   - "落下 ターゲット 迎撃" (Falling target interception query)
-//   - "動体視力 落下 テスト" (Dynamic visual acuity fall test)
-//   - "衝動抑制 反射 トレーニング" (Impulse inhibition reflex training)
+// Native cluster: 定規落としゲーム, 定規落とし 反応時間, 反応速度テスト,
+// 反射神経ゲーム 無料, 落下 反応速度. Volume is unmeasured in this run.
 // ============================================================
 
 export const metadata = {
-  title: "定規落としゲーム＆反射神経測定テスト – 無料落下ドロップキャッチ練習 | SkillDrills",
-  description: "無料オンライン定規落としゲーム＆反射神経測定テスト。重力加速度で落下する緑ターゲットを瞬時にキャッチし、赤いデコイの罠を衝動抑制することで、ドンデルスC型選択反応時間と動体視力を科学的に鍛え上げます。",
+  title: "定規落としゲーム｜反応時間テスト | SkillDrills",
+  description: "無料の定規落としゲーム。落下する緑の標的をキャッチし、赤いダミーを避けて反応時間をブラウザで練習できます。",
   keywords: [
     "定規 落とし ゲーム",
-    "反射神経 測定 ものさし",
-    "物差し 反応速度",
-    "反射神経 測定 ゲーム",
+    "定規落とし 反応時間",
+    "反応速度テスト",
+    "反射神経ゲーム 無料",
     "反射神経 ゲーム 無料",
     "反射神経 ゲーム ブラウザ",
     "選択反応時間 テスト",
-    "落下 ターゲット 迎撃",
-    "動体視力 落下 テスト",
-    "衝動抑制 反射 トレーニング"
+    "落下 反応速度",
+    "落下ターゲット ゲーム",
+    "反応時間 測定 ブラウザ"
   ],
   alternates: {
     canonical: 'https://skilldrills.online/ja/drills/physical/reflex-training/drop-catch',
     languages: getAlternateLanguages('/drills/physical/reflex-training/drop-catch'),
   },
   openGraph: {
-    title: "定規落としゲーム＆反射神経測定テスト – 無料落下ドロップキャッチ練習 | SkillDrills",
-    description: "無料オンライン定規落としゲーム＆反射神経測定テスト。重力加速度で落下する緑ターゲットを瞬時にキャッチし、赤いデコイの罠を衝動抑制することで、ドンデルスC型選択反応時間と動体視力を科学的に鍛え上げます。",
+    title: "定規落としゲーム｜反応時間テスト | SkillDrills",
+    description: "落下する緑の標的をキャッチし、赤いダミーを避ける無料の反射神経ゲーム。ブラウザで反応時間を練習できます。",
     url: 'https://skilldrills.online/ja/drills/physical/reflex-training/drop-catch',
     siteName: 'SkillDrills',
     locale: 'ja_JP',
@@ -50,8 +41,8 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: "定規落としゲーム＆反射神経測定テスト – 無料落下ドロップキャッチ練習 | SkillDrills",
-    description: "無料オンライン定規落としゲーム＆反射神経測定テスト。重力加速度で落下する緑ターゲットを瞬時にキャッチし、赤いデコイの罠を衝動抑制することで、ドンデルスC型選択反応時間と動体視力を科学的に鍛え上げます。",
+    title: "定規落としゲーム｜反応時間テスト | SkillDrills",
+    description: "落下する緑の標的をキャッチし、赤いダミーを避ける無料の反射神経ゲーム。ブラウザで反応時間を練習できます。",
   },
   robots: { index: true, follow: true },
 };
@@ -106,7 +97,7 @@ const softwareApplicationSchema = {
     "url": "https://skilldrills.online/ja"
   },
   "inLanguage": "ja",
-  "dateModified": "2026-09-12"
+  "dateModified": "2026-09-20"
 };
 
 const webApplicationSchema = {
@@ -123,7 +114,7 @@ const webApplicationSchema = {
   },
   "url": "https://skilldrills.online/ja/drills/physical/reflex-training/drop-catch",
   "inLanguage": "ja",
-  "dateModified": "2026-09-12"
+  "dateModified": "2026-09-20"
 };
 
 const videoGameSchema = {
@@ -154,7 +145,7 @@ const videoGameSchema = {
 const faqSchema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
-  "dateModified": "2026-09-12",
+  "dateModified": "2026-09-20",
   "mainEntity": [
     {
       "@type": "Question",
@@ -365,7 +356,7 @@ export default function LocalizedDropCatchPageJa() {
       <DropCatchClient
         copy={{
           title: "定規落としゲーム＆ドロップキャッチ",
-          subtitle: "落下標的迎撃＆赤色デコイ衝動抑制 • 15段階難易度スケーリング",
+          subtitle: "落下標的をキャッチ、赤いダミーを回避",
           hudLabels: {
             score: "スコア",
             time: "残り時間",

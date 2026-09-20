@@ -6,7 +6,7 @@ import { pickSources } from '@/lib/drillSources';
 
 // ============================================================
 // SEO RESEARCH FINDINGS — France & Francophonie (FR / FR-FR)
-// Primary Intent: précision souris test, jeu précision souris, contrôle du recul souris
+// Native SERP intent: test précision souris, entraînement visée en ligne, stabilité de la visée
 // French Context: Comment stabiliser sa visée souris dans Valorant/CS2 et contrer les tremblements musculaires
 // High-Demand, Low-Competition Target Keywords:
 //   - "précision souris test" (Direct precision diagnostic query)
@@ -22,27 +22,27 @@ import { pickSources } from '@/lib/drillSources';
 // ============================================================
 
 export const metadata = {
-  title: 'Stabilité de Visée – Test Précision Souris | SkillDrills',
-  description: 'Test de stabilité de visée et précision souris en ligne. Résistez aux forces dynamiques pour garder le réticule centré et éliminer les tremblements.',
+  title: 'Stabilité de visée | Test de précision souris | SkillDrills',
+  description: 'Entraînement gratuit de visée au navigateur. Gardez le réticule centré malgré les forces mobiles et pratiquez la stabilité, le recul et la précision.',
   keywords: [
-    "precision souris test",
-    "jeu precision souris",
-    "entrainement precision souris",
-    "ameliorer precision souris",
-    "test de visee souris",
-    "stabilite de la souris",
-    "controle du recul souris",
-    "comment stabiliser sa visee souris",
-    "test equilibre moteur et resistance",
-    "compensation des perturbations motrices"
+    "test de précision souris",
+    "entraînement visée en ligne gratuit",
+    "comment stabiliser sa visée souris",
+    "contrôle du recul souris",
+    "stabilité de la visée",
+    "jeu de précision souris",
+    "test visée FPS",
+    "réduire tremblement souris",
+    "suivi stable de cible",
+    "entraînement visée Valorant"
   ],
   alternates: {
     canonical: 'https://skilldrills.online/fr/drills/physical/balance-training/stability-challenge',
     languages: getAlternateLanguages('/drills/physical/balance-training/stability-challenge'),
   },
   openGraph: {
-    title: 'Stabilité de Visée – Test Précision Souris | SkillDrills',
-    description: 'Test de stabilité de visée et précision souris en ligne. Résistez aux forces dynamiques pour garder le réticule centré et éliminer les tremblements.',
+    title: 'Stabilité de visée | Test de précision souris | SkillDrills',
+    description: 'Gardez le réticule centré et pratiquez la stabilité, le contrôle du recul et la précision souris dans un entraînement gratuit au navigateur.',
     url: 'https://skilldrills.online/fr/drills/physical/balance-training/stability-challenge',
     siteName: 'SkillDrills',
     locale: 'fr_FR',
@@ -50,8 +50,8 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Stabilité de Visée – Test Précision Souris | SkillDrills',
-    description: 'Test de stabilité de visée et précision souris en ligne. Résistez aux forces dynamiques pour garder le réticule centré et éliminer les tremblements.',
+    title: 'Stabilité de visée | Test de précision souris | SkillDrills',
+    description: 'Gardez le réticule centré et pratiquez la stabilité, le contrôle du recul et la précision souris dans un entraînement gratuit au navigateur.',
   },
   robots: { index: true, follow: true },
 };
@@ -98,7 +98,10 @@ const softwareApplicationSchema = {
     "price": "0",
     "priceCurrency": "USD"
   },
-  "description": "Application biomécanique en ligne pour éliminer les tremblements de visée à la souris, renforcer l'équilibre neuromusculaire et optimiser le contrôle du recul."
+  "description": "Application biomécanique en ligne pour éliminer les tremblements de visée à la souris, renforcer l'équilibre neuromusculaire et optimiser le contrôle du recul.",
+  "url": "https://skilldrills.online/fr/drills/physical/balance-training/stability-challenge",
+  "inLanguage": "fr-FR",
+  "dateModified": "2026-09-20"
 };
 
 const webApplicationSchema = {
@@ -113,7 +116,9 @@ const webApplicationSchema = {
     "@type": "Offer",
     "price": "0",
     "priceCurrency": "USD"
-  }
+  },
+  "inLanguage": "fr-FR",
+  "dateModified": "2026-09-20"
 };
 
 const videoGameSchema = {
@@ -123,12 +128,16 @@ const videoGameSchema = {
   "url": "https://skilldrills.online/fr/drills/physical/balance-training/stability-challenge",
   "description": "Jeu d'adresse et de résistance neuromotrice consistant à verrouiller le réticule au centre contre des forces dynamiques déstabilisatrices.",
   "genre": ["Action", "Sports Game", "Reflex Game", "Motor Training"],
-  "gamePlatform": ["Web Browser", "Desktop", "Mobile"]
+  "gamePlatform": ["Web Browser", "Desktop", "Mobile"],
+  "inLanguage": "fr-FR",
+  "dateModified": "2026-09-20"
 };
 
 const faqSchema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
+  "inLanguage": "fr-FR",
+  "dateModified": "2026-09-20",
   "mainEntity": [
     {
       "@type": "Question",
@@ -333,8 +342,8 @@ export default function StabilityChallengeFrPage() {
       />
       <StabilityChallengeClient
         copy={{
-          title: 'Stabilité de Visée – Test Précision Souris | SkillDrills',
-          subtitle: 'Stabilité de Visée – Test Précision Souris | SkillDrills',
+          title: 'Stabilité de visée',
+          subtitle: 'Gardez le réticule centré malgré les forces',
           hudLabels: {
             score: "Points",
             time: "Temps",

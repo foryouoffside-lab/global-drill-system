@@ -5,12 +5,12 @@ import RelatedDrills from '@/components/drill/RelatedDrills';
 import { pickSources } from '@/lib/drillSources';
 
 export const metadata = {
-  title: "순간 기억 테스트・시각 기억력 검사 – 격자 패턴 기억 게임 | SkillDrills",
-  description: "무료 온라인 순간 기억 테스트(시각 기억력 검사). 확장되는 격자 패턴을 1.5초 동안 기억하고 시각 캐시 용량과 공간 청킹 능력을 측정·훈련하세요.",
-  keywords: ['순간 기억 테스트', '시각 기억 테스트', '공간 기억력 테스트', '시각 작업기억', '격자 패턴 기억 게임', '순간 기억력 검사', '단기 시각 기억력', '시각 캐시 테스트', '패턴 기억력 훈련', '작업기억 공간 검사', '코르시 블록 대체', '두뇌 기억력 게임'],
+  title: "순간 기억력 테스트 | 시각 기억 게임 | SkillDrills",
+  description: "무료 순간 기억력 테스트: 격자에서 잠깐 빛나는 칸의 위치를 기억하고 같은 패턴을 다시 눌러 시각 기억력과 공간 기억력을 훈련하세요.",
+  keywords: ['순간 기억력 테스트', '시각 기억력 테스트', '시각 기억력 게임', '공간 기억력 테스트', '격자 패턴 기억', '기억력 테스트 그림', '시각 작업기억', '단기 시각 기억력', '패턴 기억력 훈련', '두뇌 기억력 게임'],
   openGraph: {
-    title: "순간 기억 테스트 (시각 기억력 검사) - 무료 격자 패턴 기억력 게임 | SkillDrills",
-    description: "무료 온라인 순간 기억 테스트 (시각 기억력 검사). 확장되는 4x4 ~ 5x5 격자 매트릭스 패턴을 1.5초 동안 기억하고 시각 캐시 용량과 공간 청킹 능력을 측정·훈련하세요. 로그인 없이 브라우저에서 즉시 플레이.",
+    title: "순간 기억력 테스트 | 시각 기억 게임 | SkillDrills",
+    description: "무료 순간 기억력 테스트: 빛나는 격자 패턴의 위치를 기억하고 브라우저에서 바로 재현하세요.",
     type: 'website',
     url: 'https://skilldrills.online/ko/drills/memory/spatial-memory/grid-memorization',
     siteName: 'SkillDrills',
@@ -18,8 +18,8 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: "순간 기억 테스트 (시각 기억력 검사) - 무료 격자 패턴 기억력 게임 | SkillDrills",
-    description: "무료 온라인 순간 기억 테스트 (시각 기억력 검사). 확장되는 4x4 ~ 5x5 격자 매트릭스 패턴을 1.5초 동안 기억하고 시각 캐시 용량과 공간 청킹 능력을 측정·훈련하세요. 로그인 없이 브라우저에서 즉시 플레이.",
+    title: "순간 기억력 테스트 | 시각 기억 게임 | SkillDrills",
+    description: "무료 순간 기억력 테스트: 빛나는 격자 패턴의 위치를 기억하고 브라우저에서 바로 재현하세요.",
   },
   robots: { index: true, follow: true },
   alternates: {
@@ -48,6 +48,7 @@ const webAppSchema = {
   "operatingSystem": "All",
   "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
   "author": { "@type": "Organization", "name": "SkillDrills" },
+  "sameAs": "https://ko.wikipedia.org/wiki/%EC%8B%9C%EA%B0%81_%EA%B8%B0%EC%96%B5",
   "isAccessibleForFree": true,
   "dateModified": "2026-09-11"
 };
@@ -292,23 +293,23 @@ const gridGuide = {
   sources: pickSources('cowan2001', 'baddeley2000', 'logie1995', 'corsi1972', 'luck1997', 'milner1971', 'woods2015'),
   related: [
   {
-    "href": "/drills/memory/working-memory/n-back",
+    "href": "/ko/drills/memory/working-memory/n-back",
     "label": "3-Back 작업기억 훈련"
   },
   {
-    "href": "/drills/cognitive/focus/concentration-grid",
+    "href": "/ko/drills/cognitive/focus/concentration-grid",
     "label": "슐테 테이블 (집중력 격자)"
   },
   {
-    "href": "/drills/memory/short-term-memory/digit-span",
+    "href": "/ko/drills/memory/short-term-memory/digit-span",
     "label": "숫자 기억 폭 테스트"
   },
   {
-    "href": "/drills/reaction-speed/reaction-time-test",
+    "href": "/ko/drills/reaction-speed/reaction-time-test",
     "label": "반응속도 테스트"
   },
   {
-    "href": "/drills/reaction-speed/reflex-training-drill",
+    "href": "/ko/drills/reaction-speed/reflex-training-drill",
     "label": "순발력 테스트 (반사신경 게임)"
   }
 ]
@@ -342,8 +343,9 @@ export default function LocalizedGridMemorizationPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
       <GridMemorizationClient copy={{
-        "h1Keyword": "순간 기억 테스트",
-        "h1Suffix": " – 무료 시각 패턴 기억력 검사",
+        "h1Keyword": "순간 기억력 테스트",
+        "h1Suffix": " 시각 기억 게임",
+        "subtitle": "빛나는 칸의 위치를 기억하는 격자 훈련",
         "caption": "시각 작업기억은 한 번에 약 4개의 독립된 대상을 저장할 수 있으며, 이 한계는 대상의 복잡도가 아닌 개수에 의해 결정됩니다 (Luck & Vogel, 1997). 정적 격자 매트릭스 패턴은 뇌의 형태·위치 수동 보관소인 시각 캐시(Visual Cache)를 직접 측정합니다 (Logie, 1995).",
         "statScore": "점수",
         "statTime": "남은 시간",
@@ -352,7 +354,7 @@ export default function LocalizedGridMemorizationPage() {
         "hudScore": "점수",
         "hudTime": "시간",
         "startTitle": "그리드 순간기억 Pro",
-        "startSubtitle": "공간 단기기억 • 시각 패턴 재인 훈련",
+        "startSubtitle": "시각 기억력 • 격자",
         "countdownSubtitle": "준비하세요",
         "newBest": "최고 기록 갱신",
         "pointsLabel": "점수",

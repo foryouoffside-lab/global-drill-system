@@ -6,25 +6,16 @@ import RelatedDrills from '@/components/drill/RelatedDrills';
 import { pickSources } from '@/lib/drillSources';
 
 export const metadata = {
-  title: 'Treino de Flick Shot – Precisão de Mouse | SkillDrills',
-  description: 'Teste de flick shot online gratis: Treine velocidade de snap balistico, frenagem do cursor e acertos no alvo central para CS2 e Valorant no navegador.',
+  title: 'Treino de mira Flick | Precisão do mouse | SkillDrills',
+  description: 'Treine flick e teste a precisão do mouse no navegador. Meça tempo de aquisição, taxa de acerto e tiros no centro para FPS.',
   keywords: [
-    'flick aim trainer',
-    'treino de flick shot',
-    'teste de precisao do mouse',
-    'treino de mira flick',
-    'teste de mira fps',
-    'precisao de mouse cs2',
-    'treino de mira valorant',
-    'micro flick trainer',
-    'teste de reflexo mouse',
-    'mira rapida fps',
-    'treino de pontaria mouse',
-    'flick shot gratis',
+    'treino de mira', 'treino de flick', 'teste de precisão do mouse', 'teste de mira',
+    'mira FPS', 'treino de mira Valorant', 'treino de mira CS2', 'precisão do mouse',
+    'aquisição de alvo', 'micro ajuste de mira', 'tiro na cabeça', 'flick shot grátis',
   ],
   openGraph: {
-    title: 'Treino de Flick Shot – Precisão de Mouse | SkillDrills',
-    description: 'Teste de flick shot online gratis: Treine velocidade de snap balistico, frenagem do cursor e acertos no alvo central para CS2 e Valorant no navegador.',
+    title: 'Treino de mira Flick | Precisão do mouse | SkillDrills',
+    description: 'Treine flick e teste a precisão do mouse no navegador. Meça tempo de aquisição, taxa de acerto e tiros no centro para FPS.',
     type: 'article',
     url: 'https://skilldrills.online/pt/drills/motor/hand-eye-coordination/precision-flick-shot',
     siteName: 'SkillDrills',
@@ -32,8 +23,8 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Treino de Flick Shot – Precisão de Mouse | SkillDrills',
-    description: 'Teste de flick shot online gratis: Treine velocidade de snap balistico, frenagem do cursor e acertos no alvo central para CS2 e Valorant no navegador.',
+    title: 'Treino de mira Flick | Precisão do mouse | SkillDrills',
+    description: 'Treine flick e teste a precisão do mouse no navegador. Meça tempo de aquisição, taxa de acerto e tiros no centro para FPS.',
   },
   robots: { index: true, follow: true },
   alternates: {
@@ -83,7 +74,8 @@ const softwareApplicationSchema = {
   description: 'Treinador de flick shot e precisão de mira online gratuito. Avalie velocidade de snap balístico, frenagem motora e acertos no centro.',
   url: 'https://skilldrills.online/pt/drills/motor/hand-eye-coordination/precision-flick-shot',
   publisher: { '@type': 'Organization', name: 'SkillDrills', url: 'https://skilldrills.online' },
-  dateModified: '2026-09-16',
+  inLanguage: 'pt-BR',
+  dateModified: '2026-09-20',
 };
 
 const webApplicationSchema = {
@@ -93,7 +85,8 @@ const webApplicationSchema = {
   browserRequirements: 'Requer HTML5 Canvas e JavaScript ativado',
   url: 'https://skilldrills.online/pt/drills/motor/hand-eye-coordination/precision-flick-shot',
   applicationCategory: 'EducationalApplication',
-  dateModified: '2026-09-16',
+  inLanguage: 'pt-BR',
+  dateModified: '2026-09-20',
 };
 
 const videoGameSchema = {
@@ -105,13 +98,15 @@ const videoGameSchema = {
   genre: ['Tiro', 'Reflexos', 'Esports'],
   gamePlatform: ['Web Browser', 'Desktop'],
   applicationCategory: 'Game',
+  inLanguage: 'pt-BR',
   offers: { '@type': 'Offer', price: '0', priceCurrency: 'BRL' },
 };
 
 const faqSchema = {
   '@context': 'https://schema.org',
   '@type': 'FAQPage',
-  dateModified: '2026-09-16',
+  inLanguage: 'pt-BR',
+  dateModified: '2026-09-20',
   mainEntity: [
     {
       '@type': 'Question',
@@ -199,6 +194,7 @@ const faqSchema = {
 const howToSchema = {
   '@context': 'https://schema.org',
   '@type': 'HowTo',
+  inLanguage: 'pt-BR',
   name: 'Como treinar flick shots e precisão de mira no mouse',
   description: 'Guia estruturado para dominar tiros rápidos de flick, mira no centro e frenagem precisa.',
   step: [
@@ -329,7 +325,7 @@ const guideProps = {
 
 const copyPt = {
   title: "Flick Shot de Precisão – Teste de Precisão do Mouse",
-  subtitle: "Decaimento de Alvos & Micro-Flicks no Centro • Progressão Infinita",
+  subtitle: "Precisão do flick · acertos no centro",
   startButtonText: "INICIAR DRILL",
   playAgainText: "Jogar novamente",
   shareText: "Compartilhar resultado",

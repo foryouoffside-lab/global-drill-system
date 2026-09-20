@@ -20,31 +20,36 @@ import { pickSources } from '@/lib/drillSources';
 // ============================================================
 
 export const metadata = {
-  title: "Maus Bremskontrolle – Reflex-Test | SkillDrills",
-  description: "Fange kinetische Knoten ab und stoppe den Cursor millimetergenau. Trainiere Bremskontrolle und motorische Hemmung direkt im Browser.",
+  title: "Maus bremsen beim Aim | Reflex-Test",
+  description: "Kostenloser Aim-Drill im Browser. Triff bewegte Ziele, stoppe den Cursor sauber und trainiere Mauspräzision sowie Overflick-Kontrolle.",
   keywords: [
-    "impuls hemmer reflex spiel",
-    "präzisionsbremsung reaktionstest",
-    "motorische inhibition übung",
-    "maus verzögerungstraining",
+    "aim trainer kostenlos online",
+    "maus bremsen aim",
     "overflick korrektur maus",
-    "kinetischer stopp reflex training",
+    "flick präzision training",
     "maus präzisionstest online",
-    "reaktionsgeschwindigkeit spiel",
-    "zielbremsung maus training",
-    "stoppsignal reaktionstest online"
+    "reaktionsspiel online",
+    "ziel bremsen maus training",
+    "stoppsignal reaktionstest",
+    "flick stoppen üben",
+    "hand-auge-koordination aim"
   ],
   alternates: {
     canonical: 'https://skilldrills.online/de/drills/physical/reflex-training/reaction-chain',
     languages: getAlternateLanguages('/drills/physical/reflex-training/reaction-chain'),
   },
   openGraph: {
-    title: "Maus Bremskontrolle – Reflex-Test | SkillDrills",
-    description: "Stoppen Sie Overflicks radikal durch gezielte Aktivierung antagonistischer Muskelgruppen. Neuromotorischer Reaktionstest für Counter-Strike 2 und Valorant.",
+    title: "Maus bremsen beim Aim | Reflex-Test",
+    description: "Triff bewegte Ziele, stoppe den Cursor sauber und trainiere Mauspräzision sowie Overflick-Kontrolle im Browser.",
     url: 'https://skilldrills.online/de/drills/physical/reflex-training/reaction-chain',
     siteName: 'SkillDrills',
     locale: 'de_DE',
     type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: "Maus bremsen beim Aim | Reflex-Test",
+    description: "Bewegte Ziele treffen, den Cursor sauber stoppen und Overflick-Kontrolle trainieren.",
   },
 };
 
@@ -98,7 +103,7 @@ const softwareApplicationSchema = {
     "url": "https://skilldrills.online/de"
   },
   "inLanguage": "de",
-  "dateModified": "2026-09-12"
+  "dateModified": "2026-09-20"
 };
 
 const webApplicationSchema = {
@@ -115,7 +120,7 @@ const webApplicationSchema = {
   },
   "url": "https://skilldrills.online/de/drills/physical/reflex-training/reaction-chain",
   "inLanguage": "de",
-  "dateModified": "2026-09-12"
+  "dateModified": "2026-09-20"
 };
 
 const videoGameSchema = {
@@ -125,6 +130,8 @@ const videoGameSchema = {
   "url": "https://skilldrills.online/de/drills/physical/reflex-training/reaction-chain",
   "genre": ["Reflex Game", "Motor Control Trainer", "Esports Precision"],
   "playMode": "SinglePlayer",
+  "inLanguage": "de",
+  "dateModified": "2026-09-20",
   "description": "Fangen Sie Zielknoten mit bis zu 1.800 px/s ab und stoppen Sie die Cursorgeschwindigkeit unter 1,5 px/Frame, um Multiplikatoren bis 3,0x aufzubauen."
 };
 
@@ -336,8 +343,8 @@ export default function LocalizedReactionChainPageDe() {
       />
       <ReactionChainClient
         copy={{
-          title: "Maus Bremskontrolle & Impulskontrolle Training",
-          subtitle: "Kinetischer Stopp & Motorische Verzögerung • 15 Geschwindigkeitsstufen",
+          title: "Maus bremsen beim Aim",
+          subtitle: "Zielen, treffen, den Cursor sauber stoppen",
           badge: "Impulskontrolle Reflex-Test",
           description: "Eine schnelle Bewegung punktgenau auf einem Ziel anzuhalten ist neuromotorisch weitaus anspruchsvoller als das Beschleunigen. Ausführung und Hemmung konkurrieren als unabhängige Prozesse im Gehirn (Logan & Cowan, 1984). Verzögert sich das Bremsen, führt die Trägheit zu fatalen Overflicks (Woodworth, 1899). Fangen Sie anstürmende Knoten ab und stoppen Sie den Cursor abrupt auf den Punkt.",
           hudLabels: {
@@ -397,9 +404,10 @@ export default function LocalizedReactionChainPageDe() {
             }
           ]
         }}
-      />
-      <DrillGuide {...guideProps} />
-      <RelatedDrills currentCategory="physical" currentHref="/drills/physical/reflex-training/reaction-chain" />
+      >
+        <DrillGuide {...guideProps} />
+        <RelatedDrills currentCategory="physical" currentHref="/drills/physical/reflex-training/reaction-chain" />
+      </ReactionChainClient>
     </>
   );
 }

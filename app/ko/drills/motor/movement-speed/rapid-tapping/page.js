@@ -23,29 +23,27 @@ import { pickSources } from '@/lib/drillSources';
 // ============================================================
 
 export const metadata = {
-  title: 'CPS 측정 – 무료 마우스 클릭속도 테스트 & 광클 지속력 훈련 | SkillDrills',
+  title: 'CPS 테스트 | 클릭 속도 측정 | SkillDrills',
   description:
-    '브라우저에서 바로 측정하는 무료 CPS 측정 및 마우스 클릭속도 테스트. 초당 클릭 수(CPS), 마우스 광클 지속력, 지터 클릭 및 버터플라이 클릭 속도를 45초 동안 정밀 측정합니다. 마인크래프트 PvP 및 FPS 연타 훈련에 최적화.',
+    '마우스를 빠르게 클릭해 초당 클릭 수(CPS)와 45초 클릭 지구력을 측정하세요. 브라우저에서 무료로 바로 시작합니다.',
   keywords: [
-    'CPS 측정',
-    'cps 측정',
-    '클릭속도 테스트',
-    '마우스 클릭 테스트',
-    '클릭 속도 테스트',
-    'cps 테스트',
     'CPS 테스트',
-    '마우스 광클',
-    '초당 클릭수',
-    '마우스 연타 속도',
-    '지터클릭',
+    '클릭 속도 테스트',
+    '초당 클릭 수',
+    '마우스 연타 테스트',
+    '클릭 속도 측정',
+    '광클 테스트',
+    '마우스 클릭 속도',
+    '지터 클릭',
     '버터플라이 클릭',
-    '마인크래프트 cps',
-    'cps test',
+    '마인크래프트 CPS',
+    '클릭 지구력 테스트',
+    '빠른 클릭 연습',
   ],
   openGraph: {
-    title: 'CPS 측정 – 무료 마우스 클릭속도 테스트 & 광클 지속력 훈련 | SkillDrills',
+    title: 'CPS 테스트 | 클릭 속도 측정 | SkillDrills',
     description:
-      '브라우저에서 바로 측정하는 무료 CPS 측정 및 마우스 클릭속도 테스트. 초당 클릭 수(CPS), 마우스 광클 지속력, 지터 및 버터플라이 클릭 속도를 45초 동안 정밀 측정합니다.',
+      '마우스 연타로 CPS와 클릭 지구력을 45초 동안 측정하는 무료 브라우저 테스트.',
     type: 'article',
     url: 'https://skilldrills.online/ko/drills/motor/movement-speed/rapid-tapping',
     siteName: 'SkillDrills',
@@ -53,9 +51,9 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'CPS 측정 – 무료 마우스 클릭속도 테스트 & 광클 지속력 훈련 | SkillDrills',
+    title: 'CPS 테스트 | 클릭 속도 측정 | SkillDrills',
     description:
-      '브라우저에서 바로 측정하는 무료 CPS 측정 및 마우스 클릭속도 테스트. 초당 클릭 수(CPS), 마우스 광클 지속력, 지터 및 버터플라이 클릭 속도를 45초 동안 정밀 측정합니다.',
+      '초당 클릭 수와 45초 클릭 지구력을 측정하는 무료 테스트.',
   },
   robots: { index: true, follow: true },
   alternates: {
@@ -90,7 +88,7 @@ const softwareApplicationSchema = {
   url: 'https://skilldrills.online/ko/drills/motor/movement-speed/rapid-tapping',
   publisher: { '@type': 'Organization', name: 'SkillDrills', url: 'https://skilldrills.online' },
   inLanguage: 'ko-KR',
-  dateModified: '2026-09-11',
+  dateModified: '2026-09-20',
 };
 
 const webApplicationSchema = {
@@ -104,12 +102,13 @@ const webApplicationSchema = {
   offers: { '@type': 'Offer', price: '0', priceCurrency: 'KRW' },
   url: 'https://skilldrills.online/ko/drills/motor/movement-speed/rapid-tapping',
   inLanguage: 'ko-KR',
-  dateModified: '2026-09-11',
+  dateModified: '2026-09-20',
 };
 
 const videoGameSchema = {
   '@context': 'https://schema.org',
   '@type': 'VideoGame',
+  inLanguage: 'ko-KR',
   name: 'CPS 테스트 – 무료 마우스 클릭 속도 측정기 (초당 클릭수)',
   url: 'https://skilldrills.online/ko/drills/motor/movement-speed/rapid-tapping',
   description: 'CPS 테스트 – 무료 마우스 클릭 속도 측정기 (초당 클릭수)',
@@ -123,6 +122,8 @@ const videoGameSchema = {
 const faqSchema = {
   '@context': 'https://schema.org',
   '@type': 'FAQPage',
+  inLanguage: 'ko-KR',
+  dateModified: '2026-09-20',
   mainEntity: [
     {
       '@type': 'Question',
@@ -210,6 +211,8 @@ const faqSchema = {
 const howToSchema = {
   '@context': 'https://schema.org',
   '@type': 'HowTo',
+  inLanguage: 'ko-KR',
+  dateModified: '2026-09-20',
   name: 'CPS 테스트 – 무료 마우스 클릭 속도 측정기 (초당 클릭수)',
   description: 'CPS 테스트 – 무료 마우스 클릭 속도 측정기 (초당 클릭수)',
   step: [
@@ -339,7 +342,7 @@ const koCopy = {
   cpsRate: "현재 CPS",
   bestScore: "최고 점수",
   startButtonText: "훈련 시작",
-  startSubtitle: "CPS 마우스 클릭속도 훈련 • 하드웨어 1:1 원시 입력",
+  startSubtitle: "CPS와 클릭 지구력 • 45초",
   getReady: "준비",
   playAgain: "다시 훈련",
   shareTitle: "결과 공유",

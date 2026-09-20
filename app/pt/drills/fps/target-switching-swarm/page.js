@@ -6,21 +6,21 @@ import { getAlternateLanguages } from '@/lib/i18n/locales';
 import { pickSources } from '@/lib/drillSources';
 
 export const metadata = {
-  title: 'Target Switching FPS – Troca Rápida de Alvos | SkillDrills',
-  description: 'Treine target switching e troca rápida de alvos no navegador. Elimine o atraso de confirmação e domine spray transfers no Valorant e CS2 gratuitamente.',
+  title: 'Treino de Mira - Troca de Alvos Valorant | SkillDrills',
+  description: 'Treino de mira grátis no navegador: pratique troca rápida de alvos, transições contínuas e spray transfer no Valorant e CS2.',
   keywords: [
-    'treino de target switching',
-    'troca de alvos fps',
+    'troca de alvos Valorant',
+    'troca de alvos FPS',
     'target switching aim trainer',
-    'treino de mira valorant',
-    'spray transfer cs2',
+    'treino de mira Valorant',
+    'spray transfer CS2',
     'mira multi alvos',
-    'flick continuo fps',
+    'flick contínuo FPS',
     'treino de pontaria online',
-    'troca de alvos rapida',
-    'exercicio de mira fps',
-    'sensibilidade de mira',
-    'treinador de mira gratis'
+    'troca rápida de alvos',
+    'transição de mira',
+    'troca de alvos sob pressão',
+    'treinador de mira grátis'
   ],
   alternates: {
     canonical: 'https://skilldrills.online/pt/drills/fps/target-switching-swarm',
@@ -31,8 +31,8 @@ export const metadata = {
     follow: true,
   },
   openGraph: {
-    title: 'Target Switching FPS – Troca Rápida de Alvos | SkillDrills',
-    description: 'Treine target switching e troca rápida de alvos no navegador. Elimine o atraso de confirmação e domine spray transfers no Valorant e CS2 gratuitamente.',
+    title: 'Treino de Mira - Troca de Alvos Valorant | SkillDrills',
+    description: 'Treino de mira grátis no navegador: pratique troca rápida de alvos, transições contínuas e spray transfer no Valorant e CS2.',
     url: 'https://skilldrills.online/pt/drills/fps/target-switching-swarm',
     siteName: 'SkillDrills',
     locale: 'pt_BR',
@@ -40,8 +40,8 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Target Switching FPS – Troca Rápida de Alvos | SkillDrills',
-    description: 'Treine target switching e troca rápida de alvos no navegador. Elimine o atraso de confirmação e domine spray transfers no Valorant e CS2 gratuitamente.',
+    title: 'Treino de Mira - Troca de Alvos Valorant | SkillDrills',
+    description: 'Treino de mira grátis no navegador: pratique troca rápida de alvos, transições contínuas e spray transfer no Valorant e CS2.',
   },
 };
 
@@ -59,7 +59,7 @@ export default function TargetSwitchingSwarmPtPage() {
   const softwareSchema = {
     "@context": "https://schema.org",
     "@type": "SoftwareApplication",
-    "name": "Treinador de Target Switching FPS SkillDrills",
+    "name": "Treino de Mira - Troca de Alvos Valorant",
     "applicationCategory": "GameApplication",
     "operatingSystem": "Any (Web Browser)",
     "offers": {
@@ -73,7 +73,7 @@ export default function TargetSwitchingSwarmPtPage() {
   const webAppSchema = {
     "@context": "https://schema.org",
     "@type": "WebApplication",
-    "name": "Target Switching Swarm – Treino de Mira FPS",
+    "name": "Treino de Mira - Troca de Alvos Valorant",
     "url": "https://skilldrills.online/pt/drills/fps/target-switching-swarm",
     "browserRequirements": "Requires Pointer Lock API and WebGL support",
     "applicationCategory": "ShooterTraining",
@@ -86,7 +86,7 @@ export default function TargetSwitchingSwarmPtPage() {
   const videoGameSchema = {
     "@context": "https://schema.org",
     "@type": "VideoGame",
-    "name": "Target Switching Swarm",
+    "name": "Treino de Mira - Troca de Alvos Valorant",
     "description": "Simulador dinâmico de enxame de alvos para treinar velocidade de transição motora, mitigação de hesitação e spray transfers.",
     "genre": ["First-Person Shooter", "Aim Trainer", "Reaction Training"],
     "playMode": "SinglePlayer",
@@ -219,9 +219,9 @@ export default function TargetSwitchingSwarmPtPage() {
   };
 
   const targetSwitchingGuide = {
-    heading: "Guia de Target Switching & Cinemática de Múltiplos Alvos em FPS",
+    heading: "Treino de Mira: troca de alvos e spray transfer no FPS",
     intro: [
-      "O Target Switching Swarm é um exercício avançado de controle motor e indexação visual projetado para condicionar transições ultravelozes e sem hesitação entre múltiplos alvos inimigos. Em jogos de tiro tático como Counter-Strike 2 e Valorant, e em battle royales dinâmicos como Apex Legends, confrontos de equipe raramente se limitam a duelos 1v1 isolados. Vencer rounds decisivos requer abater um primeiro adversário e instantaneamente transferir a mira para um segundo oponente sem qualquer atraso cognitivo pós-kill.",
+      "Para quem procura treino de mira com troca de alvos, este drill mede a transição entre vários inimigos sem a pausa de confirmação após cada eliminação. Ele treina flick contínuo, indexação visual e spray transfer para Valorant, Counter-Strike 2 e Apex Legends, onde a próxima ameaça aparece antes de o duelo terminar.",
       "A psicofísica da troca de alvos é regida pela Lei de Fitts (Fitts, 1954) e pelo modelo estocástico de submovimentos otimizados desenvolvido por David E. Meyer et al. (1988). Sob essa ótica biomecânica, um movimento de mira compõe-se de um submovimento balístico primário que cobre aproximadamente 90% da distância, seguido por microcorreções secundárias guiadas por feedback visual. Jogadores iniciantes desperdiçam entre 100 e 250 ms paralisados após cada abate esperando a animação de morte sumir. Jogadores de elite iniciam a sacada ocular para o próximo alvo antes mesmo que o clique do alvo anterior seja completamente processado pelo monitor.",
       "A indexação visual em enxames densos apoia-se em mecanismos de integração de características e busca visual pré-atencional (Anne M. Treisman & Garry Gelade, 1980; Jeremy M. Wolfe, 2007). O córtex visual humano consegue rastrear múltiplos pontos espaciais concorrentes por meio da indexação visual (teoria FINST), permitindo que você trace rotas cinemáticas otimizadas entre agrupamentos de alvos, minimizando o esforço muscular e a distância angular percorrida pela mão.",
       "Como medimos seu desempenho: cada evento é registrado com o relógio de alta resolução performance.now() do navegador, inteiramente local no seu dispositivo — nenhum dado pessoal é transmitido. Fatores de hardware: os temporizadores dos navegadores possuem arredondamento intencional de proteção contra o Spectre (~1 ms) e monitores quantizam os quadros (16,7 ms a 60 Hz, 6,9 ms a 144 Hz, 4,1 ms a 240 Hz; Woods et al., 2015). O polling rate do mouse adiciona cerca de 8 ms a 125 Hz contra 1 ms a 1000 Hz. Diferenças inferiores a 5 ms devem ser interpretadas como margem de hardware."
@@ -293,9 +293,9 @@ export default function TargetSwitchingSwarmPtPage() {
 
       <TargetSwitchingSwarmClient
         copy={{
-          h1Keyword: "Treino de Target Switching FPS",
-          h1Suffix: " – Troca Rápida de Alvos e Spray Transfer",
-          subtitle: "Treine transições rápidas entre alvos, spray transfers e indexação visual sem pausa de ajuste.",
+          h1Keyword: "Treino de Mira - Troca de Alvos",
+          h1Suffix: " – Spray Transfer FPS",
+          subtitle: "Pratique transições rápidas entre alvos e spray transfer sem perder o controle da mira.",
           statScore: "Pontos",
           statTime: "Tempo",
           statAccuracy: "Precisão",
@@ -320,7 +320,7 @@ export default function TargetSwitchingSwarmPtPage() {
       <div className="max-w-4xl mx-auto px-4 pb-12">
         <RelatedDrills
           currentCategory="fps"
-          currentHref="/drills/fps/target-switching-swarm"
+          currentHref="/pt/drills/fps/target-switching-swarm"
           locale="pt"
         />
       </div>

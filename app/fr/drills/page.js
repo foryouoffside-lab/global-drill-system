@@ -2,8 +2,9 @@ import DrillsDirectoryClient from '@/app/drills/DrillsDirectoryClient';
 import { DRILLS } from '@/lib/drillsRegistry';
 import { getAlternateLanguages } from '@/lib/i18n/locales';
 import { getLocalizedDrill } from '@/lib/i18n/drillNames';
+import { buildDirectoryMetadata, getDirectoryCollectionFields } from '@/lib/i18n/siteLandingSeoNative';
 
-export const metadata = {
+const legacyMetadata = {
   title: 'Aim Trainer : 82 Exercices Gratuits | SkillDrills',
   description: '82 exercices en ligne gratuits en 8 catégories : aim trainer FPS, test de réflexes, mémoire, CPS et acuité visuelle directement sur navigateur.',
   keywords: [
@@ -48,6 +49,11 @@ export const metadata = {
     canonical: 'https://skilldrills.online/fr/drills',
     languages: getAlternateLanguages('/fr/drills'),
   },
+};
+
+export const metadata = {
+  ...legacyMetadata,
+  ...buildDirectoryMetadata('fr', 'https://skilldrills.online/fr/drills', DRILLS.length, getAlternateLanguages('/fr/drills')),
 };
 
 const breadcrumbSchema = {
@@ -165,6 +171,8 @@ const faqSchema = {
     }
   ]
 };
+
+Object.assign(collectionSchema, getDirectoryCollectionFields('fr', DRILLS.length));
 
 export default function FrenchDrillsDirectoryPage() {
   const faqs = faqSchema.mainEntity.map((item) => ({

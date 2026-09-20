@@ -6,21 +6,23 @@ import { getAlternateLanguages } from '@/lib/i18n/locales';
 import RelatedDrills from '@/components/drill/RelatedDrills';
 
 export const metadata = {
-  title: "Treino de Micro Correção de Mira – Headshots | SkillDrills",
-  description: "Treine micro correção de mira e desaceleração terminal no navegador. Domine micro-ajustes finos e precisão de headshots para Valorant e CS2 gratuitamente.",
+  title: "Treino de Mira | Microajuste para Headshots | SkillDrills",
+  description: "Treino de mira grátis no navegador: pratique microajustes após o flick, desaceleração e precisão de headshots no Valorant e CS2.",
   keywords: [
-    "treino de micro correcao mira",
-    "micro ajuste mira valorant",
+    "treino de mira",
+    "treino de mira online",
+    "treino de mira valorant",
+    "microajustes de mira",
+    "micro correção de mira",
     "micro flicks cs2",
     "ajuste fino de mira mouse",
     "treinar precisao de headshot",
     "desaceleracao de mouse fps",
     "ajuste de mira tatica",
-    "treinador de mira micro ajuste",
-    "como melhorar micro ajuste valorant",
-    "parada de mira cs2",
-    "controle de micro movimento mouse",
-    "mira de pixel valorant"
+    "desaceleração de mouse fps",
+    "precisão de headshot",
+    "treino de mira com mouse",
+    "aim trainer online"
   ],
   alternates: {
     canonical: "https://skilldrills.online/pt/drills/fps/micro-correction-precision",
@@ -31,8 +33,8 @@ export const metadata = {
     follow: true,
   },
   openGraph: {
-    title: "Treino de Micro Correção de Mira – Headshots | SkillDrills",
-    description: "Treine micro correção de mira e desaceleração terminal no navegador. Domine micro-ajustes finos e precisão de headshots para Valorant e CS2 gratuitamente.",
+    title: "Treino de Mira | Microajuste para Headshots | SkillDrills",
+    description: "Treino de mira grátis no navegador: pratique microajustes após o flick, desaceleração e precisão de headshots no Valorant e CS2.",
     url: "https://skilldrills.online/pt/drills/fps/micro-correction-precision",
     siteName: 'SkillDrills',
     locale: 'pt_BR',
@@ -40,8 +42,8 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: "Treino de Micro Correção de Mira – Headshots | SkillDrills",
-    description: "Treine micro correção de mira e desaceleração terminal no navegador. Domine micro-ajustes finos e precisão de headshots para Valorant e CS2 gratuitamente.",
+    title: "Treino de Mira | Microajuste para Headshots | SkillDrills",
+    description: "Treino de mira grátis no navegador: pratique microajustes após o flick, desaceleração e precisão de headshots no Valorant e CS2.",
   },
 };
 
@@ -65,7 +67,7 @@ export default function MicroCorrectionPage() {
       {
         "@type": "ListItem",
         "position": 3,
-        "name": "Micro Correção de Mira",
+         "name": "Treino de mira - microajustes",
         "item": "https://skilldrills.online/pt/drills/fps/micro-correction-precision"
       }
     ]
@@ -74,7 +76,7 @@ export default function MicroCorrectionPage() {
   const webAppSchema = {
     "@context": "https://schema.org",
     "@type": "WebApplication",
-    "name": "Treinador de Micro Correção de Mira SkillDrills",
+    "name": "Treino de mira - microajustes e headshots",
     "url": "https://skilldrills.online/pt/drills/fps/micro-correction-precision",
     "applicationCategory": "GameApplication",
     "operatingSystem": "Any",
@@ -89,7 +91,7 @@ export default function MicroCorrectionPage() {
   const softwareSchema = {
     "@context": "https://schema.org",
     "@type": "SoftwareApplication",
-    "name": "Treino de Micro Correção de Mira",
+    "name": "Treino de mira - microajustes e headshots",
     "applicationCategory": "GameApplication",
     "operatingSystem": "Web Browser",
     "offers": {
@@ -117,7 +119,7 @@ export default function MicroCorrectionPage() {
   const faqSchema = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
-    "dateModified": "2026-09-16",
+    "dateModified": "2026-09-20",
     "mainEntity": [
       {
         "@type": "Question",
@@ -236,8 +238,8 @@ export default function MicroCorrectionPage() {
   };
 
   const copyPt = {
-    h1Keyword: "Treino de Micro Correção de Mira",
-    h1Suffix: " – Precisão de Headshot FPS",
+    h1Keyword: "Treino de mira",
+    h1Suffix: " – Microajustes e Headshots FPS",
     subtitle: "Treine a desaceleração terminal e micro-ajustes imediatos para precisão cirúrgica de headshots.",
     statScore: "Pontuação",
     statTime: "Tempo",
@@ -246,7 +248,7 @@ export default function MicroCorrectionPage() {
     statAvgCorrection: "Correção Média",
     statMaxCombo: "Combo Máximo",
     statPeakLevel: "Nível Máximo",
-    startTitle: "Treino de Micro Correção de Mira",
+    startTitle: "Treino de mira - microajustes e headshots",
     startSubtitle: "Entrada Bruta de Hardware • Progressão Contínua e Desaceleração",
     getReady: "PREPARE-SE",
     toggleFlash: "Alternar Flash de Erro",
@@ -259,15 +261,15 @@ export default function MicroCorrectionPage() {
       { num: "3", text: "Subida de Nível", highlight: "+1 Nível / 1.400 pts", result: "Escala adaptativa" },
       { num: "4", text: "Erro / Tempo", highlight: "Penalidade", result: "Reset combo (-0,6s)" }
     ],
-    aboutTitle: "Sobre a Micro Correção de Mira",
+    aboutTitle: "Sobre o treino de mira e microajustes",
     aboutHeading: "O que é a Micro Correção de Mira?",
     aboutText: "A maioria dos movimentos de mira não ocorre em um único impulso, mas em dois: um deslocamento balístico inicial e um micro-ajuste corretivo guiado visualmente (Woodworth, 1899; Meyer et al., 1988). Este treino isola e condiciona essa segunda fase, onde a precisão de headshots é realmente definida."
   };
 
   const microCorrectionGuide = {
-    heading: "Guia de Micro Correção de Mira & Cronometria de Precisão",
+    heading: "Guia de Treino de Mira e Microajustes de Precisão",
     intro: [
-      "O Treinador de Micro Correção de Mira é um exercício sensório-motor empírico desenvolvido para isolar, calibrar e aperfeiçoar a fase secundária de correção do apontamento visual. Em jogos de tiro tático de alto rendimento como Valorant, Counter-Strike 2 e Rainbow Six Siege, confrontos competitivos são frequentemente decididos por desvios milimétricos de apenas 5 a 25 pixels.",
+      "O treino de mira com microajustes pratica a fase final de um movimento balístico: depois de chegar perto do alvo, você freia e faz um ajuste curto para centralizar a retícula. Este drill isola essa etapa, mede o tempo entre o alvo âncora e o micro-alvo e mostra quando o excesso de velocidade cria um segundo ajuste.",
       "A estrutura científica subjacente aos movimentos manuais direcionados foi formulada pioneiramente por Robert S. Woodworth (1899) em seu modelo clássico de dois componentes: um impulso balístico primário em circuito aberto que projeta o membro na direção aproximada do estímulo, seguido por uma fase de controle visual de circuito fechado governada por feedback contínuo. Esse compromisso entre velocidade e precisão foi matematizado pela Lei de Fitts (1954), em que o tempo de movimento escala com a distância e o tamanho do alvo.",
       "Mais tarde, David E. Meyer et al. (1988) apresentaram o Modelo de Submovimentos Otimizados Estocásticos, comprovando que o cérebro planeja os deslocamentos para pousar ligeiramente aquém do alvo ou em sua borda, dependendo de micro-movimentos refinados para resolver discrepâncias de coordenadas sem sofrer com oscilações inerciais descontroladas.",
       "Durante a fase de fixação foveal terminal, os olhos realizam microssacadas — pequenos movimentos oculares involuntários de alta frequência (Rolfs, 2009; Martinez-Conde et al., 2004) — para centralizar a retina e recalibrar o mapa espacial. Este treinador combina a API de Pointer Lock com cronometria de alta precisão via performance.now() (Woods et al., 2015) para eliminar oscilações no final do movimento e consolidar headshots cirúrgicos com consistência profissional.",
@@ -370,7 +372,7 @@ export default function MicroCorrectionPage() {
       <div className="max-w-4xl mx-auto px-4 pb-12">
         <RelatedDrills
           currentCategory="fps"
-          currentHref="/drills/fps/micro-correction-precision"
+          currentHref="/pt/drills/fps/micro-correction-precision"
           locale="pt"
         />
       </div>

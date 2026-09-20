@@ -349,9 +349,8 @@ export default function TargetAcquisitionPage() {
           aboutText: "Target acquisition is finding the right target and moving onto it. Basic visual features like colour and orientation are processed in parallel across the whole visual field before attention binds them into an object (Treisman & Gelade, 1980) — which is why a high-contrast target is found faster than a camouflaged one."
         }}
       />
-      <DrillGuide guide={targetAcquisitionGuide} />
+      <DrillGuide guide={targetAcquisitionGuide} singleLineTitles />
       <DrillFooter />
     </>
   );
 }
-

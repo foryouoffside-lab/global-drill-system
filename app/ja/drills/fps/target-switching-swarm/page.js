@@ -20,21 +20,22 @@ import { pickSources } from '@/lib/drillSources';
 // ============================================================
 
 export const metadata = {
-  title: "ターゲット スイッチング エイム練習 – 無料FPSフリックトレーナー | SkillDrills",
-  description: "無料のブラウザFPSターゲットスイッチング（切り替えエイム）練習ツール。動的スワーム群の高速フリック移行、ヒット確認ロス（確信躊躇）の排除、CS2やVALORANTのスプレーツランスファーを強化。",
+  title: "VALORANT ターゲット切り替え - エイム練習 | SkillDrills",
+  description: "ブラウザで無料のVALORANTターゲット切り替え練習。複数の敵を素早く渡り、スプレートランスファーと連続フリックの精度を測定します。",
   keywords: [
-    'ターゲット スイッチング エイム',
+    'VALORANT ターゲット切り替え',
     'ターゲットスイッチング',
     'スイッチング エイム',
     'マルチターゲット エイム練習',
-    'ターゲット スイッチング 練習',
-    'FPS ターゲット切り替え',
-    'VALORANT スイッチング エイム',
-    'エイム 練習 ブラウザ 無料',
-    'スプレーツランスファー 練習',
-    'CS2 エイム練習',
+    'ターゲット切り替え FPS',
+    'マルチターゲット エイム練習',
+    'スプレートランスファー',
+    '切り替え速度',
     'フリック エイム 移行',
-    'エイム 反射神経 トレーニング'
+    'エイム練習 ブラウザ 無料',
+    'CS2 エイム練習',
+    '連続フリック',
+    '複数ターゲット エイム'
   ],
   alternates: {
     canonical: "https://skilldrills.online/ja/drills/fps/target-switching-swarm",
@@ -45,8 +46,8 @@ export const metadata = {
     follow: true,
   },
   openGraph: {
-    title: 'ターゲット スイッチング エイム練習 – 無料FPSフリックトレーナー | SkillDrills',
-    description: "無料のブラウザFPSターゲットスイッチング（切り替えエイム）練習ツール。動的スワーム群の高速フリック移行、ヒット確認ロス（確信躊躇）の排除、CS2やVALORANTのスプレーツランスファーを強化。",
+    title: 'VALORANT ターゲット切り替え - エイム練習 | SkillDrills',
+    description: "ブラウザで無料のVALORANTターゲット切り替え練習。複数の敵を素早く渡り、スプレートランスファーと連続フリックの精度を測定します。",
     url: "https://skilldrills.online/ja/drills/fps/target-switching-swarm",
     siteName: 'SkillDrills',
     locale: 'ja_JP',
@@ -54,8 +55,8 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'ターゲット スイッチング エイム練習 – 無料FPSフリックトレーナー | SkillDrills',
-    description: "無料のブラウザFPSターゲットスイッチング（切り替えエイム）練習ツール。動的スワーム群の高速フリック移行、ヒット確認ロス（確信躊躇）の排除、CS2やVALORANTのスプレーツランスファーを強化。",
+    title: 'VALORANT ターゲット切り替え - エイム練習 | SkillDrills',
+    description: "ブラウザで無料のVALORANTターゲット切り替え練習。複数の敵を素早く渡り、スプレートランスファーと連続フリックの精度を測定します。",
   },
 };
 
@@ -73,10 +74,10 @@ export default function TargetSwitchingSwarmPageJa() {
   const softwareSchema = {
     "@context": "https://schema.org",
     "@type": "SoftwareApplication",
-    "name": "ターゲット スイッチング エイム練習 (Target Switching Swarm)",
+    "name": "VALORANT ターゲット切り替え - エイム練習",
     "applicationCategory": "GameApplication",
     "operatingSystem": "Web Browser",
-    "dateModified": "2026-09-11",
+    "dateModified": "2026-09-20",
     "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
     "description": "無料のブラウザFPSターゲットスイッチング練習アプリ。連続出現するスワームターゲットへの瞬時フリックとスプレーツランスファーを鍛えます。",
     "genre": "FPS Training / Target Switching",
@@ -91,10 +92,10 @@ export default function TargetSwitchingSwarmPageJa() {
   const webAppSchema = {
     "@context": "https://schema.org",
     "@type": "WebApplication",
-    "name": "ターゲット スイッチング エイム練習 (Target Switching Swarm)",
+    "name": "VALORANT ターゲット切り替え - エイム練習",
     "applicationCategory": "GameApplication",
     "operatingSystem": "Web Browser",
-    "dateModified": "2026-09-11",
+    "dateModified": "2026-09-20",
     "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
     "browserRequirements": "Pointer Lock API、JavaScript、HTML5 Canvas対応ブラウザ",
     "description": "無料のブラウザFPSターゲットスイッチング練習アプリ。連続出現するスワームターゲットへの瞬時フリックとスプレーツランスファーを鍛えます。",
@@ -104,10 +105,10 @@ export default function TargetSwitchingSwarmPageJa() {
   const videoGameSchema = {
     "@context": "https://schema.org",
     "@type": "VideoGame",
-    "name": "ターゲット スイッチング エイム練習 (Target Switching Swarm)",
+    "name": "VALORANT ターゲット切り替え - エイム練習",
     "url": "https://skilldrills.online/ja/drills/fps/target-switching-swarm",
     "description": "無料のブラウザFPSターゲットスイッチング練習アプリ。連続出現するスワームターゲットへの瞬時フリックとスプレーツランスファーを鍛えます。",
-    "dateModified": "2026-09-11",
+    "dateModified": "2026-09-20",
     "gamePlatform": "Web Browser",
     "genre": ["FPS Training", "Aim Trainer", "Target Switching"],
     "playMode": "SinglePlayer",
@@ -119,7 +120,7 @@ export default function TargetSwitchingSwarmPageJa() {
   const faqSchema = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
-    "dateModified": "2026-09-11",
+    "dateModified": "2026-09-20",
     "mainEntity": [
       {
         "@type": "Question",
@@ -242,9 +243,9 @@ export default function TargetSwitchingSwarmPageJa() {
   };
 
   const targetSwitchingGuide = {
-    heading: "ターゲット スイッチング エイム練習ガイド & マルチターゲット運動学",
+    heading: "VALORANT ターゲット切り替え：連続フリックとスプレートランスファー",
     intro: [
-      "ターゲット スイッチング スワーム（Target Switching Swarm）は、複数の敵対ターゲット間を一切の躊躇なく超高速で連続移行するための運動制御ドリルです。Counter-Strike 2やVALORANTのサイト防衛、Apex Legendsの混戦において、1対1の孤立したデュエルだけをこなしていてはクラッチに勝利できません。1体目の敵を倒した瞬間、キル確認の脳内ポーズを挟まずに2体目のカバー敵へ吸い付くようにエイムを移行させる能力が勝敗を分けます。",
+      "VALORANT ターゲット切り替え練習を探しているFPSプレイヤー向けに、このドリルは一つの敵を倒した直後に次の敵へ照準を移す時間と命中率を測定します。複数ターゲットの連続フリック、確認のための停止、スプレートランスファーの遅れをまとめて改善できます。",
       "ターゲットスイッチングの心理物理学は、フィッツの法則（Fitts, 1954）およびDavid E. Meyerら（1988）が提唱した「確率的最適化サブムーブメントモデル」に基づいています。照準動作は最初の高速弾道運動（主移動：距離の約90%をカバー）と、視覚フィードバックによる微修正（副移動）から構成されます。初心者は1キルごとに100〜250msもの時間を「倒せたかどうかの確認」に無駄遣いしますが、一流のエイマーは1体目の標的が弾け飛ぶ前に次の標的へ視覚サッケードを開始しています。",
       "密集したスワーム群からの標的選択には、特徴統合理論と前注意的視覚探索（Treisman & Gelade, 1980; Wolfe, 2007）が深く関与します。人間の視覚皮質は「視覚インデックス（FINST理論）」によって複数の空間位置を並列追跡可能であり、最短の角度移動で済む効率的な撃破ルートを瞬時に構築できます。",
       "測定精度について：すべてのイベントはブラウザのperformance.now()高精度クロックを使用し、外部サーバー通信なしで端末内でミリ秒単位で処理されます。Spectre緩和策により一般的なブラウザタイマーは約1msに丸められ、画面リフレッシュレート（60Hzで約16.7ms、144Hzで約6.9ms、240Hzで約4.1ms）に応じた量子化が発生します。5ms以内の微小な数値差は測定誤差として扱い、他者の異なるPC環境と比較するのではなく、ご自身の同一ハードウェア環境での成長指標として活用してください。"
@@ -333,9 +334,9 @@ export default function TargetSwitchingSwarmPageJa() {
       />
       <TargetSwitchingSwarmClient
         copy={{
-          h1Keyword: "ターゲット スイッチング エイム",
-          h1Suffix: " – 無料ブラウザFPSマルチターゲットフリック練習",
-          subtitle: "停止ディレイなしの高速連続フリック移行とスプレーツランスファー、視覚的インデックスを訓練。",
+          h1Keyword: "VALORANT ターゲット切り替え",
+          h1Suffix: " - マルチターゲット エイム練習",
+          subtitle: "複数の敵へ素早く照準を切り替え、連続フリックとスプレートランスファーの精度を測定できます。",
           statScore: "スコア",
           statTime: "制限時間",
           statAccuracy: "命中精度",
@@ -360,7 +361,7 @@ export default function TargetSwitchingSwarmPageJa() {
       <div className="max-w-4xl mx-auto px-4 pb-12">
         <RelatedDrills
           currentCategory="fps"
-          currentHref="/drills/fps/target-switching-swarm"
+          currentHref="/ja/drills/fps/target-switching-swarm"
           locale="ja"
         />
       </div>

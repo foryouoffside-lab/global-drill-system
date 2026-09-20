@@ -6,7 +6,7 @@ import { pickSources } from '@/lib/drillSources';
 
 // ============================================================
 // SEO RESEARCH FINDINGS — France & Francophonie (FR / FR-FR)
-// Primary Intent: jeu de mémoire visuelle en ligne, test mémoire visuo spatiale, mémoire de travail visuo spatiale
+// Native SERP intent: jeu de mémoire visuelle en ligne, test mémoire spatiale, mémoriser des motifs
 // French Context: Mémorisation de tracés géométriques vectoriels et reproduction motrice à la souris sous pression
 // High-Demand, Low-Competition Target Keywords:
 //   - "jeu de mémoire visuelle en ligne" (High-volume online brain game query)
@@ -22,27 +22,27 @@ import { pickSources } from '@/lib/drillSources';
 // ============================================================
 
 export const metadata = {
-  title: 'Jeu de Mémoire Visuelle – Mémoire Spatiale | SkillDrills',
-  description: 'Jeu de mémoire visuelle gratuit en ligne. Mémorisez des tracés de points pour développer votre mémoire spatiale et votre coordination motrice fine.',
+  title: 'Jeu de mémoire visuelle | Test spatial | SkillDrills',
+  description: 'Jeu gratuit de mémoire visuelle au navigateur. Mémorisez un tracé, reproduisez le motif et entraînez mémoire spatiale, séquençage et coordination.',
   keywords: [
-    "jeu de memoire visuelle en ligne",
-    "test memoire visuo spatiale",
-    "memoire de travail visuo spatiale",
-    "jeu de memoire visuelle gratuit",
-    "test memoire spatiale en ligne",
-    "reproduction de traces geometriques",
-    "coordination motrice fine et visuelle",
-    "test de sequencage moteur",
-    "memoire des formes et controle souris",
-    "calepin visuo spatial exercices"
+    "jeu de mémoire visuelle en ligne",
+    "test mémoire visuo-spatiale",
+    "mémoire spatiale",
+    "jeu de mémoire visuelle gratuit",
+    "test mémoire spatiale en ligne",
+    "reproduction de tracés géométriques",
+    "coordination visuomotrice",
+    "jeu de séquence mémoire",
+    "mémoire des formes et contrôle souris",
+    "tracer un parcours de mémoire"
   ],
   alternates: {
     canonical: 'https://skilldrills.online/fr/drills/physical/coordination/complex-pattern',
     languages: getAlternateLanguages('/drills/physical/coordination/complex-pattern'),
   },
   openGraph: {
-    title: 'Jeu de Mémoire Visuelle – Mémoire Spatiale | SkillDrills',
-    description: 'Jeu de mémoire visuelle gratuit en ligne. Mémorisez des tracés de points pour développer votre mémoire spatiale et votre coordination motrice fine.',
+    title: 'Jeu de mémoire visuelle | Test spatial | SkillDrills',
+    description: 'Mémorisez un tracé, reproduisez le motif et pratiquez mémoire spatiale et coordination dans un jeu gratuit au navigateur.',
     url: 'https://skilldrills.online/fr/drills/physical/coordination/complex-pattern',
     siteName: 'SkillDrills',
     locale: 'fr_FR',
@@ -50,8 +50,8 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Jeu de Mémoire Visuelle – Mémoire Spatiale | SkillDrills',
-    description: 'Jeu de mémoire visuelle gratuit en ligne. Mémorisez des tracés de points pour développer votre mémoire spatiale et votre coordination motrice fine.',
+    title: 'Jeu de mémoire visuelle | Test spatial | SkillDrills',
+    description: 'Mémorisez un tracé, reproduisez le motif et pratiquez mémoire spatiale et coordination dans un jeu gratuit au navigateur.',
   },
   robots: { index: true, follow: true },
 };
@@ -98,7 +98,10 @@ const softwareApplicationSchema = {
     "price": "0",
     "priceCurrency": "USD"
   },
-  "description": "Application web d'entraînement cognitif et moteur visant à décupler les capacités de mémorisation géométrique et la précision gestuelle du tracé à la souris."
+  "description": "Application web d'entraînement cognitif et moteur visant à décupler les capacités de mémorisation géométrique et la précision gestuelle du tracé à la souris.",
+  "url": "https://skilldrills.online/fr/drills/physical/coordination/complex-pattern",
+  "inLanguage": "fr-FR",
+  "dateModified": "2026-09-20"
 };
 
 const webApplicationSchema = {
@@ -113,7 +116,9 @@ const webApplicationSchema = {
     "@type": "Offer",
     "price": "0",
     "priceCurrency": "USD"
-  }
+  },
+  "inLanguage": "fr-FR",
+  "dateModified": "2026-09-20"
 };
 
 const videoGameSchema = {
@@ -123,12 +128,16 @@ const videoGameSchema = {
   "url": "https://skilldrills.online/fr/drills/physical/coordination/complex-pattern",
   "description": "Jeu de réflexes et d'agilité mentale demandant de mémoriser des chemins vectoriels géométriques et de les retracer fidèlement à la souris.",
   "genre": ["Action", "Brain Game", "Reflex Game", "Coordination"],
-  "gamePlatform": ["Web Browser", "Desktop", "Mobile"]
+  "gamePlatform": ["Web Browser", "Desktop", "Mobile"],
+  "inLanguage": "fr-FR",
+  "dateModified": "2026-09-20"
 };
 
 const faqSchema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
+  "inLanguage": "fr-FR",
+  "dateModified": "2026-09-20",
   "mainEntity": [
     {
       "@type": "Question",
@@ -333,8 +342,8 @@ export default function ComplexPatternFrPage() {
       />
       <ComplexPatternClient
         copy={{
-          title: 'Jeu de Mémoire Visuelle – Mémoire Spatiale | SkillDrills',
-          subtitle: 'Jeu de Mémoire Visuelle – Mémoire Spatiale | SkillDrills',
+          title: 'Jeu de mémoire visuelle',
+          subtitle: 'Mémorisez le tracé puis reproduisez-le',
           hudLabels: {
             score: "Points",
             time: "Temps",

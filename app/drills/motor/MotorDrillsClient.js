@@ -310,12 +310,12 @@ export default function MotorDrillsClient({ faqs = [] }) {
         {/* Page heading */}
         <div className="mb-8">
           <h1 className="text-2xl sm:text-3xl font-bold tracking-tight text-ink-1">
-            {t('hubs.motor.h1', 'Mouse Precision & Motor Drills')}
+            {t('hubs.motor.h1', 'Mouse Precision Training & Aim Drills')}
           </h1>
           <p className="mt-2 text-sm sm:text-base text-ink-2 leading-relaxed">
             {t(
               'hubs.motor.desc',
-              'Motor skill drills measure how precisely and how fast you can control a mouse, a keyboard or a touchscreen. They all sit on one trade-off, Fitts’s Law: movement time grows with the logarithm of the distance to a target divided by that target’s width, so speed and accuracy cannot both be maximised at once (Fitts, 1954). Free, no sign-up, and every score stays in your browser.'
+              'Free browser drills for mouse accuracy, aim control, CPS clicking, keyboard speed, and hand-eye coordination.'
             )}
           </p>
         </div>

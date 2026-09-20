@@ -5,25 +5,25 @@ import RelatedDrills from '@/components/drill/RelatedDrills';
 import { pickSources } from '@/lib/drillSources';
 
 export const metadata = {
-  title: "Go/No-Go Test: Reaktionshemmung & Kontrolle | SkillDrills",
-  description: "Wissenschaftlicher Go/No-Go Test: Klicke grüne Go-Ziele, stoppe bei roten No-Go-Signalen. Trainiere Reaktionshemmung und Impulskontrolle kostenlos online.",
+  title: "Go/No-Go-Test online | Impulskontrolle üben | SkillDrills",
+  description: "Kostenloser Go/No-Go-Test für Reaktionshemmung: bei Grün klicken, bei Rot zurückhalten. Kein Diagnosetest.",
   keywords: [
-    "go no-go test",
-    "reaktionshemmung test",
-    "impulskontrolle test",
-    "motorische hemmung psychologie",
-    "stop signal task online",
-    "exekutive funktionen go nogo",
-    "donders c reaktion",
-    "trigger discipline e-sport",
-    "horse race modell logan",
-    "reaktionszeittest hemmung",
-    "commission error fehlalarm",
-    "frontallappen impulskontrolle"
+    "Go/No-Go-Test",
+    "Impulskontrolltest",
+    "Reaktionshemmung",
+    "Reaktionshemmung Test",
+    "Impulskontrolle testen",
+    "Go No-Go online",
+    "Reaktionshemmung üben",
+    "Inhibitionstest",
+    "Fehlalarme messen",
+    "motorische Hemmung",
+    "exekutive Funktionen testen",
+    "Go-Signal No-Go-Signal"
   ],
   openGraph: {
-    title: "Go/No-Go Test: Reaktionshemmung & Kontrolle | SkillDrills",
-    description: "Reagiere auf Grün und stoppe bei Rot. Trainiere motorische Reaktionshemmung und präfrontale Impulskontrolle kostenlos online.",
+    title: "Go/No-Go-Test online | Impulskontrolle üben | SkillDrills",
+    description: "Bei Grün reagieren, bei Rot zurückhalten: kostenloser Go/No-Go-Test für Reaktionshemmung und Fehlalarme.",
     type: 'article',
     url: 'https://skilldrills.online/de/drills/visual/reaction-speed/go/no-go',
     siteName: 'SkillDrills',
@@ -31,8 +31,8 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: "Go/No-Go Test: Reaktionshemmung & Kontrolle | SkillDrills",
-    description: "Kostenloser neurokognitiver Go/No-Go Test: Messe motorische Notbremsung, Fehlalarmquoten und Trigger-Disziplin.",
+    title: "Go/No-Go-Test online | Impulskontrolle üben | SkillDrills",
+    description: "Go/No-Go-Übung für Reaktionshemmung: bei Grün klicken, bei Rot zurückhalten.",
   },
   robots: { index: true, follow: true },
   alternates: {
@@ -68,7 +68,7 @@ const softwareApplicationSchema = {
     "Differenzierte Erfassung von Commission Errors (Fehlalarmen) und Omission Errors",
     "Vollständig lokale Speicherung im Browser ohne Server-Telemetrie"
   ],
-  "dateModified": "2026-09-05"
+  "dateModified": "2026-09-20"
 };
 
 const webAppSchema = {
@@ -77,7 +77,7 @@ const webAppSchema = {
   "name": "Go/No-Go Reaktionshemmungs-Test | SkillDrills",
   "alternateName": "Go/No-Go Pro",
   "url": "https://skilldrills.online/de/drills/visual/reaction-speed/go/no-go",
-  "dateModified": "2026-09-05",
+  "dateModified": "2026-09-20",
   "description": "Kostenloses neurokognitives Online-Training zur Reaktionshemmung: Reagiere auf grüne Go-Ziele und stoppe die Fingerbewegung bei roten No-Go-Reizen.",
   "applicationCategory": "EducationalApplication",
   "operatingSystem": "All",
@@ -105,7 +105,7 @@ const howToSchema = {
   "@context": "https://schema.org",
   "@type": "HowTo",
   "name": "So absolvierst du den Go/No-Go Test",
-  "dateModified": "2026-09-05",
+  "dateModified": "2026-09-20",
   "description": "Schritt-für-Schritt-Anleitung zur Messung und Optimierung deiner motorischen Reaktionshemmung im Go/No-Go Paradigma.",
   "step": [
     {
@@ -142,7 +142,7 @@ const howToSchema = {
 const faqSchema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
-  "dateModified": "2026-09-05",
+  "dateModified": "2026-09-20",
   "mainEntity": [
     {
       "@type": "Question",
@@ -228,7 +228,7 @@ const faqSchema = {
 };
 
 const goNoGoGuide = {
-  heading: "Neurowissenschaftliche Standards für Reaktionshemmung & Impulskontrolle",
+  heading: "Go/No-Go-Test: Reaktionshemmung und Impulskontrolle",
   intro: [
     "Reaktionshemmung (Response Inhibition) ist die fundamentale exekutive Kontrollfunktion des menschlichen Gehirns, die es gestattet, bereits vorbereitete motorische Handlungen blitzschnell zu stoppen, wenn sie unvorteilhaft oder fehlerhaft sind. In dynamischen Sportarten, beim Autofahren und im kompetitiven E-Sport entscheidet die Fähigkeit zur Verhaltensbremsung oft über Sieg oder Niederlage.",
     "Die psychophysikalischen Grundlagen gehen auf Franciscus Cornelis Donders (1868) zurück, der mit der 'C-Reaktion' nachwies, dass die selektive Unterdrückung einer Reaktion im Vergleich zur reinen Reaktionszeit zusätzliche kognitive Diskriminationszeit beansprucht.",
@@ -236,7 +236,7 @@ const goNoGoGuide = {
     "Methodik & Latenz-Standardisierung: Alle Reizpräsentationen und Klickeingaben werden hochpräzise über die browserinterne performance.now() API erfasst. Hardware-Latenzen durch Monitor-Quantisierung und USB-Abtastung werden nach Woods et al. (2015) minimiert, während alle Messwerte rein lokal verarbeitet werden."
   ],
   benchmarks: {
-    title: "Leistungsstufen der Reaktionshemmung (Wissenschaftliche Richtwerte)",
+    title: "Orientierungswerte für Reaktionshemmung und Fehlalarme",
     headers: ["Leistungsband", "Fehlalarmquote (CER)", "Punkte & Combo-Schwelle", "Neuromuskuläres & Exekutives Profil"],
     rows: [
       ["Tier 1: Apex Executive Bremsung", "< 2.0% CER", "16.000+ Pkt. | Combo 30x+", "Perfekte rIFC-STN Hyperdirekt-Hemmung; vollständige Entkopplung von Reizaufblitzung und Muskelkontraktion."],
@@ -248,7 +248,7 @@ const goNoGoGuide = {
     note: "Diese Richtwerte basieren auf klassischer mentaler Chronometrie und Hemmungsliteratur (Donders, 1868; Logan et al., 1984; Robertson et al., 1997; Aron et al., 2014). Tagesform, Koffeinkonsum und Bildschirmlatenz beeinflussen die Resultate."
   },
   techniques: {
-    title: "Methoden zur Optimierung der Impulskontrolle",
+    title: "Impulskontrolle im Go/No-Go-Test trainieren",
     items: [
       {
         name: "Farberkennung vor motorischer Voraktivierung",
@@ -301,7 +301,7 @@ export default function ChromaSyncPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(howToSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(videoGameSchema) }} />
-      <ChromaSyncClient copy={{ title: "Go/No-Go Impulskontrolle & Reaktionshemmung" }} />
+      <ChromaSyncClient copy={{ title: "Go/No-Go-Test (Impulskontrolle)", subtitle: "Bei Grün reagieren, bei Rot zurückhalten" }} />
       <DrillGuide guide={goNoGoGuide} />
       <div className="max-w-6xl mx-auto px-4 pb-12">
         <RelatedDrills currentCategory="visual" currentHref="https://skilldrills.online/de/drills/visual/reaction-speed/go/no-go" />

@@ -1,25 +1,26 @@
 import SplitScreenTrackingClient from '@/app/drills/visual-tracking/split-screen-tracking/SplitScreenTrackingClientLoader';
 import DrillGuide from '@/components/drill/DrillGuide';
 import RelatedDrills from '@/components/drill/RelatedDrills';
+import DrillFooter from '@/components/drill/DrillFooter';
 import { getAlternateLanguages } from '@/lib/i18n/locales';
 import { pickSources } from '@/lib/drillSources';
 
 export const metadata = {
-  title: "Poursuite sur Écran Scindé – SkillDrills",
-  description: "Entrainez lattention visuelle divisee en suivant deux cibles orthogonales simultanees sur ecran scinde. Exercice bilateral gratuit et en ligne.",
+  title: "Poursuite visuelle sur écran partagé | SkillDrills",
+  description: "Suivez deux cibles dans des zones séparées de l'écran. Exercice gratuit avec attention divisée, ancrage du regard et écart latéral.",
   keywords: [
-    "entrainement attention divisee ecran divise",
-    "poursuite visuelle sur ecran scinde",
-    "exercice oculaire attention bilaterale",
-    "vision peripherique simultanee",
-    "poursuite orthogonale double cible",
-    "suivi de cibles multiples mot",
-    "eliminer vision tunnel exercice",
-    "coordination visuelle bihemispherique",
-    "poursuite visuelle ecran partage",
-    "agilite visuelle attention diffuse",
-    "exercice de focalisation peripherique",
-    "entrainement vision peripherique esport"
+    "entraînement attention divisée écran partagé",
+    "poursuite visuelle sur écran partagé",
+    "exercice oculaire attention bilatérale",
+    "vision périphérique simultanée",
+    "poursuite de cibles multiples",
+    "exercice contre la vision tunnel",
+    "attention visuelle divisée entraînement",
+    "coordination visuelle bilatérale",
+    "poursuite visuelle écran partagé",
+    "exercice de focalisation périphérique",
+    "suivi de deux cibles visuelles",
+    "entraînement vision périphérique jeu"
   ],
   alternates: {
     canonical: "https://skilldrills.online/fr/drills/visual-tracking/split-screen-tracking",
@@ -27,8 +28,8 @@ export const metadata = {
   },
   robots: { index: true, follow: true },
   openGraph: {
-    title: "Poursuite sur Écran Scindé – SkillDrills",
-    description: "Entrainez lattention visuelle divisee en suivant deux cibles orthogonales simultanees sur ecran scinde. Exercice bilateral gratuit et en ligne.",
+    title: "Poursuite visuelle sur écran partagé | SkillDrills",
+    description: "Suivez deux cibles dans des zones séparées de l'écran. Exercice gratuit avec attention divisée, ancrage du regard et écart latéral.",
     url: "https://skilldrills.online/fr/drills/visual-tracking/split-screen-tracking",
     siteName: 'SkillDrills',
     locale: 'fr_FR',
@@ -36,8 +37,8 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: "Poursuite sur Écran Scindé – SkillDrills",
-    description: "Entrainez lattention visuelle divisee en suivant deux cibles orthogonales simultanees sur ecran scinde. Exercice bilateral gratuit et en ligne.",
+    title: "Poursuite visuelle sur écran partagé | SkillDrills",
+    description: "Suivez deux cibles dans des zones séparées de l'écran. Exercice gratuit avec attention divisée, ancrage du regard et écart latéral.",
   },
 };
 
@@ -83,7 +84,8 @@ const softwareApplicationSchema = {
     "price": "0.00",
     "priceCurrency": "USD"
   },
-  "description": "Application dentrainement visuel developpant lattention divisee bimodal et le suivi parallele de trajectoires orthogonales."
+  "description": "Outil de pratique visuelle pour observer l'attention divisée et le suivi bilatéral.",
+  "dateModified": "2026-09-20"
 };
 
 const webAppSchema = {
@@ -93,7 +95,8 @@ const webAppSchema = {
   "url": "https://skilldrills.online/fr/drills/visual-tracking/split-screen-tracking",
   "applicationCategory": "SportsApplication",
   "operatingSystem": "Tous les navigateurs modernes",
-  "browserRequirements": "Nécessite le support de JavaScript et HTML5 Canvas"
+  "browserRequirements": "Nécessite le support de JavaScript et HTML5 Canvas",
+  "dateModified": "2026-09-20"
 };
 
 const videoGameSchema = {
@@ -103,7 +106,8 @@ const videoGameSchema = {
   "description": "Exercice dattention visuelle bimanuelle exigeant la surveillance simultanee de deux cibles en translation orthogonale.",
   "genre": ["Entraînement Visuel", "Attention Divisée", "Entraînement des Réflexes"],
   "playMode": "SinglePlayer",
-  "gamePlatform": "Navigateur Web"
+  "gamePlatform": "Navigateur Web",
+  "dateModified": "2026-09-20"
 };
 
 const howToSchema = {
@@ -136,7 +140,8 @@ const howToSchema = {
       "name": "Supprimez l'Alternance Saccadique",
       "text": "Evitez de faire rebondir le regard dun cote a lautre pour ne pas creer de suppression saccadique genante."
     }
-  ]
+  ],
+  "dateModified": "2026-09-20"
 };
 
 const faqSchema = {
@@ -223,7 +228,8 @@ const faqSchema = {
         "text": "2 a 3 passages de 60 secondes par jour (environ 5 minutes) constituent une charge ideale pour stimuler la plasticite sans epuisement perceptif."
       }
     }
-  ]
+  ],
+  "dateModified": "2026-09-20"
 };
 
 const guideProps = {
@@ -270,18 +276,24 @@ const guideProps = {
       }
     ]
   },
+  steps: [
+    { title: "Fixez la ligne centrale", text: "Regardez doucement le centre de l'écran et percevez les deux cibles sans en fixer une directement." },
+    { title: "Séparez les deux mouvements", text: "Lisez le mouvement vertical à gauche et le mouvement horizontal à droite comme deux rythmes distincts." },
+    { title: "Comparez les pertes latérales", text: "Après chaque manche, vérifiez quelle cible a été perdue et si l'ancrage central est resté stable." },
+    { title: "Augmentez progressivement la vitesse", text: "Accélérez seulement lorsque la précision et l'équilibre entre les deux côtés restent réguliers." }
+  ],
   faqs: faqSchema.mainEntity.map(item => ({
     q: item.name,
     a: item.acceptedAnswer.text
   })),
   sources: pickSources('pylyshyn1988', 'alvarez2005', 'green2006', 'cavanagh2005', 'woods2015', 'leigh2015'),
   related: [
-    { href: "/fr/drills/visual-tracking/constant-slow-pursuit", label: "Exercice de Poursuite Lente Constante (Constant Slow)" },
-    { href: "/fr/drills/visual-tracking/directional-chaos-pursuit", label: "Poursuite en Chaos Directionnel (Directional Chaos)" },
-    { href: "/fr/drills/visual-tracking/dynamic-evasion-pursuit", label: "Poursuite avec Évasion Dynamique (Dynamic Evasion)" },
-    { href: "/fr/drills/visual-tracking/ghosting-suppress-pursuit", label: "Suppression d'Images Fantômes (Ghosting Suppress)" },
-    { href: "/fr/drills/visual-tracking/infinity-pursuit", label: "Exercice Oculaire en Huit (Infinity)" },
-    { href: "/fr/drills/visual-tracking/sine-wave-pursuit", label: "Poursuite Oculaire en Onde Sinusoïdale (Sine Wave)" }
+    { href: "/fr/drills/visual-tracking/constant-slow-pursuit", label: "Exercice de poursuite lente constante" },
+    { href: "/fr/drills/visual-tracking/directional-chaos-pursuit", label: "Poursuite avec changements de direction" },
+    { href: "/fr/drills/visual-tracking/dynamic-evasion-pursuit", label: "Poursuite de cibles qui esquivent" },
+    { href: "/fr/drills/visual-tracking/ghosting-suppress-pursuit", label: "Suppression des images fantômes" },
+    { href: "/fr/drills/visual-tracking/infinity-pursuit", label: "Exercice oculaire en forme de huit" },
+    { href: "/fr/drills/visual-tracking/sine-wave-pursuit", label: "Poursuite visuelle en onde sinusoïdale" }
   ]
 };
 
@@ -295,11 +307,12 @@ export default function SplitScreenTrackingPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(howToSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
 
-      <SplitScreenTrackingClient copy={{ title: "Poursuite sur Écran Scindé", subtitle: "Test d'Attention Visuelle Divisée" }} />
+      <SplitScreenTrackingClient copy={{ title: "Poursuite visuelle sur écran partagé", subtitle: "Suivez deux cibles dans des zones séparées" }} />
       <DrillGuide guide={guideProps} />
       <div className="max-w-6xl mx-auto px-4 pb-12">
         <RelatedDrills currentCategory="visual-tracking" currentHref="https://skilldrills.online/fr/drills/visual-tracking/split-screen-tracking" />
       </div>
+      <DrillFooter />
     </>
   );
 }

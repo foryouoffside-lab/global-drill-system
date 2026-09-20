@@ -6,21 +6,19 @@ import { getAlternateLanguages } from '@/lib/i18n/locales';
 import RelatedDrills from '@/components/drill/RelatedDrills';
 
 export const metadata = {
-  title: "Flow State Aim Trainer – FPS Fokus Training | SkillDrills",
-  description: "Kostenloser Flow State Aim Trainer. Trainiere Konzentrationsausdauer, Smooth Pursuit Tracking und erreiche den mentalen Flow-Zustand für FPS-Gaming.",
+  title: "FPS Fokus Training | Flow Aim Trainer | SkillDrills",
+  description: "Kostenloses FPS-Fokus-Training im Browser: Übe Konzentrationsausdauer und ruhiges Tracking mit einer Schwierigkeit, die zu deinem Aim passt.",
   keywords: [
-    "Flow State Aim Trainer",
-    "Flow Zustand Gaming",
     "FPS Fokus Training",
+    "Flow-Zustand Gaming",
     "Konzentration beim Zielen",
-    "Smooth Pursuit Tracking FPS",
-    "Konzentrationsausdauer Shooter",
-    "Aim Training Tunnelblick",
+    "Smooth Pursuit Tracking",
+    "Aim Ausdauer",
     "Flow Zustand erreichen Gaming",
-    "Kognitiver Aim Trainer",
-    "Aim Ausdauer verbessern",
+    "Aim Training Routine",
     "Fokus Training Valorant",
-    "Aim Trainer kostenlos"
+    "Aim Trainer online",
+    "Konzentration Shooter"
   ],
   alternates: {
     canonical: "https://skilldrills.online/de/drills/fps/flow-state",
@@ -31,8 +29,8 @@ export const metadata = {
     follow: true,
   },
   openGraph: {
-    title: "Flow State Aim Trainer – FPS Fokus Training | SkillDrills",
-    description: "Kostenloser Flow State Aim Trainer. Trainiere Konzentrationsausdauer, Smooth Pursuit Tracking und erreiche den mentalen Flow-Zustand für FPS-Gaming.",
+    title: "FPS Fokus Training | Flow Aim Trainer | SkillDrills",
+    description: "Übe Konzentrationsausdauer und ruhiges Tracking im kostenlosen Browser-Trainer für FPS. Stelle die Schwierigkeit passend zu deinem Aim ein.",
     url: "https://skilldrills.online/de/drills/fps/flow-state",
     siteName: 'SkillDrills',
     locale: 'de_DE',
@@ -40,8 +38,8 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: "Flow State Aim Trainer – FPS Fokus Training | SkillDrills",
-    description: "Kostenloser Flow State Aim Trainer. Trainiere Konzentrationsausdauer, Smooth Pursuit Tracking und erreiche den mentalen Flow-Zustand für FPS-Gaming.",
+    title: "FPS Fokus Training | Flow Aim Trainer | SkillDrills",
+    description: "Übe Konzentrationsausdauer und ruhiges Tracking im kostenlosen Browser-Trainer für FPS. Stelle die Schwierigkeit passend zu deinem Aim ein.",
   },
 };
 
@@ -52,14 +50,14 @@ export default function GermanFlowStatePage() {
     "itemListElement": [
       { "@type": "ListItem", "position": 1, "name": "SkillDrills", "item": "https://skilldrills.online/de" },
       { "@type": "ListItem", "position": 2, "name": "FPS Training", "item": "https://skilldrills.online/de/drills/fps" },
-      { "@type": "ListItem", "position": 3, "name": "Flow State Aim Trainer", "item": "https://skilldrills.online/de/drills/fps/flow-state" }
+      { "@type": "ListItem", "position": 3, "name": "FPS Fokus Training", "item": "https://skilldrills.online/de/drills/fps/flow-state" }
     ]
   };
 
   const webAppSchema = {
     "@context": "https://schema.org",
     "@type": "WebApplication",
-    "name": "Flow State Aim Trainer",
+    "name": "FPS Fokus Training",
     "url": "https://skilldrills.online/de/drills/fps/flow-state",
     "applicationCategory": "GameApplication",
     "operatingSystem": "All",
@@ -76,10 +74,10 @@ export default function GermanFlowStatePage() {
   const softwareSchema = {
     "@context": "https://schema.org",
     "@type": "SoftwareApplication",
-    "name": "Flow State Aim Trainer",
+    "name": "FPS Fokus Training",
     "applicationCategory": "GameApplication",
     "operatingSystem": "Web Browser",
-    "dateModified": "2026-09-15",
+    "dateModified": "2026-09-20",
     "inLanguage": "de",
     "offers": { "@type": "Offer", "price": "0", "priceCurrency": "EUR" },
     "description": "Trainiere Konzentrationsausdauer, Daueraufmerksamkeit und Flow-Zustand-Tracking für kompetitive Shooter.",
@@ -95,10 +93,10 @@ export default function GermanFlowStatePage() {
   const videoGameSchema = {
     "@context": "https://schema.org",
     "@type": "VideoGame",
-    "name": "Flow State Aim Trainer",
+    "name": "FPS Fokus Training",
     "url": "https://skilldrills.online/de/drills/fps/flow-state",
     "description": "Trainiere Konzentrationsausdauer, Daueraufmerksamkeit und Flow-Zustand-Tracking für kompetitive Shooter.",
-    "dateModified": "2026-09-15",
+    "dateModified": "2026-09-20",
     "inLanguage": "de",
     "gamePlatform": "Web Browser",
     "genre": ["FPS Training", "Aim Trainer", "Cognitive Focus"],
@@ -111,7 +109,7 @@ export default function GermanFlowStatePage() {
   const faqSchema = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
-    "dateModified": "2026-09-15",
+    "dateModified": "2026-09-20",
     "mainEntity": [
       {
         "@type": "Question",
@@ -234,9 +232,9 @@ export default function GermanFlowStatePage() {
   };
 
   const flowStateGuide = {
-    heading: "Flow-State-Induktion Guide & Kognitive Fokus-Benchmarks",
+    heading: "FPS-Fokus-Training und Flow-State-Benchmarks",
     intro: [
-      "Der Flow State Trainer verbindet Erkenntnisse der Kognitionspsychologie mit motorischer Neurowissenschaft, um gezielt psychologischen Flow, anhaltende Aufmerksamkeit und präzises Smooth Pursuit Tracking zu fördern. Basierend auf der Pionierarbeit von Mihaly Csikszentmihalyi (1975, 1990) beschreibt der Flow-Zustand jene optimale Balance, in der wahrgenommene Herausforderung und motorische Fähigkeiten im perfekten Einklang stehen, sodass Selbstzweifel und bewusste Zögerlichkeiten verschwinden.",
+      "FPS-Fokus-Training bedeutet, ein Ziel über mehrere Durchgänge ruhig zu verfolgen, Ablenkungen zu reduzieren und die Schwierigkeit an das eigene Aim anzupassen. Dieser Drill misst Tracking-Genauigkeit und Konzentrationsausdauer; er verspricht keinen erzwungenen Flow, sondern zeigt, wann deine Aufmerksamkeit und Bewegungskontrolle nachlassen.",
       "Ergänzend hierzu erklärt Arne Dietrichs Hypothese der transienten Hypofrontalität (2004) den zugrundeliegenden neurobiologischen Zustand: Durch die selektive Herunterregulierung des dorsolateralen präfrontalen Kortex (DLPFC) wird die motorische Steuerung primär an Basalganglien und Kleinhirn übergeben. In kompetitiven Ego-Shootern befreit dieser Zustand die Reflexe von analytischem Überdenken und ermöglicht instinktive Mikrokorrekturen unter Höchstgeschwindigkeit.",
       "Unterstützt durch hochauflösende Zeitmessung via performance.now() (Woods et al., 2015) und organisch fließende Bézier-Kurventrajektorien (Krauzlis, 2004; Posner & Petersen, 1990) bietet diese Übung die optimale, installationsfreie Grundlage zur Festigung mentaler Ausdauer und Auslöschung von Zielfehlern.",
       "Messmethodik: Jedes Ereignis wird mit dem hochauflösenden performance.now()-Zeitstempel deines Browsers lokal erfasst – es werden keine Spieldaten hochgeladen. Zu beachten: Aus Sicherheitsgründen (Spectre-Schutz) runden Browser Zeitmessungen auf rund 1 ms. Bildschirme quantisieren die Darstellung auf Bildintervalle (~16,7 ms bei 60 Hz, 6,9 ms bei 144 Hz und 4,1 ms bei 240 Hz nach Woods et al., 2015). Unterschiede unter 5 ms stellen messtechnisches Rauschen dar. Vergleiche deine Ergebnisse daher primär auf derselben Hardware."
@@ -298,8 +296,8 @@ export default function GermanFlowStatePage() {
   };
 
   const copyDe = {
-    h1Keyword: "Flow State Aim Trainer",
-    h1Suffix: " – FPS Fokus & Konzentration",
+    h1Keyword: "FPS Fokus Training",
+    h1Suffix: " – Flow Aim Trainer",
     statScore: "Punkte",
     statTime: "Verbleibende Zeit",
     statAccuracy: "Tracking-Präzision",
@@ -347,7 +345,7 @@ export default function GermanFlowStatePage() {
       />
       <FlowStateClient copy={copyDe} />
       <div className="max-w-6xl mx-auto px-4 w-full pb-12">
-        <RelatedDrills currentCategory="fps" currentHref="/drills/fps/flow-state" locale="de" />
+        <RelatedDrills currentCategory="fps" currentHref="/de/drills/fps/flow-state" locale="de" />
       </div>
       <DrillGuide guide={flowStateGuide} />
       <DrillFooter />

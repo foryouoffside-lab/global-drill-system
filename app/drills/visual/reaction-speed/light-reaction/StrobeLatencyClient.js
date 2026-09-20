@@ -580,9 +580,6 @@ export default function StrobeLatencyClient({ copy } = {}) {
             <h1 className="text-2xl sm:text-3xl font-black tracking-tight text-white">
               <span data-seo-kw="1">{copy?.title || "Light Reaction Reflex Test"}</span>
             </h1>
-            <p className="text-sm text-slate-400 mt-1 leading-relaxed">
-              {copy?.description || "Simple visual reaction time is how long it takes to respond to a light or a flash when you already know what to do — no choice, no decision. Healthy adults typically land around 200–250 ms (Woods et al., 2015; Kosinski, 2008). It is not a reflex: a true spinal reflex runs in tens of milliseconds, while this involves the visual cortex and motor cortex, which is why it is roughly ten times slower."}
-            </p>
           </div>
         )}
 
@@ -758,7 +755,7 @@ export default function StrobeLatencyClient({ copy } = {}) {
                     <Brain className="w-4 h-4 text-amber-400" /> What Is Light Reaction Training?
                   </h3>
                   <p className="text-sm leading-relaxed mb-3">
-                    <strong>Light Reaction Training</strong> measures visual motor latency and raw reflex response speed. The <strong>Light Reaction drill</strong> presents a central target that flashes white at unpredictable millisecond intervals, challenging you to react instantly upon visual stimulus onset.
+                    <strong>Light Reaction Training</strong> measures visual motor latency and raw reflex response speed. The <strong>Light Reaction drill</strong> presents a central target that flashes white at unpredictable millisecond intervals, challenging you to react instantly upon visual stimulus onset. Healthy adults typically land around 200–250 ms (Woods et al., 2015; Kosinski, 2008). It is not a reflex: a true spinal reflex runs in tens of milliseconds, while this involves the visual cortex and motor cortex, which is why it is roughly ten times slower.
                   </p>
                   <p className="text-sm leading-relaxed">
                     By training with randomized strobe intervals, you reduce visual reaction latency and build millisecond-level reflex precision for athletics and competitive esports.

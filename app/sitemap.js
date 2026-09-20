@@ -52,6 +52,36 @@ const UPDATED = {
 // 2026-08-25: title + H1 sub-line + internal anchor text retargeted onto
 // measured Bing search demand.
 const UPDATED_OVERRIDES = {
+  '/drills/physical/reflex-training/drop-catch': '2026-09-20',
+  '/drills/physical/reflex-training/quick-dodge': '2026-09-20',
+  '/drills/physical/reflex-training/reaction-chain': '2026-09-20',
+  '/drills/physical/balance-training/stability-challenge': '2026-09-20',
+  '/drills/physical/coordination/complex-pattern': '2026-09-20',
+  '/drills/physical/coordination/cross-body-movement': '2026-09-20',
+  '/drills/physical/coordination/dynamic-grid-evasion': '2026-09-20',
+  '/drills/physical/fitness/agility-ladder': '2026-09-20',
+  '/drills/physical/fitness/jump-sequence': '2026-09-20',
+  '/drills/physical/fitness/speed-drill': '2026-09-20',
+  '/drills/visual/depth-perception/distance-judgment': '2026-09-20',
+  '/drills/visual/reaction-speed/light-reaction': '2026-09-20',
+  '/drills/visual/reaction-speed/go/no-go': '2026-09-20',
+  '/drills/visual/visual-recognition/visual-search': '2026-09-20',
+  '/drills/visual-tracking/constant-slow-pursuit': '2026-09-20',
+  '/drills/visual-tracking/directional-chaos-pursuit': '2026-09-20',
+  '/drills/visual-tracking/dynamic-evasion-pursuit': '2026-09-20',
+  '/drills/visual-tracking/ghosting-suppress-pursuit': '2026-09-20',
+  '/drills/visual-tracking/infinity-pursuit': '2026-09-20',
+  '/drills/visual-tracking/momentum-teleport-pursuit': '2026-09-20',
+    '/drills/visual-tracking/peripheral-ping-pursuit': '2026-09-20',
+    '/drills/visual-tracking/predictive-pursuit': '2026-09-20',
+    '/drills/visual-tracking/sine-wave-pursuit': '2026-09-20',
+  '/drills/visual-tracking/spatial-shift-pursuit': '2026-09-20',
+  '/drills/visual-tracking/split-screen-tracking': '2026-09-20',
+  '/drills/visual-tracking/staircase-step': '2026-09-20',
+  '/drills/visual-tracking/strobe-prediction-pursuit': '2026-09-20',
+  '/drills/visual-tracking/triangular-pursuit': '2026-09-20',
+  '/drills/visual-tracking/zig-zag-path-pursuit': '2026-09-20',
+  '/drills/visual/tracking-accuracy/moving-target': '2026-09-20',
   '/drills/motor/movement-speed/rapid-tapping': '2026-08-25',
   '/drills/motor/movement-speed/keyboard-recognition': '2026-08-25',
   '/drills/motor/hand-eye-coordination/precision-flick-shot': '2026-08-25',
@@ -62,15 +92,19 @@ const UPDATED_OVERRIDES = {
   '/drills/memory/short-term-memory/color-sequence': '2026-08-25',
   '/drills/memory/short-term-memory/word-recall': '2026-08-25',
   '/drills/memory/spatial-memory/grid-memorization': '2026-08-25',
-  '/drills/physical/reflex-training/peripheral-threat-sweeper': '2026-08-25',
-  '/drills/visual/tracking-accuracy/pursuit-tracker': '2026-08-25',
-  // Hub titles retargeted the same day. /drills, /drills/visual and
+  '/drills/physical/reflex-training/peripheral-threat-sweeper': '2026-09-20',
+  '/drills/visual/tracking-accuracy/pursuit-tracker': '2026-09-20',
+  '/drills/visual/tracking-accuracy/multiple-targets': '2026-09-20',
+  '/drills/visual/visual-recognition/entropic-grid': '2026-09-20',
+  '/drills/visual/visual-recognition/rhythm-anomaly': '2026-09-20',
+  '/drills/visual': '2026-09-20',
+  // Hub titles retargeted the same day. /drills and /drills/visual-tracking
   // /drills/visual-tracking were deliberately left alone, so they are absent.
   '/drills/cognitive': '2026-08-25',
   '/drills/memory': '2026-08-25',
   '/drills/fps': '2026-08-25',
   '/drills/motor': '2026-08-25',
-  '/drills/physical': '2026-08-25',
+  '/drills/physical': '2026-09-20',
   '/drills/reaction-speed': '2026-08-25',
 };
 
@@ -148,7 +182,7 @@ export default async function sitemap() {
   // app/pt but not app/ko (or vice versa) cannot silently ship as a 404 in
   // the sitemap. LOCALIZED_ROUTES is the same list the language switcher and
   // the header search resolve against.
-  const LOCALIZED_PRIORITY = {
+const LOCALIZED_PRIORITY = {
     '/': 0.9,
     '/drills': 0.9,
     '/drills/fps': 0.9,
@@ -164,7 +198,7 @@ export default async function sitemap() {
         .map((route) =>
           entry(
             localeUrl(loc, route),
-            UPDATED.localized,
+            UPDATED_OVERRIDES[route] ?? UPDATED.localized,
             'weekly',
             LOCALIZED_PRIORITY[route] ?? 0.8
           )

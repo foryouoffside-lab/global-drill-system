@@ -6,21 +6,19 @@ import { pickSources } from '@/lib/drillSources';
 import RelatedDrills from '@/components/drill/RelatedDrills';
 
 export const metadata = {
-  title: "Entrenamiento de Foco FPS – Estado de Flow | SkillDrills",
-  description: "Entrena el estado de flow y foco para shooters en el navegador. Desarrolla enfoque sostenido y tracking suave para rendir al máximo en CS2 y Valorant.",
+  title: "Concentración FPS | Entrenamiento de Flow | SkillDrills",
+  description: "Entrenamiento gratis de concentración para FPS: mantén el ritmo de la puntería, ajusta el reto a tu nivel y mide tu tracking suave.",
   keywords: [
-    "entrenamiento de foco fps",
-    "estado de flow punteria",
-    "como entrar en la zona valorant",
-    "entrenar la concentracion shooters",
-    "punteria en estado de flujo",
-    "como mantener la calma en clutches",
-    "ejercicios de resistencia mental fps",
-    "entrenador de tracking suave",
-    "hipofrontalidad transitoria shooters",
-    "como no desconcentrarse cs2",
-    "rutina de enfoque mental gaming",
-    "aim trainer flow state gratis"
+    "entrenamiento de concentración FPS",
+    "estado de flow gaming",
+    "entrar en la zona Valorant",
+    "concentración para jugar FPS",
+    "puntería en estado de flow",
+    "tracking suave",
+    "cómo mantener el foco en CS2",
+    "rutina de enfoque gaming",
+    "entrenamiento de resistencia mental FPS",
+    "aim trainer flow gratis"
   ],
   alternates: {
     canonical: "https://skilldrills.online/es/drills/fps/flow-state",
@@ -31,8 +29,8 @@ export const metadata = {
     follow: true,
   },
   openGraph: {
-    title: "Entrenamiento de Foco FPS – Estado de Flow | SkillDrills",
-    description: "Entrena el estado de flow y foco para shooters en el navegador. Desarrolla enfoque sostenido y tracking suave para rendir al máximo en CS2 y Valorant.",
+    title: "Concentración FPS | Entrenamiento de Flow | SkillDrills",
+    description: "Mantén el ritmo de la puntería y reduce distracciones en este entrenamiento FPS gratuito. Ajusta el reto y revisa tu tracking.",
     url: "https://skilldrills.online/es/drills/fps/flow-state",
     siteName: 'SkillDrills',
     locale: 'es_ES',
@@ -40,8 +38,8 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: "Entrenamiento de Foco FPS – Estado de Flow | SkillDrills",
-    description: "Entrena el estado de flow y foco para shooters en el navegador. Desarrolla enfoque sostenido y tracking suave para rendir al máximo en CS2 y Valorant.",
+    title: "Concentración FPS | Entrenamiento de Flow | SkillDrills",
+    description: "Mantén el ritmo de la puntería y reduce distracciones en este entrenamiento FPS gratuito. Ajusta el reto y revisa tu tracking.",
   },
 };
 
@@ -52,14 +50,14 @@ export default function FlowStateEsPage() {
     "itemListElement": [
       { "@type": "ListItem", "position": 1, "name": "SkillDrills", "item": "https://skilldrills.online/es" },
       { "@type": "ListItem", "position": 2, "name": "Entrenamientos FPS", "item": "https://skilldrills.online/es/drills/fps" },
-      { "@type": "ListItem", "position": 3, "name": "Entrenamiento de Foco FPS", "item": "https://skilldrills.online/es/drills/fps/flow-state" }
+      { "@type": "ListItem", "position": 3, "name": "Concentración FPS", "item": "https://skilldrills.online/es/drills/fps/flow-state" }
     ]
   };
 
   const webAppSchema = {
     "@context": "https://schema.org",
     "@type": "WebApplication",
-    "name": "Entrenador de Foco y Estado de Flow FPS",
+    "name": "Concentración FPS",
     "url": "https://skilldrills.online/es/drills/fps/flow-state",
     "applicationCategory": "GameApplication",
     "operatingSystem": "All",
@@ -75,14 +73,14 @@ export default function FlowStateEsPage() {
   const softwareSchema = {
     "@context": "https://schema.org",
     "@type": "SoftwareApplication",
-    "name": "Entrenador de Flow State SkillDrills",
+    "name": "Concentración FPS",
     "applicationCategory": "GameApplication",
     "operatingSystem": "Web Browser",
     "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
     "description": "Herramienta científica de entrenamiento psicomotor para inducir el estado de zona y resistencia atencional en deportes electrónicos.",
     "genre": "Entrenamiento FPS / Foco Mental",
     "url": "https://skilldrills.online/es/drills/fps/flow-state",
-    "dateModified": "2026-09-05",
+    "dateModified": "2026-09-20",
     "publisher": {
       "@type": "Organization",
       "name": "SkillDrills",
@@ -93,7 +91,7 @@ export default function FlowStateEsPage() {
   const videoGameSchema = {
     "@context": "https://schema.org",
     "@type": "VideoGame",
-    "name": "Entrenador de Estado de Flow",
+    "name": "Concentración FPS",
     "url": "https://skilldrills.online/es/drills/fps/flow-state",
     "description": "Simulador dinámico con curvas Bézier orgánicas enfocado en eliminar vacilaciones motoras y sostener la máxima concentración.",
     "gamePlatform": "Web Browser",
@@ -101,13 +99,13 @@ export default function FlowStateEsPage() {
     "playMode": "SinglePlayer",
     "applicationCategory": "Game",
     "operatingSystem": "Web Browser",
-    "dateModified": "2026-09-05"
+    "dateModified": "2026-09-20"
   };
 
   const faqSchema = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
-    "dateModified": "2026-09-05",
+    "dateModified": "2026-09-20",
     "mainEntity": [
       {
         "@type": "Question",
@@ -230,8 +228,8 @@ export default function FlowStateEsPage() {
   };
 
   const copyEs = {
-    h1Keyword: "Entrenamiento de Foco FPS",
-    h1Suffix: " – Estado de Flow",
+    h1Keyword: "Concentración FPS",
+    h1Suffix: " – Entrenamiento de Flow",
     statScore: "Puntuación",
     statTime: "Tiempo Restante",
     statAccuracy: "Precisión de Rastreo",
@@ -253,9 +251,9 @@ export default function FlowStateEsPage() {
   };
 
   const flowStateGuide = {
-    heading: "Guía de Inducción al Estado de Flow y Puntos de Referencia Cognitivos",
+    heading: "Guía de Concentración FPS y Benchmarks del Estado de Flow",
     intro: [
-      "El Entrenador de Estado de Flow combina neurociencia motora y psicología cognitiva para desarrollar atención sostenida, resistencia a la fatiga y precisión de seguimiento visual. De acuerdo con las investigaciones de Mihaly Csikszentmihalyi (1975, 1990), el estado de flujo surge cuando el desafío propuesto y las capacidades del tirador coinciden en equilibrio perfecto, disolviendo dudas y distracciones.",
+      "El entrenamiento de concentración FPS consiste en seguir un objetivo con ritmo estable, reducir distracciones y ajustar el reto al nivel real de puntería. Este drill mide la precisión del tracking y la resistencia de la atención; no promete crear flow a voluntad, sino mostrar cuándo se deterioran el foco y el control.",
       "La hipótesis de hipofrontalidad transitoria planteada por Dietrich (2004) explica la base biológica de este proceso: al modular a la baja la actividad analítica del córtex prefrontal dorsolateral (DLPFC), el control motor pasa directamente a los ganglios basales y al cerebelo. En shooters competitivos, este estado libera a los reflejos de la vacilación consciente y permite microajustes veloces e instintivos.",
       "A través de la API performance.now() del navegador con resolución de submilisegundos (Woods et al., 2015) y trayectorias generadas mediante curvas Bézier suaves (Krauzlis, 2004; Posner & Petersen, 1990), este simulador entrena la resistencia mental sin necesidad de descargas ni instalaciones locales.",
       "Medición técnica en tu dispositivo: cada evento se registra de forma local mediante el temporizador de alta resolución de tu navegador, sin transferir datos a servidores ajenos. Ten en cuenta que los navegadores limitan la resolución a ~1 ms para evitar ataques de temporización, y los monitores muestran cuadros a frecuencias concretas (16.7 ms a 60 Hz frente a 4.1 ms a 240 Hz). Por tanto, evalúa tu progreso comparando sesiones en el mismo equipo."
@@ -361,7 +359,7 @@ export default function FlowStateEsPage() {
       />
       <FlowStateClient copy={copyEs} />
       <div className="max-w-6xl mx-auto px-4 w-full pb-12">
-        <RelatedDrills currentCategory="fps" currentHref="/drills/fps/flow-state" locale="es" />
+        <RelatedDrills currentCategory="fps" currentHref="/es/drills/fps/flow-state" locale="es" />
       </div>
       <DrillGuide guide={flowStateGuide} />
       <DrillFooter />

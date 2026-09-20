@@ -1,6 +1,7 @@
 import KeyboardRecognitionClient from './KeyboardRecognitionClientLoader';
 import { getAlternateLanguages } from '@/lib/i18n/locales';
 import DrillGuide from '@/components/drill/DrillGuide';
+import DrillFooter from '@/components/drill/DrillFooter';
 import { pickSources } from '@/lib/drillSources';
 
 // ============================================================
@@ -348,6 +349,7 @@ export default function KeyboardRecognitionPage() {
       />
       <KeyboardRecognitionClient />
       <DrillGuide {...guideProps} />
+      <DrillFooter />
     </>
   );
 }

@@ -6,7 +6,7 @@ import { pickSources } from '@/lib/drillSources';
 
 // ============================================================
 // RECHERCHE DE MOTS-CLÉS NATIFS (SERP FRANCE / FR-FR)
-// Requêtes à forte intention et faible concurrence :
+// Clusters natifs à intention forte; concurrence non mesurée :
 // - "jeu d'esquive à la souris en ligne" (Requête dominante gaming réflexe)
 // - "test de vision périphérique en ligne gratuit" (Évaluation visuelle et cognitive)
 // - "jeu d'esquive de zone réflexe" (Entraînement à la détection spatiale)
@@ -18,27 +18,27 @@ import { pickSources } from '@/lib/drillSources';
 // ============================================================
 
 export const metadata = {
-  title: "Jeu d'Esquive Souris – Vision Périphérique | SkillDrills",
-  description: "Jeu d'esquive à la souris gratuit en ligne. Détectez les zones d'explosion sur la grille 3x3 et fuyez vers les cases sûres pour booster vos réflexes.",
+  title: "Jeu de réflexes à la souris | SkillDrills",
+  description: "Jeu gratuit de réflexes à la souris. Détectez les zones dangereuses sur une grille 3x3 et rejoignez une case sûre pour entraîner vos réactions périphériques.",
   keywords: [
-    "jeu d'esquive a la souris en ligne",
-    "test de vision peripherique en ligne gratuit",
-    "jeu d'esquive de zone reflexe",
-    "entrainement aux reflexes spatiaux",
-    "esquiver les sorts jeu d'entrainement",
-    "test d'attention visuelle et de detection peripherique",
-    "jeu de rapidite et d'evitement souris",
-    "reflexe d'evitement et coordination visuelle",
-    "esquive skillshots",
-    "reflexes souris entrainement"
+    "jeu d'esquive à la souris en ligne",
+    "test de vision périphérique en ligne",
+    "jeu de réflexes",
+    "jeu d'esquive de zone réflexe",
+    "entraînement aux réflexes spatiaux",
+    "esquiver les sorts jeu d'entraînement",
+    "test d'attention visuelle et de détection périphérique",
+    "jeu de rapidité et d'évitement souris",
+    "réflexe d'évitement et coordination visuelle",
+    "réflexes souris entraînement"
   ],
   alternates: {
     canonical: 'https://skilldrills.online/fr/drills/physical/coordination/dynamic-grid-evasion',
     languages: getAlternateLanguages('/drills/physical/coordination/dynamic-grid-evasion'),
   },
   openGraph: {
-    title: "Jeu d'Esquive Souris – Vision Périphérique | SkillDrills",
-    description: "Jeu d'esquive à la souris gratuit en ligne. Détectez les zones d'explosion sur la grille 3x3 et fuyez vers les cases sûres pour booster vos réflexes.",
+    title: "Jeu de réflexes à la souris | SkillDrills",
+    description: "Jeu gratuit de réflexes à la souris. Détectez les zones dangereuses sur une grille 3x3 et rejoignez une case sûre pour entraîner vos réactions périphériques.",
     url: 'https://skilldrills.online/fr/drills/physical/coordination/dynamic-grid-evasion',
     siteName: 'SkillDrills',
     locale: 'fr_FR',
@@ -46,8 +46,8 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: "Jeu d'Esquive Souris – Vision Périphérique | SkillDrills",
-    description: "Jeu d'esquive à la souris gratuit en ligne. Détectez les zones d'explosion sur la grille 3x3 et fuyez vers les cases sûres pour booster vos réflexes.",
+    title: "Jeu de réflexes à la souris | SkillDrills",
+    description: "Jeu gratuit de réflexes à la souris. Détectez les zones dangereuses sur une grille 3x3 et rejoignez une case sûre pour entraîner vos réactions périphériques.",
   },
   robots: { index: true, follow: true },
 };
@@ -102,7 +102,7 @@ const softwareApplicationSchema = {
     "url": "https://skilldrills.online/fr"
   },
   "inLanguage": "fr-FR",
-  "dateModified": "2026-09-12"
+  "dateModified": "2026-09-20"
 };
 
 const webApplicationSchema = {
@@ -119,7 +119,7 @@ const webApplicationSchema = {
   },
   "url": "https://skilldrills.online/fr/drills/physical/coordination/dynamic-grid-evasion",
   "inLanguage": "fr-FR",
-  "dateModified": "2026-09-12"
+  "dateModified": "2026-09-20"
 };
 
 const videoGameSchema = {
@@ -140,6 +140,8 @@ const videoGameSchema = {
     "Mobile"
   ],
   "applicationCategory": "Game",
+  "inLanguage": "fr-FR",
+  "dateModified": "2026-09-20",
   "offers": {
     "@type": "Offer",
     "price": "0",
@@ -150,7 +152,8 @@ const videoGameSchema = {
 const faqSchema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
-  "dateModified": "2026-09-12",
+  "inLanguage": "fr-FR",
+  "dateModified": "2026-09-20",
   "mainEntity": [
     {
       "@type": "Question",
@@ -358,8 +361,8 @@ export default function DynamicGridEvasionPageFr() {
       />
       <DynamicGridEvasionClient
         copy={{
-          title: "Jeu d'Esquive à la Souris & Vision Périphérique",
-          subtitle: "Évitement Dynamique sur Grille 3x3 & Réflexes Spatiaux • 15 Niveaux",
+          title: "Jeu de réflexes à la souris",
+          subtitle: "Repérez le danger et rejoignez une case sûre • 15 niveaux",
           hudLabels: {
             score: "Score",
             timeLeft: "Temps Restant",

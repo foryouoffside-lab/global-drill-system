@@ -6,21 +6,21 @@ import DrillFooter from '@/components/drill/DrillFooter';
 import { pickSources } from '@/lib/drillSources';
 
 export const metadata = {
-  title: "Entraînement Flick Shot – Tir Réflexe et Visée | SkillDrills",
-  description: "Entraînez le flick shot et le tir réflexe sur PC. Maîtrisez la propulsion balistique et le freinage de souris pour réussir vos tirs sur CS2 et Valorant.",
+  title: "Aim Trainer – Entraînement de visée | SkillDrills",
+  description: "Aim trainer gratuit dans le navigateur pour travailler les flicks et le premier tir sur Valorant et CS2. Mesurez score, temps et précision.",
   keywords: [
-    "entraînement flick shot",
-    "visée réflexe rapide fps",
-    "comment améliorer son flick valorant",
-    "entraînement tir réflexe souris",
-    "exercices de flick shot cs2",
-    "comment freiner sa souris sur un flick",
-    "entraînement snap aim en ligne",
-    "comment réussir ses flick shots",
-    "précision premier tir entraînement",
-    "simulateur de flick shot navigateur",
-    "entraînement de visée gratuit pc",
-    "exercices de tir balistique souris"
+    "aim trainer",
+    "aim training",
+    "aim trainer Valorant",
+    "aim trainer en ligne",
+    "entraînement de visée",
+    "entraîneur de visée",
+    "entraînement flick",
+    "précision premier tir",
+    "visée FPS",
+    "flick aim",
+    "test de visée",
+    "aim trainer gratuit"
   ],
   alternates: {
     canonical: "https://skilldrills.online/fr/drills/fps/flick-shot-training",
@@ -31,8 +31,8 @@ export const metadata = {
     follow: true,
   },
   openGraph: {
-    title: "Entraînement Flick Shot – Tir Réflexe et Visée | SkillDrills",
-    description: "Entraînez le flick shot et le tir réflexe sur PC. Maîtrisez la propulsion balistique et le freinage de souris pour réussir vos tirs sur CS2 et Valorant.",
+    title: "Aim Trainer – Entraînement de visée | SkillDrills",
+    description: "Aim trainer gratuit dans le navigateur pour travailler les flicks et le premier tir sur Valorant et CS2. Mesurez score, temps et précision.",
     url: "https://skilldrills.online/fr/drills/fps/flick-shot-training",
     siteName: 'SkillDrills',
     locale: 'fr_FR',
@@ -40,8 +40,8 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: "Entraînement Flick Shot – Tir Réflexe et Visée | SkillDrills",
-    description: "Entraînez le flick shot et le tir réflexe sur PC. Maîtrisez la propulsion balistique et le freinage de souris pour réussir vos tirs sur CS2 et Valorant.",
+    title: "Aim Trainer – Entraînement de visée | SkillDrills",
+    description: "Aim trainer gratuit dans le navigateur pour travailler les flicks et le premier tir sur Valorant et CS2. Mesurez score, temps et précision.",
   },
 };
 
@@ -52,14 +52,14 @@ export default function FlickShotFrPage() {
     "itemListElement": [
       { "@type": "ListItem", "position": 1, "name": "SkillDrills", "item": "https://skilldrills.online/fr" },
       { "@type": "ListItem", "position": 2, "name": "Entraînements FPS", "item": "https://skilldrills.online/fr/drills/fps" },
-      { "@type": "ListItem", "position": 3, "name": "Entraînement Flick Shot", "item": "https://skilldrills.online/fr/drills/fps/flick-shot-training" }
+      { "@type": "ListItem", "position": 3, "name": "Aim Trainer et Flick", "item": "https://skilldrills.online/fr/drills/fps/flick-shot-training" }
     ]
   };
 
   const webAppSchema = {
     "@context": "https://schema.org",
     "@type": "WebApplication",
-    "name": "Entraîneur de Flick Shot en Ligne",
+    "name": "Aim Trainer et Flick",
     "url": "https://skilldrills.online/fr/drills/fps/flick-shot-training",
     "applicationCategory": "GameApplication",
     "operatingSystem": "All",
@@ -69,20 +69,20 @@ export default function FlickShotFrPage() {
       "price": "0",
       "priceCurrency": "USD"
     },
-    "description": "Simulateur gratuit d'entraînement au flick shot dans le navigateur. Perfectionnez l'accélération balistique et le freinage de souris pour CS2 et Valorant."
+    "description": "Aim trainer gratuit dans le navigateur pour travailler la précision, le freinage de souris et le premier tir en FPS."
   };
 
   const softwareSchema = {
     "@context": "https://schema.org",
     "@type": "SoftwareApplication",
-    "name": "Entraîneur de Flick Shot SkillDrills",
+    "name": "Aim Trainer et Flick SkillDrills",
     "applicationCategory": "GameApplication",
     "operatingSystem": "Web Browser",
     "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
-    "description": "Outil biomécanique d'évaluation et de perfectionnement du tir réflexe pour joueurs compétitifs de FPS.",
+    "description": "Outil d'entraînement de visée et de flick pour joueurs compétitifs de FPS, avec score, temps et précision.",
     "genre": "Entraînement FPS / Tir Réflexe",
     "url": "https://skilldrills.online/fr/drills/fps/flick-shot-training",
-    "dateModified": "2026-09-05",
+    "dateModified": "2026-09-20",
     "publisher": {
       "@type": "Organization",
       "name": "SkillDrills",
@@ -93,21 +93,21 @@ export default function FlickShotFrPage() {
   const videoGameSchema = {
     "@context": "https://schema.org",
     "@type": "VideoGame",
-    "name": "Entraînement au Flick Shot FPS",
+    "name": "Aim Trainer et Flick FPS",
     "url": "https://skilldrills.online/fr/drills/fps/flick-shot-training",
-    "description": "Entraîneur interactif de tir réflexe avec cibles dynamiques pour optimiser le temps d'acquisition et la précision du premier tir.",
+    "description": "Entraîneur interactif de visée avec cibles dynamiques pour travailler le temps d'acquisition et la précision du premier tir.",
     "gamePlatform": "Web Browser",
     "genre": ["Entraînement FPS", "Entraîneur de Visée"],
     "playMode": "SinglePlayer",
     "applicationCategory": "Game",
     "operatingSystem": "Web Browser",
-    "dateModified": "2026-09-05"
+    "dateModified": "2026-09-20"
   };
 
   const faqSchema = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
-    "dateModified": "2026-09-05",
+    "dateModified": "2026-09-20",
     "mainEntity": [
       {
         "@type": "Question",
@@ -226,9 +226,9 @@ export default function FlickShotFrPage() {
   };
 
   const flickGuide = {
-    heading: "Guide Scientifique d'Entraînement au Flick Shot et Contrôle Moteur",
+    heading: "Aim Trainer : entraînement au flick et précision FPS",
     intro: [
-      "Le flick shot (ou visée balistique réflexe) est le processus biomécanique consistant à convertir une fixation oculaire en une trajectoire motrice rectiligne du bras et du poignet. Dans la science du contrôle moteur, le modèle à deux composants d'Elliott et al. (2010) modélise ce geste : une impulsion balistique initiale en boucle ouverte couvrant la quasi-totalité de la distance, suivie d'une phase terminale de guidage visuel en boucle fermée pour corriger les micro-écarts.",
+      "Pour qui cherche un aim trainer, le flick est le mouvement rapide qui amène le réticule sur une cible avant un freinage propre et le premier tir. Dans les FPS comme Valorant, CS2 et Apex Legends, cette combinaison de vitesse et de précision aide à répondre quand la cible apparaît hors du centre.",
       "Selon la loi de Fitts (Fitts, 1954), la durée du mouvement dépend de la difficulté de la tâche : ID = log2(2D/W), où la distance (D) et le diamètre de la cible (W) déterminent le temps nécessaire. Un entraînement méthodique développe la décélération coordonnée des muscles antagonistes (Schmidt et al., 1979), permettant au joueur de stopper net sur la cible sans rebond ni dépassement.",
       "La latence du matériel et la chronométrie numérique du navigateur influencent directement les mesures temporelles. Cet outil s'appuie sur performance.now() pour horodater chaque tir à la milliseconde près. Avec une souris à 1000 Hz (1,0 ms) et un écran à haut rafraîchissement (144 Hz à 6,94 ms, 240 Hz à 4,17 ms), le bruit de quantification est minimisé pour isoler le pur temps d'acquisition neuromusculaire (Woods et al., 2015).",
       "Mesure technique sur votre appareil : chaque événement de clic est horodaté localement par le navigateur, sans envoi de données vers des serveurs distants. Les navigateurs limitent la précision temporelle à environ 1 ms pour des raisons de sécurité liées à Spectre, et les écrans affichent les images par intervalles réguliers (16,7 ms à 60 Hz contre 4,1 ms à 240 Hz). Suivez vos progrès en comparant vos sessions sur un même poste de travail."
@@ -333,9 +333,9 @@ export default function FlickShotFrPage() {
       />
       <ProFlickClient
         copy={{
-          h1Keyword: "Entraînement Flick Shot",
-          h1Suffix: " – Tir Réflexe et Précision",
-          subtitle: "Entraînez votre snap aim, mémoire motrice balistique, acquisition de cibles et freinage de souris avec analyse en temps réel.",
+          h1Keyword: "Aim Trainer",
+          h1Suffix: " – Entraînement de visée",
+          subtitle: "Travaillez les flicks et le premier tir pour Valorant et CS2 directement dans le navigateur.",
           statScore: "Score",
           statTime: "Temps Restant",
           statAccuracy: "Précision",
@@ -367,7 +367,7 @@ export default function FlickShotFrPage() {
       <div className="max-w-4xl mx-auto px-4 pb-12">
         <RelatedDrills
           currentCategory="fps"
-          currentHref="/drills/fps/flick-shot-training"
+          currentHref="/fr/drills/fps/flick-shot-training"
           locale="fr"
         />
       </div>

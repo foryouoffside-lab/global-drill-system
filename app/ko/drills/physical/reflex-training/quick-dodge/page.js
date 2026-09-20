@@ -22,8 +22,8 @@ import { pickSources } from '@/lib/drillSources';
 // ============================================================
 
 export const metadata = {
-  title: "마우스 피하기 게임 – 순발력 탄막 회피 테스트 | SkillDrills",
-  description: "무료 온라인 마우스 피하기 게임 및 순발력 탄막 회피 테스트. 사방에서 날아오는 고속 투사체 벡터를 마우스 커서로 극한까지 회피하며 카와토 소뇌 내부 모델 기반 궤적 예측과 정밀 무빙 컨트롤을 훈련합니다.",
+  title: "마우스 피하기 게임 | 무료 순발력 테스트",
+  description: "무료 마우스 피하기 게임. 날아오는 탄막을 커서로 피하며 순발력과 마우스 컨트롤을 브라우저에서 연습하세요.",
   keywords: [
     "마우스 피하기 게임",
     "순발력 테스트 게임",
@@ -41,8 +41,8 @@ export const metadata = {
     languages: getAlternateLanguages('/drills/physical/reflex-training/quick-dodge'),
   },
   openGraph: {
-    title: "마우스 피하기 게임 – 순발력 탄막 회피 테스트 | SkillDrills",
-    description: "무료 온라인 마우스 피하기 게임 및 순발력 탄막 회피 테스트. 사방에서 날아오는 고속 투사체 벡터를 마우스 커서로 극한까지 회피하며 카와토 소뇌 내부 모델 기반 궤적 예측과 정밀 무빙 컨트롤을 훈련합니다.",
+    title: "마우스 피하기 게임 | 무료 순발력 테스트",
+    description: "무료 마우스 피하기 게임. 날아오는 탄막을 커서로 피하며 순발력과 마우스 컨트롤을 브라우저에서 연습하세요.",
     url: 'https://skilldrills.online/ko/drills/physical/reflex-training/quick-dodge',
     siteName: 'SkillDrills',
     locale: 'ko_KR',
@@ -50,8 +50,8 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: "마우스 피하기 게임 – 순발력 탄막 회피 테스트 | SkillDrills",
-    description: "무료 온라인 마우스 피하기 게임 및 순발력 탄막 회피 테스트. 사방에서 날아오는 고속 투사체 벡터를 마우스 커서로 극한까지 회피하며 카와토 소뇌 내부 모델 기반 궤적 예측과 정밀 무빙 컨트롤을 훈련합니다.",
+    title: "마우스 피하기 게임 | 무료 순발력 테스트",
+    description: "무료 마우스 피하기 게임. 날아오는 탄막을 커서로 피하며 순발력과 마우스 컨트롤을 브라우저에서 연습하세요.",
   },
   robots: { index: true, follow: true },
 };
@@ -93,6 +93,10 @@ const softwareApplicationSchema = {
   "name": "마우스 피하기 게임 및 순발력 탄막 회피 시뮬레이터",
   "applicationCategory": "HealthApplication",
   "operatingSystem": "All",
+  "url": "https://skilldrills.online/ko/drills/physical/reflex-training/quick-dodge",
+  "description": "날아오는 탄막을 커서로 피하며 순발력과 마우스 컨트롤을 연습하는 무료 게임입니다.",
+  "inLanguage": "ko",
+  "dateModified": "2026-09-20",
   "offers": {
     "@type": "Offer",
     "price": "0",
@@ -104,6 +108,10 @@ const webApplicationSchema = {
   "@context": "https://schema.org",
   "@type": "WebApplication",
   "name": "마우스 피하기 및 소뇌 순방향 예측 회피 드릴",
+  "url": "https://skilldrills.online/ko/drills/physical/reflex-training/quick-dodge",
+  "description": "브라우저에서 투사체를 피하고 예측적인 커서 무빙과 동체시력을 훈련하는 드릴입니다.",
+  "inLanguage": "ko",
+  "dateModified": "2026-09-20",
   "browserRequirements": "Requires JavaScript and HTML5 Canvas support",
   "genre": "Training, Reflex, Evasion, Esports"
 };
@@ -111,8 +119,11 @@ const webApplicationSchema = {
 const videoGameSchema = {
   "@context": "https://schema.org",
   "@type": "VideoGame",
-  "name": "Quick Dodge Kinetic Bullet Evasion Drill",
+  "name": "마우스 피하기 게임·탄막 회피 테스트",
   "gamePlatform": "Web Browser",
+  "url": "https://skilldrills.online/ko/drills/physical/reflex-training/quick-dodge",
+  "inLanguage": "ko",
+  "dateModified": "2026-09-20",
   "applicationSubCategory": "Esports Psychomotor Evasion Simulator"
 };
 
@@ -328,8 +339,8 @@ export default function LocalizedQuickDodgePageKo() {
       />
       <QuickDodgeClient
         copy={{
-          title: "마우스 피하기 게임 & 순발력 탄막 회피 테스트",
-          subtitle: "소뇌 순방향 예측 무빙 및 키네틱 투사체 회피 • 15단계 난이도 스케일링",
+          title: "마우스 피하기 게임",
+          subtitle: "탄막을 마우스로 피하며 생존하기",
           description: "날아오는 투사체를 피하는 것은 반응의 문제가 아닌 예측의 문제입니다. 시각 피드백이 움직임에 개입하는 데는 100~150ms가 걸리므로(Woodworth, 1899), 고속 투사체 회피는 소뇌의 사전 궤적 시뮬레이션(Kawato, 1999)을 통해 미리 계획된 탄도 제어로 완결됩니다. 속도가 빨라질수록 수정할 수 있는 시간 창은 사라지고 순수한 예측만이 남습니다.",
           badge: "순발력 탄막 테스트",
           hudLabels: {

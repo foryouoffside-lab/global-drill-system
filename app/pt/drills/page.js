@@ -2,8 +2,9 @@ import DrillsDirectoryClient from '@/app/drills/DrillsDirectoryClient';
 import { DRILLS } from '@/lib/drillsRegistry';
 import { getAlternateLanguages } from '@/lib/i18n/locales';
 import { getLocalizedDrill } from '@/lib/i18n/drillNames';
+import { buildDirectoryMetadata, getDirectoryCollectionFields } from '@/lib/i18n/siteLandingSeoNative';
 
-export const metadata = {
+const legacyMetadata = {
   title: 'Treino de Mira: 82 Exercícios Grátis | SkillDrills',
   description: '82 treinos online gratuitos em 8 categorias: mira FPS para shooters, teste de reflexo, memória, CPS e acuidade visual diretamente no navegador.',
   keywords: [
@@ -48,6 +49,11 @@ export const metadata = {
     canonical: 'https://skilldrills.online/pt/drills',
     languages: getAlternateLanguages('/pt/drills'),
   },
+};
+
+export const metadata = {
+  ...legacyMetadata,
+  ...buildDirectoryMetadata('pt', 'https://skilldrills.online/pt/drills', DRILLS.length, getAlternateLanguages('/pt/drills')),
 };
 
 const breadcrumbSchema = {
@@ -169,6 +175,8 @@ const faqSchema = {
   ]
 };
 
+Object.assign(collectionSchema, getDirectoryCollectionFields('pt', DRILLS.length));
+
 export default function LocalizedDrillsDirectoryPage() {
   const faqs = faqSchema.mainEntity.map((item) => ({
     q: item.name,
@@ -193,4 +201,3 @@ export default function LocalizedDrillsDirectoryPage() {
     </>
   );
 }
-

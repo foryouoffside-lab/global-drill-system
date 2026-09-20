@@ -6,20 +6,18 @@ import RelatedDrills from '@/components/drill/RelatedDrills';
 import DrillFooter from '@/components/drill/DrillFooter';
 
 export const metadata = {
-    title: "180도 플릭 에임 연습 – 180도 화면전환 트레이너 | SkillDrills",
-  description: "브라우저에서 무료로 즐기는 180도 플릭 에임 트레이너. 화면 가장자리와 후방의 표적을 주변시야로 포착하고, 팔 전체를 활용한 대각도 화면전환과 제동력을 과학적으로 훈련합니다.",
+    title: "180도 에임 연습 | 180도 턴 트레이너 | SkillDrills",
+  description: "무료 브라우저 180도 에임 연습. 주변 시야로 가장자리 표적을 찾고 팔 전체로 빠르게 화면을 전환한 뒤 정확히 멈추는 훈련입니다.",
   keywords: [
-    "180도 플릭",
-    "180도 에임",
-    "180도 화면전환",
-    "180도 끌어치기",
-    "FPS 180도 연습",
-    "주변시야 에임 연습",
-    "발로란트 180도 플릭",
-    "카스2 180도 회전",
-    "에임 트레이너 무료",
-    "섬광탄 회피 연습",
-    "180도 턴 에임",
+    "180도 에임 연습",
+    "180도 화면 전환",
+    "주변 시야 에임",
+    "FPS 화면 전환 연습",
+    "플릭 에임 연습",
+    "발로란트 에임 연습",
+    "카스2 에임 연습",
+    "에임 트레이너 온라인",
+    "후방 인지 FPS",
     "마우스 패드 공간 활용"
   ],
   alternates: {
@@ -31,8 +29,8 @@ export const metadata = {
     follow: true,
   },
   openGraph: {
-      title: "180도 플릭 에임 연습 – 180도 화면전환 트레이너 | SkillDrills",
-    description: "화면 가장자리와 후방의 적을 번개처럼 포착하는 180도 화면전환 플릭 트레이너. 주변시야 반응과 급격한 시야 회전 정확도 향상.",
+      title: "180도 에임 연습 | 180도 턴 트레이너 | SkillDrills",
+    description: "주변 시야로 가장자리 표적을 찾고 180도 화면 전환을 정확히 멈추는 무료 브라우저 FPS 훈련.",
     url: "https://skilldrills.online/ko/drills/fps/180-degree-awareness",
     siteName: 'SkillDrills',
     locale: 'ko_KR',
@@ -40,8 +38,8 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-      title: "180도 플릭 에임 연습 – 180도 화면전환 트레이너 | SkillDrills",
-    description: "화면 가장자리와 후방의 적을 번개처럼 포착하는 180도 화면전환 플릭 트레이너. 주변시야 반응과 급격한 시야 회전 정확도 향상.",
+    title: "180도 에임 연습 | 180도 턴 트레이너 | SkillDrills",
+    description: "주변 시야로 가장자리 표적을 찾고 180도 화면 전환을 정확히 멈추는 무료 브라우저 FPS 훈련.",
   },
 };
 
@@ -66,7 +64,7 @@ export default function AwarenessDrillKoPage() {
     "description": "대각도 시야 반전 에임, 주변시야 자극에 대한 즉각적 반응, 고속 감속 제동력을 단련하는 무료 브라우저 FPS 에임 트레이너.",
     "genre": "FPS Training / Situational Awareness",
     "url": "https://skilldrills.online/ko/drills/fps/180-degree-awareness",
-    "dateModified": "2026-09-05",
+    "dateModified": "2026-09-20",
     "publisher": {
       "@type": "Organization",
       "name": "SkillDrills",
@@ -100,13 +98,13 @@ export default function AwarenessDrillKoPage() {
     "applicationCategory": "Game",
     "url": "https://skilldrills.online/ko/drills/fps/180-degree-awareness",
     "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
-    "dateModified": "2026-09-05"
+    "dateModified": "2026-09-20"
   };
 
   const faqSchema = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
-    "dateModified": "2026-09-05",
+    "dateModified": "2026-09-20",
     "mainEntity": [
       {
         "@type": "Question",
@@ -225,9 +223,9 @@ export default function AwarenessDrillKoPage() {
   };
 
   const awarenessGuide = {
-    heading: "180도 플릭 에임 가이드 & 공간 반응 생체역학",
+    heading: "180도 에임 연습 가이드 & 공간 반응 생체역학",
     intro: [
-      "180도 스냅 타게팅은 주변 시야의 자극 감지, 안구 도약 운동(Saccade), 그리고 사지의 탄도 운동 역학이 정교하게 결합된 고차원 감각운동 과제입니다. 인간의 시각 시스템에서 망막 주변부 간상세포는 중심 시선에서 90도 이상 벗어난 광각의 휘도 변화와 움직임을 민감하게 포착하여 상구를 통해 신속한 정위 안구 도약을 유발합니다 (Rayner, 1998; Leigh & Zee, 2015).",
+      "180도 에임 연습은 화면 가장자리의 움직임을 주변 시야로 먼저 감지한 뒤, 팔 전체의 큰 플릭으로 시점을 돌리고 조준선을 표적에서 멈추는 훈련입니다. 이 드릴은 실제 게임의 후방 위협 인지와 재조준을 분리해 반복하므로, 빠른 회전보다 회전 후 정확한 정지가 핵심입니다.",
       "주변 시야에서 감지된 정보를 180도 가상 공간 회전으로 전환하기 위해 인간의 운동 제어는 2성분 모델(Two-Component Model)을 구동합니다 (Elliott et al., 2010). 어깨와 팔꿈치가 생성하는 개루프 탄도 스와이프가 회전각의 80~90%를 주파하고, 직후 길항근의 제동 작용을 통해 조준선이 목표를 지나치는 오버슈팅을 억제합니다 (Schmidt et al., 1979). 피츠의 법칙 (Fitts, 1954)에 따르면 이동 거리(D)가 클수록 난이도 지수(Index of Difficulty)가 급증하므로, 정밀한 제동력과 패드 공간의 일치가 핵심입니다.",
       "본 트레이너의 시간 측정은 HTML5 Pointer Lock API 환경에서 브라우저의 performance.now() 고해상도 시계를 통해 수행됩니다 (Woods et al., 2015). 1000Hz 이상의 마우스 폴링레이트와 고주사율 디스플레이를 활용하여 입력 왜곡과 가속을 배제한 객관적인 공간 반응 데이터를 측정할 수 있습니다.",
       "측정 방식 안내: 모든 반응 시간은 브라우저의 performance.now() 고정밀 클록을 통해 기기 내부에서 로컬로 측정되며 서버로 전송되지 않습니다. 브라우저 보안 타이머 완화(Spectre 방지, 통상 약 1ms) 및 디스플레이 주사율(60Hz 기준 약 16.7ms, 144Hz 기준 약 6.9ms, 240Hz 기준 약 4.1ms)에 따른 오차가 존재하므로 5ms 미만의 차이는 측정 노이즈로 간주하고 동일 기기 내에서의 기록 향상 추이를 비교하는 것이 바람직합니다 (Woods et al., 2015)."
@@ -317,9 +315,9 @@ export default function AwarenessDrillKoPage() {
 
       <AwarenessDrillClient
         copy={{
-          h1Keyword: "180도 플릭 에임 연습",
+          h1Keyword: "180도 에임 연습",
           h1Suffix: " - 180도 화면전환·주변시야 트레이너",
-          subtitle: "주변시야를 통한 신속한 적 탐지와 대각도 플릭 전환, 180도 화면전환 제동력을 훈련하세요.",
+          subtitle: "주변 시야로 표적을 찾고 큰 플릭으로 180도 화면을 전환한 뒤 정확히 멈추세요.",
           statScore: "점수",
           statTime: "남은 시간",
           statAccuracy: "명중률",
@@ -345,7 +343,7 @@ export default function AwarenessDrillKoPage() {
       <div className="max-w-4xl mx-auto px-4 pb-12">
         <RelatedDrills
           currentCategory="fps"
-          currentHref="/drills/fps/180-degree-awareness"
+          currentHref="/ko/drills/fps/180-degree-awareness"
           locale="ko"
         />
       </div>

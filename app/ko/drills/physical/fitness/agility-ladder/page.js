@@ -8,7 +8,7 @@ import { pickSources } from '@/lib/drillSources';
 // SEO RESEARCH FINDINGS — South Korea (KR / KO)
 // Primary Intent: 스텝레더 훈련, 민첩성 사다리운동, 순발력 민첩성 운동, 풋워크 훈련
 // Korean Context: 축구/복싱/배드민턴 풋워크 스텝 사다리 훈련 & FPS 카운터 스트레이핑 리듬
-// High-Demand, Low-Competition Target Keywords:
+// Target clusters from native sports and footwork search language; competition is unmeasured:
 //   - "스텝레더 훈련" (High-intent athletic agility ladder search)
 //   - "민첩성 사다리운동" (Core school/fitness agility ladder query)
 //   - "순발력 민첩성 운동" (Explosiveness and nimbleness training)
@@ -22,8 +22,8 @@ import { pickSources } from '@/lib/drillSources';
 // ============================================================
 
 export const metadata = {
-  title: "스텝레더 훈련 & 민첩성 사다리운동 – 무료 풋워크 시퀀싱 드릴 | SkillDrills",
-  description: "무료 온라인 스텝레더 훈련 및 민첩성 사다리운동 드릴. 하강하는 4단 격자 스텝을 좌우 교대로 리드미컬하게 통과하며 양측성 운동 시퀀싱, 발놀림 풋워크 박자감, 카운터 스트레이핑 순발력을 과학적으로 단련합니다.",
+  title: "스텝레더 훈련 | 풋워크 민첩성 | SkillDrills",
+  description: "무료 스텝레더 훈련과 풋워크 민첩성 드릴. 좌우 스텝을 리듬 있게 따라가며 운동 시퀀싱, 발놀림, 양측 협응을 단련합니다.",
   keywords: [
     "스텝레더 훈련",
     "민첩성 사다리운동",
@@ -34,15 +34,16 @@ export const metadata = {
     "풋워크 드릴",
     "카운터 스트레이핑",
     "양측성 운동 협응",
-    "사다리 스텝 훈련"
+    "사다리 스텝 훈련",
+    "풋워크 민첩성 훈련"
   ],
   alternates: {
     canonical: 'https://skilldrills.online/ko/drills/physical/fitness/agility-ladder',
     languages: getAlternateLanguages('/drills/physical/fitness/agility-ladder'),
   },
   openGraph: {
-    title: "스텝레더 훈련 & 민첩성 사다리운동 – 무료 풋워크 시퀀싱 드릴 | SkillDrills",
-    description: "무료 온라인 스텝레더 훈련 및 민첩성 사다리운동 드릴. 하강하는 4단 격자 스텝을 좌우 교대로 리드미컬하게 통과하며 양측성 운동 시퀀싱, 발놀림 풋워크 박자감, 카운터 스트레이핑 순발력을 과학적으로 단련합니다.",
+    title: "스텝레더 훈련 | 풋워크 민첩성 | SkillDrills",
+    description: "무료 스텝레더 훈련과 풋워크 민첩성 드릴. 좌우 스텝을 리듬 있게 따라가며 운동 시퀀싱, 발놀림, 양측 협응을 단련합니다.",
     url: 'https://skilldrills.online/ko/drills/physical/fitness/agility-ladder',
     siteName: 'SkillDrills',
     locale: 'ko_KR',
@@ -50,8 +51,8 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: "스텝레더 훈련 & 민첩성 사다리운동 – 무료 풋워크 시퀀싱 드릴 | SkillDrills",
-    description: "무료 온라인 스텝레더 훈련 및 민첩성 사다리운동 드릴. 하강하는 4단 격자 스텝을 좌우 교대로 리드미컬하게 통과하며 양측성 운동 시퀀싱, 발놀림 풋워크 박자감, 카운터 스트레이핑 순발력을 과학적으로 단련합니다.",
+    title: "스텝레더 훈련 | 풋워크 민첩성 | SkillDrills",
+    description: "무료 스텝레더 훈련과 풋워크 민첩성 드릴. 좌우 스텝을 리듬 있게 따라가며 운동 시퀀싱, 발놀림, 양측 협응을 단련합니다.",
   },
   robots: { index: true, follow: true },
 };
@@ -106,7 +107,7 @@ const softwareApplicationSchema = {
     "url": "https://skilldrills.online/ko"
   },
   "inLanguage": "ko",
-  "dateModified": "2026-09-12"
+  "dateModified": "2026-09-20"
 };
 
 const webApplicationSchema = {
@@ -123,7 +124,7 @@ const webApplicationSchema = {
   },
   "url": "https://skilldrills.online/ko/drills/physical/fitness/agility-ladder",
   "inLanguage": "ko",
-  "dateModified": "2026-09-12"
+  "dateModified": "2026-09-20"
 };
 
 const videoGameSchema = {
@@ -144,6 +145,8 @@ const videoGameSchema = {
     "Mobile"
   ],
   "applicationCategory": "Game",
+  "inLanguage": "ko",
+  "dateModified": "2026-09-20",
   "offers": {
     "@type": "Offer",
     "price": "0",
@@ -154,7 +157,8 @@ const videoGameSchema = {
 const faqSchema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
-  "dateModified": "2026-09-12",
+  "inLanguage": "ko",
+  "dateModified": "2026-09-20",
   "mainEntity": [
     {
       "@type": "Question",
@@ -362,8 +366,8 @@ export default function AgilityLadderPageKo() {
       />
       <MotorSequencingClient
         copy={{
-          title: "스텝레더 훈련 & 민첩성 사다리운동",
-          subtitle: "양측성 모터 시퀀싱 & 리듬 풋워크 트레이너 • 15레벨",
+          title: "스텝레더 훈련",
+          subtitle: "좌우 스텝을 리듬 있게 따라가기 • 15레벨",
           rulesTitle: "스텝레더 훈련 규칙 및 점수 체계",
           rules: [
             { title: "4단 발판 순차 통과", text: "하강하는 사다리의 발판을 좌우 교대 순서(1→2→3→4)에 맞추어 정확히 가로지릅니다." },

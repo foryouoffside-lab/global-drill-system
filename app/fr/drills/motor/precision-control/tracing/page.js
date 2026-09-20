@@ -6,37 +6,21 @@ import DrillFooter from '@/components/drill/DrillFooter';
 import { pickSources } from '@/lib/drillSources';
 
 // ============================================================
-// SEO RESEARCH FINDINGS — tracing (French: Jeu de Tracé à la Souris)
-// PRIMARY:  "jeu de tracé à la souris"        — Core query
-//           "test de suivi de curseur souris" — Diagnostic query
-// SECONDARY / LSI:
-//           "test de précision de tracé souris" — Precision test
-//           "entraînement poursuite oculaire fluide" — Smooth pursuit
-//           "contrôle moteur fin tracé souris"  — Fine motor control
-//           "loi de direction d accot-zhai"     — Steering Law
-//           "stabilité du tracé curseur"        — Trajectory stability
+// Native keyword research: docs/seo/research/tracing-2026-09-20.md
 // ============================================================
 
 export const metadata = {
-  title: 'Jeu de Tracé à la Souris – Test de Précision et Tracking',
-  description: 'Jeu de tracé à la souris en ligne gratuit. Suivez l\'onde sinusoïdale avec le curseur pour entraîner poursuite oculaire fluide et motricité fine.',
+  title: 'Test de suivi souris | Tracé du curseur | SkillDrills',
+  description: 'Suivez une onde en mouvement avec le curseur pour entraîner le suivi fluide, la précision du tracé et la motricité fine. Gratuit dans le navigateur.',
   keywords: [
-    'jeu de tracé à la souris',
-    'test de suivi de curseur souris',
-    'test de précision de tracé souris',
-    'entraînement poursuite oculaire fluide',
-    'contrôle moteur fin tracé souris',
-    'loi de direction d accot-zhai',
-    'stabilité du tracé curseur',
-    'jeu suivre la ligne souris',
-    'entraînement aim tracking continu',
-    'coordination visuo-motrice tracé',
-    'fluidité du mouvement souris',
-    'test de dextérité dynamique souris',
+    'test de suivi de souris', 'suivre une ligne avec la souris', 'jeu de tracé souris',
+    'test de précision de tracé', 'suivi de curseur', 'motricité fine souris',
+    'entraînement poursuite oculaire fluide', 'stabilité du tracé', 'jeu suivre la ligne',
+    'tracking souris entraînement', 'coordination visuo-motrice', 'fluidité du mouvement souris',
   ],
   openGraph: {
-    title: 'Jeu de Tracé à la Souris – Test de Précision et Tracking | SkillDrills',
-    description: 'Jeu de tracé à la souris en ligne gratuit. Suivez l\'onde sinusoïdale avec le curseur pour entraîner poursuite oculaire fluide et motricité fine.',
+    title: 'Test de suivi souris | Tracé du curseur | SkillDrills',
+    description: 'Suivez une onde en mouvement avec le curseur pour entraîner le suivi fluide, la précision du tracé et la motricité fine. Gratuit dans le navigateur.',
     type: 'article',
     url: 'https://skilldrills.online/fr/drills/motor/precision-control/tracing',
     siteName: 'SkillDrills',
@@ -44,8 +28,8 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Jeu de Tracé à la Souris – Test de Précision et Tracking | SkillDrills',
-    description: 'Jeu de tracé à la souris en ligne gratuit. Suivez l\'onde sinusoïdale avec le curseur pour entraîner poursuite oculaire fluide et motricité fine.',
+    title: 'Test de suivi souris | Tracé du curseur | SkillDrills',
+    description: 'Suivez une onde en mouvement avec le curseur pour entraîner le suivi fluide, la précision du tracé et la motricité fine. Gratuit dans le navigateur.',
   },
   robots: { index: true, follow: true },
   alternates: {
@@ -68,6 +52,7 @@ const breadcrumbSchema = {
 const softwareApplicationSchema = {
   '@context': 'https://schema.org',
   '@type': 'SoftwareApplication',
+  inLanguage: 'fr-FR',
   name: 'Jeu de Tracé à la Souris – Test de Précision Motrice',
   applicationCategory: 'HealthApplication',
   operatingSystem: 'All',
@@ -75,36 +60,41 @@ const softwareApplicationSchema = {
   description: 'Outil d\'évaluation interactif pour maintenir le curseur sur une onde sinusoïdale continue sans dévier.',
   url: 'https://skilldrills.online/fr/drills/motor/precision-control/tracing',
   publisher: { '@type': 'Organization', name: 'SkillDrills', url: 'https://skilldrills.online/fr' },
-  dateModified: '2026-09-05',
+  dateModified: '2026-09-20',
 };
 
 const webApplicationSchema = {
   '@context': 'https://schema.org',
   '@type': 'WebApplication',
+  inLanguage: 'fr-FR',
   name: 'Jeu de Poursuite Continue en Ligne',
   applicationCategory: 'GameApplication',
   operatingSystem: 'All',
   browserRequirements: 'Navigateur moderne avec prise en charge HTML5 Canvas et Pointer Events',
   offers: { '@type': 'Offer', price: '0', priceCurrency: 'EUR' },
   url: 'https://skilldrills.online/fr/drills/motor/precision-control/tracing',
-  dateModified: '2026-09-05',
+  dateModified: '2026-09-20',
 };
 
 const videoGameSchema = {
   '@context': 'https://schema.org',
   '@type': 'VideoGame',
+  inLanguage: 'fr-FR',
   name: 'Entraînement de Tracé et Fluidité Souris',
   url: 'https://skilldrills.online/fr/drills/motor/precision-control/tracing',
   description: 'Jeu d\'adresse cinétique renforçant la poursuite visuo-motrice fluide et supprimant les saccades parasites.',
   genre: ['Precision Game', 'Action', 'Esports Training'],
   gamePlatform: ['Web Browser', 'Desktop', 'Mobile'],
   applicationCategory: 'Game',
-  offers: { '@type': 'Offer', price: '0', priceCurrency: 'EUR' }
+  offers: { '@type': 'Offer', price: '0', priceCurrency: 'EUR' },
+  dateModified: '2026-09-20',
 };
 
 const faqSchema = {
   '@context': 'https://schema.org',
   '@type': 'FAQPage',
+  inLanguage: 'fr-FR',
+  dateModified: '2026-09-20',
   mainEntity: [
     {
       '@type': 'Question',
@@ -192,6 +182,8 @@ const faqSchema = {
 const howToSchema = {
   '@context': 'https://schema.org',
   '@type': 'HowTo',
+  inLanguage: 'fr-FR',
+  dateModified: '2026-09-20',
   name: 'Comment s\'entraîner au tracé et au suivi continu à la souris',
   description: 'Protocole structuré pour perfectionner la poursuite fluide et éliminer les saccades parasites.',
   step: [
@@ -313,8 +305,8 @@ const guideProps = {
 };
 
 const frCopy = {
-  title: "Jeu de Tracé à la Souris",
-  subtitle: "Suivi Continu Entrée Brute • Chrono 45s",
+  title: "Test de Suivi de Souris",
+  subtitle: "Suivi continu • 45 s",
   startButtonText: "Démarrer l'Entraînement",
   trainAgain: "Recommencer",
   shareTitle: "Partager le Score",

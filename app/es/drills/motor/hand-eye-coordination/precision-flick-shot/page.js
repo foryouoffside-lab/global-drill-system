@@ -6,25 +6,16 @@ import RelatedDrills from '@/components/drill/RelatedDrills';
 import { pickSources } from '@/lib/drillSources';
 
 export const metadata = {
-  title: 'Test de Flick Shot – Precisión con el Ratón | SkillDrills',
-  description: 'Entrenador de flick shot online gratis: Mide precision de disparo, velocidad de adquisicion y aciertos en el blanco segun el modelo balistico en el navegador.',
+  title: 'Entrenamiento de flick | Test de puntería | SkillDrills',
+  description: 'Entrena flick en el navegador y mide tu puntería con ratón: tiempo de adquisición, precisión y aciertos en el centro para FPS.',
   keywords: [
-    'flick aim trainer',
-    'test de flick shot',
-    'precision de raton test',
-    'entrenar punteria flick',
-    'test de punteria fps',
-    'entrenador de tiro rapido',
-    'micro flick trainer',
-    'precision raton valorant',
-    'test de precision cs2',
-    'disparo rapido raton',
-    'entrenar reflejos raton',
-    'flick shot online gratis',
+    'entrenamiento de puntería', 'prueba de puntería', 'precisión del ratón', 'entrenamiento de flick',
+    'test de puntería FPS', 'adquisición de objetivos', 'microajustes de mira', 'puntería para Valorant',
+    'puntería para CS2', 'disparo rápido con ratón', 'test de precisión del ratón', 'flick shot gratis',
   ],
   openGraph: {
-    title: 'Test de Flick Shot – Precisión con el Ratón | SkillDrills',
-    description: 'Entrenador de flick shot online gratis: Mide precision de disparo, velocidad de adquisicion y aciertos en el blanco segun el modelo balistico en el navegador.',
+    title: 'Entrenamiento de flick | Test de puntería | SkillDrills',
+    description: 'Entrena flick en el navegador y mide tu puntería con ratón: tiempo de adquisición, precisión y aciertos en el centro para FPS.',
     type: 'article',
     url: 'https://skilldrills.online/es/drills/motor/hand-eye-coordination/precision-flick-shot',
     siteName: 'SkillDrills',
@@ -32,8 +23,8 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Test de Flick Shot – Precisión con el Ratón | SkillDrills',
-    description: 'Entrenador de flick shot online gratis: Mide precision de disparo, velocidad de adquisicion y aciertos en el blanco segun el modelo balistico en el navegador.',
+    title: 'Entrenamiento de flick | Test de puntería | SkillDrills',
+    description: 'Entrena flick en el navegador y mide tu puntería con ratón: tiempo de adquisición, precisión y aciertos en el centro para FPS.',
   },
   robots: { index: true, follow: true },
   alternates: {
@@ -83,7 +74,8 @@ const softwareApplicationSchema = {
   description: 'Herramienta online gratuita para evaluar puntería balística, tiempo de adquisición y aciertos en la diana con progresión adaptativa.',
   url: 'https://skilldrills.online/es/drills/motor/hand-eye-coordination/precision-flick-shot',
   publisher: { '@type': 'Organization', name: 'SkillDrills', url: 'https://skilldrills.online' },
-  dateModified: '2026-09-16',
+  inLanguage: 'es-ES',
+  dateModified: '2026-09-20',
 };
 
 const webApplicationSchema = {
@@ -93,7 +85,8 @@ const webApplicationSchema = {
   browserRequirements: 'Requiere HTML5 Canvas y compatibilidad con JavaScript',
   url: 'https://skilldrills.online/es/drills/motor/hand-eye-coordination/precision-flick-shot',
   applicationCategory: 'EducationalApplication',
-  dateModified: '2026-09-16',
+  inLanguage: 'es-ES',
+  dateModified: '2026-09-20',
 };
 
 const videoGameSchema = {
@@ -105,13 +98,15 @@ const videoGameSchema = {
   genre: ['Tiro', 'Reflejos', 'Esports'],
   gamePlatform: ['Web Browser', 'Desktop'],
   applicationCategory: 'Game',
+  inLanguage: 'es-ES',
   offers: { '@type': 'Offer', price: '0', priceCurrency: 'EUR' },
 };
 
 const faqSchema = {
   '@context': 'https://schema.org',
   '@type': 'FAQPage',
-  dateModified: '2026-09-16',
+  inLanguage: 'es-ES',
+  dateModified: '2026-09-20',
   mainEntity: [
     {
       '@type': 'Question',
@@ -199,6 +194,7 @@ const faqSchema = {
 const howToSchema = {
   '@context': 'https://schema.org',
   '@type': 'HowTo',
+  inLanguage: 'es-ES',
   name: 'Cómo entrenar flick shots y precisión con el ratón',
   description: 'Metodología sistemática para dominar desplazamientos balísticos, acierto en la diana y frenada de cursor.',
   step: [
@@ -329,7 +325,7 @@ const guideProps = {
 
 const copyEs = {
   title: "Flick Shot de Precisión – Test de Puntería con Ratón",
-  subtitle: "Decaimiento de Objetivos & Micro-Flicks al Centro • Progresión Infinita",
+  subtitle: "Precisión del flick · aciertos al centro",
   startButtonText: "INICIAR DRILL",
   playAgainText: "Jugar de nuevo",
   shareText: "Compartir resultado",

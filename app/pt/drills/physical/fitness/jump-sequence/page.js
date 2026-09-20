@@ -52,6 +52,14 @@ export const metadata = {
   robots: { index: true, follow: true },
 };
 
+Object.assign(metadata, {
+  title: 'Treino de Salto Vertical | Jogo de Reflexo | SkillDrills',
+  description: 'Treino de salto vertical grátis no navegador. Dose a impulsão, controle a trajetória no ar e acerte alvos móveis para praticar timing, coordenação e reflexo.',
+  keywords: ['treino de salto', 'treino pliométrico', 'salto vertical', 'treino de impulsão', 'coordenação motora no salto', 'jogo de reflexo', 'jogo de salto', 'timing do salto', 'trajetória aérea', 'reação no esporte'],
+  openGraph: { ...metadata.openGraph, title: 'Treino de Salto Vertical | Jogo de Reflexo | SkillDrills', description: 'Treino de salto vertical grátis no navegador. Dose a impulsão, controle a trajetória no ar e acerte alvos móveis para praticar timing, coordenação e reflexo.' },
+  twitter: { ...metadata.twitter, title: 'Treino de Salto Vertical | Jogo de Reflexo | SkillDrills', description: 'Treino de salto vertical grátis no navegador. Dose a impulsão, controle a trajetória no ar e acerte alvos móveis para praticar timing, coordenação e reflexo.' },
+});
+
 const breadcrumbSchema = {
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
@@ -102,7 +110,7 @@ const softwareApplicationSchema = {
     "url": "https://skilldrills.online/pt"
   },
   "inLanguage": "pt-BR",
-  "dateModified": "2026-09-12"
+  "dateModified": "2026-09-20"
 };
 
 const webApplicationSchema = {
@@ -119,7 +127,7 @@ const webApplicationSchema = {
   },
   "url": "https://skilldrills.online/pt/drills/physical/fitness/jump-sequence",
   "inLanguage": "pt-BR",
-  "dateModified": "2026-09-12"
+  "dateModified": "2026-09-20"
 };
 
 const videoGameSchema = {
@@ -140,6 +148,8 @@ const videoGameSchema = {
     "Mobile"
   ],
   "applicationCategory": "Game",
+  "inLanguage": "pt-BR",
+  "dateModified": "2026-09-20",
   "offers": {
     "@type": "Offer",
     "price": "0",
@@ -150,7 +160,8 @@ const videoGameSchema = {
 const faqSchema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
-  "dateModified": "2026-09-12",
+  "inLanguage": "pt-BR",
+  "dateModified": "2026-09-20",
   "mainEntity": [
     {
       "@type": "Question",

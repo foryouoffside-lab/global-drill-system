@@ -21,9 +21,13 @@ import { getAlternateLanguages } from '@/lib/i18n/locales';
 // ============================================================
 
 export const metadata = {
-  title: '사이먼 게임 – 온라인 색깔 순서 기억력 테스트 | SkillDrills',
-  description: '무료 온라인 사이먼 게임(Simon Game). 화면에서 점차 늘어나는 색상과 소리의 순서를 기억하고 재현하여 시각적 작업 기억력의 한계를 테스트하세요.',
+  title: '색깔 순서 기억 게임 | SkillDrills',
+  description: '무료 색깔 순서 기억 게임: 빛과 소리로 제시되는 색상 순서를 기억해 같은 순서로 눌러 보세요.',
   keywords: [
+    '색깔 순서 기억',
+    '색깔 기억력 게임',
+    '순서 기억 게임',
+    '기억력 게임',
     '사이먼 게임 온라인',
     '색깔 기억 게임',
     '순서 기억력 테스트',
@@ -46,8 +50,8 @@ export const metadata = {
     follow: true,
   },
   openGraph: {
-    title: '사이먼 게임 – 온라인 색깔 순서 기억력 테스트 | SkillDrills',
-    description: '무료 온라인 사이먼 게임(Simon Game). 화면에서 점차 늘어나는 색상과 소리의 순서를 기억하고 재현하여 시각적 작업 기억력의 한계를 테스트하세요.',
+    title: '색깔 순서 기억 게임 | SkillDrills',
+    description: '무료 색깔 순서 기억 게임: 빛과 소리로 제시되는 색상 순서를 기억해 같은 순서로 눌러 보세요.',
     url: 'https://skilldrills.online/ko/drills/memory/short-term-memory/color-sequence',
     siteName: 'SkillDrills',
     locale: 'ko_KR',
@@ -55,14 +59,14 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: '사이먼 게임 – 온라인 색깔 순서 기억력 테스트 | SkillDrills',
-    description: '무료 온라인 사이먼 게임(Simon Game). 화면에서 점차 늘어나는 색상과 소리의 순서를 기억하고 재현하여 시각적 작업 기억력의 한계를 테스트하세요.',
+    title: '색깔 순서 기억 게임 | SkillDrills',
+    description: '무료 색깔 순서 기억 게임: 빛과 소리로 제시되는 색상 순서를 기억해 같은 순서로 눌러 보세요.',
   },
 };
 
 const copyKo = {
-  title: '사이먼 게임',
-  subtitle: '색깔 순서 기억력 & 시각 작업기억 테스트',
+  title: '색깔 순서 기억 게임',
+  subtitle: '빛나는 색의 순서를 기억해 그대로 누르기',
   caption: '점차 길어지는 색상 신호의 순서를 집중해서 관찰하고, 기억하여 동일한 순서대로 입력하세요.',
   statScore: '점수',
   statTime: '남은 시간',
@@ -111,6 +115,7 @@ export default function KoreanColorSequencePage() {
     operatingSystem: 'Web Browser',
     dateModified: '2026-09-15',
     offers: { '@type': 'Offer', price: '0', priceCurrency: 'KRW' },
+    sameAs: ['https://en.wikipedia.org/wiki/Simon_%28game%29'],
     description: '무료 온라인 사이먼 게임. 시각 작업기억 용량, 연속 패턴 부호화, 청킹 전략, 집중력 한계를 측정하고 훈련합니다.',
     genre: 'Cognitive Training / Visual Working Memory',
     url: 'https://skilldrills.online/ko/drills/memory/short-term-memory/color-sequence',

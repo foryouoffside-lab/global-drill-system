@@ -555,7 +555,7 @@ export default function KineticInterceptClient({ copy } = {}) {
               <span data-seo-kw="1">{copy?.title || "Moving Target Intercept Test"}</span>
             </h1>
             <p className="text-sm text-slate-400 mt-1 leading-relaxed">
-              Smooth pursuit is the eye movement that follows a target moving steadily across your field of view, as opposed to the jumps the eye makes between stationary points. Pursuit stays accurate up to roughly 30&deg;/s; past that the eye falls behind and has to catch up with saccades (Krauzlis, 2004; Rashbass, 1961). Intercepting a moving target adds a second problem on top: aiming where it is going rather than where it is.
+              Smooth pursuit is the eye movement that follows a target moving steadily across your field of view.
             </p>
           </div>
         )}
@@ -723,7 +723,7 @@ export default function KineticInterceptClient({ copy } = {}) {
                     <Brain className="w-4 h-4 text-orange-400" /> What Is Kinetic Target Intercept Training?
                   </h3>
                   <p className="text-sm leading-relaxed mb-3">
-                    <strong>Kinetic Target Intercept Training</strong> is a high-speed smooth pursuit drill designed to test visual tracking and motor interception accuracy. The <strong>Moving Target drill</strong> renders bouncing target spheres traveling across a 2D bounding viewport at dynamic velocities.
+                    <strong>Kinetic Target Intercept Training</strong> is a high-speed smooth pursuit drill designed to test visual tracking and motor interception accuracy. The <strong>Moving Target drill</strong> renders bouncing target spheres traveling across a 2D bounding viewport at dynamic velocities. As opposed to the jumps the eye makes between stationary points, pursuit stays accurate up to roughly 30&deg;/s; past that the eye falls behind and has to catch up with saccades (Krauzlis, 2004; Rashbass, 1961). Intercepting a moving target adds a second problem on top: aiming where it is going rather than where it is.
                   </p>
                   <p className="text-sm leading-relaxed">
                     By matching your eye gaze and motor cursor with moving targets, you build smooth pursuit eye movement coordination, crucial for aiming in esports and fast visual inspection.

@@ -20,8 +20,8 @@ import { pickSources } from '@/lib/drillSources';
 // ============================================================
 
 export const metadata = {
-  title: "타겟 스위칭 에임 연습 – 브라우저 무료 FPS 다중 타겟 전환 트레이너 | SkillDrills",
-  description: "브라우저에서 설치 없이 무료로 즐기는 FPS 타겟 스위칭(타겟 전환) 에임 연습 사이트. 다중 스와름 타겟을 향한 지체 없는 연속 플릭, 킬 확인 딜레이 제거, 발로란트와 CS2 스프레이 전환 실전력을 극대화하세요.",
+  title: "타겟 스위칭 에임 연습 - 다중 타겟 전환 | SkillDrills",
+  description: "브라우저에서 무료로 타겟 스위칭 에임을 훈련하세요. 여러 적 사이를 빠르게 전환하고 스프레이 전환과 연속 플릭 정확도를 측정합니다.",
   keywords: [
     '타겟 스위칭 에임',
     '타겟 스위칭',
@@ -32,9 +32,12 @@ export const metadata = {
     '발로란트 타겟 스위칭',
     '무료 에임 연습 사이트',
     '스프레이 전환 에임',
-    '에임 스와름 훈련',
-    'FPS 에임 정확도',
-    '배틀그라운드 에임 전환'
+    '스프레이 전환',
+    '연속 플릭',
+    '무료 에임 연습',
+    '다중 타겟 전환',
+    '타겟 전환 속도',
+    'FPS 에임 트레이너'
   ],
   alternates: {
     canonical: "https://skilldrills.online/ko/drills/fps/target-switching-swarm",
@@ -45,8 +48,8 @@ export const metadata = {
     follow: true,
   },
   openGraph: {
-    title: "타겟 스위칭 에임 연습 – 브라우저 무료 FPS 다중 타겟 전환 트레이너 | SkillDrills",
-    description: "브라우저에서 설치 없이 무료로 즐기는 FPS 타겟 스위칭(타겟 전환) 에임 연습 사이트. 다중 스와름 타겟을 향한 지체 없는 연속 플릭, 킬 확인 딜레이 제거, 발로란트와 CS2 스프레이 전환 실전력을 극대화하세요.",
+    title: "타겟 스위칭 에임 연습 - 다중 타겟 전환 | SkillDrills",
+    description: "브라우저에서 무료로 타겟 스위칭 에임을 훈련하세요. 여러 적 사이를 빠르게 전환하고 스프레이 전환과 연속 플릭 정확도를 측정합니다.",
     url: "https://skilldrills.online/ko/drills/fps/target-switching-swarm",
     siteName: 'SkillDrills',
     locale: 'ko_KR',
@@ -54,8 +57,8 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: "타겟 스위칭 에임 연습 – 브라우저 무료 FPS 다중 타겟 전환 트레이너 | SkillDrills",
-    description: "브라우저에서 설치 없이 무료로 즐기는 FPS 타겟 스위칭(타겟 전환) 에임 연습 사이트. 다중 스와름 타겟을 향한 지체 없는 연속 플릭, 킬 확인 딜레이 제거, 발로란트와 CS2 스프레이 전환 실전력을 극대화하세요.",
+    title: "타겟 스위칭 에임 연습 - 다중 타겟 전환 | SkillDrills",
+    description: "브라우저에서 무료로 타겟 스위칭 에임을 훈련하세요. 여러 적 사이를 빠르게 전환하고 스프레이 전환과 연속 플릭 정확도를 측정합니다.",
   },
 };
 
@@ -73,10 +76,10 @@ export default function TargetSwitchingSwarmPageKo() {
   const softwareSchema = {
     "@context": "https://schema.org",
     "@type": "SoftwareApplication",
-    "name": "타겟 스위칭 에임 연습 (Target Switching Swarm)",
+    "name": "타겟 스위칭 에임 연습 - 다중 타겟 전환",
     "applicationCategory": "GameApplication",
     "operatingSystem": "Web Browser",
-    "dateModified": "2026-09-11",
+    "dateModified": "2026-09-20",
     "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
     "description": "설치 없이 웹 브라우저에서 실행되는 무료 FPS 타겟 스위칭 에임 트레이너. 동적으로 생성되는 다중 타겟을 신속하게 연속 전환 격추합니다.",
     "genre": "FPS Training / Target Switching",
@@ -91,10 +94,10 @@ export default function TargetSwitchingSwarmPageKo() {
   const webAppSchema = {
     "@context": "https://schema.org",
     "@type": "WebApplication",
-    "name": "타겟 스위칭 에임 연습 (Target Switching Swarm)",
+    "name": "타겟 스위칭 에임 연습 - 다중 타겟 전환",
     "applicationCategory": "GameApplication",
     "operatingSystem": "Web Browser",
-    "dateModified": "2026-09-11",
+    "dateModified": "2026-09-20",
     "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
     "browserRequirements": "Pointer Lock API, JavaScript, HTML5 Canvas 지원 브라우저",
     "description": "설치 없이 웹 브라우저에서 실행되는 무료 FPS 타겟 스위칭 에임 트레이너. 동적으로 생성되는 다중 타겟을 신속하게 연속 전환 격추합니다.",
@@ -104,10 +107,10 @@ export default function TargetSwitchingSwarmPageKo() {
   const videoGameSchema = {
     "@context": "https://schema.org",
     "@type": "VideoGame",
-    "name": "타겟 스위칭 에임 연습 (Target Switching Swarm)",
+    "name": "타겟 스위칭 에임 연습 - 다중 타겟 전환",
     "url": "https://skilldrills.online/ko/drills/fps/target-switching-swarm",
     "description": "설치 없이 웹 브라우저에서 실행되는 무료 FPS 타겟 스위칭 에임 트레이너. 동적으로 생성되는 다중 타겟을 신속하게 연속 전환 격추합니다.",
-    "dateModified": "2026-09-11",
+    "dateModified": "2026-09-20",
     "gamePlatform": "Web Browser",
     "genre": ["FPS Training", "Aim Trainer", "Target Switching"],
     "playMode": "SinglePlayer",
@@ -119,7 +122,7 @@ export default function TargetSwitchingSwarmPageKo() {
   const faqSchema = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
-    "dateModified": "2026-09-11",
+    "dateModified": "2026-09-20",
     "mainEntity": [
       {
         "@type": "Question",
@@ -242,9 +245,9 @@ export default function TargetSwitchingSwarmPageKo() {
   };
 
   const targetSwitchingGuide = {
-    heading: "타겟 스위칭 에임 가이드 & 다중 타겟 운동역학",
+    heading: "타겟 스위칭 에임: 다중 타겟 전환과 스프레이 전환 가이드",
     intro: [
-      "타겟 스위칭 스와름(Target Switching Swarm)은 여러 개의 적대적 타겟 사이를 한 치의 망설임 없이 초고속으로 연속 전환하는 능력을 극대화하기 위해 설계된 고급 FPS 모터 컨트롤 드릴입니다. 카운터 스트라이크 2, 발로란트의 사이트 수비 및 에이펙스 레전드의 난전에서는 1대1 교전만으로 클러치를 이길 수 없습니다. 첫 번째 적을 제거한 순간, 뇌가 킬을 인지하고 멈추는 포즈 없이 즉각 2선 침투 적에게 크로스헤어를 안착시키는 스위칭 민첩성이 핵심입니다.",
+      "타겟 스위칭 에임을 찾는 FPS 플레이어라면, 이 드릴은 한 대상을 맞힌 직후 다음 위협으로 조준선을 옮기는 시간과 정확도를 측정합니다. 여러 적 사이의 연속 플릭, 킬 확인 지연 제거, 발로란트와 CS2의 스프레이 전환을 한 세션에서 훈련합니다.",
       "타겟 스위칭의 정신물리학은 피츠의 법칙(Fitts, 1954)과 David E. Meyer 등(1988)의 확률적 최적 하위운동 모델을 기반으로 합니다. 조준 운동은 전체 궤적의 약 90%를 폭발적으로 좁히는 초기 탄도 운동(Primary Submovement)과 시각 피드백으로 미세 조정하는 2차 수정 운동으로 나뉩니다. 초심자는 매 킬마다 100~250ms 동안 '적이 죽었는지' 확인하느라 멈칫거리지만, 프로 게이머는 클릭 완료와 동시에 시선 사케드를 다음 타겟으로 즉시 이동시킵니다.",
       "복잡한 스와름 타겟군 속에서의 공간 인덱싱은 특징 통합 이론과 사전주의적 시각 탐색 메커니즘(Treisman & Gelade, 1980; Wolfe, 2007)을 따릅니다. 인간의 시각 피질은 '시각 인덱스(FINST 이론)'를 통해 복수의 표적 좌표를 병렬 추적할 수 있으므로, 최소 각거리로 묶인 클러스터 최적 경로를 본능적으로 설계할 수 있습니다.",
       "측정 정확도 안내: 모든 이벤트는 브라우저의 performance.now() 고정밀 클록을 사용해 사용자 기기 내에서 밀리초 단위로 안전하게 처리됩니다. 브라우저 보안 완화책으로 타이머는 약 1ms 단위로 반올림되며, 디스플레이 주사율(60Hz 기준 약 16.7ms, 144Hz 기준 약 6.9ms, 240Hz 기준 약 4.1ms)에 따른 양자화가 발생합니다. 5ms 미만의 차이는 측정 편차로 간주하고 다른 사람의 PC 환경과 단순 비교하기보다는 동일한 기기 환경에서의 개인 성취도 향상 지표로 활용하시기 바랍니다."
@@ -334,8 +337,8 @@ export default function TargetSwitchingSwarmPageKo() {
       <TargetSwitchingSwarmClient
         copy={{
           h1Keyword: "타겟 스위칭 에임",
-          h1Suffix: " – 브라우저 무료 FPS 다중 타겟 전환 연습",
-          subtitle: "지체 없는 연속 플릭 전환과 스프레이 전환, 다중 타겟 시각적 인덱싱을 훈련하세요.",
+          h1Suffix: " - 다중 타겟 전환 트레이너",
+          subtitle: "여러 적 사이의 빠른 조준 전환과 스프레이 전환 정확도를 브라우저에서 훈련하세요.",
           statScore: "점수",
           statTime: "남은 시간",
           statAccuracy: "적중률",
@@ -360,7 +363,7 @@ export default function TargetSwitchingSwarmPageKo() {
       <div className="max-w-4xl mx-auto px-4 pb-12">
         <RelatedDrills
           currentCategory="fps"
-          currentHref="/drills/fps/target-switching-swarm"
+          currentHref="/ko/drills/fps/target-switching-swarm"
           locale="ko"
         />
       </div>

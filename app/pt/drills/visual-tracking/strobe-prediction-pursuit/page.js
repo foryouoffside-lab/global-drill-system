@@ -5,29 +5,30 @@ import { getAlternateLanguages } from '@/lib/i18n/locales';
 import { pickSources } from '@/lib/drillSources';
 
 export const metadata = {
-  title: "Treino de Visão Estroboscópica – SkillDrills",
-  description: "Condicione a antecipação visual e a predição de trajetória sob oclusão estroboscópica. Melhore seus reflexos no esporte com treino oculomotor gratuito.",
+  title: "Treino visual estroboscópico | SkillDrills",
+  description: "Preveja a rota de um alvo ocultado por flashes. Treino gratuito no navegador para erro de retomada e continuidade do rastreamento.",
   keywords: [
-    "treino de visão estroboscópica",
-    "treinamento visual estroboscópico",
-    "visão estroboscópica futebol reflexo",
-    "treino de antecipação visual esportiva",
-    "exercícios de oclusão visual esportiva",
-    "rastreamento visual sob oclusão",
-    "treino cognitivo visual atletas",
-    "óculos estroboscópicos treino visual",
-    "extrapolação de trajetória visual",
-    "treinamento oculomotor intermitente",
-    "exercício de percepção antecipada esportes",
-    "teste de antecipação motora reflexo"
+    "treino visual estroboscópico",
+    "óculos estroboscópicos treino",
+    "visão estroboscópica esporte",
+    "rastreamento visual com oclusão",
+    "antecipação visual treino",
+    "previsão de trajetória visual",
+    "treino de visão intermitente",
+    "erro de retomada do alvo",
+    "continuidade do rastreamento",
+    "treino oculomotor com flashes",
+    "visão dinâmica esporte",
+    "treino de reflexos visuais"
   ],
   alternates: {
     canonical: "https://skilldrills.online/pt/drills/visual-tracking/strobe-prediction-pursuit",
-    languages: getAlternateLanguages('drills/visual-tracking/strobe-prediction-pursuit')
+    languages: getAlternateLanguages('/drills/visual-tracking/strobe-prediction-pursuit')
   },
+  robots: { index: true, follow: true },
   openGraph: {
-    title: "Treino de Visão Estroboscópica – SkillDrills",
-    description: "Condicione a antecipação visual e a predição de trajetória sob oclusão estroboscópica. Melhore seus reflexos no esporte com treino oculomotor gratuito.",
+    title: "Treino visual estroboscópico | SkillDrills",
+    description: "Preveja a rota de um alvo ocultado por flashes. Treino gratuito no navegador para erro de retomada e continuidade do rastreamento.",
     url: "https://skilldrills.online/pt/drills/visual-tracking/strobe-prediction-pursuit",
     siteName: "SkillDrills",
     locale: "pt_BR",
@@ -35,8 +36,8 @@ export const metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Treino de Visão Estroboscópica – SkillDrills",
-    description: "Condicione a antecipação visual e a predição de trajetória sob oclusão estroboscópica. Melhore seus reflexos no esporte com treino oculomotor gratuito."
+    title: "Treino visual estroboscópico | SkillDrills",
+    description: "Preveja a rota de um alvo ocultado por flashes. Treino gratuito no navegador para erro de retomada e continuidade do rastreamento."
   }
 };
 
@@ -60,7 +61,8 @@ export default function StrobePredictionPursuitPagePT() {
     "applicationCategory": "HealthApplication",
     "operatingSystem": "Any",
     "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
-    "description": "Treinamento cognitivo de rastreamento visual sob pulsos de oclusão estroboscópica periódica para atletas e jogadores de esports."
+    "description": "Treinamento cognitivo de rastreamento visual sob pulsos de oclusão estroboscópica periódica para atletas e jogadores de esports.",
+    "dateModified": "2026-09-20"
   };
 
   const webAppSchema = {
@@ -69,7 +71,8 @@ export default function StrobePredictionPursuitPagePT() {
     "name": "Exercício de Percepção e Predição Estroboscópica",
     "url": "https://skilldrills.online/pt/drills/visual-tracking/strobe-prediction-pursuit",
     "applicationCategory": "TrainingTool",
-    "browserRequirements": "Requires JavaScript. HTML5 Canvas compatible."
+    "browserRequirements": "Requer JavaScript e compatibilidade com HTML5 Canvas.",
+    "dateModified": "2026-09-20"
   };
 
   const videoGameSchema = {
@@ -77,7 +80,8 @@ export default function StrobePredictionPursuitPagePT() {
     "@type": "VideoGame",
     "name": "Desafio de Visão Estroboscópica e Extrapolação",
     "gamePlatform": "Web Browser",
-    "genre": ["Visual Training", "Cognitive Drill", "Esports Reflex"]
+    "genre": ["Treino visual", "Exercício cognitivo", "Reflexos para esports"],
+    "dateModified": "2026-09-20"
   };
 
   const howToSchema = {
@@ -85,6 +89,7 @@ export default function StrobePredictionPursuitPagePT() {
     "@type": "HowTo",
     "name": "Como Treinar Antecipação Visual com Oclusão Estroboscópica",
     "description": "Protocolo para condicionamento do modelo interno preditivo cerebelar através de pulsos de escuridão.",
+    "dateModified": "2026-09-20",
     "step": [
       {
         "@type": "HowToStep",
@@ -112,6 +117,7 @@ export default function StrobePredictionPursuitPagePT() {
   const faqSchema = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
+    "dateModified": "2026-09-20",
     "mainEntity": [
       {
         "@type": "Question",
@@ -242,10 +248,10 @@ export default function StrobePredictionPursuitPagePT() {
       ]
     },
     steps: [
-      "Fixe a visão central no alvo circular e acompanhe seu movimento inicial contínuo.",
-      "Quando o alvo apagar durante o ciclo estroboscópico, continue movendo seu olhar ao longo da trajetória prevista.",
-      "Ao reaparecer o alvo, observe a discrepância espacial e ajuste a inércia motora suavemente.",
-      "Treine em blocos curtos e aumente a velocidade do alvo assim que mantiver precisão oculta acima de 70%."
+      { title: "Fixe o alvo na fase visível", text: "Acompanhe o movimento inicial e memorize direção e velocidade sem mover a cabeça." },
+      { title: "Continue durante o apagão", text: "Quando o alvo desaparecer, mantenha o olhar na rota prevista em vez de parar ou procurar ao acaso." },
+      { title: "Confira o erro ao reaparecer", text: "Observe se o olhar ficou à frente ou atrás do alvo e corrija suavemente o ciclo seguinte." },
+      { title: "Aumente a dificuldade com controle", text: "Treine em blocos curtos e aumente a velocidade somente quando a precisão oculta estiver estável." }
     ],
     audience: "Atletas de modalidades com bola e raquete, pilotos, praticantes competitivos de esportes eletrônicos (FPS/MOBA) e quem busca reflexos antecipatórios supremos.",
     faqs: faqSchema.mainEntity.map(item => ({
@@ -284,9 +290,9 @@ export default function StrobePredictionPursuitPagePT() {
 
       <StrobePredictionPursuitClient
         copy={{
-          title: "Treinador de Visão Estroboscópica",
-          subtitle: "Treino Oculomotor sob Oclusão Intermitente",
-          description: "Condicione a antecipação visual e a predição cinemática através de apagamentos estroboscópicos periódicos. Treine seu modelo cerebelar para reconstruir trajetórias invisíveis com precisão cirúrgica."
+          title: "Treino visual estroboscópico",
+          subtitle: "Predição visual sob oclusão intermitente",
+          description: "Preveja a rota de um alvo ocultado por flashes e registre o erro de retomada e a continuidade do rastreamento."
         }}
       />
       <DrillGuide guide={guide} />

@@ -1,25 +1,26 @@
 import StaircaseStepClient from '@/app/drills/visual-tracking/staircase-step/StaircaseStepClientLoader';
 import DrillGuide from '@/components/drill/DrillGuide';
 import RelatedDrills from '@/components/drill/RelatedDrills';
+import DrillFooter from '@/components/drill/DrillFooter';
 import { getAlternateLanguages } from '@/lib/i18n/locales';
 import { pickSources } from '@/lib/drillSources';
 
 export const metadata = {
-  title: "高低差エイム練習・垂直追従眼球運動テスト | SkillDrills",
-  description: "階段状のジグザグ軌道を昇降する目標を追尾する垂直追従眼球運動トレーニング。中脳riMLF経路を刺激し、高低差エイムや上下視線移動の捕捉精度を強化。無料。",
+  title: "上下視線追従トレーニング｜動体視力ドリル | SkillDrills",
+  description: "上下に段階移動する標的を追う無料ブラウザ練習。垂直追従、視線の遅れ、標的ロストを記録。",
   keywords: [
-    "垂直追従眼球運動 練習",
+    "上下 視線移動 練習",
+    "動体視力 上下 トレーニング",
+    "垂直追従 眼球運動",
+    "画面 上下 標的追跡",
     "高低差 エイム 練習",
-    "上下 視線移動 トレーニング",
-    "階段状 アイトラッキング",
-    "垂直 サッケード 訓練",
-    "中脳 riMLF 神経回路",
-    "垂直滑動性追従眼球運動",
-    "FPS 上下視線 追従",
-    "跳躍目標 視覚捕捉",
-    "外眼筋 垂直制御",
-    "高低差 動体視力",
-    "垂直視線 安定化 練習"
+    "動体視力テスト",
+    "視線 上下 トレーニング",
+    "垂直視線 追従",
+    "階段状 軌道 追視",
+    "視覚追従 練習",
+    "上昇下降 標的追跡",
+    "目だけ動かす 練習"
   ],
   alternates: {
     canonical: "https://skilldrills.online/ja/drills/visual-tracking/staircase-step",
@@ -27,8 +28,8 @@ export const metadata = {
   },
   robots: { index: true, follow: true },
   openGraph: {
-    title: "高低差エイム練習・垂直追従眼球運動テスト | SkillDrills",
-    description: "階段状のジグザグ軌道を昇降する目標を追尾する垂直追従眼球運動トレーニング。中脳riMLF経路を刺激し、高低差エイムや上下視線移動の捕捉精度を強化。無料。",
+    title: "上下視線追従トレーニング｜動体視力ドリル | SkillDrills",
+    description: "上下に段階移動する標的を追う無料ブラウザ練習。垂直追従、視線の遅れ、標的ロストを記録。",
     url: "https://skilldrills.online/ja/drills/visual-tracking/staircase-step",
     siteName: "SkillDrills",
     locale: "ja_JP",
@@ -36,8 +37,8 @@ export const metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "高低差エイム練習・垂直追従眼球運動テスト | SkillDrills",
-    description: "階段状のジグザグ軌道を昇降する目標を追尾する垂直追従眼球運動トレーニング。中脳riMLF経路を刺激し、高低差エイムや上下視線移動の捕捉精度を強化。無料。",
+    title: "上下視線追従トレーニング｜動体視力ドリル | SkillDrills",
+    description: "上下に段階移動する標的を追う無料ブラウザ練習。垂直追従、視線の遅れ、標的ロストを記録。",
   },
 };
 
@@ -84,7 +85,7 @@ const softwareApplicationSchema = {
     "name": "SkillDrills",
     "url": "https://skilldrills.online"
   },
-  "dateModified": "2026-09-15"
+  "dateModified": "2026-09-20"
 };
 
 const webAppSchema = {
@@ -100,7 +101,7 @@ const webAppSchema = {
     "priceCurrency": "USD"
   },
   "url": "https://skilldrills.online/ja/drills/visual-tracking/staircase-step",
-  "dateModified": "2026-09-15"
+  "dateModified": "2026-09-20"
 };
 
 const videoGameSchema = {
@@ -115,7 +116,7 @@ const videoGameSchema = {
     "視覚追従訓練"
   ],
   "gamePlatform": [
-    "Web Browser",
+    "ブラウザ",
     "Desktop",
     "Mobile"
   ],
@@ -124,7 +125,8 @@ const videoGameSchema = {
     "@type": "Offer",
     "price": "0",
     "priceCurrency": "USD"
-  }
+  },
+  "dateModified": "2026-09-20"
 };
 
 const howToSchema = {
@@ -132,7 +134,7 @@ const howToSchema = {
   "@type": "HowTo",
   "name": "階段ステップ垂直追従訓練の進め方",
   "description": "多段階段状の幾何学的軌道を昇降するターゲットを滑動性および捕捉サッケードで追従し、垂直動眼制御を鍛える4ステップ。",
-  "dateModified": "2026-09-15",
+  "dateModified": "2026-09-20",
   "step": [
     {
       "@type": "HowToStep",
@@ -168,10 +170,11 @@ const howToSchema = {
 const faqSchema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
+  "dateModified": "2026-09-20",
   "mainEntity": [
     {
       "@type": "Question",
-      "name": "階段ステップ垂直追従テスト（Staircase Step）とは何ですか？",
+      "name": "階段状の垂直追従テストとは何ですか？",
       "acceptedAnswer": {
         "@type": "Answer",
         "text": "画面上を階段状のジグザグ幾何学軌道に沿って昇降するターゲットを、頭部を固定したまま眼球のみで追従する視覚運動トレーニングです。直線的な斜面移動と直角コーナーでの急激な方向転換を組み合わせることで、日常で鍛えられにくい垂直方向の滑動性追従眼球運動と補正サッケードを徹底的に強化します。"
@@ -258,7 +261,7 @@ const guide = {
     "人間の眼球運動系（Oculomotor System）は、水平方向と垂直方向とで全く異なる神経解剖学的制御機構を有しています。水平方向の滑動性追従およびサッケード運動が橋（Pons）の傍正中橋網様体（PPRF）を中心とする回路で処理されるのに対し、垂直方向の運動制御は中脳（Midbrain）に局在する内側縦束吻側間質核（riMLF: rostral interstitial nucleus of the medial longitudinal fasciculus）およびカハール間質核によって排他的に統御されています（Büttner-Ennever & Horn, 1997）。",
     "精神物理学および眼球運動計測に関する先行研究（Rottach et al., 1996; Ke et al., 2013）は、垂直追従眼球運動が水平追従に比べて定常ゲイン（目標速度に対する眼球速度の比）が有意に低く、応答潜時が長く、位相遅れ（Phase Lag）が大きいことを実証しています。さらに、仰角方向（上向き）の追従は沈降方向（下向き）に比べて網膜スリップの知覚感度が低く、追従中に目標を見失って眼球が追いつくための補正サッケード（Catch-up Saccade）が高頻度で誘発されるという顕著な方向非対称性を示します。",
     "日常生活における読書やデジタル機器の利用は、大半が水平軸に沿った視覚走査であるため、現代人の垂直動眼回路は慢性的な運動刺激不足に陥っています。この未発達な神経経路は、競技FPSにおいて敵が高所から飛び降りたり空中へ跳躍した瞬間、あるいは球技スポーツにおいて高く舞い上がったボールを追尾する局面において、深刻なトラッキングの乱れや視覚的ブレとして表面化します。首の代償運動（頭部チルト）に依存せず眼球のみを垂直に動かす能力の養成が急務となります。",
-    "本『階段ステップ追従（Staircase Step）』ドリルは、多段の階段状ジグザグ幾何学経路に沿って目標を移動させることで、対角線方向の滑動性追従と直角コーナー頂点における急激な減速・再捕捉サッケードを複合的に課します（Collewijn & Tamminga, 1984; Lisberger, 2010）。ディスプレイ表示の量子化遅延（60Hz時16.7ms、144Hz時6.9ms）や入力遅延（Woods et al., 2015）を最小化した環境で、中脳riMLF経路の神経可塑性を最大化してください。全記録はブラウザ内に安全に保持されます。"
+    "本ドリルは、多段の階段状ジグザグ幾何学経路に沿って目標を移動させることで、対角線方向の滑動性追従と直角コーナー頂点における急激な減速・再捕捉サッケードを複合的に課します（Collewijn & Tamminga, 1984; Lisberger, 2010）。ディスプレイ表示の量子化遅延（60Hz時16.7ms、144Hz時6.9ms）や入力遅延（Woods et al., 2015）を最小化した環境で、中脳riMLF経路の神経可塑性を最大化してください。全記録はブラウザ内に安全に保持されます。"
   ],
   benchmarks: {
     title: "垂直階段追従パフォーマンス基準（追従速度倍率・視線安定性）",
@@ -310,6 +313,12 @@ const guide = {
       ]
     }
   ],
+  steps: [
+    { title: "画面中央で開始する", text: "画面から50〜70cm離れ、頭を固定して標的が最初の段を進むのを待ちます。" },
+    { title: "上り下りの段を追う", text: "標的の高さを中心に捉え、首を動かさず斜めの区間と垂直の切り替えを追います。" },
+    { title: "角で視線を戻す", text: "段の角に近づいたら少し減速し、見失った場合は次の標的位置へ小さく視線を戻します。" },
+    { title: "安定後に速度を上げる", text: "標的ロストと視線の遅れが減ってから速度倍率を一段だけ上げ、記録を比較します。" }
+  ],
   deviceCalibration: {
     title: "垂直追従訓練におけるモニター・エルゴノミクス基準",
     points: [
@@ -321,7 +330,7 @@ const guide = {
   },
   faqs: [
     {
-      q: "階段ステップ垂直追従テスト（Staircase Step）とは何ですか？",
+      q: "階段状の垂直追従テストとは何ですか？",
       a: "画面上を階段状のジグザグ幾何学軌道に沿って昇降するターゲットを、頭部を固定したまま眼球のみで追従する視覚運動トレーニングです。直線的な斜面移動と直角コーナーでの急激な方向転換を組み合わせることで、日常で鍛えられにくい垂直方向の滑動性追従眼球運動と補正サッケードを徹底的に強化します。"
     },
     {
@@ -401,15 +410,16 @@ export default function StaircaseStepJaPage() {
 
       <StaircaseStepClient
         copy={{
-          title: "階段ステップ垂直追従",
-          subtitle: "高低差エイム練習・垂直追従眼球運動テスト",
-          description: "階段状のジグザグ軌道を昇降するターゲットを追尾し、中脳riMLF経路を刺激する垂直追従眼球運動トレーニング。頭部を動かさず眼球のみを純粋に単離制御し、高低差エイムのブレを抑制しながらコーナー再捕捉サッケード精度を強化します。"
+          title: "上下視線追従トレーニング",
+          subtitle: "垂直追従と標的再捕捉の練習",
+          description: "段階的に上下する標的を目だけで追い、視線の遅れと標的ロストを記録します。頭を固定して角での再捕捉精度を確認できます。"
         }}
       />
       <DrillGuide guide={guide} />
       <div className="max-w-6xl mx-auto px-4 pb-12">
         <RelatedDrills currentCategory="visual-tracking" currentHref="https://skilldrills.online/ja/drills/visual-tracking/staircase-step" />
       </div>
+      <DrillFooter />
     </>
   );
 }

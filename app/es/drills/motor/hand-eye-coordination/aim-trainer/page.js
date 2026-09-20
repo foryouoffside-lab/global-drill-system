@@ -6,30 +6,22 @@ import RelatedDrills from '@/components/drill/RelatedDrills';
 import { pickSources } from '@/lib/drillSources';
 
 // ============================================================
-// SEO RESEARCH FINDINGS — es-ES / LATAM (motor / hand-eye-coordination / aim-trainer)
-// PRIMARY DOMESTIC: "aim trainer" — 174 exact / 294 broad Bing searches/mo (Dominant term in Spain & LATAM)
-//                   "mejorar punteria mouse" — Practical training query
-//                   "test de punteria" — Assessment query
-// "entrenador de punteria" removed as the primary/title term — no measured volume
-// behind it (only asserted as "high-intent" above, never actually measured), and
-// xx.md already has it on record as a proven 0/mo translated phrase in this market.
-// "aim trainer" is the one term on this page with a real cited number, so it's the
-// anchor now instead.
-// WINNER TITLE:     Aim Trainer Online – Precisión de Mouse y Flick Shots FPS | SkillDrills
+// Native research: entrenamiento de puntería, aim trainer online, entrenador de puntería,
+// test de puntería, precisión del ratón, entrenamiento de flick, puntería FPS,
+// calentamiento de puntería, adquisición de objetivos, puntería Valorant y puntería CS2.
 // ============================================================
 
 export const metadata = {
-  title: "Aim Trainer Online – Precisión de Mouse FPS | SkillDrills",
-  description: "Aim Trainer online gratis: Mejora tu precisión con el ratón, micro-flicks y velocidad de reacción en el navegador según la Ley de Fitts.",
-  keywords: ['aim trainer online', 'aim trainer gratis', 'entrenar punteria raton', 'test de punteria fps', 'ejercicios de flick shot', 'ley de fitts punteria', 'aim trainer navegador gratis', 'calentamiento aim valorant', 'precision de raton test', 'velocidad de reaccion punteria', 'mejorar punteria cs2', 'entrenamiento de punteria online'],
+  title: "Entrenamiento de puntería | Aim Trainer | SkillDrills",
+  description: "Entrena tu puntería con un aim trainer gratuito en el navegador. Mide precisión del ratón, adquisición de objetivos y velocidad de clic.",
+  keywords: ['entrenamiento de puntería', 'aim trainer online', 'entrenador de puntería', 'test de puntería', 'precisión del ratón', 'entrenamiento de flick', 'puntería FPS', 'calentamiento de puntería', 'adquisición de objetivos', 'puntería Valorant', 'puntería CS2'],
   alternates: {
     canonical: 'https://skilldrills.online/es/drills/motor/hand-eye-coordination/aim-trainer',
     languages: getAlternateLanguages('/drills/motor/hand-eye-coordination/aim-trainer'),
   },
   openGraph: {
-    title: 'Aim Trainer Online – Precisión de Mouse y Flick Shots FPS | SkillDrills',
-    description:
-      'Aim Trainer online gratis en el navegador. Perfecciona tu precisión de ratón y micro-flicks con escalado continuo.',
+    title: 'Entrenamiento de puntería | Aim Trainer | SkillDrills',
+    description: 'Aim trainer gratis en el navegador para entrenar la precisión del ratón, los flicks y la reacción.',
     url: 'https://skilldrills.online/es/drills/motor/hand-eye-coordination/aim-trainer',
     siteName: 'SkillDrills',
     locale: 'es_ES',
@@ -37,9 +29,8 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Aim Trainer Online – Precisión de Mouse y Flick Shots FPS | SkillDrills',
-    description:
-      'Aim Trainer online gratis para shooters FPS. Mejora tu puntería y reflejos con el ratón.',
+    title: 'Entrenamiento de puntería | Aim Trainer | SkillDrills',
+    description: 'Entrenamiento de puntería FPS en el navegador para mejorar precisión, flicks y reflejos.',
   },
   robots: { index: true, follow: true },
 };
@@ -61,6 +52,7 @@ const breadcrumbSchema = {
 const softwareApplicationSchema = {
   '@context': 'https://schema.org',
   '@type': 'SoftwareApplication',
+  inLanguage: 'es-ES',
   name: 'Aim Trainer Online – Precisión de Mouse y Flick Shots FPS',
   alternateName: ['Aim Trainer', 'Aim Trainer Online', 'Test de Puntería'],
   applicationCategory: 'HealthApplication',
@@ -75,6 +67,7 @@ const softwareApplicationSchema = {
 const webAppSchema = {
   '@context': 'https://schema.org',
   '@type': 'WebApplication',
+  inLanguage: 'es-ES',
   name: 'Aim Trainer Online — Precisión de Mouse y Flick Shots FPS | SkillDrills',
   url: 'https://skilldrills.online/es/drills/motor/hand-eye-coordination/aim-trainer',
   description:
@@ -93,10 +86,11 @@ const webAppSchema = {
 const videoGameSchema = {
   "@context": "https://schema.org",
   "@type": "VideoGame",
+  "inLanguage": "es-ES",
   "name": "Aim Trainer Online (Precisión de Mouse FPS)",
   "url": "https://skilldrills.online/es/drills/motor/hand-eye-coordination/aim-trainer",
-  "description": "Free online browser-based 2D aim trainer for FPS gamers. Practice target acquisition, mouse accuracy, and click timing.",
-  "dateModified": "2026-09-11",
+  "description": "Aim trainer 2D gratuito en el navegador para FPS: entrena la adquisición de objetivos, la precisión del ratón y la velocidad de clic.",
+  "dateModified": "2026-09-20",
   "gamePlatform": "Web Browser",
   "genre": ["Aim Trainer", "FPS Training", "Hand-Eye Coordination", "Reaction Speed"],
   "playMode": "SinglePlayer",
@@ -108,6 +102,7 @@ const videoGameSchema = {
 const howToSchema = {
   '@context': 'https://schema.org',
   '@type': 'HowTo',
+  inLanguage: 'es-ES',
   name: 'Cómo entrenar la puntería con el ratón en el navegador',
   description: 'Guía paso a paso para maximizar tu puntería y reflejos con el Aim Trainer de SkillDrills.',
   step: [
@@ -149,7 +144,8 @@ const howToSchema = {
 const faqSchema = {
   '@context': 'https://schema.org',
   '@type': 'FAQPage',
-  dateModified: '2026-09-11',
+  inLanguage: 'es-ES',
+  dateModified: '2026-09-20',
   mainEntity: [
     {
       '@type': 'Question',
@@ -252,7 +248,7 @@ export default function AimTrainerSpanishPage() {
       <AimTrainerClient
         copy={{
           title: 'Aim Trainer Online (Precisión de Mouse FPS)',
-          subtitle: 'Objetivos en Movimiento Dinámicos & Precisión de Clic • Niveles Infinitos',
+          subtitle: 'Adquisición de objetivos • Precisión del ratón • Entrenamiento de flick',
           caption: 'Apunta y haz clic en los objetivos en movimiento lo más rápido y preciso posible antes de que expiren. Basado en la Ley de Fitts.',
           startButtonText: 'INICIAR ENTRENAMIENTO',
           playAgainText: 'Jugar de Nuevo',

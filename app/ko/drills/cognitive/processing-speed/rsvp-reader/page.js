@@ -2,17 +2,16 @@ import RSVPReaderClient from '@/app/drills/cognitive/processing-speed/rsvp-reade
 import { getAlternateLanguages } from '@/lib/i18n/locales';
 import DrillGuide from '@/components/drill/DrillGuide';
 import RelatedDrills from '@/components/drill/RelatedDrills';
+import DrillFooter from '@/components/drill/DrillFooter';
 import { pickSources } from '@/lib/drillSources';
 
 export const metadata = {
-  title: "속독 연습 RSVP・읽기 속도 테스트 – 분당 단어수 WPM 측정 | SkillDrills",
-  description: "무료 온라인 RSVP 속독 연습 및 독서 속도 검사. 안구 이동을 없애고 단어 최적 인식점(ORP)에 텍스트를 초고속 제시하여 최대 850 WPM의 정보 처리 능력을 평가합니다.",
-  keywords: ["속독 연습 RSVP", "읽기 속도 테스트", "분당 단어수 WPM 측정", "속독 프로그램 무료", "시선 이동 없는 독서", "최적 인식점 ORP", "텍스트 정보처리 속도", "온라인 속독 훈련", "독서 속도 측정", "WPM 테스트",
-    "RSVP 속독 훈련",
-    "무료 속독 프로그램"],
+  title: "속독 테스트 | RSVP 읽기 훈련 | SkillDrills",
+  description: "무료 브라우저 속독 테스트에서 단어를 한 지점에 빠르게 표시합니다. WPM과 정확도를 확인하는 비임상 읽기 훈련입니다.",
+  keywords: ["속독 테스트", "속독 테스트 온라인", "속독 연습", "읽기 속도 측정", "독서 속도 테스트", "분당 단어수", "빠른 읽기 훈련", "RSVP 속독"],
   openGraph: {
-    title: "속독 연습 RSVP・읽기 속도 테스트 – 분당 단어수 WPM 측정 | SkillDrills",
-    description: "무료 온라인 RSVP 속독 연습 및 독서 속도 검사. 안구 이동을 없애고 단어 최적 인식점(ORP)에 텍스트를 초고속 제시하여 최대 850 WPM의 정보 처리 능력을 평가합니다.",
+    title: "속독 테스트 | RSVP 읽기 훈련 | SkillDrills",
+    description: "무료 브라우저 속독 테스트에서 단어를 한 지점에 빠르게 표시합니다. WPM과 정확도를 확인하는 비임상 읽기 훈련입니다.",
     type: 'article',
     url: 'https://skilldrills.online/ko/drills/cognitive/processing-speed/rsvp-reader',
     siteName: 'SkillDrills',
@@ -20,8 +19,8 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: "속독 연습 RSVP・읽기 속도 테스트 – 분당 단어수 WPM 측정 | SkillDrills",
-    description: "무료 온라인 RSVP 속독 연습 및 독서 속도 검사. 안구 이동을 없애고 단어 최적 인식점(ORP)에 텍스트를 초고속 제시하여 최대 850 WPM의 정보 처리 능력을 평가합니다.",
+    title: "속독 테스트 | RSVP 읽기 훈련 | SkillDrills",
+    description: "무료 브라우저 속독 테스트에서 단어를 한 지점에 빠르게 표시합니다. WPM과 정확도를 확인하는 비임상 읽기 훈련입니다.",
   },
   robots: { index: true, follow: true },
   alternates: {
@@ -80,7 +79,7 @@ const softwareApplicationSchema = {
     "url": "https://skilldrills.online"
   },
   "inLanguage": "ko-KR",
-  "dateModified": "2026-09-11"
+  "dateModified": "2026-09-20"
 };
 
 const webApplicationSchema = {
@@ -97,7 +96,7 @@ const webApplicationSchema = {
   },
   "url": "https://skilldrills.online/ko/drills/cognitive/processing-speed/rsvp-reader",
   "inLanguage": "ko-KR",
-  "dateModified": "2026-09-11"
+  "dateModified": "2026-09-20"
 };
 
 const videoGameSchema = {
@@ -117,6 +116,7 @@ const videoGameSchema = {
     "Mobile"
   ],
   "applicationCategory": "Game",
+  "dateModified": "2026-09-20",
   "offers": {
     "@type": "Offer",
     "price": "0",
@@ -315,10 +315,37 @@ export default function LocalizedCognitivePage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(howToSchema) }}
       />
-      <RSVPReaderClient copy={{ title: "속독 연습 RSVP・읽기 속도 테스트 – 분당 단어수 WPM 측정" }} />
+      <RSVPReaderClient
+        copy={{
+          title: "속독 테스트",
+          subtitle: "고정된 시선 위치에서 단어를 처리하며 읽기 속도와 정확도를 연습합니다",
+          startTitle: "RSVP 속독 테스트",
+          startSubtitle: "단어 인식 • ORP 집중",
+          stageCaption: "화면 중앙에 단어가 빠르게 나타납니다. 지정된 단어가 보이면 즉시 버튼을 누르세요.",
+          rulesTitle: "드릴 안내 및 점수 시스템",
+          aboutTitle: "RSVP 속독이란?",
+          faqTitle: "자주 묻는 질문",
+          labels: { score: "점수", time: "시간", speed: "속도", bestScore: "최고 점수", timeLeft: "남은 시간", targetWord: "표적 단어", detected: "표적 발견", ready: "준비", accuracy: "정확도", hits: "적중", errors: "오류", points: "점수", playAgain: "다시 하기" },
+          aboutLead: "RSVP는 단어를 한 지점에 하나씩 보여 주는 읽기 방식입니다. 눈을 문장 전체에서 좌우로 움직이는 부담을 줄이지만, 속도가 높아지면 내용 이해가 떨어질 수 있어 속도와 정확도를 함께 확인해야 합니다.",
+          aboutText: "이 드릴은 중앙의 ORP 인식 지점에 시선을 두고 빠르게 지나가는 단어를 처리하는 연습입니다. WPM은 단어 표시 속도를 뜻하며, 기기와 화면 지연도 결과에 영향을 줍니다. 850 WPM은 이 드릴의 최고 단계이지 모든 글을 그 속도로 이해할 수 있다는 뜻은 아닙니다.",
+          aboutCards: [
+            { title: "누구에게 유용한가요?", desc: "많은 글을 읽는 학생과 직장인, 속독을 연습하려는 사람에게 유용합니다." },
+            { title: "훈련하는 능력", desc: "단어 인식 속도, 작업기억, 빠른 시각 정보에 대한 지속 집중력을 연습합니다." },
+            { title: "단계별 속도", desc: "250~850 WPM의 다섯 단계로 시작해 정확도를 유지하며 속도를 높입니다." }
+          ],
+          rulesItems: [
+            { num: "1", text: "표적 단어", highlight: "상단 배너", result: "중앙 흐름에서 찾기" },
+            { num: "2", text: "ORP 고정", highlight: "눈 움직임 최소화", result: "한 지점에서 단어 보기" },
+            { num: "3", text: "표적 포착", highlight: "+100점", result: "표적 발견 버튼 누르기" },
+            { num: "4", text: "속도 단계", highlight: "250 → 850 WPM", result: "5단계 난이도" }
+          ],
+          faqItems: faqSchema.mainEntity.map((e) => ({ q: e.name, a: e.acceptedAnswer.text }))
+        }}
+      />
       <DrillGuide {...guideProps} />
       <div className="max-w-6xl mx-auto px-4 pb-12">
         <RelatedDrills currentCategory="cognitive" currentHref="https://skilldrills.online/ko/drills/cognitive/processing-speed/rsvp-reader" />
+        <DrillFooter />
       </div>
     </>
   );

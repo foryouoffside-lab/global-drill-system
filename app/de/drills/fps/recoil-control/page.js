@@ -19,21 +19,21 @@ import { pickSources } from '@/lib/drillSources';
 // ============================================================
 
 export const metadata = {
-  title: "Recoil Control lernen – FPS Rückstoßkontrolle | SkillDrills",
-  description: "Kostenloses Recoil Control Training im Browser. Meistere Spray Patterns, vertikale Mauskompensation und Trefferdichte für CS2, Valorant und Apex Legends.",
+  title: "Rückstoßkontrolle lernen | FPS Spray Control | SkillDrills",
+  description: "Kostenloses Recoil-Control-Training im Browser: Lerne Spray Patterns und Rückstoßkompensation für CS2, Valorant und Apex.",
   keywords: [
+    "Rückstoßkontrolle",
     "Recoil Control lernen",
+    "Spray kontrollieren",
+    "Spray Pattern",
     "Rückstoßkontrolle FPS",
-    "Spray Pattern CS2",
-    "Maus Nachuntenziehen Training",
-    "Aim Trainer Recoil",
-    "Rückstoß kontrollieren",
-    "Waffen Spray üben",
-    "Spray Kontrolle Valorant",
-    "Recoil Pattern lernen",
-    "Maus Kontrolle Shooter",
-    "Mauspad Bremskontrolle Rückstoß",
-    "Feuerstoß Kontrolle FPS"
+    "Recoil Training",
+    "CS2 Recoil Control",
+    "Valorant Recoil",
+    "Spray Control lernen",
+    "Recoil Trainer online",
+    "vertikale Rückstoßkontrolle",
+    "horizontale Rückstoßkontrolle"
   ],
   alternates: {
     canonical: "https://skilldrills.online/de/drills/fps/recoil-control",
@@ -44,8 +44,8 @@ export const metadata = {
     follow: true,
   },
   openGraph: {
-    title: "Recoil Control lernen – FPS Rückstoßkontrolle | SkillDrills",
-    description: "Kostenloses Recoil Control Training im Browser. Meistere Spray Patterns, vertikale Mauskompensation und Trefferdichte für CS2, Valorant und Apex Legends.",
+    title: "Rückstoßkontrolle lernen | FPS Spray Control | SkillDrills",
+    description: "Kostenloses Recoil-Control-Training im Browser: Lerne Spray Patterns und Rückstoßkompensation für CS2, Valorant und Apex.",
     url: "https://skilldrills.online/de/drills/fps/recoil-control",
     siteName: 'SkillDrills',
     locale: 'de_DE',
@@ -53,8 +53,8 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: "Recoil Control lernen – FPS Rückstoßkontrolle | SkillDrills",
-    description: "Kostenloses Recoil Control Training im Browser. Meistere Spray Patterns, vertikale Mauskompensation und Trefferdichte für CS2, Valorant und Apex Legends.",
+    title: "Rückstoßkontrolle lernen | FPS Spray Control | SkillDrills",
+    description: "Kostenloses Recoil-Control-Training im Browser: Lerne Spray Patterns und Rückstoßkompensation für CS2, Valorant und Apex.",
   },
 };
 
@@ -75,7 +75,7 @@ export default function RecoilControlDePage() {
     "name": "Recoil Control Trainer",
     "applicationCategory": "GameApplication",
     "operatingSystem": "Web Browser",
-    "dateModified": "2026-09-15",
+    "dateModified": "2026-09-20",
     "offers": { "@type": "Offer", "price": "0", "priceCurrency": "EUR" },
     "description": "Kostenloser Browser-Trainer zur Beherrschung von Waffen-Rückstoß, vertikaler Mauskompensation und Spray-Mustern.",
     "genre": "FPS Training / Recoil Control",
@@ -109,7 +109,7 @@ export default function RecoilControlDePage() {
     "name": "Recoil Control Trainer",
     "url": "https://skilldrills.online/de/drills/fps/recoil-control",
     "description": "Kostenloser Browser-Trainer zur Beherrschung von Waffen-Rückstoß, vertikaler Mauskompensation und Spray-Mustern.",
-    "dateModified": "2026-09-15",
+    "dateModified": "2026-09-20",
     "gamePlatform": "Web Browser",
     "genre": ["FPS Training", "Recoil Control", "Spray Pattern"],
     "playMode": "SinglePlayer",
@@ -121,7 +121,7 @@ export default function RecoilControlDePage() {
   const faqSchema = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
-    "dateModified": "2026-09-15",
+    "dateModified": "2026-09-20",
     "mainEntity": [
       {
         "@type": "Question",
@@ -240,10 +240,10 @@ export default function RecoilControlDePage() {
   };
 
   const recoilGuideDe = {
-    heading: "Recoil Control Guide & Biomechanische Benchmarks",
+    heading: "Leitfaden für Rückstoßkontrolle und Spray Control",
     subtitle: "Wissenschaftliche Trainingsmethodik für ballistische Zugkompensation, Muskelgedächtnis und maximale Trefferdichte bei Dauerfeuer",
     intro: [
-      "Der Recoil Control Trainer ist ein empirisches sensomotorisches Trainingsmodul zur systematischen Ausbildung des Muskelgedächtnisses gegen waffenspezifische Spray-Patterns, vertikale Steiggeschwindigkeit und horizontales Verziehen in First-Person-Shootern. In modernen Taktik- und Battle-Royale-Titeln wie Counter-Strike 2, VALORANT, Apex Legends und PUBG entscheiden Schusswechsel selten nur über den ersten Einzelschuss (First-Bullet-Accuracy). Sobald Gegner unberechenbare Ausweichbewegungen vollführen, sichert nur ein präzise kontrolliertes Dauerfeuer mit extrem enger Geschossgruppierung den Duellsieg.",
+      "Dieser Recoil-Control-Trainer trainiert Rückstoßkontrolle, Spray Patterns und vertikale Mauskompensation als zusammenhängende sensomotorische Fähigkeit. In CS2, VALORANT, Apex Legends und PUBG entscheidet eine enge Geschossgruppierung auch dann über das Duell, wenn Gegner unvorhersehbar ausweichen.",
       "Das motorische Lernframework zur Beherrschung schneller Rückstoßkompensation basiert auf der Theorie des Generalisierten Motorischen Programms (GMP) von Richard A. Schmidt und Timothy D. Lee (Schmidt & Lee, 2011). Da 10-Schuss-Feuerstöße in weniger als 700 Millisekunden ablaufen – weitaus schneller, als die geschlossene visuelle Feedbackschleife des menschlichen Gehirns einzelne Einschläge verarbeiten kann –, aktivieren Spitzenspieler ein vorstrukturiertes Open-Loop-Bewegungsprogramm mit unveränderlichen relativen Timing- und Kraftparametern.",
       "Dieser Bewegungsablauf folgt Robert S. Woodworths (1899) klassischem Zwei-Komponenten-Modell des Zielens sowie David E. Meyers (1988) optimiertem Submovement-Modell: Auf eine initiale, ballistische Abwärtszugbewegung der Maus (Open-Loop-Phase) folgen feinmotorische Korrekturbewegungen (Submovements), um horizontale Abweichungen und dynamische Bewegungen des Ziels in Echtzeit auszugleichen.",
       "Die motorische Treffsicherheit unterliegt Fitts' Gesetz (Fitts, 1954) sowie der Impuls-Variabilitäts-Theorie von Schmidt et al. (1979): Mit steigender Geschwindigkeit und Kraftanstrengung beim Herunterziehen der Maus nimmt die neuromuskuläre Streuung logarithmisch zu. Durch hochauflösende digitale Chronometrie mittels performance.now() (Woods et al., 2015) isoliert dieser Drill exakt jene konstante, feinfühlige Zuggeschwindigkeit, die erforderlich ist, um das Streubild auf ein Minimum zu komprimieren.",
@@ -305,8 +305,8 @@ export default function RecoilControlDePage() {
   };
 
   const copyDe = {
-    h1Keyword: "Recoil Control lernen",
-    h1Suffix: " – FPS Rückstoßkontrolle",
+    h1Keyword: "Rückstoßkontrolle lernen",
+    h1Suffix: " – FPS Spray Control",
     caption: "Rückstoßkontrolle ist ein hochgradig automatisiertes Open-Loop-Bewegungsprogramm. Weil motorische Streuung mit zunehmender Kraftanstrengung steigt (Schmidt et al., 1979), führt eine gleichmäßige, sanfte Abwärtsbewegung zu signifikant besserer Trefferdichte als ruckartiges Ziehen.",
     statScore: "Punkte",
     statTime: "Verbleibende Zeit",
@@ -316,7 +316,7 @@ export default function RecoilControlDePage() {
     statReloading: "Nachladen...",
     pausedTitle: "Pausiert",
     pausedPrompt: "Klicke in den Bildschirm, um die Mauszeiger-Sperre zu reaktivieren und fortzufahren.",
-    startTitle: "Pro Recoil Trainer",
+    startTitle: "Recoil Control lernen",
     startSubtitle: "Reale Waffen-Spray-Muster & ballistische Zugkompensation • Dynamische Levelprogression",
     startButtonText: "Training starten",
     getReady: "Bereithalten",
@@ -334,7 +334,7 @@ export default function RecoilControlDePage() {
       { num: "3", text: "Level-Progression", highlight: "+1 Level / 1400 PKT", result: "Tempo & Rückstoß steigen" },
       { num: "4", text: "Magazin-Disziplin", highlight: "<40% Treffer-Strafe", result: "Setzt Kombo zurück (-0,6s)" }
     ],
-    aboutTitle: "Über den Recoil Control Trainer",
+    aboutTitle: "Über Rückstoßkontrolle und Spray Control",
     whyMattersTitle: "Warum Rückstoßkontrolle über den Duellausgang entscheidet",
     whyMattersLead: "Rückstoßkontrolle ist ein vorprogrammiertes motorisches Bewegungsmuster. Da die Schusskadenz moderner Sturmgewehre viel zu hoch für visuelle Echtzeitkorrekturen ist (Latenz > 180 ms), muss die Ausgleichsbewegung fest im motorischen Kortex verankert sein.",
     aboutIntro: [

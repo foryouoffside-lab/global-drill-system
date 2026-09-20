@@ -20,8 +20,8 @@ import { pickSources } from '@/lib/drillSources';
 // ============================================================
 
 export const metadata = {
-  title: "마우스 에임 브레이킹 – 충동 억제 반사 훈련 | SkillDrills",
-  description: "고속으로 쇄도하는 노드를 요격하고 커서를 즉각 영점 정지(Kinetic Arrest)시키는 신경생체역학 운동 억제 드릴. 로건 경마 모델(Logan & Cowan, 1984) 기반 오버플릭 교정 훈련.",
+  title: "마우스 에임 브레이킹 | 오버플릭 교정",
+  description: "무료 마우스 에임 브레이킹 훈련. 움직이는 표적을 맞춘 뒤 커서를 정확히 멈춰 오버플릭과 정지 조작을 연습하세요.",
   keywords: [
     "충동 억제 반사 훈련",
     "마우스 정지 반응 드릴",
@@ -39,12 +39,17 @@ export const metadata = {
     languages: getAlternateLanguages('/drills/physical/reflex-training/reaction-chain'),
   },
   openGraph: {
-    title: "마우스 에임 브레이킹 – 충동 억제 반사 훈련 | SkillDrills",
-    description: "고속 표적 요격 후 관성을 즉각 정지시키는 모터 브레이킹 훈련. 오버플릭을 원천 차단하고 발로란트·CS2 초탄 헤드샷 정지력을 극대화하세요.",
+    title: "마우스 에임 브레이킹 | 오버플릭 교정",
+    description: "움직이는 표적을 맞춘 뒤 커서를 정확히 멈추는 브레이킹 훈련으로 오버플릭과 정지 조작을 연습하세요.",
     url: 'https://skilldrills.online/ko/drills/physical/reflex-training/reaction-chain',
     siteName: 'SkillDrills',
     locale: 'ko_KR',
     type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: "마우스 에임 브레이킹 | 오버플릭 교정",
+    description: "표적을 맞춘 뒤 커서를 정확히 멈추며 오버플릭과 에임 정지 조작을 연습하세요.",
   },
 };
 
@@ -98,7 +103,7 @@ const softwareApplicationSchema = {
     "url": "https://skilldrills.online/ko"
   },
   "inLanguage": "ko",
-  "dateModified": "2026-09-12"
+  "dateModified": "2026-09-20"
 };
 
 const webApplicationSchema = {
@@ -115,7 +120,7 @@ const webApplicationSchema = {
   },
   "url": "https://skilldrills.online/ko/drills/physical/reflex-training/reaction-chain",
   "inLanguage": "ko",
-  "dateModified": "2026-09-12"
+  "dateModified": "2026-09-20"
 };
 
 const videoGameSchema = {
@@ -125,6 +130,8 @@ const videoGameSchema = {
   "url": "https://skilldrills.online/ko/drills/physical/reflex-training/reaction-chain",
   "genre": ["Reflex Game", "Motor Control Trainer", "Esports Precision"],
   "playMode": "SinglePlayer",
+  "inLanguage": "ko",
+  "dateModified": "2026-09-20",
   "description": "최대 1,800 px/s 속도로 움직이는 노드를 요격한 직후 마우스 커서의 속도를 1.5 px/프레임 미만으로 즉각 제동하여 콤보를 유지하는 고난도 에임 브레이킹 게임."
 };
 
@@ -336,8 +343,8 @@ export default function LocalizedReactionChainPageKo() {
       />
       <ReactionChainClient
         copy={{
-          title: "마우스 에임 브레이킹 & 충동 억제 훈련",
-          subtitle: "키네틱 어레스트 및 감속 제어 • 15단계 속도 스케일링",
+          title: "마우스 에임 브레이킹",
+          subtitle: "표적을 맞춘 뒤 커서를 정확히 멈추기",
           badge: "충동 억제 반사 훈련",
           description: "목표물을 향해 마우스를 빠르게 가속하는 것보다 목표 지점에서 정확히 멈춰 세우는 것이 신경생체역학적으로 훨씬 어렵습니다. 운동 명령과 정지 명령은 대뇌 기저핵에서 서로 독립적으로 경주를 벌이며(Logan & Cowan, 1984), 종단 정지 제어가 늦어지면 관성으로 인해 오버플릭이 발생합니다 (Woodworth, 1899). 쇄도하는 노드를 가로채고 커서를 즉각 영점으로 멈추어 오버플릭을 원천 차단하세요.",
           hudLabels: {
@@ -397,9 +404,10 @@ export default function LocalizedReactionChainPageKo() {
             }
           ]
         }}
-      />
-      <DrillGuide {...guideProps} />
-      <RelatedDrills currentCategory="physical" currentHref="/drills/physical/reflex-training/reaction-chain" />
+      >
+        <DrillGuide {...guideProps} />
+        <RelatedDrills currentCategory="physical" currentHref="/drills/physical/reflex-training/reaction-chain" />
+      </ReactionChainClient>
     </>
   );
 }

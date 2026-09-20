@@ -37,6 +37,15 @@ export const metadata = {
   },
 };
 
+Object.assign(metadata, {
+  title: 'Vision dynamique & recherche visuelle | SkillDrills',
+  description: '9 exercices gratuits dans le navigateur pour vision dynamique, recherche visuelle, temps de réaction, suivi de cibles et perception de la profondeur.',
+  keywords: ['acuité visuelle dynamique', 'test recherche visuelle', 'temps de réaction visuel', 'vision périphérique entraînement', 'mouvements oculaires', 'perception de profondeur', 'réaction visuelle', 'suivi de plusieurs objets', 'entraînement visuel gratuit'],
+  openGraph: { ...metadata.openGraph, title: 'Vision dynamique & recherche visuelle | SkillDrills', description: '9 exercices gratuits pour vision dynamique, recherche visuelle, temps de réaction et suivi de cibles.' },
+  twitter: { ...metadata.twitter, title: 'Vision dynamique & recherche visuelle | SkillDrills', description: 'Entraînez vision dynamique et recherche visuelle avec 9 exercices gratuits.' },
+  alternates: { ...metadata.alternates, languages: getAlternateLanguages('/drills/visual') },
+});
+
 const breadcrumbSchema = {
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
@@ -50,6 +59,8 @@ const breadcrumbSchema = {
 const collectionSchema = {
   "@context": "https://schema.org",
   "@type": "CollectionPage",
+  "inLanguage": "fr",
+  "dateModified": "2026-09-20",
   "name": "Entraînement de Perception Visuelle & Relief (9 Exercices)",
   "url": "https://skilldrills.online/fr/drills/visual",
   "description": "9 exercices interactifs d'acuité visuelle dynamique, vision stéréoscopique, poursuite oculaire continue, recherche visuelle et réflexe lumineux.",
@@ -71,6 +82,8 @@ const collectionSchema = {
 const faqSchema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
+  "inLanguage": "fr",
+  "dateModified": "2026-09-20",
   "mainEntity": [
     {
       "@type": "Question",
@@ -138,6 +151,11 @@ const faqSchema = {
     }
   ]
 };
+
+faqSchema.mainEntity.push(
+  { "@type": "Question", "name": "Combien d’exercices contient la catégorie d’entraînement visuel ?", "acceptedAnswer": { "@type": "Answer", "text": "La catégorie réunit 9 exercices dans le navigateur autour de trois axes : réaction et contrôle des impulsions, suivi et mouvements oculaires, puis reconnaissance et profondeur. Chaque carte ouvre l’exercice associé." } },
+  { "@type": "Question", "name": "Les exercices visuels dans le navigateur remplacent-ils un examen de la vue ?", "acceptedAnswer": { "@type": "Answer", "text": "Non. Ils travaillent des tâches répétables de timing visuel, de suivi, de recherche et de jugement spatial. Ils ne diagnostiquent ni la vue ni les maladies oculaires et ne remplacent pas une consultation spécialisée." } }
+);
 
 export default function VisualDrillsPage() {
   return (

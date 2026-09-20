@@ -248,6 +248,7 @@ const howToSchema = {
 const copyEn = {
   h1Keyword: "Aim Trainer Online",
   h1Suffix: " - Aim Trainer Elite Online",
+  subtitle: "Online aim trainer for mouse accuracy, target acquisition, reaction speed, and precision click timing",
   rulesItems: [
     { num: "1", text: "Target Hit", highlight: "+100 PTS / +0.6s", result: "Acquire & Click Moving Targets" },
     { num: "2", text: "Continuous Combo", highlight: "Up to 3.0× Points", result: "Chain Consecutive Hits" },

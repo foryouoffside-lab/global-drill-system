@@ -5,23 +5,25 @@ import RelatedDrills from '@/components/drill/RelatedDrills';
 import { pickSources } from '@/lib/drillSources';
 
 export const metadata = {
-  title: "Multiple Object Tracking Test: MOT Online | SkillDrills",
-  description: "Kostenloser Multiple Object Tracking Test (MOT) online: Verfolge bewegte Ziele zwischen Ablenkern. Trainiere geteilte Aufmerksamkeit und peripheres Sehen.",
+  title: "Mehrfach-Objektverfolgung | MOT-Test | SkillDrills",
+  description: "Kostenloser MOT-Test: Verfolge mehrere bewegte Objekte unter Ablenkern. Trainiere geteilte Aufmerksamkeit und peripheres Sehen. Kein Diagnosetest.",
   keywords: [
-    "Multiple Object Tracking Test",
-    "MOT Test Online",
+    "Mehrfach-Objektverfolgung",
+    "Multi-Objekt-Tracking-Test",
+    "MOT Test",
+    "Objektverfolgung",
+    "mehrere Objekte verfolgen",
+    "geteilte Aufmerksamkeit",
+    "peripheres Sehen",
+    "visuelle Aufmerksamkeit",
+    "räumliches Arbeitsgedächtnis",
     "Mehrzielverfolgung",
-    "Geteilte visuelle Aufmerksamkeit",
-    "Räumliches Arbeitsgedächtnis",
-    "Dynamische Objektverfolgung",
-    "Pylyshyn MOT",
-    "Periphere Wahrnehmung",
-    "Fluglotsen Sehtest",
-    "FPS Situational Awareness"
+    "bewegte Objekte verfolgen",
+    "MOT Training"
   ],
   openGraph: {
-    title: "Multiple Object Tracking Test: MOT Online | SkillDrills",
-    description: "Wissenschaftlicher Multiple Object Tracking (MOT) Test online kostenlos. Verfolge mehrere identische Ziele gleichzeitig und trainiere dein peripheres Blickfeld.",
+    title: "Mehrfach-Objektverfolgung | MOT-Test | SkillDrills",
+    description: "Kostenloser MOT-Test: Verfolge mehrere bewegte Objekte unter Ablenkern. Übe geteilte Aufmerksamkeit und peripheres Sehen.",
     type: 'article',
     url: 'https://skilldrills.online/de/drills/visual/tracking-accuracy/multiple-targets',
     siteName: 'SkillDrills',
@@ -29,8 +31,8 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: "Multiple Object Tracking Test: MOT Online | SkillDrills",
-    description: "Wissenschaftlicher Multiple Object Tracking Test online. Trainiere simultane Zielverfolgung und peripheres Sehen im Browser.",
+    title: "Mehrfach-Objektverfolgung | MOT-Test | SkillDrills",
+    description: "Verfolge mehrere bewegte Objekte gleichzeitig und übe visuelle Aufmerksamkeit und peripheres Sehen im Browser.",
   },
   robots: { index: true, follow: true },
   alternates: {
@@ -70,7 +72,7 @@ const breadcrumbSchema = {
     {
       "@type": "ListItem",
       "position": 5,
-      "name": "Multiple Object Tracking Test (MOT)",
+      "name": "Mehrfach-Objektverfolgung (MOT-Test)",
       "item": "https://skilldrills.online/de/drills/visual/tracking-accuracy/multiple-targets"
     }
   ]
@@ -79,7 +81,7 @@ const breadcrumbSchema = {
 const softwareApplicationSchema = {
   "@context": "https://schema.org",
   "@type": "SoftwareApplication",
-  "name": "SkillDrills Multiple Object Tracking (MOT) Test & Trainer",
+  "name": "SkillDrills Mehrfach-Objektverfolgung und peripheres Sehen",
   "applicationCategory": "HealthApplication",
   "operatingSystem": "Any",
   "browserRequirements": "Moderner Webbrowser mit HTML5-Canvas-Unterstützung",
@@ -94,10 +96,10 @@ const softwareApplicationSchema = {
 const webApplicationSchema = {
   "@context": "https://schema.org",
   "@type": "WebApplication",
-  "name": "Kostenloser Online Multiple Object Tracking (MOT) Test",
+  "name": "Kostenloser Mehrfach-Objektverfolgung-MOT-Test",
   "url": "https://skilldrills.online/de/drills/visual/tracking-accuracy/multiple-targets",
   "applicationCategory": "GameApplication",
-  "genre": ["Multiple Object Tracking", "Augentraining", "Visuelle Aufmerksamkeit", "Peripheres Sehen"],
+  "genre": ["Mehrfach-Objektverfolgung", "Visuelles Training", "Geteilte Aufmerksamkeit", "Peripheres Sehen"],
   "browserRequirements": "Requires HTML5 Canvas and JavaScript",
   "inLanguage": "de-DE"
 };
@@ -105,9 +107,9 @@ const webApplicationSchema = {
 const videoGameSchema = {
   "@context": "https://schema.org",
   "@type": "VideoGame",
-  "name": "Multiple Object Tracking Challenge (GhostLink)",
+  "name": "Mehrfach-Objektverfolgung-Challenge (GhostLink)",
   "description": "Verfolge mehrere optisch identische Kugeln simultan im zweidimensionalen Raum und identifiziere alle Zielobjekte fehlerfrei.",
-  "genre": ["Vision Training", "Esports Reaction", "Cognitive Drill"],
+  "genre": ["Visuelles Training", "Geteilte Aufmerksamkeit", "Kognitives Training"],
   "playMode": "SinglePlayer",
   "applicationCategory": "Game"
 };
@@ -202,7 +204,7 @@ const faqSchema = {
 const howToSchema = {
   "@context": "https://schema.org",
   "@type": "HowTo",
-  "name": "Anleitung für den Multiple Object Tracking (MOT) Test",
+  "name": "Anleitung für den Mehrfach-Objektverfolgung-Test",
   "description": "Schritt-für-Schritt-Vorgehensweise zur Maximierung deiner Zielverfolgung und peripheren Wahrnehmung.",
   "step": [
     {
@@ -238,7 +240,7 @@ const howToSchema = {
 
 const guideData = {
   eyebrow: "Kognitionspsychologie & Visuelle Neurowissenschaft",
-  heading: "Multiple Object Tracking (MOT) – Parallele Wahrnehmung & Räumliches Arbeitsgedächtnis",
+  heading: "Mehrfach-Objektverfolgung: Geteilte Aufmerksamkeit trainieren",
   intro: [
     "Das Multiple Object Tracking (MOT) Paradigma, 1988 von Kognitionswissenschaftler Zenon Pylyshyn begründet, gilt als Meilenstein der empirischen Aufmerksamkeitsforschung. Es untersucht die biologischen Leistungsgrenzen des menschlichen Sehsystems bei der parallelen Erfassung mehrerer unabhängiger Informationsträger: Aus einer Menge optisch völlig ununterscheidbarer Objekte müssen zuvor definierte Zielobjekte simultan über einen dynamischen Zeitraum hinweg verfolgt werden, während sie sich chaotisch zwischen zahlreichen Ablenkern (Distraktoren) kreuzen.",
     "Neurobiologische fMRT-Untersuchungen belegen, dass erfolgreiches MOT auf einem weit verzweigten dorsalen Aufmerksamkeitsnetzwerk beruht, das maßgeblich den Sulcus intraparietalis (IPS), die frontalen Augenfelder (FEF) und die oberen Hügelchen (Colliculi superiores) einbindet (Cavanagh & Alvarez, 2005). Das Gehirn speichert hierbei keine statischen Merkmalsbeschreibungen, sondern verankert sogenannte visuelle Zeiger (Visual Indices bzw. FINSTs) als prädiktive Koordinatenzeiger direkt im visuellen Kortex.",
@@ -246,7 +248,7 @@ const guideData = {
     "Dieses webbasierte Trainingssystem steuert Kugelanzahl, Geschwindigkeitsgradienten und Kreuzungsfrequenzen millisekundengenau über die HTML5-Canvas-Engine. Ein regelmäßiges MOT-Training beseitigt zuverlässig den visuellen Tunnelblick, schult die Spielübersicht in Mannschaftssportarten, verbessert das Situationsbewusstsein (Situational Awareness) in First-Person-Shootern und schärft die periphere Gefahrenerkennung im Straßenverkehr."
   ],
   benchmarks: {
-    title: "Standardisierte Benchmarks für Multiple Object Tracking (MOT)",
+    title: "Orientierungswerte für Mehrfach-Objektverfolgung",
     headers: ["Leistungsstufe / Rang", "Simultan verfolgte Zielobjekte", "Maximales Bewegungstempo", "Trefferquote / Präzision", "Neurokognitive Leistungsstufe"],
     rows: [
       ["Weltklasse / Pro-Level (Top 1%)", "5 – 6 Ziele", "Schnell (> 400 px/s)", "≥ 92%", "Geometrische Schwerpunkt-Fixierung und vollständige hemisphärische Parallelverarbeitung (Cavanagh & Alvarez, 2005)"],
@@ -258,7 +260,7 @@ const guideData = {
     note: "Basierend auf publizierten neurokognitiven und sportophthalmologischen Studien (Pylyshyn 1988; Cavanagh & Alvarez 2005; Green & Bavelier 2006; Faubert 2013)."
   },
   techniques: {
-    title: "4 praxiserprobte Methoden zur Steigerung der Mehrzielverfolgung",
+    title: "Mehrere Ziele verfolgen und Ablenkungen ausblenden",
     items: [
       {
         name: "Geometrische Schwerpunkt-Fixierung (Centroid Soft-Focus)",
@@ -328,7 +330,7 @@ export default function LocalizedMultipleTargetsDePage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
 
-      <GhostLinkClient copy={{ title: "Multiple Object Tracking Test (MOT)", subtitle: "Simultane Mehrzielverfolgung & Periphere Aufmerksamkeit" }} />
+      <GhostLinkClient copy={{ title: "Mehrfach-Objektverfolgung", subtitle: "MOT-Test für geteilte Aufmerksamkeit" }} />
       <DrillGuide guide={guideData} />
       <div className="max-w-6xl mx-auto px-4 pb-12">
         <RelatedDrills currentCategory="visual" currentHref="https://skilldrills.online/de/drills/visual/tracking-accuracy/multiple-targets" />

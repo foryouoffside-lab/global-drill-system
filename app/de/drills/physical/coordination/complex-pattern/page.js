@@ -6,7 +6,7 @@ import { pickSources } from '@/lib/drillSources';
 
 // ============================================================
 // SEO RESEARCH FINDINGS — Germany (DE / DACH)
-// Primary Intent: Muster Merken Test, Muster Merken Spiel, Räumliches Vorstellungsvermögen Test, Arbeitsgedächtnis Trainieren
+// Native SERP intent: Muster merken Test, visuelles Gedächtnis, räumliches Vorstellungsvermögen
 // Context: German medical aptitude (TMS Muster zuordnen / Figuren lernen) & E-Sport Recoil Tracking
 // Target Queries:
 //   - "Muster Merken Test" (High-intent cognitive aptitude test phrase)
@@ -19,27 +19,27 @@ import { pickSources } from '@/lib/drillSources';
 // ============================================================
 
 export const metadata = {
-  title: 'Muster Merken Test – Visuelles Gedächtnis | SkillDrills',
-  description: 'Kostenloses Muster-Merken-Spiel online. Merke dir komplexe Pfade und trainiere dein räumliches Arbeitsgedächtnis und Feinmotorik direkt im Browser.',
+  title: 'Muster merken Test | Visuelles Gedächtnis | SkillDrills',
+  description: 'Kostenloses Browser-Gedächtnisspiel. Merke dir einen aufleuchtenden Pfad, zeichne ihn nach und trainiere räumliches Arbeitsgedächtnis sowie Mauskoordination.',
   keywords: [
-    "Muster Merken Test",
-    "Muster Merken Spiel",
-    "Räumliches Vorstellungsvermögen Test",
-    "Arbeitsgedächtnis Trainieren Spiele",
-    "Visuelles Gedächtnis Test Online",
-    "Pfade Merken Spiel Browser",
-    "Gedächtnisspiel Online Kostenlos",
-    "Gehirntraining Muster",
+    "Muster merken Test",
+    "Muster merken Spiel",
+    "visuelles Gedächtnis Test online",
+    "räumliches Vorstellungsvermögen Test",
+    "Arbeitsgedächtnis trainieren Spiel",
+    "Pfade merken Spiel Browser",
+    "Gedächtnisspiel online kostenlos",
+    "Muster Gedächtnis Spiel",
     "Feinmotorik Koordination Maus",
-    "Recoil Pattern Training"
+    "räumliches Gedächtnis trainieren"
   ],
   alternates: {
     canonical: 'https://skilldrills.online/de/drills/physical/coordination/complex-pattern',
     languages: getAlternateLanguages('/drills/physical/coordination/complex-pattern'),
   },
   openGraph: {
-    title: 'Muster Merken Test – Visuelles Gedächtnis | SkillDrills',
-    description: 'Kostenloses Muster-Merken-Spiel online. Merke dir komplexe Pfade und trainiere dein räumliches Arbeitsgedächtnis und Feinmotorik direkt im Browser.',
+    title: 'Muster merken Test | Visuelles Gedächtnis | SkillDrills',
+    description: 'Merke dir einen aufleuchtenden Pfad, zeichne ihn nach und trainiere räumliches Gedächtnis sowie Mauskoordination im kostenlosen Browser-Spiel.',
     url: 'https://skilldrills.online/de/drills/physical/coordination/complex-pattern',
     siteName: 'SkillDrills',
     locale: 'de_DE',
@@ -47,8 +47,8 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Muster Merken Test – Visuelles Gedächtnis | SkillDrills',
-    description: 'Kostenloses Muster-Merken-Spiel online. Merke dir komplexe Pfade und trainiere dein räumliches Arbeitsgedächtnis und Feinmotorik direkt im Browser.',
+    title: 'Muster merken Test | Visuelles Gedächtnis | SkillDrills',
+    description: 'Merke dir einen aufleuchtenden Pfad, zeichne ihn nach und trainiere räumliches Gedächtnis sowie Mauskoordination im kostenlosen Browser-Spiel.',
   },
   robots: { index: true, follow: true },
 };
@@ -103,7 +103,7 @@ const softwareApplicationSchema = {
     "url": "https://skilldrills.online/de"
   },
   "inLanguage": "de",
-  "dateModified": "2026-09-12"
+  "dateModified": "2026-09-20"
 };
 
 const webApplicationSchema = {
@@ -120,7 +120,7 @@ const webApplicationSchema = {
   },
   "url": "https://skilldrills.online/de/drills/physical/coordination/complex-pattern",
   "inLanguage": "de",
-  "dateModified": "2026-09-12"
+  "dateModified": "2026-09-20"
 };
 
 const videoGameSchema = {
@@ -145,13 +145,16 @@ const videoGameSchema = {
     "@type": "Offer",
     "price": "0",
     "priceCurrency": "USD"
-  }
+  },
+  "inLanguage": "de",
+  "dateModified": "2026-09-20"
 };
 
 const faqSchema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
-  "dateModified": "2026-09-12",
+  "inLanguage": "de",
+  "dateModified": "2026-09-20",
   "mainEntity": [
     {
       "@type": "Question",
@@ -359,8 +362,8 @@ export default function ComplexPatternPageDe() {
       />
       <ComplexPatternClient
         copy={{
-          title: 'Muster Merken Test – Visuelles Gedächtnis | SkillDrills',
-          subtitle: 'Muster Merken Test – Visuelles Gedächtnis | SkillDrills',
+          title: 'Muster merken Test',
+          subtitle: 'Muster merken und den Pfad genau nachzeichnen',
           rulesTitle: "Trainingsregeln & Punktesystem für das Muster-Merken-Spiel",
           rules: [
             { title: 'Muster Merken Test – Visuelles Gedächtnis | SkillDrills', text: "Präge dir den kurz aufblitzenden grünen Vektorpfad und alle Wegpunkte ein, bevor die Linie vom Bildschirm verschwindet." },

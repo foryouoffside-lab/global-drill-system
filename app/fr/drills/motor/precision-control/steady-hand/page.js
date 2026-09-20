@@ -6,37 +6,21 @@ import DrillFooter from '@/components/drill/DrillFooter';
 import { pickSources } from '@/lib/drillSources';
 
 // ============================================================
-// SEO RESEARCH FINDINGS — steady-hand (French: Jeu du Fil Électrique)
-// PRIMARY:  "jeu du fil électrique"          — Cultural identity query
-//           "jeu de la main ferme"           — Steadiness gaming query
-// SECONDARY / LSI:
-//           "test de précision souris"       — Diagnostic mouse test
-//           "test de tremblement main en ligne" — Tremor assessment
-//           "contrôle moteur fin souris"     — Fine motor control
-//           "loi de direction d accot-zhai"  — Steering Law
-//           "stabilité du curseur"           — Cursor stability
+// Native keyword research: docs/seo/research/steady-hand-2026-09-20.md
 // ============================================================
 
 export const metadata = {
-  title: 'Jeu du Fil Électrique – Test de Précision et Dextérité',
-  description: 'Jeu du fil électrique en ligne gratuit. Guidez le curseur dans un couloir sinueux sans toucher les bords. Mesurez votre stabilité selon la loi d\'Accot-Zhai.',
+  title: 'Précision souris | Test de main sûre | SkillDrills',
+  description: 'Suivez un tracé de plus en plus étroit pour mesurer la précision du curseur et la stabilité de la main. Test gratuit dans le navigateur.',
   keywords: [
-    'jeu du fil électrique',
-    'jeu de la main ferme',
-    'test de précision souris',
-    'test de tremblement main en ligne',
-    'contrôle moteur fin souris',
-    'parcours souris précision',
-    'loi de direction d accot-zhai',
-    'stabilité du curseur',
-    'entraînement aim souris',
-    'test de dextérité manuelle',
-    'jeu du fil de fer en ligne',
-    'coordination motrice fine',
+    'test de précision souris', 'test de main sûre', 'précision du curseur',
+    'suivre un tracé', 'motricité fine souris', 'stabilité de la main',
+    'contrôle du curseur', 'jeu de labyrinthe souris', 'entraînement précision souris',
+    'couloir étroit', 'coordination œil-main', 'test de trajectoire souris',
   ],
   openGraph: {
-    title: 'Jeu du Fil Électrique – Test de Précision et Dextérité | SkillDrills',
-    description: 'Jeu du fil électrique en ligne gratuit. Guidez le curseur dans un couloir sinueux sans toucher les bords. Mesurez votre stabilité selon la loi d\'Accot-Zhai.',
+    title: 'Précision souris | Test de main sûre | SkillDrills',
+    description: 'Suivez un tracé de plus en plus étroit pour mesurer la précision du curseur et la stabilité de la main. Test gratuit dans le navigateur.',
     type: 'article',
     url: 'https://skilldrills.online/fr/drills/motor/precision-control/steady-hand',
     siteName: 'SkillDrills',
@@ -44,8 +28,8 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Jeu du Fil Électrique – Test de Précision et Dextérité | SkillDrills',
-    description: 'Jeu du fil électrique en ligne gratuit. Guidez le curseur dans un couloir sinueux sans toucher les bords. Mesurez votre stabilité selon la loi d\'Accot-Zhai.',
+    title: 'Précision souris | Test de main sûre | SkillDrills',
+    description: 'Suivez un tracé de plus en plus étroit pour mesurer la précision du curseur et la stabilité de la main. Test gratuit dans le navigateur.',
   },
   robots: { index: true, follow: true },
   alternates: {
@@ -70,6 +54,7 @@ const breadcrumbSchema = {
 const softwareApplicationSchema = {
   '@context': 'https://schema.org',
   '@type': 'SoftwareApplication',
+  inLanguage: 'fr-FR',
   name: 'Jeu du Fil Électrique – Test de Précision Souris et Tremblement',
   applicationCategory: 'HealthApplication',
   operatingSystem: 'All',
@@ -77,36 +62,41 @@ const softwareApplicationSchema = {
   description: 'Jeu du fil électrique et test de motricité fine gratuit sur navigateur. Guidez votre curseur dans des couloirs de plus en plus étroits et évaluez votre stabilité manuelle.',
   url: 'https://skilldrills.online/fr/drills/motor/precision-control/steady-hand',
   publisher: { '@type': 'Organization', name: 'SkillDrills', url: 'https://skilldrills.online/fr' },
-  dateModified: '2026-09-05',
+  dateModified: '2026-09-20',
 };
 
 const webApplicationSchema = {
   '@context': 'https://schema.org',
   '@type': 'WebApplication',
+  inLanguage: 'fr-FR',
   name: 'Jeu du Fil Électrique en Ligne',
   applicationCategory: 'GameApplication',
   operatingSystem: 'All',
   browserRequirements: 'Navigateur moderne avec support HTML5 Canvas et Pointer Events haute fréquence',
   offers: { '@type': 'Offer', price: '0', priceCurrency: 'EUR' },
   url: 'https://skilldrills.online/fr/drills/motor/precision-control/steady-hand',
-  dateModified: '2026-09-05',
+  dateModified: '2026-09-20',
 };
 
 const videoGameSchema = {
   '@context': 'https://schema.org',
   '@type': 'VideoGame',
+  inLanguage: 'fr-FR',
   name: 'Jeu du Fil Électrique & Dextérité Motrice',
   url: 'https://skilldrills.online/fr/drills/motor/precision-control/steady-hand',
   description: 'Épreuve de précision gestuelle mesurant la stabilité de la main et le contrôle du tremblement au curseur.',
   genre: ['Precision Game', 'Action', 'Esports Training'],
   gamePlatform: ['Web Browser', 'Desktop', 'Mobile'],
   applicationCategory: 'Game',
-  offers: { '@type': 'Offer', price: '0', priceCurrency: 'EUR' }
+  offers: { '@type': 'Offer', price: '0', priceCurrency: 'EUR' },
+  dateModified: '2026-09-20',
 };
 
 const faqSchema = {
   '@context': 'https://schema.org',
   '@type': 'FAQPage',
+  inLanguage: 'fr-FR',
+  dateModified: '2026-09-20',
   mainEntity: [
     {
       '@type': 'Question',
@@ -194,6 +184,8 @@ const faqSchema = {
 const howToSchema = {
   '@context': 'https://schema.org',
   '@type': 'HowTo',
+  inLanguage: 'fr-FR',
+  dateModified: '2026-09-20',
   name: 'Comment entraîner la stabilité de la main et la précision souris',
   description: 'Protocole méthodique pour parcourir des couloirs sinueux et maîtriser la loi de guidage gestuel.',
   step: [
@@ -315,8 +307,8 @@ const guideProps = {
 };
 
 const frCopy = {
-  h1Keyword: 'Jeu du Fil Électrique',
-  h1Suffix: ' (Test de Précision Souris)',
+  h1Keyword: 'Test de Précision Souris',
+  h1Suffix: ' (Main Sûre)',
   caption: 'Le jeu du fil électrique teste la stabilité de votre main et votre motricité fine en guidant le curseur sans toucher les parois d\'un parcours étroit. Fondé sur la loi de direction d\'Accot-Zhai (1997) et le contrôle en boucle fermée de Woodworth (1899).',
   statLaps: 'Tours',
   statTime: 'Temps Restant',
@@ -325,7 +317,7 @@ const frCopy = {
   pausedTitle: 'En Pause',
   pausedPrompt: 'Cliquez sur l\'écran pour verrouiller le curseur et reprendre.',
   startTitle: 'Parcours du Fil Électrique',
-  startSubtitle: 'Précision Motrice & Chenal Étroit • Défi 45s',
+  startSubtitle: 'Main sûre et précision du tracé • 45 s',
   startBtn: 'Lancer l\'exercice',
   countdownSubtitle: 'PRÉPAREZ-VOUS',
   newBest: 'NOUVEAU RECORD',

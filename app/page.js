@@ -1,8 +1,9 @@
 import HomePageClient from './HomePageClient';
 import { DRILLS } from '@/lib/drillsRegistry';
 import { getAlternateLanguages } from '@/lib/i18n/locales';
+import { buildHomeMetadata, buildHomeSchema } from '@/lib/i18n/siteLandingSeoNative';
 
-export const metadata = {
+const legacyMetadata = {
   title: 'Free Aim Trainer & Brain Training Drills | SkillDrills',
   description: `Master your mind and mechanics with ${DRILLS.length}+ free interactive drills. Improve FPS aim, reaction time, memory, focus, typing speed, and mental fitness. No sign-up.`,
   keywords: [
@@ -37,9 +38,17 @@ export const metadata = {
   },
 };
 
+export const metadata = {
+  ...legacyMetadata,
+  ...buildHomeMetadata('en', 'https://skilldrills.online', DRILLS.length, getAlternateLanguages('/')),
+};
+
+const homeSchema = buildHomeSchema('en', 'https://skilldrills.online', DRILLS.length);
+
 export default function HomePage() {
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(homeSchema) }} />
       <HomePageClient />
     </>
   );

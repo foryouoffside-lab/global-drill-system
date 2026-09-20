@@ -26,6 +26,7 @@ import AdjacentHubs from '@/components/AdjacentHubs';
 import { useTranslation } from '@/lib/i18n/useTranslation';
 import { getLocalizedDrill } from '@/lib/i18n/drillNames';
 import { hasLocalizedRoute } from '@/lib/i18n/locales';
+import { getReactionSpeedHubUi } from '@/lib/i18n/reactionSpeedHubNative';
 
 const reactionCategories = [
   {
@@ -70,8 +71,9 @@ const FOLDER_TO_STORAGE_KEY: Record<string, string> = {
 
 type HubFaq = { q: string; a: string };
 
-export default function ReactionSpeedDrillsClient({ faqs = [] }: { faqs?: HubFaq[] }) {
-  const { locale, localizeHref, t } = useTranslation();
+export default function ReactionSpeedDrillsClient({ faqs = [], copy }: { faqs?: HubFaq[]; copy?: Record<string, any> }) {
+  const { locale, localizeHref, t } = useTranslation({});
+  const ui = copy || getReactionSpeedHubUi(locale);
   const [isClient, setIsClient] = useState(false);
   const [drillLevels, setDrillLevels] = useState<Record<string, number>>({});
 
@@ -158,7 +160,7 @@ export default function ReactionSpeedDrillsClient({ faqs = [] }: { faqs?: HubFaq
             <li><ChevronRight className="w-3.5 h-3.5 text-hairline-2" /></li>
             <li>
               <span className="text-amber-400 font-semibold uppercase tracking-wider" aria-current="page">
-                {t('header.reaction', 'REACTION SPEED')}
+                {ui.breadcrumbCurrent}
               </span>
             </li>
           </ol>
@@ -167,10 +169,10 @@ export default function ReactionSpeedDrillsClient({ faqs = [] }: { faqs?: HubFaq
         {/* Page heading */}
         <div className="mb-8">
           <h1 className="text-2xl sm:text-3xl font-bold tracking-tight text-ink-1">
-            {t('hubs.reaction-speed.h1', 'Reaction Time Test & Drills')}
+            {ui.h1}
           </h1>
           <p className="mt-2 text-sm sm:text-base text-ink-2 leading-relaxed">
-            {t('hubs.reaction-speed.desc', 'Test and accelerate simple & choice stimulus response times, visual trigger reflexes, and latency stability.')}
+            {ui.intro}
           </p>
         </div>
 
@@ -178,11 +180,11 @@ export default function ReactionSpeedDrillsClient({ faqs = [] }: { faqs?: HubFaq
         <Reveal>
           <DrillCarousel
             headingId="reaction-drills"
-            heading={t('hubs.reaction-speed.drillsHeading', 'Reaction drills')}
+            heading={ui.drillsHeading}
             accent="amber"
             icon={Zap}
             showcase
-            allLabel={t('ui.viewAll', 'View all')}
+            allLabel={ui.viewAll}
             drills={orderedReactiveDrills.map((drill) => {
               const fallbackTagline = getDrillTagline(drill.href, drill.description);
               const localized = getLocalizedDrill(drill.href, locale, drill.name, fallbackTagline);
@@ -204,13 +206,14 @@ export default function ReactionSpeedDrillsClient({ faqs = [] }: { faqs?: HubFaq
             <div className="flex items-center gap-2 mb-6">
               <Layers className="w-5 h-5 text-amber-400" />
               <h2 className="text-base sm:text-lg font-semibold tracking-tight text-ink-1">
-                Reaction Training Domains
+                {ui.domainsTitle}
               </h2>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
-              {reactionCategories.map((cat) => {
+              {reactionCategories.map((cat, catIndex) => {
                 const Icon = cat.icon;
                 const drillsInCat = reactiveDrills.filter(d => cat.drillNames.includes(d.folderName));
+                const localizedCategory = ui.categories?.[catIndex] || cat;
                 return (
                   <div
                     key={cat.id}
@@ -223,15 +226,15 @@ export default function ReactionSpeedDrillsClient({ faqs = [] }: { faqs?: HubFaq
                         </div>
                         <div>
                           <h3 className="text-sm font-semibold tracking-tight text-ink-1">
-                            {cat.name}
+                            {localizedCategory.name}
                           </h3>
                           <span className="text-xs font-medium text-amber-400">
-                            {drillsInCat.length} {drillsInCat.length === 1 ? 'Drill' : 'Drills'}
+                            {drillsInCat.length} {drillsInCat.length === 1 ? ui.drill : ui.drills}
                           </span>
                         </div>
                       </div>
                       <p className="text-xs text-ink-2 leading-relaxed mb-4">
-                        {cat.description}
+                        {localizedCategory.description}
                       </p>
                     </div>
 
@@ -272,7 +275,7 @@ export default function ReactionSpeedDrillsClient({ faqs = [] }: { faqs?: HubFaq
             <div className="flex items-center gap-2 mb-6">
               <Sparkles className="w-5 h-5 text-amber-400" />
               <h2 className="text-base sm:text-lg font-semibold tracking-tight text-ink-1">
-                Engine &amp; Hardware Optimization
+                {ui.hardwareTitle}
               </h2>
             </div>
 
@@ -282,10 +285,10 @@ export default function ReactionSpeedDrillsClient({ faqs = [] }: { faqs?: HubFaq
                   <Clock className="w-4 h-4" />
                 </div>
                 <h3 className="text-sm font-semibold tracking-tight text-ink-1 mb-1.5">
-                  Hardware-Polled Timestamping
+                  {ui.hardware[0].title}
                 </h3>
                 <p className="text-2xs text-ink-3 leading-relaxed">
-                  Bypasses synthetic timer limits using monotonic high-resolution performance clocks. Records physical switch inputs at the browser's native ~1ms timer resolution.
+                  {ui.hardware[0].description}
                 </p>
               </div>
 
@@ -294,10 +297,10 @@ export default function ReactionSpeedDrillsClient({ faqs = [] }: { faqs?: HubFaq
                   <MousePointer className="w-4 h-4" />
                 </div>
                 <h3 className="text-sm font-semibold tracking-tight text-ink-1 mb-1.5">
-                  Sub-Pixel Trigger Interception
+                  {ui.hardware[1].title}
                 </h3>
                 <p className="text-2xs text-ink-3 leading-relaxed">
-                  Captures raw pointer events immediately on device contact, eliminating event bubbling overhead and OS cursor smoothing lag.
+                  {ui.hardware[1].description}
                 </p>
               </div>
 
@@ -306,10 +309,10 @@ export default function ReactionSpeedDrillsClient({ faqs = [] }: { faqs?: HubFaq
                   <Cpu className="w-4 h-4" />
                 </div>
                 <h3 className="text-sm font-semibold tracking-tight text-ink-1 mb-1.5">
-                  240Hz+ Display Frame Sync
+                  {ui.hardware[2].title}
                 </h3>
                 <p className="text-2xs text-ink-3 leading-relaxed">
-                  Decoupled rendering loop matches native display refresh rates up to 360Hz. Visual cues appear without dropped frames or tearing artifacts.
+                  {ui.hardware[2].description}
                 </p>
               </div>
             </div>
@@ -323,7 +326,7 @@ export default function ReactionSpeedDrillsClient({ faqs = [] }: { faqs?: HubFaq
               <div className="flex items-center gap-2 mb-6">
                 <Sparkles className="w-5 h-5 text-amber-400" />
               <h2 className="text-base sm:text-lg font-semibold tracking-tight text-ink-1">
-                  {t('home.faqTitle', 'Frequently Asked Questions')}
+                  {ui.faqTitle}
                 </h2>
               </div>
 
@@ -358,14 +361,14 @@ export default function ReactionSpeedDrillsClient({ faqs = [] }: { faqs?: HubFaq
             className="inline-flex items-center gap-2 text-xs font-mono uppercase font-bold text-ink-3 hover:text-ink-1 transition-colors"
           >
             <ArrowLeft className="w-4 h-4" />
-            {t('ui.returnToAllSectors', 'Return to All Sectors')}
+            {ui.returnAll}
           </Link>
         </div>
 
         <StickyMobileCta
           href={hasLocalizedRoute(locale, '/drills/reaction-speed/reaction-time-test') ? localizeHref('/drills/reaction-speed/reaction-time-test') : '/drills/reaction-speed/reaction-time-test'}
-          label={t('hubs.reaction-speed.startReactionTest', 'Start Reaction Test')}
-          categoryName={t('header.reaction', 'Reaction Speed')}
+          label={ui.startTest}
+          categoryName={ui.breadcrumbCurrent}
         />
         <SiteFooter />
       </div>

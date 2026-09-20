@@ -6,25 +6,16 @@ import RelatedDrills from '@/components/drill/RelatedDrills';
 import { pickSources } from '@/lib/drillSources';
 
 export const metadata = {
-  title: 'Drag and Drop Test – Maus Präzision Training | SkillDrills',
-  description: 'Kostenloser Drag and Drop Test im Browser: Trainiere Mauspräzision, Zieh- und Haltekontrolle sowie präzises Loslassen nach dem Steering Law ohne Download.',
+  title: 'Maus-Ziehtest | Drag-and-Drop-Präzision | SkillDrills',
+  description: 'Kostenloser Maus-Ziehtest im Browser: Prüfe Ziehgenauigkeit, Tastenhalt und präzises Loslassen für Drag-and-Drop ohne Download.',
   keywords: [
-    'drag and drop test',
-    'drag and drop test maus',
-    'maus drag and drop trainer',
-    'maus praezision testen',
-    'mausbedienung test',
-    'hand auge koordination maus',
-    'maus ziehen uebung',
-    'rts maus training',
-    'maus klick halten test',
-    'feinmotorik maus test',
-    'cursor kontrolle training',
-    'aim trainer drag drop',
+    'Maus-Ziehtest', 'Maus-Drag-Test', 'Drag-and-Drop-Test', 'Mauspräzision testen',
+    'Maussteuerung üben', 'Ziehen und Ablegen üben', 'Maus Ziehgenauigkeit', 'Maus-Taste halten Test',
+    'Cursor-Kontrolle Training', 'Drag-and-Drop-Präzision', 'Mausbedienung Test', 'Feinmotorik Maus Test',
   ],
   openGraph: {
-    title: 'Drag and Drop Test – Maus Präzision Training | SkillDrills',
-    description: 'Kostenloser Drag and Drop Test im Browser: Trainiere Mauspräzision, Zieh- und Haltekontrolle sowie präzises Loslassen nach dem Steering Law ohne Download.',
+    title: 'Maus-Ziehtest | Drag-and-Drop-Präzision | SkillDrills',
+    description: 'Kostenloser Maus-Ziehtest im Browser: Prüfe Ziehgenauigkeit, Tastenhalt und präzises Loslassen für Drag-and-Drop ohne Download.',
     type: 'article',
     url: 'https://skilldrills.online/de/drills/motor/hand-eye-coordination/drag-and-drop',
     siteName: 'SkillDrills',
@@ -32,8 +23,8 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Drag and Drop Test – Maus Präzision Training | SkillDrills',
-    description: 'Kostenloser Drag and Drop Test im Browser: Trainiere Mauspräzision, Zieh- und Haltekontrolle sowie präzises Loslassen nach dem Steering Law ohne Download.',
+    title: 'Maus-Ziehtest | Drag-and-Drop-Präzision | SkillDrills',
+    description: 'Kostenloser Maus-Ziehtest im Browser: Prüfe Ziehgenauigkeit, Tastenhalt und präzises Loslassen für Drag-and-Drop ohne Download.',
   },
   robots: { index: true, follow: true },
   alternates: {
@@ -83,7 +74,8 @@ const softwareApplicationSchema = {
   description: 'Kostenloses Browsertool zur Messung von Drag-and-Drop-Geschwindigkeit, Cursor-Führung und Abwurftiming.',
   url: 'https://skilldrills.online/de/drills/motor/hand-eye-coordination/drag-and-drop',
   publisher: { '@type': 'Organization', name: 'SkillDrills', url: 'https://skilldrills.online' },
-  dateModified: '2026-09-16',
+  inLanguage: 'de-DE',
+  dateModified: '2026-09-20',
 };
 
 const webApplicationSchema = {
@@ -93,7 +85,8 @@ const webApplicationSchema = {
   browserRequirements: 'Benötigt HTML5 Canvas und modernes JavaScript',
   url: 'https://skilldrills.online/de/drills/motor/hand-eye-coordination/drag-and-drop',
   applicationCategory: 'EducationalApplication',
-  dateModified: '2026-09-16',
+  inLanguage: 'de-DE',
+  dateModified: '2026-09-20',
 };
 
 const videoGameSchema = {
@@ -105,13 +98,15 @@ const videoGameSchema = {
   genre: ['Geschicklichkeit', 'Motorik-Training', 'Esports'],
   gamePlatform: ['Web Browser', 'Desktop'],
   applicationCategory: 'Game',
+  inLanguage: 'de-DE',
   offers: { '@type': 'Offer', price: '0', priceCurrency: 'EUR' },
 };
 
 const faqSchema = {
   '@context': 'https://schema.org',
   '@type': 'FAQPage',
-  dateModified: '2026-09-16',
+  inLanguage: 'de-DE',
+  dateModified: '2026-09-20',
   mainEntity: [
     {
       '@type': 'Question',
@@ -199,6 +194,7 @@ const faqSchema = {
 const howToSchema = {
   '@context': 'https://schema.org',
   '@type': 'HowTo',
+  inLanguage: 'de-DE',
   name: 'Drag and Drop Maus-Trainer – Präzises Ziehen und Ablegen',
   description: 'Kostenloser Drag and Drop Maus-Trainer zur Messung der Hand-Auge-Koordination beim Halten, Bewegen und präzisen Ablegen von Objekten auf dynamische Zielzonen unter Zeitdruck.',
   step: [
@@ -323,7 +319,7 @@ const guideProps = {
 
 const copyDe = {
   title: "Drag and Drop Test – Maus Präzision Training",
-  subtitle: "Räumliches Ziehen & Ablegen • 15 Stufen Progression",
+  subtitle: "Ziehgenauigkeit · Zielablage messen",
   startButtonText: "DRILL STARTEN",
   playAgainText: "Nochmal spielen",
   shareText: "Ergebnis teilen",

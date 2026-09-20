@@ -6,21 +6,19 @@ import { getAlternateLanguages } from '@/lib/i18n/locales';
 import RelatedDrills from '@/components/drill/RelatedDrills';
 
 export const metadata = {
-  title: "플로우 상태 에임 연습 – 몰입 훈련 에임 트레이너 | SkillDrills",
-  description: "웹 브라우저에서 무료로 즐기는 플로우 상태(Zone) 에임 훈련. 심리학적 몰입 이론을 적용하여 잡념과 손목 긴장을 없애고, 부드러운 트래킹 리듬과 주의집중 지구력을 극대화하세요.",
+  title: "FPS 집중력 훈련 | 플로우 에임 트레이너 | SkillDrills",
+  description: "무료 브라우저에서 FPS 집중력과 에임 리듬을 훈련하세요. 난이도를 실력에 맞춰 조절하며 트래킹과 집중 지속력을 측정합니다.",
   keywords: [
-    "플로우 상태 에임 연습",
-    "몰입 에임 트레이너",
-    "FPS 몰입 훈련",
-    "리듬 에임 연습",
     "FPS 집중력 훈련",
-    "에임 집중력 향상",
+    "게임 몰입 훈련",
+    "에임 집중력",
+    "몰입 상태 에임",
+    "부드러운 트래킹",
+    "리듬 에임 연습",
     "발로란트 집중력 연습",
-    "에이펙스 몰입 에임",
-    "에임 트레이너 무료",
-    "스무스 트래킹 몰입",
-    "주의집중 지구력 훈련",
-    "베지에 곡선 에임"
+    "에이펙스 에임 연습",
+    "에임 연습 사이트",
+    "주의집중 지구력 훈련"
   ],
   alternates: {
     canonical: "https://skilldrills.online/ko/drills/fps/flow-state",
@@ -31,8 +29,8 @@ export const metadata = {
     follow: true,
   },
   openGraph: {
-    title: "플로우 상태 에임 연습 – 몰입 훈련 에임 트레이너 | SkillDrills",
-    description: "잡념과 불필요한 긴장을 제거하고 에임 몰입 상태(Zone)를 유도하는 리듬 트레이너: 연속적인 표적 전환과 부드러운 트래킹 지속력 극대화.",
+    title: "FPS 집중력 훈련 | 플로우 에임 트레이너 | SkillDrills",
+    description: "잡념을 줄이고 에임 리듬을 유지하는 무료 FPS 집중력 훈련. 실력에 맞춰 난이도를 조절하고 트래킹 지속력을 확인하세요.",
     url: "https://skilldrills.online/ko/drills/fps/flow-state",
     siteName: 'SkillDrills',
     locale: 'ko_KR',
@@ -40,8 +38,8 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: "플로우 상태 에임 연습 – 몰입 훈련 에임 트레이너 | SkillDrills",
-    description: "잡념과 불필요한 긴장을 제거하고 에임 몰입 상태(Zone)를 유도하는 리듬 트레이너: 연속적인 표적 전환과 부드러운 트래킹 지속력 극대화.",
+    title: "FPS 집중력 훈련 | 플로우 에임 트레이너 | SkillDrills",
+    description: "잡념을 줄이고 에임 리듬을 유지하는 무료 FPS 집중력 훈련. 실력에 맞춰 난이도를 조절하고 트래킹 지속력을 확인하세요.",
   },
 };
 
@@ -52,17 +50,17 @@ export default function FlowStateKoPage() {
     "itemListElement": [
       { "@type": "ListItem", "position": 1, "name": "SkillDrills", "item": "https://skilldrills.online/ko" },
       { "@type": "ListItem", "position": 2, "name": "FPS 에임 훈련", "item": "https://skilldrills.online/ko/drills/fps" },
-      { "@type": "ListItem", "position": 3, "name": "플로우 상태 에임 연습", "item": "https://skilldrills.online/ko/drills/fps/flow-state" }
+      { "@type": "ListItem", "position": 3, "name": "FPS 집중력 훈련", "item": "https://skilldrills.online/ko/drills/fps/flow-state" }
     ]
   };
 
   const softwareSchema = {
     "@context": "https://schema.org",
     "@type": "SoftwareApplication",
-    "name": "플로우 상태 에임 연습",
+    "name": "FPS 집중력 훈련",
     "applicationCategory": "GameApplication",
     "operatingSystem": "Web Browser",
-    "dateModified": "2026-09-05",
+    "dateModified": "2026-09-20",
     "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
     "description": "심리학적 몰입 이론을 바탕으로 주의집중 지구력과 매끄러운 베지에 곡선 트래킹을 단련하는 무료 브라우저 FPS 에임 드릴.",
     "genre": "FPS Training / Flow State",
@@ -77,7 +75,7 @@ export default function FlowStateKoPage() {
   const webAppSchema = {
     "@context": "https://schema.org",
     "@type": "WebApplication",
-    "name": "플로우 상태 에임 연습",
+    "name": "FPS 집중력 훈련",
     "url": "https://skilldrills.online/ko/drills/fps/flow-state",
     "applicationCategory": "GameApplication",
     "operatingSystem": "All",
@@ -93,10 +91,10 @@ export default function FlowStateKoPage() {
   const videoGameSchema = {
     "@context": "https://schema.org",
     "@type": "VideoGame",
-    "name": "플로우 상태 에임 연습",
+    "name": "FPS 집중력 훈련",
     "url": "https://skilldrills.online/ko/drills/fps/flow-state",
     "description": "심리학적 몰입 이론을 바탕으로 주의집중 지구력과 매끄러운 베지에 곡선 트래킹을 단련하는 무료 브라우저 FPS 에임 드릴.",
-    "dateModified": "2026-09-05",
+    "dateModified": "2026-09-20",
     "gamePlatform": "Web Browser",
     "genre": ["FPS Training", "Aim Trainer", "Cognitive Focus"],
     "playMode": "SinglePlayer",
@@ -108,7 +106,7 @@ export default function FlowStateKoPage() {
   const faqSchema = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
-    "dateModified": "2026-09-05",
+    "dateModified": "2026-09-20",
     "mainEntity": [
       {
         "@type": "Question",
@@ -231,8 +229,8 @@ export default function FlowStateKoPage() {
   };
 
   const copy = {
-    h1Keyword: "플로우 상태 에임 연습",
-    h1Suffix: " - 몰입 훈련 에임 트레이너",
+    h1Keyword: "FPS 집중력 훈련",
+    h1Suffix: " - 플로우 에임 트레이너",
     statScore: "점수",
     statTime: "남은 시간",
     statAccuracy: "트래킹 정확도",
@@ -254,9 +252,9 @@ export default function FlowStateKoPage() {
   };
 
   const koGuide = {
-    heading: "플로우 상태 유도의 과학과 지속 주의력 벤치마크",
+    heading: "FPS 집중력 훈련과 플로우 상태 벤치마크",
     intro: [
-      "플로우 상태 트레이너는 인지 심리학과 운동 신경과학의 연구를 집약하여, 심리적 몰입(Zone), 지속 주의력 지구력, 그리고 정밀한 활창 추종 제어력을 체계적으로 배양하는 FPS 전문 훈련 도구입니다. 미하이 칙센트미하이(1975, 1990)의 몰입 이론이 입증하듯, 당면 과제의 도전도와 개인의 기량이 정밀하게 맞물릴 때 자기 검열과 잡념이 사라지며 완벽한 몰입에 도달합니다.",
+      "FPS 집중력 훈련은 목표를 따라가는 동안 잡념을 줄이고 일정한 에임 리듬을 유지하는 연습입니다. 이 드릴은 난이도를 현재 실력에 맞춰 조절하면서 트래킹 정확도와 집중 지속력을 기록하므로, 플로우를 억지로 만든다고 약속하기보다 집중이 무너지는 지점을 확인하고 반복하게 해 줍니다.",
       "Dietrich(2004)의 일시적 전두엽 기능 저하 가설(Transient Hypofrontality)은 이 상태의 신경학적 기전을 설명합니다. 배외측 전전두엽 피질(DLPFC)의 과도한 자의식 통제가 잦아들면서, 기저핵과 소뇌가 고도로 숙련된 에임 모션을 완벽히 자동 실행하게 됩니다. 이는 승부처의 극심한 압박 속에서도 망설임 없는 번개 같은 미세 교정을 가능케 합니다.",
       "본 시스템은 performance.now() 고해상도 하드웨어 크로노메트리(Woods et al., 2015)와 부드러운 유기적 베지에 곡선 궤적(Krauzlis, 2004; Posner & Petersen, 1990)을 결합하여, 설치 없이 브라우저에서 바로 최고의 집중력 지구력을 완성시켜 줍니다.",
       "측정 정밀도 및 하드웨어 환경 안내: 본 훈련의 모든 상호작용은 브라우저의 performance.now() 고해상도 타이머를 통해 사용자 기기 로컬에서만 측정되며 외부 서버로 전송되지 않습니다. 브라우저 타이머는 스펙터(Spectre) 보안 완화 조치로 인해 약 1ms 단위로 양자화되며, 모니터 주사율(60Hz 약 16.7ms, 144Hz 약 6.9ms, 240Hz 약 4.1ms, Woods et al., 2015) 및 마우스 폴링레이트(125Hz 약 8ms vs 1000Hz 약 1ms)에 따른 물리적 지연 편차가 존재합니다. 5ms 미만의 차이는 측정 노이즈로 해석해야 하며, 타인과의 단순 비교보다는 동일 하드웨어 환경에서의 개인 훈련 추이를 추적하는 지표로 활용하세요."
@@ -345,7 +343,7 @@ export default function FlowStateKoPage() {
       />
       <FlowStateClient copy={copy} />
       <div className="max-w-6xl mx-auto px-4 w-full">
-        <RelatedDrills currentCategory="fps" currentHref="/drills/fps/flow-state" locale="ko" />
+    <RelatedDrills currentCategory="fps" currentHref="/ko/drills/fps/flow-state" locale="ko" />
       </div>
       <DrillGuide guide={koGuide} />
       <DrillFooter />

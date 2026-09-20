@@ -56,6 +56,14 @@ export const metadata = {
   robots: { index: true, follow: true },
 };
 
+Object.assign(metadata, {
+  title: 'Teste CPS | Cliques por Segundo | SkillDrills',
+  description: 'Teste CPS grátis no navegador. Acerte alvos móveis e encolhendo para praticar cliques rápidos, reação, precisão e aquisição de alvo.',
+  keywords: ['teste CPS', 'teste de cliques', 'cliques por segundo', 'teste de velocidade de clique', 'contador de cliques', 'treino de mira', 'teste de reação', 'clique rápido', 'precisão do mouse', 'jogo de reflexo'],
+  openGraph: { ...metadata.openGraph, title: 'Teste CPS | Cliques por Segundo | SkillDrills', description: 'Teste CPS grátis no navegador. Acerte alvos móveis e encolhendo para praticar cliques rápidos, reação, precisão e aquisição de alvo.' },
+  twitter: { ...metadata.twitter, title: 'Teste CPS | Cliques por Segundo | SkillDrills', description: 'Teste CPS grátis no navegador. Acerte alvos móveis e encolhendo para praticar cliques rápidos, reação, precisão e aquisição de alvo.' },
+});
+
 const breadcrumbSchema = {
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
@@ -96,8 +104,10 @@ const softwareApplicationSchema = {
   "offers": {
     "@type": "Offer",
     "price": "0",
-    "priceCurrency": "USD"
+  "priceCurrency": "USD"
   },
+  "inLanguage": "pt-BR",
+  "dateModified": "2026-09-20"
 };
 
 const webApplicationSchema = {
@@ -105,7 +115,9 @@ const webApplicationSchema = {
   "@type": "WebApplication",
   "name": "Simulador de Velocidade de Clique e Aquisição de Alvos",
   "browserRequirements": "Requires JavaScript and HTML5 Canvas support",
-  "genre": "Training, Reflex, Precision, FPS"
+  "genre": "Training, Reflex, Precision, FPS",
+  "inLanguage": "pt-BR",
+  "dateModified": "2026-09-20"
 };
 
 const videoGameSchema = {
@@ -113,12 +125,16 @@ const videoGameSchema = {
   "@type": "VideoGame",
   "name": "Speed Drill Tapping & Flick Challenge",
   "gamePlatform": "Web Browser",
-  "applicationSubCategory": "Esports Motor Chronometry Drill"
+  "applicationSubCategory": "Esports Motor Chronometry Drill",
+  "inLanguage": "pt-BR",
+  "dateModified": "2026-09-20"
 };
 
 const faqSchema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
+  "inLanguage": "pt-BR",
+  "dateModified": "2026-09-20",
   "mainEntity": [
     {
       "@type": "Question",
@@ -328,8 +344,8 @@ export default function LocalizedSpeedDrillPagePt() {
       />
       <SpeedDrillClient
         copy={{
-          title: "Teste de Cliques por Segundo & Treino de Velocidade",
-          subtitle: "Aquisição Balística de Alvos e CPS Dinâmico • Dificuldade com Escala Contínua",
+          title: "Teste CPS",
+          subtitle: "Acerte alvos que encolhem com rapidez e precisão",
           description: "O treino de velocidade mede quão rápido você consegue apontar para um alvo e clicar nele conforme ele encolhe e o tempo diminui. A Lei de Fitts (1954) estabelece o limite: o tempo de movimento cresce com o logaritmo da distância dividida pela largura. O movimento possui duas fases — um impulso balístico rápido e uma correção guiada pela visão (Woodworth, 1899) — e são os alvos que encolhem que tornam as correções lentas penalizadoras.",
           hudLabels: {
             score: "Pontuação",

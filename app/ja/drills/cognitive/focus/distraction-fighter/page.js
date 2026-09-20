@@ -1,6 +1,7 @@
 import DistractionFighterClient from '@/app/drills/cognitive/focus/distraction-fighter/DistractionFighterClientLoader';
 import DrillGuide from '@/components/drill/DrillGuide';
 import RelatedDrills from '@/components/drill/RelatedDrills';
+import DrillFooter from '@/components/drill/DrillFooter';
 import { pickSources } from '@/lib/drillSources';
 import { getAlternateLanguages } from '@/lib/i18n/locales';
 
@@ -14,29 +15,27 @@ import { getAlternateLanguages } from '@/lib/i18n/locales';
 // ============================================================
 
 export const metadata = {
-  title: 'ストループテスト – 無料オンライン認知干渉・抑制機能テスト | SkillDrills',
+  title: 'ストループテスト | 選択的注意トレーニング | SkillDrills',
   description:
-    '無料オンラインのストループテスト（Stroop Test）。文字の意味と異なるインクの色を瞬時に判断してタップ。選択的注意力、衝動抑制、認知柔軟性を鍛える本格脳トレドリル。登録不要・ブラウザですぐに測定。',
+    '無料ブラウザのストループテストで、文字ではなくインクの色を選びます。選択的注意を練習する非臨床セルフチェックです。',
   keywords: [
     'ストループテスト',
-    'ストループ効果',
-    '認知的抑制',
-    '選択的注意',
-    '前頭前野 トレーニング',
-    '脳トレ ゲーム 無料',
-    '集中力 テスト',
-    '衝動抑制 トレーニング',
-    '情報処理速度',
-    '認知機能検査',
+    'ストループテスト 無料',
+    'ストループテスト やり方',
+    'ストループテスト 何がわかる',
+    'ストループテスト 注意機能',
+    'ストループテスト 効果',
+    'ストループテスト web',
+    'ストループ 効果 テスト',
   ],
   alternates: {
     canonical: 'https://skilldrills.online/ja/drills/cognitive/focus/distraction-fighter',
     languages: getAlternateLanguages('/drills/cognitive/focus/distraction-fighter'),
   },
   openGraph: {
-    title: 'ストループテスト – 無料オンライン認知干渉・抑制機能テスト | SkillDrills',
+    title: 'ストループテスト | 選択的注意トレーニング | SkillDrills',
     description:
-      '無料オンラインのストループテスト（Stroop Test）。文字の意味と異なるインクの色を瞬時に判断してタップ。選択的注意力、衝動抑制、認知柔軟性を鍛える脳トレドリル。',
+      '無料ブラウザのストループテストで、文字ではなくインクの色を選びます。選択的注意を練習する非臨床セルフチェックです。',
     url: 'https://skilldrills.online/ja/drills/cognitive/focus/distraction-fighter',
     siteName: 'SkillDrills',
     locale: 'ja_JP',
@@ -44,8 +43,8 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'ストループテスト – 無料オンライン認知干渉・抑制機能テスト | SkillDrills',
-    description: '無料オンラインのストループテスト。文字の意味と異なるインクの色を瞬時に判別し、認知抑制力を測定・トレーニング。',
+    title: 'ストループテスト | 選択的注意トレーニング | SkillDrills',
+    description: '無料ブラウザのストループテストで、文字ではなくインクの色を選びます。選択的注意を練習する非臨床セルフチェックです。',
   },
   robots: { index: true, follow: true },
 };
@@ -99,7 +98,7 @@ const videoGameSchema = {
   name: 'ストループテスト オンライン (Stroop Test Game)',
   url: 'https://skilldrills.online/ja/drills/cognitive/focus/distraction-fighter',
   description: '文字の意味とインク色の不一致を瞬時に見極める認知干渉抑制テスト・脳トレゲーム。',
-  dateModified: '2026-09-11',
+  dateModified: '2026-09-20',
   gamePlatform: 'Web Browser',
   genre: ['認知トレーニング', '脳トレ', 'ストループテスト', '注意力テスト'],
   playMode: 'SinglePlayer',
@@ -148,7 +147,7 @@ const howToSchema = {
 const faqSchema = {
   '@context': 'https://schema.org',
   '@type': 'FAQPage',
-  dateModified: '2026-09-11',
+  dateModified: '2026-09-20',
   mainEntity: [
     {
       '@type': 'Question',
@@ -394,7 +393,10 @@ export default function JapaneseDistractionFighterPage() {
           </div>
         </div>
       </DrillGuide>
-      <RelatedDrills />
+      <div className="max-w-6xl mx-auto px-4 pb-12">
+        <RelatedDrills currentCategory="cognitive" currentHref="/drills/cognitive/focus/distraction-fighter" locale="ja" />
+      </div>
+      <DrillFooter />
     </>
   );
 }

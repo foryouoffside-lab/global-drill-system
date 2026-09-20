@@ -6,21 +6,21 @@ import { getAlternateLanguages } from '@/lib/i18n/locales';
 import { pickSources } from '@/lib/drillSources';
 
 export const metadata = {
-  title: "Adquisición de Objetivos FPS – Primer Disparo | SkillDrills",
-  description: "Entrena adquisición de objetivos, detección visual y precisión del primer tiro en el navegador. Domina el primer disparo para CS2 y Valorant gratis.",
+  title: "Aim Trainer Online - Adquisición de objetivos | SkillDrills",
+  description: "Aim trainer online gratuito para practicar adquisición de objetivos, detección visual y primer disparo en Valorant y CS2. Mide tiempo y precisión.",
   keywords: [
-    "entrenamiento de adquisicion de blancos",
-    "adquisicion de objetivos fps",
-    "entrenar primer disparo fps",
-    "precision de primer tiro",
-    "como mejorar el primer disparo",
-    "flick al primer tiro",
-    "deteccion de objetivos fps",
-    "punteria rapida primer disparo",
-    "entrenador de mira cs2 valorant",
-    "reconocimiento visual shooter",
-    "entrenamiento de reflejos y punteria",
-    "ejercicio de adquisicion de blancos"
+    "aim trainer online",
+    "aim trainer",
+    "adquisición de objetivos",
+    "entrenamiento de puntería",
+    "primer disparo",
+    "precisión primer disparo",
+    "detección visual FPS",
+    "identificación de amenazas",
+    "puntería Valorant",
+    "target switching",
+    "entrenador de puntería",
+    "test de puntería"
   ],
   alternates: {
     canonical: "https://skilldrills.online/es/drills/fps/target-acquisition",
@@ -31,8 +31,8 @@ export const metadata = {
     follow: true,
   },
   openGraph: {
-    title: "Adquisición de Objetivos FPS – Primer Disparo | SkillDrills",
-    description: "Entrena adquisición de objetivos, detección visual y precisión del primer tiro en el navegador. Domina el primer disparo para CS2 y Valorant gratis.",
+    title: "Aim Trainer Online - Adquisición de objetivos | SkillDrills",
+    description: "Aim trainer online gratuito para practicar adquisición de objetivos, detección visual y primer disparo en Valorant y CS2. Mide tiempo y precisión.",
     url: "https://skilldrills.online/es/drills/fps/target-acquisition",
     siteName: 'SkillDrills',
     locale: 'es_ES',
@@ -40,8 +40,8 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: "Adquisición de Objetivos FPS – Primer Disparo | SkillDrills",
-    description: "Entrena adquisición de objetivos, detección visual y precisión del primer tiro en el navegador. Domina el primer disparo para CS2 y Valorant gratis.",
+    title: "Aim Trainer Online - Adquisición de objetivos | SkillDrills",
+    description: "Aim trainer online gratuito para practicar adquisición de objetivos, detección visual y primer disparo en Valorant y CS2. Mide tiempo y precisión.",
   },
 };
 
@@ -59,10 +59,10 @@ export default function TargetAcquisitionEsPage() {
   const softwareSchema = {
     "@context": "https://schema.org",
     "@type": "SoftwareApplication",
-    "name": "Entrenador de Adquisición de Objetivos FPS",
+    "name": "Aim Trainer Online - Adquisición de objetivos",
     "applicationCategory": "GameApplication",
     "operatingSystem": "Web Browser",
-    "dateModified": "2026-09-16",
+    "dateModified": "2026-09-20",
     "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
     "description": "Entrenador online de adquisición de objetivos, detección visual rápida y precisión del primer disparo para shooters tácticos como CS2 y Valorant.",
     "genre": "Entrenamiento FPS / Precisión Primer Disparo",
@@ -77,22 +77,22 @@ export default function TargetAcquisitionEsPage() {
   const webAppSchema = {
     "@context": "https://schema.org",
     "@type": "WebApplication",
-    "name": "Entrenador de Adquisición de Objetivos FPS",
+    "name": "Aim Trainer Online - Adquisición de objetivos",
     "url": "https://skilldrills.online/es/drills/fps/target-acquisition",
     "description": "Entrenador online de adquisición de objetivos, detección visual rápida y precisión del primer disparo para shooters tácticos como CS2 y Valorant.",
     "applicationCategory": "Game",
     "operatingSystem": "Web Browser",
     "browserRequirements": "Requiere soporte de HTML5 Canvas y Pointer Lock API",
-    "dateModified": "2026-09-16"
+    "dateModified": "2026-09-20"
   };
 
   const videoGameSchema = {
     "@context": "https://schema.org",
     "@type": "VideoGame",
-    "name": "Entrenador de Adquisición de Objetivos FPS",
+    "name": "Aim Trainer Online - Adquisición de objetivos",
     "url": "https://skilldrills.online/es/drills/fps/target-acquisition",
     "description": "Entrenador online de adquisición de objetivos, detección visual rápida y precisión del primer disparo para shooters tácticos como CS2 y Valorant.",
-    "dateModified": "2026-09-16",
+    "dateModified": "2026-09-20",
     "gamePlatform": "Web Browser",
     "genre": ["Entrenamiento FPS", "Aim Trainer", "Adquisición de Objetivos"],
     "playMode": "SinglePlayer",
@@ -104,7 +104,7 @@ export default function TargetAcquisitionEsPage() {
   const faqSchema = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
-    "dateModified": "2026-09-16",
+    "dateModified": "2026-09-20",
     "mainEntity": [
       {
         "@type": "Question",
@@ -227,9 +227,9 @@ export default function TargetAcquisitionEsPage() {
   };
 
   const targetAcquisitionGuide = {
-    heading: "Guía de Adquisición de Objetivos FPS y Biomecánica de la Discriminación Visual",
+    heading: "Aim Trainer Online: adquisición de objetivos y primer disparo",
     intro: [
-      "El simulador de Adquisición de Objetivos es un entrenamiento perceptivo-cognitivo diseñado para perfeccionar la detección visual veloz, la discriminación de contrastes y la letalidad en el primer disparo. En juegos tácticos de disparos como Valorant, Counter-Strike 2 y Rainbow Six Siege, las rondas se deciden en los primeros 300 milisegundos de contacto visual: el jugador que localiza, discrimina y acierta en el objetivo antes asegura el asalto.",
+      "Para quien busca un aim trainer online, este drill mide el recorrido desde detectar una amenaza hasta identificarla y acertar el primer disparo. Entrena adquisición de objetivos, detección visual y precisión del primer tiro para Valorant, Counter-Strike 2 y Rainbow Six Siege, donde los primeros 300 milisegundos de contacto visual condicionan el duelo.",
       "La base científica de la búsqueda visual y la identificación de objetivos fue formulada por Anne Treisman y Garry Gelade (1980) en su Teoría de Integración de Características. Treisman demostró que las propiedades visuales elementales —como contraste de luminancia, tono y orientación de bordes— se extraen de forma simultánea y paralela por todo el campo de visión. Solo cuando la atención focalizada apunta a una coordenada exacta, estos atributos se unen en una amenaza reconocible.",
       "Ampliando el procesamiento paralelo, el modelo Guided Search de Jeremy M. Wolfe (1994, 2007) explica cómo los mapas sensoriales de prominencia se coordinan con las expectativas del jugador para dirigir la atención. Al entrenar la discriminación de contrastes, la corteza visual aprende a ignorar ruidos y elementos secundarios de forma instantánea, recortando el tiempo entre el estímulo visual y el movimiento manual.",
       "Integrando las leyes psicomotoras de Paul M. Fitts (1954), la teoría de submovimientos balísticos de David E. Meyer et al. (1988) y la cronometría digital de alta precisión (Woods et al., 2015), este ejercicio prepara los reflejos para erradicar dudas cognitivas y conectar tiros firmes y precisos bajo presión.",
@@ -292,9 +292,9 @@ export default function TargetAcquisitionEsPage() {
   };
 
   const copyEs = {
-    h1Keyword: "Adquisición de Objetivos FPS",
-    h1Suffix: " – Primer Disparo",
-    subtitle: "Entrena detección visual de objetivos, discriminación de amenazas y precisión de primer disparo con métricas en tiempo real.",
+    h1Keyword: "Aim Trainer Online",
+    h1Suffix: " - Adquisición de objetivos",
+    subtitle: "Practica detectar el objetivo y acertar el primer disparo para Valorant y CS2 en el navegador.",
     statScore: "Puntuación",
     statTime: "Tiempo",
     statAccuracy: "Precisión",
@@ -353,7 +353,7 @@ export default function TargetAcquisitionEsPage() {
       <div className="max-w-4xl mx-auto px-4 pb-12">
         <RelatedDrills
           currentCategory="fps"
-          currentHref="/drills/fps/target-acquisition"
+          currentHref="/es/drills/fps/target-acquisition"
           locale="es"
         />
       </div>

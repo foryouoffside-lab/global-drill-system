@@ -22,33 +22,27 @@ import { pickSources } from '@/lib/drillSources';
 // ============================================================
 
 export const metadata = {
-  title: '連打測定・CPSテスト – 無料クリック速度測定＆連打力診断ツール | SkillDrills',
+  title: 'CPSテスト | 連打測定・クリック速度 | SkillDrills',
   description:
-    'ブラウザ上で今すぐ測定できる無料の連打測定・CPSテストツール。1秒間のクリック速度（CPS）、秒間連打数、ジッタークリックやバタフライクリックの速度と前腕の筋持久力を45秒間で精密診断。マインクラフトPvPやFPSの連射練習に最適。',
+    'マウスを連打してCPSと45秒間のクリック持久力を測定。ブラウザですぐ遊べる無料テストです。',
   keywords: [
-    '連打測定',
-    '連打 測定',
-    '連打ツール',
-    'cps 測定',
-    'cps測定',
     'CPSテスト',
-    'cps テスト',
-    'クリック速度測定',
-    '連打力測定',
-    '連打テスト',
-    'クリックテスト',
-    '秒間クリック数',
-    'クリック速度',
-    'マイクラ 連打',
-    'マイクラ cps',
+    'クリック速度 テスト',
+    '連打測定',
+    '連打ツール',
+    'クリック連打',
+    'クリック数 測定',
+    'マウス 連打',
+    '連打力 測定',
     'ジッタークリック',
     'バタフライクリック',
-    '連打ゲーム',
+    'マイクラ CPS',
+    'クリック持久力 テスト',
   ],
   openGraph: {
-    title: '連打測定・CPSテスト – 無料クリック速度測定＆連打力診断ツール | SkillDrills',
+    title: 'CPSテスト | 連打測定・クリック速度 | SkillDrills',
     description:
-      'ブラウザ上で今すぐ測定できる無料の連打測定・CPSテストツール。1秒間のクリック速度（CPS）、秒間連打数、ジッタークリックやバタフライクリックの速度と前腕の筋持久力を45秒間で精密診断。',
+      'マウス連打でCPSとクリック持久力を測る無料ブラウザテスト。',
     type: 'article',
     url: 'https://skilldrills.online/ja/drills/motor/movement-speed/rapid-tapping',
     siteName: 'SkillDrills',
@@ -56,9 +50,9 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: '連打測定・CPSテスト – 無料クリック速度測定＆連打力診断ツール | SkillDrills',
+    title: 'CPSテスト | 連打測定・クリック速度 | SkillDrills',
     description:
-      'ブラウザ上で今すぐ測定できる無料の連打測定・CPSテストツール。1秒間のクリック速度（CPS）、秒間連打数、ジッタークリックやバタフライクリックの速度と前腕の筋持久力を45秒間で精密診断。',
+      'CPSと45秒間の連打持久力を測定する無料テスト。',
   },
   robots: { index: true, follow: true },
   alternates: {
@@ -93,7 +87,7 @@ const softwareApplicationSchema = {
   url: 'https://skilldrills.online/ja/drills/motor/movement-speed/rapid-tapping',
   publisher: { '@type': 'Organization', name: 'SkillDrills', url: 'https://skilldrills.online' },
   inLanguage: 'ja-JP',
-  dateModified: '2026-09-11',
+  dateModified: '2026-09-20',
 };
 
 const webApplicationSchema = {
@@ -107,12 +101,13 @@ const webApplicationSchema = {
   offers: { '@type': 'Offer', price: '0', priceCurrency: 'JPY' },
   url: 'https://skilldrills.online/ja/drills/motor/movement-speed/rapid-tapping',
   inLanguage: 'ja-JP',
-  dateModified: '2026-09-11',
+  dateModified: '2026-09-20',
 };
 
 const videoGameSchema = {
   '@context': 'https://schema.org',
   '@type': 'VideoGame',
+  inLanguage: 'ja-JP',
   name: 'CPSテスト – 秒間クリック数測定・連打速度測定ツール',
   url: 'https://skilldrills.online/ja/drills/motor/movement-speed/rapid-tapping',
   description: 'CPSテスト – 秒間クリック数測定・連打速度測定ツール',
@@ -126,6 +121,8 @@ const videoGameSchema = {
 const faqSchema = {
   '@context': 'https://schema.org',
   '@type': 'FAQPage',
+  inLanguage: 'ja-JP',
+  dateModified: '2026-09-20',
   mainEntity: [
     {
       '@type': 'Question',
@@ -213,6 +210,8 @@ const faqSchema = {
 const howToSchema = {
   '@context': 'https://schema.org',
   '@type': 'HowTo',
+  inLanguage: 'ja-JP',
+  dateModified: '2026-09-20',
   name: 'CPSテスト – 秒間クリック数測定・連打速度測定ツール',
   description: 'CPSテスト – 秒間クリック数測定・連打速度測定ツール',
   step: [
@@ -342,7 +341,7 @@ const jaCopy = {
   cpsRate: "現在CPS",
   bestScore: "ハイスコア",
   startButtonText: "訓練開始",
-  startSubtitle: "CPSクリック速度トレーナー • ハードウェア直接生入力",
+  startSubtitle: "CPSとクリック持久力 • 45秒",
   getReady: "準備",
   playAgain: "もう一度プレイ",
   shareTitle: "スコアを共有",

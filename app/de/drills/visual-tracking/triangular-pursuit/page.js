@@ -5,25 +5,25 @@ import { getAlternateLanguages } from '@/lib/i18n/locales';
 import { pickSources } from '@/lib/drillSources';
 
 export const metadata = {
-  title: "Dreieckige Blickverfolgung – Polygon-Training | SkillDrills",
-  description: "Trainieren Sie kontinuierliche Blickfolgebewegungen und Fangsakkaden entlang dreieckiger Vektorbahnen. Präzises Kanten-Tracking online. Kostenlos.",
+  title: "Dreieckige Blickverfolgung | SkillDrills",
+  description: "Verfolge ein Ziel auf einer Dreiecksbahn. Kostenlose Browserübung für diagonale Blickfolge, Eckpunktfehler und Zielverluste.",
   keywords: [
-    "dreieckige blickverfolgung uebung",
-    "polygon tracking training",
-    "eckpunkt erfassung sakkaden",
-    "fangsakkaden richtungswechsel",
-    "diagonale blickfolgebewegung",
-    "retinaler schlupf korrektur",
-    "dynamische blickstabilisierung",
-    "sportvisus augenuebung",
-    "okulomotorik ecken tracking",
-    "blicksteuerung richtungswechsel",
-    "augenmuskeltraining richtungswechsel online",
-    "visuelle reaktionszeit augentest"
+    "Dreiecksbahn Blickverfolgung Training",
+    "dreieckige Augenbewegungen Übung",
+    "Dreiecksbahn Ziel verfolgen",
+    "Blickwechsel an Ecken",
+    "visuelles Tracking diagonal",
+    "Eckpunkt Blickfehler messen",
+    "Zielverlust Blickübung",
+    "Blickfolge bei Richtungswechsel",
+    "Augentraining Dreieck",
+    "dynamisches Sehen diagonal",
+    "visuelle Reaktionszeit üben",
+    "Blickverfolgung im Browser"
   ],
   openGraph: {
-    title: "Dreieckige Blickverfolgung – Polygon-Training | SkillDrills",
-    description: "Trainieren Sie kontinuierliche Blickfolgebewegungen und Fangsakkaden entlang dreieckiger Vektorbahnen. Präzises Kanten-Tracking online. Kostenlos.",
+    title: "Dreieckige Blickverfolgung | SkillDrills",
+    description: "Verfolge ein Ziel auf einer Dreiecksbahn. Kostenlose Browserübung für diagonale Blickfolge, Eckpunktfehler und Zielverluste.",
     url: 'https://skilldrills.online/de/drills/visual-tracking/triangular-pursuit',
     siteName: 'SkillDrills',
     locale: 'de_DE',
@@ -31,8 +31,8 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: "Dreieckige Blickverfolgung – Polygon-Training | SkillDrills",
-    description: "Trainieren Sie kontinuierliche Blickfolgebewegungen und Fangsakkaden entlang dreieckiger Vektorbahnen. Präzises Kanten-Tracking online. Kostenlos.",
+    title: "Dreieckige Blickverfolgung | SkillDrills",
+    description: "Verfolge ein Ziel auf einer Dreiecksbahn. Kostenlose Browserübung für diagonale Blickfolge, Eckpunktfehler und Zielverluste.",
   },
   robots: { index: true, follow: true },
   alternates: {
@@ -90,7 +90,7 @@ const softwareApplicationSchema = {
     "name": "SkillDrills",
     "url": "https://skilldrills.online"
   },
-  "dateModified": "2026-09-15"
+  "dateModified": "2026-09-20"
 };
 
 const webAppSchema = {
@@ -106,7 +106,7 @@ const webAppSchema = {
     "priceCurrency": "USD"
   },
   "url": "https://skilldrills.online/de/drills/visual-tracking/triangular-pursuit",
-  "dateModified": "2026-09-15"
+  "dateModified": "2026-09-20"
 };
 
 const videoGameSchema = {
@@ -121,16 +121,17 @@ const videoGameSchema = {
     "Aim Trainer"
   ],
   "gamePlatform": [
-    "Web Browser",
+    "Webbrowser",
     "Desktop",
-    "Mobile"
+    "Mobil"
   ],
   "applicationCategory": "Game",
   "offers": {
     "@type": "Offer",
     "price": "0",
     "priceCurrency": "USD"
-  }
+  },
+  "dateModified": "2026-09-20"
 };
 
 const howToSchema = {
@@ -138,13 +139,13 @@ const howToSchema = {
   "@type": "HowTo",
   "name": "Anleitung zum Training der dreieckigen Blickverfolgung",
   "description": "Methodischer 4-Schritte-Leitfaden zur Koordination von stetiger Vektor-Blickfolge und fovealen Fangsakkaden an spitzen Dreieckswinkeln.",
-  "dateModified": "2026-09-15",
+  "dateModified": "2026-09-20",
   "step": [
     {
       "@type": "HowToStep",
       "position": 1,
       "name": "Geometrische Tracking-Parameter einstellen",
-      "text": "Wählen Sie Sessiondauer (30 bis 120 Sekunden), Geschwindigkeitsmultiplikator, Zielgröße und Zielfarbe. Aktivieren Sie bei Bedarf 'Hide Line' für höhere neuronale Anforderung.",
+      "text": "Wählen Sie Sessiondauer (30 bis 120 Sekunden), Geschwindigkeitsmultiplikator, Zielgröße und Zielfarbe. Aktivieren Sie bei Bedarf 'Linie ausblenden' für höhere neuronale Anforderung.",
       "url": "https://skilldrills.online/de/drills/visual-tracking/triangular-pursuit#step-1"
     },
     {
@@ -165,7 +166,7 @@ const howToSchema = {
       "@type": "HowToStep",
       "position": 4,
       "name": "Progression mit Geschwindigkeit und Zufallsprofilen",
-      "text": "Erhöhen Sie schrittweise die Geschwindigkeit und schalten Sie 'Random Speed' hinzu, um unvorhersehbare Richtungs- und Geschwindigkeitsübergänge zu meistern.",
+      "text": "Erhöhen Sie schrittweise die Geschwindigkeit und schalten Sie 'Zufallstempo' hinzu, um unvorhersehbare Richtungs- und Geschwindigkeitsübergänge zu meistern.",
       "url": "https://skilldrills.online/de/drills/visual-tracking/triangular-pursuit#step-4"
     }
   ]
@@ -174,13 +175,14 @@ const howToSchema = {
 const faqSchema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
+  "dateModified": "2026-09-20",
   "mainEntity": [
     {
       "@type": "Question",
-      "name": "Was ist die dreieckige Blickverfolgung (Triangular Pursuit)?",
+      "name": "Was ist die dreieckige Blickverfolgung?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Triangular Pursuit ist eine interaktive okulomotorische Trainingsübung, bei der ein visuelles Ziel entlang einer geschlossenen gleichseitigen Dreiecksbahn verfolgt wird. Sie kombiniert kontinuierliche lineare Blickfolgebewegungen (Smooth Pursuit) auf den Kanten mit präzisen Fangsakkaden (Catch-up Saccades) an 60°-Eckpunkten (de Brouwer et al., 2002)."
+        "text": "Die dreieckige Blickverfolgung ist eine interaktive okulomotorische Trainingsübung, bei der ein visuelles Ziel entlang einer geschlossenen gleichseitigen Dreiecksbahn verfolgt wird. Sie kombiniert kontinuierliche lineare Blickfolgebewegungen an den Kanten mit präzisen Fangsakkaden an 60°-Eckpunkten (de Brouwer et al., 2002)."
       }
     },
     {
@@ -262,9 +264,9 @@ const guide = {
   heading: "Dreieckige Blickverfolgung – Polygon-Augentraining: Winkelwechsel und sakkadische Bremsung",
   intro: [
     "Das Nachverfolgen visueller Reize entlang geschlossener geometrischer Polygone stellt höchste Anforderungen an das Zusammenspiel horizontaler und vertikaler Augenmuskelgruppen. Bewegt sich ein Stimulus entlang der Kanten eines gleichseitigen Dreiecks, operiert das okulomotorische System in einer non-kardinalen, diagonalen Vektorebene. Dies verlangt eine synchrone, hochpräzise Kopplung pontiner horizontaler Blickzentren (PPRF) und Mittelhirn-Schaltkreise (riMLF), koordiniert durch das Kleinhirn (Orban de Xivry & Lefèvre, 2007).",
-    "Die wesentliche neurophysiologische Barriere tritt an den drei spitzen Scheitelpunkten (60°-Winkel) des Dreiecks auf. An jedem Eckpunkt bricht die translationale Geschwindigkeit schlagartig um, während der retinale Positionsfehler sprunghaft ansteigt. Wie wegweisende Studien von de Brouwer et al. (2002) und Heinen et al. (2005) belegen, triggern die frontalen Augenfelder (FEF) und die supplementären Augenfelder (SEF) an solchen Diskontinuitäten prädiktive Fangsakkaden (Catch-up Saccades), basierend auf der simultanen Verrechnung von Positionsfehler und retinaler Schlupfgeschwindigkeit.",
+      "Die wesentliche neurophysiologische Barriere tritt an den drei spitzen Scheitelpunkten (60°-Winkel) des Dreiecks auf. An jedem Eckpunkt bricht die translationale Geschwindigkeit schlagartig um, während der retinale Positionsfehler sprunghaft ansteigt. Wie wegweisende Studien von de Brouwer et al. (2002) und Heinen et al. (2005) belegen, triggern die frontalen Augenfelder (FEF) und die supplementären Augenfelder (SEF) an solchen Diskontinuitäten prädiktive Fangsakkaden, basierend auf der simultanen Verrechnung von Positionsfehler und retinaler Schlupfgeschwindigkeit.",
     "Bei untrainierten Personen führt die Trägheit des okulomotorischen Systems regelmäßig dazu, dass der Blick über den Eckpunkt hinausschießt (Overshoot) oder in vorauseilender Antizipation die Kurve schneidet. Beide Fehlmuster zerstören die foveale Fixation und erzwingen mehrere korrigierende Suchsakkaden. Kontinuierliches Polygon-Tracking aktiviert hingegen cerebelläre Vorwärtsmodelle (Bennett & Barnes, 2006; Barnes, 2008), die eine prädiktive Verlangsamung der Folgebewegung kurz vor dem Eckpunkt einleiten und die Fangsakkade präzise auf den neuen Richtungsvektor ausrichten.",
-    "Die Trainingsübung 'Dreieckige Blickverfolgung (Triangular Pursuit)' schult diese geometrische Wendigkeit direkt im Webbrowser. Durch die Verfolgung des Ziels entlang der Dreiecksbahn werden stetige Diagonal-Folgebewegungen und abrupte Scheitelpunkt-Bremsungen systematisch gekoppelt. Mit 'Hide Line' lässt sich die visuelle Orientierungshilfe ausblenden, um reine sensomotorische Bewegungskontrolle zu testen, während 'Random Speed' mechanische Rhythmusgewohnheiten aufbricht.",
+      "Die Trainingsübung 'Dreieckige Blickverfolgung' schult diese geometrische Wendigkeit direkt im Webbrowser. Durch die Verfolgung des Ziels entlang der Dreiecksbahn werden stetige diagonale Folgebewegungen und abrupte Scheitelpunkt-Bremsungen systematisch gekoppelt. Mit 'Linie ausblenden' lässt sich die visuelle Orientierungshilfe entfernen, um reine sensomotorische Bewegungskontrolle zu testen, während 'Zufallstempo' mechanische Rhythmusgewohnheiten aufbricht.",
     "Hardware-Latenz und Messmethodik: Die Hardware-Latenz unterliegt der Bildschirmquantisierung (~16,7 ms bei 60 Hz, ~6,9 ms bei 144 Hz, ~4,1 ms bei 240 Hz) sowie den Polling-Intervallen der Eingabegeräte (~8 ms bei 125 Hz vs. ~1 ms bei 1.000 Hz), wie von Woods et al. (2015) dokumentiert. Alle Leistungsdaten und Reaktionsprofile werden ausschließlich lokal im Browser-Speicher (localStorage) gesichert und niemals extern übertragen."
   ],
   benchmarks: {
@@ -308,7 +310,7 @@ const guide = {
       ]
     },
     {
-      title: "Deaktivierung der Hilfslinie (Hide Line) zur Aktivierung interner geometrischer Vorwärtsmodelle",
+      title: "Deaktivierung der Hilfslinie zur Aktivierung interner geometrischer Vorwärtsmodelle",
       description: "Das Ausblenden der Pfadlinie zwingt das visuelle System, die geometrischen Koordinaten des gleichseitigen Dreiecks rein intern im Arbeitsgedächtnis und Kleinhirn abzubilden.",
       tips: [
         "Nutzen Sie Bildschirmränder und Bildmitte als räumliche Referenzpunkte für die drei virtuellen Eckpunkte",
@@ -316,6 +318,12 @@ const guide = {
         "Wiederholen Sie die Übung ohne Hilfslinie, bis die Eckpunkt-Abweichung stabil unter 20 Pixeln bleibt"
       ]
     }
+  ],
+  steps: [
+    { title: "In der Mitte auf das Ziel fokussieren", text: "Sitze 50–70 cm vom Bildschirm entfernt, halte den Kopf ruhig und verfolge den Startpunkt der Dreiecksbahn." },
+    { title: "Diagonale Kanten gleichmäßig verfolgen", text: "Folge den geraden Dreiecksseiten mit ruhigem Blick, ohne den Hals oder Kopf mitzubewegen." },
+    { title: "Am Eckpunkt bremsen und neu erfassen", text: "Bremse vor dem 60°-Eckpunkt leicht ab und richte den Blick nach dem Wechsel auf die nächste Kante." },
+    { title: "Tempo erst bei Genauigkeit erhöhen", text: "Erhöhe Geschwindigkeit oder Zufallsbewegung erst, wenn Überschwinger und Zielverluste an den Ecken abnehmen." }
   ],
   deviceCalibration: {
     title: "Hardware- und Ergonomie-Standards für polygonale Blickverfolgung",
@@ -328,8 +336,8 @@ const guide = {
   },
   faqs: [
     {
-      "q": "Was ist die dreieckige Blickverfolgung (Triangular Pursuit)?",
-      "a": "Triangular Pursuit ist eine interaktive okulomotorische Trainingsübung, bei der ein visuelles Ziel entlang einer geschlossenen gleichseitigen Dreiecksbahn verfolgt wird. Sie kombiniert kontinuierliche lineare Blickfolgebewegungen (Smooth Pursuit) auf den Kanten mit präzisen Fangsakkaden (Catch-up Saccades) an 60°-Eckpunkten (de Brouwer et al., 2002)."
+      "q": "Was ist die dreieckige Blickverfolgung?",
+      "a": "Die dreieckige Blickverfolgung ist eine interaktive okulomotorische Trainingsübung, bei der ein visuelles Ziel entlang einer geschlossenen gleichseitigen Dreiecksbahn verfolgt wird. Sie kombiniert kontinuierliche lineare Blickfolgebewegungen an den Kanten mit präzisen Fangsakkaden an 60°-Eckpunkten (de Brouwer et al., 2002)."
     },
     {
       "q": "Warum ist die Verfolgung entlang eines Dreiecks anspruchsvoller als kreisförmiges Tracking?",
@@ -400,9 +408,9 @@ export default function LocalizedPage() {
       />
 
       <TriangularPursuitClient copy={{
-        title: "Dreieckige Blickverfolgung (Polygonales Winkeltraining)",
-        subtitle: "3 Eckpunkte mit scharfem Richtungswechsel – Vektor-Tracking und Fangsakkaden",
-        description: "Fixieren Sie ein Ziel entlang geschlossener dreieckiger Vektorbahnen und trainieren Sie den nahtlosen Übergang zwischen linearer Blickfolgebewegung und abrupten Fangsakkaden an 60°-Eckpunkten. Schult die cerebelläre Vorwärtssteuerung und eliminiert Überschwinger an scharfen Scheitelpunkten (de Brouwer et al., 2002; Orban de Xivry & Lefèvre, 2007)."
+        title: "Dreieckige Blickverfolgung",
+        subtitle: "Diagonale Blickfolge und Eckpunkt-Reerfassung",
+        description: "Verfolge ein Ziel auf einer Dreiecksbahn und prüfe Eckpunktfehler und Zielverluste."
       }} />
       <DrillGuide guide={guide} />
       <div className="max-w-6xl mx-auto px-4 pb-12">

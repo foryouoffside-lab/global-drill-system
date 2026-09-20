@@ -6,25 +6,16 @@ import RelatedDrills from '@/components/drill/RelatedDrills';
 import { pickSources } from '@/lib/drillSources';
 
 export const metadata = {
-  title: 'ドラッグ・ドロップ練習 – マウス操作精度測定ツール | SkillDrills',
-  description: 'ブラウザでできる無料のドラッグ＆ドロップ練習・マウストレーニングツール。ターゲットの長押し掴み、高速ドラッグ移動、目標枠への正確なドロップ精度と所要時間をミリ秒単位で測定診断。',
+  title: 'ドラッグ＆ドロップ練習｜マウス操作テスト | SkillDrills',
+  description: '無料のブラウザ型ドラッグ＆ドロップ練習。マウス操作の精度、移動時間、狙った場所で離すタイミングを測定します。',
   keywords: [
-    'ドラッグ アンド ドロップ 練習',
-    'マウス ドラッグ 練習',
-    'ドラッグ 操作 テスト',
-    'マウストレーナー',
-    'マウス 操作 練習',
-    'ドラッグ 精度 テスト',
-    'マウス 手首 練習',
-    'ドラッグ ドロップ ゲーム',
-    'UI 操作 練習',
-    'マウス 練習 ツール',
-    'マウス 制御 トレーニング',
-    'エイム 減速 練習',
+    'ドラッグ＆ドロップ練習', 'マウスドラッグ練習', 'ドラッグテスト', 'マウス操作練習',
+    'ドラッグ精度テスト', 'マウス制御トレーニング', 'ドラッグ抜けテスト', 'マウスボタン保持テスト',
+    'ドラッグドロップゲーム', 'マウス練習ツール', 'UI操作練習', 'マウストレーナー',
   ],
   openGraph: {
-    title: 'ドラッグ・ドロップ練習 – マウス操作精度測定ツール | SkillDrills',
-    description: 'ブラウザでできる無料のドラッグ＆ドロップ練習・マウストレーニングツール。ターゲットの長押し掴み、高速ドラッグ移動、目標枠への正確なドロップ精度と所要時間をミリ秒単位で測定診断。',
+    title: 'ドラッグ＆ドロップ練習｜マウス操作テスト | SkillDrills',
+    description: '無料のブラウザ型ドラッグ＆ドロップ練習。マウス操作の精度、移動時間、狙った場所で離すタイミングを測定します。',
     type: 'article',
     url: 'https://skilldrills.online/ja/drills/motor/hand-eye-coordination/drag-and-drop',
     siteName: 'SkillDrills',
@@ -32,8 +23,8 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'ドラッグ・ドロップ練習 – マウス操作精度測定ツール | SkillDrills',
-    description: 'ブラウザでできる無料のドラッグ＆ドロップ練習・マウストレーニングツール。ターゲットの長押し掴み、高速ドラッグ移動、目標枠への正確なドロップ精度と所要時間をミリ秒単位で測定診断。',
+    title: 'ドラッグ＆ドロップ練習｜マウス操作テスト | SkillDrills',
+    description: '無料のブラウザ型ドラッグ＆ドロップ練習。マウス操作の精度、移動時間、狙った場所で離すタイミングを測定します。',
   },
   robots: { index: true, follow: true },
   alternates: {
@@ -83,7 +74,8 @@ const softwareApplicationSchema = {
   description: 'ブラウザ上で即座に実行できるドラッグ＆ドロップ精度測定ツール。アコット・チャイ操縦則に基づく減速・放出制御診断。',
   url: 'https://skilldrills.online/ja/drills/motor/hand-eye-coordination/drag-and-drop',
   publisher: { '@type': 'Organization', name: 'SkillDrills', url: 'https://skilldrills.online' },
-  dateModified: '2026-09-16',
+  inLanguage: 'ja-JP',
+  dateModified: '2026-09-20',
 };
 
 const webApplicationSchema = {
@@ -93,7 +85,8 @@ const webApplicationSchema = {
   browserRequirements: 'HTML5 CanvasおよびJavaScript対応ブラウザ',
   url: 'https://skilldrills.online/ja/drills/motor/hand-eye-coordination/drag-and-drop',
   applicationCategory: 'EducationalApplication',
-  dateModified: '2026-09-16',
+  inLanguage: 'ja-JP',
+  dateModified: '2026-09-20',
 };
 
 const videoGameSchema = {
@@ -105,13 +98,15 @@ const videoGameSchema = {
   genre: ['精度ゲーム', 'アクション', 'eスポーツトレーニング'],
   gamePlatform: ['Web Browser', 'Desktop'],
   applicationCategory: 'Game',
+  inLanguage: 'ja-JP',
   offers: { '@type': 'Offer', price: '0', priceCurrency: 'JPY' },
 };
 
 const faqSchema = {
   '@context': 'https://schema.org',
   '@type': 'FAQPage',
-  dateModified: '2026-09-16',
+  inLanguage: 'ja-JP',
+  dateModified: '2026-09-20',
   mainEntity: [
     {
       '@type': 'Question',
@@ -199,6 +194,7 @@ const faqSchema = {
 const howToSchema = {
   '@context': 'https://schema.org',
   '@type': 'HowTo',
+  inLanguage: 'ja-JP',
   name: 'ドラッグ＆ドロップマウス操作精度トレーニング',
   description: 'マウスポインターの減速制御、搬送軌道の最適化、リリースタイミング習得のための4ステップ。',
   step: [
@@ -323,7 +319,7 @@ const guideProps = {
 
 const copyJa = {
   title: "ドラッグ・ドロップ練習 – マウス操作精度測定ツール",
-  subtitle: "空間ドラッグ＆ドロップ照準・15段階レベル進行",
+  subtitle: "ドラッグ精度 · ターゲット配置を測定",
   startButtonText: "訓練開始",
   playAgainText: "もう一度挑戦",
   shareText: "スコアを共有",

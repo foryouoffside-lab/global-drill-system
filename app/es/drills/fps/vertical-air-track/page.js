@@ -6,21 +6,21 @@ import { getAlternateLanguages } from '@/lib/i18n/locales';
 import { pickSources } from '@/lib/drillSources';
 
 export const metadata = {
-  title: 'Puntería Vertical FPS – Rastreo en el Eje Y | SkillDrills',
-  description: 'Entrena puntería vertical y rastreo aéreo en el navegador. Domina el control del eje Y y trayectorias parabólicas en Apex Legends y Overwatch 2 gratis.',
+  title: 'Entrenador de Puntería Vertical - Tracking | SkillDrills',
+  description: 'Entrena puntería vertical y tracking aéreo en el navegador. Practica el eje Y y predice caídas en Apex Legends y Overwatch 2.',
   keywords: [
-    'entrenamiento de punteria vertical',
-    'mira vertical fps',
-    'rastreo aereo shooter',
-    'seguimiento vertical apex',
-    'control de raton eje y',
+    'puntería vertical FPS',
+    'tracking aéreo',
+    'rastreo aéreo shooter',
+    'seguimiento vertical Apex',
+    'control del eje Y',
     'vertical aim trainer',
-    'punteria parabolica overwatch',
+    'puntería parabólica Overwatch',
     'smooth pursuit vertical',
     'entrenador de mira gratis',
-    'precision vertical fps',
-    'sensibilidad de raton vertical',
-    'ejercicios de punteria'
+    'precisión vertical FPS',
+    'sensibilidad de ratón vertical',
+    'ejercicios de puntería'
   ],
   alternates: {
     canonical: 'https://skilldrills.online/es/drills/fps/vertical-air-track',
@@ -31,8 +31,8 @@ export const metadata = {
     follow: true,
   },
   openGraph: {
-    title: 'Puntería Vertical FPS – Rastreo en el Eje Y | SkillDrills',
-    description: 'Entrena puntería vertical y rastreo aéreo en el navegador. Domina el control del eje Y y trayectorias parabólicas en Apex Legends y Overwatch 2 gratis.',
+    title: 'Entrenador de Puntería Vertical - Tracking | SkillDrills',
+    description: 'Entrena puntería vertical y tracking aéreo en el navegador. Practica el eje Y y predice caídas en Apex Legends y Overwatch 2.',
     url: 'https://skilldrills.online/es/drills/fps/vertical-air-track',
     siteName: 'SkillDrills',
     locale: 'es_ES',
@@ -40,8 +40,8 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Puntería Vertical FPS – Rastreo en el Eje Y | SkillDrills',
-    description: 'Entrena puntería vertical y rastreo aéreo en el navegador. Domina el control del eje Y y trayectorias parabólicas en Apex Legends y Overwatch 2 gratis.',
+    title: 'Entrenador de Puntería Vertical - Tracking | SkillDrills',
+    description: 'Entrena puntería vertical y tracking aéreo en el navegador. Practica el eje Y y predice caídas en Apex Legends y Overwatch 2.',
   },
 };
 
@@ -52,14 +52,14 @@ export default function VerticalAirTrackEsPage() {
     "itemListElement": [
       { "@type": "ListItem", "position": 1, "name": "SkillDrills", "item": "https://skilldrills.online/es" },
       { "@type": "ListItem", "position": 2, "name": "Entrenamientos FPS", "item": "https://skilldrills.online/es/drills/fps" },
-      { "@type": "ListItem", "position": 3, "name": "Vertical Air-Track", "item": "https://skilldrills.online/es/drills/fps/vertical-air-track" }
+      { "@type": "ListItem", "position": 3, "name": "Puntería Vertical FPS", "item": "https://skilldrills.online/es/drills/fps/vertical-air-track" }
     ]
   };
 
   const softwareSchema = {
     "@context": "https://schema.org",
     "@type": "SoftwareApplication",
-    "name": "Entrenador de Puntería Vertical FPS SkillDrills",
+    "name": "Entrenador de Puntería Vertical - Tracking Aéreo",
     "applicationCategory": "GameApplication",
     "operatingSystem": "Any (Web Browser)",
     "offers": {
@@ -73,7 +73,7 @@ export default function VerticalAirTrackEsPage() {
   const webAppSchema = {
     "@context": "https://schema.org",
     "@type": "WebApplication",
-    "name": "Vertical Air-Track – Rastreo Vertical FPS",
+    "name": "Entrenador de Puntería Vertical - Tracking Aéreo",
     "url": "https://skilldrills.online/es/drills/fps/vertical-air-track",
     "browserRequirements": "Requires Pointer Lock API and WebGL support",
     "applicationCategory": "ShooterTraining",
@@ -86,7 +86,7 @@ export default function VerticalAirTrackEsPage() {
   const videoGameSchema = {
     "@context": "https://schema.org",
     "@type": "VideoGame",
-    "name": "Vertical Air-Track",
+    "name": "Entrenador de Puntería Vertical - Tracking Aéreo",
     "description": "Simulador de blancos aéreos en arco parabólico para perfeccionar la sincronización motora en el eje Y y anticipación de caídas.",
     "genre": ["First-Person Shooter", "Aim Trainer", "Reaction Training"],
     "playMode": "SinglePlayer",
@@ -219,9 +219,9 @@ export default function VerticalAirTrackEsPage() {
   };
 
   const verticalAirTrackGuide = {
-    heading: "Guía de Puntería Vertical FPS & Seguimiento Parabólico Aéreo",
+    heading: "Entrenador de Puntería Vertical: tracking aéreo y eje Y",
     intro: [
-      "El Entrenador de Puntería Vertical (Vertical Aim Trainer / Vertical Air-Track) es un ejercicio avanzado de control neuromotor diseñado para aislar y perfeccionar la precisión en el eje Y, la anticipación de arcos gravitatorios y la intercepción de objetivos aéreos. En shooters dinámicos modernos como Apex Legends, Overwatch 2, Halo Infinite y Destiny 2, los adversarios explotan constantemente la verticalidad mediante plataformas de salto (jump pads), ganchos de agarre, elevadores de gravedad y caídas desde alturas para romper la colocación horizontal convencional de la retícula.",
+      "Para quien busca un entrenador de puntería vertical, este drill mide el tiempo y la precisión al seguir objetivos aéreos por el eje Y. Practica tracking suave, predicción de caídas parabólicas y control vertical del ratón para Apex Legends y Overwatch 2 desde el navegador.",
       "La neurobiología del seguimiento visual de persecución vertical difiere sustancialmente del plano horizontal. Richard J. Krauzlis (2004) demostró que el seguimiento suave (smooth pursuit) vertical activa vías neuronales específicas en el vermis cerebeloso y el tronco encefálico, mostrando una mayor vulnerabilidad al temblor motor debido a la asimetría biomecánica del sistema musculoesquelético del brazo. Cyril Rashbass (1961) probó que el smooth pursuit está impulsado por el error de velocidad retiniana (retinal slip) y no por un simple error de posición estática, exigiendo una igualación continua de la velocidad visual.",
       "Seguir y abatir entidades suspendidas en el aire exige internalizar la física de la aceleración gravitatoria (g = 9,81 m/s²). Tal como establecieron Peter R. Cavanagh et al. (1984) y Michael F. Land & Peter McLeod (2000), el sistema visomotor humano anticipa la deceleración de la trayectoria parabólica en la cúspide (ápice) del salto y su subsiguiente aceleración durante el descenso. Los jugadores que no anticipan esta curvatura cinemática sufren un desfase constante, quedando rezagados al rastrear caídas libres.",
       "Al eliminar el apoyo en movimientos horizontales y aislar la trayectoria pura en el eje vertical mediante cronometría digital de alta precisión con performance.now() (Woods et al., 2015), este entrenamiento cierra la brecha entre la memoria muscular bidimensional y el dominio del combate tridimensional en 360 grados.",
@@ -294,8 +294,8 @@ export default function VerticalAirTrackEsPage() {
 
       <VerticalAirTrackClient
         copy={{
-          h1Keyword: "Puntería Vertical FPS",
-          h1Suffix: " – Rastreo Aéreo y Control en el Eje Y",
+          h1Keyword: "Entrenador de Puntería Vertical",
+          h1Suffix: " - Tracking Aéreo FPS",
           statScore: "Puntos",
           statTime: "Tiempo",
           statAccuracy: "Precisión",
@@ -344,7 +344,7 @@ export default function VerticalAirTrackEsPage() {
       <div className="max-w-6xl w-full mx-auto px-4 pb-12">
         <RelatedDrills
           currentCategory="fps"
-          currentHref="/drills/fps/vertical-air-track"
+          currentHref="/es/drills/fps/vertical-air-track"
           locale="es"
         />
       </div>

@@ -22,27 +22,27 @@ import { pickSources } from '@/lib/drillSources';
 // ============================================================
 
 export const metadata = {
-  title: "Peripheres Sehen Trainieren & Test | SkillDrills",
-  description: "Kostenloser Online-Test für peripheres Sehen. Wehre 360°-Bedrohungen aus dem Augenwinkel ab und erweitere dein Blickfeld (UFOV) direkt im Browser.",
+  title: "Peripheres Sehen trainieren | Test online",
+  description: "Kostenloser Test für peripheres Sehen im Browser. Halte den Blick in der Mitte, erkenne Randbedrohungen und trainiere dein nutzbares Sehfeld (UFOV).",
   keywords: [
     "peripheres sehen trainieren",
     "peripheres sehen test",
     "blickfeld erweitern übungen",
+    "test peripheres sehen online",
     "reaktionsschnelligkeit trainieren",
     "ufov test online",
     "augentraining online kostenlos",
     "tunnelblick vermeiden",
     "periphere wahrnehmung verbessern",
-    "hand auge koordination trainieren",
-    "visuelle reaktionszeit test"
+    "hand auge koordination trainieren"
   ],
   alternates: {
     canonical: 'https://skilldrills.online/de/drills/physical/reflex-training/peripheral-threat-sweeper',
     languages: getAlternateLanguages('/drills/physical/reflex-training/peripheral-threat-sweeper'),
   },
   openGraph: {
-    title: "Peripheres Sehen Trainieren & Test | SkillDrills",
-    description: "Kostenloser Online-Test für peripheres Sehen. Wehre 360°-Bedrohungen aus dem Augenwinkel ab und erweitere dein Blickfeld (UFOV) direkt im Browser.",
+    title: "Peripheres Sehen trainieren | Test online",
+    description: "Kostenloser Test für peripheres Sehen im Browser. Halte den Blick in der Mitte, erkenne Randbedrohungen und trainiere dein nutzbares Sehfeld (UFOV).",
     url: 'https://skilldrills.online/de/drills/physical/reflex-training/peripheral-threat-sweeper',
     siteName: 'SkillDrills',
     locale: 'de_DE',
@@ -50,8 +50,8 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: "Peripheres Sehen Trainieren & Test | SkillDrills",
-    description: "Kostenloser Online-Test für peripheres Sehen. Wehre 360°-Bedrohungen aus dem Augenwinkel ab und erweitere dein Blickfeld (UFOV) direkt im Browser.",
+    title: "Peripheres Sehen trainieren | Test online",
+    description: "Kostenloser Test für peripheres Sehen im Browser. Halte den Blick in der Mitte, erkenne Randbedrohungen und trainiere dein nutzbares Sehfeld (UFOV).",
   },
   robots: { index: true, follow: true },
 };
@@ -93,6 +93,8 @@ const softwareApplicationSchema = {
   "name": "Peripheres Sehtraining & Bedrohungsabwehr-Trainer",
   "applicationCategory": "HealthApplication",
   "operatingSystem": "All",
+  "inLanguage": "de",
+  "dateModified": "2026-09-20",
   "offers": {
     "@type": "Offer",
     "price": "0",
@@ -107,6 +109,8 @@ const webApplicationSchema = {
   "name": "Online-Trainer für peripheres Sehen (Peripheral Threat Sweeper)",
   "url": "https://skilldrills.online/de/drills/physical/reflex-training/peripheral-threat-sweeper",
   "description": "Kostenloses Online-Tool zur Messung und Schulung des peripheren Gesichtsfelds. Schützen Sie den Schildkern vor 360°-Bedrohungen aus den Augenwinkeln.",
+  "inLanguage": "de",
+  "dateModified": "2026-09-20",
   "applicationCategory": "SportsApplication",
   "operatingSystem": "Web Browser",
   "offers": {
@@ -122,6 +126,8 @@ const videoGameSchema = {
   "name": "Periphere Bedrohungsabwehr (Peripheral Threat Sweeper)",
   "url": "https://skilldrills.online/de/drills/physical/reflex-training/peripheral-threat-sweeper",
   "description": "High-Speed-Reflexspiel: Verteidigen Sie den Kern vor radial konvergierenden Bedrohungen durch blitzschnelle Reaktionen aus dem Augenwinkel.",
+  "inLanguage": "de",
+  "dateModified": "2026-09-20",
   "genre": ["Action", "Sports Game", "Reflex Game", "Visual Training"],
   "gamePlatform": ["Web Browser", "Desktop", "Mobile"]
 };
@@ -333,8 +339,8 @@ export default function PeripheralThreatSweeperDePage() {
       />
       <PeripheralThreatSweeperClient
         copy={{
-          title: "Peripheres Sehtraining & Bedrohungsabwehr",
-          subtitle: "Blickfeld-Verteidigung & Reaktionsschnelligkeit • 15 Level kontinuierliche Skalierung",
+          title: "Peripheres Sehen trainieren",
+          subtitle: "Blick zentrieren, Randbedrohungen erkennen",
           hudLabels: {
             score: "Punkte",
             time: "Restzeit",

@@ -2,11 +2,12 @@ import SymbolMatchingClient from '@/app/drills/cognitive/processing-speed/symbol
 import { getAlternateLanguages } from '@/lib/i18n/locales';
 import DrillGuide from '@/components/drill/DrillGuide';
 import RelatedDrills from '@/components/drill/RelatedDrills';
+import DrillFooter from '@/components/drill/DrillFooter';
 import { pickSources } from '@/lib/drillSources';
 
 export const metadata = {
-  title: "Test SDMT – Symboles et Chiffres en Ligne | SkillDrills",
-  description: "Test SDMT en ligne gratuit: Évaluez votre vitesse de traitement cognitif, votre balayage visuel et votre mémoire associative de travail sans inscription.",
+  title: "Test Symboles Chiffres | SDMT en Ligne | SkillDrills",
+  description: "Test gratuit de symboles et chiffres dans le navigateur : entraînez l’appariement symbole-chiffre et la vitesse de traitement. Inspiré du SDMT, non clinique.",
   keywords: [
     "test symboles et chiffres",
     "test sdmt en ligne",
@@ -22,8 +23,8 @@ export const metadata = {
     "test cognitif de symboles"
   ],
   openGraph: {
-    title: "Test SDMT – Symboles et Chiffres en Ligne | SkillDrills",
-    description: "Test SDMT en ligne gratuit: Évaluez votre vitesse de traitement cognitif, votre balayage visuel et votre mémoire associative de travail sans inscription.",
+    title: "Test Symboles Chiffres | SDMT en Ligne | SkillDrills",
+    description: "Test gratuit de symboles et chiffres dans le navigateur : entraînez l’appariement symbole-chiffre et la vitesse de traitement. Inspiré du SDMT, non clinique.",
     type: 'article',
     url: 'https://skilldrills.online/fr/drills/cognitive/processing-speed/symbol-matching',
     siteName: 'SkillDrills',
@@ -31,8 +32,8 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: "Test SDMT – Symboles et Chiffres en Ligne | SkillDrills",
-    description: "Test SDMT en ligne gratuit: Évaluez votre vitesse de traitement cognitif, votre balayage visuel et votre mémoire associative de travail sans inscription.",
+    title: "Test Symboles Chiffres | SDMT en Ligne | SkillDrills",
+    description: "Test gratuit de symboles et chiffres dans le navigateur : entraînez l’appariement symbole-chiffre et la vitesse de traitement. Inspiré du SDMT, non clinique.",
   },
   robots: { index: true, follow: true },
   alternates: {
@@ -91,7 +92,7 @@ const softwareApplicationSchema = {
     "url": "https://skilldrills.online"
   },
   "inLanguage": "fr-FR",
-  "dateModified": "2026-09-16"
+  "dateModified": "2026-09-20"
 };
 
 const webApplicationSchema = {
@@ -108,7 +109,7 @@ const webApplicationSchema = {
   },
   "url": "https://skilldrills.online/fr/drills/cognitive/processing-speed/symbol-matching",
   "inLanguage": "fr-FR",
-  "dateModified": "2026-09-16"
+  "dateModified": "2026-09-20"
 };
 
 const videoGameSchema = {
@@ -128,6 +129,7 @@ const videoGameSchema = {
     "Mobile"
   ],
   "applicationCategory": "Game",
+  "dateModified": "2026-09-20",
   "offers": {
     "@type": "Offer",
     "price": "0",
@@ -326,11 +328,38 @@ export default function EnhancedPageFr() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(howToSchema) }}
       />
-      <SymbolMatchingClient copy={{ title: "Test SDMT Symboles et Chiffres" }} />
+      <SymbolMatchingClient
+        copy={{
+          title: "Test Symboles Chiffres",
+          subtitle: "Trouvez rapidement la correspondance entre symboles et chiffres et entraînez le traitement",
+          startTitle: "Appariement symbole-chiffre",
+          stageCaption: "Comparez le symbole cible avec la clé supérieure, puis appuyez sur le chiffre correspondant.",
+          rulesTitle: "Instructions de l’exercice et score",
+          aboutTitle: "Qu’est-ce que le test symboles chiffres ?",
+          faqTitle: "Questions fréquentes",
+          readyLabel: "PRÉPAREZ-VOUS",
+          labels: { score: "Score", time: "Temps", level: "Niveau", bestScore: "Meilleur score", timeLeft: "Temps restant", targetSymbol: "Symbole cible", accuracy: "Précision", hits: "Réussites", misses: "Erreurs", peakLevel: "Niveau maximal" },
+          aboutLead: "Une tâche symboles-chiffres demande d’associer des signes à des nombres dans un temps limité. Elle entraîne la vitesse de traitement et la recherche visuelle, pas les connaissances. Cet exercice est un jeu d’entraînement, pas un outil clinique.",
+          aboutText: "Le format s’inspire des tâches d’association du SDMT et du DSST. Consultez la clé puis sélectionnez le chiffre correspondant au symbole cible. Les séries répétées travaillent la recherche visuelle, la mémoire associative et la sélection de réponse. Le score concerne uniquement ce jeu et ne constitue pas un diagnostic médical.",
+          aboutCards: [
+            { title: "À qui s’adresse cet exercice ?", desc: "Aux étudiants, professionnels et joueurs qui souhaitent entraîner vitesse de traitement et recherche visuelle." },
+            { title: "Quelles capacités sont entraînées ?", desc: "Recherche visuelle, mémoire associative symbole-chiffre, sélection de réponse et attention soutenue." },
+            { title: "Clé renouvelée", desc: "La relation entre symboles et chiffres change à chaque session : il faut consulter activement la clé." }
+          ],
+          rulesItems: [
+            { num: "1", text: "Clé symbole-chiffre", highlight: "6 correspondances", result: "Consulter la clé supérieure" },
+            { num: "2", text: "Symbole cible", highlight: "+100 points", result: "Multiplicateurs de combo et niveau" },
+            { num: "3", text: "Chiffre incorrect", highlight: "Réinitialise le combo", result: "Temps retiré si la pénalité est active" },
+            { num: "4", text: "Série et pénalité", highlight: "Temps·appuis erronés", result: "Active : −0,8 seconde" }
+          ],
+          faqItems: faqSchema.mainEntity.map((e) => ({ q: e.name, a: e.acceptedAnswer.text }))
+        }}
+      />
       <DrillGuide {...guideProps} />
       <div className="max-w-6xl mx-auto px-4 pb-12">
         <RelatedDrills currentCategory="cognitive" currentHref="https://skilldrills.online/fr/drills/cognitive/processing-speed/symbol-matching" />
       </div>
+      <DrillFooter />
     </>
   );
 }

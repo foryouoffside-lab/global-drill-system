@@ -1,6 +1,7 @@
 import SaccadicGalleryWrapper from './SaccadicGalleryWrapperLoader';
 import { getAlternateLanguages } from '@/lib/i18n/locales';
 import DrillGuide from '@/components/drill/DrillGuide';
+import DrillFooter from '@/components/drill/DrillFooter';
 import { pickSources } from '@/lib/drillSources';
 
 export const metadata = {
@@ -313,6 +314,7 @@ export default function EnhancedPage() {
       />
       <SaccadicGalleryWrapper copy={{ title: "Saccadic Eye Exercises" }} />
       <DrillGuide {...guideProps} />
+      <DrillFooter />
     </>
   );
 }

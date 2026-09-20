@@ -6,18 +6,18 @@ import { getLocalizedDrill } from '@/lib/i18n/drillNames';
 const fpsDrills = DRILLS.filter((d) => d.category === 'fps');
 
 export const metadata = {
-  title: '무료 FPS 에임 연습 – 발로란트 & CS2 온라인 에임 트레이너 | SkillDrills',
-  description: '브라우저에서 설치 없이 무료로 즐기는 FPS 에임 연습 도감. 발로란트·CS2·에이펙스를 위한 15개 전문 훈련: 끌어치기, 트래킹, 반동 제어, 반응속도.',
+  title: 'FPS 에임 연습 & 무료 에임 트레이너 | SkillDrills',
+  description: '발로란트·CS2·에이펙스용 무료 FPS 에임 연습 15종. 플릭, 트래킹, 반동 제어와 반응속도를 브라우저에서 훈련하세요.',
   keywords: [
     '무료 FPS 에임 연습', '발로란트 에임 연습', 'CS2 에임 연습',
-    '온라인 에임 트레이너', '에임 연습 사이트', '끌어치기 연습',
-    '에임 트래킹 훈련', 'FPS 반동 제어', '반응속도 테스트',
-    '크로스헤어 플레이스먼트', '헤드라인 조준선', '타깃 스위칭',
-    '손목 에임 팔 에임', 'eDPI 감도 설정', '무설치 에임 트레이너'
+    '에임 트레이너', '에임 연습 사이트', '플릭샷 연습',
+    '에임 트래킹', 'FPS 반동 제어', '반응속도 테스트',
+    '조준선 배치', '타깃 스위칭', '무설치 에임 트레이너',
+    '에임 감도 설정', '마우스 에임 연습', 'Apex 에임 연습'
   ],
   openGraph: {
-    title: '무료 FPS 에임 연습 – 발로란트 & CS2 온라인 에임 트레이너 | SkillDrills',
-    description: '브라우저에서 설치 없이 무료로 즐기는 FPS 에임 연습 도감. 발로란트·CS2·에이펙스를 위한 15개 전문 훈련: 끌어치기, 트래킹, 반동 제어, 반응속도.',
+    title: 'FPS 에임 연습 & 무료 에임 트레이너 | SkillDrills',
+    description: '발로란트·CS2·에이펙스용 무료 FPS 에임 연습 15종. 플릭, 트래킹, 반동 제어와 반응속도를 브라우저에서 훈련하세요.',
     type: 'website',
     url: 'https://skilldrills.online/ko/drills/fps',
     siteName: 'SkillDrills',
@@ -26,8 +26,8 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: '무료 FPS 에임 연습 – 발로란트 & CS2 온라인 에임 트레이너 | SkillDrills',
-    description: '브라우저에서 설치 없이 무료로 즐기는 FPS 에임 연습 도감. 발로란트·CS2·에이펙스를 위한 15개 전문 훈련.',
+    title: 'FPS 에임 연습 & 무료 에임 트레이너 | SkillDrills',
+    description: '발로란트·CS2·에이펙스용 무료 FPS 에임 연습 15종. 브라우저에서 바로 훈련하세요.',
     images: ['https://skilldrills.online/icons/icon-512x512.png'],
   },
   robots: { index: true, follow: true },
@@ -50,9 +50,11 @@ const breadcrumbSchema = {
 const collectionSchema = {
   "@context": "https://schema.org",
   "@type": "CollectionPage",
-  "name": "무료 FPS 에임 연습 – 온라인 에임 트레이너 도감",
+  "inLanguage": "ko-KR",
+  "dateModified": "2026-09-20",
+  "name": "FPS 에임 연습 & 무료 에임 트레이너 (15종)",
   "url": "https://skilldrills.online/ko/drills/fps",
-  "description": `15개 이상의 전문 FPS 에임 훈련 도감. 끌어치기(플릭), 부드러운 트래킹, 반동 제어, 180도 상황 인지 능력, 조준선 정렬. 발로란트, CS2, 에이펙스 레전드 완벽 호환. 무료 무설치.`,
+  "description": `발로란트·CS2·에이펙스용 무료 FPS 에임 연습 15종. 플릭, 트래킹, 반동 제어, 타깃 스위칭과 반응 훈련을 브라우저에서 시작하세요.`,
   "author": { "@type": "Organization", "name": "SkillDrills" },
   "hasPart": fpsDrills.map((drill) => {
     const loc = getLocalizedDrill(drill.href, 'ko', drill.name);
@@ -67,6 +69,8 @@ const collectionSchema = {
 const faqSchema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
+  "inLanguage": "ko-KR",
+  "dateModified": "2026-09-20",
   "mainEntity": [
     {
       "@type": "Question",

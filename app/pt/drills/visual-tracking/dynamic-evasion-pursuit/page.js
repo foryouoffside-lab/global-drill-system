@@ -1,25 +1,26 @@
 import DynamicEvasionPursuitClient from '@/app/drills/visual-tracking/dynamic-evasion-pursuit/DynamicEvasionPursuitClientLoader';
 import DrillGuide from '@/components/drill/DrillGuide';
+import DrillFooter from '@/components/drill/DrillFooter';
 import RelatedDrills from '@/components/drill/RelatedDrills';
 import { getAlternateLanguages } from '@/lib/i18n/locales';
 import { pickSources } from '@/lib/drillSources';
 
 export const metadata = {
-  title: "Rastreamento de Alvo Evasivo – Evasion Pursuit | SkillDrills",
-  description: "Treino gratuito de rastreamento reativo e alvos evasivos: aprimore a refixação foveal imediata e sacadas corretivas em mudanças bruscas de trajetória.",
+  title: "Rastreamento Ocular Reativo | Alvo Móvel | SkillDrills",
+  description: "Recapture um alvo móvel que faz curvas bruscas. Pratique visão dinâmica, reação visual e refixação foveal grátis no navegador.",
   keywords: [
-    "rastreamento de alvo evasivo",
-    "perseguição evasiva dinâmica",
-    "treino de mira tracking reativo",
-    "recuperação de foco visual rápido",
-    "exercício de refixação ocular foveal",
-    "motilidade ocular para esports",
-    "treino de resposta visual dinâmica",
-    "agilidade ocular contra alvos móveis",
-    "treinamento de sacadas corretivas",
-    "coordenação olho-mão tracking",
-    "teste de visão dinâmica online",
-    "exercício de motilidade ocular grátis"
+    "rastreamento ocular",
+    "visão dinâmica treino",
+    "alvo móvel exercício",
+    "trajetória imprevisível",
+    "reação visual",
+    "refixação foveal",
+    "sacadas corretivas",
+    "rastreamento visual reativo",
+    "treino de motilidade ocular",
+    "agilidade visual online",
+    "coordenação olho-mão",
+    "exercício visual grátis"
   ],
   alternates: {
     canonical: "https://skilldrills.online/pt/drills/visual-tracking/dynamic-evasion-pursuit",
@@ -27,8 +28,8 @@ export const metadata = {
   },
   robots: { index: true, follow: true },
   openGraph: {
-    title: "Rastreamento de Alvo Evasivo – Evasion Pursuit | SkillDrills",
-    description: "Treino gratuito de rastreamento reativo e alvos evasivos: aprimore a refixação foveal imediata e sacadas corretivas em mudanças bruscas de trajetória.",
+    title: "Rastreamento Ocular Reativo | Alvo Móvel | SkillDrills",
+    description: "Recapture um alvo móvel que faz curvas bruscas e pratique reação visual, refixação foveal e visão dinâmica gratuitamente.",
     url: "https://skilldrills.online/pt/drills/visual-tracking/dynamic-evasion-pursuit",
     siteName: "SkillDrills",
     locale: "pt_BR",
@@ -36,8 +37,8 @@ export const metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Rastreamento de Alvo Evasivo – Evasion Pursuit | SkillDrills",
-    description: "Treino gratuito de rastreamento reativo e alvos evasivos: aprimore a refixação foveal imediata e sacadas corretivas em mudanças bruscas de trajetória.",
+    title: "Rastreamento Ocular Reativo | Alvo Móvel | SkillDrills",
+    description: "Recapture um alvo imprevisível e pratique reação visual e recuperação sacádica gratuitamente online.",
   },
 };
 
@@ -69,9 +70,10 @@ const breadcrumbSchema = {
 const softwareApplicationSchema = {
   "@context": "https://schema.org",
   "@type": "SoftwareApplication",
-  "name": "Perseguição Evasiva Dinâmica – Rastreamento Ocular",
+  "name": "Rastreamento Ocular Reativo – Alvo Móvel",
   "applicationCategory": "HealthApplication",
-  "operatingSystem": "Web Browser",
+  "operatingSystem": "Navegador",
+  "dateModified": "2026-09-20",
   "offers": {
     "@type": "Offer",
     "price": "0",
@@ -85,8 +87,9 @@ const webAppSchema = {
   "name": "Teste de Rastreamento de Alvo Evasivo e Refixação Foveal",
   "url": "https://skilldrills.online/pt/drills/visual-tracking/dynamic-evasion-pursuit",
   "applicationCategory": "SportsApplication",
-  "operatingSystem": "All",
-  "browserRequirements": "Requires JavaScript. Requires HTML5 Canvas.",
+  "operatingSystem": "Navegador",
+  "browserRequirements": "JavaScript e Canvas HTML5 necessários",
+  "dateModified": "2026-09-20",
   "offers": {
     "@type": "Offer",
     "price": "0",
@@ -97,16 +100,18 @@ const webAppSchema = {
 const videoGameSchema = {
   "@context": "https://schema.org",
   "@type": "VideoGame",
-  "name": "Dynamic Evasion Pursuit – Treinador Visual Reativo",
-  "description": "Treinador visual reflexivo no navegador para rastrear alvos que executam quiebres evasivos bruscos simulando oponentes em alta velocidade.",
-  "genre": ["Aparato de Treinamento Ocular", "Treinador de Visão Esportiva", "Aim Trainer"],
-  "playMode": "SinglePlayer",
-  "applicationCategory": "Game"
+  "name": "Rastreamento Ocular Reativo – Treinador Visual",
+  "description": "Treinador visual no navegador para acompanhar um alvo móvel que faz mudanças bruscas de direção, praticando visão dinâmica e reação visual.",
+  "genre": ["Treino de Motilidade Ocular", "Visão Esportiva", "Treino de Reação Visual"],
+  "playMode": "Um jogador",
+  "applicationCategory": "Game",
+  "dateModified": "2026-09-20"
 };
 
 const howToSchema = {
   "@context": "https://schema.org",
   "@type": "HowTo",
+  "dateModified": "2026-09-20",
   "name": "Como Treinar a Refixação Sacádica contra Alvos Evasivos",
   "description": "Protocolo para condicionar respostas visuais rápidas e supressão de latência frente a manobras evasivas abruptas.",
   "step": [
@@ -144,21 +149,22 @@ const howToSchema = {
 const faqSchema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
+  "dateModified": "2026-09-20",
   "mainEntity": [
     {
       "@type": "Question",
-      "name": "O que é o treino de Perseguição Evasiva Dinâmica (Dynamic Evasion Pursuit)?",
+      "name": "O que é o treino de rastreamento ocular reativo com alvo móvel?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "É um exercício de motilidade ocular avançada que combina segmentos de perseguição lenta contínua com quebras direcionais evasivas abruptas, treinando o cérebro a recentralizar o foco em menos de 180 ms."
+        "text": "É um exercício de motilidade ocular que combina trechos de perseguição contínua com mudanças bruscas de direção, treinando o sistema visual a recentralizar o foco com rapidez."
       }
     },
     {
       "@type": "Question",
-      "name": "Como este exercício se diferencia da Perseguição Caótica (Chaos Pursuit)?",
+      "name": "Como este exercício se diferencia da perseguição caótica?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "A perseguição caótica aplica perturbações contínuas a cada quadro; já a perseguição evasiva apresenta trechos lineares estáveis interrompidos por guinadas angulares discretas e repentinas, reproduzindo manobras intencionais de fuga de adversários."
+        "text": "A perseguição caótica muda o movimento continuamente; este treino mantém trechos lineares estáveis e os interrompe com guinadas repentinas, exigindo uma nova leitura da trajetória."
       }
     },
     {
@@ -166,15 +172,15 @@ const faqSchema = {
       "name": "O que acontece na retina durante uma quebra brusca de direção?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Quando o alvo guina, o vetor de velocidade diverge instantaneamente, produzindo deslizamento retiniano (retinal slip). Como o ganho da perseguição lenta cai a zero, o colículo superior dispara uma sacada balística de correção para restabelecer o alinhamento foveal (Krauzlis, 2004)."
+        "text": "Quando o alvo guina, o vetor de velocidade diverge e a imagem desliza sobre a retina. O colículo superior participa da resposta sacádica corretiva que restabelece o alinhamento da fóvea (Krauzlis, 2004)."
       }
     },
     {
       "@type": "Question",
-      "name": "De que forma este exercício aprimora a mira tracking em jogos competitivos (FPS)?",
+      "name": "De que forma este exercício aprimora a mira de acompanhamento em jogos competitivos?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Em jogos de tiro rápido, oponentes alternam strafes laterais longos com mudanças rápidas de sentido (ADAD). Este treino condiciona o reflexo de re-aquisição da mira, diminuindo o tempo de reação e eliminando a hesitação visual."
+        "text": "Em jogos de tiro rápido, oponentes alternam deslocamentos laterais com mudanças rápidas de sentido. Este treino pratica a readquisição visual do alvo, reduzindo a hesitação quando a trajetória muda."
       }
     },
     {
@@ -229,18 +235,34 @@ const faqSchema = {
 };
 
 const guideProps = {
-  heading: "Fundamentos Neurofisiológicos da Perseguição Evasiva e Refixação Sacádica",
+  heading: "Fundamentos Neurofisiológicos do Rastreamento Ocular Reativo",
   intro: [
-    "A perseguição visual convencional frequentemente se apoia em trajetórias contínuas, nas quais o córtex cerebelar antecipa o movimento e reduz o atraso de condução sensorial através de modelos motores preditivos (Bahill, Iandolo, & Troost, 1980). A Perseguição Evasiva Dinâmica (Dynamic Evasion Pursuit) rompe essa previsibilidade: o alvo se desloca em segmentos lineares e subitamente executa quebras evasivas em ângulos agudos, simulando o comportamento de esquiva de um oponente em esportes de alta velocidade e jogos competitivos.",
-    "Cinemática do Retinal Slip e Sacadas Corretivas: no momento da quebra angular, a velocidade da imagem sobre a retina ultrapassa a capacidade máxima de acompanhamento suave (~30°/s). Isso desencadeia um erro de posição imediato (retinal slip). O córtex visual primário e o colículo superior processam o vetor de divergência e disparam uma sacada corretiva rápida (Catch-up Saccade) em menos de 150 a 180 ms (Rashbass, 1961; Krauzlis, 2004; Barnes, 2008), restabelecendo o alinhamento da fóvea sobre o novo vetor de fuga.",
-    "Amostragem Temporal e Resposta Biológica: painéis convencionais a 60 Hz impõem uma latência de quantização de até 16,7 ms, enquanto telas gamer a 144 Hz ou 240 Hz comprimem essa defasagem para menos de 4,2 ms (Woods et al., 2015). Esta plataforma opera totalmente no navegador, garantindo segurança estrita e retenção local dos seus índices de desempenho."
+    "A perseguição visual convencional costuma usar trajetórias contínuas, nas quais o cerebelo ajuda a antecipar o movimento e a reduzir o atraso sensorial por meio de modelos motores (Bahill, Iandolo, & Troost, 1980). Neste exercício, o alvo percorre segmentos lineares e muda de direção de forma súbita, aproximando-se das exigências de esportes rápidos e jogos competitivos.",
+    "Deslizamento retiniano e sacadas corretivas: quando a direção muda, a imagem se desloca sobre a retina mais rápido do que o olhar consegue acompanhar suavemente. O córtex visual e o colículo superior processam esse erro e orientam uma sacada corretiva para devolver a fóvea ao alvo (Rashbass, 1961; Krauzlis, 2004; Barnes, 2008).",
+    "Amostragem temporal e resposta visual: uma tela de 60 Hz apresenta um intervalo de até 16,7 ms entre quadros, enquanto 144 Hz ou 240 Hz reduzem esse intervalo. A plataforma roda no navegador e mantém os resultados localmente, sem cadastro."
+  ],
+  techniques: {
+    title: "Quatro técnicas para melhorar a recuperação sacádica",
+    items: [
+      { name: "Estabilização da cabeça para isolar a motilidade ocular", desc: "Manter cabeça e mandíbula estáveis reduz a participação do reflexo vestíbulo-ocular e deixa a correção do olhar sob responsabilidade dos músculos oculares extrínsecos.", tips: "Sente-se a 50–70 cm da tela, apoie os pés e faça pausas assim que surgir ardor ou visão dupla." },
+      { name: "Leitura do novo vetor antes da refixação", desc: "Depois de uma guinada, a retina periférica detecta o deslocamento antes de a fóvea voltar ao alvo. Uma sacada curta e dirigida é mais eficiente que arrastar o olhar pela tela.", tips: "Observe o primeiro deslocamento após a mudança e salte para o centro provável do alvo, sem perseguir o rastro." },
+      { name: "Resposta visual sem antecipação", desc: "Como a trajetória não repete um padrão confiável, tentar adivinhar a próxima curva aumenta os erros direcionais. O treino deve privilegiar a informação que acabou de aparecer.", tips: "Se perceber que está esperando uma curva conhecida, reduza a velocidade e volte a reagir apenas ao movimento observado." },
+      { name: "Progressão por velocidade e descanso", desc: "A qualidade da refixação é mais útil que uma velocidade alta com perdas constantes. Séries curtas permitem comparar a estabilidade ocular sem acumular fadiga.", tips: "Comece em 1.0x, avance em pequenos passos somente quando recuperar o alvo com consistência e descanse entre séries." }
+    ]
+  },
+  steps: [
+    "Sente-se a 50–70 cm da tela, alinhe a postura e mantenha cabeça e mandíbula estáveis.",
+    "Comece em 1.0x por uma série de 60 segundos para observar a frequência de perdas do alvo.",
+    "Quando ocorrer uma guinada, detecte o novo vetor com a visão periférica e faça uma sacada curta para recentrar a fóvea.",
+    "Retome a perseguição contínua assim que o alvo for reencontrado; não varra a tela aleatoriamente.",
+    "Faça de 5 a 8 séries com pausas, registre a velocidade em que a estabilidade caiu e use esse valor para ajustar a próxima sessão."
   ],
   benchmarks: {
     title: "Padrões de Desempenho em Perseguição Evasiva e Refixação Sacádica",
     headers: ["Nível de Desempenho", "Multiplicador de Velocidade", "Refixação Sacádica nas Quebras Evasivas", "Perfil Neuromotor e Oculomotor"],
     rows: [
       ["Nível 1: Apex Reativo – Reflexos de Elite", "2.0x+ Ultra-Velocidade", "Sacada corretiva dispara com latência inferior a 150 ms; fixação foveal instantânea sem oscilação pós-sacádica.", "Velocidade máxima de transmissão sináptica entre fóvea e centros oculomotores. Padrão de elite para competidores de esports e atletas de alta reação."],
-      ["Nível 2: Agilidade Visual Superior", "1.4x – 1.9x Alta Velocidade", "Recentralização rápida e consistente em 1 a 2 quadros de vídeo; retomada fluida da velocidade de perseguição.", "Músculos extraoculares altamente treinados. Domínio expressivo sobre manobras de esquiva e strafe evasivo."],
+      ["Nível 2: Agilidade Visual Superior", "1.4x – 1.9x Alta Velocidade", "Recentralização rápida e consistente em 1 a 2 quadros de vídeo; retomada fluida da velocidade de perseguição.", "Músculos extraoculares altamente treinados. Domínio expressivo sobre manobras de esquiva e deslocamentos laterais evasivos."],
       ["Nível 3: Padrão Funcional Sólido", "1.0x – 1.3x Velocidade Padrão", "Acompanhamento confiável nos trechos lineares; ligeiro atraso latente diante de quebras angulares agudas.", "Faixa normativa para adultos saudáveis. Totalmente suficiente para direção diária, esportes recreativos e jogos casuais."],
       ["Nível 4: Refixação Tardia – Requer Prática", "0.7x – 0.9x Velocidade Moderada", "O alvo escapa da fóvea na maioria das manobras evasivas; múltiplas sacadas corretivas necessárias para reengajar.", "Latência sensoriomotora elevada em rupturas de rumo. Recomenda-se consolidação prévia em velocidades moderadas."],
       ["Nível 5: Instabilidade Inicial – Iniciante", "< 0.7x Baixa Velocidade", "O olhar permanece preso na trajetória antiga do alvo, sofrendo atraso substancial antes da reação.", "Coordenação motora ocular elementar necessita de desenvolvimento em trajetórias contínuas com imobilização estrita da cabeça."]
@@ -250,10 +272,10 @@ const guideProps = {
   faqs: faqSchema.mainEntity.map(e => ({ q: e.name, a: e.acceptedAnswer.text })),
   sources: pickSources('bahill1980', 'barnes2008', 'krauzlis2004', 'robinson1965', 'rashbass1961', 'woods2015'),
   related: [
-    { href: "/pt/drills/visual-tracking/constant-slow-pursuit", label: "Perseguição Ocular Lenta (Constant Slow)" },
-    { href: "/pt/drills/visual-tracking/directional-chaos-pursuit", label: "Perseguição Caótica Direcional (Chaos Pursuit)" },
-    { href: "/pt/drills/visual-tracking/sine-wave-pursuit", label: "Rastreamento em Onda Senoidal (Sine Wave)" },
-    { href: "/pt/drills/visual-tracking/infinity-pursuit", label: "Rastreamento em Infinito (Figure-8)" }
+    { href: "/pt/drills/visual-tracking/constant-slow-pursuit", label: "Perseguição Ocular Lenta" },
+    { href: "/pt/drills/visual-tracking/directional-chaos-pursuit", label: "Perseguição Caótica Direcional" },
+    { href: "/pt/drills/visual-tracking/sine-wave-pursuit", label: "Rastreamento em Onda Senoidal" },
+    { href: "/pt/drills/visual-tracking/infinity-pursuit", label: "Rastreamento em Oito" }
   ]
 };
 
@@ -295,6 +317,7 @@ export default function DynamicEvasionPursuitPagePt() {
       <div className="max-w-6xl mx-auto px-4 pb-12">
         <RelatedDrills currentCategory="visual-tracking" currentHref="https://skilldrills.online/pt/drills/visual-tracking/dynamic-evasion-pursuit" />
       </div>
+      <DrillFooter />
     </>
   );
 }

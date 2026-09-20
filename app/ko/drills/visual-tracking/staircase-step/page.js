@@ -1,25 +1,26 @@
 import StaircaseStepClient from '@/app/drills/visual-tracking/staircase-step/StaircaseStepClientLoader';
 import DrillGuide from '@/components/drill/DrillGuide';
 import RelatedDrills from '@/components/drill/RelatedDrills';
+import DrillFooter from '@/components/drill/DrillFooter';
 import { getAlternateLanguages } from '@/lib/i18n/locales';
 import { pickSources } from '@/lib/drillSources';
 
 export const metadata = {
-  title: "수직 안구 추적 훈련・고저차 에임 테스트 | SkillDrills",
-  description: "계단식 수직 지그재그 궤적을 타고 이동하는 표적을 추적하는 수직 안구 운동 훈련. 중뇌 riMLF 경로를 자극하여 고저차 에임 안정성과 상하 시선 이동 속도를 단련합니다. 무료.",
+  title: "상하 시선 추적 훈련｜수직 추적 드릴 | SkillDrills",
+  description: "계단식으로 오르내리는 표적을 따라가는 무료 브라우저 훈련. 수직 추적, 시선 지연, 표적 손실을 기록합니다.",
   keywords: [
+    "상하 시선 이동 훈련",
     "수직 안구 추적 훈련",
+    "동체시력 상하 훈련",
     "고저차 에임 연습",
-    "상하 시선 이동 운동",
-    "계단식 시각 추종 드릴",
-    "수직 반동 제어 시선 훈련",
-    "중뇌 riMLF 안구 경로",
-    "수직 원활추종 훈련",
-    "FPS 공중 목표물 트래킹",
-    "보정 단속운동 훈련",
-    "외안근 수직 조절력",
-    "상하 동체시력 훈련",
-    "수직 시선 제어 검사"
+    "화면 위아래 표적 추적",
+    "수직 추적 드릴",
+    "상하 표적 추적",
+    "시선 이동 속도 훈련",
+    "계단식 궤적 추적",
+    "표적 손실 기록",
+    "눈 움직임 훈련",
+    "수직 시선 훈련"
   ],
   alternates: {
     canonical: "https://skilldrills.online/ko/drills/visual-tracking/staircase-step",
@@ -27,8 +28,8 @@ export const metadata = {
   },
   robots: { index: true, follow: true },
   openGraph: {
-    title: "수직 안구 추적 훈련・고저차 에임 테스트 | SkillDrills",
-    description: "계단식 수직 지그재그 궤적을 타고 이동하는 표적을 추적하는 수직 안구 운동 훈련. 중뇌 riMLF 경로를 자극하여 고저차 에임 안정성과 상하 시선 이동 속도를 단련합니다. 무료.",
+    title: "상하 시선 추적 훈련｜수직 추적 드릴 | SkillDrills",
+    description: "계단식으로 오르내리는 표적을 따라가는 무료 브라우저 훈련. 수직 추적, 시선 지연, 표적 손실을 기록합니다.",
     url: "https://skilldrills.online/ko/drills/visual-tracking/staircase-step",
     siteName: "SkillDrills",
     locale: "ko_KR",
@@ -36,8 +37,8 @@ export const metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "수직 안구 추적 훈련・고저차 에임 테스트 | SkillDrills",
-    description: "계단식 수직 지그재그 궤적을 타고 이동하는 표적을 추적하는 수직 안구 운동 훈련. 중뇌 riMLF 경로를 자극하여 고저차 에임 안정성과 상하 시선 이동 속도를 단련합니다. 무료.",
+    title: "상하 시선 추적 훈련｜수직 추적 드릴 | SkillDrills",
+    description: "계단식으로 오르내리는 표적을 따라가는 무료 브라우저 훈련. 수직 추적, 시선 지연, 표적 손실을 기록합니다.",
   },
 };
 
@@ -84,7 +85,7 @@ const softwareApplicationSchema = {
     "name": "SkillDrills",
     "url": "https://skilldrills.online"
   },
-  "dateModified": "2026-09-15"
+  "dateModified": "2026-09-20"
 };
 
 const webAppSchema = {
@@ -100,7 +101,7 @@ const webAppSchema = {
     "priceCurrency": "USD"
   },
   "url": "https://skilldrills.online/ko/drills/visual-tracking/staircase-step",
-  "dateModified": "2026-09-15"
+  "dateModified": "2026-09-20"
 };
 
 const videoGameSchema = {
@@ -115,7 +116,7 @@ const videoGameSchema = {
     "시각 추적 훈련"
   ],
   "gamePlatform": [
-    "Web Browser",
+    "웹 브라우저",
     "Desktop",
     "Mobile"
   ],
@@ -124,7 +125,8 @@ const videoGameSchema = {
     "@type": "Offer",
     "price": "0",
     "priceCurrency": "USD"
-  }
+  },
+  "dateModified": "2026-09-20"
 };
 
 const howToSchema = {
@@ -132,7 +134,7 @@ const howToSchema = {
   "@type": "HowTo",
   "name": "계단식 수직 안구 추적 훈련 진행 방법",
   "description": "계단 형태의 다단 지그재그 궤적을 승강하는 표적을 원활추종과 보정 단속운동으로 추적하여 수직 안구 운동 조절력을 강화하는 4단계.",
-  "dateModified": "2026-09-15",
+  "dateModified": "2026-09-20",
   "step": [
     {
       "@type": "HowToStep",
@@ -168,10 +170,11 @@ const howToSchema = {
 const faqSchema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
+  "dateModified": "2026-09-20",
   "mainEntity": [
     {
       "@type": "Question",
-      "name": "계단식 수직 추적 훈련(Staircase Step)이란 무엇인가요?",
+      "name": "계단식 수직 추적 훈련이란 무엇인가요?",
       "acceptedAnswer": {
         "@type": "Answer",
         "text": "화면 상에서 계단 형태의 지그재그 궤적을 따라 상하로 오르내리는 표적을 머리를 움직이지 않고 안구만으로 정밀 추적하는 신경 안구 운동 훈련입니다. 대각선 이동과 직각 코너 회전을 반복함으로써 일상생활에서 쉽게 퇴화하는 수직 원활추종 안구 운동과 보정 단속운동 능력을 집중적으로 단련합니다."
@@ -258,7 +261,7 @@ const guide = {
     "인간의 안구 운동 제어계(Oculomotor System)는 수평축과 수직축 간에 완전히 구분되는 신경해부학적 회로를 보유하고 있습니다. 수평 방향의 원활추종과 단속운동이 뇌교(Pons)의 정중앙부망양체(PPRF) 경로를 통해 처리되는 반면, 수직 안구 운동 제어는 중뇌(Midbrain) 영역의 내측종속문측간질핵(riMLF: rostral interstitial nucleus of the medial longitudinal fasciculus)과 카할 간질핵(interstitial nucleus of Cajal)에 의해 배타적으로 통제됩니다(Büttner-Ennever & Horn, 1997).",
     "정신물리학 및 안구 운동 추적 연구(Rottach et al., 1996; Ke et al., 2013)에 따르면, 수직 추종 운동은 수평 추종에 비해 정상 속도 게인(표적 속도 대비 안구 속도 비율)이 유의미하게 낮고, 반응 잠복기가 길며, 상당한 위상 지연(Phase Lag)을 보입니다. 나아가 상향 추종(올려다보기)은 하향 추종(내려다보기)에 비해 망막 슬립에 대한 신경 감도가 낮아 표적을 놓친 후 따라잡기 위한 보정 단속운동(Catch-up Saccade)이 훨씬 빈번하게 발생하는 뚜렷한 방향 비대칭성을 드러냅니다.",
     "현대인의 일상적인 시각 활동은 책 읽기, 문서 작성, 모바일 스크롤 등 거의 전적으로 수평축을 중심으로 이루어지므로 수직 동안 신경망은 만성적인 자극 결핍 상태에 놓여 있습니다. 이러한 신경학적 취약점은 고저차가 큰 지형이나 공중 점프 교전이 잦은 하이퍼 FPS 게임, 또는 높이 솟구치는 공을 다루는 구기 스포츠에서 결정적인 에임 이탈과 시야 불안정으로 직결됩니다. 목의 회전(두부 치환) 없이 오직 순수한 안구 운동만으로 수직 궤적을 쫓는 훈련이 필수적입니다.",
-    "본 ‘계단식 수직 추적(Staircase Step)’ 드릴은 다단 지그재그 기하 궤적을 통해 대각선 경사면의 원활추종과 직각 코너 꼭짓점에서의 급격한 감속 및 재포착 단속운동을 복합적으로 요구합니다(Collewijn & Tamminga, 1984; Lisberger, 2010). 모니터 프레임 양자화(60Hz 시 16.7ms, 144Hz 시 6.9ms)와 입력 폴링 지연(Woods et al., 2015)을 최소화한 환경에서 중뇌 riMLF 경로의 신경 가소성을 이끌어내십시오. 모든 훈련 기록은 브라우저 로컬 스토리지에 안전하게 기록됩니다."
+    "본 계단식 수직 추적 훈련은 다단 지그재그 기하 궤적을 통해 대각선 경사면의 원활추종과 직각 코너 꼭짓점에서의 급격한 감속 및 재포착 단속운동을 복합적으로 요구합니다(Collewijn & Tamminga, 1984; Lisberger, 2010). 모니터 프레임 양자화(60Hz 시 16.7ms, 144Hz 시 6.9ms)와 입력 폴링 지연(Woods et al., 2015)을 최소화한 환경에서 중뇌 riMLF 경로의 신경 가소성을 이끌어내십시오. 모든 훈련 기록은 브라우저 로컬 스토리지에 안전하게 기록됩니다."
   ],
   benchmarks: {
     title: "수직 계단 추적 숙련도 기준 (속도 배율 및 수직 게인)",
@@ -310,6 +313,12 @@ const guide = {
       ]
     }
   ],
+  steps: [
+    { title: "화면 중앙에서 시작하기", text: "화면에서 50~70cm 떨어져 머리를 고정하고 표적이 첫 구간을 움직이기 시작할 때까지 기다립니다." },
+    { title: "오르내리는 단계를 따라가기", text: "표적의 높이를 중심으로 보며 목을 움직이지 않고 대각선 구간과 수직 전환을 따라갑니다." },
+    { title: "모서리에서 시선을 재포착하기", text: "단 모서리에 가까워지면 속도를 조금 줄이고, 놓쳤다면 다음 표적 위치로 시선을 짧게 되돌립니다." },
+    { title: "안정된 뒤 속도 올리기", text: "표적 손실과 시선 지연이 줄어든 다음 속도를 한 단계만 높이고 기록을 비교합니다." }
+  ],
   deviceCalibration: {
     title: "수직 안구 추적을 위한 디스플레이 및 인체공학적 환경 설정",
     points: [
@@ -321,7 +330,7 @@ const guide = {
   },
   faqs: [
     {
-      q: "계단식 수직 추적 훈련(Staircase Step)이란 무엇인가요?",
+      q: "계단식 수직 추적 훈련이란 무엇인가요?",
       a: "화면 상에서 계단 형태의 지그재그 궤적을 따라 상하로 오르내리는 표적을 머리를 움직이지 않고 안구만으로 정밀 추적하는 신경 안구 운동 훈련입니다. 대각선 이동과 직각 코너 회전을 반복함으로써 일상생활에서 쉽게 퇴화하는 수직 원활추종 안구 운동과 보정 단속운동 능력을 집중적으로 단련합니다."
     },
     {
@@ -401,15 +410,16 @@ export default function StaircaseStepKoPage() {
 
       <StaircaseStepClient
         copy={{
-          title: "계단식 수직 추적",
-          subtitle: "수직 안구 추적 훈련・고저차 에임 테스트",
-          description: "계단 형태의 다단 지그재그 궤적을 오르내리는 표적을 추적하여 중뇌 riMLF 신경 경로를 활성화하는 수직 안구 운동 훈련. 두부 움직임을 억제하고 순수 안구만을 조절하여 고저차 에임의 흔들림을 제어하고 코너 재포착 단속운동 속도를 극대화합니다."
+          title: "상하 시선 추적 훈련",
+          subtitle: "수직 추적과 표적 재포착 연습",
+          description: "계단식으로 오르내리는 표적을 눈으로 따라가며 시선 지연과 표적 손실을 기록합니다. 머리를 고정하고 모서리 재포착 정확도를 확인하세요."
         }}
       />
       <DrillGuide guide={guide} />
       <div className="max-w-6xl mx-auto px-4 pb-12">
         <RelatedDrills currentCategory="visual-tracking" currentHref="https://skilldrills.online/ko/drills/visual-tracking/staircase-step" />
       </div>
+      <DrillFooter />
     </>
   );
 }

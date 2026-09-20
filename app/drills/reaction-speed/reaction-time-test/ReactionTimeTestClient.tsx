@@ -26,6 +26,7 @@ import FpsStartCard from '../../../../components/drill/FpsStartCard';
 import useImmersiveMode from '@/lib/useImmersiveMode';
 import { useTranslation } from '@/lib/i18n/useTranslation';
 
+import { REACTION_TIME_TEST_I18N } from '@/lib/i18n/drills/reactionTimeTest';
 const ELITE_SCORE = 5000;
 const STORAGE_KEY = 'skilldrills_reaction_time_test_v2';
 
@@ -86,12 +87,13 @@ const RULES_ITEMS = [
 interface ReactionTimeTestClientProps {
   copy?: {
     title?: string;
+    subtitle?: string;
     caption?: string;
   };
 }
 
 export default function ReactionTimeTestClient({ copy }: ReactionTimeTestClientProps = {}) {
-  const { locale, t } = useTranslation();
+  const { locale, t } = useTranslation(REACTION_TIME_TEST_I18N);
   const [gameState, setGameState] = useState<'start' | 'countdown' | 'playing' | 'gameOver'>('start');
   const [isFullscreen, setIsFullscreen] = useState<boolean>(false);
   useImmersiveMode(isFullscreen); // locks the page behind while the drill fills the screen
@@ -718,6 +720,7 @@ export default function ReactionTimeTestClient({ copy }: ReactionTimeTestClientP
           <div className="flex flex-col gap-1">
             <h1 className="text-2xl sm:text-3xl font-black tracking-tight text-white">
               <span data-seo-kw="1">{copy?.title || t('reactionTimeTest.title', 'Reaction Time Test')}</span>
+              <span className="block text-sm font-semibold text-slate-400 mt-1">{copy?.subtitle || t('reactionTimeTest.subtitle', 'Visual reaction time test for measuring reflex speed, click latency, and response accuracy in milliseconds')}</span>
             </h1>
           </div>
         )}
@@ -890,7 +893,13 @@ export default function ReactionTimeTestClient({ copy }: ReactionTimeTestClientP
             >
               <div className="grid grid-cols-1 md:grid-cols-2 gap-3 font-sans">
                 {RULES_ITEMS.map((r) => (
-                  <RuleItem key={r.num} {...r} />
+                  <RuleItem
+                    key={r.num}
+                    num={r.num}
+                    text={t(`reactionTimeTest.rule${r.num}Text`, r.text)}
+                    highlight={t(`reactionTimeTest.rule${r.num}Highlight`, r.highlight)}
+                    result={t(`reactionTimeTest.rule${r.num}Result`, r.result)}
+                  />
                 ))}
               </div>
             </DrillAccordion>
@@ -949,33 +958,6 @@ export default function ReactionTimeTestClient({ copy }: ReactionTimeTestClientP
                 sit here with five differently-worded questions -- duplicate UI, and
                 not one of the five appeared in the schema. */}
           </div>
-        )}
-
-        {/* RELATED DRILLS GRID */}
-        {!isFullscreen && (
-          <section className="mt-4">
-            <h2 className="text-sm font-bold text-slate-400 uppercase tracking-wider mb-3 font-mono">
-              Related Reaction Speed Drills
-            </h2>
-            <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
-              {RELATED_DRILLS.map((drill) => (
-                <Link
-                  key={drill.id}
-                  href={drill.href}
-                  className="group bg-[#0c0c16] border border-white/5 hover:border-cyan-500/40 rounded-xl p-3.5 transition-all duration-200 hover:-translate-y-0.5 flex flex-col justify-between"
-                >
-                  <div>
-                    <div className="text-[10px] font-bold text-cyan-400 uppercase tracking-wider mb-1 font-mono">{drill.cat}</div>
-                    <div className="text-xs font-bold text-white group-hover:text-cyan-300 transition-colors">{drill.name}</div>
-                    <div className="text-[11px] text-slate-400 mt-1 line-clamp-2 leading-relaxed">{drill.desc}</div>
-                  </div>
-                  <div className="text-[10px] font-bold text-slate-500 group-hover:text-cyan-400 mt-3 flex items-center gap-1 transition-colors font-mono">
-                    Train Drill <span>→</span>
-                  </div>
-                </Link>
-              ))}
-            </div>
-          </section>
         )}
 
       </main>

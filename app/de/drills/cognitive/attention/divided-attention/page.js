@@ -2,16 +2,17 @@ import DividedAttentionClient from '@/app/drills/cognitive/attention/divided-att
 import { getAlternateLanguages } from '@/lib/i18n/locales';
 import DrillGuide from '@/components/drill/DrillGuide';
 import RelatedDrills from '@/components/drill/RelatedDrills';
+import DrillFooter from '@/components/drill/DrillFooter';
 import { pickSources } from '@/lib/drillSources';
 
 export const metadata = {
-  title: "Geteilte Aufmerksamkeit Test – Dual-Task | SkillDrills",
-  description: "Kostenloser Online-Test für geteilte Aufmerksamkeit (Dual-Task): Verfolge visuelle Ziele und klassifiziere Zahlenreihen zur Messung kognitiver Engpässe.",
-  keywords: ["Geteilte Aufmerksamkeit Test", "Dual Task Training", "Multitasking Aufmerksamkeit", "Geteilte Aufmerksamkeit Ubungen", "Psychologische Refraktarperiode", "Kognitiver Engpass Test", "Visuelle Multitasking Ubung", "Aufmerksamkeit Spalten", "Gehirntraining Dual Task", "Konzentrationstest",
+  title: "Test der geteilten Aufmerksamkeit | SkillDrills",
+  description: "Kostenloser Dual-Task-Test im Browser: Verfolge ein Ziel und klassifiziere Zahlen gleichzeitig. Keine klinische Diagnose.",
+  keywords: ["Test der geteilten Aufmerksamkeit", "geteilte Aufmerksamkeit Test", "Dual-Task-Test", "Dual Task Training", "Multitasking Aufmerksamkeit", "geteilte Aufmerksamkeit Übungen", "kognitiver Engpass", "visuelles Multitasking", "Gehirntraining Dual Task", "Konzentrationstest",
     "dual task test online",
     "geteilte aufmerksamkeit aufgaben"],
   openGraph: {
-    title: "Geteilte Aufmerksamkeit Test – Dual-Task | SkillDrills",
+    title: "Test der geteilten Aufmerksamkeit | Dual Task | SkillDrills",
     description: "Kostenloser Online-Test für geteilte Aufmerksamkeit (Dual-Task): Verfolge visuelle Ziele und klassifiziere Zahlenreihen zur Messung kognitiver Engpässe.",
     type: 'article',
     url: 'https://skilldrills.online/de/drills/cognitive/attention/divided-attention',
@@ -20,7 +21,7 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: "Geteilte Aufmerksamkeit Test – Dual-Task | SkillDrills",
+    title: "Test der geteilten Aufmerksamkeit | Dual Task | SkillDrills",
     description: "Kostenloser Online-Test für geteilte Aufmerksamkeit (Dual-Task): Verfolge visuelle Ziele und klassifiziere Zahlenreihen zur Messung kognitiver Engpässe.",
   },
   robots: { index: true, follow: true },
@@ -80,7 +81,7 @@ const softwareApplicationSchema = {
     "url": "https://skilldrills.online"
   },
   "inLanguage": "de-DE",
-  "dateModified": "2026-09-11"
+  "dateModified": "2026-09-20"
 };
 
 const webApplicationSchema = {
@@ -97,7 +98,7 @@ const webApplicationSchema = {
   },
   "url": "https://skilldrills.online/de/drills/cognitive/attention/divided-attention",
   "inLanguage": "de-DE",
-  "dateModified": "2026-09-11"
+  "dateModified": "2026-09-20"
 };
 
 const videoGameSchema = {
@@ -315,11 +316,27 @@ export default function LocalizedCognitivePage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(howToSchema) }}
       />
-      <DividedAttentionClient copy={{ title: "Geteilte Aufmerksamkeit Test – Dual-Task Aufmerksamkeits-Drill" }} />
+      <DividedAttentionClient copy={{
+        title: "Test der geteilten Aufmerksamkeit", subtitle: "Bewegtes Ziel und Zahlen gleichzeitig verarbeiten",
+        statScore: "Punkte", statTime: "Zeit", timeLeft: "Restzeit", statLevel: "Level", statBest: "Bestwert",
+        match: "Prüfen", evenNumbers: "GERADE ZAHLEN", tapEven: "Bei gerade tippen", startTitle: "Test der geteilten Aufmerksamkeit", startSubtitle: "Dual-Task · Fokuswechsel",
+        getReady: "Bereit machen", dualAccuracy: "Gesamtgenauigkeit", hits: "Treffer", misses: "Fehler", peakLevel: "Höchstlevel",
+        caption: "Verfolge das bewegte Ziel und prüfe parallel, ob im Zahlenstrom eine gerade Zahl erscheint.",
+        rulesTitle: "Anleitung und Wertung", ruleItems: [
+          { text: "Ziel treffen", highlight: "+Zeit", result: "Bewegten Kreis anklicken" },
+          { text: "Gerade Zahl prüfen", highlight: "Richtig reagieren", result: "Bei geraden Zahlen klicken" },
+          { text: "Ungerade ignorieren", highlight: "Keine Fehlklicks", result: "Bei ungeraden Zahlen nicht klicken" },
+          { text: "Beide Kanäle balancieren", highlight: "Combo halten", result: "Tracking und Prüfung verbinden" },
+        ],
+        aboutTitle: "Geteilte Aufmerksamkeit und Dual-Task-Training", aboutLead: "Dieser nicht-klinische Selbstcheck verbindet visuelles Zieltracking mit Zahlenklassifikation und zeigt, wie stabil beide Kanäle zusammen funktionieren.",
+        audienceTitle: "Für wen geeignet", audienceText: "Für Gamer mit Minimap- und Zielaufgaben, Lernende und Menschen, die mehrere Eingaben schnell verarbeiten möchten.",
+        skillsTitle: "Trainierte Fähigkeiten", skillsText: "Dual-Task-Verarbeitung, visuelles Tracking, Zahlenentscheidung und Aufmerksamkeitsverteilung.", flexibilityTitle: "Parallele Verarbeitung", flexibilityText: "Wechsle zwischen beiden Informationsströmen, ohne die Genauigkeit eines Kanals zu vernachlässigen."
+      }} />
       <DrillGuide {...guideProps} />
       <div className="max-w-6xl mx-auto px-4 pb-12">
         <RelatedDrills currentCategory="cognitive" currentHref="https://skilldrills.online/de/drills/cognitive/attention/divided-attention" />
       </div>
+      <DrillFooter />
     </>
   );
 }

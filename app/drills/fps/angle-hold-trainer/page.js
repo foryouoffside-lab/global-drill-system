@@ -337,7 +337,7 @@ export default function AngleHoldPage() {
 
       <AngleHoldClient copy={copyEn} />
 
-      <DrillGuide guide={angleHoldGuide} />
+      <DrillGuide guide={angleHoldGuide} singleLineTitles />
       <DrillFooter />
     </>
   );

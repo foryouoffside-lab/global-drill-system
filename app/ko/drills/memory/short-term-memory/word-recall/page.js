@@ -5,21 +5,23 @@ import { getAlternateLanguages } from '@/lib/i18n/locales';
 import { pickSources } from '@/lib/drillSources';
 
 export const metadata = {
-  title: "단어 기억력 테스트・자유 회상 검사 – 언어 기억력 측정 | SkillDrills",
-  description: "무료 온라인 단어 기억력 테스트(자유 회상 검사). 제시되는 단어 목록을 외우고 계열 위치 효과와 의미적 청킹 기법으로 언어적 단기 기억력을 측정·훈련하세요.",
+  title: "단어 기억력 테스트 | 단어 회상 | SkillDrills",
+  description: "무료 단어 기억력 테스트: 단어 목록을 기억한 뒤 자유롭게 회상하며 언어 기억력과 작업기억을 연습하세요.",
   keywords: [
     "단어 기억력 테스트",
-    "단어 기억력",
+    "단어 암기 테스트",
+    "단어목록 기억",
+    "단어목록 회상",
+    "자유 회상 테스트",
+    "단기 언어 기억",
+    "언어 작업기억",
+    "단어 회상 훈련",
     "단어 기억 게임",
     "언어성 기억력 검사",
-    "자유 회상 테스트",
+    "의미적 청킹",
     "계열 위치 효과",
-    "의미적 청킹 훈련",
-    "언어 작업기억력",
-    "단어 암기 테스트",
-    "두뇌 단어 테스트",
-    "단기 언어 기억",
-    "단어 회상 훈련"
+    "무료 기억력 테스트",
+    "단어 기억력 훈련"
   ],
   alternates: {
     canonical: "https://skilldrills.online/ko/drills/memory/short-term-memory/word-recall",
@@ -30,8 +32,8 @@ export const metadata = {
     follow: true,
   },
   openGraph: {
-    title: "단어 기억력 테스트・자유 회상 검사 – 언어 기억력 측정 | SkillDrills",
-    description: "무료 온라인 단어 기억력 테스트(자유 회상 검사). 제시되는 단어 목록을 외우고 계열 위치 효과와 의미적 청킹 기법으로 언어적 단기 기억력을 측정·훈련하세요.",
+    title: "단어 기억력 테스트 | 단어 회상 | SkillDrills",
+    description: "무료 단어 기억력 테스트: 단어 목록을 기억한 뒤 자유롭게 회상하며 언어 기억력과 작업기억을 연습하세요.",
     url: "https://skilldrills.online/ko/drills/memory/short-term-memory/word-recall",
     siteName: 'SkillDrills',
     locale: 'ko_KR',
@@ -39,8 +41,8 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: "단어 기억력 테스트・자유 회상 검사 – 언어 기억력 측정 | SkillDrills",
-    description: "무료 온라인 단어 기억력 테스트(자유 회상 검사). 제시되는 단어 목록을 외우고 계열 위치 효과와 의미적 청킹 기법으로 언어적 단기 기억력을 측정·훈련하세요.",
+    title: "단어 기억력 테스트 | 단어 회상 | SkillDrills",
+    description: "무료 단어 기억력 테스트: 단어 목록을 기억한 뒤 자유롭게 회상하며 언어 기억력과 작업기억을 연습하세요.",
   },
 };
 
@@ -69,6 +71,7 @@ export default function LocalizedWordRecallPage() {
     "description": "화면에 제시되는 단어 목록을 기억하고 자유 회상 방식으로 입력하여 언어적 단기 기억력, 작업기억 용량 및 의미적 처리 능력을 평가하는 무료 인지 훈련 도구.",
     "genre": "Cognitive Assessment / Verbal Memory",
     "url": "https://skilldrills.online/ko/drills/memory/short-term-memory/word-recall",
+    "sameAs": ["https://ko.wikipedia.org/wiki/%EC%9E%91%EC%97%85_%EA%B8%B0%EC%96%B5"],
     "publisher": {
       "@type": "Organization",
       "name": "SkillDrills",
@@ -320,11 +323,11 @@ export default function LocalizedWordRecallPage() {
     faqs: faqSchema.mainEntity.map(e => ({ q: e.name, a: e.acceptedAnswer.text })),
     sources: pickSources('craik1972', 'murdock1962', 'tulving1962', 'woods2015'),
     related: [
-      { href: "/drills/memory/short-term-memory/digit-span", label: "Digit Span Memory Test" },
-      { href: "/drills/memory/short-term-memory/color-sequence", label: "Color Memory Game" },
-      { href: "/drills/memory/spatial-memory/grid-memorization", label: "Visual Memory Test" },
-      { href: "/drills/memory/spatial-memory/object-location", label: "Object Location Memory Test" },
-      { href: "/drills/memory/working-memory/n-back", label: "3-Back Working Memory Test" }
+      { href: "/ko/drills/memory/short-term-memory/digit-span", label: "숫자 기억력 테스트" },
+      { href: "/ko/drills/memory/short-term-memory/color-sequence", label: "색깔 순서 기억 게임" },
+      { href: "/ko/drills/memory/spatial-memory/grid-memorization", label: "격자 기억력 테스트" },
+      { href: "/ko/drills/memory/spatial-memory/object-location", label: "위치 기억 테스트" },
+      { href: "/ko/drills/memory/working-memory/n-back", label: "N-Back 작업기억 훈련" }
     ]
   };
 
@@ -356,8 +359,8 @@ export default function LocalizedWordRecallPage() {
       />
       <WordRecallClient copy={{
           "h1Keyword": "단어 기억력 테스트",
-          "h1Suffix": " – 무료 언어 기억 회상 게임",
-          "subtitle": "단어 목록의 자유 회상은 고르지 않습니다. 처음과 마지막 단어는 선명히 기억되고 중간 단어는 쉽게 잊히는 계열 위치 효과(Murdock, 1962)가 발생합니다. 단순 응시 시간보다 깊은 의미론적 부호화(Craik & Lockhart, 1972)가 기억 유지를 결정합니다.",
+          "h1Suffix": " – 단어 회상·언어 기억력",
+          "subtitle": "단어 목록을 기억하고 자유롭게 회상",
           "statScore": "점수",
           "statTime": "남은 시간",
           "statWords": "단어 수",
@@ -372,7 +375,7 @@ export default function LocalizedWordRecallPage() {
           "feedbackPhase": "회상 결과 판정",
           "extraWordsLabel": "추가 또는 잘못 입력된 단어:",
           "startTitle": "단어 기억 Pro",
-          "startSubtitle": "언어성 단기 기억력 • 단어 자유 회상 검사",
+          "startSubtitle": "단어 기억력 • 자유 회상",
           "countdownSubtitle": "준비하세요",
           "newBest": "신기록",
           "pointsLabel": "포인트",
@@ -464,7 +467,7 @@ export default function LocalizedWordRecallPage() {
       <div className="max-w-4xl mx-auto px-4 pb-12">
         <RelatedDrills
           currentCategory="memory"
-          currentHref="/drills/memory/short-term-memory/word-recall"
+          currentHref="/ko/drills/memory/short-term-memory/word-recall"
           locale="ko"
         />
       </div>

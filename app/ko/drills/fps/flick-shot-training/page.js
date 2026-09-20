@@ -6,16 +6,16 @@ import { getAlternateLanguages } from '@/lib/i18n/locales';
 import RelatedDrills from '@/components/drill/RelatedDrills';
 
 export const metadata = {
-  title: "플릭 에임 연습 – 끌어치기·스냅샷 트레이너 | SkillDrills",
-  description: "브라우저에서 무료로 즐기는 플릭 에임 연습 사이트. 무작위 타겟을 향한 번개 같은 끌어치기, 스냅샷, 마우스패드 마찰 제동력을 훈련하여 발로란트와 카스2 헤드샷 적중률을 극대화하세요.",
+  title: "에임 연습 사이트 - 플릭샷 트레이너 | SkillDrills",
+  description: "브라우저에서 바로 하는 무료 에임 연습 사이트. 발로란트·CS2에서 쓰는 플릭샷과 끌어치기, 스냅 에임을 실제 점수와 정확도로 훈련하세요.",
   keywords: [
-    "플릭 에임 연습",
+    "에임 연습 사이트",
+    "발로란트 에임 연습 사이트",
+    "에임연습 사이트",
+    "플릭샷",
+    "끌어치기",
+    "스냅 에임",
     "플릭샷 연습",
-    "끌어치기 연습",
-    "에임 브레이킹",
-    "발로란트 플릭샷 연습",
-    "카스2 끌어치기",
-    "스냅샷 에임 훈련",
     "무료 에임 트레이너",
     "초탄 헤드샷 연습",
     "마우스 제동력 훈련",
@@ -31,8 +31,8 @@ export const metadata = {
     follow: true,
   },
   openGraph: {
-    title: "플릭 에임 연습 – 끌어치기·스냅샷 트레이너 | SkillDrills",
-    description: "브라우저에서 무료로 즐기는 플릭 에임 연습 사이트. 무작위 타겟을 향한 번개 같은 끌어치기, 스냅샷, 마우스패드 마찰 제동력을 훈련하여 발로란트와 카스2 헤드샷 적중률을 극대화하세요.",
+    title: "에임 연습 사이트 - 플릭샷 트레이너 | SkillDrills",
+    description: "브라우저에서 바로 하는 무료 에임 연습 사이트. 발로란트·CS2에서 쓰는 플릭샷과 끌어치기, 스냅 에임을 실제 점수와 정확도로 훈련하세요.",
     url: "https://skilldrills.online/ko/drills/fps/flick-shot-training",
     siteName: 'SkillDrills',
     locale: 'ko_KR',
@@ -40,8 +40,8 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: "플릭 에임 연습 – 끌어치기·스냅샷 트레이너 | SkillDrills",
-    description: "브라우저에서 무료로 즐기는 플릭 에임 연습 사이트. 무작위 타겟을 향한 번개 같은 끌어치기, 스냅샷, 마우스패드 마찰 제동력을 훈련하여 발로란트와 카스2 헤드샷 적중률을 극대화하세요.",
+    title: "에임 연습 사이트 - 플릭샷 트레이너 | SkillDrills",
+    description: "브라우저에서 바로 하는 무료 에임 연습 사이트. 발로란트·CS2에서 쓰는 플릭샷과 끌어치기, 스냅 에임을 실제 점수와 정확도로 훈련하세요.",
   },
 };
 
@@ -52,19 +52,19 @@ export default function FlickShotKoPage() {
     "itemListElement": [
       { "@type": "ListItem", "position": 1, "name": "SkillDrills", "item": "https://skilldrills.online/ko" },
       { "@type": "ListItem", "position": 2, "name": "FPS 에임 훈련", "item": "https://skilldrills.online/ko/drills/fps" },
-      { "@type": "ListItem", "position": 3, "name": "플릭 에임", "item": "https://skilldrills.online/ko/drills/fps/flick-shot-training" }
+      { "@type": "ListItem", "position": 3, "name": "플릭샷 에임 연습", "item": "https://skilldrills.online/ko/drills/fps/flick-shot-training" }
     ]
   };
 
   const softwareSchema = {
     "@context": "https://schema.org",
     "@type": "SoftwareApplication",
-    "name": "플릭 에임 연습",
+    "name": "플릭샷 에임 연습",
     "applicationCategory": "GameApplication",
     "operatingSystem": "Web Browser",
-    "dateModified": "2026-09-05",
+    "dateModified": "2026-09-20",
     "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
-    "description": "스냅 에임, 탄도 운동 기억, 마우스패드 제동력을 훈련하는 무료 브라우저 FPS 에임 트레이너.",
+    "description": "브라우저에서 플릭샷과 끌어치기, 스냅 에임을 연습하고 점수와 정확도를 확인하는 무료 FPS 에임 연습 사이트.",
     "genre": "FPS Training / Flick Shot",
     "url": "https://skilldrills.online/ko/drills/fps/flick-shot-training",
     "publisher": {
@@ -77,7 +77,7 @@ export default function FlickShotKoPage() {
   const webAppSchema = {
     "@context": "https://schema.org",
     "@type": "WebApplication",
-    "name": "플릭 에임 연습",
+    "name": "플릭샷 에임 연습",
     "url": "https://skilldrills.online/ko/drills/fps/flick-shot-training",
     "applicationCategory": "GameApplication",
     "operatingSystem": "All",
@@ -87,16 +87,16 @@ export default function FlickShotKoPage() {
       "price": "0",
       "priceCurrency": "USD"
     },
-    "description": "스냅 에임, 탄도 운동 기억, 마우스패드 제동력을 훈련하는 무료 브라우저 FPS 에임 트레이너."
+    "description": "브라우저에서 플릭샷과 끌어치기, 스냅 에임을 연습하고 점수와 정확도를 확인하는 무료 FPS 에임 연습 사이트."
   };
 
   const videoGameSchema = {
     "@context": "https://schema.org",
     "@type": "VideoGame",
-    "name": "플릭 에임 연습",
+    "name": "플릭샷 에임 연습",
     "url": "https://skilldrills.online/ko/drills/fps/flick-shot-training",
-    "description": "스냅 에임, 탄도 운동 기억, 마우스패드 제동력을 훈련하는 무료 브라우저 FPS 에임 트레이너.",
-    "dateModified": "2026-09-05",
+    "description": "브라우저에서 플릭샷과 끌어치기, 스냅 에임을 연습하고 점수와 정확도를 확인하는 무료 FPS 에임 연습 사이트.",
+    "dateModified": "2026-09-20",
     "gamePlatform": "Web Browser",
     "genre": ["FPS Training", "Aim Trainer", "Flick Shot"],
     "playMode": "SinglePlayer",
@@ -227,10 +227,10 @@ export default function FlickShotKoPage() {
   };
 
   const flickGuide = {
-    heading: "플릭 에임 실전 가이드 & 생체역학 벤치마크",
+    heading: "에임 연습 사이트: 플릭샷 측정과 FPS 조준 가이드",
     subtitle: "스냅 에임 초기 가속, 근육 운동 기억, 그리고 조준선을 목표 위에 즉각 멈추는 마찰 제동력을 완성하는 과학적 방법론",
     intro: [
-      "플릭 에임(Flick Aim)은 시선이 포착한 목표 좌표를 향해 조준선을 번개처럼 날려 보내最短 시간 내에 초탄을 적중시키는 FPS의 가장 대표적인 기본 기술입니다. 발로란트, CS2, 에이펙스 레전드에서 돌발적인 피킹 교전을 제압하기 위해서는 한 치의 오차 없는 플릭 능력이 필수적입니다.",
+      "에임 연습 사이트를 찾는 FPS 플레이어에게 플릭샷은 시선이 포착한 목표 좌표로 조준선을 빠르게 옮겨 최단 시간 내에 초탄을 적중시키는 핵심 기술입니다. 발로란트, CS2, 에이펙스 레전드에서 돌발적인 피킹 교전을 제압하려면 플릭 속도와 정확도를 함께 훈련해야 합니다.",
       "생체운동학에서 인간의 목표 지향적 조준 운동은 '2단계 모델'(Elliott et al., 2010)을 따릅니다. 초기 개루프(Open-loop) 탄도 운동을 통해 전체 거리의 80~90%를 단숨에 주파한 뒤, 착탄 직전 폐루프(Closed-loop) 시각 피드백을 통해 미세한 종단 수렴 보정을 완수합니다.",
       "Paul M. Fitts(1954)의 운동 법칙(Fitts's Law)에 따라 이동 거리가 멀고 타겟 크기가 작을수록 운동 난이도 지수(ID)가 가파르게 상승합니다. 본 드릴은 Richard A. Schmidt 등(1979)의 주동근·길항근 펄스 제어 이론과 고해상도 디지털 시간 측정(Woods et al., 2015)을 결합하여 오버슈트 없는 기계적 브레이킹 감각을 완성합니다.",
       "측정 정확도 안내: 본 드릴은 브라우저의 performance.now() 고해상도 타이머를 활용하여 기기 내부에서 밀리초 단위로 정확히 실행됩니다. 디스플레이 주사율(60Hz/144Hz/240Hz)에 따른 프레임 지연이 발생하므로 5ms 미만의 미세 편차는 하드웨어 측정 노이즈로 간주하시기 바랍니다."
@@ -318,9 +318,9 @@ export default function FlickShotKoPage() {
       />
       <ProFlickClient
         copy={{
-          h1Keyword: "플릭 에임 연습",
-          h1Suffix: " - 플릭샷 & 스냅 에임 트레이너",
-          subtitle: "실시간 피드백으로 스냅 에임, 탄도 운동 기억, 타겟 포착 및 마우스 제동력을 훈련하세요.",
+          h1Keyword: "에임 연습 사이트",
+          h1Suffix: " - 플릭샷 트레이너",
+          subtitle: "발로란트·CS2용 플릭샷과 끌어치기를 브라우저에서 바로 훈련하세요.",
           statScore: "점수",
           statTime: "남은 시간",
           statAccuracy: "정확도",

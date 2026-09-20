@@ -246,7 +246,7 @@ export default function RhythmAnomalyPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(howToSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(videoGameSchema) }} />
-      <RhythmAnomalyClient copy={{ title: "Rhythm Anomaly Timing Test" }} />
+      <RhythmAnomalyClient copy={{ title: "Rhythm Anomaly Timing Test", subtitle: "Visual timing and attention test for spotting the cell that pulses faster than the surrounding rhythm" }} />
       <DrillGuide
         eyebrow="Temporal Psychophysics & Visual Chronometry"
         title="The Science of Visual Rhythm, Flicker Fusion & Temporal Frequency Discrimination"

@@ -467,6 +467,7 @@ export default function DigitSpanClient({ copy = null }) {
               {copy?.h1Prefix || null}
               <span data-seo-kw="1">{copy?.h1Keyword || "Digit Span Memory Test"}</span>
               {copy?.h1Suffix || null}
+              <span className="block text-sm font-semibold text-slate-400 mt-1">{copy?.subtitle || "Digit span memory test for recalling growing number sequences and training working memory capacity"}</span>
             </h1>
           </div>
         )}

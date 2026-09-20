@@ -330,7 +330,7 @@ export default function TargetSwitchingSwarmPage() {
           ]
         }}
       />
-      <DrillGuide guide={targetSwitchingGuide} />
+      <DrillGuide guide={targetSwitchingGuide} singleLineTitles />
       <DrillFooter />
     </>
   );

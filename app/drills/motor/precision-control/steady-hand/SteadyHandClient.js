@@ -641,14 +641,8 @@ export default function SteadyHandClient({ copy = null }) {
               {copy?.h1Prefix || null}
               <span data-seo-kw="1">{copy?.h1Keyword || "Steady Hand Game"}</span>
               {copy?.h1Suffix || null}
+              <span className="block text-sm font-semibold text-slate-400 mt-1">{copy?.subtitle || "Steady hand mouse control drill for tracing narrow paths and improving cursor precision"}</span>
             </h1>
-            <p className="text-[13px] text-slate-400 leading-relaxed">
-              {copy?.caption || (
-                <>
-                  A steady hand game asks you to move a cursor along a narrow path without touching its edges, which measures fine motor steadiness rather than speed. The Steering Law sets the difficulty: the time to travel a corridor scales with its length divided by its width, so a corridor half as wide takes about twice as long to cross without a contact (Accot &amp; Zhai, 1997). Staying on the centreline is a closed-loop task &mdash; vision continuously corrects the hand while the movement is still under way (Woodworth, 1899).
-                </>
-              )}
-            </p>
           </div>
         )}
 
@@ -672,7 +666,7 @@ export default function SteadyHandClient({ copy = null }) {
         {/* Game Stage Container */}
         <div 
           ref={containerRef} 
-          className={`overflow-hidden flex flex-col transition-all duration-150 select-none bg-[#080811] text-white ${
+          className={`overflow-hidden flex flex-col select-none bg-[#080811] text-white ${
             isFullscreen
               ? 'fixed inset-0 z-[100] w-screen h-[100dvh] bg-[#050508] flex flex-col items-center justify-center'
               : 'w-full rounded-2xl aspect-video min-h-[460px] md:min-h-[500px] max-h-[88vh] max-md:portrait:aspect-[3/4] max-md:portrait:min-h-[420px] max-md:portrait:max-h-[76vh] max-md:landscape:min-h-[340px] max-md:landscape:max-h-[85vh] bg-[#080811] border border-white/10 relative overflow-hidden flex flex-col'
@@ -814,7 +808,7 @@ export default function SteadyHandClient({ copy = null }) {
                   </p>
                   <p className="text-sm leading-relaxed text-gray-300">
                     {copy?.aboutP2 || (
-                      <>Grounded in Johnny Accot &amp; Shumin Zhai&apos;s (1997) Steering Law, movement time through constrained tunnels depends on the integral of path length divided by corridor width. As your lap count increases, path complexity multiplies and tolerance margins tighten from 50px down to 12px, forcing your motor cortex to recruit closed-loop visual feedback corrections (Woodworth 1899) and suppress physiological tremor.</>
+                      <>Grounded in Johnny Accot &amp; Shumin Zhai&apos;s (1997) Steering Law, movement time through constrained tunnels depends on the integral of path length divided by corridor width. As your lap count increases, path complexity multiplies and tolerance margins tighten from 50px down to 12px, forcing your motor cortex to recruit closed-loop visual feedback corrections (Woodworth 1899) and suppress physiological tremor. The Steering Law sets the difficulty: the time to travel a corridor scales with its length divided by its width, so a corridor half as wide takes about twice as long to cross without a contact (Accot &amp; Zhai, 1997). Staying on the centreline is a closed-loop task &mdash; vision continuously corrects the hand while the movement is still under way (Woodworth, 1899).</>
                     )}
                   </p>
                 </div>

@@ -246,7 +246,7 @@ export default function AutoPursuitPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(howToSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(videoGameSchema) }} />
-      <AutoPursuitClient copy={{ title: "Smooth Pursuit Tracker" }} />
+      <AutoPursuitClient copy={{ title: "Smooth Pursuit Tracker", subtitle: "Smooth pursuit eye tracking drill for keeping your cursor on a moving target and improving visual accuracy" }} />
       <DrillGuide
         eyebrow="Ocular Motor Psychophysics & Gaze Dynamics"
         title="The Science of Smooth Pursuit Eye Tracking & Kinetic Gaze Holding"

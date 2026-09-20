@@ -1,38 +1,20 @@
 import RapidTappingClient from './RapidTappingClientLoader';
 import { getAlternateLanguages } from '@/lib/i18n/locales';
 import DrillGuide from '@/components/drill/DrillGuide';
-import RelatedDrills from '@/components/drill/RelatedDrills';
 import DrillFooter from '@/components/drill/DrillFooter';
 import { pickSources } from '@/lib/drillSources';
 
-// ============================================================
-// SEO RESEARCH FINDINGS — rapid-tapping (motor-rapid-tapping)
-// PRIMARY:  "cps test"                    — Major global query (~22,000+ searches/mo)
-//           "click speed test"            — Core synonym / benchmark term
-// SECONDARY / LSI:
-//           "clicks per second test"      — Direct calculation query
-//           "rapid tapping test"          — Clinical and motor drill term
-//           "finger tapping speed test"   — Neuromotor speed query
-//           "cps trainer"                 — Training & skill drill term
-//           "click speed game"            — Gamified search phrase
-//           "jitter clicking test"        — Advanced PvP clicking technique
-//           "butterfly clicking test"     — Dual-finger speed technique
-//           "mouse click speed test"      — Hardware and dexterity search
-//           "minecraft cps test"          — Title-specific competitive query
-//           "fast clicking test"          — High-intent speed search
-// LOCALES:
-//           ja: "cps テスト" (CPS Test / Click Speed Test)
-//           ko: "cps 테스트" (CPS Test / Click Speed Test)
-//           de: "cps test" (CPS Test / Klickgeschwindigkeit Test)
-// ============================================================
+// Native query clusters and live localized SERP evidence are documented in
+// docs/seo/research/rapid-tapping-2026-09-20.md. No unverified volume claim is
+// used as a ranking guarantee.
 
 export const metadata = {
-  title: 'CPS Test – Free Click Speed & Clicks Per Second Test',
-  description: 'Free online CPS test. Test your clicks per second, burst tapping velocity, jitter and butterfly clicking, and forearm endurance over a 45-second session.',
+  title: 'CPS Test | Click Speed & Clicks Per Second | SkillDrills',
+  description: 'Free browser CPS test for clicks per second, burst speed, clicking techniques, and 45-second endurance. No download required.',
   keywords: [
     'cps test',
     'click speed test',
-    'clicks per second test',
+    'clicks per second',
     'rapid tapping test',
     'finger tapping speed test',
     'cps trainer',
@@ -42,10 +24,11 @@ export const metadata = {
     'mouse click speed test',
     'minecraft cps test',
     'fast clicking test',
+    'click endurance test',
   ],
   openGraph: {
-    title: 'CPS Test – Free Click Speed Test & Clicks Per Second Trainer | SkillDrills',
-    description: 'Free online CPS test. Test your clicks per second, burst tapping velocity, jitter and butterfly clicking, and forearm endurance over a 45-second session.',
+    title: 'CPS Test | Click Speed & Clicks Per Second | SkillDrills',
+    description: 'Measure clicks per second and 45-second clicking endurance in a free browser test.',
     type: 'article',
     url: 'https://skilldrills.online/drills/motor/movement-speed/rapid-tapping',
     siteName: 'SkillDrills',
@@ -53,8 +36,8 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'CPS Test – Free Click Speed Test & Clicks Per Second Trainer | SkillDrills',
-    description: 'Free online CPS test. Test your clicks per second, burst tapping velocity, jitter and butterfly clicking, and forearm endurance over a 45-second session.',
+    title: 'CPS Test | Click Speed & Clicks Per Second | SkillDrills',
+    description: 'Free CPS and click-endurance test with live browser results.',
   },
   robots: { index: true, follow: true },
   alternates: {
@@ -79,6 +62,7 @@ const breadcrumbSchema = {
 const softwareApplicationSchema = {
   '@context': 'https://schema.org',
   '@type': 'SoftwareApplication',
+  inLanguage: 'en-US',
   name: 'CPS Test – Click Speed & Clicks Per Second Trainer',
   alternateName: ['Rapid Tapping Test', 'Click Speed Test'],
   applicationCategory: 'HealthApplication',
@@ -87,12 +71,13 @@ const softwareApplicationSchema = {
   description: 'Free browser-based CPS click speed test and finger tapping endurance trainer. Test single-finger tapping, jitter clicking, and butterfly clicking against an accelerating target decay rate.',
   url: 'https://skilldrills.online/drills/motor/movement-speed/rapid-tapping',
   publisher: { '@type': 'Organization', name: 'SkillDrills', url: 'https://skilldrills.online' },
-  dateModified: '2026-09-05',
+  dateModified: '2026-09-20',
 };
 
 const webApplicationSchema = {
   '@context': 'https://schema.org',
   '@type': 'WebApplication',
+  inLanguage: 'en-US',
   name: 'CPS Test',
   alternateName: 'Rapid Tapping Test',
   applicationCategory: 'GameApplication',
@@ -100,12 +85,13 @@ const webApplicationSchema = {
   browserRequirements: 'Requires modern web browser with HTML5 Canvas and high-frequency pointer input support',
   offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
   url: 'https://skilldrills.online/drills/motor/movement-speed/rapid-tapping',
-  dateModified: '2026-09-05',
+  dateModified: '2026-09-20',
 };
 
 const videoGameSchema = {
   '@context': 'https://schema.org',
   '@type': 'VideoGame',
+  inLanguage: 'en-US',
   name: 'CPS Test – Free Click Speed Test & Clicks Per Second Trainer',
   url: 'https://skilldrills.online/drills/motor/movement-speed/rapid-tapping',
   description: 'Free online CPS test measuring clicks per second, burst tapping velocity, jitter and butterfly clicking.',
@@ -118,6 +104,8 @@ const videoGameSchema = {
 const faqSchema = {
   '@context': 'https://schema.org',
   '@type': 'FAQPage',
+  inLanguage: 'en-US',
+  dateModified: '2026-09-20',
   mainEntity: [
     {
       '@type': 'Question',
@@ -205,6 +193,8 @@ const faqSchema = {
 const howToSchema = {
   '@context': 'https://schema.org',
   '@type': 'HowTo',
+  inLanguage: 'en-US',
+  dateModified: '2026-09-20',
   name: 'How to Test and Train Click Speed (CPS)',
   description: 'Step-by-step training protocol for measuring clicks per second, testing advanced clicking techniques, and conditioning finger endurance.',
   step: [
@@ -334,7 +324,7 @@ const copyEn = {
   cpsRate: "CPS Rate",
   bestScore: "Best Score",
   startButtonText: "Start Drill",
-  startSubtitle: "CPS Click Speed Trainer • Hardware Raw Input",
+  startSubtitle: "CPS click speed & endurance • 45s",
   getReady: "GET READY",
   playAgain: "Play Again",
   shareTitle: "Share Score",
@@ -382,9 +372,6 @@ export default function RapidTappingPage() {
       />
       <RapidTappingClient copy={copyEn} />
       <DrillGuide {...guideProps} />
-      <div className="max-w-6xl w-full mx-auto px-4 pb-12">
-        <RelatedDrills currentCategory="motor" currentHref="/drills/motor/movement-speed/rapid-tapping" />
-      </div>
       <DrillFooter />
     </>
   );

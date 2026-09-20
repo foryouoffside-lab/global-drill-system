@@ -10,18 +10,10 @@ import { pickSources } from '@/lib/drillSources';
 // came from raw files that returned 100% populated with zero nulls and zero zeros
 // on the same day the motor and visual sweeps returned 100% null. Re-measure
 // before acting on any of these terms. Phrases are kept; numbers are not.
-// SEO RESEARCH FINDINGS — jump-sequence
-// PRIMARY:  "jump sequence training"         — High-intent biomechanical query (volume unmeasured)
-//           "plyometric rhythm drill"       — Motor coordination & cadence query (volume unmeasured)
-// SECONDARY / LSI:
-//           "jump timing drill"             — Reflexive timing query (volume unmeasured)
-//           "jump sequence drill"           — Physical drill phrase (volume unmeasured)
-//           "precision jumping game"        — Interactive gamified intent (volume unmeasured)
-//           "trajectory timing drill"       — Flight path interception query (volume unmeasured)
-//           "trajectory control drill"      — Dynamic motor steering query (volume unmeasured)
-//           "vertical impulse training"     — Biomechanical power query (volume unmeasured)
-//           "reaction time training"        — Broad cognitive category query (volume unmeasured)
-// LOCALES:  ja (ジャンプ シーケンス トレーニング), ko (점프 시퀀스 훈련), de (sprungsequenz training)
+// Native research: docs/seo/research/jump-sequence-2026-09-20.md
+// Primary intent: jump timing drill, jump sequence game, and plyometric rhythm drill.
+// This page targets the browser interaction honestly; it does not claim to measure
+// real-world jump height. Locale pages use native search clusters independently.
 // PAA TARGETS:
 //   - What is jump sequence training?
 //   - How does the stretch-shortening cycle impact jump height and timing?
@@ -36,29 +28,20 @@ import { pickSources } from '@/lib/drillSources';
 // ============================================================
 
 export const metadata = {
-  title: 'Jump Sequence Training - Free Mid-Air Interception Drill',
+  title: 'Jump Timing Drill | Free Jump Sequence Game | SkillDrills',
   description:
-    'Free online jump sequence training drill. Master stretch-shortening cycle impulse, trajectory calculation and mid-air target steering.',
+    'Free jump timing drill online. Charge, steer and intercept moving targets in a browser game for rhythm, coordination and reflex practice.',
   keywords: [
-    // Primary terms
-    'jump sequence training',
-    'plyometric rhythm drill',
     'jump timing drill',
-    // Secondary / LSI terms
-    'jump sequence drill',
-    'precision jumping game',
-    'trajectory timing drill',
-    'trajectory control drill',
-    'plyometric timing drill',
-    'vertical impulse training',
-    'mid-air steering drill',
-    'stretch shortening cycle drill',
-    'reaction time training',
-    // Long-tail variants
-    'free online jump sequence training',
-    'browser trajectory control drill',
-    'esports aerial movement timing trainer',
-    'plyometric jump timing coordination exercise',
+    'jump sequence game',
+    'plyometric rhythm drill',
+    'aerial trajectory game',
+    'mid-air target game',
+    'vertical jump timing',
+    'reaction jump game',
+    'jump coordination drill',
+    'air steering practice',
+    'free browser jump game',
   ],
   alternates: {
     canonical: 'https://skilldrills.online/drills/physical/fitness/jump-sequence',
@@ -66,7 +49,7 @@ export const metadata = {
   },
   robots: { index: true, follow: true },
   openGraph: {
-    title: 'Jump Sequence Training - Free Mid-Air Interception Drill',
+    title: 'Jump Timing Drill | Free Jump Sequence Game | SkillDrills',
     description:
       'Train explosive vertical impulse, airborne steering, and moving target interception with real-time feedback. 100% free browser drill with no downloads.',
     url: 'https://skilldrills.online/drills/physical/fitness/jump-sequence',
@@ -117,16 +100,18 @@ const softwareApplicationSchema = {
     priceCurrency: 'USD',
   },
   description:
-    'Interactive web-based motor training drill designed to optimize stretch-shortening cycle impulse, trajectory simulation, and mid-air aerial interception.',
+      'Free browser jump timing game for charging a vertical impulse, steering in the air, and intercepting moving targets with rhythmic coordination.',
+  inLanguage: 'en',
+  dateModified: '2026-09-20',
 };
 
 const webApplicationSchema = {
   '@context': 'https://schema.org',
   '@type': 'WebApplication',
-  name: 'Jump Sequence Training - Mid-Air Trajectory Interception',
+  name: 'Jump Timing Drill - Mid-Air Target Game',
   url: 'https://skilldrills.online/drills/physical/fitness/jump-sequence',
   description:
-    'Scientific trajectory timing and jump cadence drill. Calibrate charge liftoff impulse and execute airborne steering adjustments to land on high-speed dynamic targets.',
+    'Interactive jump timing and trajectory game. Charge takeoff, steer the airborne arc, and intercept moving targets before landing.',
   applicationCategory: 'SportsApplication',
   operatingSystem: 'Web Browser',
   browserRequirements: 'Requires a modern web browser with HTML5 Canvas support.',
@@ -136,11 +121,15 @@ const webApplicationSchema = {
   learningResourceType: 'Interactive Physical Training Tool',
   teaches:
     'Stretch-Shortening Cycle Mechanics, Vertical Impulse Calibration, Internal Cerebellar Forward Models, Optical Tau Interception, Aerial Trajectory Steering',
+  inLanguage: 'en',
+  dateModified: '2026-09-20',
 };
 
 const faqSchema = {
   '@context': 'https://schema.org',
   '@type': 'FAQPage',
+  inLanguage: 'en',
+  dateModified: '2026-09-20',
   mainEntity: [
     {
       '@type': 'Question',
@@ -228,12 +217,14 @@ const faqSchema = {
 const videoGameSchema = {
   '@context': 'https://schema.org',
   '@type': 'VideoGame',
-  name: 'Jump Sequence Training',
+  name: 'Jump Timing Drill Game',
   url: 'https://skilldrills.online/drills/physical/fitness/jump-sequence',
-  description: 'Free online jump sequence training drill. Master stretch-shortening cycle impulse, trajectory calculation, and airborne target interception.',
+  description: 'Free browser jump timing game for airborne target interception, rhythmic coordination, and trajectory practice.',
   genre: ['Action', 'Brain Game', 'Reflex Game', 'Coordination'],
   gamePlatform: ['Web Browser', 'Desktop', 'Mobile'],
   applicationCategory: 'Game',
+  inLanguage: 'en',
+  dateModified: '2026-09-20',
   offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
 };
 
@@ -319,7 +310,7 @@ const guideProps = {
     ],
   },
   faqs: {
-    title: 'Frequently Asked Questions About Jump Sequence Training & Trajectory Control',
+    title: 'Jump Timing Drill: Questions About Trajectory Control',
     items: faqSchema.mainEntity.map((q) => ({
       q: q.name,
       a: q.acceptedAnswer.text,
@@ -354,7 +345,7 @@ export default function JumpSequencePage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(howToSchema) }}
       />
-      <JumpSequenceClient copy={{ title: 'Jump Sequence Training', subtitle: 'Mid-Air Interception & Plyometric Timing Drill' }} />
+      <JumpSequenceClient copy={{ title: 'Jump Timing Drill', subtitle: 'Charge, steer in the air, and intercept moving targets' }} />
       <DrillGuide {...guideProps} />
       
     </>

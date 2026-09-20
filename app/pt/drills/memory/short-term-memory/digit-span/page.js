@@ -5,25 +5,28 @@ import RelatedDrills from '@/components/drill/RelatedDrills';
 import { pickSources } from '@/lib/drillSources';
 
 export const metadata = {
-  title: "Teste de Dígitos Online – Span de Memória | SkillDrills",
-  description: "Teste de dígitos online grátis: Memorize sequências numéricas progressivas e avalie sua memória operacional e alça fonológica direto no navegador sem cadastro.",
+  title: "Teste de memória de números | Span de dígitos | SkillDrills",
+  description: "Teste de memória de números grátis: memorize sequências numéricas cada vez maiores e repita tudo na ordem certa pelo navegador.",
   keywords: [
-    "teste de digitos",
-    "memoria de digitos",
-    "teste de span de digitos",
-    "alca fonologica teste",
-    "memoria operacional teste",
-    "jogo de memoria de numeros",
-    "amplitude de memoria teste",
-    "treino de memoria de trabalho",
-    "teste de digitos wais",
-    "tecnica de chunking numeros",
-    "exercicio de retencao numerica",
-    "teste neuropsicologico de memoria"
+    "teste de memória de números",
+    "teste de dígitos online",
+    "span de dígitos",
+    "amplitude de dígitos",
+    "memória de trabalho números",
+    "memória de curto prazo números",
+    "jogo de memória numérica",
+    "teste de retenção de números",
+    "teste de dígitos WAIS",
+    "sequência numérica memória",
+    "alça fonológica",
+    "agrupamento de números",
+    "memorizar números",
+    "teste de memória grátis",
+    "extensão de dígitos"
   ],
   openGraph: {
-    title: "Teste de Dígitos Online – Span de Memória | SkillDrills",
-    description: "Teste de dígitos online grátis: Memorize sequências numéricas progressivas e avalie sua memória operacional e alça fonológica direto no navegador sem cadastro.",
+    title: "Teste de memória de números | Span de dígitos | SkillDrills",
+    description: "Teste de memória de números grátis: memorize sequências numéricas cada vez maiores e repita tudo na ordem certa pelo navegador.",
     type: 'website',
     url: 'https://skilldrills.online/pt/drills/memory/short-term-memory/digit-span',
     siteName: 'SkillDrills',
@@ -31,8 +34,8 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: "Teste de Dígitos Online – Span de Memória | SkillDrills",
-    description: "Teste de dígitos online grátis: Memorize sequências numéricas progressivas e avalie sua memória operacional e alça fonológica direto no navegador sem cadastro.",
+    title: "Teste de memória de números | Span de dígitos | SkillDrills",
+    description: "Teste de memória de números grátis: memorize sequências numéricas cada vez maiores e repita tudo na ordem certa pelo navegador.",
   },
   robots: { index: true, follow: true },
   alternates: {
@@ -62,6 +65,7 @@ const webAppSchema = {
   "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
   "author": { "@type": "Organization", "name": "SkillDrills" },
   "isAccessibleForFree": true,
+  "sameAs": ["https://pt.wikipedia.org/wiki/Mem%C3%B3ria_de_trabalho"],
   "dateModified": "2026-09-11"
 };
 
@@ -305,23 +309,23 @@ const digitSpanGuide = {
   sources: pickSources('miller1956', 'cowan2001', 'baddeley1974', 'baddeley2000', 'logie1995', 'woods2015'),
   related: [
   {
-    "href": "/drills/memory/working-memory/n-back",
+    "href": "/pt/drills/memory/working-memory/n-back",
     "label": "Teste N-Back (Memória Operacional)"
   },
   {
-    "href": "/drills/memory/spatial-memory/grid-memorization",
+    "href": "/pt/drills/memory/spatial-memory/grid-memorization",
     "label": "Teste de Memória Visual (Grade)"
   },
   {
-    "href": "/drills/cognitive/focus/concentration-grid",
+    "href": "/pt/drills/cognitive/focus/concentration-grid",
     "label": "Tabela de Schulte (Grade de Concentração)"
   },
   {
-    "href": "/drills/reaction-speed/reaction-time-test",
+    "href": "/pt/drills/reaction-speed/reaction-time-test",
     "label": "Teste de Reflexo (Tempo de Reação)"
   },
   {
-    "href": "/drills/reaction-speed/reflex-training-drill",
+    "href": "/pt/drills/reaction-speed/reflex-training-drill",
     "label": "Jogo de Reflexo e Treino de Reflexos"
   }
 ]
@@ -355,9 +359,10 @@ export default function LocalizedDigitSpanPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
       <DigitSpanClient copy={{
-        "h1Keyword": "Teste de Dígitos",
-        "h1Suffix": " – Jogo de Memória Numérica Digit Span Online",
-        "caption": "Memorize a sequência numérica exibida na tela e digite os números na ordem exata.",
+        "h1Keyword": "Teste de memória de números",
+        "h1Suffix": " – Span de dígitos",
+        "subtitle": "Memorize números e repita a sequência exata",
+        "caption": "Memorize a sequência numérica crescente e digite os números na mesma ordem quando ela desaparecer.",
         "statScore": "Pontos",
         "statTime": "Tempo",
         "statSpan": "Span",
@@ -368,7 +373,7 @@ export default function LocalizedDigitSpanPage() {
         "memorizeTitle": "MEMORIZE A SEQUÊNCIA",
         "evaluating": "Avaliando...",
         "startTitle": "Teste de Dígitos Pro",
-        "startSubtitle": "Memória Numérica de Curto Prazo • Span de Dígitos",
+        "startSubtitle": "Memória numérica • span de dígitos",
         "countdownSubtitle": "PREPARE-SE",
         "newBest": "NOVO RECORDE",
         "pointsLabel": "Pontos",

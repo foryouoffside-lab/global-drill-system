@@ -6,25 +6,25 @@ import DrillFooter from '@/components/drill/DrillFooter';
 import { pickSources } from '@/lib/drillSources';
 
 export const metadata = {
-  title: 'Sequenz Aim Trainer – Klick-Tempo Test | SkillDrills',
-  description: 'Kostenloser Sequenz Aim Trainer: Teste Zielwechsel-Geschwindigkeit und Klick-Präzision auf nummerierte Ziele. Verbessere serielles Zielen ohne Download.',
+  title: 'Aim Trainer Zielwechsel | Klicktest online | SkillDrills',
+  description: 'Trainiere Zielwechsel und Klickpräzision mit nummerierten Zielen. Kostenloser Aim Trainer im Browser mit Messwerten zu Tempo und Genauigkeit.',
   keywords: [
-    'Sequenz Aim Trainer',
-    'Maus Klick Reihenfolge Test',
-    'Sequentielles Klicken Trainieren',
-    'Nummerierte Ziele Klicken',
-    'Target Switching Drill',
-    'Finger Schnelligkeitstest',
-    'Motorische Sequenzkontrolle',
-    'Aim Trainer Zielreihenfolge',
-    'Klick Präzision Online',
-    'FPS Zielwechsel Training',
+    'Aim Trainer Zielwechsel',
+    'Klicktest online',
+    'Zielwechsel Training',
     'Klickgeschwindigkeit Test',
-    'Tastatur Finger Koordination',
+    'nummerierte Ziele klicken',
+    'Aim Training Präzision',
+    'Maus Zielwechsel',
+    'Klickgenauigkeit online',
+    'Maus Reaktionszeit Test',
+    'Feinmotorik Training',
+    'Zielerfassung Training',
+    'Sequenz Klicktest',
   ],
   openGraph: {
-    title: 'Sequenz Aim Trainer – Klick-Tempo Test | SkillDrills',
-    description: 'Kostenloser Sequenz Aim Trainer: Teste Zielwechsel-Geschwindigkeit und Klick-Präzision auf nummerierte Ziele. Verbessere serielles Zielen ohne Download.',
+    title: 'Aim Trainer Zielwechsel | Klicktest online | SkillDrills',
+    description: 'Trainiere Zielwechsel und Klickpräzision mit nummerierten Zielen direkt im Browser.',
     type: 'article',
     url: 'https://skilldrills.online/de/drills/motor/movement-speed/finger-sequencing',
     siteName: 'SkillDrills',
@@ -32,8 +32,8 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Sequenz Aim Trainer – Klick-Tempo Test | SkillDrills',
-    description: 'Kostenloser Sequenz Aim Trainer: Teste Zielwechsel-Geschwindigkeit und Klick-Präzision auf nummerierte Ziele.',
+    title: 'Aim Trainer Zielwechsel | Klicktest online | SkillDrills',
+    description: 'Kostenloser Aim Trainer für Zielwechsel und Klickpräzision.',
   },
   robots: { index: true, follow: true },
   alternates: {
@@ -49,39 +49,42 @@ const breadcrumbSchema = {
     { '@type': 'ListItem', position: 1, name: 'SkillDrills', item: 'https://skilldrills.online/de' },
     { '@type': 'ListItem', position: 2, name: 'Motorik Training', item: 'https://skilldrills.online/de/drills/motor' },
     { '@type': 'ListItem', position: 3, name: 'Bewegungsgeschwindigkeit', item: 'https://skilldrills.online/de/drills/motor/movement-speed' },
-    { '@type': 'ListItem', position: 4, name: 'Sequenz Aim Trainer', item: 'https://skilldrills.online/de/drills/motor/movement-speed/finger-sequencing' },
+    { '@type': 'ListItem', position: 4, name: 'Aim Trainer Zielwechsel', item: 'https://skilldrills.online/de/drills/motor/movement-speed/finger-sequencing' },
   ],
 };
 
 const softwareApplicationSchema = {
   '@context': 'https://schema.org',
   '@type': 'SoftwareApplication',
-  name: 'Sequenz Aim Trainer – Klick-Geschwindigkeit Test',
+  inLanguage: 'de-DE',
+  name: 'Aim Trainer Zielwechsel – Klicktest online',
   applicationCategory: 'HealthApplication',
   operatingSystem: 'All',
   offers: { '@type': 'Offer', price: '0', priceCurrency: 'EUR' },
   description: 'Kostenloser browserbasierter Sequenz-Aim-Trainer und Fingertempo-Test. Trainiere serielle Zielakquise, Pfadplanung und Klick-Timing.',
   url: 'https://skilldrills.online/de/drills/motor/movement-speed/finger-sequencing',
   publisher: { '@type': 'Organization', name: 'SkillDrills', url: 'https://skilldrills.online' },
-  dateModified: '2026-09-05',
+  dateModified: '2026-09-20',
 };
 
 const webApplicationSchema = {
   '@context': 'https://schema.org',
   '@type': 'WebApplication',
-  name: 'Sequenz Aim Trainer',
+  inLanguage: 'de-DE',
+  name: 'Aim Trainer Zielwechsel',
   applicationCategory: 'GameApplication',
   operatingSystem: 'All',
   browserRequirements: 'Benötigt HTML5 Canvas und JavaScript-Unterstützung',
   offers: { '@type': 'Offer', price: '0', priceCurrency: 'EUR' },
   url: 'https://skilldrills.online/de/drills/motor/movement-speed/finger-sequencing',
-  dateModified: '2026-09-05',
+  dateModified: '2026-09-20',
 };
 
 const videoGameSchema = {
   '@context': 'https://schema.org',
   '@type': 'VideoGame',
-  name: 'Sequenz Aim Trainer – Finger Schnelligkeitstest',
+  inLanguage: 'de-DE',
+  name: 'Aim Trainer Zielwechsel – Finger-Schnelligkeitstest',
   url: 'https://skilldrills.online/de/drills/motor/movement-speed/finger-sequencing',
   description: 'Messe die Geschwindigkeit deines Zielwechsels in fester Reihenfolge auf Basis serieller motorischer Programme.',
   genre: ['Aim Game', 'Action', 'Esports Training'],
@@ -93,6 +96,8 @@ const videoGameSchema = {
 const faqSchema = {
   '@context': 'https://schema.org',
   '@type': 'FAQPage',
+  inLanguage: 'de-DE',
+  dateModified: '2026-09-20',
   mainEntity: [
     {
       '@type': 'Question',
@@ -180,6 +185,8 @@ const faqSchema = {
 const howToSchema = {
   '@context': 'https://schema.org',
   '@type': 'HowTo',
+  inLanguage: 'de-DE',
+  dateModified: '2026-09-20',
   name: 'So trainierst du sequentielles Zielen und Fingertempo',
   description: 'Schritt-für-Schritt-Anleitung zur Beherrschung geordneter Mehrfachklicks und schneller Zielwechsel.',
   step: [
@@ -302,14 +309,14 @@ const guideProps = {
 };
 
 const deCopy = {
-  title: "Sequenz-Aim-Trainer",
+  title: "Aim Trainer Zielwechsel",
   desc: "Sequenzielles Target Switching trainiert das präzise Treffen geordneter Ziele in festgelegter Reihenfolge statt des leichtest erreichbaren. Basierend auf den motorischen Sequenzprogrammen nach Lashley (1951) und Keele (1968) werden ballistische Übertragungsbahnen und Mikrokorrekturen geschult.",
   score: "Punkte",
   timeLeft: "Verbleibende Zeit",
   accuracy: "Präzision",
   bestScore: "Bestwert",
   startButtonText: "Training Starten",
-  startSubtitle: "Feinmotorische Präzision & Sequenzielle Zielpfade • 1:1 Roheingabe",
+  startSubtitle: "Zielwechsel und Klickpräzision • 1:1 Roheingabe",
   getReady: "BEREITMACHEN",
   rulesTitle: "Trainingsanleitung & Punktesystem",
   rulesItems: [

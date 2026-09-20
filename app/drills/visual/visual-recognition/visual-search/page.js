@@ -246,7 +246,7 @@ export default function VisualSearchPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(howToSchema) }} />
 
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(videoGameSchema) }} />
-      <VisualSearchClient copy={{ title: "Conjunctive Visual Search Test" }} />
+      <VisualSearchClient copy={{ title: "Conjunctive Visual Search Test", subtitle: "Visual search speed test for finding target letters among distracting symbols and improving selective attention" }} />
 
       <DrillGuide
         eyebrow="Visual Psychophysics & Attentional Architecture"

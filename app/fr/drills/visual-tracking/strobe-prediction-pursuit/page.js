@@ -5,29 +5,30 @@ import { getAlternateLanguages } from '@/lib/i18n/locales';
 import { pickSources } from '@/lib/drillSources';
 
 export const metadata = {
-  title: "Vision Stroboscopique et Prédiction – SkillDrills",
-  description: "Entraînez votre anticipation motrice et la prédiction de trajectoire sous masquage stroboscopique. Test neuro-visuel gratuit pour sportifs et gamers.",
+  title: "Entraînement visuel stroboscopique | SkillDrills",
+  description: "Prévoyez la trajectoire d’une cible masquée par des flashs. Exercice gratuit pour mesurer reprise, erreur et continuité du suivi.",
   keywords: [
-    "entraînement vision stroboscopique",
-    "vision stroboscopique sport réflexes",
-    "exercices anticipation motrice visuelle",
-    "lunettes stroboscopiques entraînement visuel",
-    "occlusion visuelle intermittente sport",
-    "poursuite visuelle avec masquage stroboscopique",
-    "extrapolation de trajectoire visuelle sportive",
-    "entraînement neuro-visuel réflexes",
-    "coordination oculomotrice et anticipation",
-    "test perception visuelle et vitesse de réaction",
-    "exercices pour améliorer anticipation visuelle",
-    "entraînement cognitif perception sportive"
+    "entraînement visuel stroboscopique",
+    "lunettes stroboscopiques entraînement",
+    "vision stroboscopique sport",
+    "vision intermittente entraînement",
+    "poursuite visuelle masquée",
+    "anticipation visuelle sportive",
+    "prédiction de trajectoire visuelle",
+    "erreur de reprise de cible",
+    "continuité du suivi visuel",
+    "entraînement oculomoteur intermittent",
+    "exercice de poursuite sous flashs",
+    "réflexes visuels sport"
   ],
   alternates: {
     canonical: "https://skilldrills.online/fr/drills/visual-tracking/strobe-prediction-pursuit",
-    languages: getAlternateLanguages('drills/visual-tracking/strobe-prediction-pursuit')
+    languages: getAlternateLanguages('/drills/visual-tracking/strobe-prediction-pursuit')
   },
+  robots: { index: true, follow: true },
   openGraph: {
-    title: "Vision Stroboscopique et Prédiction – SkillDrills",
-    description: "Entraînez votre anticipation motrice et la prédiction de trajectoire sous masquage stroboscopique. Test neuro-visuel gratuit pour sportifs et gamers.",
+    title: "Entraînement visuel stroboscopique | SkillDrills",
+    description: "Prévoyez la trajectoire d’une cible masquée par des flashs. Exercice gratuit pour mesurer reprise, erreur et continuité du suivi.",
     url: "https://skilldrills.online/fr/drills/visual-tracking/strobe-prediction-pursuit",
     siteName: "SkillDrills",
     locale: "fr_FR",
@@ -35,8 +36,8 @@ export const metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Vision Stroboscopique et Prédiction – SkillDrills",
-    description: "Entraînez votre anticipation motrice et la prédiction de trajectoire sous masquage stroboscopique. Test neuro-visuel gratuit pour sportifs et gamers."
+    title: "Entraînement visuel stroboscopique | SkillDrills",
+    description: "Prévoyez la trajectoire d’une cible masquée par des flashs. Exercice gratuit pour mesurer reprise, erreur et continuité du suivi."
   }
 };
 
@@ -60,7 +61,8 @@ export default function StrobePredictionPursuitPageFR() {
     "applicationCategory": "HealthApplication",
     "operatingSystem": "Any",
     "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
-    "description": "Entraînement neurocognitif de poursuite visuelle sous impulsions périodiques d occlusion stroboscopique pour sportifs et joueurs compétitifs."
+    "description": "Entraînement neurocognitif de poursuite visuelle sous impulsions périodiques d occlusion stroboscopique pour sportifs et joueurs compétitifs.",
+    "dateModified": "2026-09-20"
   };
 
   const webAppSchema = {
@@ -69,7 +71,8 @@ export default function StrobePredictionPursuitPageFR() {
     "name": "Exercice de Perception et Prédiction Stroboscopique",
     "url": "https://skilldrills.online/fr/drills/visual-tracking/strobe-prediction-pursuit",
     "applicationCategory": "TrainingTool",
-    "browserRequirements": "Requires JavaScript. HTML5 Canvas compatible."
+    "browserRequirements": "JavaScript requis avec compatibilité HTML5 Canvas.",
+    "dateModified": "2026-09-20"
   };
 
   const videoGameSchema = {
@@ -77,7 +80,8 @@ export default function StrobePredictionPursuitPageFR() {
     "@type": "VideoGame",
     "name": "Défi de Vision Stroboscopique et Extrapolation",
     "gamePlatform": "Web Browser",
-    "genre": ["Visual Training", "Cognitive Drill", "Esports Reflex"]
+    "genre": ["Entraînement visuel", "Exercice cognitif", "Réflexes pour l esport"],
+    "dateModified": "2026-09-20"
   };
 
   const howToSchema = {
@@ -85,6 +89,7 @@ export default function StrobePredictionPursuitPageFR() {
     "@type": "HowTo",
     "name": "Comment Entraîner l Anticipation Visuelle sous Occlusion Stroboscopique",
     "description": "Protocole pour stimuler le modèle interne cérébelleux par des impulsions d obscurité intermittente.",
+    "dateModified": "2026-09-20",
     "step": [
       {
         "@type": "HowToStep",
@@ -112,6 +117,7 @@ export default function StrobePredictionPursuitPageFR() {
   const faqSchema = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
+    "dateModified": "2026-09-20",
     "mainEntity": [
       {
         "@type": "Question",
@@ -242,10 +248,10 @@ export default function StrobePredictionPursuitPageFR() {
       ]
     },
     steps: [
-      "Fixez le centre de la cible circulaire et suivez son déplacement initial continu.",
-      "Durant la coupure stroboscopique, maintenez le déplacement du regard selon la trajectoire projetée.",
-      "À la réapparition de la cible, constatez l écart spatial et réajustez votre geste avec fluidité.",
-      "Rehaussez le niveau de difficulté en augmentant la vitesse dès que votre précision masquée dépasse 70%."
+      { title: "Fixez la cible pendant la lumière", text: "Suivez le déplacement initial et mémorisez sa direction et sa vitesse sans bouger la tête." },
+      { title: "Continuez pendant l extinction", text: "Quand la cible disparaît, maintenez le regard sur la trajectoire prévue sans vous arrêter ni chercher au hasard." },
+      { title: "Vérifiez l écart au rallumage", text: "Observez si le regard arrive avant ou après la cible, puis corrigez doucement le cycle suivant." },
+      { title: "Augmentez la difficulté progressivement", text: "Travaillez par blocs courts et augmentez la vitesse seulement lorsque la précision masquée reste stable." }
     ],
     audience: "Sportifs de balle et de raquette, pilotes, joueurs compétitifs d esport (FPS/MOBA) et professionnels exigeant une anticipation visuo-spatiale d exception.",
     faqs: faqSchema.mainEntity.map(item => ({
@@ -284,9 +290,9 @@ export default function StrobePredictionPursuitPageFR() {
 
       <StrobePredictionPursuitClient
         copy={{
-          title: "Vision Stroboscopique et Prédiction",
-          subtitle: "Entraînement Oculomoteur avec Occlusion Périodique",
-          description: "Entraînez l anticipation visuelle et l extrapolation cinématique par impulsions stroboscopiques régulières. Conditionnez votre modèle cérébelleux à reconstruire des trajectoires invisibles avec une précision chirurgicale."
+          title: "Entraînement visuel stroboscopique",
+          subtitle: "Prédiction visuelle sous masquage intermittent",
+          description: "Prévoyez la trajectoire d’une cible masquée par des flashs et mesurez l’erreur de reprise et la continuité du suivi."
         }}
       />
       <DrillGuide guide={guide} />

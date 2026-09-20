@@ -2,6 +2,7 @@ import ConcentrationGridClient from '@/app/drills/cognitive/focus/concentration-
 import { getAlternateLanguages } from '@/lib/i18n/locales';
 import DrillGuide from '@/components/drill/DrillGuide';
 import RelatedDrills from '@/components/drill/RelatedDrills';
+import DrillFooter from '@/components/drill/DrillFooter';
 import { pickSources } from '@/lib/drillSources';
 
 // ============================================================
@@ -17,8 +18,8 @@ import { pickSources } from '@/lib/drillSources';
 // ============================================================
 
 export const metadata = {
-  title: "シュルテテーブル – 無料ブラウザ周辺視野・集中力トレーニング | SkillDrills",
-  description: "無料のオンラインシュルテテーブル（Schulte Table）練習ツール。拡大するグリッド（3×3〜8×8）上の数字を連続タップし、速読に必要な周辺視野拡大、視覚探索速度、持続的集中力を鍛えます。",
+  title: "シュルテテーブル | 集中力グリッド練習 | SkillDrills",
+  description: "無料ブラウザのシュルテテーブルで数字を順番に探します。周辺視野と視覚探索を練習する非臨床のセルフチェックです。",
   keywords: [
     "シュルテテーブル",
     "シュルテテーブル 効果",
@@ -74,7 +75,7 @@ const webAppSchema = {
   "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
   "author": { "@type": "Organization", "name": "SkillDrills" },
   "isAccessibleForFree": true,
-  "dateModified": "2026-09-11",
+  "dateModified": "2026-09-20",
   "educationalUse": ["視覚探索速度", "周辺視野拡大", "サッケード効率", "持続的注意集中"]
 };
 
@@ -96,7 +97,7 @@ const videoGameSchema = {
   "name": "シュルテテーブル (Schulte Table / Concentration Grid)",
   "url": "https://skilldrills.online/ja/drills/cognitive/focus/concentration-grid",
   "description": "拡大するグリッド上の連番数字を素早く見つけてタップし、周辺視野の拡大と視覚探索速度、持続的集中力を鍛える無料ブラウザトレーニングツール。",
-  "dateModified": "2026-09-11",
+  "dateModified": "2026-09-20",
   "gamePlatform": "Web Browser",
   "genre": ["認知トレーニング", "周辺視野", "シュルテテーブル", "集中力グリッド"],
   "playMode": "SinglePlayer",
@@ -145,7 +146,7 @@ const howToSchema = {
 const faqSchema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
-  "dateModified": "2026-09-11",
+  "dateModified": "2026-09-20",
   "mainEntity": [
     {
       "@type": "Question",
@@ -368,6 +369,7 @@ export default function ConcentrationGridPageJa() {
       <div className="max-w-6xl w-full mx-auto px-4 pb-12">
         <RelatedDrills currentCategory="cognitive" currentHref="/drills/cognitive/focus/concentration-grid" locale="ja" />
       </div>
+      <DrillFooter />
     </>
   );
 }

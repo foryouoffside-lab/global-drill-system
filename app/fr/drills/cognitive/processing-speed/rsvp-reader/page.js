@@ -2,28 +2,16 @@ import RSVPReaderClient from '@/app/drills/cognitive/processing-speed/rsvp-reade
 import { getAlternateLanguages } from '@/lib/i18n/locales';
 import DrillGuide from '@/components/drill/DrillGuide';
 import RelatedDrills from '@/components/drill/RelatedDrills';
+import DrillFooter from '@/components/drill/DrillFooter';
 import { pickSources } from '@/lib/drillSources';
 
 export const metadata = {
-  title: "Lecteur RSVP – Test de Vitesse de Lecture WPM | SkillDrills",
-  description: "Lecteur RSVP et test de lecture rapide en ligne gratuit: Éliminez les saccades oculaires et entraînez votre vitesse de traitement lexical jusqu à 850 MPM.",
-  keywords: [
-    "lecteur rsvp",
-    "lecture rapide en ligne",
-    "test de vitesse de lecture",
-    "présentation visuelle sérielle rapide",
-    "test mots par minute wpm",
-    "point de reconnaissance optimal orp",
-    "entraînement lecture rapide gratuit",
-    "traitement lexical visuel",
-    "lecteur rsvp en ligne gratuit",
-    "exercice de lecture rapide",
-    "test compréhension de lecture",
-    "vitesse de lecture test gratuit"
-  ],
+  title: "Lecture rapide | Lecteur RSVP | SkillDrills",
+  description: "Entraînement de lecture rapide gratuit : traitez les mots à un point fixe et suivez les MPM et la précision. Ce n’est pas un test clinique.",
+  keywords: ["lecture rapide", "test vitesse de lecture", "vitesse de lecture", "lecteur rapide en ligne", "RSVP lecture", "mots par minute", "entraînement lecture rapide"],
   openGraph: {
-    title: "Lecteur RSVP – Test de Vitesse de Lecture WPM | SkillDrills",
-    description: "Lecteur RSVP et test de lecture rapide en ligne gratuit: Éliminez les saccades oculaires et entraînez votre vitesse de traitement lexical jusqu à 850 MPM.",
+    title: "Lecture rapide | Lecteur RSVP | SkillDrills",
+    description: "Entraînement de lecture rapide gratuit : traitez les mots à un point fixe et suivez les MPM et la précision. Ce n’est pas un test clinique.",
     type: 'article',
     url: 'https://skilldrills.online/fr/drills/cognitive/processing-speed/rsvp-reader',
     siteName: 'SkillDrills',
@@ -31,8 +19,8 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: "Lecteur RSVP – Test de Vitesse de Lecture WPM | SkillDrills",
-    description: "Lecteur RSVP et test de lecture rapide en ligne gratuit: Éliminez les saccades oculaires et entraînez votre vitesse de traitement lexical jusqu à 850 MPM.",
+    title: "Lecture rapide | Lecteur RSVP | SkillDrills",
+    description: "Entraînement de lecture rapide gratuit : traitez les mots à un point fixe et suivez les MPM et la précision. Ce n’est pas un test clinique.",
   },
   robots: { index: true, follow: true },
   alternates: {
@@ -91,7 +79,7 @@ const softwareApplicationSchema = {
     "url": "https://skilldrills.online"
   },
   "inLanguage": "fr-FR",
-  "dateModified": "2026-09-16"
+  "dateModified": "2026-09-20"
 };
 
 const webApplicationSchema = {
@@ -108,7 +96,7 @@ const webApplicationSchema = {
   },
   "url": "https://skilldrills.online/fr/drills/cognitive/processing-speed/rsvp-reader",
   "inLanguage": "fr-FR",
-  "dateModified": "2026-09-16"
+  "dateModified": "2026-09-20"
 };
 
 const videoGameSchema = {
@@ -128,6 +116,7 @@ const videoGameSchema = {
     "Mobile"
   ],
   "applicationCategory": "Game",
+  "dateModified": "2026-09-20",
   "offers": {
     "@type": "Offer",
     "price": "0",
@@ -326,11 +315,38 @@ export default function EnhancedPageFr() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(howToSchema) }}
       />
-      <RSVPReaderClient copy={{ title: "Lecteur RSVP – Test de Vitesse de Lecture" }} />
+      <RSVPReaderClient
+        copy={{
+          title: "Lecture rapide",
+          subtitle: "Traitez les mots à un point fixe et entraînez votre vitesse de lecture",
+          startTitle: "Entraînement RSVP",
+          startSubtitle: "Reconnaissance des mots • Focalisation ORP",
+          stageCaption: "Les mots apparaissent au centre. Appuyez quand le mot cible s’affiche.",
+          rulesTitle: "Instructions de l’exercice et score",
+          aboutTitle: "Qu’est-ce que la lecture RSVP ?",
+          faqTitle: "Questions fréquentes",
+          labels: { score: "Score", time: "Temps", speed: "Vitesse", bestScore: "Meilleur score", timeLeft: "Temps restant", targetWord: "Mot cible", detected: "CIBLE DÉTECTÉE", ready: "PRÉPAREZ-VOUS", accuracy: "Précision", hits: "Réussites", errors: "Erreurs", points: "Points", playAgain: "Rejouer" },
+          aboutLead: "Le RSVP affiche les mots un par un au même endroit de l’écran. Cela réduit une partie des mouvements oculaires, mais la compréhension peut baisser quand le rythme augmente.",
+          aboutText: "Cet exercice entraîne la reconnaissance des mots au point optimal de reconnaissance (ORP). Les MPM décrivent le rythme d’affichage ; la latence de l’écran et du toucher influence aussi le résultat. 850 MPM est le niveau maximal de cet exercice, pas une promesse de compréhension générale à cette vitesse.",
+          aboutCards: [
+            { title: "À qui s’adresse cet exercice ?", desc: "Aux étudiants, professionnels et lecteurs réguliers qui souhaitent pratiquer la lecture rapide." },
+            { title: "Quelles capacités sont entraînées ?", desc: "La reconnaissance des mots, la mémoire de travail et l’attention soutenue face à un flux visuel rapide." },
+            { title: "Vitesse progressive", desc: "Cinq niveaux de 250 à 850 MPM augmentent le rythme pendant que vous surveillez la précision." }
+          ],
+          rulesItems: [
+            { num: "1", text: "Mot cible", highlight: "Bannière supérieure", result: "Le repérer dans le flux central" },
+            { num: "2", text: "Focalisation ORP", highlight: "Limiter les mouvements des yeux", result: "Lire au même endroit" },
+            { num: "3", text: "Cible détectée", highlight: "+100 points", result: "Appuyer sur le bouton de détection" },
+            { num: "4", text: "Niveau de vitesse", highlight: "250 → 850 MPM", result: "Cinq niveaux de difficulté" }
+          ],
+          faqItems: faqSchema.mainEntity.map((e) => ({ q: e.name, a: e.acceptedAnswer.text }))
+        }}
+      />
       <DrillGuide {...guideProps} />
       <div className="max-w-6xl mx-auto px-4 pb-12">
         <RelatedDrills currentCategory="cognitive" currentHref="https://skilldrills.online/fr/drills/cognitive/processing-speed/rsvp-reader" />
       </div>
+      <DrillFooter />
     </>
   );
 }

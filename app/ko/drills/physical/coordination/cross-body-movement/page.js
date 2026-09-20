@@ -20,27 +20,27 @@ import { pickSources } from '@/lib/drillSources';
 // ============================================================
 
 export const metadata = {
-  title: "눈 손 협응력 테스트 & 협응 운동 게임 – 무료 대각선 제어 훈련 | SkillDrills",
-  description: "무료 온라인 눈 손 협응력 테스트 및 협응 운동 게임. 화면 중앙 정중선을 가로지르는 대각선 노드를 신속·정확하게 연결하여 양측성 신경근 제어와 뇌량 활성화, 정밀 마우스 플릭을 과학적으로 단련합니다.",
+  title: "눈 손 협응력 테스트 | 협응력 게임 | SkillDrills",
+  description: "무료 눈 손 협응력 테스트와 협응력 게임. 신체 정중선을 가로지르는 대각선 노드를 연결하며 양측성 운동 제어와 마우스 정밀도를 훈련합니다.",
   keywords: [
     "눈 손 협응력 테스트",
     "손 눈 협응력",
     "협응력 테스트",
     "협응력 게임",
     "협응력 운동",
-    "눈-손 협응력 검사",
+    "눈 손 협응력 검사",
     "양측성 협응 훈련",
     "정중선 교차 훈련",
-    "마우스 대각선 플릭",
-    "신체 협응력"
+    "눈 손 협응 운동",
+    "마우스 대각선 움직임"
   ],
   alternates: {
     canonical: 'https://skilldrills.online/ko/drills/physical/coordination/cross-body-movement',
     languages: getAlternateLanguages('/drills/physical/coordination/cross-body-movement'),
   },
   openGraph: {
-    title: "눈 손 협응력 테스트 & 협응 운동 게임 – 무료 대각선 제어 훈련 | SkillDrills",
-    description: "무료 온라인 눈 손 협응력 테스트 및 협응 운동 게임. 화면 중앙 정중선을 가로지르는 대각선 노드를 신속·정확하게 연결하여 양측성 신경근 제어와 뇌량 활성화, 정밀 마우스 플릭을 과학적으로 단련합니다.",
+    title: "눈 손 협응력 테스트 | 협응력 게임 | SkillDrills",
+    description: "무료 눈 손 협응력 테스트와 협응력 게임. 신체 정중선을 가로지르는 대각선 노드를 연결하며 양측성 운동 제어와 마우스 정밀도를 훈련합니다.",
     url: 'https://skilldrills.online/ko/drills/physical/coordination/cross-body-movement',
     siteName: 'SkillDrills',
     locale: 'ko_KR',
@@ -48,8 +48,8 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: "눈 손 협응력 테스트 & 협응 운동 게임 – 무료 대각선 제어 훈련 | SkillDrills",
-    description: "무료 온라인 눈 손 협응력 테스트 및 협응 운동 게임. 화면 중앙 정중선을 가로지르는 대각선 노드를 신속·정확하게 연결하여 양측성 신경근 제어와 뇌량 활성화, 정밀 마우스 플릭을 과학적으로 단련합니다.",
+    title: "눈 손 협응력 테스트 | 협응력 게임 | SkillDrills",
+    description: "무료 눈 손 협응력 테스트와 협응력 게임. 신체 정중선을 가로지르는 대각선 노드를 연결하며 양측성 운동 제어와 마우스 정밀도를 훈련합니다.",
   },
   robots: { index: true, follow: true },
 };
@@ -104,7 +104,7 @@ const softwareApplicationSchema = {
     "url": "https://skilldrills.online/ko"
   },
   "inLanguage": "ko",
-  "dateModified": "2026-09-12"
+  "dateModified": "2026-09-20"
 };
 
 const webApplicationSchema = {
@@ -121,7 +121,7 @@ const webApplicationSchema = {
   },
   "url": "https://skilldrills.online/ko/drills/physical/coordination/cross-body-movement",
   "inLanguage": "ko",
-  "dateModified": "2026-09-12"
+  "dateModified": "2026-09-20"
 };
 
 const videoGameSchema = {
@@ -142,6 +142,8 @@ const videoGameSchema = {
     "Mobile"
   ],
   "applicationCategory": "Game",
+  "inLanguage": "ko",
+  "dateModified": "2026-09-20",
   "offers": {
     "@type": "Offer",
     "price": "0",
@@ -152,7 +154,8 @@ const videoGameSchema = {
 const faqSchema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
-  "dateModified": "2026-09-12",
+  "inLanguage": "ko",
+  "dateModified": "2026-09-20",
   "mainEntity": [
     {
       "@type": "Question",
@@ -360,8 +363,8 @@ export default function CrossBodyMovementPageKo() {
       />
       <CrossBodyMovementClient
         copy={{
-          title: "눈 손 협응력 테스트 & 협응 운동",
-          subtitle: "신체 정중선 교차 및 양측성 운동 제어 훈련 • 15레벨",
+          title: "눈 손 협응력 테스트",
+          subtitle: "정중선을 가로지르는 대각선 제어 • 15레벨",
           rulesTitle: "눈 손 협응력 훈련 규칙 및 점수 체계",
           rules: [
             { title: "시작 노드 활성화", text: "화면 가장자리에 표시되는 하늘색 시작 노드(A)를 클릭하여 연결 벡터를 활성화합니다." },

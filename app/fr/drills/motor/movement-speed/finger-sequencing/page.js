@@ -6,25 +6,25 @@ import DrillFooter from '@/components/drill/DrillFooter';
 import { pickSources } from '@/lib/drillSources';
 
 export const metadata = {
-  title: 'Aim Trainer Séquentiel – Vitesse des Doigts | SkillDrills',
-  description: 'Entraîneur de visée séquentielle gratuit. Améliorez la vitesse de transition entre cibles ordonnées, la motricité des doigts et la précision du clic.',
+  title: 'Entraînement de visée | Cibles ordonnées | SkillDrills',
+  description: 'Cliquez des cibles numérotées dans l’ordre pour mesurer vos transitions et votre précision. Entraînement de visée gratuit dans le navigateur.',
   keywords: [
-    'aim trainer sequentiel',
-    'entrainement de visee en sequence',
-    'test de vitesse des doigts',
-    'clics sequentiels test',
-    'target switching entrainement',
-    'changement rapide de cible souris',
-    'exercices de visee valorant cs2',
-    'coordination motrice des doigts',
-    'precision de clic en ligne',
-    'test de vitesse de clic souris',
-    'vitesse de frappe et precision',
-    'entrainement reflexe moteur souris',
+    'entraînement de visée',
+    'cibles ordonnées',
+    'changement de cible',
+    'test de précision de clic',
+    'vitesse de clic souris',
+    'aim trainer français',
+    'visée FPS',
+    'clic séquentiel',
+    'test de rapidité souris',
+    'coordination main œil',
+    'précision du curseur',
+    'entraînement de réflexe souris',
   ],
   openGraph: {
-    title: 'Aim Trainer Séquentiel – Vitesse des Doigts | SkillDrills',
-    description: 'Entraîneur de visée séquentielle gratuit. Améliorez la vitesse de transition entre cibles ordonnées, la motricité des doigts et la précision du clic.',
+    title: 'Entraînement de visée | Cibles ordonnées | SkillDrills',
+    description: 'Mesurez vos transitions entre cibles numérotées et votre précision de clic dans le navigateur.',
     type: 'article',
     url: 'https://skilldrills.online/fr/drills/motor/movement-speed/finger-sequencing',
     siteName: 'SkillDrills',
@@ -32,8 +32,8 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Aim Trainer Séquentiel – Vitesse des Doigts | SkillDrills',
-    description: 'Entraîneur de visée séquentielle gratuit. Améliorez la vitesse de transition entre cibles ordonnées.',
+    title: 'Entraînement de visée | Cibles ordonnées | SkillDrills',
+    description: 'Entraînement gratuit pour changer de cible et cliquer avec précision.',
   },
   robots: { index: true, follow: true },
   alternates: {
@@ -49,39 +49,42 @@ const breadcrumbSchema = {
     { '@type': 'ListItem', position: 1, name: 'SkillDrills', item: 'https://skilldrills.online/fr' },
     { '@type': 'ListItem', position: 2, name: 'Contrôle Moteur', item: 'https://skilldrills.online/fr/drills/motor' },
     { '@type': 'ListItem', position: 3, name: 'Vitesse de Mouvement', item: 'https://skilldrills.online/fr/drills/motor/movement-speed' },
-    { '@type': 'ListItem', position: 4, name: 'Aim Trainer Séquentiel', item: 'https://skilldrills.online/fr/drills/motor/movement-speed/finger-sequencing' },
+    { '@type': 'ListItem', position: 4, name: 'Entraînement de Visée', item: 'https://skilldrills.online/fr/drills/motor/movement-speed/finger-sequencing' },
   ],
 };
 
 const softwareApplicationSchema = {
   '@context': 'https://schema.org',
   '@type': 'SoftwareApplication',
-  name: 'Aim Trainer Séquentiel – Vitesse des Doigts',
+  inLanguage: 'fr-FR',
+  name: 'Entraînement de Visée – Test de Cibles Ordonnées',
   applicationCategory: 'HealthApplication',
   operatingSystem: 'All',
   offers: { '@type': 'Offer', price: '0', priceCurrency: 'EUR' },
   description: 'Entraîneur de visée séquentielle gratuit sur navigateur. Évaluez la rapidité d’acquisition de cibles ordonnées, la trajectoire du curseur et l’agilité des doigts.',
   url: 'https://skilldrills.online/fr/drills/motor/movement-speed/finger-sequencing',
   publisher: { '@type': 'Organization', name: 'SkillDrills', url: 'https://skilldrills.online' },
-  dateModified: '2026-09-05',
+  dateModified: '2026-09-20',
 };
 
 const webApplicationSchema = {
   '@context': 'https://schema.org',
   '@type': 'WebApplication',
-  name: 'Aim Trainer Séquentiel',
+  inLanguage: 'fr-FR',
+  name: 'Entraînement de Visée Séquentielle',
   applicationCategory: 'GameApplication',
   operatingSystem: 'All',
   browserRequirements: 'Nécessite le support HTML5 Canvas et JavaScript',
   offers: { '@type': 'Offer', price: '0', priceCurrency: 'EUR' },
   url: 'https://skilldrills.online/fr/drills/motor/movement-speed/finger-sequencing',
-  dateModified: '2026-09-05',
+  dateModified: '2026-09-20',
 };
 
 const videoGameSchema = {
   '@context': 'https://schema.org',
   '@type': 'VideoGame',
-  name: 'Aim Trainer Séquentiel – Test de Doigts',
+  inLanguage: 'fr-FR',
+  name: 'Entraînement de Visée – Test de Cibles',
   url: 'https://skilldrills.online/fr/drills/motor/movement-speed/finger-sequencing',
   description: 'Mesurez la rapidité de transition entre cibles ordonnées selon des programmes moteurs sériels.',
   genre: ['Aim Game', 'Action', 'Esports Training'],
@@ -93,6 +96,8 @@ const videoGameSchema = {
 const faqSchema = {
   '@context': 'https://schema.org',
   '@type': 'FAQPage',
+  inLanguage: 'fr-FR',
+  dateModified: '2026-09-20',
   mainEntity: [
     {
       '@type': 'Question',
@@ -180,6 +185,8 @@ const faqSchema = {
 const howToSchema = {
   '@context': 'https://schema.org',
   '@type': 'HowTo',
+  inLanguage: 'fr-FR',
+  dateModified: '2026-09-20',
   name: 'Comment S’entraîner au Clic Séquentiel et Développer sa Vitesse',
   description: 'Guide étape par étape pour maîtriser l’acquisition rapide de cibles multiples ordonnées.',
   step: [
@@ -302,14 +309,14 @@ const guideProps = {
 };
 
 const frCopy = {
-  title: "Aim Trainer Séquentiel",
+  title: "Entraînement de Visée",
   desc: "Le changement séquentiel de cibles entraîne le clic précis sur des cibles ordonnées numériquement plutôt que sur la cible la plus accessible. Fondé sur les programmes moteurs sériels de Lashley (1951) et Keele (1968), il optimise les trajectoires balistiques et les micro-ajustements de visée.",
   score: "Score",
   timeLeft: "Temps Restant",
   accuracy: "Précision",
   bestScore: "Meilleur Score",
   startButtonText: "Démarrer l'Entraînement",
-  startSubtitle: "Précision Motrice et Trajectoires Séquentielles • Entrée Brute 1:1",
+  startSubtitle: "Changement de cible et clic précis • Entrée brute 1:1",
   getReady: "PRÉPAREZ-VOUS",
   rulesTitle: "Instructions de l'Exercice et Système de Points",
   rulesItems: [

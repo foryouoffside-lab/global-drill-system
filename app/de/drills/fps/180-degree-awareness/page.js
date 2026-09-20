@@ -20,21 +20,19 @@ import DrillFooter from '@/components/drill/DrillFooter';
 // ============================================================
 
 export const metadata = {
-  title: "180 Grad Aiming – FPS Snap Turn Trainer | SkillDrills",
-  description: "Kostenloses 180-Grad-Aim-Training im Browser: Trainiere schnelle 180°-Drehungen, peripheres Sehen und Flashbang-Reaktionen für CS2, Valorant und Apex.",
+  title: "180-Grad-Aim-Training | FPS-Drehung | SkillDrills",
+  description: "Kostenloses 180-Grad-Aim-Training im Browser: Übe peripheres Sehen, schnelle Drehungen und sauberes Abstoppen für FPS-Spiele.",
   keywords: [
-    "180 Grad Aiming",
-    "180 Grad Drehung Übung FPS",
-    "Mauspad Reset Übungen",
-    "Flanken Reaktionszeit FPS",
-    "180 Grad Schnappschuss Übung",
-    "Flashbang Ausweichen CS2",
-    "Peripheres Sehen Aiming",
-    "Schnelle Drehung FPS Maus",
-    "Weitwinkel Zielwechsel Maus",
-    "Arm Aiming 180 Drehung",
-    "Rückwärtige Zielerfassung FPS",
-    "Umsehen Geschwindigkeit FPS"
+    "180 Grad Aim Training",
+    "180-Grad-Drehung FPS",
+    "peripheres Sehen FPS",
+    "Arm-Aiming",
+    "Zielwechsel FPS",
+    "Mauspad Reset Übung",
+    "schnelle Drehung FPS Maus",
+    "180 Grad Flick Training",
+    "Flashbang ausweichen CS2",
+    "Aim Trainer online"
   ],
   alternates: {
     canonical: "https://skilldrills.online/de/drills/fps/180-degree-awareness",
@@ -45,8 +43,8 @@ export const metadata = {
     follow: true,
   },
   openGraph: {
-    title: "180 Grad Aiming – FPS Snap Turn Trainer | SkillDrills",
-    description: "Kostenloses 180-Grad-Aim-Training im Browser: Trainiere schnelle 180°-Drehungen, peripheres Sehen und Flashbang-Reaktionen für CS2, Valorant und Apex.",
+    title: "180-Grad-Aim-Training | FPS-Drehung | SkillDrills",
+    description: "Übe peripheres Sehen, schnelle 180-Grad-Drehungen und sauberes Abstoppen im kostenlosen Browser-Trainer.",
     url: "https://skilldrills.online/de/drills/fps/180-degree-awareness",
     siteName: 'SkillDrills',
     locale: 'de_DE',
@@ -54,8 +52,8 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: "180 Grad Aiming – FPS Snap Turn Trainer | SkillDrills",
-    description: "Kostenloses 180-Grad-Aim-Training im Browser: Trainiere schnelle 180°-Drehungen, peripheres Sehen und Flashbang-Reaktionen für CS2, Valorant und Apex.",
+    title: "180-Grad-Aim-Training | FPS-Drehung | SkillDrills",
+    description: "Übe peripheres Sehen, schnelle 180-Grad-Drehungen und sauberes Abstoppen im kostenlosen Browser-Trainer.",
   },
 };
 
@@ -101,7 +99,7 @@ export default function AwarenessDrillDePage() {
   const faqSchema = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
-    "dateModified": "2026-09-15",
+    "dateModified": "2026-09-20",
     "mainEntity": [
       {
         "@type": "Question",
@@ -220,10 +218,10 @@ export default function AwarenessDrillDePage() {
   };
 
   const awarenessGuideDe = {
-    heading: "180-Grad-Aiming & Raumwahrnehmung – Wissenschaftlicher Trainingsleitfaden",
+    heading: "180-Grad-Aim-Training & Raumwahrnehmung – Trainingsleitfaden",
     subtitle: "Optimiere periphere Zielerfassung, großwinklige Arm-Flicks und Bremskraft für dominante Clutches in taktischen FPS-Titeln",
     intro: [
-      "Eine 180-Grad-Drehung (Snap Turn) ist die motorisch anspruchsvollste Einzelleistung im Wettkampf-Shooter. Sie erfordert das synchrone Zusammenspiel aus peripherer Reizwahrnehmung, sakkadischer Blickumkehr und einem großwinkligen ballistischen Armschwung. In der menschlichen Netzhaut sind die lichtempfindlichen Stäbchenzellen in der Peripherie darauf spezialisiert, selbst minimale Helligkeits- und Bewegungsimpulse bis zu 90 Grad außerhalb des Sehzentrums wahrzunehmen (Rayner, 1998; Leigh & Zee, 2015). Über den Colliculus Superior im Mittelhirn wird daraufhin innerhalb von 140 bis 190 Millisekunden eine reflektorische Ausrichtungs-Sakkade ausgelöst.",
+      "180-Grad-Aim-Training bedeutet: einen Reiz am Bildschirmrand peripher wahrnehmen, mit einer großen Mausbewegung drehen und das Fadenkreuz auf dem Ziel sauber stoppen. Der Drill zerlegt die Reaktion auf Flanken in erkennbare Schritte und macht vor allem die Qualität des Abbremsens messbar; eine schnelle Drehung allein ist kein guter Treffer.",
       "Die biomechanische Ausführung einer 180-Grad-Drehung folgt dem Zwei-Komponenten-Modell zielgerichteter Bewegungen (Elliott et al., 2010). Aus Schulter und Ellenbogen wird ein ungeführter, ballistischer Schwung (Open-Loop) generiert, der rund 80 bis 90 Prozent der Gesamtdistanz abdeckt. Unmittelbar vor Erreichen der Zielzone greift die Antagonisten-Muskulatur (Schmidt et al., 1979) und bremst die Trägheit des Arms ab. Nach Fitts' Gesetz (Fitts, 1954) steigt die Schwierigkeit mit der Weite des Sprungs logarithmisch an: Je größer der Drehwinkel, desto kritischer ist eine exakt dosierte Bremsung zur Vermeidung zeitraubender Korrekturen.",
       "Dieser Trainer schult die synchrone Abstimmung von physischem Mauspad-Raum und virtuellem Raum. Das Gehirn lernt, wie viele Zentimeter Mausweg auf dem Pad exakt einer 180-Grad-Drehung im Spiel entsprechen. Dies ermöglicht blinde Instinkt-Flicks auf Flankenangreifer und blitzschnelles Abwenden von Flashbangs mit verlässlicher Rückkehr auf die Kopflinie.",
       "Messpräzision & Hardware-Transparenz: Alle Reaktionszeiten werden direkt im Browser über performance.now() mit Mikrosekunden-Auflösung erfasst (Woods et al., 2015). Die Pointer-Lock-API garantiert direkte Rohdaten ohne künstliche Glättung. Beachte die Bildwiederholrate deines Monitors: Ein 144-Hz-Display aktualisiert alle 6,9 ms, ein 240-Hz-Display alle 4,1 ms. Abweichungen unter 5 ms spiegeln systembedingte Frame-Intervalle wider."
@@ -285,9 +283,9 @@ export default function AwarenessDrillDePage() {
   };
 
   const copyDe = {
-    h1Keyword: "180 Grad Aiming",
-    h1Suffix: " – FPS Snap Turn Trainer",
-    subtitle: "Trainiere periphere Reizverarbeitung, großwinklige Flicks und die Endphasen-Bremskraft bei 180°-Drehungen.",
+    h1Keyword: "180 Grad Aim Training",
+    h1Suffix: " – FPS-Drehungs-Trainer",
+    subtitle: "Übe peripheres Sehen, große Arm-Flicks und sauberes Abbremsen bei 180-Grad-Drehungen.",
     statScore: "Punkte",
     statTime: "Zeit",
     statAccuracy: "Präzision",
@@ -353,7 +351,7 @@ export default function AwarenessDrillDePage() {
       <div className="max-w-4xl mx-auto px-4 pb-12">
         <RelatedDrills
           currentCategory="fps"
-          currentHref="/drills/fps/180-degree-awareness"
+          currentHref="/de/drills/fps/180-degree-awareness"
           locale="de"
         />
       </div>

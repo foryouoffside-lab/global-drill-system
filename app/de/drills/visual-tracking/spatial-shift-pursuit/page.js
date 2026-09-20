@@ -1,5 +1,6 @@
 import SpatialShiftPursuitClient from '@/app/drills/visual-tracking/spatial-shift-pursuit/SpatialShiftPursuitClientLoader';
 import DrillGuide from '@/components/drill/DrillGuide';
+import DrillFooter from '@/components/drill/DrillFooter';
 import RelatedDrills from '@/components/drill/RelatedDrills';
 import { getAlternateLanguages } from '@/lib/i18n/locales';
 import { pickSources } from '@/lib/drillSources';
@@ -14,25 +15,25 @@ import { pickSources } from '@/lib/drillSources';
 // ============================================================
 
 export const metadata = {
-  title: "Spatial Shift Blickverfolgung – Sehtraining | SkillDrills",
-  description: "Kostenloses Sehtraining bei verschobenen Referenzrahmen: Trainiere Koordinatentransformation und Ziel-Reakquisition online direkt im Browser.",
+  title: "Blickverfolgung bei Sichtfeldwechsel | SkillDrills",
+  description: "Verfolge ein Ziel trotz verschobenem Sichtfeld. Kostenlose Browserübung mit Reaktionszeit, Wiedererfassung und Positionsabweichung.",
   keywords: [
-    "spatial shift blickverfolgung",
-    "koordinatensystem sehtraining",
-    "blickfeld verschiebung uebungen",
-    "raeumliche aufmerksamkeit training",
-    "parietallappen blicksteuerung",
+    "räumliche Aufmerksamkeit Training",
+    "Blickfeld Verschiebung Übung",
+    "verschobenes Sichtfeld Ziel verfolgen",
+    "Koordinatentransformation Sehtraining",
+    "Ziel wiedererfassen Blickübung",
     "bildschirmwackeln aim training",
-    "referenzrahmen transformation",
-    "retinotopische koordinaten",
-    "ballistische neuzentrierung sakkade",
-    "posteriorer parietalkortex ppc",
-    "blickfeldverschiebung test",
-    "dynamische raumorientierung augen"
+    "räumliche Blickverfolgung",
+    "Sichtfeldwechsel Training",
+    "visuelle Reakquisition",
+    "bewegtes Sichtfeld Übung",
+    "Bildschirmwackeln Aim Training",
+    "Zielverfolgung bei Bildschirmwackeln"
   ],
   openGraph: {
-    title: "Spatial Shift Blickverfolgung – Sehtraining | SkillDrills",
-    description: "Re-zentriere Ziele bei plötzlichen Blickfeldverschiebungen, Bildschirmwackeln und Kameradrehungen ohne Latenzverlust.",
+    title: "Blickverfolgung bei Sichtfeldwechsel | SkillDrills",
+    description: "Verfolge ein Ziel trotz verschobenem Sichtfeld. Kostenlose Browserübung mit Reaktionszeit, Wiedererfassung und Positionsabweichung.",
     type: "website",
     url: "https://skilldrills.online/de/drills/visual-tracking/spatial-shift-pursuit",
     siteName: "SkillDrills",
@@ -40,8 +41,8 @@ export const metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Spatial Shift Blickverfolgung – Sehtraining | SkillDrills",
-    description: "Wissenschaftliches Sehtraining zur okulomotorischen Anpassung an abrupte Raumverschiebungen.",
+    title: "Blickverfolgung bei Sichtfeldwechsel | SkillDrills",
+    description: "Verfolge ein Ziel trotz verschobenem Sichtfeld. Kostenlose Browserübung mit Reaktionszeit, Wiedererfassung und Positionsabweichung.",
   },
   robots: { index: true, follow: true },
   alternates: {
@@ -72,32 +73,33 @@ const softwareApplicationSchema = {
   "url": "https://skilldrills.online/de/drills/visual-tracking/spatial-shift-pursuit",
   "publisher": { "@type": "Organization", "name": "SkillDrills", "url": "https://skilldrills.online/de" },
   "inLanguage": "de",
-  "dateModified": "2026-09-15"
+  "dateModified": "2026-09-20"
 };
 
 const webAppSchema = {
   "@context": "https://schema.org",
   "@type": "WebApplication",
-  "name": "Spatial Shift Tracker (SkillDrills Spatial Shift Pursuit)",
+  "name": "Tracker für Blickverfolgung bei Sichtfeldwechsel",
   "applicationCategory": "EducationalApplication",
   "operatingSystem": "All",
   "browserRequirements": "HTML5 Canvas fähiger Browser (Chrome, Edge, Firefox, Safari)",
   "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
   "url": "https://skilldrills.online/de/drills/visual-tracking/spatial-shift-pursuit",
   "inLanguage": "de",
-  "dateModified": "2026-09-15"
+  "dateModified": "2026-09-20"
 };
 
 const videoGameSchema = {
   "@context": "https://schema.org",
   "@type": "VideoGame",
-  "name": "Spatial Shift Aim Training (Spatial Shift Pursuit)",
+  "name": "Aimtraining bei Bildschirmwackeln",
   "url": "https://skilldrills.online/de/drills/visual-tracking/spatial-shift-pursuit",
   "description": "Aim- und Augentrainingstool für E-Sportler und Athleten zur Beherrschung von Bildschirmwackeln, Trefferschocks und rasanten Blickfeldwechseln.",
-  "genre": ["Aim Trainer", "Eye Tracking", "Vision Training", "Esports Drill"],
+  "genre": ["Aimtraining", "Blickverfolgung", "Sehtraining", "Visuelles Drilltraining"],
   "gamePlatform": ["Web Browser", "Desktop", "Mobile"],
   "applicationCategory": "Game",
-  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+  "dateModified": "2026-09-20"
 };
 
 const howToSchema = {
@@ -130,7 +132,8 @@ const howToSchema = {
       "name": "Nahtlose Geschwindigkeitsankopplung",
       "text": "Kopple die Augenmuskeln unmittelbar bei Landung an den Geschwindigkeitsvektor des Ziels im neuen Koordinatensystem an."
     }
-  ]
+  ],
+  "dateModified": "2026-09-20"
 };
 
 const faqSchema = {
@@ -217,7 +220,8 @@ const faqSchema = {
         "text": "Ja. Synaptische Plastizität im PPC und den frontalen Augenfeldern automatisiert die Koordinatentransformation. Das Sehsystem reagiert im Laufe der Wochen zunehmend reflexartig auf Raumverschiebungen, ohne dass bewusste Denkleistung nötig ist."
       }
     }
-  ]
+  ],
+  "dateModified": "2026-09-20"
 };
 
 const guideProps = {
@@ -279,12 +283,12 @@ const guideProps = {
   })),
   sources: pickSources('krauzlis2004', 'findlay1999', 'robinson1965', 'rashbass1961', 'kahlon1996', 'woods2015'),
   related: [
-    { href: "/de/drills/visual-tracking/constant-slow-pursuit", label: "Konstantes langsames Blickfolgetraining (Constant Slow)" },
-    { href: "/de/drills/visual-tracking/directional-chaos-pursuit", label: "Richtungs-Chaos Blickverfolgung (Directional Chaos)" },
-    { href: "/de/drills/visual-tracking/dynamic-evasion-pursuit", label: "Dynamische Ausweich-Blickverfolgung (Dynamic Evasion)" },
-    { href: "/de/drills/visual-tracking/ghosting-suppress-pursuit", label: "Nachbild-Unterdrückung Blickverfolgung (Ghosting Suppress)" },
-    { href: "/de/drills/visual-tracking/infinity-pursuit", label: "Liegende Acht Augentraining (Infinity)" },
-    { href: "/de/drills/visual-tracking/predictive-pursuit", label: "Prädiktive Blickführung (Predictive Pursuit)" }
+    { href: "/de/drills/visual-tracking/constant-slow-pursuit", label: "Konstantes langsames Blickfolgetraining" },
+    { href: "/de/drills/visual-tracking/directional-chaos-pursuit", label: "Blickverfolgung bei Richtungswechseln" },
+    { href: "/de/drills/visual-tracking/dynamic-evasion-pursuit", label: "Dynamische Ausweich-Blickverfolgung" },
+    { href: "/de/drills/visual-tracking/ghosting-suppress-pursuit", label: "Blickverfolgung mit Nachbild-Unterdrückung" },
+    { href: "/de/drills/visual-tracking/infinity-pursuit", label: "Augentraining in Form einer Acht" },
+    { href: "/de/drills/visual-tracking/predictive-pursuit", label: "Prädiktive Blickführung" }
   ]
 };
 
@@ -318,9 +322,9 @@ export default function GermanSpatialShiftPursuitPage() {
 
       <SpatialShiftPursuitClient
         copy={{
-          title: "Spatial Shift Blickverfolgung & Koordinaten-Remapping: Reaktive Blickadaption",
-          subtitle: "Synchronisation des posterioren Parietalkortex auf abrupte Verschiebungen des Referenzrahmens",
-          description: "Kostenloses Online-Augentraining bei dynamisch verschobenen und rotierenden Referenzrahmen. Trainiere den posterioren Parietalkortex (PPC) zur blitzschnellen Koordinatentransformation und Ziel-Reakquisition bei Bildschirmwackeln und Trefferschocks. Sofort im Browser ohne Registrierung."
+          title: "Blickverfolgung bei Sichtfeldwechsel",
+          subtitle: "Zielverfolgung trotz verschobenem Sichtfeld",
+          description: "Kostenlose Browserübung: Verfolge ein Ziel trotz Sichtfeldwechsel und beobachte Reaktionszeit, Wiedererfassung und Positionsabweichung."
         }}
       />
 
@@ -329,6 +333,8 @@ export default function GermanSpatialShiftPursuitPage() {
       <div className="max-w-6xl mx-auto px-4 pb-12">
         <RelatedDrills currentCategory="visual-tracking" currentHref="https://skilldrills.online/de/drills/visual-tracking/spatial-shift-pursuit" />
       </div>
+
+      <DrillFooter />
     </>
   );
 }

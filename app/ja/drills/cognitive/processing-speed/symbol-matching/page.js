@@ -2,17 +2,18 @@ import SymbolMatchingClient from '@/app/drills/cognitive/processing-speed/symbol
 import { getAlternateLanguages } from '@/lib/i18n/locales';
 import DrillGuide from '@/components/drill/DrillGuide';
 import RelatedDrills from '@/components/drill/RelatedDrills';
+import DrillFooter from '@/components/drill/DrillFooter';
 import { pickSources } from '@/lib/drillSources';
 
 export const metadata = {
-  title: "符号テストSDMT・記号数字置換 – 情報処理速度診断 | SkillDrills",
-  description: "無料ブラウザ完結の符号テスト（Symbol Digit Modalities Test / SDMT）。記号と数字の対応マトリックスを照合して即座に入力し、情報処理速度、視覚スキャン効率、短期連想記憶を精密測定。",
+  title: "符号数字置換検査 | SDMT方式の処理速度トレーニング | SkillDrills",
+  description: "無料ブラウザの符号数字置換検査：SDMT方式の記号と数字の照合で、情報処理速度と視覚探索を練習します。臨床検査ではありません。",
   keywords: ["符号テスト SDMT", "情報処理速度 検査", "記号 数字 置換 テスト", "SDMT テスト 無料", "DSST テスト オンライン", "視覚走査 測定", "短期連想記憶 訓練", "認知機能 処理速度", "ウェクスラー 符号 検査", "脳トレ 記号合わせ",
     "符号検査 オンライン",
     "記号照合 脳トレ"],
   openGraph: {
-    title: "符号テストSDMT・記号数字置換 – 情報処理速度診断 | SkillDrills",
-    description: "無料ブラウザ完結の符号テスト（Symbol Digit Modalities Test / SDMT）。記号と数字の対応マトリックスを照合して即座に入力し、情報処理速度、視覚スキャン効率、短期連想記憶を精密測定。",
+    title: "符号数字置換検査 | SDMT方式の処理速度トレーニング | SkillDrills",
+    description: "無料ブラウザの符号数字置換検査：SDMT方式の記号と数字の照合で、情報処理速度と視覚探索を練習します。臨床検査ではありません。",
     type: 'article',
     url: 'https://skilldrills.online/ja/drills/cognitive/processing-speed/symbol-matching',
     siteName: 'SkillDrills',
@@ -20,8 +21,8 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: "符号テストSDMT・記号数字置換 – 情報処理速度診断 | SkillDrills",
-    description: "無料ブラウザ完結の符号テスト（Symbol Digit Modalities Test / SDMT）。記号と数字の対応マトリックスを照合して即座に入力し、情報処理速度、視覚スキャン効率、短期連想記憶を精密測定。",
+    title: "符号数字置換検査 | SDMT方式の処理速度トレーニング | SkillDrills",
+    description: "無料ブラウザの符号数字置換検査：SDMT方式の記号と数字の照合で、情報処理速度と視覚探索を練習します。臨床検査ではありません。",
   },
   robots: { index: true, follow: true },
   alternates: {
@@ -80,7 +81,7 @@ const softwareApplicationSchema = {
     "url": "https://skilldrills.online"
   },
   "inLanguage": "ja-JP",
-  "dateModified": "2026-09-11"
+  "dateModified": "2026-09-20"
 };
 
 const webApplicationSchema = {
@@ -97,7 +98,7 @@ const webApplicationSchema = {
   },
   "url": "https://skilldrills.online/ja/drills/cognitive/processing-speed/symbol-matching",
   "inLanguage": "ja-JP",
-  "dateModified": "2026-09-11"
+  "dateModified": "2026-09-20"
 };
 
 const videoGameSchema = {
@@ -117,6 +118,7 @@ const videoGameSchema = {
     "Mobile"
   ],
   "applicationCategory": "Game",
+  "dateModified": "2026-09-20",
   "offers": {
     "@type": "Offer",
     "price": "0",
@@ -315,11 +317,38 @@ export default function LocalizedCognitivePage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(howToSchema) }}
       />
-      <SymbolMatchingClient copy={{ title: "符号テストSDMT・記号数字置換 – 情報処理速度診断" }} />
+      <SymbolMatchingClient
+        copy={{
+          title: "符号数字置換検査",
+          subtitle: "記号と数字の対応を素早く見つけ、情報処理速度を練習します",
+          startTitle: "記号数字マッチング",
+          stageCaption: "中央のターゲット記号を上のキーと照合し、対応する数字を押してください。",
+          rulesTitle: "ドリルの説明とスコア",
+          aboutTitle: "記号数字マッチングとは？",
+          faqTitle: "よくある質問",
+          readyLabel: "準備",
+          labels: { score: "スコア", time: "時間", level: "レベル", bestScore: "ベストスコア", timeLeft: "残り時間", targetSymbol: "ターゲット記号", accuracy: "正確さ", hits: "成功", misses: "ミス", peakLevel: "最高レベル" },
+          aboutLead: "記号数字課題は、時間内に記号と数字の対応を探し、知識ではなく情報処理速度と視覚探索を練習するものです。このドリルは臨床検査ではなく練習用ゲームです。",
+          aboutText: "このドリルはSDMTやDSSTで使われる記号と数字の対応形式を参考にしています。キーを確認してターゲット記号に合う数字を選ぶことで、視覚探索、連想記憶、選択反応を繰り返します。スコアはこのゲームでの成績を示すもので、医療的な診断ではありません。",
+          aboutCards: [
+            { title: "どんな人に向いていますか？", desc: "情報処理速度と視覚探索を集中的に練習したい学生や社会人、ゲーマーに向いています。" },
+            { title: "鍛えられる力", desc: "視覚探索、記号と数字の連想記憶、選択反応、反復課題での持続的な注意を練習します。" },
+            { title: "毎回変わるキー", desc: "セッションごとに対応キーが変わるため、単純暗記ではなく実際の照合と探索を使います。" }
+          ],
+          rulesItems: [
+            { num: "1", text: "記号数字キー", highlight: "6つの対応", result: "上部キーで数字を確認" },
+            { num: "2", text: "ターゲット記号", highlight: "+100ポイント", result: "コンボとレベル倍率" },
+            { num: "3", text: "間違った数字", highlight: "コンボ解除", result: "設定時は時間を減算" },
+            { num: "4", text: "連続記録とペナルティ", highlight: "時間切れ・誤タップ", result: "有効時は−0.8秒" }
+          ],
+          faqItems: faqSchema.mainEntity.map((e) => ({ q: e.name, a: e.acceptedAnswer.text }))
+        }}
+      />
       <DrillGuide {...guideProps} />
       <div className="max-w-6xl mx-auto px-4 pb-12">
         <RelatedDrills currentCategory="cognitive" currentHref="https://skilldrills.online/ja/drills/cognitive/processing-speed/symbol-matching" />
       </div>
+      <DrillFooter />
     </>
   );
 }

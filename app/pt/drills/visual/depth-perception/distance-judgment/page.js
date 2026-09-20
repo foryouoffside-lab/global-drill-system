@@ -5,37 +5,34 @@ import { getAlternateLanguages } from '@/lib/i18n/locales';
 import { pickSources } from '@/lib/drillSources';
 
 // ============================================================
-// SEO RESEARCH FINDINGS — distance-judgment (Portuguese: Percepção de Profundidade)
-// PRIMARY:  "teste de percepção de profundidade" — Core query
-//           "teste de estereopsia online"        — Clinical search
+// SEO RESEARCH FINDINGS — distance-judgment (Português do Brasil native search)
+// PRIMARY:  "teste de estereopsia"              — Clinical binocular-vision term
+//           "teste de percepção de profundidade" — Consumer depth intent
 // SECONDARY / LSI:
-//           "noção de distância teste"           — Practical driving test
-//           "julgamento de distância visual"     — Visual judgment
-//           "percepção espacial dos olhos"       — Spatial vision
-//           "expansão óptica visual"             — Optical looming
-//           "teste de howard-dolman"             — Classical test
+//           "teste de estereopsia online"        — Browser intent
+//           "noção de distância"                 — Natural practical phrase
+//           "visão tridimensional"               — Supporting clinical phrase
 // ============================================================
 
 export const metadata = {
-  title: 'Teste de Percepção de Profundidade – Noção de Distância',
-  description: 'Teste de percepção de profundidade online grátis. Avalie seu julgamento de distância e interceptação visual por expansão óptica e tempo até o contato (TTC).',
+  title: 'Teste de estereopsia online | Noção de distância | SkillDrills',
+  description: 'Teste de estereopsia e percepção de profundidade online grátis. Treine a noção de distância com um alvo em movimento; não substitui exame oftalmológico.',
   keywords: [
+    'teste de estereopsia',
     'teste de percepção de profundidade',
     'teste de estereopsia online',
-    'noção de distância teste',
-    'julgamento de distância visual',
-    'percepção espacial dos olhos',
-    'teste de visão 3d online',
-    'treino de tempo de colisão ttc',
-    'expansão óptica visual',
-    'teste de howard-dolman',
-    'noção de profundidade motorista',
-    'coordenação visomotora espacial',
-    'exercício de foco de distância',
+    'noção de distância',
+    'visão tridimensional',
+    'teste de percepção de profundidade online',
+    'treino de noção de distância',
+    'teste de visão binocular',
+    'teste Titmus',
+    'cálculo de distâncias',
+    'percepção espacial',
   ],
   openGraph: {
-    title: 'Teste de Percepção de Profundidade – Noção de Distância | SkillDrills',
-    description: 'Teste de percepção de profundidade online grátis. Avalie seu julgamento de distância e interceptação visual por expansão óptica e tempo até o contato (TTC).',
+    title: 'Teste de estereopsia online | Noção de distância | SkillDrills',
+    description: 'Teste de estereopsia e percepção de profundidade online grátis. Treine a noção de distância com um alvo em movimento; não substitui exame oftalmológico.',
     type: 'article',
     url: 'https://skilldrills.online/pt/drills/visual/depth-perception/distance-judgment',
     siteName: 'SkillDrills',
@@ -43,8 +40,8 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Teste de Percepção de Profundidade – Noção de Distância | SkillDrills',
-    description: 'Teste de percepção de profundidade online grátis. Avalie seu julgamento de distância e interceptação visual por expansão óptica e tempo até o contato (TTC).',
+    title: 'Teste de estereopsia online | Noção de distância | SkillDrills',
+    description: 'Teste de estereopsia e percepção de profundidade online grátis. Treine a noção de distância com um alvo em movimento; não substitui exame oftalmológico.',
   },
   robots: { index: true, follow: true },
   alternates: {
@@ -226,7 +223,7 @@ const faqSchema = {
 };
 
 const distanceGuidePt = {
-  heading: 'Padrões de Percepção de Profundidade e Noção Espacial',
+  heading: 'Teste de estereopsia e treino de noção de distância',
   intro: [
     'A percepção de profundidade (visão estereoscópica e cálculo espacial) é a faculdade visual e neurológica que capacita o organismo a interpretar o ambiente em três dimensões e julgar com exatidão milimétrica a distância, o volume e a trajetória de alvos dinâmicos. Em esportes de alta velocidade (tênis, beisebol, automobilismo), na aviação, em exames psicotécnicos de direção (CNH profissional) e nos eSports táticos, estimar distâncias em frações de segundo define a linha divisória entre uma interceptação perfeita e uma colisão catastrófica.',
     'Este exercício recria digitalmente os fundamentos geométricos do clássico aparelho estereoscópico de Howard-Dolman (Howard, 1919) e as pesquisas seminais de óptica ecológica formuladas por David N. Lee (1976) e David Regan & Kenneth I. Beverley (1978). Projetando uma esfera 3D ao longo de um túnel virtual em direção a um plano de referência estático, o treino condiciona o córtex visual a processar a taxa de expansão retiniana (looming) e calcular o tempo até o contato (Time-to-Contact, τ) sob velocidades de aproximação crescentes.',
@@ -234,7 +231,7 @@ const distanceGuidePt = {
     'Transparência e Privacidade de Dados: O SkillDrills não coleta informações pessoais, relatórios diagnósticos de visão nem telemetria centralizada em servidores remotos. Todas as pontuações alcançadas, níveis superados e taxas de precisão permanecem gravadas estritamente no armazenamento local (LocalStorage) do seu navegador.'
   ],
   benchmarks: {
-    title: 'Tabela de Desempenho em Julgamento de Profundidade',
+    title: 'Referência de desempenho em percepção de profundidade',
     headers: ['Faixa de Desempenho', 'Erro Médio de Profundidade', 'Pontos e Nível', 'Perfil Visual'],
     rows: [
       ['Tier 1: Mestre Estereoscópico Apex', 'Abaixo de 5,0% de erro', '1500+ pts | Nível 7+', 'Sensibilidade excepcional a expansão óptica; timing perfeito.'],
@@ -245,7 +242,7 @@ const distanceGuidePt = {
     ],
   },
   protocols: {
-    title: 'Protocolos para Aperfeiçoar a Noção de Distância',
+    title: 'Como treinar a noção de distância com este exercício',
     items: [
       {
         title: 'Protocolo 1: Foco na Taxa de Expansão Óptica (Lee 1976)',
@@ -293,14 +290,14 @@ const distanceGuidePt = {
 
 const copyPt = {
   title: 'Teste de Percepção de Profundidade',
-  subtitle: 'Julgamento de Distância e Laboratório de Interceptação 3D',
+  subtitle: 'Noção de distância e treino visual 3D',
   caption: 'A percepção de profundidade permite estimar distâncias e posições espaciais. Em telas planas, a taxa de expansão óptica (Lee, 1976; Regan & Beverley, 1978) mede com exatidão o tempo até o contato (TTC) sem depender do conhecimento prévio do tamanho real do objeto.',
   statScore: 'Pontos',
   statTime: 'Tempo',
   statLevel: 'Nível',
   statBestScore: 'Recorde',
   startTitle: 'Julgamento de Distância Pro',
-  startSubtitle: 'Noção de Distância 3D • Interceptação Visual',
+  startSubtitle: 'Treine distância e timing com um alvo em movimento',
   startBtn: 'Iniciar Teste',
   getReady: 'PREPARE-SE',
   newBest: 'NOVO RECORDE',

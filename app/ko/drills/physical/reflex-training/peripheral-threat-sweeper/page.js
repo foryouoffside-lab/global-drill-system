@@ -22,27 +22,27 @@ import { pickSources } from '@/lib/drillSources';
 // ============================================================
 
 export const metadata = {
-  title: "주변 시야 테스트 – 동체시력 반응속도 훈련 게임 | SkillDrills",
-  description: "무료 온라인 주변 시야 테스트 및 동체시력 반응속도 게임. 중심 코어를 주시한 채 360도 전방위 외곽에서 침투하는 위협 노드를 망막 주변부로 신속히 감지하고 요격하여 터널 비전을 예방하고 유효 시야(UFOV)를 극대화하십시오.",
+  title: "주변시야 훈련 | 동체시력 테스트",
+  description: "무료 주변시야 훈련 게임. 중앙을 응시한 채 주변 위협을 찾아 동체시력, 반응속도와 시야 인지를 연습하세요.",
   keywords: [
-    "동체시력 테스트 게임",
-    "동체시력 반응속도 테스트",
     "주변시야 훈련",
     "주변시야 테스트",
+    "동체시력 테스트",
+    "동체시력 훈련",
+    "동체시력 반응속도",
+    "시야 넓히기 운동",
+    "주변시 훈련",
+    "터널 시야 개선",
     "반응속도 훈련 게임",
-    "동체시력 테스트 사이트",
-    "터널 비전 교정",
-    "유효 시야 UFOV 확장",
-    "시야각 반응속도",
-    "주변시야 방어 요격"
+    "주변시야 방어 게임"
   ],
   alternates: {
     canonical: 'https://skilldrills.online/ko/drills/physical/reflex-training/peripheral-threat-sweeper',
     languages: getAlternateLanguages('/drills/physical/reflex-training/peripheral-threat-sweeper'),
   },
   openGraph: {
-    title: "주변 시야 테스트 – 동체시력 반응속도 훈련 게임 | SkillDrills",
-    description: "무료 온라인 주변 시야 테스트 및 동체시력 반응속도 게임. 중심 코어를 주시한 채 360도 전방위 외곽에서 침투하는 위협 노드를 망막 주변부로 신속히 감지하고 요격하여 터널 비전을 예방하고 유효 시야(UFOV)를 극대화하십시오.",
+    title: "주변시야 훈련 | 동체시력 테스트",
+    description: "무료 주변시야 훈련 게임. 중앙을 응시한 채 주변 위협을 찾아 동체시력, 반응속도와 시야 인지를 연습하세요.",
     url: 'https://skilldrills.online/ko/drills/physical/reflex-training/peripheral-threat-sweeper',
     siteName: 'SkillDrills',
     locale: 'ko_KR',
@@ -50,8 +50,8 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: "주변 시야 테스트 – 동체시력 반응속도 훈련 게임 | SkillDrills",
-    description: "무료 온라인 주변 시야 테스트 및 동체시력 반응속도 게임. 중심 코어를 주시한 채 360도 전방위 외곽에서 침투하는 위협 노드를 망막 주변부로 신속히 감지하고 요격하여 터널 비전을 예방하고 유효 시야(UFOV)를 극대화하십시오.",
+    title: "주변시야 훈련 | 동체시력 테스트",
+    description: "무료 주변시야 훈련 게임. 중앙을 응시한 채 주변 위협을 찾아 동체시력, 반응속도와 시야 인지를 연습하세요.",
   },
   robots: { index: true, follow: true },
 };
@@ -93,6 +93,8 @@ const softwareApplicationSchema = {
   "name": "주변 시야 테스트 및 위협 스위퍼 트레이너",
   "applicationCategory": "HealthApplication",
   "operatingSystem": "All",
+  "inLanguage": "ko",
+  "dateModified": "2026-09-20",
   "offers": {
     "@type": "Offer",
     "price": "0",
@@ -107,6 +109,8 @@ const webApplicationSchema = {
   "name": "주변 시야 동체시력 훈련기 (Peripheral Threat Sweeper)",
   "url": "https://skilldrills.online/ko/drills/physical/reflex-training/peripheral-threat-sweeper",
   "description": "무료 온라인 주변 시야 및 동체시력 측정 도구. 중심 코어를 보호하면서 360도 방사형 위협을 신속히 제거하여 시야각을 넓히고 터널 비전을 해소합니다.",
+  "inLanguage": "ko",
+  "dateModified": "2026-09-20",
   "applicationCategory": "SportsApplication",
   "operatingSystem": "Web Browser",
   "offers": {
@@ -122,6 +126,8 @@ const videoGameSchema = {
   "name": "주변 시야 위협 요격 게임 (Peripheral Threat Sweeper)",
   "url": "https://skilldrills.online/ko/drills/physical/reflex-training/peripheral-threat-sweeper",
   "description": "중심 코어를 사수하며 방사형으로 침공하는 적 노드를 요격하는 고속 주변 시야 아케이드 반응 게임.",
+  "inLanguage": "ko",
+  "dateModified": "2026-09-20",
   "genre": ["Action", "Sports Game", "Reflex Game", "Visual Training"],
   "gamePlatform": ["Web Browser", "Desktop", "Mobile"]
 };
@@ -333,8 +339,8 @@ export default function PeripheralThreatSweeperKoPage() {
       />
       <PeripheralThreatSweeperClient
         copy={{
-          title: "주변 시야 테스트 & 위협 스위퍼",
-          subtitle: "유효 시야(UFOV) 방어 & 동체시력 반응속도 • 15단계 연속 스케일링",
+          title: "주변시야 훈련",
+          subtitle: "중앙을 보며 주변 위협 찾아내기",
           hudLabels: {
             score: "현재 점수",
             time: "남은 시간",

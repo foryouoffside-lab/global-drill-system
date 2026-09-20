@@ -56,6 +56,14 @@ export const metadata = {
   robots: { index: true, follow: true },
 };
 
+Object.assign(metadata, {
+  title: '점프 타이밍 훈련 | 무료 점프 게임 | SkillDrills',
+  description: '무료 점프 타이밍 훈련 게임. 도약 높이를 조절하고 공중에서 움직이는 표적을 맞혀 순발력과 운동 협응을 연습하세요.',
+  keywords: ['점프력 운동', '점프 타이밍 훈련', '순발력 운동', '서전트 점프 훈련', '플라이오메트릭 점프', '공중 조작 게임', '점프 게임', '수직 점프 훈련', '점프 반응 훈련', '운동 협응'],
+  openGraph: { ...metadata.openGraph, title: '점프 타이밍 훈련 | 무료 점프 게임 | SkillDrills', description: '무료 점프 타이밍 훈련 게임. 도약 높이를 조절하고 공중에서 움직이는 표적을 맞혀 순발력과 운동 협응을 연습하세요.' },
+  twitter: { ...metadata.twitter, title: '점프 타이밍 훈련 | 무료 점프 게임 | SkillDrills', description: '무료 점프 타이밍 훈련 게임. 도약 높이를 조절하고 공중에서 움직이는 표적을 맞혀 순발력과 운동 협응을 연습하세요.' },
+});
+
 const breadcrumbSchema = {
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
@@ -106,7 +114,7 @@ const softwareApplicationSchema = {
     "url": "https://skilldrills.online/ko"
   },
   "inLanguage": "ko",
-  "dateModified": "2026-09-12"
+  "dateModified": "2026-09-20"
 };
 
 const webApplicationSchema = {
@@ -123,7 +131,7 @@ const webApplicationSchema = {
   },
   "url": "https://skilldrills.online/ko/drills/physical/fitness/jump-sequence",
   "inLanguage": "ko",
-  "dateModified": "2026-09-12"
+  "dateModified": "2026-09-20"
 };
 
 const videoGameSchema = {
@@ -144,6 +152,8 @@ const videoGameSchema = {
     "Mobile"
   ],
   "applicationCategory": "Game",
+  "inLanguage": "ko",
+  "dateModified": "2026-09-20",
   "offers": {
     "@type": "Offer",
     "price": "0",
@@ -154,7 +164,8 @@ const videoGameSchema = {
 const faqSchema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
-  "dateModified": "2026-09-12",
+  "inLanguage": "ko",
+  "dateModified": "2026-09-20",
   "mainEntity": [
     {
       "@type": "Question",

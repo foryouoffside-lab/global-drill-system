@@ -6,21 +6,17 @@ import RelatedDrills from '@/components/drill/RelatedDrills';
 import DrillFooter from '@/components/drill/DrillFooter';
 
 export const metadata = {
-  title: "타겟 우선순위 에임 연습 – 위협 평가 트레이너 | SkillDrills",
-  description: "무료 브라우저 타겟 우선순위 에임 트레이너. 다중 목표 교전 상황에서의 위협 평가, 시각적 주의 필터링, 아군 오사 방지를 위한 반응 억제(Go/No-Go)를 과학적으로 훈련합니다.",
+  title: "에임 연습 | 타겟 선택·위협 판단 | SkillDrills",
+  description: "무료 브라우저 에임 연습으로 여러 적 중 위험한 타겟을 먼저 고르고 불필요한 사격을 멈추는 판단력을 측정하세요.",
   keywords: [
-    "타겟 우선순위 에임",
-    "타겟 식별 에임",
-    "타겟 우선순위 에임 연습",
-    "위협 평가 연습",
-    "FPS 위협 판단",
-    "발로란트 타겟 우선순위",
-    "CS2 타겟 셀렉션",
+    "에임 연습",
+    "에임 연습 발로란트",
+    "에임 연습 게임",
+    "타겟 선택",
+    "타겟 우선순위",
     "사격 억제 훈련",
-    "아군 오사 방지 연습",
-    "적군 식별 사격",
-    "무료 에임 트레이너",
-    "FPS 타겟 식별 트레이너"
+    "FPS 위협 평가",
+    "다중 타겟 판단"
   ],
   alternates: {
     canonical: "https://skilldrills.online/ko/drills/fps/target-prioritization",
@@ -31,8 +27,8 @@ export const metadata = {
     follow: true,
   },
   openGraph: {
-    title: "타겟 우선순위 에임 연습 – 위협 평가 트레이너 | SkillDrills",
-    description: "다중 목표 교전에서의 위협 평가 속도, 시각적 방해물 억제, 정밀한 반응 억제 제어를 훈련하는 무료 브라우저 FPS 에임 트레이너.",
+    title: "에임 연습 | 타겟 선택·위협 판단 | SkillDrills",
+    description: "무료 브라우저 에임 연습으로 여러 적 중 위험한 타겟을 먼저 고르고 불필요한 사격을 멈추는 판단력을 측정하세요.",
     url: "https://skilldrills.online/ko/drills/fps/target-prioritization",
     siteName: 'SkillDrills',
     locale: 'ko_KR',
@@ -40,8 +36,8 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: "타겟 우선순위 에임 연습 – 위협 평가 트레이너 | SkillDrills",
-    description: "다중 목표 교전에서의 위협 평가 속도, 시각적 방해물 억제, 정밀한 반응 억제 제어를 훈련하는 무료 브라우저 FPS 에임 트레이너.",
+    title: "에임 연습 | 타겟 선택·위협 판단 | SkillDrills",
+    description: "무료 브라우저 에임 연습으로 여러 적 중 위험한 타겟을 먼저 고르고 불필요한 사격을 멈추는 판단력을 측정하세요.",
   },
 };
 
@@ -52,17 +48,17 @@ export default function TargetPrioritizationKoPage() {
     "itemListElement": [
       { "@type": "ListItem", "position": 1, "name": "SkillDrills", "item": "https://skilldrills.online/ko" },
       { "@type": "ListItem", "position": 2, "name": "FPS 에임 훈련", "item": "https://skilldrills.online/ko/drills/fps" },
-      { "@type": "ListItem", "position": 3, "name": "타겟 우선순위", "item": "https://skilldrills.online/ko/drills/fps/target-prioritization" }
+      { "@type": "ListItem", "position": 3, "name": "에임 연습 - 타겟 선택", "item": "https://skilldrills.online/ko/drills/fps/target-prioritization" }
     ]
   };
 
   const softwareSchema = {
     "@context": "https://schema.org",
     "@type": "SoftwareApplication",
-    "name": "타겟 우선순위 에임 연습",
+    "name": "에임 연습 - 타겟 선택과 위협 판단",
     "applicationCategory": "GameApplication",
     "operatingSystem": "Web Browser",
-    "dateModified": "2026-09-05",
+    "dateModified": "2026-09-20",
     "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
     "description": "난전 상황에서의 신속한 위협 평가, 아군 오사 방지, 우선순위 타겟 격파 능력을 극대화하는 무료 브라우저 FPS 에임 트레이너.",
     "genre": "FPS Training / Target Prioritization",
@@ -77,7 +73,7 @@ export default function TargetPrioritizationKoPage() {
   const webAppSchema = {
     "@context": "https://schema.org",
     "@type": "WebApplication",
-    "name": "타겟 우선순위 에임 연습",
+    "name": "에임 연습 - 타겟 선택과 위협 판단",
     "url": "https://skilldrills.online/ko/drills/fps/target-prioritization",
     "applicationCategory": "GameApplication",
     "operatingSystem": "All",
@@ -93,10 +89,10 @@ export default function TargetPrioritizationKoPage() {
   const videoGameSchema = {
     "@context": "https://schema.org",
     "@type": "VideoGame",
-    "name": "타겟 우선순위 에임 연습",
+    "name": "에임 연습 - 타겟 선택과 위협 판단",
     "url": "https://skilldrills.online/ko/drills/fps/target-prioritization",
     "description": "난전 상황에서의 신속한 위협 평가, 아군 오사 방지, 우선순위 타겟 격파 능력을 극대화하는 무료 브라우저 FPS 에임 트레이너.",
-    "dateModified": "2026-09-05",
+    "dateModified": "2026-09-20",
     "gamePlatform": "Web Browser",
     "genre": ["FPS Training", "Aim Trainer", "Target Prioritization"],
     "playMode": "SinglePlayer",
@@ -108,7 +104,7 @@ export default function TargetPrioritizationKoPage() {
   const faqSchema = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
-    "dateModified": "2026-09-05",
+    "dateModified": "2026-09-20",
     "mainEntity": [
       {
         "@type": "Question",
@@ -231,10 +227,10 @@ export default function TargetPrioritizationKoPage() {
   };
 
   const targetPrioritizationGuide = {
-    heading: "타겟 우선순위 에임 트레이너 실전 가이드",
+    heading: "에임 연습과 타겟 선택·위협 판단 가이드",
     subtitle: "난전 상황에서의 위협 평가 속도, 방해 자극 억제, 그리고 냉철한 사격 충동 제어를 완성하는 과학적 방법론",
     intro: [
-      "타겟 우선순위(Target Prioritization) 에임 트레이너는 찰나의 순간에 전술적 위협도를 평가하고, 시각적 방해 요소를 필터링하며, 충동적인 격발을 제어하는 운동 억제 능력을 완성하는 고급 지각-인지 에임 드릴입니다. 발로란트, 카운터-스트라이크 2, 레인보우 식스 시즈, 에이펙스 레전드와 같은 정밀 전술 FPS에서는 클러치 승리 여부가 단순한 물리적 플릭 속도뿐 아니라 목표 선정 능력에 의해 좌우됩니다. 다수의 적과 아군이 뒤엉킨 혼전에서 어떤 대상을 가장 먼저 격파하고, 우선순위가 낮은 방해물이나 아군에 대한 사격을 침착하게 억제하는지가 라운드의 성패를 가릅니다.",
+      "에임 연습은 여러 적이 보일 때 가장 위험한 타겟을 먼저 고르고, 쏘지 말아야 할 대상에는 클릭을 억제하는 훈련입니다. 이 드릴은 위협 평가와 시각적 방해물 필터링을 함께 측정해 발로란트·CS2의 혼전 판단을 안정화합니다.",
       "운동 억제와 의사결정 통제의 신경학적 기반은 Logan and Cowan(1984)의 정지 신호 패러다임(Stop-Signal Paradigm)으로 설명됩니다. 그들의 연구에 따르면 인간의 행동 실행(Go 프로세스)과 행동 억제(Stop 프로세스)는 전두엽-기저핵 네트워크에서 두 마리의 말이 결승선을 향해 달리는 '경주 모델(Horse-Race Model)'처럼 상호 독립적으로 속도 경쟁을 벌입니다. 사격 억제 훈련을 받지 않은 플레이어는 위협 수준을 검증하기도 전에 검지 손가락을 까딱이는 패닉 사격을 범하게 됩니다.",
       "선택적 시각 필터링 기전은 Donald E. Broadbent(1958)와 Anne Treisman(1964)의 초기 여과 및 감쇄 모델로 정립되었습니다. 여러 시각 자극이 망막의 인지 자원을 두고 경쟁할 때, 뇌는 하향식 주의 게이팅(Top-Down Attentional Gating; Posner & Petersen, 1990)을 작동시켜 비위협적인 아군 및 배경 무빙을 주변시에서 걸러내고 가장 치명적인 위협 벡터에 중심와 시각을 집중시킵니다.",
       "본 드릴은 F.C. Donders(1868)의 Go/No-Go 식별 반응시간 모델에 performance.now() 디지털 정밀 크로노메트리(Woods et al., 2015)를 결합하여, 단순한 마우스 조준 감각과 실전 교전 압박 하에서의 즉각적인 전술적 의사결정 속도를 하나로 연결합니다.",
@@ -324,9 +320,9 @@ export default function TargetPrioritizationKoPage() {
       />
       <TargetPrioritizationClient
         copy={{
-          h1Keyword: "타겟 우선순위 에임 연습",
-          h1Suffix: " - 위협 평가 & 사격 억제 트레이너",
-          subtitle: "실시간 피드백으로 다중 위협 평가, 시각적 인지 필터링, 사격 반응 억제 능력을 훈련하세요.",
+          h1Keyword: "에임 연습",
+          h1Suffix: " - 타겟 선택·위협 판단 트레이너",
+          subtitle: "여러 적의 위험도를 판단하고 쏘지 말아야 할 순간을 브라우저에서 훈련하세요.",
           statScore: "점수",
           statTime: "남은 시간",
           statAccuracy: "정확도",
@@ -334,7 +330,7 @@ export default function TargetPrioritizationKoPage() {
           statThreatsCleared: "격파한 위협",
           statMaxCombo: "최대 콤보",
           statPeakLevel: "최고 레벨",
-          startTitle: "타겟 우선순위",
+          startTitle: "에임 연습 - 타겟 선택",
           startSubtitle: "위협 평가 & 인지 필터링 • 무한 레벨 난이도 진행",
           getReady: "준비",
           toggleFlash: "미스 플래시 켜기/끄기",
@@ -349,7 +345,7 @@ export default function TargetPrioritizationKoPage() {
             { num: "3", text: "아군 유닛", highlight: "초록 (사격 금지)", result: "오사/미스 시 콤보 초기화" },
             { num: "4", text: "레벨 상승", highlight: "+1 / 1400점", result: "밀도 및 속도 지속 증가" }
           ],
-          aboutTitle: "타겟 우선순위 에임 트레이너 소개",
+          aboutTitle: "에임 연습과 타겟 선택 소개",
           aboutHeading: "타겟 우선순위(Target Prioritization)란?",
           aboutText: "타겟 우선순위는 시야 내 다수의 목표 중 위협 긴급도에 따라 사격할 대상을 즉시 선별하고, 동시에 아군이나 방해물에 대한 사격을 억제하는 고차원 인지-운동 능력입니다. 이미 시작된 동작을 멈추는 억제 통제는 별도의 뇌 신경 레이스 모델(Logan & Cowan, 1984)에 의해 작동하므로, 방아쇠를 당기는 것보다 멈추는 훈련이 더욱 필수적입니다."
         }}
@@ -358,7 +354,7 @@ export default function TargetPrioritizationKoPage() {
       <div className="max-w-4xl mx-auto px-4 pb-12">
         <RelatedDrills
           currentCategory="fps"
-          currentHref="/drills/fps/target-prioritization"
+          currentHref="/ko/drills/fps/target-prioritization"
           locale="ko"
         />
       </div>

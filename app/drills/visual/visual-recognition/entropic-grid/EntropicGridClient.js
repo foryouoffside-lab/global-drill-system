@@ -428,7 +428,7 @@ export default function EntropicGridClient({ copy } = {}) {
               <span data-seo-kw="1">{copy?.title || "Entropic Grid Visual Search"}</span>
             </h1>
             <p className="text-sm text-slate-400 mt-1">
-              A visual attention test measures how fast you can find a target among competing items — here, target codes hidden in a 100-cell field. How long that takes depends less on the number of items than on similarity — search slows as the target resembles its distractors and as the distractors differ from each other (Duncan &amp; Humphreys, 1989; Treisman &amp; Gelade, 1980). Here the background regenerates every 700 ms, so the display never settles into a pattern you can memorise.
+              A visual attention test measures how fast you can find a target among competing items — here, target codes hidden in a 100-cell field.
             </p>
           </div>
         )}
@@ -681,7 +681,7 @@ export default function EntropicGridClient({ copy } = {}) {
                     <Brain className="w-4 h-4 text-blue-400" /> What Is Entropic Grid Training?
                   </h3>
                   <p className="text-sm leading-relaxed mb-3">
-                    <strong>Entropic Grid Training</strong> is an advanced visual search and concentration drill designed to measure visual noise suppression capacity. The <strong>Entropic Grid drill</strong> presents a 100-cell alphanumeric grid with dynamic entropy noise continuously regenerating background characters, testing your ability to isolate and click specific 2-character targets.
+                    <strong>Entropic Grid Training</strong> is an advanced visual search and concentration drill designed to measure visual noise suppression capacity. The <strong>Entropic Grid drill</strong> presents a 100-cell alphanumeric grid with dynamic entropy noise continuously regenerating background characters, testing your ability to isolate and click specific 2-character targets. How long that takes depends less on the number of items than on similarity — search slows as the target resembles its distractors and as the distractors differ from each other (Duncan &amp; Humphreys, 1989; Treisman &amp; Gelade, 1980). Here the background regenerates every 700 ms, so the display never settles into a pattern you can memorise.
                   </p>
                   <p className="text-sm leading-relaxed">
                     By practicing <strong>peripheral visual noise filtering</strong>, you expand your visual search field and increase target recognition speed under high-distraction environments.

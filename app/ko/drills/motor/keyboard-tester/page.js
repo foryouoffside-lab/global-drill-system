@@ -5,30 +5,23 @@ import DrillGuide from '@/components/drill/DrillGuide';
 import RelatedDrills from '@/components/drill/RelatedDrills';
 
 export const metadata = {
-  title: '키보드 테스트 – 온라인 키보드 검사 및 동시입력 확인 | SkillDrills',
-  description:
-    '무료 온라인 키보드 테스트. 모든 키의 입력 인식 여부, 키 씹힘 및 안눌림, 무한 동시입력(NKRO), 키보드 채터링(두 번 눌림)을 브라우저에서 프로그램 설치 없이 즉시 확인하세요.',
+  title: '키보드 테스트 | 온라인 키보드 검사 | SkillDrills',
+  description: '무료 온라인 키보드 테스트. 안 눌리는 키, 채터링, 고스팅과 동시입력(NKRO)을 브라우저에서 확인하세요.',
   keywords: [
     '키보드 테스트',
-    '키보드테스트',
-    '키보드 테스트 사이트',
-    '키보드 입력 테스트',
-    '키보드 반응속도 테스트',
-    '키보드 동시입력 테스트',
-    '키보드 무한동시입력',
-    '키보드 채터링 테스트',
-    '키보드 검사',
-    '노트북 키보드 테스트',
-    '맥북 키보드 테스트',
-    '키보드 두번 눌림',
-    '키보드 안눌림',
-    '키보드 확인',
     '온라인 키보드 테스트',
+    '키보드 검사',
+    '키보드 동시입력 테스트',
+    '키보드 고스팅 테스트',
+    '키보드 채터링',
+    '키보드 키 안 눌림',
+    '키보드 반응 테스트',
+    '게이밍 키보드 테스트',
+    '노트북 키보드 테스트',
   ],
   openGraph: {
-    title: '키보드 테스트 – 온라인 키보드 검사 및 동시입력 확인 | SkillDrills',
-    description:
-      '브라우저에서 즉시 실행하는 무료 키보드 테스트. 키 인식, 무한 동시입력(NKRO), 채터링을 설치 없이 실시간으로 검사하세요.',
+    title: '키보드 테스트 | 온라인 키보드 검사 | SkillDrills',
+    description: '브라우저에서 키 인식, 고스팅, 채터링과 동시입력을 바로 검사하세요.',
     type: 'article',
     url: 'https://skilldrills.online/ko/drills/motor/keyboard-tester',
     siteName: 'SkillDrills',
@@ -36,9 +29,8 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: '키보드 테스트 – 온라인 키보드 검사 및 동시입력 확인 | SkillDrills',
-    description:
-      '브라우저에서 즉시 실행하는 무료 키보드 테스트. 키 인식, 무한 동시입력(NKRO), 채터링을 설치 없이 실시간으로 검사하세요.',
+    title: '키보드 테스트 | 온라인 키보드 검사 | SkillDrills',
+    description: '설치 없는 무료 키보드 테스트로 키 인식과 동시입력 문제를 확인하세요.',
   },
   robots: { index: true, follow: true },
   alternates: {
@@ -119,30 +111,32 @@ const webApplicationSchema = {
   url: 'https://skilldrills.online/ko/drills/motor/keyboard-tester',
   publisher: { '@type': 'Organization', name: 'SkillDrills', url: 'https://skilldrills.online' },
   inLanguage: 'ko-KR',
-  dateModified: '2026-09-11',
+  dateModified: '2026-09-20',
 };
 
 
 const softwareSchema = {
   '@context': 'https://schema.org',
   '@type': 'SoftwareApplication',
+  inLanguage: 'ko-KR',
   name: '키보드 테스트 (Keyboard Tester Online)',
   applicationCategory: 'UtilitiesApplication',
   operatingSystem: 'Web Browser',
   offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
   description: '브라우저 기반 무료 키보드 테스트 프로그램. 키 작동 확인, 동시입력(NKRO) 및 고스팅 현상, 채터링 진단.',
   url: 'https://skilldrills.online/ko/drills/motor/keyboard-tester',
-  dateModified: '2026-09-11',
+  dateModified: '2026-09-20',
   publisher: { '@type': 'Organization', name: 'SkillDrills', url: 'https://skilldrills.online' }
 };
 
 const videoGameSchema = {
   '@context': 'https://schema.org',
   '@type': 'VideoGame',
+  inLanguage: 'ko-KR',
   name: '키보드 테스트 & 동시입력 진단 도구',
   url: 'https://skilldrills.online/ko/drills/motor/keyboard-tester',
   description: '웹 브라우저에서 실행되는 인터랙티브 키보드 진단 및 키 입력 검사기.',
-  dateModified: '2026-09-11',
+  dateModified: '2026-09-20',
   gamePlatform: 'Web Browser',
   genre: ['키보드 테스트', '유틸리티', '하드웨어 진단'],
   playMode: 'SinglePlayer',
@@ -154,6 +148,7 @@ const videoGameSchema = {
 const howToSchema = {
   '@context': 'https://schema.org',
   '@type': 'HowTo',
+  inLanguage: 'ko-KR',
   name: '온라인 키보드 테스트 사용 방법 4단계',
   description: '키보드 키 작동 검사, 채터링 및 동시입력 상태를 진단하는 단계별 방법.',
   step: [
@@ -191,6 +186,8 @@ const howToSchema = {
 const faqSchema = {
   '@context': 'https://schema.org',
   '@type': 'FAQPage',
+  inLanguage: 'ko-KR',
+  dateModified: '2026-09-20',
   mainEntity: [
     {
       '@type': 'Question',
@@ -245,7 +242,7 @@ const faqSchema = {
 
 const KOREAN_COPY = {
   title: '온라인 키보드 테스트',
-  subtitle: '무료 브라우저 키보드 검사기 — 전 키 입력 및 동시입력 확인',
+          subtitle: '키 입력 확인・고스팅・동시입력 검사',
   intro:
     '키보드의 각 키를 하나씩 눌러보세요. 키를 누르는 동안 하이라이트되며, 정상적으로 인식된 키는 녹색으로 표시됩니다. 불이 들어오지 않는 키는 신호가 브라우저에 도달하지 않는 불량 스위치, 키 씹힘, 또는 접점 고장 상태를 나타냅니다. 프로그램 설치가 필요 없으며 데이터는 절대 저장되지 않습니다.',
   keysConfirmed: '확인된 키',

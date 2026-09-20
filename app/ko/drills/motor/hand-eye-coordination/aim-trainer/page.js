@@ -6,32 +6,21 @@ import RelatedDrills from '@/components/drill/RelatedDrills';
 import { pickSources } from '@/lib/drillSources';
 
 // ============================================================
-// SEO RESEARCH FINDINGS — ko-KR (motor / hand-eye-coordination / aim-trainer)
-// PRIMARY DOMESTIC: "에임연습" — 1,014 exact / 1,465 broad Bing searches/mo (Domestic #1 winner)
-//                   "에임 연습" — 229 exact / 1,891 broad searches/mo
-//                   "에임 연습 사이트" — 775 exact searches/mo (Web tool intent)
-// SECONDARY / LSI:
-//                   "발로란트 에임 연습 사이트" — 512 exact searches/mo
-//                   "에임연습 사이트" — 238 exact searches/mo
-//                   "aim trainer" — 183 exact / 337 broad searches/mo
-//                   "발로란트 에임 연습" — 165 exact searches/mo
-//                   "발로 에임 연습 사이트" — 190 exact searches/mo
-// WINNER TITLE:     에임 연습 사이트 – 무료 온라인 FPS 에임 트레이너・마우스 정확도 측정 | SkillDrills
+// Native research: 에임 연습, 에임 연습 사이트, 에임 트레이너, 마우스 정확도 테스트,
+// 플릭샷 연습, 초탄 조준 연습, 타겟 전환, 마우스 감도 연습, 발로란트 에임 연습.
 // ============================================================
 
 export const metadata = {
-  title: '에임 연습 사이트 – 무료 온라인 FPS 에임 트레이너・마우스 정확도 측정 | SkillDrills',
-  description:
-    '설치 없이 브라우저에서 바로 실행하는 무료 에임 연습 사이트. 화면에 나타나는 동적 타겟을 빠르게 격파하며 마우스 플릭 정확도와 초탄 포착 속도를 피츠의 법칙 기반으로 단련하세요. 발로란트, 오버워치, CS2 랭크전 전 워밍업에 최적화.',
-  keywords: ['에임 연습', '에임 연습 사이트', 'fps 에임 트레이너', '마우스 정확도 테스트', '플릭샷 연습', '초탄 정확도 훈련', '피츠의 법칙 에임', '발로란트 에임 연습', '에임 트레이너 온라인', '반응속도 에임 측정', '마우스 감도 적응 훈련', '오버워치 에임 연습'],
+  title: '에임 연습 사이트 | FPS 에임 트레이너 | SkillDrills',
+  description: '무료 브라우저 에임 연습 사이트. 동적 타깃으로 마우스 정확도, 플릭 속도, 초탄 포착을 측정하고 FPS 조준을 훈련하세요.',
+  keywords: ['에임 연습', '에임 연습 사이트', '에임 트레이너', '마우스 정확도 테스트', '플릭샷 연습', '초탄 조준 연습', '타겟 전환', '마우스 감도 연습', '발로란트 에임 연습', 'FPS 조준 연습'],
   alternates: {
     canonical: 'https://skilldrills.online/ko/drills/motor/hand-eye-coordination/aim-trainer',
     languages: getAlternateLanguages('/drills/motor/hand-eye-coordination/aim-trainer'),
   },
   openGraph: {
-    title: '에임 연습 사이트 – 무료 온라인 FPS 에임 트레이너・마우스 정확도 측정 | SkillDrills',
-    description:
-      '무료 온라인 에임 연습 사이트. 동적 타겟을 정확히 조준하고 클릭하여 마우스 정확도와 플릭 반응 속도를 극대화하세요. 설치 불필요.',
+    title: '에임 연습 사이트 | FPS 에임 트레이너 | SkillDrills',
+    description: '무료 브라우저 에임 연습. 동적 타깃으로 마우스 정확도와 플릭 속도를 측정하세요.',
     url: 'https://skilldrills.online/ko/drills/motor/hand-eye-coordination/aim-trainer',
     siteName: 'SkillDrills',
     locale: 'ko_KR',
@@ -39,9 +28,8 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: '에임 연습 사이트 – 무료 온라인 FPS 에임 트레이너・마우스 정확도 측정 | SkillDrills',
-    description:
-      '설치 없는 무료 브라우저 에임 트레이너. 마우스 정확도와 마이크로 플릭 속도를 단련하세요.',
+    title: '에임 연습 사이트 | FPS 에임 트레이너 | SkillDrills',
+    description: '설치 없는 무료 브라우저 에임 연습. 마우스 정확도와 마이크로 플릭 속도를 단련하세요.',
   },
   robots: { index: true, follow: true },
 };
@@ -63,6 +51,7 @@ const breadcrumbSchema = {
 const softwareApplicationSchema = {
   '@context': 'https://schema.org',
   '@type': 'SoftwareApplication',
+  inLanguage: 'ko-KR',
   name: '에임 연습 사이트 – 무료 온라인 FPS 에임 트레이너',
   alternateName: ['에임연습', '에임 연습', '에임 연습 사이트', 'FPS 에임 트레이너', 'Aim Trainer Online'],
   applicationCategory: 'HealthApplication',
@@ -77,6 +66,7 @@ const softwareApplicationSchema = {
 const webAppSchema = {
   '@context': 'https://schema.org',
   '@type': 'WebApplication',
+  inLanguage: 'ko-KR',
   name: '에임 연습 사이트 — 무료 온라인 FPS 에임 트레이너 | SkillDrills',
   url: 'https://skilldrills.online/ko/drills/motor/hand-eye-coordination/aim-trainer',
   description:
@@ -95,10 +85,11 @@ const webAppSchema = {
 const videoGameSchema = {
   "@context": "https://schema.org",
   "@type": "VideoGame",
+  "inLanguage": "ko-KR",
   "name": "에임 연습 (Aim Trainer)",
   "url": "https://skilldrills.online/ko/drills/motor/hand-eye-coordination/aim-trainer",
-  "description": "Free online browser-based 2D aim trainer for FPS gamers. Practice target acquisition, mouse accuracy, and click timing.",
-  "dateModified": "2026-09-11",
+  "description": "브라우저에서 마우스 정확도, 타깃 포착, 클릭 타이밍을 훈련하는 무료 2D 에임 연습 도구입니다.",
+  "dateModified": "2026-09-20",
   "gamePlatform": "Web Browser",
   "genre": ["Aim Trainer", "FPS Training", "Hand-Eye Coordination", "Reaction Speed"],
   "playMode": "SinglePlayer",
@@ -110,6 +101,7 @@ const videoGameSchema = {
 const howToSchema = {
   '@context': 'https://schema.org',
   '@type': 'HowTo',
+  inLanguage: 'ko-KR',
   name: '에임 연습 사이트 이용 방법 및 조준 훈련 단계',
   description: 'SkillDrills 에임 연습 훈련을 통해 마우스 조준 능력을 향상시키는 체계적인 4단계 방법.',
   step: [
@@ -151,7 +143,8 @@ const howToSchema = {
 const faqSchema = {
   '@context': 'https://schema.org',
   '@type': 'FAQPage',
-  dateModified: '2026-09-11',
+  inLanguage: 'ko-KR',
+  dateModified: '2026-09-20',
   mainEntity: [
     {
       '@type': 'Question',
@@ -254,7 +247,7 @@ export default function AimTrainerKoreanPage() {
       <AimTrainerClient
         copy={{
           title: '에임 연습 (Aim Trainer)',
-          subtitle: '동적 타겟 에임・정밀 클릭 타이밍・무제한 레벨 스케일링',
+          subtitle: '동적 타깃 조준・마우스 정확도・플릭 연습',
           caption: '화면에 나타나 축소되는 타겟을 소멸하기 전 신속하고 정확하게 클릭하세요. 피츠의 법칙 기반 동적 정밀도 훈련.',
           startButtonText: '훈련 시작',
           playAgainText: '다시 도전',

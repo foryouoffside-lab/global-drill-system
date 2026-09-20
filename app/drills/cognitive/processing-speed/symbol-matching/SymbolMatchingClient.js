@@ -1,7 +1,6 @@
 'use client';
 
 import React, { useState, useEffect, useRef, useCallback } from 'react';
-import Link from 'next/link';
 import { Target, Volume2, VolumeX, Users, TrendingUp, Repeat, Zap, ZapOff } from 'lucide-react';
 
 import { isIdleFrameSkippable } from '@/lib/performance';
@@ -15,7 +14,6 @@ import { getFpsScoreGrade, getComboMultiplier } from '../../../../../lib/scoring
 import { getDifficultyProgress, getStartLevel, ramp } from '../../../../../lib/drillDifficulty';
 import useDrillFlash from '../../../../../lib/useDrillFlash';
 import useUnexpectedExitGuard from '../../../../../lib/useUnexpectedExitGuard';
-import DrillFooter from '../../../../../components/drill/DrillFooter';
 import DrillCountdown from '../../../../../components/drill/DrillCountdown';
 import DrillAccordion from '../../../../../components/drill/DrillAccordion';
 import DrillFlashOverlay from '../../../../../components/drill/DrillFlashOverlay';
@@ -62,10 +60,10 @@ const getLevelConfig = (level, combo = 0) => {
 };
 
 const RULES_ITEMS = [
-  { title: "Symbol Digit Modality", text: "A key mapping bar at the top assigns 6 unique Greek symbols to digits 1 through 6." },
-  { title: "Target Symbol Prompt", text: "A target symbol appears in the center. Tap the matching digit (+100 PTS × Combo × Level multiplier, +0.6s)." },
-  { title: "Wrong Answers", text: "Tapping the wrong digit resets your combo (and deducts time if penalties are on). Nothing ends the run early — you play until the clock reaches zero." },
-  { title: "Streak & Penalty Rules", text: "Building streaks multiplies your score. Timeouts and wrong taps deduct 0.8s when enabled in settings." }
+  { num: "1", text: "Symbol-Digit Key", highlight: "6 Mappings", result: "Legend bar assigns digits 1-6" },
+  { num: "2", text: "Target Symbol", highlight: "+100 PTS", result: "× Combo × Level (+0.6s per hit)" },
+  { num: "3", text: "Wrong Digit", highlight: "Resets Combo", result: "Deducts time if penalties are on" },
+  { num: "4", text: "Streak & Penalty", highlight: "Timeouts / Wrong Taps", result: "−0.8s when enabled in settings" }
 ];
 
 const ABOUT_TEXT = `Symbol Matching is modeled after the clinical Symbol Digit Modality Test (SDMT), a gold-standard neuropsychological evaluation for measuring information processing speed, visual scanning efficiency, and working memory translation.
@@ -87,16 +85,45 @@ const FAQ_ITEMS = [
   { q: "Is this symbol matching test free to play online?", a: "Yes. The Symbol Matching drill on SkillDrills is completely free. No registration, downloads, or subscriptions required. It runs directly in your browser on desktop and mobile, measuring your processing speed and providing performance feedback after each session." }
 ];
 
-const RELATED_DRILLS = [
-  { id: "reaction-time", name: "Reaction Time", cat: "Processing Speed", desc: "Train choice reaction speed and visual reflex latency.", href: "/drills/cognitive/processing-speed/reaction-time" },
-  { id: "rsvp-reader", name: "RSVP Speed Reader", cat: "Processing Speed", desc: "Process rapid serial visual presentation text streams.", href: "/drills/cognitive/processing-speed/rsvp-reader" },
-  { id: "divided-attention", name: "Divided Attention Test", cat: "Attention", desc: "Track and react to multiple independent target streams simultaneously.", href: "/drills/cognitive/attention/divided-attention" },
-  { id: "distraction-fighter", name: "Distraction Fighter", cat: "Focus", desc: "Filter out high-interference Stroop visual distractors.", href: "/drills/cognitive/focus/distraction-fighter" },
-  { id: "concentration-grid", name: "Schulte Table Trainer", cat: "Focus", desc: "Scan and tap sequential numbers on expanding grid matrices.", href: "/drills/cognitive/focus/concentration-grid" },
-  { id: "multi-tasking", name: "Multitasking Test", cat: "Attention", desc: "Track dual independent target streams under speed pressure.", href: "/drills/cognitive/attention/multi-tasking" }
-];
+function RuleItem({ num, text, highlight = '', result }) {
+  return (
+    <div className="flex items-center gap-3 bg-black px-3.5 py-2.5 rounded-xl border border-white/10 shadow-sm font-sans min-w-0">
+      <div className="w-7 h-7 rounded-lg bg-white/10 border border-white/20 flex items-center justify-center text-white text-xs font-black shadow-lg flex-shrink-0">
+        {num}
+      </div>
+      <div className="flex-1 flex items-center justify-between gap-2 min-w-0">
+        <p className="text-xs sm:text-sm font-medium text-gray-100 font-sans truncate">
+          {text}{highlight && <span className="font-bold text-white"> ({highlight})</span>}
+        </p>
+        <div className="text-[11px] sm:text-xs font-bold px-2.5 py-1 rounded-lg bg-[#050811] border border-white/10 text-white whitespace-nowrap shadow-inner tracking-wide flex-shrink-0">
+          {result}
+        </div>
+      </div>
+    </div>
+  );
+}
 
 export default function SymbolMatchingClient({ copy } = {}) {
+  const labels = {
+    score: copy?.labels?.score || 'Score',
+    time: copy?.labels?.time || 'Time',
+    level: copy?.labels?.level || 'Level',
+    bestScore: copy?.labels?.bestScore || 'Best Score',
+    timeLeft: copy?.labels?.timeLeft || 'Time Left',
+    targetSymbol: copy?.labels?.targetSymbol || 'Target Symbol',
+    accuracy: copy?.labels?.accuracy || 'Accuracy',
+    hits: copy?.labels?.hits || 'Hits',
+    misses: copy?.labels?.misses || 'Misses',
+    peakLevel: copy?.labels?.peakLevel || 'Peak Level',
+  };
+  const rulesItems = copy?.rulesItems || RULES_ITEMS;
+  const aboutText = copy?.aboutText || ABOUT_TEXT;
+  const aboutCards = copy?.aboutCards || [
+    { title: 'Who Should Use This?', desc: 'Anyone who wants a focused practice task for processing speed, visual scanning, and fast symbol-to-digit lookup.' },
+    { title: 'Skills Improved', desc: 'Visual scanning, associative working memory, response selection, and sustained attention during repeated trials.' },
+    { title: 'Rotating Key Mapping', desc: 'The symbol-to-digit key changes each session, so the task rewards active lookup instead of rote memorization.' },
+  ];
+  const faqItems = copy?.faqItems || FAQ_ITEMS;
   const [gameState, setGameState] = useState('start'); // 'start' | 'countdown' | 'playing' | 'gameOver'
   const [isFullscreen, setIsFullscreen] = useState(false);
   useImmersiveMode(isFullscreen); // locks the page behind while the drill fills the screen
@@ -187,9 +214,32 @@ export default function SymbolMatchingClient({ copy } = {}) {
     startingRef.current = false;
     gameActiveRef.current = false;
 
+    if (typeof document !== 'undefined' && document.fullscreenElement) {
+      document.exitFullscreen().catch(() => {});
+    }
     setIsFullscreen(false);
     setGameState('start');
   }, []);
+
+  useEffect(() => {
+    if (gameState !== 'playing' && gameState !== 'countdown') return;
+    const handleKeyDown = (e) => {
+      if (e.key === 'Escape') {
+        handleExitDrill();
+      }
+    };
+    const handleFullscreenChange = () => {
+      if (!document.fullscreenElement && isFullscreen) {
+        handleExitDrill();
+      }
+    };
+    window.addEventListener('keydown', handleKeyDown);
+    document.addEventListener('fullscreenchange', handleFullscreenChange);
+    return () => {
+      window.removeEventListener('keydown', handleKeyDown);
+      document.removeEventListener('fullscreenchange', handleFullscreenChange);
+    };
+  }, [gameState, isFullscreen, handleExitDrill]);
 
   const { markIntentionalExit } = useUnexpectedExitGuard({
     active: gameState === 'playing' || gameState === 'countdown',
@@ -454,15 +504,16 @@ export default function SymbolMatchingClient({ copy } = {}) {
   }, [uiScore, analytics]);
 
   return (
-    <div className="min-h-screen bg-[#050508] text-white flex flex-col font-sans select-none">
+    <div className="bg-[#050508] text-white flex flex-col font-sans select-none">
       {/* ── MAIN CONTENT AREA ── */}
       <main className="flex-1 max-w-6xl w-full mx-auto px-4 py-6 flex flex-col gap-6">
         {/* Title */}
         {!isFullscreen && (
           <div className="flex flex-col gap-1">
-            <h1 className="text-2xl sm:text-3xl font-black tracking-tight text-white">
+            <h1 className="text-xl sm:text-3xl font-black tracking-tight text-white whitespace-nowrap overflow-hidden text-ellipsis">
               <span data-seo-kw="1">{copy?.title || "Symbol Digit Modalities Test"}</span>
             </h1>
+            <p className="text-xs sm:text-sm font-semibold text-slate-400">{copy?.subtitle || "Symbol digit matching test for measuring visual scanning, processing speed, and associative working memory"}</p>
           </div>
         )}
 
@@ -470,10 +521,10 @@ export default function SymbolMatchingClient({ copy } = {}) {
         {!isFullscreen && (
           <div className="grid grid-cols-4 gap-2 w-full -mb-2">
             {[
-              { label: 'Score', value: uiScore, color: 'text-cyan-400' },
-              { label: 'Time', value: `${uiTimeLeft}s`, color: uiTimeLeft <= 10 ? 'text-red-400 animate-pulse' : 'text-white' },
-              { label: 'Level', value: `L${uiLevel}`, color: 'text-indigo-400' },
-              { label: 'Best Score', value: bestScore, color: 'text-amber-400' },
+              { label: labels.score, value: uiScore, color: 'text-cyan-400' },
+              { label: labels.time, value: `${uiTimeLeft}s`, color: uiTimeLeft <= 10 ? 'text-red-400 animate-pulse' : 'text-white' },
+              { label: labels.level, value: `L${uiLevel}`, color: 'text-indigo-400' },
+              { label: labels.bestScore, value: bestScore, color: 'text-amber-400' },
             ].map((card) => (
               <div key={card.label} className="border border-white/[0.06] bg-white/[0.015] px-2 py-2 rounded-xl text-center">
                 <div className="text-[10px] font-bold tracking-wider uppercase text-slate-500">{card.label}</div>
@@ -499,14 +550,14 @@ export default function SymbolMatchingClient({ copy } = {}) {
               {/* Top Left: Score */}
               <div className="absolute top-4 left-4 z-30 pointer-events-none flex flex-col items-start gap-1">
                 <div>
-                  <p className="text-[10px] font-semibold uppercase tracking-wider text-white/50">Score</p>
+                  <p className="text-[10px] font-semibold uppercase tracking-wider text-white/50">{labels.score}</p>
                   <p className="text-2xl sm:text-3xl font-black text-white tabular-nums leading-tight">{uiScore}</p>
                 </div>
               </div>
 
               {/* Top Right: Time Left */}
               <div className="absolute top-4 right-4 z-30 pointer-events-none text-right">
-                <p className="text-[10px] font-semibold uppercase tracking-wider text-white/50">Time Left</p>
+                <p className="text-[10px] font-semibold uppercase tracking-wider text-white/50">{labels.timeLeft}</p>
                 <p className={`text-2xl sm:text-3xl font-black tabular-nums leading-tight ${uiTimeLeft <= 10 ? 'text-red-400 animate-pulse' : 'text-white'}`}>{uiTimeLeft}s</p>
               </div>
             </>
@@ -564,7 +615,7 @@ export default function SymbolMatchingClient({ copy } = {}) {
 
               {/* Target Symbol Center Prompt */}
               <div className="flex-1 flex flex-col items-center justify-center z-20 my-2">
-                <div className="text-[10px] font-bold uppercase tracking-widest text-slate-500 mb-1.5">Target Symbol</div>
+                <div className="text-[10px] font-bold uppercase tracking-widest text-slate-500 mb-1.5">{labels.targetSymbol}</div>
                 <div className="bg-black/60 backdrop-blur-md border border-white/20 rounded-3xl w-24 h-24 sm:w-32 sm:h-32 flex items-center justify-center shadow-[0_0_30px_rgba(255,255,255,0.15)]">
                   <span className="text-5xl sm:text-6xl font-black text-white font-serif">
                     {currentTarget ? currentTarget.symbol : '?'}
@@ -593,7 +644,7 @@ export default function SymbolMatchingClient({ copy } = {}) {
             <FpsStartCard
               icon={Target}
               accent="cyan"
-              title="Symbol Matching"
+              title={copy?.startTitle || "Symbol Matching"}
               subtitle="SDMT Paradigm • Visual Search"
               isTouchOnlyDevice={false}
               onStart={enterDrill}
@@ -602,7 +653,7 @@ export default function SymbolMatchingClient({ copy } = {}) {
 
           {/* COUNTDOWN OVERLAY */}
           {gameState === 'countdown' && (
-            <DrillCountdown value={countdownValue} subtitle="GET READY" />
+            <DrillCountdown value={countdownValue} subtitle={copy?.readyLabel || "GET READY"} />
           )}
 
           {/* UNIVERSAL RESULT CARD */}
@@ -613,10 +664,10 @@ export default function SymbolMatchingClient({ copy } = {}) {
               score={uiScore}
               isNewBest={isNewBest}
               stats={[
-                { label: 'Accuracy', value: analytics.accuracy, suffix: '%' },
-                { label: 'Hits', value: analytics.successfulHits },
-                { label: 'Misses', value: analytics.mistakes },
-                { label: 'Peak Level', value: `Lv. ${analytics.finalLevel}` },
+                { label: labels.accuracy, value: analytics.accuracy, suffix: '%' },
+                { label: labels.hits, value: analytics.successfulHits },
+                { label: labels.misses, value: analytics.mistakes },
+                { label: labels.peakLevel, value: `Lv. ${analytics.finalLevel}` },
               ]}
               onPlayAgain={enterDrill}
               onShare={shareResult}
@@ -629,7 +680,7 @@ export default function SymbolMatchingClient({ copy } = {}) {
         {/* Stage Caption */}
         {!isFullscreen && (
           <p className="text-xs text-slate-400 leading-relaxed -mt-2">
-            Match the active symbol prompt to its corresponding digit using the key mapping bar.
+            {copy?.stageCaption || 'Match the active symbol prompt to its corresponding digit using the key mapping bar.'}
           </p>
         )}
 
@@ -638,23 +689,20 @@ export default function SymbolMatchingClient({ copy } = {}) {
           <div className="[&>div]:!mt-0">
             <DrillAccordion
               id="rules"
-              title="Drill Instructions & Scoring System"
+              title={copy?.rulesTitle || "Drill Instructions & Scoring System"}
               isOpen={openAccordion === 'rules'}
               onToggle={() => setOpenAccordion(openAccordion === 'rules' ? null : 'rules')}
             >
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4 font-sans">
-                {RULES_ITEMS.map((item, i) => (
-                  <div key={i} className="bg-[#080811] p-4 rounded-xl border border-white/10">
-                    <p className="text-sm font-bold text-white mb-1">{item.title}</p>
-                    <p className="text-xs text-gray-300 leading-relaxed">{item.text}</p>
-                  </div>
+                {rulesItems.map((item, i) => (
+                  <RuleItem key={i} num={item.num} text={item.text} highlight={item.highlight} result={item.result} />
                 ))}
               </div>
             </DrillAccordion>
 
             <DrillAccordion
               id="about"
-              title="About Symbol Matching"
+              title={copy?.aboutTitle || "About Symbol Matching"}
               isOpen={openAccordion === 'about'}
               onToggle={() => setOpenAccordion(openAccordion === 'about' ? null : 'about')}
             >
@@ -662,48 +710,40 @@ export default function SymbolMatchingClient({ copy } = {}) {
                 <section>
                   <div className="space-y-4">
                     <p className="text-sm leading-relaxed text-gray-300">
-                      A symbol-substitution task asks you to match symbols to digits against the clock, measuring processing speed rather than knowledge. The format comes from the Digit Symbol Substitution Test and the Symbol Digit Modalities Test (Smith, 1973); this drill borrows that format as a game, not as the clinical instrument.
+                      {copy?.aboutLead || 'A symbol-substitution task asks you to match symbols to digits against the clock, measuring processing speed rather than knowledge. This drill borrows the format of established symbol-digit tasks as a game, not as a clinical instrument.'}
                     </p>
-                    {ABOUT_TEXT.split('\n\n').map((para, i) => (
+                    {aboutText.split('\n\n').map((para, i) => (
                       <p key={i} className="text-sm leading-relaxed text-gray-300">{para}</p>
                     ))}
                   </div>
                 </section>
 
                 <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-                  <div className="p-4 rounded-xl border border-gray-800 bg-white/[0.02]">
-                    <div className="flex items-center gap-2.5 mb-2">
-                      <div className="w-7 h-7 rounded-lg bg-blue-600 flex items-center justify-center"><Users className="w-3.5 h-3.5 text-white" /></div>
-                      <h5 className="text-xs font-bold text-white">Who Should Use This?</h5>
-                    </div>
-                    <p className="text-xs text-gray-300 leading-relaxed">Anyone who wants a quick self-check on processing speed, students and professionals tracking cognitive health over time, and gamers looking to sharpen rapid visual-to-motor translation.</p>
-                  </div>
-                  <div className="p-4 rounded-xl border border-gray-800 bg-white/[0.02]">
-                    <div className="flex items-center gap-2.5 mb-2">
-                      <div className="w-7 h-7 rounded-lg bg-emerald-600 flex items-center justify-center"><TrendingUp className="w-3.5 h-3.5 text-white" /></div>
-                      <h5 className="text-xs font-bold text-white">Skills Improved</h5>
-                    </div>
-                    <p className="text-xs text-gray-300 leading-relaxed">Information processing speed, visual scanning efficiency, associative working memory, and sustained executive attention over repetitive trials.</p>
-                  </div>
-                  <div className="p-4 rounded-xl border border-gray-800 bg-white/[0.02]">
-                    <div className="flex items-center gap-2.5 mb-2">
-                      <div className="w-7 h-7 rounded-lg bg-purple-600 flex items-center justify-center"><Repeat className="w-3.5 h-3.5 text-white" /></div>
-                      <h5 className="text-xs font-bold text-white">Rotating Key Mapping</h5>
-                    </div>
-                    <p className="text-xs text-gray-300 leading-relaxed">The symbol-to-digit key changes after every session, preventing rote memorization and forcing a fresh visual lookup on each trial — just like the clinical SDMT.</p>
-                  </div>
+                  {aboutCards.map((card, i) => {
+                    const Icon = [Users, TrendingUp, Repeat][i] || Users;
+                    const accent = ['bg-blue-600', 'bg-emerald-600', 'bg-purple-600'][i] || 'bg-blue-600';
+                    return (
+                      <div key={i} className="p-4 rounded-xl border border-gray-800 bg-white/[0.02]">
+                        <div className="flex items-center gap-2.5 mb-2">
+                          <div className={`w-7 h-7 rounded-lg ${accent} flex items-center justify-center`}><Icon className="w-3.5 h-3.5 text-white" /></div>
+                          <h5 className="text-xs font-bold text-white truncate">{card.title}</h5>
+                        </div>
+                        <p className="text-xs text-gray-300 leading-relaxed">{card.desc}</p>
+                      </div>
+                    );
+                  })}
                 </div>
               </div>
             </DrillAccordion>
 
             <DrillAccordion
               id="faq"
-              title="Frequently Asked Questions"
+              title={copy?.faqTitle || "Frequently Asked Questions"}
               isOpen={openAccordion === 'faq'}
               onToggle={() => setOpenAccordion(openAccordion === 'faq' ? null : 'faq')}
             >
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4 font-sans">
-                {FAQ_ITEMS.map((item, i) => (
+                {faqItems.map((item, i) => (
                   <div key={i} className="bg-[#05060b] border border-gray-800 rounded-xl p-5">
                     <h4 className="text-sm font-bold text-gray-200 mb-2">{item.q}</h4>
                     <p className="text-xs text-gray-400 leading-relaxed">{item.a}</p>
@@ -713,36 +753,6 @@ export default function SymbolMatchingClient({ copy } = {}) {
             </DrillAccordion>
           </div>
         )}
-
-        {/* RELATED DRILLS GRID */}
-        {!isFullscreen && (
-          <section className="mt-4">
-            <h2 className="text-sm font-bold text-slate-400 uppercase tracking-wider mb-3">
-              Related Cognitive Drills
-            </h2>
-            <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
-              {RELATED_DRILLS.map((drill) => (
-                <Link
-                  key={drill.id}
-                  href={drill.href}
-                  className="group bg-[#0c0c16] border border-white/5 hover:border-cyan-500/40 rounded-xl p-3.5 transition-all duration-200 hover:-translate-y-0.5 flex flex-col justify-between"
-                >
-                  <div>
-                    <div className="text-[10px] font-bold text-cyan-400 uppercase tracking-wider mb-1">{drill.cat}</div>
-                    <div className="text-xs font-bold text-white group-hover:text-cyan-300 transition-colors">{drill.name}</div>
-                    <div className="text-[11px] text-slate-400 mt-1 line-clamp-2 leading-relaxed">{drill.desc}</div>
-                  </div>
-                  <div className="text-[10px] font-bold text-slate-500 group-hover:text-cyan-400 mt-3 flex items-center gap-1 transition-colors">
-                    Train Drill <span>→</span>
-                  </div>
-                </Link>
-              ))}
-            </div>
-          </section>
-        )}
-
-        {/* SITE FOOTER */}
-        {!isFullscreen && <DrillFooter />}
 
       </main>
     </div>

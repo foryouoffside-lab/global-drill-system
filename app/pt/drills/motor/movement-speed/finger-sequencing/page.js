@@ -6,25 +6,25 @@ import DrillFooter from '@/components/drill/DrillFooter';
 import { pickSources } from '@/lib/drillSources';
 
 export const metadata = {
-  title: 'Treino de Mira Sequencial – Teste de Dedos | SkillDrills',
-  description: 'Treino de mira sequencial gratuito. Pratique alternância rápida de alvos em ordem numérica, velocidade dos dedos e precisão motora direto no navegador.',
+  title: 'Treino de mira sequencial | Teste de clique | SkillDrills',
+  description: 'Clique nos alvos em ordem para medir troca de alvo, precisão e ritmo. Treino de mira gratuito no navegador, sem instalar nada.',
   keywords: [
     'treino de mira sequencial',
-    'teste de mira em sequencia',
-    'teste de velocidade dos dedos',
-    'clicar em ordem teste',
-    'troca de alvos aim trainer',
-    'treino de precisao de clique',
-    'target switching treino',
-    'teste de reflexo e sequencia',
-    'cliques por segundo ordenados',
-    'treino de mira fps navegador',
-    'agilidade motora dos dedos',
-    'teste de coordenacao motora fina',
+    'teste de velocidade de clique',
+    'troca de alvo treino',
+    'precisão do mouse',
+    'alvos numerados',
+    'clique em ordem teste',
+    'aim trainer português',
+    'treino de mira FPS',
+    'velocidade dos dedos teste',
+    'coordenação motora mouse',
+    'teste de clique e precisão',
+    'trajetória do mouse',
   ],
   openGraph: {
-    title: 'Treino de Mira Sequencial – Teste de Dedos | SkillDrills',
-    description: 'Treino de mira sequencial gratuito. Pratique alternância rápida de alvos em ordem numérica, velocidade dos dedos e precisão motora direto no navegador.',
+    title: 'Treino de mira sequencial | Teste de clique | SkillDrills',
+    description: 'Clique nos alvos em ordem para medir troca de alvo e precisão no navegador.',
     type: 'article',
     url: 'https://skilldrills.online/pt/drills/motor/movement-speed/finger-sequencing',
     siteName: 'SkillDrills',
@@ -32,8 +32,8 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Treino de Mira Sequencial – Teste de Dedos | SkillDrills',
-    description: 'Treino de mira sequencial gratuito. Pratique alternância rápida de alvos em ordem numérica.',
+    title: 'Treino de mira sequencial | Teste de clique | SkillDrills',
+    description: 'Treino de mira gratuito para trocar de alvo e clicar com precisão.',
   },
   robots: { index: true, follow: true },
   alternates: {
@@ -56,32 +56,35 @@ const breadcrumbSchema = {
 const softwareApplicationSchema = {
   '@context': 'https://schema.org',
   '@type': 'SoftwareApplication',
-  name: 'Treino de Mira Sequencial – Teste de Velocidade dos Dedos',
+  inLanguage: 'pt-BR',
+  name: 'Treino de Mira Sequencial – Teste de Clique',
   applicationCategory: 'HealthApplication',
   operatingSystem: 'All',
   offers: { '@type': 'Offer', price: '0', priceCurrency: 'BRL' },
   description: 'Treinador de mira sequencial gratuito no navegador. Teste a rapidez na alternância de alvos ordenados, eficiência de trajetória do cursor e agilidade dos dedos.',
   url: 'https://skilldrills.online/pt/drills/motor/movement-speed/finger-sequencing',
   publisher: { '@type': 'Organization', name: 'SkillDrills', url: 'https://skilldrills.online' },
-  dateModified: '2026-09-05',
+  dateModified: '2026-09-20',
 };
 
 const webApplicationSchema = {
   '@context': 'https://schema.org',
   '@type': 'WebApplication',
+  inLanguage: 'pt-BR',
   name: 'Treinador de Mira Sequencial',
   applicationCategory: 'GameApplication',
   operatingSystem: 'All',
   browserRequirements: 'Requer suporte a Canvas HTML5 e JavaScript',
   offers: { '@type': 'Offer', price: '0', priceCurrency: 'BRL' },
   url: 'https://skilldrills.online/pt/drills/motor/movement-speed/finger-sequencing',
-  dateModified: '2026-09-05',
+  dateModified: '2026-09-20',
 };
 
 const videoGameSchema = {
   '@context': 'https://schema.org',
   '@type': 'VideoGame',
-  name: 'Treino de Mira Sequencial – Teste de Velocidade dos Dedos',
+  inLanguage: 'pt-BR',
+  name: 'Treino de Mira Sequencial – Teste de Clique',
   url: 'https://skilldrills.online/pt/drills/motor/movement-speed/finger-sequencing',
   description: 'Meça a velocidade de alternância entre alvos em ordem predeterminada baseando-se em programas motores seriais.',
   genre: ['Aim Game', 'Action', 'Esports Training'],
@@ -93,6 +96,8 @@ const videoGameSchema = {
 const faqSchema = {
   '@context': 'https://schema.org',
   '@type': 'FAQPage',
+  inLanguage: 'pt-BR',
+  dateModified: '2026-09-20',
   mainEntity: [
     {
       '@type': 'Question',
@@ -180,6 +185,8 @@ const faqSchema = {
 const howToSchema = {
   '@context': 'https://schema.org',
   '@type': 'HowTo',
+  inLanguage: 'pt-BR',
+  dateModified: '2026-09-20',
   name: 'Como Treinar Mira Sequencial e Velocidade dos Dedos',
   description: 'Guia prático para desenvolver rapidez em cliques ordenados e troca ágil de alvos.',
   step: [
@@ -309,7 +316,7 @@ const ptCopy = {
   accuracy: "Precisão",
   bestScore: "Melhor Pontuação",
   startButtonText: "Iniciar Treino",
-  startSubtitle: "Precisão Motora e Trajetórias Sequenciais • Entrada Direta 1:1",
+  startSubtitle: "Troca de alvo e clique preciso • Entrada direta 1:1",
   getReady: "PREPARE-SE",
   rulesTitle: "Instruções do Treino e Sistema de Pontuação",
   rulesItems: [

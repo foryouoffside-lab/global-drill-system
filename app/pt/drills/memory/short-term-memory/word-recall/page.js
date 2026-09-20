@@ -5,21 +5,23 @@ import { getAlternateLanguages } from '@/lib/i18n/locales';
 import { pickSources } from '@/lib/drillSources';
 
 export const metadata = {
-  title: "Teste de Memória Verbal – Evocação de Palavras | SkillDrills",
-  description: "Teste de memória verbal online grátis: Memorize listas de palavras, domine o efeito de posição serial e treine sua memória operacional direto no navegador.",
+  title: "Teste de memória verbal online | Palavras | SkillDrills",
+  description: "Teste grátis de memória verbal: memorize uma lista de palavras, faça a evocação livre e treine sua memória operacional no navegador.",
   keywords: [
-    "teste de memoria verbal",
-    "memoria verbal de curto prazo",
-    "teste de evocacao livre",
-    "efeito de posicao serial teste",
-    "treino de memoria verbal online",
-    "jogo de memorizar palavras",
+    "teste de memória verbal",
+    "teste de memória de palavras",
+    "memorizar palavras",
+    "evocação livre",
+    "recordação de palavras",
+    "memória verbal de curto prazo",
     "memoria operacional verbal",
-    "agrupamento semantico memoria",
-    "teste de retencao de palavras",
-    "exercicio de memoria verbal",
-    "teste neuropsicologico verbal",
-    "jogo de evocacao de palavras"
+    "lista de palavras memória",
+    "teste de evocação de palavras",
+    "exercício de memória verbal",
+    "efeito de posição serial",
+    "agrupamento semântico",
+    "teste de memória grátis",
+    "memória de palavras online"
   ],
   alternates: {
     canonical: "https://skilldrills.online/pt/drills/memory/short-term-memory/word-recall",
@@ -30,8 +32,8 @@ export const metadata = {
     follow: true,
   },
   openGraph: {
-    title: "Teste de Memória Verbal – Evocação de Palavras | SkillDrills",
-    description: "Teste de memória verbal online grátis: Memorize listas de palavras, domine o efeito de posição serial e treine sua memória operacional direto no navegador.",
+    title: "Teste de memória verbal online | Palavras | SkillDrills",
+    description: "Teste grátis de memória verbal: memorize uma lista de palavras, faça a evocação livre e treine sua memória operacional no navegador.",
     url: "https://skilldrills.online/pt/drills/memory/short-term-memory/word-recall",
     siteName: 'SkillDrills',
     locale: 'pt_BR',
@@ -39,8 +41,8 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: "Teste de Memória Verbal – Evocação de Palavras | SkillDrills",
-    description: "Teste de memória verbal online grátis: Memorize listas de palavras, domine o efeito de posição serial e treine sua memória operacional direto no navegador.",
+    title: "Teste de memória verbal online | Palavras | SkillDrills",
+    description: "Teste grátis de memória verbal: memorize uma lista de palavras, faça a evocação livre e treine sua memória operacional no navegador.",
   },
 };
 
@@ -69,6 +71,7 @@ export default function LocalizedWordRecallPage() {
     "description": "Avaliação neuropsicológica gratuita no navegador que mede a evocação livre imediata, a codificação semântica associativa e a capacidade da memória verbal operacional.",
     "genre": "Cognitive Assessment / Verbal Memory",
     "url": "https://skilldrills.online/pt/drills/memory/short-term-memory/word-recall",
+    "sameAs": ["https://pt.wikipedia.org/wiki/Recorda%C3%A7%C3%A3o_em_mem%C3%B3ria"],
     "publisher": {
       "@type": "Organization",
       "name": "SkillDrills",
@@ -320,11 +323,11 @@ export default function LocalizedWordRecallPage() {
     faqs: faqSchema.mainEntity.map(e => ({ q: e.name, a: e.acceptedAnswer.text })),
     sources: pickSources('craik1972', 'murdock1962', 'tulving1962', 'woods2015'),
     related: [
-      { href: "/drills/memory/short-term-memory/digit-span", label: "Digit Span Memory Test" },
-      { href: "/drills/memory/short-term-memory/color-sequence", label: "Color Memory Game" },
-      { href: "/drills/memory/spatial-memory/grid-memorization", label: "Visual Memory Test" },
-      { href: "/drills/memory/spatial-memory/object-location", label: "Object Location Memory Test" },
-      { href: "/drills/memory/working-memory/n-back", label: "3-Back Working Memory Test" }
+      { href: "/pt/drills/memory/short-term-memory/digit-span", label: "Teste de memória de dígitos" },
+      { href: "/pt/drills/memory/short-term-memory/color-sequence", label: "Jogo de memória de cores" },
+      { href: "/pt/drills/memory/spatial-memory/grid-memorization", label: "Teste de memória visual" },
+      { href: "/pt/drills/memory/spatial-memory/object-location", label: "Memória de localização" },
+      { href: "/pt/drills/memory/working-memory/n-back", label: "Teste N-Back" }
     ]
   };
 
@@ -355,9 +358,9 @@ export default function LocalizedWordRecallPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(howToSchema) }}
       />
       <WordRecallClient copy={{
-          "h1Keyword": "Teste de Memória Verbal",
-          "h1Suffix": " – Jogo de Evocação de Palavras Grátis",
-          "subtitle": "A evocação livre de uma lista de palavras nunca é plana: lembramos melhor as primeiras e as últimas palavras e pior as do meio, o clássico efeito de posição serial mapeado por Murdock (1962). O nível de processamento semântico (Craik & Lockhart, 1972) importa mais do que o tempo de observação passiva.",
+          "h1Keyword": "Teste de memória verbal",
+          "h1Suffix": " – Evocação livre de palavras",
+          "subtitle": "Memorize palavras e faça a evocação livre",
           "statScore": "Pontos",
           "statTime": "Tempo",
           "statWords": "Palavras",
@@ -372,7 +375,7 @@ export default function LocalizedWordRecallPage() {
           "feedbackPhase": "AVALIAÇÃO DA EVOCAÇÃO",
           "extraWordsLabel": "Palavras incorretas ou extras digitadas:",
           "startTitle": "Evocação Verbal Pro",
-          "startSubtitle": "Memória Verbal de Curto Prazo • Evocação Livre",
+          "startSubtitle": "Memória verbal • evocação livre",
           "countdownSubtitle": "PREPARE-SE",
           "newBest": "NOVO RECORDE",
           "pointsLabel": "Pontos",
@@ -465,7 +468,7 @@ export default function LocalizedWordRecallPage() {
       <div className="max-w-4xl mx-auto px-4 pb-12">
         <RelatedDrills
           currentCategory="memory"
-          currentHref="/drills/memory/short-term-memory/word-recall"
+          currentHref="/pt/drills/memory/short-term-memory/word-recall"
           locale="pt"
         />
       </div>

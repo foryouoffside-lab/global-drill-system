@@ -22,6 +22,8 @@ import DrillFlashOverlay from '../../../../components/drill/DrillFlashOverlay';
 import FpsStartCard from '../../../../components/drill/FpsStartCard';
 import DrillResultCard from '../../../../components/drill/DrillResultCard';
 import useImmersiveMode from '@/lib/useImmersiveMode';
+import { useTranslation } from '@/lib/i18n/useTranslation';
+import { FPS_TRACKING_TRAINER_I18N } from '@/lib/i18n/drills/fpsTrackingTrainer';
 
 // ============================================================
 // TUNING CONSTANTS
@@ -84,13 +86,20 @@ const getLevelConfig = (level: number, combo = 0) => {
 
 type Particle = { x: number; y: number; vx: number; vy: number; color: string; life: number };
 
-export default function FPSTrackingTrainerClient({ copy }: { copy?: { title?: string } } = {}) {
+export default function FPSTrackingTrainerClient({ copy }: { copy?: { title?: string; subtitle?: string; caption?: string } } = {}) {
+  const { locale, t } = useTranslation(FPS_TRACKING_TRAINER_I18N);
   const [gameState, setGameState] = useState<'start' | 'countdown' | 'playing' | 'gameOver'>('start');
   const [isFullscreen, setIsFullscreen] = useState<boolean>(false);
   useImmersiveMode(isFullscreen); // locks the page behind while the drill fills the screen
   const [soundEnabled, setSoundEnabled] = useState(true);
   const [flashEnabled, setFlashEnabled] = useState(true);
   const [penaltyEnabled, setPenaltyEnabled] = useState(false);
+  const rulesItems = [
+    { num: '1', text: t('fpsTrackingTrainer.rule1Text', 'Moving target hit'), highlight: t('fpsTrackingTrainer.rule1Highlight', '+100 PTS (+0.6s)'), result: t('fpsTrackingTrainer.rule1Result', 'Combo multiplier') },
+    { num: '2', text: t('fpsTrackingTrainer.rule2Text', 'Streak & heat'), highlight: t('fpsTrackingTrainer.rule2Highlight', 'Up to 3.0×'), result: t('fpsTrackingTrainer.rule2Result', 'Faster movement') },
+    { num: '3', text: t('fpsTrackingTrainer.rule3Text', 'Level progression'), highlight: t('fpsTrackingTrainer.rule3Highlight', '+1 level / 1750 PTS'), result: t('fpsTrackingTrainer.rule3Result', 'Adaptive scaling') },
+    { num: '4', text: t('fpsTrackingTrainer.rule4Text', 'Miss / timeout'), highlight: penaltyEnabled ? t('fpsTrackingTrainer.rule4HighlightPenalty', 'Penalty') : t('fpsTrackingTrainer.rule4HighlightZero', 'No time penalty'), result: penaltyEnabled ? t('fpsTrackingTrainer.rule4ResultPenalty', 'Resets combo and removes 0.8s') : t('fpsTrackingTrainer.rule4ResultZero', 'Resets combo; time penalty is opt-in') },
+  ];
   const [openAccordion, setOpenAccordion] = useState<string | null>(null);
   const [isMobile, setIsMobile] = useState<boolean>(false);
   const [isPortrait, setIsPortrait] = useState<boolean>(false);
@@ -655,36 +664,38 @@ export default function FPSTrackingTrainerClient({ copy }: { copy?: { title?: st
 
   // Share Score Card helper
   const sharePage = useCallback(async () => {
-    const url = 'https://skilldrills.online/drills/reaction-speed/fps-tracking-trainer';
+    const path = locale === 'en' ? '/drills/reaction-speed/fps-tracking-trainer' : `/${locale}/drills/reaction-speed/fps-tracking-trainer`;
+    const url = `https://skilldrills.online${path}`;
+    const drillName = copy?.title || t('fpsTrackingTrainer.title', 'FPS Tracking Trainer');
     try {
       const canvas = generateShareCard({
         score: uiScore,
         accuracy: analytics.accuracy,
         speed: analytics.avgReactionTime,
-        drillName: 'FPS Tracking Trainer',
+        drillName,
         rank: analytics.grade?.letter || 'A',
         rankName: analytics.grade?.label || 'ELITE REFLEX',
         playerName: getPlayerName(),
         level: analytics.finalLevel,
-        date: new Date().toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' }),
-        url: 'skilldrills.online/drills/reaction-speed/fps-tracking-trainer'
+        date: new Date().toLocaleDateString(locale === 'pt' ? 'pt-BR' : locale === 'es' ? 'es-ES' : locale === 'fr' ? 'fr-FR' : locale === 'de' ? 'de-DE' : locale === 'ja' ? 'ja-JP' : locale === 'ko' ? 'ko-KR' : 'en-US', { month: 'short', day: 'numeric', year: 'numeric' }),
+        url: `skilldrills.online${path}`
       });
 
       await shareScoreCard(canvas, {
-        title: 'FPS Tracking Trainer — My Score',
-        text: `I scored ${uiScore} (Grade: ${analytics.grade?.letter || 'A'}, Lv. ${analytics.finalLevel}) on FPS Tracking Trainer at SkillDrills!`,
+        title: `${drillName} — ${t('fpsTrackingTrainer.shareScore', 'Share Score')}`,
+        text: `${drillName}: ${uiScore} (${analytics.grade?.letter || 'A'}, ${t('fpsTrackingTrainer.level', 'Level')} ${analytics.finalLevel}) — SkillDrills`,
         url
       });
     } catch (err) {
       if (navigator.share) {
         navigator.share({
-          title: 'FPS Tracking Trainer',
-          text: `I scored ${uiScore} on FPS Tracking Trainer! Can you beat my score?`,
+          title: drillName,
+          text: `${drillName}: ${uiScore}. ${t('fpsTrackingTrainer.shareScore', 'Share Score')}`,
           url
         }).catch(() => {});
       }
     }
-  }, [uiScore, analytics]);
+  }, [copy?.title, locale, t, uiScore, analytics]);
 
   return (
     <div className="min-h-screen bg-[#050508] text-white flex flex-col font-sans select-none">
@@ -692,7 +703,7 @@ export default function FPSTrackingTrainerClient({ copy }: { copy?: { title?: st
       {/* Mobile Orientation Alert */}
       {isMobile && isPortrait && (
         <div className="w-full bg-amber-500/10 border-b border-amber-500/20 px-4 py-2 text-center text-xs text-amber-300 flex items-center justify-center gap-2">
-          <span>Rotate to landscape mode for a wider horizontal tracking field.</span>
+          <span>{t('fpsTrackingTrainer.rotateLandscape', 'Rotate to landscape mode for a wider tracking field.')}</span>
         </div>
       )}
 
@@ -703,11 +714,12 @@ export default function FPSTrackingTrainerClient({ copy }: { copy?: { title?: st
         {!isFullscreen && (
           <div className="flex flex-col gap-1">
             <h1 className="text-2xl sm:text-3xl font-black tracking-tight text-white">
-              <span data-seo-kw="1">{copy?.title || "FPS Tracking Trainer"}</span>
+              <span data-seo-kw="1">{copy?.title || t('fpsTrackingTrainer.title', 'FPS Tracking Trainer')}</span>
             </h1>
             <p className="text-[13px] text-slate-400 leading-relaxed">
-              Tracking aim is holding your crosshair on a target that keeps moving. Human smooth pursuit follows a target accurately up to roughly 30&deg;/s; past that the eye falls behind and needs catch-up saccades (Krauzlis, 2004).
+              {copy?.subtitle || t('fpsTrackingTrainer.subtitle', 'Smooth Tracking · Strafe Pursuit')}
             </p>
+            <p className="text-[12px] text-slate-500 leading-relaxed">{copy?.caption || t('fpsTrackingTrainer.caption', 'Keep the reticle with a moving target while its speed and direction change.')}</p>
           </div>
         )}
 
@@ -715,10 +727,10 @@ export default function FPSTrackingTrainerClient({ copy }: { copy?: { title?: st
         {!isFullscreen && (
           <div className="grid grid-cols-4 gap-2 w-full -mb-2">
             {[
-              { label: 'Score', value: uiScore, tone: 'text-red-400' },
-              { label: 'Time', value: `${uiTimeLeft}s`, tone: uiTimeLeft <= 10 ? 'text-red-400 animate-pulse' : 'text-white' },
-              { label: 'Level', value: `L${uiLevel}`, tone: 'text-indigo-400' },
-              { label: 'Best Score', value: bestScore, tone: 'text-amber-400' },
+              { label: t('fpsTrackingTrainer.score', 'Score'), value: uiScore, tone: 'text-red-400' },
+              { label: t('fpsTrackingTrainer.time', 'Time'), value: `${uiTimeLeft}s`, tone: uiTimeLeft <= 10 ? 'text-red-400 animate-pulse' : 'text-white' },
+              { label: t('fpsTrackingTrainer.level', 'Level'), value: `L${uiLevel}`, tone: 'text-indigo-400' },
+              { label: t('fpsTrackingTrainer.bestScore', 'Best Score'), value: bestScore, tone: 'text-amber-400' },
             ].map((s) => (
               <div key={s.label} className="rounded-lg border border-white/[0.06] bg-white/[0.015] px-2 py-2 text-center">
                 <div className="text-[9.5px] uppercase font-semibold text-slate-500 tracking-[0.12em]">{s.label}</div>
@@ -742,11 +754,11 @@ export default function FPSTrackingTrainerClient({ copy }: { copy?: { title?: st
           {(gameState === 'playing' || gameState === 'countdown') && (
             <>
               <div className="absolute top-4 left-4 z-30 pointer-events-none flex flex-col">
-                <p className="text-[10px] font-semibold uppercase tracking-wider text-white/50">Score</p>
+                <p className="text-[10px] font-semibold uppercase tracking-wider text-white/50">{t('fpsTrackingTrainer.score', 'Score')}</p>
                 <p className="text-2xl sm:text-3xl font-black text-white tabular-nums leading-tight">{uiScore}</p>
               </div>
               <div className="absolute top-4 right-4 z-30 pointer-events-none text-right">
-                <p className="text-[10px] font-semibold uppercase tracking-wider text-white/50">Time Left</p>
+                <p className="text-[10px] font-semibold uppercase tracking-wider text-white/50">{t('fpsTrackingTrainer.timeLeft', 'Time Left')}</p>
                 <p className={`text-2xl sm:text-3xl font-black tabular-nums leading-tight ${uiTimeLeft <= 10 ? 'text-red-400 animate-pulse' : 'text-white'}`}>{uiTimeLeft}s</p>
               </div>
             </>
@@ -765,7 +777,7 @@ export default function FPSTrackingTrainerClient({ copy }: { copy?: { title?: st
                   });
                 }}
                 className="p-2.5 rounded-full bg-black/60 border border-white/10 text-slate-400 hover:text-white transition-colors cursor-pointer"
-                title="Toggle Miss Flash"
+                title={t('fpsTrackingTrainer.flash', 'Toggle miss flash')}
               >
                 {flashEnabled ? <Zap className="w-4 h-4 text-red-400" /> : <ZapOff className="w-4 h-4 text-slate-500" />}
               </button>
@@ -779,7 +791,7 @@ export default function FPSTrackingTrainerClient({ copy }: { copy?: { title?: st
                   });
                 }}
                 className="p-2.5 rounded-full bg-black/60 border border-white/10 text-slate-400 hover:text-white transition-colors cursor-pointer"
-                title="Toggle Sound"
+                title={t('fpsTrackingTrainer.sound', 'Toggle sound')}
               >
                 {soundEnabled ? <Volume2 className="w-4 h-4 text-red-400" /> : <VolumeX className="w-4 h-4 text-slate-500" />}
               </button>
@@ -813,8 +825,8 @@ export default function FPSTrackingTrainerClient({ copy }: { copy?: { title?: st
             <FpsStartCard
               icon={Target}
               accent="red"
-              title="FPS Tracking Trainer"
-              subtitle="Dynamic Strafe • Moving Target Pursuit"
+              title={copy?.title || t('fpsTrackingTrainer.title', 'FPS Tracking Trainer')}
+              subtitle={copy?.subtitle || t('fpsTrackingTrainer.subtitle', 'Smooth Tracking · Strafe Pursuit')}
               isTouchOnlyDevice={false}
               onStart={enterDrill}
             />
@@ -822,7 +834,7 @@ export default function FPSTrackingTrainerClient({ copy }: { copy?: { title?: st
 
           {/* COUNTDOWN OVERLAY */}
           {gameState === 'countdown' && (
-            <DrillCountdown value={countdownValue} subtitle="GET READY" />
+            <DrillCountdown value={countdownValue} subtitle={t('fpsTrackingTrainer.getReady', 'GET READY')} />
           )}
 
           {/* UNIVERSAL RESULT CARD */}
@@ -833,10 +845,10 @@ export default function FPSTrackingTrainerClient({ copy }: { copy?: { title?: st
               score={uiScore}
               isNewBest={isNewBest}
               stats={[
-                { label: 'Accuracy', value: analytics.accuracy, suffix: '%' },
-                { label: 'Avg Reaction', value: analytics.avgReactionTime, suffix: 'ms' },
-                { label: 'Peak Level', value: `Lv. ${analytics.finalLevel}` },
-                { label: 'Max Combo', value: analytics.maxCombo, suffix: 'x' },
+                { label: t('fpsTrackingTrainer.accuracy', 'Accuracy'), value: analytics.accuracy, suffix: '%' },
+                { label: t('fpsTrackingTrainer.avgReaction', 'Avg Reaction'), value: analytics.avgReactionTime, suffix: 'ms' },
+                { label: t('fpsTrackingTrainer.peakLevel', 'Peak Level'), value: `Lv. ${analytics.finalLevel}` },
+                { label: t('fpsTrackingTrainer.maxCombo', 'Max Combo'), value: analytics.maxCombo, suffix: 'x' },
               ]}
               onPlayAgain={enterDrill}
               onShare={sharePage}
@@ -851,12 +863,12 @@ export default function FPSTrackingTrainerClient({ copy }: { copy?: { title?: st
           <div className="[&>div]:!mt-0">
             <DrillAccordion
               id="rules"
-              title="Drill Instructions & Scoring System"
+              title={t('fpsTrackingTrainer.rulesTitle', 'Drill Instructions & Scoring System')}
               isOpen={openAccordion === 'rules'}
               onToggle={() => setOpenAccordion(openAccordion === 'rules' ? null : 'rules')}
             >
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4 font-sans">
-                {RULES_ITEMS.map((r) => (
+                {rulesItems.map((r) => (
                   <RuleItem key={r.num} {...r} />
                 ))}
               </div>
@@ -864,20 +876,20 @@ export default function FPSTrackingTrainerClient({ copy }: { copy?: { title?: st
 
             <DrillAccordion
               id="about"
-              title="About FPS Tracking Trainer"
+              title={t('fpsTrackingTrainer.aboutTitle', 'About FPS Tracking Trainer')}
               isOpen={openAccordion === 'about'}
               onToggle={() => setOpenAccordion(openAccordion === 'about' ? null : 'about')}
             >
               <div className="space-y-8 font-sans">
                 <section>
                   <h3 className="text-base font-bold text-white mb-2 flex items-center gap-2">
-                    <Eye className="w-4 h-4 text-red-400" /> What Is Dynamic Strafe Tracking & Moving Target Reaction?
+                    <Eye className="w-4 h-4 text-red-400" /> {t('fpsTrackingTrainer.aboutHeading', 'What does moving-target tracking measure?')}
                   </h3>
                   <p className="text-sm leading-relaxed mb-3 text-gray-300">
-                    <strong>FPS Tracking Trainer</strong> isolates visual smooth pursuit and predictive click timing against erratic, horizontally strafing targets. In high-speed gunfights across Apex Legends, Overwatch 2, and COD Warzone, enemies constantly A/D strafe to throw off crosshair tracking.
+                    {t('fpsTrackingTrainer.aboutP1', 'This drill isolates smooth pursuit against a moving target and measures continuous control rather than a single stationary flick.')}
                   </p>
                   <p className="text-sm leading-relaxed text-gray-300">
-                    Predicting directional switches and executing precise click timings while the target is in motion builds smooth hand-eye coordination and minimizes reaction latency during dynamic duels.
+                    {t('fpsTrackingTrainer.aboutP2', 'The result is a browser-game measure affected by display, pointer, browser, frame timing, sensitivity, and fatigue.')}
                   </p>
                 </section>
 
@@ -885,55 +897,28 @@ export default function FPSTrackingTrainerClient({ copy }: { copy?: { title?: st
                   <div className="p-4 rounded-xl border border-gray-800 bg-white/[0.02]">
                     <div className="flex items-center gap-2.5 mb-2">
                       <div className="w-7 h-7 rounded-lg bg-red-600 flex items-center justify-center"><Users className="w-3.5 h-3.5 text-white" /></div>
-                      <h4 className="text-xs font-bold text-white">Who Should Use This?</h4>
+                      <h4 className="text-xs font-bold text-white">{t('fpsTrackingTrainer.audienceTitle', 'Who should use this?')}</h4>
                     </div>
-                    <p className="text-xs text-gray-300 leading-relaxed">FPS and battle royale players looking to improve moving target tracking, strafe prediction, and reactive click accuracy.</p>
+                    <p className="text-xs text-gray-300 leading-relaxed">{t('fpsTrackingTrainer.audienceDesc', 'FPS and battle-royale players working on smooth mouse control, moving targets, and direction changes.')}</p>
                   </div>
                   <div className="p-4 rounded-xl border border-gray-800 bg-white/[0.02]">
                     <div className="flex items-center gap-2.5 mb-2">
                       <div className="w-7 h-7 rounded-lg bg-emerald-600 flex items-center justify-center"><TrendingUp className="w-3.5 h-3.5 text-white" /></div>
-                      <h4 className="text-xs font-bold text-white">Anti-Strafe Prediction</h4>
+                      <h4 className="text-xs font-bold text-white">{t('fpsTrackingTrainer.trackingTitle', 'Smooth pursuit')}</h4>
                     </div>
-                    <p className="text-xs text-gray-300 leading-relaxed">Conditions your visual system to track target velocity and counter unpredictable direction reversals without overshooting.</p>
+                    <p className="text-xs text-gray-300 leading-relaxed">{t('fpsTrackingTrainer.trackingDesc', 'Build continuous cursor control instead of repeated panic corrections.')}</p>
                   </div>
                   <div className="p-4 rounded-xl border border-gray-800 bg-white/[0.02]">
                     <div className="flex items-center gap-2.5 mb-2">
                       <div className="w-7 h-7 rounded-lg bg-blue-600 flex items-center justify-center"><Zap className="w-3.5 h-3.5 text-white" /></div>
-                      <h4 className="text-xs font-bold text-white">Kinetic Intercept Timing</h4>
+                      <h4 className="text-xs font-bold text-white">{t('fpsTrackingTrainer.reversalTitle', 'Reversal recovery')}</h4>
                     </div>
-                    <p className="text-xs text-gray-300 leading-relaxed">Reinforces the exact micro-second trigger timing required to click high-velocity moving hitboxes cleanly.</p>
+                    <p className="text-xs text-gray-300 leading-relaxed">{t('fpsTrackingTrainer.reversalDesc', 'Practise staying calm when a target changes direction and the cursor briefly falls behind.')}</p>
                   </div>
                 </div>
               </div>
             </DrillAccordion>
           </div>
-        )}
-
-        {/* RELATED DRILLS GRID */}
-        {!isFullscreen && (
-          <section className="mt-4">
-            <h2 className="text-sm font-bold text-slate-400 uppercase tracking-wider mb-3">
-              Related Reaction Speed Drills
-            </h2>
-            <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
-              {RELATED_DRILLS.map((drill) => (
-                <Link
-                  key={drill.id}
-                  href={drill.href}
-                  className="group bg-[#0c0c16] border border-white/5 hover:border-red-500/40 rounded-xl p-3.5 transition-all duration-200 hover:-translate-y-0.5 flex flex-col justify-between"
-                >
-                  <div>
-                    <div className="text-[10px] font-bold text-red-400 uppercase tracking-wider mb-1">{drill.cat}</div>
-                    <div className="text-xs font-bold text-white group-hover:text-red-300 transition-colors">{drill.name}</div>
-                    <div className="text-[11px] text-slate-400 mt-1 line-clamp-2 leading-relaxed">{drill.desc}</div>
-                  </div>
-                  <div className="text-[10px] font-bold text-slate-500 group-hover:text-red-400 mt-3 flex items-center gap-1 transition-colors">
-                    Train Drill <span>→</span>
-                  </div>
-                </Link>
-              ))}
-            </div>
-          </section>
         )}
 
       </main>

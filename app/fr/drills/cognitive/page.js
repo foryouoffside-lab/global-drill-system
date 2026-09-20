@@ -6,18 +6,17 @@ import { getLocalizedDrill } from '@/lib/i18n/drillNames';
 const cognitiveDrills = DRILLS.filter((d) => d.category === 'cognitive');
 
 export const metadata = {
-  title: 'Entraînement Cérébral & Agilité Mentale | SkillDrills',
-  description: 'Entraînement cérébral et agilité mentale gratuits en ligne. 8 exercices scientifiques pour la concentration, le test de Stroop et les tables de Schulte.',
+  title: 'Entraînement cérébral et concentration | SkillDrills',
+  description: '8 exercices gratuits dans le navigateur pour attention, mémoire, réaction et vitesse de traitement. Sans inscription.',
   keywords: [
-    'entraînement cérébral gratuit', 'jeux de stimulation cognitive', 'exercices de concentration en ligne',
-    'test de vitesse de traitement cognitif', 'test de stroop en ligne gratuit', 'table de schulte en ligne',
-    'exercices attention divisée', 'muscler sa mémoire de travail', 'jeux de gymnastique cérébrale',
-    'exercices fonctions exécutives', 'flexibilité cognitive exercices', 'exercices concentration tdah adulte',
-    'entraînement cognitif esport', 'agilité mentale exercices gratuits', 'jeux pour stimuler la mémoire senior'
+    'entraînement cognitif', 'jeux de cerveau gratuits', 'exercices de concentration', 'test de mémoire',
+    "test d'attention", 'vitesse de traitement', 'test de réaction', 'mémoire de travail',
+    'test de Stroop', 'table de Schulte', "entraîner l'attention", 'jeux cérébraux en ligne',
+    'gymnastique cérébrale', 'attention divisée', 'agilité mentale'
   ],
   openGraph: {
-    title: 'Entraînement Cérébral & Agilité Mentale | SkillDrills',
-    description: 'Entraînement cérébral et agilité mentale gratuits en ligne. 8 exercices scientifiques pour la concentration, le test de Stroop et les tables de Schulte.',
+    title: 'Entraînement cérébral et concentration | SkillDrills',
+    description: '8 exercices gratuits dans le navigateur pour attention, mémoire, réaction et vitesse de traitement. Sans inscription.',
     type: 'website',
     url: 'https://skilldrills.online/fr/drills/cognitive',
     siteName: 'SkillDrills',
@@ -26,8 +25,8 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Entraînement Cérébral & Agilité Mentale | SkillDrills',
-    description: 'Améliorez votre concentration, contrôle inhibiteur, test de Stroop et tables de Schulte avec 8 exercices scientifiques dans le navigateur.',
+    title: 'Entraînement cérébral et concentration | SkillDrills',
+    description: '8 exercices gratuits pour attention, mémoire, réaction et vitesse de traitement dans le navigateur.',
     images: ['https://skilldrills.online/icons/icon-512x512.png'],
   },
   robots: { index: true, follow: true },
@@ -50,9 +49,11 @@ const breadcrumbSchema = {
 const collectionSchema = {
   "@context": "https://schema.org",
   "@type": "CollectionPage",
-  "name": "Entraînement Cérébral & Jeux Cognitifs (8 Exercices)",
+  "inLanguage": "fr-FR",
+  "dateModified": "2026-09-20",
+  "name": "Entraînement cérébral et concentration (8 exercices)",
   "url": "https://skilldrills.online/fr/drills/cognitive",
-  "description": "8 exercices neuroscientifiques interactifs pour développer l'attention sélective, le contrôle inhibiteur, la vitesse de traitement et les tables de Schulte.",
+  "description": "8 exercices gratuits dans le navigateur pour attention, mémoire, réaction et vitesse de traitement.",
   "author": { "@type": "Organization", "name": "SkillDrills" },
   "hasPart": cognitiveDrills.map((drill) => {
     const loc = getLocalizedDrill(drill.href, 'fr', drill.name);
@@ -71,6 +72,8 @@ const collectionSchema = {
 const faqSchema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
+  "inLanguage": "fr-FR",
+  "dateModified": "2026-09-20",
   "mainEntity": [
     {
       "@type": "Question",

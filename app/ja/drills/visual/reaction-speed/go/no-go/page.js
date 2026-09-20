@@ -5,25 +5,25 @@ import RelatedDrills from '@/components/drill/RelatedDrills';
 import { pickSources } from '@/lib/drillSources';
 
 export const metadata = {
-  title: "Go/No-Goテスト: 反応抑制＆衝動制御測定 | SkillDrills",
-  description: "緑のGo刺激に最速反応し、赤のNo-Go刺激を瞬間静止する無料ゴーノーゴー課題テスト。右下前頭皮質と視床下核の運動ブレーキ、衝動制御、トリガーディシプリンを測定。",
+  title: "Go/No-Goテスト | 反応抑制・衝動制御 | SkillDrills",
+  description: "Go/No-Goテストで、緑には反応し赤では止まる反応抑制を練習。無料オンライン課題で誤反応と反応速度を確認できます。診断用ではありません。",
   keywords: [
-    "ゴーノーゴー 課題",
-    "Go/No-Go テスト",
+    "Go/No-Goテスト",
+    "ゴーノーゴー課題",
+    "反応抑制",
     "反応抑制 テスト",
-    "衝動制御 検査",
-    "運動抑制 課題",
-    "前頭前野 実行機能",
-    "トリガーディシプリン",
-    "ストップシグナル 課題",
-    "SART 持続的注意反応検査",
-    "コミッションエラー",
-    "誤反応 抑制 訓練",
-    "反射神経 抑制 トレーニング"
+    "衝動制御",
+    "衝動制御 テスト",
+    "抑制機能",
+    "運動抑制",
+    "実行機能 テスト",
+    "Go/No-Go テスト オンライン",
+    "誤反応 抑制",
+    "SART 持続的注意"
   ],
   openGraph: {
-    title: "Go/No-Goテスト: 反応抑制＆衝動制御測定 | SkillDrills",
-    description: "緑に反応し、赤で踏みとどまる！運動抑制力と前頭葉ブレーキを科学的に測定・強化するオンラインGo/No-Go課題。",
+    title: "Go/No-Goテスト | 反応抑制・衝動制御 | SkillDrills",
+    description: "緑には反応し、赤では止まる。反応抑制と誤反応を無料オンラインで確認するGo/No-Go課題。診断用ではありません。",
     type: 'article',
     url: 'https://skilldrills.online/ja/drills/visual/reaction-speed/go/no-go',
     siteName: 'SkillDrills',
@@ -31,8 +31,8 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: "Go/No-Goテスト: 反応抑制＆衝動制御測定 | SkillDrills",
-    description: "衝動制御とFPSトリガーディシプリンを鍛える無料オンラインGo/No-Go神経認知テスト。",
+    title: "Go/No-Goテスト | 反応抑制・衝動制御 | SkillDrills",
+    description: "緑には反応し、赤では止まる反応抑制を練習する無料Go/No-Goテスト。"
   },
   robots: { index: true, follow: true },
   alternates: {
@@ -68,7 +68,7 @@ const softwareApplicationSchema = {
     "コミッションエラー（誤反応）とオミッションエラー（見落とし）の分離記録",
     "完全クライアントサイド実行によるローカルデータ保護"
   ],
-  "dateModified": "2026-09-05"
+  "dateModified": "2026-09-20"
 };
 
 const webAppSchema = {
@@ -77,7 +77,7 @@ const webAppSchema = {
   "name": "Go/No-Go 反応抑制テスト | SkillDrills",
   "alternateName": "Go/No-Go Pro",
   "url": "https://skilldrills.online/ja/drills/visual/reaction-speed/go/no-go",
-  "dateModified": "2026-09-05",
+  "dateModified": "2026-09-20",
   "description": "無料オンラインGo/No-Go衝動制御テスト。緑のGo刺激に反応し、赤のNo-Go刺激でタップを抑制する反射制御トレーニング。",
   "applicationCategory": "EducationalApplication",
   "operatingSystem": "All",
@@ -105,7 +105,7 @@ const howToSchema = {
   "@context": "https://schema.org",
   "@type": "HowTo",
   "name": "Go/No-Go テストの実施手順",
-  "dateModified": "2026-09-05",
+  "dateModified": "2026-09-20",
   "description": "Go/No-Goプロトコルに従い、運動抑制と衝動制御を測定・強化する4つのステップ。",
   "step": [
     {
@@ -142,7 +142,7 @@ const howToSchema = {
 const faqSchema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
-  "dateModified": "2026-09-05",
+  "dateModified": "2026-09-20",
   "mainEntity": [
     {
       "@type": "Question",
@@ -228,7 +228,7 @@ const faqSchema = {
 };
 
 const goNoGoGuide = {
-  heading: "神経認知反応抑制・運動ブレーキ標準ガイド",
+  heading: "Go/No-Goテストで測る反応抑制と衝動制御",
   intro: [
     "反応抑制（Response Inhibition）とは、不適切または不利になった行動を瞬間的に取り消し、保留する人間の最重要実行機能です。格闘技、eスポーツ、高速運転など極限の現場では、単に速く動くこと以上に「誤った動作を踏みとどまる力」が勝敗を決定づけます。",
     "本テストの歴史は、1868年にオランダの生理学者フランシスカス・ドンデルス（Franciscus Cornelis Donders）が考案した精神時間測定法「C反応」に由来します。ドンデルスは二つの刺激のうち一方のみに反応する課題において、単純反応よりも付加的な選択・抑制時間が必要であることを示しました。",
@@ -236,7 +236,7 @@ const goNoGoGuide = {
     "計測基準とハードウェア調整：刺激提示とクリック入力は、ブラウザ標準の超高精度 performance.now() API でリアルタイム測定されます。ディスプレイの垂直同期遅延やUSBポーリング遅延（Woods et al., 2015）を念頭に置きつつ、すべてのデータは端末ローカルに安全に保存されます。"
   ],
   benchmarks: {
-    title: "反応抑制力・衝動制御ベンチマーク基準表",
+    title: "反応抑制・衝動制御の目安（ブラウザ練習用）",
     headers: ["評価ランク / 階級", "誤反応率 (CER)", "基準スコア & コンボ", "神経筋および前頭葉抑制プロファイル"],
     rows: [
       ["Tier 1: 神業 / プロ特級", "< 2.0% CER", "16,000点+ | コンボ 30回+", "完璧なrIFC-STN超高速ブレーキ；視覚の閃光と手指の収縮反射を完全に切り離す超人的制御。"],
@@ -248,7 +248,7 @@ const goNoGoGuide = {
     note: "本基準値は反応抑制および精神時間測定の文献（Donders, 1868; Logan et al., 1984; Robertson et al., 1997; Aron et al., 2014）に基づく指標です。覚醒度、カフェイン摂取、画面環境により変動します。"
   },
   techniques: {
-    title: "衝動制御・運動抑制力を高める実践メソッド",
+    title: "Go/No-Go課題で反応抑制を安定させる方法",
     items: [
       {
         name: "運動発動前の色彩確認プロセス",
@@ -301,7 +301,7 @@ export default function ChromaSyncPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(howToSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(videoGameSchema) }} />
-      <ChromaSyncClient copy={{ title: "Go/No-Go 反応抑制＆衝動制御測定" }} />
+      <ChromaSyncClient copy={{ title: "Go/No-Goテスト（反応抑制）", subtitle: "緑には反応し、赤では止まる" }} />
       <DrillGuide guide={goNoGoGuide} />
       <div className="max-w-6xl mx-auto px-4 pb-12">
         <RelatedDrills currentCategory="visual" currentHref="https://skilldrills.online/ja/drills/visual/reaction-speed/go/no-go" />

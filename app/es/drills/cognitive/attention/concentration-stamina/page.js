@@ -2,28 +2,29 @@ import ConcentrationStaminaClient from '@/app/drills/cognitive/attention/concent
 import { getAlternateLanguages } from '@/lib/i18n/locales';
 import DrillGuide from '@/components/drill/DrillGuide';
 import RelatedDrills from '@/components/drill/RelatedDrills';
+import DrillFooter from '@/components/drill/DrillFooter';
 import { pickSources } from '@/lib/drillSources';
 
 export const metadata = {
-  title: "Test de Concentración – Atención Sostenida | SkillDrills",
-  description: "Test de concentración y atención sostenida online gratis: Mide decaimiento de vigilancia, foco visual continuo y control inhibitorio sin registro.",
+  title: "Test de Concentración | Atención Sostenida | SkillDrills",
+  description: "Test gratis de concentración en navegador: evalúa atención sostenida, control inhibitorio y cambios de regla. No es diagnóstico clínico.",
   keywords: [
-    "test de concentracion",
-    "test de atencion sostenida",
-    "test cpt online",
-    "test de foco y atencion",
-    "test de fatiga mental",
+    "test de concentración",
+    "test de concentración gratis",
+    "test de concentración online",
+    "test de atención sostenida",
+    "test de concentración y atención",
+    "test de foco y atención",
+    "test de concentración visual",
     "test de vigilancia cognitiva",
-    "resistencia a la distraccion test",
-    "entrenamiento de concentracion gratis",
-    "test de deficit de atencion online",
-    "control inhibitorio y atencion",
-    "evaluacion neuropsicologica atencion",
-    "ejercicio de concentracion prolongada"
+    "entrenamiento de concentración gratis",
+    "control inhibitorio y atención",
+    "test CPT online",
+    "ejercicio de concentración prolongada"
   ],
   openGraph: {
-    title: "Test de Concentración – Atención Sostenida | SkillDrills",
-    description: "Test de concentración y atención sostenida online gratis: Mide decaimiento de vigilancia, foco visual continuo y control inhibitorio sin registro.",
+    title: "Test de Concentración | Atención Sostenida | SkillDrills",
+    description: "Test gratis de concentración en navegador: evalúa atención sostenida, control inhibitorio y cambios de regla. No es diagnóstico clínico.",
     type: 'article',
     url: 'https://skilldrills.online/es/drills/cognitive/attention/concentration-stamina',
     siteName: 'SkillDrills',
@@ -31,8 +32,8 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: "Test de Concentración – Atención Sostenida | SkillDrills",
-    description: "Test de concentración y atención sostenida online gratis: Mide decaimiento de vigilancia, foco visual continuo y control inhibitorio sin registro.",
+    title: "Test de Concentración | Atención Sostenida | SkillDrills",
+    description: "Test gratis de concentración en navegador: evalúa atención sostenida, control inhibitorio y cambios de regla. No es diagnóstico clínico.",
   },
   robots: { index: true, follow: true },
   alternates: {
@@ -91,7 +92,7 @@ const softwareApplicationSchema = {
     "url": "https://skilldrills.online"
   },
   "inLanguage": "es-ES",
-  "dateModified": "2026-09-16"
+      "dateModified": "2026-09-20"
 };
 
 const webApplicationSchema = {
@@ -108,7 +109,7 @@ const webApplicationSchema = {
   },
   "url": "https://skilldrills.online/es/drills/cognitive/attention/concentration-stamina",
   "inLanguage": "es-ES",
-  "dateModified": "2026-09-16"
+  "dateModified": "2026-09-20"
 };
 
 const videoGameSchema = {
@@ -262,9 +263,9 @@ const howToSchema = {
 const guideProps = {
   sources: pickSources('mackworth1948', 'parasuraman1979', 'robertson1997', 'monsell2003', 'broadbent1958', 'woods2015'),
   intro: {
-    title: "Neurociencia de la Atención Sostenida & Decaimiento de Vigilancia de Mackworth",
+    title: "Test de Concentración y Atención Sostenida: Guía",
     paragraphs: [
-      "La atención sostenida o vigilancia continua es la capacidad del sistema nervioso central para mantener el procesamiento sensorial focalizado durante tareas repetitivas o prolongadas.",
+      "Este test gratis de concentración registra atención sostenida, control inhibitorio y cambios de regla como una autoevaluación no clínica. El resultado varía según el estado del día y la familiaridad y no sustituye una evaluación profesional.",
       "Las investigaciones clásicas de Norman Mackworth (1948) con operadores de radar revelaron que la detección de señales decae de forma crítica a partir de los 20-30 minutos por agotamiento de recursos noradrenérgicos en el córtex prefrontal (Parasuraman, 1979; Robertson et al., 1997).",
       "Este ejercicio desafía adicionalmente la resistencia ejecutiva mediante el cambio dinámico de consignas cada 10 segundos, obligando al cerebro a reiniciar los conjuntos de tareas activas (Monsell, 2003).",
     ],
@@ -326,11 +327,17 @@ export default function EnhancedPageEs() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(howToSchema) }}
       />
-      <ConcentrationStaminaClient copy={{ title: "Test de Concentración y Atención Sostenida" }} />
+      <ConcentrationStaminaClient copy={{
+        title: "Test de Concentración | Atención Sostenida", subtitle: "Autoevaluación no clínica de foco continuo, detección de objetivos y control inhibitorio",
+        statScore: "Puntos", statTime: "Tiempo", statLevel: "Nivel", statBest: "Mejor puntuación", ruleLabel: "Regla", vowels: "Vocales (A E I O U)", primes: "Primos (2 3 5 7)", startTitle: "Test de Concentración", startSubtitle: "Atención sostenida • Entrenamiento tipo CPT", getReady: "Prepárate", flashTitle: "Flash de error", soundTitle: "Sonido", newBest: "Nuevo récord", points: "Puntos", accuracy: "Precisión", misses: "Errores", peakLevel: "Nivel máximo", playAgain: "Jugar de nuevo", shareScore: "Compartir puntuación", exitDrill: "Salir del ejercicio",
+        caption: "Responde solo a los estímulos que coinciden con la regla activa y filtra las distracciones cuando cambie.", rulesTitle: "Instrucciones y sistema de puntuación", ruleItems: [{ text: "Regla objetivo", highlight: "Cambia cada 10 s", result: "Vocales ↔ Primos" }, { text: "Acierto", highlight: "+100 PTS", result: "Pulsa o usa espacio" }, { text: "No objetivo", highlight: "Inhibir", result: "Ignora el que no coincide" }, { text: "Falsa alarma", highlight: "Penalización", result: "Afecta a la precisión" }],
+        aboutTitle: "Sobre el test de concentración", aboutLead: "La atención sostenida puede disminuir al vigilar señales poco frecuentes durante mucho tiempo. Este test breve registra cambios de regla, detección y errores como autoevaluación no clínica.", aboutText: "La atención sostenida permite seleccionar señales relevantes dentro de una secuencia repetitiva. Repítelo en las mismas condiciones y observa cómo cambian tus puntos y errores.\n\nEl sueño, el estrés, la pantalla y la familiaridad influyen en el resultado; no sustituye una evaluación profesional.", audienceTitle: "¿Para quién es útil?", audienceText: "Para estudiantes antes de exámenes largos, jugadores que buscan mantener la precisión y personas que necesitan concentrarse durante periodos prolongados.", skillsTitle: "Habilidades entrenadas", skillsText: "Atención sostenida, detección de objetivos, vigilancia bajo fatiga y control de impulsos.", flexibilityTitle: "Flexibilidad cognitiva", flexibilityText: "Cambiar entre vocales y números primos cada 10 segundos entrena la alternancia rápida entre reglas."
+      }} />
       <DrillGuide {...guideProps} />
       <div className="max-w-6xl mx-auto px-4 pb-12">
         <RelatedDrills currentCategory="cognitive" currentHref="https://skilldrills.online/es/drills/cognitive/attention/concentration-stamina" />
       </div>
+      <DrillFooter />
     </>
   );
 }

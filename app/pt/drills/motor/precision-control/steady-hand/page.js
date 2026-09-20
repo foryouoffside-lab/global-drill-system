@@ -6,37 +6,21 @@ import DrillFooter from '@/components/drill/DrillFooter';
 import { pickSources } from '@/lib/drillSources';
 
 // ============================================================
-// SEO RESEARCH FINDINGS — steady-hand (Portuguese: Jogo da Mão Firme)
-// PRIMARY:  "jogo da mão firme"              — Cultural identity query
-//           "teste da mão firme"             — Diagnostic query
-// SECONDARY / LSI:
-//           "jogo do arame elétrico"         — Traditional wire game
-//           "teste de precisão do mouse"     — Precision query
-//           "teste de tremor nas mãos online" — Tremor test
-//           "coordenação motora fina mouse"  — Fine motor query
-//           "lei de direção de accot-zhai"   — Steering Law
+// Native keyword research: docs/seo/research/steady-hand-2026-09-20.md
 // ============================================================
 
 export const metadata = {
-  title: 'Jogo da Mão Firme – Teste de Precisão do Mouse e Firmeza',
-  description: 'Jogo da mão firme online grátis. Guie o cursor por corredores estreitos sem tocar nas bordas. Meça tremor motor e precisão com a Lei de Accot-Zhai.',
+  title: 'Teste de precisão do mouse | Mão firme | SkillDrills',
+  description: 'Siga um caminho que se estreita e meça precisão do cursor, controle motor fino e firmeza da mão. Teste grátis no navegador.',
   keywords: [
-    'jogo da mão firme',
-    'teste da mão firme',
-    'jogo do arame elétrico',
-    'teste de precisão do mouse',
-    'teste de tremor nas mãos online',
-    'coordenação motora fina mouse',
-    'controle de ponteiro do mouse',
-    'lei de direção de accot-zhai',
-    'treino de firmeza manual',
-    'labirinto de arame online',
-    'estabilidade de mira mouse',
-    'exercício para diminuir tremor',
+    'teste de precisão do mouse', 'mão firme', 'precisão do cursor',
+    'seguir o caminho mouse', 'controle motor fino', 'teste de coordenação mão olho',
+    'precisão de mouse online', 'jogo de labirinto mouse', 'controle do cursor',
+    'treino de precisão mouse', 'estabilidade da mão', 'caminho estreito mouse',
   ],
   openGraph: {
-    title: 'Jogo da Mão Firme – Teste de Precisão do Mouse e Firmeza | SkillDrills',
-    description: 'Jogo da mão firme online grátis. Guie o cursor por corredores estreitos sem tocar nas bordas. Meça tremor motor e precisão com a Lei de Accot-Zhai.',
+    title: 'Teste de precisão do mouse | Mão firme | SkillDrills',
+    description: 'Siga um caminho que se estreita e meça precisão do cursor, controle motor fino e firmeza da mão. Teste grátis no navegador.',
     type: 'article',
     url: 'https://skilldrills.online/pt/drills/motor/precision-control/steady-hand',
     siteName: 'SkillDrills',
@@ -44,8 +28,8 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Jogo da Mão Firme – Teste de Precisão do Mouse e Firmeza | SkillDrills',
-    description: 'Jogo da mão firme online grátis. Guie o cursor por corredores estreitos sem tocar nas bordas. Meça tremor motor e precisão com a Lei de Accot-Zhai.',
+    title: 'Teste de precisão do mouse | Mão firme | SkillDrills',
+    description: 'Siga um caminho que se estreita e meça precisão do cursor, controle motor fino e firmeza da mão. Teste grátis no navegador.',
   },
   robots: { index: true, follow: true },
   alternates: {
@@ -70,6 +54,7 @@ const breadcrumbSchema = {
 const softwareApplicationSchema = {
   '@context': 'https://schema.org',
   '@type': 'SoftwareApplication',
+  inLanguage: 'pt-BR',
   name: 'Jogo da Mão Firme – Teste de Precisão e Tremor do Mouse',
   applicationCategory: 'HealthApplication',
   operatingSystem: 'All',
@@ -77,36 +62,41 @@ const softwareApplicationSchema = {
   description: 'Jogo da mão firme e teste de precisão motora fina gratuito para navegador. Guie o cursor por trajetórias que se estreitam e avalie seu controle de tremor fisiológico.',
   url: 'https://skilldrills.online/pt/drills/motor/precision-control/steady-hand',
   publisher: { '@type': 'Organization', name: 'SkillDrills', url: 'https://skilldrills.online/pt' },
-  dateModified: '2026-09-05',
+  dateModified: '2026-09-20',
 };
 
 const webApplicationSchema = {
   '@context': 'https://schema.org',
   '@type': 'WebApplication',
+  inLanguage: 'pt-BR',
   name: 'Jogo da Mão Firme Online',
   applicationCategory: 'GameApplication',
   operatingSystem: 'All',
   browserRequirements: 'Navegador moderno com suporte a HTML5 Canvas e Pointer Events de alta taxa',
   offers: { '@type': 'Offer', price: '0', priceCurrency: 'BRL' },
   url: 'https://skilldrills.online/pt/drills/motor/precision-control/steady-hand',
-  dateModified: '2026-09-05',
+  dateModified: '2026-09-20',
 };
 
 const videoGameSchema = {
   '@context': 'https://schema.org',
   '@type': 'VideoGame',
+  inLanguage: 'pt-BR',
   name: 'Jogo da Mão Firme e Precisão Motora',
   url: 'https://skilldrills.online/pt/drills/motor/precision-control/steady-hand',
   description: 'Desafio interativo de controle de cursor em corredores estreitos com base na Lei de Accot-Zhai.',
   genre: ['Precision Game', 'Action', 'Esports Training'],
   gamePlatform: ['Web Browser', 'Desktop', 'Mobile'],
   applicationCategory: 'Game',
-  offers: { '@type': 'Offer', price: '0', priceCurrency: 'BRL' }
+  offers: { '@type': 'Offer', price: '0', priceCurrency: 'BRL' },
+  dateModified: '2026-09-20',
 };
 
 const faqSchema = {
   '@context': 'https://schema.org',
   '@type': 'FAQPage',
+  inLanguage: 'pt-BR',
+  dateModified: '2026-09-20',
   mainEntity: [
     {
       '@type': 'Question',
@@ -194,6 +184,8 @@ const faqSchema = {
 const howToSchema = {
   '@context': 'https://schema.org',
   '@type': 'HowTo',
+  inLanguage: 'pt-BR',
+  dateModified: '2026-09-20',
   name: 'Como treinar firmeza manual e precisão no mouse',
   description: 'Guia passo a passo para conduzir o cursor por corredores estreitos com mínimo tremor.',
   step: [
@@ -315,8 +307,8 @@ const guideProps = {
 };
 
 const ptCopy = {
-  h1Keyword: 'Jogo da Mão Firme',
-  h1Suffix: ' (Teste de Precisão do Mouse)',
+  h1Keyword: 'Teste de Precisão do Mouse',
+  h1Suffix: ' (Mão Firme)',
   caption: 'O jogo da mão firme mede a estabilidade e a precisão motora fina ao guiar o cursor por um trajeto luminoso sem encostar nas bordas. Fundamentado na Lei de Accot-Zhai (1997) e no controle motor em circuito fechado de Woodworth (1899).',
   statLaps: 'Voltas',
   statTime: 'Tempo Restante',
@@ -325,7 +317,7 @@ const ptCopy = {
   pausedTitle: 'Pausado',
   pausedPrompt: 'Clique na tela para fixar o cursor e continuar.',
   startTitle: 'Circuito da Mão Firme',
-  startSubtitle: 'Precisão Motora & Linhas Estreitas • Tempo de 45s',
+  startSubtitle: 'Mão firme e precisão do caminho • 45 s',
   startBtn: 'Iniciar Treino',
   countdownSubtitle: 'PREPARE-SE',
   newBest: 'NOVO RECORDE',

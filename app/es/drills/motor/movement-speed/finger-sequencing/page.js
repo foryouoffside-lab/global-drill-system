@@ -6,25 +6,25 @@ import DrillFooter from '@/components/drill/DrillFooter';
 import { pickSources } from '@/lib/drillSources';
 
 export const metadata = {
-  title: 'Aim Trainer Secuencial – Velocidad de Dedos | SkillDrills',
-  description: 'Entrenador de puntería secuencial gratis. Mejora la velocidad de cambio de objetivo y la precisión de clic en orden numérico directo en tu navegador.',
+  title: 'Puntería secuencial | Cambio de objetivos | SkillDrills',
+  description: 'Haz clic en objetivos numerados para medir la velocidad de transición y la precisión. Entrenamiento de puntería gratis en el navegador.',
   keywords: [
-    'aim trainer secuencial',
-    'aim trainer secuencial gratis',
-    'test de velocidad de dedos',
-    'clic secuencial test',
-    'cambio rapido de objetivos aim',
-    'target switching entrenamiento',
-    'ejercicios de punteria valorant cs2',
-    'coordinacion motora de dedos',
-    'entrenamiento de precision de clic',
-    'test de velocidad de raton',
-    'control del cursor secuencial',
-    'test de reflejos con raton',
+    'entrenamiento de puntería secuencial',
+    'cambio de objetivos',
+    'test de precisión del ratón',
+    'clic secuencial',
+    'velocidad de transición',
+    'entrenamiento de puntería',
+    'aim trainer español',
+    'objetivos numerados',
+    'test de velocidad de clic',
+    'puntería FPS',
+    'coordinación mano ojo',
+    'entrenamiento de precisión',
   ],
   openGraph: {
-    title: 'Aim Trainer Secuencial – Velocidad de Dedos | SkillDrills',
-    description: 'Entrenador de puntería secuencial gratis. Mejora la velocidad de cambio de objetivo y la precisión de clic en orden numérico directo en tu navegador.',
+    title: 'Puntería secuencial | Cambio de objetivos | SkillDrills',
+    description: 'Mide la transición entre objetivos numerados y la precisión de clic directamente en el navegador.',
     type: 'article',
     url: 'https://skilldrills.online/es/drills/motor/movement-speed/finger-sequencing',
     siteName: 'SkillDrills',
@@ -32,8 +32,8 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Aim Trainer Secuencial – Velocidad de Dedos | SkillDrills',
-    description: 'Entrenador de puntería secuencial gratis. Mejora la velocidad de cambio de objetivo y la precisión de clic en orden numérico.',
+    title: 'Puntería secuencial | Cambio de objetivos | SkillDrills',
+    description: 'Entrenamiento gratuito para cambiar de objetivo y hacer clic con precisión.',
   },
   robots: { index: true, follow: true },
   alternates: {
@@ -49,39 +49,42 @@ const breadcrumbSchema = {
     { '@type': 'ListItem', position: 1, name: 'SkillDrills', item: 'https://skilldrills.online/es' },
     { '@type': 'ListItem', position: 2, name: 'Entrenamiento Motor', item: 'https://skilldrills.online/es/drills/motor' },
     { '@type': 'ListItem', position: 3, name: 'Velocidad de Movimiento', item: 'https://skilldrills.online/es/drills/motor/movement-speed' },
-    { '@type': 'ListItem', position: 4, name: 'Aim Trainer Secuencial', item: 'https://skilldrills.online/es/drills/motor/movement-speed/finger-sequencing' },
+    { '@type': 'ListItem', position: 4, name: 'Puntería Secuencial', item: 'https://skilldrills.online/es/drills/motor/movement-speed/finger-sequencing' },
   ],
 };
 
 const softwareApplicationSchema = {
   '@context': 'https://schema.org',
   '@type': 'SoftwareApplication',
-  name: 'Aim Trainer Secuencial – Test de Velocidad de Dedos',
+  inLanguage: 'es-ES',
+  name: 'Puntería Secuencial – Test de Cambio de Objetivos',
   applicationCategory: 'HealthApplication',
   operatingSystem: 'All',
   offers: { '@type': 'Offer', price: '0', priceCurrency: 'EUR' },
   description: 'Entrenador de puntería secuencial y test de rapidez de dedos en el navegador. Practica el cambio ordenado de blancos, trayectoria óptima y precisión motriz.',
   url: 'https://skilldrills.online/es/drills/motor/movement-speed/finger-sequencing',
   publisher: { '@type': 'Organization', name: 'SkillDrills', url: 'https://skilldrills.online' },
-  dateModified: '2026-09-05',
+  dateModified: '2026-09-20',
 };
 
 const webApplicationSchema = {
   '@context': 'https://schema.org',
   '@type': 'WebApplication',
-  name: 'Entrenador de Puntería Secuencial',
+  inLanguage: 'es-ES',
+  name: 'Entrenamiento de Puntería Secuencial',
   applicationCategory: 'GameApplication',
   operatingSystem: 'All',
   browserRequirements: 'Requiere soporte para Canvas HTML5 y JavaScript',
   offers: { '@type': 'Offer', price: '0', priceCurrency: 'EUR' },
   url: 'https://skilldrills.online/es/drills/motor/movement-speed/finger-sequencing',
-  dateModified: '2026-09-05',
+  dateModified: '2026-09-20',
 };
 
 const videoGameSchema = {
   '@context': 'https://schema.org',
   '@type': 'VideoGame',
-  name: 'Aim Trainer Secuencial – Test de Dedos',
+  inLanguage: 'es-ES',
+  name: 'Puntería Secuencial – Test de Objetivos',
   url: 'https://skilldrills.online/es/drills/motor/movement-speed/finger-sequencing',
   description: 'Mide la velocidad al alternar entre objetivos en orden prescrito según programas motores secuenciales.',
   genre: ['Aim Game', 'Action', 'Esports Training'],
@@ -93,6 +96,8 @@ const videoGameSchema = {
 const faqSchema = {
   '@context': 'https://schema.org',
   '@type': 'FAQPage',
+  inLanguage: 'es-ES',
+  dateModified: '2026-09-20',
   mainEntity: [
     {
       '@type': 'Question',
@@ -180,6 +185,8 @@ const faqSchema = {
 const howToSchema = {
   '@context': 'https://schema.org',
   '@type': 'HowTo',
+  inLanguage: 'es-ES',
+  dateModified: '2026-09-20',
   name: 'Cómo Entrenar Puntería Secuencial y Agilidad de Dedos',
   description: 'Guía paso a paso para dominar transiciones rápidas entre objetivos en orden numérico.',
   step: [
@@ -302,14 +309,14 @@ const guideProps = {
 };
 
 const esCopy = {
-  title: "Aim Trainer Secuencial",
+  title: "Puntería Secuencial",
   desc: "El cambio secuencial de objetivos entrena el clic rápido en nodos ordenados numéricamente en lugar del blanco más cercano. Basado en los programas motores en serie de Lashley (1951) y Keele (1968), perfecciona la planificación de trayectorias balísticas y las microcorrecciones de puntería.",
   score: "Puntos",
   timeLeft: "Tiempo Restante",
   accuracy: "Precisión",
   bestScore: "Mejor Puntuación",
   startButtonText: "Iniciar Entrenamiento",
-  startSubtitle: "Precisión Motora y Trayectorias Secuenciales • Entrada Directa 1:1",
+  startSubtitle: "Cambio de objetivos y clic preciso • Entrada directa 1:1",
   getReady: "PREPÁRATE",
   rulesTitle: "Instrucciones del Ejercicio y Sistema de Puntos",
   rulesItems: [

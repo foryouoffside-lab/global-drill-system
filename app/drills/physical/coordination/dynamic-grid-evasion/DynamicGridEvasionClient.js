@@ -20,6 +20,7 @@ import useUnexpectedExitGuard from '../../../../../lib/useUnexpectedExitGuard';
 import DrillFooter from '../../../../../components/drill/DrillFooter';
 import DrillCountdown from '../../../../../components/drill/DrillCountdown';
 import DrillAccordion from '../../../../../components/drill/DrillAccordion';
+import DrillRuleItem from '../../../../../components/drill/DrillRuleItem';
 import FpsStartCard from '../../../../../components/drill/FpsStartCard';
 import useImmersiveMode from '@/lib/useImmersiveMode';
 
@@ -641,9 +642,6 @@ export default function DynamicGridEvasionClient({ copy = {} } = {}) {
                 </span>
               )}
             </h1>
-            <p className="text-sm text-slate-400 mt-1.5 leading-relaxed">
-              Attention can be moved to a location without moving the eyes there, and a cue that points to the right place speeds up responses while a misleading one slows them down (Posner, 1980). That is what a grid evasion task exercises: you watch the whole 3x3 field rather than fixating one cell. Warnings here contract to 0.45 seconds and hazards can cover 7 of the 9 cells, so late in a session there is no time to look at each cell in turn.
-            </p>
           </div>
         )}
 
@@ -673,7 +671,7 @@ export default function DynamicGridEvasionClient({ copy = {} } = {}) {
         <div 
           ref={containerRef} 
           onContextMenu={(e) => { if (gameActiveRef.current) e.preventDefault(); }}
-          className={`overflow-hidden flex flex-col transition-all duration-150 select-none bg-[#080811] text-white border border-white/10 ${
+          className={`overflow-hidden flex flex-col select-none bg-[#080811] text-white border border-white/10 ${
             isFullscreen 
               ? 'fixed inset-0 z-[100] w-screen h-[100dvh] bg-[#080811] rounded-none border-none flex flex-col items-center justify-center' 
               : 'w-full rounded-2xl bg-[#080811] aspect-video min-h-[460px] sm:min-h-[500px] max-h-[88vh] relative overflow-hidden flex flex-col'
@@ -838,12 +836,9 @@ export default function DynamicGridEvasionClient({ copy = {} } = {}) {
               isOpen={openAccordion === 'rules'}
               onToggle={() => setOpenAccordion(openAccordion === 'rules' ? null : 'rules')}
             >
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-2.5 sm:gap-3 font-sans">
                 {(copy?.rules || RULES_ITEMS).map((item, i) => (
-                  <div key={i} className="bg-black p-4 rounded-xl border border-white/10">
-                    <p className="text-sm font-bold text-white mb-1">{item.title}</p>
-                    <p className="text-xs text-gray-300 leading-relaxed">{item.text}</p>
-                  </div>
+                  <DrillRuleItem key={i} num={item.num || String(i + 1)} title={item.title} detail={item.text} />
                 ))}
               </div>
             </DrillAccordion>
@@ -867,7 +862,7 @@ export default function DynamicGridEvasionClient({ copy = {} } = {}) {
                         <strong>Dynamic Grid Evasion</strong> is a high-intensity spatial reflex and peripheral scanning exercise. The play canvas is structured as a 3x3 tactical grid where amber warning pulses identify impending explosion zones. Players must scan all 9 sectors simultaneously and flick their crosshair into an uncompromised safe cell before the detonation triggers.
                       </p>
                       <p className="text-sm leading-relaxed text-gray-300">
-                        Grounded in Anne Treisman&apos;s (1980) feature integration theory, Michael Posner&apos;s (1980) spatial orienting paradigm, and Robert Woodworth&apos;s (1899) voluntary movement framework, this drill exercises rapid exogenous visual attention and ballistic flick evasion. As difficulty escalates across 15 levels, warning windows contract from 1.4s down to 0.45s and threat counts rise from 3 up to 7 danger cells, leaving only 2 safe sectors under severe cognitive chronometry pressure.
+                        Grounded in Anne Treisman&apos;s (1980) feature integration theory, Michael Posner&apos;s (1980) spatial orienting paradigm, and Robert Woodworth&apos;s (1899) voluntary movement framework, this drill exercises rapid exogenous visual attention and ballistic flick evasion. As difficulty escalates across 15 levels, warning windows contract from 1.4s down to 0.45s and threat counts rise from 3 up to 7 danger cells, leaving only 2 safe sectors under severe cognitive chronometry pressure. A cue that points to the right place speeds up responses while a misleading one slows them down (Posner, 1980). That is what a grid evasion task exercises: you watch the whole 3x3 field rather than fixating one cell. Warnings here contract to 0.45 seconds and hazards can cover 7 of the 9 cells, so late in a session there is no time to look at each cell in turn.
                       </p>
                     </>
                   )}

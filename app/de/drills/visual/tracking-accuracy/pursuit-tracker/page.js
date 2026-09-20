@@ -5,23 +5,23 @@ import RelatedDrills from '@/components/drill/RelatedDrills';
 import { pickSources } from '@/lib/drillSources';
 
 export const metadata = {
-  title: "Smooth Pursuit Test: Augenfolgebewegung | SkillDrills",
-  description: "Kostenloser Smooth Pursuit Test online: Trainiere kontinuierliche Augenfolgebewegung und Aim-Tracking. Reduziere Sakkaden und verbessere Zielpräzision.",
+  title: "Glatte Blickfolge | Zielverfolgung | SkillDrills",
+  description: "Kostenloses Blickfolge-Training: Verfolge ein bewegtes Ziel mit Augen und Cursor und übe visuomotorische Präzision. Kein Diagnosetest.",
   keywords: [
-    "eye tracking test online",
-    "Smooth Pursuit Test",
-    "Augenfolgebewegung Training",
+    "Blickfolge",
+    "glatte Blickfolge",
+    "Augenfolgebewegung",
     "Blickfolge Training",
-    "Eye Tracking Accuracy Test",
-    "FPS Tracking Aim",
-    "Netzhautschlupf",
-    "Okulomotorik",
-    "Auge Hand Koordination",
-    "Sehtraining Online"
+    "Zielverfolgung",
+    "bewegtes Ziel verfolgen",
+    "visuomotorische Koordination",
+    "Auge-Hand-Koordination",
+    "Smooth Pursuit Test",
+    "visuelles Tracking"
   ],
   openGraph: {
-    title: "Smooth Pursuit Eye-Tracking Test – Augenfolgebewegung & Aim-Tracking Online | SkillDrills",
-    description: "Kostenloser Smooth Pursuit Eye-Tracking-Drill online. Trainiere stufenlose Augenfolgebewegungen und Hand-Auge-Präzision auf sich kontinuierlich bewegende Ziele.",
+    title: "Glatte Blickfolge | Zielverfolgung | SkillDrills",
+    description: "Trainiere Blickfolge, Zielverfolgung und Auge-Hand-Koordination mit einem bewegten Ziel. Kostenlos im Browser, kein Diagnosetest.",
     type: 'article',
     url: 'https://skilldrills.online/de/drills/visual/tracking-accuracy/pursuit-tracker',
     siteName: 'SkillDrills',
@@ -29,8 +29,8 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: "Smooth Pursuit Eye-Tracking Test – Augenfolgebewegung & Aim-Tracking Online | SkillDrills",
-    description: "Kostenloser Smooth Pursuit Eye-Tracking-Drill online. Optimiere okulomotorische Folgebewegungen und Aim-Tracking im Browser.",
+    title: "Glatte Blickfolge | Zielverfolgung | SkillDrills",
+    description: "Übe glatte Blickfolge und stabile Zielverfolgung im Browser. Ergebnisse hängen von Bildschirm und Maus ab.",
   },
   robots: { index: true, follow: true },
   alternates: {
@@ -238,7 +238,7 @@ const howToSchema = {
 
 const guideData = {
   eyebrow: "Neuroophthalmologie & Okulomotorische Kontrolle",
-  heading: "Smooth Pursuit Eye-Tracking – Blickfolgebewegung & Visuomotorische Präzision",
+  heading: "Glatte Blickfolge und visumotorische Zielverfolgung trainieren",
   intro: [
     "Das System der glatten Augenfolgebewegungen (Smooth Pursuit Eye Movements, SPEM) steuert die stufenlose Ausrichtung der Sehachse auf kontinuierlich bewegte Objekte, um deren Abbild stabil im Bereich der Fovea centralis – dem Areal höchster visueller Auflösung – zu fixieren. Physiologisch unterscheidet sich dieser Regelkreis fundamental von sakkadischen Blicksprüngen, die Zielpositionen sprunghaft ansteuern und von eigenständigen prämotorischen Schaltkreisen im Hirnstamm generiert werden (Rashbass, 1961; Krauzlis, 2004).",
     "Der neurophysiologische Hauptantrieb für Smooth Pursuit ist der sogenannte Netzhautschlupf (Retinal Slip), also die Abdriftrate des Bildes auf der Retina (Leigh & Zee, 2015). Visuelle Bewegungssignale aus dem primären Sehzentrum (V1) werden in den Arealen MT/V5 und MST in Richtungs- und Geschwindigkeitsvektoren zerlegt. Über die frontalen Augenfelder (FEF) und Brückenkerne gelangt das Signal in das Kleinhirn (Flocculus und dorsaler Vermis), welches hochpräzise Feuermuster an die okulomotorischen Hirnnervenkerne übermittelt (Krauzlis, 2004; Lisberger, 2010).",
@@ -247,7 +247,7 @@ const guideData = {
     "Dieses webbasierte Testsystem nutzt moderne performance.now()-Mikrotimer und Subpixel-Rendering, um die relative Haltezeit im Ziel (Time on Target), die mittlere Bahnabweichung und die Latenz bei Richtungswechseln in Echtzeit zu analysieren (Woods et al., 2015). Regelmäßiges okulomotorisches Folgetraining optimiert die neuromuskuläre Koppelung zwischen Auge und Hand – mit direkt spürbaren Vorteilen für das Tracking-Aiming in First-Person-Shootern, die dynamische Bewegungserfassung im Sport sowie die Entlastung der Augen bei Bildschirmarbeit."
   ],
   benchmarks: {
-    title: "Standardisierte Benchmarks für Smooth Pursuit & Visuelle Folgebewegung",
+    title: "Orientierungswerte für Blickfolge und Zielverfolgung",
     headers: ["Leistungsstufe / Rang", "Zielverfolgungs-Haltezeit (Time on Target)", "Mittlere Tracking-Präzision", "Sakkaden-Unterdrückung", "Neurophysiologisches Niveau"],
     rows: [
       ["Weltklasse / Pro-Level (Top 1%)", "≥ 88%", "≥ 92%", "≥ 95% Unterdrückung", "Perfekte kontinuierliche Folgebewegung, minimaler Netzhautschlupf. Voll synchronisiertes Kleinhirn-Innenmodell (Lisberger, 2010)"],
@@ -259,7 +259,7 @@ const guideData = {
     note: "Basierend auf publizierten neuroophthalmologischen und sportwissenschaftlichen Studien (Rashbass 1961; Krauzlis 2004; Leigh & Zee 2015; Lisberger 2010)."
   },
   techniques: {
-    title: "4 praxiserprobte Methoden zur Perfektionierung der Zielverfolgung",
+    title: "Vier Methoden für stabilere Blickfolge",
     items: [
       {
         name: "Geschwindigkeits-Phasenabgleich (Smooth Acceleration Matching)",
@@ -329,7 +329,7 @@ export default function LocalizedPursuitTrackerDePage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
 
-      <AutoPursuitClient copy={{ title: "Smooth Pursuit Eye-Tracking Test", subtitle: "Stufenlose Blickfolgebewegung & Visuelle Koordination" }} />
+      <AutoPursuitClient copy={{ title: "Glatte Blickfolge", subtitle: "Zielverfolgung trainieren" }} />
       <DrillGuide guide={guideData} />
       <div className="max-w-6xl mx-auto px-4 pb-12">
         <RelatedDrills currentCategory="visual" currentHref="https://skilldrills.online/de/drills/visual/tracking-accuracy/pursuit-tracker" />

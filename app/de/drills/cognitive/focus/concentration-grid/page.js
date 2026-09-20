@@ -2,6 +2,7 @@ import ConcentrationGridClient from '@/app/drills/cognitive/focus/concentration-
 import { getAlternateLanguages } from '@/lib/i18n/locales';
 import DrillGuide from '@/components/drill/DrillGuide';
 import RelatedDrills from '@/components/drill/RelatedDrills';
+import DrillFooter from '@/components/drill/DrillFooter';
 import { pickSources } from '@/lib/drillSources';
 
 // ============================================================
@@ -19,8 +20,8 @@ import { pickSources } from '@/lib/drillSources';
 // ============================================================
 
 export const metadata = {
-  title: "Schulte-Tabelle Online – Konzentrationsgitter | SkillDrills",
-  description: "Kostenlose Schulte-Tabelle online: Trainiere peripheres Sehen, Schnelllesen und visuelle Suchgeschwindigkeit auf anpassbaren Zahlen-Gittern.",
+  title: "Schulte-Tabelle online | Konzentrationsgitter | SkillDrills",
+  description: "Kostenlose Schulte-Tabelle im Browser: Finde Zahlen der Reihe nach und übe visuelles Suchen. Kein klinischer Test, sondern ein kognitiver Selbstcheck.",
   keywords: [
     "Schulte-Tabelle",
     "Schulte Tabelle online",
@@ -72,7 +73,7 @@ export default function ConcentrationGridPageDe() {
     "name": "Schulte-Tabelle Online (Konzentrationsgitter)",
     "applicationCategory": "EducationalApplication",
     "operatingSystem": "Web Browser",
-    "dateModified": "2026-09-15",
+    "dateModified": "2026-09-20",
     "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
     "description": "Kostenloses browserbasiertes Schulte-Tabellen-Training zur Erweiterung des peripheren Sehens und der visuellen Suchgeschwindigkeit.",
     "genre": "Kognitives Training / Aufmerksamkeit",
@@ -90,7 +91,7 @@ export default function ConcentrationGridPageDe() {
     "name": "Schulte-Tabelle Online (Konzentrationsgitter)",
     "applicationCategory": "EducationalApplication",
     "operatingSystem": "Web Browser",
-    "dateModified": "2026-09-15",
+    "dateModified": "2026-09-20",
     "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
     "browserRequirements": "HTML5 Canvas, JavaScript fähiger Browser",
     "description": "Kostenlose interaktive Schulte-Tabelle online. Trainiere peripheres Sehen und Aufmerksamkeitsausdauer auf expandierenden Zahlenfeldern.",
@@ -103,7 +104,7 @@ export default function ConcentrationGridPageDe() {
     "name": "Schulte-Tabelle Online (Konzentrationsgitter)",
     "url": "https://skilldrills.online/de/drills/cognitive/focus/concentration-grid",
     "description": "Kostenlose interaktive Schulte-Tabelle online. Finde sequentielle Zahlen auf expandierenden Gittern von 3x3 bis 8x8.",
-    "dateModified": "2026-09-15",
+    "dateModified": "2026-09-20",
     "gamePlatform": "Web Browser",
     "genre": ["Kognitives Training", "Peripheres Sehen", "Schulte-Tabelle", "Konzentrationsgitter"],
     "playMode": "SinglePlayer",
@@ -115,7 +116,7 @@ export default function ConcentrationGridPageDe() {
   const faqSchema = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
-    "dateModified": "2026-09-15",
+    "dateModified": "2026-09-20",
     "mainEntity": [
       {
         "@type": "Question",
@@ -373,6 +374,7 @@ export default function ConcentrationGridPageDe() {
           locale="de"
         />
       </div>
+      <DrillFooter />
     </>
   );
 }

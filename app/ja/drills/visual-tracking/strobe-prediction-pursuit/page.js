@@ -5,21 +5,21 @@ import { getAlternateLanguages } from '@/lib/i18n/locales';
 import { pickSources } from '@/lib/drillSources';
 
 export const metadata = {
-  title: "ストロボ動体視力トレーニング・点滅遮蔽予測テスト | SkillDrills",
-  description: "ストロボ点滅による周期的遮蔽下で目標軌道を脳内補間・予測追従する動体視力トレーニング。ストロボメガネの効果を再現し先読み視線と運動記憶を強化。無料。",
+  title: "ストロボ視覚トレーニング｜動体視力の予測練習 | SkillDrills",
+  description: "点滅で隠れる標的の軌道を予測する無料練習。再点灯時のズレと追従の連続性を記録。",
   keywords: [
-    "ストロボ ビジョントレーニング",
+    "ストロボ 動体視力 練習",
     "動体視力 点滅 練習",
     "ストロボメガネ 効果 練習",
-    "予測性追従 遮蔽テスト",
-    "見失った敵 先読み エイム",
     "視覚補間 トレーニング",
-    "小脳 内部モデル 視覚",
-    "ストロボスコープ 視覚訓練",
-    "FPS スモーク抜き 視線予測",
+    "点滅 視線予測",
+    "遮蔽 目標追従",
+    "予測性追従 練習",
     "断続視覚 運動記憶",
-    "ストロボ 動体視力 テスト",
-    "点滅遮蔽 視線予測 練習"
+    "ストロボ 視覚訓練",
+    "再出現 追従 誤差",
+    "スポーツ 動体視力",
+    "点滅遮蔽 テスト"
   ],
   alternates: {
     canonical: "https://skilldrills.online/ja/drills/visual-tracking/strobe-prediction-pursuit",
@@ -27,8 +27,8 @@ export const metadata = {
   },
   robots: { index: true, follow: true },
   openGraph: {
-    title: "ストロボ動体視力トレーニング・点滅遮蔽予測テスト | SkillDrills",
-    description: "ストロボ点滅による周期的遮蔽下で目標軌道を脳内補間・予測追従する動体視力トレーニング。ストロボメガネの効果を再現し先読み視線と運動記憶を強化。無料。",
+    title: "ストロボ視覚トレーニング｜動体視力の予測練習 | SkillDrills",
+    description: "点滅で隠れる標的の軌道を予測する無料練習。再点灯時のズレと追従の連続性を記録。",
     url: "https://skilldrills.online/ja/drills/visual-tracking/strobe-prediction-pursuit",
     siteName: "SkillDrills",
     locale: "ja_JP",
@@ -36,8 +36,8 @@ export const metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "ストロボ動体視力トレーニング・点滅遮蔽予測テスト | SkillDrills",
-    description: "ストロボ点滅による周期的遮蔽下で目標軌道を脳内補間・予測追従する動体視力トレーニング。ストロボメガネの効果を再現し先読み視線と運動記憶を強化。無料。",
+    title: "ストロボ視覚トレーニング｜動体視力の予測練習 | SkillDrills",
+    description: "点滅で隠れる標的の軌道を予測する無料練習。再点灯時のズレと追従の連続性を記録。",
   },
 };
 
@@ -84,7 +84,7 @@ const softwareApplicationSchema = {
     "name": "SkillDrills",
     "url": "https://skilldrills.online"
   },
-  "dateModified": "2026-09-15"
+  "dateModified": "2026-09-20"
 };
 
 const webAppSchema = {
@@ -100,7 +100,7 @@ const webAppSchema = {
     "priceCurrency": "USD"
   },
   "url": "https://skilldrills.online/ja/drills/visual-tracking/strobe-prediction-pursuit",
-  "dateModified": "2026-09-15"
+  "dateModified": "2026-09-20"
 };
 
 const videoGameSchema = {
@@ -124,7 +124,8 @@ const videoGameSchema = {
     "@type": "Offer",
     "price": "0",
     "priceCurrency": "USD"
-  }
+  },
+  "dateModified": "2026-09-20"
 };
 
 const howToSchema = {
@@ -132,7 +133,7 @@ const howToSchema = {
   "@type": "HowTo",
   "name": "ストロボ予測遮蔽追従訓練の進め方",
   "description": "周期的点滅によって消失するターゲットの軌道を脳内で内的に外挿・予測追従し、先読み視覚運動機能を最大化する4ステップ。",
-  "dateModified": "2026-09-15",
+  "dateModified": "2026-09-20",
   "step": [
     {
       "@type": "HowToStep",
@@ -168,6 +169,7 @@ const howToSchema = {
 const faqSchema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
+  "dateModified": "2026-09-20",
   "mainEntity": [
     {
       "@type": "Question",
@@ -310,6 +312,12 @@ const guide = {
       ]
     }
   ],
+  steps: [
+    { title: "点灯中に速度を読む", text: "標的が見えている間に進行方向と速さを捉え、頭を動かさず視線の基準を作ります。" },
+    { title: "暗転中も軌道を予測する", text: "標的が消えても視線を止めず、直前の動きから次に現れる位置まで追従を続けます。" },
+    { title: "再点灯時のズレを確認する", text: "標的が戻った瞬間の前後方向のズレを見て、次の暗転で速度を少しだけ調整します。" },
+    { title: "安定してから難度を上げる", text: "短いセットで練習し、再点灯時のロストが減ってから速度または遮蔽の難度を上げます。" }
+  ],
   deviceCalibration: {
     title: "ストロボ予測追従のためのハードウェア・エルゴノミクス基準",
     points: [
@@ -402,8 +410,8 @@ export default function StrobePredictionPursuitJaPage() {
       <StrobePredictionPursuitClient
         copy={{
           title: "ストロボ予測遮蔽追従",
-          subtitle: "動体視力トレーニング・点滅遮蔽予測テスト",
-          description: "移動する目標が周期的に完全暗転する中で、欠落した運動軌道を脳内で内的に補間し先読み追従するストロボ動体視力トレーニング。ストロボメガネのトレーニング効果を再現し、小脳の運動予測モデルと空間作業記憶を極限まで強化します。"
+          subtitle: "点滅遮蔽下の動体視力予測練習",
+          description: "点滅で見えなくなる標的の軌道を予測し、再点灯時の視線ズレと標的ロストを記録します。"
         }}
       />
       <DrillGuide guide={guide} />

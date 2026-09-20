@@ -6,18 +6,18 @@ import { getAlternateLanguages } from '@/lib/i18n/locales';
 import { pickSources } from '@/lib/drillSources';
 
 export const metadata = {
-    title: "대기 에임 연습 – 각 쪼개기·피커스 어드밴티지 대처 | SkillDrills",
-  description: "무료 브라우저 FPS 대기 에임(Angle Hold) 및 크로스헤어 플레이스먼트 연습 툴. 모퉁이 벽에서의 튀어나옴(피킹)에 대한 적정 대기폭과 격발 반응속도를 측정하고 피커스 어드밴티지를 무력화하는 방어 프리 에임을 단련하세요.",
+  title: "에임 연습 | 대기 에임·각 쪼개기 | SkillDrills",
+  description: "무료 브라우저 에임 연습으로 모퉁이에 조준선을 미리 두고 피킹 순간의 반응과 대기폭을 훈련하세요.",
   keywords: [
-    "대기 에임 연습",
+    "에임 연습",
+    "에임 연습 발로란트",
+    "에임 연습 게임",
+    "대기 에임",
     "각 쪼개기 에임",
     "크로스헤어 플레이스먼트 연습",
     "피커스 어드밴티지 대처 훈련",
     "발로란트 대기 에임",
-    "서든어택 대기 에임",
     "카스2 각 쪼개기",
-    "에임 대기폭 조절",
-    "반응속도 테스트 fps",
     "프리 에임 훈련",
     "모퉁이 대기 에임",
     "피킹 반응속도 훈련"
@@ -31,8 +31,8 @@ export const metadata = {
     follow: true,
   },
   openGraph: {
-      title: "대기 에임 연습 – 각 쪼개기·피커스 어드밴티지 대처 | SkillDrills",
-    description: "무료 브라우저 FPS 대기 에임(Angle Hold) 및 크로스헤어 플레이스먼트 연습 툴. 모퉁이 벽에서의 튀어나옴(피킹)에 대한 적정 대기폭과 격발 반응속도를 측정하고 피커스 어드밴티지를 무력화하는 방어 프리 에임을 단련하세요.",
+    title: "에임 연습 | 대기 에임·각 쪼개기 | SkillDrills",
+    description: "무료 브라우저 에임 연습으로 모퉁이에 조준선을 미리 두고 피킹 순간의 반응과 대기폭을 훈련하세요.",
     url: "https://skilldrills.online/ko/drills/fps/angle-hold-trainer",
     siteName: 'SkillDrills',
     locale: 'ko_KR',
@@ -40,8 +40,8 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-      title: "대기 에임 연습 – 각 쪼개기·피커스 어드밴티지 대처 | SkillDrills",
-    description: "무료 브라우저 FPS 대기 에임(Angle Hold) 및 크로스헤어 플레이스먼트 연습 툴. 모퉁이 벽에서의 튀어나옴(피킹)에 대한 적정 대기폭과 격발 반응속도를 측정하고 피커스 어드밴티지를 무력화하는 방어 프리 에임을 단련하세요.",
+    title: "에임 연습 | 대기 에임·각 쪼개기 | SkillDrills",
+    description: "무료 브라우저 에임 연습으로 모퉁이에 조준선을 미리 두고 피킹 순간의 반응과 대기폭을 훈련하세요.",
   },
 };
 
@@ -50,23 +50,23 @@ export default function KoreanAngleHoldPage() {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
     "itemListElement": [
-      { "@type": "ListItem", "position": 1, "name": "SkillDrills", "item": "https://skilldrills.online/" },
+      { "@type": "ListItem", "position": 1, "name": "SkillDrills", "item": "https://skilldrills.online/ko" },
       { "@type": "ListItem", "position": 2, "name": "FPS 훈련", "item": "https://skilldrills.online/ko/drills/fps" },
-      { "@type": "ListItem", "position": 3, "name": "대기 에임 연습", "item": "https://skilldrills.online/ko/drills/fps/angle-hold-trainer" }
+      { "@type": "ListItem", "position": 3, "name": "에임 연습 - 대기 에임", "item": "https://skilldrills.online/ko/drills/fps/angle-hold-trainer" }
     ]
   };
 
   const softwareSchema = {
     "@context": "https://schema.org",
     "@type": "SoftwareApplication",
-    "name": "대기 에임 연습 (Angle Hold Pro)",
+    "name": "에임 연습 - 대기 에임",
     "applicationCategory": "GameApplication",
     "operatingSystem": "Web Browser",
     "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
     "description": "모퉁이 벽에서의 적 튀어나옴(피킹)에 대한 크로스헤어 플레이스먼트, 적정 대기폭, 방어 앵글 유지 반응속도를 훈련하는 무료 웹 브라우저 FPS 에임 트레이너.",
     "genre": "FPS Training / Crosshair Placement",
     "url": "https://skilldrills.online/ko/drills/fps/angle-hold-trainer",
-    "dateModified": "2026-09-11",
+    "dateModified": "2026-09-20",
     "publisher": {
       "@type": "Organization",
       "name": "SkillDrills",
@@ -77,19 +77,19 @@ export default function KoreanAngleHoldPage() {
   const webAppSchema = {
     "@context": "https://schema.org",
     "@type": "WebApplication",
-    "name": "대기 에임 연습 (Angle Hold Trainer)",
+      "name": "에임 연습 - 대기 에임",
     "url": "https://skilldrills.online/ko/drills/fps/angle-hold-trainer",
     "description": "모퉁이 벽에서의 적 튀어나옴(피킹)에 대한 크로스헤어 플레이스먼트, 적정 대기폭, 방어 앵글 유지 반응속도를 훈련하는 무료 웹 브라우저 FPS 에임 트레이너.",
     "applicationCategory": "Game",
     "operatingSystem": "Web Browser",
     "browserRequirements": "Requires HTML5 Canvas and Pointer Lock API support",
-    "dateModified": "2026-09-11"
+    "dateModified": "2026-09-20"
   };
 
   const videoGameSchema = {
     "@context": "https://schema.org",
     "@type": "VideoGame",
-    "name": "대기 에임 연습 (Angle Hold Pro)",
+    "name": "에임 연습 - 대기 에임",
     "url": "https://skilldrills.online/ko/drills/fps/angle-hold-trainer",
     "description": "모퉁이 벽에서의 적 튀어나옴(피킹)에 대한 크로스헤어 플레이스먼트, 적정 대기폭, 방어 앵글 유지 반응속도를 훈련하는 무료 웹 브라우저 FPS 에임 트레이너.",
     "gamePlatform": "Web Browser",
@@ -97,13 +97,13 @@ export default function KoreanAngleHoldPage() {
     "playMode": "SinglePlayer",
     "applicationCategory": "Game",
     "operatingSystem": "Web Browser",
-    "dateModified": "2026-09-11"
+    "dateModified": "2026-09-20"
   };
 
   const faqSchema = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
-    "dateModified": "2026-09-11",
+    "dateModified": "2026-09-20",
     "mainEntity": [
       {
         "@type": "Question",
@@ -226,9 +226,9 @@ export default function KoreanAngleHoldPage() {
   };
 
   const angleHoldGuideKo = {
-    heading: "대기 에임(각 쪼개기) 완벽 가이드 — 반응 지연, 넷코드 및 기하학 분석",
+    heading: "에임 연습과 대기 에임·각 쪼개기 가이드",
     intro: [
-      "방어적 대기 에임(Angle Holding)은 프란시스쿠스 돈더스의 단순 반응 시간(Donders, 1868)과 Go/No-Go 선택적 억제 기전에 지배받는 전술 FPS의 핵심 기본기입니다. 표적 탐색과 손목 급가속을 수반하는 플릭 사격(Woodworth, 1899; Meyer et al., 1988)과 달리, 조준선을 미리 적 머리 이동선상에 고정함으로써 2차원 공간 조준 과정을 '순수한 1차원 시간 격발'로 단순화합니다.",
+      "에임 연습에서 대기 에임은 적이 나올 위치에 조준선을 미리 두고, 표적이 겹치는 순간 클릭하는 훈련입니다. 이 드릴은 대기폭, 헤드라인, 피킹 반응을 함께 측정해 발로란트·CS2의 모퉁이 교전을 안정화합니다.",
       "발로란트나 카스2와 같은 온라인 멀티플레이어 환경에서는 네트워크 패킷 왕복 지연으로 인해 모퉁이를 돌아 나오는 공격자가 정지해 있는 방어자를 먼저 보게 되는 '피커스 어드밴티지(Peeker's Advantage)'가 필연적으로 발생합니다(T_advantage = RTT_peeker/2 + RTT_holder/2 + T_interp). 이러한 불리함을 상쇄하려면 벽 모서리에 조준선을 붙이지 않고 D_offset = v_peeker × T_reaction 공식에 따라 일정 간격(대기폭)을 띄워 두어야 합니다.",
       "본 훈련 도구는 1000Hz 마우스 폴링과 디스플레이 주사율 동기화, performance.now() 고해상도 크로노메트리를 기반으로 작동합니다. 이를 통해 입출력 양자화 노이즈를 최소화(Woods et al., 2015)하여 페이크 피크 구별 능력과 순수 격발 반응속도를 정밀하게 측정합니다(Fitts, 1954; Hick, 1952).",
       "측정 방식 안내: 모든 이벤트는 브라우저의 performance.now() 고해상도 시계를 통해 사용자 기기 내에서 100% 로컬로 측정됩니다. 브라우저 보안 규정(Spectre 방지)상 타이머는 약 1ms 단위로 처리되며 화면 갱신 주사율(60Hz 약 16.7ms, 144Hz 약 6.9ms, 240Hz 약 4.1ms)에 따른 오차가 존재하므로, 약 5ms 미만의 차이는 측정 환경 노이즈로 간주하고 동일 환경에서의 점진적 기록 향상에 집중하는 것이 바람직합니다."
@@ -290,11 +290,11 @@ export default function KoreanAngleHoldPage() {
 
   const copyKo = {
     h1Prefix: null,
-    h1Keyword: "대기 에임 연습",
-    h1Suffix: null,
+    h1Keyword: "에임 연습",
+    h1Suffix: " - 대기 에임·각 쪼개기",
     subtitle: "각 쪼개기 & 피커스 어드밴티지 대처 트레이너",
     caption: "모퉁이 벽에서의 적 튀어나옴(피킹)에 대처하여 적정 대기폭을 유지하고 즉각 사격하는 대기 에임 훈련 도구. F.C. 돈더스의 단순 반응 시간(Donders, 1868)과 앵글 기하학을 바탕으로 피커스 어드밴티지를 제압하는 방어형 프리 에임을 단련합니다.",
-    startTitle: "대기 에임 연습 (Angle Hold Pro)",
+    startTitle: "에임 연습 - 대기 에임",
     startSubtitle: "각 쪼개기・피킹 반응・트리거 디시플린 • 무한 난이도 진행",
     statScore: "점수",
     statTime: "남은 시간",
@@ -306,7 +306,7 @@ export default function KoreanAngleHoldPage() {
     getReady: "조준선을 거치하세요",
     bottomCaption: "벽 모서리에서 적정 대기폭을 두고 조준선을 고정한 뒤, 표적이 튀어나오는 순간 즉시 클릭하세요.",
     accordionRulesTitle: "훈련 규칙 및 점수 산정 방식",
-    accordionAboutTitle: "대기 에임 연습 (Angle Hold Pro) 상세 안내",
+    accordionAboutTitle: "에임 연습 - 대기 에임 상세 안내",
     overviewTitle: "대기 에임과 크로스헤어 플레이스먼트의 원리",
     overviewLead: "대기 에임이란 적이 출현할 위치에 미리 조준선을 대기시켜 두고, 적이 겹쳐지는 순간 사격하는 방어 기술입니다. 인간의 단순 시각 반응 시간은 약 200~250ms이지만, 적의 행동을 구별하는 인지 판단이 개입되면 선택지 수에 따라 반응 시간이 지수적으로 증가합니다(Donders, 1868; Hick, 1952).",
     rulesItems: [

@@ -1,5 +1,6 @@
 import DynamicEvasionPursuitClient from './DynamicEvasionPursuitClientLoader';
 import DrillGuide from '@/components/drill/DrillGuide';
+import DrillFooter from '@/components/drill/DrillFooter';
 import { getAlternateLanguages } from '@/lib/i18n/locales';
 import { pickSources } from '@/lib/drillSources';
 
@@ -347,8 +348,9 @@ export default function DynamicEvasionPursuitPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
 
-      <DynamicEvasionPursuitClient copy={{ title: "Dynamic Evasion Pursuit", subtitle: "Reactive Eye Tracking Drill" }} />
+      <DynamicEvasionPursuitClient copy={{ title: "Dynamic Evasion Pursuit", subtitle: "Reactive eye tracking drill for following fast targets through sudden direction changes and improving visual pursuit speed" }} />
       <DrillGuide guide={guide} />
+      <DrillFooter />
     </>
   );
 }

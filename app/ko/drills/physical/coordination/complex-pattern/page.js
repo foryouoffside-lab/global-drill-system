@@ -6,7 +6,7 @@ import { pickSources } from '@/lib/drillSources';
 
 // ============================================================
 // SEO RESEARCH FINDINGS — South Korea (KR / KO)
-// Primary Intent: 도형 순서 기억하기 게임, 순서 기억 게임, 패턴 기억력 테스트, 공간 기억력 테스트
+// Native SERP intent: 도형 순서 기억하기 게임, 순서 기억 게임, 공간 기억력 테스트
 // Context: Korean job-seeker cognitive tests (AI 역량검사 / 잡다 역검 도형 순서 기억) & FPS 반동 패턴 궤적 제어
 // Target Queries:
 //   - "도형 순서 기억하기 게임" (High-intent cognitive test query)
@@ -19,27 +19,27 @@ import { pickSources } from '@/lib/drillSources';
 // ============================================================
 
 export const metadata = {
-  title: "도형 순서 기억 & 패턴 기억력 테스트 – 무료 공간 작업기억 훈련 | SkillDrills",
-  description: "무료 온라인 도형 순서 및 패턴 기억력 테스트. 화면에 번쩍이는 기하학적 경로를 순간 암기하고 순서대로 연결하여 시각 공간 작업기억 용량과 마우스 운동 협응력을 과학적으로 단련합니다.",
+  title: "도형 순서 기억 게임 | 공간 기억력 테스트 | SkillDrills",
+  description: "무료 브라우저 기억력 게임. 번쩍이는 도형 경로를 외운 뒤 순서대로 그려 공간 기억력, 작업기억, 마우스 협응력을 훈련하세요.",
   keywords: [
     "도형 순서 기억하기 게임",
     "순서 기억 게임",
-    "패턴 기억력 테스트",
     "공간 기억력 테스트",
+    "패턴 기억력 테스트",
     "작업 기억력 훈련",
     "시각 공간 기억력 게임",
     "위치 기억 게임",
-    "마우스 궤적 기억 훈련",
-    "AI 역량검사 도형 기억",
-    "패턴 기억 게임"
+    "도형 기억력 테스트",
+    "경로 기억 게임",
+    "마우스 궤적 기억 훈련"
   ],
   alternates: {
     canonical: 'https://skilldrills.online/ko/drills/physical/coordination/complex-pattern',
     languages: getAlternateLanguages('/drills/physical/coordination/complex-pattern'),
   },
   openGraph: {
-    title: "도형 순서 기억 & 패턴 기억력 테스트 – 무료 공간 작업기억 훈련 | SkillDrills",
-    description: "무료 온라인 도형 순서 및 패턴 기억력 테스트. 화면에 번쩍이는 기하학적 경로를 순간 암기하고 순서대로 연결하여 시각 공간 작업기억 용량과 마우스 운동 협응력을 과학적으로 단련합니다.",
+    title: "도형 순서 기억 게임 | 공간 기억력 테스트 | SkillDrills",
+    description: "번쩍이는 도형 경로를 기억하고 순서대로 그리는 무료 브라우저 훈련으로 공간 기억과 마우스 협응력을 연습하세요.",
     url: 'https://skilldrills.online/ko/drills/physical/coordination/complex-pattern',
     siteName: 'SkillDrills',
     locale: 'ko_KR',
@@ -47,8 +47,8 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: "도형 순서 기억 & 패턴 기억력 테스트 – 무료 공간 작업기억 훈련 | SkillDrills",
-    description: "무료 온라인 도형 순서 및 패턴 기억력 테스트. 화면에 번쩍이는 기하학적 경로를 순간 암기하고 순서대로 연결하여 시각 공간 작업기억 용량과 마우스 운동 협응력을 과학적으로 단련합니다.",
+    title: "도형 순서 기억 게임 | 공간 기억력 테스트 | SkillDrills",
+    description: "번쩍이는 도형 경로를 기억하고 순서대로 그리는 무료 브라우저 훈련으로 공간 기억과 마우스 협응력을 연습하세요.",
   },
   robots: { index: true, follow: true },
 };
@@ -103,7 +103,7 @@ const softwareApplicationSchema = {
     "url": "https://skilldrills.online/ko"
   },
   "inLanguage": "ko",
-  "dateModified": "2026-09-12"
+  "dateModified": "2026-09-20"
 };
 
 const webApplicationSchema = {
@@ -120,7 +120,7 @@ const webApplicationSchema = {
   },
   "url": "https://skilldrills.online/ko/drills/physical/coordination/complex-pattern",
   "inLanguage": "ko",
-  "dateModified": "2026-09-12"
+  "dateModified": "2026-09-20"
 };
 
 const videoGameSchema = {
@@ -145,13 +145,16 @@ const videoGameSchema = {
     "@type": "Offer",
     "price": "0",
     "priceCurrency": "USD"
-  }
+  },
+  "inLanguage": "ko",
+  "dateModified": "2026-09-20"
 };
 
 const faqSchema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
-  "dateModified": "2026-09-12",
+  "inLanguage": "ko",
+  "dateModified": "2026-09-20",
   "mainEntity": [
     {
       "@type": "Question",
@@ -359,8 +362,8 @@ export default function ComplexPatternPageKo() {
       />
       <ComplexPatternClient
         copy={{
-          title: "도형 순서 기억 & 패턴 기억력 테스트",
-          subtitle: "시각 공간 작업기억(배들리 모델) 및 경로 궤적 재현 협응 훈련 • 15레벨",
+          title: "도형 순서 기억 게임",
+          subtitle: "도형 경로를 기억하고 순서대로 그리기",
           rulesTitle: "도형 순서 기억 훈련 규칙 및 점수 체계",
           rules: [
             { title: "기하학 경로 순간 암기", text: "화면에 번쩍이는 다각형 벡터 경로를 사라지기 전 집중하여 머릿속에 각인합니다." },

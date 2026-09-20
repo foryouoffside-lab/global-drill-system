@@ -1,7 +1,6 @@
 'use client';
 
 import React, { useState, useEffect, useRef, useCallback } from 'react';
-import Link from 'next/link';
 import { Volume2, VolumeX, ShieldCheck, Users, TrendingUp, Brain, Zap, ZapOff } from 'lucide-react';
 
 import { isIdleFrameSkippable } from '@/lib/performance';
@@ -15,7 +14,6 @@ import { getFpsScoreGrade, getComboMultiplier } from '../../../../../lib/scoring
 import { getDifficultyProgress, getStartLevel, ramp } from '../../../../../lib/drillDifficulty';
 import useDrillFlash from '../../../../../lib/useDrillFlash';
 import useUnexpectedExitGuard from '../../../../../lib/useUnexpectedExitGuard';
-import DrillFooter from '../../../../../components/drill/DrillFooter';
 import DrillCountdown from '../../../../../components/drill/DrillCountdown';
 import DrillAccordion from '../../../../../components/drill/DrillAccordion';
 import DrillFlashOverlay from '../../../../../components/drill/DrillFlashOverlay';
@@ -23,6 +21,25 @@ import FpsStartCard from '../../../../../components/drill/FpsStartCard';
 import DrillResultCard from '../../../../../components/drill/DrillResultCard';
 import useImmersiveMode from '@/lib/useImmersiveMode';
 import { useTranslation } from '@/lib/i18n/useTranslation';
+
+import { DISTRACTION_FIGHTER_I18N } from '@/lib/i18n/drills/distractionFighter';
+function RuleItem({ num, text, highlight = '', result }) {
+  return (
+    <div className="flex items-center gap-3 bg-black px-3.5 py-2.5 rounded-xl border border-white/10 shadow-sm font-sans min-w-0">
+      <div className="w-7 h-7 rounded-lg bg-white/10 border border-white/20 flex items-center justify-center text-white text-xs font-black shadow-lg flex-shrink-0">
+        {num}
+      </div>
+      <div className="flex-1 flex items-center justify-between gap-2 min-w-0">
+        <p className="text-xs sm:text-sm font-medium text-gray-100 font-sans truncate">
+          {text}{highlight && <span className="font-bold text-white"> ({highlight})</span>}
+        </p>
+        <div className="text-[11px] sm:text-xs font-bold px-2.5 py-1 rounded-lg bg-[#050811] border border-white/10 text-white whitespace-nowrap shadow-inner tracking-wide flex-shrink-0">
+          {result}
+        </div>
+      </div>
+    </div>
+  );
+}
 
 // ============================================================
 // TUNING CONSTANTS
@@ -72,10 +89,10 @@ const getLevelConfig = (level, combo = 0) => {
 };
 
 const RULES_ITEMS = [
-  { title: "Stroop Effect Challenge", text: "A color word flashes on screen (e.g. 'BLUE'), printed in a conflicting ink color (e.g. RED ink)." },
-  { title: "Target Selection Rule", text: "Tap the button matching the INK COLOR (e.g., tap Red), ignoring the semantic word meaning (+100 PTS × Combo × Level multiplier, +0.6s)." },
-  { title: "Wrong Selections", text: "A wrong selection resets your combo (and deducts time if penalties are on). Nothing ends the run early — you play until the clock reaches zero." },
-  { title: "Streak & Penalty Rules", text: "Building streaks multiplies your score. Timeouts and wrong taps deduct 0.8s when enabled in settings." }
+  { num: "1", text: "Stroop Conflict", highlight: "Ink vs Word", result: "Ignore semantic text" },
+  { num: "2", text: "Target Ink Color", highlight: "Tap Ink", result: "+100 PTS × Combo" },
+  { num: "3", text: "Streak Multiplier", highlight: "Chain Combos", result: "Scales trial speed" },
+  { num: "4", text: "Wrong Selection", highlight: "Combo Reset", result: "Clock deductions active" }
 ];
 
 const ABOUT_TEXT = `Distraction Fighter is a classical cognitive focus drill grounded in the Stroop Effect and prefrontal inhibitory control research. The Stroop effect demonstrates the cognitive interference that occurs when processing competing visual features — specifically, reading a word versus identifying its font color.
@@ -97,15 +114,6 @@ const FAQ_ITEMS = [
   { q: "Is this distraction-fighter game free to play?", a: "Yes. The Distraction Fighter drill on SkillDrills is completely free. No sign-up, no downloads, no subscriptions. It runs entirely in your browser on both desktop and mobile devices." }
 ];
 
-const RELATED_DRILLS = [
-  { id: "concentration-stamina", name: "Focus Test", cat: "Attention", desc: "Sustain continuous visual focus through prolonged high-density sequences.", href: "/drills/cognitive/attention/concentration-stamina" },
-  { id: "concentration-grid", name: "Schulte Table Trainer", cat: "Focus", desc: "Scan and tap sequential numbers on expanding grid matrices.", href: "/drills/cognitive/focus/concentration-grid" },
-  { id: "reaction-time", name: "Reaction Time", cat: "Processing Speed", desc: "Train choice reaction speed and visual reflex latency.", href: "/drills/cognitive/processing-speed/reaction-time" },
-  { id: "divided-attention", name: "Divided Attention Test", cat: "Attention", desc: "Track and react to multiple independent target streams simultaneously.", href: "/drills/cognitive/attention/divided-attention" },
-  { id: "multi-tasking", name: "Multitasking Test", cat: "Attention", desc: "Track dual independent target streams under speed pressure.", href: "/drills/cognitive/attention/multi-tasking" },
-  { id: "symbol-matching", name: "Symbol Matching", cat: "Processing Speed", desc: "Match rapid symbol pairs under strict time pressure.", href: "/drills/cognitive/processing-speed/symbol-matching" }
-];
-
 const COLOR_TRANSLATIONS = {
   ja: { Red: '赤', Blue: '青', Green: '緑', Yellow: '黄', Purple: '紫', Orange: '橙' },
   de: { Red: 'Rot', Blue: 'Blau', Green: 'Grün', Yellow: 'Gelb', Purple: 'Lila', Orange: 'Orange' },
@@ -113,7 +121,7 @@ const COLOR_TRANSLATIONS = {
 };
 
 export default function DistractionFighterClient({ faqs, copy }) {
-  const { t, locale } = useTranslation();
+  const { t, locale } = useTranslation(DISTRACTION_FIGHTER_I18N);
 
   const getColorLabel = (colorName) => {
     return COLOR_TRANSLATIONS[locale]?.[colorName] || colorName;
@@ -207,9 +215,32 @@ export default function DistractionFighterClient({ faqs, copy }) {
     startingRef.current = false;
     gameActiveRef.current = false;
 
+    if (typeof document !== 'undefined' && document.fullscreenElement) {
+      document.exitFullscreen().catch(() => {});
+    }
     setIsFullscreen(false);
     setGameState('start');
   }, []);
+
+  useEffect(() => {
+    if (gameState !== 'playing' && gameState !== 'countdown') return;
+    const handleKeyDown = (e) => {
+      if (e.key === 'Escape') {
+        handleExitDrill();
+      }
+    };
+    const handleFullscreenChange = () => {
+      if (!document.fullscreenElement && isFullscreen) {
+        handleExitDrill();
+      }
+    };
+    window.addEventListener('keydown', handleKeyDown);
+    document.addEventListener('fullscreenchange', handleFullscreenChange);
+    return () => {
+      window.removeEventListener('keydown', handleKeyDown);
+      document.removeEventListener('fullscreenchange', handleFullscreenChange);
+    };
+  }, [gameState, isFullscreen, handleExitDrill]);
 
   const { markIntentionalExit } = useUnexpectedExitGuard({
     active: gameState === 'playing' || gameState === 'countdown',
@@ -483,20 +514,19 @@ export default function DistractionFighterClient({ faqs, copy }) {
   }, [uiScore, analytics]);
 
   return (
-    <div className="min-h-screen bg-[#050508] text-white flex flex-col font-sans select-none">
+    <div className="bg-[#050508] text-white flex flex-col font-sans select-none">
       {/* ── MAIN CONTENT AREA ── */}
       <main className="flex-1 max-w-6xl w-full mx-auto px-4 py-6 flex flex-col gap-6">
         {/* Title */}
         {!isFullscreen && (
           <div className="flex flex-col gap-1">
-            <h1 className="text-2xl sm:text-3xl font-black tracking-tight text-white">
+            <h1 className="text-xl sm:text-3xl font-black tracking-tight text-white whitespace-nowrap overflow-hidden text-ellipsis">
               {copy?.title || t('distractionFighter.title', 'Stroop Test')}
-              <span data-seo-kw="1" className="block text-sm font-semibold text-slate-400 mt-1">
-                {copy?.subtitle || t('distractionFighter.subtitle', 'Color Word Interference Task')}
-              </span>
             </h1>
-            <p className="text-[13px] text-slate-400 leading-relaxed">
-              {copy?.caption || t('distractionFighter.caption', "Name the ink color while ignoring the word's meaning. The interference between automatic reading and color identification measures cognitive inhibition strength (Stroop, 1935).")}
+            <p className="text-xs sm:text-sm text-slate-400 font-medium">
+              <span data-seo-kw="1">
+                {copy?.subtitle || t('distractionFighter.subtitle', 'Stroop color word interference test for selective attention, impulse control, and cognitive inhibition under time pressure')}
+              </span>
             </p>
           </div>
         )}
@@ -666,17 +696,15 @@ export default function DistractionFighterClient({ faqs, copy }) {
               isOpen={openAccordion === 'rules'}
               onToggle={() => setOpenAccordion(openAccordion === 'rules' ? null : 'rules')}
             >
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 font-sans">
-                {[
-                  { title: t('distractionFighter.rule1Title', 'Stroop Effect Challenge'), text: t('distractionFighter.rule1Text', "A color word flashes on screen (e.g. 'BLUE'), printed in a conflicting ink color (e.g. RED ink).") },
-                  { title: t('distractionFighter.rule2Title', 'Target Selection Rule'), text: t('distractionFighter.rule2Text', "Tap the button matching the INK COLOR (e.g., tap Red), ignoring the semantic word meaning (+100 PTS × Combo × Level multiplier, +0.6s).") },
-                  { title: t('distractionFighter.rule3Title', 'Wrong Selections'), text: t('distractionFighter.rule3Text', "A wrong selection resets your combo (and deducts time if penalties are on). Nothing ends the run early — you play until the clock reaches zero.") },
-                  { title: t('distractionFighter.rule4Title', 'Streak & Penalty Rules'), text: t('distractionFighter.rule4Text', "Building streaks multiplies your score. Timeouts and wrong taps deduct 0.8s when enabled in settings.") },
-                ].map((item, i) => (
-                  <div key={i} className="bg-[#0d0d18] p-4 rounded-xl border border-white/5">
-                    <p className="text-sm font-bold text-white mb-1">{item.title}</p>
-                    <p className="text-xs text-gray-400 leading-relaxed">{item.text}</p>
-                  </div>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-3 font-sans">
+                {(copy?.rulesItems || RULES_ITEMS).map((item, i) => (
+                  <RuleItem
+                    key={i}
+                    num={item.num || String(i + 1)}
+                    text={item.text || item.title}
+                    highlight={item.highlight || ''}
+                    result={item.result || (item.text ? item.text.slice(0, 24) : 'Active')}
+                  />
                 ))}
               </div>
             </DrillAccordion>
@@ -691,7 +719,7 @@ export default function DistractionFighterClient({ faqs, copy }) {
                 <section>
                   <div className="space-y-4">
                     <p className="text-sm leading-relaxed text-gray-400">
-                      {locale === 'ja' ? 'ストループ効果とは、文字の意味とインクの色が異なる単語を提示された際、インク色の命名に遅延が生じる現象です。J.R.ストループが1935年に報告して以来、実験心理学で最も堅牢かつ再現性の高い認知的知見の一つとされています（Stroop, 1935; MacLeod, 1991）。' : 'The Stroop effect is the delay you get naming the ink colour of a word that spells a different colour. Stroop first measured it in 1935, and it is one of the most reliable findings in psychology — the interference shows up in essentially every healthy adult (Stroop, 1935; MacLeod, 1991).'}
+                      {locale === 'ja' ? 'ストループ効果とは、文字の意味とインクの色が異なる単語を提示された際、インク色の命名に遅延が生じる現象です。J.R.ストループが1935年に報告して以来、実験心理学で最も堅牢かつ再現性の高い認知的知見の一つとされています（Stroop, 1935; MacLeod, 1991）。' : 'The Stroop effect is the delay you get naming the ink colour of a word that spells a different colour. Stroop first measured it in 1935, and it is one of the most reliable findings in psychology — the interference shows up in essentially every healthy adult (Stroop, 1935; MacLeod, 1991). The interference between automatic reading and color identification measures cognitive inhibition strength.'}
                     </p>
                     <p className="text-sm leading-relaxed text-gray-400">
                       {locale === 'ja' ? '人間にとって文字の読解は高度に自動化された処理です。色名単語が異なるインク色で提示された場合、前頭前野（DLPFC）や前帯状皮質（ACC）が「単語を読んでしまう自動的な衝動」を強力に能動抑制（Inhibition）しなければなりません。' : 'Reading is an automated implicit cognitive process. When a color word is printed in a non-matching ink color, your brain\'s anterior cingulate cortex and dorsolateral prefrontal cortex must actively suppress the word meaning to report the ink color.'}
@@ -742,37 +770,6 @@ export default function DistractionFighterClient({ faqs, copy }) {
             </DrillAccordion>
           </div>
         )}
-
-        {/* RELATED DRILLS GRID */}
-        {!isFullscreen && (
-          <section className="mt-4">
-            <h2 className="text-sm font-bold text-slate-400 uppercase tracking-wider mb-3">
-              {t('distractionFighter.relatedTitle', 'Related Cognitive Drills')}
-            </h2>
-            <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
-              {RELATED_DRILLS.map((drill) => (
-                <Link
-                  key={drill.id}
-                  href={locale && locale !== 'en' ? `/${locale}${drill.href}` : drill.href}
-                  className="group bg-[#0c0c16] border border-white/5 hover:border-rose-500/40 rounded-xl p-3.5 transition-all duration-200 hover:-translate-y-0.5 flex flex-col justify-between"
-                >
-                  <div>
-                    <div className="text-[10px] font-bold text-rose-400 uppercase tracking-wider mb-1">{drill.cat}</div>
-                    <div className="text-xs font-bold text-white group-hover:text-rose-300 transition-colors">{drill.name}</div>
-                    <div className="text-[11px] text-slate-400 mt-1 line-clamp-2 leading-relaxed">{drill.desc}</div>
-                  </div>
-                  <div className="text-[10px] font-bold text-slate-500 group-hover:text-rose-400 mt-3 flex items-center gap-1 transition-colors">
-                    Train Drill <span>→</span>
-                  </div>
-                </Link>
-              ))}
-            </div>
-          </section>
-        )}
-
-        {/* SITE FOOTER */}
-        {!isFullscreen && <DrillFooter />}
-
       </main>
     </div>
   );

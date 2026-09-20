@@ -37,28 +37,20 @@ import { pickSources } from '@/lib/drillSources';
 // ============================================================
 
 export const metadata = {
-  title: 'Speed Drill - Free Target Acquisition & Tapping Trainer',
+  title: 'Click Speed Test | Target Acquisition Drill | SkillDrills',
   description:
-    'Free online speed drill training. Test target acquisition speed and rapid tapping under dynamic shrinking target boundaries with millisecond precision.',
+    'Free click speed and reaction drill online. Hit moving, shrinking targets to train rapid clicking, accuracy, and target acquisition.',
   keywords: [
-    // Primary terms
-    'speed drill training',
-    'rapid tapping trainer',
-    'target acquisition speed',
-    // Secondary / LSI terms
-    'speed drill game',
-    'click speed trainer',
-    'rapid clicking drill',
+    'click speed test',
     'target acquisition drill',
+    'reaction clicking game',
+    'CPS test',
+    'rapid click trainer',
+    'shrinking target game',
+    'aim reaction test',
+    'click accuracy drill',
     'flick speed trainer',
-    'shrinking target drill',
-    'reaction speed drill',
-    'reaction time test',
-    // Long-tail variants
-    'free online speed drill training',
-    'ballistic motor flicking accuracy game',
-    'fitts law target acquisition exercise',
-    'esports rapid tapping click speed test',
+    'free browser click test',
   ],
   alternates: {
     canonical: 'https://skilldrills.online/drills/physical/fitness/speed-drill',
@@ -66,7 +58,7 @@ export const metadata = {
   },
   robots: { index: true, follow: true },
   openGraph: {
-    title: 'Speed Drill - Free Target Acquisition & Tapping Trainer',
+    title: 'Click Speed Test | Target Acquisition Drill | SkillDrills',
     description:
       'Test target acquisition speed and rapid tapping in Speed Drill. Click moving, shrinking targets in this free reflex training game.',
     url: 'https://skilldrills.online/drills/physical/fitness/speed-drill',
@@ -117,16 +109,18 @@ const softwareApplicationSchema = {
     priceCurrency: 'USD',
   },
   description:
-    'High-velocity target acquisition and rapid tapping drill designed to condition ballistic motor impulses, shrinking target interception, and reaction chronometry.',
+    'Free browser drill for rapid clicking, moving-target acquisition, accuracy, and shrinking-window reaction practice.',
+  inLanguage: 'en',
+  dateModified: '2026-09-20',
 };
 
 const webApplicationSchema = {
   '@context': 'https://schema.org',
   '@type': 'WebApplication',
-  name: 'Speed Drill - Rapid Target Acquisition & Tapping Trainer',
+  name: 'Click Speed Test - Shrinking Target Drill',
   url: 'https://skilldrills.online/drills/physical/fitness/speed-drill',
   description:
-    'Free reaction time test and click speed game. Click shrinking, dynamically moving targets before they disappear under strict temporal limits.',
+    'Interactive click-speed and target-acquisition drill. Hit moving targets before their shrinking windows expire.',
   applicationCategory: 'SportsApplication',
   operatingSystem: 'Web Browser',
   browserRequirements: 'Requires a modern web browser with HTML5 Canvas support.',
@@ -136,11 +130,15 @@ const webApplicationSchema = {
   learningResourceType: 'Interactive Physical Training Tool',
   teaches:
     'Target Acquisition Speed, Rapid Tapping Cadence, Fitts Law Index of Difficulty, Ballistic Motor Flicks, Visual Saliency Orientation',
+  inLanguage: 'en',
+  dateModified: '2026-09-20',
 };
 
 const faqSchema = {
   '@context': 'https://schema.org',
   '@type': 'FAQPage',
+  inLanguage: 'en',
+  dateModified: '2026-09-20',
   mainEntity: [
     {
       '@type': 'Question',
@@ -228,12 +226,14 @@ const faqSchema = {
 const videoGameSchema = {
   '@context': 'https://schema.org',
   '@type': 'VideoGame',
-  name: 'Speed Drill Training',
+  name: 'Click Speed and Target Acquisition Game',
   url: 'https://skilldrills.online/drills/physical/fitness/speed-drill',
-  description: 'Free online speed drill training. Test target acquisition speed and rapid tapping under dynamic shrinking boundary constraints.',
+  description: 'Free browser game for click speed, target acquisition, rapid tapping, and shrinking-window reaction practice.',
   genre: ['Action', 'Brain Game', 'Reflex Game', 'Coordination'],
   gamePlatform: ['Web Browser', 'Desktop', 'Mobile'],
   applicationCategory: 'Game',
+  inLanguage: 'en',
+  dateModified: '2026-09-20',
   offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
 };
 
@@ -319,7 +319,7 @@ const guideProps = {
     ],
   },
   faqs: {
-    title: 'Frequently Asked Questions About Speed Drill & Target Acquisition',
+    title: 'Click Speed Test and Target Acquisition Questions',
     items: faqSchema.mainEntity.map((q) => ({
       q: q.name,
       a: q.acceptedAnswer.text,
@@ -354,7 +354,7 @@ export default function SpeedDrillPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(howToSchema) }}
       />
-      <SpeedDrillClient copy={{ title: 'Speed Drill Training', subtitle: 'Target Acquisition & Rapid Tapping Trainer' }} />
+      <SpeedDrillClient copy={{ title: 'Click Speed Test', subtitle: 'Hit shrinking targets quickly and accurately' }} />
       <DrillGuide {...guideProps} />
       
     </>

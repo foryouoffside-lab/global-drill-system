@@ -1,5 +1,6 @@
 import SpatialShiftPursuitClient from '@/app/drills/visual-tracking/spatial-shift-pursuit/SpatialShiftPursuitClientLoader';
 import DrillGuide from '@/components/drill/DrillGuide';
+import DrillFooter from '@/components/drill/DrillFooter';
 import RelatedDrills from '@/components/drill/RelatedDrills';
 import { getAlternateLanguages } from '@/lib/i18n/locales';
 import { pickSources } from '@/lib/drillSources';
@@ -14,25 +15,30 @@ import { pickSources } from '@/lib/drillSources';
 // ============================================================
 
 export const metadata = {
-  title: "공간 시프트 추적 훈련・시야 좌표계 적응 – 화면 흔들림 제어 | SkillDrills",
-  description: "시각 참조 프레임이 돌발적으로 회전・시프트하는 극한의 환경에서 표적을 놓치지 않고 추적하는 무료 안구 훈련. 후두정피질의 좌표계 변환과 시점 전환 에임 안정성을 강화. 무설치 웹 테스트.",
+  title: "화면 흔들림 추적 훈련｜공간 인지 드릴 | SkillDrills",
+  description: "시야가 움직일 때도 표적을 따라가는 무료 브라우저 훈련. 공간 인지와 재포착 시간, 위치 오차를 기록합니다.",
   keywords: [
-    "공간 시프트 추적 훈련",
     "화면 흔들림 에임 연습",
+    "에임연습",
+    "에임 연습 사이트",
+    "공간 시프트 추적 훈련",
     "시야 좌표계 적응",
-    "공간 인지 동체시력",
+    "공간 인지 동체시력 훈련",
     "시점 전환 에임 안정성",
     "두정엽 공간 리매핑",
     "참조 좌표계 변환",
     "망막 좌표계 공간 좌표계",
     "피격 화면 흔들림 제어",
     "탄도 사케드 재포착",
-    "후두정피질 시각 훈련",
-    "동적 시야 리매핑 테스트"
+    "표적 재포착 훈련",
+    "시야 이동 표적 추적",
+    "공간 리매핑 시선",
+    "화면 이동 추적",
+    "시점 전환 에임 안정성"
   ],
   openGraph: {
-    title: "공간 시프트 추적 훈련・시야 좌표계 적응 – 화면 흔들림 제어 | SkillDrills",
-    description: "시야 기준 좌표계가 급변하는 극한의 동적 환경에서 표적을 신속하게 재포착하는 무료 온라인 시각 적응 훈련.",
+    title: "화면 흔들림 추적 훈련｜공간 인지 드릴 | SkillDrills",
+    description: "시야가 움직일 때도 표적을 따라가는 무료 브라우저 훈련. 공간 인지와 재포착 시간, 위치 오차를 기록합니다.",
     type: "website",
     url: "https://skilldrills.online/ko/drills/visual-tracking/spatial-shift-pursuit",
     siteName: "SkillDrills",
@@ -40,8 +46,8 @@ export const metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "공간 시프트 추적 훈련・시야 좌표계 적응 – 화면 흔들림 제어 | SkillDrills",
-    description: "피격 반동・카메라 급회전 속에서도 표적을 중심와에 고정하는 과학적 적응형 안구 추적 훈련.",
+    title: "화면 흔들림 추적 훈련｜공간 인지 드릴 | SkillDrills",
+    description: "시야가 움직일 때도 표적을 따라가는 무료 브라우저 훈련. 공간 인지와 재포착 시간, 위치 오차를 기록합니다.",
   },
   robots: { index: true, follow: true },
   alternates: {
@@ -72,32 +78,33 @@ const softwareApplicationSchema = {
   "url": "https://skilldrills.online/ko/drills/visual-tracking/spatial-shift-pursuit",
   "publisher": { "@type": "Organization", "name": "SkillDrills", "url": "https://skilldrills.online/ko" },
   "inLanguage": "ko",
-  "dateModified": "2026-09-15"
+  "dateModified": "2026-09-20"
 };
 
 const webAppSchema = {
   "@context": "https://schema.org",
   "@type": "WebApplication",
-  "name": "공간 시프트 원활추종 트래커 (SkillDrills Spatial Shift Pursuit)",
+  "name": "화면 흔들림 추적 트래커",
   "applicationCategory": "EducationalApplication",
   "operatingSystem": "All",
   "browserRequirements": "Requires HTML5 canvas and JavaScript ES6+",
   "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
   "url": "https://skilldrills.online/ko/drills/visual-tracking/spatial-shift-pursuit",
   "inLanguage": "ko",
-  "dateModified": "2026-09-15"
+  "dateModified": "2026-09-20"
 };
 
 const videoGameSchema = {
   "@context": "https://schema.org",
   "@type": "VideoGame",
-  "name": "공간 시프트 적응형 에임 훈련 (Spatial Shift Pursuit)",
+  "name": "화면 흔들림 적응형 에임 훈련",
   "url": "https://skilldrills.online/ko/drills/visual-tracking/spatial-shift-pursuit",
   "description": "폭발 충격, 화면 흔들림, 급격한 카메라 전환 속에서도 표적을 절대 놓치지 않고 즉각적인 조준선을 복원하는 FPS 게이밍 에임 훈련 도구.",
-  "genre": ["Aim Trainer", "Eye Tracking", "Vision Training", "Esports Drill"],
+  "genre": ["에임 연습", "시선 추적", "시각 훈련", "시각 드릴"],
   "gamePlatform": ["Web Browser", "Desktop", "Mobile"],
   "applicationCategory": "Game",
-  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+  "dateModified": "2026-09-20"
 };
 
 const howToSchema = {
@@ -130,7 +137,8 @@ const howToSchema = {
       "name": "신규 좌표계 속도 동기화 및 추종 재개",
       "text": "착지와 동시에 새로운 프레임 내에서의 표적 속도 벡터와 안구 각속도를 동기화하여 추종 이득 1.0을 회복합니다."
     }
-  ]
+  ],
+  "dateModified": "2026-09-20"
 };
 
 const faqSchema = {
@@ -217,7 +225,8 @@ const faqSchema = {
         "text": "네. 후두정피질과 전두안구야 사이의 시냅스 가소성(Neuroplasticity)에 의해 반복적인 훈련을 거치면 좌표 변환 단계가 반사적으로 자동화되어, 극심한 혼전 상황에서도 흔들림 없는 에임 안정성을 영구히 체화할 수 있습니다."
       }
     }
-  ]
+  ],
+  "dateModified": "2026-09-20"
 };
 
 const guideProps = {
@@ -279,12 +288,12 @@ const guideProps = {
   })),
   sources: pickSources('krauzlis2004', 'findlay1999', 'robinson1965', 'rashbass1961', 'kahlon1996', 'woods2015'),
   related: [
-    { href: "/ko/drills/visual-tracking/constant-slow-pursuit", label: "저속 안구 운동 훈련 (Constant Slow)" },
-    { href: "/ko/drills/visual-tracking/directional-chaos-pursuit", label: "카오스 방향 전환 추적 (Directional Chaos)" },
-    { href: "/ko/drills/visual-tracking/dynamic-evasion-pursuit", label: "회피 표적 추적 훈련 (Dynamic Evasion)" },
-    { href: "/ko/drills/visual-tracking/ghosting-suppress-pursuit", label: "잔상 억제 시선 고정 훈련 (Ghosting Suppress)" },
-    { href: "/ko/drills/visual-tracking/infinity-pursuit", label: "8자 안구 운동 훈련 (Infinity)" },
-    { href: "/ko/drills/visual-tracking/predictive-pursuit", label: "가림 궤적 예측 추적 (Predictive Pursuit)" }
+    { href: "/ko/drills/visual-tracking/constant-slow-pursuit", label: "저속 안구 운동 훈련" },
+    { href: "/ko/drills/visual-tracking/directional-chaos-pursuit", label: "방향 전환 추적 훈련" },
+    { href: "/ko/drills/visual-tracking/dynamic-evasion-pursuit", label: "회피 표적 추적 훈련" },
+    { href: "/ko/drills/visual-tracking/ghosting-suppress-pursuit", label: "잔상 억제 시선 고정 훈련" },
+    { href: "/ko/drills/visual-tracking/infinity-pursuit", label: "8자 안구 운동 훈련" },
+    { href: "/ko/drills/visual-tracking/predictive-pursuit", label: "가림 궤적 예측 추적" }
   ]
 };
 
@@ -318,9 +327,9 @@ export default function KoreanSpatialShiftPursuitPage() {
 
       <SpatialShiftPursuitClient
         copy={{
-          title: "공간 시프트 추적 훈련・시야 좌표계 적응 테스트: 화면 흔들림 제어와 공간 리매핑",
-          subtitle: "공간 참조 틀의 급격한 변위・회전에 후두정피질을 동기화하는 적응형 원활추종 훈련",
-          description: "시각 참조 프레임이 돌발적으로 회전・시프트하는 극한의 동적 환경에서 표적을 놓치지 않고 추적하는 무료 안구 훈련. 망막 좌표계에서 공간 좌표계로의 초고속 리매핑을 가동하여 피격 화면 흔들림이나 격렬한 시점 전환 중 에임 안정성을 극대화합니다. 무설치 웹 테스트."
+          title: "화면 흔들림 추적 훈련",
+          subtitle: "움직이는 시야에서 표적을 따라가는 공간 인지 드릴",
+          description: "시야가 움직일 때도 표적을 따라가며 재포착 시간과 위치 오차를 기록하는 무료 브라우저 훈련입니다."
         }}
       />
 
@@ -329,6 +338,8 @@ export default function KoreanSpatialShiftPursuitPage() {
       <div className="max-w-6xl mx-auto px-4 pb-12">
         <RelatedDrills currentCategory="visual-tracking" currentHref="https://skilldrills.online/ko/drills/visual-tracking/spatial-shift-pursuit" />
       </div>
+
+      <DrillFooter />
     </>
   );
 }

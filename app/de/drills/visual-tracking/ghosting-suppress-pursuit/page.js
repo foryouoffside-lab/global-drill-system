@@ -1,5 +1,6 @@
 import GhostingSuppressPursuitClient from '@/app/drills/visual-tracking/ghosting-suppress-pursuit/GhostingSuppressPursuitClientLoader';
 import DrillGuide from '@/components/drill/DrillGuide';
+import DrillFooter from '@/components/drill/DrillFooter';
 import RelatedDrills from '@/components/drill/RelatedDrills';
 import { getAlternateLanguages } from '@/lib/i18n/locales';
 import { pickSources } from '@/lib/drillSources';
@@ -14,25 +15,25 @@ import { pickSources } from '@/lib/drillSources';
 // ============================================================
 
 export const metadata = {
-  title: "Fixationsstabilität Sehtraining – Ghosting | SkillDrills",
-  description: "Kostenloses Sehtraining zur Unterdrückung von Bewegungsunschärfe: Trainiere foveale Fixationsstabilität und Mikrosakkaden-Präzision auf dynamische Ziele.",
+  title: "Monitor-Nachzieheffekt-Test | Blickstabilität | SkillDrills",
+  description: "Beobachte Nachzieheffekte und helle Halos an einem bewegten Ziel und übe foveale Fixation, Bewegungsschärfe und Blickstabilität.",
   keywords: [
-    "fixationsstabilitaet sehtraining",
-    "bewegungsunschaerfe unterdrueckung",
-    "blickstabilisation training",
-    "foveale fixierung uebungen",
-    "visuelle nachbilder reduzieren",
-    "augentraining blickstabilisation",
-    "mikrosakkaden fixationsstabilitaet",
-    "esport blickfixierung",
-    "retinaler schlupf",
-    "distraktorunterdrueckung",
-    "foveale zentrierung",
-    "dynamische sehschaerfe"
+    "Monitor Nachzieheffekt Test",
+    "Monitor Test",
+    "Bewegungsunschärfe Monitor",
+    "Reaktionszeit Monitor",
+    "Ghosting Monitor",
+    "Überschwingen Monitor",
+    "Bildwiederholrate Monitor",
+    "Nachbilder Bildschirm",
+    "foveale Fixation",
+    "Blickstabilität Training",
+    "Bewegungsschärfe testen",
+    "Monitor Test kostenlos"
   ],
   openGraph: {
-    title: "Fixationsstabilität Sehtraining – Ghosting | SkillDrills",
-    description: "Wissenschaftliches Sehtraining zur aktiven Unterdrückung von Bewegungsunschärfe und visuellen Nachbildern. Trainieren Sie die foveale Fixationsstabilität und Mikrosakkaden-Präzision auf dynamische Ziele.",
+    title: "Monitor-Nachzieheffekt-Test | Blickstabilität | SkillDrills",
+    description: "Beobachte Nachzieheffekte und helle Halos an einem bewegten Ziel und übe foveale Fixation, Bewegungsschärfe und Blickstabilität.",
     type: "website",
     url: "https://skilldrills.online/de/drills/visual-tracking/ghosting-suppress-pursuit",
     siteName: "SkillDrills",
@@ -40,8 +41,8 @@ export const metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Fixationsstabilität Sehtraining – Ghosting | SkillDrills",
-    description: "Kostenloses Online-Training zur Ausblendung von Bewegungsunschärfe und Maximierung der fovealen Fixationsstabilität.",
+    title: "Monitor-Nachzieheffekt-Test | Blickstabilität | SkillDrills",
+    description: "Beobachte Nachzieheffekte und helle Halos an einem bewegten Ziel und übe foveale Fixation und Blickstabilität.",
   },
   robots: { index: true, follow: true },
   alternates: {
@@ -57,16 +58,16 @@ const breadcrumbSchema = {
     { "@type": "ListItem", "position": 1, "name": "Startseite", "item": "https://skilldrills.online/de" },
     { "@type": "ListItem", "position": 2, "name": "Übungen", "item": "https://skilldrills.online/de/drills" },
     { "@type": "ListItem", "position": 3, "name": "Blickverfolgung & Sehtraining", "item": "https://skilldrills.online/de/drills/visual-tracking" },
-    { "@type": "ListItem", "position": 4, "name": "Fixationsstabilität (Ghosting Suppress)", "item": "https://skilldrills.online/de/drills/visual-tracking/ghosting-suppress-pursuit" }
+    { "@type": "ListItem", "position": 4, "name": "Fixationsstabilität bei Nachzieheffekten", "item": "https://skilldrills.online/de/drills/visual-tracking/ghosting-suppress-pursuit" }
   ]
 };
 
 const softwareApplicationSchema = {
   "@context": "https://schema.org",
   "@type": "SoftwareApplication",
-  "name": "Fixationsstabilität Sehtraining – Bewegungsunschärfe-Unterdrückung (Ghosting Suppress Pursuit)",
+  "name": "Monitor-Nachzieheffekt testen – Blickstabilität",
   "applicationCategory": "HealthApplication",
-  "operatingSystem": "Web Browser",
+  "operatingSystem": "Webbrowser",
   "url": "https://skilldrills.online/de/drills/visual-tracking/ghosting-suppress-pursuit",
   "offers": {
     "@type": "Offer",
@@ -80,44 +81,45 @@ const softwareApplicationSchema = {
     "Konfigurierbare Zielgrößen, Glow-Effekte und CRT-Scanlines für realistische Störreize",
     "Vollständige clientseitige Datenverarbeitung ohne externe Serverkommunikation"
   ],
-  "dateModified": "2026-09-15"
+  "dateModified": "2026-09-20"
 };
 
 const webAppSchema = {
   "@context": "https://schema.org",
   "@type": "WebApplication",
   "name": "Fixationsstabilität Sehtraining – Ghosting-Unterdrückung Online Trainer | SkillDrills",
-  "alternateName": "Ghosting Suppress Pursuit Germany",
+  "alternateName": "Monitor-Nachzieheffekt-Test",
   "url": "https://skilldrills.online/de/drills/visual-tracking/ghosting-suppress-pursuit",
-  "dateModified": "2026-09-15",
+  "dateModified": "2026-09-20",
   "description": "Wissenschaftlich fundierter Online-Trainer zur Bündelung der fovealen Sehschärfe. Trainiert die aktive kortikale Unterdrückung nachziehender Bildartefakte bei dynamischer Zielverfolgung.",
   "applicationCategory": "EducationalApplication",
-  "operatingSystem": "All",
+  "operatingSystem": "Webbrowser",
   "browserRequirements": "Moderner Webbrowser mit Unterstützung für HTML5 Canvas",
   "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
   "author": { "@type": "Organization", "name": "SkillDrills", "url": "https://skilldrills.online" },
   "isAccessibleForFree": true,
-  "learningResourceType": "Educational Game",
+  "learningResourceType": "Sehtrainingsspiel",
   "teaches": "Fixationsstabilität, Bewegungsunschärfe-Unterdrückung, Mikrosakkaden, Foveale Fixierung, Visuelle Reizfilterung"
 };
 
 const videoGameSchema = {
   "@context": "https://schema.org",
   "@type": "VideoGame",
-  "name": "Fixationsstabilität Sehtraining – Bewegungsunschärfe-Unterdrückung (Ghosting Suppress Pursuit)",
+  "name": "Monitor-Nachzieheffekt testen – Blickstabilität",
   "url": "https://skilldrills.online/de/drills/visual-tracking/ghosting-suppress-pursuit",
   "description": "Kostenloses interaktives Sehtraining-Spiel. Verfolgen Sie bewegte Ziele trotz irritierender Nachbilder und trainieren Sie Ihre foveale Fixationsschärfe.",
-  "genre": ["Eye Tracking", "Visual Training", "Aim Trainer"],
-  "gamePlatform": ["Web Browser", "Desktop", "Mobile"],
+  "genre": ["Blickstabilität", "Sehtraining", "Monitortest"],
+  "gamePlatform": ["Webbrowser", "Computer", "Mobilgerät"],
   "applicationCategory": "Game",
-  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+  "dateModified": "2026-09-20"
 };
 
 const howToSchema = {
   "@context": "https://schema.org",
   "@type": "HowTo",
   "name": "Anleitung für das Training zur Ghosting- und Bewegungsunschärfe-Unterdrückung",
-  "dateModified": "2026-09-15",
+  "dateModified": "2026-09-20",
   "description": "Schritt-für-Schritt-Anleitung zur optimalen Durchführung des Fixationsstabilitäts- und Nachbildunterdrückungstrainings.",
   "step": [
     {
@@ -154,14 +156,15 @@ const howToSchema = {
 const faqSchema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
+  "dateModified": "2026-09-20",
   "dateModified": "2026-09-15",
   "mainEntity": [
     {
       "@type": "Question",
-      "name": "Was ist das Training zur Ghosting-Unterdrückung (Ghosting Suppress Pursuit)?",
+      "name": "Was ist das Training zur Unterdrückung von Nachzieheffekten?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Ghosting Suppress Pursuit ist ein spezialisiertes okulomotorisches Trainingsmodul, bei dem ein Stimulus verfolgt werden muss, der von dynamischen Nachbildern (Ghosting) und Bewegungsunschärfe begleitet wird. Das Modul trainiert das Sehzentrum darauf, diese Störartefakte kortikal zu filtern und den Blick unverrückbar auf dem Kern des Reizes zu fixieren (Burr, 1980; Martinez-Conde et al., 2004)."
+        "text": "Das Training zeigt ein bewegtes Ziel mit Nachbildern und Bewegungsunschärfe. Die Aufgabe besteht darin, den Blick auf dem Zielkern zu halten und die sichtbare Spur als Ablenkung einzuordnen. Es ersetzt keine Labormessung der Panel-Reaktionszeit (Burr, 1980; Martinez-Conde et al., 2004)."
       }
     },
     {
@@ -193,7 +196,7 @@ const faqSchema = {
       "name": "Wie unterscheidet sich dieses Modul vom klassischen Slow Pursuit Training?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Während Constant Slow Pursuit auf die gleichmäßige Steuerung glatter Augenfolgebewegungen entlang klarer Lissajous-Bahnen abzielt, fügt Ghosting Suppress Pursuit künstliche visuelle Störringe hinzu. Es schult spezifisch die Distraktor-Unterdrückung und die Widerstandskraft gegen optische Irritationen."
+        "text": "Die langsame Verfolgung übt gleichmäßige Augenfolgebewegungen auf einer klaren Bahn. Dieses Training ergänzt sichtbare Spuren als Ablenkung und übt, den Blick trotzdem auf dem Zielkern zu halten."
       }
     },
     {
@@ -242,7 +245,7 @@ const faqSchema = {
 const guideProps = {
   heading: "Neurowissenschaftliche Grundlagen der Bewegungsunschärfe-Unterdrückung & Fixationsstabilität",
   intro: [
-    "Das Training zur Unterdrückung von Bewegungsunschärfe (Ghosting Suppress Pursuit) zielt auf die kortikale Fähigkeit ab, retinale Nachbilder und optische Verwischungen (Motion Smear) aktiv zu filtern, um eine stabile foveale Fixation (Foveal Fixation) auf dynamische Zielobjekte zu gewährleisten. Wenn Stimuli das Gesichtsfeld queren, erzeugen Verzögerungen in den Photorezeptoren zwangsläufig visuelle Schweife, deren Unterdrückung eine wesentliche Voraussetzung für präzise Bewegungswahrnehmung ist (Burr, 1980).",
+    "Das Training zur Unterdrückung von Nachzieheffekten zeigt ein bewegtes Ziel mit sichtbaren Spuren und übt, die foveale Fixation auf dem Zielkern zu halten. Die wahrgenommene Spur hängt vom Display, vom Blick und von der visuellen Verarbeitung ab; sie ist daher kein reiner Messwert der Panel-Reaktionszeit (Burr, 1980).",
     "Kortikale Hemmungsmechanismen und die Rolle von Mikrosakkaden: Überschreitet ein Reiz eine Winkelgeschwindigkeit von etwa 30°/s, entsteht retinaler Schlupf, der nachziehende Nachbilder hinterlässt (Krauzlis, 2004). Im primären visuellen Kortex (V1/MT) greifen temporale Hemmprozesse, die diese Spuren abschwächen und das Auge davor bewahren, nach hinten gezogen zu werden (Burr, 1980). Gleichzeitig führen Mikrosakkaden (1–3 pro Sekunde) winzige Korrekturen durch, die das Verblassen von Bildinformationen (Troxler-Effekt) verhindern und die foveale Sehschärfe im Zentrum des Reizes zementieren (Martinez-Conde, Macknik, & Hubel, 2004; Rolfs, 2009).",
     "Relevanz für professionellen eSport und Hochgeschwindigkeits-Ballsport: In modernen Ego-Shootern ist das Display permanent von Mündungsfeuer, Rauchschwaden, Granateneffekten und schnellen Kameradrehungen überlagert (Yang et al., 2025). Auch im Ballsport (z. B. Tennis, Tischtennis, Badminton) rotieren Objekte mit enormem Tempo (Appelbaum & Erickson, 2018). Sportler mit hoher Fixationsstabilität widerstehen diesen Störeinflüssen und halten den visuellen Ankerpunkt ohne Blickzittern auf dem Ziel.",
     "Hardware-Latenzen und methodische Teststandards: Da träge Panel-Reaktionszeiten (GtG) physisches Hardware-Ghosting hervorrufen, sind Monitore mit 144 Hz oder 240 Hz klassischen 60-Hz-Displays bei diesem Training deutlich überlegen (Woods et al., 2015). Ein stabiler Sitzabstand von 50–70 cm und ein absolut fixierter Kopf stellen sicher, dass vestibuläre Kompensationsreflexe (VOR) ausgeschaltet bleiben und die feinen Augenmuskeln isoliert trainiert werden (Leigh & Zee, 2015). Alle Leistungsdaten werden ausschließlich verschlüsselt im lokalen Browser-Speicher abgelegt."
@@ -252,7 +255,7 @@ const guideProps = {
     headers: ["Leistungsstufe", "Ziel-Geschwindigkeit (Speed Multiplier)", "Fixationsstabilität unter visuellen Nachbildern", "Okulomotorisches & Neuronales Profil"],
     rows: [
       ["Stufe 1: Apex Fixation – Absolute Blickruhe", "Ab 2.0x Ultra-Speed", "Blick bleibt selbst bei dichten Ghosting-Ringen und abrupten Wandabprallern unverrückbar auf dem Zielkern verankert.", "Perfekte kortikale Bewegungsunschärfe-Unterdrückung und Mikrosakkaden-Präzision. Profi-Niveau in eSport und Reaktionssport."],
-      ["Stufe 2: Exzellente Fixationsschärfe", "1.4x – 1.9x High-Speed", "Zielkontur wird auch bei hoher Geschwindigkeit scharf separiert; minimale Ablenkung durch nachziehende Schleppspuren.", "Hervorragende sensomotorische Filterung der äußeren Augenmuskeln. Hohe Treffergenauigkeit in partikelintensiven FPS-Situationen."],
+      ["Stufe 2: Exzellente Fixationsschärfe", "1.4x – 1.9x hohe Geschwindigkeit", "Zielkontur wird auch bei hoher Geschwindigkeit scharf separiert; minimale Ablenkung durch nachziehende Schleppspuren.", "Hervorragende sensomotorische Filterung der äußeren Augenmuskeln. Hohe Treffergenauigkeit in partikelintensiven FPS-Situationen."],
       ["Stufe 3: Solider Leistungsstandard", "1.0x – 1.3x Standardbereich", "Gleichmäßige Verfolgung des Ziels; bei schnellen Richtungsänderungen oder dichten Ringen tritt ein kurzes Blickzögern auf.", "Normaler Leistungsbereich gesunder Erwachsener. Ausreichend für Freizeitsport und alltägliches Gaming."],
       ["Stufe 4: Blickdrift – Trainingsbedarf", "0.7x – 0.9x Niedrigbereich", "Blick lässt sich wiederholt von den nachziehenden Ringen nach hinten ablenken; Zielkern rutscht aus der Fovea.", "Verzögerte kortikale Reizunterdrückung. Konzentriertes Training im niedrigen Geschwindigkeitsbereich angeraten."],
       ["Stufe 5: Fixationsverlust – Einsteigerbereich", "Unter 0.7x", "Blick irrt unkoordiniert zwischen Ziel und Nachbildern umher; Ziel wird komplett aus den Augen verloren.", "Grundlagenübung bei fixiertem Kopf und reduzierter Geschwindigkeit erforderlich, um den Fokus auf einen Punkt zu bündeln."]
@@ -295,12 +298,12 @@ const guideProps = {
   faqs: faqSchema.mainEntity.map(e => ({ q: e.name, a: e.acceptedAnswer.text })),
   sources: pickSources('burr1980', 'martinezConde2004', 'rolfs2009', 'krauzlis2004', 'leigh2015', 'woods2015'),
   related: [
-    { href: "/de/drills/visual-tracking/constant-slow-pursuit", label: "Langsame Augenfolgebewegung (Constant Slow)" },
-    { href: "/de/drills/visual-tracking/directional-chaos-pursuit", label: "Chaotische Augenfolgebewegung (Directional Chaos)" },
-    { href: "/de/drills/visual-tracking/dynamic-evasion-pursuit", label: "Dynamische Zielausweichung (Dynamic Evasion)" },
-    { href: "/de/drills/visual-tracking/sine-wave-pursuit", label: "Sinuswellen-Verfolgungstraining (Sine Wave)" },
-    { href: "/de/drills/visual-tracking/infinity-pursuit", label: "Achter-Schleifen-Blickübung (Infinity)" },
-    { href: "/de/drills/visual-tracking/predictive-pursuit", label: "Prädiktive Blickverfolgung (Predictive)" }
+    { href: "/de/drills/visual-tracking/constant-slow-pursuit", label: "Langsame Augenfolgebewegung" },
+    { href: "/de/drills/visual-tracking/directional-chaos-pursuit", label: "Chaotische Augenfolgebewegung" },
+    { href: "/de/drills/visual-tracking/dynamic-evasion-pursuit", label: "Dynamische Zielausweichung" },
+    { href: "/de/drills/visual-tracking/sine-wave-pursuit", label: "Sinuswellen-Verfolgungstraining" },
+    { href: "/de/drills/visual-tracking/infinity-pursuit", label: "Achter-Schleifen-Blickübung" },
+    { href: "/de/drills/visual-tracking/predictive-pursuit", label: "Prädiktive Blickverfolgung" }
   ]
 };
 
@@ -342,6 +345,7 @@ export default function LocalizedPage() {
       <div className="max-w-6xl mx-auto px-4 pb-12">
         <RelatedDrills currentCategory="visual-tracking" currentHref="https://skilldrills.online/de/drills/visual-tracking/ghosting-suppress-pursuit" />
       </div>
+      <DrillFooter />
     </>
   );
 }

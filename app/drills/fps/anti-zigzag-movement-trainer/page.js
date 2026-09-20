@@ -334,7 +334,7 @@ export default function AntiZigzagPage() {
           ]
         }}
       />
-      <DrillGuide guide={antiZigzagGuide} />
+      <DrillGuide guide={antiZigzagGuide} singleLineTitles />
       <DrillFooter />
     </>
   );

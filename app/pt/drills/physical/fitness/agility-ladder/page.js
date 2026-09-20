@@ -6,7 +6,7 @@ import { pickSources } from '@/lib/drillSources';
 
 // ============================================================
 // PESQUISA DE PALAVRAS-CHAVE NATIVAS (SERP BRASIL / PT-BR)
-// Termos de busca de alta intenção e baixa concorrência:
+// Clusters nativos revisados por intenção; concorrência ainda não medida:
 // - "treino escada de agilidade" (Busca de alta intenção esportiva e funcional)
 // - "exercicios na escada de agilidade" (Metodologia de condicionamento e footwork)
 // - "escadinha de agilidade exercicios" (Variação coloquial brasileira comum no futebol)
@@ -18,10 +18,10 @@ import { pickSources } from '@/lib/drillSources';
 // ============================================================
 
 export const metadata = {
-  title: "Escada de Agilidade – Treino de Footwork | SkillDrills",
-  description: 'Treino de escada de agilidade online grátis. Pratique sequências de passadas rápidas, coordenação de pés e ritmo motor no navegador para esportes.',
+  title: "Treino de Escada de Agilidade | SkillDrills",
+  description: 'Treino grátis de escada de agilidade online. Siga passadas alternadas para praticar footwork, ritmo, coordenação bilateral e velocidade dos pés.',
   keywords: [
-    "treino escada de agilidade",
+    "treino de escada de agilidade",
     "exercicios na escada de agilidade",
     "escadinha de agilidade exercicios",
     "treino de footwork e agilidade",
@@ -30,15 +30,16 @@ export const metadata = {
     "counter strafing ritmo",
     "treino de sequenciamento motor",
     "cadencia e reflexo motor",
-    "treino de agilidade online"
+    "treino de agilidade online",
+    "velocidade dos pés treino"
   ],
   alternates: {
     canonical: 'https://skilldrills.online/pt/drills/physical/fitness/agility-ladder',
     languages: getAlternateLanguages('/drills/physical/fitness/agility-ladder'),
   },
   openGraph: {
-    title: "Escada de Agilidade – Treino de Footwork | SkillDrills",
-    description: 'Treino de escada de agilidade online grátis. Pratique sequências de passadas rápidas, coordenação de pés e ritmo motor no navegador para esportes.',
+    title: "Treino de Escada de Agilidade | SkillDrills",
+    description: 'Treino grátis de escada de agilidade online. Siga passadas alternadas para praticar footwork, ritmo, coordenação bilateral e velocidade dos pés.',
     url: 'https://skilldrills.online/pt/drills/physical/fitness/agility-ladder',
     siteName: 'SkillDrills',
     locale: 'pt_BR',
@@ -46,8 +47,8 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: "Escada de Agilidade – Treino de Footwork | SkillDrills",
-    description: 'Treino de escada de agilidade online grátis. Pratique sequências de passadas rápidas, coordenação de pés e ritmo motor no navegador para esportes.',
+    title: "Treino de Escada de Agilidade | SkillDrills",
+    description: 'Treino grátis de escada de agilidade online. Siga passadas alternadas para praticar footwork, ritmo, coordenação bilateral e velocidade dos pés.',
   },
   robots: { index: true, follow: true },
 };
@@ -102,7 +103,7 @@ const softwareApplicationSchema = {
     "url": "https://skilldrills.online/pt"
   },
   "inLanguage": "pt-BR",
-  "dateModified": "2026-09-12"
+  "dateModified": "2026-09-20"
 };
 
 const webApplicationSchema = {
@@ -119,7 +120,7 @@ const webApplicationSchema = {
   },
   "url": "https://skilldrills.online/pt/drills/physical/fitness/agility-ladder",
   "inLanguage": "pt-BR",
-  "dateModified": "2026-09-12"
+  "dateModified": "2026-09-20"
 };
 
 const videoGameSchema = {
@@ -140,6 +141,8 @@ const videoGameSchema = {
     "Mobile"
   ],
   "applicationCategory": "Game",
+  "inLanguage": "pt-BR",
+  "dateModified": "2026-09-20",
   "offers": {
     "@type": "Offer",
     "price": "0",
@@ -150,7 +153,8 @@ const videoGameSchema = {
 const faqSchema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
-  "dateModified": "2026-09-12",
+  "inLanguage": "pt-BR",
+  "dateModified": "2026-09-20",
   "mainEntity": [
     {
       "@type": "Question",
@@ -358,8 +362,8 @@ export default function AgilityLadderPagePt() {
       />
       <MotorSequencingClient
         copy={{
-          title: "Treino de Escada de Agilidade & Footwork",
-          subtitle: "Sequenciamento Motor Bilateral & Cadência Rítmica • 15 Níveis",
+          title: "Treino de Escada de Agilidade",
+          subtitle: "Siga passadas alternadas com ritmo • 15 níveis",
           hudLabels: {
             score: "Pontuação",
             timeLeft: "Tempo Restante",

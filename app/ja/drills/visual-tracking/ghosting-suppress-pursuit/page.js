@@ -1,5 +1,6 @@
 import GhostingSuppressPursuitClient from '@/app/drills/visual-tracking/ghosting-suppress-pursuit/GhostingSuppressPursuitClientLoader';
 import DrillGuide from '@/components/drill/DrillGuide';
+import DrillFooter from '@/components/drill/DrillFooter';
 import RelatedDrills from '@/components/drill/RelatedDrills';
 import { getAlternateLanguages } from '@/lib/i18n/locales';
 import { pickSources } from '@/lib/drillSources';
@@ -14,10 +15,13 @@ import { pickSources } from '@/lib/drillSources';
 // ============================================================
 
 export const metadata = {
-  title: "残像抑制固視トレーニング・動体視力視線安定性テスト – 中心窩ロック＆モーションスミア抑制 | SkillDrills",
-  description: "網膜残像や動的ゴースティング（ブレ）を大脳視覚野で能動的に抑制し、移動標的の中心窩ロックと固視微動安定性を極限まで高めるアイトラッキング練習。無料・登録不要。",
+  title: "モニター残像テスト・視線固定練習 | SkillDrills",
+  description: "動く標的の残像とぼやけを見ながら、中心核への視線固定と動体視力を練習する無料ブラウザドリル。",
   keywords: [
-    "残像 抑制 トレーニング",
+    "モニター 残像 テスト",
+    "残像 モニター",
+    "液晶 残像",
+    "応答速度 テスト",
     "動体視力 残像",
     "固視微動 トレーニング",
     "視線固視 安定性",
@@ -28,11 +32,12 @@ export const metadata = {
     "マイクロサッケード 視線",
     "エイム 視線固定",
     "動的視覚ノイズ 除去",
-    "FPS 動体視力 鮮明化"
+    "オーバードライブ 残像",
+    "動く標的 視線固定"
   ],
   openGraph: {
-    title: "残像抑制固視トレーニング・動体視力視線安定性テスト – 中心窩ロック＆モーションスミア抑制 | SkillDrills",
-    description: "網膜残像や動的ゴースティング（ブレ）を大脳視覚野で能動的に抑制し、移動標的の中心窩ロックと固視微動安定性を極限まで高めるアイトラッキング練習。",
+    title: "モニター残像テスト・視線固定練習 | SkillDrills",
+    description: "動く標的の残像とぼやけを見ながら、中心核への視線固定と動体視力を練習する無料ブラウザドリル。",
     type: "website",
     url: "https://skilldrills.online/ja/drills/visual-tracking/ghosting-suppress-pursuit",
     siteName: "SkillDrills",
@@ -40,7 +45,7 @@ export const metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "残像抑制固視トレーニング・動体視力視線安定性テスト – 中心窩ロック＆モーションスミア抑制 | SkillDrills",
+    title: "モニター残像テスト・視線固定練習 | SkillDrills",
     description: "動的残像やモーションスミアを脳内で能動的に抑制し、中心窩固視安定性を鍛える無料オンライントレーニング。",
   },
   robots: { index: true, follow: true },
@@ -56,17 +61,17 @@ const breadcrumbSchema = {
   "itemListElement": [
     { "@type": "ListItem", "position": 1, "name": "ホーム", "item": "https://skilldrills.online/ja" },
     { "@type": "ListItem", "position": 2, "name": "ドリル一覧", "item": "https://skilldrills.online/ja/drills" },
-    { "@type": "ListItem", "position": 3, "name": "視覚追従・アイトラッキング", "item": "https://skilldrills.online/ja/drills/visual-tracking" },
-    { "@type": "ListItem", "position": 4, "name": "残像抑制固視トレーニング (ゴースト抑制訓練)", "item": "https://skilldrills.online/ja/drills/visual-tracking/ghosting-suppress-pursuit" }
+    { "@type": "ListItem", "position": 3, "name": "視覚追従・眼球運動トレーニング", "item": "https://skilldrills.online/ja/drills/visual-tracking" },
+    { "@type": "ListItem", "position": 4, "name": "残像抑制と視線固定の練習", "item": "https://skilldrills.online/ja/drills/visual-tracking/ghosting-suppress-pursuit" }
   ]
 };
 
 const softwareApplicationSchema = {
   "@context": "https://schema.org",
   "@type": "SoftwareApplication",
-  "name": "残像抑制固視トレーニング・動体視力視線安定性テスト (Ghosting Suppress Pursuit)",
+  "name": "モニター残像テスト・視線固定練習",
   "applicationCategory": "HealthApplication",
-  "operatingSystem": "Web Browser",
+  "operatingSystem": "ブラウザ",
   "url": "https://skilldrills.online/ja/drills/visual-tracking/ghosting-suppress-pursuit",
   "offers": {
     "@type": "Offer",
@@ -80,44 +85,45 @@ const softwareApplicationSchema = {
     "ターゲットサイズ・発光（Glow）・CRT走査線エフェクトの表示カスタマイズ",
     "外部サーバー通信一切なしの完全クライアントサイドローカルデータ管理"
   ],
-  "dateModified": "2026-09-15"
+  "dateModified": "2026-09-20"
 };
 
 const webAppSchema = {
   "@context": "https://schema.org",
   "@type": "WebApplication",
   "name": "残像抑制固視トレーニング – 動体視力視線安定性 オンライントレーナー | SkillDrills",
-  "alternateName": "Ghosting Suppress Pursuit Japan",
+  "alternateName": "モニター残像テスト",
   "url": "https://skilldrills.online/ja/drills/visual-tracking/ghosting-suppress-pursuit",
-  "dateModified": "2026-09-15",
+  "dateModified": "2026-09-20",
   "description": "無料オンライン動体視力・視線安定性トレーニング。残像や視覚的乱気流下でも中心視野をターゲットの中心核にロックし続ける神経固視ドリル。",
   "applicationCategory": "EducationalApplication",
-  "operatingSystem": "All",
+  "operatingSystem": "ブラウザ",
   "browserRequirements": "HTML5 Canvas対応の最新モダンウェブブラウザ",
   "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
   "author": { "@type": "Organization", "name": "SkillDrills", "url": "https://skilldrills.online" },
   "isAccessibleForFree": true,
-  "learningResourceType": "Educational Game",
+  "learningResourceType": "視覚トレーニングゲーム",
   "teaches": "残像抑制, 中心窩固視安定性, マイクロサッケード制御, モーションスミア遮断, 動体視力明瞭化"
 };
 
 const videoGameSchema = {
   "@context": "https://schema.org",
   "@type": "VideoGame",
-  "name": "残像抑制固視トレーニング・動体視力視線安定性テスト (Ghosting Suppress Pursuit)",
+  "name": "モニター残像テスト・視線固定練習",
   "url": "https://skilldrills.online/ja/drills/visual-tracking/ghosting-suppress-pursuit",
   "description": "残像を引き連れて移動するターゲットを眼球でブレずにロックし続ける無料アイトラッキングゲーム。視線ブレの抑制と動体視力の解像度を高めます。",
-  "genre": ["Eye Tracking", "Visual Training", "Aim Trainer"],
-  "gamePlatform": ["Web Browser", "Desktop", "Mobile"],
+  "genre": ["視線固定トレーニング", "動体視力トレーニング", "モニターテスト"],
+  "gamePlatform": ["ブラウザ", "パソコン", "スマートフォン"],
   "applicationCategory": "Game",
-  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+  "dateModified": "2026-09-20"
 };
 
 const howToSchema = {
   "@context": "https://schema.org",
   "@type": "HowTo",
   "name": "残像抑制固視・視線安定性向上の正しい練習手順",
-  "dateModified": "2026-09-15",
+  "dateModified": "2026-09-20",
   "description": "移動標的の残像ノイズを無視し、中心核に焦点を絞り続けて固視精度を極限まで高めるための公式手順ガイド。",
   "step": [
     {
@@ -154,11 +160,12 @@ const howToSchema = {
 const faqSchema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
+  "dateModified": "2026-09-20",
   "dateModified": "2026-09-15",
   "mainEntity": [
     {
       "@type": "Question",
-      "name": "残像抑制固視追従テスト（Ghosting Suppress Pursuit）とは何ですか？",
+      "name": "残像抑制と視線固定の練習とは何ですか？",
       "acceptedAnswer": {
         "@type": "Answer",
         "text": "残像抑制固視追従テストは、背後に動的残像リング（ゴースティング）やモーションスミアを引き連れて移動するターゲットを追跡し、視線が残像に引っ張られるのを能動的に抑制して標的中心核のみに中心窩焦点を維持し続ける眼球運動ドリルです（Burr, 1980; Martinez-Conde et al., 2004）。"
@@ -190,7 +197,7 @@ const faqSchema = {
     },
     {
       "@type": "Question",
-      "name": "低速追従（Constant Slow Pursuit）と本残像抑制ドリルの違いは何ですか？",
+      "name": "低速追従トレーニングと本練習の違いは何ですか？",
       "acceptedAnswer": {
         "@type": "Answer",
         "text": "低速追従はクリーンなリサージュ軌道に沿って純粋な滑動追従ゲインを滑らかに維持することを主眼とします。一方、残像抑制ドリルは意図的に背後へ視覚ノイズリングを発生させ、視覚的注意の妨害をシャットアウトする「ディストラクター抑制力」と「高コントラスト中心核への固視アンカー力」を集中的に鍛えます。"
@@ -242,7 +249,7 @@ const faqSchema = {
 const guideProps = {
   heading: "動的残像抑制と中心窩固視安定性の神経眼科学基準",
   intro: [
-    "残像抑制固視追従（Ghosting Suppress Pursuit）とは、移動物体の背後に生じる網膜残光や視覚的スミア（モーションスミア）を大脳皮質レベルで能動的にフィルタリングし、標的中心核に対する中心窩固視（Foveal Fixation）を安定維持する高度なアイトラッキング課題です。刺激が網膜上を移動する際、受容野の時間遅延によって必然的に生じる視覚的乱気流を排除し、鮮明な輪郭知覚を担保する神経機構を限界まで追い込みます（Burr, 1980）。",
+    "残像抑制と視線固定の練習は、移動物体の背後に生じる網膜残光や視覚的なぼやけを見ながら、標的の中心核への中心窩固視を安定させる課題です。刺激が網膜上を移動するときに生じる見えの乱れを観察し、鮮明な輪郭を保つ視覚運動の使い方を練習します（Burr, 1980）。",
     "皮質能動的抑制と固視微動（マイクロサッケード）のメカニズム：標的が約30°/秒以上の速度で移動すると網膜スリップが発生し、後方に軌跡の残像が形成されます（Krauzlis, 2004）。通常、この後方ノイズは視線を後ろへ引っ張るディストラクターとして作用しますが、初期視覚野（V1/MT）の時間的抑制機構が機能することで残像が消去されます（Burr, 1980）。同時に、毎秒1〜3回発生する固視微動（マイクロサッケード）が中心窩受容野を微細更新し、視覚情報の消失（Troxler効果）を防ぎながら標的中心への強固なロックを維持します（Martinez-Conde, Macknik, & Hubel, 2004; Rolfs, 2009）。",
     "競技eスポーツおよび高速スポーツにおける実戦応用：FPSゲームにおけるマズルフラッシュやスモーク、爆発パーティクルが飛び交う戦場、あるいはテニスや野球における超高速ボールの追跡では、周辺の視覚ノイズに惑わされず標的コアを凝視し続ける能力が命中率を直結で左右します（Yang et al., 2025; Appelbaum & Erickson, 2018）。本ドリルは意図的に背後残像リングを発生させることで、視覚的ノイズ耐性と中心窩アンカー精度を飛躍的に向上させます。",
     "ハードウェア環境の標準化と前庭反射の抑制：ディスプレイの画素応答速度（GtG）が遅い環境では物理的なゴースティングが重畳して神経測定に誤差を生むため、144Hz以上の高駆動・低残像モニターでの実施が推奨されます（Woods et al., 2015）。また、頭部を完全に静止させて前庭動眼反射（VOR）を抑え込むことで、純粋な外眼筋の微小運動制御と大脳皮質の固視維持回路を独立して鍛錬できます（Leigh & Zee, 2015）。すべてのセッション結果はローカルストレージに安全に保管されます。"
@@ -295,12 +302,12 @@ const guideProps = {
   faqs: faqSchema.mainEntity.map(e => ({ q: e.name, a: e.acceptedAnswer.text })),
   sources: pickSources('burr1980', 'martinezConde2004', 'rolfs2009', 'krauzlis2004', 'leigh2015', 'woods2015'),
   related: [
-    { href: "/ja/drills/visual-tracking/constant-slow-pursuit", label: "低速追従眼球運動トレーニング (Constant Slow)" },
-    { href: "/ja/drills/visual-tracking/directional-chaos-pursuit", label: "カオス方向追従テスト (Directional Chaos)" },
-    { href: "/ja/drills/visual-tracking/dynamic-evasion-pursuit", label: "リアクティブ追従訓練 (Dynamic Evasion)" },
-    { href: "/ja/drills/visual-tracking/sine-wave-pursuit", label: "正弦波追従トレーニング (Sine Wave)" },
-    { href: "/ja/drills/visual-tracking/infinity-pursuit", label: "8の字ループ追従運動 (Infinity)" },
-    { href: "/ja/drills/visual-tracking/predictive-pursuit", label: "予測アイトラッキング (Predictive)" }
+    { href: "/ja/drills/visual-tracking/constant-slow-pursuit", label: "低速追従眼球運動トレーニング" },
+    { href: "/ja/drills/visual-tracking/directional-chaos-pursuit", label: "カオス方向追従テスト" },
+    { href: "/ja/drills/visual-tracking/dynamic-evasion-pursuit", label: "リアクティブ追従訓練" },
+    { href: "/ja/drills/visual-tracking/sine-wave-pursuit", label: "正弦波追従トレーニング" },
+    { href: "/ja/drills/visual-tracking/infinity-pursuit", label: "8の字ループ追従運動" },
+    { href: "/ja/drills/visual-tracking/predictive-pursuit", label: "予測視線追従トレーニング" }
   ]
 };
 
@@ -342,6 +349,7 @@ export default function LocalizedPage() {
       <div className="max-w-6xl mx-auto px-4 pb-12">
         <RelatedDrills currentCategory="visual-tracking" currentHref="https://skilldrills.online/ja/drills/visual-tracking/ghosting-suppress-pursuit" />
       </div>
+      <DrillFooter />
     </>
   );
 }

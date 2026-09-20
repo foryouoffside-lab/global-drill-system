@@ -11,8 +11,8 @@ import { pickSources } from '@/lib/drillSources';
 // on the same day the motor and visual sweeps returned 100% null. Re-measure
 // before acting on any of these terms. Phrases are kept; numbers are not.
 // SEO RESEARCH FINDINGS — dynamic-grid-evasion
-// PRIMARY:  "grid evasion game"          — Core gameplay intent (volume unmeasured)
-//           "spatial awareness game"     — High-volume cognitive intent (volume unmeasured)
+// PRIMARY:  "spatial awareness game" / "reaction speed grid"
+//           "grid evasion game"          — Browser gameplay intent (volume unmeasured)
 // SECONDARY / LSI:
 //           "reflex training game"       — Gamified reflex query (volume unmeasured)
 //           "spatial reflex trainer"     — Precision reflex phrase (volume unmeasured)
@@ -30,8 +30,8 @@ import { pickSources } from '@/lib/drillSources';
 // ============================================================
 
 export const metadata = {
-  title: 'Dynamic Grid Evasion – Free Spatial Reflex Game',
-  description: 'Free grid evasion game. Navigate a 3x3 grid and dodge hazard cells to train peripheral scanning and spatial reflexes.',
+  title: 'Spatial Awareness Game | SkillDrills',
+  description: 'Free spatial awareness game and reflex test online. Scan a 3×3 grid, spot danger cells, and move to safety to train peripheral reactions.',
   keywords: [
     'grid evasion game',
     'spatial awareness game',
@@ -46,8 +46,8 @@ export const metadata = {
     'reaction speed grid',
   ],
   openGraph: {
-    title: 'Dynamic Grid Evasion – Free Spatial Reflex Game | SkillDrills',
-    description: 'Free grid evasion game. Navigate a 3x3 grid and dodge hazard cells to train peripheral scanning and spatial reflexes.',
+    title: 'Spatial Awareness Game | SkillDrills',
+    description: 'Free spatial awareness game and reflex test online. Scan a 3×3 grid, spot danger cells, and move to safety to train peripheral reactions.',
     type: 'article',
     url: 'https://skilldrills.online/drills/physical/coordination/dynamic-grid-evasion',
     siteName: 'SkillDrills',
@@ -55,8 +55,8 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Dynamic Grid Evasion – Free Spatial Reflex Game | SkillDrills',
-    description: 'Free grid evasion game. Navigate a 3x3 grid and dodge hazard cells to train peripheral scanning and spatial reflexes.',
+    title: 'Spatial Awareness Game | SkillDrills',
+    description: 'Free spatial awareness game and reflex test online. Scan a 3×3 grid, spot danger cells, and move to safety to train peripheral reactions.',
   },
   robots: { index: true, follow: true },
   alternates: {
@@ -88,7 +88,8 @@ const softwareApplicationSchema = {
   description: 'Free online spatial reflex training drill. Scan a 3x3 tactical grid, detect incoming danger zone pulses, and flick your crosshair into safe cells before explosions trigger.',
   url: 'https://skilldrills.online/drills/physical/coordination/dynamic-grid-evasion',
   publisher: { '@type': 'Organization', name: 'SkillDrills', url: 'https://skilldrills.online' },
-  dateModified: '2026-09-05',
+  inLanguage: 'en',
+  dateModified: '2026-09-20',
 };
 
 const webApplicationSchema = {
@@ -100,12 +101,15 @@ const webApplicationSchema = {
   browserRequirements: 'Requires modern web browser with HTML5 Canvas and pointer input support',
   offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
   url: 'https://skilldrills.online/drills/physical/coordination/dynamic-grid-evasion',
-  dateModified: '2026-09-05',
+  inLanguage: 'en',
+  dateModified: '2026-09-20',
 };
 
 const faqSchema = {
   '@context': 'https://schema.org',
   '@type': 'FAQPage',
+  inLanguage: 'en',
+  dateModified: '2026-09-20',
   mainEntity: [
     {
       '@type': 'Question',
@@ -199,6 +203,8 @@ const videoGameSchema = {
   genre: ['Action', 'Brain Game', 'Reflex Game', 'Coordination'],
   gamePlatform: ['Web Browser', 'Desktop', 'Mobile'],
   applicationCategory: 'Game',
+  inLanguage: 'en',
+  dateModified: '2026-09-20',
   offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
 };
 
@@ -319,7 +325,7 @@ export default function DynamicGridEvasionPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(howToSchema) }}
       />
-      <DynamicGridEvasionClient copy={{ title: 'Dynamic Grid Evasion', subtitle: 'Spatial Awareness & Hazard Avoidance Drill' }} />
+      <DynamicGridEvasionClient copy={{ title: 'Spatial Awareness Game', subtitle: 'Scan the grid and escape danger with fast peripheral reactions' }} />
       <DrillGuide {...guideProps} />
       
     </>

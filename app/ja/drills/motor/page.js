@@ -6,18 +6,18 @@ import { getLocalizedDrill } from '@/lib/i18n/drillNames';
 const motorDrills = DRILLS.filter((d) => d.category === 'motor');
 
 export const metadata = {
-  title: 'マウス精度＆エイム練習・CPS連打測定テスト | SkillDrills',
-  description: 'ブラウザで今すぐできる無料のマウス精度＆エイム練習テスト。秒間クリック連打測定（CPSテスト）、手ブレ抑制、キーボード打鍵速度など9つの科学的ドリル。',
+  title: 'マウス精度テスト・エイム練習 | SkillDrills',
+  description: 'マウス精度、エイム操作、CPS、キーボード速度、手眼協調を測る無料ブラウザドリル9種。',
   keywords: [
-    'マウス精度 テスト 無料', 'エイム 練習 無料 ブラウザ', 'cps テスト オンライン',
-    '連打測定 ツール', 'マウス 手ブレ テスト', 'キーボード 反応速度 テスト',
-    'キーボード 同時押し テスト', 'キーボード チャタリング テスト', '手眼協調性 トレーニング',
-    'マウス 微小操作 練習', 'ジッタークリック 測定', 'バタフライクリック 練習',
-    'イライラ棒 ゲーム 無料', 'fps エイム 安定化 練習', 'マウス 感度 edpi 調整'
+    'マウス精度テスト', 'エイム練習', 'エイム練習 無料', 'CPSテスト',
+    'マウス操作 練習', 'マウス 手ブレ テスト', 'キーボード 反応速度 テスト',
+    'キーボード 同時押し テスト', '手眼協調 トレーニング', 'マウス 微細操作 練習',
+    'ジッタークリック テスト', 'バタフライクリック 練習', 'マウス精密制御',
+    'FPS エイム 練習', 'マウス感度 eDPI 調整'
   ],
   openGraph: {
-    title: 'マウス精度＆エイム練習・CPS連打測定テスト | SkillDrills',
-    description: 'ブラウザで今すぐできる無料のマウス精度＆エイム練習テスト。秒間クリック連打測定（CPSテスト）、手ブレ抑制、キーボード打鍵速度など9つの科学的ドリル。',
+    title: 'マウス精度テスト・エイム練習 | SkillDrills',
+    description: 'マウス精度、エイム操作、CPS、キーボード速度、手眼協調を測る無料ブラウザドリル9種。',
     type: 'website',
     url: 'https://skilldrills.online/ja/drills/motor',
     siteName: 'SkillDrills',
@@ -26,8 +26,8 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'マウス精度＆エイム練習・CPS連打測定テスト | SkillDrills',
-    description: '秒間クリック数（CPS）、精密エイム練習、手ブレ抑制、キーボード打鍵速度訓練：9つの科学的モーター制御ドリルをブラウザで今すぐ無料測定。',
+    title: 'マウス精度テスト・エイム練習 | SkillDrills',
+    description: 'マウス精度、エイム操作、CPS、キーボード速度、手眼協調を測る無料ブラウザドリル9種。',
     images: ['https://skilldrills.online/icons/icon-512x512.png'],
   },
   robots: { index: true, follow: true },
@@ -50,9 +50,11 @@ const breadcrumbSchema = {
 const collectionSchema = {
   "@context": "https://schema.org",
   "@type": "CollectionPage",
-  "name": "マウス精度＆運動制御ドリル（9種目）",
+  "inLanguage": "ja-JP",
+  "dateModified": "2026-09-20",
+  "name": "マウス精度テスト・エイム練習（9種）",
   "url": "https://skilldrills.online/ja/drills/motor",
-  "description": "秒間クリック数（CPS）、精密エイム練習、手ブレ抑制、キーボード同時押し・チャタリング検査など9つの科学的モーター制御テスト。",
+  "description": "マウス精度、エイム操作、CPS、キーボード速度、手眼協調を測る無料ブラウザドリル9種。",
   "author": { "@type": "Organization", "name": "SkillDrills" },
   "hasPart": motorDrills.map((drill) => {
     const loc = getLocalizedDrill(drill.href, 'ja', drill.name);
@@ -71,6 +73,8 @@ const collectionSchema = {
 const faqSchema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
+  "inLanguage": "ja-JP",
+  "dateModified": "2026-09-20",
   "mainEntity": [
     {
       "@type": "Question",

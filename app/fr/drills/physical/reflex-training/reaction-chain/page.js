@@ -20,31 +20,36 @@ import { pickSources } from '@/lib/drillSources';
 // ============================================================
 
 export const metadata = {
-  title: "Freinage de Visée Souris – Test Réflexe | SkillDrills",
-  description: "Entraînez le freinage de visée et le contrôle moteur à la souris. Interceptez des cibles cinétiques et supprimez l'overflick au PC.",
+  title: "Freinage de visée souris | Test réflexe",
+  description: "Entraînement gratuit de visée au navigateur. Interceptez des cibles mobiles, arrêtez le curseur avec précision et réduisez l’overflick.",
   keywords: [
-    "entraînement au freinage de visée souris",
-    "comment corriger overflick souris",
-    "test d'inhibition motrice réflexes",
-    "jeu de freinage souris et réflexe",
-    "exercice de décélération de souris",
-    "arrêt cinétique visée souris",
-    "test de précision et réflexes souris",
-    "jeu de vitesse de réaction souris",
+    "entraînement freinage visée souris",
+    "aim trainer gratuit en ligne",
+    "comment corriger l'overflick souris",
+    "test inhibition motrice",
+    "jeu réflexe arrêt souris",
+    "exercice décélération souris",
+    "test précision souris",
+    "jeu vitesse réaction souris",
     "comment arrêter sa souris sur la cible",
-    "entraînement stopping power souris fps"
+    "entraînement visée Valorant"
   ],
   alternates: {
     canonical: 'https://skilldrills.online/fr/drills/physical/reflex-training/reaction-chain',
     languages: getAlternateLanguages('/drills/physical/reflex-training/reaction-chain'),
   },
   openGraph: {
-    title: "Freinage de Visée Souris – Test Réflexe | SkillDrills",
-    description: "Éliminez l'overflick en stabilisant instantanément votre réticule lors du premier tir. Module biomécanique de pointe pour Counter-Strike 2 et Valorant.",
+    title: "Freinage de visée souris | Test réflexe",
+    description: "Interceptez des cibles mobiles, arrêtez le curseur avec précision et pratiquez le contrôle de l’overflick au navigateur.",
     url: 'https://skilldrills.online/fr/drills/physical/reflex-training/reaction-chain',
     siteName: 'SkillDrills',
     locale: 'fr_FR',
     type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: "Freinage de visée souris | Test réflexe",
+    description: "Visez la cible, arrêtez le curseur avec précision et pratiquez le contrôle de l’overflick.",
   },
 };
 
@@ -97,8 +102,8 @@ const softwareApplicationSchema = {
     "name": "SkillDrills",
     "url": "https://skilldrills.online/fr"
   },
-  "inLanguage": "fr",
-  "dateModified": "2026-09-12"
+  "inLanguage": "fr-FR",
+  "dateModified": "2026-09-20"
 };
 
 const webApplicationSchema = {
@@ -114,8 +119,8 @@ const webApplicationSchema = {
     "priceCurrency": "USD"
   },
   "url": "https://skilldrills.online/fr/drills/physical/reflex-training/reaction-chain",
-  "inLanguage": "fr",
-  "dateModified": "2026-09-12"
+  "inLanguage": "fr-FR",
+  "dateModified": "2026-09-20"
 };
 
 const videoGameSchema = {
@@ -125,6 +130,8 @@ const videoGameSchema = {
   "url": "https://skilldrills.online/fr/drills/physical/reflex-training/reaction-chain",
   "genre": ["Reflex Game", "Motor Control Trainer", "Esports Precision"],
   "playMode": "SinglePlayer",
+  "inLanguage": "fr-FR",
+  "dateModified": "2026-09-20",
   "description": "Interceptez des nœuds à des vitesses atteignant 1 800 px/s et immobilisez le curseur sous 1,5 px/frame au sein de la cible pour accumuler des multiplicateurs allant jusqu'à 3,0x."
 };
 
@@ -336,8 +343,8 @@ export default function LocalizedReactionChainPageFr() {
       />
       <ReactionChainClient
         copy={{
-          title: "Freinage de Visée Souris & Test d'Inhibition Motrice",
-          subtitle: "Arrêt Cinétique & Contrôle de Décélération • 15 Niveaux de Vitesse",
+          title: "Freinage de Visée Souris",
+          subtitle: "Visez la cible et arrêtez le curseur",
           badge: "Test d'Inhibition Motrice",
           description: "Arrêter net un geste rapide sur une coordonnée précise est biomécaniquement bien plus difficile que d'accélérer. L'impulsion motrice et l'ordre de freinage se livrent une course indépendante dans le cerveau (Logan & Cowan, 1984). Tout retard d'inhibition provoque un overflick sous l'effet de l'inertie (Woodworth, 1899). Interceptez les nœuds et immobilisez instantanément votre curseur.",
           hudLabels: {
@@ -397,9 +404,10 @@ export default function LocalizedReactionChainPageFr() {
             }
           ]
         }}
-      />
-      <DrillGuide {...guideProps} />
-      <RelatedDrills currentCategory="physical" currentHref="/drills/physical/reflex-training/reaction-chain" />
+      >
+        <DrillGuide {...guideProps} />
+        <RelatedDrills currentCategory="physical" currentHref="/drills/physical/reflex-training/reaction-chain" />
+      </ReactionChainClient>
     </>
   );
 }

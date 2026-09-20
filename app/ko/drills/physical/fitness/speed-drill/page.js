@@ -56,6 +56,14 @@ export const metadata = {
   robots: { index: true, follow: true },
 };
 
+Object.assign(metadata, {
+  title: '반응속도 테스트 | 클릭 속도 훈련 | SkillDrills',
+  description: '무료 반응속도 테스트와 클릭 속도 훈련 게임. 움직이며 작아지는 표적을 빠르게 맞혀 순발력과 조준 정확도를 연습하세요.',
+  keywords: ['반응속도 테스트', '클릭 속도 테스트', '순발력 테스트', '반속 테스트', '반응속도 게임', '클릭 연타', '마우스 클릭 테스트', '타겟 조준 훈련', '클릭 정확도', '무료 반응 테스트'],
+  openGraph: { ...metadata.openGraph, title: '반응속도 테스트 | 클릭 속도 훈련 | SkillDrills', description: '무료 반응속도 테스트와 클릭 속도 훈련 게임. 움직이며 작아지는 표적을 빠르게 맞혀 순발력과 조준 정확도를 연습하세요.' },
+  twitter: { ...metadata.twitter, title: '반응속도 테스트 | 클릭 속도 훈련 | SkillDrills', description: '무료 반응속도 테스트와 클릭 속도 훈련 게임. 움직이며 작아지는 표적을 빠르게 맞혀 순발력과 조준 정확도를 연습하세요.' },
+});
+
 const breadcrumbSchema = {
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
@@ -106,7 +114,7 @@ const softwareApplicationSchema = {
     "url": "https://skilldrills.online/ko"
   },
   "inLanguage": "ko",
-  "dateModified": "2026-09-12"
+  "dateModified": "2026-09-20"
 };
 
 const webApplicationSchema = {
@@ -123,7 +131,7 @@ const webApplicationSchema = {
   },
   "url": "https://skilldrills.online/ko/drills/physical/fitness/speed-drill",
   "inLanguage": "ko",
-  "dateModified": "2026-09-12"
+  "dateModified": "2026-09-20"
 };
 
 const videoGameSchema = {
@@ -144,6 +152,8 @@ const videoGameSchema = {
     "Mobile"
   ],
   "applicationCategory": "Game",
+  "inLanguage": "ko",
+  "dateModified": "2026-09-20",
   "offers": {
     "@type": "Offer",
     "price": "0",
@@ -154,7 +164,8 @@ const videoGameSchema = {
 const faqSchema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
-  "dateModified": "2026-09-12",
+  "inLanguage": "ko",
+  "dateModified": "2026-09-20",
   "mainEntity": [
     {
       "@type": "Question",
@@ -364,8 +375,8 @@ export default function LocalizedSpeedDrillPageKo() {
       />
       <SpeedDrillClient
         copy={{
-          title: "클릭 속도 측정 & 마우스 반응속도 테스트",
-          subtitle: "수축하는 표적 요격 및 탄도성 플릭 광클 • 15단계 난이도 스케일링",
+          title: "반응속도 테스트",
+          subtitle: "작아지는 표적을 빠르고 정확하게 맞히기",
           hudLabels: {
             score: "현재 점수",
             time: "남은 시간",

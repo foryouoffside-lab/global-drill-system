@@ -6,21 +6,21 @@ import { getAlternateLanguages } from '@/lib/i18n/locales';
 import { pickSources } from '@/lib/drillSources';
 
 export const metadata = {
-  title: "Acquisition de Cibles FPS – Premier Tir | SkillDrills",
-  description: "Entraînez l'acquisition de cibles, la détection visuelle et la précision du premier tir. Maîtrisez le premier coup pour CS2 et Valorant gratuitement.",
+  title: "Aim Trainer Valorant - Acquisition de cibles | SkillDrills",
+  description: "Aim trainer gratuit dans le navigateur pour Valorant et CS2 : travaillez l'acquisition de cibles, la détection visuelle et la précision du premier tir.",
   keywords: [
-    "acquisition de cibles fps",
-    "entrainement acquisition de cible",
-    "tir au premier coup fps",
-    "precision du premier tir",
-    "comment ameliorer le premier tir",
-    "flick premier tir fps",
-    "detection visuelle de cible",
-    "visee rapide premier coup",
-    "aim trainer cs2 valorant gratuit",
-    "reconnaissance visuelle fps",
-    "entrainement de reflexe et visee",
-    "exercice acquisition de cibles"
+    "aim trainer Valorant",
+    "aim trainer",
+    "aim training",
+    "acquisition de cibles",
+    "entraînement de visée",
+    "premier tir",
+    "précision du premier tir",
+    "détection visuelle FPS",
+    "identification des menaces",
+    "flick premier tir",
+    "réticule",
+    "test de visée"
   ],
   alternates: {
     canonical: "https://skilldrills.online/fr/drills/fps/target-acquisition",
@@ -31,8 +31,8 @@ export const metadata = {
     follow: true,
   },
   openGraph: {
-    title: "Acquisition de Cibles FPS – Premier Tir | SkillDrills",
-    description: "Entraînez l'acquisition de cibles, la détection visuelle et la précision du premier tir. Maîtrisez le premier coup pour CS2 et Valorant gratuitement.",
+    title: "Aim Trainer Valorant - Acquisition de cibles | SkillDrills",
+    description: "Aim trainer gratuit dans le navigateur pour Valorant et CS2 : travaillez l'acquisition de cibles, la détection visuelle et la précision du premier tir.",
     url: "https://skilldrills.online/fr/drills/fps/target-acquisition",
     siteName: 'SkillDrills',
     locale: 'fr_FR',
@@ -40,8 +40,8 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: "Acquisition de Cibles FPS – Premier Tir | SkillDrills",
-    description: "Entraînez l'acquisition de cibles, la détection visuelle et la précision du premier tir. Maîtrisez le premier coup pour CS2 et Valorant gratuitement.",
+    title: "Aim Trainer Valorant - Acquisition de cibles | SkillDrills",
+    description: "Aim trainer gratuit dans le navigateur pour Valorant et CS2 : travaillez l'acquisition de cibles, la détection visuelle et la précision du premier tir.",
   },
 };
 
@@ -59,10 +59,10 @@ export default function TargetAcquisitionFrPage() {
   const softwareSchema = {
     "@context": "https://schema.org",
     "@type": "SoftwareApplication",
-    "name": "Entraîneur d'Acquisition de Cibles FPS",
+    "name": "Aim Trainer Valorant - Acquisition de cibles",
     "applicationCategory": "GameApplication",
     "operatingSystem": "Web Browser",
-    "dateModified": "2026-09-16",
+    "dateModified": "2026-09-20",
     "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
     "description": "Entraîneur en ligne d'acquisition de cibles, détection visuelle et précision du premier tir pour shooters tactiques comme CS2 et Valorant.",
     "genre": "Entraînement FPS / Précision du Premier Tir",
@@ -77,22 +77,22 @@ export default function TargetAcquisitionFrPage() {
   const webAppSchema = {
     "@context": "https://schema.org",
     "@type": "WebApplication",
-    "name": "Entraîneur d'Acquisition de Cibles FPS",
+    "name": "Aim Trainer Valorant - Acquisition de cibles",
     "url": "https://skilldrills.online/fr/drills/fps/target-acquisition",
     "description": "Entraîneur en ligne d'acquisition de cibles, détection visuelle et précision du premier tir pour shooters tactiques comme CS2 et Valorant.",
     "applicationCategory": "Game",
     "operatingSystem": "Web Browser",
     "browserRequirements": "Nécessite le support HTML5 Canvas et Pointer Lock API",
-    "dateModified": "2026-09-16"
+    "dateModified": "2026-09-20"
   };
 
   const videoGameSchema = {
     "@context": "https://schema.org",
     "@type": "VideoGame",
-    "name": "Entraîneur d'Acquisition de Cibles FPS",
+    "name": "Aim Trainer Valorant - Acquisition de cibles",
     "url": "https://skilldrills.online/fr/drills/fps/target-acquisition",
     "description": "Entraîneur en ligne d'acquisition de cibles, détection visuelle et précision du premier tir pour shooters tactiques comme CS2 et Valorant.",
-    "dateModified": "2026-09-16",
+    "dateModified": "2026-09-20",
     "gamePlatform": "Web Browser",
     "genre": ["Entraînement FPS", "Aim Trainer", "Acquisition de Cibles"],
     "playMode": "SinglePlayer",
@@ -104,7 +104,7 @@ export default function TargetAcquisitionFrPage() {
   const faqSchema = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
-    "dateModified": "2026-09-16",
+    "dateModified": "2026-09-20",
     "mainEntity": [
       {
         "@type": "Question",
@@ -227,9 +227,9 @@ export default function TargetAcquisitionFrPage() {
   };
 
   const targetAcquisitionGuide = {
-    heading: "Guide de l'Acquisition de Cibles FPS et Biomécanique de la Discrimination Visuelle",
+    heading: "Aim Trainer Valorant : acquisition de cibles et premier tir",
     intro: [
-      "L'Entraîneur d'Acquisition de Cibles est un exercice perceptivo-cognitif mis au point pour développer la vitesse de repérage visuel, la discrimination de contrastes et la précision létale du premier tir. Dans les shooters tactiques tels que Valorant, Counter-Strike 2 et Rainbow Six Siege, l'issue d'une manche se décide dans les 300 premières millisecondes d'exposition visuelle : le tireur qui identifie, ajuste et frappe la silhouette ennemie en premier prend un avantage décisif.",
+      "Pour qui cherche un aim trainer Valorant, ce drill mesure le passage de la détection d'une menace au placement du réticule et au premier tir précis. Il travaille l'acquisition de cibles, la détection visuelle et la précision du premier tir pour Valorant, Counter-Strike 2 et Rainbow Six Siege, où les 300 premières millisecondes de contact visuel pèsent sur le duel.",
       "Le socle théorique de la prospection visuelle et de l'identification a été posé par Anne Treisman et Garry Gelade (1980) au travers de la Théorie de l'Intégration des Traits. Treisman a prouvé que les propriétés visuelles primaires — comme le contraste de brillance, les couleurs saillantes et l'orientation des bordures — sont perçues en parallèle sur tout le champ oculaire. Ce n'est qu'avec la focalisation de l'attention spatiale que ces éléments fusionnent en une cible ennemie distincte.",
       "En prolongeant le traitement parallèle, le modèle Guided Search de Jeremy M. Wolfe (1994, 2007) décrit l'interaction entre cartes de saillance sensorielle et attentes cognitives. En s'exerçant au tri de contrastes, le cortex visuel apprend à écarter immédiatement les distracteurs d'arrière-plan, réduisant le délai entre stimulus visuel et amorce motrice.",
       "En synthétisant les lois biomécaniques de Paul M. Fitts (1954), la théorie des sous-mouvements optimisés de David E. Meyer et al. (1988) et la chronométrie numérique à haute résolution (Woods et al., 2015), cet exercice prépare les réflexes à bannir toute hésitation pour enchaîner des tirs précis sous pression compétitive.",
@@ -292,9 +292,9 @@ export default function TargetAcquisitionFrPage() {
   };
 
   const copyFr = {
-    h1Keyword: "Acquisition de Cibles FPS",
-    h1Suffix: " – Premier Tir",
-    subtitle: "Entraînez la détection visuelle des cibles, la discrimination des menaces et la précision du premier tir avec analyse en temps réel.",
+    h1Keyword: "Aim Trainer Valorant",
+    h1Suffix: " – Acquisition de cibles",
+    subtitle: "Travaillez la détection des cibles et la précision du premier tir pour Valorant et CS2 dans le navigateur.",
     statScore: "Score",
     statTime: "Temps",
     statAccuracy: "Précision",
@@ -353,7 +353,7 @@ export default function TargetAcquisitionFrPage() {
       <div className="max-w-4xl mx-auto px-4 pb-12">
         <RelatedDrills
           currentCategory="fps"
-          currentHref="/drills/fps/target-acquisition"
+          currentHref="/fr/drills/fps/target-acquisition"
           locale="fr"
         />
       </div>

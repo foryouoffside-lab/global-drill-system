@@ -6,21 +6,19 @@ import { pickSources } from '@/lib/drillSources';
 import RelatedDrills from '@/components/drill/RelatedDrills';
 
 export const metadata = {
-  title: "Treino de Foco FPS – Mira em Estado de Flow | SkillDrills",
-  description: "Treine o estado de flow e foco para FPS no navegador. Desenvolva atenção sustentada e tracking contínuo para manter a mira calibrada em partidas longas.",
+  title: "Treino de foco FPS | Mira em flow | SkillDrills",
+  description: "Treino grátis de foco para FPS no navegador: mantenha o ritmo da mira, ajuste o desafio ao seu nível e acompanhe a estabilidade do tracking.",
   keywords: [
-    "treino de foco fps",
-    "estado de flow mira",
-    "como entrar no zone valorant",
-    "treino de concentracao fps",
-    "mira em estado de fluxo",
-    "como manter a calma no clutch",
-    "exercicios de foco mental jogos",
-    "treinador de tracking suave",
-    "hipofrontalidade transitoria mira",
-    "como nao perder o foco cs2",
-    "treino de resistencia mental fps",
-    "treinador de mira gratis online"
+    "treino de foco FPS",
+    "estado de flow jogos",
+    "concentração para jogar",
+    "mira em estado de flow",
+    "tracking suave",
+    "como entrar no flow Valorant",
+    "foco no Valorant",
+    "treino de resistência mental FPS",
+    "treino de mira grátis online",
+    "como não perder o foco CS2"
   ],
   alternates: {
     canonical: "https://skilldrills.online/pt/drills/fps/flow-state",
@@ -31,8 +29,8 @@ export const metadata = {
     follow: true,
   },
   openGraph: {
-    title: "Treino de Foco FPS – Mira em Estado de Flow | SkillDrills",
-    description: "Treine o estado de flow e foco para FPS no navegador. Desenvolva atenção sustentada e tracking contínuo para manter a mira calibrada em partidas longas.",
+    title: "Treino de foco FPS | Mira em flow | SkillDrills",
+    description: "Mantenha o ritmo da mira e reduza distrações neste treino grátis de foco FPS. Ajuste o desafio e acompanhe seu tracking.",
     url: "https://skilldrills.online/pt/drills/fps/flow-state",
     siteName: 'SkillDrills',
     locale: 'pt_BR',
@@ -40,8 +38,8 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: "Treino de Foco FPS – Mira em Estado de Flow | SkillDrills",
-    description: "Treine o estado de flow e foco para FPS no navegador. Desenvolva atenção sustentada e tracking contínuo para manter a mira calibrada em partidas longas.",
+    title: "Treino de foco FPS | Mira em flow | SkillDrills",
+    description: "Mantenha o ritmo da mira e reduza distrações neste treino grátis de foco FPS. Ajuste o desafio e acompanhe seu tracking.",
   },
 };
 
@@ -52,14 +50,14 @@ export default function FlowStatePtPage() {
     "itemListElement": [
       { "@type": "ListItem", "position": 1, "name": "SkillDrills", "item": "https://skilldrills.online/pt" },
       { "@type": "ListItem", "position": 2, "name": "Treinos de FPS", "item": "https://skilldrills.online/pt/drills/fps" },
-      { "@type": "ListItem", "position": 3, "name": "Treino de Foco FPS", "item": "https://skilldrills.online/pt/drills/fps/flow-state" }
+      { "@type": "ListItem", "position": 3, "name": "Treino de foco FPS", "item": "https://skilldrills.online/pt/drills/fps/flow-state" }
     ]
   };
 
   const webAppSchema = {
     "@context": "https://schema.org",
     "@type": "WebApplication",
-    "name": "Treinador de Foco e Estado de Flow FPS",
+    "name": "Treino de foco FPS",
     "url": "https://skilldrills.online/pt/drills/fps/flow-state",
     "applicationCategory": "GameApplication",
     "operatingSystem": "All",
@@ -75,14 +73,14 @@ export default function FlowStatePtPage() {
   const softwareSchema = {
     "@context": "https://schema.org",
     "@type": "SoftwareApplication",
-    "name": "Treinador de Flow State SkillDrills",
+    "name": "Treino de foco FPS",
     "applicationCategory": "GameApplication",
     "operatingSystem": "Web Browser",
     "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
     "description": "Simulador psicomotor para indução do estado de zona e treino de atenção contínua para atletas de esports e jogadores de FPS.",
     "genre": "Treino FPS / Foco Mental",
     "url": "https://skilldrills.online/pt/drills/fps/flow-state",
-    "dateModified": "2026-09-05",
+    "dateModified": "2026-09-20",
     "publisher": {
       "@type": "Organization",
       "name": "SkillDrills",
@@ -93,7 +91,7 @@ export default function FlowStatePtPage() {
   const videoGameSchema = {
     "@context": "https://schema.org",
     "@type": "VideoGame",
-    "name": "Treinador de Estado de Flow",
+    "name": "Treino de foco FPS",
     "url": "https://skilldrills.online/pt/drills/fps/flow-state",
     "description": "Exercício de pontaria com curvas Bézier orgânicas projetado para induzir foco ininterrupto e eliminar hesitações motoras.",
     "gamePlatform": "Web Browser",
@@ -101,13 +99,13 @@ export default function FlowStatePtPage() {
     "playMode": "SinglePlayer",
     "applicationCategory": "Game",
     "operatingSystem": "Web Browser",
-    "dateModified": "2026-09-05"
+    "dateModified": "2026-09-20"
   };
 
   const faqSchema = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
-    "dateModified": "2026-09-05",
+    "dateModified": "2026-09-20",
     "mainEntity": [
       {
         "@type": "Question",
@@ -230,8 +228,8 @@ export default function FlowStatePtPage() {
   };
 
   const copyPt = {
-    h1Keyword: "Treino de Foco FPS",
-    h1Suffix: " – Mira em Estado de Flow",
+    h1Keyword: "Treino de foco FPS",
+    h1Suffix: " – Mira em flow",
     statScore: "Pontuação",
     statTime: "Tempo Restante",
     statAccuracy: "Precisão de Rastreamento",
@@ -253,9 +251,9 @@ export default function FlowStatePtPage() {
   };
 
   const flowStateGuide = {
-    heading: "Guia de Indução do Estado de Flow e Benchmarks de Foco Cognitivo",
+    heading: "Guia de Foco FPS e Benchmarks do Estado de Flow",
     intro: [
-      "O Treinador de Estado de Flow combina neurociência motora e psicologia cognitiva para cultivar atenção sustentada, resistência à fadiga mental e rastreamento foveal contínuo. Conforme demonstrado por Mihaly Csikszentmihalyi (1975, 1990), o estado de fluxo emerge no ponto ótimo em que a exigência da tarefa se alinha perfeitamente com a capacidade do praticante, silenciando distrações internas e incertezas.",
+      "O treino de foco FPS ensina você a acompanhar um alvo com ritmo estável, reduzir distrações e ajustar a dificuldade ao próprio nível. O drill mede a precisão do tracking e a resistência da atenção; ele não promete produzir flow sob comando, mas mostra quando a concentração e o controle começam a cair.",
       "A hipótese da hipofrontalidade transitória (Dietrich, 2004) esclarece o mecanismo neural desse fenômeno: ao reduzir temporariamente o processamento analítico no córtex pré-frontal dorsolateral (DLPFC), o cérebro transfere o comando para os circuitos dos gânglios da base e cerebelo. Em shooters competitivos, esse mecanismo liberta a mira da hesitação consciente e permite microajustes motores ultraprecisos.",
       "Com a cronometria de alta resolução performance.now() da API do navegador (Woods et al., 2015) e trajetórias contínuas baseadas em curvas Bézier orgânicas (Krauzlis, 2004; Posner & Petersen, 1990), esta ferramenta fortalece a capacidade de concentração sem exigir downloads ou configurações complexas.",
       "Metodologia de medição no seu dispositivo: cada evento é registrado localmente com o relógio de alta precisão do navegador, sem envio de métricas para servidores remotos. Lembre-se de que os navegadores discretizam o tempo em ~1 ms por proteção contra exploits de temporização, e os monitores atualizam a tela em intervalos regulares (16,7 ms a 60 Hz contra 4,1 ms a 240 Hz). Portanto, acompanhe sua evolução comparando sessões no mesmo hardware."
@@ -361,7 +359,7 @@ export default function FlowStatePtPage() {
       />
       <FlowStateClient copy={copyPt} />
       <div className="max-w-6xl mx-auto px-4 w-full pb-12">
-        <RelatedDrills currentCategory="fps" currentHref="/drills/fps/flow-state" locale="pt" />
+        <RelatedDrills currentCategory="fps" currentHref="/pt/drills/fps/flow-state" locale="pt" />
       </div>
       <DrillGuide guide={flowStateGuide} />
       <DrillFooter />

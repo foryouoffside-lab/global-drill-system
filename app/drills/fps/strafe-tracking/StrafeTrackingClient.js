@@ -719,7 +719,7 @@ export default function StrafeTrackingClient({ copy = null }) {
   return (
     <div className="min-h-screen bg-[#050508] text-white flex flex-col font-sans select-none">
       {/* ── MAIN CONTENT AREA ── */}
-      <main className="flex-1 max-w-6xl w-full mx-auto px-4 py-6 flex flex-col gap-6">
+      <main className="flex-1 max-w-6xl w-full mx-auto px-4 pt-6 pb-0 flex flex-col gap-6">
         {/* Title */}
         {!isFullscreen && (
           <div className="flex flex-col gap-1">
@@ -731,7 +731,7 @@ export default function StrafeTrackingClient({ copy = null }) {
             <p className="text-[13px] text-slate-400 leading-relaxed">
               {copy?.caption || (
                 <>
-                  Strafe tracking is keeping your crosshair on an opponent who changes direction unpredictably. Human smooth pursuit follows accurately to roughly 30&deg;/s, and each abrupt reversal costs a catch-up saccade about 100&ndash;130&nbsp;ms later (Rashbass, 1961; Krauzlis, 2004).
+                  Strafe tracking means keeping your crosshair locked on an opponent who changes direction unpredictably.
                 </>
               )}
             </p>
@@ -874,6 +874,7 @@ export default function StrafeTrackingClient({ copy = null }) {
           <div className="[&>div]:!mt-0 font-sans">
             <DrillAccordion
               id="rules"
+              singleLineTitle
               title={copy?.rulesTitle || "Drill Instructions & Settings"}
               isOpen={openAccordion === 'rules'}
               onToggle={() => setOpenAccordion(openAccordion === 'rules' ? null : 'rules')}
@@ -887,6 +888,7 @@ export default function StrafeTrackingClient({ copy = null }) {
 
             <DrillAccordion
               id="about"
+              singleLineTitle
               title={copy?.aboutTitle || "About Strafe Tracking"}
               isOpen={openAccordion === 'about'}
               onToggle={() => setOpenAccordion(openAccordion === 'about' ? null : 'about')}

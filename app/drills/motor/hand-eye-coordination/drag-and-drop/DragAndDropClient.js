@@ -133,7 +133,7 @@ const RULES_ITEMS = [
   { num: "4", text: "Miss / Timeout", highlight: "Penalty", result: "Resets Combo (-0.8s)" }
 ];
 
-const ABOUT_TEXT = `Drag & Drop Precision Training is a mechanical motor drill designed to refine raw cursor control, spatial dragging accuracy, and deceleration release timing.
+const ABOUT_TEXT = `Drag & Drop Precision Training is a mechanical motor drill designed to refine raw cursor control, spatial dragging accuracy, and deceleration release timing. Dragging is measurably slower and more error-prone than simply pointing at the same target with the same device (MacKenzie, Sellen & Buxton, 1991), and the carry obeys the Steering Law: the time to stay inside a corridor scales with its length divided by its width, so a lane half as wide takes about twice as long to cross cleanly (Accot & Zhai, 1997).
 
 By click-holding, transporting, and releasing objects into moving target containers, players build smooth muscle memory for pixel-accurate computer navigation in competitive games and professional software.
 
@@ -731,10 +731,8 @@ export default function DragAndDropClient({ copy } = {}) {
           <div className="flex flex-col gap-1">
             <h1 className="text-2xl sm:text-3xl font-black tracking-tight text-white">
               <span data-seo-kw="1">{copy?.title || "Drag & Drop Mouse Trainer"}</span>
+              <span className="block text-sm font-semibold text-slate-400 mt-1">{copy?.subtitle || "Drag and drop mouse accuracy drill for placing targets precisely and improving cursor coordination"}</span>
             </h1>
-            <p className="text-[13px] text-slate-400 leading-relaxed">
-              A drag and drop test measures how accurately you can pick up an object, carry it with the mouse button held down, and release it on a target. Dragging is measurably slower and more error-prone than simply pointing at the same target with the same device (MacKenzie, Sellen &amp; Buxton, 1991), and the carry obeys the Steering Law: the time to stay inside a corridor scales with its length divided by its width, so a lane half as wide takes about twice as long to cross cleanly (Accot &amp; Zhai, 1997).
-            </p>
           </div>
         )}
 
@@ -759,7 +757,7 @@ export default function DragAndDropClient({ copy } = {}) {
         <div 
           ref={containerRef} 
           onContextMenu={(e) => { if (gameActiveRef.current) e.preventDefault(); }}
-          className={`overflow-hidden flex flex-col transition-all duration-150 select-none bg-[#080811] text-white ${
+          className={`overflow-hidden flex flex-col select-none bg-[#080811] text-white ${
             isFullscreen 
               ? 'fixed inset-0 z-[100] w-screen h-[100dvh] bg-[#050508] flex flex-col items-center justify-center' 
               : 'w-full rounded-2xl aspect-video min-h-[460px] md:min-h-[500px] max-h-[88vh] max-md:portrait:aspect-[3/4] max-md:portrait:min-h-[420px] max-md:portrait:max-h-[76vh] max-md:landscape:min-h-[340px] max-md:landscape:max-h-[85vh] bg-[#080811] border border-white/10 relative overflow-hidden flex flex-col'

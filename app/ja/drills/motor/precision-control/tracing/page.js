@@ -6,12 +6,12 @@ import DrillFooter from '@/components/drill/DrillFooter';
 import { pickSources } from '@/lib/drillSources';
 
 export const metadata = {
-  title: 'マウストレースゲーム – 精密軌跡追従・スムーストラッキング診断',
-  description: '動くライン軌跡にマウスカーソルを沿わせ続けるマウストレースゲーム。スムーズパシュート眼球運動と手の協調、微細な手首コントロールと脱線防止精度を測定。',
-  keywords: ["マウス トレース ゲーム", "マウス 軌跡 なぞり 練習", "精密マウス操作 テスト", "マウストラッキング 練習", "スムーズパシュート 練習", "手振れ防止 テスト", "マウス 手首 コントロール", "カーソル 追従 測定", "マウス 精密 制御", "FPS トラッキング 練習"],
+  title: 'マウストレースゲーム | カーソル追従テスト | SkillDrills',
+  description: '動く波形をカーソルでなぞり、マウスの追従精度と手の滑らかな操作を測る無料テスト。',
+  keywords: ['マウス トレース ゲーム', 'マウス 軌跡 なぞり 練習', '精密マウス操作 テスト', 'マウストラッキング 練習', 'カーソル 追従 測定', 'スムーズ追従 練習', 'マウス 手首 コントロール', 'マウス 精密 制御', 'FPS トラッキング 練習', 'カーソル軌跡 テスト', 'マウス操作 なめらか', '連続追従 トレーニング'],
   openGraph: {
-    title: 'マウストレースゲーム – 精密軌跡追従・スムーストラッキング診断 | SkillDrills',
-    description: '動くライン軌跡にマウスカーソルを沿わせ続けるマウストレースゲーム。スムーズパシュート眼球運動と手の協調、微細な手首コントロールと脱線防止精度を測定。',
+    title: 'マウストレースゲーム | カーソル追従テスト | SkillDrills',
+    description: '動く波形をカーソルでなぞり、マウスの追従精度と手の滑らかな操作を測る無料テスト。',
     type: 'article',
     url: 'https://skilldrills.online/ja/drills/motor/precision-control/tracing',
     siteName: 'SkillDrills',
@@ -19,8 +19,8 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'マウストレースゲーム – 精密軌跡追従・スムーストラッキング診断 | SkillDrills',
-    description: '動くライン軌跡にマウスカーソルを沿わせ続けるマウストレースゲーム。スムーズパシュート眼球運動と手の協調、微細な手首コントロールと脱線防止精度を測定。',
+    title: 'マウストレースゲーム | カーソル追従テスト | SkillDrills',
+    description: '動く波形をカーソルでなぞり、マウスの追従精度と手の滑らかな操作を測る無料テスト。',
   },
   robots: { index: true, follow: true },
   alternates: {
@@ -79,7 +79,7 @@ const softwareApplicationSchema = {
     "url": "https://skilldrills.online"
   },
   "inLanguage": "ja-JP",
-  "dateModified": "2026-09-11"
+  "dateModified": "2026-09-20"
 };
 
 const webApplicationSchema = {
@@ -96,12 +96,13 @@ const webApplicationSchema = {
   },
   "url": "https://skilldrills.online/ja/drills/motor/precision-control/tracing",
   "inLanguage": "ja-JP",
-  "dateModified": "2026-09-11"
+  "dateModified": "2026-09-20"
 };
 
 const videoGameSchema = {
   "@context": "https://schema.org",
   "@type": "VideoGame",
+  "inLanguage": "ja-JP",
   "name": "マウストレースゲーム – 連続波形ライン精密追従ゲーム",
   "url": "https://skilldrills.online/ja/drills/motor/precision-control/tracing",
   "description": "動くライン軌跡にマウスカーソルを沿わせ続けるマウストレースゲーム。スムーズパシュート眼球運動と手の協調、微細な手首コントロールと脱線防止精度を測定。",
@@ -119,12 +120,15 @@ const videoGameSchema = {
     "@type": "Offer",
     "price": "0",
     "priceCurrency": "JPY"
-  }
+  },
+  "dateModified": "2026-09-20"
 };
 
 const faqSchema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
+  "inLanguage": "ja-JP",
+  "dateModified": "2026-09-20",
   "mainEntity": [
     {
       "@type": "Question",
@@ -212,6 +216,8 @@ const faqSchema = {
 const howToSchema = {
   "@context": "https://schema.org",
   "@type": "HowTo",
+  "inLanguage": "ja-JP",
+  "dateModified": "2026-09-20",
   "name": "マウストレースゲーム・精密軌跡追従テスト – スムーストラッキング診断",
   "description": "動くライン軌跡にマウスカーソルを沿わせ続けるマウストレースゲーム。スムーズパシュート眼球運動と手の協調、微細な手首コントロールと脱線防止精度を測定。",
   "step": [
@@ -287,8 +293,8 @@ const guideProps = {
 };
 
 const jaCopy = {
-  title: "マウストレースゲーム",
-  subtitle: "生入力による連続軌跡トラッキング • 45秒タイマー",
+  title: "カーソル追従テスト",
+  subtitle: "カーソル追従トレーニング • 45秒",
   startButtonText: "訓練開始",
   trainAgain: "もう一度プレイ",
   shareTitle: "スコアを共有",

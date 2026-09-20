@@ -5,27 +5,23 @@ import DrillGuide from '@/components/drill/DrillGuide';
 import RelatedDrills from '@/components/drill/RelatedDrills';
 
 export const metadata = {
-  title: 'Tastatur Test Online – Tasten & Anti-Ghosting | SkillDrills',
-  description:
-    'Kostenloser Tastatur-Test im Browser: Prüfe jede Taste auf Funktion, teste Key-Rollover, Anti-Ghosting und Chattering direkt ohne Installation.',
+  title: 'Tastatur testen online | Ghosting prüfen | SkillDrills',
+  description: 'Kostenloser Tastaturtest im Browser: Prüfe Tasten, Ghosting, Chattering und N-Key-Rollover ohne Download.',
   keywords: [
+    'tastatur testen online',
     'tastatur test',
-    'tastatur testen',
-    'tasten tester online',
-    'tastatur pruefen',
-    'ghosting test tastatur',
-    'nkro test',
-    'tastatur chattering test',
+    'tastaturtester',
+    'tasten prüfen',
+    'tastatur ghosting test',
+    'anti-ghosting testen',
+    'n-key-rollover testen',
+    'taste klemmt',
+    'tastatur reagiert nicht',
     'mechanische tastatur testen',
-    'tastatur tasten reagieren nicht',
-    'online tastatur checker',
-    'gaming tastatur test',
-    'tastatur defekt',
   ],
   openGraph: {
-    title: 'Tastatur Test Online – Tasten & Anti-Ghosting | SkillDrills',
-    description:
-      'Kostenloser Tastatur-Test im Browser: Prüfe jede Taste auf Funktion, teste Key-Rollover, Anti-Ghosting und Chattering direkt ohne Installation.',
+    title: 'Tastatur testen online | Ghosting prüfen | SkillDrills',
+    description: 'Browser-Test für Tasten, Ghosting, Chattering und N-Key-Rollover ohne Installation.',
     type: 'article',
     url: 'https://skilldrills.online/de/drills/motor/keyboard-tester',
     siteName: 'SkillDrills',
@@ -33,9 +29,8 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Tastatur Test Online – Tasten & Anti-Ghosting | SkillDrills',
-    description:
-      'Kostenloser Tastatur-Test im Browser: Prüfe jede Taste auf Funktion, teste Key-Rollover, Anti-Ghosting und Chattering direkt ohne Installation.',
+    title: 'Tastatur testen online | Ghosting prüfen | SkillDrills',
+    description: 'Prüfe deine Tastatur im Browser auf defekte Tasten und Probleme bei mehreren Eingaben.',
   },
   robots: { index: true, follow: true },
   alternates: {
@@ -67,6 +62,7 @@ const breadcrumbSchema = {
 const webApplicationSchema = {
   '@context': 'https://schema.org',
   '@type': 'WebApplication',
+  inLanguage: 'de-DE',
   name: 'Tastatur-Tester Online',
   alternateName: ['Tastatur Test', 'Tasten Checker'],
   applicationCategory: 'UtilitiesApplication',
@@ -77,29 +73,31 @@ const webApplicationSchema = {
     'Kostenloses Browsertool zum Testen aller Tasten, Erkennen hängender Schalter, Prüfen von N-Key-Rollover und Einsehen von Tastatur-Events.',
   url: 'https://skilldrills.online/de/drills/motor/keyboard-tester',
   publisher: { '@type': 'Organization', name: 'SkillDrills', url: 'https://skilldrills.online' },
-  dateModified: '2026-09-16',
+  dateModified: '2026-09-20',
 };
 
 const softwareSchema = {
   '@context': 'https://schema.org',
   '@type': 'SoftwareApplication',
+  inLanguage: 'de-DE',
   name: 'Tastatur-Tester und Ghosting-Test Online',
   applicationCategory: 'UtilitiesApplication',
   operatingSystem: 'Web Browser',
   offers: { '@type': 'Offer', price: '0', priceCurrency: 'EUR' },
   description: 'Kostenloses Browsertool zum Testen aller Tasten, Erkennen hängender Schalter und Prüfen von Tastatur-Events.',
   url: 'https://skilldrills.online/de/drills/motor/keyboard-tester',
-  dateModified: '2026-09-16',
+  dateModified: '2026-09-20',
   publisher: { '@type': 'Organization', name: 'SkillDrills', url: 'https://skilldrills.online' }
 };
 
 const videoGameSchema = {
   '@context': 'https://schema.org',
   '@type': 'VideoGame',
+  inLanguage: 'de-DE',
   name: 'Tastatur-Tester und Key-Rollover Spiel',
   url: 'https://skilldrills.online/de/drills/motor/keyboard-tester',
   description: 'Interaktives Diagnosetool zur Überprüfung von Schalterreaktionen und Tastenkombinationen.',
-  dateModified: '2026-09-16',
+  dateModified: '2026-09-20',
   gamePlatform: 'Web Browser',
   genre: ['Tastatur-Tester', 'Dienstprogramme', 'Hardware-Diagnose'],
   playMode: 'SinglePlayer',
@@ -111,6 +109,7 @@ const videoGameSchema = {
 const howToSchema = {
   '@context': 'https://schema.org',
   '@type': 'HowTo',
+  inLanguage: 'de-DE',
   name: 'So testen Sie Ihre Tastatur online',
   description: 'Schritt-für-Schritt-Anleitung zur Erkennung defekter Tasten, Chattering und Key-Rollover.',
   step: [
@@ -148,7 +147,8 @@ const howToSchema = {
 const faqSchema = {
   '@context': 'https://schema.org',
   '@type': 'FAQPage',
-  dateModified: '2026-09-16',
+  inLanguage: 'de-DE',
+  dateModified: '2026-09-20',
   mainEntity: [
     {
       '@type': 'Question',
@@ -231,6 +231,48 @@ const faqSchema = {
       },
     },
   ],
+};
+
+const GERMAN_COPY = {
+  title: 'Tastaturtest online',
+  subtitle: 'Tasten prüfen • Ghosting • Rollover',
+  intro: 'Drücke jede Taste deiner Tastatur, um zu prüfen, ob sie korrekt erkannt wird.',
+  keysConfirmed: 'Bestätigte Tasten',
+  rollover: 'Rollover',
+  capturing: 'Tastenerfassung',
+  paused: 'Pausiert',
+  reset: 'Zurücksetzen',
+  captureNotice: 'Die Tastenerfassung ist aktiv. Drücke Umschalt + Esc oder klicke auf „Tastenerfassung“, um sie zu beenden.',
+  lastKeyEvent: 'Letztes Tastenereignis',
+  eventCode: 'event.code',
+  eventKey: 'event.key',
+  keyCode: 'keyCode',
+  location: 'Position',
+  autoRepeat: 'Automatische Wiederholung',
+  yes: 'Ja',
+  no: 'Nein',
+  space: '(Leertaste)',
+  pressAnyKey: 'Drücke eine Taste, um zu sehen, was der Browser empfängt.',
+  keysNotOnLayout: 'Tasten außerhalb des gewählten Layouts',
+  notYetConfirmed: 'Noch nicht bestätigt',
+  allConfirmed: 'Jede Taste des Layouts wurde erkannt. Deine Tastatur funktioniert.',
+  untestedSingular: 'Taste muss noch gedrückt werden. Reagiert sie auch nach mehreren festen Anschlägen nicht, sollte sie geprüft werden.',
+  untestedPlural: 'Tasten müssen noch gedrückt werden. Reagiert eine auch nach mehreren festen Anschlägen nicht, sollte sie geprüft werden.',
+  mobileWarning: 'Dieses Werkzeug benötigt eine physische Tastatur. Öffne es am Desktop oder Laptop oder verbinde eine externe Tastatur.',
+  aboutTitle: 'Über den Tastaturtest',
+  aboutP1: 'Jede Taste leuchtet bei der Erkennung auf und bleibt nach einer Bestätigung grün. Tasten ohne Signal können auf einen defekten Schalter, eine klemmende Taste oder ein Treiberproblem hindeuten.',
+  aboutP2: 'Es wird nichts hochgeladen und nichts gespeichert.',
+  howTitle: 'So testest du deine Tastatur',
+  howStep1: 'Drücke jede Taste einmal und arbeite dich zeilenweise von links nach rechts vor.',
+  howStep2: 'Gedrückte Tasten werden cyan, nach der ersten Erkennung bleiben sie grün.',
+  howStep3: 'Beobachte, wie die Liste „Noch nicht bestätigt“ leer wird. Übrig gebliebene Tasten sind verdächtig.',
+  howStep4: 'Halte mehrere Tasten gleichzeitig gedrückt, um die maximale Rollover-Anzahl abzulesen.',
+  rolloverTitle: 'Key-Rollover und Ghosting',
+  rolloverP1: 'Rollover bezeichnet die Anzahl der Tasten, die eine Tastatur gleichzeitig melden kann. Viele Membran-Tastaturen erkennen zwei bis sechs Tasten; weitere Eingaben können still verworfen werden. NKRO-Tastaturen melden jede gedrückte Taste.',
+  rolloverP2: 'Halte mehrere Tasten gedrückt und lies den Rollover-Wert ab. Steigt er bei drei oder vier Tasten nicht weiter, ist das die Grenze der Tastatur und nicht automatisch ein Defekt. Einige Systemkombinationen erreicht der Browser grundsätzlich nicht.',
+  limitsTitle: 'Was dieser Test nicht feststellen kann',
+  limitsP1: 'Die Seite prüft das Signal, das im Browser ankommt. Zwischen Schalter, Controller, Kabel oder Funkverbindung, Treiber und Betriebssystem kann ein Fehler liegen; die genaue Komponente lässt sich im Browser nicht bestimmen.',
+  limitsP2: 'Das Betriebssystem fängt Kombinationen wie Alt+Tab und Strg+Alt+Entf ab. F5, F11 und F12 bleiben für Browserfunktionen reserviert. Dass diese Eingaben fehlen, ist normal und kein Beweis für einen Hardwaredefekt.',
 };
 
 const guideProps = {
@@ -325,7 +367,7 @@ export default function KeyboardTesterPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
-      <KeyboardTesterClient />
+      <KeyboardTesterClient copy={GERMAN_COPY} />
       <DrillGuide {...guideProps} />
       <div className="max-w-6xl mx-auto px-4 pb-12">
         <RelatedDrills currentCategory="motor" currentHref="/de/drills/motor/keyboard-tester" />

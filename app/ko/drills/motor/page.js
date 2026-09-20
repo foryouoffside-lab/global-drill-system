@@ -6,18 +6,18 @@ import { getLocalizedDrill } from '@/lib/i18n/drillNames';
 const motorDrills = DRILLS.filter((d) => d.category === 'motor');
 
 export const metadata = {
-  title: '마우스 정확도 & 에임 연습・CPS 테스트 – 모터 스킬 | SkillDrills',
-  description: '온라인 무료 마우스 정확도 & 에임 연습 드릴. 초당 클릭 속도(CPS 테스트), 손떨림 제어, 키보드 타건 및 소근육 협응력을 브라우저에서 과학적으로 측정하고 훈련하세요.',
+  title: '마우스 정밀도 테스트 & 에임 연습 | SkillDrills',
+  description: '마우스 정확도, 에임 제어, CPS 클릭, 키보드 속도와 눈손 협응을 훈련하는 무료 브라우저 드릴 9종.',
   keywords: [
-    '마우스 정확도 테스트', '에임 연습 사이트 무료', '클릭 속도 테스트',
-    'CPS 테스트 온라인', '손떨림 테스트 마우스', '키보드 동시입력 테스트',
-    '키보드 타건 속도 측정', '손가락 연타 속도 테스트', '눈 손 협응력 훈련',
-    '마우스 미세 컨트롤 연습', '지터클릭 테스트 무료', '버터플라이 클릭 테스트',
-    '에임 트레이너 웹 무료', '소근육 운동 조절 능력', '게이밍 마우스 정확도 측정'
+    '마우스 정밀도 테스트', '마우스 정확도 테스트', '에임 연습',
+    '에임 트레이너 무료', 'CPS 테스트', '클릭 속도 테스트',
+    '키보드 속도 테스트', '키보드 동시입력 테스트', '눈손 협응력 훈련',
+    '마우스 미세 제어', '손 안정성 훈련', '게이밍 마우스 정확도',
+    '손가락 민첩성 훈련', '무료 모터 스킬 드릴'
   ],
   openGraph: {
-    title: '마우스 정확도 & 에임 연습・CPS 테스트 – 모터 스킬 | SkillDrills',
-    description: '온라인 무료 마우스 정확도 & 에임 연습 드릴. 초당 클릭 속도(CPS 테스트), 손떨림 제어, 키보드 타건 및 소근육 협응력을 브라우저에서 과학적으로 측정하고 훈련하세요.',
+    title: '마우스 정밀도 테스트 & 에임 연습 | SkillDrills',
+    description: '마우스 정확도, 에임 제어, CPS 클릭, 키보드 속도와 눈손 협응을 훈련하는 무료 브라우저 드릴 9종.',
     type: 'website',
     url: 'https://skilldrills.online/ko/drills/motor',
     siteName: 'SkillDrills',
@@ -26,8 +26,8 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: '마우스 정확도 & 에임 연습・CPS 테스트 – 모터 스킬 | SkillDrills',
-    description: '초당 클릭 속도(CPS), 마우스 정밀 에임 트레이너, 손떨림 제어, 키보드 타건 속도 훈련: 9가지 과학적 모터 드릴을 무료로 시작하세요.',
+    title: '마우스 정밀도 테스트 & 에임 연습 | SkillDrills',
+    description: '마우스 정확도, 에임 제어, CPS 클릭, 키보드 속도와 눈손 협응을 훈련하는 무료 브라우저 드릴 9종.',
     images: ['https://skilldrills.online/icons/icon-512x512.png'],
   },
   robots: { index: true, follow: true },
@@ -50,9 +50,11 @@ const breadcrumbSchema = {
 const collectionSchema = {
   "@context": "https://schema.org",
   "@type": "CollectionPage",
-  "name": "마우스 정확도 & 소근육 모터 스킬 훈련 (9가지 드릴)",
+  "inLanguage": "ko-KR",
+  "dateModified": "2026-09-20",
+  "name": "마우스 정밀도 테스트 & 에임 연습 (9종)",
   "url": "https://skilldrills.online/ko/drills/motor",
-  "description": "초당 클릭 속도(CPS), 마우스 정밀 에임 트레이너, 손떨림 제어, 키보드 무한동시입력 및 소근육 협응력을 측정하는 9가지 과학적 모터 훈련.",
+  "description": "마우스 정확도, 에임 제어, CPS 클릭, 키보드 속도와 눈손 협응을 측정하는 무료 브라우저 드릴 9종.",
   "author": { "@type": "Organization", "name": "SkillDrills" },
   "hasPart": motorDrills.map((drill) => {
     const loc = getLocalizedDrill(drill.href, 'ko', drill.name);
@@ -71,6 +73,8 @@ const collectionSchema = {
 const faqSchema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
+  "inLanguage": "ko-KR",
+  "dateModified": "2026-09-20",
   "mainEntity": [
     {
       "@type": "Question",

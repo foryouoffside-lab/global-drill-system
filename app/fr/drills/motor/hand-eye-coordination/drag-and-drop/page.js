@@ -6,25 +6,16 @@ import RelatedDrills from '@/components/drill/RelatedDrills';
 import { pickSources } from '@/lib/drillSources';
 
 export const metadata = {
-  title: 'Test Drag and Drop – Précision de Souris | SkillDrills',
-  description: 'Test de drag and drop en ligne gratuit: Entrainez la precision de glisser-deposer a la souris, la deceleration du curseur et la loi de pilotage Accot-Zhai.',
+  title: 'Test glisser-déposer | Précision souris | SkillDrills',
+  description: 'Entraînez le glisser-déposer dans votre navigateur. Mesurez la précision de la souris, le temps de déplacement et le lâcher au bon endroit.',
   keywords: [
-    'drag and drop test',
-    'test drag and drop souris',
-    'glisser deposer entrainement souris',
-    'precision souris glisser',
-    'controle du curseur test',
-    'coordination motrice souris',
-    'test souris en ligne gratuit',
-    'deceleration souris fps',
-    'loi de pilotage accot zhai',
-    'gestion inventaire fps test',
-    'entrainement souris rts',
-    'motricite fine souris test',
+    'test glisser-déposer', 'test de glissement souris', 'contrôle de la souris', 'précision du glissement',
+    'entraînement glisser-déposer', 'test glisser déposer en ligne', 'précision souris test', 'contrôle du curseur',
+    'coordination main-œil souris', 'test de glissement du curseur', 'entraînement souris', 'motricité fine souris test',
   ],
   openGraph: {
-    title: 'Test Drag and Drop – Précision de Souris | SkillDrills',
-    description: 'Test de drag and drop en ligne gratuit: Entrainez la precision de glisser-deposer a la souris, la deceleration du curseur et la loi de pilotage Accot-Zhai.',
+    title: 'Test glisser-déposer | Précision souris | SkillDrills',
+    description: 'Entraînez le glisser-déposer dans votre navigateur. Mesurez la précision de la souris, le temps de déplacement et le lâcher au bon endroit.',
     type: 'article',
     url: 'https://skilldrills.online/fr/drills/motor/hand-eye-coordination/drag-and-drop',
     siteName: 'SkillDrills',
@@ -32,8 +23,8 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Test Drag and Drop – Précision de Souris | SkillDrills',
-    description: 'Test de drag and drop en ligne gratuit: Entrainez la precision de glisser-deposer a la souris, la deceleration du curseur et la loi de pilotage Accot-Zhai.',
+    title: 'Test glisser-déposer | Précision souris | SkillDrills',
+    description: 'Entraînez le glisser-déposer dans votre navigateur. Mesurez la précision de la souris, le temps de déplacement et le lâcher au bon endroit.',
   },
   robots: { index: true, follow: true },
   alternates: {
@@ -83,7 +74,8 @@ const softwareApplicationSchema = {
   description: 'Outil web gratuit pour évaluer et travailler la précision de glisser-déposer, la décélération du curseur et le relâchement.',
   url: 'https://skilldrills.online/fr/drills/motor/hand-eye-coordination/drag-and-drop',
   publisher: { '@type': 'Organization', name: 'SkillDrills', url: 'https://skilldrills.online' },
-  dateModified: '2026-09-16',
+  inLanguage: 'fr-FR',
+  dateModified: '2026-09-20',
 };
 
 const webApplicationSchema = {
@@ -93,7 +85,8 @@ const webApplicationSchema = {
   browserRequirements: 'Nécessite HTML5 Canvas et JavaScript activé',
   url: 'https://skilldrills.online/fr/drills/motor/hand-eye-coordination/drag-and-drop',
   applicationCategory: 'EducationalApplication',
-  dateModified: '2026-09-16',
+  inLanguage: 'fr-FR',
+  dateModified: '2026-09-20',
 };
 
 const videoGameSchema = {
@@ -105,13 +98,15 @@ const videoGameSchema = {
   genre: ['Précision', 'Coordination Motrice', 'Esport'],
   gamePlatform: ['Web Browser', 'Desktop'],
   applicationCategory: 'Game',
+  inLanguage: 'fr-FR',
   offers: { '@type': 'Offer', price: '0', priceCurrency: 'EUR' },
 };
 
 const faqSchema = {
   '@context': 'https://schema.org',
   '@type': 'FAQPage',
-  dateModified: '2026-09-16',
+  inLanguage: 'fr-FR',
+  dateModified: '2026-09-20',
   mainEntity: [
     {
       '@type': 'Question',
@@ -199,6 +194,7 @@ const faqSchema = {
 const howToSchema = {
   '@context': 'https://schema.org',
   '@type': 'HowTo',
+  inLanguage: 'fr-FR',
   name: 'Comment s entraîner à la précision de drag and drop',
   description: 'Protocole structuré en 4 étapes pour perfectionner la décélération, le guidage rectiligne et le relâchement.',
   step: [
@@ -323,7 +319,7 @@ const guideProps = {
 
 const copyFr = {
   title: "Test Drag and Drop – Précision de Souris",
-  subtitle: "Glisser-Déposer Spatial de Précision • Progression sur 15 Niveaux",
+  subtitle: "Précision du glissement · cible bien déposée",
   startButtonText: "DÉMARRER LE DRILL",
   playAgainText: "Rejouer",
   shareText: "Partager le score",

@@ -6,8 +6,8 @@ import { pickSources } from '@/lib/drillSources';
 
 // ============================================================
 // SEO RESEARCH FINDINGS — ja-JP (visual / distance-judgment)
-// PRIMARY DOMESTIC: "深視力"               — 147 exact / 369 broad searches/mo (Domestic #1 Winner)
-//                   "深視力 検査"          — Driver license Shinshiryoku Kensa search
+// PRIMARY DOMESTIC: "深視力検査"           — Native driver-licence test term
+//                   "三桿法"               — Official three-rod method term
 //                   "深視力 練習"          — Practice & training queries
 //                   "深視力 コツ"          — Techniques & tips search
 // SECONDARY / LSI:
@@ -19,25 +19,23 @@ import { pickSources } from '@/lib/drillSources';
 //                   "遠近感 テスト"        — Distance estimation test
 //                   "動的深視力"          — Dynamic depth perception
 //                   "オプティカルルーミング"— Optical looming expansion rate (Lee, 1976)
-// WINNER TITLE:     深視力検査 (三桿法) – 無料オンライン深視力・遠近感トレーニング | SkillDrills
+// WINNER TITLE:     深視力検査・三桿法練習 | 無料オンライン | SkillDrills
 // ============================================================
 
 export const metadata = {
-  title: "深視力検査 (三桿法) – 無料オンライン深視力・遠近感トレーニング | SkillDrills",
-  description: "大型・二種免許の更新で必須となる深視力検査（三桿法）をブラウザで練習できる無料シミュレーター。奥行き知覚・立体視・オプティカルルーミングのタイミングを測定し、遠近感のズレを矯正。",
+  title: "深視力検査・三桿法練習 | 無料オンライン | SkillDrills",
+  description: "深視力検査（三桿法）のタイミングを無料で練習。大型・二種免許向けの奥行知覚を、ブラウザの動くターゲットで確認できます。医療検査ではありません。",
   keywords: [
-    "深視力",
-    "深視力 検査",
+    "深視力検査",
+    "三桿法",
     "深視力 練習",
     "深視力 コツ",
-    "三桿法",
-    "深視力 テスト",
-    "立体視 テスト",
     "大型免許 深視力",
     "二種免許 深視力",
+    "奥行知覚検査",
+    "深視力 オンライン",
     "遠近感 テスト",
     "動的深視力",
-    "オプティカルルーミング",
     "視覚トレーニング"
   ],
   alternates: {
@@ -49,8 +47,8 @@ export const metadata = {
     follow: true,
   },
   openGraph: {
-    title: "深視力検査 (三桿法) – 無料オンライン深視力・遠近感トレーニング | SkillDrills",
-    description: "大型・二種免許の更新で必須となる深視力検査（三桿法）をブラウザで練習できる無料シミュレーター。奥行き知覚・立体視・オプティカルルーミングのタイミングを測定し、遠近感のズレを矯正。",
+    title: "深視力検査・三桿法練習 | 無料オンライン | SkillDrills",
+    description: "深視力検査（三桿法）のタイミングを無料で練習。大型・二種免許向けの奥行知覚を、ブラウザの動くターゲットで確認できます。医療検査ではありません。",
     url: "https://skilldrills.online/ja/drills/visual/depth-perception/distance-judgment",
     siteName: 'SkillDrills',
     locale: 'ja_JP',
@@ -58,8 +56,8 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: "深視力検査 (三桿法) – 無料オンライン深視力・遠近感トレーニング | SkillDrills",
-    description: "大型・二種免許の更新で必須となる深視力検査（三桿法）をブラウザで練習できる無料シミュレーター。奥行き知覚・立体視・オプティカルルーミングのタイミングを測定し、遠近感のズレを矯正。",
+    title: "深視力検査・三桿法練習 | 無料オンライン | SkillDrills",
+    description: "深視力検査（三桿法）のタイミングを無料で練習。大型・二種免許向けの奥行知覚を、ブラウザの動くターゲットで確認できます。医療検査ではありません。",
   },
 };
 
@@ -258,7 +256,7 @@ const howToSchema = {
   };
 
   const distanceGuideJa = {
-    heading: "深視力検査（三桿法）の合格基準・測定原理・トレーニング完全ガイド",
+    heading: "深視力検査（三桿法）の練習方法と測定の考え方",
     intro: [
       "深視力（奥行き知覚・立体視・遠近感）とは、対象物がどれだけ離れているか、また空間内でどちらが手前にありどちらが奥にあるかという相対的な距離の差を三次元的に正確に把握する高度な視覚認知機能です。日本の道路交通法では、車体が大きく死角の多い大型車や、多数の乗客を乗せるバス・タクシー等の安全運行において極めて重要な能力と定められており、大型第一種・第二種免許、中型免許、準中型免許、牽引免許の取得・更新時に三桿法（さんかんほう）による深視力検査が厳格に義務付けられています。",
       "本ドリルは、Harvey J. Howard（1919）が航空適性検査のために考案した三桿法装置（Howard-Dolman apparatus）の幾何学的原理と、David N. Lee（1976）やDavid Regan & Kenneth I. Beverley（1978）が提唱した生態学的光学的拡大理論（オプティカルルーミングおよび接触余裕時間τ）をWebブラウザ上で忠実にシミュレーション化したものです。遠景から接近する3Dターゲットが中央の基準深度リングと完全に同一平面上に達した瞬間を迎撃することで、視覚皮質における動的奥行き判定能力と運動タイミング制御を集中的に鍛え上げます。",
@@ -351,14 +349,14 @@ const howToSchema = {
       <DistanceJudgmentClient
         copy={{
           title: "深視力検査 (Distance Judgment)",
-          subtitle: "深視力 練習・三桿法シミュレーター (奥行き・遠近感テスト)",
+          subtitle: "三桿法の深視力練習・奥行知覚テスト",
           caption: "深視力（奥行き知覚）とは、空間内の物体がどれだけ離れているか、前後の位置関係を正確に把握する視覚機能です。網膜像の両眼視差（Julesz, 1971）と、接近する物体の輪郭拡大率（オプティカル・ルーミングによる接触余裕時間τの算出: Lee, 1976; Regan & Beverley, 1978）が中枢神経系で処理されます。平面ディスプレイ上では両眼視差が一定となるため、本ドリルは運動視差と光学的拡大率による動的距離判定能力（Howard, 1919の三桿法に連動）を集中的に測定・強化します。",
           statScore: "スコア",
           statTime: "残り時間",
           statLevel: "レベル",
           statBestScore: "ハイスコア",
           startTitle: "深視力検査 (三桿法)",
-          startSubtitle: "3D奥行き判定・オプティカルルーミング迎撃トレーニング",
+          startSubtitle: "奥行知覚と接近ターゲットのタイミング練習",
           startBtn: "検査・訓練を開始",
           getReady: "準備してください",
           newBest: "自己ベスト更新",

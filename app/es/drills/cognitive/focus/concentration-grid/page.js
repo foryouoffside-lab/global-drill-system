@@ -2,6 +2,7 @@ import ConcentrationGridClient from '@/app/drills/cognitive/focus/concentration-
 import { getAlternateLanguages } from '@/lib/i18n/locales';
 import DrillGuide from '@/components/drill/DrillGuide';
 import RelatedDrills from '@/components/drill/RelatedDrills';
+import DrillFooter from '@/components/drill/DrillFooter';
 import { pickSources } from '@/lib/drillSources';
 
 // ============================================================
@@ -18,8 +19,8 @@ import { pickSources } from '@/lib/drillSources';
 // ============================================================
 
 export const metadata = {
-  title: "Tabla de Schulte Online – Test de Foco | SkillDrills",
-  description: "Tabla de Schulte online gratis: Entrena tu visión periférica, lectura rápida y velocidad de búsqueda visual tocando números en cuadrículas (3x3 a 8x8).",
+  title: "Tabla de Schulte online | Rejilla de foco | SkillDrills",
+  description: "Tabla de Schulte gratis en navegador: busca números en orden y practica exploración visual. No es un diagnóstico clínico, sino un autocheck cognitivo.",
   keywords: [
     "tabla de schulte",
     "tabla de schulte online",
@@ -75,7 +76,7 @@ const webAppSchema = {
   "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
   "author": { "@type": "Organization", "name": "SkillDrills" },
   "isAccessibleForFree": true,
-  "dateModified": "2026-09-11",
+  "dateModified": "2026-09-20",
   "educationalUse": ["Velocidad de Búsqueda Visual", "Expansión de Campo Periférico", "Eficiencia Sacádica", "Atención Sostenida"]
 };
 
@@ -97,7 +98,7 @@ const videoGameSchema = {
   "name": "Tabla de Schulte Online (Concentration Grid)",
   "url": "https://skilldrills.online/es/drills/cognitive/focus/concentration-grid",
   "description": "Juego de búsqueda secuencial de números en tablas de Schulte en expansión. Entrena visión periférica y atención sostenida.",
-  "dateModified": "2026-09-11",
+  "dateModified": "2026-09-20",
   "gamePlatform": "Web Browser",
   "genre": ["Entrenamiento Cognitivo", "Búsqueda Visual", "Tabla de Schulte", "Concentration Grid"],
   "playMode": "SinglePlayer",
@@ -146,7 +147,7 @@ const howToSchema = {
 const faqSchema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
-  "dateModified": "2026-09-11",
+  "dateModified": "2026-09-20",
   "mainEntity": [
     {
       "@type": "Question",
@@ -369,6 +370,7 @@ export default function ConcentrationGridPageEs() {
       <div className="max-w-6xl w-full mx-auto px-4 pb-12">
         <RelatedDrills currentCategory="cognitive" currentHref="/drills/cognitive/focus/concentration-grid" locale="es" />
       </div>
+      <DrillFooter />
     </>
   );
 }

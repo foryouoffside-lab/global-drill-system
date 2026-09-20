@@ -6,21 +6,17 @@ import { pickSources } from '@/lib/drillSources';
 import DrillFooter from '@/components/drill/DrillFooter';
 
 export const metadata = {
-  title: "Temps de Réaction FPS – Vitesse et Réflexe | SkillDrills",
-  description: "Mesurez votre temps de réaction FPS en millisecondes. Développez la vitesse de clic et la tenue de ligne pour remporter vos duels sur CS2 et Valorant.",
+  title: "Test de Temps de Réaction | Réflexes FPS | SkillDrills",
+  description: "Test de temps de réaction gratuit dans le navigateur : mesurez le délai entre signal visuel et clic pour vos réflexes FPS.",
   keywords: [
-    "test temps de réaction fps",
-    "vitesse de réaction clic souris",
-    "comment améliorer ses réflexes valorant",
-    "entraînement réflexe fps gratuit",
-    "temps de réaction cs2 millisecondes",
-    "comment tenir une ligne cs2",
-    "test de vitesse de tir réflexe",
-    "latence de réaction visuelle fps",
-    "exercices de réflexes joueur pc",
-    "simulateur de réaction en ligne",
-    "précision du premier tir réflexe",
-    "comment réagir plus vite en fps"
+    "test temps de réaction",
+    "test temps de réaction en ligne",
+    "test temps de réaction souris",
+    "test de réflexe",
+    "réflexes FPS",
+    "réaction clic",
+    "temps de réaction gamer",
+    "test réaction visuelle"
   ],
   alternates: {
     canonical: "https://skilldrills.online/fr/drills/fps/instant-response",
@@ -31,8 +27,8 @@ export const metadata = {
     follow: true,
   },
   openGraph: {
-    title: "Temps de Réaction FPS – Vitesse et Réflexe | SkillDrills",
-    description: "Mesurez votre temps de réaction FPS en millisecondes. Développez la vitesse de clic et la tenue de ligne pour remporter vos duels sur CS2 et Valorant.",
+    title: "Test de Temps de Réaction | Réflexes FPS | SkillDrills",
+    description: "Test de temps de réaction gratuit dans le navigateur : mesurez le délai entre signal visuel et clic pour vos réflexes FPS.",
     url: "https://skilldrills.online/fr/drills/fps/instant-response",
     siteName: 'SkillDrills',
     locale: 'fr_FR',
@@ -40,8 +36,8 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: "Temps de Réaction FPS – Vitesse et Réflexe | SkillDrills",
-    description: "Mesurez votre temps de réaction FPS en millisecondes. Développez la vitesse de clic et la tenue de ligne pour remporter vos duels sur CS2 et Valorant.",
+    title: "Test de Temps de Réaction | Réflexes FPS | SkillDrills",
+    description: "Test de temps de réaction gratuit dans le navigateur : mesurez le délai entre signal visuel et clic pour vos réflexes FPS.",
   },
 };
 
@@ -52,14 +48,14 @@ export default function InstantResponseFrPage() {
     "itemListElement": [
       { "@type": "ListItem", "position": 1, "name": "SkillDrills", "item": "https://skilldrills.online/fr" },
       { "@type": "ListItem", "position": 2, "name": "Entraînements FPS", "item": "https://skilldrills.online/fr/drills/fps" },
-      { "@type": "ListItem", "position": 3, "name": "Test de Temps de Réaction FPS", "item": "https://skilldrills.online/fr/drills/fps/instant-response" }
+      { "@type": "ListItem", "position": 3, "name": "Test de temps de réaction - réflexes FPS", "item": "https://skilldrills.online/fr/drills/fps/instant-response" }
     ]
   };
 
   const webAppSchema = {
     "@context": "https://schema.org",
     "@type": "WebApplication",
-    "name": "Test de Temps de Réaction FPS en Ligne",
+    "name": "Test de temps de réaction pour les réflexes FPS",
     "url": "https://skilldrills.online/fr/drills/fps/instant-response",
     "applicationCategory": "GameApplication",
     "operatingSystem": "All",
@@ -75,14 +71,14 @@ export default function InstantResponseFrPage() {
   const softwareSchema = {
     "@context": "https://schema.org",
     "@type": "SoftwareApplication",
-    "name": "Simulateur de Réaction Immédiate SkillDrills",
+    "name": "Test de temps de réaction SkillDrills",
     "applicationCategory": "GameApplication",
     "operatingSystem": "Web Browser",
     "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
     "description": "Entraîneur psychomoteur de latence de clic et de réaction visuelle pour joueurs compétitifs de tir à la première personne.",
     "genre": "Entraînement FPS / Réflexes",
     "url": "https://skilldrills.online/fr/drills/fps/instant-response",
-    "dateModified": "2026-09-05",
+    "dateModified": "2026-09-20",
     "publisher": {
       "@type": "Organization",
       "name": "SkillDrills",
@@ -93,7 +89,7 @@ export default function InstantResponseFrPage() {
   const videoGameSchema = {
     "@context": "https://schema.org",
     "@type": "VideoGame",
-    "name": "Entraînement à la Réaction Rapide FPS",
+    "name": "Test de temps de réaction - réflexes FPS",
     "url": "https://skilldrills.online/fr/drills/fps/instant-response",
     "description": "Simulateur de réflexe avec cibles stroboscopiques et feintes conçu pour optimiser la tenue de ligne et le tir instantané.",
     "gamePlatform": "Web Browser",
@@ -101,13 +97,13 @@ export default function InstantResponseFrPage() {
     "playMode": "SinglePlayer",
     "applicationCategory": "Game",
     "operatingSystem": "Web Browser",
-    "dateModified": "2026-09-05"
+    "dateModified": "2026-09-20"
   };
 
   const faqSchema = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
-    "dateModified": "2026-09-05",
+    "dateModified": "2026-09-20",
     "mainEntity": [
       {
         "@type": "Question",
@@ -230,13 +226,13 @@ export default function InstantResponseFrPage() {
   };
 
   const copyFr = {
-    h1Keyword: "Test de Temps de Réaction FPS",
-    h1Suffix: " – Vitesse et Réflexe",
+    h1Keyword: "Test de Temps de Réaction",
+    h1Suffix: " — réflexes FPS",
     statScore: "Score",
     statTime: "Temps Restant",
     statAccuracy: "Précision",
     statBestScore: "Meilleur Score",
-    startTitle: "Test de Temps de Réaction FPS",
+    startTitle: "Test de Temps de Réaction",
     startSubtitle: "Latence visuelle et vitesse de clic • Difficulté adaptative",
     getReady: "Prêt",
     pausedTitle: "En Pause",
@@ -249,14 +245,14 @@ export default function InstantResponseFrPage() {
       { num: "3", text: "Progression Niveau", highlight: "+1 Niveau / 1400 PTS", result: "Fenêtres Adaptatives" },
       { num: "4", text: "Tir Anticipé / Erreur", highlight: "Pénalité", result: "Reset Combo (-0.8s)" }
     ],
-    aboutTitle: "À Propos du Test de Temps de Réaction FPS",
+    aboutTitle: "À propos du test de temps de réaction et des réflexes FPS",
     aboutHeading: "Comment fonctionne la mesure des réflexes en jeu de tir ?"
   };
 
   const instantResponseGuide = {
-    heading: "Guide Scientifique du Temps de Réaction et Repères de Tir en FPS",
+    heading: "Test de Temps de Réaction pour les Réflexes FPS",
     intro: [
-      "Le temps de réaction dans un jeu de tir à la première personne correspond à la durée séparant l'apparition d'un repère visuel à l'écran du déclenchement physique du clic. Dans la chronométrie mentale établie par Donders (1868), ce processus comprend quatre paliers physiologiques : transduction par la rétine, transmission axonale vers le cortex visuel, décision motrice et commande finale vers les muscles du doigt.",
+      "Un test de temps de réaction mesure l'intervalle entre un signal visuel et le clic du joueur. Ce drill enregistre la latence en millisecondes pour comparer les réflexes dans les duels CS2, Valorant et autres FPS.",
       "La focalisation spatiale joue un rôle majeur dans la réduction de ce délai. Selon les recherches de Michael Posner (1990), centrer son attention sur le point d'apparition réduit de 20 à 30 ms le traitement cortical par rapport à une surveillance périphérique non guidée. Lors d'un duel au sommet sur Valorant ou CS2, cet avantage décide qui l'emporte sur une tenue de ligne.",
       "Le matériel et le logiciel introduisent une chaîne de latence incompressible. Cette application utilise l'horloge performance.now() pour garantir des mesures de très haute précision (Woods et al., 2015). Sur un système de compétition combinant un écran 240 Hz (4,17 ms par image) et une souris 1000 Hz (1,0 ms de rapport USB), les retards techniques sont réduits au strict minimum afin d'isoler la pure réponse biologique.",
       "Mesure technique sur votre appareil : chaque clic est horodaté localement par votre navigateur sans transfert vers des serveurs externes. Les navigateurs limitent la résolution à ~1 ms pour des raisons de sécurité liées à Spectre et les écrans affichent l'image à des cadences fixes (16,7 ms à 60 Hz contre 4,1 ms à 240 Hz). Analysez votre progression en comparant vos sessions sur un même poste."

@@ -6,12 +6,12 @@ import DrillFooter from '@/components/drill/DrillFooter';
 import { pickSources } from '@/lib/drillSources';
 
 export const metadata = {
-  title: '마우스 트레이싱 게임 – 정밀 궤적 추적 & 미세 제어 능력 측정',
-  description: '움직이는 파형 곡선을 벗어나지 않고 따라가는 무료 브라우저 마우스 트레이싱 게임. 마우스 궤적 정밀도와 미세 손목 제어, 연속 트래킹 안정성을 정밀 평가합니다.',
-  keywords: ["마우스 트레이싱 게임", "마우스 선 따라가기 연습", "정밀 마우스 제어 테스트", "마우스 트래킹 연습", "스무스 추적 안구운동", "손떨림 테스트", "마우스 손목 컨트롤", "FPS 트래킹 에임", "마우스 미세 제어", "에임 트레이너"],
+  title: '마우스 트레이싱 게임 | 커서 추적 테스트 | SkillDrills',
+  description: '움직이는 파형을 커서로 따라가며 마우스 추적과 미세 제어를 연습하는 무료 브라우저 테스트.',
+  keywords: ['마우스 트레이싱 게임', '마우스 선 따라가기', '커서 추적 테스트', '마우스 트래킹 연습', '정밀 마우스 제어', '마우스 궤적 테스트', '연속 트래킹 연습', '미세 운동 조절', 'FPS 트래킹 에임', '마우스 움직임 연습', '커서 경로 추적', '손목 컨트롤 연습'],
   openGraph: {
-    title: '마우스 트레이싱 게임 – 정밀 궤적 추적 & 미세 제어 능력 측정 | SkillDrills',
-    description: '움직이는 파형 곡선을 벗어나지 않고 따라가는 무료 브라우저 마우스 트레이싱 게임. 마우스 궤적 정밀도와 미세 손목 제어, 연속 트래킹 안정성을 정밀 평가합니다.',
+    title: '마우스 트레이싱 게임 | 커서 추적 테스트 | SkillDrills',
+    description: '움직이는 파형을 커서로 따라가며 마우스 추적과 미세 제어를 연습하는 무료 브라우저 테스트.',
     type: 'article',
     url: 'https://skilldrills.online/ko/drills/motor/precision-control/tracing',
     siteName: 'SkillDrills',
@@ -19,8 +19,8 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: '마우스 트레이싱 게임 – 정밀 궤적 추적 & 미세 제어 능력 측정 | SkillDrills',
-    description: '움직이는 파형 곡선을 벗어나지 않고 따라가는 무료 브라우저 마우스 트레이싱 게임. 마우스 궤적 정밀도와 미세 손목 제어, 연속 트래킹 안정성을 정밀 평가합니다.',
+    title: '마우스 트레이싱 게임 | 커서 추적 테스트 | SkillDrills',
+    description: '움직이는 파형을 커서로 따라가며 마우스 추적과 미세 제어를 연습하는 무료 브라우저 테스트.',
   },
   robots: { index: true, follow: true },
   alternates: {
@@ -79,7 +79,7 @@ const softwareApplicationSchema = {
     "url": "https://skilldrills.online"
   },
   "inLanguage": "ko-KR",
-  "dateModified": "2026-09-11"
+  "dateModified": "2026-09-20"
 };
 
 const webApplicationSchema = {
@@ -96,12 +96,13 @@ const webApplicationSchema = {
   },
   "url": "https://skilldrills.online/ko/drills/motor/precision-control/tracing",
   "inLanguage": "ko-KR",
-  "dateModified": "2026-09-11"
+  "dateModified": "2026-09-20"
 };
 
 const videoGameSchema = {
   "@context": "https://schema.org",
   "@type": "VideoGame",
+  "inLanguage": "ko-KR",
   "name": "마우스 트레이싱 게임 – 연속 파형 궤적 추적 및 제어 게임",
   "url": "https://skilldrills.online/ko/drills/motor/precision-control/tracing",
   "description": "움직이는 파형 곡선을 벗어나지 않고 따라가는 무료 브라우저 마우스 트레이싱 게임. 마우스 궤적 정밀도와 미세 손목 제어, 연속 트래킹 안정성을 정밀 평가합니다.",
@@ -119,12 +120,15 @@ const videoGameSchema = {
     "@type": "Offer",
     "price": "0",
     "priceCurrency": "KRW"
-  }
+  },
+  "dateModified": "2026-09-20"
 };
 
 const faqSchema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
+  "inLanguage": "ko-KR",
+  "dateModified": "2026-09-20",
   "mainEntity": [
     {
       "@type": "Question",
@@ -212,6 +216,8 @@ const faqSchema = {
 const howToSchema = {
   "@context": "https://schema.org",
   "@type": "HowTo",
+  "inLanguage": "ko-KR",
+  "dateModified": "2026-09-20",
   "name": "마우스 트레이싱 게임・정밀 궤적 추적 테스트 – 마우스 미세 제어 능력 측정",
   "description": "움직이는 파형 곡선을 벗어나지 않고 따라가는 무료 브라우저 마우스 트레이싱 게임. 마우스 궤적 정밀도와 미세 손목 제어, 연속 트래킹 안정성을 정밀 평가합니다.",
   "step": [
@@ -287,8 +293,8 @@ const guideProps = {
 };
 
 const koCopy = {
-  title: "마우스 트레이싱 게임",
-  subtitle: "원시 마우스 입력 연속 궤적 추적 • 45초 타이머",
+  title: "커서 추적 테스트",
+  subtitle: "연속 커서 추적 • 45초",
   startButtonText: "훈련 시작",
   trainAgain: "다시 훈련",
   shareTitle: "결과 공유",

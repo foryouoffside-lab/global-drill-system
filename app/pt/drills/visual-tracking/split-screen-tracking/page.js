@@ -1,25 +1,26 @@
 import SplitScreenTrackingClient from '@/app/drills/visual-tracking/split-screen-tracking/SplitScreenTrackingClientLoader';
 import DrillGuide from '@/components/drill/DrillGuide';
 import RelatedDrills from '@/components/drill/RelatedDrills';
+import DrillFooter from '@/components/drill/DrillFooter';
 import { getAlternateLanguages } from '@/lib/i18n/locales';
 import { pickSources } from '@/lib/drillSources';
 
 export const metadata = {
-  title: "Rastreamento em Tela Dividida – SkillDrills",
-  description: "Exercite a atencao visual dividida atraves de alvos ortogonais simultaneos em tela dividida. Treino ocular bilateral gratuito sem cadastro.",
+  title: "Rastreamento visual em tela dividida | SkillDrills",
+  description: "Acompanhe dois alvos em áreas separadas da tela. Treino gratuito com atenção dividida, estabilidade do olhar e erro por lado.",
   keywords: [
-    "treino de atencao dividida tela dividida",
+    "treino de atenção dividida tela dividida",
     "rastreamento visual em tela dividida",
-    "exercicio ocular de atencao bilateral",
-    "visao periferica simultanea",
-    "treino de seguimento ortogonal duplo",
-    "multiplo rastreamento de alvos mot",
-    "evitar visao em tunel exercicio",
-    "coordenacao visual bi-hemisferica",
-    "rastreamento com divisao de tela",
-    "agilidade visual de atencao difusa",
-    "exercicio de foco periferico duplo",
-    "treino de visao periferica para jogos"
+    "exercício ocular de atenção bilateral",
+    "visão periférica simultânea",
+    "rastreamento de múltiplos alvos",
+    "atividade de atenção e concentração",
+    "evitar visão em túnel exercício",
+    "coordenação visual bilateral",
+    "rastreamento com divisão de tela",
+    "atenção visual dividida treino",
+    "exercício de foco periférico",
+    "treino de visão periférica para jogos"
   ],
   alternates: {
     canonical: "https://skilldrills.online/pt/drills/visual-tracking/split-screen-tracking",
@@ -27,8 +28,8 @@ export const metadata = {
   },
   robots: { index: true, follow: true },
   openGraph: {
-    title: "Rastreamento em Tela Dividida – SkillDrills",
-    description: "Exercite a atencao visual dividida atraves de alvos ortogonais simultaneos em tela dividida. Treino ocular bilateral gratuito sem cadastro.",
+    title: "Rastreamento visual em tela dividida | SkillDrills",
+    description: "Acompanhe dois alvos em áreas separadas da tela. Treino gratuito com atenção dividida, estabilidade do olhar e erro por lado.",
     url: "https://skilldrills.online/pt/drills/visual-tracking/split-screen-tracking",
     siteName: 'SkillDrills',
     locale: 'pt_PT',
@@ -36,8 +37,8 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: "Rastreamento em Tela Dividida – SkillDrills",
-    description: "Exercite a atencao visual dividida atraves de alvos ortogonais simultaneos em tela dividida. Treino ocular bilateral gratuito sem cadastro.",
+    title: "Rastreamento visual em tela dividida | SkillDrills",
+    description: "Acompanhe dois alvos em áreas separadas da tela. Treino gratuito com atenção dividida, estabilidade do olhar e erro por lado.",
   },
 };
 
@@ -83,7 +84,8 @@ const softwareApplicationSchema = {
     "price": "0.00",
     "priceCurrency": "USD"
   },
-  "description": "Aplicacao de treino visual para desenvolver a atencao dividida bimodal e o seguimento ocular bilateral sem dispersao sacadica."
+  "description": "Aplicação de treino visual para observar atenção dividida e seguimento ocular bilateral.",
+  "dateModified": "2026-09-20"
 };
 
 const webAppSchema = {
@@ -93,7 +95,8 @@ const webAppSchema = {
   "url": "https://skilldrills.online/pt/drills/visual-tracking/split-screen-tracking",
   "applicationCategory": "SportsApplication",
   "operatingSystem": "Todos os navegadores modernos",
-  "browserRequirements": "Requer suporte a JavaScript e HTML5 Canvas"
+  "browserRequirements": "Requer suporte a JavaScript e HTML5 Canvas",
+  "dateModified": "2026-09-20"
 };
 
 const videoGameSchema = {
@@ -103,7 +106,8 @@ const videoGameSchema = {
   "description": "Desafio de atencao visual dividida onde o utilizador monitoriza simultaneamente dois alvos independentes em trajetorias ortogonais.",
   "genre": ["Treino Visual", "Atenção Dividida", "Treino de Reflexos"],
   "playMode": "SinglePlayer",
-  "gamePlatform": "Navegador Web"
+  "gamePlatform": "Navegador Web",
+  "dateModified": "2026-09-20"
 };
 
 const howToSchema = {
@@ -136,7 +140,8 @@ const howToSchema = {
       "name": "Suprima a Alternância Sacádica",
       "text": "Evite alternar o olhar de um lado para o outro para impedir que a supressao sacadica oculte os alvos em movimento."
     }
-  ]
+  ],
+  "dateModified": "2026-09-20"
 };
 
 const faqSchema = {
@@ -223,7 +228,8 @@ const faqSchema = {
         "text": "Praticar 2 a 3 series de 60 segundos por dia (cerca de 5 minutos) estimula a neuroplasticidade frontoparietal sem provocar esgotamento cognitivo."
       }
     }
-  ]
+  ],
+  "dateModified": "2026-09-20"
 };
 
 const guideProps = {
@@ -270,18 +276,24 @@ const guideProps = {
       }
     ]
   },
+  steps: [
+    { title: "Fixe a linha central", text: "Olhe suavemente para o centro da tela e perceba os dois alvos sem fixar nenhum deles diretamente." },
+    { title: "Separe os dois movimentos", text: "Leia o movimento vertical à esquerda e o horizontal à direita como ritmos independentes." },
+    { title: "Compare as perdas por lado", text: "Após cada rodada, verifique qual alvo foi perdido e se o ponto central permaneceu estável." },
+    { title: "Aumente a velocidade aos poucos", text: "Suba a velocidade somente quando a precisão e o equilíbrio entre os lados estiverem consistentes." }
+  ],
   faqs: faqSchema.mainEntity.map(item => ({
     q: item.name,
     a: item.acceptedAnswer.text
   })),
   sources: pickSources('pylyshyn1988', 'alvarez2005', 'green2006', 'cavanagh2005', 'woods2015', 'leigh2015'),
   related: [
-    { href: "/pt/drills/visual-tracking/constant-slow-pursuit", label: "Exercício de Seguimento Ocular Lento (Constant Slow)" },
-    { href: "/pt/drills/visual-tracking/directional-chaos-pursuit", label: "Rastreamento em Caos Direcional (Directional Chaos)" },
-    { href: "/pt/drills/visual-tracking/dynamic-evasion-pursuit", label: "Seguimento com Evasão Dinâmica (Dynamic Evasion)" },
-    { href: "/pt/drills/visual-tracking/ghosting-suppress-pursuit", label: "Supressão de Imagem Fantasma (Ghosting Suppress)" },
-    { href: "/pt/drills/visual-tracking/infinity-pursuit", label: "Exercício Ocular em Oito (Infinity Pursuit)" },
-    { href: "/pt/drills/visual-tracking/sine-wave-pursuit", label: "Rastreamento em Onda Senoidal (Sine Wave)" }
+    { href: "/pt/drills/visual-tracking/constant-slow-pursuit", label: "Exercício de seguimento ocular lento" },
+    { href: "/pt/drills/visual-tracking/directional-chaos-pursuit", label: "Rastreamento com mudanças de direção" },
+    { href: "/pt/drills/visual-tracking/dynamic-evasion-pursuit", label: "Seguimento de alvo com evasão" },
+    { href: "/pt/drills/visual-tracking/ghosting-suppress-pursuit", label: "Supressão de imagem fantasma" },
+    { href: "/pt/drills/visual-tracking/infinity-pursuit", label: "Exercício ocular em oito" },
+    { href: "/pt/drills/visual-tracking/sine-wave-pursuit", label: "Rastreamento em onda senoidal" }
   ]
 };
 
@@ -295,11 +307,12 @@ export default function SplitScreenTrackingPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(howToSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
 
-      <SplitScreenTrackingClient copy={{ title: "Rastreamento em Tela Dividida", subtitle: "Teste de Atenção Visual Dividida" }} />
+      <SplitScreenTrackingClient copy={{ title: "Rastreamento visual em tela dividida", subtitle: "Acompanhe dois alvos em áreas separadas" }} />
       <DrillGuide guide={guideProps} />
       <div className="max-w-6xl mx-auto px-4 pb-12">
         <RelatedDrills currentCategory="visual-tracking" currentHref="https://skilldrills.online/pt/drills/visual-tracking/split-screen-tracking" />
       </div>
+      <DrillFooter />
     </>
   );
 }

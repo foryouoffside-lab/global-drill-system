@@ -5,21 +5,19 @@ import { getAlternateLanguages } from '@/lib/i18n/locales';
 import { pickSources } from '@/lib/drillSources';
 
 export const metadata = {
-  title: "Test de Mémoire Visuelle – Matrice de Grille | SkillDrills",
-  description: "Test de memoire visuelle en ligne gratuit: Memorisez les motifs de grille en 1,5s et developpez votre empan spatial et chunking visuel sans inscription.",
+  title: "Test de mémoire visuelle en ligne | SkillDrills",
+  description: "Teste ta mémoire visuelle en ligne : mémorise des cases éclairées dans une grille et reproduis le motif dans ton navigateur.",
   keywords: [
-    "test de memoire visuelle",
-    "test memoire spatiale",
-    "jeu de memoire grille",
-    "matrice de memoire visuelle test",
-    "test empan visuel en ligne",
-    "exercice memoire visuelle gratuit",
-    "test de memoire des formes",
-    "capacite memoire viso-spatiale",
-    "test memoire de travail visuelle",
-    "entrainement memoire visuelle en ligne",
-    "test de retention spatiale gratuit",
-    "evaluation memoire visuelle court terme"
+    "test de mémoire visuelle",
+    "test mémoire visuelle",
+    "test de mémoire spatiale",
+    "jeu de mémoire visuelle",
+    "mémoire des motifs",
+    "matrice de mémoire",
+    "mémoire visuo-spatiale",
+    "test de mémoire en ligne",
+    "entraînement mémoire visuelle",
+    "mémoire de travail visuelle",
   ],
   alternates: {
     canonical: "https://skilldrills.online/fr/drills/memory/spatial-memory/grid-memorization",
@@ -30,8 +28,8 @@ export const metadata = {
     follow: true,
   },
   openGraph: {
-    title: "Test de Mémoire Visuelle – Matrice de Grille | SkillDrills",
-    description: "Test de memoire visuelle en ligne gratuit: Memorisez les motifs de grille en 1,5s et developpez votre empan spatial et chunking visuel sans inscription.",
+    title: "Test de mémoire visuelle en ligne | SkillDrills",
+    description: "Teste ta mémoire visuelle : mémorise des cases éclairées et reproduis le motif dans une grille, sans inscription.",
     url: "https://skilldrills.online/fr/drills/memory/spatial-memory/grid-memorization",
     siteName: 'SkillDrills',
     locale: 'fr_FR',
@@ -39,8 +37,8 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: "Test de Mémoire Visuelle – Matrice de Grille | SkillDrills",
-    description: "Test de memoire visuelle en ligne gratuit: Memorisez les motifs de grille en 1,5s et developpez votre empan spatial et chunking visuel sans inscription.",
+    title: "Test de mémoire visuelle en ligne | SkillDrills",
+    description: "Teste ta mémoire visuelle : mémorise des cases éclairées et reproduis le motif dans une grille, sans inscription.",
   },
 };
 
@@ -93,6 +91,7 @@ const webAppSchema = {
     "@type": "Organization",
     "name": "SkillDrills"
   },
+  "sameAs": "https://fr.wikipedia.org/wiki/M%C3%A9moire_visuelle",
   "isAccessibleForFree": true,
   "dateModified": "2026-09-16"
 };
@@ -319,11 +318,11 @@ const gridGuide = {
   faqs: faqSchema.mainEntity.map(e => ({ q: e.name, a: e.acceptedAnswer.text })),
   sources: pickSources('cowan2001', 'baddeley2000', 'logie1995', 'corsi1972', 'luck1997', 'milner1971', 'woods2015'),
   related: [
-    { href: "/drills/memory/spatial-memory/path-tracing", label: "Test de Mémorisation de Trajet" },
-    { href: "/drills/memory/spatial-memory/object-location", label: "Test de Mémoire de Localisation" },
-    { href: "/drills/memory/short-term-memory/digit-span", label: "Test d'Empan Numérique" },
-    { href: "/drills/memory/short-term-memory/word-recall", label: "Test de Mémoire Verbale" },
-    { href: "/drills/memory/working-memory/n-back", label: "Test de Mémoire de Travail N-Back" }
+    { href: "/fr/drills/memory/spatial-memory/path-tracing", label: "Test de Mémorisation de Trajet" },
+    { href: "/fr/drills/memory/spatial-memory/object-location", label: "Test de Mémoire de Localisation" },
+    { href: "/fr/drills/memory/short-term-memory/digit-span", label: "Test d'Empan Numérique" },
+    { href: "/fr/drills/memory/short-term-memory/word-recall", label: "Test de Mémoire Verbale" },
+    { href: "/fr/drills/memory/working-memory/n-back", label: "Test de Mémoire de Travail N-Back" }
   ]
 };
 
@@ -355,8 +354,9 @@ export default function GridMemorizationFrenchPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
       <GridMemorizationClient copy={{
-        "h1Keyword": "Test de Mémoire Visuelle",
-        "h1Suffix": " – Matrice de Mémorisation de Motifs en Grille",
+        "h1Keyword": "Test de mémoire visuelle en ligne",
+        "h1Suffix": " – Mémoire spatiale",
+        "subtitle": "Mémorise les cases éclairées d’une grille",
         "caption": "La mémoire de travail visuelle stocke environ quatre objets intégrés simultanément, la limite étant fixée par le nombre d'objets plutôt que par la complexité visuelle (Luck & Vogel, 1997). Les grilles matricielles sollicitent le cache visuel passif pour la forme et l'organisation spatiale (Logie, 1995).",
         "statScore": "Score",
         "statTime": "Temps",
@@ -365,7 +365,7 @@ export default function GridMemorizationFrenchPage() {
         "hudScore": "Score",
         "hudTime": "Temps",
         "startTitle": "Test de Mémoire Visuelle Pro",
-        "startSubtitle": "Mémoire de travail spatiale • Mémorisation de motifs",
+        "startSubtitle": "Mémoire visuelle • Grille",
         "countdownSubtitle": "PRÉPAREZ-VOUS",
         "newBest": "NOUVEAU RECORD",
         "pointsLabel": "Points",

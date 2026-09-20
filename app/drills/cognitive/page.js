@@ -8,26 +8,21 @@ const cognitiveDrillCount = cognitiveDrills.length;
 export const metadata = {
   // GSC (180d): train your brain online (pos 70.5) and processing speed games
   // online (pos 87) both land here; neither phrase contained "online".
-  title: 'Free Brain Games Online - Focus, Attention & Speed',
-  description: `Free cognitive training online. ${cognitiveDrillCount} science-based drills for attention, focus, and processing speed. No sign-up. Play instantly in your browser.`,
+  title: 'Free Cognitive Training & Brain Games | SkillDrills',
+  description: 'Free browser drills for attention, concentration, memory, reaction time, and processing speed. No sign-up.',
   keywords: [
-    'cognitive training online', 'free cognitive training', 'cognitive training drills',
-    'brain training games', 'free brain training', 'brain training online',
-    'attention training', 'attention span test', 'divided attention game',
-    'selective attention test', 'concentration training',
-    'focus training', 'focus concentration game', 'distraction fighter game',
-    'symbol matching game', 'rsvp speed reading', 'processing speed test',
-    'cognitive speed training', 'reaction time cognitive',
-    'cognitive flexibility game', 'executive function training', 'attention games',
-    'brain cognitive exercises', 'mental agility training', 'cognitive performance',
-    'cognitive skills improvement', 'cognitive ability test online',
-    'esports cognitive training', 'gamer brain training', 'fps cognitive drills',
-    'skilldrills cognitive', 'free online cognitive drills', 'no download brain games',
-    'attention focus reaction speed game', 'brain performance training',
+    'cognitive training online', 'free cognitive training', 'brain training games',
+    'free brain games', 'attention training', 'concentration training',
+    'focus training', 'attention span test', 'divided attention test',
+    'selective attention test', 'memory training online', 'processing speed test',
+    'reaction time cognitive test', 'Stroop test online', 'Schulte table test',
+    'working memory training', 'cognitive flexibility training', 'executive function training',
+    'mental agility games', 'browser brain training', 'no download brain games',
+    'how to improve concentration',
   ],
   openGraph: {
-    title: 'Free Brain Games Online - Attention, Focus & Processing Speed | SkillDrills',
-    description: `Free cognitive training online. ${cognitiveDrillCount} science-based drills for attention, focus, and processing speed.`,
+    title: 'Free Cognitive Training & Brain Games | SkillDrills',
+    description: 'Free browser drills for attention, concentration, memory, reaction time, and processing speed. No sign-up.',
     type: 'website',
     url: 'https://skilldrills.online/drills/cognitive',
     siteName: 'SkillDrills',
@@ -36,8 +31,8 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Free Brain Games Online - Attention, Focus & Processing Speed | SkillDrills',
-    description: `Free cognitive training online. ${cognitiveDrillCount} drills — attention, focus, processing speed. No sign-up.`,
+    title: 'Free Cognitive Training & Brain Games | SkillDrills',
+    description: 'Free browser drills for attention, concentration, memory, reaction time, and processing speed. No sign-up.',
     images: ['https://skilldrills.online/icons/icon-512x512.png'],
   },
   robots: { index: true, follow: true },
@@ -59,9 +54,11 @@ const breadcrumbSchema = {
 const collectionSchema = {
   "@context": "https://schema.org",
   "@type": "CollectionPage",
-  "name": "Free Cognitive Training Online - Attention, Focus & Reaction Speed Drills",
+  "inLanguage": "en-US",
+  "dateModified": "2026-09-20",
+  "name": "Free Cognitive Training & Brain Games",
   "url": "https://skilldrills.online/drills/cognitive",
-  "description": `${cognitiveDrillCount} free science-based cognitive training drills online covering attention, focus, and processing speed exercises. No sign-up required.`,
+  "description": `${cognitiveDrillCount} free browser drills for attention, concentration, memory, reaction time, and processing speed. No sign-up required.`,
   "author": { "@type": "Organization", "name": "SkillDrills", "url": "https://skilldrills.online" },
   "hasPart": [
     // Attention Training (3 Drills)
@@ -81,6 +78,8 @@ const collectionSchema = {
 const faqSchema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
+  "inLanguage": "en-US",
+  "dateModified": "2026-09-20",
   "mainEntity": [
     {
       "@type": "Question",

@@ -6,38 +6,21 @@ import DrillFooter from '@/components/drill/DrillFooter';
 import { pickSources } from '@/lib/drillSources';
 
 // ============================================================
-// SEO RESEARCH FINDINGS — steady-hand (German: Heißer Draht)
-// PRIMARY:  "Heißer Draht Online"           — Authentic cultural query
-//           "Heißer Draht Spiel"            — Gaming query
-// SECONDARY / LSI:
-//           "Ruhige Hand Spiel"             — Steady hand gaming query
-//           "Maus Präzisionstest"           — Precision diagnostic search
-//           "Handzittern Test Online"       — Physiological tremor assessment
-//           "Feinmotorik Test Maus"         — Fine motor control query
-//           "Mausführung trainieren"        — Training intent
-//           "Accot-Zhai Steuerungsgesetz"   — Steering Law
+// Native keyword research: docs/seo/research/steady-hand-2026-09-20.md
 // ============================================================
 
 export const metadata = {
-  title: 'Heißer Draht Online – Ruhige Hand & Maus Präzisionstest',
-  description: 'Kostenloses Heißer Draht Spiel online. Steuere den Cursor durch engere Kurven ohne Wandkontakt. Präziser Feinmotorik-Test nach dem Accot-Zhai-Gesetz.',
+  title: 'Maus-Präzisionstest | Ruhige Hand | SkillDrills',
+  description: 'Führe den Cursor durch einen enger werdenden Korridor und messe Feinmotorik, Spurtreue und ruhige Hand. Kostenlos im Browser.',
   keywords: [
-    'Heißer Draht Online',
-    'Heißer Draht Spiel',
-    'Ruhige Hand Spiel',
-    'Maus Präzisionstest',
-    'Handzittern Test Online',
-    'Feinmotorik Test Maus',
-    'Mausführung trainieren',
-    'Accot-Zhai Steuerungsgesetz',
-    'Maus Parcours Spiel',
-    'Cursor Präzision Test',
-    'Aim Stabilität Maus',
-    'Zittertest Hand',
+    'Maus-Präzisionstest', 'Ruhige Hand Test', 'Cursor Präzision',
+    'Maus Genauigkeit testen', 'Pfad folgen Maus', 'Feinmotorik Maus',
+    'Hand-Auge-Koordination Maus', 'Maus Spurtreue', 'Korridor Spiel',
+    'Maus Präzisionstraining', 'Cursor Kontrolle', 'Handzittern Maus',
   ],
   openGraph: {
-    title: 'Heißer Draht Online – Ruhige Hand & Maus Präzisionstest | SkillDrills',
-    description: 'Kostenloses Heißer Draht Spiel online. Steuere den Cursor durch engere Kurven ohne Wandkontakt. Präziser Feinmotorik-Test nach dem Accot-Zhai-Gesetz.',
+    title: 'Maus-Präzisionstest | Ruhige Hand | SkillDrills',
+    description: 'Führe den Cursor durch einen enger werdenden Korridor und messe Feinmotorik, Spurtreue und ruhige Hand. Kostenlos im Browser.',
     type: 'article',
     url: 'https://skilldrills.online/de/drills/motor/precision-control/steady-hand',
     siteName: 'SkillDrills',
@@ -45,8 +28,8 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Heißer Draht Online – Ruhige Hand & Maus Präzisionstest | SkillDrills',
-    description: 'Kostenloses Heißer Draht Spiel online. Steuere den Cursor durch engere Kurven ohne Wandkontakt. Präziser Feinmotorik-Test nach dem Accot-Zhai-Gesetz.',
+    title: 'Maus-Präzisionstest | Ruhige Hand | SkillDrills',
+    description: 'Führe den Cursor durch einen enger werdenden Korridor und messe Feinmotorik, Spurtreue und ruhige Hand. Kostenlos im Browser.',
   },
   robots: { index: true, follow: true },
   alternates: {
@@ -71,6 +54,7 @@ const breadcrumbSchema = {
 const softwareApplicationSchema = {
   '@context': 'https://schema.org',
   '@type': 'SoftwareApplication',
+  inLanguage: 'de-DE',
   name: 'Heißer Draht – Maus-Präzision & Feinmotorik-Test',
   applicationCategory: 'HealthApplication',
   operatingSystem: 'All',
@@ -78,36 +62,41 @@ const softwareApplicationSchema = {
   description: 'Kostenloses browserbasiertes Heißer Draht Spiel und Maus-Präzisionstest. Bewege den Cursor durch dynamisch enger werdende Kurven und messe Handruhe sowie Steuerungsdurchsatz.',
   url: 'https://skilldrills.online/de/drills/motor/precision-control/steady-hand',
   publisher: { '@type': 'Organization', name: 'SkillDrills', url: 'https://skilldrills.online/de' },
-  dateModified: '2026-09-05',
+  dateModified: '2026-09-20',
 };
 
 const webApplicationSchema = {
   '@context': 'https://schema.org',
   '@type': 'WebApplication',
+  inLanguage: 'de-DE',
   name: 'Heißer Draht Online Parcours',
   applicationCategory: 'GameApplication',
   operatingSystem: 'All',
   browserRequirements: 'Moderner Webbrowser mit HTML5 Canvas und Pointer Events API Unterstützung',
   offers: { '@type': 'Offer', price: '0', priceCurrency: 'EUR' },
   url: 'https://skilldrills.online/de/drills/motor/precision-control/steady-hand',
-  dateModified: '2026-09-05',
+  dateModified: '2026-09-20',
 };
 
 const videoGameSchema = {
   '@context': 'https://schema.org',
   '@type': 'VideoGame',
+  inLanguage: 'de-DE',
   name: 'Heißer Draht Feinmotorik-Drill',
   url: 'https://skilldrills.online/de/drills/motor/precision-control/steady-hand',
   description: 'Online-Geschicklichkeitsspiel zum Testen von Mauspräzision, physiologischer Handruhe und Lenkgeschwindigkeit.',
   genre: ['Precision Game', 'Action', 'Esports Training'],
   gamePlatform: ['Web Browser', 'Desktop', 'Mobile'],
   applicationCategory: 'Game',
-  offers: { '@type': 'Offer', price: '0', priceCurrency: 'EUR' }
+  offers: { '@type': 'Offer', price: '0', priceCurrency: 'EUR' },
+  dateModified: '2026-09-20',
 };
 
 const faqSchema = {
   '@context': 'https://schema.org',
   '@type': 'FAQPage',
+  inLanguage: 'de-DE',
+  dateModified: '2026-09-20',
   mainEntity: [
     {
       '@type': 'Question',
@@ -195,6 +184,8 @@ const faqSchema = {
 const howToSchema = {
   '@context': 'https://schema.org',
   '@type': 'HowTo',
+  inLanguage: 'de-DE',
+  dateModified: '2026-09-20',
   name: 'Anleitung zur Steigerung der Handruhe und Mauspräzision',
   description: 'Schritt-für-Schritt-Protokoll zur Bewältigung enger Parcours-Kurven und Beherrschung des Steuerungsgesetzes.',
   step: [
@@ -316,8 +307,8 @@ const guideProps = {
 };
 
 const deCopy = {
-  h1Keyword: 'Heißer Draht Online',
-  h1Suffix: ' (Ruhige Hand Spiel)',
+  h1Keyword: 'Maus-Präzisionstest',
+  h1Suffix: ' (Ruhige Hand)',
   caption: 'Das Heißer Draht Spiel misst deine feinmotorische Handruhe und Spurtreue: Führe den Cursor durch gewundene Kanäle, ohne die Begrenzungswand zu berühren. Geregelt durch das Accot-Zhai-Steuerungsgesetz (1997) und geschlossene visuelle Feedback-Korrekturen (Woodworth, 1899).',
   statLaps: 'Runden',
   statTime: 'Restzeit',
@@ -326,7 +317,7 @@ const deCopy = {
   pausedTitle: 'Pausiert',
   pausedPrompt: 'Klicke auf das Spielfeld, um den Zeiger zu fixieren und fortzusetzen.',
   startTitle: 'Heißer Draht Parcours',
-  startSubtitle: 'Feinmotorik & Spurpräzision • 45s Timer',
+  startSubtitle: 'Ruhige Hand und Spurtreue • 45 s',
   startBtn: 'Drill starten',
   countdownSubtitle: 'KONZENTRATION',
   newBest: 'NEUER REKORD',

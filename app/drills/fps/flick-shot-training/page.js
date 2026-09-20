@@ -325,7 +325,7 @@ export default function FlickShotPage() {
           subtitle: "Train your snap aim, ballistic muscle memory, and target acquisition with real-time feedback."
         }}
       />
-      <DrillGuide guide={flickGuide} />
+      <DrillGuide guide={flickGuide} singleLineTitles />
       <DrillFooter />
     </>
   );

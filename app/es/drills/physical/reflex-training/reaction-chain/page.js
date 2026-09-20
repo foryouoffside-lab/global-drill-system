@@ -20,31 +20,36 @@ import { pickSources } from '@/lib/drillSources';
 // ============================================================
 
 export const metadata = {
-  title: "Frenado de Puntería – Inhibición Motora | SkillDrills",
-  description: "Entrena frenado de puntería e inhibición motora con el ratón. Intercepta objetivos en movimiento y elimina el overflicking en el PC.",
+  title: "Frenado de puntería | Test de reflejos",
+  description: "Entrenamiento gratis de puntería en el navegador. Acierta objetivos móviles, detén el ratón con precisión y practica el control del overflick.",
   keywords: [
-    "entrenamiento de frenado de punteria raton",
-    "como corregir overflick raton",
-    "test de inhibicion motora reflejos",
-    "juego de frenado de raton y reflejos",
-    "ejercicio de desaceleracion de raton",
-    "parada cinetica punteria raton",
-    "test de precision y reflejos raton",
-    "juego de velocidad de reaccion raton",
-    "como frenar la mira en fps",
-    "entrenar stopping power raton"
+    "entrenamiento de frenado de puntería",
+    "entrenamiento de puntería online gratis",
+    "cómo corregir overflick con el ratón",
+    "test de inhibición motora",
+    "juego de reflejos y parada del ratón",
+    "ejercicio de desaceleración del ratón",
+    "test de precisión del ratón",
+    "juego de velocidad de reacción",
+    "cómo frenar la mira en FPS",
+    "entrenar puntería Valorant"
   ],
   alternates: {
     canonical: 'https://skilldrills.online/es/drills/physical/reflex-training/reaction-chain',
     languages: getAlternateLanguages('/drills/physical/reflex-training/reaction-chain'),
   },
   openGraph: {
-    title: "Frenado de Puntería – Inhibición Motora | SkillDrills",
-    description: "Elimine los fallos por inercia estabilizando la retícula al instante en el primer disparo. Módulo biomecánico avanzado para Counter-Strike 2 y Valorant.",
+    title: "Frenado de puntería | Test de reflejos",
+    description: "Acierta objetivos móviles, detén el ratón con precisión y practica el control del overflick en el navegador.",
     url: 'https://skilldrills.online/es/drills/physical/reflex-training/reaction-chain',
     siteName: 'SkillDrills',
     locale: 'es_ES',
     type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: "Frenado de puntería | Test de reflejos",
+    description: "Acierta el objetivo, frena el ratón con precisión y practica el control del overflick.",
   },
 };
 
@@ -97,8 +102,8 @@ const softwareApplicationSchema = {
     "name": "SkillDrills",
     "url": "https://skilldrills.online/es"
   },
-  "inLanguage": "es",
-  "dateModified": "2026-09-12"
+  "inLanguage": "es-ES",
+  "dateModified": "2026-09-20"
 };
 
 const webApplicationSchema = {
@@ -114,8 +119,8 @@ const webApplicationSchema = {
     "priceCurrency": "USD"
   },
   "url": "https://skilldrills.online/es/drills/physical/reflex-training/reaction-chain",
-  "inLanguage": "es",
-  "dateModified": "2026-09-12"
+  "inLanguage": "es-ES",
+  "dateModified": "2026-09-20"
 };
 
 const videoGameSchema = {
@@ -125,6 +130,8 @@ const videoGameSchema = {
   "url": "https://skilldrills.online/es/drills/physical/reflex-training/reaction-chain",
   "genre": ["Reflex Game", "Motor Control Trainer", "Esports Precision"],
   "playMode": "SinglePlayer",
+  "inLanguage": "es-ES",
+  "dateModified": "2026-09-20",
   "description": "Intercepte nodos a velocidades de hasta 1.800 px/s y detenga la velocidad del cursor por debajo de 1,5 px/frame dentro del objetivo para lograr multiplicadores de hasta 3,0x."
 };
 
@@ -336,8 +343,8 @@ export default function LocalizedReactionChainPageEs() {
       />
       <ReactionChainClient
         copy={{
-          title: "Entrenamiento de Frenado de Puntería & Inhibición Motora",
-          subtitle: "Arresto Cinético & Control de Desaceleración • 15 Niveles de Velocidad",
+          title: "Frenado de Puntería",
+          subtitle: "Acierta el objetivo y detén el ratón",
           badge: "Test de Inhibición Motora",
           description: "Frenar en seco sobre un objetivo es biomecánicamente mucho más difícil que acelerar hacia él. La ejecución motora y la orden de detención compiten de forma independiente en el cerebro (Logan & Cowan, 1984). Un retraso en el frenado provoca el temido overflick por inercia (Woodworth, 1899). Intercepte los nodos y detenga el cursor al instante.",
           hudLabels: {
@@ -397,9 +404,10 @@ export default function LocalizedReactionChainPageEs() {
             }
           ]
         }}
-      />
-      <DrillGuide {...guideProps} />
-      <RelatedDrills currentCategory="physical" currentHref="/drills/physical/reflex-training/reaction-chain" />
+      >
+        <DrillGuide {...guideProps} />
+        <RelatedDrills currentCategory="physical" currentHref="/drills/physical/reflex-training/reaction-chain" />
+      </ReactionChainClient>
     </>
   );
 }

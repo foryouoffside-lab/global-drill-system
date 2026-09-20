@@ -5,8 +5,8 @@ import { pickSources } from '@/lib/drillSources';
 
 // ============================================================
 // SEO RESEARCH FINDINGS — stability-challenge (physical-stability-challenge)
-// PRIMARY:  "balance test online"         — High-intent diagnostic (~2,400+ searches/mo)
-//           "online balance trainer"      — Core training phrase
+// PRIMARY:  "mouse stability test"        — Focused browser diagnostic intent (volume unmeasured)
+//           "aim stability trainer"       — Core training phrase (volume unmeasured)
 // SECONDARY / LSI:
 //           "cursor stability challenge"  — Interactive drill query
 //           "stability challenge"         — Core brand/drill term
@@ -23,23 +23,23 @@ import { pickSources } from '@/lib/drillSources';
 // ============================================================
 
 export const metadata = {
-  title: 'Balance Test Online – Free Cursor Stability Trainer',
-  description: 'Free online balance test. Master force vector counteraction, postural equilibrium, and central crosshair stabilization against dynamic wind resistance.',
+  title: 'Mouse Stability Test | Aim Control Trainer | SkillDrills',
+  description: 'Free browser mouse stability test. Keep your crosshair centered against moving force and train jitter control, recoil control, and precise aim.',
   keywords: [
-    'balance test online',
-    'online balance trainer',
-    'cursor stability challenge',
-    'stability challenge',
-    'force vector counteraction',
-    'postural equilibrium trainer',
-    'wind resistance tracking drill',
-    'central crosshair stabilization',
-    'motor control balance game',
-    'recoil stabilization drill',
+    'mouse stability test',
+    'aim stability trainer',
+    'cursor stability test',
+    'mouse jitter test',
+    'crosshair stability training',
+    'recoil control drill',
+    'aim control browser game',
+    'mouse precision test',
+    'hand eye coordination game',
+    'free aim trainer online',
   ],
   openGraph: {
-    title: 'Balance Test Online – Free Cursor Stability Trainer | SkillDrills',
-    description: 'Free online balance test. Master force vector counteraction, postural equilibrium, and central crosshair stabilization against dynamic wind resistance.',
+    title: 'Mouse Stability Test | Aim Control Trainer | SkillDrills',
+    description: 'Keep your crosshair centered against moving force and train mouse jitter, recoil control, and precise aim in a free browser drill.',
     type: 'article',
     url: 'https://skilldrills.online/drills/physical/balance-training/stability-challenge',
     siteName: 'SkillDrills',
@@ -47,8 +47,8 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Balance Test Online – Free Cursor Stability Trainer | SkillDrills',
-    description: 'Free online balance test. Master force vector counteraction, postural equilibrium, and central crosshair stabilization against dynamic wind resistance.',
+    title: 'Mouse Stability Test | Aim Control Trainer | SkillDrills',
+    description: 'Keep your crosshair centered against moving force and train mouse jitter, recoil control, and precise aim in a free browser drill.',
   },
   robots: { index: true, follow: true },
   alternates: {
@@ -80,7 +80,8 @@ const softwareApplicationSchema = {
   description: 'Free browser-based balance test and resistance tracking drill. Counter dynamic stochastic wind force vectors to keep your crosshair locked within a contracting central safe ring.',
   url: 'https://skilldrills.online/drills/physical/balance-training/stability-challenge',
   publisher: { '@type': 'Organization', name: 'SkillDrills', url: 'https://skilldrills.online' },
-  dateModified: '2026-09-05',
+  inLanguage: 'en',
+  dateModified: '2026-09-20',
 };
 
 const webApplicationSchema = {
@@ -92,12 +93,15 @@ const webApplicationSchema = {
   browserRequirements: 'Requires modern web browser with HTML5 Canvas and pointer lock raw input support',
   offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
   url: 'https://skilldrills.online/drills/physical/balance-training/stability-challenge',
-  dateModified: '2026-09-05',
+  inLanguage: 'en',
+  dateModified: '2026-09-20',
 };
 
 const faqSchema = {
   '@context': 'https://schema.org',
   '@type': 'FAQPage',
+  inLanguage: 'en',
+  dateModified: '2026-09-20',
   mainEntity: [
     {
       '@type': 'Question',
@@ -187,11 +191,13 @@ const videoGameSchema = {
   '@type': 'VideoGame',
   name: 'Stability Challenge',
   url: 'https://skilldrills.online/drills/physical/balance-training/stability-challenge',
-  description: 'Free online balance test. Master force vector counteraction, postural equilibrium, and central crosshair stabilization against dynamic wind resistance.',
+  description: 'Free browser mouse stability test for centered crosshair control, jitter reduction, and recoil practice against moving force.',
   genre: ['Action', 'Brain Game', 'Reflex Game', 'Coordination'],
   gamePlatform: ['Web Browser', 'Desktop', 'Mobile'],
   applicationCategory: 'Game',
   offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
+  inLanguage: 'en',
+  dateModified: '2026-09-20',
 };
 
 const howToSchema = {
@@ -311,8 +317,8 @@ export default function StabilityChallengePage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(howToSchema) }}
       />
-      <StabilityChallengeClient copy={{ title: 'Stability Challenge', subtitle: 'Cursor Balance & Postural Stability Trainer' }} />
-      <DrillGuide {...guideProps} />
+      <StabilityChallengeClient copy={{ title: 'Mouse Stability Test', subtitle: 'Keep the crosshair centered and reduce mouse jitter' }} />
+      <DrillGuide {...guideProps} singleLineTitles />
       
     </>
   );

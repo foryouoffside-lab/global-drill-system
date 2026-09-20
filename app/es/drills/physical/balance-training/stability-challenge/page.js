@@ -6,7 +6,7 @@ import { pickSources } from '@/lib/drillSources';
 
 // ============================================================
 // SEO RESEARCH FINDINGS — Spain & Latin America (ES / ES-MX)
-// Primary Intent: juegos para mejorar la punteria con el raton, test punteria raton, como controlar el retroceso
+// Native SERP intent: entrenamiento de puntería online, estabilidad del ratón, control del retroceso
 // Spanish Context: Ejercicios para no temblar al apuntar en Valorant/CS2 y control de estabilidad contra perturbaciones
 // High-Demand, Low-Competition Target Keywords:
 //   - "juegos para mejorar la punteria con el raton" (High-volume interactive game query)
@@ -22,27 +22,27 @@ import { pickSources } from '@/lib/drillSources';
 // ============================================================
 
 export const metadata = {
-  title: 'Estabilidad del Ratón – Test de Puntería | SkillDrills',
-  description: 'Test de estabilidad del ratón gratis. Contrarresta fuerzas dinámicas para centrar la retícula, eliminar temblores y controlar el retroceso en shooters.',
+  title: 'Estabilidad de puntería | Test de ratón | SkillDrills',
+  description: 'Entrenamiento gratis de puntería en el navegador. Mantén la retícula centrada contra fuerzas móviles y practica estabilidad, temblor y retroceso.',
   keywords: [
-    "juegos para mejorar la punteria con el raton",
-    "test punteria raton",
-    "como controlar el retroceso",
-    "control de retroceso con raton",
-    "test de estabilidad del raton",
-    "como evitar que tiemble la mira al disparar",
-    "ejercicios de estabilidad de raton",
-    "entrenamiento de punteria y control motor",
-    "resistencia a perturbaciones externas",
-    "compensacion de retroceso valorant cs2"
+    "entrenamiento de puntería online gratis",
+    "test de precisión del ratón",
+    "cómo evitar que tiemble la mira",
+    "cómo controlar el retroceso",
+    "estabilidad de la puntería",
+    "ejercicios de estabilidad del ratón",
+    "entrenador de puntería FPS",
+    "control de la mira con ratón",
+    "seguimiento estable de objetivos",
+    "puntería Valorant y CS2"
   ],
   alternates: {
     canonical: 'https://skilldrills.online/es/drills/physical/balance-training/stability-challenge',
     languages: getAlternateLanguages('/drills/physical/balance-training/stability-challenge'),
   },
   openGraph: {
-    title: 'Estabilidad del Ratón – Test de Puntería | SkillDrills',
-    description: 'Test de estabilidad del ratón gratis. Contrarresta fuerzas dinámicas para centrar la retícula, eliminar temblores y controlar el retroceso en shooters.',
+    title: 'Estabilidad de puntería | Test de ratón | SkillDrills',
+    description: 'Mantén la retícula centrada y practica estabilidad, control del temblor y retroceso en un entrenamiento gratis de navegador.',
     url: 'https://skilldrills.online/es/drills/physical/balance-training/stability-challenge',
     siteName: 'SkillDrills',
     locale: 'es_ES',
@@ -50,8 +50,8 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Estabilidad del Ratón – Test de Puntería | SkillDrills',
-    description: 'Test de estabilidad del ratón gratis. Contrarresta fuerzas dinámicas para centrar la retícula, eliminar temblores y controlar el retroceso en shooters.',
+    title: 'Estabilidad de puntería | Test de ratón | SkillDrills',
+    description: 'Mantén la retícula centrada y practica estabilidad, control del temblor y retroceso en un entrenamiento gratis de navegador.',
   },
   robots: { index: true, follow: true },
 };
@@ -98,7 +98,10 @@ const softwareApplicationSchema = {
     "price": "0",
     "priceCurrency": "USD"
   },
-  "description": "Herramienta científica de control motor fino y resistencia a perturbaciones externas para corregir temblores de ratón y perfeccionar el control de retroceso."
+  "description": "Herramienta científica de control motor fino y resistencia a perturbaciones externas para corregir temblores de ratón y perfeccionar el control de retroceso.",
+  "url": "https://skilldrills.online/es/drills/physical/balance-training/stability-challenge",
+  "inLanguage": "es-ES",
+  "dateModified": "2026-09-20"
 };
 
 const webApplicationSchema = {
@@ -113,7 +116,9 @@ const webApplicationSchema = {
     "@type": "Offer",
     "price": "0",
     "priceCurrency": "USD"
-  }
+  },
+  "inLanguage": "es-ES",
+  "dateModified": "2026-09-20"
 };
 
 const videoGameSchema = {
@@ -123,12 +128,16 @@ const videoGameSchema = {
   "url": "https://skilldrills.online/es/drills/physical/balance-training/stability-challenge",
   "description": "Juego de reflejos y resistencia neuromuscular donde debes estabilizar la mira contra ráfagas de fuerza continuas.",
   "genre": ["Action", "Sports Game", "Reflex Game", "Motor Training"],
-  "gamePlatform": ["Web Browser", "Desktop", "Mobile"]
+  "gamePlatform": ["Web Browser", "Desktop", "Mobile"],
+  "inLanguage": "es-ES",
+  "dateModified": "2026-09-20"
 };
 
 const faqSchema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
+  "inLanguage": "es-ES",
+  "dateModified": "2026-09-20",
   "mainEntity": [
     {
       "@type": "Question",
@@ -333,8 +342,8 @@ export default function StabilityChallengeEsPage() {
       />
       <StabilityChallengeClient
         copy={{
-          title: 'Estabilidad del Ratón – Test de Puntería | SkillDrills',
-          subtitle: 'Estabilidad del Ratón – Test de Puntería | SkillDrills',
+          title: 'Estabilidad de puntería',
+          subtitle: 'Mantén la mira centrada y reduce el temblor',
           hudLabels: {
             score: "Puntos",
             time: "Tiempo",

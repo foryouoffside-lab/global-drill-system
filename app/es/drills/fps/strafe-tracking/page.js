@@ -6,21 +6,21 @@ import { getAlternateLanguages } from '@/lib/i18n/locales';
 import { pickSources } from '@/lib/drillSources';
 
 export const metadata = {
-  title: "Strafe Tracking de Puntería – Mira Reactiva | SkillDrills",
-  description: "Entrena strafe tracking reactivo y lectura de cambios de dirección en tu navegador. Domina el seguimiento de blancos para Apex y Overwatch 2 gratis.",
+  title: "Entrenamiento de Tracking | Puntería FPS | SkillDrills",
+  description: "Entrenamiento gratis de tracking en navegador: practica puntería en movimiento, strafes y cambios de dirección para Apex y Overwatch 2.",
   keywords: [
-    "entrenamiento de strafe tracking",
-    "tracking de strafes fps",
-    "entrenar punteria en movimiento",
-    "tracking reactivo fps",
-    "como mejorar tracking apex",
-    "seguimiento adad punteria",
-    "control de punteria en strafe",
-    "entrenamiento de punteria reactiva",
+    "entrenamiento de tracking",
+    "tracking de strafe",
+    "entrenar puntería en movimiento",
+    "tracking reactivo FPS",
+    "cómo mejorar tracking Apex",
+    "seguimiento ADAD puntería",
+    "control de puntería en strafe",
+    "entrenamiento de puntería reactiva",
     "entrenador de tracking gratis",
-    "mejorar tracking overwatch 2",
-    "punteria de seguimiento de strafe",
-    "ejercicio de tracking fps"
+    "mejorar tracking Overwatch 2",
+    "seguimiento de objetivo en movimiento",
+    "ejercicio de tracking FPS"
   ],
   alternates: {
     canonical: "https://skilldrills.online/es/drills/fps/strafe-tracking",
@@ -31,8 +31,8 @@ export const metadata = {
     follow: true,
   },
   openGraph: {
-    title: "Strafe Tracking de Puntería – Mira Reactiva | SkillDrills",
-    description: "Entrena strafe tracking reactivo y lectura de cambios de dirección en tu navegador. Domina el seguimiento de blancos para Apex y Overwatch 2 gratis.",
+    title: "Entrenamiento de Tracking | Puntería FPS | SkillDrills",
+    description: "Entrenamiento gratis de tracking en navegador: practica puntería en movimiento, strafes y cambios de dirección para Apex y Overwatch 2.",
     url: "https://skilldrills.online/es/drills/fps/strafe-tracking",
     siteName: 'SkillDrills',
     locale: 'es_ES',
@@ -40,8 +40,8 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: "Strafe Tracking de Puntería – Mira Reactiva | SkillDrills",
-    description: "Entrena strafe tracking reactivo y lectura de cambios de dirección en tu navegador. Domina el seguimiento de blancos para Apex y Overwatch 2 gratis.",
+    title: "Entrenamiento de Tracking | Puntería FPS | SkillDrills",
+    description: "Entrenamiento gratis de tracking en navegador: practica puntería en movimiento, strafes y cambios de dirección para Apex y Overwatch 2.",
   },
 };
 
@@ -65,7 +65,7 @@ export default function StrafeTrackingEsPage() {
     "applicationCategory": "Game",
     "operatingSystem": "Web Browser",
     "browserRequirements": "Requiere soporte de HTML5 Canvas y Pointer Lock API",
-    "dateModified": "2026-09-16"
+    "dateModified": "2026-09-20"
   };
 
   const softwareSchema = {
@@ -74,7 +74,7 @@ export default function StrafeTrackingEsPage() {
     "name": "Entrenador de Strafe Tracking FPS",
     "applicationCategory": "GameApplication",
     "operatingSystem": "Web Browser",
-    "dateModified": "2026-09-16",
+    "dateModified": "2026-09-20",
     "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
     "description": "Entrenador online de strafe tracking reactivo, lectura de cambios de dirección y respuesta motora de seguimiento suave para shooters competitivos.",
     "genre": "Entrenamiento FPS / Tracking Reactivo",
@@ -92,7 +92,7 @@ export default function StrafeTrackingEsPage() {
     "name": "Entrenador de Strafe Tracking FPS",
     "url": "https://skilldrills.online/es/drills/fps/strafe-tracking",
     "description": "Entrenador online de strafe tracking reactivo, lectura de cambios de dirección y respuesta motora de seguimiento suave para shooters competitivos.",
-    "dateModified": "2026-09-16",
+    "dateModified": "2026-09-20",
     "gamePlatform": "Web Browser",
     "genre": ["Entrenamiento FPS", "Aim Trainer", "Tracking Reactivo"],
     "playMode": "SinglePlayer",
@@ -104,7 +104,7 @@ export default function StrafeTrackingEsPage() {
   const faqSchema = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
-    "dateModified": "2026-09-16",
+    "dateModified": "2026-09-20",
     "mainEntity": [
       {
         "@type": "Question",
@@ -227,9 +227,9 @@ export default function StrafeTrackingEsPage() {
   };
 
   const strafeTrackingGuide = {
-    heading: "Guía de Strafe Tracking de Puntería y Biomecánica del Seguimiento Reactivo",
+    heading: "Guía de Tracking y Puntería Reactiva en Movimiento",
     intro: [
-      "El Strafe Tracking Aim Trainer es un simulador de acondicionamiento neuromuscular diseñado para aislar y perfeccionar el seguimiento lateral reactivo contra evasiones erráticas en ADAD. En los shooters en primera persona modernos — especialmente Apex Legends, Overwatch 2, The Finals y Call of Duty — los enfrentamientos se deciden por el tiempo de mira sobre el objetivo (tracking uptime): la proporción de tiempo continuo en la que tu cruceta permanece fija en el rival mientras este varía su ritmo, se agacha e invierte su dirección.",
+      "Este entrenamiento de tracking desarrolla el seguimiento lateral reactivo contra evasiones erráticas en ADAD. En Apex Legends, Overwatch 2, The Finals y Call of Duty, mantener la mira sobre el objetivo mientras cambia de dirección ayuda a conservar el daño.",
       "La base neurofisiológica del seguimiento visual de movimiento fue desarrollada por Richard J. Krauzlis (2004), describiendo cómo el cerebro coordina los movimientos oculares de persecución suave a través de circuitos recíprocos entre la corteza visual de movimiento (MT/V5), el área temporal superior medial (MST) y el campo ocular frontal (FEF). Al detectar desplazamiento, estas áreas calculan el error de velocidad retiniana en tiempo real para sincronizar las respuestas motrices ocular y manual.",
       "En un descubrimiento fundamental de la psicofísica visual, Cyril Rashbass (1961) demostró que el seguimiento suave y los movimientos sacádicos están gobernados por subsistemas fisiológicos independientes: las sacadas responden a diferencias posicionales, mientras que el seguimiento suave reacciona exclusivamente a la velocidad retiniana. En combate, los jugadores que intentan adivinar las inversiones provocan sacadas involuntarias de corrección, generando sobretiro (overshoot) e inestabilidad en la puntería.",
       "Integrando el modelo de atención orientada de Michael I. Posner (1990), los paradigmas de seguimiento espacial de C. Shawn Green & Daphne Bavelier (2003) y la cronometría digital de baja latencia (Woods et al., 2015), este entrenamiento condiciona al jugador a eliminar suposiciones infundadas, reducir la tensión muscular del antebrazo y lograr un seguimiento suave puramente reactivo ante trayectorias dinámicas.",
@@ -293,8 +293,8 @@ export default function StrafeTrackingEsPage() {
 
   const copyEs = {
     h1Prefix: null,
-    h1Keyword: "Strafe Tracking de Puntería",
-    h1Suffix: " – Mira Reactiva FPS",
+    h1Keyword: "Entrenamiento de Tracking",
+    h1Suffix: " – Puntería en Movimiento FPS",
     caption: "El strafe tracking es la destreza de mantener la mira sobre un rival con desplazamientos impredecibles. La persecución suave humana responde con precisión hasta unos 30°/s, y cada giro brusco demanda una sacada de corrección tras 100–130 ms (Rashbass, 1961; Krauzlis, 2004). Entrena la sincronización de velocidad y la reacción inmediata.",
     statStatus: "Estado",
     statusTracking: "SEGUIMIENTO",
@@ -306,7 +306,7 @@ export default function StrafeTrackingEsPage() {
     statScore: "Puntuación",
     pausedTitle: "Juego en Pausa",
     pausedPrompt: "Haz clic para reanudar — el bloqueo de cursor se activará de nuevo.",
-    startTitle: "Strafe Tracking Reactivo",
+    startTitle: "Entrenamiento de Tracking",
     startSubtitle: "Entrada Directa de Hardware · Niveles con Dificultad Dinámica",
     startButtonText: "Iniciar Ejercicio",
     getReady: "PREPÁRATE",
@@ -324,7 +324,7 @@ export default function StrafeTrackingEsPage() {
       { num: "3", text: "Progresión de Nivel", highlight: "+1 Nivel / 1400 PTS", result: "Strafe Adaptativo" },
       { num: "4", text: "Penalización de Desvío", highlight: "1.0s Fuera del Blanco", result: "Reinicia Combo (-0.6s)" }
     ],
-    aboutTitle: "Acerca del Strafe Tracking Reactivo",
+    aboutTitle: "Sobre Tracking y Puntería en Movimiento",
     whatIsTitle: "¿Qué es el Entrenamiento de Strafe Tracking?",
     whatIsLead: "El strafe tracking consiste en sostener la mira sobre un contrincante que varía su trayectoria de manera errática. El seguimiento suave humano opera de manera óptima hasta unos 30°/s, y cada cambio súbito de dirección requiere una sacada de ajuste 100–130 ms más tarde (Rashbass, 1961; Krauzlis, 2004).",
     aboutIntro: [

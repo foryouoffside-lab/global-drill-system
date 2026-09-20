@@ -22,8 +22,7 @@ import FpsStartCard from '../../../../components/drill/FpsStartCard';
 import DrillResultCard from '../../../../components/drill/DrillResultCard';
 import { drawTacticalTarget, createHitRing, drawHitRings } from '@/lib/canvasFx';
 import useImmersiveMode from '@/lib/useImmersiveMode';
-import { useTranslation } from '@/lib/i18n/useTranslation';
-
+import { getReflexTrainingDrillUi } from '@/lib/i18n/drills/reflexTrainingDrillNative';
 // ============================================================
 // TUNING CONSTANTS
 // ============================================================
@@ -79,49 +78,39 @@ type BurstTarget = { id: number; x: number; y: number; radius: number; spawnTime
 type Particle = { x: number; y: number; vx: number; vy: number; color: string; life: number };
 type RingBurst = { x: number; y: number; startR: number; maxR: number; life: number; maxLife: number; color: string };
 
-const RULES_ITEMS = [
-  {
-    num: '1',
-    text: 'Clear Burst Targets',
-    highlight: '+100 PTS',
-    result: '× Combo × Level bonus (+0.6s clock per hit)',
-  },
-  {
-    num: '2',
-    text: 'Combo & Heat System',
-    highlight: 'Up to 3.0x Multiplier',
-    result: 'Higher streaks spawn more concurrent targets',
-  },
-  {
-    num: '3',
-    text: 'Level Progression',
-    highlight: 'Continuous Scaling',
-    result: 'Spawn windows tighten and targets shrink',
-  },
-  {
-    num: '4',
-    text: 'Miss & Timeout Rules',
-    highlight: 'Combo Reset',
-    result: 'Zero penalties by default; opt-in time deduction',
-  },
-];
-
 interface ReflexTrainingDrillClientProps {
-  copy?: {
-    title?: string;
-    subtitle?: string;
-    caption?: string;
-  };
+  copy?: Record<string, any>;
 }
 
 export default function ReflexTrainingDrillClient({ copy }: ReflexTrainingDrillClientProps = {}) {
-  const { locale, t } = useTranslation();
+  const ui = copy || getReflexTrainingDrillUi().reflexTrainingDrill;
+  const t = (key: string, fallback: string) => {
+    const field = key.split('.').pop() || '';
+    const aliases: Record<string, string> = {
+      rotateLandscape: 'rotate',
+      rulesTitle: 'rules',
+      aboutTitle: 'about',
+      audienceTitle: 'audience',
+      audienceDesc: 'audienceText',
+      attentionTitle: 'attention',
+      attentionDesc: 'attentionText',
+      interceptionTitle: 'interception',
+      interceptionDesc: 'interceptionText',
+    };
+    return ui[aliases[field] || field] || fallback;
+  };
   const [gameState, setGameState] = useState<'start' | 'countdown' | 'playing' | 'gameOver'>('start');
   const [isFullscreen, setIsFullscreen] = useState<boolean>(false);
   useImmersiveMode(isFullscreen); // locks the page behind while the drill fills the screen
   const [soundEnabled, setSoundEnabled] = useState(true);
   const [flashEnabled, setFlashEnabled] = useState(true);
   const [penaltyEnabled, setPenaltyEnabled] = useState(false);
+  const rulesItems = ui.ruleItems.map((item: any, index: number) => ({
+    num: String(index + 1),
+    text: item.title,
+    highlight: penaltyEnabled ? item.penaltyDetail : item.detail,
+    result: penaltyEnabled ? item.penaltyBadge : item.badge,
+  }));
   const [openAccordion, setOpenAccordion] = useState<string | null>(null);
   const [isMobile, setIsMobile] = useState<boolean>(false);
   const [isPortrait, setIsPortrait] = useState<boolean>(false);
@@ -674,7 +663,7 @@ export default function ReflexTrainingDrillClient({ copy }: ReflexTrainingDrillC
         score: uiScore,
         accuracy: analytics.accuracy,
         speed: analytics.avgReactionTime,
-        drillName: 'Reflex Training Drill',
+        drillName: ui.title,
         rank: analytics.grade?.letter || 'A',
         rankName: analytics.grade?.label || 'ELITE REFLEX',
         playerName: getPlayerName(),
@@ -685,19 +674,19 @@ export default function ReflexTrainingDrillClient({ copy }: ReflexTrainingDrillC
 
       await shareScoreCard(canvas, {
         title: 'Reflex Training Drill — My Score',
-        text: `I scored ${uiScore} (Grade: ${analytics.grade?.letter || 'A'}, Lv. ${analytics.finalLevel}) on Reflex Training Drill at SkillDrills!`,
+        text: ui.shareText.replace('{score}', String(uiScore)),
         url
       });
     } catch (err) {
       if (navigator.share) {
         navigator.share({
           title: 'Reflex Training Drill',
-          text: `I scored ${uiScore} on Reflex Training Drill! Can you beat my score?`,
+        text: ui.shareText.replace('{score}', String(uiScore)),
           url
         }).catch(() => {});
       }
     }
-  }, [uiScore, analytics]);
+  }, [ui, uiScore, analytics]);
 
   return (
     <div className="min-h-screen bg-[#050508] text-white flex flex-col font-sans select-none">
@@ -719,7 +708,7 @@ export default function ReflexTrainingDrillClient({ copy }: ReflexTrainingDrillC
               <span data-seo-kw="1">{copy?.title || t('reflexTrainingDrill.title', 'Reflex Training Drill')}</span>
             </h1>
             <p className="text-[13px] text-slate-400 leading-relaxed">
-              {copy?.caption || t('reflexTrainingDrill.caption', 'Reacting to a single expected target takes a typical adult 200–250 ms. Adding more targets to choose between makes it slower still, and reaction time rises with the number of alternatives you have to sort through (Hick, 1952).')}
+              {copy?.caption || t('reflexTrainingDrill.caption', 'Reacting to a single expected target takes a typical adult 200–250 ms.')}
             </p>
           </div>
         )}
@@ -869,7 +858,7 @@ export default function ReflexTrainingDrillClient({ copy }: ReflexTrainingDrillC
               onToggle={() => setOpenAccordion(openAccordion === 'rules' ? null : 'rules')}
             >
               <div className="grid grid-cols-1 md:grid-cols-2 gap-3 font-sans">
-                {RULES_ITEMS.map((r) => (
+                {rulesItems.map((r) => (
                   <RuleItem key={r.num} {...r} />
                 ))}
               </div>
@@ -887,7 +876,7 @@ export default function ReflexTrainingDrillClient({ copy }: ReflexTrainingDrillC
                     <Eye className="w-4 h-4 text-red-400" /> {t('reflexTrainingDrill.aboutHeading', 'What Is Multi-Target Burst Reflex Training?')}
                   </h3>
                   <p className="text-sm leading-relaxed mb-3 text-gray-300">
-                    {t('reflexTrainingDrill.aboutP1', 'Reflex Training Drill isolates simultaneous multi-target acquisition and divided attention speed. In high-pressure FPS games like Valorant, CS2, Overwatch 2, and Apex Legends, you often encounter multiple targets appearing at the same moment across your field of view.')}
+                    {t('reflexTrainingDrill.aboutP1', 'Reflex Training Drill isolates simultaneous multi-target acquisition and divided attention speed. In high-pressure FPS games like Valorant, CS2, Overwatch 2, and Apex Legends, you often encounter multiple targets appearing at the same moment across your field of view. Adding more targets to choose between makes reaction time slower still, since it rises with the number of alternatives you have to sort through (Hick, 1952).')}
                   </p>
                   <p className="text-sm leading-relaxed text-gray-300">
                     {t('reflexTrainingDrill.aboutP2', 'Clearing a burst of targets before any of them expire conditions rapid saccadic eye movements, priority indexing, and sequential target elimination.')}
@@ -920,33 +909,6 @@ export default function ReflexTrainingDrillClient({ copy }: ReflexTrainingDrillC
               </div>
             </DrillAccordion>
           </div>
-        )}
-
-        {/* RELATED DRILLS GRID */}
-        {!isFullscreen && (
-          <section className="mt-4">
-            <h2 className="text-sm font-bold text-slate-400 uppercase tracking-wider mb-3">
-              Related Reaction Speed Drills
-            </h2>
-            <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
-              {RELATED_DRILLS.map((drill) => (
-                <Link
-                  key={drill.id}
-                  href={drill.href}
-                  className="group bg-[#0c0c16] border border-white/5 hover:border-red-500/40 rounded-xl p-3.5 transition-all duration-200 hover:-translate-y-0.5 flex flex-col justify-between"
-                >
-                  <div>
-                    <div className="text-[10px] font-bold text-red-400 uppercase tracking-wider mb-1">{drill.cat}</div>
-                    <div className="text-xs font-bold text-white group-hover:text-red-300 transition-colors">{drill.name}</div>
-                    <div className="text-[11px] text-slate-400 mt-1 line-clamp-2 leading-relaxed">{drill.desc}</div>
-                  </div>
-                  <div className="text-[10px] font-bold text-slate-500 group-hover:text-red-400 mt-3 flex items-center gap-1 transition-colors">
-                    Train Drill <span>→</span>
-                  </div>
-                </Link>
-              ))}
-            </div>
-          </section>
         )}
 
       </main>

@@ -1,5 +1,6 @@
 import PeripheralPingPursuitClient from '@/app/drills/visual-tracking/peripheral-ping-pursuit/PeripheralPingPursuitClientLoader';
 import DrillGuide from '@/components/drill/DrillGuide';
+import DrillFooter from '@/components/drill/DrillFooter';
 import RelatedDrills from '@/components/drill/RelatedDrills';
 import { getAlternateLanguages } from '@/lib/i18n/locales';
 import { pickSources } from '@/lib/drillSources';
@@ -14,25 +15,23 @@ import { pickSources } from '@/lib/drillSources';
 // ============================================================
 
 export const metadata = {
-  title: "Entraînement Vision Périphérique – SkillDrills",
-  description: "Entrainez votre vision peripherique: reperez les signaux lateraux en maintenant une fixation oculaire centrale stable. Gratuit et sans telechargement.",
+  title: "Entraînement vision périphérique | SkillDrills",
+  description: "Suivez la cible centrale et répondez aux signaux latéraux sans détourner le regard. Exercice gratuit dans le navigateur avec réaction et fixation stable.",
   keywords: [
     "entraînement vision périphérique",
-    "exercices vision périphérique",
-    "attention spatiale diffuse",
-    "élargissement champ visuel",
-    "stabilité fovéale centrale",
-    "détection stimuli périphériques",
+    "exercice vision périphérique",
+    "attention périphérique fixation centrale",
+    "vision périphérique sport",
+    "détection signaux latéraux",
+    "temps de réaction périphérique",
     "perception visuelle latérale",
-    "poursuite visuelle et champ large",
-    "vision périphérique jeux de tir",
-    "acuité visuelle dynamique sport",
-    "coordination fovéale périphérique",
-    "test champ visuel dynamique"
+    "fixation centrale et vision périphérique",
+    "exercice vision périphérique en ligne",
+    "entraînement visuel sport"
   ],
   openGraph: {
-    title: "Entraînement Vision Périphérique – SkillDrills",
-    description: "Entrainez votre vision peripherique: reperez les signaux lateraux en maintenant une fixation oculaire centrale stable. Gratuit et sans telechargement.",
+    title: "Entraînement vision périphérique | SkillDrills",
+    description: "Suivez la cible centrale et détectez les signaux latéraux sans détourner le regard. Exercice gratuit en ligne.",
     type: "website",
     url: "https://skilldrills.online/fr/drills/visual-tracking/peripheral-ping-pursuit",
     siteName: "SkillDrills",
@@ -40,8 +39,8 @@ export const metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Entraînement Vision Périphérique – SkillDrills",
-    description: "Entrainez votre vision peripherique: reperez les signaux lateraux en maintenant une fixation oculaire centrale stable. Gratuit et sans telechargement.",
+    title: "Entraînement vision périphérique | SkillDrills",
+    description: "Pratiquez la fixation centrale et la détection de signaux latéraux dans le navigateur.",
   },
   robots: { index: true, follow: true },
   alternates: {
@@ -72,7 +71,8 @@ const softwareApplicationSchema = {
     "price": "0.00",
     "priceCurrency": "USD"
   },
-  "description": "Logiciel d entraînement visuel à double tâche pour évaluer la stabilité fovéale centrale et la réactivité de détection périphérique."
+  "description": "Outil à double tâche pour pratiquer la stabilité de la fixation centrale et observer la détection de signaux latéraux.",
+  "dateModified": "2026-09-20"
 };
 
 const webAppSchema = {
@@ -82,7 +82,8 @@ const webAppSchema = {
   "url": "https://skilldrills.online/fr/drills/visual-tracking/peripheral-ping-pursuit",
   "applicationCategory": "SportsApplication",
   "operatingSystem": "Tous les navigateurs modernes",
-  "browserRequirements": "Nécessite la prise en charge de JavaScript et HTML5 Canvas"
+  "browserRequirements": "Nécessite la prise en charge de JavaScript et HTML5 Canvas",
+  "dateModified": "2026-09-20"
 };
 
 const videoGameSchema = {
@@ -92,12 +93,14 @@ const videoGameSchema = {
   "description": "Exercice visuel à double tâche où l utilisateur maintient le suivi d une cible centrale tout en détectant des signaux lumineux périphériques.",
   "genre": ["Entraînement Visuel", "Vision Périphérique", "Entraînement des Réflexes"],
   "playMode": "SinglePlayer",
-  "gamePlatform": "Navigateur Web"
+  "gamePlatform": "Navigateur Web",
+  "dateModified": "2026-09-20"
 };
 
 const howToSchema = {
   "@context": "https://schema.org",
   "@type": "HowTo",
+  "dateModified": "2026-09-20",
   "name": "Comment Entraîner sa Vision Périphérique avec le Ping Pursuit",
   "description": "Protocole neurophysiologique pour élargir le champ visuel utile tout en conservant une fixation fovéale centrale rigoureuse.",
   "step": [
@@ -131,13 +134,14 @@ const howToSchema = {
 const faqSchema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
+  "dateModified": "2026-09-20",
   "mainEntity": [
     {
       "@type": "Question",
       "name": "En quoi consiste l entraînement de vision périphérique Ping Pursuit ?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "C est un protocole de double tâche visuelle qui développe l attention spatiale diffuse et élargit le champ visuel utile (UFOV) sans interrompre la poursuite fovéale continue (Posner, 1980)."
+        "text": "C est un exercice à double tâche pour pratiquer l attention périphérique tout en gardant la fixation sur la cible centrale. Le résultat décrit cette séance ; il ne mesure pas et n élargit pas anatomiquement le champ visuel (Posner, 1980)."
       }
     },
     {
@@ -209,7 +213,7 @@ const faqSchema = {
       "name": "À quelle fréquence convient-il de pratiquer pour élargir son champ visuel ?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Trois à cinq sessions de 5 à 10 minutes par semaine permettent d observer un élargissement mesurable du champ visuel utile en 4 à 6 semaines."
+        "text": "Commencez par de courtes sessions avec des pauses et comparez vos propres résultats dans des conditions similaires. Cet outil ne permet pas de promettre un élargissement du champ visuel ni un délai fixe d amélioration. Arrêtez en cas de gêne."
       }
     }
   ]
@@ -219,14 +223,14 @@ const guideProps = {
   heading: "Bases Scientifiques de la Vision Périphérique et de l Attention Diffuse",
   intro: [
     "Le système visuel humain repose sur une division fonctionnelle stricte : la fovéa centrale assure une vision détaillée à haute résolution sur seulement 1° à 2° du champ visuel (voie parvocellulaire), tandis que l ensemble du champ périphérique est gouverné par les bâtonnets et la voie magnocellulaire, ultrasensibles au mouvement et aux fluctuations de luminance (Wolfe, 1994 ; Leigh & Zee, 2015). L instinct naturel pousse les yeux à lancer immédiatement une saccade vers tout stimulus excentré.",
-    "L exercice Ping Pursuit entraîne l aptitude cognitive de l attention spatiale diffuse : la capacité à élargir son champ visuel utile et à détecter des signaux périphériques sans dévier le regard de la cible centrale (Posner, 1980 ; Eriksen & St. James, 1986). En exigeant une fixation fovéale ininterrompue au centre, l exercice conditionne le champ oculaire frontal à inhiber les saccades parasites et aiguise la détection magnocellulaire (Findlay & Walker, 1999).",
+    "L exercice Ping Pursuit pratique l attention spatiale diffuse : détecter des signaux périphériques sans dévier le regard de la cible centrale (Posner, 1980 ; Eriksen & St. James, 1986). En gardant la fixation au centre, il permet de comparer la poursuite et la détection latérale ; il ne promet ni modification du champ visuel ni traitement d un trouble oculaire.",
     "La latence d affichage et la fréquence d échantillonnage des périphériques influencent la détection temporelle des impulsions lumineuses (Woods et al., 2015). Toutes les données de performance sont traitées localement dans votre navigateur pour préserver votre vie privée."
   ],
   benchmarks: {
     title: "Mesures du Champ Visuel Utile (UFOV) et Temps de Réaction Périphérique",
     headers: ["Niveau de Performance", "Champ Visuel Utile (UFOV %)", "Temps de Réaction Périphérique", "Stabilité Centrale", "Profil Neurophysiologique"],
     rows: [
-      ["Élite (Esport / Athlètes)", "Supérieur à 92%", "Inférieur à 280 ms", "Supérieur à 95%", "Dissociation fovéale parfaite ; perception panoramique sans déviation de l axe oculaire central."],
+      ["Élite (Compétition et sport)", "Supérieur à 92%", "Inférieur à 280 ms", "Supérieur à 95%", "Dissociation fovéale parfaite ; perception panoramique sans déviation de l axe oculaire central."],
       ["Avancé (Niveau Compétition)", "85% – 92%", "280 ms – 340 ms", "90% – 95%", "Excellente répartition de l attention diffuse ; temps de réaction minime aux signaux latéraux."],
       ["Compétent (Adulte Sain)", "75% – 84%", "341 ms – 410 ms", "82% – 89%", "Bonne capacité de double tâche ; légère vision en tunnel sous vitesse centrale élevée."],
       ["En Progression", "60% – 74%", "411 ms – 500 ms", "70% – 81%", "Retard sensible ; micro-saccades involontaires fréquentes vers les signaux lumineux périphériques."],
@@ -273,12 +277,12 @@ const guideProps = {
   })),
   sources: pickSources('posner1980', 'eriksen1986', 'wolfe1994', 'findlay1999', 'leigh2015', 'woods2015'),
   related: [
-    { href: "/fr/drills/visual-tracking/constant-slow-pursuit", label: "Poursuite Oculaire Lente Continue (Constant Slow)" },
-    { href: "/fr/drills/visual-tracking/directional-chaos-pursuit", label: "Poursuite avec Chaos Directionnel (Directional Chaos)" },
-    { href: "/fr/drills/visual-tracking/dynamic-evasion-pursuit", label: "Poursuite Évasive Réactive (Dynamic Evasion)" },
-    { href: "/fr/drills/visual-tracking/ghosting-suppress-pursuit", label: "Stabilité de Fixation Oculaire (Ghosting Suppress)" },
-    { href: "/fr/drills/visual-tracking/infinity-pursuit", label: "Entraînement en Huit Infini (Infinity)" },
-    { href: "/fr/drills/visual-tracking/momentum-teleport-pursuit", label: "Poursuite de Cible Téléportée (Momentum)" }
+    { href: "/fr/drills/visual-tracking/constant-slow-pursuit", label: "Poursuite oculaire fluide continue" },
+    { href: "/fr/drills/visual-tracking/directional-chaos-pursuit", label: "Poursuite avec changements de direction" },
+    { href: "/fr/drills/visual-tracking/dynamic-evasion-pursuit", label: "Poursuite évasive réactive" },
+    { href: "/fr/drills/visual-tracking/ghosting-suppress-pursuit", label: "Stabilité de la fixation oculaire" },
+    { href: "/fr/drills/visual-tracking/infinity-pursuit", label: "Exercice oculaire en huit" },
+    { href: "/fr/drills/visual-tracking/momentum-teleport-pursuit", label: "Poursuite d une cible déplacée" }
   ]
 };
 
@@ -294,9 +298,9 @@ export default function FrenchPeripheralPingPage() {
 
       <PeripheralPingPursuitClient
         copy={{
-          title: "Entraînement de Vision Périphérique et Élargissement du Champ Visuel",
-          subtitle: "Évaluation en Double Tâche : Fixation Fovéale Centrale et Détection de Signaux Latéraux",
-          description: "Entraînement neurovisuel gratuit pour contrer la vision en tunnel et cultiver l attention spatiale diffuse. Poursuivez la cible centrale avec régularité tout en captant les signaux latéraux aux marges de l écran sans dévier le regard. Gratuit dans votre navigateur."
+          title: "Entraînement de vision périphérique et fixation centrale",
+          subtitle: "Double tâche : fixation centrale et détection de signaux latéraux",
+          description: "Exercice gratuit pour pratiquer l attention périphérique : suivez la cible centrale et détectez les signaux latéraux sans détourner le regard. Comparez vos résultats dans le navigateur."
         }}
       />
 
@@ -305,6 +309,7 @@ export default function FrenchPeripheralPingPage() {
       <div className="max-w-6xl mx-auto px-4 pb-12">
         <RelatedDrills currentCategory="visual-tracking" currentHref="https://skilldrills.online/fr/drills/visual-tracking/peripheral-ping-pursuit" />
       </div>
+      <DrillFooter />
     </>
   );
 }

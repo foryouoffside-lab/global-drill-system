@@ -5,32 +5,21 @@ import { getAlternateLanguages } from '@/lib/i18n/locales';
 import RelatedDrills from '@/components/drill/RelatedDrills';
 import DrillFooter from '@/components/drill/DrillFooter';
 
-// ============================================================
-// GERMAN SEARCH KEYWORD RESEARCH & INTENT CLUSTERING (DACH)
-// Primary query: "flick shot training" (Core German gaming query)
-// Secondary:    "snap aim uebungen", "maus flick praezision", "flick aim lernen", "aim trainer deutsch"
-// LSI / Domain:  "ballistische mausbewegung", "korrektursakkade", "mauspad reibungswiderstand",
-//               "ueberschwingen verhindern", "antagonistische muskelkontraktion", "fitts gesetz"
-// Authentic Domain Terms: Flick Shot Training, Snap Aiming, Zielerfassung (Target Acquisition),
-//                         Korrektursakkade (Corrective Saccade), Muskelbremsung (Decelerative Braking)
-// ============================================================
-
 export const metadata = {
-  title: "Flick Shot Training – Snap Aim und Präzision | SkillDrills",
-  description: "Kostenloses Flick Shot Training im Browser. Trainiere Snap Aiming, Mausbeschleunigung und Reibungsbremsung für präzise Headshots in CS2 und Valorant.",
+  title: "Aim Trainer – Flick-Training im Browser | SkillDrills",
+  description: "Kostenloser Aim Trainer im Browser für Flicks und präzise Erstschüsse in Valorant und CS2. Trainiere Zielerfassung, Bremsung, Score und Trefferquote.",
   keywords: [
-    "Flick Shot Training",
-    "Snap Aiming Übungen",
-    "Maus Flick Präzision",
+    "Aim Trainer",
+    "Aim Trainer online",
+    "Aim Training",
+    "Valorant Aim Trainer",
+    "Flick Training",
     "Flick Aim lernen",
-    "Aim Trainer kostenlos",
-    "CS2 Flick Shot",
+    "CS2 Aim Training",
     "Valorant Aim Training",
-    "Mausbeschleunigung stoppen",
-    "Headshot Präzision verbessern",
-    "Reaktionsschnelles Zielen",
-    "Zielerfassung FPS Übung",
-    "Ballistische Mausbewegung"
+    "Zielgenauigkeit FPS",
+    "Fadenkreuz stoppen",
+    "Headshot Präzision"
   ],
   alternates: {
     canonical: "https://skilldrills.online/de/drills/fps/flick-shot-training",
@@ -41,8 +30,8 @@ export const metadata = {
     follow: true,
   },
   openGraph: {
-    title: "Flick Shot Training – Snap Aim und Präzision | SkillDrills",
-    description: "Kostenloses Flick Shot Training im Browser. Trainiere Snap Aiming, Mausbeschleunigung und Reibungsbremsung für präzise Headshots in CS2 und Valorant.",
+    title: "Aim Trainer – Flick-Training im Browser | SkillDrills",
+    description: "Kostenloser Aim Trainer im Browser für Flicks und präzise Erstschüsse in Valorant und CS2. Trainiere Zielerfassung, Bremsung, Score und Trefferquote.",
     url: "https://skilldrills.online/de/drills/fps/flick-shot-training",
     siteName: 'SkillDrills',
     locale: 'de_DE',
@@ -50,8 +39,8 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: "Flick Shot Training – Snap Aim und Präzision | SkillDrills",
-    description: "Kostenloses Flick Shot Training im Browser. Trainiere Snap Aiming, Mausbeschleunigung und Reibungsbremsung für präzise Headshots in CS2 und Valorant.",
+    title: "Aim Trainer – Flick-Training im Browser | SkillDrills",
+    description: "Kostenloser Aim Trainer im Browser für Flicks und präzise Erstschüsse in Valorant und CS2. Trainiere Zielerfassung, Bremsung, Score und Trefferquote.",
   },
 };
 
@@ -62,19 +51,19 @@ export default function FlickShotDePage() {
     "itemListElement": [
       { "@type": "ListItem", "position": 1, "name": "SkillDrills", "item": "https://skilldrills.online/de" },
       { "@type": "ListItem", "position": 2, "name": "FPS Aim Training", "item": "https://skilldrills.online/de/drills/fps" },
-      { "@type": "ListItem", "position": 3, "name": "Flick Shot Training", "item": "https://skilldrills.online/de/drills/fps/flick-shot-training" }
+      { "@type": "ListItem", "position": 3, "name": "Aim Trainer – Flick-Training", "item": "https://skilldrills.online/de/drills/fps/flick-shot-training" }
     ]
   };
 
   const softwareSchema = {
     "@context": "https://schema.org",
     "@type": "SoftwareApplication",
-    "name": "Flick Shot Training",
+    "name": "Aim Trainer – Flick-Training",
     "applicationCategory": "GameApplication",
     "operatingSystem": "Web Browser",
-    "dateModified": "2026-09-15",
+    "dateModified": "2026-09-20",
     "offers": { "@type": "Offer", "price": "0", "priceCurrency": "EUR" },
-    "description": "Kostenloses Browser-Aim-Training zur Perfektionierung von Snap Aiming, Muskelgedächtnis und Reibungsbremsung.",
+    "description": "Kostenloser Browser-Aim-Trainer für Flicks, Zielerfassung, präzise Bremsung und messbare Trefferquote.",
     "genre": "FPS Training / Flick Shot",
     "url": "https://skilldrills.online/de/drills/fps/flick-shot-training",
     "publisher": {
@@ -87,7 +76,7 @@ export default function FlickShotDePage() {
   const webAppSchema = {
     "@context": "https://schema.org",
     "@type": "WebApplication",
-    "name": "Flick Shot Training",
+    "name": "Aim Trainer – Flick-Training",
     "url": "https://skilldrills.online/de/drills/fps/flick-shot-training",
     "applicationCategory": "GameApplication",
     "operatingSystem": "All",
@@ -97,16 +86,16 @@ export default function FlickShotDePage() {
       "price": "0",
       "priceCurrency": "EUR"
     },
-    "description": "Kostenloses Browser-Aim-Training zur Perfektionierung von Snap Aiming, Muskelgedächtnis und Reibungsbremsung."
+    "description": "Kostenloser Browser-Aim-Trainer für Flicks, Zielerfassung, präzise Bremsung und messbare Trefferquote."
   };
 
   const videoGameSchema = {
     "@context": "https://schema.org",
     "@type": "VideoGame",
-    "name": "Flick Shot Training",
+    "name": "Aim Trainer – Flick-Training",
     "url": "https://skilldrills.online/de/drills/fps/flick-shot-training",
-    "description": "Kostenloses Browser-Aim-Training zur Perfektionierung von Snap Aiming, Muskelgedächtnis und Reibungsbremsung.",
-    "dateModified": "2026-09-15",
+    "description": "Kostenloser Browser-Aim-Trainer für Flicks, Zielerfassung, präzise Bremsung und messbare Trefferquote.",
+    "dateModified": "2026-09-20",
     "gamePlatform": "Web Browser",
     "genre": ["FPS Training", "Aim Trainer", "Flick Shot"],
     "playMode": "SinglePlayer",
@@ -118,7 +107,7 @@ export default function FlickShotDePage() {
   const faqSchema = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
-    "dateModified": "2026-09-15",
+    "dateModified": "2026-09-20",
     "mainEntity": [
       {
         "@type": "Question",
@@ -237,10 +226,10 @@ export default function FlickShotDePage() {
   };
 
   const flickGuide = {
-    heading: "Flick Shot Guide & Biomechanische Benchmarks",
+    heading: "Aim Trainer: Flick-Training und FPS-Zielgenauigkeit",
     subtitle: "Wissenschaftliche Trainingsmethodik für ballistische Zielbeschleunigung, Muskelgedächtnis und millimetergenaue Mausbremsung",
     intro: [
-      "Flick Aiming (Snap Aiming) ist die essenzielle Kernfähigkeit in kompetitiven First-Person-Shootern wie Counter-Strike 2, Valorant und Apex Legends. Es bezeichnet den motorischen Vorgang, das Fadenkreuz aus einer Vorhalteposition in minimaler Zeitspanne exakt auf den Kopf des Gegners zu peitschen und dort ohne Wackeln zu arretieren.",
+      "Wer einen Aim Trainer für FPS sucht, trainiert mit Flick Aiming die schnelle Bewegung des Fadenkreuzes von der Ausgangsposition zum Ziel und das saubere Abstoppen vor dem ersten Schuss. In Counter-Strike 2, Valorant und Apex Legends hilft diese Kombination aus Geschwindigkeit und Trefferquote bei unerwarteten Winkeln.",
       "In der Biomechanik und Neurowissenschaft folgt zielgerichtetes manuelles Zeigen dem Zwei-Phasen-Modell motorischer Kontrolle (Elliott et al., 2010). In der ersten Phase überwindet ein ballistischer, offener Impuls (Open-Loop) etwa 80 bis 90 Prozent der Distanz. Die zweite Phase erfordert eine geschlossene visuelle Rückkopplung (Closed-Loop), um das Ziel foveal einzufangen und den Schuss präzise zu setzen.",
       "Gemäß dem Fitts'schen Gesetz (Fitts, 1954) steigt der Schwierigkeitsindex (Index of Difficulty) logarithmisch mit zunehmender Entfernung und abnehmender Zielgröße. Dieser Trainer konditioniert die Reziproke Innervation und antagonistische Muskelimpulse (Schmidt et al., 1979), wodurch das berüchtigte Übersteuern (Overshooting) systematisch eliminiert wird.",
       "Hinweis zur Messgenauigkeit: Dieser Drill nutzt die hochauflösende Browser-Schnittstelle performance.now() für Latenzmessungen im Sub-Millisekundenbereich. Die Bildausgabe unterliegt der Bildwiederholrate deines Monitors (60Hz, 144Hz, 240Hz), weshalb Abweichungen unter 5 ms auf hardwarebedingte Framerate-Toleranzen zurückzuführen sind."
@@ -328,9 +317,9 @@ export default function FlickShotDePage() {
       />
       <ProFlickClient
         copy={{
-          h1Keyword: "Flick Shot Training",
-          h1Suffix: " – Snap Aim & Präzision",
-          subtitle: "Trainiere Snap Aiming, ballistisches Muskelgedächtnis, Zielerfassung und Mausbremsung mit Echtzeit-Feedback.",
+          h1Keyword: "Aim Trainer",
+          h1Suffix: " – Flick-Training im Browser",
+          subtitle: "Trainiere Flicks und präzise Erstschüsse für Valorant und CS2 direkt im Browser.",
           statScore: "Punkte",
           statTime: "Verbleibende Zeit",
           statAccuracy: "Präzision",
@@ -362,7 +351,7 @@ export default function FlickShotDePage() {
       <div className="max-w-4xl mx-auto px-4 pb-12">
         <RelatedDrills
           currentCategory="fps"
-          currentHref="/drills/fps/flick-shot-training"
+          currentHref="/de/drills/fps/flick-shot-training"
           locale="de"
         />
       </div>

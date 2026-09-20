@@ -1,5 +1,6 @@
 import InfinityPursuitClient from '@/app/drills/visual-tracking/infinity-pursuit/InfinityPursuitClientLoader';
 import DrillGuide from '@/components/drill/DrillGuide';
+import DrillFooter from '@/components/drill/DrillFooter';
 import RelatedDrills from '@/components/drill/RelatedDrills';
 import { getAlternateLanguages } from '@/lib/i18n/locales';
 import { pickSources } from '@/lib/drillSources';
@@ -14,25 +15,25 @@ import { pickSources } from '@/lib/drillSources';
 // ============================================================
 
 export const metadata = {
-  title: "Liegende Acht Augentraining – Infinity | SkillDrills",
-  description: "Kostenloses Augentraining entlang der liegenden Acht: Koordiniere alle 6 äußeren Augenmuskeln und trainiere die foveale Mittellinienkreuzung im Browser.",
+  title: "Liegende Acht | Blickverfolgung | SkillDrills",
+  description: "Kostenlose Augenübung mit der liegenden Acht: übe Blickverfolgung, flüssige Augenfolge und das Überqueren der visuellen Mittellinie.",
   keywords: [
     "liegende acht augentraining",
-    "achter schleife augenuebung",
-    "binokulare koordination training",
-    "mittellinienkreuzung blickuebung",
-    "augentraining liegende 8",
-    "glatte augenfolgebewegung achterbahn",
-    "augenmuskeltraining unendlichkeitsschleife",
-    "blickmotorik koordinationsuebung",
-    "lemniskate augentraining online",
-    "sakkaden unterdrueckung blick",
-    "foveale blickstabilisierung acht",
-    "vision training esport kostenlos"
+    "blickverfolgung liegende acht",
+    "augenübung liegende acht",
+    "blickverfolgung",
+    "augenkoordination",
+    "mittellinie überkreuzen",
+    "beidäugige koordination",
+    "glatte augenfolgebewegung",
+    "blickübung acht online",
+    "visuelles training sport",
+    "augenübung kostenlos",
+    "sichtziel verfolgen übung"
   ],
   openGraph: {
-    title: "Liegende Acht Augentraining – Infinity | SkillDrills",
-    description: "Wissenschaftliches Augentraining entlang der Bernoullischen Lemniskate (liegende Acht). Koordiniert alle 6 äußeren Augenmuskeln und schult die Mittellinienkreuzung.",
+    title: "Liegende Acht | Blickverfolgung | SkillDrills",
+    description: "Kostenlose Augenübung mit der liegenden Acht: übe Blickverfolgung und das Überqueren der visuellen Mittellinie.",
     type: "website",
     url: "https://skilldrills.online/de/drills/visual-tracking/infinity-pursuit",
     siteName: "SkillDrills",
@@ -40,8 +41,8 @@ export const metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Liegende Acht Augentraining – Infinity | SkillDrills",
-    description: "Liegende Acht Blickübung: Trainiere stufenlose Augenfolgebewegungen und das fehlerfreie Überschreiten der visuellen Mittellinie.",
+    title: "Liegende Acht: Blickverfolgung | SkillDrills",
+    description: "Folge einer liegenden Acht und beobachte flüssige Augenbewegungen beim Wechsel über die Mittellinie.",
   },
   robots: { index: true, follow: true },
   alternates: {
@@ -66,13 +67,13 @@ const softwareApplicationSchema = {
   "@type": "SoftwareApplication",
   "name": "Liegende Acht Augentraining – Achter-Schleifen-Blickübung",
   "applicationCategory": "HealthApplication",
-  "operatingSystem": "All",
+  "operatingSystem": "Browser",
   "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
   "description": "Kostenloses interaktives Augentraining entlang der Bernoullischen Lemniskate zur Optimierung der binokularen Koordination und stufenlosen Blickführung.",
   "url": "https://skilldrills.online/de/drills/visual-tracking/infinity-pursuit",
   "publisher": { "@type": "Organization", "name": "SkillDrills", "url": "https://skilldrills.online/de" },
   "inLanguage": "de",
-  "dateModified": "2026-09-15"
+  "dateModified": "2026-09-20"
 };
 
 const webAppSchema = {
@@ -80,12 +81,12 @@ const webAppSchema = {
   "@type": "WebApplication",
   "name": "Liegende Acht Augentraining – Achter-Schleifen-Blickübung & Binokulare Koordination | SkillDrills",
   "applicationCategory": "EducationalApplication",
-  "operatingSystem": "All",
+  "operatingSystem": "Browser",
   "browserRequirements": "HTML5 Canvas-fähiger Webbrowser (Chrome, Edge, Firefox, Safari)",
   "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
   "url": "https://skilldrills.online/de/drills/visual-tracking/infinity-pursuit",
   "inLanguage": "de",
-  "dateModified": "2026-09-15"
+  "dateModified": "2026-09-20"
 };
 
 const videoGameSchema = {
@@ -93,9 +94,10 @@ const videoGameSchema = {
   "@type": "VideoGame",
   "name": "Liegende Acht Augentraining – Achter-Schleifen-Blickübung",
   "url": "https://skilldrills.online/de/drills/visual-tracking/infinity-pursuit",
-  "description": "Präzises Eye-Tracking-Spiel: Verfolge ein kontinuierlich entlang der Bernoullischen Lemniskate kreisendes Ziel mit reiner Augenmotorik ohne Kopfbewegung.",
-  "genre": ["Action", "Brain Game", "Eye Tracking", "Vision Training"],
-  "gamePlatform": ["Web Browser", "Desktop", "Mobile"],
+  "description": "Visuelle Übung im Browser: Verfolge ein Ziel auf einer liegenden Acht mit möglichst ruhiger Augenbewegung.",
+  "genre": ["Augentraining", "Sportliches Sehen", "Blickverfolgung"],
+  "gamePlatform": ["Browser"],
+  "dateModified": "2026-09-20",
   "applicationCategory": "Game",
   "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
 };
@@ -103,6 +105,7 @@ const videoGameSchema = {
 const howToSchema = {
   "@context": "https://schema.org",
   "@type": "HowTo",
+  "dateModified": "2026-09-20",
   "name": "Anleitung zum Liegende-Acht-Augentraining (Lemniskaten-Blickführung)",
   "description": "Vierstufiges klinisches Vorgehen zur Steigerung der binokularen Koordination und fovealen Fixationsstabilität auf der Unendlichkeitsschleife.",
   "step": [
@@ -140,13 +143,14 @@ const howToSchema = {
 const faqSchema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
+  "dateModified": "2026-09-20",
   "mainEntity": [
     {
       "@type": "Question",
       "name": "Was bewirkt das Augentraining mit der liegenden Acht (Achter-Schleife)?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Die liegende Acht (Bernoullische Lemniskate ∞) ist eine kontinuierliche, geschlossene Bewegungsschleife, die stufenlose Augenfolgebewegungen (Smooth Pursuit) in horizontaler, vertikaler und diagonaler Richtung erzwingt. Durch die stetige Kurvenbahn werden alle sechs äußeren Augenmuskelpaare harmonisch aktiviert, ohne dass abrupte Stopps die neuronale Steuerung unterbrechen."
+        "text": "Die liegende Acht (Bernoullische Lemniskate ∞) ist eine kontinuierliche Bewegungsschleife, bei der die Augen einem Ziel horizontal, vertikal und diagonal folgen. Die Übung macht sichtbar, wie gleichmäßig der Blick die Kurve begleitet; sie verspricht keine Behandlung oder Verbesserung der Sehkraft."
       }
     },
     {
@@ -162,7 +166,7 @@ const faqSchema = {
       "name": "Was versteht man unter dem „Überschreiten der Mittellinie“ und warum ist es oft fehleranfällig?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Wenn der Blick die vertikale Gesichtsfeldmitte überquert, wechselt die primäre Verarbeitung der visuellen Reize von einer Großhirnhälfte zur anderen. Bei unzureichend synchronisierter Reizübertragung über das Corpus Callosum kommt es im Kreuzungspunkt zu einer winzigen okulomotorischen Verzögerung. Das Auge verliert das Ziel kurzzeitig und gleicht den Rückstand mit einem ruckartigen Korrektursprung (Aufholsakkade) aus, was durch gezieltes Training eliminiert wird."
+        "text": "Wenn der Blick die vertikale Gesichtsfeldmitte überquert, wechselt das Ziel von einer Seite zur anderen. Beobachte, ob du es am Kreuzungspunkt kurz verlierst oder eine Korrekturbewegung machst. Das beschreibt die Übung und ist keine Diagnose."
       }
     },
     {
@@ -178,7 +182,7 @@ const faqSchema = {
       "name": "Welchen konkreten Vorteil bringt die liegende Acht für das Aiming in FPS-Games?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "In Shootern wie Apex Legends, Overwatch oder Call of Duty bewegen sich Kontrahenten selten linear, sondern springen, rutschen und strafen in geschwungenen Bögen. Wer den Blick nicht stufenlos führen kann, erleidet ständige Mikrosakkaden, wodurch das Fadenkreuz zittert und Schüsse das Ziel verfehlen. Die Lemniskaten-Übung trainiert einen stabilen Pursuit-Gain von nahezu 1,0, sodass das Fadenkreuz auch bei komplexen Ausweichkurven magnetisch auf dem Ziel haftet."
+        "text": "Die Übung bietet eine kontrollierte Kurve, an der du gleichmäßige Blickführung beobachten kannst. Eine Übertragung auf ein Spiel hängt von der jeweiligen Praxis und Person ab; eine bessere Zielgenauigkeit wird nicht zugesichert."
       }
     },
     {
@@ -227,14 +231,14 @@ const faqSchema = {
 const guideProps = {
   heading: "Liegende Acht Augentraining: Okulomotorische Normwerte und Neurophysiologie",
   intro: [
-    "Die von Jakob Bernoulli 1694 mathematisch formulierte Lemniskate (Bernoullische Schleife) stellt eine stetig gekrümmte Bahn dar, auf der sich Orientierung und Radialbeschleunigung kontinuierlich umkehren. Für das menschliche okulomotorische System stellt das exakte visuelle Abfahren dieser Kontur eine biomechanische Meisterleistung dar: Die horizontalen Musculi rectus medialis und lateralis, die vertikalen Musculi rectus superior und inferior sowie die rotatorischen Musculi obliquus superior und inferior müssen ihre Zugkräfte fortwährend synchron modulieren (Robinson, 1965). Die kortikalen Areale MT/MST (V5) berechnen die stetig rotierenden Geschwindigkeitsvektoren und leiten diese über das frontale Augenfeld (FEF) und die pontinen Kerne an den Flocculus und Paraflocculus des Kleinhirns weiter, um den fovealen Schlupf (Retinal Slip) auf nahezu null zu minimieren (Leigh & Zee, 2015).",
-    "Der biomechanisch und kognitiv kritischste Punkt der Achter-Schleife liegt im zentralen Knotenpunkt, an dem die Blickbahn die vertikale Körper- und Gesichtsfeldmittellinie kreuzt. Beim Übergang von der linken in die rechte Hemisphäre wechselt die neuronale Repräsentation der Fovealsignale schlagartig zwischen den beiden Großhirnhälften. Dieser Informationsaustausch erfordert eine hochpräzise Übertragung über das Corpus Callosum (Leigh & Zee, 2015). Bestehen hier minimale Latenzen, bricht die stufenlose Augenfolgebewegung (Smooth Pursuit) für Sekundenbruchteile ein: Das Auge gerät in Rückstand und führt eine ruckartige Ausgleichsbewegung (Korrektursakkade bzw. Catch-up Saccade) aus. Durch gezieltes Lemniskaten-Training wird dieser interhemisphärische Transfer konditioniert, wodurch Blicksprünge und Sehachsenblockaden an der Mittellinie dauerhaft beseitigt werden.",
-    "Anders als bei kreisförmigen Blickübungen mit konstanter Winkelgeschwindigkeit verändert die Bernoullische Lemniskate ihren Krümmungsradius dynamisch: Während an den Scheitelpunkten der Außenschlaufen starke Richtungswechsel stattfinden, beschleunigt das Ziel im Übergangsbereich zum Zentrum. Um dieser Bahn ruckfrei zu folgen, reicht eine rein reaktive Feedback-Steuerung nicht aus, da die neuronale Signallaufzeit von der Netzhaut zu den Augenmuskeln rund 100 bis 130 Millisekunden beträgt. Das Kleinhirn muss stattdessen ein internes Vorwärtsmodell etablieren, das die Bahnkrümmung vorausschauend antizipiert und die Innervation der Augenmuskeln prädiktiv skaliert (Barnes, 2008). Regelmäßiges Üben synchronisiert diese internen Modelle und garantiert eine lückenlose foveale Zentrierung selbst bei höheren Geschwindigkeiten (Krauzlis, 2004).",
-    "In der modernen Sport- und Neurovision gilt das Verfolgen der liegenden Acht als Goldstandard zur Diagnostik und Steigerung der binokularen Koordination. Im professionellen E-Sport (insbesondere in schnellen FPS-Titeln) ermöglicht die verfeinerte Lemniskaten-Folgebewegung das ruckfreie Nachführen des Fadenkreuzes bei diagonalen Sprüngen oder komplexen gegnerischen Ausweichmanövern. Im schulischen und beruflichen Alltag verhindert eine harmonische Mittellinienkreuzung das Verrutschen in Textzeilen und steigert die Lesegeschwindigkeit. Darüber hinaus wirkt die allumfassende Beanspruchung aller Augenmuskeln der starren Nahbereichsfixierung moderner Bildschirmarbeit entgegen: Sie fördert die Durchblutung des okulären Gewebes, löst Verspannungen der Ziliarmuskulatur und lindert visuelle Erschöpfungssymptome nachhaltig (Woods et al., 2015)."
+    "Die liegende Acht, auch Bernoullische Lemniskate genannt, verbindet zwei Kurven und einen zentralen Kreuzungspunkt. Wenn du ein bewegtes Ziel mit den Augen verfolgst, wechseln horizontale, vertikale und diagonale Blickbewegungen einander ab. Diese Seite ist eine Übung und kein Test oder Heilmittel für eine Augenerkrankung.",
+    "Am zentralen Knoten wechselt das Ziel von der linken zur rechten Seite des Gesichtsfelds. Beobachte, ob der Blick die Bahn verliert, kurz springt oder dort anhält. So lässt sich die eigene Sitzung unter gleichen Bedingungen beschreiben; aus dem Ergebnis folgt keine Diagnose.",
+    "Die Leichtigkeit der Blickverfolgung hängt von Abstand, Zielgröße, Bildwiederholrate und Ermüdung ab. Wähle ein angenehmes Tempo, blinzele normal und vergleiche nicht unterschiedliche Geräte direkt. Bei Schmerzen, Doppelbildern, Übelkeit oder Schwindel sofort pausieren und bei anhaltenden Beschwerden fachlichen Rat suchen.",
+    "Eine Übertragung auf Lesen, Sport oder Spiele kann nicht pauschal zugesichert werden. Die Seite dient dazu, das Folgen eines bewegten Ziels kurz zu üben und eigene Werte unter gleichen Bedingungen zu vergleichen."
   ],
   benchmarks: {
-    title: "Liegende Acht Performance-Metriken (Lemniscate Pursuit Benchmarks)",
-    headers: ["Leistungsstufe", "Pursuit-Gain (Blickfolge-Verhältnis)", "Mittellinien-Sakkadenrate", "Bahntreue-Effizienz (Trajectory)", "Neurophysiologisches Niveau"],
+    title: "Leistungswerte bei der Blickverfolgung einer liegenden Acht",
+    headers: ["Stufe", "Zielverfolgung", "Verluste an der Mitte", "Bahngenauigkeit", "Praktische Einordnung"],
     rows: [
       ["Elite (Profi-Athleten & E-Sport)", "0,96 – 1,02", "< 2% (nahezu perfekt stufenlos)", "98%+", "Vollkommene Muskelkoordination. Keine Sakkaden an der Mittellinie; internes Kleinhirnmodell perfekt synchronisiert"],
       ["Fortgeschritten (Wettkampf-Level)", "0,90 – 0,95", "2% – 5%", "92% – 97%", "Hervorragende Blickfolgestabilität. Minimale Phasenverzögerung nur an extremen Scheitelpunkten; sichere Fovea-Arretierung"],
@@ -242,28 +246,28 @@ const guideProps = {
       ["Aufbauend (Erhöhte Latenz / Ermüdung)", "0,68 – 0,79", "13% – 22%", "70% – 81%", "Deutliche Nachlaufverzögerung. Wiederholte Blicksprünge, Anzeichen muskulärer Dysbalance oder zervikaler Mitbewegung"],
       ["Basis / Förderbedarf (Sehstress)", "< 0,68", "> 22%", "< 70%", "Stufenlose Verfolgung bricht ab. Häufige unwillkürliche Kopfdrehungen; Grundlagentraining für Binokularsehen und Augenmuskeln ratsam"]
     ],
-    note: "※ Die Referenzwerte basieren auf okulomotorischen Messreihen bei 50–70 cm Bildschirmdistanz und Geschwindigkeiten von 1,0x bis 2,0x über 60 Sekunden Testdauer. Der Pursuit-Gain errechnet sich aus der Winkelgeschwindigkeit des Auges geteilt durch die Winkelgeschwindigkeit des Ziels (Idealwert = 1,0)."
+    note: "Diese Bereiche dienen nur zum Vergleich eigener Sitzungen bei gleichem Bildschirmabstand und sind keine klinischen Normwerte. Die Zielverfolgung misst weder Sehschärfe noch eine Erkrankung."
   },
   techniques: {
     title: "Vier essenzielle Techniken für stufenlose Blickführung auf der Achter-Schleife",
     items: [
       {
-        name: "Zervikale Ruhigstellung & reine okulomotorische Isolation (Cervical Stabilization)",
+        name: "Kopf ruhig halten und nur mit den Augen folgen",
         desc: "Lege zwei Finger sanft an deine Kinnspitze, um jede minimale Kopfdrehung sensorisch sofort zu registrieren. Halte Hals- und Nackenmuskulatur vollkommen entspannt und bewege ausschließlich deine Augen in den Augenhöhlen. Nur so wird der vestibulookuläre Reflex (VOR) entkoppelt und die kortikale Blickmotorik direkt trainiert.",
         tips: "Atme ruhig und gleichmäßig in den Bauch, um ein unbewusstes Anspannen der Nackenmuskeln zu verhindern."
       },
       {
-        name: "Antizipative Geschwindigkeitsanpassung am zentralen Knotenpunkt (Midline Modulation)",
-        desc: "Vor dem Durchqueren der Schnittstelle im Zentrum beschleunigt das Ziel physikalisch bedingt. Um ein 'Überfahren' oder Abreißen des Blicks zu verhindern, richte deine foveale Aufmerksamkeit etwa 50 Millisekunden vor Eintreffen minimal in Bewegungsrichtung vor das Ziel. Dies gleicht die Leitungszeit über das Corpus Callosum aktiv aus.",
+        name: "Vor dem Zentrum das Tempo anpassen",
+        desc: "Vor dem zentralen Kreuzungspunkt kann die Kurve schneller wirken. Halte den Blick weich auf dem Ziel und lasse ihn ohne abrupten Sprung durch die Mitte gleiten.",
         tips: "Fixiere den Kreuzungspunkt nicht starr, sondern lasse den Blick elastisch hindurchgleiten."
       },
       {
-        name: "Vollständiges Ausfahren der äußeren Scheitelradien (Full Radial Extension)",
+        name: "Die äußeren Schleifen vollständig verfolgen",
         desc: "An den Wendepunkten der beiden Schlaufen neigt das Sehsystem dazu, die Kurve unbewusst nach innen 'abzuschneiden'. Zwinge deine Augen, das Ziel bis zum maximalen Außenpunkt zu fixieren. Dadurch werden die Musculi obliqui bis an ihre anatomische Dehngrenze gefordert.",
         tips: "Widerstehe dem Drang, vorzeitig zur Gegenkurve zu springen; nimm die gesamte Kurvenbreite mit."
       },
       {
-        name: "Geschwindigkeitsleiter & 20-20-20-Regenerationszyklus (Velocity Ladder Protocol)",
+        name: "Tempo stufenweise erhöhen und Pausen machen",
         desc: "Absolviere zunächst fehlerfreie 60-Sekunden-Runden auf 1,0x ohne jegliche Sakkadensprünge. Steigere das Tempo erst dann in 0,2x-Schritten. Blicke nach jeder Einheit für 20 Sekunden auf ein mindestens 6 Meter entferntes Objekt, um die Ziliarmuskeln zu detonisieren.",
         tips: "Sobald deine Augen tränen oder brennen, lege eine Pause ein und blinzle mehrmals bewusst."
       }
@@ -283,12 +287,12 @@ const guideProps = {
   })),
   sources: pickSources('robinson1965', 'leigh2015', 'barnes2008', 'krauzlis2004', 'woods2015'),
   related: [
-    { href: "/de/drills/visual-tracking/constant-slow-pursuit", label: "Glatte Augenfolgebewegung (Constant Slow)" },
-    { href: "/de/drills/visual-tracking/directional-chaos-pursuit", label: "Chaotische Blickverfolgung (Directional Chaos)" },
-    { href: "/de/drills/visual-tracking/dynamic-evasion-pursuit", label: "Reaktives Tracking Training (Dynamic Evasion)" },
-    { href: "/de/drills/visual-tracking/ghosting-suppress-pursuit", label: "Fixationsstabilität Sehtraining (Ghosting Suppress)" },
-    { href: "/de/drills/visual-tracking/sine-wave-pursuit", label: "Sinuswellen-Tracking (Sine Wave)" },
-    { href: "/de/drills/visual-tracking/predictive-pursuit", label: "Prädiktives Tracking (Predictive)" }
+    { href: "/de/drills/visual-tracking/constant-slow-pursuit", label: "Langsame Augenfolge" },
+    { href: "/de/drills/visual-tracking/directional-chaos-pursuit", label: "Blickverfolgung mit Richtungswechsel" },
+    { href: "/de/drills/visual-tracking/dynamic-evasion-pursuit", label: "Blickverfolgung bewegter Ziele" },
+    { href: "/de/drills/visual-tracking/ghosting-suppress-pursuit", label: "Fixationsstabilität beim Sehen" },
+    { href: "/de/drills/visual-tracking/sine-wave-pursuit", label: "Sinusförmige Blickverfolgung" },
+    { href: "/de/drills/visual-tracking/predictive-pursuit", label: "Vorausschauende Blickverfolgung" }
   ]
 };
 
@@ -304,9 +308,9 @@ export default function GermanInfinityPursuitPage() {
 
       <InfinityPursuitClient
         copy={{
-          title: "Liegende Acht Augentraining: Achter-Schleifen-Blickübung und Binokulare Koordination",
-          subtitle: "Glatte Augenfolgebewegungen und interhemisphärische Mittellinienkreuzung auf der Bernoullischen Lemniskate",
-          description: "Wissenschaftliches Augentraining entlang der Bernoullischen Lemniskate (liegende Acht). Koordiniert alle sechs äußeren Augenmuskeln (Mm. recti und obliqui) in stufenlosen Blickfolgebewegungen (Smooth Pursuit) und schult die binokulare Koordination beim Überschreiten der visuellen Körpermittellinie ohne sakkadische Störimpulse (Robinson, 1965; Leigh & Zee, 2015). Kostenlos im Browser."
+          title: "Liegende Acht: Augentraining",
+          subtitle: "Blickverfolgung und Mittellinienübergang",
+          description: "Verfolge ein Ziel auf einer liegenden Acht, beobachte den Übergang über die Mitte und übe flüssige Augenbewegungen in einem angenehmen Tempo."
         }}
       />
 
@@ -315,6 +319,7 @@ export default function GermanInfinityPursuitPage() {
       <div className="max-w-6xl mx-auto px-4 pb-12">
         <RelatedDrills currentCategory="visual-tracking" currentHref="https://skilldrills.online/de/drills/visual-tracking/infinity-pursuit" />
       </div>
+      <DrillFooter />
     </>
   );
 }

@@ -5,21 +5,23 @@ import { pickSources } from '@/lib/drillSources';
 import { getAlternateLanguages } from '@/lib/i18n/locales';
 
 export const metadata = {
-  title: "Test de Mémoire Verbale – Rappel de Mots | SkillDrills",
-  description: "Test de memoire verbale en ligne gratuit: Retenez des listes de mots, maitrisez l effet de position serielle et entrainez votre memoire de travail sans compte.",
+  title: "Test mémoire des mots en ligne | Mémoire | SkillDrills",
+  description: "Test gratuit de mémoire des mots : mémorisez une liste, rappelez les mots librement et entraînez votre mémoire verbale dans le navigateur.",
   keywords: [
-    "test de memoire verbale",
-    "test rappel de mots gratuit",
-    "test de rappel libre en ligne",
-    "effet de position serielle test",
-    "memoire des mots exercice",
-    "test memoire a court terme mots",
-    "empan verbal et rappel libre",
-    "exercice memoire semantique gratuit",
-    "test de memoire des listes de mots",
-    "entrainement memoire verbale",
-    "test neuropsychologique rappel de mots",
-    "evaluation memoire de travail verbale"
+    "test mémoire des mots",
+    "test de mémoire verbale",
+    "rappel libre de mots",
+    "retenir une liste de mots",
+    "mémoire verbale à court terme",
+    "effet de primauté et récence",
+    "rappel de mots test",
+    "mémoire des listes de mots",
+    "exercice mémoire verbale",
+    "mémoire de travail verbale",
+    "test de mémoire gratuit",
+    "regroupement sémantique",
+    "test neuropsychologique mots",
+    "mémoriser des mots"
   ],
   alternates: {
     canonical: "https://skilldrills.online/fr/drills/memory/short-term-memory/word-recall",
@@ -30,8 +32,8 @@ export const metadata = {
     follow: true,
   },
   openGraph: {
-    title: "Test de Mémoire Verbale – Rappel de Mots | SkillDrills",
-    description: "Test de memoire verbale en ligne gratuit: Retenez des listes de mots, maitrisez l effet de position serielle et entrainez votre memoire de travail sans compte.",
+    title: "Test mémoire des mots en ligne | Mémoire | SkillDrills",
+    description: "Test gratuit de mémoire des mots : mémorisez une liste, rappelez les mots librement et entraînez votre mémoire verbale dans le navigateur.",
     url: "https://skilldrills.online/fr/drills/memory/short-term-memory/word-recall",
     siteName: 'SkillDrills',
     locale: 'fr_FR',
@@ -39,8 +41,8 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: "Test de Mémoire Verbale – Rappel de Mots | SkillDrills",
-    description: "Test de memoire verbale en ligne gratuit: Retenez des listes de mots, maitrisez l effet de position serielle et entrainez votre memoire de travail sans compte.",
+    title: "Test mémoire des mots en ligne | Mémoire | SkillDrills",
+    description: "Test gratuit de mémoire des mots : mémorisez une liste, rappelez les mots librement et entraînez votre mémoire verbale dans le navigateur.",
   },
 };
 
@@ -98,6 +100,7 @@ const webAppSchema = {
   "offers": { "@type": "Offer", "price": "0", "priceCurrency": "EUR" },
   "author": { "@type": "Organization", "name": "SkillDrills" },
   "isAccessibleForFree": true,
+  "sameAs": ["https://fr.wikipedia.org/wiki/M%C3%A9moire_%C3%A0_court_terme"],
   "dateModified": "2026-09-16"
 };
 
@@ -333,6 +336,9 @@ export default function FrenchWordRecallPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(howToSchema) }}
       />
       <WordRecallClient copy={{
+        h1Keyword: "Test de mémoire verbale",
+        h1Suffix: " – Rappel libre de mots",
+        subtitle: "Mémorisez des mots et rappelez-les librement",
         wordsLabel: "Mots",
         scoreLabel: "Score",
         timeLeftLabel: "Temps",
@@ -340,7 +346,7 @@ export default function FrenchWordRecallPage() {
         memorizeTitle: "MEMORISEZ LA LISTE",
         evaluating: "Evaluation...",
         startTitle: "Test de Memoire Verbale Pro",
-        startSubtitle: "Memoire a Court Terme • Rappel Libre de Mots",
+        startSubtitle: "Mémoire verbale • rappel libre de mots",
         countdownSubtitle: "PREPAREZ-VOUS",
         newBest: "NOUVEAU RECORD",
         pointsLabel: "Points",
@@ -387,7 +393,7 @@ export default function FrenchWordRecallPage() {
       <div className="max-w-4xl mx-auto px-4 pb-12">
         <RelatedDrills
           currentCategory="memory"
-          currentHref="/drills/memory/short-term-memory/word-recall"
+          currentHref="/fr/drills/memory/short-term-memory/word-recall"
           locale="fr"
         />
       </div>

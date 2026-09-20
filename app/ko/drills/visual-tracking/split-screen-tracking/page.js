@@ -1,25 +1,26 @@
 import SplitScreenTrackingClient from '@/app/drills/visual-tracking/split-screen-tracking/SplitScreenTrackingClientLoader';
 import DrillGuide from '@/components/drill/DrillGuide';
 import RelatedDrills from '@/components/drill/RelatedDrills';
+import DrillFooter from '@/components/drill/DrillFooter';
 import { getAlternateLanguages } from '@/lib/i18n/locales';
 import { pickSources } from '@/lib/drillSources';
 
 export const metadata = {
-  title: "화면 분할 시각 추적・분할 주의력 안구 훈련 | SkillDrills",
-  description: "좌우 시야에서 직교 궤적으로 독립 이동하는 두 표적을 동시 모니터링하는 화면 분할 시각 추적 훈련. 양측 대뇌 반구의 분할 주의력과 잠재적 공간 주의를 단련합니다. 무료.",
+  title: "화면 분할 추적 훈련｜분할 주의력 드릴 | SkillDrills",
+  description: "좌우의 움직이는 표적을 동시에 따라가는 무료 브라우저 훈련. 시선 앵커, 좌우 차이, 표적 손실을 기록합니다.",
   keywords: [
     "화면 분할 시각 추적",
     "분할 주의력 안구 훈련",
-    "양측 반구 시각 추종",
     "다중 목표 시선 분리",
-    "미니맵 중심시 동시 주시",
+    "화면 분할 동체시력",
     "주변시 동체시력 훈련",
-    "터널 비전 개선 운동",
-    "에임 분할 주시 훈련",
     "FPS 시선 분산 연습",
     "다중 표적 추적 검사",
-    "화면 분할 동체시력",
-    "양안 동시 주시 훈련"
+    "좌우 표적 동시 추적",
+    "시각 주의력 훈련",
+    "에임 분할 주시 훈련",
+    "터널 시야 주의력 연습",
+    "양측 시야 표적 추적"
   ],
   alternates: {
     canonical: "https://skilldrills.online/ko/drills/visual-tracking/split-screen-tracking",
@@ -27,8 +28,8 @@ export const metadata = {
   },
   robots: { index: true, follow: true },
   openGraph: {
-    title: "화면 분할 시각 추적・분할 주의력 안구 훈련 | SkillDrills",
-    description: "좌우 시야에서 직교 궤적으로 독립 이동하는 두 표적을 동시 모니터링하는 화면 분할 시각 추적 훈련. 양측 대뇌 반구의 분할 주의력과 잠재적 공간 주의를 단련합니다. 무료.",
+    title: "화면 분할 추적 훈련｜분할 주의력 드릴 | SkillDrills",
+    description: "좌우의 움직이는 표적을 동시에 따라가는 무료 브라우저 훈련. 시선 앵커, 좌우 차이, 표적 손실을 기록합니다.",
     url: "https://skilldrills.online/ko/drills/visual-tracking/split-screen-tracking",
     siteName: "SkillDrills",
     locale: "ko_KR",
@@ -36,8 +37,8 @@ export const metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "화면 분할 시각 추적・분할 주의력 안구 훈련 | SkillDrills",
-    description: "좌우 시야에서 직교 궤적으로 독립 이동하는 두 표적을 동시 모니터링하는 화면 분할 시각 추적 훈련. 양측 대뇌 반구의 분할 주의력과 잠재적 공간 주의를 단련합니다. 무료.",
+    title: "화면 분할 추적 훈련｜분할 주의력 드릴 | SkillDrills",
+    description: "좌우의 움직이는 표적을 동시에 따라가는 무료 브라우저 훈련. 시선 앵커, 좌우 차이, 표적 손실을 기록합니다.",
   },
 };
 
@@ -84,7 +85,7 @@ const softwareApplicationSchema = {
     "name": "SkillDrills",
     "url": "https://skilldrills.online"
   },
-  "dateModified": "2026-09-15"
+  "dateModified": "2026-09-20"
 };
 
 const webAppSchema = {
@@ -100,7 +101,7 @@ const webAppSchema = {
     "priceCurrency": "USD"
   },
   "url": "https://skilldrills.online/ko/drills/visual-tracking/split-screen-tracking",
-  "dateModified": "2026-09-15"
+  "dateModified": "2026-09-20"
 };
 
 const videoGameSchema = {
@@ -124,7 +125,8 @@ const videoGameSchema = {
     "@type": "Offer",
     "price": "0",
     "priceCurrency": "USD"
-  }
+  },
+  "dateModified": "2026-09-20"
 };
 
 const howToSchema = {
@@ -132,7 +134,7 @@ const howToSchema = {
   "@type": "HowTo",
   "name": "화면 분할 시각 추적 훈련 진행 방법",
   "description": "분할된 화면에서 직교 운동하는 두 표적을 동시에 추종하고 분할 주의력과 양측 반구 정보 처리 능력을 극대화하는 4단계.",
-  "dateModified": "2026-09-15",
+  "dateModified": "2026-09-20",
   "step": [
     {
       "@type": "HowToStep",
@@ -249,7 +251,8 @@ const faqSchema = {
         "text": "기본 60Hz(프레임 간격 약 16.7ms) 디스플레이에 비해 144Hz(약 6.9ms) 이상의 고주사율 환경에서는 두 직교 표적의 궤적이 끊김 없이 연속 렌더링됩니다(Woods et al., 2015). 잔상 및 하드웨어 디스플레이 지연으로 인한 오차가 배제되어 오롯이 신경계 자체의 다중 표적 인지 능력만을 순수하게 훈련할 수 있습니다."
       }
     }
-  ]
+  ],
+  "dateModified": "2026-09-20"
 };
 
 const guide = {
@@ -319,6 +322,12 @@ const guide = {
       "안면 정렬 및 신체 중심축: 모니터 중앙 분할선이 신체의 정중면(코와 척추의 중심축)과 정확히 수직을 이루도록 의자 높이와 모니터 각도를 정밀 교정합니다."
     ]
   },
+  steps: [
+    { title: "중앙 경계선에 시선을 둡니다", text: "화면 중앙을 부드럽게 바라보고 좌우 표적을 직접 응시하지 않은 채 움직임을 감지합니다." },
+    { title: "좌우 움직임을 나누어 읽습니다", text: "왼쪽의 상하 움직임과 오른쪽의 좌우 움직임을 서로 다른 리듬으로 관찰합니다." },
+    { title: "표적 손실을 기록합니다", text: "어느 표적을 놓쳤는지와 중앙 시선 앵커가 무너졌는지를 세션마다 확인합니다." },
+    { title: "속도를 단계적으로 높입니다", text: "좌우 정확도가 안정된 뒤 속도를 올리고 정확도를 유지하며 난도를 높입니다." }
+  ],
   faqs: [
     {
       q: "화면 분할 시각 추적 훈련(Split-Screen Tracking)이란 무엇인가요?",
@@ -401,15 +410,16 @@ export default function SplitScreenTrackingKoPage() {
 
       <SplitScreenTrackingClient
         copy={{
-          title: "화면 분할 시각 추적",
-          subtitle: "분할 주의력 안구 훈련・양측 반구 시각 추종",
-          description: "화면 중앙을 기준으로 좌우 영역에서 직교하는 수직・수평 벡터로 독립 이동하는 두 표적을 동시 추종하는 시각 신경 훈련. 중심 시선을 유지하며 잠재적 공간 주의를 좌우 대뇌 반구로 균등 분배하여 시야 협착을 방지하고 병렬 시각 정보 처리 능력을 극대화합니다."
+          title: "화면 분할 추적 훈련",
+          subtitle: "좌우 표적을 따라가는 분할 주의력 드릴",
+          description: "좌우의 움직이는 표적을 동시에 따라가며 시선 앵커, 좌우 차이, 표적 손실을 기록하는 무료 브라우저 훈련입니다."
         }}
       />
       <DrillGuide guide={guide} />
       <div className="max-w-6xl mx-auto px-4 pb-12">
         <RelatedDrills currentCategory="visual-tracking" currentHref="https://skilldrills.online/ko/drills/visual-tracking/split-screen-tracking" />
       </div>
+      <DrillFooter />
     </>
   );
 }

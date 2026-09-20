@@ -56,6 +56,14 @@ export const metadata = {
   robots: { index: true, follow: true },
 };
 
+Object.assign(metadata, {
+  title: 'リズムジャンプ練習 | ジャンプタイミングゲーム | SkillDrills',
+  description: '無料のリズムジャンプ練習。跳ぶ高さを調整し、空中で動く標的を捉えて、ジャンプのタイミングと運動協調を鍛えます。',
+  keywords: ['リズムジャンプ', 'リズムトレーニング', 'ジャンプ タイミング 練習', 'ジャンプゲーム 無料', '空中操作 ゲーム', '垂直跳び トレーニング', 'ジャンプ力 トレーニング', '反応 ゲーム', '運動協調', '軌道 予測'],
+  openGraph: { ...metadata.openGraph, title: 'リズムジャンプ練習 | ジャンプタイミングゲーム | SkillDrills', description: '無料のリズムジャンプ練習。跳ぶ高さを調整し、空中で動く標的を捉えて、ジャンプのタイミングと運動協調を鍛えます。' },
+  twitter: { ...metadata.twitter, title: 'リズムジャンプ練習 | ジャンプタイミングゲーム | SkillDrills', description: '無料のリズムジャンプ練習。跳ぶ高さを調整し、空中で動く標的を捉えて、ジャンプのタイミングと運動協調を鍛えます。' },
+});
+
 const breadcrumbSchema = {
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
@@ -106,7 +114,7 @@ const softwareApplicationSchema = {
     "url": "https://skilldrills.online/ja"
   },
   "inLanguage": "ja",
-  "dateModified": "2026-09-12"
+  "dateModified": "2026-09-20"
 };
 
 const webApplicationSchema = {
@@ -123,7 +131,7 @@ const webApplicationSchema = {
   },
   "url": "https://skilldrills.online/ja/drills/physical/fitness/jump-sequence",
   "inLanguage": "ja",
-  "dateModified": "2026-09-12"
+  "dateModified": "2026-09-20"
 };
 
 const videoGameSchema = {
@@ -144,6 +152,8 @@ const videoGameSchema = {
     "Mobile"
   ],
   "applicationCategory": "Game",
+  "inLanguage": "ja",
+  "dateModified": "2026-09-20",
   "offers": {
     "@type": "Offer",
     "price": "0",
@@ -154,7 +164,8 @@ const videoGameSchema = {
 const faqSchema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
-  "dateModified": "2026-09-12",
+  "inLanguage": "ja",
+  "dateModified": "2026-09-20",
   "mainEntity": [
     {
       "@type": "Question",

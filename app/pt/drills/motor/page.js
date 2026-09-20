@@ -6,18 +6,18 @@ import { getLocalizedDrill } from '@/lib/i18n/drillNames';
 const motorDrills = DRILLS.filter((d) => d.category === 'motor');
 
 export const metadata = {
-  title: 'Precisão do Mouse & Teste de CPS Online | SkillDrills',
-  description: 'Treino motor e precisão de mouse online. 9 exercícios científicos para velocidade de clique (CPS), mão firme, velocidade de teclado e coordenação olho-mão.',
+  title: 'Precisão do mouse e treino de mira | SkillDrills',
+  description: '9 drills grátis no navegador para precisão do mouse, treino de mira, CPS, velocidade do teclado e coordenação olho-mão.',
   keywords: [
-    'teste de precisão do mouse online', 'treino de mira online gratis', 'teste de cps cliques por segundo',
-    'teste de velocidade de clique online', 'teste de tremor na mao mouse', 'teste de teclado online teclas',
-    'teste de ghosting de teclado online', 'teste de double click mouse online', 'exercicios de coordenacao motora fina',
-    'controle micromotor do cursor', 'treino de jitter click gratis', 'tecnica butterfly click treino',
-    'jogo do fio eletrico online', 'como melhorar a mira no mouse fps', 'calculadora edpi sensibilidade mouse'
+    'teste de precisão do mouse', 'treino de mira', 'teste CPS', 'coordenação olho-mão',
+    'velocidade do teclado', 'controle do mouse', 'treino de mira online',
+    'precisão de mouse', 'teste de cliques por segundo', 'exercícios de coordenação motora',
+    'treino de mão firme', 'teste de rastreamento do mouse', 'treino de precisão FPS',
+    'velocidade de digitação', 'drills motores grátis'
   ],
   openGraph: {
-    title: 'Precisão do Mouse & Teste de CPS Online | SkillDrills',
-    description: 'Treino motor e precisão de mouse online. 9 exercícios científicos para velocidade de clique (CPS), mão firme, velocidade de teclado e coordenação olho-mão.',
+    title: 'Precisão do mouse e treino de mira | SkillDrills',
+    description: '9 drills grátis no navegador para precisão do mouse, treino de mira, CPS, velocidade do teclado e coordenação olho-mão.',
     type: 'website',
     url: 'https://skilldrills.online/pt/drills/motor',
     siteName: 'SkillDrills',
@@ -26,8 +26,8 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Precisão do Mouse & Teste de CPS Online | SkillDrills',
-    description: 'Velocidade de clique (CPS), mão firme, teste de teclado e mira de precisão: 9 exercícios científicos gratuitos no navegador.',
+    title: 'Precisão do mouse e treino de mira | SkillDrills',
+    description: '9 drills grátis no navegador para precisão do mouse, treino de mira, CPS, velocidade do teclado e coordenação olho-mão.',
     images: ['https://skilldrills.online/icons/icon-512x512.png'],
   },
   robots: { index: true, follow: true },
@@ -50,9 +50,11 @@ const breadcrumbSchema = {
 const collectionSchema = {
   "@context": "https://schema.org",
   "@type": "CollectionPage",
-  "name": "Precisão do Mouse & Controle Motor (9 Exercícios)",
+  "inLanguage": "pt-BR",
+  "dateModified": "2026-09-20",
+  "name": "Teste de precisão do mouse e treino de mira (9 drills)",
   "url": "https://skilldrills.online/pt/drills/motor",
-  "description": "9 exercícios interativos para velocidade de clique (CPS), mira de precisão, eliminação de tremores, teste de teclado e coordenação olho-mão.",
+  "description": "9 drills grátis no navegador para precisão do mouse, treino de mira, CPS, velocidade do teclado e coordenação olho-mão.",
   "author": { "@type": "Organization", "name": "SkillDrills" },
   "hasPart": motorDrills.map((drill) => {
     const loc = getLocalizedDrill(drill.href, 'pt', drill.name);
@@ -71,6 +73,8 @@ const collectionSchema = {
 const faqSchema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
+  "inLanguage": "pt-BR",
+  "dateModified": "2026-09-20",
   "mainEntity": [
     {
       "@type": "Question",

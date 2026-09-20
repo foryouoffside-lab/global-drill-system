@@ -462,9 +462,6 @@ export default function ColorSequenceClient({ copy = null }) {
                 {copy?.subtitle || t('colorSequence.subtitle', 'Simon Game Online & Visual Working Memory Sequence Test')}
               </span>
             </h1>
-            <p className="text-xs text-slate-400 leading-relaxed -mt-0.5">
-              {copy?.caption || t('colorSequence.caption', 'Watch and reproduce the flashing color pattern in the correct order as sequences grow longer.')}
-            </p>
           </div>
         )}
 

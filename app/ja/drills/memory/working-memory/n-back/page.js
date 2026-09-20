@@ -5,24 +5,19 @@ import RelatedDrills from '@/components/drill/RelatedDrills';
 import { pickSources } from '@/lib/drillSources';
 
 // ============================================================
-// SEO RESEARCH FINDINGS — ja-JP (n-back)
-// PRIMARY:  "nバック課題"                — Top Japanese query (13 Google suggestions: ブラウザ, 効果, アプリ)
-//           "デュアルnバック"            — High volume search intent (15 Google suggestions: 効果, ブラウザ)
-// SECONDARY / LSI:
-//           "nバック課題 ブラウザ"        — Web browser specific intent
-//           "nバック課題 効果"            — Cognitive benefit query
-//           "デュアルnバック ブラウザ"    — Web browser dual n-back query
-//           "n-back テスト"              — Assessment query
-//           "ワーキングメモリ 訓練"      — Core cognitive capability
+// Native research (2026-09-20): Bing ja-JP returned 0 exact / 0 broad for
+// "Nバック テスト". Current Japanese app results use "Nバック課題",
+// "デュアルNバック", and "ワーキングメモリ訓練", so the page targets those
+// native task/training terms without claiming measured high volume.
 // ============================================================
 
 export const metadata = {
-  title: "nバック課題・デュアルnバック – ワーキングメモリ訓練 | SkillDrills",
-  description: "無料のオンラインnバック課題（N-Back Test / デュアルnバック）ツール。連続する文字刺激のN個前の一致を判定し、ワーキングメモリ（作業記憶）の更新能力、実行機能、流動性知能をブラウザで測定・強化。",
-  keywords: ['nバック課題', 'デュアルnバック', 'nバック課題 ブラウザ', 'ワーキングメモリ 訓練', 'n-back テスト', '作業記憶 トレーニング', '流動性知能 向上', '実行機能 検査', '情報更新 能力', '脳トレ ワーキングメモリ', 'nバック オンライン', '認知機能 測定'],
+  title: "Nバック課題｜ワーキングメモリ訓練 | SkillDrills",
+  description: "無料のNバック課題をブラウザで実施。N個前の文字を照合し、ワーキングメモリの更新と注意の切り替えを練習します。",
+  keywords: ['Nバック課題', 'デュアルNバック', 'Nバック課題 ブラウザ', 'ワーキングメモリ訓練', '作業記憶トレーニング', 'Nバック オンライン', '2バック', '3バック', '認知トレーニング', '記憶力トレーニング'],
   openGraph: {
-    title: "nバック課題（デュアルnバック）- 無料ブラウザワーキングメモリ訓練 | SkillDrills",
-    description: "無料のオンラインnバック課題（N-Back Test / デュアルnバック）ツール。連続する文字刺激のN個前の一致を判定し、ワーキングメモリ（作業記憶）の更新能力、実行機能、流動性知能をブラウザで測定・強化。",
+    title: "Nバック課題｜ワーキングメモリ訓練 | SkillDrills",
+    description: "無料のNバック課題をブラウザで実施。N個前の文字を照合し、ワーキングメモリの更新を練習します。",
     type: "website",
     url: "https://skilldrills.online/ja/drills/memory/working-memory/n-back",
     siteName: "SkillDrills",
@@ -30,8 +25,8 @@ export const metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "nバック課題（デュアルnバック）- 無料ブラウザワーキングメモリ訓練 | SkillDrills",
-    description: "無料のオンラインnバック課題（N-Back Test / デュアルnバック）ツール。連続する文字刺激のN個前の一致を判定し、ワーキングメモリ（作業記憶）の更新能力、実行機能、流動性知能をブラウザで測定・強化。",
+    title: "Nバック課題｜ワーキングメモリ訓練 | SkillDrills",
+    description: "無料のNバック課題をブラウザで実施。N個前の文字を照合し、ワーキングメモリの更新を練習します。",
   },
   robots: { index: true, follow: true },
   alternates: {
@@ -60,6 +55,7 @@ const webAppSchema = {
   "operatingSystem": "All",
   "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
   "author": { "@type": "Organization", "name": "SkillDrills" },
+  "sameAs": "https://ja.wikipedia.org/wiki/Nバック課題",
   "isAccessibleForFree": true,
   "dateModified": "2026-09-11",
   "educationalUse": ["ワーキングメモリ容量", "連続情報更新", "エグゼクティブ・コントロール", "流動性知能"]
@@ -223,7 +219,8 @@ const faqSchema = {
 
 const nBackClientCopyJa = {
   h1Keyword: "nバック課題",
-  h1Suffix: "（デュアルnバック）ワーキングメモリ訓練",
+  h1Suffix: "（ワーキングメモリ訓練）",
+  subtitle: "N個前の文字を照合する2バック練習",
   caption: "nバック課題は、現在の刺激がN個前のものと一致するかを判定する認知心理学の標準タスクです。Baddeley & Hitch（1974）のワーキングメモリモデルに基づき、情報の「短期保持」と「動的更新」を同時に要求します。",
   statScore: "スコア",
   statTime: "残り時間",
@@ -236,7 +233,7 @@ const nBackClientCopyJa = {
   btnMatch: "一致 (MATCH)",
   btnNoMatch: "不一致 (NO MATCH)",
   startTitle: "nバック課題 プロ",
-  startSubtitle: "ワーキングメモリ・連続情報更新トレーニング",
+  startSubtitle: "ワーキングメモリ • 2バック",
   countdownSubtitle: "準備してください",
   newBest: "新記録",
   pointsLabel: "獲得ポイント",

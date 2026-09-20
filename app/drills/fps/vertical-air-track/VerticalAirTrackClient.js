@@ -818,7 +818,7 @@ export default function VerticalAirTrackClient({ copy = null }) {
   return (
     <div className="min-h-screen bg-[#050508] text-white flex flex-col font-sans select-none">
       {/* ── MAIN CONTENT AREA ── */}
-      <main className="flex-1 max-w-6xl w-full mx-auto px-4 py-6 flex flex-col gap-6">
+      <main className="flex-1 max-w-6xl w-full mx-auto px-4 pt-6 pb-0 flex flex-col gap-6">
         {/* Title & Definition Snippet */}
         {!isFullscreen && (
           <div className="flex flex-col gap-1">
@@ -850,7 +850,7 @@ export default function VerticalAirTrackClient({ copy = null }) {
         <div 
           ref={containerRef} 
           onContextMenu={(e) => { if (gameState === 'playing' || gameState === 'countdown') e.preventDefault(); }}
-          className={`overflow-hidden flex flex-col transition-all duration-150 select-none bg-[#080811] text-white ${
+          className={`overflow-hidden flex flex-col select-none bg-[#080811] text-white ${
             isFullscreen 
               ? "fixed inset-0 z-[100] w-screen h-[100dvh] bg-[#050508] flex flex-col items-center justify-center" 
               : "w-full rounded-2xl aspect-video min-h-[460px] md:min-h-[500px] max-h-[88vh] max-md:portrait:aspect-[3/4] max-md:portrait:min-h-[420px] max-md:portrait:max-h-[76vh] max-md:landscape:min-h-[340px] max-md:landscape:max-h-[85vh] bg-[#080811] border border-white/10 relative overflow-hidden flex flex-col"
@@ -966,6 +966,7 @@ export default function VerticalAirTrackClient({ copy = null }) {
           <div className="[&>div]:!mt-0 font-sans">
             <DrillAccordion
               id="rules"
+              singleLineTitle
               title={copy?.rulesTitle || "Drill Instructions & Scoring System"}
               isOpen={openAccordion === 'rules'}
               onToggle={() => setOpenAccordion(openAccordion === 'rules' ? null : 'rules')}
@@ -979,6 +980,7 @@ export default function VerticalAirTrackClient({ copy = null }) {
 
             <DrillAccordion
               id="about"
+              singleLineTitle
               title={copy?.aboutTitle || "About Vertical Air-Track"}
               isOpen={openAccordion === 'about'}
               onToggle={() => setOpenAccordion(openAccordion === 'about' ? null : 'about')}

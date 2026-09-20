@@ -1,33 +1,30 @@
 import DistractionFighterClient from '@/app/drills/cognitive/focus/distraction-fighter/DistractionFighterClientLoader';
 import DrillGuide from '@/components/drill/DrillGuide';
 import RelatedDrills from '@/components/drill/RelatedDrills';
+import DrillFooter from '@/components/drill/DrillFooter';
 import { getAlternateLanguages } from '@/lib/i18n/locales';
 import { pickSources } from '@/lib/drillSources';
 
 export const metadata = {
-  title: "Test de Stroop Online – Control Inhibitorio | SkillDrills",
-  description: "Test de Stroop online gratis: mida su inhibición cognitiva y atención selectiva indicando el color de la tinta sin dejarse confundir por la palabra escrita.",
+  title: "Test de Stroop | Atención Selectiva | SkillDrills",
+  description: "Test de Stroop gratis en navegador: elige el color de la tinta, no la palabra. Es un autocheck cognitivo no clínico.",
   keywords: [
     "test de stroop",
     "test de stroop online",
-    "efecto stroop",
-    "atencion selectiva test",
-    "control inhibitorio test",
-    "test de colores y palabras",
-    "interferencia de stroop",
-    "ejercicios de concentracion mental",
-    "velocidad de procesamiento cognitivo",
-    "test psicologico de stroop gratis",
-    "entrenamiento de flexibilidad cognitiva",
-    "juego de atencion y reflejos online"
+    "test de stroop que mide",
+    "test de stroop online gratis",
+    "efecto stroop ejercicios",
+    "efecto stroop para que sirve",
+    "atención selectiva",
+    "control inhibitorio"
   ],
   alternates: {
     canonical: "https://skilldrills.online/es/drills/cognitive/focus/distraction-fighter",
     languages: getAlternateLanguages('/drills/cognitive/focus/distraction-fighter')
   },
   openGraph: {
-    title: "Test de Stroop Online – Control Inhibitorio | SkillDrills",
-    description: "Test de Stroop online gratis: mida su inhibición cognitiva y atención selectiva indicando el color de la tinta sin dejarse confundir por la palabra escrita.",
+    title: "Test de Stroop | Atención Selectiva | SkillDrills",
+    description: "Test de Stroop gratis en navegador: elige el color de la tinta, no la palabra. Es un autocheck cognitivo no clínico.",
     url: "https://skilldrills.online/es/drills/cognitive/focus/distraction-fighter",
     siteName: "SkillDrills",
     locale: "es_ES",
@@ -35,8 +32,8 @@ export const metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Test de Stroop Online – Control Inhibitorio | SkillDrills",
-    description: "Test de Stroop online gratis: mida su inhibición cognitiva y atención selectiva indicando el color de la tinta sin dejarse confundir por la palabra escrita."
+    title: "Test de Stroop | Atención Selectiva | SkillDrills",
+    description: "Test de Stroop gratis en navegador: elige el color de la tinta, no la palabra. Es un autocheck cognitivo no clínico."
   }
 };
 
@@ -57,6 +54,7 @@ export default function DistractionFighterPageES() {
     "@context": "https://schema.org",
     "@type": "SoftwareApplication",
     "name": "Test de Stroop Trainer",
+    "dateModified": "2026-09-20",
     "applicationCategory": "HealthApplication",
     "operatingSystem": "Any",
     "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
@@ -67,6 +65,7 @@ export default function DistractionFighterPageES() {
     "@context": "https://schema.org",
     "@type": "WebApplication",
     "name": "Test de Stroop Online Interactivo",
+    "dateModified": "2026-09-20",
     "url": "https://skilldrills.online/es/drills/cognitive/focus/distraction-fighter",
     "applicationCategory": "TrainingTool",
     "browserRequirements": "Requires JavaScript. HTML5 Canvas compatible."
@@ -77,6 +76,7 @@ export default function DistractionFighterPageES() {
     "@type": "VideoGame",
     "name": "Desafío de Inhibición Cognitiva de Stroop",
     "gamePlatform": "Web Browser",
+    "dateModified": "2026-09-20",
     "genre": ["Brain Training", "Cognitive Drill", "Focus Training"]
   };
 
@@ -311,6 +311,7 @@ export default function DistractionFighterPageES() {
           locale="es"
         />
       </div>
+      <DrillFooter />
     </>
   );
 }

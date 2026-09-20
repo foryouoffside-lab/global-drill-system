@@ -56,6 +56,14 @@ export const metadata = {
   robots: { index: true, follow: true },
 };
 
+Object.assign(metadata, {
+  title: 'Test de Clics por Segundo | CPS y Reflejos | SkillDrills',
+  description: 'Test gratuito de clics por segundo en el navegador. Acierta objetivos móviles que se encogen para practicar velocidad, precisión y reflejos.',
+  keywords: ['test de clics por segundo', 'test de CPS', 'velocidad de click', 'contador de clicks', 'prueba de click', 'entrenamiento de puntería', 'juego de reflejos', 'clics rápidos', 'precisión del ratón', 'test de reacción'],
+  openGraph: { ...metadata.openGraph, title: 'Test de Clics por Segundo | CPS y Reflejos | SkillDrills', description: 'Test gratuito de clics por segundo en el navegador. Acierta objetivos móviles que se encogen para practicar velocidad, precisión y reflejos.' },
+  twitter: { ...metadata.twitter, title: 'Test de Clics por Segundo | CPS y Reflejos | SkillDrills', description: 'Test gratuito de clics por segundo en el navegador. Acierta objetivos móviles que se encogen para practicar velocidad, precisión y reflejos.' },
+});
+
 const breadcrumbSchema = {
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
@@ -90,6 +98,8 @@ const breadcrumbSchema = {
 const softwareApplicationSchema = {
   "@context": "https://schema.org",
   "@type": "SoftwareApplication",
+  "inLanguage": "es-ES",
+  "dateModified": "2026-09-20",
   "name": "Test de Clics por Segundo y Entrenador de Velocidad de Reacción",
   "applicationCategory": "HealthApplication",
   "operatingSystem": "All",
@@ -105,7 +115,9 @@ const webApplicationSchema = {
   "@type": "WebApplication",
   "name": "Simulador de Velocidad de Clic y Adquisición de Blancos Dinámicos",
   "browserRequirements": "Requires JavaScript and HTML5 Canvas support",
-  "genre": "Training, Reflex, Precision, FPS"
+  "genre": "Training, Reflex, Precision, FPS",
+  "inLanguage": "es-ES",
+  "dateModified": "2026-09-20"
 };
 
 const videoGameSchema = {
@@ -113,12 +125,16 @@ const videoGameSchema = {
   "@type": "VideoGame",
   "name": "Speed Drill Tapping & Flick Interception",
   "gamePlatform": "Web Browser",
-  "applicationSubCategory": "Esports Chronometry Drill"
+  "applicationSubCategory": "Esports Chronometry Drill",
+  "inLanguage": "es-ES",
+  "dateModified": "2026-09-20"
 };
 
 const faqSchema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
+  "inLanguage": "es-ES",
+  "dateModified": "2026-09-20",
   "mainEntity": [
     {
       "@type": "Question",

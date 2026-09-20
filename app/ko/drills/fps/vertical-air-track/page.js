@@ -21,21 +21,21 @@ import { pickSources } from '@/lib/drillSources';
 // ============================================================
 
 export const metadata = {
-  title: "수직 에임 연습 – 브라우저 무료 FPS 공중 트래킹 에임 트레이너 | SkillDrills",
-  description: "브라우저에서 무료로 즐기는 FPS 수직 에임 및 공중 타겟 트래킹 연습 사이트. 중력 가속도로 낙하하는 포물선 궤적 예측, Y축 마우스 정밀 컨트롤, 파라/에코 대공 추적을 훈련하여 에이펙스 레전드와 오버워치 2 승률을 높이세요.",
+  title: "수직 에임 연습 - 공중 트래킹 | SkillDrills",
+  description: "브라우저에서 무료로 수직 에임과 공중 타겟 트래킹을 훈련하세요. Y축 마우스 제어와 낙하 궤적 예측을 측정합니다.",
   keywords: [
     '수직 에임 연습',
-    '트래킹 에임',
-    '트래킹 에임 연습',
     '수직 트래킹 에임',
     '공중 타겟 트래킹',
-    '에임 연습 게임',
+    '낙하 타겟 에임 연습',
+    '공중 타겟 트래킹',
     'FPS 수직 에임',
-    '오버워치 파라 에임 연습',
-    '에임 트레이너 사이트',
-    'Y축 마우스 컨트롤',
+    'Y축 에임',
+    '에임 연습 사이트',
     '에이펙스 수직 에임',
-    '공중전 에임 트레이너'
+    '오버워치 공중 에임',
+    '무료 에임 트레이너',
+    '수직 트래킹 연습'
   ],
   alternates: {
     canonical: "https://skilldrills.online/ko/drills/fps/vertical-air-track",
@@ -46,8 +46,8 @@ export const metadata = {
     follow: true,
   },
   openGraph: {
-    title: "수직 에임 연습 – 브라우저 무료 FPS 공중 트래킹 에임 트레이너 | SkillDrills",
-    description: "브라우저에서 무료로 즐기는 FPS 수직 에임 및 공중 타겟 트래킹 연습 사이트. 중력 가속도로 낙하하는 포물선 궤적 예측, Y축 마우스 정밀 컨트롤, 파라/에코 대공 추적을 훈련하여 에이펙스 레전드와 오버워치 2 승률을 높이세요.",
+    title: "수직 에임 연습 - 공중 트래킹 | SkillDrills",
+    description: "브라우저에서 무료로 수직 에임과 공중 타겟 트래킹을 훈련하세요. Y축 마우스 제어와 낙하 궤적 예측을 측정합니다.",
     url: "https://skilldrills.online/ko/drills/fps/vertical-air-track",
     siteName: 'SkillDrills',
     locale: 'ko_KR',
@@ -55,8 +55,8 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: "수직 에임 연습 – 브라우저 무료 FPS 공중 트래킹 에임 트레이너 | SkillDrills",
-    description: "브라우저에서 무료로 즐기는 FPS 수직 에임 및 공중 타겟 트래킹 연습 사이트. 중력 가속도로 낙하하는 포물선 궤적 예측, Y축 마우스 정밀 컨트롤, 파라/에코 대공 추적을 훈련하여 에이펙스 레전드와 오버워치 2 승률을 높이세요.",
+    title: "수직 에임 연습 - 공중 트래킹 | SkillDrills",
+    description: "브라우저에서 무료로 수직 에임과 공중 타겟 트래킹을 훈련하세요. Y축 마우스 제어와 낙하 궤적 예측을 측정합니다.",
   },
 };
 
@@ -74,10 +74,10 @@ export default function VerticalAirTrackPageKo() {
   const softwareSchema = {
     "@context": "https://schema.org",
     "@type": "SoftwareApplication",
-    "name": "수직 에임 연습 (Vertical Aim Trainer)",
+    "name": "수직 에임 연습 - 공중 트래킹",
     "applicationCategory": "GameApplication",
     "operatingSystem": "Web Browser",
-    "dateModified": "2026-09-11",
+    "dateModified": "2026-09-20",
     "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
     "description": "설치 없이 웹 브라우저에서 실행되는 무료 FPS 수직 트래킹 에임 연습 도구. 중력 가속도로 낙하하는 공중 타겟의 포물선 궤적 예측과 Y축 마우스 조작을 단련합니다.",
     "genre": "FPS Training / Vertical Tracking",
@@ -92,10 +92,10 @@ export default function VerticalAirTrackPageKo() {
   const webAppSchema = {
     "@context": "https://schema.org",
     "@type": "WebApplication",
-    "name": "수직 에임 연습 (Vertical Aim Trainer)",
+    "name": "수직 에임 연습 - 공중 트래킹",
     "applicationCategory": "GameApplication",
     "operatingSystem": "Web Browser",
-    "dateModified": "2026-09-11",
+    "dateModified": "2026-09-20",
     "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
     "browserRequirements": "Pointer Lock API, JavaScript, HTML5 Canvas 지원 브라우저",
     "description": "설치 없이 웹 브라우저에서 실행되는 무료 FPS 수직 트래킹 에임 연습 도구. 중력 가속도로 낙하하는 공중 타겟의 포물선 궤적 예측과 Y축 마우스 조작을 단련합니다.",
@@ -105,10 +105,10 @@ export default function VerticalAirTrackPageKo() {
   const videoGameSchema = {
     "@context": "https://schema.org",
     "@type": "VideoGame",
-    "name": "수직 에임 연습 (Vertical Aim Trainer)",
+    "name": "수직 에임 연습 - 공중 트래킹",
     "url": "https://skilldrills.online/ko/drills/fps/vertical-air-track",
     "description": "설치 없이 웹 브라우저에서 실행되는 무료 FPS 수직 트래킹 에임 연습 도구. 중력 가속도로 낙하하는 공중 타겟의 포물선 궤적 예측과 Y축 마우스 조작을 단련합니다.",
-    "dateModified": "2026-09-11",
+    "dateModified": "2026-09-20",
     "gamePlatform": "Web Browser",
     "genre": ["FPS Training", "Aim Trainer", "Vertical Tracking"],
     "playMode": "SinglePlayer",
@@ -120,7 +120,7 @@ export default function VerticalAirTrackPageKo() {
   const faqSchema = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
-    "dateModified": "2026-09-11",
+    "dateModified": "2026-09-20",
     "mainEntity": [
       {
         "@type": "Question",
@@ -243,9 +243,9 @@ export default function VerticalAirTrackPageKo() {
   };
 
   const verticalAirTrackGuide = {
-    heading: "수직 에임 연습 가이드 & 공중 포물선 트래킹 이론",
+    heading: "수직 에임 연습: 공중 타겟 트래킹과 낙하 궤적",
     intro: [
-      "수직 에임 연습(Vertical Air-Track)은 마우스의 Y축 추적 정밀도, 중력 포물선 궤적 예측, 공중 타겟 요격 능력을 체계적으로 단련하기 위해 설계된 고급 FPS 모터 컨트롤 드릴입니다. 에이펙스 레전드, 오버워치 2, 헤일로 인피니트 등 입체 기동 슈터에서는 점프 패드, 와이어, 고지대 낙하 등을 활용해 수평 조준선을 교란하는 플레이가 핵심 승부처가 됩니다.",
+      "수직 에임 연습을 찾는 FPS 플레이어라면, 이 드릴은 위아래로 움직이는 공중 타겟을 따라가는 Y축 조준 정확도와 낙하 궤적 예측을 측정합니다. 에이펙스 레전드와 오버워치 2에서 필요한 공중 타겟 트래킹, 부드러운 추적, 수직 마우스 제어를 한 세션에서 훈련합니다.",
       "상하(수직) 부드러운 안구 추종(Smooth Pursuit)의 신경생리학적 메커니즘은 좌우 수평 추적과 근본적으로 다릅니다. Richard J. Krauzlis(2004)의 연구에 따르면 수직 시각 추적은 소뇌 충부와 뇌간의 고유 경로를 활성화하며, 상지 골격 구조의 비대칭성으로 인해 모터 지터(떨림)에 더 취약합니다. 또한 Cyril Rashbass(1961)가 입증했듯 매끄러운 추적 운동은 위치 오차가 아닌 '속도 오차(망막 슬립)'에 의해 구동되므로, 딱딱 끊어 치는 플릭이 아닌 연속적인 속도 동기화가 필수적입니다.",
       "공중에 뜬 적을 명중시키려면 중력 가속도(g = 9.81 m/s²)의 물리 법칙을 직관적으로 내면화해야 합니다. Peter R. Cavanagh 등(1984)과 Michael F. Land & Peter McLeod(2000)의 분석에 따르면 숙련된 요격자는 도약 정점에서의 감속과 이후의 급격한 낙하 가속을 미리 예측하고 시선과 손목을 선행 연동시킵니다.",
       "본 드릴은 수평 방향의 타성을 배제하고 순수한 Y축 운동만을 분리 훈련합니다. performance.now() 고해상도 디지털 시간 측정(Woods et al., 2015)을 통해 수평 머슬 메모리와 진정한 360도 3D 입체 트래킹 숙련도 사이의 격차를 완벽하게 메워줍니다.",
@@ -336,7 +336,7 @@ export default function VerticalAirTrackPageKo() {
       <VerticalAirTrackClient
         copy={{
           h1Keyword: "수직 에임 연습",
-          h1Suffix: " – 브라우저 무료 FPS 공중 트래킹 트레이너",
+          h1Suffix: " - 공중 트래킹 트레이너",
           statScore: "점수",
           statTime: "남은 시간",
           statAccuracy: "트래킹 적중률",
@@ -385,7 +385,7 @@ export default function VerticalAirTrackPageKo() {
       <div className="max-w-6xl w-full mx-auto px-4 pb-12">
         <RelatedDrills
           currentCategory="fps"
-          currentHref="/drills/fps/vertical-air-track"
+          currentHref="/ko/drills/fps/vertical-air-track"
           locale="ko"
         />
       </div>

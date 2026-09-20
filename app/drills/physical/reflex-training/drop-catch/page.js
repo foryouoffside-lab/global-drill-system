@@ -36,9 +36,9 @@ import { pickSources } from '@/lib/drillSources';
 // ============================================================
 
 export const metadata = {
-  title: 'Drop Catch Reflex Test - Free Reaction Timing Drill',
+  title: 'Drop Catch Reflex Test | Free Reaction Drill',
   description:
-    'Free drop catch reflex test online. Catch falling targets under gravity to measure visual reaction time, anticipation latency, and catch precision in ms.',
+    'Free drop-catch reflex test online. Catch falling targets, avoid red decoys, and practise visual reaction timing in your browser.',
   keywords: [
     // Primary terms
     'reflex drop catch',
@@ -54,7 +54,7 @@ export const metadata = {
     'gravitational interception drill',
     'visual discrimination reflex test',
     // Long-tail variants
-    'free online reflex drop catch test',
+      'free online drop catch test',
     'falling ball reflex reaction drill',
     'esports inhibitory control click trainer',
     'ruler drop test alternative browser game',
@@ -65,9 +65,9 @@ export const metadata = {
   },
   robots: { index: true, follow: true },
   openGraph: {
-    title: 'Drop Catch Reflex Test - Free Reaction Timing Drill',
+    title: 'Drop Catch Reflex Test | Free Reaction Drill',
     description:
-      'Catch falling green targets and avoid red decoys in this high-speed reflex training game for reaction time and visual discrimination. Free browser drill.',
+      'Catch falling green targets and avoid red decoys in a free browser reflex drill for reaction timing and visual discrimination.',
     url: 'https://skilldrills.online/drills/physical/reflex-training/drop-catch',
     siteName: 'SkillDrills',
     locale: 'en_US',
@@ -83,9 +83,9 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Drop Catch Reflex Test - Free Reaction Timing Drill',
+    title: 'Drop Catch Reflex Test | Free Reaction Drill',
     description:
-      'Train gravitational target interception, impulse inhibition and choice reaction timing. 100% free browser drill.',
+      'Catch falling green targets and avoid red decoys in a free browser reflex drill for reaction timing and visual discrimination.',
     images: ['https://skilldrills.online/icons/icon-512x512.png'],
   },
 };
@@ -124,6 +124,8 @@ const webApplicationSchema = {
   '@type': 'WebApplication',
   name: 'Drop Catch - Gravitational Reflex Interception Trainer',
   url: 'https://skilldrills.online/drills/physical/reflex-training/drop-catch',
+  inLanguage: 'en',
+  dateModified: '2026-09-20',
   description:
     'Free reflex test online and reaction training game. Catch accelerating falling green targets and avoid deceptive red decoys under dynamic time pressure.',
   applicationCategory: 'SportsApplication',
@@ -353,7 +355,7 @@ export default function DropCatchPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(howToSchema) }}
       />
-      <DropCatchClient copy={{ title: 'Drop Catch Reflex Test', subtitle: 'Reaction Timing & Free-Fall Catch Drill' }} />
+      <DropCatchClient copy={{ title: 'Drop Catch Reflex Test', subtitle: 'Catch green targets; avoid red decoys' }} />
       <DrillGuide {...guideProps} />
       
     </>

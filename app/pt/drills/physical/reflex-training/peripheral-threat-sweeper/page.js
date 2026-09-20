@@ -22,18 +22,18 @@ import { pickSources } from '@/lib/drillSources';
 // ============================================================
 
 export const metadata = {
-  title: "Treinar Visão Periférica – Teste Online | SkillDrills",
-  description: "Teste de visão periférica online grátis. Intercepte ameaças radiais em 360° pelo canto dos olhos e amplie seu campo visual útil (UFOV) no navegador.",
+  title: "Treino de Visão Periférica | Teste Online",
+  description: "Teste grátis de visão periférica no navegador. Fixe o olhar no centro, detecte ameaças nas bordas e treine seu campo visual útil (UFOV).",
   keywords: [
     "treinar visão periférica",
     "teste de visão periférica online",
-    "expandir campo visual",
-    "campo de visão eSports",
-    "evitar visão de túnel",
     "exercícios para visão periférica",
+    "expandir campo visual",
     "teste de reflexos periféricos",
-    "teste ufov online",
-    "coordenação olho mão reflexos",
+    "teste UFOV online",
+    "visão periférica para esportes",
+    "evitar visão de túnel",
+    "coordenação olho-mão e reflexos",
     "treino de percepção visual rápida"
   ],
   alternates: {
@@ -41,8 +41,8 @@ export const metadata = {
     languages: getAlternateLanguages('/drills/physical/reflex-training/peripheral-threat-sweeper'),
   },
   openGraph: {
-    title: "Treinar Visão Periférica – Teste Online | SkillDrills",
-    description: "Teste de visão periférica online grátis. Intercepte ameaças radiais em 360° pelo canto dos olhos e amplie seu campo visual útil (UFOV) no navegador.",
+    title: "Treino de Visão Periférica | Teste Online",
+    description: "Teste grátis de visão periférica no navegador. Fixe o olhar no centro, detecte ameaças nas bordas e treine seu campo visual útil (UFOV).",
     url: 'https://skilldrills.online/pt/drills/physical/reflex-training/peripheral-threat-sweeper',
     siteName: 'SkillDrills',
     locale: 'pt_BR',
@@ -50,8 +50,8 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: "Treinar Visão Periférica – Teste Online | SkillDrills",
-    description: "Teste de visão periférica online grátis. Intercepte ameaças radiais em 360° pelo canto dos olhos e amplie seu campo visual útil (UFOV) no navegador.",
+    title: "Treino de Visão Periférica | Teste Online",
+    description: "Teste grátis de visão periférica no navegador. Fixe o olhar no centro, detecte ameaças nas bordas e treine seu campo visual útil (UFOV).",
   },
   robots: { index: true, follow: true },
 };
@@ -93,6 +93,10 @@ const softwareApplicationSchema = {
   "name": "Simulador de Visão Periférica e Expansão de Campo Visual (UFOV)",
   "applicationCategory": "HealthApplication",
   "operatingSystem": "All",
+  "url": "https://skilldrills.online/pt/drills/physical/reflex-training/peripheral-threat-sweeper",
+  "description": "Treino gratuito para detectar ameaças nas bordas, praticar reflexos e desenvolver o campo visual útil.",
+  "inLanguage": "pt-BR",
+  "dateModified": "2026-09-20",
   "offers": {
     "@type": "Offer",
     "price": "0",
@@ -104,6 +108,10 @@ const webApplicationSchema = {
   "@context": "https://schema.org",
   "@type": "WebApplication",
   "name": "Treinador de Atenção Encoberta e Interceptação Radial 360°",
+  "url": "https://skilldrills.online/pt/drills/physical/reflex-training/peripheral-threat-sweeper",
+  "description": "Drill de navegador para fixar o olhar no centro, detectar ameaças periféricas e treinar o campo visual útil.",
+  "inLanguage": "pt-BR",
+  "dateModified": "2026-09-20",
   "browserRequirements": "Requires JavaScript and HTML5 Canvas support",
   "genre": "Training, Reflex, Vision, Attention"
 };
@@ -111,8 +119,11 @@ const webApplicationSchema = {
 const videoGameSchema = {
   "@context": "https://schema.org",
   "@type": "VideoGame",
-  "name": "Peripheral Threat Sweeper 360 Challenge",
+  "name": "Treino de Visão Periférica e Defesa Radial",
   "gamePlatform": "Web Browser",
+  "url": "https://skilldrills.online/pt/drills/physical/reflex-training/peripheral-threat-sweeper",
+  "inLanguage": "pt-BR",
+  "dateModified": "2026-09-20",
   "applicationSubCategory": "Esports Cognitive Vision Drill"
 };
 
@@ -323,8 +334,8 @@ export default function LocalizedPeripheralThreatSweeperPagePt() {
       />
       <PeripheralThreatSweeperClient
         copy={{
-          title: "Treinar Visão Periférica & Teste de Campo Visual Online",
-          subtitle: "Varredura Radial 360° e Defesa de Escudo • Dificuldade com Escala Contínua",
+          title: "Treino de Visão Periférica",
+          subtitle: "Fixe o centro e detecte ameaças nas bordas",
           description: "A visão periférica é aquilo que você consegue detectar sem olhar diretamente. Os detalhes diminuem acentuadamente a partir do centro do olhar, mas a atenção pode ser direcionada para um ponto periférico enquanto os olhos permanecem parados, acelerando a resposta motora (Posner, 1980). Uma característica única como a cor é localizada quase no mesmo tempo independentemente de distrações, enquanto alvos que combinam traços exigem busca atencional ativa (Treisman & Gelade, 1980) — o que torna algumas ameaças fáceis de interceptar na borda e outras desafiadoras.",
           hudLabels: {
             score: "Pontuação",

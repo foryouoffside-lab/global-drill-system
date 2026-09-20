@@ -5,25 +5,28 @@ import RelatedDrills from '@/components/drill/RelatedDrills';
 import { pickSources } from '@/lib/drillSources';
 
 export const metadata = {
-  title: "Zahlenspannen-Test Online – Digit Span | SkillDrills",
-  description: "Kostenloser Zahlenspannen-Test online: Merke dir aufblitzende Zahlenfolgen und teste deine phonologische Schleife und Kurzzeitgedächtnis-Kapazität im Browser.",
+  title: "Zahlenspanne Test online | Zahlen merken | SkillDrills",
+  description: "Kostenloser Zahlenspanne-Test: Merke dir länger werdende Ziffernfolgen und gib sie im Browser in der richtigen Reihenfolge ein.",
   keywords: [
+    "zahlenspanne test online",
     "zahlenspanne test",
-    "digit span test online",
-    "zahlen gedaechtnistest",
+    "zahlengedächtnis test",
+    "zahlen merken test",
+    "ziffernspanne test",
+    "arbeitsgedächtnis zahlen",
+    "kurzzeitgedächtnis zahlen",
     "phonologische schleife test",
-    "arbeitsgedaechtnis test zahlen",
-    "zahlen merken spiel",
-    "kurzzeitgedaechtnis zahlen test",
-    "gedaechtnisspanne testen",
-    "wais digit span online",
-    "chunking methode zahlen",
-    "zahlenreihen merken uben",
-    "kognitiver gedaechtnistest online"
+    "digit span test deutsch",
+    "zahlenreihe merken",
+    "zahlenspanne vorwärts",
+    "zahlenspanne rückwärts",
+    "chunking zahlen",
+    "gedächtnistest zahlen",
+    "numerisches arbeitsgedächtnis"
   ],
   openGraph: {
-    title: "Zahlenspannen-Test Online – Digit Span | SkillDrills",
-    description: "Kostenloser Zahlenspannen-Test online: Merke dir aufblitzende Zahlenfolgen und teste deine phonologische Schleife und Kurzzeitgedächtnis-Kapazität im Browser.",
+    title: "Zahlenspanne Test online | Zahlen merken | SkillDrills",
+    description: "Kostenloser Zahlenspanne-Test: Merke dir länger werdende Ziffernfolgen und gib sie im Browser in der richtigen Reihenfolge ein.",
     type: 'website',
     url: 'https://skilldrills.online/de/drills/memory/short-term-memory/digit-span',
     siteName: 'SkillDrills',
@@ -31,8 +34,8 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: "Zahlenspannen-Test Online – Digit Span | SkillDrills",
-    description: "Kostenloser Zahlenspannen-Test online: Merke dir aufblitzende Zahlenfolgen und teste deine phonologische Schleife und Kurzzeitgedächtnis-Kapazität im Browser.",
+    title: "Zahlenspanne Test online | Zahlen merken | SkillDrills",
+    description: "Kostenloser Zahlenspanne-Test: Merke dir länger werdende Ziffernfolgen und gib sie im Browser in der richtigen Reihenfolge ein.",
   },
   robots: { index: true, follow: true },
   alternates: {
@@ -62,6 +65,7 @@ const webAppSchema = {
   "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
   "author": { "@type": "Organization", "name": "SkillDrills" },
   "isAccessibleForFree": true,
+  "sameAs": ["https://de.wikipedia.org/wiki/Arbeitsged%C3%A4chtnis"],
   "dateModified": "2026-09-11"
 };
 
@@ -305,23 +309,23 @@ const digitSpanGuide = {
   sources: pickSources('miller1956', 'cowan2001', 'baddeley1974', 'baddeley2000', 'logie1995', 'woods2015'),
   related: [
   {
-    "href": "/drills/memory/working-memory/n-back",
+    "href": "/de/drills/memory/working-memory/n-back",
     "label": "N-Back Arbeitsgedächtnis-Test"
   },
   {
-    "href": "/drills/memory/spatial-memory/grid-memorization",
+    "href": "/de/drills/memory/spatial-memory/grid-memorization",
     "label": "Visueller Gedächtnistest (Grid)"
   },
   {
-    "href": "/drills/cognitive/focus/concentration-grid",
+    "href": "/de/drills/cognitive/focus/concentration-grid",
     "label": "Schulte-Tabelle (Konzentrationsgitter)"
   },
   {
-    "href": "/drills/reaction-speed/reaction-time-test",
+    "href": "/de/drills/reaction-speed/reaction-time-test",
     "label": "Reaktionstest (Reaktionszeit messen)"
   },
   {
-    "href": "/drills/reaction-speed/reflex-training-drill",
+    "href": "/de/drills/reaction-speed/reflex-training-drill",
     "label": "Reflex-Training & Reaktionsspiel"
   }
 ]
@@ -355,9 +359,10 @@ export default function LocalizedDigitSpanPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
       <DigitSpanClient copy={{
-        "h1Keyword": "Zahlenspannen-Test",
-        "h1Suffix": " – Kostenloser Digit Span Zahlen-Gedächtnistest",
-        "caption": "Präge dir die aufblitzende Zahlenfolge ein und tippe die Ziffern anschließend in der exakten Reihenfolge ein.",
+        "h1Keyword": "Zahlenspanne-Test",
+        "h1Suffix": " – Zahlenfolgen merken",
+        "subtitle": "Ziffernfolgen merken und exakt eingeben",
+        "caption": "Merke dir die wachsende Ziffernfolge und gib sie anschließend in derselben Reihenfolge ein.",
         "statScore": "Punkte",
         "statTime": "Restzeit",
         "statSpan": "Spanne",
@@ -368,7 +373,7 @@ export default function LocalizedDigitSpanPage() {
         "memorizeTitle": "ZAHLENFOLGE MERKEN",
         "evaluating": "Auswertung...",
         "startTitle": "Zahlenspanne Pro",
-        "startSubtitle": "Numerisches Kurzzeitgedächtnis • Ziffernabruf",
+        "startSubtitle": "Zahlengedächtnis • Arbeitsgedächtnis trainieren",
         "countdownSubtitle": "BEREIT MACHEN",
         "newBest": "NEUER REKORD",
         "pointsLabel": "Punkte",

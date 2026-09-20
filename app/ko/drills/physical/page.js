@@ -37,6 +37,23 @@ export const metadata = {
   },
 };
 
+Object.assign(metadata, {
+  title: '반응속도·민첩성 훈련 | 무료 피지컬 드릴 | SkillDrills',
+  description: '반응속도 테스트, 순발력, 민첩성, 균형감각과 손눈협응을 브라우저에서 연습하는 11개 무료 드릴.',
+  keywords: ['반응속도 테스트', '순발력 훈련', '민첩성 훈련', '반사신경 테스트', '손눈협응', '균형감각 훈련', '발놀림 훈련', '방향전환 훈련', '마우스 회피 게임', '무료 반응 훈련'],
+  openGraph: {
+    ...metadata.openGraph,
+    title: '반응속도·민첩성 훈련 | 무료 피지컬 드릴 | SkillDrills',
+    description: '반응속도, 순발력, 균형감각과 손눈협응을 연습하는 11개 무료 브라우저 드릴.',
+  },
+  twitter: {
+    ...metadata.twitter,
+    title: '반응속도·민첩성 훈련 | SkillDrills',
+    description: '반응속도와 민첩성을 연습하는 11개 무료 피지컬 드릴.',
+  },
+  alternates: { ...metadata.alternates, languages: getAlternateLanguages('/drills/physical') },
+});
+
 const breadcrumbSchema = {
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
@@ -50,6 +67,8 @@ const breadcrumbSchema = {
 const collectionSchema = {
   "@context": "https://schema.org",
   "@type": "CollectionPage",
+  "inLanguage": "ko",
+  "dateModified": "2026-09-20",
   "name": "신체 순발력 & 반사신경 훈련 도감 (11개 드릴)",
   "url": "https://skilldrills.online/ko/drills/physical",
   "description": "11가지 인터랙티브 신체 반사신경, 균형 감각, 손 눈 협응, 풋워크 민첩성 및 장애물 회피 테스트.",
@@ -71,6 +90,8 @@ const collectionSchema = {
 const faqSchema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
+  "inLanguage": "ko",
+  "dateModified": "2026-09-20",
   "mainEntity": [
     {
       "@type": "Question",
@@ -138,6 +159,19 @@ const faqSchema = {
     }
   ]
 };
+
+faqSchema.mainEntity.push(
+  {
+    "@type": "Question",
+    "name": "피지컬 트레이닝 목록에는 몇 가지 드릴이 있나요?",
+    "acceptedAnswer": { "@type": "Answer", "text": "목록에는 반응·회피, 민첩성, 협응·경로, 균형·안정성의 네 영역으로 나뉜 11개 브라우저 드릴이 있습니다. 카드를 선택하면 각 드릴의 설명과 훈련 방법을 확인할 수 있습니다." }
+  },
+  {
+    "@type": "Question",
+    "name": "브라우저 반응 훈련이 실제 체력 훈련을 대신할 수 있나요?",
+    "acceptedAnswer": { "@type": "Answer", "text": "아닙니다. 이 드릴은 시각 타이밍, 판단 속도, 조작 정확도와 움직임 순서를 연습합니다. 근력, 순발력, 가동성 또는 종목별 코칭을 대신하지 않고 보완하는 도구입니다." }
+  }
+);
 
 export default function PhysicalDrillsPage() {
   return (

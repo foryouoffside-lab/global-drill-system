@@ -1,38 +1,39 @@
 import DirectionalChaosPursuitClient from '@/app/drills/visual-tracking/directional-chaos-pursuit/DirectionalChaosPursuitClientLoader';
 import DrillGuide from '@/components/drill/DrillGuide';
+import DrillFooter from '@/components/drill/DrillFooter';
 import RelatedDrills from '@/components/drill/RelatedDrills';
 import { getAlternateLanguages } from '@/lib/i18n/locales';
 import { pickSources } from '@/lib/drillSources';
 
 // ============================================================
 // JAPANESE SEARCH KEYWORD RESEARCH & INTENT CLUSTERING
-// Primary query: "不規則 追従性眼球運動" / "カオス眼球運動" (Erratic ocular motor tracking)
-// Secondary:    "サッケードリカバリー", "アイトラッキング 反射" (Gaze re-acquisition & esports reflex)
+// Primary query: "動体視力 トレーニング" / "不規則 眼球運動"
+// Secondary:    "サッケード回復", "視線再捕捉", "反射神経ゲーム"
 // LSI / Domain:  "突発的視覚追従", "動体視力 不規則", "予測不能 ターゲット追跡",
 //               "FPS レレレ エイム", "ストレイフ 視線再補足", "中心窩 捕捉"
-// Authentic Domain Terms: 衝動性眼球運動（Saccade）, 追いつきサッケード（Catch-up Saccade）, 網膜スリップ（Retinal Slip）, リアルタイム視覚フィードバック（Reactive Feedback）
+// Authentic Domain Terms: 衝動性眼球運動, 追いつきサッケード, 網膜スリップ, リアルタイム視覚フィードバック
 // ============================================================
 
 export const metadata = {
-  title: "不規則方向追従トレーニング・カオス動体視力テスト – サッケードリカバリー＆反応型眼球運動 | SkillDrills",
-  description: "予測不能な急激な方向転換と速度変化を繰り返す標的を素早く再捕捉するサッケードリカバリー＆反応型アイトラッキング練習。動体視力の俊敏性とエイムの跳躍復帰力を極限まで強化。無料・登録不要。",
+  title: "動体視力トレーニング・不規則視線追従 | SkillDrills",
+  description: "方向と速度が予測不能に変わる標的を目で再捕捉。サッケード回復と視線反応、動体視力を鍛える無料ブラウザドリル。",
   keywords: [
-    "不規則 追従性眼球運動",
-    "カオス眼球運動",
-    "サッケードリカバリー",
-    "突発的視覚追従",
-    "アイトラッキング 反射",
-    "動体視力 不規則",
-    "予測不能 ターゲット追跡",
-    "FPS レレレ エイム",
-    "ストレイフ 視線再捕捉",
-    "眼球運動 俊敏性",
-    "視線ブレ 抑制",
-    "動体視力 反応速度"
+    "動体視力 トレーニング",
+    "動体視力 テスト",
+    "眼球運動 トレーニング",
+    "サッケード 回復",
+    "視線 再捕捉",
+    "反射神経ゲーム",
+    "不規則 視覚追従",
+    "突発的 視覚反応",
+    "予測不能 標的追跡",
+    "視覚フィードバック",
+    "動体視力 反応速度",
+    "無料 視覚トレーニング"
   ],
   openGraph: {
-    title: "不規則方向追従トレーニング・カオス動体視力テスト – サッケードリカバリー＆反応型眼球運動 | SkillDrills",
-    description: "予測不能な急激な方向転換と速度変化を繰り返す標的を素早く再捕捉するサッケードリカバリー＆反応型アイトラッキング練習。動体視力の俊敏性とエイムの跳躍復帰力を極限まで強化。",
+    title: "動体視力トレーニング・不規則視線追従 | SkillDrills",
+    description: "方向と速度が予測不能に変わる標的を目で再捕捉。サッケード回復と視線反応、動体視力を鍛える無料ブラウザドリル。",
     type: "website",
     url: "https://skilldrills.online/ja/drills/visual-tracking/directional-chaos-pursuit",
     siteName: "SkillDrills",
@@ -40,8 +41,8 @@ export const metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "不規則方向追従トレーニング・カオス動体視力テスト – サッケードリカバリー＆反応型眼球運動 | SkillDrills",
-    description: "予測不能なカオス運動標的に対するサッケードリカバリーと反応型アイトラッキングを鍛える無料オンライントレーニング。",
+    title: "動体視力トレーニング・不規則視線追従 | SkillDrills",
+    description: "予測不能な標的を目で再捕捉し、視線反応と動体視力を鍛える無料トレーニング。",
   },
   robots: { index: true, follow: true },
   alternates: {
@@ -56,7 +57,7 @@ const breadcrumbSchema = {
   "itemListElement": [
     { "@type": "ListItem", "position": 1, "name": "ホーム", "item": "https://skilldrills.online/ja" },
     { "@type": "ListItem", "position": 2, "name": "ドリル一覧", "item": "https://skilldrills.online/ja/drills" },
-    { "@type": "ListItem", "position": 3, "name": "視覚追従・アイトラッキング", "item": "https://skilldrills.online/ja/drills/visual-tracking" },
+    { "@type": "ListItem", "position": 3, "name": "視覚追従・眼球運動トレーニング", "item": "https://skilldrills.online/ja/drills/visual-tracking" },
     { "@type": "ListItem", "position": 4, "name": "不規則方向追従トレーニング (カオス追従)", "item": "https://skilldrills.online/ja/drills/visual-tracking/directional-chaos-pursuit" }
   ]
 };
@@ -64,9 +65,9 @@ const breadcrumbSchema = {
 const softwareApplicationSchema = {
   "@context": "https://schema.org",
   "@type": "SoftwareApplication",
-  "name": "不規則方向追従トレーニング・カオス動体視力テスト (Directional Chaos Pursuit)",
+  "name": "不規則方向追従トレーニング・カオス動体視力テスト",
   "applicationCategory": "HealthApplication",
-  "operatingSystem": "Web Browser",
+  "operatingSystem": "ブラウザ",
   "url": "https://skilldrills.online/ja/drills/visual-tracking/directional-chaos-pursuit",
   "offers": {
     "@type": "Offer",
@@ -80,16 +81,16 @@ const softwareApplicationSchema = {
     "残像トレイル・CRTスキャンライン・グローエフェクトの表示カスタマイズ",
     "外部サーバー通信一切なしの完全クライアントサイドローカルデータ管理"
   ],
-  "dateModified": "2026-09-15"
+  "dateModified": "2026-09-20"
 };
 
 const webAppSchema = {
   "@context": "https://schema.org",
   "@type": "WebApplication",
   "name": "不規則方向追従トレーニング – サッケードリカバリー オンライントレーナー | SkillDrills",
-  "alternateName": "Directional Chaos Pursuit Japan",
+  "alternateName": "不規則方向追従トレーニング",
   "url": "https://skilldrills.online/ja/drills/visual-tracking/directional-chaos-pursuit",
-  "dateModified": "2026-09-15",
+  "dateModified": "2026-09-20",
   "description": "無料オンライン動体視力・眼球運動トレーニング。予測が通じないカオスな動きに対して、リアルタイムの視覚フィードバックと補正サッケードを駆使してターゲットを捕捉し続ける反射神経ドリル。",
   "applicationCategory": "EducationalApplication",
   "operatingSystem": "All",
@@ -97,19 +98,20 @@ const webAppSchema = {
   "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
   "author": { "@type": "Organization", "name": "SkillDrills", "url": "https://skilldrills.online" },
   "isAccessibleForFree": true,
-  "learningResourceType": "Educational Game",
+  "learningResourceType": "視覚トレーニングゲーム",
   "teaches": "不規則追従眼球運動, サッケードリカバリー, リアルタイム視覚補正, 中心窩再捕捉, 動体視力俊敏性"
 };
 
 const videoGameSchema = {
   "@context": "https://schema.org",
   "@type": "VideoGame",
-  "name": "不規則方向追従トレーニング・カオス動体視力テスト (Directional Chaos Pursuit)",
+  "name": "不規則方向追従トレーニング・カオス動体視力テスト",
   "url": "https://skilldrills.online/ja/drills/visual-tracking/directional-chaos-pursuit",
-  "description": "無料カオスアイトラッキングゲーム。不規則に方向転換するターゲットを眼球で捕捉し続け、視覚反射神経と動体追従の持久力を鍛えます。",
-  "genre": ["Eye Tracking", "Visual Training", "Reaction Speed"],
-  "gamePlatform": ["Web Browser", "Desktop", "Mobile"],
+  "description": "無料のカオス視線追従ゲーム。不規則に方向転換するターゲットを眼球で捕捉し続け、視覚反射神経と動体追従の持久力を鍛えます。",
+  "genre": ["眼球運動トレーニング", "視覚トレーニング", "反応速度ゲーム"],
+  "gamePlatform": ["ブラウザ", "パソコン", "スマートフォン"],
   "applicationCategory": "Game",
+  "dateModified": "2026-09-20",
   "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
 };
 
@@ -117,7 +119,7 @@ const howToSchema = {
   "@context": "https://schema.org",
   "@type": "HowTo",
   "name": "カオス方向追従・サッケードリカバリーの正しい練習手順",
-  "dateModified": "2026-09-15",
+  "dateModified": "2026-09-20",
   "description": "予測不能な突発的ターゲット移動に対して、視線を素早く引き戻し追従を維持するための公式トレーニング手順ガイド。",
   "step": [
     {
@@ -154,11 +156,11 @@ const howToSchema = {
 const faqSchema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
-  "dateModified": "2026-09-15",
+  "dateModified": "2026-09-20",
   "mainEntity": [
     {
       "@type": "Question",
-      "name": "カオス方向追従テスト（Directional Chaos Pursuit）とは何ですか？",
+      "name": "カオス方向追従テストとは何ですか？",
       "acceptedAnswer": {
         "@type": "Answer",
         "text": "カオス方向追従テストは、進行方向と速度がランダムかつ確率的に急変するターゲットを眼球運動のみで追跡し続けるアイトラッキング・トレーニングです。規則的な周期運動とは異なり事前の予測が効かないため、網膜スリップをリアルタイムで検知し、瞬時に補正サッケードを発動して滑動追従（スムーズパシュート）へ復帰する神経回路の俊敏性を鍛えます（Bahill et al., 1980）。"
@@ -169,7 +171,7 @@ const faqSchema = {
       "name": "サッケードリカバリー（視線再捕捉）とはどのような神経メカニズムですか？",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "ターゲットが急激な方向転換を行うと、追従眼球運動の物理的限界（約30°/秒以上の角速度）を超えて目標が中心窩から外れます。このとき大脳後頭葉の視覚野と上丘・前頭眼野（FEF）が即座に位置誤差を計算し、約150〜200msの遅延で目標位置へ視線を瞬間跳躍させて視野中心へ戻す補正反射が「サッケードリカバリー（Catch-up Saccade）」です（Krauzlis, 2004; Barnes, 2008）。"
+        "text": "ターゲットが急激な方向転換を行うと、追従眼球運動の物理的限界（約30°/秒以上の角速度）を超えて目標が中心窩から外れます。このとき大脳後頭葉の視覚野と上丘・前頭眼野（FEF）が即座に位置誤差を計算し、約150〜200msの遅延で目標位置へ視線を瞬間跳躍させて視野中心へ戻す補正反射が「追いつきサッケード」です（Krauzlis, 2004; Barnes, 2008）。"
       }
     },
     {
@@ -177,7 +179,7 @@ const faqSchema = {
       "name": "規則的な追従（リサージュ等）と不規則なカオス追従の違いは何ですか？",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "リサージュ曲線のような規則的運動では小脳の内部モデルが作動し、感覚遅延をゼロにする「予測的追従（Predictive Pursuit）」が可能になります。しかし本ドリルのようなカオス運動では過去の軌跡から未来を予測できないため、常に実際の視覚変化に即座に反応する「純粋な反射型リアルタイムフィードバック追従」が強制されます（Robinson, 1965）。"
+        "text": "リサージュ曲線のような規則的運動では小脳の内部モデルが作動し、感覚遅延を補う「予測的追従」が可能になります。しかし本ドリルのようなカオス運動では過去の軌跡から未来を予測できないため、常に実際の視覚変化に即座に反応する「純粋な反射型リアルタイムフィードバック追従」が強制されます（Robinson, 1965）。"
       }
     },
     {
@@ -185,7 +187,7 @@ const faqSchema = {
       "name": "FPSゲームでのトラッキングエイムやレレレ撃ち対策にどう役立ちますか？",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Apex LegendsやOverwatchなどで敵が不規則な左右屈伸・レレレ移動（ADAD Strafe）を仕掛けてきた際、敵の切り返しに対してエイムが置き去りにされる「切り返しラグ」を大幅に削減できます。サッケードリカバリーが鍛えられることで、敵が急反転した瞬間に素早く照準を引き戻し、命中率を維持できます（Yang et al., 2025）。"
+        "text": "Apex LegendsやOverwatchなどで敵が不規則な左右屈伸・レレレ移動を仕掛けてきた際、敵の切り返しに対して照準が置き去りにされる「切り返しラグ」を大幅に削減できます。サッケード回復が鍛えられることで、敵が急反転した瞬間に素早く照準を引き戻し、命中率を維持できます（Yang et al., 2025）。"
       }
     },
     {
@@ -242,8 +244,8 @@ const faqSchema = {
 const guideProps = {
   heading: "不規則動体視力とサッケードリカバリーの神経運動科学基準",
   intro: [
-    "不規則方向追従（Directional Chaos Pursuit）とは、速度ベクトルと進行角度が確率的に急変する動的刺激に対して、視覚運動系がリアルタイムで即応する高度な動体視力課題です。直線や円運動のように進行方向が予測できる課題とは異なり、予測的内部モデル（小脳の先読み機能）を遮断し、視覚フィードバックのみに基づく純粋な反応型トラッキング能力を限界まで追い込みます（Bahill, Iandolo, & Troost, 1980）。",
-    "サッケードリカバリーと追従ゲインの二重運動制御：ターゲットが急激な方向反転を行った瞬間、追従眼球運動（滑動性追従）の物理的追従速度限界（約30°/秒）を突破して標的像が網膜の中心窩から脱落します。このとき網膜スリップ信号を受信した視覚前頭眼野（FEF）と上丘は、約150〜200msの潜時で目標位置へ視線を跳躍させる「補正サッケード（Catch-up Saccade）」を強制発射します（Rashbass, 1961; Krauzlis, 2004）。跳躍後にいかに早く視線を停止させ、即座に滑動追従へ移行できるかが動体視力の俊敏性を決定づけます。",
+    "不規則方向追従とは、速度ベクトルと進行角度が確率的に急変する動的刺激に対して、視覚運動系がリアルタイムで即応する高度な動体視力課題です。直線や円運動のように進行方向が予測できる課題とは異なり、予測的内部モデル（小脳の先読み機能）を遮断し、視覚フィードバックのみに基づく純粋な反応型追従能力を限界まで追い込みます（Bahill, Iandolo, & Troost, 1980）。",
+    "サッケード回復と追従ゲインの二重運動制御：ターゲットが急激な方向反転を行った瞬間、追従眼球運動（滑動性追従）の物理的追従速度限界（約30°/秒）を突破して標的像が網膜の中心窩から脱落します。このとき網膜スリップ信号を受信した視覚前頭眼野（FEF）と上丘は、約150〜200msの潜時で目標位置へ視線を跳躍させる「補正サッケード」を強制発射します（Rashbass, 1961; Krauzlis, 2004）。跳躍後にいかに早く視線を停止させ、即座に滑動追従へ移行できるかが動体視力の俊敏性を決定づけます。",
     "競技FPSおよび対人スポーツにおける実戦応用：FPSにおける敵の高速切り返し（ADADレレレ移動）や、バスケットボール・テニスにおける不規則な方向転換では、視界ブレを最小限に抑えて素早く中心視野を回復する能力が勝敗を分けます（Yang et al., 2025; Appelbaum & Erickson, 2018）。本ドリルは急激な方向転換を無作為に浴びせることで、眼球筋群の反射的協調運動と視覚中枢の処理スピードを飛躍的に高めます。",
     "測定基準とディスプレイハードウェアの影響：本ドリルでは視線追従の滑らかさと急激な方向転換への即応性を判定します。通常の60Hzモニターではフレーム更新間隔が約16.7msと長いため、急転換の瞬間がコマ落ちして網膜に届きます。突発的なベクトル変化を正確に知覚するためには、144Hzまたは240Hzの高リフレッシュレート環境での練習が推奨されます（Woods et al., 2015）。すべてのセッション設定と記録はローカルブラウザ内に安全に保管されます。"
   ],
@@ -295,12 +297,12 @@ const guideProps = {
   faqs: faqSchema.mainEntity.map(e => ({ q: e.name, a: e.acceptedAnswer.text })),
   sources: pickSources('bahill1980', 'barnes2008', 'krauzlis2004', 'robinson1965', 'rashbass1961', 'woods2015'),
   related: [
-    { href: "/ja/drills/visual-tracking/constant-slow-pursuit", label: "低速追従眼球運動トレーニング (Constant Slow)" },
-    { href: "/ja/drills/visual-tracking/sine-wave-pursuit", label: "正弦波追従トレーニング (Sine Wave)" },
-    { href: "/ja/drills/visual-tracking/infinity-pursuit", label: "8の字ループ追従運動 (Infinity)" },
-    { href: "/ja/drills/visual-tracking/predictive-pursuit", label: "予測アイトラッキング (Predictive)" },
-    { href: "/ja/drills/visual-tracking/dynamic-evasion-pursuit", label: "リアクティブ追従訓練 (Dynamic Evasion)" },
-    { href: "/ja/drills/visual-tracking/ghosting-suppress-pursuit", label: "視線固視安定性トレーニング (Ghosting Suppress)" }
+    { href: "/ja/drills/visual-tracking/constant-slow-pursuit", label: "低速追従眼球運動トレーニング" },
+    { href: "/ja/drills/visual-tracking/sine-wave-pursuit", label: "正弦波追従トレーニング" },
+    { href: "/ja/drills/visual-tracking/infinity-pursuit", label: "8の字ループ追従運動" },
+    { href: "/ja/drills/visual-tracking/predictive-pursuit", label: "予測視線追従トレーニング" },
+    { href: "/ja/drills/visual-tracking/dynamic-evasion-pursuit", label: "動的回避追従訓練" },
+    { href: "/ja/drills/visual-tracking/ghosting-suppress-pursuit", label: "視線固視安定性トレーニング" }
   ]
 };
 
@@ -342,6 +344,7 @@ export default function LocalizedPage() {
       <div className="max-w-6xl mx-auto px-4 pb-12">
         <RelatedDrills currentCategory="visual-tracking" currentHref="https://skilldrills.online/ja/drills/visual-tracking/directional-chaos-pursuit" />
       </div>
+      <DrillFooter />
     </>
   );
 }

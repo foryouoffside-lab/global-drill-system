@@ -6,21 +6,20 @@ import { getAlternateLanguages } from '@/lib/i18n/locales';
 import { pickSources } from '@/lib/drillSources';
 
 export const metadata = {
-  title: "Aim Trainer en Ligne – Précision de Souris FPS | SkillDrills",
-  description: "Aim trainer en ligne gratuit: Entrainez la precision de souris, les micro-flicks et le temps de reaction selon la loi de Fitts sans telechargement.",
+  title: "Aim trainer en ligne | Précision souris | SkillDrills",
+  description: "Entraînez votre visée avec un aim trainer gratuit. Mesurez la précision de la souris, l’acquisition de cible et le rythme des clics.",
   keywords: [
     "aim trainer en ligne",
-    "entrainement aim fps gratuit",
-    "precision souris test en ligne",
-    "aim trainer navigateur",
-    "exercice de flick shot souris",
-    "test de visee souris fps",
-    "entrainement tir valorant gratuit",
-    "loi de fitts entrainement souris",
-    "reflexe souris fps en ligne",
-    "ameliorer son aim souris",
-    "test precision clic souris",
-    "echauffement aim fps en ligne"
+    "entraînement à la visée",
+    "test de visée souris",
+    "précision souris",
+    "entraînement FPS",
+    "exercice de flick",
+    "acquisition de cible",
+    "réflexes souris",
+    "échauffement aim FPS",
+    "visée Valorant",
+    "visée CS2"
   ],
   alternates: {
     canonical: "https://skilldrills.online/fr/drills/motor/hand-eye-coordination/aim-trainer",
@@ -31,8 +30,8 @@ export const metadata = {
     follow: true,
   },
   openGraph: {
-    title: "Aim Trainer en Ligne – Précision de Souris FPS | SkillDrills",
-    description: "Aim trainer en ligne gratuit: Entrainez la precision de souris, les micro-flicks et le temps de reaction selon la loi de Fitts sans telechargement.",
+    title: "Aim trainer en ligne | Précision souris | SkillDrills",
+    description: "Aim trainer gratuit dans le navigateur pour travailler la visée, les flicks et la précision de souris.",
     url: "https://skilldrills.online/fr/drills/motor/hand-eye-coordination/aim-trainer",
     siteName: 'SkillDrills',
     locale: 'fr_FR',
@@ -40,8 +39,8 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: "Aim Trainer en Ligne – Précision de Souris FPS | SkillDrills",
-    description: "Aim trainer en ligne gratuit: Entrainez la precision de souris, les micro-flicks et le temps de reaction selon la loi de Fitts sans telechargement.",
+    title: "Aim trainer en ligne | Précision souris | SkillDrills",
+    description: "Entraînement FPS dans le navigateur pour améliorer la visée, les micro-flicks et les réflexes.",
   },
 };
 
@@ -79,6 +78,7 @@ const breadcrumbSchema = {
 const softwareApplicationSchema = {
   "@context": "https://schema.org",
   "@type": "SoftwareApplication",
+  "inLanguage": "fr-FR",
   "name": "Aim Trainer en Ligne",
   "url": "https://skilldrills.online/fr/drills/motor/hand-eye-coordination/aim-trainer",
   "applicationCategory": "EducationalApplication",
@@ -88,7 +88,7 @@ const softwareApplicationSchema = {
     "price": "0",
     "priceCurrency": "USD"
   },
-  "dateModified": "2026-09-16",
+  "dateModified": "2026-09-20",
   "author": {
     "@type": "Organization",
     "name": "SkillDrills"
@@ -98,6 +98,7 @@ const softwareApplicationSchema = {
 const webApplicationSchema = {
   "@context": "https://schema.org",
   "@type": "WebApplication",
+  "inLanguage": "fr-FR",
   "name": "Aim Trainer en Ligne",
   "url": "https://skilldrills.online/fr/drills/motor/hand-eye-coordination/aim-trainer",
   "description": "Entraineur de visee et de precision de souris gratuit dans le navigateur avec difficulte adaptative selon la loi de Fitts.",
@@ -114,16 +115,17 @@ const webApplicationSchema = {
     "name": "SkillDrills"
   },
   "isAccessibleForFree": true,
-  "dateModified": "2026-09-16"
+  "dateModified": "2026-09-20"
 };
 
 const videoGameSchema = {
   "@context": "https://schema.org",
   "@type": "VideoGame",
+  "inLanguage": "fr-FR",
   "name": "Aim Trainer en Ligne",
   "url": "https://skilldrills.online/fr/drills/motor/hand-eye-coordination/aim-trainer",
   "description": "Jeu de tir et d entrainement a la precision de la souris mesurant la coordination motrice oeil-main et les micro-flicks.",
-  "dateModified": "2026-09-16",
+  "dateModified": "2026-09-20",
   "gamePlatform": "Web Browser",
   "genre": ["Aim Trainer", "FPS Training", "Hand-Eye Coordination", "Motor Control"],
   "playMode": "SinglePlayer",
@@ -139,6 +141,7 @@ const videoGameSchema = {
 const howToSchema = {
   "@context": "https://schema.org",
   "@type": "HowTo",
+  "inLanguage": "fr-FR",
   "name": "Comment s entrainer a la precision de souris avec Aim Trainer",
   "description": "Protocole en 4 etapes pour ameliorer la vitesse d acquisition de cibles et la precision des micro-flicks selon la loi de Fitts.",
   "step": [
@@ -176,7 +179,8 @@ const howToSchema = {
 const faqSchema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
-  "dateModified": "2026-09-16",
+  "inLanguage": "fr-FR",
+  "dateModified": "2026-09-20",
   "mainEntity": [
     {
       "@type": "Question",
@@ -263,7 +267,7 @@ const faqSchema = {
 
 const copyFr = {
   title: "Aim Trainer en Ligne",
-  subtitle: "Acquisition de cible dynamique & Précision de clic • Progression sans fin",
+  subtitle: "Acquisition de cible • Précision souris • Entraînement flick",
   caption: "Visez et cliquez sur les cibles mobiles aussi rapidement et précisément que possible avant leur disparition. Fondé sur la loi de Fitts.",
   startButtonText: "LANCER L'ENTRAÎNEMENT",
   playAgainText: "Rejouer",

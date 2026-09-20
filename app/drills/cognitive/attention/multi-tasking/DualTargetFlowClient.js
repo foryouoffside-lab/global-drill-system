@@ -1,7 +1,6 @@
 'use client';
 
 import React, { useState, useEffect, useRef, useCallback } from 'react';
-import Link from 'next/link';
 import { Target, Volume2, VolumeX, Play, RefreshCw, Share2, LogOut, ArrowLeft, Users, TrendingUp, Zap, ZapOff } from 'lucide-react';
 
 import { isIdleFrameSkippable } from '@/lib/performance';
@@ -15,13 +14,30 @@ import { getFpsScoreGrade, getComboMultiplier } from '../../../../../lib/scoring
 import { getDifficultyProgress, getStartLevel, ramp } from '../../../../../lib/drillDifficulty';
 import useDrillFlash from '../../../../../lib/useDrillFlash';
 import useUnexpectedExitGuard from '../../../../../lib/useUnexpectedExitGuard';
-import DrillFooter from '../../../../../components/drill/DrillFooter';
 import DrillCountdown from '../../../../../components/drill/DrillCountdown';
 import DrillAccordion from '../../../../../components/drill/DrillAccordion';
 import DrillFlashOverlay from '../../../../../components/drill/DrillFlashOverlay';
 import FpsStartCard from '../../../../../components/drill/FpsStartCard';
 import DrillResultCard from '../../../../../components/drill/DrillResultCard';
 import useImmersiveMode from '@/lib/useImmersiveMode';
+
+function RuleItem({ num, text, highlight = '', result }) {
+  return (
+    <div className="flex items-center gap-3 bg-black px-3.5 py-2.5 rounded-xl border border-white/10 shadow-sm font-sans min-w-0">
+      <div className="w-7 h-7 rounded-lg bg-white/10 border border-white/20 flex items-center justify-center text-white text-xs font-black shadow-lg flex-shrink-0">
+        {num}
+      </div>
+      <div className="flex-1 flex items-center justify-between gap-2 min-w-0">
+        <p className="text-xs sm:text-sm font-medium text-gray-100 font-sans truncate">
+          {text}{highlight && <span className="font-bold text-white"> ({highlight})</span>}
+        </p>
+        <div className="text-[11px] sm:text-xs font-bold px-2.5 py-1 rounded-lg bg-[#050811] border border-white/10 text-white whitespace-nowrap shadow-inner tracking-wide flex-shrink-0">
+          {result}
+        </div>
+      </div>
+    </div>
+  );
+}
 
 // ============================================================
 // TUNING CONSTANTS
@@ -63,10 +79,10 @@ const getLevelConfig = (level, combo = 0) => {
 };
 
 const RULES_ITEMS = [
-  { title: "Dual Target Streams", text: "Two independent shape streams flow simultaneously across the screen (top/bottom in portrait mode, left/right in landscape)." },
-  { title: "Target Matching", text: "Check your active TOP and BOTTOM target shapes. Tap only matching shapes (+100 PTS × Combo × Level multiplier, +0.6s)." },
-  { title: "Opposite Flow Directions", text: "Streams travel in opposing directions to challenge bilateral hemispheric visual tracking." },
-  { title: "Progressive Challenge", text: "Stream speed accelerates and target shapes diverge as your streak climbs. Misses reset combo (and deduct 0.8s if enabled)." }
+  { num: "1", text: "Dual Streams", highlight: "Top+Bottom / L+R", result: "Opposing Streams Flow" },
+  { num: "2", text: "Target Match", highlight: "+100 PTS", result: "Tap Active Template" },
+  { num: "3", text: "Bilateral", highlight: "Wide Peripheral", result: "Split Focus Across" },
+  { num: "4", text: "Miss / Mistake", highlight: "Resets Combo", result: "−0.8s on Penalty" }
 ];
 
 const ABOUT_TEXT = `Multi-Tasking (Dual-Target Flow) is an advanced cognitive drill designed to assess and train multi-stream visual tracking and divided attention under severe time constraints. Derived from cognitive workload research in aviation and high-speed motor sports, this drill challenges the brain's executive control system to monitor two independent perceptual channels concurrently.
@@ -74,15 +90,6 @@ const ABOUT_TEXT = `Multi-Tasking (Dual-Target Flow) is an advanced cognitive dr
 By streaming distinct geometric shapes across left and right visual fields, the drill exercises bilateral hemispheric processing. Players must maintain a wide peripheral gaze while executing discrete, rapid taps on valid targets matching active target templates.
 
 As your score increases, stream velocity accelerates and target templates diverge, pushing your visual processing throughput to elite levels.`;
-
-const RELATED_DRILLS = [
-  { id: "concentration-stamina", name: "Focus Test", cat: "Attention", desc: "Sustain continuous visual focus through prolonged high-density sequences.", href: "/drills/cognitive/attention/concentration-stamina" },
-  { id: "divided-attention", name: "Divided Attention Test", cat: "Attention", desc: "Track and react to multiple independent target streams simultaneously.", href: "/drills/cognitive/attention/divided-attention" },
-  { id: "concentration-grid", name: "Schulte Table Trainer", cat: "Focus", desc: "Scan and tap sequential numbers on expanding grid matrices.", href: "/drills/cognitive/focus/concentration-grid" },
-  { id: "distraction-fighter", name: "Stroop Test Online", cat: "Focus", desc: "Filter out high-interference Stroop visual distractors.", href: "/drills/cognitive/focus/distraction-fighter" },
-  { id: "rsvp-reader", name: "Reading Speed Test", cat: "Processing Speed", desc: "Process rapid serial visual presentation text streams.", href: "/drills/cognitive/processing-speed/rsvp-reader" },
-  { id: "reaction-time", name: "Neuro Speed & Reflex Test", cat: "Processing Speed", desc: "Train choice reaction speed and visual reflex latency.", href: "/drills/cognitive/processing-speed/reaction-time" }
-];
 
 export default function DualTargetFlowClient({ copy } = {}) {
   const [gameState, setGameState] = useState('start'); // 'start' | 'countdown' | 'playing' | 'gameOver'
@@ -189,6 +196,25 @@ export default function DualTargetFlowClient({ copy } = {}) {
     };
   }, []);
 
+  const { markIntentionalExit } = useUnexpectedExitGuard({
+    active: gameState === 'playing' || gameState === 'countdown',
+    onUnexpectedExit: () => {
+      countdownTimeoutsRef.current.forEach(clearTimeout);
+      countdownTimeoutsRef.current = [];
+      if (leftSpawnTimerRef.current) clearTimeout(leftSpawnTimerRef.current);
+      if (rightSpawnTimerRef.current) clearTimeout(rightSpawnTimerRef.current);
+      if (targetChangeIntervalRef.current) clearInterval(targetChangeIntervalRef.current);
+      animationFramesRef.current.forEach(id => cancelAnimationFrame(id));
+      animationFramesRef.current.clear();
+      startingRef.current = false;
+      gameActiveRef.current = false;
+      if (leftContainerRef.current) leftContainerRef.current.innerHTML = '';
+      if (rightContainerRef.current) rightContainerRef.current.innerHTML = '';
+      setIsFullscreen(false);
+      setGameState('start');
+    },
+  });
+
   const handleExitDrill = useCallback(async () => {
     markIntentionalExit();
     countdownTimeoutsRef.current.forEach(clearTimeout);
@@ -204,14 +230,34 @@ export default function DualTargetFlowClient({ copy } = {}) {
     if (leftContainerRef.current) leftContainerRef.current.innerHTML = '';
     if (rightContainerRef.current) rightContainerRef.current.innerHTML = '';
 
+    if (typeof document !== 'undefined' && document.fullscreenElement) {
+      try {
+        await document.exitFullscreen();
+      } catch (err) {}
+    }
     setIsFullscreen(false);
     setGameState('start');
-  }, []);
+  }, [markIntentionalExit]);
 
-  const { markIntentionalExit } = useUnexpectedExitGuard({
-    active: gameState === 'playing' || gameState === 'countdown',
-    onUnexpectedExit: handleExitDrill,
-  });
+  // Keyboard and Fullscreen Lifecycle (Rule 6)
+  useEffect(() => {
+    const handleKeyDown = (e) => {
+      if (e.key === 'Escape') {
+        handleExitDrill();
+      }
+    };
+    const handleFullscreenChange = () => {
+      if (!document.fullscreenElement && isFullscreen) {
+        handleExitDrill();
+      }
+    };
+    window.addEventListener('keydown', handleKeyDown);
+    document.addEventListener('fullscreenchange', handleFullscreenChange);
+    return () => {
+      window.removeEventListener('keydown', handleKeyDown);
+      document.removeEventListener('fullscreenchange', handleFullscreenChange);
+    };
+  }, [handleExitDrill, isFullscreen]);
 
   const endGame = useCallback(() => {
     markIntentionalExit();
@@ -357,6 +403,36 @@ export default function DualTargetFlowClient({ copy } = {}) {
     drillAudio.playPenalty();
   }, [triggerFlash]);
 
+  // Imperative hit-impact ring + spark burst, mirrors lib/useHitBurst.js for a raw-DOM container
+  const spawnHitBurst = useCallback((container, x, y, color) => {
+    const ring = document.createElement('div');
+    ring.className = 'fx-hit-ring';
+    ring.style.left = `${x - 20}px`;
+    ring.style.top = `${y - 20}px`;
+    ring.style.width = '40px';
+    ring.style.height = '40px';
+    ring.style.borderWidth = '3px';
+    ring.style.borderColor = color;
+    container.appendChild(ring);
+    setTimeout(() => { if (ring.isConnected) ring.remove(); }, 480);
+
+    for (let i = 0; i < 8; i++) {
+      const angle = Math.random() * Math.PI * 2;
+      const dist = 20 + Math.random() * 26;
+      const spark = document.createElement('div');
+      spark.className = 'fx-hit-spark';
+      spark.style.left = `${x}px`;
+      spark.style.top = `${y}px`;
+      spark.style.width = '6px';
+      spark.style.height = '6px';
+      spark.style.background = color;
+      spark.style.setProperty('--tx', `${Math.cos(angle) * dist}px`);
+      spark.style.setProperty('--ty', `${Math.sin(angle) * dist}px`);
+      container.appendChild(spark);
+      setTimeout(() => { if (spark.isConnected) spark.remove(); }, 480);
+    }
+  }, []);
+
   // DOM Shape Spawner
   const createShape = useCallback((side) => {
     const container = side === 'left' ? leftContainerRef.current : rightContainerRef.current;
@@ -412,6 +488,7 @@ export default function DualTargetFlowClient({ copy } = {}) {
       if (glyph === currentTarget) {
         el.style.color = '#60a5fa';
         el.style.textShadow = '0 0 20px #60a5fa';
+        spawnHitBurst(container, parseFloat(el.style.left) || 0, parseFloat(el.style.top) || 0, '#60a5fa');
         applyHit();
         setTimeout(() => { if (el.isConnected) el.remove(); }, 120);
       } else {
@@ -444,7 +521,7 @@ export default function DualTargetFlowClient({ copy } = {}) {
     }
     animId = requestAnimationFrame(animate);
     animationFramesRef.current.add(animId);
-  }, [applyHit, applyPenalty]);
+  }, [applyHit, applyPenalty, spawnHitBurst]);
 
   const scheduleLeftSpawn = useCallback(() => {
     if (!gameActiveRef.current) return;
@@ -575,6 +652,7 @@ export default function DualTargetFlowClient({ copy } = {}) {
           <div className="flex flex-col gap-1">
             <h1 className="text-2xl sm:text-3xl font-black tracking-tight text-white">
               <span data-seo-kw="1">{copy?.title || "Multitasking Test"}</span>
+              <span className="block text-sm font-semibold text-slate-400 mt-1">{copy?.subtitle || "Multitasking cognitive test for monitoring parallel target streams and improving task-switching speed"}</span>
             </h1>
           </div>
         )}
@@ -583,10 +661,10 @@ export default function DualTargetFlowClient({ copy } = {}) {
         {!isFullscreen && (
           <div className="grid grid-cols-4 gap-2 w-full -mb-2">
             {[
-              { label: 'Score', value: uiScore, tone: 'text-blue-400' },
-              { label: 'Time', value: `${uiTimeLeft}s`, tone: uiTimeLeft <= 10 ? 'text-red-400 animate-pulse' : 'text-white' },
-              { label: 'Level', value: `L${uiLevel}`, tone: 'text-blue-400' },
-              { label: 'Best Score', value: bestScore, tone: 'text-amber-400' },
+              { label: copy?.statScore || 'Score', value: uiScore, tone: 'text-blue-400' },
+              { label: copy?.statTime || 'Time', value: `${uiTimeLeft}s`, tone: uiTimeLeft <= 10 ? 'text-red-400 animate-pulse' : 'text-white' },
+              { label: copy?.statLevel || 'Level', value: `L${uiLevel}`, tone: 'text-blue-400' },
+              { label: copy?.statBest || 'Best Score', value: bestScore, tone: 'text-amber-400' },
             ].map((s) => (
               <div key={s.label} className="rounded-lg border border-white/[0.06] bg-white/[0.015] px-2 py-2 text-center">
                 <div className="text-[9.5px] uppercase font-semibold text-slate-500 tracking-[0.12em]">{s.label}</div>
@@ -611,12 +689,12 @@ export default function DualTargetFlowClient({ copy } = {}) {
             <>
               <div className="absolute top-4 left-4 z-30 pointer-events-none flex flex-col gap-1">
                 <div>
-                  <p className="text-[10px] font-semibold uppercase tracking-wider text-white/50">Score</p>
+                  <p className="text-[10px] font-semibold uppercase tracking-wider text-white/50">{copy?.statScore || 'Score'}</p>
                   <p className="text-2xl sm:text-3xl font-black text-white tabular-nums leading-tight">{uiScore}</p>
                 </div>
               </div>
               <div className="absolute top-4 right-4 z-30 pointer-events-none text-right">
-                <p className="text-[10px] font-semibold uppercase tracking-wider text-white/50">Time Left</p>
+                <p className="text-[10px] font-semibold uppercase tracking-wider text-white/50">{copy?.timeLeft || 'Time Left'}</p>
                 <p className={`text-2xl sm:text-3xl font-black tabular-nums leading-tight ${uiTimeLeft <= 10 ? 'text-red-400 animate-pulse' : 'text-white'}`}>{uiTimeLeft}s</p>
               </div>
             </>
@@ -693,8 +771,8 @@ export default function DualTargetFlowClient({ copy } = {}) {
             <FpsStartCard
               icon={Target}
               accent="blue"
-              title="Multitasking Test"
-              subtitle="Dual-Stream Tracking • Peripheral Focus"
+              title={copy?.startTitle || "Multitasking Test"}
+              subtitle={copy?.startSubtitle || "Dual-Stream Tracking"}
               isTouchOnlyDevice={false}
               onStart={enterDrill}
             />
@@ -702,7 +780,7 @@ export default function DualTargetFlowClient({ copy } = {}) {
 
           {/* COUNTDOWN OVERLAY */}
           {gameState === 'countdown' && (
-            <DrillCountdown value={countdownValue} subtitle="GET READY" />
+            <DrillCountdown value={countdownValue} subtitle={copy?.getReady || "GET READY"} />
           )}
 
           {/* UNIVERSAL RESULT CARD */}
@@ -713,10 +791,10 @@ export default function DualTargetFlowClient({ copy } = {}) {
               score={uiScore}
               isNewBest={isNewBest}
               stats={[
-                { label: 'Accuracy', value: analytics.accuracy, suffix: '%' },
-                { label: 'Hits', value: analytics.successfulHits },
-                { label: 'Peak Level', value: `Lv. ${analytics.finalLevel}` },
-                { label: 'Max Combo', value: analytics.maxCombo, suffix: 'x' },
+                { label: copy?.accuracy || 'Accuracy', value: analytics.accuracy, suffix: '%' },
+                { label: copy?.hits || 'Hits', value: analytics.successfulHits },
+                { label: copy?.peakLevel || 'Peak Level', value: `Lv. ${analytics.finalLevel}` },
+                { label: copy?.maxCombo || 'Max Combo', value: analytics.maxCombo, suffix: 'x' },
               ]}
               onPlayAgain={enterDrill}
               onShare={shareResult}
@@ -729,7 +807,7 @@ export default function DualTargetFlowClient({ copy } = {}) {
         {/* Stage Caption */}
         {!isFullscreen && (
           <p className="text-xs text-slate-400 leading-relaxed -mt-2">
-            Monitor and tap matching symbols across dual opposing streams as flow speed and shapes accelerate.
+            {copy?.caption || 'Monitor and tap matching symbols across dual opposing streams as flow speed and shapes accelerate.'}
           </p>
         )}
 
@@ -738,23 +816,20 @@ export default function DualTargetFlowClient({ copy } = {}) {
           <div className="[&>div]:!mt-0">
             <DrillAccordion
               id="rules"
-              title="Drill Instructions & Scoring System"
+              title={copy?.rulesTitle || "Drill Instructions & Scoring System"}
               isOpen={openAccordion === 'rules'}
               onToggle={() => setOpenAccordion(openAccordion === 'rules' ? null : 'rules')}
             >
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 font-sans">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-3 font-sans">
                 {RULES_ITEMS.map((item, i) => (
-                  <div key={i} className="bg-black p-4 rounded-xl border border-white/10">
-                    <p className="text-sm font-bold text-white mb-1">{item.title}</p>
-                    <p className="text-xs text-gray-300 leading-relaxed">{item.text}</p>
-                  </div>
+                  <RuleItem key={i} num={item.num} text={copy?.ruleItems?.[i]?.text || item.text} highlight={copy?.ruleItems?.[i]?.highlight || item.highlight} result={copy?.ruleItems?.[i]?.result || item.result} />
                 ))}
               </div>
             </DrillAccordion>
 
             <DrillAccordion
               id="about"
-              title="About Multitasking Test & Dual-Target Flow"
+              title={copy?.aboutTitle || "About Multitasking Test & Dual-Target Flow"}
               isOpen={openAccordion === 'about'}
               onToggle={() => setOpenAccordion(openAccordion === 'about' ? null : 'about')}
             >
@@ -762,7 +837,7 @@ export default function DualTargetFlowClient({ copy } = {}) {
                 <section>
                   <div className="space-y-4">
                     <p className="text-sm leading-relaxed text-gray-300">
-                      Human multitasking relies on rapid task switching rather than true simultaneous processing, incurring a measurable 100&ndash;300&nbsp;ms switch penalty as cognitive goals alternate (Rogers &amp; Monsell, 1995; Monsell, 2003). This dual-stream flow drill trains prefrontal executive control to manage concurrent target streams under escalating velocity (Pashler, 1994).
+                      {copy?.aboutLead || 'Human multitasking relies on rapid task switching rather than true simultaneous processing, incurring a measurable 100–300 ms switch penalty as cognitive goals alternate (Rogers & Monsell, 1995; Monsell, 2003). This dual-stream flow drill trains prefrontal executive control to manage concurrent target streams under escalating velocity (Pashler, 1994).'}
                     </p>
                     {ABOUT_TEXT.split('\n\n').map((para, i) => (
                       <p key={i} className="text-sm leading-relaxed text-gray-300">{para}</p>
@@ -774,59 +849,29 @@ export default function DualTargetFlowClient({ copy } = {}) {
                   <div className="p-4 rounded-xl border border-gray-800 bg-white/[0.02]">
                     <div className="flex items-center gap-2.5 mb-2">
                       <div className="w-7 h-7 rounded-lg bg-blue-600 flex items-center justify-center"><Users className="w-3.5 h-3.5 text-white" /></div>
-                      <h5 className="text-xs font-bold text-white">Who Should Use This?</h5>
+                      <h5 className="text-xs font-bold text-white">{copy?.audienceTitle || 'Who Should Use This?'}</h5>
                     </div>
-                    <p className="text-xs text-gray-300 leading-relaxed">Air traffic controllers, emergency dispatchers, esports players, project managers, and anyone who juggles multiple live task streams under time pressure.</p>
+                    <p className="text-xs text-gray-300 leading-relaxed">{copy?.audienceText || 'Air traffic controllers, emergency dispatchers, esports players, project managers, and anyone who juggles multiple live task streams under time pressure.'}</p>
                   </div>
                   <div className="p-4 rounded-xl border border-gray-800 bg-white/[0.02]">
                     <div className="flex items-center gap-2.5 mb-2">
                       <div className="w-7 h-7 rounded-lg bg-emerald-600 flex items-center justify-center"><TrendingUp className="w-3.5 h-3.5 text-white" /></div>
-                      <h5 className="text-xs font-bold text-white">Skills Improved</h5>
+                      <h5 className="text-xs font-bold text-white">{copy?.skillsTitle || 'Skills Improved'}</h5>
                     </div>
-                    <p className="text-xs text-gray-300 leading-relaxed">Dual-stream visual tracking, peripheral target acquisition, bilateral hemispheric processing, and prefrontal executive control.</p>
+                    <p className="text-xs text-gray-300 leading-relaxed">{copy?.skillsText || 'Dual-stream visual tracking, peripheral target acquisition, bilateral hemispheric processing, and prefrontal executive control.'}</p>
                   </div>
                   <div className="p-4 rounded-xl border border-gray-800 bg-white/[0.02]">
                     <div className="flex items-center gap-2.5 mb-2">
                       <div className="w-7 h-7 rounded-lg bg-purple-600 flex items-center justify-center"><Zap className="w-3.5 h-3.5 text-white" /></div>
-                      <h5 className="text-xs font-bold text-white">Task-Switching Speed</h5>
+                      <h5 className="text-xs font-bold text-white">{copy?.flexibilityTitle || 'Task-Switching Speed'}</h5>
                     </div>
-                    <p className="text-xs text-gray-300 leading-relaxed">Left and right target templates rotate and diverge as you level up, forcing you to reload task rules fast and minimize switch-cost errors.</p>
+                    <p className="text-xs text-gray-300 leading-relaxed">{copy?.flexibilityText || 'Left and right target templates rotate and diverge as you level up, forcing you to reload task rules fast and minimize switch-cost errors.'}</p>
                   </div>
                 </div>
               </div>
             </DrillAccordion>
           </div>
         )}
-
-        {/* RELATED DRILLS GRID */}
-        {!isFullscreen && (
-          <section className="mt-4">
-            <h2 className="text-sm font-bold text-slate-400 uppercase tracking-wider mb-3">
-              Related Cognitive Drills
-            </h2>
-            <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
-              {RELATED_DRILLS.map((drill) => (
-                <Link
-                  key={drill.id}
-                  href={drill.href}
-                  className="group bg-[#0c0c16] border border-white/5 hover:border-blue-500/40 rounded-xl p-3.5 transition-all duration-200 hover:-translate-y-0.5 flex flex-col justify-between"
-                >
-                  <div>
-                    <div className="text-[10px] font-bold text-blue-400 uppercase tracking-wider mb-1">{drill.cat}</div>
-                    <div className="text-xs font-bold text-white group-hover:text-blue-300 transition-colors">{drill.name}</div>
-                    <div className="text-[11px] text-slate-400 mt-1 line-clamp-2 leading-relaxed">{drill.desc}</div>
-                  </div>
-                  <div className="text-[10px] font-bold text-slate-500 group-hover:text-blue-400 mt-3 flex items-center gap-1 transition-colors">
-                    Train Drill <span>→</span>
-                  </div>
-                </Link>
-              ))}
-            </div>
-          </section>
-        )}
-
-        {/* SITE FOOTER */}
-        {!isFullscreen && <DrillFooter />}
 
       </main>
     </div>

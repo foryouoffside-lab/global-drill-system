@@ -6,21 +6,19 @@ import { getAlternateLanguages } from '@/lib/i18n/locales';
 import RelatedDrills from '@/components/drill/RelatedDrills';
 
 export const metadata = {
-  title: "Tracking Zigue-Zague – Mira Contra Movimento | SkillDrills",
-  description: "Treine tracking contra zigue-zague e slide cancels no navegador. Elimine o overshoot da mira e domine alvos com movimentação evasiva no Apex e Warzone.",
+  title: "Treino de Mira | Tracking em Zigue-Zague | SkillDrills",
+  description: "Treino de mira grátis no navegador: acompanhe movimentos em zigue-zague e slide cancels, controlando o overshoot em duelos FPS.",
   keywords: [
-    "treino de tracking zigue-zague",
-    "mira contra movimentacao evasiva",
-    "como acompanhar alvos no apex",
-    "treino de tracking slide cancel",
-    "como evitar overshoot na mira",
-    "tracking de alvos rapidos fps",
-    "treino de mira zigue zague",
-    "exercicio de mira alvos irregulares",
-    "como melhorar tracking no warzone",
-    "treino de mudanca de direcao fps",
-    "treinador de tracking gratuito online",
-    "troca de tiro com movimentacao fps"
+    "treino de mira",
+    "treino de mira online",
+    "treino de mira fps",
+    "treino de mira navegador",
+    "tracking zigue-zague",
+    "movimento evasivo",
+    "slide cancel",
+    "mira contra movimento",
+    "tracking apex",
+    "tracking warzone"
   ],
   alternates: {
     canonical: "https://skilldrills.online/pt/drills/fps/anti-zigzag-movement-trainer",
@@ -31,8 +29,8 @@ export const metadata = {
     follow: true,
   },
   openGraph: {
-    title: "Tracking Zigue-Zague – Mira Contra Movimento | SkillDrills",
-    description: "Treine tracking contra zigue-zague e slide cancels no navegador. Elimine o overshoot da mira e domine alvos com movimentação evasiva no Apex e Warzone.",
+      title: "Treino de Mira | Tracking em Zigue-Zague | SkillDrills",
+    description: "Treino de mira grátis no navegador: acompanhe movimentos em zigue-zague e slide cancels, controlando o overshoot em duelos FPS.",
     url: "https://skilldrills.online/pt/drills/fps/anti-zigzag-movement-trainer",
     siteName: 'SkillDrills',
     locale: 'pt_BR',
@@ -40,8 +38,8 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: "Tracking Zigue-Zague – Mira Contra Movimento | SkillDrills",
-    description: "Treine tracking contra zigue-zague e slide cancels no navegador. Elimine o overshoot da mira e domine alvos com movimentação evasiva no Apex e Warzone.",
+      title: "Treino de Mira | Tracking em Zigue-Zague | SkillDrills",
+    description: "Treino de mira grátis no navegador: acompanhe movimentos em zigue-zague e slide cancels, controlando o overshoot em duelos FPS.",
   },
 };
 
@@ -52,14 +50,14 @@ export default function AntiZigzagPtPage() {
     "itemListElement": [
       { "@type": "ListItem", "position": 1, "name": "SkillDrills", "item": "https://skilldrills.online/pt" },
       { "@type": "ListItem", "position": 2, "name": "Treinos de FPS", "item": "https://skilldrills.online/pt/drills/fps" },
-      { "@type": "ListItem", "position": 3, "name": "Treino Anti Zigue-Zague", "item": "https://skilldrills.online/pt/drills/fps/anti-zigzag-movement-trainer" }
+      { "@type": "ListItem", "position": 3, "name": "Treino de mira - tracking em zigue-zague", "item": "https://skilldrills.online/pt/drills/fps/anti-zigzag-movement-trainer" }
     ]
   };
 
   const webAppSchema = {
     "@context": "https://schema.org",
     "@type": "WebApplication",
-    "name": "Anti-Zigzag Aim Trainer",
+    "name": "Treino de mira - tracking em zigue-zague",
     "url": "https://skilldrills.online/pt/drills/fps/anti-zigzag-movement-trainer",
     "applicationCategory": "GameApplication",
     "operatingSystem": "All",
@@ -75,10 +73,10 @@ export default function AntiZigzagPtPage() {
   const softwareSchema = {
     "@context": "https://schema.org",
     "@type": "SoftwareApplication",
-    "name": "Anti-Zigzag Aim Trainer",
+    "name": "Treino de mira - tracking em zigue-zague",
     "applicationCategory": "GameApplication",
     "operatingSystem": "Web Browser",
-    "dateModified": "2026-09-16",
+    "dateModified": "2026-09-20",
     "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
     "description": "Aperfeiçoe o tracking reativo contra mudanças bruscas de direção, zigue-zagues em V e slide cancels.",
     "genre": "Treino de FPS / Anti-Zigzag",
@@ -93,10 +91,10 @@ export default function AntiZigzagPtPage() {
   const videoGameSchema = {
     "@context": "https://schema.org",
     "@type": "VideoGame",
-    "name": "Anti-Zigzag Aim Trainer",
+    "name": "Treino de mira - tracking em zigue-zague",
     "url": "https://skilldrills.online/pt/drills/fps/anti-zigzag-movement-trainer",
     "description": "Treinador de mira para tracking reativo contra movimentação evasiva, zigue-zague e slide cancels no navegador.",
-    "dateModified": "2026-09-16",
+    "dateModified": "2026-09-20",
     "gamePlatform": "Web Browser",
     "genre": ["Treino de FPS", "Treinador de Mira", "Tracking Reativo"],
     "playMode": "SinglePlayer",
@@ -108,7 +106,7 @@ export default function AntiZigzagPtPage() {
   const faqSchema = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
-    "dateModified": "2026-09-16",
+    "dateModified": "2026-09-20",
     "mainEntity": [
       {
         "@type": "Question",
@@ -231,9 +229,9 @@ export default function AntiZigzagPtPage() {
   };
 
   const ptGuide = {
-    heading: "Guia de Treino Anti Zigue-Zague & Biomecânica de Tracking Evasivo",
+    heading: "Treino de Mira para Tracking em Zigue-Zague e Movimento Evasivo",
     intro: [
-      "Em jogos de tiro em primeira pessoa competitivos com mecânicas avançadas de mobilidade — como Apex Legends, Call of Duty: Warzone e Overwatch 2 —, adversários habilidosos utilizam corridas em zigue-zague, slide cancels e agachamentos rápidos para quebrar o rastreio de mira e induzir dessincronização visual-motora. Enquanto o tracking linear de perseguição contínua (Smooth Pursuit) se apoia na previsibilidade de uma trajetória contínua (Krauzlis, 2004), o tracking de zigue-zague força o sistema motor a uma tarefa de controle contínuo sob limites dinâmicos de velocidade e precisão (Fitts, 1954; Accot & Zhai, 1997). Jogadores experientes demonstram atenção visual e resolução temporal aprimoradas (Green & Bavelier, 2003), mas inversões oblíquas repentinas causam escorregamento retiniano agudo (Rashbass, 1961), exigindo frenagem veloz e reorientação do punho.",
+      "O treino de mira para tracking em zigue-zague pratica manter a mira no alvo durante mudanças diagonais, slide cancels e movimentos evasivos. Este drill mede inversões de direção, controle de overshoot e tempo de contato em duelos de Apex, Warzone e Overwatch 2.",
       "O erro mecânico primordial de quem tenta rastrear alvos evasivos é o overshoot atrás do ápice externo da curva. Quando um oponente executa um zigue-zague em V, sua velocidade horizontal cai momentaneamente para zero no ponto de virada antes de acelerar de volta pelo centro. Tentar perseguir freneticamente esse ponto extremo faz com que o retículo passe direto e os músculos antagonistas travem. Miradores de elite utilizam a ancoragem no eixo central (V-Crossover): eles mantêm o foco visual no corredor central e aplicam microajustes suaves acompanhando a velocidade enquanto o alvo cruza de volta.",
       "O Anti-Zigzag Aim Trainer roda diretamente no navegador moderno via HTML5 Pointer Lock API com mapeamento 1:1 de coordenadas de hardware, cronometria de alta resolução via performance.now() e zero suavização de cursor. Ao mitigar oscilações de taxa de amostragem USB (Woods et al., 2015) e testar a mecânica de dano por tempo de contato contínuo sob frequências crescentes de zigue-zague, este exercício desenvolve a supressão sensório-motora indispensável para extinguir correções de pânico e vencer duelos evasivos.",
       "Metodologia de medição: todos os eventos de rastreamento são registrados localmente pelo relógio de alta precisão performance.now() do navegador. Variáveis do ecossistema: navegadores reduzem temporizadores a cerca de 1 ms por segurança contra Spectre; monitores quantizam estímulos conforme a taxa de atualização (16,7 ms a 60 Hz, 6,9 ms a 144 Hz e 4,1 ms a 240 Hz). O polling do mouse adiciona cerca de 1 ms a 1000 Hz. Variações inferiores a 5 ms constituem ruído instrumental; compare seus resultados em condições estáveis de hardware."
@@ -322,7 +320,7 @@ export default function AntiZigzagPtPage() {
       />
       <AntiZigzagClient
         copy={{
-          startTitle: "Movimentação Anti Zigue-Zague",
+          startTitle: "Treino de mira - tracking em zigue-zague",
           startSubtitle: "Tracking Reativo • Progressão Infinita de Níveis",
           getReady: "PREPARE-SE",
           pausedTitle: "PAUSADO",
@@ -335,7 +333,9 @@ export default function AntiZigzagPtPage() {
             { num: "3", text: "Progressão de Nível", highlight: "+1 Nível / 1400 PTS", result: "Zigue-Zague Adaptativo" },
             { num: "4", text: "Fuga do Alvo", highlight: "Tempo Expirado", result: "Reinicia Combo (-0.6s)" }
           ],
-          aboutTitle: "Sobre o Treino Anti Zigue-Zague"
+          h1Keyword: "Treino de mira",
+          h1Suffix: " — tracking em zigue-zague",
+          aboutTitle: "Sobre treino de mira e tracking em zigue-zague"
         }}
       />
       <DrillGuide guide={ptGuide} />

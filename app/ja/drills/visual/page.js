@@ -37,6 +37,15 @@ export const metadata = {
   },
 };
 
+Object.assign(metadata, {
+  title: '動体視力・視覚探索 | 無料トレーニング | SkillDrills',
+  description: '動体視力テスト、視覚探索、周辺視、奥行き判断、反応速度を練習できる9種類の無料ブラウザドリル。',
+  keywords: ['動体視力テスト', '視覚探索 テスト', '反応速度 テスト', 'スポーツビジョン', '周辺視 トレーニング', '眼球運動 トレーニング', '奥行き知覚 テスト', '多目標追跡', '無料 視覚トレーニング'],
+  openGraph: { ...metadata.openGraph, title: '動体視力・視覚探索 | 無料トレーニング | SkillDrills', description: '動体視力、視覚探索、周辺視、奥行き判断を練習できる9種類の無料ブラウザドリル。' },
+  twitter: { ...metadata.twitter, title: '動体視力・視覚探索 | SkillDrills', description: '動体視力と視覚探索を練習できる9種類の無料ドリル。' },
+  alternates: { ...metadata.alternates, languages: getAlternateLanguages('/drills/visual') },
+});
+
 const breadcrumbSchema = {
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
@@ -50,6 +59,8 @@ const breadcrumbSchema = {
 const collectionSchema = {
   "@context": "https://schema.org",
   "@type": "CollectionPage",
+  "inLanguage": "ja",
+  "dateModified": "2026-09-20",
   "name": "視覚機能トレーニング & 動体視力検査 (9種目)",
   "url": "https://skilldrills.online/ja/drills/visual",
   "description": "動体視力、深視力検査、光反応速度、多目標追従、視覚探索、時間分解能を鍛える9種類の視覚認知ドリル。",
@@ -71,6 +82,8 @@ const collectionSchema = {
 const faqSchema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
+  "inLanguage": "ja",
+  "dateModified": "2026-09-20",
   "mainEntity": [
     {
       "@type": "Question",
@@ -138,6 +151,11 @@ const faqSchema = {
     }
   ]
 };
+
+faqSchema.mainEntity.push(
+  { "@type": "Question", "name": "この視覚トレーニング一覧には何種類のドリルがありますか？", "acceptedAnswer": { "@type": "Answer", "text": "動体視力と反応・衝動抑制、標的追従と眼球運動、視覚認識と奥行き判断の3分野に分かれた9種類のブラウザドリルがあります。カードから各ドリルを開けます。" } },
+  { "@type": "Question", "name": "ブラウザの視覚ドリルは眼科の視力検査の代わりになりますか？", "acceptedAnswer": { "@type": "Answer", "text": "いいえ。画面上の反応、追従、探索、空間判断を繰り返し測る練習であり、視力や眼疾患を診断するものではありません。必要な検査は眼科医や視機能の専門家に相談してください。" } }
+);
 
 export default function VisualDrillsPage() {
   return (

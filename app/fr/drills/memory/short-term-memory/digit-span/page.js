@@ -5,21 +5,24 @@ import { pickSources } from '@/lib/drillSources';
 import { getAlternateLanguages } from '@/lib/i18n/locales';
 
 export const metadata = {
-  title: "Test d Empan de Chiffres – Mémoire Numérique | SkillDrills",
-  description: "Test d empan de chiffres en ligne gratuit: Retenez des suites de nombres croissantes et evaluez votre boucle phonologique sans telechargement ni inscription.",
+  title: "Test empan de chiffres en ligne | Mémoire | SkillDrills",
+  description: "Test gratuit d’empan de chiffres : mémorisez une suite numérique croissante et restituez-la dans le bon ordre, directement dans le navigateur.",
   keywords: [
-    "test d empan mnemonique",
-    "test empan digital en ligne",
-    "test de memoire des chiffres",
-    "empan mnesique test gratuit",
-    "boucle phonologique test",
-    "test de memoire a court terme chiffres",
-    "evaluation memoire de travail chiffres",
-    "exercice de retention numerique",
-    "empan verbal et numerique",
-    "test de chunking mnemonique",
-    "test neuropsychologique empan",
-    "exercice memoire des nombres"
+    "test empan de chiffres",
+    "empan de chiffres en ligne",
+    "test mémoire des chiffres",
+    "empan numérique",
+    "test de mémoire numérique",
+    "rétention de chiffres",
+    "mémoire de travail chiffres",
+    "mémoire à court terme chiffres",
+    "test de chiffres gratuit",
+    "span de chiffres",
+    "boucle phonologique",
+    "empan mnésique",
+    "répéter une suite de chiffres",
+    "test neuropsychologique chiffres",
+    "regroupement des chiffres"
   ],
   alternates: {
     canonical: "https://skilldrills.online/fr/drills/memory/short-term-memory/digit-span",
@@ -30,8 +33,8 @@ export const metadata = {
     follow: true,
   },
   openGraph: {
-    title: "Test d Empan de Chiffres – Mémoire Numérique | SkillDrills",
-    description: "Test d empan de chiffres en ligne gratuit: Retenez des suites de nombres croissantes et evaluez votre boucle phonologique sans telechargement ni inscription.",
+    title: "Test empan de chiffres en ligne | Mémoire | SkillDrills",
+    description: "Test gratuit d’empan de chiffres : mémorisez une suite numérique croissante et restituez-la dans le bon ordre, directement dans le navigateur.",
     url: "https://skilldrills.online/fr/drills/memory/short-term-memory/digit-span",
     siteName: 'SkillDrills',
     locale: 'fr_FR',
@@ -39,8 +42,8 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: "Test d Empan de Chiffres – Mémoire Numérique | SkillDrills",
-    description: "Test d empan de chiffres en ligne gratuit: Retenez des suites de nombres croissantes et evaluez votre boucle phonologique sans telechargement ni inscription.",
+    title: "Test empan de chiffres en ligne | Mémoire | SkillDrills",
+    description: "Test gratuit d’empan de chiffres : mémorisez une suite numérique croissante et restituez-la dans le bon ordre, directement dans le navigateur.",
   },
 };
 
@@ -98,6 +101,7 @@ const webAppSchema = {
   "offers": { "@type": "Offer", "price": "0", "priceCurrency": "EUR" },
   "author": { "@type": "Organization", "name": "SkillDrills" },
   "isAccessibleForFree": true,
+  "sameAs": ["https://fr.wikipedia.org/wiki/Empan"],
   "dateModified": "2026-09-16"
 };
 
@@ -334,6 +338,10 @@ export default function FrenchDigitSpanPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(howToSchema) }}
       />
       <DigitSpanClient copy={{
+        h1Keyword: "Test d’empan de chiffres",
+        h1Suffix: " – Mémoire numérique",
+        subtitle: "Mémorisez les chiffres et restituez la suite",
+        caption: "Mémorisez la suite numérique croissante, puis restituez les chiffres dans le même ordre.",
         digitLabel: "Chiffres",
         scoreLabel: "Score",
         timeLeftLabel: "Temps",
@@ -341,7 +349,7 @@ export default function FrenchDigitSpanPage() {
         memorizeTitle: "MEMORISEZ LA SEQUENCE",
         evaluating: "Evaluation...",
         startTitle: "Test d Empan Pro",
-        startSubtitle: "Memoire Numerique a Court Terme • Empan de Chiffres",
+        startSubtitle: "Mémoire numérique • empan de chiffres",
         countdownSubtitle: "PREPAREZ-VOUS",
         newBest: "NOUVEAU RECORD",
         pointsLabel: "Points",

@@ -6,38 +6,21 @@ import DrillFooter from '@/components/drill/DrillFooter';
 import { pickSources } from '@/lib/drillSources';
 
 // ============================================================
-// SEO RESEARCH FINDINGS — steady-hand (Spanish: Juego del Pulso)
-// PRIMARY:  "juego del pulso"                — Universal Spanish game query
-//           "test de pulso online"           — Diagnostic query
-// SECONDARY / LSI:
-//           "prueba de pulso ratón"          — Mouse steadiness search
-//           "juego del alambre eléctrico"    — Cultural wire game query
-//           "precisión de ratón test"        — Accuracy test
-//           "test de temblor de manos online" — Hand tremor query
-//           "control motor fino ratón"       — Fine motor control query
-//           "ley de dirección de accot-zhai" — Steering Law
+// Native keyword research: docs/seo/research/steady-hand-2026-09-20.md
 // ============================================================
 
 export const metadata = {
-  title: 'Juego del Pulso – Test de Precisión de Ratón y Firmeza',
-  description: 'Juego del pulso online gratis. Guía el cursor por curvas estrechas sin tocar los bordes y mide tu estabilidad motora con la Ley de Dirección de Accot-Zhai.',
+  title: 'Precisión del ratón | Test de mano firme | SkillDrills',
+  description: 'Sigue un trazado cada vez más estrecho y mide precisión del cursor, control motor fino y estabilidad de la mano. Gratis en el navegador.',
   keywords: [
-    'juego del pulso',
-    'test de pulso online',
-    'prueba de pulso ratón',
-    'juego del alambre eléctrico',
-    'precisión de ratón test',
-    'test de temblor de manos online',
-    'control motor fino ratón',
-    'ley de dirección de accot-zhai',
-    'estabilidad de puntero',
-    'juego de precisión de la mano',
-    'ejercicios para mejorar el pulso',
-    'entrenamiento de puntería ratón',
+    'test de precisión del ratón', 'test de mano firme', 'precisión del cursor',
+    'seguir un trazado', 'control motor fino', 'coordinación ojo mano ratón',
+    'juego de laberinto del ratón', 'control del cursor', 'entrenamiento de precisión',
+    'estabilidad de la mano', 'camino estrecho ratón', 'prueba de precisión del mouse',
   ],
   openGraph: {
-    title: 'Juego del Pulso – Test de Precisión de Ratón y Firmeza | SkillDrills',
-    description: 'Juego del pulso online gratis. Guía el cursor por curvas estrechas sin tocar los bordes y mide tu estabilidad motora con la Ley de Dirección de Accot-Zhai.',
+    title: 'Precisión del ratón | Test de mano firme | SkillDrills',
+    description: 'Sigue un trazado cada vez más estrecho y mide precisión del cursor, control motor fino y estabilidad de la mano. Gratis en el navegador.',
     type: 'article',
     url: 'https://skilldrills.online/es/drills/motor/precision-control/steady-hand',
     siteName: 'SkillDrills',
@@ -45,8 +28,8 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Juego del Pulso – Test de Precisión de Ratón y Firmeza | SkillDrills',
-    description: 'Juego del pulso online gratis. Guía el cursor por curvas estrechas sin tocar los bordes y mide tu estabilidad motora con la Ley de Dirección de Accot-Zhai.',
+    title: 'Precisión del ratón | Test de mano firme | SkillDrills',
+    description: 'Sigue un trazado cada vez más estrecho y mide precisión del cursor, control motor fino y estabilidad de la mano. Gratis en el navegador.',
   },
   robots: { index: true, follow: true },
   alternates: {
@@ -71,6 +54,7 @@ const breadcrumbSchema = {
 const softwareApplicationSchema = {
   '@context': 'https://schema.org',
   '@type': 'SoftwareApplication',
+  inLanguage: 'es-ES',
   name: 'Juego del Pulso – Test de Precisión de Ratón',
   applicationCategory: 'HealthApplication',
   operatingSystem: 'All',
@@ -78,36 +62,41 @@ const softwareApplicationSchema = {
   description: 'Juego del pulso y test de control motor fino gratuito para navegador. Conduce el cursor a través de un pasillo que se estrecha y evalúa tu estabilidad de mano y temblor.',
   url: 'https://skilldrills.online/es/drills/motor/precision-control/steady-hand',
   publisher: { '@type': 'Organization', name: 'SkillDrills', url: 'https://skilldrills.online/es' },
-  dateModified: '2026-09-05',
+  dateModified: '2026-09-20',
 };
 
 const webApplicationSchema = {
   '@context': 'https://schema.org',
   '@type': 'WebApplication',
+  inLanguage: 'es-ES',
   name: 'Juego del Pulso Online',
   applicationCategory: 'GameApplication',
   operatingSystem: 'All',
   browserRequirements: 'Navegador moderno con compatibilidad HTML5 Canvas y Pointer Events',
   offers: { '@type': 'Offer', price: '0', priceCurrency: 'EUR' },
   url: 'https://skilldrills.online/es/drills/motor/precision-control/steady-hand',
-  dateModified: '2026-09-05',
+  dateModified: '2026-09-20',
 };
 
 const videoGameSchema = {
   '@context': 'https://schema.org',
   '@type': 'VideoGame',
+  inLanguage: 'es-ES',
   name: 'Juego del Pulso y Precisión Motora',
   url: 'https://skilldrills.online/es/drills/motor/precision-control/steady-hand',
   description: 'Juego de habilidad que evalúa el temblor fisiológico y la precisión de trazado en el ratón.',
   genre: ['Precision Game', 'Action', 'Esports Training'],
   gamePlatform: ['Web Browser', 'Desktop', 'Mobile'],
   applicationCategory: 'Game',
-  offers: { '@type': 'Offer', price: '0', priceCurrency: 'EUR' }
+  offers: { '@type': 'Offer', price: '0', priceCurrency: 'EUR' },
+  dateModified: '2026-09-20',
 };
 
 const faqSchema = {
   '@context': 'https://schema.org',
   '@type': 'FAQPage',
+  inLanguage: 'es-ES',
+  dateModified: '2026-09-20',
   mainEntity: [
     {
       '@type': 'Question',
@@ -195,6 +184,8 @@ const faqSchema = {
 const howToSchema = {
   '@context': 'https://schema.org',
   '@type': 'HowTo',
+  inLanguage: 'es-ES',
+  dateModified: '2026-09-20',
   name: 'Cómo entrenar el pulso y la precisión con el ratón',
   description: 'Protocolo de entrenamiento para recorrer curvas estrechas y dominar la Ley de Accot-Zhai.',
   step: [
@@ -316,8 +307,8 @@ const guideProps = {
 };
 
 const esCopy = {
-  h1Keyword: 'Juego del Pulso',
-  h1Suffix: ' (Test de Precisión de Ratón)',
+  h1Keyword: 'Precisión del Ratón',
+  h1Suffix: ' (Test de Mano Firme)',
   caption: 'El Juego del Pulso evalúa la firmeza de tu mano y tu precisión motora fina al guiar el cursor por un sendero iluminado sin tocar las paredes. Basado en la Ley de Accot-Zhai (1997) y en el control en bucle cerrado de Woodworth (1899).',
   statLaps: 'Vueltas',
   statTime: 'Tiempo Restante',
@@ -326,7 +317,7 @@ const esCopy = {
   pausedTitle: 'Pausado',
   pausedPrompt: 'Haz clic en la pantalla para fijar el cursor y reanudar.',
   startTitle: 'Circuito del Pulso',
-  startSubtitle: 'Precisión Motora & Recorrido Estrecho • Temporizador de 45s',
+  startSubtitle: 'Mano firme y precisión del trazado • 45 s',
   startBtn: 'Iniciar Drill',
   countdownSubtitle: 'PREPÁRATE',
   newBest: 'NUEVO RÉCORD',

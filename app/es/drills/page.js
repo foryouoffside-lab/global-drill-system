@@ -2,8 +2,9 @@ import DrillsDirectoryClient from '@/app/drills/DrillsDirectoryClient';
 import { DRILLS } from '@/lib/drillsRegistry';
 import { getAlternateLanguages } from '@/lib/i18n/locales';
 import { getLocalizedDrill } from '@/lib/i18n/drillNames';
+import { buildDirectoryMetadata, getDirectoryCollectionFields } from '@/lib/i18n/siteLandingSeoNative';
 
-export const metadata = {
+const legacyMetadata = {
   title: 'Entrenador de Puntería: 82 Tests Gratis | SkillDrills',
   description: '82 ejercicios online gratuitos en 8 categorías: puntería FPS para shooters, test de reacción, memoria, CPS y agudeza visual directamente en el navegador.',
   keywords: [
@@ -48,6 +49,11 @@ export const metadata = {
     canonical: 'https://skilldrills.online/es/drills',
     languages: getAlternateLanguages('/es/drills'),
   },
+};
+
+export const metadata = {
+  ...legacyMetadata,
+  ...buildDirectoryMetadata('es', 'https://skilldrills.online/es/drills', DRILLS.length, getAlternateLanguages('/es/drills')),
 };
 
 const breadcrumbSchema = {
@@ -165,6 +171,8 @@ const faqSchema = {
     }
   ]
 };
+
+Object.assign(collectionSchema, getDirectoryCollectionFields('es', DRILLS.length));
 
 export default function LocalizedDrillsDirectoryPage() {
   const faqs = faqSchema.mainEntity.map((item) => ({

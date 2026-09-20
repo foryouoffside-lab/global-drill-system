@@ -5,23 +5,23 @@ import RelatedDrills from '@/components/drill/RelatedDrills';
 import { pickSources } from '@/lib/drillSources';
 
 export const metadata = {
-  title: "追従眼球運動テスト: スムーズパシュート | SkillDrills",
-  description: "無料オンライン追従眼球運動（スムーズパシュート）テスト。動く標的に視線とカーソルを密着させ、網膜スリップの抑制とエイム精度を測定・向上させます。",
+  title: "スムースパシュート | 視線追従トレーニング | SkillDrills",
+  description: "動く標的を目で追う無料スムースパシュート練習。視線追従とカーソルの安定性を測定します。医療検査ではありません。",
   keywords: [
+    "スムースパシュート",
+    "滑動性追従眼球運動",
     "追従眼球運動",
-    "眼球運動 トレーニング",
-    "スムーズパシュート",
-    "アイトラッキング テスト",
-    "滑動性追従運動",
-    "視線追従 測定",
-    "動体視力 トレーニング",
-    "FPS トラッキング 安定性",
-    "網膜スリップ 補正",
-    "手眼協調性"
+    "視線追従トレーニング",
+    "動体視力",
+    "アイトラッキング",
+    "滑動性眼球運動",
+    "目で追う トレーニング",
+    "FPS トラッキング",
+    "手眼協調"
   ],
   openGraph: {
-    title: "追従眼球運動テスト・眼球運動トレーニング – スムーズパシュート視線追従測定 | SkillDrills",
-    description: "滑動性追従眼球運動と手眼協調性を測定する無料ブラウザ眼球運動トレーニング。連続移動する目標オーブに視線とカーソルを密着させ、トラッキング精度を向上させます。",
+    title: "スムースパシュート | 視線追従トレーニング | SkillDrills",
+    description: "動く標的を追って視線とカーソルを安定させる無料ブラウザ練習。医療診断ではありません。",
     type: 'article',
     url: 'https://skilldrills.online/ja/drills/visual/tracking-accuracy/pursuit-tracker',
     siteName: 'SkillDrills',
@@ -29,8 +29,8 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: "追従眼球運動テスト・眼球運動トレーニング – スムーズパシュート視線追従測定 | SkillDrills",
-    description: "滑動性追従眼球運動と手眼協調性を測定する無料ブラウザ眼球運動トレーニング。網膜スリップを抑制しエイム安定性を科学的に強化。",
+    title: "スムースパシュート | 視線追従トレーニング | SkillDrills",
+    description: "スムースパシュートと視線追従の安定性を練習する無料ドリル。画面やマウス環境で結果は変わります。",
   },
   robots: { index: true, follow: true },
   alternates: {
@@ -238,7 +238,7 @@ const howToSchema = {
 
 const guideData = {
   eyebrow: "神経眼科学＆視覚運動制御ガイド",
-  heading: "追従眼球運動テスト – スムーズパシュートと視線運動制御のメカニズム",
+  heading: "スムースパシュート：動く標的を目で追う方法",
   intro: [
     "追従眼球運動（Smooth Pursuit Eye Movement, SPEM / 滑動性眼球運動）は、動く視覚目標の速度に合わせて眼球を滑らかに回転させ、目標の網膜像を中心窩（Fovea centralis）に留め続ける高度な眼球運動システムです。視標の位置誤差を急速なジャンプによって補正するサッケード運動（急速眼球運動）とは生理学的に完全に独立した神経回路によって制御されています（Rashbass, 1961; Krauzlis, 2004）。",
     "神経生理学において、スムーズパシュートの駆動シグナルは網膜上の像のブレ速度、すなわち『網膜スリップ（Retinal Slip）』です（Leigh & Zee, 2015）。視覚情報は一次視覚野（V1）から中側頭野（MT/V5野）および内側上側頭野（MST野）へ送られて速度ベクトルがミリ秒単位で抽出されます。その後、前頭眼野（FEF）や補足眼野（SEF）を経由して橋核から小脳フロックルスおよび背側虫部へ入力され、外眼筋を支配する動眼神経核へと運動指令が出力されます（Krauzlis, 2004; Lisberger, 2010）。",
@@ -247,7 +247,7 @@ const guideData = {
     "本システムは、HTML5の高精度タイマー（performance.now()）とサブピクセル描画エンジンを活用し、45秒間の連続セッションにおける目標追従維持率（Time on Target）、平均追従偏差、および最大連続ロック時間をリアルタイムに計測します。継続的なスムーズパシュート訓練は外眼筋と手指の運動連鎖を最適化し、FPSゲームでの吸い付くようなトラッキングエイムの確立、球技スポーツにおける動体視力強化、そして長時間のスクリーンワークによる視覚疲労の低減を可能にします。"
   ],
   benchmarks: {
-    title: "追従眼球運動・スムーズパシュート安定性ベンチマーク基準",
+    title: "スムースパシュートと視線追従の参考基準",
     headers: ["評価ランク / 階級", "ターゲット追従維持率 (Time on Target)", "平均トラッキング精度", "補正サッケード抑制率", "神経生理学的到達レベル"],
     rows: [
       ["神業 / プロ特級 (Top 1%)", "88% 以上", "92% 以上", "95% 以上抑制", "完全な滑動性追従と網膜スリップ最小化。小脳内部予測モデルの完全同期 (Lisberger, 2010)"],
@@ -259,7 +259,7 @@ const guideData = {
     note: "神経眼科学および眼球運動制御文献（Rashbass 1961; Krauzlis 2004; Leigh & Zee 2015; Lisberger 2010）に基づく客観的パフォーマンス基準です。"
   },
   techniques: {
-    title: "スムーズパシュート精度を極限まで高める4大アプローチ",
+    title: "視線追従の安定性を高める4つの方法",
     items: [
       {
         name: "速度位相マッチング (Smooth Acceleration Matching)",
@@ -329,7 +329,7 @@ export default function LocalizedPursuitTrackerJaPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
 
-      <AutoPursuitClient copy={{ title: "追従眼球運動テスト・眼球運動トレーニング", subtitle: "スムーズパシュート視線追従測定" }} />
+      <AutoPursuitClient copy={{ title: "スムースパシュート", subtitle: "視線追従トレーニング" }} />
       <DrillGuide guide={guideData} />
       <div className="max-w-6xl mx-auto px-4 pb-12">
         <RelatedDrills currentCategory="visual" currentHref="https://skilldrills.online/ja/drills/visual/tracking-accuracy/pursuit-tracker" />

@@ -11,17 +11,13 @@ import { pickSources } from '@/lib/drillSources';
 // on the same day the motor and visual sweeps returned 100% null. Re-measure
 // before acting on any of these terms. Phrases are kept; numbers are not.
 // SEO RESEARCH FINDINGS — reaction-chain
-// PRIMARY:  "impulse control reflex game"    — Focused mechanism query (volume unmeasured)
-//           "reaction chain trainer"          — Specific tool search (volume unmeasured)
+// PRIMARY:  "flick stop aim trainer"          — Focused mechanic query (volume unmeasured)
+//           "overflick correction"           — Specific FPS control query (volume unmeasured)
 // SECONDARY / LSI:
-//           "motor inhibition drill"          — Academic/athletic motor control query (volume unmeasured)
-//           "precision stopping drill"        — Tactical shooter aiming query (volume unmeasured)
-//           "mouse deceleration training"     — Technical gaming query (volume unmeasured)
-//           "cursor brake control game"       — Diagnostic game phrase (volume unmeasured)
-//           "reaction speed game"             — Broad volume head query (volume unmeasured)
-//           "mouse precision test"            — Broad intent query (volume unmeasured)
-//           "hand eye coordination game"      — General cognitive query (volume unmeasured)
-//           "stop signal reaction test"       — Clinical psychology query (volume unmeasured)
+//           "aim trainer online"              — Browser practice query (volume unmeasured)
+//           "flick stop training"             — Precision stopping query (volume unmeasured)
+//           "mouse precision test"            — Measurement query (volume unmeasured)
+//           "reaction speed game"             — Supporting game query (volume unmeasured)
 // LOCALES:  ja (衝動 抑制 反射 トレーニング), ko (충동 억제 반사 훈련), de (impuls hemmer reflex spiel)
 // PAA TARGETS:
 //   - What is the Reaction Chain drill?
@@ -37,27 +33,20 @@ import { pickSources } from '@/lib/drillSources';
 // ============================================================
 
 export const metadata = {
-  title: 'Impulse Control Reflex Game - Free Reaction Chain Drill',
+  title: 'Flick Stop Aim Trainer | Mouse Precision Drill',
   description:
-    'Train reaction speed, motor inhibition, and precision stopping. Intercept and arrest cursor momentum on targets in this free reflex training game.',
+    'Free browser aim trainer for flick-and-stop control. Hit moving targets, stop your cursor cleanly, and correct overflick with live feedback.',
   keywords: [
-    // Primary terms
-    'impulse control reflex game',
-    'reaction chain trainer',
-    'motor inhibition drill',
-    // Secondary / LSI terms
-    'precision stopping drill',
-    'mouse deceleration training',
-    'cursor brake control game',
-    'reaction speed game',
+    'flick stop aim trainer',
+    'aim trainer online',
+    'overflick correction',
     'mouse precision test',
+    'reaction speed game',
+    'flick stop training',
+    'cursor braking drill',
+    'target stopping practice',
     'hand eye coordination game',
-    'stop signal reaction test',
-    // Long-tail variants
-    'free online browser reflex game',
-    'eliminate mouse overflicking drill',
-    'kinetic brake control training browser',
-    'tactical shooter snap deceleration exercise',
+    'free browser aim trainer',
   ],
   alternates: {
     canonical: 'https://skilldrills.online/drills/physical/reflex-training/reaction-chain',
@@ -65,9 +54,9 @@ export const metadata = {
   },
   robots: { index: true, follow: true },
   openGraph: {
-    title: 'Impulse Control Reflex Game - Free Reaction Chain Drill',
+    title: 'Flick Stop Aim Trainer | Mouse Precision Drill',
     description:
-      'Train reaction speed, motor inhibition, and precision stopping. Intercept and arrest cursor momentum on incoming targets in this free reflex game.',
+      'Hit moving targets, stop your cursor cleanly, and correct overflick in a free browser aim trainer.',
     url: 'https://skilldrills.online/drills/physical/reflex-training/reaction-chain',
     siteName: 'SkillDrills',
     locale: 'en_US',
@@ -83,9 +72,9 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Impulse Control Reflex Game - Free Reaction Chain Drill',
+    title: 'Flick Stop Aim Trainer | Mouse Precision Drill',
     description:
-      'Train neuromuscular motor inhibition, kinetic braking, and precision target arrest across 15 difficulty tiers with real-time velocity diagnostics.',
+      'Practice flick-and-stop control, reaction speed, and precise cursor braking with live feedback.',
     images: ['https://skilldrills.online/icons/icon-512x512.png'],
   },
 };
@@ -117,6 +106,9 @@ const softwareApplicationSchema = {
   },
   description:
     'Interactive neuromuscular motor inhibition drill. Intercept fast-moving targets and bring the cursor to a complete stop on command.',
+  url: 'https://skilldrills.online/drills/physical/reflex-training/reaction-chain',
+  inLanguage: 'en',
+  dateModified: '2026-09-20',
 };
 
 const webApplicationSchema = {
@@ -135,6 +127,8 @@ const webApplicationSchema = {
   learningResourceType: 'Interactive Physical Training Tool',
   teaches:
     'Motor Inhibition, Kinetic Braking Control, Stop-Signal Response Arrest, High-Speed Target Interception, Fitts Precision Pacing',
+  inLanguage: 'en',
+  dateModified: '2026-09-20',
 };
 
 const faqSchema = {
@@ -234,6 +228,8 @@ const videoGameSchema = {
   gamePlatform: ['Web Browser', 'Desktop', 'Mobile'],
   applicationCategory: 'Game',
   offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
+  inLanguage: 'en',
+  dateModified: '2026-09-20',
 };
 
 const howToSchema = {
@@ -352,9 +348,9 @@ export default function ReactionChainPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(howToSchema) }}
       />
-      <ReactionChainClient copy={{ title: 'Reaction Chain Trainer', subtitle: 'Impulse Control Reflex Game & Stopping Drill' }} />
-      <DrillGuide {...guideProps} />
-      
+      <ReactionChainClient copy={{ title: 'Mouse Aim Braking Game', subtitle: 'Hit the target, then stop cleanly' }}>
+        <DrillGuide {...guideProps} />
+      </ReactionChainClient>
     </>
   );
 }

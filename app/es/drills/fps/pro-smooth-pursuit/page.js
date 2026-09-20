@@ -6,21 +6,19 @@ import RelatedDrills from '@/components/drill/RelatedDrills';
 import DrillFooter from '@/components/drill/DrillFooter';
 
 export const metadata = {
-  title: "Tracking Suave de Puntería – Curvas FPS | SkillDrills",
-  description: "Entrena el tracking suave y seguimiento en curva en tu navegador. Domina la puntería continua y fluida para Apex Legends y Overwatch 2 gratis.",
+  title: "Entrenamiento de Puntería | Tracking FPS | SkillDrills",
+  description: "Entrenamiento de puntería gratis en navegador: practica tracking suave sobre objetivos móviles para Apex, Overwatch 2 y FPS.",
   keywords: [
-    "entrenamiento de tracking suave",
-    "smooth pursuit punteria fps",
-    "entrenar tracking apex legends",
-    "punteria de seguimiento continuo",
-    "entrenar seguimiento en curva",
-    "como mejorar tracking overwatch 2",
-    "movimiento ocular de seguimiento suave",
-    "rastreo visual continuo punteria",
-    "entrenador de tracking raton gratis",
-    "eliminar temblor de punteria raton",
-    "estabilidad de antebrazo punteria",
-    "seguimiento de blancos moviles"
+    "aim trainer",
+    "entrenamiento de puntería",
+    "entrenamiento de aim online",
+    "tracking de puntería",
+    "tracking FPS",
+    "entrenamiento de tracking",
+    "puntería FPS",
+    "aim trainer online",
+    "tracking suave",
+    "entrenamiento de puntería valorant"
   ],
   alternates: {
     canonical: "https://skilldrills.online/es/drills/fps/pro-smooth-pursuit",
@@ -31,8 +29,8 @@ export const metadata = {
     follow: true,
   },
   openGraph: {
-    title: "Tracking Suave de Puntería – Curvas FPS | SkillDrills",
-    description: "Entrena el tracking suave y seguimiento en curva en tu navegador. Domina la puntería continua y fluida para Apex Legends y Overwatch 2 gratis.",
+    title: "Entrenamiento de Puntería | Tracking FPS | SkillDrills",
+    description: "Practica tracking suave sobre objetivos móviles: entrenamiento de puntería FPS gratis en navegador.",
     url: "https://skilldrills.online/es/drills/fps/pro-smooth-pursuit",
     siteName: 'SkillDrills',
     locale: 'es_ES',
@@ -40,8 +38,8 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: "Tracking Suave de Puntería – Curvas FPS | SkillDrills",
-    description: "Entrena el tracking suave y seguimiento en curva en tu navegador. Domina la puntería continua y fluida para Apex Legends y Overwatch 2 gratis.",
+    title: "Entrenamiento de Puntería | Tracking FPS | SkillDrills",
+    description: "Practica tracking suave sobre objetivos móviles: entrenamiento de puntería FPS gratis en navegador.",
   },
 };
 
@@ -65,7 +63,7 @@ export default function ProSmoothPursuitPage() {
       {
         "@type": "ListItem",
         "position": 3,
-        "name": "Tracking Suave Profesional",
+        "name": "Entrenamiento de Puntería - Tracking FPS",
         "item": "https://skilldrills.online/es/drills/fps/pro-smooth-pursuit"
       }
     ]
@@ -74,7 +72,7 @@ export default function ProSmoothPursuitPage() {
   const webAppSchema = {
     "@context": "https://schema.org",
     "@type": "WebApplication",
-    "name": "Entrenador de Tracking Suave SkillDrills",
+    "name": "Entrenamiento de Puntería - Tracking FPS",
     "url": "https://skilldrills.online/es/drills/fps/pro-smooth-pursuit",
     "applicationCategory": "GameApplication",
     "operatingSystem": "Any",
@@ -89,7 +87,7 @@ export default function ProSmoothPursuitPage() {
   const softwareSchema = {
     "@context": "https://schema.org",
     "@type": "SoftwareApplication",
-    "name": "Entrenamiento de Tracking Suave y Curvas",
+    "name": "Entrenamiento de Puntería con Tracking Suave",
     "applicationCategory": "GameApplication",
     "operatingSystem": "Web Browser",
     "offers": {
@@ -107,7 +105,7 @@ export default function ProSmoothPursuitPage() {
   const videoGameSchema = {
     "@context": "https://schema.org",
     "@type": "VideoGame",
-    "name": "Pro Smooth Pursuit Curve Tracking Trainer",
+    "name": "Entrenamiento de Tracking en Curva",
     "description": "Simulador de seguimiento continuo en curvas armónicas de Lissajous con bloqueo de cursor.",
     "genre": ["Action", "Esports Trainer", "Aim Trainer"],
     "playMode": "SinglePlayer",
@@ -117,7 +115,7 @@ export default function ProSmoothPursuitPage() {
   const faqSchema = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
-    "dateModified": "2026-09-16",
+    "dateModified": "2026-09-20",
     "mainEntity": [
       {
         "@type": "Question",
@@ -236,15 +234,15 @@ export default function ProSmoothPursuitPage() {
   };
 
   const copyEs = {
-    h1Keyword: "Tracking Suave de Puntería",
-    h1Suffix: " – Curvas FPS & Fluidez",
+    h1Keyword: "Entrenamiento de Puntería",
+    h1Suffix: " – Tracking FPS",
     statScore: "Puntuación",
     statTime: "Tiempo",
     statAccuracy: "Precisión",
     statBestScore: "Récord",
     pausedTitle: "Juego Pausado",
     pausedSubtitle: "Haz clic en la pantalla para reactivar el bloqueo de cursor.",
-    startTitle: "Tracking Suave Profesional",
+    startTitle: "Entrenamiento de Puntería",
     startSubtitle: "Seguimiento en Curva de Lissajous • Progresión Continua",
     getReady: "PREPÁRATE",
     stageCaption: "Sigue continuamente el objetivo en movimiento oscilatorio por las curvas de la pantalla sin perder contacto visual.",
@@ -255,15 +253,15 @@ export default function ProSmoothPursuitPage() {
       { num: "3", text: "Subida de Nivel", highlight: "+1 Nivel / 1400 PTS", result: "Curvas Adaptativas" },
       { num: "4", text: "Pérdida de Contacto", highlight: "1.0s Fuera de Diana", result: "Reinicio Combo (-0.6s)" }
     ],
-    aboutTitle: "Sobre el Entrenador de Tracking Suave",
+    aboutTitle: "Sobre el entrenamiento de puntería y tracking suave",
     aboutHeading: "¿Qué es el Seguimiento Suave (Smooth Pursuit)?",
     aboutText: "El seguimiento suave (Smooth Pursuit) es la facultad oculomotora de mantener el foco visual sobre un objeto en movimiento continuo mediante la modulación de velocidad de los músculos oculares y el antebrazo (Krauzlis, 2004; Barnes, 2008). Este ejercicio erradica micro flicks innecesarios transformando tu puntería en un trazo fluido y constante."
   };
 
   const smoothPursuitGuide = {
-    heading: "Guía de Tracking Suave & Curvas de Lissajous",
+    heading: "Entrenamiento de Puntería para Tracking FPS",
     intro: [
-      "El Entrenador de Tracking Suave Profesional es un entorno sensoriomotor ideado para aislar y afinar la sincronización continua de velocidad visomotora. En juegos competitivos de alto TTK como Apex Legends, Overwatch 2 y The Finals, imponerse en duelos sostenidos demanda una retícula inquebrantable sobre siluetas en constante aceleración.",
+      "El entrenamiento de puntería con tracking suave mide la capacidad de mantener la retícula sobre un objetivo móvil sin movimientos bruscos. Este drill usa curvas de Lissajous para mejorar la estabilidad y el tiempo sobre el objetivo en Apex, Overwatch 2 y otros FPS.",
       "A diferencia de los flicks balísticos gobernados por la Ley de Fitts (1954), el seguimiento suave involucra estructuras corticales especializadas en el área temporal medial (MT/V5) y en el cerebelo (Krauzlis, 2004; Lisberger et al., 1987). Estos centros procesan vectores ópticos continuos y calibran el tono neuromuscular para igualar la velocidad del blanco.",
       "La cinemática del ejercicio emplea trayectorias armónicas de Lissajous generadas por funciones sinusoidales en ambos ejes. Esta configuración imposibilita patrones lineales previsibles y estimula el control predictivo (Barnes, 2008) sin provocar sobresaltos sacádicos intermitentes.",
       "Mediante la integración de la API Pointer Lock y cronometría de alta resolución con performance.now() (Woods et al., 2015), la aplicación monitoriza el tiempo exacto de permanencia en la diana, facilitando la eliminación progresiva de temblores para consolidar una puntería fluida y consistente.",

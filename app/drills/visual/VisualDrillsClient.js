@@ -49,6 +49,159 @@ const visualCategories = [
   },
 ];
 
+// Native visual-hub copy is authored per market from the category research
+// note. It keeps the visible category intent local instead of translating the
+// English hub sentence by sentence.
+const VISUAL_HUB_COPY = {
+  en: {
+    h1: 'Visual Reaction, Tracking & Perception Drills',
+    description: 'Choose from 9 free browser drills for visual reaction time, dynamic vision, target tracking, depth judgment, and visual search. No sign-up; scores stay in your browser.',
+    drillsHeading: 'Choose a visual drill',
+    domainsHeading: 'Choose a visual skill',
+    drill: 'Drill',
+    drills: 'Drills',
+    categories: {
+      'reaction-control': { name: 'Reaction & Impulse Control', description: 'Train visual response speed and hold back false-positive clicks.' },
+      'tracking-accuracy': { name: 'Tracking & Eye Movement', description: 'Follow moving targets, smooth pursuit paths, and multiple objects.' },
+      'recognition-depth': { name: 'Recognition & Depth Judgment', description: 'Find visual targets, read patterns, and estimate spatial distance.' },
+    },
+    engineHeading: 'What these visual drills measure',
+    engine: [
+      { title: 'Visual timing and inhibition', description: 'Measure how quickly you detect a visual signal and whether you can wait for the correct response.' },
+      { title: 'Target tracking control', description: 'Practice continuous target following, catch-up corrections, and divided visual attention.' },
+      { title: 'Search and spatial judgment', description: 'Train target isolation, pattern reading, contrast decisions, and depth estimation.' },
+    ],
+    faqHeading: 'Questions about visual drills',
+    cta: 'Start a visual drill',
+  },
+  ja: {
+    h1: '動体視力・視覚探索トレーニング',
+    description: '動体視力テスト、視覚探索、周辺視、奥行き判断、反応速度をブラウザで練習できる9種類の無料ドリル。登録不要で、記録はブラウザ内に保存します。',
+    drillsHeading: '視覚ドリルを選ぶ',
+    domainsHeading: '伸ばしたい視覚スキルを選ぶ',
+    drill: 'ドリル',
+    drills: 'ドリル',
+    categories: {
+      'reaction-control': { name: '反応・衝動抑制', description: '視覚刺激への反応速度を測り、早とちりのクリックを抑えます。' },
+      'tracking-accuracy': { name: '追従・眼球運動', description: '動く標的、滑らかな追従、複数対象の同時追跡を練習します。' },
+      'recognition-depth': { name: '認識・奥行き判断', description: '標的を見つけ、パターンを読み、空間的な距離を判断します。' },
+    },
+    engineHeading: 'ブラウザで測る視覚スキル',
+    engine: [
+      { title: '視覚反応と抑制', description: '視覚信号を捉える速さと、正しい刺激まで反応を待てるかを測ります。' },
+      { title: '標的追従の操作', description: '連続追従、追いつき修正、分割された視覚注意を練習します。' },
+      { title: '探索と空間判断', description: '標的の分離、パターン認識、コントラスト判断、奥行き推定を鍛えます。' },
+    ],
+    faqHeading: '視覚ドリルのよくある質問',
+    cta: '視覚ドリルを始める',
+  },
+  ko: {
+    h1: '동체시력·시각 탐색 훈련',
+    description: '동체시력 테스트, 시각 탐색, 주변시, 거리 판단과 시각 반응속도를 브라우저에서 연습하는 무료 9개 드릴입니다. 가입 없이 기록은 브라우저에 저장됩니다.',
+    drillsHeading: '시각 드릴 선택',
+    domainsHeading: '훈련할 시각 능력 선택',
+    drill: '드릴',
+    drills: '드릴',
+    categories: {
+      'reaction-control': { name: '반응·충동 억제', description: '시각 신호에 빠르게 반응하고 잘못된 클릭을 억제합니다.' },
+      'tracking-accuracy': { name: '추적·안구 움직임', description: '움직이는 목표, 부드러운 추적과 여러 목표 동시 추적을 연습합니다.' },
+      'recognition-depth': { name: '인식·거리 판단', description: '목표를 찾고 패턴을 읽으며 공간적 거리를 판단합니다.' },
+    },
+    engineHeading: '브라우저에서 측정하는 시각 능력',
+    engine: [
+      { title: '시각 타이밍과 억제', description: '시각 신호를 감지하는 속도와 올바른 자극까지 반응을 참는 능력을 측정합니다.' },
+      { title: '목표 추적 조절', description: '연속 추적, 따라잡기 보정과 분산된 시각 주의를 연습합니다.' },
+      { title: '탐색과 공간 판단', description: '목표 분리, 패턴 읽기, 대비 판단과 거리 추정을 훈련합니다.' },
+    ],
+    faqHeading: '시각 드릴 자주 묻는 질문',
+    cta: '시각 드릴 시작하기',
+  },
+  de: {
+    h1: 'Dynamisches Sehen, visuelle Suche & Reaktion',
+    description: '9 kostenlose Browser-Drills für dynamisches Sehen, visuelle Suche, Reaktionszeit, Zielverfolgung und Tiefenwahrnehmung. Ohne Anmeldung; Ergebnisse bleiben im Browser.',
+    drillsHeading: 'Einen visuellen Drill wählen',
+    domainsHeading: 'Visuelle Fähigkeit wählen',
+    drill: 'Drill',
+    drills: 'Drills',
+    categories: {
+      'reaction-control': { name: 'Reaktion & Impulskontrolle', description: 'Visuelle Reaktion beschleunigen und voreilige Klicks unterdrücken.' },
+      'tracking-accuracy': { name: 'Verfolgung & Augenbewegung', description: 'Bewegte Ziele, Blickfolge und mehrere Objekte gleichzeitig verfolgen.' },
+      'recognition-depth': { name: 'Erkennung & Tiefenwahrnehmung', description: 'Ziele finden, Muster lesen und räumliche Entfernung einschätzen.' },
+    },
+    engineHeading: 'Was diese visuellen Drills messen',
+    engine: [
+      { title: 'Visuelles Timing und Hemmung', description: 'Messen, wie schnell ein Signal erkannt wird und ob die richtige Reaktion abgewartet wird.' },
+      { title: 'Kontrolle der Zielverfolgung', description: 'Kontinuierliche Verfolgung, Aufholkorrekturen und geteilte Aufmerksamkeit üben.' },
+      { title: 'Suche und räumliches Urteil', description: 'Zielisolierung, Musterlesen, Kontrastentscheidung und Entfernungsschätzung trainieren.' },
+    ],
+    faqHeading: 'Fragen zu visuellen Drills',
+    cta: 'Visuellen Drill starten',
+  },
+  pt: {
+    h1: 'Visão Dinâmica, Busca Visual e Reação',
+    description: '9 exercícios gratuitos no navegador para visão dinâmica, busca visual, tempo de reação, rastreamento de alvos e percepção de profundidade. Sem cadastro; os resultados ficam no navegador.',
+    drillsHeading: 'Escolha um treino visual',
+    domainsHeading: 'Escolha a habilidade visual',
+    drill: 'treino',
+    drills: 'treinos',
+    categories: {
+      'reaction-control': { name: 'Reação e controle de impulsos', description: 'Treine a velocidade da resposta visual e evite cliques precipitados.' },
+      'tracking-accuracy': { name: 'Rastreamento e movimento ocular', description: 'Acompanhe alvos móveis, trajetórias suaves e vários objetos.' },
+      'recognition-depth': { name: 'Reconhecimento e profundidade', description: 'Encontre alvos, leia padrões e estime distâncias no espaço.' },
+    },
+    engineHeading: 'O que estes treinos visuais medem',
+    engine: [
+      { title: 'Tempo visual e inibição', description: 'Meça a rapidez para detectar um sinal e esperar o estímulo correto antes de responder.' },
+      { title: 'Controle do rastreamento', description: 'Pratique acompanhamento contínuo, correções de alcance e atenção visual dividida.' },
+      { title: 'Busca e julgamento espacial', description: 'Treine isolamento do alvo, leitura de padrões, contraste e estimativa de profundidade.' },
+    ],
+    faqHeading: 'Dúvidas sobre treinos visuais',
+    cta: 'Começar um treino visual',
+  },
+  es: {
+    h1: 'Agudeza Visual Dinámica, Búsqueda y Reacción',
+    description: '9 ejercicios gratuitos en el navegador para agudeza visual dinámica, búsqueda visual, tiempo de reacción, seguimiento de objetivos y percepción de profundidad. Sin registro; tus marcas quedan en el navegador.',
+    drillsHeading: 'Elige un ejercicio visual',
+    domainsHeading: 'Elige la habilidad visual',
+    drill: 'ejercicio',
+    drills: 'ejercicios',
+    categories: {
+      'reaction-control': { name: 'Reacción y control de impulsos', description: 'Entrena la velocidad de respuesta visual y evita clics precipitados.' },
+      'tracking-accuracy': { name: 'Seguimiento y movimiento ocular', description: 'Sigue objetivos móviles, trayectorias suaves y varios objetos.' },
+      'recognition-depth': { name: 'Reconocimiento y profundidad', description: 'Encuentra objetivos, lee patrones y estima distancias espaciales.' },
+    },
+    engineHeading: 'Qué miden estos ejercicios visuales',
+    engine: [
+      { title: 'Tiempo visual e inhibición', description: 'Mide la rapidez para detectar una señal y esperar el estímulo correcto antes de responder.' },
+      { title: 'Control del seguimiento', description: 'Practica el seguimiento continuo, las correcciones de alcance y la atención visual dividida.' },
+      { title: 'Búsqueda y juicio espacial', description: 'Entrena el aislamiento del objetivo, la lectura de patrones, el contraste y la profundidad.' },
+    ],
+    faqHeading: 'Preguntas sobre los ejercicios visuales',
+    cta: 'Empezar un ejercicio visual',
+  },
+  fr: {
+    h1: 'Vision dynamique, recherche visuelle et réaction',
+    description: '9 exercices gratuits dans le navigateur pour vision dynamique, recherche visuelle, temps de réaction, suivi de cibles et perception de la profondeur. Sans inscription; vos scores restent dans le navigateur.',
+    drillsHeading: 'Choisissez un exercice visuel',
+    domainsHeading: 'Choisissez la capacité visuelle',
+    drill: 'exercice',
+    drills: 'exercices',
+    categories: {
+      'reaction-control': { name: 'Réaction et contrôle des impulsions', description: 'Travaillez la vitesse de réponse visuelle et évitez les clics précipités.' },
+      'tracking-accuracy': { name: 'Suivi et mouvements oculaires', description: 'Suivez des cibles mobiles, des trajectoires fluides et plusieurs objets.' },
+      'recognition-depth': { name: 'Reconnaissance et profondeur', description: 'Trouvez les cibles, lisez les motifs et estimez les distances spatiales.' },
+    },
+    engineHeading: 'Ce que mesurent ces exercices visuels',
+    engine: [
+      { title: 'Timing visuel et inhibition', description: 'Mesurez la rapidité de détection d’un signal et la capacité à attendre le bon stimulus.' },
+      { title: 'Contrôle du suivi de cible', description: 'Travaillez le suivi continu, les corrections de rattrapage et l’attention visuelle divisée.' },
+      { title: 'Recherche et jugement spatial', description: 'Entraînez l’isolement de cible, la lecture de motifs, le contraste et la profondeur.' },
+    ],
+    faqHeading: 'Questions sur les exercices visuels',
+    cta: 'Commencer un exercice visuel',
+  },
+};
+
 const FOLDER_TO_STORAGE_KEY = {
   'visual-search': 'skilldrills_visual_search_v4',
   'no-go': 'skilldrills_visual_go_nogo_v5',
@@ -63,6 +216,7 @@ const FOLDER_TO_STORAGE_KEY = {
 
 export default function VisualDrillsClient({ faqs = [] }) {
   const { locale, localizeHref, t } = useTranslation();
+  const hubCopy = VISUAL_HUB_COPY[locale] ?? VISUAL_HUB_COPY.en;
   const [isClient, setIsClient] = useState(false);
   const [drillLevels, setDrillLevels] = useState({});
 
@@ -176,13 +330,10 @@ export default function VisualDrillsClient({ faqs = [] }) {
         {/* Page heading */}
         <div className="mb-8">
           <h1 className="text-2xl sm:text-3xl font-bold tracking-tight text-ink-1">
-            {t('hubs.visual.h1', 'Visual Training & Recognition')}
+            {hubCopy.h1}
           </h1>
           <p className="mt-2 text-sm sm:text-base text-ink-2 leading-relaxed">
-            {t(
-              'hubs.visual.desc',
-              'Train visual search speed, dynamic visual acuity, peripheral target detection, and depth perception.'
-            )}
+            {hubCopy.description}
           </p>
         </div>
 
@@ -190,7 +341,7 @@ export default function VisualDrillsClient({ faqs = [] }) {
         <Reveal>
           <DrillCarousel
             headingId="visual-drills"
-            heading={t('hubs.visual.drillsHeading', 'Visual drills')}
+            heading={hubCopy.drillsHeading}
             accent="fuchsia"
             icon={Eye}
             showcase
@@ -216,7 +367,7 @@ export default function VisualDrillsClient({ faqs = [] }) {
             <div className="flex items-center gap-2 mb-6">
               <Layers className="w-5 h-5 text-fuchsia-400" />
               <h2 className="text-base sm:text-lg font-semibold tracking-tight text-ink-1">
-                Visual Training Domains
+                {hubCopy.domainsHeading}
               </h2>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
@@ -235,15 +386,15 @@ export default function VisualDrillsClient({ faqs = [] }) {
                         </div>
                         <div>
                           <h3 className="text-sm font-semibold tracking-tight text-ink-1">
-                            {cat.name}
+                            {hubCopy.categories[cat.id].name}
                           </h3>
                           <span className="text-xs font-medium text-fuchsia-400">
-                            {drillsInCat.length} {drillsInCat.length === 1 ? 'Drill' : 'Drills'}
+                            {drillsInCat.length} {drillsInCat.length === 1 ? hubCopy.drill : hubCopy.drills}
                           </span>
                         </div>
                       </div>
                       <p className="text-xs text-ink-2 leading-relaxed mb-4">
-                        {cat.description}
+                        {hubCopy.categories[cat.id].description}
                       </p>
                     </div>
 
@@ -284,7 +435,7 @@ export default function VisualDrillsClient({ faqs = [] }) {
             <div className="flex items-center gap-2 mb-6">
               <Sparkles className="w-5 h-5 text-fuchsia-400" />
               <h2 className="text-base sm:text-lg font-semibold tracking-tight text-ink-1">
-                Engine &amp; Hardware Optimization
+                {hubCopy.engineHeading}
               </h2>
             </div>
 
@@ -294,10 +445,10 @@ export default function VisualDrillsClient({ faqs = [] }) {
                   <Activity className="w-4 h-4" />
                 </div>
                 <h3 className="text-sm font-semibold tracking-tight text-ink-1 mb-1.5">
-                  Sub-Frame Canvas Interpolation
+                  {hubCopy.engine[0].title}
                 </h3>
                 <p className="text-2xs text-ink-3 leading-relaxed">
-                  High-precision sub-pixel canvas rendering eliminates motion blur and spatial quantization jitter across high-refresh displays up to 360Hz.
+                  {hubCopy.engine[0].description}
                 </p>
               </div>
 
@@ -306,10 +457,10 @@ export default function VisualDrillsClient({ faqs = [] }) {
                   <Eye className="w-4 h-4" />
                 </div>
                 <h3 className="text-sm font-semibold tracking-tight text-ink-1 mb-1.5">
-                  Gaze Fixation Stability
+                  {hubCopy.engine[1].title}
                 </h3>
                 <p className="text-2xs text-ink-3 leading-relaxed">
-                  Algorithmic contrast calibration ensures visual targets pop cleanly against chaotic distractors without inducing ocular ciliary strain.
+                  {hubCopy.engine[1].description}
                 </p>
               </div>
 
@@ -318,10 +469,10 @@ export default function VisualDrillsClient({ faqs = [] }) {
                   <Clock className="w-4 h-4" />
                 </div>
                 <h3 className="text-sm font-semibold tracking-tight text-ink-1 mb-1.5">
-                  Zero-Lag Input Interception
+                  {hubCopy.engine[2].title}
                 </h3>
                 <p className="text-2xs text-ink-3 leading-relaxed">
-                  Direct hardware-level event dispatch captures clicks and touches immediately upon actuation, bypassing browser input buffering delays.
+                  {hubCopy.engine[2].description}
                 </p>
               </div>
             </div>
@@ -335,7 +486,7 @@ export default function VisualDrillsClient({ faqs = [] }) {
               <div className="flex items-center gap-2 mb-6">
                 <Sparkles className="w-5 h-5 text-fuchsia-400" />
               <h2 className="text-base sm:text-lg font-semibold tracking-tight text-ink-1">
-                  {t('home.faqTitle', 'Frequently Asked Questions')}
+                  {hubCopy.faqHeading}
                 </h2>
               </div>
 
@@ -373,7 +524,7 @@ export default function VisualDrillsClient({ faqs = [] }) {
 
         <StickyMobileCta
           href={hasLocalizedRoute(locale, '/drills/visual/reaction-speed/light-reaction') ? localizeHref('/drills/visual/reaction-speed/light-reaction') : '/drills/visual/reaction-speed/light-reaction'}
-          label={t('hubs.visual.startCta', 'Start Visual Drill')}
+          label={hubCopy.cta}
           categoryName={t('header.visual', 'Visual')}
         />
         <SiteFooter />

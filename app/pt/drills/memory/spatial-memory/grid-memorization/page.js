@@ -5,12 +5,12 @@ import RelatedDrills from '@/components/drill/RelatedDrills';
 import { pickSources } from '@/lib/drillSources';
 
 export const metadata = {
-  title: "Teste de Memória Visual – Jogo de Grade Online | SkillDrills",
-  description: "Teste de memória visual online grátis: Memorize matrizes em grades de 4x4 a 5x5 em 1,5s e avalie sua retenção visoespacial e chunking direto no navegador.",
-  keywords: ['teste de memoria visual', 'jogos de memoria visual', 'teste de memoria espacial', 'memoria de trabalho visual', 'jogo de memoria em grade', 'matriz de memoria visual', 'teste de padroes visuais', 'capacidade de memoria visual', 'treino de memoria visoespacial', 'teste de chunking espacial', 'empan visoespacial online', 'teste de memoria de curto prazo'],
+  title: "Teste de memória visual online | SkillDrills",
+  description: "Teste sua memória visual online: memorize padrões de quadrados iluminados em uma grade e reconstrua o desenho direto no navegador.",
+  keywords: ['teste de memória visual', 'jogo de memória visual', 'teste de memória espacial', 'matriz de memória', 'memória visuoespacial', 'grelha de memória', 'teste de padrões visuais', 'memória de trabalho visual', 'treino de memória visual', 'teste de memória online'],
   openGraph: {
-    title: "Teste de Memória Visual Online (Jogo de Grade) - Grátis | SkillDrills",
-    description: "Teste de memória visual online gratuito (treino de padrões em grade). Memorize matrizes em tabuleiros de 4x4 a 5x5 em 1,5 segundo e avalie sua retenção visoespacial e capacidade de chunking. Sem cadastro, direto no navegador.",
+    title: "Teste de memória visual online | SkillDrills",
+    description: "Teste sua memória visual: memorize quadrados iluminados e reconstrua o padrão na grade, sem cadastro.",
     type: 'website',
     url: 'https://skilldrills.online/pt/drills/memory/spatial-memory/grid-memorization',
     siteName: 'SkillDrills',
@@ -18,8 +18,8 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: "Teste de Memória Visual Online (Jogo de Grade) - Grátis | SkillDrills",
-    description: "Teste de memória visual online gratuito (treino de padrões em grade). Memorize matrizes em tabuleiros de 4x4 a 5x5 em 1,5 segundo e avalie sua retenção visoespacial e capacidade de chunking. Sem cadastro, direto no navegador.",
+    title: "Teste de memória visual online | SkillDrills",
+    description: "Teste sua memória visual: memorize quadrados iluminados e reconstrua o padrão na grade, sem cadastro.",
   },
   robots: { index: true, follow: true },
   alternates: {
@@ -48,6 +48,7 @@ const webAppSchema = {
   "operatingSystem": "All",
   "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
   "author": { "@type": "Organization", "name": "SkillDrills" },
+  "sameAs": "https://pt.wikipedia.org/wiki/Mem%C3%B3ria_espacial",
   "isAccessibleForFree": true,
   "dateModified": "2026-09-11"
 };
@@ -292,23 +293,23 @@ const gridGuide = {
   sources: pickSources('cowan2001', 'baddeley2000', 'logie1995', 'corsi1972', 'luck1997', 'milner1971', 'woods2015'),
   related: [
   {
-    "href": "/drills/memory/working-memory/n-back",
+    "href": "/pt/drills/memory/working-memory/n-back",
     "label": "Teste N-Back (Memória Operacional)"
   },
   {
-    "href": "/drills/cognitive/focus/concentration-grid",
+    "href": "/pt/drills/cognitive/focus/concentration-grid",
     "label": "Tabela de Schulte (Grade de Concentração)"
   },
   {
-    "href": "/drills/memory/short-term-memory/digit-span",
+    "href": "/pt/drills/memory/short-term-memory/digit-span",
     "label": "Teste de Dígitos (Span de Memória)"
   },
   {
-    "href": "/drills/reaction-speed/reaction-time-test",
+    "href": "/pt/drills/reaction-speed/reaction-time-test",
     "label": "Teste de Reflexo (Tempo de Reação)"
   },
   {
-    "href": "/drills/reaction-speed/reflex-training-drill",
+    "href": "/pt/drills/reaction-speed/reflex-training-drill",
     "label": "Jogo de Reflexo e Treino de Reflexos"
   }
 ]
@@ -342,8 +343,9 @@ export default function LocalizedGridMemorizationPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
       <GridMemorizationClient copy={{
-        "h1Keyword": "Teste de Memória Visual",
-        "h1Suffix": " – Jogo de Memória em Grade Online",
+        "h1Keyword": "Teste de memória visual online",
+        "h1Suffix": " – Memória espacial",
+        "subtitle": "Memorize quadrados iluminados em uma grade",
         "caption": "A memória de trabalho visual armazena cerca de quatro objetos distintos simultaneamente; o limite é o número de itens e não o detalhe individual de cada um (Luck & Vogel, 1997). As grades matriciais avaliam o 'cache visual', o depósito passivo de formas e disposição espacial (Logie, 1995).",
         "statScore": "Pontos",
         "statTime": "Tempo",
@@ -352,7 +354,7 @@ export default function LocalizedGridMemorizationPage() {
         "hudScore": "Pontos",
         "hudTime": "Tempo",
         "startTitle": "Memória Visual Pro",
-        "startSubtitle": "Memória de Curto Prazo Espacial • Retenção de Padrões",
+        "startSubtitle": "Memória visual • Grade",
         "countdownSubtitle": "PREPARE-SE",
         "newBest": "NOVO RECORDE",
         "pointsLabel": "Pontos",

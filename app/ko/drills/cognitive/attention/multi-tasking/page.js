@@ -2,11 +2,12 @@ import DualTargetFlowClient from '@/app/drills/cognitive/attention/multi-tasking
 import { getAlternateLanguages } from '@/lib/i18n/locales';
 import DrillGuide from '@/components/drill/DrillGuide';
 import RelatedDrills from '@/components/drill/RelatedDrills';
+import DrillFooter from '@/components/drill/DrillFooter';
 import { pickSources } from '@/lib/drillSources';
 
 export const metadata = {
-  title: "멀티태스킹 테스트・이중 표적 추적 훈련 – 병렬 인지 속도 측정 | SkillDrills",
-  description: "무료 멀티태스킹 테스트. 반대 방향으로 흐르는 두 개의 도형 스트림을 동시에 추적하여 대뇌 반구 협응력과 과제 전환 비용을 정밀하게 진단합니다.",
+  title: "멀티태스킹 테스트 | 이중 표적 추적 | SkillDrills",
+  description: "무료 브라우저 멀티태스킹 테스트로 양쪽 표적 흐름을 함께 추적하세요. 의료 진단이 아닌 인지 자기 점검입니다.",
   keywords: ["멀티태스킹 테스트", "이중 표적 추적 훈련", "멀티태스킹 게임", "병렬 처리 검사", "과제 전환 비용 측정", "주의 전환 훈련", "대뇌 반구 협응 검사", "인지 유연성 테스트", "두뇌 멀티태스킹", "시각 스트림 추적", "분할주의 집중력", "집중력 분할 검사"],
   openGraph: {
     title: "멀티태스킹 테스트・이중 표적 추적 훈련 – 병렬 인지 속도 측정 | SkillDrills",
@@ -78,7 +79,7 @@ const softwareApplicationSchema = {
     "url": "https://skilldrills.online"
   },
   "inLanguage": "ko-KR",
-  "dateModified": "2026-09-11"
+  "dateModified": "2026-09-20"
 };
 
 const webApplicationSchema = {
@@ -95,7 +96,7 @@ const webApplicationSchema = {
   },
   "url": "https://skilldrills.online/ko/drills/cognitive/attention/multi-tasking",
   "inLanguage": "ko-KR",
-  "dateModified": "2026-09-11"
+  "dateModified": "2026-09-20"
 };
 
 const videoGameSchema = {
@@ -313,11 +314,26 @@ export default function LocalizedCognitivePage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(howToSchema) }}
       />
-      <DualTargetFlowClient copy={{ title: "멀티태스킹 테스트・이중 표적 추적 훈련 – 병렬 인지 속도 측정" }} />
+      <DualTargetFlowClient copy={{
+        title: "멀티태스킹 테스트", subtitle: "양쪽 표적 흐름을 동시에 추적하는 인지 훈련",
+        statScore: "점수", statTime: "시간", timeLeft: "남은 시간", statLevel: "레벨", statBest: "최고 점수",
+        startTitle: "멀티태스킹 테스트", startSubtitle: "이중 흐름 · 주변 집중", getReady: "준비하세요", accuracy: "정확도", hits: "성공", peakLevel: "최고 레벨", maxCombo: "최대 콤보",
+        caption: "서로 반대 방향으로 움직이는 두 표적 흐름에서 같은 기호를 찾아 빠르게 누르세요.",
+        rulesTitle: "드릴 안내 및 점수 기준", ruleItems: [
+          { text: "왼쪽 표적 맞히기", highlight: "+점수", result: "표시된 기호 클릭" },
+          { text: "오른쪽 표적 맞히기", highlight: "콤보", result: "두 흐름 모두 추적" },
+          { text: "오입력 줄이기", highlight: "정확도", result: "다른 기호는 무시" },
+          { text: "속도에 적응하기", highlight: "레벨 상승", result: "흐름이 빨라져도 균형 유지" },
+        ],
+        aboutTitle: "멀티태스킹과 이중 표적 흐름", aboutLead: "이 드릴은 두 시각 흐름을 함께 추적하는 비임상 인지 자기 점검으로, 실제 멀티태스킹보다 빠른 주의 전환과 양쪽 정확도에 초점을 둡니다.",
+        audienceTitle: "추천 대상", audienceText: "게임에서 여러 화면 요소를 보는 플레이어, 학습자, 동시에 들어오는 정보를 정리하고 싶은 사람에게 적합합니다.",
+        skillsTitle: "훈련하는 능력", skillsText: "양쪽 시각 추적, 주변 표적 탐지, 주의 전환, 실행 기능 조절을 연습합니다.", flexibilityTitle: "과제 전환 속도", flexibilityText: "레벨이 오를수록 표적 규칙과 속도가 바뀌므로 두 흐름 사이를 빠르고 정확하게 전환해야 합니다."
+      }} />
       <DrillGuide {...guideProps} />
       <div className="max-w-6xl mx-auto px-4 pb-12">
         <RelatedDrills currentCategory="cognitive" currentHref="https://skilldrills.online/ko/drills/cognitive/attention/multi-tasking" />
       </div>
+      <DrillFooter />
     </>
   );
 }

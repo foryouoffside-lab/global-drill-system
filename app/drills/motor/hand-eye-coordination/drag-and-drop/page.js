@@ -324,7 +324,7 @@ const guideProps = {
 
 const copyEn = {
   title: "Drag & Drop Mouse Trainer",
-  subtitle: "Spatial Drag & Drop Target Alignment • 15 Levels",
+  subtitle: "Drag and drop mouse accuracy drill for placing targets precisely and improving cursor coordination",
   startButtonText: "START DRILL",
   playAgainText: "Play Again",
   shareText: "Share Score",

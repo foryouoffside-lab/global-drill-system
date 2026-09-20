@@ -26,6 +26,7 @@ import useUnexpectedExitGuard from '../../../../../lib/useUnexpectedExitGuard';
 import DrillFooter from '../../../../../components/drill/DrillFooter';
 import DrillCountdown from '../../../../../components/drill/DrillCountdown';
 import DrillAccordion from '../../../../../components/drill/DrillAccordion';
+import DrillRuleItem from '../../../../../components/drill/DrillRuleItem';
 import FpsStartCard from '../../../../../components/drill/FpsStartCard';
 import DrillResultCard from '../../../../../components/drill/DrillResultCard';
 import useImmersiveMode from '@/lib/useImmersiveMode';
@@ -82,13 +83,13 @@ const ABOUT_SECTIONS = [
     icon: Crosshair,
     title: "Ballistic Motor Flicks & Sub-Second Target Acquisition",
     subtitle: "Woodworth two-component motor control under extreme speed demands",
-    content: "Rapid target acquisition relies on Woodworth\'s (1899) classic two-phase model: an initial open-loop ballistic motor impulse that snaps the cursor into the target vicinity, followed by fine visual adjustments before executing the click. As velocity scales up to 3.8x, the motor cortex minimizes dwell time between target detection and trigger execution."
+    content: "Rapid target acquisition relies on Woodworth\'s (1899) classic two-phase model: an initial open-loop ballistic motor impulse that snaps the cursor into the target vicinity, followed by fine visual adjustments before executing the click. As velocity scales up to 3.8x, the motor cortex minimizes dwell time between target detection and trigger execution. The movement arrives in two parts — a fast ballistic impulse, then a slower visually guided correction (Woodworth, 1899) — and it is the correction that shrinking targets make expensive."
   },
   {
     icon: Target,
     title: "Shrinking Spatial Boundaries & Fitts\'s Law Index of Difficulty",
     subtitle: "Logarithmic speed-accuracy tradeoffs during target decay",
-    content: "Each target shrinks continuously from spawn until expiration. According to Fitts\'s Law (1954), the index of difficulty increases logarithmically as target width (W) constricts. Players must strike a balance between striking early at larger diameters versus waiting for stabilized tracking at smaller radii."
+    content: "Each target shrinks continuously from spawn until expiration. According to Fitts\'s Law (1954), the index of difficulty increases logarithmically as target width (W) constricts. Players must strike a balance between striking early at larger diameters versus waiting for stabilized tracking at smaller radii. Fitts's Law sets the floor: movement time grows with the logarithm of the distance to a target divided by its width, so a target half the size costs about the same extra time as one twice as far away (Fitts, 1954)."
   },
   {
     icon: Eye,
@@ -637,9 +638,6 @@ export default function SpeedDrillClient({ copy = {} } = {}) {
                 </span>
               )}
             </h1>
-            <p className="text-xs sm:text-sm text-slate-400 mt-2 leading-relaxed">
-              {copy?.description || "A speed drill measures how fast you can move onto a target and click it as the target gets smaller and the time allowed gets shorter. Fitts's Law sets the floor: movement time grows with the logarithm of the distance to a target divided by its width, so a target half the size costs about the same extra time as one twice as far away (Fitts, 1954). The movement arrives in two parts — a fast ballistic impulse, then a slower visually guided correction (Woodworth, 1899) — and it is the correction that shrinking targets make expensive."}
-            </p>
           </div>
         )}
 
@@ -669,7 +667,7 @@ export default function SpeedDrillClient({ copy = {} } = {}) {
         <div 
           ref={containerRef} 
           onContextMenu={(e) => { if (gameActiveRef.current) e.preventDefault(); }}
-          className={`overflow-hidden flex flex-col transition-all duration-150 select-none bg-[#080811] text-white border border-white/10 ${
+          className={`overflow-hidden flex flex-col select-none bg-[#080811] text-white border border-white/10 ${
             isFullscreen 
               ? 'fixed inset-0 z-[100] w-screen h-[100dvh] bg-[#080811] rounded-none border-none flex flex-col items-center justify-center' 
               : 'w-full rounded-2xl bg-[#080811] aspect-video min-h-[460px] sm:min-h-[500px] max-h-[88vh] relative overflow-hidden flex flex-col'
@@ -781,12 +779,9 @@ export default function SpeedDrillClient({ copy = {} } = {}) {
               isOpen={openAccordion === 'rules'}
               onToggle={() => setOpenAccordion(openAccordion === 'rules' ? null : 'rules')}
             >
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-2.5 sm:gap-3 font-sans">
                 {(copy?.rulesItems || RULES_ITEMS).map((item, i) => (
-                  <div key={i} className="bg-black p-4 rounded-xl border border-white/10">
-                    <p className="text-sm font-bold text-white mb-1">{item.title}</p>
-                    <p className="text-xs text-gray-300 leading-relaxed">{item.text}</p>
-                  </div>
+                  <DrillRuleItem key={i} num={item.num || String(i + 1)} title={item.title} detail={item.text} />
                 ))}
               </div>
             </DrillAccordion>

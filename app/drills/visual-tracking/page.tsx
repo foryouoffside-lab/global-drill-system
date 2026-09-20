@@ -1,11 +1,12 @@
 import VisualTrackingDrillsClient from './VisualTrackingDrillsClient';
 import { DRILLS } from '../../../lib/drillsRegistry';
 import { getAlternateLanguages } from '@/lib/i18n/locales';
+import { buildVisualTrackingHubMetadata, getVisualTrackingHubCollectionFields, getVisualTrackingHubFaqFields } from '@/lib/i18n/visualTrackingHubNative';
 
 const trackingDrills = DRILLS.filter((d) => d.category === 'visual-tracking');
 const trackingDrillCount = trackingDrills.length;
 
-export const metadata = {
+const legacyMetadata = {
   title: `Free Eye Tracking Training - Smooth Pursuit Drills`,
   description: `Free eye tracking training online. ${trackingDrillCount} smooth pursuit eye movement drills. Train your gaze for sports, gaming, and vision therapy. No sign-up required.`,
   keywords: [
@@ -46,6 +47,8 @@ export const metadata = {
     languages: getAlternateLanguages('/drills/visual-tracking'),
   },
 };
+
+export const metadata = { ...legacyMetadata, ...buildVisualTrackingHubMetadata('en', 'https://skilldrills.online/drills/visual-tracking', trackingDrillCount, getAlternateLanguages('/drills/visual-tracking')) };
 
 const faqSchema = {
   "@context": "https://schema.org",
@@ -118,6 +121,9 @@ const faqSchema = {
   ]
 };
 
+const { additions, ...faqFields } = getVisualTrackingHubFaqFields('en');
+const enrichedFaqSchema = { ...faqSchema, ...faqFields, mainEntity: [...faqSchema.mainEntity, ...additions] };
+
 export default function VisualTrackingDrillsPage() {
   return (
     <>
@@ -128,15 +134,16 @@ export default function VisualTrackingDrillsPage() {
         "url": "https://skilldrills.online/drills/visual-tracking",
         "description": `${trackingDrillCount} free eye tracking training drills online. Smooth pursuit exercises (sine-wave, infinity, staircase, predictive, and more). No sign-up required.`,
         "author": { "@type": "Organization", "name": "SkillDrills" },
+        ...getVisualTrackingHubCollectionFields('en', trackingDrillCount),
         "hasPart": trackingDrills.map((drill) => ({
           "@type": "WebApplication",
           "name": drill.name,
           "url": `https://skilldrills.online${drill.href}`
         }))
       })}} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(enrichedFaqSchema) }} />
       <VisualTrackingDrillsClient
-        faqs={faqSchema.mainEntity.map((e) => ({ q: e.name, a: e.acceptedAnswer.text }))}
+        faqs={enrichedFaqSchema.mainEntity.map((e) => ({ q: e.name, a: e.acceptedAnswer.text }))}
       />
     </>
   );

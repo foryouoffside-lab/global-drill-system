@@ -5,12 +5,12 @@ import RelatedDrills from '@/components/drill/RelatedDrills';
 import { pickSources } from '@/lib/drillSources';
 
 export const metadata = {
-  title: "Visueller Gedächtnistest – Memory Matrix | SkillDrills",
-  description: "Kostenloser visueller Gedächtnistest online: Merke dir Gittermuster auf der Matrix in 1,5s und trainiere dein visuelles Arbeitsgedächtnis ohne Anmeldung.",
-  keywords: ['visueller gedaechtnistest', 'raeumliches gedaechtnis test', 'muster gedaechtnis test', 'visuelles arbeitsgedaechtnis', 'memory matrix online', 'visueller mustertest', 'visuelle speicherkapazitaet', 'gitter muster gedaechtnis', 'kurzzeitgedaechtnis visuell', 'visuelle aufmerksamkeit training', 'corsi block alternative', 'raeumliches chunking test'],
+  title: "Visueller Gedächtnistest online | SkillDrills",
+  description: "Teste dein visuelles Gedächtnis online: Merke dir leuchtende Muster in einer Matrix und rekonstruiere sie direkt im Browser.",
+  keywords: ['visueller gedächtnistest', 'visuelles gedächtnis test', 'gedächtnistest matrix', 'memory matrix', 'muster merken test', 'visuell-räumliches gedächtnis', 'räumliches gedächtnis test', 'visuelles arbeitsgedächtnis', 'muster gedächtnis', 'gedächtnistraining online'],
   openGraph: {
-    title: "Visueller Gedächtnistest Online (Memory Matrix) - Kostenloser Mustertest | SkillDrills",
-    description: "Kostenloser visueller Gedächtnistest online (Memory Matrix). Präge dir aufleuchtende Gittermuster auf 4x4 bis 5x5 Matrizen in 1,5 Sekunden ein und trainiere räumliches Chunking und visuelles Arbeitsgedächtnis. Ohne Anmeldung direkt im Browser spielbar.",
+    title: "Visueller Gedächtnistest online | SkillDrills",
+    description: "Teste dein visuelles Gedächtnis online: Merke dir leuchtende Muster in einer Matrix und rekonstruiere sie direkt im Browser.",
     type: 'website',
     url: 'https://skilldrills.online/de/drills/memory/spatial-memory/grid-memorization',
     siteName: 'SkillDrills',
@@ -18,8 +18,8 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: "Visueller Gedächtnistest Online (Memory Matrix) - Kostenloser Mustertest | SkillDrills",
-    description: "Kostenloser visueller Gedächtnistest online (Memory Matrix). Präge dir aufleuchtende Gittermuster auf 4x4 bis 5x5 Matrizen in 1,5 Sekunden ein und trainiere räumliches Chunking und visuelles Arbeitsgedächtnis. Ohne Anmeldung direkt im Browser spielbar.",
+    title: "Visueller Gedächtnistest online | SkillDrills",
+    description: "Teste dein visuelles Gedächtnis online: Merke dir leuchtende Muster in einer Matrix und rekonstruiere sie direkt im Browser.",
   },
   robots: { index: true, follow: true },
   alternates: {
@@ -48,6 +48,7 @@ const webAppSchema = {
   "operatingSystem": "All",
   "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
   "author": { "@type": "Organization", "name": "SkillDrills" },
+  "sameAs": "https://de.wikipedia.org/wiki/Visuelles_Ged%C3%A4chtnis",
   "isAccessibleForFree": true,
   "dateModified": "2026-09-11"
 };
@@ -292,23 +293,23 @@ const gridGuide = {
   sources: pickSources('cowan2001', 'baddeley2000', 'logie1995', 'corsi1972', 'luck1997', 'milner1971', 'woods2015'),
   related: [
   {
-    "href": "/drills/memory/working-memory/n-back",
+    "href": "/de/drills/memory/working-memory/n-back",
     "label": "N-Back Arbeitsgedächtnis-Test"
   },
   {
-    "href": "/drills/cognitive/focus/concentration-grid",
+    "href": "/de/drills/cognitive/focus/concentration-grid",
     "label": "Schulte-Tabelle (Konzentrationsgitter)"
   },
   {
-    "href": "/drills/memory/short-term-memory/digit-span",
+    "href": "/de/drills/memory/short-term-memory/digit-span",
     "label": "Zahlenspannen-Test"
   },
   {
-    "href": "/drills/reaction-speed/reaction-time-test",
+    "href": "/de/drills/reaction-speed/reaction-time-test",
     "label": "Reaktionstest (Reaktionszeit messen)"
   },
   {
-    "href": "/drills/reaction-speed/reflex-training-drill",
+    "href": "/de/drills/reaction-speed/reflex-training-drill",
     "label": "Reflex-Training & Reaktionsspiel"
   }
 ]
@@ -342,8 +343,9 @@ export default function LocalizedGridMemorizationPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
       <GridMemorizationClient copy={{
-        "h1Keyword": "Visueller Gedächtnistest",
-        "h1Suffix": " – Kostenloser Matrix-Muster-Speichertest",
+        "h1Keyword": "Visueller Gedächtnistest online",
+        "h1Suffix": " – Memory Matrix",
+        "subtitle": "Leuchtende Muster in einer Matrix merken",
         "caption": "Das visuelle Arbeitsgedächtnis speichert etwa vier separate Objekte gleichzeitig, wobei die Kapazitätsgrenze durch die Objektanzahl und nicht durch den Detailgrad bestimmt wird (Luck & Vogel, 1997). Statische Matrixgitter testen den visuellen Cache – den passiven Speicher für Form und räumliche Anordnung (Logie, 1995).",
         "statScore": "Punkte",
         "statTime": "Restzeit",
@@ -352,7 +354,7 @@ export default function LocalizedGridMemorizationPage() {
         "hudScore": "Punkte",
         "hudTime": "Zeit",
         "startTitle": "Visueller Gedächtnistest Pro",
-        "startSubtitle": "Räumliches Kurzzeitgedächtnis • Musterabruf",
+        "startSubtitle": "Visuelles Gedächtnis • Matrix",
         "countdownSubtitle": "BEREIT MACHEN",
         "newBest": "NEUER REKORD",
         "pointsLabel": "Punkte",

@@ -1,7 +1,9 @@
 import HomePageClient from '../HomePageClient';
+import { DRILLS } from '@/lib/drillsRegistry';
 import { getAlternateLanguages } from '@/lib/i18n/locales';
+import { buildHomeMetadata, buildHomeSchema } from '@/lib/i18n/siteLandingSeoNative';
 
-export const metadata = {
+const legacyMetadata = {
   title: '무료 FPS 에임 연습 및 두뇌 반응속도 훈련 | SkillDrills',
   description: '발로란트, CS2, 오버워치2를 위한 81개 이상의 무료 에임 연습 루틴, 1ms 단위 반응속도 측정, CPS 테스트 및 기억력 훈련.',
   keywords: ['에임 연습', '발로란트 에임 연습', '무료 에임 히어로', '반응속도 테스트', 'CPS 테스트', '기억력 게임', '손가락 연타', '반응속도 측정'],
@@ -18,8 +20,17 @@ export const metadata = {
   },
 };
 
+export const metadata = {
+  ...legacyMetadata,
+  ...buildHomeMetadata('ko', 'https://skilldrills.online/ko', DRILLS.length, getAlternateLanguages('/ko')),
+};
+
+const homeSchema = buildHomeSchema('ko', 'https://skilldrills.online/ko', DRILLS.length);
+
 export default function LocalizedHomePage() {
   return (
+    <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(homeSchema) }} />
     <HomePageClient
       copy={{
         srH2: 'SkillDrills - 무료 두뇌 훈련 & 에임 연습 플랫폼',
@@ -121,5 +132,6 @@ export default function LocalizedHomePage() {
         },
       }}
     />
+    </>
   );
 }

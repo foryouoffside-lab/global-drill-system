@@ -5,23 +5,25 @@ import RelatedDrills from '@/components/drill/RelatedDrills';
 import { pickSources } from '@/lib/drillSources';
 
 export const metadata = {
-  title: "시각 탐색 검사: 엔트로픽 그리드 훈련 | SkillDrills",
-  description: "동적 시각 잡음과 100셀 매트릭스 속에서 목표 코드를 빠르게 식별하는 무료 온라인 시각 탐색 검사. 선택적 주의력과 주변시 스캐닝 속도를 극대화하세요.",
+  title: "시각 탐색 훈련 | 선택적 주의력 테스트 | SkillDrills",
+  description: "100셀 그리드에서 바뀌는 시각 잡음 속 목표 코드를 찾는 무료 훈련. 선택적 주의력과 시각 스캐닝을 연습하세요. 의료 검사가 아닙니다.",
   keywords: [
-    "시각 탐색 검사",
-    "시각 주의력 훈련",
-    "엔트로픽 그리드",
-    "선택적 주의력 테스트",
-    "동적 시각 잡음 필터링",
-    "주변시 스캐닝",
-    "특징 통합 이론",
+    "시각 탐색",
+    "시각적 주의력",
+    "선택적 주의력",
     "시각 탐색 과제",
-    "정보처리 속도 검사",
-    "에임 서칭 훈련"
+    "시각 스캐닝",
+    "집중력 그리드",
+    "시각 변별력",
+    "처리 속도",
+    "동적 시각 잡음",
+    "주의력 훈련",
+    "슐테 그리드",
+    "시각 인지 훈련"
   ],
   openGraph: {
-    title: "시각 탐색 검사・엔트로픽 그리드 훈련 – 무료 온라인 시각 주의력 테스트 | SkillDrills",
-    description: "100개 셀의 고밀도 매트릭스와 동적 시각 노이즈 속에서 목표 코드를 최속으로 식별하는 무료 시각 탐색 검사. 선택적 주의력과 주변시 스캔 능력을 강화하세요.",
+    title: "시각 탐색 훈련 | 선택적 주의력 테스트 | SkillDrills",
+    description: "변화하는 100셀 그리드에서 목표 코드를 찾는 무료 훈련. 선택적 주의력과 시각 스캐닝을 연습하세요.",
     type: 'article',
     url: 'https://skilldrills.online/ko/drills/visual/visual-recognition/entropic-grid',
     siteName: 'SkillDrills',
@@ -29,8 +31,8 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: "시각 탐색 검사・엔트로픽 그리드 훈련 – 무료 온라인 시각 주의력 테스트 | SkillDrills",
-    description: "고밀도 그리드와 동적 노이즈 속에서 목표 코드를 최속으로 식별하는 무료 시각 탐색 검사. 선택적 주의력을 과학적으로 측정하고 훈련하세요.",
+    title: "시각 탐색 훈련 | 선택적 주의력 테스트 | SkillDrills",
+    description: "변화하는 그리드에서 목표 코드를 찾으며 시각적 주의력과 처리 속도를 연습하세요.",
   },
   robots: { index: true, follow: true },
   alternates: {
@@ -70,7 +72,7 @@ const breadcrumbSchema = {
     {
       "@type": "ListItem",
       "position": 5,
-      "name": "동적 시각 탐색 검사 (엔트로픽 그리드)",
+      "name": "시각 탐색 훈련 (변화하는 그리드)",
       "item": "https://skilldrills.online/ko/drills/visual/visual-recognition/entropic-grid"
     }
   ]
@@ -79,7 +81,7 @@ const breadcrumbSchema = {
 const softwareApplicationSchema = {
   "@context": "https://schema.org",
   "@type": "SoftwareApplication",
-  "name": "SkillDrills 시각 탐색 검사기 (엔트로픽 그리드)",
+  "name": "SkillDrills 시각 탐색·선택적 주의력 훈련",
   "applicationCategory": "HealthApplication",
   "operatingSystem": "Any",
   "browserRequirements": "HTML5 Canvas 지원 최신 웹 브라우저",
@@ -94,10 +96,10 @@ const softwareApplicationSchema = {
 const webApplicationSchema = {
   "@context": "https://schema.org",
   "@type": "WebApplication",
-  "name": "무료 온라인 시각 탐색 훈련 및 동적 그리드 주의력 테스트",
+  "name": "무료 온라인 시각 탐색 훈련",
   "url": "https://skilldrills.online/ko/drills/visual/visual-recognition/entropic-grid",
   "applicationCategory": "GameApplication",
-  "genre": ["시각 탐색 검사", "선택적 주의력 훈련", "시각 주의력", "인지심리학 훈련"],
+  "genre": ["시각 탐색", "선택적 주의력", "시각적 주의력"],
   "browserRequirements": "Requires HTML5 Canvas and JavaScript",
   "inLanguage": "ko-KR"
 };
@@ -105,9 +107,9 @@ const webApplicationSchema = {
 const videoGameSchema = {
   "@context": "https://schema.org",
   "@type": "VideoGame",
-  "name": "엔트로픽 그리드 비주얼 서치 (Entropic Grid Visual Search)",
+  "name": "변화하는 그리드 시각 탐색 챌린지",
   "description": "100개 셀의 동적 매트릭스에서 700ms마다 변하는 배경 잡음을 극복하고 제시된 영숫자 타겟 코드를 최속으로 클릭하는 지각 속도 측정 게임.",
-  "genre": ["Cognitive Drill", "Vision Training", "Esports Reaction"],
+  "genre": ["시각 탐색", "선택적 주의력", "시각적 주의력"],
   "playMode": "SinglePlayer",
   "applicationCategory": "Game"
 };
@@ -202,7 +204,7 @@ const faqSchema = {
 const howToSchema = {
   "@context": "https://schema.org",
   "@type": "HowTo",
-  "name": "동적 시각 탐색 테스트 고득점 공략법 및 단계별 훈련 가이드",
+  "name": "변화하는 그리드 시각 탐색 테스트 실전 단계",
   "description": "100셀 동적 노이즈 격자에서 목표 코드를 전광석화처럼 식별하기 위한 4단계 인지 전략.",
   "step": [
     {
@@ -238,7 +240,7 @@ const howToSchema = {
 
 const guideData = {
   eyebrow: "인지심리학 & 선택적 시각 주의 제어 가이드",
-  heading: "시각 탐색 검사 – 동적 잡음 환경에서의 특징 통합과 주의 집중 기전",
+  heading: "시각 탐색 훈련: 변화하는 그리드에서 선택적 주의력을 연습하는 법",
   intro: [
     "시각 탐색(Visual Search)은 무수한 방해 자극(Distractor)이 복잡하게 얽혀 있는 시각 환경 속에서 특정 목표물(Target)을 빠르고 정확하게 찾아내는 인간의 핵심 인지 생체 기능입니다. 인지심리학의 중대한 기초 이론인 앤 트레이스먼의 특징 통합 이론(Feature Integration Theory: FIT, Treisman & Gelade, 1980)에 따르면, 인간의 시각 시스템은 색상, 밝기, 단순한 선분 기울기와 같은 기본 특징을 무의식적 전주의 단계(Preattentive Stage)에서 병렬적으로 감지합니다. 그러나 영숫자 결합과 같은 복합 형태를 식별하기 위해서는 공간적 주의 스포트라이트를 집중시키는 의식적 결합 과정이 필수적입니다.",
     "제레미 울프의 가이드 탐색 모델(Guided Search, Wolfe, 1994; Wolfe, 2007)은 시각 자극 자체의 두드러짐(상향식 현저성)과 관찰자의 목표 지향적 의도(하향식 주의 편향)가 결합하여 뇌 속에서 '우선순위 맵(Priority Map)'을 형성한다고 설명합니다. 본 엔트로픽 그리드 과제처럼 100개의 셀 전반에서 700ms 주기로 동적 잡음이 쏟아지는 고엔트로피 환경에서는 방해 문자의 점멸이 상향식 주의를 극도로 교란합니다. 이를 극복하려면 전전두엽 피질과 후두정엽 피질이 협력하여 강력한 하향식 억제 신호를 보내고, 목표물 이외의 시각 잡음을 뇌 내부에서 능동적으로 소거해야 합니다(Duncan & Humphreys, 1989).",
@@ -247,7 +249,7 @@ const guideData = {
     "본 엔트로픽 그리드 도구는 초정밀 performance.now() 타이머를 통해 45초 동안 코드 식별 반응 잠복기, 유효 획득 수, 오클릭 페널티를 종합적으로 측정하여 실시간 인지 스코어를 도출합니다. 지속적인 동적 그리드 탐색 훈련은 극심한 시각적 클러터 환경에서도 망막의 유효 시야를 극대화하며, FPS 게임에서의 찰나의 색적, 복잡한 도로 주행 시의 돌발 위험 감지, 대용량 데이터 모니터링 시의 인지 생산성을 비약적으로 향상시킵니다."
   ],
   benchmarks: {
-    title: "동적 시각 탐색 및 선택적 주의력 벤치마크 기준",
+    title: "시각 탐색과 선택적 주의력 참고 기준",
     headers: ["평가 등급 / 티어", "코드 식별 성공수 (45초)", "평균 탐색 주시 잠복기", "잡음 식별 정확도", "신경 인지적 처리 단계"],
     rows: [
       ["최상위 / 프로 엘리트 (Top 1%)", "18회 이상", "< 180 ms", "96% 이상", "병렬적 팝아웃 추출과 하향식 가이드 탐색의 완전 통합 (Wolfe, 2007)"],
@@ -259,7 +261,7 @@ const guideData = {
     note: "인지심리학 및 시각 탐색 이론 문헌(Treisman & Gelade 1980; Wolfe 2007; Duncan & Humphreys 1989; Posner 1980)에 기반한 객관적 성과 기준입니다."
   },
   techniques: {
-    title: "시각 탐색 속도를 극대화하는 4대 핵심 테크닉",
+    title: "목표 코드를 빠르게 찾고 방해 자극을 거르는 4가지 방법",
     items: [
       {
         name: "병렬 팝아웃 특징 필터링 (Parallel Pop-Out Feature Extraction)",
@@ -329,7 +331,7 @@ export default function LocalizedEntropicGridKoPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
 
-      <EntropicGridClient copy={{ title: "시각 탐색 검사・엔트로픽 그리드 훈련", subtitle: "동적 노이즈 필터링 & 선택적 시각 주의력 검사" }} />
+      <EntropicGridClient copy={{ title: "시각 탐색 훈련", subtitle: "선택적 주의력과 시각 스캐닝" }} />
       <DrillGuide guide={guideData} />
       <div className="max-w-6xl mx-auto px-4 pb-12">
         <RelatedDrills currentCategory="visual" currentHref="https://skilldrills.online/ko/drills/visual/visual-recognition/entropic-grid" />

@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState, useEffect, useRef, useCallback, useMemo } from 'react';
-import { Keyboard, RotateCcw, Layers, CircleAlert, CircleCheck, Power } from 'lucide-react';
+import { Keyboard, RotateCcw, Layers, CircleAlert, CircleCheck, Power, Info } from 'lucide-react';
 
 import DrillFooter from '@/components/drill/DrillFooter';
 import DrillAccordion from '@/components/drill/DrillAccordion';
@@ -391,8 +391,7 @@ function GridKey({ k, state }) {
 const DEFAULT_COPY = {
   title: 'Keyboard Tester',
   subtitle: 'Free Online Keyboard Test — Check Every Key',
-  intro:
-    'Press every key on your keyboard. Each one lights up as it registers and stays green once confirmed working. Keys that never light up are not reaching the browser — the symptom of a dead switch, a stuck key, or a driver problem. Nothing is uploaded and nothing is stored.',
+  intro: 'Press every key on your keyboard to confirm it registers correctly.',
   keysConfirmed: 'Keys confirmed',
   rollover: 'Rollover',
   capturing: 'Capturing',
@@ -419,6 +418,10 @@ const DEFAULT_COPY = {
     'keys still to press. A key that will not register after several firm presses is the one to investigate.',
   mobileWarning:
     'This tool needs a physical keyboard. Open it on a desktop or laptop, or connect an external keyboard to test it.',
+  aboutTitle: 'About Keyboard Tester',
+  aboutP1:
+    'Each key lights up as it registers and stays green once confirmed working. Keys that never light up are not reaching the browser — the symptom of a dead switch, a stuck key, or a driver problem.',
+  aboutP2: 'Nothing is uploaded and nothing is stored.',
   howTitle: 'How to test your keyboard',
   howStep1: 'Press every key once, working left to right across each row.',
   howStep2: 'Each key turns cyan while held and green once it has registered at least once.',
@@ -557,9 +560,6 @@ export default function KeyboardTesterClient({ copy = {}, defaultLayout = 'ansi'
               {t.subtitle}
             </span>
           </h1>
-          <p className="mt-3 text-sm text-slate-400 leading-relaxed">
-            {t.intro}
-          </p>
         </div>
 
         <div className="flex flex-wrap items-center gap-3">
@@ -748,6 +748,17 @@ export default function KeyboardTesterClient({ copy = {}, defaultLayout = 'ansi'
         </div>
 
         <div>
+          <DrillAccordion
+            id="about"
+            title={t.aboutTitle}
+            icon={Info}
+            isOpen={openPanel === 'about'}
+            onToggle={() => toggle('about')}
+          >
+            <p>{t.aboutP1}</p>
+            <p className="mt-2">{t.aboutP2}</p>
+          </DrillAccordion>
+
           <DrillAccordion
             id="how"
             title={t.howTitle}

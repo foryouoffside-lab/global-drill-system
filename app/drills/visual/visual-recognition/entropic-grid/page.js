@@ -246,7 +246,7 @@ export default function EntropicGridPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(howToSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(videoGameSchema) }} />
-      <EntropicGridClient copy={{ title: "Entropic Grid Visual Search" }} />
+      <EntropicGridClient copy={{ title: "Entropic Grid Visual Search", subtitle: "Visual search training for finding changing targets in a noisy grid while building focus and recognition speed" }} />
       <DrillGuide
         eyebrow="Visual Cognition & Attention Psychophysics"
         title="The Science of Visual Search, Perceptual Load & Distractor Filtering"

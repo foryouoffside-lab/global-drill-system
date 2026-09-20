@@ -2,11 +2,12 @@ import DualTargetFlowClient from '@/app/drills/cognitive/attention/multi-tasking
 import { getAlternateLanguages } from '@/lib/i18n/locales';
 import DrillGuide from '@/components/drill/DrillGuide';
 import RelatedDrills from '@/components/drill/RelatedDrills';
+import DrillFooter from '@/components/drill/DrillFooter';
 import { pickSources } from '@/lib/drillSources';
 
 export const metadata = {
-  title: "Test de Multitâche – Focale à Double Flux | SkillDrills",
-  description: "Test de multitache et flexibilite cognitive en ligne gratuit: Suivez deux flux visuels opposes en simultane et evaluez le cout d alternance sans inscription.",
+  title: "Test de multitâche | Suivi double | SkillDrills",
+  description: "Test gratuit de multitâche dans le navigateur : suivez deux flux visuels à la fois. Non clinique, c’est un auto-test cognitif.",
   keywords: [
     "test de multitache",
     "test de flexibilite cognitive",
@@ -91,7 +92,7 @@ const softwareApplicationSchema = {
     "url": "https://skilldrills.online"
   },
   "inLanguage": "fr-FR",
-  "dateModified": "2026-09-16"
+  "dateModified": "2026-09-20"
 };
 
 const webApplicationSchema = {
@@ -108,7 +109,7 @@ const webApplicationSchema = {
   },
   "url": "https://skilldrills.online/fr/drills/cognitive/attention/multi-tasking",
   "inLanguage": "fr-FR",
-  "dateModified": "2026-09-16"
+  "dateModified": "2026-09-20"
 };
 
 const videoGameSchema = {
@@ -326,11 +327,26 @@ export default function EnhancedPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(howToSchema) }}
       />
-      <DualTargetFlowClient copy={{ title: "Test de Multitâche – Focale à Double Flux" }} />
+      <DualTargetFlowClient copy={{
+        title: "Test de multitâche", subtitle: "Suivez deux flux visuels en parallèle",
+        statScore: "Points", statTime: "Temps", timeLeft: "Temps restant", statLevel: "Niveau", statBest: "Meilleur score",
+        startTitle: "Test de multitâche", startSubtitle: "Deux flux · focus périphérique", getReady: "Préparez-vous", accuracy: "Précision", hits: "Réussites", peakLevel: "Niveau maximal", maxCombo: "Combo maximal",
+        caption: "Repérez les symboles correspondants dans deux flux opposés et réagissez avant l’accélération.",
+        rulesTitle: "Consignes et score", ruleItems: [
+          { text: "Touchez la cible gauche", highlight: "+points", result: "Cliquez le symbole affiché" },
+          { text: "Touchez la cible droite", highlight: "Combo", result: "Suivez les deux flux" },
+          { text: "Évitez les erreurs", highlight: "Précision", result: "Ignorez les symboles différents" },
+          { text: "Adaptez-vous au rythme", highlight: "Niveau supérieur", result: "Gardez les deux côtés équilibrés" },
+        ],
+        aboutTitle: "À propos du multitâche et du double flux", aboutLead: "Cet auto-test cognitif non clinique associe deux flux visuels et observe la précision pratiquée ainsi que la vitesse de changement attentionnel, sans prétendre mesurer une capacité générale du quotidien.",
+        audienceTitle: "Pour qui", audienceText: "Pour les joueurs qui surveillent plusieurs éléments, les apprenants et les personnes qui veulent organiser des informations simultanées.",
+        skillsTitle: "Compétences travaillées", skillsText: "Suivi visuel bilatéral, détection périphérique, changement attentionnel et contrôle exécutif.", flexibilityTitle: "Vitesse de changement", flexibilityText: "Chaque niveau modifie le rythme et les formes : passez d’un flux à l’autre sans perdre en précision."
+      }} />
       <DrillGuide {...guideProps} />
       <div className="max-w-6xl mx-auto px-4 pb-12">
         <RelatedDrills currentCategory="cognitive" currentHref="https://skilldrills.online/fr/drills/cognitive/attention/multi-tasking" />
       </div>
+      <DrillFooter />
     </>
   );
 }

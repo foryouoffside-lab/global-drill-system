@@ -59,6 +59,7 @@ export default function RelatedDrills() {
   const localizedSelfSeo = getDrillSeo(drill.href, locale);
   const localizedSelf = getLocalizedDrill(drill.href, locale, drill.name);
   const term = localizedSelfSeo?.term || localizedSelf.name;
+  const singleLineTitles = true;
 
   return (
     <section
@@ -68,7 +69,7 @@ export default function RelatedDrills() {
       <div className="border border-gray-800 bg-black rounded-2xl px-6 py-7">
         <h2
           id="related-drills-heading"
-          className="text-xl font-bold text-white tracking-tight mb-1.5"
+          className={`text-xl font-bold text-white tracking-tight mb-1.5 ${singleLineTitles ? 'truncate whitespace-nowrap' : ''}`}
         >
           Drills related to {term || drill.name}
         </h2>
@@ -90,7 +91,7 @@ export default function RelatedDrills() {
                     href={href}
                     className="group flex h-full flex-col gap-1.5 p-4 rounded-xl border border-gray-800 bg-white/[0.02] hover:bg-white/[0.05] hover:border-gray-700 transition-colors duration-200"
                   >
-                    <span className="text-sm font-bold text-white group-hover:text-blue-300 transition-colors">
+                    <span className={`block min-w-0 text-sm font-bold text-white group-hover:text-blue-300 transition-colors ${singleLineTitles ? 'truncate whitespace-nowrap' : ''}`}>
                       {anchor}
                     </span>
                     <span className="text-xs text-gray-400">{name}</span>

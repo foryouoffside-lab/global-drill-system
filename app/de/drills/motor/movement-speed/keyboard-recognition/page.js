@@ -2,28 +2,29 @@ import KeyboardRecognitionClient from '@/app/drills/motor/movement-speed/keyboar
 import { getAlternateLanguages } from '@/lib/i18n/locales';
 import DrillGuide from '@/components/drill/DrillGuide';
 import RelatedDrills from '@/components/drill/RelatedDrills';
+import DrillFooter from '@/components/drill/DrillFooter';
 import { pickSources } from '@/lib/drillSources';
 
 export const metadata = {
-  title: 'Tastatur Reaktionszeit Test – Keybind Trainer | SkillDrills',
-  description: 'Kostenloser Tastatur-Reaktionszeit-Test: Messe Tastengeschwindigkeit, Keybind-Reflexe und Wahlreaktionszeit direkt im Browser ohne Anmeldung.',
+  title: 'Tastatur Reaktionszeit | Keybind Test | SkillDrills',
+  description: 'Drücke die angezeigte Taste und messe Reaktionszeit, Genauigkeit und Keybind-Tempo. Kostenlos im Browser, ohne Download.',
   keywords: [
-    'tastatur reaktionszeit test',
-    'tastatur geschwindigkeitstest',
-    'keybind trainer deutsch',
-    'tastatur reaktionsgeschwindigkeit',
-    'tasten reaktionszeit messen',
-    'tastatur reflex test',
-    'keybind muscle memory',
-    'wahlreaktionszeit tastatur',
-    'gaming tastatur reaktion',
-    'reaktionszeit tastenanschlag',
-    'finger schnelligkeit tastatur',
-    'esports keybind training',
+    'Tastatur Reaktionszeit Test',
+    'Tastatur Latenztest',
+    'Tasten Reaktionszeit messen',
+    'WASD Trainer',
+    'Keybind Training',
+    'Tastatur Reflex Test',
+    'Wahlreaktionszeit Tastatur',
+    'Tastatur Klickgeschwindigkeit',
+    'Gaming Tastatur Reaktion',
+    'Tastatur Anschlaggeschwindigkeit',
+    'Keybind Muskelgedächtnis',
+    'Tastatur Reaktion online',
   ],
   openGraph: {
-    title: 'Tastatur Reaktionszeit Test – Keybind Trainer | SkillDrills',
-    description: 'Kostenloser Tastatur-Reaktionszeit-Test: Messe Tastengeschwindigkeit, Keybind-Reflexe und Wahlreaktionszeit direkt im Browser.',
+    title: 'Tastatur Reaktionszeit | Keybind Test | SkillDrills',
+    description: 'Messe Reaktionszeit, Genauigkeit und Keybind-Tempo mit einer angezeigten Taste direkt im Browser.',
     type: 'article',
     url: 'https://skilldrills.online/de/drills/motor/movement-speed/keyboard-recognition',
     siteName: 'SkillDrills',
@@ -31,8 +32,8 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Tastatur Reaktionszeit Test – Keybind Trainer | SkillDrills',
-    description: 'Kostenloser Tastatur-Reaktionszeit-Test: Messe Tastengeschwindigkeit und Keybind-Reflexe.',
+    title: 'Tastatur Reaktionszeit | Keybind Test | SkillDrills',
+    description: 'Kostenloser Test für Tastatur-Reaktion und Keybind-Tempo im Browser.',
   },
   robots: { index: true, follow: true },
   alternates: {
@@ -48,39 +49,42 @@ const breadcrumbSchema = {
     { '@type': 'ListItem', position: 1, name: 'SkillDrills', item: 'https://skilldrills.online/de' },
     { '@type': 'ListItem', position: 2, name: 'Motorik Training', item: 'https://skilldrills.online/de/drills/motor' },
     { '@type': 'ListItem', position: 3, name: 'Bewegungsgeschwindigkeit', item: 'https://skilldrills.online/de/drills/motor/movement-speed' },
-    { '@type': 'ListItem', position: 4, name: 'Tastatur Reaktionszeit Test', item: 'https://skilldrills.online/de/drills/motor/movement-speed/keyboard-recognition' },
+    { '@type': 'ListItem', position: 4, name: 'Tastatur Reaktionszeit', item: 'https://skilldrills.online/de/drills/motor/movement-speed/keyboard-recognition' },
   ],
 };
 
 const softwareApplicationSchema = {
   '@context': 'https://schema.org',
   '@type': 'SoftwareApplication',
-  name: 'Tastatur Reaktionszeit Test – Keybind Trainer',
+  inLanguage: 'de-DE',
+  name: 'Tastatur Reaktionszeit – Keybind Test',
   applicationCategory: 'HealthApplication',
   operatingSystem: 'All',
   offers: { '@type': 'Offer', price: '0', priceCurrency: 'EUR' },
   description: 'Kostenloser browserbasierter Tastatur-Reaktionszeit-Test und Keybind-Trainer. Messe Wahlreaktionszeit, Tasten-Reflexe und inhibitorische Kontrolle.',
   url: 'https://skilldrills.online/de/drills/motor/movement-speed/keyboard-recognition',
   publisher: { '@type': 'Organization', name: 'SkillDrills', url: 'https://skilldrills.online' },
-  dateModified: '2026-09-05',
+  dateModified: '2026-09-20',
 };
 
 const webApplicationSchema = {
   '@context': 'https://schema.org',
   '@type': 'WebApplication',
-  name: 'Tastatur Reaktionszeit Test',
+  inLanguage: 'de-DE',
+  name: 'Tastatur Reaktionszeit',
   applicationCategory: 'GameApplication',
   operatingSystem: 'All',
   browserRequirements: 'Benötigt HTML5 Canvas und JavaScript-Unterstützung',
   offers: { '@type': 'Offer', price: '0', priceCurrency: 'EUR' },
   url: 'https://skilldrills.online/de/drills/motor/movement-speed/keyboard-recognition',
-  dateModified: '2026-09-05',
+  dateModified: '2026-09-20',
 };
 
 const videoGameSchema = {
   '@context': 'https://schema.org',
   '@type': 'VideoGame',
-  name: 'Tastatur Reaktionszeit Test – Keybind Trainer',
+  inLanguage: 'de-DE',
+  name: 'Tastatur Reaktionszeit – Keybind Test',
   url: 'https://skilldrills.online/de/drills/motor/movement-speed/keyboard-recognition',
   description: 'Messe, wie schnell du die richtige Taste auf einen visuellen Reiz hin drückst, basierend auf Hicks Gesetz der Wahlreaktionszeit.',
   genre: ['Keyboard Game', 'Action', 'Esports Training'],
@@ -92,6 +96,8 @@ const videoGameSchema = {
 const faqSchema = {
   '@context': 'https://schema.org',
   '@type': 'FAQPage',
+  inLanguage: 'de-DE',
+  dateModified: '2026-09-20',
   mainEntity: [
     {
       '@type': 'Question',
@@ -179,6 +185,8 @@ const faqSchema = {
 const howToSchema = {
   '@context': 'https://schema.org',
   '@type': 'HowTo',
+  inLanguage: 'de-DE',
+  dateModified: '2026-09-20',
   name: 'Tastatur-Reaktionszeit und Keybind-Reflexe trainieren',
   description: 'Schritt-für-Schritt-Anleitung zur Steigerung von Tastenschnelligkeit und Reaktionshemmung.',
   step: [
@@ -332,6 +340,7 @@ export default function GermanKeyboardRecognitionPage() {
       <div className="max-w-6xl mx-auto px-4 pb-12">
         <RelatedDrills currentCategory="motor" currentHref="/drills/motor/movement-speed/keyboard-recognition" />
       </div>
+      <DrillFooter />
     </>
   );
 }

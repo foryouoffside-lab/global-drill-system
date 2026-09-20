@@ -6,21 +6,19 @@ import RelatedDrills from '@/components/drill/RelatedDrills';
 import DrillFooter from '@/components/drill/DrillFooter';
 
 export const metadata = {
-  title: "Tracking Fluide FPS – Visée en Poursuite | SkillDrills",
-  description: "Entraînez le tracking fluide et le suivi de trajectoire en courbe. Maîtrisez la visée continue sans tremblements pour Apex et Overwatch 2.",
+  title: "Aim Trainer | Tracking FPS Fluide | SkillDrills",
+  description: "Aim trainer gratuit dans le navigateur : entraînez le tracking fluide sur des cibles mobiles pour Apex, Overwatch 2 et les FPS.",
   keywords: [
-    "entraînement tracking fluide fps",
-    "smooth pursuit visée fps",
-    "entraînement tracking apex legends",
-    "visée de poursuite continue",
-    "tracking trajectoire courbe",
-    "comment améliorer tracking overwatch 2",
-    "mouvements oculaires de poursuite visuelle",
-    "entraînement stabilité avant bras souris",
-    "aim trainer tracking fluide gratuit",
-    "supprimer tremblement visée souris",
-    "suivi de cible continu fps",
-    "poursuite visuelle cible mobile"
+    "aim trainer",
+    "entraînement de visée",
+    "entraînement tracking",
+    "tracking de visée",
+    "tracking FPS",
+    "aim trainer en ligne",
+    "visée FPS",
+    "tracking fluide",
+    "entraînement visée Valorant",
+    "suivi cible FPS"
   ],
   alternates: {
     canonical: "https://skilldrills.online/fr/drills/fps/pro-smooth-pursuit",
@@ -31,8 +29,8 @@ export const metadata = {
     follow: true,
   },
   openGraph: {
-    title: "Tracking Fluide FPS – Visée en Poursuite | SkillDrills",
-    description: "Entraînez le tracking fluide et le suivi de trajectoire en courbe. Maîtrisez la visée continue sans tremblements pour Apex et Overwatch 2.",
+    title: "Aim Trainer | Tracking FPS Fluide | SkillDrills",
+    description: "Entraînez le tracking fluide sur des cibles mobiles : aim trainer FPS gratuit dans le navigateur.",
     url: "https://skilldrills.online/fr/drills/fps/pro-smooth-pursuit",
     siteName: 'SkillDrills',
     locale: 'fr_FR',
@@ -40,8 +38,8 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: "Tracking Fluide FPS – Visée en Poursuite | SkillDrills",
-    description: "Entraînez le tracking fluide et le suivi de trajectoire en courbe. Maîtrisez la visée continue sans tremblements pour Apex et Overwatch 2.",
+    title: "Aim Trainer | Tracking FPS Fluide | SkillDrills",
+    description: "Entraînez le tracking fluide sur des cibles mobiles : aim trainer FPS gratuit dans le navigateur.",
   },
 };
 
@@ -65,7 +63,7 @@ export default function ProSmoothPursuitPage() {
       {
         "@type": "ListItem",
         "position": 3,
-        "name": "Tracking Fluide Professionnel",
+        "name": "Aim Trainer - Tracking FPS Fluide",
         "item": "https://skilldrills.online/fr/drills/fps/pro-smooth-pursuit"
       }
     ]
@@ -74,7 +72,7 @@ export default function ProSmoothPursuitPage() {
   const webAppSchema = {
     "@context": "https://schema.org",
     "@type": "WebApplication",
-    "name": "Entraîneur de Tracking Fluide SkillDrills",
+    "name": "Aim Trainer - Tracking FPS Fluide",
     "url": "https://skilldrills.online/fr/drills/fps/pro-smooth-pursuit",
     "applicationCategory": "GameApplication",
     "operatingSystem": "Any",
@@ -89,7 +87,7 @@ export default function ProSmoothPursuitPage() {
   const softwareSchema = {
     "@context": "https://schema.org",
     "@type": "SoftwareApplication",
-    "name": "Entraînement de Tracking Fluide et Courbes",
+    "name": "Aim Trainer avec Tracking Fluide",
     "applicationCategory": "GameApplication",
     "operatingSystem": "Web Browser",
     "offers": {
@@ -107,7 +105,7 @@ export default function ProSmoothPursuitPage() {
   const videoGameSchema = {
     "@context": "https://schema.org",
     "@type": "VideoGame",
-    "name": "Pro Smooth Pursuit Curve Tracking Trainer",
+    "name": "Aim Trainer - Tracking en Courbe",
     "description": "Simulateur de poursuite continue sur courbes harmoniques de Lissajous avec verrouillage du curseur.",
     "genre": ["Action", "Esports Trainer", "Aim Trainer"],
     "playMode": "SinglePlayer",
@@ -117,7 +115,7 @@ export default function ProSmoothPursuitPage() {
   const faqSchema = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
-    "dateModified": "2026-09-16",
+    "dateModified": "2026-09-20",
     "mainEntity": [
       {
         "@type": "Question",
@@ -236,15 +234,15 @@ export default function ProSmoothPursuitPage() {
   };
 
   const copyFr = {
-    h1Keyword: "Tracking Fluide FPS",
-    h1Suffix: " – Visée en Poursuite",
+    h1Keyword: "Aim Trainer",
+    h1Suffix: " – Tracking FPS Fluide",
     statScore: "Score",
     statTime: "Temps",
     statAccuracy: "Précision",
     statBestScore: "Record",
     pausedTitle: "Jeu en Pause",
     pausedSubtitle: "Cliquez sur la zone de jeu pour réactiver le verrouillage du curseur.",
-    startTitle: "Tracking Fluide Professionnel",
+    startTitle: "Aim Trainer",
     startSubtitle: "Poursuite sur Courbe de Lissajous • Progression Continue",
     getReady: "PRÊT ?",
     stageCaption: "Suivez en continu la cible oscillante le long des courbes sans perdre le contact visuel.",
@@ -255,15 +253,15 @@ export default function ProSmoothPursuitPage() {
       { num: "3", text: "Progression Niveau", highlight: "+1 Niveau / 1400 PTS", result: "Courbes Adaptatives" },
       { num: "4", text: "Perte de Contact", highlight: "1.0s Hors Cible", result: "Reset Combo (-0.6s)" }
     ],
-    aboutTitle: "À Propos de l'Entraîneur de Tracking Fluide",
+    aboutTitle: "À propos de l'aim trainer et du tracking fluide",
     aboutHeading: "Qu'est-ce que la Poursuite Visuelle Fluide (Smooth Pursuit) ?",
     aboutText: "La poursuite visuelle fluide (Smooth Pursuit) est la capacité oculomotrice à maintenir le regard sur un objet en mouvement continu par une modulation précise de la vitesse oculaire et de l'avant-bras (Krauzlis, 2004 ; Barnes, 2008). Cet exercice élimine les micro-flicks superflus pour transformer votre visée en un faisceau régulier et constant."
   };
 
   const smoothPursuitGuide = {
-    heading: "Guide de Tracking Fluide & Courbes de Lissajous",
+    heading: "Aim Trainer pour le Tracking FPS Fluide",
     intro: [
-      "L'Entraîneur de Tracking Fluide Professionnel est un dispositif sensorimoteur conçu pour isoler et conditionner la synchronisation continue de la vitesse manuelle et oculaire. Dans les jeux compétitifs à Time-to-Kill élevé comme Apex Legends, Overwatch 2 et The Finals, remporter des duels prolongés requiert un réticule inébranlable sur des cibles mobiles.",
+      "L'aim trainer de tracking fluide mesure la capacité à maintenir le réticule sur une cible mobile sans à-coups. Ce drill utilise des courbes de Lissajous pour travailler la stabilité et le temps sur cible dans Apex, Overwatch 2 et les autres FPS.",
       "Contrairement aux flicks balistiques régis par la loi de Fitts (1954), la poursuite fluide sollicite des réseaux corticaux spécialisés dans l'aire temporale médiane (MT/V5) et le cervelet (Krauzlis, 2004 ; Lisberger et al., 1987). Ces structures décodent les vecteurs de flux optique et ajustent le gain neuromusculaire pour épouser l'accélération adverse.",
       "La trajectoire du module s'appuie sur des courbes harmoniques de Lissajous combinant des fonctions sinusoïdales sur les axes horizontaux et verticaux. Cette structure empêche toute prévisibilité linéaire, stimulant un contrôle moteur anticipateur (Barnes, 2008) sans générer de saccades correctives saccadées.",
       "En combinant l'API Pointer Lock à une chronométrie haute précision via performance.now() (Woods et al., 2015), cet outil mesure précisément le temps de maintien effectif sur la cible, éliminant les tremblements de souris pour construire une visée implacable.",

@@ -5,25 +5,25 @@ import RelatedDrills from '@/components/drill/RelatedDrills';
 import { pickSources } from '@/lib/drillSources';
 
 export const metadata = {
-  title: 'Teste de Velocidade de Teclado – Reflexos | SkillDrills',
-  description: 'Teste de velocidade de teclado gratuito. Meça seu tempo de reação de teclas, reflexos em keybinds e memória muscular direto no navegador sem instalar nada.',
+  title: 'Teste de reação do teclado | Keybinds | SkillDrills',
+  description: 'Pressione a tecla exibida para medir reação, precisão e velocidade de keybinds. Teste gratuito no navegador, sem download.',
   keywords: [
     'teste de velocidade de teclado',
-    'treino de reflexo no teclado',
-    'teste de reflexo de teclas',
-    'treino de keybinds fps',
-    'memoria muscular teclado gamer',
-    'tempo de reacao do teclado',
-    'teste de digitacao e reflexo',
+    'teste de reação teclado',
+    'tempo de reação das teclas',
+    'teste de reflexo no teclado',
+    'keybinds FPS',
+    'velocidade de resposta do teclado',
+    'teste de teclado gamer',
     'treino de teclas de atalho',
-    'velocidade de resposta no teclado',
-    'praticar teclas de movimento wasd',
-    'teste de teclado reacao online',
+    'teclas WASD treino',
+    'memória muscular teclado',
+    'teste de reação de teclas',
     'agilidade motora no teclado',
   ],
   openGraph: {
-    title: 'Teste de Velocidade de Teclado – Reflexos | SkillDrills',
-    description: 'Teste de velocidade de teclado gratuito. Meça seu tempo de reação de teclas, reflexos em keybinds e memória muscular direto no navegador.',
+    title: 'Teste de reação do teclado | Keybinds | SkillDrills',
+    description: 'Meça reação, precisão e velocidade de keybinds pressionando a tecla exibida no navegador.',
     type: 'article',
     url: 'https://skilldrills.online/pt/drills/motor/movement-speed/keyboard-recognition',
     siteName: 'SkillDrills',
@@ -31,8 +31,8 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Teste de Velocidade de Teclado – Reflexos | SkillDrills',
-    description: 'Teste de velocidade de teclado gratuito. Meça seu tempo de reação de teclas e reflexos em keybinds.',
+    title: 'Teste de reação do teclado | Keybinds | SkillDrills',
+    description: 'Teste gratuito de reação do teclado e keybinds no navegador.',
   },
   robots: { index: true, follow: true },
   alternates: {
@@ -48,39 +48,42 @@ const breadcrumbSchema = {
     { '@type': 'ListItem', position: 1, name: 'SkillDrills', item: 'https://skilldrills.online/pt' },
     { '@type': 'ListItem', position: 2, name: 'Treinamento Motor', item: 'https://skilldrills.online/pt/drills/motor' },
     { '@type': 'ListItem', position: 3, name: 'Velocidade de Movimento', item: 'https://skilldrills.online/pt/drills/motor/movement-speed' },
-    { '@type': 'ListItem', position: 4, name: 'Teste de Velocidade de Teclado', item: 'https://skilldrills.online/pt/drills/motor/movement-speed/keyboard-recognition' },
+    { '@type': 'ListItem', position: 4, name: 'Teste de Reação do Teclado', item: 'https://skilldrills.online/pt/drills/motor/movement-speed/keyboard-recognition' },
   ],
 };
 
 const softwareApplicationSchema = {
   '@context': 'https://schema.org',
   '@type': 'SoftwareApplication',
-  name: 'Teste de Velocidade de Teclado – Treinador de Keybinds',
+  inLanguage: 'pt-BR',
+  name: 'Teste de Reação do Teclado – Keybinds',
   applicationCategory: 'HealthApplication',
   operatingSystem: 'All',
   offers: { '@type': 'Offer', price: '0', priceCurrency: 'BRL' },
   description: 'Treinador de velocidade de teclado e reflexos de teclas gratuito no navegador. Avalie tempo de reação de escolha, memória muscular e inibição de resposta.',
   url: 'https://skilldrills.online/pt/drills/motor/movement-speed/keyboard-recognition',
   publisher: { '@type': 'Organization', name: 'SkillDrills', url: 'https://skilldrills.online' },
-  dateModified: '2026-09-05',
+  dateModified: '2026-09-20',
 };
 
 const webApplicationSchema = {
   '@context': 'https://schema.org',
   '@type': 'WebApplication',
-  name: 'Teste de Velocidade de Teclado',
+  inLanguage: 'pt-BR',
+  name: 'Teste de Reação do Teclado',
   applicationCategory: 'GameApplication',
   operatingSystem: 'All',
   browserRequirements: 'Requer suporte a Canvas HTML5 e JavaScript',
   offers: { '@type': 'Offer', price: '0', priceCurrency: 'BRL' },
   url: 'https://skilldrills.online/pt/drills/motor/movement-speed/keyboard-recognition',
-  dateModified: '2026-09-05',
+  dateModified: '2026-09-20',
 };
 
 const videoGameSchema = {
   '@context': 'https://schema.org',
   '@type': 'VideoGame',
-  name: 'Teste de Velocidade de Teclado – Reflexos',
+  inLanguage: 'pt-BR',
+  name: 'Teste de Reação do Teclado – Keybinds',
   url: 'https://skilldrills.online/pt/drills/motor/movement-speed/keyboard-recognition',
   description: 'Meça a rapidez com que você pressiona a tecla correta em resposta a estímulos, com base na Lei de Hick para tempo de reação de escolha.',
   genre: ['Keyboard Game', 'Action', 'Esports Training'],
@@ -92,6 +95,8 @@ const videoGameSchema = {
 const faqSchema = {
   '@context': 'https://schema.org',
   '@type': 'FAQPage',
+  inLanguage: 'pt-BR',
+  dateModified: '2026-09-20',
   mainEntity: [
     {
       '@type': 'Question',
@@ -179,6 +184,8 @@ const faqSchema = {
 const howToSchema = {
   '@context': 'https://schema.org',
   '@type': 'HowTo',
+  inLanguage: 'pt-BR',
+  dateModified: '2026-09-20',
   name: 'Como Treinar Velocidade de Teclado e Memória Muscular de Keybinds',
   description: 'Instruções para aprimorar tempo de reação, reflexo nos atalhos e controle motor inibitório.',
   step: [

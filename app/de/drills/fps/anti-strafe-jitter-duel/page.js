@@ -6,21 +6,19 @@ import { getAlternateLanguages } from '@/lib/i18n/locales';
 import RelatedDrills from '@/components/drill/RelatedDrills';
 
 export const metadata = {
-  title: "Anti-Strafe Aim Trainer – Reaktives Tracking | SkillDrills",
-  description: "Kostenloser Anti-Strafe Trainer im Browser: Meistere reaktives Tracking und unberechenbare ADAD-Strafes für Apex Legends, Overwatch 2 und Warzone.",
+  title: "Aim Trainer | Reaktives Tracking & Strafe | SkillDrills",
+  description: "Kostenloser Aim Trainer im Browser: Trainiere reaktives Tracking gegen unberechenbare ADAD-Strafes in Apex, Overwatch 2 und Warzone.",
   keywords: [
-    "Anti-Strafe Aim Trainer",
-    "Reaktives Tracking FPS",
+    "Aim Trainer",
+    "Aim Trainer Browser",
+    "Aim Trainer Apex",
+    "reaktives Tracking",
     "ADAD Strafe Tracking",
-    "Strafe Aiming Übungen",
-    "Nahkampf Tracking Apex",
-    "Anti-Mirroring Tracking",
+    "Strafe Aiming",
     "Richtungswechsel Aiming",
-    "Jitter Strafe Ausweichen",
-    "Counter-Strafe Duell",
-    "Mikrokorrektur Tracking",
-    "Retinaler Schlupf Aiming",
-    "Aiming Richtungswechsel"
+    "Nahkampf Tracking",
+    "Anti-Mirroring",
+    "Jitter Strafe"
   ],
   alternates: {
     canonical: "https://skilldrills.online/de/drills/fps/anti-strafe-jitter-duel",
@@ -31,8 +29,8 @@ export const metadata = {
     follow: true,
   },
   openGraph: {
-    title: "Anti-Strafe Aim Trainer – Reaktives Tracking | SkillDrills",
-    description: "Kostenloser Anti-Strafe Trainer im Browser: Meistere reaktives Tracking und unberechenbare ADAD-Strafes für Apex Legends, Overwatch 2 und Warzone.",
+      title: "Aim Trainer | Reaktives Tracking & Strafe | SkillDrills",
+    description: "Kostenloser Aim Trainer im Browser: Trainiere reaktives Tracking gegen unberechenbare ADAD-Strafes in Apex, Overwatch 2 und Warzone.",
     url: "https://skilldrills.online/de/drills/fps/anti-strafe-jitter-duel",
     siteName: 'SkillDrills',
     locale: 'de_DE',
@@ -40,8 +38,8 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: "Anti-Strafe Aim Trainer – Reaktives Tracking | SkillDrills",
-    description: "Kostenloser Anti-Strafe Trainer im Browser: Meistere reaktives Tracking und unberechenbare ADAD-Strafes für Apex Legends, Overwatch 2 und Warzone.",
+      title: "Aim Trainer | Reaktives Tracking & Strafe | SkillDrills",
+    description: "Kostenloser Aim Trainer im Browser: Trainiere reaktives Tracking gegen unberechenbare ADAD-Strafes in Apex, Overwatch 2 und Warzone.",
   },
 };
 
@@ -52,17 +50,17 @@ export default function AntiStrafeJitterDePage() {
     "itemListElement": [
       { "@type": "ListItem", "position": 1, "name": "SkillDrills", "item": "https://skilldrills.online/de" },
       { "@type": "ListItem", "position": 2, "name": "FPS Drills", "item": "https://skilldrills.online/de/drills/fps" },
-      { "@type": "ListItem", "position": 3, "name": "Anti-Strafe Trainer", "item": "https://skilldrills.online/de/drills/fps/anti-strafe-jitter-duel" }
+      { "@type": "ListItem", "position": 3, "name": "Aim Trainer - reaktives Tracking", "item": "https://skilldrills.online/de/drills/fps/anti-strafe-jitter-duel" }
     ]
   };
 
   const softwareSchema = {
     "@context": "https://schema.org",
     "@type": "SoftwareApplication",
-    "name": "Anti-Strafe Aim Trainer",
+    "name": "Aim Trainer - reaktives Tracking",
     "applicationCategory": "GameApplication",
     "operatingSystem": "Web Browser",
-    "dateModified": "2026-09-05",
+    "dateModified": "2026-09-20",
     "offers": { "@type": "Offer", "price": "0", "priceCurrency": "EUR" },
     "description": "Kostenloses Browsertraining für reaktives Tracking und Fadenkreuzkontrolle gegen hochfrequente ADAD-Strafes.",
     "genre": "FPS Training / Anti-Strafe",
@@ -77,7 +75,7 @@ export default function AntiStrafeJitterDePage() {
   const webAppSchema = {
     "@context": "https://schema.org",
     "@type": "WebApplication",
-    "name": "Anti-Strafe Aim Trainer",
+    "name": "Aim Trainer - reaktives Tracking",
     "url": "https://skilldrills.online/de/drills/fps/anti-strafe-jitter-duel",
     "applicationCategory": "GameApplication",
     "operatingSystem": "All",
@@ -93,10 +91,10 @@ export default function AntiStrafeJitterDePage() {
   const videoGameSchema = {
     "@context": "https://schema.org",
     "@type": "VideoGame",
-    "name": "Anti-Strafe Aim Trainer",
+    "name": "Aim Trainer - reaktives Tracking",
     "url": "https://skilldrills.online/de/drills/fps/anti-strafe-jitter-duel",
     "description": "Kostenloses Browsertraining für reaktives Tracking und Fadenkreuzkontrolle gegen hochfrequente ADAD-Strafes.",
-    "dateModified": "2026-09-05",
+    "dateModified": "2026-09-20",
     "gamePlatform": "Web Browser",
     "genre": ["FPS Training", "Aim Trainer", "Reactive Tracking"],
     "playMode": "SinglePlayer",
@@ -108,7 +106,7 @@ export default function AntiStrafeJitterDePage() {
   const faqSchema = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
-    "dateModified": "2026-09-05",
+    "dateModified": "2026-09-20",
     "mainEntity": [
       {
         "@type": "Question",
@@ -231,9 +229,9 @@ export default function AntiStrafeJitterDePage() {
   };
 
   const antiStrafeGuide = {
-    heading: "Anti-Strafe Jitter Training Guide & Biomechanik des reaktiven Trackings",
+    heading: "Aim Trainer für reaktives Tracking gegen ADAD-Strafes",
     intro: [
-      "In intensiven Nahkampf-Feuergefechten entscheiden oft Bruchteile von Sekunden: Gegner nutzen unberechenbare ADAD-Strafes, Crouch-Spamming und abrupte Richtungswechsel, um das Fadenkreuz des Schützen abzuschütteln. Während gleichförmiges Smooth Pursuit Tracking darauf beruht, einem berechenbaren Vektor flüssig zu folgen (Krauzlis, 2004), erfordert reaktives Tracking eine kontinuierliche sensorische Fehlerkorrektur über den retinalen Schlupf (Rashbass, 1961). Zwar verfügen erfahrene Shooter-Spieler über gesteigerte visuelle Aufmerksamkeit und Kontrastwahrnehmung (Green & Bavelier, 2003), doch die neurophysiologische Signalübertragung setzt unvermeidbare Latenzgrenzen bei jeder unvorhergesehenen Bewegungsumkehr.",
+      "Ein Aim Trainer für reaktives Tracking übt, das Fadenkreuz bei unberechenbaren ADAD-Strafes auf dem Ziel zu halten. Dieser Drill misst Nahkampf-Tracking, Richtungswechsel und Overshoot-Kontrolle für Apex, Overwatch 2 und Warzone.",
       "Ändert ein Gegner blitzschnell die Richtung, wandert das Zielbild aus der Fovea zentralis ab – es entsteht retinaler Schlupf. Das Gehirn kann diese Umkehr nicht voraussehen: Es muss die Abbremsung des Ziels erfassen, den Richtungswechsel im motorischen Kortex verarbeiten, die bestehende Mausbewegung abbremsen und eine gegenläufige Muskelkontraktion einleiten. In Spielen mit hoher Time-to-Kill (TTK) – wie Apex Legends, Overwatch 2 und Call of Duty: Warzone – gewinnt derjenige das Duell, der seine Fadenkreuz-Uptime auf der ausweichenden Hitbox maximiert.",
       "Der Anti-Strafe Jitter Trainer nutzt die HTML5 Pointer Lock API mit 1:1-Hardwareübertragung, hochauflösender performance.now()-Chronometrie und eliminierter Mausbeschleunigung. Durch das Ausschalten von USB-Polling-Jitter und Browser-Interpolationsverzögerungen (Woods et al., 2015) trainiert dieses System exakt abgestimmte Brems- und Beschleunigungsmuster der Antagonistenmuskeln.",
       "Messmethodik: Alle Tracking-Ereignisse werden clientseitig über die performance.now()-Hochpräzisionsuhr deines Browsers gemessen – vollkommen ohne Server-Latenz. Zu berücksichtigen: Browser runden Zeitstempel aus Sicherheitsgründen (Spectre-Schutz) auf ca. 1 ms; Bildschirme quantisieren Bildfolgen über die Bildwiederholrate (16,7 ms bei 60 Hz, 6,9 ms bei 144 Hz, 4,1 ms bei 240 Hz). Die USB-Abfragerate fügt bei 1000 Hz ca. 1 ms hinzu. Unterschiede unter 5 ms stellen messtechnisches Rauschen dar; vergleiche Trainingsläufe stets auf identischer Hardware."
@@ -322,13 +320,13 @@ export default function AntiStrafeJitterDePage() {
       />
       <AntiStrafeJitterClient
         copy={{
-          h1Keyword: "Anti-Strafe Aim Trainer",
-          h1Suffix: " – Reaktives Tracking & ADAD-Duell",
+          h1Keyword: "Aim Trainer",
+          h1Suffix: " – Reaktives Tracking & ADAD",
           statScore: "Punkte",
           statTime: "Zeit",
           statAccuracy: "Präzision",
           statBestScore: "Highscore",
-          startTitle: "Anti-Strafe Jitter Duel",
+          startTitle: "Aim Trainer - reaktives Tracking",
           startSubtitle: "Reaktives Tracking • Endlose Levelprogression",
           getReady: "BEREIT MACHEN",
           pausedTitle: "PAUSIERT",
@@ -341,7 +339,7 @@ export default function AntiStrafeJitterDePage() {
             { num: "3", text: "Levelprogression", highlight: "+1 Stufe / 1400 PKT", result: "Adaptives Jitter-Strafing" },
             { num: "4", text: "Abreiß-Strafe", highlight: "1,0s Zielverlust", result: "Setzt Combo zurück (-0,6s)" }
           ],
-          aboutTitle: "Über Anti-Strafe Jitter Tracking"
+          aboutTitle: "Über Aim Trainer und reaktives Tracking"
         }}
       />
       <DrillGuide guide={antiStrafeGuide} />

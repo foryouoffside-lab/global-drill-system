@@ -610,9 +610,6 @@ export default function ChromaSyncClient({ copy } = {}) {
             <h1 className="text-2xl sm:text-3xl font-black tracking-tight text-white">
               <span data-seo-kw="1">{copy?.title || "Go/No-Go Impulse Control Test"}</span>
             </h1>
-            <p className="text-sm text-slate-400 mt-1 leading-relaxed">
-              {copy?.description || copy?.subtitle || "A go/no-go test measures response inhibition: how well you can hold back an action you have already started preparing. Most trials call for a response, so responding becomes the habit and the rare no-go trial is what exposes control. The stop-signal literature treats going and stopping as a race between two processes, and whichever finishes first decides the outcome (Logan & Cowan, 1984). Simple visual reaction alone runs about 200–250 ms (Woods et al., 2015); inhibition has to beat that clock."}
-            </p>
           </div>
         )}
 
@@ -789,7 +786,7 @@ export default function ChromaSyncClient({ copy } = {}) {
                     <Brain className="w-4 h-4 text-emerald-400" /> What Is Go/No-Go Response Inhibition?
                   </h3>
                   <p className="text-sm leading-relaxed mb-3">
-                    <strong>Go/No-Go Training</strong> is the gold standard neuroscientific task for measuring motor response inhibition and impulse control. The <strong>Go/No-Go drill</strong> requires you to react as quickly as possible to green target signals (&apos;Go&apos;) while suppressing motor actions when red distractor signals (&apos;No-Go&apos;) appear.
+                    <strong>Go/No-Go Training</strong> is the gold standard neuroscientific task for measuring motor response inhibition and impulse control. The <strong>Go/No-Go drill</strong> requires you to react as quickly as possible to green target signals (&apos;Go&apos;) while suppressing motor actions when red distractor signals (&apos;No-Go&apos;) appear. Most trials call for a response, so responding becomes the habit and the rare no-go trial is what exposes control. The stop-signal literature treats going and stopping as a race between two processes, and whichever finishes first decides the outcome (Logan & Cowan, 1984). Simple visual reaction alone runs about 200–250 ms (Woods et al., 2015); inhibition has to beat that clock.
                   </p>
                   <p className="text-sm leading-relaxed">
                     Training with this task strengthens prefrontal cortex executive control, reducing premature responses and trigger impulsivity in high-stakes environments.

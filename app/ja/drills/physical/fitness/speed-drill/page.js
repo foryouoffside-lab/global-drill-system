@@ -56,6 +56,14 @@ export const metadata = {
   robots: { index: true, follow: true },
 };
 
+Object.assign(metadata, {
+  title: 'クリック連打テスト | 反応速度ゲーム | SkillDrills',
+  description: '無料のクリック連打・連打測定ゲーム。縮む標的を素早く捉え、クリック速度、反応、照準の正確さをブラウザで練習します。',
+  keywords: ['クリック連打', '連打測定', 'クリック速度測定', 'CPS測定', '連打ゲーム', 'マウス連打', '反応速度テスト', 'ターゲット クリック練習', 'クリック精度', '無料クリックテスト'],
+  openGraph: { ...metadata.openGraph, title: 'クリック連打テスト | 反応速度ゲーム | SkillDrills', description: '無料のクリック連打・連打測定ゲーム。縮む標的を素早く捉え、クリック速度、反応、照準の正確さをブラウザで練習します。' },
+  twitter: { ...metadata.twitter, title: 'クリック連打テスト | 反応速度ゲーム | SkillDrills', description: '無料のクリック連打・連打測定ゲーム。縮む標的を素早く捉え、クリック速度、反応、照準の正確さをブラウザで練習します。' },
+});
+
 const breadcrumbSchema = {
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
@@ -106,7 +114,7 @@ const softwareApplicationSchema = {
     "url": "https://skilldrills.online/ja"
   },
   "inLanguage": "ja",
-  "dateModified": "2026-09-12"
+  "dateModified": "2026-09-20"
 };
 
 const webApplicationSchema = {
@@ -123,7 +131,7 @@ const webApplicationSchema = {
   },
   "url": "https://skilldrills.online/ja/drills/physical/fitness/speed-drill",
   "inLanguage": "ja",
-  "dateModified": "2026-09-12"
+  "dateModified": "2026-09-20"
 };
 
 const videoGameSchema = {
@@ -144,6 +152,8 @@ const videoGameSchema = {
     "Mobile"
   ],
   "applicationCategory": "Game",
+  "inLanguage": "ja",
+  "dateModified": "2026-09-20",
   "offers": {
     "@type": "Offer",
     "price": "0",
@@ -154,7 +164,8 @@ const videoGameSchema = {
 const faqSchema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
-  "dateModified": "2026-09-12",
+  "inLanguage": "ja",
+  "dateModified": "2026-09-20",
   "mainEntity": [
     {
       "@type": "Question",
@@ -364,8 +375,8 @@ export default function LocalizedSpeedDrillPageJa() {
       />
       <SpeedDrillClient
         copy={{
-          title: "クリック速度測定＆クリック連打テスト",
-          subtitle: "縮小ターゲット連続迎撃＆弾道フリック連打 • 15段階難易度スケーリング",
+          title: "クリック連打テスト",
+          subtitle: "縮む標的を素早くクリックして反応を鍛える",
           hudLabels: {
             score: "スコア",
             time: "残り時間",

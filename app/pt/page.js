@@ -1,7 +1,9 @@
 import HomePageClient from '../HomePageClient';
+import { DRILLS } from '@/lib/drillsRegistry';
 import { getAlternateLanguages } from '@/lib/i18n/locales';
+import { buildHomeMetadata, buildHomeSchema } from '@/lib/i18n/siteLandingSeoNative';
 
-export const metadata = {
+const legacyMetadata = {
   title: 'Treino de Mira Grátis e Aim Trainer Online | SkillDrills',
   description: 'Melhore sua mira no Valorant, CS2, tempo de reação, CPS e memória com 80+ treinos interativos grátis direto no navegador sem cadastro.',
   keywords: [
@@ -21,8 +23,17 @@ export const metadata = {
   },
 };
 
+export const metadata = {
+  ...legacyMetadata,
+  ...buildHomeMetadata('pt', 'https://skilldrills.online/pt', DRILLS.length, getAlternateLanguages('/pt')),
+};
+
+const homeSchema = buildHomeSchema('pt', 'https://skilldrills.online/pt', DRILLS.length);
+
 export default function PortugueseHomePage() {
   return (
+    <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(homeSchema) }} />
     <HomePageClient
       copy={{
         srH2: 'SkillDrills - Treino de Mira e Treino Cerebral Grátis',
@@ -124,5 +135,6 @@ export default function PortugueseHomePage() {
         },
       }}
     />
+    </>
   );
 }

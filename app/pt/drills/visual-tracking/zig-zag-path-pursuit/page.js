@@ -5,29 +5,30 @@ import { getAlternateLanguages } from '@/lib/i18n/locales';
 import { pickSources } from '@/lib/drillSources';
 
 export const metadata = {
-  title: "Rastreamento em Zigue-Zague – SkillDrills",
-  description: "Treine o seguimento ocular rápido em zigue-zague e elimine ultrapassagens em reversões agudas. Exercício oculomotor gratuito para reflexos e pontaria.",
+  title: "Rastreamento visual em zigue-zague | SkillDrills",
+  description: "Acompanhe um alvo em zigue-zague. Treino gratuito para seguimento ocular, viradas rápidas e perdas do alvo.",
   keywords: [
-    "rastreamento visual em zigue-zague",
-    "treino de seguimento ocular contínuo",
-    "exercícios de reversão rápida da mira",
-    "coordenação neuromuscular ocular esportes",
-    "treinamento de sacadas de correção",
-    "supressão de overshoot ocular",
-    "exercícios de agilidade ocular online",
-    "treino de estabilidade foveal dinâmico",
-    "mira em zigue-zague reflexos reflexos",
-    "controle de frenagem muscular dos olhos",
-    "teste de precisão de rastreamento visual",
-    "treinamento de tempo de reação e tracking"
+    "rastreamento visual zigue-zague exercício",
+    "exercício de seguimento ocular",
+    "movimento ocular em zigue-zague",
+    "treino de visão dinâmica",
+    "rastreamento visual com viradas rápidas",
+    "exercício de coordenação ocular",
+    "treino de sacadas corretivas",
+    "controle do olhar em mudanças de direção",
+    "treino visual para esportes",
+    "exercício de agilidade visual online",
+    "teste de precisão do rastreamento visual",
+    "treino gratuito de movimento ocular"
   ],
   alternates: {
     canonical: "https://skilldrills.online/pt/drills/visual-tracking/zig-zag-path-pursuit",
-    languages: getAlternateLanguages('drills/visual-tracking/zig-zag-path-pursuit')
+    languages: getAlternateLanguages('/drills/visual-tracking/zig-zag-path-pursuit')
   },
+  robots: { index: true, follow: true },
   openGraph: {
-    title: "Rastreamento em Zigue-Zague – SkillDrills",
-    description: "Treine o seguimento ocular rápido em zigue-zague e elimine ultrapassagens em reversões agudas. Exercício oculomotor gratuito para reflexos e pontaria.",
+    title: "Rastreamento visual em zigue-zague | SkillDrills",
+    description: "Acompanhe um alvo em zigue-zague. Treino gratuito para seguimento ocular, viradas rápidas e perdas do alvo.",
     url: "https://skilldrills.online/pt/drills/visual-tracking/zig-zag-path-pursuit",
     siteName: "SkillDrills",
     locale: "pt_BR",
@@ -35,8 +36,8 @@ export const metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Rastreamento em Zigue-Zague – SkillDrills",
-    description: "Treine o seguimento ocular rápido em zigue-zague e elimine ultrapassagens em reversões agudas. Exercício oculomotor gratuito para reflexos e pontaria."
+    title: "Rastreamento visual em zigue-zague | SkillDrills",
+    description: "Acompanhe um alvo em zigue-zague. Treino gratuito para seguimento ocular, viradas rápidas e perdas do alvo."
   }
 };
 
@@ -67,7 +68,8 @@ export default function ZigZagPathPursuitPagePT() {
     "applicationCategory": "HealthApplication",
     "operatingSystem": "Any",
     "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
-    "description": "Treinamento neuromuscular de rastreamento dinâmico em dente de serra e supressão de ultrapassagem sacádica em reversões angulares agudas."
+    "description": "Treinamento neuromuscular de rastreamento dinâmico em dente de serra e supressão de ultrapassagem sacádica em reversões angulares agudas.",
+    "dateModified": "2026-09-20"
   };
 
   const webAppSchema = {
@@ -76,22 +78,25 @@ export default function ZigZagPathPursuitPagePT() {
     "name": "Exercício de Rastreamento Vetorial em Zigue-Zague",
     "url": "https://skilldrills.online/pt/drills/visual-tracking/zig-zag-path-pursuit",
     "applicationCategory": "TrainingTool",
-    "browserRequirements": "Requires JavaScript. HTML5 Canvas compatible."
+    "browserRequirements": "Requer JavaScript e compatibilidade com HTML5 Canvas.",
+    "dateModified": "2026-09-20"
   };
 
   const videoGameSchema = {
     "@context": "https://schema.org",
     "@type": "VideoGame",
     "name": "Desafio de Perseguição em Zigue-Zague",
-    "gamePlatform": "Web Browser",
-    "genre": ["Visual Training", "Eye Tracking Drill", "Esports Reflex"]
+    "gamePlatform": "Navegador Web",
+    "genre": ["Treino visual", "Exercício de rastreamento ocular", "Reflexos para esports"],
+    "dateModified": "2026-09-20"
   };
 
   const howToSchema = {
     "@context": "https://schema.org",
     "@type": "HowTo",
     "name": "Como Treinar Rastreamento Ocular em Zigue-Zague",
-    "description": "Protocolo neurofuncional para frenagem de overshoot e estabilização foveal em reversões agudas.",
+    "description": "Protocolo neurofuncional para frenagem de ultrapassagens e estabilização foveal em reversões agudas.",
+    "dateModified": "2026-09-20",
     "step": [
       {
         "@type": "HowToStep",
@@ -119,6 +124,7 @@ export default function ZigZagPathPursuitPagePT() {
   const faqSchema = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
+    "dateModified": "2026-09-20",
     "mainEntity": [
       {
         "@type": "Question",
@@ -138,7 +144,7 @@ export default function ZigZagPathPursuitPagePT() {
       },
       {
         "@type": "Question",
-        "name": "O que é o erro de ultrapassagem (overshoot) em curvas agudas?",
+        "name": "O que é o erro de ultrapassagem em curvas agudas?",
         "acceptedAnswer": {
           "@type": "Answer",
           "text": "É quando a inércia faz o globo ocular continuar na direção anterior por dezenas de milissegundos após o alvo já ter mudado bruscamente de sentido."
@@ -208,8 +214,8 @@ export default function ZigZagPathPursuitPagePT() {
     intro: [
       "O rastreamento motor ocular ao longo de polilinhas em zigue-zague de múltiplos segmentos representa um dos desafios de coordenação mais complexos na visão esportiva e na neuro-optometria. Ao contrário dos deslocamentos retilíneos simples, o seguimento de trajetórias diagonais exige a inervação proporcional e contínua de pares musculares distintos, harmonizando os centros pré-motores pontinos horizontais (PPRF) com os núcleos mesencefálicos verticais (riMLF; Orban de Xivry & Lefèvre, 2007).",
       "A sobrecarga neurocomputacional atinge o ápice nas inflexões agudas em que a trajetória inverte abruptamente o sentido. No momento dessa deflexão súbita, o deslizamento retiniano instantâneo eleva-se de maneira drástica enquanto o erro de posição foveal sofre um pico agudo. As pesquisas clássicas de de Brouwer et al. (2002) e Heinen et al. (2005) demonstraram que as sacadas de recuperação (catch-up saccades) são disparadas por um circuito computacional compartilhado no colículo superior e nos campos oculares frontais (FEF), integrando o desvio posicional e o erro de velocidade para efetuar correções balísticas milimétricas.",
-      "Sem um condicionamento visual específico, o sistema oculomotor apresenta ultrapassagens excessivas (overshoot) ou cortes antecipados de curva, acarretando latências prolongadas de reaquisição e instabilidade foveal. Em contrapartida, a prática deliberada em trajetórias de zigue-zague estimula os modelos internos preditivos do cerebelo (Barnes, 2008; Krauzlis, 2004; Orban de Xivry & Lefèvre, 2007), permitindo uma desaceleração antecipada antes de cada vértice, atenuando o erro sacádico e acelerando o reengajamento suave ao longo do vetor diagonal de saída.",
-      "O exercício de Perseguição em Zigue-Zague (Zig-Zag Path Pursuit) isola e aprimora essas vias sensoriomotoras críticas no navegador web. Ao seguir o alvo em sua trajetória contínua e alternada, o usuário desenvolve a equalização de velocidade na perseguição suave e uma reancoragem foveal cirúrgica nas inflexões. O recurso de ocultar a linha ('Hide Line') elimina guias espaciais para avaliar a estimativa perceptiva em tempo real, enquanto a velocidade variável ('Random Speed') rompe automatismos para forjar agilidade visual adaptativa.",
+      "Sem um condicionamento visual específico, o sistema oculomotor apresenta ultrapassagens excessivas ou cortes antecipados de curva, acarretando latências prolongadas de reaquisição e instabilidade foveal. Em contrapartida, a prática deliberada em trajetórias de zigue-zague estimula os modelos internos preditivos do cerebelo (Barnes, 2008; Krauzlis, 2004; Orban de Xivry & Lefèvre, 2007), permitindo uma desaceleração antecipada antes de cada vértice, atenuando o erro sacádico e acelerando o reengajamento suave ao longo do vetor diagonal de saída.",
+      "O exercício de Rastreamento visual em zigue-zague isola e aprimora essas vias sensoriomotoras críticas no navegador web. Ao seguir o alvo em sua trajetória contínua e alternada, o usuário desenvolve a equalização de velocidade na perseguição suave e uma reancoragem foveal precisa nas inflexões. O recurso de ocultar a linha elimina guias espaciais para avaliar a estimativa perceptiva em tempo real, enquanto a velocidade variável rompe automatismos para desenvolver agilidade visual adaptativa.",
       "Metodologia de medição e latência de hardware: As estimativas temporais incorporam a quantização de atualização das telas (~16,7 ms a 60 Hz, ~6,9 ms a 144 Hz, ~4,1 ms a 240 Hz) e os intervalos de varredura dos dispositivos de entrada (~8 ms a 125 Hz contra ~1 ms a 1.000 Hz), conforme detalhado por Woods et al. (2015). Todas as suas pontuações e registros de precisão residem exclusivamente no armazenamento local (localStorage) do seu navegador, resguardando total privacidade sem transmissão externa."
     ],
     benchmarks: {
@@ -219,11 +225,17 @@ export default function ZigZagPathPursuitPagePT() {
         ["Elite / Mestre da Reversão Rápida", "3.5x – 5.0x+", "Erro < 12 px (fixação perfeita na inflexão)", "Latência < 110 ms (frenagem preditiva)", "Top 1.5%"],
         ["Mestre / Alta Disciplina Vetorial", "2.5x – 3.5x", "Erro < 22 px (apenas microssacadas mínimas)", "Latência < 140 ms (curvas fluidas)", "Top 8%"],
         ["Avançado / Atleta Competitivo", "1.8x – 2.5x", "Erro < 38 px (reaquisição veloz)", "Latência < 180 ms (viradas estáveis)", "Top 25%"],
-        ["Intermediário / Praticante Regular", "1.2x – 1.8x", "Erro 38 – 70 px (overshoot e corte de curvas)", "Latência 180 – 240 ms (múltiplas correções)", "Médio 45%"],
+        ["Intermediário / Praticante Regular", "1.2x – 1.8x", "Erro 38 – 70 px (ultrapassagem e corte de curvas)", "Latência 180 – 240 ms (múltiplas correções)", "Médio 45%"],
         ["Iniciante / Não Treinado", "0.5x – 1.2x", "Erro > 70 px (perda total nos vértices)", "Latência > 250 ms (ultrapassagem evidente)", "Base"]
       ],
       note: "Parâmetros baseados em de Brouwer et al. (2002) sobre dinâmica de sacadas corretivas e Krauzlis (2004) sobre controle motor em reversões rápidas de velocidade e direção."
     },
+    steps: [
+      { title: "Fixe o alvo no centro", text: "Mantenha a cabeça estável e acompanhe o primeiro segmento diagonal com os olhos." },
+      { title: "Siga a diagonal sem cortar", text: "Acompanhe o alvo até o fim de cada segmento e preserve o olhar no centro da figura." },
+      { title: "Frene antes da virada", text: "Reduza o impulso antes da inflexão para evitar que o olhar ultrapasse o canto." },
+      { title: "Aumente o ritmo com precisão", text: "Suba a velocidade somente quando as perdas do alvo e o erro nas viradas estiverem estáveis." }
+    ],
     instructions: [
       "Fixe os olhos no alvo circular e acompanhe o trajeto retilíneo inicial.",
       "Antecipe o ponto de inflexão e aplique frenagem muscular suave antes da virada.",
@@ -267,9 +279,9 @@ export default function ZigZagPathPursuitPagePT() {
 
       <ZigZagPathPursuitClient
         copy={{
-          title: "Perseguição em Zigue-Zague",
-          subtitle: "Treino Oculomotor em Trajetória de Dente de Serra",
-          description: "Acompanhe um alvo em trajetórias agudas de dente de serra e desenvolva controle feedforward para frear bruscamente a mirada e eliminar o overshoot em vértices de alta frequência."
+          title: "Rastreamento visual em zigue-zague",
+          subtitle: "Treino de diagonais e viradas rápidas",
+          description: "Acompanhe um alvo em zigue-zague e registre as perdas e o erro nas viradas."
         }}
       />
       <DrillGuide guide={guide} />

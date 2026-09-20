@@ -22,21 +22,21 @@ import { pickSources } from '@/lib/drillSources';
 // ============================================================
 
 export const metadata = {
-  title: "リコイル練習 – FPS反動制御・スプレー練習 | SkillDrills",
-  description: "無料のブラウザFPSリコイル練習ツール。マウスの垂直引き下げ速度やS字スプレーパターンの反動制御、初弾10発の集弾率を測定・強化。Apex Legends、VALORANT、CS2のウォームアップに最適。",
+  title: "リコイル練習｜FPS反動制御・スプレー練習 | SkillDrills",
+  description: "無料ブラウザのリコイル練習で銃ごとの反動パターンを覚え、VALORANT・CS2・Apexのスプレー精度を高めます。",
   keywords: [
     "リコイル練習",
-    "リコイル 練習 ブラウザ",
+    "リコイル練習 ブラウザ",
     "リコイル制御",
-    "リコイル 練習 apex",
-    "リコイル制御 マウス",
-    "FPS 反動制御",
-    "スプレーコントロール 練習",
-    "CS2 リコイル練習",
+    "スプレー練習",
+    "反動制御 FPS",
+    "リコイルパターン",
     "VALORANT リコイル",
-    "エイム練習 無料 ブラウザ",
-    "集弾率 向上 練習",
-    "リコイル パターン 制御"
+    "CS2 リコイル練習",
+    "Apex リコイル",
+    "リコイル制御 マウス",
+    "スプレーコントロール 練習",
+    "エイム練習 無料 ブラウザ"
   ],
   alternates: {
     canonical: "https://skilldrills.online/ja/drills/fps/recoil-control",
@@ -47,8 +47,8 @@ export const metadata = {
     follow: true,
   },
   openGraph: {
-    title: "リコイル練習 – FPS反動制御・スプレー練習 | SkillDrills",
-    description: "無料のブラウザFPSリコイル練習ツール。マウスの垂直引き下げ速度やS字スプレーパターンの反動制御、初弾10発の集弾率を測定・強化。Apex Legends、VALORANT、CS2のウォームアップに最適。",
+    title: "リコイル練習｜FPS反動制御・スプレー練習 | SkillDrills",
+    description: "無料ブラウザのリコイル練習で銃ごとの反動パターンを覚え、VALORANT・CS2・Apexのスプレー精度を高めます。",
     url: "https://skilldrills.online/ja/drills/fps/recoil-control",
     siteName: 'SkillDrills',
     locale: 'ja_JP',
@@ -56,8 +56,8 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: "リコイル練習 – FPS反動制御・スプレー練習 | SkillDrills",
-    description: "無料のブラウザFPSリコイル練習ツール。マウスの垂直引き下げ速度やS字スプレーパターンの反動制御、初弾10発の集弾率を測定・強化。Apex Legends、VALORANT、CS2のウォームアップに最適。",
+    title: "リコイル練習｜FPS反動制御・スプレー練習 | SkillDrills",
+    description: "無料ブラウザのリコイル練習で銃ごとの反動パターンを覚え、VALORANT・CS2・Apexのスプレー精度を高めます。",
   },
 };
 
@@ -94,7 +94,7 @@ export default function RecoilControlPageJa() {
     "name": "リコイル練習 (Recoil Control Trainer)",
     "applicationCategory": "GameApplication",
     "operatingSystem": "Web Browser",
-    "dateModified": "2026-09-11",
+    "dateModified": "2026-09-20",
     "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
     "description": "ブラウザ上で実銃のスプレーパターンや垂直引き下げ速度、反動制御を反復トレーニングできる無料FPSリコイル練習ツール。",
     "genre": "FPS Training / Recoil & Spray Control",
@@ -112,7 +112,7 @@ export default function RecoilControlPageJa() {
     "name": "リコイル練習 (Recoil Control Trainer)",
     "url": "https://skilldrills.online/ja/drills/fps/recoil-control",
     "description": "ブラウザ上で実銃のスプレーパターンや垂直引き下げ速度、反動制御を反復トレーニングできる無料FPSリコイル練習ツール。",
-    "dateModified": "2026-09-11",
+    "dateModified": "2026-09-20",
     "gamePlatform": "Web Browser",
     "genre": ["FPS Training", "Aim Trainer", "Recoil Control"],
     "playMode": "SinglePlayer",
@@ -124,7 +124,7 @@ export default function RecoilControlPageJa() {
   const faqSchema = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
-    "dateModified": "2026-09-11",
+    "dateModified": "2026-09-20",
     "mainEntity": [
       {
         "@type": "Question",
@@ -247,9 +247,9 @@ export default function RecoilControlPageJa() {
   };
 
   const recoilGuideJa = {
-    heading: "リコイル練習・反動制御（スプレーコントロール）完全攻略ガイド",
+    heading: "リコイル練習とFPS反動制御ガイド",
     intro: [
-      "リコイル練習（Recoil Control Trainer）は、実戦FPSで銃器の反動パターン、垂直引き下げ速度、および左右の水平ブレ（スプレー揺れ）を相殺するための筋肉記憶を構築する感覚運動トレーニングツールです。Counter-Strike 2、VALORANT、Apex Legends、Rainbow Six Siegeなどの競技シューターでは、初弾のワンタップヘッドショットだけで決着がつかない状況が日常的に発生します。敵が激しい左右ストレイフで回避行動を取る中、フルオート連射で全弾を標的に集中させ続ける能力が勝敗を直接決定づけます。",
+      "リコイル練習は、銃ごとのスプレーパターンと垂直・水平の反動をマウス操作で補正するFPSトレーニングです。Counter-Strike 2、VALORANT、Apex Legendsなどで、初弾後も集弾を維持するスプレーコントロールを反復できます。",
       "高速なリコイル制御の運動学習理論は、リチャード・A・シュミットとティモシー・D・リー（Schmidt & Lee, 2011）の「一般化運動プログラム（GMP理論）」によって裏付けられています。10発の弾がわずか700ミリ秒未満で発射されるような極限の高速運動では、着弾を目で見てからマウスを修正する視覚フィードバック（閉ループ制御）を行う時間的猶予がありません。あらかじめ大脳皮質の運動野に学習・固定化された、一定の力と相対タイミングを持つオープンループ運動プログラムが一挙に実行される必要があります。",
       "射撃時の運動制御プロセスには、ロバート・S・ウッドワースの二成分照準モデル（Woodworth, 1899）およびデイビッド・E・マイヤーの最適サブムーブメント理論（Meyer et al., 1988）が適用されます。射撃開始直後の「初弾10発の直線的垂直引き下げ」というオープンループ運動と、その後に生じる水平スプレーの揺れ戻しや敵の回避移動に対する「微小な閉ループ視覚追従補正」がシームレスに結合して初めて完璧な集弾が達成されます。",
       "運動速度と精度のトレードオフはフィッツの法則（Fitts, 1954）およびシュミットのインパルス変動モデル（Schmidt et al., 1979）に従います。マウスを過度に強く素早く引っ張りすぎると筋肉の出力ばらつきが増大し、かえって集弾が乱れます。本ドリルは高精度タイマーAPI（performance.now()）を活用してミリ秒単位の集弾判定を行い、プレイヤーが無駄な力みを捨てて一定の滑らかな引き下げ速度を定着させられるよう設計されています（Woods et al., 2015）。",
@@ -313,7 +313,7 @@ export default function RecoilControlPageJa() {
 
   const copyJa = {
     h1Keyword: "リコイル練習",
-    h1Suffix: " (Recoil Control Trainer)",
+    h1Suffix: " - FPS反動制御・スプレー",
     caption: "リコイル制御は反動パターンを脳に記憶させて実行するオープンループ運動プログラムです。運動は速度や力が増すほど出力のばらつきが大きくなるため（Schmidt et al., 1979）、急激に引っ張るのではなく一定の滑らかな速度で引き下げることが集弾率向上の鍵となります。",
     statScore: "スコア",
     statTime: "残り時間",
@@ -323,7 +323,7 @@ export default function RecoilControlPageJa() {
     statReloading: "リロード中...",
     pausedTitle: "一時停止中",
     pausedPrompt: "画面をクリックしてカーソルを固定し、再開してください。",
-    startTitle: "リコイル練習 Pro",
+    startTitle: "リコイル練習",
     startSubtitle: "実銃スプレーパターン & 運動補正トレーニング • エンドレス難易度進行",
     startButtonText: "トレーニング開始",
     getReady: "構えてください",
@@ -341,7 +341,7 @@ export default function RecoilControlPageJa() {
       { num: "3", text: "レベル進行", highlight: "+1レベル / 1400 PTS", result: "標的速度 & 反動倍率上昇" },
       { num: "4", text: "マガジン規律", highlight: "命中率40%未満ペナルティ", result: "コンボ喪失 (-0.6秒)" }
     ],
-    aboutTitle: "リコイル練習トレーナーについて",
+    aboutTitle: "リコイル練習と反動制御について",
     whyMattersTitle: "なぜリコイル制御（反動補正）が重要なのか",
     whyMattersLead: "リコイル制御は反動パターンを脳に記憶させて実行するオープンループ運動プログラムです。運動は速度や力が増すほど出力のばらつきが大きくなるため（Schmidt et al., 1979）、急激に引っ張るのではなく一定の滑らかな速度で引き下げることが集弾率向上の鍵となります。",
     aboutIntro: [

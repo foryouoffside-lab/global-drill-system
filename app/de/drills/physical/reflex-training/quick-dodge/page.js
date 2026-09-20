@@ -22,8 +22,8 @@ import { pickSources } from '@/lib/drillSources';
 // ============================================================
 
 export const metadata = {
-  title: "Maus-Ausweichspiel – Reflex-Test | SkillDrills",
-  description: "Kostenloses Maus-Ausweichspiel online. Weiche schnellen Projektilen mit dem Cursor aus und trainiere Reaktionszeit und Reflexe direkt im Browser.",
+  title: "Maus-Ausweichspiel online | Reflex-Test",
+  description: "Kostenloses Maus-Ausweichspiel im Browser. Weiche Projektilen aus und trainiere Reaktionszeit, Reflexe und präzise Cursorbewegung.",
   keywords: [
     "Maus Ausweichspiel",
     "Reflexe Testen Spiel",
@@ -41,8 +41,8 @@ export const metadata = {
     languages: getAlternateLanguages('/drills/physical/reflex-training/quick-dodge'),
   },
   openGraph: {
-    title: "Maus-Ausweichspiel – Reflex-Test | SkillDrills",
-    description: "Kostenloses Maus-Ausweichspiel online. Weiche schnellen Projektilen mit dem Cursor aus und trainiere Reaktionszeit und Reflexe direkt im Browser.",
+    title: "Maus-Ausweichspiel online | Reflex-Test",
+    description: "Kostenloses Maus-Ausweichspiel im Browser. Weiche Projektilen aus und trainiere Reaktionszeit, Reflexe und präzise Cursorbewegung.",
     url: 'https://skilldrills.online/de/drills/physical/reflex-training/quick-dodge',
     siteName: 'SkillDrills',
     locale: 'de_DE',
@@ -50,8 +50,8 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: "Maus-Ausweichspiel – Reflex-Test | SkillDrills",
-    description: "Kostenloses Maus-Ausweichspiel online. Weiche schnellen Projektilen mit dem Cursor aus und trainiere Reaktionszeit und Reflexe direkt im Browser.",
+    title: "Maus-Ausweichspiel online | Reflex-Test",
+    description: "Kostenloses Maus-Ausweichspiel im Browser. Weiche Projektilen aus und trainiere Reaktionszeit, Reflexe und präzise Cursorbewegung.",
   },
   robots: { index: true, follow: true },
 };
@@ -93,6 +93,10 @@ const softwareApplicationSchema = {
   "name": "Maus-Ausweichspiel und kinetischer Reflex-Trainer",
   "applicationCategory": "HealthApplication",
   "operatingSystem": "All",
+  "url": "https://skilldrills.online/de/drills/physical/reflex-training/quick-dodge",
+  "description": "Kostenloses Maus-Ausweichspiel: Projektilen ausweichen und Reaktionszeit sowie präzise Cursorbewegung trainieren.",
+  "inLanguage": "de",
+  "dateModified": "2026-09-20",
   "offers": {
     "@type": "Offer",
     "price": "0",
@@ -104,6 +108,10 @@ const webApplicationSchema = {
   "@context": "https://schema.org",
   "@type": "WebApplication",
   "name": "Kinetischer Projektil-Ausweichtrainer und zerebellärer Vorwärtsmodell-Simulator",
+  "url": "https://skilldrills.online/de/drills/physical/reflex-training/quick-dodge",
+  "description": "Browser-Drill zum Ausweichen vor Projektilen und Trainieren von Reflexen, Reaktionszeit und Maussteuerung.",
+  "inLanguage": "de",
+  "dateModified": "2026-09-20",
   "browserRequirements": "Requires JavaScript and HTML5 Canvas support",
   "genre": "Training, Reflex, Evasion, Esports"
 };
@@ -111,8 +119,11 @@ const webApplicationSchema = {
 const videoGameSchema = {
   "@context": "https://schema.org",
   "@type": "VideoGame",
-  "name": "Quick Dodge Cursor Evasion Challenge",
+  "name": "Maus-Ausweichspiel und Reflex-Test",
   "gamePlatform": "Web Browser",
+  "url": "https://skilldrills.online/de/drills/physical/reflex-training/quick-dodge",
+  "inLanguage": "de",
+  "dateModified": "2026-09-20",
   "applicationSubCategory": "Esports Motor Chronometry Drill"
 };
 
@@ -328,8 +339,8 @@ export default function LocalizedQuickDodgePageDe() {
       />
       <QuickDodgeClient
         copy={{
-          title: "Maus-Ausweichspiel & Reflex-Test",
-          subtitle: "Kinetisches Projektil-Ausweichen & Vorwärtsmodell-Steuerung • 15 Level",
+          title: "Maus-Ausweichspiel",
+          subtitle: "Projektilen ausweichen, länger überleben",
           description: "Einem Projektil auszuweichen ist primär eine Frage der Vorhersage, nicht der bloßen Reaktion. Da die visuelle Rückkopplung rund 100–150 ms benötigt (Woodworth, 1899), basiert schnelles Ausweichen auf vorberechneten Flugbahnen im Kleinhirn (Kawato, 1999). Bei hoher Geschwindigkeit schließt sich das Zeitfenster für Korrekturen und nur die Prädiktion sichert das Überleben.",
           badge: "Reflex-Ausweichtest",
           hudLabels: {

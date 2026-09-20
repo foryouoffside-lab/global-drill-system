@@ -22,21 +22,21 @@ import { pickSources } from '@/lib/drillSources';
 // ============================================================
 
 export const metadata = {
-  title: "Vertikales Aim Training – Y-Achse Tracking | SkillDrills",
-  description: "Kostenloser Vertical Aim Trainer: Trainiere Y-Achsen-Mauskontrolle, Parabel-Flugkurven und Luftziel-Tracking für Apex Legends und Overwatch 2.",
+  title: "Aim Trainer: Vertikales Tracking | SkillDrills",
+  description: "Kostenloser Aim Trainer im Browser: Übe vertikales Tracking, Y-Achsen-Mauskontrolle und Luftziele für Apex Legends und Overwatch 2.",
   keywords: [
-    "Vertikales Aim Training",
+    "vertikales Aim Training",
+    "vertikales Tracking",
     "Y-Achse Aiming",
-    "Vertikales Tracking",
     "Luftziel Tracking",
     "Y-Achsen Mauskontrolle",
-    "Flugkurven Tracking FPS",
     "Apex Legends vertikales Zielen",
     "Overwatch 2 Luftziele",
     "Aim Trainer kostenlos",
     "Vertical Tracking Trainer",
     "Parabelflug Zielen",
-    "Smooth Pursuit Y-Achse"
+    "Smooth Pursuit Y-Achse",
+    "Aim Trainer online"
   ],
   alternates: {
     canonical: "https://skilldrills.online/de/drills/fps/vertical-air-track",
@@ -47,8 +47,8 @@ export const metadata = {
     follow: true,
   },
   openGraph: {
-    title: "Vertikales Aim Training – Y-Achse Tracking | SkillDrills",
-    description: "Kostenloser Vertical Aim Trainer: Trainiere Y-Achsen-Mauskontrolle, Parabel-Flugkurven und Luftziel-Tracking für Apex Legends und Overwatch 2.",
+    title: "Aim Trainer: Vertikales Tracking | SkillDrills",
+    description: "Kostenloser Aim Trainer im Browser: Übe vertikales Tracking, Y-Achsen-Mauskontrolle und Luftziele für Apex Legends und Overwatch 2.",
     url: "https://skilldrills.online/de/drills/fps/vertical-air-track",
     siteName: 'SkillDrills',
     locale: 'de_DE',
@@ -56,8 +56,8 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: "Vertikales Aim Training – Y-Achse Tracking | SkillDrills",
-    description: "Kostenloser Vertical Aim Trainer: Trainiere Y-Achsen-Mauskontrolle, Parabel-Flugkurven und Luftziel-Tracking für Apex Legends und Overwatch 2.",
+    title: "Aim Trainer: Vertikales Tracking | SkillDrills",
+    description: "Kostenloser Aim Trainer im Browser: Übe vertikales Tracking, Y-Achsen-Mauskontrolle und Luftziele für Apex Legends und Overwatch 2.",
   },
 };
 
@@ -75,10 +75,10 @@ export default function VerticalAirTrackPageDe() {
   const softwareSchema = {
     "@context": "https://schema.org",
     "@type": "SoftwareApplication",
-    "name": "Vertikales Aim Training (Vertical Air-Track)",
+    "name": "Aim Trainer - Vertikales Tracking",
     "applicationCategory": "GameApplication",
     "operatingSystem": "Web Browser",
-    "dateModified": "2026-09-15",
+    "dateModified": "2026-09-20",
     "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
     "description": "Kostenloser browserbasierter Vertical Aim Trainer mit Hardware-RAW-Mauseingabe. Trainiert Y-Achsen-Tracking und parabolische Flugkurven-Vorhersage.",
     "genre": "FPS Training / Vertikales Tracking",
@@ -93,10 +93,10 @@ export default function VerticalAirTrackPageDe() {
   const webAppSchema = {
     "@context": "https://schema.org",
     "@type": "WebApplication",
-    "name": "Vertikales Aim Training (Vertical Air-Track)",
+    "name": "Aim Trainer - Vertikales Tracking",
     "applicationCategory": "GameApplication",
     "operatingSystem": "Web Browser",
-    "dateModified": "2026-09-15",
+    "dateModified": "2026-09-20",
     "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
     "browserRequirements": "Pointer Lock API, JavaScript, HTML5 Canvas fähiger Webbrowser",
     "description": "Kostenloser browserbasierter Vertical Aim Trainer mit Hardware-RAW-Mauseingabe. Trainiert Y-Achsen-Tracking und parabolische Flugkurven-Vorhersage.",
@@ -106,10 +106,10 @@ export default function VerticalAirTrackPageDe() {
   const videoGameSchema = {
     "@context": "https://schema.org",
     "@type": "VideoGame",
-    "name": "Vertikales Aim Training (Vertical Air-Track)",
+    "name": "Aim Trainer - Vertikales Tracking",
     "url": "https://skilldrills.online/de/drills/fps/vertical-air-track",
     "description": "Kostenloser browserbasierter Vertical Aim Trainer mit Hardware-RAW-Mauseingabe. Trainiert Y-Achsen-Tracking und parabolische Flugkurven-Vorhersage.",
-    "dateModified": "2026-09-15",
+    "dateModified": "2026-09-20",
     "gamePlatform": "Web Browser",
     "genre": ["FPS Training", "Aim Trainer", "Vertikales Tracking"],
     "playMode": "SinglePlayer",
@@ -121,7 +121,7 @@ export default function VerticalAirTrackPageDe() {
   const faqSchema = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
-    "dateModified": "2026-09-15",
+    "dateModified": "2026-09-20",
     "mainEntity": [
       {
         "@type": "Question",
@@ -244,9 +244,9 @@ export default function VerticalAirTrackPageDe() {
   };
 
   const verticalAirTrackGuide = {
-    heading: "Leitfaden für vertikales Aim Training & Flugkurven-Physik",
+    heading: "Aim Trainer: Vertikales Tracking, Y-Achse und Luftziele",
     intro: [
-      "Vertikales Aim Training (Vertical Air-Track) ist ein spezialisierter motorischer Präzisionsdrill für die Y-Achse, der die Beherrschung gravitativer Parabelbahnen und flüssiges Luftziel-Tracking schult. In modernen schnellen Shootern wie Apex Legends, Overwatch 2 oder Halo Infinite entscheiden vertikale Raumkämpfe, Jumppads und Ziplines regelmäßig über Sieg oder Niederlage.",
+      "Wer einen Aim Trainer für vertikales Tracking sucht, misst hier die Zeit und Trefferquote beim Folgen von Luftzielen entlang der Y-Achse. Der Drill trainiert flüssige Mausbewegungen, die Vorhersage von Fallkurven und Luftziel-Tracking für Apex Legends und Overwatch 2.",
       "Die neurologische Steuerung vertikaler Augenfolgebewegungen (Smooth Pursuit) unterscheidet sich fundamental von horizontalen Blickwechseln. Wie Richard J. Krauzlis (2004) nachwies, greift das visuelle System bei vertikalen Verfolgungsbewegungen auf spezialisierte Bahnen im Kleinhirnwurm (Vermis) und Hirnstamm zurück. Cyril Rashbass (1961) demonstrierte, dass kontinuierliches Tracking nicht durch Positionsfehler, sondern durch Geschwindigkeitsfehler (Retinal Slip) angetrieben wird. Ruckartige Sakkaden führen zu sofortigem Trefferpunktverlust.",
       "Zusätzlich verlangt das Abfangen fliegender Gegner das intuitive Verinnerlichen der Erdbeschleunigung (g = 9,81 m/s²). Biomechanische Analysen von Peter R. Cavanagh et al. (1984) sowie Michael F. Land & Peter McLeod (2000) zeigen, dass erfolgreiche Schützen den Scheitelpunkt (Apex) antizipieren und ihre Augen-Hand-Koordination vorausschauend synchronisieren.",
       "Dieser Drill isoliert vertikale Bewegungsabläufe vollständig von horizontalen Gewohnheiten. Durch präzise Zeitmessung via performance.now() (Woods et al., 2015) schließt du die Lücke zwischen zweidimensionalem Horizontaltraining und echter dreidimensionaler Gefechtsbeherrschung.",
@@ -336,8 +336,8 @@ export default function VerticalAirTrackPageDe() {
       />
       <VerticalAirTrackClient
         copy={{
-          h1Keyword: "Vertikales Aim Training",
-          h1Suffix: " – Kostenloser Y-Achsen & Luftziel Trainer",
+          h1Keyword: "Aim Trainer: Vertikales Tracking",
+          h1Suffix: " – Y-Achse & Luftziele",
           statScore: "Punkte",
           statTime: "Restzeit",
           statAccuracy: "Trefferquote",
@@ -386,7 +386,7 @@ export default function VerticalAirTrackPageDe() {
       <div className="max-w-6xl w-full mx-auto px-4 pb-12">
         <RelatedDrills
           currentCategory="fps"
-          currentHref="/drills/fps/vertical-air-track"
+          currentHref="/de/drills/fps/vertical-air-track"
           locale="de"
         />
       </div>

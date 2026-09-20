@@ -1,7 +1,6 @@
 'use client';
 
 import React, { useState, useEffect, useRef, useCallback } from 'react';
-import Link from 'next/link';
 import {
   Volume2, VolumeX,
   RefreshCw, Share2, ArrowLeft, BookOpen, Users, TrendingUp, Zap, ZapOff
@@ -15,7 +14,6 @@ import { getFpsScoreGrade } from '../../../../../lib/scoringEngine';
 import { getStartLevel } from '../../../../../lib/drillDifficulty';
 import useDrillFlash from '../../../../../lib/useDrillFlash';
 import useUnexpectedExitGuard from '../../../../../lib/useUnexpectedExitGuard';
-import DrillFooter from '../../../../../components/drill/DrillFooter';
 import DrillCountdown from '../../../../../components/drill/DrillCountdown';
 import DrillAccordion from '../../../../../components/drill/DrillAccordion';
 import DrillFlashOverlay from '../../../../../components/drill/DrillFlashOverlay';
@@ -96,10 +94,10 @@ const getORP = (word) => {
 };
 
 const RULES_ITEMS = [
-  { title: "Upcoming Target Word", text: "A designated TARGET WORD (not yet shown) is displayed in the top banner. Watch the focal stream carefully." },
-  { title: "ORP Focal Stream", text: "Words flash sequentially at a single focal point (Optimal Recognition Point) with zero eye movements required." },
-  { title: "Target Catch Trigger", text: "Tap TARGET DETECTED immediately when the active target word appears in the focal display." },
-  { title: "5-Level Speed System", text: "Progress across 5 professional speed tiers from Level 1 (250 WPM) up to Level 5 (850 WPM)." }
+  { num: "1", text: "Target Word", highlight: "Shown in Banner", result: "Watch the focal stream for a match" },
+  { num: "2", text: "ORP Focal Stream", highlight: "Zero Eye Movement", result: "Words flash at a fixed focal point" },
+  { num: "3", text: "Target Catch", highlight: "+100 PTS", result: "Tap TARGET DETECTED instantly" },
+  { num: "4", text: "Speed Tiers", highlight: "250 → 850 WPM", result: "5 progressive difficulty levels" }
 ];
 
 const ABOUT_TEXT = `RSVP (Rapid Serial Visual Presentation) is a high-throughput reading technology and cognitive processing speed drill. In traditional reading, up to 80% of reading time is spent executing saccadic eye movements — jumping your eyes from word to word.
@@ -121,16 +119,47 @@ const FAQ_ITEMS = [
   { q: "Is this RSVP speed reader free?", a: "Yes. SkillDrills RSVP Speed Reader is 100% free with no ads, downloads, or registration required. It runs entirely in your browser on desktop and mobile." }
 ];
 
-const RELATED_DRILLS = [
-  { id: "symbol-matching", name: "Symbol Matching", cat: "Processing Speed", desc: "Match rapid symbol pairs under strict time pressure.", href: "/drills/cognitive/processing-speed/symbol-matching" },
-  { id: "reaction-time", name: "Reaction Time", cat: "Processing Speed", desc: "Train choice reaction speed and visual reflex latency.", href: "/drills/cognitive/processing-speed/reaction-time" },
-  { id: "concentration-stamina", name: "Focus Test", cat: "Attention", desc: "Sustain continuous visual focus through prolonged high-density sequences.", href: "/drills/cognitive/attention/concentration-stamina" },
-  { id: "distraction-fighter", name: "Distraction Fighter", cat: "Focus", desc: "Filter out high-interference Stroop visual distractors.", href: "/drills/cognitive/focus/distraction-fighter" },
-  { id: "concentration-grid", name: "Schulte Table Trainer", cat: "Focus", desc: "Scan and tap sequential numbers on expanding grid matrices.", href: "/drills/cognitive/focus/concentration-grid" },
-  { id: "divided-attention", name: "Divided Attention Test", cat: "Attention", desc: "Track and react to multiple independent target streams simultaneously.", href: "/drills/cognitive/attention/divided-attention" }
-];
+function RuleItem({ num, text, highlight = '', result }) {
+  return (
+    <div className="flex items-center gap-3 bg-black px-3.5 py-2.5 rounded-xl border border-white/10 shadow-sm font-sans min-w-0">
+      <div className="w-7 h-7 rounded-lg bg-white/10 border border-white/20 flex items-center justify-center text-white text-xs font-black shadow-lg flex-shrink-0">
+        {num}
+      </div>
+      <div className="flex-1 flex items-center justify-between gap-2 min-w-0">
+        <p className="text-xs sm:text-sm font-medium text-gray-100 font-sans truncate">
+          {text}{highlight && <span className="font-bold text-white"> ({highlight})</span>}
+        </p>
+        <div className="text-[11px] sm:text-xs font-bold px-2.5 py-1 rounded-lg bg-[#050811] border border-white/10 text-white whitespace-nowrap shadow-inner tracking-wide flex-shrink-0">
+          {result}
+        </div>
+      </div>
+    </div>
+  );
+}
 
 export default function RSVPReaderClient({ copy } = {}) {
+  const labels = {
+    score: copy?.labels?.score || 'Score',
+    time: copy?.labels?.time || 'Time',
+    speed: copy?.labels?.speed || 'Speed',
+    bestScore: copy?.labels?.bestScore || 'Best Score',
+    timeLeft: copy?.labels?.timeLeft || 'Time Left',
+    targetWord: copy?.labels?.targetWord || 'Target Word',
+    detected: copy?.labels?.detected || 'TARGET DETECTED',
+    ready: copy?.labels?.ready || 'GET READY',
+    accuracy: copy?.labels?.accuracy || 'Accuracy',
+    hits: copy?.labels?.hits || 'Hits',
+    errors: copy?.labels?.errors || 'Errors',
+    points: copy?.labels?.points || 'Points',
+    playAgain: copy?.labels?.playAgain || 'Play Again',
+  };
+  const aboutText = copy?.aboutText || ABOUT_TEXT;
+  const aboutCards = copy?.aboutCards || [
+    { title: 'Who Should Use This?', desc: 'Students and professionals who need to process large volumes of text quickly, speed-reading enthusiasts, and anyone wanting to train visual word-recognition throughput beyond normal saccadic reading speed.' },
+    { title: 'Skills Improved', desc: 'Visual word-recognition speed, working memory buffer capacity for rapid lexical streams, and sustained attention at high information throughput.' },
+    { title: 'Progressive Speed Tiers', desc: '5 professional WPM tiers (250 to 850) push your focal recognition point further with each level, training the visual cortex to decode words without saccadic eye movement.' },
+  ];
+  const faqItems = copy?.faqItems || FAQ_ITEMS;
   const [gameState, setGameState] = useState('start'); // 'start' | 'countdown' | 'playing' | 'gameOver'
   const [isFullscreen, setIsFullscreen] = useState(false);
   useImmersiveMode(isFullscreen); // locks the page behind while the drill fills the screen
@@ -199,9 +228,32 @@ export default function RSVPReaderClient({ copy } = {}) {
     if (timerIntervalRef.current) clearInterval(timerIntervalRef.current);
     if (streamTimerRef.current) clearTimeout(streamTimerRef.current);
 
+    if (typeof document !== 'undefined' && document.fullscreenElement) {
+      document.exitFullscreen().catch(() => {});
+    }
     setIsFullscreen(false);
     setGameState('start');
   }, []);
+
+  useEffect(() => {
+    if (gameState !== 'playing' && gameState !== 'countdown') return;
+    const handleKeyDown = (e) => {
+      if (e.key === 'Escape') {
+        handleExitDrill();
+      }
+    };
+    const handleFullscreenChange = () => {
+      if (!document.fullscreenElement && isFullscreen) {
+        handleExitDrill();
+      }
+    };
+    window.addEventListener('keydown', handleKeyDown);
+    document.addEventListener('fullscreenchange', handleFullscreenChange);
+    return () => {
+      window.removeEventListener('keydown', handleKeyDown);
+      document.removeEventListener('fullscreenchange', handleFullscreenChange);
+    };
+  }, [gameState, isFullscreen, handleExitDrill]);
 
   const { markIntentionalExit } = useUnexpectedExitGuard({
     active: gameState === 'playing' || gameState === 'countdown',
@@ -426,15 +478,18 @@ export default function RSVPReaderClient({ copy } = {}) {
   const orp = getORP(currentWord);
 
   return (
-    <div className="min-h-screen bg-[#050508] text-white flex flex-col font-sans select-none">
+    <div className="bg-[#050508] text-white flex flex-col font-sans select-none">
       {/* ── MAIN CONTENT AREA ── */}
       <main className="flex-1 max-w-6xl w-full mx-auto px-4 py-6 flex flex-col gap-6">
         {/* Title */}
         {!isFullscreen && (
           <div className="flex flex-col gap-1">
-            <h1 className="text-2xl sm:text-3xl font-black tracking-tight text-white">
+            <h1 className="text-xl sm:text-3xl font-black tracking-tight text-white whitespace-nowrap overflow-hidden text-ellipsis">
               <span data-seo-kw="1">{copy?.title || "Reading Speed Test"}</span>
             </h1>
+            <p className="text-xs sm:text-sm text-slate-400 font-medium">
+              {copy?.subtitle || "RSVP reading speed test for processing words rapidly and improving visual reading fluency"}
+            </p>
           </div>
         )}
 
@@ -442,10 +497,10 @@ export default function RSVPReaderClient({ copy } = {}) {
         {!isFullscreen && (
           <div className="grid grid-cols-4 gap-2 w-full -mb-2">
             {[
-              { label: 'Score', value: uiScore, color: 'text-amber-400' },
-              { label: 'Time', value: `${uiTimeLeft}s`, color: uiTimeLeft <= 10 ? 'text-red-400 animate-pulse' : 'text-white' },
-              { label: 'Speed', value: `${uiWpm} WPM`, color: 'text-indigo-400' },
-              { label: 'Best Score', value: bestScore, color: 'text-amber-400' },
+              { label: labels.score, value: uiScore, color: 'text-amber-400' },
+              { label: labels.time, value: `${uiTimeLeft}s`, color: uiTimeLeft <= 10 ? 'text-red-400 animate-pulse' : 'text-white' },
+              { label: labels.speed, value: `${uiWpm} WPM`, color: 'text-indigo-400' },
+              { label: labels.bestScore, value: bestScore, color: 'text-amber-400' },
             ].map((card) => (
               <div key={card.label} className="border border-white/[0.06] bg-white/[0.015] px-2 py-2 rounded-xl text-center">
                 <div className="text-[10px] font-bold tracking-wider uppercase text-slate-500">{card.label}</div>
@@ -470,13 +525,13 @@ export default function RSVPReaderClient({ copy } = {}) {
             <>
               {/* Top Left: Score */}
               <div className="absolute top-4 left-4 z-30 pointer-events-none flex flex-col items-start gap-1">
-                <p className="text-[10px] font-semibold uppercase tracking-wider text-white/50">Score</p>
+                <p className="text-[10px] font-semibold uppercase tracking-wider text-white/50">{labels.score}</p>
                 <p className="text-2xl sm:text-3xl font-black text-white tabular-nums leading-tight">{uiScore}</p>
               </div>
 
               {/* Top Right: Time Left */}
               <div className="absolute top-4 right-4 z-30 pointer-events-none text-right">
-                <p className="text-[10px] font-semibold uppercase tracking-wider text-white/50">Time Left</p>
+                <p className="text-[10px] font-semibold uppercase tracking-wider text-white/50">{labels.timeLeft}</p>
                 <p className={`text-2xl sm:text-3xl font-black tabular-nums leading-tight ${uiTimeLeft <= 10 ? 'text-red-400 animate-pulse' : 'text-white'}`}>{uiTimeLeft}s</p>
               </div>
             </>
@@ -524,7 +579,7 @@ export default function RSVPReaderClient({ copy } = {}) {
 
               {/* Target Prompt Banner Top Center */}
               <div className="z-20 bg-black/70 backdrop-blur-md px-5 py-2.5 rounded-2xl border border-white/10 flex items-center gap-2 shadow-lg pointer-events-none mt-2">
-                <span className="text-xs font-bold text-slate-400 uppercase">Target Word:</span>
+                <span className="text-xs font-bold text-slate-400 uppercase">{labels.targetWord}:</span>
                 <span className="text-sm font-black text-amber-400 uppercase tracking-wider">{targetWord}</span>
               </div>
 
@@ -543,7 +598,7 @@ export default function RSVPReaderClient({ copy } = {}) {
                 onPointerDown={handleRespond}
                 className="w-full max-w-sm py-4 bg-gradient-to-r from-amber-600 to-yellow-600 text-white rounded-2xl font-black text-xl sm:text-2xl active:scale-95 transition-transform shadow-[0_0_25px_rgba(245,158,11,0.35)] cursor-pointer border border-amber-400/30 z-30 mb-2"
               >
-                TARGET DETECTED
+                {labels.detected}
               </button>
             </div>
           )}
@@ -553,8 +608,8 @@ export default function RSVPReaderClient({ copy } = {}) {
             <FpsStartCard
               icon={BookOpen}
               accent="amber"
-              title="RSVP Speed Reader"
-              subtitle="Lexical Decoding • ORP Focus"
+              title={copy?.startTitle || 'RSVP Speed Reader'}
+              subtitle={copy?.startSubtitle || 'Lexical Decoding • ORP Focus'}
               isTouchOnlyDevice={false}
               onStart={enterDrill}
             />
@@ -562,7 +617,7 @@ export default function RSVPReaderClient({ copy } = {}) {
 
           {/* COUNTDOWN OVERLAY */}
           {gameState === 'countdown' && (
-            <DrillCountdown value={countdownValue} subtitle="GET READY" />
+            <DrillCountdown value={countdownValue} subtitle={labels.ready} />
           )}
 
           {/* END SCREEN */}
@@ -585,7 +640,7 @@ export default function RSVPReaderClient({ copy } = {}) {
                 <div className="text-3xl sm:text-4xl font-black text-white mt-2 tabular-nums">
                   {uiScore}
                 </div>
-                <div className="text-[9px] uppercase tracking-widest text-slate-500">Points</div>
+                <div className="text-[9px] uppercase tracking-widest text-slate-500">{labels.points}</div>
               </div>
 
               {/* Right Stats & Actions Panel */}
@@ -594,15 +649,15 @@ export default function RSVPReaderClient({ copy } = {}) {
                 <div className="grid grid-cols-3 gap-2">
                   <div className="bg-black border border-white/5 p-2.5 rounded-xl text-center">
                     <p className="text-sm sm:text-base font-black text-white">{analytics.accuracy}%</p>
-                    <p className="text-[7.5px] sm:text-[8.5px] font-bold uppercase tracking-wider text-gray-400 mt-0.5">Accuracy</p>
+                    <p className="text-[7.5px] sm:text-[8.5px] font-bold uppercase tracking-wider text-gray-400 mt-0.5">{labels.accuracy}</p>
                   </div>
                   <div className="bg-black border border-white/5 p-2.5 rounded-xl text-center">
                     <p className="text-sm sm:text-base font-black text-emerald-400">{analytics.successfulHits}</p>
-                    <p className="text-[7.5px] sm:text-[8.5px] font-bold uppercase tracking-wider text-gray-400 mt-0.5">Hits</p>
+                    <p className="text-[7.5px] sm:text-[8.5px] font-bold uppercase tracking-wider text-gray-400 mt-0.5">{labels.hits}</p>
                   </div>
                   <div className="bg-black border border-white/5 p-2.5 rounded-xl text-center">
                     <p className="text-sm sm:text-base font-black text-red-400">{analytics.misses}</p>
-                    <p className="text-[7.5px] sm:text-[8.5px] font-bold uppercase tracking-wider text-gray-400 mt-0.5">Errors</p>
+                    <p className="text-[7.5px] sm:text-[8.5px] font-bold uppercase tracking-wider text-gray-400 mt-0.5">{labels.errors}</p>
                   </div>
                 </div>
 
@@ -612,7 +667,7 @@ export default function RSVPReaderClient({ copy } = {}) {
                     onClick={enterDrill} 
                     className="flex-1 py-3 rounded-[13px] bg-gradient-to-r from-amber-600 to-yellow-600 text-white font-bold text-xs uppercase tracking-wide cursor-pointer transition-transform active:scale-[0.98] shadow-md flex items-center justify-center gap-1.5"
                   >
-                    <RefreshCw className="w-3.5 h-3.5" /> Play Again
+                    <RefreshCw className="w-3.5 h-3.5" /> {labels.playAgain}
                   </button>
                   <button 
                     type="button"
@@ -641,7 +696,7 @@ export default function RSVPReaderClient({ copy } = {}) {
         {/* Stage Caption */}
         {!isFullscreen && (
           <p className="text-xs text-slate-400 leading-relaxed -mt-2">
-            Read rapid serial text presentation and tap when the designated target word flashes on screen.
+            {copy?.stageCaption || 'Read rapid serial text presentation and tap when the designated target word flashes on screen.'}
           </p>
         )}
 
@@ -650,23 +705,20 @@ export default function RSVPReaderClient({ copy } = {}) {
           <div className="[&>div]:!mt-0">
             <DrillAccordion
               id="rules"
-              title="Drill Instructions & Scoring System"
+              title={copy?.rulesTitle || 'Drill Instructions & Scoring System'}
               isOpen={openAccordion === 'rules'}
               onToggle={() => setOpenAccordion(openAccordion === 'rules' ? null : 'rules')}
             >
               <div className="grid grid-cols-1 md:grid-cols-2 gap-3 font-sans">
-                {RULES_ITEMS.map((item, i) => (
-                  <div key={i} className="bg-black p-4 rounded-xl border border-white/10">
-                    <p className="text-sm font-bold text-white mb-1">{item.title}</p>
-                    <p className="text-xs text-gray-300 leading-relaxed">{item.text}</p>
-                  </div>
+                {(copy?.rulesItems || RULES_ITEMS).map((item, i) => (
+                  <RuleItem key={i} num={item.num} text={item.text} highlight={item.highlight} result={item.result} />
                 ))}
               </div>
             </DrillAccordion>
 
             <DrillAccordion
               id="about"
-              title="About RSVP Speed Reader"
+              title={copy?.aboutTitle || 'About RSVP Speed Reader'}
               isOpen={openAccordion === 'about'}
               onToggle={() => setOpenAccordion(openAccordion === 'about' ? null : 'about')}
             >
@@ -674,48 +726,36 @@ export default function RSVPReaderClient({ copy } = {}) {
                 <section>
                   <div className="space-y-4">
                     <p className="text-sm leading-relaxed text-gray-300">
-                      RSVP shows words one at a time in a fixed spot, removing eye movements from reading. Normal reading runs about 200&ndash;300 words per minute (Rayner, 1998). RSVP can push the rate higher, but comprehension falls as speed rises, because the limit on reading is the time needed to process each word rather than the time spent moving your eyes (Rayner et al., 2016).
+                      {copy?.aboutLead || 'RSVP shows words one at a time in a fixed spot, removing eye movements from reading. Normal reading runs about 200–300 words per minute (Rayner, 1998). RSVP can push the rate higher, but comprehension can fall as speed rises (Rayner et al., 2016).'}
                     </p>
-                    {ABOUT_TEXT.split('\n\n').map((para, i) => (
+                    {aboutText.split('\n\n').map((para, i) => (
                       <p key={i} className="text-sm leading-relaxed text-gray-300">{para}</p>
                     ))}
                   </div>
                 </section>
 
                 <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-                  <div className="p-4 rounded-xl border border-gray-800 bg-white/[0.02]">
-                    <div className="flex items-center gap-2.5 mb-2">
-                      <div className="w-7 h-7 rounded-lg bg-blue-600 flex items-center justify-center"><Users className="w-3.5 h-3.5 text-white" /></div>
-                      <h5 className="text-xs font-bold text-white">Who Should Use This?</h5>
+                  {aboutCards.map((card, i) => (
+                    <div key={i} className="p-4 rounded-xl border border-gray-800 bg-white/[0.02]">
+                      <div className="flex items-center gap-2.5 mb-2">
+                        <div className="w-7 h-7 rounded-lg bg-blue-600 flex items-center justify-center"><Users className="w-3.5 h-3.5 text-white" /></div>
+                        <h5 className="text-xs font-bold text-white">{card.title}</h5>
+                      </div>
+                      <p className="text-xs text-gray-300 leading-relaxed">{card.desc}</p>
                     </div>
-                    <p className="text-xs text-gray-300 leading-relaxed">Students and professionals who need to process large volumes of text quickly, speed-reading enthusiasts, and anyone wanting to train visual word-recognition throughput beyond normal saccadic reading speed.</p>
-                  </div>
-                  <div className="p-4 rounded-xl border border-gray-800 bg-white/[0.02]">
-                    <div className="flex items-center gap-2.5 mb-2">
-                      <div className="w-7 h-7 rounded-lg bg-emerald-600 flex items-center justify-center"><TrendingUp className="w-3.5 h-3.5 text-white" /></div>
-                      <h5 className="text-xs font-bold text-white">Skills Improved</h5>
-                    </div>
-                    <p className="text-xs text-gray-300 leading-relaxed">Visual word-recognition speed, working memory buffer capacity for rapid lexical streams, and sustained attention at high information throughput.</p>
-                  </div>
-                  <div className="p-4 rounded-xl border border-gray-800 bg-white/[0.02]">
-                    <div className="flex items-center gap-2.5 mb-2">
-                      <div className="w-7 h-7 rounded-lg bg-purple-600 flex items-center justify-center"><Zap className="w-3.5 h-3.5 text-white" /></div>
-                      <h5 className="text-xs font-bold text-white">Progressive Speed Tiers</h5>
-                    </div>
-                    <p className="text-xs text-gray-300 leading-relaxed">5 professional WPM tiers (250 to 850) push your focal recognition point further with each level, training the visual cortex to decode words without saccadic eye movement.</p>
-                  </div>
+                  ))}
                 </div>
               </div>
             </DrillAccordion>
 
             <DrillAccordion
               id="faq"
-              title="Frequently Asked Questions"
+              title={copy?.faqTitle || 'Frequently Asked Questions'}
               isOpen={openAccordion === 'faq'}
               onToggle={() => setOpenAccordion(openAccordion === 'faq' ? null : 'faq')}
             >
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4 font-sans">
-                {FAQ_ITEMS.map((item, i) => (
+                {faqItems.map((item, i) => (
                   <div key={i} className="bg-[#05060b] border border-gray-800 rounded-xl p-5">
                     <h4 className="text-sm font-bold text-gray-200 mb-2">{item.q}</h4>
                     <p className="text-xs text-gray-400 leading-relaxed">{item.a}</p>
@@ -725,36 +765,6 @@ export default function RSVPReaderClient({ copy } = {}) {
             </DrillAccordion>
           </div>
         )}
-
-        {/* RELATED DRILLS GRID */}
-        {!isFullscreen && (
-          <section className="mt-4">
-            <h2 className="text-sm font-bold text-slate-400 uppercase tracking-wider mb-3">
-              Related Cognitive Drills
-            </h2>
-            <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
-              {RELATED_DRILLS.map((drill) => (
-                <Link
-                  key={drill.id}
-                  href={drill.href}
-                  className="group bg-[#0c0c16] border border-white/5 hover:border-amber-500/40 rounded-xl p-3.5 transition-all duration-200 hover:-translate-y-0.5 flex flex-col justify-between"
-                >
-                  <div>
-                    <div className="text-[10px] font-bold text-amber-400 uppercase tracking-wider mb-1">{drill.cat}</div>
-                    <div className="text-xs font-bold text-white group-hover:text-amber-300 transition-colors">{drill.name}</div>
-                    <div className="text-[11px] text-slate-400 mt-1 line-clamp-2 leading-relaxed">{drill.desc}</div>
-                  </div>
-                  <div className="text-[10px] font-bold text-slate-500 group-hover:text-amber-400 mt-3 flex items-center gap-1 transition-colors">
-                    Train Drill <span>→</span>
-                  </div>
-                </Link>
-              ))}
-            </div>
-          </section>
-        )}
-
-        {/* SITE FOOTER */}
-        {!isFullscreen && <DrillFooter />}
 
       </main>
     </div>

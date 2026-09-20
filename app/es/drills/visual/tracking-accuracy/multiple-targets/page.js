@@ -5,29 +5,29 @@ import RelatedDrills from '@/components/drill/RelatedDrills';
 import { pickSources } from '@/lib/drillSources';
 
 export const metadata = {
-  title: "Test MOT Online: Seguimiento de Objetos | SkillDrills",
-  description: "Test de seguimiento de múltiples objetos (MOT) gratis: Rastrea varios blancos entre distractores. Entrena tu atención dividida y visión periférica.",
+  title: "Seguimiento de Múltiples Objetos | MOT | SkillDrills",
+  description: "Test MOT gratuito: sigue varios objetos móviles entre distractores. Entrena atención dividida, visión periférica y memoria espacial. No es diagnóstico.",
   keywords: [
-    "test de seguimiento de múltiples objetos",
-    "test MOT online",
+    "seguimiento de múltiples objetos",
     "seguimiento visual múltiple",
-    "entrenamiento de visión periférica",
-    "atención visual dividida",
+    "test MOT",
+    "atención dividida",
+    "visión periférica",
+    "objetos en movimiento",
     "memoria de trabajo espacial",
-    "agudeza visual dinámica",
-    "ejercicios de visión deportiva",
-    "percepción visual simultánea",
-    "psicología cognitiva mot",
-    "campo visual de atención",
-    "rastreo paralelo de blancos"
+    "atención visual",
+    "entrenamiento visual",
+    "múltiples objetivos",
+    "seguir varios objetos",
+    "MOT visual"
   ],
   alternates: {
     canonical: "https://skilldrills.online/es/drills/visual/tracking-accuracy/multiple-targets",
     languages: getAlternateLanguages('/drills/visual/tracking-accuracy/multiple-targets'),
   },
   openGraph: {
-    title: "Test MOT Online: Seguimiento de Objetos | SkillDrills",
-    description: "Test de seguimiento de múltiples objetos (MOT) gratis: Rastrea varios blancos entre distractores. Entrena tu atención dividida y visión periférica.",
+    title: "Seguimiento de Múltiples Objetos | MOT | SkillDrills",
+    description: "Test MOT gratuito: sigue varios objetos móviles entre distractores y entrena atención dividida y visión periférica.",
     url: "https://skilldrills.online/es/drills/visual/tracking-accuracy/multiple-targets",
     type: "website",
     locale: "es_ES",
@@ -36,14 +36,14 @@ export const metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Test MOT Online: Seguimiento de Objetos | SkillDrills",
-    description: "Test de seguimiento de múltiples objetos (MOT) gratis: Rastrea varios blancos entre distractores. Entrena tu atención dividida y visión periférica.",
+    title: "Seguimiento de Múltiples Objetos | MOT | SkillDrills",
+    description: "Sigue varios objetos móviles y practica atención dividida, visión periférica y memoria espacial.",
     images: ["https://skilldrills.online/og-default.svg"],
   },
 };
 
 const multipleTargetsGuide = {
-  heading: "Test de Seguimiento de Múltiples Objetos (MOT)",
+  heading: "Seguimiento de múltiples objetos: atención dividida y visión periférica",
   intro: [
     "El paradigma de Seguimiento de Múltiples Objetos (MOT - Multiple Object Tracking), propuesto originalmente por Zenon Pylyshyn y Ron Storm (1988), es el estándar de referencia en la psicofísica cognitiva para investigar cómo la arquitectura visual humana mantiene representaciones espaciales en tiempo real de entidades móviles independientes. Los entornos dinámicos del mundo real —como los deportes de equipo de ritmo rápido, intersecciones viales complejas y el juego competitivo en shooters tácticos— rara vez presentan estímulos aislados; por el contrario, exigen una supervisión paralela y continua de múltiples elementos dispersos en todo el campo visual.",
     "Antes del surgimiento del paradigma MOT, los modelos clásicos de atención visual postulaban un único 'foco' móvil que examinaba los estímulos de manera puramente secuencial. Pylyshyn y Storm demostraron que los observadores humanos pueden rastrear simultáneamente entre 4 y 5 elementos idénticos en paralelo sin escanearlos uno por uno, fundamentando la teoría de indexación visual ('FINSTs' o Fingers of Instantiation). Los FINSTs operan como punteros mentales preatencionales que se adhieren a los objetos y siguen sus coordenadas espaciales a través de trayectorias complejas, con total independencia de propiedades superficiales como el color o la forma.",
@@ -51,7 +51,7 @@ const multipleTargetsGuide = {
     "En el ámbito del rendimiento aplicado, Daphne Bavelier y C. Shawn Green (2006) comprobaron que los jugadores de videojuegos de acción demuestran una capacidad MOT notablemente expandida, rastreando entre 6 y 7 objetos simultáneos frente a los 3 o 4 del promedio de no jugadores. Asimismo, Jocelyn Faubert (2013) demostró que atletas profesionales de élite (deportistas de la NHL y la Premier League) poseen capacidades extraordinarias de rastreo de escenas dinámicas 3D-MOT que se adaptan con rapidez al aumento de velocidad cinemática, vinculando de forma directa la capacidad MOT con la toma de decisiones espaciales de alta precisión bajo presión."
   ],
   benchmarks: {
-    title: "Niveles de Rendimiento en Seguimiento de Múltiples Objetos (Guía Editorial)",
+    title: "Referencias de seguimiento múltiple y atención visual",
     headers: ["Nivel de Rendimiento", "Capacidad Efectiva", "Puntuación & Umbral de Precisión", "Perfil de Atención Visual y Cognición"],
     rows: [
       ["Nivel 1: Rastreador Multifocal Apex", "5+ Blancos en Paralelo", "Score: 60 PTS (3/3) | Precisión 100% (Velocidad Máxima)", "Indexación visual paralela de nivel profesional; distribución perfecta entre hemisferios sin pérdida por colisión. Propio de atletas profesionales, pilotos militares y jugadores de élite (Faubert, 2013; Green & Bavelier, 2006)."],
@@ -63,7 +63,7 @@ const multipleTargetsGuide = {
     note: "Estos niveles constituyen una guía editorial basada en la psicofísica del seguimiento de múltiples objetos y la memoria de trabajo visual (Pylyshyn & Storm, 1988; Cavanagh & Alvarez, 2005; Alvarez & Cavanagh, 2004; Green & Bavelier, 2006; Faubert, 2013). El rendimiento varía según la velocidad, densidad de distractores y duración del test."
   },
   techniques: {
-    title: "Estrategias Neurocognitivas para Seguimiento Multifocal",
+    title: "Cómo seguir varios objetos e ignorar distractores",
     items: [
       {
         name: "Estrategia del Centroide (Mirada Panorámica)",
@@ -199,7 +199,7 @@ const videoGameSchema = {
 const howToSchema = {
   "@context": "https://schema.org",
   "@type": "HowTo",
-  "name": "Cómo Realizar el Test de Seguimiento de Múltiples Objetos (MOT)",
+  "name": "Cómo realizar el test de seguimiento visual múltiple (MOT)",
   "description": "Protocolo guiado paso a paso para evaluar y entrenar la atención visual dividida y visión periférica mediante el test MOT.",
   "step": [
     { "@type": "HowToStep", "position": 1, "name": "Paso 1", "text": "Configure la duración de la sesión (15s a 60s), velocidad y número total de esferas en las opciones del test." },
@@ -308,7 +308,7 @@ export default function MultipleTargetsPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
 
       <main className="container mx-auto px-4 py-8 max-w-5xl">
-        <GhostLinkClient copy={{ title: "Test de Seguimiento de Múltiples Objetos (MOT)" }} />
+        <GhostLinkClient copy={{ title: "Seguimiento de Múltiples Objetos", subtitle: "Atención dividida y visión periférica" }} />
         <DrillGuide guide={multipleTargetsGuide} />
         <RelatedDrills related={multipleTargetsGuide.related} />
       </main>

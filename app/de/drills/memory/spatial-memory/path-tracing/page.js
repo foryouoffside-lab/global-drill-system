@@ -5,9 +5,9 @@ import { getAlternateLanguages } from '@/lib/i18n/locales';
 import { pickSources } from '@/lib/drillSources';
 
 export const metadata = {
-  title: "Corsi-Block-Test – Sequenzgedächtnis | SkillDrills",
-  description: "Kostenloser Corsi-Block-Test online: Merke dir Schrittfolgen auf dem Gitter und reproduziere Pfade in exakter Reihenfolge ohne Anmeldung.",
-  keywords: ['corsi block test', 'sequenzgedaechtnis test', 'corsi block tapping test', 'raeumliche sequenz merkfaehigkeit', 'path tracing test online', 'sequentielles arbeitsgedaechtnis', 'pfad gedaechtnistest', 'bewegungsmuster merken', 'corsi spanne messen', 'visomotorische sequenz test', 'raeumlicher abruftest', 'wegetest neuropsychologie'],
+  title: "Corsi-Block-Test online | SkillDrills",
+  description: "Teste dein räumliches Sequenzgedächtnis online: Merke dir aufleuchtende Blöcke und tippe sie in derselben Reihenfolge wieder an.",
+  keywords: ['corsi-block-test', 'corsi block test online', 'corsi block tapping test', 'raumspanne test', 'räumliches sequenzgedächtnis', 'visuell-räumliches arbeitsgedächtnis', 'block-tapping-test', 'räumliches gedächtnistraining', 'sequenzgedächtnis test', 'corsi span'],
   alternates: {
     canonical: "https://skilldrills.online/de/drills/memory/spatial-memory/path-tracing",
     languages: getAlternateLanguages('/drills/memory/spatial-memory/path-tracing', 'de'),
@@ -17,8 +17,8 @@ export const metadata = {
     follow: true,
   },
   openGraph: {
-    title: "Corsi-Block-Test (Sequenzgedächtnis) - Kostenloser Online-Test | SkillDrills",
-    description: "Kostenloser Corsi-Block-Test online (Sequenzgedächtnis / Path Tracing). Prägen Sie sich Schrittabfolgen auf 3x3 bis 7x7 Rastern ein und zeichnen Sie Pfade in exakter Reihenfolge nach. Ohne Anmeldung.",
+    title: "Corsi-Block-Test online | Räumliches Sequenzgedächtnis",
+    description: "Merke dir aufleuchtende Blöcke und tippe sie in derselben Reihenfolge wieder an. Kostenlos im Browser, ohne Anmeldung.",
     url: "https://skilldrills.online/de/drills/memory/spatial-memory/path-tracing",
     siteName: 'SkillDrills',
     locale: 'de_DE',
@@ -26,8 +26,8 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: "Corsi-Block-Test (Sequenzgedächtnis) - Kostenloser Online-Test | SkillDrills",
-    description: "Kostenloser Corsi-Block-Test online (Sequenzgedächtnis / Path Tracing). Prägen Sie sich Schrittabfolgen auf 3x3 bis 7x7 Rastern ein und zeichnen Sie Pfade in exakter Reihenfolge nach. Ohne Anmeldung.",
+    title: "Corsi-Block-Test online | Räumliches Sequenzgedächtnis",
+    description: "Merke dir aufleuchtende Blöcke und tippe sie in derselben Reihenfolge wieder an. Kostenlos im Browser, ohne Anmeldung.",
   },
 };
 
@@ -73,7 +73,8 @@ export default function LocalizedPathTracingPage() {
     "applicationCategory": "GameApplication",
     "operatingSystem": "All",
     "isAccessibleForFree": true,
-    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+    "sameAs": ["https://neurabrain.app/de/test/corsi-block"]
   };
 
   const videoGameSchema = {
@@ -311,23 +312,23 @@ export default function LocalizedPathTracingPage() {
     sources: pickSources('corsi1972', 'milner1971', 'logie1995', 'cowan2001', 'baddeley2000', 'miller1956', 'simon1974', 'kessels2000', 'woods2015'),
     related: [
       {
-            "href": "/drills/memory/spatial-memory/grid-memorization",
+            "href": "/de/drills/memory/spatial-memory/grid-memorization",
             "label": "Visueller Gedächtnistest (Memory Matrix)"
       },
       {
-            "href": "/drills/memory/spatial-memory/object-location",
+            "href": "/de/drills/memory/spatial-memory/object-location",
             "label": "Objekt-Positions-Gedächtnis (Object Location)"
       },
       {
-            "href": "/drills/memory/short-term-memory/digit-span",
+            "href": "/de/drills/memory/short-term-memory/digit-span",
             "label": "Zahlenspannen-Test (Digit Span)"
       },
       {
-            "href": "/drills/memory/short-term-memory/word-recall",
+            "href": "/de/drills/memory/short-term-memory/word-recall",
             "label": "Verbaler Gedächtnistest (Word Recall)"
       },
       {
-            "href": "/drills/memory/working-memory/n-back",
+            "href": "/de/drills/memory/working-memory/n-back",
             "label": "Dual N-Back Test"
       }
 ]
@@ -361,16 +362,16 @@ export default function LocalizedPathTracingPage() {
       />
       <PathTracingClient
         copy={{
-        "h1Keyword": "Corsi-Block-Test",
-        "h1Suffix": " (Sequenzgedächtnis)",
-        "subtitle": "Die Raumspanne ist die längste Positionsabfolge, die Sie in exakter Reihenfolge wiederholen können. Der klassische Corsi-Block-Test beziffert die durchschnittliche Spanne gesunder Erwachsener auf etwa fünf bis sieben Schritte (Milner, 1971; Corsi, 1972) und nutzt ein anderes System als die verbale Zahlenspanne (Logie, 1995).",
+        "h1Keyword": "Corsi-Block-Test online",
+        "h1Suffix": " – Sequenzgedächtnis",
+        "subtitle": "Aufleuchtende Blöcke merken und in derselben Reihenfolge antippen.",
         "statScore": "Punkte",
         "statTime": "Zeit",
         "statLevel": "Level",
         "statBestScore": "Bester Score",
         "levelPrefix": "Lv.",
         "startTitle": "Pfadverfolgung Pro",
-        "startSubtitle": "Räumliches Sequenzgedächtnis • Corsi-Block-Test",
+        "startSubtitle": "Räumliches Sequenzgedächtnis • Corsi-Test",
         "countdownSubtitle": "BEREITMACHEN",
         "newBest": "NEUER REKORD",
         "pointsLabel": "Punkte",

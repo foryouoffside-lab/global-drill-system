@@ -6,21 +6,19 @@ import { getAlternateLanguages } from '@/lib/i18n/locales';
 import RelatedDrills from '@/components/drill/RelatedDrills';
 
 export const metadata = {
-  title: "Treino de Anti-Strafe – Tracking Reativo FPS | SkillDrills",
-  description: "Treine tracking reativo contra strafes rápidos ADAD no navegador. Domine trocas de tiro a curta distância e microajustes no Apex Legends e Overwatch 2.",
+  title: "Treino de Mira | Tracking Reativo & Strafe | SkillDrills",
+  description: "Treino de mira grátis no navegador: acompanhe strafes ADAD imprevisíveis e pratique tracking reativo em duelos de curta distância.",
   keywords: [
-    "treino de tracking reativo",
+    "treino de mira",
+    "treino de mira online",
+    "treino de mira apex",
+    "tracking reativo",
     "anti strafe treino fps",
-    "como acompanhar strafe no apex",
-    "treino de adad strafe mira",
-    "tracking de curta distancia fps",
-    "jitter aim treino mouse",
-    "como acertar alvos em movimento rapido",
-    "treino de microajuste mira tracking",
-    "mira contra strafe rapido",
-    "treino de tracking gratis navegador",
-    "troca de tiro corpo a corpo fps",
-    "como melhorar tracking no overwatch"
+    "treino de adad strafe",
+    "tracking curta distância",
+    "jitter aim",
+    "mira contra strafe",
+    "tracking overwatch"
   ],
   alternates: {
     canonical: "https://skilldrills.online/pt/drills/fps/anti-strafe-jitter-duel",
@@ -31,8 +29,8 @@ export const metadata = {
     follow: true,
   },
   openGraph: {
-    title: "Treino de Anti-Strafe – Tracking Reativo FPS | SkillDrills",
-    description: "Treine tracking reativo contra strafes rápidos ADAD no navegador. Domine trocas de tiro a curta distância e microajustes no Apex Legends e Overwatch 2.",
+      title: "Treino de Mira | Tracking Reativo & Strafe | SkillDrills",
+    description: "Treino de mira grátis no navegador: acompanhe strafes ADAD imprevisíveis e pratique tracking reativo em duelos de curta distância.",
     url: "https://skilldrills.online/pt/drills/fps/anti-strafe-jitter-duel",
     siteName: 'SkillDrills',
     locale: 'pt_BR',
@@ -40,8 +38,8 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: "Treino de Anti-Strafe – Tracking Reativo FPS | SkillDrills",
-    description: "Treine tracking reativo contra strafes rápidos ADAD no navegador. Domine trocas de tiro a curta distância e microajustes no Apex Legends e Overwatch 2.",
+      title: "Treino de Mira | Tracking Reativo & Strafe | SkillDrills",
+    description: "Treino de mira grátis no navegador: acompanhe strafes ADAD imprevisíveis e pratique tracking reativo em duelos de curta distância.",
   },
 };
 
@@ -52,14 +50,14 @@ export default function AntiStrafeJitterPtPage() {
     "itemListElement": [
       { "@type": "ListItem", "position": 1, "name": "SkillDrills", "item": "https://skilldrills.online/pt" },
       { "@type": "ListItem", "position": 2, "name": "Treinos de FPS", "item": "https://skilldrills.online/pt/drills/fps" },
-      { "@type": "ListItem", "position": 3, "name": "Treino Anti-Strafe", "item": "https://skilldrills.online/pt/drills/fps/anti-strafe-jitter-duel" }
+      { "@type": "ListItem", "position": 3, "name": "Treino de mira - tracking reativo", "item": "https://skilldrills.online/pt/drills/fps/anti-strafe-jitter-duel" }
     ]
   };
 
   const webAppSchema = {
     "@context": "https://schema.org",
     "@type": "WebApplication",
-    "name": "Anti-Strafe Jitter Trainer",
+    "name": "Treino de mira - tracking reativo",
     "url": "https://skilldrills.online/pt/drills/fps/anti-strafe-jitter-duel",
     "applicationCategory": "GameApplication",
     "operatingSystem": "All",
@@ -75,10 +73,10 @@ export default function AntiStrafeJitterPtPage() {
   const softwareSchema = {
     "@context": "https://schema.org",
     "@type": "SoftwareApplication",
-    "name": "Anti-Strafe Jitter Trainer",
+    "name": "Treino de mira - tracking reativo",
     "applicationCategory": "GameApplication",
     "operatingSystem": "Web Browser",
-    "dateModified": "2026-09-16",
+    "dateModified": "2026-09-20",
     "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
     "description": "Aprimore o tracking reativo, a mira anti-strafe e o controle de trocas de tiro a curta distância com entrada bruta de mouse.",
     "genre": "Treino de FPS / Anti-Strafe",
@@ -93,20 +91,20 @@ export default function AntiStrafeJitterPtPage() {
   const videoGameSchema = {
     "@context": "https://schema.org",
     "@type": "VideoGame",
-    "name": "Anti-Strafe Jitter Trainer",
+    "name": "Treino de mira - tracking reativo",
     "gamePlatform": "Web Browser",
     "genre": ["Treino de FPS", "Treinador de Mira"],
     "playMode": "SinglePlayer",
     "applicationCategory": "Game",
     "url": "https://skilldrills.online/pt/drills/fps/anti-strafe-jitter-duel",
     "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
-    "dateModified": "2026-09-16"
+    "dateModified": "2026-09-20"
   };
 
   const faqSchema = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
-    "dateModified": "2026-09-16",
+    "dateModified": "2026-09-20",
     "mainEntity": [
       {
         "@type": "Question",
@@ -225,9 +223,9 @@ export default function AntiStrafeJitterPtPage() {
   };
 
   const antiStrafeGuidePt = {
-    heading: "Guia de Tracking Reativo e Benchmarks Psicomotores de Anti-Strafe",
+    heading: "Treino de Mira para Tracking Reativo e Strafes ADAD",
     intro: [
-      "Em confrontos armados a curta distância, os duelos são decididos em frações de segundo onde adversários utilizam strafes imprevisíveis em ADAD, agachamentos repetidos e inversões bruscas de vetor. Ao contrário do tracking de perseguição suave, no qual o olhar acompanha um objeto em trajetória contínua (Krauzlis, 2004), o tracking reativo requer constante detecção de erro retiniano em malha fechada e rápidas correções motoras (Rashbass, 1961). Praticantes de jogos de ação exibem maior acuidade atencional e largura de banda temporal (Green & Bavelier, 2003), mas enfrentam limites neurofisiológicos inevitáveis a cada mudança de rumo do inimigo.",
+      "O treino de mira para tracking reativo pratica manter a mira no alvo quando o adversário alterna rapidamente entre ADAD. Este drill mede trocas de direção, controle de overshoot e contato em duelos curtos de Apex e Overwatch 2.",
       "Quando o alvo inverte o sentido abruptamente, a imagem escapa da fóvea e desliza pela retina. O cérebro não tem como antecipar a troca: ele precisa detectar a desaceleração, emitir o comando de reversão no córtex motor, frear a mão em movimento e iniciar nova aceleração. Em jogos com tempo para matar (TTK) elevado — como Apex Legends, Overwatch 2 e Call of Duty: Warzone — o sucesso depende do tempo total em que a mira permanece colada no hitbox do adversário.",
       "O Anti-Strafe Jitter Trainer funciona sobre a API HTML5 Pointer Lock com mapeamento direto de hardware 1:1 e cronometria de alta precisão via performance.now(). Ao eliminar o ruído de interpolação do navegador (Woods et al., 2015), o simulador fornece medições laboratoriais para aprimorar o controle dos músculos antagonistas e eliminar os trancos na mira.",
       "Como medir seu progresso: cada fração de segundo de contato é computada localmente sem upload de dados. Mantenha os mesmos parâmetros de sensibilidade e pegada para consolidar padrões motores consistentes."
@@ -289,13 +287,13 @@ export default function AntiStrafeJitterPtPage() {
   };
 
   const copyPt = {
-    h1Keyword: "Treino de Anti-Strafe",
-    h1Suffix: " — Tracking Reativo FPS",
+    h1Keyword: "Treino de mira",
+    h1Suffix: " — tracking reativo e ADAD",
     statScore: "Pontos",
     statTime: "Tempo",
     statAccuracy: "Precisão",
     statBestScore: "Recorde",
-    startTitle: "Duelo Anti-Strafe Jitter",
+    startTitle: "Treino de mira - tracking reativo",
     startSubtitle: "Tracking Reativo • Níveis Progressivos Infinitos",
     getReady: "PREPARE-SE",
     pausedTitle: "PAUSADO",
@@ -308,7 +306,7 @@ export default function AntiStrafeJitterPtPage() {
       { num: "3", text: "Progressão de Nível", highlight: "+1 Nível / 1400 PTS", result: "Jitter Adaptativo" },
       { num: "4", text: "Penalidade Fora do Alvo", highlight: "1.0s Fora do Alvo", result: "Reinicia Combo (-0.6s)" }
     ],
-    aboutTitle: "Sobre o Tracking Reativo Anti-Strafe"
+    aboutTitle: "Sobre treino de mira e tracking reativo"
   };
 
   return (

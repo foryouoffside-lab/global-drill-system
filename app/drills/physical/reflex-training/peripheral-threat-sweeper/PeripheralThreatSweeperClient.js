@@ -26,6 +26,7 @@ import useUnexpectedExitGuard from '../../../../../lib/useUnexpectedExitGuard';
 import DrillFooter from '../../../../../components/drill/DrillFooter';
 import DrillCountdown from '../../../../../components/drill/DrillCountdown';
 import DrillAccordion from '../../../../../components/drill/DrillAccordion';
+import DrillRuleItem from '../../../../../components/drill/DrillRuleItem';
 import FpsStartCard from '../../../../../components/drill/FpsStartCard';
 import DrillResultCard from '../../../../../components/drill/DrillResultCard';
 import useImmersiveMode from '@/lib/useImmersiveMode';
@@ -82,13 +83,13 @@ const ABOUT_SECTIONS = [
     icon: Eye,
     title: "Covert Attentional Orienting & Peripheral Scanning",
     subtitle: "Posner spatial cueing without foveal fixation shifts",
-    content: "Peripheral threat interception trains covert orienting of visual attention (Posner, 1980). Rather than constantly shifting primary eye gaze away from the central core, players maintain central fixation while covertly allocating attentional resources across the 360-degree radial periphery."
+    content: "Peripheral threat interception trains covert orienting of visual attention (Posner, 1980). Rather than constantly shifting primary eye gaze away from the central core, players maintain central fixation while covertly allocating attentional resources across the 360-degree radial periphery. Detail falls away sharply from the centre of gaze, but attention can still be shifted to a peripheral location while the eyes stay put, and a valid cue to that location speeds responses up (Posner, 1980)."
   },
   {
     icon: Target,
     title: "Pre-Attentive Feature Integration & Saliency Maps",
     subtitle: "Treisman parallel visual search across radial angles",
-    content: "Newly spawned inward-moving threat vectors trigger pre-attentive motion and color feature detectors across the peripheral retina (Treisman & Gelade, 1980). High-contrast red and orange threat nodes generate instantaneous pop-out effects, alerting the parietal cortex to compute intercept angles."
+    content: "Newly spawned inward-moving threat vectors trigger pre-attentive motion and color feature detectors across the peripheral retina (Treisman & Gelade, 1980). High-contrast red and orange threat nodes generate instantaneous pop-out effects, alerting the parietal cortex to compute intercept angles. A single distinguishing feature such as colour is found in roughly the same time however many distractors surround it, while a target needing two features combined has to be searched for (Treisman & Gelade, 1980) — which is what makes some threats here easy to catch at the edge and others not."
   },
   {
     icon: Shield,
@@ -653,9 +654,6 @@ export default function PeripheralThreatSweeperClient({ copy = {} } = {}) {
                 </span>
               )}
             </h1>
-            <p className="text-xs sm:text-sm text-slate-400 mt-2 leading-relaxed">
-              {copy?.description || "Peripheral vision is what you can detect without looking directly at it. Detail falls away sharply from the centre of gaze, but attention can still be shifted to a peripheral location while the eyes stay put, and a valid cue to that location speeds responses up (Posner, 1980). A single distinguishing feature such as colour is found in roughly the same time however many distractors surround it, while a target needing two features combined has to be searched for (Treisman & Gelade, 1980) — which is what makes some threats here easy to catch at the edge and others not."}
-            </p>
           </div>
         )}
 
@@ -685,7 +683,7 @@ export default function PeripheralThreatSweeperClient({ copy = {} } = {}) {
         <div 
           ref={containerRef} 
           onContextMenu={(e) => { if (gameActiveRef.current) e.preventDefault(); }}
-          className={`overflow-hidden flex flex-col transition-all duration-150 select-none bg-[#080811] text-white border border-white/10 ${
+          className={`overflow-hidden flex flex-col select-none bg-[#080811] text-white border border-white/10 ${
             isFullscreen 
               ? 'fixed inset-0 z-[100] w-screen h-[100dvh] bg-[#080811] rounded-none border-none flex flex-col items-center justify-center' 
               : 'w-full rounded-2xl bg-[#080811] aspect-video min-h-[460px] sm:min-h-[500px] max-h-[88vh] relative overflow-hidden flex flex-col'
@@ -797,12 +795,9 @@ export default function PeripheralThreatSweeperClient({ copy = {} } = {}) {
               isOpen={openAccordion === 'rules'}
               onToggle={() => setOpenAccordion(openAccordion === 'rules' ? null : 'rules')}
             >
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-2.5 sm:gap-3 font-sans">
                 {(copy?.rulesItems || RULES_ITEMS).map((item, i) => (
-                  <div key={i} className="bg-black p-4 rounded-xl border border-white/10">
-                    <p className="text-sm font-bold text-white mb-1">{item.title}</p>
-                    <p className="text-xs text-gray-300 leading-relaxed">{item.text}</p>
-                  </div>
+                  <DrillRuleItem key={i} num={item.num || String(i + 1)} title={item.title} detail={item.text} />
                 ))}
               </div>
             </DrillAccordion>

@@ -6,21 +6,18 @@ import RelatedDrills from '@/components/drill/RelatedDrills';
 import DrillFooter from '@/components/drill/DrillFooter';
 
 export const metadata = {
-  title: "Treino de Tracking Suave – Mira em Curva | SkillDrills",
-  description: "Treine tracking suave e rastreamento em curva no navegador. Domine a mira contínua sem tremores para Apex Legends e Overwatch 2 gratuitamente.",
+  title: "Treino de Mira | Tracking FPS Suave | SkillDrills",
+  description: "Treino de mira grátis no navegador: pratique tracking suave em alvos móveis para Apex, Overwatch 2 e outros FPS.",
   keywords: [
-    "treino de tracking suave fps",
-    "smooth pursuit mira treino",
-    "treinar tracking apex legends",
-    "mira de rastreamento suave",
-    "treino de mira em curva",
-    "como melhorar tracking overwatch 2",
-    "movimento sacadico mira fps",
-    "rastreamento visual continuo",
-    "treinador de mira tracking gratis",
-    "controle de tremor mira mouse",
-    "treino de estabilidade de antebraco",
-    "exercicio de busca suave olhos"
+    "treino de mira",
+    "treino de mira online",
+    "treino de mira fps",
+    "treino de mira com mouse",
+    "treino de tracking",
+    "tracking suave",
+    "mira FPS",
+    "treino de mira valorant",
+    "treino de mira cs2"
   ],
   alternates: {
     canonical: "https://skilldrills.online/pt/drills/fps/pro-smooth-pursuit",
@@ -31,8 +28,8 @@ export const metadata = {
     follow: true,
   },
   openGraph: {
-    title: "Treino de Tracking Suave – Mira em Curva | SkillDrills",
-    description: "Treine tracking suave e rastreamento em curva no navegador. Domine a mira contínua sem tremores para Apex Legends e Overwatch 2 gratuitamente.",
+    title: "Treino de Mira | Tracking FPS Suave | SkillDrills",
+    description: "Pratique tracking suave em alvos móveis: treino de mira FPS grátis no navegador para Apex e Overwatch 2.",
     url: "https://skilldrills.online/pt/drills/fps/pro-smooth-pursuit",
     siteName: 'SkillDrills',
     locale: 'pt_BR',
@@ -40,8 +37,8 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: "Treino de Tracking Suave – Mira em Curva | SkillDrills",
-    description: "Treine tracking suave e rastreamento em curva no navegador. Domine a mira contínua sem tremores para Apex Legends e Overwatch 2 gratuitamente.",
+    title: "Treino de Mira | Tracking FPS Suave | SkillDrills",
+    description: "Pratique tracking suave em alvos móveis: treino de mira FPS grátis no navegador para Apex e Overwatch 2.",
   },
 };
 
@@ -65,7 +62,7 @@ export default function ProSmoothPursuitPage() {
       {
         "@type": "ListItem",
         "position": 3,
-        "name": "Tracking Suave Profissional",
+        "name": "Treino de Mira - Tracking FPS Suave",
         "item": "https://skilldrills.online/pt/drills/fps/pro-smooth-pursuit"
       }
     ]
@@ -74,7 +71,7 @@ export default function ProSmoothPursuitPage() {
   const webAppSchema = {
     "@context": "https://schema.org",
     "@type": "WebApplication",
-    "name": "Treinador de Tracking Suave SkillDrills",
+    "name": "Treino de Mira - Tracking FPS Suave",
     "url": "https://skilldrills.online/pt/drills/fps/pro-smooth-pursuit",
     "applicationCategory": "GameApplication",
     "operatingSystem": "Any",
@@ -89,7 +86,7 @@ export default function ProSmoothPursuitPage() {
   const softwareSchema = {
     "@context": "https://schema.org",
     "@type": "SoftwareApplication",
-    "name": "Treino de Tracking Suave e Rastreamento em Curva",
+    "name": "Treino de Mira com Tracking Suave",
     "applicationCategory": "GameApplication",
     "operatingSystem": "Web Browser",
     "offers": {
@@ -107,7 +104,7 @@ export default function ProSmoothPursuitPage() {
   const videoGameSchema = {
     "@context": "https://schema.org",
     "@type": "VideoGame",
-    "name": "Pro Smooth Pursuit Curve Tracking Trainer",
+    "name": "Treino de Mira - Tracking em Curva",
     "description": "Simulador de rastreamento contínuo em curvas harmônicas de Lissajous com ponteiro bruto.",
     "genre": ["Action", "Esports Trainer", "Aim Trainer"],
     "playMode": "SinglePlayer",
@@ -117,7 +114,7 @@ export default function ProSmoothPursuitPage() {
   const faqSchema = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
-    "dateModified": "2026-09-16",
+    "dateModified": "2026-09-20",
     "mainEntity": [
       {
         "@type": "Question",
@@ -236,15 +233,15 @@ export default function ProSmoothPursuitPage() {
   };
 
   const copyPt = {
-    h1Keyword: "Treino de Tracking Suave FPS",
-    h1Suffix: " – Rastreamento em Curva",
+    h1Keyword: "Treino de Mira",
+    h1Suffix: " – Tracking FPS Suave",
     statScore: "Pontuação",
     statTime: "Tempo",
     statAccuracy: "Precisão",
     statBestScore: "Recorde",
     pausedTitle: "Jogo Pausado",
     pausedSubtitle: "Clique na tela para reengajar a trava do cursor do mouse.",
-    startTitle: "Tracking Suave Profissional",
+    startTitle: "Treino de Mira",
     startSubtitle: "Rastreamento em Curva de Lissajous • Progressão Contínua",
     getReady: "PREPARE-SE",
     stageCaption: "Acompanhe continuamente o alvo em movimento oscilatório pelas curvas suaves da tela sem perder o contato visual.",
@@ -255,15 +252,15 @@ export default function ProSmoothPursuitPage() {
       { num: "3", text: "Progressão de Nível", highlight: "+1 Nível / 1400 PTS", result: "Curvas Adaptativas" },
       { num: "4", text: "Perda de Contato", highlight: "1.0s Fora do Alvo", result: "Reset de Combo (-0.6s)" }
     ],
-    aboutTitle: "Sobre o Treinador de Tracking Suave",
+    aboutTitle: "Sobre o treino de mira e tracking suave",
     aboutHeading: "O que é o Rastreamento Suave (Smooth Pursuit)?",
     aboutText: "O rastreamento suave (Smooth Pursuit) é a capacidade neuro-ocular de manter o olhar fixo em um objeto em movimento contínuo através da modulação da velocidade dos músculos oculares e da coordenação motora do antebraço (Krauzlis, 2004; Barnes, 2008). Este exercício elimina os micro-flicks corretivos desnecessários e transforma sua mira em um feixe constante e fluido."
   };
 
   const smoothPursuitGuide = {
-    heading: "Guia de Tracking Suave & Rastreamento em Curva de Lissajous",
+    heading: "Treino de Mira para Tracking Suave e Alvos Móveis",
     intro: [
-      "O Treinador de Tracking Suave Profissional é um ambiente sensório-motor projetado para isolar e condicionar a sincronização contínua de velocidade ocular e manual. Em atiradores dinâmicos de alto TTK como Apex Legends, Overwatch 2 e The Finals, a vitória em duelos prolongados depende da capacidade de manter o retículo ininterruptamente sobre alvos velozes.",
+      "O treino de mira com tracking suave mede a capacidade de manter o retículo sobre um alvo móvel sem movimentos bruscos. Este drill usa curvas de Lissajous para desenvolver estabilidade e tempo sobre o alvo em Apex, Overwatch 2 e outros FPS.",
       "Diferente dos flicks balísticos instantâneos regidos pela Lei de Fitts (1954), o rastreamento suave mobiliza redes neurais corticais especializadas na área temporal média (MT/V5) e no cerebelo (Krauzlis, 2004; Lisberger et al., 1987). Esses circuitos analisam vetores de fluxo óptico e ajustam continuamente o ganho de velocidade neuromuscular para coincidir com a aceleração do adversário.",
       "A trajetória utilizada neste exercício baseia-se em curvas harmônicas de Lissajous, combinando frequências senoidais interdependentes nos eixos X e Y. Essa dinâmica elimina trajetórias lineares previsíveis, estimulando o planejamento motor antecipatório (Barnes, 2008) sem recorrer a correções abruptas por sobressaltos sacádicos.",
       "Ao utilizar a API de Pointer Lock aliada à cronometria de alta resolução via performance.now() (Woods et al., 2015), o exercício mede com precisão o tempo real de permanência sobre a hitbox, permitindo erradicar tremores do mouse e construir uma mira estável e implacável.",

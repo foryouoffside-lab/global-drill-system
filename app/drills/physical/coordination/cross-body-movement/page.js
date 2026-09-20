@@ -5,10 +5,10 @@ import { pickSources } from '@/lib/drillSources';
 
 // ============================================================
 // SEO RESEARCH FINDINGS — cross-body-movement
-// PRIMARY:  "hand eye coordination game"        — High-volume intent (~2,400+ searches/mo)
-//           "cross body movement exercises"     — Core movement phrase (~390/mo)
+// PRIMARY:  "hand eye coordination game" / "hand eye coordination test"
+//           "bilateral coordination exercises" / "cross midline exercises"
 // SECONDARY / LSI:
-//           "bilateral coordination exercises"  — Motor integration phrase (~480/mo)
+//           "bilateral coordination exercises"  — Motor integration phrase
 //           "cross midline exercises"           — Neuromotor occupational therapy phrase
 //           "bilateral integration training"    — Neuro-developmental query
 //           "hand eye coordination exercises"   — General physical coordination
@@ -17,15 +17,12 @@ import { pickSources } from '@/lib/drillSources';
 //           "cross body coordination"           — Physical coordination query
 //           "fine motor skills game"            — Motor precision query
 //           "diagonal movement training"        — Diagonal mouse trajectory phrase
-// LOCALES:
-//           ja: "手と目の協調 ゲーム" (Hand Eye Coordination Game / Bilateral Training)
-//           ko: "손 눈 협응력 게임" (Hand Eye Coordination Game / Midline Crossing Drill)
-//           de: "hand auge koordination spiel" (Hand Eye Coordination Game / Bilaterale Koordination)
+// LOCALES: independently researched native SERPs for ja, ko, de, pt-BR, es-ES, and fr-FR.
 // ============================================================
 
 export const metadata = {
-  title: 'Hand Eye Coordination Game – Free Cross-Body Movement Drill',
-  description: 'Free online hand eye coordination game. Connect nodes across the screen to train bilateral motor control, midline crossing, and diagonal vector precision.',
+  title: 'Hand-Eye Coordination Game | SkillDrills',
+  description: 'Free hand-eye coordination game and test online. Connect diagonal nodes across the body midline to train bilateral motor control and mouse precision.',
   keywords: [
     'hand eye coordination game',
     'bilateral coordination exercises',
@@ -40,8 +37,8 @@ export const metadata = {
     'diagonal movement training',
   ],
   openGraph: {
-    title: 'Hand Eye Coordination Game – Free Cross-Body Movement Drill | SkillDrills',
-    description: 'Free online hand eye coordination game. Connect nodes across the screen to train bilateral motor control, midline crossing, and diagonal vector precision.',
+    title: 'Hand-Eye Coordination Game | SkillDrills',
+    description: 'Free hand-eye coordination game and test online. Connect diagonal nodes across the body midline to train bilateral motor control and mouse precision.',
     type: 'article',
     url: 'https://skilldrills.online/drills/physical/coordination/cross-body-movement',
     siteName: 'SkillDrills',
@@ -49,8 +46,8 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Hand Eye Coordination Game – Free Cross-Body Movement Drill | SkillDrills',
-    description: 'Free online hand eye coordination game. Connect nodes across the screen to train bilateral motor control, midline crossing, and diagonal vector precision.',
+    title: 'Hand-Eye Coordination Game | SkillDrills',
+    description: 'Free hand-eye coordination game and test online. Connect diagonal nodes across the body midline to train bilateral motor control and mouse precision.',
   },
   robots: { index: true, follow: true },
   alternates: {
@@ -82,7 +79,8 @@ const softwareApplicationSchema = {
   description: 'Free online hand eye coordination game and bilateral motor control drill. Sweep diagonal trajectories across the body midline to connect nodes with millimetric precision.',
   url: 'https://skilldrills.online/drills/physical/coordination/cross-body-movement',
   publisher: { '@type': 'Organization', name: 'SkillDrills', url: 'https://skilldrills.online' },
-  dateModified: '2026-09-05',
+  inLanguage: 'en',
+  dateModified: '2026-09-20',
 };
 
 const webApplicationSchema = {
@@ -94,12 +92,15 @@ const webApplicationSchema = {
   browserRequirements: 'Requires modern web browser with HTML5 Canvas and pointer input support',
   offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
   url: 'https://skilldrills.online/drills/physical/coordination/cross-body-movement',
-  dateModified: '2026-09-05',
+  inLanguage: 'en',
+  dateModified: '2026-09-20',
 };
 
 const faqSchema = {
   '@context': 'https://schema.org',
   '@type': 'FAQPage',
+  inLanguage: 'en',
+  dateModified: '2026-09-20',
   mainEntity: [
     {
       '@type': 'Question',
@@ -193,6 +194,8 @@ const videoGameSchema = {
   genre: ['Action', 'Brain Game', 'Reflex Game', 'Coordination'],
   gamePlatform: ['Web Browser', 'Desktop', 'Mobile'],
   applicationCategory: 'Game',
+  inLanguage: 'en',
+  dateModified: '2026-09-20',
   offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
 };
 
@@ -312,7 +315,7 @@ export default function CrossBodyMovementPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(howToSchema) }}
       />
-      <CrossBodyMovementClient copy={{ title: 'Hand Eye Coordination Game', subtitle: 'Cross-Body Movement & Bilateral Coordination' }} />
+      <CrossBodyMovementClient copy={{ title: 'Hand-Eye Coordination Game', subtitle: 'Smooth diagonal control across the body midline' }} />
       <DrillGuide {...guideProps} />
       
     </>

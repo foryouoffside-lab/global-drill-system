@@ -1,5 +1,6 @@
 import SpatialShiftPursuitClient from './SpatialShiftPursuitClientLoader';
 import DrillGuide from '@/components/drill/DrillGuide';
+import DrillFooter from '@/components/drill/DrillFooter';
 import { getAlternateLanguages } from '@/lib/i18n/locales';
 import { pickSources } from '@/lib/drillSources';
 
@@ -306,8 +307,9 @@ export default function SpatialShiftPursuitPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
 
-      <SpatialShiftPursuitClient copy={{ title: "Spatial Shift Pursuit", subtitle: "Adaptive Eye Tracking Drill" }} />
+      <SpatialShiftPursuitClient copy={{ title: "Spatial Shift Pursuit", subtitle: "Adaptive eye tracking drill for following targets through sudden speed and direction shifts with accurate visual reacquisition" }} />
       <DrillGuide guide={guide} />
+      <DrillFooter />
     </>
   );
 }

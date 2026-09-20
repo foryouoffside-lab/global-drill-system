@@ -2,17 +2,16 @@ import EliteNeuroSwitchClient from '@/app/drills/cognitive/processing-speed/reac
 import { getAlternateLanguages } from '@/lib/i18n/locales';
 import DrillGuide from '@/components/drill/DrillGuide';
 import RelatedDrills from '@/components/drill/RelatedDrills';
+import DrillFooter from '@/components/drill/DrillFooter';
 import { pickSources } from '@/lib/drillSources';
 
 export const metadata = {
-  title: "選択反応時間テスト・判断速度測定 – ヒックの法則診断 | SkillDrills",
-  description: "無料ブラウザ完結の選択反応時間（CRT）測定ツール。動的に反転する色ルールを瞬時に判別して正しい標的をクリックし、意思決定潜時と前頭葉の認知柔軟性をミリ秒単位で精密診断。",
-  keywords: ["選択反応時間 テスト", "判断速度 測定", "ヒックの法則 テスト", "反応速度 テスト 無料", "認知 処理速度 測定", "意思決定 速度 診断", "反射神経 測定 オンライン", "選択反応 課題", "認知的柔軟性 テスト", "脳 反応時間",
-    "ドンデルス反応時間",
-    "選択反応時間 平均"],
+  title: "選択反応時間テスト | 判断速度トレーニング | SkillDrills",
+  description: "無料ブラウザの選択反応時間テスト：変化するルールに合うターゲットを選び、判断速度と正確さを練習します。臨床検査ではありません。",
+  keywords: ["反応速度テスト", "反応速度テスト 無料", "反応速度 測定", "選択反応時間", "選択反応 テスト", "判断速度", "反射神経 テスト", "ヒックの法則"],
   openGraph: {
-    title: "選択反応時間テスト・判断速度測定 – ヒックの法則診断 | SkillDrills",
-    description: "無料ブラウザ完結の選択反応時間（CRT）測定ツール。動的に反転する色ルールを瞬時に判別して正しい標的をクリックし、意思決定潜時と前頭葉の認知柔軟性をミリ秒単位で精密診断。",
+    title: "選択反応時間テスト | 判断速度トレーニング | SkillDrills",
+    description: "無料ブラウザの選択反応時間テスト：変化するルールに合うターゲットを選び、判断速度と正確さを練習します。臨床検査ではありません。",
     type: 'article',
     url: 'https://skilldrills.online/ja/drills/cognitive/processing-speed/reaction-time',
     siteName: 'SkillDrills',
@@ -20,8 +19,8 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: "選択反応時間テスト・判断速度測定 – ヒックの法則診断 | SkillDrills",
-    description: "無料ブラウザ完結の選択反応時間（CRT）測定ツール。動的に反転する色ルールを瞬時に判別して正しい標的をクリックし、意思決定潜時と前頭葉の認知柔軟性をミリ秒単位で精密診断。",
+    title: "選択反応時間テスト | 判断速度トレーニング | SkillDrills",
+    description: "無料ブラウザの選択反応時間テスト：変化するルールに合うターゲットを選び、判断速度と正確さを練習します。臨床検査ではありません。",
   },
   robots: { index: true, follow: true },
   alternates: {
@@ -80,7 +79,7 @@ const softwareApplicationSchema = {
     "url": "https://skilldrills.online"
   },
   "inLanguage": "ja-JP",
-  "dateModified": "2026-09-11"
+    "dateModified": "2026-09-20"
 };
 
 const webApplicationSchema = {
@@ -97,7 +96,7 @@ const webApplicationSchema = {
   },
   "url": "https://skilldrills.online/ja/drills/cognitive/processing-speed/reaction-time",
   "inLanguage": "ja-JP",
-  "dateModified": "2026-09-11"
+    "dateModified": "2026-09-20"
 };
 
 const videoGameSchema = {
@@ -315,11 +314,39 @@ export default function LocalizedCognitivePage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(howToSchema) }}
       />
-      <EliteNeuroSwitchClient copy={{ title: "選択反応時間テスト・判断速度測定 – ヒックの法則診断" }} />
+      <EliteNeuroSwitchClient
+        copy={{
+          title: "反応速度テスト",
+          subtitle: "色のルールに合わせて標的を選ぶ選択反応・判断速度トレーニング",
+          startTitle: "反応速度テスト",
+          startSubtitle: "選択反応 • 判断速度",
+          stageCaption: "上部のルールと同じ色の標的を素早くタップ。ルールと色は途中で切り替わります。",
+          rulesTitle: "ドリルの説明とスコア",
+          aboutTitle: "反応速度テストとは？",
+          faqTitle: "よくある質問",
+          labels: { score: "スコア", time: "時間", level: "レベル", bestScore: "ベストスコア", timeLeft: "残り時間", rule: "ルール", ready: "準備", accuracy: "正確さ", hits: "成功回数", peakLevel: "最高レベル", maxCombo: "最大コンボ" },
+          ruleBanner: { RED: "赤の標的", BLUE: "青の標的" },
+          aboutLead: "選択反応時間は、いくつかの刺激から現在のルールに合う反応を選ぶまでの時間です。選択肢が増えるほど判断時間が伸びるというヒックの法則と関係します。",
+          aboutText: "このドリルでは、2色の標的を見分け、表示されたルールに合う標的を選びます。結果には視覚処理、判断、指の操作、端末の遅延が含まれます。途中でルールが切り替わるため、色を見た後に正しい操作を選ぶ必要があります。",
+          aboutCards: [
+            { title: "どんな人に向いていますか？", desc: "ゲーム、学習、運転などで素早い視覚判断と正確な操作を練習したい人に向いています。" },
+            { title: "鍛えられる力", desc: "選択反応時間、視覚的な弁別、運動反応、ルール変更への注意を練習します。" },
+            { title: "ルール切り替え", desc: "有効な色のルールが変わったとき、反応基準を更新する速さを刺激します。" }
+          ],
+          rulesItems: [
+            { num: "1", text: "有効なルール", highlight: "赤 / 青", result: "上部バナーを確認" },
+            { num: "2", text: "正しい標的", highlight: "+100点", result: "コンボ・レベル倍率" },
+            { num: "3", text: "ルール変更", highlight: "自動切替", result: "レベル上昇で高速化" },
+            { num: "4", text: "誤答 / 時間切れ", highlight: "コンボ解除", result: "設定時は -0.8秒" }
+          ],
+          faqItems: faqSchema.mainEntity.map((e) => ({ q: e.name, a: e.acceptedAnswer.text }))
+        }}
+      />
       <DrillGuide {...guideProps} />
       <div className="max-w-6xl mx-auto px-4 pb-12">
         <RelatedDrills currentCategory="cognitive" currentHref="https://skilldrills.online/ja/drills/cognitive/processing-speed/reaction-time" />
       </div>
+      <DrillFooter />
     </>
   );
 }

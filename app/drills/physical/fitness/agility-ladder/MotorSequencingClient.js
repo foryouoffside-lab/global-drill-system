@@ -20,6 +20,7 @@ import useUnexpectedExitGuard from '../../../../../lib/useUnexpectedExitGuard';
 import DrillFooter from '../../../../../components/drill/DrillFooter';
 import DrillCountdown from '../../../../../components/drill/DrillCountdown';
 import DrillAccordion from '../../../../../components/drill/DrillAccordion';
+import DrillRuleItem from '../../../../../components/drill/DrillRuleItem';
 import FpsStartCard from '../../../../../components/drill/FpsStartCard';
 import useImmersiveMode from '@/lib/useImmersiveMode';
 
@@ -685,9 +686,6 @@ export default function MotorSequencingClient({ copy = {} } = {}) {
                 </span>
               )}
             </h1>
-            <p className="text-sm text-slate-400 mt-1.5 leading-relaxed">
-              An agility ladder drill is a fixed footwork pattern repeated at increasing speed. Fast sequences are not run as one decision per step: the order is held as a pre-planned motor program (Lashley, 1951) and generalised into a pattern that can be rescaled to a new speed without being relearned (Schmidt, 1975). This version drives the pattern through a cursor at up to 750 px/s over 45 seconds, so it trains the sequencing and the rhythm, not the footwork itself.
-            </p>
           </div>
         )}
 
@@ -717,7 +715,7 @@ export default function MotorSequencingClient({ copy = {} } = {}) {
         <div 
           ref={containerRef} 
           onContextMenu={(e) => { if (gameActiveRef.current) e.preventDefault(); }}
-          className={`overflow-hidden flex flex-col transition-all duration-150 select-none bg-[#080811] text-white border border-white/10 ${
+          className={`overflow-hidden flex flex-col select-none bg-[#080811] text-white border border-white/10 ${
             isFullscreen 
               ? 'fixed inset-0 z-[100] w-screen h-[100dvh] bg-[#080811] rounded-none border-none flex flex-col items-center justify-center' 
               : 'w-full rounded-2xl bg-[#080811] aspect-video min-h-[460px] sm:min-h-[500px] max-h-[88vh] relative overflow-hidden flex flex-col'
@@ -882,12 +880,9 @@ export default function MotorSequencingClient({ copy = {} } = {}) {
               isOpen={openAccordion === 'rules'}
               onToggle={() => setOpenAccordion(openAccordion === 'rules' ? null : 'rules')}
             >
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-2.5 sm:gap-3 font-sans">
                 {(copy?.rules || RULES_ITEMS).map((item, i) => (
-                  <div key={i} className="bg-black p-4 rounded-xl border border-white/10">
-                    <p className="text-sm font-bold text-white mb-1">{item.title}</p>
-                    <p className="text-xs text-gray-300 leading-relaxed">{item.text}</p>
-                  </div>
+                  <DrillRuleItem key={i} num={item.num || String(i + 1)} title={item.title} detail={item.text} />
                 ))}
               </div>
             </DrillAccordion>
@@ -911,7 +906,7 @@ export default function MotorSequencingClient({ copy = {} } = {}) {
                         <strong>Agility Ladder Drills</strong> (Motor Sequencing) trains bilateral coordination, rhythmic cursor sweeps, and serial motor action execution. Inspired by athletic speed-ladder drills, players sweep their crosshair left and right across descending rungs in strict sequential order (1 → 2 → 3 → 4).
                       </p>
                       <p className="text-sm leading-relaxed text-gray-300">
-                        Grounded in Karl Lashley&apos;s (1951) serial motor ordering principles, Richard Schmidt&apos;s (1975) Generalized Motor Program (GMP) schema, and Paul Fitts&apos;s (1954) movement amplitude laws, this drill trains motor timing invariance. As difficulty scales across 15 levels, scroll velocity accelerates from 150 px/s up to 750 px/s and rung hitboxes constrict from 18px down to 10px, requiring rapid metronomic wrist-forearm alternation under strict temporal deadlines.
+                        Grounded in Karl Lashley&apos;s (1951) serial motor ordering principles, Richard Schmidt&apos;s (1975) Generalized Motor Program (GMP) schema, and Paul Fitts&apos;s (1954) movement amplitude laws, this drill trains motor timing invariance. As difficulty scales across 15 levels, scroll velocity accelerates from 150 px/s up to 750 px/s and rung hitboxes constrict from 18px down to 10px, requiring rapid metronomic wrist-forearm alternation under strict temporal deadlines. Fast sequences are not run as one decision per step: the order is held as a pre-planned motor program (Lashley, 1951) and generalised into a pattern that can be rescaled to a new speed without being relearned (Schmidt, 1975). This version drives the pattern through a cursor at up to 750 px/s over 45 seconds, so it trains the sequencing and the rhythm, not the footwork itself.
                       </p>
                     </>
                   )}

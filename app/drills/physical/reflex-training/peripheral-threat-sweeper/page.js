@@ -36,27 +36,20 @@ import { pickSources } from '@/lib/drillSources';
 // ============================================================
 
 export const metadata = {
-  title: 'Peripheral Vision Test - Free Radial Awareness Drill',
+  title: 'Peripheral Vision Test | Free Visual Attention Drill',
   description:
-    'Free online peripheral vision test. Train spatial awareness, useful field of view (UFOV), and radial target acquisition before core breach.',
+    'Free peripheral vision test in your browser. Keep your gaze centered, spot threats at the edge of view, and train useful field of view (UFOV).',
   keywords: [
-    // Primary terms
     'peripheral vision test',
-    'peripheral threat sweeper',
     'peripheral vision training',
-    // Secondary / LSI terms
     'useful field of view test',
-    'visual motor integration drill',
-    'spatial awareness drill',
+    'visual attention test',
     'peripheral reaction test',
-    'radial threat scanning',
     'field of view reaction game',
-    'reaction speed drill',
-    // Long-tail variants
-    'free online peripheral vision test',
-    'esports field of view reaction trainer',
-    'covert visual attention training online',
-    'parafoveal target detection exercise',
+    'spatial awareness drill',
+    'field of view training online',
+    'covert attention training',
+    'free peripheral vision test',
   ],
   alternates: {
     canonical: 'https://skilldrills.online/drills/physical/reflex-training/peripheral-threat-sweeper',
@@ -64,9 +57,9 @@ export const metadata = {
   },
   robots: { index: true, follow: true },
   openGraph: {
-    title: 'Peripheral Vision Test - Free Radial Awareness Drill',
+    title: 'Peripheral Vision Test | Free Visual Attention Drill',
     description:
-      'Train peripheral vision, spatial awareness, and target acquisition. Intercept radial threats before they breach your core in this free reflex game.',
+      'Keep your gaze centered, detect threats at the edge of view, and train peripheral attention in a free browser drill.',
     url: 'https://skilldrills.online/drills/physical/reflex-training/peripheral-threat-sweeper',
     siteName: 'SkillDrills',
     locale: 'en_US',
@@ -82,9 +75,9 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Peripheral Vision Test - Free Radial Awareness Drill',
+    title: 'Peripheral Vision Test | Free Visual Attention Drill',
     description:
-      'Expand useful field of view (UFOV), reduce tunnel vision and train covert spatial attention. Free browser drill.',
+      'Detect edge-of-view threats while keeping your gaze centered in this free peripheral attention drill.',
     images: ['https://skilldrills.online/icons/icon-512x512.png'],
   },
 };
@@ -109,6 +102,9 @@ const softwareApplicationSchema = {
   applicationCategory: 'HealthApplication',
   operatingSystem: 'Any',
   browserRequirements: 'Requires HTML5 Canvas and JavaScript support.',
+  url: 'https://skilldrills.online/drills/physical/reflex-training/peripheral-threat-sweeper',
+  inLanguage: 'en',
+  dateModified: '2026-09-20',
   offers: {
     '@type': 'Offer',
     price: '0',
@@ -125,6 +121,8 @@ const webApplicationSchema = {
   url: 'https://skilldrills.online/drills/physical/reflex-training/peripheral-threat-sweeper',
   description:
     'Free peripheral vision test and reaction training drill. Intercept multi-vector radial threats before they penetrate the central perimeter.',
+  inLanguage: 'en',
+  dateModified: '2026-09-20',
   applicationCategory: 'SportsApplication',
   operatingSystem: 'Web Browser',
   browserRequirements: 'Requires a modern web browser with HTML5 Canvas support.',
@@ -232,6 +230,8 @@ const videoGameSchema = {
   genre: ['Action', 'Brain Game', 'Reflex Game', 'Coordination'],
   gamePlatform: ['Web Browser', 'Desktop', 'Mobile'],
   applicationCategory: 'Game',
+  inLanguage: 'en',
+  dateModified: '2026-09-20',
   offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
 };
 
@@ -364,7 +364,7 @@ export default function PeripheralThreatSweeperPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(howToSchema) }}
       />
-      <PeripheralThreatSweeperClient copy={{ title: 'Peripheral Threat Sweeper', subtitle: 'Peripheral Vision Test & Radial Awareness Drill' }} />
+      <PeripheralThreatSweeperClient copy={{ title: 'Peripheral Vision Test', subtitle: 'Spot edge threats while keeping your gaze centered' }} />
       <DrillGuide {...guideProps} />
       
     </>

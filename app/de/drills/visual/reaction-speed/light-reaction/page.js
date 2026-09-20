@@ -5,25 +5,25 @@ import RelatedDrills from '@/components/drill/RelatedDrills';
 import { pickSources } from '@/lib/drillSources';
 
 export const metadata = {
-  title: "Lichtreaktionstest: Visuelle Reaktionszeit | SkillDrills",
-  description: "Kostenloser Lichtreaktionstest online: Messe deine visuelle Reaktionszeit in Millisekunden und trainiere optomotorische Reflexe ohne Registrierung.",
+  title: "Reaktionstest online | Visuelle Reaktionszeit | SkillDrills",
+  description: "Kostenloser Reaktionstest online: Miss deine visuelle Reaktionszeit in Millisekunden bei einem Lichtsignal. Browserwert mit Geräteverzögerung, kein medizinischer Test.",
   keywords: [
-    "lichtreaktion test",
-    "Lichtreaktionstest",
-    "reaktionsgeschwindigkeit test",
-    "visueller reflextest",
-    "einfache reaktionszeit test",
-    "strobe reaktionszeit",
-    "reaktionszeit messen millisekunden",
-    "optischer reflextest",
-    "fototransduktion auge reaktion",
-    "pieron gesetz reaktionszeit",
-    "reaktionszeittest kostenlos",
-    "visuelles training online"
+    "Reaktionstest",
+    "Reaktionszeit Test",
+    "Reaktionstest online",
+    "visuelle Reaktionszeit",
+    "Reaktionszeit messen",
+    "Reaktionszeit in Millisekunden",
+    "Reaktionstest kostenlos",
+    "visueller Reaktionstest",
+    "einfache Reaktionszeit",
+    "Lichtsignal Reaktion",
+    "Reflexe testen",
+    "Reaktionsgeschwindigkeit trainieren"
   ],
   openGraph: {
-    title: "Lichtreaktionstest: Visuelle Reaktionszeit | SkillDrills",
-    description: "Messe deine einfache visuelle Reaktionszeit (SRT) in Millisekunden auf optische Strobe-Blitze. Präzise neuromuskuläre Latenzdiagnostik.",
+    title: "Reaktionstest online | Visuelle Reaktionszeit | SkillDrills",
+    description: "Miss deine einfache visuelle Reaktionszeit in Millisekunden bei einem unvorhersehbaren Lichtsignal. Online-Training mit transparenter Hardware-Grenze.",
     type: 'article',
     url: 'https://skilldrills.online/de/drills/visual/reaction-speed/light-reaction',
     siteName: 'SkillDrills',
@@ -31,8 +31,8 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: "Lichtreaktionstest: Visuelle Reaktionszeit | SkillDrills",
-    description: "Kostenloser Lichtreaktionstest zur Messung der optomotorischen Reaktionslatenz auf Strobe-Blitze in Millisekunden.",
+    title: "Reaktionstest online | Visuelle Reaktionszeit | SkillDrills",
+    description: "Reagiere auf ein Lichtsignal und vergleiche deine visuelle Reaktionszeit in Millisekunden über mehrere Versuche.",
   },
   robots: { index: true, follow: true },
   alternates: {
@@ -228,7 +228,7 @@ const faqSchema = {
 };
 
 const lightReactionGuide = {
-  heading: "Neurowissenschaftliche Standards der visuellen Reaktionszeit & Chronometrie",
+  heading: "Reaktionstest online: Visuelle Reaktionszeit in Millisekunden verstehen",
   intro: [
     "Die einfache visuelle Reaktionszeit (Simple Reaction Time, SRT) definiert das elementare psychomotorische Zeitintervall zwischen dem plötzlichen Auftreten eines einzelnen optischen Reizes und der Auslösung einer unkonditionierten motorischen Bewegung. In der Leichtathletik, im Motorsport, in Kampfsportarten und im professionellen E-Sport bestimmen Millisekunden über Ausweichen, Startblockablösung und erfolgreichen Konter.",
     "Die neuromuskuläre Kaskade umfasst vier distinkte physiologische Phasen: (1) retinale Fototransduktion (~20–40 ms für Rhodopsin-Isomerisierung), (2) afferente Weiterleitung über die Sehbahn zum primären visuellen Kortex V1 (~30–50 ms), (3) kortikale Wahrnehmungs- und Bewegungsvorbereitung im motorischen Kortex (~50–80 ms), und (4) efferente Weiterleitung über die Pyramidenbahn zur Fingermuskulatur (~30–50 ms), was den typischen gesunden Standardbereich von 200–250 ms begründet (Kosinski, 2008; Jain et al., 2015; Shelton & Kumar, 2010).",
@@ -236,7 +236,7 @@ const lightReactionGuide = {
     "Messmethodik & Hardware-Standardisierung: Alle Reize und Tastenfreigaben werden hochpräzise mit der browserinternen performance.now() API erfasst. Hardware-Latenzen durch Monitor-Quantisierung und USB-Abtastung werden nach Woods et al. (2015) berücksichtigt, während alle Daten ausschließlich lokal auf dem Endgerät gespeichert werden."
   ],
   benchmarks: {
-    title: "Normative Leistungsklassen der einfachen visuellen Reaktionszeit (SRT)",
+    title: "Orientierungswerte für visuelle Reaktionszeit im Browser",
     headers: ["Leistungsklasse", "Mittlere Latenzzeit (ms)", "Score- & Combo-Schwelle", "Neuromuskuläres & Reflex-Profil"],
     rows: [
       ["Tier 1: Spitzenklasse / Apex-Reflex", "< 180 ms", "15.000+ Punkte | Combo 28x+", "Außergewöhnliche kortikospinale Erregbarkeit und minimale synaptische Verzögerung; typisch für E-Sport-Profis und olympische Sprinter."],
@@ -248,7 +248,7 @@ const lightReactionGuide = {
     note: "Diese Richtwerte basieren auf klassischer Chronometrie und Reaktionspsychophysik (Kosinski, 2008; Woods et al., 2015; Pins & Bonnet, 1996; Jain et al., 2015). Ergebnisse variieren je nach Tageszeit, Koffein und Bildschirmlatenz."
   },
   techniques: {
-    title: "Methoden zur Steigerung der visuellen Reaktionsschnelligkeit",
+    title: "Reaktionszeit testen und unter gleichen Bedingungen trainieren",
     items: [
       {
         name: "Foveale Voraktivierung & Blickverankerung",
@@ -301,7 +301,7 @@ export default function StrobeLatencyPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(howToSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(videoGameSchema) }} />
-      <StrobeLatencyClient copy={{ title: "Lichtreaktionstest: Visuelle Reaktionszeit" }} />
+      <StrobeLatencyClient copy={{ title: "Reaktionstest: Visuelle Reaktionszeit", startCardTitle: "Reaktionstest", startCardSubtitle: "Auf ein Lichtsignal reagieren" }} />
       <DrillGuide guide={lightReactionGuide} />
       <div className="max-w-6xl mx-auto px-4 pb-12">
         <RelatedDrills currentCategory="visual" currentHref="https://skilldrills.online/de/drills/visual/reaction-speed/light-reaction" />

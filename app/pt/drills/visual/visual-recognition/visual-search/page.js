@@ -5,33 +5,35 @@ import RelatedDrills from '@/components/drill/RelatedDrills';
 import { pickSources } from '@/lib/drillSources';
 
 export const metadata = {
-  title: "Teste de Busca Visual: Varredura Conjuntiva | SkillDrills",
-  description: "Teste de busca visual e varredura conjuntiva grátis online. Localize alvos em matriz de 96 caracteres sob pressão de tempo e treine sua atenção seletiva.",
+  title: "Busca Visual | Atenção Seletiva | SkillDrills",
+  description: "Teste de busca visual gratuito: encontre o alvo entre distratores e treine atenção seletiva, velocidade de varredura e controle da interferência.",
   keywords: [
+    "busca visual",
     "teste de busca visual",
-    "busca conjuntiva visual",
-    "varredura visual teste",
-    "teoria da integração de características",
+    "teste de atenção visual seletiva",
+    "busca visual com interferência",
     "atenção seletiva visual",
-    "discriminação de alvos",
-    "inspeção visual online",
-    "teste de escaneamento visual",
-    "velocidade de processamento visual",
-    "treinamento de foco periférico",
-    "teste de símbolos visuais",
-    "aquisição de alvos visuais"
+    "teste de atenção visual",
+    "varredura visual",
+    "encontrar alvo entre distratores",
+    "velocidade de busca visual",
+    "discriminação visual",
+    "teste de cancelamento",
+    "treino de atenção",
+    "teste de símbolos",
+    "encontrar letras"
 ],
   openGraph: {
-    title: "Teste de Busca Visual: Varredura Conjuntiva | SkillDrills",
-    description: "Teste de busca visual e varredura conjuntiva grátis online. Localize alvos em matriz de 96 caracteres sob pressão de tempo e treine sua atenção seletiva.",
+    title: "Busca Visual | Atenção Seletiva | SkillDrills",
+    description: "Encontre um alvo entre distratores e pratique atenção seletiva, velocidade de varredura e controle da interferência.",
     type: "website",
     url: "https://skilldrills.online/pt/drills/visual/visual-recognition/visual-search",
     siteName: "SkillDrills",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Teste de Busca Visual: Varredura Conjuntiva | SkillDrills",
-    description: "Teste de busca visual e varredura conjuntiva grátis online. Localize alvos em matriz de 96 caracteres sob pressão de tempo e treine sua atenção seletiva.",
+    title: "Busca Visual | Atenção Seletiva | SkillDrills",
+    description: "Treino de busca visual entre caracteres semelhantes.",
   },
   robots: { index: true, follow: true },
   alternates: {
@@ -61,7 +63,7 @@ const softwareApplicationSchema = {
   "description": "Avaliação gratuita de busca visual conjuntiva. Examine matrizes densas de 96 letras com distratores rotacionados para medir a latência e atenção seletiva.",
   "url": "https://skilldrills.online/pt/drills/visual/visual-recognition/visual-search",
   "publisher": { "@type": "Organization", "name": "SkillDrills", "url": "https://skilldrills.online" },
-  "dateModified": "2026-09-05"
+  "dateModified": "2026-09-20"
 };
 
 const webApplicationSchema = {
@@ -71,7 +73,7 @@ const webApplicationSchema = {
   "browserRequirements": "Requires HTML5 canvas and JavaScript",
   "url": "https://skilldrills.online/pt/drills/visual/visual-recognition/visual-search",
   "applicationCategory": "EducationalApplication",
-  "dateModified": "2026-09-05"
+  "dateModified": "2026-09-20"
 };
 
 const videoGameSchema = {
@@ -91,7 +93,7 @@ const howToSchema = {
   "@type": "HowTo",
   "name": "Como treinar a velocidade de busca visual e varredura conjuntiva",
   "description": "Otimize sua taxa de aquisição de alvos, integração de características e atenção seletiva com base nas teorias de Treisman e Wolfe.",
-  "dateModified": "2026-09-05",
+  "dateModified": "2026-09-20",
   "step": [
     {
       "@type": "HowToStep",
@@ -127,7 +129,7 @@ const howToSchema = {
 const faqSchema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
-  "dateModified": "2026-09-05",
+  "dateModified": "2026-09-20",
   "mainEntity": [
     {
       "@type": "Question",
@@ -142,7 +144,7 @@ const faqSchema = {
       "name": "Qual é a diferença entre busca de característica simples e busca conjuntiva?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "A busca simples depende de uma única propriedade saliente e produz pop-out imediato. A busca conjuntiva requer a combinação de múltiplos elementos, exigindo exame serial atencioso de cada candidato (Treisman & Gelade, 1980)."
+        "text": "A busca simples depende de uma única propriedade saliente e faz o alvo sobressair imediatamente. A busca conjuntiva requer a combinação de múltiplos elementos, exigindo exame serial atencioso de cada candidato (Treisman & Gelade, 1980)."
       }
     },
     {
@@ -223,25 +225,25 @@ export default function VisualSearchLocalePage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(howToSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(videoGameSchema) }} />
-      <VisualSearchClient copy={{ title: "Jogo de Busca Visual e Varredura Conjuntiva" }} />
+      <VisualSearchClient copy={{ title: "Busca Visual", subtitle: "Encontre o alvo entre distratores" }} />
       <DrillGuide
         eyebrow="Psicofísica Cognitiva & Atenção Visual"
-        title="A Ciência da Busca Visual, Integração de Recursos & Atenção Seletiva"
+        title="Busca visual e atenção seletiva na prática"
         sources={sources}
       >
         <p dangerouslySetInnerHTML={{ __html: `Em ambientes visuais naturais, os alvos raramente se apresentam de forma isolada. Seja inspecionando uma tela de radar em controle aéreo, revisando documentos densos ou identificando a silhueta de um oponente protegido por cobertura em jogos táticos, o sistema visual humano precisa discriminar velozmente sinais críticos imersos em ruído visual complexo. Na psicofísica visual, essa capacidade é avaliada por meio de <strong>paradigmas de busca visual</strong>, que mensuram a interação da atenção espacial com mapas corticais de características ao longo do tempo (Treisman &amp; Gelade, 1980; Wolfe, 1994).` }} />
 
-        <h3>Teoria da Integração de Recursos: Pop-Out Paralelo vs. Busca Conjuntiva</h3>
+        <h3>Teoria da Integração de Recursos: Destaque Paralelo vs. Busca Conjuntiva</h3>
         <p dangerouslySetInnerHTML={{ __html: `A psicofísica visual clássica divide os regimes de busca em duas categorias fundamentais, dependendo da saliência e da composição de recursos do alvo:` }} />
         <ul className="list-disc pl-5 space-y-2 my-3 text-slate-300">
           <li>
-            <strong>Busca de Característica (Pop-Out Paralelo):</strong> Quando o alvo difere dos distratores por uma única dimensão contínua (como um círculo vermelho entre quadrados azuis), neurônios da área visual primária (V1) registram a discrepância simultaneamente em todo o campo visual. O tempo de reação permanece plano, independentemente da quantidade de itens na tela (Treisman &amp; Gelade, 1980; Wolfe, 1994).
+            <strong>Busca de Característica (Destaque Paralelo):</strong> Quando o alvo difere dos distratores por uma única dimensão contínua (como um círculo vermelho entre quadrados azuis), neurônios da área visual primária (V1) registram a discrepância simultaneamente em todo o campo visual. O tempo de reação permanece plano, independentemente da quantidade de itens na tela (Treisman &amp; Gelade, 1980; Wolfe, 1994).
           </li>
           <li>
             <strong>Busca Conjuntiva (Vinculação Serial &amp; Guiada):</strong> Quando o alvo é definido por uma conjunção de atributos que se sobrepõem parcialmente aos distratores vizinhos (como localizar uma letra 'C' entre caracteres rotacionados 'O', 'Q' e 'G'), mecanismos pré-atencionais paralelos não conseguem resolver o alvo isoladamente. O córtex visual precisa alocar a atenção focal sequencialmente de célula em célula, elevando a latência de resposta de forma diretamente proporcional ao tamanho do conjunto (Treisman &amp; Gelade, 1980; Duncan &amp; Humphreys, 1989).
           </li>
         </ul>
-        <p dangerouslySetInnerHTML={{ __html: `Esse fenômeno ilustra o que neurocientistas cognitivos definem como o <em>problema da vinculação visual (binding problem)</em>: enquanto áreas visuais primárias processam orientação, curvatura e fechamento em mapas de características modulares e separados, sintetizar essas dimensões em um percepto unificado exige a alocação ativa de atenção espacial mediada pelo córtex parietal posterior e pelos campos oculares frontais (Treisman &amp; Gelade, 1980; Wolfe, 1994).` }} />
+        <p dangerouslySetInnerHTML={{ __html: `Esse fenômeno ilustra o que neurocientistas cognitivos definem como o <em>problema da vinculação visual</em>: enquanto áreas visuais primárias processam orientação, curvatura e fechamento em mapas de características modulares e separados, sintetizar essas dimensões em um percepto unificado exige a alocação ativa de atenção espacial mediada pelo córtex parietal posterior e pelos campos oculares frontais (Treisman &amp; Gelade, 1980; Wolfe, 1994).` }} />
 
         <h3>Homogeneidade de Distratores &amp; Eficiência de Varredura (Duncan &amp; Humphreys, 1989)</h3>
         <p dangerouslySetInnerHTML={{ __html: `Em investigações fundamentais sobre eficiência de busca visual, Duncan e Humphreys (1989) demonstraram que o desempenho perceptual depende de duas relações cruciais:` }} />
@@ -338,7 +340,7 @@ export default function VisualSearchLocalePage() {
           <div>
             <h4 className="font-semibold text-white">Qual é a diferença entre busca de característica simples e busca conjuntiva?</h4>
             <p className="text-slate-300 mt-1">
-              A busca simples depende de uma única propriedade saliente e produz pop-out imediato. A busca conjuntiva requer a combinação de múltiplos elementos, exigindo exame serial atencioso de cada candidato (Treisman & Gelade, 1980).
+              A busca simples depende de uma única propriedade saliente e faz o alvo sobressair imediatamente. A busca conjuntiva requer a combinação de múltiplos elementos, exigindo exame serial atencioso de cada candidato (Treisman & Gelade, 1980).
             </p>
           </div>
           <div>

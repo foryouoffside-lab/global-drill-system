@@ -6,11 +6,19 @@ import { getAlternateLanguages } from '@/lib/i18n/locales';
 import RelatedDrills from '@/components/drill/RelatedDrills';
 
 export const metadata = {
-  title: "レレレ撃ち 練習 – ジッタートラッキング | SkillDrills",
-  description: "ブラウザで無料プレイできるレレレ撃ち（ADAD移動）トラッキング練習。ApexやOverwatchの至近距離での高頻度な切り返しムーブやジッター移動に照準を吸い付かせるリアクティブトラッキングを科学的に鍛えます。",
+  title: "エイム練習 | レレレ撃ち・トラッキング | SkillDrills",
+  description: "無料ブラウザのエイム練習で、ADAD移動やレレレ撃ちの方向転換を追い、近距離トラッキングの反応を測定します。",
   keywords: [
+    "エイム練習",
+    "エイム練習 ブラウザ",
+    "エイム練習 apex",
+    "レレレ撃ち",
     "レレレ撃ち 練習",
     "トラッキング エイム 練習",
+    "ジッターエイム",
+    "近距離 トラッキング",
+    "リアクティブ トラッキング",
+    "ADAD 移動 エイム",
     "ジッターエイム 練習",
     "近距離 トラッキング",
     "VALORANT レレレ撃ち",
@@ -31,8 +39,8 @@ export const metadata = {
     follow: true,
   },
   openGraph: {
-    title: "レレレ撃ち 練習 – ジッタートラッキング | SkillDrills",
-    description: "ブラウザで無料プレイできるレレレ撃ち（ADAD移動）トラッキング練習。ApexやOverwatchの至近距離での高頻度な切り返しムーブやジッター移動に照準を吸い付かせるリアクティブトラッキングを科学的に鍛えます。",
+      title: "エイム練習 | レレレ撃ち・トラッキング | SkillDrills",
+    description: "無料ブラウザのエイム練習で、ADAD移動やレレレ撃ちの方向転換を追い、近距離トラッキングの反応を測定します。",
     url: "https://skilldrills.online/ja/drills/fps/anti-strafe-jitter-duel",
     siteName: 'SkillDrills',
     locale: 'ja_JP',
@@ -40,8 +48,8 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: "レレレ撃ち 練習 – ジッタートラッキング | SkillDrills",
-    description: "ブラウザで無料プレイできるレレレ撃ち（ADAD移動）トラッキング練習。ApexやOverwatchの至近距離での高頻度な切り返しムーブやジッター移動に照準を吸い付かせるリアクティブトラッキングを科学的に鍛えます。",
+      title: "エイム練習 | レレレ撃ち・トラッキング | SkillDrills",
+    description: "無料ブラウザのエイム練習で、ADAD移動やレレレ撃ちの方向転換を追い、近距離トラッキングの反応を測定します。",
   },
 };
 
@@ -52,17 +60,17 @@ export default function AntiStrafeJitterJaPage() {
     "itemListElement": [
       { "@type": "ListItem", "position": 1, "name": "SkillDrills", "item": "https://skilldrills.online/ja" },
       { "@type": "ListItem", "position": 2, "name": "FPSエイム練習", "item": "https://skilldrills.online/ja/drills/fps" },
-      { "@type": "ListItem", "position": 3, "name": "レレレ撃ち 練習", "item": "https://skilldrills.online/ja/drills/fps/anti-strafe-jitter-duel" }
+      { "@type": "ListItem", "position": 3, "name": "エイム練習 - レレレ撃ち", "item": "https://skilldrills.online/ja/drills/fps/anti-strafe-jitter-duel" }
     ]
   };
 
   const softwareSchema = {
     "@context": "https://schema.org",
     "@type": "SoftwareApplication",
-    "name": "レレレ撃ち 練習",
+    "name": "エイム練習 - レレレ撃ち・トラッキング",
     "applicationCategory": "GameApplication",
     "operatingSystem": "Web Browser",
-    "dateModified": "2026-09-05",
+    "dateModified": "2026-09-20",
     "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
     "description": "急激な左右ADAD切り返し移動（レレレ撃ち）に対するリアクティブトラッキングと微小修正能力を向上させる無料ブラウザFPSエイムドリル。",
     "genre": "FPS Training / Anti-Strafe",
@@ -77,7 +85,7 @@ export default function AntiStrafeJitterJaPage() {
   const webAppSchema = {
     "@context": "https://schema.org",
     "@type": "WebApplication",
-    "name": "レレレ撃ち 練習",
+    "name": "エイム練習 - レレレ撃ち・トラッキング",
     "url": "https://skilldrills.online/ja/drills/fps/anti-strafe-jitter-duel",
     "applicationCategory": "GameApplication",
     "operatingSystem": "All",
@@ -93,10 +101,10 @@ export default function AntiStrafeJitterJaPage() {
   const videoGameSchema = {
     "@context": "https://schema.org",
     "@type": "VideoGame",
-    "name": "レレレ撃ち 練習",
+    "name": "エイム練習 - レレレ撃ち・トラッキング",
     "url": "https://skilldrills.online/ja/drills/fps/anti-strafe-jitter-duel",
     "description": "急激な左右ADAD切り返し移動（レレレ撃ち）に対するリアクティブトラッキングと微小修正能力を向上させる無料ブラウザFPSエイムドリル。",
-    "dateModified": "2026-09-05",
+    "dateModified": "2026-09-20",
     "gamePlatform": "Web Browser",
     "genre": ["FPS Training", "Aim Trainer", "Reactive Tracking"],
     "playMode": "SinglePlayer",
@@ -108,7 +116,7 @@ export default function AntiStrafeJitterJaPage() {
   const faqSchema = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
-    "dateModified": "2026-09-05",
+    "dateModified": "2026-09-20",
     "mainEntity": [
       {
         "@type": "Question",
@@ -227,9 +235,9 @@ export default function AntiStrafeJitterJaPage() {
   };
 
   const antiStrafeGuide = {
-    heading: "レレレ撃ち（アンチストラフ）練習ガイド & 反応追従バイオメカニクス",
+    heading: "エイム練習とレレレ撃ち・リアクティブトラッキングガイド",
     intro: [
-      "至近距離の激しい撃ち合いにおいて、勝敗を決定づけるのはADAD切り返し移動（レレレ撃ち）、屈伸連打、そして瞬間的な速度反転に対するトラッキング精度です。一定方向に進む標的を滑らかに追尾するスムーズパースート（Krauzlis, 2004）とは異なり、リアクティブトラッキングは連続的な網膜スリップ誤差の検出と素早い筋力反転を要求します (Rashbass, 1961)。アクションゲーマーは優れた視覚注意と時間的追従帯域幅を有していますが (Green & Bavelier, 2003)、敵の予測不能な方向転換には常に神経生理学的な処理遅延が伴います。",
+      "エイム練習の中でもレレレ撃ち対策は、ADADの切り返しを追いながらレティクルを敵に保つ練習です。このドリルは近距離のジッターと方向反転を測定し、Apex・Overwatch 2のリアクティブトラッキングを安定させます。",
       "標的が急激に進行方向を反転させた瞬間、視覚情報が網膜の中心窩から外れる「網膜スリップ」が発生します。脳は反転を予知できないため、減速検知、皮質指令、手の制動ブレーキ、そして逆方向への運動加速というサイクルをミリ秒単位で処理しなければなりません。Apex LegendsやOverwatch 2のようにTTK（Time to Kill）が長いゲームでは、単発のフリックよりも標的への継続照準時間（Uptime）が直接的な勝率を決定します。",
       "本ドリルはHTML5 Pointer Lock API配下で1:1ハードウェア変換と performance.now() 高分解能タイマーを用いて動作します (Woods et al., 2015)。USBポーリングのジッターやブラウザの補間遅延を排除し、力みを抑制した拮抗筋の滑らかな制御と、切り返し時の行き過ぎ（オーバーシュート）防止を徹底的に鍛え上げます。",
       "測定仕様について：すべてのイベントはお使いの端末の performance.now() 高分解能クロックによって完全にローカルで記録され、外部へスコアが送信されることはありません。ブラウザのタイマー解像度制限（Spectre対策で通常約1ms）およびディスプレイのリフレッシュ間隔（60Hzで約16.7ms、144Hzで約6.9ms、240Hzで約4.1ms）による量子化誤差が生じるため、5ms未満の微小な差異は測定誤差として扱い、他者の環境との比較よりも同一環境での自己記録の推移を重視してください (Woods et al., 2015)。"
@@ -318,13 +326,13 @@ export default function AntiStrafeJitterJaPage() {
       />
       <AntiStrafeJitterClient
         copy={{
-          h1Keyword: "レレレ撃ち 練習",
-          h1Suffix: " - 近距離ジッタートラッキング",
+          h1Keyword: "エイム練習",
+          h1Suffix: " - レレレ撃ち・トラッキング",
           statScore: "スコア",
           statTime: "残り時間",
           statAccuracy: "追従精度",
           statBestScore: "自己ベスト",
-          startTitle: "レレレ撃ち 練習 (ジッタートラッキング)",
+          startTitle: "エイム練習 - レレレ撃ち",
           startSubtitle: "リアクティブ敵動作読取 • エンドレス難易度進行",
           getReady: "準備完了",
           pausedTitle: "一時停止中",
@@ -337,7 +345,7 @@ export default function AntiStrafeJitterJaPage() {
             { num: "3", text: "レベル進行", highlight: "+1 レベル / 1400 PTS", result: "可変ジッター加速" },
             { num: "4", text: "ロック外れペナルティ", highlight: "1.0秒 ロック外れ", result: "コンボリセット (-0.6秒)" }
           ],
-          aboutTitle: "レレレ撃ち 練習について",
+          aboutTitle: "エイム練習とレレレ撃ちについて",
           aboutHeading: "リアクティブトラッキング（レレレ撃ち追従）とは？"
         }}
       />

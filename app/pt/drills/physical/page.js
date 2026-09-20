@@ -37,6 +37,23 @@ export const metadata = {
   },
 };
 
+Object.assign(metadata, {
+  title: 'Agilidade e Reflexo | 11 Exercícios | SkillDrills',
+  description: '11 exercícios gratuitos no navegador para tempo de reação, agilidade, equilíbrio, coordenação motora e reflexos.',
+  keywords: ['teste de reflexo', 'treino de agilidade', 'tempo de reação', 'coordenação motora', 'equilíbrio corporal', 'velocidade de pés', 'coordenação olho-mão', 'jogo de esquiva', 'treino esportivo online', 'exercícios físicos no navegador'],
+  openGraph: {
+    ...metadata.openGraph,
+    title: 'Agilidade e Reflexo | 11 Exercícios | SkillDrills',
+    description: '11 exercícios gratuitos no navegador para reflexos, tempo de reação, agilidade e coordenação motora.',
+  },
+  twitter: {
+    ...metadata.twitter,
+    title: 'Agilidade e Reflexo | SkillDrills',
+    description: 'Treine reflexos, agilidade, equilíbrio e coordenação com 11 exercícios gratuitos.',
+  },
+  alternates: { ...metadata.alternates, languages: getAlternateLanguages('/drills/physical') },
+});
+
 const breadcrumbSchema = {
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
@@ -50,6 +67,8 @@ const breadcrumbSchema = {
 const collectionSchema = {
   "@context": "https://schema.org",
   "@type": "CollectionPage",
+  "inLanguage": "pt-BR",
+  "dateModified": "2026-09-20",
   "name": "Treino de Agilidade & Testes de Reflexos (11 Exercícios)",
   "url": "https://skilldrills.online/pt/drills/physical",
   "description": "11 exercícios interativos para tempo de reação, equilíbrio postural, coordenação olho-mão, escada de agilidade e esquiva ágil.",
@@ -71,6 +90,8 @@ const collectionSchema = {
 const faqSchema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
+  "inLanguage": "pt-BR",
+  "dateModified": "2026-09-20",
   "mainEntity": [
     {
       "@type": "Question",
@@ -138,6 +159,19 @@ const faqSchema = {
     }
   ]
 };
+
+faqSchema.mainEntity.push(
+  {
+    "@type": "Question",
+    "name": "Quantos exercícios existem na categoria de treinos físicos?",
+    "acceptedAnswer": { "@type": "Answer", "text": "A categoria reúne 11 exercícios no navegador em quatro focos: reflexo e esquiva, agilidade e condicionamento, coordenação e trajetórias, além de equilíbrio e estabilidade. Cada cartão abre o treino correspondente." }
+  },
+  {
+    "@type": "Question",
+    "name": "Os treinos no navegador substituem força ou equilíbrio físico?",
+    "acceptedAnswer": { "@type": "Answer", "text": "Não. Eles treinam tempo visual, velocidade de decisão, precisão de controle e sequência de movimentos. Servem como complemento, não como substituto para força, pliometria, mobilidade ou orientação esportiva." }
+  }
+);
 
 export default function PhysicalDrillsPage() {
   return (

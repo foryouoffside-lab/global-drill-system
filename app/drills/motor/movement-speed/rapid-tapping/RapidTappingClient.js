@@ -21,6 +21,7 @@ import FpsStartCard from '@/components/drill/FpsStartCard';
 import DrillResultCard from '@/components/drill/DrillResultCard';
 import useImmersiveMode from '@/lib/useImmersiveMode';
 import { useTranslation } from '@/lib/i18n/useTranslation';
+import { RAPID_TAPPING_I18N } from '@/lib/i18n/drills/rapidTapping';
 import useUnexpectedExitGuard from '@/lib/useUnexpectedExitGuard';
 
 const DRILL_DURATION = 45;
@@ -55,18 +56,14 @@ const getCoachAdvice = (cps, totalClicks, score, t) => {
   return t ? t('rapidTapping.coachElite', "Elite CPS performance! Your rapid tapping speed and muscle endurance easily rival top-tier competitive Minecraft and FPS players.") : "Elite CPS performance! Your rapid tapping speed and muscle endurance easily rival top-tier competitive Minecraft and FPS players.";
 };
 
-// ============================================================
-// ACCORDION DATA
-// ============================================================
-const RULES_ITEMS = [
-  { num: "1", text: "Rapid Tap", highlight: "Expands Ball", result: "Prevents Decay" },
-  { num: "2", text: "Click Threshold", highlight: "+1 / 10 Clicks", result: "Session Score" },
-  { num: "3", text: "Decay Speed", highlight: "Dynamic Scaling", result: "Pushes Speed Limit" },
-  { num: "4", text: "Tapping Form", highlight: "Jitter / Butterfly", result: "Maximizes Peak CPS" }
-];
-
 export default function RapidTappingClient({ copy } = {}) {
-  const { t } = useTranslation();
+  const { t } = useTranslation(RAPID_TAPPING_I18N);
+  const localizedRulesItems = [
+    { num: '1', text: t('rapidTapping.rule1Title', 'Rapid Tap'), highlight: t('rapidTapping.rule1Highlight', 'Expands Ball'), result: t('rapidTapping.rule1Result', 'Prevents Decay') },
+    { num: '2', text: t('rapidTapping.rule2Title', 'Click Threshold'), highlight: t('rapidTapping.rule2Highlight', '+1 / 10 Clicks'), result: t('rapidTapping.rule2Result', 'Session Score') },
+    { num: '3', text: t('rapidTapping.rule3Title', 'Decay Speed'), highlight: t('rapidTapping.rule3Highlight', 'Dynamic Scaling'), result: t('rapidTapping.rule3Result', 'Pushes Speed Limit') },
+    { num: '4', text: t('rapidTapping.rule4Title', 'Tapping Form'), highlight: t('rapidTapping.rule4Highlight', 'Jitter / Butterfly'), result: t('rapidTapping.rule4Result', 'Maximizes Peak CPS') },
+  ];
   const [gameState, setGameState] = useState('start'); // 'start' | 'countdown' | 'playing' | 'gameOver'
   const [isFullscreen, setIsFullscreen] = useState(false);
   useImmersiveMode(isFullscreen); // locks the page behind while the drill fills the screen
@@ -719,10 +716,8 @@ export default function RapidTappingClient({ copy } = {}) {
           <div className="flex flex-col gap-1">
             <h1 className="text-2xl sm:text-3xl font-black tracking-tight text-white">
               <span data-seo-kw="1">{copy?.title || t('rapidTapping.title', 'CPS Test')}</span>
+              <span className="block text-sm font-semibold text-slate-400 mt-1">{copy?.subtitle || 'Click speed test for measuring clicks per second and improving rapid mouse tapping consistency'}</span>
             </h1>
-            <p className="text-[13px] text-slate-400 leading-relaxed">
-              {copy?.desc || t('rapidTapping.desc', "A CPS test counts how many times you can click a mouse button in one second. Sustained one-finger clicking runs to roughly 5–7 clicks per second, because the standard finger tapping test puts a healthy adult's dominant index finger near 50–55 taps per 10 seconds (Halstead, 1947) — the much higher numbers quoted online come from jitter and butterfly techniques, which do not use one finger press per click.")}
-            </p>
           </div>
         )}
 
@@ -747,7 +742,7 @@ export default function RapidTappingClient({ copy } = {}) {
         <div
           ref={containerRef}
           onContextMenu={(e) => { if (gameActiveRef.current) e.preventDefault(); }}
-          className={`overflow-hidden flex flex-col transition-all duration-150 select-none bg-[#080811] text-white ${
+          className={`overflow-hidden flex flex-col select-none bg-[#080811] text-white ${
             isFullscreen
               ? 'fixed inset-0 z-[100] w-screen h-[100dvh] bg-[#050508] flex flex-col items-center justify-center'
               : 'w-full rounded-2xl aspect-video min-h-[460px] md:min-h-[500px] max-h-[88vh] max-md:portrait:aspect-[3/4] max-md:portrait:min-h-[420px] max-md:portrait:max-h-[76vh] max-md:landscape:min-h-[340px] max-md:landscape:max-h-[85vh] bg-[#080811] border border-white/10 relative overflow-hidden flex flex-col'
@@ -864,7 +859,7 @@ export default function RapidTappingClient({ copy } = {}) {
               onToggle={() => setOpenAccordion(openAccordion === 'rules' ? null : 'rules')}
             >
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                {(copy?.rulesItems || RULES_ITEMS).map((item, i) => (
+                {(copy?.rulesItems || localizedRulesItems).map((item, i) => (
                   <RuleItem key={i} num={item.num} text={item.text} highlight={item.highlight} result={item.result} />
                 ))}
               </div>
@@ -885,7 +880,7 @@ export default function RapidTappingClient({ copy } = {}) {
                     {copy?.aboutP1 || t('rapidTapping.aboutP1', 'The CPS Test (rapid tapping test) isolates and evaluates the maximum firing rate of your neuromuscular pathway, measuring how many discrete ballistic inputs your motor cortex can generate per second. In competitive gaming environments like Minecraft PvP, MOBA combat, and semi-automatic pistol rounds in CS2/Valorant, click frequency directly determines damage throughput and engagement outcomes.')}
                   </p>
                   <p className="text-sm leading-relaxed text-gray-300">
-                    {copy?.aboutP2 || t('rapidTapping.aboutP2', "While casual tapping relies on voluntary finger flexor contractions averaging 5–7 CPS, advanced techniques like jitter clicking (transmitting micro-vibrations via isometric forearm co-contraction) and butterfly clicking (alternating dual-finger actuation) push mechanical switch actuation up to 12–20+ CPS. Grounded in Ward Halstead's (1947) finger tapping norms and Todor & Kyprie's (1980) motor oscillation research, our continuous shrink-rate engine tests both your burst velocity and muscular endurance over a sustained 45-second session.")}
+                    {copy?.aboutP2 || t('rapidTapping.aboutP2', "While casual tapping relies on voluntary finger flexor contractions averaging 5–7 CPS, advanced techniques like jitter clicking (transmitting micro-vibrations via isometric forearm co-contraction) and butterfly clicking (alternating dual-finger actuation) push mechanical switch actuation up to 12–20+ CPS. Grounded in Ward Halstead's (1947) finger tapping norms and Todor & Kyprie's (1980) motor oscillation research, our continuous shrink-rate engine tests both your burst velocity and muscular endurance over a sustained 45-second session. Sustained one-finger clicking runs to roughly 5–7 clicks per second, because the standard finger tapping test puts a healthy adult's dominant index finger near 50–55 taps per 10 seconds (Halstead, 1947) — the much higher numbers quoted online come from jitter and butterfly techniques, which do not use one finger press per click.")}
                   </p>
                 </div>
 

@@ -6,21 +6,21 @@ import RelatedDrills from '@/components/drill/RelatedDrills';
 import DrillFooter from '@/components/drill/DrillFooter';
 
 export const metadata = {
-  title: "타겟 획득 에임 연습 – 초탄 정확도 트레이너 | SkillDrills",
-  description: "무료 브라우저 타겟 획득 에임 트레이너. 시야 내 위협 대상을 즉각 식별하고, 목표 구별 능력 및 긴장감 속에서의 초탄 플릭 정확도를 과학적으로 향상시킵니다.",
+  title: "발로란트 에임 연습 - 타겟 포착 트레이너 | SkillDrills",
+  description: "브라우저에서 바로 하는 무료 발로란트 에임 연습. 화면에 나타난 위협을 빠르게 식별하고 초탄 정확도와 타겟 포착 속도를 측정하세요.",
   keywords: [
-    "타겟 획득 에임",
-    "타겟 포착 에임",
-    "초탄 에임 연습",
-    "타겟 획득 에임 연습",
-    "초탄 정확도 연습",
-    "타겟 셀렉션",
-    "FPS 적 포착 연습",
-    "발로란트 초탄 헤드샷",
-    "CS2 샷 정확도",
-    "무료 에임 트레이너",
-    "초탄 에임 속도",
-    "타겟 식별 훈련"
+    "발로란트 에임 연습",
+    "발로란트 에임",
+    "타겟 포착",
+    "초탄 정확도",
+    "적 식별 연습",
+    "위협 식별",
+    "에임 트레이너",
+    "FPS 타겟 포착",
+    "시각 탐지 훈련",
+    "초탄 헤드샷",
+    "무료 에임 연습",
+    "타겟 스위칭"
   ],
   alternates: {
     canonical: "https://skilldrills.online/ko/drills/fps/target-acquisition",
@@ -31,8 +31,8 @@ export const metadata = {
     follow: true,
   },
   openGraph: {
-    title: "타겟 획득 에임 연습 – 초탄 정확도 트레이너 | SkillDrills",
-    description: "시각적 타겟 포착 속도, 특징 대비 식별 능력, 정밀한 초탄 플릭 에임을 훈련하는 무료 브라우저 FPS 에임 트레이너.",
+    title: "발로란트 에임 연습 - 타겟 포착 트레이너 | SkillDrills",
+    description: "브라우저에서 바로 하는 무료 발로란트 에임 연습. 화면에 나타난 위협을 빠르게 식별하고 초탄 정확도와 타겟 포착 속도를 측정하세요.",
     url: "https://skilldrills.online/ko/drills/fps/target-acquisition",
     siteName: 'SkillDrills',
     locale: 'ko_KR',
@@ -40,8 +40,8 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: "타겟 획득 에임 연습 – 초탄 정확도 트레이너 | SkillDrills",
-    description: "시각적 타겟 포착 속도, 특징 대비 식별 능력, 정밀한 초탄 플릭 에임을 훈련하는 무료 브라우저 FPS 에임 트레이너.",
+    title: "발로란트 에임 연습 - 타겟 포착 트레이너 | SkillDrills",
+    description: "브라우저에서 바로 하는 무료 발로란트 에임 연습. 화면에 나타난 위협을 빠르게 식별하고 초탄 정확도와 타겟 포착 속도를 측정하세요.",
   },
 };
 
@@ -59,10 +59,10 @@ export default function TargetAcquisitionKoPage() {
   const softwareSchema = {
     "@context": "https://schema.org",
     "@type": "SoftwareApplication",
-    "name": "타겟 획득 에임 연습",
+    "name": "발로란트 에임 연습 - 타겟 포착 트레이너",
     "applicationCategory": "GameApplication",
     "operatingSystem": "Web Browser",
-    "dateModified": "2026-09-05",
+    "dateModified": "2026-09-20",
     "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
     "description": "시각적 타겟 식별 속도, 위협 우선순위 판단, 초탄 헤드샷 정확도를 극대화하는 무료 브라우저 FPS 에임 트레이너.",
     "genre": "FPS Training / Target Acquisition",
@@ -77,7 +77,7 @@ export default function TargetAcquisitionKoPage() {
   const webAppSchema = {
     "@context": "https://schema.org",
     "@type": "WebApplication",
-    "name": "타겟 획득 에임 연습",
+    "name": "발로란트 에임 연습 - 타겟 포착 트레이너",
     "url": "https://skilldrills.online/ko/drills/fps/target-acquisition",
     "applicationCategory": "GameApplication",
     "operatingSystem": "All",
@@ -93,10 +93,10 @@ export default function TargetAcquisitionKoPage() {
   const videoGameSchema = {
     "@context": "https://schema.org",
     "@type": "VideoGame",
-    "name": "타겟 획득 에임 연습",
+    "name": "발로란트 에임 연습 - 타겟 포착 트레이너",
     "url": "https://skilldrills.online/ko/drills/fps/target-acquisition",
     "description": "시각적 타겟 식별 속도, 위협 우선순위 판단, 초탄 헤드샷 정확도를 극대화하는 무료 브라우저 FPS 에임 트레이너.",
-    "dateModified": "2026-09-05",
+    "dateModified": "2026-09-20",
     "gamePlatform": "Web Browser",
     "genre": ["FPS Training", "Aim Trainer", "Target Acquisition"],
     "playMode": "SinglePlayer",
@@ -108,7 +108,7 @@ export default function TargetAcquisitionKoPage() {
   const faqSchema = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
-    "dateModified": "2026-09-05",
+    "dateModified": "2026-09-20",
     "mainEntity": [
       {
         "@type": "Question",
@@ -227,10 +227,10 @@ export default function TargetAcquisitionKoPage() {
   };
 
   const targetAcquisitionGuide = {
-    title: "타겟 획득 에임 트레이너 실전 가이드",
+    title: "발로란트 에임 연습: 타겟 포착과 초탄 정확도 가이드",
     subtitle: "시각적 식별 속도, 특징 대비 판별력, 그리고 빗나가지 않는 초탄 헤드샷 정확도를 완성하는 과학적 방법론",
     intro: [
-      "타겟 획득 에임 트레이너(Target Acquisition Aim Trainer)는 찰나의 순간에 발생하는 시각적 탐지, 특징 대비 식별, 그리고 치명적인 초탄 적중 능력을 체계적으로 개발하기 위해 엔지니어링된 지각-인지 운동 훈련 드릴입니다. 발로란트, 카운터스트라이크 2, 레인보우 식스 시즈와 같은 전술 슈팅 게임에서는 시야가 열리는 최초 300밀리초 안에 교전의 성패가 갈립니다. 상대방의 결정적인 실루엣을 가장 먼저 탐색, 식별하고 조준선을 정렬하는 플레이어가 라운드를 지배합니다.",
+      "발로란트 에임 연습을 찾는 FPS 플레이어라면, 이 드릴은 화면에 나타난 위협을 발견하고 식별한 뒤 조준선을 첫 탄에 맞추는 과정을 측정합니다. 타겟 포착 속도와 초탄 정확도를 함께 훈련해 발로란트, 카운터스트라이크 2, 레인보우 식스 시즈에서 시야가 열린 뒤 300밀리초 안에 내리는 판단과 조준을 안정화합니다.",
       "시각 탐색 및 객체 식별의 이론적 토대는 Anne Treisman과 Garry Gelade(1980)의 '특징 통합 이론(Feature-Integration Theory)'에서 수립되었습니다. 트레이스먼은 휘도 대비, 색상 팝아웃, 모서리 방향성과 같은 저차원 시각 특징들이 시야 전체에 걸쳐 전주의적(Preattentive)으로 병렬 추출됨을 입증했습니다. 오직 초점화된 공간 주의가 특정 좌표로 유도될 때에만 이러한 개별 특징들이 하나의 인지 가능한 적의 위협으로 결합됩니다.",
       "병렬 시각 정보 처리를 확장한 Jeremy M. Wolfe(1994, 2007)의 '안내 탐색(Guided Search)' 모델은 하향식(Top-down) 인지 기대와 상향식(Bottom-up) 감각 현저성 지도가 상호작용하여 주의의 우선순위를 부여하는 기전을 규명합니다. 시각 대비 식별을 집중 훈련하면 시각 피질이 낮은 대비의 배경 잡음과 방해 요소를 즉시 기각하도록 적응하여, 표적 출현과 운동 개시 사이의 인지 지연 시간을 획기적으로 줄여줍니다.",
       "Paul M. Fitts(1954)의 운동 난이도 법칙, David E. Meyer 등(1988)의 확률적 최적화 하위운동 모델, 그리고 고정밀 디지털 시간 측정(Woods et al., 2015)을 유기적으로 융합한 본 드릴은 인지적 망설임을 제거하고 신속한 1차 탄도 플릭을 구사하여 실전 매치의 압박 속에서도 초탄 명중력을 확고히 정착시킵니다.",
@@ -318,9 +318,9 @@ export default function TargetAcquisitionKoPage() {
       />
       <TargetAcquisitionClient
         copy={{
-          h1Keyword: "타겟 획득 에임 연습",
-          h1Suffix: " - 초탄 정확도 & 적 포착 트레이너",
-          subtitle: "실시간 피드백으로 타겟 시각 탐지, 위협 변별, 초탄 플릭 정확도를 훈련하세요.",
+          h1Keyword: "발로란트 에임 연습",
+          h1Suffix: " - 타겟 포착 트레이너",
+          subtitle: "발로란트·CS2에서 적을 빠르게 식별하고 초탄을 맞히는 능력을 브라우저에서 훈련하세요.",
           statScore: "점수",
           statTime: "남은 시간",
           statAccuracy: "정확도",
@@ -352,7 +352,7 @@ export default function TargetAcquisitionKoPage() {
       <div className="max-w-4xl mx-auto px-4 pb-12">
         <RelatedDrills
           currentCategory="fps"
-          currentHref="/drills/fps/target-acquisition"
+          currentHref="/ko/drills/fps/target-acquisition"
           locale="ko"
         />
       </div>

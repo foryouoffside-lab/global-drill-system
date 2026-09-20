@@ -6,41 +6,39 @@ import { pickSources } from '@/lib/drillSources';
 
 // ============================================================
 // SEO RESEARCH FINDINGS — de-DE (reaction-speed / reaction-time-test)
-// PRIMARY DOMESTIC: "reaktionstest"     — 476 exact / 550 broad searches/mo (Domestic #1 winner)
-//                    "reaktionszeit test" — 283 exact / 306 broad searches/mo (Domestic #2 winner)
+// LIVE RESEARCH (2026-09-20): "Reaktionstest" — Bing 521 exact / 590 broad;
+//                    "Reaktionszeit Test" — 292 exact / 292 broad.
 // SECONDARY / LSI:
-//                    "reaktionszeit"     — 820+ broad searches/mo
-//                    "reflex test"       — 140+ searches/mo
-//                    "reaktionstest online" — High utility intent
-//                    "reaktionszeit messen" — Measurement intent
-//                    "reaktionstest gaming" — Gaming & Esports intent
-// DUAL-WINNER TITLE: Reaktionstest (Reaktionszeit Test) – Kostenloser Reflex-Test online | SkillDrills
+//                    Google Suggest also shows online kostenlos/üben, but MPU and
+//                    driving-test intent are prominent, so the page qualifies its
+//                    promise as a browser-based visual reaction-time drill.
 // ============================================================
 
 export const metadata = {
-  title: 'Reaktionstest Online – Reaktionszeit messen | SkillDrills',
+  title: 'Reaktionstest online: Reaktionszeit in ms | SkillDrills',
   description:
-    'Kostenloser Reaktionstest online: Messe deine visuelle Reaktionszeit in Millisekunden (ms) und vergleiche deinen Wert mit Benchmarks im Browser.',
+    'Kostenloser Reaktionstest für die visuelle Reaktionszeit: Miss deine Zeit in Millisekunden, werte mehrere Versuche aus und vergleiche deine Konstanz im Browser.',
   keywords: [
     'reaktionstest',
     'reaktionszeit test',
-    'reaktionszeit',
     'reaktionstest online',
+    'reaktionstest online kostenlos',
     'reaktionszeit messen',
+    'visuelle reaktionszeit',
     'millisekunden reaktionstest',
     'reaktionstest gaming',
-    'reflexe trainieren',
     'reaktionsgeschwindigkeit',
-    'reflextest online',
+    'reaktionszeit in millisekunden',
+    'reflexe testen',
   ],
   alternates: {
     canonical: 'https://skilldrills.online/de/drills/reaction-speed/reaction-time-test',
     languages: getAlternateLanguages('/drills/reaction-speed/reaction-time-test'),
   },
   openGraph: {
-    title: 'Reaktionstest Online – Reaktionszeit messen | SkillDrills',
+    title: 'Reaktionstest online: Reaktionszeit in ms | SkillDrills',
     description:
-      'Kostenloser Reaktionstest online: Messe deine visuelle Reaktionszeit in Millisekunden (ms) und vergleiche deinen Wert mit wissenschaftlichen Benchmarks.',
+      'Miss deine visuelle Reaktionszeit in Millisekunden, wiederhole mehrere Durchgänge und vergleiche Durchschnitt und Konstanz.',
     url: 'https://skilldrills.online/de/drills/reaction-speed/reaction-time-test',
     siteName: 'SkillDrills',
     locale: 'de_DE',
@@ -48,9 +46,9 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Reaktionstest Online – Reaktionszeit messen | SkillDrills',
+    title: 'Reaktionstest online: Reaktionszeit in ms | SkillDrills',
     description:
-      'Messe deine visuelle Reaktionszeit in Millisekunden (ms) online kostenlos. Präzise Messung und Einstufung im Browser ohne Download.',
+      'Kostenloser Browser-Test für visuelle Reaktionszeit in Millisekunden – mit mehreren Versuchen und ehrlichen Hinweisen zur Gerätelatenz.',
   },
   robots: { index: true, follow: true },
 };
@@ -151,7 +149,7 @@ const howToSchema = {
 const faqSchema = {
   '@context': 'https://schema.org',
   '@type': 'FAQPage',
-  dateModified: '2026-09-11',
+  dateModified: '2026-09-20',
   mainEntity: [
     {
       '@type': 'Question',
@@ -284,6 +282,8 @@ const faqSchema = {
   ],
 };
 
+faqSchema.mainEntity = faqSchema.mainEntity.slice(0, 10);
+
 const reactionGuide = {
   heading: 'Reaktionstest Leitfaden & Benchmarks',
   intro: [
@@ -373,7 +373,13 @@ export default function GermanReactionTimeTestPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
-      <ReactionTimeTestWrapper copy={{ title: 'Reaktionstest' }} />
+      <ReactionTimeTestWrapper
+        copy={{
+          title: 'Reaktionstest',
+          subtitle: 'Visuelle Reaktionszeit in Millisekunden messen',
+          caption: 'Warte auf das Signal und klicke sofort, um deine visuelle Reaktionszeit zu messen.',
+        }}
+      />
       <DrillGuide guide={reactionGuide} />
       <DrillFooter />
     </>

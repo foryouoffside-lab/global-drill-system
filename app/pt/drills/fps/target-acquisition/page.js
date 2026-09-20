@@ -6,21 +6,21 @@ import { getAlternateLanguages } from '@/lib/i18n/locales';
 import { pickSources } from '@/lib/drillSources';
 
 export const metadata = {
-  title: "Treino de Aquisição de Alvos – Primeiro Tiro | SkillDrills",
-  description: "Treine aquisição de alvos, velocidade de detecção visual e precisão do primeiro tiro no navegador. Domine o primeiro disparo para CS2 e Valorant grátis.",
+  title: "Treino de Mira Valorant - Aquisição de Alvos | SkillDrills",
+  description: "Treino de mira gratuito no navegador para Valorant e CS2: pratique aquisição de alvos, detecção visual e precisão do primeiro tiro com métricas reais.",
   keywords: [
-    "treino de aquisicao de alvos",
-    "aquisicao de alvos fps",
-    "treinar primeiro tiro fps",
-    "precisao do primeiro tiro",
-    "como acertar o primeiro tiro",
-    "flick no primeiro tiro",
-    "deteccao de alvos fps",
-    "mira rapida primeiro tiro",
-    "treinador de mira cs2 valorant",
-    "reconhecimento visual fps",
-    "treino de reflexo e mira",
-    "exercicio de aquisicao de alvos"
+    "treino de mira Valorant",
+    "treino de mira",
+    "aquisição de alvos",
+    "detecção de alvos",
+    "primeiro tiro",
+    "precisão do primeiro tiro",
+    "treino de mira FPS",
+    "aim trainer",
+    "reconhecimento visual",
+    "identificação de ameaças",
+    "pré-mira Valorant",
+    "teste de mira"
   ],
   alternates: {
     canonical: "https://skilldrills.online/pt/drills/fps/target-acquisition",
@@ -31,8 +31,8 @@ export const metadata = {
     follow: true,
   },
   openGraph: {
-    title: "Treino de Aquisição de Alvos – Primeiro Tiro | SkillDrills",
-    description: "Treine aquisição de alvos, velocidade de detecção visual e precisão do primeiro tiro no navegador. Domine o primeiro disparo para CS2 e Valorant grátis.",
+    title: "Treino de Mira Valorant - Aquisição de Alvos | SkillDrills",
+    description: "Treino de mira gratuito no navegador para Valorant e CS2: pratique aquisição de alvos, detecção visual e precisão do primeiro tiro com métricas reais.",
     url: "https://skilldrills.online/pt/drills/fps/target-acquisition",
     siteName: 'SkillDrills',
     locale: 'pt_BR',
@@ -40,8 +40,8 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: "Treino de Aquisição de Alvos – Primeiro Tiro | SkillDrills",
-    description: "Treine aquisição de alvos, velocidade de detecção visual e precisão do primeiro tiro no navegador. Domine o primeiro disparo para CS2 e Valorant grátis.",
+    title: "Treino de Mira Valorant - Aquisição de Alvos | SkillDrills",
+    description: "Treino de mira gratuito no navegador para Valorant e CS2: pratique aquisição de alvos, detecção visual e precisão do primeiro tiro com métricas reais.",
   },
 };
 
@@ -59,10 +59,10 @@ export default function TargetAcquisitionPtPage() {
   const softwareSchema = {
     "@context": "https://schema.org",
     "@type": "SoftwareApplication",
-    "name": "Treino de Aquisição de Alvos FPS",
+    "name": "Treino de Mira Valorant - Aquisição de Alvos",
     "applicationCategory": "GameApplication",
     "operatingSystem": "Web Browser",
-    "dateModified": "2026-09-16",
+    "dateModified": "2026-09-20",
     "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
     "description": "Treinador online de aquisição de alvos, detecção visual rápida e precisão do primeiro disparo para shooters táticos como CS2 e Valorant.",
     "genre": "Treinamento FPS / Precisão do Primeiro Tiro",
@@ -77,22 +77,22 @@ export default function TargetAcquisitionPtPage() {
   const webAppSchema = {
     "@context": "https://schema.org",
     "@type": "WebApplication",
-    "name": "Treino de Aquisição de Alvos FPS",
+    "name": "Treino de Mira Valorant - Aquisição de Alvos",
     "url": "https://skilldrills.online/pt/drills/fps/target-acquisition",
     "description": "Treinador online de aquisição de alvos, detecção visual rápida e precisão do primeiro disparo para shooters táticos como CS2 e Valorant.",
     "applicationCategory": "Game",
     "operatingSystem": "Web Browser",
     "browserRequirements": "Requer suporte a HTML5 Canvas e Pointer Lock API",
-    "dateModified": "2026-09-16"
+    "dateModified": "2026-09-20"
   };
 
   const videoGameSchema = {
     "@context": "https://schema.org",
     "@type": "VideoGame",
-    "name": "Treino de Aquisição de Alvos FPS",
+    "name": "Treino de Mira Valorant - Aquisição de Alvos",
     "url": "https://skilldrills.online/pt/drills/fps/target-acquisition",
     "description": "Treinador online de aquisição de alvos, detecção visual rápida e precisão do primeiro disparo para shooters táticos como CS2 e Valorant.",
-    "dateModified": "2026-09-16",
+    "dateModified": "2026-09-20",
     "gamePlatform": "Web Browser",
     "genre": ["Treinamento FPS", "Aim Trainer", "Aquisição de Alvos"],
     "playMode": "SinglePlayer",
@@ -104,7 +104,7 @@ export default function TargetAcquisitionPtPage() {
   const faqSchema = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
-    "dateModified": "2026-09-16",
+    "dateModified": "2026-09-20",
     "mainEntity": [
       {
         "@type": "Question",
@@ -227,9 +227,9 @@ export default function TargetAcquisitionPtPage() {
   };
 
   const targetAcquisitionGuide = {
-    heading: "Guia de Aquisição de Alvos FPS e Biomecânica da Discriminação Visual",
+    heading: "Treino de Mira Valorant: aquisição de alvos e primeiro tiro",
     intro: [
-      "O Treino de Aquisição de Alvos é um exercício perceptivo-cognitivo concebido para cultivar velocidade de detecção visual, discriminação de contraste e extrema precisão no primeiro disparo. Em shooters táticos como Valorant, Counter-Strike 2 e Rainbow Six Siege, os confrontos são decididos nos primeiros 300 milissegundos de linha de visão: o combatente que localiza, identifica e acerta o disparo no adversário primeiro vence o confronto.",
+      "Para quem procura treino de mira Valorant, este drill mede o caminho entre detectar uma ameaça na tela, identificar o alvo e acertar o primeiro tiro. Ele combina aquisição de alvos, detecção visual e precisão do primeiro disparo para Valorant, Counter-Strike 2 e Rainbow Six Siege, em que os primeiros 300 milissegundos de contato visual influenciam o duelo.",
       "A base teórica da busca visual e identificação de objetos foi formulada por Anne Treisman & Garry Gelade (1980) na Teoria de Integração de Características. Treisman provou que características visuais primárias — como contraste de luminância, cores salientes e orientação de bordas — são extraídas em paralelo por todo o campo visual. Apenas quando a atenção espacial focada é direcionada à coordenada, esses traços são fundidos em uma ameaça inimiga identificável.",
       "Expandindo o processamento visual paralelo, o modelo Guided Search de Jeremy M. Wolfe (1994, 2007) detalha como mapas sensoriais de saliência se combinam com expectativas cognitivas para priorizar a atenção. Quando os jogadores treinam discriminação de contraste, o córtex visual aprende a rejeitar distrações de fundo instantaneamente, encurtando o tempo entre o surgimento do alvo e a ação motora.",
       "Integrando as leis motoras de Paul M. Fitts (1954), a teoria de submovimentos otimizados de David E. Meyer et al. (1988) e a cronometria digital de alta resolução (Woods et al., 2015), este exercício condiciona os reflexos a eliminarem hesitações cognitivas e executarem disparos rápidos e certeiros.",
@@ -292,9 +292,9 @@ export default function TargetAcquisitionPtPage() {
   };
 
   const copyPt = {
-    h1Keyword: "Treino de Aquisição de Alvos",
-    h1Suffix: " – Primeiro Tiro FPS",
-    subtitle: "Treine detecção visual de alvos, discriminação de ameaças e precisão do primeiro disparo com métricas em tempo real.",
+    h1Keyword: "Treino de Mira Valorant",
+    h1Suffix: " - Aquisição de Alvos",
+    subtitle: "Pratique detectar o alvo e acertar o primeiro tiro em Valorant e CS2 direto no navegador.",
     statScore: "Pontuação",
     statTime: "Tempo",
     statAccuracy: "Precisão",
@@ -353,7 +353,7 @@ export default function TargetAcquisitionPtPage() {
       <div className="max-w-4xl mx-auto px-4 pb-12">
         <RelatedDrills
           currentCategory="fps"
-          currentHref="/drills/fps/target-acquisition"
+          currentHref="/pt/drills/fps/target-acquisition"
           locale="pt"
         />
       </div>

@@ -6,8 +6,8 @@ import { pickSources } from '@/lib/drillSources';
 
 // ============================================================
 // SEO RESEARCH FINDINGS — South Korea (KR / KO)
-// Primary Intent: 자 반응속도 테스트, 반사신경 테스트 게임, 순발력 게임, 선택 반응속도
-// Korean Context: 페이커 자 반응속도 테스트(Ruler Drop Test) 온라인 대체 및 고속 낙하 표적/함정 식별 훈련
+// Primary Intent: 자 반응속도 테스트, 낙하 반응속도 테스트, 반사신경 테스트 게임
+// Korean Context: 자 낙하 반응속도 검색 의도와 브라우저 낙하 표적/함정 식별 훈련
 // High-Demand, Low-Competition Target Keywords:
 //   - "자 반응속도 테스트" (Massive viral & athletic ruler drop query)
 //   - "반사신경 테스트 게임" (High-intent interactive reflex game query)
@@ -22,27 +22,28 @@ import { pickSources } from '@/lib/drillSources';
 // ============================================================
 
 export const metadata = {
-  title: "자 반응속도 테스트 & 반사신경 테스트 게임 – 무료 낙하 드롭 캐치 훈련 | SkillDrills",
-  description: "무료 온라인 자 반응속도 테스트 및 반사신경 측정 게임. 중력 가속도로 낙하하는 초록색 표적을 밀리초 단위로 낚아채고 붉은색 유인 함정을 억제하여 돈더스 C형 선택 반응시간과 전두엽 충동 제어력을 과학적으로 단련합니다.",
+  title: "자 반응속도 테스트 | 무료 반사신경 게임",
+  description: "무료 자 반응속도 테스트. 낙하하는 초록 표적을 잡고 붉은 함정을 피하며 브라우저에서 반사신경을 연습하세요.",
   keywords: [
     "자 반응속도 테스트",
     "반사신경 테스트 게임",
+    "낙하 반응속도 테스트",
     "반응속도 테스트 게임",
-    "순발력 게임 드랍 스틱",
-    "순발력 측정 사이트",
+    "순발력 측정",
     "선택 반응속도 테스트",
     "낙하 표적 요격 훈련",
     "충동 억제 반사 훈련",
-    "동체시력 낙하 테스트",
-    "드롭 캐치 반응속도"
+    "낙하 표적 반응 게임",
+    "드롭 캐치 반응속도",
+    "반사신경 게임 무료"
   ],
   alternates: {
     canonical: 'https://skilldrills.online/ko/drills/physical/reflex-training/drop-catch',
     languages: getAlternateLanguages('/drills/physical/reflex-training/drop-catch'),
   },
   openGraph: {
-    title: "자 반응속도 테스트 & 반사신경 테스트 게임 – 무료 낙하 드롭 캐치 훈련 | SkillDrills",
-    description: "무료 온라인 자 반응속도 테스트 및 반사신경 측정 게임. 중력 가속도로 낙하하는 초록색 표적을 밀리초 단위로 낚아채고 붉은색 유인 함정을 억제하여 돈더스 C형 선택 반응시간과 전두엽 충동 제어력을 과학적으로 단련합니다.",
+    title: "자 반응속도 테스트 | 무료 반사신경 게임",
+    description: "낙하하는 초록 표적을 잡고 붉은 함정을 피하는 무료 브라우저 반사신경 게임입니다.",
     url: 'https://skilldrills.online/ko/drills/physical/reflex-training/drop-catch',
     siteName: 'SkillDrills',
     locale: 'ko_KR',
@@ -50,8 +51,8 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: "자 반응속도 테스트 & 반사신경 테스트 게임 – 무료 낙하 드롭 캐치 훈련 | SkillDrills",
-    description: "무료 온라인 자 반응속도 테스트 및 반사신경 측정 게임. 중력 가속도로 낙하하는 초록색 표적을 밀리초 단위로 낚아채고 붉은색 유인 함정을 억제하여 돈더스 C형 선택 반응시간과 전두엽 충동 제어력을 과학적으로 단련합니다.",
+    title: "자 반응속도 테스트 | 무료 반사신경 게임",
+    description: "낙하하는 초록 표적을 잡고 붉은 함정을 피하는 무료 브라우저 반사신경 게임입니다.",
   },
   robots: { index: true, follow: true },
 };
@@ -106,7 +107,7 @@ const softwareApplicationSchema = {
     "url": "https://skilldrills.online/ko"
   },
   "inLanguage": "ko",
-  "dateModified": "2026-09-12"
+  "dateModified": "2026-09-20"
 };
 
 const webApplicationSchema = {
@@ -123,7 +124,7 @@ const webApplicationSchema = {
   },
   "url": "https://skilldrills.online/ko/drills/physical/reflex-training/drop-catch",
   "inLanguage": "ko",
-  "dateModified": "2026-09-12"
+  "dateModified": "2026-09-20"
 };
 
 const videoGameSchema = {
@@ -154,7 +155,7 @@ const videoGameSchema = {
 const faqSchema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
-  "dateModified": "2026-09-12",
+  "dateModified": "2026-09-20",
   "mainEntity": [
     {
       "@type": "Question",
@@ -365,7 +366,7 @@ export default function LocalizedDropCatchPageKo() {
       <DropCatchClient
         copy={{
           title: "자 반응속도 테스트 & 드롭 캐치",
-          subtitle: "낙하 표적 요격 & 유인 함정 충동 억제 • 15단계 난이도 스케일링",
+          subtitle: "낙하 표적을 잡고 붉은 함정을 피하기",
           hudLabels: {
             score: "현재 점수",
             time: "남은 시간",

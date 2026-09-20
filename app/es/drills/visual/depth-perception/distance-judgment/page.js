@@ -5,37 +5,35 @@ import { getAlternateLanguages } from '@/lib/i18n/locales';
 import { pickSources } from '@/lib/drillSources';
 
 // ============================================================
-// SEO RESEARCH FINDINGS — distance-judgment (Spanish: Percepción de Profundidad)
-// PRIMARY:  "test de percepción de profundidad" — Core query
-//           "cálculo de distancias test"         — Practical driving search
+// SEO RESEARCH FINDINGS — distance-judgment (Spanish native search)
+// PRIMARY:  "test de percepción de profundidad" — Consumer utility intent
+//           "estereopsis"                       — Clinical vision term
 // SECONDARY / LSI:
-//           "test de estereopsis online"         — Clinical stereopsis
-//           "percepción espacial visual"         — Spatial perception
-//           "prueba de visión tridimensional"    — 3D vision check
-//           "expansión óptica looming"           — Looming velocity
-//           "test de howard-dolman"              — Classical test
+//           "test de estereopsis online"         — Browser intent
+//           "cálculo de distancias"              — Practical distance phrase
+//           "visión estereoscópica"              — Native clinical phrase
+//           "visión tridimensional"              — Supporting query
 // ============================================================
 
 export const metadata = {
-  title: 'Test de Percepción de Profundidad – Cálculo de Distancias',
-  description: 'Test de percepción de profundidad online gratis. Mide tu cálculo de distancias y tiempo de intercepción mediante expansión óptica. Prueba visual científica.',
+  title: 'Test de percepción de profundidad online | SkillDrills',
+  description: 'Test de percepción de profundidad y estereopsis online gratis. Practica el cálculo de distancias con un objetivo en movimiento; no es un diagnóstico oftalmológico.',
   keywords: [
     'test de percepción de profundidad',
-    'cálculo de distancias test',
+    'estereopsis',
     'test de estereopsis online',
+    'cálculo de distancias',
+    'visión estereoscópica',
+    'visión tridimensional',
+    'test de percepción de profundidad online',
+    'entrenar cálculo de distancias',
+    'test de visión binocular',
+    'test de Howard-Dolman',
     'percepción espacial visual',
-    'prueba de visión tridimensional',
-    'juicio de distancia visual',
-    'expansión óptica looming',
-    'tiempo hasta el contacto ttc',
-    'test de howard-dolman',
-    'percepción de profundidad carnet',
-    'entrenamiento de visión 3d',
-    'coordinación ojo distancia',
   ],
   openGraph: {
-    title: 'Test de Percepción de Profundidad – Cálculo de Distancias | SkillDrills',
-    description: 'Test de percepción de profundidad online gratis. Mide tu cálculo de distancias y tiempo de intercepción mediante expansión óptica. Prueba visual científica.',
+    title: 'Test de percepción de profundidad online | SkillDrills',
+    description: 'Test de percepción de profundidad y estereopsis online gratis. Practica el cálculo de distancias con un objetivo en movimiento; no es un diagnóstico oftalmológico.',
     type: 'article',
     url: 'https://skilldrills.online/es/drills/visual/depth-perception/distance-judgment',
     siteName: 'SkillDrills',
@@ -43,8 +41,8 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Test de Percepción de Profundidad – Cálculo de Distancias | SkillDrills',
-    description: 'Test de percepción de profundidad online gratis. Mide tu cálculo de distancias y tiempo de intercepción mediante expansión óptica. Prueba visual científica.',
+    title: 'Test de percepción de profundidad online | SkillDrills',
+    description: 'Test de percepción de profundidad y estereopsis online gratis. Practica el cálculo de distancias con un objetivo en movimiento; no es un diagnóstico oftalmológico.',
   },
   robots: { index: true, follow: true },
   alternates: {
@@ -226,7 +224,7 @@ const faqSchema = {
 };
 
 const distanceGuideEs = {
-  heading: 'Criterios de Percepción de Profundidad y Cálculo Espacial',
+  heading: 'Test de percepción de profundidad y cálculo de distancias',
   intro: [
     'La percepción de profundidad (visión estereoscópica y cálculo espacial) es la facultad visual y neurológica que nos permite interpretar el entorno en tres dimensiones y calcular con exactitud milimétrica la distancia, volumen y trayectoria de objetos en movimiento. En el deporte de alta velocidad (béisbol, tenis, automovilismo), en la aviación, en las pruebas psicotécnicas de conducción y en los eSports tácticos, estimar distancias en fracciones de segundo marca la frontera entre una intercepción perfecta y una colisión crítica.',
     'Este ejercicio traslada a un entorno digital los principios geométricos del clásico aparato estereoscópico de Howard-Dolman (Howard, 1919) y las investigaciones de óptica ecológica de David N. Lee (1976) y David Regan & Kenneth I. Beverley (1978). Al proyectar una esfera 3D a través de un túnel visual hacia un plano de referencia fijo, el test entrena la corteza visual para procesar la velocidad de expansión retiniana (looming) y estimar con exactitud el tiempo hasta el contacto (Time-to-Contact, τ) bajo velocidades crecientes.',
@@ -234,7 +232,7 @@ const distanceGuideEs = {
     'Transparencia y Privacidad de Datos: SkillDrills no almacena ni recopila datos personales, resultados psicotécnicos ni métricas agregadas en servidores externos. Todas las puntuaciones, niveles superados y porcentajes de precisión se guardan exclusivamente en el almacenamiento local (LocalStorage) de su navegador.'
   ],
   benchmarks: {
-    title: 'Tabla de Baremos en Percepción de Profundidad',
+    title: 'Referencia de rendimiento en percepción de profundidad',
     headers: ['Nivel de Rendimiento', 'Error Medio de Profundidad', 'Puntos y Nivel', 'Perfil Visomotor'],
     rows: [
       ['Tier 1: Maestro Estereoscópico Apex', 'Menos de 5,0% de error', '1500+ pts | Nivel 7+', 'Sensibilidad extraordinaria a la expansión óptica; sincronización impecable.'],
@@ -245,7 +243,7 @@ const distanceGuideEs = {
     ],
   },
   protocols: {
-    title: 'Protocolos para Potenciar el Cálculo de Distancias',
+    title: 'Cómo entrenar el cálculo de distancias',
     items: [
       {
         title: 'Protocolo 1: Atención a la Tasa de Expansión Óptica (Lee 1976)',
@@ -293,14 +291,14 @@ const distanceGuideEs = {
 
 const copyEs = {
   title: 'Test de Percepción de Profundidad',
-  subtitle: 'Cálculo de Distancias y Laboratorio de Intercepción 3D',
+  subtitle: 'Cálculo de distancias y visión 3D',
   caption: 'La percepción de profundidad calcula qué tan lejos se encuentran los elementos en el espacio. En una pantalla plana, la tasa de expansión óptica (Lee, 1976; Regan & Beverley, 1978) permite deducir el tiempo hasta el contacto (TTC) con total fidelidad sin conocer el tamaño del objeto.',
   statScore: 'Puntos',
   statTime: 'Tiempo',
   statLevel: 'Nivel',
   statBestScore: 'Récord',
   startTitle: 'Cálculo de Distancias Pro',
-  startSubtitle: 'Visión 3D • Intercepción Visual de Precisión',
+  startSubtitle: 'Practica el timing con un objetivo en movimiento',
   startBtn: 'Comenzar Test',
   getReady: 'PREPÁRATE',
   newBest: 'NUEVO RÉCORD',

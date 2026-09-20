@@ -5,25 +5,25 @@ import RelatedDrills from '@/components/drill/RelatedDrills';
 import { pickSources } from '@/lib/drillSources';
 
 export const metadata = {
-  title: "빛 반응속도 테스트: 시각 반사신경 측정 | SkillDrills",
-  description: "화면 중앙의 백색 섬광에 대한 단순 시각 반응 시간(SRT)을 밀리초 단위로 정밀 측정합니다. 광전기 변환부터 신경근 수축까지 잠복기를 진단하세요.",
+  title: "반응속도 테스트 | 시각 반응시간 측정 | SkillDrills",
+  description: "반응속도 테스트로 빛 자극에 대한 시각 반응시간을 밀리초 단위로 측정하세요. 화면과 입력 지연이 포함된 브라우저 참고값이며 의료 진단이 아닙니다.",
   keywords: [
-    "빛 반응 속도 검사",
-    "빛 반응속도 테스트",
-    "시각 반응속도 테스트",
-    "순발력 테스트",
-    "단순 반응 시간 SRT",
+    "반응속도 테스트",
+    "반응속도테스트",
+    "반응속도 측정",
+    "시각 반응시간",
+    "순발력테스트",
+    "반응속도 테스트 온라인",
+    "반응속도 테스트 프로게이머",
+    "반응속도 테스트 사이트",
     "반사신경 테스트",
+    "시각 반응 테스트",
     "밀리초 반응속도 측정",
-    "피에롱의 법칙 반응속도",
-    "광학 반응 검사",
-    "망막 광전기 변환 속도",
-    "FPS 시각 반응 훈련",
-    "온라인 반사신경 측정"
+    "빛 반응속도 훈련"
   ],
   openGraph: {
-    title: "빛 반응속도 테스트: 시각 반사신경 측정 | SkillDrills",
-    description: "백색 섬광에 반응하는 단순 시각 반응 시간(SRT)을 밀리초(ms) 단위로 정밀 측정하는 무료 온라인 반사신경 테스트.",
+    title: "반응속도 테스트 | 시각 반응시간 측정 | SkillDrills",
+    description: "무료 반응속도 테스트로 시각 자극에 대한 클릭 지연을 밀리초로 확인하세요. 기기별 차이를 비교하는 연습용 도구입니다.",
     type: 'article',
     url: 'https://skilldrills.online/ko/drills/visual/reaction-speed/light-reaction',
     siteName: 'SkillDrills',
@@ -31,8 +31,8 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: "빛 반응속도 테스트: 시각 반사신경 측정 | SkillDrills",
-    description: "밀리초 정밀도로 시각 신경근 반사 속도를 측정하고 훈련하는 무료 온라인 빛 반응속도 검사.",
+    title: "반응속도 테스트 | 시각 반응시간 측정 | SkillDrills",
+    description: "빛 신호가 나타나는 순간 클릭해 시각 반응속도를 훈련하고 기록하세요. 모든 결과는 현재 브라우저에서만 처리됩니다.",
   },
   robots: { index: true, follow: true },
   alternates: {
@@ -228,7 +228,7 @@ const faqSchema = {
 };
 
 const lightReactionGuide = {
-  heading: "시각 반사 연대학 및 단순 반응 시간(SRT) 표준 가이드",
+  heading: "반응속도 테스트로 측정하는 시각 반응시간과 밀리초 기준",
   intro: [
     "단순 시각 반응 시간(Simple Reaction Time, SRT)은 단일 시각 자극이 돌발적으로 출현한 순간부터 무조건적인 운동 반응이 일어날 때까지의 기초 정신운동 잠복기를 의미합니다. 육상 단거리 스타트, 모터스포츠, 격투기, 그리고 고속 FPS e스포츠에서는 수 밀리초의 반사 속도 차이가 승패를 결정합니다.",
     "빛 자극에 대한 신경근 연쇄 반응은 네 단계의 생리학적 경로를 거칩니다: (1) 망막 로돕신 이성질화에 따른 광전기 변환(~20–40 ms), (2) 외측슬상핵(LGN)을 거쳐 1차 시각피질 V1으로 향하는 구심성 신경 전달(~30–50 ms), (3) 후두정엽 및 보조운동영역에서의 지각 및 운동 계획 수립(~50–80 ms), (4) 피질척수로(Pyramidal tract)를 따라 손가락 굴근을 수축시키는 원심성 신호 하달(~30–50 ms)을 거치며, 건강한 일반인의 정상 반응 시간은 약 200–250 ms로 형성됩니다 (Kosinski, 2008; Jain et al., 2015; Shelton & Kumar, 2010).",
@@ -236,7 +236,7 @@ const lightReactionGuide = {
     "측정 기준 및 하드웨어 정밀 보정: 모든 자극 점멸과 사용자 입력은 performance.now() 고정밀 API를 통해 밀리초 단위로 수집됩니다. 디스플레이 재생률과 마우스 USB 폴링 주기에 따른 하드웨어 양자화 지연(Woods et al., 2015)을 고려하여 분석되며, 모든 데이터는 로컬 환경에만 안전하게 격리됩니다."
   ],
   benchmarks: {
-    title: "단순 시각 반응 시간(SRT) 밀리초 퍼포먼스 벤치마크 기준",
+    title: "시각 반응속도 참고 기준 (브라우저 연습용)",
     headers: ["숙련도 티어", "평균 반응 잠복기 (ms)", "달성 점수・콤보 기준", "신경근 전달 및 생리학적 반사 프로필"],
     rows: [
       ["티어 1: 최정상급 신경 반사 (Apex Neural)", "< 180 ms", "15,000점 이상 | 콤보 28x+", "운동 피질의 극대화된 흥분성과 최적화된 피질척수로 전도. 프로 e스포츠 선수나 올림픽 스프린터에게 나타나는 최상위 신경계 수준."],
@@ -248,7 +248,7 @@ const lightReactionGuide = {
     note: "본 기준표는 인간 정신 연대학 및 시각 반응 물리심리학 문헌(Kosinski, 2008; Woods et al., 2015; Pins & Bonnet, 1996; Jain et al., 2015)에 근거한 가이드라인입니다. 일주기 생체 리듬, 카페인 섭취 및 모니터 환경에 따라 결과가 달라질 수 있습니다."
   },
   techniques: {
-    title: "시각 반응속도 단축을 위한 실전 테크닉",
+    title: "반응속도 테스트 결과를 안정시키는 훈련법",
     items: [
       {
         name: "중심와 사전 활성화 및 시선 고정",
@@ -301,7 +301,7 @@ export default function StrobeLatencyPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(howToSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(videoGameSchema) }} />
-      <StrobeLatencyClient copy={{ title: "빛 반응속도 테스트: 시각 반사신경 측정" }} />
+      <StrobeLatencyClient copy={{ title: "반응속도 테스트 (시각 반응)", startCardTitle: "반응속도 테스트", startCardSubtitle: "빛 신호에 반응하는 속도 측정" }} />
       <DrillGuide guide={lightReactionGuide} />
       <div className="max-w-6xl mx-auto px-4 pb-12">
         <RelatedDrills currentCategory="visual" currentHref="https://skilldrills.online/ko/drills/visual/reaction-speed/light-reaction" />

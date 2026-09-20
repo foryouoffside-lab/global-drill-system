@@ -1,5 +1,6 @@
 import GhostingSuppressPursuitClient from '@/app/drills/visual-tracking/ghosting-suppress-pursuit/GhostingSuppressPursuitClientLoader';
 import DrillGuide from '@/components/drill/DrillGuide';
+import DrillFooter from '@/components/drill/DrillFooter';
 import RelatedDrills from '@/components/drill/RelatedDrills';
 import { getAlternateLanguages } from '@/lib/i18n/locales';
 import { pickSources } from '@/lib/drillSources';
@@ -14,11 +15,14 @@ import { pickSources } from '@/lib/drillSources';
 // ============================================================
 
 export const metadata = {
-  title: "잔상 억제 시선 고정 훈련・동체시력 테스트 – 모션 스미어 억제 | SkillDrills",
-  description: "이동 표적의 후방에 생기는 동적 잔상(고스팅)과 모션 스미어를 대뇌 시각 피질에서 능동적으로 억제하고 중심와 고정 안정성을 극대화하는 안구 훈련. 무료・무설치.",
+  title: "모니터 잔상 테스트・시선 고정 훈련 | SkillDrills",
+  description: "움직이는 표적의 잔상과 번짐을 관찰하며 중심 표적에 시선을 고정하는 무료 브라우저 시각 훈련입니다.",
   keywords: [
-    "잔상 억제 시선 고정 훈련",
-    "안구 고정 안정성 검사",
+    "모니터 잔상 테스트",
+    "모니터 테스트",
+    "모니터 주사율 설정",
+    "응답속도 테스트",
+    "동체시력 잔상 제거",
     "동체시력 잔상 제거",
     "모션 블러 시각 훈련",
     "시선 고정력 테스트",
@@ -28,11 +32,12 @@ export const metadata = {
     "동체시력 흔들림 방지",
     "망막 잔상 억제",
     "스무스 퍼슈트 고정력",
-    "전정안구반사 억제"
+    "역잔상 테스트",
+    "움직이는 표적 시선 고정"
   ],
   openGraph: {
-    title: "잔상 억제 시선 고정 훈련・동체시력 테스트 – 모션 스미어 억제 | SkillDrills",
-    description: "이동 표적의 후방에 생기는 동적 잔상(고스팅)과 모션 스미어를 대뇌 시각 피질에서 능동적으로 억제하고 중심와 고정 안정성을 극대화하는 안구 훈련.",
+    title: "모니터 잔상 테스트・시선 고정 훈련 | SkillDrills",
+    description: "움직이는 표적의 잔상과 번짐을 관찰하며 중심 표적에 시선을 고정하는 무료 브라우저 시각 훈련입니다.",
     type: "website",
     url: "https://skilldrills.online/ko/drills/visual-tracking/ghosting-suppress-pursuit",
     siteName: "SkillDrills",
@@ -40,7 +45,7 @@ export const metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "잔상 억제 시선 고정 훈련・동체시력 테스트 – 모션 스미어 억제 | SkillDrills",
+    title: "모니터 잔상 테스트・시선 고정 훈련 | SkillDrills",
     description: "동적 잔상과 모션 스미어를 뇌 수준에서 억제하여 중심와 시선 고정 안정성을 기르는 무료 온라인 안구 훈련.",
   },
   robots: { index: true, follow: true },
@@ -64,9 +69,9 @@ const breadcrumbSchema = {
 const softwareApplicationSchema = {
   "@context": "https://schema.org",
   "@type": "SoftwareApplication",
-  "name": "잔상 억제 시선 고정 훈련・동체시력 고정 안정성 테스트 (Ghosting Suppress Pursuit)",
+  "name": "모니터 잔상 테스트・시선 고정 훈련",
   "applicationCategory": "HealthApplication",
-  "operatingSystem": "Web Browser",
+  "operatingSystem": "웹 브라우저",
   "url": "https://skilldrills.online/ko/drills/visual-tracking/ghosting-suppress-pursuit",
   "offers": {
     "@type": "Offer",
@@ -80,44 +85,45 @@ const softwareApplicationSchema = {
     "표적 크기, 발광(Glow), CRT 주사선 효과 등 맞춤형 렌더링 옵션",
     "외부 서버 통신 없는 완전한 클라이언트 단 로컬 데이터 저장"
   ],
-  "dateModified": "2026-09-15"
+  "dateModified": "2026-09-20"
 };
 
 const webAppSchema = {
   "@context": "https://schema.org",
   "@type": "WebApplication",
   "name": "잔상 억제 시선 고정 훈련 – 동체시력 고정 안정성 온라인 트레이너 | SkillDrills",
-  "alternateName": "Ghosting Suppress Pursuit Korea",
+  "alternateName": "모니터 잔상 테스트",
   "url": "https://skilldrills.online/ko/drills/visual-tracking/ghosting-suppress-pursuit",
-  "dateModified": "2026-09-15",
+  "dateModified": "2026-09-20",
   "description": "무료 온라인 동체시력・시선 안정성 훈련. 시각적 잔상 노이즈 속에서도 시야의 초점을 표적의 중심핵에 고정 유지하는 신경 안구 훈련 도구.",
   "applicationCategory": "EducationalApplication",
-  "operatingSystem": "All",
+  "operatingSystem": "웹 브라우저",
   "browserRequirements": "HTML5 Canvas를 지원하는 최신 웹 브라우저",
   "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
   "author": { "@type": "Organization", "name": "SkillDrills", "url": "https://skilldrills.online" },
   "isAccessibleForFree": true,
-  "learningResourceType": "Educational Game",
+  "learningResourceType": "시각 훈련 게임",
   "teaches": "잔상 억제, 중심와 고정 안정성, 미세사케드 제어, 모션 스미어 차단, 동체시력 해상도 향상"
 };
 
 const videoGameSchema = {
   "@context": "https://schema.org",
   "@type": "VideoGame",
-  "name": "잔상 억제 시선 고정 훈련・동체시력 고정 안정성 테스트 (Ghosting Suppress Pursuit)",
+  "name": "모니터 잔상 테스트・시선 고정 훈련",
   "url": "https://skilldrills.online/ko/drills/visual-tracking/ghosting-suppress-pursuit",
   "description": "잔상을 달고 이동하는 타깃을 시선으로 흔들림 없이 고정 추적하는 무료 웹 게임. 에임 떨림을 방지하고 시각 선명도를 단련합니다.",
-  "genre": ["Eye Tracking", "Visual Training", "Aim Trainer"],
-  "gamePlatform": ["Web Browser", "Desktop", "Mobile"],
+  "genre": ["시선 고정 훈련", "동체시력 훈련", "모니터 테스트"],
+  "gamePlatform": ["웹 브라우저", "컴퓨터", "휴대전화"],
   "applicationCategory": "Game",
-  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+  "dateModified": "2026-09-20"
 };
 
 const howToSchema = {
   "@context": "https://schema.org",
   "@type": "HowTo",
   "name": "잔상 억제 시선 고정 및 안정성 향상 트레이닝 진행 방법",
-  "dateModified": "2026-09-15",
+  "dateModified": "2026-09-20",
   "description": "표적 후방의 잔상 노이즈를 무시하고 중심핵에 시선을 집중시켜 고정 정밀도를 극대화하기 위한 단계별 가이드.",
   "step": [
     {
@@ -154,11 +160,12 @@ const howToSchema = {
 const faqSchema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
+  "dateModified": "2026-09-20",
   "dateModified": "2026-09-15",
   "mainEntity": [
     {
       "@type": "Question",
-      "name": "잔상 억제 시선 고정 훈련(Ghosting Suppress Pursuit)이란 무엇인가요?",
+      "name": "잔상 억제와 시선 고정 훈련이란 무엇인가요?",
       "acceptedAnswer": {
         "@type": "Answer",
         "text": "이 훈련은 이동하는 표적 뒤에 생기는 동적 잔상 링(고스팅)과 모션 스미어에 시선이 후방으로 끌려가는 것을 뇌에서 능동적으로 억제하고, 오직 표적의 중심핵에만 중심와 초점을 안정적으로 고정 유지하도록 훈련하는 신경 안구 드릴입니다(Burr, 1980; Martinez-Conde et al., 2004)."
@@ -190,7 +197,7 @@ const faqSchema = {
     },
     {
       "@type": "Question",
-      "name": "저속 추종(Constant Slow Pursuit)과 본 잔상 억제 훈련의 차이점은 무엇인가요?",
+      "name": "저속 추종 훈련과 본 잔상 억제 훈련의 차이점은 무엇인가요?",
       "acceptedAnswer": {
         "@type": "Answer",
         "text": "저속 추종 훈련은 깔끔한 리사주 곡선을 따라 부드러운 안구 운동 자체를 매끄럽게 유지하는 것이 핵심입니다. 반면 잔상 억제 훈련은 표적 뒤에 의도적인 시각 노이즈 링을 생성하여, 시각 방해 요소를 걸러내는 '디스트랙터 억제력'과 '중심핵 고정 앵커링'을 집중 연마합니다."
@@ -242,7 +249,7 @@ const faqSchema = {
 const guideProps = {
   heading: "동적 잔상 억제와 중심와 고정 안정성의 신경안과학 기준",
   intro: [
-    "동적 잔상 억제(Ghosting Suppress Pursuit)는 빠르게 이동하는 표적 뒤에 형성되는 망막 잔광과 시각적 번짐(모션 스미어)을 대뇌 피질 수준에서 능동적으로 필터링하고, 표적 중심핵에 대한 중심와 고정(Foveal Fixation)을 안정적으로 유지하는 고난도 아이트라킹 과제입니다. 시각 자극이 망막 위를 스쳐 지나갈 때 광수용기 반응 시간차로 인해 필연적으로 발생하는 시각적 혼란을 배제하고 선명한 윤곽 지각을 담보하는 신경 메커니즘을 극한까지 시험합니다(Burr, 1980).",
+    "잔상 억제와 시선 고정 훈련은 빠르게 이동하는 표적 뒤에 형성되는 망막 잔광과 시각적 번짐을 관찰하면서 표적 중심핵에 대한 중심와 고정을 안정적으로 유지하는 과제입니다. 시각 자극이 망막 위를 스쳐 지나갈 때 생기는 혼란을 관찰하고 선명한 윤곽을 유지하는 시각 운동 전략을 연습합니다(Burr, 1980).",
     "피질의 능동적 억제와 미세사케드(Microsaccades)의 생체 제어 기전: 표적이 초당 약 30° 이상의 각속도로 움직이면 망막 슬립이 발생하여 후방으로 꼬리를 무는 잔상 흔적이 형성됩니다(Krauzlis, 2004). 보통 이 후방 노이즈는 시선을 뒤로 끌어당기는 방해물로 작용하지만, 초기 시각 피질(V1/MT)의 시간적 억제 회로가 작동하여 잔상을 뇌 수준에서 지워냅니다(Burr, 1980). 동시에 초당 1~3회 발생하는 미세사케드가 중심와 수용야를 미세 진동시켜 시각 신호의 퇴색(Troxler 현상)을 방지하고 표적 중심에 흔들림 없는 고정 앵커를 유지합니다(Martinez-Conde, Macknik, & Hubel, 2004; Rolfs, 2009).",
     "e스포츠 및 고속 스포츠에서의 실전 적용 가치: FPS 게임에서 총구 화염(Muzzle Flash), 연막탄, 폭발 파티클이 난무하는 전장이나 야구·테니스에서 초고속으로 회전하며 날아오는 공을 추적할 때 주변 시각 노이즈에 동요하지 않고 타깃 중심을 꿰뚫어 보는 능력은 명중률과 직결됩니다(Yang et al., 2025; Appelbaum & Erickson, 2018). 본 드릴은 의도적으로 후방 잔상 링을 생성하여 시각 노이즈에 대한 대뇌 억제력과 중심와 고정 정밀도를 비약적으로 향상시킵니다.",
     "하드웨어 환경의 표준화와 전정안구반사 억제: 디스플레이 픽셀의 응답 속도(GtG)가 느린 환경에서는 패널의 물리적 고스팅이 겹쳐 순수한 신경학적 측정에 왜곡을 초래하므로 144Hz 이상의 고주사율·저잔상 모니터에서의 훈련이 권장됩니다(Woods et al., 2015). 아울러 두부를 완전히 고정하여 전정안구반사(VOR)를 억제함으로써 순수한 외안근 미세 제어 및 대뇌 고정 유지 회로를 독립적으로 단련할 수 있습니다(Leigh & Zee, 2015). 모든 훈련 데이터는 브라우저 로컬 저장소에 안전하게 유지됩니다."
@@ -295,12 +302,12 @@ const guideProps = {
   faqs: faqSchema.mainEntity.map(e => ({ q: e.name, a: e.acceptedAnswer.text })),
   sources: pickSources('burr1980', 'martinezConde2004', 'rolfs2009', 'krauzlis2004', 'leigh2015', 'woods2015'),
   related: [
-    { href: "/ko/drills/visual-tracking/constant-slow-pursuit", label: "정속 저속 추종 안구 훈련 (Constant Slow)" },
-    { href: "/ko/drills/visual-tracking/directional-chaos-pursuit", label: "카오스 방향 추적 훈련 (Directional Chaos)" },
-    { href: "/ko/drills/visual-tracking/dynamic-evasion-pursuit", label: "동적 회피 시선 추적 (Dynamic Evasion)" },
-    { href: "/ko/drills/visual-tracking/sine-wave-pursuit", label: "사인파 추종 훈련 (Sine Wave)" },
-    { href: "/ko/drills/visual-tracking/infinity-pursuit", label: "8자 루프 안구 추적 훈련 (Infinity)" },
-    { href: "/ko/drills/visual-tracking/predictive-pursuit", label: "예측 시선 추적 (Predictive)" }
+    { href: "/ko/drills/visual-tracking/constant-slow-pursuit", label: "정속 저속 추종 안구 훈련" },
+    { href: "/ko/drills/visual-tracking/directional-chaos-pursuit", label: "카오스 방향 추적 훈련" },
+    { href: "/ko/drills/visual-tracking/dynamic-evasion-pursuit", label: "동적 회피 시선 추적" },
+    { href: "/ko/drills/visual-tracking/sine-wave-pursuit", label: "사인파 추종 훈련" },
+    { href: "/ko/drills/visual-tracking/infinity-pursuit", label: "8자 루프 안구 추적 훈련" },
+    { href: "/ko/drills/visual-tracking/predictive-pursuit", label: "예측 시선 추적" }
   ]
 };
 
@@ -342,6 +349,7 @@ export default function LocalizedPage() {
       <div className="max-w-6xl mx-auto px-4 pb-12">
         <RelatedDrills currentCategory="visual-tracking" currentHref="https://skilldrills.online/ko/drills/visual-tracking/ghosting-suppress-pursuit" />
       </div>
+      <DrillFooter />
     </>
   );
 }

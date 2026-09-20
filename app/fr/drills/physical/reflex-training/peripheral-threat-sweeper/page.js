@@ -22,18 +22,18 @@ import { pickSources } from '@/lib/drillSources';
 // ============================================================
 
 export const metadata = {
-  title: "Vision Périphérique – Test en Ligne | SkillDrills",
-  description: "Test de vision périphérique gratuit en ligne. Neutralisez les menaces à 360° du coin des yeux et élargissez votre champ visuel utile (UFOV) au PC.",
+  title: "Vision périphérique | Test en ligne",
+  description: "Test gratuit de vision périphérique au navigateur. Gardez le regard au centre, repérez les menaces latérales et entraînez le champ visuel utile (UFOV).",
   keywords: [
     "entraîner sa vision périphérique",
     "test de vision périphérique en ligne",
-    "élargir son champ visuel exercices",
-    "éviter la vision en tunnel gaming",
     "test de réflexes périphériques",
-    "test champ visuel utile ufov",
     "exercices de vision périphérique sport",
-    "attention visuelle couverte test",
+    "élargir son champ visuel exercices",
+    "test champ visuel utile UFOV",
     "entraînement visuel esport",
+    "éviter la vision en tunnel gaming",
+    "attention visuelle couverte test",
     "rapidité de balayage visuel"
   ],
   alternates: {
@@ -41,8 +41,8 @@ export const metadata = {
     languages: getAlternateLanguages('/drills/physical/reflex-training/peripheral-threat-sweeper'),
   },
   openGraph: {
-    title: "Vision Périphérique – Test en Ligne | SkillDrills",
-    description: "Test de vision périphérique gratuit en ligne. Neutralisez les menaces à 360° du coin des yeux et élargissez votre champ visuel utile (UFOV) au PC.",
+    title: "Vision périphérique | Test en ligne",
+    description: "Test gratuit de vision périphérique au navigateur. Gardez le regard au centre, repérez les menaces latérales et entraînez le champ visuel utile (UFOV).",
     url: 'https://skilldrills.online/fr/drills/physical/reflex-training/peripheral-threat-sweeper',
     siteName: 'SkillDrills',
     locale: 'fr_FR',
@@ -50,8 +50,8 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: "Vision Périphérique – Test en Ligne | SkillDrills",
-    description: "Test de vision périphérique gratuit en ligne. Neutralisez les menaces à 360° du coin des yeux et élargissez votre champ visuel utile (UFOV) au PC.",
+    title: "Vision périphérique | Test en ligne",
+    description: "Test gratuit de vision périphérique au navigateur. Gardez le regard au centre, repérez les menaces latérales et entraînez le champ visuel utile (UFOV).",
   },
   robots: { index: true, follow: true },
 };
@@ -93,6 +93,9 @@ const softwareApplicationSchema = {
   "name": "Simulateur de Vision Périphérique et Champ Visuel Utile (UFOV)",
   "applicationCategory": "HealthApplication",
   "operatingSystem": "All",
+  "url": "https://skilldrills.online/fr/drills/physical/reflex-training/peripheral-threat-sweeper",
+  "inLanguage": "fr-FR",
+  "dateModified": "2026-09-20",
   "offers": {
     "@type": "Offer",
     "price": "0",
@@ -104,6 +107,10 @@ const webApplicationSchema = {
   "@context": "https://schema.org",
   "@type": "WebApplication",
   "name": "Entraîneur d'Attention Visuelle Couverte et Balayage Radial 360°",
+  "url": "https://skilldrills.online/fr/drills/physical/reflex-training/peripheral-threat-sweeper",
+  "description": "Drill de navigateur pour garder le regard au centre, repérer les menaces latérales et entraîner le champ visuel utile.",
+  "inLanguage": "fr-FR",
+  "dateModified": "2026-09-20",
   "browserRequirements": "Requires JavaScript and HTML5 Canvas support",
   "genre": "Training, Reflex, Vision, Attention"
 };
@@ -111,8 +118,11 @@ const webApplicationSchema = {
 const videoGameSchema = {
   "@context": "https://schema.org",
   "@type": "VideoGame",
-  "name": "Peripheral Threat Sweeper 360 Challenge",
+  "name": "Entraînement de Vision Périphérique et Défense Radiale",
   "gamePlatform": "Web Browser",
+  "url": "https://skilldrills.online/fr/drills/physical/reflex-training/peripheral-threat-sweeper",
+  "inLanguage": "fr-FR",
+  "dateModified": "2026-09-20",
   "applicationSubCategory": "Esports Cognitive Vision Drill"
 };
 
@@ -323,8 +333,8 @@ export default function LocalizedPeripheralThreatSweeperPageFr() {
       />
       <PeripheralThreatSweeperClient
         copy={{
-          title: "Entraîner sa Vision Périphérique & Test de Champ Visuel en Ligne",
-          subtitle: "Balayage Radial 360° et Défense de Bouclier • Difficulté Évolutive Continue",
+          title: "Vision Périphérique",
+          subtitle: "Fixez le centre et repérez les menaces latérales",
           description: "La vision périphérique correspond à ce que vous percevez sans regarder directement. Les détails s'estompent rapidement depuis le centre du regard, mais l'attention peut être orientée vers la périphérie pendant que les yeux demeurent immobiles, accélérant la réaction motrice (Posner, 1980). Un trait unique comme la couleur se repère en un temps constant indépendamment des distracteurs, tandis que des cibles combinant plusieurs critères imposent une recherche active (Treisman & Gelade, 1980) — ce qui rend certaines menaces aisées à cueillir en bordure et d'autres plus exigeantes.",
           hudLabels: {
             score: "Score",

@@ -1,5 +1,6 @@
 import SineWavePursuitClient from '@/app/drills/visual-tracking/sine-wave-pursuit/SineWavePursuitClientLoader';
 import DrillGuide from '@/components/drill/DrillGuide';
+import DrillFooter from '@/components/drill/DrillFooter';
 import RelatedDrills from '@/components/drill/RelatedDrills';
 import { getAlternateLanguages } from '@/lib/i18n/locales';
 import { pickSources } from '@/lib/drillSources';
@@ -14,25 +15,23 @@ import { pickSources } from '@/lib/drillSources';
 // ============================================================
 
 export const metadata = {
-  title: "サイン波眼球運動トレーニング・波形追従 – 正弦波パシュート | SkillDrills",
-  description: "水平および垂直の正弦波（サイン波）周期オシレーションに沿って滑らかに視線を走らせる無料アイトラッキング練習。折り返し地点の加減速制御と位相遅れ（ラグ）ゼロ化を鍛える。登録不要。",
+  title: "サイン波の眼球追従トレーニング | SkillDrills",
+  description: "正弦波の標的を水平・垂直に追う無料ブラウザ練習。追従の遅れ、速度の一致、折り返し時の誤差を記録。",
   keywords: [
     "サイン波 眼球運動",
-    "波形 エイム 練習",
     "正弦波 追従 訓練",
     "滑動性追従眼球運動",
     "動体視力 上下運動",
-    "位相遅れ 改善",
-    "ゼロ位相遅れ",
-    "小脳 内部周期モデル",
-    "折り返し速度勾配",
-    "調和オシレーション",
-    "補正サッケード 抑制",
-    "正弦波 追従性眼球運動 練習"
+    "眼球運動 波形 練習",
+    "位相遅れ 追従",
+    "水平 標的 追視",
+    "垂直 標的 追視",
+    "追従利得 テスト",
+    "折り返し 視線 練習"
   ],
   openGraph: {
-    title: "サイン波眼球運動トレーニング・波形追従 – 正弦波パシュート | SkillDrills",
-    description: "水平・垂直の正弦波運動に視線を同期させ、周期的な加減速と方向転換を滑らかに追従する無料オンラインビジョントレーニング。",
+    title: "サイン波の眼球追従トレーニング | SkillDrills",
+    description: "正弦波の標的を水平・垂直に追う無料ブラウザ練習。追従の遅れ、速度の一致、折り返し時の誤差を記録。",
     type: "website",
     url: "https://skilldrills.online/ja/drills/visual-tracking/sine-wave-pursuit",
     siteName: "SkillDrills",
@@ -40,8 +39,8 @@ export const metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "サイン波眼球運動トレーニング・波形追従 – 正弦波パシュート | SkillDrills",
-    description: "正弦波の周期運動に小脳を同期させ、追従遅延（位相ラグ）をゼロに抑え込む科学的アイトラッキングドリル。",
+    title: "サイン波の眼球追従トレーニング | SkillDrills",
+    description: "周期的に動く標的を追視し、速度の一致と折り返し時の位置誤差を確認する短時間ドリル。",
   },
   robots: { index: true, follow: true },
   alternates: {
@@ -72,7 +71,7 @@ const softwareApplicationSchema = {
   "url": "https://skilldrills.online/ja/drills/visual-tracking/sine-wave-pursuit",
   "publisher": { "@type": "Organization", "name": "SkillDrills", "url": "https://skilldrills.online/ja" },
   "inLanguage": "ja",
-  "dateModified": "2026-09-15"
+  "dateModified": "2026-09-20"
 };
 
 const webAppSchema = {
@@ -85,12 +84,13 @@ const webAppSchema = {
   "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
   "url": "https://skilldrills.online/ja/drills/visual-tracking/sine-wave-pursuit",
   "inLanguage": "ja",
-  "dateModified": "2026-09-15"
+  "dateModified": "2026-09-20"
 };
 
 const videoGameSchema = {
   "@context": "https://schema.org",
   "@type": "VideoGame",
+  "dateModified": "2026-09-20",
   "name": "サイン波追従エイムトレーニング (Sine Wave Pursuit)",
   "url": "https://skilldrills.online/ja/drills/visual-tracking/sine-wave-pursuit",
   "description": "波打つ軌道を描いて飛び回るターゲットに対し、減速と加速の変曲点を完全に読み切ってクロスヘアを吸い付かせるFPSエイム訓練ゲーム。",
@@ -103,6 +103,7 @@ const videoGameSchema = {
 const howToSchema = {
   "@context": "https://schema.org",
   "@type": "HowTo",
+  "dateModified": "2026-09-20",
   "name": "サイン波眼球運動および波形追従エイムの訓練手順",
   "description": "周期的サイン波運動に対してゼロ位相遅れを実現し、滑動性追従利得を最大化する4段階のプロトコル。",
   "step": [
@@ -136,6 +137,7 @@ const howToSchema = {
 const faqSchema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
+  "dateModified": "2026-09-20",
   "mainEntity": [
     {
       "@type": "Question",
@@ -221,45 +223,45 @@ const faqSchema = {
 };
 
 const guideProps = {
-  heading: "サイン波眼球運動トレーニングの科学的根拠と波形追従エイム実践ガイド",
+  heading: "サイン波の眼球追従と波形練習のガイド",
   intro: [
     "人間の眼球運動系における滑動性追従（Smooth Pursuit）は、等速で直線移動する物体を追うときよりも、連続的に加減速を繰り返す周期運動を追うときにその真価が試されます。物理学における単振動（Simple Harmonic Motion）を模した正弦波（サイン波）の軌道では、物体の位置・速度・加速度が三角関数に従って絶え間なく変化します。中央の平衡点を通過するときに速度は最大となり、両端の折り返し頂点に近づくにつれて急減速して瞬間的に静止します。",
     "視覚生理学の草分けであるスターク（Stark et al., 1962）やロビンソン（Robinson, 1965）らの研究によれば、人間が未知のランダムな動きを追従するときは約130〜150msの神経伝達遅延（位相ラグ）が不可避です。しかし、標的が周期的な正弦波を描く場合、小脳（Cerebellum）の片葉（Flocculus）および腹側前頭眼野は数周期のうちに運動の周波数と振幅を学習し、フィードフォワード信号を生成して位相遅れをゼロに収束させることが実証されています（ゼロ位相遅れ現象）。",
     "しかし、周波数が高くなったり疲労が重なると、折り返し地点で眼球のブレーキが間に合わず標的を追い越す「オーバーシュート」や、中央通過時の最高速度に追いつけず視線が遅れる「アンダーシュート」が発生します。ラシュバス（Rashbass, 1961）やバーヒル（Bahill et al., 1980）が指摘するように、追従速度利得（Gain）が低下すると、脳は視線を強制的に標的に引き戻すため「補正サッケード（Catch-up Saccade）」を乱発せざるを得なくなり、そのたびにサッケード抑制によって視覚情報が瞬間遮断されます。",
-    "本ドリル（Sine Wave Pursuit）は、水平および垂直方向の正弦波オシレーションを通じて、小脳の周期性同調回路と外眼筋の連続的な微細速度出力を鍛え上げるために設計されています。折り返し時の滑らかな加減速コントロールとブレない追従利得1.0を体得し、FPSにおける変則ストレイフの捕捉や球技における曲線軌道の完全掌握を実現してください。"
+    "本ドリルは、水平・垂直の正弦波を追いながら、速度の変化、折り返し、位置のずれを観察するために設計されています。記録はこの練習画面での目安であり、医療検査やゲーム・競技結果の保証ではありません。疲れや違和感があれば中止してください。"
   ],
   benchmarks: {
-    title: "正弦波追従利得および調和オシレーション精度ベンチマーク (Sinusoidal Pursuit Gain)",
-    headers: ["習熟度クラス", "追従利得 (Velocity Gain)", "位相遅れ (Phase Lag)", "周期あたり補正サッケード数", "総合トラッキング判定"],
+    title: "正弦波追従の速度一致と波形精度の目安",
+    headers: ["習熟度", "速度の一致度", "位相の遅れ", "1周期の補正回数", "追従の特徴"],
     rows: [
-      ["エリート (Elite)", "0.96 ~ 1.02", "15ms 未満 (ほぼ完全同期)", "0 ~ 1 回 (滑らかな完全追従)", "完璧な小脳周期モデル、ゼロ位相遅れ"],
-      ["マスター (Master)", "0.90 ~ 0.95", "15ms ~ 30ms", "2 ~ 3 回", "極めて高精度、折り返し時の乱れなし"],
-      ["ダイヤモンド (Diamond)", "0.82 ~ 0.89", "31ms ~ 50ms", "4 ~ 5 回", "標準的波形追従、高速時に軽微な遅れ"],
-      ["ゴールド (Gold)", "0.70 ~ 0.81", "51ms ~ 80ms", "6 ~ 8 回", "変曲点でブレ発生、補正サッケード頻発"],
-      ["ビギナー (Beginner)", "0.70 未満", "80ms 超過", "9 回以上", "周期予測が破綻、後追いのサッケード跳躍"]
+      ["上級", "0.96〜1.02", "15ms未満", "0〜1回", "速度がよく一致し補正が少ない"],
+      ["熟練", "0.90〜0.95", "15〜30ms", "2〜3回", "折り返しでも安定"],
+      ["中級", "0.82〜0.89", "31〜50ms", "4〜5回", "速い波形で少し遅れる"],
+      ["練習中", "0.70〜0.81", "51〜80ms", "6〜8回", "折り返しでずれやすい"],
+      ["初めて", "0.70未満", "80ms超", "9回以上", "後から追う動きが多い"]
     ],
     note: "※ 本基準は1080p解像度、速度1.0x〜1.5xの標準サイン波設定における実測データに基づきます。眼球角速度と標的角速度の一致率（Gain）およびサッケード混入頻度を評価しています。"
   },
   techniques: {
-    title: "波形軌道を完全掌握する4大スムーズパシュート技術",
+    title: "波形を追うための4つの練習ポイント",
     items: [
       {
-        name: "調和オシレーションの位相ゼロ同期 (Harmonic Phase Locking)",
+        name: "周期リズムと視線を合わせる",
         desc: "最初の1〜2往復で波形の「リズム」を体感し、メトロノームのように小脳の内部発振器をターゲットの往復周期にチューニングします。視覚フィードバックを待たずに、周期リズムに合わせて先回りで眼筋を駆動します。",
         tips: "目だけで追うのではなく、頭の中で「1、2、1、2」と一定の拍子を意識すると位相遅れが激減します。"
       },
       {
-        name: "折り返し頂点でのソフトブレーキ制御 (Apex Deceleration Cushioning)",
+        name: "折り返しでゆっくり減速する",
         desc: "標的が波の頂点（最高点・最下点）に近づくにつれて自然にブレーキをかけ、停止から反転へ移る変曲点で視線が跳ねないように滑らかに方向を切り替えます。",
         tips: "頂点で無理に止めようとせず、ブランコが最高点に達して自然に折り返すような重力的な脱力感をイメージしてください。"
       },
       {
-        name: "中央ゼロクロス点でのピーク加速維持 (Zero-Crossing Acceleration Boost)",
+        name: "中央通過時の速度変化を追う",
         desc: "サイン波の中央線（平衡点）を通過する瞬間は標的の移動速度がピークに達します。ここで油断して速度が落ちると一気に遅れをとるため、最も集中して眼球速度出力を高めます。",
         tips: "波の中央を通過する瞬間だけ、意識的に視線の推進力を一段階押し上げる感覚を持ちましょう。"
       },
       {
-        name: "追いつきサッケードの意識的抑制 (Suppression of Catch-up Saccades)",
+        name: "急な補正を減らして滑らかに追う",
         desc: "視線がわずかに標的から離れても、反射的にピクッと目を飛ばす（サッケード）のを我慢し、スムーズパシュートの速度を微増させて滑らかに距離を詰めます。",
         tips: "視線をカクつかせず、ゴム紐で引っ張られるようにジワッと目標の中心核へ戻す感覚を研ぎ澄ましてください。"
       }
@@ -279,12 +281,12 @@ const guideProps = {
   })),
   sources: pickSources('stark1962', 'robinson1965', 'rashbass1961', 'bahill1980', 'barnes2008', 'woods2015'),
   related: [
-    { href: "/ja/drills/visual-tracking/constant-slow-pursuit", label: "低速追従眼球運動トレーニング (Constant Slow)" },
-    { href: "/ja/drills/visual-tracking/directional-chaos-pursuit", label: "カオス方向追従テスト (Directional Chaos)" },
-    { href: "/ja/drills/visual-tracking/dynamic-evasion-pursuit", label: "リアクティブ追従訓練 (Dynamic Evasion)" },
-    { href: "/ja/drills/visual-tracking/ghosting-suppress-pursuit", label: "残像抑制固視トレーニング (Ghosting Suppress)" },
-    { href: "/ja/drills/visual-tracking/infinity-pursuit", label: "8の字眼球運動トレーニング (Infinity)" },
-    { href: "/ja/drills/visual-tracking/predictive-pursuit", label: "遮蔽軌道予測テスト (Predictive Pursuit)" }
+    { href: "/ja/drills/visual-tracking/constant-slow-pursuit", label: "低速追従眼球運動トレーニング" },
+    { href: "/ja/drills/visual-tracking/directional-chaos-pursuit", label: "方向変化に合わせる追従テスト" },
+    { href: "/ja/drills/visual-tracking/dynamic-evasion-pursuit", label: "回避する標的の追従訓練" },
+    { href: "/ja/drills/visual-tracking/ghosting-suppress-pursuit", label: "残像を抑える固視トレーニング" },
+    { href: "/ja/drills/visual-tracking/infinity-pursuit", label: "8の字眼球運動トレーニング" },
+    { href: "/ja/drills/visual-tracking/predictive-pursuit", label: "遮蔽後の軌道予測テスト" }
   ]
 };
 
@@ -318,9 +320,9 @@ export default function JapaneseSineWavePursuitPage() {
 
       <SineWavePursuitClient
         copy={{
-          title: "サイン波眼球運動トレーニング・波形追従エイムテスト：調和オシレーションとゼロ位相遅れ",
-          subtitle: "正弦波の周期的な加減速と方向反転に小脳を同期させるスムーズパシュート訓練",
-          description: "水平・垂直の正弦波（サイン波）周期オシレーションに沿って視線を滑らかに制御する無料アイトラッキング練習。中央通過時の最大速度と折り返し変曲点での減速を完全同期させ、130〜150msの神経生理学的位相遅れ（ラグ）をゼロに補正します。登録不要・ブラウザで即座に測定可能。"
+          title: "サイン波の眼球追従トレーニング",
+          subtitle: "周期的に動く標的を水平・垂直に追視する練習",
+          description: "正弦波の標的を追い、中央通過と折り返しでの速度変化を観察します。練習後に追従の一致度と位置誤差を確認できます。無料でブラウザから始められます。"
         }}
       />
 
@@ -329,6 +331,8 @@ export default function JapaneseSineWavePursuitPage() {
       <div className="max-w-6xl mx-auto px-4 pb-12">
         <RelatedDrills currentCategory="visual-tracking" currentHref="https://skilldrills.online/ja/drills/visual-tracking/sine-wave-pursuit" />
       </div>
+
+      <DrillFooter />
     </>
   );
 }

@@ -157,6 +157,166 @@ const physicalCategories = [
   },
 ];
 
+// Native hub copy is authored per locale from the category research note.
+// It is intentionally separate from the drill-name registry: a category query
+// needs native market phrasing, not a word-for-word translation of English UI.
+const PHYSICAL_HUB_COPY = {
+  en: {
+    h1: 'Physical Reflex & Agility Drills',
+    description: 'Choose from 11 free browser drills for reaction time, footwork, balance, coordination, and fast target decisions. No sign-up; scores stay in your browser.',
+    drillsHeading: 'Choose a physical drill',
+    domainsHeading: 'Choose a training focus',
+    drill: 'Drill',
+    drills: 'Drills',
+    categories: {
+      reflex: { name: 'Reflex & Evasion', description: 'React to visual cues, stop impulses, and avoid moving threats.' },
+      fitness: { name: 'Agility & Fitness', description: 'Train footwork rhythm, jump timing, and rapid target acquisition.' },
+      coordination: { name: 'Coordination & Pathing', description: 'Practice cross-body reach, spatial paths, and grid movement.' },
+      balance: { name: 'Balance & Stability', description: 'Build cursor steadiness and continuous force-centering control.' },
+    },
+    engineHeading: 'What these browser drills measure',
+    engine: [
+      { title: 'Dynamic evasion timing', description: 'Train visual choice, stopping control, and fast responses to changing target paths.' },
+      { title: 'Equilibrium and control', description: 'Practice steady tracking and continuous corrections against simulated force and drift.' },
+      { title: 'Bilateral agility rhythm', description: 'Build alternating timing and cross-body path selection across compact movement grids.' },
+    ],
+    faqHeading: 'Questions about physical drills',
+    cta: 'Start a physical drill',
+  },
+  ja: {
+    h1: '反応速度・敏捷性トレーニング',
+    description: '反応速度テスト、フットワーク、リズムジャンプ、バランス、手と目の協調をブラウザで練習できる無料の11ドリル。気になる種目を選び、記録はブラウザ内に保存します。',
+    drillsHeading: 'フィジカルドリルを選ぶ',
+    domainsHeading: '練習する能力を選ぶ',
+    drill: 'ドリル',
+    drills: 'ドリル',
+    categories: {
+      reflex: { name: '反応・回避', description: '視覚刺激への反応、衝動の停止、動く脅威の回避を練習します。' },
+      fitness: { name: '敏捷性・フィットネス', description: 'フットワークのリズム、ジャンプのタイミング、素早い標的選択を鍛えます。' },
+      coordination: { name: '協調運動・経路', description: '左右をまたぐ操作、空間経路、グリッド移動を練習します。' },
+      balance: { name: 'バランス・安定性', description: 'カーソルの安定、中心合わせ、連続的な姿勢調整を練習します。' },
+    },
+    engineHeading: 'ブラウザで測る運動スキル',
+    engine: [
+      { title: '回避のタイミング', description: '視覚的な選択、停止操作、変化する標的への素早い反応を鍛えます。' },
+      { title: '平衡感覚と操作', description: '力やずれを想定した画面上で、安定した追従と連続修正を練習します。' },
+      { title: '左右の敏捷性リズム', description: '小さな移動グリッドで、左右交互のタイミングと経路選択を高めます。' },
+    ],
+    faqHeading: 'フィジカルドリルのよくある質問',
+    cta: 'ドリルを始める',
+  },
+  ko: {
+    h1: '반응속도·민첩성 훈련',
+    description: '반응속도 테스트, 순발력, 발놀림, 균형감각과 손눈협응을 브라우저에서 연습하는 무료 11개 드릴입니다. 원하는 종목을 선택하고 기록은 브라우저에만 저장됩니다.',
+    drillsHeading: '피지컬 드릴 선택',
+    domainsHeading: '훈련 영역 선택',
+    drill: '드릴',
+    drills: '드릴',
+    categories: {
+      reflex: { name: '반응·회피', description: '시각 신호에 반응하고 충동을 멈추며 움직이는 위협을 피합니다.' },
+      fitness: { name: '민첩성·체력', description: '발놀림 리듬, 점프 타이밍과 빠른 목표 선택을 연습합니다.' },
+      coordination: { name: '협응·경로', description: '교차 동작, 공간 경로와 그리드 이동을 연습합니다.' },
+      balance: { name: '균형·안정성', description: '커서 안정, 중심 맞추기와 연속적인 조절 능력을 기릅니다.' },
+    },
+    engineHeading: '브라우저에서 측정하는 운동 능력',
+    engine: [
+      { title: '동적 회피 타이밍', description: '시각 선택, 멈춤 조절과 변하는 목표 경로에 대한 빠른 반응을 연습합니다.' },
+      { title: '균형과 조절', description: '가상의 힘과 흔들림에 맞춰 안정적으로 추적하고 계속 보정합니다.' },
+      { title: '양측 민첩성 리듬', description: '작은 이동 그리드에서 좌우 교대 타이밍과 경로 선택을 기릅니다.' },
+    ],
+    faqHeading: '피지컬 드릴 자주 묻는 질문',
+    cta: '드릴 시작하기',
+  },
+  de: {
+    h1: 'Reaktion, Agilität & Koordination trainieren',
+    description: 'Kostenlose Browser-Drills für Reaktionszeit, Fußarbeit, Gleichgewicht, Koordination und schnelle Zielentscheidungen. Wählen Sie aus 11 interaktiven Übungen; Ergebnisse bleiben im Browser.',
+    drillsHeading: 'Einen Physical-Drill wählen',
+    domainsHeading: 'Trainingsbereich wählen',
+    drill: 'Drill',
+    drills: 'Drills',
+    categories: {
+      reflex: { name: 'Reaktion & Ausweichen', description: 'Auf visuelle Signale reagieren, Impulse stoppen und bewegte Gefahren vermeiden.' },
+      fitness: { name: 'Agilität & Fitness', description: 'Fußarbeitsrhythmus, Sprungtiming und schnelle Zielauswahl trainieren.' },
+      coordination: { name: 'Koordination & Wege', description: 'Überkreuzbewegungen, räumliche Wege und Gitterbewegungen üben.' },
+      balance: { name: 'Gleichgewicht & Stabilität', description: 'Ruhige Steuerung, Zentrierung und laufende Korrekturen entwickeln.' },
+    },
+    engineHeading: 'Was diese Browser-Drills messen',
+    engine: [
+      { title: 'Dynamisches Ausweichen', description: 'Visuelle Auswahl, Bremskontrolle und Reaktion auf wechselnde Zielwege trainieren.' },
+      { title: 'Gleichgewicht und Kontrolle', description: 'Stabiles Tracking und laufende Korrekturen bei simuliertem Druck und Drift üben.' },
+      { title: 'Beidseitiger Agilitätsrhythmus', description: 'Wechselnde Schrittzeiten und Wegauswahl in kompakten Bewegungsrastern verbessern.' },
+    ],
+    faqHeading: 'Fragen zu Physical-Drills',
+    cta: 'Physical-Drill starten',
+  },
+  pt: {
+    h1: 'Treinos de Agilidade e Reflexo',
+    description: '11 treinos gratuitos no navegador para tempo de reação, agilidade, equilíbrio, coordenação motora e decisão rápida sobre alvos. Escolha um exercício; seus resultados ficam no navegador.',
+    drillsHeading: 'Escolha um treino físico',
+    domainsHeading: 'Escolha o foco do treino',
+    drill: 'treino',
+    drills: 'treinos',
+    categories: {
+      reflex: { name: 'Reflexo e esquiva', description: 'Reaja a sinais visuais, freie impulsos e evite ameaças em movimento.' },
+      fitness: { name: 'Agilidade e condicionamento', description: 'Treine ritmo dos pés, tempo de salto e seleção rápida de alvos.' },
+      coordination: { name: 'Coordenação e trajetórias', description: 'Pratique movimentos cruzados, caminhos espaciais e deslocamentos em grade.' },
+      balance: { name: 'Equilíbrio e estabilidade', description: 'Desenvolva controle firme, centralização e correções contínuas.' },
+    },
+    engineHeading: 'O que estes treinos no navegador medem',
+    engine: [
+      { title: 'Tempo de esquiva dinâmica', description: 'Treine escolha visual, controle da parada e resposta a trajetórias que mudam.' },
+      { title: 'Equilíbrio e controle', description: 'Pratique rastreamento estável e correções contínuas contra força e desvio simulados.' },
+      { title: 'Ritmo de agilidade bilateral', description: 'Melhore alternância dos lados e escolha de trajetórias em grades compactas.' },
+    ],
+    faqHeading: 'Dúvidas sobre treinos físicos',
+    cta: 'Começar um treino',
+  },
+  es: {
+    h1: 'Entrenamiento de Reflejos y Agilidad',
+    description: '11 ejercicios gratuitos en el navegador para tiempo de reacción, agilidad, equilibrio, coordinación motriz y decisiones rápidas ante objetivos. Elige una prueba y guarda tus marcas localmente.',
+    drillsHeading: 'Elige un ejercicio físico',
+    domainsHeading: 'Elige el foco del entrenamiento',
+    drill: 'ejercicio',
+    drills: 'ejercicios',
+    categories: {
+      reflex: { name: 'Reflejos y evasión', description: 'Responde a señales visuales, frena impulsos y evita amenazas en movimiento.' },
+      fitness: { name: 'Agilidad y condición física', description: 'Entrena el ritmo de pies, el tiempo de salto y la selección rápida de objetivos.' },
+      coordination: { name: 'Coordinación y trayectorias', description: 'Practica movimientos cruzados, recorridos espaciales y desplazamientos en cuadrícula.' },
+      balance: { name: 'Equilibrio y estabilidad', description: 'Mejora el control preciso, el centrado y las correcciones continuas.' },
+    },
+    engineHeading: 'Qué miden estos ejercicios en el navegador',
+    engine: [
+      { title: 'Tiempo de evasión dinámica', description: 'Entrena la elección visual, el frenado y la respuesta ante trayectorias cambiantes.' },
+      { title: 'Equilibrio y control', description: 'Practica el seguimiento estable y las correcciones continuas frente a fuerza y deriva simuladas.' },
+      { title: 'Ritmo de agilidad bilateral', description: 'Mejora la alternancia izquierda-derecha y la elección de recorridos en cuadrículas compactas.' },
+    ],
+    faqHeading: 'Preguntas sobre los ejercicios físicos',
+    cta: 'Empezar un ejercicio',
+  },
+  fr: {
+    h1: 'Entraînement des réflexes et de la vivacité',
+    description: '11 exercices gratuits dans le navigateur pour le temps de réaction, la vivacité, l’équilibre, la coordination motrice et la décision rapide face aux cibles. Choisissez un test; vos scores restent dans le navigateur.',
+    drillsHeading: 'Choisissez un exercice physique',
+    domainsHeading: 'Choisissez votre objectif',
+    drill: 'exercice',
+    drills: 'exercices',
+    categories: {
+      reflex: { name: 'Réflexes et esquive', description: 'Réagissez aux signaux visuels, freinez vos impulsions et évitez les menaces mobiles.' },
+      fitness: { name: 'Vivacité et condition physique', description: 'Travaillez le rythme des appuis, le timing des sauts et le choix rapide des cibles.' },
+      coordination: { name: 'Coordination et trajectoires', description: 'Pratiquez les gestes croisés, les parcours spatiaux et les déplacements sur grille.' },
+      balance: { name: 'Équilibre et stabilité', description: 'Développez la précision du contrôle, le centrage et les corrections continues.' },
+    },
+    engineHeading: 'Ce que mesurent ces exercices dans le navigateur',
+    engine: [
+      { title: 'Timing d’esquive dynamique', description: 'Travaillez le choix visuel, le freinage et la réponse aux trajectoires changeantes.' },
+      { title: 'Équilibre et contrôle', description: 'Pratiquez le suivi stable et les corrections continues face à une force et une dérive simulées.' },
+      { title: 'Rythme d’agilité bilatérale', description: 'Améliorez l’alternance gauche-droite et le choix de trajectoire sur des grilles compactes.' },
+    ],
+    faqHeading: 'Questions sur les exercices physiques',
+    cta: 'Commencer un exercice',
+  },
+};
+
 // Flat, interest-ordered list for the carousel picker
 const orderedPhysicalDrills = sortByInterest(
   physicalCategories.flatMap((category) =>
@@ -166,6 +326,7 @@ const orderedPhysicalDrills = sortByInterest(
 
 export default function PhysicalDrillsClient({ faqs = [] }) {
   const { locale, localizeHref, t } = useTranslation();
+  const hubCopy = PHYSICAL_HUB_COPY[locale] ?? PHYSICAL_HUB_COPY.en;
   const [isClient, setIsClient] = useState(false);
   const [drillLevels, setDrillLevels] = useState({});
   const canvasRef = useRef(null);
@@ -329,10 +490,10 @@ export default function PhysicalDrillsClient({ faqs = [] }) {
         {/* Page heading */}
         <div className="mb-8">
           <h1 className="text-2xl sm:text-3xl font-bold tracking-tight text-ink-1">
-            {t('hubs.physical.h1', 'Reflex & Coordination Training')}
+            {hubCopy.h1}
           </h1>
           <p className="mt-2 text-sm sm:text-base text-ink-2 leading-relaxed">
-            {t(
+            {hubCopy.description || t(
               'hubs.physical.desc',
               'Reflex and coordination drills measure how fast you can react to something appearing, and how accurately you can steer, stop and sequence a movement once you have. Simple visual reaction costs about 200–250 ms before any of that starts (Woods et al., 2015), and vision needs roughly 100–150 ms more to correct a movement already under way (Woodworth, 1899) — which is why the faster drills reward prediction over reaction. These run in a browser through a mouse or touchscreen, so they train the timing and the decision rather than physical fitness. Free, no sign-up, and every score stays in your browser.'
             )}
@@ -343,7 +504,7 @@ export default function PhysicalDrillsClient({ faqs = [] }) {
         <Reveal>
           <DrillCarousel
             headingId="physical-drills"
-            heading={t('hubs.physical.drillsHeading', 'Agility & reflex drills')}
+            heading={hubCopy.drillsHeading}
             accent="rose"
             icon={Activity}
             showcase
@@ -370,7 +531,7 @@ export default function PhysicalDrillsClient({ faqs = [] }) {
             <div className="flex items-center gap-2 mb-6">
               <Layers className="w-5 h-5 text-rose-400" />
               <h2 className="text-base sm:text-lg font-semibold tracking-tight text-ink-1">
-                Physical Training Domains
+                {hubCopy.domainsHeading}
               </h2>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
@@ -388,15 +549,15 @@ export default function PhysicalDrillsClient({ faqs = [] }) {
                         </div>
                         <div>
                           <h3 className="text-sm font-semibold tracking-tight text-ink-1">
-                            {cat.name}
+                            {hubCopy.categories[cat.id].name}
                           </h3>
                           <span className="text-xs font-medium text-rose-400">
-                            {cat.drills.length} {cat.drills.length === 1 ? 'Drill' : 'Drills'}
+                            {cat.drills.length} {cat.drills.length === 1 ? hubCopy.drill : hubCopy.drills}
                           </span>
                         </div>
                       </div>
                       <p className="text-xs text-ink-2 leading-relaxed mb-4">
-                        {cat.description}
+                        {hubCopy.categories[cat.id].description}
                       </p>
                     </div>
 
@@ -437,7 +598,7 @@ export default function PhysicalDrillsClient({ faqs = [] }) {
             <div className="flex items-center gap-2 mb-6">
               <Sparkles className="w-5 h-5 text-rose-400" />
               <h2 className="text-base sm:text-lg font-semibold tracking-tight text-ink-1">
-                Engine &amp; Hardware Optimization
+                {hubCopy.engineHeading}
               </h2>
             </div>
 
@@ -447,10 +608,10 @@ export default function PhysicalDrillsClient({ faqs = [] }) {
                   <Zap className="w-4 h-4" />
                 </div>
                 <h3 className="text-sm font-semibold tracking-tight text-ink-1 mb-1.5">
-                  Dynamic Evasion Latency
+                  {hubCopy.engine[0].title}
                 </h3>
                 <p className="text-2xs text-ink-3 leading-relaxed">
-                  Compresses reaction delay under chaotic multi-vector obstacle patterns and unexpected trajectory inversions.
+                  {hubCopy.engine[0].description}
                 </p>
               </div>
 
@@ -459,10 +620,10 @@ export default function PhysicalDrillsClient({ faqs = [] }) {
                   <Activity className="w-4 h-4" />
                 </div>
                 <h3 className="text-sm font-semibold tracking-tight text-ink-1 mb-1.5">
-                  Equilibrium &amp; Force Resistance
+                  {hubCopy.engine[1].title}
                 </h3>
                 <p className="text-2xs text-ink-3 leading-relaxed">
-                  Develops continuous counter-force centering against simulated environmental wind vectors and momentum drift.
+                  {hubCopy.engine[1].description}
                 </p>
               </div>
 
@@ -471,10 +632,10 @@ export default function PhysicalDrillsClient({ faqs = [] }) {
                   <Gauge className="w-4 h-4" />
                 </div>
                 <h3 className="text-sm font-semibold tracking-tight text-ink-1 mb-1.5">
-                  Bilateral Agility Cadence
+                  {hubCopy.engine[2].title}
                 </h3>
                 <p className="text-2xs text-ink-3 leading-relaxed">
-                  Calibrates alternating left-right timing intervals and cross-body coordinate mapping across 3x3 tactical agility matrices.
+                  {hubCopy.engine[2].description}
                 </p>
               </div>
             </div>
@@ -488,7 +649,7 @@ export default function PhysicalDrillsClient({ faqs = [] }) {
               <div className="flex items-center gap-2 mb-6">
                 <Sparkles className="w-5 h-5 text-rose-400" />
                 <h2 className="text-base sm:text-lg font-semibold tracking-tight text-ink-1">
-                  {t('home.faqTitle', 'Frequently Asked Questions')}
+                  {hubCopy.faqHeading}
                 </h2>
               </div>
 
@@ -527,7 +688,7 @@ export default function PhysicalDrillsClient({ faqs = [] }) {
 
         <StickyMobileCta
           href={hasLocalizedRoute(locale, '/drills/physical/reflex-training/quick-dodge') ? localizeHref('/drills/physical/reflex-training/quick-dodge') : '/drills/physical/reflex-training/quick-dodge'}
-          label={t('hubs.physical.startCta', 'Start Agility Drill')}
+          label={hubCopy.cta}
           categoryName={t('header.physical', 'Physical')}
         />
       </div>

@@ -1,5 +1,6 @@
 import SineWavePursuitClient from '@/app/drills/visual-tracking/sine-wave-pursuit/SineWavePursuitClientLoader';
 import DrillGuide from '@/components/drill/DrillGuide';
+import DrillFooter from '@/components/drill/DrillFooter';
 import RelatedDrills from '@/components/drill/RelatedDrills';
 import { getAlternateLanguages } from '@/lib/i18n/locales';
 import { pickSources } from '@/lib/drillSources';
@@ -14,25 +15,23 @@ import { pickSources } from '@/lib/drillSources';
 // ============================================================
 
 export const metadata = {
-  title: "Sinuswellen Augentraining – Sine Wave | SkillDrills",
-  description: "Kostenloses Sinuswellen-Augentraining: Trainiere harmonische Blickfolge, zerebelläre Synchronisation und Phasennacheilung online direkt im Browser.",
+  title: "Sinuswellen-Blickverfolgung | SkillDrills",
+  description: "Verfolge ein sinusförmig bewegtes Ziel horizontal und vertikal. Kostenlose Browserübung mit Phasenabweichung und Positionsfehler.",
   keywords: [
-    "sinuswelle augentraining",
-    "harmonische blickfolgebewegung",
-    "kurven tracking training",
-    "phasennacheilung augen",
-    "vertikale blickverfolgung",
-    "wellenform sehtraining",
-    "null-phasennacheilung",
-    "zerebellärer oszillator",
-    "wendepunkt abbremsung",
-    "harmonische oszillation",
-    "blickfolge gain 1.0",
-    "dynamische blickfolgebewegung test"
+    "Sinuswelle Augentraining",
+    "harmonische Blickfolge",
+    "Kurven Blickverfolgung",
+    "Phasenverzögerung Augen",
+    "vertikale Blickverfolgung",
+    "Wellenform Sehtraining",
+    "Blickverfolgung Übung",
+    "bewegtes Ziel verfolgen",
+    "Blickfolge Geschwindigkeit testen",
+    "Bahn am Wendepunkt verfolgen"
   ],
   openGraph: {
-    title: "Sinuswellen Augentraining – Sine Wave | SkillDrills",
-    description: "Folge kontinuierlich beschleunigenden und abbremsenden Sinuswellen mit perfekter zerebellärer Phasenanpassung ohne Latenz.",
+    title: "Sinuswellen-Blickverfolgung | SkillDrills",
+    description: "Verfolge ein sinusförmig bewegtes Ziel horizontal und vertikal. Kostenlose Browserübung mit Phasenabweichung und Positionsfehler.",
     type: "website",
     url: "https://skilldrills.online/de/drills/visual-tracking/sine-wave-pursuit",
     siteName: "SkillDrills",
@@ -40,8 +39,8 @@ export const metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Sinuswellen Augentraining – Sine Wave | SkillDrills",
-    description: "Wissenschaftliches Sehtraining zur Eliminierung von Phasennacheilung bei harmonischen Oszillationen.",
+    title: "Sinuswellen-Blickverfolgung | SkillDrills",
+    description: "Kurze Übung für Blickfolge bei periodischer Bewegung. Prüfe Geschwindigkeit, Phasenabweichung und Fehler am Wendepunkt.",
   },
   robots: { index: true, follow: true },
   alternates: {
@@ -72,7 +71,7 @@ const softwareApplicationSchema = {
   "url": "https://skilldrills.online/de/drills/visual-tracking/sine-wave-pursuit",
   "publisher": { "@type": "Organization", "name": "SkillDrills", "url": "https://skilldrills.online/de" },
   "inLanguage": "de",
-  "dateModified": "2026-09-15"
+  "dateModified": "2026-09-20"
 };
 
 const webAppSchema = {
@@ -85,12 +84,13 @@ const webAppSchema = {
   "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
   "url": "https://skilldrills.online/de/drills/visual-tracking/sine-wave-pursuit",
   "inLanguage": "de",
-  "dateModified": "2026-09-15"
+  "dateModified": "2026-09-20"
 };
 
 const videoGameSchema = {
   "@context": "https://schema.org",
   "@type": "VideoGame",
+  "dateModified": "2026-09-20",
   "name": "Sinuswellen Tracking Training (Sine Wave Pursuit)",
   "url": "https://skilldrills.online/de/drills/visual-tracking/sine-wave-pursuit",
   "description": "Aim- und Augentrainingstool für E-Sportler und Athleten zur Perfektionierung von Kurven-Tracking, Sprungbewegungen und Wellenverfolgung.",
@@ -103,6 +103,7 @@ const videoGameSchema = {
 const howToSchema = {
   "@context": "https://schema.org",
   "@type": "HowTo",
+  "dateModified": "2026-09-20",
   "name": "Anleitung zum Training harmonischer Blickfolgebewegungen auf Sinusbahnen",
   "description": "Systematischer Ablauf zur Synchronisation des Kleinhirns auf periodische Schwingungen und Erreichung einer Null-Phasennacheilung.",
   "step": [
@@ -136,6 +137,7 @@ const howToSchema = {
 const faqSchema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
+  "dateModified": "2026-09-20",
   "mainEntity": [
     {
       "@type": "Question",
@@ -279,12 +281,12 @@ const guideProps = {
   })),
   sources: pickSources('stark1962', 'robinson1965', 'rashbass1961', 'bahill1980', 'barnes2008', 'woods2015'),
   related: [
-    { href: "/de/drills/visual-tracking/constant-slow-pursuit", label: "Konstantes langsames Blickfolgetraining (Constant Slow)" },
-    { href: "/de/drills/visual-tracking/directional-chaos-pursuit", label: "Richtungs-Chaos Blickverfolgung (Directional Chaos)" },
-    { href: "/de/drills/visual-tracking/dynamic-evasion-pursuit", label: "Dynamische Ausweich-Blickverfolgung (Dynamic Evasion)" },
-    { href: "/de/drills/visual-tracking/ghosting-suppress-pursuit", label: "Nachbild-Unterdrückung Blickverfolgung (Ghosting Suppress)" },
-    { href: "/de/drills/visual-tracking/infinity-pursuit", label: "Liegende Acht Augentraining (Infinity)" },
-    { href: "/de/drills/visual-tracking/predictive-pursuit", label: "Prädiktive Blickführung (Predictive Pursuit)" }
+    { href: "/de/drills/visual-tracking/constant-slow-pursuit", label: "Konstantes langsames Blickfolgetraining" },
+    { href: "/de/drills/visual-tracking/directional-chaos-pursuit", label: "Blickverfolgung bei Richtungswechseln" },
+    { href: "/de/drills/visual-tracking/dynamic-evasion-pursuit", label: "Blickverfolgung bei Ausweichbewegungen" },
+    { href: "/de/drills/visual-tracking/ghosting-suppress-pursuit", label: "Blickstabilität bei Nachbildern" },
+    { href: "/de/drills/visual-tracking/infinity-pursuit", label: "Augentraining mit einer liegenden Acht" },
+    { href: "/de/drills/visual-tracking/predictive-pursuit", label: "Prädiktive Blickverfolgung bei Verdeckung" }
   ]
 };
 
@@ -318,9 +320,9 @@ export default function GermanSineWavePursuitPage() {
 
       <SineWavePursuitClient
         copy={{
-          title: "Sinuswellen-Augentraining & Harmonische Blickverfolgung: Null-Phasennacheilung",
-          subtitle: "Synchronisation des Kleinhirns auf periodische Sinus-Beschleunigungen und Wendepunkt-Dämpfung",
-          description: "Kostenloses Online-Augentraining entlang horizontaler und vertikaler Sinuswellen. Trainiere zerebelläre Synchronisation, harmonische Beschleunigung und eliminiere die 150ms Phasennacheilung an Richtungsumkehrpunkten. Für flüssiges Aiming in Shootern und Ballsport-Antizipation. Sofort im Browser startbar."
+          title: "Sinuswellen-Blickverfolgung",
+          subtitle: "Ein bewegtes Ziel horizontal und vertikal verfolgen",
+          description: "Verfolge ein sinusförmig bewegtes Ziel und beobachte die Geschwindigkeitsänderung am Mittelpunkt und Wendepunkt. Prüfe danach Blickfolge und Positionsabweichung. Die Übung ist kostenlos im Browser."
         }}
       />
 
@@ -329,6 +331,8 @@ export default function GermanSineWavePursuitPage() {
       <div className="max-w-6xl mx-auto px-4 pb-12">
         <RelatedDrills currentCategory="visual-tracking" currentHref="https://skilldrills.online/de/drills/visual-tracking/sine-wave-pursuit" />
       </div>
+
+      <DrillFooter />
     </>
   );
 }

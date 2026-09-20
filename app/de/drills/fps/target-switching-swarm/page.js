@@ -6,21 +6,21 @@ import { getAlternateLanguages } from '@/lib/i18n/locales';
 import { pickSources } from '@/lib/drillSources';
 
 export const metadata = {
-  title: "Target Switching Aim Trainer – Zielwechsel | SkillDrills",
-  description: "Kostenloses Target-Switching-Training im Browser: Trainiere schnelle Zielwechsel, Spray Transfers und verzögerungsfreie Flicks für CS2 und Valorant.",
+  title: "Aim Trainer Zielwechsel - Multi-Target | SkillDrills",
+  description: "Kostenloser Aim Trainer im Browser: Übe schnelle Zielwechsel, Multi-Target-Aiming und Spray Transfers für CS2 und Valorant.",
   keywords: [
+    "Aim Trainer Zielwechsel",
     "Target Switching Aim Trainer",
     "Zielwechsel FPS Training",
     "Multi-Target Aiming CS2",
     "Spray Transfer Training",
+    "Zielwechsel Übung Valorant",
     "Target Switching Übungen",
     "Flick Übergang FPS",
-    "Speed Switching Aiming",
-    "Zielwechsel Übung Valorant",
     "Multikill Aiming FPS",
-    "Kinematischer Zielwechsel",
-    "Target Switching Deutsch",
-    "Zielbestätigung Hesitation"
+    "schneller Zielwechsel",
+    "Zielwechsel ohne Überziehen",
+    "Klickrhythmus FPS"
   ],
   alternates: {
     canonical: "https://skilldrills.online/de/drills/fps/target-switching-swarm",
@@ -31,8 +31,8 @@ export const metadata = {
     follow: true,
   },
   openGraph: {
-    title: "Target Switching Aim Trainer – Zielwechsel | SkillDrills",
-    description: "Kostenloses Target-Switching-Training im Browser: Trainiere schnelle Zielwechsel, Spray Transfers und verzögerungsfreie Flicks für CS2 und Valorant.",
+    title: "Aim Trainer Zielwechsel - Multi-Target | SkillDrills",
+    description: "Kostenloser Aim Trainer im Browser: Übe schnelle Zielwechsel, Multi-Target-Aiming und Spray Transfers für CS2 und Valorant.",
     url: "https://skilldrills.online/de/drills/fps/target-switching-swarm",
     siteName: 'SkillDrills',
     locale: 'de_DE',
@@ -40,8 +40,8 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: "Target Switching Aim Trainer – Zielwechsel | SkillDrills",
-    description: "Kostenloses Target-Switching-Training im Browser: Trainiere schnelle Zielwechsel, Spray Transfers und verzögerungsfreie Flicks für CS2 und Valorant.",
+    title: "Aim Trainer Zielwechsel - Multi-Target | SkillDrills",
+    description: "Kostenloser Aim Trainer im Browser: Übe schnelle Zielwechsel, Multi-Target-Aiming und Spray Transfers für CS2 und Valorant.",
   },
 };
 
@@ -59,10 +59,10 @@ export default function TargetSwitchingSwarmDePage() {
   const softwareSchema = {
     "@context": "https://schema.org",
     "@type": "SoftwareApplication",
-    "name": "Target Switching Aim Trainer",
+    "name": "Aim Trainer Zielwechsel - Multi-Target",
     "applicationCategory": "GameApplication",
     "operatingSystem": "Web Browser",
-    "dateModified": "2026-09-11",
+    "dateModified": "2026-09-20",
     "offers": { "@type": "Offer", "price": "0", "priceCurrency": "EUR" },
     "description": "Kostenloses Browsertraining für Multi-Target-Flicks, Spray Transfers und kognitive Zielwechsel in dynamischen Target Swarms.",
     "genre": "FPS Training / Target Switching",
@@ -77,10 +77,10 @@ export default function TargetSwitchingSwarmDePage() {
   const webAppSchema = {
     "@context": "https://schema.org",
     "@type": "WebApplication",
-    "name": "Target Switching Aim Trainer",
+    "name": "Aim Trainer Zielwechsel - Multi-Target",
     "applicationCategory": "GameApplication",
     "operatingSystem": "Web Browser",
-    "dateModified": "2026-09-11",
+    "dateModified": "2026-09-20",
     "offers": { "@type": "Offer", "price": "0", "priceCurrency": "EUR" },
     "browserRequirements": "Erfordert Pointer Lock API, JavaScript, HTML5 Canvas",
     "description": "Kostenloses Browsertraining für Multi-Target-Flicks, Spray Transfers und kognitive Zielwechsel in dynamischen Target Swarms.",
@@ -90,10 +90,10 @@ export default function TargetSwitchingSwarmDePage() {
   const videoGameSchema = {
     "@context": "https://schema.org",
     "@type": "VideoGame",
-    "name": "Target Switching Aim Trainer",
+    "name": "Aim Trainer Zielwechsel - Multi-Target",
     "url": "https://skilldrills.online/de/drills/fps/target-switching-swarm",
     "description": "Kostenloses Browsertraining für Multi-Target-Flicks, Spray Transfers und kognitive Zielwechsel in dynamischen Target Swarms.",
-    "dateModified": "2026-09-11",
+    "dateModified": "2026-09-20",
     "gamePlatform": "Web Browser",
     "genre": ["FPS Training", "Aim Trainer", "Target Switching"],
     "playMode": "SinglePlayer",
@@ -105,7 +105,7 @@ export default function TargetSwitchingSwarmDePage() {
   const faqSchema = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
-    "dateModified": "2026-09-11",
+    "dateModified": "2026-09-20",
     "mainEntity": [
       {
         "@type": "Question",
@@ -228,9 +228,9 @@ export default function TargetSwitchingSwarmDePage() {
   };
 
   const targetSwitchingGuide = {
-    heading: "Target Switching Aim Trainer Guide & Kinematik des Zielwechsels",
+    heading: "Aim Trainer Zielwechsel: Multi-Target und Spray Transfer",
     intro: [
-      "Target Switching Swarm ist ein intensives visuo-motorisches Trainingssystem zur Ausbildung rasanter, zögerungsfreier Übergänge zwischen mehreren feindlichen Zielen. In taktischen Shootern wie Counter-Strike 2 und Valorant sowie dynamischen Battle Royales wie Apex Legends entscheiden Multikill-Situationen über den Rundenausgang: Nach dem Ausschalten des ersten Gegners muss das Fadenkreuz ohne kognitive Verzögerung unmittelbar auf den zweiten Flankierenden einrasten.",
+      "Wer einen Aim Trainer für Zielwechsel sucht, trainiert hier den Wechsel des Fadenkreuzes vom gerade getroffenen Gegner zum nächsten Ziel ohne Bestätigungspause. Das Drill misst Übergangslatenz und Trefferquote für Multi-Target-Aiming, Spray Transfer und schnelle Duelle in CS2 und Valorant.",
       "Die Psychophysik schneller Zielwechsel gehorcht dem Fitts'schen Gesetz (Fitts, 1954) und dem stochastischen Modell optimierter Subbewegungen von David E. Meyer et al. (1988). Eine gezielte Mausbewegung besteht aus einem ballistischen Primärschub über rund 90% der Flugbahn und einer sensomotorisch geführten terminalen Mikrokontraktion. Unerfahrene Spieler verlieren 100–250 ms durch passives Abwarten der Kill-Bestätigung. Profi-Schützen hingegen leiten die primäre Augensakkade zum nächsten Ziel bereits ein, während der vorherige Treffer registriert wird.",
       "Die visuelle Orientierung in dichten Zielschwärmen beruht auf der Feature Integration Theory und präattentiver visueller Suche (Anne M. Treisman & Garry Gelade, 1980; Jeremy M. Wolfe, 2007). Das menschliche Sehzentrum kann räumliche Bezugspunkte über Visual Indexing (FINST-Theorie) simultan erfassen. Dadurch optimieren erfahrene Spieler ihre Flick-Pfade durch Ziel-Cluster nach dem Prinzip der kürzesten Winkelabstände.",
       "Messmethodik: Jedes Ereignis wird clientseitig über die hochauflösende performance.now()-Uhr deines Browsers registriert – absolut latenzfrei ohne Server-Roundtrip. Zu beachten: Browser-Timer werden aus Sicherheitsgründen (Spectre-Schutz) auf ca. 1 ms gerundet; Displays quantisieren visuelle Reize über ihre Bildwiederholrate (16,7 ms bei 60 Hz, 6,9 ms bei 144 Hz, 4,1 ms bei 240 Hz). Die USB-Abfragerate der Maus fügt ca. 1 ms bei 1000 Hz hinzu. Differenzen unter 5 ms stellen messtechnisches Rauschen dar; vergleiche Trainingsläufe stets auf demselben Setup."
@@ -319,9 +319,9 @@ export default function TargetSwitchingSwarmDePage() {
       />
       <TargetSwitchingSwarmClient
         copy={{
-          h1Keyword: "Target Switching Aim Trainer",
-          h1Suffix: " – Zielwechsel & Spray Transfer",
-          subtitle: "Trainiere blitzschnelle Zielübergänge, Spray Transfers und visuelle Indexierung ohne Verzögerungspause.",
+    h1Keyword: "Aim Trainer Zielwechsel",
+    h1Suffix: " – Multi-Target & Spray Transfer",
+    subtitle: "Trainiere schnelle Übergänge zwischen mehreren Zielen und kontrollierte Spray Transfers direkt im Browser.",
           statScore: "Punkte",
           statTime: "Zeit",
           statAccuracy: "Präzision",
@@ -346,7 +346,7 @@ export default function TargetSwitchingSwarmDePage() {
       <div className="max-w-4xl mx-auto px-4 pb-12">
         <RelatedDrills
           currentCategory="fps"
-          currentHref="/drills/fps/target-switching-swarm"
+          currentHref="/de/drills/fps/target-switching-swarm"
           locale="de"
         />
       </div>

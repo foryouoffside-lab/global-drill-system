@@ -6,7 +6,7 @@ import { pickSources } from '@/lib/drillSources';
 
 // ============================================================
 // SEO RESEARCH FINDINGS — Japan (JP / JA)
-// Primary Intent: 反射神経 ゲーム ブラウザ, 反射神経 ゲーム 無料, 動体視力 トレーニング 無料, 周辺視野 トレーニング
+// Primary Intent: 反射神経テスト, 反応速度テスト, 反射神経ゲーム, 動体視力 トレーニング
 // Context: Browser reflex games, dynamic visual acuity & FPS hazard/AOE evasion
 // Target Queries:
 //   - "反射神経 ゲーム ブラウザ" (High-intent gaming query)
@@ -20,27 +20,27 @@ import { pickSources } from '@/lib/drillSources';
 // ============================================================
 
 export const metadata = {
-  title: "反射神経ゲーム・動体視力トレーニング – 無料周辺視野＆危険回避ドリル | SkillDrills",
-  description: "無料オンライン反射神経ゲーム＆動体視力トレーニング。3×3グリッド上で爆発する危険セルを周辺視野で瞬時に察知し、安全ゾーンへマウスをフリック回避して空間反射と危機回避能力を科学的に鍛えます。",
+  title: "反射神経テスト｜無料ブラウザゲーム | SkillDrills",
+  description: "無料の反射神経テスト・ブラウザゲーム。3×3グリッドの危険マスを周辺視野で見つけ、安全マスへ移動して反応速度と危機回避を鍛えます。",
   keywords: [
-    "反射神経 ゲーム ブラウザ",
-    "反射神経 ゲーム 無料",
-    "動体視力 トレーニング 無料",
-    "周辺視野 トレーニング ゲーム",
-    "危機 回避 ゲーム",
-    "爆弾 回避 ゲーム",
-    "動体視力 ゲーム",
-    "反射神経 テスト 無料",
-    "反射神経 ゲーム fps",
-    "空間認識 反応テスト"
+    "反射神経テスト",
+    "反応速度テスト",
+    "反射神経ゲーム",
+    "動体視力テスト",
+    "動体視力 トレーニング",
+    "周辺視野 トレーニング",
+    "周辺視野 ゲーム",
+    "反射神経テスト fps",
+    "危険回避 ゲーム",
+    "グリッド 回避 ゲーム"
   ],
   alternates: {
     canonical: 'https://skilldrills.online/ja/drills/physical/coordination/dynamic-grid-evasion',
     languages: getAlternateLanguages('/drills/physical/coordination/dynamic-grid-evasion'),
   },
   openGraph: {
-    title: "反射神経ゲーム・動体視力トレーニング – 無料周辺視野＆危険回避ドリル | SkillDrills",
-    description: "無料オンライン反射神経ゲーム＆動体視力トレーニング。3×3グリッド上で爆発する危険セルを周辺視野で瞬時に察知し、安全ゾーンへマウスをフリック回避して空間反射と危機回避能力を科学的に鍛えます。",
+    title: "反射神経テスト｜無料ブラウザゲーム | SkillDrills",
+    description: "無料の反射神経テスト・ブラウザゲーム。3×3グリッドの危険マスを周辺視野で見つけ、安全マスへ移動して反応速度と危機回避を鍛えます。",
     url: 'https://skilldrills.online/ja/drills/physical/coordination/dynamic-grid-evasion',
     siteName: 'SkillDrills',
     locale: 'ja_JP',
@@ -48,8 +48,8 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: "反射神経ゲーム・動体視力トレーニング – 無料周辺視野＆危険回避ドリル | SkillDrills",
-    description: "無料オンライン反射神経ゲーム＆動体視力トレーニング。3×3グリッド上で爆発する危険セルを周辺視野で瞬時に察知し、安全ゾーンへマウスをフリック回避して空間反射と危機回避能力を科学的に鍛えます。",
+    title: "反射神経テスト｜無料ブラウザゲーム | SkillDrills",
+    description: "無料の反射神経テスト・ブラウザゲーム。3×3グリッドの危険マスを周辺視野で見つけ、安全マスへ移動して反応速度と危機回避を鍛えます。",
   },
   robots: { index: true, follow: true },
 };
@@ -104,7 +104,7 @@ const softwareApplicationSchema = {
     "url": "https://skilldrills.online/ja"
   },
   "inLanguage": "ja",
-  "dateModified": "2026-09-12"
+  "dateModified": "2026-09-20"
 };
 
 const webApplicationSchema = {
@@ -121,7 +121,7 @@ const webApplicationSchema = {
   },
   "url": "https://skilldrills.online/ja/drills/physical/coordination/dynamic-grid-evasion",
   "inLanguage": "ja",
-  "dateModified": "2026-09-12"
+  "dateModified": "2026-09-20"
 };
 
 const videoGameSchema = {
@@ -142,6 +142,8 @@ const videoGameSchema = {
     "Mobile"
   ],
   "applicationCategory": "Game",
+  "inLanguage": "ja",
+  "dateModified": "2026-09-20",
   "offers": {
     "@type": "Offer",
     "price": "0",
@@ -152,7 +154,8 @@ const videoGameSchema = {
 const faqSchema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
-  "dateModified": "2026-09-12",
+  "inLanguage": "ja",
+  "dateModified": "2026-09-20",
   "mainEntity": [
     {
       "@type": "Question",
@@ -360,8 +363,8 @@ export default function DynamicGridEvasionPageJa() {
       />
       <DynamicGridEvasionClient
         copy={{
-          title: "反射神経ゲーム・動体視力トレーニング",
-          subtitle: "3×3グリッド危険回避＆周辺視野反射ドリル • 15段階",
+          title: "反射神経テスト",
+          subtitle: "危険マスを見つけて安全へ移動 • 15段階",
           rulesTitle: "反射神経＆グリッド回避ドリルのルール・採点基準",
           rules: [
             { title: "警告パルスの瞬間察知", text: "各ウェーブ開始時、爆発が迫る危険セルがオレンジ色の枠線で点滅します。" },

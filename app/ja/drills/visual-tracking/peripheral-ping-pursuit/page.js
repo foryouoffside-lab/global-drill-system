@@ -1,5 +1,6 @@
 import PeripheralPingPursuitClient from '@/app/drills/visual-tracking/peripheral-ping-pursuit/PeripheralPingPursuitClientLoader';
 import DrillGuide from '@/components/drill/DrillGuide';
+import DrillFooter from '@/components/drill/DrillFooter';
 import RelatedDrills from '@/components/drill/RelatedDrills';
 import { getAlternateLanguages } from '@/lib/i18n/locales';
 import { pickSources } from '@/lib/drillSources';
@@ -14,25 +15,23 @@ import { pickSources } from '@/lib/drillSources';
 // ============================================================
 
 export const metadata = {
-  title: "周辺視野ピン追従トレーニング・中心視周辺視統合テスト – 視野拡大＆潜在的空間注意 | SkillDrills",
-  description: "中心標的を視線で捉え続けながら、周辺視野に生じる光パルスをサッケード跳躍なしに瞬時に検知する無料アイトラッキング練習。視野拡大と注意力分配を強化。登録不要。",
+  title: "周辺視野トレーニング｜中心を見たまま反応 | SkillDrills",
+  description: "中心の動く標的を追いながら、周辺の光刺激を目を向けずに見つける無料ブラウザ練習。反応時間と中心視の安定を記録。",
   keywords: [
     "周辺視野 トレーニング",
     "中心視 周辺視 同時",
-    "周辺視野 拡大",
-    "視野拡大 トレーニング",
-    "動体視力 周辺視野 テスト",
+    "周辺視野 反応",
+    "周辺視野 スポーツ",
     "視覚的注意 分配",
-    "潜在的空間注意 訓練",
-    "機能的視野 FFOV",
-    "トンネルビジョン 改善",
-    "周辺視 索敵 エイム",
+    "周辺刺激 反応練習",
+    "動体視力 トレーニング",
     "視線固定 周辺検知",
-    "広角視野 トレーニング"
+    "周辺視野 オンライン",
+    "スポーツビジョン 周辺視"
   ],
   openGraph: {
-    title: "周辺視野ピン追従トレーニング・中心視周辺視統合テスト – 視野拡大＆潜在的空間注意 | SkillDrills",
-    description: "中心標的を視線で捉え続けながら、周辺視野に生じる光パルスをサッケード跳躍なしに瞬時に検知する無料アイトラッキング練習。",
+    title: "周辺視野トレーニング｜中心を見たまま反応 | SkillDrills",
+    description: "中心の動く標的を追いながら、周辺の光刺激を目を向けずに見つける無料ブラウザ練習。",
     type: "website",
     url: "https://skilldrills.online/ja/drills/visual-tracking/peripheral-ping-pursuit",
     siteName: "SkillDrills",
@@ -40,8 +39,8 @@ export const metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "周辺視野ピン追従トレーニング・中心視周辺視統合テスト – 視野拡大＆潜在的空間注意 | SkillDrills",
-    description: "中心標的を追従しながら周辺視野の光パルスを検知する無料オンライン潜在的注意ビジョントレーニング。",
+    title: "周辺視野トレーニング｜中心を見たまま反応 | SkillDrills",
+    description: "中心の動く標的を追いながら、周辺の光刺激に反応する無料オンライン練習。",
   },
   robots: { index: true, follow: true },
   alternates: {
@@ -72,7 +71,7 @@ const softwareApplicationSchema = {
   "url": "https://skilldrills.online/ja/drills/visual-tracking/peripheral-ping-pursuit",
   "publisher": { "@type": "Organization", "name": "SkillDrills", "url": "https://skilldrills.online/ja" },
   "inLanguage": "ja",
-  "dateModified": "2026-09-15"
+  "dateModified": "2026-09-20"
 };
 
 const webAppSchema = {
@@ -85,7 +84,7 @@ const webAppSchema = {
   "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
   "url": "https://skilldrills.online/ja/drills/visual-tracking/peripheral-ping-pursuit",
   "inLanguage": "ja",
-  "dateModified": "2026-09-15"
+  "dateModified": "2026-09-20"
 };
 
 const videoGameSchema = {
@@ -94,15 +93,17 @@ const videoGameSchema = {
   "name": "周辺視野ピン追従トレーニング・中心視周辺視統合テスト",
   "url": "https://skilldrills.online/ja/drills/visual-tracking/peripheral-ping-pursuit",
   "description": "移動する中心ターゲットを視線固定で追従しながら、視野外周にフラッシュするピンを即座に検知・応答するブラウザビジョントレーニングゲーム。",
-  "genre": ["Action", "Brain Game", "Eye Tracking", "Vision Training"],
-  "gamePlatform": ["Web Browser", "Desktop", "Mobile"],
+  "genre": ["視覚練習", "脳トレ", "視線追従", "周辺視野トレーニング"],
+  "gamePlatform": ["ブラウザ", "パソコン", "スマートフォン"],
   "applicationCategory": "Game",
-  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+  "dateModified": "2026-09-20"
 };
 
 const howToSchema = {
   "@context": "https://schema.org",
   "@type": "HowTo",
+  "dateModified": "2026-09-20",
   "name": "周辺視野ピン追従トレーニングの測定・実践手順",
   "description": "中心視の固定安定性と周辺視野の潜在的注意検知を同時に両立させる4段階の実践ステップ。",
   "step": [
@@ -140,6 +141,7 @@ const howToSchema = {
 const faqSchema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
+  "dateModified": "2026-09-20",
   "mainEntity": [
     {
       "@type": "Question",
@@ -154,15 +156,15 @@ const faqSchema = {
       "name": "なぜ周辺の光へ目を向けずに中心を見続けなければならないのですか？",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "周辺で発生した事象に対して毎回眼球を向ける（顕在的サッケード）と、跳躍の開始までに約200ミリ秒の潜時（Findlay & Walker, 1999）がかかり、さらに中心の標的から照準が外れてしまいます。視線を動かさずに注意の焦点だけを広げる『潜在的注意（Covert Attention）』を使えば、中心の標的を捉えたまま周辺の危険やチャンスをゼロ遅延で察知できるためです。"
+        "text": "周辺の刺激へ毎回眼球を向けると、中心の標的から視線が外れ、追従と検知を同時に比べにくくなります。視線を動かさず注意の焦点だけを周辺へ広げる『潜在的注意』を使うと、中心の追従を保ったまま周辺刺激への反応を練習できます。"
       }
     },
     {
       "@type": "Question",
-      "name": "「潜在的注意（Covert Attention）」と「顕在的注意（Overt Attention）」の違いは？",
+      "name": "「潜在的注意」と「顕在的注意」の違いは？",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "顕在的注意とは、興味のある対象に眼球や頭部を直接向けて中心窩で見る動作を指します。一方、潜在的注意とは、Posner（1980）が定義したように、視線は一点（中心の敵やボール）に固定したまま、意識のスポットライトだけを視野の斜めや外側へ向けて情報処理を行う高度な神経機能です。"
+        "text": "顕在的注意は、興味のある対象へ眼球や頭部を向けて見ることです。潜在的注意は、視線を一点に保ったまま意識の焦点だけを別の位置へ移す働きで、Posner（1980）の空間的注意研究で扱われました。"
       }
     },
     {
@@ -186,7 +188,7 @@ const faqSchema = {
       "name": "球技スポーツ（サッカー、バスケ）や車の運転にも効果がありますか？",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "絶大な効果があります。ボールや前方の車を直視しながら、サイドから走り込んでくる味方の位置や歩行者の飛び出しを視野の端で同時に捕捉できるようになります。スポーツにおけるパスコースの視野拡大や、交通事故防止における危険予測能力の向上に直結します。"
+        "text": "このページはスポーツや運転の成績を保証するものではありません。中心を見たまま周辺の変化に気づく課題として、球技の状況把握や日常の視覚的注意を考える練習材料にできます。運転中の視野検査や安全判断の代わりにはなりません。"
       }
     },
     {
@@ -227,14 +229,14 @@ const faqSchema = {
 const guideProps = {
   heading: "周辺視野ピン追従・潜在的空間注意の認知神経科学基準",
   intro: [
-    "周辺視野ピン追従（Peripheral Ping Pursuit）とは、中央で連続移動するプライマリ標的を中心窩（Fovea）で高精度に追尾し続けながら、画面の周辺外角部に突発的に点滅するパルスピン刺激を視線を向けずに検知・応答する二重課題型（Dual-task）ビジョントレーニングです。中心視のロックを一切破綻させることなく、潜在的注意（Covert Spatial Attention）を視野全体へ動的に拡張する人間の機能的視野（Functional Field of View / FFOV）の限界能力を測定・強化します（Posner, 1980; Eriksen & St. James, 1986）。",
+    "周辺視野ピン追従は、中央で動く標的を追いながら、画面の外周に短く現れる光刺激を視線を向けずに検知する二重課題型の練習です。中心視の追従と周辺への注意配分を同時に行い、各セッションの反応時間や中心視の安定を比較します（Posner, 1980; Eriksen & St. James, 1986）。",
     "顕在的サッケードの抑制とPosnerの潜在的注意ネットワーク：周辺部に新たな視覚的過渡変化（ピンの点滅）が発生した際、中脳上丘（Superior Colliculus）は反射的に視線を光の発生源へ飛ばそうとする弾道サッケード信号を生成します（Findlay & Walker, 1999）。しかし、周辺目標に視線を向ける動作には約200ミリ秒の潜時を要し、中心の標的追従を完全に破壊してしまいます。前頭眼野（FEF）および後頭頂皮質から構成される背側注意ネットワークは、この不要なサッケード出力を能動的にブレーキ（抑制制御）し、視線を動かさずに意識のビームのみを周辺部へ割り振る『潜在的注意の解離』を成立させます（Posner, 1980）。",
     "視覚的ズームレンズモデル（Eriksen & St. James）と機能的視野（FFOV）の伸縮：Eriksen & St. James（1986）が提唱した注意のズームレンズモデルによれば、人間の視覚的注意野はカメラのズームレンズのように、狭い高解像度の中心領域から広い低解像度の全視野領域まで連続的に調節可能です。極限の緊張状態に陥ると注意野は中心数度に狭窄（トンネルビジョン）しますが、本ドリルの反復訓練により、中心窩の運動追跡解像度を100%維持したまま、ズームレンズを視野外周まで常に広角開放しておく前頭葉の配分制御力が向上します（Wolfe, 1994; Leigh & Zee, 2015）。",
-    "FPS索敵・高速球技・危機回避における実戦応用：現代の競技eスポーツ（VALORANT, Apex Legends, Overwatch等）において、超一流選手が画面中央の敵に正確なクロスヘアを置きながら、画面端のミニマップや視界の隅を横切る敵のわずかな影に即座に反応できるのは、この潜在的注意システムが極限まで研ぎ澄まされているためです。また、サッカーやバスケットボールにおけるノートレックパスや、自動車運転時における死角からの飛び出し察知など、あらゆる高速判断シーンにおいて生存率とパフォーマンスを決定づける中核基礎能力となります（Woods et al., 2015）。"
+    "ゲームや球技への応用を考える場合も、結果は画面、入力機器、経験、競技環境に左右されます。この課題は、中心の追従を保ちながら周辺の変化に気づく練習として使い、実際の競技や運転の能力を測る検査とは区別してください。"
   ],
   benchmarks: {
-    title: "周辺視野ピン検知・潜在的空間注意評価指標 (Peripheral Detection Benchmarks)",
-    headers: ["習熟度クラス", "周辺ピン検知成功率", "平均検知反応時間 (Latency)", "中心視離脱サッケード率", "神経生理学的達成水準"],
+    title: "周辺視野ピン検知・潜在的空間注意の評価指標",
+    headers: ["習熟度クラス", "周辺ピン検知成功率", "平均検知反応時間", "中心視離脱率", "練習時の読み方"],
     rows: [
       ["エリート (プロアスリート級)", "96% 以上", "220ms 未満", "2% 未満 (完全中心固定)", "卓越した潜在的注意制御。中心窩ロックを維持しながら視野全域の輝度過渡変化に即座に反応"],
       ["アドバンス (競技ゲーマー級)", "90% ～ 95%", "220 ～ 270ms", "2% ～ 5%", "極めて広い機能的視野。周辺ピンに対する反射サッケードがほぼ完全に抑制され、安定検知を維持"],
@@ -248,7 +250,7 @@ const guideProps = {
     title: "中心窩ロックと広域周辺視野検知を両立する4大テクニック",
     items: [
       {
-        name: "中心窩アンカーの死守と反射サッケードの能動的抑制 (Foveal Anchor Defense)",
+        name: "中心視の固定と反射的な視線移動の抑制",
         desc: "周辺部に光が点滅した際、眼球を動かして確認しようとする本能的反射を大脳皮質で強力に抑え込みます。Findlay & Walker（1999）のモデルに基づき、視線は中心のオーブの中心核に釘付けにしたまま、手元のキー入力だけで応答します。",
         tips: "『光を見た瞬間に負け』と意識し、視線が周辺ピンへ1ピクセルも飛びつかないよう自己制御してください。"
       },
@@ -276,19 +278,19 @@ const guideProps = {
     "視野の隅や外周部にパルスピンが点滅しても絶対に目を向けず、周辺視野で感知してキーを押します。",
     "セッション完了後、周辺ピン検知率と平均反応時間を分析し、段階的に難易度を上げます。"
   ],
-  audience: "FPSでミニマップ確認や角待ち索敵力を高めたい競技プレイヤー、サッカー・バスケ等で周囲の状況把握を広げたいスポーツ選手、長時間の画面凝視によるトンネルビジョンを解消したいすべてのユーザー。",
+  audience: "中心を見たまま周辺の変化に気づく練習をしたいゲーム利用者、スポーツ選手、視覚的注意を記録したいユーザー。医療検査や運転能力の判定には使いません。",
   faqs: faqSchema.mainEntity.map(item => ({
     q: item.name,
     a: item.acceptedAnswer.text
   })),
   sources: pickSources('posner1980', 'eriksen1986', 'wolfe1994', 'findlay1999', 'leigh2015', 'woods2015'),
   related: [
-    { href: "/ja/drills/visual-tracking/constant-slow-pursuit", label: "低速追従眼球運動トレーニング (Constant Slow)" },
-    { href: "/ja/drills/visual-tracking/directional-chaos-pursuit", label: "カオス方向追従テスト (Directional Chaos)" },
-    { href: "/ja/drills/visual-tracking/dynamic-evasion-pursuit", label: "リアクティブ追従訓練 (Dynamic Evasion)" },
-    { href: "/ja/drills/visual-tracking/ghosting-suppress-pursuit", label: "残像抑制固視トレーニング (Ghosting Suppress)" },
-    { href: "/ja/drills/visual-tracking/infinity-pursuit", label: "8の字眼球運動トレーニング (Infinity)" },
-    { href: "/ja/drills/visual-tracking/momentum-teleport-pursuit", label: "テレポート追従エイムトレーニング (Momentum Teleport)" }
+    { href: "/ja/drills/visual-tracking/constant-slow-pursuit", label: "低速追従眼球運動トレーニング" },
+    { href: "/ja/drills/visual-tracking/directional-chaos-pursuit", label: "方向変化の視線追従テスト" },
+    { href: "/ja/drills/visual-tracking/dynamic-evasion-pursuit", label: "反応的な動体追従訓練" },
+    { href: "/ja/drills/visual-tracking/ghosting-suppress-pursuit", label: "残像を抑える固視訓練" },
+    { href: "/ja/drills/visual-tracking/infinity-pursuit", label: "8の字眼球運動トレーニング" },
+    { href: "/ja/drills/visual-tracking/momentum-teleport-pursuit", label: "瞬間移動標的の視線再捕捉" }
   ]
 };
 
@@ -305,8 +307,8 @@ export default function JapanesePeripheralPingPage() {
       <PeripheralPingPursuitClient
         copy={{
           title: "周辺視野ピン追従トレーニング：中心視・周辺視の統合と潜在的空間注意",
-          subtitle: "中心窩追従を維持したまま視野周辺パルスを検知する機能的視野（FFOV）拡大テスト",
-          description: "中心標的を中心窩で滑らかに捉え続けながら、周辺視野に突発出現する光パルスピンをサッケード跳躍なしに瞬時に検知する二重課題アイトラッキング練習。Posnerパラダイムに基づく潜在的空間注意（Covert Attention）と機能的視野（FFOV）を拡大し、ゲーム索敵や動体認知を極限まで強化します。無料・ブラウザで即座に測定可能。"
+          subtitle: "中心の追従を維持しながら視野周辺の光刺激を検知する二重課題",
+          description: "中心の動く標的を追いながら、周辺に短く現れる光刺激へ反応する二重課題の練習です。各セッションの反応時間と中心視の安定を比較できます。無料でブラウザから利用できます。"
         }}
       />
 
@@ -315,6 +317,7 @@ export default function JapanesePeripheralPingPage() {
       <div className="max-w-6xl mx-auto px-4 pb-12">
         <RelatedDrills currentCategory="visual-tracking" currentHref="https://skilldrills.online/ja/drills/visual-tracking/peripheral-ping-pursuit" />
       </div>
+      <DrillFooter />
     </>
   );
 }

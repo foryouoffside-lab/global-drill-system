@@ -1,5 +1,6 @@
 import PredictivePursuitClient from './PredictivePursuitClientLoader';
 import DrillGuide from '@/components/drill/DrillGuide';
+import DrillFooter from '@/components/drill/DrillFooter';
 import { getAlternateLanguages } from '@/lib/i18n/locales';
 import { pickSources } from '@/lib/drillSources';
 
@@ -288,8 +289,9 @@ export default function PredictivePursuitPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(howToSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
 
-      <PredictivePursuitClient copy={{ title: "Predictive Pursuit", subtitle: "Predictive Eye Tracking Drill" }} />
+      <PredictivePursuitClient copy={{ title: "Predictive Pursuit", subtitle: "Predictive eye tracking drill for reading target trajectories, anticipating motion, and improving visual interception timing" }} />
       <DrillGuide guide={guide} />
+      <DrillFooter />
     </>
   );
 }

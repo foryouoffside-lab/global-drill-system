@@ -1,33 +1,30 @@
 import DistractionFighterClient from '@/app/drills/cognitive/focus/distraction-fighter/DistractionFighterClientLoader';
 import DrillGuide from '@/components/drill/DrillGuide';
 import RelatedDrills from '@/components/drill/RelatedDrills';
+import DrillFooter from '@/components/drill/DrillFooter';
 import { getAlternateLanguages } from '@/lib/i18n/locales';
 import { pickSources } from '@/lib/drillSources';
 
 export const metadata = {
-  title: "Test de Stroop en Ligne – Attention | SkillDrills",
-  description: "Test de Stroop gratuit en ligne: évaluez votre inhibition cognitive et votre attention sélective en nommant la couleur de police sans lire le mot écrit.",
+  title: "Test de Stroop | Attention sélective | SkillDrills",
+  description: "Test de Stroop gratuit dans le navigateur : choisissez la couleur de l’encre, pas le mot. Auto-test cognitif non clinique.",
   keywords: [
     "test de stroop",
     "test de stroop en ligne",
-    "effet stroop",
-    "test attention selective",
-    "inhibition cognitive test",
-    "test couleurs et mots",
-    "interference de stroop psychologie",
-    "exercices de concentration mentale",
-    "flexibilite cognitive entrainement",
-    "test psychologique stroop gratuit",
-    "vitesse de traitement mental test",
-    "jeu d attention et de reflexes en ligne"
+    "test de stroop en ligne gratuit",
+    "test de stroop interprétation",
+    "effet stroop test",
+    "effet stroop psychologie",
+    "attention sélective",
+    "contrôle inhibiteur"
   ],
   alternates: {
     canonical: "https://skilldrills.online/fr/drills/cognitive/focus/distraction-fighter",
     languages: getAlternateLanguages('/drills/cognitive/focus/distraction-fighter')
   },
   openGraph: {
-    title: "Test de Stroop en Ligne – Attention | SkillDrills",
-    description: "Test de Stroop gratuit en ligne: évaluez votre inhibition cognitive et votre attention sélective en nommant la couleur de police sans lire le mot écrit.",
+    title: "Test de Stroop | Attention sélective | SkillDrills",
+    description: "Test de Stroop gratuit dans le navigateur : choisissez la couleur de l’encre, pas le mot. Auto-test cognitif non clinique.",
     url: "https://skilldrills.online/fr/drills/cognitive/focus/distraction-fighter",
     siteName: "SkillDrills",
     locale: "fr_FR",
@@ -35,8 +32,8 @@ export const metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Test de Stroop en Ligne – Attention | SkillDrills",
-    description: "Test de Stroop gratuit en ligne: évaluez votre inhibition cognitive et votre attention sélective en nommant la couleur de police sans lire le mot écrit."
+    title: "Test de Stroop | Attention sélective | SkillDrills",
+    description: "Test de Stroop gratuit dans le navigateur : choisissez la couleur de l’encre, pas le mot. Auto-test cognitif non clinique."
   }
 };
 
@@ -57,6 +54,7 @@ export default function DistractionFighterPageFR() {
     "@context": "https://schema.org",
     "@type": "SoftwareApplication",
     "name": "Test de Stroop Trainer",
+    "dateModified": "2026-09-20",
     "applicationCategory": "HealthApplication",
     "operatingSystem": "Any",
     "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
@@ -67,6 +65,7 @@ export default function DistractionFighterPageFR() {
     "@context": "https://schema.org",
     "@type": "WebApplication",
     "name": "Test de Stroop en Ligne Interactif",
+    "dateModified": "2026-09-20",
     "url": "https://skilldrills.online/fr/drills/cognitive/focus/distraction-fighter",
     "applicationCategory": "TrainingTool",
     "browserRequirements": "Requires JavaScript. HTML5 Canvas compatible."
@@ -77,6 +76,7 @@ export default function DistractionFighterPageFR() {
     "@type": "VideoGame",
     "name": "Défi d Inhibition Cognitive de Stroop",
     "gamePlatform": "Web Browser",
+    "dateModified": "2026-09-20",
     "genre": ["Brain Training", "Cognitive Drill", "Focus Training"]
   };
 
@@ -311,6 +311,7 @@ export default function DistractionFighterPageFR() {
           locale="fr"
         />
       </div>
+      <DrillFooter />
     </>
   );
 }

@@ -7,7 +7,7 @@ import DrillFooter from '@/components/drill/DrillFooter';
 
 // ============================================================
 // GERMAN SEARCH KEYWORD RESEARCH & INTENT CLUSTERING (DACH)
-// Primary queries: "FPS Reaktionszeit Test" (Core domestic query for shooter reflex measurement)
+// Primary queries: "Reaktionszeit Test" / "Reaktionstest" (Core domestic queries for reaction measurement)
 //                  "Klick Reaktionszeit FPS" (High technical category intent for click latency)
 // Secondary:       "Aim Reflexe Trainieren", "Reaktionsgeschwindigkeit Shooter", "Maus Klick Latenz Test",
 //                  "CS2 Reaktionszeit verbessern", "Valorant Trigger Reaktionszeit",
@@ -21,21 +21,18 @@ import DrillFooter from '@/components/drill/DrillFooter';
 // ============================================================
 
 export const metadata = {
-  title: "FPS Reaktionszeit Test – Aim Reflex Trainer | SkillDrills",
-  description: "Kostenloser FPS-Reaktionszeit-Test im Browser: Miss visuelle Reaktionszeit, Klicklatenz und Trigger-Reflexe in Millisekunden für CS2 und Valorant.",
+  title: "Reaktionszeit Test | FPS-Reflexe messen | SkillDrills",
+  description: "Kostenloser Reaktionszeit Test im Browser: Miss Klicklatenz und visuelle Reflexe in Millisekunden für CS2 und Valorant.",
   keywords: [
-    "FPS Reaktionszeit Test",
-    "Klick Reaktionszeit FPS",
-    "Aim Reflexe Trainieren",
-    "Reaktionsgeschwindigkeit Shooter",
-    "Maus Klick Latenz Test",
-    "CS2 Reaktionszeit verbessern",
-    "Valorant Trigger Reaktionszeit",
-    "Visuelle Reaktionszeit Test",
-    "Reflexe testen Gaming",
-    "Trigger Finger Speed Test",
-    "Winkel Halten Reaktion",
-    "Visuelle Latenz Shooter"
+    "Reaktionszeit Test",
+    "Reaktionstest",
+    "reaktionszeit test online",
+    "reaktionszeit test kostenlos",
+    "Reaktionszeit Gaming",
+    "FPS Reaktionszeit",
+    "Klick Reaktionszeit",
+    "Reflexe testen",
+    "CS2 Reaktionszeit"
   ],
   alternates: {
     canonical: "https://skilldrills.online/de/drills/fps/instant-response",
@@ -46,8 +43,8 @@ export const metadata = {
     follow: true,
   },
   openGraph: {
-    title: "FPS Reaktionszeit Test – Aim Reflex Trainer | SkillDrills",
-    description: "Kostenloser FPS-Reaktionszeit-Test im Browser: Miss visuelle Reaktionszeit, Klicklatenz und Trigger-Reflexe in Millisekunden für CS2 und Valorant.",
+    title: "Reaktionszeit Test | FPS-Reflexe messen | SkillDrills",
+    description: "Kostenloser Reaktionszeit Test im Browser: Miss Klicklatenz und visuelle Reflexe in Millisekunden für CS2 und Valorant.",
     url: "https://skilldrills.online/de/drills/fps/instant-response",
     siteName: 'SkillDrills',
     locale: 'de_DE',
@@ -55,8 +52,8 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: "FPS Reaktionszeit Test – Aim Reflex Trainer | SkillDrills",
-    description: "Kostenloser FPS-Reaktionszeit-Test im Browser: Miss visuelle Reaktionszeit, Klicklatenz und Trigger-Reflexe in Millisekunden für CS2 und Valorant.",
+    title: "Reaktionszeit Test | FPS-Reflexe messen | SkillDrills",
+    description: "Kostenloser Reaktionszeit Test im Browser: Miss Klicklatenz und visuelle Reflexe in Millisekunden für CS2 und Valorant.",
   },
 };
 
@@ -67,14 +64,14 @@ export default function InstantResponseDePage() {
     "itemListElement": [
       { "@type": "ListItem", "position": 1, "name": "SkillDrills", "item": "https://skilldrills.online/de" },
       { "@type": "ListItem", "position": 2, "name": "FPS Aim Training", "item": "https://skilldrills.online/de/drills/fps" },
-      { "@type": "ListItem", "position": 3, "name": "FPS Reaktionszeit Test", "item": "https://skilldrills.online/de/drills/fps/instant-response" }
+      { "@type": "ListItem", "position": 3, "name": "Reaktionszeit Test - FPS-Reflexe", "item": "https://skilldrills.online/de/drills/fps/instant-response" }
     ]
   };
 
   const softwareSchema = {
     "@context": "https://schema.org",
     "@type": "SoftwareApplication",
-    "name": "FPS Reaktionszeit Test – Aim Reflex Trainer",
+    "name": "Reaktionszeit Test für FPS-Reflexe",
     "applicationCategory": "GameApplication",
     "operatingSystem": "Web Browser",
     "offers": { "@type": "Offer", "price": "0", "priceCurrency": "EUR" }
@@ -83,7 +80,7 @@ export default function InstantResponseDePage() {
   const webAppSchema = {
     "@context": "https://schema.org",
     "@type": "WebApplication",
-    "name": "FPS Reaktionszeit Trainer",
+    "name": "Reaktionszeit Test - FPS-Reflexe",
     "url": "https://skilldrills.online/de/drills/fps/instant-response",
     "applicationCategory": "Trainer",
     "browserRequirements": "Requires Pointer Lock API, modern web browser, 60Hz+ monitor recommended"
@@ -92,7 +89,7 @@ export default function InstantResponseDePage() {
   const videoGameSchema = {
     "@context": "https://schema.org",
     "@type": "VideoGame",
-    "name": "FPS Reaktionszeit Trainer",
+    "name": "Reaktionszeit Test - FPS-Reflexe",
     "playMode": "SinglePlayer",
     "applicationCategory": "Game",
     "operatingSystem": "Web Browser",
@@ -102,7 +99,7 @@ export default function InstantResponseDePage() {
   const faqSchema = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
-    "dateModified": "2026-09-15",
+    "dateModified": "2026-09-20",
     "mainEntity": [
       {
         "@type": "Question",
@@ -221,10 +218,10 @@ export default function InstantResponseDePage() {
   };
 
   const instantResponseGuideDe = {
-    heading: "FPS-Reaktionszeit & Reflex-Aiming – Wissenschaftlicher Trainingsleitfaden",
+    heading: "Reaktionszeit Test für FPS-Reflexe und Klicklatenz",
     subtitle: "Messung und Steigerung von visueller Reaktionslatenz, Klickgeschwindigkeit und Schussdisziplin für CS2 und Valorant",
     intro: [
-      "Die visuelle Reaktionszeit ist das fundamentalste physiologische Nadelöhr im Ego-Shooter. Wenn zwei gleichwertige Spieler aufeinandertreffen und beide ihr Fadenkreuz perfekt platziert haben, entscheidet die Millisekundendifferenz zwischen Reizwahrnehmung und Schalterauslösung über Sieg oder Niederlage. Die grundlegende Reaktionszeit eines gesunden Erwachsenen auf einen einfachen visuellen Stimulus liegt bei 200 bis 250 Millisekunden (Donders, 1969; Luce, 1986). Ambitionierte Esportler drücken diesen Wert durch neuronales Training und Hardware-Optimierung auf unter 170 Millisekunden.",
+      "Ein Reaktionszeit Test misst die Zeit zwischen einem visuellen Signal und deinem Klick. Dieser Drill erfasst die visuelle Latenz und Klickreaktion in Millisekunden für CS2-, Valorant- und FPS-Duelle.",
       "Die sensorische Latenzkette gliedert sich in vier präzise Abschnitte: Zunächst treffen Photonen auf die Photorezeptoren der Netzhaut (Transduktion: 20–40 ms). Das Signal wandert über den Nervus opticus zum primären visuellen Kortex (30–50 ms). Dort erfolgt die Reizerkennung und die Weiterleitung an den Motorkortex (Posner, 1990; Hick, 1952). Schließlich feuert das pyramidale motorische System ein efferentes Aktionspotenzial über das Rückenmark in die Beugemuskeln des Zeigefingers (Flexor digitorum: 30–50 ms).",
       "Zu dieser biologischen Latenzkette addiert sich die physikalische Hardware-Verzögerung deines Gaming-Setups (Woods et al., 2015). Ein Standard-60-Hz-Monitor zeigt Bilder nur alle 16,6 Millisekunden an. Ein 240-Hz-Display reduziert diese Anzeigelatenz auf 4,1 Millisekunden. In Kombination mit einer 1000-Hz-Maus (1 ms Abfrageintervall) und optischen Mikroschaltern (unter 0,2 ms Debounce) wird sichergestellt, dass deine physiologische Reaktionsfähigkeit verlustfrei im Spiel ankommt.",
       "Messpräzision & Transparenz: Dieser Trainer erfasst Klickzeiten über die hochpräzise performance.now()-Schnittstelle deines Browsers auf Mikrosekunden-Ebene. Abweichungen im Bereich von 3 bis 7 ms spiegeln das Hardware-Frame-Intervall deines Monitors wider. Ein systematisches Training stärkt die synaptische Plastizität und stabilisiert deine Reflexe auch in nervenaufreibenden Clutch-Runden."
@@ -285,13 +282,13 @@ export default function InstantResponseDePage() {
   };
 
   const copyDe = {
-    h1Keyword: "FPS Reaktionszeit Test",
-    h1Suffix: " – Aim Reflex Trainer",
+    h1Keyword: "Reaktionszeit Test",
+    h1Suffix: " – FPS-Reflexe messen",
     statScore: "Punkte",
     statTime: "Zeit",
     statAccuracy: "Präzision",
     statBestScore: "Highscore",
-    startTitle: "FPS Reaktionszeit Test",
+    startTitle: "Reaktionszeit Test",
     startSubtitle: "Visuelle Reaktionslatenz & Reflexe • Endlose Levelprogression",
     getReady: "BEREITMACHEN",
     pausedTitle: "Spiel Pausiert",
@@ -304,7 +301,7 @@ export default function InstantResponseDePage() {
       { num: "3", text: "Levelaufstieg", highlight: "+1 Level / 1400 PTS", result: "Adaptive Zeitfenster" },
       { num: "4", text: "Fehlklick / Frühstart", highlight: "Fehlerstrafe", result: "Combo-Reset (-0.8s)" }
     ],
-    aboutTitle: "Über das FPS-Reaktionszeit-Training",
+    aboutTitle: "Über den Reaktionszeit Test und FPS-Reflexe",
     aboutHeading: "Was ist das FPS-Reaktionszeit-Training?",
     aboutText1: "Die FPS-Reaktionszeit bezeichnet das zeitliche Intervall vom ersten optischen Erfassen eines Gegners bis zum physischen Mausklick. Bei gesunden Erwachsenen liegt dieser Wert bei 200 bis 250 Millisekunden (Donders, 1969; Woods et al., 2015).",
     aboutText2: "Dieser Trainer isoliert deine visuelle Klickreaktion und schult dein Nervensystem darauf, Reize im zentralen Sichtfeld mit minimaler synaptischer Verzögerung in motorische Impulse umzusetzen.",

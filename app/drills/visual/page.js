@@ -49,9 +49,32 @@ export const metadata = {
   },
 };
 
+Object.assign(metadata, {
+  title: 'Visual Reaction & Search Drills | SkillDrills',
+  description: `Choose from ${visualDrillCount} free browser drills for visual reaction time, target tracking, depth judgment, and visual search. No sign-up.`,
+  keywords: [
+    'visual reaction drills', 'visual search test', 'dynamic vision training',
+    'visual tracking drills', 'depth perception test', 'peripheral vision training',
+    'multiple object tracking', 'go no go test', 'visual processing speed',
+    'sports vision drills', 'free visual training online'
+  ],
+  openGraph: {
+    ...metadata.openGraph,
+    title: 'Visual Reaction & Search Drills | SkillDrills',
+    description: `${visualDrillCount} free browser drills for visual reaction time, target tracking, depth judgment, and visual search.`,
+  },
+  twitter: {
+    ...metadata.twitter,
+    title: 'Visual Reaction & Search Drills | SkillDrills',
+    description: `Train visual reaction, tracking, depth judgment, and visual search with ${visualDrillCount} free drills.`,
+  },
+});
+
 const faqSchema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
+  "inLanguage": "en",
+  "dateModified": "2026-09-20",
   "mainEntity": [
     {
       "@type": "Question",
@@ -120,12 +143,27 @@ const faqSchema = {
   ]
 };
 
+faqSchema.mainEntity.push(
+  {
+    "@type": "Question",
+    "name": "What visual drills are included in this training hub?",
+    "acceptedAnswer": { "@type": "Answer", "text": "The hub contains nine browser drills across visual reaction and impulse control, target tracking and eye movement, and visual recognition and depth judgment. Choose a card to open the individual drill and its guide." }
+  },
+  {
+    "@type": "Question",
+    "name": "Do visual browser drills replace an eye examination?",
+    "acceptedAnswer": { "@type": "Answer", "text": "No. These drills measure repeatable browser tasks such as visual timing, tracking, search, and spatial judgment. They do not diagnose eyesight or eye disease and do not replace an optometrist or ophthalmologist." }
+  }
+);
+
 export default function VisualDrillsPage() {
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
         "@context": "https://schema.org",
         "@type": "CollectionPage",
+        "inLanguage": "en",
+        "dateModified": "2026-09-20",
         "name": "Free Visual Training Online - Reaction Speed, Tracking & Perception Drills",
         "url": "https://skilldrills.online/drills/visual",
         "description": `${visualDrillCount} free visual training drills online. Reaction speed tests, tracking accuracy games, depth perception tests, and visual recognition exercises. No sign-up required.`,

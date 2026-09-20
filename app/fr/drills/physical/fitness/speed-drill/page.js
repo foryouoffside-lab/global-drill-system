@@ -56,6 +56,14 @@ export const metadata = {
   robots: { index: true, follow: true },
 };
 
+Object.assign(metadata, {
+  title: 'Test CPS | Clics par Seconde | SkillDrills',
+  description: 'Test CPS gratuit dans le navigateur. Cliquez sur des cibles mobiles qui rétrécissent pour travailler vitesse, précision, réaction et acquisition.',
+  keywords: ['test CPS', 'clics par seconde', 'click test', 'test de clic', 'vitesse de clic', 'compteur de clics', 'jeu de réflexes', 'précision de la souris', 'clic rapide', 'test de réaction'],
+  openGraph: { ...metadata.openGraph, title: 'Test CPS | Clics par Seconde | SkillDrills', description: 'Test CPS gratuit dans le navigateur. Cliquez sur des cibles mobiles qui rétrécissent pour travailler vitesse, précision, réaction et acquisition.' },
+  twitter: { ...metadata.twitter, title: 'Test CPS | Clics par Seconde | SkillDrills', description: 'Test CPS gratuit dans le navigateur. Cliquez sur des cibles mobiles qui rétrécissent pour travailler vitesse, précision, réaction et acquisition.' },
+});
+
 const breadcrumbSchema = {
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
@@ -90,6 +98,8 @@ const breadcrumbSchema = {
 const softwareApplicationSchema = {
   "@context": "https://schema.org",
   "@type": "SoftwareApplication",
+  "inLanguage": "fr-FR",
+  "dateModified": "2026-09-20",
   "name": "Test de Clics par Seconde et Entraînement de Réflexes Souris",
   "applicationCategory": "HealthApplication",
   "operatingSystem": "All",
@@ -105,7 +115,9 @@ const webApplicationSchema = {
   "@type": "WebApplication",
   "name": "Simulateur de Vitesse de Clic et Acquisition de Cibles Rétrécissantes",
   "browserRequirements": "Requires JavaScript and HTML5 Canvas support",
-  "genre": "Training, Reflex, Precision, FPS"
+  "genre": "Training, Reflex, Precision, FPS",
+  "inLanguage": "fr-FR",
+  "dateModified": "2026-09-20"
 };
 
 const videoGameSchema = {
@@ -113,12 +125,16 @@ const videoGameSchema = {
   "@type": "VideoGame",
   "name": "Speed Drill Tapping & Flick Precision Challenge",
   "gamePlatform": "Web Browser",
-  "applicationSubCategory": "Esports Psychomotor Chronometry Drill"
+  "applicationSubCategory": "Esports Psychomotor Chronometry Drill",
+  "inLanguage": "fr-FR",
+  "dateModified": "2026-09-20"
 };
 
 const faqSchema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
+  "inLanguage": "fr-FR",
+  "dateModified": "2026-09-20",
   "mainEntity": [
     {
       "@type": "Question",

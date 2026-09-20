@@ -5,25 +5,25 @@ import RelatedDrills from '@/components/drill/RelatedDrills';
 import { pickSources } from '@/lib/drillSources';
 
 export const metadata = {
-  title: "光反応テスト: 視覚反射速度＆ミリ秒潜時計測 | SkillDrills",
-  description: "白の閃光刺激に対する単純視覚反応時間（SRT）をミリ秒単位で高精度計測。網膜の光電変換から運動皮質までの伝達潜時を測る無料テスト。登録不要。",
+  title: "反射神経テスト・反応速度測定 | 無料オンライン | SkillDrills",
+  description: "反射神経テストで視覚反応速度をミリ秒測定。中央の光刺激に反応する無料オンライン練習で、画面・入力遅延を含む参考値です。",
   keywords: [
-    "光 反応 テスト",
-    "光反応測定",
-    "視覚 反応速度 テスト",
-    "反射神経 テスト",
-    "単純反応時間 SRT",
+    "反射神経テスト",
+    "反応速度テスト",
+    "反応速度測定",
+    "視覚反応時間",
+    "視覚反応 テスト",
+    "反射神経 測定",
+    "反応速度 テスト 無料",
     "ミリ秒 反応速度",
-    "ピエロンの法則 反応時間",
-    "光学 反射 テスト",
-    "網膜 光電変換 伝達速度",
-    "FPS 反射神経 トレーニング",
-    "視覚 反射 ドリル",
-    "オンライン 反応速度 測定"
+    "光反応テスト",
+    "単純反応時間 SRT",
+    "フラッシュ反応テスト",
+    "オンライン 反応速度"
   ],
   openGraph: {
-    title: "光反応テスト: 視覚反射速度＆ミリ秒潜時計測 | SkillDrills",
-    description: "白の光刺激に対する単純反応時間（SRT）をミリ秒（ms）単位で精確に測定する無料オンライン反射神経テスト。",
+    title: "反射神経テスト・反応速度測定 | 無料オンライン | SkillDrills",
+    description: "反射神経テストで視覚反応速度をミリ秒測定。中央の光刺激に反応する無料オンライン練習で、画面・入力遅延を含む参考値です。",
     type: 'article',
     url: 'https://skilldrills.online/ja/drills/visual/reaction-speed/light-reaction',
     siteName: 'SkillDrills',
@@ -31,8 +31,8 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: "光反応テスト: 視覚反射速度＆ミリ秒潜時計測 | SkillDrills",
-    description: "光刺激への単純視覚反応時間をミリ秒単位で計測・訓練する無料オンライントレーニング。",
+    title: "反射神経テスト・反応速度測定 | 無料オンライン | SkillDrills",
+    description: "反射神経テストで光刺激への反応速度を練習。複数試行のミリ秒スコアを同じ端末で比較できます。",
   },
   robots: { index: true, follow: true },
   alternates: {
@@ -228,7 +228,7 @@ const faqSchema = {
 };
 
 const lightReactionGuide = {
-  heading: "視覚反射時間測定学および単純反応時間（SRT）標準ガイド",
+  heading: "反射神経テストで測る視覚反応時間とミリ秒の読み方",
   intro: [
     "単純視覚反応時間（Simple Reaction Time, SRT）は、単一の光刺激が突発的に出現した瞬間から無条件の運動が開始されるまでの基礎精神運動潜時を表します。陸上短距離走のスタート、モータースポーツ、格闘技、そしてハイテンポなFPS eスポーツでは、わずか数ミリ秒の反射速度の差が勝敗を分けます。",
     "光刺激に対する神経筋の連鎖反応は4つの明確な生理学的段階を経由します：(1) 網膜ロドプシンの光異性化による光電変換（約20〜40 ms）、(2) 外側膝状体（LGN）を経た一次視覚野V1への求心性信号伝達（約30〜50 ms）、(3) 後頭頂葉および補足運動野での知覚と運動計画策定（約50〜80 ms）、(4) 錐体路（Pyramidal tract）を下行して手指屈筋を収縮させる遠心性指令伝達（約30〜50 ms）。これらを合算した健常成人の自然な基準域は約200〜250 msとなります（Kosinski, 2008; Jain et al., 2015; Shelton & Kumar, 2010）。",
@@ -236,7 +236,7 @@ const lightReactionGuide = {
     "計測基準とハードウェア調整：刺激提示と入力検知は、ブラウザ標準の超高精度 performance.now() API によってミリ秒単位で厳密に記録されます。垂直同期遅延やUSBポーリング間隔（Woods et al., 2015）を念頭に置きつつ、すべてのデータは端末ローカルに安全に保存されます。"
   ],
   benchmarks: {
-    title: "単純視覚反応時間（SRT）パフォーマンス評価基準（科学的ミリ秒基準）",
+    title: "視覚反応速度の目安（ブラウザ練習用）",
     headers: ["習熟度ティア", "平均反応潜時 (ms)", "到達スコア・コンボ基準", "神経筋伝達・生理学的反射特性"],
     rows: [
       ["ティア1：神速・超覚醒反射 (Apex Neural)", "< 180 ms", "15,000点以上 | コンボ 28x+", "極限の運動皮質興奮性と最適化された錐体路伝導。トッププロゲーマーや五輪スプリンターに見られる最高峰の神経伝達水準。"],
@@ -248,7 +248,7 @@ const lightReactionGuide = {
     note: "本基準値は精神時間測定学および視覚反応の精神物理学文献（Kosinski, 2008; Woods et al., 2015; Pins & Bonnet, 1996; Jain et al., 2015）に基づく指標です。覚醒度、カフェイン摂取、画面環境により変動します。"
   },
   techniques: {
-    title: "視覚反射速度を極限まで高める実践テクニック",
+    title: "反応速度テストを安定させる練習方法",
     items: [
       {
         name: "中心窩の事前活性化と視線固定",
@@ -301,7 +301,7 @@ export default function StrobeLatencyPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(howToSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(videoGameSchema) }} />
-      <StrobeLatencyClient copy={{ title: "光反応テスト: 視覚反射速度＆ミリ秒潜時計測" }} />
+      <StrobeLatencyClient copy={{ title: "反射神経テスト（視覚反応）", startCardTitle: "反射神経テスト", startCardSubtitle: "光刺激への反応速度を測定" }} />
       <DrillGuide guide={lightReactionGuide} />
       <div className="max-w-6xl mx-auto px-4 pb-12">
         <RelatedDrills currentCategory="visual" currentHref="https://skilldrills.online/ja/drills/visual/reaction-speed/light-reaction" />

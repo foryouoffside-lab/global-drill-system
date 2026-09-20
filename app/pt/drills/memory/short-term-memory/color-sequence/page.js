@@ -5,9 +5,13 @@ import { pickSources } from '@/lib/drillSources';
 import { getAlternateLanguages } from '@/lib/i18n/locales';
 
 export const metadata = {
-  title: "Jogo da Memória Online – Sequência de Cores | SkillDrills",
-  description: "Jogue o jogo da memória online grátis. Memorize sequências de cores em expansão e teste o limite da sua memória de trabalho visual no navegador.",
+  title: "Jogo Simon online | Sequência de cores | SkillDrills",
+  description: "Jogue Simon online grátis: memorize uma sequência crescente de cores e sons e repita tudo na mesma ordem no navegador.",
   keywords: [
+    "jogo Simon",
+    "jogo Simon online",
+    "jogo de sequência de cores",
+    "memória de cores",
     "jogo da memoria online",
     "jogo da memoria",
     "jogo da memória",
@@ -31,8 +35,8 @@ export const metadata = {
     follow: true,
   },
   openGraph: {
-    title: "Jogo da Memória Online - Sequência de Cores e Memória Visual",
-    description: "Desafie sua memória operacional visual e retenção de sequências com nosso jogo da memória online gratuito. Supere o gargalo de memória de curto prazo.",
+    title: "Jogo Simon online | Memória de cores",
+    description: "Memorize cores e sons e repita a sequência crescente na ordem exata. Jogue grátis no navegador, sem cadastro.",
     url: "https://skilldrills.online/pt/drills/memory/short-term-memory/color-sequence",
     siteName: 'SkillDrills',
     locale: 'pt_BR',
@@ -40,8 +44,8 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: "Jogo da Memória Online - Sequência de Cores e Memória Visual",
-    description: "Desafie sua memória operacional visual e retenção de sequências com nosso jogo da memória online gratuito. Supere o gargalo de memória de curto prazo.",
+    title: "Jogo Simon online | Memória de cores",
+    description: "Memorize cores e sons e repita a sequência crescente na ordem exata. Jogue grátis no navegador, sem cadastro.",
   },
 };
 
@@ -85,7 +89,8 @@ export default function PortugueseColorSequencePage() {
     "applicationCategory": "GameApplication",
     "operatingSystem": "All",
     "isAccessibleForFree": true,
-    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "BRL" }
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "BRL" },
+    "sameAs": ["https://pt.wikipedia.org/wiki/Genius_%28jogo%29"]
   };
 
   
@@ -230,8 +235,8 @@ const faqSchema = {
   };
 
   const ptCopy = {
-    title: 'Jogo da Memória Online',
-    subtitle: 'Treino de Memória Operacional Visual e Retenção de Sequências de Cores',
+    title: 'Jogo Simon online',
+    subtitle: 'Memorize cores e repita a sequência exata',
     caption: 'Observe e reproduza a sequência luminosa de cores na ordem exata conforme o padrão se expande.',
     statScore: 'Pontuação',
     statTime: 'Tempo',
@@ -274,7 +279,7 @@ const faqSchema = {
     tapPrompt: 'Toque na Sequência em Ordem',
     evaluating: 'Avaliando...',
     startCardTitle: 'Jogo da Memória Online',
-    startCardSubtitle: 'Memória Visual de Curto Prazo • Sequência de Cores',
+    startCardSubtitle: 'Memória de cores • sequência crescente',
     getReady: 'PREPARE-SE',
     newBest: 'NOVO RECORDE',
     points: 'Pontos',
@@ -345,11 +350,11 @@ const faqSchema = {
     faqs: faqSchema.mainEntity.map(e => ({ q: e.name, a: e.acceptedAnswer.text })),
     sources: pickSources('miller1956', 'cowan2001', 'baddeley1974', 'baddeley2000', 'logie1995', 'luck1997', 'simon1974', 'woods2015'),
     related: [
-      { href: "/drills/memory/short-term-memory/digit-span", label: "Teste de Dígitos (Digit Span)" },
-      { href: "/drills/memory/short-term-memory/word-recall", label: "Teste de Memória Verbal" },
-      { href: "/drills/memory/spatial-memory/grid-memorization", label: "Teste de Memória Visual em Grade" },
-      { href: "/drills/memory/spatial-memory/object-location", label: "Teste de Localização de Objetos" },
-      { href: "/drills/memory/working-memory/n-back", label: "Teste Dual N-Back" }
+      { href: "/pt/drills/memory/short-term-memory/digit-span", label: "Teste de Dígitos (Digit Span)" },
+      { href: "/pt/drills/memory/short-term-memory/word-recall", label: "Teste de Memória Verbal" },
+      { href: "/pt/drills/memory/spatial-memory/grid-memorization", label: "Teste de Memória Visual em Grade" },
+      { href: "/pt/drills/memory/spatial-memory/object-location", label: "Teste de Localização de Objetos" },
+      { href: "/pt/drills/memory/working-memory/n-back", label: "Teste Dual N-Back" }
     ]
   };
 

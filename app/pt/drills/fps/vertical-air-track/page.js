@@ -6,21 +6,22 @@ import { getAlternateLanguages } from '@/lib/i18n/locales';
 import { pickSources } from '@/lib/drillSources';
 
 export const metadata = {
-  title: 'Treino de Mira Vertical – Rastreamento Aéreo | SkillDrills',
-  description: 'Treine mira vertical e rastreamento aéreo no navegador. Domine o controle no eixo Y e trajetórias parabólicas no Apex Legends e Overwatch 2 de graça.',
+  title: 'Treino de Mira Vertical - Tracking Aéreo | SkillDrills',
+  description: 'Treine mira vertical e tracking aéreo no navegador. Pratique o eixo Y e a previsão de quedas no Apex Legends e Overwatch 2.',
   keywords: [
     'treino de mira vertical',
     'mira vertical fps',
-    'rastreamento aereo fps',
-    'tracking vertical valorant',
-    'treino de tracking apex legends',
-    'mira eixo y',
+    'tracking aéreo FPS',
+    'rastreamento aéreo',
+    'mira eixo Y',
+    'treino de tracking Apex',
     'controle de mouse vertical',
-    'treino de pontaria aerea',
+    'mira vertical FPS',
+    'treino de pontaria aérea',
     'smooth pursuit vertical',
-    'exercicio de mira fps',
+    'treino de mira Valorant',
     'sensibilidade vertical mouse',
-    'treinador de mira gratis'
+    'treinador de mira grátis'
   ],
   alternates: {
     canonical: 'https://skilldrills.online/pt/drills/fps/vertical-air-track',
@@ -31,8 +32,8 @@ export const metadata = {
     follow: true,
   },
   openGraph: {
-    title: 'Treino de Mira Vertical – Rastreamento Aéreo | SkillDrills',
-    description: 'Treine mira vertical e rastreamento aéreo no navegador. Domine o controle no eixo Y e trajetórias parabólicas no Apex Legends e Overwatch 2 de graça.',
+    title: 'Treino de Mira Vertical - Tracking Aéreo | SkillDrills',
+    description: 'Treine mira vertical e tracking aéreo no navegador. Pratique o eixo Y e a previsão de quedas no Apex Legends e Overwatch 2.',
     url: 'https://skilldrills.online/pt/drills/fps/vertical-air-track',
     siteName: 'SkillDrills',
     locale: 'pt_BR',
@@ -40,8 +41,8 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Treino de Mira Vertical – Rastreamento Aéreo | SkillDrills',
-    description: 'Treine mira vertical e rastreamento aéreo no navegador. Domine o controle no eixo Y e trajetórias parabólicas no Apex Legends e Overwatch 2 de graça.',
+    title: 'Treino de Mira Vertical - Tracking Aéreo | SkillDrills',
+    description: 'Treine mira vertical e tracking aéreo no navegador. Pratique o eixo Y e a previsão de quedas no Apex Legends e Overwatch 2.',
   },
 };
 
@@ -52,14 +53,14 @@ export default function VerticalAirTrackPtPage() {
     "itemListElement": [
       { "@type": "ListItem", "position": 1, "name": "SkillDrills", "item": "https://skilldrills.online/pt" },
       { "@type": "ListItem", "position": 2, "name": "Treinos FPS", "item": "https://skilldrills.online/pt/drills/fps" },
-      { "@type": "ListItem", "position": 3, "name": "Vertical Air-Track", "item": "https://skilldrills.online/pt/drills/fps/vertical-air-track" }
+      { "@type": "ListItem", "position": 3, "name": "Treino de Mira Vertical", "item": "https://skilldrills.online/pt/drills/fps/vertical-air-track" }
     ]
   };
 
   const softwareSchema = {
     "@context": "https://schema.org",
     "@type": "SoftwareApplication",
-    "name": "Treinador de Mira Vertical FPS SkillDrills",
+    "name": "Treino de Mira Vertical - Tracking Aéreo",
     "applicationCategory": "GameApplication",
     "operatingSystem": "Any (Web Browser)",
     "offers": {
@@ -73,7 +74,7 @@ export default function VerticalAirTrackPtPage() {
   const webAppSchema = {
     "@context": "https://schema.org",
     "@type": "WebApplication",
-    "name": "Vertical Air-Track – Rastreamento Vertical de Mira",
+    "name": "Treino de Mira Vertical - Tracking Aéreo",
     "url": "https://skilldrills.online/pt/drills/fps/vertical-air-track",
     "browserRequirements": "Requires Pointer Lock API and WebGL support",
     "applicationCategory": "ShooterTraining",
@@ -86,7 +87,7 @@ export default function VerticalAirTrackPtPage() {
   const videoGameSchema = {
     "@context": "https://schema.org",
     "@type": "VideoGame",
-    "name": "Vertical Air-Track",
+    "name": "Treino de Mira Vertical - Tracking Aéreo",
     "description": "Simulador de rastreamento de alvos em arco parabólico no ar para aprimorar precisão motora vertical e velocidade de resposta anti-aérea.",
     "genre": ["First-Person Shooter", "Aim Trainer", "Reaction Training"],
     "playMode": "SinglePlayer",
@@ -219,9 +220,9 @@ export default function VerticalAirTrackPtPage() {
   };
 
   const verticalAirTrackGuide = {
-    heading: "Guia de Mira Vertical FPS & Rastreamento Parabólico Aéreo",
+    heading: "Treino de Mira Vertical: tracking aéreo e eixo Y",
     intro: [
-      "O Treinador de Mira Vertical (Vertical Aim Trainer / Vertical Air-Track) é um exercício avançado de controle neuromotor projetado para isolar e aperfeiçoar a precisão no eixo Y, a antecipação de arcos gravitacionais e a interceptação de alvos aéreos. Em shooters dinâmicos contemporâneos como Apex Legends, Overwatch 2, Halo Infinite e Destiny 2, adversários exploram constantemente a verticalidade por meio de jump pads, ganchos de escalada, elevadores gravitacionais e quedas de desníveis para quebrar o alinhamento horizontal convencional da retícula.",
+      "Para quem busca treino de mira vertical, este drill mede o tempo e a precisão para acompanhar alvos aéreos no eixo Y. Você pratica tracking suave, previsão de quedas parabólicas e controle de mouse vertical para Apex Legends e Overwatch 2 em uma sessão no navegador.",
       "A neurobiologia do rastreamento de perseguição vertical difere fundamentalmente do plano horizontal. Richard J. Krauzlis (2004) demonstrou que a perseguição suave (smooth pursuit) vertical recruta circuitos específicos no vermis cerebelar e no tronco encefálico, apresentando maior vulnerabilidade ao tremor motor devido à assimetria biomecânica da musculatura do membro superior. Cyril Rashbass (1961) comprovou que a perseguição contínua é impulsionada pelo erro de velocidade retiniana (retinal slip) e não por mero erro de posição estática, demandando correspondência contínua de velocidade angular.",
       "Rastrear entidades em suspensão aérea exige internalizar a física da aceleração gravitacional (g = 9,81 m/s²). Conforme documentado por Peter R. Cavanagh et al. (1984) e Michael F. Land & Peter McLeod (2000), o sistema motor visual humano antecipa a desaceleração parabólica no ápice do salto e a aceleração brusca durante a trajetória de descida. Jogadores que não antecipam essa curvatura de velocidade perdem o alvo repetidamente em momentos de queda livre.",
       "Ao eliminar apoios em movimentos horizontais e isolar com rigor a movimentação pura do eixo Y com o auxílio da cronometria digital de alta resolução performance.now() (Woods et al., 2015), este exercício preenche a lacuna entre a memória muscular bidimensional e o domínio pleno do combate tridimensional em 360 graus.",
@@ -294,8 +295,8 @@ export default function VerticalAirTrackPtPage() {
 
       <VerticalAirTrackClient
         copy={{
-          h1Keyword: "Treino de Mira Vertical FPS",
-          h1Suffix: " – Rastreamento Aéreo e Controle no Eixo Y",
+          h1Keyword: "Treino de Mira Vertical",
+          h1Suffix: " - Tracking Aéreo FPS",
           statScore: "Pontos",
           statTime: "Tempo",
           statAccuracy: "Precisão",
@@ -344,7 +345,7 @@ export default function VerticalAirTrackPtPage() {
       <div className="max-w-6xl w-full mx-auto px-4 pb-12">
         <RelatedDrills
           currentCategory="fps"
-          currentHref="/drills/fps/vertical-air-track"
+          currentHref="/pt/drills/fps/vertical-air-track"
           locale="pt"
         />
       </div>

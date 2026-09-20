@@ -37,27 +37,20 @@ import { pickSources } from '@/lib/drillSources';
 // ============================================================
 
 export const metadata = {
-  title: 'Reflex Game Online - Free Quick Dodge Challenge',
+  title: 'Cursor Dodge Game | Free Reflex Test',
   description:
-    'Train reflexes, mouse agility, and spatial evasion in this free browser reflex game. Dodge dynamic homing threats across 15 progressive difficulty levels.',
+    'Free cursor dodge game in your browser. Move through homing obstacles, survive longer, and train mouse control and evasive reactions.',
   keywords: [
-    // Primary terms
-    'reflex game online',
-    'quick dodge reflex test',
-    'dodge game online',
-    // Secondary / LSI terms
     'cursor dodge game',
-    'reaction dodge test',
-    'mouse control reflex game',
+    'reflex game online',
+    'dodge game online',
     'mouse evasion game',
-    'obstacle evasion drill',
-    'kinetic evasion trainer',
-    'hand eye coordination dodge test',
-    // Long-tail variants
-    'free online browser reflex game',
-    'esports cursor agility trainer',
-    'cerebellar trajectory planning exercise',
-    'high speed obstacle avoidance game',
+    'reaction dodge test',
+    'mouse control game',
+    'obstacle avoidance game',
+    'evasive mouse movement',
+    'free browser reflex game',
+    'hand eye coordination game',
   ],
   alternates: {
     canonical: 'https://skilldrills.online/drills/physical/reflex-training/quick-dodge',
@@ -65,9 +58,9 @@ export const metadata = {
   },
   robots: { index: true, follow: true },
   openGraph: {
-    title: 'Reflex Game Online - Free Quick Dodge Challenge',
+    title: 'Cursor Dodge Game | Free Reflex Test',
     description:
-      'Dodge aggressive homing enemies, build huge combo streaks, and survive as long as possible in this elite browser reflex training game.',
+      'Move your cursor around homing obstacles, survive longer, and train evasive mouse control in a free browser game.',
     url: 'https://skilldrills.online/drills/physical/reflex-training/quick-dodge',
     siteName: 'SkillDrills',
     locale: 'en_US',
@@ -83,9 +76,9 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Reflex Game Online - Free Quick Dodge Challenge',
+    title: 'Cursor Dodge Game | Free Reflex Test',
     description:
-      'Train neuromuscular reflexes, mouse control, and spatial evasion across 15 difficulty levels with real-time analytics. Free zero-install browser drill.',
+      'Dodge homing obstacles with your cursor and train evasive mouse control in a free browser reflex game.',
     images: ['https://skilldrills.online/icons/icon-512x512.png'],
   },
 };
@@ -110,6 +103,9 @@ const softwareApplicationSchema = {
   applicationCategory: 'HealthApplication',
   operatingSystem: 'Any',
   browserRequirements: 'Requires HTML5 Canvas and JavaScript support.',
+  url: 'https://skilldrills.online/drills/physical/reflex-training/quick-dodge',
+  inLanguage: 'en',
+  dateModified: '2026-09-20',
   offers: {
     '@type': 'Offer',
     price: '0',
@@ -126,6 +122,8 @@ const webApplicationSchema = {
   url: 'https://skilldrills.online/drills/physical/reflex-training/quick-dodge',
   description:
     'Free browser reflex game and mouse evasion trainer. Dodge homing threats to build multipliers and test neuromuscular reaction speed across 15 levels.',
+  inLanguage: 'en',
+  dateModified: '2026-09-20',
   applicationCategory: 'SportsApplication',
   operatingSystem: 'Web Browser',
   browserRequirements: 'Requires a modern web browser with HTML5 Canvas support.',
@@ -233,6 +231,8 @@ const videoGameSchema = {
   genre: ['Action', 'Brain Game', 'Reflex Game', 'Coordination'],
   gamePlatform: ['Web Browser', 'Desktop', 'Mobile'],
   applicationCategory: 'Game',
+  inLanguage: 'en',
+  dateModified: '2026-09-20',
   offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
 };
 
@@ -352,7 +352,7 @@ export default function QuickDodgePage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(howToSchema) }}
       />
-      <QuickDodgeClient copy={{ title: 'Quick Dodge Challenge', subtitle: 'Reflex Game Online & Kinetic Evasion Trainer' }} />
+      <QuickDodgeClient copy={{ title: 'Cursor Dodge Game', subtitle: 'Dodge homing obstacles with your cursor' }} />
       <DrillGuide {...guideProps} />
       
     </>

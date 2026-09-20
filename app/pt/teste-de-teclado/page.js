@@ -5,27 +5,23 @@ import DrillGuide from '@/components/drill/DrillGuide';
 import RelatedDrills from '@/components/drill/RelatedDrills';
 
 export const metadata = {
-  title: 'Teste de Teclado Online – Testar Teclas | SkillDrills',
-  description:
-    'Teste cada tecla do seu teclado online no navegador. Identifique teclas presas ou com defeito, meça ghosting e key rollover grátis sem instalar nada.',
+  title: 'Teste de teclado online | Teclas e ABNT2 | SkillDrills',
+  description: 'Teste seu teclado no navegador: verifique teclas, ghosting, rollover e layout ABNT2 sem instalar nada.',
   keywords: [
-    'teste de teclado',
-    'teste teclado',
     'teste de teclado online',
-    'testar teclado online',
-    'testador de teclado',
+    'teste de teclado',
     'testar teclado',
-    'teste ghosting teclado',
-    'teste teclas teclado',
-    'teste key rollover',
-    'verificar teclado online',
-    'teclado virtual teste',
-    'teste de teclado abnt2',
+    'tecla com defeito',
+    'tecla travada',
+    'teste de ghosting teclado',
+    'teste de rollover',
+    'teclado ABNT2',
+    'teclado não funciona',
+    'teste de teclas',
   ],
   openGraph: {
-    title: 'Teste de Teclado Online – Verifique Teclas e Ghosting | SkillDrills',
-    description:
-      'Pressione cada tecla e veja quais funcionam em tempo real. Identifique teclas presas, meça ghosting e key rollover no navegador sem instalar nada.',
+    title: 'Teste de teclado online | Teclas e ABNT2 | SkillDrills',
+    description: 'Verifique teclas, ghosting e rollover no navegador. Compatível com o layout brasileiro ABNT2.',
     type: 'article',
     url: 'https://skilldrills.online/pt/teste-de-teclado',
     siteName: 'SkillDrills',
@@ -33,9 +29,8 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Teste de Teclado Online – Verifique Teclas e Ghosting | SkillDrills',
-    description:
-      'Pressione cada tecla e veja quais funcionam em tempo real. Identifique teclas presas, meça ghosting e key rollover no navegador sem instalar nada.',
+    title: 'Teste de teclado online | Teclas e ABNT2 | SkillDrills',
+    description: 'Teste teclas, ghosting e rollover online com suporte ao teclado brasileiro ABNT2.',
   },
   robots: { index: true, follow: true },
   alternates: {
@@ -102,30 +97,32 @@ const webApplicationSchema = {
   url: 'https://skilldrills.online/pt/teste-de-teclado',
   publisher: { '@type': 'Organization', name: 'SkillDrills', url: 'https://skilldrills.online' },
   inLanguage: 'pt-BR',
-  dateModified: '2026-09-11',
+  dateModified: '2026-09-20',
 };
 
 
 const softwareSchema = {
   '@context': 'https://schema.org',
   '@type': 'SoftwareApplication',
+  inLanguage: 'pt-BR',
   name: 'Teste de Teclado Online — Verificador de Teclas e Ghosting',
   applicationCategory: 'UtilitiesApplication',
   operatingSystem: 'Web Browser',
   offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
   description: 'Testador de teclado online gratuito para layout ABNT2 e internacional. Verifique teclas com defeito, ghosting e tempo de resposta.',
   url: 'https://skilldrills.online/pt/teste-de-teclado',
-  dateModified: '2026-09-11',
+  dateModified: '2026-09-20',
   publisher: { '@type': 'Organization', name: 'SkillDrills', url: 'https://skilldrills.online' }
 };
 
 const videoGameSchema = {
   '@context': 'https://schema.org',
   '@type': 'VideoGame',
+  inLanguage: 'pt-BR',
   name: 'Teste de Teclado Online & Anti-Ghosting Game',
   url: 'https://skilldrills.online/pt/teste-de-teclado',
   description: 'Ferramenta interativa de diagnóstico de teclado no navegador. Teste cada tecla e combinações simultâneas.',
-  dateModified: '2026-09-11',
+  dateModified: '2026-09-20',
   gamePlatform: 'Web Browser',
   genre: ['Teste de Teclado', 'Utilitários', 'Diagnóstico de Hardware'],
   playMode: 'SinglePlayer',
@@ -137,6 +134,7 @@ const videoGameSchema = {
 const howToSchema = {
   '@context': 'https://schema.org',
   '@type': 'HowTo',
+  inLanguage: 'pt-BR',
   name: 'Como Testar Teclas do Teclado Online',
   description: 'Guia passo a passo para testar teclas funcionando, detectar teclas presas e medir anti-ghosting.',
   step: [
@@ -174,6 +172,8 @@ const howToSchema = {
 const faqSchema = {
   '@context': 'https://schema.org',
   '@type': 'FAQPage',
+  inLanguage: 'pt-BR',
+  dateModified: '2026-09-20',
   mainEntity: [
     {
       '@type': 'Question',
@@ -301,7 +301,7 @@ const guideProps = {
 
 const ptCopy = {
   title: 'Teste de Teclado',
-  subtitle: 'Teste de Teclado Online Grátis — Verifique Cada Tecla',
+  subtitle: 'Teclas, ghosting, rollover e ABNT2',
   intro:
     'Pressione todas as teclas do seu teclado. Cada tecla acende ao ser pressionada e permanece verde após confirmar o registro. Teclas que não acendem não estão enviando sinal ao navegador — sintoma de switch com defeito, tecla presa ou problema de driver. Nada é enviado para servidores e nada é salvo.',
   keysConfirmed: 'Teclas confirmadas',

@@ -6,21 +6,23 @@ import { getAlternateLanguages } from '@/lib/i18n/locales';
 import RelatedDrills from '@/components/drill/RelatedDrills';
 
 export const metadata = {
-  title: "Micro-Correction de Visée – Précision FPS | SkillDrills",
-  description: "Entraînez la micro-correction de visée et la décélération terminale. Maîtrisez les micro-ajustements et la précision headshot sur Valorant et CS2.",
+  title: "Aim Trainer | Micro-ajustements de visée | SkillDrills",
+  description: "Aim trainer gratuit dans le navigateur : travaillez les micro-ajustements après le flick, le freinage et la précision headshot sur Valorant et CS2.",
   keywords: [
-    "entraînement micro correction visée",
-    "micro ajustement visée valorant",
+    "aim trainer",
+    "aim trainer en ligne",
+    "aim trainer gratuit",
+    "micro-ajustements de visée",
+    "micro-correction de visée",
     "micro flicks cs2",
     "précision micro ajustement souris",
     "entraînement headshot fps",
     "décélération de visée fps",
     "contrôle micro mouvements souris",
-    "aim trainer micro ajustement gratuit",
-    "comment améliorer micro visée valorant",
-    "précision arrêt de visée cs2",
-    "visée de tête fps entraînement",
-    "micro correction shoot tactique"
+    "freinage de visée",
+    "précision headshot FPS",
+    "entraînement de visée Valorant",
+    "aim trainer Valorant"
   ],
   alternates: {
     canonical: "https://skilldrills.online/fr/drills/fps/micro-correction-precision",
@@ -31,8 +33,8 @@ export const metadata = {
     follow: true,
   },
   openGraph: {
-    title: "Micro-Correction de Visée – Précision FPS | SkillDrills",
-    description: "Entraînez la micro-correction de visée et la décélération terminale. Maîtrisez les micro-ajustements et la précision headshot sur Valorant et CS2.",
+    title: "Aim Trainer | Micro-ajustements de visée | SkillDrills",
+    description: "Aim trainer gratuit dans le navigateur : travaillez les micro-ajustements après le flick, le freinage et la précision headshot sur Valorant et CS2.",
     url: "https://skilldrills.online/fr/drills/fps/micro-correction-precision",
     siteName: 'SkillDrills',
     locale: 'fr_FR',
@@ -40,8 +42,8 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: "Micro-Correction de Visée – Précision FPS | SkillDrills",
-    description: "Entraînez la micro-correction de visée et la décélération terminale. Maîtrisez les micro-ajustements et la précision headshot sur Valorant et CS2.",
+    title: "Aim Trainer | Micro-ajustements de visée | SkillDrills",
+    description: "Aim trainer gratuit dans le navigateur : travaillez les micro-ajustements après le flick, le freinage et la précision headshot sur Valorant et CS2.",
   },
 };
 
@@ -65,7 +67,7 @@ export default function MicroCorrectionPage() {
       {
         "@type": "ListItem",
         "position": 3,
-        "name": "Micro-Correction de Visée",
+         "name": "Aim Trainer - micro-ajustements de visée",
         "item": "https://skilldrills.online/fr/drills/fps/micro-correction-precision"
       }
     ]
@@ -74,7 +76,7 @@ export default function MicroCorrectionPage() {
   const webAppSchema = {
     "@context": "https://schema.org",
     "@type": "WebApplication",
-    "name": "Entraîneur de Micro-Correction de Visée SkillDrills",
+    "name": "Aim Trainer - micro-ajustements et headshots",
     "url": "https://skilldrills.online/fr/drills/fps/micro-correction-precision",
     "applicationCategory": "GameApplication",
     "operatingSystem": "Any",
@@ -89,7 +91,7 @@ export default function MicroCorrectionPage() {
   const softwareSchema = {
     "@context": "https://schema.org",
     "@type": "SoftwareApplication",
-    "name": "Entraînement Micro-Correction de Visée",
+    "name": "Aim Trainer - micro-ajustements et headshots",
     "applicationCategory": "GameApplication",
     "operatingSystem": "Web Browser",
     "offers": {
@@ -117,7 +119,7 @@ export default function MicroCorrectionPage() {
   const faqSchema = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
-    "dateModified": "2026-09-16",
+    "dateModified": "2026-09-20",
     "mainEntity": [
       {
         "@type": "Question",
@@ -236,8 +238,8 @@ export default function MicroCorrectionPage() {
   };
 
   const copyFr = {
-    h1Keyword: "Micro-Correction de Visée",
-    h1Suffix: " – Précision Headshot FPS",
+    h1Keyword: "Aim Trainer",
+    h1Suffix: " – Micro-ajustements de Visée FPS",
     subtitle: "Maîtrisez la décélération terminale et les micro-ajustements immédiats pour une précision headshot létale.",
     statScore: "Score",
     statTime: "Temps",
@@ -246,7 +248,7 @@ export default function MicroCorrectionPage() {
     statAvgCorrection: "Correction Moyenne",
     statMaxCombo: "Combo Max",
     statPeakLevel: "Niveau Max",
-    startTitle: "Micro-Correction de Visée",
+    startTitle: "Aim Trainer - micro-ajustements et headshots",
     startSubtitle: "Entrée Brute Hardware • Progression Continue et Décélération",
     getReady: "PRÊT ?",
     toggleFlash: "Flash de tir manqué",
@@ -259,15 +261,15 @@ export default function MicroCorrectionPage() {
       { num: "3", text: "Montée de Niveau", highlight: "+1 Niveau / 1 400 pts", result: "Échelle adaptative" },
       { num: "4", text: "Tir Manqué", highlight: "Pénalité", result: "Reset combo (-0,6s)" }
     ],
-    aboutTitle: "À Propos de la Micro-Correction de Visée",
+    aboutTitle: "À propos de l'aim trainer et des micro-ajustements",
     aboutHeading: "Qu'est-ce que la Micro-Correction de Visée ?",
     aboutText: "La majorité des mouvements de visée ne sont pas un geste unique mais deux : une poussée balistique initiale rapide, suivie d'un micro-ajustement visuel de précision (Woodworth, 1899 ; Meyer et al., 1988). Cet exercice isole et perfectionne la seconde moitié du geste, là où se joue l'issue du duel."
   };
 
   const microCorrectionGuide = {
-    heading: "Guide de Micro-Correction de Visée & Chronométrie de Précision",
+    heading: "Guide d'Aim Trainer et de Micro-ajustements de Visée",
     intro: [
-      "L'Entraîneur de Micro-Correction de Visée est un exercice sensorimoteur empirique conçu pour isoler, calibrer et maîtriser la phase secondaire d'ajustement du ciblage visuel. Dans les jeux de tir tactiques compétitifs tels que Valorant, Counter-Strike 2 et Rainbow Six Siege, les duels se jouent fréquemment sur des corrections minimes de 5 à 25 pixels.",
+      "Un aim trainer avec micro-ajustements travaille la phase finale d'un mouvement balistique : après être arrivé près de la cible, vous freinez et effectuez un petit ajustement pour centrer le réticule. Ce drill isole cette phase, mesure le temps entre la cible ancre et la micro-cible et révèle quand la vitesse provoque une seconde correction.",
       "Le cadre théorique des mouvements dirigés rapides a été établi par Robert S. Woodworth (1899) avec son modèle en deux composantes : une impulsion balistique initiale en boucle ouverte propulsant la main vers le stimulus, suivie d'une phase de contrôle continu en boucle fermée guidée par le retour sensoriel. Ce compromis vitesse-précision a été formalisé par la loi de Fitts (1954), où le temps de mouvement évolue avec la distance et la taille de la cible.",
       "Les avancées de David E. Meyer et al. (1988) avec le modèle stochastique des sous-mouvements optimisés ont démontré que le système nerveux planifie le déplacement initial pour atterrir légèrement avant la cible, comptant sur de micro-ajustements rapides pour absorber l'inertie sans dépassement chaotique.",
       "Pendant la fixation fovéale terminale, l'œil humain active des microsaccades (Rolfs, 2009 ; Martinez-Conde et al., 2004) — de minuscules mouvements involontaires à haute fréquence — pour stabiliser la rétine sur les cibles critiques. Cet entraîneur associe le Pointer Lock à une chronométrie haute précision via performance.now() (Woods et al., 2015) pour éliminer les oscillations terminales et garantir des headshots constants.",
@@ -370,7 +372,7 @@ export default function MicroCorrectionPage() {
       <div className="max-w-4xl mx-auto px-4 pb-12">
         <RelatedDrills
           currentCategory="fps"
-          currentHref="/drills/fps/micro-correction-precision"
+          currentHref="/fr/drills/fps/micro-correction-precision"
           locale="fr"
         />
       </div>

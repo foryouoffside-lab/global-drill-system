@@ -6,21 +6,18 @@ import RelatedDrills from '@/components/drill/RelatedDrills';
 import DrillFooter from '@/components/drill/DrillFooter';
 
 export const metadata = {
-  title: "Zielpriorisierung FPS Training – Aim Trainer | SkillDrills",
-  description: "Kostenloses Zielpriorisierungs-Training im Browser: Trainiere Bedrohungseinschätzung, Trigger-Disziplin und Schusshemmung für CS2 und Valorant.",
+  title: "Aim Trainer | Zielauswahl & Bedrohung | SkillDrills",
+  description: "Kostenloser Aim Trainer im Browser: Wähle in Valorant und CS2 das gefährlichste Ziel, trainiere Zielauswahl und Schusshemmung.",
   keywords: [
+    "Aim Trainer",
+    "Aim Trainer Valorant",
+    "Aim Trainer Browser",
+    "Zielauswahl",
     "Zielpriorisierung FPS",
-    "Maus Zielauswahl üben",
-    "Zielauswahl Aim Trainer",
     "Bedrohungseinschätzung Shooter",
-    "Trigger-Disziplin trainieren",
+    "Zielauswahl üben",
     "Schusshemmung FPS",
-    "Multi-Target Aiming CS2",
-    "Gegner Priorisierung Valorant",
-    "Go/No-Go Aiming Test",
-    "Ablenkungsunterdrückung FPS",
-    "Reflex Schussdisziplin",
-    "Aiming Entscheidungszeit"
+    "taktische Entscheidungszeit"
   ],
   alternates: {
     canonical: "https://skilldrills.online/de/drills/fps/target-prioritization",
@@ -31,8 +28,8 @@ export const metadata = {
     follow: true,
   },
   openGraph: {
-    title: "Zielpriorisierung FPS Training – Aim Trainer | SkillDrills",
-    description: "Kostenloses Zielpriorisierungs-Training im Browser: Trainiere Bedrohungseinschätzung, Trigger-Disziplin und Schusshemmung für CS2 und Valorant.",
+    title: "Aim Trainer | Zielauswahl & Bedrohung | SkillDrills",
+    description: "Kostenloser Aim Trainer im Browser: Wähle in Valorant und CS2 das gefährlichste Ziel, trainiere Zielauswahl und Schusshemmung.",
     url: "https://skilldrills.online/de/drills/fps/target-prioritization",
     siteName: 'SkillDrills',
     locale: 'de_DE',
@@ -40,8 +37,8 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: "Zielpriorisierung FPS Training – Aim Trainer | SkillDrills",
-    description: "Kostenloses Zielpriorisierungs-Training im Browser: Trainiere Bedrohungseinschätzung, Trigger-Disziplin und Schusshemmung für CS2 und Valorant.",
+    title: "Aim Trainer | Zielauswahl & Bedrohung | SkillDrills",
+    description: "Kostenloser Aim Trainer im Browser: Wähle in Valorant und CS2 das gefährlichste Ziel, trainiere Zielauswahl und Schusshemmung.",
   },
 };
 
@@ -52,17 +49,17 @@ export default function TargetPrioritizationDePage() {
     "itemListElement": [
       { "@type": "ListItem", "position": 1, "name": "SkillDrills", "item": "https://skilldrills.online/de" },
       { "@type": "ListItem", "position": 2, "name": "FPS Drills", "item": "https://skilldrills.online/de/drills/fps" },
-      { "@type": "ListItem", "position": 3, "name": "Zielpriorisierung", "item": "https://skilldrills.online/de/drills/fps/target-prioritization" }
+      { "@type": "ListItem", "position": 3, "name": "Aim Trainer - Zielauswahl", "item": "https://skilldrills.online/de/drills/fps/target-prioritization" }
     ]
   };
 
   const softwareSchema = {
     "@context": "https://schema.org",
     "@type": "SoftwareApplication",
-    "name": "Zielpriorisierung FPS Training",
+    "name": "Aim Trainer - Zielauswahl und Bedrohung",
     "applicationCategory": "GameApplication",
     "operatingSystem": "Web Browser",
-    "dateModified": "2026-09-05",
+    "dateModified": "2026-09-20",
     "offers": { "@type": "Offer", "price": "0", "priceCurrency": "EUR" },
     "description": "Kostenloses Browsertraining zur Optimierung von Bedrohungseinschätzung, visueller Filterung und Trigger-Disziplin in taktischen Ego-Shootern.",
     "genre": "FPS Training / Target Prioritization",
@@ -77,7 +74,7 @@ export default function TargetPrioritizationDePage() {
   const webAppSchema = {
     "@context": "https://schema.org",
     "@type": "WebApplication",
-    "name": "Zielpriorisierung FPS Training",
+    "name": "Aim Trainer - Zielauswahl und Bedrohung",
     "url": "https://skilldrills.online/de/drills/fps/target-prioritization",
     "applicationCategory": "GameApplication",
     "operatingSystem": "All",
@@ -93,10 +90,10 @@ export default function TargetPrioritizationDePage() {
   const videoGameSchema = {
     "@context": "https://schema.org",
     "@type": "VideoGame",
-    "name": "Zielpriorisierung FPS Training",
+    "name": "Aim Trainer - Zielauswahl und Bedrohung",
     "url": "https://skilldrills.online/de/drills/fps/target-prioritization",
     "description": "Kostenloses Browsertraining zur Optimierung von Bedrohungseinschätzung, visueller Filterung und Trigger-Disziplin in taktischen Ego-Shootern.",
-    "dateModified": "2026-09-05",
+    "dateModified": "2026-09-20",
     "gamePlatform": "Web Browser",
     "genre": ["FPS Training", "Aim Trainer", "Target Prioritization"],
     "playMode": "SinglePlayer",
@@ -108,7 +105,7 @@ export default function TargetPrioritizationDePage() {
   const faqSchema = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
-    "dateModified": "2026-09-05",
+    "dateModified": "2026-09-20",
     "mainEntity": [
       {
         "@type": "Question",
@@ -231,9 +228,9 @@ export default function TargetPrioritizationDePage() {
   };
 
   const targetPrioritizationGuide = {
-    heading: "Zielpriorisierung FPS Training Guide & Biomechanik der Schusshemmung",
+    heading: "Aim Trainer für Zielauswahl und Bedrohungspriorität",
     intro: [
-      "Zielpriorisierung FPS Training ist ein hochentwickeltes perzeptiv-kognitives Trainingsmodul zur Schärfung blitzschneller Bedrohungseinschätzung, selektiver visueller Ablenkungsunterdrückung und exekutiver motorischer Hemmung. In modernen taktischen Shootern wie Counter-Strike 2, Valorant, Rainbow Six Siege und Apex Legends entscheiden nicht allein rohe Flick-Geschwindigkeiten über den Rundensieg, sondern die Zielauswahl: Welcher Kontrahent muss augenblicklich neutralisiert werden, während der Schussimpuls gegenüber Verbündeten und harmlosen Attrappen diszipliniert unterdrückt wird?",
+      "Ein Aim Trainer für Zielauswahl übt die Entscheidung, welches Ziel in Valorant und CS2 zuerst bekämpft werden muss. Dieser Drill misst Bedrohungseinschätzung, Ablenkungsfilterung und Schusshemmung, damit der Mausklick gegenüber falschen oder nicht priorisierten Zielen kontrolliert bleibt.",
       "Die neurophysiologische Grundlage motorischer Hemmungsprozesse wurde von Gordon D. Logan und William B. Cowan (1984) im wegweisenden Stop-Signal-Paradigma formuliert. Ihr 'Horse-Race'-Modell belegt, dass Handlungsausführung (Go-Prozess) und Handlungsunterdrückung (Stop-Prozess) als zwei unabhängige neuronale Netzwerke im fronto-basalgangliären Kreislauf um die Vorherrschaft konkurrieren. Spieler ohne gezieltes Schusshemmungstraining unterliegen unter Wettkampfdruck reflexartigem Panikfeuer, indem sie den Zeigefinger krümmen, bevor die visuelle Zielverifikation abgeschlossen ist.",
       "Die Mechanismen der visuellen Reizfilterung wurden durch Donald E. Broadbent (1958) und Anne Treisman (1964) in den Modellen der selektiven Aufmerksamkeit begründet. Treffen mehrere konkurrierende Reize auf die Netzhaut ein, aktiviert das Gehirn Top-Down-Aufmerksamkeitsfilter (Posner & Petersen, 1990), um irrelevante Bewegungen peripher abzuschwächen und foveale Ressourcen voll auf die gefährlichste Bedrohungsachse zu lenken.",
       "Durch die Verknüpfung von Franciscus Cornelis Donders' (1868) Go/No-Go-Diskriminationsmodellen mit hochauflösender digitaler Chronometrie via performance.now() (Woods et al., 2015) schließt dieses Trainingssystem die Lücke zwischen reinem Mausempfinden und taktischer Entscheidungspräzision unter realem Wettkampfdruck.",
@@ -323,9 +320,9 @@ export default function TargetPrioritizationDePage() {
       />
       <TargetPrioritizationClient
         copy={{
-          h1Keyword: "Zielpriorisierung FPS Training",
-          h1Suffix: " – Bedrohungsauswahl & Schusshemmung",
-          subtitle: "Trainiere Bedrohungsanalyse, visuelle Reizfilterung und Reaktionshemmung mit Echtzeit-Feedback.",
+          h1Keyword: "Aim Trainer",
+          h1Suffix: " – Zielauswahl & Bedrohungspriorität",
+          subtitle: "Trainiere Zielauswahl, Bedrohungseinschätzung und kontrollierte Schusshemmung direkt im Browser.",
           statScore: "Punkte",
           statTime: "Zeit",
           statAccuracy: "Präzision",
@@ -333,7 +330,7 @@ export default function TargetPrioritizationDePage() {
           statThreatsCleared: "Gefahren neutralisiert",
           statMaxCombo: "Max Combo",
           statPeakLevel: "Höchstlevel",
-          startTitle: "Zielpriorisierung",
+          startTitle: "Aim Trainer - Zielauswahl",
           startSubtitle: "Bedrohungseinschätzung & Kognitives Filtern • Endlose Levelprogression",
           getReady: "BEREIT MACHEN",
           toggleFlash: "Fehlschuss-Blitz an/aus",
@@ -348,7 +345,7 @@ export default function TargetPrioritizationDePage() {
             { num: "3", text: "Eigene Einheiten", highlight: "Grün (NICHT SCHIESSEN)", result: "Fehlschuss/Friendly Fire setzt Combo zurück" },
             { num: "4", text: "Levelaufstieg", highlight: "+1 / 1400 PTS", result: "Dynamische Dichte & Tempo" }
           ],
-          aboutTitle: "Über Zielpriorisierung im FPS-Gaming",
+          aboutTitle: "Über Aim Trainer und Zielauswahl",
           aboutHeading: "Was ist Zielpriorisierung (Target Prioritization)?",
           aboutText: "Zielpriorisierung beschreibt die exekutive Fähigkeit, in komplexen Kampfsituationen mehrere sichtbare Gegner blitzschnell nach ihrer unmittelbaren Gefährlichkeit zu gewichten und den tödlichsten Kontrahenten zuerst auszuschalten. Gleichzeitig erfordert dies Schusshemmung (Trigger-Disziplin), um nicht reflexartig auf Verbündete oder harmlose Attrappen zu feuern. Logan und Cowan (1984) wiesen nach, dass das Abbrechen einer bereits vorbereiteten Schussbewegung einem eigenständigen neurologischen Hemmungsprozess unterliegt."
         }}
@@ -357,7 +354,7 @@ export default function TargetPrioritizationDePage() {
       <div className="max-w-4xl mx-auto px-4 pb-12">
         <RelatedDrills
           currentCategory="fps"
-          currentHref="/drills/fps/target-prioritization"
+          currentHref="/de/drills/fps/target-prioritization"
           locale="de"
         />
       </div>

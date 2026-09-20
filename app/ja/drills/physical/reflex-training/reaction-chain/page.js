@@ -5,46 +5,43 @@ import { getAlternateLanguages } from '@/lib/i18n/locales';
 import { pickSources } from '@/lib/drillSources';
 
 // ============================================================
-// SEO RESEARCH FINDINGS — Japan (JA / JP)
-// Primary Intent: マウス エイム ブレーキング 練習, 衝動 抑制 反射 トレーニング, マウス 停止 反応 テスト
-// Japanese Gaming Context: VALORANT / Apex / CS2 オーバーフリック(Over-flicking)矯正, 初弾ヘッドショット静止力, 運動抑制神経ドリル
-// High-Demand, Low-Competition Target Keywords:
-//   - "衝動 抑制 反射 トレーニング" (Impulse inhibition reflex training)
-//   - "マウス 停止 反応 テスト" (Mouse stop reaction test)
-//   - "運動 抑制 反応 ドリル" (Motor inhibition reaction drill)
-//   - "マウス エイム ブレーキング 練習" (Mouse aim braking practice)
-//   - "オーバーフリック 矯正 マウス" (Over-flicking correction mouse)
-//   - "マウス 減速 コントロール ゲーム" (Mouse deceleration control game)
-//   - "マウス 精度 テスト" (Mouse precision test)
-//   - "反応 速度 ゲーム" (Reaction speed game)
+// SEO RESEARCH FINDINGS — Japan (JA / JP), 2026-09-20
+// Native SERP intent observed: エイム練習 無料 ブラウザ, エイム練習 ブラウザ,
+// 反射神経テスト fps, 反射神経ゲーム, 反応速度テスト. Exact volume is not asserted.
+// 反射神経テスト ゲーム, 反射神経テスト 平均. Broad terms are not used as the page's lead.
 // ============================================================
 
 export const metadata = {
-  title: "マウス エイムブレーキング – 衝動抑制反射トレーニング | SkillDrills",
-  description: "高速移動するノードを迎撃しカーソル慣性を瞬間ゼロ静止（Kinetic Arrest）させる神経生体力学ドリル。ローガン競走モデル（Logan & Cowan, 1984）に基づくオーバーフリック矯正訓練。",
+  title: "エイム練習 無料ブラウザ｜停止精度テスト",
+  description: "無料ブラウザのエイム練習。動く標的にカーソルを合わせて止め、フリック後の停止精度とオーバーフリックを練習できます。",
   keywords: [
-    "衝動 抑制 反射 トレーニング",
-    "マウス 停止 反応 テスト",
-    "運動 抑制 反応 ドリル",
-    "マウス エイム ブレーキング 練習",
-    "オーバーフリック 矯正 マウス",
-    "マウス 減速 コントロール ゲーム",
-    "マウス 精度 テスト",
-    "反応 速度 ゲーム",
-    "エイム ストッピング 練習",
-    "マウス ブレーキ 測定"
+    "エイム練習 無料 ブラウザ",
+    "エイム練習 ブラウザ",
+    "エイム練習ゲーム 無料",
+    "反射神経テスト fps",
+    "反射神経ゲーム",
+    "反応速度テスト",
+    "反射神経テスト 平均",
+    "置きエイム 練習",
+    "反応速度測定サイト",
+    "オーバーフリック"
   ],
   alternates: {
     canonical: 'https://skilldrills.online/ja/drills/physical/reflex-training/reaction-chain',
     languages: getAlternateLanguages('/drills/physical/reflex-training/reaction-chain'),
   },
   openGraph: {
-    title: "マウス エイムブレーキング – 衝動抑制反射トレーニング | SkillDrills",
-    description: "標的を迎撃した直後に慣性を急制動させる専門ドリル。オーバーフリックを根絶しVALORANTやCS2の初弾ストッピング精度を極限まで高めます。",
+    title: "エイム練習 無料ブラウザ｜停止精度テスト",
+    description: "動く標的にカーソルを合わせて止める無料のブラウザ・エイム練習。フリック後の停止精度を確認できます。",
     url: 'https://skilldrills.online/ja/drills/physical/reflex-training/reaction-chain',
     siteName: 'SkillDrills',
     locale: 'ja_JP',
     type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: "エイム練習 無料ブラウザ｜停止精度テスト",
+    description: "動く標的に合わせてカーソルを止め、フリック後の停止精度を練習できます。",
   },
 };
 
@@ -82,7 +79,7 @@ const breadcrumbSchema = {
 const softwareApplicationSchema = {
   "@context": "https://schema.org",
   "@type": "SoftwareApplication",
-  "name": "マウス エイムブレーキング & 衝動抑制反射トレーニング (Reaction Chain)",
+  "name": "無料ブラウザ・エイム練習 (Reaction Chain)",
   "applicationCategory": "HealthApplication",
   "operatingSystem": "All",
   "offers": {
@@ -90,7 +87,7 @@ const softwareApplicationSchema = {
     "price": "0",
     "priceCurrency": "USD"
   },
-  "description": "高速移動ノードのインターセプト直後にマウスカーソルの運動慣性を完全相殺（Kinetic Arrest）する運動抑制・減速制御トレーニングツール。",
+  "description": "動く標的へカーソルを合わせたあと、標的内で止める精度を測る無料のブラウザ・エイム練習。",
   "url": "https://skilldrills.online/ja/drills/physical/reflex-training/reaction-chain",
   "publisher": {
     "@type": "Organization",
@@ -98,13 +95,13 @@ const softwareApplicationSchema = {
     "url": "https://skilldrills.online/ja"
   },
   "inLanguage": "ja",
-  "dateModified": "2026-09-12"
+  "dateModified": "2026-09-20"
 };
 
 const webApplicationSchema = {
   "@context": "https://schema.org",
   "@type": "WebApplication",
-  "name": "マウス エイムブレーキング – 衝動抑制反射トレーニング | SkillDrills",
+  "name": "エイム練習 無料ブラウザ｜反射神経・停止精度 | SkillDrills",
   "applicationCategory": "EducationalApplication",
   "operatingSystem": "All",
   "browserRequirements": "Requires HTML5 Canvas and JavaScript enabled browser",
@@ -115,17 +112,19 @@ const webApplicationSchema = {
   },
   "url": "https://skilldrills.online/ja/drills/physical/reflex-training/reaction-chain",
   "inLanguage": "ja",
-  "dateModified": "2026-09-12"
+  "dateModified": "2026-09-20"
 };
 
 const videoGameSchema = {
   "@context": "https://schema.org",
   "@type": "VideoGame",
-  "name": "マウス エイムブレーキング & 衝動抑制反射トレーニング",
+  "name": "無料ブラウザ・エイム練習｜Reaction Chain",
   "url": "https://skilldrills.online/ja/drills/physical/reflex-training/reaction-chain",
   "genre": ["Reflex Game", "Motor Control Trainer", "Esports Precision"],
   "playMode": "SinglePlayer",
-  "description": "最大1,800 px/sの高速ノードを捉え、カーソル速度を1.5 px/フレーム以下へ瞬時に急停止させることでコンボを伸ばす本格エイムブレーキングゲーム。"
+  "inLanguage": "ja",
+  "dateModified": "2026-09-20",
+  "description": "動くノードへカーソルを合わせ、標的内で止める精度と反射神経を鍛えるブラウザゲーム。"
 };
 
 const faqSchema = {
@@ -218,7 +217,7 @@ const faqSchema = {
 const howToSchema = {
   "@context": "https://schema.org",
   "@type": "HowTo",
-  "name": "マウス エイムブレーキング & 衝動抑制反射トレーニングの手順",
+  "name": "無料ブラウザ・エイム練習の手順",
   "description": "飛来するノードを確実にインターセプトし、カーソルの物理的慣性をゼロに収束させる4段階のブレーキングプロトコル。",
   "step": [
     {
@@ -251,7 +250,7 @@ const howToSchema = {
 const guideProps = {
   sources: pickSources('logan1984', 'woodworth1899', 'fitts1954', 'woods2015'),
   intro: {
-    title: "衝動抑制の神経メカニズムとエイムブレーキング（Kinetic Arrest）の生体力学",
+    title: "無料ブラウザ・エイム練習で測る停止精度",
     paragraphs: [
       "マウスを標的に向けて素早く振り抜くことよりも、目標座標で1ピクセルも滑らせずにピタッと静止させることのほうが神経生体力学的に遥かに困難です。一般的なエイム練習ツールが標的をクリックする瞬間のみを重視するのに対し、リアクション・チェーンドリルは高速ノードを迎撃した直後にカーソルの運動慣性を強制停止させる最高峰の運動抑制（Motor Inhibition）能力を鍛え上げます。",
       "認知神経科学の金字塔であるローガンとコーワン（Logan & Cowan, 1984）の「競走モデル（Race Model）」によれば、運動を駆動する「Goプロセス」とそれを急停止させる「Stopプロセス」は大脳基底核内で並列に競い合っています。超高速で移動する標的上にカーソルを静止させるには、大脳右下前頭回（rIFG）および視床下核（STN）からの迅速な拮抗筋動員指令がGoプロセスの慣性に打ち勝たなければなりません（Verbruggen & Logan, 2008）。",
@@ -336,10 +335,10 @@ export default function LocalizedReactionChainPageJa() {
       />
       <ReactionChainClient
         copy={{
-          title: "マウス エイムブレーキング & 衝動抑制トレーニング",
-          subtitle: "キネティック・アレスト & 運動減速制御 • 15段階スピードスケーリング",
+          title: "無料ブラウザ・エイム練習",
+          subtitle: "標的に合わせ、カーソルを正確に止める",
           badge: "衝動抑制反射トレーニング",
-          description: "マウスを標的に向かって素早く加速させることよりも、目標座標でピタッと静止させることのほうが神経生体力学的に遥かに困難です。運動指令と停止指令は大脳基底核内で互いに独立して競走しており（Logan & Cowan, 1984）、終端の制動が遅れれば慣性によるオーバーフリックが発生します（Woodworth, 1899）。飛来するノードを迎撃し、カーソルを瞬時にゼロ静止させてオーバーフリックを根絶しましょう。",
+          description: "リアクション・チェーンは、動く標的へカーソルを合わせてから停止する精度を測る無料のブラウザ・エイム練習です。反射神経テストよりも、フリック後のオーバーシュートと停止精度を記録します。",
           hudLabels: {
             score: "スコア",
             time: "残り時間",
@@ -397,9 +396,10 @@ export default function LocalizedReactionChainPageJa() {
             }
           ]
         }}
-      />
-      <DrillGuide {...guideProps} />
-      <RelatedDrills currentCategory="physical" currentHref="/drills/physical/reflex-training/reaction-chain" />
+      >
+        <DrillGuide {...guideProps} />
+        <RelatedDrills currentCategory="physical" currentHref="/drills/physical/reflex-training/reaction-chain" />
+      </ReactionChainClient>
     </>
   );
 }

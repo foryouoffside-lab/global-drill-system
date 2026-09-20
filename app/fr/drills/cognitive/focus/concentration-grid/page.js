@@ -2,11 +2,12 @@ import ConcentrationGridClient from '@/app/drills/cognitive/focus/concentration-
 import { getAlternateLanguages } from '@/lib/i18n/locales';
 import DrillGuide from '@/components/drill/DrillGuide';
 import RelatedDrills from '@/components/drill/RelatedDrills';
+import DrillFooter from '@/components/drill/DrillFooter';
 import { pickSources } from '@/lib/drillSources';
 
 export const metadata = {
-  title: "Table de Schulte en Ligne – SkillDrills",
-  description: "Table de Schulte gratuite en ligne: entraînez vision périphérique, lecture rapide et exploration séquentielle sur des grilles dynamiques sans inscription.",
+  title: "Table de Schulte | Grille de concentration | SkillDrills",
+  description: "Table de Schulte gratuite dans le navigateur : trouvez les nombres dans l’ordre et entraînez la recherche visuelle. Auto-test non clinique.",
   keywords: [
     "table de schulte",
     "table de schulte en ligne",
@@ -74,6 +75,7 @@ const webAppSchema = {
   "applicationCategory": "EducationalApplication",
   "operatingSystem": "All",
   "url": "https://skilldrills.online/fr/drills/cognitive/focus/concentration-grid",
+  "dateModified": "2026-09-20",
 };
 
 const softwareSchema = {
@@ -86,7 +88,8 @@ const softwareSchema = {
     "@type": "Offer",
     "price": "0",
     "priceCurrency": "USD"
-  }
+  },
+  "dateModified": "2026-09-20"
 };
 
 const videoGameSchema = {
@@ -94,7 +97,8 @@ const videoGameSchema = {
   "@type": "VideoGame",
   "name": "Défi Table de Schulte et Grille de Concentration",
   "gamePlatform": "Web Browser",
-  "genre": ["Brain Training", "Cognitive Drill", "Vision Training"]
+  "genre": ["Brain Training", "Cognitive Drill", "Vision Training"],
+  "dateModified": "2026-09-20"
 };
 
 const howToSchema = {
@@ -351,6 +355,7 @@ export default function ConcentrationGridPageFr() {
       <div className="max-w-6xl w-full mx-auto px-4 pb-12">
         <RelatedDrills currentCategory="cognitive" currentHref="/drills/cognitive/focus/concentration-grid" locale="fr" />
       </div>
+      <DrillFooter />
     </>
   );
 }

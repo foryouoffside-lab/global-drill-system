@@ -5,7 +5,7 @@ import React, { useState, useEffect, useRef, useCallback } from 'react';
 
 import {
   AlertCircle, Target, TrendingUp, Volume2, VolumeX,
-  Zap, ZapOff, Users
+  Zap, ZapOff, Users, Info
 } from 'lucide-react';
 
 import generateShareCard, { shareScoreCard } from '@/components/ShareScoreCard';
@@ -806,10 +806,8 @@ export default function FingerSequencingClient({ copy } = {}) {
           <div className="flex flex-col gap-1">
             <h1 className="text-2xl sm:text-3xl font-black tracking-tight text-white">
               <span data-seo-kw="1">{copy?.title || "Sequence Aim Trainer"}</span>
+              <span className="block text-sm font-semibold text-slate-400 mt-1">{copy?.subtitle || "Finger sequencing aim drill for clicking targets in order while improving motor speed and visual coordination"}</span>
             </h1>
-            <p className="text-[13px] text-slate-400 leading-relaxed">
-              {copy?.desc || "Sequential target switching means clicking a set of targets in a required order rather than whichever one is easiest to reach. An ordered sequence like that runs as a single pre-planned motor program instead of one fresh decision per target (Lashley, 1951; Keele, 1968), so the time is spent in the transitions between targets, not in the clicks. Each transition is itself a Fitts's Law movement, timed by the log of the gap between two targets divided by their width (Fitts, 1954)."}
-            </p>
           </div>
         )}
 
@@ -834,7 +832,7 @@ export default function FingerSequencingClient({ copy } = {}) {
         <div
           ref={containerRef}
           onContextMenu={(e) => { if (gameActiveRef.current) e.preventDefault(); }}
-          className={`overflow-hidden flex flex-col transition-all duration-150 select-none bg-[#080811] text-white ${
+          className={`overflow-hidden flex flex-col select-none bg-[#080811] text-white ${
             isFullscreen
               ? 'fixed inset-0 z-[100] w-screen h-[100dvh] bg-[#050508] flex flex-col items-center justify-center'
               : 'w-full rounded-2xl aspect-video min-h-[460px] md:min-h-[500px] max-h-[88vh] max-md:portrait:aspect-[3/4] max-md:portrait:min-h-[420px] max-md:portrait:max-h-[76vh] max-md:landscape:min-h-[340px] max-md:landscape:max-h-[85vh] bg-[#080811] border border-white/10 relative overflow-hidden flex flex-col'
@@ -958,6 +956,23 @@ export default function FingerSequencingClient({ copy } = {}) {
                   <RuleItem key={idx} num={item.num} text={item.text} highlight={item.highlight} result={item.result} />
                 ))}
               </div>
+            </DrillAccordion>
+
+            <DrillAccordion
+              id="about"
+              title={copy?.aboutTitle || "About Sequence Aim Trainer"}
+              isOpen={openAccordion === 'about'}
+              onToggle={() => setOpenAccordion(openAccordion === 'about' ? null : 'about')}
+            >
+              <div className="flex items-start gap-2 mb-3">
+                <Info className="w-4 h-4 text-emerald-400 mt-0.5 shrink-0" />
+                <p className="text-sm leading-relaxed text-gray-300">
+                  {copy?.aboutP1 || "Sequential target switching means clicking a set of targets in a required order rather than whichever one is easiest to reach. An ordered sequence like that runs as a single pre-planned motor program instead of one fresh decision per target (Lashley, 1951; Keele, 1968)."}
+                </p>
+              </div>
+              <p className="text-sm leading-relaxed text-gray-300">
+                {copy?.aboutP2 || "The time is spent in the transitions between targets, not in the clicks — each transition is itself a Fitts's Law movement, timed by the log of the gap between two targets divided by their width (Fitts, 1954)."}
+              </p>
             </DrillAccordion>
           </div>
         )}

@@ -6,25 +6,25 @@ import DrillFooter from '@/components/drill/DrillFooter';
 import { pickSources } from '@/lib/drillSources';
 
 export const metadata = {
-  title: '시퀀스 에임 연습・순서 클릭 테스트 – 시각 순서 인지 및 마우스 조작 속도 | SkillDrills',
-  description: '번호가 지정된 타깃을 순서대로 빠르게 클릭하는 연속 시퀀스 에임 트레이너. 시각 탐색, 궤적 계획 및 연속 클릭 제어 반응 속도를 밀리초 단위로 측정합니다.',
+  title: '타겟 전환 연습・순서 클릭 테스트 | SkillDrills',
+  description: '번호 타깃을 순서대로 클릭하며 타겟 전환 속도와 정확도를 측정하는 무료 에임 연습. 브라우저에서 바로 플레이하세요.',
   keywords: [
-    '시퀀스 에임 연습',
-    '순서대로 클릭 테스트',
-    '연속 타깃 에임 트레이너',
+    '타겟 전환 연습',
+    '순서 클릭 테스트',
+    '에임 연습',
+    '연속 클릭 테스트',
     '숫자 순서 클릭',
-    '타깃 스위칭 연습',
-    '손가락 속도 측정',
-    '마우스 연속 조작 훈련',
-    '에임 순서 제어',
-    'FPS 타깃 전환 연습',
+    'FPS 타겟 전환',
     '마우스 클릭 반응속도',
-    '오버워치 발로란트 에임 연습',
-    '소근육 운동 제어',
+    '마우스 정확도 테스트',
+    '손가락 속도 측정',
+    '시각 탐색 연습',
+    '연속 타깃 에임',
+    '마우스 조작 훈련',
   ],
   openGraph: {
-    title: '시퀀스 에임 연습・순서 클릭 테스트 – 시각 순서 인지 및 마우스 조작 속도 | SkillDrills',
-    description: '번호가 지정된 타깃을 순서대로 빠르게 클릭하는 연속 시퀀스 에임 트레이너. 시각 탐색, 궤적 계획 및 연속 클릭 제어 반응 속도를 밀리초 단위로 측정합니다.',
+    title: '타겟 전환 연습・순서 클릭 테스트 | SkillDrills',
+    description: '번호 타깃을 순서대로 클릭하며 타겟 전환 속도와 정확도를 측정하는 무료 에임 연습.',
     type: 'article',
     url: 'https://skilldrills.online/ko/drills/motor/movement-speed/finger-sequencing',
     siteName: 'SkillDrills',
@@ -32,8 +32,8 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: '시퀀스 에임 연습・순서 클릭 테스트 – 시각 순서 인지 및 마우스 조작 속도 | SkillDrills',
-    description: '번호가 지정된 타깃을 순서대로 빠르게 클릭하는 연속 시퀀스 에임 트레이너.',
+    title: '타겟 전환 연습・순서 클릭 테스트 | SkillDrills',
+    description: '번호 타깃을 순서대로 클릭하는 무료 타겟 전환 연습.',
   },
   robots: { index: true, follow: true },
   alternates: {
@@ -49,39 +49,42 @@ const breadcrumbSchema = {
     { '@type': 'ListItem', position: 1, name: 'SkillDrills', item: 'https://skilldrills.online/ko' },
     { '@type': 'ListItem', position: 2, name: '운동 제어 훈련', item: 'https://skilldrills.online/ko/drills/motor' },
     { '@type': 'ListItem', position: 3, name: '동작 속도', item: 'https://skilldrills.online/ko/drills/motor/movement-speed' },
-    { '@type': 'ListItem', position: 4, name: '시퀀스 에임 연습', item: 'https://skilldrills.online/ko/drills/motor/movement-speed/finger-sequencing' },
+    { '@type': 'ListItem', position: 4, name: '타겟 전환 연습', item: 'https://skilldrills.online/ko/drills/motor/movement-speed/finger-sequencing' },
   ],
 };
 
 const softwareApplicationSchema = {
   '@context': 'https://schema.org',
   '@type': 'SoftwareApplication',
-  name: '시퀀스 에임 연습・순서 클릭 테스트',
+  inLanguage: 'ko-KR',
+  name: '타겟 전환 연습・순서 클릭 테스트',
   applicationCategory: 'HealthApplication',
   operatingSystem: 'All',
   offers: { '@type': 'Offer', price: '0', priceCurrency: 'KRW' },
   description: '브라우저 기반 무료 시퀀스 에임 트레이너 및 연속 클릭 속도 테스트. 순서에 따른 타깃 전환, 궤적 최적화, 정밀 클릭 조작 측정.',
   url: 'https://skilldrills.online/ko/drills/motor/movement-speed/finger-sequencing',
   publisher: { '@type': 'Organization', name: 'SkillDrills', url: 'https://skilldrills.online' },
-  dateModified: '2026-09-05',
+  dateModified: '2026-09-20',
 };
 
 const webApplicationSchema = {
   '@context': 'https://schema.org',
   '@type': 'WebApplication',
-  name: '시퀀스 에임 트레이너',
+  inLanguage: 'ko-KR',
+  name: '타겟 전환 에임 트레이너',
   applicationCategory: 'GameApplication',
   operatingSystem: 'All',
   browserRequirements: 'HTML5 Canvas 및 JavaScript 지원 필요',
   offers: { '@type': 'Offer', price: '0', priceCurrency: 'KRW' },
   url: 'https://skilldrills.online/ko/drills/motor/movement-speed/finger-sequencing',
-  dateModified: '2026-09-05',
+  dateModified: '2026-09-20',
 };
 
 const videoGameSchema = {
   '@context': 'https://schema.org',
   '@type': 'VideoGame',
-  name: '시퀀스 에임 트레이너 – 손가락 스피드 테스트',
+  inLanguage: 'ko-KR',
+  name: '타겟 전환 에임 트레이너 – 손가락 속도 테스트',
   url: 'https://skilldrills.online/ko/drills/motor/movement-speed/finger-sequencing',
   description: '연속 운동 프로그램 이론에 기반하여 정해진 순서대로 타깃을 전환하는 속도를 측정합니다.',
   genre: ['Aim Game', 'Action', 'Esports Training'],
@@ -93,6 +96,8 @@ const videoGameSchema = {
 const faqSchema = {
   '@context': 'https://schema.org',
   '@type': 'FAQPage',
+  inLanguage: 'ko-KR',
+  dateModified: '2026-09-20',
   mainEntity: [
     {
       '@type': 'Question',
@@ -180,6 +185,8 @@ const faqSchema = {
 const howToSchema = {
   '@context': 'https://schema.org',
   '@type': 'HowTo',
+  inLanguage: 'ko-KR',
+  dateModified: '2026-09-20',
   name: '시퀀스 에임 및 손가락 조작 속도 훈련 방법',
   description: '순서에 따른 다중 타깃 전환 및 연속 클릭 속도 극대화를 위한 단계별 가이드.',
   step: [
@@ -302,14 +309,14 @@ const guideProps = {
 };
 
 const koCopy = {
-  title: "시퀀스 에임 연습",
+  title: "타겟 전환 연습",
   desc: "시퀀스 타깃 스위칭은 가장 가까운 목표 대신 정해진 순서대로 노드를 정밀 타격하는 고급 에임 제어 훈련입니다. Lashley(1951) 및 Keele(1968)의 직렬 순서 운동 프로그램 이론에 기반하여 연속적인 궤적 계획과 미세 플릭 제어력을 극대화합니다.",
   score: "점수",
   timeLeft: "남은 시간",
   accuracy: "정확도",
   bestScore: "최고 점수",
   startButtonText: "훈련 시작",
-  startSubtitle: "소근육 제어 및 순차 궤적 훈련 • 1:1 하드웨어 원시 입력",
+  startSubtitle: "타겟 전환과 순서 클릭 • 1:1 원시 입력",
   getReady: "준비하세요",
   rulesTitle: "훈련 방법 및 점수 시스템",
   rulesItems: [

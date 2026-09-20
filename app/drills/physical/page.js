@@ -65,6 +65,27 @@ export const metadata = {
   },
 };
 
+Object.assign(metadata, {
+  title: 'Physical Reflex & Agility Drills | SkillDrills',
+  description: 'Choose from 11 free browser drills for reaction time, footwork, balance, coordination, and fast target decisions. No sign-up.',
+  keywords: [
+    'physical drills online', 'reaction time drills', 'reflex training online',
+    'agility drills online', 'coordination drills', 'balance training online',
+    'footwork training', 'hand eye coordination', 'spatial evasion game',
+    'browser sports training', 'free physical training drills'
+  ],
+  openGraph: {
+    ...metadata.openGraph,
+    title: 'Physical Reflex & Agility Drills | SkillDrills',
+    description: '11 free browser drills for reaction time, footwork, balance, coordination, and fast target decisions.',
+  },
+  twitter: {
+    ...metadata.twitter,
+    title: 'Physical Reflex & Agility Drills | SkillDrills',
+    description: 'Train reaction time, agility, balance, coordination, and footwork with 11 free browser drills.',
+  },
+});
+
 // --- Structured Data ---
 
 const breadcrumbSchema = {
@@ -79,6 +100,8 @@ const breadcrumbSchema = {
 const collectionSchema = {
   "@context": "https://schema.org",
   "@type": "CollectionPage",
+  "inLanguage": "en",
+  "dateModified": "2026-09-20",
   "name": "Free Physical Training Drills - Reflex, Balance & Coordination",
   "url": "https://skilldrills.online/drills/physical",
   "description": "11 free physical training drills covering reaction time tests, reflex games, balance training, agility ladder drills, and hand eye coordination exercises. No sign-up required.",
@@ -105,6 +128,8 @@ const collectionSchema = {
 const faqSchema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
+  "inLanguage": "en",
+  "dateModified": "2026-09-20",
   "mainEntity": [
     {
       "@type": "Question",
@@ -172,6 +197,25 @@ const faqSchema = {
     }
   ]
 };
+
+faqSchema.mainEntity.push(
+  {
+    "@type": "Question",
+    "name": "What drills are included in the Physical Training hub?",
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "The hub contains 11 browser drills grouped into reflex and evasion, agility and fitness, coordination and pathing, and balance and stability. Choose a card to open the individual drill and its localized training guide."
+    }
+  },
+  {
+    "@type": "Question",
+    "name": "Do browser physical drills replace strength or balance training?",
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "No. These drills train visual timing, decision speed, cursor control, and movement sequencing. They complement physical conditioning but do not replace strength work, plyometrics, mobility practice, or sport-specific coaching."
+    }
+  }
+);
 
 export default function PhysicalDrillsPage() {
   return (

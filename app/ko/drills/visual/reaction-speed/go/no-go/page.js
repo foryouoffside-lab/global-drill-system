@@ -5,25 +5,25 @@ import RelatedDrills from '@/components/drill/RelatedDrills';
 import { pickSources } from '@/lib/drillSources';
 
 export const metadata = {
-  title: "Go/No-Go 검사: 반응 억제 & 충동 제어 테스트 | SkillDrills",
-  description: "녹색 Go 신호에는 최속 반응하고 적색 No-Go 신호는 정지하는 무료 고노고 과제. 우하전두피질의 운동 브레이크, 충동 제어, 트리거 디시플린을 과학적으로 측정합니다.",
+  title: "고노고 과제 | 반응 억제·충동 조절 테스트 | SkillDrills",
+  description: "고노고 과제로 초록 신호에는 반응하고 빨간 신호에는 멈추는 반응 억제를 연습하세요. 무료 온라인 과제이며 의료 진단용 검사가 아닙니다.",
   keywords: [
     "고노고 과제",
     "Go/No-Go 검사",
+    "반응 억제",
     "반응 억제 테스트",
+    "충동 조절",
     "충동 억제 검사",
-    "전두엽 억제 제어",
-    "트리거 디시플린",
-    "정지 신호 과제",
+    "억제 조절",
+    "실행 기능 검사",
+    "고노고 과제 온라인",
     "커미션 에러",
     "운동 억제 훈련",
-    "FPS 반응속도 제어",
-    "집중력 충동 조절 훈련",
     "지속적 수행 검사"
   ],
   openGraph: {
-    title: "Go/No-Go 검사: 반응 억제 & 충동 제어 테스트 | SkillDrills",
-    description: "녹색에 반응하고 적색에 멈춘다! 전두엽 운동 브레이크 및 반응 억제력을 정밀 측정하는 무료 온라인 고노고 과제.",
+    title: "고노고 과제 | 반응 억제·충동 조절 테스트 | SkillDrills",
+    description: "초록에는 반응하고 빨강에는 멈추며 반응 억제와 커미션 에러를 확인하는 무료 온라인 고노고 과제입니다.",
     type: 'article',
     url: 'https://skilldrills.online/ko/drills/visual/reaction-speed/go/no-go',
     siteName: 'SkillDrills',
@@ -31,8 +31,8 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: "Go/No-Go 검사: 반응 억제 & 충동 제어 테스트 | SkillDrills",
-    description: "충동 제어와 트리거 디시플린 강화를 위한 무료 온라인 Go/No-Go 신경인지 반응 훈련.",
+    title: "고노고 과제 | 반응 억제·충동 조절 테스트 | SkillDrills",
+    description: "초록 신호에는 반응하고 빨간 신호에는 멈추는 반응 억제 연습입니다.",
   },
   robots: { index: true, follow: true },
   alternates: {
@@ -68,7 +68,7 @@ const softwareApplicationSchema = {
     "커미션 에러(오반응) 및 오미션 에러(탈락) 실시간 정밀 분리",
     "외부 서버 전송 없는 완벽한 브라우저 로컬 데이터 격리"
   ],
-  "dateModified": "2026-09-05"
+  "dateModified": "2026-09-20"
 };
 
 const webAppSchema = {
@@ -77,7 +77,7 @@ const webAppSchema = {
   "name": "고노고(Go/No-Go) 반응 억제 테스트 | SkillDrills",
   "alternateName": "Go/No-Go Pro",
   "url": "https://skilldrills.online/ko/drills/visual/reaction-speed/go/no-go",
-  "dateModified": "2026-09-05",
+  "dateModified": "2026-09-20",
   "description": "무료 온라인 Go/No-Go 충동 제어 검사. 녹색 Go 신호에 반응하고 적색 No-Go 신호에서 손가락을 제어하는 반응 억제 훈련.",
   "applicationCategory": "EducationalApplication",
   "operatingSystem": "All",
@@ -105,7 +105,7 @@ const howToSchema = {
   "@context": "https://schema.org",
   "@type": "HowTo",
   "name": "Go/No-Go 반응 억제 검사 진행 방법",
-  "dateModified": "2026-09-05",
+  "dateModified": "2026-09-20",
   "description": "Go/No-Go 프로토콜을 통해 운동 억제력과 충동 조절 능력을 정밀 측정하고 훈련하는 4단계 가이드.",
   "step": [
     {
@@ -142,7 +142,7 @@ const howToSchema = {
 const faqSchema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
-  "dateModified": "2026-09-05",
+  "dateModified": "2026-09-20",
   "mainEntity": [
     {
       "@type": "Question",
@@ -228,7 +228,7 @@ const faqSchema = {
 };
 
 const goNoGoGuide = {
-  heading: "신경인지 반응 억제 및 운동 제어 표준 가이드",
+  heading: "고노고 과제로 측정하는 반응 억제와 충동 조절",
   intro: [
     "반응 억제(Response Inhibition)는 더 이상 적절하지 않거나 불리한 행동을 순간적으로 취소, 지연 또는 보류하는 인간 뇌의 핵심 실행 기능입니다. 격투 스포츠, 정밀 e스포츠, 고속 운전 등 극한의 상황에서는 빠른 동작 속도보다 잘못된 동작을 '멈추는 능력'이 승패를 좌우합니다.",
     "고노고 과제의 기원은 1868년 네덜란드의 생리학자 프란시스쿠스 돈더스(Franciscus Cornelis Donders)의 'C-반응' 감산법 연구로 거슬러 올라갑니다. 그는 두 개의 상이한 자극 중 하나에만 반응하도록 요구할 때, 단순 반응보다 추가적인 인지적 식별 및 선택적 억제 시간이 요구됨을 증명했습니다.",
@@ -236,7 +236,7 @@ const goNoGoGuide = {
     "측정 기준 및 하드웨어 보정: 자극 노출과 클릭 이벤트는 브라우저 고해상도 performance.now() API로 수집됩니다. 디스플레이 주사율과 USB 폴링 간격에 따른 하드웨어 양자화 지연을 고려하여 분석되며 (Woods et al., 2015), 모든 결과는 로컬에 안전하게 저장됩니다."
   ],
   benchmarks: {
-    title: "반응 억제력 평가 기준 (신경인지 기준표)",
+    title: "반응 억제·충동 조절 참고 기준 (연습용)",
     headers: ["평가 등급 / 티어", "오반응률 (CER)", "목표 점수 & 콤보", "신경근육 및 전두엽 억제 프로파일"],
     rows: [
       ["Tier 1: 최상위 프로 브레이크", "< 2.0% CER", "16,000점+ | 콤보 30회+", "완벽한 rIFC-STN 초고속 운동 억제; 시각적 번쩍임과 손가락 반사 신경의 완전한 탈동조화 달성."],
@@ -248,7 +248,7 @@ const goNoGoGuide = {
     note: "본 기준표는 반응 억제 및 정신 연대학 문헌(Donders, 1868; Logan et al., 1984; Robertson et al., 1997; Aron et al., 2014)에 근거한 가이드입니다. 일주기 생체리듬, 피로도 및 디스플레이 주사율에 따라 변동될 수 있습니다."
   },
   techniques: {
-    title: "반응 억제력 강화를 위한 훈련 원칙",
+    title: "고노고 과제에서 반응 억제를 안정시키는 방법",
     items: [
       {
         name: "운동 준비 전 색상 식별 우선 원칙",
@@ -301,7 +301,7 @@ export default function ChromaSyncPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(howToSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(videoGameSchema) }} />
-      <ChromaSyncClient copy={{ title: "Go/No-Go 충동 제어 및 반응 억제 검사" }} />
+      <ChromaSyncClient copy={{ title: "고노고 과제 (반응 억제)", subtitle: "초록에는 반응하고 빨강에는 멈추기" }} />
       <DrillGuide guide={goNoGoGuide} />
       <div className="max-w-6xl mx-auto px-4 pb-12">
         <RelatedDrills currentCategory="visual" currentHref="https://skilldrills.online/ko/drills/visual/reaction-speed/go/no-go" />

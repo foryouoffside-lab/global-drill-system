@@ -5,25 +5,25 @@ import RelatedDrills from '@/components/drill/RelatedDrills';
 import { pickSources } from '@/lib/drillSources';
 
 export const metadata = {
-  title: "동체시력 테스트: 이동 표적 요격 훈련 | SkillDrills",
-  description: "화면에서 가속 반사되는 이동 타깃을 예측 요격하는 무료 온라인 동체시력 테스트. 스무스 퍼슈트 안구운동과 리드샷 타이밍을 정밀 측정합니다.",
+  title: "동체시력 테스트 | 이동 표적 훈련 | SkillDrills",
+  description: "움직이는 표적을 따라가며 궤적을 예측해 맞히는 무료 동체시력 테스트. 시각 추적과 눈-손 협응을 연습하세요. 의료 진단용이 아닙니다.",
   keywords: [
     "동체시력 테스트",
     "동체시력 훈련",
-    "동체시력 측정 사이트",
     "동체시력 게임",
-    "이동 표적 요격",
-    "스무스 퍼슈트",
+    "시각 추적",
+    "이동 표적",
+    "주변시",
+    "순간인지",
+    "반응속도",
     "리드샷 연습",
-    "시각 추적 검사",
-    "FPS 에임 트레이너 이동 타깃",
-    "안구 운동성 테스트",
     "시각 운동 협응",
-    "동체시력 높이는 법"
+    "FPS 이동 타깃",
+    "궤적 예측"
   ],
   openGraph: {
-    title: "동체시력 테스트: 이동 표적 요격 훈련 | SkillDrills",
-    description: "가속하는 이동 표적을 예측 요격하여 동체시력과 스무스 퍼슈트 안구운동 능력을 측정하는 무료 온라인 훈련.",
+    title: "동체시력 테스트 | 이동 표적 훈련 | SkillDrills",
+    description: "움직이는 표적의 궤적을 예측하고 동체시력과 시각 추적을 연습하는 무료 브라우저 드릴입니다. 의료 진단용이 아닙니다.",
     type: 'article',
     url: 'https://skilldrills.online/ko/drills/visual/tracking-accuracy/moving-target',
     siteName: 'SkillDrills',
@@ -31,8 +31,8 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: "동체시력 테스트: 이동 표적 요격 훈련 | SkillDrills",
-    description: "이동 표적 요격 정확도와 궤적 예측 속도를 정밀 진단하는 무료 온라인 동체시력 트레이너.",
+    title: "동체시력 테스트 | 이동 표적 훈련 | SkillDrills",
+    description: "이동 표적을 따라가며 궤적 예측과 요격 타이밍을 연습하는 무료 동체시력 트레이너입니다.",
   },
   robots: { index: true, follow: true },
   alternates: {
@@ -68,7 +68,7 @@ const softwareApplicationSchema = {
     "레벨 상승에 따른 표적 가속 및 히트박스 점진적 축소",
     "외부 서버 통신 없는 완전한 브라우저 로컬 데이터 보관"
   ],
-  "dateModified": "2026-09-05"
+  "dateModified": "2026-09-20"
 };
 
 const webAppSchema = {
@@ -77,7 +77,7 @@ const webAppSchema = {
   "name": "동체시력 표적 요격 테스트 — 시각 추적 훈련 | SkillDrills",
   "alternateName": "Moving Target Pro",
   "url": "https://skilldrills.online/ko/drills/visual/tracking-accuracy/moving-target",
-  "dateModified": "2026-09-05",
+  "dateModified": "2026-09-20",
   "description": "무료 온라인 동체시력 훈련. 2D 캔버스 내부를 빠르게 튕겨 다니는 이동 구체를 부드러운 안구 추적과 리드샷으로 정확히 요격하세요.",
   "applicationCategory": "EducationalApplication",
   "operatingSystem": "All",
@@ -105,7 +105,7 @@ const howToSchema = {
   "@context": "https://schema.org",
   "@type": "HowTo",
   "name": "동체시력 이동 표적 요격 훈련 방법",
-  "dateModified": "2026-09-05",
+  "dateModified": "2026-09-20",
   "description": "이동 표적 요격 프로토콜을 통해 동체시력과 스무스 퍼슈트 추적력을 극대화하는 4단계 가이드.",
   "step": [
     {
@@ -142,7 +142,7 @@ const howToSchema = {
 const faqSchema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
-  "dateModified": "2026-09-05",
+  "dateModified": "2026-09-20",
   "mainEntity": [
     {
       "@type": "Question",
@@ -228,7 +228,7 @@ const faqSchema = {
 };
 
 const movingTargetGuide = {
-  heading: "키네틱 시각 추적 및 궤적 요격 과학 표준 가이드",
+  heading: "동체시력 테스트: 이동 표적을 추적하고 요격하는 방법",
   intro: [
     "동적 표적 요격은 고속 구기 스포츠, 모터스포츠, 무술 격투, 항공 조종, 그리고 경쟁형 e스포츠 전반에 걸친 핵심 시각-운동 역량입니다. 가속하며 불규칙하게 반사되는 물체를 정확히 타격하기 위해서는 스무스 퍼슈트(Smooth Pursuit) 안구운동, 미래 궤적에 대한 외삽 예측, 그리고 정밀한 폐루프(Closed-loop) 운동 타이밍이 동시에 조화되어야 합니다.",
     "시각 운동 추적의 신경생리학적 기전은 중측두엽(MT/V5) 및 내측상측두엽(MST)의 방향 선택성 뉴런에서 출발합니다. 이 피질 영역들은 표적의 속도와 방향 벡터를 계산하여 전두안구영역(FEF)과 뇌교핵으로 순방향 신호를 전송하며, 이는 다시 소뇌 푸르키니에 세포를 통해 안구 추적 이득을 유지하도록 작용합니다 (Krauzlis, 2004).",
@@ -236,7 +236,7 @@ const movingTargetGuide = {
     "또한 랜드와 맥클라우드(Land & McLeod, 2000)의 연구에 따르면, 뛰어난 운동선수들은 물체의 전체 궤적을 멍하니 쫓지 않고 미래의 바운드 지점과 타격 윈도우로 시선을 미리 선행 도약(Anticipatory Saccade)시키는 고도의 공간 예측 기법을 구사합니다. 본 훈련은 이러한 예측적 공간 감각을 실전 밀리초 환경에서 단련하도록 설계되었습니다."
   ],
   benchmarks: {
-    title: "동체시력 및 궤적 요격 퍼포먼스 벤치마크 기준",
+    title: "동체시력·표적 요격 참고 기준 (브라우저 훈련용)",
     headers: ["평가 등급 / 티어", "페이싱 시간 윈도우", "점수 & 콤보 기준", "시각 추적 및 요격 프로파일"],
     rows: [
       ["Tier 1: 최상위 키네틱 요격가 (Apex)", "< 0.25초 페이싱", "16,000점+ | 콤보 25회+", "프로급 스무스 퍼슈트; 보정 사케이드 지연이 전혀 없는 완벽한 속도 벡터 외삽. 탑티어 FPS 프로 및 전투기 조종사 수준."],
@@ -248,7 +248,7 @@ const movingTargetGuide = {
     note: "본 기준표는 스무스 퍼슈트 정신물리학 및 동적 요격 연대학 문헌(Rashbass, 1961; Krauzlis, 2004; Land & McLeod, 2000; Bahill et al., 1980; Woods et al., 2015)에 근거합니다. 모니터 주사율과 마우스 환경에 따라 변동될 수 있습니다."
   },
   techniques: {
-    title: "동체시력 요격 정확도를 높이는 실전 훈련 원칙",
+    title: "움직이는 표적을 추적하고 궤적 예측을 안정시키는 법",
     items: [
       {
         name: "예측적 벡터 리딩 (래시배스 속도 정합)",
@@ -301,7 +301,7 @@ export default function KineticInterceptPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(howToSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(videoGameSchema) }} />
-      <KineticInterceptClient copy={{ title: "동체시력 테스트: 이동 표적 요격 훈련" }} />
+      <KineticInterceptClient copy={{ title: "동체시력·이동 표적" }} />
       <DrillGuide guide={movingTargetGuide} />
       <div className="max-w-6xl mx-auto px-4 pb-12">
         <RelatedDrills currentCategory="visual" currentHref="https://skilldrills.online/ko/drills/visual/tracking-accuracy/moving-target" />

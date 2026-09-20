@@ -6,7 +6,7 @@ import { pickSources } from '@/lib/drillSources';
 
 // ============================================================
 // INVESTIGACIÓN DE PALABRAS CLAVE NATIVAS (SERP ESPAÑA / LATAM)
-// Búsquedas de alta intención y baja competencia:
+// Clusters nativos revisados por intención; la competencia aún no está medida:
 // - "test de coordinacion ojo mano online" (Búsqueda principal neurofuncional)
 // - "ejercicios de coordinacion visomotriz" (Entrenamiento psicomotor y destreza)
 // - "cruce de la linea media corporal" (Concepto clave de integración sensorial y bilateral)
@@ -18,27 +18,27 @@ import { pickSources } from '@/lib/drillSources';
 // ============================================================
 
 export const metadata = {
-  title: "Coordinación Ojo Mano – Puntería Diagonal | SkillDrills",
-  description: 'Test de coordinación ojo-mano online gratis. Conecta nodos diagonales en pantalla para entrenar coordinación bilateral y cruce de línea media en el PC.',
+  title: "Test de coordinación ojo-mano | SkillDrills",
+  description: 'Test gratis de coordinación ojo-mano online. Conecta nodos diagonales al cruzar la línea media para entrenar coordinación bilateral y precisión con el ratón.',
   keywords: [
-    "test de coordinacion ojo mano online",
+    "test de coordinacion ojo mano",
     "ejercicios de coordinacion visomotriz",
     "cruce de la linea media corporal",
     "juegos de coordinacion mano ojo gratis",
     "entrenamiento de coordinacion bilateral",
     "control motor contralateral y barrido diagonal",
-    "flick diagonal punteria raton",
+    "coordinacion motora con raton",
     "ejercicios de motricidad fina y precision",
-    "coordinacion visomotora ejercicios",
-    "test de destreza motora"
+    "coordinacion mano ojo juego",
+    "test de coordinacion online"
   ],
   alternates: {
     canonical: 'https://skilldrills.online/es/drills/physical/coordination/cross-body-movement',
     languages: getAlternateLanguages('/drills/physical/coordination/cross-body-movement'),
   },
   openGraph: {
-    title: "Coordinación Ojo Mano – Puntería Diagonal | SkillDrills",
-    description: 'Test de coordinación ojo-mano online gratis. Conecta nodos diagonales en pantalla para entrenar coordinación bilateral y cruce de línea media en el PC.',
+    title: "Test de coordinación ojo-mano | SkillDrills",
+    description: 'Test gratis de coordinación ojo-mano online. Conecta nodos diagonales al cruzar la línea media para entrenar coordinación bilateral y precisión con el ratón.',
     url: 'https://skilldrills.online/es/drills/physical/coordination/cross-body-movement',
     siteName: 'SkillDrills',
     locale: 'es_ES',
@@ -46,8 +46,8 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: "Coordinación Ojo Mano – Puntería Diagonal | SkillDrills",
-    description: 'Test de coordinación ojo-mano online gratis. Conecta nodos diagonales en pantalla para entrenar coordinación bilateral y cruce de línea media en el PC.',
+    title: "Test de coordinación ojo-mano | SkillDrills",
+    description: 'Test gratis de coordinación ojo-mano online. Conecta nodos diagonales al cruzar la línea media para entrenar coordinación bilateral y precisión con el ratón.',
   },
   robots: { index: true, follow: true },
 };
@@ -102,7 +102,7 @@ const softwareApplicationSchema = {
     "url": "https://skilldrills.online/es"
   },
   "inLanguage": "es-ES",
-  "dateModified": "2026-09-12"
+  "dateModified": "2026-09-20"
 };
 
 const webApplicationSchema = {
@@ -119,7 +119,7 @@ const webApplicationSchema = {
   },
   "url": "https://skilldrills.online/es/drills/physical/coordination/cross-body-movement",
   "inLanguage": "es-ES",
-  "dateModified": "2026-09-12"
+  "dateModified": "2026-09-20"
 };
 
 const videoGameSchema = {
@@ -140,6 +140,8 @@ const videoGameSchema = {
     "Mobile"
   ],
   "applicationCategory": "Game",
+  "inLanguage": "es-ES",
+  "dateModified": "2026-09-20",
   "offers": {
     "@type": "Offer",
     "price": "0",
@@ -150,7 +152,8 @@ const videoGameSchema = {
 const faqSchema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
-  "dateModified": "2026-09-12",
+  "inLanguage": "es-ES",
+  "dateModified": "2026-09-20",
   "mainEntity": [
     {
       "@type": "Question",
@@ -358,8 +361,8 @@ export default function CrossBodyMovementPageEs() {
       />
       <CrossBodyMovementClient
         copy={{
-          title: "Test de Coordinación Ojo Mano",
-          subtitle: "Cruce de Línea Media & Control Motor Bilateral • 15 Niveles",
+          title: "Test de coordinación ojo-mano",
+          subtitle: "Control diagonal al cruzar la línea media • 15 niveles",
           hudLabels: {
             score: "Puntuación",
             timeLeft: "Tiempo Restante",

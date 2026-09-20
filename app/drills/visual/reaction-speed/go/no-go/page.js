@@ -346,7 +346,7 @@ export default function ChromaSyncPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(videoGameSchema) }} />
-      <ChromaSyncClient copy={{ title: "Go/No-Go Impulse Control Test" }} />
+      <ChromaSyncClient copy={{ title: "Go/No-Go Impulse Control Test", subtitle: "Go no-go reaction test for clicking green targets, resisting red decoys, and training impulse control" }} />
       <DrillGuide guide={goNoGoGuide} />
     </>
   );

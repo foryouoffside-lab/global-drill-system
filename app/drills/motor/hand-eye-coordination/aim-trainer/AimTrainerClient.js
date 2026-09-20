@@ -25,6 +25,7 @@ import FpsStartCard from '../../../../../components/drill/FpsStartCard';
 import DrillResultCard from '../../../../../components/drill/DrillResultCard';
 import useImmersiveMode from '@/lib/useImmersiveMode';
 import { useTranslation } from '@/lib/i18n/useTranslation';
+import { AIM_TRAINER_I18N } from '@/lib/i18n/drills/aimTrainer';
 import useUnexpectedExitGuard from '@/lib/useUnexpectedExitGuard';
 
 // ============================================================
@@ -96,7 +97,7 @@ const RULES_ITEMS = [
 // MAIN COMPONENT
 // ============================================================
 export default function AimTrainerClient({ copy = {} } = {}) {
-  const { t } = useTranslation();
+  const { t } = useTranslation(AIM_TRAINER_I18N);
   const [gameState, setGameState] = useState('start'); // 'start' | 'countdown' | 'playing' | 'gameOver'
   const [isFullscreen, setIsFullscreen] = useState(false);
   useImmersiveMode(isFullscreen); // locks the page behind while the drill fills the screen
@@ -659,6 +660,7 @@ export default function AimTrainerClient({ copy = {} } = {}) {
             {copy?.h1Prefix || null}
             <span data-seo-kw="1">{copy?.h1Keyword || copy?.title || t('aimTrainer.title', 'Aim Trainer Elite')}</span>
             {copy?.h1Suffix || null}
+            <span className="block text-sm font-semibold text-slate-400 mt-1">{copy?.subtitle || 'Online aim trainer for mouse accuracy, target acquisition, reaction speed, and precision click timing'}</span>
           </h1>
           </div>
         )}
@@ -689,7 +691,7 @@ export default function AimTrainerClient({ copy = {} } = {}) {
         <div 
           ref={containerRef} 
           onContextMenu={(e) => { if (gameActiveRef.current) e.preventDefault(); }}
-          className={`overflow-hidden flex flex-col transition-all duration-150 select-none bg-[#080811] text-white border border-white/10 ${
+          className={`overflow-hidden flex flex-col select-none bg-[#080811] text-white border border-white/10 ${
             isFullscreen 
               ? "fixed inset-0 z-[100] w-screen h-[100dvh] bg-[#080811] rounded-none border-none flex flex-col items-center justify-center" 
               : "w-full rounded-2xl bg-[#080811] aspect-video min-h-[460px] sm:min-h-[500px] max-h-[88vh] relative overflow-hidden flex flex-col"

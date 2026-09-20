@@ -335,7 +335,7 @@ export default function ProSmoothPursuitPage() {
         }}
       />
 
-      <DrillGuide guide={proSmoothPursuitGuide} />
+      <DrillGuide guide={proSmoothPursuitGuide} singleLineTitles />
       <DrillFooter />
     </>
   );

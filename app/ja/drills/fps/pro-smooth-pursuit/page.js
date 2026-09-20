@@ -6,21 +6,19 @@ import RelatedDrills from '@/components/drill/RelatedDrills';
 import DrillFooter from '@/components/drill/DrillFooter';
 
 export const metadata = {
-  title: "スムーズ トラッキング 練習 – 滑走性眼球運動 | SkillDrills",
-  description: "ブラウザで無料プレイできるスムーズトラッキング（滑走性眼球運動）エイム練習。Apex LegendsやOverwatch 2の滑らかな曲線軌道や空中ターゲットに照準を吸い付かせ、手の震えを抑えます。",
+  title: "エイム練習 | トラッキングFPSトレーナー | SkillDrills",
+  description: "無料ブラウザのエイム練習で動くターゲットを滑らかに追い、Apex・VALORANT・OW2のトラッキング精度を鍛えます。",
   keywords: [
-    "スムーズ トラッキング 練習",
-    "スムース パシュート エイム",
-    "滑走性眼球運動 トレーニング",
-    "トラッキング エイム 練習",
-    "Apex トラッキング 練習",
-    "Overwatch2 エイム練習",
-    "手首 ブレ 抑える エイム",
-    "エイムトレーナー 無料",
-    "曲線トラッキング",
-    "手ブレ 抑える エイム",
-    "視線追従 エイム",
-    "滑走眼球運動 エイム"
+    "エイム練習",
+    "エイム練習 ブラウザ",
+    "エイム練習 サイト",
+    "エイム練習ゲーム 無料",
+    "エイム トラッキング 練習",
+    "追いエイム",
+    "トラッキング エイム",
+    "トラッキング エイム valorant",
+    "エイム練習 apex",
+    "スムーズトラッキング"
   ],
   alternates: {
     canonical: "https://skilldrills.online/ja/drills/fps/pro-smooth-pursuit",
@@ -31,8 +29,8 @@ export const metadata = {
     follow: true,
   },
   openGraph: {
-    title: "スムーズ トラッキング 練習 – 滑走性眼球運動 | SkillDrills",
-    description: "リサジュー曲線の不規則な軌道を滑らかに追従するスムースパシュート練習：手首の力みやブレを抑え吸い付くようなエイムを鍛えるFPSドリル。",
+    title: "エイム練習 | トラッキングFPSトレーナー | SkillDrills",
+    description: "動くターゲットを滑らかに追い、FPSのトラッキング精度を鍛える無料ブラウザドリル。",
     url: "https://skilldrills.online/ja/drills/fps/pro-smooth-pursuit",
     siteName: 'SkillDrills',
     locale: 'ja_JP',
@@ -40,8 +38,8 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: "スムーズ トラッキング 練習 – 滑走性眼球運動 | SkillDrills",
-    description: "リサジュー曲線の不規則な軌道を滑らかに追従するスムースパシュート練習：手首の力みやブレを抑え吸い付くようなエイムを鍛えるFPSドリル。",
+    title: "エイム練習 | トラッキングFPSトレーナー | SkillDrills",
+    description: "動くターゲットを滑らかに追い、FPSのトラッキング精度を鍛える無料ブラウザドリル。",
   },
 };
 
@@ -52,14 +50,14 @@ export default function ProSmoothPursuitJaPage() {
     "itemListElement": [
       { "@type": "ListItem", "position": 1, "name": "SkillDrills", "item": "https://skilldrills.online/ja" },
       { "@type": "ListItem", "position": 2, "name": "FPSエイム練習", "item": "https://skilldrills.online/ja/drills/fps" },
-      { "@type": "ListItem", "position": 3, "name": "スムーズ トラッキング 練習", "item": "https://skilldrills.online/ja/drills/fps/pro-smooth-pursuit" }
+      { "@type": "ListItem", "position": 3, "name": "エイム練習 - FPSトラッキング", "item": "https://skilldrills.online/ja/drills/fps/pro-smooth-pursuit" }
     ]
   };
 
   const webAppSchema = {
     "@context": "https://schema.org",
     "@type": "WebApplication",
-    "name": "スムーズ トラッキング 練習",
+    "name": "エイム練習 - FPSトラッキング",
     "url": "https://skilldrills.online/ja/drills/fps/pro-smooth-pursuit",
     "applicationCategory": "GameApplication",
     "operatingSystem": "All",
@@ -75,10 +73,10 @@ export default function ProSmoothPursuitJaPage() {
   const softwareSchema = {
     "@context": "https://schema.org",
     "@type": "SoftwareApplication",
-    "name": "スムーズ トラッキング 練習",
+    "name": "エイム練習 - FPSトラッキング",
     "applicationCategory": "GameApplication",
     "operatingSystem": "Web Browser",
-    "dateModified": "2026-09-05",
+    "dateModified": "2026-09-20",
     "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
     "description": "不規則な曲線移動に滑らかに照準を同期させる無料ブラウザFPSスムーズトラッキング・エイムドリル。",
     "genre": "FPS Training / Smooth Pursuit Aim",
@@ -93,10 +91,10 @@ export default function ProSmoothPursuitJaPage() {
   const videoGameSchema = {
     "@context": "https://schema.org",
     "@type": "VideoGame",
-    "name": "スムーズ トラッキング 練習",
+    "name": "エイム練習 - FPSトラッキング",
     "url": "https://skilldrills.online/ja/drills/fps/pro-smooth-pursuit",
     "description": "不規則な曲線移動に滑らかに照準を同期させる無料ブラウザFPSスムーズトラッキング・エイムドリル。",
-    "dateModified": "2026-09-05",
+    "dateModified": "2026-09-20",
     "gamePlatform": "Web Browser",
     "genre": ["FPS Training", "Aim Trainer", "Smooth Pursuit"],
     "playMode": "SinglePlayer",
@@ -108,7 +106,7 @@ export default function ProSmoothPursuitJaPage() {
   const faqSchema = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
-    "dateModified": "2026-09-05",
+    "dateModified": "2026-09-20",
     "mainEntity": [
       {
         "@type": "Question",
@@ -231,13 +229,13 @@ export default function ProSmoothPursuitJaPage() {
   };
 
   const copy = {
-    h1Keyword: "スムーズ トラッキング 練習",
-    h1Suffix: " - 滑走性眼球運動エイムトレーナー",
+    h1Keyword: "エイム練習",
+    h1Suffix: " - トラッキングFPSトレーナー",
     statScore: "スコア",
     statTime: "残り時間",
     statAccuracy: "トラッキング精度",
     statBestScore: "自己ベスト",
-    startTitle: "スムーズ トラッキング 練習",
+    startTitle: "エイム練習",
     startSubtitle: "リサジュー曲線追従 • 滑走性眼球運動 • エンドレス難易度",
     getReady: "準備完了",
     pausedTitle: "一時停止",
@@ -250,13 +248,13 @@ export default function ProSmoothPursuitJaPage() {
       { num: "3", text: "レベル難易度進行", highlight: "+1 レベル / 1400 PTS", result: "適応型曲線" },
       { num: "4", text: "オフターゲット", highlight: "1.0秒離脱", result: "コンボリセット (-0.6s)" }
     ],
-    aboutTitle: "スムーズトラッキング・滑走性眼球運動について",
+    aboutTitle: "エイム練習とFPSトラッキングについて",
   };
 
   const jaGuide = {
-    heading: "スムーズトラッキング訓練のバイオメカニクスとベンチマーク",
+    heading: "エイム練習とFPSトラッキングの性能ガイド",
     intro: [
-      "スムーズトラッキング（Smooth Pursuit）訓練は、リサジュー曲線の調和振動に照準を同調させ、前腕の運動安定化と眼球の滑走運動を極限まで高める実証的感覚運動エイムドリルです。Apex Legends、Overwatch 2、The Finalsなどの撃ち合いでは、数秒間にわたり跳躍やスライディング、空中軌道を行う敵に照準を当て続けるダメージ維持率（Damage Uptime）が勝敗を決定づけます。",
+      "エイム練習のトラッキング課題は、動くターゲットに照準を滑らかに合わせ続ける感覚運動トレーニングです。このドリルはリサジュー曲線を使い、Apex・VALORANT・OW2の継続ダメージに必要な追いエイムの安定性を測ります。",
       "滑走性眼球運動の神経基盤はKrauzlis（2004）によって解明されており、内側上側頭野（MST）、前頭眼野（FEF）、視覚運動野（MT/V5）の反復性皮質ループが目標の速度ベクトルをリアルタイムに計算して眼球筋を連続駆動します。この神経回路は受動的に反応するのではなく、標的の速度と位相を予測モデル化して眼球運動系を同期させます。",
       "Cyril Rashbass（1961）の古典的実験では、位置ズレに反応するサッカード（跳躍眼球運動）と速度変化（網膜スリップ）に反応するスムーズパシュートが解剖学的・機能的に独立した神経機構であることが証明されました。力んでフリックしようとしたり、マウスを握りしめすぎるとスムーズパシュート回路が破綻し、不随意の補正サッカードが混入してエイムの目立つカクつき（Aim Stutter）を引き起こします。",
       "本ドリルでは、リサジュー曲線による調和振動座標生成に、中心窩視線の先読み理論（Land & McLeod, 2000）、動的注意視覚の拡張（Green & Bavelier, 2003）、および高分解能デジタルクロノメトリ（Woods et al., 2015）を統合し、前腕の筋緊張を完全に排除して非線形曲線を氷上のように滑らかに追従するレーザービームエイムを確立します。",

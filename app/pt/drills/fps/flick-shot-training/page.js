@@ -6,21 +6,21 @@ import DrillFooter from '@/components/drill/DrillFooter';
 import { pickSources } from '@/lib/drillSources';
 
 export const metadata = {
-  title: "Treino de Flick Shot – Mira Rápida e Precisão | SkillDrills",
-  description: "Treine flick shot e mira rápida no navegador. Aperfeiçoe a aceleração balística e a frenagem de mouse para acertar tiros na cabeça no CS2 e Valorant.",
+  title: "Treino de Mira - Flick Trainer no Navegador | SkillDrills",
+  description: "Treino de mira gratuito no navegador para praticar flick, precisão e primeiro tiro em Valorant e CS2. Veja sua pontuação, tempo e acerto.",
   keywords: [
-    "treino de flick mira",
-    "mira rapida fps treino",
-    "como melhorar o flick no valorant",
-    "treino de puxada rapida mira",
-    "exercicio de flick shot cs2",
-    "como parar a mira no alvo flick",
-    "treino de snap aim online",
-    "como acertar flick no valorant",
-    "treino de reflexo e flick mouse",
-    "exercicios de pontaria de choque",
-    "treinador de flick shot gratis",
-    "como nao errar o flick fps"
+    "treino de mira",
+    "aim trainer",
+    "treino de mira Valorant",
+    "treino de mira online",
+    "flick treino",
+    "treino de flick",
+    "treino de precisão FPS",
+    "mira rápida Valorant",
+    "treino de primeiro tiro",
+    "como melhorar o flick",
+    "treinador de mira grátis",
+    "teste de mira"
   ],
   alternates: {
     canonical: "https://skilldrills.online/pt/drills/fps/flick-shot-training",
@@ -31,8 +31,8 @@ export const metadata = {
     follow: true,
   },
   openGraph: {
-    title: "Treino de Flick Shot – Mira Rápida e Precisão | SkillDrills",
-    description: "Treine flick shot e mira rápida no navegador. Aperfeiçoe a aceleração balística e a frenagem de mouse para acertar tiros na cabeça no CS2 e Valorant.",
+    title: "Treino de Mira - Flick Trainer no Navegador | SkillDrills",
+    description: "Treino de mira gratuito no navegador para praticar flick, precisão e primeiro tiro em Valorant e CS2. Veja sua pontuação, tempo e acerto.",
     url: "https://skilldrills.online/pt/drills/fps/flick-shot-training",
     siteName: 'SkillDrills',
     locale: 'pt_BR',
@@ -40,8 +40,8 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: "Treino de Flick Shot – Mira Rápida e Precisão | SkillDrills",
-    description: "Treine flick shot e mira rápida no navegador. Aperfeiçoe a aceleração balística e a frenagem de mouse para acertar tiros na cabeça no CS2 e Valorant.",
+    title: "Treino de Mira - Flick Trainer no Navegador | SkillDrills",
+    description: "Treino de mira gratuito no navegador para praticar flick, precisão e primeiro tiro em Valorant e CS2. Veja sua pontuação, tempo e acerto.",
   },
 };
 
@@ -52,14 +52,14 @@ export default function FlickShotPtPage() {
     "itemListElement": [
       { "@type": "ListItem", "position": 1, "name": "SkillDrills", "item": "https://skilldrills.online/pt" },
       { "@type": "ListItem", "position": 2, "name": "Treinos de FPS", "item": "https://skilldrills.online/pt/drills/fps" },
-      { "@type": "ListItem", "position": 3, "name": "Treino de Flick Shot", "item": "https://skilldrills.online/pt/drills/fps/flick-shot-training" }
+      { "@type": "ListItem", "position": 3, "name": "Treino de Mira e Flick", "item": "https://skilldrills.online/pt/drills/fps/flick-shot-training" }
     ]
   };
 
   const webAppSchema = {
     "@context": "https://schema.org",
     "@type": "WebApplication",
-    "name": "Treinador de Flick Shot Online",
+    "name": "Treino de Mira e Flick",
     "url": "https://skilldrills.online/pt/drills/fps/flick-shot-training",
     "applicationCategory": "GameApplication",
     "operatingSystem": "All",
@@ -69,20 +69,20 @@ export default function FlickShotPtPage() {
       "price": "0",
       "priceCurrency": "USD"
     },
-    "description": "Treinador de flick shot e mira rápida gratuito no navegador. Desenvolva aceleração motora e frenagem de mouse para CS2, Valorant e Apex Legends."
+    "description": "Treino de mira e flick gratuito no navegador para praticar precisão, frenagem do mouse e primeiro tiro em FPS."
   };
 
   const softwareSchema = {
     "@context": "https://schema.org",
     "@type": "SoftwareApplication",
-    "name": "Treinador de Flick Shot SkillDrills",
+    "name": "Treino de Mira e Flick SkillDrills",
     "applicationCategory": "GameApplication",
     "operatingSystem": "Web Browser",
     "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
-    "description": "Ferramenta de calibração biomecânica e treino de mira flick rápida para jogadores competitivos de tiro em primeira pessoa.",
+    "description": "Ferramenta de treino de mira e flick para jogadores competitivos de FPS, com pontuação, tempo e precisão.",
     "genre": "Treino FPS / Mira Rápida",
     "url": "https://skilldrills.online/pt/drills/fps/flick-shot-training",
-    "dateModified": "2026-09-05",
+    "dateModified": "2026-09-20",
     "publisher": {
       "@type": "Organization",
       "name": "SkillDrills",
@@ -93,21 +93,21 @@ export default function FlickShotPtPage() {
   const videoGameSchema = {
     "@context": "https://schema.org",
     "@type": "VideoGame",
-    "name": "Treino de Flick Shot FPS",
+    "name": "Treino de Mira e Flick FPS",
     "url": "https://skilldrills.online/pt/drills/fps/flick-shot-training",
-    "description": "Simulador interativo de mira com alvos esféricos dinâmicos projetado para aprimorar tempo de aquisição e precisão de primeiro disparo.",
+    "description": "Simulador interativo de mira com alvos dinâmicos para praticar tempo de aquisição e precisão do primeiro tiro.",
     "gamePlatform": "Web Browser",
     "genre": ["Treino FPS", "Treinador de Mira"],
     "playMode": "SinglePlayer",
     "applicationCategory": "Game",
     "operatingSystem": "Web Browser",
-    "dateModified": "2026-09-05"
+    "dateModified": "2026-09-20"
   };
 
   const faqSchema = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
-    "dateModified": "2026-09-05",
+    "dateModified": "2026-09-20",
     "mainEntity": [
       {
         "@type": "Question",
@@ -226,9 +226,9 @@ export default function FlickShotPtPage() {
   };
 
   const flickGuide = {
-    heading: "Guia Científico de Treino de Flick Shot e Controle Neuromuscular",
+    heading: "Treino de Mira: medição de Flick e guia de precisão FPS",
     intro: [
-      "O flick shot (ou disparo por impulso balístico) é o processo biomecânico de converter uma sacada ocular em uma trajetória rápida e retilínea da mão e do punho. Na ciência do controle motor, o apontamento dirigido a alvos é explicado pelo modelo de dois componentes de Elliott et al. (2010): uma aceleração balística inicial em malha aberta que cobre a maior parte da distância, seguida por uma fase terminal de feedback visual em malha fechada que ajusta microdesvios.",
+      "Para quem procura um treino de mira, o flick é o movimento rápido que leva a retícula até um alvo e termina com uma frenagem limpa antes do primeiro tiro. Em FPS como Valorant, CS2 e Apex Legends, essa combinação de velocidade e precisão ajuda a responder a alvos que aparecem fora do centro.",
       "De acordo com a Lei de Fitts (Fitts, 1954), o tempo de movimento escala com a dificuldade da tarefa: ID = log2(2D/W), onde a distância (D) e o diâmetro do alvo (W) determinam o tempo necessário. O treino deliberado desenvolve a desaceleração muscular antagonista coordenada (Schmidt et al., 1979), permitindo ao jogador frear a mira precisamente no centro do alvo sem oscilação ou overflick.",
       "A latência dos periféricos e a cronometria digital do navegador influenciam diretamente as métricas de tempo de aquisição. Este teste utiliza o relógio de alta precisão performance.now() da API do navegador. Com taxa de amostragem de 1000 Hz no mouse (1,0 ms) e telas de alta frequência (144 Hz a 6,94 ms, 240 Hz a 4,17 ms), o jitter de quantização é minimizado para avaliar o verdadeiro tempo de reação sensoriomotor (Woods et al., 2015).",
       "Medição técnica no dispositivo: cada evento de clique é registrado localmente com performance.now() no seu navegador, sem envio de dados para servidores externos. Lembre-se de que os temporizadores de navegadores possuem discretização nativa de aproximadamente 1 ms por segurança contra exploits Spectre, e monitores operam em taxas fixas (16,7 ms a 60 Hz contra 4,1 ms a 240 Hz). Portanto, avalie seu progresso comparando sessões no mesmo equipamento."
@@ -333,9 +333,9 @@ export default function FlickShotPtPage() {
       />
       <ProFlickClient
         copy={{
-          h1Keyword: "Treino de Flick Shot",
-          h1Suffix: " – Mira Rápida e Precisão",
-          subtitle: "Treine snap aim, memória motora balística, aquisição de alvos e frenagem de mouse com métricas em tempo real.",
+          h1Keyword: "Treino de Mira",
+          h1Suffix: " - Flick Trainer no Navegador",
+          subtitle: "Pratique flick e primeiro tiro para Valorant e CS2 direto no navegador.",
           statScore: "Pontuação",
           statTime: "Tempo Restante",
           statAccuracy: "Precisão",
@@ -367,7 +367,7 @@ export default function FlickShotPtPage() {
       <div className="max-w-4xl mx-auto px-4 pb-12">
         <RelatedDrills
           currentCategory="fps"
-          currentHref="/drills/fps/flick-shot-training"
+          currentHref="/pt/drills/fps/flick-shot-training"
           locale="pt"
         />
       </div>

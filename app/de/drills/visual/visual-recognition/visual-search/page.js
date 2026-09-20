@@ -5,31 +5,34 @@ import RelatedDrills from '@/components/drill/RelatedDrills';
 import { pickSources } from '@/lib/drillSources';
 
 export const metadata = {
-  title: "Visuelle Suche Test: Konjunktives Scanning | SkillDrills",
-  description: "Kostenloser Visuelle Suche Test: Scanne 96 rotierte Zeichen und isoliere Zielreize unter Zeitdruck. Trainiere Merkmalsintegration und Scanning online.",
+  title: "Visuelle Suche | Aufmerksamkeitstest | SkillDrills",
+  description: "Kostenloser Test für visuelle Suche: Finde einen Zielbuchstaben zwischen 95 ähnlichen Ablenkern und trainiere selektive Aufmerksamkeit.",
   keywords: [
-    "visuelle suche test",
-    "konjunktive suche test",
-    "merkmalsintegration theorie",
-    "visuelles scanning training",
-    "selektive aufmerksamkeit test",
-    "suchzeit psychologie",
-    "zielreiz diskrimination",
-    "visuelle inspektion test",
-    "foveales scanning geschwindigkeit",
-    "symbolsuche test"
+    "visuelle Suche",
+    "Buchstaben finden",
+    "visuelle Suche Test",
+    "visuelle Aufmerksamkeit",
+    "selektive Aufmerksamkeit",
+    "Symbolsuche",
+    "visuelles Scanning",
+    "Zielreiz finden",
+    "Konjunktionssuche",
+    "visuelle Suche online",
+    "Aufmerksamkeitstest",
+    "Distraktoren",
+    "Suchgeschwindigkeit"
 ],
   openGraph: {
-    title: "Visuelle Suche Test: Konjunktives Scanning | SkillDrills",
-    description: "Wissenschaftlicher Visuelle Suche Test: Scanne 96 rotierte Zeichen und isoliere Zielreize unter Zeitdruck. Trainiere Merkmalsintegration und Scanning online.",
+    title: "Visuelle Suche | Aufmerksamkeitstest | SkillDrills",
+    description: "Finde einen Zielbuchstaben zwischen ähnlichen Ablenkern und übe selektive Aufmerksamkeit im Browser.",
     type: "website",
     url: "https://skilldrills.online/de/drills/visual/visual-recognition/visual-search",
     siteName: "SkillDrills",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Visuelle Suche Test: Konjunktives Scanning | SkillDrills",
-    description: "Wissenschaftlicher Visuelle Suche Test: Scanne 96 rotierte Zeichen und isoliere Zielreize unter Zeitdruck. Trainiere Merkmalsintegration und Scanning online.",
+    title: "Visuelle Suche | Aufmerksamkeitstest | SkillDrills",
+    description: "Visuelle Suche zwischen ähnlichen Zeichen trainieren.",
   },
   robots: { index: true, follow: true },
   alternates: {
@@ -59,7 +62,7 @@ const softwareApplicationSchema = {
   "description": "Kostenloser Test zur konjunktiven visuellen Suche. Scanne hochdichte Buchstabengitter mit rotierten Distraktoren zur Messung von Latenz und selektiver Aufmerksamkeit.",
   "url": "https://skilldrills.online/de/drills/visual/visual-recognition/visual-search",
   "publisher": { "@type": "Organization", "name": "SkillDrills", "url": "https://skilldrills.online" },
-  "dateModified": "2026-09-05"
+  "dateModified": "2026-09-20"
 };
 
 const webApplicationSchema = {
@@ -69,7 +72,7 @@ const webApplicationSchema = {
   "browserRequirements": "Requires HTML5 canvas and JavaScript",
   "url": "https://skilldrills.online/de/drills/visual/visual-recognition/visual-search",
   "applicationCategory": "EducationalApplication",
-  "dateModified": "2026-09-05"
+  "dateModified": "2026-09-20"
 };
 
 const videoGameSchema = {
@@ -89,7 +92,7 @@ const howToSchema = {
   "@type": "HowTo",
   "name": "Wie man visuelle Suche und konjunktives Scanning trainiert",
   "description": "Optimiere deine Suchgeschwindigkeit, Merkmalsintegration und Zielreizisolation mit wissenschaftlichen Scanning-Protokollen.",
-  "dateModified": "2026-09-05",
+  "dateModified": "2026-09-20",
   "step": [
     {
       "@type": "HowToStep",
@@ -125,11 +128,11 @@ const howToSchema = {
 const faqSchema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
-  "dateModified": "2026-09-05",
+  "dateModified": "2026-09-20",
   "mainEntity": [
     {
       "@type": "Question",
-      "name": "Was misst der Visual Search Test und wie funktioniert er?",
+      "name": "Was misst der Test zur visuellen Suche und wie funktioniert er?",
       "acceptedAnswer": {
         "@type": "Answer",
         "text": "Der Test misst die visuelle Suchgeschwindigkeit, Scanning-Effizienz und selektive Aufmerksamkeit. Nutzer müssen einen Zielbuchstaben in einer dichten 12x8-Matrix aus 96 rotierten Störbuchstaben in 45 Sekunden so oft wie möglich finden."
@@ -153,7 +156,7 @@ const faqSchema = {
     },
     {
       "@type": "Question",
-      "name": "Wie beeinflusst die 'Guided Search'-Theorie das menschliche Suchverhalten?",
+      "name": "Wie beeinflusst die Theorie der geleiteten Suche das menschliche Suchverhalten?",
       "acceptedAnswer": {
         "@type": "Answer",
         "text": "Nach Wolfe (1994) berechnen frühe visuelle Areale parallele Merkmalskarten, die eine Prioritätskarte im Kortex füttern. Aufmerksamkeitsfokussierte Sakkaden werden sequenziell zu den vielversprechendsten Positionen gelenkt."
@@ -169,7 +172,7 @@ const faqSchema = {
     },
     {
       "@type": "Question",
-      "name": "Was besagt die Perceptual Load Theory von Nilli Lavie?",
+      "name": "Was besagt die Theorie der perzeptiven Belastung von Nilli Lavie?",
       "acceptedAnswer": {
         "@type": "Answer",
         "text": "Sie besagt, dass Ablenkbarkeit davon abhängt, wie stark sensorische Kanäle ausgelastet sind. Hohe visuelle Last wie in dieser 96-Zellen-Matrix sättigt die Kapazität vollständig und schützt vor mentalem Abschweifen (Lavie, 1995)."
@@ -221,10 +224,10 @@ export default function VisualSearchLocalePage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(howToSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(videoGameSchema) }} />
-      <VisualSearchClient copy={{ title: "Visuelle Suche: Konjunktives Zielreiz-Training" }} />
+      <VisualSearchClient copy={{ title: "Visuelle Suche", subtitle: "Zielreiz zwischen Ablenkern finden" }} />
       <DrillGuide
         eyebrow="Visuelle Kognition & Aufmerksamkeitspsychophysik"
-        title="Die Wissenschaft der visuellen Suche, Merkmalsintegration & selektiven Aufmerksamkeit"
+        title="Visuelle Suche und selektive Aufmerksamkeit trainieren"
         sources={sources}
       >
         <p dangerouslySetInnerHTML={{ __html: `In natürlichen visuellen Umgebungen treten Zielobjekte selten isoliert auf. Ob bei der Überwachung eines Radarschirms, beim Korrekturlesen dichter Texte oder beim blitzschnellen Aufspüren eines Gegners hinter Deckungen in taktischen Shootern – das menschliche Sehsystem muss hochgradig relevante Signale aus dichtem visuellem Clutter herausfiltern. In der Psychophysik wird diese Fähigkeit über <strong>visuelle Suchparadigmen</strong> quantifiziert, die das Zusammenspiel räumlicher Aufmerksamkeit mit sensorischen Merkmalskarten im Zeitverlauf analysieren (Treisman &amp; Gelade, 1980; Wolfe, 1994).` }} />
@@ -254,7 +257,7 @@ export default function VisualSearchLocalePage() {
 
         <h3>Aufmerksamkeits-Zoomlinse &amp; perzeptive Belastung (Lavie, 1995; Eriksen &amp; St. James, 1986)</h3>
         <p dangerouslySetInnerHTML={{ __html: `Nach dem Zoom-Lens-Modell der räumlichen Aufmerksamkeit (Eriksen &amp; St. James, 1986) agiert die visuelle Aufmerksamkeit wie ein Scheinwerfer mit variablem Durchmesser. Weitet sich der Fokus über das 96-Zellen-Gitter, sinkt die Verarbeitungsauflösung; verengt er sich auf eine einzelne Zelle, erreicht die Trennschärfe ihr Maximum auf Kosten des peripheren Überblicks.` }} />
-        <p dangerouslySetInnerHTML={{ __html: `Nilli Lavies Perceptual Load Theory (Lavie, 1995) belegt zudem, dass kognitive Ablenkbarkeit vom sensorischen Ressourcenverbrauch abhängt. In niedrig belasteten Aufgaben diffundieren überschüssige Kapazitäten unwillkürlich in irrelevante Reize ab. Unter hoher perzeptiver Last – wie unserem 96-Zellen-Buchstabengitter unter 45 Sekunden Zeitdruck – ist die sensorische Bandbreite vollständig gesättigt, was störende Gedanken unterdrückt und höchste selektive Konzentration erzwingt (Lavie, 1995; Bacon &amp; Egeth, 1994).` }} />
+        <p dangerouslySetInnerHTML={{ __html: `Nilli Lavies Theorie der perzeptiven Belastung (Lavie, 1995) erklärt zudem, dass kognitive Ablenkbarkeit vom sensorischen Ressourcenverbrauch abhängt. In niedrig belasteten Aufgaben diffundieren überschüssige Kapazitäten unwillkürlich in irrelevante Reize ab. Unter hoher perzeptiver Last – wie unserem 96-Zellen-Buchstabengitter unter 45 Sekunden Zeitdruck – wird selektive Aufmerksamkeit stärker gefordert (Lavie, 1995; Bacon &amp; Egeth, 1994).` }} />
 
         <h3>Suchlatenz- und Durchsatz-Standards (96-Zellen-Gitter)</h3>
         <p dangerouslySetInnerHTML={{ __html: `Die nachfolgenden Leistungsbereiche dienen der Orientierung zur Einordnung der eigenen Ergebnisse auf diesem 96-Zellen-Raster (12x8) unter standardisiertem 45-Sekunden-Zeitdruck:` }} />
@@ -328,7 +331,7 @@ export default function VisualSearchLocalePage() {
         <h3>Häufig gestellte Fragen (FAQ)</h3>
         <div className="space-y-4 my-6">
           <div>
-            <h4 className="font-semibold text-white">Was misst der Visual Search Test und wie funktioniert er?</h4>
+            <h4 className="font-semibold text-white">Was misst der Test zur visuellen Suche und wie funktioniert er?</h4>
             <p className="text-slate-300 mt-1">
               Der Test misst die visuelle Suchgeschwindigkeit, Scanning-Effizienz und selektive Aufmerksamkeit. Nutzer müssen einen Zielbuchstaben in einer dichten 12x8-Matrix aus 96 rotierten Störbuchstaben in 45 Sekunden so oft wie möglich finden.
             </p>
@@ -346,7 +349,7 @@ export default function VisualSearchLocalePage() {
             </p>
           </div>
           <div>
-            <h4 className="font-semibold text-white">Wie beeinflusst die &apos;Guided Search&apos;-Theorie das menschliche Suchverhalten?</h4>
+            <h4 className="font-semibold text-white">Wie beeinflusst die Theorie der geleiteten Suche das menschliche Suchverhalten?</h4>
             <p className="text-slate-300 mt-1">
               Nach Wolfe (1994) berechnen frühe visuelle Areale parallele Merkmalskarten, die eine Prioritätskarte im Kortex füttern. Aufmerksamkeitsfokussierte Sakkaden werden sequenziell zu den vielversprechendsten Positionen gelenkt.
             </p>
@@ -358,7 +361,7 @@ export default function VisualSearchLocalePage() {
             </p>
           </div>
           <div>
-            <h4 className="font-semibold text-white">Was besagt die Perceptual Load Theory von Nilli Lavie?</h4>
+            <h4 className="font-semibold text-white">Was besagt die Theorie der perzeptiven Belastung von Nilli Lavie?</h4>
             <p className="text-slate-300 mt-1">
               Sie besagt, dass Ablenkbarkeit davon abhängt, wie stark sensorische Kanäle ausgelastet sind. Hohe visuelle Last wie in dieser 96-Zellen-Matrix sättigt die Kapazität vollständig und schützt vor mentalem Abschweifen (Lavie, 1995).
             </p>

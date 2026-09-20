@@ -1,5 +1,6 @@
 import PeripheralPingPursuitClient from '@/app/drills/visual-tracking/peripheral-ping-pursuit/PeripheralPingPursuitClientLoader';
 import DrillGuide from '@/components/drill/DrillGuide';
+import DrillFooter from '@/components/drill/DrillFooter';
 import RelatedDrills from '@/components/drill/RelatedDrills';
 import { getAlternateLanguages } from '@/lib/i18n/locales';
 import { pickSources } from '@/lib/drillSources';
@@ -14,25 +15,23 @@ import { pickSources } from '@/lib/drillSources';
 // ============================================================
 
 export const metadata = {
-  title: "주변시 핑 추적 훈련・중심시 주변시 통합 테스트 – 시야 확장・잠재적 주의력 | SkillDrills",
-  description: "중심 표적을 시선으로 매끄럽게 추적하면서 주변 시야에서 순간적으로 번쩍이는 핑을 눈동자 이동 없이 감지하는 무료 시각 훈련. 잠재적 공간 주의력과 동체시야 확장. 무설치 웹 테스트.",
+  title: "주변시 훈련｜중심을 보며 주변 반응 | SkillDrills",
+  description: "중앙 표적을 따라가며 주변 빛 자극에 시선을 돌리지 않고 반응하는 무료 브라우저 훈련. 반응 시간과 중심 시선 안정을 기록합니다.",
   keywords: [
     "주변시 훈련",
-    "중심시 주변시 동시 훈련",
-    "시야각 넓히기",
-    "주변시야 넓히는법",
-    "동체시력 주변시 테스트",
-    "잠재적 공간 주의",
-    "터널 비전 교정",
-    "기능적 시야 UFOV",
-    "미니맵 맵리딩 훈련",
-    "중심와 고정 주변 감지",
-    "시각적 주의력 분배",
-    "동체시야 확장 훈련"
+    "주변 시야 반응",
+    "중심 시선 고정",
+    "주변 자극 감지",
+    "스포츠 시야 훈련",
+    "시야 넓히기 운동",
+    "동체시력 훈련",
+    "주변시 반응 연습",
+    "시선 고정 훈련",
+    "주변시 온라인 테스트"
   ],
   openGraph: {
-    title: "주변시 핑 추적 훈련・중심시 주변시 통합 테스트 – 시야 확장・잠재적 주의력 | SkillDrills",
-    description: "중심 표적을 추적하며 주변 시야 핑을 감지하는 무료 온라인 주변시 훈련. 터널 비전 완화 및 시야각 확대.",
+    title: "주변시 훈련｜중심을 보며 주변 반응 | SkillDrills",
+    description: "중앙 표적을 따라가며 주변 빛 자극에 반응하는 무료 온라인 주변시 훈련.",
     type: "website",
     url: "https://skilldrills.online/ko/drills/visual-tracking/peripheral-ping-pursuit",
     siteName: "SkillDrills",
@@ -40,8 +39,8 @@ export const metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "주변시 핑 추적 훈련・중심시 주변시 통합 테스트 – 시야 확장・잠재적 주의력 | SkillDrills",
-    description: "중심 표적에 시선을 고정한 채 주변 시야 변화를 탐지하는 과학적 주변시야 및 잠재적 주의력 트레이닝.",
+    title: "주변시 훈련｜중심을 보며 주변 반응 | SkillDrills",
+    description: "중앙 표적에 시선을 고정한 채 주변 시야 변화를 감지하는 무료 훈련.",
   },
   robots: { index: true, follow: true },
   alternates: {
@@ -66,33 +65,37 @@ const softwareApplicationSchema = {
   "@type": "SoftwareApplication",
   "name": "주변시 핑 추적 훈련・중심시 주변시 통합 테스트",
   "applicationCategory": "HealthApplication",
-  "operatingSystem": "Any (Web Browser)",
+  "operatingSystem": "웹 브라우저",
   "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
-  "description": "중심 표적을 부드러운 안구 추적(Smooth Pursuit)으로 쫓으면서 주변 시야의 순간 광학 핑을 잠재적 주의력으로 탐지하는 브라우저 기반 시야각 확장 트레이너.",
+  "description": "중심 표적을 부드러운 추종 안구운동으로 따라가며 주변 시야의 짧은 빛 자극을 감지하는 브라우저 기반 훈련.",
   "url": "https://skilldrills.online/ko/drills/visual-tracking/peripheral-ping-pursuit",
+  "dateModified": "2026-09-20",
 };
 
 const webAppSchema = {
   "@context": "https://schema.org",
   "@type": "WebApplication",
-  "name": "주변시 핑 추적기 (SkillDrills Peripheral Ping Pursuit)",
+  "name": "주변시 핑 추적기",
   "url": "https://skilldrills.online/ko/drills/visual-tracking/peripheral-ping-pursuit",
-  "browserRequirements": "Requires HTML5 canvas and JavaScript ES6+",
-  "applicationCategory": "SportsApplication"
+  "browserRequirements": "HTML5 캔버스와 최신 자바스크립트를 지원하는 브라우저",
+  "applicationCategory": "SportsApplication",
+  "dateModified": "2026-09-20"
 };
 
 const videoGameSchema = {
   "@context": "https://schema.org",
   "@type": "VideoGame",
-  "name": "주변시 핑 추적 훈련 (Peripheral Ping Pursuit)",
+  "name": "주변시 핑 추적 훈련",
   "description": "중심 조준점을 유지한 상태에서 화면 외곽의 기습적 시각 자극을 식별하는 동체시력 및 공간 인지 게이밍 트레이닝 도구.",
-  "genre": ["E-sports Trainer", "Vision Training", "Cognitive Drill"],
-  "playMode": "SinglePlayer"
+  "genre": ["e스포츠 시각 훈련", "주변시 훈련", "인지 과제"],
+  "playMode": "SinglePlayer",
+  "dateModified": "2026-09-20"
 };
 
 const howToSchema = {
   "@context": "https://schema.org",
   "@type": "HowTo",
+  "dateModified": "2026-09-20",
   "name": "주변시 및 중심시 동시 인지 훈련 수행 방법",
   "description": "중심와 고정을 풀지 않고 잠재적 공간 주의를 활용하여 주변 시야 핑을 탐지하는 표준 훈련 프로토콜.",
   "step": [
@@ -126,6 +129,7 @@ const howToSchema = {
 const faqSchema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
+  "dateModified": "2026-09-20",
   "mainEntity": [
     {
       "@type": "Question",
@@ -140,15 +144,15 @@ const faqSchema = {
       "name": "눈동자를 주변 핑으로 돌려(사카드 도약) 확인하면 왜 훈련 효과가 떨어지나요?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "눈동자를 직접 돌려 대상을 중심와로 가져오는 것은 '현성 주의(Overt Attention)'입니다. 반면 본 드릴의 핵심 목적은 눈을 움직이지 않고 시각적 주의력만을 외곽으로 넓히는 '잠재적 공간 주의(Covert Spatial Attention)'를 강화하는 것입니다. 사카드 안구 도약이 일어나면 약 50~150ms 동안 일시적 시각 차단(사카드 억제)이 발생하여 중심 표적 추적이 끊어지게 됩니다."
+        "text": "눈동자를 직접 돌려 대상을 중심와로 가져오는 것은 현성 주의입니다. 이 과제는 눈을 움직이지 않고 주의의 초점만 외곽으로 넓히는 잠재적 공간 주의를 연습합니다. 시선을 돌리면 중심 표적 추적이 끊길 수 있으므로, 결과 비교를 위해 중심을 계속 바라봅니다."
       }
     },
     {
       "@type": "Question",
-      "name": "긴박한 상황에서 발생하는 '터널 비전(Tunnel Vision)'을 이 드릴로 교정할 수 있나요?",
+      "name": "긴박한 상황에서 좁아지는 시야를 이 드릴로 치료할 수 있나요?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "네, 매우 효과적입니다. 높은 인지 부하나 스트레스 상태에서는 에릭센(Eriksen)의 줌렌즈 모델에 따라 시각적 주의의 초점이 좁아지며 주변 시야 자극을 인식하지 못하는 터널 비전이 유발됩니다. 본 훈련은 이중 과제(추적+감지)를 통해 전두-두정엽 주의 네트워크의 병렬 처리 역량을 강화함으로써 고압 상황에서도 시야를 넓게 유지하도록 훈련시킵니다."
+        "text": "이 드릴이 시야를 치료하거나 넓힌다고 단정할 수는 없습니다. 스트레스와 이중 과제에서 중심 추적과 주변 자극 감지를 함께 기록해 보고, 긴장이 높아질 때 성능이 어떻게 달라지는지 관찰하는 연습으로 사용하세요."
       }
     },
     {
@@ -156,15 +160,15 @@ const faqSchema = {
       "name": "FPS 게임이나 실전 e스포츠에서 주변시가 승률에 어떤 영향을 미치나요?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "조준선을 적 예상 경로에 배치한 상태(크로스헤어 플레이스먼트)에서, 눈동자를 미니맵이나 화면 구석으로 돌리지 않고도 주변시로 적의 픽셀 깜빡임이나 스킬 투사체를 감지할 수 있습니다. 이는 정보 획득 지연을 100ms 이상 줄여주어 기습 대처 능력과 생존율을 획기적으로 상승시킵니다."
+        "text": "게임에서 중심 조준을 유지하며 화면 가장자리의 변화를 알아차리는 상황을 모사할 수 있습니다. 다만 이 페이지의 결과가 승률, 정보 획득 지연, 생존율의 개선을 보장하지는 않으며 실제 게임 성능은 별도로 확인해야 합니다."
       }
     },
     {
       "@type": "Question",
-      "name": "잠재적 공간 주의(Covert Spatial Attention)와 일반 주의력의 차이는 무엇인가요?",
+      "name": "잠재적 공간 주의와 일반 주의력의 차이는 무엇인가요?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "포스너(Posner, 1980)의 시각 공간 큐잉 연구에 따르면, 인간은 안구를 고정한 상태에서도 뇌의 주의력 스포트라이트(Attentional Spotlight)만을 공간의 특정 방향으로 이동시킬 수 있습니다. 잠재적 주의력은 눈의 물리적 근육 이동에 의존하지 않으므로 훨씬 민첩하며, 다방향 위험 감시의 핵심 신경 기제입니다."
+        "text": "포스너(Posner, 1980)의 공간 주의 연구에서 말하는 잠재적 주의는 안구를 고정한 채 의식의 초점만 다른 위치로 옮기는 과정입니다. 일반 주의력이라는 넓은 표현과 달리, 이 과제에서는 중심 고정과 주변 감지를 함께 다룹니다."
       }
     },
     {
@@ -196,7 +200,7 @@ const faqSchema = {
       "name": "주변 핑 감지 시 스페이스바 반응 속도가 늦게 측정되는 신경학적 원인은 무엇인가요?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "주변부 망막 신호는 대뇌의 배측 경로(Dorsal stream)와 두정엽을 거쳐 운동 피질로 전달됩니다. 초기 훈련 단계에서는 두 개의 과제(중심 추적 유지 + 외곽 감지 판단)가 작업 기억과 주의 자원을 경쟁적으로 점유하므로 인지 병목(Bottleneck) 현상이 발생하여 반응이 지연될 수 있으며, 훈련을 거듭할수록 자동화되어 반응 시간이 단축됩니다."
+        "text": "주변부 자극은 움직임과 위치 정보를 처리하는 시각 경로와 주의 네트워크의 영향을 받습니다. 처음에는 중심 추적과 외곽 감지를 함께 수행하느라 반응이 늦을 수 있으므로, 세션별 결과를 비교하되 자동으로 시간이 단축된다고 가정하지 마세요."
       }
     },
     {
@@ -204,7 +208,7 @@ const faqSchema = {
       "name": "일상생활(운전, 보행, 업무)에서도 이 주변시 훈련이 실질적인 도움을 주나요?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "그렇습니다. 기능적 시야(UFOV, Useful Field of View) 연구에 따르면, 주변시가 발달한 운전자는 교차로 돌발 보행자나 급제동 차량에 대한 사고율이 50% 이상 낮습니다. 또한 다중 모니터 작업자나 운동선수의 공간 인지 능력을 대폭 개선해 줍니다."
+        "text": "일상이나 운전 능력의 향상과 사고율 감소를 이 드릴만으로 주장할 수는 없습니다. 운전 중 사용하는 시야 검사나 안전 판단을 대신하지 않으며, 여기서는 화면 안의 중심 추적과 주변 자극 반응만 기록합니다."
       }
     }
   ]
@@ -213,13 +217,13 @@ const faqSchema = {
 const guideProps = {
   heading: "주변시 핑 추적 훈련의 과학적 원리와 시야각 확장 가이드",
   intro: [
-    "인간의 시각 체계는 해부학적으로 중심와(Fovea centralis)를 통한 고해상도 초점 시각과, 망막 외곽의 간상세포(Rods) 및 마그노세포(Magnocellular pathway)를 통한 고감도 주변 시각으로 이원화되어 작동합니다. 일반적인 시선 추적 훈련이 중심시의 정밀도에 초점을 맞추는 반면, 본 주변시 핑 추적 훈련(Peripheral Ping Pursuit)은 시선을 중앙 표적에 고정 유지한 상태에서 시야 외곽의 돌발 광학 자극을 인지하는 잠재적 공간 주의(Covert Spatial Attention)를 극대화하도록 설계되었습니다.",
-    "인지심리학의 거두 마이클 포스너(Michael Posner, 1980)의 공간 큐잉 이론에 따르면, 인간은 눈동자를 직접 회전시키는 현성 주의(Overt Attention)뿐만 아니라, 안구를 완전히 고정한 채 내적 주의력 스포트라이트만을 확장·이동시키는 잠재적 주의 능력을 지니고 있습니다. 안구 도약(Saccade)을 일으키면 약 100ms 동안 시각 정보 전달이 차단되는 사카드 억제 현상이 발생하지만, 잠재적 주의를 활용하면 시선의 흔들림 없이 전방위 시각 공간을 실시간으로 감시할 수 있습니다.",
-    "치열한 전투 환경이나 고속 스포츠 경기에서 인간은 흔히 '터널 비전(Tunnel Vision)'에 빠집니다. 에릭센(Eriksen, 1986)의 줌렌즈 모델(Zoom-lens Model)이 설명하듯, 인지적 부하와 스트레스가 급증하면 뇌는 시각적 주의 반경을 강제로 좁혀 중심부 이외의 모든 정보 처리를 배제합니다. 본 드릴은 중심부의 연속 부드러운 안구 운동(Smooth Pursuit)과 외곽부의 비주기적 핑 감지를 동시에 요구하는 엄격한 이중 과제(Dual-task) 패러다임을 부과하여, 고압 환경에서도 기능적 시야(Useful Field of View / UFOV)가 축소되지 않도록 훈련합니다.",
-    "본 훈련을 꾸준히 수행하면 e스포츠에서의 미니맵 확인 지연 감소, FPS 기습 대처, 그리고 축구·농구 등 구기 종목에서의 오픈 패스 경로 탐색 능력이 유의미하게 향상됩니다. 중심와 앵커를 흔들지 않고 주변부 시각 피질의 정보 처리 효율을 극대화하여 시야 전체를 통제하는 진정한 공간 인지 지배력을 완성하십시오."
+    "인간의 시각 체계는 중심의 세부 정보를 처리하는 영역과 주변의 움직임·밝기 변화를 포착하는 영역이 서로 다른 역할을 합니다. 이 주변시 핑 추적 훈련은 중앙 표적을 계속 바라보면서 화면 외곽의 짧은 빛 자극을 알아차리는 잠재적 공간 주의 과제로 구성되어 있습니다.",
+    "Posner(1980)의 공간 주의 연구는 눈을 움직이지 않고도 의식의 초점을 다른 위치로 옮길 수 있음을 설명합니다. 이 과제는 주변 자극을 보기 위해 눈을 돌리는 대신 중앙 추적을 유지하도록 하며, 세션에서는 중심 이탈과 주변 반응을 함께 기록합니다.",
+    "스트레스와 인지 부하는 주변 자극을 놓치는 방식에 영향을 줄 수 있습니다. 그러나 이 브라우저 과제가 시야를 넓히거나 좁아진 시야를 치료한다고 말할 수는 없습니다. 중심 추적과 주변 감지를 낮은 강도에서 시작하고, 피로가 생기면 중단하세요.",
+    "게임이나 스포츠에 적용할 때는 화면 환경, 입력 장치, 경험 수준에 따라 결과가 달라집니다. 이 페이지는 중심 추적과 주변 자극 반응을 비교하는 연습 도구이며, 경기력·운전 능력·시야 질환을 판정하는 도구가 아닙니다."
   ],
   benchmarks: {
-    title: "주변시 인지율 및 반응 지연 표준 벤치마크 (UFOV & Reaction Time)",
+    title: "주변시 인지율 및 반응 지연 표준 지표",
     headers: ["숙련도 등급", "기능적 시야 감지율 (UFOV %)", "주변 핑 평균 반응 속도", "추적 안정성 유지율", "종합 인지 판정"],
     rows: [
       ["엘리트 (Elite)", "93% 이상", "280ms 미만", "96% 이상", "초광각 잠재 주의 및 완벽한 중심와 독립성"],
@@ -234,17 +238,17 @@ const guideProps = {
     title: "시야각 확대 및 잠재적 주의력 강화를 위한 4단계 핵심 기법",
     items: [
       {
-        name: "중심와 앵커링 기법 (Foveal Anchoring)",
+        name: "중심와 고정 기법",
         desc: "중심 표적에 시선의 물리적 초점을 완벽히 고정하고, 주변 핑이 번쩍이더라도 눈동자를 핑 방향으로 튀기지 않는 자기 통제 훈련입니다. 눈동자가 움직이는 순간 중심 표적 추적 점수가 깎이고 사카드 억제로 인해 시야가 단절됩니다.",
         tips: "초점은 메인 타깃의 중심핵에 못 박아두고, 화면 외곽은 '느끼는' 감각으로 넓게 바라보는 소프트 포커스를 유지하세요."
       },
       {
-        name: "잠재적 주의력 방사 전개 (Covert Attention Radiation)",
+        name: "잠재적 주의력 확장",
         desc: "포스너의 주의력 스포트라이트를 단일 지점이 아닌 도넛 형태의 방사형으로 확장시키는 훈련입니다. 의식의 안테나를 모니터의 상하좌우 모서리 전체로 펼쳐두면, 핑이 발생한 즉시 망막의 간상세포가 트리거됩니다.",
         tips: "주변 핑의 정확한 형태나 색상을 확인하려 하지 말고, 단지 '밝기 변화'가 감지되는 즉시 스페이스바를 누르세요."
       },
       {
-        name: "배측 시각 경로 병렬 활성화 (Dorsal Stream Activation)",
+        name: "움직임·위치 정보를 다루는 시각 경로 활용",
         desc: "시각 정보는 '무엇인가(Ventral)'를 판별하는 경로와 '어디서 움직이는가(Dorsal)'를 처리하는 경로로 나뉩니다. 주변시는 배측 경로에 의해 지배되므로, 세부 해상도 분석을 포기하고 공간 위치 변화에만 본능적으로 반응하도록 신경 회로를 최적화해야 합니다.",
         tips: "핑의 세부 디테일을 보려 하지 말고, 화면 구석의 픽셀 점멸 느낌에 반사적으로 반응하는 리듬을 만드세요."
       },
@@ -269,12 +273,12 @@ const guideProps = {
   })),
   sources: pickSources('posner1980', 'eriksen1986', 'wolfe1994', 'findlay1999', 'leigh2015', 'woods2015'),
   related: [
-    { href: "/ko/drills/visual-tracking/constant-slow-pursuit", label: "저속 안구 운동 훈련 (Constant Slow)" },
-    { href: "/ko/drills/visual-tracking/directional-chaos-pursuit", label: "카오스 방향 전환 추적 (Directional Chaos)" },
-    { href: "/ko/drills/visual-tracking/dynamic-evasion-pursuit", label: "회피 표적 추적 훈련 (Dynamic Evasion)" },
-    { href: "/ko/drills/visual-tracking/ghosting-suppress-pursuit", label: "잔상 억제 시선 고정 훈련 (Ghosting Suppress)" },
-    { href: "/ko/drills/visual-tracking/infinity-pursuit", label: "8자 안구 운동 훈련 (Infinity)" },
-    { href: "/ko/drills/visual-tracking/momentum-teleport-pursuit", label: "순간이동 에임 연습 (Momentum Teleport)" }
+    { href: "/ko/drills/visual-tracking/constant-slow-pursuit", label: "저속 안구 운동 훈련" },
+    { href: "/ko/drills/visual-tracking/directional-chaos-pursuit", label: "방향 변화 시선 추적" },
+    { href: "/ko/drills/visual-tracking/dynamic-evasion-pursuit", label: "회피 표적 추적 훈련" },
+    { href: "/ko/drills/visual-tracking/ghosting-suppress-pursuit", label: "잔상 억제 시선 고정 훈련" },
+    { href: "/ko/drills/visual-tracking/infinity-pursuit", label: "8자 안구 운동 훈련" },
+    { href: "/ko/drills/visual-tracking/momentum-teleport-pursuit", label: "순간이동 표적 시선 재포착" }
   ]
 };
 
@@ -309,8 +313,8 @@ export default function KoPeripheralPingPursuitPage() {
       <PeripheralPingPursuitClient
         copy={{
           title: "주변시 핑 추적 훈련: 중심시・주변시 통합 및 잠재적 공간 주의력 테스트",
-          subtitle: "중심 표적 추적을 유지한 채 시야 외곽 핑을 감지하는 기능적 시야(UFOV) 확대 트레이너",
-          description: "중심 표적을 시선으로 매끄럽게 추적하면서 주변 시야에서 순간적으로 번쩍이는 핑을 눈동자 이동 없이 감지하는 이중 과제 시각 훈련. 포스너(Posner) 패러다임에 기반하여 잠재적 공간 주의력(Covert Spatial Attention)과 기능적 시야(UFOV)를 극대화하고 터널 비전을 개선합니다. 무료 무설치 웹 테스트."
+          subtitle: "중심 표적 추적을 유지한 채 시야 외곽 자극을 감지하는 이중 과제",
+          description: "중심 표적을 따라가면서 주변 시야의 짧은 빛 자극을 눈동자 이동 없이 감지하는 훈련입니다. 세션별 주변 반응과 중심 시선 안정을 비교하며, 시야 질환의 검사나 치료를 대신하지 않습니다."
         }}
       />
 
@@ -319,6 +323,7 @@ export default function KoPeripheralPingPursuitPage() {
       <div className="max-w-6xl mx-auto px-4 pb-12">
         <RelatedDrills currentCategory="visual-tracking" currentHref="https://skilldrills.online/ko/drills/visual-tracking/peripheral-ping-pursuit" />
       </div>
+      <DrillFooter />
     </>
   );
 }

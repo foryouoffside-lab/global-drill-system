@@ -5,25 +5,25 @@ import RelatedDrills from '@/components/drill/RelatedDrills';
 import { pickSources } from '@/lib/drillSources';
 
 export const metadata = {
-  title: "Poursuite de Cibles Mobiles: Vision Dynamique | SkillDrills",
-  description: "Test de poursuite de cibles mobiles gratuit. Interceptez des cibles dynamiques pour mesurer votre poursuite oculaire lente et vos réflexes visuels.",
+  title: "Poursuite Visuelle | Cible Mobile | SkillDrills",
+  description: "Entraînement gratuit de poursuite visuelle : suivez des cibles mobiles, anticipez leur trajectoire et interceptez-les. Pas un diagnostic.",
   keywords: [
-    "test de poursuite de cible en mouvement",
-    "test d'acuité visuelle dynamique",
-    "entraînement de visée cible mobile",
-    "poursuite oculaire lente test",
-    "interception de cible dynamique",
-    "coordination œil-main cibles mobiles",
-    "test de vision dynamique en ligne",
-    "anticipation de trajectoire visuelle",
-    "entraînement tracking fps",
-    "mouvements saccadiques et poursuite visuelle",
-    "test de vitesse de poursuite visuelle",
-    "vision cinétique et interception motrice"
+    "poursuite visuelle",
+    "test de poursuite visuelle",
+    "suivi de cible mobile",
+    "cible en mouvement",
+    "interception de cible",
+    "poursuite oculaire",
+    "coordination œil-main",
+    "acuité visuelle dynamique",
+    "entraînement cible mobile",
+    "suivi visuel",
+    "trajectoire visuelle",
+    "vitesse de poursuite"
   ],
   openGraph: {
-    title: "Poursuite de Cibles Mobiles: Vision Dynamique | SkillDrills",
-    description: "Interceptez des cibles mobiles accélérées et évaluez votre poursuite oculaire lente et votre acuité visuelle en ligne.",
+    title: "Poursuite Visuelle | Cible Mobile | SkillDrills",
+    description: "Suivez des cibles mobiles, anticipez leur trajectoire et entraînez la coordination œil-main gratuitement dans le navigateur.",
     type: 'article',
     url: 'https://skilldrills.online/fr/drills/visual/tracking-accuracy/moving-target',
     siteName: 'SkillDrills',
@@ -31,8 +31,8 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: "Poursuite de Cibles Mobiles: Vision Dynamique | SkillDrills",
-    description: "Test d'interception cinétique de cibles en temps réel pour sportifs et joueurs d'esport.",
+    title: "Poursuite Visuelle | Cible Mobile | SkillDrills",
+    description: "Entraînez la poursuite visuelle, l'anticipation de trajectoire et l'interception de cibles mobiles.",
   },
   robots: { index: true, follow: true },
   alternates: {
@@ -68,7 +68,7 @@ const softwareApplicationSchema = {
     "Accélération continue et réduction progressive de la hitbox des sphères",
     "Enregistrement 100% local dans le navigateur sans collecte externe"
   ],
-  "dateModified": "2026-09-05"
+  "dateModified": "2026-09-20"
 };
 
 const webAppSchema = {
@@ -77,7 +77,7 @@ const webAppSchema = {
   "name": "Test d'Interception de Cibles Mobiles — Vision Dynamique | SkillDrills",
   "alternateName": "Moving Target Pro",
   "url": "https://skilldrills.online/fr/drills/visual/tracking-accuracy/moving-target",
-  "dateModified": "2026-09-05",
+  "dateModified": "2026-09-20",
   "description": "Test gratuit de poursuite visuelle cinétique. Interceptez des cibles sphériques accélérées et rebondissantes avec calcul prédictif.",
   "applicationCategory": "EducationalApplication",
   "operatingSystem": "All",
@@ -105,7 +105,7 @@ const howToSchema = {
   "@context": "https://schema.org",
   "@type": "HowTo",
   "name": "Comment Réaliser le Test d'Interception de Cibles Mobiles",
-  "dateModified": "2026-09-05",
+  "dateModified": "2026-09-20",
   "description": "Protocole en 4 phases pour développer la poursuite oculaire lente, l'anticipation de trajectoire et l'exactitude d'interception.",
   "step": [
     {
@@ -142,7 +142,7 @@ const howToSchema = {
 const faqSchema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
-  "dateModified": "2026-09-05",
+  "dateModified": "2026-09-20",
   "mainEntity": [
     {
       "@type": "Question",
@@ -228,7 +228,7 @@ const faqSchema = {
 };
 
 const movingTargetGuide = {
-  heading: "Principes Scientifiques du Rastreamento Cinétique et de l'Interception Spatiale",
+  heading: "Poursuite visuelle et interception de cibles mobiles",
   intro: [
     "L'interception de cibles dynamiques constitue une aptitude sensorimotrice charnière dans les sports de haut niveau, l'aviation, les arts martiaux et l'esport tactique. Réussir à toucher un objet accéléré aux trajectoires non linéaires réclame la synchronisation de la poursuite oculaire lente, de l'extrapolation vectorielle et d'un contrôle moteur en boucle fermée.",
     "Le traitement neuronal du mouvement visuel s'amorce dans les neurones sélectifs à la direction de l'aire temporale moyenne (MT/V5) et temporale supérieure médiane (MST). Ces structures calculent les vecteurs de vitesse et projettent des flux vers les champs oculaires frontaux (FEF) et le cervelet afin de maintenir le gain de poursuite oculaire (Krauzlis, 2004).",
@@ -236,7 +236,7 @@ const movingTargetGuide = {
     "Par ailleurs, les travaux de Land & McLeod (2000) auprès d'athlètes de sports de balle mettent en lumière que les spécialistes ne suivent pas passivement la trajectoire intégrale de la balle ; ils projettent des saccades d'anticipation vers les points de rebond et d'impact calculés. Cet exercice forge cette exactitude prédictive sous contrainte temporelle sévère."
   ],
   benchmarks: {
-    title: "Paliers de Performance en Interception de Cibles Mobiles (Normes SRT)",
+    title: "Repères de poursuite et de précision d'interception",
     headers: ["Palier de Performance", "Fenêtre de Pacing", "Score & Seuil de Combo", "Profil de Poursuite et d'Interception"],
     rows: [
       ["Tier 1: Intercepteur Cinétique Apex", "< 0.25s Fenêtre", "16 000+ PTS | Combo 25x+", "Poursuite lente de niveau pro ; extrapolation parfaite sans latence de saccade correctrice. Niveau pilotes et joueurs d'élite."],
@@ -248,7 +248,7 @@ const movingTargetGuide = {
     note: "Ces paliers reposent sur la psychophysique de la vision dynamique et la chronométrie motrice (Rashbass, 1961 ; Krauzlis, 2004 ; Land & McLeod, 2000 ; Bahill et al., 1980 ; Woods et al., 2015). Les scores varient selon la fréquence d'écran et la souris."
   },
   techniques: {
-    title: "Méthodes Clés pour Perfectionner l'Interception de Cibles",
+    title: "Comment suivre une cible mobile et anticiper sa trajectoire",
     items: [
       {
         name: "Anticipation Vectorielle du Trajet (Ajustement de Rashbass)",
@@ -301,7 +301,7 @@ export default function KineticInterceptPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(howToSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(videoGameSchema) }} />
-      <KineticInterceptClient copy={{ title: "Poursuite de Cibles Mobiles: Vision Dynamique" }} />
+      <KineticInterceptClient copy={{ title: "Poursuite Visuelle" }} />
       <DrillGuide guide={movingTargetGuide} />
       <div className="max-w-6xl mx-auto px-4 pb-12">
         <RelatedDrills currentCategory="visual" currentHref="https://skilldrills.online/fr/drills/visual/tracking-accuracy/moving-target" />

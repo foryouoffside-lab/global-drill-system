@@ -1,49 +1,26 @@
 import SteadyHandClient from './SteadyHandClientLoader';
 import { getAlternateLanguages } from '@/lib/i18n/locales';
 import DrillGuide from '@/components/drill/DrillGuide';
-import RelatedDrills from '@/components/drill/RelatedDrills';
 import DrillFooter from '@/components/drill/DrillFooter';
 import { pickSources } from '@/lib/drillSources';
 
 // ============================================================
-// SEO RESEARCH FINDINGS — steady-hand (motor-steady-hand)
-// PRIMARY:  "steady hand game"            — Core query (~5,400+ searches/mo)
-//           "steady hand test"            — Diagnostic / benchmark intent
-// SECONDARY / LSI:
-//           "mouse path tracing"          — Kinematic trajectory query
-//           "hand steadiness test"        — Clinical / motor stability search
-//           "mouse precision test"        — Sensorimotor accuracy query
-//           "cursor control test"         — Fine motor coordination phrase
-//           "fine motor control test mouse" — Occupational / ergonomic query
-//           "mouse steadiness drill"      — Training & practice search
-//           "hand tremor test online"     — Neuromotor jitter evaluation
-//           "mouse maze game"             — Gamified corridor navigation
-//           "corridor tracing game"       — Trajectory-constrained motor task
-//           "smooth cursor control"       — Velocity consistency query
-// LOCALES:
-//           ja: "イライラ棒" (Iraira-bō / Wire Loop Game / Steady Hand Game)
+// Native keyword research: docs/seo/research/steady-hand-2026-09-20.md
+// Primary intent: steady hand game, mouse precision test, cursor control.
 // ============================================================
 
 export const metadata = {
-  title: 'Steady Hand Game – Free Online Mouse Steadiness Test',
-  description: 'Free online steady hand game. Steer a cursor down a corridor that narrows every lap and measure how far you drift. Grounded in the Accot-Zhai Steering Law.',
+  title: 'Steady Hand Game | Mouse Precision Test | SkillDrills',
+  description: 'Free browser test for cursor precision, steady-hand control, and narrow-path tracing. Measure your drift as the corridor tightens.',
   keywords: [
-    'steady hand game',
-    'steady hand test',
-    'mouse path tracing',
-    'hand steadiness test',
-    'mouse precision test',
-    'cursor control test',
-    'fine motor control test mouse',
-    'mouse steadiness drill',
-    'hand tremor test online',
-    'mouse maze game',
-    'corridor tracing game',
-    'smooth cursor control',
+    'steady hand game', 'mouse precision test', 'cursor control test',
+    'mouse path tracing', 'hand steadiness test', 'fine motor control test mouse',
+    'mouse steadiness drill', 'mouse maze game', 'corridor tracing game',
+    'narrow path mouse test', 'smooth cursor control', 'hand stability training',
   ],
   openGraph: {
-    title: 'Steady Hand Game – Free Online Mouse Steadiness Test | SkillDrills',
-    description: 'Free online steady hand game. Steer a cursor down a corridor that narrows every lap and measure how far you drift. Grounded in the Accot-Zhai Steering Law.',
+    title: 'Steady Hand Game | Mouse Precision Test | SkillDrills',
+    description: 'Free browser test for cursor precision, steady-hand control, and narrow-path tracing. Measure your drift as the corridor tightens.',
     type: 'article',
     url: 'https://skilldrills.online/drills/motor/precision-control/steady-hand',
     siteName: 'SkillDrills',
@@ -51,8 +28,8 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Steady Hand Game – Free Online Mouse Steadiness Test | SkillDrills',
-    description: 'Free online steady hand game. Steer a cursor down a corridor that narrows every lap and measure how far you drift. Grounded in the Accot-Zhai Steering Law.',
+    title: 'Steady Hand Game | Mouse Precision Test | SkillDrills',
+    description: 'Free browser test for cursor precision, steady-hand control, and narrow-path tracing. Measure your drift as the corridor tightens.',
   },
   robots: { index: true, follow: true },
   alternates: {
@@ -77,6 +54,7 @@ const breadcrumbSchema = {
 const softwareApplicationSchema = {
   '@context': 'https://schema.org',
   '@type': 'SoftwareApplication',
+  inLanguage: 'en-US',
   name: 'Steady Hand Game – Mouse Path Tracing Drill',
   applicationCategory: 'HealthApplication',
   operatingSystem: 'All',
@@ -84,36 +62,41 @@ const softwareApplicationSchema = {
   description: 'Free browser-based steady hand game and mouse path tracing drill. Trace a dynamically narrowing winding corridor to measure fine motor tremor, trajectory stability, and steering throughput.',
   url: 'https://skilldrills.online/drills/motor/precision-control/steady-hand',
   publisher: { '@type': 'Organization', name: 'SkillDrills', url: 'https://skilldrills.online' },
-  dateModified: '2026-09-05',
+  dateModified: '2026-09-20',
 };
 
 const webApplicationSchema = {
   '@context': 'https://schema.org',
   '@type': 'WebApplication',
+  inLanguage: 'en-US',
   name: 'Steady Hand Circuit Trainer',
   applicationCategory: 'GameApplication',
   operatingSystem: 'All',
   browserRequirements: 'Requires modern web browser with HTML5 Canvas and continuous high-polling pointer support',
   offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
   url: 'https://skilldrills.online/drills/motor/precision-control/steady-hand',
-  dateModified: '2026-09-05',
+  dateModified: '2026-09-20',
 };
 
 const videoGameSchema = {
   '@context': 'https://schema.org',
   '@type': 'VideoGame',
+  inLanguage: 'en-US',
   name: 'Steady Hand Game & Motor Precision Drill',
   url: 'https://skilldrills.online/drills/motor/precision-control/steady-hand',
   description: 'Online steady hand wire maze game testing fine motor precision, micro-tremor control, and Steering Law speed.',
   genre: ['Precision Game', 'Action', 'Esports Training'],
   gamePlatform: ['Web Browser', 'Desktop', 'Mobile'],
   applicationCategory: 'Game',
-  offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' }
+  offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
+  dateModified: '2026-09-20',
 };
 
 const faqSchema = {
   '@context': 'https://schema.org',
   '@type': 'FAQPage',
+  inLanguage: 'en-US',
+  dateModified: '2026-09-20',
   mainEntity: [
     {
       '@type': 'Question',
@@ -201,6 +184,8 @@ const faqSchema = {
 const howToSchema = {
   '@context': 'https://schema.org',
   '@type': 'HowTo',
+  inLanguage: 'en-US',
+  dateModified: '2026-09-20',
   name: 'How to Train Mouse Steadiness and Corridor Steering',
   description: 'Step-by-step training protocol for navigating narrow corridors, suppressing tremor, and optimizing steering throughput.',
   step: [
@@ -323,7 +308,7 @@ const guideProps = {
 
 const copyEn = {
   title: "Steady Hand Circuit",
-  subtitle: "Motor Precision & Line Tracking • 45s Timer",
+  subtitle: "Cursor precision & steady hand • 45s",
   startButtonText: "Start Drill",
   trainAgain: "Train Again",
   shareTitle: "Share Score",
@@ -373,9 +358,6 @@ export default function SteadyHandPage() {
       />
       <SteadyHandClient copy={copyEn} />
       <DrillGuide {...guideProps} />
-      <div className="max-w-6xl w-full mx-auto px-4 pb-12">
-        <RelatedDrills currentCategory="motor" currentHref="/drills/motor/precision-control/steady-hand" />
-      </div>
       <DrillFooter />
     </>
   );

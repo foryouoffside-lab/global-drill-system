@@ -6,7 +6,7 @@ import { pickSources } from '@/lib/drillSources';
 
 // ============================================================
 // RECHERCHE DE MOTS-CLÉS NATIFS (SERP FRANCE / FR-FR)
-// Requêtes à forte intention neurofonctionnelle et faible concurrence :
+// Clusters natifs à intention neurofonctionnelle; concurrence non mesurée :
 // - "test de coordination oeil main en ligne" (Requête dominante visuo-motrice)
 // - "exercice de coordination visuo motrice" (Entraînement psychomoteur et précision)
 // - "franchissement de la ligne médiane motricité" (Concept d'intégration sensorielle et bilatérale)
@@ -18,27 +18,27 @@ import { pickSources } from '@/lib/drillSources';
 // ============================================================
 
 export const metadata = {
-  title: "Coordination Œil-Main – Visée Diagonale | SkillDrills",
-  description: 'Test de coordination œil-main gratuit en ligne. Reliez des nœuds diagonaux pour développer votre coordination bilatérale et votre visée motrice fine.',
+  title: "Test de coordination œil-main | SkillDrills",
+  description: 'Test gratuit de coordination œil-main en ligne. Reliez des nœuds diagonaux en franchissant la ligne médiane pour travailler la coordination bilatérale et la précision à la souris.',
   keywords: [
-    "test de coordination oeil main en ligne",
+    "test de coordination oeil main",
     "exercice de coordination visuo motrice",
     "franchissement de la ligne médiane motricité",
     "coordination bilatérale et motricité fine",
     "jeux de coordination motrice gratuit",
-    "mouvement de balayage diagonal souris",
+    "coordination souris en ligne",
     "test de vitesse de réaction et coordination",
     "contrôle moteur controlatéral",
-    "visée diagonale fps",
-    "dextérité motrice test"
+    "test de coordination motrice",
+    "test motricité fine"
   ],
   alternates: {
     canonical: 'https://skilldrills.online/fr/drills/physical/coordination/cross-body-movement',
     languages: getAlternateLanguages('/drills/physical/coordination/cross-body-movement'),
   },
   openGraph: {
-    title: "Coordination Œil-Main – Visée Diagonale | SkillDrills",
-    description: 'Test de coordination œil-main gratuit en ligne. Reliez des nœuds diagonaux pour développer votre coordination bilatérale et votre visée motrice fine.',
+    title: "Test de coordination œil-main | SkillDrills",
+    description: 'Test gratuit de coordination œil-main en ligne. Reliez des nœuds diagonaux en franchissant la ligne médiane pour travailler la coordination bilatérale et la précision à la souris.',
     url: 'https://skilldrills.online/fr/drills/physical/coordination/cross-body-movement',
     siteName: 'SkillDrills',
     locale: 'fr_FR',
@@ -46,8 +46,8 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: "Coordination Œil-Main – Visée Diagonale | SkillDrills",
-    description: 'Test de coordination œil-main gratuit en ligne. Reliez des nœuds diagonaux pour développer votre coordination bilatérale et votre visée motrice fine.',
+    title: "Test de coordination œil-main | SkillDrills",
+    description: 'Test gratuit de coordination œil-main en ligne. Reliez des nœuds diagonaux en franchissant la ligne médiane pour travailler la coordination bilatérale et la précision à la souris.',
   },
   robots: { index: true, follow: true },
 };
@@ -102,7 +102,7 @@ const softwareApplicationSchema = {
     "url": "https://skilldrills.online/fr"
   },
   "inLanguage": "fr-FR",
-  "dateModified": "2026-09-12"
+  "dateModified": "2026-09-20"
 };
 
 const webApplicationSchema = {
@@ -119,7 +119,7 @@ const webApplicationSchema = {
   },
   "url": "https://skilldrills.online/fr/drills/physical/coordination/cross-body-movement",
   "inLanguage": "fr-FR",
-  "dateModified": "2026-09-12"
+  "dateModified": "2026-09-20"
 };
 
 const videoGameSchema = {
@@ -140,6 +140,8 @@ const videoGameSchema = {
     "Mobile"
   ],
   "applicationCategory": "Game",
+  "inLanguage": "fr-FR",
+  "dateModified": "2026-09-20",
   "offers": {
     "@type": "Offer",
     "price": "0",
@@ -150,7 +152,8 @@ const videoGameSchema = {
 const faqSchema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
-  "dateModified": "2026-09-12",
+  "inLanguage": "fr-FR",
+  "dateModified": "2026-09-20",
   "mainEntity": [
     {
       "@type": "Question",
@@ -358,8 +361,8 @@ export default function CrossBodyMovementPageFr() {
       />
       <CrossBodyMovementClient
         copy={{
-          title: "Test de Coordination Œil-Main",
-          subtitle: "Franchissement de la Ligne Médiane & Contrôle Moteur Bilatéral • 15 Niveaux",
+          title: "Test de coordination œil-main",
+          subtitle: "Contrôle diagonal à travers la ligne médiane • 15 niveaux",
           hudLabels: {
             score: "Score",
             timeLeft: "Temps Restant",

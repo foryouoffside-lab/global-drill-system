@@ -1,5 +1,6 @@
 import GhostingSuppressPursuitClient from './GhostingSuppressPursuitClientLoader';
 import DrillGuide from '@/components/drill/DrillGuide';
+import DrillFooter from '@/components/drill/DrillFooter';
 import { getAlternateLanguages } from '@/lib/i18n/locales';
 import { pickSources } from '@/lib/drillSources';
 
@@ -347,8 +348,9 @@ export default function GhostingSuppressPursuitPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
 
-      <GhostingSuppressPursuitClient copy={{ title: "Ghosting Suppress Pursuit", subtitle: "Eye Fixation Stability Training" }} />
+      <GhostingSuppressPursuitClient copy={{ title: "Ghosting Suppress Pursuit", subtitle: "Eye fixation stability training to track moving targets while filtering visual trails, ghosting, and motion distractions" }} />
       <DrillGuide guide={guide} />
+      <DrillFooter />
     </>
   );
 }

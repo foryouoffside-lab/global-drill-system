@@ -1,5 +1,6 @@
 import StaircaseStepClient from './StaircaseStepClientLoader';
 import DrillGuide from '@/components/drill/DrillGuide';
+import DrillFooter from '@/components/drill/DrillFooter';
 import { getAlternateLanguages } from '@/lib/i18n/locales';
 import { pickSources } from '@/lib/drillSources';
 
@@ -306,8 +307,9 @@ export default function StaircaseStepPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
 
-      <StaircaseStepClient copy={{ title: "Staircase Step", subtitle: "Vertical Eye Tracking Exercise" }} />
+      <StaircaseStepClient copy={{ title: "Staircase Step", subtitle: "Vertical eye tracking exercise combining horizontal slides and rapid height changes for gaze control and pursuit accuracy" }} />
       <DrillGuide guide={guide} />
+      <DrillFooter />
     </>
   );
 }

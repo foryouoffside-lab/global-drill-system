@@ -571,9 +571,6 @@ export default function RhythmAnomalyClient({ copy } = {}) {
             <h1 className="text-2xl sm:text-3xl font-black tracking-tight text-white">
               <span data-seo-kw="1">{copy?.title || "Rhythm Anomaly Timing Test"}</span>
             </h1>
-            <p className="text-sm text-slate-400 mt-1">
-              {copy?.description || copy?.subtitle || "A visual timing test asks you to spot the one element in a pulsing array that is out of step with the rest. Human sensitivity to flicker peaks somewhere around 10–20 Hz and falls away to nothing near 50–60 Hz, above which a flickering light simply looks steady (De Lange, 1958; Kelly, 1961). Judging whether two things pulse in phase is harder than detecting the flicker itself and breaks down at considerably lower rates, which is what this 6x6 matrix measures."}
-            </p>
           </div>
         )}
 
@@ -815,7 +812,7 @@ export default function RhythmAnomalyClient({ copy } = {}) {
                     <Brain className="w-4 h-4 text-purple-400" /> What Is Rhythm Anomaly Training?
                   </h3>
                   <p className="text-sm leading-relaxed mb-3">
-                    <strong>Rhythm Anomaly Training</strong> is a specialized visual temporal perception drill designed to test out-of-sync motion discrimination. The <strong>Rhythm Anomaly drill</strong> displays a 6x6 matrix of 36 pulsing cells, challenging your visual system to detect the single cell pulsing at a higher temporal frequency than the surrounding grid over a <strong>45-second session</strong>.
+                    <strong>Rhythm Anomaly Training</strong> is a specialized visual temporal perception drill designed to test out-of-sync motion discrimination. The <strong>Rhythm Anomaly drill</strong> displays a 6x6 matrix of 36 pulsing cells, challenging your visual system to detect the single cell pulsing at a higher temporal frequency than the surrounding grid over a <strong>45-second session</strong>. Human sensitivity to flicker peaks somewhere around 10–20 Hz and falls away to nothing near 50–60 Hz, above which a flickering light simply looks steady (De Lange, 1958; Kelly, 1961). Judging whether two things pulse in phase is harder than detecting the flicker itself and breaks down at considerably lower rates, which is what this 6x6 matrix measures.
                   </p>
                   <p className="text-sm leading-relaxed">
                     By practicing <strong>peripheral temporal discrimination</strong>, you improve your ability to spot micro-movements, flickers, and timing anomalies across wide visual fields.

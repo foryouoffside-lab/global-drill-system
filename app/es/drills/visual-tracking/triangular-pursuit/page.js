@@ -5,29 +5,30 @@ import { getAlternateLanguages } from '@/lib/i18n/locales';
 import { pickSources } from '@/lib/drillSources';
 
 export const metadata = {
-  title: "Seguimiento Ocular Triangular – SkillDrills",
-  description: "Entrene la persecución ocular a lo largo de vectores triangulares y sacadas en ángulos agudos. Ejercicio oculomotor gratuito para puntería y reflejos.",
+  title: "Seguimiento visual triangular | SkillDrills",
+  description: "Sigue un objetivo por una ruta triangular. Ejercicio gratuito para seguimiento diagonal, error en esquinas y pérdidas del objetivo.",
   keywords: [
-    "seguimiento ocular triangular",
-    "entrenamiento de rastreo visual en polígono",
-    "ejercicios de seguimiento y fijación visual",
-    "sacadas correctoras en cambios de dirección",
-    "precisión visual en vértices y ángulos agudos",
-    "entrenamiento oculomotor para reflejos",
-    "control de deceleración de la mirada",
-    "ejercicios para mejorar la puntería visual",
-    "test de estabilidad de la mirada online",
-    "coordinación visomotora y seguimiento dinámico",
-    "movimientos sacádicos y persecución ocular",
-    "entrenamiento de agilidad visual deportiva"
+    "seguimiento visual triangular ejercicio",
+    "movimientos oculares triangulares entrenamiento",
+    "seguir objetivo en triángulo",
+    "seguimiento diagonal",
+    "seguimiento visual en esquinas",
+    "error de mirada en vértices",
+    "recuperación del objetivo triangular",
+    "entrenamiento de coordinación ocular",
+    "sacadas en cambios de dirección",
+    "pérdida del objetivo visual",
+    "agilidad visual deportiva",
+    "entrenamiento visual en navegador"
   ],
   alternates: {
     canonical: "https://skilldrills.online/es/drills/visual-tracking/triangular-pursuit",
-    languages: getAlternateLanguages('drills/visual-tracking/triangular-pursuit')
+    languages: getAlternateLanguages('/drills/visual-tracking/triangular-pursuit')
   },
+  robots: { index: true, follow: true },
   openGraph: {
-    title: "Seguimiento Ocular Triangular – SkillDrills",
-    description: "Entrene la persecución ocular a lo largo de vectores triangulares y sacadas en ángulos agudos. Ejercicio oculomotor gratuito para puntería y reflejos.",
+    title: "Seguimiento visual triangular | SkillDrills",
+    description: "Sigue un objetivo por una ruta triangular. Ejercicio gratuito para seguimiento diagonal, error en esquinas y pérdidas del objetivo.",
     url: "https://skilldrills.online/es/drills/visual-tracking/triangular-pursuit",
     siteName: "SkillDrills",
     locale: "es_ES",
@@ -35,8 +36,8 @@ export const metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Seguimiento Ocular Triangular – SkillDrills",
-    description: "Entrene la persecución ocular a lo largo de vectores triangulares y sacadas en ángulos agudos. Ejercicio oculomotor gratuito para puntería y reflejos."
+    title: "Seguimiento visual triangular | SkillDrills",
+    description: "Sigue un objetivo por una ruta triangular. Ejercicio gratuito para seguimiento diagonal, error en esquinas y pérdidas del objetivo."
   }
 };
 
@@ -67,7 +68,8 @@ export default function TriangularPursuitPageES() {
     "applicationCategory": "HealthApplication",
     "operatingSystem": "Any",
     "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
-    "description": "Entrenamiento neurocognitivo de seguimiento visual continuo y sacadas de alta aceleración en trayectorias poligonales cerradas."
+    "description": "Entrenamiento neurocognitivo de seguimiento visual continuo y sacadas de alta aceleración en trayectorias poligonales cerradas.",
+    "dateModified": "2026-09-20"
   };
 
   const webAppSchema = {
@@ -76,15 +78,17 @@ export default function TriangularPursuitPageES() {
     "name": "Ejercicio de Seguimiento Vectorial Triangular",
     "url": "https://skilldrills.online/es/drills/visual-tracking/triangular-pursuit",
     "applicationCategory": "TrainingTool",
-    "browserRequirements": "Requires JavaScript. HTML5 Canvas compatible."
+    "browserRequirements": "Requiere JavaScript y compatibilidad con HTML5 Canvas.",
+    "dateModified": "2026-09-20"
   };
 
   const videoGameSchema = {
     "@context": "https://schema.org",
     "@type": "VideoGame",
     "name": "Desafío de Persecución Triangular",
-    "gamePlatform": "Web Browser",
-    "genre": ["Visual Training", "Eye Tracking Drill", "Esports Reflex"]
+    "gamePlatform": "Navegador web",
+    "genre": ["Entrenamiento visual", "Ejercicio de seguimiento ocular", "Reflejos para esports"],
+    "dateModified": "2026-09-20"
   };
 
   const howToSchema = {
@@ -92,6 +96,7 @@ export default function TriangularPursuitPageES() {
     "@type": "HowTo",
     "name": "Cómo Entrenar el Seguimiento Ocular Triangular",
     "description": "Metodología para optimizar el frenado y la reorientación foveal en esquinas de 60 grados.",
+    "dateModified": "2026-09-20",
     "step": [
       {
         "@type": "HowToStep",
@@ -119,6 +124,7 @@ export default function TriangularPursuitPageES() {
   const faqSchema = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
+    "dateModified": "2026-09-20",
     "mainEntity": [
       {
         "@type": "Question",
@@ -209,7 +215,7 @@ export default function TriangularPursuitPageES() {
       "El seguimiento foveal a lo largo de polígonos geométricos cerrados exige una coordinación continua y sumamente precisa entre los grupos musculares extraoculares horizontales y verticales. Cuando un objetivo se desplaza por los lados de un triángulo equilátero, el sistema oculomotor ejecuta una persecución suave a través de vectores diagonales no cardinales, obligando al tronco encefálico a equilibrar las señales pontinas horizontales (PPRF) con los comandos motores verticales del mesencéfalo (riMLF; Orban de Xivry & Lefèvre, 2007).",
       "El desafío neurofisiológico primordial radica en los tres vértices agudos de 60 grados. Al alcanzar cada esquina y experimentar una inversión angular súbita, la velocidad del deslizamiento retiniano cae de forma instantánea mientras el error de posición se dispara de golpe. Las investigaciones de de Brouwer et al. (2002) y Heinen et al. (2005) demostraron que las sacadas correctoras de captura (catch-up saccades) se desencadenan mediante un cómputo neural integrado que sopesa simultáneamente el desfase posicional y el deslizamiento de velocidad, coordinado por el campo ocular frontal (FEF) y el campo ocular suplementario (SEF).",
       "Sin un entrenamiento oculomotor específico, la mirada tiende a sobrepasar los vértices agudos por inercia (overshoot) o a cortar camino anticipadamente, provocando múltiples sacadas de búsqueda correctiva y desestabilizando la resolución visual. En cambio, la práctica sistemática del seguimiento poligonal estimula los modelos internos anticipatorios del cerebelo (Bennett & Barnes, 2006; Barnes, 2008), facilitando la deceleración predictiva de la persecución al aproximarse al vértice y acelerando la recaptura foveal sobre el siguiente vector.",
-      "El ejercicio de Persecución Triangular entrena esta agilidad visomotora directamente en el navegador. Al seguir el objetivo en su trayectoria triangular continua, se condiciona tanto el rastreo diagonal a velocidad constante como el anclaje preciso en curvas agudas. Opciones como ocultar la línea de guía ('Hide Line') suprimen las pistas visuales para evaluar el control sensoriomotor puro, mientras que la velocidad aleatoria ('Random Speed') rompe los automatismos rítmicos.",
+      "El ejercicio de Seguimiento visual triangular entrena esta agilidad visomotora directamente en el navegador. Al seguir el objetivo en su trayectoria triangular continua, se condiciona tanto el rastreo diagonal a velocidad constante como el anclaje preciso en curvas agudas. La opción 'ocultar la línea' suprime las pistas visuales para evaluar el control sensoriomotor puro, mientras que la 'velocidad aleatoria' rompe los automatismos rítmicos.",
       "Metodología de medición y latencia de hardware: Las mediciones de tiempo y precisión visual están sujetas a la cuantización de refresco de pantalla (~16,7 ms a 60 Hz, ~6,9 ms a 144 Hz, ~4,1 ms a 240 Hz) y a las tasas de muestreo de entrada (~8 ms a 125 Hz frente a ~1 ms a 1.000 Hz), tal como documentan Woods et al. (2015). Todas las puntuaciones y perfiles de precisión se almacenan exclusivamente en el almacenamiento local (localStorage) de su navegador, garantizando total privacidad sin transferencia de telemetría."
     ],
     benchmarks: {
@@ -224,6 +230,12 @@ export default function TriangularPursuitPageES() {
       ],
       note: "Métricas basadas en de Brouwer et al. (2002) sobre dinámica de sacadas de captura y Heinen et al. (2005) sobre control motor en inversiones angulares bruscas."
     },
+    steps: [
+      { title: "Fija el objetivo en el centro", text: "Mantén la cabeza estable y acompaña con la mirada el inicio de la ruta triangular." },
+      { title: "Sigue cada lado en diagonal", text: "Acompaña el tramo recto sin cortar camino y mantén la mirada en el centro del objetivo." },
+      { title: "Frena en las esquinas", text: "Reduce antes del vértice de 60 grados y haz una corrección breve para entrar en el nuevo lado." },
+      { title: "Aumenta la velocidad con control", text: "Sube el multiplicador solo cuando el error en las esquinas y las pérdidas del objetivo sean estables." }
+    ],
     instructions: [
       "Fije la vista en el objetivo circular y acompañe su recorrido lineal sin mover el cuello.",
       "Calibre la frenada a medida que el objetivo se aproxime a cada esquina del triángulo.",
@@ -267,9 +279,9 @@ export default function TriangularPursuitPageES() {
 
       <TriangularPursuitClient
         copy={{
-          title: "Persecución Triangular",
-          subtitle: "Entrenamiento Oculomotor en Trayectoria Poligonal",
-          description: "Siga un objetivo a través de vectores triangulares cerrados y entrene la transición continua entre persecución suave y sacadas correctoras inmediatas en vértices agudos de 60 grados."
+          title: "Seguimiento visual triangular",
+          subtitle: "Entrenamiento diagonal y recuperación en esquinas",
+          description: "Sigue un objetivo por una ruta triangular y registra el error en las esquinas y las pérdidas."
         }}
       />
       <DrillGuide guide={guide} />

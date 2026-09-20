@@ -2,11 +2,12 @@ import DualTargetFlowClient from '@/app/drills/cognitive/attention/multi-tasking
 import { getAlternateLanguages } from '@/lib/i18n/locales';
 import DrillGuide from '@/components/drill/DrillGuide';
 import RelatedDrills from '@/components/drill/RelatedDrills';
+import DrillFooter from '@/components/drill/DrillFooter';
 import { pickSources } from '@/lib/drillSources';
 
 export const metadata = {
-  title: "Multitasking Test – Dual-Stream Fokus | SkillDrills",
-  description: "Kostenloser Online-Multitasking-Test: Verfolge zwei gegenläufige Symbol-Streams gleichzeitig und messe kognitive Belastung und Reaktionszeit im Browser.",
+  title: "Multitasking-Test | Dual-Stream-Tracking | SkillDrills",
+  description: "Kostenloser Multitasking-Test im Browser: Verfolge zwei Symbolströme gleichzeitig. Keine klinische Diagnose, sondern ein kognitiver Selbstcheck.",
   keywords: ["Multitasking Test", "Dual Stream Tracking", "Multitasking Gehirntraining", "Aufgabenumschaltung Test", "Kognitive Flexibilitat Test", "Geteilte Aufmerksamkeit Uben", "Bilateraler Sehtest", "Multitasking Fahigkeit Test", "Reaktionsschnelligkeit Test", "Exekutive Funktionen Training", "Gehirn Multitasking", "Visuelle Doppelaufgabe"],
   openGraph: {
     title: "Multitasking Test – Dual-Stream Fokus | SkillDrills",
@@ -78,7 +79,7 @@ const softwareApplicationSchema = {
     "url": "https://skilldrills.online"
   },
   "inLanguage": "de-DE",
-  "dateModified": "2026-09-11"
+  "dateModified": "2026-09-20"
 };
 
 const webApplicationSchema = {
@@ -95,7 +96,7 @@ const webApplicationSchema = {
   },
   "url": "https://skilldrills.online/de/drills/cognitive/attention/multi-tasking",
   "inLanguage": "de-DE",
-  "dateModified": "2026-09-11"
+  "dateModified": "2026-09-20"
 };
 
 const videoGameSchema = {
@@ -313,11 +314,26 @@ export default function LocalizedCognitivePage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(howToSchema) }}
       />
-      <DualTargetFlowClient copy={{ title: "Multitasking Test – Dual-Stream Zielverfolgung & Gehirntraining" }} />
+      <DualTargetFlowClient copy={{
+        title: "Multitasking-Test", subtitle: "Zwei Zielströme gleichzeitig verfolgen",
+        statScore: "Punkte", statTime: "Zeit", timeLeft: "Restzeit", statLevel: "Level", statBest: "Bestwert",
+        startTitle: "Multitasking-Test", startSubtitle: "Zwei Ströme · peripherer Fokus", getReady: "Bereit machen", accuracy: "Genauigkeit", hits: "Treffer", peakLevel: "Höchstlevel", maxCombo: "Max. Combo",
+        caption: "Finde passende Symbole in zwei gegenläufigen Strömen und reagiere, bevor Tempo und Formen wechseln.",
+        rulesTitle: "Anleitung und Wertung", ruleItems: [
+          { text: "Linkes Ziel treffen", highlight: "+Punkte", result: "Angezeigtes Symbol anklicken" },
+          { text: "Rechtes Ziel treffen", highlight: "Combo", result: "Beide Ströme verfolgen" },
+          { text: "Fehlklicks vermeiden", highlight: "Genauigkeit", result: "Andere Symbole ignorieren" },
+          { text: "Tempo anpassen", highlight: "Level steigt", result: "Beide Seiten im Gleichgewicht halten" },
+        ],
+        aboutTitle: "Multitasking und Dual-Target-Flow", aboutLead: "Dieser nicht-klinische kognitive Selbstcheck verbindet zwei visuelle Zielströme und bewertet Übungsgenauigkeit sowie schnelle Aufmerksamkeitswechsel, nicht eine allgemeine Alltagstauglichkeit.",
+        audienceTitle: "Für wen geeignet", audienceText: "Für Gamer mit mehreren Bildschirmelementen, Lernende und Menschen, die gleichzeitige Informationen besser ordnen möchten.",
+        skillsTitle: "Trainierte Fähigkeiten", skillsText: "Beidseitiges visuelles Tracking, peripheres Erkennen, Aufmerksamkeitswechsel und exekutive Kontrolle.", flexibilityTitle: "Aufgabenwechsel", flexibilityText: "Mit jedem Level ändern sich Tempo und Muster: Wechsle schnell zwischen beiden Strömen, ohne Genauigkeit zu verlieren."
+      }} />
       <DrillGuide {...guideProps} />
       <div className="max-w-6xl mx-auto px-4 pb-12">
         <RelatedDrills currentCategory="cognitive" currentHref="https://skilldrills.online/de/drills/cognitive/attention/multi-tasking" />
       </div>
+      <DrillFooter />
     </>
   );
 }

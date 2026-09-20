@@ -5,25 +5,27 @@ import RelatedDrills from '@/components/drill/RelatedDrills';
 import { pickSources } from '@/lib/drillSources';
 
 export const metadata = {
-  title: "숫자 기억력 테스트・디지트 스팬 – 작업기억 용량 측정 | SkillDrills",
-  description: "무료 온라인 숫자 기억력 테스트 (디지트 스팬 / 숫자 외우기 검사). 점진적으로 확장되는 숫자 배열을 기억하고 입력하여 음운 루프와 작업기억 용량을 측정·훈련하세요.",
+  title: "숫자 기억력 테스트 | 숫자 외우기 | SkillDrills",
+  description: "무료 숫자 기억력 테스트: 점점 길어지는 숫자 배열을 기억한 뒤 같은 순서로 입력해 숫자 기억력과 작업기억을 연습하세요.",
   keywords: [
     "숫자 기억력 테스트",
-    "디지트 스팬",
+    "숫자 외우기 테스트",
     "숫자 기억 테스트",
-    "음운 루프 테스트",
-    "작업기억력 검사",
-    "숫자 외우기 게임",
-    "단기기억 측정",
-    "청킹 기억법 훈련",
-    "두뇌 기억력 테스트",
-    "기억 폭 검사",
-    "웩슬러 숫자 검사",
-    "순차적 기억력 테스트"
+    "디지트 스팬 테스트",
+    "작업기억 숫자 검사",
+    "단기기억 숫자",
+    "숫자 기억력 게임",
+    "숫자 배열 기억",
+    "순차 기억력 테스트",
+    "기억력 훈련 숫자",
+    "음운 루프",
+    "숫자 청킹",
+    "무료 기억력 테스트",
+    "작업기억력 테스트"
   ],
   openGraph: {
-    title: "숫자 기억력 테스트・디지트 스팬 – 작업기억 용량 측정 | SkillDrills",
-    description: "무료 온라인 숫자 기억력 테스트 (디지트 스팬 / 숫자 외우기 검사). 점진적으로 확장되는 숫자 배열을 기억하고 입력하여 음운 루프와 작업기억 용량을 측정·훈련하세요.",
+    title: "숫자 기억력 테스트 | 숫자 외우기 | SkillDrills",
+    description: "무료 숫자 기억력 테스트: 점점 길어지는 숫자 배열을 기억한 뒤 같은 순서로 입력해 숫자 기억력과 작업기억을 연습하세요.",
     type: 'website',
     url: 'https://skilldrills.online/ko/drills/memory/short-term-memory/digit-span',
     siteName: 'SkillDrills',
@@ -31,8 +33,8 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: "숫자 기억력 테스트・디지트 스팬 – 작업기억 용량 측정 | SkillDrills",
-    description: "무료 온라인 숫자 기억력 테스트 (디지트 스팬 / 숫자 외우기 검사). 점진적으로 확장되는 숫자 배열을 기억하고 입력하여 음운 루프와 작업기억 용량을 측정·훈련하세요.",
+    title: "숫자 기억력 테스트 | 숫자 외우기 | SkillDrills",
+    description: "무료 숫자 기억력 테스트: 점점 길어지는 숫자 배열을 기억한 뒤 같은 순서로 입력해 숫자 기억력과 작업기억을 연습하세요.",
   },
   robots: { index: true, follow: true },
   alternates: {
@@ -62,6 +64,7 @@ const webAppSchema = {
   "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
   "author": { "@type": "Organization", "name": "SkillDrills" },
   "isAccessibleForFree": true,
+  "sameAs": ["https://ko.wikipedia.org/wiki/%EC%9E%91%EC%97%85_%EA%B8%B0%EC%96%B5"],
   "dateModified": "2026-09-11"
 };
 
@@ -305,23 +308,23 @@ const digitSpanGuide = {
   sources: pickSources('miller1956', 'cowan2001', 'baddeley1974', 'baddeley2000', 'logie1995', 'woods2015'),
   related: [
   {
-    "href": "/drills/memory/working-memory/n-back",
+    "href": "/ko/drills/memory/working-memory/n-back",
     "label": "3-Back 작업기억 훈련"
   },
   {
-    "href": "/drills/memory/spatial-memory/grid-memorization",
+    "href": "/ko/drills/memory/spatial-memory/grid-memorization",
     "label": "순간 기억 테스트 (시각 기억력 검사)"
   },
   {
-    "href": "/drills/cognitive/focus/concentration-grid",
+    "href": "/ko/drills/cognitive/focus/concentration-grid",
     "label": "슐테 테이블 (집중력 격자)"
   },
   {
-    "href": "/drills/reaction-speed/reaction-time-test",
+    "href": "/ko/drills/reaction-speed/reaction-time-test",
     "label": "반응속도 테스트"
   },
   {
-    "href": "/drills/reaction-speed/reflex-training-drill",
+    "href": "/ko/drills/reaction-speed/reflex-training-drill",
     "label": "순발력 테스트 (반사신경 게임)"
   }
 ]
@@ -356,8 +359,9 @@ export default function LocalizedDigitSpanPage() {
       />
       <DigitSpanClient copy={{
         "h1Keyword": "숫자 기억력 테스트",
-        "h1Suffix": " – 무료 디지트 스팬 숫자 외우기 게임",
-        "caption": "화면에 번갈아 나타나는 숫자 배열을 기억한 후, 올바른 순서대로 입력하세요.",
+        "h1Suffix": " – 숫자 외우기·작업기억 훈련",
+        "subtitle": "숫자 배열을 기억하고 같은 순서로 입력",
+        "caption": "화면에 나타난 숫자 배열을 기억한 뒤 사라지면 같은 순서로 입력하세요.",
         "statScore": "점수",
         "statTime": "남은 시간",
         "statSpan": "스팬",
@@ -368,7 +372,7 @@ export default function LocalizedDigitSpanPage() {
         "memorizeTitle": "숫자 배열 기억하기",
         "evaluating": "평가 중...",
         "startTitle": "디지트 스팬 Pro",
-        "startSubtitle": "숫자 단기기억 • 순차적 회상 훈련",
+        "startSubtitle": "숫자 기억력 • 작업기억 훈련",
         "countdownSubtitle": "준비하세요",
         "newBest": "최고 기록 갱신",
         "pointsLabel": "점수",

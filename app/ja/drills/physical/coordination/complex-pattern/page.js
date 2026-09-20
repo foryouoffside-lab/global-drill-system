@@ -6,7 +6,7 @@ import { pickSources } from '@/lib/drillSources';
 
 // ============================================================
 // SEO RESEARCH FINDINGS — Japan (JP / JA)
-// Primary Intent: 図形 記憶 テスト, 空間認識能力 テスト 無料, ワーキングメモリ 鍛えるゲーム, パターン 記憶 ゲーム
+// Native SERP intent: 図形記憶 テスト, 空間認識能力 テスト 無料, パターン 記憶 ゲーム
 // Context: Japanese cognitive aptitude tests (図形記憶, 視覚再生課題) & FPSリコイルパターン制御
 // Target Queries:
 //   - "図形 記憶 テスト" (High-intent shape/figure memory test)
@@ -19,10 +19,10 @@ import { pickSources } from '@/lib/drillSources';
 // ============================================================
 
 export const metadata = {
-  title: "図形記憶テスト・空間認識能力トレーニング – 無料パターン記憶ゲーム | SkillDrills",
-  description: "無料オンライン図形記憶テスト＆空間認識能力トレーニング。瞬間点滅する幾何学的な経路を記憶し、正確になぞって再生することで視空間ワーキングメモリと手先の運動協調性を科学的に鍛えます。",
+  title: "図形記憶テスト｜空間認識ゲーム | SkillDrills",
+  description: "無料ブラウザの図形記憶ゲーム。点滅する経路を覚えて正確になぞり、視空間ワーキングメモリと手先の協調性を鍛えます。",
   keywords: [
-    "図形 記憶 テスト",
+    "図形記憶 テスト",
     "空間認識能力 テスト 無料",
     "ワーキングメモリ 鍛えるゲーム",
     "パターン 記憶 ゲーム",
@@ -30,16 +30,16 @@ export const metadata = {
     "視空間 記憶 トレーニング",
     "図形 記憶 ゲーム",
     "脳トレ 図形記憶",
-    "マウス 軌道 練習",
-    "リコイル パターン 練習"
+    "位置記憶 テスト",
+    "図形の順番 覚えるゲーム"
   ],
   alternates: {
     canonical: 'https://skilldrills.online/ja/drills/physical/coordination/complex-pattern',
     languages: getAlternateLanguages('/drills/physical/coordination/complex-pattern'),
   },
   openGraph: {
-    title: "図形記憶テスト・空間認識能力トレーニング – 無料パターン記憶ゲーム | SkillDrills",
-    description: "無料オンライン図形記憶テスト＆空間認識能力トレーニング。瞬間点滅する幾何学的な経路を記憶し、正確になぞって再生することで視空間ワーキングメモリと手先の運動協調性を科学的に鍛えます。",
+    title: "図形記憶テスト｜空間認識ゲーム | SkillDrills",
+    description: "点滅する図形の経路を覚えてなぞる無料ゲーム。視空間記憶、パターン再現、マウス操作を練習できます。",
     url: 'https://skilldrills.online/ja/drills/physical/coordination/complex-pattern',
     siteName: 'SkillDrills',
     locale: 'ja_JP',
@@ -47,8 +47,8 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: "図形記憶テスト・空間認識能力トレーニング – 無料パターン記憶ゲーム | SkillDrills",
-    description: "無料オンライン図形記憶テスト＆空間認識能力トレーニング。瞬間点滅する幾何学的な経路を記憶し、正確になぞって再生することで視空間ワーキングメモリと手先の運動協調性を科学的に鍛えます。",
+    title: "図形記憶テスト｜空間認識ゲーム | SkillDrills",
+    description: "点滅する図形の経路を覚えてなぞる無料ゲーム。視空間記憶、パターン再現、マウス操作を練習できます。",
   },
   robots: { index: true, follow: true },
 };
@@ -103,7 +103,7 @@ const softwareApplicationSchema = {
     "url": "https://skilldrills.online/ja"
   },
   "inLanguage": "ja",
-  "dateModified": "2026-09-12"
+  "dateModified": "2026-09-20"
 };
 
 const webApplicationSchema = {
@@ -120,7 +120,7 @@ const webApplicationSchema = {
   },
   "url": "https://skilldrills.online/ja/drills/physical/coordination/complex-pattern",
   "inLanguage": "ja",
-  "dateModified": "2026-09-12"
+  "dateModified": "2026-09-20"
 };
 
 const videoGameSchema = {
@@ -145,13 +145,16 @@ const videoGameSchema = {
     "@type": "Offer",
     "price": "0",
     "priceCurrency": "USD"
-  }
+  },
+  "inLanguage": "ja",
+  "dateModified": "2026-09-20"
 };
 
 const faqSchema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
-  "dateModified": "2026-09-12",
+  "inLanguage": "ja",
+  "dateModified": "2026-09-20",
   "mainEntity": [
     {
       "@type": "Question",
@@ -359,8 +362,8 @@ export default function ComplexPatternPageJa() {
       />
       <ComplexPatternClient
         copy={{
-          title: "図形記憶テスト・空間認識能力トレーニング",
-          subtitle: "視空間ワーキングメモリ（バドリーモデル）＆幾何学パス再現ドリル • 15段階",
+          title: "図形記憶テスト",
+          subtitle: "図形を覚え、正確になぞって再現する",
           rulesTitle: "図形記憶トレーニングのルール＆スコア採点基準",
           rules: [
             { title: "幾何学パスの瞬間記憶", text: "画面に点滅表示される緑色の多角形ベクトル経路を、消える前に集中して脳内に焼き付けます。" },

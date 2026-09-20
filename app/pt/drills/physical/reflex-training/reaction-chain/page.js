@@ -20,31 +20,37 @@ import { pickSources } from '@/lib/drillSources';
 // ============================================================
 
 export const metadata = {
-  title: "Frenagem de Mira – Inibição Motora no Mouse | SkillDrills",
-  description: "Treine frenagem de mira e inibição motora no mouse. Intercepte nós cinéticos e elimine o overflick em alta velocidade no navegador.",
+  title: "Frenagem de Mira | Treino de Reflexos",
+  description: "Treino grátis de mira no navegador. Acerte alvos móveis, pare o cursor com precisão e pratique controle do overflick e tempo de reação.",
   keywords: [
     "treino de frenagem de mira mouse",
+    "treino de mira online grátis",
     "como corrigir overflick no mouse",
-    "teste de inibição motora reflexo",
+    "teste de inibição motora",
     "jogo de reflexo e parada do mouse",
-    "treino de controle e desaceleração do mouse",
-    "parada cinética mira reflexo",
-    "teste de precisão e reflexo do mouse",
-    "jogo de velocidade de reação mouse",
+    "controle e desaceleração do mouse",
+    "teste de precisão do mouse",
+    "jogo de velocidade de reação",
     "como parar a mira no alvo",
-    "treino de mira valorant frenagem"
+    "treino de mira Valorant",
+    "frenagem de mira no CS2"
   ],
   alternates: {
     canonical: 'https://skilldrills.online/pt/drills/physical/reflex-training/reaction-chain',
     languages: getAlternateLanguages('/drills/physical/reflex-training/reaction-chain'),
   },
   openGraph: {
-    title: "Frenagem de Mira – Inibição Motora no Mouse | SkillDrills",
-    description: "Elimine o overflick estabilizando o cursor instantaneamente no primeiro disparo. Treino motor avançado para CS2 e Valorant.",
+    title: "Frenagem de Mira | Treino de Reflexos",
+    description: "Acerte alvos móveis, pare o cursor com precisão e pratique controle do overflick em um treino grátis no navegador.",
     url: 'https://skilldrills.online/pt/drills/physical/reflex-training/reaction-chain',
     siteName: 'SkillDrills',
     locale: 'pt_BR',
     type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: "Frenagem de Mira | Treino de Reflexos",
+    description: "Acerte o alvo, freie o cursor com precisão e pratique controle do overflick.",
   },
 };
 
@@ -97,8 +103,8 @@ const softwareApplicationSchema = {
     "name": "SkillDrills",
     "url": "https://skilldrills.online/pt"
   },
-  "inLanguage": "pt",
-  "dateModified": "2026-09-12"
+  "inLanguage": "pt-BR",
+  "dateModified": "2026-09-20"
 };
 
 const webApplicationSchema = {
@@ -114,8 +120,8 @@ const webApplicationSchema = {
     "priceCurrency": "USD"
   },
   "url": "https://skilldrills.online/pt/drills/physical/reflex-training/reaction-chain",
-  "inLanguage": "pt",
-  "dateModified": "2026-09-12"
+  "inLanguage": "pt-BR",
+  "dateModified": "2026-09-20"
 };
 
 const videoGameSchema = {
@@ -125,6 +131,8 @@ const videoGameSchema = {
   "url": "https://skilldrills.online/pt/drills/physical/reflex-training/reaction-chain",
   "genre": ["Reflex Game", "Motor Control Trainer", "Esports Precision"],
   "playMode": "SinglePlayer",
+  "inLanguage": "pt-BR",
+  "dateModified": "2026-09-20",
   "description": "Intercepte nós a até 1.800 px/s e force o cursor a desacelerar para menos de 1,5 px/frame dentro do perímetro para acumular combos de até 3,0x."
 };
 
@@ -336,8 +344,8 @@ export default function LocalizedReactionChainPagePt() {
       />
       <ReactionChainClient
         copy={{
-          title: "Treino de Frenagem de Mira & Inibição Motora",
-          subtitle: "Parada Cinética & Controle de Desaceleração • 15 Níveis de Velocidade",
+          title: "Frenagem de Mira",
+          subtitle: "Acerte o alvo e pare o cursor com precisão",
           badge: "Teste de Inibição Motora",
           description: "Travar um movimento rápido exatamente sobre um alvo é biomecanicamente mais exigente do que acelerar. Os processos de execução e inibição disputam espaço no cérebro (Logan & Cowan, 1984). Se o freio atrasar, a inércia provoca o temido overflick (Woodworth, 1899). Intercepte os nós e estanque o cursor instantaneamente.",
           hudLabels: {
@@ -397,9 +405,10 @@ export default function LocalizedReactionChainPagePt() {
             }
           ]
         }}
-      />
-      <DrillGuide {...guideProps} />
-      <RelatedDrills currentCategory="physical" currentHref="/drills/physical/reflex-training/reaction-chain" />
+      >
+        <DrillGuide {...guideProps} />
+        <RelatedDrills currentCategory="physical" currentHref="/drills/physical/reflex-training/reaction-chain" />
+      </ReactionChainClient>
     </>
   );
 }

@@ -1,5 +1,6 @@
 import MomentumTeleportPursuitClient from './MomentumTeleportPursuitClientLoader';
 import DrillGuide from '@/components/drill/DrillGuide';
+import DrillFooter from '@/components/drill/DrillFooter';
 import { getAlternateLanguages } from '@/lib/i18n/locales';
 import { pickSources } from '@/lib/drillSources';
 
@@ -288,10 +289,10 @@ export default function MomentumTeleportPursuitPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(howToSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
 
-      <MomentumTeleportPursuitClient />
+      <MomentumTeleportPursuitClient copy={{ title: "Momentum Teleport Pursuit", subtitle: "Predictive eye tracking drill for reacquiring targets after instant position shifts while preserving motion and pursuit accuracy" }} />
 
       <DrillGuide guide={guide} />
-
+      <DrillFooter />
     </>
   );
 }

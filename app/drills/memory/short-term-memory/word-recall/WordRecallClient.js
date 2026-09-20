@@ -457,10 +457,8 @@ export default function WordRecallClient({ copy = null }) {
               {copy?.h1Prefix || null}
               <span data-seo-kw="1">{copy?.h1Keyword || "Verbal Memory Test"}</span>
               {copy?.h1Suffix || null}
+              <span className="block text-sm font-semibold text-slate-400 mt-1">{copy?.subtitle || "Word recall memory test for studying lists, typing remembered words, and improving verbal working memory"}</span>
             </h1>
-            <p className="text-[13px] text-slate-400 leading-relaxed">
-              {copy?.subtitle || "Free recall of a word list is never flat: you remember the first few and the last few best and the middle worst, the serial position effect Murdock (1962) charted. How deeply you process each word matters more than how long you stare at it (Craik & Lockhart, 1972)."}
-            </p>
           </div>
         )}
 
@@ -765,7 +763,7 @@ export default function WordRecallClient({ copy = null }) {
                   <Brain className="w-4 h-4 text-pink-400" /> What Is Word Recall Training?
                 </h3>
                 <p className="text-sm leading-relaxed mb-3">
-                  <strong>Word Recall Training</strong> is a free recall verbal memory exercise used in cognitive psychology to evaluate short-term memory capacity. The <strong>Word Recall drill</strong> presents random word lists, testing your ability to memorize and type back exact words without order restrictions.
+                  <strong>Word Recall Training</strong> is a free recall verbal memory exercise used in cognitive psychology to evaluate short-term memory capacity. The <strong>Word Recall drill</strong> presents random word lists, testing your ability to memorize and type back exact words without order restrictions. Free recall of a word list is never flat: you remember the first few and the last few best and the middle worst, the serial position effect Murdock (1962) charted. How deeply you process each word matters more than how long you stare at it (Craik & Lockhart, 1972).
                 </p>
                 <p className="text-sm leading-relaxed">
                   By practicing <strong>narrative story linking</strong>, you expand your verbal short-term memory buffer and increase your information retrieval speed under time pressure.

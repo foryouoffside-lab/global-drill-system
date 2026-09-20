@@ -5,31 +5,33 @@ import RelatedDrills from '@/components/drill/RelatedDrills';
 import { pickSources } from '@/lib/drillSources';
 
 export const metadata = {
-  title: "Visueller Rhythmus Test: Temporale Diskrimination | SkillDrills",
-  description: "Kostenloser visueller Rhythmus Test: Erkenne asynchrone Lichtpulse und Phasenverschiebungen im 36-Zellen-Gitter. Trainiere temporale Diskrimination online.",
+  title: "Flimmerfusion | Visuelle Zeitauflösung | SkillDrills",
+  description: "Kostenloses Training zur Flimmerfusion: Finde asynchrone Lichtpulse in einem 6×6-Raster und übe zeitliche visuelle Diskrimination. Kein Diagnosetest.",
   keywords: [
-    "visueller rhythmus test",
-    "temporale diskrimination test",
-    "flimmerverschmelzungsfrequenz test",
-    "visuelle zeitliche auflösung",
-    "optischer puls anomalie test",
-    "visuelle flimmererkennung",
-    "phasenverschiebung wahrnehmung",
-    "visuelles timing training",
-    "magnozelluläres system training",
-    "zeitliche wahrnehmung test"
+    "Flimmerverschmelzung",
+    "Flimmerverschmelzungstest",
+    "Flimmerfusion",
+    "zeitliche visuelle Auflösung",
+    "zeitliche Diskrimination",
+    "visuelle Flimmererkennung",
+    "Phasenverschiebung sehen",
+    "visuelles Timing Training",
+    "pulsierendes Raster",
+    "visuelle Wahrnehmung Training",
+    "Flimmerfrequenz",
+    "kritische Flimmerfrequenz"
 ],
   openGraph: {
-    title: "Visueller Rhythmus Test: Temporale Diskrimination | SkillDrills",
-    description: "Wissenschaftlicher visueller Rhythmus Test: Trainiere magnozelluläre Flimmererkennung, Phasendiskrimination und periphere Bewegungswahrnehmung online.",
+    title: "Flimmerfusion | Visuelle Zeitauflösung | SkillDrills",
+    description: "Finde asynchrone Lichtpulse im wechselnden Raster und übe Flimmererkennung und zeitliche visuelle Diskrimination.",
     type: "website",
     url: "https://skilldrills.online/de/drills/visual/visual-recognition/rhythm-anomaly",
     siteName: "SkillDrills",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Visueller Rhythmus Test: Temporale Diskrimination | SkillDrills",
-    description: "Wissenschaftlicher visueller Rhythmus Test: Trainiere magnozelluläre Flimmererkennung, Phasendiskrimination und periphere Bewegungswahrnehmung online.",
+    title: "Flimmerfusion | Visuelle Zeitauflösung | SkillDrills",
+    description: "Finde asynchrone Lichtpulse im wechselnden Raster und übe Flimmererkennung und zeitliche visuelle Diskrimination.",
   },
   robots: { index: true, follow: true },
   alternates: {
@@ -45,40 +47,40 @@ const breadcrumbSchema = {
     { "@type": "ListItem", "position": 1, "name": "SkillDrills", "item": "https://skilldrills.online/de/" },
     { "@type": "ListItem", "position": 2, "name": "Visuelles Training", "item": "https://skilldrills.online/de/drills/visual" },
     { "@type": "ListItem", "position": 3, "name": "Visuelle Erkennung", "item": "https://skilldrills.online/de/drills/visual/visual-recognition" },
-    { "@type": "ListItem", "position": 4, "name": "Visueller Rhythmus Anomaly Test – Temporale Diskrimination", "item": "https://skilldrills.online/de/drills/visual/visual-recognition/rhythm-anomaly" }
+    { "@type": "ListItem", "position": 4, "name": "Flimmerfusion (zeitliche visuelle Diskrimination)", "item": "https://skilldrills.online/de/drills/visual/visual-recognition/rhythm-anomaly" }
   ]
 };
 
 const softwareApplicationSchema = {
   "@context": "https://schema.org",
   "@type": "SoftwareApplication",
-  "name": "Visueller Rhythmus Anomaly Test – Temporale Diskrimination",
+  "name": "Flimmerfusion und zeitliche visuelle Diskrimination",
   "applicationCategory": "HealthApplication",
   "operatingSystem": "All",
   "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
   "description": "Kostenloser visueller Rhythmus- und temporal Diskriminations-Drill. 6x6-Gitter mit 36 pulsierenden Zellen. Finde asynchrone Phasenabweichungen in 45s.",
   "url": "https://skilldrills.online/de/drills/visual/visual-recognition/rhythm-anomaly",
   "publisher": { "@type": "Organization", "name": "SkillDrills", "url": "https://skilldrills.online" },
-  "dateModified": "2026-09-05"
+  "dateModified": "2026-09-20"
 };
 
 const webApplicationSchema = {
   "@context": "https://schema.org",
   "@type": "WebApplication",
-  "name": "Visueller Rhythmus & Temporaler Anomaly Test",
+  "name": "Kostenloses Training für Flimmerfusion",
   "browserRequirements": "Requires HTML5 canvas and JavaScript",
   "url": "https://skilldrills.online/de/drills/visual/visual-recognition/rhythm-anomaly",
   "applicationCategory": "EducationalApplication",
-  "dateModified": "2026-09-05"
+  "dateModified": "2026-09-20"
 };
 
 const videoGameSchema = {
   "@context": "https://schema.org",
   "@type": "VideoGame",
-  "name": "Visueller Rhythmus Anomaly Test",
+  "name": "Flimmerfusion-Challenge im pulsierenden Raster",
   "url": "https://skilldrills.online/de/drills/visual/visual-recognition/rhythm-anomaly",
   "description": "Kostenloses visuelles Timing- und Flimmererkennungsspiel. Identifiziere asynchrone Frequenzabweichungen in pulsierenden optischen Gittern.",
-  "genre": ["Action", "Brain Game", "Timing Game"],
+  "genre": ["Flimmerfusion", "Zeitliche visuelle Diskrimination", "Visuelle Wahrnehmung"],
   "gamePlatform": ["Web Browser", "Desktop", "Mobile"],
   "applicationCategory": "Game",
   "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
@@ -87,9 +89,9 @@ const videoGameSchema = {
 const howToSchema = {
   "@context": "https://schema.org",
   "@type": "HowTo",
-  "name": "Wie man visuelle Phasendiskrimination und Rhythmusanomalien trainiert",
+  "name": "Flimmerfusion und zeitliche visuelle Diskrimination trainieren",
   "description": "Optimiere deine temporale Sehleistung, Flimmerverschmelzung und Phasenleiterkennung mit dem wissenschaftlichen Rhythmus-Drill.",
-  "dateModified": "2026-09-05",
+  "dateModified": "2026-09-20",
   "step": [
     {
       "@type": "HowToStep",
@@ -125,11 +127,11 @@ const howToSchema = {
 const faqSchema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
-  "dateModified": "2026-09-05",
+  "dateModified": "2026-09-20",
   "mainEntity": [
     {
       "@type": "Question",
-      "name": "Was misst der Rhythm Anomaly Visuelle Rhythmus Test?",
+"name": "Was misst der Test zur visuellen Zeitdiskrimination?",
       "acceptedAnswer": {
         "@type": "Answer",
         "text": "Der Test misst die visuelle temporale Frequenzdiskrimination und zeitliche Auflösung. Er quantifiziert, wie präzise und schnell das Gehirn minimale Phasen- und Frequenzabweichungen in einem synchron pulsierenden Feld aus 36 Zellen isolieren kann."
@@ -177,7 +179,7 @@ const faqSchema = {
     },
     {
       "@type": "Question",
-      "name": "Welchen Zweck erfüllen die unregelmäßigen Störblitze (Entropy Flashes)?",
+"name": "Welchen Zweck erfüllen die unregelmäßigen Störblitze?",
       "acceptedAnswer": {
         "@type": "Answer",
         "text": "Sie erzeugen kontrolliertes visuelles Rauschen, sodass sich der Nutzer nicht auf einfache Helligkeitsunterschiede verlassen kann. Das Sehsystem muss echte periodische Schwingungen von stochastischen Einzelimpulsen trennen."
@@ -221,7 +223,7 @@ export default function RhythmAnomalyLocalePage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(howToSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(videoGameSchema) }} />
-      <RhythmAnomalyClient copy={{ title: "Visueller Rhythmus Anomaly Test" }} />
+      <RhythmAnomalyClient copy={{ title: "Flimmerfusion-Test", subtitle: "Zeitliche visuelle Diskrimination" }} />
       <DrillGuide
         eyebrow="Temporale Psychophysik & Visuelle Chronometrie"
         title="Die Wissenschaft von visuellem Rhythmus, Flimmerverschmelzung & temporaler Frequenzdiskrimination"
@@ -242,7 +244,7 @@ export default function RhythmAnomalyLocalePage() {
             <strong>Kortikale Bindungsgrenze (~2–5 Hz):</strong> Die bewusste Identifikation, Merkmalsverknüpfung und semantische Zuordnung erfordert rekurrente kortikale Feedbackschleifen, die mit lediglich 2 bis 5 Zyklen pro Sekunde operieren (Holcombe, 2009).
           </li>
         </ul>
-        <p dangerouslySetInnerHTML={{ __html: `Der Rhythm Anomaly Drill trainiert gezielt die funktionelle Brücke zwischen diesen beiden Regelkreisen: Beobachter müssen die unbewusste magnozelluläre Flimmerempfindlichkeit nutzen, um den anomalen Puls-Kandidaten zu isolieren, und unmittelbar eine gezielte top-down Aufmerksamkeitsbestätigung abschließen, bevor die Frequenzphase wechselt.` }} />
+<p dangerouslySetInnerHTML={{ __html: `Der Drill trainiert gezielt die funktionelle Brücke zwischen diesen beiden Regelkreisen: Beobachter müssen die unbewusste magnozelluläre Flimmerempfindlichkeit nutzen, um den anomalen Puls-Kandidaten zu isolieren, und unmittelbar eine gezielte Aufmerksamkeitsbestätigung abschließen, bevor die Frequenzphase wechselt.` }} />
 
         <h3>Temporale Integrationsfenster & stochastisches Rauschfiltern</h3>
         <p dangerouslySetInnerHTML={{ __html: `Das visuelle System integriert Photonen über zeitliche Zeitfenster von etwa 30 bis 100 Millisekunden (Burr, 1980; Woods et al., 2015). Reize, die innerhalb desselben Zeitfensters eintreffen, verschmelzen zu einem einzigen kontinuierlichen Sinneseindruck. Die stochastischen 'Entropie-Blitze' im Drill streuen unvorhersehbare Luminanzpeaks ein. Dadurch wird das Gehirn gezwungen, echte periodische Sinus-Phasenverschiebungen von unbedeutenden Helligkeitsspitzen zu unterscheiden und das sensorische Signal-Rausch-Verhältnis aktiv zu maximieren (Burr, 1980; Posner, 1980).` }} />
@@ -325,7 +327,7 @@ export default function RhythmAnomalyLocalePage() {
         <h3>Häufig gestellte Fragen (FAQ)</h3>
         <div className="space-y-4 my-6">
           <div>
-            <h4 className="font-semibold text-white">Was misst der Rhythm Anomaly Visuelle Rhythmus Test?</h4>
+<h4 className="font-semibold text-white">Was misst der Test zur visuellen Zeitdiskrimination?</h4>
             <p className="text-slate-300 mt-1">
               Der Test misst die visuelle temporale Frequenzdiskrimination und zeitliche Auflösung. Er quantifiziert, wie präzise und schnell das Gehirn minimale Phasen- und Frequenzabweichungen in einem synchron pulsierenden Feld aus 36 Zellen isolieren kann.
             </p>
@@ -361,7 +363,7 @@ export default function RhythmAnomalyLocalePage() {
             </p>
           </div>
           <div>
-            <h4 className="font-semibold text-white">Welchen Zweck erfüllen die unregelmäßigen Störblitze (Entropy Flashes)?</h4>
+<h4 className="font-semibold text-white">Welchen Zweck erfüllen die unregelmäßigen Störblitze?</h4>
             <p className="text-slate-300 mt-1">
               Sie erzeugen kontrolliertes visuelles Rauschen, sodass sich der Nutzer nicht auf einfache Helligkeitsunterschiede verlassen kann. Das Sehsystem muss echte periodische Schwingungen von stochastischen Einzelimpulsen trennen.
             </p>

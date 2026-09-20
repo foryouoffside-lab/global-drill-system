@@ -2,28 +2,29 @@ import ConcentrationStaminaClient from '@/app/drills/cognitive/attention/concent
 import { getAlternateLanguages } from '@/lib/i18n/locales';
 import DrillGuide from '@/components/drill/DrillGuide';
 import RelatedDrills from '@/components/drill/RelatedDrills';
+import DrillFooter from '@/components/drill/DrillFooter';
 import { pickSources } from '@/lib/drillSources';
 
 export const metadata = {
-  title: "Test de Concentration – Attention Soutenue | SkillDrills",
-  description: "Test de concentration et d attention soutenue en ligne gratuit: Évaluez le déclin de vigilance, la stabilité attentionnelle et le contrôle inhibiteur.",
+  title: "Test de Concentration | Attention Soutenue | SkillDrills",
+  description: "Test gratuit de concentration dans le navigateur : évaluez l’attention soutenue, l’inhibition et les changements de règle. Non clinique.",
   keywords: [
     "test de concentration",
-    "test attention soutenue",
-    "test cpt en ligne",
+    "test de concentration gratuit",
+    "test de concentration en ligne",
+    "attention soutenue test",
+    "test d’attention",
     "test de vigilance cognitive",
-    "fatigue mentale test en ligne",
-    "endurance cognitive test",
-    "resistance a la distraction test",
-    "entrainement concentration gratuit",
-    "test deficit de l attention en ligne",
-    "controle inhibiteur et attention",
-    "evaluation neuropsychologique attention",
+    "test de mémoire et concentration gratuit",
+    "test de fatigue mentale",
+    "entraînement concentration gratuit",
+    "contrôle inhibiteur et attention",
+    "test CPT en ligne",
     "exercice de concentration continue"
   ],
   openGraph: {
-    title: "Test de Concentration – Attention Soutenue | SkillDrills",
-    description: "Test de concentration et d attention soutenue en ligne gratuit: Évaluez le déclin de vigilance, la stabilité attentionnelle et le contrôle inhibiteur.",
+    title: "Test de Concentration | Attention Soutenue | SkillDrills",
+    description: "Test gratuit de concentration dans le navigateur : évaluez l’attention soutenue, l’inhibition et les changements de règle. Non clinique.",
     type: 'article',
     url: 'https://skilldrills.online/fr/drills/cognitive/attention/concentration-stamina',
     siteName: 'SkillDrills',
@@ -31,8 +32,8 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: "Test de Concentration – Attention Soutenue | SkillDrills",
-    description: "Test de concentration et d attention soutenue en ligne gratuit: Évaluez le déclin de vigilance, la stabilité attentionnelle et le contrôle inhibiteur.",
+    title: "Test de Concentration | Attention Soutenue | SkillDrills",
+    description: "Test gratuit de concentration dans le navigateur : évaluez l’attention soutenue, l’inhibition et les changements de règle. Non clinique.",
   },
   robots: { index: true, follow: true },
   alternates: {
@@ -91,7 +92,7 @@ const softwareApplicationSchema = {
     "url": "https://skilldrills.online"
   },
   "inLanguage": "fr-FR",
-  "dateModified": "2026-09-16"
+      "dateModified": "2026-09-20"
 };
 
 const webApplicationSchema = {
@@ -108,7 +109,7 @@ const webApplicationSchema = {
   },
   "url": "https://skilldrills.online/fr/drills/cognitive/attention/concentration-stamina",
   "inLanguage": "fr-FR",
-  "dateModified": "2026-09-16"
+  "dateModified": "2026-09-20"
 };
 
 const videoGameSchema = {
@@ -262,9 +263,9 @@ const howToSchema = {
 const guideProps = {
   sources: pickSources('mackworth1948', 'parasuraman1979', 'robertson1997', 'monsell2003', 'broadbent1958', 'woods2015'),
   intro: {
-    title: "Neurosciences de l Attention Soutenue & Déclin de Vigilance de Mackworth",
+    title: "Test de Concentration et Attention Soutenue : Guide",
     paragraphs: [
-      "L attention soutenue (vigilance continue) constitue l aptitude du système nerveux central à maintenir un traitement cognitif stable sur de longues périodes d exécution.",
+      "Ce test gratuit de concentration mesure l’attention soutenue, l’inhibition et les changements de règle comme une autoévaluation non clinique. Le résultat varie selon l’état du jour et l’habitude et ne remplace pas un avis professionnel.",
       "Démontré par Norman Mackworth (1948) lors de travaux avec des opérateurs radar, le taux de détection de signaux décline systématiquement après 20 à 30 minutes sous l effet de la déplétion des ressources préfrontales et pariétales (Parasuraman, 1979; Robertson et al., 1997).",
       "Ce protocole intègre des renversements périodiques de consignes toutes les 10 secondes pour contraindre le cerveau à désactiver les schémas moteurs automatiques et maintenir une vigilance active (Monsell, 2003).",
     ],
@@ -326,11 +327,17 @@ export default function EnhancedPageFr() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(howToSchema) }}
       />
-      <ConcentrationStaminaClient copy={{ title: "Test de Concentration et d Attention Soutenue" }} />
+      <ConcentrationStaminaClient copy={{
+        title: "Test de Concentration | Attention Soutenue", subtitle: "Autoévaluation non clinique de l’attention continue, du repérage et du contrôle inhibiteur",
+        statScore: "Score", statTime: "Temps", statLevel: "Niveau", statBest: "Meilleur score", ruleLabel: "Règle", vowels: "Voyelles (A E I O U)", primes: "Nombres premiers (2 3 5 7)", startTitle: "Test de Concentration", startSubtitle: "Attention soutenue • Entraînement type CPT", getReady: "Préparez-vous", flashTitle: "Flash d’erreur", soundTitle: "Son", newBest: "Nouveau record", points: "Points", accuracy: "Précision", misses: "Erreurs", peakLevel: "Niveau maximal", playAgain: "Rejouer", shareScore: "Partager le score", exitDrill: "Quitter l’exercice",
+        caption: "Réagissez uniquement aux stimuli correspondant à la règle active et filtrez les distractions lors de chaque changement.", rulesTitle: "Consignes et système de score", ruleItems: [{ text: "Règle cible", highlight: "Change toutes les 10 s", result: "Voyelles ↔ Premiers" }, { text: "Bonne cible", highlight: "+100 PTS", result: "Touchez ou appuyez espace" }, { text: "Non-cible", highlight: "Inhiber", result: "Ignorez l’élément différent" }, { text: "Fausse alerte", highlight: "Pénalité", result: "Réduit la précision" }],
+        aboutTitle: "À propos du test de concentration", aboutLead: "L’attention soutenue peut diminuer lors de la surveillance prolongée de signaux rares. Ce test court mesure les changements de règle, le repérage et les erreurs comme autoévaluation non clinique.", aboutText: "L’attention soutenue permet de sélectionner les signaux pertinents dans une séquence répétitive. Répétez dans les mêmes conditions et observez l’évolution du score et des erreurs.\n\nLe sommeil, le stress, l’écran et l’habitude influencent le résultat ; ce test ne remplace pas une évaluation professionnelle.", audienceTitle: "À qui s’adresse-t-il ?", audienceText: "Aux étudiants avant de longues épreuves, aux joueurs qui veulent garder leur précision et aux personnes qui doivent rester concentrées longtemps.", skillsTitle: "Compétences entraînées", skillsText: "Attention soutenue, repérage des cibles, vigilance sous fatigue et contrôle des impulsions.", flexibilityTitle: "Flexibilité cognitive", flexibilityText: "Alterner voyelles et nombres premiers toutes les 10 secondes entraîne le changement rapide de règle."
+      }} />
       <DrillGuide {...guideProps} />
       <div className="max-w-6xl mx-auto px-4 pb-12">
         <RelatedDrills currentCategory="cognitive" currentHref="https://skilldrills.online/fr/drills/cognitive/attention/concentration-stamina" />
       </div>
+      <DrillFooter />
     </>
   );
 }

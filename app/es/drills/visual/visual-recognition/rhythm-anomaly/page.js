@@ -5,33 +5,34 @@ import RelatedDrills from '@/components/drill/RelatedDrills';
 import { pickSources } from '@/lib/drillSources';
 
 export const metadata = {
-  title: "Test de Ritmo Visual: Discriminación Temporal | SkillDrills",
-  description: "Test de ritmo visual y discriminación temporal gratis online. Detecta la célula desfasada en una matriz pulsante de 36 celdas y agudiza tu resolución temporal.",
+  title: "Discriminación Temporal | Ritmo Visual | SkillDrills",
+  description: "Test gratuito de discriminación temporal visual: encuentra la celda desfasada en una matriz pulsante de 36 celdas. No es un examen médico.",
   keywords: [
-    "test de ritmo visual",
     "discriminación temporal visual",
-    "frecuencia crítica de fusión",
-    "percepción de desfase temporal",
-    "detección de anomalías de pulso",
+    "test de ritmo visual",
+    "fusión de parpadeo",
     "resolución temporal visual",
+    "frecuencia crítica de fusión",
     "test de parpadeo visual",
-    "vía magnocelular entrenamiento",
-    "agudeza temporal visual",
-    "test de timing visual",
+    "desfase temporal",
+    "detección de pulsos",
+    "entrenamiento de percepción visual",
+    "matriz pulsante",
+    "celda desfasada",
     "percepción temporal del movimiento",
     "entrenamiento de ritmo óptico"
 ],
   openGraph: {
-    title: "Test de Ritmo Visual: Discriminación Temporal | SkillDrills",
-    description: "Entrena la discriminación temporal visual, detección de desfase rítmico y percepción periférica del movimiento con esta matriz pulsante de 36 celdas.",
+    title: "Discriminación Temporal | Ritmo Visual | SkillDrills",
+    description: "Encuentra la celda desfasada en una matriz pulsante y practica la discriminación temporal visual.",
     type: "website",
     url: "https://skilldrills.online/es/drills/visual/visual-recognition/rhythm-anomaly",
     siteName: "SkillDrills",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Test de Ritmo Visual: Discriminación Temporal | SkillDrills",
-    description: "Entrena la discriminación temporal visual, detección de desfase rítmico y percepción periférica del movimiento con esta matriz pulsante de 36 celdas.",
+    title: "Discriminación Temporal | Ritmo Visual | SkillDrills",
+    description: "Encuentra la celda desfasada en una matriz pulsante y practica la discriminación temporal visual.",
   },
   robots: { index: true, follow: true },
   alternates: {
@@ -47,40 +48,40 @@ const breadcrumbSchema = {
     { "@type": "ListItem", "position": 1, "name": "SkillDrills", "item": "https://skilldrills.online/es/" },
     { "@type": "ListItem", "position": 2, "name": "Entrenamiento Visual", "item": "https://skilldrills.online/es/drills/visual" },
     { "@type": "ListItem", "position": 3, "name": "Reconocimiento Visual", "item": "https://skilldrills.online/es/drills/visual/visual-recognition" },
-    { "@type": "ListItem", "position": 4, "name": "Test de Ritmo Visual y Discriminación Temporal", "item": "https://skilldrills.online/es/drills/visual/visual-recognition/rhythm-anomaly" }
+    { "@type": "ListItem", "position": 4, "name": "Discriminación temporal visual (ritmo pulsante)", "item": "https://skilldrills.online/es/drills/visual/visual-recognition/rhythm-anomaly" }
   ]
 };
 
 const softwareApplicationSchema = {
   "@context": "https://schema.org",
   "@type": "SoftwareApplication",
-  "name": "Test de Ritmo Visual y Discriminación Temporal",
+  "name": "Test de discriminación temporal visual",
   "applicationCategory": "HealthApplication",
   "operatingSystem": "All",
   "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
   "description": "Ejercicio gratuito de discriminación temporal visual. Matriz 6x6 con 36 celdas pulsantes. Localiza la celda desfasada en modo contrarreloj de 45 segundos.",
   "url": "https://skilldrills.online/es/drills/visual/visual-recognition/rhythm-anomaly",
   "publisher": { "@type": "Organization", "name": "SkillDrills", "url": "https://skilldrills.online" },
-  "dateModified": "2026-09-05"
+  "dateModified": "2026-09-20"
 };
 
 const webApplicationSchema = {
   "@context": "https://schema.org",
   "@type": "WebApplication",
-  "name": "Test de Anomalía de Ritmo Visual",
+  "name": "Test gratuito de ritmo visual",
   "browserRequirements": "Requires HTML5 canvas and JavaScript",
   "url": "https://skilldrills.online/es/drills/visual/visual-recognition/rhythm-anomaly",
   "applicationCategory": "EducationalApplication",
-  "dateModified": "2026-09-05"
+  "dateModified": "2026-09-20"
 };
 
 const videoGameSchema = {
   "@context": "https://schema.org",
   "@type": "VideoGame",
-  "name": "Juego de Discriminación de Ritmo Visual",
+  "name": "Desafío de pulsos visuales desfasados",
   "url": "https://skilldrills.online/es/drills/visual/visual-recognition/rhythm-anomaly",
   "description": "Juego gratuito de percepción temporal y detección de parpadeo. Detecta desfases y microfluctuaciones de frecuencia en matrices ópticas pulsantes.",
-  "genre": ["Action", "Brain Game", "Timing Game"],
+  "genre": ["Discriminación temporal visual", "Ritmo visual", "Percepción visual"],
   "gamePlatform": ["Web Browser", "Desktop", "Mobile"],
   "applicationCategory": "Game",
   "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
@@ -89,9 +90,9 @@ const videoGameSchema = {
 const howToSchema = {
   "@context": "https://schema.org",
   "@type": "HowTo",
-  "name": "Cómo entrenar la discriminación temporal y detección de anomalías rítmicas",
+  "name": "Cómo entrenar la discriminación temporal visual",
   "description": "Perfecciona tu timing visual, sensibilidad al parpadeo y reconocimiento de desfase óptico con nuestro protocolo científico en 4 pasos.",
-  "dateModified": "2026-09-05",
+  "dateModified": "2026-09-20",
   "step": [
     {
       "@type": "HowToStep",
@@ -127,7 +128,7 @@ const howToSchema = {
 const faqSchema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
-  "dateModified": "2026-09-05",
+  "dateModified": "2026-09-20",
   "mainEntity": [
     {
       "@type": "Question",
@@ -223,7 +224,7 @@ export default function RhythmAnomalyLocalePage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(howToSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(videoGameSchema) }} />
-      <RhythmAnomalyClient copy={{ title: "Juego de Discriminación de Ritmo Visual" }} />
+      <RhythmAnomalyClient copy={{ title: "Discriminación Temporal Visual", subtitle: "Ritmo visual y detección de desfase" }} />
       <DrillGuide
         eyebrow="Psicofísica Temporal & Cronometría Visual"
         title="La Ciencia del Ritmo Visual, Fusión de Parpadeo & Discriminación de Frecuencia Temporal"
@@ -244,7 +245,7 @@ export default function RhythmAnomalyLocalePage() {
             <strong>Límite cortical de enlace consciente (~2–5 Hz):</strong> La identificación semántica consciente y el ligamiento de características complejas exigen bucles de retroalimentación corticales recurrentes que operan a solo 2 a 5 ciclos por segundo (Holcombe, 2009).
           </li>
         </ul>
-        <p dangerouslySetInnerHTML={{ __html: `Rhythm Anomaly entrena deliberadamente la conexión funcional entre ambos sistemas: el usuario debe valerse de la sensibilidad magnocelular temprana para aislar el candidato anómalo y desplegar de inmediato una confirmación atencional descendente (top-down) antes de que concluya el ciclo de fase.` }} />
+<p dangerouslySetInnerHTML={{ __html: `Este ejercicio entrena deliberadamente la conexión funcional entre ambos sistemas: el usuario debe valerse de la sensibilidad magnocelular temprana para aislar el candidato anómalo y desplegar de inmediato una confirmación atencional descendente antes de que concluya el ciclo de fase.` }} />
 
         <h3>Ventanas de Integración Temporal y Ruido de Entropía</h3>
         <p dangerouslySetInnerHTML={{ __html: `El sistema visual promedia la luz en intervalos de entre 30 y 100 milisegundos (Burr, 1980; Woods et al., 2015). Los eventos que ocurren dentro del mismo intervalo se fusionan perceptivamente. Los destellos estocásticos de entropía del drill inyectan ruido no periódico en esta ventana, obligando al cerebro a distinguir variaciones sinusoidales rítmicas de picos aislados de luminancia (Burr, 1980; Posner, 1980).` }} />

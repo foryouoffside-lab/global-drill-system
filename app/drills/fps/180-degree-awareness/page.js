@@ -337,7 +337,7 @@ export default function AwarenessDrillPage() {
           ]
         }}
       />
-      <DrillGuide guide={awarenessGuide} />
+      <DrillGuide guide={awarenessGuide} singleLineTitles />
       <DrillFooter />
     </>
   );

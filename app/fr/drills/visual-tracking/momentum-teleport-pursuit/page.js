@@ -1,5 +1,6 @@
 import MomentumTeleportPursuitClient from '@/app/drills/visual-tracking/momentum-teleport-pursuit/MomentumTeleportPursuitClientLoader';
 import DrillGuide from '@/components/drill/DrillGuide';
+import DrillFooter from '@/components/drill/DrillFooter';
 import RelatedDrills from '@/components/drill/RelatedDrills';
 import { getAlternateLanguages } from '@/lib/i18n/locales';
 import { pickSources } from '@/lib/drillSources';
@@ -14,25 +15,25 @@ import { pickSources } from '@/lib/drillSources';
 // ============================================================
 
 export const metadata = {
-  title: "Poursuite de Cible Téléportée – Momentum | SkillDrills",
-  description: "Testez la poursuite oculaire avec cibles teleportees: entrainez les saccades de reacquisition rapide et le recalibrage dynamique sans aucun telechargement.",
+  title: "Poursuite de Cible Téléportée | SkillDrills",
+  description: "Pratiquez poursuite oculaire, réacquisition visuelle et saccades rapides lorsqu’une cible change de position en gardant son mouvement.",
   keywords: [
-    "poursuite oculaire cible teleportee",
-    "entrainement poursuite avec teleportation",
-    "reacquisition saccadique entrainement",
-    "maintien inertie cinetique regard",
-    "exercice saccades oculaires rapides",
-    "mouvement saccadique correcteur",
-    "poursuite oculaire lente dynamique",
-    "recentrage foveal instantane",
-    "reflexes visuels jeux de tir",
-    "coordination visuo motrice trajectoire",
-    "stabilite foveale cible mobile",
-    "evaluation motricite oculaire"
+    "cible téléportée poursuite oculaire",
+    "saccades poursuite oculaire",
+    "réacquisition visuelle",
+    "saut du regard",
+    "fixation visuelle",
+    "poursuite fluide",
+    "exercice oculomoteur",
+    "suivi de cible mobile",
+    "réacquisition rapide du regard",
+    "entraînement visuel dynamique",
+    "cible mobile changement soudain",
+    "poursuite oculaire en ligne"
   ],
   openGraph: {
-    title: "Poursuite de Cible Téléportée – Momentum | SkillDrills",
-    description: "Testez la poursuite oculaire avec cibles teleportees: entrainez les saccades de reacquisition rapide et le recalibrage dynamique sans aucun telechargement.",
+    title: "Poursuite de Cible Téléportée | SkillDrills",
+    description: "Pratiquez poursuite oculaire, réacquisition visuelle et saccades rapides lorsqu’une cible change de position en gardant son mouvement.",
     type: "website",
     url: "https://skilldrills.online/fr/drills/visual-tracking/momentum-teleport-pursuit",
     siteName: "SkillDrills",
@@ -40,8 +41,8 @@ export const metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Poursuite de Cible Téléportée – Momentum | SkillDrills",
-    description: "Testez la poursuite oculaire avec cibles teleportees: entrainez les saccades de reacquisition rapide et le recalibrage dynamique sans aucun telechargement.",
+    title: "Poursuite de Cible Téléportée | SkillDrills",
+    description: "Pratiquez réacquisition visuelle et saccades rapides lorsqu’une cible change de position en gardant son mouvement.",
   },
   robots: { index: true, follow: true },
   alternates: {
@@ -65,6 +66,7 @@ const softwareApplicationSchema = {
   "@context": "https://schema.org",
   "@type": "SoftwareApplication",
   "name": "Entraînement de Poursuite Oculaire sur Cible Téléportée",
+  "dateModified": "2026-09-20",
   "operatingSystem": "Navigateur Web",
   "applicationCategory": "HealthApplication",
   "offers": {
@@ -79,9 +81,10 @@ const webAppSchema = {
   "@context": "https://schema.org",
   "@type": "WebApplication",
   "name": "Application de Poursuite Visuelle sur Cible Téléportée",
+  "dateModified": "2026-09-20",
   "url": "https://skilldrills.online/fr/drills/visual-tracking/momentum-teleport-pursuit",
   "applicationCategory": "SportsApplication",
-  "operatingSystem": "Tous les navigateurs modernes",
+  "operatingSystem": "Navigateur",
   "browserRequirements": "Nécessite la prise en charge de JavaScript et HTML5 Canvas"
 };
 
@@ -89,15 +92,17 @@ const videoGameSchema = {
   "@context": "https://schema.org",
   "@type": "VideoGame",
   "name": "Poursuite de Cible Téléportée avec Inertie",
+  "dateModified": "2026-09-20",
   "description": "Exercice de motricité oculaire où des cibles sautent instantanément de coordonnées tout en conservant leur vitesse vectorielle.",
   "genre": ["Entraînement Visuel", "Évaluation Oculomotrice", "Entraînement des Réflexes"],
-  "playMode": "SinglePlayer",
-  "gamePlatform": "Navigateur Web"
+  "playMode": "Un joueur",
+  "gamePlatform": "Navigateur"
 };
 
 const howToSchema = {
   "@context": "https://schema.org",
   "@type": "HowTo",
+  "dateModified": "2026-09-20",
   "name": "Comment Entraîner la Réacquisition Saccadique sur Cible Téléportée",
   "description": "Protocole neurophysiologique étape par étape pour rattraper instantanément des cibles mobiles subissant des sauts spatiaux.",
   "step": [
@@ -131,6 +136,7 @@ const howToSchema = {
 const faqSchema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
+  "dateModified": "2026-09-20",
   "mainEntity": [
     {
       "@type": "Question",
@@ -209,7 +215,7 @@ const faqSchema = {
       "name": "Comment la répétition de ces mouvements stimule-t-elle la plasticité cérébrale ?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "L enchaînement fréquent de saccades et de poursuites sollicite le flocculus cérébelleux et les réseaux fronto-striataux, renforçant l acuité visuelle dynamique et la coordination fovéale (Bahill et al., 1980)."
+        "text": "La répétition peut familiariser avec la tâche, mais cette page ne mesure pas la plasticité cérébrale et ne prouve pas une amélioration de l’acuité ou du temps de réaction. Comparez des séances réalisées dans les mêmes conditions et arrêtez en cas de gêne."
       }
     }
   ]
@@ -218,15 +224,15 @@ const faqSchema = {
 const guideProps = {
   heading: "Principes Scientifiques de Poursuite Visuelle avec Inertie et Téléportation",
   intro: [
-    "Dans les environnements visuels dynamiques, les objets en mouvement ne parcourent pas toujours des lignes stables et ininterrompues. Les déviations soudaines, rebonds imprévisibles et occultations spatiales forcent le système visuel humain à articuler deux sous-systèmes moteurs distincts : les saccades balistiques pour localiser l objet déplacé, et la poursuite oculaire lente pour en égaler la vitesse (Rashbass, 1961 ; Findlay & Walker, 1999).",
-    "Cet exercice isole avec rigueur ce mécanisme neuromusculaire. La cible change instantanément de position spatiale tout en conservant son vecteur de vitesse et sa trajectoire. Pour exceller, les centres oculomoteurs doivent déclencher une saccade correctrice rectiligne et réenclencher immédiatement la vitesse de poursuite sans oscillation exploratoire (Bahill et al., 1980 ; Barnes, 2008).",
-    "Les facteurs de latence d affichage et de fréquence d échantillonnage des périphériques influencent la précision fovéale mesurée (Woods et al., 2015). Toutes les données de performance restent stockées localement dans votre navigateur pour une confidentialité totale."
+    "Lorsqu’une cible change soudainement de position, le regard doit la retrouver puis reprendre son mouvement. La saccade est un saut rapide entre deux points de fixation ; la poursuite oculaire est le mouvement continu qui accompagne une cible. Cet exercice pratique le passage de l’un à l’autre et ne constitue pas un bilan clinique.",
+    "La cible change de coordonnée tout en conservant une indication de mouvement. Observez si vous la retrouvez directement ou si de petites corrections sont nécessaires avant de reprendre le suivi. Le résultat dépend de l’écran, de la distance, de la vitesse et de l’attention.",
+    "La latence d’affichage peut modifier le temps perçu ; comparez donc seulement des séances réalisées avec le même appareil et les mêmes réglages. Les données restent dans le navigateur. Ralentissez ou arrêtez en cas de douleur, vision double, nausée ou vertige."
   ],
   benchmarks: {
     title: "Mesures de Réacquisition Spatiale et Synchronisation de l Inertie",
-    headers: ["Niveau de Performance", "Latence de Réacquisition (Fovéation)", "Écart d Atterrissage (Overshoot)", "Synchronisation Cinétique (Gain)", "Profil Neurophysiologique"],
+    headers: ["Niveau", "Temps pour retrouver la cible", "Écart à l’arrivée", "Synchronisation du mouvement", "Lecture pratique"],
     rows: [
-      ["Élite (Pro-Aiming & Esport)", "< 140 ms", "< 3% (verrouillage parfait)", "97%+", "Précision balistique sans faille. Enchaînement immédiat avec la poursuite fluide sans oscillation de recherche."],
+      ["Élite (Sport et compétition)", "< 140 ms", "< 3% (verrouillage parfait)", "97%+", "Précision balistique sans faille. Enchaînement immédiat avec la poursuite fluide sans oscillation de recherche."],
       ["Avancé (Niveau Compétition)", "140 – 180 ms", "3% – 6%", "91% – 96%", "Réacquisition spatiale rapide. Micro-saccade correctrice minime avec excellente fidélité cinématique."],
       ["Compétent (Adulte Sain)", "181 – 240 ms", "7% – 14%", "80% – 90%", "Valeur de référence standard. Courte pause réfractaire après la saccade suivie d un guidage stable."],
       ["En Progression", "241 – 320 ms", "15% – 24%", "68% – 79%", "Retard sensible dans l émission du saut oculaire. Dépassages fréquents nécessitant plusieurs ajustements."],
@@ -273,12 +279,12 @@ const guideProps = {
   })),
   sources: pickSources('rashbass1961', 'bahill1980', 'findlay1999', 'krauzlis2004', 'barnes2008', 'woods2015'),
   related: [
-    { href: "/fr/drills/visual-tracking/constant-slow-pursuit", label: "Poursuite Oculaire Lente Continue (Constant Slow)" },
-    { href: "/fr/drills/visual-tracking/directional-chaos-pursuit", label: "Poursuite avec Chaos Directionnel (Directional Chaos)" },
-    { href: "/fr/drills/visual-tracking/dynamic-evasion-pursuit", label: "Poursuite Évasive Réactive (Dynamic Evasion)" },
-    { href: "/fr/drills/visual-tracking/ghosting-suppress-pursuit", label: "Stabilité de Fixation Oculaire (Ghosting Suppress)" },
-    { href: "/fr/drills/visual-tracking/infinity-pursuit", label: "Entraînement en Huit Infini (Infinity)" },
-    { href: "/fr/drills/visual-tracking/predictive-pursuit", label: "Poursuite Oculaire Prédictive (Predictive)" }
+    { href: "/fr/drills/visual-tracking/constant-slow-pursuit", label: "Poursuite oculaire fluide continue" },
+    { href: "/fr/drills/visual-tracking/directional-chaos-pursuit", label: "Poursuite avec changements de direction" },
+    { href: "/fr/drills/visual-tracking/dynamic-evasion-pursuit", label: "Poursuite évasive réactive" },
+    { href: "/fr/drills/visual-tracking/ghosting-suppress-pursuit", label: "Stabilité de la fixation oculaire" },
+    { href: "/fr/drills/visual-tracking/infinity-pursuit", label: "Exercice oculaire en huit" },
+    { href: "/fr/drills/visual-tracking/predictive-pursuit", label: "Poursuite oculaire prédictive" }
   ]
 };
 
@@ -294,9 +300,9 @@ export default function FrenchMomentumTeleportPage() {
 
       <MomentumTeleportPursuitClient
         copy={{
-          title: "Entraînement de Poursuite Visuelle sur Cible Téléportée",
-          subtitle: "Évaluation Oculomotrice de Saccades Balistiques et Reconnexion de Poursuite Fluide",
-          description: "Entraînement visuel dynamique sur cibles conservant leur inertie cinétique et se téléportant subitement à l écran. Développez l alternance instantanée entre saccades balistiques et poursuite fluide sans oscillation parasite. Gratuit dans votre navigateur."
+          title: "Poursuite de Cible Téléportée",
+          subtitle: "Réacquisition visuelle et suivi du mouvement",
+          description: "Retrouvez une cible qui change de position, puis reprenez le suivi de son mouvement. Comparez le temps, la précision et le confort sans transformer le résultat en diagnostic."
         }}
       />
 
@@ -305,6 +311,7 @@ export default function FrenchMomentumTeleportPage() {
       <div className="max-w-6xl mx-auto px-4 pb-12">
         <RelatedDrills currentCategory="visual-tracking" currentHref="https://skilldrills.online/fr/drills/visual-tracking/momentum-teleport-pursuit" />
       </div>
+      <DrillFooter />
     </>
   );
 }

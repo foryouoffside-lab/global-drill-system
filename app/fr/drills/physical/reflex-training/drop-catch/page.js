@@ -6,7 +6,7 @@ import { pickSources } from '@/lib/drillSources';
 
 // ============================================================
 // SEO RESEARCH FINDINGS — France & Francophonie (FR / FR-FR)
-// Primary Intent: test de la règle temps de réaction, test de réflexe règle, mesurer son temps de réaction en ligne
+// Primary Intent: test de la règle, temps de réaction, test de réflexes en ligne
 // French Athletic/Academic Context: Test de la règle de Nelson transposé au numérique avec paradigme Go/No-Go et cibles en chute libre
 // High-Demand, Low-Competition Target Keywords:
 //   - "test de la règle temps de réaction" (Core academic/athletic ruler drop query)
@@ -22,27 +22,26 @@ import { pickSources } from '@/lib/drillSources';
 // ============================================================
 
 export const metadata = {
-  title: "Test de la Règle – Temps de Réaction | SkillDrills",
-  description: "Test de la règle en ligne gratuit. Rattrapez des cibles en chute libre pour mesurer votre temps de réaction en millisecondes et tester vos réflexes au PC.",
+  title: "Test de la règle | Temps de réaction",
+  description: "Test de la règle gratuit dans le navigateur : attrapez les cibles vertes, évitez les leurres rouges et entraînez vos réflexes.",
   keywords: [
-    "test de la règle temps de réaction",
-    "test de réflexe règle",
+    "test de la règle",
+    "test de réaction avec une règle",
     "mesurer son temps de réaction en ligne",
     "test de temps de réaction visuel",
-    "test go no go en ligne",
-    "temps de réaction de choix",
-    "test de réflexes et contrôle inhibiteur",
-    "améliorer son temps de réaction fps",
-    "test de réflexe visuo-moteur",
-    "exercices de réflexes et discrimination"
+    "test de réflexes en ligne",
+    "temps de réaction avec une règle",
+    "réaction visuo-motrice",
+    "mesurer son temps de réaction",
+    "chute de règle"
   ],
   alternates: {
     canonical: 'https://skilldrills.online/fr/drills/physical/reflex-training/drop-catch',
     languages: getAlternateLanguages('/drills/physical/reflex-training/drop-catch'),
   },
   openGraph: {
-    title: "Test de la Règle – Temps de Réaction | SkillDrills",
-    description: "Test de la règle en ligne gratuit. Rattrapez des cibles en chute libre pour mesurer votre temps de réaction en millisecondes et tester vos réflexes au PC.",
+    title: "Test de la règle | Temps de réaction",
+    description: "Attrapez les cibles vertes et évitez les leurres rouges dans un test de la règle gratuit pour exercer vos réflexes visuels.",
     url: 'https://skilldrills.online/fr/drills/physical/reflex-training/drop-catch',
     siteName: 'SkillDrills',
     locale: 'fr_FR',
@@ -50,8 +49,8 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: "Test de la Règle – Temps de Réaction | SkillDrills",
-    description: "Test de la règle en ligne gratuit. Rattrapez des cibles en chute libre pour mesurer votre temps de réaction en millisecondes et tester vos réflexes au PC.",
+    title: "Test de la règle | Temps de réaction",
+    description: "Attrapez les cibles vertes et évitez les leurres rouges dans un test de la règle gratuit pour exercer vos réflexes visuels.",
   },
   robots: { index: true, follow: true },
 };
@@ -98,22 +97,34 @@ const softwareApplicationSchema = {
     "price": "0",
     "priceCurrency": "USD"
   },
+  "description": "Test numérique de la règle pour attraper des cibles vertes, éviter les leurres rouges et exercer le temps de réaction visuel.",
+  "url": "https://skilldrills.online/fr/drills/physical/reflex-training/drop-catch",
+  "inLanguage": "fr-FR",
+  "dateModified": "2026-09-20"
 };
 
 const webApplicationSchema = {
   "@context": "https://schema.org",
   "@type": "WebApplication",
-  "name": "Simulateur de Chute Libre, Temps de Réaction et Paradigme Go/No-Go",
-  "browserRequirements": "Requires JavaScript and HTML5 Canvas support",
-  "genre": "Training, Reflex, Reaction Time, Sports Science"
+  "name": "Test de la règle et entraînement des réflexes",
+  "url": "https://skilldrills.online/fr/drills/physical/reflex-training/drop-catch",
+  "description": "Entraînement de la réaction visuelle dans le navigateur avec des cibles vertes et des leurres rouges.",
+  "applicationCategory": "GameApplication",
+  "operatingSystem": "Web Browser",
+  "browserRequirements": "JavaScript et HTML5 Canvas requis",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+  "inLanguage": "fr-FR",
+  "dateModified": "2026-09-20"
 };
 
 const videoGameSchema = {
   "@context": "https://schema.org",
   "@type": "VideoGame",
-  "name": "Reflex Drop Catch & Impulse Restraint Drill",
+  "name": "Drop Catch : jeu de réflexes et de réaction",
+  "url": "https://skilldrills.online/fr/drills/physical/reflex-training/drop-catch",
+  "description": "Attrapez les cibles vertes et ignorez les leurres rouges dans un jeu de réaction visuelle.",
   "gamePlatform": "Web Browser",
-  "applicationSubCategory": "Esports Motor Chronometry Drill"
+  "applicationSubCategory": "Entraînement de la réaction motrice"
 };
 
 const faqSchema = {
@@ -329,7 +340,7 @@ export default function LocalizedDropCatchPageFr() {
       <DropCatchClient
         copy={{
           title: "Test de la Règle & Temps de Réaction en Ligne",
-          subtitle: "Discrimination Visuelle et Contrôle des Impulsions • Difficulté Évolutive Continue",
+          subtitle: "Attrapez les cibles vertes, évitez les leurres",
           description: "Le test de la règle et de chute libre mesure la promptitude avec laquelle vous réagissez à un objet tombant et votre capacité à vous abstenir lorsqu'il ne faut pas intervenir. Intercepter ne nécessite pas de dissocier distance et vitesse : l'image rétinienne en expansion définit le temps de contact par elle-même (Lee, 1976). La retenue procède d'un autre mécanisme — l'action et le freinage se disputent une course interne et le plus véloce l'emporte (Logan & Cowan, 1984). La réaction visuelle simple requiert déjà 200 à 250 ms avant tout début de mouvement (Woods et al., 2015).",
           hudLabels: {
             score: "Score",

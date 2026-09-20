@@ -22,11 +22,12 @@ import { pickSources } from '@/lib/drillSources';
 // ============================================================
 
 export const metadata = {
-  title: "周辺視野トレーニング＆動体視力テストゲーム – 有効視野(UFOV)拡大と反応速度強化 | SkillDrills",
-  description: "無料オンライン周辺視野トレーニング＆動体視力テストゲーム。中央の防壁コアを凝視したまま、全方位360度の外周から迫り来る脅威ノードを周辺視野で瞬時に察知して迎撃。トンネルビジョンを解消し、有効視野(UFOV)と空間認識能力を極限まで鍛え上げます。",
+  title: "周辺視野トレーニング｜動体視力テストゲーム",
+  description: "無料の周辺視野トレーニングゲーム。中央を見たまま外側の脅威を見つけ、動体視力と有効視野（UFOV）を練習できます。",
   keywords: [
     "周辺視野 トレーニング",
     "動体視力 トレーニング ゲーム",
+    "周辺視野 テスト",
     "周辺 視野 トレーニング 方法",
     "エイム 周辺 視野",
     "周辺視野 中心視野 違い",
@@ -41,8 +42,8 @@ export const metadata = {
     languages: getAlternateLanguages('/drills/physical/reflex-training/peripheral-threat-sweeper'),
   },
   openGraph: {
-    title: "周辺視野トレーニング＆動体視力テストゲーム – 有効視野(UFOV)拡大と反応速度強化 | SkillDrills",
-    description: "無料オンライン周辺視野トレーニング＆動体視力テストゲーム。中央の防壁コアを凝視したまま、全方位360度の外周から迫り来る脅威ノードを周辺視野で瞬時に察知して迎撃。トンネルビジョンを解消し、有効視野(UFOV)と空間認識能力を極限まで鍛え上げます。",
+    title: "周辺視野トレーニング｜動体視力テストゲーム",
+    description: "無料の周辺視野トレーニングゲーム。中央を見たまま外側の脅威を見つけ、動体視力と有効視野（UFOV）を練習できます。",
     url: 'https://skilldrills.online/ja/drills/physical/reflex-training/peripheral-threat-sweeper',
     siteName: 'SkillDrills',
     locale: 'ja_JP',
@@ -50,8 +51,8 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: "周辺視野トレーニング＆動体視力テストゲーム – 有効視野(UFOV)拡大と反応速度強化 | SkillDrills",
-    description: "無料オンライン周辺視野トレーニング＆動体視力テストゲーム。中央の防壁コアを凝視したまま、全方位360度の外周から迫り来る脅威ノードを周辺視野で瞬時に察知して迎撃。トンネルビジョンを解消し、有効視野(UFOV)と空間認識能力を極限まで鍛え上げます。",
+    title: "周辺視野トレーニング｜動体視力テストゲーム",
+    description: "無料の周辺視野トレーニングゲーム。中央を見たまま外側の脅威を見つけ、動体視力と有効視野（UFOV）を練習できます。",
   },
   robots: { index: true, follow: true },
 };
@@ -93,6 +94,8 @@ const softwareApplicationSchema = {
   "name": "周辺視野＆動体視力トレーニングツール (Peripheral Threat Sweeper)",
   "applicationCategory": "HealthApplication",
   "operatingSystem": "All",
+  "inLanguage": "ja",
+  "dateModified": "2026-09-20",
   "offers": {
     "@type": "Offer",
     "price": "0",
@@ -107,6 +110,8 @@ const webApplicationSchema = {
   "name": "周辺視野テスト・動体視力トレーニングアプリ",
   "url": "https://skilldrills.online/ja/drills/physical/reflex-training/peripheral-threat-sweeper",
   "description": "無料オンライン周辺視野測定＆トレーニング。中央注視を保ちながら外周から突入する脅威を瞬時にクリック迎撃し、トンネルビジョンを克服します。",
+  "inLanguage": "ja",
+  "dateModified": "2026-09-20",
   "applicationCategory": "SportsApplication",
   "operatingSystem": "Web Browser",
   "offers": {
@@ -122,6 +127,8 @@ const videoGameSchema = {
   "name": "周辺視野迎撃アクション (Peripheral Threat Sweeper Game)",
   "url": "https://skilldrills.online/ja/drills/physical/reflex-training/peripheral-threat-sweeper",
   "description": "中央コアを防衛しながら全方位から収束するターゲットを撃墜するハイスピード周辺視野リアクションゲーム。",
+  "inLanguage": "ja",
+  "dateModified": "2026-09-20",
   "genre": ["Action", "Sports Game", "Reflex Game", "Visual Training"],
   "gamePlatform": ["Web Browser", "Desktop", "Mobile"]
 };
@@ -333,8 +340,8 @@ export default function PeripheralThreatSweeperJaPage() {
       />
       <PeripheralThreatSweeperClient
         copy={{
-          title: "周辺視野トレーニング＆迎撃スリーパー",
-          subtitle: "有効視野(UFOV)防衛＆動体視力反応速度 • 15段階無制限スケーリング",
+          title: "周辺視野トレーニング",
+          subtitle: "中央を見たまま、周辺の脅威を見つける",
           hudLabels: {
             score: "現在スコア",
             time: "残り時間",

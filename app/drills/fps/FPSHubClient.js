@@ -295,12 +295,12 @@ export default function FPSHubClient({ faqs = [] }) {
         {/* Page heading */}
         <div className="mb-8">
           <h1 className="text-2xl sm:text-3xl font-bold tracking-tight text-ink-1">
-            {t('hubs.fps.h1', 'Free FPS Aim Trainer')}
+            {t('hubs.fps.h1', 'FPS Aim Training & Free Aim Trainer')}
           </h1>
           <p className="mt-2 text-sm sm:text-base text-ink-2 leading-relaxed">
             {t(
               'hubs.fps.desc',
-              'Zero-latency browser aim training calibrated for Valorant, CS2, and Apex Legends. Master flick shots, micro-adjustments, smooth pursuit tracking, and recoil control.'
+              'Free browser FPS aim training for flick shots, tracking, recoil control, target switching, and reaction drills.'
             )}
           </p>
         </div>

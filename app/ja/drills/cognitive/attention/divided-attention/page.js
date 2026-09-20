@@ -2,11 +2,12 @@ import DividedAttentionClient from '@/app/drills/cognitive/attention/divided-att
 import { getAlternateLanguages } from '@/lib/i18n/locales';
 import DrillGuide from '@/components/drill/DrillGuide';
 import RelatedDrills from '@/components/drill/RelatedDrills';
+import DrillFooter from '@/components/drill/DrillFooter';
 import { pickSources } from '@/lib/drillSources';
 
 export const metadata = {
-  title: "注意分割テスト・二重課題トレーニング – デュアルタスク能力測定 | SkillDrills",
-  description: "無料ブラウザ完結の注意分割テスト・デュアルタスク訓練ツール。動くターゲットの視覚追従と数字ストリームの偶数判定を同時に処理し、心理的不応期（PRP）と脳の認知ボトルネック処理能力を精密測定。",
+  title: "注意分割テスト | 二重課題トレーニング | SkillDrills",
+  description: "無料ブラウザの注意分割テストで動く標的の追従と数字判定を同時に練習。医学的診断ではない認知セルフチェックです。",
   keywords: ["注意分割テスト", "二重課題 トレーニング", "デュアルタスク 練習", "注意の分割", "マルチタスク 脳トレ", "二重課題 テスト", "心理的不応期", "認知ボトルネック", "注意配分 テスト", "動体追従 数字処理",
     "二重課題 認知テスト",
     "注意分割 訓練 無料"],
@@ -80,7 +81,7 @@ const softwareApplicationSchema = {
     "url": "https://skilldrills.online"
   },
   "inLanguage": "ja-JP",
-  "dateModified": "2026-09-11"
+  "dateModified": "2026-09-20"
 };
 
 const webApplicationSchema = {
@@ -97,7 +98,7 @@ const webApplicationSchema = {
   },
   "url": "https://skilldrills.online/ja/drills/cognitive/attention/divided-attention",
   "inLanguage": "ja-JP",
-  "dateModified": "2026-09-11"
+  "dateModified": "2026-09-20"
 };
 
 const videoGameSchema = {
@@ -315,11 +316,27 @@ export default function LocalizedCognitivePage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(howToSchema) }}
       />
-      <DividedAttentionClient copy={{ title: "注意分割テスト・二重課題トレーニング – デュアルタスク能力測定" }} />
+      <DividedAttentionClient copy={{
+        title: "注意分割テスト", subtitle: "動く標的と数字を同時に扱う二重課題トレーニング",
+        statScore: "スコア", statTime: "時間", timeLeft: "残り時間", statLevel: "レベル", statBest: "ベストスコア",
+        match: "判定", evenNumbers: "偶数", tapEven: "偶数でタップ", startTitle: "注意分割テスト", startSubtitle: "二重課題・集中切替",
+        getReady: "準備してください", dualAccuracy: "総合正確度", hits: "成功", misses: "ミス", peakLevel: "最高レベル",
+        caption: "動く標的を追いながら、数字ストリームの偶数を同時に判定します。",
+        rulesTitle: "ドリルの手順とスコア基準", ruleItems: [
+          { text: "標的をタップ", highlight: "+時間", result: "動く標的をクリック" },
+          { text: "偶数を判定", highlight: "正確に反応", result: "偶数のときに判定" },
+          { text: "奇数は無視", highlight: "誤反応なし", result: "奇数では押さない" },
+          { text: "両チャンネルを維持", highlight: "コンボ継続", result: "追従と判定を両立" },
+        ],
+        aboutTitle: "注意分割テストと二重課題トレーニング", aboutLead: "動く視覚標的の追従と数字分類を同時に行う、非臨床の認知セルフチェックです。",
+        audienceTitle: "おすすめの人", audienceText: "ゲームでミニマップと目標を同時に見る人、学習者、複数の入力を素早く扱う人に向いています。",
+        skillsTitle: "鍛える力", skillsText: "二重課題処理、視覚追従、数字判断、注意資源の配分を練習します。", flexibilityTitle: "並列処理", flexibilityText: "二つの情報の流れを切り替えながら、片方の正確さを落とさないよう調整します。"
+      }} />
       <DrillGuide {...guideProps} />
       <div className="max-w-6xl mx-auto px-4 pb-12">
         <RelatedDrills currentCategory="cognitive" currentHref="https://skilldrills.online/ja/drills/cognitive/attention/divided-attention" />
       </div>
+      <DrillFooter />
     </>
   );
 }

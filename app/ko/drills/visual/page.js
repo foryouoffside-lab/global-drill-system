@@ -37,6 +37,15 @@ export const metadata = {
   },
 };
 
+Object.assign(metadata, {
+  title: '동체시력·시각 탐색 | 무료 훈련 | SkillDrills',
+  description: '동체시력 테스트, 시각 탐색, 주변시, 거리 판단과 시각 반응속도를 연습하는 9개 무료 브라우저 드릴.',
+  keywords: ['동체시력 테스트', '시각 탐색 검사', '반응속도 테스트', '주변시 훈련', '시각 훈련', '눈손협응', '거리 판단 테스트', '다중 객체 추적', '무료 시각 훈련'],
+  openGraph: { ...metadata.openGraph, title: '동체시력·시각 탐색 | 무료 훈련 | SkillDrills', description: '동체시력, 시각 탐색, 주변시와 거리 판단을 연습하는 9개 무료 브라우저 드릴.' },
+  twitter: { ...metadata.twitter, title: '동체시력·시각 탐색 | SkillDrills', description: '동체시력과 시각 탐색을 연습하는 9개 무료 드릴.' },
+  alternates: { ...metadata.alternates, languages: getAlternateLanguages('/drills/visual') },
+});
+
 const breadcrumbSchema = {
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
@@ -50,6 +59,8 @@ const breadcrumbSchema = {
 const collectionSchema = {
   "@context": "https://schema.org",
   "@type": "CollectionPage",
+  "inLanguage": "ko",
+  "dateModified": "2026-09-20",
   "name": "시각 기능 훈련 & 동체시력 검사 (9개 종목)",
   "url": "https://skilldrills.online/ko/drills/visual",
   "description": "동체시력, 입체시 검사, 광학 반응속도, 다중 객체 추적, 시각 탐색 및 주기 분해능을 평가하는 9가지 시각 인지 훈련.",
@@ -71,6 +82,8 @@ const collectionSchema = {
 const faqSchema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
+  "inLanguage": "ko",
+  "dateModified": "2026-09-20",
   "mainEntity": [
     {
       "@type": "Question",
@@ -138,6 +151,11 @@ const faqSchema = {
     }
   ]
 };
+
+faqSchema.mainEntity.push(
+  { "@type": "Question", "name": "이 시각 훈련 목록에는 몇 가지 드릴이 있나요?", "acceptedAnswer": { "@type": "Answer", "text": "목록에는 반응·충동 억제, 목표 추적·안구 움직임, 시각 인식·거리 판단의 세 영역으로 나뉜 9개 브라우저 드릴이 있습니다. 카드를 선택하면 해당 드릴을 열 수 있습니다." } },
+  { "@type": "Question", "name": "브라우저 시각 드릴이 안과 시력검사를 대신할 수 있나요?", "acceptedAnswer": { "@type": "Answer", "text": "아닙니다. 화면에서 반응, 추적, 탐색과 공간 판단을 반복 측정하는 훈련이며 시력이나 안질환을 진단하지 않습니다. 필요한 검사는 안과 전문의에게 상담하세요." } }
+);
 
 export default function VisualDrillsPage() {
   return (

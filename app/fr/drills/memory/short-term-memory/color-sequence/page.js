@@ -5,9 +5,13 @@ import { pickSources } from '@/lib/drillSources';
 import { getAlternateLanguages } from '@/lib/i18n/locales';
 
 export const metadata = {
-  title: "Jeu Simon en Ligne – Mémoire des Couleurs | SkillDrills",
-  description: "Jeu Simon en ligne gratuit: Retenez des suites de couleurs croissantes et testez votre mémoire de travail visuelle directement dans le navigateur sans compte.",
+  title: "Jeu Simon en ligne | Mémoire des couleurs | SkillDrills",
+  description: "Joue à Simon gratuitement : mémorise une suite de couleurs et de sons qui s'allonge, puis reproduis-la dans le bon ordre.",
   keywords: [
+    "jeu Simon en ligne",
+    "jeu de mémoire de couleurs",
+    "suite de couleurs",
+    "jeu de séquences",
     "jeu simon en ligne gratuit",
     "jeu de memoire des couleurs",
     "jeu du simon en ligne",
@@ -30,8 +34,8 @@ export const metadata = {
     follow: true,
   },
   openGraph: {
-    title: "Jeu Simon en Ligne – Mémoire des Couleurs | SkillDrills",
-    description: "Jeu Simon en ligne gratuit: Retenez des suites de couleurs croissantes et testez votre mémoire de travail visuelle directement dans le navigateur sans compte.",
+    title: "Jeu Simon en ligne | Mémoire des couleurs | SkillDrills",
+    description: "Joue à Simon gratuitement : mémorise une suite de couleurs et de sons qui s'allonge, puis reproduis-la dans le bon ordre.",
     url: "https://skilldrills.online/fr/drills/memory/short-term-memory/color-sequence",
     siteName: 'SkillDrills',
     locale: 'fr_FR',
@@ -39,8 +43,8 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: "Jeu Simon en Ligne – Mémoire des Couleurs | SkillDrills",
-    description: "Jeu Simon en ligne gratuit: Retenez des suites de couleurs croissantes et testez votre mémoire de travail visuelle directement dans le navigateur sans compte.",
+    title: "Jeu Simon en ligne | Mémoire des couleurs | SkillDrills",
+    description: "Joue à Simon gratuitement : mémorise une suite de couleurs et de sons qui s'allonge, puis reproduis-la dans le bon ordre.",
   },
 };
 
@@ -84,7 +88,8 @@ export default function FrenchColorSequencePage() {
     "applicationCategory": "GameApplication",
     "operatingSystem": "All",
     "isAccessibleForFree": true,
-    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "EUR" }
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "EUR" },
+    "sameAs": ["https://fr.wikipedia.org/wiki/Simon_%28jeu%29"]
   };
 
   const videoGameSchema = {
@@ -224,8 +229,8 @@ export default function FrenchColorSequencePage() {
   };
 
   const frCopy = {
-    title: 'Jeu Simon en Ligne',
-    subtitle: 'Test de Memoire de Travail Visuelle et Retention de Suites Colorees',
+    title: 'Jeu Simon en ligne',
+    subtitle: 'Mémorise les couleurs et reproduis la suite exacte',
     caption: 'Suivez et restituez la suite lumineuse dans l ordre exact au fil de son allongement progressif.',
     statScore: 'Score',
     statTime: 'Temps',

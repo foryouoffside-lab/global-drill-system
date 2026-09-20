@@ -5,25 +5,26 @@ import RelatedDrills from '@/components/drill/RelatedDrills';
 import { pickSources } from '@/lib/drillSources';
 
 export const metadata = {
-  title: "動体視力テスト: 移動標的の弾道予測＆迎撃 | SkillDrills",
-  description: "無料オンライン動体視力テスト。加速・反射バウンドする移動ターゲットの軌跡を予測し迎撃。滑動性眼球運動と手と目の協調性を高精度測定。",
+  title: "動体視力テスト | 移動標的トレーニング | SkillDrills",
+  description: "動く標的を追い、軌道を予測して迎撃する無料動体視力テスト。視線追跡と手と目の協応を練習できます。診断用ではありません。",
   keywords: [
     "動体視力テスト",
     "動体視力 トレーニング",
     "動体視力 ゲーム",
-    "動体視力テスト 無料",
-    "動体視力 鍛え方",
-    "移動標的 迎撃",
-    "滑動性眼球運動 スムースパシュート",
-    "リードショット 練習",
-    "視覚 追従 トレーニング",
-    "FPS エイム 移動ターゲット",
-    "手と目の協調性 テスト",
-    "動体視力 測定 アプリ"
+    "動体視力 測定",
+    "動体視力 ゲーム",
+    "移動標的",
+    "軌道予測",
+    "標的迎撃",
+    "視線追跡",
+    "手と目の協応",
+    "反射神経 トレーニング",
+    "FPS 移動標的",
+    "動くボール 追う"
   ],
   openGraph: {
-    title: "動体視力テスト: 移動標的の弾道予測＆迎撃 | SkillDrills",
-    description: "加速・バウンドする移動標的の弾道を予測迎撃し、動体視力と滑動性眼球運動を測定する無料オンライントレーニング。",
+    title: "動体視力テスト | 移動標的トレーニング | SkillDrills",
+    description: "動く標的を追って軌道を予測し、動体視力と視線追跡を練習する無料ブラウザドリル。医療診断ではありません。",
     type: 'article',
     url: 'https://skilldrills.online/ja/drills/visual/tracking-accuracy/moving-target',
     siteName: 'SkillDrills',
@@ -31,8 +32,8 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: "動体視力テスト: 移動標的の弾道予測＆迎撃 | SkillDrills",
-    description: "移動ターゲットの迎撃精度と軌道予測能力を科学的に測定・強化する無料動体視力ドリル。",
+    title: "動体視力テスト | 移動標的トレーニング | SkillDrills",
+    description: "移動標的の軌道予測と迎撃精度を練習する無料動体視力ドリル。画面やマウス環境で結果は変わります。",
   },
   robots: { index: true, follow: true },
   alternates: {
@@ -68,7 +69,7 @@ const softwareApplicationSchema = {
     "レベル上昇に伴う標的加速と当たり判定の縮小",
     "完全クライアントサイド実行によるローカルデータ保護"
   ],
-  "dateModified": "2026-09-05"
+  "dateModified": "2026-09-20"
 };
 
 const webAppSchema = {
@@ -77,7 +78,7 @@ const webAppSchema = {
   "name": "動体視力標的迎撃テスト — 視覚追従トレーニング | SkillDrills",
   "alternateName": "Moving Target Pro",
   "url": "https://skilldrills.online/ja/drills/visual/tracking-accuracy/moving-target",
-  "dateModified": "2026-09-05",
+  "dateModified": "2026-09-20",
   "description": "無料オンライン動体視力トレーニング。画面内を高速でバウンドする移動球体を滑らかな視線追従とリードショットで迎撃します。",
   "applicationCategory": "EducationalApplication",
   "operatingSystem": "All",
@@ -105,7 +106,7 @@ const howToSchema = {
   "@context": "https://schema.org",
   "@type": "HowTo",
   "name": "動体視力移動標的迎撃テストの実施手順",
-  "dateModified": "2026-09-05",
+  "dateModified": "2026-09-20",
   "description": "移動標的迎撃プロトコルに従い、動体視力と滑動性追従能力を高める4つのステップ。",
   "step": [
     {
@@ -142,7 +143,7 @@ const howToSchema = {
 const faqSchema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
-  "dateModified": "2026-09-05",
+  "dateModified": "2026-09-20",
   "mainEntity": [
     {
       "@type": "Question",
@@ -228,7 +229,7 @@ const faqSchema = {
 };
 
 const movingTargetGuide = {
-  heading: "キネティック視覚追従・弾道迎撃科学標準ガイド",
+  heading: "動体視力テスト：移動標的を追って迎撃する方法",
   intro: [
     "動的ターゲットの迎撃は、球技スポーツ、モータースポーツ、格闘技、航空操縦、そして競技型eスポーツ全般における最重要知覚運動能力です。加速し不規則に反射する物体を正確にヒットするには、滑動性眼球運動（Smooth Pursuit）、未来の空間軌道外挿、そして精密な閉ループ運動タイミングの統合が不可欠です。",
     "視覚運動追従の神経生理学的基盤は、中側頭視覚野（MT/V5）および内側上側頭野（MST）の方向選択性ニューロンにあります。これらの皮質領域が速度と方向ベクトルを計算し、前頭眼野（FEF）や脳橋核へフィードフォワード信号を送ることで、小脳プルキンエ細胞が眼球追従ゲインを制御します（Krauzlis, 2004）。",
@@ -236,7 +237,7 @@ const movingTargetGuide = {
     "さらにLand & McLeod（2000）のアスリート研究によると、熟練者は物体を目で受動的に追い続けるのではなく、未来のバウンド地点や打撃ポイントへ視線をあらかじめ飛ばす「予測的サッケード（Anticipatory Saccade）」を駆使します。本ドリルはこの高度な空間予測能力をミリ秒単位のプレッシャー下で鍛え上げます。"
   ],
   benchmarks: {
-    title: "動体視力・軌道迎撃パフォーマンス評価基準",
+    title: "動体視力と迎撃精度の参考基準（ブラウザ練習用）",
     headers: ["習熟度ティア", "目標ペーシング時間", "到達スコア・コンボ基準", "視覚追従・迎撃プロファイル"],
     rows: [
       ["ティア1：神業キネティック迎撃 (Apex)", "< 0.25秒 ペーシング", "16,000点以上 | コンボ 25x+", "プロ級滑動性追従；補正サッケード遅延が皆無の完璧な速度ベクトル外挿。トップFPSプロや戦闘機パイロット水準。"],
@@ -248,7 +249,7 @@ const movingTargetGuide = {
     note: "本基準値は滑動性眼球運動の精神物理学および動的迎撃時間測定の文献（Rashbass, 1961; Krauzlis, 2004; Land & McLeod, 2000; Bahill et al., 1980; Woods et al., 2015）に基づく指標です。画面環境により変動します。"
   },
   techniques: {
-    title: "動体視力と迎撃精度を極限まで高める実践メソッド",
+    title: "移動標的を追い、軌道予測を安定させる方法",
     items: [
       {
         name: "予測的ベクトルリーディング (Rashbass速度適合)",
@@ -301,7 +302,7 @@ export default function KineticInterceptPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(howToSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(videoGameSchema) }} />
-      <KineticInterceptClient copy={{ title: "動体視力テスト: 移動標的の弾道予測＆迎撃" }} />
+      <KineticInterceptClient copy={{ title: "動体視力・移動標的" }} />
       <DrillGuide guide={movingTargetGuide} />
       <div className="max-w-6xl mx-auto px-4 pb-12">
         <RelatedDrills currentCategory="visual" currentHref="https://skilldrills.online/ja/drills/visual/tracking-accuracy/moving-target" />

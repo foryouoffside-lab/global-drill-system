@@ -2,8 +2,9 @@ import DrillsDirectoryClient from '@/app/drills/DrillsDirectoryClient';
 import { DRILLS } from '@/lib/drillsRegistry';
 import { getAlternateLanguages } from '@/lib/i18n/locales';
 import { getLocalizedDrill } from '@/lib/i18n/drillNames';
+import { buildDirectoryMetadata, getDirectoryCollectionFields } from '@/lib/i18n/siteLandingSeoNative';
 
-export const metadata = {
+const legacyMetadata = {
   title: '無料エイム練習＆脳トレ82種・全ドリル一覧 | SkillDrills',
   description: '8大カテゴリー全82種の無料オンライン科学的トレーニングドリル一覧。VALORANT・Apex向けエイム練習、反射神経測定、動体視力、記憶力、認知機能向上テストをブラウザで即座に開始。',
   keywords: [
@@ -38,6 +39,11 @@ export const metadata = {
     canonical: 'https://skilldrills.online/ja/drills',
     languages: getAlternateLanguages('/ja/drills'),
   },
+};
+
+export const metadata = {
+  ...legacyMetadata,
+  ...buildDirectoryMetadata('ja', 'https://skilldrills.online/ja/drills', DRILLS.length, getAlternateLanguages('/ja/drills')),
 };
 
 const breadcrumbSchema = {
@@ -140,6 +146,8 @@ const faqSchema = {
     }
   ]
 };
+
+Object.assign(collectionSchema, getDirectoryCollectionFields('ja', DRILLS.length));
 
 export default function LocalizedDrillsDirectoryPage() {
   return (

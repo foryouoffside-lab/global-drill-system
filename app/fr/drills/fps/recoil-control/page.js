@@ -6,21 +6,21 @@ import { getAlternateLanguages } from '@/lib/i18n/locales';
 import RelatedDrills from '@/components/drill/RelatedDrills';
 
 export const metadata = {
-  title: "Contrôle du Recul FPS – Spray Pattern | SkillDrills",
-  description: "Entraînez le contrôle du recul et les spray patterns sur votre navigateur. Maîtrisez la compensation verticale et les tirs groupés sur CS2 et Valorant.",
+  title: "Contrôle du Recul | Entraînement Spray FPS | SkillDrills",
+  description: "Entraînement gratuit au contrôle du recul dans le navigateur : pratiquez les motifs de spray sur CS2, Valorant et les FPS.",
   keywords: [
-    "contrôle du recul fps",
-    "entraînement recoil cs2",
-    "gérer le spray valorant",
-    "entraînement spray pattern fps",
-    "compenser le recul souris",
-    "baisser la souris recul",
-    "aim trainer contrôle de recul",
-    "spray transfer entraînement cs2",
-    "maîtriser le recul des armes",
-    "tir en rafale précision fps",
-    "recul automatique entraînement gratuit",
-    "précision premier chargeur fps"
+    "contrôle du recul",
+    "recoil control",
+    "contrôle du spray",
+    "entraînement recul FPS",
+    "motif de spray",
+    "spray FPS",
+    "recul CS2",
+    "recul Valorant",
+    "compensation du recul",
+    "entraîneur recoil en ligne",
+    "contrôle du recul vertical",
+    "contrôle du recul horizontal"
   ],
   alternates: {
     canonical: "https://skilldrills.online/fr/drills/fps/recoil-control",
@@ -31,8 +31,8 @@ export const metadata = {
     follow: true,
   },
   openGraph: {
-    title: "Contrôle du Recul FPS – Spray Pattern | SkillDrills",
-    description: "Entraînez le contrôle du recul et les spray patterns sur votre navigateur. Maîtrisez la compensation verticale et les tirs groupés sur CS2 et Valorant.",
+    title: "Contrôle du Recul | Entraînement Spray FPS | SkillDrills",
+    description: "Entraînement gratuit au contrôle du recul dans le navigateur : pratiquez les motifs de spray sur CS2, Valorant et les FPS.",
     url: "https://skilldrills.online/fr/drills/fps/recoil-control",
     siteName: 'SkillDrills',
     locale: 'fr_FR',
@@ -40,8 +40,8 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: "Contrôle du Recul FPS – Spray Pattern | SkillDrills",
-    description: "Entraînez le contrôle du recul et les spray patterns sur votre navigateur. Maîtrisez la compensation verticale et les tirs groupés sur CS2 et Valorant.",
+    title: "Contrôle du Recul | Entraînement Spray FPS | SkillDrills",
+    description: "Entraînement gratuit au contrôle du recul dans le navigateur : pratiquez les motifs de spray sur CS2, Valorant et les FPS.",
   },
 };
 
@@ -117,7 +117,7 @@ export default function RecoilControlPage() {
   const faqSchema = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
-    "dateModified": "2026-09-16",
+    "dateModified": "2026-09-20",
     "mainEntity": [
       {
         "@type": "Question",
@@ -237,7 +237,7 @@ export default function RecoilControlPage() {
 
   const copyFr = {
     h1Keyword: "Contrôle du Recul",
-    h1Suffix: " – Entraîneur de Spray FPS",
+    h1Suffix: " – Entraînement Spray FPS",
     caption: "Contrôlez le recul vertical et horizontal en déplaçant la souris à l'opposé du motif de dispersion pour maintenir les tirs sur la cible.",
     statScore: "Score",
     statTime: "Temps",
@@ -247,7 +247,7 @@ export default function RecoilControlPage() {
     statReloading: "RECHARGEMENT...",
     pausedTitle: "Jeu en Pause",
     pausedPrompt: "Cliquez sur la zone de jeu pour réactiver le verrouillage du curseur.",
-    startTitle: "Entraîneur Professionnel de Recul",
+    startTitle: "Entraînement au Contrôle du Recul",
     startSubtitle: "Motifs de Spray et Compensation Motrice • Progression Continue",
     startButtonText: "DÉMARRER L'ENTRAÎNEMENT",
     getReady: "PRÊT ?",
@@ -263,15 +263,15 @@ export default function RecoilControlPage() {
       { num: "3", text: "Progression de Niveau", highlight: "+1 Niveau / 1400 PTS", result: "Accélère Vitesse & Recul" },
       { num: "4", text: "Discipline de Chargeur", highlight: "<40% Pénalité", result: "Réinitialise le Combo (-0,6s)" }
     ],
-    aboutTitle: "À Propos du Contrôle du Recul",
+    aboutTitle: "À propos du Contrôle du Recul et du Spray",
     aboutHeading: "Qu'est-ce que le Contrôle du Recul (Recoil) ?",
     aboutText: "Le recul est le relèvement mécanique du canon lors d'un tir en rafale automatique. Sa compensation repose sur des programmes moteurs en boucle ouverte (Schmidt & Lee, 2011) qui anticipent la trajectoire sans subir le temps de réaction visuel."
   };
 
   const recoilControlGuide = {
-    heading: "Guide de Contrôle du Recul & Motifs de Spray en FPS",
+    heading: "Guide du Contrôle du Recul et des Motifs de Spray FPS",
     intro: [
-      "L'Entraîneur Professionnel de Contrôle du Recul est un outil sensorimoteur développé pour isoler et perfectionner la compensation musculaire des armes automatiques. Dans les jeux de tir tactiques et compétitifs tels que CS2, Valorant, Apex Legends et PUBG, la compacité des groupements de tirs décide directement de l'issue de chaque duel.",
+      "Cet entraînement au contrôle du recul développe la compensation verticale et horizontale nécessaire pour garder des motifs de spray compacts. Dans CS2, Valorant, Apex Legends et PUBG, le groupement des tirs influence directement l'issue du duel.",
       "Contrairement aux micro-ajustements calmes, les fusils automatiques tirent à des cadences de 600 à 900 balles par minute, expulsant un tir tous les 66 à 100 ms. Comme le délai de réaction visuelle humaine est d'environ 200 ms, compenser le recul relève de Programmes Moteurs Généralisés (GMP) en boucle ouverte (Schmidt & Lee, 2011 ; Wolpert & Kawato, 1998) préenregistrés dans la mémoire musculaire.",
       "L'exercice structure le geste en deux séquences indispensables : une traction verticale fluide sur la première moitié du chargeur, puis une modulation latérale corrective sur la seconde moitié, reflétant la dynamique réelle des fusils d'assaut majeurs.",
       "Grâce à la Pointer Lock API et à une chronométrie haute précision via performance.now() (Woods et al., 2015), le simulateur calcule la précision balistique de chaque impact par rapport au centre de la cible, permettant d'éliminer les à-coups et les tractions excessives.",

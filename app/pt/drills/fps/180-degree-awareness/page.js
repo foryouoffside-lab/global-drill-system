@@ -6,21 +6,19 @@ import RelatedDrills from '@/components/drill/RelatedDrills';
 import DrillFooter from '@/components/drill/DrillFooter';
 
 export const metadata = {
-  title: "Treino de Giro 180° – Mira e Reação FPS | SkillDrills",
-  description: "Treine giros rápidos de 180 graus, reflexo contra flancos e visão periférica no navegador. Melhore sua agilidade de braço e mira no CS2 e Valorant.",
+  title: "Treino de mira 180° | Giro FPS | SkillDrills",
+  description: "Treino grátis de mira 180° no navegador: perceba alvos pela visão periférica, vire rápido e freie a mira com precisão em FPS.",
   keywords: [
-    "treino de 180 graus mira",
-    "treino de giro 180 fps",
-    "virada de 180 graus fps",
-    "treino de reflexo 180 mira",
-    "virada rapida de mira valorant",
-    "como treinar virada rapida fps",
-    "treino de visao periferica fps",
-    "desviar de flashbang treino cs2",
-    "espaco do mousepad virada 180",
-    "treino de mira 180 graus online",
-    "mira para costas fps treino",
-    "treino de reagir a flanco fps"
+    "treino de mira 180 graus",
+    "treino de giro 180 graus",
+    "virada de 180 graus FPS",
+    "visão periférica FPS",
+    "treino de mira Valorant",
+    "treino de mira online",
+    "reação a flanco FPS",
+    "mira para costas FPS",
+    "espaço do mousepad virada 180",
+    "teste de mira"
   ],
   alternates: {
     canonical: "https://skilldrills.online/pt/drills/fps/180-degree-awareness",
@@ -31,8 +29,8 @@ export const metadata = {
     follow: true,
   },
   openGraph: {
-    title: "Treino de Giro 180° – Mira e Reação FPS | SkillDrills",
-    description: "Treine giros rápidos de 180 graus, reflexo contra flancos e visão periférica no navegador. Melhore sua agilidade de braço e mira no CS2 e Valorant.",
+    title: "Treino de mira 180° | Giro FPS | SkillDrills",
+    description: "Perceba alvos pela visão periférica, vire 180° e pare a mira com precisão neste treino grátis de FPS no navegador.",
     url: "https://skilldrills.online/pt/drills/fps/180-degree-awareness",
     siteName: 'SkillDrills',
     locale: 'pt_BR',
@@ -40,8 +38,8 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: "Treino de Giro 180° – Mira e Reação FPS | SkillDrills",
-    description: "Treine giros rápidos de 180 graus, reflexo contra flancos e visão periférica no navegador. Melhore sua agilidade de braço e mira no CS2 e Valorant.",
+    title: "Treino de mira 180° | Giro FPS | SkillDrills",
+    description: "Perceba alvos pela visão periférica, vire 180° e pare a mira com precisão neste treino grátis de FPS no navegador.",
   },
 };
 
@@ -66,7 +64,7 @@ export default function AwarenessDrillPtPage() {
     "description": "Simulador interativo de giro de 180 graus para FPS. Desenvolva agilidade de braço, tempo de reação contra flanqueamentos e percepção periférica.",
     "genre": "Treino de FPS / Percepção Espacial",
     "url": "https://skilldrills.online/pt/drills/fps/180-degree-awareness",
-    "dateModified": "2026-09-16",
+    "dateModified": "2026-09-20",
     "publisher": {
       "@type": "Organization",
       "name": "SkillDrills",
@@ -100,13 +98,13 @@ export default function AwarenessDrillPtPage() {
     "applicationCategory": "Game",
     "url": "https://skilldrills.online/pt/drills/fps/180-degree-awareness",
     "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
-    "dateModified": "2026-09-16"
+    "dateModified": "2026-09-20"
   };
 
   const faqSchema = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
-    "dateModified": "2026-09-16",
+    "dateModified": "2026-09-20",
     "mainEntity": [
       {
         "@type": "Question",
@@ -225,9 +223,9 @@ export default function AwarenessDrillPtPage() {
   };
 
   const awarenessGuidePt = {
-    heading: "Guia de Treino de Percepção 180° e Benchmarks Psicomotores",
+    heading: "Guia de Treino de Mira 180° e Benchmarks Psicomotores",
     intro: [
-      "O tiro de giro de 180° é uma tarefa sensoriomotora complexa que exige coordenação refinada entre detecção visual periférica, sacadas oculares rápidas e aceleração balística dos membros. Na neurobiologia humana, os bastonetes da retina periférica detectam variações rápidas de luz e movimento em ângulos superiores a 90° em relação à linha de visão central, acionando sacadas reflexas via colículo superior (Rayner, 1998; Leigh & Zee, 2015).",
+      "O treino de mira 180° ensina uma sequência prática: perceber um alvo na borda pela visão periférica, virar com o braço e parar a mira sobre o alvo. Ele reproduz a leitura de um flanco no FPS sem confundir velocidade de giro com precisão de finalização.",
       "A conversão dessa detecção em uma reorientação virtual completa de 180° opera sob o modelo de impulso em dois componentes (Elliott et al., 2010). Um impulso balístico inicial de malha aberta cobre de 80% a 90% da rotação necessária, seguido imediatamente pela frenagem muscular antagonista para evitar que o retículo ultrapasse o alvo (Schmidt et al., 1979). Pela Lei de Fitts (Fitts, 1954), quanto maior a amplitude angular, maior a dificuldade da tarefa, tornando o controle de parada e a área do mousepad determinantes.",
       "A cronometria digital neste treinador é executada através de registros de alta resolução performance.now() sob a API Pointer Lock do HTML5. Timers de navegadores possuem leve suavização por mitigações de hardware (~1 ms), portanto diferenças menores que 5 ms devem ser interpretadas como ruído natural. A operação com taxa de amostragem de 1000 Hz no mouse e monitor com alta taxa de atualização elimina distorções e garante medições fiéis de sua velocidade e precisão (Woods et al., 2015).",
       "Como medir seu desempenho: cada disparo e deslocamento é registrado localmente no seu computador com clock de alta precisão. Mantenha as mesmas configurações de DPI, sensibilidade no jogo e espaço físico no mousepad entre as sessões para consolidar padrões motores confiáveis."
@@ -289,9 +287,9 @@ export default function AwarenessDrillPtPage() {
   };
 
   const copyPt = {
-    h1Keyword: "Treino de Giro 180°",
-    h1Suffix: " — Mira e Reação FPS",
-    subtitle: "Treine detecção periférica de ameaças, flicks de grande amplitude e desaceleração terminal em giros de 180°.",
+    h1Keyword: "Treino de mira 180°",
+    h1Suffix: " — Giro e Reação FPS",
+    subtitle: "Perceba ameaças pela visão periférica, faça um giro amplo e freie a mira sobre o alvo.",
     statScore: "Pontuação",
     statTime: "Tempo",
     statAccuracy: "Precisão",
@@ -346,7 +344,7 @@ export default function AwarenessDrillPtPage() {
       <div className="max-w-4xl mx-auto px-4 pb-12">
         <RelatedDrills
           currentCategory="fps"
-          currentHref="/drills/fps/180-degree-awareness"
+          currentHref="/pt/drills/fps/180-degree-awareness"
           locale="pt"
         />
       </div>

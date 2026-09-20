@@ -5,23 +5,19 @@ import RelatedDrills from '@/components/drill/RelatedDrills';
 import { pickSources } from '@/lib/drillSources';
 
 // ============================================================
-// SEO RESEARCH FINDINGS — pt-BR (n-back)
-// PRIMARY:  "teste n-back"                — High intent Brazilian query
-//           "dual n-back online"          — Web training query
-// SECONDARY / LSI:
-//           "teste n-back como funciona"  — Informational query
-//           "tarefa n-back"               — Neurocognitive query
-//           "memoria operacional teste"   — Cognitive domain query
-//           "jogo dual n back"            — Game intent query
+// Native research (2026-09-20): Bing pt-BR returned 0 exact / 0 broad for
+// "teste n-back"; pt-PT returned 0 exact / 1 broad for "n-back". Current
+// Portuguese results use "teste N-Back", "memória de trabalho", and training
+// intent, so this page avoids unsupported volume claims.
 // ============================================================
 
 export const metadata = {
-  title: "Teste N-Back Online – Memória Operacional | SkillDrills",
-  description: "Teste N-back online grátis: Treine a memória operacional e a atualização contínua de informações em 2-back e 3-back direto no navegador sem cadastro.",
-  keywords: ['teste n-back online', 'treino de memoria operacional', 'dual n-back online', 'teste de memoria de trabalho', 'tarefa n-back', 'exercicio de memoria operacional', 'inteligencia fluida n-back', 'atualizacao de memoria de trabalho', 'teste 3-back', 'treino cognitivo n-back', 'capacidade de memoria operacional', 'avaliacao neurocognitiva n-back'],
+  title: "Teste N-Back online | Memória de trabalho | SkillDrills",
+  description: "Faça um teste N-Back online e grátis para praticar a atualização da memória de trabalho em 2-back e 3-back, direto no navegador.",
+  keywords: ['teste n-back online', 'teste n-back', 'memória de trabalho', 'treino de memória de trabalho', 'dual n-back', 'tarefa n-back', '2-back', '3-back', 'teste de memória online', 'treino cognitivo'],
   openGraph: {
-    title: "Teste N-Back Online – Treino de Memória Operacional Grátis | SkillDrills",
-    description: "Teste N-back online grátis. Treine a memória operacional (memória de trabalho) e a atualização contínua de informações em 2-back, 3-back e níveis avançados no navegador.",
+    title: "Teste N-Back online | Memória de trabalho | SkillDrills",
+    description: "Faça um teste N-Back online e grátis para praticar a atualização da memória de trabalho em 2-back e 3-back.",
     type: "website",
     url: "https://skilldrills.online/pt/drills/memory/working-memory/n-back",
     siteName: "SkillDrills",
@@ -29,8 +25,8 @@ export const metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Teste N-Back Online – Treino de Memória Operacional Grátis | SkillDrills",
-    description: "Teste N-back online grátis. Treine a memória operacional (memória de trabalho) e a atualização contínua de informações em 2-back, 3-back e níveis avançados no navegador.",
+    title: "Teste N-Back online | Memória de trabalho | SkillDrills",
+    description: "Faça um teste N-Back online e grátis para praticar a atualização da memória de trabalho em 2-back e 3-back.",
   },
   robots: { index: true, follow: true },
   alternates: {
@@ -59,6 +55,7 @@ const webAppSchema = {
   "operatingSystem": "All",
   "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
   "author": { "@type": "Organization", "name": "SkillDrills" },
+  "sameAs": "https://pt.wikipedia.org/wiki/N-back",
   "isAccessibleForFree": true,
   "dateModified": "2026-09-11",
   "educationalUse": ["Capacidade de Memória Operacional", "Atualização Contínua de Informação", "Controle Executivo", "Inteligência Fluida"]
@@ -221,8 +218,9 @@ const faqSchema = {
 };
 
 const nBackClientCopyPt = {
-  h1Keyword: "Teste N-Back Online",
-  h1Suffix: " – Memória Operacional",
+  h1Keyword: "Teste N-Back online",
+  h1Suffix: " – Memória de trabalho",
+  subtitle: "Prática 2-back para atualizar letras em sequência",
   caption: "A tarefa N-back avalia se o estímulo atual coincide com o exibido N passos antes, exigindo armazenamento e manipulação dinâmica simultâneos segundo o modelo de Baddeley & Hitch (1974).",
   statScore: "Pontuação",
   statTime: "Tempo",
@@ -235,7 +233,7 @@ const nBackClientCopyPt = {
   btnMatch: "IGUAL (MATCH)",
   btnNoMatch: "DIFERENTE",
   startTitle: "Dual N-Back Pro",
-  startSubtitle: "Memória Operacional • Atualização de Sequência",
+  startSubtitle: "Memória de trabalho • 2-Back",
   countdownSubtitle: "PREPARE-SE",
   newBest: "NOVO RECORDE",
   pointsLabel: "Pontos",

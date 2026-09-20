@@ -5,29 +5,29 @@ import RelatedDrills from '@/components/drill/RelatedDrills';
 import { pickSources } from '@/lib/drillSources';
 
 export const metadata = {
-  title: "Test de Búsqueda Visual: Entropic Grid | SkillDrills",
-  description: "Test de búsqueda visual y atención selectiva gratis online. Localiza códigos objetivo en una matriz de 100 celdas bajo ruido dinámico. Entrena tu rapidez.",
+  title: "Búsqueda Visual | Atención Selectiva | SkillDrills",
+  description: "Entrenamiento gratuito de búsqueda visual: encuentra códigos objetivo en una matriz 10×10 con distractores cambiantes. Practica atención selectiva.",
   keywords: [
-    "test de búsqueda visual online",
-    "test de atención selectiva",
-    "ejercicios de rastreo visual",
-    "búsqueda visual en matriz",
-    "filtrado de ruido visual dinámico",
-    "velocidad de escaneo visual",
-    "percepción pop-out visual",
-    "psicología cognitiva búsqueda",
-    "atención visoespacial ejercicios",
-    "test de agudeza visual selectiva",
-    "tiempo de fijación ocular",
-    "detección de blancos bajo ruido"
+    "búsqueda visual",
+    "atención selectiva visual",
+    "escaneo visual",
+    "test de atención visual",
+    "concentración en cuadrícula",
+    "filtrado de distractores",
+    "velocidad de exploración visual",
+    "atención visuoespacial",
+    "entrenamiento de atención",
+    "psicología de la búsqueda visual",
+    "fijación ocular",
+    "detección de objetivos"
   ],
   alternates: {
     canonical: "https://skilldrills.online/es/drills/visual/visual-recognition/entropic-grid",
     languages: getAlternateLanguages('/drills/visual/visual-recognition/entropic-grid'),
   },
   openGraph: {
-    title: "Test de Búsqueda Visual: Entropic Grid | SkillDrills",
-    description: "Test de búsqueda visual y atención selectiva gratis online. Localiza códigos objetivo en una matriz de 100 celdas bajo ruido dinámico. Entrena tu rapidez.",
+    title: "Búsqueda Visual | Atención Selectiva | SkillDrills",
+    description: "Encuentra códigos objetivo en una matriz 10×10 con distractores cambiantes y practica atención selectiva y escaneo visual.",
     url: "https://skilldrills.online/es/drills/visual/visual-recognition/entropic-grid",
     type: "website",
     locale: "es_ES",
@@ -36,15 +36,15 @@ export const metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Test de Búsqueda Visual: Entropic Grid | SkillDrills",
-    description: "Test de búsqueda visual y atención selectiva gratis online. Localiza códigos objetivo en una matriz de 100 celdas bajo ruido dinámico. Entrena tu rapidez.",
+    title: "Búsqueda Visual | Atención Selectiva | SkillDrills",
+    description: "Encuentra códigos en una cuadrícula cambiante y practica atención visual, escaneo y filtrado de distractores.",
     images: ["https://skilldrills.online/og-default.svg"],
   },
 };
 
 const guideData = {
   eyebrow: "Psicología Cognitiva & Atención Selectiva",
-  heading: "Test de Búsqueda Visual Entropic Grid – Filtrado de Ruido & Discriminación",
+  heading: "Búsqueda visual: atención selectiva y filtrado de distractores",
   intro: [
     "La búsqueda visual (Visual Search) constituye la operación perceptiva fundamental de localizar un objetivo específico dentro de un campo saturado de distractores e interferencias visuales. Desde un piloto militar explorando una cabina instrumental hasta un competidor de deportes electrónicos detectando siluetas enemigas en entornos hostiles, la eficiencia de búsqueda dicta la supervivencia y la conciencia situacional. En psicofísica visual, esta velocidad viene modulada por la interacción dinámica entre la saliencia visual ascendente (bottom-up) y el control atencional descendente (top-down) (Treisman & Gelade, 1980; Wolfe, 1994).",
     "Según la teoría de integración de características (Feature Integration Theory: FIT) postulada por Treisman y Gelade (1980), el sistema visual procesa rasgos elementales básicos —como color u orientación espacial— de forma paralela e inconsciente en una fase preatencional. Cuando un objetivo se diferencia por un único rasgo prominente, se genera un efecto 'pop-out' inmediato con latencia independiente de la densidad de distractores. Sin embargo, cuando el blanco viene definido por una conjunción compleja de caracteres alfanuméricos, la atención focalizada debe desplegarse serialmente para unificar dichos rasgos, guiada por las prioridades atencionales del modelo Guided Search de Wolfe (1994; Wolfe, 2007).",
@@ -53,7 +53,7 @@ const guideData = {
     "Esta herramienta digital implementa temporizadores de microsegundos mediante performance.now() para baremar la latencia de fijación, la tasa de identificación correcta y la resiliencia al desorden visual en pruebas estandarizadas de 45 segundos. El entrenamiento sistemático en el Entropic Grid acondiciona los circuitos frontoparietales de filtrado sensorial, optimizando la capacidad de discriminación en shooters tácticos, la conducción vehicular de alta velocidad y el análisis de flujos complejos de información."
   ],
   benchmarks: {
-    title: "Baremos de Rendimiento para Búsqueda Visual y Atención Selectiva",
+    title: "Referencias de búsqueda visual y atención selectiva",
     headers: ["Nivel / Categoría", "Aciertos Confirmados (45s)", "Latencia Media de Fijación", "Precisión de Filtrado de Ruido", "Perfil Neurocognitivo"],
     rows: [
       ["Nivel 1: Élite Perceptiva (Top 1%)", "18+ Aciertos", "< 180 ms", "> 96%", "Síntesis perfecta de detección pop-out y escaneo top-down dirigido (Wolfe, 2007)."],
@@ -65,7 +65,7 @@ const guideData = {
     note: "Fundamentado en investigaciones sobre atención visual selectiva (Treisman & Gelade 1980; Wolfe 2007; Duncan & Humphreys 1989; Posner 1980)."
   },
   techniques: {
-    title: "Estrategias Motoras y Visuales para Acelerar la Exploración",
+    title: "Cómo encontrar objetivos más rápido e ignorar distractores",
     items: [
       {
         name: "Exploración por Bloques de Cuadrantes",
@@ -164,14 +164,14 @@ const breadcrumbSchema = {
     { "@type": "ListItem", "position": 2, "name": "Entrenamientos", "item": "https://skilldrills.online/es/drills" },
     { "@type": "ListItem", "position": 3, "name": "Percepción Visual", "item": "https://skilldrills.online/es/drills/visual" },
     { "@type": "ListItem", "position": 4, "name": "Reconocimiento Visual", "item": "https://skilldrills.online/es/drills/visual/visual-recognition" },
-    { "@type": "ListItem", "position": 5, "name": "Entropic Grid", "item": "https://skilldrills.online/es/drills/visual/visual-recognition/entropic-grid" }
+    { "@type": "ListItem", "position": 5, "name": "Búsqueda visual y atención selectiva", "item": "https://skilldrills.online/es/drills/visual/visual-recognition/entropic-grid" }
   ]
 };
 
 const softwareApplicationSchema = {
   "@context": "https://schema.org",
   "@type": "SoftwareApplication",
-  "name": "Test de Búsqueda Visual Entropic Grid",
+  "name": "Test de búsqueda visual",
   "operatingSystem": "Web Browser",
   "applicationCategory": "HealthApplication",
   "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
@@ -181,7 +181,7 @@ const softwareApplicationSchema = {
 const webAppSchema = {
   "@context": "https://schema.org",
   "@type": "WebApplication",
-  "name": "Test de Búsqueda Visual Entropic Grid",
+  "name": "Test de búsqueda visual",
   "url": "https://skilldrills.online/es/drills/visual/visual-recognition/entropic-grid",
   "applicationCategory": "SportsApplication",
   "browserRequirements": "Requires JavaScript. Canvas support required.",
@@ -191,7 +191,7 @@ const webAppSchema = {
 const videoGameSchema = {
   "@context": "https://schema.org",
   "@type": "VideoGame",
-  "name": "Entrenamiento de Búsqueda Visual y Atención Selectiva Entropic Grid",
+  "name": "Entrenamiento de búsqueda visual y atención selectiva",
   "gamePlatform": "Web Browser",
   "genre": ["Visión Deportiva", "Entrenamiento Cognitivo", "Atención Selectiva"],
   "numberOfPlayers": { "@type": "QuantitativeValue", "value": 1 }
@@ -200,7 +200,7 @@ const videoGameSchema = {
 const howToSchema = {
   "@context": "https://schema.org",
   "@type": "HowTo",
-  "name": "Cómo Realizar el Test Entropic Grid",
+  "name": "Cómo realizar el test de búsqueda visual",
   "description": "Protocolo guiado para entrenar la atención selectiva y la rapidez de exploración visual en matrices dinámicas.",
   "step": [
     { "@type": "HowToStep", "position": 1, "name": "Paso 1", "text": "Identifique el código de dos caracteres expuesto en la barra superior del test." },
@@ -309,7 +309,7 @@ export default function EntropicGridPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
 
       <main className="container mx-auto px-4 py-8 max-w-5xl">
-        <EntropicGridClient copy={{ title: "Test de Búsqueda Visual: Entropic Grid", subtitle: "Filtrado de Ruido Dinámico & Atención Selectiva" }} />
+        <EntropicGridClient copy={{ title: "Búsqueda Visual", subtitle: "Atención selectiva y escaneo visual" }} />
         <DrillGuide guide={guideData} />
         <RelatedDrills related={guideData.related} />
       </main>

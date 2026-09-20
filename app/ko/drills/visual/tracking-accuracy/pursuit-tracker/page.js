@@ -5,23 +5,24 @@ import RelatedDrills from '@/components/drill/RelatedDrills';
 import { pickSources } from '@/lib/drillSources';
 
 export const metadata = {
-  title: "에임 트래킹 테스트: 안구 추적 훈련 | SkillDrills",
-  description: "스무스 퍼슈트(활동성 안구운동)와 마우스 에임 트래킹 정밀도를 측정하는 무료 온라인 테스트. 지속적인 시선 추적과 조준 안정성을 극대화하세요.",
+  title: "에임 트래킹 테스트 | 시선 추적 훈련 | SkillDrills",
+  description: "움직이는 표적에 조준점을 유지하는 무료 에임 트래킹 테스트. 시선 추적과 눈-손 협응을 연습하세요. 의료 검사가 아닙니다.",
   keywords: [
     "에임 트래킹",
-    "안구 추적 훈련",
-    "스무스 퍼슈트",
     "에임 트래킹 테스트",
-    "안구운동검사",
-    "시선 추적 테스트",
-    "FPS 트래킹 에임",
-    "망막 슬립 보정",
-    "손눈 협응",
-    "에임 연습 사이트"
+    "시선 추적 훈련",
+    "트래킹 에임",
+    "움직이는 표적",
+    "시각 추적",
+    "동체시력 훈련",
+    "눈-손 협응",
+    "FPS 에임 연습",
+    "커서 추적",
+    "스무스 퍼슈트"
   ],
   openGraph: {
-    title: "에임 트래킹 테스트・안구 추적 훈련 – 무료 온라인 스무스 퍼슈트 연습 | SkillDrills",
-    description: "활동성 안구운동과 마우스 트래킹 정밀도를 결합한 무료 시각 훈련 도구. 연속적으로 움직이는 타깃을 시선과 커서로 유지하여 에임 안정성을 향상시키세요.",
+    title: "에임 트래킹 테스트 | 시선 추적 훈련 | SkillDrills",
+    description: "움직이는 표적을 따라가며 시선과 커서의 안정성을 연습하는 무료 브라우저 드릴입니다. 의료 검사가 아닙니다.",
     type: 'article',
     url: 'https://skilldrills.online/ko/drills/visual/tracking-accuracy/pursuit-tracker',
     siteName: 'SkillDrills',
@@ -29,8 +30,8 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: "에임 트래킹 테스트・안구 추적 훈련 – 무료 온라인 스무스 퍼슈트 연습 | SkillDrills",
-    description: "활동성 안구운동과 마우스 트래킹 정밀도를 결합한 무료 시각 훈련 도구. 망막 슬립을 억제하고 트래킹 에임을 과학적으로 강화하세요.",
+    title: "에임 트래킹 테스트 | 시선 추적 훈련 | SkillDrills",
+    description: "에임 트래킹과 시선 추적을 훈련하는 무료 드릴입니다. 화면과 마우스 환경에 따라 결과가 달라질 수 있습니다.",
   },
   robots: { index: true, follow: true },
   alternates: {
@@ -238,7 +239,7 @@ const howToSchema = {
 
 const guideData = {
   eyebrow: "신경안과학 및 시각 운동 제어 가이드",
-  heading: "에임 트래킹 테스트 – 스무스 퍼슈트와 안구 추적 제어 메커니즘",
+  heading: "에임 트래킹 테스트: 시선과 커서를 표적에 유지하는 법",
   intro: [
     "스무스 퍼슈트 안구운동(Smooth Pursuit Eye Movement, SPEM / 활동성 안구운동)은 시야에서 연속적으로 이동하는 목표물의 속도에 맞춰 안구를 매끄럽게 회전시켜, 목표물의 상을 망막에서 가장 해상도가 높은 중심와(Fovea centralis)에 안정적으로 고정하는 정밀 안구운동 시스템입니다. 이는 시선의 위치 오차를 급격한 점프로 만회하는 도약 안구운동(Saccade)과는 신경학적으로 완전히 독립된 제어 회로에 의해 작동합니다(Rashbass, 1961; Krauzlis, 2004).",
     "신경생리학적으로 스무스 퍼슈트를 구동하는 핵심 신호는 망막 위에서 상이 미끄러지는 속도, 즉 '망막 슬립(Retinal Slip)'입니다(Leigh & Zee, 2015). 시각 자극이 1차 시각 피질(V1)을 거쳐 중측두엽(MT/V5 영역) 및 내측상측두엽(MST 영역)으로 전달되어 밀리초 단위로 속도 벡터가 추출됩니다. 이후 전두안야(FEF)와 보조안야(SEF)를 거쳐 뇌교핵과 소뇌(Flocculus 및 Dorsal Vermis)로 전달된 후, 외안근을 움직이는 동안신경핵으로 정밀 운동 명령이 하달됩니다(Krauzlis, 2004; Lisberger, 2010).",
@@ -247,7 +248,7 @@ const guideData = {
     "본 시스템은 초정밀 performance.now() 타이머와 서브픽셀 렌더링 엔진을 통해 45초 동안 지속되는 안구 추적 세션에서 타깃 유효 접촉 시간 비율(Time on Target), 평균 추적 오차, 최대 연속 스트릭(Max Streak)을 실시간으로 정밀 측정합니다. 규칙적인 스무스 퍼슈트 훈련은 소뇌의 적응적 가소성을 자극하고 손과 눈의 협응력을 극대화하여, FPS 게임에서의 매끄러운 트래킹 에임 형성, 구기 종목의 궤적 인터셉트 능력 향상, 시각 피로 경감에 결정적인 기여를 합니다."
   ],
   benchmarks: {
-    title: "에임 트래킹 및 스무스 퍼슈트 안구운동 표준 벤치마크 기준",
+    title: "에임 트래킹·스무스 퍼슈트 참고 기준",
     headers: ["평가 등급 / 티어", "타깃 유지율 (Time on Target)", "평균 트래킹 정밀도", "보정 도약 억제율", "신경생리학적 도달 수준"],
     rows: [
       ["신인류 / 프로 특급 (상위 1%)", "88% 이상", "92% 이상", "95% 이상 억제", "완벽한 활동성 안구운동 및 망막 슬립 제로화. 소뇌 예측 제어 완벽 동기화 (Lisberger, 2010)"],
@@ -259,7 +260,7 @@ const guideData = {
     note: "신경안과학 및 안구운동 제어 문헌(Rashbass 1961; Krauzlis 2004; Leigh & Zee 2015; Lisberger 2010)에 기반한 객관적 평가 기준입니다."
   },
   techniques: {
-    title: "에임 트래킹 정밀도를 극대화하는 4대 실전 원칙",
+    title: "에임 트래킹 정밀도를 높이는 4가지 방법",
     items: [
       {
         name: "등가속도 위상 정합 (Smooth Acceleration Matching)",
@@ -329,7 +330,7 @@ export default function LocalizedPursuitTrackerKoPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
 
-      <AutoPursuitClient copy={{ title: "에임 트래킹 테스트・안구 추적 훈련", subtitle: "스무스 퍼슈트 활동성 안구운동 정밀 검사" }} />
+      <AutoPursuitClient copy={{ title: "에임 트래킹", subtitle: "시선 추적 훈련" }} />
       <DrillGuide guide={guideData} />
       <div className="max-w-6xl mx-auto px-4 pb-12">
         <RelatedDrills currentCategory="visual" currentHref="https://skilldrills.online/ko/drills/visual/tracking-accuracy/pursuit-tracker" />

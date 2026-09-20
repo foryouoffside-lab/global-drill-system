@@ -37,6 +37,23 @@ export const metadata = {
   },
 };
 
+Object.assign(metadata, {
+  title: 'Reflejos y Agilidad | 11 Ejercicios Online | SkillDrills',
+  description: '11 ejercicios gratuitos en el navegador para tiempo de reacción, agilidad, equilibrio, coordinación motriz y reflejos.',
+  keywords: ['juego de reflejos', 'entrenamiento de agilidad', 'test de reacción', 'coordinación motriz', 'equilibrio corporal', 'velocidad de pies', 'coordinación ojo-mano', 'juego de esquivar', 'entrenamiento deportivo online', 'ejercicios de reflejos gratis'],
+  openGraph: {
+    ...metadata.openGraph,
+    title: 'Reflejos y Agilidad | 11 Ejercicios Online | SkillDrills',
+    description: '11 ejercicios gratuitos en el navegador para reflejos, tiempo de reacción, agilidad y coordinación motriz.',
+  },
+  twitter: {
+    ...metadata.twitter,
+    title: 'Reflejos y Agilidad | SkillDrills',
+    description: 'Entrena reflejos, agilidad, equilibrio y coordinación con 11 ejercicios gratuitos.',
+  },
+  alternates: { ...metadata.alternates, languages: getAlternateLanguages('/drills/physical') },
+});
+
 const breadcrumbSchema = {
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
@@ -50,6 +67,8 @@ const breadcrumbSchema = {
 const collectionSchema = {
   "@context": "https://schema.org",
   "@type": "CollectionPage",
+  "inLanguage": "es",
+  "dateModified": "2026-09-20",
   "name": "Entrenamiento de Agilidad & Reflejos (11 Ejercicios)",
   "url": "https://skilldrills.online/es/drills/physical",
   "description": "11 ejercicios interactivos para tiempo de reacción, equilibrio, coordinación motriz, escalera de agilidad y evasión de obstáculos.",
@@ -71,6 +90,8 @@ const collectionSchema = {
 const faqSchema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
+  "inLanguage": "es",
+  "dateModified": "2026-09-20",
   "mainEntity": [
     {
       "@type": "Question",
@@ -138,6 +159,19 @@ const faqSchema = {
     }
   ]
 };
+
+faqSchema.mainEntity.push(
+  {
+    "@type": "Question",
+    "name": "¿Cuántos ejercicios incluye la categoría de entrenamiento físico?",
+    "acceptedAnswer": { "@type": "Answer", "text": "La categoría reúne 11 ejercicios de navegador en cuatro focos: reflejos y evasión, agilidad y condición física, coordinación y trayectorias, y equilibrio y estabilidad. Cada tarjeta abre su ejercicio correspondiente." }
+  },
+  {
+    "@type": "Question",
+    "name": "¿Los ejercicios de reflejos en el navegador sustituyen el entrenamiento físico?",
+    "acceptedAnswer": { "@type": "Answer", "text": "No. Practican el tiempo visual, la velocidad de decisión, la precisión de control y la secuencia de movimientos. Complementan, pero no sustituyen, la fuerza, la pliometría, la movilidad ni el entrenamiento específico del deporte." }
+  }
+);
 
 export default function PhysicalDrillsPage() {
   return (

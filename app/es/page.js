@@ -1,7 +1,9 @@
 import HomePageClient from '../HomePageClient';
+import { DRILLS } from '@/lib/drillsRegistry';
 import { getAlternateLanguages } from '@/lib/i18n/locales';
+import { buildHomeMetadata, buildHomeSchema } from '@/lib/i18n/siteLandingSeoNative';
 
-export const metadata = {
+const legacyMetadata = {
   title: 'Aim Trainer Gratis y Entrenamiento Cerebral | SkillDrills',
   description: 'Mejora tu puntería en Valorant, CS2, tiempo de reacción y memoria con más de 80 ejercicios interactivos gratis directamente en tu navegador.',
   keywords: [
@@ -21,8 +23,17 @@ export const metadata = {
   },
 };
 
+export const metadata = {
+  ...legacyMetadata,
+  ...buildHomeMetadata('es', 'https://skilldrills.online/es', DRILLS.length, getAlternateLanguages('/es')),
+};
+
+const homeSchema = buildHomeSchema('es', 'https://skilldrills.online/es', DRILLS.length);
+
 export default function SpanishHomePage() {
   return (
+    <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(homeSchema) }} />
     <HomePageClient
       copy={{
         srH2: 'SkillDrills - Aim Trainer y Entrenamiento Cerebral Gratis',
@@ -124,5 +135,6 @@ export default function SpanishHomePage() {
         },
       }}
     />
+    </>
   );
 }

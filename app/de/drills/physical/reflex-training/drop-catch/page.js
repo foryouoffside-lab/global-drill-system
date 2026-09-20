@@ -6,7 +6,7 @@ import { pickSources } from '@/lib/drillSources';
 
 // ============================================================
 // SEO RESEARCH FINDINGS — Germany (DE / DE)
-// Primary Intent: Lineal Fallen Lassen Reaktionszeit, Reaktionszeit Lineal Fangen, Reaktionszeit Messen Lineal
+// Primary Intent: Lineal-Falltest, Reaktionszeit messen, Reaktionstest online
 // German Context: Klassischer Lineal-Falltest (Schule/Sport) als digitaler Drop-Catch & Go/No-Go-Reflextest
 // High-Demand, Low-Competition Target Keywords:
 //   - "Lineal Fallen Lassen Reaktionszeit" (Classic ruler drop reaction query)
@@ -22,27 +22,27 @@ import { pickSources } from '@/lib/drillSources';
 // ============================================================
 
 export const metadata = {
-  title: "Lineal-Falltest – Reaktionszeit Messen | SkillDrills",
-  description: "Kostenloser Lineal-Falltest online. Fange fallende Objekte im freien Fall ab und messe deine Reaktionszeit und Reflexe in Millisekunden direkt im Browser.",
+  title: "Lineal-Falltest online | Reaktionszeit messen",
+  description: "Kostenloser Lineal-Falltest im Browser: Fange fallende Ziele, meide rote Fallen und übe deine Reaktionszeit in Millisekunden.",
   keywords: [
-    "Lineal Fallen Lassen Reaktionszeit",
-    "Reaktionszeit Lineal Fangen",
-    "Reaktionszeit Messen Lineal",
+    "Lineal-Falltest",
+    "Reaktionszeit messen",
+    "Reaktionszeit Lineal",
     "Reaktionstest Online Kostenlos",
     "Wahlreaktionszeit Test",
-    "Fallende Ziele Abfangen",
-    "Impulskontrolle Reaktionstraining",
-    "Reflexe Testen Online",
-    "Optische Reizdiskrimination",
-    "Go No-Go Test Online"
+    "Reaktionstest online kostenlos",
+    "fallende Ziele fangen",
+    "Reflexe testen online",
+    "Reaktionsspiel mit fallenden Zielen",
+    "Go-No-Go-Reaktionstest"
   ],
   alternates: {
     canonical: 'https://skilldrills.online/de/drills/physical/reflex-training/drop-catch',
     languages: getAlternateLanguages('/drills/physical/reflex-training/drop-catch'),
   },
   openGraph: {
-    title: "Lineal-Falltest – Reaktionszeit Messen | SkillDrills",
-    description: "Kostenloser Lineal-Falltest online. Fange fallende Objekte im freien Fall ab und messe deine Reaktionszeit und Reflexe in Millisekunden direkt im Browser.",
+    title: "Lineal-Falltest online | Reaktionszeit messen",
+    description: "Fange fallende grüne Ziele und meide rote Fallen in einem kostenlosen Browser-Drill für Reaktionszeit und visuelle Auswahl.",
     url: 'https://skilldrills.online/de/drills/physical/reflex-training/drop-catch',
     siteName: 'SkillDrills',
     locale: 'de_DE',
@@ -50,8 +50,8 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: "Lineal-Falltest – Reaktionszeit Messen | SkillDrills",
-    description: "Kostenloser Lineal-Falltest online. Fange fallende Objekte im freien Fall ab und messe deine Reaktionszeit und Reflexe in Millisekunden direkt im Browser.",
+    title: "Lineal-Falltest online | Reaktionszeit messen",
+    description: "Fange fallende grüne Ziele und meide rote Fallen in einem kostenlosen Browser-Drill für Reaktionszeit und visuelle Auswahl.",
   },
   robots: { index: true, follow: true },
 };
@@ -106,7 +106,7 @@ const softwareApplicationSchema = {
     "url": "https://skilldrills.online/de"
   },
   "inLanguage": "de",
-  "dateModified": "2026-09-12"
+  "dateModified": "2026-09-20"
 };
 
 const webApplicationSchema = {
@@ -123,7 +123,7 @@ const webApplicationSchema = {
   },
   "url": "https://skilldrills.online/de/drills/physical/reflex-training/drop-catch",
   "inLanguage": "de",
-  "dateModified": "2026-09-12"
+  "dateModified": "2026-09-20"
 };
 
 const videoGameSchema = {
@@ -154,7 +154,7 @@ const videoGameSchema = {
 const faqSchema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
-  "dateModified": "2026-09-12",
+  "dateModified": "2026-09-20",
   "mainEntity": [
     {
       "@type": "Question",
@@ -365,7 +365,7 @@ export default function LocalizedDropCatchPageDe() {
       <DropCatchClient
         copy={{
           title: "Lineal-Falltest & Drop Catch",
-          subtitle: "Fallende Ziele abfangen & rote Fallen hemmen • 15 dynamische Level",
+          subtitle: "Fallende Ziele fangen, rote Fallen meiden",
           hudLabels: {
             score: "Punkte",
             time: "Zeit",

@@ -6,7 +6,7 @@ import { pickSources } from '@/lib/drillSources';
 
 // ============================================================
 // PESQUISA DE PALAVRAS-CHAVE NATIVAS (SERP BRASIL / PT-BR)
-// Termos de busca de alta intenção e baixa concorrência:
+// Clusters nativos de busca revisados por intenção; concorrência ainda não medida:
 // - "teste de coordenacao motora mao e olho" (Busca de alta intenção neurofuncional)
 // - "exercicios de coordenacao motora fina" (Treinamento neuromotor e destreza)
 // - "cruzamento da linha media corporal" (Conceito de integração sensorial e controle bilateral)
@@ -18,27 +18,27 @@ import { pickSources } from '@/lib/drillSources';
 // ============================================================
 
 export const metadata = {
-  title: "Coordenação Mão e Olho – Linha Média | SkillDrills",
-  description: 'Teste de coordenação mão e olho online grátis. Conecte nós diagonais na tela para treinar coordenação bilateral e cruzamento de linha média no PC.',
+  title: "Teste de Coordenação Mão e Olho | SkillDrills",
+  description: 'Teste grátis de coordenação mão e olho online. Conecte nós diagonais cruzando a linha média para treinar coordenação bilateral e precisão com o mouse.',
   keywords: [
-    "teste de coordenacao motora mao e olho",
+    "teste de coordenacao mao e olho",
     "exercicios de coordenacao motora fina",
     "cruzamento da linha media corporal",
     "treino de coordenacao bilateral",
     "teste de reflexo e coordenacao motora",
-    "flick diagonal mouse aim",
+    "coordenacao motora com mouse",
     "coordenacao visomotora teste online",
     "jogo de coordenacao motora gratis",
-    "controle motor contralateral",
-    "mira diagonal fps"
+    "jogo de coordenacao motora gratis",
+    "coordenacao bilateral treino"
   ],
   alternates: {
     canonical: 'https://skilldrills.online/pt/drills/physical/coordination/cross-body-movement',
     languages: getAlternateLanguages('/drills/physical/coordination/cross-body-movement'),
   },
   openGraph: {
-    title: "Coordenação Mão e Olho – Linha Média | SkillDrills",
-    description: 'Teste de coordenação mão e olho online grátis. Conecte nós diagonais na tela para treinar coordenação bilateral e cruzamento de linha média no PC.',
+    title: "Teste de Coordenação Mão e Olho | SkillDrills",
+    description: 'Teste grátis de coordenação mão e olho online. Conecte nós diagonais cruzando a linha média para treinar coordenação bilateral e precisão com o mouse.',
     url: 'https://skilldrills.online/pt/drills/physical/coordination/cross-body-movement',
     siteName: 'SkillDrills',
     locale: 'pt_BR',
@@ -46,8 +46,8 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: "Coordenação Mão e Olho – Linha Média | SkillDrills",
-    description: 'Teste de coordenação mão e olho online grátis. Conecte nós diagonais na tela para treinar coordenação bilateral e cruzamento de linha média no PC.',
+    title: "Teste de Coordenação Mão e Olho | SkillDrills",
+    description: 'Teste grátis de coordenação mão e olho online. Conecte nós diagonais cruzando a linha média para treinar coordenação bilateral e precisão com o mouse.',
   },
   robots: { index: true, follow: true },
 };
@@ -102,7 +102,7 @@ const softwareApplicationSchema = {
     "url": "https://skilldrills.online/pt"
   },
   "inLanguage": "pt-BR",
-  "dateModified": "2026-09-12"
+  "dateModified": "2026-09-20"
 };
 
 const webApplicationSchema = {
@@ -119,7 +119,7 @@ const webApplicationSchema = {
   },
   "url": "https://skilldrills.online/pt/drills/physical/coordination/cross-body-movement",
   "inLanguage": "pt-BR",
-  "dateModified": "2026-09-12"
+  "dateModified": "2026-09-20"
 };
 
 const videoGameSchema = {
@@ -140,6 +140,8 @@ const videoGameSchema = {
     "Mobile"
   ],
   "applicationCategory": "Game",
+  "inLanguage": "pt-BR",
+  "dateModified": "2026-09-20",
   "offers": {
     "@type": "Offer",
     "price": "0",
@@ -150,7 +152,8 @@ const videoGameSchema = {
 const faqSchema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
-  "dateModified": "2026-09-12",
+  "inLanguage": "pt-BR",
+  "dateModified": "2026-09-20",
   "mainEntity": [
     {
       "@type": "Question",
@@ -358,8 +361,8 @@ export default function CrossBodyMovementPagePt() {
       />
       <CrossBodyMovementClient
         copy={{
-          title: "Teste de Coordenação Motora Mão e Olho",
-          subtitle: "Cruzamento da Linha Média & Controle Motor Bilateral • 15 Níveis",
+          title: "Teste de Coordenação Mão e Olho",
+          subtitle: "Controle diagonal cruzando a linha média • 15 níveis",
           hudLabels: {
             score: "Pontuação",
             timeLeft: "Tempo Restante",

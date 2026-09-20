@@ -5,9 +5,9 @@ import { getAlternateLanguages } from '@/lib/i18n/locales';
 import { pickSources } from '@/lib/drillSources';
 
 export const metadata = {
-  title: "순서 기억 테스트・코시 블록 검사 – 궤적 회상 훈련 | SkillDrills",
-  description: "무료 온라인 순서 기억 테스트(코시 블록 검사). 점등되는 타일 이동 궤적을 기억하고 동일한 순서로 되짚어 공간 순서 기억력과 코시 스팬을 측정하세요.",
-  keywords: ['순서 기억 테스트', '순서 기억 게임', '도형 순서 기억하기', '코시 블록 검사', '경로 기억력 테스트', '시각 순서 기억', '패스 트레이싱 검사', '작업기억 순서 검사', '코르시 블록 테스트', '공간 시퀀스 기억', '두뇌 인지 순서 훈련', '움직임 궤적 기억'],
+  title: "코르시 블록 검사 | 순서 기억 | SkillDrills",
+  description: "무료 코르시 블록 검사: 빛나는 블록의 위치와 순서를 기억한 뒤 같은 순서로 눌러 시공간 작업기억을 훈련하세요.",
+  keywords: ['코르시 블록 검사', '코르시 블록 테스트', '순서 기억력 테스트', '공간 기억력 테스트', '시공간 작업기억', '경로 기억력 테스트', '시각 순서 기억', '공간 기억력 훈련', '위치 순서 기억', '코시 블록 검사'],
   alternates: {
     canonical: "https://skilldrills.online/ko/drills/memory/spatial-memory/path-tracing",
     languages: getAlternateLanguages('/drills/memory/spatial-memory/path-tracing', 'ko'),
@@ -17,8 +17,8 @@ export const metadata = {
     follow: true,
   },
   openGraph: {
-    title: "순서 기억 테스트 (패스 트레이싱) - 무료 인지 훈련 | SkillDrills",
-    description: "무료 온라인 순서 기억 테스트 (코시 블록 검사 / Path Tracing). 점등되는 타일의 이동 궤적을 순간 기억하고 동일한 순서로 되짚어 공간 순서 기억력과 코시 블록 작업기억 스팬을 측정하세요. 회원가입 불필요.",
+    title: "코르시 블록 검사 | 공간 기억력 테스트",
+    description: "빛나는 블록의 위치와 순서를 기억해 같은 순서로 누르세요. 무료 시공간 작업기억 브라우저 과제입니다.",
     url: "https://skilldrills.online/ko/drills/memory/spatial-memory/path-tracing",
     siteName: 'SkillDrills',
     locale: 'ko_KR',
@@ -26,8 +26,8 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: "순서 기억 테스트 (패스 트레이싱) - 무료 인지 훈련 | SkillDrills",
-    description: "무료 온라인 순서 기억 테스트 (코시 블록 검사 / Path Tracing). 점등되는 타일의 이동 궤적을 순간 기억하고 동일한 순서로 되짚어 공간 순서 기억력과 코시 블록 작업기억 스팬을 측정하세요. 회원가입 불필요.",
+    title: "코르시 블록 검사 | 공간 기억력 테스트",
+    description: "빛나는 블록의 위치와 순서를 기억해 같은 순서로 누르세요. 무료 시공간 작업기억 브라우저 과제입니다.",
   },
 };
 
@@ -73,7 +73,8 @@ export default function LocalizedPathTracingPage() {
     "applicationCategory": "GameApplication",
     "operatingSystem": "All",
     "isAccessibleForFree": true,
-    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+    "sameAs": ["https://www.jiraksil.com/service/corsi", "https://www.e-sciencecentral.org/articles/SC000021441"]
   };
 
   const videoGameSchema = {
@@ -311,23 +312,23 @@ export default function LocalizedPathTracingPage() {
     sources: pickSources('corsi1972', 'milner1971', 'logie1995', 'cowan2001', 'baddeley2000', 'miller1956', 'simon1974', 'kessels2000', 'woods2015'),
     related: [
       {
-            "href": "/drills/memory/spatial-memory/grid-memorization",
+            "href": "/ko/drills/memory/spatial-memory/grid-memorization",
             "label": "순간 기억 테스트 (Visual Memory)"
       },
       {
-            "href": "/drills/memory/spatial-memory/object-location",
+            "href": "/ko/drills/memory/spatial-memory/object-location",
             "label": "공간 기억력 테스트 (Object Location Test)"
       },
       {
-            "href": "/drills/memory/short-term-memory/digit-span",
+            "href": "/ko/drills/memory/short-term-memory/digit-span",
             "label": "숫자 기억력 테스트 (Digit Span)"
       },
       {
-            "href": "/drills/memory/short-term-memory/word-recall",
+            "href": "/ko/drills/memory/short-term-memory/word-recall",
             "label": "단어 기억력 테스트 (Verbal Memory)"
       },
       {
-            "href": "/drills/memory/working-memory/n-back",
+            "href": "/ko/drills/memory/working-memory/n-back",
             "label": "n백 테스트 (Dual N-Back)"
       }
 ]
@@ -361,16 +362,16 @@ export default function LocalizedPathTracingPage() {
       />
       <PathTracingClient
         copy={{
-        "h1Keyword": "순서 기억 테스트",
-        "h1Suffix": " (패스 트레이싱)",
-        "subtitle": "공간 스팬은 순서대로 정확하게 재현할 수 있는 가장 긴 위치 이동 시퀀스입니다. 신경심리학 표준 평가인 코시 블록 검사에서 정상 성인의 평균 스팬은 약 5~7단계이며(Milner, 1971; Corsi, 1972), 언어성 숫자 기억과는 다른 뇌의 공간 루프를 활용합니다(Logie, 1995).",
+        "h1Keyword": "코르시 블록 검사",
+        "h1Suffix": " 순서 기억력 테스트",
+        "subtitle": "빛나는 블록의 위치와 순서를 기억해 같은 순서로 누르기.",
         "statScore": "점수",
         "statTime": "남은 시간",
         "statLevel": "레벨",
         "statBestScore": "최고 점수",
         "levelPrefix": "Lv.",
         "startTitle": "순서 기억 Pro",
-        "startSubtitle": "공간 순서 기억 • 코시 블록 경로 회상",
+        "startSubtitle": "시공간 기억력 • 코르시 블록",
         "countdownSubtitle": "준비하세요",
         "newBest": "최고 기록 달성",
         "pointsLabel": "포인트",

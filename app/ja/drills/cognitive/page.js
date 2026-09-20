@@ -6,18 +6,17 @@ import { getLocalizedDrill } from '@/lib/i18n/drillNames';
 const cognitiveDrills = DRILLS.filter((d) => d.category === 'cognitive');
 
 export const metadata = {
-  title: '脳トレ・認知機能トレーニング – 無料の集中力・処理速度ドリル | SkillDrills',
-  description: 'ブラウザで今すぐできる無料の脳トレ・認知機能トレーニング。持続的集中力、情報処理速度、ストループ効果、シュルテテーブルなど8種類の科学的ドリル。',
+  title: '無料脳トレ・集中力テスト | SkillDrills',
+  description: '集中力、記憶力、反応速度、処理速度を鍛える無料脳トレ8種。ストループやシュルテ表をブラウザで今すぐ体験。',
   keywords: [
-    '脳トレ 無料 ゲーム', '認知機能 トレーニング', '集中力 トレーニング オンライン',
-    '情報処理速度 テスト', '注意散漫 改善 トレーニング', 'シュルテテーブル 無料',
-    'ストループ効果 テスト', '注意分割機能 検査', 'ワーキングメモリ 鍛える',
-    '前頭前野 活性化 トレーニング', '大人の発達障害 集中力 改善', 'マルチタスク 脳トレ',
-    'eスポーツ 認知能力 向上', '動体認知 反応速度', '高齢者 認知症予防 ゲーム 無料'
+    '脳トレ', '脳トレ 無料', '集中力 テスト', '認知機能 トレーニング',
+    '記憶力 テスト', '反応速度 テスト', '処理速度 テスト', 'ストループテスト',
+    'シュルテテーブル', '注意力 トレーニング', 'ワーキングメモリ トレーニング',
+    '脳トレ ゲーム', '無料 脳トレ', '分割注意 トレーニング', '視覚探索 テスト'
   ],
   openGraph: {
-    title: '脳トレ・認知機能トレーニング – 無料の集中力・処理速度ドリル | SkillDrills',
-    description: 'ブラウザで今すぐできる無料の脳トレ・認知機能トレーニング。持続的集中力、情報処理速度、ストループ効果、シュルテテーブルなど8種類の科学的ドリル。',
+    title: '無料脳トレ・集中力テスト | SkillDrills',
+    description: '集中力、記憶力、反応速度、処理速度を鍛える無料脳トレ8種。ストループやシュルテ表をブラウザで今すぐ体験。',
     type: 'website',
     url: 'https://skilldrills.online/ja/drills/cognitive',
     siteName: 'SkillDrills',
@@ -26,8 +25,8 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: '脳トレ・認知機能トレーニング – 無料の集中力・処理速度ドリル | SkillDrills',
-    description: '持続的集中力、情報処理速度、ストループ効果、シュルテテーブルなど8種類の認知ドリルをブラウザで無料体験。',
+    title: '無料脳トレ・集中力テスト | SkillDrills',
+    description: '集中力、記憶力、反応速度を鍛える脳トレ8種をブラウザで無料体験できます。',
     images: ['https://skilldrills.online/icons/icon-512x512.png'],
   },
   robots: { index: true, follow: true },
@@ -50,6 +49,8 @@ const breadcrumbSchema = {
 const collectionSchema = {
   "@context": "https://schema.org",
   "@type": "CollectionPage",
+  "inLanguage": "ja-JP",
+  "dateModified": "2026-09-20",
   "name": "無料オンライン脳トレ & 認知機能トレーニングドリル一覧 (8 Drills)",
   "url": "https://skilldrills.online/ja/drills/cognitive",
   "description": "集中力持続、注意分割、情報処理速度、ストループ抑制制御、シュルテテーブルなど8種類の神経科学に基づく認知トレーニングを提供。",
@@ -67,6 +68,8 @@ const collectionSchema = {
 const faqSchema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
+  "inLanguage": "ja-JP",
+  "dateModified": "2026-09-20",
   "mainEntity": [
     {
       "@type": "Question",

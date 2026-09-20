@@ -2,17 +2,18 @@ import SymbolMatchingClient from '@/app/drills/cognitive/processing-speed/symbol
 import { getAlternateLanguages } from '@/lib/i18n/locales';
 import DrillGuide from '@/components/drill/DrillGuide';
 import RelatedDrills from '@/components/drill/RelatedDrills';
+import DrillFooter from '@/components/drill/DrillFooter';
 import { pickSources } from '@/lib/drillSources';
 
 export const metadata = {
-  title: "Symbol-Digit-Modalities-Test – SDMT Online | SkillDrills",
-  description: "Kostenloser Symbol Digit Modalities Test (SDMT): Teste deine kognitive Verarbeitungsgeschwindigkeit und visuelle Scanning-Effizienz ohne Registrierung.",
+  title: "Zahlen-Symbol-Test | SDMT-Training zur Verarbeitungsgeschwindigkeit | SkillDrills",
+  description: "Kostenloser Zahlen-Symbol-Test im Browser: Übe Symbol-Ziffern-Zuordnung und visuelle Suche. SDMT-inspiriertes Training, kein klinischer Test.",
   keywords: ["Symbol Digit Modalities Test", "Informationsverarbeitungsgeschwindigkeit Test", "Symbol Ziffern Zuordnung", "SDMT Test Online", "DSST Test Kostenlos", "Visuelles Scanning Test", "Kognitives Tempo Messen", "Assoziatives Gedachtnis Test", "Gehirntraining Symbole", "Verarbeitungsgeschwindigkeit Gehirn",
     "sdmt online kostenlos",
     "informationsverarbeitung test"],
   openGraph: {
-    title: "Symbol-Digit-Modalities-Test – SDMT Online | SkillDrills",
-    description: "Kostenloser Symbol Digit Modalities Test (SDMT): Teste deine kognitive Verarbeitungsgeschwindigkeit und visuelle Scanning-Effizienz ohne Registrierung.",
+    title: "Zahlen-Symbol-Test | SDMT-Training zur Verarbeitungsgeschwindigkeit | SkillDrills",
+    description: "Kostenloser Zahlen-Symbol-Test im Browser: Übe Symbol-Ziffern-Zuordnung und visuelle Suche. SDMT-inspiriertes Training, kein klinischer Test.",
     type: 'article',
     url: 'https://skilldrills.online/de/drills/cognitive/processing-speed/symbol-matching',
     siteName: 'SkillDrills',
@@ -20,8 +21,8 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: "Symbol-Digit-Modalities-Test – SDMT Online | SkillDrills",
-    description: "Kostenloser Symbol Digit Modalities Test (SDMT): Teste deine kognitive Verarbeitungsgeschwindigkeit und visuelle Scanning-Effizienz ohne Registrierung.",
+    title: "Zahlen-Symbol-Test | SDMT-Training zur Verarbeitungsgeschwindigkeit | SkillDrills",
+    description: "Kostenloser Zahlen-Symbol-Test im Browser: Übe Symbol-Ziffern-Zuordnung und visuelle Suche. SDMT-inspiriertes Training, kein klinischer Test.",
   },
   robots: { index: true, follow: true },
   alternates: {
@@ -80,7 +81,7 @@ const softwareApplicationSchema = {
     "url": "https://skilldrills.online"
   },
   "inLanguage": "de-DE",
-  "dateModified": "2026-09-11"
+  "dateModified": "2026-09-20"
 };
 
 const webApplicationSchema = {
@@ -97,7 +98,7 @@ const webApplicationSchema = {
   },
   "url": "https://skilldrills.online/de/drills/cognitive/processing-speed/symbol-matching",
   "inLanguage": "de-DE",
-  "dateModified": "2026-09-11"
+  "dateModified": "2026-09-20"
 };
 
 const videoGameSchema = {
@@ -117,6 +118,7 @@ const videoGameSchema = {
     "Mobile"
   ],
   "applicationCategory": "Game",
+  "dateModified": "2026-09-20",
   "offers": {
     "@type": "Offer",
     "price": "0",
@@ -315,11 +317,38 @@ export default function LocalizedCognitivePage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(howToSchema) }}
       />
-      <SymbolMatchingClient copy={{ title: "Symbol Digit Modalities Test – Informationsverarbeitung Speed" }} />
+      <SymbolMatchingClient
+        copy={{
+          title: "Zahlen-Symbol-Test",
+          subtitle: "Symbol-Ziffern-Zuordnungen schnell erkennen und Verarbeitungsgeschwindigkeit trainieren",
+          startTitle: "Symbol-Ziffern-Zuordnung",
+          stageCaption: "Vergleiche das Zielsymbol mit der Schlüsselzeile und klicke die passende Ziffer.",
+          rulesTitle: "Drill-Anleitung und Punktesystem",
+          aboutTitle: "Was ist der Zahlen-Symbol-Test?",
+          faqTitle: "Häufige Fragen",
+          readyLabel: "BEREIT",
+          labels: { score: "Punkte", time: "Zeit", level: "Stufe", bestScore: "Bestwert", timeLeft: "Restzeit", targetSymbol: "Zielsymbol", accuracy: "Genauigkeit", hits: "Treffer", misses: "Fehler", peakLevel: "Höchststufe" },
+          aboutLead: "Bei einer Symbol-Ziffern-Aufgabe ordnest du unter Zeitdruck Zeichen und Zahlen zu. Dadurch trainierst du Verarbeitungsgeschwindigkeit und visuelle Suche, nicht Fachwissen. Dieser Drill ist ein Übungsspiel und kein klinisches Verfahren.",
+          aboutText: "Der Drill orientiert sich am Zuordnungsformat von SDMT und DSST. Du prüfst die Schlüsselzeile und wählst die passende Ziffer zum Zielsymbol. Wiederholte Durchgänge trainieren visuelle Suche, assoziatives Gedächtnis und Reaktionsauswahl. Der Score beschreibt nur diese Spielaufgabe und ist keine medizinische Diagnose.",
+          aboutCards: [
+            { title: "Für wen ist das sinnvoll?", desc: "Für Studierende, Berufstätige und Gamer, die Verarbeitungsgeschwindigkeit und visuelle Suche gezielt üben möchten." },
+            { title: "Welche Fähigkeiten werden trainiert?", desc: "Visuelle Suche, Symbol-Ziffern-Gedächtnis, Auswahlreaktion und anhaltende Aufmerksamkeit bei Wiederholungen." },
+            { title: "Schlüssel wechselt", desc: "Die Symbol-Ziffern-Zuordnung ändert sich pro Sitzung und belohnt aktives Nachschlagen statt reines Auswendiglernen." }
+          ],
+          rulesItems: [
+            { num: "1", text: "Symbol-Ziffern-Schlüssel", highlight: "6 Zuordnungen", result: "Ziffern oben nachsehen" },
+            { num: "2", text: "Zielsymbol", highlight: "+100 Punkte", result: "Combo- und Stufenmultiplikator" },
+            { num: "3", text: "Falsche Ziffer", highlight: "Combo zurücksetzen", result: "Bei aktivem Strafmodus Zeitverlust" },
+            { num: "4", text: "Serie und Strafe", highlight: "Timeouts·Fehltipps", result: "Aktiv: −0,8 Sekunden" }
+          ],
+          faqItems: faqSchema.mainEntity.map((e) => ({ q: e.name, a: e.acceptedAnswer.text }))
+        }}
+      />
       <DrillGuide {...guideProps} />
       <div className="max-w-6xl mx-auto px-4 pb-12">
         <RelatedDrills currentCategory="cognitive" currentHref="https://skilldrills.online/de/drills/cognitive/processing-speed/symbol-matching" />
       </div>
+      <DrillFooter />
     </>
   );
 }

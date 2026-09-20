@@ -661,10 +661,8 @@ export default function TracingClient({ copy } = {}) {
           <div className="flex flex-col gap-1">
             <h1 className="text-2xl sm:text-3xl font-black tracking-tight text-white">
               <span data-seo-kw="1">{copy?.title || "Mouse Tracing Game"}</span>
+              <span className="block text-sm font-semibold text-slate-400 mt-1">{copy?.subtitle || "Mouse tracing accuracy drill for following a moving path, improving cursor control, and building steady hand precision"}</span>
             </h1>
-            <p className="text-[13px] text-slate-400 leading-relaxed">
-              {copy?.description || "A mouse tracing game asks you to keep the cursor on a path that keeps moving, which measures continuous tracking rather than one-off accuracy. The eye follows a smoothly moving target accurately up to roughly 30°/s; past that it falls behind and has to catch up with saccades (Krauzlis, 2004; Rashbass, 1961), and the hand can only stay on a line the eye is still tracking. The path itself is a Steering Law corridor: time to stay inside it scales with its length divided by its width (Accot & Zhai, 1997)."}
-            </p>
           </div>
         )}
 
@@ -697,7 +695,7 @@ export default function TracingClient({ copy } = {}) {
         {/* Game Stage Container */}
         <div 
           ref={containerRef} 
-          className={`overflow-hidden flex flex-col transition-all duration-150 select-none bg-[#080811] text-white ${
+          className={`overflow-hidden flex flex-col select-none bg-[#080811] text-white ${
             isFullscreen
               ? 'fixed inset-0 z-[100] w-screen h-[100dvh] bg-[#050508] flex flex-col items-center justify-center'
               : 'w-full rounded-2xl aspect-video min-h-[460px] md:min-h-[500px] max-h-[88vh] max-md:portrait:aspect-[3/4] max-md:portrait:min-h-[420px] max-md:portrait:max-h-[76vh] max-md:landscape:min-h-[340px] max-md:landscape:max-h-[85vh] bg-[#080811] border border-white/10 relative overflow-hidden flex flex-col'
@@ -841,7 +839,7 @@ export default function TracingClient({ copy } = {}) {
                     {copy?.aboutP1 || "The Mouse Tracing Game develops dynamic hand-eye coordination, fine motor path precision, and smooth pursuit visual tracking. By challenging you to guide your cursor along a continuously scrolling sinusoidal wave filament with a 22px tolerance band, it isolates the micro-stabilizing muscles in your wrist and forearm required for fluid tracking in tactical shooters and digital illustration."}
                   </p>
                   <p className="text-sm leading-relaxed text-gray-300">
-                    {copy?.aboutP2 || "Grounded in Johnny Accot & Shumin Zhai's (1997) Steering Law, dynamic trajectory navigation requires continuous velocity modulation. As scroll speed accelerates from 2.2 to 3.8+ px/frame over 45 seconds, the drill engages Robert Woodworth's (1899) closed-loop current control mechanism, demanding continuous visual-motor error correction and smooth pursuit eye movements (Krauzlis 2004, Rashbass 1961) to sustain peak flow integrity."}
+                    {copy?.aboutP2 || "Grounded in Johnny Accot & Shumin Zhai's (1997) Steering Law, dynamic trajectory navigation requires continuous velocity modulation. As scroll speed accelerates from 2.2 to 3.8+ px/frame over 45 seconds, the drill engages Robert Woodworth's (1899) closed-loop current control mechanism, demanding continuous visual-motor error correction and smooth pursuit eye movements (Krauzlis 2004, Rashbass 1961) to sustain peak flow integrity. The eye follows a smoothly moving target accurately up to roughly 30°/s; past that it falls behind and has to catch up with saccades (Krauzlis, 2004; Rashbass, 1961), and the hand can only stay on a line the eye is still tracking. The path itself is a Steering Law corridor: time to stay inside it scales with its length divided by its width (Accot & Zhai, 1997)."}
                   </p>
                 </div>
 

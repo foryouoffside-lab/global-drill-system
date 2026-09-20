@@ -1,5 +1,6 @@
 import InfinityPursuitClient from '@/app/drills/visual-tracking/infinity-pursuit/InfinityPursuitClientLoader';
 import DrillGuide from '@/components/drill/DrillGuide';
+import DrillFooter from '@/components/drill/DrillFooter';
 import RelatedDrills from '@/components/drill/RelatedDrills';
 import { getAlternateLanguages } from '@/lib/i18n/locales';
 import { pickSources } from '@/lib/drillSources';
@@ -14,25 +15,25 @@ import { pickSources } from '@/lib/drillSources';
 // ============================================================
 
 export const metadata = {
-  title: "8자 안구 운동 훈련・인피니티 시각 추적 – 정중선 교차 원활추종 | SkillDrills",
-  description: "베르누이 렘니스케이트(8자 무한 궤적)를 따라 시선을 매끄럽게 회전시켜 6개 외안근의 복합 연동과 정중선 교차 시 양안 협응력을 극대화하는 비전트레이닝. 무료・무설치.",
+  title: "8자 안구 운동 훈련 | SkillDrills",
+  description: "움직이는 8자 표적을 두 눈으로 따라가며 시선 추적과 정중선 통과를 연습하는 무료 안구 운동 훈련입니다.",
   keywords: [
-    "8자 안구 운동",
-    "8자 눈 운동",
-    "양안 협응 운동",
-    "정중선 교차 안구 훈련",
-    "비전트레이닝 8자 운동",
-    "원활추종 8자 검사",
-    "외안근 복합 훈련",
-    "동체시력 8자 트레이닝",
-    "사선 시선 이동 훈련",
-    "베르누이 렘니스케이트 추적",
-    "시선 떨림 교정",
-    "눈 피로 8자 운동"
+    "8자 안구 운동 훈련",
+    "무한대 눈 운동",
+    "시선 추적 안구 운동",
+    "안구 운동 훈련",
+    "정중선 교차",
+    "양안 협응",
+    "동체시력 8자",
+    "8자 비전트레이닝",
+    "추종 안구 운동",
+    "시선 튐 억제",
+    "눈으로 8자 그리기",
+    "무료 시선 추적 연습"
   ],
   openGraph: {
-    title: "8자 안구 운동 훈련・인피니티 시각 추적 – 정중선 교차 원활추종 | SkillDrills",
-    description: "베르누이 렘니스케이트(8자 무한 궤적)를 따라 시선을 매끄럽게 회전시켜 6개 외안근의 복합 연동과 정중선 교차 시 양안 협응력을 극대화하는 비전트레이닝.",
+    title: "8자 안구 운동 훈련 | SkillDrills",
+    description: "움직이는 8자 표적을 두 눈으로 따라가며 시선 추적과 정중선 통과를 연습하는 무료 안구 운동 훈련입니다.",
     type: "website",
     url: "https://skilldrills.online/ko/drills/visual-tracking/infinity-pursuit",
     siteName: "SkillDrills",
@@ -40,8 +41,8 @@ export const metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "8자 안구 운동 훈련・인피니티 시각 추적 – 정중선 교차 원활추종 | SkillDrills",
-    description: "8자 무한 궤적을 매끄럽게 추적하며 정중선 교차 시 시선 튐을 억제하고 양안 협응성을 단련하는 무료 온라인 안구 훈련.",
+    title: "8자 시선 추적 훈련 | SkillDrills",
+    description: "8자 궤적을 따라가며 중앙을 지날 때 시선의 흔들림을 관찰하는 무료 온라인 훈련입니다.",
   },
   robots: { index: true, follow: true },
   alternates: {
@@ -66,13 +67,13 @@ const softwareApplicationSchema = {
   "@type": "SoftwareApplication",
   "name": "8자 안구 운동 훈련・인피니티 시각 추적 테스트",
   "applicationCategory": "HealthApplication",
-  "operatingSystem": "All",
+  "operatingSystem": "브라우저",
   "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
   "description": "베르누이 렘니스케이트(8자 무한 궤적)를 따라 6개 외안근을 복합 연동시키며 정중선 교차와 양안 협응성을 극대화하는 무료 비전트레이닝 도구.",
   "url": "https://skilldrills.online/ko/drills/visual-tracking/infinity-pursuit",
   "publisher": { "@type": "Organization", "name": "SkillDrills", "url": "https://skilldrills.online/ko" },
   "inLanguage": "ko",
-  "dateModified": "2026-09-15"
+  "dateModified": "2026-09-20"
 };
 
 const webAppSchema = {
@@ -80,12 +81,12 @@ const webAppSchema = {
   "@type": "WebApplication",
   "name": "8자 안구 운동 훈련・인피니티 시각 추적 테스트 – 양안 협응 & 정중선 교차 원활추종 | SkillDrills",
   "applicationCategory": "EducationalApplication",
-  "operatingSystem": "All",
+  "operatingSystem": "브라우저",
   "browserRequirements": "HTML5 Canvas 지원 브라우저 (Chrome, Edge, Firefox, Safari)",
   "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
   "url": "https://skilldrills.online/ko/drills/visual-tracking/infinity-pursuit",
   "inLanguage": "ko",
-  "dateModified": "2026-09-15"
+  "dateModified": "2026-09-20"
 };
 
 const videoGameSchema = {
@@ -94,8 +95,9 @@ const videoGameSchema = {
   "name": "8자 안구 운동 훈련・인피니티 시각 추적 테스트",
   "url": "https://skilldrills.online/ko/drills/visual-tracking/infinity-pursuit",
   "description": "8자 렘니스케이트 궤도 위를 연속 이동하는 표적을 중심와로 포착하여 원활추종 안구운동과 정중선 교차 능력을 측정하고 강화하는 아이 트래킹 게임.",
-  "genre": ["Action", "Brain Game", "Eye Tracking", "Vision Training"],
-  "gamePlatform": ["Web Browser", "Desktop", "Mobile"],
+  "genre": ["안구 운동 훈련", "스포츠 시각 훈련", "시선 추적"],
+  "gamePlatform": ["브라우저"],
+  "dateModified": "2026-09-20",
   "applicationCategory": "Game",
   "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
 };
@@ -103,6 +105,7 @@ const videoGameSchema = {
 const howToSchema = {
   "@context": "https://schema.org",
   "@type": "HowTo",
+  "dateModified": "2026-09-20",
   "name": "8자 안구 운동 훈련 측정 및 실천 4단계 가이드",
   "description": "베르누이 렘니스케이트 궤적을 활용하여 양안 협응력과 정중선 교차 추적 능력을 체계적으로 향상시키는 훈련 절차.",
   "step": [
@@ -140,6 +143,7 @@ const howToSchema = {
 const faqSchema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
+  "dateModified": "2026-09-20",
   "mainEntity": [
     {
       "@type": "Question",
@@ -159,10 +163,10 @@ const faqSchema = {
     },
     {
       "@type": "Question",
-      "name": "'정중선 교차(Midline Crossing)' 시 시선이 튀거나 불안정해지는 이유는 무엇인가요?",
+      "name": "정중선을 지날 때 시선이 튀거나 불안정해지는 이유는 무엇인가요?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "시선이 시야 중앙(신체 정중선)을 가로지를 때, 망막 신호를 담당하는 대뇌 반구의 주도권이 좌반구에서 우반구(또는 반대)로 전환됩니다. 뇌량(Corpus Callosum)을 통한 양측 반구 간 정보 교환에 미세한 지연이나 병목이 발생하면 부드러운 원활추종(Smooth Pursuit)이 순간 단절되고, 뒤처진 시선을 급격히 당겨오려는 무의식적 도약 안구운동(보정 사케드)이 발생합니다. 이 정중선을 부드럽게 통과하도록 훈련하는 것이 본 운동의 핵심입니다."
+        "text": "시선이 시야 중앙을 가로지를 때 표적이 좌우 시야 사이를 이동합니다. 이 구간에서 표적을 놓치거나 시선이 튀는지 관찰하면 어느 부분이 어려운지 알 수 있습니다. 이 기록은 훈련 관찰이며 진단 결과가 아닙니다."
       }
     },
     {
@@ -227,14 +231,14 @@ const faqSchema = {
 const guideProps = {
   heading: "8자 안구 운동・인피니티 시각 추적의 신경안과학 기준",
   intro: [
-    "스위스의 수학자 야코프 베르누이가 고안한 렘니스케이트(Lemniscate) 곡선은 단일 평면상에서 곡률과 회전 방향이 끊김 없이 매끄럽게 교차하는 무한 루프(∞) 궤적을 이룹니다. 인간의 시각 운동 체계에서 이 8자 경로를 두부 회전 없이 순수 안구운동만으로 완벽하게 추종하는 행위는, 내직근·외직근(수평 회전), 상직근·하직근(수직 승강), 상사근·하사근(외회선 및 내회선) 등 총 6쌍의 외안근이 각도에 따라 미세하게 장력을 배분하는 극도로 정교한 신경근 협응을 요구합니다(Robinson, 1965). 대뇌 측두두정후두엽(MT/MST 영역)에서 추출된 표적의 순간 벡터 신호는 전두안야(FEF) 및 소뇌 편엽·방편엽으로 즉각 전송되어, 망막 중심와에 맺히는 상의 미끄러짐(Retinal Slip)을 0으로 수렴시키는 원활추종(Smooth Pursuit) 안구운동을 실시간으로 발현시킵니다.",
-    "8자 궤도 추종의 핵심적인 신경학적 관문은 좌우 타원형 루프가 교차하는 '신체 중심선(Visual Midline)'을 관통하는 찰나에 발생합니다. 시선이 좌측 시야에서 우측 시야로(또는 그 반대로) 이동할 때, 망막 수용기에서 신호를 전달받는 주요 대뇌 피질 반구가 반대편으로 급격하게 교대됩니다(Leigh & Zee, 2015). 양측 대뇌 반구를 잇는 뇌량(Corpus Callosum)을 통한 신경 정보 전이에 미세한 지연이나 잡음이 개입되면 매끄럽던 원활추종이 끊어지며, 목표물을 놓치지 않으려는 무의식적 급속 안구운동인 '보정 사케드(Catch-up Saccade)'가 혼입됩니다. 본 드릴을 통해 정중선 통과 시의 추종 게인을 유지하는 반복 훈련을 지속하면 뇌량의 정보 교환 효율이 강화되어 중심 시야에서의 불필요한 시선 떨림과 읽기 단절 현상이 근본적으로 교정됩니다.",
-    "단순한 등속 원운동과 달리 8자 렘니스케이트 궤적은 외곽의 완만한 선회부에서 중앙 교차점으로 진입함에 따라 동경 벡터와 곡률 반경이 급격하게 축소되며 가속도를 동반합니다. 이와 같은 변동 궤적을 뚝뚝 끊김 없이 부드럽게 추종하려면, 뇌의 소뇌 내부 물리 모델이 표적의 물리적 운동 방정식을 사전에 연산하여 안구 회전 속도를 선제적으로 가감속시키는 '예측적 추종 게인 제어(Predictive Pursuit Control)'가 필수적입니다(Barnes, 2008). 표적의 현재 위치에만 사후 반응하는 폐루프 피드백 제어는 100~130밀리초에 달하는 신경계 전달 지연으로 인해 반드시 시선 이탈을 초래하지만, 8자 궤적을 반복 순환하면서 소뇌의 전방 예측 모델(Forward Internal Model)이 완성되면 지연 없는 완전한 중심와 밀착이 가능해집니다(Krauzlis, 2004).",
-    "8자 안구 운동은 신경안과학 및 비전트레이닝 분야에서 양안시 이상, 사시 교정 후 기능 회복, 난독증 치료에 오랜 세월 검증되어 온 핵심 훈련 프로토콜입니다. 최근에는 에이펙스 레전드, 오버워치 등 하이퍼 FPS 게임의 최상위 프로게이머들이 대각선 점프나 슬라이딩 기동을 펼치는 적을 놓치지 않고 조준선을 밀착시키는 '트래킹 에임 기초 훈련'으로 광범위하게 활용하고 있습니다. 또한 하루 종일 고정된 화면과 텍스트를 응시하는 현대 직장인들에게 8자 궤적의 전방위 안구 회전은 굳어진 외안근의 혈류 순환을 촉진하고 조절성 긴장을 해소하여 모니터 증후군(VDT)에 수반되는 눈 시림과 두통을 경감시키는 탁월한 회복 운동 역할을 수행합니다(Woods et al., 2015)."
+    "8자, 즉 베르누이 렘니스케이트는 좌우 곡선과 중앙 교차를 하나의 궤도로 묶은 형태입니다. 움직이는 표적을 눈으로 따라가면 수평·수직·사선 방향의 시선 이동이 이어집니다. 이 페이지는 그 움직임을 연습하는 도구이며 눈 질환을 검사하거나 치료하는 기기가 아닙니다.",
+    "좌우 고리가 만나는 중앙에서는 시선이 왼쪽과 오른쪽 시야를 오갑니다. 표적을 놓치거나 시선이 작게 튀거나 중앙에서 멈추는지 관찰하면 같은 조건에서 어려운 구간을 비교할 수 있습니다. 이 기록은 훈련 관찰이며 진단 결과가 아닙니다.",
+    "움직임의 편안함은 화면 거리, 표적 크기, 표시의 부드러움과 피로에 따라 달라집니다. 속도보다 편안한 추적을 우선하고 자연스럽게 눈을 깜박이세요. 통증, 복시, 메스꺼움 또는 어지러움이 생기면 중단하고 증상이 계속되면 전문가에게 상담하세요.",
+    "독서나 스포츠 수행의 향상을 일괄적으로 약속할 수는 없습니다. 이 페이지는 움직이는 표적에 대한 시선 추적을 짧게 연습하고 같은 조건에서 기록을 돌아보도록 설계되었습니다."
   ],
   benchmarks: {
-    title: "8자 안구 운동・인피니티 추적 성능 지표 (Lemniscate Pursuit Benchmarks)",
-    headers: ["숙련도 등급", "추종 게인 (Pursuit Gain)", "정중선 사케드 침범률", "궤적 추종 효율 (Trajectory Efficiency)", "신경생리학적 도달 수준"],
+  title: "8자 안구 운동・시선 추적 성능 지표",
+    headers: ["숙련도", "표적 추적", "중앙에서의 시선 이탈", "궤적 정확도", "실용적 해석"],
     rows: [
       ["엘리트 (프로 선수급)", "0.96 ～ 1.02", "2% 미만 (완전 평활)", "98% 이상", "전체 외안근의 완벽한 협응. 정중선 교차 시에도 사케드 간섭이 전혀 없으며 소뇌 내부 예측 모델이 완전 동기화"],
       ["상급 (랭커 게이머급)", "0.90 ～ 0.95", "2% ～ 5%", "92% ～ 97%", "우수한 원활추종 안정성. 급격한 곡률 변화 구간에서 미세한 위상 지연만 관측되며 중심와 고정 유지"],
@@ -248,22 +252,22 @@ const guideProps = {
     title: "8자 무한 궤적 추종 게인과 정중선 교차를 극대화하는 4대 테크닉",
     items: [
       {
-        name: "두부 고정 및 순수 안구 회전 격리 (Cervical Stabilization & Ocular Isolation)",
+        name: "머리를 안정시키고 눈으로만 따라가기",
         desc: "턱밑에 손가락을 가볍게 받쳐 머리가 미세하게도 회전하지 않음을 확인하며 오직 안구 근육만으로 시선을 움직이세요. 경추 회전을 완벽히 차단해야 전정안반사(VOR)의 개입 없이 순수 대뇌-소뇌-외안근 신경 회로만 집중 단련됩니다.",
         tips: "목덜미와 어깨의 긴장을 풀고 모니터 중앙과 코끝을 잇는 가상의 중심축을 단단히 고정하세요."
       },
       {
-        name: "중앙 교차 노드(정중선) 진입 전 선제적 속도 적응 (Anticipatory Speed Modulation)",
+        name: "중앙 교차 전에 속도 조절하기",
         desc: "8자의 중앙 교차점에 다다를 때 표적은 가속도를 동반하여 진입합니다. 표적이 중심점에 도달하기 약 50밀리초 전부터 시선을 교차점의 수 픽셀 앞쪽으로 부드럽게 흘려보내는 느낌을 유지하여 뇌량 전이 지연을 선제적으로 상쇄하세요.",
         tips: "중심을 지나는 순간 '응시'하려 힘주지 말고 시선이 자연스럽게 미끄러지도록 유도하면 사케드가 사라집니다."
       },
       {
-        name: "외측 루프 정점에서의 최대 반경 주파 (Full Radial Extension at Loop Apices)",
+        name: "바깥 고리까지 빠짐없이 따라가기",
         desc: "바깥쪽 선회 구간에서는 진행 방향이 180도 역전되므로 시선이 지름길을 찾아 안쪽으로 가로지르려는 유혹에 빠지기 쉽습니다. 표적의 바깥쪽 외곽선까지 시선 중심와를 끝까지 밀착시키며 상사근과 하사근이 최대 가동 반경까지 늘어나는 감각을 유지하세요.",
         tips: "선회부 끝점에서 시선이 먼저 질러가지 않도록 타깃의 중심핵에 끝까지 시선을 묶어두세요."
       },
       {
-        name: "속도 사다리 점증법 및 20-20-20 휴식 관리 (Velocity Ladder & Recovery Protocol)",
+        name: "속도를 단계적으로 올리고 쉬기",
         desc: "처음부터 고속(3.0x 이상)으로 훈련하면 안구가 표적을 놓쳐 사케드로 점프하게 되고, 잘못된 신경 습관이 고착됩니다. 1.0x 속도에서 60초간 시선 단절이 0회인 세션을 먼저 완성한 뒤 0.2x씩 속도를 올리세요. 세션 후에는 먼 곳을 20초간 바라보며 외안근의 긴장을 푸세요.",
         tips: "눈이 뻑뻑해지면 무리하게 참지 말고 의식적으로 깜빡여 각막 표면의 눈물층을 유지하세요."
       }
@@ -283,12 +287,12 @@ const guideProps = {
   })),
   sources: pickSources('robinson1965', 'leigh2015', 'barnes2008', 'krauzlis2004', 'woods2015'),
   related: [
-    { href: "/ko/drills/visual-tracking/constant-slow-pursuit", label: "저속 안구 운동 훈련 (Constant Slow)" },
-    { href: "/ko/drills/visual-tracking/directional-chaos-pursuit", label: "카오스 방향 전환 추적 (Directional Chaos)" },
-    { href: "/ko/drills/visual-tracking/dynamic-evasion-pursuit", label: "회피 표적 추적 훈련 (Dynamic Evasion)" },
-    { href: "/ko/drills/visual-tracking/ghosting-suppress-pursuit", label: "잔상 억제 시선 고정 훈련 (Ghosting Suppress)" },
-    { href: "/ko/drills/visual-tracking/sine-wave-pursuit", label: "사인파 안구 추적 훈련 (Sine Wave)" },
-    { href: "/ko/drills/visual-tracking/predictive-pursuit", label: "가림 구간 예측 추적 (Predictive)" }
+    { href: "/ko/drills/visual-tracking/constant-slow-pursuit", label: "저속 시선 추적 훈련" },
+    { href: "/ko/drills/visual-tracking/directional-chaos-pursuit", label: "방향 변화 시선 추적" },
+    { href: "/ko/drills/visual-tracking/dynamic-evasion-pursuit", label: "움직이는 표적 추적 훈련" },
+    { href: "/ko/drills/visual-tracking/ghosting-suppress-pursuit", label: "잔상 억제 시선 고정 훈련" },
+    { href: "/ko/drills/visual-tracking/sine-wave-pursuit", label: "사인파 시선 추적 훈련" },
+    { href: "/ko/drills/visual-tracking/predictive-pursuit", label: "가림 구간 예측 추적" }
   ]
 };
 
@@ -304,9 +308,9 @@ export default function KoreanInfinityPursuitPage() {
 
       <InfinityPursuitClient
         copy={{
-          title: "8자 안구 운동 훈련: 양안 협응과 정중선 교차 인피니티 시각 추적",
-          subtitle: "베르누이 렘니스케이트 궤적 기반 원활추종 안구운동 및 시지각 통합 비전트레이닝",
-          description: "베르누이 렘니스케이트(8자 무한 궤적)를 따라 시선을 매끄럽게 회전시켜 6개 외안근의 복합 연동과 정중선 교차 시 양안 협응력을 극대화하는 비전트레이닝. 수평·수직·사선 방향의 시선 이동에서 도약 안구운동(사케드) 오류를 최소화하고 중심와 고정력을 완성합니다(Robinson, 1965; Leigh & Zee, 2015). 무료・무설치."
+          title: "8자 안구 운동 훈련",
+          subtitle: "시선 추적과 정중선 통과 연습",
+          description: "8자 궤도를 움직이는 표적을 두 눈으로 따라가며 중앙을 지날 때 시선의 연속성을 연습합니다. 편안한 속도에서 기록을 비교하세요."
         }}
       />
 
@@ -315,6 +319,7 @@ export default function KoreanInfinityPursuitPage() {
       <div className="max-w-6xl mx-auto px-4 pb-12">
         <RelatedDrills currentCategory="visual-tracking" currentHref="https://skilldrills.online/ko/drills/visual-tracking/infinity-pursuit" />
       </div>
+      <DrillFooter />
     </>
   );
 }

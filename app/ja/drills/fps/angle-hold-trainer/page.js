@@ -7,10 +7,9 @@ import { pickSources } from '@/lib/drillSources';
 
 // ============================================================
 // SEO RESEARCH FINDINGS — ja-JP (fps / angle-hold-trainer)
-// PRIMARY DOMESTIC: "置きエイム"               — 699 exact / 1,586 broad searches/mo (Domestic #1 Winner)
-//                   "置きエイム 練習"          — 58 exact / 241 broad searches/mo
-//                   "valorant 置きエイム 練習" — 183 searches/mo
-//                   "valo 置きエイム練習"      — 103 searches/mo
+// PRIMARY DOMESTIC: "エイム練習"               — 1,526 exact / 1,933 broad searches/mo
+// ANGLE INTENT:     "置きエイム 練習"          — 28 exact / 210 broad searches/mo
+// AUTOCOMPLETE:     "置きエイム 練習サイト", "valorant 置きエイム 練習"
 // SECONDARY / LSI:
 //                   "プリエイム 練習"          — Pre-aim technique search
 //                   "クロスヘア 練習"          — Crosshair placement phrase
@@ -19,13 +18,16 @@ import { pickSources } from '@/lib/drillSources';
 //                   "ピークアドバンテージ"      — Peeker's advantage netcode concept
 //                   "ヘッドライン 合わせ方"    — Head level crosshair alignment
 // EXCLUDED BRANDS:  "okiaimx" (2,475/mo), "aimlab" (200/mo), "kovaaks" (333/mo)
-// WINNER TITLE:     置きエイム練習 – プリエイム・飛び出し反応速度トレーナー | SkillDrills
+// WINNER TITLE:     エイム練習 | 置きエイム・プリエイム | SkillDrills
 // ============================================================
 
 export const metadata = {
-  title: "置きエイム練習 – プリエイム・飛び出し反応速度トレーナー | SkillDrills",
-  description: "無料のオンライン置きエイム練習ツール。壁からの飛び出し（ピーク）に対する置き幅と初弾反応速度を測定・強化。アングルアドバンテージやピークアドバンテージを相殺するプリエイム技術をブラウザで即座に訓練。",
+  title: "エイム練習 | 置きエイム・プリエイム | SkillDrills",
+  description: "無料ブラウザのエイム練習で、角に置く幅と頭の高さを整え、敵の飛び出しへの初弾反応を測定します。",
   keywords: [
+    "エイム練習",
+    "エイム練習 ブラウザ",
+    "エイム練習 valorant",
     "置きエイム",
     "置きエイム 練習",
     "プリエイム",
@@ -33,11 +35,9 @@ export const metadata = {
     "置き幅 練習",
     "FPS 置きエイム",
     "valorant 置きエイム 練習",
-    "cs2 置きエイム 練習",
+    "置きエイム 練習サイト",
     "ピークアドバンテージ 対策",
-    "ヘッドライン 練習",
-    "反応速度 テスト fps",
-    "エイム練習 無料 ブラウザ"
+    "ヘッドライン 練習"
   ],
   alternates: {
     canonical: "https://skilldrills.online/ja/drills/fps/angle-hold-trainer",
@@ -48,8 +48,8 @@ export const metadata = {
     follow: true,
   },
   openGraph: {
-    title: "置きエイム練習 – プリエイム・飛び出し反応速度トレーナー | SkillDrills",
-    description: "無料のオンライン置きエイム練習ツール。壁からの飛び出しに対する置き幅と初弾反応速度を測定・強化。VALORANTやCS2のウォームアップに最適。",
+    title: "エイム練習 | 置きエイム・プリエイム | SkillDrills",
+    description: "無料ブラウザのエイム練習で、角に置く幅と頭の高さを整え、敵の飛び出しへの初弾反応を測定します。",
     url: "https://skilldrills.online/ja/drills/fps/angle-hold-trainer",
     siteName: 'SkillDrills',
     locale: 'ja_JP',
@@ -57,8 +57,8 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: "置きエイム練習 – プリエイム・飛び出し反応速度トレーナー | SkillDrills",
-    description: "無料のオンライン置きエイム練習ツール。壁からの飛び出しに対する置き幅と初弾反応速度を測定・強化。VALORANTやCS2のウォームアップに最適。",
+    title: "エイム練習 | 置きエイム・プリエイム | SkillDrills",
+    description: "無料ブラウザのエイム練習で、角に置く幅と頭の高さを整え、敵の飛び出しへの初弾反応を測定します。",
   },
 };
 
@@ -67,23 +67,23 @@ export default function JapaneseAngleHoldPage() {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
     "itemListElement": [
-      { "@type": "ListItem", "position": 1, "name": "SkillDrills", "item": "https://skilldrills.online/" },
+      { "@type": "ListItem", "position": 1, "name": "SkillDrills", "item": "https://skilldrills.online/ja" },
       { "@type": "ListItem", "position": 2, "name": "FPSドリル", "item": "https://skilldrills.online/ja/drills/fps" },
-      { "@type": "ListItem", "position": 3, "name": "置きエイム練習", "item": "https://skilldrills.online/ja/drills/fps/angle-hold-trainer" }
+      { "@type": "ListItem", "position": 3, "name": "エイム練習 - 置きエイム", "item": "https://skilldrills.online/ja/drills/fps/angle-hold-trainer" }
     ]
   };
 
   const softwareSchema = {
     "@context": "https://schema.org",
     "@type": "SoftwareApplication",
-    "name": "置きエイム練習 (Angle Hold Pro)",
+    "name": "エイム練習 - 置きエイム",
     "applicationCategory": "GameApplication",
     "operatingSystem": "Web Browser",
     "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
     "description": "壁角からの敵の飛び出しに対するプリエイム規律、適切な置き幅、防衛アングル保持反応速度を訓練する無料ブラウザFPSエイムトレーナー。",
     "genre": "FPS Training / Crosshair Placement",
     "url": "https://skilldrills.online/ja/drills/fps/angle-hold-trainer",
-    "dateModified": "2026-09-11",
+    "dateModified": "2026-09-20",
     "publisher": {
       "@type": "Organization",
       "name": "SkillDrills",
@@ -94,19 +94,19 @@ export default function JapaneseAngleHoldPage() {
   const webAppSchema = {
     "@context": "https://schema.org",
     "@type": "WebApplication",
-    "name": "置きエイム練習 (Angle Hold Trainer)",
+      "name": "エイム練習 - 置きエイム",
     "url": "https://skilldrills.online/ja/drills/fps/angle-hold-trainer",
     "description": "壁角からの敵の飛び出しに対するプリエイム規律、適切な置き幅、防衛アングル保持反応速度を訓練する無料ブラウザFPSエイムトレーナー。",
     "applicationCategory": "Game",
     "operatingSystem": "Web Browser",
     "browserRequirements": "Requires HTML5 Canvas and Pointer Lock API support",
-    "dateModified": "2026-09-11"
+    "dateModified": "2026-09-20"
   };
 
   const videoGameSchema = {
     "@context": "https://schema.org",
     "@type": "VideoGame",
-    "name": "置きエイム練習 (Angle Hold Pro)",
+    "name": "エイム練習 - 置きエイム",
     "url": "https://skilldrills.online/ja/drills/fps/angle-hold-trainer",
     "description": "壁角からの敵の飛び出しに対するプリエイム規律、適切な置き幅、防衛アングル保持反応速度を訓練する無料ブラウザFPSエイムトレーナー。",
     "gamePlatform": "Web Browser",
@@ -114,13 +114,13 @@ export default function JapaneseAngleHoldPage() {
     "playMode": "SinglePlayer",
     "applicationCategory": "Game",
     "operatingSystem": "Web Browser",
-    "dateModified": "2026-09-11"
+    "dateModified": "2026-09-20"
   };
 
   const faqSchema = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
-    "dateModified": "2026-09-11",
+    "dateModified": "2026-09-20",
     "mainEntity": [
       {
         "@type": "Question",
@@ -243,9 +243,9 @@ export default function JapaneseAngleHoldPage() {
   };
 
   const angleHoldGuideJa = {
-    heading: "置きエイム（プリエイム）完全ガイド — 反応遅延・幾何学・ネットコード分析",
+    heading: "エイム練習と置きエイム・プリエイムガイド",
     intro: [
-      "防御的な置きエイム（アングルホールド）は、F.C.ドンデルスの単純反応時間（Donders, 1868）およびGo/No-Go弁別課題に支配されるタクティカルFPSの最重要基礎技能です。ターゲット探索と手首の高速移動を伴うフリック射撃（Woodworth, 1899; Meyer et al., 1988）とは異なり、あらかじめレティクルを敵の頭部通過線上に配置することで、2次元の空間探索を「純粋な時間的クリック実行（1次元）」へと単純化します。",
+      "エイム練習の中でも置きエイムは、敵が出る位置にレティクルを先に置き、標的が重なった瞬間にクリックする練習です。このドリルは置き幅、ヘッドライン、飛び出し反応を測定し、VALORANT・CS2の角待ちを安定させます。",
       "VALORANTやCS2などのオンライン対戦ゲームでは、パケット通信遅延により攻撃側が角から飛び出した際に防御側より早く視認できる「ピークアドバンテージ（飛び出し有利）」が構造的に発生します（T_advantage = RTT_peeker/2 + RTT_holder/2 + T_interp）。この遅延不利を相殺するためには、壁の角に照準を密着させるのではなく、D_offset = v_peeker × T_reaction に基づいて壁から一定の隙間（置き幅）を空けて構えることが幾何学的に不可欠となります。",
       "本ツールのクロノメトリーは、高リフレッシュレート同期とperformance.now()高精度タイムスタンプによって駆動されています。これにより入力量子化ジッターを最小限に抑え（Woods et al., 2015）、心理物理学的なトリガーディシプリンと飛び出し反応速度を厳密に測定します（Fitts, 1954; Hick, 1952）。",
       "計測仕様について：すべての入力イベントはブラウザの高精度パフォーマンスAPIによってミリ秒単位で記録され、すべて端末内（クライアントサイド）で完結します。ブラウザのタイマーはSpectre緩和策として約1msに丸められており、ディスプレイ表示はリフレッシュレート（60Hzで約16.7ms、144Hzで約6.9ms、240Hzで約4.1ms）単位で量子化されます（Woods et al., 2015）。そのため約5ms未満の微小な数値差は測定環境のノイズとして考慮し、他人との比較よりも同一環境での自己記録推移の確認を推奨します。"
@@ -307,11 +307,11 @@ export default function JapaneseAngleHoldPage() {
 
   const copyJa = {
     h1Prefix: null,
-    h1Keyword: "置きエイム 練習",
-    h1Suffix: null,
+    h1Keyword: "エイム練習",
+    h1Suffix: " - 置きエイム・プリエイム",
     subtitle: "プリエイム・飛び出し反応速度トレーナー",
     caption: "壁角からの敵の飛び出し（ピーク）に対し、適切な置き幅を保って即座に射撃する置きエイム練習ツール。F.C.ドンデルスの単純反応時間（Donders, 1868）とアングル幾何学に基づき、ピークアドバンテージを打破する防御プリエイムを鍛えます。",
-    startTitle: "置きエイム 練習 (Angle Hold Pro)",
+    startTitle: "エイム練習 - 置きエイム",
     startSubtitle: "プリエイム・飛び出し反応・トリガーディシプリン • エンドレス難易度進行",
     statScore: "スコア",
     statTime: "残り時間",
@@ -323,7 +323,7 @@ export default function JapaneseAngleHoldPage() {
     getReady: "構えてください",
     bottomCaption: "壁の角から適切な置き幅を空けてレティクルを固定し、ターゲットが飛び出した瞬間にクリックしてください。",
     accordionRulesTitle: "ドリルルールとスコア計算方式",
-    accordionAboutTitle: "置きエイム練習 (Angle Hold Pro) について",
+    accordionAboutTitle: "エイム練習 - 置きエイムについて",
     overviewTitle: "置きエイムとプリエイムの仕組み",
     overviewLead: "置きエイムとは、敵が現れる位置にあらかじめ照準を合わせておき、敵が重なった瞬間に撃つ防衛技術です。人間の単純視覚反応時間は約200〜250msですが、敵の行動を判別する判断が加わると選択肢の数に応じて反応時間が対数的に増加します（Donders, 1868; Hick, 1952）。",
     rulesItems: [

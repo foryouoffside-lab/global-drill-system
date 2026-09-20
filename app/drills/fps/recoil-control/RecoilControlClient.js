@@ -825,7 +825,7 @@ export default function RecoilControlClient({ copy = null }) {
   return (
     <div className="min-h-screen bg-[#050508] text-white flex flex-col font-sans select-none">
       {/* ── MAIN CONTENT AREA ── */}
-      <main className="flex-1 max-w-6xl w-full mx-auto px-4 py-6 flex flex-col gap-6">
+      <main className="flex-1 max-w-6xl w-full mx-auto px-4 pt-6 pb-0 flex flex-col gap-6">
         
         {/* Title */}
         {!isFullscreen && (
@@ -838,7 +838,7 @@ export default function RecoilControlClient({ copy = null }) {
             <p className="text-[13px] text-slate-400 leading-relaxed">
               {copy?.caption || (
                 <>
-                  Recoil control is a learned open-loop motor program: the spray pattern is fixed, so you can run the counter-movement without waiting to see where the bullets land. Motor output gets more variable as a movement gets faster and more forceful (Schmidt et al., 1979), which is why a smooth pull-down repeats better than a hard one.
+                  Recoil control is a learned motor program that keeps automatic weapon fire locked on target.
                 </>
               )}
             </p>
@@ -990,6 +990,7 @@ export default function RecoilControlClient({ copy = null }) {
           <div className="[&>div]:!mt-0 font-sans">
             <DrillAccordion
               id="rules"
+              singleLineTitle
               title={copy?.rulesTitle || "Drill Instructions & Scoring System"}
               isOpen={openAccordion === 'rules'}
               onToggle={() => setOpenAccordion(openAccordion === 'rules' ? null : 'rules')}
@@ -1003,6 +1004,7 @@ export default function RecoilControlClient({ copy = null }) {
 
             <DrillAccordion
               id="about"
+              singleLineTitle
               title={copy?.aboutTitle || "About Recoil Control Trainer"}
               isOpen={openAccordion === 'about'}
               onToggle={() => setOpenAccordion(openAccordion === 'about' ? null : 'about')}

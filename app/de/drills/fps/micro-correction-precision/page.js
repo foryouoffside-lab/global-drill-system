@@ -20,16 +20,18 @@ import RelatedDrills from '@/components/drill/RelatedDrills';
 // ============================================================
 
 export const metadata = {
-  title: "Mikrokorrektur Aiming – FPS Headshot Trainer | SkillDrills",
-  description: "Mikrokorrektur-Aiming im Browser: Trainiere Feinjustierung nach dem ersten Flick, Bremskontrolle und Headshot-Präzision für CS2 und Valorant.",
+  title: "Aim Trainer | Mikrokorrektur & Headshots | SkillDrills",
+  description: "Kostenloser Aim Trainer im Browser: Übe Mikrokorrekturen nach dem Flick, saubere Bremskontrolle und Headshot-Präzision für Valorant und CS2.",
   keywords: [
+    "Aim Trainer",
+    "Aim Trainer Browser",
+    "Aim Trainer Valorant",
     "Mikrokorrektur Aiming",
-    "Mikrojustierung FPS",
+    "Micro Adjustment FPS",
     "Headshot Feinjustierung",
     "Maus Mikrokorrektur CS2",
     "Flick-Shot Feinkorrektur",
     "Aim Präzision verbessern",
-    "Mikro Flick Training",
     "Maus Bremskontrolle",
     "Valorant Headshot Training",
     "Mauspad Gleitkontrolle",
@@ -45,8 +47,8 @@ export const metadata = {
     follow: true,
   },
   openGraph: {
-    title: "Mikrokorrektur Aiming – FPS Headshot Trainer | SkillDrills",
-    description: "Mikrokorrektur-Aiming im Browser: Trainiere Feinjustierung nach dem ersten Flick, Bremskontrolle und Headshot-Präzision für CS2 und Valorant.",
+    title: "Aim Trainer | Mikrokorrektur & Headshots | SkillDrills",
+    description: "Kostenloser Aim Trainer im Browser: Übe Mikrokorrekturen nach dem Flick, saubere Bremskontrolle und Headshot-Präzision für Valorant und CS2.",
     url: "https://skilldrills.online/de/drills/fps/micro-correction-precision",
     siteName: 'SkillDrills',
     locale: 'de_DE',
@@ -54,8 +56,8 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: "Mikrokorrektur Aiming – FPS Headshot Trainer | SkillDrills",
-    description: "Mikrokorrektur-Aiming im Browser: Trainiere Feinjustierung nach dem ersten Flick, Bremskontrolle und Headshot-Präzision für CS2 und Valorant.",
+    title: "Aim Trainer | Mikrokorrektur & Headshots | SkillDrills",
+    description: "Kostenloser Aim Trainer im Browser: Übe Mikrokorrekturen nach dem Flick, saubere Bremskontrolle und Headshot-Präzision für Valorant und CS2.",
   },
 };
 
@@ -66,14 +68,14 @@ export default function MicroCorrectionDePage() {
     "itemListElement": [
       { "@type": "ListItem", "position": 1, "name": "SkillDrills", "item": "https://skilldrills.online/de" },
       { "@type": "ListItem", "position": 2, "name": "FPS Aim Training", "item": "https://skilldrills.online/de/drills/fps" },
-      { "@type": "ListItem", "position": 3, "name": "Mikrokorrektur Aiming", "item": "https://skilldrills.online/de/drills/fps/micro-correction-precision" }
+      { "@type": "ListItem", "position": 3, "name": "Aim Trainer - Mikrokorrektur", "item": "https://skilldrills.online/de/drills/fps/micro-correction-precision" }
     ]
   };
 
   const softwareSchema = {
     "@context": "https://schema.org",
     "@type": "SoftwareApplication",
-    "name": "Mikrokorrektur Aiming – FPS Headshot Trainer",
+    "name": "Aim Trainer - Mikrokorrektur & Headshots",
     "applicationCategory": "GameApplication",
     "operatingSystem": "Web Browser",
     "offers": { "@type": "Offer", "price": "0", "priceCurrency": "EUR" }
@@ -82,7 +84,7 @@ export default function MicroCorrectionDePage() {
   const webAppSchema = {
     "@context": "https://schema.org",
     "@type": "WebApplication",
-    "name": "Mikrokorrektur Aiming Trainer",
+    "name": "Aim Trainer - Mikrokorrektur & Headshots",
     "url": "https://skilldrills.online/de/drills/fps/micro-correction-precision",
     "applicationCategory": "Trainer",
     "browserRequirements": "Requires Pointer Lock API, modern web browser, 60Hz+ monitor recommended"
@@ -91,7 +93,7 @@ export default function MicroCorrectionDePage() {
   const videoGameSchema = {
     "@context": "https://schema.org",
     "@type": "VideoGame",
-    "name": "Mikrokorrektur Aiming Trainer",
+    "name": "Aim Trainer - Mikrokorrektur & Headshots",
     "playMode": "SinglePlayer",
     "applicationCategory": "Game",
     "operatingSystem": "Web Browser",
@@ -101,7 +103,7 @@ export default function MicroCorrectionDePage() {
   const faqSchema = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
-    "dateModified": "2026-09-15",
+    "dateModified": "2026-09-20",
     "mainEntity": [
       {
         "@type": "Question",
@@ -220,10 +222,10 @@ export default function MicroCorrectionDePage() {
   };
 
   const microCorrectionGuideDe = {
-    heading: "Mikrokorrektur Aiming – Wissenschaftlicher Trainingsleitfaden",
+    heading: "Aim Trainer und Mikrokorrektur – wissenschaftlicher Leitfaden",
     subtitle: "Meistere Bremskontrolle, Endphasen-Verzögerung und Fingerkuppen-Feinjustierung für maximale Headshot-Präzision in taktischen Shootern",
     intro: [
-      "Mikrokorrektur Aiming (Micro-Adjustment) ist die entscheidende biomechanische Schnittstelle im modernen Wettkampf-Shooter. In taktischen High-Stakes-Shootern wie Valorant, Counter-Strike 2 und Rainbow Six Siege werden Duelle regelmäßig durch minimale Korrekturen von nur 5 bis 25 Pixeln unterhalb eines Winkelgrades entschieden. Der erste ballistische Impuls bringt das Fadenkreuz in die Nahzone des Gegners – erst die nachfolgende Mikrokorrektur erzielt den finalen Kopfschuss.",
+      "Ein Aim Trainer für Mikrokorrekturen übt den letzten kurzen Stopp nach dem ersten Flick: Das Fadenkreuz erreicht die Zielzone, bremst sauber und landet für den Kopfschuss im Zentrum. Dieser Drill misst Korrekturzeit und Trefferquote, damit du Overflicks und verspätete Doppelkorrekturen in Valorant und CS2 gezielt reduzierst.",
       "Das theoretische Fundament zielgerichteter Schnellbewegungen legte Robert S. Woodworth (1899) mit seinem klassischen Zwei-Komponenten-Modell: Ein primärer, offener ballistischer Impuls (Open-Loop) beschleunigt die Hand in Richtung des visuellen Reizes, gefolgt von einer geschlossenen Kontrollphase (Closed-Loop) unter ständiger sensorischer Rückkopplung. Diese Geschwindigkeits-Genauigkeits-Abwägung wurde von Paul M. Fitts (1954) im Fitts’schen Gesetz mathematisch quantifiziert: Die Bewegungszeit skaliert logarithmisch mit der Zieldistanz und umgekehrt proportional zur Zielbreite (ID = log2(2D / W)).",
       "Spätere neurowissenschaftliche Modellierungen von David E. Meyer et al. (1988) etablierten das Stochastic Optimized Submovement Model. Dieses belegt, dass die menschliche Motorik primäre Bewegungen strategisch so plant, dass sie kurz vor oder am Rand des Zielbereichs landen, um verbleibende Koordinatendifferenzen durch blitzschnelle Korrektur-Subbewegungen ohne kinetisches Überschwingen (Overshoot) aufzulösen.",
       "In der hochauflösenden Endphase der fovealen Fixation nutzt das okulomotorische System Mikrosakkaden – unwillkürliche, hochfrequente Foveaverschiebungen von unter 1 Grad –, um retinale Signale aufzufrischen und das Sehzentrum auf mikroskopischen Trefferflächen zu zentrieren (Rolfs, 2009; Martinez-Conde et al., 2004). Dieser Trainer koppelt Raw-Pointer-Lock-Hardwareeingaben mit digitaler Hochpräzisions-Chronometrie via performance.now() (Woods et al., 2015), um Endphasen-Oszillationen und Overflick-Drift zu eliminieren.",
@@ -285,8 +287,8 @@ export default function MicroCorrectionDePage() {
   };
 
   const copyDe = {
-    h1Keyword: "Mikrokorrektur Aiming",
-    h1Suffix: " – FPS Headshot Trainer",
+    h1Keyword: "Aim Trainer",
+    h1Suffix: " – Mikrokorrektur & Headshot-Präzision",
     subtitle: "Trainiere Endphasen-Bremskontrolle und unmittelbare Micro-Adjustments für tödliche Headshot-Präzision.",
     statScore: "Punkte",
     statTime: "Zeit",
@@ -295,7 +297,7 @@ export default function MicroCorrectionDePage() {
     statAvgCorrection: "Korrekturzeit",
     statMaxCombo: "Max Combo",
     statPeakLevel: "Level",
-    startTitle: "Mikrokorrektur Aiming Trainer",
+    startTitle: "Aim Trainer - Mikrokorrektur & Headshots",
     startSubtitle: "Hardware-Rohdaten • Endlose Levelprogression & Bremskontrolle",
     getReady: "BEREITMACHEN",
     toggleFlash: "Fehlschuss-Aufleuchten umschalten",
@@ -308,7 +310,7 @@ export default function MicroCorrectionDePage() {
       { num: "3", text: "Levelaufstieg", highlight: "+1 Level / 1.400 Pkt", result: "Adaptive Skalierung" },
       { num: "4", text: "Fehlschuss / Timeout", highlight: "Strafe", result: "Combo-Reset (-0,6s)" }
     ],
-    aboutTitle: "Über das Mikrokorrektur-Training",
+    aboutTitle: "Über Aim Trainer und Mikrokorrektur",
     aboutHeading: "Was ist Mikrokorrektur-Aiming?",
     aboutText: "Gezielte Zielbewegungen bestehen aus zwei Phasen: einem schnellen ballistischen Schwung und einer feinen, visuell geführten Korrekturbewegung nahe dem Ziel (Woodworth, 1899; Meyer et al., 1988). Dieser Trainer schult die zweite Phase, in der über Treffer oder Vorbeischuss entschieden wird."
   };
@@ -357,7 +359,7 @@ export default function MicroCorrectionDePage() {
       <div className="max-w-4xl mx-auto px-4 pb-12">
         <RelatedDrills
           currentCategory="fps"
-          currentHref="/drills/fps/micro-correction-precision"
+          currentHref="/de/drills/fps/micro-correction-precision"
           locale="de"
         />
       </div>

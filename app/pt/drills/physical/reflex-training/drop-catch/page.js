@@ -6,7 +6,7 @@ import { pickSources } from '@/lib/drillSources';
 
 // ============================================================
 // SEO RESEARCH FINDINGS — Brazil & Portugal (PT / PT-BR)
-// Primary Intent: teste da régua reflexo, teste da régua tempo de reação, teste de tempo de reação online
+// Primary Intent: teste da régua, teste de tempo de reação, teste de reflexo online
 // Brazilian & Portuguese Athletic/Academic Context: Teste da régua de Nelson adaptado digitalmente com paradigma Go/No-Go e alvos cadentes
 // High-Demand, Low-Competition Target Keywords:
 //   - "teste da régua reflexo" (Classic school/athletic ruler drop test query)
@@ -22,27 +22,25 @@ import { pickSources } from '@/lib/drillSources';
 // ============================================================
 
 export const metadata = {
-  title: "Teste da Régua – Tempo de Reação Online | SkillDrills",
-  description: "Teste da régua online grátis. Intercepte alvos em queda livre para medir seu tempo de reação em milissegundos e treinar reflexos motores rápidos no PC.",
+  title: "Teste da Régua | Tempo de Reação Online",
+  description: "Teste da régua grátis no navegador: capture alvos verdes, evite iscas vermelhas e pratique seu tempo de reação em milissegundos.",
   keywords: [
-    "teste da régua reflexo",
-    "teste da régua tempo de reação",
+    "teste da régua",
+    "teste de reação com régua",
     "teste de tempo de reação online",
-    "teste de reflexo e atenção",
-    "treino de reflexo e mira",
-    "teste go no go online",
-    "tempo de reação de escolha",
+    "teste de reflexo online",
+    "tempo de reação com régua",
     "teste de reflexos visuais",
-    "exercícios de reflexo motor",
-    "como melhorar tempo de reação"
+    "teste de reação motora",
+    "como medir o tempo de reação"
   ],
   alternates: {
     canonical: 'https://skilldrills.online/pt/drills/physical/reflex-training/drop-catch',
     languages: getAlternateLanguages('/drills/physical/reflex-training/drop-catch'),
   },
   openGraph: {
-    title: "Teste da Régua – Tempo de Reação Online | SkillDrills",
-    description: "Teste da régua online grátis. Intercepte alvos em queda livre para medir seu tempo de reação em milissegundos e treinar reflexos motores rápidos no PC.",
+    title: "Teste da Régua | Tempo de Reação Online",
+    description: "Capture alvos verdes e evite iscas vermelhas em um teste da régua no navegador para praticar reação visual e reflexos.",
     url: 'https://skilldrills.online/pt/drills/physical/reflex-training/drop-catch',
     siteName: 'SkillDrills',
     locale: 'pt_BR',
@@ -50,8 +48,8 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: "Teste da Régua – Tempo de Reação Online | SkillDrills",
-    description: "Teste da régua online grátis. Intercepte alvos em queda livre para medir seu tempo de reação em milissegundos e treinar reflexos motores rápidos no PC.",
+    title: "Teste da Régua | Tempo de Reação Online",
+    description: "Capture alvos verdes e evite iscas vermelhas em um teste da régua no navegador para praticar reação visual e reflexos.",
   },
   robots: { index: true, follow: true },
 };
@@ -98,22 +96,34 @@ const softwareApplicationSchema = {
     "price": "0",
     "priceCurrency": "USD"
   },
+  "description": "Teste da régua digital para capturar alvos verdes, evitar iscas vermelhas e praticar tempo de reação visual.",
+  "url": "https://skilldrills.online/pt/drills/physical/reflex-training/drop-catch",
+  "inLanguage": "pt-BR",
+  "dateModified": "2026-09-20"
 };
 
 const webApplicationSchema = {
   "@context": "https://schema.org",
   "@type": "WebApplication",
-  "name": "Simulador de Queda Livre, Tempo de Reação e Paradigma Go/No-Go",
-  "browserRequirements": "Requires JavaScript and HTML5 Canvas support",
-  "genre": "Training, Reflex, Reaction Time, Sports Science"
+  "name": "Teste da Régua e Treino de Reflexos",
+  "url": "https://skilldrills.online/pt/drills/physical/reflex-training/drop-catch",
+  "description": "Treino de reação visual no navegador com alvos verdes cadentes e iscas vermelhas.",
+  "applicationCategory": "GameApplication",
+  "operatingSystem": "Web Browser",
+  "browserRequirements": "Requer JavaScript e suporte a HTML5 Canvas",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+  "inLanguage": "pt-BR",
+  "dateModified": "2026-09-20"
 };
 
 const videoGameSchema = {
   "@context": "https://schema.org",
   "@type": "VideoGame",
-  "name": "Reflex Drop Catch & Impulse Discipline Drill",
+  "name": "Drop Catch: jogo de reflexos e reação",
+  "url": "https://skilldrills.online/pt/drills/physical/reflex-training/drop-catch",
+  "description": "Capture os alvos verdes e ignore as iscas vermelhas em um jogo de reação visual.",
   "gamePlatform": "Web Browser",
-  "applicationSubCategory": "Esports Motor Chronometry Drill"
+  "applicationSubCategory": "Treino de reação motora"
 };
 
 const faqSchema = {
@@ -329,7 +339,7 @@ export default function LocalizedDropCatchPagePt() {
       <DropCatchClient
         copy={{
           title: "Teste da Régua & Teste de Tempo de Reação Online",
-          subtitle: "Discriminação Visual e Controle de Impulsos • Dificuldade com Escala Contínua",
+          subtitle: "Capture alvos verdes, evite iscas vermelhas",
           description: "O teste da régua e queda livre mede quão rápido você reage a um objeto caindo e quão bem você inibe cliques indesejados. Capturar não exige calcular distância e velocidade separadamente: a expansão retiniana fornece o tempo de contato por si só (Lee, 1976). Já conter o clique envolve outro mecanismo — a ação e a inibição disputam uma corrida interna, e vence quem processar primeiro (Logan & Cowan, 1984). A reação visual pura leva cerca de 200–250 ms antes que o gesto ocorra (Woods et al., 2015).",
           hudLabels: {
             score: "Pontuação",

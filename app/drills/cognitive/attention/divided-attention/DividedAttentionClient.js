@@ -1,7 +1,6 @@
 'use client';
 
 import React, { useState, useEffect, useRef, useCallback } from 'react';
-import Link from 'next/link';
 import { Layers, Volume2, VolumeX, Play, RefreshCw, Share2, Users, TrendingUp, ArrowLeft, Zap, ZapOff } from 'lucide-react';
 
 import { isIdleFrameSkippable } from '@/lib/performance';
@@ -15,13 +14,31 @@ import { getFpsScoreGrade, getComboMultiplier } from '../../../../../lib/scoring
 import { getDifficultyProgress, getStartLevel, ramp } from '../../../../../lib/drillDifficulty';
 import useDrillFlash from '../../../../../lib/useDrillFlash';
 import useUnexpectedExitGuard from '../../../../../lib/useUnexpectedExitGuard';
-import DrillFooter from '../../../../../components/drill/DrillFooter';
 import DrillCountdown from '../../../../../components/drill/DrillCountdown';
 import DrillAccordion from '../../../../../components/drill/DrillAccordion';
 import DrillFlashOverlay from '../../../../../components/drill/DrillFlashOverlay';
 import FpsStartCard from '../../../../../components/drill/FpsStartCard';
 import DrillResultCard from '../../../../../components/drill/DrillResultCard';
+import useHitBurst from '../../../../../lib/useHitBurst';
 import useImmersiveMode from '@/lib/useImmersiveMode';
+
+function RuleItem({ num, text, highlight = '', result }) {
+  return (
+    <div className="flex items-center gap-3 bg-black px-3.5 py-2.5 rounded-xl border border-white/10 shadow-sm font-sans min-w-0">
+      <div className="w-7 h-7 rounded-lg bg-white/10 border border-white/20 flex items-center justify-center text-white text-xs font-black shadow-lg flex-shrink-0">
+        {num}
+      </div>
+      <div className="flex-1 flex items-center justify-between gap-2 min-w-0">
+        <p className="text-xs sm:text-sm font-medium text-gray-100 font-sans truncate">
+          {text}{highlight && <span className="font-bold text-white"> ({highlight})</span>}
+        </p>
+        <div className="text-[11px] sm:text-xs font-bold px-2.5 py-1 rounded-lg bg-[#050811] border border-white/10 text-white whitespace-nowrap shadow-inner tracking-wide flex-shrink-0">
+          {result}
+        </div>
+      </div>
+    </div>
+  );
+}
 
 // ============================================================
 // TUNING CONSTANTS
@@ -64,10 +81,10 @@ const getLevelConfig = (level, combo = 0) => {
 };
 
 const RULES_ITEMS = [
-  { title: "Dual-Task Processing", text: "Process two independent streams simultaneously: track moving targets on the visual canvas AND tap MATCH when even numbers appear in the number stream." },
-  { title: "Visual Target Stream", text: "Tap moving blue targets as soon as they appear before their display timer expires (+100 PTS × Combo × Level multiplier, +0.6s)." },
-  { title: "Numerical Match Stream", text: "Numbers (0-9) stream continuously on the side panel. Tap MATCH only when an EVEN number is active (+100 PTS × Combo × Level multiplier, +0.6s)." },
-  { title: "Misses & Penalties", text: "Missed targets, missed even numbers, and false matches reset your combo (and deduct 0.8s if enabled). Nothing ends the run early — you play until the clock reaches zero." }
+  { num: "1", text: "Dual Streams", highlight: "Visual + Number", result: "Track Both Channels" },
+  { num: "2", text: "Target Hit", highlight: "+100 PTS", result: "Click/Tap Target (+0.6s)" },
+  { num: "3", text: "Even Match", highlight: "+100 PTS", result: "MATCH on Even Digits" },
+  { num: "4", text: "Miss / Mistake", highlight: "Resets Combo", result: "−0.8s on Penalty" }
 ];
 
 const ABOUT_TEXT = `Divided Attention is a core cognitive drill designed to measure and train multi-channel visual tracking and simultaneous information processing. Based on dual-task psychological paradigms, this exercise forces the brain to allocate attention across two distinct channels at once: spatial motion tracking and numeric categorization.
@@ -75,15 +92,6 @@ const ABOUT_TEXT = `Divided Attention is a core cognitive drill designed to meas
 In fast-paced tactical environments (such as esports, aviation, high-frequency trading, and emergency response), peak performers must process secondary telemetry while maintaining primary spatial awareness. Divided Attention builds cognitive flexibility by testing your ability to rapidly shift focus between spatial targets and symbolic data streams without sacrificing accuracy on either.
 
 By scaling target speeds and shrinking target dimensions as your score rises, the drill pushes prefrontal executive control networks to their absolute limit.`;
-
-const RELATED_DRILLS = [
-  { id: "concentration-stamina", name: "Focus Test", cat: "Attention", desc: "Sustain continuous visual focus through prolonged high-density sequences.", href: "/drills/cognitive/attention/concentration-stamina" },
-  { id: "multi-tasking", name: "Multitasking Test", cat: "Attention", desc: "Track dual independent target streams under speed pressure.", href: "/drills/cognitive/attention/multi-tasking" },
-  { id: "concentration-grid", name: "Schulte Table Trainer", cat: "Focus", desc: "Scan and tap sequential numbers on expanding grid matrices.", href: "/drills/cognitive/focus/concentration-grid" },
-  { id: "distraction-fighter", name: "Stroop Test Online", cat: "Focus", desc: "Filter out high-interference Stroop visual distractors.", href: "/drills/cognitive/focus/distraction-fighter" },
-  { id: "rsvp-reader", name: "Reading Speed Test", cat: "Processing Speed", desc: "Process rapid serial visual presentation text streams.", href: "/drills/cognitive/processing-speed/rsvp-reader" },
-  { id: "reaction-time", name: "Neuro Speed & Reflex Test", cat: "Processing Speed", desc: "Train choice reaction speed and visual reflex latency.", href: "/drills/cognitive/processing-speed/reaction-time" }
-];
 
 export default function DividedAttentionClient({ copy } = {}) {
   const [gameState, setGameState] = useState('start'); // 'start' | 'countdown' | 'playing' | 'gameOver'
@@ -152,6 +160,7 @@ export default function DividedAttentionClient({ copy } = {}) {
   });
 
   const { flashes, triggerFlash } = useDrillFlash();
+  const { bursts, spawnBurst } = useHitBurst();
 
   // Storage & settings init
   useEffect(() => {
@@ -176,6 +185,20 @@ export default function DividedAttentionClient({ copy } = {}) {
     };
   }, []);
 
+  const { markIntentionalExit } = useUnexpectedExitGuard({
+    active: gameState === 'playing' || gameState === 'countdown',
+    onUnexpectedExit: () => {
+      countdownTimeoutsRef.current.forEach(clearTimeout);
+      countdownTimeoutsRef.current = [];
+      if (ballTimerRef.current) clearTimeout(ballTimerRef.current);
+      if (numTimerRef.current) clearTimeout(numTimerRef.current);
+      startingRef.current = false;
+      gameActiveRef.current = false;
+      setIsFullscreen(false);
+      setGameState('start');
+    },
+  });
+
   const handleExitDrill = useCallback(async () => {
     markIntentionalExit();
     countdownTimeoutsRef.current.forEach(clearTimeout);
@@ -185,14 +208,34 @@ export default function DividedAttentionClient({ copy } = {}) {
     startingRef.current = false;
     gameActiveRef.current = false;
 
+    if (typeof document !== 'undefined' && document.fullscreenElement) {
+      try {
+        await document.exitFullscreen();
+      } catch (err) {}
+    }
     setIsFullscreen(false);
     setGameState('start');
-  }, []);
+  }, [markIntentionalExit]);
 
-  const { markIntentionalExit } = useUnexpectedExitGuard({
-    active: gameState === 'playing' || gameState === 'countdown',
-    onUnexpectedExit: handleExitDrill,
-  });
+  // Keyboard and Fullscreen Lifecycle (Rule 6)
+  useEffect(() => {
+    const handleKeyDown = (e) => {
+      if (e.key === 'Escape') {
+        handleExitDrill();
+      }
+    };
+    const handleFullscreenChange = () => {
+      if (!document.fullscreenElement && isFullscreen) {
+        handleExitDrill();
+      }
+    };
+    window.addEventListener('keydown', handleKeyDown);
+    document.addEventListener('fullscreenchange', handleFullscreenChange);
+    return () => {
+      window.removeEventListener('keydown', handleKeyDown);
+      document.removeEventListener('fullscreenchange', handleFullscreenChange);
+    };
+  }, [handleExitDrill, isFullscreen]);
 
   const endGame = useCallback(() => {
     markIntentionalExit();
@@ -369,7 +412,7 @@ export default function DividedAttentionClient({ copy } = {}) {
   }, [registerMiss]);
 
   // Interaction handlers
-  const handleVisualClick = useCallback((id, e) => {
+  const handleVisualClick = useCallback((id, x, y, e) => {
     if (e) e.stopPropagation();
     if (!gameActiveRef.current) return;
 
@@ -377,6 +420,8 @@ export default function DividedAttentionClient({ copy } = {}) {
     if (eng.currentTargetId !== id) return;
 
     if (ballTimerRef.current) clearTimeout(ballTimerRef.current);
+
+    spawnBurst(x, y, 32, '#3b82f6');
 
     eng.currentTargetId = null;
     setCurrentTarget(null);
@@ -404,7 +449,7 @@ export default function DividedAttentionClient({ copy } = {}) {
 
     const config = getLevelConfig(eng.level, eng.combo);
     ballTimerRef.current = setTimeout(spawnBall, config.spawnDelayMin + Math.random() * (config.spawnDelayMax - config.spawnDelayMin));
-  }, [spawnBall]);
+  }, [spawnBall, spawnBurst]);
 
   const handleNumberCheck = useCallback((e) => {
     if (e) e.stopPropagation();
@@ -560,6 +605,7 @@ export default function DividedAttentionClient({ copy } = {}) {
           <div className="flex flex-col gap-1">
             <h1 className="text-2xl sm:text-3xl font-black tracking-tight text-white">
               <span data-seo-kw="1">{copy?.title || "Divided Attention Test"}</span>
+              <span className="block text-sm font-semibold text-slate-400 mt-1">{copy?.subtitle || "Divided attention test for tracking moving targets while matching numbers and training multitasking focus"}</span>
             </h1>
           </div>
         )}
@@ -568,10 +614,10 @@ export default function DividedAttentionClient({ copy } = {}) {
         {!isFullscreen && (
           <div className="grid grid-cols-4 gap-2 w-full -mb-2">
             {[
-              { label: 'Score', value: uiScore, tone: 'text-blue-400' },
-              { label: 'Time', value: `${uiTimeLeft}s`, tone: uiTimeLeft <= 10 && gameState === 'playing' ? 'text-red-400 animate-pulse' : 'text-white' },
-              { label: 'Level', value: `L${uiLevel}`, tone: 'text-blue-400' },
-              { label: 'Best Score', value: bestScore, tone: 'text-amber-400' },
+              { label: copy?.statScore || 'Score', value: uiScore, tone: 'text-blue-400' },
+              { label: copy?.statTime || 'Time', value: `${uiTimeLeft}s`, tone: uiTimeLeft <= 10 && gameState === 'playing' ? 'text-red-400 animate-pulse' : 'text-white' },
+              { label: copy?.statLevel || 'Level', value: `L${uiLevel}`, tone: 'text-blue-400' },
+              { label: copy?.statBest || 'Best Score', value: bestScore, tone: 'text-amber-400' },
             ].map((s) => (
               <div key={s.label} className="rounded-lg border border-white/[0.06] bg-white/[0.015] px-2 py-2 text-center">
                 <div className="text-[9.5px] uppercase font-semibold text-slate-500 tracking-[0.12em]">{s.label}</div>
@@ -599,14 +645,14 @@ export default function DividedAttentionClient({ copy } = {}) {
               {/* Score - Top Left */}
               <div className="absolute top-4 left-4 z-30 pointer-events-none flex flex-col items-start gap-0.5">
                 <div>
-                  <p className="text-[10px] font-semibold uppercase tracking-wider text-white/50">Score</p>
+                  <p className="text-[10px] font-semibold uppercase tracking-wider text-white/50">{copy?.statScore || 'Score'}</p>
                   <p className="text-2xl sm:text-3xl font-black text-white tabular-nums leading-tight">{uiScore}</p>
                 </div>
               </div>
 
               {/* Time Left - Top Right */}
               <div className="absolute top-4 right-4 z-30 pointer-events-none text-right">
-                <p className="text-[10px] font-semibold uppercase tracking-wider text-white/50">Time Left</p>
+                <p className="text-[10px] font-semibold uppercase tracking-wider text-white/50">{copy?.timeLeft || 'Time Left'}</p>
                 <p className={`text-2xl sm:text-3xl font-black tabular-nums leading-tight ${uiTimeLeft <= 10 ? 'text-red-400 animate-pulse' : 'text-white'}`}>{uiTimeLeft}s</p>
               </div>
             </>
@@ -654,7 +700,7 @@ export default function DividedAttentionClient({ copy } = {}) {
                 {currentTarget && (
                   <button
                     type="button"
-                    onPointerDown={(e) => handleVisualClick(currentTarget.id, e)}
+                    onPointerDown={(e) => handleVisualClick(currentTarget.id, currentTarget.x, currentTarget.y, e)}
                     className="absolute z-20 focus:outline-none touch-none bg-transparent border-none cursor-pointer"
                     style={{
                       left: `${currentTarget.x}%`,
@@ -687,13 +733,23 @@ export default function DividedAttentionClient({ copy } = {}) {
                     </div>
                   </button>
                 )}
+
+                {/* Hit-impact bursts (visual target stream only — the MATCH button is not a spatial target) */}
+                {bursts.map((b) => (
+                  <div key={b.id} className="absolute z-40 pointer-events-none" style={{ left: `${b.x}%`, top: `${b.y}%`, transform: 'translate(-50%,-50%)' }}>
+                    <div className="fx-hit-ring" style={{ left: -b.r, top: -b.r, width: b.r * 2, height: b.r * 2, borderWidth: 3, borderColor: b.color }} />
+                    {b.sparks.map((s, i) => (
+                      <div key={i} className="fx-hit-spark" style={{ left: -3, top: -3, width: 6, height: 6, background: b.color, '--tx': `${s.dx}px`, '--ty': `${s.dy}px` }} />
+                    ))}
+                  </div>
+                ))}
               </div>
 
               {/* Number Stream Panel */}
               <div className="w-full sm:w-64 h-[120px] sm:h-full flex-shrink-0 bg-gray-950/95 backdrop-blur-md border-t sm:border-t-0 sm:border-l border-gray-800 z-30 flex flex-row sm:flex-col items-center justify-between sm:justify-center p-3 sm:p-6 sm:space-y-6">
                 <div className="hidden sm:block text-center pointer-events-none">
-                  <h3 className="text-lg font-black text-white uppercase">Match</h3>
-                  <h3 className="text-sm font-bold text-blue-400 tracking-widest animate-pulse">EVEN NUMBERS</h3>
+                  <h3 className="text-lg font-black text-white uppercase">{copy?.match || 'Match'}</h3>
+                  <h3 className="text-sm font-bold text-blue-400 tracking-widest animate-pulse">{copy?.evenNumbers || 'EVEN NUMBERS'}</h3>
                 </div>
 
                 <div className="relative flex items-center justify-center w-20 h-20 sm:w-32 sm:h-32 text-4xl sm:text-6xl font-black rounded-2xl bg-black border border-blue-500/30 text-white pointer-events-none shadow-[inset_0_0_20px_rgba(0,0,0,1)]">
@@ -714,9 +770,9 @@ export default function DividedAttentionClient({ copy } = {}) {
                     onPointerDown={handleNumberCheck}
                     className="w-full py-3 sm:py-4 bg-gradient-to-r from-blue-600 to-indigo-700 text-white rounded-xl font-black text-lg sm:text-xl active:scale-95 transition-all hover:from-blue-500 hover:to-indigo-500 border border-blue-400/30 cursor-pointer shadow-[0_0_20px_rgba(59,130,246,0.3)]"
                   >
-                    MATCH
+                    {copy?.match || 'MATCH'}
                   </button>
-                  <p className="text-[9px] text-gray-500 font-bold uppercase tracking-widest mt-1">Tap when EVEN</p>
+                  <p className="text-[9px] text-gray-500 font-bold uppercase tracking-widest mt-1">{copy?.tapEven || 'Tap when EVEN'}</p>
                 </div>
               </div>
             </div>
@@ -727,8 +783,8 @@ export default function DividedAttentionClient({ copy } = {}) {
             <FpsStartCard
               icon={Layers}
               accent="blue"
-              title="Divided Attention Test"
-              subtitle="Dual-Task Stream • Split Focus"
+              title={copy?.startTitle || "Divided Attention Test"}
+              subtitle={copy?.startSubtitle || "Dual-Task Stream"}
               isTouchOnlyDevice={false}
               onStart={enterDrill}
             />
@@ -736,7 +792,7 @@ export default function DividedAttentionClient({ copy } = {}) {
 
           {/* COUNTDOWN OVERLAY */}
           {gameState === 'countdown' && (
-            <DrillCountdown value={countdownValue} subtitle="GET READY" />
+            <DrillCountdown value={countdownValue} subtitle={copy?.getReady || "GET READY"} />
           )}
 
           {/* UNIVERSAL RESULT CARD */}
@@ -747,10 +803,10 @@ export default function DividedAttentionClient({ copy } = {}) {
               score={uiScore}
               isNewBest={isNewBest}
               stats={[
-                { label: 'Dual Accuracy', value: analytics.accuracy, suffix: '%' },
-                { label: 'Hits', value: analytics.visualHits + analytics.numberHits },
-                { label: 'Misses', value: analytics.mistakes },
-                { label: 'Peak Level', value: `Lv. ${analytics.finalLevel}` },
+                { label: copy?.dualAccuracy || 'Dual Accuracy', value: analytics.accuracy, suffix: '%' },
+                { label: copy?.hits || 'Hits', value: analytics.visualHits + analytics.numberHits },
+                { label: copy?.misses || 'Misses', value: analytics.mistakes },
+                { label: copy?.peakLevel || 'Peak Level', value: `Lv. ${analytics.finalLevel}` },
               ]}
               onPlayAgain={enterDrill}
               onShare={shareResult}
@@ -763,7 +819,7 @@ export default function DividedAttentionClient({ copy } = {}) {
         {/* Stage Caption */}
         {!isFullscreen && (
           <p className="text-xs text-slate-400 leading-relaxed -mt-2">
-            Track moving spatial targets while simultaneously monitoring the number stream for even digits.
+            {copy?.caption || 'Track moving spatial targets while simultaneously monitoring the number stream for even digits.'}
           </p>
         )}
 
@@ -772,23 +828,20 @@ export default function DividedAttentionClient({ copy } = {}) {
         <div className="[&>div]:!mt-0">
         <DrillAccordion
           id="rules"
-          title="Drill Instructions & Scoring System"
+          title={copy?.rulesTitle || "Drill Instructions & Scoring System"}
           isOpen={openAccordion === 'rules'}
           onToggle={() => setOpenAccordion(openAccordion === 'rules' ? null : 'rules')}
         >
           <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
             {RULES_ITEMS.map((item, i) => (
-              <div key={i} className="bg-black p-4 rounded-xl border border-white/10">
-                <p className="text-sm font-bold text-white mb-1">{item.title}</p>
-                <p className="text-xs text-gray-300 leading-relaxed">{item.text}</p>
-              </div>
+              <RuleItem key={i} num={item.num} text={copy?.ruleItems?.[i]?.text || item.text} highlight={copy?.ruleItems?.[i]?.highlight || item.highlight} result={copy?.ruleItems?.[i]?.result || item.result} />
             ))}
           </div>
         </DrillAccordion>
 
         <DrillAccordion
           id="about"
-          title="About Divided Attention Test & Dual-Task Training"
+          title={copy?.aboutTitle || "About Divided Attention Test & Dual-Task Training"}
           isOpen={openAccordion === 'about'}
           onToggle={() => setOpenAccordion(openAccordion === 'about' ? null : 'about')}
         >
@@ -796,7 +849,7 @@ export default function DividedAttentionClient({ copy } = {}) {
             <section>
               <div className="space-y-4">
                 <p className="text-sm leading-relaxed text-gray-300">
-                  Test your split focus and dual-task processing capacity. When two concurrent tasks compete for central executive resources, performance suffers from psychological refractory bottlenecks and cross-talk interference (Pashler, 1994; Wickens, 2002).
+                  {copy?.aboutLead || 'Test your split focus and dual-task processing capacity. When two concurrent tasks compete for central executive resources, performance suffers from psychological refractory bottlenecks and cross-talk interference (Pashler, 1994; Wickens, 2002).'}
                 </p>
                 {ABOUT_TEXT.split('\n\n').map((para, i) => (
                   <p key={i} className="text-sm leading-relaxed text-gray-300">{para}</p>
@@ -808,62 +861,29 @@ export default function DividedAttentionClient({ copy } = {}) {
               <div className="p-4 rounded-xl border border-gray-800 bg-white/[0.02]">
                 <div className="flex items-center gap-2.5 mb-2">
                   <div className="w-7 h-7 rounded-lg bg-blue-600 flex items-center justify-center"><Users className="w-3.5 h-3.5 text-white" /></div>
-                  <h5 className="text-xs font-bold text-white">Who Should Use This?</h5>
+                  <h5 className="text-xs font-bold text-white">{copy?.audienceTitle || 'Who Should Use This?'}</h5>
                 </div>
-                <p className="text-xs text-gray-300 leading-relaxed">Air traffic controllers, ER nurses, esports players tracking minimap and targets at once, and drivers who need to safely process multiple input streams.</p>
+                <p className="text-xs text-gray-300 leading-relaxed">{copy?.audienceText || 'Air traffic controllers, ER nurses, esports players tracking minimap and targets at once, and drivers who need to safely process multiple input streams.'}</p>
               </div>
               <div className="p-4 rounded-xl border border-gray-800 bg-white/[0.02]">
                 <div className="flex items-center gap-2.5 mb-2">
                   <div className="w-7 h-7 rounded-lg bg-emerald-600 flex items-center justify-center"><TrendingUp className="w-3.5 h-3.5 text-white" /></div>
-                  <h5 className="text-xs font-bold text-white">Skills Improved</h5>
+                  <h5 className="text-xs font-bold text-white">{copy?.skillsTitle || 'Skills Improved'}</h5>
                 </div>
-                <p className="text-xs text-gray-300 leading-relaxed">Dual-task capacity, multi-channel visual tracking, numerical cognition, and prefrontal executive resource allocation.</p>
+                <p className="text-xs text-gray-300 leading-relaxed">{copy?.skillsText || 'Dual-task capacity, multi-channel visual tracking, numerical cognition, and prefrontal executive resource allocation.'}</p>
               </div>
               <div className="p-4 rounded-xl border border-gray-800 bg-white/[0.02]">
                 <div className="flex items-center gap-2.5 mb-2">
                   <div className="w-7 h-7 rounded-lg bg-purple-600 flex items-center justify-center"><Layers className="w-3.5 h-3.5 text-white" /></div>
-                  <h5 className="text-xs font-bold text-white">Parallel Processing</h5>
+                  <h5 className="text-xs font-bold text-white">{copy?.flexibilityTitle || 'Parallel Processing'}</h5>
                 </div>
                 <p className="text-xs text-gray-300 leading-relaxed">Track the spatial target stream and the numerical stream at once — reacting to one without letting accuracy on the other channel collapse.</p>
               </div>
             </div>
           </div>
         </DrillAccordion>
-            {/* The FAQ is rendered by DrillGuide below, mapped from
-                faqSchema.mainEntity so the page's FAQPage JSON-LD and the visible
-                questions cannot drift. */}
         </div>
         )}
-
-        {/* RELATED DRILLS GRID */}
-        {!isFullscreen && (
-          <section className="mt-4">
-            <h2 className="text-sm font-bold text-slate-400 uppercase tracking-wider mb-3">
-              Related Cognitive Drills
-            </h2>
-            <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
-              {RELATED_DRILLS.map((drill) => (
-                <Link
-                  key={drill.id}
-                  href={drill.href}
-                  className="group bg-[#0c0c16] border border-white/5 hover:border-blue-500/40 rounded-xl p-3.5 transition-all duration-200 hover:-translate-y-0.5 flex flex-col justify-between"
-                >
-                  <div>
-                    <div className="text-[10px] font-bold text-blue-400 uppercase tracking-wider mb-1">{drill.cat}</div>
-                    <div className="text-xs font-bold text-white group-hover:text-blue-300 transition-colors">{drill.name}</div>
-                    <div className="text-[11px] text-slate-400 mt-1 line-clamp-2 leading-relaxed">{drill.desc}</div>
-                  </div>
-                  <div className="text-[10px] font-bold text-slate-500 group-hover:text-blue-400 mt-3 flex items-center gap-1 transition-colors">
-                    Train Drill <span>→</span>
-                  </div>
-                </Link>
-              ))}
-            </div>
-          </section>
-        )}
-
-        {/* SITE FOOTER */}
-        {!isFullscreen && <DrillFooter />}
 
       </main>
     </div>

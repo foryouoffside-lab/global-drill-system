@@ -5,21 +5,21 @@ import { getAlternateLanguages } from '@/lib/i18n/locales';
 import { pickSources } from '@/lib/drillSources';
 
 export const metadata = {
-  title: "Strobe-Augentraining – Antizipation | SkillDrills",
-  description: "Trainieren Sie visuelle Extrapolation und antizipative Blickführung bei zyklischer Dunkelphasen-Okklusion. Strobe-Vision-Augentraining online. Kostenlos.",
+  title: "Stroboskopisches Sehtraining | SkillDrills",
+  description: "Verfolge ein in Dunkelphasen verborgenes Ziel. Kostenlose Browserübung für Blickvorhersage, Wiedererfassungsfehler und Trackingkontinuität.",
   keywords: [
-    "stroboskopisches augentraining",
-    "strobe brille training online",
-    "antizipation blickverfolgung training",
-    "zeitweise verdecktes tracking",
-    "visuelle extrapolation dynamische sehschaerfe",
-    "kleinhirn vorwaertsmodell blick",
-    "strobe vision drill kostenlos",
-    "esports blind tracking vorhaltemass",
-    "okklusions blickfuehrung",
-    "unterbrochene reizdarstellung",
-    "strobe blickverfolgung test",
-    "visuelle antizipation uebung"
+    "stroboskopisches Sehtraining",
+    "Stroboskopbrille Training",
+    "intermittierendes Sehen Sport",
+    "Blickverfolgung Stroboskop",
+    "visuelles Training Antizipation",
+    "verdecktes Ziel verfolgen",
+    "Blickvorhersage Übung",
+    "Zielbahn in Dunkelphase",
+    "visuomotorische Antizipation",
+    "Wiedererfassungsfehler messen",
+    "stroboskopisches Blicktraining",
+    "intermittierende Sicht trainieren"
   ],
   alternates: {
     canonical: "https://skilldrills.online/de/drills/visual-tracking/strobe-prediction-pursuit",
@@ -27,8 +27,8 @@ export const metadata = {
   },
   robots: { index: true, follow: true },
   openGraph: {
-    title: "Strobe-Augentraining – Antizipation | SkillDrills",
-    description: "Trainieren Sie visuelle Extrapolation und antizipative Blickführung bei zyklischer Dunkelphasen-Okklusion. Strobe-Vision-Augentraining online. Kostenlos.",
+    title: "Stroboskopisches Sehtraining | SkillDrills",
+    description: "Verfolge ein in Dunkelphasen verborgenes Ziel. Kostenlose Browserübung für Blickvorhersage, Wiedererfassungsfehler und Trackingkontinuität.",
     url: "https://skilldrills.online/de/drills/visual-tracking/strobe-prediction-pursuit",
     siteName: "SkillDrills",
     locale: "de_DE",
@@ -36,8 +36,8 @@ export const metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Strobe-Augentraining – Antizipation | SkillDrills",
-    description: "Trainieren Sie visuelle Extrapolation und antizipative Blickführung bei zyklischer Dunkelphasen-Okklusion. Strobe-Vision-Augentraining online. Kostenlos.",
+    title: "Stroboskopisches Sehtraining | SkillDrills",
+    description: "Verfolge ein in Dunkelphasen verborgenes Ziel. Kostenlose Browserübung für Blickvorhersage, Wiedererfassungsfehler und Trackingkontinuität.",
   },
 };
 
@@ -84,7 +84,7 @@ const softwareApplicationSchema = {
     "name": "SkillDrills",
     "url": "https://skilldrills.online"
   },
-  "dateModified": "2026-09-15"
+  "dateModified": "2026-09-20"
 };
 
 const webAppSchema = {
@@ -100,7 +100,7 @@ const webAppSchema = {
     "priceCurrency": "USD"
   },
   "url": "https://skilldrills.online/de/drills/visual-tracking/strobe-prediction-pursuit",
-  "dateModified": "2026-09-15"
+  "dateModified": "2026-09-20"
 };
 
 const videoGameSchema = {
@@ -124,7 +124,8 @@ const videoGameSchema = {
     "@type": "Offer",
     "price": "0",
     "priceCurrency": "USD"
-  }
+  },
+  "dateModified": "2026-09-20"
 };
 
 const howToSchema = {
@@ -132,7 +133,7 @@ const howToSchema = {
   "@type": "HowTo",
   "name": "Anleitung für das stroboskopische Augentraining",
   "description": "Schritt-für-Schritt-Anleitung zur mentalen Extrapolation verdeckter Bewegungsbahnen unter intermittierender Stroboskop-Okklusion.",
-  "dateModified": "2026-09-15",
+  "dateModified": "2026-09-20",
   "step": [
     {
       "@type": "HowToStep",
@@ -168,6 +169,7 @@ const howToSchema = {
 const faqSchema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
+  "dateModified": "2026-09-20",
   "mainEntity": [
     {
       "@type": "Question",
@@ -310,6 +312,12 @@ const guide = {
       ]
     }
   ],
+  steps: [
+    { title: "In der Hellphase die Geschwindigkeit lesen", text: "Erfasse Richtung und Tempo des Ziels, solange es sichtbar ist, und halte den Kopf ruhig." },
+    { title: "In der Dunkelphase die Bahn vorhersagen", text: "Halte die Blickbewegung auch bei unsichtbarem Ziel aufrecht und schätze den nächsten Auftauchpunkt." },
+    { title: "Fehler beim Wiedererscheinen prüfen", text: "Beobachte, ob der Blick vor oder hinter dem Ziel landet, und passe das Tempo im nächsten Zyklus leicht an." },
+    { title: "Schwierigkeit erst bei Stabilität erhöhen", text: "Trainiere in kurzen Sätzen und erhöhe Geschwindigkeit oder Verdunkelungsgrad erst bei weniger Zielverlusten." }
+  ],
   deviceCalibration: {
     title: "Hardware- und Display-Anforderungen für Strobe-Training",
     points: [
@@ -401,9 +409,9 @@ export default function StrobePredictionPursuitDePage() {
 
       <StrobePredictionPursuitClient
         copy={{
-          title: "Stroboskopisches Blicktracking",
-          subtitle: "Strobe Augentraining & Vorhersage",
-          description: "Konditionieren Sie visuelle Antizipation und kinematische Flugbahnextrapolation bei intermittierender stroboskopischer Verdunkelung. Rekonstruieren Sie verdeckte Flugbahnen rein intern im Kleinhirn und optimieren Sie Ihre Reaktionsgenauigkeit bei Reizausfällen."
+          title: "Stroboskopisches Sehtraining",
+          subtitle: "Blickvorhersage bei intermittierender Sicht",
+          description: "Verfolge ein in Dunkelphasen verborgenes Ziel und prüfe Blickfehler und Zielverluste beim Wiedererscheinen."
         }}
       />
       <DrillGuide guide={guide} />

@@ -14,13 +14,13 @@ import { drillFlash } from '@/lib/drillFlash';
 import { drillTimeout } from '@/lib/drillTimeout';
 import { getComboMultiplier } from '@/lib/scoringEngine';
 import useUnexpectedExitGuard from '@/lib/useUnexpectedExitGuard';
-import DrillFooter from '@/components/drill/DrillFooter';
 import DrillCountdown from '@/components/drill/DrillCountdown';
 import DrillAccordion from '@/components/drill/DrillAccordion';
 import FpsStartCard from '@/components/drill/FpsStartCard';
 import useImmersiveMode from '@/lib/useImmersiveMode';
 import { useTranslation } from '@/lib/i18n/useTranslation';
 
+import { KEYBOARD_RECOGNITION_I18N } from '@/lib/i18n/drills/keyboardRecognition';
 // ============================================================
 // TUNING CONSTANTS
 // ============================================================
@@ -160,7 +160,7 @@ Fake prompts require you to freeze rather than react, training the same response
 // MAIN COMPONENT
 // ============================================================
 export default function KeyboardRecognitionClient({ copy = null }) {
-  const { t, locale } = useTranslation();
+  const { t, locale } = useTranslation(KEYBOARD_RECOGNITION_I18N);
   const [gameState, setGameState] = useState('start'); // 'start' | 'countdown' | 'playing' | 'gameOver'
   const [isFullscreen, setIsFullscreen] = useState(false);
   useImmersiveMode(isFullscreen); // locks the page behind while the drill fills the screen
@@ -251,6 +251,35 @@ export default function KeyboardRecognitionClient({ copy = null }) {
     active: gameState === 'playing' || gameState === 'countdown',
     onUnexpectedExit: handleExitDrill,
   });
+
+  useEffect(() => {
+    const onFullscreenChange = () => {
+      if (!document.fullscreenElement && !document.webkitFullscreenElement) {
+        if (gameState === 'playing' || gameState === 'countdown') {
+          handleExitDrill();
+        }
+      }
+    };
+    document.addEventListener('fullscreenchange', onFullscreenChange);
+    document.addEventListener('webkitfullscreenchange', onFullscreenChange);
+    return () => {
+      document.removeEventListener('fullscreenchange', onFullscreenChange);
+      document.removeEventListener('webkitfullscreenchange', onFullscreenChange);
+    };
+  }, [gameState, handleExitDrill]);
+
+  useEffect(() => {
+    const onKeyDownGlobal = (e) => {
+      if (e.key === 'Escape' || e.code === 'Escape') {
+        if (gameState === 'playing' || gameState === 'countdown') {
+          e.preventDefault();
+          handleExitDrill();
+        }
+      }
+    };
+    window.addEventListener('keydown', onKeyDownGlobal, true);
+    return () => window.removeEventListener('keydown', onKeyDownGlobal, true);
+  }, [gameState, handleExitDrill]);
 
   const handleLoadPreset = (presetName) => {
     setSelectedProfile(presetName);
@@ -520,6 +549,11 @@ export default function KeyboardRecognitionClient({ copy = null }) {
   useEffect(() => {
     const handleKeyDown = (evt) => {
       if (gameState !== 'playing' || !gameActiveRef.current) return;
+      if (evt.code === 'Escape' || evt.key === 'Escape') {
+        evt.preventDefault();
+        handleExitDrill();
+        return;
+      }
       if (['Tab', 'AltLeft', 'AltRight', 'Space'].includes(evt.code)) {
         evt.preventDefault();
       }
@@ -685,9 +719,6 @@ export default function KeyboardRecognitionClient({ copy = null }) {
                 {copy?.subtitle || t('keyboardRecognition.subtitle', 'Keybind Reaction Trainer & Speed Test')}
               </span>
             </h1>
-            <p className="text-[13px] text-slate-400 leading-relaxed">
-              {copy?.caption || t('keyboardRecognition.caption', "A keyboard speed test measures how long it takes to see a prompt and press the key that matches it. Simple visual reaction on its own takes roughly 200–250 ms (Woods et al., 2015), and every extra key you might have to choose between adds to that: Hick's Law puts choice reaction time at approximately a logarithmic function of the number of alternatives (Hick, 1952). Practice does not beat that law — it makes each key mapping automatic so the choice step shrinks.")}
-            </p>
           </div>
         )}
 
@@ -712,7 +743,7 @@ export default function KeyboardRecognitionClient({ copy = null }) {
         <div 
           ref={containerRef} 
           onContextMenu={(e) => { if (gameActiveRef.current) e.preventDefault(); }}
-          className={`overflow-hidden flex flex-col transition-all duration-150 select-none bg-[#080811] text-white ${
+          className={`overflow-hidden flex flex-col select-none bg-[#080811] text-white ${
             isFullscreen 
               ? 'fixed inset-0 z-[100] w-screen h-[100dvh] bg-[#050508] flex flex-col items-center justify-center' 
               : 'w-full rounded-2xl aspect-video min-h-[460px] md:min-h-[500px] max-h-[88vh] max-md:portrait:aspect-[3/4] max-md:portrait:min-h-[420px] max-md:portrait:max-h-[76vh] max-md:landscape:min-h-[340px] max-md:landscape:max-h-[85vh] bg-[#080811] border border-white/10 relative overflow-hidden flex flex-col'
@@ -999,17 +1030,40 @@ export default function KeyboardRecognitionClient({ copy = null }) {
               isOpen={openAccordion === 'rules'}
               onToggle={() => setOpenAccordion(openAccordion === 'rules' ? null : 'rules')}
             >
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-2.5 sm:gap-3">
                 {[
-                  { title: t('keyboardRecognition.rule1Title', "Correct Input"), text: t('keyboardRecognition.rule1Text', "Match key prompt before sequence timer expires to score +120 PTS.") },
-                  { title: t('keyboardRecognition.rule2Title', "Fake Prompts (Traps)"), text: t('keyboardRecognition.rule2Text', "Ignore fake invalid prompts to score +200 PTS & build response inhibition.") },
-                  { title: t('keyboardRecognition.rule3Title', "Wrong Key / Fail Trap"), text: t('keyboardRecognition.rule3Text', "Pressing wrong key or falling for fake prompt trap resets active combo.") },
-                  { title: t('keyboardRecognition.rule4Title', "Combos & Sequences"), text: t('keyboardRecognition.rule4Text', "Chain unbroken prompt matches to build score multipliers and adaptive speed.") }
+                  {
+                    num: '1',
+                    text: t('keyboardRecognition.rule1TextShort', 'Match active key prompt before timer expires'),
+                    highlight: t('keyboardRecognition.rule1Highlight', 'Target Key'),
+                    result: '+120 PTS',
+                  },
+                  {
+                    num: '2',
+                    text: t('keyboardRecognition.rule2TextShort', 'Inhibit motor impulse on fake red invalid prompts'),
+                    highlight: t('keyboardRecognition.rule2Highlight', 'Trap Guard'),
+                    result: '+200 PTS',
+                  },
+                  {
+                    num: '3',
+                    text: t('keyboardRecognition.rule3TextShort', 'Wrong keypress or falling for trap reset streak'),
+                    highlight: t('keyboardRecognition.rule3Highlight', 'Penalty'),
+                    result: 'Combo Reset',
+                  },
+                  {
+                    num: '4',
+                    text: t('keyboardRecognition.rule4TextShort', 'Maintain consecutive correct strokes for scaling pace'),
+                    highlight: t('keyboardRecognition.rule4Highlight', 'Streak Scaling'),
+                    result: 'Up to 3.0×',
+                  },
                 ].map((item, i) => (
-                  <div key={i} className="bg-black p-4 rounded-xl border border-white/10">
-                    <p className="text-sm font-bold text-white mb-1">{item.title}</p>
-                    <p className="text-xs text-gray-300 leading-relaxed">{item.text}</p>
-                  </div>
+                  <RuleItem
+                    key={i}
+                    num={item.num}
+                    text={item.text}
+                    highlight={item.highlight}
+                    result={item.result}
+                  />
                 ))}
               </div>
             </DrillAccordion>
@@ -1029,7 +1083,7 @@ export default function KeyboardRecognitionClient({ copy = null }) {
                     {t('keyboardRecognition.aboutP1', 'The Keyboard Speed Test is an advanced neuro-motor training tool designed to bridge the gap between visual prompt detection and subconscious mechanical execution. In competitive titles like Valorant, CS2, Fortnite, Minecraft, and Apex Legends, clutch split-second decisions demand firing abilities and utility without glancing at the physical keyboard.')}
                   </p>
                   <p className="text-sm leading-relaxed text-gray-300">
-                    {t('keyboardRecognition.aboutP2', 'By training under F.C. Donders\' (1868) choice reaction paradigm, Hick\'s (1952) law of alternative stimuli, and Gordon Logan\'s (1984) response inhibition countermanding, this drill directly conditions the corticospinal pathways responsible for rapid finger articulation while purging hesitation and panic key-smashing.')}
+                    {t('keyboardRecognition.aboutP2', 'By training under F.C. Donders\' (1868) choice reaction paradigm, Hick\'s (1952) law of alternative stimuli, and Gordon Logan\'s (1984) response inhibition countermanding, this drill directly conditions the corticospinal pathways responsible for rapid finger articulation while purging hesitation and panic key-smashing. Simple visual reaction on its own takes roughly 200–250 ms (Woods et al., 2015), and every extra key you might have to choose between adds to that: Hick\'s Law puts choice reaction time at approximately a logarithmic function of the number of alternatives (Hick, 1952). Practice does not beat that law — it makes each key mapping automatic so the choice step shrinks.')}
                   </p>
                 </div>
 
@@ -1061,10 +1115,26 @@ export default function KeyboardRecognitionClient({ copy = null }) {
           </div>
         )}
 
-        {/* ── FOOTER ── */}
-        {!isFullscreen && <DrillFooter />}
-
       </main>
+    </div>
+  );
+}
+
+// === Subcomponents ===
+function RuleItem({ num, text, highlight = '', result }) {
+  return (
+    <div className="flex items-center gap-2.5 sm:gap-3 bg-black px-3 py-2 sm:px-4 sm:py-2.5 rounded-xl border border-white/10 shadow-sm font-sans">
+      <div className="w-6 h-6 sm:w-7 sm:h-7 rounded-lg bg-white/10 border border-white/20 flex items-center justify-center text-white text-xs sm:text-sm font-black shadow flex-shrink-0">
+        {num}
+      </div>
+      <div className="flex-1 min-w-0 flex items-center justify-between gap-2">
+        <p className="text-xs sm:text-sm font-medium text-gray-200 font-sans truncate">
+          {text}{highlight && <span className="font-bold text-white"> {highlight}</span>}
+        </p>
+        <div className="text-[11px] sm:text-xs font-bold px-2 py-0.5 sm:px-2.5 sm:py-1 rounded-md bg-[#050811] border border-white/10 text-white whitespace-nowrap shadow-inner flex-shrink-0">
+          {result}
+        </div>
+      </div>
     </div>
   );
 }

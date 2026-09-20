@@ -5,25 +5,25 @@ import RelatedDrills from '@/components/drill/RelatedDrills';
 import { pickSources } from '@/lib/drillSources';
 
 export const metadata = {
-  title: "Teste Go No-Go: Inibição & Controle de Impulso | SkillDrills",
-  description: "Teste Go No-Go online grátis. Reaja a alvos verdes e iniba o clique nos alvos vermelhos. Avalie freio motor, controle de impulsos e disciplina de gatilho.",
+  title: "Teste Go/No-Go | Controle inibitório | SkillDrills",
+  description: "Teste Go/No-Go online grátis: responda aos sinais verdes e freie a resposta diante dos vermelhos. Treine controle inibitório; não é diagnóstico clínico.",
   keywords: [
-    "teste go no go online",
-    "teste de inibição de resposta",
-    "controle de impulsos teste",
-    "tarefa go no-go neuropsicologia",
-    "disciplina de gatilho fps",
-    "funções executivas córtex pré-frontal",
-    "teste stop signal task",
-    "inibição motora comportamental",
-    "erro de comissão teste atenção",
-    "treino de tempo de reação e freio motor",
-    "tarefa de atenção sustentada sart",
-    "cronometria mental donders"
+    "teste Go/No-Go",
+    "teste de controle inibitório",
+    "inibição de resposta",
+    "controle de impulsos",
+    "teste de impulsividade",
+    "freio de impulsos",
+    "teste Go/No-Go online",
+    "erro de comissão",
+    "inibição motora",
+    "funções executivas teste",
+    "atenção sustentada SART",
+    "sinal Go e No-Go"
   ],
   openGraph: {
-    title: "Teste Go No-Go: Inibição & Controle de Impulso | SkillDrills",
-    description: "Reaja ao verde e freie no vermelho. Avalie inibição de resposta e freio motor pré-frontal gratuitamente online.",
+    title: "Teste Go/No-Go | Controle inibitório | SkillDrills",
+    description: "Responda ao verde e freie no vermelho para verificar controle inibitório, velocidade e erros de comissão.",
     type: 'article',
     url: 'https://skilldrills.online/pt/drills/visual/reaction-speed/go/no-go',
     siteName: 'SkillDrills',
@@ -31,8 +31,8 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: "Teste Go No-Go: Inibição & Controle de Impulso | SkillDrills",
-    description: "Treino neurocognitivo Go/No-Go gratuito para aprimorar disciplina de gatilho e controle de impulsos.",
+    title: "Teste Go/No-Go | Controle inibitório | SkillDrills",
+    description: "Treino online de controle inibitório: responda ao verde e freie no vermelho.",
   },
   robots: { index: true, follow: true },
   alternates: {
@@ -68,7 +68,7 @@ const softwareApplicationSchema = {
     "Monitoramento detalhado de erros de comissão (falso alarme) e omissão",
     "Armazenamento 100% local no navegador com zero telemetria"
   ],
-  "dateModified": "2026-09-05"
+  "dateModified": "2026-09-20"
 };
 
 const webAppSchema = {
@@ -77,7 +77,7 @@ const webAppSchema = {
   "name": "Teste Go/No-Go de Inibição de Resposta | SkillDrills",
   "alternateName": "Go/No-Go Pro",
   "url": "https://skilldrills.online/pt/drills/visual/reaction-speed/go/no-go",
-  "dateModified": "2026-09-05",
+  "dateModified": "2026-09-20",
   "description": "Treino online gratuito de Go/No-Go. Clique em alvos verdes e iniba a resposta motora diante de alvos vermelhos No-Go.",
   "applicationCategory": "EducationalApplication",
   "operatingSystem": "All",
@@ -105,7 +105,7 @@ const howToSchema = {
   "@context": "https://schema.org",
   "@type": "HowTo",
   "name": "Como Realizar o Teste Go/No-Go de Inibição de Resposta",
-  "dateModified": "2026-09-05",
+  "dateModified": "2026-09-20",
   "description": "Guia de 4 etapas para testar e aprimorar a inibição motora e a supressão de impulsos pelo protocolo Go/No-Go.",
   "step": [
     {
@@ -142,7 +142,7 @@ const howToSchema = {
 const faqSchema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
-  "dateModified": "2026-09-05",
+  "dateModified": "2026-09-20",
   "mainEntity": [
     {
       "@type": "Question",
@@ -228,7 +228,7 @@ const faqSchema = {
 };
 
 const goNoGoGuide = {
-  heading: "Padrões Científicos de Inibição de Resposta e Supressão Motora",
+  heading: "Teste Go/No-Go: controle inibitório e impulsos",
   intro: [
     "A inibição de resposta constitui a faculdade executiva essencial que capacita o ser humano a cancelar, conter ou adiar ações motoras inadequadas ou desvantajosas. Em esportes de combate, e-sports de alta precisão e direção automotiva, a capacidade de suspender uma resposta reflexa prepotente é frequentemente mais decisiva do que a mera rapidez de movimento.",
     "A gênese científica do paradigma Go/No-Go remonta a Franciscus Cornelis Donders (1868), pioneiro da cronometria mental que introduziu o método de subtração da 'Reação-C'. Donders demonstrou que discriminar entre dois estímulos e responder apenas a um deles exige processamento cognitivo adicional em relação ao tempo de reação simples.",
@@ -236,7 +236,7 @@ const goNoGoGuide = {
     "Metodologia e Precisão Temporal: As exibições de estímulos e cliques são registradas pela API performance.now() com precisão de microssegundos. Variações causadas por taxas de atualização de display e taxas de polling USB são calibradas conforme a literatura experimental (Woods et al., 2015), mantendo todos os dados confinados localmente."
   ],
   benchmarks: {
-    title: "Faixas de Desempenho em Inibição de Resposta (Referência Científica)",
+    title: "Referência de controle inibitório e erros de comissão",
     headers: ["Nível de Desempenho", "Taxa de Erro de Comissão (CER)", "Pontuação & Combo Limiar", "Perfil Neuromuscular e Executivo"],
     rows: [
       ["Tier 1: Frenagem Executiva Apex", "< 2.0% CER", "16.000+ PTS | Combo 30x+", "Supressão motora hiperdireta rIFC-STN impecável; desacoplamento total entre clarão visual e disparo motor."],
@@ -248,7 +248,7 @@ const goNoGoGuide = {
     note: "Estas faixas constituem parâmetros editoriais fundamentados na literatura clássica de cronometria mental e inibição motora (Donders, 1868; Logan et al., 1984; Robertson et al., 1997; Aron et al., 2014). Flutuações ocorrem segundo o ciclo circadiano e a latência de hardware."
   },
   techniques: {
-    title: "Métodos para Treinar a Inibição de Resposta",
+    title: "Como treinar o controle inibitório no Go/No-Go",
     items: [
       {
         name: "Discriminação Cromática Pré-Disparo",
@@ -301,7 +301,7 @@ export default function ChromaSyncPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(howToSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(videoGameSchema) }} />
-      <ChromaSyncClient copy={{ title: "Teste Go No-Go: Inibição & Controle de Impulso" }} />
+      <ChromaSyncClient copy={{ title: "Teste Go/No-Go (controle inibitório)", subtitle: "Responda ao verde e freie no vermelho" }} />
       <DrillGuide guide={goNoGoGuide} />
       <div className="max-w-6xl mx-auto px-4 pb-12">
         <RelatedDrills currentCategory="visual" currentHref="https://skilldrills.online/pt/drills/visual/reaction-speed/go/no-go" />

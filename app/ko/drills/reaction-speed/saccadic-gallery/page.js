@@ -1,41 +1,40 @@
-import SaccadicGalleryClient from '@/app/drills/reaction-speed/saccadic-gallery/SaccadicGalleryClient';
+import SaccadicGalleryWrapper from '@/app/drills/reaction-speed/saccadic-gallery/SaccadicGalleryWrapperLoader';
 import { getAlternateLanguages } from '@/lib/i18n/locales';
 import DrillGuide from '@/components/drill/DrillGuide';
+import DrillFooter from '@/components/drill/DrillFooter';
 import RelatedDrills from '@/components/drill/RelatedDrills';
 import { pickSources } from '@/lib/drillSources';
 
 // ============================================================
 // SEO RESEARCH FINDINGS — ko-KR (reaction-speed / saccadic-gallery)
-// PRIMARY DOMESTIC: "단속성 안구운동 훈련" / "안구 도약 운동"
-// SECONDARY / LSI:
-//   "시선 도약 훈련" / "사케드 안구운동" / "동체시력 훈련"
-//   "시각 포착 속도" / "중심와 고정" / "안구 반응속도"
+// PRIMARY DOMESTIC: Google Suggest expands "동체시력" into 테스트, 훈련, 사이트, 게임
+// Bing specialist seeds returned no data; use the native 동체시력 cluster instead of forcing a medical term
+// SECONDARY: "동체시력 반응속도 테스트" / "동체시력 테스트 게임" / "시선 이동 훈련"
 // ============================================================
 
 export const metadata = {
-  title: '단속성 안구운동 훈련 – 시선 도약 반응속도 테스트 | SkillDrills',
+  title: '동체시력 훈련 · 시선 이동 게임 | SkillDrills',
   description:
-    '무료 온라인 단속성 안구운동 훈련. 화면 속 표적을 향해 시선을 순간 점프시켜 안구 도약 속도와 중심와 포착 정확도를 정밀하게 측정하고 단련합니다.',
+    '무료 동체시력 훈련 게임. 화면의 타깃으로 시선을 빠르게 옮기며 시각 포착 속도와 눈-손 협응을 브라우저에서 연습하세요.',
   keywords: [
-    '단속성 안구운동 훈련',
-    '안구 도약 운동',
-    '시선 도약 훈련',
-    '사케드 안구운동',
+    '동체시력 테스트',
     '동체시력 훈련',
+    '동체시력 테스트 사이트',
+    '동체시력 게임',
+    '동체시력 반응속도 테스트',
+    '시선 이동 훈련',
+    '눈 운동',
     '시각 포착 속도',
-    '중심와 고정',
-    '안구 반응속도',
-    '이스포츠 시각 훈련',
-    '안구 협응력',
+    '동체시력 키우는 법',
   ],
   alternates: {
     canonical: 'https://skilldrills.online/ko/drills/reaction-speed/saccadic-gallery',
     languages: getAlternateLanguages('/drills/reaction-speed/saccadic-gallery'),
   },
   openGraph: {
-    title: '단속성 안구운동 훈련 – 시선 도약 반응속도 테스트 | SkillDrills',
+    title: '동체시력 훈련 · 시선 이동 게임 | SkillDrills',
     description:
-      '무료 온라인 단속성 안구운동 훈련. 화면 곳곳에서 번쩍이는 타깃을 향해 시선을 순간 점프시켜 시각 포착 속도를 측정하세요.',
+      '화면의 타깃으로 시선을 빠르게 옮기며 동체시력과 시각 포착 속도를 연습하는 무료 브라우저 게임입니다.',
     type: 'article',
     url: 'https://skilldrills.online/ko/drills/reaction-speed/saccadic-gallery',
     siteName: 'SkillDrills',
@@ -43,9 +42,9 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: '단속성 안구운동 훈련 – 시선 도약 반응속도 테스트 | SkillDrills',
+    title: '동체시력 훈련 · 시선 이동 게임 | SkillDrills',
     description:
-      '무료 온라인 단속성 안구운동 훈련. 시선 도약 반응속도와 중심와 고정 정밀도를 향상시키세요.',
+      '동체시력 훈련 게임으로 타깃 사이에 시선을 빠르게 옮기고 포착 정확도를 높여 보세요.',
   },
   robots: { index: true, follow: true },
 };
@@ -57,15 +56,15 @@ const breadcrumbSchema = {
     { '@type': 'ListItem', position: 1, name: 'SkillDrills 홈', item: 'https://skilldrills.online/ko' },
     { '@type': 'ListItem', position: 2, name: '훈련 허브', item: 'https://skilldrills.online/ko/drills' },
     { '@type': 'ListItem', position: 3, name: '반응 속도', item: 'https://skilldrills.online/ko/drills/reaction-speed' },
-    { '@type': 'ListItem', position: 4, name: '단속성 안구운동 훈련', item: 'https://skilldrills.online/ko/drills/reaction-speed/saccadic-gallery' },
+    { '@type': 'ListItem', position: 4, name: '동체시력 훈련 · 시선 이동 게임', item: 'https://skilldrills.online/ko/drills/reaction-speed/saccadic-gallery' },
   ],
 };
 
 const softwareApplicationSchema = {
   '@context': 'https://schema.org',
   '@type': 'SoftwareApplication',
-  name: '단속성 안구운동 훈련 – 시선 도약 반응속도 측정 도구',
-  alternateName: ['사케드 트레이너', '안구 도약 운동 측정기', '시각 탐색 훈련'],
+  name: '동체시력 훈련 · 시선 이동 게임',
+  alternateName: ['동체시력 테스트', '동체시력 훈련', '동체시력 게임', '시선 이동 훈련'],
   applicationCategory: 'HealthApplication',
   operatingSystem: 'All',
   offers: { '@type': 'Offer', price: '0', priceCurrency: 'KRW' },
@@ -78,7 +77,7 @@ const softwareApplicationSchema = {
 const webAppSchema = {
   '@context': 'https://schema.org',
   '@type': 'WebApplication',
-  name: '단속성 안구운동 훈련 — 시선 도약 반응속도 | SkillDrills',
+  name: '동체시력 훈련 · 시선 이동 게임 | SkillDrills',
   url: 'https://skilldrills.online/ko/drills/reaction-speed/saccadic-gallery',
   description:
     '무료 온라인 안구 도약 훈련. 단속성 안구운동 속도와 주변 시야 탐색 능력을 극대화하는 브라우저 반응속도 게임.',
@@ -95,7 +94,7 @@ const webAppSchema = {
 const videoGameSchema = {
   '@context': 'https://schema.org',
   '@type': 'VideoGame',
-  name: '단속성 안구운동 훈련 - 시선 도약 속도 게임',
+  name: '동체시력 훈련 - 시선 이동 게임',
   url: 'https://skilldrills.online/ko/drills/reaction-speed/saccadic-gallery',
   description: '웹 브라우저 기반 안구 도약 반응속도 및 표적 포착 정밀 훈련 게임.',
   genre: ['Vision Training', 'Action', 'Esports Training'],
@@ -144,7 +143,7 @@ const howToSchema = {
 const faqSchema = {
   '@context': 'https://schema.org',
   '@type': 'FAQPage',
-  dateModified: '2026-09-15',
+  dateModified: '2026-09-20',
   mainEntity: [
     {
       '@type': 'Question',
@@ -229,6 +228,7 @@ const faqSchema = {
   ],
 };
 
+faqSchema.mainEntity = faqSchema.mainEntity.slice(0, 10);
 const saccadicGuide = {
   heading: '단속성 안구운동(사케드) 훈련 가이드: 시선 도약 속도와 안구 기민성',
   intro: [
@@ -319,11 +319,12 @@ export default function KoreanSaccadicGalleryPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
-      <SaccadicGalleryClient copy={{ title: '단속성 안구운동 훈련' }} />
+      <SaccadicGalleryWrapper copy={{ title: '동체시력 훈련 · 시선 이동 게임', subtitle: '시선 도약 · 빠른 시각 포착', caption: '타깃 사이로 시선을 빠르게 옮기고 정확하게 클릭하세요.' }} />
       <DrillGuide guide={saccadicGuide} />
       <div className="max-w-6xl mx-auto px-4 pb-12">
         <RelatedDrills currentCategory="reaction-speed" currentHref="https://skilldrills.online/ko/drills/reaction-speed/saccadic-gallery" />
       </div>
+      <DrillFooter />
     </>
   );
 }

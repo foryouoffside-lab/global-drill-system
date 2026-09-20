@@ -2,17 +2,16 @@ import RSVPReaderClient from '@/app/drills/cognitive/processing-speed/rsvp-reade
 import { getAlternateLanguages } from '@/lib/i18n/locales';
 import DrillGuide from '@/components/drill/DrillGuide';
 import RelatedDrills from '@/components/drill/RelatedDrills';
+import DrillFooter from '@/components/drill/DrillFooter';
 import { pickSources } from '@/lib/drillSources';
 
 export const metadata = {
-  title: "速読トレーニング・RSVP読書速度測定 – 毎分単語数WPM診断 | SkillDrills",
-  description: "無料ブラウザ完結のRSVP速読トレーニングツール。視線跳躍（サッカード）を排除し、単語の最適認識点（ORP）へ高速連続表示することで、最大850WPMの超高速テキスト処理と読解速度を精密測定。",
-  keywords: ["速読 トレーニング", "RSVP 速読 テスト", "読書速度 測定 WPM", "速読 アプリ 無料", "サッカード 排除 読書", "最適認識点 ORP", "視覚情報処理 速度", "速読 練習 オンライン", "文章 読む速度 診断", "WPM 測定",
-    "RSVP リーダー 無料",
-    "速読 訓練 ツール"],
+  title: "速読テスト | RSVP読書トレーニング | SkillDrills",
+  description: "無料ブラウザの速読テストで、単語を固定位置に順番表示します。WPMと正確さを確認する非臨床の読書トレーニングです。",
+  keywords: ["速読テスト", "速読テスト 無料", "読書速度 測定", "速読トレーニング", "RSVP速読", "WPM 読書速度", "読解速度 テスト", "速読アプリ"],
   openGraph: {
-    title: "速読トレーニング・RSVP読書速度測定 – 毎分単語数WPM診断 | SkillDrills",
-    description: "無料ブラウザ完結のRSVP速読トレーニングツール。視線跳躍（サッカード）を排除し、単語の最適認識点（ORP）へ高速連続表示することで、最大850WPMの超高速テキスト処理と読解速度を精密測定。",
+    title: "速読テスト | RSVP読書トレーニング | SkillDrills",
+    description: "無料ブラウザの速読テストで、単語を固定位置に順番表示します。WPMと正確さを確認する非臨床の読書トレーニングです。",
     type: 'article',
     url: 'https://skilldrills.online/ja/drills/cognitive/processing-speed/rsvp-reader',
     siteName: 'SkillDrills',
@@ -20,8 +19,8 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: "速読トレーニング・RSVP読書速度測定 – 毎分単語数WPM診断 | SkillDrills",
-    description: "無料ブラウザ完結のRSVP速読トレーニングツール。視線跳躍（サッカード）を排除し、単語の最適認識点（ORP）へ高速連続表示することで、最大850WPMの超高速テキスト処理と読解速度を精密測定。",
+    title: "速読テスト | RSVP読書トレーニング | SkillDrills",
+    description: "無料ブラウザの速読テストで、単語を固定位置に順番表示します。WPMと正確さを確認する非臨床の読書トレーニングです。",
   },
   robots: { index: true, follow: true },
   alternates: {
@@ -80,7 +79,7 @@ const softwareApplicationSchema = {
     "url": "https://skilldrills.online"
   },
   "inLanguage": "ja-JP",
-  "dateModified": "2026-09-11"
+  "dateModified": "2026-09-20"
 };
 
 const webApplicationSchema = {
@@ -97,7 +96,7 @@ const webApplicationSchema = {
   },
   "url": "https://skilldrills.online/ja/drills/cognitive/processing-speed/rsvp-reader",
   "inLanguage": "ja-JP",
-  "dateModified": "2026-09-11"
+  "dateModified": "2026-09-20"
 };
 
 const videoGameSchema = {
@@ -117,6 +116,7 @@ const videoGameSchema = {
     "Mobile"
   ],
   "applicationCategory": "Game",
+  "dateModified": "2026-09-20",
   "offers": {
     "@type": "Offer",
     "price": "0",
@@ -315,10 +315,37 @@ export default function LocalizedCognitivePage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(howToSchema) }}
       />
-      <RSVPReaderClient copy={{ title: "速読トレーニング・RSVP読書速度測定 – 毎分単語数WPM診断" }} />
+      <RSVPReaderClient
+        copy={{
+          title: "速読テスト",
+          subtitle: "固定した視点で単語を処理し、読書速度と正確さを練習します",
+          startTitle: "RSVP速読テスト",
+          startSubtitle: "単語認識 • ORP集中",
+          stageCaption: "中央に単語が連続表示されます。指定された単語が見えたらすぐにボタンを押してください。",
+          rulesTitle: "ドリルの説明とスコア",
+          aboutTitle: "RSVP速読とは？",
+          faqTitle: "よくある質問",
+          labels: { score: "スコア", time: "時間", speed: "速度", bestScore: "ベストスコア", timeLeft: "残り時間", targetWord: "ターゲット単語", detected: "ターゲット検出", ready: "準備", accuracy: "正確さ", hits: "成功", errors: "ミス", points: "ポイント", playAgain: "もう一度" },
+          aboutLead: "RSVPは単語を画面の同じ位置に一つずつ表示する読書方法です。左右に視線を移す負担を減らせますが、速度を上げるほど理解度が下がることがあるため、速さと正確さを一緒に見ます。",
+          aboutText: "このドリルでは中央のORPに視線を保ち、流れてくる単語を処理します。WPMは表示テンポの目安で、画面や端末の遅延も結果に影響します。850WPMはこのドリルの最上位レベルであり、すべての文章をその速度で理解できるという意味ではありません。",
+          aboutCards: [
+            { title: "どんな人に向いていますか？", desc: "多くの文章を読む学生や仕事で読む人、速読を練習したい人に向いています。" },
+            { title: "鍛えられる力", desc: "単語認識、ワーキングメモリ、高速な視覚情報への持続的な注意を練習します。" },
+            { title: "段階的な速度", desc: "250〜850WPMの5段階で、正確さを保ちながらテンポを上げます。" }
+          ],
+          rulesItems: [
+            { num: "1", text: "ターゲット単語", highlight: "上部バナー", result: "中央の流れから探す" },
+            { num: "2", text: "ORP固定", highlight: "視線移動を抑える", result: "同じ位置で読む" },
+            { num: "3", text: "ターゲット検出", highlight: "+100点", result: "検出ボタンを押す" },
+            { num: "4", text: "速度レベル", highlight: "250 → 850 WPM", result: "5段階の難易度" }
+          ],
+          faqItems: faqSchema.mainEntity.map((e) => ({ q: e.name, a: e.acceptedAnswer.text }))
+        }}
+      />
       <DrillGuide {...guideProps} />
       <div className="max-w-6xl mx-auto px-4 pb-12">
         <RelatedDrills currentCategory="cognitive" currentHref="https://skilldrills.online/ja/drills/cognitive/processing-speed/rsvp-reader" />
+        <DrillFooter />
       </div>
     </>
   );

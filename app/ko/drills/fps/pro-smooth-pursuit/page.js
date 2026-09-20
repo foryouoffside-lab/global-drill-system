@@ -6,21 +6,19 @@ import RelatedDrills from '@/components/drill/RelatedDrills';
 import DrillFooter from '@/components/drill/DrillFooter';
 
 export const metadata = {
-  title: "스무스 트래킹 에임 연습 – 활창 추적 안구 운동 | SkillDrills",
-  description: "웹 브라우저에서 무료로 즐기는 스무스 트래킹(활창 추적 안구 운동) 에임 연습. 에이펙스 레전드, 오버워치 2의 유려한 곡선 궤적과 고기동 공중 타겟을 흔들림 없이 매끄럽게 추적하세요.",
+  title: "에임 트래킹 연습 | 스무스 트래킹 FPS | SkillDrills",
+  description: "무료 브라우저 에임 트래킹 연습으로 움직이는 타겟을 부드럽게 따라가며 오버워치·에이펙스 FPS 조준 안정성을 키우세요.",
   keywords: [
-    "스무스 트래킹 에임 연습",
-    "활창 추적 안구 운동 훈련",
-    "스무스 퍼슈트 에임",
-    "트래킹 에임 연습",
-    "에이펙스 트래킹 연습",
-    "오버워치2 에임 연습",
-    "에임 떨림 교정",
-    "에임 트레이너 무료",
-    "곡선 궤적 트래킹",
-    "부드러운 에임 추종",
-    "에임 유연성 훈련",
-    "안구 추적 에임 연습"
+    "에임 연습",
+    "에임 트래킹 연습",
+    "에임 트래킹 테스트",
+    "에임 연습 사이트",
+    "에임 트래킹 잘하는법",
+    "스무스 트래킹",
+    "오버워치 에임 트래킹",
+    "발로란트 에임 트래킹",
+    "트래킹 에임",
+    "FPS 트래킹"
   ],
   alternates: {
     canonical: "https://skilldrills.online/ko/drills/fps/pro-smooth-pursuit",
@@ -31,8 +29,8 @@ export const metadata = {
     follow: true,
   },
   openGraph: {
-    title: "스무스 트래킹 에임 연습 – 활창 추적 안구 운동 | SkillDrills",
-    description: "리사주 곡선 궤적을 부드럽게 추종하는 스무스 퍼슈트 에임 훈련: 불필요한 떨림을 억제하고 목표물에 조준선을 밀착시키는 고정밀 트래킹 트레이너.",
+    title: "에임 트래킹 연습 | 스무스 트래킹 FPS | SkillDrills",
+    description: "움직이는 타겟을 부드럽게 추적하며 조준 안정성을 키우는 무료 브라우저 FPS 에임 트레이너.",
     url: "https://skilldrills.online/ko/drills/fps/pro-smooth-pursuit",
     siteName: 'SkillDrills',
     locale: 'ko_KR',
@@ -40,8 +38,8 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: "스무스 트래킹 에임 연습 – 활창 추적 안구 운동 | SkillDrills",
-    description: "리사주 곡선 궤적을 부드럽게 추종하는 스무스 퍼슈트 에임 훈련: 불필요한 떨림을 억제하고 목표물에 조준선을 밀착시키는 고정밀 트래킹 트레이너.",
+    title: "에임 트래킹 연습 | 스무스 트래킹 FPS | SkillDrills",
+    description: "움직이는 타겟을 부드럽게 추적하며 조준 안정성을 키우는 무료 브라우저 FPS 에임 트레이너.",
   },
 };
 
@@ -52,14 +50,14 @@ export default function ProSmoothPursuitKoPage() {
     "itemListElement": [
       { "@type": "ListItem", "position": 1, "name": "SkillDrills", "item": "https://skilldrills.online/ko" },
       { "@type": "ListItem", "position": 2, "name": "FPS 에임 훈련", "item": "https://skilldrills.online/ko/drills/fps" },
-      { "@type": "ListItem", "position": 3, "name": "스무스 트래킹 에임 연습", "item": "https://skilldrills.online/ko/drills/fps/pro-smooth-pursuit" }
+      { "@type": "ListItem", "position": 3, "name": "에임 트래킹 연습 - 스무스 트래킹", "item": "https://skilldrills.online/ko/drills/fps/pro-smooth-pursuit" }
     ]
   };
 
   const webAppSchema = {
     "@context": "https://schema.org",
     "@type": "WebApplication",
-    "name": "스무스 트래킹 에임 연습",
+    "name": "에임 트래킹 연습 - 스무스 트래킹",
     "url": "https://skilldrills.online/ko/drills/fps/pro-smooth-pursuit",
     "applicationCategory": "GameApplication",
     "operatingSystem": "All",
@@ -75,10 +73,10 @@ export default function ProSmoothPursuitKoPage() {
   const softwareSchema = {
     "@context": "https://schema.org",
     "@type": "SoftwareApplication",
-    "name": "스무스 트래킹 에임 연습",
+    "name": "에임 트래킹 연습 - 스무스 트래킹",
     "applicationCategory": "GameApplication",
     "operatingSystem": "Web Browser",
-    "dateModified": "2026-09-05",
+    "dateModified": "2026-09-20",
     "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
     "description": "연속적인 비선형 곡선 이동에 조준선을 매끄럽게 일치시키는 무료 브라우저 FPS 스무스 트래킹 에임 훈련 도구.",
     "genre": "FPS Training / Smooth Pursuit Aim",
@@ -93,10 +91,10 @@ export default function ProSmoothPursuitKoPage() {
   const videoGameSchema = {
     "@context": "https://schema.org",
     "@type": "VideoGame",
-    "name": "스무스 트래킹 에임 연습",
+    "name": "에임 트래킹 연습 - 스무스 트래킹",
     "url": "https://skilldrills.online/ko/drills/fps/pro-smooth-pursuit",
     "description": "연속적인 비선형 곡선 이동에 조준선을 매끄럽게 일치시키는 무료 브라우저 FPS 스무스 트래킹 에임 훈련 도구.",
-    "dateModified": "2026-09-05",
+    "dateModified": "2026-09-20",
     "gamePlatform": "Web Browser",
     "genre": ["FPS Training", "Aim Trainer", "Smooth Pursuit"],
     "playMode": "SinglePlayer",
@@ -108,7 +106,7 @@ export default function ProSmoothPursuitKoPage() {
   const faqSchema = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
-    "dateModified": "2026-09-05",
+    "dateModified": "2026-09-20",
     "mainEntity": [
       {
         "@type": "Question",
@@ -231,13 +229,13 @@ export default function ProSmoothPursuitKoPage() {
   };
 
   const copy = {
-    h1Keyword: "스무스 트래킹 에임 연습",
-    h1Suffix: " - 활창 추적 안구 운동 에임 트레이너",
+    h1Keyword: "에임 트래킹 연습",
+    h1Suffix: " - 스무스 트래킹 FPS",
     statScore: "점수",
     statTime: "남은 시간",
     statAccuracy: "트래킹 정확도",
     statBestScore: "최고 점수",
-    startTitle: "스무스 트래킹 에임 연습",
+    startTitle: "에임 트래킹 연습",
     startSubtitle: "리사주 곡선 추종 • 활창 추적 안구 운동 • 무한 난이도",
     getReady: "준비",
     pausedTitle: "일시 정지됨",
@@ -250,13 +248,13 @@ export default function ProSmoothPursuitKoPage() {
       { num: "3", text: "레벨 난이도 진행", highlight: "+1 레벨 / 1400 PTS", result: "적응형 궤적" },
       { num: "4", text: "이탈 페널티", highlight: "1.0초 이탈", result: "콤보 초기화 (-0.6s)" }
     ],
-    aboutTitle: "스무스 트래킹 및 활창 추적 안구 운동 정보",
+    aboutTitle: "에임 트래킹과 스무스 추적 정보",
   };
 
   const koGuide = {
-    heading: "스무스 트래킹 훈련의 생체역학 가이드 및 성능 벤치마크",
+    heading: "에임 트래킹 연습과 스무스 추적 성능 가이드",
     intro: [
-      "스무스 트래킹(Smooth Pursuit) 에임 트레이너는 리사주 곡선 형태의 비선형 조화 진동 궤적을 추종하여, 불필요한 손 떨림을 제거하고 안구의 활창 추적 기능과 전완근의 미세 조절력을 극대화하는 전문 FPS 감각운동 드릴입니다. 에이펙스 레전드, 오버워치 2, 더 파이널스 등의 긴 TTK(Time-to-Kill) 교전에서는 몇 초 동안 공중과 지상을 오가는 적에게 끊김 없이 탄환을 꽂아 넣는 지속 딜 능력(Damage Uptime)이 승패를 결정합니다.",
+      "에임 트래킹 연습은 움직이는 타겟에 조준선을 부드럽게 붙여 두는 감각운동 훈련입니다. 이 드릴은 리사주 곡선과 지속 이동을 사용해 에이펙스·오버워치 2처럼 긴 교전에서 필요한 조준 안정성과 지속 딜 능력을 측정합니다.",
       "안구의 활창 추적 운동은 Krauzlis(2004)의 연구에서 규명되었듯 중간상측두영역(MST), 전두안구영역(FEF), 시각운동피질(MT/V5)로 이루어진 피질 피드백 루프가 표적의 속도 벡터를 실시간 연산하여 안구 운동계를 지속적으로 구동합니다. 이 신경 회로는 수동적으로 반응하는 것이 아니라, 표적의 속도와 위상을 능동적으로 모델링하여 시선을 동기화합니다.",
       "Cyril Rashbass(1961)의 고전적 정신물리학 실험에 따르면, 위치 오차에 반응하는 단속성 안구 운동(Saccade)과 망막 속도 오차(Retinal Slip)에 반응하는 활창 추적 운동은 신경학적으로 완전히 분리된 체계입니다. 마우스를 강하게 쥐거나 움직이는 표적을 향해 무리하게 미세 플릭을 시도하면 활창 추적 회로가 깨지면서 불필요한 교정 사카드가 유발되어 심각한 에임 떨림과 덜컹거림이 발생합니다.",
       "본 드릴은 리사주 조화 곡선 궤적에 중심와 시선 선행 이론(Land & McLeod, 2000), 동적 주의집중 시각 확장(Green & Bavelier, 2003), 디지털 정밀 크로노메트리(Woods et al., 2015)를 결합하여 전완근 긴장을 풀고 비선형 곡선을 유영하듯 추적하는 궁극의 레이저 트래킹 에임을 완성시킵니다.",

@@ -8,7 +8,7 @@ import { pickSources } from '@/lib/drillSources';
 // SEO RESEARCH FINDINGS — Japan (JP / JA)
 // Primary Intent: ラダートレーニング メニュー, ラダートレーニング 効果, アジリティ トレーニング, フットワーク 練習
 // Japanese Context: サッカー/バスケ/テニスのフットワーク俊敏性＆FPSレレレ撃ち切り返しリズム
-// High-Demand, Low-Competition Target Keywords:
+// Target clusters from native sports and footwork search language; competition is unmeasured:
 //   - "ラダートレーニング メニュー" (High-intent sports ladder training query)
 //   - "ラダートレーニング 効果" (Benefits and neuro-adaptation query)
 //   - "アジリティ トレーニング" (Agility and footwork conditioning)
@@ -22,11 +22,10 @@ import { pickSources } from '@/lib/drillSources';
 // ============================================================
 
 export const metadata = {
-  title: "ラダートレーニングメニュー＆アジリティ練習 – 無料フットワーク敏捷性ゲーム | SkillDrills",
-  description: "無料オンラインのラダートレーニング・アジリティ練習ゲーム。スクロールするラダーの左右ステップをリズムよく正確に捉え、両側性運動プログラミング、フットワークの俊敏性、レレレ撃ちの切り返しリズムを科学的に鍛えます。",
+  title: "ラダートレーニング｜アジリティ練習 | SkillDrills",
+  description: "無料のラダートレーニング・アジリティ練習。左右のステップをリズムよく追い、フットワークの俊敏性と運動シークエンスを鍛えます。",
   keywords: [
     "ラダートレーニング メニュー",
-    "ラダートレーニング 効果",
     "アジリティ トレーニング",
     "フットワーク 練習 メニュー",
     "敏捷性 トレーニング",
@@ -34,15 +33,15 @@ export const metadata = {
     "ステップ ワーク 練習",
     "アジリティ ラダー 練習",
     "両側性運動協調",
-    "反射神経 フットワーク"
+    "ラダー フットワーク"
   ],
   alternates: {
     canonical: 'https://skilldrills.online/ja/drills/physical/fitness/agility-ladder',
     languages: getAlternateLanguages('/drills/physical/fitness/agility-ladder'),
   },
   openGraph: {
-    title: "ラダートレーニングメニュー＆アジリティ練習 – 無料フットワーク敏捷性ゲーム | SkillDrills",
-    description: "無料オンラインのラダートレーニング・アジリティ練習ゲーム。スクロールするラダーの左右ステップをリズムよく正確に捉え、両側性運動プログラミング、フットワークの俊敏性、レレレ撃ちの切り返しリズムを科学的に鍛えます。",
+    title: "ラダートレーニング｜アジリティ練習 | SkillDrills",
+    description: "無料のラダートレーニング・アジリティ練習。左右のステップをリズムよく追い、フットワークの俊敏性と運動シークエンスを鍛えます。",
     url: 'https://skilldrills.online/ja/drills/physical/fitness/agility-ladder',
     siteName: 'SkillDrills',
     locale: 'ja_JP',
@@ -50,8 +49,8 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: "ラダートレーニングメニュー＆アジリティ練習 – 無料フットワーク敏捷性ゲーム | SkillDrills",
-    description: "無料オンラインのラダートレーニング・アジリティ練習ゲーム。スクロールするラダーの左右ステップをリズムよく正確に捉え、両側性運動プログラミング、フットワークの俊敏性、レレレ撃ちの切り返しリズムを科学的に鍛えます。",
+    title: "ラダートレーニング｜アジリティ練習 | SkillDrills",
+    description: "無料のラダートレーニング・アジリティ練習。左右のステップをリズムよく追い、フットワークの俊敏性と運動シークエンスを鍛えます。",
   },
   robots: { index: true, follow: true },
 };
@@ -106,7 +105,7 @@ const softwareApplicationSchema = {
     "url": "https://skilldrills.online/ja"
   },
   "inLanguage": "ja",
-  "dateModified": "2026-09-12"
+  "dateModified": "2026-09-20"
 };
 
 const webApplicationSchema = {
@@ -123,7 +122,7 @@ const webApplicationSchema = {
   },
   "url": "https://skilldrills.online/ja/drills/physical/fitness/agility-ladder",
   "inLanguage": "ja",
-  "dateModified": "2026-09-12"
+  "dateModified": "2026-09-20"
 };
 
 const videoGameSchema = {
@@ -144,6 +143,8 @@ const videoGameSchema = {
     "Mobile"
   ],
   "applicationCategory": "Game",
+  "inLanguage": "ja",
+  "dateModified": "2026-09-20",
   "offers": {
     "@type": "Offer",
     "price": "0",
@@ -154,7 +155,8 @@ const videoGameSchema = {
 const faqSchema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
-  "dateModified": "2026-09-12",
+  "inLanguage": "ja",
+  "dateModified": "2026-09-20",
   "mainEntity": [
     {
       "@type": "Question",
@@ -362,8 +364,8 @@ export default function AgilityLadderPageJa() {
       />
       <MotorSequencingClient
         copy={{
-          title: "ラダートレーニング＆アジリティ練習",
-          subtitle: "両側性運動シークエンシング＆フットワーク敏捷性ドリル • 15段階",
+          title: "ラダートレーニング",
+          subtitle: "左右のステップをリズムよく追う • 15段階",
           rulesTitle: "ラダートレーニングのルールと採点システム",
           rules: [
             { title: "4段ステップの順次クリア", text: "スクロールするラダーのステップを左右交互の順序（1→2→3→4）で正確に通過します。" },

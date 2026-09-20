@@ -1,25 +1,26 @@
 import GhostingSuppressPursuitClient from '@/app/drills/visual-tracking/ghosting-suppress-pursuit/GhostingSuppressPursuitClientLoader';
 import DrillGuide from '@/components/drill/DrillGuide';
+import DrillFooter from '@/components/drill/DrillFooter';
 import RelatedDrills from '@/components/drill/RelatedDrills';
 import { getAlternateLanguages } from '@/lib/i18n/locales';
 import { pickSources } from '@/lib/drillSources';
 
 export const metadata = {
-  title: "Estabilidade de Fixação Ocular – Ghosting | SkillDrills",
-  description: "Treino gratuito de fixação foveal e supressão de rastros visuais: aprimore a nitidez dinâmica e estabilidade do olhar contra desfoque de movimento.",
+  title: "Teste de Ghosting no Monitor | SkillDrills",
+  description: "Observe rastros e halos em um alvo móvel e pratique fixação foveal, nitidez de movimento e estabilidade do olhar no navegador.",
   keywords: [
-    "supressão de imagens residuais",
-    "estabilidade de fixação ocular",
-    "treino de foco foveal dinâmico",
-    "exercício contra motion blur ocular",
-    "motilidade ocular e desfoque visual",
-    "rastreamento visual de alta estabilidade",
-    "treinamento de microssacadas visuais",
-    "teste de estabilização do olhar online",
-    "ginástica ocular para gamers",
-    "acuidade visual dinâmica esportiva",
-    "supressão de rastros visuais",
-    "exercício de visão nítida gratuito"
+    "teste de ghosting no monitor",
+    "teste ghosting monitor",
+    "rastro na tela",
+    "teste de monitor",
+    "tempo de resposta do monitor",
+    "desfoque de movimento",
+    "teste de rastros visuais",
+    "fixação foveal",
+    "estabilidade do olhar",
+    "teste de movimento online",
+    "monitor gamer ghosting",
+    "teste visual grátis"
   ],
   alternates: {
     canonical: "https://skilldrills.online/pt/drills/visual-tracking/ghosting-suppress-pursuit",
@@ -27,8 +28,8 @@ export const metadata = {
   },
   robots: { index: true, follow: true },
   openGraph: {
-    title: "Estabilidade de Fixação Ocular – Ghosting | SkillDrills",
-    description: "Treino gratuito de fixação foveal e supressão de rastros visuais: aprimore a nitidez dinâmica e estabilidade do olhar contra desfoque de movimento.",
+    title: "Teste de Ghosting no Monitor | SkillDrills",
+    description: "Observe rastros e halos em um alvo móvel e pratique fixação foveal, nitidez de movimento e estabilidade do olhar no navegador.",
     url: "https://skilldrills.online/pt/drills/visual-tracking/ghosting-suppress-pursuit",
     siteName: "SkillDrills",
     locale: "pt_BR",
@@ -36,8 +37,8 @@ export const metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Estabilidade de Fixação Ocular – Ghosting | SkillDrills",
-    description: "Treino gratuito de fixação foveal e supressão de rastros visuais: aprimore a nitidez dinâmica e estabilidade do olhar contra desfoque de movimento.",
+    title: "Teste de Ghosting no Monitor | SkillDrills",
+    description: "Observe rastros e halos em um alvo móvel e pratique fixação foveal, nitidez de movimento e estabilidade do olhar.",
   },
 };
 
@@ -71,7 +72,8 @@ const softwareApplicationSchema = {
   "@type": "SoftwareApplication",
   "name": "Supressão de Rastros Visuais – Fixação Ocular",
   "applicationCategory": "HealthApplication",
-  "operatingSystem": "Web Browser",
+  "operatingSystem": "Navegador",
+  "dateModified": "2026-09-20",
   "offers": {
     "@type": "Offer",
     "price": "0",
@@ -85,8 +87,9 @@ const webAppSchema = {
   "name": "Teste de Estabilidade de Fixação Ocular e Supressão de Fantasmas Visuais",
   "url": "https://skilldrills.online/pt/drills/visual-tracking/ghosting-suppress-pursuit",
   "applicationCategory": "SportsApplication",
-  "operatingSystem": "All",
-  "browserRequirements": "Requires JavaScript. Requires HTML5 Canvas.",
+  "operatingSystem": "Navegador",
+  "browserRequirements": "JavaScript e Canvas HTML5 necessários",
+  "dateModified": "2026-09-20",
   "offers": {
     "@type": "Offer",
     "price": "0",
@@ -97,16 +100,18 @@ const webAppSchema = {
 const videoGameSchema = {
   "@context": "https://schema.org",
   "@type": "VideoGame",
-  "name": "Ghosting Suppress Pursuit – Treinador de Fixação Foveal",
-  "description": "Treinador visual reflexivo no navegador para condicionar a ancoragem foveal firme e a supressão ativa de rastros dinâmicos e artefatos de movimento.",
-  "genre": ["Aparato de Treinamento Ocular", "Treinador de Visão Esportiva", "Aim Trainer"],
-  "playMode": "SinglePlayer",
-  "applicationCategory": "Game"
+  "name": "Teste de Ghosting no Monitor – Fixação Foveal",
+  "description": "Treinador visual no navegador para observar rastros em um alvo móvel e praticar fixação foveal e estabilidade do olhar.",
+  "genre": ["Teste de Monitor", "Treino de Motilidade Ocular", "Treino de Reação Visual"],
+  "playMode": "Um jogador",
+  "applicationCategory": "Game",
+  "dateModified": "2026-09-20"
 };
 
 const howToSchema = {
   "@context": "https://schema.org",
   "@type": "HowTo",
+  "dateModified": "2026-09-20",
   "name": "Como Treinar a Estabilidade de Fixação sob Rastros Visuais",
   "description": "Protocolo para condicionar o desfoque cortical ativo e a ancoragem foveal precisa em alvos com fantasmas visuais.",
   "step": [
@@ -144,37 +149,38 @@ const howToSchema = {
 const faqSchema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
+  "dateModified": "2026-09-20",
   "mainEntity": [
     {
       "@type": "Question",
-      "name": "O que é o treino de Supressão de Rastros e Fixação (Ghosting Suppress Pursuit)?",
+      "name": "O que é o teste de ghosting e fixação do olhar?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "É um exercício neuro-ocular projetado para treinar a estabilidade da fóvea e a supressão ativa de rastros dinâmicos (motion blur/ghosting) deixados por alvos em alta velocidade, reforçando a nitidez percebida."
+        "text": "É uma prática visual que mostra um alvo móvel com rastros e halos para observar a clareza do movimento e treinar a manutenção do olhar no núcleo do alvo. Ela não substitui uma medição laboratorial do tempo de resposta do painel."
       }
     },
     {
       "@type": "Question",
-      "name": "Como o cérebro elimina naturalmente o desfoque de movimento (motion deblurring)?",
+      "name": "Como o sistema visual lida com o desfoque de movimento?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "O córtex visual primário (V1) e a área temporal média (MT) aplicam inibição temporal pós-sináptica, suprimindo ativamente sinais residuais dos fotorreceptores da retina para manter a nitidez de objetos em movimento (Burr, 1980)."
+        "text": "O sistema visual combina sinais de movimento e contraste ao longo do tempo. A percepção final depende tanto do processamento neural quanto da resposta do monitor; por isso, o exercício deve ser interpretado como observação e treino, não como diagnóstico (Burr, 1980)."
       }
     },
     {
       "@type": "Question",
-      "name": "Qual é a função das microssacadas na manutenção da fixação estável?",
+      "name": "Qual é a função das microssacadas durante a fixação?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Mesmo durante a fixação imóvel, os olhos executam microssacadas e oscilações de alta frequência que renovam a estimulação foveal e evitam a fading visual (desvanecimento de Troxler) sem perder o alvo (Martinez-Conde et al., 2004)."
+        "text": "Mesmo durante uma fixação, os olhos fazem pequenos movimentos que ajudam a renovar a estimulação da retina e a evitar o desvanecimento perceptivo, sem abandonar o alvo (Martinez-Conde et al., 2004)."
       }
     },
     {
       "@type": "Question",
-      "name": "Por que o olhar tende a desviar para os rastros traseiros (ghost rings)?",
+      "name": "Por que o olhar tende a seguir o rastro atrás do alvo?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "O reflexo retinotópico periférico é atraído por variações de luminância e contraste. Se o controle inibitório cortical estiver destreinado, o cérebro confunde o rastro com um novo estímulo, puxando o olhar para trás."
+        "text": "Mudanças de brilho e contraste na periferia podem chamar a atenção. Se você seguir o halo em vez do núcleo, a fixação se desloca para trás; reduza a velocidade e retorne ao centro do alvo."
       }
     },
     {
@@ -206,7 +212,7 @@ const faqSchema = {
       "name": "Qual o papel do tempo de resposta do monitor (GtG) e taxa de Hz neste teste?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Painéis com transição rápida de pixels (1 ms GtG) e alta taxa (144 Hz+) eliminam o ghosting físico do hardware, permitindo isolar exclusivamente a inibição biológica e o processamento sensoriomotor (Woods et al., 2015)."
+        "text": "O tempo de resposta e a frequência do monitor alteram o rastro observado, mas nenhum navegador garante uma medição de 1 ms. Compare 60, 120 ou 144 Hz no mesmo equipamento e registre as condições antes de interpretar o resultado."
       }
     },
     {
@@ -231,9 +237,25 @@ const faqSchema = {
 const guideProps = {
   heading: "Bases Neurofisiológicas da Fixação Foveal e Supressão de Rastros Visuais",
   intro: [
-    "O rastreamento de alvos em alta velocidade impõe um desafio biofísico severo à retina: a persistência química dos fotorreceptores tende a criar um arrastamento visual (motion smear) que obscurece as bordas dos objetos. Em indivíduos destreinados, o olhar é frequentemente capturado pelos rastros de luminância posteriores, deslocando a imagem para fora da fóvea central (Burr, 1980; Burr & Morgan, 1997).",
-    "Mecanismo de Desfoque Cortical e Microssacadas de Fixação: o córtex visual primário (V1) e as áreas parietais executam um processo ativo de inibição temporal, suprimindo o ruído retiniano residual para que a fóvea perceba apenas o núcleo nítido do estímulo. Paralelamente, o sistema oculomotor mantém microssacadas de alta precisão (< 1° de amplitude) para compensar o desvio postural e manter o vetor foveal estritamente travado sobre o alvo móvel (Martinez-Conde, Macknik, & Hubel, 2004; Rolfs, 2009; Krauzlis, 2004).",
-    "Interação com Hardware e Amostragem Temporal: telas comuns a 60 Hz acumulam borrões decorrentes do tempo de resposta dos cristais líquidos. Monitores gamer de 144 Hz a 240 Hz reduzem drasticamente o atraso visual (Woods et al., 2015), garantindo que o treinamento desafie exclusivamente o filtro biológico neural. Todo o processamento ocorre no navegador com privacidade absoluta e armazenamento local."
+    "Ao acompanhar um alvo rápido, a imagem pode deixar uma estela por causa da resposta dos pixels, do tempo de integração visual e do movimento do olhar. Este teste usa o rastro como distração controlada: a tarefa é manter a fixação no núcleo, sem tratar o resultado como exame clínico (Burr, 1980; Burr & Morgan, 1997).",
+    "Filtragem visual e microssacadas: durante a fixação, pequenos movimentos oculares renovam a estimulação da retina e ajudam a manter a percepção do alvo. A prática combina atenção ao núcleo, perseguição suave e retorno controlado quando um halo chama a visão periférica (Martinez-Conde, Macknik, & Hubel, 2004; Rolfs, 2009; Krauzlis, 2004).",
+    "Interação com hardware e frequência: 60 Hz, 120 Hz e 144 Hz exibem o movimento com intervalos diferentes, enquanto overdrive pode produzir um halo claro de overshoot. Compare sempre a mesma tela e configuração; a ferramenta roda no navegador e salva os resultados localmente."
+  ],
+  techniques: {
+    title: "Quatro técnicas para manter a fixação no núcleo do alvo",
+    items: [
+      { name: "Estabilize a postura antes de observar o rastro", desc: "Cabeça e mandíbula estáveis reduzem movimentos compensatórios e tornam mais fácil separar o comportamento do olhar do artefato da tela.", tips: "Sente-se a 50–70 cm, mantenha os pés apoiados e pare se houver ardor, dor ou visão dupla." },
+      { name: "Fixe no núcleo, não no halo", desc: "O centro do alvo é a referência de precisão; o rastro é um estímulo secundário que pode puxar a atenção para trás.", tips: "Use uma velocidade baixa no início e repita mentalmente ‘centro’ quando o halo ficar mais chamativo." },
+      { name: "Compare uma variável de cada vez", desc: "Frequência, brilho, overdrive e velocidade mudam a aparência do rastro. Alterar tudo ao mesmo tempo impede uma comparação confiável.", tips: "Mantenha o fundo e o tamanho constantes; mude apenas a velocidade ou a configuração do monitor por série." },
+      { name: "Descanse e registre as condições", desc: "Fadiga, brilho e distância de visualização afetam a estabilidade do olhar. Séries curtas produzem dados mais comparáveis.", tips: "Anote velocidade, Hz e modo de resposta; interrompa a sessão ao notar desconforto visual persistente." }
+    ]
+  },
+  steps: [
+    "Sente-se a 50–70 cm da tela, alinhe a postura e deixe a cabeça estável.",
+    "Comece em 0.7x ou 1.0x por 60 segundos e observe o núcleo sem tentar medir o tempo de resposta do painel.",
+    "Quando o halo aparecer, mantenha o olhar no centro; se o perder, faça uma correção curta e volte à perseguição suave.",
+    "Repita a série com uma única alteração: velocidade, frequência de atualização ou intensidade de resposta do monitor.",
+    "Faça 5 a 8 séries com pausas e registre a configuração usada, a frequência de perdas e qualquer desconforto."
   ],
   benchmarks: {
     title: "Padrões de Desempenho em Fixação Foveal e Supressão de Rastros Visuais",
@@ -250,10 +272,10 @@ const guideProps = {
   faqs: faqSchema.mainEntity.map(e => ({ q: e.name, a: e.acceptedAnswer.text })),
   sources: pickSources('burr1980', 'martinezconde2004', 'rolfs2009', 'krauzlis2004', 'barnes2008', 'woods2015'),
   related: [
-    { href: "/pt/drills/visual-tracking/constant-slow-pursuit", label: "Perseguição Ocular Lenta (Constant Slow)" },
-    { href: "/pt/drills/visual-tracking/directional-chaos-pursuit", label: "Perseguição Caótica Direcional (Chaos Pursuit)" },
-    { href: "/pt/drills/visual-tracking/dynamic-evasion-pursuit", label: "Perseguição Evasiva Dinâmica (Dynamic Evasion)" },
-    { href: "/pt/drills/visual-tracking/infinity-pursuit", label: "Rastreamento em Infinito (Figure-8)" }
+    { href: "/pt/drills/visual-tracking/constant-slow-pursuit", label: "Perseguição Ocular Lenta" },
+    { href: "/pt/drills/visual-tracking/directional-chaos-pursuit", label: "Perseguição Caótica Direcional" },
+    { href: "/pt/drills/visual-tracking/dynamic-evasion-pursuit", label: "Perseguição Ocular Reativa" },
+    { href: "/pt/drills/visual-tracking/infinity-pursuit", label: "Rastreamento em Oito" }
   ]
 };
 
@@ -286,7 +308,7 @@ export default function GhostingSuppressPursuitPagePt() {
       />
       <GhostingSuppressPursuitClient
         copy={{
-          title: "Supressão de Rastros Visuais – Fixação Ocular",
+          title: "Teste de Ghosting no Monitor – Fixação Ocular",
           subtitle: "Treino de Estabilidade Foveal e Supressão de Fantasmas Visuais",
           description: "Ao exibir rastros de arrasto e anéis fantasma estocásticos, este exercício condiciona o córtex visual a inibir ativamente a interferência de fundo, fixando a fóvea central exclusivamente no núcleo do alvo móvel (Burr, 1980; Martinez-Conde et al., 2004)."
         }}
@@ -295,6 +317,7 @@ export default function GhostingSuppressPursuitPagePt() {
       <div className="max-w-6xl mx-auto px-4 pb-12">
         <RelatedDrills currentCategory="visual-tracking" currentHref="https://skilldrills.online/pt/drills/visual-tracking/ghosting-suppress-pursuit" />
       </div>
+      <DrillFooter />
     </>
   );
 }

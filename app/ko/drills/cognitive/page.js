@@ -6,18 +6,17 @@ import { getLocalizedDrill } from '@/lib/i18n/drillNames';
 const cognitiveDrills = DRILLS.filter((d) => d.category === 'cognitive');
 
 export const metadata = {
-  title: '두뇌 트레이닝 & 인지 기능 훈련 – 무료 집중력 게임 | SkillDrills',
-  description: '온라인 무료 두뇌 트레이닝 및 인지 기능 훈련 도감. 집중력 지속, 정보 처리 속도, 스트룹 검사, 슐테 테이블 등 8가지 과학적 뇌 운동을 브라우저에서 바로 시작하세요.',
+  title: '무료 두뇌 훈련 & 집중력 테스트 | SkillDrills',
+  description: '집중력, 기억력, 반응속도와 정보처리 속도를 훈련하는 무료 두뇌 게임 8종. 브라우저에서 바로 시작하세요.',
   keywords: [
-    '두뇌 트레이닝 무료', '인지 기능 훈련', '집중력 향상 훈련',
-    '주의력 집중력 테스트', '정보 처리 속도 테스트', '뇌 운동 게임',
-    '분할 주의력 검사', '스트룹 검사 온라인', '슐테 테이블 훈련',
-    '작업 기억력 훈련', '성인 ADHD 집중력 운동', '인지 유연성 훈련',
-    '멀티태스킹 능력 테스트', '무료 치매 예방 두뇌 게임', 'e스포츠 인지 반응 훈련'
+    '두뇌 트레이닝', '두뇌 훈련 무료', '집중력 테스트', '집중력 향상 훈련',
+    '인지 기능 훈련', '기억력 테스트', '반응속도 테스트', '정보처리 속도 테스트',
+    '스트룹 테스트', '슐테 테이블', '분할 주의력 테스트', '작업 기억 훈련',
+    '두뇌 게임', '무료 뇌 운동', '주의력 훈련'
   ],
   openGraph: {
-    title: '두뇌 트레이닝 & 인지 기능 훈련 – 무료 집중력 게임 | SkillDrills',
-    description: '온라인 무료 두뇌 트레이닝 및 인지 기능 훈련 도감. 집중력 지속, 정보 처리 속도, 스트룹 검사, 슐테 테이블 등 8가지 과학적 뇌 운동을 브라우저에서 바로 시작하세요.',
+    title: '무료 두뇌 훈련 & 집중력 테스트 | SkillDrills',
+    description: '집중력, 기억력, 반응속도와 정보처리 속도를 훈련하는 무료 두뇌 게임 8종. 브라우저에서 바로 시작하세요.',
     type: 'website',
     url: 'https://skilldrills.online/ko/drills/cognitive',
     siteName: 'SkillDrills',
@@ -26,8 +25,8 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: '두뇌 트레이닝 & 인지 기능 훈련 – 무료 집중력 게임 | SkillDrills',
-    description: '집중력 강화, 정보 처리 속도, 스트룹 검사, 슐테 테이블 등 8가지 인지 훈련을 브라우저에서 무료로 플레이하세요.',
+    title: '무료 두뇌 훈련 & 집중력 테스트 | SkillDrills',
+    description: '집중력, 기억력, 반응속도를 훈련하는 두뇌 게임 8종을 브라우저에서 무료로 플레이하세요.',
     images: ['https://skilldrills.online/icons/icon-512x512.png'],
   },
   robots: { index: true, follow: true },
@@ -50,6 +49,8 @@ const breadcrumbSchema = {
 const collectionSchema = {
   "@context": "https://schema.org",
   "@type": "CollectionPage",
+  "inLanguage": "ko-KR",
+  "dateModified": "2026-09-20",
   "name": "무료 온라인 두뇌 트레이닝 & 인지 기능 훈련 도감 (8 Drills)",
   "url": "https://skilldrills.online/ko/drills/cognitive",
   "description": "집중력, 주의력 분할, 작업 처리 속도, 스트룹 억제 제어, 슐테 테이블 등 8가지 신경심리학 기반 인지 훈련을 무료로 제공합니다.",
@@ -67,6 +68,8 @@ const collectionSchema = {
 const faqSchema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
+  "inLanguage": "ko-KR",
+  "dateModified": "2026-09-20",
   "mainEntity": [
     {
       "@type": "Question",
