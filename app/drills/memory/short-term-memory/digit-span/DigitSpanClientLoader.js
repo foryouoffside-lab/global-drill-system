@@ -1,5 +1,5 @@
 'use client';
 
-import dynamic from 'next/dynamic';
+import Client from './DigitSpanClient';
 
-export default dynamic(() => import('./DigitSpanClient'));
+export default Client;

@@ -3,9 +3,11 @@
 import React from 'react';
 import { ChevronDown } from 'lucide-react';
 
-export default function DrillAccordion({ id, title, subtitle = null, icon: Icon = null, iconColor = 'text-emerald-400', iconBg = 'bg-emerald-500/10 border-emerald-500/20', singleLineTitle = true, isOpen, onToggle, children }) {
+// `framed` matches DrillGuide's framed surface, so a page that frames its guide
+// does not end up with two different card treatments stacked on each other.
+export default function DrillAccordion({ id, title, subtitle = null, icon: Icon = null, iconColor = 'text-emerald-400', iconBg = 'bg-emerald-500/10 border-emerald-500/20', singleLineTitle = true, framed = true, isOpen, onToggle, children }) {
   return (
-    <div className="mt-2.5 border border-white/[0.07] bg-white/[0.012] rounded-xl overflow-hidden transition-colors duration-200 hover:border-white/[0.11]">
+    <div className={`mt-2.5 ${framed ? 'border border-white/[0.09] bg-white/[0.03]' : 'border border-white/[0.07] bg-white/[0.012]'} rounded-xl overflow-hidden transition-colors duration-200 hover:border-white/[0.11]`}>
       <button 
         onClick={onToggle}
         aria-expanded={isOpen}

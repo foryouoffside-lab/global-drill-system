@@ -32,8 +32,8 @@ const DRILL_DURATION = 45; // starting clock only; a run grows past this
 const POINTS_PER_HIT = 100;
 const POINTS_PER_LEVEL = 1750; // 250 -> 1750 (7x)
 const ELITE_SCORE = 18000; // 6000 -> 18000 (3x)
-const TIME_PER_HIT = 0.6; // +0.6s per valid hit
-const TIME_PENALTY = 0.8; // -0.8s on miss / target timeout (opt-in gated)
+const TIME_PER_HIT = 2; // +2s per valid hit, capped at 60s
+const TIME_PENALTY = 1; // -1s on miss / target timeout (opt-in gated)
 const STORAGE_KEY = 'skilldrills_barrier_sequence_pursuit_v3';
 const TARGET_FILL_COLOR = '#ef4444';
 
@@ -88,7 +88,7 @@ export default function BarrierSequencePursuitClient({ copy }: { copy?: { title?
   const [flashEnabled, setFlashEnabled] = useState(true);
   const [penaltyEnabled, setPenaltyEnabled] = useState(false);
   const rulesItems = [
-    { num: '1', text: t('barrierSequencePursuit.rule1Text', 'Peeking target hit'), highlight: t('barrierSequencePursuit.rule1Highlight', '+100 PTS (+0.6s)'), result: t('barrierSequencePursuit.rule1Result', 'Combo multiplier') },
+    { num: '1', text: t('barrierSequencePursuit.rule1Text', 'Peeking target hit'), highlight: t('barrierSequencePursuit.rule1Highlight', '+100 PTS (+2s, max 60s)'), result: t('barrierSequencePursuit.rule1Result', 'Combo multiplier') },
     { num: '2', text: t('barrierSequencePursuit.rule2Text', 'Streak & heat'), highlight: t('barrierSequencePursuit.rule2Highlight', 'Up to 3.0×'), result: t('barrierSequencePursuit.rule2Result', 'Faster peeks') },
     { num: '3', text: t('barrierSequencePursuit.rule3Text', 'Level progression'), highlight: t('barrierSequencePursuit.rule3Highlight', '+1 level / 1750 PTS'), result: t('barrierSequencePursuit.rule3Result', 'Adaptive scaling') },
     { num: '4', text: t('barrierSequencePursuit.rule4Text', 'Miss / timeout'), highlight: penaltyEnabled ? t('barrierSequencePursuit.rule4HighlightPenalty', 'Penalty') : t('barrierSequencePursuit.rule4HighlightZero', 'No time penalty'), result: penaltyEnabled ? t('barrierSequencePursuit.rule4ResultPenalty', 'Resets combo and removes 0.8s') : t('barrierSequencePursuit.rule4ResultZero', 'Resets combo; time penalty is opt-in') },
@@ -167,7 +167,7 @@ export default function BarrierSequencePursuitClient({ copy }: { copy?: { title?
     if (typeof window !== 'undefined') {
       setSoundEnabled(drillAudio.isEnabled());
       setFlashEnabled(drillFlash.isEnabled());
-      setPenaltyEnabled(drillPenalty.isEnabled());
+      setPenaltyEnabled(drillPenalty.isEnabled(TIME_PER_HIT === 2));
 
       const checkDeviceAndOrientation = () => {
         const ua = navigator.userAgent || '';
@@ -246,7 +246,7 @@ export default function BarrierSequencePursuitClient({ copy }: { copy?: { title?
 
     const e = engine.current;
     const totalActions = e.successfulHits + e.missedClicks + e.timeouts;
-    const acc = totalActions > 0 ? Math.round((e.successfulHits / totalActions) * 100) : 100;
+    const acc = totalActions > 0 ? Math.round((e.successfulHits / totalActions) * 100) : 0;
     const avgRt = e.reactionTimes.length > 0
       ? Math.round(e.reactionTimes.reduce((a, b) => a + b, 0) / e.reactionTimes.length)
       : 0;
@@ -418,7 +418,7 @@ export default function BarrierSequencePursuitClient({ copy }: { copy?: { title?
         e.score += Math.round(POINTS_PER_HIT * getComboMultiplier(e.combo) * levelMult);
 
         // Time bonus on clean hit
-        e.timeLeft += TIME_PER_HIT;
+        e.timeLeft = Math.min(60, e.timeLeft + TIME_PER_HIT);
 
         // Continuous unbounded level progression
         const rawLevel = (e.score / POINTS_PER_LEVEL) + 1;
@@ -457,7 +457,7 @@ export default function BarrierSequencePursuitClient({ copy }: { copy?: { title?
 
     // Missed click on empty space: optional time penalty + combo reset
     e.missedClicks += 1;
-    if (drillPenalty.isEnabled()) e.timeLeft -= TIME_PENALTY;
+    if (drillPenalty.isEnabled(TIME_PER_HIT === 2)) e.timeLeft -= TIME_PENALTY;
     e.combo = 0;
     setUiCombo(0);
     e.screenShake = 6;
@@ -569,7 +569,7 @@ export default function BarrierSequencePursuitClient({ copy }: { copy?: { title?
         if (drillTimeout.isEnabled() && age >= e.target.ttl) {
           e.target.active = false;
           e.timeouts += 1;
-          if (drillPenalty.isEnabled()) e.timeLeft -= TIME_PENALTY;
+          if (drillPenalty.isEnabled(TIME_PER_HIT === 2)) e.timeLeft -= TIME_PENALTY;
           e.combo = 0;
           setUiCombo(0);
           e.screenShake = 6;
@@ -870,6 +870,7 @@ export default function BarrierSequencePursuitClient({ copy }: { copy?: { title?
                 { label: t('barrierSequencePursuit.maxCombo', 'Max Combo'), value: analytics.maxCombo, suffix: 'x' },
               ]}
               onPlayAgain={enterDrill}
+              onBeforeShare={() => setIsFullscreen(false)}
               onShare={sharePage}
               onExit={handleExitDrill}
             />

@@ -393,9 +393,7 @@ export default function JapaneseDistractionFighterPage() {
           </div>
         </div>
       </DrillGuide>
-      <div className="max-w-6xl mx-auto px-4 pb-12">
-        <RelatedDrills currentCategory="cognitive" currentHref="/drills/cognitive/focus/distraction-fighter" locale="ja" />
-      </div>
+      <RelatedDrills />
       <DrillFooter />
     </>
   );

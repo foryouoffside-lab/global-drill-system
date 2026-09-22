@@ -286,10 +286,10 @@ export default function FrenchAngleHoldPage() {
     faqs: faqSchema.mainEntity.map(e => ({ q: e.name, a: e.acceptedAnswer.text })),
     sources: pickSources('woods2015', 'fitts1954', 'meyer1988', 'woodworth1899'),
     related: [
-      { href: "/drills/fps/flick-shot-training", label: "Entraînement au Flick Shot" },
-      { href: "/drills/fps/180-degree-awareness", label: "Entraînement Demi-Tour 180°" },
-      { href: "/drills/fps/micro-correction-precision", label: "Entraînement aux Micro-Corrections" },
-      { href: "/drills/reaction-speed/reaction-time-test", label: "Test de Temps de Réaction" }
+      { href: "/fr/drills/fps/flick-shot-training", label: "Entraînement au Flick Shot" },
+      { href: "/fr/drills/fps/180-degree-awareness", label: "Entraînement Demi-Tour 180°" },
+      { href: "/fr/drills/fps/micro-correction-precision", label: "Entraînement aux Micro-Corrections" },
+      { href: "/fr/drills/reaction-speed/reaction-time-test", label: "Test de Temps de Réaction" }
     ]
   };
 
@@ -361,9 +361,7 @@ export default function FrenchAngleHoldPage() {
 
       <AngleHoldClient copy={copyFr} />
 
-      <div className="max-w-6xl w-full mx-auto px-4 pb-12">
-        <RelatedDrills currentCategory="fps" currentHref="/drills/fps/angle-hold-trainer" locale="fr" />
-      </div>
+      <RelatedDrills />
 
       <DrillGuide guide={angleHoldGuideFr} />
       <DrillFooter />

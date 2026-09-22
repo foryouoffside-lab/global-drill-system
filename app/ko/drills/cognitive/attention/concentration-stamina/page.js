@@ -333,9 +333,7 @@ export default function LocalizedCognitivePage() {
         flexibilityTitle: "인지적 유연성", flexibilityText: "10초마다 모음과 소수 규칙이 바뀌어 자극을 새 기준으로 재분류하는 전환 능력을 훈련합니다."
       }} />
       <DrillGuide {...guideProps} />
-      <div className="max-w-6xl mx-auto px-4 pb-12">
-        <RelatedDrills currentCategory="cognitive" currentHref="https://skilldrills.online/ko/drills/cognitive/attention/concentration-stamina" />
-      </div>
+      <RelatedDrills />
       <DrillFooter />
     </>
   );

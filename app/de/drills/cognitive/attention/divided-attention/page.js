@@ -333,9 +333,7 @@ export default function LocalizedCognitivePage() {
         skillsTitle: "Trainierte Fähigkeiten", skillsText: "Dual-Task-Verarbeitung, visuelles Tracking, Zahlenentscheidung und Aufmerksamkeitsverteilung.", flexibilityTitle: "Parallele Verarbeitung", flexibilityText: "Wechsle zwischen beiden Informationsströmen, ohne die Genauigkeit eines Kanals zu vernachlässigen."
       }} />
       <DrillGuide {...guideProps} />
-      <div className="max-w-6xl mx-auto px-4 pb-12">
-        <RelatedDrills currentCategory="cognitive" currentHref="https://skilldrills.online/de/drills/cognitive/attention/divided-attention" />
-      </div>
+      <RelatedDrills />
       <DrillFooter />
     </>
   );

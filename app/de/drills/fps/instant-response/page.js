@@ -349,13 +349,7 @@ export default function InstantResponseDePage() {
       <InstantResponseClient copy={copyDe} />
 
       <DrillGuide guide={instantResponseGuideDe} />
-      <div className="max-w-4xl mx-auto px-4 pb-12">
-        <RelatedDrills
-          currentCategory="fps"
-          currentHref="/drills/fps/instant-response"
-          locale="de"
-        />
-      </div>
+      <RelatedDrills />
       <DrillFooter />
     </>
   );

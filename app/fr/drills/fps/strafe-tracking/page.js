@@ -375,9 +375,7 @@ export default function StrafeTrackingFrPage() {
       />
       <StrafeTrackingClient copy={copyFr} />
       <DrillGuide guide={strafeTrackingGuide} />
-      <div className="max-w-6xl w-full mx-auto px-4 pb-12">
-        <RelatedDrills currentCategory="fps" currentHref="/drills/fps/strafe-tracking" locale="fr" />
-      </div>
+      <RelatedDrills />
       <DrillFooter />
     </>
   );

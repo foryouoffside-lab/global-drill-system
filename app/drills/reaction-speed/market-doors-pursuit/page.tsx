@@ -2,7 +2,6 @@ import MarketDoorsPursuitWrapper from './MarketDoorsPursuitWrapperLoader';
 import { getAlternateLanguages } from '@/lib/i18n/locales';
 import DrillGuide from '@/components/drill/DrillGuide';
 import DrillFooter from '@/components/drill/DrillFooter';
-import RelatedDrills from '@/components/drill/RelatedDrills';
 import { pickSources } from '@/lib/drillSources';
 import { buildMarketDoorsGuide, buildMarketDoorsSeo, getMarketDoorsContent, getMarketDoorsUi } from '@/lib/i18n/drills/marketDoorsPursuit';
 
@@ -15,5 +14,5 @@ export const metadata = seo.metadata;
 const guideProps = buildMarketDoorsGuide(locale, pickSources('rayner1998', 'donders1868', 'krauzlis2004', 'woods2015'));
 
 export default function MarketDoorsPursuitPage() {
-  return <><script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(seo.breadcrumbSchema) }} /><script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(seo.softwareApplicationSchema) }} /><script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(seo.webApplicationSchema) }} /><script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(seo.videoGameSchema) }} /><script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(seo.faqSchema) }} /><script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(seo.howToSchema) }} /><MarketDoorsPursuitWrapper copy={ui} /><DrillGuide {...guideProps} /><div className="max-w-6xl mx-auto px-4 pb-12"><RelatedDrills /></div><DrillFooter /></>;
+  return <><script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(seo.breadcrumbSchema) }} /><script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(seo.softwareApplicationSchema) }} /><script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(seo.webApplicationSchema) }} /><script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(seo.videoGameSchema) }} /><script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(seo.faqSchema) }} /><script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(seo.howToSchema) }} /><MarketDoorsPursuitWrapper copy={ui} /><DrillGuide {...guideProps} /><DrillFooter /></>;
 }

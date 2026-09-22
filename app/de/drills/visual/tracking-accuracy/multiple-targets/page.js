@@ -332,9 +332,7 @@ export default function LocalizedMultipleTargetsDePage() {
 
       <GhostLinkClient copy={{ title: "Mehrfach-Objektverfolgung", subtitle: "MOT-Test für geteilte Aufmerksamkeit" }} />
       <DrillGuide guide={guideData} />
-      <div className="max-w-6xl mx-auto px-4 pb-12">
-        <RelatedDrills currentCategory="visual" currentHref="https://skilldrills.online/de/drills/visual/tracking-accuracy/multiple-targets" />
-      </div>
+      <RelatedDrills />
     </>
   );
 }

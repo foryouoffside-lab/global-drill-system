@@ -5,8 +5,8 @@ import { getLocalizedDrill } from '@/lib/i18n/drillNames';
 import { buildDirectoryMetadata, getDirectoryCollectionFields } from '@/lib/i18n/siteLandingSeoNative';
 
 const legacyMetadata = {
-  title: 'Treino de Mira: 82 Exercícios Grátis | SkillDrills',
-  description: '82 treinos online gratuitos em 8 categorias: mira FPS para shooters, teste de reflexo, memória, CPS e acuidade visual diretamente no navegador.',
+  title: 'Treino de Mira: 81 Exercícios Grátis | SkillDrills',
+  description: '81 treinos online gratuitos em 8 categorias: mira FPS para shooters, teste de reflexo, memória, CPS e acuidade visual diretamente no navegador.',
   keywords: [
     'aim trainer gratis',
     'treino de mira online',
@@ -25,8 +25,8 @@ const legacyMetadata = {
     'coordenacao motora fina teste'
   ],
   openGraph: {
-    title: 'Treino de Mira: 82 Exercícios Grátis | SkillDrills',
-    description: '82 treinos online gratuitos em 8 categorias: mira FPS para shooters, teste de reflexo, memória, CPS e acuidade visual diretamente no navegador.',
+    title: 'Treino de Mira: 81 Exercícios Grátis | SkillDrills',
+    description: '81 treinos online gratuitos em 8 categorias: mira FPS para shooters, teste de reflexo, memória, CPS e acuidade visual diretamente no navegador.',
     type: 'website',
     url: 'https://skilldrills.online/pt/drills',
     siteName: 'SkillDrills',
@@ -35,13 +35,13 @@ const legacyMetadata = {
       url: 'https://skilldrills.online/icons/icon-512x512.png',
       width: 512,
       height: 512,
-      alt: 'Catálogo Completo de 82 Exercícios SkillDrills',
+      alt: 'Catálogo Completo de 81 Exercícios SkillDrills',
     }],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Treino de Mira: 82 Exercícios Grátis | SkillDrills',
-    description: '82 treinos online para mira FPS, velocidade de reação, cognição e acuidade visual.',
+    title: 'Treino de Mira: 81 Exercícios Grátis | SkillDrills',
+    description: '81 treinos online para mira FPS, velocidade de reação, cognição e acuidade visual.',
     images: ['https://skilldrills.online/icons/icon-512x512.png'],
   },
   robots: { index: true, follow: true },
@@ -78,15 +78,13 @@ const breadcrumbSchema = {
 const collectionSchema = {
   "@context": "https://schema.org",
   "@type": "CollectionPage",
-  "name": "Catálogo Completo de 82 Exercícios de Desempenho SkillDrills",
-  "description": "Coleção científica de 82 treinos interativos para mira FPS, velocidade de reação, rastreamento visual, cognição, memória, motricidade fina e percepção visual.",
+  "name": "Catálogo Completo de 81 Exercícios de Desempenho SkillDrills",
+  "description": "Coleção científica de 81 treinos interativos para mira FPS, velocidade de reação, rastreamento visual, cognição, memória, motricidade fina e percepção visual.",
   "url": "https://skilldrills.online/pt/drills",
   "inLanguage": "pt",
   "hasPart": DRILLS.map((drill) => {
     const loc = getLocalizedDrill(drill.href, 'pt', drill.name);
-    const itemUrl = drill.href === '/drills/motor/keyboard-tester'
-      ? 'https://skilldrills.online/pt/teste-de-teclado'
-      : `https://skilldrills.online/pt${drill.href}`;
+    const itemUrl = `https://skilldrills.online/pt${drill.href}`;
     return {
       "@type": "WebApplication",
       "name": loc.name,
@@ -110,7 +108,7 @@ const faqSchema = {
   "mainEntity": [
     {
       "@type": "Question",
-      "name": "Quais são as bases neurobiológicas dos 82 exercícios do SkillDrills?",
+      "name": "Quais são as bases neurobiológicas dos 81 exercícios do SkillDrills?",
       "acceptedAnswer": {
         "@type": "Answer",
         "text": "O SkillDrills foi desenvolvido com base em modelos consolidados da neurociência motora e da psicologia cognitiva, como a Lei de Fitts (relação velocidade-precisão), a Lei de Hick (tempo de escolha sob múltiplos estímulos), a teoria de integração de características visuais e a plasticidade sináptica. Cada treino isola vias neurais e reflexos oculomotores específicos para promover adaptações consistentes."
@@ -161,7 +159,7 @@ const faqSchema = {
       "name": "É necessário fazer downloads ou cadastro para utilizar a plataforma?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Não. Todos os 82 treinos operam integralmente no navegador web, sem necessidade de baixar softwares, instalar extensões ou criar cadastros. O histórico de desempenho e os recordes são armazenados exclusivamente no armazenamento local privado do seu navegador, respeitando rigorosamente a sua privacidade."
+        "text": "Não. Todos os 81 treinos operam integralmente no navegador web, sem necessidade de baixar softwares, instalar extensões ou criar cadastros. O histórico de desempenho e os recordes são armazenados exclusivamente no armazenamento local privado do seu navegador, respeitando rigorosamente a sua privacidade."
       }
     },
     {

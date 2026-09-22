@@ -465,13 +465,7 @@ export default function LocalizedWordRecallPage() {
           ]
 }} />
       <DrillGuide guide={wordRecallGuide} />
-      <div className="max-w-4xl mx-auto px-4 pb-12">
-        <RelatedDrills
-          currentCategory="memory"
-          currentHref="/de/drills/memory/short-term-memory/word-recall"
-          locale="de"
-        />
-      </div>
+      <RelatedDrills />
     </>
   );
 }

@@ -1,5 +1,5 @@
 'use client';
 
-import dynamic from 'next/dynamic';
+import Client from './VisualSearchClient';
 
-export default dynamic(() => import('./VisualSearchClient'));
+export default Client;

@@ -349,13 +349,7 @@ export default function TargetAcquisitionKoPage() {
         }}
       />
       <DrillGuide guide={targetAcquisitionGuide} />
-      <div className="max-w-4xl mx-auto px-4 pb-12">
-        <RelatedDrills
-          currentCategory="fps"
-          currentHref="/ko/drills/fps/target-acquisition"
-          locale="ko"
-        />
-      </div>
+      <RelatedDrills />
       <DrillFooter />
     </>
   );

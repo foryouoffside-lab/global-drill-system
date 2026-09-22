@@ -323,7 +323,7 @@ export default function FlowStateEsPage() {
     faqs: faqSchema.mainEntity.map(e => ({ q: e.name, a: e.acceptedAnswer.text })),
     sources: pickSources('woods2015', 'krauzlis2004', 'posner1990', 'green2003', 'dietrich2004'),
     related: [
-      { href: "/es/drills/fps/fps-tracking-trainer", label: "Entrenador de Tracking FPS" },
+      { href: "/es/drills/reaction-speed/fps-tracking-trainer", label: "Entrenador de Tracking FPS" },
       { href: "/es/drills/fps/anti-zigzag-movement-trainer", label: "Entrenador Anti-Zigzag" },
       { href: "/es/drills/fps/anti-strafe-jitter-duel", label: "Duelo de Jitter Anti-Strafe" },
       { href: "/es/drills/fps/flick-shot-training", label: "Entrenamiento de Flick Shot" },
@@ -358,9 +358,7 @@ export default function FlowStateEsPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(howToSchema) }}
       />
       <FlowStateClient copy={copyEs} />
-      <div className="max-w-6xl mx-auto px-4 w-full pb-12">
-        <RelatedDrills currentCategory="fps" currentHref="/es/drills/fps/flow-state" locale="es" />
-      </div>
+      <RelatedDrills />
       <DrillGuide guide={flowStateGuide} />
       <DrillFooter />
     </>

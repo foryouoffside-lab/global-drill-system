@@ -6,7 +6,7 @@ import { pickSources } from '@/lib/drillSources';
 
 export const metadata = {
   title: "Test de reflejos online | Tiempo de reacción visual | SkillDrills",
-  description: "Test de reflejos online gratis: mide tu tiempo de reacción visual en milisegundos ante una señal luminosa. El resultado depende de la pantalla y no es un diagnóstico médico.",
+  description: "Test de reflejos online gratis: mide tu tiempo de reacción visual en milisegundos ante una señal luminosa. Depende de la pantalla; no es diagnóstico médico.",
   keywords: [
     "test de reflejos",
     "test de reflejos online",
@@ -303,9 +303,7 @@ export default function StrobeLatencyPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(videoGameSchema) }} />
       <StrobeLatencyClient copy={{ title: "Test de reflejos (reacción visual)", startCardTitle: "Test de reflejos", startCardSubtitle: "Responde al destello en milisegundos" }} />
       <DrillGuide guide={lightReactionGuide} />
-      <div className="max-w-6xl mx-auto px-4 pb-12">
-        <RelatedDrills currentCategory="visual" currentHref="https://skilldrills.online/es/drills/visual/reaction-speed/light-reaction" />
-      </div>
+      <RelatedDrills />
     </>
   );
 }

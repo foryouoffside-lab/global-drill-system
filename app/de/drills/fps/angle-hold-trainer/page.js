@@ -381,9 +381,7 @@ export default function GermanAngleHoldPage() {
 
       <AngleHoldClient copy={copyDe} />
 
-      <div className="max-w-6xl w-full mx-auto px-4 pb-12">
-        <RelatedDrills currentCategory="fps" currentHref="/drills/fps/angle-hold-trainer" locale="de" />
-      </div>
+      <RelatedDrills />
 
       <DrillGuide guide={angleHoldGuide} />
       <DrillFooter />

@@ -512,7 +512,7 @@ export default function HomePageClient({ copy = {} }) {
       )}
 
       {/* 4. CATEGORIES SECTION (ALL 8 CATEGORIES) */}
-      <section className="py-18 sm:py-22 relative" aria-labelledby="categories-heading">
+      <section className="py-16 sm:py-20 relative" aria-labelledby="categories-heading">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <Reveal className="text-center mb-14 space-y-3">
             <h2 id="categories-heading" className="text-3xl sm:text-4xl font-black tracking-tight text-white uppercase">
@@ -579,7 +579,7 @@ export default function HomePageClient({ copy = {} }) {
       </section>
 
       {/* 5. FEATURES / ARCHITECTURE */}
-      <section className="py-18 sm:py-22 border-t border-white/10 bg-surface-1/40" aria-labelledby="features-heading">
+      <section className="py-16 sm:py-20 border-t border-white/10 bg-surface-1/40" aria-labelledby="features-heading">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <Reveal className="text-center mb-14 space-y-3">
             <h2 id="features-heading" className="text-3xl sm:text-4xl font-black tracking-tight text-white uppercase">
@@ -611,7 +611,7 @@ export default function HomePageClient({ copy = {} }) {
       </section>
 
       {/* 6. AUDIENCE PROFILE ADAPTATION */}
-      <section className="py-18 sm:py-22 border-t border-white/10" aria-labelledby="audience-heading">
+      <section className="py-16 sm:py-20 border-t border-white/10" aria-labelledby="audience-heading">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <Reveal className="text-center mb-14 space-y-3">
             <h2 id="audience-heading" className="text-3xl sm:text-4xl font-black tracking-tight text-white uppercase">
@@ -643,7 +643,7 @@ export default function HomePageClient({ copy = {} }) {
       </section>
 
       {/* 7. CALL TO ACTION */}
-      <section className="py-22 sm:py-26 border-t border-white/10 bg-surface-1/60 relative overflow-hidden" aria-labelledby="cta-heading">
+      <section className="py-20 sm:py-24 border-t border-white/10 bg-surface-1/60 relative overflow-hidden" aria-labelledby="cta-heading">
         {/* Glow backdrop */}
         <div className="absolute inset-0 pointer-events-none">
           <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[700px] h-[300px] bg-blue-600/[0.10] rounded-full blur-[140px]" />

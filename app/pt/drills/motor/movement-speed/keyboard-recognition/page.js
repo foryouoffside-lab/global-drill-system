@@ -336,9 +336,7 @@ export default function PortugueseKeyboardRecognitionPage() {
       />
       <KeyboardRecognitionClient />
       <DrillGuide {...guideProps} />
-      <div className="max-w-6xl mx-auto px-4 pb-12">
-        <RelatedDrills currentCategory="motor" currentHref="/drills/motor/movement-speed/keyboard-recognition" />
-      </div>
+      <RelatedDrills />
     </>
   );
 }

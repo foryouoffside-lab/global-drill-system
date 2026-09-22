@@ -35,8 +35,8 @@ import useUnexpectedExitGuard from '@/lib/useUnexpectedExitGuard';
 const DRILL_DURATION = 45; // starting clock only; a run grows past this
 const POINTS_PER_LEVEL = 1400; // 200 -> 1400 (7x)
 const ELITE_SCORE = 54000; // 18000 -> 54000 (3x)
-const TIME_PER_HIT = 0.4; // +0.4s on target destruction
-const TIME_PENALTY = 0.6; // opt-in on target dropped past bottom boundary
+const TIME_PER_HIT = 2; // +2s on target destruction, capped at 60s
+const TIME_PENALTY = 1; // opt-in on target dropped past bottom boundary
 const STORAGE_KEY = 'skilldrills_fps_vertical_air_track_v3';
 
 const getSavedData = () => {
@@ -72,7 +72,7 @@ const getLevelConfig = (level, combo = 0) => {
 // ACCORDION DATA
 // ============================================================
 const RULES_ITEMS = [
-  { num: "1", text: "Airborne Target", highlight: "+100 PTS (+0.4s)", result: "×Combo Mult" },
+  { num: "1", text: "Airborne Target", highlight: "+100 PTS (+2s, max 60s)", result: "×Combo Mult" },
   { num: "2", text: "Apex Elevation", highlight: "Up to +75 PTS", result: "Height Bonus" },
   { num: "3", text: "Level Up", highlight: "+1 / 1400 PTS", result: "Adaptive Gravity" },
   { num: "4", text: "Dropped Target", highlight: "Penalty", result: "Resets Combo (-0.6s)" }
@@ -171,7 +171,7 @@ export default function VerticalAirTrackClient({ copy = null }) {
     if (typeof window !== 'undefined') {
       setSoundEnabled(drillAudio.isEnabled());
       setFlashEnabled(drillFlash.isEnabled());
-      setPenaltyEnabled(drillPenalty.isEnabled());
+      setPenaltyEnabled(drillPenalty.isEnabled(TIME_PER_HIT === 2));
       const hasFinePointer = window.matchMedia('(pointer: fine)').matches;
       const isTouchCapable = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
       setIsTouchOnlyDevice(isTouchCapable && !hasFinePointer);
@@ -261,7 +261,7 @@ export default function VerticalAirTrackClient({ copy = null }) {
     if (document.pointerLockElement) document.exitPointerLock();
 
     const e = engine.current;
-    const finalAccuracy = e.totalTicks > 0 ? Math.round((e.onTargetTicks / e.totalTicks) * 100) : 100;
+    const finalAccuracy = e.totalTicks > 0 ? Math.round((e.onTargetTicks / e.totalTicks) * 100) : 0;
     const missedTicks = e.totalTicks - e.onTargetTicks;
     const peakLevel = Math.floor(bestLevelRunRef.current);
     const grade = getFpsScoreGrade(e.score, ELITE_SCORE);
@@ -571,7 +571,7 @@ export default function VerticalAirTrackClient({ copy = null }) {
               continue;
             }
             e.timeouts++;
-            if (drillPenalty.isEnabled()) e.timeLeft -= TIME_PENALTY;
+            if (drillPenalty.isEnabled(TIME_PER_HIT === 2)) e.timeLeft -= TIME_PENALTY;
             e.combo = 0;
             e.screenShake = 10;
             setCombo(0);
@@ -620,7 +620,7 @@ export default function VerticalAirTrackClient({ copy = null }) {
               const levelMult = 1 + getDifficultyProgress(e.level) * 0.5;
               const gained = Math.round((baseScore + heightBonus) * getComboMultiplier(e.combo) * levelMult);
               e.score += gained;
-              e.timeLeft += TIME_PER_HIT; // +0.4s
+              e.timeLeft = Math.min(60, e.timeLeft + TIME_PER_HIT);
               
               setScore(e.score);
               setCombo(e.combo);
@@ -948,6 +948,7 @@ export default function VerticalAirTrackClient({ copy = null }) {
               shareText={copy?.shareText}
               exitText={copy?.exitText}
               onPlayAgain={enterDrill}
+              onBeforeShare={() => setIsFullscreen(false)}
               onShare={shareDrillLink}
               onExit={handleExitDrill}
             />

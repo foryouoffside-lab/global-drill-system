@@ -33,8 +33,8 @@ const DRILL_DURATION = 45; // starting clock only; a run grows past this
 const POINTS_PER_LEVEL = 1400; // 200 -> 1400 (7x)
 const ELITE_SCORE = 48000; // 16000 -> 48000 (3x)
 
-const TIME_PER_HIT = 0.6;
-const TIME_PENALTY = 0.8;
+const TIME_PER_HIT = 2;
+const TIME_PENALTY = 1;
 
 const STORAGE_KEY = 'skilldrills_fps_instant_response_v3';
 const SPAM_CALM_WINDOW = 350;
@@ -73,7 +73,7 @@ const getLevelConfig = (level, combo = 0) => {
 // ACCORDION DATA
 // ============================================================
 const RULES_ITEMS = [
-  { num: "1", text: "Flash Reaction Hit", highlight: "+100 PTS (+0.6s)", result: "×Combo Mult" },
+  { num: "1", text: "Flash Reaction Hit", highlight: "+100 PTS (+2s, max 60s)", result: "×Combo Mult" },
   { num: "2", text: "Speed Bonus", highlight: "Sub-150ms Hit", result: "Up to +150 PTS" },
   { num: "3", text: "Level Progression", highlight: "+1 Level / 1400 PTS", result: "Adaptive Windows" },
   { num: "4", text: "Miss / Pre-fire", highlight: "Failure Penalty", result: "Resets Combo (-0.8s)" }
@@ -196,7 +196,7 @@ export default function InstantResponseClient({ copy = null }) {
     if (typeof window !== 'undefined') {
       setSoundEnabled(drillAudio.isEnabled());
       setFlashEnabled(drillFlash.isEnabled());
-      setPenaltyEnabled(drillPenalty.isEnabled());
+      setPenaltyEnabled(drillPenalty.isEnabled(TIME_PER_HIT === 2));
 
       const hasFinePointer = window.matchMedia('(pointer: fine)').matches;
       const isTouchCapable = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
@@ -451,7 +451,7 @@ export default function InstantResponseClient({ copy = null }) {
         if (!eRef.target.isExposed || eRef.target.isFeint) {
           // PRE-FIRE FAILURE
           eRef.preFires++;
-          if (drillPenalty.isEnabled()) eRef.timeLeft -= TIME_PENALTY;
+          if (drillPenalty.isEnabled(TIME_PER_HIT === 2)) eRef.timeLeft -= TIME_PENALTY;
           eRef.combo = 0;
           eRef.screenShake = 8;
           triggerFlash();
@@ -475,7 +475,7 @@ export default function InstantResponseClient({ copy = null }) {
             const levelMult = 1 + getDifficultyProgress(eRef.level) * 0.5;
             eRef.score += Math.round((100 + speedBonus) * getComboMultiplier(eRef.combo) * levelMult);
 
-            eRef.timeLeft += TIME_PER_HIT;
+            eRef.timeLeft = Math.min(60, eRef.timeLeft + TIME_PER_HIT);
 
             const rawLevel = (eRef.score / POINTS_PER_LEVEL) + 1;
             eRef.level = Math.max(eRef.level, rawLevel);
@@ -494,7 +494,7 @@ export default function InstantResponseClient({ copy = null }) {
           } else {
             // MISS FAILURE
             eRef.missedClicks++;
-            if (drillPenalty.isEnabled()) eRef.timeLeft -= TIME_PENALTY;
+            if (drillPenalty.isEnabled(TIME_PER_HIT === 2)) eRef.timeLeft -= TIME_PENALTY;
             eRef.combo = 0;
             eRef.screenShake = 8;
             triggerFlash();
@@ -601,7 +601,7 @@ export default function InstantResponseClient({ copy = null }) {
 
             if (!e.target.isFeint) {
               e.timeouts++;
-              if (drillPenalty.isEnabled()) e.timeLeft -= TIME_PENALTY;
+              if (drillPenalty.isEnabled(TIME_PER_HIT === 2)) e.timeLeft -= TIME_PENALTY;
               e.combo = 0;
               e.screenShake = 8;
               triggerFlash();
@@ -896,6 +896,7 @@ export default function InstantResponseClient({ copy = null }) {
                 { value: `Lv. ${analytics.finalLevel}`, label: "Peak Level" },
               ]}
               onPlayAgain={enterDrill}
+              onBeforeShare={() => setIsFullscreen(false)}
               onShare={shareScore}
               onExit={handleExitDrill}
             />

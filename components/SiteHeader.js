@@ -8,6 +8,7 @@ import { searchDrills } from '@/lib/searchDrills';
 import { DRILLS, DESKTOP_ONLY_CATEGORIES } from '@/lib/drillsNav';
 import LanguageSwitcher from '@/components/LanguageSwitcher';
 import { useTranslation } from '@/lib/i18n/useTranslation';
+import { stripLocale } from '@/lib/i18n/locales';
 
 const DRILL_HREFS = new Set(DRILLS.map((drill) => drill.href));
 
@@ -38,7 +39,7 @@ export default function SiteHeader() {
   const totalDrillsCount = DRILLS.length;
 
   // Header is limited to hub/category landing pages — hide it on individual drill pages
-  const isDrillPage = DRILL_HREFS.has(pathname);
+  const isDrillPage = DRILL_HREFS.has(stripLocale(pathname || ''));
 
   // Debounced search
   useEffect(() => {

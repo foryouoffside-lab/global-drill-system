@@ -287,7 +287,7 @@ export default function AntiStrafeJitterPage() {
     // engine can check the figures rather than take them on trust.
     sources: pickSources('woods2015', 'krauzlis2004', 'green2003', 'rashbass1961'),
     related: [
-      { href: "/drills/fps/fps-tracking-trainer", label: "FPS Tracking Trainer" },
+      { href: "/drills/reaction-speed/fps-tracking-trainer", label: "FPS Tracking Trainer" },
       { href: "/drills/fps/pro-smooth-pursuit", label: "Smooth Pursuit Aim Trainer" },
       { href: "/drills/fps/flick-shot-training", label: "Flick Shot Trainer" },
       { href: "/drills/fps/180-degree-awareness", label: "180° Awareness Pro" },

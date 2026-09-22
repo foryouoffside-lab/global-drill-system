@@ -281,10 +281,10 @@ export default function KoreanAngleHoldPage() {
     faqs: faqSchema.mainEntity.map(e => ({ q: e.name, a: e.acceptedAnswer.text })),
     sources: pickSources('woods2015', 'fitts1954', 'meyer1988', 'woodworth1899'),
     related: [
-      { href: "/drills/fps/flick-shot-training", label: "프로 플릭샷 트레이너" },
-      { href: "/drills/fps/180-degree-awareness", label: "180도 화면전환 인식 훈련" },
-      { href: "/drills/fps/micro-correction-precision", label: "마이크로 에임 미세보정" },
-      { href: "/drills/reaction-speed/reaction-time-test", label: "반응속도 테스트" }
+      { href: "/ko/drills/fps/flick-shot-training", label: "프로 플릭샷 트레이너" },
+      { href: "/ko/drills/fps/180-degree-awareness", label: "180도 화면전환 인식 훈련" },
+      { href: "/ko/drills/fps/micro-correction-precision", label: "마이크로 에임 미세보정" },
+      { href: "/ko/drills/reaction-speed/reaction-time-test", label: "반응속도 테스트" }
     ]
   };
 
@@ -372,9 +372,7 @@ export default function KoreanAngleHoldPage() {
 
       <AngleHoldClient copy={copyKo} />
 
-      <div className="max-w-6xl w-full mx-auto px-4 pb-12">
-        <RelatedDrills currentCategory="fps" currentHref="/drills/fps/angle-hold-trainer" locale="ko" />
-      </div>
+      <RelatedDrills />
 
       <DrillGuide guide={angleHoldGuideKo} />
       <DrillFooter />

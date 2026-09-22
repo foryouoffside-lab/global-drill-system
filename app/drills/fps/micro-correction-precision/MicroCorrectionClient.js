@@ -35,8 +35,8 @@ import useUnexpectedExitGuard from '@/lib/useUnexpectedExitGuard';
 const DRILL_DURATION = 45; // starting clock only; a run grows past this
 const POINTS_PER_LEVEL = 1400; // 200 -> 1400 (7x)
 const ELITE_SCORE = 54000; // 18000 -> 54000 (3x)
-const TIME_PER_HIT = 0.4; // +0.2s on anchor, +0.2s on micro hit (+0.4s/cycle)
-const TIME_PENALTY = 0.6; // opt-in on miss or timeout
+const TIME_PER_HIT = 2; // +1s on anchor, +1s on micro hit (+2s/cycle), capped at 60s
+const TIME_PENALTY = 1; // opt-in on miss or timeout
 const STORAGE_KEY = 'skilldrills_fps_micro_correction_v3';
 
 const getSavedData = () => {
@@ -203,7 +203,7 @@ export default function MicroCorrectionClient({ copy = null }) {
     if (typeof window !== 'undefined') {
       setSoundEnabled(drillAudio.isEnabled());
       setFlashEnabled(drillFlash.isEnabled());
-      setPenaltyEnabled(drillPenalty.isEnabled());
+      setPenaltyEnabled(drillPenalty.isEnabled(TIME_PER_HIT === 2));
       const hasFinePointer = window.matchMedia('(pointer: fine)').matches;
       const isTouchCapable = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
       setIsTouchOnlyDevice(isTouchCapable && !hasFinePointer);
@@ -275,7 +275,7 @@ export default function MicroCorrectionClient({ copy = null }) {
     if (document.pointerLockElement) document.exitPointerLock();
 
     const e = engine.current;
-    const finalAccuracy = e.totalClicks > 0 ? Math.round((e.successfulHits / e.totalClicks) * 100) : 100;
+    const finalAccuracy = e.totalClicks > 0 ? Math.round((e.successfulHits / e.totalClicks) * 100) : 0;
     const microAcc = e.totalMicroClicks > 0 ? Math.round((e.microHits / e.totalMicroClicks) * 100) : 0;
     const avgCorrTime = e.correctionTimes.length > 0
       ? Math.round(e.correctionTimes.reduce((a, b) => a + b, 0) / e.correctionTimes.length)
@@ -312,7 +312,7 @@ export default function MicroCorrectionClient({ copy = null }) {
     const isNewHigh = e.score > prevSaved.bestScore;
     setIsNewBest(isNewHigh);
 
-    const runBestLevel = Math.max(prevSaved.bestLevel, bestLevelRunRef.current);
+    const runBestLevel = Math.floor(Math.max(prevSaved.bestLevel, bestLevelRunRef.current));
     const updatedData = {
       bestScore: Math.max(prevSaved.bestScore, e.score),
       bestCombo: Math.max(prevSaved.bestCombo, e.bestCombo),
@@ -503,7 +503,7 @@ export default function MicroCorrectionClient({ copy = null }) {
             eRef.successfulHits++;
             eRef.anchor.active = false;
             eRef.score += 10;
-            eRef.timeLeft += 0.2;
+            eRef.timeLeft = Math.min(60, eRef.timeLeft + TIME_PER_HIT / 2);
             setScore(eRef.score);
 
             const hitColor = eRef.combo >= 10 ? '#34d399' : '#5eead4';
@@ -516,7 +516,7 @@ export default function MicroCorrectionClient({ copy = null }) {
             spawnMicro(eRef.anchor.x, eRef.anchor.y, eRef.logicalWidth, eRef.logicalHeight, eRef.level, eRef.combo);
           } else {
             eRef.missedClicks++;
-            if (drillPenalty.isEnabled()) eRef.timeLeft -= TIME_PENALTY;
+            if (drillPenalty.isEnabled(TIME_PER_HIT === 2)) eRef.timeLeft -= TIME_PENALTY;
             eRef.combo = 0;
             setCombo(0);
             eRef.screenShake = 6;
@@ -548,7 +548,7 @@ export default function MicroCorrectionClient({ copy = null }) {
             const levelMult = 1 + getDifficultyProgress(eRef.level) * 0.5;
             const basePts = 100 + Math.round(precisionRatio * 50);
             eRef.score += Math.round(basePts * getComboMultiplier(eRef.combo) * levelMult);
-            eRef.timeLeft += 0.2; // +0.2s on micro hit, total +0.4s/cycle
+            eRef.timeLeft = Math.min(60, eRef.timeLeft + TIME_PER_HIT / 2);
             setScore(eRef.score);
 
             const rawLevel = (eRef.score / POINTS_PER_LEVEL) + 1;
@@ -565,7 +565,7 @@ export default function MicroCorrectionClient({ copy = null }) {
             spawnAnchor(eRef.logicalWidth, eRef.logicalHeight, eRef.level, eRef.combo);
           } else {
             eRef.missedClicks++;
-            if (drillPenalty.isEnabled()) eRef.timeLeft -= TIME_PENALTY;
+            if (drillPenalty.isEnabled(TIME_PER_HIT === 2)) eRef.timeLeft -= TIME_PENALTY;
             eRef.combo = 0;
             setCombo(0);
             eRef.screenShake = 6;
@@ -671,7 +671,7 @@ export default function MicroCorrectionClient({ copy = null }) {
           e.anchor.age += deltaTimeMs;
           if (drillTimeout.isEnabled() && e.anchor.age >= e.anchor.ttl) {
             e.timeouts++;
-            if (drillPenalty.isEnabled()) e.timeLeft -= TIME_PENALTY;
+            if (drillPenalty.isEnabled(TIME_PER_HIT === 2)) e.timeLeft -= TIME_PENALTY;
             e.combo = 0;
             setCombo(0);
             e.screenShake = 6;
@@ -683,7 +683,7 @@ export default function MicroCorrectionClient({ copy = null }) {
           e.micro.age += deltaTimeMs;
           if (drillTimeout.isEnabled() && e.micro.age >= e.micro.ttl) {
             e.timeouts++;
-            if (drillPenalty.isEnabled()) e.timeLeft -= TIME_PENALTY;
+            if (drillPenalty.isEnabled(TIME_PER_HIT === 2)) e.timeLeft -= TIME_PENALTY;
             e.combo = 0;
             setCombo(0);
             e.screenShake = 6;
@@ -950,6 +950,7 @@ export default function MicroCorrectionClient({ copy = null }) {
                 { value: `Lv. ${analytics.levelReached}`, label: copy?.statPeakLevel || "Peak Level" },
               ]}
               onPlayAgain={enterDrill}
+              onBeforeShare={() => setIsFullscreen(false)}
               onShare={shareDrillLink}
               onExit={handleExitDrill}
             />

@@ -606,6 +606,14 @@ export default function TracingClient({ copy } = {}) {
         ctx.shadowColor = 'rgba(0, 0, 0, 0.9)';
         ctx.shadowBlur = 3;
         ctx.strokeStyle = '#ffffff';
+        ctx.fillStyle = '#ffffff';
+
+        // Circular cursor ring with the existing plus reticle inside it.
+        ctx.lineWidth = 2;
+        ctx.beginPath();
+        ctx.arc(ch.x, ch.y, radius, 0, Math.PI * 2);
+        ctx.stroke();
+
         ctx.lineWidth = 1.5;
 
         // Top line
@@ -796,6 +804,7 @@ export default function TracingClient({ copy } = {}) {
                 { value: `${bestScore}`, label: copy?.bestScoreLabel || "Personal Best" },
               ]}
               onPlayAgain={startGame}
+              onBeforeShare={() => setIsFullscreen(false)}
               onShare={shareScore}
               onExit={handleExitDrill}
             />
@@ -892,4 +901,3 @@ function RuleItem({ num, text, highlight = '', result }) {
     </div>
   );
 }
-

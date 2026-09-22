@@ -353,7 +353,7 @@ export default function FlickShotPtPage() {
           stageCaption: "Mire rapidamente nos alvos aleatórios e dispare com precisão antes que o tempo limite expire.",
           rulesTitle: "Regras do Treino & Sistema de Pontuação",
           rulesItems: [
-            { num: "1", text: "Alvo Atingido", highlight: "+100 PTS (+0,6s)", result: "×Multiplicador Combo" },
+            { num: "1", text: "Alvo Atingido", highlight: "+100 PTS (+2,0s)", result: "×Multiplicador Combo" },
             { num: "2", text: "Sequência de Combo", highlight: "Até 3.0×", result: "Alvos Mais Rápidos" },
             { num: "3", text: "Subir de Nível", highlight: "+1 / 1800 PTS", result: "Escalonamento Adaptativo" },
             { num: "4", text: "Erro / Tempo Esgotado", highlight: "Penalidade", result: "Zera Combo (-0,8s)" }
@@ -363,14 +363,8 @@ export default function FlickShotPtPage() {
           aboutText: "Flick aim é a capacidade neuromuscular de deslocar a retícula em um impulso balístico contínuo até o alvo e pará-la instantaneamente. Conforme a Lei de Fitts (1954), a dificuldade escala com a distância e o tamanho do alvo. O domínio reside na frenagem mecânica de oposição no mousepad (Elliott et al., 2010)."
         }}
       />
-      <DrillGuide guide={flickGuide} />
-      <div className="max-w-4xl mx-auto px-4 pb-12">
-        <RelatedDrills
-          currentCategory="fps"
-          currentHref="/pt/drills/fps/flick-shot-training"
-          locale="pt"
-        />
-      </div>
+      <DrillGuide guide={flickGuide} framed />
+      <RelatedDrills />
       <DrillFooter />
     </>
   );

@@ -338,7 +338,7 @@ export default function FlickShotKoPage() {
           stageCaption: "화면 무작위 위치에 나타나는 목표물을 제한 시간이 만료되기 전에 신속히 끌어치기(플릭)하여 타격하세요.",
           rulesTitle: "훈련 규칙 및 점수 산정 방식",
           rulesItems: [
-            { num: "1", text: "타겟 명중", highlight: "+100점 (+0.6초)", result: "콤보 배수 적용" },
+            { num: "1", text: "타겟 명중", highlight: "+100점 (+2.0초)", result: "콤보 배수 적용" },
             { num: "2", text: "콤보 스트릭", highlight: "최대 3.0배", result: "타겟 가속 및 축소" },
             { num: "3", text: "레벨 상승", highlight: "+1 / 1800점", result: "적응형 난이도" },
             { num: "4", text: "미스 / 시간 초과", highlight: "페널티", result: "콤보 초기화 (-0.8초)" }
@@ -348,14 +348,8 @@ export default function FlickShotKoPage() {
           aboutText: "플릭 에임은 시선이 닿은 목표 지점으로 마우스를 탄도학적으로 단숨에 이동시켜 초탄을 명중시키는 FPS의 핵심 조준 기술입니다. 동작 시간은 이동 거리와 타겟 크기에 비례하며(Fitts, 1954), 숙련된 플릭은 종단 단계에서의 마찰 제동 및 미세 보정(Elliott et al., 2010)을 통해 완성됩니다."
         }}
       />
-      <DrillGuide guide={flickGuide} />
-      <div className="max-w-4xl mx-auto px-4 pb-12">
-        <RelatedDrills
-          currentCategory="fps"
-          currentHref="/drills/fps/flick-shot-training"
-          locale="ko"
-        />
-      </div>
+      <DrillGuide guide={flickGuide} framed />
+      <RelatedDrills />
       <DrillFooter />
     </>
   );

@@ -342,9 +342,7 @@ export default function FlowStateJaPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(howToSchema) }}
       />
       <FlowStateClient copy={copy} />
-      <div className="max-w-6xl mx-auto px-4 w-full">
-        <RelatedDrills currentCategory="fps" currentHref="/ja/drills/fps/flow-state" locale="ja" />
-      </div>
+      <RelatedDrills />
       <DrillGuide guide={jaGuide} />
       <DrillFooter />
     </>

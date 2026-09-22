@@ -336,7 +336,7 @@ export default function FlickShotJaPage() {
           stageCaption: "画面上に出現するターゲットへ素早くエイムを飛ばし、制限時間が尽きる前に正確に撃ち抜いてください。",
           rulesTitle: "ルール & スコアリングシステム",
           rulesItems: [
-            { num: "1", text: "ターゲット命中", highlight: "+100点 (+0.6秒)", result: "コンボ倍率適用" },
+            { num: "1", text: "ターゲット命中", highlight: "+100点 (+2.0秒)", result: "コンボ倍率適用" },
             { num: "2", text: "コンボストリーク", highlight: "最大3.0倍", result: "高速ターゲット" },
             { num: "3", text: "レベル上昇", highlight: "+1 / 1800点", result: "適応型スケーリング" },
             { num: "4", text: "ミス / タイムアウト", highlight: "ペナルティ", result: "コンボリセット (-0.8秒)" }
@@ -346,14 +346,8 @@ export default function FlickShotJaPage() {
           aboutText: "フリックエイムとは、視覚で捉えた標的に対してマウスを弾道的に一撃で移動させ、瞬時に初弾を着弾させる基本運動です。移動時間は距離と標的サイズに依存し（Fitts, 1954）、多くのフリックは直前の微小な減速・修正動作を経て着弾します（Elliott et al., 2010）。"
         }}
       />
-      <DrillGuide guide={flickGuide} />
-      <div className="max-w-4xl mx-auto px-4 pb-12">
-        <RelatedDrills
-          currentCategory="fps"
-          currentHref="/ja/drills/fps/flick-shot-training"
-          locale="ja"
-        />
-      </div>
+      <DrillGuide guide={flickGuide} framed />
+      <RelatedDrills />
       <DrillFooter />
     </>
   );

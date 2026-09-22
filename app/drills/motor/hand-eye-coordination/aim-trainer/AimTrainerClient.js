@@ -34,8 +34,8 @@ import useUnexpectedExitGuard from '@/lib/useUnexpectedExitGuard';
 const DRILL_DURATION = 45; // starting clock only; a run grows past this
 const POINTS_PER_LEVEL = 1750; // 250 -> 1750 (7x)
 const ELITE_SCORE = 48000; // 16000 -> 48000 (3x)
-const TIME_PER_HIT = 0.6; // +0.6s on clean hit
-const TIME_PENALTY = 0.8; // opt-in on miss or timeout
+const TIME_PER_HIT = 2; // +2s on clean hit, capped at 60s
+const TIME_PENALTY = 1; // opt-in on miss or timeout
 const STORAGE_KEY = 'skilldrills_motor_aim_trainer_v3';
 
 const getSavedData = () => {
@@ -85,7 +85,7 @@ const spawnTarget = (w, h, config) => {
 // ACCORDION DATA
 // ============================================================
 const RULES_ITEMS = [
-  { num: "1", text: "Target Hit", highlight: "+100 PTS (+0.6s)", result: "×Combo Mult" },
+  { num: "1", text: "Target Hit", highlight: "+100 PTS (+2s, max 60s)", result: "×Combo Mult" },
   { num: "2", text: "Continuous Combo", highlight: "Up to 3.0× PTS", result: "Maintains Flow" },
   { num: "3", text: "Level Up", highlight: "+1 / 1750 PTS", result: "Shrink & Accelerate" },
   { num: "4", text: "Miss / Timeout", highlight: "Penalty", result: "Resets Combo (-0.8s)" }
@@ -175,7 +175,7 @@ export default function AimTrainerClient({ copy = {} } = {}) {
     if (typeof window !== 'undefined') {
       setSoundEnabled(drillAudio.isEnabled());
       setFlashEnabled(drillFlash.isEnabled());
-      setPenaltyEnabled(drillPenalty.isEnabled());
+      setPenaltyEnabled(drillPenalty.isEnabled(TIME_PER_HIT === 2));
       const hasFinePointer = window.matchMedia('(pointer: fine)').matches;
       const isTouchCapable = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
       setIsTouchOnlyDevice(isTouchCapable && !hasFinePointer);
@@ -387,7 +387,7 @@ export default function AimTrainerClient({ copy = {} } = {}) {
 
           const levelMult = 1 + getDifficultyProgress(eRef.level) * 0.5;
           eRef.score += Math.round(100 * getComboMultiplier(eRef.combo) * levelMult);
-          eRef.timeLeft += TIME_PER_HIT;
+          eRef.timeLeft = Math.min(60, eRef.timeLeft + TIME_PER_HIT);
 
           const rawLevel = (eRef.score / POINTS_PER_LEVEL) + 1;
           eRef.level = Math.max(eRef.level, rawLevel);
@@ -409,7 +409,7 @@ export default function AimTrainerClient({ copy = {} } = {}) {
           triggerFlash();
           drillAudio.playPenalty();
           createExplosion(ch.x, ch.y, '#ef4444');
-          if (drillPenalty.isEnabled()) eRef.timeLeft -= TIME_PENALTY;
+          if (drillPenalty.isEnabled(TIME_PER_HIT === 2)) eRef.timeLeft -= TIME_PENALTY;
         }
       }
     };
@@ -514,7 +514,7 @@ export default function AimTrainerClient({ copy = {} } = {}) {
             triggerFlash();
             drillAudio.playPenalty();
             createExplosion(tgt.x, tgt.y, '#ef4444');
-            if (drillPenalty.isEnabled()) e.timeLeft -= TIME_PENALTY;
+            if (drillPenalty.isEnabled(TIME_PER_HIT === 2)) e.timeLeft -= TIME_PENALTY;
             e.targets[i] = spawnTarget(w, h, config);
           }
         }
@@ -791,6 +791,7 @@ export default function AimTrainerClient({ copy = {} } = {}) {
                 { value: `Lv. ${analytics.levelReached}`, label: copy?.peakLevelLabel || t('aimTrainer.peakLevel', 'Peak Level') },
               ]}
               onPlayAgain={enterDrill}
+              onBeforeShare={() => setIsFullscreen(false)}
               onShare={shareScore}
               onExit={handleExitDrill}
             />
@@ -806,7 +807,7 @@ export default function AimTrainerClient({ copy = {} } = {}) {
 
         {/* ── ACCORDIONS ── */}
         {!isFullscreen && (
-          <div className="[&>div]:!mt-0 font-sans">
+          <div className="rounded-2xl border border-slate-900 bg-[#070b13] shadow-xl p-3 sm:p-4 [&>div]:!mt-0 font-sans">
             <DrillAccordion
               id="rules"
               title={copy?.rulesTitle || t('aimTrainer.rulesTitle', 'Drill Instructions & Scoring System')}

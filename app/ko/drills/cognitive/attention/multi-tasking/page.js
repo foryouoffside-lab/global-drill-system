@@ -330,9 +330,7 @@ export default function LocalizedCognitivePage() {
         skillsTitle: "훈련하는 능력", skillsText: "양쪽 시각 추적, 주변 표적 탐지, 주의 전환, 실행 기능 조절을 연습합니다.", flexibilityTitle: "과제 전환 속도", flexibilityText: "레벨이 오를수록 표적 규칙과 속도가 바뀌므로 두 흐름 사이를 빠르고 정확하게 전환해야 합니다."
       }} />
       <DrillGuide {...guideProps} />
-      <div className="max-w-6xl mx-auto px-4 pb-12">
-        <RelatedDrills currentCategory="cognitive" currentHref="https://skilldrills.online/ko/drills/cognitive/attention/multi-tasking" />
-      </div>
+      <RelatedDrills />
       <DrillFooter />
     </>
   );

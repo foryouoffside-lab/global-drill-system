@@ -30,7 +30,7 @@ const trackingCategories = [
     id: 'smooth-pursuit',
     name: 'Continuous Smooth Pursuit',
     icon: Eye,
-    description: 'Condition steady foveal tracking and eliminate catch-up saccades along harmonic paths',
+    description: 'Practise following a predictable moving point while keeping posture and viewing comfort stable',
     drillNames: [
       'constant-slow-pursuit',
       'sine-wave-pursuit',
@@ -42,7 +42,7 @@ const trackingCategories = [
     id: 'chaotic-tracking',
     name: 'Chaotic & Evasive Tracking',
     icon: Activity,
-    description: 'Track rapid non-linear vector changes, stochastic bounce angles, and velocity spikes',
+    description: 'Practise re-acquiring a moving point after controlled direction and speed changes',
     drillNames: [
       'directional-chaos-pursuit',
       'dynamic-evasion-pursuit',
@@ -54,7 +54,7 @@ const trackingCategories = [
     id: 'predictive-pursuit',
     name: 'Predictive & Multi-Vector',
     icon: Target,
-    description: 'Train trajectory extrapolation during occlusion, split-screen attention, and peripheral pings',
+    description: 'Practise visual prediction and divided attention with clearly labelled browser tasks',
     drillNames: [
       'strobe-prediction-pursuit',
       'predictive-pursuit',
@@ -101,7 +101,7 @@ export default function VisualTrackingDrillsClient({ faqs = [] }: { faqs?: Array
               const parsed = JSON.parse(raw);
               if (parsed) {
                 if (typeof parsed.bestLevel === 'number') {
-                  badges[d.folderName] = `Lv. ${parsed.bestLevel}`;
+                  badges[d.folderName] = `${parsed.bestLevel} best level`;
                   break;
                 } else if (typeof parsed.totalSessions === 'number' && parsed.totalSessions > 0) {
                   badges[d.folderName] = `${parsed.totalSessions} ${parsed.totalSessions === 1 ? 'run' : 'runs'}`;
@@ -172,7 +172,10 @@ export default function VisualTrackingDrillsClient({ faqs = [] }: { faqs?: Array
             {t('hubs.visual-tracking.h1', 'Visual Tracking Training')}
           </h1>
           <p className="mt-2 text-sm sm:text-base text-ink-2 leading-relaxed">
-            {t('hubs.visual-tracking.desc', 'Train smooth ocular pursuit, continuous trajectory prediction, and gaze stability.')}
+            {t('hubs.visual-tracking.desc', 'Browser-based visual motion practice for following moving points, predictable paths, and controlled re-acquisition tasks.')}
+          </p>
+          <p className="mt-3 max-w-3xl text-xs text-ink-3 leading-relaxed">
+            These drills record browser task settings and pointer activity, not eye position. They are practice tools—not vision tests, diagnoses, or treatment—and should be stopped if they cause pain, dizziness, nausea, persistent blur, or unusual visual symptoms.
           </p>
         </div>
 
@@ -194,7 +197,6 @@ export default function VisualTrackingDrillsClient({ faqs = [] }: { faqs?: Array
                 tagline: localized.tagline,
                 difficulty: drill.difficulty,
                 duration: drill.duration,
-                badge: drillBadges[drill.folderName] || null,
               };
             })}
           />
@@ -287,7 +289,7 @@ export default function VisualTrackingDrillsClient({ faqs = [] }: { faqs?: Array
                   Decoupled Physics Engine
                 </h3>
                 <p className="text-2xs text-ink-3 leading-relaxed">
-                  Calculates target trajectory kinematics completely decoupled from render frame rates, eliminating path warping across high-refresh monitors.
+                  Advances target motion from elapsed time, so a busy frame changes the next position instead of changing the intended path speed.
                 </p>
               </div>
 
@@ -299,7 +301,7 @@ export default function VisualTrackingDrillsClient({ faqs = [] }: { faqs?: Array
                   Sub-Pixel Vector Smoothing
                 </h3>
                 <p className="text-2xs text-ink-3 leading-relaxed">
-                  True 64-bit floating point coordinate integration ensures targets glide seamlessly across display boundaries without staircasing artifacts.
+                  Sub-pixel coordinates and a single canvas keep the moving point continuous without creating a large DOM tree or per-frame React updates.
                 </p>
               </div>
 
@@ -311,7 +313,7 @@ export default function VisualTrackingDrillsClient({ faqs = [] }: { faqs?: Array
                   360Hz Display Calibration
                 </h3>
                 <p className="text-2xs text-ink-3 leading-relaxed">
-                  Synchronized browser canvas frame scheduling matches ultra-fast gaming panels, eliminating motion judder and micro-stuttering.
+                  The loop is capped at a predictable render budget and skips redundant high-refresh callbacks to leave CPU time for the browser and input.
                 </p>
               </div>
             </div>

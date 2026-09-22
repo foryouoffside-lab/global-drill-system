@@ -1,5 +1,5 @@
 'use client';
 
-import dynamic from 'next/dynamic';
+import Client from './DistanceJudgmentClient';
 
-export default dynamic(() => import('./DistanceJudgmentClient'));
+export default Client;

@@ -334,9 +334,7 @@ export default function LocalizedCognitivePage() {
         skillsTitle: "훈련하는 능력", skillsText: "이중과제 처리, 시각 추적, 숫자 판단, 주의 자원 배분을 연습합니다.", flexibilityTitle: "병렬 처리", flexibilityText: "두 정보 흐름을 번갈아 확인하면서 한쪽의 정확도가 무너지지 않도록 조절합니다."
       }} />
       <DrillGuide {...guideProps} />
-      <div className="max-w-6xl mx-auto px-4 pb-12">
-        <RelatedDrills currentCategory="cognitive" currentHref="https://skilldrills.online/ko/drills/cognitive/attention/divided-attention" />
-      </div>
+      <RelatedDrills />
       <DrillFooter />
     </>
   );

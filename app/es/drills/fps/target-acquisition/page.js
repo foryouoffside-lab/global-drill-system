@@ -350,13 +350,7 @@ export default function TargetAcquisitionEsPage() {
       />
       <TargetAcquisitionClient copy={copyEs} />
       <DrillGuide guide={targetAcquisitionGuide} />
-      <div className="max-w-4xl mx-auto px-4 pb-12">
-        <RelatedDrills
-          currentCategory="fps"
-          currentHref="/es/drills/fps/target-acquisition"
-          locale="es"
-        />
-      </div>
+      <RelatedDrills />
       <DrillFooter />
     </>
   );

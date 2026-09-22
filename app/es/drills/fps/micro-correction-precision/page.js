@@ -369,13 +369,7 @@ export default function MicroCorrectionPage() {
       <MicroCorrectionClient copy={copyEs} />
 
       <DrillGuide guide={microCorrectionGuide} />
-      <div className="max-w-4xl mx-auto px-4 pb-12">
-        <RelatedDrills
-          currentCategory="fps"
-          currentHref="/es/drills/fps/micro-correction-precision"
-          locale="es"
-        />
-      </div>
+      <RelatedDrills />
       <DrillFooter />
     </>
   );

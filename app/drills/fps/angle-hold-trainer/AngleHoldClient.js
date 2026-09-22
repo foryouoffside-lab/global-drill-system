@@ -35,8 +35,8 @@ import useUnexpectedExitGuard from '@/lib/useUnexpectedExitGuard';
 const DRILL_DURATION = 45; // starting clock only; a run grows past this
 const POINTS_PER_LEVEL = 1400; // 200 -> 1400 (7x)
 const ELITE_SCORE = 48000; // 16000 -> 48000 (3x)
-const TIME_PER_HIT = 0.6; // +0.6s on confirmed hit
-const TIME_PENALTY = 0.8; // opt-in on miss, pre-fire, or escape
+const TIME_PER_HIT = 2; // +2s on confirmed hit, capped at 60s
+const TIME_PENALTY = 1; // opt-in on miss, pre-fire, or escape
 const STORAGE_KEY = 'skilldrills_fps_angle_hold_v3';
 
 const getSavedData = () => {
@@ -76,7 +76,7 @@ const getCornerMargin = (width) => Math.round(Math.max(70, Math.min(170, width *
 // ACCORDION DATA
 // ============================================================
 const RULES_ITEMS = [
-  { num: "1", text: "Successful Peek Hit", highlight: "+100 PTS (+0.6s)", result: "×Combo Mult" },
+  { num: "1", text: "Successful Peek Hit", highlight: "+100 PTS (+2s, max 60s)", result: "×Combo Mult" },
   { num: "2", text: "Peeking Spawns", highlight: "Corner Outcrops", result: "Faster & Shorter" },
   { num: "3", text: "Level Progression", highlight: "+1 Level / 1400 PTS", result: "Adaptive Scaling" },
   { num: "4", text: "Miss / Pre-fire", highlight: "Failure Penalty", result: "Resets Combo (-0.8s)" }
@@ -183,7 +183,7 @@ export default function AngleHoldClient({ copy = null }) {
     if (typeof window !== 'undefined') {
       setSoundEnabled(drillAudio.isEnabled());
       setFlashEnabled(drillFlash.isEnabled());
-      setPenaltyEnabled(drillPenalty.isEnabled());
+      setPenaltyEnabled(drillPenalty.isEnabled(TIME_PER_HIT === 2));
       const hasFinePointer = window.matchMedia('(pointer: fine)').matches;
       const isTouchCapable = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
       setIsTouchOnlyDevice(isTouchCapable && !hasFinePointer);
@@ -330,7 +330,7 @@ export default function AngleHoldClient({ copy = null }) {
     const isNewHigh = e.score > prevSaved.bestScore;
     setIsNewBest(isNewHigh);
 
-    const runBestLevel = Math.max(prevSaved.bestLevel, bestLevelRunRef.current);
+    const runBestLevel = Math.floor(Math.max(prevSaved.bestLevel, bestLevelRunRef.current));
     const updatedData = {
       bestScore: Math.max(prevSaved.bestScore, e.score),
       bestCombo: Math.max(prevSaved.bestCombo, e.maxCombo),
@@ -438,7 +438,7 @@ export default function AngleHoldClient({ copy = null }) {
 
         if (!tgt.active) {
           eRef.preFires++;
-          if (drillPenalty.isEnabled()) eRef.timeLeft -= TIME_PENALTY;
+          if (drillPenalty.isEnabled(TIME_PER_HIT === 2)) eRef.timeLeft -= TIME_PENALTY;
           eRef.combo = 0;
           eRef.screenShake = 6;
           triggerFlash();
@@ -449,7 +449,7 @@ export default function AngleHoldClient({ copy = null }) {
           if (dist <= config.targetRadius + config.hitPad) {
             if (tgt.isFake) {
               eRef.preFires++;
-              if (drillPenalty.isEnabled()) eRef.timeLeft -= TIME_PENALTY;
+              if (drillPenalty.isEnabled(TIME_PER_HIT === 2)) eRef.timeLeft -= TIME_PENALTY;
               eRef.combo = 0;
               eRef.screenShake = 6;
               triggerFlash();
@@ -465,7 +465,7 @@ export default function AngleHoldClient({ copy = null }) {
 
               const levelMult = 1 + getDifficultyProgress(eRef.level) * 0.5;
               eRef.score += Math.round(100 * getComboMultiplier(eRef.combo) * levelMult);
-              eRef.timeLeft += TIME_PER_HIT; // +0.6s
+              eRef.timeLeft = Math.min(60, eRef.timeLeft + TIME_PER_HIT);
 
               const rawLevel = (eRef.score / POINTS_PER_LEVEL) + 1;
               eRef.level = Math.max(eRef.level, rawLevel);
@@ -484,7 +484,7 @@ export default function AngleHoldClient({ copy = null }) {
             eRef.nextPeekTime = performance.now() + (nextConfig.peekDelayMin + Math.random() * (nextConfig.peekDelayMax - nextConfig.peekDelayMin));
           } else {
             eRef.missedClicks++;
-            if (drillPenalty.isEnabled()) eRef.timeLeft -= TIME_PENALTY;
+            if (drillPenalty.isEnabled(TIME_PER_HIT === 2)) eRef.timeLeft -= TIME_PENALTY;
             eRef.combo = 0;
             eRef.screenShake = 6;
             triggerFlash();
@@ -600,7 +600,7 @@ export default function AngleHoldClient({ copy = null }) {
             tgt.active = false;
             if (!tgt.isFake) {
               e.targetsEscaped++;
-              if (drillPenalty.isEnabled()) e.timeLeft -= TIME_PENALTY;
+              if (drillPenalty.isEnabled(TIME_PER_HIT === 2)) e.timeLeft -= TIME_PENALTY;
               e.combo = 0;
               e.screenShake = 6;
               triggerFlash();
@@ -764,9 +764,6 @@ export default function AngleHoldClient({ copy = null }) {
                 </span>
               )}
             </h1>
-            <p className="text-[13px] text-slate-400 leading-relaxed">
-              {copy?.caption || t('angleHold.caption', 'Angle holding tests your reaction latency and trigger discipline against peeking opponents.')}
-            </p>
           </div>
         )}
 
@@ -887,6 +884,7 @@ export default function AngleHoldClient({ copy = null }) {
                 { value: `Lv. ${analytics.finalLevel}`, label: copy?.statPeakLevel || t('angleHold.peakLevel', 'Peak Level') },
               ]}
               onPlayAgain={enterDrill}
+              onBeforeShare={() => setIsFullscreen(false)}
               onShare={shareScore}
               onExit={handleExitDrill}
             />

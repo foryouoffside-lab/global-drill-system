@@ -19,7 +19,7 @@ import { pickSources } from '@/lib/drillSources';
 
 export const metadata = {
   title: "Test de coordination œil-main | SkillDrills",
-  description: 'Test gratuit de coordination œil-main en ligne. Reliez des nœuds diagonaux en franchissant la ligne médiane pour travailler la coordination bilatérale et la précision à la souris.',
+  description: 'Test gratuit de coordination œil-main en ligne. Reliez des nœuds diagonaux en franchissant la ligne médiane : coordination bilatérale et précision à la souris.',
   keywords: [
     "test de coordination oeil main",
     "exercice de coordination visuo motrice",
@@ -38,7 +38,7 @@ export const metadata = {
   },
   openGraph: {
     title: "Test de coordination œil-main | SkillDrills",
-    description: 'Test gratuit de coordination œil-main en ligne. Reliez des nœuds diagonaux en franchissant la ligne médiane pour travailler la coordination bilatérale et la précision à la souris.',
+    description: 'Test gratuit de coordination œil-main en ligne. Reliez des nœuds diagonaux en franchissant la ligne médiane : coordination bilatérale et précision à la souris.',
     url: 'https://skilldrills.online/fr/drills/physical/coordination/cross-body-movement',
     siteName: 'SkillDrills',
     locale: 'fr_FR',
@@ -47,7 +47,7 @@ export const metadata = {
   twitter: {
     card: 'summary_large_image',
     title: "Test de coordination œil-main | SkillDrills",
-    description: 'Test gratuit de coordination œil-main en ligne. Reliez des nœuds diagonaux en franchissant la ligne médiane pour travailler la coordination bilatérale et la précision à la souris.',
+    description: 'Test gratuit de coordination œil-main en ligne. Reliez des nœuds diagonaux en franchissant la ligne médiane : coordination bilatérale et précision à la souris.',
   },
   robots: { index: true, follow: true },
 };
@@ -396,13 +396,7 @@ export default function CrossBodyMovementPageFr() {
         }}
       />
       <DrillGuide guide={crossBodyGuide} />
-      <div className="max-w-4xl mx-auto px-4 pb-12">
-        <RelatedDrills
-          currentCategory="physical"
-          currentHref="/drills/physical/coordination/cross-body-movement"
-          locale="fr"
-        />
-      </div>
+      <RelatedDrills />
     </>
   );
 }

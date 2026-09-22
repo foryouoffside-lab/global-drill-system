@@ -279,12 +279,12 @@ const distanceGuideDe = {
   },
   sources: pickSources('howard1919', 'lee1976', 'regan1978', 'julesz1971', 'woods2015'),
   related: [
-    { href: "/drills/visual/tracking-accuracy/moving-target", label: "Bewegtes Ziel Abfangen" },
-    { href: "/drills/visual/reaction-speed/light-reaction", label: "Licht-Reaktionstest" },
-    { href: "/drills/visual/tracking-accuracy/multiple-targets", label: "Multi-Objekt-Tracking" },
-    { href: "/drills/visual/tracking-accuracy/pursuit-tracker", label: "Blickfolge-Tracker" },
-    { href: "/drills/visual/reaction-speed/go/no-go", label: "Go / No-Go Impulskontrolle" },
-    { href: "/drills/visual/visual-recognition/entropic-grid", label: "Entropisches Rastersuchen" }
+    { href: "/de/drills/visual/tracking-accuracy/moving-target", label: "Bewegtes Ziel Abfangen" },
+    { href: "/de/drills/visual/reaction-speed/light-reaction", label: "Licht-Reaktionstest" },
+    { href: "/de/drills/visual/tracking-accuracy/multiple-targets", label: "Multi-Objekt-Tracking" },
+    { href: "/de/drills/visual/tracking-accuracy/pursuit-tracker", label: "Blickfolge-Tracker" },
+    { href: "/de/drills/visual/reaction-speed/go/no-go", label: "Go / No-Go Impulskontrolle" },
+    { href: "/de/drills/visual/visual-recognition/entropic-grid", label: "Entropisches Rastersuchen" }
   ]
 };
 

@@ -280,12 +280,12 @@ const distanceGuideEs = {
   },
   sources: pickSources('howard1919', 'lee1976', 'regan1978', 'julesz1971', 'woods2015'),
   related: [
-    { href: "/drills/visual/tracking-accuracy/moving-target", label: "Intercepción de Objetivo Móvil" },
-    { href: "/drills/visual/reaction-speed/light-reaction", label: "Test de Reacción a la Luz" },
-    { href: "/drills/visual/tracking-accuracy/multiple-targets", label: "Seguimiento de Múltiples Objetos" },
-    { href: "/drills/visual/tracking-accuracy/pursuit-tracker", label: "Rastreador de Persecución Ocular" },
-    { href: "/drills/visual/reaction-speed/go/no-go", label: "Control de Impulsos Go / No-Go" },
-    { href: "/drills/visual/visual-recognition/entropic-grid", label: "Búsqueda en Cuadrícula Entrópica" }
+    { href: "/es/drills/visual/tracking-accuracy/moving-target", label: "Intercepción de Objetivo Móvil" },
+    { href: "/es/drills/visual/reaction-speed/light-reaction", label: "Test de Reacción a la Luz" },
+    { href: "/es/drills/visual/tracking-accuracy/multiple-targets", label: "Seguimiento de Múltiples Objetos" },
+    { href: "/es/drills/visual/tracking-accuracy/pursuit-tracker", label: "Rastreador de Persecución Ocular" },
+    { href: "/es/drills/visual/reaction-speed/go/no-go", label: "Control de Impulsos Go / No-Go" },
+    { href: "/es/drills/visual/visual-recognition/entropic-grid", label: "Búsqueda en Cuadrícula Entrópica" }
   ]
 };
 

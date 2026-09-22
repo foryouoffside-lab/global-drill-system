@@ -333,9 +333,7 @@ export default function LocalizedEntropicGridKoPage() {
 
       <EntropicGridClient copy={{ title: "시각 탐색 훈련", subtitle: "선택적 주의력과 시각 스캐닝" }} />
       <DrillGuide guide={guideData} />
-      <div className="max-w-6xl mx-auto px-4 pb-12">
-        <RelatedDrills currentCategory="visual" currentHref="https://skilldrills.online/ko/drills/visual/visual-recognition/entropic-grid" />
-      </div>
+      <RelatedDrills />
     </>
   );
 }

@@ -410,13 +410,7 @@ export default function LocalizedPathTracingPage() {
 }}
       />
       <DrillGuide guide={pathTracingGuide} />
-      <div className="max-w-4xl mx-auto px-4 pb-12">
-        <RelatedDrills
-          currentCategory="memory"
-          currentHref="/drills/memory/spatial-memory/path-tracing"
-          locale="pt"
-        />
-      </div>
+      <RelatedDrills />
     </>
   );
 }

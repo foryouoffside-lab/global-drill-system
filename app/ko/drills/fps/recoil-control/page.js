@@ -362,9 +362,7 @@ export default function RecoilControlKoPage() {
 
       <DrillGuide guide={recoilGuideKo} />
 
-      <div className="max-w-6xl w-full mx-auto px-4 pb-12">
-        <RelatedDrills currentCategory="fps" currentHref="/drills/fps/recoil-control" locale="ko" />
-      </div>
+      <RelatedDrills />
 
       <DrillFooter />
     </>

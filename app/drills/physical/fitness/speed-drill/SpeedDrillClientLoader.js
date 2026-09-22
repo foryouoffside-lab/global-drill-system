@@ -1,5 +1,5 @@
 'use client';
 
-import dynamic from 'next/dynamic';
+import Client from './SpeedDrillClient';
 
-export default dynamic(() => import('./SpeedDrillClient'));
+export default Client;

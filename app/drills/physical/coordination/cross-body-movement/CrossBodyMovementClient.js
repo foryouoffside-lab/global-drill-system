@@ -178,7 +178,7 @@ export default function CrossBodyMovementClient({ copy = {} } = {}) {
       const saved = getSavedData();
       setBestScore(saved.bestScore || 0);
       setBestCombo(saved.bestCombo || 0);
-      setBestLevel(saved.bestLevel || 1);
+      setBestLevel(Math.floor(saved.bestLevel || 1));
     }
   }, []);
 
@@ -254,7 +254,7 @@ export default function CrossBodyMovementClient({ copy = {} } = {}) {
     if (document.pointerLockElement) document.exitPointerLock();
 
     const e = engine.current;
-    const accuracyPct = e.totalAttempts > 0 ? Math.round((e.connections / e.totalAttempts) * 100) : 100;
+    const accuracyPct = e.totalAttempts > 0 ? Math.round((e.connections / e.totalAttempts) * 100) : 0;
     const rating = getFpsScoreGrade(e.score, ELITE_SCORE);
 
     const grade = { letter: rating.grade, label: rating.label, color: rating.color };
@@ -265,7 +265,7 @@ export default function CrossBodyMovementClient({ copy = {} } = {}) {
       missedSequences: e.misses,
       peakSpeed: Math.round(e.peakSpeed),
       maxCombo: Math.round(e.bestStreak),
-      finalLevel: e.level,
+      finalLevel: Math.floor(e.level),
       grade
     });
 
@@ -275,7 +275,7 @@ export default function CrossBodyMovementClient({ copy = {} } = {}) {
     const isNewHigh = e.score > prevSaved.bestScore;
     setIsNewBest(isNewHigh);
 
-    const runBestLevel = Math.max(prevSaved.bestLevel, bestLevelRunRef.current);
+    const runBestLevel = Math.floor(Math.max(prevSaved.bestLevel, bestLevelRunRef.current));
     const updatedData = {
       bestScore: Math.max(prevSaved.bestScore, e.score),
       bestCombo: Math.max(prevSaved.bestCombo, e.bestStreak),
@@ -590,6 +590,7 @@ export default function CrossBodyMovementClient({ copy = {} } = {}) {
   }, [gameState, endGame, applyPenalty, spawnNodes]);
 
   const shareScore = useCallback(async () => {
+    setIsFullscreen(false);
     const url = 'https://skilldrills.online/drills/physical/coordination/cross-body-movement';
     try {
       const canvas = generateShareCard({

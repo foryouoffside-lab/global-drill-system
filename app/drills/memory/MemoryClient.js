@@ -270,7 +270,6 @@ export default function MemoryClient({ faqs = [], copy = null }) {
                 difficulty: drill.difficulty,
                 duration: drill.duration,
                 icon: drill.icon,
-                badge: drillLevels[drill.folderName] ? `Lv. ${drillLevels[drill.folderName]}` : null,
               };
             })}
           />

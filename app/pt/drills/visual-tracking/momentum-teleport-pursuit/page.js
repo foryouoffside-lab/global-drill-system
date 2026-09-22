@@ -308,9 +308,7 @@ export default function PortugueseMomentumTeleportPage() {
 
       <DrillGuide guide={guideProps} />
 
-      <div className="max-w-6xl mx-auto px-4 pb-12">
-        <RelatedDrills currentCategory="visual-tracking" currentHref="https://skilldrills.online/pt/drills/visual-tracking/momentum-teleport-pursuit" />
-      </div>
+      <RelatedDrills />
       <DrillFooter />
     </>
   );

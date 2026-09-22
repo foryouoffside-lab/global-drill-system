@@ -213,7 +213,7 @@ export default function ReactionTimeTestClient({ copy }: ReactionTimeTestClientP
 
     const e = engine.current;
     const totalActions = e.totalAttempts;
-    const acc = totalActions > 0 ? Math.round((e.hits / totalActions) * 100) : 100;
+    const acc = totalActions > 0 ? Math.round((e.hits / totalActions) * 100) : 0;
     const avgErr = e.hits > 0 ? Math.round(e.totalErrorAbs / e.hits) : 0;
 
     const rating = getFpsScoreGrade(e.score, ELITE_SCORE);
@@ -226,7 +226,7 @@ export default function ReactionTimeTestClient({ copy }: ReactionTimeTestClientP
       exactHits: e.exactHits,
       perfectHits: e.perfectHits,
       avgReactionTime: avgErr,
-      finalLevel: e.level,
+      finalLevel: Math.floor(e.level),
       maxCombo: e.maxCombo,
       grade: gradeObj
     });
@@ -239,7 +239,7 @@ export default function ReactionTimeTestClient({ copy }: ReactionTimeTestClientP
       setIsNewBest(false);
     }
 
-    const newBestLevel = Math.max(bestLevel, e.level);
+    const newBestLevel = Math.floor(Math.max(bestLevel, e.level));
     setBestLevel(newBestLevel);
 
     setTotalSessions((prev) => {
@@ -868,6 +868,7 @@ export default function ReactionTimeTestClient({ copy }: ReactionTimeTestClientP
                 { label: 'Max Combo', value: analytics.maxCombo, suffix: 'x' },
               ]}
               onPlayAgain={enterDrill}
+              onBeforeShare={() => setIsFullscreen(false)}
               onShare={sharePage}
               onExit={handleExitDrill}
             />

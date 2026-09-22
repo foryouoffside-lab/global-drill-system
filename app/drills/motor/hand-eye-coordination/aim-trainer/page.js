@@ -256,9 +256,62 @@ const copyEn = {
     { num: "4", text: "Miss & Timeout", highlight: "Combo Reset", result: "Penalty Deducts -0.8s" }
   ],
 };
-export default function AimTrainerPage() {
-  const sources = pickSources('fitts1954', 'mackenzie1992', 'elliott2010', 'woodworth1899', 'woods2015');
 
+const guideProps = {
+  sources: pickSources('fitts1954', 'mackenzie1992', 'elliott2010', 'woodworth1899', 'woods2015'),
+  eyebrow: "Motor Control Psychophysics & Human-Computer Interaction",
+  intro: {
+    title: "The Science of Mouse Aim, Fitts's Law & Motor Acquisition Precision",
+    paragraphs: [
+      "Target acquisition with a computer mouse is among the most demanding fine motor coordination tasks evaluated in human-computer interaction (HCI) and sports psychophysics. Whether clearing corners in tactical first-person shooters, operating surgical robotic interfaces, or conducting rapid visual-motor inspection, the human neuromuscular system must translate two-dimensional visual coordinates into rapid, sub-millimeter physical contractions of the hand, wrist, and forearm (Fitts, 1954; MacKenzie, 1992).",
+    ],
+  },
+  science: {
+    title: "How Aim Precision Actually Works",
+    items: [
+      {
+        title: "Fitts's Law & the Index of Difficulty (ID)",
+        body: "In his foundational 1954 treatise, Paul M. Fitts proved that the movement time (MT = a + b · log₂(2D / W) = a + b · ID) required to rapidly move to a target area is mathematically modeled by the distance to the target (D) and the target width or diameter (W). The logarithmic component is termed the Index of Difficulty (ID), measured in bits. In Aim Trainer Elite, as your score level advances, target diameter (W) contracts from 26 pixels down to 8 pixels, while targets move and disperse across greater distances (D). This causes the Index of Difficulty to scale exponentially, directly taxing your motor system's information capacity (Fitts, 1954; MacKenzie, 1992).",
+      },
+      {
+        title: "The two-component model of goal-directed aiming (Woodworth 1899; Elliott et al. 2010)",
+        body: "High-speed mouse aiming is not a single continuous movement. Pioneering work by Woodworth (1899) and modern neuromuscular synthesis by Elliott et al. (2010) established that goal-directed aiming comprises two distinct sub-movements: an initial ballistic impulse (open-loop phase), where the central nervous system issues a pre-programmed neuromuscular burst that propels the mouse across 80% to 90% of the trajectory in roughly 120–180 milliseconds — too fast for visual feedback to modify the flight path — followed by current control and terminal deceleration (closed-loop phase), where the visual system processes retinal slip error and sends rapid sensory corrections via the cerebellum and motor cortex to make sub-millimeter adjustments before the click. Untrained players frequently suffer from over-flicking (excessive ballistic force requiring back-and-forth correction) or under-flicking (premature deceleration causing sluggish creep); elite marksmen minimize movement variance by optimizing the ballistic impulse to terminate right on the target edge (Elliott et al., 2010; Woods et al., 2015).",
+      },
+      {
+        title: "Input polling, refresh quantization & sensory delays",
+        body: "Precise click timing requires minimizing system latency. Human motor reaction times are bounded by neurosensory conduction (retinal transmission ~30–50 ms, visual cortex processing ~60–80 ms, corticospinal motor execution ~40–60 ms). At 60 Hz display refresh, frames are quantized in 16.7 ms intervals; at 144 Hz or 240 Hz, this delay drops to 6.9 ms or 4.1 ms, providing clearer retinal feedback that significantly reduces trajectory error in the closed-loop aiming phase (Woods et al., 2015).",
+      },
+    ],
+  },
+  benchmark: {
+    title: "Empirical Aim Precision Benchmarks",
+    description: "The bands below are an editorial guide to reading your own 45-second session score, accuracy and peak combo. They are set by SkillDrills to make the numbers legible, not measured population norms: this site collects no aggregate data, and neither Fitts (1954) nor MacKenzie (1992) publishes percentiles for this task.",
+    columns: ['Tier', 'Session Score', 'Peak Level', 'Hit Accuracy', 'Classification'],
+    rows: [
+      { tier: 'Tier 1', score: '> 48,000 PTS', level: 'Level 12+', accuracy: '> 95% (Combo 25+)', classification: 'Apex Marksman / Tactical Tier 1' },
+      { tier: 'Tier 2', score: '32,000 – 47,999 PTS', level: 'Level 9–11', accuracy: '88% – 94% (Combo 18–24)', classification: 'Precision Fragger / Competitive FPS' },
+      { tier: 'Tier 3', score: '18,000 – 31,999 PTS', level: 'Level 6–8', accuracy: '78% – 87% (Combo 12–17)', classification: 'Proficient Gunfighter / Intermediate' },
+      { tier: 'Tier 4', score: '8,000 – 17,999 PTS', level: 'Level 3–5', accuracy: '65% – 77% (Combo 6–11)', classification: 'Developing Aimer / Baseline Recreational' },
+      { tier: 'Tier 5', score: '< 8,000 PTS', level: 'Level 1–2', accuracy: '< 65% (Combo < 6)', classification: 'High Tracking Jitter / Over-Flicker' },
+    ],
+  },
+  protocols: {
+    title: "How to Train Mouse Aim",
+    description: "To systematically compress target acquisition latency and elevate micro-flick precision, apply these four evidence-based motor protocols during training.",
+    items: [
+      { title: "Ballistic Initial Impulse Calibration (Woodworth, 1899; Elliott et al., 2010)", description: "Train your primary flick movement to cover 90% of the target distance in a single clean motor burst. Avoid multiple hesitations during flight; commit fully to the ballistic impulse." },
+      { title: "Terminal Deceleration & Micro-Correction (Fitts, 1954)", description: "As crosshairs enter the target perimeter, transition to fine wrist/finger control. Smoothly decelerate to absorb cursor momentum rather than snapping past the hitbox." },
+      { title: "Universal Sensitivity & Motor Memory Calibration (MacKenzie, 1992)", description: "Calibrate your physical mouse cm/360 so that an identical physical hand displacement produces consistent crosshair translation across all games and drills, eliminating neuromuscular interference." },
+      { title: "Rhythmic Decoupling & Click Discipline (Woods et al., 2015)", description: "Maintain a relaxed grip on the mouse chassis. Ensure the physical finger actuation of the mouse click button does not cause downward or lateral torque that pulls the reticle off target." },
+    ],
+  },
+  faqs: {
+    title: "Frequently Asked Questions",
+    items: faqSchema.mainEntity.map((q) => ({ q: q.name, a: q.acceptedAnswer.text })),
+  },
+};
+
+export default function AimTrainerPage() {
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
@@ -272,186 +325,7 @@ export default function AimTrainerPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(howToSchema) }} />
 
       <AimTrainerClient copy={copyEn} />
-
-      <DrillGuide
-        eyebrow="Motor Control Psychophysics & Human-Computer Interaction"
-        title="The Science of Mouse Aim, Fitts's Law & Motor Acquisition Precision"
-        sources={sources}
-      >
-        <p>
-          Target acquisition with a computer mouse is among the most demanding fine motor coordination tasks evaluated in human-computer interaction (HCI) and sports psychophysics. Whether clearing corners in tactical first-person shooters, operating surgical robotic interfaces, or conducting rapid visual-motor inspection, the human neuromuscular system must translate two-dimensional visual coordinates into rapid, sub-millimeter physical contractions of the hand, wrist, and forearm (Fitts, 1954; MacKenzie, 1992).
-        </p>
-
-        <h3>Fitts&apos;s Law &amp; The Index of Difficulty (ID)</h3>
-        <p>
-          In his foundational 1954 treatise, Paul M. Fitts proved that the movement time (\(MT\)) required to rapidly move to a target area is mathematically modeled by the distance to the target (\(D\)) and the target width or diameter (\(W\)):
-        </p>
-        <div className="bg-white/5 border border-white/10 rounded-xl p-3.5 my-3 text-center font-mono text-sm text-cyan-300">
-          MT = a + b · log₂(2D / W) = a + b · ID
-        </div>
-        <p>
-          The logarithmic component is termed the <strong>Index of Difficulty (ID)</strong>, measured in bits. In <em>Aim Trainer Elite</em>, as your score level advances, target diameter (\(W\)) contracts from 26 pixels down to 8 pixels, while targets move and disperse across greater distances (\(D\)). This causes the Index of Difficulty to scale exponentially, directly taxing your motor system&apos;s information capacity (Fitts, 1954; MacKenzie, 1992).
-        </p>
-
-        <h3>The Two-Component Model of Goal-Directed Aiming (Woodworth 1899; Elliott et al. 2010)</h3>
-        <p>
-          High-speed mouse aiming is not a single continuous movement. Pioneering work by Woodworth (1899) and modern neuromuscular synthesis by Elliott et al. (2010) established that goal-directed aiming movements comprise two distinct physiological sub-movements:
-        </p>
-        <ol className="list-decimal pl-5 space-y-2 my-3 text-slate-300">
-          <li>
-            <strong>Initial Ballistic Impulse (Open-Loop Phase):</strong> The central nervous system issues a pre-programmed neuromuscular burst that propels the mouse across 80% to 90% of the trajectory. This ballistic phase occurs in approximately 120–180 milliseconds, too fast for visual feedback to modify the flight path.
-          </li>
-          <li>
-            <strong>Current Control &amp; Terminal Deceleration (Closed-Loop Phase):</strong> As the crosshair nears the target boundary, the visual system processes retinal slip error and sends rapid sensory corrections via the cerebellum and motor cortex to make sub-millimeter adjustments before executing the click.
-          </li>
-        </ol>
-        <p>
-          Untrained players frequently suffer from <em>over-flicking</em> (excessive ballistic force requiring oscillatory back-and-forth correction) or <em>under-flicking</em> (premature deceleration causing sluggish creep into the target). Elite marksmen minimize movement variance by optimizing the ballistic impulse to terminate right on the target edge, requiring only an instantaneous micro-adjustment (Elliott et al., 2010; Woods et al., 2015).
-        </p>
-
-        <h3>Input Polling, Refresh Quantization &amp; Sensory Delays</h3>
-        <p>
-          Precise click timing requires minimizing system latency. As documented by Woods et al. (2015), human motor reaction times are bounded by neurosensory conduction (retinal transmission ~30–50 ms, visual cortex processing ~60–80 ms, corticospinal motor execution ~40–60 ms). At 60 Hz display refresh, frames are quantized in 16.7 ms intervals; at 144 Hz or 240 Hz, this delay drops to 6.9 ms or 4.1 ms, providing clearer retinal feedback that significantly reduces trajectory error in the closed-loop aiming phase.
-        </p>
-
-        <h3>Empirical Aim Precision Benchmarks</h3>
-        <p>
-          The bands below are an editorial guide to reading your own 45-second session score, accuracy and peak combo. They are set by SkillDrills to make the numbers legible, not measured population norms: this site collects no aggregate data, and neither Fitts (1954) nor MacKenzie (1992) publishes percentiles for this task.
-        </p>
-        <div className="overflow-x-auto my-4">
-          <table className="w-full text-left border-collapse border border-white/10 text-xs sm:text-sm">
-            <thead>
-              <tr className="bg-white/5 text-slate-200">
-                <th className="p-2.5 border border-white/10 font-bold">Tier</th>
-                <th className="p-2.5 border border-white/10 font-bold">Session Score</th>
-                <th className="p-2.5 border border-white/10 font-bold">Peak Level</th>
-                <th className="p-2.5 border border-white/10 font-bold">Hit Accuracy</th>
-                <th className="p-2.5 border border-white/10 font-bold">Classification</th>
-              </tr>
-            </thead>
-            <tbody className="divide-y divide-white/5 text-slate-300">
-              <tr>
-                <td className="p-2.5 border border-white/10 font-bold text-emerald-400">Tier 1</td>
-                <td className="p-2.5 border border-white/10">&gt; 48,000 PTS</td>
-                <td className="p-2.5 border border-white/10">Level 12+</td>
-                <td className="p-2.5 border border-white/10">&gt; 95% (Combo 25+)</td>
-                <td className="p-2.5 border border-white/10">Apex Marksman / Tactical Tier 1</td>
-              </tr>
-              <tr>
-                <td className="p-2.5 border border-white/10 font-bold text-cyan-400">Tier 2</td>
-                <td className="p-2.5 border border-white/10">32,000 – 47,999 PTS</td>
-                <td className="p-2.5 border border-white/10">Level 9–11</td>
-                <td className="p-2.5 border border-white/10">88% – 94% (Combo 18–24)</td>
-                <td className="p-2.5 border border-white/10">Precision Fragger / Competitive FPS</td>
-              </tr>
-              <tr>
-                <td className="p-2.5 border border-white/10 font-bold text-blue-400">Tier 3</td>
-                <td className="p-2.5 border border-white/10">18,000 – 31,999 PTS</td>
-                <td className="p-2.5 border border-white/10">Level 6–8</td>
-                <td className="p-2.5 border border-white/10">78% – 87% (Combo 12–17)</td>
-                <td className="p-2.5 border border-white/10">Proficient Gunfighter / Intermediate</td>
-              </tr>
-              <tr>
-                <td className="p-2.5 border border-white/10 font-bold text-amber-400">Tier 4</td>
-                <td className="p-2.5 border border-white/10">8,000 – 17,999 PTS</td>
-                <td className="p-2.5 border border-white/10">Level 3–5</td>
-                <td className="p-2.5 border border-white/10">65% – 77% (Combo 6–11)</td>
-                <td className="p-2.5 border border-white/10">Developing Aimer / Baseline Recreational</td>
-              </tr>
-              <tr>
-                <td className="p-2.5 border border-white/10 font-bold text-rose-400">Tier 5</td>
-                <td className="p-2.5 border border-white/10">&lt; 8,000 PTS</td>
-                <td className="p-2.5 border border-white/10">Level 1–2</td>
-                <td className="p-2.5 border border-white/10">&lt; 65% (Combo &lt; 6)</td>
-                <td className="p-2.5 border border-white/10">High Tracking Jitter / Over-Flicker</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-
-        <h3>How to train mouse aim</h3>
-        <p>
-          To systematically compress target acquisition latency and elevate micro-flick precision, apply these four evidence-based motor protocols during training:
-        </p>
-        <ul className="list-disc pl-5 space-y-2 my-3 text-slate-300">
-          <li>
-            <strong>Ballistic Initial Impulse Calibration (Woodworth, 1899; Elliott et al., 2010):</strong> Train your primary flick movement to cover 90% of the target distance in a single clean motor burst. Avoid multiple hesitations during flight; commit fully to the ballistic impulse.
-          </li>
-          <li>
-            <strong>Terminal Deceleration &amp; Micro-Correction (Fitts, 1954):</strong> As crosshairs enter the target perimeter, transition to fine wrist/finger control. Smoothly decelerate to absorb cursor momentum rather than snapping past the hitbox.
-          </li>
-          <li>
-            <strong>Universal Sensitivity &amp; Motor Memory Calibration (MacKenzie, 1992):</strong> Calibrate your physical mouse cm/360 so that an identical physical hand displacement produces consistent crosshair translation across all games and drills, eliminating neuromuscular interference.
-          </li>
-          <li>
-            <strong>Rhythmic Decoupling &amp; Click Discipline (Woods et al., 2015):</strong> Maintain a relaxed grip on the mouse chassis. Ensure the physical finger actuation of the mouse click button does not cause downward or lateral torque that pulls the reticle off target.
-          </li>
-        </ul>
-
-        <h3>Frequently Asked Questions</h3>
-        <div className="space-y-4 my-4">
-          <div className="border-b border-white/10 pb-3">
-            <h4 className="font-bold text-white text-sm mb-1">What is Aim Trainer Elite and how does it work?</h4>
-            <p className="text-xs sm:text-sm text-slate-300">
-              Aim Trainer Elite is an interactive motor coordination drill engineered to test and enhance raw mouse precision, target acquisition speed, and click timing. Observers acquire moving targets that shrink and accelerate dynamically across a canvas stage.
-            </p>
-          </div>
-          <div className="border-b border-white/10 pb-3">
-            <h4 className="font-bold text-white text-sm mb-1">How does Fitts&apos;s Law apply to FPS aim training?</h4>
-            <p className="text-xs sm:text-sm text-slate-300">
-              Fitts&apos;s Law states that the movement time required to hit a target is a logarithmic function of target distance divided by target width. As targets shrink and spawn further away, the movement&apos;s Index of Difficulty increases, requiring tighter neuromuscular control.
-            </p>
-          </div>
-          <div className="border-b border-white/10 pb-3">
-            <h4 className="font-bold text-white text-sm mb-1">What is the two-component model of aimed motor movement?</h4>
-            <p className="text-xs sm:text-sm text-slate-300">
-              Goal-directed aiming consists of an initial open-loop ballistic impulse covering the majority of the distance, followed by a closed-loop current control phase using visual feedback for final micro-adjustments.
-            </p>
-          </div>
-          <div className="border-b border-white/10 pb-3">
-            <h4 className="font-bold text-white text-sm mb-1">Does training micro-flicks transfer to games like Valorant and CS2?</h4>
-            <p className="text-xs sm:text-sm text-slate-300">
-              Yes. First-shot headshot accuracy in tactical shooters heavily depends on micro-flick precision—making small, rapid 5 to 15-degree ballistic adjustments to center crosshairs on moving opponent hitboxes.
-            </p>
-          </div>
-          <div className="border-b border-white/10 pb-3">
-            <h4 className="font-bold text-white text-sm mb-1">What is a good score on Aim Trainer Elite?</h4>
-            <p className="text-xs sm:text-sm text-slate-300">
-              Novice performers typically score below 8,000 PTS (Level 1–2). Competent intermediate aimers achieve 18,000 to 31,999 PTS (Level 6–8), while elite competitive FPS athletes reach 48,000+ PTS (Level 12+) with accuracy above 95%.
-            </p>
-          </div>
-          <div className="border-b border-white/10 pb-3">
-            <h4 className="font-bold text-white text-sm mb-1">How does score-based difficulty scaling function in this drill?</h4>
-            <p className="text-xs sm:text-sm text-slate-300">
-              For every 1,750 points scored, your difficulty level advances. Target radius shrinks from 26px down to 8px, velocity increases from 80px/s to 370px/s, and target time-to-live drops from 2.8s down to 0.40s.
-            </p>
-          </div>
-          <div className="border-b border-white/10 pb-3">
-            <h4 className="font-bold text-white text-sm mb-1">Why do missed clicks penalize score and streak?</h4>
-            <p className="text-xs sm:text-sm text-slate-300">
-              Missing shots or allowing targets to expire resets your combo multiplier back to 1.0x. This enforces trigger discipline, discouraging uncontrolled spam-clicking and rewarding deliberate, centered precision.
-            </p>
-          </div>
-          <div className="border-b border-white/10 pb-3">
-            <h4 className="font-bold text-white text-sm mb-1">Does this drill support universal mouse sensitivity?</h4>
-            <p className="text-xs sm:text-sm text-slate-300">
-              Yes. The drill incorporates raw pointer-lock input and integrates with the global mouse sensitivity slider on the drills hub to ensure matched cm/360 rotational sensitivity.
-            </p>
-          </div>
-          <div className="border-b border-white/10 pb-3">
-            <h4 className="font-bold text-white text-sm mb-1">How does display refresh rate and mouse polling rate impact aim performance?</h4>
-            <p className="text-xs sm:text-sm text-slate-300">
-              Higher refresh rates (144 Hz / 240 Hz) and high mouse polling rates (1000 Hz+) reduce frame rendering lag and cursor motion jitter, allowing the visual cortex to receive real-time target feedback 10–12 ms earlier per movement.
-            </p>
-          </div>
-          <div className="border-b border-white/10 pb-3">
-            <h4 className="font-bold text-white text-sm mb-1">What warmup routine yields the fastest motor coordination gains?</h4>
-            <p className="text-xs sm:text-sm text-slate-300">
-              A structured 10 to 15-minute daily warmup focusing on smooth ballistic initial impulses and gradual speed acceleration primes motor cortex excitability and enhances hand-eye coordination before competitive matches.
-            </p>
-          </div>
-        </div>
-      </DrillGuide>
+      <DrillGuide {...guideProps} />
       <DrillFooter />
     </>
   );

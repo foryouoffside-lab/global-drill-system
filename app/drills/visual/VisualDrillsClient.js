@@ -355,7 +355,6 @@ export default function VisualDrillsClient({ faqs = [] }) {
                 tagline: localized.tagline,
                 difficulty: drill.difficulty,
                 duration: drill.duration,
-                badge: drillLevels[drill.folderName] || null,
               };
             })}
           />

@@ -303,9 +303,7 @@ export default function ChromaSyncPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(videoGameSchema) }} />
       <ChromaSyncClient copy={{ title: "Go/No-Goテスト（反応抑制）", subtitle: "緑には反応し、赤では止まる" }} />
       <DrillGuide guide={goNoGoGuide} />
-      <div className="max-w-6xl mx-auto px-4 pb-12">
-        <RelatedDrills currentCategory="visual" currentHref="https://skilldrills.online/ja/drills/visual/reaction-speed/go/no-go" />
-      </div>
+      <RelatedDrills />
     </>
   );
 }

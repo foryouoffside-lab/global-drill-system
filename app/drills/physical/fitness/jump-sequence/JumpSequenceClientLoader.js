@@ -1,5 +1,5 @@
 'use client';
 
-import dynamic from 'next/dynamic';
+import Client from './JumpSequenceClient';
 
-export default dynamic(() => import('./JumpSequenceClient'));
+export default Client;

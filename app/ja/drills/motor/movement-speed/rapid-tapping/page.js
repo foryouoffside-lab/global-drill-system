@@ -389,9 +389,7 @@ export default function JapaneseRapidTappingPage() {
       />
       <RapidTappingClient copy={jaCopy} />
       <DrillGuide {...guideProps} />
-      <div className="max-w-6xl mx-auto px-4 pb-12">
-        <RelatedDrills currentCategory="motor" currentHref="/ja/drills/motor/movement-speed/rapid-tapping" />
-      </div>
+      <RelatedDrills />
       <DrillFooter />
     </>
   );

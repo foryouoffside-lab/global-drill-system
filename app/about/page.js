@@ -23,7 +23,7 @@ const DRILL_COUNT = DRILLS.length;
 export const metadata = {
   title: 'About SkillDrills - How These Drills Measure',
   description:
-    'SkillDrills is a free, independent browser training site. Read how each drill measures reaction time, what browser timers can and cannot resolve, and what data is never collected.',
+    'A free, independent browser training site. How each drill measures reaction time, what browser timers can and cannot resolve, and what data is never collected.',
   alternates: { canonical: 'https://skilldrills.online/about' },
   robots: { index: true, follow: true },
   openGraph: {

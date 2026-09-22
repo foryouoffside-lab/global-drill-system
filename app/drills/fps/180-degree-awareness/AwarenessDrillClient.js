@@ -34,8 +34,8 @@ const DRILL_DURATION = 45; // starting clock only; a run grows past this
 const POINTS_PER_LEVEL = 1750; // 250 -> 1750 (7x)
 const ELITE_SCORE = 51000; // 17000 -> 51000 (3x)
 
-const TIME_PER_HIT = 0.6;
-const TIME_PENALTY = 0.8;
+const TIME_PER_HIT = 2;
+const TIME_PENALTY = 1;
 
 const STORAGE_KEY = 'skilldrills_fps_180_awareness_v3';
 
@@ -75,7 +75,7 @@ const getLevelConfig = (level, combo = 0) => {
 // ACCORDION DATA
 // ============================================================
 const RULES_ITEMS = [
-  { num: "1", text: "Edge Target Hit", highlight: "+100 PTS (+0.6s)", result: "×Combo Mult" },
+  { num: "1", text: "Edge Target Hit", highlight: "+100 PTS (+2s, max 60s)", result: "×Combo Mult" },
   { num: "2", text: "180° Spawns", highlight: "Extreme Peripheral", result: "Faster & Smaller" },
   { num: "3", text: "Level Progression", highlight: "+1 Level / 1750 PTS", result: "Adaptive Scaling" },
   { num: "4", text: "Miss / Timeout", highlight: "Penalty", result: "Resets Combo (-0.8s)" }
@@ -153,7 +153,7 @@ export default function AwarenessDrillClient({ copy = null }) {
     if (typeof window !== 'undefined') {
       setSoundEnabled(drillAudio.isEnabled());
       setFlashEnabled(drillFlash.isEnabled());
-      setPenaltyEnabled(drillPenalty.isEnabled());
+      setPenaltyEnabled(drillPenalty.isEnabled(TIME_PER_HIT === 2));
       const hasFinePointer = window.matchMedia('(pointer: fine)').matches;
       const isTouchCapable = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
       setIsTouchOnlyDevice(isTouchCapable && !hasFinePointer);
@@ -415,7 +415,7 @@ export default function AwarenessDrillClient({ copy = null }) {
 
           if (!tgt.active) {
             eRef.idleClicks++;
-            if (drillPenalty.isEnabled()) eRef.timeLeft -= TIME_PENALTY;
+            if (drillPenalty.isEnabled(TIME_PER_HIT === 2)) eRef.timeLeft -= TIME_PENALTY;
             eRef.combo = 0;
             eRef.screenShake = 6;
             triggerFlash();
@@ -435,7 +435,7 @@ export default function AwarenessDrillClient({ copy = null }) {
               const levelMult = 1 + getDifficultyProgress(eRef.level) * 0.5;
               eRef.score += Math.round(100 * getComboMultiplier(eRef.combo) * levelMult);
 
-              eRef.timeLeft += TIME_PER_HIT;
+              eRef.timeLeft = Math.min(60, eRef.timeLeft + TIME_PER_HIT);
 
               const rawLevel = (eRef.score / POINTS_PER_LEVEL) + 1;
               eRef.level = Math.max(eRef.level, rawLevel);
@@ -453,7 +453,7 @@ export default function AwarenessDrillClient({ copy = null }) {
               eRef.nextSpawnTime = performance.now() + (nextConfig.spawnDelayMin + Math.random() * (nextConfig.spawnDelayMax - nextConfig.spawnDelayMin));
             } else {
               eRef.missedClicks++;
-              if (drillPenalty.isEnabled()) eRef.timeLeft -= TIME_PENALTY;
+              if (drillPenalty.isEnabled(TIME_PER_HIT === 2)) eRef.timeLeft -= TIME_PENALTY;
               eRef.combo = 0;
               eRef.screenShake = 6;
               triggerFlash();
@@ -562,7 +562,7 @@ export default function AwarenessDrillClient({ copy = null }) {
             tgt.active = false;
             e.timeouts++;
             e.totalActions++;
-            if (drillPenalty.isEnabled()) e.timeLeft -= TIME_PENALTY;
+            if (drillPenalty.isEnabled(TIME_PER_HIT === 2)) e.timeLeft -= TIME_PENALTY;
             e.combo = 0;
             e.screenShake = 6;
             triggerFlash();
@@ -860,6 +860,7 @@ export default function AwarenessDrillClient({ copy = null }) {
                 { value: `Lv. ${analytics.finalLevel}`, label: 'Peak Level' },
               ]}
               onPlayAgain={enterDrill}
+              onBeforeShare={() => setIsFullscreen(false)}
               onShare={shareScore}
               onExit={handleExitDrill}
             />

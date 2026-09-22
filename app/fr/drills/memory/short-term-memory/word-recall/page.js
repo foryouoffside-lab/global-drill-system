@@ -390,13 +390,7 @@ export default function FrenchWordRecallPage() {
         ]
       }} />
       <DrillGuide guide={wordRecallGuide} />
-      <div className="max-w-4xl mx-auto px-4 pb-12">
-        <RelatedDrills
-          currentCategory="memory"
-          currentHref="/fr/drills/memory/short-term-memory/word-recall"
-          locale="fr"
-        />
-      </div>
+      <RelatedDrills />
     </>
   );
 }

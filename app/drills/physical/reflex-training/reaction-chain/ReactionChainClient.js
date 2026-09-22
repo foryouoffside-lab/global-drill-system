@@ -15,7 +15,6 @@ import { getPlayerName } from '../../../../../lib/leaderboard';
 import { drillAudio } from '../../../../../lib/drillAudio';
 import { useDrillSensitivity } from '../../../../../lib/drillSensitivity';
 import { drillFlash } from '../../../../../lib/drillFlash';
-import { drillTimeout } from '../../../../../lib/drillTimeout';
 import { getFpsScoreGrade } from '../../../../../lib/scoringEngine';
 import { createBackdropCache, getCanvasDpr, drawTacticalTarget, createHitRing, drawHitRings } from '../../../../../lib/canvasFx';
 import useUnexpectedExitGuard from '../../../../../lib/useUnexpectedExitGuard';
@@ -31,6 +30,7 @@ import useImmersiveMode from '@/lib/useImmersiveMode';
 // ============================================================
 const DRILL_DURATION = 45; // 45 seconds duration
 const ELITE_SCORE = 15000;
+const TIME_PENALTY = 1;
 const STORAGE_KEY = 'skilldrills_reaction_chain_v2';
 
 const getSavedData = () => {
@@ -55,7 +55,7 @@ const saveData = (data) => {
 const RULES_ITEMS = [
   { num: "1", text: "Kinetic Arrest", highlight: "+50 PTS", result: "Stop cursor completely inside a node (ARREST READY)" },
   { num: "2", text: "Combo Multiplier", highlight: "Up to 3.0x", result: "Chain arrests without errors" },
-  { num: "3", text: "Slice-Through / Miss", highlight: "Resets Combo", result: "No score deduction" },
+  { num: "3", text: "Slice-Through / Miss", highlight: "-1s + resets combo", result: "Wrong arrests and missed nodes cost time" },
   { num: "4", text: "Speed Scaling", highlight: "Up to 1800 px/s", result: "Nodes shrink and accelerate with score" }
 ];
 
@@ -85,7 +85,7 @@ export default function ReactionChainClient({ copy = {}, children } = {}) {
 
   const [analytics, setAnalytics] = useState({
     accuracy: 100, arrests: 0, misses: 0, maxStreak: 0,
-    peakSpeed: 600, peakLevel: 1, bestCombo: 1.0, grade: null
+    peakSpeed: 360, peakLevel: 1, bestCombo: 1.0, grade: null
   });
 
   // DOM & Engine Refs
@@ -107,7 +107,7 @@ export default function ReactionChainClient({ copy = {}, children } = {}) {
     timeLeft: DRILL_DURATION,
     cursorVel: 0,
     lastMouse: { x: 0, y: 0 },
-    baseSpeed: 600,
+    baseSpeed: 360,
     maxNodes: 1,
     nodeRadius: 15,
     basePoints: 50,
@@ -177,22 +177,17 @@ export default function ReactionChainClient({ copy = {}, children } = {}) {
 
   const updateLevelParams = (currentScore) => {
     const e = engine.current;
-    let lv = 1; let spd = 600; let mx = 1; let r = 15; let bp = 50;
+    let lv = 1; let spd = 360; let mx = 1; let r = 15; let bp = 50;
 
     if (currentScore >= 15000) { lv = 10; spd = 1800; mx = 5; r = 6; bp = 50; }
-    else if (currentScore >= 11000) { lv = 9; spd = 1500; mx = 4; r = 7; bp = 50; }
-    else if (currentScore >= 8000) { lv = 8; spd = 1300; mx = 4; r = 8; bp = 50; }
-    else if (currentScore >= 5500) { lv = 7; spd = 1100; mx = 3; r = 9; bp = 50; }
-    else if (currentScore >= 3500) { lv = 6; spd = 950; mx = 3; r = 10; bp = 50; }
-    else if (currentScore >= 2000) { lv = 5; spd = 800; mx = 2; r = 11; bp = 50; }
-    else if (currentScore >= 1000) { lv = 4; spd = 700; mx = 2; r = 12; bp = 50; }
-    else if (currentScore >= 500) { lv = 3; spd = 650; mx = 2; r = 13; bp = 50; }
-    else if (currentScore >= 250) { lv = 2; spd = 600; mx = 1; r = 14; bp = 50; }
-
-    if (isFullscreen) {
-      mx = Math.min(mx + 1, 6);
-      spd = Math.floor(spd * 1.15);
-    }
+    else if (currentScore >= 11000) { lv = 9; spd = 1450; mx = 4; r = 7; bp = 50; }
+    else if (currentScore >= 8000) { lv = 8; spd = 1200; mx = 4; r = 8; bp = 50; }
+    else if (currentScore >= 5500) { lv = 7; spd = 1000; mx = 3; r = 9; bp = 50; }
+    else if (currentScore >= 3500) { lv = 6; spd = 850; mx = 3; r = 10; bp = 50; }
+    else if (currentScore >= 2000) { lv = 5; spd = 720; mx = 2; r = 11; bp = 50; }
+    else if (currentScore >= 1000) { lv = 4; spd = 600; mx = 2; r = 12; bp = 50; }
+    else if (currentScore >= 500) { lv = 3; spd = 500; mx = 2; r = 13; bp = 50; }
+    else if (currentScore >= 250) { lv = 2; spd = 420; mx = 1; r = 14; bp = 50; }
 
     e.level = lv;
     e.baseSpeed = spd;
@@ -245,7 +240,7 @@ export default function ReactionChainClient({ copy = {}, children } = {}) {
 
     const arrestedNode = e.nodes[nodeIndex];
     if (arrestedNode) {
-      const speedIntensity = Math.min(1, (e.baseSpeed - 600) / 1000);
+      const speedIntensity = Math.min(1, Math.max(0, (e.baseSpeed - 360) / 1440));
       let nodeColor = '#10b981';
       if (speedIntensity > 0.5) {
         const g = Math.floor(255 * (1 - speedIntensity));
@@ -277,10 +272,14 @@ export default function ReactionChainClient({ copy = {}, children } = {}) {
     e.misses++;
     e.totalAttempts++;
 
-    // Streak & Combo reset on miss, but NO score deduction and NO time deduction!
+    // A miss is a real time penalty as well as a combo reset.
     e.streak = 0;
     e.combo = 1.0;
     e.screenShake = 20;
+    e.timeLeft = Math.max(0, e.timeLeft - TIME_PENALTY);
+    const displayedTime = Math.ceil(e.timeLeft);
+    setUiTimeLeft(displayedTime);
+    lastTimeRef.current = displayedTime;
 
     if (nodeIndex !== undefined && e.nodes[nodeIndex]) {
       e.nodes.splice(nodeIndex, 1);
@@ -309,7 +308,7 @@ export default function ReactionChainClient({ copy = {}, children } = {}) {
       misses: e.misses,
       maxStreak: e.maxStreak,
       peakSpeed: Math.floor(e.baseSpeed),
-      peakLevel: e.level,
+      peakLevel: Math.floor(e.level),
       bestCombo: e.bestCombo,
       grade
     });
@@ -320,7 +319,7 @@ export default function ReactionChainClient({ copy = {}, children } = {}) {
     const isNewHigh = e.score > prevSaved.bestScore;
     setIsNewBest(isNewHigh);
 
-    const runBestLevel = Math.max(prevSaved.bestLevel, bestLevelRunRef.current);
+    const runBestLevel = Math.floor(Math.max(prevSaved.bestLevel, bestLevelRunRef.current));
     const updatedData = {
       bestScore: Math.max(prevSaved.bestScore, e.score),
       bestCombo: Math.max(prevSaved.bestCombo || 1.0, e.bestCombo),
@@ -356,7 +355,7 @@ export default function ReactionChainClient({ copy = {}, children } = {}) {
 
     setAnalytics({
       accuracy: 100, arrests: 0, misses: 0, maxStreak: 0,
-      peakSpeed: 600, peakLevel: 1, bestCombo: 1.0, grade: null
+      peakSpeed: 360, peakLevel: 1, bestCombo: 1.0, grade: null
     });
 
     const cvs = canvasRef.current;
@@ -371,7 +370,7 @@ export default function ReactionChainClient({ copy = {}, children } = {}) {
       timeLeft: DRILL_DURATION,
       cursorVel: 0,
       lastMouse: { x: w / 2, y: h / 2 },
-      baseSpeed: 600,
+      baseSpeed: 360,
       maxNodes: 1,
       nodeRadius: 15,
       basePoints: 50,
@@ -557,13 +556,6 @@ export default function ReactionChainClient({ copy = {}, children } = {}) {
 
           const padding = 150;
           const outOfBounds = node.x < -padding || node.x > w + padding || node.y < -padding || node.y > h + padding;
-          if (outOfBounds && !drillTimeout.isEnabled()) {
-            node.x = Math.max(-padding, Math.min(w + padding, node.x));
-            node.y = Math.max(-padding, Math.min(h + padding, node.y));
-            node.vx *= -1;
-            node.vy *= -1;
-            continue;
-          }
           if (outOfBounds) {
             applyPenalty(i);
             break;
@@ -592,7 +584,7 @@ export default function ReactionChainClient({ copy = {}, children } = {}) {
       // TARGET NODES DRAWING
       const currentVelocity = e.baseSpeed;
       e.nodes.forEach((node) => {
-        const speedIntensity = Math.min(1, (currentVelocity - 600) / 1000);
+        const speedIntensity = Math.min(1, Math.max(0, (currentVelocity - 360) / 1440));
         let nodeColor = '#10b981';
         if (speedIntensity > 0.5) {
           const g = Math.floor(255 * (1 - speedIntensity));
@@ -692,6 +684,7 @@ export default function ReactionChainClient({ copy = {}, children } = {}) {
   }, [gameState, pointerLocked, spawnNode, endGame, handleArrest, applyPenalty]);
 
   const shareScore = useCallback(async () => {
+    setIsFullscreen(false);
     const url = 'https://skilldrills.online/drills/physical/reflex-training/reaction-chain';
     try {
       const canvas = generateShareCard({

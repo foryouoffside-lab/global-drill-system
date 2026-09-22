@@ -172,7 +172,7 @@ export default function VisualSearchClient({ copy } = {}) {
       accuracy: finalAccuracy,
       perfectHits: e.perfectHits,
       missedClicks: e.missedClicks,
-      finalLevel: e.level,
+      finalLevel: Math.floor(e.level),
       grade,
     });
 
@@ -184,7 +184,7 @@ export default function VisualSearchClient({ copy } = {}) {
 
     const updatedData = {
       bestScore: Math.max(prevSaved.bestScore, e.score),
-      bestLevel: Math.max(prevSaved.bestLevel, e.level),
+      bestLevel: Math.max(prevSaved.bestLevel, Math.floor(e.level)),
       totalSessions: (prevSaved.totalSessions || 0) + 1,
     };
     saveData(updatedData);
@@ -361,6 +361,7 @@ export default function VisualSearchClient({ copy } = {}) {
   }, [clearGameTimeouts, endGame, generateGrid]);
 
   const shareScore = useCallback(async () => {
+    setIsFullscreen(false);
     const url = 'https://skilldrills.online/drills/visual/visual-recognition/visual-search';
     try {
       const canvas = generateShareCard({
@@ -515,10 +516,9 @@ export default function VisualSearchClient({ copy } = {}) {
                     <button
                       key={i}
                       onPointerDown={(e) => handleCellClick(i, e)}
-                      onClick={(e) => handleCellClick(i, e)}
                       className={`w-full h-full aspect-square rounded-sm sm:rounded-md flex items-center justify-center text-[10px] xs:text-xs sm:text-sm font-black font-mono leading-none tracking-tighter transition-all duration-100 focus:outline-none touch-none border ${cellStyle} active:scale-90 cursor-pointer`}
                       style={{ transform: `rotate(${cell.rotation}deg)` }}
-                      aria-label="Search Cell"
+                      aria-label={`Search Cell ${cell.char}`}
                     >
                       {cell.char}
                     </button>

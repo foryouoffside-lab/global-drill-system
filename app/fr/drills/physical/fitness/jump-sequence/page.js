@@ -54,10 +54,10 @@ export const metadata = {
 
 Object.assign(metadata, {
   title: 'Pliométrie & Détente Verticale | Jeu de Réflexes | SkillDrills',
-  description: "Jeu gratuit de pliométrie et détente verticale dans le navigateur. Dosez l'impulsion, guidez la trajectoire aérienne et interceptez des cibles mobiles avec rythme et coordination.",
+  description: "Jeu gratuit de pliométrie et détente verticale dans le navigateur. Dosez l'impulsion, guidez la trajectoire aérienne et interceptez des cibles mobiles en rythme.",
   keywords: ['pliométrie', 'détente verticale', 'exercices de saut', 'entraînement au saut', 'coordination du saut', 'temps de suspension', 'jeu de réflexes', 'jeu de saut', 'timing du saut', 'trajectoire aérienne'],
-  openGraph: { ...metadata.openGraph, title: 'Pliométrie & Détente Verticale | Jeu de Réflexes | SkillDrills', description: "Jeu gratuit de pliométrie et détente verticale dans le navigateur. Dosez l'impulsion, guidez la trajectoire aérienne et interceptez des cibles mobiles avec rythme et coordination." },
-  twitter: { ...metadata.twitter, title: 'Pliométrie & Détente Verticale | Jeu de Réflexes | SkillDrills', description: "Jeu gratuit de pliométrie et détente verticale dans le navigateur. Dosez l'impulsion, guidez la trajectoire aérienne et interceptez des cibles mobiles avec rythme et coordination." },
+  openGraph: { ...metadata.openGraph, title: 'Pliométrie & Détente Verticale | Jeu de Réflexes | SkillDrills', description: "Jeu gratuit de pliométrie et détente verticale dans le navigateur. Dosez l'impulsion, guidez la trajectoire aérienne et interceptez des cibles mobiles en rythme." },
+  twitter: { ...metadata.twitter, title: 'Pliométrie & Détente Verticale | Jeu de Réflexes | SkillDrills', description: "Jeu gratuit de pliométrie et détente verticale dans le navigateur. Dosez l'impulsion, guidez la trajectoire aérienne et interceptez des cibles mobiles en rythme." },
 });
 
 const breadcrumbSchema = {
@@ -404,13 +404,7 @@ export default function JumpSequencePageFr() {
         }}
       />
       <DrillGuide guide={jumpGuide} />
-      <div className="max-w-4xl mx-auto px-4 pb-12">
-        <RelatedDrills
-          currentCategory="physical"
-          currentHref="/drills/physical/fitness/jump-sequence"
-          locale="fr"
-        />
-      </div>
+      <RelatedDrills />
     </>
   );
 }

@@ -321,9 +321,7 @@ export default function PortugueseSaccadicGalleryPage() {
       />
       <SaccadicGalleryWrapper copy={{ title: 'Treino de Visão Periférica Online', subtitle: 'Saltos do Olhar · Aquisição Visual', caption: 'Mude o olhar rapidamente entre os alvos e clique em cada um com precisão.' }} />
       <DrillGuide guide={saccadicGuide} />
-      <div className="max-w-6xl mx-auto px-4 pb-12">
-        <RelatedDrills currentCategory="reaction-speed" currentHref="https://skilldrills.online/pt/drills/reaction-speed/saccadic-gallery" />
-      </div>
+      <RelatedDrills />
       <DrillFooter />
     </>
   );

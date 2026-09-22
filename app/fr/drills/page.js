@@ -5,8 +5,8 @@ import { getLocalizedDrill } from '@/lib/i18n/drillNames';
 import { buildDirectoryMetadata, getDirectoryCollectionFields } from '@/lib/i18n/siteLandingSeoNative';
 
 const legacyMetadata = {
-  title: 'Aim Trainer : 82 Exercices Gratuits | SkillDrills',
-  description: '82 exercices en ligne gratuits en 8 catégories : aim trainer FPS, test de réflexes, mémoire, CPS et acuité visuelle directement sur navigateur.',
+  title: 'Aim Trainer : 81 Exercices Gratuits | SkillDrills',
+  description: '81 exercices en ligne gratuits en 8 catégories : aim trainer FPS, test de réflexes, mémoire, CPS et acuité visuelle directement sur navigateur.',
   keywords: [
     'aim trainer gratuit',
     'entrainement au tir en ligne',
@@ -25,8 +25,8 @@ const legacyMetadata = {
     'coordination oeil main test'
   ],
   openGraph: {
-    title: 'Aim Trainer : 82 Exercices Gratuits | SkillDrills',
-    description: '82 exercices en ligne gratuits en 8 catégories : aim trainer FPS, test de réflexes, mémoire, CPS et acuité visuelle directement sur navigateur.',
+    title: 'Aim Trainer : 81 Exercices Gratuits | SkillDrills',
+    description: '81 exercices en ligne gratuits en 8 catégories : aim trainer FPS, test de réflexes, mémoire, CPS et acuité visuelle directement sur navigateur.',
     type: 'website',
     url: 'https://skilldrills.online/fr/drills',
     siteName: 'SkillDrills',
@@ -35,13 +35,13 @@ const legacyMetadata = {
       url: 'https://skilldrills.online/icons/icon-512x512.png',
       width: 512,
       height: 512,
-      alt: 'Catalogue Complet des 82 Exercices SkillDrills',
+      alt: 'Catalogue Complet des 81 Exercices SkillDrills',
     }],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Aim Trainer : 82 Exercices Gratuits | SkillDrills',
-    description: '82 exercices en ligne pour la visée, les réflexes, la mémoire et l\'acuité visuelle.',
+    title: 'Aim Trainer : 81 Exercices Gratuits | SkillDrills',
+    description: '81 exercices en ligne pour la visée, les réflexes, la mémoire et l\'acuité visuelle.',
     images: ['https://skilldrills.online/icons/icon-512x512.png'],
   },
   robots: { index: true, follow: true },
@@ -78,8 +78,8 @@ const breadcrumbSchema = {
 const collectionSchema = {
   "@context": "https://schema.org",
   "@type": "CollectionPage",
-  "name": "Catalogue Complet des 82 Exercices de Performance SkillDrills",
-  "description": "Collection scientifique complète de 82 exercices interactifs pour la visée FPS, la vitesse de réaction, la poursuite visuelle, la cognition, la mémoire et la motricité fine.",
+  "name": "Catalogue Complet des 81 Exercices de Performance SkillDrills",
+  "description": "Collection scientifique complète de 81 exercices interactifs pour la visée FPS, la vitesse de réaction, la poursuite visuelle, la cognition, la mémoire et la motricité fine.",
   "url": "https://skilldrills.online/fr/drills",
   "inLanguage": "fr",
   "hasPart": DRILLS.map((drill) => {
@@ -107,7 +107,7 @@ const faqSchema = {
   "mainEntity": [
     {
       "@type": "Question",
-      "name": "Quels principes neuroscientifiques sous-tendent les 82 exercices de SkillDrills ?",
+      "name": "Quels principes neuroscientifiques sous-tendent les 81 exercices de SkillDrills ?",
       "acceptedAnswer": {
         "@type": "Answer",
         "text": "SkillDrills s'appuie sur des paradigmes validés de neurobiologie motrice et de psychologie cognitive, notamment la Loi de Fitts (arbitrage vitesse-précision), la Loi de Hick (temps de décision face à choix multiples), la théorie d'intégration des caractéristiques visuelles et la plasticité synaptique. Chaque exercice isole des circuits neuromusculaires spécifiques pour induire des adaptations pérennes."
@@ -158,7 +158,7 @@ const faqSchema = {
       "name": "Faut-il installer un logiciel ou créer un compte pour s'entraîner sur SkillDrills ?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Non. Les 82 exercices fonctionnent entièrement côté client dans votre navigateur web. Aucun téléchargement de logiciel ni création de compte obligatoire ne sont requis. Toutes vos performances et données personnelles restent stockées localement dans votre navigateur afin de respecter scrupuleusement votre vie privée."
+        "text": "Non. Les 81 exercices fonctionnent entièrement côté client dans votre navigateur web. Aucun téléchargement de logiciel ni création de compte obligatoire ne sont requis. Toutes vos performances et données personnelles restent stockées localement dans votre navigateur afin de respecter scrupuleusement votre vie privée."
       }
     },
     {

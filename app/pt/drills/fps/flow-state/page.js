@@ -323,7 +323,7 @@ export default function FlowStatePtPage() {
     faqs: faqSchema.mainEntity.map(e => ({ q: e.name, a: e.acceptedAnswer.text })),
     sources: pickSources('woods2015', 'krauzlis2004', 'posner1990', 'green2003', 'dietrich2004'),
     related: [
-      { href: "/pt/drills/fps/fps-tracking-trainer", label: "Treino de Tracking FPS" },
+      { href: "/pt/drills/reaction-speed/fps-tracking-trainer", label: "Treino de Tracking FPS" },
       { href: "/pt/drills/fps/anti-zigzag-movement-trainer", label: "Treino Anti-Zigzag" },
       { href: "/pt/drills/fps/anti-strafe-jitter-duel", label: "Duelo Anti-Strafe Jitter" },
       { href: "/pt/drills/fps/flick-shot-training", label: "Treino de Flick Shot" },
@@ -358,9 +358,7 @@ export default function FlowStatePtPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(howToSchema) }}
       />
       <FlowStateClient copy={copyPt} />
-      <div className="max-w-6xl mx-auto px-4 w-full pb-12">
-        <RelatedDrills currentCategory="fps" currentHref="/pt/drills/fps/flow-state" locale="pt" />
-      </div>
+      <RelatedDrills />
       <DrillGuide guide={flowStateGuide} />
       <DrillFooter />
     </>

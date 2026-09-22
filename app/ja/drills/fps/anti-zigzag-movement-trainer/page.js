@@ -343,9 +343,7 @@ export default function AntiZigzagJaPage() {
       />
       <AntiZigzagClient copy={copy} />
       <DrillGuide guide={jaGuide} />
-      <div className="max-w-6xl mx-auto px-4 w-full">
-        <RelatedDrills currentCategory="fps" currentHref="/drills/fps/anti-zigzag-movement-trainer" locale="ja" />
-      </div>
+      <RelatedDrills />
       <DrillFooter />
     </>
   );

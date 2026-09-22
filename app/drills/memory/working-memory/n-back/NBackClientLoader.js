@@ -1,5 +1,5 @@
 'use client';
 
-import dynamic from 'next/dynamic';
+import Client from './NBackClient';
 
-export default dynamic(() => import('./NBackClient'));
+export default Client;

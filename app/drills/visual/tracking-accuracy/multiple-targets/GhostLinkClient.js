@@ -596,6 +596,7 @@ export default function GhostLinkClient({ copy } = {}) {
   }, [drillDuration, initDrillVariables]);
 
   const shareScore = useCallback(async () => {
+    setIsFullscreen(false);
     const url = 'https://skilldrills.online/drills/visual/tracking-accuracy/multiple-targets';
     try {
       const canvas = generateShareCard({

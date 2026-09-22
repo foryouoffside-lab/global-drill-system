@@ -309,9 +309,7 @@ export default function StaircaseStepPage() {
 
       <StaircaseStepClient copy={{ title: "Seguimiento ocular vertical", subtitle: "Ejercicio para subidas, bajadas y recuperación del objetivo" }} />
       <DrillGuide guide={guideProps} />
-      <div className="max-w-6xl mx-auto px-4 pb-12">
-        <RelatedDrills currentCategory="visual-tracking" currentHref="https://skilldrills.online/es/drills/visual-tracking/staircase-step" />
-      </div>
+      <RelatedDrills />
       <DrillFooter />
     </>
   );

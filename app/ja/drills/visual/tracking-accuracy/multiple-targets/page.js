@@ -332,9 +332,7 @@ export default function LocalizedMultipleTargetsJaPage() {
 
       <GhostLinkClient copy={{ title: "複数対象追跡", subtitle: "周辺視野トレーニング" }} />
       <DrillGuide guide={guideData} />
-      <div className="max-w-6xl mx-auto px-4 pb-12">
-        <RelatedDrills currentCategory="visual" currentHref="https://skilldrills.online/ja/drills/visual/tracking-accuracy/multiple-targets" />
-      </div>
+      <RelatedDrills />
     </>
   );
 }

@@ -286,10 +286,10 @@ export default function SpanishAngleHoldPage() {
     faqs: faqSchema.mainEntity.map(e => ({ q: e.name, a: e.acceptedAnswer.text })),
     sources: pickSources('woods2015', 'fitts1954', 'meyer1988', 'woodworth1899'),
     related: [
-      { href: "/drills/fps/flick-shot-training", label: "Entrenamiento de Flick Shot" },
-      { href: "/drills/fps/180-degree-awareness", label: "Entrenamiento de Giro 180°" },
-      { href: "/drills/fps/micro-correction-precision", label: "Entrenamiento de Microcorrección" },
-      { href: "/drills/reaction-speed/reaction-time-test", label: "Test de Tiempo de Reacción" }
+      { href: "/es/drills/fps/flick-shot-training", label: "Entrenamiento de Flick Shot" },
+      { href: "/es/drills/fps/180-degree-awareness", label: "Entrenamiento de Giro 180°" },
+      { href: "/es/drills/fps/micro-correction-precision", label: "Entrenamiento de Microcorrección" },
+      { href: "/es/drills/reaction-speed/reaction-time-test", label: "Test de Tiempo de Reacción" }
     ]
   };
 
@@ -361,9 +361,7 @@ export default function SpanishAngleHoldPage() {
 
       <AngleHoldClient copy={copyEs} />
 
-      <div className="max-w-6xl w-full mx-auto px-4 pb-12">
-        <RelatedDrills currentCategory="fps" currentHref="/drills/fps/angle-hold-trainer" locale="es" />
-      </div>
+      <RelatedDrills />
 
       <DrillGuide guide={angleHoldGuideEs} />
       <DrillFooter />

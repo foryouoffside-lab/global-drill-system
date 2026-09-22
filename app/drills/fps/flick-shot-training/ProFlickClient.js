@@ -31,9 +31,10 @@ import useUnexpectedExitGuard from '@/lib/useUnexpectedExitGuard';
 // ============================================================
 // TUNING CONSTANTS
 // ============================================================
-const DRILL_DURATION = 45; // starting clock — a run grows past this by performing
+const DRILL_DURATION = 45; // starting clock — successful hits refill up to MAX_TIME
+const MAX_TIME = 60; // hard cap: the clock can never show more than 60 seconds
 // Both of these were calibrated for a run that was hard-capped at 45s and so
-// could never climb far past level 15. With an uncapped run the old 250 made
+// could never climb far past level 15. With the new 60s clock cap the old 250 made
 // difficulty outrun the player in roughly 30 hits, after which the rest of the
 // session was unwinnable flailing — modelled hit rate collapsed to ~14%.
 const POINTS_PER_LEVEL = 1800; // gradual climb: the player meets their ceiling, not a wall
@@ -48,8 +49,10 @@ const ELITE_SCORE = 50000; // 100% mark for letter grade — rescaled for open-e
 // (elite 87s vs casual 100s): a strong player reaches high difficulty, where
 // everyone misses, far sooner. Off, session length rises with skill as intended;
 // on, it is a hard mode for players who find the drill too easy.
-const TIME_PER_HIT = 0.6;
-const TIME_PENALTY = 0.8;
+// Give successful play enough time to reach the genuinely difficult part of
+// the unbounded curve instead of timing out in the early levels.
+const TIME_PER_HIT = 2;
+const TIME_PENALTY = 1;
 
 // Bumped from _v2: sessions are no longer a fixed 45s, so scores from the old
 // fixed-length build are not comparable to these and must not share a best.
@@ -108,7 +111,7 @@ const getLevelConfig = (level, combo = 0) => {
 // ACCORDION DATA
 // ============================================================
 const RULES_ITEMS = [
-  { num: "1", text: "Target Hit", highlight: "+100 PTS (+0.6s)", result: "×Combo Mult" },
+  { num: "1", text: "Target Hit", highlight: "+100 PTS (+2.0s)", result: "×Combo Mult" },
   { num: "2", text: "Combo Streak", highlight: "Up to 3.0×", result: "Faster Targets" },
   { num: "3", text: "Level Up", highlight: "+1 / 1800 PTS", result: "Adaptive Scaling" },
   { num: "4", text: "Miss / Timeout", highlight: "Penalty", result: "Resets Combo (-0.8s)" }
@@ -185,7 +188,7 @@ const RELATED_DRILLS = [
 export default function ProFlickClient({ copy = null }) {
   const [gameState, setGameState] = useState('start'); // 'start' | 'countdown' | 'playing' | 'gameOver'
   const [isFullscreen, setIsFullscreen] = useState(false);
-  useImmersiveMode(isFullscreen); // locks the page behind while the drill fills the screen
+  const ensureNativeFullscreen = useImmersiveMode(isFullscreen); // locks the page behind while the drill fills the screen
   const [soundEnabled, setSoundEnabled] = useState(true);
   const [flashEnabled, setFlashEnabled] = useState(true);
   const [pointerLocked, setPointerLocked] = useState(false);
@@ -242,7 +245,7 @@ export default function ProFlickClient({ copy = null }) {
     if (typeof window !== 'undefined') {
       setSoundEnabled(drillAudio.isEnabled());
       setFlashEnabled(drillFlash.isEnabled());
-      setPenaltyEnabled(drillPenalty.isEnabled());
+      setPenaltyEnabled(drillPenalty.isEnabled(TIME_PER_HIT === 2));
       const hasFinePointer = window.matchMedia('(pointer: fine)').matches;
       const isTouchCapable = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
       setIsTouchOnlyDevice(isTouchCapable && !hasFinePointer);
@@ -419,6 +422,10 @@ export default function ProFlickClient({ copy = null }) {
     };
 
     setIsFullscreen(true);
+    // Re-enter native fullscreen from the actual Start / Play Again click.
+    // This is required after Share or a previous run has caused the browser
+    // to drop native fullscreen while the CSS arena flag stayed true.
+    ensureNativeFullscreen();
 
     setGameState('countdown');
     setCountdownValue(3);
@@ -437,7 +444,7 @@ export default function ProFlickClient({ copy = null }) {
     }, 2450);
 
     countdownTimeoutsRef.current = [t1, t2, t3, t4];
-  }, []);
+  }, [ensureNativeFullscreen]);
 
   // Handle ESC key to immediately exit / quit the drill at any time back to the drill's start page
   useEffect(() => {
@@ -459,7 +466,10 @@ export default function ProFlickClient({ copy = null }) {
     const handlePointerLockChange = () => {
       const isLocked = document.pointerLockElement === canvasRef.current;
       setPointerLocked(isLocked);
-      if (!isLocked && (gameState === 'playing' || gameState === 'countdown')) {
+      // endGame() releases pointer lock before React commits `gameOver`.
+      // Use the engine's live flag so finish/restart cannot be mistaken for
+      // the player quitting and collapse the fullscreen arena.
+      if (!isLocked && gameActiveRef.current && gameState === 'playing') {
         handleExitDrill();
       }
     };
@@ -470,7 +480,9 @@ export default function ProFlickClient({ copy = null }) {
   // Fullscreen change: if native fullscreen is closed mid-game, exit cleanly to start page
   useEffect(() => {
     const handleFullscreenChange = () => {
-      if (!document.fullscreenElement && isFullscreen && (gameState === 'playing' || gameState === 'countdown')) {
+      // Do not turn a completed run or a play-again countdown into an exit
+      // while the browser finishes its native fullscreen transition.
+      if (!document.fullscreenElement && isFullscreen && gameActiveRef.current && gameState === 'playing') {
         handleExitDrill();
       }
     };
@@ -502,7 +514,7 @@ export default function ProFlickClient({ copy = null }) {
 
           if (!tgt.active) {
             eRef.idleClicks++;
-            if (drillPenalty.isEnabled()) eRef.timeLeft -= TIME_PENALTY;
+            if (drillPenalty.isEnabled(TIME_PER_HIT === 2)) eRef.timeLeft -= TIME_PENALTY;
             eRef.combo = 0;
             eRef.screenShake = 6;
             triggerFlash();
@@ -524,7 +536,7 @@ export default function ProFlickClient({ copy = null }) {
               // A clean hit buys clock. Nothing ever takes clock away: a miss simply
               // earns nothing while the timer keeps draining, which keeps the drill's
               // long-standing "no negative score, no negative time" contract intact.
-              eRef.timeLeft += TIME_PER_HIT;
+              eRef.timeLeft = Math.min(MAX_TIME, eRef.timeLeft + TIME_PER_HIT);
 
               // Continuous level — no Math.floor, so difficulty rises with every point
               // instead of stepping at each 250-point threshold, and no combo bonus
@@ -546,7 +558,7 @@ export default function ProFlickClient({ copy = null }) {
               eRef.nextSpawnTime = performance.now() + (nextConfig.spawnDelayMin + Math.random() * (nextConfig.spawnDelayMax - nextConfig.spawnDelayMin));
             } else {
               eRef.missedClicks++;
-              if (drillPenalty.isEnabled()) eRef.timeLeft -= TIME_PENALTY;
+              if (drillPenalty.isEnabled(TIME_PER_HIT === 2)) eRef.timeLeft -= TIME_PENALTY;
               eRef.combo = 0;
               eRef.screenShake = 6;
               triggerFlash();
@@ -653,7 +665,7 @@ export default function ProFlickClient({ copy = null }) {
             tgt.active = false;
             e.timeouts++;
             e.totalActions++;
-            if (drillPenalty.isEnabled()) e.timeLeft -= TIME_PENALTY;
+            if (drillPenalty.isEnabled(TIME_PER_HIT === 2)) e.timeLeft -= TIME_PENALTY;
             e.combo = 0;
             e.screenShake = 6;
             triggerFlash();
@@ -779,6 +791,9 @@ export default function ProFlickClient({ copy = null }) {
         playerName: getPlayerName(),
       });
       await shareScoreCard(url, canvas);
+      // Some browsers close native fullscreen while showing the share sheet.
+      // Restore it when the browser still permits the original activation.
+      ensureNativeFullscreen();
     } catch (e) {
       const text = `🎯 I scored ${uiScore} PTS (Level ${analytics.finalLevel}) on Pro Flick Trainer! Accuracy: ${analytics.accuracy}%. Test your reflexes at skilldrills.online!`;
       if (typeof navigator !== 'undefined' && navigator.share) {
@@ -787,8 +802,9 @@ export default function ProFlickClient({ copy = null }) {
         navigator.clipboard.writeText(text);
         alert('Score card copied to clipboard!');
       }
+      ensureNativeFullscreen();
     }
-  }, [uiScore, bestScore, analytics, isNewBest]);
+  }, [uiScore, bestScore, analytics, isNewBest, copy, ensureNativeFullscreen]);
 
   const accuracy = gameState === 'gameOver' ? analytics.accuracy : uiAccuracy;
 
@@ -926,6 +942,7 @@ export default function ProFlickClient({ copy = null }) {
                 { value: `Lv. ${analytics.finalLevel}`, label: copy?.statPeakLevel || 'Peak Level' },
               ]}
               onPlayAgain={enterDrill}
+              onBeforeShare={() => setIsFullscreen(false)}
               onShare={shareScore}
               onExit={handleExitDrill}
             />
@@ -946,6 +963,7 @@ export default function ProFlickClient({ copy = null }) {
             <DrillAccordion
               id="rules"
               singleLineTitle
+              framed
               title={copy?.rulesTitle || "Drill Instructions & Scoring System"}
               isOpen={openAccordion === 'rules'}
               onToggle={() => setOpenAccordion(openAccordion === 'rules' ? null : 'rules')}
@@ -960,6 +978,7 @@ export default function ProFlickClient({ copy = null }) {
             <DrillAccordion
               id="about"
               singleLineTitle
+              framed
               title={copy?.aboutTitle || "About Pro Flick Trainer"}
               isOpen={openAccordion === 'about'}
               onToggle={() => setOpenAccordion(openAccordion === 'about' ? null : 'about')}

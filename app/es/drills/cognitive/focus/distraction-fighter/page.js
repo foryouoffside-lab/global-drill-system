@@ -304,13 +304,7 @@ export default function DistractionFighterPageES() {
         faqs={faqSchema.mainEntity.map((e) => ({ q: e.name, a: e.acceptedAnswer.text }))}
       />
       <DrillGuide guide={guide} />
-      <div className="max-w-4xl mx-auto px-4 pb-12">
-        <RelatedDrills
-          currentCategory="cognitive"
-          currentHref="/drills/cognitive/focus/distraction-fighter"
-          locale="es"
-        />
-      </div>
+      <RelatedDrills />
       <DrillFooter />
     </>
   );

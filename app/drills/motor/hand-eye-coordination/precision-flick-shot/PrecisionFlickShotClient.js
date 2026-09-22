@@ -31,8 +31,8 @@ import useUnexpectedExitGuard from '@/lib/useUnexpectedExitGuard';
 const DRILL_DURATION = 45; // starting clock only; a run grows past this
 const POINTS_PER_LEVEL = 1400; // 200 -> 1400 (7x)
 const ELITE_SCORE = 51000; // 17000 -> 51000 (3x)
-const TIME_PER_HIT = 0.6; // +0.6s on clean hit
-const TIME_PENALTY = 0.8; // opt-in on miss or timeout
+const TIME_PER_HIT = 2; // +2s on clean hit, capped at 60s
+const TIME_PENALTY = 1; // opt-in on miss or timeout
 const STORAGE_KEY = 'skilldrills_motor_precision_flick_shot_v3';
 
 const getSavedData = () => {
@@ -55,7 +55,7 @@ const getLevelConfig = (level, combo = 0) => {
   const p = getDifficultyProgress(level); // 0 at L1, 1 at L15, unbounded above
   const heat = (getComboMultiplier(combo) - 1) / 2;
   return {
-    maxRadius: Math.max(10, ramp(36, 16, p) * (1 - heat * 0.15)),
+    maxRadius: Math.max(10, ramp(32, 14, p) * (1 - heat * 0.15)),
     decayRate: ramp(18, 65, p) * (1 + heat * 0.20),
     targetCount: 2
   };
@@ -65,8 +65,8 @@ const getLevelConfig = (level, combo = 0) => {
 // ACCORDION DATA
 // ============================================================
 const RULES_ITEMS = [
-  { num: "1", text: "Bullseye Core", highlight: "+200 PTS (+0.6s)", result: "×Combo Mult" },
-  { num: "2", text: "Standard Hit", highlight: "+100 PTS (+0.6s)", result: "Maintains Streak" },
+  { num: "1", text: "Bullseye Core", highlight: "+200 PTS (+2s, max 60s)", result: "×Combo Mult" },
+  { num: "2", text: "Standard Hit", highlight: "+100 PTS (+2s, max 60s)", result: "Maintains Streak" },
   { num: "3", text: "Level Up", highlight: "+1 / 1400 PTS", result: "Shrink & Faster Decay" },
   { num: "4", text: "Miss / Timeout", highlight: "Penalty", result: "Resets Combo (-0.8s)" }
 ];
@@ -189,7 +189,7 @@ export default function PrecisionFlickShotClient({ copy } = {}) {
     if (typeof window !== 'undefined') {
       setSoundEnabled(drillAudio.isEnabled());
       setFlashEnabled(drillFlash.isEnabled());
-      setPenaltyEnabled(drillPenalty.isEnabled());
+      setPenaltyEnabled(drillPenalty.isEnabled(TIME_PER_HIT === 2));
       const hasFinePointer = window.matchMedia('(pointer: fine)').matches;
       const isTouchCapable = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
       setIsTouchOnlyDevice(isTouchCapable && !hasFinePointer);
@@ -405,7 +405,7 @@ export default function PrecisionFlickShotClient({ copy } = {}) {
           const basePoints = isBullseye ? 200 : 100;
           const levelMult = 1 + getDifficultyProgress(eRef.level) * 0.5;
           eRef.score += Math.round(basePoints * getComboMultiplier(eRef.combo) * levelMult);
-          eRef.timeLeft += TIME_PER_HIT;
+          eRef.timeLeft = Math.min(60, eRef.timeLeft + TIME_PER_HIT);
 
           const rawLevel = (eRef.score / POINTS_PER_LEVEL) + 1;
           eRef.level = Math.max(eRef.level, rawLevel);
@@ -436,7 +436,7 @@ export default function PrecisionFlickShotClient({ copy } = {}) {
           triggerFlash();
           drillAudio.playPenalty();
           createExplosion(ch.x, ch.y, '#ef4444');
-          if (drillPenalty.isEnabled()) eRef.timeLeft -= TIME_PENALTY;
+          if (drillPenalty.isEnabled(TIME_PER_HIT === 2)) eRef.timeLeft -= TIME_PENALTY;
         }
       }
     };
@@ -554,7 +554,7 @@ export default function PrecisionFlickShotClient({ copy } = {}) {
           triggerFlash();
           drillAudio.playPenalty();
           createExplosion(activeTgt.x, activeTgt.y, '#ef4444');
-          if (drillPenalty.isEnabled()) e.timeLeft -= TIME_PENALTY;
+          if (drillPenalty.isEnabled(TIME_PER_HIT === 2)) e.timeLeft -= TIME_PENALTY;
 
           // Respawn expired active target
           e.targets[activeIdx] = spawnTarget(w, h, config, [secondaryTgt]);
@@ -567,7 +567,7 @@ export default function PrecisionFlickShotClient({ copy } = {}) {
           triggerFlash();
           drillAudio.playPenalty();
           createExplosion(secondaryTgt.x, secondaryTgt.y, '#ef4444');
-          if (drillPenalty.isEnabled()) e.timeLeft -= TIME_PENALTY;
+          if (drillPenalty.isEnabled(TIME_PER_HIT === 2)) e.timeLeft -= TIME_PENALTY;
 
           // Respawn expired secondary target
           e.targets[secondaryIdx] = spawnTarget(w, h, config, [activeTgt]);
@@ -836,6 +836,7 @@ export default function PrecisionFlickShotClient({ copy } = {}) {
                 { value: `Lv. ${analytics.levelReached}`, label: copy?.peakLevelLabel || "Peak Level" },
               ]}
               onPlayAgain={enterDrill}
+              onBeforeShare={() => setIsFullscreen(false)}
               onShare={shareDrillLink}
               onExit={handleExitDrill}
             />

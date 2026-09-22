@@ -18,8 +18,6 @@ import { getPlayerName } from '../../../../../lib/leaderboard';
 import { drillAudio } from '../../../../../lib/drillAudio';
 import { useDrillSensitivity } from '../../../../../lib/drillSensitivity';
 import { drillFlash } from '../../../../../lib/drillFlash';
-import { drillTimeout } from '../../../../../lib/drillTimeout';
-import { drillPenalty } from '../../../../../lib/drillPenalty';
 import { MAX_LEVEL, getStartLevel, getDifficultyProgress, ramp } from '../../../../../lib/drillDifficulty';
 import { getComboMultiplier, getFpsScoreGrade } from '../../../../../lib/scoringEngine';
 import { createBackdropCache, getCanvasDpr, drawPulseRing, drawTacticalTarget, createHitRing, drawHitRings } from '../../../../../lib/canvasFx';
@@ -38,8 +36,8 @@ import useImmersiveMode from '@/lib/useImmersiveMode';
 const DRILL_DURATION = 45; // starting clock only; a run grows past this
 const POINTS_PER_LEVEL = 1750; // 250 -> 1750 (7x)
 const ELITE_SCORE = 24000; // 17000 -> 24000 (1.4x)
-const TIME_PER_HIT = 0.6; // +0.6s on green catch
-const TIME_PENALTY = 0.8; // -0.8s on missed green or red decoy click (opt-in gated)
+const TIME_PER_HIT = 2; // +2s on green catch, capped at 60s
+const TIME_PENALTY = 1; // -1s on missed green, red decoy, or empty-space click
 const STORAGE_KEY = 'skilldrills_physical_drop_catch_v4';
 
 const getSavedData = () => {
@@ -71,10 +69,10 @@ const getLevelConfig = (level, combo = 0) => {
 };
 
 const RULES_ITEMS = [
-  { title: "Catch Green Target", text: "Click falling green targets to score +100 Base PTS scaled with combo multiplier (+0.6s per catch)." },
+  { title: "Catch Green Target", text: "Click falling green targets to score +100 Base PTS scaled with combo multiplier (+2s per catch, max 60s)." },
   { title: "Combo System", text: "Chain unbroken catches to build combo multiplier up to 3.0x max." },
   { title: "Level Progression", text: "Score increases level continuously. Falling speed & decoy traps accelerate dynamically." },
-  { title: "Miss / Decoy Trap", text: "Missing green target or clicking red decoy resets combo streak (and deducts 0.8s if enabled in settings)." }
+  { title: "Miss / Decoy Trap", text: "Missing a green target, clicking a red decoy, or clicking empty space resets the combo and deducts 1s." }
 ];
 
 const ABOUT_TEXT = `Reflex Drop Catch trains visual discrimination and impulse control. By forcing you to rapidly differentiate between valid green targets and red decoys moving at high speeds, you build the cognitive override necessary to prevent misclicks and friendly-fire incidents in high-pressure scenarios.
@@ -128,7 +126,6 @@ export default function DropCatchClient({ copy = {} } = {}) {
   useImmersiveMode(isFullscreen); // locks the page behind while the drill fills the screen
   const [soundEnabled, setSoundEnabled] = useState(true);
   const [flashEnabled, setFlashEnabled] = useState(true);
-  const [penaltyEnabled, setPenaltyEnabled] = useState(false);
   const [pointerLocked, setPointerLocked] = useState(false);
   const [openAccordion, setOpenAccordion] = useState(null);
   const universalSens = useDrillSensitivity();
@@ -183,7 +180,6 @@ export default function DropCatchClient({ copy = {} } = {}) {
     if (typeof window !== 'undefined') {
       setSoundEnabled(drillAudio.isEnabled());
       setFlashEnabled(drillFlash.isEnabled());
-      setPenaltyEnabled(drillPenalty.isEnabled());
       const hasFinePointer = window.matchMedia('(pointer: fine)').matches;
       const isTouchCapable = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
       setIsTouchOnlyDevice(isTouchCapable && !hasFinePointer);
@@ -249,9 +245,10 @@ export default function DropCatchClient({ copy = {} } = {}) {
 
   const applyPenalty = useCallback(() => {
     const e = engine.current;
-    if (drillPenalty.isEnabled()) {
-      e.timeLeft -= TIME_PENALTY;
-    }
+    e.timeLeft = Math.max(0, e.timeLeft - TIME_PENALTY);
+    const displayedTime = Math.ceil(e.timeLeft);
+    setUiTimeLeft(displayedTime);
+    lastTimeRef.current = displayedTime;
     e.combo = 0;
     e.screenShake = 12;
     triggerFlash();
@@ -267,7 +264,7 @@ export default function DropCatchClient({ copy = {} } = {}) {
 
     const e = engine.current;
     const totalAttempts = e.catches + e.misses + e.decoyHits;
-    const accuracyPct = totalAttempts > 0 ? Math.round((e.catches / totalAttempts) * 100) : 100;
+    const accuracyPct = totalAttempts > 0 ? Math.round((e.catches / totalAttempts) * 100) : 0;
     const rating = getFpsScoreGrade(e.score, ELITE_SCORE);
 
     const grade = { letter: rating.grade || rating.letter || 'C', label: rating.label || 'Keep Going', color: rating.color || 'text-emerald-400' };
@@ -398,7 +395,7 @@ export default function DropCatchClient({ copy = {} } = {}) {
             createExplosion(b.x, b.y, '#ef4444');
           } else {
             eng.catches++;
-            eng.timeLeft += TIME_PER_HIT;
+            eng.timeLeft = Math.min(60, eng.timeLeft + TIME_PER_HIT);
             eng.combo++;
             if (eng.combo > eng.maxCombo) eng.maxCombo = eng.combo;
 
@@ -425,6 +422,9 @@ export default function DropCatchClient({ copy = {} } = {}) {
           return;
         }
       }
+
+      // Clicking empty space is also a wrong click and costs one second.
+      applyPenalty();
     };
 
     window.addEventListener('keydown', handleKeyDown);
@@ -517,11 +517,6 @@ export default function DropCatchClient({ copy = {} } = {}) {
         for (let i = e.balls.length - 1; i >= 0; i--) {
           const b = e.balls[i];
           b.y += b.speed * dt;
-
-          if (!drillTimeout.isEnabled() && b.y - b.r > h) {
-            b.y = h + b.r;
-            continue;
-          }
 
           if (b.y - b.r > h) {
             if (!b.isFake) {
@@ -782,6 +777,7 @@ export default function DropCatchClient({ copy = {} } = {}) {
                 { label: copy?.resultLabels?.peakLevel || 'Peak Level', value: `Lv. ${analytics.finalLevel}` },
               ]}
               onPlayAgain={enterDrill}
+              onBeforeShare={() => setIsFullscreen(false)}
               onShare={shareScore}
               onExit={handleExitDrill}
             />

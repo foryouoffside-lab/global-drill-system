@@ -1,5 +1,5 @@
 'use client';
 
-import dynamic from 'next/dynamic';
+import Client from './ObjectLocationClient';
 
-export default dynamic(() => import('./ObjectLocationClient'));
+export default Client;

@@ -47,8 +47,8 @@ const DRILL_DURATION = 45; // starting clock only; a run grows past this
 const POINTS_PER_HIT = 100;
 const POINTS_PER_LEVEL = 1750; // 250 -> 1750 (7x)
 const ELITE_SCORE = 22000; // 7500 -> 22000 (3x)
-const TIME_PER_HIT = 0.6; // +0.6s on clean hit
-const TIME_PENALTY = 0.8; // -0.8s on wrong target or trial timeout (opt-in gated)
+const TIME_PER_HIT = 2; // +2s on clean hit, capped at 60s
+const TIME_PENALTY = 1; // -1s on wrong target or trial timeout (opt-in gated)
 const STORAGE_KEY = 'skilldrills_reaction_time_v8';
 
 const getSavedData = () => {
@@ -78,7 +78,7 @@ const getLevelConfig = (level, combo = 0) => {
 
 const RULES_ITEMS = [
   { num: "1", text: "Dynamic Rule", highlight: "TAP RED / TAP BLUE", result: "Follow the active top banner" },
-  { num: "2", text: "Correct Target Hit", highlight: "+100 PTS", result: "× Combo × Level (+0.6s per hit)" },
+  { num: "2", text: "Correct Target Hit", highlight: "+100 PTS", result: "× Combo × Level (+2s per hit, max 60s)" },
   { num: "3", text: "Rule Switching", highlight: "Auto-Flips", result: "Switches faster as level climbs" },
   { num: "4", text: "Wrong Target / Timeout", highlight: "Resets Combo", result: "−0.8s when penalties enabled" }
 ];
@@ -193,7 +193,7 @@ export default function EliteNeuroSwitchClient({ copy } = {}) {
     if (typeof window !== 'undefined') {
       setSoundEnabled(drillAudio.isEnabled());
       setFlashEnabled(drillFlash.isEnabled());
-      setPenaltyEnabled(drillPenalty.isEnabled());
+      setPenaltyEnabled(drillPenalty.isEnabled(TIME_PER_HIT === 2));
       const saved = getSavedData();
       setBestScore(saved.bestScore || 0);
       setBestCombo(saved.bestCombo || 0);
@@ -260,7 +260,7 @@ export default function EliteNeuroSwitchClient({ copy } = {}) {
 
     const e = engine.current;
     const totalActs = e.successfulHits + e.misses + e.falseAlarms;
-    const acc = totalActs > 0 ? Math.round((e.successfulHits / totalActs) * 100) : 100;
+    const acc = totalActs > 0 ? Math.round((e.successfulHits / totalActs) * 100) : 0;
 
     const rating = getFpsScoreGrade(e.score, ELITE_SCORE);
     const gradeObj = {
@@ -377,7 +377,7 @@ export default function EliteNeuroSwitchClient({ copy } = {}) {
       }
       // Timeout miss
       e.misses += 1;
-      if (drillPenalty.isEnabled()) e.timeLeft -= TIME_PENALTY;
+      if (drillPenalty.isEnabled(TIME_PER_HIT === 2)) e.timeLeft -= TIME_PENALTY;
       e.combo = 0;
       setUiCombo(0);
       triggerFlash();
@@ -407,7 +407,7 @@ export default function EliteNeuroSwitchClient({ copy } = {}) {
       eng.score += Math.round(POINTS_PER_HIT * getComboMultiplier(eng.combo) * levelMult);
 
       // Time bonus on clean hit
-      eng.timeLeft += TIME_PER_HIT;
+      eng.timeLeft = Math.min(60, eng.timeLeft + TIME_PER_HIT);
 
       // Continuous level progression
       const rawLevel = (eng.score / POINTS_PER_LEVEL) + 1;
@@ -431,7 +431,7 @@ export default function EliteNeuroSwitchClient({ copy } = {}) {
     } else {
       // False alarm on wrong color target
       eng.falseAlarms += 1;
-      if (drillPenalty.isEnabled()) eng.timeLeft -= TIME_PENALTY;
+      if (drillPenalty.isEnabled(TIME_PER_HIT === 2)) eng.timeLeft -= TIME_PENALTY;
       eng.combo = 0;
       setUiCombo(0);
       triggerFlash();
@@ -720,6 +720,7 @@ export default function EliteNeuroSwitchClient({ copy } = {}) {
                 { label: labels.maxCombo, value: analytics.maxCombo, suffix: 'x' },
               ]}
               onPlayAgain={enterDrill}
+              onBeforeShare={() => setIsFullscreen(false)}
               onShare={shareResult}
               onExit={handleExitDrill}
             />

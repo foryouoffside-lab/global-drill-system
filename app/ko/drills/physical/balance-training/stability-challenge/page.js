@@ -379,13 +379,7 @@ export default function StabilityChallengeKoPage() {
         }}
       />
       <DrillGuide guide={stabilityGuide} />
-      <div className="max-w-4xl mx-auto px-4 pb-12">
-        <RelatedDrills
-          currentCategory="physical"
-          currentHref="/drills/physical/balance-training/stability-challenge"
-          locale="ko"
-        />
-      </div>
+      <RelatedDrills />
     </>
   );
 }

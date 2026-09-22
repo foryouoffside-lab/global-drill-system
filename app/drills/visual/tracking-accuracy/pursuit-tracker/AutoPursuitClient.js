@@ -471,6 +471,7 @@ export default function AutoPursuitClient({ copy } = {}) {
   }, [clearGameTimeouts, endGame]);
 
   const shareScore = useCallback(async () => {
+    setIsFullscreen(false);
     const url = 'https://skilldrills.online/drills/visual/tracking-accuracy/pursuit-tracker';
     try {
       const canvas = generateShareCard({

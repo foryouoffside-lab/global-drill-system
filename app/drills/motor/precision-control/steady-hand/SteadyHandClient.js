@@ -768,6 +768,7 @@ export default function SteadyHandClient({ copy = null }) {
                 { value: `Lv. ${analytics.speedLevel}`, label: copy?.difficultyLabel || "Difficulty Level" },
               ]}
               onPlayAgain={startGame}
+              onBeforeShare={() => setIsFullscreen(false)}
               onShare={shareScore}
               onExit={handleExitDrill}
             />

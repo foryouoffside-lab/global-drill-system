@@ -344,9 +344,7 @@ export default function EnhancedPageEs() {
         skillsTitle: "Habilidades entrenadas", skillsText: "Procesamiento de doble tarea, rastreo visual, decisión numérica y reparto de la atención.", flexibilityTitle: "Procesamiento paralelo", flexibilityText: "Cambia entre ambos flujos sin dejar que caiga la precisión de un canal."
       }} />
       <DrillGuide {...guideProps} />
-      <div className="max-w-6xl mx-auto px-4 pb-12">
-        <RelatedDrills currentCategory="cognitive" currentHref="https://skilldrills.online/es/drills/cognitive/attention/divided-attention" />
-      </div>
+      <RelatedDrills />
       <DrillFooter />
     </>
   );

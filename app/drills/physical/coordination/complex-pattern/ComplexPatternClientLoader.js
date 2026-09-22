@@ -1,5 +1,5 @@
 'use client';
 
-import dynamic from 'next/dynamic';
+import Client from './ComplexPatternClient';
 
-export default dynamic(() => import('./ComplexPatternClient'));
+export default Client;

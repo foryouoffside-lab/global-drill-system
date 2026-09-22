@@ -1,5 +1,5 @@
 'use client';
 
-import dynamic from 'next/dynamic';
+import Client from './MotorSequencingClient';
 
-export default dynamic(() => import('./MotorSequencingClient'));
+export default Client;

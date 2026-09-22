@@ -303,9 +303,7 @@ export default function KineticInterceptPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(videoGameSchema) }} />
       <KineticInterceptClient copy={{ title: "동체시력·이동 표적" }} />
       <DrillGuide guide={movingTargetGuide} />
-      <div className="max-w-6xl mx-auto px-4 pb-12">
-        <RelatedDrills currentCategory="visual" currentHref="https://skilldrills.online/ko/drills/visual/tracking-accuracy/moving-target" />
-      </div>
+      <RelatedDrills />
     </>
   );
 }

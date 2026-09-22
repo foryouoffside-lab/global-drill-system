@@ -143,7 +143,7 @@ export default function GridMemorizationClient({ copy = null }) {
 
     const e = engine.current;
     const totalTries = e.perfectHits + e.missedClicks;
-    const finalAccuracy = totalTries > 0 ? Math.round((e.perfectHits / totalTries) * 100) : 100;
+    const finalAccuracy = totalTries > 0 ? Math.round((e.perfectHits / totalTries) * 100) : 0;
 
     const grade = getFpsScoreGrade(e.score, ELITE_SCORE);
 
@@ -390,6 +390,7 @@ export default function GridMemorizationClient({ copy = null }) {
   }, [clearGameTimeouts, endGame, startSequenceCycle]);
 
   const shareScore = useCallback(async () => {
+    setIsFullscreen(false);
     const url = 'https://skilldrills.online/drills/memory/spatial-memory/grid-memorization';
     try {
       const canvas = generateShareCard({

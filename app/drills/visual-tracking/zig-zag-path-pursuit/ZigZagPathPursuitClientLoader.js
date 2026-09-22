@@ -1,5 +1,5 @@
 'use client';
 
-import dynamic from 'next/dynamic';
+import Client from './ZigZagPathPursuitClient';
 
-export default dynamic(() => import('./ZigZagPathPursuitClient'));
+export default Client;

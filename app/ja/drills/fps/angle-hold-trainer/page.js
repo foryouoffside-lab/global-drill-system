@@ -298,10 +298,10 @@ export default function JapaneseAngleHoldPage() {
     faqs: faqSchema.mainEntity.map(e => ({ q: e.name, a: e.acceptedAnswer.text })),
     sources: pickSources('woods2015', 'fitts1954', 'meyer1988', 'woodworth1899'),
     related: [
-      { href: "/drills/fps/flick-shot-training", label: "Pro Flick Trainer (フリックエイム訓練)" },
-      { href: "/drills/fps/180-degree-awareness", label: "180° Awareness Pro (180度視点移動)" },
-      { href: "/drills/fps/micro-correction-precision", label: "Micro Flicks (マイクロフリック練習)" },
-      { href: "/drills/reaction-speed/reaction-time-test", label: "Reaction Time Test (反射神経テスト)" }
+      { href: "/ja/drills/fps/flick-shot-training", label: "Pro Flick Trainer (フリックエイム訓練)" },
+      { href: "/ja/drills/fps/180-degree-awareness", label: "180° Awareness Pro (180度視点移動)" },
+      { href: "/ja/drills/fps/micro-correction-precision", label: "Micro Flicks (マイクロフリック練習)" },
+      { href: "/ja/drills/reaction-speed/reaction-time-test", label: "Reaction Time Test (反射神経テスト)" }
     ]
   };
 
@@ -389,9 +389,7 @@ export default function JapaneseAngleHoldPage() {
 
       <AngleHoldClient copy={copyJa} />
 
-      <div className="max-w-6xl w-full mx-auto px-4 pb-12">
-        <RelatedDrills currentCategory="fps" currentHref="/drills/fps/angle-hold-trainer" locale="ja" />
-      </div>
+      <RelatedDrills />
 
       <DrillGuide guide={angleHoldGuideJa} />
       <DrillFooter />

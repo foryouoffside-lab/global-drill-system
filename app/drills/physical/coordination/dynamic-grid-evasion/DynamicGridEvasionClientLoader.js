@@ -1,5 +1,5 @@
 'use client';
 
-import dynamic from 'next/dynamic';
+import Client from './DynamicGridEvasionClient';
 
-export default dynamic(() => import('./DynamicGridEvasionClient'));
+export default Client;

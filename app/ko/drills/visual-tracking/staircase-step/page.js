@@ -416,9 +416,7 @@ export default function StaircaseStepKoPage() {
         }}
       />
       <DrillGuide guide={guide} />
-      <div className="max-w-6xl mx-auto px-4 pb-12">
-        <RelatedDrills currentCategory="visual-tracking" currentHref="https://skilldrills.online/ko/drills/visual-tracking/staircase-step" />
-      </div>
+      <RelatedDrills />
       <DrillFooter />
     </>
   );

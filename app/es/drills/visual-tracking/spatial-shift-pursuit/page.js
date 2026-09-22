@@ -309,9 +309,7 @@ export default function SpatialShiftPursuitPage() {
 
       <SpatialShiftPursuitClient copy={{ title: "Seguimiento visual con cambio espacial", subtitle: "Sigue un objetivo mientras cambia el campo visual" }} />
       <DrillGuide guide={guideProps} />
-      <div className="max-w-6xl mx-auto px-4 pb-12">
-        <RelatedDrills currentCategory="visual-tracking" currentHref="https://skilldrills.online/es/drills/visual-tracking/spatial-shift-pursuit" />
-      </div>
+      <RelatedDrills />
       <DrillFooter />
     </>
   );

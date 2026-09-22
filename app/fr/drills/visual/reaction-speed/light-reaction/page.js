@@ -5,8 +5,8 @@ import RelatedDrills from '@/components/drill/RelatedDrills';
 import { pickSources } from '@/lib/drillSources';
 
 export const metadata = {
-  title: "Test de temps de réaction visuelle | Réflexes en ligne | SkillDrills",
-  description: "Test de réflexes visuels gratuit : mesurez votre temps de réaction en millisecondes face à un signal lumineux. Le résultat dépend de l’écran et n’est pas un diagnostic médical.",
+  title: "Test de temps de réaction visuelle | Réflexes en ligne",
+  description: "Test de réflexes visuels gratuit : mesurez votre temps de réaction en millisecondes face à un signal lumineux. Dépend de l’écran, pas un diagnostic médical.",
   keywords: [
     "test de temps de réaction",
     "temps de réaction visuelle",
@@ -22,7 +22,7 @@ export const metadata = {
     "entraînement de la vitesse de réaction"
   ],
   openGraph: {
-    title: "Test de temps de réaction visuelle | Réflexes en ligne | SkillDrills",
+    title: "Test de temps de réaction visuelle | Réflexes en ligne",
     description: "Mesurez en millisecondes l’intervalle entre un signal lumineux et votre clic, avec plusieurs essais pour suivre votre régularité.",
     type: 'article',
     url: 'https://skilldrills.online/fr/drills/visual/reaction-speed/light-reaction',
@@ -31,7 +31,7 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: "Test de temps de réaction visuelle | Réflexes en ligne | SkillDrills",
+    title: "Test de temps de réaction visuelle | Réflexes en ligne",
     description: "Entraînez vos réflexes visuels avec un signal lumineux imprévisible et comparez vos temps dans le navigateur.",
   },
   robots: { index: true, follow: true },
@@ -303,9 +303,7 @@ export default function StrobeLatencyPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(videoGameSchema) }} />
       <StrobeLatencyClient copy={{ title: "Test de réflexes (réaction visuelle)", startCardTitle: "Test de réflexes", startCardSubtitle: "Réagissez au signal lumineux en ms" }} />
       <DrillGuide guide={lightReactionGuide} />
-      <div className="max-w-6xl mx-auto px-4 pb-12">
-        <RelatedDrills currentCategory="visual" currentHref="https://skilldrills.online/fr/drills/visual/reaction-speed/light-reaction" />
-      </div>
+      <RelatedDrills />
     </>
   );
 }

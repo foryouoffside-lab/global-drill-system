@@ -331,9 +331,7 @@ export default function LocalizedPursuitTrackerJaPage() {
 
       <AutoPursuitClient copy={{ title: "スムースパシュート", subtitle: "視線追従トレーニング" }} />
       <DrillGuide guide={guideData} />
-      <div className="max-w-6xl mx-auto px-4 pb-12">
-        <RelatedDrills currentCategory="visual" currentHref="https://skilldrills.online/ja/drills/visual/tracking-accuracy/pursuit-tracker" />
-      </div>
+      <RelatedDrills />
     </>
   );
 }

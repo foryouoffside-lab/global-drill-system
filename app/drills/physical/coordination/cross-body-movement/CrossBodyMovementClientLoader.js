@@ -1,5 +1,5 @@
 'use client';
 
-import dynamic from 'next/dynamic';
+import Client from './CrossBodyMovementClient';
 
-export default dynamic(() => import('./CrossBodyMovementClient'));
+export default Client;

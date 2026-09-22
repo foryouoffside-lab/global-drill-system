@@ -356,13 +356,7 @@ export default function MicroCorrectionDePage() {
       <MicroCorrectionClient copy={copyDe} />
 
       <DrillGuide guide={microCorrectionGuideDe} />
-      <div className="max-w-4xl mx-auto px-4 pb-12">
-        <RelatedDrills
-          currentCategory="fps"
-          currentHref="/de/drills/fps/micro-correction-precision"
-          locale="de"
-        />
-      </div>
+      <RelatedDrills />
       <DrillFooter />
     </>
   );

@@ -144,7 +144,7 @@ export default function NBackClient({ copy = null }) {
 
     const e = engine.current;
     const totalTries = e.perfectHits + e.missedClicks;
-    const finalAccuracy = totalTries > 0 ? Math.round((e.perfectHits / totalTries) * 100) : 100;
+    const finalAccuracy = totalTries > 0 ? Math.round((e.perfectHits / totalTries) * 100) : 0;
 
     const grade = getFpsScoreGrade(e.score, ELITE_SCORE);
 
@@ -152,7 +152,7 @@ export default function NBackClient({ copy = null }) {
       accuracy: finalAccuracy,
       perfectHits: e.perfectHits,
       missedClicks: e.missedClicks,
-      finalLevel: e.level,
+      finalLevel: Math.floor(e.level),
       grade,
     });
 
@@ -164,7 +164,7 @@ export default function NBackClient({ copy = null }) {
 
     const updatedData = {
       bestScore: Math.max(prevSaved.bestScore, e.score),
-      bestLevel: Math.max(prevSaved.bestLevel, e.level),
+      bestLevel: Math.max(prevSaved.bestLevel, Math.floor(e.level)),
       totalSessions: (prevSaved.totalSessions || 0) + 1,
     };
     saveData(updatedData);
@@ -370,6 +370,7 @@ export default function NBackClient({ copy = null }) {
   }, [clearGameTimeouts, endGame, startNextLetter]);
 
   const shareScore = useCallback(async () => {
+    setIsFullscreen(false);
     const url = 'https://skilldrills.online/drills/memory/working-memory/n-back';
     try {
       const canvas = generateShareCard({

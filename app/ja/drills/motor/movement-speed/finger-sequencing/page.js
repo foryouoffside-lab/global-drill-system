@@ -362,9 +362,7 @@ export default function JapaneseFingerSequencingPage() {
       />
       <FingerSequencingClient copy={jaCopy} />
       <DrillGuide {...guideProps} />
-      <div className="max-w-6xl mx-auto px-4 pb-12">
-        <RelatedDrills currentCategory="motor" currentHref="/ja/drills/motor/movement-speed/finger-sequencing" />
-      </div>
+      <RelatedDrills />
       <DrillFooter />
     </>
   );

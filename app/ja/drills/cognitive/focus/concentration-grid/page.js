@@ -291,11 +291,11 @@ const concentrationGridGuideJa = {
   sources: pickSources('lu2022', 'treisman1980', 'rayner1998', 'rayner2016', 'wolfe2007', 'woods2015'),
   related: [
     { href: "/ja/drills/cognitive/focus/distraction-fighter", label: "ストループテスト (Stroop Test)" },
-    { href: "/drills/cognitive/attention/concentration-stamina", label: "持続的注意集中力テスト" },
-    { href: "/drills/cognitive/attention/divided-attention", label: "分割的注意テスト" },
-    { href: "/drills/cognitive/processing-speed/rsvp-reader", label: "速読スピードテスト" },
-    { href: "/drills/cognitive/processing-speed/symbol-matching", label: "符号数字変換テスト" },
-    { href: "/drills/cognitive/processing-speed/reaction-time", label: "神経反応速度テスト" }
+    { href: "/ja/drills/cognitive/attention/concentration-stamina", label: "持続的注意集中力テスト" },
+    { href: "/ja/drills/cognitive/attention/divided-attention", label: "分割的注意テスト" },
+    { href: "/ja/drills/cognitive/processing-speed/rsvp-reader", label: "速読スピードテスト" },
+    { href: "/ja/drills/cognitive/processing-speed/symbol-matching", label: "符号数字変換テスト" },
+    { href: "/ja/drills/cognitive/processing-speed/reaction-time", label: "神経反応速度テスト" }
   ]
 };
 
@@ -366,9 +366,7 @@ export default function ConcentrationGridPageJa() {
 
       <ConcentrationGridClient copy={copyJa} />
       <DrillGuide guide={concentrationGridGuideJa} />
-      <div className="max-w-6xl w-full mx-auto px-4 pb-12">
-        <RelatedDrills currentCategory="cognitive" currentHref="/drills/cognitive/focus/concentration-grid" locale="ja" />
-      </div>
+      <RelatedDrills />
       <DrillFooter />
     </>
   );

@@ -1,5 +1,5 @@
 'use client';
 
-import dynamic from 'next/dynamic';
+import Client from './QuickDodgeClient';
 
-export default dynamic(() => import('./QuickDodgeClient'));
+export default Client;

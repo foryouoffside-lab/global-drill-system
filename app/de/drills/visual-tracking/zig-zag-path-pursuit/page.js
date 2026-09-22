@@ -413,9 +413,7 @@ export default function LocalizedPage() {
         description: "Verfolge ein Ziel auf einer Zickzackbahn und prüfe Blickverluste und Fehler an den Knickpunkten."
       }} />
       <DrillGuide guide={guide} />
-      <div className="max-w-6xl mx-auto px-4 pb-12">
-        <RelatedDrills currentCategory="visual-tracking" currentHref="https://skilldrills.online/de/drills/visual-tracking/zig-zag-path-pursuit" />
-      </div>
+      <RelatedDrills />
     </>
   );
 }

@@ -33,8 +33,8 @@ const POINTS_PER_GO_HIT = 150;
 const POINTS_PER_NOGO_HOLD = 100;
 const POINTS_PER_LEVEL = 6300; // 900 -> 6300 (7x)
 const ELITE_SCORE = 16000; // 1000 -> 16000 (scaled for unbounded continuous runs)
-const TIME_PER_HIT = 0.6; // +0.6s per valid hit / correct hold
-const TIME_PENALTY = 0.8; // -0.8s on error / commission / timeout (opt-in gated)
+const TIME_PER_HIT = 2; // +2s per valid hit / correct hold, capped at 60s
+const TIME_PENALTY = 1; // -1s on error / commission / timeout (opt-in gated)
 const STORAGE_KEY = 'skilldrills_visual_go_nogo_v5';
 
 // Clean 2D Target Renderer matching deploy style (104px diameter / 52px radius)
@@ -217,7 +217,7 @@ export default function ChromaSyncClient({ copy } = {}) {
     if (typeof window !== 'undefined') {
       setSoundEnabled(drillAudio.isEnabled());
       setFlashEnabled(drillFlash.isEnabled());
-      setPenaltyEnabled(drillPenalty.isEnabled());
+      setPenaltyEnabled(drillPenalty.isEnabled(TIME_PER_HIT === 2));
       const saved = getSavedData();
       setBestScore(saved.bestScore || 0);
       setBestCombo(saved.bestCombo || 0);
@@ -382,7 +382,7 @@ export default function ChromaSyncClient({ copy } = {}) {
           e.score += Math.round(POINTS_PER_NOGO_HOLD * getComboMultiplier(e.combo) * levelMult);
 
           // Time bonus on successful hold
-          e.timeLeft += TIME_PER_HIT;
+          e.timeLeft = Math.min(60, e.timeLeft + TIME_PER_HIT);
 
           // Continuous level progression
           const nextLevel = (e.score / POINTS_PER_LEVEL) + 1;
@@ -396,7 +396,7 @@ export default function ChromaSyncClient({ copy } = {}) {
         } else if (currentTypeRef.current === 'GO' && !hasRespondedRef.current && drillTimeout.isEnabled()) {
           // Missed GO signal (timeout / omission error)
           e.missedClicks++;
-          if (drillPenalty.isEnabled()) e.timeLeft -= TIME_PENALTY;
+          if (drillPenalty.isEnabled(TIME_PER_HIT === 2)) e.timeLeft -= TIME_PENALTY;
           e.combo = 0;
           setUiCombo(0);
           drillAudio?.playPenalty?.();
@@ -436,7 +436,7 @@ export default function ChromaSyncClient({ copy } = {}) {
       hasRespondedRef.current = true;
 
       e.missedClicks++;
-      if (drillPenalty.isEnabled()) e.timeLeft -= TIME_PENALTY;
+      if (drillPenalty.isEnabled(TIME_PER_HIT === 2)) e.timeLeft -= TIME_PENALTY;
       e.combo = 0;
       setUiCombo(0);
 
@@ -472,7 +472,7 @@ export default function ChromaSyncClient({ copy } = {}) {
       e.score += Math.round(POINTS_PER_GO_HIT * getComboMultiplier(e.combo) * levelMult);
 
       // Time bonus on clean hit
-      e.timeLeft += TIME_PER_HIT;
+      e.timeLeft = Math.min(60, e.timeLeft + TIME_PER_HIT);
 
       // Continuous level progression
       const nextLevel = (e.score / POINTS_PER_LEVEL) + 1;
@@ -490,7 +490,7 @@ export default function ChromaSyncClient({ copy } = {}) {
     } else if (type === 'NO_GO' && targetVisible) {
       // WRONG CLICK ON RED NO-GO SIGNAL — breaks the combo.
       e.missedClicks++;
-      if (drillPenalty.isEnabled()) e.timeLeft -= TIME_PENALTY;
+      if (drillPenalty.isEnabled(TIME_PER_HIT === 2)) e.timeLeft -= TIME_PENALTY;
       e.combo = 0;
       setUiCombo(0);
 
@@ -744,6 +744,7 @@ export default function ChromaSyncClient({ copy } = {}) {
                 { label: 'Max Combo', value: analytics.maxCombo, suffix: 'x' },
               ]}
               onPlayAgain={enterDrill}
+              onBeforeShare={() => setIsFullscreen(false)}
               onShare={shareScore}
               onExit={handleExitDrill}
             />
@@ -761,8 +762,8 @@ export default function ChromaSyncClient({ copy } = {}) {
               onToggle={() => setOpenAccordion(openAccordion === 'rules' ? null : 'rules')}
             >
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <DrillRuleItem num="1" text="Green GO Signal" highlight="+150 PTS" result="× Combo × Level bonus (+0.6s clock per hit)" />
-                <DrillRuleItem num="2" text="Red NO-GO Signal" highlight="+100 PTS" result="Restrain response (+0.6s clock)" />
+                <DrillRuleItem num="1" text="Green GO Signal" highlight="+150 PTS" result="× Combo × Level bonus (+2s per hit, max 60s)" />
+                <DrillRuleItem num="2" text="Red NO-GO Signal" highlight="+100 PTS" result="Restrain response (+2s, max 60s)" />
                 <DrillRuleItem 
                   num="3" 
                   text="Wrong Click (False Alarm)" 

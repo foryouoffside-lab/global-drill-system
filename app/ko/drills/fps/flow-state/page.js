@@ -342,9 +342,7 @@ export default function FlowStateKoPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(howToSchema) }}
       />
       <FlowStateClient copy={copy} />
-      <div className="max-w-6xl mx-auto px-4 w-full">
-    <RelatedDrills currentCategory="fps" currentHref="/ko/drills/fps/flow-state" locale="ko" />
-      </div>
+      <RelatedDrills />
       <DrillGuide guide={koGuide} />
       <DrillFooter />
     </>

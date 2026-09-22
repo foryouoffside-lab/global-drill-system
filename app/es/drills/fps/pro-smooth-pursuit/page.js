@@ -362,13 +362,7 @@ export default function ProSmoothPursuitPage() {
       <ProSmoothPursuitClient copy={copyEs} />
 
       <DrillGuide guide={smoothPursuitGuide} />
-      <div className="max-w-4xl mx-auto px-4 pb-12">
-        <RelatedDrills
-          currentCategory="fps"
-          currentHref="/drills/fps/pro-smooth-pursuit"
-          locale="es"
-        />
-      </div>
+      <RelatedDrills />
       <DrillFooter />
     </>
   );

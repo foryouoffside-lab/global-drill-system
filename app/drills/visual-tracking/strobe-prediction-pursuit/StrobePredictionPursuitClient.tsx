@@ -9,9 +9,8 @@ import DrillCountdown from '../../../../components/drill/DrillCountdown';
 import DrillAccordion from '../../../../components/drill/DrillAccordion';
 import ZigZagPathPursuitStartCard from '../../../../components/drill/ZigZagPathPursuitStartCard';
 import { drillAudio } from '../../../../lib/drillAudio';
-import { drawTacticalTarget } from '../../../../lib/canvasFx';
-import { generateSessionCard, shareScoreCard } from '../../../../components/ShareScoreCard';
-import { getPlayerName } from '../../../../lib/leaderboard';
+import { createBackdropCache, drawTacticalTarget } from '../../../../lib/canvasFx';
+import { isFrameSkippable } from '../../../../lib/performance';
 import useUnexpectedExitGuard from '../../../../lib/useUnexpectedExitGuard';
 import useImmersiveMode from '@/lib/useImmersiveMode';
 
@@ -137,32 +136,18 @@ export default function StrobePredictionPursuitClient({ copy }: { copy?: { title
   }, []);
 
   const sharePage = useCallback(async () => {
+    setIsFullscreen(false);
     const url = 'https://skilldrills.online/drills/visual-tracking/strobe-prediction-pursuit';
-    try {
-      const canvas = generateSessionCard({
-        drillName: 'Strobe Prediction Pursuit',
-        badgeText: 'Smooth Pursuit Calibrated',
-        stats: [
-          { label: 'Session Time', value: `${selectedDuration}s` },
-          { label: 'Base Speed', value: `${speedMultiplier.toFixed(1)}x` },
-          { label: 'Math Line', value: mathInvisible ? 'Invisible' : 'Visible' },
-          { label: 'Speed Acceleration', value: randomSpeed ? 'Enabled' : 'Fixed' },
-        ],
-        playerName: getPlayerName(),
-      });
-      await shareScoreCard(url, canvas);
-    } catch (e) {
-      const text = 'Strobe Prediction Pursuit — Free Visual Tracking & Gaze Calibration Drill!';
-      if (typeof navigator !== 'undefined' && navigator.share) {
-        try {
-          await navigator.share({ title: 'Strobe Prediction Pursuit Drill', text, url });
-        } catch (e) {}
-      } else if (typeof navigator !== 'undefined' && navigator.clipboard) {
-        navigator.clipboard.writeText(url);
-        alert('Drill link copied to clipboard!');
-      }
+    const text = 'Occlusion Prediction Pursuit - Free Visual Tracking Practice';
+    if (typeof navigator !== 'undefined' && navigator.share) {
+      try {
+        await navigator.share({ title: 'Occlusion Prediction Pursuit Drill', text, url });
+      } catch (e) {}
+    } else if (typeof navigator !== 'undefined' && navigator.clipboard) {
+      await navigator.clipboard.writeText(url);
+      alert('Drill link copied to clipboard!');
     }
-  }, [selectedDuration, speedMultiplier, mathInvisible, randomSpeed]);
+  }, []);
 
   const handleExitDrill = useCallback(async () => {
     markIntentionalExit();
@@ -255,20 +240,25 @@ export default function StrobePredictionPursuitClient({ copy }: { copy?: { title
     countdownTimeoutsRef.current = [t1, t2, t3, t4];
   }, [selectedDuration, endGame]);
 
-  // Canvas Render Loop (Strobe Prediction Physics)
+  // Canvas Render Loop (controlled occlusion prediction task)
   useEffect(() => {
     if (gameState !== 'playing') return;
     const cvs = canvasRef.current;
     const container = containerRef.current;
     if (!cvs || !container) return;
 
-    const ctx = cvs.getContext('2d');
+    const ctx = cvs.getContext('2d', { alpha: false });
     if (!ctx) return;
+
+    let canvasWidth = 0;
+    let canvasHeight = 0;
 
     const updateSize = () => {
       if (!container) return;
       const rect = container.getBoundingClientRect();
-      const dpr = Math.min(window.devicePixelRatio || 1, 2);
+      canvasWidth = rect.width;
+      canvasHeight = rect.height;
+      const dpr = Math.min(window.devicePixelRatio || 1, 1.5);
       cvs.width = rect.width * dpr;
       cvs.height = rect.height * dpr;
       ctx.scale(dpr, dpr);
@@ -284,15 +274,19 @@ export default function StrobePredictionPursuitClient({ copy }: { copy?: { title
     ro.observe(container);
 
     let lastTime = performance.now();
+    let backdropCache: { key: string; canvas: HTMLCanvasElement | null } = { key: '', canvas: null };
 
     const draw = (ts: number) => {
+      if (isFrameSkippable(ts, lastTime)) {
+        animationRef.current = requestAnimationFrame(draw);
+        return;
+      }
       const deltaTimeMs = ts - lastTime;
       lastTime = ts;
       const dt = Math.min(deltaTimeMs / 1000, 0.1);
 
-      const rect = container.getBoundingClientRect();
-      const W = rect.width;
-      const H = rect.height;
+      const W = canvasWidth;
+      const H = canvasHeight;
 
       const { speedMultiplier, targetSize, targetColor, mathInvisible, randomSpeed, trailEffect, glowEffect, scanlinesActive, dayMode: isDay } = settingsRef.current;
 
@@ -328,21 +322,27 @@ export default function StrobePredictionPursuitClient({ copy }: { copy?: { title
       }
 
       // Clear Canvas Background (Pure White in Day Mode `#ffffff`, Deep Black in Night Mode `#050508`)
-      ctx.fillStyle = isDay ? '#ffffff' : '#050508';
-      ctx.fillRect(0, 0, W, H);
-
-      // Render subtle background grid
-      ctx.strokeStyle = isDay ? 'rgba(0, 0, 0, 0.05)' : 'rgba(255, 255, 255, 0.02)';
-      ctx.lineWidth = 1;
-      const gridSize = 40;
-      for (let x = 0; x < W; x += gridSize) {
-        ctx.beginPath(); ctx.moveTo(x, 0); ctx.lineTo(x, H); ctx.stroke();
+      const backdropKey = `${W}x${H}:${isDay ? 'day' : 'night'}`;
+      if (backdropCache.key !== backdropKey) {
+        backdropCache = {
+          key: backdropKey,
+          canvas: createBackdropCache(W, H, (backdropCtx, width, height) => {
+            backdropCtx.fillStyle = isDay ? '#ffffff' : '#050508';
+            backdropCtx.fillRect(0, 0, width, height);
+            backdropCtx.strokeStyle = isDay ? 'rgba(0, 0, 0, 0.05)' : 'rgba(255, 255, 255, 0.02)';
+            backdropCtx.lineWidth = 1;
+            for (let x = 0; x < width; x += 40) {
+              backdropCtx.beginPath(); backdropCtx.moveTo(x, 0); backdropCtx.lineTo(x, height); backdropCtx.stroke();
+            }
+            for (let y = 0; y < height; y += 40) {
+              backdropCtx.beginPath(); backdropCtx.moveTo(0, y); backdropCtx.lineTo(width, y); backdropCtx.stroke();
+            }
+          })
+        };
       }
-      for (let y = 0; y < H; y += gridSize) {
-        ctx.beginPath(); ctx.moveTo(0, y); ctx.lineTo(W, y); ctx.stroke();
-      }
+      if (backdropCache.canvas) ctx.drawImage(backdropCache.canvas, 0, 0, W, H);
 
-      // Strobe Occlusion Timing (Visible for 60 ticks, Dark for 30 ticks)
+      // Controlled occlusion timing (visible for 60 ticks, covered for 30 ticks)
       trackingState.current.strobeTimer += effectiveSpeed;
       if (trackingState.current.strobeTimer > 90) {
         trackingState.current.strobeTimer = 0;
@@ -350,7 +350,7 @@ export default function StrobePredictionPursuitClient({ copy }: { copy?: { title
 
       const isVisiblePhase = trackingState.current.strobeTimer < 60;
 
-      // Draw Target or Ghost Outline based on Strobe Phase
+      // Draw the target or a low-salience position marker during occlusion
       if (isVisiblePhase) {
         // Gaze Trail Effect during visible phase
         if (trailEffect) {
@@ -418,9 +418,9 @@ export default function StrobePredictionPursuitClient({ copy }: { copy?: { title
         {!isFullscreen && (
           <div>
             <h1 className="text-2xl sm:text-3xl font-black tracking-tight text-white">
-              <span data-seo-kw="1">{copy?.title || "Strobe Prediction Pursuit"}</span>
+              <span data-seo-kw="1">{copy?.title || "Occlusion Prediction Pursuit"}</span>
               <span className="block text-sm font-semibold text-slate-400 mt-1 normal-case tracking-normal">
-                {copy?.subtitle || "Strobe Vision Training Drill"}
+                {copy?.subtitle || "Controlled visual prediction practice"}
               </span>
             </h1>
           </div>
@@ -584,7 +584,7 @@ export default function StrobePredictionPursuitClient({ copy }: { copy?: { title
                     type="button"
                     onClick={sharePage} 
                     className="w-11 flex-shrink-0 rounded-[13px] bg-white/[0.04] border border-white/10 flex items-center justify-center text-slate-400 hover:text-white cursor-pointer active:scale-90 transition-transform" 
-                    title="Share Score"
+                    title="Share Drill Link"
                   >
                     <Share2 className="w-4 h-4" />
                   </button>
@@ -604,8 +604,8 @@ export default function StrobePredictionPursuitClient({ copy }: { copy?: { title
 
         </div>
 
-        {!isFullscreen && <DrillAccordion id="about" title="About Strobe Prediction Pursuit" isOpen={openAccordion === 'about'} onToggle={() => setOpenAccordion(openAccordion === 'about' ? null : 'about')}>
-          <p className="text-sm text-slate-300 leading-relaxed">{copy?.description || "Strobe prediction pursuit conditions visual extrapolation and predictive gaze tracking by intermittently occluding a moving target in cyclic dark phases. By compelling the brain to maintain ocular pursuit across sensory interruptions, this drill strengthens forward cerebellar kinetic models and improves anticipatory timing (Appelbaum et al., 2011; Bennett et al., 2007). Here the target is hidden for one third of every strobe cycle (60 frames visible, 30 dark). When a tracked target is briefly occluded the eyes do not stop: velocity decays during the blank and re-accelerates before it reappears (Bennett et al., 2007)."}</p>
+        {!isFullscreen && <DrillAccordion id="about" title="About Occlusion Prediction Pursuit" isOpen={openAccordion === 'about'} onToggle={() => setOpenAccordion(openAccordion === 'about' ? null : 'about')}>
+          <p className="text-sm text-slate-300 leading-relaxed">{copy?.description || "Occlusion Prediction Pursuit is a browser practice task: follow a moving point, estimate its continuing direction during a brief covered interval, then compare the reappearance with your estimate. It does not track eye position, diagnose a visual disorder, or replace clinician-directed care. Keep the task comfortable and stop for pain, dizziness, nausea, persistent blur, double vision, or unusual visual symptoms."}</p>
         </DrillAccordion>}
 
         {/* SITE FOOTER */}
@@ -615,4 +615,3 @@ export default function StrobePredictionPursuitClient({ copy }: { copy?: { title
     </div>
   );
 }
-

@@ -330,9 +330,7 @@ export default function GermanSpatialShiftPursuitPage() {
 
       <DrillGuide guide={guideProps} />
 
-      <div className="max-w-6xl mx-auto px-4 pb-12">
-        <RelatedDrills currentCategory="visual-tracking" currentHref="https://skilldrills.online/de/drills/visual-tracking/spatial-shift-pursuit" />
-      </div>
+      <RelatedDrills />
 
       <DrillFooter />
     </>

@@ -6,13 +6,13 @@ import DrillFooter from '@/components/drill/DrillFooter';
 import { pickSources } from '@/lib/drillSources';
 
 export const metadata = {
-  title: "Zahlen-Symbol-Test | SDMT-Training zur Verarbeitungsgeschwindigkeit | SkillDrills",
+  title: "Zahlen-Symbol-Test | SDMT-Test zur Verarbeitungsgeschwindigkeit",
   description: "Kostenloser Zahlen-Symbol-Test im Browser: Übe Symbol-Ziffern-Zuordnung und visuelle Suche. SDMT-inspiriertes Training, kein klinischer Test.",
   keywords: ["Symbol Digit Modalities Test", "Informationsverarbeitungsgeschwindigkeit Test", "Symbol Ziffern Zuordnung", "SDMT Test Online", "DSST Test Kostenlos", "Visuelles Scanning Test", "Kognitives Tempo Messen", "Assoziatives Gedachtnis Test", "Gehirntraining Symbole", "Verarbeitungsgeschwindigkeit Gehirn",
     "sdmt online kostenlos",
     "informationsverarbeitung test"],
   openGraph: {
-    title: "Zahlen-Symbol-Test | SDMT-Training zur Verarbeitungsgeschwindigkeit | SkillDrills",
+    title: "Zahlen-Symbol-Test | SDMT-Test zur Verarbeitungsgeschwindigkeit",
     description: "Kostenloser Zahlen-Symbol-Test im Browser: Übe Symbol-Ziffern-Zuordnung und visuelle Suche. SDMT-inspiriertes Training, kein klinischer Test.",
     type: 'article',
     url: 'https://skilldrills.online/de/drills/cognitive/processing-speed/symbol-matching',
@@ -21,7 +21,7 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: "Zahlen-Symbol-Test | SDMT-Training zur Verarbeitungsgeschwindigkeit | SkillDrills",
+    title: "Zahlen-Symbol-Test | SDMT-Test zur Verarbeitungsgeschwindigkeit",
     description: "Kostenloser Zahlen-Symbol-Test im Browser: Übe Symbol-Ziffern-Zuordnung und visuelle Suche. SDMT-inspiriertes Training, kein klinischer Test.",
   },
   robots: { index: true, follow: true },
@@ -345,9 +345,7 @@ export default function LocalizedCognitivePage() {
         }}
       />
       <DrillGuide {...guideProps} />
-      <div className="max-w-6xl mx-auto px-4 pb-12">
-        <RelatedDrills currentCategory="cognitive" currentHref="https://skilldrills.online/de/drills/cognitive/processing-speed/symbol-matching" />
-      </div>
+      <RelatedDrills />
       <DrillFooter />
     </>
   );

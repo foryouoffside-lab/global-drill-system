@@ -1,5 +1,5 @@
 'use client';
 
-import dynamic from 'next/dynamic';
+import Client from './GridMemorizationClient';
 
-export default dynamic(() => import('./GridMemorizationClient'));
+export default Client;

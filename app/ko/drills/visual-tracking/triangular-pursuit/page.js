@@ -413,9 +413,7 @@ export default function LocalizedPage() {
         description: "삼각 궤적 표적을 따라가며 모서리 재포착과 시선 오차를 확인합니다."
       }} />
       <DrillGuide guide={guide} />
-      <div className="max-w-6xl mx-auto px-4 pb-12">
-        <RelatedDrills currentCategory="visual-tracking" currentHref="https://skilldrills.online/ko/drills/visual-tracking/triangular-pursuit" />
-      </div>
+      <RelatedDrills />
     </>
   );
 }

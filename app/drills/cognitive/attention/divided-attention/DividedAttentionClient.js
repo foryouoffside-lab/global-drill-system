@@ -47,8 +47,8 @@ const DRILL_DURATION = 45; // starting clock only; a run grows past this
 const POINTS_PER_HIT = 100;
 const POINTS_PER_LEVEL = 1750; // 250 -> 1750 (7x)
 const ELITE_SCORE = 24000; // 10000 -> 24000 (~2.4x)
-const TIME_PER_HIT = 0.6; // +0.6s on clean hit
-const TIME_PENALTY = 0.8; // -0.8s on wrong tap or miss (opt-in gated)
+const TIME_PER_HIT = 2; // +2s on clean hit, capped at 60s
+const TIME_PENALTY = 1; // -1s on wrong tap or miss (opt-in gated)
 const STORAGE_KEY = 'skilldrills_divided_attention_v8';
 
 const getSavedData = () => {
@@ -82,7 +82,7 @@ const getLevelConfig = (level, combo = 0) => {
 
 const RULES_ITEMS = [
   { num: "1", text: "Dual Streams", highlight: "Visual + Number", result: "Track Both Channels" },
-  { num: "2", text: "Target Hit", highlight: "+100 PTS", result: "Click/Tap Target (+0.6s)" },
+  { num: "2", text: "Target Hit", highlight: "+100 PTS", result: "Click/Tap Target (+2s, max 60s)" },
   { num: "3", text: "Even Match", highlight: "+100 PTS", result: "MATCH on Even Digits" },
   { num: "4", text: "Miss / Mistake", highlight: "Resets Combo", result: "−0.8s on Penalty" }
 ];
@@ -167,7 +167,7 @@ export default function DividedAttentionClient({ copy } = {}) {
     if (typeof window !== 'undefined') {
       setSoundEnabled(drillAudio.isEnabled());
       setFlashEnabled(drillFlash.isEnabled());
-      setPenaltyEnabled(drillPenalty.isEnabled());
+      setPenaltyEnabled(drillPenalty.isEnabled(TIME_PER_HIT === 2));
       const saved = getSavedData();
       setBestScore(saved.bestScore || 0);
       setBestCombo(saved.bestCombo || 0);
@@ -257,7 +257,7 @@ export default function DividedAttentionClient({ copy } = {}) {
 
     const totalActs = e.visualAttempts + e.numberAttempts;
     const totalHits = e.visualHits + e.numberHits;
-    const acc = totalActs > 0 ? Math.round((totalHits / totalActs) * 100) : 100;
+    const acc = totalActs > 0 ? Math.round((totalHits / totalActs) * 100) : 0;
 
     const rating = getFpsScoreGrade(e.score, ELITE_SCORE);
     const gradeObj = {
@@ -343,7 +343,7 @@ export default function DividedAttentionClient({ copy } = {}) {
 
   const registerMiss = useCallback(() => {
     const e = engine.current;
-    if (drillPenalty.isEnabled()) e.timeLeft -= TIME_PENALTY;
+    if (drillPenalty.isEnabled(TIME_PER_HIT === 2)) e.timeLeft -= TIME_PENALTY;
     e.combo = 0;
     setUiCombo(0);
     triggerFlash();
@@ -435,7 +435,7 @@ export default function DividedAttentionClient({ copy } = {}) {
     eng.score += Math.round(POINTS_PER_HIT * getComboMultiplier(eng.combo) * levelMult);
 
     // Time bonus on clean hit
-    eng.timeLeft += TIME_PER_HIT;
+    eng.timeLeft = Math.min(60, eng.timeLeft + TIME_PER_HIT);
 
     // Continuous level progression
     const rawLevel = (eng.score / POINTS_PER_LEVEL) + 1;
@@ -480,7 +480,7 @@ export default function DividedAttentionClient({ copy } = {}) {
       eng.score += Math.round(POINTS_PER_HIT * getComboMultiplier(eng.combo) * levelMult);
 
       // Time bonus on clean hit
-      eng.timeLeft += TIME_PER_HIT;
+      eng.timeLeft = Math.min(60, eng.timeLeft + TIME_PER_HIT);
 
       // Continuous level progression
       const rawLevel = (eng.score / POINTS_PER_LEVEL) + 1;
@@ -809,6 +809,7 @@ export default function DividedAttentionClient({ copy } = {}) {
                 { label: copy?.peakLevel || 'Peak Level', value: `Lv. ${analytics.finalLevel}` },
               ]}
               onPlayAgain={enterDrill}
+              onBeforeShare={() => setIsFullscreen(false)}
               onShare={shareResult}
               onExit={handleExitDrill}
             />

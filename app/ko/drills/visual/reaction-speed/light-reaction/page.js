@@ -303,9 +303,7 @@ export default function StrobeLatencyPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(videoGameSchema) }} />
       <StrobeLatencyClient copy={{ title: "반응속도 테스트 (시각 반응)", startCardTitle: "반응속도 테스트", startCardSubtitle: "빛 신호에 반응하는 속도 측정" }} />
       <DrillGuide guide={lightReactionGuide} />
-      <div className="max-w-6xl mx-auto px-4 pb-12">
-        <RelatedDrills currentCategory="visual" currentHref="https://skilldrills.online/ko/drills/visual/reaction-speed/light-reaction" />
-      </div>
+      <RelatedDrills />
     </>
   );
 }

@@ -343,9 +343,7 @@ export default function ProSmoothPursuitKoPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(howToSchema) }}
       />
       <ProSmoothPursuitClient copy={copy} />
-      <div className="max-w-6xl mx-auto px-4 w-full">
-        <RelatedDrills currentCategory="fps" currentHref="/drills/fps/pro-smooth-pursuit" locale="ko" />
-      </div>
+      <RelatedDrills />
       <DrillGuide guide={koGuide} />
       <DrillFooter />
     </>

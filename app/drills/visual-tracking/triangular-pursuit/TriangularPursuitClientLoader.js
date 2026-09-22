@@ -1,5 +1,5 @@
 'use client';
 
-import dynamic from 'next/dynamic';
+import Client from './TriangularPursuitClient';
 
-export default dynamic(() => import('./TriangularPursuitClient'));
+export default Client;

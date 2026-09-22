@@ -344,9 +344,7 @@ export default function EnhancedPageFr() {
         skillsTitle: "Compétences travaillées", skillsText: "Traitement en double tâche, suivi visuel, décision numérique et partage de l’attention.", flexibilityTitle: "Traitement parallèle", flexibilityText: "Passez d’un flux à l’autre sans laisser la précision d’un canal s’effondrer."
       }} />
       <DrillGuide {...guideProps} />
-      <div className="max-w-6xl mx-auto px-4 pb-12">
-        <RelatedDrills currentCategory="cognitive" currentHref="https://skilldrills.online/fr/drills/cognitive/attention/divided-attention" />
-      </div>
+      <RelatedDrills />
       <DrillFooter />
     </>
   );

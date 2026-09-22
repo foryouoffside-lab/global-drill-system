@@ -1,5 +1,5 @@
 'use client';
 
-import dynamic from 'next/dynamic';
+import Client from './StrobePredictionPursuitClient';
 
-export default dynamic(() => import('./StrobePredictionPursuitClient'));
+export default Client;

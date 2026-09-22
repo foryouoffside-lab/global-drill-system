@@ -46,8 +46,8 @@ const DRILL_DURATION = 45; // starting clock only; a run grows past this
 const POINTS_PER_HIT = 100;
 const POINTS_PER_LEVEL = 1750; // 250 -> 1750 (7x)
 const ELITE_SCORE = 24000; // 7500 -> 24000 (~3.2x)
-const TIME_PER_HIT = 0.6; // +0.6s on clean hit
-const TIME_PENALTY = 0.8; // -0.8s on wrong tap or missed target (opt-in gated)
+const TIME_PER_HIT = 2; // +2s on clean hit, capped at 60s
+const TIME_PENALTY = 1; // -1s on wrong tap or missed target (opt-in gated)
 const STORAGE_KEY = 'skilldrills_multi_tasking_v8';
 
 const SHAPES = ['▲', '●', '■', '★', '◆', '⬣', '❖', '⏣'];
@@ -162,7 +162,7 @@ export default function DualTargetFlowClient({ copy } = {}) {
     if (typeof window !== 'undefined') {
       setSoundEnabled(drillAudio.isEnabled());
       setFlashEnabled(drillFlash.isEnabled());
-      setPenaltyEnabled(drillPenalty.isEnabled());
+      setPenaltyEnabled(drillPenalty.isEnabled(TIME_PER_HIT === 2));
       const checkDevice = () => {
         setIsMobile(window.innerWidth < 768);
         setIsPortrait(window.innerHeight > window.innerWidth);
@@ -276,7 +276,7 @@ export default function DualTargetFlowClient({ copy } = {}) {
 
     const e = engine.current;
     const totalActs = e.successfulHits + e.misses;
-    const acc = totalActs > 0 ? Math.round((e.successfulHits / totalActs) * 100) : 100;
+    const acc = totalActs > 0 ? Math.round((e.successfulHits / totalActs) * 100) : 0;
 
     const rating = getFpsScoreGrade(e.score, ELITE_SCORE);
     const gradeObj = {
@@ -379,7 +379,7 @@ export default function DualTargetFlowClient({ copy } = {}) {
     e.score += Math.round(POINTS_PER_HIT * getComboMultiplier(e.combo) * levelMult);
 
     // Time bonus on clean hit
-    e.timeLeft += TIME_PER_HIT;
+    e.timeLeft = Math.min(60, e.timeLeft + TIME_PER_HIT);
 
     // Continuous level progression
     const rawLevel = (e.score / POINTS_PER_LEVEL) + 1;
@@ -396,7 +396,7 @@ export default function DualTargetFlowClient({ copy } = {}) {
   const applyPenalty = useCallback(() => {
     const e = engine.current;
     e.misses += 1;
-    if (drillPenalty.isEnabled()) e.timeLeft -= TIME_PENALTY;
+    if (drillPenalty.isEnabled(TIME_PER_HIT === 2)) e.timeLeft -= TIME_PENALTY;
     e.combo = 0;
     setUiCombo(0);
     triggerFlash();
@@ -797,6 +797,7 @@ export default function DualTargetFlowClient({ copy } = {}) {
                 { label: copy?.maxCombo || 'Max Combo', value: analytics.maxCombo, suffix: 'x' },
               ]}
               onPlayAgain={enterDrill}
+              onBeforeShare={() => setIsFullscreen(false)}
               onShare={shareResult}
               onExit={handleExitDrill}
             />

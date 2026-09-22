@@ -387,9 +387,7 @@ export default function RecoilControlDePage() {
       <RecoilControlClient copy={copyDe} />
 
       <DrillGuide guide={recoilGuideDe} />
-      <div className="max-w-6xl w-full mx-auto px-4 pb-12">
-        <RelatedDrills currentCategory="fps" currentHref="/drills/fps/recoil-control" locale="de" />
-      </div>
+      <RelatedDrills />
       <DrillFooter />
     </>
   );

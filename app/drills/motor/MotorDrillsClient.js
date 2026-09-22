@@ -66,13 +66,6 @@ const MOTOR_METADATA = {
     skills: ['Key Speed', 'Spatial Layout'],
     icon: Keyboard,
   },
-  'keyboard-tester': {
-    discipline: 'speed',
-    disciplineName: 'Movement Speed',
-    focus: 'Key Switch & NKRO Verification',
-    skills: ['Key Actuation', 'Hardware Audit'],
-    icon: Keyboard,
-  },
   'rapid-tapping': {
     discipline: 'speed',
     disciplineName: 'Movement Speed',
@@ -338,7 +331,6 @@ export default function MotorDrillsClient({ faqs = [] }) {
                 difficulty: drill.difficulty,
                 duration: drill.duration,
                 icon: drill.icon,
-                badge: drillLevels[drill.folderName] ? `Lv. ${drillLevels[drill.folderName]}` : null,
               };
             })}
           />

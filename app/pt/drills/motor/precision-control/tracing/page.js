@@ -356,9 +356,7 @@ export default function PortugueseTracingPage() {
       />
       <FineMotorClient copy={ptCopy} />
       <DrillGuide {...guideProps} />
-      <div className="max-w-6xl w-full mx-auto px-4 pb-12">
-        <RelatedDrills currentCategory="motor" currentHref="/drills/motor/precision-control/tracing" locale="pt" />
-      </div>
+      <RelatedDrills />
       <DrillFooter />
     </>
   );

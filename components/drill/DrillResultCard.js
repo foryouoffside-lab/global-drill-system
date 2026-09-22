@@ -1,8 +1,9 @@
 'use client';
 
 import React, { useState, useRef } from 'react';
-import { RefreshCw, Share2, LogOut, Copy, Check, MessageSquare, Download, X } from 'lucide-react';
+import { Share2, LogOut, Copy, Check, MessageSquare, Download, X } from 'lucide-react';
 import { useTranslation } from '@/lib/i18n/useTranslation';
+import { requestNativeFullscreen } from '@/lib/useImmersiveMode';
 
 const ACCENTS = {
   emerald: { glow: 'rgba(16,185,129,.12)',  btn: 'from-emerald-600 to-teal-600' },
@@ -21,6 +22,7 @@ export default function DrillResultCard({
   stats = [],
   onPlayAgain,
   onShare,
+  onBeforeShare,
   onExit,
 }) {
   const { t } = useTranslation();
@@ -34,11 +36,23 @@ export default function DrillResultCard({
   const tiles = stats.slice(0, 4);
 
   const handleNativeOrModalShare = async () => {
+    // Leave both the browser's native fullscreen and the drill's CSS fullscreen
+    // layout before opening the share sheet. The result card stays visible in
+    // the normal page flow after sharing, matching Strafe Tracking behavior.
+    onBeforeShare?.();
+    if (document.fullscreenElement) {
+      document.exitFullscreen?.().catch(() => {});
+    }
     if (onShare) {
-      onShare();
+      await onShare();
       return;
     }
     setShowShareModal(true);
+  };
+
+  const handlePlayAgain = () => {
+    requestNativeFullscreen();
+    onPlayAgain?.();
   };
 
   const copyCardImage = async () => {
@@ -129,10 +143,10 @@ export default function DrillResultCard({
 
           <div className="flex gap-2">
             <button
-              onClick={onPlayAgain}
+              onClick={handlePlayAgain}
               className={`flex-1 py-3 rounded-[13px] bg-gradient-to-r ${theme.btn} text-white font-bold text-xs uppercase tracking-wide cursor-pointer transition-transform active:scale-[0.98] shadow-md flex items-center justify-center gap-1.5`}
             >
-              <RefreshCw className="w-3.5 h-3.5" /> {t('ui.playAgain', 'Play Again')}
+              {t('ui.playAgain', 'Play Again')}
             </button>
             <button
               onClick={handleNativeOrModalShare}

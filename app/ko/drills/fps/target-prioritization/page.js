@@ -351,13 +351,7 @@ export default function TargetPrioritizationKoPage() {
         }}
       />
       <DrillGuide guide={targetPrioritizationGuide} />
-      <div className="max-w-4xl mx-auto px-4 pb-12">
-        <RelatedDrills
-          currentCategory="fps"
-          currentHref="/ko/drills/fps/target-prioritization"
-          locale="ko"
-        />
-      </div>
+      <RelatedDrills />
       <DrillFooter />
     </>
   );

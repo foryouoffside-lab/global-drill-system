@@ -367,13 +367,7 @@ export default function ConcentrationGridPageKo() {
         }}
       />
       <DrillGuide guide={concentrationGridGuide} />
-      <div className="max-w-4xl mx-auto px-4 pb-12">
-        <RelatedDrills
-          currentCategory="cognitive"
-          currentHref="/drills/cognitive/focus/concentration-grid"
-          locale="ko"
-        />
-      </div>
+      <RelatedDrills />
       <DrillFooter />
     </>
   );

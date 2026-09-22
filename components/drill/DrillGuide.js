@@ -28,9 +28,16 @@ import { useTranslation } from '@/lib/i18n/useTranslation';
  * what an assistant quotes when asked.
  */
 
-function GuidePanel({ id, title, open, onToggle, children, singleLineTitle = true }) {
+// The guide's surface treatment. `framed` is the newer look: the intro prose
+// gets the same card as the panels, so its text starts on the panel text's left
+// edge instead of running full-bleed at the section edge, and every card sits on
+// a background you can actually see. Opt-in per page while it rolls out.
+const CARD = 'border border-white/[0.07] bg-white/[0.012]';
+const CARD_FRAMED = 'border border-white/[0.09] bg-white/[0.03]';
+
+function GuidePanel({ id, title, open, onToggle, children, singleLineTitle = true, framed = true }) {
   return (
-    <div className="mt-2.5 border border-white/[0.07] bg-white/[0.012] rounded-xl overflow-hidden transition-colors duration-200 hover:border-white/[0.11]">
+    <div className={`mt-2.5 ${framed ? CARD_FRAMED : CARD} rounded-xl overflow-hidden transition-colors duration-200 hover:border-white/[0.11]`}>
       <button
         onClick={onToggle}
         aria-expanded={open}
@@ -215,7 +222,7 @@ function coerceGuide(guide) {
   };
 }
 
-export default function DrillGuide({ guide = null, singleLineTitles = true, ...flat }) {
+export default function DrillGuide({ guide = null, singleLineTitles = true, framed = true, ...flat }) {
   const { t } = useTranslation();
   const [open, setOpen] = useState(null);
   // Accept both the `guide={...}` object form and the flat prop form.
@@ -234,6 +241,9 @@ export default function DrillGuide({ guide = null, singleLineTitles = true, ...f
   } = guide;
   // `overview: { title, paragraphs }` is an accepted alias for heading/intro.
   const heading = guide.heading ?? overview?.title ?? (typeof guide.intro === 'object' && !Array.isArray(guide.intro) ? guide.intro?.title : undefined);
+  const isVisualTrackingGuide = Boolean(
+    benchmarks && /pursuit|tracking|gaze|ocular|visual/i.test(String(heading || ''))
+  );
   const rawIntro = guide.intro ?? overview?.paragraphs;
   const intro = Array.isArray(rawIntro)
     ? rawIntro
@@ -251,7 +261,7 @@ export default function DrillGuide({ guide = null, singleLineTitles = true, ...f
       {/* Intro — always visible. The definition belongs above the fold of this
           section, not behind a click. */}
       {(heading || eyebrow || intro?.length) && (
-        <div className="pt-2 pb-1">
+        <div className={framed ? `mt-2.5 ${CARD_FRAMED} rounded-xl px-5 py-5` : 'pt-2 pb-1'}>
           {eyebrow && (
             <p className="text-[9.5px] uppercase tracking-[0.12em] text-slate-500 mb-1.5">{eyebrow}</p>
           )}
@@ -261,6 +271,11 @@ export default function DrillGuide({ guide = null, singleLineTitles = true, ...f
           {intro?.map((p, i) => (
             <p key={i} className="text-[13px] leading-relaxed text-slate-400 mb-2.5 last:mb-0">{p}</p>
           ))}
+          {isVisualTrackingGuide && (
+            <p className="mt-3 rounded-lg border border-cyan-400/15 bg-cyan-400/[0.04] px-3.5 py-3 text-[12px] leading-relaxed text-slate-400">
+              Scope note: this is browser-based visual-motion practice. It does not record eye position, diagnose an eye or neurological condition, or replace clinician-directed vision therapy. Stop for pain, dizziness, nausea, persistent blur, double vision, headache, or unusual visual symptoms.
+            </p>
+          )}
         </div>
       )}
 
@@ -270,13 +285,13 @@ export default function DrillGuide({ guide = null, singleLineTitles = true, ...f
           paragraph of it. It stays outside a panel and always visible for the
           same reason the intro does: it carries the page's definition. */}
       {children && (
-        <div className="pt-1 pb-1 text-[13px] leading-relaxed text-slate-400 space-y-2.5 [&_h3]:text-[15px] [&_h3]:font-bold [&_h3]:text-white [&_h3]:mt-5 [&_h3]:mb-1.5 [&_strong]:text-slate-200 [&_em]:text-slate-300">
+        <div className={`text-[13px] leading-relaxed text-slate-400 space-y-2.5 [&_h3]:text-[15px] [&_h3]:font-bold [&_h3]:text-white [&_h3]:mt-5 [&_h3]:mb-1.5 [&_strong]:text-slate-200 [&_em]:text-slate-300 ${framed ? `mt-2.5 ${CARD_FRAMED} rounded-xl px-5 py-5` : 'pt-1 pb-1'}`}>
           {children}
         </div>
       )}
 
       {benchmarks && (
-        <GuidePanel id="benchmarks" title={benchmarks.title || t('guide.benchmarks', 'Performance benchmarks')} singleLineTitle={singleLineTitles} open={open === 'benchmarks'} onToggle={() => toggle('benchmarks')}>
+        <GuidePanel id="benchmarks" title={benchmarks.title || t('guide.benchmarks', 'Performance benchmarks')} singleLineTitle={singleLineTitles} framed={framed} open={open === 'benchmarks'} onToggle={() => toggle('benchmarks')}>
           <div className="overflow-x-auto rounded-lg border border-white/[0.06]">
             <table className="w-full text-left text-[12px] border-collapse">
               <thead className="bg-white/[0.03] text-slate-300 border-b border-white/[0.06]">
@@ -307,7 +322,7 @@ export default function DrillGuide({ guide = null, singleLineTitles = true, ...f
           pages. It used to be dropped on the floor because the component never
           destructured it, so the copy existed in the source and appeared nowhere. */}
       {mechanisms && (
-        <GuidePanel id="mechanisms" title={mechanisms.title || t('guide.howItWorks', 'How it works')} singleLineTitle={singleLineTitles} open={open === 'mechanisms'} onToggle={() => toggle('mechanisms')}>
+        <GuidePanel id="mechanisms" title={mechanisms.title || t('guide.howItWorks', 'How it works')} singleLineTitle={singleLineTitles} framed={framed} open={open === 'mechanisms'} onToggle={() => toggle('mechanisms')}>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-2.5">
             {(mechanisms.items ?? []).map((item, i) => (
               <div key={i} className="p-3.5 rounded-lg border border-white/[0.06] bg-white/[0.015]">
@@ -325,7 +340,7 @@ export default function DrillGuide({ guide = null, singleLineTitles = true, ...f
       )}
 
       {techniques && (
-        <GuidePanel id="technique" title={techniques.title || t('guide.technique', 'Technique and execution')} singleLineTitle={singleLineTitles} open={open === 'technique'} onToggle={() => toggle('technique')}>
+        <GuidePanel id="technique" title={techniques.title || t('guide.technique', 'Technique and execution')} singleLineTitle={singleLineTitles} framed={framed} open={open === 'technique'} onToggle={() => toggle('technique')}>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-2.5">
             {(techniques.items ?? []).map((tech, i) => (
               <div key={i} className="p-3.5 rounded-lg border border-white/[0.06] bg-white/[0.015]">
@@ -343,7 +358,7 @@ export default function DrillGuide({ guide = null, singleLineTitles = true, ...f
       )}
 
       {(steps?.length || audience) && (
-        <GuidePanel id="howto" title={t('guide.howTo', 'How to train with this drill')} singleLineTitle={singleLineTitles} open={open === 'howto'} onToggle={() => toggle('howto')}>
+        <GuidePanel id="howto" title={t('guide.howTo', 'How to train with this drill')} singleLineTitle={singleLineTitles} framed={framed} open={open === 'howto'} onToggle={() => toggle('howto')}>
           {steps?.length ? (
             <ol className="space-y-2">
               {steps.map((s, i) => (
@@ -351,7 +366,14 @@ export default function DrillGuide({ guide = null, singleLineTitles = true, ...f
                   <span className="shrink-0 w-5 h-5 rounded-md bg-white/[0.05] border border-white/[0.08] text-[10.5px] font-bold text-slate-200 flex items-center justify-center font-mono mt-[1px]">
                     {i + 1}
                   </span>
-                  <span>{s}</span>
+                  <span>
+                    {typeof s === 'string' ? s : (
+                      <>
+                        {s?.title && <span className="font-semibold text-slate-200">{s.title}. </span>}
+                        {s?.text}
+                      </>
+                    )}
+                  </span>
                 </li>
               ))}
             </ol>
@@ -371,7 +393,7 @@ export default function DrillGuide({ guide = null, singleLineTitles = true, ...f
           and the whole panel vanished while the structured data kept promising
           the answers to search engines. */}
       {faqs?.items?.length ? (
-        <GuidePanel id="faq" title={faqs.title || t('guide.faq', 'Frequently asked questions')} singleLineTitle={singleLineTitles} open={open === 'faq'} onToggle={() => toggle('faq')}>
+        <GuidePanel id="faq" title={faqs.title || t('guide.faq', 'Frequently asked questions')} singleLineTitle={singleLineTitles} framed={framed} open={open === 'faq'} onToggle={() => toggle('faq')}>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-2.5">
             {faqs.items.map((f, i) => (
               <div key={i} className="p-3.5 rounded-lg border border-white/[0.06] bg-white/[0.015]">
@@ -391,7 +413,7 @@ export default function DrillGuide({ guide = null, singleLineTitles = true, ...f
           its own to cite, so it cites other people's properly. Every entry here
           must be a real work that says what the page claims it says. */}
       {sources?.length ? (
-        <GuidePanel id="sources" title={t('guide.references', 'References')} singleLineTitle={singleLineTitles} open={open === 'sources'} onToggle={() => toggle('sources')}>
+        <GuidePanel id="sources" title={t('guide.references', 'References')} singleLineTitle={singleLineTitles} framed={framed} open={open === 'sources'} onToggle={() => toggle('sources')}>
           <ol className="space-y-2">
             {sources.map((src, i) => (
               <li key={i} className="text-[12px] leading-relaxed text-slate-400 flex gap-2.5">

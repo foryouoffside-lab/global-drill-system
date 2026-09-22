@@ -1,5 +1,5 @@
 'use client';
 
-import dynamic from 'next/dynamic';
+import Client from './ChromaSyncClient';
 
-export default dynamic(() => import('./ChromaSyncClient'));
+export default Client;

@@ -413,9 +413,7 @@ export default function LocalizedPage() {
         description: "三角軌道の標的を追い、角での再捕捉と視線ズレを確認します。"
       }} />
       <DrillGuide guide={guide} />
-      <div className="max-w-6xl mx-auto px-4 pb-12">
-        <RelatedDrills currentCategory="visual-tracking" currentHref="https://skilldrills.online/ja/drills/visual-tracking/triangular-pursuit" />
-      </div>
+      <RelatedDrills />
     </>
   );
 }

@@ -343,13 +343,7 @@ export default function AntiStrafeJitterDePage() {
         }}
       />
       <DrillGuide guide={antiStrafeGuide} />
-      <div className="max-w-4xl mx-auto px-4 pb-12">
-        <RelatedDrills
-          currentCategory="fps"
-          currentHref="/drills/fps/anti-strafe-jitter-duel"
-          locale="de"
-        />
-      </div>
+      <RelatedDrills />
       <DrillFooter />
     </>
   );

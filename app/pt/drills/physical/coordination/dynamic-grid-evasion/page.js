@@ -399,13 +399,7 @@ export default function DynamicGridEvasionPagePt() {
         }}
       />
       <DrillGuide guide={gridGuide} />
-      <div className="max-w-4xl mx-auto px-4 pb-12">
-        <RelatedDrills
-          currentCategory="physical"
-          currentHref="/drills/physical/coordination/dynamic-grid-evasion"
-          locale="pt"
-        />
-      </div>
+      <RelatedDrills />
     </>
   );
 }

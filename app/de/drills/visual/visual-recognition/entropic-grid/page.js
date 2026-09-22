@@ -333,9 +333,7 @@ export default function LocalizedEntropicGridDePage() {
 
       <EntropicGridClient copy={{ title: "Visuelle Suche", subtitle: "Selektive Aufmerksamkeit und visuelles Scannen" }} />
       <DrillGuide guide={guideData} />
-      <div className="max-w-6xl mx-auto px-4 pb-12">
-        <RelatedDrills currentCategory="visual" currentHref="https://skilldrills.online/de/drills/visual/visual-recognition/entropic-grid" />
-      </div>
+      <RelatedDrills />
     </>
   );
 }

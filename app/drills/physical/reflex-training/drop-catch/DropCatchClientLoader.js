@@ -1,5 +1,5 @@
 'use client';
 
-import dynamic from 'next/dynamic';
+import Client from './DropCatchClient';
 
-export default dynamic(() => import('./DropCatchClient'));
+export default Client;

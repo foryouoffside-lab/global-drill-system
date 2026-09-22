@@ -6,7 +6,7 @@ import { pickSources } from '@/lib/drillSources';
 
 export const metadata = {
   title: "Reaktionstest online | Visuelle Reaktionszeit | SkillDrills",
-  description: "Kostenloser Reaktionstest online: Miss deine visuelle Reaktionszeit in Millisekunden bei einem Lichtsignal. Browserwert mit Geräteverzögerung, kein medizinischer Test.",
+  description: "Kostenloser Reaktionstest online: Miss deine visuelle Reaktionszeit in Millisekunden bei einem Lichtsignal. Browserwert, kein medizinischer Test.",
   keywords: [
     "Reaktionstest",
     "Reaktionszeit Test",
@@ -303,9 +303,7 @@ export default function StrobeLatencyPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(videoGameSchema) }} />
       <StrobeLatencyClient copy={{ title: "Reaktionstest: Visuelle Reaktionszeit", startCardTitle: "Reaktionstest", startCardSubtitle: "Auf ein Lichtsignal reagieren" }} />
       <DrillGuide guide={lightReactionGuide} />
-      <div className="max-w-6xl mx-auto px-4 pb-12">
-        <RelatedDrills currentCategory="visual" currentHref="https://skilldrills.online/de/drills/visual/reaction-speed/light-reaction" />
-      </div>
+      <RelatedDrills />
     </>
   );
 }

@@ -50,10 +50,12 @@ function RuleItem({ num, text, highlight = '', result }) {
 // ============================================================
 // TUNING CONSTANTS
 // ============================================================
-const DRILL_DURATION = 45; // starting clock only; a run grows past this
+const DRILL_DURATION = 60; // fixed run length; target hits never extend the clock
 const POINTS_PER_LEVEL = 1400; // 300 -> 1400 (~7x)
 const ELITE_SCORE = 54000; // 18000 -> 54000 (3x)
-const TIME_PER_HIT = 0.4; // +0.4s on correct target hit
+const TARGET_COLOR = '245, 158, 11';
+const TARGET_LIGHT_COLOR = '253, 230, 138';
+const TARGET_DARK_COLOR = '180, 83, 9';
 const TIME_PENALTY = 0.6; // opt-in on wrong target click or miss
 const STORAGE_KEY = 'skilldrills_fps_target_acquisition_v3';
 
@@ -77,11 +79,11 @@ const getLevelConfig = (level, combo = 0) => {
   const p = getDifficultyProgress(level); // 0 at L1, 1 at L15, unbounded above
   const heat = (getComboMultiplier(combo) - 1) / 2;
   return {
-    count: Math.min(8, Math.round(2 + p * 4 + heat * 0.5)),
-    radius: Math.max(12, ramp(32, 14, p) * (1 - heat * 0.15)),
+    count: Math.min(8, Math.round(3 + p * 4 + heat * 0.5)),
+    radius: Math.max(12, ramp(28, 12, p) * (1 - heat * 0.15)),
     opacityDelta: Math.max(0.04, ramp(0.45, 0.06, p) * (1 - heat * 0.20)),
     margin: Math.max(25, ramp(120, 30, p)),
-    hitPad: Math.max(2, ramp(10, 4, p) * (1 - heat * 0.25)),
+    hitPad: Math.max(2, ramp(8, 3, p) * (1 - heat * 0.25)),
   };
 };
 
@@ -89,7 +91,7 @@ const getLevelConfig = (level, combo = 0) => {
 // DEFAULT ONE-POINTED SCORING RULES
 // ============================================================
 const DEFAULT_RULES_ITEMS = [
-  { num: "1", text: "Target Hit", highlight: "+100 PTS (+0.4s)", result: "×Combo Mult" },
+  { num: "1", text: "Target Hit", highlight: "+100 PTS", result: "×Combo Mult" },
   { num: "2", text: "Set Cleared", highlight: "+400 PTS × Level", result: "Cluster Spawn" },
   { num: "3", text: "Level Progression", highlight: "+1 Level / 1400 PTS", result: "Continuous Dynamic Scaling" },
   { num: "4", text: "Wrong Target / Miss", highlight: "Penalty", result: "Resets Combo (-0.6s)" }
@@ -337,7 +339,7 @@ export default function TargetAcquisitionClient({ copy = null }) {
     const isNewHigh = e.score > prevSaved.bestScore;
     setIsNewBest(isNewHigh);
 
-    const runBestLevel = Math.max(prevSaved.bestLevel, bestLevelRunRef.current);
+    const runBestLevel = Math.floor(Math.max(prevSaved.bestLevel, bestLevelRunRef.current));
     const updatedData = {
       bestScore: Math.max(prevSaved.bestScore, e.score),
       bestCombo: Math.max(prevSaved.bestCombo, e.maxCombo),
@@ -416,12 +418,16 @@ export default function TargetAcquisitionClient({ copy = null }) {
       gameActiveRef.current = true;
       startingRef.current = false;
       setGameState('playing');
-      if (canvasRef.current && !document.pointerLockElement) {
-        canvasRef.current.requestPointerLock().catch(() => {});
-      }
     }, 2450);
 
     countdownTimeoutsRef.current = [t1, t2, t3, t4];
+
+    // Pointer lock must be requested from the original user gesture. A delayed
+    // request inside the countdown is rejected by browsers and leaves the run
+    // without input or a ticking timer.
+    if (canvasRef.current && !document.pointerLockElement) {
+      try { await canvasRef.current.requestPointerLock(); } catch (e) {}
+    }
   }, [spawnTargetSet]);
 
   // Scoped Raw Input Mouse Move & Mouse Down Event Handlers
@@ -473,8 +479,6 @@ export default function TargetAcquisitionClient({ copy = null }) {
 
               const levelMult = 1 + getDifficultyProgress(eRef.level) * 0.5;
               eRef.score += Math.round(100 * getComboMultiplier(eRef.combo) * levelMult);
-              eRef.timeLeft += TIME_PER_HIT; // +0.4s
-
               const rawLevel = (eRef.score / POINTS_PER_LEVEL) + 1;
               eRef.level = Math.max(eRef.level, rawLevel);
               bestLevelRunRef.current = Math.max(bestLevelRunRef.current, eRef.level);
@@ -634,7 +638,7 @@ export default function TargetAcquisitionClient({ copy = null }) {
 
           drawPulseRing(
             ctx, t.x, t.y, t.radius,
-            `rgba(16, 185, 129, ${t.val})`,
+            `rgba(${TARGET_COLOR}, ${t.val})`,
             ((time / 1600) + t.seed) % 1
           );
 
@@ -642,15 +646,15 @@ export default function TargetAcquisitionClient({ copy = null }) {
             t.x - t.radius * 0.35, t.y - t.radius * 0.35, t.radius * 0.1,
             t.x, t.y, t.radius
           );
-          g.addColorStop(0,    `rgba(167, 243, 208, ${t.val})`);
-          g.addColorStop(0.55, `rgba(16, 185, 129,  ${t.val})`);
-          g.addColorStop(1,    `rgba(6, 95,  70,   ${t.val})`);
+          g.addColorStop(0,    `rgba(${TARGET_LIGHT_COLOR}, ${t.val})`);
+          g.addColorStop(0.55, `rgba(${TARGET_COLOR}, ${t.val})`);
+          g.addColorStop(1,    `rgba(${TARGET_DARK_COLOR}, ${t.val})`);
           ctx.fillStyle = g;
           ctx.beginPath();
           ctx.arc(t.x, t.y, t.radius, 0, Math.PI * 2);
           ctx.fill();
 
-          ctx.strokeStyle = `rgba(167, 243, 208, ${t.val * 0.9})`;
+          ctx.strokeStyle = `rgba(${TARGET_LIGHT_COLOR}, ${t.val * 0.9})`;
           ctx.lineWidth = 2;
           ctx.beginPath();
           ctx.arc(t.x, t.y, t.radius - 1, 0, Math.PI * 2);
@@ -892,6 +896,7 @@ export default function TargetAcquisitionClient({ copy = null }) {
                 { value: `Lv. ${analytics.finalLevel}`, label: copy?.statPeakLevel || "Peak Level" },
               ]}
               onPlayAgain={enterDrill}
+              onBeforeShare={() => setIsFullscreen(false)}
               onShare={shareScore}
               onExit={handleExitDrill}
             />

@@ -28,8 +28,8 @@ const DRILL_DURATION = 45; // starting clock only; a run grows past this
 const POINTS_PER_HIT = 100;
 const POINTS_PER_LEVEL = 1750; // 250 -> 1750 (7x)
 const ELITE_SCORE = 24000; // 7500 -> 24000 (~3.2x)
-const TIME_PER_HIT = 0.6; // +0.6s on clean hit
-const TIME_PENALTY = 0.8; // -0.8s on wrong tap or trial timeout (opt-in gated)
+const TIME_PER_HIT = 2; // +2s on clean hit, capped at 60s
+const TIME_PENALTY = 1; // -1s on wrong tap or trial timeout (opt-in gated)
 const STORAGE_KEY = 'skilldrills_symbol_matching_v8';
 
 const ALL_SYMBOLS = ['Δ', 'Φ', 'Ω', 'Σ', 'Ξ', 'Π'];
@@ -61,7 +61,7 @@ const getLevelConfig = (level, combo = 0) => {
 
 const RULES_ITEMS = [
   { num: "1", text: "Symbol-Digit Key", highlight: "6 Mappings", result: "Legend bar assigns digits 1-6" },
-  { num: "2", text: "Target Symbol", highlight: "+100 PTS", result: "× Combo × Level (+0.6s per hit)" },
+  { num: "2", text: "Target Symbol", highlight: "+100 PTS", result: "× Combo × Level (+2s per hit, max 60s)" },
   { num: "3", text: "Wrong Digit", highlight: "Resets Combo", result: "Deducts time if penalties are on" },
   { num: "4", text: "Streak & Penalty", highlight: "Timeouts / Wrong Taps", result: "−0.8s when enabled in settings" }
 ];
@@ -189,7 +189,7 @@ export default function SymbolMatchingClient({ copy } = {}) {
     if (typeof window !== 'undefined') {
       setSoundEnabled(drillAudio.isEnabled());
       setFlashEnabled(drillFlash.isEnabled());
-      setPenaltyEnabled(drillPenalty.isEnabled());
+      setPenaltyEnabled(drillPenalty.isEnabled(TIME_PER_HIT === 2));
       const saved = getSavedData();
       setBestScore(saved.bestScore || 0);
       setBestCombo(saved.bestCombo || 0);
@@ -256,7 +256,7 @@ export default function SymbolMatchingClient({ copy } = {}) {
 
     const e = engine.current;
     const totalActs = e.successfulHits + e.mistakes + e.timeouts;
-    const acc = totalActs > 0 ? Math.round((e.successfulHits / totalActs) * 100) : 100;
+    const acc = totalActs > 0 ? Math.round((e.successfulHits / totalActs) * 100) : 0;
 
     const rating = getFpsScoreGrade(e.score, ELITE_SCORE);
     const gradeObj = {
@@ -357,7 +357,7 @@ export default function SymbolMatchingClient({ copy } = {}) {
       }
       // Timeout miss - breaks the combo like any other miss
       e.timeouts += 1;
-      if (drillPenalty.isEnabled()) e.timeLeft -= TIME_PENALTY;
+      if (drillPenalty.isEnabled(TIME_PER_HIT === 2)) e.timeLeft -= TIME_PENALTY;
       e.combo = 0;
       setUiCombo(0);
       triggerFlash();
@@ -382,7 +382,7 @@ export default function SymbolMatchingClient({ copy } = {}) {
       eng.score += Math.round(POINTS_PER_HIT * getComboMultiplier(eng.combo) * levelMult);
 
       // Time bonus on clean hit
-      eng.timeLeft += TIME_PER_HIT;
+      eng.timeLeft = Math.min(60, eng.timeLeft + TIME_PER_HIT);
 
       // Continuous level progression
       const rawLevel = (eng.score / POINTS_PER_LEVEL) + 1;
@@ -397,7 +397,7 @@ export default function SymbolMatchingClient({ copy } = {}) {
     } else {
       // Wrong click: costs the combo, never the run.
       eng.mistakes += 1;
-      if (drillPenalty.isEnabled()) eng.timeLeft -= TIME_PENALTY;
+      if (drillPenalty.isEnabled(TIME_PER_HIT === 2)) eng.timeLeft -= TIME_PENALTY;
       eng.combo = 0;
       setUiCombo(0);
       triggerFlash();
@@ -670,6 +670,7 @@ export default function SymbolMatchingClient({ copy } = {}) {
                 { label: labels.peakLevel, value: `Lv. ${analytics.finalLevel}` },
               ]}
               onPlayAgain={enterDrill}
+              onBeforeShare={() => setIsFullscreen(false)}
               onShare={shareResult}
               onExit={handleExitDrill}
             />

@@ -324,9 +324,7 @@ export default function NBackPageJa() {
 
       <DrillGuide {...guideJa} />
 
-      <div className="max-w-6xl w-full mx-auto px-4 pb-12">
-        <RelatedDrills currentCategory="memory" currentHref="/drills/memory/working-memory/n-back" locale="ja" />
-      </div>
+      <RelatedDrills />
     </>
   );
 }

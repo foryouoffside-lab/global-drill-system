@@ -322,9 +322,7 @@ export default function FrenchSaccadicGalleryPage() {
       />
       <SaccadicGalleryWrapper copy={{ title: 'Entraînement Visuel · Exercices Oculaires', subtitle: 'Sauts du Regard · Acquisition Visuelle', caption: 'Déplacez rapidement le regard entre les cibles et cliquez avec précision.' }} />
       <DrillGuide guide={saccadicGuide} />
-      <div className="max-w-6xl mx-auto px-4 pb-12">
-        <RelatedDrills currentCategory="reaction-speed" currentHref="https://skilldrills.online/fr/drills/reaction-speed/saccadic-gallery" />
-      </div>
+      <RelatedDrills />
       <DrillFooter />
     </>
   );

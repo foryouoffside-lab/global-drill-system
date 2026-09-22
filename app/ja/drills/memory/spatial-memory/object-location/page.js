@@ -412,13 +412,7 @@ export default function LocalizedObjectLocationPage() {
 }}
       />
       <DrillGuide guide={objectLocationGuide} />
-      <div className="max-w-4xl mx-auto px-4 pb-12">
-        <RelatedDrills
-          currentCategory="memory"
-          currentHref="/drills/memory/spatial-memory/object-location"
-          locale="ja"
-        />
-      </div>
+      <RelatedDrills />
     </>
   );
 }

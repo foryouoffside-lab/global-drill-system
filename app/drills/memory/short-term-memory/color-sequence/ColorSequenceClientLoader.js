@@ -1,5 +1,5 @@
 'use client';
 
-import dynamic from 'next/dynamic';
+import Client from './ColorSequenceClient';
 
-export default dynamic(() => import('./ColorSequenceClient'));
+export default Client;

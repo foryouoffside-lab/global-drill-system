@@ -280,11 +280,11 @@ export default function AntiStrafeJitterKoPage() {
     faqs: faqSchema.mainEntity.map(e => ({ q: e.name, a: e.acceptedAnswer.text })),
     sources: pickSources('woods2015', 'krauzlis2004', 'green2003', 'rashbass1961'),
     related: [
-      { href: "/drills/fps/vertical-air-track", label: "공중 수직 트래킹" },
-      { href: "/drills/fps/pro-smooth-pursuit", label: "스무스 퍼슈트 에임 트레이너" },
-      { href: "/drills/fps/flick-shot-training", label: "플릭 에임 연습" },
-      { href: "/drills/fps/180-degree-awareness", label: "180도 플릭 에임 연습" },
-      { href: "/drills/reaction-speed/reaction-time-test", label: "반응속도 테스트" }
+      { href: "/ko/drills/fps/vertical-air-track", label: "공중 수직 트래킹" },
+      { href: "/ko/drills/fps/pro-smooth-pursuit", label: "스무스 퍼슈트 에임 트레이너" },
+      { href: "/ko/drills/fps/flick-shot-training", label: "플릭 에임 연습" },
+      { href: "/ko/drills/fps/180-degree-awareness", label: "180도 플릭 에임 연습" },
+      { href: "/ko/drills/reaction-speed/reaction-time-test", label: "반응속도 테스트" }
     ]
   };
 
@@ -340,13 +340,7 @@ export default function AntiStrafeJitterKoPage() {
         }}
       />
       <DrillGuide guide={antiStrafeGuide} />
-      <div className="max-w-4xl mx-auto px-4 pb-12">
-        <RelatedDrills
-          currentCategory="fps"
-          currentHref="/drills/fps/anti-strafe-jitter-duel"
-          locale="ko"
-        />
-      </div>
+      <RelatedDrills />
       <DrillFooter />
     </>
   );

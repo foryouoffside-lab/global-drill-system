@@ -377,13 +377,7 @@ export default function ComplexPatternPageKo() {
         }}
       />
       <DrillGuide guide={patternGuide} />
-      <div className="max-w-4xl mx-auto px-4 pb-12">
-        <RelatedDrills
-          currentCategory="physical"
-          currentHref="/drills/physical/coordination/complex-pattern"
-          locale="ko"
-        />
-      </div>
+      <RelatedDrills />
     </>
   );
 }

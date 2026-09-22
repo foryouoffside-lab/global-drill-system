@@ -348,13 +348,7 @@ export default function TargetPrioritizationPtPage() {
       />
       <TargetPrioritizationClient copy={copyPt} />
       <DrillGuide guide={targetPrioritizationGuide} />
-      <div className="max-w-4xl mx-auto px-4 pb-12">
-        <RelatedDrills
-          currentCategory="fps"
-          currentHref="/pt/drills/fps/target-prioritization"
-          locale="pt"
-        />
-      </div>
+      <RelatedDrills />
       <DrillFooter />
     </>
   );

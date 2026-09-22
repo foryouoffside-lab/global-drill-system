@@ -159,7 +159,7 @@ export default function DynamicGridEvasionClient({ copy = {} } = {}) {
       const saved = getSavedData();
       setBestScore(saved.bestScore || 0);
       setBestCombo(saved.bestCombo || 0);
-      setBestLevel(saved.bestLevel || 1);
+      setBestLevel(Math.floor(saved.bestLevel || 1));
     }
   }, []);
 
@@ -231,7 +231,7 @@ export default function DynamicGridEvasionClient({ copy = {} } = {}) {
     if (document.pointerLockElement) document.exitPointerLock();
 
     const e = engine.current;
-    const accuracyPct = e.totalWaves > 0 ? Math.round((e.wavesSurvived / e.totalWaves) * 100) : 100;
+    const accuracyPct = e.totalWaves > 0 ? Math.round((e.wavesSurvived / e.totalWaves) * 100) : 0;
     const rating = getFpsScoreGrade(e.score, ELITE_SCORE);
 
     const grade = { letter: rating.grade, label: rating.label, color: rating.color };
@@ -239,7 +239,7 @@ export default function DynamicGridEvasionClient({ copy = {} } = {}) {
     setAnalytics({
       accuracy: accuracyPct, wavesSurvived: e.wavesSurvived, explosionsHit: e.explosionsHit,
       fastestWarning: parseFloat(getLevelConfig(e.level).warningDuration.toFixed(2)),
-      maxCombo: e.maxStreak, finalLevel: e.level, grade
+      maxCombo: e.maxStreak, finalLevel: Math.floor(e.level), grade
     });
 
     setUiScore(e.score);
@@ -248,7 +248,7 @@ export default function DynamicGridEvasionClient({ copy = {} } = {}) {
     const isNewHigh = e.score > prevSaved.bestScore;
     setIsNewBest(isNewHigh);
 
-    const runBestLevel = Math.max(prevSaved.bestLevel, bestLevelRunRef.current);
+    const runBestLevel = Math.floor(Math.max(prevSaved.bestLevel, bestLevelRunRef.current));
     const updatedData = {
       bestScore: Math.max(prevSaved.bestScore, e.score),
       bestCombo: Math.max(prevSaved.bestCombo, e.maxStreak),
@@ -603,6 +603,7 @@ export default function DynamicGridEvasionClient({ copy = {} } = {}) {
   }, [gameState, endGame, applyPenalty, spawnWave]);
 
   const shareScore = useCallback(async () => {
+    setIsFullscreen(false);
     const url = 'https://skilldrills.online/drills/physical/coordination/dynamic-grid-evasion';
     try {
       const canvas = generateShareCard({

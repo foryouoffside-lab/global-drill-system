@@ -342,13 +342,7 @@ export default function TargetAcquisitionDePage() {
       <TargetAcquisitionClient copy={copyDe} />
 
       <DrillGuide guide={targetAcquisitionGuideDe} />
-      <div className="max-w-4xl mx-auto px-4 pb-12">
-        <RelatedDrills
-          currentCategory="fps"
-          currentHref="/de/drills/fps/target-acquisition"
-          locale="de"
-        />
-      </div>
+      <RelatedDrills />
       <DrillFooter />
     </>
   );

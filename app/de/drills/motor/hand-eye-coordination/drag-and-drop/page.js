@@ -366,13 +366,7 @@ export default function DragAndDropPage() {
       />
       <DragAndDropClient copy={copyDe} />
       <DrillGuide {...guideProps} />
-      <div className="max-w-6xl w-full mx-auto px-4 pb-12">
-        <RelatedDrills
-          currentCategory="motor"
-          currentHref="/drills/motor/hand-eye-coordination/drag-and-drop"
-          locale="de"
-        />
-      </div>
+      <RelatedDrills />
       <DrillFooter />
     </>
   );

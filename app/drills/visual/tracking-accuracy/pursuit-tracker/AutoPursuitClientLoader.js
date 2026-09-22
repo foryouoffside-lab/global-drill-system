@@ -1,5 +1,5 @@
 'use client';
 
-import dynamic from 'next/dynamic';
+import Client from './AutoPursuitClient';
 
-export default dynamic(() => import('./AutoPursuitClient'));
+export default Client;

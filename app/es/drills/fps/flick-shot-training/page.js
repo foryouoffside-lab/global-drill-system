@@ -353,7 +353,7 @@ export default function FlickShotEsPage() {
           stageCaption: "Apunta velozmente a los blancos aleatorios y dispara con precisión antes de que expire el tiempo límite.",
           rulesTitle: "Reglas de Entrenamiento y Puntuación",
           rulesItems: [
-            { num: "1", text: "Impacto en Diana", highlight: "+100 PTS (+0,6s)", result: "×Multiplicador Combo" },
+            { num: "1", text: "Impacto en Diana", highlight: "+100 PTS (+2,0s)", result: "×Multiplicador Combo" },
             { num: "2", text: "Racha de Combo", highlight: "Hasta 3.0×", result: "Blancos Más Rápidos" },
             { num: "3", text: "Subida de Nivel", highlight: "+1 / 1800 PTS", result: "Escalado Adaptativo" },
             { num: "4", text: "Fallo / Tiempo Límite", highlight: "Penalización", result: "Reinicio Combo (-0,8s)" }
@@ -363,14 +363,8 @@ export default function FlickShotEsPage() {
           aboutText: "El flick aim es la habilidad motora de desplazar la retícula balísticamente en un único impulso hacia el objetivo y frenar en seco. Siguiendo la Ley de Fitts (1954), la dificultad depende de la distancia y el tamaño. La maestría reside en perfeccionar el frenado mecánico antagonista sobre la alfombrilla (Elliott et al., 2010)."
         }}
       />
-      <DrillGuide guide={flickGuide} />
-      <div className="max-w-4xl mx-auto px-4 pb-12">
-        <RelatedDrills
-          currentCategory="fps"
-          currentHref="/es/drills/fps/flick-shot-training"
-          locale="es"
-        />
-      </div>
+      <DrillGuide guide={flickGuide} framed />
+      <RelatedDrills />
       <DrillFooter />
     </>
   );

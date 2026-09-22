@@ -221,7 +221,7 @@ export default function FlowStateClient({ copy = null }) {
     if (document.pointerLockElement) document.exitPointerLock();
 
     const e = engine.current;
-    const finalAccuracy = e.totalFrames > 0 ? Math.round((e.framesOnTarget / e.totalFrames) * 100) : 100;
+    const finalAccuracy = e.totalFrames > 0 ? Math.round((e.framesOnTarget / e.totalFrames) * 100) : 0;
     const peakLevel = Math.floor(bestLevelRunRef.current);
     const rating = getFpsScoreGrade(e.score, ELITE_SCORE);
     const grade = { letter: rating.grade, label: rating.label, color: rating.color };
@@ -537,7 +537,7 @@ export default function FlowStateClient({ copy = null }) {
             e.score += Math.round(10 * getComboMultiplier(e.combo) * levelMult);
             setScore(e.score);
 
-            e.timeLeft += TIME_PER_HIT * 0.25; // +0.1s every 0.25s locked on
+            e.timeLeft = Math.min(60, e.timeLeft + TIME_PER_HIT * 0.25); // continuous tracking reward, capped at 60s
 
             const rawLevel = (e.score / POINTS_PER_LEVEL) + 1;
             e.level = Math.max(e.level, rawLevel);
@@ -829,6 +829,7 @@ export default function FlowStateClient({ copy = null }) {
                 { value: `Lv. ${analytics.levelReached}`, label: "Peak Level" },
               ]}
               onPlayAgain={enterDrill}
+              onBeforeShare={() => setIsFullscreen(false)}
               onShare={shareDrillLink}
               onExit={handleExitDrill}
             />

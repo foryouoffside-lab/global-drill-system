@@ -279,12 +279,12 @@ const distanceGuidePt = {
   },
   sources: pickSources('howard1919', 'lee1976', 'regan1978', 'julesz1971', 'woods2015'),
   related: [
-    { href: "/drills/visual/tracking-accuracy/moving-target", label: "Interceptação de Alvo Móvel" },
-    { href: "/drills/visual/reaction-speed/light-reaction", label: "Teste de Reação à Luz" },
-    { href: "/drills/visual/tracking-accuracy/multiple-targets", label: "Rastreamento de Múltiplos Objetos" },
-    { href: "/drills/visual/tracking-accuracy/pursuit-tracker", label: "Rastreador de Perseguição Ocular" },
-    { href: "/drills/visual/reaction-speed/go/no-go", label: "Controle de Impulso Go / No-Go" },
-    { href: "/drills/visual/visual-recognition/entropic-grid", label: "Varredura em Grade Entrópica" }
+    { href: "/pt/drills/visual/tracking-accuracy/moving-target", label: "Interceptação de Alvo Móvel" },
+    { href: "/pt/drills/visual/reaction-speed/light-reaction", label: "Teste de Reação à Luz" },
+    { href: "/pt/drills/visual/tracking-accuracy/multiple-targets", label: "Rastreamento de Múltiplos Objetos" },
+    { href: "/pt/drills/visual/tracking-accuracy/pursuit-tracker", label: "Rastreador de Perseguição Ocular" },
+    { href: "/pt/drills/visual/reaction-speed/go/no-go", label: "Controle de Impulso Go / No-Go" },
+    { href: "/pt/drills/visual/visual-recognition/entropic-grid", label: "Varredura em Grade Entrópica" }
   ]
 };
 

@@ -359,13 +359,7 @@ export default function MicroCorrectionKoPage() {
       />
 
       <DrillGuide guide={microCorrectionGuide} />
-      <div className="max-w-4xl mx-auto px-4 pb-12">
-        <RelatedDrills
-          currentCategory="fps"
-          currentHref="/ko/drills/fps/micro-correction-precision"
-          locale="ko"
-        />
-      </div>
+      <RelatedDrills />
       <DrillFooter />
     </>
   );

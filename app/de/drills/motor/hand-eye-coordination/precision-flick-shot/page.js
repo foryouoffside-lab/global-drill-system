@@ -372,13 +372,7 @@ export default function PrecisionFlickShotPage() {
       />
       <PrecisionFlickShotClient copy={copyDe} />
       <DrillGuide {...guideProps} />
-      <div className="max-w-6xl w-full mx-auto px-4 pb-12">
-        <RelatedDrills
-          currentCategory="motor"
-          currentHref="/drills/motor/hand-eye-coordination/precision-flick-shot"
-          locale="de"
-        />
-      </div>
+      <RelatedDrills />
       <DrillFooter />
     </>
   );

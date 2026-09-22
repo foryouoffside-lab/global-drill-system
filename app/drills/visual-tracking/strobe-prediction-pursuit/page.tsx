@@ -4,16 +4,16 @@ import { getAlternateLanguages } from '@/lib/i18n/locales';
 import { pickSources } from '@/lib/drillSources';
 
 export const metadata = {
-  title: "Strobe Prediction Pursuit – Vision Training | SkillDrills",
-  description: "Condition predictive smooth pursuit and trajectory extrapolation under stroboscopic occlusion online. Free browser eye tracking test, no sign-up.",
+  title: "Occlusion Prediction Pursuit | SkillDrills",
+  description: "Practise visual prediction during controlled target occlusion in a browser. Free tracking practice; not a clinical eye test or treatment.",
   keywords: [
-    "strobe prediction pursuit",
-    "stroboscopic vision training",
-    "strobe glasses eye training",
+    "occlusion prediction pursuit",
+    "visual motion occlusion practice",
+    "controlled target occlusion",
     "occlusion visual tracking",
     "trajectory extrapolation test",
-    "cerebellar velocity memory",
-    "anticipatory smooth pursuit",
+    "visual prediction practice",
+    "anticipatory target tracking",
     "intermittent visual occlusion",
     "dynamic visual acuity drill",
     "esports blind target tracking",
@@ -26,8 +26,8 @@ export const metadata = {
   },
   robots: { index: true, follow: true },
   openGraph: {
-    title: "Strobe Prediction Pursuit – Vision Training | SkillDrills",
-    description: "Condition predictive smooth pursuit and trajectory extrapolation under stroboscopic occlusion online. Free browser eye tracking test, no sign-up.",
+    title: "Occlusion Prediction Pursuit | SkillDrills",
+    description: "Practise visual prediction during controlled target occlusion in a browser. Not a clinical eye test or treatment.",
     url: "https://skilldrills.online/drills/visual-tracking/strobe-prediction-pursuit",
     siteName: 'SkillDrills',
     locale: 'en_US',
@@ -35,8 +35,8 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: "Strobe Prediction Pursuit – Vision Training | SkillDrills",
-    description: "Condition predictive smooth pursuit and trajectory extrapolation under stroboscopic occlusion online. Free browser eye tracking test, no sign-up.",
+    title: "Occlusion Prediction Pursuit | SkillDrills",
+    description: "Practise visual prediction during controlled target occlusion in a browser. Not a clinical eye test or treatment.",
   },
 };
 
@@ -59,7 +59,7 @@ const breadcrumbSchema = {
     {
       "@type": "ListItem",
       "position": 3,
-      "name": "Strobe Prediction Pursuit",
+      "name": "Occlusion Prediction Pursuit",
       "item": "https://skilldrills.online/drills/visual-tracking/strobe-prediction-pursuit"
     }
   ]
@@ -68,7 +68,7 @@ const breadcrumbSchema = {
 const softwareApplicationSchema = {
   "@context": "https://schema.org",
   "@type": "SoftwareApplication",
-  "name": "Strobe Prediction Pursuit Vision Training",
+  "name": "Occlusion Prediction Pursuit",
   "operatingSystem": "Web Browser",
   "applicationCategory": "HealthApplication",
   "offers": {
@@ -76,13 +76,13 @@ const softwareApplicationSchema = {
     "price": "0.00",
     "priceCurrency": "USD"
   },
-  "description": "Stroboscopic visual tracking application conditioning cerebellar velocity memory and feedforward trajectory extrapolation across intermittent darkness cycles."
+  "description": "Browser practice task for following a moving point and predicting its position during controlled occlusion."
 };
 
 const webAppSchema = {
   "@context": "https://schema.org",
   "@type": "WebApplication",
-  "name": "Strobe Prediction Pursuit Drill",
+  "name": "Occlusion Prediction Pursuit Drill",
   "url": "https://skilldrills.online/drills/visual-tracking/strobe-prediction-pursuit",
   "applicationCategory": "SportsApplication",
   "operatingSystem": "All modern browsers",
@@ -92,9 +92,9 @@ const webAppSchema = {
 const videoGameSchema = {
   "@context": "https://schema.org",
   "@type": "VideoGame",
-  "name": "Strobe Prediction Pursuit",
-  "description": "Dynamic visual tracking challenge testing trajectory extrapolation accuracy and foveal re-acquisition landing offsets during stroboscopic target occlusion.",
-  "genre": ["Visual Training", "Strobe Vision", "Reflex Training"],
+  "name": "Occlusion Prediction Pursuit",
+  "description": "Visual tracking practice task for observing a moving point and estimating its reappearance after controlled occlusion.",
+  "genre": ["Visual Training", "Motion Tracking", "Reflex Training"],
   "playMode": "SinglePlayer",
   "gamePlatform": "Web Browser"
 };
@@ -102,32 +102,32 @@ const videoGameSchema = {
 const howToSchema = {
   "@context": "https://schema.org",
   "@type": "HowTo",
-  "name": "How to Train Trajectory Extrapolation with Strobe Prediction",
-  "description": "Step-by-step protocol to master velocity memory retention and land predictive gaze locks across stroboscopic dark phases.",
+  "name": "How to Practise Target Prediction with Controlled Occlusion",
+  "description": "A short browser protocol for observing a moving point and estimating where it will reappear.",
   "step": [
     {
       "@type": "HowToStep",
       "position": 1,
-      "name": "Capture Initial Heading and Velocity",
-      "text": "Position yourself 50-70 cm from the screen. Lock smooth pursuit onto the target during the illuminated phase to encode its velocity vector."
+      "name": "Observe the visible path",
+      "text": "Choose a comfortable viewing distance and follow the point while it is visible. Keep your head relaxed and do not force the eyes."
     },
     {
       "@type": "HowToStep",
       "position": 2,
-      "name": "Engage Cerebellar Velocity Memory",
-      "text": "When the target vanishes into occlusion, sustain smooth pursuit eye velocity across the mental extrapolation path without freezing."
+      "name": "Estimate the covered segment",
+      "text": "During the brief covered interval, make a calm estimate of the point's continuing direction. This is a practice task, not a measurement of neural activity."
     },
     {
       "@type": "HowToStep",
       "position": 3,
-      "name": "Anticipate Spatial Re-Emergence",
-      "text": "Drive eye position toward the anticipated re-flash coordinates based on internal kinematic velocity calculations."
+      "name": "Check the reappearance",
+      "text": "Notice where the point returns and compare it with your estimate without making a large forced eye movement."
     },
     {
       "@type": "HowToStep",
       "position": 4,
-      "name": "Minimize Re-Flash Landing Offset",
-      "text": "Aim to have central foveal gaze directly aligned with the target the instant it illuminates, eliminating catch-up saccades."
+      "name": "Stop when symptoms appear",
+      "text": "Take a break or stop for pain, dizziness, nausea, persistent blur, double vision, or unusual visual symptoms."
     }
   ]
 };
@@ -136,130 +136,64 @@ const faqSchema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
   "mainEntity": [
-    {
-      "@type": "Question",
-      "name": "What is the Strobe Prediction Pursuit drill?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Strobe Prediction Pursuit conditions visual extrapolation and velocity memory by periodically occluding a moving target in repetitive strobe cycles, training the brain to track blind paths (Appelbaum et al., 2011)."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "How does stroboscopic vision training work neurologically?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Deprived of continuous retinal feedback, the frontal eye fields (FEF) and cerebellum must generate internal forward kinematic models, utilizing velocity memory to guide extraocular motor output (Bennett et al., 2007)."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "How does this drill replicate physical strobe eyewear?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Physical strobe glasses use liquid crystal lenses to alternate transparent and opaque states. This browser drill alternates visible and occluded frames, delivering equivalent neuro-visual conditioning."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "What is velocity memory in smooth pursuit?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Velocity memory is the neural persistence of target speed in motor control circuits, allowing smooth pursuit eye movement to persist for several hundred milliseconds after sensory input disappears."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "How does stroboscopic pursuit transfer to competitive FPS gaming?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "In shooters like CS2 and Valorant, enemies frequently cross behind obstacles, smoke grenades, or flashbang effects. Extrapolation training allows players to track hidden trajectories and pre-aim accurately."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "How does this training enhance athletic performance in ball sports?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "In baseball, tennis, and hockey, ball speed exceeds human visual processing limits. Athletes trained with stroboscopic occlusion extract early trajectory cues to anticipate impact points (Smith & Mitroff, 2016)."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Why do untrained observers freeze their eyes during dark intervals?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Without retinal slip input, the ocular motor system defaults to an arrest state within 100 to 150 ms. Conditioned velocity memory prevents this stall, maintaining continuous smooth pursuit."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "What is the cognitive advantage of toggling Hide Line?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Hiding trajectory lines forces your visual cortex to rely solely on internal spatial working memory rather than relying on geometric screen cues."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Is Strobe Prediction Pursuit free to use?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Yes, SkillDrills provides this vision training tool completely free directly in your web browser with zero registration or hardware purchases required."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "What is the optimal training schedule for strobe tracking?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "We recommend 2 to 3 sessions of 45 to 60 seconds (roughly 3 to 5 minutes daily). High-intensity occlusion induces rapid neuroplastic adaptation without mental exhaustion."
-      }
-    }
-  ]
+    ["What is Occlusion Prediction Pursuit?", "It is a browser task in which a moving point is briefly covered and then shown again. You observe the visible path and compare the reappearance with your estimate; the page does not measure eye position."],
+    ["Is this a strobe-light or strobe-glasses exercise?", "No. It is a controlled target-occlusion task, not a simulation of medical equipment or a recommendation for stroboscopic eyewear. It should remain comfortable and should be stopped if visual symptoms appear."],
+    ["Does the drill measure smooth-pursuit gain or visual acuity?", "No. The browser knows the point's drawn position and your settings, but it cannot see your eyes. Results are task and setup records, not clinical measurements."],
+    ["What should I watch during the covered interval?", "Keep a relaxed estimate of the point's continuing direction. Do not force a large eye or head movement, and do not treat a mismatch as evidence of a visual disorder."],
+    ["Can this diagnose a tracking or binocular problem?", "No. Diagnosis requires an appropriate history and examination by a qualified eye-care professional. This page cannot assess binocular coordination, vestibular function, or eye health."],
+    ["Can this replace vision therapy or concussion rehabilitation?", "No. Use clinician-directed care for concussion, double vision, persistent dizziness, eye pain, or another diagnosed condition. Stop this task if symptoms worsen."],
+    ["Can it improve sports or gaming performance?", "Transfer is not established by this browser task. It can provide repeatable practice for observing moving targets, but it does not promise a sport, gaming, or eyesight benefit."],
+    ["How should I set the difficulty?", "Start with the slowest comfortable setting and a visible path. Change one variable at a time, keep the session short, and return to the previous setting if comfort or control drops."],
+    ["How long should I practise?", "Use short blocks with breaks and stop when the task becomes uncomfortable. There is no universal prescription for this browser exercise."],
+    ["When should I stop and seek advice?", "Stop for pain, dizziness, nausea, persistent blur, double vision, headache, or unusual visual symptoms. Seek professional advice if symptoms persist or recur outside the task."]
+  ].map(([name, text]) => ({
+    "@type": "Question",
+    name,
+    acceptedAnswer: { "@type": "Answer", text }
+  }))
 };
 
 const guide = {
-  heading: "Strobe Prediction Pursuit - Stroboscopic Occlusion & Velocity Memory Standards",
+  heading: "Occlusion Prediction Pursuit - Controlled Target Prediction Practice",
   intro: [
-    "Stroboscopic visual training represents an empirically validated neuro-visual intervention wherein continuous visual input is periodically interrupted by brief intervals of total occlusion. By removing uninterrupted sensory feedback, the central nervous system is compelled to operate on incomplete motion datasets, forcing cerebellar and cortical networks to compute proactive forward internal models of target kinematics (Appelbaum et al., 2011; Mitroff et al., 2013).",
-    "When a moving target plunges into a dark phase, retinal slip drops instantly to zero. In untrained individuals, smooth pursuit decelerates and arrests within 100 to 200 milliseconds, deteriorating into chaotic searching saccades upon re-emergence. Seminal investigations by Bennett et al. (2007) revealed that targeted occlusion protocols condition velocity memory pathways within the frontal eye fields (FEF) and cerebellar flocculus, allowing extraocular drive to persist across dark gaps and accelerate smoothly into the predicted landing coordinates.",
-    "Across elite athletics (ice hockey, baseball, tennis), physical strobe glasses have become standard conditioning gear (Smith & Mitroff, 2016). Strobe Prediction Pursuit brings this elite training regimen into the browser, alternating 60 visible frames with 30 occluded frames. Paired with high refresh rates (144Hz+) to keep occlusion switching frame-accurate (Woods et al., 2015), this drill bridges the gap between sensory perception and predictive motor execution."
+    "This browser exercise presents one moving point, briefly covers it, and then shows it again. The task is designed as repeatable visual-motion practice for observing direction and estimating a short continuation; it is not a clinical intervention, diagnostic test, or simulation of stroboscopic equipment.",
+    "During occlusion, the point continues along its programmed path. A user can make a calm prediction and compare it with the reappearance, but the browser cannot determine where the eyes were looking or whether a mismatch came from vision, attention, input, or display timing.",
+    "Use a comfortable distance, neutral posture, normal blinking, and short sessions. Keep the path visible while learning the task, change only one setting at a time, and stop for pain, dizziness, nausea, persistent blur, double vision, headache, or unusual symptoms."
   ],
   benchmarks: {
-    title: "Stroboscopic Tracking & Trajectory Extrapolation Benchmarks",
-    headers: ["Performance Tier", "Target Velocity", "Re-Flash Landing Offset", "Velocity Maintenance During Occlusion", "Cognitive Population Tier"],
+    title: "Controlled-Occlusion Practice Bands",
+    headers: ["Practice band", "Speed setting", "What to compare", "Comfort check", "Use"],
     rows: [
-      ["Elite (Pro Athletes / Fighter Pilots)", "3.5x – 5.0x+", "< 12 px offset (pristine foveal landing)", "0% velocity decay (perfect trajectory preservation)", "Top 1.5%"],
-      ["Advanced (Competitive Rank)", "2.5x – 3.5x", "< 25 px offset (instant micro-saccadic snap)", "< 15% velocity decay (smooth mental extrapolation)", "Top 8%"],
-      ["Competent (Healthy Adult)", "1.8x – 2.5x", "< 45 px offset (prompt foveal re-acquisition)", "< 30% velocity decay (moderate deceleration)", "Top 25%"],
-      ["Developing (Occlusion Hesitation)", "1.2x – 1.8x", "45 – 80 px offset (stuttering or gaze arrest)", "> 50% velocity decay (struggles across dark phase)", "Middle 45%"],
-      ["Novice (Motor Refinement)", "0.5x – 1.2x", "> 80 px offset (reactive searching after re-flash)", "Complete ocular standstill during occlusion", "Baseline Tier"]
+      ["Orientation", "0.5x–1.0x", "Can you describe the continuing direction?", "No symptom increase", "Learn the task"],
+      ["Steady", "1.0x–2.0x", "Does the estimate stay consistent?", "Relaxed eyes and posture", "Repeat the same setup"],
+      ["Variable", "2.0x–3.0x", "Does one changed setting alter comfort?", "Short block with breaks", "Add one challenge"],
+      ["Advanced practice", "3.0x+", "Compare only like-for-like sessions", "Stop before strain", "Optional challenge"],
+      ["Reference", "Any setting", "Record duration, device, and symptoms", "Comfort is the gate", "Personal baseline"]
     ],
-    note: "※ Calibrated based on stroboscopic occlusion thresholds (Appelbaum et al., 2011; Bennett et al., 2007) and velocity memory persistence on 1080p displays at 50–70 cm."
+    note: "These are practice bands for this browser exercise, not clinical norms, population percentiles, or eye-movement measurements."
   },
   techniques: {
-    title: "Four Core Techniques for Stroboscopic Occlusion Mastery",
+    title: "Four Core Techniques for Controlled Occlusion Practice",
     items: [
       {
-        name: "Velocity Memory Maintenance",
-        desc: "During the illuminated frame burst, focus intently on encoding the target's instantaneous velocity vector into short-term cerebellar motor memory.",
-        tips: "Do not relax ocular muscles when the target disappears; keep driving your gaze at the exact encoded speed."
+        name: "Observe the visible path",
+        desc: "Follow the point while it is visible and note its continuing direction without forcing your eyes or head.",
+        tips: "Keep the path visible while learning the task and blink normally."
       },
       {
-        name: "Trajectory Kinematic Projection",
-        desc: "Mentally extend the invisible flight path across the screen. Treat the darkness not as an empty void, but as a covered tunnel through which the target continues traveling.",
-        tips: "Visualize the moving node leaving an invisible glowing trail across your field of view."
+        name: "Estimate the covered segment",
+        desc: "During the brief covered interval, make a calm estimate of where the point will continue, treating it as a simple task prediction.",
+        tips: "Use the last visible direction; do not chase a perfect answer."
       },
       {
-        name: "Pre-Flash Anticipatory Landing",
-        desc: "Shortly before the 30-frame dark interval concludes, prepare to lock central foveation on the anticipated exit coordinates to eliminate re-flash catch-up saccades.",
-        tips: "Count the steady rhythm of the strobe flashes to anticipate the exact millisecond of re-emergence."
+        name: "Compare the reappearance",
+        desc: "Notice where the point returns and compare it with your estimate. The result is a practice observation, not a measure of eye accuracy.",
+        tips: "Compare like-for-like sessions on the same display and browser."
       },
       {
-        name: "Saccadic Arrest Suppression",
-        desc: "Suppress the primitive reflex to freeze eye motion or fire erratic searching saccades during darkness. Trust feedforward pursuit velocity to carry your gaze to the target.",
-        tips: "Keep your extraocular eye muscles relaxed, fluid, and gliding forward steadily."
+        name: "Use a symptom stop rule",
+        desc: "Keep sessions short and stop for pain, dizziness, nausea, persistent blur, double vision, headache, or unusual visual symptoms.",
+        tips: "Seek professional advice if symptoms persist or recur outside the task."
       }
     ]
   },
@@ -306,7 +240,7 @@ export default function StrobePredictionPursuitPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
 
-      <StrobePredictionPursuitClient copy={{ title: "Strobe Prediction Pursuit", subtitle: "Stroboscopic vision training drill for predicting target position during flashes, blank intervals, and visual occlusion" }} />
+      <StrobePredictionPursuitClient copy={{ title: "Occlusion Prediction Pursuit", subtitle: "Controlled visual prediction drill with a brief covered interval; not a clinical eye test" }} />
       <DrillGuide guide={guide} />
     </>
   );

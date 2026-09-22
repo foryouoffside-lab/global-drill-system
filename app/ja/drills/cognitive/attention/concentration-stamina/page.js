@@ -322,9 +322,7 @@ export default function LocalizedCognitivePage() {
         aboutTitle: "集中力テストについて", aboutLead: "まれな信号を長く監視すると持続的注意は低下することがあります。この練習は短いセッションでルール切り替え、標的判別、誤反応を記録するセルフチェックです。", aboutText: "持続的注意とは、繰り返し現れる刺激から重要な信号を選び続ける力です。同じ条件で繰り返し、スコアとミスの変化を確認しましょう。\n\n睡眠、疲労、画面環境、慣れで結果は変わるため、医学的な診断結果として扱わないでください。", audienceTitle: "どんな人に向いていますか？", audienceText: "長時間の試験を準備する人、試合後半も精度を保ちたいゲーマー、持続的な集中が必要な仕事をする人に向いています。", skillsTitle: "鍛えられる力", skillsText: "持続的注意、標的判別、疲労下の警戒、誤反応の抑制を練習します。", flexibilityTitle: "認知の柔軟性", flexibilityText: "10秒ごとに母音と素数の基準が変わり、刺激を新しいルールで分類する切り替え力を鍛えます。"
       }} />
       <DrillGuide {...guideProps} />
-      <div className="max-w-6xl mx-auto px-4 pb-12">
-        <RelatedDrills currentCategory="cognitive" currentHref="https://skilldrills.online/ja/drills/cognitive/attention/concentration-stamina" />
-      </div>
+      <RelatedDrills />
       <DrillFooter />
     </>
   );

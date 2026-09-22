@@ -285,9 +285,7 @@ export default function TriangularPursuitPageFR() {
         }}
       />
       <DrillGuide guide={guide} />
-      <div className="max-w-6xl mx-auto px-4 pb-12">
-        <RelatedDrills currentCategory="visual-tracking" currentHref="https://skilldrills.online/fr/drills/visual-tracking/triangular-pursuit" />
-      </div>
+      <RelatedDrills />
     </>
   );
 }

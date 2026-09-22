@@ -285,7 +285,7 @@ export default function AntiZigzagEsPage() {
     sources: pickSources('woods2015', 'krauzlis2004', 'fitts1954', 'green2003', 'rashbass1961', 'accotZhai1997'),
     related: [
       { href: "/es/drills/fps/anti-strafe-jitter-duel", label: "Entrenamiento Anti-Strafe Jitter" },
-      { href: "/es/drills/fps/fps-tracking-trainer", label: "Entrenamiento de Tracking FPS" },
+      { href: "/es/drills/reaction-speed/fps-tracking-trainer", label: "Entrenamiento de Tracking FPS" },
       { href: "/es/drills/fps/pro-smooth-pursuit", label: "Tracking Suave Smooth Pursuit" },
       { href: "/es/drills/fps/flick-shot-training", label: "Entrenamiento de Flick Shot" },
       { href: "/es/drills/reaction-speed/reaction-time-test", label: "Test de Tiempo de Reacción" }
@@ -339,9 +339,7 @@ export default function AntiZigzagEsPage() {
         }}
       />
       <DrillGuide guide={esGuide} />
-      <div className="max-w-6xl mx-auto px-4 w-full">
-        <RelatedDrills currentCategory="fps" currentHref="/drills/fps/anti-zigzag-movement-trainer" locale="es" />
-      </div>
+      <RelatedDrills />
       <DrillFooter />
     </>
   );

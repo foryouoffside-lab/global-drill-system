@@ -37,8 +37,8 @@ import useImmersiveMode from '@/lib/useImmersiveMode';
 const DRILL_DURATION = 45; // starting clock only; a run grows past this
 const POINTS_PER_LEVEL = 1750; // 250 -> 1750 (7x)
 const ELITE_SCORE = 24000; // 17000 -> 24000 (1.4x)
-const TIME_PER_HIT = 0.6; // +0.6s on threat sweep
-const TIME_PENALTY = 0.8; // -0.8s on miss / core breach (opt-in gated)
+const TIME_PER_HIT = 2; // +2s on threat sweep, capped at 60s
+const TIME_PENALTY = 1; // -1s on miss / core breach (opt-in gated)
 const STORAGE_KEY = 'skilldrills_physical_peripheral_sweeper_v4';
 
 const getSavedData = () => {
@@ -69,7 +69,7 @@ const getLevelConfig = (level, combo = 0) => {
 };
 
 const RULES_ITEMS = [
-  { title: "Threat Interception", text: "Click threat node in outer vision to score +100 PTS scaled with combo multiplier (+0.6s per sweep)." },
+  { title: "Threat Interception", text: "Click threat node in outer vision to score +100 PTS scaled with combo multiplier (+2s per sweep, max 60s)." },
   { title: "Combo System", text: "Chain unbroken threat sweeps to build combo multiplier up to 3.0x max." },
   { title: "Level Progression", text: "Score increases level continuously. Threat speed & spawn density accelerate dynamically." },
   { title: "Core Breach / Miss", text: "Missing threat or allowing core breach resets combo streak (and deducts 0.8s if enabled in settings)." }
@@ -165,7 +165,7 @@ export default function PeripheralThreatSweeperClient({ copy = {} } = {}) {
     if (typeof window !== 'undefined') {
       setSoundEnabled(drillAudio.isEnabled());
       setFlashEnabled(drillFlash.isEnabled());
-      setPenaltyEnabled(drillPenalty.isEnabled());
+      setPenaltyEnabled(drillPenalty.isEnabled(TIME_PER_HIT === 2));
       const hasFinePointer = window.matchMedia('(pointer: fine)').matches;
       const isTouchCapable = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
       setIsTouchOnlyDevice(isTouchCapable && !hasFinePointer);
@@ -242,7 +242,7 @@ export default function PeripheralThreatSweeperClient({ copy = {} } = {}) {
 
   const applyPenalty = useCallback(() => {
     const e = engine.current;
-    if (drillPenalty.isEnabled()) {
+    if (drillPenalty.isEnabled(TIME_PER_HIT === 2)) {
       e.timeLeft -= TIME_PENALTY;
     }
     e.combo = 0;
@@ -260,7 +260,7 @@ export default function PeripheralThreatSweeperClient({ copy = {} } = {}) {
 
     const e = engine.current;
     const totalAttempts = e.successfulSweeps + e.missedClicks + e.breaches;
-    const accuracyPct = totalAttempts > 0 ? Math.round((e.successfulSweeps / totalAttempts) * 100) : 100;
+    const accuracyPct = totalAttempts > 0 ? Math.round((e.successfulSweeps / totalAttempts) * 100) : 0;
     const rating = getFpsScoreGrade(e.score, ELITE_SCORE);
 
     const grade = { letter: rating.grade || rating.letter || 'C', label: rating.label || 'Keep Going', color: rating.color || 'text-emerald-400' };
@@ -393,7 +393,7 @@ export default function PeripheralThreatSweeperClient({ copy = {} } = {}) {
         if (dist <= config.hitPad) {
           intercepted = true;
           eng.successfulSweeps++;
-          eng.timeLeft += TIME_PER_HIT;
+          eng.timeLeft = Math.min(60, eng.timeLeft + TIME_PER_HIT);
           eng.combo++;
           if (eng.combo > eng.maxCombo) eng.maxCombo = eng.combo;
 
@@ -780,6 +780,7 @@ export default function PeripheralThreatSweeperClient({ copy = {} } = {}) {
                 { label: copy?.resultLabels?.peakLevel || copy?.hudLabels?.peakLevel || 'Peak Level', value: `Lv. ${analytics.finalLevel}` },
               ]}
               onPlayAgain={enterDrill}
+              onBeforeShare={() => setIsFullscreen(false)}
               onShare={shareScore}
               onExit={handleExitDrill}
             />

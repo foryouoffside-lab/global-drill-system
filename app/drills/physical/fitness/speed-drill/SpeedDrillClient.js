@@ -37,8 +37,8 @@ import useImmersiveMode from '@/lib/useImmersiveMode';
 const DRILL_DURATION = 45; // starting clock only; a run grows past this
 const POINTS_PER_LEVEL = 1750; // 250 -> 1750 (7x)
 const ELITE_SCORE = 24000; // 17000 -> 24000 (1.4x)
-const TIME_PER_HIT = 0.6; // +0.6s on target hit
-const TIME_PENALTY = 0.8; // -0.8s on miss / target expiry (opt-in gated)
+const TIME_PER_HIT = 2; // +2s on target hit, capped at 60s
+const TIME_PENALTY = 1; // -1s on miss / target expiry (opt-in gated)
 const STORAGE_KEY = 'skilldrills_physical_speed_drill_v4';
 
 const getSavedData = () => {
@@ -62,14 +62,14 @@ const getLevelConfig = (level, combo = 0) => {
   const p = getDifficultyProgress(level); // 0 at L1, 1 at L15, unbounded above
   const heat = (getComboMultiplier(combo) - 1) / 2;
   return {
-    maxRadius: Math.max(12, ramp(45, 14, p) * (1 - heat * 0.15)),
+    maxRadius: Math.max(10, ramp(32, 10, p) * (1 - heat * 0.15)),
     speedMulti: ramp(1.0, 3.8, p) * (1 + heat * 0.25),
     shrinkSpeedFactor: ramp(0.6, 2.2, p) * (1 + heat * 0.20),
   };
 };
 
 const RULES_ITEMS = [
-  { title: "Target Acquisition", text: "Click moving shrinking targets before radius decays to zero (+0.6s per hit). Each hit scores 100 points multiplied by your combo and level." },
+  { title: "Target Acquisition", text: "Click moving shrinking targets before radius decays to zero (+2s per hit, max 60s). Each hit scores 100 points multiplied by your combo and level." },
   { title: "Combo Multiplier", text: "Chain unbroken target hits to build combo multiplier up to 3.0x max." },
   { title: "Level Progression", text: "Score increases level continuously. Target velocity & shrink rate accelerate dynamically." },
   { title: "Miss / Target Expiry", text: "Missing a target or letting target shrink to zero resets combo streak (and deducts 0.8s if enabled in settings)." }
@@ -167,7 +167,7 @@ export default function SpeedDrillClient({ copy = {} } = {}) {
     if (typeof window !== 'undefined') {
       setSoundEnabled(drillAudio.isEnabled());
       setFlashEnabled(drillFlash.isEnabled());
-      setPenaltyEnabled(drillPenalty.isEnabled());
+      setPenaltyEnabled(drillPenalty.isEnabled(TIME_PER_HIT === 2));
       const hasFinePointer = window.matchMedia('(pointer: fine)').matches;
       const isTouchCapable = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
       setIsTouchOnlyDevice(isTouchCapable && !hasFinePointer);
@@ -247,7 +247,7 @@ export default function SpeedDrillClient({ copy = {} } = {}) {
   const applyPenalty = useCallback(() => {
     const e = engine.current;
     e.misses++;
-    if (drillPenalty.isEnabled()) {
+    if (drillPenalty.isEnabled(TIME_PER_HIT === 2)) {
       e.timeLeft -= TIME_PENALTY;
     }
     e.combo = 0;
@@ -265,7 +265,7 @@ export default function SpeedDrillClient({ copy = {} } = {}) {
 
     const e = engine.current;
     const totalAttempts = e.hits + e.misses;
-    const accuracyPct = totalAttempts > 0 ? Math.round((e.hits / totalAttempts) * 100) : 100;
+    const accuracyPct = totalAttempts > 0 ? Math.round((e.hits / totalAttempts) * 100) : 0;
     const rating = getFpsScoreGrade(e.score, ELITE_SCORE);
 
     const grade = { letter: rating.grade || rating.letter || 'C', label: rating.label || 'Keep Going', color: rating.color || 'text-amber-400' };
@@ -396,7 +396,7 @@ export default function SpeedDrillClient({ copy = {} } = {}) {
           if (rxTime < eng.bestReactionTime) eng.bestReactionTime = rxTime;
 
           eng.hits++;
-          eng.timeLeft += TIME_PER_HIT;
+          eng.timeLeft = Math.min(60, eng.timeLeft + TIME_PER_HIT);
           eng.combo++;
           if (eng.combo > eng.bestStreak) eng.bestStreak = eng.combo;
 
@@ -764,6 +764,7 @@ export default function SpeedDrillClient({ copy = {} } = {}) {
                 { label: copy?.resultLabels?.peakLevel || 'Peak Level', value: `Lv. ${analytics.finalLevel}` },
               ]}
               onPlayAgain={enterDrill}
+              onBeforeShare={() => setIsFullscreen(false)}
               onShare={shareScore}
               onExit={handleExitDrill}
             />

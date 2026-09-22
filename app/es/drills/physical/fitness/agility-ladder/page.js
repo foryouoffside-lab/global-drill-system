@@ -397,13 +397,7 @@ export default function AgilityLadderPageEs() {
         }}
       />
       <DrillGuide guide={ladderGuide} />
-      <div className="max-w-4xl mx-auto px-4 pb-12">
-        <RelatedDrills
-          currentCategory="physical"
-          currentHref="/drills/physical/fitness/agility-ladder"
-          locale="es"
-        />
-      </div>
+      <RelatedDrills />
     </>
   );
 }

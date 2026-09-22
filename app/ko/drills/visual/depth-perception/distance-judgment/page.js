@@ -283,12 +283,12 @@ const distanceGuideKo = {
   },
   sources: pickSources('howard1919', 'lee1976', 'regan1978', 'julesz1971', 'woods2015'),
   related: [
-    { href: "/drills/visual/tracking-accuracy/moving-target", label: "움직이는 타겟 인터셉트" },
-    { href: "/drills/visual/reaction-speed/light-reaction", label: "빛 반응 속도 테스트" },
-    { href: "/drills/visual/tracking-accuracy/multiple-targets", label: "다중 객체 추적 (MOT)" },
-    { href: "/drills/visual/tracking-accuracy/pursuit-tracker", label: "활창 추종 안구 운동 트래커" },
-    { href: "/drills/visual/reaction-speed/go/no-go", label: "Go / No-Go 충동 제어 훈련" },
-    { href: "/drills/visual/visual-recognition/entropic-grid", label: "엔트로픽 시각 탐색 테스트" }
+    { href: "/ko/drills/visual/tracking-accuracy/moving-target", label: "움직이는 타겟 인터셉트" },
+    { href: "/ko/drills/visual/reaction-speed/light-reaction", label: "빛 반응 속도 테스트" },
+    { href: "/ko/drills/visual/tracking-accuracy/multiple-targets", label: "다중 객체 추적 (MOT)" },
+    { href: "/ko/drills/visual/tracking-accuracy/pursuit-tracker", label: "활창 추종 안구 운동 트래커" },
+    { href: "/ko/drills/visual/reaction-speed/go/no-go", label: "Go / No-Go 충동 제어 훈련" },
+    { href: "/ko/drills/visual/visual-recognition/entropic-grid", label: "엔트로픽 시각 탐색 테스트" }
   ]
 };
 

@@ -291,7 +291,7 @@ export default function AntiZigzagPage() {
     sources: pickSources('woods2015', 'krauzlis2004', 'fitts1954', 'green2003', 'rashbass1961', 'accotZhai1997'),
     related: [
       { href: "/drills/fps/anti-strafe-jitter-duel", label: "Anti-Strafe Jitter Trainer" },
-      { href: "/drills/fps/fps-tracking-trainer", label: "FPS Tracking Trainer" },
+      { href: "/drills/reaction-speed/fps-tracking-trainer", label: "FPS Tracking Trainer" },
       { href: "/drills/fps/pro-smooth-pursuit", label: "Smooth Pursuit Aim Trainer" },
       { href: "/drills/fps/flick-shot-training", label: "Flick Shot Trainer" },
       { href: "/drills/reaction-speed/reaction-time-test", label: "Reaction Time Test" }

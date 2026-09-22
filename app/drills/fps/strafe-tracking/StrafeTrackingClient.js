@@ -191,7 +191,7 @@ export default function StrafeTrackingClient({ copy = null }) {
     if (document.pointerLockElement) document.exitPointerLock();
 
     const e = engine.current;
-    const finalAccuracy = e.totalFrames > 0 ? Math.round((e.framesOnTarget / e.totalFrames) * 100) : 100;
+    const finalAccuracy = e.totalFrames > 0 ? Math.round((e.framesOnTarget / e.totalFrames) * 100) : 0;
     const peakLevel = Math.floor(bestLevelRunRef.current);
     const grade = getFpsScoreGrade(e.score, ELITE_SCORE);
 
@@ -513,7 +513,7 @@ export default function StrafeTrackingClient({ copy = null }) {
             const levelMult = 1 + getDifficultyProgress(e.level) * 0.5;
             const gained = Math.round(baseScore * getComboMultiplier(e.combo) * levelMult);
             e.score += gained;
-            e.timeLeft += 0.1; // +0.1s per 0.25s = +0.4s per full second on target
+            e.timeLeft = Math.min(60, e.timeLeft + 0.1); // continuous tracking reward, capped at 60s
             e.onTargetTimer -= 0.25;
             setScore(e.score);
             drillAudio.playHit();
@@ -856,6 +856,7 @@ export default function StrafeTrackingClient({ copy = null }) {
               shareText={copy?.shareText}
               exitText={copy?.exitText}
               onPlayAgain={enterDrill}
+              onBeforeShare={() => setIsFullscreen(false)}
               onShare={shareDrillLink}
               onExit={handleExitDrill}
             />

@@ -1,5 +1,5 @@
 'use client';
 
-import dynamic from 'next/dynamic';
+import Client from './StrobeLatencyClient';
 
-export default dynamic(() => import('./StrobeLatencyClient'));
+export default Client;

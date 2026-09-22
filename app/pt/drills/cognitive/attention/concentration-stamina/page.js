@@ -334,9 +334,7 @@ export default function EnhancedPagePt() {
         aboutTitle: "Sobre o teste de concentração", aboutLead: "A atenção sustentada pode cair durante a observação prolongada de sinais raros. Este teste curto registra troca de regras, identificação de alvos e erros como autoavaliação não clínica.", aboutText: "Atenção sustentada é a capacidade de selecionar sinais relevantes em uma sequência repetitiva. Repita nas mesmas condições e acompanhe a evolução dos pontos e erros.\n\nSono, estresse, tela e familiaridade alteram o resultado; ele não substitui avaliação profissional.", audienceTitle: "Para quem serve?", audienceText: "Para estudantes antes de provas longas, jogadores que querem manter precisão e pessoas que precisam sustentar o foco no trabalho.", skillsTitle: "Habilidades treinadas", skillsText: "Atenção sustentada, identificação de alvos, vigilância sob fadiga e controle de impulsos.", flexibilityTitle: "Flexibilidade cognitiva", flexibilityText: "A troca entre vogais e números primos a cada 10 segundos treina a alternância rápida entre regras."
       }} />
       <DrillGuide {...guideProps} />
-      <div className="max-w-6xl mx-auto px-4 pb-12">
-        <RelatedDrills currentCategory="cognitive" currentHref="https://skilldrills.online/pt/drills/cognitive/attention/concentration-stamina" />
-      </div>
+      <RelatedDrills />
       <DrillFooter />
     </>
   );

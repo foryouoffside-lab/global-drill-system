@@ -1,5 +1,5 @@
 'use client';
 
-import dynamic from 'next/dynamic';
+import Client from './GhostLinkClient';
 
-export default dynamic(() => import('./GhostLinkClient'));
+export default Client;

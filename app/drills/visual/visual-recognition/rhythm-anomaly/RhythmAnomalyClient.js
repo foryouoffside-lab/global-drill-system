@@ -538,6 +538,7 @@ export default function RhythmAnomalyClient({ copy } = {}) {
   }, [clearGameTimeouts, initGrid]);
 
   const shareScore = useCallback(async () => {
+    setIsFullscreen(false);
     const url = 'https://skilldrills.online/drills/visual/visual-recognition/rhythm-anomaly';
     try {
       const canvas = generateShareCard({

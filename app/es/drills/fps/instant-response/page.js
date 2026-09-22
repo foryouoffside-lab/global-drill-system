@@ -357,13 +357,7 @@ export default function InstantResponseEsPage() {
       />
       <InstantResponseClient copy={copyEs} />
       <DrillGuide guide={instantResponseGuide} />
-      <div className="max-w-4xl mx-auto px-4 pb-12">
-        <RelatedDrills
-          currentCategory="fps"
-          currentHref="/drills/fps/instant-response"
-          locale="es"
-        />
-      </div>
+      <RelatedDrills />
       <DrillFooter />
     </>
   );

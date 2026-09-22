@@ -322,9 +322,7 @@ export default function SpanishSaccadicGalleryPage() {
       />
       <SaccadicGalleryWrapper copy={{ title: 'Entrenamiento Visual Online · Saltos Oculares', subtitle: 'Saltos Oculares · Adquisición Visual', caption: 'Desplaza la mirada entre objetivos y pulsa cada uno con precisión.' }} />
       <DrillGuide guide={saccadicGuide} />
-      <div className="max-w-6xl mx-auto px-4 pb-12">
-        <RelatedDrills currentCategory="reaction-speed" currentHref="https://skilldrills.online/es/drills/reaction-speed/saccadic-gallery" />
-      </div>
+      <RelatedDrills />
       <DrillFooter />
     </>
   );

@@ -378,13 +378,7 @@ export default function CrossBodyMovementPageKo() {
         }}
       />
       <DrillGuide guide={crossBodyGuide} />
-      <div className="max-w-4xl mx-auto px-4 pb-12">
-        <RelatedDrills
-          currentCategory="physical"
-          currentHref="/drills/physical/coordination/cross-body-movement"
-          locale="ko"
-        />
-      </div>
+      <RelatedDrills />
     </>
   );
 }

@@ -348,13 +348,7 @@ export default function DistractionFighterPageKo() {
         }}
       />
       <DrillGuide guide={distractionFighterGuide} />
-      <div className="max-w-4xl mx-auto px-4 pb-12">
-        <RelatedDrills
-          currentCategory="cognitive"
-          currentHref="/drills/cognitive/focus/distraction-fighter"
-          locale="ko"
-        />
-      </div>
+      <RelatedDrills />
       <DrillFooter />
     </>
   );

@@ -290,7 +290,7 @@ export default function GermanProSmoothPursuitPage() {
     related: [
       { href: "/de/drills/fps/anti-zigzag-movement-trainer", label: "Anti-Zigzag Aim Trainer" },
       { href: "/de/drills/fps/anti-strafe-jitter-duel", label: "Anti-Strafe Jitter Trainer" },
-      { href: "/de/drills/fps/fps-tracking-trainer", label: "FPS Tracking Trainer" },
+      { href: "/de/drills/reaction-speed/fps-tracking-trainer", label: "FPS Tracking Trainer" },
       { href: "/de/drills/fps/flick-shot-training", label: "Flick Shot Trainer" },
       { href: "/de/drills/reaction-speed/visual-tracking-speed-test", label: "Visual Tracking Speed Test" }
     ]
@@ -344,9 +344,7 @@ export default function GermanProSmoothPursuitPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(howToSchema) }}
       />
       <ProSmoothPursuitClient copy={copyDe} />
-      <div className="max-w-6xl mx-auto px-4 w-full pb-12">
-        <RelatedDrills currentCategory="fps" currentHref="/drills/fps/pro-smooth-pursuit" locale="de" />
-      </div>
+      <RelatedDrills />
       <DrillGuide guide={proSmoothPursuitGuide} />
       <DrillFooter />
     </>

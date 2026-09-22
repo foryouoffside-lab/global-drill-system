@@ -290,12 +290,12 @@ const concentrationGridGuidePt = {
   faqs: faqSchema.mainEntity.map(e => ({ q: e.name, a: e.acceptedAnswer.text })),
   sources: pickSources('lu2022', 'treisman1980', 'rayner1998', 'rayner2016', 'wolfe2007', 'woods2015'),
   related: [
-    { href: "/drills/cognitive/attention/concentration-stamina", label: "Teste de Foco Contínuo" },
-    { href: "/drills/cognitive/focus/distraction-fighter", label: "Teste de Stroop Online" },
-    { href: "/drills/cognitive/attention/divided-attention", label: "Atenção Dividida" },
-    { href: "/drills/cognitive/processing-speed/rsvp-reader", label: "Teste de Leitura Rápida" },
-    { href: "/drills/cognitive/processing-speed/symbol-matching", label: "Substituição de Símbolos" },
-    { href: "/drills/cognitive/processing-speed/reaction-time", label: "Velocidade de Reação" }
+    { href: "/pt/drills/cognitive/attention/concentration-stamina", label: "Teste de Foco Contínuo" },
+    { href: "/pt/drills/cognitive/focus/distraction-fighter", label: "Teste de Stroop Online" },
+    { href: "/pt/drills/cognitive/attention/divided-attention", label: "Atenção Dividida" },
+    { href: "/pt/drills/cognitive/processing-speed/rsvp-reader", label: "Teste de Leitura Rápida" },
+    { href: "/pt/drills/cognitive/processing-speed/symbol-matching", label: "Substituição de Símbolos" },
+    { href: "/pt/drills/cognitive/processing-speed/reaction-time", label: "Velocidade de Reação" }
   ]
 };
 
@@ -366,9 +366,7 @@ export default function ConcentrationGridPagePt() {
 
       <ConcentrationGridClient copy={copyPt} />
       <DrillGuide guide={concentrationGridGuidePt} />
-      <div className="max-w-6xl w-full mx-auto px-4 pb-12">
-        <RelatedDrills currentCategory="cognitive" currentHref="/drills/cognitive/focus/concentration-grid" locale="pt" />
-      </div>
+      <RelatedDrills />
       <DrillFooter />
     </>
   );

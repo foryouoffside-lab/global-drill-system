@@ -464,7 +464,7 @@ export default function KeyboardRecognitionClient({ copy = null }) {
 
     const e = engine.current;
     const totalKp = e.totalKeypresses;
-    const finalAccuracy = totalKp > 0 ? Math.round((e.correctKeypresses / totalKp) * 100) : 100;
+    const finalAccuracy = totalKp > 0 ? Math.round((e.correctKeypresses / totalKp) * 100) : 0;
 
     const sessionMinutes = (DRILL_DURATION - e.timeLeft) / 60;
     const kpm = sessionMinutes > 0 ? Math.round(totalKp / sessionMinutes) : 0;
@@ -682,6 +682,7 @@ export default function KeyboardRecognitionClient({ copy = null }) {
   }, [gameState, endGame]);
 
   const shareScore = useCallback(async () => {
+    setIsFullscreen(false);
     const url = 'https://skilldrills.online/drills/motor/movement-speed/keyboard-recognition';
     try {
       const canvas = generateShareCard({
@@ -814,7 +815,7 @@ export default function KeyboardRecognitionClient({ copy = null }) {
               <div className="w-[95%] max-w-5xl flex items-center justify-center flex-wrap">
 
                 {promptDisplay.type === 'fake' && (
-                  <div className="text-6xl md:text-8xl lg:text-[9rem] font-black uppercase text-amber-500 font-sans tracking-wide drop-shadow-[0_0_20px_rgba(245,158,11,0.4)] whitespace-nowrap">
+                  <div className="text-6xl md:text-8xl lg:text-[9rem] font-black uppercase text-amber-500 font-sans tracking-wide whitespace-nowrap">
                     {promptDisplay.text}
                   </div>
                 )}
@@ -823,13 +824,13 @@ export default function KeyboardRecognitionClient({ copy = null }) {
                   <div className="flex gap-4 md:gap-8 items-center justify-center flex-wrap">
                     {promptDisplay.showMemoryContent ? (
                       promptDisplay.textList.map((ch, i) => (
-                        <span key={i} className="font-mono font-black text-cyan-400 text-6xl md:text-8xl lg:text-9xl drop-shadow-[0_0_20px_rgba(6,182,212,0.4)]">{ch}</span>
+                        <span key={i} className="font-mono font-black text-cyan-400 text-6xl md:text-8xl lg:text-9xl">{ch}</span>
                       ))
                     ) : (
                       promptDisplay.textList.map((ch, i) => {
                         const isTyped = i < promptDisplay.typedCount;
                         return (
-                          <span key={i} className={`w-20 h-24 md:w-28 md:h-32 rounded-3xl border-[3px] flex items-center justify-center font-black font-mono transition-all text-5xl md:text-6xl ${isTyped ? 'border-emerald-500 bg-emerald-500/10 text-emerald-400 shadow-[0_0_15px_rgba(16,185,129,0.3)]' : 'border-dashed border-slate-700 text-slate-700'}`}>
+                          <span key={i} className={`${ch.length > 3 ? 'w-28 md:w-36 text-4xl md:text-5xl' : 'w-20 md:w-28 text-5xl md:text-6xl'} h-24 md:h-32 rounded-3xl border-[3px] flex items-center justify-center font-black font-mono transition-all whitespace-nowrap ${isTyped ? 'border-emerald-500 bg-emerald-500/10 text-emerald-400 shadow-[0_0_15px_rgba(16,185,129,0.3)]' : 'border-dashed border-slate-700 text-slate-700'}`}>
                             {isTyped ? ch : ''}
                           </span>
                         );
@@ -844,7 +845,7 @@ export default function KeyboardRecognitionClient({ copy = null }) {
                       const isTyped = i < promptDisplay.typedCount;
                       const isCurrent = i === promptDisplay.typedCount;
                       return (
-                        <span key={i} className={`w-20 h-24 md:w-28 md:h-32 rounded-3xl border-[3px] flex items-center justify-center font-black font-mono transition-all text-4xl md:text-6xl ${isTyped ? 'border-emerald-500 bg-emerald-500/20 text-emerald-400 shadow-[0_0_20px_rgba(16,185,129,0.4)] scale-95' : isCurrent ? 'border-white bg-slate-800 text-white shadow-[0_0_20px_rgba(255,255,255,0.2)] scale-110' : 'border-slate-800 bg-slate-900 text-slate-600'}`}>
+                        <span key={i} className={`${ch.length > 3 ? 'w-28 md:w-36 text-3xl md:text-5xl' : 'w-20 md:w-28 text-4xl md:text-6xl'} h-24 md:h-32 rounded-3xl border-[3px] flex items-center justify-center font-black font-mono transition-all whitespace-nowrap ${isTyped ? 'border-emerald-500 bg-emerald-500/20 text-emerald-400 shadow-[0_0_20px_rgba(16,185,129,0.4)] scale-95' : isCurrent ? 'border-white bg-slate-800 text-white shadow-[0_0_20px_rgba(255,255,255,0.2)] scale-110' : 'border-slate-800 bg-slate-900 text-slate-600'}`}>
                           {ch}
                         </span>
                       );
@@ -853,7 +854,7 @@ export default function KeyboardRecognitionClient({ copy = null }) {
                 )}
 
                 {['single', 'combo'].includes(promptDisplay.type) && (
-                  <div className="text-5xl md:text-7xl lg:text-[8rem] font-mono font-black text-white tracking-widest drop-shadow-[0_0_25px_rgba(255,255,255,0.2)] whitespace-nowrap overflow-visible">
+                  <div className="text-5xl md:text-7xl lg:text-[8rem] font-mono font-black text-white tracking-widest whitespace-nowrap overflow-visible">
                     {promptDisplay.text}
                   </div>
                 )}

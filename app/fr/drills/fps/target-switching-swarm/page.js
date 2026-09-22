@@ -317,13 +317,7 @@ export default function TargetSwitchingSwarmFrPage() {
         }}
       />
       <DrillGuide guide={targetSwitchingGuide} />
-      <div className="max-w-4xl mx-auto px-4 pb-12">
-        <RelatedDrills
-          currentCategory="fps"
-          currentHref="/fr/drills/fps/target-switching-swarm"
-          locale="fr"
-        />
-      </div>
+      <RelatedDrills />
       <DrillFooter />
     </>
   );

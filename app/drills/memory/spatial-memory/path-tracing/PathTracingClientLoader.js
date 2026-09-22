@@ -1,5 +1,5 @@
 'use client';
 
-import dynamic from 'next/dynamic';
+import Client from './PathTracingClient';
 
-export default dynamic(() => import('./PathTracingClient'));
+export default Client;

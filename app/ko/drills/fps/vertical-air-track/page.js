@@ -303,7 +303,7 @@ export default function VerticalAirTrackPageKo() {
       { href: "/ko/drills/motor/hand-eye-coordination/aim-trainer", label: "에임 트레이너 (플릭 샷)" },
       { href: "/ko/drills/reaction-speed/reaction-game", label: "반응속도 테스트 게임" },
       { href: "/ko/drills/reaction-speed/visual-tracking-speed-test", label: "시각 추적 속도 테스트" },
-      { href: "/ko/drills/motor/keyboard-tester", label: "키보드 테스트기" }
+      { href: "/ko/drills/motor/movement-speed/keyboard-recognition", label: "키보드 반응속도 테스트" }
     ]
   };
 
@@ -382,13 +382,7 @@ export default function VerticalAirTrackPageKo() {
         }}
       />
       <DrillGuide guide={verticalAirTrackGuide} />
-      <div className="max-w-6xl w-full mx-auto px-4 pb-12">
-        <RelatedDrills
-          currentCategory="fps"
-          currentHref="/ko/drills/fps/vertical-air-track"
-          locale="ko"
-        />
-      </div>
+      <RelatedDrills />
       <DrillFooter />
     </>
   );

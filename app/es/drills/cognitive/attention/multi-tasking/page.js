@@ -343,9 +343,7 @@ export default function EnhancedPage() {
         skillsTitle: "Habilidades entrenadas", skillsText: "Rastreo visual bilateral, detección periférica, cambio atencional y control ejecutivo.", flexibilityTitle: "Velocidad de cambio", flexibilityText: "Cada nivel modifica ritmo y patrones: cambia entre los flujos sin perder precisión."
       }} />
       <DrillGuide {...guideProps} />
-      <div className="max-w-6xl mx-auto px-4 pb-12">
-        <RelatedDrills currentCategory="cognitive" currentHref="https://skilldrills.online/es/drills/cognitive/attention/multi-tasking" />
-      </div>
+      <RelatedDrills />
       <DrillFooter />
     </>
   );

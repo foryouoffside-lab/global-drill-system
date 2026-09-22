@@ -392,13 +392,7 @@ export default function LocalizedGridMemorizationPage() {
         ]
 }} />
       <DrillGuide guide={gridGuide} />
-      <div className="max-w-4xl mx-auto px-4 pb-12">
-        <RelatedDrills
-          currentCategory="memory"
-          currentHref="/drills/memory/spatial-memory/grid-memorization"
-          locale="pt"
-        />
-      </div>
+      <RelatedDrills />
     </>
   );
 }

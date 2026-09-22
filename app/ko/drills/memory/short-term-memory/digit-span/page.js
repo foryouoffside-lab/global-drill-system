@@ -409,13 +409,7 @@ export default function LocalizedDigitSpanPage() {
         ]
 }} />
       <DrillGuide guide={digitSpanGuide} />
-      <div className="max-w-4xl mx-auto px-4 pb-12">
-        <RelatedDrills
-          currentCategory="memory"
-          currentHref="/drills/memory/short-term-memory/digit-span"
-          locale="ko"
-        />
-      </div>
+      <RelatedDrills />
     </>
   );
 }

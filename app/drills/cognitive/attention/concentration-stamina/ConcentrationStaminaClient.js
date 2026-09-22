@@ -155,7 +155,7 @@ export default function ConcentrationStaminaClient({ copy } = {}) {
     drillAudio.playSessionEnd();
 
     const totalActions = hitsRef.current + falseAlarmsRef.current + missesRef.current;
-    const accuracyVal = totalActions > 0 ? Math.round((hitsRef.current / totalActions) * 100) : 100;
+    const accuracyVal = totalActions > 0 ? Math.round((hitsRef.current / totalActions) * 100) : 0;
     const finalScore = scoreRef.current;
     const peakLevel = maxLevelRef.current;
 
@@ -393,6 +393,7 @@ export default function ConcentrationStaminaClient({ copy } = {}) {
   const gradeInfo = endSummary ? getFpsScoreGrade(endSummary.score, ELITE_SCORE) : null;
 
   const shareResult = useCallback(async () => {
+    setIsFullscreen(false);
     if (!endSummary || !gradeInfo) return;
     const url = 'https://skilldrills.online/drills/cognitive/attention/concentration-stamina';
     try {

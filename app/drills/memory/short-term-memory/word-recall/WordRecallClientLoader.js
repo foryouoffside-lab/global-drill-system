@@ -1,5 +1,5 @@
 'use client';
 
-import dynamic from 'next/dynamic';
+import Client from './WordRecallClient';
 
-export default dynamic(() => import('./WordRecallClient'));
+export default Client;

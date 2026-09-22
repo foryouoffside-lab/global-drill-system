@@ -173,6 +173,14 @@ export default function DrillsDirectoryClient({ faqs = [] }) {
           })}
         </div>
 
+        {/* Session preferences */}
+        <Reveal className="max-w-2xl mx-auto pb-4">
+          <h2 className="text-xs font-mono font-bold uppercase tracking-widest text-ink-3 mb-3 text-center">
+            Session preferences
+          </h2>
+          <DrillGlobalSettings />
+        </Reveal>
+
         {/* Frequently Asked Questions (SEO / AEO / GEO) */}
         {faqs?.length > 0 && (
           <Reveal className="mb-14">
@@ -202,14 +210,6 @@ export default function DrillsDirectoryClient({ faqs = [] }) {
             </div>
           </Reveal>
         )}
-
-        {/* Session preferences */}
-        <Reveal className="max-w-2xl mx-auto pb-4">
-          <h2 className="text-xs font-mono font-bold uppercase tracking-widest text-ink-3 mb-3 text-center">
-            Session preferences
-          </h2>
-          <DrillGlobalSettings />
-        </Reveal>
       </main>
 
       <SiteFooter />

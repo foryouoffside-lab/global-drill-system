@@ -309,9 +309,7 @@ export default function SineWavePursuitPage() {
 
       <SineWavePursuitClient copy={{ title: "Poursuite oculaire sinusoïdale", subtitle: "Suivez une cible périodique horizontalement et verticalement" }} />
       <DrillGuide guide={guideProps} />
-      <div className="max-w-6xl mx-auto px-4 pb-12">
-        <RelatedDrills currentCategory="visual-tracking" currentHref="https://skilldrills.online/fr/drills/visual-tracking/sine-wave-pursuit" />
-      </div>
+      <RelatedDrills />
       <DrillFooter />
     </>
   );

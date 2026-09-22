@@ -289,7 +289,7 @@ export default function ProSmoothPursuitPage() {
     related: [
       { href: "/drills/fps/anti-zigzag-movement-trainer", label: "Anti-Zigzag Aim Trainer" },
       { href: "/drills/fps/anti-strafe-jitter-duel", label: "Anti-Strafe Jitter Trainer" },
-      { href: "/drills/fps/fps-tracking-trainer", label: "FPS Tracking Trainer" },
+      { href: "/drills/reaction-speed/fps-tracking-trainer", label: "FPS Tracking Trainer" },
       { href: "/drills/fps/flick-shot-training", label: "Flick Shot Trainer" },
       { href: "/drills/reaction-speed/reaction-time-test", label: "Reaction Time Test" }
     ]

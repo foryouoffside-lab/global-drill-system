@@ -343,13 +343,7 @@ export default function AntiZigzagDePage() {
         }}
       />
       <DrillGuide guide={antiZigzagGuide} />
-      <div className="max-w-4xl mx-auto px-4 pb-12">
-        <RelatedDrills
-          currentCategory="fps"
-          currentHref="/drills/fps/anti-zigzag-movement-trainer"
-          locale="de"
-        />
-      </div>
+      <RelatedDrills />
       <DrillFooter />
     </>
   );

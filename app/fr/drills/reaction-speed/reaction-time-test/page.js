@@ -16,7 +16,7 @@ import { pickSources } from '@/lib/drillSources';
 
 export const metadata = {
   title: "Test de temps de réaction en ligne | SkillDrills",
-  description: "Test de temps de réaction gratuit : mesurez vos réflexes visuels en millisecondes, comparez la moyenne de plusieurs essais et observez votre régularité dans le navigateur.",
+  description: "Test de temps de réaction gratuit : mesurez vos réflexes visuels en millisecondes, comparez la moyenne de plusieurs essais et suivez votre régularité.",
   keywords: [
     "test de temps de réaction",
     "test de réaction en ligne",

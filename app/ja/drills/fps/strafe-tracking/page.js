@@ -299,11 +299,11 @@ export default function StrafeTrackingPageJa() {
     faqs: faqSchema.mainEntity.map(e => ({ q: e.name, a: e.acceptedAnswer.text })),
     sources: pickSources('woods2015', 'krauzlis2004', 'posner1990', 'green2003', 'rashbass1961', 'land2000'),
     related: [
-      { href: "/drills/fps/recoil-control", label: "リコイル練習 (Recoil Control Trainer)" },
-      { href: "/drills/fps/angle-hold-trainer", label: "置きエイム練習 (Angle Hold Trainer)" },
-      { href: "/drills/fps/pro-smooth-pursuit", label: "スムーズパシュート練習 (Smooth Pursuit Trainer)" },
-      { href: "/drills/fps/anti-strafe-jitter-duel", label: "対ストレイフジッター練習 (Anti-Strafe Jitter)" },
-      { href: "/drills/fps/micro-correction-precision", label: "マイクロフリック練習 (Micro-Correction)" }
+      { href: "/ja/drills/fps/recoil-control", label: "リコイル練習 (Recoil Control Trainer)" },
+      { href: "/ja/drills/fps/angle-hold-trainer", label: "置きエイム練習 (Angle Hold Trainer)" },
+      { href: "/ja/drills/fps/pro-smooth-pursuit", label: "スムーズパシュート練習 (Smooth Pursuit Trainer)" },
+      { href: "/ja/drills/fps/anti-strafe-jitter-duel", label: "対ストレイフジッター練習 (Anti-Strafe Jitter)" },
+      { href: "/ja/drills/fps/micro-correction-precision", label: "マイクロフリック練習 (Micro-Correction)" }
     ]
   };
 
@@ -391,9 +391,7 @@ export default function StrafeTrackingPageJa() {
       <StrafeTrackingClient copy={copyJa} />
 
       <DrillGuide guide={strafeGuideJa} />
-      <div className="max-w-6xl w-full mx-auto px-4 pb-12">
-        <RelatedDrills currentCategory="fps" currentHref="/drills/fps/strafe-tracking" locale="ja" />
-      </div>
+      <RelatedDrills />
       <DrillFooter />
     </>
   );

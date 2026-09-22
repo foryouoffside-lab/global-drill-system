@@ -279,10 +279,10 @@ export default function AwarenessDrillJaPage() {
     faqs: faqSchema.mainEntity.map(e => ({ q: e.name, a: e.acceptedAnswer.text })),
     sources: pickSources('woods2015', 'elliott2010', 'fitts1954', 'schmidt1979', 'leigh2015', 'rayner1998'),
     related: [
-      { href: "/drills/fps/flick-shot-training", label: "フリック エイム 練習" },
-      { href: "/drills/fps/angle-hold-trainer", label: "置きエイム練習 (クロスヘアプレイスメント)" },
-      { href: "/drills/fps/micro-correction-precision", label: "マイクロフリック 練習" },
-      { href: "/drills/reaction-speed/reaction-time-test", label: "反応速度測定テスト" }
+      { href: "/ja/drills/fps/flick-shot-training", label: "フリック エイム 練習" },
+      { href: "/ja/drills/fps/angle-hold-trainer", label: "置きエイム練習 (クロスヘアプレイスメント)" },
+      { href: "/ja/drills/fps/micro-correction-precision", label: "マイクロフリック 練習" },
+      { href: "/ja/drills/reaction-speed/reaction-time-test", label: "反応速度測定テスト" }
     ]
   };
 
@@ -340,13 +340,7 @@ export default function AwarenessDrillJaPage() {
         }}
       />
       <DrillGuide guide={awarenessGuide} />
-      <div className="max-w-4xl mx-auto px-4 pb-12">
-        <RelatedDrills
-          currentCategory="fps"
-          currentHref="/ja/drills/fps/180-degree-awareness"
-          locale="ja"
-        />
-      </div>
+      <RelatedDrills />
       <DrillFooter />
     </>
   );

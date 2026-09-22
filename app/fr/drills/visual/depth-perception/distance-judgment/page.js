@@ -17,7 +17,7 @@ import { pickSources } from '@/lib/drillSources';
 
 export const metadata = {
   title: 'Test de perception de la profondeur en ligne | SkillDrills',
-  description: 'Test gratuit de perception de la profondeur et de vision stéréoscopique. Entraînez l’appréciation des distances avec une cible mobile; ce test n’est pas un diagnostic.',
+  description: 'Test gratuit de perception de la profondeur et de vision stéréoscopique. Entraînez l’appréciation des distances sur cible mobile; pas un diagnostic.',
   keywords: [
     'test de perception de la profondeur',
     'vision stéréoscopique',
@@ -33,7 +33,7 @@ export const metadata = {
   ],
   openGraph: {
     title: 'Test de perception de la profondeur en ligne | SkillDrills',
-    description: 'Test gratuit de perception de la profondeur et de vision stéréoscopique. Entraînez l’appréciation des distances avec une cible mobile; ce test n’est pas un diagnostic.',
+    description: 'Test gratuit de perception de la profondeur et de vision stéréoscopique. Entraînez l’appréciation des distances sur cible mobile; pas un diagnostic.',
     type: 'article',
     url: 'https://skilldrills.online/fr/drills/visual/depth-perception/distance-judgment',
     siteName: 'SkillDrills',
@@ -42,7 +42,7 @@ export const metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'Test de perception de la profondeur en ligne | SkillDrills',
-    description: 'Test gratuit de perception de la profondeur et de vision stéréoscopique. Entraînez l’appréciation des distances avec une cible mobile; ce test n’est pas un diagnostic.',
+    description: 'Test gratuit de perception de la profondeur et de vision stéréoscopique. Entraînez l’appréciation des distances sur cible mobile; pas un diagnostic.',
   },
   robots: { index: true, follow: true },
   alternates: {
@@ -280,12 +280,12 @@ const distanceGuideFr = {
   },
   sources: pickSources('howard1919', 'lee1976', 'regan1978', 'julesz1971', 'woods2015'),
   related: [
-    { href: "/drills/visual/tracking-accuracy/moving-target", label: "Interception de Cible Mobile" },
-    { href: "/drills/visual/reaction-speed/light-reaction", label: "Test de Réaction à la Lumière" },
-    { href: "/drills/visual/tracking-accuracy/multiple-targets", label: "Poursuite d'Objets Multiples" },
-    { href: "/drills/visual/tracking-accuracy/pursuit-tracker", label: "Suivi Oculaire Continu" },
-    { href: "/drills/visual/reaction-speed/go/no-go", label: "Contrôle d'Impulsion Go / No-Go" },
-    { href: "/drills/visual/visual-recognition/entropic-grid", label: "Exploration de Grille Entropique" }
+    { href: "/fr/drills/visual/tracking-accuracy/moving-target", label: "Interception de Cible Mobile" },
+    { href: "/fr/drills/visual/reaction-speed/light-reaction", label: "Test de Réaction à la Lumière" },
+    { href: "/fr/drills/visual/tracking-accuracy/multiple-targets", label: "Poursuite d'Objets Multiples" },
+    { href: "/fr/drills/visual/tracking-accuracy/pursuit-tracker", label: "Suivi Oculaire Continu" },
+    { href: "/fr/drills/visual/reaction-speed/go/no-go", label: "Contrôle d'Impulsion Go / No-Go" },
+    { href: "/fr/drills/visual/visual-recognition/entropic-grid", label: "Exploration de Grille Entropique" }
   ]
 };
 

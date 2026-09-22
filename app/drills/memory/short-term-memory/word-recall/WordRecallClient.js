@@ -157,7 +157,7 @@ export default function WordRecallClient({ copy = null }) {
 
     const e = engine.current;
     const totalTries = e.perfectHits + e.missedClicks;
-    const finalAccuracy = totalTries > 0 ? Math.round((e.perfectHits / totalTries) * 100) : 100;
+    const finalAccuracy = totalTries > 0 ? Math.round((e.perfectHits / totalTries) * 100) : 0;
 
     const grade = getFpsScoreGrade(e.score, ELITE_SCORE);
 
@@ -165,7 +165,7 @@ export default function WordRecallClient({ copy = null }) {
       accuracy: finalAccuracy,
       perfectHits: e.perfectHits,
       missedClicks: e.missedClicks,
-      finalLevel: e.level,
+      finalLevel: Math.floor(e.level),
       grade,
     });
 
@@ -423,6 +423,7 @@ export default function WordRecallClient({ copy = null }) {
   }, [clearGameTimeouts, endGame, startSequenceCycle]);
 
   const shareScore = useCallback(async () => {
+    setIsFullscreen(false);
     const url = 'https://skilldrills.online/drills/memory/short-term-memory/word-recall';
     try {
       const canvas = generateShareCard({

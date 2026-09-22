@@ -278,11 +278,11 @@ export default function AntiStrafeJitterFrPage() {
     faqs: faqSchema.mainEntity.map(e => ({ q: e.name, a: e.acceptedAnswer.text })),
     sources: pickSources('woods2015', 'krauzlis2004', 'green2003', 'rashbass1961'),
     related: [
-      { href: "/drills/fps/fps-tracking-trainer", label: "Entraîneur de Tracking FPS" },
-      { href: "/drills/fps/pro-smooth-pursuit", label: "Entraîneur de Poursuite Lisse" },
-      { href: "/drills/fps/flick-shot-training", label: "Entraînement au Flick Shot" },
-      { href: "/drills/fps/180-degree-awareness", label: "Entraînement Demi-Tour 180°" },
-      { href: "/drills/reaction-speed/reaction-time-test", label: "Test de Temps de Réaction" }
+      { href: "/fr/drills/reaction-speed/fps-tracking-trainer", label: "Entraîneur de Tracking FPS" },
+      { href: "/fr/drills/fps/pro-smooth-pursuit", label: "Entraîneur de Poursuite Lisse" },
+      { href: "/fr/drills/fps/flick-shot-training", label: "Entraînement au Flick Shot" },
+      { href: "/fr/drills/fps/180-degree-awareness", label: "Entraînement Demi-Tour 180°" },
+      { href: "/fr/drills/reaction-speed/reaction-time-test", label: "Test de Temps de Réaction" }
     ]
   };
 
@@ -337,13 +337,7 @@ export default function AntiStrafeJitterFrPage() {
       />
       <AntiStrafeJitterClient copy={copyFr} />
       <DrillGuide guide={antiStrafeGuideFr} />
-      <div className="max-w-4xl mx-auto px-4 pb-12">
-        <RelatedDrills
-          currentCategory="fps"
-          currentHref="/drills/fps/anti-strafe-jitter-duel"
-          locale="fr"
-        />
-      </div>
+      <RelatedDrills />
       <DrillFooter />
     </>
   );

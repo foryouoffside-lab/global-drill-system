@@ -330,9 +330,7 @@ export default function LocalizedCognitivePage() {
         skillsTitle: "鍛える力", skillsText: "両側の視覚追従、周辺ターゲット検出、注意の切替、実行機能の調整を練習します。", flexibilityTitle: "課題切替の速さ", flexibilityText: "レベルが上がると速度とルールが変わるため、二つの流れを素早く正確に切り替えます。"
       }} />
       <DrillGuide {...guideProps} />
-      <div className="max-w-6xl mx-auto px-4 pb-12">
-        <RelatedDrills currentCategory="cognitive" currentHref="https://skilldrills.online/ja/drills/cognitive/attention/multi-tasking" />
-      </div>
+      <RelatedDrills />
       <DrillFooter />
     </>
   );

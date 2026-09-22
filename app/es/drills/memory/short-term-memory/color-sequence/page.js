@@ -358,9 +358,7 @@ export default function SpanishColorSequencePage() {
       />
       <ColorSequenceClient copy={esCopy} />
       <DrillGuide guide={esColorSequenceGuide} />
-      <div className="max-w-4xl mx-auto px-4 pb-12">
-        <RelatedDrills currentCategory="memory" currentHref="/drills/memory/short-term-memory/color-sequence" locale="es" />
-      </div>
+      <RelatedDrills />
     </>
   );
 }

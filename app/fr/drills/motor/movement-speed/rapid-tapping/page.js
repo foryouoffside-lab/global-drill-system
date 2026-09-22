@@ -364,9 +364,7 @@ export default function FrenchRapidTappingPage() {
       />
       <RapidTappingClient copy={frCopy} />
       <DrillGuide {...guideProps} />
-      <div className="max-w-6xl mx-auto px-4 pb-12">
-        <RelatedDrills currentCategory="motor" currentHref="/fr/drills/motor/movement-speed/rapid-tapping" />
-      </div>
+      <RelatedDrills />
       <DrillFooter />
     </>
   );

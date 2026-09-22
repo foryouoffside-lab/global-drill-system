@@ -321,9 +321,7 @@ export default function GermanSaccadicGalleryPage() {
       />
       <SaccadicGalleryWrapper copy={{ title: 'Augentraining Online · Blicksprünge trainieren', subtitle: 'Blicksprünge · Schnelle Zielerfassung', caption: 'Führe den Blick schnell zwischen Zielen und klicke jedes präzise an.' }} />
       <DrillGuide guide={saccadicGuide} />
-      <div className="max-w-6xl mx-auto px-4 pb-12">
-        <RelatedDrills currentCategory="reaction-speed" currentHref="https://skilldrills.online/de/drills/reaction-speed/saccadic-gallery" />
-      </div>
+      <RelatedDrills />
       <DrillFooter />
     </>
   );

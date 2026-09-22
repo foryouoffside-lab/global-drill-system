@@ -362,9 +362,7 @@ export default function GermanFingerSequencingPage() {
       />
       <FingerSequencingClient copy={deCopy} />
       <DrillGuide {...guideProps} />
-      <div className="max-w-6xl mx-auto px-4 pb-12">
-        <RelatedDrills currentCategory="motor" currentHref="/de/drills/motor/movement-speed/finger-sequencing" />
-      </div>
+      <RelatedDrills />
       <DrillFooter />
     </>
   );

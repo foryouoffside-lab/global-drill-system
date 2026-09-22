@@ -348,13 +348,7 @@ export default function AwarenessDrillDePage() {
       <AwarenessDrillClient copy={copyDe} />
 
       <DrillGuide guide={awarenessGuideDe} />
-      <div className="max-w-4xl mx-auto px-4 pb-12">
-        <RelatedDrills
-          currentCategory="fps"
-          currentHref="/de/drills/fps/180-degree-awareness"
-          locale="de"
-        />
-      </div>
+      <RelatedDrills />
       <DrillFooter />
     </>
   );

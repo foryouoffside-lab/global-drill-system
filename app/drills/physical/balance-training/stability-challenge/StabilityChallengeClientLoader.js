@@ -1,5 +1,5 @@
 'use client';
 
-import dynamic from 'next/dynamic';
+import Client from './StabilityChallengeClient';
 
-export default dynamic(() => import('./StabilityChallengeClient'));
+export default Client;

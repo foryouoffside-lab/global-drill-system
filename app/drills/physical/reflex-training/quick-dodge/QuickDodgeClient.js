@@ -117,7 +117,7 @@ export default function QuickDodgeClient({ copy = {} } = {}) {
   useImmersiveMode(isFullscreen); // locks the page behind while the drill fills the screen
   const [soundEnabled, setSoundEnabled] = useState(true);
   const [flashEnabled, setFlashEnabled] = useState(true);
-  const [pointerLocked, setPointerLocked] = useState(false);
+  const [, setPointerLocked] = useState(false);
   const universalSens = useDrillSensitivity();
   const [openAccordion, setOpenAccordion] = useState(null);
   const [isTouchOnlyDevice, setIsTouchOnlyDevice] = useState(false);
@@ -175,7 +175,7 @@ export default function QuickDodgeClient({ copy = {} } = {}) {
       const saved = getSavedData();
       setBestScore(saved.bestScore || 0);
       setBestCombo(saved.bestCombo || 0);
-      setBestLevel(saved.bestLevel || 1);
+      setBestLevel(Math.floor(saved.bestLevel || 1));
     }
   }, []);
 
@@ -233,7 +233,7 @@ export default function QuickDodgeClient({ copy = {} } = {}) {
 
     const e = engine.current;
     const totalEvents = e.dodges + e.hitsTaken;
-    const accuracyPct = totalEvents > 0 ? Math.round((e.dodges / totalEvents) * 100) : 100;
+    const accuracyPct = totalEvents > 0 ? Math.round((e.dodges / totalEvents) * 100) : 0;
     const rating = getFpsScoreGrade(e.score, ELITE_SCORE);
 
     const grade = { letter: rating.grade, label: rating.label, color: rating.color };
@@ -244,7 +244,7 @@ export default function QuickDodgeClient({ copy = {} } = {}) {
       missedSequences: e.hitsTaken,
       peakSpeed: Math.round(e.peakSpeed),
       maxCombo: Math.round(e.bestStreak),
-      finalLevel: e.level,
+      finalLevel: Math.floor(e.level),
       grade
     });
 
@@ -254,7 +254,7 @@ export default function QuickDodgeClient({ copy = {} } = {}) {
     const isNewHigh = e.score > prevSaved.bestScore;
     setIsNewBest(isNewHigh);
 
-    const runBestLevel = Math.max(prevSaved.bestLevel, bestLevelRunRef.current);
+    const runBestLevel = Math.floor(Math.max(prevSaved.bestLevel, bestLevelRunRef.current));
     const updatedData = {
       bestScore: Math.max(prevSaved.bestScore, e.score),
       bestCombo: Math.max(prevSaved.bestCombo, e.bestStreak),
@@ -302,6 +302,13 @@ export default function QuickDodgeClient({ copy = {} } = {}) {
 
     setIsFullscreen(true);
 
+    // Request pointer lock from the Start button gesture. Waiting until the
+    // countdown finishes can be rejected by the browser, leaving the player
+    // reticle in its fallback color and making it look missing.
+    if (canvasRef.current && !document.pointerLockElement && !isTouchOnlyDevice) {
+      canvasRef.current.requestPointerLock().catch(() => {});
+    }
+
     setGameState('countdown');
     setCountdownValue(3);
     drillAudio.playCountdownTick();
@@ -313,9 +320,6 @@ export default function QuickDodgeClient({ copy = {} } = {}) {
       gameActiveRef.current = true;
       startingRef.current = false;
       setGameState('playing');
-      if (canvasRef.current && !document.pointerLockElement && !isTouchOnlyDevice) {
-        canvasRef.current.requestPointerLock().catch(() => {});
-      }
     }, 2450);
 
     countdownTimeoutsRef.current = [t1, t2, t3, t4];
@@ -537,8 +541,10 @@ export default function QuickDodgeClient({ copy = {} } = {}) {
       ctx.globalAlpha = 1.0;
 
       const ch = e.crosshair;
-      if (ch.initialized && (gameState === 'playing' || gameState === 'start')) {
-        let activeColor = pointerLocked ? '#10b981' : '#eab308';
+      if (ch.initialized && (gameState === 'playing' || gameState === 'countdown' || gameState === 'start')) {
+        // The player reticle is always green; pointer-lock state should not
+        // make the primary gameplay visual look like a missing target.
+        let activeColor = '#10b981';
         if (e.combo >= 2.0) activeColor = '#a855f7';
         if (e.combo >= 3.0) activeColor = '#ef4444';
 
@@ -557,7 +563,20 @@ export default function QuickDodgeClient({ copy = {} } = {}) {
         ctx.moveTo(ch.x + 14, ch.y); ctx.lineTo(ch.x + gap, ch.y);
         ctx.stroke();
 
-        ctx.beginPath(); ctx.arc(ch.x, ch.y, 2, 0, Math.PI * 2); ctx.fill();
+        // Match the green player orb shown in the drill preview. The old
+        // 2px center dot was too small to read against the dark canvas.
+        ctx.save();
+        ctx.shadowColor = 'rgba(16, 185, 129, 0.9)';
+        ctx.shadowBlur = 12;
+        ctx.fillStyle = '#10b981';
+        ctx.beginPath(); ctx.arc(ch.x, ch.y, 7, 0, Math.PI * 2); ctx.fill();
+        ctx.shadowBlur = 0;
+        ctx.strokeStyle = '#a7f3d0';
+        ctx.lineWidth = 1.5;
+        ctx.beginPath(); ctx.arc(ch.x, ch.y, 7, 0, Math.PI * 2); ctx.stroke();
+        ctx.fillStyle = '#ecfdf5';
+        ctx.beginPath(); ctx.arc(ch.x - 2, ch.y - 2, 2, 0, Math.PI * 2); ctx.fill();
+        ctx.restore();
       }
 
       ctx.restore();
@@ -575,6 +594,7 @@ export default function QuickDodgeClient({ copy = {} } = {}) {
   }, [gameState, endGame, applyPenalty]);
 
   const shareScore = useCallback(async () => {
+    setIsFullscreen(false);
     const url = 'https://skilldrills.online/drills/physical/reflex-training/quick-dodge';
     try {
       const canvas = generateShareCard({

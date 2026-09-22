@@ -330,9 +330,7 @@ export default function LocalizedCognitivePage() {
         skillsTitle: "Trainierte Fähigkeiten", skillsText: "Beidseitiges visuelles Tracking, peripheres Erkennen, Aufmerksamkeitswechsel und exekutive Kontrolle.", flexibilityTitle: "Aufgabenwechsel", flexibilityText: "Mit jedem Level ändern sich Tempo und Muster: Wechsle schnell zwischen beiden Strömen, ohne Genauigkeit zu verlieren."
       }} />
       <DrillGuide {...guideProps} />
-      <div className="max-w-6xl mx-auto px-4 pb-12">
-        <RelatedDrills currentCategory="cognitive" currentHref="https://skilldrills.online/de/drills/cognitive/attention/multi-tasking" />
-      </div>
+      <RelatedDrills />
       <DrillFooter />
     </>
   );

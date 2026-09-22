@@ -388,9 +388,7 @@ export default function RhythmAnomalyLocalePage() {
           </div>
         </div>
       </DrillGuide>
-      <div className="max-w-6xl mx-auto px-4 pb-12">
-        <RelatedDrills currentCategory="visual" currentHref="https://skilldrills.online/de/drills/visual/visual-recognition/rhythm-anomaly" />
-      </div>
+      <RelatedDrills />
     </>
   );
 }

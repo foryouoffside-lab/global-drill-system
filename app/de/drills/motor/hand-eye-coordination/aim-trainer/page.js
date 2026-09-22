@@ -464,13 +464,7 @@ export default function AimTrainerGermanPage() {
           </div>
         </div>
       </DrillGuide>
-      <div className="max-w-6xl w-full mx-auto px-4 pb-12">
-        <RelatedDrills
-          currentCategory="motor"
-          currentHref="/drills/motor/hand-eye-coordination/aim-trainer"
-          locale="de"
-        />
-      </div>
+      <RelatedDrills />
       <DrillFooter />
     </>
   );

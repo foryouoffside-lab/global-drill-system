@@ -31,8 +31,8 @@ import useUnexpectedExitGuard from '@/lib/useUnexpectedExitGuard';
 const DRILL_DURATION = 45; // starting clock only; a run grows past this
 const POINTS_PER_LEVEL = 1750; // 250 -> 1750 (7x)
 const ELITE_SCORE = 24000; // 16000 -> 24000 (1.5x)
-const TIME_PER_HIT = 0.6; // +0.6s on node hit
-const TIME_PENALTY = 0.8; // -0.8s on miss/timeout (opt-in gated)
+const TIME_PER_HIT = 2; // +2s on node hit, capped at 60s
+const TIME_PENALTY = 1; // -1s on miss/timeout (opt-in gated)
 const STORAGE_KEY = 'skilldrills_motor_finger_sequencing_v3';
 
 const getSavedData = () => {
@@ -55,17 +55,19 @@ const saveData = (data) => {
 const getLevelConfig = (level, combo = 0) => {
   const p = getDifficultyProgress(level); // 0 at L1, 1 at L15, unbounded above
   const heat = (getComboMultiplier(combo) - 1) / 2;
-  const nodeCount = level >= 8 ? 5 : (level >= 4 ? 4 : 3);
+  const nodeCount = level >= 6 ? 5 : (level >= 3 ? 4 : 3);
   return {
     nodeCount,
+    targetRadius: Math.max(15, ramp(25, 15, p)),
     r0: Math.max(8, ramp(32, 10, p) * (1 - heat * 0.20)),
     r1: Math.max(6, ramp(24, 8, p) * (1 - heat * 0.20)),
     r2: Math.max(5, ramp(18, 7, p) * (1 - heat * 0.20)),
     r3: Math.max(5, ramp(14, 6, p) * (1 - heat * 0.20)),
     r4: Math.max(4, ramp(11, 5, p) * (1 - heat * 0.20)),
     r5: Math.max(4, ramp(9, 4, p) * (1 - heat * 0.20)),
-    maxTime: Math.max(0.6, ramp(3.2, 0.85, p) * (1 - heat * 0.25)),
-    spread: ramp(120, 380, p),
+    maxTime: Math.max(0.7, ramp(3.2, 0.7, p) * (1 - heat * 0.25)),
+    spread: Math.min(400, 140 + Math.max(0, level - 1) * 18),
+    minSpacing: Math.min(220, 100 + Math.max(0, level - 1) * 8),
     hitMargin: Math.max(3, ramp(12, 4, p))
   };
 };
@@ -74,7 +76,7 @@ const getLevelConfig = (level, combo = 0) => {
 // ACCORDION DATA
 // ============================================================
 const RULES_ITEMS = [
-  { num: "1", text: "Ordered Node", highlight: "+150 PTS (+0.6s)", result: "×Combo Mult" },
+  { num: "1", text: "Ordered Node", highlight: "+150 PTS (+2s, max 60s)", result: "×Combo Mult" },
   { num: "2", text: "Chain Streak", highlight: "Up to 3.0× PTS", result: "Maintains Flow" },
   { num: "3", text: "Level Up", highlight: "+1 / 1750 PTS", result: "Shrink & Speed" },
   { num: "4", text: "Miss / Timeout", highlight: "Penalty", result: "Resets Combo (-0.8s)" }
@@ -142,7 +144,7 @@ export default function FingerSequencingClient({ copy } = {}) {
     if (typeof window !== 'undefined') {
       setSoundEnabled(drillAudio.isEnabled());
       setFlashEnabled(drillFlash.isEnabled());
-      setPenaltyEnabled(drillPenalty.isEnabled());
+      setPenaltyEnabled(drillPenalty.isEnabled(TIME_PER_HIT === 2));
       const hasFinePointer = window.matchMedia('(pointer: fine)').matches;
       const isTouchCapable = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
       setIsTouchOnlyDevice(isTouchCapable && !hasFinePointer);
@@ -191,52 +193,77 @@ export default function FingerSequencingClient({ copy } = {}) {
     const e = engine.current;
     const config = getLevelConfig(currentLevel, e.combo);
     const count = config.nodeCount;
-    const pad = 65;
+    const radius = Math.max(15, config.targetRadius - (count - 3) * 2.25);
+    const cueStrength = Math.max(0, Math.min(1, 1 - ((currentLevel - 1) / 9)));
+    const padX = Math.min(radius + 14, width * 0.1);
+    const padY = Math.min(radius + 14, height * 0.1);
     const chain = [];
 
-    const baseRadii = [config.r0, config.r1, config.r2, config.r3, config.r4, config.r5];
-
-    let x0 = pad + Math.random() * (width - pad * 2);
-    let y0 = pad + Math.random() * (height - pad * 2);
-    chain.push({ x: x0, y: y0, r: baseRadii[0], opacity: 1.0, index: 0, spawnTime: performance.now() });
+    const baseX = padX + Math.random() * Math.max(10, width - padX * 2);
+    const baseY = padY + Math.random() * Math.max(10, height - padY * 2);
+    chain.push({ x: baseX, y: baseY, r: radius, opacity: 1.0, index: 0, isTrap: false, hit: false, spawnTime: performance.now() });
 
     for (let i = 1; i < count; i++) {
       let attempts = 0;
-      let nx = x0;
-      let ny = y0;
-      const r = baseRadii[i];
+      let nx = baseX;
+      let ny = baseY;
+      const r = Math.max(10, radius - i * (radius * 0.22) * cueStrength);
+      let bestDistance = -1;
 
-      while (attempts < 30) {
+      while (attempts < 45) {
         attempts++;
         const angle = Math.random() * Math.PI * 2;
-        const dist = 70 + Math.random() * config.spread;
-        const tx = Math.max(pad + r, Math.min(width - pad - r, chain[i - 1].x + Math.cos(angle) * dist));
-        const ty = Math.max(pad + r, Math.min(height - pad - r, chain[i - 1].y + Math.sin(angle) * dist));
+        const dist = config.minSpacing + Math.random() * config.spread;
+        const tx = Math.max(padX, Math.min(width - padX, chain[i - 1].x + Math.cos(angle) * dist));
+        const ty = Math.max(padY, Math.min(height - padY, chain[i - 1].y + Math.sin(angle) * dist));
 
-        let overlaps = false;
+        let nearestDistance = Infinity;
         for (let j = 0; j < chain.length; j++) {
           const d = Math.hypot(tx - chain[j].x, ty - chain[j].y);
-          if (d < (r + chain[j].r + 18)) {
-            overlaps = true;
-            break;
-          }
+          nearestDistance = Math.min(nearestDistance, d);
         }
 
-        if (!overlaps || attempts === 30) {
+        const previousDistance = Math.hypot(tx - chain[i - 1].x, ty - chain[i - 1].y);
+        const candidateDistance = Math.min(nearestDistance, previousDistance);
+        if (candidateDistance > bestDistance) {
+          bestDistance = candidateDistance;
           nx = tx;
           ny = ty;
-          break;
         }
+        if (previousDistance >= config.minSpacing && nearestDistance >= config.minSpacing) break;
       }
 
       chain.push({
         x: nx,
         y: ny,
         r: r,
-        opacity: 1.0 - (i * 0.14),
+        opacity: Math.max(0.15, 1.0 - i * 0.25 * cueStrength),
         index: i,
+        isTrap: false,
+        hit: false,
         spawnTime: performance.now()
       });
+    }
+
+    const trapChance = Math.max(0, Math.min(0.8, (currentLevel - 5) / 5));
+    if (Math.random() < trapChance) {
+      let trapX = baseX;
+      let trapY = baseY;
+      let bestDistance = -1;
+      for (let attempt = 0; attempt < 15; attempt++) {
+        const angle = Math.random() * Math.PI * 2;
+        const dist = 110 + Math.random() * config.spread;
+        const candidateX = Math.max(padX, Math.min(width - padX, baseX + Math.cos(angle) * dist));
+        const candidateY = Math.max(padY, Math.min(height - padY, baseY + Math.sin(angle) * dist));
+        const minDistance = chain.reduce((min, node) => Math.min(min, Math.hypot(node.x - candidateX, node.y - candidateY)), Infinity);
+        if (minDistance > bestDistance) {
+          bestDistance = minDistance;
+          trapX = candidateX;
+          trapY = candidateY;
+        }
+        if (minDistance > radius * 4) break;
+      }
+      chain.push({ x: trapX, y: trapY, r: radius, opacity: 1, index: chain.length, isTrap: true, hit: false, spawnTime: performance.now() });
     }
 
     e.chain = chain;
@@ -320,7 +347,7 @@ export default function FingerSequencingClient({ copy } = {}) {
       e.missedClicks++;
     }
 
-    if (drillPenalty.isEnabled()) {
+    if (drillPenalty.isEnabled(TIME_PER_HIT === 2)) {
       e.timeLeft -= TIME_PENALTY;
     }
 
@@ -366,16 +393,30 @@ export default function FingerSequencingClient({ copy } = {}) {
     eng.totalActions++;
     const target = eng.chain[eng.activeIndex];
     const config = getLevelConfig(eng.level, eng.combo);
+
+    const clickedTrap = eng.chain.find((node) => {
+      if (!node.isTrap || node.hit) return false;
+      return Math.hypot(eng.crosshair.x - node.x, eng.crosshair.y - node.y) <= node.r + config.hitMargin + 6;
+    });
+    if (clickedTrap) {
+      clickedTrap.hit = true;
+      triggerPenalty('trap');
+      return;
+    }
+
     const dist = Math.hypot(eng.crosshair.x - target.x, eng.crosshair.y - target.y);
     const hitRadius = target.r + config.hitMargin + 6;
 
     if (dist <= hitRadius) {
       eng.successfulHits++;
-      eng.timeLeft += TIME_PER_HIT;
+      eng.timeLeft = Math.min(60, eng.timeLeft + TIME_PER_HIT);
 
       const rt = performance.now() - target.spawnTime;
       eng.reactionTimes.push(rt);
       eng.activeIndex++;
+      while (eng.activeIndex < eng.chain.length && eng.chain[eng.activeIndex].isTrap) {
+        eng.activeIndex++;
+      }
 
       const hitColor = eng.combo >= 10 ? '#34d399' : '#10b981';
       spawnParticles(target.x, target.y, hitColor, 14);
@@ -500,12 +541,18 @@ export default function FingerSequencingClient({ copy } = {}) {
 
       if (e.chain.length > 1) {
         ctx.beginPath();
-        ctx.strokeStyle = e.combo >= 10 ? 'rgba(52, 211, 153, 0.35)' : 'rgba(16, 185, 129, 0.35)';
+        ctx.strokeStyle = 'rgba(168, 85, 247, 0.25)';
         ctx.lineWidth = 2;
         ctx.setLineDash([6, 6]);
-        for (let i = 0; i < e.chain.length; i++) {
-          if (i === 0) ctx.moveTo(e.chain[i].x, e.chain[i].y);
-          else ctx.lineTo(e.chain[i].x, e.chain[i].y);
+        let started = false;
+        for (let i = e.activeIndex; i < e.chain.length; i++) {
+          if (e.chain[i].isTrap) continue;
+          if (!started) {
+            ctx.moveTo(e.chain[i].x, e.chain[i].y);
+            started = true;
+          } else {
+            ctx.lineTo(e.chain[i].x, e.chain[i].y);
+          }
         }
         ctx.stroke();
         ctx.setLineDash([]);
@@ -516,15 +563,26 @@ export default function FingerSequencingClient({ copy } = {}) {
         const isActive = i === e.activeIndex;
         const isCompleted = i < e.activeIndex;
 
-        if (isCompleted) {
+        if (node.isTrap) {
+          if (node.hit) continue;
           ctx.beginPath();
           ctx.arc(node.x, node.y, node.r, 0, Math.PI * 2);
-          ctx.fillStyle = 'rgba(16,185,129,0.15)';
-          ctx.strokeStyle = 'rgba(16,185,129,0.4)';
-          ctx.lineWidth = 1;
+          ctx.fillStyle = 'rgba(239, 68, 68, 0.08)';
           ctx.fill();
+          ctx.strokeStyle = '#ef4444';
+          ctx.lineWidth = 1.5;
           ctx.stroke();
-        } else if (isActive) {
+          ctx.fillStyle = '#ef4444';
+          ctx.font = `bold ${Math.round(node.r * 0.9)}px monospace`;
+          ctx.textAlign = 'center';
+          ctx.textBaseline = 'middle';
+          ctx.fillText('!', node.x, node.y);
+          continue;
+        }
+
+        if (isCompleted) continue;
+
+        if (isActive) {
           const glowGrad = ctx.createRadialGradient(node.x, node.y, 0, node.x, node.y, node.r * 1.8);
           glowGrad.addColorStop(0, e.combo >= 10 ? 'rgba(52, 211, 153, 0.45)' : 'rgba(16, 185, 129, 0.45)');
           glowGrad.addColorStop(1, 'rgba(16, 185, 129, 0)');
@@ -539,27 +597,21 @@ export default function FingerSequencingClient({ copy } = {}) {
           ctx.fill();
           ctx.stroke();
 
-          // Sequence number inside active node
-          ctx.fillStyle = '#ffffff';
-          ctx.font = `bold ${Math.max(10, Math.round(node.r * 0.9))}px ui-sans-serif, system-ui, -apple-system, sans-serif`;
-          ctx.textAlign = 'center';
-          ctx.textBaseline = 'middle';
-          ctx.fillText(`${i + 1}`, node.x, node.y);
+          // The live node is the only node that reveals its sequence marker.
+          const timeRatio = Math.max(0, e.sequenceTimer / e.maxSequenceTime);
+          ctx.beginPath();
+          ctx.arc(node.x, node.y, node.r + 6, -Math.PI / 2, -Math.PI / 2 + Math.PI * 2 * timeRatio);
+          ctx.strokeStyle = timeRatio > 0.35 ? '#10b981' : '#ef4444';
+          ctx.lineWidth = 3;
+          ctx.stroke();
         } else {
           ctx.beginPath();
           ctx.arc(node.x, node.y, node.r, 0, Math.PI * 2);
-          ctx.fillStyle = 'rgba(255, 255, 255, 0.06)';
-          ctx.strokeStyle = 'rgba(255, 255, 255, 0.2)';
-          ctx.lineWidth = 1.5;
+          ctx.fillStyle = 'rgba(255, 255, 255, 0.02)';
+          ctx.strokeStyle = `rgba(168, 85, 247, ${node.opacity})`;
+          ctx.lineWidth = 1;
           ctx.fill();
           ctx.stroke();
-
-          // Sequence number in pending nodes
-          ctx.fillStyle = 'rgba(255, 255, 255, 0.4)';
-          ctx.font = `600 ${Math.max(9, Math.round(node.r * 0.85))}px ui-sans-serif, system-ui, -apple-system, sans-serif`;
-          ctx.textAlign = 'center';
-          ctx.textBaseline = 'middle';
-          ctx.fillText(`${i + 1}`, node.x, node.y);
         }
       }
 
@@ -935,6 +987,7 @@ export default function FingerSequencingClient({ copy } = {}) {
               shareText={copy?.shareTitle}
               exitText={copy?.exitTitle}
               onPlayAgain={enterDrill}
+              onBeforeShare={() => setIsFullscreen(false)}
               onShare={shareScore}
               onExit={handleExitDrill}
             />

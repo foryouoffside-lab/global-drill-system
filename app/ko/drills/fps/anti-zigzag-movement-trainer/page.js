@@ -343,9 +343,7 @@ export default function AntiZigzagKoPage() {
       />
       <AntiZigzagClient copy={copy} />
       <DrillGuide guide={koGuide} />
-      <div className="max-w-6xl mx-auto px-4 w-full">
-        <RelatedDrills currentCategory="fps" currentHref="/drills/fps/anti-zigzag-movement-trainer" locale="ko" />
-      </div>
+      <RelatedDrills />
       <DrillFooter />
     </>
   );

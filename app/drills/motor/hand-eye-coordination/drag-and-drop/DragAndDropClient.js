@@ -300,7 +300,7 @@ export default function DragAndDropClient({ copy } = {}) {
 
     setAnalytics({
       accuracy: finalAccuracy, drops: e.drops, misses: e.misses,
-      timeouts: e.timeouts, bestCombo: e.bestCombo, levelReached: e.level,
+      timeouts: e.timeouts, bestCombo: e.bestCombo, levelReached: Math.floor(e.level),
       grade
     });
 
@@ -310,7 +310,7 @@ export default function DragAndDropClient({ copy } = {}) {
     const isNewHigh = e.score > prevSaved.bestScore;
     setIsNewBest(isNewHigh);
 
-    const runBestLevel = Math.max(prevSaved.bestLevel, bestLevelRunRef.current);
+    const runBestLevel = Math.floor(Math.max(prevSaved.bestLevel, bestLevelRunRef.current));
     const updatedData = {
       bestScore: Math.max(prevSaved.bestScore, e.score),
       bestCombo: Math.max(prevSaved.bestCombo, e.bestCombo),
@@ -857,6 +857,7 @@ export default function DragAndDropClient({ copy } = {}) {
                 { value: `Lv. ${analytics.levelReached}`, label: copy?.peakLevelLabel || "Peak Level" },
               ]}
               onPlayAgain={enterDrill}
+              onBeforeShare={() => setIsFullscreen(false)}
               onShare={shareDrillLink}
               onExit={handleExitDrill}
             />

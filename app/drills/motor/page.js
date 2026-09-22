@@ -130,15 +130,14 @@ const collectionSchema = {
   "dateModified": "2026-09-20",
   "name": "Mouse Precision Training & Aim Drills",
   "url": "https://skilldrills.online/drills/motor",
-  "description": "9 free browser drills for mouse accuracy, aim control, CPS clicking, keyboard speed, and hand-eye coordination. No sign-up required.",
+  "description": "8 free browser drills for mouse accuracy, aim control, CPS clicking, keyboard speed, and hand-eye coordination. No sign-up required.",
   "author": { "@type": "Organization", "name": "SkillDrills", "url": "https://skilldrills.online" },
   "hasPart": [
     // Hand-Eye Coordination (3 Drills)
     { "@type": "WebApplication", "name": "Aim Trainer - Target Snapping & Mouse Precision Test", "url": "https://skilldrills.online/drills/motor/hand-eye-coordination/aim-trainer" },
     { "@type": "WebApplication", "name": "Drag and Drop - Cursor Grip & Spatial Timing Interception", "url": "https://skilldrills.online/drills/motor/hand-eye-coordination/drag-and-drop" },
     { "@type": "WebApplication", "name": "Precision Flick Shot - Aperture Centering & Target Snap Drill", "url": "https://skilldrills.online/drills/motor/hand-eye-coordination/precision-flick-shot" },
-    // Movement Speed (4 Drills)
-    { "@type": "WebApplication", "name": "Keyboard Tester - Check Dead Keys, Ghosting & NKRO Rollover", "url": "https://skilldrills.online/drills/motor/keyboard-tester" },
+    // Movement Speed (3 Drills)
     { "@type": "WebApplication", "name": "Finger Sequencing - Scale-Ordered Node Dexterity Test", "url": "https://skilldrills.online/drills/motor/movement-speed/finger-sequencing" },
     { "@type": "WebApplication", "name": "Keyboard Recognition - Keybind Muscle Memory Speed Trainer", "url": "https://skilldrills.online/drills/motor/movement-speed/keyboard-recognition" },
     { "@type": "WebApplication", "name": "Rapid Tapping - CPS Click Cadence & Burst Speed Test", "url": "https://skilldrills.online/drills/motor/movement-speed/rapid-tapping" },

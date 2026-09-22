@@ -31,8 +31,8 @@ const DRILL_DURATION = 45; // starting clock only; a run grows past this
 const POINTS_PER_HIT = 100;
 const POINTS_PER_LEVEL = 1750; // 250 -> 1750 (7x)
 const ELITE_SCORE = 18000; // 6000 -> 18000 (3x)
-const TIME_PER_HIT = 0.6; // +0.6s per valid hit
-const TIME_PENALTY = 0.8; // -0.8s on miss / target timeout (opt-in gated)
+const TIME_PER_HIT = 2; // +2s per valid hit, capped at 60s
+const TIME_PENALTY = 1; // -1s on miss / target timeout (opt-in gated)
 const STORAGE_KEY = 'skilldrills_market_doors_v3';
 const TARGET_FILL_COLOR = '#ef4444';
 
@@ -40,7 +40,7 @@ const RULES_ITEMS = [
   {
     num: "1",
     title: "Clear Doorways",
-    detail: "+100 PTS (+0.6s)",
+    detail: "+100 PTS (+2s, max 60s)",
     badge: "×Combo Mult",
   },
   {
@@ -183,7 +183,7 @@ export default function MarketDoorsPursuitClient({ copy }: { copy?: Record<strin
     if (typeof window !== 'undefined') {
       setSoundEnabled(drillAudio.isEnabled());
       setFlashEnabled(drillFlash.isEnabled());
-      setPenaltyEnabled(drillPenalty.isEnabled());
+      setPenaltyEnabled(drillPenalty.isEnabled(TIME_PER_HIT === 2));
 
       const checkDeviceAndOrientation = () => {
         const ua = navigator.userAgent || '';
@@ -262,7 +262,7 @@ export default function MarketDoorsPursuitClient({ copy }: { copy?: Record<strin
 
     const e = engine.current;
     const totalActions = e.successfulHits + e.missedClicks + e.timeouts;
-    const acc = totalActions > 0 ? Math.round((e.successfulHits / totalActions) * 100) : 100;
+    const acc = totalActions > 0 ? Math.round((e.successfulHits / totalActions) * 100) : 0;
     const avgRt = e.reactionTimes.length > 0
       ? Math.round(e.reactionTimes.reduce((a, b) => a + b, 0) / e.reactionTimes.length)
       : 0;
@@ -428,7 +428,7 @@ export default function MarketDoorsPursuitClient({ copy }: { copy?: Record<strin
         e.score += Math.round(POINTS_PER_HIT * getComboMultiplier(e.combo) * levelMult);
 
         // Time bonus on clean hit
-        e.timeLeft += TIME_PER_HIT;
+        e.timeLeft = Math.min(60, e.timeLeft + TIME_PER_HIT);
 
         // Continuous unbounded level progression
         const rawLevel = (e.score / POINTS_PER_LEVEL) + 1;
@@ -467,7 +467,7 @@ export default function MarketDoorsPursuitClient({ copy }: { copy?: Record<strin
 
     // Missed click on empty space: optional time penalty + combo reset
     e.missedClicks += 1;
-    if (drillPenalty.isEnabled()) e.timeLeft -= TIME_PENALTY;
+    if (drillPenalty.isEnabled(TIME_PER_HIT === 2)) e.timeLeft -= TIME_PENALTY;
     e.combo = 0;
     setUiCombo(0);
     e.screenShake = 6;
@@ -632,7 +632,7 @@ export default function MarketDoorsPursuitClient({ copy }: { copy?: Record<strin
         if (drillTimeout.isEnabled() && age >= e.target.ttl) {
           e.target.active = false;
           e.timeouts += 1;
-          if (drillPenalty.isEnabled()) e.timeLeft -= TIME_PENALTY;
+          if (drillPenalty.isEnabled(TIME_PER_HIT === 2)) e.timeLeft -= TIME_PENALTY;
           e.combo = 0;
           setUiCombo(0);
           e.screenShake = 6;
@@ -909,6 +909,7 @@ export default function MarketDoorsPursuitClient({ copy }: { copy?: Record<strin
                 { label: ui.maxCombo, value: analytics.maxCombo, suffix: 'x' },
               ]}
               onPlayAgain={enterDrill}
+              onBeforeShare={() => setIsFullscreen(false)}
               onShare={sharePage}
               onExit={handleExitDrill}
             />

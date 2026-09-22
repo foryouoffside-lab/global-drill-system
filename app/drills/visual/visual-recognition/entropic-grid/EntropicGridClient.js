@@ -163,7 +163,7 @@ export default function EntropicGridClient({ copy } = {}) {
       accuracy: finalAccuracy,
       perfectHits: e.perfectHits,
       missedClicks: e.missedClicks,
-      finalLevel: e.level,
+      finalLevel: Math.floor(e.level),
       grade,
     });
 
@@ -175,7 +175,7 @@ export default function EntropicGridClient({ copy } = {}) {
 
     const updatedData = {
       bestScore: Math.max(prevSaved.bestScore, e.score),
-      bestLevel: Math.max(prevSaved.bestLevel, e.level),
+      bestLevel: Math.max(prevSaved.bestLevel, Math.floor(e.level)),
       totalSessions: (prevSaved.totalSessions || 0) + 1,
     };
     saveData(updatedData);
@@ -394,6 +394,7 @@ export default function EntropicGridClient({ copy } = {}) {
   }, [applyEntropyNoise, clearGameTimeouts, endGame, generateGrid]);
 
   const shareScore = useCallback(async () => {
+    setIsFullscreen(false);
     const url = 'https://skilldrills.online/drills/visual/visual-recognition/entropic-grid';
     try {
       const canvas = generateShareCard({
@@ -550,7 +551,6 @@ export default function EntropicGridClient({ copy } = {}) {
                     <button
                       key={index}
                       onPointerDown={(e) => handleCellClick(index, e)}
-                      onClick={(e) => handleCellClick(index, e)}
                       className={`w-full h-full rounded-md border flex items-center justify-center font-mono font-bold text-[9px] sm:text-[11px] md:text-xs select-none transition-all duration-100 cursor-pointer ${bgClass}`}
                     >
                       {cell.text}

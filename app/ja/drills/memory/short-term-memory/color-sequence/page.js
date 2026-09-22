@@ -370,13 +370,7 @@ export default function JapaneseColorSequencePage() {
       />
       <ColorSequenceClient copy={copyJa} />
       <DrillGuide guide={sequenceGuide} />
-      <div className="max-w-4xl mx-auto px-4 pb-12">
-        <RelatedDrills
-          currentCategory="memory"
-          currentHref="/drills/memory/short-term-memory/color-sequence"
-          locale="ja"
-        />
-      </div>
+      <RelatedDrills />
     </>
   );
 }

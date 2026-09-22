@@ -309,9 +309,7 @@ export default function SplitScreenTrackingPage() {
 
       <SplitScreenTrackingClient copy={{ title: "Rastreamento visual em tela dividida", subtitle: "Acompanhe dois alvos em áreas separadas" }} />
       <DrillGuide guide={guideProps} />
-      <div className="max-w-6xl mx-auto px-4 pb-12">
-        <RelatedDrills currentCategory="visual-tracking" currentHref="https://skilldrills.online/pt/drills/visual-tracking/split-screen-tracking" />
-      </div>
+      <RelatedDrills />
       <DrillFooter />
     </>
   );

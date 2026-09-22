@@ -320,9 +320,7 @@ export default function JapaneseSaccadicGalleryPage() {
       />
       <SaccadicGalleryWrapper copy={{ title: '動体視力トレーニング・視線移動ゲーム', subtitle: '視線の跳躍 · 視覚ターゲット捕捉', caption: 'ターゲット間へ視線を素早く移し、正確にクリックします。' }} />
       <DrillGuide guide={saccadicGuide} />
-      <div className="max-w-6xl mx-auto px-4 pb-12">
-        <RelatedDrills currentCategory="reaction-speed" currentHref="https://skilldrills.online/ja/drills/reaction-speed/saccadic-gallery" />
-      </div>
+      <RelatedDrills />
       <DrillFooter />
     </>
   );

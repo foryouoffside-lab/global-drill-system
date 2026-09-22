@@ -323,9 +323,7 @@ export default function NBackPageEs() {
 
       <DrillGuide {...guideEs} />
 
-      <div className="max-w-6xl w-full mx-auto px-4 pb-12">
-        <RelatedDrills currentCategory="memory" currentHref="/drills/memory/working-memory/n-back" locale="es" />
-      </div>
+      <RelatedDrills />
     </>
   );
 }

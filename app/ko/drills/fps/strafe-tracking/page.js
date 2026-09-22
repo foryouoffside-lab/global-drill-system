@@ -299,11 +299,11 @@ export default function StrafeTrackingPageKo() {
     faqs: faqSchema.mainEntity.map(e => ({ q: e.name, a: e.acceptedAnswer.text })),
     sources: pickSources('woods2015', 'krauzlis2004', 'posner1990', 'green2003', 'rashbass1961', 'land2000'),
     related: [
-      { href: "/drills/fps/recoil-control", label: "리코일 연습 (Recoil Control Trainer)" },
-      { href: "/drills/fps/angle-hold-trainer", label: "각도 홀드 연습 (Angle Hold Trainer)" },
-      { href: "/drills/fps/pro-smooth-pursuit", label: "스무스 퍼슈트 연습 (Smooth Pursuit Trainer)" },
-      { href: "/drills/fps/anti-strafe-jitter-duel", label: "안티 스트레이프 지터 연습 (Anti-Strafe Jitter)" },
-      { href: "/drills/fps/micro-correction-precision", label: "마이크로 에임 연습 (Micro-Correction)" }
+      { href: "/ko/drills/fps/recoil-control", label: "리코일 연습 (Recoil Control Trainer)" },
+      { href: "/ko/drills/fps/angle-hold-trainer", label: "각도 홀드 연습 (Angle Hold Trainer)" },
+      { href: "/ko/drills/fps/pro-smooth-pursuit", label: "스무스 퍼슈트 연습 (Smooth Pursuit Trainer)" },
+      { href: "/ko/drills/fps/anti-strafe-jitter-duel", label: "안티 스트레이프 지터 연습 (Anti-Strafe Jitter)" },
+      { href: "/ko/drills/fps/micro-correction-precision", label: "마이크로 에임 연습 (Micro-Correction)" }
     ]
   };
 
@@ -391,9 +391,7 @@ export default function StrafeTrackingPageKo() {
       <StrafeTrackingClient copy={copyKo} />
 
       <DrillGuide guide={strafeGuideKo} />
-      <div className="max-w-6xl w-full mx-auto px-4 pb-12">
-        <RelatedDrills currentCategory="fps" currentHref="/drills/fps/strafe-tracking" locale="ko" />
-      </div>
+      <RelatedDrills />
       <DrillFooter />
     </>
   );

@@ -342,13 +342,7 @@ export default function VerticalAirTrackPtPage() {
         }}
       />
       <DrillGuide guide={verticalAirTrackGuide} />
-      <div className="max-w-6xl w-full mx-auto px-4 pb-12">
-        <RelatedDrills
-          currentCategory="fps"
-          currentHref="/pt/drills/fps/vertical-air-track"
-          locale="pt"
-        />
-      </div>
+      <RelatedDrills />
       <DrillFooter />
     </>
   );

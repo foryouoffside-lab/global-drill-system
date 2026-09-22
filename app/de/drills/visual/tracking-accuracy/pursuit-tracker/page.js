@@ -331,9 +331,7 @@ export default function LocalizedPursuitTrackerDePage() {
 
       <AutoPursuitClient copy={{ title: "Glatte Blickfolge", subtitle: "Zielverfolgung trainieren" }} />
       <DrillGuide guide={guideData} />
-      <div className="max-w-6xl mx-auto px-4 pb-12">
-        <RelatedDrills currentCategory="visual" currentHref="https://skilldrills.online/de/drills/visual/tracking-accuracy/pursuit-tracker" />
-      </div>
+      <RelatedDrills />
     </>
   );
 }

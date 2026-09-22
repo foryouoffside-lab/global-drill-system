@@ -32,7 +32,7 @@ const nextConfig = {
     // 'unsafe-eval' is only needed by next dev's HMR/react-refresh.
     const csp = [
       "default-src 'self'",
-      `script-src 'self' 'unsafe-inline'${isProd ? '' : " 'unsafe-eval'"} https://cdn.vercel-insights.com`,
+      `script-src 'self' 'unsafe-inline'${isProd ? '' : " 'unsafe-eval'"} https://cdn.vercel-insights.com https://va.vercel-scripts.com`,
       "style-src 'self' 'unsafe-inline'",
       // All imagery is first-party or a build-time OG image; data: covers the
       // inline SVG icons. No remote host needs to be allowed.
@@ -174,6 +174,18 @@ const nextConfig = {
       { source: '/drills/fps/reactive-tracking', destination: '/drills/fps/strafe-tracking', permanent: true },
       { source: '/drills/cognitive/problem-solving/logic-puzzles', destination: '/drills/cognitive', permanent: true },
 
+      // keyboard-tester was a stale duplicate of the keyboard-recognition drill
+      // component under a second URL. keyboard-recognition is the maintained,
+      // fully localized version (2026-09-20); consolidate onto it rather than
+      // leaving two near-identical drills live.
+      { source: '/drills/motor/keyboard-tester', destination: '/drills/motor/movement-speed/keyboard-recognition', permanent: true },
+      { source: '/de/drills/motor/keyboard-tester', destination: '/de/drills/motor/movement-speed/keyboard-recognition', permanent: true },
+      { source: '/es/drills/motor/keyboard-tester', destination: '/es/drills/motor/movement-speed/keyboard-recognition', permanent: true },
+      { source: '/fr/drills/motor/keyboard-tester', destination: '/fr/drills/motor/movement-speed/keyboard-recognition', permanent: true },
+      { source: '/ja/drills/motor/keyboard-tester', destination: '/ja/drills/motor/movement-speed/keyboard-recognition', permanent: true },
+      { source: '/ko/drills/motor/keyboard-tester', destination: '/ko/drills/motor/movement-speed/keyboard-recognition', permanent: true },
+      { source: '/pt/teste-de-teclado', destination: '/pt/drills/motor/movement-speed/keyboard-recognition', permanent: true },
+
       // Re-slugged drill: reaction-simulator -> reaction-game (retargeted to "reaction game")
       {
         source: '/drills/reaction-speed/reaction-simulator',
@@ -254,11 +266,11 @@ const nextConfig = {
   },
   
   eslint: {
-    ignoreDuringBuilds: true,
+    ignoreDuringBuilds: false,
   },
 
   typescript: {
-    ignoreBuildErrors: true,
+    ignoreBuildErrors: false,
   },
 
   // ============================================

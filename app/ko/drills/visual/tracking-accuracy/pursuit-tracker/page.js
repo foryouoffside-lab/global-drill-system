@@ -332,9 +332,7 @@ export default function LocalizedPursuitTrackerKoPage() {
 
       <AutoPursuitClient copy={{ title: "에임 트래킹", subtitle: "시선 추적 훈련" }} />
       <DrillGuide guide={guideData} />
-      <div className="max-w-6xl mx-auto px-4 pb-12">
-        <RelatedDrills currentCategory="visual" currentHref="https://skilldrills.online/ko/drills/visual/tracking-accuracy/pursuit-tracker" />
-      </div>
+      <RelatedDrills />
     </>
   );
 }

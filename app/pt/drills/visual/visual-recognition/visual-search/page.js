@@ -393,9 +393,7 @@ export default function VisualSearchLocalePage() {
           </div>
         </div>
       </DrillGuide>
-      <div className="max-w-6xl mx-auto px-4 pb-12">
-        <RelatedDrills currentCategory="visual" currentHref="https://skilldrills.online/pt/drills/visual/visual-recognition/visual-search" />
-      </div>
+      <RelatedDrills />
     </>
   );
 }

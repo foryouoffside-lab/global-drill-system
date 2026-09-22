@@ -48,8 +48,8 @@ const DRILL_DURATION = 45; // starting clock only; a run grows past this
 const POINTS_PER_HIT = 100;
 const POINTS_PER_LEVEL = 1750; // 250 -> 1750 (7x)
 const ELITE_SCORE = 24000; // 7500 -> 24000 (~3.2x)
-const TIME_PER_HIT = 0.6; // +0.6s on clean hit
-const TIME_PENALTY = 0.8; // -0.8s on wrong tap or timeout (opt-in gated)
+const TIME_PER_HIT = 2; // +2s on clean hit, capped at 60s
+const TIME_PENALTY = 1; // -1s on wrong tap or timeout (opt-in gated)
 const STORAGE_KEY = 'skilldrills_distraction_fighter_v10';
 
 const COLOR_NAMES = ['Red', 'Blue', 'Green', 'Yellow', 'Purple', 'Orange'];
@@ -190,7 +190,7 @@ export default function DistractionFighterClient({ faqs, copy }) {
     if (typeof window !== 'undefined') {
       setSoundEnabled(drillAudio.isEnabled());
       setFlashEnabled(drillFlash.isEnabled());
-      setPenaltyEnabled(drillPenalty.isEnabled());
+      setPenaltyEnabled(drillPenalty.isEnabled(TIME_PER_HIT === 2));
       const saved = getSavedData();
       setBestScore(saved.bestScore || 0);
       setBestCombo(saved.bestCombo || 0);
@@ -257,7 +257,7 @@ export default function DistractionFighterClient({ faqs, copy }) {
 
     const e = engine.current;
     const totalActs = e.successfulHits + e.mistakes + e.timeouts;
-    const acc = totalActs > 0 ? Math.round((e.successfulHits / totalActs) * 100) : 100;
+    const acc = totalActs > 0 ? Math.round((e.successfulHits / totalActs) * 100) : 0;
 
     const rating = getFpsScoreGrade(e.score, ELITE_SCORE);
     const gradeObj = {
@@ -373,7 +373,7 @@ export default function DistractionFighterClient({ faqs, copy }) {
       }
       // Trial timeout miss
       e.timeouts += 1;
-      if (drillPenalty.isEnabled()) e.timeLeft -= TIME_PENALTY;
+      if (drillPenalty.isEnabled(TIME_PER_HIT === 2)) e.timeLeft -= TIME_PENALTY;
       e.combo = 0;
       setUiCombo(0);
       triggerFlash();
@@ -399,7 +399,7 @@ export default function DistractionFighterClient({ faqs, copy }) {
       eng.score += Math.round(POINTS_PER_HIT * getComboMultiplier(eng.combo) * levelMult);
 
       // Time bonus on clean hit
-      eng.timeLeft += TIME_PER_HIT;
+      eng.timeLeft = Math.min(60, eng.timeLeft + TIME_PER_HIT);
 
       // Continuous level progression
       const rawLevel = (eng.score / POINTS_PER_LEVEL) + 1;
@@ -413,7 +413,7 @@ export default function DistractionFighterClient({ faqs, copy }) {
       spawnTrial();
     } else {
       eng.mistakes += 1;
-      if (drillPenalty.isEnabled()) eng.timeLeft -= TIME_PENALTY;
+      if (drillPenalty.isEnabled(TIME_PER_HIT === 2)) eng.timeLeft -= TIME_PENALTY;
       eng.combo = 0;
       setUiCombo(0);
       triggerFlash();
@@ -673,6 +673,7 @@ export default function DistractionFighterClient({ faqs, copy }) {
                 { label: t('distractionFighter.peakLevel', 'Peak Level'), value: `Lv. ${analytics.finalLevel}` },
               ]}
               onPlayAgain={enterDrill}
+              onBeforeShare={() => setIsFullscreen(false)}
               onShare={shareResult}
               onExit={handleExitDrill}
             />

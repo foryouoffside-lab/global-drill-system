@@ -221,7 +221,7 @@ export default function AntiZigzagClient({ copy = null }) {
     if (document.pointerLockElement) document.exitPointerLock();
 
     const e = engine.current;
-    const finalAccuracy = e.totalFrames > 0 ? Math.round((e.framesOnTarget / e.totalFrames) * 100) : 100;
+    const finalAccuracy = e.totalFrames > 0 ? Math.round((e.framesOnTarget / e.totalFrames) * 100) : 0;
     const peakLevel = Math.floor(bestLevelRunRef.current);
     const rating = getFpsScoreGrade(e.score, ELITE_SCORE);
     const grade = { letter: rating.grade, label: rating.label, color: rating.color };
@@ -242,7 +242,7 @@ export default function AntiZigzagClient({ copy = null }) {
     const isNewHigh = e.score > prevSaved.bestScore;
     setIsNewBest(isNewHigh);
 
-    const runBestLevel = Math.max(prevSaved.bestLevel, bestLevelRunRef.current);
+    const runBestLevel = Math.floor(Math.max(prevSaved.bestLevel, bestLevelRunRef.current));
     const updatedData = {
       bestScore: Math.max(prevSaved.bestScore, e.score),
       bestCombo: Math.max(prevSaved.bestCombo, e.bestCombo),
@@ -526,7 +526,7 @@ export default function AntiZigzagClient({ copy = null }) {
             const levelMult = 1 + getDifficultyProgress(e.level) * 0.5;
             const pts = Math.round(10 * getComboMultiplier(e.combo) * levelMult);
             e.score += pts;
-            e.timeLeft += TIME_PER_HIT * 0.25; // +0.1s per 0.25s locked-on
+            e.timeLeft = Math.min(60, e.timeLeft + TIME_PER_HIT * 0.25); // continuous tracking reward, capped at 60s
             setScore(e.score);
 
             const rawLevel = (e.score / POINTS_PER_LEVEL) + 1;
@@ -876,6 +876,7 @@ export default function AntiZigzagClient({ copy = null }) {
                 { value: `Lv. ${analytics.levelReached}`, label: "Peak Level" },
               ]}
               onPlayAgain={enterDrill}
+              onBeforeShare={() => setIsFullscreen(false)}
               onShare={shareDrillLink}
               onExit={handleExitDrill}
             />

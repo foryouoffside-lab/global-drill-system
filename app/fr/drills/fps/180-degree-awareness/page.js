@@ -279,10 +279,10 @@ export default function AwarenessDrillFrPage() {
     faqs: faqSchema.mainEntity.map(e => ({ q: e.name, a: e.acceptedAnswer.text })),
     sources: pickSources('woods2015', 'elliott2010', 'fitts1954', 'schmidt1979', 'leigh2015', 'rayner1998'),
     related: [
-      { href: "/drills/fps/flick-shot-training", label: "Entraînement au Flick Shot" },
-      { href: "/drills/fps/angle-hold-trainer", label: "Entraîneur de Placement de Viseur (Crosshair Placement)" },
-      { href: "/drills/fps/micro-correction-precision", label: "Entraînement aux Micro-Corrections" },
-      { href: "/drills/reaction-speed/reaction-time-test", label: "Test de Temps de Réaction" }
+      { href: "/fr/drills/fps/flick-shot-training", label: "Entraînement au Flick Shot" },
+      { href: "/fr/drills/fps/angle-hold-trainer", label: "Entraîneur de Placement de Viseur (Crosshair Placement)" },
+      { href: "/fr/drills/fps/micro-correction-precision", label: "Entraînement aux Micro-Corrections" },
+      { href: "/fr/drills/reaction-speed/reaction-time-test", label: "Test de Temps de Réaction" }
     ]
   };
 
@@ -341,13 +341,7 @@ export default function AwarenessDrillFrPage() {
       <AwarenessDrillClient copy={copyFr} />
 
       <DrillGuide guide={awarenessGuideFr} />
-      <div className="max-w-4xl mx-auto px-4 pb-12">
-        <RelatedDrills
-          currentCategory="fps"
-          currentHref="/fr/drills/fps/180-degree-awareness"
-          locale="fr"
-        />
-      </div>
+      <RelatedDrills />
       <DrillFooter />
     </>
   );

@@ -288,7 +288,7 @@ export default function StrafeTrackingPage() {
       { href: "/drills/fps/anti-strafe-jitter-duel", label: "Anti-Strafe Jitter Trainer" },
       { href: "/drills/fps/anti-zigzag-movement-trainer", label: "Anti-Zigzag Aim Trainer" },
       { href: "/drills/fps/micro-correction-precision", label: "Micro-Correction Aim Trainer" },
-      { href: "/drills/fps/fps-tracking-trainer", label: "FPS Tracking Speed Trainer" }
+      { href: "/drills/reaction-speed/fps-tracking-trainer", label: "FPS Tracking Speed Trainer" }
     ]
   };
 

@@ -356,9 +356,7 @@ export default function EnhancedPagePt() {
         }}
       />
       <DrillGuide {...guideProps} />
-      <div className="max-w-6xl mx-auto px-4 pb-12">
-        <RelatedDrills currentCategory="cognitive" currentHref="https://skilldrills.online/pt/drills/cognitive/processing-speed/symbol-matching" />
-      </div>
+      <RelatedDrills />
       <DrillFooter />
     </>
   );

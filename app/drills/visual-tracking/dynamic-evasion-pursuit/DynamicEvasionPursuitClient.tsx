@@ -8,9 +8,8 @@ import DrillCountdown from '../../../../components/drill/DrillCountdown';
 import DrillAccordion from '../../../../components/drill/DrillAccordion';
 import ZigZagPathPursuitStartCard from '../../../../components/drill/ZigZagPathPursuitStartCard';
 import { drillAudio } from '../../../../lib/drillAudio';
-import { drawTacticalTarget } from '../../../../lib/canvasFx';
-import { generateSessionCard, shareScoreCard } from '../../../../components/ShareScoreCard';
-import { getPlayerName } from '../../../../lib/leaderboard';
+import { createBackdropCache, drawTacticalTarget } from '../../../../lib/canvasFx';
+import { isFrameSkippable } from '../../../../lib/performance';
 import useUnexpectedExitGuard from '../../../../lib/useUnexpectedExitGuard';
 import useImmersiveMode from '@/lib/useImmersiveMode';
 
@@ -137,32 +136,18 @@ export default function DynamicEvasionPursuitClient({ copy }: { copy?: { title?:
   }, []);
 
   const sharePage = useCallback(async () => {
+    setIsFullscreen(false);
     const url = 'https://skilldrills.online/drills/visual-tracking/dynamic-evasion-pursuit';
-    try {
-      const canvas = generateSessionCard({
-        drillName: 'Dynamic Evasion Pursuit',
-        badgeText: 'Smooth Pursuit Calibrated',
-        stats: [
-          { label: 'Session Time', value: `${selectedDuration}s` },
-          { label: 'Base Speed', value: `${speedMultiplier.toFixed(1)}x` },
-          { label: 'Math Line', value: mathInvisible ? 'Invisible' : 'Visible' },
-          { label: 'Speed Acceleration', value: randomSpeed ? 'Enabled' : 'Fixed' },
-        ],
-        playerName: getPlayerName(),
-      });
-      await shareScoreCard(url, canvas);
-    } catch (e) {
-      const text = 'Dynamic Evasion Pursuit — Free Reactive Eye Tracking Drill!';
-      if (typeof navigator !== 'undefined' && navigator.share) {
-        try {
-          await navigator.share({ title: 'Dynamic Evasion Pursuit - Reactive Eye Tracking Drill', text, url });
-        } catch (e) {}
-      } else if (typeof navigator !== 'undefined' && navigator.clipboard) {
-        navigator.clipboard.writeText(url);
-        alert('Drill link copied to clipboard!');
-      }
+    const text = 'Dynamic Evasion Pursuit - Free Reactive Eye Tracking Drill!';
+    if (typeof navigator !== 'undefined' && navigator.share) {
+      try {
+        await navigator.share({ title: 'Dynamic Evasion Pursuit - Reactive Eye Tracking Drill', text, url });
+      } catch (e) {}
+    } else if (typeof navigator !== 'undefined' && navigator.clipboard) {
+      await navigator.clipboard.writeText(url);
+      alert('Drill link copied to clipboard!');
     }
-  }, [selectedDuration, speedMultiplier, mathInvisible, randomSpeed]);
+  }, []);
 
   const handleExitDrill = useCallback(async () => {
     markIntentionalExit();
@@ -283,13 +268,18 @@ export default function DynamicEvasionPursuitClient({ copy }: { copy?: { title?:
     const container = containerRef.current;
     if (!cvs || !container) return;
 
-    const ctx = cvs.getContext('2d');
+    const ctx = cvs.getContext('2d', { alpha: false });
     if (!ctx) return;
+
+    let canvasWidth = 0;
+    let canvasHeight = 0;
 
     const updateSize = () => {
       if (!container) return;
       const rect = container.getBoundingClientRect();
-      const dpr = Math.min(window.devicePixelRatio || 1, 2);
+      canvasWidth = rect.width;
+      canvasHeight = rect.height;
+      const dpr = Math.min(window.devicePixelRatio || 1, 1.5);
       cvs.width = rect.width * dpr;
       cvs.height = rect.height * dpr;
       ctx.scale(dpr, dpr);
@@ -305,15 +295,19 @@ export default function DynamicEvasionPursuitClient({ copy }: { copy?: { title?:
     ro.observe(container);
 
     let lastTime = performance.now();
+    let backdropCache: { key: string; canvas: HTMLCanvasElement | null } = { key: '', canvas: null };
 
     const draw = (ts: number) => {
+      if (isFrameSkippable(ts, lastTime)) {
+        animationRef.current = requestAnimationFrame(draw);
+        return;
+      }
       const deltaTimeMs = ts - lastTime;
       lastTime = ts;
       const dt = Math.min(deltaTimeMs / 1000, 0.1);
 
-      const rect = container.getBoundingClientRect();
-      const W = rect.width;
-      const H = rect.height;
+      const W = canvasWidth;
+      const H = canvasHeight;
 
       const { speedMultiplier, targetSize, targetColor, mathInvisible, randomSpeed, trailEffect, glowEffect, scanlinesActive, dayMode: isDay } = settingsRef.current;
 
@@ -360,19 +354,25 @@ export default function DynamicEvasionPursuitClient({ copy }: { copy?: { title?:
       }
 
       // Clear Canvas Background (Pure White in Day Mode `#ffffff`, Deep Black in Night Mode `#050508`)
-      ctx.fillStyle = isDay ? '#ffffff' : '#050508';
-      ctx.fillRect(0, 0, W, H);
-
-      // Render subtle background grid
-      ctx.strokeStyle = isDay ? 'rgba(0, 0, 0, 0.05)' : 'rgba(255, 255, 255, 0.02)';
-      ctx.lineWidth = 1;
-      const gridSize = 40;
-      for (let x = 0; x < W; x += gridSize) {
-        ctx.beginPath(); ctx.moveTo(x, 0); ctx.lineTo(x, H); ctx.stroke();
+      const backdropKey = `${W}x${H}:${isDay ? 'day' : 'night'}`;
+      if (backdropCache.key !== backdropKey) {
+        backdropCache = {
+          key: backdropKey,
+          canvas: createBackdropCache(W, H, (backdropCtx, width, height) => {
+            backdropCtx.fillStyle = isDay ? '#ffffff' : '#050508';
+            backdropCtx.fillRect(0, 0, width, height);
+            backdropCtx.strokeStyle = isDay ? 'rgba(0, 0, 0, 0.05)' : 'rgba(255, 255, 255, 0.02)';
+            backdropCtx.lineWidth = 1;
+            for (let x = 0; x < width; x += 40) {
+              backdropCtx.beginPath(); backdropCtx.moveTo(x, 0); backdropCtx.lineTo(x, height); backdropCtx.stroke();
+            }
+            for (let y = 0; y < height; y += 40) {
+              backdropCtx.beginPath(); backdropCtx.moveTo(0, y); backdropCtx.lineTo(width, y); backdropCtx.stroke();
+            }
+          })
+        };
       }
-      for (let y = 0; y < H; y += gridSize) {
-        ctx.beginPath(); ctx.moveTo(0, y); ctx.lineTo(W, y); ctx.stroke();
-      }
+      if (backdropCache.canvas) ctx.drawImage(backdropCache.canvas, 0, 0, W, H);
 
       // Render Evasion Direction Indicator ONLY if math is NOT invisible
       if (!mathInvisible) {
@@ -660,7 +660,7 @@ export default function DynamicEvasionPursuitClient({ copy }: { copy?: { title?:
                     type="button"
                     onClick={sharePage} 
                     className="w-11 flex-shrink-0 rounded-[13px] bg-white/[0.04] border border-white/10 flex items-center justify-center text-slate-400 hover:text-white cursor-pointer active:scale-90 transition-transform" 
-                    title="Share Score"
+                    title="Share Drill Link"
                   >
                     <Share2 className="w-4 h-4" />
                   </button>

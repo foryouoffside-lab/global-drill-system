@@ -324,7 +324,6 @@ export default function FPSHubClient({ faqs = [] }) {
                 difficulty: drill.difficulty,
                 duration: drill.duration,
                 icon: drill.icon,
-                badge: drillLevels[drill.folderName] ? `Lv. ${drillLevels[drill.folderName]}` : null,
               };
             })}
           />

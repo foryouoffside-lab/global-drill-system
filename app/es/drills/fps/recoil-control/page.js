@@ -372,13 +372,7 @@ export default function RecoilControlPage() {
       <RecoilControlClient copy={copyEs} />
 
       <DrillGuide guide={recoilControlGuide} />
-      <div className="max-w-6xl w-full mx-auto px-4 pb-12">
-        <RelatedDrills
-          currentCategory="fps"
-          currentHref="/drills/fps/recoil-control"
-          locale="es"
-        />
-      </div>
+      <RelatedDrills />
       <DrillFooter />
     </>
   );

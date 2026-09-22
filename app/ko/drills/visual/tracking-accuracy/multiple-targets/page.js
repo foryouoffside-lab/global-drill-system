@@ -332,9 +332,7 @@ export default function LocalizedMultipleTargetsKoPage() {
 
       <GhostLinkClient copy={{ title: "다중 객체 추적", subtitle: "주변시·분할 주의력 훈련" }} />
       <DrillGuide guide={guideData} />
-      <div className="max-w-6xl mx-auto px-4 pb-12">
-        <RelatedDrills currentCategory="visual" currentHref="https://skilldrills.online/ko/drills/visual/tracking-accuracy/multiple-targets" />
-      </div>
+      <RelatedDrills />
     </>
   );
 }

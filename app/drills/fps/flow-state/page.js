@@ -290,7 +290,7 @@ export default function FlowStatePage() {
     faqs: faqSchema.mainEntity.map(e => ({ q: e.name, a: e.acceptedAnswer.text })),
     sources: pickSources('woods2015', 'krauzlis2004', 'posner1990', 'green2003', 'dietrich2004'),
     related: [
-      { href: "/drills/fps/fps-tracking-trainer", label: "FPS Tracking Trainer" },
+      { href: "/drills/reaction-speed/fps-tracking-trainer", label: "FPS Tracking Trainer" },
       { href: "/drills/fps/anti-zigzag-movement-trainer", label: "Anti-Zigzag Aim Trainer" },
       { href: "/drills/fps/anti-strafe-jitter-duel", label: "Anti-Strafe Jitter Trainer" },
       { href: "/drills/fps/flick-shot-training", label: "Flick Shot Trainer" },

@@ -343,9 +343,7 @@ export default function EnhancedPage() {
         skillsTitle: "Habilidades treinadas", skillsText: "Rastreamento visual bilateral, detecção periférica, alternância de atenção e controle executivo.", flexibilityTitle: "Velocidade de troca", flexibilityText: "A cada nível, ritmo e padrões mudam: alterne entre os fluxos sem perder precisão."
       }} />
       <DrillGuide {...guideProps} />
-      <div className="max-w-6xl mx-auto px-4 pb-12">
-        <RelatedDrills currentCategory="cognitive" currentHref="https://skilldrills.online/pt/drills/cognitive/attention/multi-tasking" />
-      </div>
+      <RelatedDrills />
       <DrillFooter />
     </>
   );

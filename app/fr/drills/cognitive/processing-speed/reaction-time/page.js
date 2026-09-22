@@ -352,9 +352,7 @@ export default function EnhancedPageFr() {
         }}
       />
       <DrillGuide {...guideProps} />
-      <div className="max-w-6xl mx-auto px-4 pb-12">
-        <RelatedDrills currentCategory="cognitive" currentHref="https://skilldrills.online/fr/drills/cognitive/processing-speed/reaction-time" />
-      </div>
+      <RelatedDrills />
       <DrillFooter />
     </>
   );

@@ -1,7 +1,6 @@
 import DualTargetFlowClient from './DualTargetFlowClientLoader';
 import { getAlternateLanguages } from '@/lib/i18n/locales';
 import DrillGuide from '@/components/drill/DrillGuide';
-import RelatedDrills from '@/components/drill/RelatedDrills';
 import DrillFooter from '@/components/drill/DrillFooter';
 import { pickSources } from '@/lib/drillSources';
 
@@ -316,9 +315,6 @@ export default function EnhancedPage() {
       />
       <DualTargetFlowClient copy={{ title: "Multitasking Test", subtitle: "Track two visual streams and maintain accuracy during a dual-task focus challenge" }} />
       <DrillGuide {...guideProps} />
-      <div className="max-w-6xl mx-auto px-4 pb-12">
-        <RelatedDrills currentCategory="cognitive" currentHref="https://skilldrills.online/drills/cognitive/attention/multi-tasking" />
-      </div>
       <DrillFooter />
     </>
   );

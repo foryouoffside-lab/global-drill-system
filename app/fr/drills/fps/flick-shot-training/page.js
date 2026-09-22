@@ -353,7 +353,7 @@ export default function FlickShotFrPage() {
           stageCaption: "Visez rapidement les cibles aléatoires et tirez avec précision avant l'expiration du temps imparti.",
           rulesTitle: "Règles d'Entraînement & Système de Score",
           rulesItems: [
-            { num: "1", text: "Cible Touchée", highlight: "+100 PTS (+0,6s)", result: "×Multiplicateur Combo" },
+            { num: "1", text: "Cible Touchée", highlight: "+100 PTS (+2,0s)", result: "×Multiplicateur Combo" },
             { num: "2", text: "Série de Combos", highlight: "Jusqu'à 3.0×", result: "Cibles Plus Rapides" },
             { num: "3", text: "Niveau Supérieur", highlight: "+1 / 1800 PTS", result: "Progression Adaptative" },
             { num: "4", text: "Tir Manqué / Expiration", highlight: "Pénalité", result: "Réinitialise Combo (-0,8s)" }
@@ -363,14 +363,8 @@ export default function FlickShotFrPage() {
           aboutText: "Le flick aim est la capacité neuromotrice à propulser le réticule en une seule impulsion balistique directe vers la cible et à le stabiliser instantanément. Selon la loi de Fitts (1954), la difficulté dépend de la distance et de la taille. La maîtrise réside dans le freinage mécanique antagoniste sur le tapis (Elliott et al., 2010)."
         }}
       />
-      <DrillGuide guide={flickGuide} />
-      <div className="max-w-4xl mx-auto px-4 pb-12">
-        <RelatedDrills
-          currentCategory="fps"
-          currentHref="/fr/drills/fps/flick-shot-training"
-          locale="fr"
-        />
-      </div>
+      <DrillGuide guide={flickGuide} framed />
+      <RelatedDrills />
       <DrillFooter />
     </>
   );

@@ -1,5 +1,5 @@
 'use client';
 
-import dynamic from 'next/dynamic';
+import Client from './KineticInterceptClient';
 
-export default dynamic(() => import('./KineticInterceptClient'));
+export default Client;

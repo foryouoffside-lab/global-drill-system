@@ -343,9 +343,7 @@ export default function ProSmoothPursuitJaPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(howToSchema) }}
       />
       <ProSmoothPursuitClient copy={copy} />
-      <div className="max-w-6xl mx-auto px-4 w-full">
-        <RelatedDrills currentCategory="fps" currentHref="/drills/fps/pro-smooth-pursuit" locale="ja" />
-      </div>
+      <RelatedDrills />
       <DrillGuide guide={jaGuide} />
       <DrillFooter />
     </>

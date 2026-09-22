@@ -400,9 +400,7 @@ export default function JapaneseSteadyHandPage() {
       />
       <SteadyHandClient copy={jaCopy} />
       <DrillGuide {...guideProps} />
-      <div className="max-w-6xl w-full mx-auto px-4 pb-12">
-        <RelatedDrills currentCategory="motor" currentHref="/drills/motor/precision-control/steady-hand" locale="ja" />
-      </div>
+      <RelatedDrills />
       <DrillFooter />
     </>
   );

@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useRef } from 'react';
+import { useCallback, useEffect, useRef } from 'react';
 
 /**
  * Immersive mode — the full-viewport layout a drill switches into when it starts.
@@ -41,11 +41,77 @@ function prefersNativeFullscreen(): boolean {
   return window.matchMedia('(hover: hover) and (pointer: fine)').matches;
 }
 
-export default function useImmersiveMode(active: boolean): void {
+const FULLSCREEN_MARKER = 'data-skilldrills-native-fullscreen';
+let nativeFullscreenRequestPending = false;
+
+// Shared by every result card so Play Again and Share can recover native
+// fullscreen from the actual button gesture, even when the drill component's
+// own `isFullscreen` state never changed.
+export function requestNativeFullscreen(onEntered?: () => void): void {
+  if (
+    typeof document === 'undefined' ||
+    !prefersNativeFullscreen() ||
+    document.fullscreenElement ||
+    nativeFullscreenRequestPending
+  ) return;
+
+  let request: Promise<void> | undefined;
+  try {
+    request = document.documentElement.requestFullscreen?.();
+  } catch {
+    return;
+  }
+  if (!request) return;
+
+  nativeFullscreenRequestPending = true;
+  request
+    .then(() => {
+      document.documentElement.setAttribute(FULLSCREEN_MARKER, 'true');
+      onEntered?.();
+    })
+    .catch(() => {})
+    .finally(() => { nativeFullscreenRequestPending = false; });
+}
+
+export default function useImmersiveMode(active: boolean): () => void {
   // Only ever exit fullscreen we ourselves entered — the player may have been in
   // F11 fullscreen before the drill started, and dropping them out of it on exit
   // would be us undoing something we did not do.
   const enteredRef = useRef(false);
+
+  // Keep this callable from the Start / Play Again click itself. A request
+  // made only from useEffect can lose the browser's transient user activation.
+  const ensureNativeFullscreen = useCallback(() => {
+    requestNativeFullscreen(() => { enteredRef.current = true; });
+  }, []);
+
+  useEffect(() => {
+    const handleDrillActionClick = (event: MouseEvent) => {
+      const target = event.target;
+      if (!(target instanceof Element)) return;
+
+      const button = target.closest('button');
+      if (!button) return;
+
+      const label = [
+        button.textContent || '',
+        button.getAttribute('aria-label') || '',
+        button.getAttribute('title') || '',
+      ].join(' ').toLowerCase();
+      const hasRefreshIcon = Boolean(button.querySelector('svg.lucide-refresh-cw'));
+      const isRestart = hasRefreshIcon || /play again|jogar novamente|jugar de nuevo|rejouer|noch einmal|もう一度|다시 플레이/i.test(label);
+      const isStart = /start drill|start game|start training|begin drill|begin training|commencer|comenzar|começar|始める|시작/i.test(label);
+
+      // This listener runs in capture phase, before each drill's own click
+      // handler, so the browser still accepts the fullscreen request as a
+      // user gesture. Share handlers are intentionally not intercepted here:
+      // native sharing must receive the gesture first.
+      if (isRestart || isStart) requestNativeFullscreen();
+    };
+
+    document.addEventListener('click', handleDrillActionClick, true);
+    return () => document.removeEventListener('click', handleDrillActionClick, true);
+  }, []);
 
   useEffect(() => {
     if (!active) return;
@@ -54,21 +120,22 @@ export default function useImmersiveMode(active: boolean): void {
     document.body.style.overscrollBehavior = 'none';
 
     if (prefersNativeFullscreen() && !document.fullscreenElement) {
-      // Fires inside the click's transient user activation, so the request is
-      // allowed. It still rejects if the browser or an iframe policy says no —
-      // that only costs us layer 2, and layer 1 has already painted.
-      document.documentElement.requestFullscreen?.()
-        .then(() => { enteredRef.current = true; })
-        .catch(() => { enteredRef.current = false; });
+      ensureNativeFullscreen();
     }
 
     return () => {
       document.body.style.overflow = overflow;
       document.body.style.overscrollBehavior = overscrollBehavior;
-      if (enteredRef.current && document.fullscreenElement) {
+      if (
+        (enteredRef.current || document.documentElement.hasAttribute(FULLSCREEN_MARKER)) &&
+        document.fullscreenElement
+      ) {
         document.exitFullscreen?.().catch(() => {});
       }
+      document.documentElement.removeAttribute(FULLSCREEN_MARKER);
       enteredRef.current = false;
     };
-  }, [active]);
+  }, [active, ensureNativeFullscreen]);
+
+  return ensureNativeFullscreen;
 }

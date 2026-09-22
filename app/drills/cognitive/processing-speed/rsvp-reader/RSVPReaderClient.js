@@ -268,7 +268,7 @@ export default function RSVPReaderClient({ copy } = {}) {
 
     const e = engine.current;
     const totalActs = e.successfulHits + e.misses + e.falseAlarms;
-    const acc = totalActs > 0 ? Math.round((e.successfulHits / totalActs) * 100) : 100;
+    const acc = totalActs > 0 ? Math.round((e.successfulHits / totalActs) * 100) : 0;
 
     const gradeObj = getFpsScoreGrade(e.score, ELITE_SCORE);
 
@@ -277,7 +277,7 @@ export default function RSVPReaderClient({ copy } = {}) {
       successfulHits: e.successfulHits,
       misses: e.misses,
       falseAlarms: e.falseAlarms,
-      finalLevel: e.level,
+      finalLevel: Math.floor(e.level),
       grade: gradeObj
     });
 
@@ -289,7 +289,7 @@ export default function RSVPReaderClient({ copy } = {}) {
       setIsNewBest(false);
     }
 
-    const newBestLevel = Math.max(bestLevel, e.level);
+    const newBestLevel = Math.floor(Math.max(bestLevel, e.level));
     setBestLevel(newBestLevel);
 
     setTotalSessions((prev) => {
@@ -453,6 +453,7 @@ export default function RSVPReaderClient({ copy } = {}) {
   }, [endGame, flashStream]);
 
   const shareResult = useCallback(async () => {
+    setIsFullscreen(false);
     const url = 'https://skilldrills.online/drills/cognitive/processing-speed/rsvp-reader';
     try {
       const canvas = generateShareCard({

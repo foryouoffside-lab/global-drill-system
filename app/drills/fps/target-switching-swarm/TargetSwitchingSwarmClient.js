@@ -35,8 +35,8 @@ import useUnexpectedExitGuard from '@/lib/useUnexpectedExitGuard';
 const DRILL_DURATION = 45; // starting clock only; a run grows past this
 const POINTS_PER_LEVEL = 2100; // 300 -> 2100 (7x)
 const ELITE_SCORE = 72000; // 24000 -> 72000 (3x)
-const TIME_PER_HIT = 0.35; // +0.35s on target destruction
-const TIME_PENALTY = 0.5; // opt-in on miss or target timeout
+const TIME_PER_HIT = 2; // +2s on target destruction, capped at 60s
+const TIME_PENALTY = 1; // opt-in on miss or target timeout
 const STORAGE_KEY = 'skilldrills_fps_target_switching_swarm_v3';
 
 const getSavedData = () => {
@@ -70,7 +70,7 @@ const getLevelConfig = (level, combo = 0) => {
 // ============================================================
 // ACCORDION DATA
 const RULES_ITEMS = [
-  { num: "1", text: "Target Hit", highlight: "+100 PTS (+0.35s)", result: "×Combo Mult" },
+  { num: "1", text: "Target Hit", highlight: "+100 PTS (+2s, max 60s)", result: "×Combo Mult" },
   { num: "2", text: "Persistent Swarm", highlight: "Instant Respawns", result: "Continuous Multi-Kill" },
   { num: "3", text: "Level Up", highlight: "+1 / 2100 PTS", result: "Adaptive Scaling" },
   { num: "4", text: "Miss / Timeout", highlight: "Penalty", result: "Resets Combo (-0.8s)" }
@@ -169,7 +169,7 @@ export default function TargetSwitchingSwarmClient({ copy = null }) {
     if (typeof window !== 'undefined') {
       setSoundEnabled(drillAudio.isEnabled());
       setFlashEnabled(drillFlash.isEnabled());
-      setPenaltyEnabled(drillPenalty.isEnabled());
+      setPenaltyEnabled(drillPenalty.isEnabled(TIME_PER_HIT === 2));
       const hasFinePointer = window.matchMedia('(pointer: fine)').matches;
       const isTouchCapable = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
       setIsTouchOnlyDevice(isTouchCapable && !hasFinePointer);
@@ -225,7 +225,7 @@ export default function TargetSwitchingSwarmClient({ copy = null }) {
     if (document.pointerLockElement) document.exitPointerLock();
 
     const e = engine.current;
-    const finalAccuracy = e.totalActions > 0 ? Math.round((e.successfulHits / e.totalActions) * 100) : 100;
+    const finalAccuracy = e.totalActions > 0 ? Math.round((e.successfulHits / e.totalActions) * 100) : 0;
     const peakLevel = Math.floor(bestLevelRunRef.current);
     const grade = getFpsScoreGrade(e.score, ELITE_SCORE);
 
@@ -463,7 +463,7 @@ export default function TargetSwitchingSwarmClient({ copy = null }) {
         const levelMult = 1 + getDifficultyProgress(eRef.level) * 0.5;
         const gained = Math.round(baseScore * getComboMultiplier(eRef.combo) * levelMult);
         eRef.score += gained;
-        eRef.timeLeft += TIME_PER_HIT; // +0.35s
+        eRef.timeLeft = Math.min(60, eRef.timeLeft + TIME_PER_HIT);
 
         setScore(eRef.score);
         setCombo(eRef.combo);
@@ -488,7 +488,7 @@ export default function TargetSwitchingSwarmClient({ copy = null }) {
         }
       } else {
         eRef.missedClicks++;
-        if (drillPenalty.isEnabled()) eRef.timeLeft -= TIME_PENALTY;
+        if (drillPenalty.isEnabled(TIME_PER_HIT === 2)) eRef.timeLeft -= TIME_PENALTY;
         eRef.combo = 0;
         eRef.screenShake = 6;
         setCombo(0);
@@ -591,7 +591,7 @@ export default function TargetSwitchingSwarmClient({ copy = null }) {
 
           if (drillTimeout.isEnabled() && t.age >= t.ttl) {
             e.timeouts++;
-            if (drillPenalty.isEnabled()) e.timeLeft -= TIME_PENALTY;
+            if (drillPenalty.isEnabled(TIME_PER_HIT === 2)) e.timeLeft -= TIME_PENALTY;
             e.combo = 0;
             e.screenShake = 8;
             setCombo(0);
@@ -871,6 +871,7 @@ export default function TargetSwitchingSwarmClient({ copy = null }) {
                 { value: `Lv. ${analytics.levelReached}`, label: copy?.statPeakLevel || "Peak Level" },
               ]}
               onPlayAgain={enterDrill}
+              onBeforeShare={() => setIsFullscreen(false)}
               onShare={shareDrillLink}
               onExit={handleExitDrill}
             />

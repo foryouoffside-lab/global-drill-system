@@ -1,5 +1,5 @@
 'use client';
 
-import dynamic from 'next/dynamic';
+import Client from './EntropicGridClient';
 
-export default dynamic(() => import('./EntropicGridClient'));
+export default Client;

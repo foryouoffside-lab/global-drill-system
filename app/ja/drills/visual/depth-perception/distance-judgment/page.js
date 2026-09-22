@@ -311,12 +311,12 @@ const howToSchema = {
     faqs: faqSchema.mainEntity.map(e => ({ q: e.name, a: e.acceptedAnswer.text })),
     sources: pickSources('howard1919', 'lee1976', 'regan1978', 'julesz1971', 'woods2015'),
     related: [
-      { href: "/drills/visual/tracking-accuracy/moving-target", label: "移動ターゲット追従訓練" },
-      { href: "/drills/visual/reaction-speed/light-reaction", label: "光反応スピードテスト" },
-      { href: "/drills/visual/tracking-accuracy/multiple-targets", label: "マルチオブジェクト動体視力" },
-      { href: "/drills/visual/tracking-accuracy/pursuit-tracker", label: "滑動性眼球運動トラッカー" },
-      { href: "/drills/visual/reaction-speed/go/no-go", label: "Go / No-Go 衝動制御テスト" },
-      { href: "/drills/visual/visual-recognition/entropic-grid", label: "エントロピック視覚探索テスト" }
+      { href: "/ja/drills/visual/tracking-accuracy/moving-target", label: "移動ターゲット追従訓練" },
+      { href: "/ja/drills/visual/reaction-speed/light-reaction", label: "光反応スピードテスト" },
+      { href: "/ja/drills/visual/tracking-accuracy/multiple-targets", label: "マルチオブジェクト動体視力" },
+      { href: "/ja/drills/visual/tracking-accuracy/pursuit-tracker", label: "滑動性眼球運動トラッカー" },
+      { href: "/ja/drills/visual/reaction-speed/go/no-go", label: "Go / No-Go 衝動制御テスト" },
+      { href: "/ja/drills/visual/visual-recognition/entropic-grid", label: "エントロピック視覚探索テスト" }
     ]
   };
 

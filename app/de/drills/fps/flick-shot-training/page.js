@@ -337,7 +337,7 @@ export default function FlickShotDePage() {
           stageCaption: "Ziele blitzschnell auf zufällig erscheinende Ziele und klicke präzise, bevor das Zeitlimit abläuft.",
           rulesTitle: "Trainingsregeln & Punktesystem",
           rulesItems: [
-            { num: "1", text: "Zieltreffer", highlight: "+100 PTS (+0,6s)", result: "×Combo-Multiplikator" },
+            { num: "1", text: "Zieltreffer", highlight: "+100 PTS (+2,0s)", result: "×Combo-Multiplikator" },
             { num: "2", text: "Trefferserie", highlight: "Bis zu 3,0×", result: "Schnellere Ziele" },
             { num: "3", text: "Levelaufstieg", highlight: "+1 / 1800 PTS", result: "Adaptive Skalierung" },
             { num: "4", text: "Fehlschuss / Timeout", highlight: "Strafe", result: "Combo-Reset (-0,8s)" }
@@ -347,14 +347,8 @@ export default function FlickShotDePage() {
           aboutText: "Flick Aiming ist die Fähigkeit, das Fadenkreuz in einer einzigen ballistischen Bewegung präzise auf ein erblicktes Ziel zu beschleunigen und sofort abzustoppen. Gemäß Fitts' Law (1954) skaliert die Schwierigkeit mit Distanz und Zielgröße. Meisterschaft entsteht durch die Beherrschung der mechanischen Bremsphase (Elliott et al., 2010)."
         }}
       />
-      <DrillGuide guide={flickGuide} />
-      <div className="max-w-4xl mx-auto px-4 pb-12">
-        <RelatedDrills
-          currentCategory="fps"
-          currentHref="/de/drills/fps/flick-shot-training"
-          locale="de"
-        />
-      </div>
+      <DrillGuide guide={flickGuide} framed />
+      <RelatedDrills />
       <DrillFooter />
     </>
   );

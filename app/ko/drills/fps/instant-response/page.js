@@ -280,11 +280,11 @@ export default function InstantResponseKoPage() {
     faqs: faqSchema.mainEntity.map(e => ({ q: e.name, a: e.acceptedAnswer.text })),
     sources: pickSources('woods2015', 'posner1990', 'donders1969', 'hick1952'),
     related: [
-      { href: "/drills/fps/angle-hold-trainer", label: "앵글 홀드 (크로스헤어 배치) 트레이너" },
-      { href: "/drills/fps/flick-shot-training", label: "플릭 에임 연습" },
-      { href: "/drills/fps/180-degree-awareness", label: "180도 플릭 에임 연습" },
-      { href: "/drills/reaction-speed/reaction-time-test", label: "반응속도 테스트" },
-      { href: "/drills/reaction-speed/reflex-training-drill", label: "반사신경 트레이닝" }
+      { href: "/ko/drills/fps/angle-hold-trainer", label: "앵글 홀드 (크로스헤어 배치) 트레이너" },
+      { href: "/ko/drills/fps/flick-shot-training", label: "플릭 에임 연습" },
+      { href: "/ko/drills/fps/180-degree-awareness", label: "180도 플릭 에임 연습" },
+      { href: "/ko/drills/reaction-speed/reaction-time-test", label: "반응속도 테스트" },
+      { href: "/ko/drills/reaction-speed/reflex-training-drill", label: "반사신경 트레이닝" }
     ]
   };
 
@@ -340,13 +340,7 @@ export default function InstantResponseKoPage() {
         }}
       />
       <DrillGuide guide={instantResponseGuide} />
-      <div className="max-w-4xl mx-auto px-4 pb-12">
-        <RelatedDrills
-          currentCategory="fps"
-          currentHref="/drills/fps/instant-response"
-          locale="ko"
-        />
-      </div>
+      <RelatedDrills />
       <DrillFooter />
     </>
   );

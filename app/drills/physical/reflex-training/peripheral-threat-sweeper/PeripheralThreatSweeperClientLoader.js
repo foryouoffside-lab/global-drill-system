@@ -1,5 +1,5 @@
 'use client';
 
-import dynamic from 'next/dynamic';
+import Client from './PeripheralThreatSweeperClient';
 
-export default dynamic(() => import('./PeripheralThreatSweeperClient'));
+export default Client;

@@ -32,8 +32,8 @@ const DRILL_DURATION = 45; // starting clock only; a run grows past this
 const POINTS_PER_HIT = 150;
 const POINTS_PER_LEVEL = 5250; // 750 -> 5250 (7x)
 const ELITE_SCORE = 16000; // 1000 -> 16000 (scaled for unbounded continuous runs)
-const TIME_PER_HIT = 0.6; // +0.6s per valid hit
-const TIME_PENALTY = 0.8; // -0.8s on miss / relocation timeout (opt-in gated)
+const TIME_PER_HIT = 2; // +2s per valid hit, capped at 60s
+const TIME_PENALTY = 1; // -1s on miss / relocation timeout (opt-in gated)
 const STORAGE_KEY = 'skilldrills_visual_moving_target_v5';
 
 const getSavedData = () => {
@@ -128,7 +128,7 @@ export default function KineticInterceptClient({ copy } = {}) {
     if (typeof window !== 'undefined') {
       setSoundEnabled(drillAudio.isEnabled());
       setFlashEnabled(drillFlash.isEnabled());
-      setPenaltyEnabled(drillPenalty.isEnabled());
+      setPenaltyEnabled(drillPenalty.isEnabled(TIME_PER_HIT === 2));
       const saved = getSavedData();
       setBestScore(saved.bestScore || 0);
       setBestCombo(saved.bestCombo || 0);
@@ -285,7 +285,7 @@ export default function KineticInterceptClient({ copy } = {}) {
       eng.score += Math.round(POINTS_PER_HIT * getComboMultiplier(eng.combo) * levelMult);
 
       // Time bonus on clean hit
-      eng.timeLeft += TIME_PER_HIT;
+      eng.timeLeft = Math.min(60, eng.timeLeft + TIME_PER_HIT);
 
       // Continuous level progression
       const nextLevel = (eng.score / POINTS_PER_LEVEL) + 1;
@@ -301,7 +301,7 @@ export default function KineticInterceptClient({ copy } = {}) {
     } else {
       // MISCLICK
       eng.missedClicks++;
-      if (drillPenalty.isEnabled()) eng.timeLeft -= TIME_PENALTY;
+      if (drillPenalty.isEnabled(TIME_PER_HIT === 2)) eng.timeLeft -= TIME_PENALTY;
       eng.combo = 0;
       setUiCombo(0);
 
@@ -374,7 +374,7 @@ export default function KineticInterceptClient({ copy } = {}) {
         if (elapsed >= interval) {
           if (drillTimeout.isEnabled()) {
             e.missedClicks++;
-            if (drillPenalty.isEnabled()) e.timeLeft -= TIME_PENALTY;
+            if (drillPenalty.isEnabled(TIME_PER_HIT === 2)) e.timeLeft -= TIME_PENALTY;
             e.combo = 0;
             setUiCombo(0);
             drillAudio?.playPenalty?.();
@@ -682,6 +682,7 @@ export default function KineticInterceptClient({ copy } = {}) {
                 { label: 'Max Combo', value: analytics.maxCombo, suffix: 'x' },
               ]}
               onPlayAgain={enterDrill}
+              onBeforeShare={() => setIsFullscreen(false)}
               onShare={shareScore}
               onExit={handleExitDrill}
             />
@@ -699,7 +700,7 @@ export default function KineticInterceptClient({ copy } = {}) {
               onToggle={() => setOpenAccordion(openAccordion === 'rules' ? null : 'rules')}
             >
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <DrillRuleItem num="1" text="Intercept Kinetic Target" highlight="+150 PTS" result="× Combo × Level bonus (+0.6s clock per hit)" />
+                <DrillRuleItem num="1" text="Intercept Kinetic Target" highlight="+150 PTS" result="× Combo × Level bonus (+2s per hit, max 60s)" />
                 <DrillRuleItem num="2" text="Dynamic Relocation" highlight="Tightens Continuously" result="Changes location faster as streak climbs" />
                 <DrillRuleItem num="3" text="Progressive Difficulty" highlight="Faster & Smaller" result="Speed rises, hitbox shrinks" />
                 <DrillRuleItem 

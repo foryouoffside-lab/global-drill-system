@@ -285,7 +285,7 @@ export default function MicroCorrectionPage() {
       { href: "/drills/fps/flick-shot-training", label: "Flick Shot Trainer" },
       { href: "/drills/fps/angle-hold-trainer", label: "Crosshair Placement & Angle Hold Trainer" },
       { href: "/drills/fps/instant-response", label: "FPS Reaction Time Test" },
-      { href: "/drills/fps/fps-tracking-trainer", label: "FPS Tracking Speed Trainer" }
+      { href: "/drills/reaction-speed/fps-tracking-trainer", label: "FPS Tracking Speed Trainer" }
     ]
   };
 

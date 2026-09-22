@@ -303,11 +303,11 @@ export default function RecoilControlPageJa() {
     faqs: faqSchema.mainEntity.map(e => ({ q: e.name, a: e.acceptedAnswer.text })),
     sources: pickSources('woods2015', 'fitts1954', 'meyer1988', 'schmidtLee2011', 'schmidt1979', 'woodworth1899'),
     related: [
-      { href: "/drills/fps/flick-shot-training", label: "フリックショット練習 (Flick Shot Trainer)" },
-      { href: "/drills/fps/pro-smooth-pursuit", label: "スムーズパシュート練習 (Smooth Pursuit Trainer)" },
-      { href: "/drills/fps/micro-correction-precision", label: "マイクロフリック練習 (Micro-Correction)" },
-      { href: "/drills/fps/anti-strafe-jitter-duel", label: "対ストレイフジッター練習 (Anti-Strafe Jitter)" },
-      { href: "/drills/fps/angle-hold-trainer", label: "置きエイム練習 (Angle Hold Trainer)" }
+      { href: "/ja/drills/fps/flick-shot-training", label: "フリックショット練習 (Flick Shot Trainer)" },
+      { href: "/ja/drills/fps/pro-smooth-pursuit", label: "スムーズパシュート練習 (Smooth Pursuit Trainer)" },
+      { href: "/ja/drills/fps/micro-correction-precision", label: "マイクロフリック練習 (Micro-Correction)" },
+      { href: "/ja/drills/fps/anti-strafe-jitter-duel", label: "対ストレイフジッター練習 (Anti-Strafe Jitter)" },
+      { href: "/ja/drills/fps/angle-hold-trainer", label: "置きエイム練習 (Angle Hold Trainer)" }
     ]
   };
 
@@ -405,9 +405,7 @@ export default function RecoilControlPageJa() {
       <RecoilControlClient copy={copyJa} />
 
       <DrillGuide guide={recoilGuideJa} />
-      <div className="max-w-6xl w-full mx-auto px-4 pb-12">
-        <RelatedDrills currentCategory="fps" currentHref="/drills/fps/recoil-control" locale="ja" />
-      </div>
+      <RelatedDrills />
       <DrillFooter />
     </>
   );

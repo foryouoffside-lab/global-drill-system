@@ -2,7 +2,6 @@ import FPSTrackingTrainerWrapper from './FPSTrackingTrainerWrapperLoader';
 import { getAlternateLanguages } from '@/lib/i18n/locales';
 import DrillGuide from '@/components/drill/DrillGuide';
 import DrillFooter from '@/components/drill/DrillFooter';
-import RelatedDrills from '@/components/drill/RelatedDrills';
 import { pickSources } from '@/lib/drillSources';
 import { buildFpsTrackingGuide, buildFpsTrackingSeo, getFpsTrackingContent, getFpsTrackingUi } from '@/lib/i18n/drills/fpsTrackingTrainer';
 
@@ -22,7 +21,6 @@ export default function FPSTrackingTrainerPage() {
       ))}
       <FPSTrackingTrainerWrapper copy={{ title: data.title, subtitle: data.subtitle, caption: ui.caption }} />
       <DrillGuide {...guideProps} />
-      <RelatedDrills />
       <DrillFooter />
     </>
   );

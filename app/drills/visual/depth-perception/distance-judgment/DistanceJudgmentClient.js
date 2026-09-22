@@ -168,7 +168,7 @@ export default function DistanceJudgmentClient({ copy = null }) {
       accuracy: finalAccuracy,
       perfectHits: e.perfectHits,
       missedClicks: e.missedClicks,
-      finalLevel: e.level,
+      finalLevel: Math.floor(e.level),
       grade,
     });
 
@@ -180,7 +180,7 @@ export default function DistanceJudgmentClient({ copy = null }) {
 
     const updatedData = {
       bestScore: Math.max(prevSaved.bestScore, e.score),
-      bestLevel: Math.max(prevSaved.bestLevel, e.level),
+      bestLevel: Math.max(prevSaved.bestLevel, Math.floor(e.level)),
       totalSessions: (prevSaved.totalSessions || 0) + 1,
     };
     saveData(updatedData);
@@ -501,6 +501,7 @@ export default function DistanceJudgmentClient({ copy = null }) {
   }, [clearGameTimeouts, endGame, startNextApproach]);
 
   const shareScore = useCallback(async () => {
+    setIsFullscreen(false);
     const url = typeof window !== 'undefined' ? window.location.href : 'https://skilldrills.online/drills/visual/depth-perception/distance-judgment';
     const drillName = copy?.shareDrillName || 'Depth Perception Test';
     try {

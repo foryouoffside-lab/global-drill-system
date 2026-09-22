@@ -35,8 +35,8 @@ import useUnexpectedExitGuard from '@/lib/useUnexpectedExitGuard';
 const DRILL_DURATION = 45; // starting clock only; a run grows past this
 const POINTS_PER_LEVEL = 1400; // 200 -> 1400 (7x)
 const ELITE_SCORE = 54000; // 18000 -> 54000 (3x)
-const TIME_PER_HIT = 0.4; // +0.4s on valid threat elimination
-const TIME_PENALTY = 0.6; // opt-in on friendly fire, wrong priority, miss, or timeout
+const TIME_PER_HIT = 2; // +2s on valid threat elimination, capped at 60s
+const TIME_PENALTY = 1; // opt-in on friendly fire, wrong priority, miss, or timeout
 const STORAGE_KEY = 'skilldrills_fps_target_prioritization_v3';
 
 const getSavedData = () => {
@@ -73,8 +73,8 @@ const getLevelConfig = (level, combo = 0) => {
 // ACCORDION & RELATED DRILLS DATA
 // ============================================================
 const RULES_ITEMS = [
-  { num: "1", text: "High Threat Target", highlight: "Red (+100 PTS / +0.4s)", result: "Must be eliminated first" },
-  { num: "2", text: "Medium Threat Target", highlight: "Yellow (+50 PTS / +0.4s)", result: "Escalates to Red after timer" },
+  { num: "1", text: "High Threat Target", highlight: "Red (+100 PTS / +2s, max 60s)", result: "Must be eliminated first" },
+  { num: "2", text: "Medium Threat Target", highlight: "Yellow (+50 PTS / +2s, max 60s)", result: "Escalates to Red after timer" },
   { num: "3", text: "Friendly Unit", highlight: "Green (DO NOT SHOOT)", result: "Friendly hit, wrong target, or miss resets combo (-0.6s with Time Penalty enabled)" },
   { num: "4", text: "Level Progression", highlight: "+1 Level / 1400 PTS", result: "Continuous Dynamic Density & Speed" }
 ];
@@ -172,7 +172,7 @@ export default function TargetPrioritizationClient({ copy = null }) {
     if (typeof window !== 'undefined') {
       setSoundEnabled(drillAudio.isEnabled());
       setFlashEnabled(drillFlash.isEnabled());
-      setPenaltyEnabled(drillPenalty.isEnabled());
+      setPenaltyEnabled(drillPenalty.isEnabled(TIME_PER_HIT === 2));
       const hasFinePointer = window.matchMedia('(pointer: fine)').matches;
       const isTouchCapable = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
       setIsTouchOnlyDevice(isTouchCapable && !hasFinePointer);
@@ -240,7 +240,7 @@ export default function TargetPrioritizationClient({ copy = null }) {
 
     const e = engine.current;
     const totalCorrect = e.redHits + e.yellowHits;
-    const finalAccuracy = e.totalActions > 0 ? Math.round((totalCorrect / e.totalActions) * 100) : 100;
+    const finalAccuracy = e.totalActions > 0 ? Math.round((totalCorrect / e.totalActions) * 100) : 0;
     const peakLevel = Math.floor(bestLevelRunRef.current);
     const rating = getFpsScoreGrade(e.score, ELITE_SCORE);
     const grade = { letter: rating.grade, label: rating.label, color: rating.color };
@@ -473,7 +473,7 @@ export default function TargetPrioritizationClient({ copy = null }) {
           const levelMult = 1 + getDifficultyProgress(eRef.level) * 0.5;
           const gained = Math.round(baseScore * getComboMultiplier(eRef.combo) * levelMult);
           eRef.score += gained;
-          eRef.timeLeft += TIME_PER_HIT; // +0.4s
+          eRef.timeLeft = Math.min(60, eRef.timeLeft + TIME_PER_HIT);
 
           const hitColor = eRef.combo >= 10 ? '#34d399' : '#ef4444';
           drillAudio.playHit();
@@ -482,7 +482,7 @@ export default function TargetPrioritizationClient({ copy = null }) {
         } else if (clickedTarget.type === 'yellow') {
           if (activeReds) {
             eRef.wrongPriority++;
-            if (drillPenalty.isEnabled()) eRef.timeLeft -= TIME_PENALTY;
+            if (drillPenalty.isEnabled(TIME_PER_HIT === 2)) eRef.timeLeft -= TIME_PENALTY;
             eRef.combo = 0;
             eRef.screenShake = 6;
             drillAudio.playPenalty();
@@ -497,7 +497,7 @@ export default function TargetPrioritizationClient({ copy = null }) {
             const levelMult = 1 + getDifficultyProgress(eRef.level) * 0.5;
             const gained = Math.round(baseScore * getComboMultiplier(eRef.combo) * levelMult);
             eRef.score += gained;
-            eRef.timeLeft += TIME_PER_HIT; // +0.4s
+            eRef.timeLeft = Math.min(60, eRef.timeLeft + TIME_PER_HIT);
 
             const hitColor = eRef.combo >= 10 ? '#34d399' : '#eab308';
             drillAudio.playHit();
@@ -506,7 +506,7 @@ export default function TargetPrioritizationClient({ copy = null }) {
           }
         } else if (clickedTarget.type === 'green') {
           eRef.friendlyFire++;
-          if (drillPenalty.isEnabled()) eRef.timeLeft -= TIME_PENALTY;
+          if (drillPenalty.isEnabled(TIME_PER_HIT === 2)) eRef.timeLeft -= TIME_PENALTY;
           eRef.combo = 0;
           eRef.screenShake = 12;
           drillAudio.playPenalty();
@@ -523,7 +523,7 @@ export default function TargetPrioritizationClient({ copy = null }) {
         setLevel(Math.floor(eRef.level));
       } else {
         eRef.missedClicks++;
-        if (drillPenalty.isEnabled()) eRef.timeLeft -= TIME_PENALTY;
+        if (drillPenalty.isEnabled(TIME_PER_HIT === 2)) eRef.timeLeft -= TIME_PENALTY;
         eRef.combo = 0;
         eRef.screenShake = 6;
         setCombo(0);
@@ -634,7 +634,7 @@ export default function TargetPrioritizationClient({ copy = null }) {
 
           if (t.type === 'red' && drillTimeout.isEnabled() && t.age >= cfg.redTtl) {
             e.expiredReds++;
-            if (drillPenalty.isEnabled()) e.timeLeft -= TIME_PENALTY;
+            if (drillPenalty.isEnabled(TIME_PER_HIT === 2)) e.timeLeft -= TIME_PENALTY;
             e.combo = 0;
             e.screenShake = 8;
             setCombo(0);
@@ -916,6 +916,7 @@ export default function TargetPrioritizationClient({ copy = null }) {
                 { value: `Lv. ${analytics.levelReached}`, label: copy?.statPeakLevel || "Peak Level" },
               ]}
               onPlayAgain={enterDrill}
+              onBeforeShare={() => setIsFullscreen(false)}
               onShare={shareDrillLink}
               onExit={handleExitDrill}
             />

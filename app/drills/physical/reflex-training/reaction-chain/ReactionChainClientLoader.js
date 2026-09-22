@@ -1,5 +1,5 @@
 'use client';
 
-import dynamic from 'next/dynamic';
+import Client from './ReactionChainClient';
 
-export default dynamic(() => import('./ReactionChainClient'));
+export default Client;

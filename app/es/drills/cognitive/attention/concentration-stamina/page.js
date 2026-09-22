@@ -334,9 +334,7 @@ export default function EnhancedPageEs() {
         aboutTitle: "Sobre el test de concentración", aboutLead: "La atención sostenida puede disminuir al vigilar señales poco frecuentes durante mucho tiempo. Este test breve registra cambios de regla, detección y errores como autoevaluación no clínica.", aboutText: "La atención sostenida permite seleccionar señales relevantes dentro de una secuencia repetitiva. Repítelo en las mismas condiciones y observa cómo cambian tus puntos y errores.\n\nEl sueño, el estrés, la pantalla y la familiaridad influyen en el resultado; no sustituye una evaluación profesional.", audienceTitle: "¿Para quién es útil?", audienceText: "Para estudiantes antes de exámenes largos, jugadores que buscan mantener la precisión y personas que necesitan concentrarse durante periodos prolongados.", skillsTitle: "Habilidades entrenadas", skillsText: "Atención sostenida, detección de objetivos, vigilancia bajo fatiga y control de impulsos.", flexibilityTitle: "Flexibilidad cognitiva", flexibilityText: "Cambiar entre vocales y números primos cada 10 segundos entrena la alternancia rápida entre reglas."
       }} />
       <DrillGuide {...guideProps} />
-      <div className="max-w-6xl mx-auto px-4 pb-12">
-        <RelatedDrills currentCategory="cognitive" currentHref="https://skilldrills.online/es/drills/cognitive/attention/concentration-stamina" />
-      </div>
+      <RelatedDrills />
       <DrillFooter />
     </>
   );

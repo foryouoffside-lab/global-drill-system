@@ -314,11 +314,11 @@ const concentrationGridGuideFr = {
   sources: pickSources('lu2022', 'treisman1980', 'rayner1998', 'rayner2016', 'wolfe2007', 'woods2015'),
   related: [
     { href: "/fr/drills/cognitive/focus/distraction-fighter", label: "Test de Stroop en Ligne" },
-    { href: "/drills/cognitive/attention/concentration-stamina", label: "Test d Attention Soutenue" },
-    { href: "/drills/cognitive/attention/divided-attention", label: "Test d Attention Divisée" },
-    { href: "/drills/cognitive/processing-speed/rsvp-reader", label: "Test de Lecture Rapide RSVP" },
-    { href: "/drills/cognitive/processing-speed/symbol-matching", label: "Test de Substitution de Symboles" },
-    { href: "/drills/cognitive/processing-speed/reaction-time", label: "Test de Temps de Réaction" }
+    { href: "/fr/drills/cognitive/attention/concentration-stamina", label: "Test d Attention Soutenue" },
+    { href: "/fr/drills/cognitive/attention/divided-attention", label: "Test d Attention Divisée" },
+    { href: "/fr/drills/cognitive/processing-speed/rsvp-reader", label: "Test de Lecture Rapide RSVP" },
+    { href: "/fr/drills/cognitive/processing-speed/symbol-matching", label: "Test de Substitution de Symboles" },
+    { href: "/fr/drills/cognitive/processing-speed/reaction-time", label: "Test de Temps de Réaction" }
   ]
 };
 
@@ -352,9 +352,7 @@ export default function ConcentrationGridPageFr() {
 
       <ConcentrationGridClient copy={copyFr} />
       <DrillGuide guide={concentrationGridGuideFr} />
-      <div className="max-w-6xl w-full mx-auto px-4 pb-12">
-        <RelatedDrills currentCategory="cognitive" currentHref="/drills/cognitive/focus/concentration-grid" locale="fr" />
-      </div>
+      <RelatedDrills />
       <DrillFooter />
     </>
   );

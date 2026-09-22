@@ -2,7 +2,6 @@ import BarrierSequencePursuitWrapper from './BarrierSequencePursuitWrapperLoader
 import { getAlternateLanguages } from '@/lib/i18n/locales';
 import DrillGuide from '@/components/drill/DrillGuide';
 import DrillFooter from '@/components/drill/DrillFooter';
-import RelatedDrills from '@/components/drill/RelatedDrills';
 import { pickSources } from '@/lib/drillSources';
 import { buildBarrierSequenceGuide, buildBarrierSequenceSeo, getBarrierSequenceContent, getBarrierSequenceUi } from '@/lib/i18n/drills/barrierSequencePursuit';
 
@@ -22,9 +21,6 @@ export default function BarrierSequencePursuitPage() {
       ))}
       <BarrierSequencePursuitWrapper copy={{ title: data.title, subtitle: data.subtitle, caption: ui.caption }} />
       <DrillGuide {...guideProps} />
-      <div className="max-w-6xl mx-auto px-4 pb-12">
-        <RelatedDrills />
-      </div>
       <DrillFooter />
     </>
   );

@@ -32,8 +32,8 @@ const DRILL_DURATION = 45; // starting clock only; a run grows past this
 const POINTS_PER_HIT = 150;
 const POINTS_PER_LEVEL = 5250; // 750 -> 5250 (7x)
 const ELITE_SCORE = 15000; // 1000 -> 15000 (scaled for unbounded runs)
-const TIME_PER_HIT = 0.6; // +0.6s per valid hit
-const TIME_PENALTY = 0.8; // -0.8s on miss / spam / timeout (opt-in gated)
+const TIME_PER_HIT = 2; // +2s per valid hit, capped at 60s
+const TIME_PENALTY = 1; // -1s on miss / spam / timeout (opt-in gated)
 const STORAGE_KEY = 'skilldrills_visual_light_reaction_v5';
 
 
@@ -212,7 +212,7 @@ export default function StrobeLatencyClient({ copy } = {}) {
     if (typeof window !== 'undefined') {
       setSoundEnabled(drillAudio.isEnabled());
       setFlashEnabled(drillFlash.isEnabled());
-      setPenaltyEnabled(drillPenalty.isEnabled());
+      setPenaltyEnabled(drillPenalty.isEnabled(TIME_PER_HIT === 2));
       const saved = getSavedData();
       setBestScore(saved.bestScore || 0);
       setBestCombo(saved.bestCombo || 0);
@@ -372,7 +372,7 @@ export default function StrobeLatencyClient({ copy } = {}) {
         if (isFlashingRef.current) {
           isFlashingRef.current = false;
           e.missedClicks++;
-          if (drillPenalty.isEnabled()) e.timeLeft -= TIME_PENALTY;
+          if (drillPenalty.isEnabled(TIME_PER_HIT === 2)) e.timeLeft -= TIME_PENALTY;
           e.combo = 0;
           setUiCombo(0);
           setTargetState('miss');
@@ -417,7 +417,7 @@ export default function StrobeLatencyClient({ copy } = {}) {
       isFlashingRef.current = false;
 
       e.missedClicks++;
-      if (drillPenalty.isEnabled()) e.timeLeft -= TIME_PENALTY;
+      if (drillPenalty.isEnabled(TIME_PER_HIT === 2)) e.timeLeft -= TIME_PENALTY;
       e.combo = 0;
       setUiCombo(0);
 
@@ -456,7 +456,7 @@ export default function StrobeLatencyClient({ copy } = {}) {
       e.score += Math.round(POINTS_PER_HIT * getComboMultiplier(e.combo) * levelMult);
 
       // Time bonus on clean hit
-      e.timeLeft += TIME_PER_HIT;
+      e.timeLeft = Math.min(60, e.timeLeft + TIME_PER_HIT);
 
       // Continuous level progression
       const nextLevel = (e.score / POINTS_PER_LEVEL) + 1;
@@ -714,6 +714,7 @@ export default function StrobeLatencyClient({ copy } = {}) {
                 { label: 'Max Combo', value: analytics.maxCombo, suffix: 'x' },
               ]}
               onPlayAgain={enterDrill}
+              onBeforeShare={() => setIsFullscreen(false)}
               onShare={shareScore}
               onExit={handleExitDrill}
             />
@@ -731,7 +732,7 @@ export default function StrobeLatencyClient({ copy } = {}) {
               onToggle={() => setOpenAccordion(openAccordion === 'rules' ? null : 'rules')}
             >
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <DrillRuleItem num="1" text="White Strobe Flash" highlight="+150 PTS" result="× Combo × Level bonus (+0.6s clock per hit)" />
+                <DrillRuleItem num="1" text="White Strobe Flash" highlight="+150 PTS" result="× Combo × Level bonus (+2s per hit, max 60s)" />
                 <DrillRuleItem num="2" text="Progressive Difficulty" highlight="Continuous Scaling" result="Flash window tightens as streak climbs" />
                 <DrillRuleItem num="3" text="Anti-Spam Detection" highlight="1.2s Cooldown" result="Rapid/early taps pause the strobe" />
                 <DrillRuleItem 

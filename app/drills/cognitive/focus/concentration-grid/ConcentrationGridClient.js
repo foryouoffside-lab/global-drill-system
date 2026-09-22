@@ -173,7 +173,7 @@ export default function ConcentrationGridClient({ copy = null }) {
     drillAudio.playSessionEnd();
 
     const totalClicks = totalClicksRef.current;
-    const accuracyVal = totalClicks > 0 ? Math.round((correctClicksRef.current / totalClicks) * 100) : 100;
+    const accuracyVal = totalClicks > 0 ? Math.round((correctClicksRef.current / totalClicks) * 100) : 0;
     const finalScore = scoreRef.current;
     const peakLevel = gridSizeRef.current - 2;
 
@@ -374,6 +374,7 @@ export default function ConcentrationGridClient({ copy = null }) {
   const gradeInfo = endSummary ? getFpsScoreGrade(endSummary.score, ELITE_SCORE) : null;
 
   const shareResult = useCallback(async () => {
+    setIsFullscreen(false);
     if (!endSummary || !gradeInfo) return;
     const url = 'https://skilldrills.online/drills/cognitive/focus/concentration-grid';
     try {

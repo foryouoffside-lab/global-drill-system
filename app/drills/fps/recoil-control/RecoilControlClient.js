@@ -81,7 +81,7 @@ const getLevelConfig = (level, combo = 0) => {
 // ACCORDION & DRILL DATA
 // ============================================================
 const RULES_ITEMS = [
-  { num: "1", text: "Headshot Hit", highlight: "+100 PTS (+0.25s)", result: "×Combo Mult" },
+  { num: "1", text: "Headshot Hit", highlight: "+100 PTS (No Time Bonus)", result: "×Combo Mult" },
   { num: "2", text: "Chest / Limb Hit", highlight: "+40 / +20 PTS", result: "Maintains Streak" },
   { num: "3", text: "Level Up", highlight: "+1 / 1400 PTS", result: "Adaptive Recoil" },
   { num: "4", text: "Empty Mag / Miss", highlight: "Penalty", result: "Resets Combo (-0.6s)" }
@@ -298,7 +298,7 @@ export default function RecoilControlClient({ copy = null }) {
     const isNewHigh = e.score > prevSaved.bestScore;
     setIsNewBest(isNewHigh);
 
-    const runBestLevel = Math.max(prevSaved.bestLevel, bestLevelRunRef.current);
+    const runBestLevel = Math.floor(Math.max(prevSaved.bestLevel, bestLevelRunRef.current));
     const updatedData = {
       bestScore: Math.max(prevSaved.bestScore, e.score),
       bestCombo: Math.max(prevSaved.bestCombo, e.maxCombo),
@@ -611,16 +611,12 @@ export default function RecoilControlClient({ copy = null }) {
               e.hitsThisMagazine++;
               if (e.combo > e.maxCombo) e.maxCombo = e.combo;
 
-              if (hitZone === 'head') {
-                e.headshots++;
-                e.timeLeft += 0.25;
-              } else if (hitZone === 'chest') {
-                e.chestHits++;
-                e.timeLeft += 0.15;
-              } else {
-                e.limbHits++;
-                e.timeLeft += 0.05;
-              }
+              // This drill evaluates a full automatic magazine, so a correct
+              // bullet must not extend the clock. Otherwise one 30-round spray
+              // can refill the entire session before recoil control is tested.
+              if (hitZone === 'head') e.headshots++;
+              else if (hitZone === 'chest') e.chestHits++;
+              else e.limbHits++;
 
               const ZONE_POINTS = { head: 100, chest: 40, limb: 20 };
               const levelMult = 1 + getDifficultyProgress(e.level) * 0.5;
@@ -656,7 +652,6 @@ export default function RecoilControlClient({ copy = null }) {
                 triggerFlash();
                 drillAudio.playPenalty();
               } else {
-                e.timeLeft += 0.4;
               }
               reloadMagazine();
             }
@@ -972,6 +967,7 @@ export default function RecoilControlClient({ copy = null }) {
               shareText={copy?.shareText}
               exitText={copy?.exitText}
               onPlayAgain={enterDrill}
+              onBeforeShare={() => setIsFullscreen(false)}
               onShare={shareScore}
               onExit={handleExitDrill}
             />

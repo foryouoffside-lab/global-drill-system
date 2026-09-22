@@ -194,7 +194,6 @@ export default function ReactionSpeedDrillsClient({ faqs = [], copy }: { faqs?: 
                 tagline: localized.tagline,
                 difficulty: drill.difficulty,
                 duration: drill.duration,
-                badge: drillLevels[drill.folderName] ? `Lv. ${drillLevels[drill.folderName]}` : null,
               };
             })}
           />

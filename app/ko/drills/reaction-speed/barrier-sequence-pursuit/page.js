@@ -22,9 +22,7 @@ export default function KoreanBarrierSequencePursuitPage() {
       ))}
       <BarrierSequencePursuitClient copy={{ title: data.title, subtitle: data.subtitle, caption: ui.caption }} />
       <DrillGuide {...guideProps} />
-      <div className="max-w-6xl mx-auto px-4 pb-12">
-        <RelatedDrills />
-      </div>
+      <RelatedDrills />
       <DrillFooter />
     </>
   );

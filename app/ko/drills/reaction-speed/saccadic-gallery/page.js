@@ -321,9 +321,7 @@ export default function KoreanSaccadicGalleryPage() {
       />
       <SaccadicGalleryWrapper copy={{ title: '동체시력 훈련 · 시선 이동 게임', subtitle: '시선 도약 · 빠른 시각 포착', caption: '타깃 사이로 시선을 빠르게 옮기고 정확하게 클릭하세요.' }} />
       <DrillGuide guide={saccadicGuide} />
-      <div className="max-w-6xl mx-auto px-4 pb-12">
-        <RelatedDrills currentCategory="reaction-speed" currentHref="https://skilldrills.online/ko/drills/reaction-speed/saccadic-gallery" />
-      </div>
+      <RelatedDrills />
       <DrillFooter />
     </>
   );

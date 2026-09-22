@@ -296,9 +296,7 @@ export default function StrobePredictionPursuitPageES() {
         }}
       />
       <DrillGuide guide={guide} />
-      <div className="max-w-6xl mx-auto px-4 pb-12">
-        <RelatedDrills currentCategory="visual-tracking" currentHref="https://skilldrills.online/es/drills/visual-tracking/strobe-prediction-pursuit" />
-      </div>
+      <RelatedDrills />
     </>
   );
 }

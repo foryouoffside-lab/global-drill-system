@@ -343,9 +343,7 @@ export default function EnhancedPage() {
         skillsTitle: "Compétences travaillées", skillsText: "Suivi visuel bilatéral, détection périphérique, changement attentionnel et contrôle exécutif.", flexibilityTitle: "Vitesse de changement", flexibilityText: "Chaque niveau modifie le rythme et les formes : passez d’un flux à l’autre sans perdre en précision."
       }} />
       <DrillGuide {...guideProps} />
-      <div className="max-w-6xl mx-auto px-4 pb-12">
-        <RelatedDrills currentCategory="cognitive" currentHref="https://skilldrills.online/fr/drills/cognitive/attention/multi-tasking" />
-      </div>
+      <RelatedDrills />
       <DrillFooter />
     </>
   );

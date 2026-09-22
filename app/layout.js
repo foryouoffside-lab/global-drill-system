@@ -1,5 +1,4 @@
 import './../styles/globals.css';
-import { Inter } from 'next/font/google';
 import { Analytics } from "@vercel/analytics/next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import SiteHeader from '@/components/SiteHeader';
@@ -9,15 +8,7 @@ import SiteSchemas from '@/components/SiteSchemas';
 import { DRILLS } from '@/lib/drillsRegistry';
 
 const totalDrillsCount = DRILLS.length;
-
-const inter = Inter({
-  subsets: ['latin'],
-  display: 'swap',
-  preload: true,
-  fallback: ['system-ui', 'arial'],
-  adjustFontFallback: true,
-  variable: '--font-inter',
-});
+const enableVercelInsights = process.env.VERCEL === '1';
 
 export const metadata = {
   title: {
@@ -103,18 +94,20 @@ export const viewport = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" className={`scroll-smooth font-sans ${inter.variable}`}>
+    <html lang="en" className="scroll-smooth font-sans">
       <head>
+        {/* Corrects <html lang> before first paint. This is the only root
+            layout Next emits, so it hardcodes lang="en" below and a localized
+            route would otherwise declare the wrong language to screen readers
+            and to crawlers that execute JS. Runs synchronously in <head>, so
+            no frame is ever painted with the wrong value. */}
         <script
           dangerouslySetInnerHTML={{
-            __html: `(function(){var d=document.documentElement;d.classList.add('fonts-pending');function r(){d.classList.remove('fonts-pending');}if(document.fonts&&document.fonts.ready){document.fonts.ready.then(r).catch(r);setTimeout(r,150);}else{r();}})();`,
+            __html: `(function(){try{var m={pt:'pt-BR',es:'es-ES',ja:'ja-JP',de:'de-DE',ko:'ko-KR',fr:'fr-FR'};var s=location.pathname.split('/')[1];if(m[s])document.documentElement.lang=m[s];}catch(e){}})();`,
           }}
         />
-        {/* next/font/google self-hosts Inter at build time, so nothing is ever
-            fetched from fonts.googleapis.com or fonts.gstatic.com at runtime.
-            Preconnecting to them opened TLS connections that were never used
-            and that the CSP would block anyway. Only the insights origin is
-            genuinely contacted. */}
+        {/* Keep the critical path first-party. The design uses a local system
+            font stack, so builds never need to fetch a remote font asset. */}
         <link rel="dns-prefetch" href="//cdn.vercel-insights.com" />
         <link rel="preconnect" href="https://cdn.vercel-insights.com" crossOrigin="anonymous" />
         
@@ -132,18 +125,19 @@ export default function RootLayout({ children }) {
         <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
         <meta name="apple-mobile-web-app-title" content="SkillDrills" />
         
-        {/* Preload critical image */}
-        <link rel="preload" href="/icons/icon-512x512.png" as="image" type="image/png" />
-        
+        {/* No image preload here. icon-512x512.png is a 92 KB Open Graph and
+            schema asset that no page ever renders in the viewport; preloading
+            it spent 92 KB of high-priority bandwidth on every navigation and
+            competed with the real LCP element for it. */}
+
         {/* Google verification */}
         <meta name="google-site-verification" content="bf3e19be4c41802b" />
         
         {/* General meta */}
         <meta name="author" content="SkillDrills" />
-        <meta name="language" content="English" />
         <meta name="rating" content="general" />
       </head>
-      <body className={`${inter.variable} font-sans antialiased`}>
+      <body className="font-sans antialiased">
         <ZoomGuard />
         <SiteHeader />
         <AutoLanguageDetector />
@@ -152,8 +146,8 @@ export default function RootLayout({ children }) {
         </main>
         <div id="drill-footer-root" />
         
-        <Analytics />
-        <SpeedInsights />
+        {enableVercelInsights && <Analytics />}
+        {enableVercelInsights && <SpeedInsights />}
         
         <SiteSchemas totalDrillsCount={totalDrillsCount} />
       </body>

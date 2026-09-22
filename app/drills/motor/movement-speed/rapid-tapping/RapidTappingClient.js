@@ -177,7 +177,7 @@ export default function RapidTappingClient({ copy } = {}) {
     const handlePointerLockChange = () => {
       const isLocked = document.pointerLockElement === canvasRef.current;
       setPointerLocked(isLocked || isTouchOnlyDevice);
-      if (gameState === 'playing' && !isLocked && !isTouchOnlyDevice) {
+      if (gameActiveRef.current && gameState === 'playing' && !isLocked && !isTouchOnlyDevice) {
         handleExitDrill();
       }
     };
@@ -843,6 +843,7 @@ export default function RapidTappingClient({ copy } = {}) {
                 { value: `${bestCps} CPS`, label: copy?.peakCps || t('rapidTapping.peakCps', 'Peak CPS') },
               ]}
               onPlayAgain={enterDrill}
+              onBeforeShare={() => setIsFullscreen(false)}
               onShare={shareScore}
               onExit={handleExitDrill}
             />

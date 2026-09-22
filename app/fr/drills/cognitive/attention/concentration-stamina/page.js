@@ -334,9 +334,7 @@ export default function EnhancedPageFr() {
         aboutTitle: "À propos du test de concentration", aboutLead: "L’attention soutenue peut diminuer lors de la surveillance prolongée de signaux rares. Ce test court mesure les changements de règle, le repérage et les erreurs comme autoévaluation non clinique.", aboutText: "L’attention soutenue permet de sélectionner les signaux pertinents dans une séquence répétitive. Répétez dans les mêmes conditions et observez l’évolution du score et des erreurs.\n\nLe sommeil, le stress, l’écran et l’habitude influencent le résultat ; ce test ne remplace pas une évaluation professionnelle.", audienceTitle: "À qui s’adresse-t-il ?", audienceText: "Aux étudiants avant de longues épreuves, aux joueurs qui veulent garder leur précision et aux personnes qui doivent rester concentrées longtemps.", skillsTitle: "Compétences entraînées", skillsText: "Attention soutenue, repérage des cibles, vigilance sous fatigue et contrôle des impulsions.", flexibilityTitle: "Flexibilité cognitive", flexibilityText: "Alterner voyelles et nombres premiers toutes les 10 secondes entraîne le changement rapide de règle."
       }} />
       <DrillGuide {...guideProps} />
-      <div className="max-w-6xl mx-auto px-4 pb-12">
-        <RelatedDrills currentCategory="cognitive" currentHref="https://skilldrills.online/fr/drills/cognitive/attention/concentration-stamina" />
-      </div>
+      <RelatedDrills />
       <DrillFooter />
     </>
   );

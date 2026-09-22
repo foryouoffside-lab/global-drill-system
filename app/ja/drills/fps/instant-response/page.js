@@ -280,11 +280,11 @@ export default function InstantResponseJaPage() {
     faqs: faqSchema.mainEntity.map(e => ({ q: e.name, a: e.acceptedAnswer.text })),
     sources: pickSources('woods2015', 'posner1990', 'donders1969', 'hick1952'),
     related: [
-      { href: "/drills/fps/angle-hold-trainer", label: "置きエイム練習 (クロスヘアプレイスメント)" },
-      { href: "/drills/fps/flick-shot-training", label: "フリック エイム 練習" },
-      { href: "/drills/fps/180-degree-awareness", label: "180度 振り向き 練習" },
-      { href: "/drills/reaction-speed/reaction-time-test", label: "反応速度測定テスト" },
-      { href: "/drills/reaction-speed/reflex-training-drill", label: "反射神経トレーニング" }
+      { href: "/ja/drills/fps/angle-hold-trainer", label: "置きエイム練習 (クロスヘアプレイスメント)" },
+      { href: "/ja/drills/fps/flick-shot-training", label: "フリック エイム 練習" },
+      { href: "/ja/drills/fps/180-degree-awareness", label: "180度 振り向き 練習" },
+      { href: "/ja/drills/reaction-speed/reaction-time-test", label: "反応速度測定テスト" },
+      { href: "/ja/drills/reaction-speed/reflex-training-drill", label: "反射神経トレーニング" }
     ]
   };
 
@@ -340,13 +340,7 @@ export default function InstantResponseJaPage() {
         }}
       />
       <DrillGuide guide={instantResponseGuide} />
-      <div className="max-w-4xl mx-auto px-4 pb-12">
-        <RelatedDrills
-          currentCategory="fps"
-          currentHref="/drills/fps/instant-response"
-          locale="ja"
-        />
-      </div>
+      <RelatedDrills />
       <DrillFooter />
     </>
   );

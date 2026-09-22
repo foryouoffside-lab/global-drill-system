@@ -1,7 +1,6 @@
 import ConcentrationStaminaClient from './ConcentrationStaminaClientLoader';
 import { getAlternateLanguages } from '@/lib/i18n/locales';
 import DrillGuide from '@/components/drill/DrillGuide';
-import RelatedDrills from '@/components/drill/RelatedDrills';
 import DrillFooter from '@/components/drill/DrillFooter';
 import { pickSources } from '@/lib/drillSources';
 
@@ -316,9 +315,6 @@ export default function EnhancedPage() {
       />
       <ConcentrationStaminaClient copy={{ title: "Concentration Stamina – Attention Span Test", subtitle: "Attention span test for sustained focus, target discrimination, and cognitive endurance under time pressure" }} />
       <DrillGuide {...guideProps} />
-      <div className="max-w-6xl mx-auto px-4 pb-12">
-        <RelatedDrills currentCategory="cognitive" currentHref="https://skilldrills.online/drills/cognitive/attention/concentration-stamina" />
-      </div>
       <DrillFooter />
     </>
   );

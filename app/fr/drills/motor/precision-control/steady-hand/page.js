@@ -398,9 +398,7 @@ export default function FrenchSteadyHandPage() {
       />
       <SteadyHandClient copy={frCopy} />
       <DrillGuide {...guideProps} />
-      <div className="max-w-6xl w-full mx-auto px-4 pb-12">
-        <RelatedDrills currentCategory="motor" currentHref="/drills/motor/precision-control/steady-hand" locale="fr" />
-      </div>
+      <RelatedDrills />
       <DrillFooter />
     </>
   );

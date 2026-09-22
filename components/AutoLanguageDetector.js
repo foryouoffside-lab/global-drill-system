@@ -31,6 +31,11 @@ const PROMPTS = {
     msg: '사용자 언어가 한국어로 감지되었습니다.',
     btn: '한국어로 전환',
   },
+  fr: {
+    flag: '🇫🇷',
+    msg: 'Nous avons détecté que votre langue est le français.',
+    btn: 'Passer en français',
+  },
 };
 
 function localeFromPath(pathname) {
@@ -65,8 +70,13 @@ export default function AutoLanguageDetector() {
 
   useEffect(() => {
     try {
-      // 1. Check if user already dismissed or explicitly picked a locale
-      const saved = localStorage.getItem('skilldrills_locale');
+      // 1. Check if user already dismissed or explicitly picked a locale.
+      //    middleware.js writes the same skilldrills_locale cookie the moment a
+      //    visitor lands, so in practice the routing has already happened and
+      //    this banner stays silent. It remains as the fallback for the case
+      //    middleware cannot cover: a host that provides no geo header at all.
+      const saved = localStorage.getItem('skilldrills_locale')
+        || (document.cookie.match(/(?:^|;\s*)skilldrills_locale=([^;]+)/) || [])[1];
       const dismissed = sessionStorage.getItem('skilldrills_dismissed_lang');
       if (saved || dismissed) return;
 
@@ -81,6 +91,7 @@ export default function AutoLanguageDetector() {
       else if (browserLang.startsWith('ja')) matchedLocale = 'ja';
       else if (browserLang.startsWith('de')) matchedLocale = 'de';
       else if (browserLang.startsWith('ko')) matchedLocale = 'ko';
+      else if (browserLang.startsWith('fr')) matchedLocale = 'fr';
 
       // 4. If browser language doesn't match current locale, offer switch
       if (matchedLocale && matchedLocale !== currentLocale && PROMPTS[matchedLocale]) {
@@ -95,15 +106,20 @@ export default function AutoLanguageDetector() {
   const handleAccept = () => {
     try {
       localStorage.setItem('skilldrills_locale', suggestion);
+      document.cookie = `skilldrills_locale=${suggestion}; path=/; max-age=31536000; SameSite=Lax`;
     } catch {}
 
     setSuggestion(null);
     router.push(localizedPath(suggestion, pathname || '/'));
   };
 
+  // Staying in English is a choice too, and it has to outrank geography on
+  // every later visit -- otherwise middleware.js would route them away again
+  // on the next page. The cookie is what makes the refusal stick.
   const handleDismiss = () => {
     try {
       sessionStorage.setItem('skilldrills_dismissed_lang', 'true');
+      document.cookie = 'skilldrills_locale=en; path=/; max-age=31536000; SameSite=Lax';
     } catch {}
     setSuggestion(null);
   };

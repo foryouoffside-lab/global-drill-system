@@ -8,7 +8,7 @@ const trackingDrillCount = trackingDrills.length;
 
 const legacyMetadata = {
   title: `Free Eye Tracking Training - Smooth Pursuit Drills`,
-  description: `Free eye tracking training online. ${trackingDrillCount} smooth pursuit eye movement drills. Train your gaze for sports, gaming, and vision therapy. No sign-up required.`,
+  description: `Free browser-based visual motion practice with ${trackingDrillCount} smooth-pursuit and tracking drills. No sign-up required; not a clinical eye test or treatment.`,
   keywords: [
     'eye tracking training online', 'free eye tracking training', 'eye tracking exercises',
     'smooth pursuit eye movement', 'smooth pursuit training', 'pursuit eye training',
@@ -17,18 +17,16 @@ const legacyMetadata = {
     'infinity pursuit eye', 'sine wave pursuit',
     'peripheral ping pursuit', 'predictive pursuit drill', 'staircase step eye',
     'split screen tracking', 'strobe prediction pursuit', 'constant slow pursuit',
-    'sports vision training', 'athlete eye training', 'esports eye training',
-    'gaming eye tracking', 'fps eye movement training', 'baseball vision training',
-    'vision therapy exercises online', 'convergence eye training', 'gaze stability',
-    'eye tracking for sports', 'pro gamer vision', 'free online eye drills',
+    'sports visual tracking practice', 'athlete visual tracking practice', 'esports visual tracking',
+    'gaming eye tracking', 'fps eye movement practice', 'baseball visual tracking practice',
+    'gaze stability practice', 'eye tracking for sports', 'free online eye drills',
     'browser eye tracking game', 'no download eye training', 'skilldrills visual tracking',
     'smooth pursuit eye movement exercises', 'catch up saccades tracking',
-    'dynamic visual acuity training', 'vision therapy eye tracking online',
-    'gaze stability exercises', 'predictive visual pursuit drill',
+    'dynamic visual acuity practice', 'gaze stability exercises', 'predictive visual pursuit drill',
   ],
   openGraph: {
     title: `Free Eye Tracking Training Online - ${trackingDrillCount} Smooth Pursuit Drills | SkillDrills`,
-    description: `Free eye tracking training online. ${trackingDrillCount} smooth pursuit drills for sports, gaming, and vision therapy. No sign-up.`,
+    description: `Free browser-based visual motion practice with ${trackingDrillCount} smooth-pursuit drills. Not a clinical eye test or treatment.`,
     type: 'website',
     url: 'https://skilldrills.online/drills/visual-tracking',
     siteName: 'SkillDrills',
@@ -67,7 +65,7 @@ const faqSchema = {
       "name": "How does dynamic visual tracking training improve sports performance?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "In fast-pitch sports like baseball, cricket, tennis, and motorsports, visual tracking drills improve dynamic visual acuity (DVA). Conditioning the extraocular muscles allows athletes to maintain clear vision on high-velocity balls longer, reducing perceptual delay and giving batters 50 to 80 milliseconds of additional decision-making time."
+        "text": "Sports use moving-target observation and timing, but this browser task cannot measure dynamic visual acuity or prove transfer to a sport. Treat it as repeatable practice and compare only sessions made on the same setup."
       }
     },
     {
@@ -75,7 +73,7 @@ const faqSchema = {
       "name": "What is predictive pursuit, and how does the brain track occluded targets?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Predictive pursuit occurs when the brain uses an internal cerebellar forward model to project the future trajectory of an object even when it is temporarily hidden or strobed. Drills with intermittent target occlusion train your visual cortex to extrapolate velocity and acceleration, ensuring your gaze arrives ahead of the target."
+        "text": "Predictive pursuit describes using recent motion information to anticipate a target during a brief controlled occlusion. These drills provide a practice task; they do not measure the brain or guarantee a clinical or sport-performance change."
       }
     },
     {
@@ -88,10 +86,10 @@ const faqSchema = {
     },
     {
       "@type": "Question",
-      "name": "Can smooth pursuit eye tracking drills assist in vision therapy and concussion rehab?",
+      "name": "Can these drills replace vision therapy or concussion care?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Yes. Neuro-optometrists frequently prescribe smooth pursuit and gaze stabilization exercises for post-concussion syndrome and oculomotor dysfunction. Progressive tracking exercises stimulate the brainstem and cerebellum, helping restore binocular coordination, reduce dizziness, and improve reading endurance."
+        "text": "No. A browser animation is not an assessment or rehabilitation plan. Anyone with concussion symptoms, double vision, persistent dizziness, eye pain, or a diagnosed visual disorder should follow a qualified clinician’s advice and stop if symptoms worsen."
       }
     },
     {
@@ -99,7 +97,7 @@ const faqSchema = {
       "name": "What is gaze stability, and how does it relate to the Vestibulo-Ocular Reflex (VOR)?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Gaze stability is the ability to keep your line of sight fixed on a target while your body, head, or environment is in motion. It relies on the Vestibulo-Ocular Reflex (VOR), which produces compensatory eye movements equal and opposite to head movement. Visual tracking drills isolate fine extraocular control, strengthening visual-vestibular coordination."
+        "text": "Gaze stability means keeping a visual target clear while the visual scene or head position changes. These drills keep the head still and therefore do not test the vestibulo-ocular reflex (VOR) or diagnose visual-vestibular function."
       }
     },
     {
@@ -107,7 +105,7 @@ const faqSchema = {
       "name": "How long should you practice eye tracking drills each day?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "The recommended routine is 10 to 15 minutes per day, 3 to 5 days per week. The six extraocular muscles controlling eye movement are delicate and fatigue quickly; exceeding 20 minutes of continuous tracking can cause accommodative spasm, dry eyes, or ocular strain."
+        "text": "Use short, comfortable blocks with breaks rather than chasing a fixed prescription. Stop for pain, dizziness, nausea, persistent blur, double vision, or unusual symptoms; seek professional advice if symptoms persist."
       }
     },
     {
@@ -115,7 +113,7 @@ const faqSchema = {
       "name": "Why do high refresh rate monitors (144Hz to 360Hz) matter for visual tracking drills?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Standard 60Hz displays present discrete frame jumps every 16.7ms, causing visual 'strobing' or phantom arrays during rapid eye tracking. Displays running at 144Hz, 240Hz, or 360Hz present new object coordinates every 2.7 to 6.9ms, matching real-world continuous physics and allowing the ocular motor system to track with true organic smoothness."
+        "text": "Refresh rate and browser load affect how smooth the animation appears, but a higher refresh rate does not make the task a clinical measurement. The drills now use time-based motion, a capped render loop, and cached canvas layers to reduce avoidable frame work."
       }
     }
   ]

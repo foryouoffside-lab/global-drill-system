@@ -321,9 +321,7 @@ export default function LocalizedCognitivePage() {
         aboutTitle: "Über den Konzentrationstest", aboutLead: "Bei längerer Überwachung seltener Signale kann Daueraufmerksamkeit sinken. Diese kurze Selbstprüfung erfasst Regelwechsel, Zielerkennung und Fehlreaktionen; sie ist kein klinischer Diagnosetest.", aboutText: "Daueraufmerksamkeit bedeutet, wichtige Signale auch in einer monotonen Reizfolge zuverlässig zu erkennen. Wiederhole den Test unter gleichen Bedingungen und beobachte deinen Verlauf.\n\nSchlaf, Stress, Bildschirm und Vertrautheit beeinflussen das Ergebnis; interpretiere es nicht als medizinische Diagnose.", audienceTitle: "Für wen ist der Test geeignet?", audienceText: "Für Lernende vor langen Prüfungen, Gamer mit konstantem Präzisionsbedarf und Menschen in Berufen mit hoher Wachsamkeit.", skillsTitle: "Trainierte Fähigkeiten", skillsText: "Daueraufmerksamkeit, Zielerkennung, Wachsamkeit unter Ermüdung und Impulskontrolle.", flexibilityTitle: "Kognitive Flexibilität", flexibilityText: "Der Wechsel zwischen Vokalen und Primzahlen alle 10 Sekunden trainiert schnelles Umschalten zwischen Aufgabenregeln."
       }} />
       <DrillGuide {...guideProps} />
-      <div className="max-w-6xl mx-auto px-4 pb-12">
-        <RelatedDrills currentCategory="cognitive" currentHref="https://skilldrills.online/de/drills/cognitive/attention/concentration-stamina" />
-      </div>
+      <RelatedDrills />
       <DrillFooter />
     </>
   );
