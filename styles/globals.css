@@ -10,11 +10,24 @@
   html {
     -webkit-text-size-adjust: 100%;
     text-size-adjust: 100%;
+    min-height: 100%;
+    background-color: #050508;
+    color-scheme: dark;
+    overscroll-behavior-y: none;
     @apply bg-canvas;
   }
 
   body {
+    min-height: 100%;
+    background-color: #050508;
+    overscroll-behavior-y: none;
     @apply bg-canvas text-ink-1 font-sans antialiased selection:bg-blue-500/20 selection:text-blue-400;
+  }
+
+  #main-content {
+    min-height: calc(100vh - 4rem);
+    min-height: calc(100dvh - 4rem);
+    background-color: #050508;
   }
 
   /* One professional typeface across product UI, including legacy font-mono utilities. */

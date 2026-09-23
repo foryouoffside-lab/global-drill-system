@@ -6,6 +6,7 @@ import { useRouter, usePathname } from 'next/navigation';
 import { Search, X, Menu, ChevronRight } from 'lucide-react';
 import { searchDrills } from '@/lib/searchDrills';
 import { DRILLS, DESKTOP_ONLY_CATEGORIES } from '@/lib/drillsNav';
+import { getDrillTagline } from '@/lib/drillCatalog';
 import LanguageSwitcher from '@/components/LanguageSwitcher';
 import { useTranslation } from '@/lib/i18n/useTranslation';
 import { stripLocale } from '@/lib/i18n/locales';
@@ -40,8 +41,18 @@ export default function SiteHeader() {
 
   // Header is limited to hub/category landing pages — hide it on individual drill pages
   const isDrillPage = DRILL_HREFS.has(stripLocale(pathname || ''));
+  const isSearchPage = stripLocale(pathname || '') === '/search';
+
+  useEffect(() => {
+    setIsOpen(false);
+    setMobileSearchExpanded(false);
+  }, [pathname]);
 
   // Debounced search
+  useEffect(() => {
+    if (mobileSearchExpanded) inputRef.current?.focus();
+  }, [mobileSearchExpanded]);
+
   useEffect(() => {
     if (!query.trim()) {
       setResults([]);
@@ -72,7 +83,7 @@ export default function SiteHeader() {
         setMobileSearchExpanded(false);
       } else if ((event.ctrlKey || event.metaKey) && event.key === 'k') {
         event.preventDefault();
-        inputRef.current?.focus();
+        setMobileSearchExpanded(true);
       }
     }
 
@@ -146,8 +157,8 @@ export default function SiteHeader() {
           </Link>
 
           {/* Search Bar - Responsive */}
-          <div ref={searchRef} className={`relative flex-1 max-w-md ${mobileSearchExpanded ? 'block' : 'hidden sm:block'}`}>
-            <div className="relative flex items-center">
+          {!isSearchPage && <div ref={searchRef} className={`flex-1 sm:max-w-md ${mobileSearchExpanded ? 'absolute inset-x-0 top-0 z-50 flex h-16 items-center bg-[#06070B] px-4 sm:relative sm:inset-auto sm:h-auto sm:bg-transparent sm:px-0' : 'hidden sm:block'}`}>
+            <div className="relative flex w-full items-center">
               <Search className="absolute left-3 w-4 h-4 text-ink-3 pointer-events-none" />
               <input
                 ref={inputRef}
@@ -157,7 +168,7 @@ export default function SiteHeader() {
                 onFocus={() => query.trim() && setIsOpen(true)}
                 onKeyDown={handleKeyDownInput}
                 placeholder={t('header.searchPlaceholder', `Search ${totalDrillsCount} drills... (Ctrl+K)`)}
-                className="w-full pl-9 pr-8 py-1.5 text-xs sm:text-sm bg-surface-1 border border-hairline rounded-xl text-ink-1 placeholder:text-ink-3 focus:outline-none focus:border-blue-500/50 focus:ring-2 focus:ring-blue-500/20 transition-all"
+                className="w-full pl-10 pr-10 py-2.5 sm:py-1.5 text-sm bg-surface-1 border border-hairline rounded-xl text-ink-1 placeholder:text-ink-3 focus:outline-none focus:border-blue-500/50 focus:ring-2 focus:ring-blue-500/20 transition-all"
               />
               {query && (
                 <button
@@ -169,36 +180,47 @@ export default function SiteHeader() {
                   <X className="w-3.5 h-3.5" />
                 </button>
               )}
+              {mobileSearchExpanded && !query && (
+                <button
+                  type="button"
+                  onClick={() => setMobileSearchExpanded(false)}
+                  className="absolute right-2 text-ink-3 hover:text-white p-1 sm:hidden"
+                  aria-label="Close search"
+                >
+                  <X className="w-4 h-4" />
+                </button>
+              )}
             </div>
 
             {/* Dropdown Results */}
             {isOpen && (
-              <div className="absolute top-full left-0 right-0 mt-2 bg-surface-2 border border-hairline-2 rounded-xl shadow-2xl overflow-hidden z-50">
+              <div className="fixed inset-x-0 top-16 z-[100] isolate overflow-hidden border-y border-hairline-2 bg-[#090B12] shadow-2xl">
                 {results.length > 0 ? (
                   <>
-                    <div className="max-h-80 overflow-y-auto divide-y divide-hairline">
+                    <div className="grid max-h-[min(70vh,36rem)] w-full grid-cols-1 gap-px overflow-y-auto bg-[#222633] p-px sm:grid-cols-2 lg:grid-cols-4">
                       {results.slice(0, 8).map((drill, idx) => (
-                        <div
+                        <button
+                          type="button"
                           key={drill.id}
                           onClick={() => handleSelectResult(localizeHref(drill.href))}
                           onMouseEnter={() => setSelectedIndex(idx)}
-                          className={`flex flex-col gap-1 sm:flex-row sm:items-center sm:justify-between sm:gap-0 p-3 cursor-pointer transition-colors ${
-                            idx === selectedIndex ? 'bg-blue-600/20 text-white' : 'hover:bg-white/5 text-ink-2'
+                          className={`flex min-w-0 flex-col gap-3 p-4 text-left cursor-pointer transition-colors ${
+                            idx === selectedIndex ? 'bg-[#172554] text-white' : 'bg-[#0D1018] hover:bg-[#151A26] text-ink-2'
                           }`}
                         >
-                          <div className="flex flex-col min-w-0 sm:pr-2">
-                            <span className="text-xs sm:text-sm font-semibold truncate">{drill.name}</span>
-                            <span className="text-2xs text-ink-3 truncate">{drill.subcategory || drill.categoryLabel}</span>
+                          <div className="flex min-w-0 flex-col gap-1">
+                            <span className="truncate text-sm font-semibold">{drill.name}</span>
+                            <span className="line-clamp-2 text-xs leading-relaxed text-ink-3">{getDrillTagline(drill.href, drill.description)}</span>
                           </div>
-                          <div className="flex items-center gap-2 shrink-0">
+                          <div className="mt-auto flex items-center gap-2">
                             <span className="text-[10px] font-mono uppercase px-2 py-0.5 rounded-full bg-blue-500/10 text-blue-400 border border-blue-500/20">
-                              {drill.category}
+                              {drill.categoryLabel}
                             </span>
                             <span className="text-[10px] font-mono px-2 py-0.5 rounded-full bg-white/5 text-ink-3 border border-hairline">
                               {drill.difficulty}
                             </span>
                           </div>
-                        </div>
+                        </button>
                       ))}
                     </div>
                     {results.length > 8 && (
@@ -208,20 +230,20 @@ export default function SiteHeader() {
                           setIsOpen(false);
                           router.push(`/search?q=${encodeURIComponent(query.trim())}`);
                         }}
-                        className="w-full p-2.5 text-center text-xs font-semibold text-blue-400 hover:text-blue-300 bg-surface-1 border-t border-hairline flex items-center justify-center gap-1"
+                        className="w-full p-3 text-center text-sm font-semibold text-blue-400 hover:text-blue-300 bg-[#0D1018] border-t border-hairline flex items-center justify-center gap-1"
                       >
                         See all {results.length} results <ChevronRight className="w-3.5 h-3.5" />
                       </button>
                     )}
                   </>
                 ) : (
-                  <div className="p-4 text-center text-xs sm:text-sm text-ink-3">
+                  <div className="bg-[#0D1018] p-4 text-center text-xs sm:text-sm text-ink-3">
                     No drills matching &ldquo;<span className="text-white">{query}</span>&rdquo;
                   </div>
                 )}
               </div>
             )}
-          </div>
+          </div>}
 
           {/* Desktop Nav Links */}
           <nav className="hidden lg:flex items-center gap-1.5">
@@ -261,14 +283,14 @@ export default function SiteHeader() {
           {/* Mobile Right Controls */}
           <div className="flex items-center gap-1 sm:hidden">
             <LanguageSwitcher />
-            <button
+            {!isSearchPage && <button
               type="button"
               onClick={() => setMobileSearchExpanded(!mobileSearchExpanded)}
               className="p-2 text-ink-3 hover:text-white rounded-lg min-w-[44px] min-h-[44px] flex items-center justify-center"
               aria-label="Toggle search input"
             >
               {mobileSearchExpanded ? <X className="w-5 h-5" /> : <Search className="w-5 h-5" />}
-            </button>
+            </button>}
             <button
               type="button"
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}

@@ -1,13 +1,13 @@
 'use client';
 
-import { useState, useEffect, Suspense } from 'react';
+import { useState, useEffect, useMemo, Suspense } from 'react';
 import { useSearchParams } from 'next/navigation';
 import Link from 'next/link';
-import { Search, ChevronRight, Target, Filter } from 'lucide-react';
+import { Search, ChevronRight, Target, X } from 'lucide-react';
 import { searchDrills } from '@/lib/searchDrills';
 import { DRILLS } from '@/lib/drillsRegistry';
+import { getDrillTagline } from '@/lib/drillCatalog';
 import SiteFooter from '@/components/SiteFooter';
-import Reveal from '@/components/Reveal';
 
 // useSearchParams() opts its whole subtree out of static rendering, so when it
 // sat at the top of the page the prerendered HTML was nothing but the loading
@@ -25,18 +25,11 @@ function QueryParamSync({ onQuery }) {
 function SearchResultsContent() {
   const [query, setQuery] = useState('');
   const [categoryFilter, setCategoryFilter] = useState('all');
-  // Seeded with the full registry so the first paint is the complete drill
-  // list. Starting at [] rendered the "No Drills Found" empty state for a
-  // frame before the effect below ran.
-  const [results, setResults] = useState(DRILLS);
-
-  useEffect(() => {
+  const results = useMemo(() => {
     const matched = query.trim() ? searchDrills(query) : DRILLS;
-    if (categoryFilter === 'all') {
-      setResults(matched);
-    } else {
-      setResults(matched.filter(d => d.category === categoryFilter));
-    }
+    return categoryFilter === 'all'
+      ? matched
+      : matched.filter((drill) => drill.category === categoryFilter);
   }, [query, categoryFilter]);
 
   const categories = [
@@ -56,11 +49,11 @@ function SearchResultsContent() {
       <Suspense fallback={null}>
         <QueryParamSync onQuery={setQuery} />
       </Suspense>
-      <main className="flex-1 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 w-full">
+      <main className="flex-1 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-7 sm:py-10 w-full">
 
         {/* Page Header */}
-        <div className="max-w-3xl mb-8">
-          <h1 className="text-3xl sm:text-4xl font-extrabold text-white tracking-tight mb-3">
+        <div className="mb-5 sm:mb-7 w-full">
+          <h1 className="text-3xl sm:text-4xl font-extrabold text-white tracking-tight mb-2">
             Search <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-500">Drills</span>
           </h1>
           <p className="text-gray-400 text-sm sm:text-base">
@@ -68,26 +61,36 @@ function SearchResultsContent() {
           </p>
 
           {/* Search Input Box */}
-          <div className="relative mt-6">
-            <Search className="absolute left-4 top-3.5 w-5 h-5 text-gray-400" />
+          <div className="relative mt-4 sm:mt-5 w-full">
+            <Search className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400" />
             <input
               type="text"
               value={query}
               onChange={(e) => setQuery(e.target.value)}
               placeholder="Search drills by keyword (e.g. flick, memory, reaction)..."
-              className="w-full pl-12 pr-4 py-3 bg-white/5 border border-white/10 rounded-2xl text-white placeholder-gray-400 focus:outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 text-base transition-all"
+              className="w-full pl-12 pr-11 py-3 bg-white/5 border border-white/10 rounded-2xl text-white placeholder-gray-400 focus:outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 text-base transition-all"
             />
+            {query && (
+              <button
+                type="button"
+                onClick={() => setQuery('')}
+                className="absolute right-3 top-1/2 -translate-y-1/2 rounded-lg p-1.5 text-gray-500 transition-colors hover:bg-white/5 hover:text-white"
+                aria-label="Clear search"
+              >
+                <X className="h-4 w-4" />
+              </button>
+            )}
           </div>
         </div>
 
         {/* Category Filters */}
-        <div className="flex items-center gap-2 overflow-x-auto pb-4 mb-8 scrollbar-none">
-          <Filter className="w-4 h-4 text-gray-500 shrink-0 mr-1" />
+        <div className="mb-5 flex w-full snap-x items-center gap-2 overflow-x-auto pb-2 overscroll-x-contain scrollbar-none sm:mb-7">
           {categories.map((cat) => (
             <button
               key={cat.id}
               onClick={() => setCategoryFilter(cat.id)}
-              className={`px-3.5 py-1.5 rounded-xl text-xs font-semibold whitespace-nowrap transition-all border ${
+              aria-pressed={categoryFilter === cat.id}
+              className={`snap-start px-3.5 py-1.5 rounded-xl text-xs font-semibold whitespace-nowrap transition-all border ${
                 categoryFilter === cat.id
                   ? 'bg-blue-600 text-white border-blue-500 shadow-lg shadow-blue-500/20'
                   : 'bg-white/5 text-gray-400 border-white/10 hover:text-white hover:bg-white/10'
@@ -99,25 +102,25 @@ function SearchResultsContent() {
         </div>
 
         {/* Results Metadata */}
-        <div className="flex items-center justify-between mb-6 pb-4 border-b border-white/10 text-xs text-gray-400">
+        <div className="flex items-center justify-between gap-3 mb-5 pb-3 border-b border-white/10 text-xs text-gray-400">
           <span>
             Showing <strong className="text-white">{results.length}</strong> {results.length === 1 ? 'drill' : 'drills'}
             {query.trim() ? <> for &ldquo;<span className="text-blue-400">{query}</span>&rdquo;</> : ''}
           </span>
-          <span className="font-mono text-gray-500">{DRILLS.length} Total Registry Items</span>
+          <span className="shrink-0 font-mono text-gray-500"><span className="hidden sm:inline">{DRILLS.length} Total Registry Items</span><span className="sm:hidden">{DRILLS.length} total</span></span>
         </div>
 
         {/* Results Grid */}
         {results.length > 0 ? (
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
-            {results.map((drill, index) => (
-              <Reveal key={drill.id} delay={Math.min(index * 40, 400)}>
-                <Link
-                  href={drill.href}
-                  className="group block bg-white/5 hover:bg-white/10 border border-white/10 hover:border-blue-500/40 rounded-2xl p-6 transition-all duration-300 hover:-translate-y-1 shadow-xl h-full flex flex-col justify-between"
-                >
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 lg:gap-5 mb-16">
+            {results.map((drill) => (
+              <Link
+                key={drill.id}
+                href={drill.href}
+                className="group block bg-white/5 hover:bg-white/10 border border-white/10 hover:border-blue-500/40 rounded-2xl p-4 sm:p-5 lg:p-6 transition-all duration-300 hover:-translate-y-1 shadow-xl h-full flex flex-col justify-between"
+              >
                   <div>
-                    <div className="flex items-center justify-between mb-3">
+                    <div className="flex items-center justify-between gap-3 mb-3">
                       <span className="text-xs font-mono uppercase tracking-wider px-2.5 py-1 rounded-full bg-blue-500/10 text-blue-400 border border-blue-500/20 font-semibold">
                         {drill.categoryLabel}
                       </span>
@@ -128,18 +131,17 @@ function SearchResultsContent() {
                     <h2 className="text-lg font-bold text-white group-hover:text-blue-400 transition-colors mb-2">
                       {drill.name}
                     </h2>
-                    <p className="text-xs text-gray-400 line-clamp-2 leading-relaxed mb-4">
-                      {drill.description}
+                    <p className="text-xs text-gray-400 line-clamp-2 leading-relaxed mb-3 sm:mb-4">
+                      {getDrillTagline(drill.href, drill.description)}
                     </p>
                   </div>
-                  <div className="flex items-center justify-between pt-4 border-t border-white/5 text-xs text-gray-400 font-mono">
+                  <div className="flex items-center justify-between pt-3 sm:pt-4 border-t border-white/5 text-xs text-gray-400 font-mono">
                     <span>{drill.duration}</span>
                     <span className="text-blue-400 group-hover:translate-x-1 transition-transform flex items-center gap-1 font-semibold">
                       Start Drill <ChevronRight className="w-3.5 h-3.5" />
                     </span>
                   </div>
-                </Link>
-              </Reveal>
+              </Link>
             ))}
           </div>
         ) : (
