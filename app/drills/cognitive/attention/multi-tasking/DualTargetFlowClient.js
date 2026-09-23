@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState, useEffect, useRef, useCallback } from 'react';
-import { Target, Volume2, VolumeX, Play, RefreshCw, Share2, LogOut, ArrowLeft, Users, TrendingUp, Zap, ZapOff } from 'lucide-react';
+import { Target, Volume2, VolumeX, Play, RefreshCw, Share2, LogOut, ArrowLeft, Users, TrendingUp, Zap, ZapOff, RotateCw } from 'lucide-react';
 
 import { isIdleFrameSkippable } from '@/lib/performance';
 import generateShareCard, { shareScoreCard } from '../../../../../components/ShareScoreCard';
@@ -679,6 +679,13 @@ export default function DualTargetFlowClient({ copy } = {}) {
         >
           {/* Red Flash Overlay */}
           <DrillFlashOverlay flashes={flashes} />
+
+          {isFullscreen && isMobile && isPortrait && (gameState === 'countdown' || gameState === 'playing') && (
+            <div className="pointer-events-none absolute bottom-4 left-1/2 z-50 -translate-x-1/2 rounded-full border border-white/15 bg-black/80 px-4 py-2 text-xs font-bold text-white shadow-xl backdrop-blur-md flex items-center gap-2 whitespace-nowrap" role="status">
+              <RotateCw className="h-4 w-4 text-cyan-400" aria-hidden="true" />
+              Rotate your phone for the best experience
+            </div>
+          )}
 
           {/* IN-BOX OVERLAY HUD */}
           {(gameState === 'playing' || gameState === 'countdown') && (
