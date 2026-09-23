@@ -4,8 +4,6 @@ if (process.env.ENABLE_INDEXNOW !== 'true') {
   process.exit(0);
 }
 
-const { DRILLS } = require('../lib/drillsRegistry');
-
 // This is the PUBLIC IndexNow protocol key. The protocol requires it to be
 // downloadable at public/indexnow-key.txt so the engines can verify host
 // ownership, so it is published by design and is not a secret. It authenticates
@@ -16,28 +14,14 @@ const { DRILLS } = require('../lib/drillsRegistry');
 // It posts to the engines directly, so it needs no server route and no secret.
 const INDEXNOW_KEY = process.env.INDEXNOW_KEY || 'c8f7a3b2e1d4f5a6b7c8d9e0f1a2b3c4';
 
-const CATEGORY_PAGES = [
-  '/',
-  '/drills',
-  '/drills/cognitive',
-  '/drills/fps',
-  '/drills/memory',
-  '/drills/motor',
-  '/drills/physical',
-  '/drills/visual',
-  '/drills/visual-tracking',
-  '/drills/reaction-speed',
-];
-
-// Drill URLs are derived from DRILLS (lib/drillsRegistry.js) — the same single
-// source of truth used by app/sitemap.js — so a deleted or renamed drill can
-// never leave a stale entry here again.
-const ALL_URLS = [...CATEGORY_PAGES, ...DRILLS.map((drill) => drill.href)];
+const SITEMAP_URL = 'https://skilldrills.online/sitemap.xml';
 
 async function submitToIndexNow() {
-  console.log(`\n🚀 SkillDrills IndexNow - Submitting ${ALL_URLS.length} URLs...\n`);
-
-  const fullUrls = ALL_URLS.map(url => `https://skilldrills.online${url}`);
+  const sitemap = await fetch(SITEMAP_URL);
+  if (!sitemap.ok) throw new Error(`Could not read sitemap: HTTP ${sitemap.status}`);
+  const fullUrls = [...(await sitemap.text()).matchAll(/<loc>([^<]+)<\/loc>/g)].map(match => match[1]);
+  if (!fullUrls.length) throw new Error('The live sitemap contains no URLs');
+  console.log(`\n🚀 SkillDrills IndexNow - Submitting ${fullUrls.length} URLs...\n`);
 
   // Submit in batches of 100
   const batchSize = 100;
@@ -97,7 +81,7 @@ async function submitToIndexNow() {
 
   console.log(`\n============================================`);
   console.log(`📊 IndexNow Summary:`);
-  console.log(`   URLs Submitted: ${ALL_URLS.length}`);
+  console.log(`   URLs Submitted: ${fullUrls.length}`);
   console.log(`   Engine Responses: ${totalSuccess} success, ${totalFailed} failed`);
   console.log(`   Time: ${new Date().toISOString()}`);
   console.log(`============================================\n`);

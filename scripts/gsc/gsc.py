@@ -146,7 +146,7 @@ def _table(rows, dim_label, limit):
 
 def main():
     cmd = sys.argv[1] if len(sys.argv) > 1 else "queries"
-    days = int(sys.argv[2]) if len(sys.argv) > 2 else 28
+    days = int(sys.argv[2]) if len(sys.argv) > 2 and sys.argv[2].isdigit() else 28
     limit = int(sys.argv[3]) if len(sys.argv) > 3 else 30
 
     if cmd == "auth":
