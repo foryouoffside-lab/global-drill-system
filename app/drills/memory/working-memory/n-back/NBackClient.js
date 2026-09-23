@@ -341,7 +341,7 @@ export default function NBackClient({ copy = null }) {
       startingRef.current = false;
       setGameState('playing');
 
-      // Start 45s decimal timer
+      // Start the 45s active timer; initial N-letter memorization is untimed.
       if (timerIntervalRef.current) clearInterval(timerIntervalRef.current);
       let lastTime = performance.now();
 
@@ -351,6 +351,8 @@ export default function NBackClient({ copy = null }) {
         lastTime = now;
 
         const eRef = engine.current;
+        if (phaseRef.current === 'memorize') return;
+
         if (eRef.timeLeft > 0) {
           eRef.timeLeft = Math.max(0, eRef.timeLeft - deltaSec);
           setUiTimeLeft(Math.ceil(eRef.timeLeft));

@@ -589,17 +589,17 @@ export default function ObjectLocationClient({ copy = null }) {
 
                   if (phase === 'memorize') {
                     if (hasObject) {
-                      cellStyle = "bg-white/10 border border-white/20 shadow-inner";
+                      cellStyle = "bg-white/10 border border-white/20";
                       content = objectLocations[i];
                     }
                   } else if (phase === 'locate') {
                     cellStyle = "bg-white/[0.04] border border-white/10 hover:bg-white/10 active:scale-95 transition-all cursor-pointer";
                   } else if (phase === 'result') {
                     if (isTargetLocation) {
-                      cellStyle = "bg-emerald-500 shadow-[0_0_20px_rgba(16,185,129,0.6)] border-emerald-300";
+                      cellStyle = "bg-emerald-500 border-emerald-300";
                       content = objectLocations[i];
                     } else if (isWrongClick) {
-                      cellStyle = "bg-red-600 shadow-[0_0_20px_rgba(239,68,68,0.6)] border-red-400";
+                      cellStyle = "bg-red-600 border-red-400";
                     }
                   }
 

@@ -532,11 +532,7 @@ export default function KineticInterceptClient({ copy } = {}) {
         date: new Date().toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' }),
         url: 'skilldrills.online/drills/visual/tracking-accuracy/moving-target'
       });
-      await shareScoreCard(canvas, {
-        title: 'Moving Target Pro — My Score',
-        text: `I scored ${uiScore} (Grade: ${analytics.grade?.letter || 'A'}, Lv. ${analytics.finalLevel}) on Moving Target Pro at SkillDrills!`,
-        url
-      });
+      await shareScoreCard(url, canvas);
     } catch (e) {
       if (navigator.share) {
         navigator.share({ title: 'My Tracking Score', text: `I scored ${uiScore} on Moving Target Pro!`, url }).catch(() => {});

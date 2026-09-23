@@ -42,6 +42,7 @@ function RuleItem({ num, text, highlight = '', result }) {
 // TUNING CONSTANTS
 // ============================================================
 const DRILL_DURATION = 45;
+const WRONG_CLICK_COOLDOWN_MS = 1000;
 const POINTS_PER_HIT = 100;
 const POINTS_PER_LEVEL = 150;
 const ELITE_SCORE = 4000; // Target score for S+ rating (rebalanced after combo removal)
@@ -93,6 +94,7 @@ export default function ConcentrationStaminaClient({ copy } = {}) {
   const [score, setScore] = useState(0);
   const [level, setLevel] = useState(1);
   const [timeRemaining, setTimeRemaining] = useState(DRILL_DURATION);
+  const [isInteractionLocked, setIsInteractionLocked] = useState(false);
   const [countdownValue, setCountdownValue] = useState(3);
   const [openAccordion, setOpenAccordion] = useState(null);
 
@@ -109,6 +111,8 @@ export default function ConcentrationStaminaClient({ copy } = {}) {
   const ruleTimerRef = useRef(null);
   const stimTimerRef = useRef(null);
   const countdownTimeoutsRef = useRef([]);
+  const interactionLockTimeoutRef = useRef(null);
+  const interactionLockedRef = useRef(false);
   const gameActiveRef = useRef(false);
   const phaseRef = useRef('start');
 
@@ -130,6 +134,9 @@ export default function ConcentrationStaminaClient({ copy } = {}) {
     if (clockTimerRef.current) clearInterval(clockTimerRef.current);
     if (ruleTimerRef.current) clearInterval(ruleTimerRef.current);
     if (stimTimerRef.current) clearTimeout(stimTimerRef.current);
+    if (interactionLockTimeoutRef.current) clearTimeout(interactionLockTimeoutRef.current);
+    interactionLockedRef.current = false;
+    setIsInteractionLocked(false);
     countdownTimeoutsRef.current.forEach(clearTimeout);
     countdownTimeoutsRef.current = [];
   }, []);
@@ -225,6 +232,14 @@ export default function ConcentrationStaminaClient({ copy } = {}) {
       e.preventDefault();
       e.stopPropagation();
     }
+    if (interactionLockedRef.current) {
+      if (interactionLockTimeoutRef.current) clearTimeout(interactionLockTimeoutRef.current);
+      interactionLockTimeoutRef.current = setTimeout(() => {
+        interactionLockedRef.current = false;
+        setIsInteractionLocked(false);
+      }, WRONG_CLICK_COOLDOWN_MS);
+      return;
+    }
     if (phaseRef.current !== 'playing' || hasActedRef.current || !currentStimRef.current) return;
 
     hasActedRef.current = true;
@@ -248,6 +263,13 @@ export default function ConcentrationStaminaClient({ copy } = {}) {
       drillAudio.playPenalty();
       triggerFlash('red');
       falseAlarmsRef.current += 1;
+      interactionLockedRef.current = true;
+      setIsInteractionLocked(true);
+      if (interactionLockTimeoutRef.current) clearTimeout(interactionLockTimeoutRef.current);
+      interactionLockTimeoutRef.current = setTimeout(() => {
+        interactionLockedRef.current = false;
+        setIsInteractionLocked(false);
+      }, WRONG_CLICK_COOLDOWN_MS);
     }
 
     if (stimTimerRef.current) clearTimeout(stimTimerRef.current);
@@ -536,7 +558,8 @@ export default function ConcentrationStaminaClient({ copy } = {}) {
           {phase === 'playing' && (
             <div
               onPointerDown={handleInteraction}
-              className="flex-1 w-full h-full flex flex-col items-center justify-center cursor-pointer z-20 touch-none"
+              aria-disabled={isInteractionLocked}
+              className={`flex-1 w-full h-full flex flex-col items-center justify-center z-20 touch-none transition-opacity ${isInteractionLocked ? 'cursor-not-allowed opacity-60' : 'cursor-pointer'}`}
             >
               {currentStim ? (
                 <div className="text-8xl sm:text-9xl font-mono font-black tracking-widest text-white drop-shadow-[0_0_35px_rgba(99,102,241,0.6)]">

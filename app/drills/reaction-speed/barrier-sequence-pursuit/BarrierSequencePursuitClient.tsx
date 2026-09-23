@@ -95,7 +95,6 @@ export default function BarrierSequencePursuitClient({ copy }: { copy?: { title?
   ];
   const [openAccordion, setOpenAccordion] = useState<string | null>(null);
   const [isMobile, setIsMobile] = useState<boolean>(false);
-  const [isPortrait, setIsPortrait] = useState<boolean>(false);
   const [countdownValue, setCountdownValue] = useState<number | string>(3);
 
   // HUD & Best Stats State
@@ -129,6 +128,7 @@ export default function BarrierSequencePursuitClient({ copy }: { copy?: { title?
   const bestLevelRunRef = useRef(1);
   const lastTimeRef = useRef(DRILL_DURATION);
   const mousePosRef = useRef({ x: -100, y: -100, active: false });
+  const barrierSizeRef = useRef({ width: 0, height: 0 });
 
   const engine = useRef({
     score: 0,
@@ -175,8 +175,6 @@ export default function BarrierSequencePursuitClient({ copy }: { copy?: { title?
         const mobileDevice = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(ua) || (window.innerWidth < 768) || hasTouch;
         setIsMobile(mobileDevice);
 
-        const portrait = window.innerHeight > window.innerWidth;
-        setIsPortrait(portrait);
       };
 
       checkDeviceAndOrientation();
@@ -479,9 +477,11 @@ export default function BarrierSequencePursuitClient({ copy }: { copy?: { title?
       if (!container) return;
       const rect = container.getBoundingClientRect();
       const dpr = Math.min(window.devicePixelRatio || 1, 2);
-      cvs.width = rect.width * dpr;
-      cvs.height = rect.height * dpr;
-      ctx.scale(dpr, dpr);
+      if (cvs.width !== Math.trunc(rect.width * dpr) || cvs.height !== Math.trunc(rect.height * dpr)) {
+        cvs.width = rect.width * dpr;
+        cvs.height = rect.height * dpr;
+        ctx.scale(dpr, dpr);
+      }
     };
 
     updateSize();
@@ -521,8 +521,12 @@ export default function BarrierSequencePursuitClient({ copy }: { copy?: { title?
         }
       }
 
-      // Initialize Cover Barriers (4 tactical columns on 4 quarters)
-      if (e.barriers.length === 0 && W > 0 && H > 0) {
+      // Keep all four cover barriers inside the stage after orientation changes.
+      if (W > 0 && H > 0 && (e.barriers.length === 0 || barrierSizeRef.current.width !== W || barrierSizeRef.current.height !== H)) {
+        if (e.target.active) {
+          e.target.active = false;
+          e.nextSpawnTime = now + 200;
+        }
         const bW = Math.min(80, W * 0.12);
         const bH = Math.min(180, H * 0.40);
         e.barriers = [
@@ -531,6 +535,7 @@ export default function BarrierSequencePursuitClient({ copy }: { copy?: { title?
           { x: W * 0.22 - bW / 2, y: H * 0.72 - bH / 2, w: bW, h: bH },
           { x: W * 0.78 - bW / 2, y: H * 0.72 - bH / 2, w: bW, h: bH },
         ];
+        barrierSizeRef.current = { width: W, height: H };
       }
 
       // Screen Shake Effect
@@ -700,11 +705,7 @@ export default function BarrierSequencePursuitClient({ copy }: { copy?: { title?
         url: `skilldrills.online${path}`
       });
 
-      await shareScoreCard(canvas, {
-        title: `${drillName} — ${t('barrierSequencePursuit.shareScore', 'Share Score')}`,
-        text: `${drillName}: ${uiScore} (${analytics.grade?.letter || 'A'}, ${t('barrierSequencePursuit.level', 'Level')} ${analytics.finalLevel}) — SkillDrills`,
-        url
-      });
+      await shareScoreCard(url, canvas);
     } catch (err) {
       if (navigator.share) {
         navigator.share({
@@ -719,13 +720,6 @@ export default function BarrierSequencePursuitClient({ copy }: { copy?: { title?
   return (
     <div className="min-h-screen bg-[#050508] text-white flex flex-col font-sans select-none">
       
-      {/* Mobile Orientation Alert */}
-      {isMobile && isPortrait && (
-        <div className="w-full bg-amber-500/10 border-b border-amber-500/20 px-4 py-2 text-center text-xs text-amber-300 flex items-center justify-center gap-2">
-          <span>{t('barrierSequencePursuit.rotateLandscape', 'Rotate to landscape mode for a wider angle-holding field.')}</span>
-        </div>
-      )}
-
       {/* Main Container */}
       <main className="flex-1 max-w-6xl w-full mx-auto px-4 py-6 flex flex-col gap-6">
         
@@ -738,7 +732,6 @@ export default function BarrierSequencePursuitClient({ copy }: { copy?: { title?
             <p className="text-[13px] text-slate-400 leading-relaxed">
               {copy?.subtitle || t('barrierSequencePursuit.subtitle', 'Cover Peeking · Angle Holding Reflexes')}
             </p>
-            <p className="text-[12px] text-slate-500 leading-relaxed">{copy?.caption || t('barrierSequencePursuit.caption', 'Detect the target at the cover edge and click without a late flick.')}</p>
           </div>
         )}
 
@@ -836,7 +829,7 @@ export default function BarrierSequencePursuitClient({ copy }: { copy?: { title?
             onPointerLeave={() => {
               mousePosRef.current.active = false;
             }}
-            className={`block absolute top-0 left-0 w-full h-full z-10 touch-none ${gameState === 'playing' ? 'cursor-none' : 'cursor-crosshair'}`} 
+            className="block absolute top-0 left-0 w-full h-full z-10 touch-none cursor-crosshair"
           />
 
           {/* START CARD */}

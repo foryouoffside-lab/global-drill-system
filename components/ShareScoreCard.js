@@ -66,10 +66,10 @@ export function generateSessionCard({ drillName, badgeText, stats, playerName })
 /** Share the generated card while preserving the drill-specific challenge URL. */
 export async function shareScoreCard(challengeUrl, canvas) {
   try {
-    const blob = await new Promise((resolve) => canvas.toBlob(resolve, 'image/jpeg', 0.92));
+    const blob = await new Promise((resolve) => canvas.toBlob(resolve, 'image/png'));
     if (!blob) throw new Error('Failed to create image');
 
-    const file = new File([blob], 'skilldrills-score.jpg', { type: 'image/jpeg' });
+    const file = new File([blob], 'skilldrills-score.png', { type: 'image/png' });
     if (navigator.canShare && navigator.canShare({ files: [file] })) {
       await navigator.share({
         title: 'SkillDrills Score',
@@ -81,7 +81,7 @@ export async function shareScoreCard(challengeUrl, canvas) {
     }
 
     try {
-      await navigator.clipboard.write([new ClipboardItem({ 'image/jpeg': blob })]);
+      await navigator.clipboard.write([new ClipboardItem({ 'image/png': blob })]);
       alert('Score image copied to clipboard! Share it with friends.');
     } catch {
       await navigator.clipboard.writeText(challengeUrl);

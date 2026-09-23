@@ -558,11 +558,7 @@ export default function StrobeLatencyClient({ copy } = {}) {
         date: new Date().toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' }),
         url: 'skilldrills.online/drills/visual/reaction-speed/light-reaction'
       });
-      await shareScoreCard(canvas, {
-        title: 'Light Reaction Pro — My Score',
-        text: `I scored ${uiScore} (Grade: ${analytics.grade?.letter || 'A'}, Lv. ${analytics.finalLevel}) on Light Reaction Pro at SkillDrills!`,
-        url
-      });
+      await shareScoreCard(url, canvas);
     } catch (e) {
       if (navigator.share) {
         navigator.share({ title: 'My Reflex Score', text: `I scored ${uiScore} on Light Reaction Pro!`, url }).catch(() => {});

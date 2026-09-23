@@ -21,6 +21,7 @@ import FpsStartCard from '../../../../../components/drill/FpsStartCard';
 import useImmersiveMode from '@/lib/useImmersiveMode';
 
 const DRILL_DURATION = 45;
+const WRONG_CLICK_COOLDOWN_MS = 1000;
 
 const PASSAGE_WORDS = [
   "Neuroplasticity", "is", "the", "brain's", "remarkable", "ability", "to", "reorganize", "itself", "by", "forming", "new", "neural", "connections", "throughout", "life.",
@@ -180,6 +181,7 @@ export default function RSVPReaderClient({ copy } = {}) {
   // Active RSVP Stream State
   const [targetWord, setTargetWord] = useState('brain');
   const [currentWord, setCurrentWord] = useState('Neuroplasticity');
+  const [isResponseLocked, setIsResponseLocked] = useState(false);
 
   // Analytics
   const [analytics, setAnalytics] = useState({
@@ -196,6 +198,8 @@ export default function RSVPReaderClient({ copy } = {}) {
   const countdownTimeoutsRef = useRef([]);
   const timerIntervalRef = useRef(null);
   const streamTimerRef = useRef(null);
+  const responseLockTimeoutRef = useRef(null);
+  const responseLockedRef = useRef(false);
 
   const engine = useRef({
     score: 0,
@@ -218,6 +222,7 @@ export default function RSVPReaderClient({ copy } = {}) {
       countdownTimeoutsRef.current.forEach(clearTimeout);
       if (timerIntervalRef.current) clearInterval(timerIntervalRef.current);
       if (streamTimerRef.current) clearTimeout(streamTimerRef.current);
+      if (responseLockTimeoutRef.current) clearTimeout(responseLockTimeoutRef.current);
     };
   }, []);
 
@@ -227,6 +232,9 @@ export default function RSVPReaderClient({ copy } = {}) {
     countdownTimeoutsRef.current = [];
     if (timerIntervalRef.current) clearInterval(timerIntervalRef.current);
     if (streamTimerRef.current) clearTimeout(streamTimerRef.current);
+    if (responseLockTimeoutRef.current) clearTimeout(responseLockTimeoutRef.current);
+    responseLockedRef.current = false;
+    setIsResponseLocked(false);
 
     if (typeof document !== 'undefined' && document.fullscreenElement) {
       document.exitFullscreen().catch(() => {});
@@ -347,12 +355,31 @@ export default function RSVPReaderClient({ copy } = {}) {
 
   const handleRespond = useCallback((ev) => {
     if (ev) ev.stopPropagation();
+    if (responseLockedRef.current) {
+      if (responseLockTimeoutRef.current) clearTimeout(responseLockTimeoutRef.current);
+      responseLockTimeoutRef.current = setTimeout(() => {
+        responseLockedRef.current = false;
+        setIsResponseLocked(false);
+      }, WRONG_CLICK_COOLDOWN_MS);
+      return;
+    }
     const eng = engine.current;
 
-    if (eng.wasResponded) {
+    const registerWrongClick = () => {
       eng.falseAlarms += 1;
       triggerFlash();
       drillAudio.playPenalty();
+      responseLockedRef.current = true;
+      setIsResponseLocked(true);
+      if (responseLockTimeoutRef.current) clearTimeout(responseLockTimeoutRef.current);
+      responseLockTimeoutRef.current = setTimeout(() => {
+        responseLockedRef.current = false;
+        setIsResponseLocked(false);
+      }, WRONG_CLICK_COOLDOWN_MS);
+    };
+
+    if (eng.wasResponded) {
+      registerWrongClick();
       return;
     }
 
@@ -375,9 +402,7 @@ export default function RSVPReaderClient({ copy } = {}) {
     } else {
       // Wrong click (tapped when current word is NOT the target): counts against
       // accuracy, but the run always plays out the clock.
-      eng.falseAlarms += 1;
-      triggerFlash();
-      drillAudio.playPenalty();
+      registerWrongClick();
     }
   }, [triggerFlash, assignNextTarget]);
 
@@ -389,6 +414,9 @@ export default function RSVPReaderClient({ copy } = {}) {
     countdownTimeoutsRef.current = [];
     if (timerIntervalRef.current) clearInterval(timerIntervalRef.current);
     if (streamTimerRef.current) clearTimeout(streamTimerRef.current);
+    if (responseLockTimeoutRef.current) clearTimeout(responseLockTimeoutRef.current);
+    responseLockedRef.current = false;
+    setIsResponseLocked(false);
 
     drillAudio.init();
 
@@ -437,14 +465,14 @@ export default function RSVPReaderClient({ copy } = {}) {
     const t4 = setTimeout(() => {
       setGameState('playing');
 
-      let remaining = DRILL_DURATION;
+      const endAt = Date.now() + DRILL_DURATION * 1000;
       timerIntervalRef.current = setInterval(() => {
-        remaining -= 1;
+        const remaining = Math.max(0, Math.ceil((endAt - Date.now()) / 1000));
         setUiTimeLeft(remaining);
         if (remaining <= 0) {
           endGame();
         }
-      }, 1000);
+      }, 250);
 
       flashStream();
     }, 2450);
@@ -597,7 +625,8 @@ export default function RSVPReaderClient({ copy } = {}) {
               <button
                 type="button"
                 onPointerDown={handleRespond}
-                className="w-full max-w-sm py-4 bg-gradient-to-r from-amber-600 to-yellow-600 text-white rounded-2xl font-black text-xl sm:text-2xl active:scale-95 transition-transform shadow-[0_0_25px_rgba(245,158,11,0.35)] cursor-pointer border border-amber-400/30 z-30 mb-2"
+                aria-disabled={isResponseLocked}
+                className={`w-full max-w-sm py-4 bg-gradient-to-r from-amber-600 to-yellow-600 text-white rounded-2xl font-black text-xl sm:text-2xl transition-all shadow-[0_0_25px_rgba(245,158,11,0.35)] border border-amber-400/30 z-30 mb-2 ${isResponseLocked ? 'cursor-not-allowed opacity-40' : 'cursor-pointer active:scale-95'}`}
               >
                 {labels.detected}
               </button>

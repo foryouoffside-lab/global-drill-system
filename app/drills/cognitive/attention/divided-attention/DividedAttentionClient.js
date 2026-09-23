@@ -584,11 +584,7 @@ export default function DividedAttentionClient({ copy } = {}) {
         date: new Date().toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' }),
         url: 'skilldrills.online/drills/cognitive/attention/divided-attention'
       });
-      await shareScoreCard(canvas, {
-        title: 'Divided Attention Test — My Score',
-        text: `I scored ${uiScore} (Grade: ${analytics.grade?.letter || 'A'}, Lv. ${analytics.finalLevel}) on Divided Attention Test at SkillDrills!`,
-        url
-      });
+      await shareScoreCard(url, canvas);
     } catch (e) {
       if (navigator.share) {
         navigator.share({ title: 'Divided Attention Test Score', text: `I scored ${uiScore} on Divided Attention Test!`, url }).catch(() => {});

@@ -501,11 +501,7 @@ export default function DistractionFighterClient({ faqs, copy }) {
         date: new Date().toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' }),
         url: 'skilldrills.online/drills/cognitive/focus/distraction-fighter'
       });
-      await shareScoreCard(canvas, {
-        title: 'Distraction Fighter — My Score',
-        text: `I scored ${uiScore} (Grade: ${analytics.grade?.letter || 'A'}, Lv. ${analytics.finalLevel}) on Distraction Fighter at SkillDrills!`,
-        url
-      });
+      await shareScoreCard(url, canvas);
     } catch (e) {
       if (navigator.share) {
         navigator.share({ title: 'Distraction Fighter Score', text: `I scored ${uiScore} on Distraction Fighter!`, url }).catch(() => {});

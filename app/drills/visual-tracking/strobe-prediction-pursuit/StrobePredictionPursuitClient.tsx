@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState, useEffect, useRef, useCallback } from 'react';
+import React, { useState, useEffect, useLayoutEffect, useRef, useCallback } from 'react';
 import Link from 'next/link';
 import { Play, RefreshCw, Timer, Share2, LogOut, Check, Sun, Moon, Volume2, VolumeX, Target, Trophy, TrendingUp, Zap } from 'lucide-react';
 
@@ -9,8 +9,8 @@ import DrillCountdown from '../../../../components/drill/DrillCountdown';
 import DrillAccordion from '../../../../components/drill/DrillAccordion';
 import ZigZagPathPursuitStartCard from '../../../../components/drill/ZigZagPathPursuitStartCard';
 import { drillAudio } from '../../../../lib/drillAudio';
-import { createBackdropCache, drawTacticalTarget } from '../../../../lib/canvasFx';
-import { isFrameSkippable } from '../../../../lib/performance';
+import { drawTacticalTarget } from '../../../../lib/canvasFx';
+import { createBackdropCache, isFrameSkippable } from '../trackingCanvas';
 import useUnexpectedExitGuard from '../../../../lib/useUnexpectedExitGuard';
 import useImmersiveMode from '@/lib/useImmersiveMode';
 
@@ -241,7 +241,7 @@ export default function StrobePredictionPursuitClient({ copy }: { copy?: { title
   }, [selectedDuration, endGame]);
 
   // Canvas Render Loop (controlled occlusion prediction task)
-  useEffect(() => {
+  useLayoutEffect(() => {
     if (gameState !== 'playing') return;
     const cvs = canvasRef.current;
     const container = containerRef.current;
@@ -259,9 +259,12 @@ export default function StrobePredictionPursuitClient({ copy }: { copy?: { title
       canvasWidth = rect.width;
       canvasHeight = rect.height;
       const dpr = Math.min(window.devicePixelRatio || 1, 1.5);
-      cvs.width = rect.width * dpr;
-      cvs.height = rect.height * dpr;
-      ctx.scale(dpr, dpr);
+      // Reassigning either dimension clears the canvas, even at the same size.
+      if (cvs.width !== Math.trunc(rect.width * dpr) || cvs.height !== Math.trunc(rect.height * dpr)) {
+        cvs.width = rect.width * dpr;
+        cvs.height = rect.height * dpr;
+        ctx.scale(dpr, dpr);
+      }
 
       if (trackingState.current.px === 0) {
         trackingState.current.px = rect.width * 0.5;
@@ -393,7 +396,10 @@ export default function StrobePredictionPursuitClient({ copy }: { copy?: { title
       animationRef.current = requestAnimationFrame(draw);
     };
 
-    animationRef.current = requestAnimationFrame(draw);
+    // Paint the first target before React removes the countdown overlay.
+    const firstFrameTime = performance.now();
+    lastTime = firstFrameTime - 16;
+    draw(firstFrameTime);
 
     return () => {
       if (animationRef.current) cancelAnimationFrame(animationRef.current);

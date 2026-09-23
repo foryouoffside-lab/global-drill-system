@@ -3,7 +3,6 @@ import { Analytics } from "@vercel/analytics/next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import SiteHeader from '@/components/SiteHeader';
 import ZoomGuard from '@/components/ZoomGuard';
-import AutoLanguageDetector from '@/components/AutoLanguageDetector';
 import SiteSchemas from '@/components/SiteSchemas';
 import { DRILLS } from '@/lib/drillsRegistry';
 
@@ -140,7 +139,6 @@ export default function RootLayout({ children }) {
       <body className="font-sans antialiased">
         <ZoomGuard />
         <SiteHeader />
-        <AutoLanguageDetector />
         <main id="main-content">
           {children}
         </main>

@@ -588,11 +588,7 @@ export default function ChromaSyncClient({ copy } = {}) {
         date: new Date().toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' }),
         url: 'skilldrills.online/drills/visual/reaction-speed/go/no-go'
       });
-      await shareScoreCard(canvas, {
-        title: 'Go/No-Go Pro — My Score',
-        text: `I scored ${uiScore} (Grade: ${analytics.grade?.letter || 'A'}, Lv. ${analytics.finalLevel}) on Go/No-Go Pro at SkillDrills!`,
-        url
-      });
+      await shareScoreCard(url, canvas);
     } catch (e) {
       if (navigator.share) {
         navigator.share({ title: 'My Reaction Score', text: `I scored ${uiScore} on Go/No-Go Pro!`, url }).catch(() => {});

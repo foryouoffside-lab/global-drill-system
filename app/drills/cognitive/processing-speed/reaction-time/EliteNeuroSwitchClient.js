@@ -524,11 +524,7 @@ export default function EliteNeuroSwitchClient({ copy } = {}) {
         date: new Date().toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' }),
         url: 'skilldrills.online/drills/cognitive/processing-speed/reaction-time'
       });
-      await shareScoreCard(canvas, {
-        title: 'Reaction Time — My Score',
-        text: `I scored ${uiScore} (Grade: ${analytics.grade?.letter || 'A'}, Lv. ${analytics.finalLevel}) on Reaction Time at SkillDrills!`,
-        url
-      });
+      await shareScoreCard(url, canvas);
     } catch (e) {
       if (navigator.share) {
         navigator.share({ title: 'Reaction Time Score', text: `I scored ${uiScore} on Reaction Time!`, url }).catch(() => {});

@@ -24,7 +24,7 @@ import DrillRuleItem from '../../../../../components/drill/DrillRuleItem';
 import FpsStartCard from '../../../../../components/drill/FpsStartCard';
 import useImmersiveMode from '@/lib/useImmersiveMode';
 
-const DRILL_DURATION = 45; // 45 seconds duration
+const DRILL_DURATION = 60;
 const POINTS_PER_HIT = 150;
 const ELITE_SCORE = 1000; // Target score for S+ rating (rebalanced after combo removal)
 const STORAGE_KEY = 'skilldrills_memory_path_tracing_v4';
@@ -426,7 +426,7 @@ export default function PathTracingClient({ copy = null }) {
       startingRef.current = false;
       setGameState('playing');
 
-      // Start 45s decimal timer
+      // Count only active tracing time; path and result reveals are untimed.
       if (timerIntervalRef.current) clearInterval(timerIntervalRef.current);
       let lastTime = performance.now();
 
@@ -436,6 +436,8 @@ export default function PathTracingClient({ copy = null }) {
         lastTime = now;
 
         const eRef = engine.current;
+        if (phaseRef.current !== 'drawing') return;
+
         if (eRef.timeLeft > 0) {
           eRef.timeLeft = Math.max(0, eRef.timeLeft - deltaSec);
           setUiTimeLeft(Math.ceil(eRef.timeLeft));
@@ -575,22 +577,16 @@ export default function PathTracingClient({ copy = null }) {
           {gameState === 'playing' && (
             <div className="flex-1 flex flex-col items-center justify-center p-3 sm:p-6 w-full h-full relative z-20 overflow-hidden my-auto">
 
-              {/* NO TEXT OR BAR ABOVE GRID IN DEMO PHASE (CLEAN SPACER) */}
-              {phase === 'showing' && (
-                <div className="h-6 sm:h-8 mb-2 sm:mb-4 shrink-0" />
-              )}
-
-              {phase === 'drawing' && (
-                <div className="flex gap-2 mb-2 sm:mb-4 justify-center w-full max-w-[280px] sm:max-w-[360px] flex-wrap shrink-0">
+              {/* Fixed-height status area prevents the centered grid moving between phases. */}
+              <div className="h-6 sm:h-8 mb-2 sm:mb-4 shrink-0 flex items-center justify-center w-full">
+                {phase === 'drawing' && (
+                  <div className="flex gap-2 justify-center w-full max-w-[280px] sm:max-w-[360px] flex-wrap">
                   {Array.from({ length: path.length }).map((_, i) => (
                     <div key={i} className={`w-2.5 h-2.5 rounded-full transition-all duration-300 ${i < userPath.length ? 'bg-amber-400 shadow-[0_0_8px_rgba(251,191,36,0.8)] scale-110' : 'bg-white/20'}`} />
                   ))}
-                </div>
-              )}
-
-              {phase === 'result' && (
-                <div className="h-6 sm:h-8 mb-2 sm:mb-4 shrink-0" />
-              )}
+                  </div>
+                )}
+              </div>
 
               {/* INTERACTIVE GRID CONTAINER (PORTRAIT & MOBILE PERFECTLY CENTERED) */}
               <div
@@ -608,12 +604,14 @@ export default function PathTracingClient({ copy = null }) {
                   const isUserStep = userPath.includes(i);
                   const isWrongStep = wrongDotIndex === i;
                   const isPathPoint = path.includes(i);
+                  const demoStepNumber = isCurrentDemoDot ? path.indexOf(i) + 1 : null;
+                  const correctStepNumber = isPathPoint ? path.indexOf(i) + 1 : null;
 
                   let cellStyle = "bg-white/[0.04] border border-white/10";
 
                   if (phase === 'showing') {
                     if (isCurrentDemoDot) {
-                      cellStyle = "bg-amber-500 border-amber-300 scale-105";
+                      cellStyle = "bg-amber-500 border-amber-300";
                     }
                   } else if (phase === 'drawing') {
                     if (isUserStep) {
@@ -634,12 +632,22 @@ export default function PathTracingClient({ copy = null }) {
                       key={i}
                       onPointerDown={(e) => handleCellClick(i, e)}
                       disabled={phase !== 'drawing' || isProcessing}
-                      className={`w-full aspect-square rounded-lg sm:rounded-xl flex items-center justify-center transition-all duration-150 ease-out focus:outline-none touch-none border ${cellStyle}`}
+                      className={`w-full aspect-square rounded-lg sm:rounded-xl flex items-center justify-center transition-colors duration-150 ease-out focus:outline-none touch-none border ${cellStyle}`}
                       aria-label="Grid Cell"
                     >
-                      {isUserStep && (
+                      {phase === 'showing' && demoStepNumber && (
+                        <span className="text-xs sm:text-sm font-black text-black font-mono">
+                          {demoStepNumber}
+                        </span>
+                      )}
+                      {phase === 'drawing' && isUserStep && (
                         <span className="text-xs sm:text-sm font-black text-black font-mono">
                           {userPath.indexOf(i) + 1}
+                        </span>
+                      )}
+                      {phase === 'result' && correctStepNumber && (
+                        <span className="text-xs sm:text-sm font-black text-black font-mono">
+                          {correctStepNumber}
                         </span>
                       )}
                     </button>

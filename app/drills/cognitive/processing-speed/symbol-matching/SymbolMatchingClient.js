@@ -491,11 +491,7 @@ export default function SymbolMatchingClient({ copy } = {}) {
         date: new Date().toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' }),
         url: 'skilldrills.online/drills/cognitive/processing-speed/symbol-matching'
       });
-      await shareScoreCard(canvas, {
-        title: 'Symbol Matching — My Score',
-        text: `I scored ${uiScore} (Grade: ${analytics.grade?.letter || 'A'}, Lv. ${analytics.finalLevel}) on Symbol Matching at SkillDrills!`,
-        url
-      });
+      await shareScoreCard(url, canvas);
     } catch (e) {
       if (navigator.share) {
         navigator.share({ title: 'Symbol Matching Score', text: `I scored ${uiScore} on Symbol Matching!`, url }).catch(() => {});

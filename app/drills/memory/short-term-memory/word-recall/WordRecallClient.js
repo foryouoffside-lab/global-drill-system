@@ -5,8 +5,7 @@ import React, { useState, useEffect, useRef, useCallback } from 'react';
 import {
   BookOpen, Brain, RefreshCw,
   TrendingUp, Volume2, VolumeX,
-  Zap, ZapOff, Users, Share2, ArrowLeft,
-  SkipForward
+  Zap, ZapOff, Users, Share2, ArrowLeft
 } from 'lucide-react';
 
 import generateShareCard, { shareScoreCard } from '../../../../../components/ShareScoreCard';
@@ -188,8 +187,8 @@ export default function WordRecallClient({ copy = null }) {
     drillAudio?.playSessionEnd?.();
   }, [clearGameTimeouts]);
 
-  // Skip memorization phase manually or on timer expiry
-  const skipMemorization = useCallback(() => {
+  // Continue automatically when the memorization window expires.
+  const finishMemorization = useCallback(() => {
     if (phaseRef.current === 'memorize' && gameActiveRef.current) {
       setPhase('input');
       phaseRef.current = 'input';
@@ -256,14 +255,14 @@ export default function WordRecallClient({ copy = null }) {
       memorizeTimeRef.current -= 0.2;
       if (memorizeTimeRef.current <= 0) {
         clearInterval(tMemTimer);
-        skipMemorization();
+        finishMemorization();
       } else {
         setMemTimeDisplay(Math.ceil(memorizeTimeRef.current));
       }
     }, 200);
 
     gameTimeoutsRef.current.push(tMemTimer);
-  }, [clearGameTimeouts, skipMemorization]);
+  }, [clearGameTimeouts, finishMemorization]);
 
   useEffect(() => {
     startSequenceCycleRef.current = startSequenceCycle;
@@ -394,7 +393,7 @@ export default function WordRecallClient({ copy = null }) {
       startingRef.current = false;
       setGameState('playing');
 
-      // Start 45s decimal timer
+      // Start the 45s active timer; word memorization reveals are untimed.
       if (timerIntervalRef.current) clearInterval(timerIntervalRef.current);
       let lastTime = performance.now();
 
@@ -404,6 +403,8 @@ export default function WordRecallClient({ copy = null }) {
         lastTime = now;
 
         const eRef = engine.current;
+        if (phaseRef.current === 'memorize') return;
+
         if (eRef.timeLeft > 0) {
           eRef.timeLeft = Math.max(0, eRef.timeLeft - deltaSec);
           setUiTimeLeft(Math.ceil(eRef.timeLeft));
@@ -541,32 +542,30 @@ export default function WordRecallClient({ copy = null }) {
 
           {/* GAMEPLAY CANVAS AREA */}
           {gameState === 'playing' && (
-            <div className="flex-1 flex flex-col items-center justify-center p-4 sm:p-6 w-full h-full relative z-20 overflow-y-auto">
+            <div className="flex-1 flex flex-col items-center justify-center p-4 sm:p-8 w-full h-full relative z-20 overflow-y-auto bg-[radial-gradient(circle_at_center,rgba(236,72,153,0.07),transparent_55%)]">
               
               {/* MEMORIZE PHASE DISPLAY */}
               {phase === 'memorize' && (
-                <div className="w-full max-w-xl text-center animate-in fade-in zoom-in-95 duration-200 my-auto">
-                  <span className="text-pink-400 font-bold uppercase tracking-widest text-xs sm:text-sm mb-4 block">{copy?.memorizePhase || "MEMORIZE WORDS"}</span>
-                  <div className="flex flex-wrap items-center justify-center gap-3 sm:gap-4 py-4">
+                <div className="w-full max-w-2xl text-center animate-in fade-in zoom-in-95 duration-200 my-auto rounded-3xl border border-white/10 bg-[#0c0d16]/95 p-5 sm:p-8 shadow-2xl">
+                  <div className="flex items-center justify-center gap-3 mb-5">
+                    <span className="text-pink-400 font-extrabold uppercase tracking-[0.2em] text-xs sm:text-sm">{copy?.memorizePhase || "MEMORIZE WORDS"}</span>
+                    <span className="rounded-full border border-pink-500/25 bg-pink-500/10 px-2.5 py-1 text-[10px] font-bold tabular-nums text-pink-300">{memTimeDisplay}s</span>
+                  </div>
+                  <div className="flex flex-wrap items-center justify-center gap-2.5 sm:gap-3 py-2">
                     {currentWords.map((word, i) => (
-                      <span key={i} className="px-4 py-2 sm:px-5 sm:py-2.5 bg-black/60 border border-pink-500/30 rounded-xl text-white font-mono font-black text-xl sm:text-2xl tracking-wider shadow-md">
+                      <span key={i} className="min-w-[7rem] px-4 py-3 sm:px-5 sm:py-3.5 bg-white/[0.04] border border-white/10 rounded-xl text-white font-sans font-bold text-lg sm:text-2xl tracking-tight shadow-sm">
                         {word}
                       </span>
                     ))}
                   </div>
-                  <button
-                    onPointerDown={(e) => { e.preventDefault(); e.stopPropagation(); skipMemorization(); }}
-                    className="mt-4 inline-flex items-center gap-1.5 px-4 py-2 rounded-full bg-white/[0.04] border border-white/10 text-slate-300 hover:text-white hover:border-pink-500/40 transition-colors text-xs font-bold uppercase tracking-wider cursor-pointer touch-none"
-                  >
-                    <SkipForward className="w-3.5 h-3.5" /> {copy?.btnSkip || "Skip"}
-                  </button>
+                  <p className="mt-5 text-xs sm:text-sm font-medium text-slate-400">Study the complete set. Recall begins automatically.</p>
                 </div>
               )}
 
               {/* INPUT PHASE: TEXT RECALL ENTRY */}
               {phase === 'input' && (
-                <div className="w-full max-w-xl flex flex-col items-center justify-center my-auto animate-in fade-in zoom-in-95 duration-200">
-                  <span className="text-cyan-400 font-bold uppercase tracking-widest text-xs sm:text-sm mb-3 text-center">{copy?.inputPhase || "TYPE RECALLED WORDS"}</span>
+                <div className="w-full max-w-2xl flex flex-col items-center justify-center my-auto animate-in fade-in zoom-in-95 duration-200 rounded-3xl border border-white/10 bg-[#0c0d16]/95 p-5 sm:p-8 shadow-2xl">
+                  <span className="text-cyan-400 font-extrabold uppercase tracking-[0.2em] text-xs sm:text-sm mb-4 text-center">{copy?.inputPhase || "TYPE RECALLED WORDS"}</span>
                   
                   <textarea
                     ref={inputRef}
@@ -581,7 +580,7 @@ export default function WordRecallClient({ copy = null }) {
                         handleSubmission();
                       }
                     }}
-                    className="w-full h-24 sm:h-32 p-4 rounded-2xl border border-white/20 outline-none resize-none text-base sm:text-xl font-mono transition-all bg-black/80 text-white focus:border-cyan-400 shadow-inner mb-4"
+                    className="w-full h-28 sm:h-32 p-4 sm:p-5 rounded-2xl border border-white/15 outline-none resize-none text-base sm:text-lg font-sans font-medium leading-relaxed transition-all bg-black/50 text-white placeholder:text-slate-600 focus:border-cyan-400 focus:ring-2 focus:ring-cyan-400/15 mb-4"
                     placeholder={copy?.inputPlaceholder || "Type recalled words separated by spaces..."}
                     autoFocus
                     spellCheck="false"
@@ -603,15 +602,15 @@ export default function WordRecallClient({ copy = null }) {
 
               {/* FEEDBACK PHASE */}
               {phase === 'feedback' && (
-                <div className="w-full max-w-xl text-center animate-in fade-in duration-100 my-auto">
-                  <span className="text-gray-400 font-bold uppercase tracking-widest text-xs sm:text-sm mb-3 block">{copy?.feedbackPhase || "RECALL EVALUATION"}</span>
+                <div className="w-full max-w-2xl text-center animate-in fade-in duration-100 my-auto rounded-3xl border border-white/10 bg-[#0c0d16]/95 p-5 sm:p-8 shadow-2xl">
+                  <span className="text-slate-400 font-extrabold uppercase tracking-[0.2em] text-xs sm:text-sm mb-4 block">{copy?.feedbackPhase || "RECALL EVALUATION"}</span>
                   
                   <div className="bg-gray-900/90 border border-white/10 p-4 sm:p-6 rounded-2xl shadow-inner min-h-[140px]">
                     <div className="flex flex-wrap items-center justify-center gap-2 mb-3">
                       {currentWords.map((word, i) => {
                         const isCorrect = lastResult.correct.includes(word);
                         return (
-                          <span key={i} className={`px-3 py-1.5 rounded-lg font-mono font-bold text-sm sm:text-base border ${
+                          <span key={i} className={`px-3 py-1.5 rounded-lg font-sans font-semibold text-sm sm:text-base border ${
                             isCorrect 
                               ? 'bg-green-500/20 text-green-400 border-green-500/40' 
                               : 'bg-red-500/20 text-red-400 border-red-500/40 line-through'
@@ -627,7 +626,7 @@ export default function WordRecallClient({ copy = null }) {
                         <span className="text-xs text-gray-400 font-bold uppercase block mb-1.5">{copy?.extraWordsLabel || "Extra / Incorrect Words Typed:"}</span>
                         <div className="flex flex-wrap items-center justify-center gap-1.5">
                           {lastResult.extra.map((word, i) => (
-                            <span key={i} className="px-2.5 py-1 rounded-md bg-orange-500/20 text-orange-400 border border-orange-500/30 font-mono text-xs">
+                            <span key={i} className="px-2.5 py-1 rounded-md bg-orange-500/20 text-orange-400 border border-orange-500/30 font-sans font-medium text-xs">
                               {word}
                             </span>
                           ))}

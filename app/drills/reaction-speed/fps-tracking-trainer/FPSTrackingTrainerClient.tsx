@@ -102,7 +102,6 @@ export default function FPSTrackingTrainerClient({ copy }: { copy?: { title?: st
   ];
   const [openAccordion, setOpenAccordion] = useState<string | null>(null);
   const [isMobile, setIsMobile] = useState<boolean>(false);
-  const [isPortrait, setIsPortrait] = useState<boolean>(false);
   const [countdownValue, setCountdownValue] = useState<number | string>(3);
 
   // HUD & Best Stats State
@@ -178,8 +177,6 @@ export default function FPSTrackingTrainerClient({ copy }: { copy?: { title?: st
         const mobileDevice = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(ua) || (window.innerWidth < 768) || hasTouch;
         setIsMobile(mobileDevice);
 
-        const portrait = window.innerHeight > window.innerWidth;
-        setIsPortrait(portrait);
       };
 
       checkDeviceAndOrientation();
@@ -299,11 +296,11 @@ export default function FPSTrackingTrainerClient({ copy }: { copy?: { title?: st
     const baseR = isMobile ? config.radius + 2 : config.radius;
     const radius = Math.max(6, baseR);
 
-    // Spawn on horizontal line with random strafe direction
+    // Spawn against one of the visible boundary markers, then strafe inward.
     const spawnLeft = Math.random() > 0.5;
     const bounds = W * 0.12;
-    const spawnX = spawnLeft ? bounds + 30 : W - bounds - 30;
-    const spawnY = H * (0.35 + Math.random() * 0.30);
+    const spawnX = spawnLeft ? bounds + radius : W - bounds - radius;
+    const spawnY = H * 0.5;
 
     const dir = spawnLeft ? 1 : -1;
     const vx = dir * config.baseSpeed;
@@ -476,9 +473,14 @@ export default function FPSTrackingTrainerClient({ copy }: { copy?: { title?: st
       if (!container) return;
       const rect = container.getBoundingClientRect();
       const dpr = Math.min(window.devicePixelRatio || 1, 2);
+      if (cvs.width === Math.trunc(rect.width * dpr) && cvs.height === Math.trunc(rect.height * dpr)) return;
       cvs.width = rect.width * dpr;
       cvs.height = rect.height * dpr;
       ctx.scale(dpr, dpr);
+      if (engine.current.target.active) {
+        engine.current.target.active = false;
+        engine.current.nextSpawnTime = performance.now() + 200;
+      }
     };
 
     updateSize();
@@ -681,11 +683,7 @@ export default function FPSTrackingTrainerClient({ copy }: { copy?: { title?: st
         url: `skilldrills.online${path}`
       });
 
-      await shareScoreCard(canvas, {
-        title: `${drillName} — ${t('fpsTrackingTrainer.shareScore', 'Share Score')}`,
-        text: `${drillName}: ${uiScore} (${analytics.grade?.letter || 'A'}, ${t('fpsTrackingTrainer.level', 'Level')} ${analytics.finalLevel}) — SkillDrills`,
-        url
-      });
+      await shareScoreCard(url, canvas);
     } catch (err) {
       if (navigator.share) {
         navigator.share({
@@ -700,13 +698,6 @@ export default function FPSTrackingTrainerClient({ copy }: { copy?: { title?: st
   return (
     <div className="min-h-screen bg-[#050508] text-white flex flex-col font-sans select-none">
       
-      {/* Mobile Orientation Alert */}
-      {isMobile && isPortrait && (
-        <div className="w-full bg-amber-500/10 border-b border-amber-500/20 px-4 py-2 text-center text-xs text-amber-300 flex items-center justify-center gap-2">
-          <span>{t('fpsTrackingTrainer.rotateLandscape', 'Rotate to landscape mode for a wider tracking field.')}</span>
-        </div>
-      )}
-
       {/* Main Container */}
       <main className="flex-1 max-w-6xl w-full mx-auto px-4 py-6 flex flex-col gap-6">
         
@@ -719,7 +710,6 @@ export default function FPSTrackingTrainerClient({ copy }: { copy?: { title?: st
             <p className="text-[13px] text-slate-400 leading-relaxed">
               {copy?.subtitle || t('fpsTrackingTrainer.subtitle', 'Smooth Tracking · Strafe Pursuit')}
             </p>
-            <p className="text-[12px] text-slate-500 leading-relaxed">{copy?.caption || t('fpsTrackingTrainer.caption', 'Keep the reticle with a moving target while its speed and direction change.')}</p>
           </div>
         )}
 
@@ -817,7 +807,7 @@ export default function FPSTrackingTrainerClient({ copy }: { copy?: { title?: st
             onPointerLeave={() => {
               mousePosRef.current.active = false;
             }}
-            className={`block absolute top-0 left-0 w-full h-full z-10 touch-none ${gameState === 'playing' ? 'cursor-none' : 'cursor-crosshair'}`} 
+            className="block absolute top-0 left-0 w-full h-full z-10 touch-none cursor-crosshair"
           />
 
           {/* START CARD */}

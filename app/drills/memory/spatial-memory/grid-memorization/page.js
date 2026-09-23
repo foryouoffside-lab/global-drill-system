@@ -267,7 +267,7 @@ export default function GridMemorizationPage() {
         ["Tier 4 (Low Average / Visuospatial Bottleneck)", "Span 5 Cells", "350 – 549 Points", "Operates near raw unchunked capacity limits (Cowan, 2001); attempts to memorize cells individually without geometric grouping; 900 – 1,200 ms cadence"],
         ["Tier 5 (Impaired / Below Average Span)", "Span < 5 Cells", "< 350 Points", "Rapid visual trace decay; vulnerability to visual noise; struggles to hold patterns exceeding 4 cells across the 1.5s delay; cadence exceeding 1,200 ms"]
       ],
-      note: "Cell span reflects maximum matrix configuration cleared during the 45-second session; normative percentiles mapped to Visual Patterns Test standards (Della Sala et al., 1997; Luck & Vogel, 1997; Woods et al., 2015)."
+      note: "Cell span reflects maximum matrix configuration cleared during the 60-second active recall session; memorization and result reveals are untimed. Normative percentiles are mapped to Visual Patterns Test standards (Della Sala et al., 1997; Luck & Vogel, 1997; Woods et al., 2015)."
     },
     techniques: {
       title: "Evidence-Based Protocols to Expand Matrix Visual Recall",

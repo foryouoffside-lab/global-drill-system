@@ -286,7 +286,7 @@ export default function NBackPage() {
           },
           {
             label: "Total Drill Score",
-            desc: "Cumulative points accumulated (+150 PTS per correct match/non-match judgment over 45 seconds without negative penalties)."
+            desc: "Cumulative points accumulated (+150 PTS per correct match/non-match judgment over 45 seconds of active play without negative penalties). The initial N-letter memorization sequence is untimed."
           },
           {
             label: "Target Judgment Accuracy",

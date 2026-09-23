@@ -22,7 +22,7 @@ import DrillRuleItem from '../../../../../components/drill/DrillRuleItem';
 import FpsStartCard from '../../../../../components/drill/FpsStartCard';
 import useImmersiveMode from '@/lib/useImmersiveMode';
 
-const DRILL_DURATION = 45; // 45 seconds duration
+const DRILL_DURATION = 60;
 const POINTS_PER_HIT = 150;
 const ELITE_SCORE = 1150; // Target score for S+ rating (rebalanced after combo removal)
 const STORAGE_KEY = 'skilldrills_memory_grid_memorization_v4';
@@ -361,7 +361,7 @@ export default function GridMemorizationClient({ copy = null }) {
       startingRef.current = false;
       setGameState('playing');
 
-      // Start 45s decimal timer
+      // Count only active play time; memorization reveals are untimed.
       if (timerIntervalRef.current) clearInterval(timerIntervalRef.current);
       let lastTime = performance.now();
 
@@ -371,6 +371,8 @@ export default function GridMemorizationClient({ copy = null }) {
         lastTime = now;
 
         const eRef = engine.current;
+        if (phaseRef.current !== 'recall') return;
+
         if (eRef.timeLeft > 0) {
           eRef.timeLeft = Math.max(0, eRef.timeLeft - deltaSec);
           setUiTimeLeft(Math.ceil(eRef.timeLeft));

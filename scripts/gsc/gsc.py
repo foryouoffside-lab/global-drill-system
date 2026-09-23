@@ -25,6 +25,7 @@ import json
 import datetime as dt
 
 from google.auth.transport.requests import Request
+from google.auth.exceptions import RefreshError
 from google.oauth2.credentials import Credentials
 from google_auth_oauthlib.flow import InstalledAppFlow
 from googleapiclient.discovery import build
@@ -55,8 +56,11 @@ def get_service(interactive=False, write=False):
     if os.path.exists(token):
         creds = Credentials.from_authorized_user_file(token, scopes)
     if creds and creds.expired and creds.refresh_token:
-        creds.refresh(Request())
-        _save(creds, token)
+        try:
+            creds.refresh(Request())
+            _save(creds, token)
+        except RefreshError:
+            creds = None
     if not creds or not creds.valid:
         if not interactive:
             sys.exit(

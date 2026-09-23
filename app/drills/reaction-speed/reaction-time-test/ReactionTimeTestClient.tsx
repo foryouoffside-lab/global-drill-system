@@ -471,7 +471,7 @@ export default function ReactionTimeTestClient({ copy }: ReactionTimeTestClientP
     const resizeObserver = new ResizeObserver((entries) => {
       for (const entry of entries) {
         const { width, height } = entry.contentRect;
-        if (width > 0 && height > 0) {
+        if (width > 0 && height > 0 && (cvs.width !== Math.trunc(width) || cvs.height !== Math.trunc(height))) {
           cvs.width = width;
           cvs.height = height;
         }
@@ -534,7 +534,7 @@ export default function ReactionTimeTestClient({ copy }: ReactionTimeTestClientP
       // --- State Specific Professional Render ---
       if (e.state === 'TARGET') {
         ctx.fillStyle = "#ffffff";
-        ctx.font = "900 64px monospace";
+        ctx.font = '800 64px Inter, "Segoe UI", Arial, sans-serif';
         ctx.textAlign = "center";
         ctx.fillText(`${(e.targetTime / 1000).toFixed(3)}s`, cx, cy + 15);
 
@@ -596,12 +596,12 @@ export default function ReactionTimeTestClient({ copy }: ReactionTimeTestClientP
         const color = e.lastColor;
 
         ctx.fillStyle = "#ffffff";
-        ctx.font = "900 64px monospace";
+        ctx.font = '800 64px Inter, "Segoe UI", Arial, sans-serif';
         ctx.textAlign = "center";
         ctx.fillText(`${(e.clickedTime / 1000).toFixed(3)}s`, cx, cy - 5);
 
         ctx.fillStyle = color;
-        ctx.font = "bold 26px monospace";
+        ctx.font = '700 26px Inter, "Segoe UI", Arial, sans-serif';
         ctx.fillText(`${e.lastError > 0 ? '+' : ''}${e.lastError.toFixed(0)}ms`, cx, cy + 42);
 
         // Next round progress bar
@@ -758,8 +758,8 @@ export default function ReactionTimeTestClient({ copy }: ReactionTimeTestClientP
           {(gameState === 'playing' || gameState === 'countdown') && (
             <>
               <div className="absolute top-4 left-4 z-30 pointer-events-none">
-                <p className="text-[10px] font-semibold uppercase tracking-wider text-white/50 font-mono">{t('reactionTimeTest.score', 'Score')}</p>
-                <p className="text-2xl sm:text-3xl font-black text-white tabular-nums font-mono leading-tight">{uiScore}</p>
+                <p className="text-[10px] font-semibold uppercase tracking-wider text-white/50">{t('reactionTimeTest.score', 'Score')}</p>
+                <p className="text-2xl sm:text-3xl font-extrabold text-white tabular-nums leading-tight tracking-tight">{uiScore}</p>
               </div>
 
               {/* End Drill Action Button in HUD */}
@@ -834,7 +834,7 @@ export default function ReactionTimeTestClient({ copy }: ReactionTimeTestClientP
             onPointerLeave={() => {
               mousePosRef.current = null;
             }}
-            className={`block absolute top-0 left-0 w-full h-full z-10 touch-none ${gameState === 'playing' ? 'cursor-none' : 'cursor-pointer'}`}
+            className={`block absolute top-0 left-0 w-full h-full z-10 touch-none ${gameState === 'playing' ? 'cursor-crosshair' : 'cursor-pointer'}`}
           />
 
           {/* START CARD */}

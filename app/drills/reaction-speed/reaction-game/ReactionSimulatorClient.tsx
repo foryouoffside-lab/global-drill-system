@@ -116,7 +116,6 @@ export default function ReactionSimulatorClient({ copy }: ReactionSimulatorClien
   const [penaltyEnabled, setPenaltyEnabled] = useState(false);
   const [openAccordion, setOpenAccordion] = useState<string | null>(null);
   const [isMobile, setIsMobile] = useState<boolean>(false);
-  const [isPortrait, setIsPortrait] = useState<boolean>(false);
   const [countdownValue, setCountdownValue] = useState<number | string>(3);
 
   // HUD & Best Stats State
@@ -184,8 +183,6 @@ export default function ReactionSimulatorClient({ copy }: ReactionSimulatorClien
         const mobileDevice = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(ua) || (window.innerWidth < 768) || hasTouch;
         setIsMobile(mobileDevice);
 
-        const portrait = window.innerHeight > window.innerWidth;
-        setIsPortrait(portrait);
       };
 
       checkDeviceAndOrientation();
@@ -483,9 +480,14 @@ export default function ReactionSimulatorClient({ copy }: ReactionSimulatorClien
       if (!container) return;
       const rect = container.getBoundingClientRect();
       const dpr = Math.min(window.devicePixelRatio || 1, 2);
+      if (cvs.width === Math.trunc(rect.width * dpr) && cvs.height === Math.trunc(rect.height * dpr)) return;
       cvs.width = rect.width * dpr;
       cvs.height = rect.height * dpr;
       ctx.scale(dpr, dpr);
+      if (engine.current.targets.length) {
+        engine.current.targets = [];
+        engine.current.nextSpawnTime = performance.now() + 200;
+      }
     };
 
     updateSize();
@@ -686,11 +688,7 @@ export default function ReactionSimulatorClient({ copy }: ReactionSimulatorClien
         url: 'skilldrills.online/drills/reaction-speed/reaction-game'
       });
 
-      await shareScoreCard(canvas, {
-        title: ui.shareTitle,
-        text: ui.shareText.replace('{score}', String(uiScore)),
-        url
-      });
+      await shareScoreCard(url, canvas);
     } catch (err) {
       if (navigator.share) {
         navigator.share({
@@ -705,13 +703,6 @@ export default function ReactionSimulatorClient({ copy }: ReactionSimulatorClien
   return (
     <div className="min-h-screen bg-[#050508] text-white flex flex-col font-sans select-none">
       
-      {/* Mobile Orientation Alert */}
-      {isMobile && isPortrait && (
-        <div className="w-full bg-amber-500/10 border-b border-amber-500/20 px-4 py-2 text-center text-xs text-amber-300 flex items-center justify-center gap-2">
-          <span>{ui.rotate}</span>
-        </div>
-      )}
-
       {/* Main Container */}
       <main className="flex-1 max-w-6xl w-full mx-auto px-4 py-6 flex flex-col gap-6">
         
@@ -821,7 +812,7 @@ export default function ReactionSimulatorClient({ copy }: ReactionSimulatorClien
             onPointerLeave={() => {
               mousePosRef.current = null;
             }}
-            className={`block absolute top-0 left-0 w-full h-full z-10 touch-none ${gameState === 'playing' ? 'cursor-none' : 'cursor-crosshair'}`} 
+            className="block absolute top-0 left-0 w-full h-full z-10 touch-none cursor-crosshair"
           />
 
           {/* START CARD */}

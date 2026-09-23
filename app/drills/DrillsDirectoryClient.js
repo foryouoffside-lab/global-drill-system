@@ -6,7 +6,6 @@ import {
   Target, Zap, Activity, ShieldCheck, MousePointerClick, ArrowRight
 } from 'lucide-react';
 import SiteFooter from '@/components/SiteFooter';
-import Reveal from '@/components/Reveal';
 import DrillGlobalSettings from '@/components/drill/DrillGlobalSettings';
 import { DRILLS, DESKTOP_ONLY_CATEGORIES } from '@/lib/drillsRegistry';
 import { SITE_CATEGORIES, getCategoryCount, getCategoryDrills } from '@/lib/siteCategories';
@@ -70,7 +69,7 @@ export default function DrillsDirectoryClient({ faqs = [] }) {
       <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14 sm:py-16 relative z-10 w-full flex-1">
 
         {/* Hero Banner */}
-        <Reveal className="text-center max-w-3xl mx-auto mb-14 space-y-4">
+        <div className="text-center max-w-3xl mx-auto mb-14 space-y-4">
           <h1 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white uppercase tracking-tight leading-tight">
             {t('directory.h1Prefix', 'Free')} {t('directory.h1Highlight', 'Online Drills')}
           </h1>
@@ -90,11 +89,11 @@ export default function DrillsDirectoryClient({ faqs = [] }) {
               );
             })}
           </div>
-        </Reveal>
+        </div>
 
         {/* Category Cards Grid (Styled per Image 3 Reference) */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-20">
-          {baseCategories.map((cat, idx) => {
+          {baseCategories.map((cat) => {
             const Icon = cat.icon;
             const isDesktopOnly = DESKTOP_ONLY_CATEGORIES.includes(cat.cat);
             const catTitle = t('sectors.' + cat.cat + '.title', cat.name);
@@ -103,7 +102,7 @@ export default function DrillsDirectoryClient({ faqs = [] }) {
             const sampleDrills = getCategoryDrills(cat.cat).slice(0, 2);
 
             return (
-              <Reveal key={cat.cat} delay={idx * 40} className="h-full">
+              <div key={cat.cat} className="h-full">
                 <div
                   className="group relative isolate flex h-full flex-col justify-between overflow-hidden rounded-3xl border border-white/10 bg-[#0c0f1d]/90 backdrop-blur-xl p-6 sm:p-7 transition-all duration-300 hover:border-white/25 hover:-translate-y-1.5 shadow-xl hover:shadow-2xl"
                 >
@@ -168,22 +167,22 @@ export default function DrillsDirectoryClient({ faqs = [] }) {
                     </Link>
                   </div>
                 </div>
-              </Reveal>
+              </div>
             );
           })}
         </div>
 
         {/* Session preferences */}
-        <Reveal className="max-w-2xl mx-auto pb-4">
+        <div className="max-w-2xl mx-auto pb-4">
           <h2 className="text-xs font-mono font-bold uppercase tracking-widest text-ink-3 mb-3 text-center">
             Session preferences
           </h2>
           <DrillGlobalSettings />
-        </Reveal>
+        </div>
 
         {/* Frequently Asked Questions (SEO / AEO / GEO) */}
         {faqs?.length > 0 && (
-          <Reveal className="mb-14">
+          <div className="mb-14">
             <div className="rounded-3xl bg-[#0c0f1d]/90 border border-white/10 p-6 sm:p-8 backdrop-blur-xl shadow-xl">
               <div className="flex items-center gap-2 mb-6">
                 <ShieldCheck className="w-5 h-5 text-emerald-400" />
@@ -208,7 +207,7 @@ export default function DrillsDirectoryClient({ faqs = [] }) {
                 ))}
               </dl>
             </div>
-          </Reveal>
+          </div>
         )}
       </main>
 

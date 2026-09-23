@@ -631,11 +631,7 @@ export default function DualTargetFlowClient({ copy } = {}) {
         date: new Date().toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' }),
         url: 'skilldrills.online/drills/cognitive/attention/multi-tasking'
       });
-      await shareScoreCard(canvas, {
-        title: 'Multitasking Test — My Score',
-        text: `I scored ${uiScore} (Grade: ${analytics.grade?.letter || 'A'}, Lv. ${analytics.finalLevel}) on Multitasking Test at SkillDrills!`,
-        url
-      });
+      await shareScoreCard(url, canvas);
     } catch (e) {
       if (navigator.share) {
         navigator.share({ title: 'Multitasking Test Score', text: `I scored ${uiScore} on Multitasking Test!`, url }).catch(() => {});
