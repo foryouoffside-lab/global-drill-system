@@ -13,32 +13,42 @@ import { useCallback, useEffect, useRef } from 'react';
  *    layer runs everywhere, and the page behind it is scroll- and rubber-band
  *    locked for as long as it is up.
  *
- * 2. On top of that, on pointer-and-hover devices only, we also ask the browser
+ * 2. On top of that, wherever the browser supports it, we ask the browser
  *    to go actually fullscreen, which is the only way to get rid of the browser's
  *    own chrome — tab strip, address bar. Layer 1 fills the viewport; it cannot
  *    reach past it, and a drill with the address bar still overhead is not the
  *    fullscreen players expect.
  *
- * WHY LAYER 2 IS GATED TO POINTER DEVICES
- * On Android Chrome, `requestFullscreen()` makes the browser paint its own toast —
- * "skilldrills.online – to exit full screen, drag from the top and touch the back
- * button" — across the bottom of the screen, on top of the GET READY countdown.
- * That toast is browser chrome: no CSS or JS can style, move or dismiss it, and it
- * reappears on every drill start. A previous pass dropped the API site-wide to be
- * rid of it, which also cost desktop its real fullscreen. The gate keeps both: the
- * toast never fires on a touch device because we never ask there, and desktop gets
- * its chrome-free screen back. Touch devices keep layer 1, which is what they had.
+ * MOBILE FULLSCREEN
+ * A fixed overlay cannot cover mobile browser chrome and may keep stale viewport
+ * dimensions after rotation. Android therefore uses native element fullscreen.
+ * Browsers without that API (including older iPhone Safari versions) continue to
+ * use the full-viewport CSS layer as a safe fallback.
  *
  * Esc leaves the drill through useUnexpectedExitGuard, which listens for the key
  * itself; it does not ride on `fullscreenchange`.
  */
 
-// Desktop-shaped input. Android and iOS report `pointer: coarse` / no hover, so
-// this is false on exactly the devices whose browsers paint the exit toast. iOS
-// Safari has no element fullscreen at all, so it would be a no-op there anyway.
-function prefersNativeFullscreen(): boolean {
-  if (typeof window === 'undefined' || typeof window.matchMedia !== 'function') return false;
-  return window.matchMedia('(hover: hover) and (pointer: fine)').matches;
+// Android browsers generally support native element fullscreen. Older iPhone
+// Safari versions do not, so those devices automatically retain the CSS fallback.
+type WebkitFullscreenDocument = Document & {
+  webkitFullscreenElement?: Element | null;
+  webkitExitFullscreen?: () => Promise<void> | void;
+};
+
+type WebkitFullscreenElement = HTMLElement & {
+  webkitRequestFullscreen?: () => Promise<void> | void;
+};
+
+function fullscreenElement(): Element | null {
+  if (typeof document === 'undefined') return null;
+  return document.fullscreenElement || (document as WebkitFullscreenDocument).webkitFullscreenElement || null;
+}
+
+function supportsNativeFullscreen(): boolean {
+  if (typeof document === 'undefined') return false;
+  const root = document.documentElement as WebkitFullscreenElement;
+  return Boolean(root.requestFullscreen || root.webkitRequestFullscreen);
 }
 
 const FULLSCREEN_MARKER = 'data-skilldrills-native-fullscreen';
@@ -50,14 +60,19 @@ let nativeFullscreenRequestPending = false;
 export function requestNativeFullscreen(onEntered?: () => void): void {
   if (
     typeof document === 'undefined' ||
-    !prefersNativeFullscreen() ||
-    document.fullscreenElement ||
+    !supportsNativeFullscreen() ||
+    fullscreenElement() ||
     nativeFullscreenRequestPending
   ) return;
 
   let request: Promise<void> | undefined;
   try {
-    request = document.documentElement.requestFullscreen?.();
+    const root = document.documentElement as WebkitFullscreenElement;
+    if (root.requestFullscreen) {
+      request = root.requestFullscreen();
+    } else if (root.webkitRequestFullscreen) {
+      request = Promise.resolve(root.webkitRequestFullscreen());
+    }
   } catch {
     return;
   }
@@ -119,7 +134,7 @@ export default function useImmersiveMode(active: boolean): () => void {
     document.body.style.overflow = 'hidden';
     document.body.style.overscrollBehavior = 'none';
 
-    if (prefersNativeFullscreen() && !document.fullscreenElement) {
+    if (supportsNativeFullscreen() && !fullscreenElement()) {
       ensureNativeFullscreen();
     }
 
@@ -128,9 +143,11 @@ export default function useImmersiveMode(active: boolean): () => void {
       document.body.style.overscrollBehavior = overscrollBehavior;
       if (
         (enteredRef.current || document.documentElement.hasAttribute(FULLSCREEN_MARKER)) &&
-        document.fullscreenElement
+        fullscreenElement()
       ) {
-        document.exitFullscreen?.().catch(() => {});
+        const exit = document.exitFullscreen?.bind(document) ||
+          (document as WebkitFullscreenDocument).webkitExitFullscreen?.bind(document);
+        Promise.resolve(exit?.()).catch(() => {});
       }
       document.documentElement.removeAttribute(FULLSCREEN_MARKER);
       enteredRef.current = false;
