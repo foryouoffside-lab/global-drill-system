@@ -13,16 +13,14 @@ import { useCallback, useEffect, useRef } from 'react';
  *    layer runs everywhere, and the page behind it is scroll- and rubber-band
  *    locked for as long as it is up.
  *
- * 2. On pointer-and-hover devices, we also ask the browser
+ * 2. Wherever the browser supports it, we also ask the browser
  *    to go actually fullscreen, which is the only way to get rid of the browser's
  *    own chrome — tab strip, address bar. Layer 1 fills the viewport; it cannot
  *    reach past it, and a drill with the address bar still overhead is not the
  *    fullscreen players expect.
  *
- * MOBILE FULLSCREEN
- * Mobile uses the CSS layer. Native mobile fullscreen adds an unavoidable browser
- * "how to exit" notice and causes a visible viewport jump while entering. Dynamic
- * viewport units keep the CSS arena fitted when the phone rotates.
+ * Mobile browsers with element fullscreen use it so the drill covers the physical
+ * screen instead of being constrained by the browser's page viewport.
  *
  * Esc leaves the drill through useUnexpectedExitGuard, which listens for the key
  * itself; it does not ride on `fullscreenchange`.
@@ -43,11 +41,7 @@ function fullscreenElement(): Element | null {
 }
 
 function supportsNativeFullscreen(): boolean {
-  if (
-    typeof document === 'undefined' ||
-    typeof window.matchMedia !== 'function' ||
-    !window.matchMedia('(hover: hover) and (pointer: fine)').matches
-  ) return false;
+  if (typeof document === 'undefined') return false;
   const root = document.documentElement as WebkitFullscreenElement;
   return Boolean(root.requestFullscreen || root.webkitRequestFullscreen);
 }
