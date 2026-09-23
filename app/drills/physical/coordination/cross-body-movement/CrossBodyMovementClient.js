@@ -2,28 +2,27 @@
 import { isIdleFrameSkippable } from '@/lib/performance';
 
 import React, { useState, useEffect, useRef, useCallback } from 'react';
-import Link from 'next/link';
 
 import {
-  Activity, AlertCircle, ArrowRight, ChevronRight, Crosshair,
-  Eye, GraduationCap, Play, RefreshCw, Target,
-  Timer, TrendingUp, Trophy, Volume2, VolumeX,
-  Zap, ZapOff, Users, Share2, Sliders, Flame,
-  LogOut, Award, ShieldAlert, BarChart3, Info, Lightbulb, Move, GitBranch
+  Activity, GitBranch, LogOut, Move, RefreshCw,
+  Share2, TrendingUp, Users, Volume2, VolumeX, Zap, ZapOff
 } from 'lucide-react';
 
 import generateShareCard, { shareScoreCard } from '../../../../../components/ShareScoreCard';
 import { getPlayerName } from '../../../../../lib/leaderboard';
 import { drillAudio } from '../../../../../lib/drillAudio';
+import { useDrillSensitivity } from '../../../../../lib/drillSensitivity';
 import { drillFlash } from '../../../../../lib/drillFlash';
 import { MAX_LEVEL, getStartLevel, getNextLevel, getDifficultyProgress, getComboBonusLevel } from '../../../../../lib/drillDifficulty';
 import { getComboMultiplier, getFpsScoreGrade } from '../../../../../lib/scoringEngine';
-import { createBackdropCache, getCanvasDpr, drawPulseRing, drawTacticalTarget } from '../../../../../lib/canvasFx';
+import { createBackdropCache, getCanvasDpr, drawPulseRing, drawTacticalTarget, createHitRing, drawHitRings } from '../../../../../lib/canvasFx';
 import useUnexpectedExitGuard from '../../../../../lib/useUnexpectedExitGuard';
 import DrillFooter from '../../../../../components/drill/DrillFooter';
 import DrillCountdown from '../../../../../components/drill/DrillCountdown';
 import DrillAccordion from '../../../../../components/drill/DrillAccordion';
+import DrillRuleItem from '../../../../../components/drill/DrillRuleItem';
 import FpsStartCard from '../../../../../components/drill/FpsStartCard';
+import useImmersiveMode from '@/lib/useImmersiveMode';
 
 // ============================================================
 // TUNING CONSTANTS
@@ -113,13 +112,14 @@ const getDistToSegment = (px, py, x1, y1, x2, y2) => {
 // ============================================================
 // MAIN COMPONENT
 // ============================================================
-export default function CrossBodyMovementClient() {
+export default function CrossBodyMovementClient({ copy = {} } = {}) {
   const [gameState, setGameState] = useState('start'); // 'start' | 'countdown' | 'playing' | 'gameOver'
   const [isFullscreen, setIsFullscreen] = useState(false);
+  useImmersiveMode(isFullscreen); // locks the page behind while the drill fills the screen
   const [soundEnabled, setSoundEnabled] = useState(true);
   const [flashEnabled, setFlashEnabled] = useState(true);
   const [pointerLocked, setPointerLocked] = useState(false);
-  const [universalSens, setUniversalSens] = useState(1.0);
+  const universalSens = useDrillSensitivity();
   const [openAccordion, setOpenAccordion] = useState(null);
   const [isTouchOnlyDevice, setIsTouchOnlyDevice] = useState(false);
   const [countdownValue, setCountdownValue] = useState(3);
@@ -156,11 +156,9 @@ export default function CrossBodyMovementClient() {
     isConnecting: false,
     score: 0, level: 1, combo: 1.0, streak: 0, bestStreak: 0, timeLeft: DRILL_DURATION,
     connections: 0, misses: 0, totalAttempts: 0,
-    particles: [], screenShake: 0,
+    particles: [], hitRings: [], screenShake: 0,
     logicalWidth: 800, logicalHeight: 450, peakSpeed: 20
   });
-
-  const cmPer360 = (30 / universalSens).toFixed(1);
 
   const triggerFlash = useCallback((color = 'red') => {
     if (!drillFlash.isEnabled()) return;
@@ -177,15 +175,10 @@ export default function CrossBodyMovementClient() {
       const isTouchCapable = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
       setIsTouchOnlyDevice(isTouchCapable && !hasFinePointer);
 
-      try {
-        const savedSens = localStorage.getItem('crossBody_sens');
-        if (savedSens) setUniversalSens(parseFloat(savedSens));
-      } catch (e) {}
-
       const saved = getSavedData();
       setBestScore(saved.bestScore || 0);
       setBestCombo(saved.bestCombo || 0);
-      setBestLevel(saved.bestLevel || 1);
+      setBestLevel(Math.floor(saved.bestLevel || 1));
     }
   }, []);
 
@@ -193,18 +186,6 @@ export default function CrossBodyMovementClient() {
     return () => {
       countdownTimeoutsRef.current.forEach(clearTimeout);
     };
-  }, []);
-
-  useEffect(() => {
-    if (gameState !== 'playing') {
-      try { localStorage.setItem('crossBody_sens', universalSens.toString()); } catch (e) {}
-    }
-  }, [universalSens, gameState]);
-
-  useEffect(() => {
-    const handleFullscreenChange = () => setIsFullscreen(!!document.fullscreenElement);
-    document.addEventListener('fullscreenchange', handleFullscreenChange);
-    return () => document.removeEventListener('fullscreenchange', handleFullscreenChange);
   }, []);
 
   const spawnNodes = useCallback((w, h, level, streak) => {
@@ -229,9 +210,7 @@ export default function CrossBodyMovementClient() {
     countdownTimeoutsRef.current = [];
     startingRef.current = false;
 
-    if (document.fullscreenElement) {
-      await document.exitFullscreen().catch(() => {});
-    }
+    setIsFullscreen(false);
     if (document.pointerLockElement) {
       document.exitPointerLock();
     }
@@ -275,7 +254,7 @@ export default function CrossBodyMovementClient() {
     if (document.pointerLockElement) document.exitPointerLock();
 
     const e = engine.current;
-    const accuracyPct = e.totalAttempts > 0 ? Math.round((e.connections / e.totalAttempts) * 100) : 100;
+    const accuracyPct = e.totalAttempts > 0 ? Math.round((e.connections / e.totalAttempts) * 100) : 0;
     const rating = getFpsScoreGrade(e.score, ELITE_SCORE);
 
     const grade = { letter: rating.grade, label: rating.label, color: rating.color };
@@ -286,7 +265,7 @@ export default function CrossBodyMovementClient() {
       missedSequences: e.misses,
       peakSpeed: Math.round(e.peakSpeed),
       maxCombo: Math.round(e.bestStreak),
-      finalLevel: e.level,
+      finalLevel: Math.floor(e.level),
       grade
     });
 
@@ -296,7 +275,7 @@ export default function CrossBodyMovementClient() {
     const isNewHigh = e.score > prevSaved.bestScore;
     setIsNewBest(isNewHigh);
 
-    const runBestLevel = Math.max(prevSaved.bestLevel, bestLevelRunRef.current);
+    const runBestLevel = Math.floor(Math.max(prevSaved.bestLevel, bestLevelRunRef.current));
     const updatedData = {
       bestScore: Math.max(prevSaved.bestScore, e.score),
       bestCombo: Math.max(prevSaved.bestCombo, e.bestStreak),
@@ -340,17 +319,13 @@ export default function CrossBodyMovementClient() {
       isConnecting: false,
       score: 0, level: startLevel, combo: 1.0, streak: 0, bestStreak: 0, timeLeft: DRILL_DURATION,
       connections: 0, misses: 0, totalAttempts: 0,
-      particles: [], screenShake: 0,
+      particles: [], hitRings: [], screenShake: 0,
       logicalWidth: w, logicalHeight: h, peakSpeed: getLevelConfig(startLevel, 0).pathTolerance
     };
 
     spawnNodes(w, h, startLevel, 0);
 
-    try {
-      if (containerRef.current && !document.fullscreenElement) {
-        await containerRef.current.requestFullscreen();
-      }
-    } catch(e) {}
+    setIsFullscreen(true);
 
     setGameState('countdown');
     setCountdownValue(3);
@@ -512,6 +487,7 @@ export default function CrossBodyMovementClient() {
             }
 
             createExplosion(e.nodeB.x, e.nodeB.y, '#10b981');
+            e.hitRings.push(createHitRing(e.nodeB.x, e.nodeB.y, cfg.nodeRadius, '#10b981'));
             triggerFlash('green');
             drillAudio.playHit();
 
@@ -597,6 +573,8 @@ export default function CrossBodyMovementClient() {
       }
       ctx.globalAlpha = 1.0;
 
+      drawHitRings(ctx, e.hitRings, dt);
+
       ctx.restore();
       if (gameState !== 'gameOver') {
         animationRef.current = requestAnimationFrame(loop);
@@ -612,6 +590,7 @@ export default function CrossBodyMovementClient() {
   }, [gameState, endGame, applyPenalty, spawnNodes]);
 
   const shareScore = useCallback(async () => {
+    setIsFullscreen(false);
     const url = 'https://skilldrills.online/drills/physical/coordination/cross-body-movement';
     try {
       const canvas = generateShareCard({
@@ -640,38 +619,37 @@ export default function CrossBodyMovementClient() {
     <div className="min-h-screen bg-[#050508] text-white flex flex-col font-sans select-none">
       {/* ── MAIN CONTENT AREA ── */}
       <main className="flex-1 max-w-6xl w-full mx-auto px-4 py-6 flex flex-col gap-6">
-        {/* Title */}
+        {/* Title & AIO Header */}
         {!isFullscreen && (
-          <div className="text-center">
-            <h1 className="text-2xl sm:text-3xl font-black tracking-tight text-white uppercase">
-              Cross-Body Movement Pro
-              <span data-seo-kw="1" className="block text-sm font-semibold text-slate-400 mt-1 normal-case tracking-normal">
-                Hand Eye Coordination Game
-              </span>
+          <div className="text-left">
+            <h1 className="text-2xl sm:text-3xl font-black tracking-tight text-white">
+              <span data-seo-kw="1">{copy?.title || "Hand Eye Coordination Game"}</span>
+              {copy?.subtitle && (
+                <span className="block text-sm font-semibold text-slate-400 mt-1">
+                  {copy.subtitle}
+                </span>
+              )}
             </h1>
-            <p className="text-xs text-slate-400 mt-1">
-              Bilateral Motor Control &amp; Diagonal Vector Sweeping • 15 Levels
-            </p>
           </div>
         )}
 
         {/* Live Stat Cards */}
         {!isFullscreen && (
-          <div className="grid grid-cols-4 gap-2.5 max-w-2xl mx-auto w-full">
-            <div className="bg-[#0d0d18] border border-white/5 rounded-xl p-2.5 text-center">
-              <div className="text-[10px] uppercase font-bold text-slate-500 tracking-wider">Score</div>
+          <div className="grid grid-cols-4 gap-2 w-full">
+            <div className="bg-white/[0.02] border border-white/[0.06] rounded-xl p-2.5 text-center">
+              <div className="text-[10px] uppercase font-bold text-slate-400 tracking-wider">{copy?.hudLabels?.score || "Score"}</div>
               <div className="text-lg sm:text-xl font-black text-white tabular-nums">{uiScore}</div>
             </div>
-            <div className="bg-[#0d0d18] border border-white/5 rounded-xl p-2.5 text-center">
-              <div className="text-[10px] uppercase font-bold text-slate-500 tracking-wider">Time</div>
+            <div className="bg-white/[0.02] border border-white/[0.06] rounded-xl p-2.5 text-center">
+              <div className="text-[10px] uppercase font-bold text-slate-400 tracking-wider">{copy?.hudLabels?.timeLeft || "Time Left"}</div>
               <div className={`text-lg sm:text-xl font-black tabular-nums ${uiTimeLeft <= 10 ? 'text-red-400 animate-pulse' : 'text-white'}`}>{uiTimeLeft}s</div>
             </div>
-            <div className="bg-[#0d0d18] border border-white/5 rounded-xl p-2.5 text-center">
-              <div className="text-[10px] uppercase font-bold text-slate-500 tracking-wider">Best Score</div>
+            <div className="bg-white/[0.02] border border-white/[0.06] rounded-xl p-2.5 text-center">
+              <div className="text-[10px] uppercase font-bold text-slate-400 tracking-wider">{copy?.hudLabels?.bestScore || "Best Score"}</div>
               <div className="text-lg sm:text-xl font-black text-amber-400 tabular-nums">{bestScore}</div>
             </div>
-            <div className="bg-[#0d0d18] border border-white/5 rounded-xl p-2.5 text-center">
-              <div className="text-[10px] uppercase font-bold text-slate-500 tracking-wider">Best Combo</div>
+            <div className="bg-white/[0.02] border border-white/[0.06] rounded-xl p-2.5 text-center">
+              <div className="text-[10px] uppercase font-bold text-slate-400 tracking-wider">{copy?.hudLabels?.bestCombo || "Best Combo"}</div>
               <div className="text-lg sm:text-xl font-black text-rose-400 tabular-nums">{bestCombo}x</div>
             </div>
           </div>
@@ -681,7 +659,7 @@ export default function CrossBodyMovementClient() {
         <div 
           ref={containerRef} 
           onContextMenu={(e) => { if (gameActiveRef.current) e.preventDefault(); }}
-          className={`relative overflow-hidden flex flex-col transition-all duration-150 select-none bg-[#080811] text-white border border-white/10 ${
+          className={`overflow-hidden flex flex-col select-none bg-[#080811] text-white border border-white/10 ${
             isFullscreen 
               ? 'fixed inset-0 z-[100] w-screen h-[100dvh] bg-[#080811] rounded-none border-none flex flex-col items-center justify-center' 
               : 'w-full rounded-2xl bg-[#080811] aspect-video min-h-[460px] sm:min-h-[500px] max-h-[88vh] relative overflow-hidden flex flex-col'
@@ -750,18 +728,8 @@ export default function CrossBodyMovementClient() {
             <FpsStartCard
               icon={Move}
               accent="cyan"
-              title="Cross-Body Movement Pro"
-              subtitle="Bilateral Motor Control & Diagonal Vector Sweeping • 15 Levels"
-              rules={[
-                { icon: Target, accent: 'cyan', title: 'Activate Node A', text: 'Touch the starting cyan node with your crosshair to initiate vector line' },
-                { icon: Zap, accent: 'emerald', title: 'Sweep to Node B', text: 'Sweep directly across the canvas corridor to reach magenta target node' },
-              ]}
-              sensitivity={{ value: universalSens, onChange: setUniversalSens, cmPer360 }}
-              stats={[
-                { icon: Trophy, label: 'Best Score', value: bestScore, color: 'text-white', accent: 'slate' },
-                { icon: Flame, label: 'Best Combo', value: `${bestCombo}x`, color: 'text-rose-400', accent: 'rose' },
-                { icon: TrendingUp, label: 'Best Level', value: `Lv. ${bestLevel}`, color: 'text-blue-400', accent: 'blue' },
-              ]}
+              title={copy?.title || "Hand Eye Coordination Game"}
+              subtitle={copy?.subtitle || "Bilateral Motor Control & Midline Crossing Sweeps • 15 Levels"}
               isTouchOnlyDevice={isTouchOnlyDevice}
               onStart={enterDrill}
             />
@@ -836,7 +804,7 @@ export default function CrossBodyMovementClient() {
                   <button 
                     onClick={handleExitDrill} 
                     className="w-11 flex-shrink-0 rounded-[13px] bg-white/[0.04] border border-white/10 flex items-center justify-center text-slate-400 hover:text-white cursor-pointer active:scale-90 transition-transform" 
-                    title="Exit Fullscreen & Return"
+                    title="Exit Drill & Return"
                   >
                     <LogOut className="w-4 h-4 text-red-400" />
                   </button>
@@ -847,81 +815,86 @@ export default function CrossBodyMovementClient() {
           )}
         </div>
 
+        {/* Drill Caption */}
+        {!isFullscreen && (
+          <p className="text-xs text-slate-400 leading-relaxed -mt-2">
+            Sweep the cursor across the screen to connect opposite-side nodes before the corridor narrows.
+          </p>
+        )}
+
         {/* ── ACCORDIONS ── */}
         {!isFullscreen && (
           <div className="[&>div]:!mt-0">
             <DrillAccordion
               id="rules"
-              title="Drill Instructions & Scoring System"
+              title={copy?.rulesTitle || "Drill Instructions & Scoring System"}
               isOpen={openAccordion === 'rules'}
               onToggle={() => setOpenAccordion(openAccordion === 'rules' ? null : 'rules')}
             >
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
-                {RULES_ITEMS.map((item, i) => (
-                  <div key={i} className="bg-black p-4 rounded-xl border border-white/10">
-                    <p className="text-sm font-bold text-white mb-1">{item.title}</p>
-                    <p className="text-xs text-gray-300 leading-relaxed">{item.text}</p>
-                  </div>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-2.5 sm:gap-3 font-sans">
+                {(copy?.rules || RULES_ITEMS).map((item, i) => (
+                  <DrillRuleItem key={i} num={item.num || String(i + 1)} title={item.title} detail={item.text} />
                 ))}
               </div>
             </DrillAccordion>
 
             <DrillAccordion
               id="about"
-              title="About Cross-Body Movement Pro"
+              title={copy?.aboutTitle || "About Hand Eye Coordination Game"}
               isOpen={openAccordion === 'about'}
               onToggle={() => setOpenAccordion(openAccordion === 'about' ? null : 'about')}
             >
-              <div className="space-y-4">
-                {ABOUT_TEXT.split('\n\n').map((para, i) => (
-                  <p key={i} className="text-sm leading-relaxed text-gray-300">{para}</p>
-                ))}
-              </div>
-            </DrillAccordion>
+              <div className="space-y-6">
+                <div className="space-y-3">
+                  <h3 className="text-base font-bold text-white flex items-center gap-2">
+                    <GitBranch className="w-4 h-4 text-cyan-400" /> {copy?.aboutHeading || "Bilateral Motor Integration & Contralateral Reaching"}
+                  </h3>
+                  {copy?.aboutText ? (
+                    <p className="text-sm leading-relaxed text-gray-300">{copy.aboutText}</p>
+                  ) : (
+                    <>
+                      <p className="text-sm leading-relaxed text-gray-300">
+                        Crossing the midline means reaching to the side of space opposite the hand doing the reaching. It is measurably harder: reaches to contralateral targets are slower and less accurate than reaches to targets on the same side as the hand (Carey, Hargreaves &amp; Goodale, 1996). Each sweep here is also a Fitts&apos;s Law movement &mdash; time grows with the log of distance divided by target width (Fitts, 1954) &mdash; and the corridor narrows to 4 px, so the cost of the crossing rises as the session runs.
+                      </p>
+                      <p className="text-sm leading-relaxed text-gray-300">
+                        The <strong>Hand Eye Coordination Game</strong> (Cross-Body Movement) trains bilateral motor control, cross-body diagonal mouse sweeps, and high-velocity vector line tracking. Players touch edge nodes to activate connection vectors and sweep across the body midline to reach opposite-side target nodes.
+                      </p>
+                      <p className="text-sm leading-relaxed text-gray-300">
+                        Grounded in A. Jean Ayres&apos;s (1972) sensory integration theory, Paul Fitts&apos;s (1954) law of movement amplitude, and Robert Woodworth&apos;s (1899) voluntary movement framework, this drill stimulates interhemispheric transfer via the corpus callosum. As difficulty scales to Level 15+, corridor tolerances constrict from 10px down to 4px and target nodes shrink, requiring rapid ballistic arm translation coupled with micrometric terminal finger deceleration.
+                      </p>
+                    </>
+                  )}
+                </div>
 
-            <DrillAccordion
-              id="faq"
-              title="Frequently Asked Questions"
-              isOpen={openAccordion === 'faq'}
-              onToggle={() => setOpenAccordion(openAccordion === 'faq' ? null : 'faq')}
-            >
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                {FAQ_ITEMS.map((item, i) => (
-                  <div key={i} className="bg-[#05060b] border border-gray-800 rounded-xl p-5">
-                    <h4 className="text-sm font-bold text-gray-200 mb-2">{item.q}</h4>
-                    <p className="text-xs text-gray-400 leading-relaxed">{item.a}</p>
-                  </div>
-                ))}
+                <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                  {(copy?.aboutCards || [
+                    {
+                      title: "Target Audience",
+                      desc: "Competitive gamers training large 180° flick resets, athletic coordination trainees building bilateral integration, and desk workers restoring upper-limb motor mobility."
+                    },
+                    {
+                      title: "Neurological Benefits",
+                      desc: "Interhemispheric neural activation, cross-midline spatial integration, agonist-antagonist deceleration control, and precision diagonal trajectory tracking."
+                    },
+                    {
+                      title: "Dynamic Difficulty",
+                      desc: "Corridor tolerance tightens from 10px down to 4px, target nodes shrink from 16px to 8px, and diagonal vectors span extreme screen corners."
+                    }
+                  ]).map((card, i) => (
+                    <div key={i} className="p-4 rounded-xl border border-white/10 bg-white/[0.02]">
+                      <div className="flex items-center gap-2.5 mb-2">
+                        <div className={`w-7 h-7 rounded-lg ${i === 0 ? 'bg-blue-600' : i === 1 ? 'bg-emerald-600' : 'bg-cyan-600'} flex items-center justify-center`}>
+                          {i === 0 ? <Users className="w-3.5 h-3.5 text-white" /> : i === 1 ? <TrendingUp className="w-3.5 h-3.5 text-white" /> : <Activity className="w-3.5 h-3.5 text-white" />}
+                        </div>
+                        <h4 className="text-xs font-bold text-white">{card.title}</h4>
+                      </div>
+                      <p className="text-xs text-gray-300 leading-relaxed">{card.desc}</p>
+                    </div>
+                  ))}
+                </div>
               </div>
             </DrillAccordion>
           </div>
-        )}
-
-        {/* ── RELATED PHYSICAL & REFLEX DRILLS ── */}
-        {!isFullscreen && (
-          <section className="mt-4">
-            <h2 className="text-sm font-bold text-slate-400 uppercase tracking-wider mb-3 font-sans">
-              Related Physical &amp; Reflex Drills
-            </h2>
-            <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
-              {RELATED_DRILLS.map((drill) => (
-                <Link
-                  key={drill.id}
-                  href={drill.href}
-                  className="group bg-[#0c0c16] border border-white/5 hover:border-cyan-500/40 rounded-xl p-3.5 transition-all duration-200 hover:-translate-y-0.5 flex flex-col justify-between"
-                >
-                  <div>
-                    <div className="text-[10px] font-bold text-cyan-400 uppercase tracking-wider mb-1">{drill.cat}</div>
-                    <div className="text-xs font-bold text-white group-hover:text-cyan-300 transition-colors">{drill.name}</div>
-                    <div className="text-[11px] text-slate-400 mt-1 line-clamp-2 leading-relaxed">{drill.desc}</div>
-                  </div>
-                  <div className="text-[10px] font-bold text-slate-500 group-hover:text-cyan-400 mt-3 flex items-center gap-1 transition-colors">
-                    Train Drill <span>→</span>
-                  </div>
-                </Link>
-              ))}
-            </div>
-          </section>
         )}
 
         {/* ── FOOTER ── */}

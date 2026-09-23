@@ -7,32 +7,39 @@ import Link from 'next/link';
 import {
   Activity, AlertCircle, ArrowRight, ChevronRight, Crosshair,
   Eye, GraduationCap, Play, RefreshCw, Target,
-  Timer, TrendingUp, Trophy, Volume2, VolumeX,
+  Timer, Volume2, VolumeX,
   Zap, ZapOff, Users, Share2, Sliders,
-  LogOut, Award, ShieldAlert, BarChart3, Info, Lightbulb, Flame
+  LogOut, Award, ShieldAlert, BarChart3, Info, Lightbulb
 } from 'lucide-react';
 
 import generateShareCard, { shareScoreCard } from '../../../../../components/ShareScoreCard';
 import { getPlayerName } from '../../../../../lib/leaderboard';
 import { drillAudio } from '../../../../../lib/drillAudio';
+import { useDrillSensitivity } from '../../../../../lib/drillSensitivity';
 import { drillFlash } from '../../../../../lib/drillFlash';
 import { drillTimeout } from '../../../../../lib/drillTimeout';
-import { MAX_LEVEL, getStartLevel, getNextLevel, getDifficultyProgress, getComboBonusLevel } from '../../../../../lib/drillDifficulty';
+import { drillPenalty } from '../../../../../lib/drillPenalty';
+import { MAX_LEVEL, getStartLevel, getDifficultyProgress, ramp } from '../../../../../lib/drillDifficulty';
 import { getComboMultiplier, getFpsScoreGrade } from '../../../../../lib/scoringEngine';
-import { createBackdropCache, getCanvasDpr, drawPulseRing, drawTacticalTarget } from '../../../../../lib/canvasFx';
+import { createBackdropCache, getCanvasDpr, drawPulseRing, drawTacticalTarget, createHitRing, drawHitRings } from '../../../../../lib/canvasFx';
 import useUnexpectedExitGuard from '../../../../../lib/useUnexpectedExitGuard';
 import DrillFooter from '../../../../../components/drill/DrillFooter';
 import DrillCountdown from '../../../../../components/drill/DrillCountdown';
 import DrillAccordion from '../../../../../components/drill/DrillAccordion';
+import DrillRuleItem from '../../../../../components/drill/DrillRuleItem';
 import FpsStartCard from '../../../../../components/drill/FpsStartCard';
+import DrillResultCard from '../../../../../components/drill/DrillResultCard';
+import useImmersiveMode from '@/lib/useImmersiveMode';
 
 // ============================================================
 // TUNING CONSTANTS
 // ============================================================
-const DRILL_DURATION = 45; // 45 seconds fixed duration
-const POINTS_PER_LEVEL = 250; // Aggressive progression to L15
-const ELITE_SCORE = 17000; // Target score for S grade
-const STORAGE_KEY = 'skilldrills_physical_speed_drill_v3';
+const DRILL_DURATION = 45; // starting clock only; a run grows past this
+const POINTS_PER_LEVEL = 1750; // 250 -> 1750 (7x)
+const ELITE_SCORE = 24000; // 17000 -> 24000 (1.4x)
+const TIME_PER_HIT = 2; // +2s on target hit, capped at 60s
+const TIME_PENALTY = 1; // -1s on miss / target expiry (opt-in gated)
+const STORAGE_KEY = 'skilldrills_physical_speed_drill_v4';
 
 const getSavedData = () => {
   try {
@@ -50,48 +57,63 @@ const saveData = (data) => {
   } catch (e) {}
 };
 
+// Continuous unbounded difficulty with streak heat
+const getLevelConfig = (level, combo = 0) => {
+  const p = getDifficultyProgress(level); // 0 at L1, 1 at L15, unbounded above
+  const heat = (getComboMultiplier(combo) - 1) / 2;
+  return {
+    maxRadius: Math.max(10, ramp(32, 10, p) * (1 - heat * 0.15)),
+    speedMulti: ramp(1.0, 3.8, p) * (1 + heat * 0.25),
+    shrinkSpeedFactor: ramp(0.6, 2.2, p) * (1 + heat * 0.20),
+  };
+};
 
-// ============================================================
-// ACCORDION DATA
-// ============================================================
 const RULES_ITEMS = [
-  { title: "Target Acquisition", text: "Click moving shrinking targets before radius decays to zero." },
+  { title: "Target Acquisition", text: "Click moving shrinking targets before radius decays to zero (+2s per hit, max 60s). Each hit scores 100 points multiplied by your combo and level." },
   { title: "Combo Multiplier", text: "Chain unbroken target hits to build combo multiplier up to 3.0x max." },
-  { title: "Level Progression", text: "Score increases level every 250 PTS. Target velocity & shrink rate accelerate." },
-  { title: "Miss / Target Expiry", text: "Missing a target or letting target shrink to zero resets combo streak to 1.0x." }
-];
-
-const FAQ_ITEMS = [
-  { q: "What is the Speed Drill reflex exercise?", a: "Speed Drill is a high-velocity target acquisition exercise that challenges players to click moving, shrinking targets before they vanish. It measures raw reaction speed, click timing, and tracking precision." },
-  { q: "How do target mechanics work?", a: "Yellow targets spawn with random initial velocities and bounce off canvas borders while shrinking over time. You must acquire and click each target before its radius reaches zero." },
-  { q: "How does difficulty scale in Speed Drill?", a: "As your score increases, the level rises up to Level 15. Initial target sizes shrink, target movement speed accelerates up to 3.5x, and target shrinking rates increase." },
-  { q: "What happens when I miss or let a target expire?", a: "Missing a target or letting a target shrink to zero resets your combo multiplier back to 1.0x and triggers a red flash overlay. There are no score deductions or time penalties." },
-  { q: "How long does each session run?", a: "Each session runs for a fixed 45 seconds. The game timer counts down steadily from 45s to 0s, providing a standard, reproducible performance benchmark." },
-  { q: "Does Speed Drill improve gaming performance?", a: "Yes. Rapid target acquisition and micro-burst clicking translate directly to faster time-to-kill (TTK) and sharper flick timing in FPS games like Valorant, CS2, and Apex Legends." },
-  { q: "What is a good score in Speed Drill?", a: "Scoring 8,000+ points earns a Gold or Platinum grade, while reaching 17,000+ points with 90%+ accuracy places you in the Master tier." },
-  { q: "Do I need special hardware to practice this drill?", a: "No special hardware is required. Any standard computer mouse with 1:1 raw input support works ideally with our pointer lock system." },
-  { q: "Is Speed Drill free to play?", a: "Yes, Speed Drill on SkillDrills is 100% free, ad-free, and runs entirely in your web browser with zero downloads." },
-  { q: "How often should I practice this drill?", a: "Practicing 5 to 10 minutes daily is recommended for optimal neuromuscular adaptation and consistent click timing improvement." }
-];
-
-const RELATED_DRILLS = [
-  { id: "stability-challenge", name: "Stability Challenge", cat: "Physical Balance", desc: "Test static and dynamic balance holding capabilities.", href: "/drills/physical/balance-training/stability-challenge" },
-  { id: "complex-pattern", name: "Complex Pattern", cat: "Physical Coordination", desc: "Train complex multi-limb movement patterns.", href: "/drills/physical/coordination/complex-pattern" },
-  { id: "cross-body-movement", name: "Cross-Body Movement", cat: "Physical Coordination", desc: "Improve bilateral motor coordination and cross-body tracking.", href: "/drills/physical/coordination/cross-body-movement" },
-  { id: "dynamic-grid-evasion", name: "Dynamic Grid Evasion", cat: "Physical Coordination", desc: "Evade dynamic grid hazards with rapid motor adjustments.", href: "/drills/physical/coordination/dynamic-grid-evasion" },
-  { id: "jump-sequence", name: "Jump Sequence Pro", cat: "Physical Fitness", desc: "Vertical trajectory & mid-air steering exercise.", href: "/drills/physical/fitness/jump-sequence" }
+  { title: "Level Progression", text: "Score increases level continuously. Target velocity & shrink rate accelerate dynamically." },
+  { title: "Miss / Target Expiry", text: "Missing a target or letting target shrink to zero resets combo streak (and deducts 0.8s if enabled in settings)." }
 ];
 
 // ============================================================
-// MAIN COMPONENT
+// ABOUT & BIOMECHANICAL RESEARCH DATA
 // ============================================================
-export default function SpeedDrillClient() {
+const ABOUT_SECTIONS = [
+  {
+    icon: Crosshair,
+    title: "Ballistic Motor Flicks & Sub-Second Target Acquisition",
+    subtitle: "Woodworth two-component motor control under extreme speed demands",
+    content: "Rapid target acquisition relies on Woodworth\'s (1899) classic two-phase model: an initial open-loop ballistic motor impulse that snaps the cursor into the target vicinity, followed by fine visual adjustments before executing the click. As velocity scales up to 3.8x, the motor cortex minimizes dwell time between target detection and trigger execution. The movement arrives in two parts — a fast ballistic impulse, then a slower visually guided correction (Woodworth, 1899) — and it is the correction that shrinking targets make expensive."
+  },
+  {
+    icon: Target,
+    title: "Shrinking Spatial Boundaries & Fitts\'s Law Index of Difficulty",
+    subtitle: "Logarithmic speed-accuracy tradeoffs during target decay",
+    content: "Each target shrinks continuously from spawn until expiration. According to Fitts\'s Law (1954), the index of difficulty increases logarithmically as target width (W) constricts. Players must strike a balance between striking early at larger diameters versus waiting for stabilized tracking at smaller radii. Fitts's Law sets the floor: movement time grows with the logarithm of the distance to a target divided by its width, so a target half the size costs about the same extra time as one twice as far away (Fitts, 1954)."
+  },
+  {
+    icon: Eye,
+    title: "Pre-Attentive Visual Saliency & Peripheral Detection",
+    subtitle: "Feature integration and rapid covert orienting",
+    content: "Formulated by Treisman & Gelade (1980), high-contrast moving targets trigger bottom-up visual saliency maps in the superior colliculus and parietal cortex. Peripheral vision flags target trajectory shifts instantly, directing saccadic eye movements to guide motor flick execution."
+  },
+  {
+    icon: Timer,
+    title: "Optical Tau & Time-to-Contact Interception Margin",
+    subtitle: "Retinal expansion rate analysis before target extinction",
+    content: "The visual system gauges target expiration via optical tau (τ), the inverse rate of retinal boundary decay (Lee, 1976). Accurate estimation of remaining time prevents premature frantic clicking or fatal hesitation, sustaining unbroken combo multipliers."
+  }
+];
+
+export default function SpeedDrillClient({ copy = {} } = {}) {
   const [gameState, setGameState] = useState('start'); // 'start' | 'countdown' | 'playing' | 'gameOver'
   const [isFullscreen, setIsFullscreen] = useState(false);
+  useImmersiveMode(isFullscreen); // locks the page behind while the drill fills the screen
   const [soundEnabled, setSoundEnabled] = useState(true);
   const [flashEnabled, setFlashEnabled] = useState(true);
+  const [penaltyEnabled, setPenaltyEnabled] = useState(false);
   const [pointerLocked, setPointerLocked] = useState(false);
-  const [universalSens, setUniversalSens] = useState(1.0);
+  const universalSens = useDrillSensitivity();
   const [openAccordion, setOpenAccordion] = useState(null);
   const [isTouchOnlyDevice, setIsTouchOnlyDevice] = useState(false);
   const [countdownValue, setCountdownValue] = useState(3);
@@ -100,6 +122,7 @@ export default function SpeedDrillClient() {
   // HUD & Best Stats State
   const [uiScore, setUiScore] = useState(0);
   const [uiTimeLeft, setUiTimeLeft] = useState(DRILL_DURATION);
+  const [uiLevel, setUiLevel] = useState(1);
   const [bestScore, setBestScore] = useState(0);
   const [bestCombo, setBestCombo] = useState(0);
   const [bestLevel, setBestLevel] = useState(1);
@@ -129,11 +152,9 @@ export default function SpeedDrillClient() {
     spawnTime: 0,
     score: 0, level: 1, combo: 0, timeLeft: DRILL_DURATION,
     hits: 0, misses: 0, bestStreak: 0, bestReactionTime: 0, totalActions: 0,
-    particles: [], hitMarkers: [], screenShake: 0,
+    particles: [], hitMarkers: [], hitRings: [], screenShake: 0,
     logicalWidth: 800, logicalHeight: 450, peakSpeed: 1.0
   });
-
-  const cmPer360 = (30 / universalSens).toFixed(1);
 
   const triggerFlash = useCallback(() => {
     if (!drillFlash.isEnabled()) return;
@@ -146,14 +167,10 @@ export default function SpeedDrillClient() {
     if (typeof window !== 'undefined') {
       setSoundEnabled(drillAudio.isEnabled());
       setFlashEnabled(drillFlash.isEnabled());
+      setPenaltyEnabled(drillPenalty.isEnabled(TIME_PER_HIT === 2));
       const hasFinePointer = window.matchMedia('(pointer: fine)').matches;
       const isTouchCapable = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
       setIsTouchOnlyDevice(isTouchCapable && !hasFinePointer);
-
-      try {
-        const savedSens = localStorage.getItem('speedDrill_sens');
-        if (savedSens) setUniversalSens(parseFloat(savedSens));
-      } catch (e) {}
 
       const saved = getSavedData();
       setBestScore(saved.bestScore || 0);
@@ -168,27 +185,14 @@ export default function SpeedDrillClient() {
     };
   }, []);
 
-  useEffect(() => {
-    if (gameState !== 'playing') {
-      try { localStorage.setItem('speedDrill_sens', universalSens.toString()); } catch (e) {}
-    }
-  }, [universalSens, gameState]);
-
-  useEffect(() => {
-    const handleFullscreenChange = () => setIsFullscreen(!!document.fullscreenElement);
-    document.addEventListener('fullscreenchange', handleFullscreenChange);
-    return () => document.removeEventListener('fullscreenchange', handleFullscreenChange);
-  }, []);
-
   const handleExitDrill = useCallback(async () => {
     markIntentionalExit();
     countdownTimeoutsRef.current.forEach(clearTimeout);
     countdownTimeoutsRef.current = [];
     startingRef.current = false;
+    gameActiveRef.current = false;
 
-    if (document.fullscreenElement) {
-      await document.exitFullscreen().catch(() => {});
-    }
+    setIsFullscreen(false);
     if (document.pointerLockElement) {
       document.exitPointerLock();
     }
@@ -200,27 +204,9 @@ export default function SpeedDrillClient() {
     onUnexpectedExit: handleExitDrill,
   });
 
-  const resumeDrill = useCallback(async () => {
-    if (containerRef.current && !document.fullscreenElement) {
-      try { await containerRef.current.requestFullscreen(); } catch (e) {}
-    }
-    if (canvasRef.current && !document.pointerLockElement) {
-      try { await canvasRef.current.requestPointerLock(); } catch (e) {}
-    }
-  }, []);
-
-  const getLevelConfig = (level) => {
-    const p = getDifficultyProgress(level);
-    return {
-      maxRadius: Math.max(14, 45 - p * 30),
-      speedMulti: 1.0 + p * 2.5,
-      shrinkSpeedFactor: 0.6 + p * 1.4,
-    };
-  };
-
   const spawnTarget = useCallback((width, height, currentLevel) => {
     const e = engine.current;
-    const config = getLevelConfig(currentLevel);
+    const config = getLevelConfig(currentLevel, e.combo);
     const padding = 60;
 
     let newX, newY;
@@ -261,6 +247,9 @@ export default function SpeedDrillClient() {
   const applyPenalty = useCallback(() => {
     const e = engine.current;
     e.misses++;
+    if (drillPenalty.isEnabled(TIME_PER_HIT === 2)) {
+      e.timeLeft -= TIME_PENALTY;
+    }
     e.combo = 0;
     e.screenShake = 12;
     triggerFlash();
@@ -268,6 +257,7 @@ export default function SpeedDrillClient() {
   }, [triggerFlash]);
 
   const endGame = useCallback(() => {
+    markIntentionalExit();
     gameActiveRef.current = false;
     startingRef.current = false;
     setGameState('gameOver');
@@ -275,15 +265,15 @@ export default function SpeedDrillClient() {
 
     const e = engine.current;
     const totalAttempts = e.hits + e.misses;
-    const accuracyPct = totalAttempts > 0 ? Math.round((e.hits / totalAttempts) * 100) : 100;
+    const accuracyPct = totalAttempts > 0 ? Math.round((e.hits / totalAttempts) * 100) : 0;
     const rating = getFpsScoreGrade(e.score, ELITE_SCORE);
 
-    const grade = { letter: rating.grade, label: rating.label, color: rating.color };
+    const grade = { letter: rating.grade || rating.letter || 'C', label: rating.label || 'Keep Going', color: rating.color || 'text-amber-400' };
 
     setAnalytics({
       accuracy: accuracyPct, hits: e.hits, misses: e.misses,
       bestReaction: Math.round(e.bestReactionTime), peakSpeed: parseFloat(e.peakSpeed.toFixed(1)),
-      maxCombo: e.bestStreak, finalLevel: e.level, grade
+      maxCombo: e.bestStreak, finalLevel: Math.floor(bestLevelRunRef.current), grade
     });
 
     setUiScore(e.score);
@@ -292,7 +282,7 @@ export default function SpeedDrillClient() {
     const isNewHigh = e.score > prevSaved.bestScore;
     setIsNewBest(isNewHigh);
 
-    const runBestLevel = Math.max(prevSaved.bestLevel, bestLevelRunRef.current);
+    const runBestLevel = Math.max(prevSaved.bestLevel || 1, Math.floor(bestLevelRunRef.current));
     const updatedData = {
       bestScore: Math.max(prevSaved.bestScore, e.score),
       bestCombo: Math.max(prevSaved.bestCombo, e.bestStreak),
@@ -306,7 +296,7 @@ export default function SpeedDrillClient() {
     setBestLevel(updatedData.bestLevel);
 
     drillAudio.playSessionEnd();
-  }, []);
+  }, [markIntentionalExit]);
 
   const enterDrill = useCallback(async () => {
     if (startingRef.current) return;
@@ -317,14 +307,14 @@ export default function SpeedDrillClient() {
 
     drillAudio.init();
 
+    const startLevel = getStartLevel();
+    bestLevelRunRef.current = startLevel;
+
     setIsNewBest(false);
     setUiScore(0);
+    setUiLevel(startLevel);
     setUiTimeLeft(DRILL_DURATION);
     lastTimeRef.current = DRILL_DURATION;
-
-    const saved = getSavedData();
-    const startLevel = getStartLevel(saved.bestLevel);
-    bestLevelRunRef.current = startLevel;
 
     const w = engine.current.logicalWidth || 800;
     const h = engine.current.logicalHeight || 450;
@@ -337,17 +327,13 @@ export default function SpeedDrillClient() {
       spawnTime: 0,
       score: 0, level: startLevel, combo: 0, timeLeft: DRILL_DURATION,
       hits: 0, misses: 0, bestStreak: 0, bestReactionTime: 9999, totalActions: 0,
-      particles: [], hitMarkers: [], screenShake: 0,
+      particles: [], hitMarkers: [], hitRings: [], screenShake: 0,
       logicalWidth: w, logicalHeight: h, peakSpeed: 1.0
     };
 
     spawnTarget(w, h, startLevel);
 
-    try {
-      if (containerRef.current && !document.fullscreenElement) {
-        await containerRef.current.requestFullscreen();
-      }
-    } catch(e) {}
+    setIsFullscreen(true);
 
     setGameState('countdown');
     setCountdownValue(3);
@@ -410,23 +396,27 @@ export default function SpeedDrillClient() {
           if (rxTime < eng.bestReactionTime) eng.bestReactionTime = rxTime;
 
           eng.hits++;
+          eng.timeLeft = Math.min(60, eng.timeLeft + TIME_PER_HIT);
           eng.combo++;
           if (eng.combo > eng.bestStreak) eng.bestStreak = eng.combo;
 
           const mult = getComboMultiplier(eng.combo);
-          const basePts = Math.round(100 * mult);
+          const levelBonus = 1 + getDifficultyProgress(eng.level) * 0.5;
+          const basePts = Math.round(100 * mult * levelBonus);
           eng.score += basePts;
-          setUiScore(eng.score);
 
-          const nextLvl = Math.max(eng.level, getNextLevel(eng.score, 1, POINTS_PER_LEVEL) + getComboBonusLevel(eng.combo));
-          if (nextLvl > eng.level) {
-            eng.level = nextLvl;
-            bestLevelRunRef.current = Math.max(bestLevelRunRef.current, nextLvl);
-            drillAudio.playHit();
-          }
+          // Continuous level progression
+          const rawLevel = (eng.score / POINTS_PER_LEVEL) + 1;
+          eng.level = Math.max(eng.level, rawLevel);
+          bestLevelRunRef.current = Math.max(bestLevelRunRef.current, eng.level);
+
+          setUiScore(eng.score);
+          setUiLevel(Math.floor(eng.level));
 
           drillAudio.playHit();
           createExplosion(eng.target.x, eng.target.y, '#eab308');
+          const hitColor = eng.combo >= 10 ? '#38bdf8' : '#eab308';
+          eng.hitRings.push(createHitRing(eng.target.x, eng.target.y, eng.target.r, hitColor));
           spawnTarget(eng.logicalWidth, eng.logicalHeight, eng.level);
         } else {
           applyPenalty();
@@ -512,7 +502,7 @@ export default function SpeedDrillClient() {
           lastTimeRef.current = intTime;
         }
 
-        const cfg = getLevelConfig(e.level);
+        const cfg = getLevelConfig(e.level, e.combo);
         if (cfg.speedMulti > e.peakSpeed) e.peakSpeed = cfg.speedMulti;
 
         if (e.targetState === 'ACTIVE') {
@@ -554,7 +544,7 @@ export default function SpeedDrillClient() {
 
       if (gameState === 'playing' || gameState === 'start') {
         if (e.targetState === 'ACTIVE') {
-          const targetColor = e.combo >= 10 ? '#38bdf8' : '#00ff88';
+          const targetColor = e.combo >= 10 ? '#38bdf8' : '#eab308';
           const age = performance.now() - (e.spawnTime || performance.now());
           const progress = Math.min(1, age / 1500);
 
@@ -571,6 +561,8 @@ export default function SpeedDrillClient() {
         ctx.beginPath(); ctx.arc(p.x, p.y, 3, 0, Math.PI * 2); ctx.fill();
       }
       ctx.globalAlpha = 1.0;
+
+      drawHitRings(ctx, e.hitRings, dt);
 
       const ch = e.crosshair;
       if (ch.initialized && (gameState === 'playing' || gameState === 'start')) {
@@ -615,19 +607,18 @@ export default function SpeedDrillClient() {
         bestScore,
         accuracy: analytics.accuracy,
         bestCombo: analytics.maxCombo,
-        rating: { letter: analytics.grade?.letter || 'C', label: analytics.grade?.label || 'Keep Going', emoji: '🎯' },
+        rating: { letter: analytics.grade?.letter || 'C', label: analytics.grade?.label || 'Keep Going', emoji: '⚡' },
         newBest: isNewBest,
         drillName: 'Speed Drill Pro',
         playerName: getPlayerName(),
       });
       await shareScoreCard(url, canvas);
     } catch (e) {
-      const text = `🎯 I scored ${uiScore} PTS (Level ${analytics.finalLevel}) on Speed Drill! Accuracy: ${analytics.accuracy}%. Test your reaction speed at skilldrills.online!`;
+      const text = `⚡ I scored ${uiScore} PTS (Level ${analytics.finalLevel}) on Speed Drill! Accuracy: ${analytics.accuracy}%. Test your reaction speed at skilldrills.online!`;
       if (typeof navigator !== 'undefined' && navigator.share) {
         navigator.share({ title: 'My Speed Drill Score', text, url }).catch(() => {});
       } else if (typeof navigator !== 'undefined' && navigator.clipboard) {
         navigator.clipboard.writeText(text);
-        alert('Score card copied to clipboard!');
       }
     }
   }, [uiScore, bestScore, analytics, isNewBest]);
@@ -638,34 +629,36 @@ export default function SpeedDrillClient() {
       <main className="flex-1 max-w-6xl w-full mx-auto px-4 py-6 flex flex-col gap-6">
         {/* Title */}
         {!isFullscreen && (
-          <div className="text-center">
-            <h1 className="text-2xl sm:text-3xl font-black tracking-tight text-white uppercase">
-              Speed Drill Pro
+          <div className="text-left">
+            <h1 className="text-2xl sm:text-3xl font-black tracking-tight text-white">
+              <span data-seo-kw="1">{copy?.title || "Speed Drill Training"}</span>
+              {copy?.subtitle && (
+                <span className="block text-sm font-semibold text-slate-400 mt-1">
+                  {copy.subtitle}
+                </span>
+              )}
             </h1>
-            <p className="text-xs text-slate-400 mt-1">
-              Rapid Target Acquisition &amp; High-Velocity Tapping • 15 Levels
-            </p>
           </div>
         )}
 
         {/* Live Stat Cards */}
         {!isFullscreen && (
-          <div className="grid grid-cols-4 gap-2.5 max-w-2xl mx-auto w-full">
-            <div className="bg-[#0d0d18] border border-white/5 rounded-xl p-2.5 text-center">
-              <div className="text-[10px] uppercase font-bold text-slate-500 tracking-wider">Score</div>
-              <div className="text-lg sm:text-xl font-black text-white tabular-nums">{uiScore}</div>
+          <div className="grid grid-cols-4 gap-2 w-full">
+            <div className="bg-white/[0.02] border border-white/[0.06] rounded-xl p-3 text-center">
+              <div className="text-[10px] uppercase font-bold text-slate-400 tracking-wider">{copy?.hudLabels?.score || 'Score'}</div>
+              <div className="text-lg sm:text-2xl font-black text-white tabular-nums">{uiScore}</div>
             </div>
-            <div className="bg-[#0d0d18] border border-white/5 rounded-xl p-2.5 text-center">
-              <div className="text-[10px] uppercase font-bold text-slate-500 tracking-wider">Time</div>
-              <div className={`text-lg sm:text-xl font-black tabular-nums ${uiTimeLeft <= 10 ? 'text-red-400 animate-pulse' : 'text-white'}`}>{uiTimeLeft}s</div>
+            <div className="bg-white/[0.02] border border-white/[0.06] rounded-xl p-3 text-center">
+              <div className="text-[10px] uppercase font-bold text-slate-400 tracking-wider">{copy?.hudLabels?.time || 'Time'}</div>
+              <div className={`text-lg sm:text-2xl font-black tabular-nums ${uiTimeLeft <= 10 ? 'text-red-400 animate-pulse' : 'text-white'}`}>{uiTimeLeft}s</div>
             </div>
-            <div className="bg-[#0d0d18] border border-white/5 rounded-xl p-2.5 text-center">
-              <div className="text-[10px] uppercase font-bold text-slate-500 tracking-wider">Best Score</div>
-              <div className="text-lg sm:text-xl font-black text-amber-400 tabular-nums">{bestScore}</div>
+            <div className="bg-white/[0.02] border border-white/[0.06] rounded-xl p-3 text-center">
+              <div className="text-[10px] uppercase font-bold text-slate-400 tracking-wider">{copy?.hudLabels?.bestScore || 'Best Score'}</div>
+              <div className="text-lg sm:text-2xl font-black text-amber-400 tabular-nums">{bestScore}</div>
             </div>
-            <div className="bg-[#0d0d18] border border-white/5 rounded-xl p-2.5 text-center">
-              <div className="text-[10px] uppercase font-bold text-slate-500 tracking-wider">Best Combo</div>
-              <div className="text-lg sm:text-xl font-black text-amber-400 tabular-nums">{bestCombo}x</div>
+            <div className="bg-white/[0.02] border border-white/[0.06] rounded-xl p-3 text-center">
+              <div className="text-[10px] uppercase font-bold text-slate-400 tracking-wider">{copy?.hudLabels?.bestCombo || 'Best Combo'}</div>
+              <div className="text-lg sm:text-2xl font-black text-amber-400 tabular-nums">{bestCombo}x</div>
             </div>
           </div>
         )}
@@ -674,7 +667,7 @@ export default function SpeedDrillClient() {
         <div 
           ref={containerRef} 
           onContextMenu={(e) => { if (gameActiveRef.current) e.preventDefault(); }}
-          className={`relative overflow-hidden flex flex-col transition-all duration-150 select-none bg-[#080811] text-white border border-white/10 ${
+          className={`overflow-hidden flex flex-col select-none bg-[#080811] text-white border border-white/10 ${
             isFullscreen 
               ? 'fixed inset-0 z-[100] w-screen h-[100dvh] bg-[#080811] rounded-none border-none flex flex-col items-center justify-center' 
               : 'w-full rounded-2xl bg-[#080811] aspect-video min-h-[460px] sm:min-h-[500px] max-h-[88vh] relative overflow-hidden flex flex-col'
@@ -688,12 +681,14 @@ export default function SpeedDrillClient() {
           {/* IN-BOX OVERLAY HUD */}
           {(gameState === 'playing' || gameState === 'countdown') && (
             <>
-              <div className="absolute top-4 left-4 z-30 pointer-events-none">
-                <p className="text-[10px] font-semibold uppercase tracking-wider text-white/50">Score</p>
-                <p className="text-2xl sm:text-3xl font-bold text-white tabular-nums leading-tight">{uiScore}</p>
+              <div className="absolute top-4 left-4 z-30 pointer-events-none flex flex-col gap-1">
+                <div>
+                  <p className="text-[10px] font-semibold uppercase tracking-wider text-white/50">{copy?.hudLabels?.score || 'Score'}</p>
+                  <p className="text-2xl sm:text-3xl font-bold text-white tabular-nums leading-tight">{uiScore}</p>
+                </div>
               </div>
               <div className="absolute top-4 right-4 z-30 pointer-events-none text-right">
-                <p className="text-[10px] font-semibold uppercase tracking-wider text-white/50">Time</p>
+                <p className="text-[10px] font-semibold uppercase tracking-wider text-white/50">{copy?.hudLabels?.time || 'Time'}</p>
                 <p className={`text-2xl sm:text-3xl font-bold tabular-nums leading-tight ${uiTimeLeft <= 10 ? 'text-red-400' : 'text-white'}`}>{uiTimeLeft}s</p>
               </div>
             </>
@@ -742,19 +737,9 @@ export default function SpeedDrillClient() {
           {gameState === 'start' && (
             <FpsStartCard
               icon={Zap}
-              accent="emerald"
-              title="Speed Drill Pro"
-              subtitle="Rapid Target Acquisition & Tapping • 15 Levels"
-              rules={[
-                { icon: Target, accent: 'orange', title: 'Click Shrinking Targets (+100 PTS)', text: 'Acquire and click rapid targets before they shrink away' },
-                { icon: Zap, accent: 'red', title: 'Miss / Expiry Penalty', text: 'Missing or allowing targets to expire resets your combo streak' },
-              ]}
-              sensitivity={{ value: universalSens, onChange: setUniversalSens, cmPer360 }}
-              stats={[
-                { icon: Trophy, label: 'Best Score', value: bestScore, color: 'text-white', accent: 'slate' },
-                { icon: Flame, label: 'Best Combo', value: `${bestCombo}x`, color: 'text-orange-400', accent: 'orange' },
-                { icon: TrendingUp, label: 'Best Level', value: `Lv. ${bestLevel}`, color: 'text-blue-400', accent: 'blue' },
-              ]}
+              accent="amber"
+              title={copy?.title || "Speed Drill"}
+              subtitle={copy?.subtitle || "Rapid Target Acquisition & Tapping • Continuous Scaling"}
               isTouchOnlyDevice={isTouchOnlyDevice}
               onStart={enterDrill}
             />
@@ -762,81 +747,27 @@ export default function SpeedDrillClient() {
 
           {/* COUNTDOWN OVERLAY */}
           {gameState === 'countdown' && (
-            <DrillCountdown value={countdownValue} subtitle="GET READY" />
+            <DrillCountdown value={countdownValue} subtitle={copy?.hudLabels?.getReady || "GET READY"} />
           )}
 
-          {/* END SCREEN */}
+          {/* UNIVERSAL RESULT CARD */}
           {gameState === 'gameOver' && analytics.grade && (
-            <div className="absolute inset-0 z-40 flex bg-neutral-950/98 select-none font-sans" style={{ background: 'rgba(5,5,8,0.97)' }} onPointerDown={e => e.stopPropagation()}>
-              
-              {/* Left Grade Panel */}
-              <div className="w-[36%] flex flex-col items-center justify-center gap-1 border-r border-white/5 px-4" style={{ background: 'radial-gradient(ellipse 260px 200px at 50% 30%, rgba(234,179,8,.12), transparent 70%)' }}>
-                {isNewBest && (
-                  <span className="text-[9.5px] font-bold text-yellow-400 bg-yellow-500/10 border border-yellow-500/25 px-2.5 py-0.5 rounded-full mb-1 animate-pulse">
-                    NEW BEST
-                  </span>
-                )}
-                <div className={`text-5xl sm:text-6xl font-black leading-none ${analytics.grade.color}`}>
-                  {analytics.grade.letter}
-                </div>
-                <div className="text-[10px] uppercase tracking-widest text-slate-500 text-center font-bold mt-1">
-                  {analytics.grade.label}
-                </div>
-                <div className="text-3xl sm:text-4xl font-black text-white mt-2 tabular-nums">
-                  {uiScore}
-                </div>
-                <div className="text-[9px] uppercase tracking-widest text-slate-500">Points</div>
-              </div>
-
-              {/* Right Stats & Actions Panel */}
-              <div className="flex-1 flex flex-col justify-center gap-3 px-6 py-4 min-w-0">
-                
-                {/* 4 Stat Tiles */}
-                <div className="grid grid-cols-2 sm:grid-cols-4 gap-2">
-                  <div className="bg-black border border-white/5 p-2.5 rounded-xl text-center">
-                    <p className="text-sm sm:text-base font-black text-white">{analytics.accuracy}%</p>
-                    <p className="text-[7.5px] sm:text-[8.5px] font-bold uppercase tracking-wider text-gray-400 mt-0.5">Accuracy</p>
-                  </div>
-                  <div className="bg-black border border-white/5 p-2.5 rounded-xl text-center">
-                    <p className="text-sm sm:text-base font-black text-white">{analytics.hits}</p>
-                    <p className="text-[7.5px] sm:text-[8.5px] font-bold uppercase tracking-wider text-gray-400 mt-0.5">Hits</p>
-                  </div>
-                  <div className="bg-black border border-white/5 p-2.5 rounded-xl text-center">
-                    <p className="text-sm sm:text-base font-black text-white">{analytics.bestReaction}ms</p>
-                    <p className="text-[7.5px] sm:text-[8.5px] font-bold uppercase tracking-wider text-gray-400 mt-0.5">Best Reaction</p>
-                  </div>
-                  <div className="bg-black border border-white/5 p-2.5 rounded-xl text-center">
-                    <p className="text-sm sm:text-base font-black text-white">Lv. {analytics.finalLevel}</p>
-                    <p className="text-[7.5px] sm:text-[8.5px] font-bold uppercase tracking-wider text-gray-400 mt-0.5">Peak Level</p>
-                  </div>
-                </div>
-
-                {/* Action Buttons */}
-                <div className="flex gap-2">
-                  <button 
-                    onClick={enterDrill} 
-                    className="flex-1 py-3 rounded-[13px] bg-gradient-to-r from-amber-600 to-yellow-600 text-white font-bold text-xs uppercase tracking-wide cursor-pointer transition-transform active:scale-[0.98] shadow-md flex items-center justify-center gap-1.5"
-                  >
-                    <RefreshCw className="w-3.5 h-3.5" /> Play Again
-                  </button>
-                  <button 
-                    onClick={shareScore} 
-                    className="w-11 flex-shrink-0 rounded-[13px] bg-white/[0.04] border border-white/10 flex items-center justify-center text-slate-400 hover:text-white cursor-pointer active:scale-90 transition-transform" 
-                    title="Share Score"
-                  >
-                    <Share2 className="w-4 h-4 text-emerald-400" />
-                  </button>
-                  <button 
-                    onClick={handleExitDrill} 
-                    className="w-11 flex-shrink-0 rounded-[13px] bg-white/[0.04] border border-white/10 flex items-center justify-center text-slate-400 hover:text-white cursor-pointer active:scale-90 transition-transform" 
-                    title="Exit Fullscreen & Return"
-                  >
-                    <LogOut className="w-4 h-4 text-red-400" />
-                  </button>
-                </div>
-
-              </div>
-            </div>
+            <DrillResultCard
+              accent="amber"
+              grade={analytics.grade}
+              score={uiScore}
+              isNewBest={isNewBest}
+              stats={[
+                { label: copy?.resultLabels?.accuracy || 'Accuracy', value: analytics.accuracy, suffix: '%' },
+                { label: copy?.resultLabels?.hits || 'Hits', value: analytics.hits },
+                { label: copy?.resultLabels?.bestReaction || 'Best Reaction', value: analytics.bestReaction, suffix: 'ms' },
+                { label: copy?.resultLabels?.peakLevel || 'Peak Level', value: `Lv. ${analytics.finalLevel}` },
+              ]}
+              onPlayAgain={enterDrill}
+              onBeforeShare={() => setIsFullscreen(false)}
+              onShare={shareScore}
+              onExit={handleExitDrill}
+            />
           )}
         </div>
 
@@ -845,108 +776,40 @@ export default function SpeedDrillClient() {
           <div className="[&>div]:!mt-0">
             <DrillAccordion
               id="rules"
-              title="Drill Instructions & Scoring System"
+              title={copy?.rulesTitle || "Drill Instructions & Scoring System"}
               isOpen={openAccordion === 'rules'}
               onToggle={() => setOpenAccordion(openAccordion === 'rules' ? null : 'rules')}
             >
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
-                {RULES_ITEMS.map((item, i) => (
-                  <div key={i} className="bg-black p-4 rounded-xl border border-white/10">
-                    <p className="text-sm font-bold text-white mb-1">{item.title}</p>
-                    <p className="text-xs text-gray-300 leading-relaxed">{item.text}</p>
-                  </div>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-2.5 sm:gap-3 font-sans">
+                {(copy?.rulesItems || RULES_ITEMS).map((item, i) => (
+                  <DrillRuleItem key={i} num={item.num || String(i + 1)} title={item.title} detail={item.text} />
                 ))}
               </div>
             </DrillAccordion>
 
             <DrillAccordion
               id="about"
-              title="About Speed Drill"
+              title={copy?.aboutTitle || "About Speed Drill Training"}
               isOpen={openAccordion === 'about'}
               onToggle={() => setOpenAccordion(openAccordion === 'about' ? null : 'about')}
             >
-              <div className="space-y-8">
-                <section>
-                  <h4 className="text-base font-bold text-white mb-2 flex items-center gap-2">
-                    <Crosshair className="w-4 h-4 text-emerald-400" /> What Is Speed Drill Target Acquisition Training?
-                  </h4>
-                  <p className="text-sm leading-relaxed text-gray-300 mb-3">
-                    <strong>Speed Drill</strong> is a high-velocity target acquisition and rapid tapping exercise. It trains your neuromuscular execution speed, visual tracking, and click timing under dynamic shrinking pressure. Yellow targets move erratically across the screen while constantly decreasing in radius.
-                  </p>
-                  <p className="text-sm leading-relaxed text-gray-300">
-                    As your score increases, the level scales up to Level 15. Initial target radiuses shrink, velocity multipliers increase up to 3.5x, and shrinking speeds accelerate — sharpening the fast, decisive target lock needed to eliminate opponents in high-speed firefights without hesitating.
-                  </p>
-                </section>
-
-                <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-                  <div className="p-4 rounded-xl border border-gray-800 bg-white/[0.02]">
-                    <div className="flex items-center gap-2.5 mb-2">
-                      <div className="w-7 h-7 rounded-lg bg-blue-600 flex items-center justify-center"><Users className="w-3.5 h-3.5 text-white" /></div>
-                      <h5 className="text-xs font-bold text-white">Who Should Use This?</h5>
+              <div className="space-y-4">
+                {(copy?.aboutSections || ABOUT_SECTIONS).map((sec, idx) => {
+                  const IconComp = sec.icon || Zap;
+                  return (
+                    <div key={idx} className="bg-white/[0.02] border border-white/[0.06] rounded-xl p-4">
+                      <div className="flex items-center gap-2 mb-1.5">
+                        <IconComp className="w-4 h-4 text-emerald-400 shrink-0" />
+                        <h3 className="text-sm font-bold text-white tracking-wide">{sec.title}</h3>
+                      </div>
+                      <h4 className="text-xs font-semibold text-slate-400 mb-2">{sec.subtitle}</h4>
+                      <p className="text-xs leading-relaxed text-slate-300">{sec.content}</p>
                     </div>
-                    <p className="text-xs text-gray-300 leading-relaxed">FPS players sharpening flick-to-target speed, esports competitors chasing lower time-to-kill, and anyone training raw click reflexes.</p>
-                  </div>
-                  <div className="p-4 rounded-xl border border-gray-800 bg-white/[0.02]">
-                    <div className="flex items-center gap-2.5 mb-2">
-                      <div className="w-7 h-7 rounded-lg bg-emerald-600 flex items-center justify-center"><TrendingUp className="w-3.5 h-3.5 text-white" /></div>
-                      <h5 className="text-xs font-bold text-white">Skills Improved</h5>
-                    </div>
-                    <p className="text-xs text-gray-300 leading-relaxed">Target acquisition speed, click timing precision, dynamic visual tracking, and neuromuscular reaction execution.</p>
-                  </div>
-                  <div className="p-4 rounded-xl border border-gray-800 bg-white/[0.02]">
-                    <div className="flex items-center gap-2.5 mb-2">
-                      <div className="w-7 h-7 rounded-lg bg-purple-600 flex items-center justify-center"><Timer className="w-3.5 h-3.5 text-white" /></div>
-                      <h5 className="text-xs font-bold text-white">Rapid Acquisition</h5>
-                    </div>
-                    <p className="text-xs text-gray-300 leading-relaxed">Every target shrinks to zero on a clock — hesitate and it expires, so lock on and click the instant it's in range.</p>
-                  </div>
-                </div>
-              </div>
-            </DrillAccordion>
-
-            <DrillAccordion
-              id="faq"
-              title="Frequently Asked Questions"
-              isOpen={openAccordion === 'faq'}
-              onToggle={() => setOpenAccordion(openAccordion === 'faq' ? null : 'faq')}
-            >
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                {FAQ_ITEMS.map((item, i) => (
-                  <div key={i} className="bg-[#05060b] border border-gray-800 rounded-xl p-5">
-                    <h4 className="text-sm font-bold text-gray-200 mb-2">{item.q}</h4>
-                    <p className="text-xs text-gray-400 leading-relaxed">{item.a}</p>
-                  </div>
-                ))}
+                  );
+                })}
               </div>
             </DrillAccordion>
           </div>
-        )}
-
-        {/* ── RELATED PHYSICAL DRILLS ── */}
-        {!isFullscreen && (
-          <section className="mt-4">
-            <h2 className="text-sm font-bold text-slate-400 uppercase tracking-wider mb-3 font-sans">
-              Related Physical &amp; Reflex Drills
-            </h2>
-            <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
-              {RELATED_DRILLS.map((drill) => (
-                <Link
-                  key={drill.id}
-                  href={drill.href}
-                  className="group bg-[#0c0c16] border border-white/5 hover:border-emerald-500/40 rounded-xl p-3.5 transition-all duration-200 hover:-translate-y-0.5 flex flex-col justify-between"
-                >
-                  <div>
-                    <div className="text-[10px] font-bold text-emerald-400 uppercase tracking-wider mb-1">{drill.cat}</div>
-                    <div className="text-xs font-bold text-white group-hover:text-emerald-300 transition-colors">{drill.name}</div>
-                    <div className="text-[11px] text-slate-400 mt-1 line-clamp-2 leading-relaxed">{drill.desc}</div>
-                  </div>
-                  <div className="text-[10px] font-bold text-slate-500 group-hover:text-emerald-400 mt-3 flex items-center gap-1 transition-colors">
-                    Train Drill <span>→</span>
-                  </div>
-                </Link>
-              ))}
-            </div>
-          </section>
         )}
 
         {/* ── FOOTER ── */}

@@ -5,34 +5,59 @@ import React, { useState, useEffect, useRef, useCallback } from 'react';
 import Link from 'next/link';
 
 import {
-  Activity, AlertCircle, ArrowRight, ChevronRight,
-  Eye, Flame, RefreshCw, Target,
-  Timer, TrendingUp, Trophy, Volume2, VolumeX, Zap, ZapOff,
-  Share2, Users, LogOut, Award, Crosshair
+  Activity, AlertCircle,
+  Eye, Target,
+  TrendingUp, Volume2, VolumeX, Zap, ZapOff,
+  Users, Crosshair
 } from 'lucide-react';
 
 import generateShareCard, { shareScoreCard } from '../../../../components/ShareScoreCard';
 import { getPlayerName } from '../../../../lib/leaderboard';
 import { drillAudio } from '../../../../lib/drillAudio';
+import { useDrillSensitivity } from '../../../../lib/drillSensitivity';
 import { drillFlash } from '../../../../lib/drillFlash';
 import { drillTimeout } from '../../../../lib/drillTimeout';
-import { getStartLevel, getDifficultyProgress, getComboBonusLevel } from '../../../../lib/drillDifficulty';
+import { drillPenalty } from '../../../../lib/drillPenalty';
+import { getStartLevel, getDifficultyProgress, ramp } from '../../../../lib/drillDifficulty';
 import { getComboMultiplier, getFpsScoreGrade } from '../../../../lib/scoringEngine';
-import { createBackdropCache, getCanvasDpr, drawPulseRing, drawTacticalTarget } from '../../../../lib/canvasFx';
-import useUnexpectedExitGuard from '../../../../lib/useUnexpectedExitGuard';
-import DrillFooter from '../../../../components/drill/DrillFooter';
+import { createBackdropCache, getCanvasDpr, drawPulseRing, drawTacticalTarget, createHitRing, drawHitRings } from '../../../../lib/canvasFx';
 import DrillCountdown from '../../../../components/drill/DrillCountdown';
 import DrillAccordion from '../../../../components/drill/DrillAccordion';
 import FpsStartCard from '../../../../components/drill/FpsStartCard';
+import DrillResultCard from '../../../../components/drill/DrillResultCard';
+import useImmersiveMode from '@/lib/useImmersiveMode';
+import useUnexpectedExitGuard from '@/lib/useUnexpectedExitGuard';
 
 // ============================================================
 // TUNING CONSTANTS
 // ============================================================
-const DRILL_DURATION = 45; // 45 seconds focused duration
-const POINTS_PER_LEVEL = 250; // Aggressive progression
-const ELITE_SCORE = 17000; // 100% mark for letter grade
-const STORAGE_KEY = 'skilldrills_fps_flick_shot_v2';
-const TARGET_COLOR = '#10b981'; // fixed tactical-sphere color — matches the drill's emerald identity
+const DRILL_DURATION = 45; // starting clock — successful hits refill up to MAX_TIME
+const MAX_TIME = 60; // hard cap: the clock can never show more than 60 seconds
+// Both of these were calibrated for a run that was hard-capped at 45s and so
+// could never climb far past level 15. With the new 60s clock cap the old 250 made
+// difficulty outrun the player in roughly 30 hits, after which the rest of the
+// session was unwinnable flailing — modelled hit rate collapsed to ~14%.
+const POINTS_PER_LEVEL = 1800; // gradual climb: the player meets their ceiling, not a wall
+const ELITE_SCORE = 50000; // 100% mark for letter grade — rescaled for open-ended runs
+
+// The whole balance of the drill. The clock always drains at 1s/s on top of these.
+// Tuned against this drill's spawn cadence — copied to a drill with a different
+// hit rate they will either do nothing or make the run unkillable.
+//
+// TIME_PENALTY is OPT-IN, gated behind the "Time Penalty" toggle on /drills and
+// off by default. Simulation showed a penalty this size inverts session length
+// (elite 87s vs casual 100s): a strong player reaches high difficulty, where
+// everyone misses, far sooner. Off, session length rises with skill as intended;
+// on, it is a hard mode for players who find the drill too easy.
+// Give successful play enough time to reach the genuinely difficult part of
+// the unbounded curve instead of timing out in the early levels.
+const TIME_PER_HIT = 2;
+const TIME_PENALTY = 1;
+
+// Bumped from _v2: sessions are no longer a fixed 45s, so scores from the old
+// fixed-length build are not comparable to these and must not share a best.
+const STORAGE_KEY = 'skilldrills_fps_flick_shot_v3';
+const TARGET_COLOR = '#10b981'; // fixed tactical-sphere color — shared FPS target emerald
 
 const getSavedData = () => {
   try {
@@ -51,28 +76,34 @@ const saveData = (data) => {
 };
 
 
+// Every parameter decays exponentially from its level-1 value toward a floor it
+// never actually reaches, so difficulty keeps rising for as long as the player
+// survives. The old `Math.max(floor, base - curve * range)` tuning clamped every
+// one of these at p = 1 (level 15) — past that the drill stopped getting harder
+// at all, which is what let a strong run continue indefinitely.
+//
+// The floors are chosen so each value at p = 1 matches the old tuning almost
+// exactly (radius 13px, ttl 380ms, spawn 130/190ms, pad 3px): the first fifteen
+// levels feel identical to before, and the curve simply continues afterwards.
+// `ttl` is the terminal driver — it decays toward 90ms, far under human visual
+// reaction (~200ms), so every run ends eventually no matter who is playing.
 const getLevelConfig = (level, combo = 0) => {
-  const p = getDifficultyProgress(level); // 0 -> 1 across L1..L15
-  const curve = p * p; // ease-in — early levels stay approachable, back half ramps hard
+  const p = getDifficultyProgress(level); // 0 at L1, 1 at L15, unbounded above
 
   // Live "heat": on top of your level, a hot streak keeps tightening things further.
   // Scales with the same tiers as the score combo multiplier (1.0x -> 3.0x maps to 0 -> 1 heat),
   // so max heat lines up with the max 3.0x multiplier at combo 50. A miss/timeout resets combo
   // to 0, which cools heat back to your level's baseline — never below it.
+  // Applied as a proportion rather than a fixed subtraction: at high levels the old
+  // flat "-150ms" wiped out the entire remaining margin in one step.
   const heat = (getComboMultiplier(combo) - 1) / 2;
 
-  const baseRadius   = Math.max(13, 32 - curve * 19);     // 32 -> 13 px
-  const baseTtl      = Math.max(380, 1300 - curve * 920); // 1300 -> 380 ms
-  const baseSpawnMin = 480 - curve * 350;                 // 480 -> 130 ms
-  const baseSpawnMax = 680 - curve * 490;                 // 680 -> 190 ms
-  const baseHitPad   = Math.max(3, 12 - curve * 9);       // 12 -> 3 px
-
   return {
-    targetRadius:  Math.max(9,   baseRadius   - heat * 5),
-    ttl:           Math.max(260, baseTtl      - heat * 150),
-    spawnDelayMin: Math.max(90,  baseSpawnMin - heat * 70),
-    spawnDelayMax: Math.max(140, baseSpawnMax - heat * 90),
-    hitPad:        Math.max(1,   baseHitPad   - heat * 3),
+    targetRadius:  Math.max(4, ramp(32,   7,   p) * (1 - heat * 0.30)),
+    ttl:                       ramp(1300, 90,  p) * (1 - heat * 0.32),
+    spawnDelayMin:             ramp(480,  20,  p) * (1 - heat * 0.31),
+    spawnDelayMax:             ramp(680,  35,  p) * (1 - heat * 0.26),
+    hitPad:                    ramp(12,   0.2, p) * (1 - heat * 0.67),
   };
 };
 
@@ -80,10 +111,10 @@ const getLevelConfig = (level, combo = 0) => {
 // ACCORDION DATA
 // ============================================================
 const RULES_ITEMS = [
-  { num: "1", text: "Target Hit", highlight: "+100 PTS", result: "× Combo × Level Multiplier" },
-  { num: "2", text: "Combo System", highlight: "Up to 3.0x Multiplier", result: "Smaller, faster targets on a hot streak" },
-  { num: "3", text: "Level Progression", highlight: "+1 Level / 250 PTS", result: "Radius & TTL shrink across 15 levels" },
-  { num: "4", text: "Miss / Timeout / Idle", highlight: "Zero Penalties", result: "Combo resets, no time or score lost" }
+  { num: "1", text: "Target Hit", highlight: "+100 PTS (+2.0s)", result: "×Combo Mult" },
+  { num: "2", text: "Combo Streak", highlight: "Up to 3.0×", result: "Faster Targets" },
+  { num: "3", text: "Level Up", highlight: "+1 / 1800 PTS", result: "Adaptive Scaling" },
+  { num: "4", text: "Miss / Timeout", highlight: "Penalty", result: "Resets Combo (-0.8s)" }
 ];
 
 const ABOUT_INTRO = [
@@ -110,14 +141,14 @@ const ABOUT_SECTIONS = [
     icon: Target,
     title: "What The Drill Tracks",
     paragraphs: [
-      "Average flick time tells you how quickly your motor cortex converts a spotted target into a completed click. Max combo shows how consistently you chain first-shot hits without a miss breaking your rhythm — a better predictor of in-game performance than raw accuracy alone. Peak level reached tells you how far into the 15-level curve your mechanics hold up before target size and time-to-live outpace your reaction speed."
+      "Average flick time tells you how quickly your motor cortex converts a spotted target into a completed click. Max combo shows how consistently you chain first-shot hits without a miss breaking your rhythm — a better predictor of in-game performance than raw accuracy alone. Peak level reached tells you how far up the curve your mechanics held before target size and time-to-live outpaced your reaction speed — the curve has no ceiling, so every run ends here eventually."
     ]
   },
   {
     icon: Eye,
     title: "Runs Client-Side, Zero Install",
     paragraphs: [
-      "Everything runs client-side with raw, unaccelerated mouse input captured through the Pointer Lock API, so there's no server lag distorting your times and nothing to install. Play in fullscreen with your in-game sensitivity dialed in through the universal cm/360 converter, and your results — best score, best combo, best level — persist locally so you can chart real progress over weeks of practice."
+      "Everything runs client-side with raw, unaccelerated mouse input captured through the Pointer Lock API, so there's no server lag distorting your times and nothing to install. Play in fullscreen with your in-game sensitivity dialed in through the universal cm/360 converter in the drills-hub session settings, and your results — best score, best combo, best level — persist locally so you can chart real progress over weeks of practice."
     ]
   }
 ];
@@ -154,13 +185,14 @@ const RELATED_DRILLS = [
 // ============================================================
 // MAIN COMPONENT
 // ============================================================
-export default function ProFlickClient() {
+export default function ProFlickClient({ copy = null }) {
   const [gameState, setGameState] = useState('start'); // 'start' | 'countdown' | 'playing' | 'gameOver'
   const [isFullscreen, setIsFullscreen] = useState(false);
+  const ensureNativeFullscreen = useImmersiveMode(isFullscreen); // locks the page behind while the drill fills the screen
   const [soundEnabled, setSoundEnabled] = useState(true);
   const [flashEnabled, setFlashEnabled] = useState(true);
   const [pointerLocked, setPointerLocked] = useState(false);
-  const [universalSens, setUniversalSens] = useState(1.0);
+  const universalSens = useDrillSensitivity();
   const [openAccordion, setOpenAccordion] = useState(null);
   const [isTouchOnlyDevice, setIsTouchOnlyDevice] = useState(false);
   const [countdownValue, setCountdownValue] = useState(3);
@@ -174,6 +206,7 @@ export default function ProFlickClient() {
   const [bestCombo, setBestCombo] = useState(0);
   const [bestLevel, setBestLevel] = useState(1);
   const [isNewBest, setIsNewBest] = useState(false);
+  const [penaltyEnabled, setPenaltyEnabled] = useState(false);
 
   const [analytics, setAnalytics] = useState({
     accuracy: 100, successfulHits: 0, missedClicks: 0, idleClicks: 0,
@@ -200,8 +233,6 @@ export default function ProFlickClient() {
     logicalWidth: 800, logicalHeight: 450
   });
 
-  const cmPer360 = (30 / universalSens).toFixed(1);
-
   const triggerFlash = useCallback(() => {
     if (!drillFlash.isEnabled()) return;
     const id = Date.now() + Math.random();
@@ -214,14 +245,10 @@ export default function ProFlickClient() {
     if (typeof window !== 'undefined') {
       setSoundEnabled(drillAudio.isEnabled());
       setFlashEnabled(drillFlash.isEnabled());
+      setPenaltyEnabled(drillPenalty.isEnabled(TIME_PER_HIT === 2));
       const hasFinePointer = window.matchMedia('(pointer: fine)').matches;
       const isTouchCapable = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
       setIsTouchOnlyDevice(isTouchCapable && !hasFinePointer);
-
-      try {
-        const savedSens = localStorage.getItem('flickAim_sens');
-        if (savedSens) setUniversalSens(parseFloat(savedSens));
-      } catch (e) {}
 
       const saved = getSavedData();
       setBestScore(saved.bestScore || 0);
@@ -237,49 +264,47 @@ export default function ProFlickClient() {
     };
   }, []);
 
-  useEffect(() => {
-    if (gameState !== 'playing') {
-      try { localStorage.setItem('flickAim_sens', universalSens.toString()); } catch (e) {}
-    }
-  }, [universalSens, gameState]);
-
-  // Fullscreen change listener
-  useEffect(() => {
-    const handleFullscreenChange = () => setIsFullscreen(!!document.fullscreenElement);
-    document.addEventListener('fullscreenchange', handleFullscreenChange);
-    return () => document.removeEventListener('fullscreenchange', handleFullscreenChange);
-  }, []);
-
-  const handleExitDrill = useCallback(async () => {
+  const handleExitDrill = useCallback(() => {
     markIntentionalExit();
     countdownTimeoutsRef.current.forEach(clearTimeout);
     countdownTimeoutsRef.current = [];
     startingRef.current = false;
+    gameActiveRef.current = false;
 
-    if (document.fullscreenElement) {
-      await document.exitFullscreen().catch(() => {});
+    if (animationRef.current) {
+      cancelAnimationFrame(animationRef.current);
     }
+
     if (document.pointerLockElement) {
-      document.exitPointerLock();
+      try { document.exitPointerLock(); } catch (e) {}
     }
+    if (document.fullscreenElement) {
+      try { document.exitFullscreen(); } catch (e) {}
+    }
+
+    setIsFullscreen(false);
+    setPointerLocked(false);
     setGameState('start');
+    setUiScore(0);
+    setUiTimeLeft(DRILL_DURATION);
+    setUiAccuracy(100);
+
+    const w = engine.current?.logicalWidth || 800;
+    const h = engine.current?.logicalHeight || 450;
+    engine.current = {
+      crosshair: { x: w / 2, y: h / 2, initialized: false },
+      target: { active: false, x: 0, y: 0, radius: 32, spawnTime: 0, ttl: 1300, pulseSeed: 0.5 },
+      score: 0, level: 1, combo: 0, timeLeft: DRILL_DURATION,
+      nextSpawnTime: 0, successfulHits: 0, missedClicks: 0,
+      idleClicks: 0, timeouts: 0, totalActions: 0, flickTimes: [], maxCombo: 0,
+      particles: [], hitMarkers: [], hitRings: [], screenShake: 0, logicalWidth: w, logicalHeight: h
+    };
   }, []);
 
-  // Stop the drill if the player leaves any way other than the in-app Exit
-  // button (back gesture, tab switch, Esc) instead of running invisibly.
   const { markIntentionalExit } = useUnexpectedExitGuard({
     active: gameState === 'playing' || gameState === 'countdown',
     onUnexpectedExit: handleExitDrill,
   });
-
-  const resumeDrill = useCallback(async () => {
-    if (containerRef.current && !document.fullscreenElement) {
-      try { await containerRef.current.requestFullscreen(); } catch (e) {}
-    }
-    if (canvasRef.current && !document.pointerLockElement) {
-      try { await canvasRef.current.requestPointerLock(); } catch (e) {}
-    }
-  }, []);
 
   const spawnTarget = useCallback((time, width, height, currentLevel, currentCombo) => {
     const e = engine.current;
@@ -303,19 +328,15 @@ export default function ProFlickClient() {
   }, []);
 
   const createExplosion = (x, y, color) => {
-    for (let i = 0; i < 12; i++) {
+    for (let i = 0; i < 14; i++) {
       const angle = Math.random() * Math.PI * 2;
-      const speed = Math.random() * 4 + 1;
+      const speed = Math.random() * 4 + 1.2;
       engine.current.particles.push({ x, y, vx: Math.cos(angle) * speed, vy: Math.sin(angle) * speed, life: 1.0, color });
     }
   };
 
   const createHitMarker = (x, y) => {
     engine.current.hitMarkers.push({ x, y, life: 1.0 });
-  };
-
-  const createHitRing = (x, y, radius, color) => {
-    engine.current.hitRings.push({ x, y, radius, life: 1.0, color });
   };
 
   // End Game Management
@@ -338,7 +359,7 @@ export default function ProFlickClient() {
     setAnalytics({
       accuracy: finalAccuracy, successfulHits: e.successfulHits, missedClicks: e.missedClicks,
       idleClicks: e.idleClicks, timeouts: e.timeouts, avgFlickMs, maxCombo: e.maxCombo,
-      finalLevel: e.level, grade
+      finalLevel: Math.floor(e.level), grade
     });
 
     setUiScore(e.score);
@@ -347,7 +368,7 @@ export default function ProFlickClient() {
     const isNewHigh = e.score > prevSaved.bestScore;
     setIsNewBest(isNewHigh);
 
-    const runBestLevel = Math.max(prevSaved.bestLevel, bestLevelRunRef.current);
+    const runBestLevel = Math.max(prevSaved.bestLevel, Math.floor(bestLevelRunRef.current));
     const updatedData = {
       bestScore: Math.max(prevSaved.bestScore, e.score),
       bestCombo: Math.max(prevSaved.bestCombo, e.maxCombo),
@@ -380,7 +401,7 @@ export default function ProFlickClient() {
     lastTimeRef.current = DRILL_DURATION;
 
     const saved = getSavedData();
-    const startLevel = getStartLevel(saved.bestLevel);
+    const startLevel = getStartLevel(); // always 1 — difficulty is never persisted
     bestLevelRunRef.current = startLevel;
 
     setAnalytics({
@@ -400,11 +421,11 @@ export default function ProFlickClient() {
       particles: [], hitMarkers: [], hitRings: [], screenShake: 0, logicalWidth: w, logicalHeight: h
     };
 
-    try {
-      if (containerRef.current && !document.fullscreenElement) {
-        await containerRef.current.requestFullscreen();
-      }
-    } catch(e) {}
+    setIsFullscreen(true);
+    // Re-enter native fullscreen from the actual Start / Play Again click.
+    // This is required after Share or a previous run has caused the browser
+    // to drop native fullscreen while the CSS arena flag stayed true.
+    ensureNativeFullscreen();
 
     setGameState('countdown');
     setCountdownValue(3);
@@ -423,13 +444,51 @@ export default function ProFlickClient() {
     }, 2450);
 
     countdownTimeoutsRef.current = [t1, t2, t3, t4];
-  }, []);
+  }, [ensureNativeFullscreen]);
 
+  // Handle ESC key to immediately exit / quit the drill at any time back to the drill's start page
   useEffect(() => {
-    const handlePointerLockChange = () => setPointerLocked(document.pointerLockElement === canvasRef.current);
+    const handleKeyDown = (e) => {
+      if (e.key === 'Escape') {
+        if (gameState === 'playing' || gameState === 'countdown' || gameState === 'gameOver') {
+          e.preventDefault();
+          e.stopPropagation();
+          handleExitDrill();
+        }
+      }
+    };
+    window.addEventListener('keydown', handleKeyDown, true);
+    return () => window.removeEventListener('keydown', handleKeyDown, true);
+  }, [gameState, handleExitDrill]);
+
+  // Pointer lock change: if lock is dropped mid-game (e.g. Esc eaten by browser or Alt-Tab), exit cleanly to start page
+  useEffect(() => {
+    const handlePointerLockChange = () => {
+      const isLocked = document.pointerLockElement === canvasRef.current;
+      setPointerLocked(isLocked);
+      // endGame() releases pointer lock before React commits `gameOver`.
+      // Use the engine's live flag so finish/restart cannot be mistaken for
+      // the player quitting and collapse the fullscreen arena.
+      if (!isLocked && gameActiveRef.current && gameState === 'playing') {
+        handleExitDrill();
+      }
+    };
     document.addEventListener('pointerlockchange', handlePointerLockChange);
     return () => document.removeEventListener('pointerlockchange', handlePointerLockChange);
-  }, []);
+  }, [gameState, handleExitDrill]);
+
+  // Fullscreen change: if native fullscreen is closed mid-game, exit cleanly to start page
+  useEffect(() => {
+    const handleFullscreenChange = () => {
+      // Do not turn a completed run or a play-again countdown into an exit
+      // while the browser finishes its native fullscreen transition.
+      if (!document.fullscreenElement && isFullscreen && gameActiveRef.current && gameState === 'playing') {
+        handleExitDrill();
+      }
+    };
+    document.addEventListener('fullscreenchange', handleFullscreenChange);
+    return () => document.removeEventListener('fullscreenchange', handleFullscreenChange);
+  }, [isFullscreen, gameState, handleExitDrill]);
 
   useEffect(() => {
     const handleMouseMove = (e) => {
@@ -445,19 +504,17 @@ export default function ProFlickClient() {
       if (e.target.tagName === 'BUTTON' || e.target.closest('button')) return;
       if (!containerRef.current || !containerRef.current.contains(e.target)) return;
 
-      if (gameState === 'playing') {
-        if (!pointerLocked && canvasRef.current) {
-          resumeDrill();
-        } else if (pointerLocked) {
-          const eRef = engine.current;
-          const ch = eRef.crosshair;
-          const tgt = eRef.target;
-          const config = getLevelConfig(eRef.level, eRef.combo);
+      if (gameState === 'playing' && pointerLocked) {
+        const eRef = engine.current;
+        const ch = eRef.crosshair;
+        const tgt = eRef.target;
+        const config = getLevelConfig(eRef.level, eRef.combo);
 
           eRef.totalActions++;
 
           if (!tgt.active) {
             eRef.idleClicks++;
+            if (drillPenalty.isEnabled(TIME_PER_HIT === 2)) eRef.timeLeft -= TIME_PENALTY;
             eRef.combo = 0;
             eRef.screenShake = 6;
             triggerFlash();
@@ -476,13 +533,23 @@ export default function ProFlickClient() {
               const levelMult = 1 + getDifficultyProgress(eRef.level) * 0.5;
               eRef.score += Math.round(100 * getComboMultiplier(eRef.combo) * levelMult);
 
-              const rawLevel = Math.floor(eRef.score / POINTS_PER_LEVEL) + 1 + getComboBonusLevel(eRef.combo);
+              // A clean hit buys clock. Nothing ever takes clock away: a miss simply
+              // earns nothing while the timer keeps draining, which keeps the drill's
+              // long-standing "no negative score, no negative time" contract intact.
+              eRef.timeLeft = Math.min(MAX_TIME, eRef.timeLeft + TIME_PER_HIT);
+
+              // Continuous level — no Math.floor, so difficulty rises with every point
+              // instead of stepping at each 250-point threshold, and no combo bonus
+              // level, which used to add a whole level every 4th consecutive hit. Both
+              // were sudden jumps. Combo still drives the score multiplier and heat.
+              const rawLevel = (eRef.score / POINTS_PER_LEVEL) + 1;
               eRef.level = Math.max(eRef.level, rawLevel);
               bestLevelRunRef.current = Math.max(bestLevelRunRef.current, eRef.level);
 
+              const hitColor = eRef.combo >= 10 ? '#34d399' : TARGET_COLOR;
               drillAudio.playHit();
-              createExplosion(tgt.x, tgt.y, TARGET_COLOR);
-              createHitRing(tgt.x, tgt.y, tgt.radius, TARGET_COLOR);
+              createExplosion(tgt.x, tgt.y, hitColor);
+              eRef.hitRings.push(createHitRing(tgt.x, tgt.y, tgt.radius, hitColor));
               createHitMarker(ch.x, ch.y);
               setUiScore(eRef.score);
 
@@ -491,6 +558,7 @@ export default function ProFlickClient() {
               eRef.nextSpawnTime = performance.now() + (nextConfig.spawnDelayMin + Math.random() * (nextConfig.spawnDelayMax - nextConfig.spawnDelayMin));
             } else {
               eRef.missedClicks++;
+              if (drillPenalty.isEnabled(TIME_PER_HIT === 2)) eRef.timeLeft -= TIME_PENALTY;
               eRef.combo = 0;
               eRef.screenShake = 6;
               triggerFlash();
@@ -504,7 +572,6 @@ export default function ProFlickClient() {
             setUiAccuracy(Math.round((eRef.successfulHits / currentTotal) * 100));
           }
         }
-      }
     };
 
     document.addEventListener('mousemove', handleMouseMove);
@@ -513,7 +580,7 @@ export default function ProFlickClient() {
       document.removeEventListener('mousemove', handleMouseMove);
       document.removeEventListener('mousedown', handleMouseDown);
     };
-  }, [gameState, pointerLocked, universalSens, triggerFlash, resumeDrill]);
+  }, [gameState, pointerLocked, universalSens, triggerFlash]);
 
   useEffect(() => {
     const cvs = canvasRef.current;
@@ -598,6 +665,7 @@ export default function ProFlickClient() {
             tgt.active = false;
             e.timeouts++;
             e.totalActions++;
+            if (drillPenalty.isEnabled(TIME_PER_HIT === 2)) e.timeLeft -= TIME_PENALTY;
             e.combo = 0;
             e.screenShake = 6;
             triggerFlash();
@@ -637,29 +705,22 @@ export default function ProFlickClient() {
         const tgt = e.target;
         const age = time - tgt.spawnTime;
         const progress = Math.min(1, age / tgt.ttl);
-        const lifePercent = 1 - progress;
-
         drawPulseRing(ctx, tgt.x, tgt.y, tgt.radius, TARGET_COLOR, progress);
 
         drawTacticalTarget(ctx, tgt.x, tgt.y, tgt.radius, TARGET_COLOR);
-
-        const ringColor = lifePercent > 0.5 ? TARGET_COLOR : (lifePercent > 0.25 ? '#eab308' : '#ef4444');
-        ctx.strokeStyle = ringColor;
-        ctx.lineWidth = 2.5;
-        ctx.beginPath(); ctx.arc(tgt.x, tgt.y, tgt.radius + 4 + (Math.max(0, lifePercent) * 10), 0, Math.PI * 2); ctx.stroke();
       }
 
-      for (let i = e.hitRings.length - 1; i >= 0; i--) {
-        const hr = e.hitRings[i];
-        hr.life -= dt * 3.2;
-        if (hr.life <= 0) { e.hitRings.splice(i, 1); continue; }
-        const grown = hr.radius + (1 - hr.life) * 26;
-        ctx.globalAlpha = hr.life * 0.8;
-        ctx.strokeStyle = hr.color;
-        ctx.lineWidth = 2.5;
+      drawHitRings(ctx, e.hitRings, dt);
+
+      for (let i = e.particles.length - 1; i >= 0; i--) {
+        const p = e.particles[i];
+        p.x += p.vx; p.y += p.vy; p.life -= dt * 2.5;
+        if (p.life <= 0) { e.particles.splice(i, 1); continue; }
+        ctx.globalAlpha = p.life;
+        ctx.fillStyle = p.color;
         ctx.beginPath();
-        ctx.arc(hr.x, hr.y, grown, 0, Math.PI * 2);
-        ctx.stroke();
+        ctx.arc(p.x, p.y, 2.5, 0, Math.PI * 2);
+        ctx.fill();
       }
       ctx.globalAlpha = 1.0;
 
@@ -679,7 +740,10 @@ export default function ProFlickClient() {
 
       const ch = e.crosshair;
       if (ch.initialized && (gameState === 'playing' || gameState === 'start')) {
-        const activeColor = pointerLocked ? '#10b981' : '#eab308';
+        const activeColor = '#ffffff';
+        ctx.save();
+        ctx.shadowColor = 'rgba(0, 0, 0, 0.9)';
+        ctx.shadowBlur = 3;
         ctx.strokeStyle = activeColor;
         ctx.fillStyle = activeColor;
 
@@ -696,6 +760,7 @@ export default function ProFlickClient() {
         ctx.stroke();
 
         ctx.beginPath(); ctx.arc(ch.x, ch.y, 2, 0, Math.PI * 2); ctx.fill();
+        ctx.restore();
       }
 
       ctx.restore();
@@ -722,10 +787,13 @@ export default function ProFlickClient() {
         bestCombo: analytics.maxCombo,
         rating: { letter: analytics.grade?.letter || 'C', label: analytics.grade?.label || 'Keep Going', emoji: '🎯' },
         newBest: isNewBest,
-        drillName: 'Pro Flick Trainer',
+        drillName: copy?.h1Keyword || 'Pro Flick Trainer',
         playerName: getPlayerName(),
       });
       await shareScoreCard(url, canvas);
+      // Some browsers close native fullscreen while showing the share sheet.
+      // Restore it when the browser still permits the original activation.
+      ensureNativeFullscreen();
     } catch (e) {
       const text = `🎯 I scored ${uiScore} PTS (Level ${analytics.finalLevel}) on Pro Flick Trainer! Accuracy: ${analytics.accuracy}%. Test your reflexes at skilldrills.online!`;
       if (typeof navigator !== 'undefined' && navigator.share) {
@@ -734,49 +802,43 @@ export default function ProFlickClient() {
         navigator.clipboard.writeText(text);
         alert('Score card copied to clipboard!');
       }
+      ensureNativeFullscreen();
     }
-  }, [uiScore, bestScore, analytics, isNewBest]);
+  }, [uiScore, bestScore, analytics, isNewBest, copy, ensureNativeFullscreen]);
 
   const accuracy = gameState === 'gameOver' ? analytics.accuracy : uiAccuracy;
 
   return (
     <div className="min-h-screen bg-[#050508] text-white flex flex-col font-sans select-none">
       {/* ── MAIN CONTENT AREA ── */}
-      <main className="flex-1 max-w-6xl w-full mx-auto px-4 py-6 flex flex-col gap-6">
-        {/* Title */}
+      <main className="flex-1 max-w-6xl w-full mx-auto px-4 pt-6 pb-0 flex flex-col gap-6">
+        {/* Title & Intro */}
         {!isFullscreen && (
-          <div className="text-center">
+          <div className="flex flex-col gap-1">
             <h1 className="text-2xl sm:text-3xl font-black tracking-tight text-white">
-              PRO FLICK TRAINER
-              <span data-seo-kw="1" className="block text-sm font-semibold text-slate-400 mt-1 normal-case tracking-normal">
-                Flick Shot Trainer
-              </span>
+              <span data-seo-kw="1">{copy?.h1Keyword || "Flick Shot Trainer"}</span>
+              {copy?.h1Suffix || ""}
             </h1>
-            <p className="text-xs text-slate-400 mt-1">
-              Macro Flicking &amp; Target Acquisition • 15 Levels
+            <p className="text-xs sm:text-sm text-slate-400 font-medium">
+              {copy?.subtitle || "Train your snap aim, ballistic muscle memory, and target acquisition with real-time feedback."}
             </p>
           </div>
         )}
 
         {/* Live Stat Cards */}
         {!isFullscreen && (
-          <div className="grid grid-cols-4 gap-2.5 max-w-2xl mx-auto w-full">
-            <div className="bg-[#0d0d18] border border-white/5 rounded-xl p-2.5 text-center">
-              <div className="text-[10px] uppercase font-bold text-slate-500 tracking-wider">Score</div>
-              <div className="text-lg sm:text-xl font-black text-white tabular-nums">{uiScore}</div>
-            </div>
-            <div className="bg-[#0d0d18] border border-white/5 rounded-xl p-2.5 text-center">
-              <div className="text-[10px] uppercase font-bold text-slate-500 tracking-wider">Time</div>
-              <div className={`text-lg sm:text-xl font-black tabular-nums ${uiTimeLeft <= 10 ? 'text-red-400 animate-pulse' : 'text-white'}`}>{uiTimeLeft}s</div>
-            </div>
-            <div className="bg-[#0d0d18] border border-white/5 rounded-xl p-2.5 text-center">
-              <div className="text-[10px] uppercase font-bold text-slate-500 tracking-wider">Accuracy</div>
-              <div className="text-lg sm:text-xl font-black text-blue-400 tabular-nums">{accuracy}%</div>
-            </div>
-            <div className="bg-[#0d0d18] border border-white/5 rounded-xl p-2.5 text-center">
-              <div className="text-[10px] uppercase font-bold text-slate-500 tracking-wider">Best Score</div>
-              <div className="text-lg sm:text-xl font-black text-amber-400 tabular-nums">{bestScore}</div>
-            </div>
+          <div className="grid grid-cols-4 gap-2 w-full -mb-2">
+            {[
+              { label: copy?.statScore || "Score", value: uiScore },
+              { label: copy?.statTime || "Time", value: `${uiTimeLeft}s`, color: uiTimeLeft <= 10 ? 'text-red-400 animate-pulse' : 'text-white' },
+              { label: copy?.statAccuracy || "Accuracy", value: `${accuracy}%`, color: 'text-blue-400' },
+              { label: copy?.statBestScore || "Best Score", value: bestScore, color: 'text-amber-400' },
+            ].map((card, i) => (
+              <div key={i} className="border border-white/[0.06] bg-white/[0.015] px-2 py-2 rounded-xl text-center">
+                <div className="text-[10px] font-bold tracking-wider uppercase text-slate-500">{card.label}</div>
+                <div className={`text-base sm:text-lg font-black tabular-nums ${card.color || 'text-white'}`}>{card.value}</div>
+              </div>
+            ))}
           </div>
         )}
 
@@ -784,11 +846,11 @@ export default function ProFlickClient() {
         <div 
           ref={containerRef} 
           onContextMenu={(e) => { if (gameActiveRef.current) e.preventDefault(); }}
-          className={`relative overflow-hidden flex flex-col transition-all duration-150 select-none bg-[#080811] text-white border border-white/10 ${
+          className={
             isFullscreen 
-              ? 'fixed inset-0 z-[100] w-screen h-[100dvh] bg-[#080811] rounded-none border-none flex flex-col items-center justify-center' 
-              : 'w-full rounded-2xl bg-[#080811] aspect-video min-h-[460px] sm:min-h-[500px] max-h-[88vh] relative overflow-hidden flex flex-col'
-          }`}
+              ? 'fixed inset-0 z-[100] w-screen h-[100dvh] bg-[#050508] flex flex-col items-center justify-center' 
+              : 'w-full rounded-2xl aspect-video min-h-[460px] md:min-h-[500px] max-h-[88vh] max-md:portrait:aspect-[3/4] max-md:portrait:min-h-[420px] max-md:portrait:max-h-[76vh] max-md:landscape:min-h-[340px] max-md:landscape:max-h-[85vh] bg-[#080811] border border-white/10 relative overflow-hidden flex flex-col'
+          }
           style={{ touchAction: gameActiveRef.current ? 'none' : 'auto' }}
         >
           {/* DOM Flash Overlay */}
@@ -800,11 +862,11 @@ export default function ProFlickClient() {
           {(gameState === 'playing' || gameState === 'countdown') && (
             <>
               <div className="absolute top-4 left-4 z-30 pointer-events-none">
-                <p className="text-[10px] font-semibold uppercase tracking-wider text-white/50">Score</p>
+                <p className="text-[10px] font-semibold uppercase tracking-wider text-white/50">{copy?.statScore || "Score"}</p>
                 <p className="text-2xl sm:text-3xl font-bold text-white tabular-nums leading-tight">{uiScore}</p>
               </div>
               <div className="absolute top-4 right-4 z-30 pointer-events-none text-right">
-                <p className="text-[10px] font-semibold uppercase tracking-wider text-white/50">Time</p>
+                <p className="text-[10px] font-semibold uppercase tracking-wider text-white/50">{copy?.statTime || "Time"}</p>
                 <p className={`text-2xl sm:text-3xl font-bold tabular-nums leading-tight ${uiTimeLeft <= 10 ? 'text-red-400' : 'text-white'}`}>{uiTimeLeft}s</p>
               </div>
             </>
@@ -823,7 +885,7 @@ export default function ProFlickClient() {
                   });
                 }}
                 className="p-2.5 rounded-full bg-black/60 border border-white/10 text-slate-400 hover:text-white transition-colors cursor-pointer"
-                title="Toggle Miss Flash"
+                title={copy?.toggleFlash || "Toggle Miss Flash"}
               >
                 {flashEnabled ? <Zap className="w-4 h-4 text-red-400" /> : <ZapOff className="w-4 h-4 text-slate-500" />}
               </button>
@@ -837,53 +899,25 @@ export default function ProFlickClient() {
                   });
                 }}
                 className="p-2.5 rounded-full bg-black/60 border border-white/10 text-slate-400 hover:text-white transition-colors cursor-pointer"
-                title="Toggle Sound"
+                title={copy?.toggleSound || "Toggle Sound"}
               >
                 {soundEnabled ? <Volume2 className="w-4 h-4 text-emerald-400" /> : <VolumeX className="w-4 h-4 text-slate-500" />}
               </button>
             </div>
           )}
 
-          {/* PAUSE OVERLAY IF POINTER LOCK LOST DURING PLAY */}
-          {gameState === 'playing' && !pointerLocked && (
-            <div 
-              className="absolute inset-0 z-40 bg-black/70 backdrop-blur-sm flex items-center justify-center cursor-pointer"
-              onClick={(e) => { 
-                e.stopPropagation(); 
-                resumeDrill();
-              }}
-            >
-              <div className="text-center animate-pulse pointer-events-none">
-                <AlertCircle className="w-12 h-12 text-emerald-400 mx-auto mb-3" />
-                <h2 className="text-2xl font-black text-white tracking-widest uppercase mb-1">Game Paused</h2>
-                <p className="text-xs text-gray-300 font-medium">Click to resume — fullscreen and cursor lock will re-engage.</p>
-              </div>
-            </div>
-          )}
-
           <canvas 
             ref={canvasRef} 
-            onClick={() => { if (gameState === 'playing' && !pointerLocked) resumeDrill(); }}
-            className={`block absolute top-0 left-0 w-full h-full touch-none z-10 ${gameState === 'playing' ? 'cursor-none' : ''}`} 
+            className={`block absolute top-0 left-0 w-full h-full touch-none z-10 ${gameState === "playing" ? "cursor-none" : ""}`}
           />
 
           {/* START MODAL */}
           {gameState === 'start' && (
             <FpsStartCard
-              icon={Crosshair}
+              icon={Target}
               accent="emerald"
-              title="Pro Flick Trainer"
-              subtitle="Macro Flicking & Target Acquisition • 15 Levels"
-              rules={[
-                { icon: Target, accent: 'emerald', title: 'Objective', text: 'Snap & Click Targets' },
-                { icon: AlertCircle, accent: 'red', title: 'Failure Rule', text: 'Miss / Timeout → Combo Reset' },
-              ]}
-              sensitivity={{ value: universalSens, onChange: setUniversalSens, cmPer360 }}
-              stats={[
-                { icon: Trophy, label: 'Best Score', value: bestScore, color: 'text-white', accent: 'slate' },
-                { icon: Flame, label: 'Best Combo', value: `${bestCombo}x`, color: 'text-emerald-400', accent: 'emerald' },
-                { icon: TrendingUp, label: 'Best Level', value: `Lv. ${bestLevel}`, color: 'text-blue-400', accent: 'blue' },
-              ]}
+              title={copy?.startTitle || "Pro Flick Trainer"}
+              subtitle={copy?.startSubtitle || "Macro Flicking & Target Acquisition • Endless Levels"}
               isTouchOnlyDevice={isTouchOnlyDevice}
               onStart={enterDrill}
             />
@@ -891,96 +925,51 @@ export default function ProFlickClient() {
 
           {/* COUNTDOWN OVERLAY */}
           {gameState === 'countdown' && (
-            <DrillCountdown value={countdownValue} subtitle="GET READY" />
+            <DrillCountdown value={countdownValue} subtitle={copy?.getReady || "GET READY"} />
           )}
 
-          {/* END SCREEN */}
+          {/* END SCREEN — universal card, shared by every drill */}
           {gameState === 'gameOver' && analytics.grade && (
-            <div className="absolute inset-0 z-40 flex bg-neutral-950/98 select-none font-sans" style={{ background: 'rgba(5,5,8,0.97)' }} onPointerDown={e => e.stopPropagation()}>
-              
-              {/* Left Grade Panel */}
-              <div className="w-[36%] flex flex-col items-center justify-center gap-1 border-r border-white/5 px-4" style={{ background: 'radial-gradient(ellipse 260px 200px at 50% 30%, rgba(16,185,129,.12), transparent 70%)' }}>
-                {isNewBest && (
-                  <span className="text-[9.5px] font-bold text-yellow-400 bg-yellow-500/10 border border-yellow-500/25 px-2.5 py-0.5 rounded-full mb-1 animate-pulse">
-                    NEW BEST
-                  </span>
-                )}
-                <div className={`text-5xl sm:text-6xl font-black leading-none ${analytics.grade.color}`}>
-                  {analytics.grade.letter}
-                </div>
-                <div className="text-[10px] uppercase tracking-widest text-slate-500 text-center font-bold mt-1">
-                  {analytics.grade.label}
-                </div>
-                <div className="text-3xl sm:text-4xl font-black text-white mt-2 tabular-nums">
-                  {uiScore}
-                </div>
-                <div className="text-[9px] uppercase tracking-widest text-slate-500">Points</div>
-              </div>
-
-              {/* Right Stats & Actions Panel */}
-              <div className="flex-1 flex flex-col justify-center gap-3 px-6 py-4 min-w-0">
-                
-                {/* 4 Stat Tiles */}
-                <div className="grid grid-cols-2 sm:grid-cols-4 gap-2">
-                  <div className="bg-black border border-white/5 p-2.5 rounded-xl text-center">
-                    <p className="text-sm sm:text-base font-black text-white">{analytics.accuracy}%</p>
-                    <p className="text-[7.5px] sm:text-[8.5px] font-bold uppercase tracking-wider text-gray-400 mt-0.5">Accuracy</p>
-                  </div>
-                  <div className="bg-black border border-white/5 p-2.5 rounded-xl text-center">
-                    <p className="text-sm sm:text-base font-black text-white">{analytics.avgFlickMs}<span className="text-[10px] text-gray-500">ms</span></p>
-                    <p className="text-[7.5px] sm:text-[8.5px] font-bold uppercase tracking-wider text-gray-400 mt-0.5">Avg Flick</p>
-                  </div>
-                  <div className="bg-black border border-white/5 p-2.5 rounded-xl text-center">
-                    <p className="text-sm sm:text-base font-black text-white">{analytics.maxCombo}x</p>
-                    <p className="text-[7.5px] sm:text-[8.5px] font-bold uppercase tracking-wider text-gray-400 mt-0.5">Max Combo</p>
-                  </div>
-                  <div className="bg-black border border-white/5 p-2.5 rounded-xl text-center">
-                    <p className="text-sm sm:text-base font-black text-white">Lv. {analytics.finalLevel}</p>
-                    <p className="text-[7.5px] sm:text-[8.5px] font-bold uppercase tracking-wider text-gray-400 mt-0.5">Peak Level</p>
-                  </div>
-                </div>
-
-                {/* Action Buttons */}
-                <div className="flex gap-2">
-                  <button 
-                    onClick={enterDrill}
-                    className="flex-1 py-3 rounded-[13px] bg-gradient-to-r from-emerald-600 to-teal-600 text-white font-bold text-xs uppercase tracking-wide cursor-pointer transition-transform active:scale-[0.98] shadow-md flex items-center justify-center gap-1.5"
-                  >
-                    <RefreshCw className="w-3.5 h-3.5" /> Play Again
-                  </button>
-                  <button 
-                    onClick={shareScore} 
-                    className="w-11 flex-shrink-0 rounded-[13px] bg-white/[0.04] border border-white/10 flex items-center justify-center text-slate-400 hover:text-white cursor-pointer active:scale-90 transition-transform" 
-                    title="Share Score"
-                  >
-                    <Share2 className="w-4 h-4" />
-                  </button>
-                  <button 
-                    onClick={handleExitDrill} 
-                    className="w-11 flex-shrink-0 rounded-[13px] bg-white/[0.04] border border-white/10 flex items-center justify-center text-slate-400 hover:text-white cursor-pointer active:scale-90 transition-transform" 
-                    title="Exit Fullscreen & Return"
-                  >
-                    <LogOut className="w-4 h-4 text-red-400" />
-                  </button>
-                </div>
-
-              </div>
-            </div>
+            <DrillResultCard
+              accent="emerald"
+              grade={analytics.grade}
+              score={uiScore}
+              isNewBest={isNewBest}
+              stats={[
+                { value: analytics.accuracy, suffix: '%', label: copy?.statAccuracy || 'Accuracy' },
+                { value: analytics.avgFlickMs, suffix: 'ms', label: copy?.statAvgFlick || 'Avg Flick' },
+                { value: `${analytics.maxCombo}x`, label: copy?.statMaxCombo || 'Max Combo' },
+                { value: `Lv. ${analytics.finalLevel}`, label: copy?.statPeakLevel || 'Peak Level' },
+              ]}
+              onPlayAgain={enterDrill}
+              onBeforeShare={() => setIsFullscreen(false)}
+              onShare={shareScore}
+              onExit={handleExitDrill}
+            />
           )}
 
         </div>
+
+        {/* Drill Caption */}
+        {!isFullscreen && (
+          <p className="text-xs text-slate-400 leading-relaxed -mt-2">
+            {copy?.stageCaption || "Snap to and click spawning targets across the screen before their timer expires."}
+          </p>
+        )}
 
         {/* ── ACCORDIONS ── */}
         {!isFullscreen && (
           <div className="[&>div]:!mt-0">
             <DrillAccordion
               id="rules"
-              title="Drill Instructions & Scoring System"
+              singleLineTitle
+              framed
+              title={copy?.rulesTitle || "Drill Instructions & Scoring System"}
               isOpen={openAccordion === 'rules'}
               onToggle={() => setOpenAccordion(openAccordion === 'rules' ? null : 'rules')}
             >
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                {RULES_ITEMS.map((item, i) => (
+                {(copy?.rulesItems || RULES_ITEMS).map((item, i) => (
                   <RuleItem key={i} num={item.num} text={item.text} highlight={item.highlight} result={item.result} />
                 ))}
               </div>
@@ -988,15 +977,20 @@ export default function ProFlickClient() {
 
             <DrillAccordion
               id="about"
-              title="About Pro Flick Trainer"
+              singleLineTitle
+              framed
+              title={copy?.aboutTitle || "About Pro Flick Trainer"}
               isOpen={openAccordion === 'about'}
               onToggle={() => setOpenAccordion(openAccordion === 'about' ? null : 'about')}
             >
               <div className="space-y-8">
                 <section>
-                  <h4 className="text-base font-bold text-white mb-2 flex items-center gap-2">
-                    <Crosshair className="w-4 h-4 text-red-400" /> What Is Flick Aim Training?
-                  </h4>
+                  <h3 className="text-base font-bold text-white mb-2 flex items-center gap-2">
+                    <Crosshair className="w-4 h-4 text-red-400" /> {copy?.aboutHeading || "What Is Flick Aim Training?"}
+                  </h3>
+                  <p className="text-sm leading-relaxed mb-3 text-gray-300">
+                    {copy?.aboutText || "A flick is one ballistic mouse movement onto a target you have already seen. Its duration scales with the distance moved and the size of the target (Fitts, 1954), and most flicks end in a smaller corrective submovement rather than landing clean (Elliott et al., 2010)."}
+                  </p>
                   {ABOUT_INTRO.map((para, i) => (
                     <p key={i} className={`text-sm leading-relaxed text-gray-300 ${i < ABOUT_INTRO.length - 1 ? 'mb-3' : ''}`}>{para}</p>
                   ))}
@@ -1009,7 +1003,7 @@ export default function ProFlickClient() {
                         <div className={`w-7 h-7 rounded-lg ${card.iconBg} flex items-center justify-center`}>
                           <card.icon className="w-3.5 h-3.5 text-white" />
                         </div>
-                        <h5 className="text-xs font-bold text-white">{card.title}</h5>
+                        <h4 className="text-xs font-bold text-white">{card.title}</h4>
                       </div>
                       <p className="text-xs text-gray-300 leading-relaxed">{card.text}</p>
                     </div>
@@ -1018,9 +1012,9 @@ export default function ProFlickClient() {
 
                 {ABOUT_SECTIONS.map((section, i) => (
                   <section key={i}>
-                    <h4 className="text-base font-bold text-white mb-2 flex items-center gap-2">
+                    <h3 className="text-base font-bold text-white mb-2 flex items-center gap-2">
                       <section.icon className="w-4 h-4 text-red-400" /> {section.title}
-                    </h4>
+                    </h3>
                     {section.paragraphs.map((para, j) => (
                       <p key={j} className={`text-sm leading-relaxed text-gray-300 ${j < section.paragraphs.length - 1 ? 'mb-3' : ''}`}>{para}</p>
                     ))}
@@ -1028,79 +1022,28 @@ export default function ProFlickClient() {
                 ))}
               </div>
             </DrillAccordion>
-
-            <DrillAccordion
-              id="faq"
-              title="Frequently Asked Questions"
-              isOpen={openAccordion === 'faq'}
-              onToggle={() => setOpenAccordion(openAccordion === 'faq' ? null : 'faq')}
-            >
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                {FAQ_ITEMS.map((item, i) => (
-                  <FAQItem key={i} q={item.q} a={item.a} />
-                ))}
-              </div>
-            </DrillAccordion>
           </div>
         )}
-
-        {/* ── RELATED FPS DRILLS ── */}
-        {!isFullscreen && (
-          <section className="mt-4">
-            <h2 className="text-sm font-bold text-slate-400 uppercase tracking-wider mb-3 font-sans">
-              Related FPS Drills
-            </h2>
-            <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
-              {RELATED_DRILLS.map((drill) => (
-                <Link
-                  key={drill.id}
-                  href={drill.href}
-                  className="group bg-[#0c0c16] border border-white/5 hover:border-red-500/40 rounded-xl p-3.5 transition-all duration-200 hover:-translate-y-0.5 flex flex-col justify-between"
-                >
-                  <div>
-                    <div className="text-[10px] font-bold text-red-400 uppercase tracking-wider mb-1">{drill.cat}</div>
-                    <div className="text-xs font-bold text-white group-hover:text-red-300 transition-colors">{drill.name}</div>
-                    <div className="text-[11px] text-slate-400 mt-1 line-clamp-2 leading-relaxed">{drill.desc}</div>
-                  </div>
-                  <div className="text-[10px] font-bold text-slate-500 group-hover:text-red-400 mt-3 flex items-center gap-1 transition-colors">
-                    Train Drill <span>→</span>
-                  </div>
-                </Link>
-              ))}
-            </div>
-          </section>
-        )}
-
-        {/* ── FOOTER ── */}
-        {!isFullscreen && <DrillFooter />}
 
       </main>
     </div>
   );
 }
 
-// === Subcomponents ===
 function RuleItem({ num, text, highlight = '', result }) {
   return (
-    <div className="flex items-center gap-4 bg-black p-4 rounded-xl border border-white/10 shadow-sm font-sans">
-      <div className="w-8 h-8 rounded-xl bg-white/10 border border-white/20 flex items-center justify-center text-white text-base font-black shadow-lg flex-shrink-0">{num}</div>
-      <div className="flex-1 flex flex-col sm:flex-row sm:items-center justify-between gap-2">
-        <p className="text-sm font-medium text-gray-100 font-sans">
-          {text}{highlight && <span className="font-black font-sans text-white"> {highlight}</span>}
+    <div className="flex items-center gap-2.5 sm:gap-3 bg-black px-3 py-2 sm:px-4 sm:py-2.5 rounded-xl border border-white/10 shadow-sm font-sans">
+      <div className="w-6 h-6 sm:w-7 sm:h-7 rounded-lg bg-white/10 border border-white/20 flex items-center justify-center text-white text-xs sm:text-sm font-black shadow flex-shrink-0">
+        {num}
+      </div>
+      <div className="flex-1 min-w-0 flex items-center justify-between gap-2">
+        <p className="text-xs sm:text-sm font-medium text-gray-200 font-sans truncate">
+          {text}{highlight && <span className="font-bold text-white"> {highlight}</span>}
         </p>
-        <div className="text-xs font-black px-3 py-1.5 rounded-lg bg-[#050811] border border-white/10 text-white whitespace-nowrap shadow-inner tracking-wide text-center sm:text-left">
+        <div className="text-[11px] sm:text-xs font-bold px-2 py-0.5 sm:px-2.5 sm:py-1 rounded-md bg-[#050811] border border-white/10 text-white whitespace-nowrap shadow-inner flex-shrink-0">
           {result}
         </div>
       </div>
-    </div>
-  );
-}
-
-function FAQItem({ q, a }) {
-  return (
-    <div className="bg-[#05060b] border border-gray-800 rounded-xl p-5 hover:border-gray-700 transition-colors font-sans">
-      <h4 className="text-sm font-bold text-gray-200 mb-2">{q}</h4>
-      <p className="text-xs text-gray-200 leading-relaxed">{a}</p>
     </div>
   );
 }

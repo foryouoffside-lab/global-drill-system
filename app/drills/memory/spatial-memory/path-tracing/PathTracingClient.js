@@ -1,14 +1,12 @@
 'use client';
 
 import React, { useState, useEffect, useRef, useCallback } from 'react';
-import Link from 'next/link';
 
 import {
-  Activity, AlertCircle, Brain,
-  Eye, GraduationCap, Play, RefreshCw, Target,
+  Brain, RefreshCw,
   TrendingUp, Volume2, VolumeX,
-  Zap, ZapOff, Users, Share2, ArrowLeft, CheckCircle, XCircle,
-  Route, MapPin, Trophy
+  Zap, ZapOff, Users, Share2, ArrowLeft,
+  Route
 } from 'lucide-react';
 
 import generateShareCard, { shareScoreCard } from '../../../../../components/ShareScoreCard';
@@ -23,10 +21,10 @@ import DrillCountdown from '../../../../../components/drill/DrillCountdown';
 import DrillAccordion from '../../../../../components/drill/DrillAccordion';
 import DrillFlashOverlay from '../../../../../components/drill/DrillFlashOverlay';
 import DrillRuleItem from '../../../../../components/drill/DrillRuleItem';
-import DrillFAQItem from '../../../../../components/drill/DrillFAQItem';
 import FpsStartCard from '../../../../../components/drill/FpsStartCard';
+import useImmersiveMode from '@/lib/useImmersiveMode';
 
-const DRILL_DURATION = 45; // 45 seconds duration
+const DRILL_DURATION = 60;
 const POINTS_PER_HIT = 150;
 const ELITE_SCORE = 1000; // Target score for S+ rating (rebalanced after combo removal)
 const STORAGE_KEY = 'skilldrills_memory_path_tracing_v4';
@@ -47,9 +45,10 @@ const saveData = (data) => {
   } catch (e) {}
 };
 
-export default function PathTracingClient() {
+export default function PathTracingClient({ copy = null }) {
   const [gameState, setGameState] = useState('start'); // 'start' | 'countdown' | 'playing' | 'gameOver'
   const [isFullscreen, setIsFullscreen] = useState(false);
+  useImmersiveMode(isFullscreen); // locks the page behind while the drill fills the screen
   const [soundEnabled, setSoundEnabled] = useState(true);
   const [flashEnabled, setFlashEnabled] = useState(true);
   const [openAccordion, setOpenAccordion] = useState(null);
@@ -117,9 +116,7 @@ export default function PathTracingClient() {
     startingRef.current = false;
     gameActiveRef.current = false;
 
-    if (document.fullscreenElement) {
-      await document.exitFullscreen().catch(() => {});
-    }
+    setIsFullscreen(false);
     setGameState('start');
   }, [clearGameTimeouts]);
 
@@ -129,7 +126,7 @@ export default function PathTracingClient() {
   });
 
   // Stop all timers/intervals on unmount (e.g. in-app nav away mid-drill) —
-  // visibilitychange/pagehide/fullscreenchange don't fire on SPA route changes.
+  // visibilitychange/pagehide don't fire on SPA route changes.
   useEffect(() => {
     return () => {
       countdownTimeoutsRef.current.forEach(clearTimeout);
@@ -151,7 +148,7 @@ export default function PathTracingClient() {
 
     const e = engine.current;
     const totalTries = e.perfectHits + e.missedClicks;
-    const finalAccuracy = totalTries > 0 ? Math.round((e.perfectHits / totalTries) * 100) : 100;
+    const finalAccuracy = totalTries > 0 ? Math.round((e.perfectHits / totalTries) * 100) : 0;
 
     const grade = getFpsScoreGrade(e.score, ELITE_SCORE);
 
@@ -159,7 +156,7 @@ export default function PathTracingClient() {
       accuracy: finalAccuracy,
       perfectHits: e.perfectHits,
       missedClicks: e.missedClicks,
-      finalLevel: e.level,
+      finalLevel: Math.floor(e.level),
       grade,
     });
 
@@ -171,7 +168,7 @@ export default function PathTracingClient() {
 
     const updatedData = {
       bestScore: Math.max(prevSaved.bestScore, e.score),
-      bestLevel: Math.max(prevSaved.bestLevel, e.level),
+      bestLevel: Math.max(prevSaved.bestLevel, Math.floor(e.level)),
       totalSessions: (prevSaved.totalSessions || 0) + 1,
     };
     saveData(updatedData);
@@ -402,12 +399,7 @@ export default function PathTracingClient() {
       userPath: [],
     };
 
-    // Auto Fullscreen on Start
-    try {
-      if (containerRef.current && !document.fullscreenElement) {
-        await containerRef.current.requestFullscreen();
-      }
-    } catch (e) {}
+    setIsFullscreen(true);
 
     // Countdown sequence: 3 -> 2 -> 1 -> GO
     setGameState('countdown');
@@ -434,7 +426,7 @@ export default function PathTracingClient() {
       startingRef.current = false;
       setGameState('playing');
 
-      // Start 45s decimal timer
+      // Count only active tracing time; path and result reveals are untimed.
       if (timerIntervalRef.current) clearInterval(timerIntervalRef.current);
       let lastTime = performance.now();
 
@@ -444,6 +436,8 @@ export default function PathTracingClient() {
         lastTime = now;
 
         const eRef = engine.current;
+        if (phaseRef.current !== 'drawing') return;
+
         if (eRef.timeLeft > 0) {
           eRef.timeLeft = Math.max(0, eRef.timeLeft - deltaSec);
           setUiTimeLeft(Math.ceil(eRef.timeLeft));
@@ -463,6 +457,7 @@ export default function PathTracingClient() {
   }, [clearGameTimeouts, endGame, startSequenceCycle]);
 
   const shareScore = useCallback(async () => {
+    setIsFullscreen(false);
     const url = 'https://skilldrills.online/drills/memory/spatial-memory/path-tracing';
     try {
       const canvas = generateShareCard({
@@ -492,41 +487,31 @@ export default function PathTracingClient() {
       <main className="flex-1 max-w-6xl w-full mx-auto px-4 py-6 flex flex-col gap-6">
         {/* Title */}
         {!isFullscreen && (
-        <div className="text-center">
-          <h1 className="text-2xl sm:text-3xl font-black tracking-tight text-white">
-            PATH TRACING
-            <span data-seo-kw="1" className="block text-sm font-semibold text-slate-400 mt-1 normal-case tracking-normal">
-              Path Tracing Sequence Memory
-            </span>
-          </h1>
-          <p className="text-xs text-slate-400 mt-1">
-            Spatial Sequence Memory Recall Under Speed Constraints
-          </p>
-        </div>
+          <div className="flex flex-col gap-1">
+            <h1 className="text-2xl sm:text-3xl font-black tracking-tight text-white">
+              {copy?.h1Prefix || null}
+              <span data-seo-kw="1">{copy?.h1Keyword || "Path Tracing Memory Test"}</span>
+              {copy?.h1Suffix || null}
+              <span className="block text-sm font-semibold text-slate-400 mt-1">{copy?.subtitle || "Path tracing memory test for watching spatial routes, retracing them in order, and improving visual recall"}</span>
+            </h1>
+          </div>
         )}
 
         {/* Live Stat Cards */}
         {!isFullscreen && (
-        <div className="grid grid-cols-4 gap-2.5 max-w-2xl mx-auto w-full">
-          <div className="bg-[#0d0d18] border border-white/5 rounded-xl p-2.5 text-center">
-            <div className="text-[10px] uppercase font-bold text-slate-500 tracking-wider">Score</div>
-            <div className="text-lg sm:text-xl font-black text-amber-400 tabular-nums">{uiScore}</div>
+          <div className="grid grid-cols-4 gap-2 w-full -mb-2">
+            {[
+              { label: copy?.statScore || "Score", val: uiScore, color: "text-amber-400" },
+              { label: copy?.statTime || "Time", val: `${uiTimeLeft}s`, highlight: uiTimeLeft <= 10 },
+              { label: copy?.statLevel || "Level", val: `${copy?.levelPrefix || "Lv."} ${level}`, color: "text-indigo-400" },
+              { label: copy?.statBestScore || "Best Score", val: bestScore, color: "text-purple-400" },
+            ].map((s, i) => (
+              <div key={i} className="border border-white/[0.06] bg-white/[0.015] px-2 py-2 rounded-xl text-center">
+                <div className="text-[9px] sm:text-[10px] uppercase font-bold text-slate-500 tracking-wider mb-0.5">{s.label}</div>
+                <div className={`text-xs sm:text-sm md:text-base font-black tabular-nums truncate ${s.highlight ? "text-red-400 animate-pulse" : s.color || "text-white"}`}>{s.val}</div>
+              </div>
+            ))}
           </div>
-          <div className="bg-[#0d0d18] border border-white/5 rounded-xl p-2.5 text-center">
-            <div className="text-[10px] uppercase font-bold text-slate-500 tracking-wider">Time</div>
-            <div className={`text-lg sm:text-xl font-black tabular-nums ${uiTimeLeft <= 10 ? 'text-red-400 animate-pulse' : 'text-white'}`}>
-              {uiTimeLeft}s
-            </div>
-          </div>
-          <div className="bg-[#0d0d18] border border-white/5 rounded-xl p-2.5 text-center">
-            <div className="text-[10px] uppercase font-bold text-slate-500 tracking-wider">Level</div>
-            <div className="text-lg sm:text-xl font-black text-indigo-400 tabular-nums">Lv. {level}</div>
-          </div>
-          <div className="bg-[#0d0d18] border border-white/5 rounded-xl p-2.5 text-center">
-            <div className="text-[10px] uppercase font-bold text-slate-500 tracking-wider">Best Score</div>
-            <div className="text-lg sm:text-xl font-black text-purple-400 tabular-nums">{bestScore}</div>
-          </div>
-        </div>
         )}
 
         {/* Game Stage Container */}
@@ -543,12 +528,12 @@ export default function PathTracingClient() {
           {(gameState === 'playing' || gameState === 'countdown') && (
             <>
               <div className="absolute top-4 left-4 z-30 pointer-events-none">
-                <p className="text-[10px] font-semibold uppercase tracking-wider text-white/50">Score</p>
+                <p className="text-[10px] font-semibold uppercase tracking-wider text-white/50">{copy?.statScore || "Score"}</p>
                 <p className="text-2xl sm:text-3xl font-bold text-white tabular-nums leading-tight">{uiScore}</p>
               </div>
 
               <div className="absolute top-4 right-4 z-30 pointer-events-none text-right">
-                <p className="text-[10px] font-semibold uppercase tracking-wider text-white/50">Time</p>
+                <p className="text-[10px] font-semibold uppercase tracking-wider text-white/50">{copy?.statTime || "Time"}</p>
                 <p className={`text-2xl sm:text-3xl font-bold tabular-nums leading-tight ${uiTimeLeft <= 10 ? 'text-red-400' : 'text-white'}`}>{uiTimeLeft}s</p>
               </div>
             </>
@@ -592,22 +577,16 @@ export default function PathTracingClient() {
           {gameState === 'playing' && (
             <div className="flex-1 flex flex-col items-center justify-center p-3 sm:p-6 w-full h-full relative z-20 overflow-hidden my-auto">
 
-              {/* NO TEXT OR BAR ABOVE GRID IN DEMO PHASE (CLEAN SPACER) */}
-              {phase === 'showing' && (
-                <div className="h-6 sm:h-8 mb-2 sm:mb-4 shrink-0" />
-              )}
-
-              {phase === 'drawing' && (
-                <div className="flex gap-2 mb-2 sm:mb-4 justify-center w-full max-w-[280px] sm:max-w-[360px] flex-wrap shrink-0">
+              {/* Fixed-height status area prevents the centered grid moving between phases. */}
+              <div className="h-6 sm:h-8 mb-2 sm:mb-4 shrink-0 flex items-center justify-center w-full">
+                {phase === 'drawing' && (
+                  <div className="flex gap-2 justify-center w-full max-w-[280px] sm:max-w-[360px] flex-wrap">
                   {Array.from({ length: path.length }).map((_, i) => (
                     <div key={i} className={`w-2.5 h-2.5 rounded-full transition-all duration-300 ${i < userPath.length ? 'bg-amber-400 shadow-[0_0_8px_rgba(251,191,36,0.8)] scale-110' : 'bg-white/20'}`} />
                   ))}
-                </div>
-              )}
-
-              {phase === 'result' && (
-                <div className="h-6 sm:h-8 mb-2 sm:mb-4 shrink-0" />
-              )}
+                  </div>
+                )}
+              </div>
 
               {/* INTERACTIVE GRID CONTAINER (PORTRAIT & MOBILE PERFECTLY CENTERED) */}
               <div
@@ -625,12 +604,14 @@ export default function PathTracingClient() {
                   const isUserStep = userPath.includes(i);
                   const isWrongStep = wrongDotIndex === i;
                   const isPathPoint = path.includes(i);
+                  const demoStepNumber = isCurrentDemoDot ? path.indexOf(i) + 1 : null;
+                  const correctStepNumber = isPathPoint ? path.indexOf(i) + 1 : null;
 
                   let cellStyle = "bg-white/[0.04] border border-white/10";
 
                   if (phase === 'showing') {
                     if (isCurrentDemoDot) {
-                      cellStyle = "bg-amber-500 border-amber-300 scale-105";
+                      cellStyle = "bg-amber-500 border-amber-300";
                     }
                   } else if (phase === 'drawing') {
                     if (isUserStep) {
@@ -651,12 +632,22 @@ export default function PathTracingClient() {
                       key={i}
                       onPointerDown={(e) => handleCellClick(i, e)}
                       disabled={phase !== 'drawing' || isProcessing}
-                      className={`w-full aspect-square rounded-lg sm:rounded-xl flex items-center justify-center transition-all duration-150 ease-out focus:outline-none touch-none border ${cellStyle}`}
+                      className={`w-full aspect-square rounded-lg sm:rounded-xl flex items-center justify-center transition-colors duration-150 ease-out focus:outline-none touch-none border ${cellStyle}`}
                       aria-label="Grid Cell"
                     >
-                      {isUserStep && (
+                      {phase === 'showing' && demoStepNumber && (
+                        <span className="text-xs sm:text-sm font-black text-black font-mono">
+                          {demoStepNumber}
+                        </span>
+                      )}
+                      {phase === 'drawing' && isUserStep && (
                         <span className="text-xs sm:text-sm font-black text-black font-mono">
                           {userPath.indexOf(i) + 1}
+                        </span>
+                      )}
+                      {phase === 'result' && correctStepNumber && (
+                        <span className="text-xs sm:text-sm font-black text-black font-mono">
+                          {correctStepNumber}
                         </span>
                       )}
                     </button>
@@ -672,16 +663,8 @@ export default function PathTracingClient() {
             <FpsStartCard
               icon={Route}
               accent="amber"
-              title="Path Tracing Pro"
-              subtitle="Spatial Path Memory • Progressive Step Tracing"
-              rules={[
-                { icon: Target, accent: 'amber', title: 'Memorize Path Sequence', text: 'Watch the animated path sequence move across the grid' },
-                { icon: Zap, accent: 'blue', title: 'Retrace Step by Step', text: 'Tap the grid tiles in the exact sequential order shown' },
-              ]}
-              stats={[
-                { icon: Trophy, label: 'Best Score', value: bestScore, color: 'text-white', accent: 'slate' },
-                { icon: TrendingUp, label: 'Best Level', value: `Lv. ${bestLevel}`, color: 'text-purple-400', accent: 'purple' },
-              ]}
+              title={copy?.startTitle || "Path Tracing Pro"}
+              subtitle={copy?.startSubtitle || "Spatial Path Memory • Progressive Step Tracing"}
               isTouchOnlyDevice={false}
               onStart={enterDrill}
             />
@@ -689,7 +672,7 @@ export default function PathTracingClient() {
 
           {/* COUNTDOWN OVERLAY (3-2-1-GO) */}
           {gameState === 'countdown' && (
-            <DrillCountdown value={countdownValue} subtitle="GET READY" />
+            <DrillCountdown value={countdownValue} subtitle={copy?.countdownSubtitle || "GET READY"} />
           )}
 
           {/* END SCREEN (GAME OVER) */}
@@ -700,7 +683,7 @@ export default function PathTracingClient() {
               <div className="w-[36%] flex flex-col items-center justify-center gap-1 border-r border-white/5 px-4" style={{ background: 'radial-gradient(ellipse 260px 200px at 50% 30%, rgba(245,158,11,.12), transparent 70%)' }}>
                 {isNewBest && (
                   <span className="text-[9.5px] font-bold text-yellow-400 bg-yellow-500/10 border border-yellow-500/25 px-2.5 py-0.5 rounded-full mb-1 animate-pulse">
-                    NEW BEST
+                    {copy?.newBest || "NEW BEST"}
                   </span>
                 )}
                 <div className={`text-5xl sm:text-6xl font-black leading-none ${analytics.grade?.color || 'text-amber-400'}`}>
@@ -712,7 +695,7 @@ export default function PathTracingClient() {
                 <div className="text-3xl sm:text-4xl font-black text-white mt-2 tabular-nums">
                   {uiScore}
                 </div>
-                <div className="text-[9px] uppercase tracking-widest text-slate-500">Points</div>
+                <div className="text-[9px] uppercase tracking-widest text-slate-500">{copy?.pointsLabel || "Points"}</div>
               </div>
 
               {/* Right Stats & Actions Panel */}
@@ -722,15 +705,15 @@ export default function PathTracingClient() {
                 <div className="grid grid-cols-3 gap-2">
                   <div className="bg-black border border-white/5 p-2.5 rounded-xl text-center">
                     <p className="text-sm sm:text-base font-black text-white">{analytics.accuracy}%</p>
-                    <p className="text-[7.5px] sm:text-[8.5px] font-bold uppercase tracking-wider text-gray-400 mt-0.5">Accuracy</p>
+                    <p className="text-[7.5px] sm:text-[8.5px] font-bold uppercase tracking-wider text-gray-400 mt-0.5">{copy?.statAccuracy || "Accuracy"}</p>
                   </div>
                   <div className="bg-black border border-white/5 p-2.5 rounded-xl text-center">
-                    <p className="text-sm sm:text-base font-black text-white">Lvl {analytics.finalLevel}</p>
-                    <p className="text-[7.5px] sm:text-[8.5px] font-bold uppercase tracking-wider text-gray-400 mt-0.5">Peak Level</p>
+                    <p className="text-sm sm:text-base font-black text-white">{copy?.levelPrefix || "Lv."} {analytics.finalLevel}</p>
+                    <p className="text-[7.5px] sm:text-[8.5px] font-bold uppercase tracking-wider text-gray-400 mt-0.5">{copy?.statPeakLevel || "Peak Level"}</p>
                   </div>
                   <div className="bg-black border border-white/5 p-2.5 rounded-xl text-center">
                     <p className="text-sm sm:text-base font-black text-white">{analytics.perfectHits}</p>
-                    <p className="text-[7.5px] sm:text-[8.5px] font-bold uppercase tracking-wider text-gray-400 mt-0.5">Perfects</p>
+                    <p className="text-[7.5px] sm:text-[8.5px] font-bold uppercase tracking-wider text-gray-400 mt-0.5">{copy?.statPerfects || "Perfects"}</p>
                   </div>
                 </div>
 
@@ -740,7 +723,7 @@ export default function PathTracingClient() {
                     onClick={enterDrill}
                     className="flex-1 py-3 rounded-[13px] bg-gradient-to-r from-amber-500 to-orange-600 text-white font-bold text-xs uppercase tracking-wide cursor-pointer transition-transform active:scale-[0.98] shadow-md flex items-center justify-center gap-1.5"
                   >
-                    <RefreshCw className="w-3.5 h-3.5" /> Play Again
+                    <RefreshCw className="w-3.5 h-3.5" /> {copy?.btnPlayAgain || "Play Again"}
                   </button>
                   <button
                     onClick={shareScore}
@@ -752,7 +735,7 @@ export default function PathTracingClient() {
                   <button
                     onClick={handleExitDrill}
                     className="w-11 flex-shrink-0 rounded-[13px] bg-white/[0.04] border border-white/10 flex items-center justify-center text-slate-400 hover:text-white cursor-pointer active:scale-90 transition-transform"
-                    title="Exit Fullscreen & Return"
+                    title="Exit Drill & Return"
                   >
                     <ArrowLeft className="w-4 h-4 text-red-400" />
                   </button>
@@ -769,32 +752,36 @@ export default function PathTracingClient() {
           <div className="[&>div]:!mt-0">
           <DrillAccordion
             id="rules"
-            title="Drill Instructions & Scoring System"
+            title={copy?.rulesTitle || "Drill Instructions & Scoring System"}
             isOpen={openAccordion === 'rules'}
             onToggle={() => setOpenAccordion(openAccordion === 'rules' ? null : 'rules')}
           >
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-              <DrillRuleItem num="1" text="Retrace Exact Path Sequence" highlight="+150 PTS" result="Level Up (+1 Step)" />
-              <DrillRuleItem num="2" text="Level Progression" highlight="Grid 3x3 → 7x7" result="Difficulty naturally scales" />
-              <DrillRuleItem num="3" text="Miss / Timeout" highlight="Zero Penalties" result="No score or time loss" />
-              <DrillRuleItem num="4" text="Difficulty Never Drops" highlight="Stays at Current Level" result="A miss just replays the round" />
+              {(copy?.rulesItems || [
+                { num: "1", text: "Memorize & Retrace Path Sequence", highlight: "+150 PTS", result: "Level Up (+1 Step)" },
+                { num: "2", text: "Level Progression", highlight: "Grid 3x3 → 7x7", result: "Difficulty naturally scales" },
+                { num: "3", text: "Miss / Timeout", highlight: "Zero Penalties", result: "No score or time loss" },
+                { num: "4", text: "Difficulty Never Drops", highlight: "Stays at Current Level", result: "A miss just replays the round" }
+              ]).map((r, i) => (
+                <DrillRuleItem key={i} num={r.num} text={r.text} highlight={r.highlight} result={r.result} />
+              ))}
             </div>
           </DrillAccordion>
 
-          {/* ACCORDION 2: ABOUT PATH TRACING PRO */}
+          {/* ACCORDION 2: ABOUT PATH TRACING */}
           <DrillAccordion
             id="about"
-            title="About Path Tracing Pro"
+            title={copy?.aboutTitle || "About Path Tracing Memory Test"}
             isOpen={openAccordion === 'about'}
             onToggle={() => setOpenAccordion(openAccordion === 'about' ? null : 'about')}
           >
             <div className="space-y-8">
               <section>
-                <h4 className="text-base font-bold text-white mb-2 flex items-center gap-2">
+                <h3 className="text-base font-bold text-white mb-2 flex items-center gap-2">
                   <Brain className="w-4 h-4 text-amber-400" /> What Is Path Tracing Training?
-                </h4>
+                </h3>
                 <p className="text-sm leading-relaxed mb-3">
-                  <strong>Path Tracing Training</strong> is an advanced spatial sequence memory drill designed to measure route tracing capacity. The <strong>Path Tracing drill</strong> demonstrates animated step paths on 3x3 to 7x7 matrices, testing your ability to lock in and retrace directional routes in exact order.
+                  <strong>Path Tracing Training</strong> is an advanced spatial sequence memory drill designed to measure route tracing capacity. The <strong>Path Tracing drill</strong> demonstrates animated step paths on 3x3 to 7x7 matrices, testing your ability to lock in and retrace directional routes in exact order. The Corsi block-tapping task, the standard measure of spatial span, puts most adults around five to seven steps (Milner, 1971; Corsi, 1972), and it draws on a different store from verbal digit span (Logie, 1995).
                 </p>
                 <p className="text-sm leading-relaxed">
                   By practicing <strong>sequential spatial chunking</strong>, you expand your visual short-term memory buffer and increase your route navigation speed under time pressure.
@@ -805,21 +792,21 @@ export default function PathTracingClient() {
                 <div className="p-4 rounded-xl border border-gray-800 bg-white/[0.02]">
                   <div className="flex items-center gap-2.5 mb-2">
                     <div className="w-7 h-7 rounded-lg bg-blue-600 flex items-center justify-center"><Users className="w-3.5 h-3.5 text-white" /></div>
-                    <h5 className="text-xs font-bold text-white">Who Should Use This?</h5>
+                    <h4 className="text-xs font-bold text-white">Who Should Use This?</h4>
                   </div>
                   <p className="text-xs text-gray-300 leading-relaxed">Strategy & MOBA gamers improving map route tracing, STEM students strengthening spatial navigation, and professionals enhancing sequential memory.</p>
                 </div>
                 <div className="p-4 rounded-xl border border-gray-800 bg-white/[0.02]">
                   <div className="flex items-center gap-2.5 mb-2">
                     <div className="w-7 h-7 rounded-lg bg-amber-600 flex items-center justify-center"><TrendingUp className="w-3.5 h-3.5 text-white" /></div>
-                    <h5 className="text-xs font-bold text-white">Skills Improved</h5>
+                    <h4 className="text-xs font-bold text-white">Skills Improved</h4>
                   </div>
                   <p className="text-xs text-gray-300 leading-relaxed">Spatial path memory, route tracing, sequential visual memory, and directional spatial navigation.</p>
                 </div>
                 <div className="p-4 rounded-xl border border-gray-800 bg-white/[0.02]">
                   <div className="flex items-center gap-2.5 mb-2">
                     <div className="w-7 h-7 rounded-lg bg-purple-600 flex items-center justify-center"><Zap className="w-3.5 h-3.5 text-white" /></div>
-                    <h5 className="text-xs font-bold text-white">Path Chunking</h5>
+                    <h4 className="text-xs font-bold text-white">Path Chunking</h4>
                   </div>
                   <p className="text-xs text-gray-300 leading-relaxed">Group individual dot steps into directional vectors (e.g. Up-Right-Down) to memorize longer path lengths effortlessly.</p>
                 </div>
@@ -827,45 +814,7 @@ export default function PathTracingClient() {
 
             </div>
           </DrillAccordion>
-
-          {/* ACCORDION 3: FREQUENTLY ASKED QUESTIONS */}
-          <DrillAccordion
-            id="faq"
-            title="Frequently Asked Questions"
-            isOpen={openAccordion === 'faq'}
-            onToggle={() => setOpenAccordion(openAccordion === 'faq' ? null : 'faq')}
-          >
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-              <DrillFAQItem q="What is the Path Tracing Drill?" a="A free spatial sequence memory exercise. Watch animated dot paths at 500ms intervals, then retrace the exact path sequence on the grid." />
-              <DrillFAQItem q="How does progressive difficulty work?" a="Starts on a 3x3 grid with 3 steps. Clearing rounds adds steps and expands the grid up to 7x7." />
-              <DrillFAQItem q="Are there negative score or time penalties?" a="No. Tapping a wrong step never deducts score points or reduces remaining timer seconds — the round just replays at the same difficulty." />
-              <DrillFAQItem q="Does difficulty decrease on mistakes?" a="No. Your level only ever goes up — a mistake never takes you back down, so you can safely master your current path length." />
-              <DrillFAQItem q="How long does each drill session last?" a="Each round is timed for exactly 45 seconds of continuous focus." />
-              <DrillFAQItem q="Do I need to sign up?" a="No registration required. This drill runs directly in your browser with instant response." />
-              <DrillFAQItem q="What cognitive skill does path tracing train?" a="Path Tracing trains spatial sequence memory — encoding an ordered series of spatial positions and reproducing them exactly. Unlike static pattern recall, both the location and the order have to be retained together." />
-              <DrillFAQItem q="How is this different from Grid Memorization?" a="Grid Memorization asks you to recall a static set of illuminated cells with no inherent order. Path Tracing adds a sequential dimension — you must retrace the exact step-by-step route, so both 'where' and 'when' matter." />
-              <DrillFAQItem q="What is a good path length to aim for?" a="Reaching a 6-7 step path on a 5x5 grid is a solid intermediate result. Elite spatial-memory performers retrace 10+ step paths on 7x7 grids by relying on directional chunking rather than memorizing each dot individually." />
-              <DrillFAQItem q="Why does spatial sequence memory matter in real life?" a="It underlies everyday skills like recalling driving directions, dance or sports choreography, and navigating unfamiliar buildings — anywhere you need to reproduce an ordered series of spatial moves from memory." />
-            </div>
-          </DrillAccordion>
           </div>
-        )}
-
-        {/* RELATED DRILLS GRID */}
-        {!isFullscreen && (
-          <section className="mt-4">
-            <h2 className="text-sm font-bold text-slate-400 uppercase tracking-wider mb-3">
-              Related Memory Drills
-            </h2>
-            <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
-              <RelatedCard href="/drills/memory/spatial-memory/object-location" title="Object Location" desc="Memorize and locate emoji objects on grids." cat="Spatial Memory" />
-              <RelatedCard href="/drills/memory/spatial-memory/grid-memorization" title="Grid Memorization" desc="Memorize progressive spatial grid patterns." cat="Spatial Memory" />
-              <RelatedCard href="/drills/memory/working-memory/n-back" title="Dual N-Back" desc="The gold standard working memory trainer." cat="Working Memory" />
-              <RelatedCard href="/drills/memory/short-term-memory/word-recall" title="Word Recall" desc="Free recall random word lists under time pressure." cat="Short-Term Memory" />
-              <RelatedCard href="/drills/memory/short-term-memory/color-sequence" title="Color Sequence" desc="Watch and recall color sequences." cat="Short-Term Memory" />
-              <RelatedCard href="/drills/memory/short-term-memory/digit-span" title="Digit Span" desc="Train numerical short-term memory capacity." cat="Short-Term Memory" />
-            </div>
-          </section>
         )}
 
       </main>
@@ -873,21 +822,5 @@ export default function PathTracingClient() {
       {/* ── FOOTER ── */}
       {!isFullscreen && <DrillFooter />}
     </div>
-  );
-}
-
-// === Subcomponents ===
-function RelatedCard({ href, title, desc, cat }) {
-  return (
-    <Link href={href} className="group bg-[#0c0c16] border border-white/5 hover:border-amber-500/40 rounded-xl p-3.5 transition-all duration-200 hover:-translate-y-0.5 flex flex-col justify-between">
-      <div>
-        {cat && <div className="text-[10px] font-bold text-amber-400 uppercase tracking-wider mb-1">{cat}</div>}
-        <div className="text-xs font-bold text-white group-hover:text-amber-300 transition-colors">{title}</div>
-        <div className="text-[11px] text-slate-400 mt-1 line-clamp-2 leading-relaxed">{desc}</div>
-      </div>
-      <div className="text-[10px] font-bold text-slate-500 group-hover:text-amber-400 mt-3 flex items-center gap-1 transition-colors">
-        Train Drill <span>→</span>
-      </div>
-    </Link>
   );
 }

@@ -7,8 +7,8 @@ import Link from 'next/link';
 import {
   Activity, AlertCircle, ArrowRight, ChevronRight, Crosshair,
   Eye, GraduationCap, RefreshCw, Target,
-  Timer, TrendingUp, Trophy, Volume2, VolumeX,
-  Flame, Share2, LogOut,
+  Timer, TrendingUp, Volume2, VolumeX,
+  Share2, LogOut,
   Award, Shield, Users, Zap, ZapOff, Waves,
   Wind, Focus
 } from 'lucide-react';
@@ -16,31 +16,33 @@ import {
 import generateShareCard, { shareScoreCard } from '../../../../components/ShareScoreCard';
 import { getPlayerName } from '../../../../lib/leaderboard';
 import { drillAudio } from '../../../../lib/drillAudio';
+import { useDrillSensitivity } from '../../../../lib/drillSensitivity';
 import { drillFlash } from '../../../../lib/drillFlash';
-import { getStartLevel, getDifficultyProgress, getComboBonusLevel } from '../../../../lib/drillDifficulty';
+import { drillPenalty } from '../../../../lib/drillPenalty';
+import { getStartLevel, getDifficultyProgress, ramp } from '../../../../lib/drillDifficulty';
 import { getComboMultiplier, getFpsScoreGrade } from '../../../../lib/scoringEngine';
-import { createBackdropCache, getCanvasDpr, drawPulseRing, drawTacticalTarget } from '../../../../lib/canvasFx';
-import useUnexpectedExitGuard from '../../../../lib/useUnexpectedExitGuard';
-import DrillFooter from '../../../../components/drill/DrillFooter';
+import { createBackdropCache, getCanvasDpr, createHitRing, drawHitRings, drawTacticalTarget } from '../../../../lib/canvasFx';
 import DrillCountdown from '../../../../components/drill/DrillCountdown';
 import DrillAccordion from '../../../../components/drill/DrillAccordion';
 import FpsStartCard from '../../../../components/drill/FpsStartCard';
+import DrillResultCard from '../../../../components/drill/DrillResultCard';
+import useImmersiveMode from '@/lib/useImmersiveMode';
+import useUnexpectedExitGuard from '@/lib/useUnexpectedExitGuard';
 
 // ============================================================
 // TUNING CONSTANTS
 // ============================================================
-const DRILL_DURATION = 45;
-const POINTS_PER_LEVEL = 200;
-const ELITE_SCORE = 4200; // Calibrated against simulated perfect-play ceiling (~4488) for this tick-based tracking formula
-const STORAGE_KEY = 'skilldrills_fps_flow_state_v2';
-const OLD_STORAGE_KEY = 'flowTrainer_bestScore';
+const DRILL_DURATION = 45; // starting clock only; a run grows past this
+const POINTS_PER_LEVEL = 1400; // 200 -> 1400 (7x)
+const ELITE_SCORE = 54000; // 18000 -> 54000 (3x)
+const TIME_PER_HIT = 0.4; // +0.1s per 0.25s locked tracking tick (+0.4s/sec)
+const TIME_PENALTY = 0.6; // opt-in on 1s focus break
+const STORAGE_KEY = 'skilldrills_fps_flow_state_v3';
 
 const getSavedData = () => {
   try {
     const raw = localStorage.getItem(STORAGE_KEY);
     if (raw) return { bestScore: 0, bestCombo: 0, bestLevel: 1, totalSessions: 0, ...JSON.parse(raw) };
-    const legacy = localStorage.getItem(OLD_STORAGE_KEY);
-    if (legacy) return { bestScore: parseInt(legacy, 10) || 0, bestCombo: 0, bestLevel: 1, totalSessions: 0 };
     return { bestScore: 0, bestCombo: 0, bestLevel: 1, totalSessions: 0 };
   } catch (e) {
     return { bestScore: 0, bestCombo: 0, bestLevel: 1, totalSessions: 0 };
@@ -53,13 +55,13 @@ const saveData = (data) => {
   } catch (e) {}
 };
 
-
-const getLevelConfig = (level) => {
-  const p = getDifficultyProgress(level);
+const getLevelConfig = (level, combo = 0) => {
+  const p = getDifficultyProgress(level); // 0 at L1, 1 at L15, unbounded above
+  const heat = (getComboMultiplier(combo) - 1) / 2;
   return {
-    radius: Math.max(13, 32 - p * 19),
-    duration: Math.max(1.0, 2.5 - p * 1.3),
-    curvature: 0.2 + p * 0.6
+    radius: Math.max(10, ramp(32, 13, p) * (1 - heat * 0.18)),
+    duration: Math.max(0.6, ramp(2.5, 1.0, p) * (1 - heat * 0.25)),
+    curvature: ramp(0.2, 0.8, p) * (1 + heat * 0.35)
   };
 };
 
@@ -67,8 +69,10 @@ const getLevelConfig = (level) => {
 // ACCORDION DATA
 // ============================================================
 const RULES_ITEMS = [
-  { num: "1", text: "Tracking Alignment", highlight: "+10 PTS / 0.25s", result: "Keep Green Crosshair Locked On Target" },
-  { num: "2", text: "Dynamic Escalation", highlight: "Streak Acceleration", result: "Target shrinks & speeds up as you track" }
+  { num: "1", text: "Tracking Alignment", highlight: "+10 PTS (+0.4s/s)", result: "Keep Locked on Target" },
+  { num: "2", text: "Flow Multiplier", highlight: "Up to 3.0× Points", result: "Continuous Focus Chain" },
+  { num: "3", text: "Level Progression", highlight: "+1 Level / 1400 PTS", result: "Adaptive Bezier Speed" },
+  { num: "4", text: "Focus Break Rule", highlight: "1.0s Off-Target", result: "Resets Combo (-0.6s)" }
 ];
 
 const ABOUT_INTRO = [
@@ -76,9 +80,9 @@ const ABOUT_INTRO = [
 ];
 
 const ABOUT_CARDS = [
-  { icon: Users, iconBg: 'bg-blue-600', title: "Who Should Use This?", text: "FPS players training sustained crosshair tracking, plus anyone building deep focus and concentration endurance for gaming, work, or study." },
-  { icon: TrendingUp, iconBg: 'bg-emerald-600', title: "Skills Improved", text: "Smooth pursuit eye movement, sustained visual attention, fine motor coordination, and long-term focus endurance." },
-  { icon: Waves, iconBg: 'bg-purple-600', title: "Bezier Path Tracking", text: "Targets glide along unpredictable Bezier curves that sharpen with every level, keeping your tracking reflexes adapting instead of memorizing a pattern." },
+  { icon: Users, iconBg: "bg-blue-600", title: "Who Should Use This?", text: "FPS players training sustained crosshair tracking, plus anyone building deep focus and concentration endurance for gaming, work, or study." },
+  { icon: TrendingUp, iconBg: "bg-cyan-600", title: "Skills Improved", text: "Smooth pursuit eye movement, sustained visual attention, fine motor coordination, and long-term focus endurance." },
+  { icon: Waves, iconBg: "bg-purple-600", title: "Bezier Path Tracking", text: "Targets glide along unpredictable Bezier curves that sharpen continuously with your level, keeping your tracking reflexes adapting instead of memorizing a pattern." },
 ];
 
 const ABOUT_SECTIONS = [
@@ -98,23 +102,6 @@ const ABOUT_SECTIONS = [
   }
 ];
 
-const FAQ_ITEMS = [
-  { q: "What is flow state?", a: "Flow state, often called 'being in the zone', is a psychological state of deep focus and total immersion in an activity, resulting in peak performance and cognitive clarity." },
-  { q: "Can flow state be trained?", a: "Yes, flow state can be trained by repeatedly engaging in activities that balance challenge and skill, such as sustained visual tracking drills, which build concentration endurance." },
-  { q: "How long should I practice?", a: "For building focus endurance, aim for 10-15 minute daily sessions. Stop when you notice severe mental fatigue or frequent attention drift." },
-  { q: "What is deep focus?", a: "Deep focus is the ability to sustain attention on a single complex task without succumbing to external distractions or internal cognitive drift." },
-  { q: "How does flow improve learning?", a: "Flow eliminates mental friction and distraction, allowing the brain's working memory to dedicate 100% of its resources to processing and storing new information." },
-  { q: "How does flow improve gaming?", a: "In competitive gaming, flow state allows players to react intuitively, track targets flawlessly, and make split-second strategic decisions without conscious hesitation." },
-  { q: "Can flow improve productivity?", a: "Absolutely. Operating in a flow state is the core principle behind 'Deep Work', allowing individuals to produce higher quality output in significantly less time." },
-  { q: "What is sustained attention?", a: "Sustained attention is a component of executive functioning that involves maintaining consistent behavioral response and focus during continuous and repetitive activity." },
-  { q: "Why does focus break?", a: "Focus breaks occur due to cognitive fatigue, external sensory interruptions, or when the task's difficulty either dramatically exceeds or falls below the user's skill level." },
-  { q: "What is attention control?", a: "Attention control is an individual's capacity to choose what they pay attention to and what they ignore. It is a critical metric for cognitive stability." },
-  { q: "How long does it take to improve concentration?", a: "With daily, deliberate practice using concentration tools, measurable improvements in sustained attention and focus duration can be seen in 2 to 4 weeks." },
-  { q: "Can this improve ADHD-like focus problems?", a: "While not a medical treatment, visual tracking exercises that provide immediate gamified feedback can help train the brain's reward pathways to sustain attention longer." },
-  { q: "How often should I train?", a: "Daily practice is optimal for neuroplasticity. Use this drill as a 5-minute mental warmup before starting work, studying, or competitive gaming sessions." },
-  { q: "What is peak flow?", a: "Peak flow occurs at the 80-100% mark of the Flow Meter. It represents total visual and motor synchronization, where tracking becomes predictive rather than reactive." },
-  { q: "What is concentration endurance?", a: "Concentration endurance is the mental stamina required to maintain a high-level flow state over prolonged periods without cognitive degradation." }
-];
 
 const RELATED_DRILLS = [
   { id: "pro-smooth-pursuit", name: "Pro Smooth Pursuit", cat: "FPS Tracking", desc: "Lissajous curve tracking and smooth arm glide.", href: "/drills/fps/pro-smooth-pursuit" },
@@ -128,17 +115,19 @@ const RELATED_DRILLS = [
 // ============================================================
 // MAIN COMPONENT
 // ============================================================
-export default function FlowStateClient() {
+export default function FlowStateClient({ copy = null }) {
   const [gameState, setGameState] = useState('start');
   const [countdownValue, setCountdownValue] = useState(3);
   const [isFullscreen, setIsFullscreen] = useState(false);
+  useImmersiveMode(isFullscreen); // locks the page behind while the drill fills the screen
   const [soundEnabled, setSoundEnabled] = useState(true);
   const [flashEnabled, setFlashEnabled] = useState(true);
+  const [penaltyEnabled, setPenaltyEnabled] = useState(false);
   const [pointerLocked, setPointerLocked] = useState(false);
   const [openAccordion, setOpenAccordion] = useState(null);
   const [isTouchOnlyDevice, setIsTouchOnlyDevice] = useState(false);
   
-  const [universalSens, setUniversalSens] = useState(1.0);
+  const universalSens = useDrillSensitivity();
 
   const [score, setScore] = useState(0);
   const [bestScore, setBestScore] = useState(0);
@@ -173,18 +162,11 @@ export default function FlowStateClient() {
     combo: 0, bestCombo: 0,
     focusTimer: 0, continuousTrackTime: 0, focusBreaks: 0, msOffTarget: 0,
     totalFrames: 0, framesOnTarget: 0, wasTracking: false,
-    particles: [], hitMarkers: [], screenShake: 0,
+    particles: [], hitMarkers: [], hitRings: [], screenShake: 0,
     logicalWidth: 0, logicalHeight: 0
   });
 
-  const cmPer360 = (30 / universalSens).toFixed(1);
-
   useEffect(() => {
-    try {
-      const savedSens = localStorage.getItem('flowTrainer_sens');
-      if (savedSens) setUniversalSens(parseFloat(savedSens));
-    } catch (e) {}
-
     const saved = getSavedData();
     setBestScore(saved.bestScore || 0);
     setBestCombo(saved.bestCombo || 0);
@@ -195,6 +177,7 @@ export default function FlowStateClient() {
     if (typeof window !== 'undefined') {
       setSoundEnabled(drillAudio.isEnabled());
       setFlashEnabled(drillFlash.isEnabled());
+      setPenaltyEnabled(drillPenalty.isEnabled());
       const hasFinePointer = window.matchMedia('(pointer: fine)').matches;
       const isTouchCapable = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
       setIsTouchOnlyDevice(isTouchCapable && !hasFinePointer);
@@ -205,17 +188,27 @@ export default function FlowStateClient() {
     return () => countdownTimeoutsRef.current.forEach(clearTimeout);
   }, []);
 
-  useEffect(() => {
-    if (gameState !== 'playing' && gameState !== 'countdown') {
-      try { localStorage.setItem('flowTrainer_sens', universalSens.toString()); } catch (e) {}
-    }
-  }, [universalSens, gameState]);
-
   const triggerFlash = useCallback(() => {
     if (!drillFlash.isEnabled()) return;
     const id = Date.now() + Math.random();
     setFlashes((f) => [...f, { id }]);
     setTimeout(() => setFlashes((f) => f.filter((x) => x.id !== id)), 480);
+  }, []);
+
+  const createExplosion = useCallback((x, y, color) => {
+    for (let i = 0; i < 14; i++) {
+      const angle = Math.random() * Math.PI * 2;
+      const speed = 1.5 + Math.random() * 4.5;
+      engine.current.particles.push({
+        x,
+        y,
+        vx: Math.cos(angle) * speed,
+        vy: Math.sin(angle) * speed,
+        life: 1.0,
+        maxLife: 1.0,
+        color
+      });
+    }
   }, []);
 
   const createHitMarker = useCallback((x, y) => {
@@ -228,9 +221,10 @@ export default function FlowStateClient() {
     if (document.pointerLockElement) document.exitPointerLock();
 
     const e = engine.current;
-    const finalAccuracy = e.totalFrames > 0 ? Math.round((e.framesOnTarget / e.totalFrames) * 100) : 100;
-    const peakLevel = bestLevelRunRef.current;
-    const grade = getFpsScoreGrade(e.score, ELITE_SCORE);
+    const finalAccuracy = e.totalFrames > 0 ? Math.round((e.framesOnTarget / e.totalFrames) * 100) : 0;
+    const peakLevel = Math.floor(bestLevelRunRef.current);
+    const rating = getFpsScoreGrade(e.score, ELITE_SCORE);
+    const grade = { letter: rating.grade, label: rating.label, color: rating.color };
 
     setAccuracy(finalAccuracy);
     setAnalytics({
@@ -262,10 +256,9 @@ export default function FlowStateClient() {
     setIsNewBest(isNew);
   }, []);
 
-  const spawnNewBezierSegment = useCallback((w, h, currentLevel) => {
+  const spawnNewBezierSegment = useCallback((w, h, currentLevel, currentCombo = 0) => {
     const e = engine.current;
-    const config = getLevelConfig(currentLevel);
-    const heat = Math.min(1.0, e.combo / 15);
+    const config = getLevelConfig(currentLevel, currentCombo);
     const margin = 80;
     
     const startX = e.target.destX || Math.random() * (w - margin * 2) + margin;
@@ -278,13 +271,10 @@ export default function FlowStateClient() {
     const dist = Math.hypot(destX - startX, destY - startY);
     
     const angle = Math.atan2(destY - startY, destX - startX) + (Math.random() > 0.5 ? 1 : -1) * Math.PI / 2;
-    const offset = dist * (config.curvature + heat * 0.35);
+    const offset = dist * config.curvature;
     
     const ctrlX = Math.max(margin, Math.min(w - margin, midX + Math.cos(angle) * offset));
     const ctrlY = Math.max(margin, Math.min(h - margin, midY + Math.sin(angle) * offset));
-
-    const effectiveRadius = Math.max(9, config.radius - heat * 6);
-    const effectiveDuration = Math.max(0.6, config.duration * (1 - heat * 0.35));
 
     e.target = {
       x: startX,
@@ -292,9 +282,9 @@ export default function FlowStateClient() {
       startX, startY,
       destX, destY,
       ctrlX, ctrlY,
-      r: effectiveRadius,
+      r: config.radius,
       t: 0,
-      duration: effectiveDuration
+      duration: config.duration
     };
   }, []);
 
@@ -316,7 +306,7 @@ export default function FlowStateClient() {
     lastAccuracyRef.current = 100;
 
     const saved = getSavedData();
-    const startLevel = getStartLevel(saved.bestLevel);
+    const startLevel = getStartLevel();
     bestLevelRunRef.current = startLevel;
     setLevel(startLevel);
 
@@ -330,17 +320,13 @@ export default function FlowStateClient() {
       combo: 0, bestCombo: 0,
       focusTimer: 0, continuousTrackTime: 0, focusBreaks: 0, msOffTarget: 0,
       totalFrames: 0, framesOnTarget: 0, wasTracking: false,
-      particles: [], hitMarkers: [], screenShake: 0,
+      particles: [], hitMarkers: [], hitRings: [], screenShake: 0,
       logicalWidth: w, logicalHeight: h
     };
 
-    spawnNewBezierSegment(w, h, startLevel);
+    spawnNewBezierSegment(w, h, startLevel, 0);
 
-    try {
-      if (containerRef.current && !document.fullscreenElement) {
-        await containerRef.current.requestFullscreen();
-      }
-    } catch(e) {}
+    setIsFullscreen(true);
 
     setGameState('countdown');
     setCountdownValue(3);
@@ -378,42 +364,55 @@ export default function FlowStateClient() {
     countdownTimeoutsRef.current = [];
     startingRef.current = false;
 
-    if (document.fullscreenElement) {
-      await document.exitFullscreen().catch(() => {});
-    }
+    setIsFullscreen(false);
     if (document.pointerLockElement) {
       document.exitPointerLock();
     }
     setGameState('start');
   }, []);
 
-  // Stop the drill if the player leaves any way other than the in-app Exit
-  // button (back gesture, tab switch, Esc) instead of running invisibly.
   const { markIntentionalExit } = useUnexpectedExitGuard({
     active: gameState === 'playing' || gameState === 'countdown',
     onUnexpectedExit: handleExitDrill,
   });
 
-  const resumeDrill = useCallback(async () => {
-    if (containerRef.current && !document.fullscreenElement) {
-      try { await containerRef.current.requestFullscreen(); } catch (e) {}
-    }
-    if (canvasRef.current && !document.pointerLockElement) {
-      try { await canvasRef.current.requestPointerLock(); } catch (e) {}
-    }
-  }, []);
+  useEffect(() => {
+    const handleKeyDown = (e) => {
+      if (e.key === 'Escape') {
+        if (gameState === 'playing' || gameState === 'countdown' || gameState === 'gameOver') {
+          e.preventDefault();
+          e.stopPropagation();
+          handleExitDrill();
+        }
+      }
+    };
+    window.addEventListener('keydown', handleKeyDown, true);
+    return () => window.removeEventListener('keydown', handleKeyDown, true);
+  }, [gameState, handleExitDrill]);
 
   useEffect(() => {
-    const handlePointerLockChange = () => setPointerLocked(document.pointerLockElement === canvasRef.current);
+    const handlePointerLockChange = () => {
+      const isLocked = document.pointerLockElement === canvasRef.current;
+      setPointerLocked(isLocked);
+      if (!isLocked && (gameState === 'playing' || gameState === 'countdown')) {
+        handleExitDrill();
+      }
+    };
     document.addEventListener('pointerlockchange', handlePointerLockChange);
     return () => document.removeEventListener('pointerlockchange', handlePointerLockChange);
-  }, []);
+  }, [gameState, handleExitDrill]);
 
   useEffect(() => {
-    const handleFullscreenChange = () => setIsFullscreen(!!document.fullscreenElement);
+    const handleFullscreenChange = () => {
+      const isFull = !!document.fullscreenElement;
+      setIsFullscreen(isFull);
+      if (!isFull && (gameState === 'playing' || gameState === 'countdown')) {
+        handleExitDrill();
+      }
+    };
     document.addEventListener('fullscreenchange', handleFullscreenChange);
     return () => document.removeEventListener('fullscreenchange', handleFullscreenChange);
-  }, []);
+  }, [gameState, handleExitDrill]);
 
   useEffect(() => {
     const handleMouseMove = (e) => {
@@ -430,7 +429,7 @@ export default function FlowStateClient() {
   }, [gameState, pointerLocked, universalSens]);
 
   useEffect(() => {
-    const cvs = canvasRef.current;
+    const cvs = canvasRef.current; 
     const container = containerRef.current;
     if (!cvs || !container) return;
     const ctx = cvs.getContext('2d', { alpha: false });
@@ -503,7 +502,7 @@ export default function FlowStateClient() {
         const tObj = e.target;
         tObj.t += dt / tObj.duration;
         if (tObj.t >= 1.0) {
-          spawnNewBezierSegment(w, h, e.level);
+          spawnNewBezierSegment(w, h, e.level, e.combo);
         } else {
           const tVal = tObj.t;
           const invT = 1 - tVal;
@@ -528,6 +527,9 @@ export default function FlowStateClient() {
             if (e.combo > e.bestCombo) e.bestCombo = e.combo;
             setCombo(e.combo);
             e.continuousTrackTime = 0;
+            if (e.combo % 5 === 0) {
+              e.hitRings.push(createHitRing(tObj.x, tObj.y, tObj.r * 1.5, e.combo >= 10 ? '#34d399' : '#10b981'));
+            }
           }
 
           if (e.focusTimer >= 0.25) {
@@ -535,10 +537,12 @@ export default function FlowStateClient() {
             e.score += Math.round(10 * getComboMultiplier(e.combo) * levelMult);
             setScore(e.score);
 
-            const rawLevel = Math.floor(e.score / POINTS_PER_LEVEL) + 1 + getComboBonusLevel(e.combo);
+            e.timeLeft = Math.min(60, e.timeLeft + TIME_PER_HIT * 0.25); // continuous tracking reward, capped at 60s
+
+            const rawLevel = (e.score / POINTS_PER_LEVEL) + 1;
             e.level = Math.max(e.level, rawLevel);
             bestLevelRunRef.current = Math.max(bestLevelRunRef.current, e.level);
-            setLevel(e.level);
+            setLevel(Math.floor(e.level));
 
             drillAudio.playHit();
             createHitMarker(ch.x, ch.y);
@@ -553,11 +557,14 @@ export default function FlowStateClient() {
 
           if (e.msOffTarget >= 1000 && e.wasTracking) {
             e.focusBreaks++;
+            if (drillPenalty.isEnabled()) e.timeLeft -= TIME_PENALTY;
             e.combo = 0;
             setCombo(0);
             e.screenShake = 6;
             triggerFlash();
             drillAudio.playPenalty();
+            createExplosion(tObj.x, tObj.y, '#ef4444');
+            e.hitRings.push(createHitRing(tObj.x, tObj.y, tObj.r, '#ef4444'));
             e.wasTracking = false;
           }
         }
@@ -590,11 +597,30 @@ export default function FlowStateClient() {
       if (gameState === 'playing' || gameState === 'start') {
         const tObj = e.target;
         const isTracking = Math.hypot(e.crosshair.x - tObj.x, e.crosshair.y - tObj.y) <= tObj.r;
-        const targetColor = isTracking ? '#00ff88' : '#38bdf8';
+        const targetColor = gameState === 'playing'
+          ? (isTracking ? (e.combo >= 10 ? '#34d399' : '#10b981') : '#ef4444')
+          : '#10b981';
 
-        drawPulseRing(ctx, tObj.x, tObj.y, tObj.r, targetColor, (time / 1000) % 1);
         drawTacticalTarget(ctx, tObj.x, tObj.y, tObj.r, targetColor, false);
       }
+
+      // Render particles
+      for (let i = e.particles.length - 1; i >= 0; i--) {
+        const p = e.particles[i];
+        p.x += p.vx;
+        p.y += p.vy;
+        p.life -= dt * 2.5;
+        if (p.life <= 0) { e.particles.splice(i, 1); continue; }
+        ctx.globalAlpha = Math.max(0, p.life);
+        ctx.fillStyle = p.color;
+        ctx.beginPath();
+        ctx.arc(p.x, p.y, 2.5, 0, Math.PI * 2);
+        ctx.fill();
+      }
+      ctx.globalAlpha = 1.0;
+
+      // Render hit rings
+      drawHitRings(ctx, e.hitRings, dt);
 
       ctx.lineWidth = 2.0;
       for (let i = e.hitMarkers.length - 1; i >= 0; i--) {
@@ -611,8 +637,11 @@ export default function FlowStateClient() {
       ctx.globalAlpha = 1.0;
 
       const ch = e.crosshair;
-      if (ch.initialized && (gameState === 'playing' || gameState === 'start')) {
-        const activeColor = pointerLocked ? '#00ff88' : '#34d399';
+      if (ch.initialized && (gameState === 'playing' || gameState === 'start' || gameState === 'countdown')) {
+        const activeColor = '#ffffff';
+        ctx.save();
+        ctx.shadowColor = 'rgba(0, 0, 0, 0.9)';
+        ctx.shadowBlur = 3;
         ctx.strokeStyle = activeColor;
         ctx.fillStyle = activeColor;
 
@@ -629,6 +658,7 @@ export default function FlowStateClient() {
         ctx.stroke();
 
         ctx.beginPath(); ctx.arc(ch.x, ch.y, 2, 0, Math.PI * 2); ctx.fill();
+        ctx.restore();
       }
 
       ctx.restore();
@@ -643,7 +673,7 @@ export default function FlowStateClient() {
       cancelAnimationFrame(animationRef.current);
       resizeObserver.disconnect();
     };
-  }, [gameState, pointerLocked, spawnNewBezierSegment, endGame, triggerFlash, createHitMarker]);
+  }, [gameState, pointerLocked, spawnNewBezierSegment, endGame, triggerFlash, createHitMarker, createExplosion]);
 
   const shareDrillLink = useCallback(async () => {
     const url = 'https://skilldrills.online/drills/fps/flow-state';
@@ -653,7 +683,7 @@ export default function FlowStateClient() {
         bestScore,
         accuracy: analytics.accuracy,
         bestCombo: analytics.bestCombo,
-        rating: { letter: analytics.grade?.grade || 'C', label: analytics.grade?.label || 'Keep Going', emoji: '🌊' },
+        rating: { letter: analytics.grade?.letter || 'C', label: analytics.grade?.label || 'Keep Going', emoji: '🌊' },
         newBest: isNewBest,
         drillName: 'Flow State Trainer',
         playerName: getPlayerName(),
@@ -673,41 +703,31 @@ export default function FlowStateClient() {
   return (
     <div className="min-h-screen bg-[#050508] text-white flex flex-col font-sans select-none">
       {/* ── MAIN CONTENT AREA ── */}
-      <main className="flex-1 max-w-6xl w-full mx-auto px-4 py-6 flex flex-col gap-6">
+      <main className="flex-1 max-w-6xl w-full mx-auto px-4 pt-6 pb-0 flex flex-col gap-6">
         {/* Title */}
         {!isFullscreen && (
-          <div className="text-center">
+          <div className="flex flex-col gap-1">
             <h1 className="text-2xl sm:text-3xl font-black tracking-tight text-white">
-              FLOW STATE TRAINER
-              <span data-seo-kw="1" className="block text-sm font-semibold text-slate-400 mt-1 normal-case tracking-normal">
-                Aim Flow State Trainer
-              </span>
+              <span data-seo-kw="1">{copy?.h1Keyword || "Flow State Trainer"}</span>
+              {copy?.h1Suffix !== undefined ? copy.h1Suffix : " — Focus & Aim"}
             </h1>
-            <p className="text-xs text-slate-400 mt-1">
-              Hardware Raw Input • 15 Difficulty Levels
-            </p>
           </div>
         )}
 
         {/* Live Stat Cards */}
         {!isFullscreen && (
-          <div className="grid grid-cols-4 gap-2.5 max-w-2xl mx-auto w-full">
-            <div className="bg-[#0d0d18] border border-white/5 rounded-xl p-2.5 text-center">
-              <div className="text-[10px] uppercase font-bold text-slate-500 tracking-wider">Score</div>
-              <div className="text-lg sm:text-xl font-black text-white tabular-nums">{score}</div>
-            </div>
-            <div className="bg-[#0d0d18] border border-white/5 rounded-xl p-2.5 text-center">
-              <div className="text-[10px] uppercase font-bold text-slate-500 tracking-wider">Time</div>
-              <div className={`text-lg sm:text-xl font-black tabular-nums ${timeLeft <= 10 ? 'text-red-400 animate-pulse' : 'text-white'}`}>{timeLeft}s</div>
-            </div>
-            <div className="bg-[#0d0d18] border border-white/5 rounded-xl p-2.5 text-center">
-              <div className="text-[10px] uppercase font-bold text-slate-500 tracking-wider">Accuracy</div>
-              <div className="text-lg sm:text-xl font-black text-blue-400 tabular-nums">{accuracy}%</div>
-            </div>
-            <div className="bg-[#0d0d18] border border-white/5 rounded-xl p-2.5 text-center">
-              <div className="text-[10px] uppercase font-bold text-slate-500 tracking-wider">Best Score</div>
-              <div className="text-lg sm:text-xl font-black text-amber-400 tabular-nums">{bestScore}</div>
-            </div>
+          <div className="grid grid-cols-4 gap-2 w-full -mb-2">
+            {[
+              { label: copy?.statScore || 'Score', value: score, color: 'text-cyan-400' },
+              { label: copy?.statTime || 'Time', value: `${timeLeft}s`, color: timeLeft <= 10 ? 'text-red-400 animate-pulse' : 'text-white' },
+              { label: copy?.statAccuracy || 'Accuracy', value: `${accuracy}%`, color: 'text-blue-400' },
+              { label: copy?.statBestScore || 'Best Score', value: bestScore, color: 'text-amber-400' },
+            ].map((card) => (
+              <div key={card.label} className="border border-white/[0.06] bg-white/[0.015] px-2 py-2 rounded-xl text-center">
+                <div className="text-[10px] font-bold tracking-wider uppercase text-slate-500">{card.label}</div>
+                <div className={`text-base sm:text-lg font-black tabular-nums ${card.color || 'text-white'}`}>{card.value}</div>
+              </div>
+            ))}
           </div>
         )}
 
@@ -715,11 +735,11 @@ export default function FlowStateClient() {
         <div 
           ref={containerRef} 
           onContextMenu={(e) => { if (gameState === 'playing' || gameState === 'countdown') e.preventDefault(); }}
-          className={`relative overflow-hidden flex flex-col transition-all duration-150 select-none bg-[#080811] text-white border border-white/10 ${
+          className={
             isFullscreen 
-              ? 'fixed inset-0 z-[100] w-screen h-[100dvh] bg-[#080811] rounded-none border-none flex flex-col items-center justify-center' 
-              : 'w-full rounded-2xl bg-[#080811] aspect-video min-h-[460px] sm:min-h-[500px] max-h-[88vh] relative overflow-hidden flex flex-col'
-          }`}
+              ? "fixed inset-0 z-[100] w-screen h-[100dvh] bg-[#050508] flex flex-col items-center justify-center" 
+              : "w-full rounded-2xl aspect-video min-h-[460px] md:min-h-[500px] max-h-[88vh] max-md:portrait:aspect-[3/4] max-md:portrait:min-h-[420px] max-md:portrait:max-h-[76vh] max-md:landscape:min-h-[340px] max-md:landscape:max-h-[85vh] bg-[#080811] border border-white/10 relative overflow-hidden flex flex-col"
+          }
           style={{ touchAction: (gameState === 'playing' || gameState === 'countdown') ? 'none' : 'auto' }}
         >
           {flashes.map((f) => (
@@ -735,7 +755,7 @@ export default function FlowStateClient() {
 
               <div className="absolute top-4 right-4 z-30 pointer-events-none text-right">
                 <p className="text-[10px] font-semibold uppercase tracking-wider text-white/50">Time</p>
-                <p className={`text-2xl sm:text-3xl font-bold tabular-nums leading-tight ${timeLeft <= 10 ? 'text-red-400' : 'text-white'}`}>{timeLeft}s</p>
+                <p className={`text-2xl sm:text-3xl font-bold tabular-nums leading-tight ${timeLeft <= 10 ? "text-red-400" : "text-white"}`}>{timeLeft}s</p>
               </div>
             </>
           )}
@@ -775,30 +795,12 @@ export default function FlowStateClient() {
 
           {/* Countdown Overlay */}
           {gameState === 'countdown' && (
-            <DrillCountdown value={countdownValue} subtitle="GET READY" />
-          )}
-
-          {/* Pause Overlay */}
-          {gameState === 'playing' && !pointerLocked && (
-            <div 
-              className="absolute inset-0 z-40 bg-black/70 backdrop-blur-sm flex items-center justify-center cursor-pointer"
-              onClick={(e) => { 
-                e.stopPropagation(); 
-                resumeDrill();
-              }}
-            >
-              <div className="text-center animate-pulse pointer-events-none">
-                <AlertCircle className="w-12 h-12 text-cyan-400 mx-auto mb-3" />
-                <h2 className="text-2xl font-black text-white tracking-widest uppercase mb-1">Focus Paused</h2>
-                <p className="text-xs text-gray-300 font-medium">Click to resume — fullscreen and cursor lock will re-engage.</p>
-              </div>
-            </div>
+            <DrillCountdown value={countdownValue} subtitle={copy?.getReady || "GET READY"} />
           )}
 
           <canvas 
             ref={canvasRef} 
-            onClick={() => { if (gameState === 'playing' && !pointerLocked) resumeDrill(); }}
-            className={`block absolute top-0 left-0 w-full h-full touch-none z-10 ${gameState === 'playing' ? 'cursor-none' : ''}`} 
+            className={`block absolute top-0 left-0 w-full h-full touch-none z-10 ${gameState === "playing" ? "cursor-none" : ""}`}
           />
 
           {/* Start Overlay */}
@@ -806,104 +808,53 @@ export default function FlowStateClient() {
             <FpsStartCard
               icon={Waves}
               accent="cyan"
-              title="Flow State Trainer"
-              subtitle="Hardware Raw Input • 15 Difficulty Levels"
-              rules={[
-                { icon: Target, accent: 'cyan', title: 'Objective', text: 'Continuous Bezier Tracking' },
-              ]}
-              sensitivity={{ value: universalSens, onChange: setUniversalSens, cmPer360 }}
-              stats={[
-                { icon: Trophy, label: 'Best Score', value: bestScore, color: 'text-white', accent: 'slate' },
-                { icon: Flame, label: 'Best Combo', value: `${bestCombo}x`, color: 'text-cyan-400', accent: 'cyan' },
-                { icon: TrendingUp, label: 'Best Level', value: `Lv. ${bestLevel}`, color: 'text-blue-400', accent: 'blue' },
-              ]}
+              title={copy?.startTitle || "Flow State Trainer"}
+              subtitle={copy?.startSubtitle || "Hardware Raw Input • Endless Level Progression"}
               isTouchOnlyDevice={isTouchOnlyDevice}
               onStart={enterDrill}
             />
           )}
 
-          {/* End Screen Overlay */}
+          {/* End Screen — Universal Result Card */}
           {gameState === 'gameOver' && analytics.grade && (
-            <div className="absolute inset-0 z-40 flex bg-neutral-950/98 select-none font-sans" style={{ background: 'rgba(5,5,8,0.97)' }} onPointerDown={e => e.stopPropagation()}>
-              
-              <div className="w-[36%] flex flex-col items-center justify-center gap-1 border-r border-white/5 px-4" style={{ background: 'radial-gradient(ellipse 260px 200px at 50% 30%, rgba(6,182,212,.12), transparent 70%)' }}>
-                {isNewBest && (
-                  <span className="text-[9.5px] font-bold text-yellow-400 bg-yellow-500/10 border border-yellow-500/25 px-2.5 py-0.5 rounded-full mb-1 animate-pulse">
-                    NEW BEST
-                  </span>
-                )}
-                <div className={`text-5xl sm:text-6xl font-black leading-none ${analytics.grade.color}`}>
-                  {analytics.grade.grade}
-                </div>
-                <div className="text-[10px] uppercase tracking-widest text-slate-500 text-center font-bold mt-1">
-                  {analytics.grade.label}
-                </div>
-                <div className="text-3xl sm:text-4xl font-black text-white mt-2 tabular-nums">
-                  {score}
-                </div>
-                <div className="text-[9px] uppercase tracking-widest text-slate-500">Points</div>
-              </div>
-
-              <div className="flex-1 flex flex-col justify-center gap-3 px-6 py-4 min-w-0">
-                
-                <div className="grid grid-cols-2 sm:grid-cols-4 gap-2">
-                  <div className="bg-black border border-white/5 p-2.5 rounded-xl text-center">
-                    <p className="text-sm sm:text-base font-black text-white">{analytics.accuracy}%</p>
-                    <p className="text-[7.5px] sm:text-[8.5px] font-bold uppercase tracking-wider text-gray-400 mt-0.5">Tracking Accuracy</p>
-                  </div>
-                  <div className="bg-black border border-white/5 p-2.5 rounded-xl text-center">
-                    <p className="text-sm sm:text-base font-black text-white">{analytics.focusBreaks}</p>
-                    <p className="text-[7.5px] sm:text-[8.5px] font-bold uppercase tracking-wider text-gray-400 mt-0.5">Focus Breaks</p>
-                  </div>
-                  <div className="bg-black border border-white/5 p-2.5 rounded-xl text-center">
-                    <p className="text-sm sm:text-base font-black text-white">{analytics.bestCombo}x</p>
-                    <p className="text-[7.5px] sm:text-[8.5px] font-bold uppercase tracking-wider text-gray-400 mt-0.5">Max Combo</p>
-                  </div>
-                  <div className="bg-black border border-white/5 p-2.5 rounded-xl text-center">
-                    <p className="text-sm sm:text-base font-black text-white">Lv. {analytics.levelReached}</p>
-                    <p className="text-[7.5px] sm:text-[8.5px] font-bold uppercase tracking-wider text-gray-400 mt-0.5">Peak Level</p>
-                  </div>
-                </div>
-
-                <div className="flex gap-2">
-                  <button 
-                    onClick={enterDrill} 
-                    className="flex-1 py-3 rounded-[13px] bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-bold text-xs uppercase tracking-wide cursor-pointer transition-transform active:scale-[0.98] shadow-md flex items-center justify-center gap-1.5"
-                  >
-                    <RefreshCw className="w-3.5 h-3.5" /> Play Again
-                  </button>
-                  <button 
-                    onClick={shareDrillLink} 
-                    className="w-11 flex-shrink-0 rounded-[13px] bg-white/[0.04] border border-white/10 flex items-center justify-center text-slate-400 hover:text-white cursor-pointer active:scale-90 transition-transform" 
-                    title="Share Score"
-                  >
-                    <Share2 className="w-4 h-4" />
-                  </button>
-                  <button 
-                    onClick={handleExitDrill} 
-                    className="w-11 flex-shrink-0 rounded-[13px] bg-white/[0.04] border border-white/10 flex items-center justify-center text-slate-400 hover:text-white cursor-pointer active:scale-90 transition-transform" 
-                    title="Exit Fullscreen & Return"
-                  >
-                    <LogOut className="w-4 h-4 text-red-400" />
-                  </button>
-                </div>
-
-              </div>
-            </div>
+            <DrillResultCard
+              accent="cyan"
+              grade={analytics.grade}
+              score={score}
+              isNewBest={isNewBest}
+              stats={[
+                { value: analytics.accuracy, suffix: "%", label: "Tracking Accuracy" },
+                { value: analytics.focusBreaks, label: "Focus Breaks" },
+                { value: `${analytics.bestCombo}x`, label: "Max Combo" },
+                { value: `Lv. ${analytics.levelReached}`, label: "Peak Level" },
+              ]}
+              onPlayAgain={enterDrill}
+              onBeforeShare={() => setIsFullscreen(false)}
+              onShare={shareDrillLink}
+              onExit={handleExitDrill}
+            />
           )}
         </div>
+
+        {/* Drill Caption */}
+        {!isFullscreen && (
+          <p className="text-xs text-slate-400 leading-relaxed -mt-2">
+            {copy?.stageCaption || "Maintain your aim rhythm and track continuous smooth motion across sequential spawning targets."}
+          </p>
+        )}
 
         {/* ── ACCORDIONS ── */}
         {!isFullscreen && (
           <div className="[&>div]:!mt-0">
             <DrillAccordion
               id="rules"
-              title="Drill Instructions & Scoring System"
+              singleLineTitle
+              title={copy?.rulesTitle || "Drill Instructions & Scoring System"}
               isOpen={openAccordion === 'rules'}
               onToggle={() => setOpenAccordion(openAccordion === 'rules' ? null : 'rules')}
             >
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                {RULES_ITEMS.map((item, i) => (
+                {(copy?.rulesItems || RULES_ITEMS).map((item, i) => (
                   <RuleItem key={i} num={item.num} text={item.text} highlight={item.highlight} result={item.result} />
                 ))}
               </div>
@@ -911,17 +862,21 @@ export default function FlowStateClient() {
 
             <DrillAccordion
               id="about"
-              title="About Flow State Trainer"
+              singleLineTitle
+              title={copy?.aboutTitle || "About Flow State Trainer"}
               isOpen={openAccordion === 'about'}
               onToggle={() => setOpenAccordion(openAccordion === 'about' ? null : 'about')}
             >
               <div className="space-y-8">
                 <section>
-                  <h4 className="text-base font-bold text-white mb-2 flex items-center gap-2">
-                    <Waves className="w-4 h-4 text-red-400" /> What Is Flow State Training?
-                  </h4>
+                  <h3 className="text-base font-bold text-white mb-2 flex items-center gap-2">
+                    <Waves className="w-4 h-4 text-cyan-400" /> What Is Flow State Training?
+                  </h3>
+                  <p className="text-sm leading-relaxed mb-3 text-gray-300">
+                    Flow is the state where attention narrows onto the task and self-monitoring drops away. Dietrich (2004) attributes it to transient hypofrontality &mdash; reduced prefrontal activity during highly practised performance. This drill holds difficulty near your current skill, which is the condition flow requires.
+                  </p>
                   {ABOUT_INTRO.map((para, i) => (
-                    <p key={i} className={`text-sm leading-relaxed text-gray-300 ${i < ABOUT_INTRO.length - 1 ? 'mb-3' : ''}`}>{para}</p>
+                    <p key={i} className={`text-sm leading-relaxed text-gray-300 ${i < ABOUT_INTRO.length - 1 ? "mb-3" : ""}`}>{para}</p>
                   ))}
                 </section>
 
@@ -932,7 +887,7 @@ export default function FlowStateClient() {
                         <div className={`w-7 h-7 rounded-lg ${card.iconBg} flex items-center justify-center`}>
                           <card.icon className="w-3.5 h-3.5 text-white" />
                         </div>
-                        <h5 className="text-xs font-bold text-white">{card.title}</h5>
+                        <h4 className="text-xs font-bold text-white">{card.title}</h4>
                       </div>
                       <p className="text-xs text-gray-300 leading-relaxed">{card.text}</p>
                     </div>
@@ -941,61 +896,19 @@ export default function FlowStateClient() {
 
                 {ABOUT_SECTIONS.map((section, i) => (
                   <section key={i}>
-                    <h4 className="text-base font-bold text-white mb-2 flex items-center gap-2">
-                      <section.icon className="w-4 h-4 text-red-400" /> {section.title}
-                    </h4>
+                    <h3 className="text-base font-bold text-white mb-2 flex items-center gap-2">
+                      <section.icon className="w-4 h-4 text-cyan-400" /> {section.title}
+                    </h3>
                     {section.paragraphs.map((para, j) => (
-                      <p key={j} className={`text-sm leading-relaxed text-gray-300 ${j < section.paragraphs.length - 1 ? 'mb-3' : ''}`}>{para}</p>
+                      <p key={j} className={`text-sm leading-relaxed text-gray-300 ${j < section.paragraphs.length - 1 ? "mb-3" : ""}`}>{para}</p>
                     ))}
                   </section>
-                ))}
-              </div>
-            </DrillAccordion>
-
-            <DrillAccordion
-              id="faq"
-              title="Frequently Asked Questions"
-              isOpen={openAccordion === 'faq'}
-              onToggle={() => setOpenAccordion(openAccordion === 'faq' ? null : 'faq')}
-            >
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                {FAQ_ITEMS.map((item, i) => (
-                  <FAQItem key={i} q={item.q} a={item.a} />
                 ))}
               </div>
             </DrillAccordion>
           </div>
         )}
 
-        {/* ── RELATED FPS DRILLS ── */}
-        {!isFullscreen && (
-          <section className="mt-4">
-            <h2 className="text-sm font-bold text-slate-400 uppercase tracking-wider mb-3">
-              Related FPS Drills
-            </h2>
-            <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
-              {RELATED_DRILLS.map((drill) => (
-                <Link
-                  key={drill.id}
-                  href={drill.href}
-                  className="group bg-[#0c0c16] border border-white/5 hover:border-red-500/40 rounded-xl p-3.5 transition-all duration-200 hover:-translate-y-0.5 flex flex-col justify-between"
-                >
-                  <div>
-                    <div className="text-[10px] font-bold text-red-400 uppercase tracking-wider mb-1">{drill.cat}</div>
-                    <div className="text-xs font-bold text-white group-hover:text-red-300 transition-colors">{drill.name}</div>
-                    <div className="text-[11px] text-slate-400 mt-1 line-clamp-2 leading-relaxed">{drill.desc}</div>
-                  </div>
-                  <div className="text-[10px] font-bold text-slate-500 group-hover:text-red-400 mt-3 flex items-center gap-1 transition-colors">
-                    Train Drill <span>→</span>
-                  </div>
-                </Link>
-              ))}
-            </div>
-          </section>
-        )}
-
-        {/* ── FOOTER ── */}
-        {!isFullscreen && <DrillFooter />}
 
       </main>
     </div>
@@ -1007,23 +920,14 @@ function RuleItem({ num, text, highlight = '', result }) {
   return (
     <div className="flex items-center gap-4 bg-black p-4 rounded-xl border border-white/10 shadow-sm font-sans">
       <div className="w-8 h-8 rounded-xl bg-white/10 border border-white/20 flex items-center justify-center text-white text-base font-black shadow-lg flex-shrink-0">{num}</div>
-      <div className="flex-1 flex flex-col sm:flex-row sm:items-center justify-between gap-2">
-        <p className="text-sm font-medium text-gray-100 font-sans">
+      <div className="flex-1 flex flex-row items-center justify-between gap-2 min-w-0">
+        <p className="text-sm font-medium text-gray-100 font-sans truncate">
           {text}{highlight && <span className="font-black font-sans text-white"> {highlight}</span>}
         </p>
-        <div className="text-xs font-black px-3 py-1.5 rounded-lg bg-[#050811] border border-white/10 text-white whitespace-nowrap shadow-inner tracking-wide text-center sm:text-left">
+        <div className="text-xs font-black px-3 py-1.5 rounded-lg bg-[#050811] border border-white/10 text-white whitespace-nowrap shadow-inner tracking-wide flex-shrink-0">
           {result}
         </div>
       </div>
-    </div>
-  );
-}
-
-function FAQItem({ q, a }) {
-  return (
-    <div className="bg-[#05060b] border border-gray-800 rounded-xl p-5 hover:border-gray-700 transition-colors font-sans">
-      <h4 className="text-sm font-bold text-gray-200 mb-2">{q}</h4>
-      <p className="text-xs text-gray-200 leading-relaxed">{a}</p>
     </div>
   );
 }

@@ -1,6 +1,29 @@
-import React from 'react';
+'use client';
+
+import React, { useEffect, useState } from 'react';
+import { createPortal } from 'react-dom';
+import { useTranslation } from '@/lib/i18n/useTranslation';
+
+const FOOTER_COPY = {
+  en: 'Found a bug or have feedback? Message us on social with the drill name — we read every one.',
+  pt: 'Encontrou um erro ou quer enviar feedback? Fale conosco nas redes sociais e informe o nome do treino — lemos todas as mensagens.',
+  es: '¿Encontraste un error o quieres enviar comentarios? Escríbenos en redes sociales con el nombre del ejercicio; leemos todos los mensajes.',
+  ja: '不具合やご意見がありましたら、ドリル名を添えてSNSからお知らせください。すべて確認しています。',
+  de: 'Einen Fehler gefunden oder Feedback? Schreib uns über die sozialen Netzwerke mit dem Namen des Drills — wir lesen jede Nachricht.',
+  ko: '오류를 발견했거나 의견이 있나요? 훈련 이름과 함께 소셜 채널로 알려 주세요. 모든 메시지를 확인합니다.',
+  fr: 'Un bug ou une remarque ? Écrivez-nous sur les réseaux avec le nom de l’exercice — nous lisons chaque message.',
+};
 
 export default function DrillFooter() {
+  const { locale } = useTranslation();
+  const [mounted, setMounted] = useState(false);
+  const [footerRoot, setFooterRoot] = useState(null);
+
+  useEffect(() => {
+    setFooterRoot(document.getElementById('drill-footer-root'));
+    setMounted(true);
+  }, []);
+
   const socialLinks = [
     {
       name: 'Instagram',
@@ -42,10 +65,10 @@ export default function DrillFooter() {
     },
   ];
 
-  return (
+  const footer = (
     <footer className="mt-12 py-8 border-t border-white/10 flex flex-col items-center justify-center gap-4 text-center text-sm text-gray-400">
       <p className="text-xs text-gray-500 max-w-md px-4">
-        Found a bug or have feedback? Message us on social with the drill name — we read every one.
+        {FOOTER_COPY[locale] || FOOTER_COPY.en}
       </p>
       <div className="flex items-center gap-6">
         {socialLinks.map((link) => (
@@ -66,4 +89,7 @@ export default function DrillFooter() {
       </p>
     </footer>
   );
+
+  if (!mounted || !footerRoot) return null;
+  return createPortal(footer, footerRoot);
 }

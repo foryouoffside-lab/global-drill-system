@@ -2,38 +2,46 @@
 
 import React, { useState, useEffect, useRef, useCallback } from 'react';
 import Link from 'next/link';
-import {
-  Volume2, VolumeX,
-  Play, RefreshCw, Target, Share2,
-  LogOut, Eye, Users, TrendingUp, Zap, ZapOff, Trophy
-} from 'lucide-react';
+import { Volume2, VolumeX, Target, Eye, Users, TrendingUp, Zap, ZapOff, Trophy } from 'lucide-react';
 
+import { isIdleFrameSkippable } from '@/lib/performance';
 import generateShareCard, { shareScoreCard } from '../../../../components/ShareScoreCard';
 import { getPlayerName } from '../../../../lib/leaderboard';
 import { drillAudio } from '../../../../lib/drillAudio';
 import { drillFlash } from '../../../../lib/drillFlash';
 import { drillTimeout } from '../../../../lib/drillTimeout';
-import { getFpsScoreGrade } from '../../../../lib/scoringEngine';
-import { getDifficultyProgress, getStartLevel } from '../../../../lib/drillDifficulty';
+import { drillPenalty } from '../../../../lib/drillPenalty';
+import { getFpsScoreGrade, getComboMultiplier } from '../../../../lib/scoringEngine';
+import { getDifficultyProgress, getStartLevel, ramp } from '../../../../lib/drillDifficulty';
 import useDrillFlash from '../../../../lib/useDrillFlash';
 import useUnexpectedExitGuard from '../../../../lib/useUnexpectedExitGuard';
-import DrillFooter from '../../../../components/drill/DrillFooter';
+import { drawTacticalTarget, createHitRing, drawHitRings } from '@/lib/canvasFx';
 import DrillCountdown from '../../../../components/drill/DrillCountdown';
 import DrillAccordion from '../../../../components/drill/DrillAccordion';
 import DrillFlashOverlay from '../../../../components/drill/DrillFlashOverlay';
 import FpsStartCard from '../../../../components/drill/FpsStartCard';
+import DrillResultCard from '../../../../components/drill/DrillResultCard';
+import useImmersiveMode from '@/lib/useImmersiveMode';
+import { useTranslation } from '@/lib/i18n/useTranslation';
+import { BARRIER_SEQUENCE_PURSUIT_I18N } from '@/lib/i18n/drills/barrierSequencePursuit';
 
-const DRILL_DURATION = 45; // 45 seconds focused duration
+// ============================================================
+// TUNING CONSTANTS
+// ============================================================
+const DRILL_DURATION = 45; // starting clock only; a run grows past this
 const POINTS_PER_HIT = 100;
-const POINTS_PER_LEVEL = 250;
-const ELITE_SCORE = 6000; // Rebalanced after combo removal
-const STORAGE_KEY = 'skilldrills_barrier_sequence_pursuit_v2';
+const POINTS_PER_LEVEL = 1750; // 250 -> 1750 (7x)
+const ELITE_SCORE = 18000; // 6000 -> 18000 (3x)
+const TIME_PER_HIT = 2; // +2s per valid hit, capped at 60s
+const TIME_PENALTY = 1; // -1s on miss / target timeout (opt-in gated)
+const STORAGE_KEY = 'skilldrills_barrier_sequence_pursuit_v3';
+const TARGET_FILL_COLOR = '#ef4444';
 
 const RELATED_DRILLS = [
   { id: "fps-tracking-trainer", name: "FPS Tracking Trainer", cat: "Reaction Speed", desc: "Condition tracking accuracy against dynamic moving targets.", href: "/drills/reaction-speed/fps-tracking-trainer" },
   { id: "reaction-time-test", name: "Reaction Time Test", cat: "Reaction Speed", desc: "Measure pure visual reaction speed in milliseconds.", href: "/drills/reaction-speed/reaction-time-test" },
-  { id: "market-doors-pursuit", name: "Market Doors Pursuit", cat: "Reaction Speed", desc: "Reaction pursuit drill tracking door breakouts.", href: "/drills/reaction-speed/market-doors-pursuit" },
-  { id: "reaction-simulator", name: "Reaction Simulator", cat: "Reaction Speed", desc: "Simulate rapid combat reaction scenarios.", href: "/drills/reaction-speed/reaction-simulator" },
+  { id: "market-doors-pursuit", name: "Corner Checking Trainer", cat: "Reaction Speed", desc: "Saccadic eye sweep & doorway clearing trainer.", href: "/drills/reaction-speed/market-doors-pursuit" },
+  { id: "reaction-game", name: "Reaction Game", cat: "Reaction Speed", desc: "Simulate rapid combat reaction scenarios.", href: "/drills/reaction-speed/reaction-game" },
   { id: "reflex-training-drill", name: "Reflex Training Drill", cat: "Reaction Speed", desc: "High-speed reflex triggers & visual target hitting.", href: "/drills/reaction-speed/reflex-training-drill" },
   { id: "saccadic-gallery", name: "Saccadic Gallery", cat: "Reaction Speed", desc: "Rapid saccadic eye movement & target acquisition gallery.", href: "/drills/reaction-speed/saccadic-gallery" }
 ];
@@ -41,48 +49,61 @@ const RELATED_DRILLS = [
 const getSavedData = () => {
   try {
     const raw = localStorage.getItem(STORAGE_KEY);
-    if (!raw) return { bestScore: 0, bestLevel: 1, totalSessions: 0 };
-    return { bestScore: 0, bestLevel: 1, totalSessions: 0, ...JSON.parse(raw) };
+    if (!raw) return { bestScore: 0, bestCombo: 0, bestLevel: 1, totalSessions: 0 };
+    return { bestScore: 0, bestCombo: 0, bestLevel: 1, totalSessions: 0, ...JSON.parse(raw) };
   } catch (e) {
-    return { bestScore: 0, bestLevel: 1, totalSessions: 0 };
+    return { bestScore: 0, bestCombo: 0, bestLevel: 1, totalSessions: 0 };
   }
 };
 
-const saveData = (data: { bestScore: number; bestLevel: number; totalSessions: number }) => {
+const saveData = (data: { bestScore: number; bestCombo?: number; bestLevel: number; totalSessions: number }) => {
   try {
     localStorage.setItem(STORAGE_KEY, JSON.stringify(data));
   } catch (e) {}
 };
 
+// Continuous unbounded difficulty with streak heat
+const getLevelConfig = (level: number, combo = 0) => {
+  const p = getDifficultyProgress(level); // 0 at L1, 1 at L15, unbounded above
+  const heat = (getComboMultiplier(combo) - 1) / 2;
 
-// Smooth difficulty curve parameters driving Level 1 to Level 15
-const getLevelConfig = (level: number) => {
-  const p = getDifficultyProgress(level); // 0 -> 1 across L1..L15
   return {
-    radius: Math.max(12, Math.round(28 - p * 16)),       // 28px -> 12px
-    ttl: Math.max(380, Math.round(1300 - p * 880)),       // 1300ms -> 420ms
-    spawnDelayMin: Math.max(120, Math.round(550 - p * 400)), // 550ms -> 150ms
-    spawnDelayMax: Math.max(180, Math.round(750 - p * 520)), // 750ms -> 230ms
+    radius:        Math.max(6, ramp(28, 7, p) * (1 - heat * 0.25)),
+    ttl:           ramp(1300, 90, p) * (1 - heat * 0.32),
+    spawnDelayMin: ramp(550, 20, p) * (1 - heat * 0.30),
+    spawnDelayMax: ramp(750, 35, p) * (1 - heat * 0.30),
+    hitPad:        Math.max(4, ramp(14, 2, p) * (1 - heat * 0.50)),
   };
 };
 
 type Particle = { x: number; y: number; vx: number; vy: number; color: string; life: number };
 type Barrier = { x: number; y: number; w: number; h: number };
 
-export default function BarrierSequencePursuitClient() {
+export default function BarrierSequencePursuitClient({ copy }: { copy?: { title?: string; subtitle?: string; caption?: string } } = {}) {
+  const { locale, t } = useTranslation(BARRIER_SEQUENCE_PURSUIT_I18N);
   const [gameState, setGameState] = useState<'start' | 'countdown' | 'playing' | 'gameOver'>('start');
   const [isFullscreen, setIsFullscreen] = useState<boolean>(false);
+  useImmersiveMode(isFullscreen); // locks the page behind while the drill fills the screen
   const [soundEnabled, setSoundEnabled] = useState(true);
   const [flashEnabled, setFlashEnabled] = useState(true);
+  const [penaltyEnabled, setPenaltyEnabled] = useState(false);
+  const rulesItems = [
+    { num: '1', text: t('barrierSequencePursuit.rule1Text', 'Peeking target hit'), highlight: t('barrierSequencePursuit.rule1Highlight', '+100 PTS (+2s, max 60s)'), result: t('barrierSequencePursuit.rule1Result', 'Combo multiplier') },
+    { num: '2', text: t('barrierSequencePursuit.rule2Text', 'Streak & heat'), highlight: t('barrierSequencePursuit.rule2Highlight', 'Up to 3.0×'), result: t('barrierSequencePursuit.rule2Result', 'Faster peeks') },
+    { num: '3', text: t('barrierSequencePursuit.rule3Text', 'Level progression'), highlight: t('barrierSequencePursuit.rule3Highlight', '+1 level / 1750 PTS'), result: t('barrierSequencePursuit.rule3Result', 'Adaptive scaling') },
+    { num: '4', text: t('barrierSequencePursuit.rule4Text', 'Miss / timeout'), highlight: penaltyEnabled ? t('barrierSequencePursuit.rule4HighlightPenalty', 'Penalty') : t('barrierSequencePursuit.rule4HighlightZero', 'No time penalty'), result: penaltyEnabled ? t('barrierSequencePursuit.rule4ResultPenalty', 'Resets combo and removes 0.8s') : t('barrierSequencePursuit.rule4ResultZero', 'Resets combo; time penalty is opt-in') },
+  ];
   const [openAccordion, setOpenAccordion] = useState<string | null>(null);
   const [isMobile, setIsMobile] = useState<boolean>(false);
-  const [isPortrait, setIsPortrait] = useState<boolean>(false);
   const [countdownValue, setCountdownValue] = useState<number | string>(3);
 
   // HUD & Best Stats State
   const [uiScore, setUiScore] = useState<number>(0);
   const [uiTimeLeft, setUiTimeLeft] = useState<number>(DRILL_DURATION);
+  const [uiLevel, setUiLevel] = useState<number>(1);
+  const [uiCombo, setUiCombo] = useState<number>(0);
   const [bestScore, setBestScore] = useState<number>(0);
+  const [bestCombo, setBestCombo] = useState<number>(0);
   const [bestLevel, setBestLevel] = useState<number>(1);
   const [totalSessions, setTotalSessions] = useState<number>(0);
   const [isNewBest, setIsNewBest] = useState<boolean>(false);
@@ -94,6 +115,7 @@ export default function BarrierSequencePursuitClient() {
     missedClicks: 0,
     timeouts: 0,
     avgReactionTime: 0,
+    maxCombo: 0,
     finalLevel: 1,
     grade: null as any
   });
@@ -103,11 +125,16 @@ export default function BarrierSequencePursuitClient() {
   const containerRef = useRef<HTMLDivElement | null>(null);
   const animationRef = useRef<number | null>(null);
   const countdownTimeoutsRef = useRef<NodeJS.Timeout[]>([]);
-  const timerIntervalRef = useRef<NodeJS.Timeout | null>(null);
+  const bestLevelRunRef = useRef(1);
+  const lastTimeRef = useRef(DRILL_DURATION);
+  const mousePosRef = useRef({ x: -100, y: -100, active: false });
+  const barrierSizeRef = useRef({ width: 0, height: 0 });
 
   const engine = useRef({
     score: 0,
     level: 1,
+    combo: 0,
+    maxCombo: 0,
     successfulHits: 0,
     missedClicks: 0,
     timeouts: 0,
@@ -115,6 +142,7 @@ export default function BarrierSequencePursuitClient() {
     timeLeft: DRILL_DURATION,
     screenShake: 0,
     particles: [] as Particle[],
+    hitRings: [] as ReturnType<typeof createHitRing>[],
     barriers: [] as Barrier[],
     target: {
       active: false,
@@ -139,14 +167,14 @@ export default function BarrierSequencePursuitClient() {
     if (typeof window !== 'undefined') {
       setSoundEnabled(drillAudio.isEnabled());
       setFlashEnabled(drillFlash.isEnabled());
+      setPenaltyEnabled(drillPenalty.isEnabled(TIME_PER_HIT === 2));
+
       const checkDeviceAndOrientation = () => {
         const ua = navigator.userAgent || '';
         const hasTouch = ('ontouchstart' in window) || (navigator.maxTouchPoints > 0);
         const mobileDevice = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(ua) || (window.innerWidth < 768) || hasTouch;
         setIsMobile(mobileDevice);
 
-        const portrait = window.innerHeight > window.innerWidth;
-        setIsPortrait(portrait);
       };
 
       checkDeviceAndOrientation();
@@ -155,6 +183,7 @@ export default function BarrierSequencePursuitClient() {
 
       const saved = getSavedData();
       setBestScore(saved.bestScore || 0);
+      setBestCombo(saved.bestCombo || 0);
       setBestLevel(saved.bestLevel || 1);
       setTotalSessions(saved.totalSessions || 0);
 
@@ -165,18 +194,10 @@ export default function BarrierSequencePursuitClient() {
     }
   }, []);
 
-  // Fullscreen Listener
-  useEffect(() => {
-    const handleFullscreenChange = () => setIsFullscreen(!!document.fullscreenElement);
-    document.addEventListener('fullscreenchange', handleFullscreenChange);
-    return () => document.removeEventListener('fullscreenchange', handleFullscreenChange);
-  }, []);
-
   // Cleanup Timeouts on Unmount
   useEffect(() => {
     return () => {
       countdownTimeoutsRef.current.forEach(clearTimeout);
-      if (timerIntervalRef.current) clearInterval(timerIntervalRef.current);
     };
   }, []);
 
@@ -185,11 +206,8 @@ export default function BarrierSequencePursuitClient() {
     markIntentionalExit();
     countdownTimeoutsRef.current.forEach(clearTimeout);
     countdownTimeoutsRef.current = [];
-    if (timerIntervalRef.current) clearInterval(timerIntervalRef.current);
 
-    if (document.fullscreenElement) {
-      await document.exitFullscreen().catch(() => {});
-    }
+    setIsFullscreen(false);
     setGameState('start');
   }, []);
 
@@ -198,17 +216,35 @@ export default function BarrierSequencePursuitClient() {
     onUnexpectedExit: handleExitDrill,
   });
 
+  // Direct Escape and Fullscreen Exit Lifecycle
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'Escape' && (gameState === 'playing' || gameState === 'countdown' || isFullscreen)) {
+        handleExitDrill();
+      }
+    };
+    const handleFullscreenChange = () => {
+      if (!document.fullscreenElement && isFullscreen) {
+        handleExitDrill();
+      }
+    };
+    window.addEventListener('keydown', handleKeyDown, true);
+    document.addEventListener('fullscreenchange', handleFullscreenChange);
+    return () => {
+      window.removeEventListener('keydown', handleKeyDown, true);
+      document.removeEventListener('fullscreenchange', handleFullscreenChange);
+    };
+  }, [gameState, isFullscreen, handleExitDrill]);
+
   // Complete Drill Session cleanly
   const endGame = useCallback(() => {
     if (animationRef.current) cancelAnimationFrame(animationRef.current);
-    if (timerIntervalRef.current) clearInterval(timerIntervalRef.current);
 
     setGameState('gameOver');
-    // Keep fullscreen active for result display (do NOT call exitFullscreen on endGame)
 
     const e = engine.current;
     const totalActions = e.successfulHits + e.missedClicks + e.timeouts;
-    const acc = totalActions > 0 ? Math.round((e.successfulHits / totalActions) * 100) : 100;
+    const acc = totalActions > 0 ? Math.round((e.successfulHits / totalActions) * 100) : 0;
     const avgRt = e.reactionTimes.length > 0
       ? Math.round(e.reactionTimes.reduce((a, b) => a + b, 0) / e.reactionTimes.length)
       : 0;
@@ -222,36 +258,36 @@ export default function BarrierSequencePursuitClient() {
       missedClicks: e.missedClicks,
       timeouts: e.timeouts,
       avgReactionTime: avgRt,
-      finalLevel: e.level,
+      maxCombo: e.maxCombo,
+      finalLevel: Math.floor(bestLevelRunRef.current),
       grade: gradeObj
     });
 
-    const isNew = e.score > bestScore;
-    if (isNew) {
-      setIsNewBest(true);
-      setBestScore(e.score);
-    } else {
-      setIsNewBest(false);
-    }
+    setUiScore(e.score);
 
-    const newBestLevel = Math.max(bestLevel, e.level);
-    setBestLevel(newBestLevel);
+    const prevSaved = getSavedData();
+    const isNew = e.score > prevSaved.bestScore;
+    setIsNewBest(isNew);
 
-    setTotalSessions((prev) => {
-      const next = prev + 1;
-      saveData({
-        bestScore: Math.max(bestScore, e.score),
-        bestLevel: newBestLevel,
-        totalSessions: next
-      });
-      return next;
-    });
+    const runBestLevel = Math.max(prevSaved.bestLevel, Math.floor(bestLevelRunRef.current));
+    const updatedData = {
+      bestScore: Math.max(prevSaved.bestScore, e.score),
+      bestCombo: Math.max(prevSaved.bestCombo || 0, e.maxCombo),
+      bestLevel: runBestLevel,
+      totalSessions: (prevSaved.totalSessions || 0) + 1
+    };
+    saveData(updatedData);
+
+    setBestScore(updatedData.bestScore);
+    setBestCombo(updatedData.bestCombo);
+    setBestLevel(updatedData.bestLevel);
+    setTotalSessions(updatedData.totalSessions);
 
     drillAudio.playSessionEnd();
-  }, [bestScore, bestLevel]);
+  }, []);
 
-  // Target Spawn Logic with Level-based Difficulty Scaling & Zero Collision Offsets
-  const spawnTarget = useCallback((W: number, H: number, level: number) => {
+  // Target Spawn Logic with Level-based Difficulty Scaling
+  const spawnTarget = useCallback((W: number, H: number, level: number, combo: number) => {
     const e = engine.current;
     if (e.barriers.length === 0) return;
 
@@ -259,14 +295,11 @@ export default function BarrierSequencePursuitClient() {
     const barrierIdx = Math.floor(Math.random() * e.barriers.length);
     const b = e.barriers[barrierIdx];
 
-    // Difficulty configuration derived per level (Level 1..15)
-    const config = getLevelConfig(level);
+    const config = getLevelConfig(level, combo);
     const radius = config.radius;
 
     // Peek direction (Left or Right of cover barrier)
     const peekLeft = Math.random() > 0.5;
-    
-    // Controlled peek travel distance to prevent strip collisions in both landscape & portrait
     const offsetDist = radius * 1.25;
 
     const peekX = peekLeft ? b.x - offsetDist : b.x + b.w + offsetDist;
@@ -289,27 +322,28 @@ export default function BarrierSequencePursuitClient() {
 
   // Enter Drill (Full Screen -> 321GO Countdown with Sound -> Playing)
   const enterDrill = useCallback(async () => {
-    try {
-      if (containerRef.current && !document.fullscreenElement) {
-        await containerRef.current.requestFullscreen();
-      }
-    } catch (e) {}
+    setIsFullscreen(true);
 
     countdownTimeoutsRef.current.forEach(clearTimeout);
     countdownTimeoutsRef.current = [];
-    if (timerIntervalRef.current) clearInterval(timerIntervalRef.current);
 
     drillAudio.init();
 
-    const saved = getSavedData();
-    const startLevel = getStartLevel(saved.bestLevel);
+    const startLevel = getStartLevel();
+    bestLevelRunRef.current = startLevel;
 
     setUiScore(0);
+    setUiLevel(startLevel);
+    setUiCombo(0);
     setUiTimeLeft(DRILL_DURATION);
+    lastTimeRef.current = DRILL_DURATION;
+    setIsNewBest(false);
 
     engine.current = {
       score: 0,
       level: startLevel,
+      combo: 0,
+      maxCombo: 0,
       successfulHits: 0,
       missedClicks: 0,
       timeouts: 0,
@@ -317,6 +351,7 @@ export default function BarrierSequencePursuitClient() {
       timeLeft: DRILL_DURATION,
       screenShake: 0,
       particles: [],
+      hitRings: [],
       barriers: [],
       target: {
         active: false,
@@ -348,21 +383,11 @@ export default function BarrierSequencePursuitClient() {
 
     const t4 = setTimeout(() => {
       setGameState('playing');
-
-      // Start 1-second Interval Timer (45 seconds duration)
-      let remaining = DRILL_DURATION;
-      timerIntervalRef.current = setInterval(() => {
-        remaining -= 1;
-        setUiTimeLeft(remaining);
-        if (remaining <= 0) {
-          endGame();
-        }
-      }, 1000);
-
+      engine.current.nextSpawnTime = performance.now() + 200;
     }, 2450);
 
     countdownTimeoutsRef.current = [t1, t2, t3, t4];
-  }, [endGame]);
+  }, []);
 
   // Target Click / Tap Handler
   const handleCanvasInteraction = useCallback((clientX: number, clientY: number) => {
@@ -375,54 +400,70 @@ export default function BarrierSequencePursuitClient() {
     const clickY = clientY - rect.top;
 
     const e = engine.current;
+    const config = getLevelConfig(e.level, e.combo);
+    const hitPad = isMobile ? config.hitPad + 10 : config.hitPad;
 
     if (e.target.active) {
       const dist = Math.hypot(clickX - e.target.x, clickY - e.target.y);
-      // Hit target (Target Radius + generous touch hitpad)
-      const hitPad = isMobile ? 22 : 14;
       if (dist <= e.target.radius + hitPad) {
         const rt = Math.round(performance.now() - e.target.spawnTime);
         e.reactionTimes.push(rt);
         e.successfulHits += 1;
-        e.score += POINTS_PER_HIT;
+        e.combo += 1;
+        if (e.combo > e.maxCombo) e.maxCombo = e.combo;
 
-        // Monotonic level progression as user scores points
-        const rawLevel = Math.floor(e.score / POINTS_PER_LEVEL) + 1;
+        const levelMult = 1 + getDifficultyProgress(e.level) * 0.5;
+        e.score += Math.round(POINTS_PER_HIT * getComboMultiplier(e.combo) * levelMult);
+
+        // Time bonus on clean hit
+        e.timeLeft = Math.min(60, e.timeLeft + TIME_PER_HIT);
+
+        // Continuous unbounded level progression
+        const rawLevel = (e.score / POINTS_PER_LEVEL) + 1;
         e.level = Math.max(e.level, rawLevel);
+        bestLevelRunRef.current = Math.max(bestLevelRunRef.current, e.level);
 
         setUiScore(e.score);
+        setUiLevel(Math.floor(e.level));
+        setUiCombo(e.combo);
         drillAudio.playHit();
 
-        // Particles explosion (Constant Red)
-        for (let i = 0; i < 10; i++) {
+        // Particles explosion with combo color shift
+        const hitColor = e.combo >= 10 ? '#34d399' : (e.combo >= 5 ? '#f59e0b' : TARGET_FILL_COLOR);
+        for (let i = 0; i < 14; i++) {
           const angle = Math.random() * Math.PI * 2;
-          const spd = 2 + Math.random() * 4;
+          const spd = 2 + Math.random() * 5;
           e.particles.push({
             x: e.target.x,
             y: e.target.y,
             vx: Math.cos(angle) * spd,
             vy: Math.sin(angle) * spd,
-            color: '#ef4444',
+            color: hitColor,
             life: 1.0
           });
         }
 
+        // Ring Burst Effect (via canvasFx)
+        e.hitRings.push(createHitRing(e.target.x, e.target.y, e.target.radius, hitColor));
+
         e.target.active = false;
-        const config = getLevelConfig(e.level);
         const delay = config.spawnDelayMin + Math.random() * (config.spawnDelayMax - config.spawnDelayMin);
         e.nextSpawnTime = performance.now() + delay;
         return;
       }
     }
 
-    // Missed click on empty space: no penalty, just flash + audio feedback
+    // Missed click on empty space: optional time penalty + combo reset
     e.missedClicks += 1;
+    if (drillPenalty.isEnabled(TIME_PER_HIT === 2)) e.timeLeft -= TIME_PENALTY;
+    e.combo = 0;
+    setUiCombo(0);
     e.screenShake = 6;
     triggerFlash();
     drillAudio.playPenalty();
   }, [gameState, isMobile, triggerFlash]);
 
-  // Canvas Physics & Render Loop (Optimized Barrier Layouts)
+  // Canvas Physics & Render Loop (Barrier Cover Peeking Engine)
   useEffect(() => {
     if (gameState !== 'playing') return;
     const cvs = canvasRef.current;
@@ -436,36 +477,10 @@ export default function BarrierSequencePursuitClient() {
       if (!container) return;
       const rect = container.getBoundingClientRect();
       const dpr = Math.min(window.devicePixelRatio || 1, 2);
-      cvs.width = rect.width * dpr;
-      cvs.height = rect.height * dpr;
-      ctx.scale(dpr, dpr);
-
-      const W = rect.width;
-      const H = rect.height;
-      const isPortraitLayout = H > W;
-
-      // Adaptive Barrier layout for Mobile Portrait vs Landscape
-      if (isPortraitLayout) {
-        // Compact 2x2 grid layout for portrait mode
-        const bw = W * 0.25;
-        const bh = H * 0.20;
-        engine.current.barriers = [
-          { x: W * 0.18, y: H * 0.20, w: bw, h: bh },
-          { x: W * 0.57, y: H * 0.20, w: bw, h: bh },
-          { x: W * 0.18, y: H * 0.54, w: bw, h: bh },
-          { x: W * 0.57, y: H * 0.54, w: bw, h: bh }
-        ];
-      } else {
-        // 4 Cover Strips arranged with 100% equal margins from both left and right screen edges (9% margin each)
-        const bw = W * 0.11;
-        const bh = H * 0.44;
-        const by = H * 0.28;
-        engine.current.barriers = [
-          { x: W * 0.09, y: by, w: bw, h: bh },
-          { x: W * 0.327, y: by, w: bw, h: bh },
-          { x: W * 0.563, y: by, w: bw, h: bh },
-          { x: W * 0.80, y: by, w: bw, h: bh }
-        ];
+      if (cvs.width !== Math.trunc(rect.width * dpr) || cvs.height !== Math.trunc(rect.height * dpr)) {
+        cvs.width = rect.width * dpr;
+        cvs.height = rect.height * dpr;
+        ctx.scale(dpr, dpr);
       }
     };
 
@@ -476,6 +491,11 @@ export default function BarrierSequencePursuitClient() {
     let lastTime = performance.now();
 
     const draw = (now: number) => {
+      if (isIdleFrameSkippable(gameState === 'playing', now, lastTime)) {
+        animationRef.current = requestAnimationFrame(draw);
+        return;
+      }
+
       const dt = Math.min((now - lastTime) / 1000, 0.1);
       lastTime = now;
 
@@ -483,6 +503,40 @@ export default function BarrierSequencePursuitClient() {
       const W = rect.width;
       const H = rect.height;
       const e = engine.current;
+
+      // Clock draining in RAF loop
+      if (gameState === 'playing') {
+        if (e.timeLeft > 0) e.timeLeft -= dt;
+        if (e.timeLeft <= 0) {
+          e.timeLeft = 0;
+          setUiTimeLeft(0);
+          endGame();
+          return;
+        }
+
+        const ceilSec = Math.ceil(e.timeLeft);
+        if (ceilSec !== lastTimeRef.current) {
+          lastTimeRef.current = ceilSec;
+          setUiTimeLeft(ceilSec);
+        }
+      }
+
+      // Keep all four cover barriers inside the stage after orientation changes.
+      if (W > 0 && H > 0 && (e.barriers.length === 0 || barrierSizeRef.current.width !== W || barrierSizeRef.current.height !== H)) {
+        if (e.target.active) {
+          e.target.active = false;
+          e.nextSpawnTime = now + 200;
+        }
+        const bW = Math.min(80, W * 0.12);
+        const bH = Math.min(180, H * 0.40);
+        e.barriers = [
+          { x: W * 0.22 - bW / 2, y: H * 0.28 - bH / 2, w: bW, h: bH },
+          { x: W * 0.78 - bW / 2, y: H * 0.28 - bH / 2, w: bW, h: bH },
+          { x: W * 0.22 - bW / 2, y: H * 0.72 - bH / 2, w: bW, h: bH },
+          { x: W * 0.78 - bW / 2, y: H * 0.72 - bH / 2, w: bW, h: bH },
+        ];
+        barrierSizeRef.current = { width: W, height: H };
+      }
 
       // Screen Shake Effect
       ctx.save();
@@ -509,99 +563,70 @@ export default function BarrierSequencePursuitClient() {
         ctx.beginPath(); ctx.moveTo(0, y); ctx.lineTo(W, y); ctx.stroke();
       }
 
-      // Spawn Target if inactive
+      // Spawn target on interval
       if (!e.target.active && now >= e.nextSpawnTime) {
-        spawnTarget(W, H, e.level);
+        spawnTarget(W, H, e.level, e.combo);
       }
 
-      // Target Timeout Check
+      // Timeout Check
       if (e.target.active) {
         const age = now - e.target.spawnTime;
         if (drillTimeout.isEnabled() && age >= e.target.ttl) {
           e.target.active = false;
           e.timeouts += 1;
+          if (drillPenalty.isEnabled(TIME_PER_HIT === 2)) e.timeLeft -= TIME_PENALTY;
+          e.combo = 0;
+          setUiCombo(0);
           e.screenShake = 6;
           triggerFlash();
           drillAudio.playPenalty();
-          const config = getLevelConfig(e.level);
+          const config = getLevelConfig(e.level, e.combo);
           const delay = config.spawnDelayMin + Math.random() * (config.spawnDelayMax - config.spawnDelayMin);
           e.nextSpawnTime = now + delay;
-        } else {
-          // Smooth peeking interpolation out of barrier cover
-          const peekFraction = Math.min(1.0, age / (e.target.ttl * 0.22));
-          e.target.x = e.target.baseX + (e.target.peekX - e.target.baseX) * peekFraction;
-          e.target.y = e.target.baseY + (e.target.peekY - e.target.baseY) * peekFraction;
         }
       }
 
-      // Draw Target (Premium Tactical Red Sphere matching fps-tracking-trainer)
+      // Smooth Jiggle Peek Motion (Animate target extending from cover)
       if (e.target.active) {
         const t = e.target;
-        const r = t.radius;
+        const elapsed = now - t.spawnTime;
+        const peekProgress = Math.min(1, elapsed / 180);
+        // Smooth ease-out peek
+        const ease = 1 - Math.pow(1 - peekProgress, 3);
+        t.x = t.baseX + (t.peekX - t.baseX) * ease;
+        t.y = t.baseY + (t.peekY - t.baseY) * ease;
+      }
+
+      // Draw active target cleanly with standard tactical styling
+      if (e.target.active) {
+        drawTacticalTarget(ctx, e.target.x, e.target.y, e.target.radius, TARGET_FILL_COLOR);
+      }
+
+      // Draw Tactical Cover Barriers (Drawn AFTER target so targets peek from behind)
+      for (const b of e.barriers) {
         ctx.save();
-
-        // Ghost outer ring
-        ctx.globalAlpha = 0.2;
-        ctx.strokeStyle = '#ef4444';
-        ctx.lineWidth = 1.0;
+        ctx.fillStyle = '#0e0e18';
+        ctx.strokeStyle = 'rgba(239, 68, 68, 0.4)';
+        ctx.lineWidth = 1.5;
         ctx.beginPath();
-        ctx.arc(t.x, t.y, r + 5, 0, Math.PI * 2);
+        ctx.roundRect(b.x, b.y, b.w, b.h, 8);
+        ctx.fill();
         ctx.stroke();
 
-        // Tactical outer ring
-        ctx.globalAlpha = 0.55;
-        ctx.strokeStyle = '#ef4444';
-        ctx.lineWidth = 1.8;
-        ctx.beginPath();
-        ctx.arc(t.x, t.y, r, 0, Math.PI * 2);
-        ctx.stroke();
-
-        // Filled red body with subtle glow
-        ctx.globalAlpha = 0.88;
-        ctx.shadowColor = '#ef4444';
-        ctx.shadowBlur = 14;
-        ctx.fillStyle = '#ef4444';
-        ctx.beginPath();
-        ctx.arc(t.x, t.y, r * 0.82, 0, Math.PI * 2);
-        ctx.fill();
-        ctx.shadowBlur = 0;
-
-        // Highlight sheen
-        ctx.globalAlpha = 0.3;
-        ctx.fillStyle = '#ffffff';
-        ctx.beginPath();
-        ctx.arc(t.x - r * 0.2, t.y - r * 0.2, r * 0.28, 0, Math.PI * 2);
-        ctx.fill();
-
-        // Bright white center core
-        ctx.globalAlpha = 1.0;
-        ctx.fillStyle = '#ffffff';
-        ctx.beginPath();
-        ctx.arc(t.x, t.y, Math.max(2.5, r * 0.18), 0, Math.PI * 2);
-        ctx.fill();
-
+        // Inner tactical cross stripes
+        ctx.strokeStyle = 'rgba(255, 255, 255, 0.04)';
+        ctx.lineWidth = 1;
+        for (let py = b.y + 12; py < b.y + b.h; py += 16) {
+          ctx.beginPath();
+          ctx.moveTo(b.x + 4, py);
+          ctx.lineTo(b.x + b.w - 4, py);
+          ctx.stroke();
+        }
         ctx.restore();
       }
 
-      // Draw Cover Barriers OVER the targets (so targets peek out from behind)
-      ctx.fillStyle = '#1e293b';
-      ctx.strokeStyle = '#334155';
-      ctx.lineWidth = 2;
-
-      for (const b of e.barriers) {
-        ctx.fillRect(b.x, b.y, b.w, b.h);
-        ctx.strokeRect(b.x, b.y, b.w, b.h);
-
-        // Subtle diagonal texture lines on barriers
-        ctx.strokeStyle = 'rgba(255, 255, 255, 0.03)';
-        ctx.lineWidth = 1;
-        for (let y = b.y; y < b.y + b.h; y += 15) {
-          ctx.beginPath();
-          ctx.moveTo(b.x, y);
-          ctx.lineTo(b.x + b.w, y + 10);
-          ctx.stroke();
-        }
-      }
+      // Draw Hit Rings (from canvasFx)
+      drawHitRings(ctx, e.hitRings, dt);
 
       // Particles Update & Draw
       for (let i = e.particles.length - 1; i >= 0; i--) {
@@ -613,13 +638,41 @@ export default function BarrierSequencePursuitClient() {
           e.particles.splice(i, 1);
           continue;
         }
+        ctx.save();
         ctx.globalAlpha = Math.max(0, p.life);
         ctx.fillStyle = p.color;
         ctx.beginPath();
         ctx.arc(p.x, p.y, 3, 0, Math.PI * 2);
         ctx.fill();
+        ctx.restore();
       }
       ctx.globalAlpha = 1.0;
+
+      // Tactical Pro White Crosshair
+      if (gameState === 'playing' && mousePosRef.current.active && !isMobile) {
+        const mx = mousePosRef.current.x;
+        const my = mousePosRef.current.y;
+        ctx.save();
+        ctx.strokeStyle = '#ffffff';
+        ctx.fillStyle = '#ffffff';
+        ctx.lineWidth = 1.5;
+        ctx.shadowColor = 'rgba(0, 0, 0, 0.9)';
+        ctx.shadowBlur = 3;
+
+        // Center dot
+        ctx.beginPath();
+        ctx.arc(mx, my, 2, 0, Math.PI * 2);
+        ctx.fill();
+
+        // Crosshair lines: gap 4px, length 10px (radius 14px)
+        ctx.beginPath();
+        ctx.moveTo(mx, my - 14); ctx.lineTo(mx, my - 4);
+        ctx.moveTo(mx, my + 4); ctx.lineTo(mx, my + 14);
+        ctx.moveTo(mx - 14, my); ctx.lineTo(mx - 4, my);
+        ctx.moveTo(mx + 4, my); ctx.lineTo(mx + 14, my);
+        ctx.stroke();
+        ctx.restore();
+      }
 
       ctx.restore();
       animationRef.current = requestAnimationFrame(draw);
@@ -631,71 +684,72 @@ export default function BarrierSequencePursuitClient() {
       if (animationRef.current) cancelAnimationFrame(animationRef.current);
       ro.disconnect();
     };
-  }, [gameState, spawnTarget, triggerFlash, isMobile]);
+  }, [gameState, endGame, spawnTarget, triggerFlash, isMobile]);
 
   // Share Score Card helper
   const sharePage = useCallback(async () => {
-    const url = 'https://skilldrills.online/drills/reaction-speed/barrier-sequence-pursuit';
+    const path = locale === 'en' ? '/drills/reaction-speed/barrier-sequence-pursuit' : `/${locale}/drills/reaction-speed/barrier-sequence-pursuit`;
+    const url = `https://skilldrills.online${path}`;
+    const drillName = copy?.title || t('barrierSequencePursuit.title', 'Jiggle Peek Trainer');
     try {
       const canvas = generateShareCard({
         score: uiScore,
-        bestScore,
         accuracy: analytics.accuracy,
-        rating: { letter: analytics.grade?.letter || 'C', label: analytics.grade?.label || 'Keep Going', emoji: '🎯' },
-        newBest: isNewBest,
-        drillName: 'Jiggle Peek Trainer',
+        speed: analytics.avgReactionTime,
+        drillName,
+        rank: analytics.grade?.letter || 'A',
+        rankName: analytics.grade?.label || 'ELITE REFLEX',
         playerName: getPlayerName(),
+        level: analytics.finalLevel,
+        date: new Date().toLocaleDateString(locale === 'pt' ? 'pt-BR' : locale === 'es' ? 'es-ES' : locale === 'fr' ? 'fr-FR' : locale === 'de' ? 'de-DE' : locale === 'ja' ? 'ja-JP' : locale === 'ko' ? 'ko-KR' : 'en-US', { month: 'short', day: 'numeric', year: 'numeric' }),
+        url: `skilldrills.online${path}`
       });
+
       await shareScoreCard(url, canvas);
-    } catch (e) {
-      const text = `🎯 I scored ${uiScore} PTS (Level ${analytics.finalLevel}) on Jiggle Peek Trainer! Average reaction: ${analytics.avgReactionTime}ms. Practice free reflex drills at skilldrills.online! ⚡`;
-      if (typeof navigator !== 'undefined' && navigator.share) {
-        navigator.share({ title: 'Jiggle Peek Trainer Score', text, url }).catch(() => {});
-      } else if (typeof navigator !== 'undefined' && navigator.clipboard) {
-        navigator.clipboard.writeText(`${text} ${url}`);
-        alert('Score & drill link copied to clipboard!');
+    } catch (err) {
+      if (navigator.share) {
+        navigator.share({
+          title: drillName,
+          text: `${drillName}: ${uiScore}. ${t('barrierSequencePursuit.shareScore', 'Share Score')}`,
+          url
+        }).catch(() => {});
       }
     }
-  }, [uiScore, bestScore, analytics, isNewBest]);
+  }, [copy?.title, locale, t, uiScore, analytics]);
 
   return (
     <div className="min-h-screen bg-[#050508] text-white flex flex-col font-sans select-none">
-      {/* ── MAIN CONTENT AREA ── */}
+      
+      {/* Main Container */}
       <main className="flex-1 max-w-6xl w-full mx-auto px-4 py-6 flex flex-col gap-6">
+        
         {/* Title */}
         {!isFullscreen && (
-        <div className="text-center">
-          <h1 className="text-2xl sm:text-3xl font-black tracking-tight text-white">
-            JIGGLE PEEK TRAINER
-          </h1>
-          <p className="text-xs text-slate-400 mt-1">
-            Barrier Sequence Pursuit & Cover Peeking Reflexes
-          </p>
-        </div>
+          <div className="flex flex-col gap-1">
+            <h1 className="text-2xl sm:text-3xl font-black tracking-tight text-white">
+              <span data-seo-kw="1">{copy?.title || t('barrierSequencePursuit.title', 'Jiggle Peek Trainer')}</span>
+            </h1>
+            <p className="text-[13px] text-slate-400 leading-relaxed">
+              {copy?.subtitle || t('barrierSequencePursuit.subtitle', 'Cover Peeking · Angle Holding Reflexes')}
+            </p>
+          </div>
         )}
 
         {/* Live Stat Cards */}
         {!isFullscreen && (
-        <div className="grid grid-cols-4 gap-2.5 max-w-2xl mx-auto w-full">
-          <div className="bg-[#0d0d18] border border-white/5 rounded-xl p-2.5 text-center">
-            <div className="text-[10px] uppercase font-bold text-slate-500 tracking-wider">Score</div>
-            <div className="text-lg sm:text-xl font-black text-red-400 tabular-nums">{uiScore}</div>
+          <div className="grid grid-cols-4 gap-2 w-full -mb-2">
+            {[
+              { label: t('barrierSequencePursuit.score', 'Score'), value: uiScore, tone: 'text-white' },
+              { label: t('barrierSequencePursuit.time', 'Time'), value: `${uiTimeLeft}s`, tone: uiTimeLeft <= 10 ? 'text-red-400 animate-pulse' : 'text-white' },
+              { label: t('barrierSequencePursuit.level', 'Level'), value: `L${uiLevel}`, tone: 'text-indigo-400' },
+              { label: t('barrierSequencePursuit.bestScore', 'Best Score'), value: bestScore, tone: 'text-amber-400' },
+            ].map((s) => (
+              <div key={s.label} className="rounded-lg border border-white/[0.06] bg-white/[0.015] px-2 py-2 text-center">
+                <div className="text-[9.5px] uppercase font-semibold text-slate-500 tracking-[0.12em]">{s.label}</div>
+                <div className={`text-lg sm:text-xl font-black tabular-nums font-mono mt-0.5 ${s.tone}`}>{s.value}</div>
+              </div>
+            ))}
           </div>
-          <div className="bg-[#0d0d18] border border-white/5 rounded-xl p-2.5 text-center">
-            <div className="text-[10px] uppercase font-bold text-slate-500 tracking-wider">Time</div>
-            <div className={`text-lg sm:text-xl font-black tabular-nums ${uiTimeLeft <= 10 ? 'text-red-400 animate-pulse' : 'text-white'}`}>
-              {uiTimeLeft}s
-            </div>
-          </div>
-          <div className="bg-[#0d0d18] border border-white/5 rounded-xl p-2.5 text-center">
-            <div className="text-[10px] uppercase font-bold text-slate-500 tracking-wider">Level</div>
-            <div className="text-lg sm:text-xl font-black text-indigo-400 tabular-nums">L{engine.current.level}</div>
-          </div>
-          <div className="bg-[#0d0d18] border border-white/5 rounded-xl p-2.5 text-center">
-            <div className="text-[10px] uppercase font-bold text-slate-500 tracking-wider">Best Score</div>
-            <div className="text-lg sm:text-xl font-black text-amber-400 tabular-nums">{bestScore}</div>
-          </div>
-        </div>
         )}
 
         {/* Game Stage Container */}
@@ -711,12 +765,12 @@ export default function BarrierSequencePursuitClient() {
           {/* IN-BOX OVERLAY HUD */}
           {(gameState === 'playing' || gameState === 'countdown') && (
             <>
-              <div className="absolute top-4 left-4 z-30 pointer-events-none">
-                <p className="text-[10px] font-semibold uppercase tracking-wider text-white/50">Score</p>
+              <div className="absolute top-4 left-4 z-30 pointer-events-none flex flex-col">
+                <p className="text-[10px] font-semibold uppercase tracking-wider text-white/50">{t('barrierSequencePursuit.score', 'Score')}</p>
                 <p className="text-2xl sm:text-3xl font-black text-white tabular-nums leading-tight">{uiScore}</p>
               </div>
               <div className="absolute top-4 right-4 z-30 pointer-events-none text-right">
-                <p className="text-[10px] font-semibold uppercase tracking-wider text-white/50">Time Left</p>
+                <p className="text-[10px] font-semibold uppercase tracking-wider text-white/50">{t('barrierSequencePursuit.timeLeft', 'Time Left')}</p>
                 <p className={`text-2xl sm:text-3xl font-black tabular-nums leading-tight ${uiTimeLeft <= 10 ? 'text-red-400 animate-pulse' : 'text-white'}`}>{uiTimeLeft}s</p>
               </div>
             </>
@@ -735,7 +789,7 @@ export default function BarrierSequencePursuitClient() {
                   });
                 }}
                 className="p-2.5 rounded-full bg-black/60 border border-white/10 text-slate-400 hover:text-white transition-colors cursor-pointer"
-                title="Toggle Miss Flash"
+                title={t('barrierSequencePursuit.flash', 'Toggle miss flash')}
               >
                 {flashEnabled ? <Zap className="w-4 h-4 text-red-400" /> : <ZapOff className="w-4 h-4 text-slate-500" />}
               </button>
@@ -749,7 +803,7 @@ export default function BarrierSequencePursuitClient() {
                   });
                 }}
                 className="p-2.5 rounded-full bg-black/60 border border-white/10 text-slate-400 hover:text-white transition-colors cursor-pointer"
-                title="Toggle Sound"
+                title={t('barrierSequencePursuit.sound', 'Toggle sound')}
               >
                 {soundEnabled ? <Volume2 className="w-4 h-4 text-red-400" /> : <VolumeX className="w-4 h-4 text-slate-500" />}
               </button>
@@ -759,8 +813,23 @@ export default function BarrierSequencePursuitClient() {
           {/* CANVAS */}
           <canvas 
             ref={canvasRef} 
-            onPointerDown={(e) => handleCanvasInteraction(e.clientX, e.clientY)}
-            className="block absolute top-0 left-0 w-full h-full z-10 cursor-crosshair touch-none" 
+            onPointerDown={(e) => {
+              if (canvasRef.current) {
+                const r = canvasRef.current.getBoundingClientRect();
+                mousePosRef.current = { x: e.clientX - r.left, y: e.clientY - r.top, active: true };
+              }
+              handleCanvasInteraction(e.clientX, e.clientY);
+            }}
+            onPointerMove={(e) => {
+              if (canvasRef.current) {
+                const r = canvasRef.current.getBoundingClientRect();
+                mousePosRef.current = { x: e.clientX - r.left, y: e.clientY - r.top, active: true };
+              }
+            }}
+            onPointerLeave={() => {
+              mousePosRef.current.active = false;
+            }}
+            className="block absolute top-0 left-0 w-full h-full z-10 touch-none cursor-crosshair"
           />
 
           {/* START CARD */}
@@ -768,16 +837,8 @@ export default function BarrierSequencePursuitClient() {
             <FpsStartCard
               icon={Target}
               accent="red"
-              title="Jiggle Peek Trainer"
-              subtitle="Barrier Sequence Pursuit • Cover Peeking Reflex"
-              rules={[
-                { icon: Target, accent: 'red', title: 'Tap Peeking Targets', text: 'Strike targets as they briefly peek out from behind cover barriers' },
-                { icon: Zap, accent: 'orange', title: 'Cover Barrier Peeks', text: 'React quickly before peeking targets retreat back into cover' },
-              ]}
-              stats={[
-                { icon: Trophy, label: 'Best Score', value: bestScore, color: 'text-white', accent: 'slate' },
-                { icon: TrendingUp, label: 'Best Level', value: `Lv. ${bestLevel}`, color: 'text-blue-400', accent: 'blue' },
-              ]}
+              title={copy?.title || t('barrierSequencePursuit.title', 'Jiggle Peek Trainer')}
+              subtitle={copy?.subtitle || t('barrierSequencePursuit.subtitle', 'Cover Peeking · Angle Holding Reflexes')}
               isTouchOnlyDevice={false}
               onStart={enterDrill}
             />
@@ -785,84 +846,27 @@ export default function BarrierSequencePursuitClient() {
 
           {/* COUNTDOWN OVERLAY */}
           {gameState === 'countdown' && (
-            <DrillCountdown value={countdownValue} subtitle="GET READY" />
+            <DrillCountdown value={countdownValue} subtitle={t('barrierSequencePursuit.getReady', 'GET READY')} />
           )}
 
-          {/* END SCREEN */}
+          {/* UNIVERSAL RESULT CARD */}
           {gameState === 'gameOver' && analytics.grade && (
-            <div className="absolute inset-0 z-40 flex bg-neutral-950/98 select-none font-sans" style={{ background: 'rgba(5,5,8,0.97)' }} onPointerDown={e => e.stopPropagation()}>
-              
-              {/* Left Grade Panel */}
-              <div className="w-[36%] flex flex-col items-center justify-center gap-1 border-r border-white/5 px-4" style={{ background: 'radial-gradient(ellipse 260px 200px at 50% 30%, rgba(239,68,68,.12), transparent 70%)' }}>
-                {isNewBest && (
-                  <span className="text-[9.5px] font-bold text-yellow-400 bg-yellow-500/10 border border-yellow-500/25 px-2.5 py-0.5 rounded-full mb-1 animate-pulse">
-                    NEW BEST
-                  </span>
-                )}
-                <div className={`text-5xl sm:text-6xl font-black leading-none ${analytics.grade.color}`}>
-                  {analytics.grade.letter}
-                </div>
-                <div className="text-[10px] uppercase tracking-widest text-slate-500 text-center font-bold mt-1">
-                  {analytics.grade.label}
-                </div>
-                <div className="text-3xl sm:text-4xl font-black text-white mt-2 tabular-nums">
-                  {uiScore}
-                </div>
-                <div className="text-[9px] uppercase tracking-widest text-slate-500">Points</div>
-              </div>
-
-              {/* Right Stats & Actions Panel */}
-              <div className="flex-1 flex flex-col justify-center gap-3 px-6 py-4 min-w-0">
-                
-                {/* 3 Stat Tiles */}
-                <div className="grid grid-cols-3 gap-2">
-                  <div className="bg-black border border-white/5 p-2.5 rounded-xl text-center">
-                    <p className="text-sm sm:text-base font-black text-white">{analytics.accuracy}%</p>
-                    <p className="text-[7.5px] sm:text-[8.5px] font-bold uppercase tracking-wider text-gray-400 mt-0.5">Accuracy</p>
-                  </div>
-                  <div className="bg-black border border-white/5 p-2.5 rounded-xl text-center">
-                    <p className="text-sm sm:text-base font-black text-white">{analytics.avgReactionTime}<span className="text-[10px] text-gray-500">ms</span></p>
-                    <p className="text-[7.5px] sm:text-[8.5px] font-bold uppercase tracking-wider text-gray-400 mt-0.5">Avg Reaction</p>
-                  </div>
-                  <div className="bg-black border border-white/5 p-2.5 rounded-xl text-center">
-                    <p className="text-sm sm:text-base font-black text-white">Lv. {analytics.finalLevel}</p>
-                    <p className="text-[7.5px] sm:text-[8.5px] font-bold uppercase tracking-wider text-gray-400 mt-0.5">Peak Level</p>
-                  </div>
-                </div>
-
-
-                {/* Action Buttons */}
-                <div className="flex gap-2">
-                  <button 
-                    type="button"
-                    onPointerDown={(e) => e.stopPropagation()}
-                    onClick={enterDrill} 
-                    className="flex-1 py-3 rounded-[13px] bg-gradient-to-r from-red-600 to-rose-600 text-white font-bold text-xs uppercase tracking-wide cursor-pointer transition-transform active:scale-[0.98] shadow-md flex items-center justify-center gap-1.5 relative z-50 pointer-events-auto"
-                  >
-                    <RefreshCw className="w-3.5 h-3.5" /> Play Again
-                  </button>
-                  <button 
-                    type="button"
-                    onPointerDown={(e) => e.stopPropagation()}
-                    onClick={sharePage} 
-                    className="w-11 flex-shrink-0 rounded-[13px] bg-white/[0.04] border border-white/10 flex items-center justify-center text-slate-400 hover:text-white cursor-pointer active:scale-90 transition-transform relative z-50 pointer-events-auto" 
-                    title="Share Score"
-                  >
-                    <Share2 className="w-4 h-4" />
-                  </button>
-                  <button 
-                    type="button"
-                    onPointerDown={(e) => e.stopPropagation()}
-                    onClick={handleExitDrill} 
-                    className="w-11 flex-shrink-0 rounded-[13px] bg-white/[0.04] border border-white/10 flex items-center justify-center text-slate-400 hover:text-white cursor-pointer active:scale-90 transition-transform relative z-50 pointer-events-auto" 
-                    title="Return to Options"
-                  >
-                    <LogOut className="w-4 h-4 text-red-400" />
-                  </button>
-                </div>
-
-              </div>
-            </div>
+            <DrillResultCard
+              accent="rose"
+              grade={analytics.grade}
+              score={uiScore}
+              isNewBest={isNewBest}
+              stats={[
+                { label: t('barrierSequencePursuit.accuracy', 'Accuracy'), value: analytics.accuracy, suffix: '%' },
+                { label: t('barrierSequencePursuit.avgReaction', 'Avg Reaction'), value: analytics.avgReactionTime, suffix: 'ms' },
+                { label: t('barrierSequencePursuit.peakLevel', 'Peak Level'), value: `Lv. ${analytics.finalLevel}` },
+                { label: t('barrierSequencePursuit.maxCombo', 'Max Combo'), value: analytics.maxCombo, suffix: 'x' },
+              ]}
+              onPlayAgain={enterDrill}
+              onBeforeShare={() => setIsFullscreen(false)}
+              onShare={sharePage}
+              onExit={handleExitDrill}
+            />
           )}
 
         </div>
@@ -872,46 +876,33 @@ export default function BarrierSequencePursuitClient() {
           <div className="[&>div]:!mt-0">
             <DrillAccordion
               id="rules"
-              title="Drill Instructions & Scoring System"
+              title={t('barrierSequencePursuit.rulesTitle', 'Drill Instructions & Scoring System')}
               isOpen={openAccordion === 'rules'}
               onToggle={() => setOpenAccordion(openAccordion === 'rules' ? null : 'rules')}
             >
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4 font-sans">
-                <div className="bg-black p-4 rounded-xl border border-white/10">
-                  <p className="text-sm font-bold text-white mb-1">Tap Peeking Targets (+100 PTS)</p>
-                  <p className="text-xs text-gray-300 leading-relaxed">Adds to score and levels you up.</p>
-                </div>
-                <div className="bg-black p-4 rounded-xl border border-white/10">
-                  <p className="text-sm font-bold text-white mb-1">Level Progression (Every 250 PTS)</p>
-                  <p className="text-xs text-gray-300 leading-relaxed">Targets peek faster, shrink in radius, and delay unpredictably.</p>
-                </div>
-                <div className="bg-black p-4 rounded-xl border border-white/10">
-                  <p className="text-sm font-bold text-white mb-1">Miss / Timeout</p>
-                  <p className="text-xs text-gray-300 leading-relaxed">No penalty — just triggers a red alert overlay, your score stays safe.</p>
-                </div>
-                <div className="bg-black p-4 rounded-xl border border-white/10">
-                  <p className="text-sm font-bold text-white mb-1">Session Length (45 Seconds)</p>
-                  <p className="text-xs text-gray-300 leading-relaxed">Beat your best score before the timer runs out.</p>
-                </div>
+                {rulesItems.map((r) => (
+                  <RuleItem key={r.num} {...r} />
+                ))}
               </div>
             </DrillAccordion>
 
             <DrillAccordion
               id="about"
-              title="About Jiggle Peek Trainer"
+              title={t('barrierSequencePursuit.aboutTitle', 'About Jiggle Peek Trainer')}
               isOpen={openAccordion === 'about'}
               onToggle={() => setOpenAccordion(openAccordion === 'about' ? null : 'about')}
             >
-              <div className="space-y-4 font-sans">
+              <div className="space-y-8 font-sans">
                 <section>
-                  <h4 className="text-base font-bold text-white mb-2 flex items-center gap-2">
-                    <Target className="w-4 h-4 text-red-400" /> What Is Cover Peeking & Jiggle Peek Defense Training?
-                  </h4>
+                  <h3 className="text-base font-bold text-white mb-2 flex items-center gap-2">
+                    <Eye className="w-4 h-4 text-red-400" /> {t('barrierSequencePursuit.aboutHeading', 'What does angle-holding reaction training measure?')}
+                  </h3>
                   <p className="text-sm leading-relaxed mb-3 text-gray-300">
-                    <strong>Jiggle Peek Trainer</strong> (Barrier Sequence Pursuit) isolates the cover-peeking duel that decides angle holds in tactical shooters. Targets flash out from behind one of four randomly chosen cover barriers for a fraction of a second before retreating, forcing you to keep every corner under peripheral watch at once instead of tunnel-visioning on a single lane.
+                    {t('barrierSequencePursuit.aboutP1', 'This drill trains cover-edge detection, pre-aim discipline, and the final click in a tactical FPS angle.')}
                   </p>
                   <p className="text-sm leading-relaxed text-gray-300">
-                    Because exposure time and barrier order both tighten as your level climbs, repeated reps condition faster visual re-acquisition and steadier crosshair placement — the same skills that decide angle-holding duels in CS2, Valorant, and Rainbow Six Siege.
+                    {t('barrierSequencePursuit.aboutP2', 'The result is a browser-game measure affected by display, pointer, browser, frame timing, and fatigue.')}
                   </p>
                 </section>
 
@@ -919,103 +910,50 @@ export default function BarrierSequencePursuitClient() {
                   <div className="p-4 rounded-xl border border-gray-800 bg-white/[0.02]">
                     <div className="flex items-center gap-2.5 mb-2">
                       <div className="w-7 h-7 rounded-lg bg-red-600 flex items-center justify-center"><Users className="w-3.5 h-3.5 text-white" /></div>
-                      <h5 className="text-xs font-bold text-white">Who Should Use This?</h5>
+                      <h4 className="text-xs font-bold text-white">{t('barrierSequencePursuit.audienceTitle', 'Who should use this?')}</h4>
                     </div>
-                    <p className="text-xs text-gray-300 leading-relaxed">Competitive gamers, entry fraggers, and defenders holding choke points in Valorant, CS2, and Siege.</p>
+                    <p className="text-xs text-gray-300 leading-relaxed">{t('barrierSequencePursuit.audienceDesc', 'Tactical FPS players working on angle holding, pre-aim, and visual response.')}</p>
                   </div>
                   <div className="p-4 rounded-xl border border-gray-800 bg-white/[0.02]">
                     <div className="flex items-center gap-2.5 mb-2">
                       <div className="w-7 h-7 rounded-lg bg-emerald-600 flex items-center justify-center"><TrendingUp className="w-3.5 h-3.5 text-white" /></div>
-                      <h5 className="text-xs font-bold text-white">Skills Improved</h5>
+                      <h4 className="text-xs font-bold text-white">{t('barrierSequencePursuit.interceptionTitle', 'Cover-edge interception')}</h4>
                     </div>
-                    <p className="text-xs text-gray-300 leading-relaxed">Peripheral detection, saccadic eye movement, visual re-acquisition speed, and reflexive click accuracy under cover-peek pressure.</p>
+                    <p className="text-xs text-gray-300 leading-relaxed">{t('barrierSequencePursuit.interceptionDesc', 'Train attention on the barrier edge so the first target pixel becomes an actionable cue.')}</p>
                   </div>
                   <div className="p-4 rounded-xl border border-gray-800 bg-white/[0.02]">
                     <div className="flex items-center gap-2.5 mb-2">
                       <div className="w-7 h-7 rounded-lg bg-blue-600 flex items-center justify-center"><Zap className="w-3.5 h-3.5 text-white" /></div>
-                      <h5 className="text-xs font-bold text-white">Countering Peeker's Advantage</h5>
+                      <h4 className="text-xs font-bold text-white">{t('barrierSequencePursuit.preAimTitle', 'Pre-aim timing')}</h4>
                     </div>
-                    <p className="text-xs text-gray-300 leading-relaxed">Reduces motor reaction lag and conditions instant visual acquisition to minimize latency advantages online.</p>
+                    <p className="text-xs text-gray-300 leading-relaxed">{t('barrierSequencePursuit.preAimDesc', 'Reduce unnecessary mouse travel and separate visual detection from the final click.')}</p>
                   </div>
-                </div>
-              </div>
-            </DrillAccordion>
-
-            <DrillAccordion
-              id="faq"
-              title="Frequently Asked Questions"
-              isOpen={openAccordion === 'faq'}
-              onToggle={() => setOpenAccordion(openAccordion === 'faq' ? null : 'faq')}
-            >
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 font-sans">
-                <div className="bg-[#05060b] border border-gray-800 rounded-xl p-5">
-                  <h4 className="text-sm font-bold text-gray-200 mb-2">What is Barrier Sequence Pursuit (Jiggle Peek Trainer)?</h4>
-                  <p className="text-xs text-gray-400 leading-relaxed">Barrier Sequence Pursuit is a reflex aim drill that isolates cover-peeking detection. Targets spawn behind cover barriers, testing visual re-acquisition speed and angle defense.</p>
-                </div>
-                <div className="bg-[#05060b] border border-gray-800 rounded-xl p-5">
-                  <h4 className="text-sm font-bold text-gray-200 mb-2">What is peeker's advantage in gaming?</h4>
-                  <p className="text-xs text-gray-400 leading-relaxed">Peeker's advantage is a networking phenomenon where a moving peeker sees a holding defender before the defender sees them. This drill trains quick reaction speed to counter it.</p>
-                </div>
-                <div className="bg-[#05060b] border border-gray-800 rounded-xl p-5">
-                  <h4 className="text-sm font-bold text-gray-200 mb-2">How do you counter a jiggle peek?</h4>
-                  <p className="text-xs text-gray-400 leading-relaxed">Countering a jiggle peek requires high visual scanning. You must place your crosshair slightly off the corner and click the instant the target breaks cover.</p>
-                </div>
-                <div className="bg-[#05060b] border border-gray-800 rounded-xl p-5">
-                  <h4 className="text-sm font-bold text-gray-200 mb-2">Does this help FPS gaming?</h4>
-                  <p className="text-xs text-gray-400 leading-relaxed">Yes. In games like Valorant and CS2, players frequently peek from behind boxes. This drill translates directly to angle holding and reactive clicking.</p>
-                </div>
-                <div className="bg-[#05060b] border border-gray-800 rounded-xl p-5">
-                  <h4 className="text-sm font-bold text-gray-200 mb-2">How does adaptive difficulty work?</h4>
-                  <p className="text-xs text-gray-400 leading-relaxed">As your score climbs, targets shrink in size, peeks occur faster, exposure duration decreases, and barrier cycle timing becomes completely unpredictable.</p>
-                </div>
-                <div className="bg-[#05060b] border border-gray-800 rounded-xl p-5">
-                  <h4 className="text-sm font-bold text-gray-200 mb-2">What mechanical skills does cover peeking pursuit improve?</h4>
-                  <p className="text-xs text-gray-400 leading-relaxed">It targets peripheral detection, saccadic eye movement, target re-acquisition speed, and reflexive click accuracy under time pressure.</p>
-                </div>
-                <div className="bg-[#05060b] border border-gray-800 rounded-xl p-5">
-                  <h4 className="text-sm font-bold text-gray-200 mb-2">Is this jiggle peek trainer free?</h4>
-                  <p className="text-xs text-gray-400 leading-relaxed">Yes, this drill is completely free and runs directly in your web browser with 1:1 hardware raw input and mobile touch support.</p>
-                </div>
-                <div className="bg-[#05060b] border border-gray-800 rounded-xl p-5">
-                  <h4 className="text-sm font-bold text-gray-200 mb-2">What games benefit from jiggle peek defense training?</h4>
-                  <p className="text-xs text-gray-400 leading-relaxed">Fast-paced tactical shooters like CS2, Valorant, Rainbow Six Siege, and Apex Legends benefit heavily from enhanced angle defense and cover tracking.</p>
                 </div>
               </div>
             </DrillAccordion>
           </div>
         )}
 
-        {/* RELATED DRILLS GRID */}
-        {!isFullscreen && (
-          <section className="mt-4">
-            <h2 className="text-sm font-bold text-slate-400 uppercase tracking-wider mb-3">
-              Related Reaction Speed Drills
-            </h2>
-            <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
-              {RELATED_DRILLS.map((drill) => (
-                <Link
-                  key={drill.id}
-                  href={drill.href}
-                  className="group bg-[#0c0c16] border border-white/5 hover:border-red-500/40 rounded-xl p-3.5 transition-all duration-200 hover:-translate-y-0.5 flex flex-col justify-between"
-                >
-                  <div>
-                    <div className="text-[10px] font-bold text-red-400 uppercase tracking-wider mb-1">{drill.cat}</div>
-                    <div className="text-xs font-bold text-white group-hover:text-red-300 transition-colors">{drill.name}</div>
-                    <div className="text-[11px] text-slate-400 mt-1 line-clamp-2 leading-relaxed">{drill.desc}</div>
-                  </div>
-                  <div className="text-[10px] font-bold text-slate-500 group-hover:text-red-400 mt-3 flex items-center gap-1 transition-colors">
-                    Train Drill <span>→</span>
-                  </div>
-                </Link>
-              ))}
-            </div>
-          </section>
-        )}
-
-        {/* SITE FOOTER */}
-        {!isFullscreen && <DrillFooter />}
-
       </main>
+    </div>
+  );
+}
+
+// === Subcomponents ===
+function RuleItem({ num, text, highlight = '', result }: { num: string; text: string; highlight?: string; result: string }) {
+  return (
+    <div className="flex items-center gap-2.5 sm:gap-3 bg-black px-3 py-2 sm:px-4 sm:py-2.5 rounded-xl border border-white/10 shadow-sm font-sans min-w-0">
+      <div className="w-6 h-6 sm:w-7 sm:h-7 rounded-lg bg-white/10 border border-white/20 flex items-center justify-center text-white text-xs sm:text-sm font-black shadow-lg flex-shrink-0">
+        {num}
+      </div>
+      <div className="flex-1 flex items-center justify-between gap-2 min-w-0">
+        <p className="text-xs sm:text-sm font-medium text-gray-100 font-sans truncate min-w-0">
+          {text}{highlight && <span className="font-black text-white"> ({highlight})</span>}
+        </p>
+        <div className="text-[11px] sm:text-xs font-black px-2.5 py-1 rounded-lg bg-[#050811] border border-white/10 text-white whitespace-nowrap shadow-inner tracking-wide flex-shrink-0">
+          {result}
+        </div>
+      </div>
     </div>
   );
 }

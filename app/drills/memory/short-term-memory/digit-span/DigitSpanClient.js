@@ -1,13 +1,12 @@
 'use client';
 
 import React, { useState, useEffect, useRef, useCallback } from 'react';
-import Link from 'next/link';
 
 import {
   Brain, Play, RefreshCw,
   TrendingUp, Volume2, VolumeX,
   Zap, ZapOff, Users, Share2, ArrowLeft,
-  Hash, Delete, Check, Target, Trophy
+  Hash, Delete, Check
 } from 'lucide-react';
 
 import generateShareCard, { shareScoreCard } from '../../../../../components/ShareScoreCard';
@@ -22,8 +21,8 @@ import DrillCountdown from '../../../../../components/drill/DrillCountdown';
 import DrillAccordion from '../../../../../components/drill/DrillAccordion';
 import DrillFlashOverlay from '../../../../../components/drill/DrillFlashOverlay';
 import DrillRuleItem from '../../../../../components/drill/DrillRuleItem';
-import DrillFAQItem from '../../../../../components/drill/DrillFAQItem';
 import FpsStartCard from '../../../../../components/drill/FpsStartCard';
+import useImmersiveMode from '@/lib/useImmersiveMode';
 
 const DRILL_DURATION = 45; // 45 seconds duration
 const ELITE_SCORE = 1300; // Target score for S+ rating (rebalanced after combo removal)
@@ -63,9 +62,10 @@ const saveData = (data) => {
   } catch (e) {}
 };
 
-export default function DigitSpanClient() {
+export default function DigitSpanClient({ copy = null }) {
   const [gameState, setGameState] = useState('start'); // 'start' | 'countdown' | 'playing' | 'gameOver'
   const [isFullscreen, setIsFullscreen] = useState(false);
+  useImmersiveMode(isFullscreen); // locks the page behind while the drill fills the screen
   const [soundEnabled, setSoundEnabled] = useState(true);
   const [flashEnabled, setFlashEnabled] = useState(true);
   const [openAccordion, setOpenAccordion] = useState(null);
@@ -130,9 +130,7 @@ export default function DigitSpanClient() {
     startingRef.current = false;
     gameActiveRef.current = false;
 
-    if (document.fullscreenElement) {
-      await document.exitFullscreen().catch(() => {});
-    }
+    setIsFullscreen(false);
     setGameState('start');
   }, [clearGameTimeouts]);
 
@@ -142,7 +140,7 @@ export default function DigitSpanClient() {
   });
 
   // Stop all timers/intervals on unmount (e.g. in-app nav away mid-drill) —
-  // visibilitychange/pagehide/fullscreenchange don't fire on SPA route changes.
+  // visibilitychange/pagehide don't fire on SPA route changes.
   useEffect(() => {
     return () => {
       countdownTimeoutsRef.current.forEach(clearTimeout);
@@ -163,7 +161,7 @@ export default function DigitSpanClient() {
 
     const e = engine.current;
     const totalTries = e.perfectHits + e.missedClicks;
-    const finalAccuracy = totalTries > 0 ? Math.round((e.perfectHits / totalTries) * 100) : 100;
+    const finalAccuracy = totalTries > 0 ? Math.round((e.perfectHits / totalTries) * 100) : 0;
 
     const grade = getFpsScoreGrade(e.score, ELITE_SCORE);
 
@@ -171,7 +169,7 @@ export default function DigitSpanClient() {
       accuracy: finalAccuracy,
       perfectHits: e.perfectHits,
       missedClicks: e.missedClicks,
-      finalLevel: e.level,
+      finalLevel: Math.floor(e.level),
       grade,
     });
 
@@ -183,7 +181,7 @@ export default function DigitSpanClient() {
 
     const updatedData = {
       bestScore: Math.max(prevSaved.bestScore, e.score),
-      bestLevel: Math.max(prevSaved.bestLevel, e.level),
+      bestLevel: Math.max(prevSaved.bestLevel, Math.floor(e.level)),
       totalSessions: (prevSaved.totalSessions || 0) + 1,
     };
     saveData(updatedData);
@@ -377,12 +375,7 @@ export default function DigitSpanClient() {
       displayDuration: 2500,
     };
 
-    // Auto Fullscreen on Start
-    try {
-      if (containerRef.current && !document.fullscreenElement) {
-        await containerRef.current.requestFullscreen();
-      }
-    } catch (e) {}
+    setIsFullscreen(true);
 
     // Countdown sequence: 3 -> 2 -> 1 -> GO
     setGameState('countdown');
@@ -438,6 +431,7 @@ export default function DigitSpanClient() {
   }, [clearGameTimeouts, endGame, startSequenceCycle]);
 
   const shareScore = useCallback(async () => {
+    setIsFullscreen(false);
     const url = 'https://skilldrills.online/drills/memory/short-term-memory/digit-span';
     try {
       const canvas = generateShareCard({
@@ -469,41 +463,31 @@ export default function DigitSpanClient() {
       <main className="flex-1 max-w-6xl w-full mx-auto px-4 py-6 flex flex-col gap-6">
         {/* Title */}
         {!isFullscreen && (
-        <div className="text-center">
-          <h1 className="text-2xl sm:text-3xl font-black tracking-tight text-white">
-            DIGIT SPAN
-            <span data-seo-kw="1" className="block text-sm font-semibold text-slate-400 mt-1 normal-case tracking-normal">
-              Digit Span Memory Test
-            </span>
-          </h1>
-          <p className="text-xs text-slate-400 mt-1">
-            Numerical Short-Term Memory Capacity Under Speed Constraints
-          </p>
-        </div>
+          <div className="flex flex-col gap-1">
+            <h1 className="text-2xl sm:text-3xl font-black tracking-tight text-white">
+              {copy?.h1Prefix || null}
+              <span data-seo-kw="1">{copy?.h1Keyword || "Digit Span Memory Test"}</span>
+              {copy?.h1Suffix || null}
+              <span className="block text-sm font-semibold text-slate-400 mt-1">{copy?.subtitle || "Digit span memory test for recalling growing number sequences and training working memory capacity"}</span>
+            </h1>
+          </div>
         )}
 
         {/* Live Stat Cards */}
         {!isFullscreen && (
-        <div className="grid grid-cols-4 gap-2.5 max-w-2xl mx-auto w-full">
-          <div className="bg-[#0d0d18] border border-white/5 rounded-xl p-2.5 text-center">
-            <div className="text-[10px] uppercase font-bold text-slate-500 tracking-wider">Score</div>
-            <div className="text-lg sm:text-xl font-black text-purple-400 tabular-nums">{uiScore}</div>
+          <div className="grid grid-cols-4 gap-2 w-full -mb-2">
+            {[
+              { label: copy?.statScore || "Score", val: uiScore, color: "text-purple-400" },
+              { label: copy?.statTime || "Time", val: `${uiTimeLeft}s`, highlight: uiTimeLeft <= 10 },
+              { label: copy?.statSpan || "Span", val: `${digitCount} ${copy?.digitsUnit || "Digits"}`, color: "text-indigo-400" },
+              { label: copy?.statBest || "Best Score", val: bestScore, color: "text-amber-400" },
+            ].map((s, i) => (
+              <div key={i} className="border border-white/[0.06] bg-white/[0.015] px-2 py-2 rounded-xl text-center">
+                <div className="text-[9px] sm:text-[10px] uppercase font-bold text-slate-500 tracking-wider mb-0.5">{s.label}</div>
+                <div className={`text-xs sm:text-sm md:text-base font-black tabular-nums truncate ${s.highlight ? "text-red-400 animate-pulse" : s.color || "text-white"}`}>{s.val}</div>
+              </div>
+            ))}
           </div>
-          <div className="bg-[#0d0d18] border border-white/5 rounded-xl p-2.5 text-center">
-            <div className="text-[10px] uppercase font-bold text-slate-500 tracking-wider">Time</div>
-            <div className={`text-lg sm:text-xl font-black tabular-nums ${uiTimeLeft <= 10 ? 'text-red-400 animate-pulse' : 'text-white'}`}>
-              {uiTimeLeft}s
-            </div>
-          </div>
-          <div className="bg-[#0d0d18] border border-white/5 rounded-xl p-2.5 text-center">
-            <div className="text-[10px] uppercase font-bold text-slate-500 tracking-wider">Span</div>
-            <div className="text-lg sm:text-xl font-black text-indigo-400 tabular-nums">{digitCount} Digits</div>
-          </div>
-          <div className="bg-[#0d0d18] border border-white/5 rounded-xl p-2.5 text-center">
-            <div className="text-[10px] uppercase font-bold text-slate-500 tracking-wider">Best Score</div>
-            <div className="text-lg sm:text-xl font-black text-amber-400 tabular-nums">{bestScore}</div>
-          </div>
-        </div>
         )}
 
         {/* Game Stage Container */}
@@ -520,12 +504,12 @@ export default function DigitSpanClient() {
           {(gameState === 'playing' || gameState === 'countdown') && (
             <>
               <div className="absolute top-4 left-4 z-30 pointer-events-none">
-                <p className="text-[10px] font-semibold uppercase tracking-wider text-white/50">Score</p>
+                <p className="text-[10px] font-semibold uppercase tracking-wider text-white/50">{copy?.hudScore || "Score"}</p>
                 <p className="text-2xl sm:text-3xl font-bold text-white tabular-nums leading-tight">{uiScore}</p>
               </div>
 
               <div className="absolute top-4 right-4 z-30 pointer-events-none text-right">
-                <p className="text-[10px] font-semibold uppercase tracking-wider text-white/50">Time</p>
+                <p className="text-[10px] font-semibold uppercase tracking-wider text-white/50">{copy?.hudTime || "Time"}</p>
                 <p className={`text-2xl sm:text-3xl font-bold tabular-nums leading-tight ${uiTimeLeft <= 10 ? 'text-red-400' : 'text-white'}`}>{uiTimeLeft}s</p>
               </div>
             </>
@@ -572,7 +556,7 @@ export default function DigitSpanClient() {
               {/* MEMORIZE PHASE DISPLAY */}
               {phase === 'memorize' && (
                 <div className="text-center animate-in fade-in zoom-in-95 duration-200 flex flex-col items-center justify-center">
-                  <span className="text-purple-400 font-bold uppercase tracking-widest text-xs sm:text-sm mb-4 block">MEMORIZE SEQUENCE</span>
+                  <span className="text-purple-400 font-bold uppercase tracking-widest text-xs sm:text-sm mb-4 block">{copy?.memorizeTitle || "MEMORIZE SEQUENCE"}</span>
                   <div className="py-4">
                     <span className="font-mono font-black text-white tracking-[0.25em] sm:tracking-[0.35em] drop-shadow-[0_0_24px_rgba(168,85,247,0.4)]" style={{ fontSize: `${Math.max(32, 72 - digitCount * 3)}px` }}>
                       {targetSequence}
@@ -628,7 +612,7 @@ export default function DigitSpanClient() {
               {phase === 'feedback' && (
                 <div className="text-center animate-in fade-in duration-100 flex flex-col items-center justify-center h-full">
                   <div className="w-12 h-12 rounded-full border-4 border-white/10 border-t-purple-500 animate-spin mb-2"></div>
-                  <span className="text-xs font-bold text-gray-400 uppercase tracking-widest">Evaluating...</span>
+                  <span className="text-xs font-bold text-gray-400 uppercase tracking-widest">{copy?.evaluating || "Evaluating..."}</span>
                 </div>
               )}
 
@@ -640,16 +624,8 @@ export default function DigitSpanClient() {
             <FpsStartCard
               icon={Hash}
               accent="purple"
-              title="Digit Span Pro"
-              subtitle="Numerical Short-Term Memory • Digit Sequence Recall"
-              rules={[
-                { icon: Target, accent: 'purple', title: 'Memorize Digit Sequence', text: 'Watch the flashing numbers displayed on screen' },
-                { icon: Zap, accent: 'blue', title: 'Recall with On-Screen Numpad', text: 'Enter the exact sequence of digits using the numpad' },
-              ]}
-              stats={[
-                { icon: Trophy, label: 'Best Score', value: bestScore, color: 'text-white', accent: 'slate' },
-                { icon: TrendingUp, label: 'Best Span', value: `${bestLevel} Digits`, color: 'text-blue-400', accent: 'blue' },
-              ]}
+              title={copy?.startTitle || "Digit Span Pro"}
+              subtitle={copy?.startSubtitle || "Numerical Short-Term Memory • Digit Sequence Recall"}
               isTouchOnlyDevice={false}
               onStart={enterDrill}
             />
@@ -657,7 +633,7 @@ export default function DigitSpanClient() {
 
           {/* COUNTDOWN OVERLAY (3-2-1-GO) */}
           {gameState === 'countdown' && (
-            <DrillCountdown value={countdownValue} subtitle="GET READY" />
+            <DrillCountdown value={countdownValue} subtitle={copy?.countdownSubtitle || "GET READY"} />
           )}
 
           {/* END SCREEN (GAME OVER) */}
@@ -668,7 +644,7 @@ export default function DigitSpanClient() {
               <div className="w-[36%] flex flex-col items-center justify-center gap-1 border-r border-white/5 px-4" style={{ background: 'radial-gradient(ellipse 260px 200px at 50% 30%, rgba(168,85,247,.12), transparent 70%)' }}>
                 {isNewBest && (
                   <span className="text-[9.5px] font-bold text-yellow-400 bg-yellow-500/10 border border-yellow-500/25 px-2.5 py-0.5 rounded-full mb-1 animate-pulse">
-                    NEW BEST
+                    {copy?.newBest || "NEW BEST"}
                   </span>
                 )}
                 <div className={`text-5xl sm:text-6xl font-black leading-none ${analytics.grade?.color || 'text-purple-400'}`}>
@@ -680,7 +656,7 @@ export default function DigitSpanClient() {
                 <div className="text-3xl sm:text-4xl font-black text-white mt-2 tabular-nums">
                   {uiScore}
                 </div>
-                <div className="text-[9px] uppercase tracking-widest text-slate-500">Points</div>
+                <div className="text-[9px] uppercase tracking-widest text-slate-500">{copy?.pointsLabel || "Points"}</div>
               </div>
 
               {/* Right Stats & Actions Panel */}
@@ -690,15 +666,15 @@ export default function DigitSpanClient() {
                 <div className="grid grid-cols-3 gap-2">
                   <div className="bg-black border border-white/5 p-2.5 rounded-xl text-center">
                     <p className="text-sm sm:text-base font-black text-white">{analytics.accuracy}%</p>
-                    <p className="text-[7.5px] sm:text-[8.5px] font-bold uppercase tracking-wider text-gray-400 mt-0.5">Accuracy</p>
+                    <p className="text-[7.5px] sm:text-[8.5px] font-bold uppercase tracking-wider text-gray-400 mt-0.5">{copy?.statAccuracy || "Accuracy"}</p>
                   </div>
                   <div className="bg-black border border-white/5 p-2.5 rounded-xl text-center">
-                    <p className="text-sm sm:text-base font-black text-white">{analytics.finalLevel} Digits</p>
-                    <p className="text-[7.5px] sm:text-[8.5px] font-bold uppercase tracking-wider text-gray-400 mt-0.5">Peak Span</p>
+                    <p className="text-sm sm:text-base font-black text-white">{analytics.finalLevel} {copy?.digitsUnit || "Digits"}</p>
+                    <p className="text-[7.5px] sm:text-[8.5px] font-bold uppercase tracking-wider text-gray-400 mt-0.5">{copy?.statPeakSpan || "Peak Span"}</p>
                   </div>
                   <div className="bg-black border border-white/5 p-2.5 rounded-xl text-center">
                     <p className="text-sm sm:text-base font-black text-white">{analytics.perfectHits}</p>
-                    <p className="text-[7.5px] sm:text-[8.5px] font-bold uppercase tracking-wider text-gray-400 mt-0.5">Perfects</p>
+                    <p className="text-[7.5px] sm:text-[8.5px] font-bold uppercase tracking-wider text-gray-400 mt-0.5">{copy?.statPerfects || "Perfects"}</p>
                   </div>
                 </div>
 
@@ -708,7 +684,7 @@ export default function DigitSpanClient() {
                     onClick={enterDrill} 
                     className="flex-1 py-3 rounded-[13px] bg-gradient-to-r from-purple-600 to-pink-600 text-white font-bold text-xs uppercase tracking-wide cursor-pointer transition-transform active:scale-[0.98] shadow-md flex items-center justify-center gap-1.5"
                   >
-                    <RefreshCw className="w-3.5 h-3.5" /> Play Again
+                    <RefreshCw className="w-3.5 h-3.5" /> {copy?.btnPlayAgain || "Play Again"}
                   </button>
                   <button 
                     onClick={shareScore} 
@@ -720,7 +696,7 @@ export default function DigitSpanClient() {
                   <button 
                     onClick={handleExitDrill} 
                     className="w-11 flex-shrink-0 rounded-[13px] bg-white/[0.04] border border-white/10 flex items-center justify-center text-slate-400 hover:text-white cursor-pointer active:scale-90 transition-transform" 
-                    title="Exit Fullscreen & Return"
+                    title="Exit Drill & Return"
                   >
                     <ArrowLeft className="w-4 h-4 text-red-400" />
                   </button>
@@ -732,20 +708,31 @@ export default function DigitSpanClient() {
 
         </div>
 
+        {/* Caption below stage */}
+        {!isFullscreen && (
+          <p className="text-xs text-slate-400 leading-relaxed -mt-2">
+            {copy?.caption || "Memorize the flashing sequence of numbers, then enter the exact digits in order."}
+          </p>
+        )}
+
         {/* ACCORDION 1: DRILL INSTRUCTIONS & SCORING */}
         {!isFullscreen && (
           <div className="[&>div]:!mt-0">
           <DrillAccordion
             id="rules"
-            title="Drill Instructions & Scoring System"
+            title={copy?.rulesTitle || "Drill Instructions & Scoring System"}
             isOpen={openAccordion === 'rules'}
             onToggle={() => setOpenAccordion(openAccordion === 'rules' ? null : 'rules')}
           >
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-              <DrillRuleItem num="1" text="Perfect Recall" highlight="+100 PTS" result="Adds 1 Digit to Span" />
-              <DrillRuleItem num="2" text="Level Bonus" highlight="Up to +120% PTS" result="Higher span = more points per hit" />
-              <DrillRuleItem num="3" text="Miss / Timeout" highlight="-1 Digit" result="No score or time loss" />
-              <DrillRuleItem num="4" text="Adaptive Span Test" highlight="Rises & Falls" result="Converges on your true digit span" />
+              {(copy?.rulesItems || [
+                { num: "1", text: "Digit Sequence Recall", highlight: "+100 PTS", result: "Enter flashing digit sequence with on-screen numpad" },
+                { num: "2", text: "Level Bonus", highlight: "Up to +120% PTS", result: "Higher span = more points per hit" },
+                { num: "3", text: "Miss / Timeout", highlight: "-1 Digit", result: "No score or time loss" },
+                { num: "4", text: "Adaptive Span Test", highlight: "Rises & Falls", result: "Converges on your true digit span" }
+              ]).map((item, idx) => (
+                <DrillRuleItem key={idx} num={item.num} text={item.text} highlight={item.highlight} result={item.result} />
+              ))}
             </div>
           </DrillAccordion>
 
@@ -758,9 +745,12 @@ export default function DigitSpanClient() {
           >
             <div className="space-y-8">
               <section>
-                <h4 className="text-base font-bold text-white mb-2 flex items-center gap-2">
+                <p className="text-sm leading-relaxed mb-3">
+                  Digit span is the longest string of numbers you can repeat back in order. Miller (1956) famously put the limit near seven items, but later work that blocks rehearsal and chunking puts genuine capacity closer to four (Cowan, 2001) &mdash; the gap is strategy, which is what this drill trains.
+                </p>
+                <h3 className="text-base font-bold text-white mb-2 flex items-center gap-2">
                   <Brain className="w-4 h-4 text-purple-400" /> What Is Digit Span Training?
-                </h4>
+                </h3>
                 <p className="text-sm leading-relaxed mb-3">
                   <strong>Digit Span Training</strong> is a gold-standard cognitive exercise used in WAIS IQ and clinical memory evaluations to measure working memory capacity. The <strong>Digit Span drill</strong> presents random numerical sequences, testing your capacity to memorize and type back exact strings.
                 </p>
@@ -773,21 +763,21 @@ export default function DigitSpanClient() {
                 <div className="p-4 rounded-xl border border-gray-800 bg-white/[0.02]">
                   <div className="flex items-center gap-2.5 mb-2">
                     <div className="w-7 h-7 rounded-lg bg-blue-600 flex items-center justify-center"><Users className="w-3.5 h-3.5 text-white" /></div>
-                    <h5 className="text-xs font-bold text-white">Who Should Use This?</h5>
+                    <h4 className="text-xs font-bold text-white">Who Should Use This?</h4>
                   </div>
                   <p className="text-xs text-gray-300 leading-relaxed">Students expanding numerical retention, professionals needing strong number memory, and anyone wanting to benchmark working memory capacity.</p>
                 </div>
                 <div className="p-4 rounded-xl border border-gray-800 bg-white/[0.02]">
                   <div className="flex items-center gap-2.5 mb-2">
                     <div className="w-7 h-7 rounded-lg bg-purple-600 flex items-center justify-center"><TrendingUp className="w-3.5 h-3.5 text-white" /></div>
-                    <h5 className="text-xs font-bold text-white">Skills Improved</h5>
+                    <h4 className="text-xs font-bold text-white">Skills Improved</h4>
                   </div>
                   <p className="text-xs text-gray-300 leading-relaxed">Numerical short-term memory, working memory span, phone number encoding, and focus under pressure.</p>
                 </div>
                 <div className="p-4 rounded-xl border border-gray-800 bg-white/[0.02]">
                   <div className="flex items-center gap-2.5 mb-2">
                     <div className="w-7 h-7 rounded-lg bg-orange-600 flex items-center justify-center"><Zap className="w-3.5 h-3.5 text-white" /></div>
-                    <h5 className="text-xs font-bold text-white">Digit Chunking</h5>
+                    <h4 className="text-xs font-bold text-white">Digit Chunking</h4>
                   </div>
                   <p className="text-xs text-gray-300 leading-relaxed">Group digits into pairs or triplets (e.g. 472-913) to bypass standard memory limits and reach higher digit spans.</p>
                 </div>
@@ -795,66 +785,12 @@ export default function DigitSpanClient() {
 
             </div>
           </DrillAccordion>
-
-          {/* ACCORDION 3: FREQUENTLY ASKED QUESTIONS */}
-          <DrillAccordion
-            id="faq"
-            title="Frequently Asked Questions"
-            isOpen={openAccordion === 'faq'}
-            onToggle={() => setOpenAccordion(openAccordion === 'faq' ? null : 'faq')}
-          >
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-              <DrillFAQItem q="What is the Digit Span Drill?" a="A free working memory exercise based on the digit span test. Memorize random digit sequences, then type the exact order." />
-              <DrillFAQItem q="How does progressive difficulty work?" a="Sequence length = level. Level 3 has 3 digits, Level 4 has 4, and so on as you score perfect rounds." />
-              <DrillFAQItem q="Are there negative score or time penalties?" a="No. Incorrect entries or timeouts never deduct score points or reduce remaining timer seconds." />
-              <DrillFAQItem q="Does my digit span go down after a mistake?" a="Yes — unlike other drills on this site, Digit Span is an adaptive staircase test: a miss drops your span by 1 digit while a perfect round adds 1. This up-and-down design is the standard method real memory assessments use to converge on your true capacity, so it's intentional here, not a penalty." />
-              <DrillFAQItem q="Why is digit span important?" a="It measures working memory capacity used in cognitive performance. Average adult span is 7±2 digits." />
-              <DrillFAQItem q="Do I need to sign up?" a="No registration required. This drill runs directly in your browser with instant response." />
-              <DrillFAQItem q="How long does each drill session last?" a="Each round is timed for exactly 45 seconds of continuous focus." />
-              <DrillFAQItem q="What is the WAIS Digit Span subtest?" a="Digit Span is a core subtest of the Wechsler Adult Intelligence Scale (WAIS), used clinically to assess working memory and attention. This drill mirrors the forward-recall format of that assessment in a free, gamified form." />
-              <DrillFAQItem q="Why is 7±2 considered the average digit span?" a="Psychologist George Miller's influential 1956 paper described short-term memory capacity as limited to about seven items, plus or minus two — a benchmark digit span tests have used as a reference point ever since, though modern estimates trend closer to 4±1 without chunking." />
-              <DrillFAQItem q="How can I increase my digit span?" a="Chunking digits into pairs or triplets, rehearsing sequences aloud (sub-vocalization), and regular practice are the most effective evidence-based methods for extending your working digit span." />
-            </div>
-          </DrillAccordion>
           </div>
-        )}
-
-        {/* RELATED DRILLS GRID */}
-        {!isFullscreen && (
-          <section className="mt-4">
-            <h2 className="text-sm font-bold text-slate-400 uppercase tracking-wider mb-3">
-              Related Memory Drills
-            </h2>
-            <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
-              <RelatedCard href="/drills/memory/spatial-memory/path-tracing" title="Path Tracing" desc="Retrace animated path sequences on expanding grids." cat="Spatial Memory" />
-              <RelatedCard href="/drills/memory/spatial-memory/object-location" title="Object Location" desc="Memorize and locate emoji objects on grids." cat="Spatial Memory" />
-              <RelatedCard href="/drills/memory/spatial-memory/grid-memorization" title="Grid Memorization" desc="Memorize progressive spatial grid patterns." cat="Spatial Memory" />
-              <RelatedCard href="/drills/memory/working-memory/n-back" title="Dual N-Back" desc="The gold standard working memory trainer." cat="Working Memory" />
-              <RelatedCard href="/drills/memory/short-term-memory/word-recall" title="Word Recall" desc="Free recall random word lists under time pressure." cat="Short-Term Memory" />
-              <RelatedCard href="/drills/memory/short-term-memory/color-sequence" title="Color Sequence" desc="Watch and recall color sequences." cat="Short-Term Memory" />
-            </div>
-          </section>
         )}
       </main>
 
       {/* ── FOOTER ── */}
       {!isFullscreen && <DrillFooter />}
     </div>
-  );
-}
-
-// === Subcomponents ===
-function RelatedCard({ href, title, desc, cat }) {
-  return (
-    <Link href={href} className="group bg-[#0c0c16] border border-white/5 hover:border-purple-500/40 rounded-xl p-3.5 transition-all duration-200 hover:-translate-y-0.5 flex flex-col justify-between">
-      <div>
-        {cat && <div className="text-[10px] font-bold text-purple-400 uppercase tracking-wider mb-1">{cat}</div>}
-        <div className="text-xs font-bold text-white group-hover:text-purple-300 transition-colors">{title}</div>
-        <div className="text-[11px] text-slate-400 mt-1 line-clamp-2 leading-relaxed">{desc}</div>
-      </div>
-      <div className="text-[10px] font-bold text-slate-500 group-hover:text-purple-400 mt-3 flex items-center gap-1 transition-colors">
-        Train Drill <span>→</span>
-      </div>
-    </Link>
   );
 }

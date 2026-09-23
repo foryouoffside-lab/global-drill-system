@@ -1,31 +1,27 @@
 'use client';
 
-import React, { useState, useEffect, useRef, useCallback } from 'react';
+import React, { useState, useEffect, useLayoutEffect, useRef, useCallback } from 'react';
 import Link from 'next/link';
-import {
-  Play, RefreshCw, Timer, Share2, LogOut, Check, Sun, Moon, Volume2, VolumeX,
-  Target, Trophy, TrendingUp, Zap
-} from 'lucide-react';
+import { Play, RefreshCw, Timer, Share2, LogOut, Check, Sun, Moon, Volume2, VolumeX, Target, Trophy, TrendingUp, Zap } from 'lucide-react';
 
-import DrillFooter from '../../../../components/drill/DrillFooter';
-import DrillCountdown from '../../../../components/drill/DrillCountdown';
 import DrillAccordion from '../../../../components/drill/DrillAccordion';
+import DrillCountdown from '../../../../components/drill/DrillCountdown';
 import ZigZagPathPursuitStartCard from '../../../../components/drill/ZigZagPathPursuitStartCard';
 import { drillAudio } from '../../../../lib/drillAudio';
 import { drawTacticalTarget } from '../../../../lib/canvasFx';
-import { generateSessionCard, shareScoreCard } from '../../../../components/ShareScoreCard';
-import { getPlayerName } from '../../../../lib/leaderboard';
+import { createBackdropCache, isFrameSkippable } from '../trackingCanvas';
 import useUnexpectedExitGuard from '../../../../lib/useUnexpectedExitGuard';
+import useImmersiveMode from '@/lib/useImmersiveMode';
 
 const STORAGE_KEY = 'skilldrills_visual_tracking_split_screen_tracking_v2';
 
 const RELATED_DRILLS = [
-  { id: "constant-slow-pursuit", name: "Constant Slow Pursuit", cat: "Visual Tracking", desc: "Condition smooth pursuit tracking along continuous Lissajous curves.", href: "/drills/visual-tracking/constant-slow-pursuit" },
-  { id: "directional-chaos-pursuit", name: "Directional Chaos Pursuit", cat: "Visual Tracking", desc: "Complex multi-directional visual tracking with sudden direction shifts.", href: "/drills/visual-tracking/directional-chaos-pursuit" },
-  { id: "dynamic-evasion-pursuit", name: "Dynamic Evasion Pursuit", cat: "Visual Tracking", desc: "Re-acquire targets executing rapid evasive directional changes.", href: "/drills/visual-tracking/dynamic-evasion-pursuit" },
-  { id: "180-degree-awareness", name: "180° Awareness Pro", cat: "FPS Awareness", desc: "Master 180-degree snap turn awareness for CS2 & Valorant.", href: "/drills/fps/180-degree-awareness" },
-  { id: "strafe-tracking", name: "Strafe Tracking", cat: "FPS Tracking", desc: "Smooth pursuit tracking against erratic horizontal targets.", href: "/drills/fps/strafe-tracking" },
-  { id: "recoil-control", name: "Recoil Control", cat: "FPS Recoil", desc: "Calibrate pulling pattern compensation for weapons.", href: "/drills/fps/recoil-control" }
+  { id: "constant-slow-pursuit", name: "Smooth Pursuit Eye Exercise", cat: "Visual Tracking", desc: "Condition smooth pursuit tracking along continuous Lissajous curves.", href: "/drills/visual-tracking/constant-slow-pursuit" },
+  { id: "directional-chaos-pursuit", name: "Erratic Motion Eye Drill", cat: "Visual Tracking", desc: "Complex multi-directional visual tracking with sudden direction shifts.", href: "/drills/visual-tracking/directional-chaos-pursuit" },
+  { id: "dynamic-evasion-pursuit", name: "Reactive Eye Tracking Drill", cat: "Visual Tracking", desc: "Re-acquire targets executing rapid evasive directional changes.", href: "/drills/visual-tracking/dynamic-evasion-pursuit" },
+  { id: "peripheral-ping-pursuit", name: "Peripheral Vision Training Drill", cat: "Visual Tracking", desc: "Strengthen peripheral visual field tracking and reaction time.", href: "/drills/visual-tracking/peripheral-ping-pursuit" },
+  { id: "infinity-pursuit", name: "Figure-8 Eye Tracking Exercise", cat: "Visual Tracking", desc: "Condition continuous pursuit across figure-8 infinity loops.", href: "/drills/visual-tracking/infinity-pursuit" },
+  { id: "spatial-shift-pursuit", name: "Adaptive Eye Tracking Drill", cat: "Visual Tracking", desc: "Track shifting targets across sudden spatial displacements.", href: "/drills/visual-tracking/spatial-shift-pursuit" }
 ];
 
 const getSavedData = () => {
@@ -44,9 +40,10 @@ const saveData = (data: { totalSessions: number }) => {
   } catch (e) {}
 };
 
-export default function SplitScreenTrackingClient() {
+export default function SplitScreenTrackingClient({ copy }: { copy?: { title?: string; subtitle?: string; description?: string } } = {}) {
   const [gameState, setGameState] = useState<'start' | 'countdown' | 'playing' | 'gameOver'>('start');
   const [isFullscreen, setIsFullscreen] = useState<boolean>(false);
+  useImmersiveMode(isFullscreen); // locks the page behind while the drill fills the screen
   const [soundEnabled, setSoundEnabled] = useState<boolean>(true);
   const [openAccordion, setOpenAccordion] = useState<string | null>(null);
   const [isMobile, setIsMobile] = useState<boolean>(false);
@@ -74,6 +71,7 @@ export default function SplitScreenTrackingClient() {
   const animationRef = useRef<number | null>(null);
   const countdownTimeoutsRef = useRef<NodeJS.Timeout[]>([]);
   const timerIntervalRef = useRef<NodeJS.Timeout | null>(null);
+  const mousePosRef = useRef<{ x: number; y: number; active: boolean }>({ x: 0, y: 0, active: false });
 
   const trackingState = useRef({
     ly: 0,
@@ -97,6 +95,7 @@ export default function SplitScreenTrackingClient() {
   });
 
   useEffect(() => {
+    setSoundEnabled(drillAudio.isEnabled());
     settingsRef.current = {
       speedMultiplier,
       targetSize,
@@ -128,13 +127,6 @@ export default function SplitScreenTrackingClient() {
     }
   }, []);
 
-  // Fullscreen Change Listener
-  useEffect(() => {
-    const handleFullscreenChange = () => setIsFullscreen(!!document.fullscreenElement);
-    document.addEventListener('fullscreenchange', handleFullscreenChange);
-    return () => document.removeEventListener('fullscreenchange', handleFullscreenChange);
-  }, []);
-
   // Cleanup Timeouts on Unmount
   useEffect(() => {
     return () => {
@@ -144,32 +136,18 @@ export default function SplitScreenTrackingClient() {
   }, []);
 
   const sharePage = useCallback(async () => {
+    setIsFullscreen(false);
     const url = 'https://skilldrills.online/drills/visual-tracking/split-screen-tracking';
-    try {
-      const canvas = generateSessionCard({
-        drillName: 'Split-Screen Tracking',
-        badgeText: 'Smooth Pursuit Calibrated',
-        stats: [
-          { label: 'Session Time', value: `${selectedDuration}s` },
-          { label: 'Base Speed', value: `${speedMultiplier.toFixed(1)}x` },
-          { label: 'Math Line', value: mathInvisible ? 'Invisible' : 'Visible' },
-          { label: 'Speed Acceleration', value: randomSpeed ? 'Enabled' : 'Fixed' },
-        ],
-        playerName: getPlayerName(),
-      });
-      await shareScoreCard(url, canvas);
-    } catch (e) {
-      const text = 'Split-Screen Tracking — Free Visual Tracking & Gaze Calibration Drill!';
-      if (typeof navigator !== 'undefined' && navigator.share) {
-        try {
-          await navigator.share({ title: 'Split-Screen Tracking Drill', text, url });
-        } catch (e) {}
-      } else if (typeof navigator !== 'undefined' && navigator.clipboard) {
-        navigator.clipboard.writeText(url);
-        alert('Drill link copied to clipboard!');
-      }
+    const text = 'Split-Screen Tracking - Free Visual Tracking & Gaze Calibration Drill!';
+    if (typeof navigator !== 'undefined' && navigator.share) {
+      try {
+        await navigator.share({ title: 'Split-Screen Tracking Drill', text, url });
+      } catch (e) {}
+    } else if (typeof navigator !== 'undefined' && navigator.clipboard) {
+      await navigator.clipboard.writeText(url);
+      alert('Drill link copied to clipboard!');
     }
-  }, [selectedDuration, speedMultiplier, mathInvisible, randomSpeed]);
+  }, []);
 
   const handleExitDrill = useCallback(async () => {
     markIntentionalExit();
@@ -177,9 +155,7 @@ export default function SplitScreenTrackingClient() {
     countdownTimeoutsRef.current = [];
     if (timerIntervalRef.current) clearInterval(timerIntervalRef.current);
 
-    if (document.fullscreenElement) {
-      await document.exitFullscreen().catch(() => {});
-    }
+    setIsFullscreen(false);
     setGameState('start');
   }, []);
 
@@ -188,13 +164,31 @@ export default function SplitScreenTrackingClient() {
     onUnexpectedExit: handleExitDrill,
   });
 
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'Escape' && (gameState === 'playing' || gameState === 'countdown')) {
+        handleExitDrill();
+      }
+    };
+    const handleFullscreenChange = () => {
+      if (!document.fullscreenElement && isFullscreen) {
+        handleExitDrill();
+      }
+    };
+    window.addEventListener('keydown', handleKeyDown);
+    document.addEventListener('fullscreenchange', handleFullscreenChange);
+    return () => {
+      window.removeEventListener('keydown', handleKeyDown);
+      document.removeEventListener('fullscreenchange', handleFullscreenChange);
+    };
+  }, [gameState, isFullscreen, handleExitDrill]);
+
   // Complete Drill Session cleanly
   const endGame = useCallback(() => {
     if (animationRef.current) cancelAnimationFrame(animationRef.current);
     if (timerIntervalRef.current) clearInterval(timerIntervalRef.current);
 
     setGameState('gameOver');
-    // Fullscreen is preserved on result display until user clicks Exit/Return button
 
     setTotalTrials((prev) => {
       const next = prev + 1;
@@ -204,14 +198,9 @@ export default function SplitScreenTrackingClient() {
     drillAudio.playSessionEnd();
   }, []);
 
-  // Enter Drill (Auto Fullscreen -> 321GO Countdown with Sound -> Playing)
   const enterDrill = useCallback(async () => {
-    // 1. Auto Fullscreen on Start
-    try {
-      if (containerRef.current && !document.fullscreenElement) {
-        await containerRef.current.requestFullscreen();
-      }
-    } catch (e) {}
+    setIsFullscreen(true);
+    mousePosRef.current = { x: 0, y: 0, active: false };
 
     countdownTimeoutsRef.current.forEach(clearTimeout);
     countdownTimeoutsRef.current = [];
@@ -272,22 +261,30 @@ export default function SplitScreenTrackingClient() {
   }, [selectedDuration, endGame]);
 
   // Canvas Render Loop (Split Screen Dual Target Physics)
-  useEffect(() => {
+  useLayoutEffect(() => {
     if (gameState !== 'playing') return;
     const cvs = canvasRef.current;
     const container = containerRef.current;
     if (!cvs || !container) return;
 
-    const ctx = cvs.getContext('2d');
+    const ctx = cvs.getContext('2d', { alpha: false });
     if (!ctx) return;
+
+    let canvasWidth = 0;
+    let canvasHeight = 0;
 
     const updateSize = () => {
       if (!container) return;
       const rect = container.getBoundingClientRect();
-      const dpr = Math.min(window.devicePixelRatio || 1, 2);
-      cvs.width = rect.width * dpr;
-      cvs.height = rect.height * dpr;
-      ctx.scale(dpr, dpr);
+      canvasWidth = rect.width;
+      canvasHeight = rect.height;
+      const dpr = Math.min(window.devicePixelRatio || 1, 1.5);
+      // Reassigning either dimension clears the canvas, even at the same size.
+      if (cvs.width !== Math.trunc(rect.width * dpr) || cvs.height !== Math.trunc(rect.height * dpr)) {
+        cvs.width = rect.width * dpr;
+        cvs.height = rect.height * dpr;
+        ctx.scale(dpr, dpr);
+      }
     };
 
     updateSize();
@@ -295,15 +292,19 @@ export default function SplitScreenTrackingClient() {
     ro.observe(container);
 
     let lastTime = performance.now();
+    let backdropCache: { key: string; canvas: HTMLCanvasElement | null } = { key: '', canvas: null };
 
     const draw = (ts: number) => {
+      if (isFrameSkippable(ts, lastTime)) {
+        animationRef.current = requestAnimationFrame(draw);
+        return;
+      }
       const deltaTimeMs = ts - lastTime;
       lastTime = ts;
       const dt = Math.min(deltaTimeMs / 1000, 0.1);
 
-      const rect = container.getBoundingClientRect();
-      const W = rect.width;
-      const H = rect.height;
+      const W = canvasWidth;
+      const H = canvasHeight;
 
       const { speedMultiplier, targetSize, targetColor, mathInvisible, randomSpeed, trailEffect, glowEffect, scanlinesActive, dayMode: isDay } = settingsRef.current;
 
@@ -318,19 +319,25 @@ export default function SplitScreenTrackingClient() {
       const scaledDt = dt * effectiveSpeed;
 
       // Clear Canvas Background (Pure White in Day Mode `#ffffff`, Deep Black in Night Mode `#050508`)
-      ctx.fillStyle = isDay ? '#ffffff' : '#050508';
-      ctx.fillRect(0, 0, W, H);
-
-      // Render subtle background grid
-      ctx.strokeStyle = isDay ? 'rgba(0, 0, 0, 0.05)' : 'rgba(255, 255, 255, 0.02)';
-      ctx.lineWidth = 1;
-      const gridSize = 40;
-      for (let x = 0; x < W; x += gridSize) {
-        ctx.beginPath(); ctx.moveTo(x, 0); ctx.lineTo(x, H); ctx.stroke();
+      const backdropKey = `${W}x${H}:${isDay ? 'day' : 'night'}`;
+      if (backdropCache.key !== backdropKey) {
+        backdropCache = {
+          key: backdropKey,
+          canvas: createBackdropCache(W, H, (backdropCtx, width, height) => {
+            backdropCtx.fillStyle = isDay ? '#ffffff' : '#050508';
+            backdropCtx.fillRect(0, 0, width, height);
+            backdropCtx.strokeStyle = isDay ? 'rgba(0, 0, 0, 0.05)' : 'rgba(255, 255, 255, 0.02)';
+            backdropCtx.lineWidth = 1;
+            for (let x = 0; x < width; x += 40) {
+              backdropCtx.beginPath(); backdropCtx.moveTo(x, 0); backdropCtx.lineTo(x, height); backdropCtx.stroke();
+            }
+            for (let y = 0; y < height; y += 40) {
+              backdropCtx.beginPath(); backdropCtx.moveTo(0, y); backdropCtx.lineTo(width, y); backdropCtx.stroke();
+            }
+          })
+        };
       }
-      for (let y = 0; y < H; y += gridSize) {
-        ctx.beginPath(); ctx.moveTo(0, y); ctx.lineTo(W, y); ctx.stroke();
-      }
+      if (backdropCache.canvas) ctx.drawImage(backdropCache.canvas, 0, 0, W, H);
 
       // Render Center Split Line ONLY if math is NOT invisible
       if (!mathInvisible) {
@@ -414,10 +421,43 @@ export default function SplitScreenTrackingClient() {
         }
       }
 
+      // Tactical Pro White Crosshair (R5)
+      if (mousePosRef.current.active && gameState === 'playing') {
+        const mx = mousePosRef.current.x;
+        const my = mousePosRef.current.y;
+        ctx.save();
+        ctx.strokeStyle = '#ffffff';
+        ctx.lineWidth = 1.5;
+        ctx.shadowColor = 'rgba(0, 0, 0, 0.9)';
+        ctx.shadowBlur = 3;
+
+        // Crosshair arms (14px outer radius, 4px gap)
+        ctx.beginPath();
+        ctx.moveTo(mx, my - 4);
+        ctx.lineTo(mx, my - 14);
+        ctx.moveTo(mx, my + 4);
+        ctx.lineTo(mx, my + 14);
+        ctx.moveTo(mx - 4, my);
+        ctx.lineTo(mx - 14, my);
+        ctx.moveTo(mx + 4, my);
+        ctx.lineTo(mx + 14, my);
+        ctx.stroke();
+
+        // Center dot (2px radius)
+        ctx.fillStyle = '#ffffff';
+        ctx.beginPath();
+        ctx.arc(mx, my, 2, 0, Math.PI * 2);
+        ctx.fill();
+        ctx.restore();
+      }
+
       animationRef.current = requestAnimationFrame(draw);
     };
 
-    animationRef.current = requestAnimationFrame(draw);
+    // Paint the first target before React removes the countdown overlay.
+    const firstFrameTime = performance.now();
+    lastTime = firstFrameTime - 16;
+    draw(firstFrameTime);
 
     return () => {
       if (animationRef.current) cancelAnimationFrame(animationRef.current);
@@ -440,22 +480,19 @@ export default function SplitScreenTrackingClient() {
       <main className="flex-1 max-w-6xl w-full mx-auto px-4 py-6 flex flex-col gap-6">
         {/* Title */}
         {!isFullscreen && (
-          <div className="text-center">
+          <div>
             <h1 className="text-2xl sm:text-3xl font-black tracking-tight text-white">
-              SPLIT-SCREEN TRACKING
-              <span data-seo-kw="1" className="block text-sm font-semibold text-slate-400 mt-1 normal-case tracking-normal">
-                Divided Attention Eye Test
+              <span data-seo-kw="1">{copy?.title || "Split-Screen Tracking"}</span>
+              <span className="block text-sm font-semibold text-slate-400 mt-1 normal-case tracking-normal">
+                {copy?.subtitle || "Divided Attention Eye Test"}
               </span>
             </h1>
-            <p className="text-xs text-slate-400 mt-1">
-              Dual-Hemifield Divided Attention & Orthogonal Tracking
-            </p>
           </div>
         )}
 
         {/* Live Stat Cards */}
         {!isFullscreen && (
-          <div className="grid grid-cols-4 gap-2.5 max-w-2xl mx-auto w-full">
+          <div className="grid grid-cols-4 gap-2 w-full -mb-2">
             <div className="bg-[#0d0d18] border border-white/5 rounded-xl p-2.5 text-center">
               <div className="text-[10px] uppercase font-bold text-slate-500 tracking-wider">Status</div>
               <div className="text-lg sm:text-xl font-black text-red-400 tabular-nums">
@@ -482,26 +519,66 @@ export default function SplitScreenTrackingClient() {
         {/* Game Stage Container */}
         <div 
           ref={containerRef} 
-          className={`relative overflow-hidden flex flex-col transition-all duration-150 select-none border border-white/10 ${
+          className={`overflow-hidden flex flex-col select-none border border-white/10 ${
             dayMode ? 'bg-[#ffffff]' : 'bg-[#080811]'
           } ${dayMode ? 'text-slate-900' : 'text-white'} ${
             isFullscreen ? 'fixed inset-0 z-[100] w-screen h-[100dvh] rounded-none border-none flex flex-col items-center justify-center' : 'w-full rounded-2xl aspect-video min-h-[460px] md:min-h-[500px] max-h-[88vh] max-md:aspect-[3/4] max-md:min-h-[420px] max-md:max-h-[76vh] relative overflow-hidden flex flex-col'
           }`}
         >
 
-          {/* IN-BOX OVERLAY HUD: ONLY TIMER WHEN PLAYING */}
+          {/* IN-BOX OVERLAY HUD: LABELLED TIMER, AS EVERY OTHER DRILL */}
           {gameState === 'playing' && (
             <div className="absolute top-4 right-4 z-30 pointer-events-none text-right">
+              <p className={`text-[10px] font-semibold uppercase tracking-wider ${dayMode ? 'text-slate-500' : 'text-white/50'}`}>Time Left</p>
               <p className={`text-3xl sm:text-4xl font-black font-sans tabular-nums leading-none ${uiTimeLeft <= 10 ? 'text-red-400 animate-pulse' : (dayMode ? 'text-slate-900' : 'text-white/90')}`}>
                 {uiTimeLeft}s
               </p>
             </div>
           )}
 
+          {/* IN-GAME HUD SOUND TOGGLE — these drills have no miss-flash, so no flash toggle */}
+          {(gameState === 'playing' || gameState === 'countdown') && (
+            <div className="absolute bottom-4 right-4 z-40 flex items-center gap-2">
+              <button
+                onPointerDown={(e) => e.stopPropagation()}
+                onClick={(e) => {
+                  e.stopPropagation();
+                  setSoundEnabled((v) => {
+                    drillAudio.setEnabled(!v);
+                    return !v;
+                  });
+                }}
+                className="p-2.5 rounded-full bg-black/60 border border-white/10 text-slate-400 hover:text-white transition-colors cursor-pointer"
+                title="Toggle Sound"
+              >
+                {soundEnabled ? <Volume2 className="w-4 h-4 text-blue-400" /> : <VolumeX className="w-4 h-4 text-slate-500" />}
+              </button>
+            </div>
+          )}
+
           {/* CANVAS */}
           <canvas 
             ref={canvasRef} 
-            className="block absolute top-0 left-0 w-full h-full z-10 pointer-events-none" 
+            onPointerMove={(e) => {
+              const rect = e.currentTarget.getBoundingClientRect();
+              mousePosRef.current = {
+                x: e.clientX - rect.left,
+                y: e.clientY - rect.top,
+                active: true,
+              };
+            }}
+            onPointerLeave={() => {
+              mousePosRef.current.active = false;
+            }}
+            onPointerDown={(e) => {
+              const rect = e.currentTarget.getBoundingClientRect();
+              mousePosRef.current = {
+                x: e.clientX - rect.left,
+                y: e.clientY - rect.top,
+                active: true,
+              };
+            }}
+            className={`block absolute top-0 left-0 w-full h-full z-10 ${gameState === 'playing' ? 'cursor-none' : 'cursor-default'}`} 
           />
 
           {/* START CARD */}
@@ -568,8 +645,8 @@ export default function SplitScreenTrackingClient() {
                     <p className="text-[8px] font-bold uppercase tracking-wider text-gray-400 mt-0.5">Base Speed</p>
                   </div>
                   <div className="bg-black border border-white/5 p-2.5 rounded-xl text-center">
-                    <p className="text-xs sm:text-sm font-black text-white">{mathInvisible ? 'Invisible' : 'Visible'}</p>
-                    <p className="text-[8px] font-bold uppercase tracking-wider text-gray-400 mt-0.5">Math Line</p>
+                    <p className="text-sm sm:text-base font-black text-white">{totalTrials}</p>
+                    <p className="text-[8px] font-bold uppercase tracking-wider text-gray-400 mt-0.5">Sessions Completed</p>
                   </div>
                   <div className="bg-black border border-white/5 p-2.5 rounded-xl text-center">
                     <p className="text-xs sm:text-sm font-black text-white">{randomSpeed ? 'Enabled' : 'Fixed'}</p>
@@ -590,7 +667,7 @@ export default function SplitScreenTrackingClient() {
                     type="button"
                     onClick={sharePage} 
                     className="w-11 flex-shrink-0 rounded-[13px] bg-white/[0.04] border border-white/10 flex items-center justify-center text-slate-400 hover:text-white cursor-pointer active:scale-90 transition-transform" 
-                    title="Share Score"
+                    title="Share Drill Link"
                   >
                     <Share2 className="w-4 h-4" />
                   </button>
@@ -619,95 +696,22 @@ export default function SplitScreenTrackingClient() {
               isOpen={openAccordion === 'rules'}
               onToggle={() => setOpenAccordion(openAccordion === 'rules' ? null : 'rules')}
             >
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 font-sans">
-                <RuleItem num="1" text="Dual Split Tracking" highlight="Pure Visual" result="Track dual orthogonal targets" />
-                <RuleItem num="2" text="Time Adjusting" highlight={`${selectedDuration}s Duration`} result="Customizable session timer" />
-                <RuleItem num="3" text="Hide Line" highlight={mathInvisible ? "Enabled (Invisible)" : "Disabled (Visible)"} result="Toggle path guide lines" />
-                <RuleItem num="4" text="Random Speed" highlight={randomSpeed ? "Enabled Acceleration" : "Disabled Velocity"} result="Erratic acceleration control" />
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-3 font-sans">
+                {[
+                  { num: "1", text: "Divided Attention", highlight: "Pure Visual", result: "Track dual orthogonal targets" },
+                  { num: "2", text: "Time Adjusting", highlight: `${selectedDuration}s Duration`, result: "Customizable session timer" },
+                  { num: "3", text: "Hide Line", highlight: mathInvisible ? "Enabled (Invisible)" : "Disabled (Visible)", result: "Toggle orthogonal guide axes" },
+                  { num: "4", text: "Random Speed", highlight: randomSpeed ? "Enabled Acceleration" : "Disabled Velocity", result: "Erratic speed modulation" },
+                ].map((item) => (
+                  <RuleItem key={item.num} num={item.num} text={item.text} highlight={item.highlight} result={item.result} />
+                ))}
               </div>
             </DrillAccordion>
-
-            <DrillAccordion
-              id="about"
-              title="About Split-Screen Tracking"
-              isOpen={openAccordion === 'about'}
-              onToggle={() => setOpenAccordion(openAccordion === 'about' ? null : 'about')}
-            >
-              <div className="space-y-6 font-sans">
-                <section>
-                  <h4 className="text-base font-bold text-white mb-2">
-                    What Is Split-Screen Tracking Training?
-                  </h4>
-                  <p className="text-sm leading-relaxed mb-3 text-gray-300">
-                    <strong>Split-Screen Tracking Training</strong> conditions divided visual attention by requiring your eyes to monitor two targets moving along orthogonal vertical and horizontal planes simultaneously.
-                  </p>
-                  <p className="text-sm leading-relaxed text-gray-300">
-                    By utilizing features like <strong>Hide Line</strong> and <strong>Random Speed Acceleration</strong>, your visual cortex learns to process dual-field movements independently.
-                  </p>
-                </section>
-
-                <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-                  <div className="p-4 rounded-xl border border-gray-800 bg-white/[0.02]">
-                    <h5 className="text-xs font-bold text-white mb-1.5">Target Audience</h5>
-                    <p className="text-xs text-gray-300 leading-relaxed">Gamers, athletes, and vision training practitioners looking to build divided visual attention.</p>
-                  </div>
-                  <div className="p-4 rounded-xl border border-gray-800 bg-white/[0.02]">
-                    <h5 className="text-xs font-bold text-white mb-1.5">Divided Attention</h5>
-                    <p className="text-xs text-gray-300 leading-relaxed">Conditions visual motor cortex to split tracking focus across distinct visual hemifields.</p>
-                  </div>
-                  <div className="p-4 rounded-xl border border-gray-800 bg-white/[0.02]">
-                    <h5 className="text-xs font-bold text-white mb-1.5">Invisible Line Mode</h5>
-                    <p className="text-xs text-gray-300 leading-relaxed">Hides path lines so tracking relies 100% on real-time visual input.</p>
-                  </div>
-                </div>
-              </div>
-            </DrillAccordion>
-
-            <DrillAccordion
-              id="faq"
-              title="Frequently Asked Questions"
-              isOpen={openAccordion === 'faq'}
-              onToggle={() => setOpenAccordion(openAccordion === 'faq' ? null : 'faq')}
-            >
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 font-sans">
-                <FAQItem q="What is the Split-Screen Tracking drill?" a="The Split-Screen Tracking drill conditions divided visual attention by requiring your eyes to monitor two targets moving along orthogonal vertical and horizontal planes simultaneously." />
-                <FAQItem q="Why use the 'Hide Line' setting?" a="Hiding the center split line and movement axes forces your visual cortex to process dual-field movements without visual region dividers." />
-                <FAQItem q="What does the Random Speed feature do?" a="Random Speed introduces independent velocity fluctuations between the left vertical and right horizontal targets, strengthening ocular motor control." />
-                <FAQItem q="How long should I practice visual tracking daily?" a="We recommend 5 to 10 minutes of daily visual tracking training before gaming or athletic practice to warm up ocular muscles and reduce eye fatigue." />
-              </div>
+            <DrillAccordion id="about" title="About Split-Screen Tracking" isOpen={openAccordion === 'about'} onToggle={() => setOpenAccordion(openAccordion === 'about' ? null : 'about')}>
+              <p className="text-sm text-slate-300 leading-relaxed">{copy?.description || "Split-screen tracking conditions divided visual attention by training observers to monitor two independent targets moving along orthogonal vertical and horizontal axes simultaneously. By utilizing covert peripheral vision between hemifields, this drill strengthens parallel visual processing and reduces attentional tunneling (Pylyshyn & Storm, 1988; Alvarez & Cavanagh, 2005). Most people can track about four or five independent moving targets at once, with accuracy falling away sharply beyond that (Pylyshyn & Storm, 1988)."}</p>
             </DrillAccordion>
           </div>
         )}
-
-        {/* RELATED DRILLS GRID */}
-        {!isFullscreen && (
-          <section className="mt-4">
-            <h2 className="text-sm font-bold text-slate-400 uppercase tracking-wider mb-3">
-              Related Visual Drills
-            </h2>
-            <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
-              {RELATED_DRILLS.map((drill) => (
-                <Link
-                  key={drill.id}
-                  href={drill.href}
-                  className="group bg-[#0c0c16] border border-white/5 hover:border-red-500/40 rounded-xl p-3.5 transition-all duration-200 hover:-translate-y-0.5 flex flex-col justify-between"
-                >
-                  <div>
-                    <div className="text-[10px] font-bold text-red-400 uppercase tracking-wider mb-1">{drill.cat}</div>
-                    <div className="text-xs font-bold text-white group-hover:text-red-300 transition-colors">{drill.name}</div>
-                    <div className="text-[11px] text-slate-400 mt-1 line-clamp-2 leading-relaxed">{drill.desc}</div>
-                  </div>
-                  <div className="text-[10px] font-bold text-slate-500 group-hover:text-red-400 mt-3 flex items-center gap-1 transition-colors">
-                    Train Drill <span>→</span>
-                  </div>
-                </Link>
-              ))}
-            </div>
-          </section>
-        )}
-
-        {/* SITE FOOTER */}
-        {!isFullscreen && <DrillFooter />}
 
       </main>
     </div>
@@ -717,25 +721,18 @@ export default function SplitScreenTrackingClient() {
 // === Subcomponents ===
 function RuleItem({ num, text, highlight = '', result }: { num: string; text: string; highlight?: string; result: string }) {
   return (
-    <div className="flex items-center gap-4 bg-black p-4 rounded-xl border border-white/10 shadow-sm font-sans">
-      <div className="w-8 h-8 rounded-xl bg-white/10 border border-white/20 flex items-center justify-center text-white text-base font-black shadow-lg flex-shrink-0">{num}</div>
-      <div className="flex-1 flex flex-col sm:flex-row sm:items-center justify-between gap-2">
-        <p className="text-sm font-medium text-gray-100 font-sans">
-          {text}{highlight && <span className="font-black text-white"> ({highlight})</span>}
+    <div className="flex items-center gap-3 bg-black px-3.5 py-2.5 rounded-xl border border-white/10 shadow-sm font-sans min-w-0">
+      <div className="w-7 h-7 rounded-lg bg-white/10 border border-white/20 flex items-center justify-center text-white text-xs font-black shadow-lg flex-shrink-0">
+        {num}
+      </div>
+      <div className="flex-1 flex items-center justify-between gap-2 min-w-0">
+        <p className="text-xs sm:text-sm font-medium text-gray-100 font-sans truncate">
+          {text}{highlight && <span className="font-bold text-white"> ({highlight})</span>}
         </p>
-        <div className="text-xs font-black px-3 py-1.5 rounded-lg bg-[#050811] border border-white/10 text-white whitespace-nowrap shadow-inner tracking-wide text-center sm:text-left">
+        <div className="text-[11px] sm:text-xs font-bold px-2.5 py-1 rounded-lg bg-[#050811] border border-white/10 text-white whitespace-nowrap shadow-inner tracking-wide flex-shrink-0">
           {result}
         </div>
       </div>
-    </div>
-  );
-}
-
-function FAQItem({ q, a }: { q: string; a: string }) {
-  return (
-    <div className="bg-[#05060b] border border-gray-800 rounded-xl p-5 hover:border-gray-700 transition-colors font-sans">
-      <h4 className="text-sm font-bold text-gray-200 mb-2">{q}</h4>
-      <p className="text-xs text-gray-400 leading-relaxed">{a}</p>
     </div>
   );
 }

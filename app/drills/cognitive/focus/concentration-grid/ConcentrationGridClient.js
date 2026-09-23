@@ -1,10 +1,9 @@
 'use client';
 
 import React, { useState, useEffect, useRef, useCallback } from 'react';
-import Link from 'next/link';
 import {
-  Compass, Volume2, VolumeX, Eye, Zap, ZapOff, Ban, Heart,
-  Share2, ArrowLeft, Trophy, Target, Timer, TrendingUp, RefreshCw, Layers, Users, Play, Flame
+  Compass, Volume2, VolumeX, Eye, Zap, ZapOff,
+  Share2, ArrowLeft, TrendingUp, RefreshCw, Users
 } from 'lucide-react';
 
 import { drillAudio } from '../../../../../lib/drillAudio';
@@ -14,18 +13,35 @@ import { getFpsScoreGrade } from '../../../../../lib/scoringEngine';
 import { getStartLevel } from '../../../../../lib/drillDifficulty';
 import useDrillFlash from '../../../../../lib/useDrillFlash';
 import useUnexpectedExitGuard from '../../../../../lib/useUnexpectedExitGuard';
-import DrillFooter from '../../../../../components/drill/DrillFooter';
 import DrillCountdown from '../../../../../components/drill/DrillCountdown';
 import DrillAccordion from '../../../../../components/drill/DrillAccordion';
 import DrillFlashOverlay from '../../../../../components/drill/DrillFlashOverlay';
 import FpsStartCard from '../../../../../components/drill/FpsStartCard';
 import generateShareCard, { shareScoreCard } from '../../../../../components/ShareScoreCard';
+import useImmersiveMode from '@/lib/useImmersiveMode';
+
+function RuleItem({ num, text, highlight = '', result }) {
+  return (
+    <div className="flex items-center gap-3 bg-black px-3.5 py-2.5 rounded-xl border border-white/10 shadow-sm font-sans min-w-0">
+      <div className="w-7 h-7 rounded-lg bg-white/10 border border-white/20 flex items-center justify-center text-white text-xs font-black shadow-lg flex-shrink-0">
+        {num}
+      </div>
+      <div className="flex-1 flex items-center justify-between gap-2 min-w-0">
+        <p className="text-xs sm:text-sm font-medium text-gray-100 font-sans truncate">
+          {text}{highlight && <span className="font-bold text-white"> ({highlight})</span>}
+        </p>
+        <div className="text-[11px] sm:text-xs font-bold px-2.5 py-1 rounded-lg bg-[#050811] border border-white/10 text-white whitespace-nowrap shadow-inner tracking-wide flex-shrink-0">
+          {result}
+        </div>
+      </div>
+    </div>
+  );
+}
 
 // ============================================================
 // TUNING CONSTANTS
 // ============================================================
 const DRILL_DURATION = 45;
-const MAX_LIVES = 3;
 const ELITE_SCORE = 8000; // Target score for S+ rating (rebalanced: fixed 45s session, no time refill)
 const STORAGE_KEY = 'skilldrills_concentration_grid_v4';
 
@@ -49,10 +65,10 @@ const saveData = (data) => {
 // ACCORDION DATA
 // ============================================================
 const RULES_ITEMS = [
-  { title: "Sequential Search", text: "Tap numbers in strict numerical order starting from 1 up to the highest number on the grid." },
-  { title: "Expanding Grids", text: "Clearing a full grid advances you to larger dimensions (3x3 → 4x4 → 5x5...), testing broader peripheral vision." },
-  { title: "One Fixed Session", text: "You get a single 45-second window. Clearing a grid grows the board to the next size but never changes the clock." },
-  { title: "Precision & Lives", text: "Wrong taps cost one of your 3 lives and flash a warning. Run out of lives and the session ends immediately, so scan before you tap." }
+  { num: "1", text: "Sequential Search", highlight: "1 → Max", result: "Strict ascending order" },
+  { num: "2", text: "Grid Cleared", highlight: "Expands Size", result: "3×3 → 4×4 → 5×5+" },
+  { num: "3", text: "Session Clock", highlight: "45s Fixed", result: "One continuous window" },
+  { num: "4", text: "Wrong Tap", highlight: "Accuracy Penalty", result: "Warning flash continues" }
 ];
 
 const ABOUT_TEXT = `Concentration Grid is a foundational cognitive training drill designed to measure and improve visual search speed, spatial awareness, and sustained attention under time pressure. Originating from sports psychology performance labs, grid scanning exercises are widely used by elite athletes, pilots, and esports competitors to sharpen rapid visual information processing and mental focus.
@@ -61,36 +77,15 @@ By systematically scanning numbers in numerical sequence across expanding grids,
 
 Because the session runs on a single fixed 45-second clock with no time bonuses or penalties, the drill rewards sustained accuracy over lucky bursts of speed — one careless tap costs a life, and every second spent hesitating is time you can't get back, making peak grid size and total grids cleared the truest measures of your focus stamina.`;
 
-const FAQ_ITEMS = [
-  { q: "What is Concentration Grid?", a: "Concentration Grid is a timed cognitive exercise where players find and tap numbers in sequential order (1, 2, 3...) on a randomized, expanding grid as fast as possible." },
-  { q: "How is score calculated?", a: "Score is awarded for each correct sequential tap, with a speed bonus for fast reaction time. Completing a full grid also grants a large clear bonus based on grid dimension." },
-  { q: "Why do grid sizes change?", a: "As you complete smaller grids, the board expands to larger sizes. Tighter spacing and more numbers increase visual clutter, forcing your brain to expand its peripheral scanning field." },
-  { q: "Does the timer ever change during a session?", a: "No. Every session runs on one fixed 45-second clock with zero time bonuses or penalties. Clearing a grid grows the board to the next size, but the clock keeps counting down the whole time — chain clears together to rack up as many grids as you can before time's up." },
-  { q: "What happens when I run out of lives?", a: "You start each session with 3 lives, shown as hearts in the HUD. Every wrong tap costs one life; losing your last life ends the run immediately, regardless of time remaining." },
-  { q: "What cognitive skill does Concentration Grid actually train?", a: "It primarily trains visual search efficiency — the speed at which your brain scans a cluttered field and locates a specific target among distractors. This relies on efficient micro-saccadic eye movements and peripheral vision rather than central foveal focus alone." },
-  { q: "Where did the concentration grid exercise originate?", a: "Numbered scanning grids trace back to sports psychology performance labs and are a staple warm-up in football, tennis, and combat sports training. Coaches use them to sharpen an athlete's ability to process a busy visual field quickly before switching attention to the actual game action." },
-  { q: "Why do the numbers rotate at larger grid sizes?", a: "From the 5x5 grid onward, each number tile is rendered at a slight random rotation. This removes the shortcut of recognizing a number purely by its shape and orientation, forcing genuine digit recognition and keeping visual search difficulty climbing alongside grid size." },
-  { q: "How does this compare to a standard Schulte table?", a: "This drill is a timed, gamified evolution of the classic Schulte table (a fixed 5x5 number grid used in speed-reading and attention training). Instead of one static grid, it chains progressively larger grids together against a single countdown clock, rewarding sustained accuracy over the whole run rather than one isolated attempt." },
-  { q: "Is this concentration grid test free to play?", a: "Yes. Concentration Grid on SkillDrills is completely free with no sign-up, downloads, or paywalls. It runs directly in your browser on desktop and mobile." }
-];
-
-const RELATED_DRILLS = [
-  { id: "concentration-stamina", name: "Concentration Stamina", cat: "Attention", desc: "Sustain continuous visual focus through prolonged high-density sequences.", href: "/drills/cognitive/attention/concentration-stamina" },
-  { id: "rsvp-reader", name: "RSVP Speed Reader", cat: "Processing Speed", desc: "Process rapid serial visual presentation text streams.", href: "/drills/cognitive/processing-speed/rsvp-reader" },
-  { id: "divided-attention", name: "Divided Attention", cat: "Attention", desc: "Track and react to multiple independent target streams simultaneously.", href: "/drills/cognitive/attention/divided-attention" },
-  { id: "multi-tasking", name: "Multi-Tasking", cat: "Attention", desc: "Track dual independent target streams under speed pressure.", href: "/drills/cognitive/attention/multi-tasking" },
-  { id: "distraction-fighter", name: "Distraction Fighter", cat: "Focus", desc: "Filter out high-interference Stroop visual distractors.", href: "/drills/cognitive/focus/distraction-fighter" },
-  { id: "reaction-time", name: "Reaction Time", cat: "Processing Speed", desc: "Train choice reaction speed and visual reflex latency.", href: "/drills/cognitive/processing-speed/reaction-time" }
-];
-
 // ============================================================
 // MAIN COMPONENT
 // ============================================================
-export default function ConcentrationGridClient() {
+export default function ConcentrationGridClient({ copy = null }) {
   const [phase, setPhase] = useState('start'); // 'start' | 'countdown' | 'playing' | 'ended'
   const [soundEnabled, setSoundEnabled] = useState(true);
   const [flashEnabled, setFlashEnabled] = useState(true);
   const [isFullscreen, setIsFullscreen] = useState(false);
+  useImmersiveMode(isFullscreen); // locks the page behind while the drill fills the screen
 
   // Gameplay State
   const [gridSize, setGridSize] = useState(3);
@@ -98,7 +93,6 @@ export default function ConcentrationGridClient() {
   const [currentNumber, setCurrentNumber] = useState(1);
   const [score, setScore] = useState(0);
   const [timeRemaining, setTimeRemaining] = useState(DRILL_DURATION);
-  const [lives, setLives] = useState(MAX_LIVES);
   const [countdownValue, setCountdownValue] = useState(3);
   const [openAccordion, setOpenAccordion] = useState(null);
 
@@ -119,7 +113,6 @@ export default function ConcentrationGridClient() {
 
   const scoreRef = useRef(0);
   const timeLeftRef = useRef(DRILL_DURATION);
-  const livesRef = useRef(MAX_LIVES);
   const gridsClearedRef = useRef(0);
   const gridSizeRef = useRef(3);
   const startGridRef = useRef(3);
@@ -180,7 +173,7 @@ export default function ConcentrationGridClient() {
     drillAudio.playSessionEnd();
 
     const totalClicks = totalClicksRef.current;
-    const accuracyVal = totalClicks > 0 ? Math.round((correctClicksRef.current / totalClicks) * 100) : 100;
+    const accuracyVal = totalClicks > 0 ? Math.round((correctClicksRef.current / totalClicks) * 100) : 0;
     const finalScore = scoreRef.current;
     const peakLevel = gridSizeRef.current - 2;
 
@@ -256,13 +249,6 @@ export default function ConcentrationGridClient() {
       drillAudio.playPenalty();
       triggerFlash('red');
       penaltyCountRef.current += 1;
-
-      livesRef.current = Math.max(0, livesRef.current - 1);
-      setLives(livesRef.current);
-
-      if (livesRef.current <= 0) {
-        endGame();
-      }
     }
   };
 
@@ -296,10 +282,7 @@ export default function ConcentrationGridClient() {
   }, [generateNewGrid]);
 
   const enterDrill = useCallback(async () => {
-    // 1. Fullscreen request MUST be the literal first await in gesture handler
-    if (containerRef.current && !document.fullscreenElement) {
-      try { await containerRef.current.requestFullscreen(); } catch (e) {}
-    }
+    setIsFullscreen(true);
 
     drillAudio.init();
 
@@ -314,7 +297,6 @@ export default function ConcentrationGridClient() {
 
     scoreRef.current = 0;
     timeLeftRef.current = DRILL_DURATION;
-    livesRef.current = MAX_LIVES;
     gridsClearedRef.current = 0;
     correctClicksRef.current = 0;
     totalClicksRef.current = 0;
@@ -322,7 +304,6 @@ export default function ConcentrationGridClient() {
 
     setScore(0);
     setTimeRemaining(DRILL_DURATION);
-    setLives(MAX_LIVES);
     setEndSummary(null);
 
     setPhase('countdown');
@@ -357,12 +338,33 @@ export default function ConcentrationGridClient() {
     countdownTimeoutsRef.current.forEach(clearTimeout);
     countdownTimeoutsRef.current = [];
     if (clockTimerRef.current) { clearInterval(clockTimerRef.current); clockTimerRef.current = null; }
-    if (document.fullscreenElement) {
-      await document.exitFullscreen().catch(() => {});
+    if (typeof document !== 'undefined' && document.fullscreenElement) {
+      document.exitFullscreen().catch(() => {});
     }
+    setIsFullscreen(false);
     phaseRef.current = 'start';
     setPhase('start');
   }, []);
+
+  useEffect(() => {
+    if (phase !== 'playing' && phase !== 'countdown') return;
+    const handleKeyDown = (e) => {
+      if (e.key === 'Escape') {
+        handleExitDrill();
+      }
+    };
+    const handleFullscreenChange = () => {
+      if (!document.fullscreenElement && isFullscreen) {
+        handleExitDrill();
+      }
+    };
+    window.addEventListener('keydown', handleKeyDown);
+    document.addEventListener('fullscreenchange', handleFullscreenChange);
+    return () => {
+      window.removeEventListener('keydown', handleKeyDown);
+      document.removeEventListener('fullscreenchange', handleFullscreenChange);
+    };
+  }, [phase, isFullscreen, handleExitDrill]);
 
   const { markIntentionalExit } = useUnexpectedExitGuard({
     active: phase === 'playing' || phase === 'countdown',
@@ -372,6 +374,7 @@ export default function ConcentrationGridClient() {
   const gradeInfo = endSummary ? getFpsScoreGrade(endSummary.score, ELITE_SCORE) : null;
 
   const shareResult = useCallback(async () => {
+    setIsFullscreen(false);
     if (!endSummary || !gradeInfo) return;
     const url = 'https://skilldrills.online/drills/cognitive/focus/concentration-grid';
     try {
@@ -381,14 +384,14 @@ export default function ConcentrationGridClient() {
         accuracy: endSummary.accuracy,
         rating: { letter: gradeInfo.grade, label: gradeInfo.label, emoji: '🎯' },
         newBest: endSummary.isNewBest,
-        drillName: 'Concentration Grid',
+        drillName: 'Schulte Table Trainer',
         playerName: getPlayerName(),
       });
       await shareScoreCard(url, canvas);
     } catch (e) {
-      const text = `🎯 I scored ${endSummary.score} PTS (${endSummary.peakGrid}×${endSummary.peakGrid} grid, ${endSummary.gridsCleared} grids cleared) on Concentration Grid! Accuracy: ${endSummary.accuracy}%. Practice free cognitive focus drills at skilldrills.online!`;
+      const text = `🎯 I scored ${endSummary.score} PTS (${endSummary.peakGrid}×${endSummary.peakGrid} grid, ${endSummary.gridsCleared} grids cleared) on Schulte Table Trainer! Accuracy: ${endSummary.accuracy}%. Practice free cognitive focus drills at skilldrills.online!`;
       if (typeof navigator !== 'undefined' && navigator.share) {
-        navigator.share({ title: 'Concentration Grid Score', text, url }).catch(() => {});
+        navigator.share({ title: 'Schulte Table Trainer Score', text, url }).catch(() => {});
       } else if (typeof navigator !== 'undefined' && navigator.clipboard) {
         navigator.clipboard.writeText(`${text} ${url}`);
       }
@@ -396,46 +399,38 @@ export default function ConcentrationGridClient() {
   }, [endSummary, gradeInfo, bestScore]);
 
   return (
-    <div className="min-h-screen bg-[#050508] text-white flex flex-col font-sans select-none">
+    <div className="bg-[#050508] text-white flex flex-col font-sans select-none">
       {/* ── MAIN CONTENT AREA ── */}
       <main className="flex-1 max-w-6xl w-full mx-auto px-4 py-6 flex flex-col gap-6">
         {/* Title */}
         {!isFullscreen && (
-        <div className="text-center">
-          <h1 className="text-2xl sm:text-3xl font-black tracking-tight text-white">
-            CONCENTRATION GRID
-            <span data-seo-kw="1" className="block text-sm font-semibold text-slate-400 mt-1 normal-case tracking-normal">
-              Schulte Table Trainer
-            </span>
-          </h1>
-          <p className="text-xs text-slate-400 mt-1">
-            Visual Search & Sequential Target Scanning Under Speed Constraints
-          </p>
-        </div>
+          <div className="flex flex-col gap-1">
+            <h1 className="text-xl sm:text-3xl font-black tracking-tight text-white whitespace-nowrap overflow-hidden text-ellipsis">
+              {copy?.h1Prefix || null}
+              <span data-seo-kw="1">{copy?.h1Keyword || "Concentration Grid"}</span>
+              {copy?.h1Suffix || " – Schulte Table Trainer Online"}
+            </h1>
+            <p className="text-xs sm:text-sm text-slate-400 font-medium">
+              {copy?.subtitle || "Schulte table concentration test for faster visual scanning, number search, and focused attention"}
+            </p>
+          </div>
         )}
 
         {/* Live Stat Cards */}
         {!isFullscreen && (
-        <div className="grid grid-cols-4 gap-2.5 max-w-2xl mx-auto w-full">
-          <div className="bg-[#0d0d18] border border-white/5 rounded-xl p-2.5 text-center">
-            <div className="text-[10px] uppercase font-bold text-slate-500 tracking-wider">Score</div>
-            <div className="text-lg sm:text-xl font-black text-cyan-400 tabular-nums">{score}</div>
+          <div className="grid grid-cols-4 gap-2 w-full -mb-2">
+            {[
+              { label: copy?.statScore || 'Score', value: score, tone: 'text-cyan-400' },
+              { label: copy?.statTime || 'Time', value: `${Math.ceil(timeRemaining)}s`, tone: timeRemaining <= 10 ? 'text-red-400 animate-pulse' : 'text-white' },
+              { label: copy?.statGridSize || 'Grid Size', value: `${gridSize}×${gridSize}`, tone: 'text-indigo-400' },
+              { label: copy?.statBest || 'Best Score', value: bestScore, tone: 'text-amber-400' },
+            ].map((s) => (
+              <div key={s.label} className="rounded-lg border border-white/[0.06] bg-white/[0.015] px-2 py-2 text-center">
+                <div className="text-[9.5px] uppercase font-semibold text-slate-500 tracking-[0.12em]">{s.label}</div>
+                <div className={`text-lg sm:text-xl font-black tabular-nums font-mono mt-0.5 ${s.tone}`}>{s.value}</div>
+              </div>
+            ))}
           </div>
-          <div className="bg-[#0d0d18] border border-white/5 rounded-xl p-2.5 text-center">
-            <div className="text-[10px] uppercase font-bold text-slate-500 tracking-wider">Time</div>
-            <div className={`text-lg sm:text-xl font-black tabular-nums ${timeRemaining <= 10 ? 'text-red-400 animate-pulse' : 'text-white'}`}>
-              {Math.ceil(timeRemaining)}s
-            </div>
-          </div>
-          <div className="bg-[#0d0d18] border border-white/5 rounded-xl p-2.5 text-center">
-            <div className="text-[10px] uppercase font-bold text-slate-500 tracking-wider">Grid Size</div>
-            <div className="text-lg sm:text-xl font-black text-indigo-400 tabular-nums">{gridSize}×{gridSize}</div>
-          </div>
-          <div className="bg-[#0d0d18] border border-white/5 rounded-xl p-2.5 text-center">
-            <div className="text-[10px] uppercase font-bold text-slate-500 tracking-wider">Best Score</div>
-            <div className="text-lg sm:text-xl font-black text-amber-400 tabular-nums">{bestScore}</div>
-          </div>
-        </div>
         )}
 
         {/* Game Stage Container */}
@@ -454,28 +449,23 @@ export default function ConcentrationGridClient() {
           {/* IN-BOX HUD */}
           {(phase === 'playing' || phase === 'countdown') && (
             <>
-              {/* Score & Lives - Top Left */}
+              {/* Score - Top Left */}
               <div className="absolute top-4 left-4 z-30 pointer-events-none flex flex-col items-start gap-0.5">
-                <p className="text-[10px] font-semibold uppercase tracking-wider text-white/50">Score</p>
+                <p className="text-[10px] font-semibold uppercase tracking-wider text-white/50">{copy?.statScore || 'Score'}</p>
                 <p className="text-2xl sm:text-3xl font-black text-white tabular-nums leading-tight">{score}</p>
-                <div className="flex items-center gap-1 mt-0.5">
-                  {Array.from({ length: Math.max(0, lives) }).map((_, i) => (
-                    <Heart key={i} className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-red-500 fill-red-500 drop-shadow-[0_0_6px_rgba(239,68,68,0.6)]" />
-                  ))}
-                </div>
               </div>
 
               {/* Target Indicator - Top Center */}
               <div className="absolute top-4 left-1/2 -translate-x-1/2 z-30 pointer-events-none">
                 <div className="flex items-center gap-2 bg-black/70 backdrop-blur-md px-3.5 py-1.5 rounded-xl border border-white/10 shadow-lg">
-                  <span className="text-[10px] sm:text-xs font-bold text-slate-400 uppercase">Target:</span>
+                  <span className="text-[10px] sm:text-xs font-bold text-slate-400 uppercase">{copy?.hudTarget || 'Target:'}</span>
                   <span className="text-lg sm:text-2xl font-black text-cyan-400 font-mono">{currentNumber}</span>
                 </div>
               </div>
 
               {/* Time Remaining - Top Right */}
               <div className="absolute top-4 right-4 z-30 pointer-events-none text-right">
-                <p className="text-[10px] font-semibold uppercase tracking-wider text-white/50">Time</p>
+                <p className="text-[10px] font-semibold uppercase tracking-wider text-white/50">{copy?.statTime || 'Time'}</p>
                 <p className={`text-2xl sm:text-3xl font-black tabular-nums leading-tight ${timeRemaining <= 10 ? 'text-red-400 animate-pulse' : 'text-white'}`}>{Math.ceil(timeRemaining)}s</p>
               </div>
             </>
@@ -519,16 +509,9 @@ export default function ConcentrationGridClient() {
             <FpsStartCard
               icon={Compass}
               accent="cyan"
-              title="Concentration Grid"
-              subtitle="Sequential Number Search"
-              rules={[
-                { icon: Target, accent: 'emerald', title: 'Tap Numbers in Order (1, 2, 3...)', text: 'Locate and click numbers in strict sequential numerical order' },
-                { icon: Zap, accent: 'blue', title: 'Speed & Grid Scaling', text: 'Grid size and search density scale as levels progress' },
-              ]}
-              stats={[
-                { icon: Trophy, label: 'Best Score', value: bestScore, color: 'text-white', accent: 'slate' },
-                { icon: TrendingUp, label: 'Best Level', value: `Lv. ${bestLevel}`, color: 'text-blue-400', accent: 'blue' },
-              ]}
+              title={copy?.startTitle || "Concentration Grid Trainer"}
+              subtitle={copy?.startSubtitle || "Sequential Number Search • Expanding Schulte Grid"}
+              startButtonText={copy?.startButtonText || "Start Training"}
               isTouchOnlyDevice={false}
               onStart={enterDrill}
             />
@@ -536,7 +519,7 @@ export default function ConcentrationGridClient() {
 
           {/* COUNTDOWN OVERLAY */}
           {phase === 'countdown' && (
-            <DrillCountdown value={countdownValue} subtitle="GET READY" />
+            <DrillCountdown value={countdownValue} subtitle={copy?.getReady || "GET READY"} />
           )}
 
           {/* PLAYING GRID BOARD */}
@@ -570,7 +553,7 @@ export default function ConcentrationGridClient() {
                 <div className="text-3xl sm:text-4xl font-black text-white mt-2 tabular-nums">
                   {endSummary.score.toLocaleString()}
                 </div>
-                <div className="text-[9px] uppercase tracking-widest text-slate-500">Points</div>
+                <div className="text-[9px] uppercase tracking-widest text-slate-500">{copy?.statPoints || "Points"}</div>
               </div>
 
               {/* Right 64% Stats & Actions, vertically centered */}
@@ -579,15 +562,15 @@ export default function ConcentrationGridClient() {
                 <div className="grid grid-cols-3 gap-2">
                   <div className="bg-black border border-white/5 p-2.5 rounded-xl text-center">
                     <p className="text-sm sm:text-base font-black text-white">{endSummary.accuracy}%</p>
-                    <p className="text-[7.5px] sm:text-[8.5px] font-bold uppercase tracking-wider text-gray-400 mt-0.5">Accuracy</p>
+                    <p className="text-[7.5px] sm:text-[8.5px] font-bold uppercase tracking-wider text-gray-400 mt-0.5">{copy?.statAccuracy || "Accuracy"}</p>
                   </div>
                   <div className="bg-black border border-white/5 p-2.5 rounded-xl text-center">
                     <p className="text-sm sm:text-base font-black text-white">{endSummary.gridsCleared}</p>
-                    <p className="text-[7.5px] sm:text-[8.5px] font-bold uppercase tracking-wider text-gray-400 mt-0.5">Grids Cleared</p>
+                    <p className="text-[7.5px] sm:text-[8.5px] font-bold uppercase tracking-wider text-gray-400 mt-0.5">{copy?.statGridsCleared || "Grids Cleared"}</p>
                   </div>
                   <div className="bg-black border border-white/5 p-2.5 rounded-xl text-center">
                     <p className="text-sm sm:text-base font-black text-white">{endSummary.peakGrid}×{endSummary.peakGrid}</p>
-                    <p className="text-[7.5px] sm:text-[8.5px] font-bold uppercase tracking-wider text-gray-400 mt-0.5">Max Grid</p>
+                    <p className="text-[7.5px] sm:text-[8.5px] font-bold uppercase tracking-wider text-gray-400 mt-0.5">{copy?.statPeakGrid || "Max Grid"}</p>
                   </div>
                 </div>
 
@@ -597,19 +580,19 @@ export default function ConcentrationGridClient() {
                     onClick={enterDrill}
                     className="flex-1 py-3 rounded-[13px] bg-gradient-to-r from-cyan-500 to-indigo-600 text-white font-bold text-xs uppercase tracking-wide cursor-pointer transition-transform active:scale-[0.98] shadow-md flex items-center justify-center gap-1.5"
                   >
-                    <RefreshCw className="w-3.5 h-3.5" /> Play Again
+                    <RefreshCw className="w-3.5 h-3.5" /> {copy?.playAgainText || "Play Again"}
                   </button>
                   <button
                     onClick={shareResult}
                     className="w-11 flex-shrink-0 rounded-[13px] bg-white/[0.04] border border-white/10 flex items-center justify-center text-slate-400 hover:text-white cursor-pointer active:scale-90 transition-transform"
-                    title="Share Score"
+                    title={copy?.shareText || "Share Score"}
                   >
                     <Share2 className="w-4 h-4" />
                   </button>
                   <button
                     onClick={handleExitDrill}
                     className="w-11 flex-shrink-0 rounded-[13px] bg-white/[0.04] border border-white/10 flex items-center justify-center text-slate-400 hover:text-white cursor-pointer active:scale-90 transition-transform"
-                    title="Exit Drill"
+                    title={copy?.exitText || "Exit Drill"}
                   >
                     <ArrowLeft className="w-4 h-4 text-red-400" />
                   </button>
@@ -619,116 +602,76 @@ export default function ConcentrationGridClient() {
           )}
         </div>
 
+        {/* Stage Caption */}
+        {!isFullscreen && (
+          <p className="text-xs text-slate-400 leading-relaxed -mt-2">
+            {copy?.stageCaption || "Scan and tap numbers in sequential order across progressively expanding grid matrices before time expires."}
+          </p>
+        )}
+
         {/* ── ACCORDIONS: no gap between them, per drill-page layout request ── */}
         {!isFullscreen && (
         <div className="[&>div]:!mt-0">
         <DrillAccordion
           id="rules"
-          title="Drill Instructions & Scoring System"
+          title={copy?.rulesTitle || "Drill Instructions & Scoring System"}
           isOpen={openAccordion === 'rules'}
           onToggle={() => setOpenAccordion(openAccordion === 'rules' ? null : 'rules')}
         >
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
-            {RULES_ITEMS.map((item, i) => (
-              <div key={i} className="bg-black p-4 rounded-xl border border-white/10">
-                <p className="text-sm font-bold text-white mb-1">{item.title}</p>
-                <p className="text-xs text-gray-300 leading-relaxed">{item.text}</p>
-              </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-3 font-sans">
+            {(copy?.rulesItems || RULES_ITEMS).map((item, i) => (
+              <RuleItem
+                key={i}
+                num={item.num || String(i + 1)}
+                text={item.text || item.title}
+                highlight={item.highlight || ''}
+                result={item.result || (item.text ? item.text.slice(0, 24) : 'Active')}
+              />
             ))}
           </div>
         </DrillAccordion>
 
-        {/* ── ACCORDION 2: ABOUT CONCENTRATION GRID ── */}
+        {/* ── ACCORDION 2: ABOUT SCHULTE TABLE & CONCENTRATION GRID ── */}
         <DrillAccordion
           id="about"
-          title="About Concentration Grid"
+          title={copy?.aboutTitle || "About Schulte Table & Concentration Grid"}
           isOpen={openAccordion === 'about'}
           onToggle={() => setOpenAccordion(openAccordion === 'about' ? null : 'about')}
         >
           <div className="space-y-8">
             <section>
               <div className="space-y-4">
-                {ABOUT_TEXT.split('\n\n').map((para, i) => (
+                <p className="text-sm leading-relaxed text-gray-300">
+                  {copy?.aboutLead || "The Schulte table is a psychodiagnostic visual search grid designed to widen the functional peripheral field and reduce fixation latency during sequential scanning (Lu et al., 2022; Rayner, 1998). This expanding grid drill trains rapid eye movements (saccades) and selective attention to locate numerical targets under progressive visual crowding (Treisman & Gelade, 1980; Wolfe, 2007), training visual search speed, broad peripheral span, and sustained focus stamina under time pressure."}
+                </p>
+                {(copy?.aboutText ? copy.aboutText.split('\n\n') : ABOUT_TEXT.split('\n\n')).map((para, i) => (
                   <p key={i} className="text-sm leading-relaxed text-gray-300">{para}</p>
                 ))}
               </div>
             </section>
 
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-              <div className="p-4 rounded-xl border border-gray-800 bg-white/[0.02]">
-                <div className="flex items-center gap-2.5 mb-2">
-                  <div className="w-7 h-7 rounded-lg bg-blue-600 flex items-center justify-center"><Users className="w-3.5 h-3.5 text-white" /></div>
-                  <h5 className="text-xs font-bold text-white">Who Should Use This?</h5>
+              {(copy?.aboutCards || [
+                { title: "Who Should Use This?", text: "Elite athletes, pilots, and esports competitors who rely on rapid visual information processing, plus anyone training sustained focus under time pressure.", color: "bg-blue-600" },
+                { title: "Skills Improved", text: "Visual search speed, micro-saccadic eye movement efficiency, spatial scanning discipline, and sustained concentration stamina.", color: "bg-emerald-600" },
+                { title: "Peripheral Vision", text: "Each cleared grid expands to a larger, denser board, widening the visual field you must scan without losing track of the next target number.", color: "bg-purple-600" },
+              ]).map((card, idx) => (
+                <div key={idx} className="p-4 rounded-xl border border-gray-800 bg-white/[0.02]">
+                  <div className="flex items-center gap-2.5 mb-2">
+                    <div className={`w-7 h-7 rounded-lg ${card.color || 'bg-blue-600'} flex items-center justify-center`}>
+                      {idx === 0 ? <Users className="w-3.5 h-3.5 text-white" /> : idx === 1 ? <TrendingUp className="w-3.5 h-3.5 text-white" /> : <Eye className="w-3.5 h-3.5 text-white" />}
+                    </div>
+                    <h5 className="text-xs font-bold text-white">{card.title}</h5>
+                  </div>
+                  <p className="text-xs text-gray-300 leading-relaxed">{card.text}</p>
                 </div>
-                <p className="text-xs text-gray-300 leading-relaxed">Elite athletes, pilots, and esports competitors who rely on rapid visual information processing, plus anyone training sustained focus under time pressure.</p>
-              </div>
-              <div className="p-4 rounded-xl border border-gray-800 bg-white/[0.02]">
-                <div className="flex items-center gap-2.5 mb-2">
-                  <div className="w-7 h-7 rounded-lg bg-emerald-600 flex items-center justify-center"><TrendingUp className="w-3.5 h-3.5 text-white" /></div>
-                  <h5 className="text-xs font-bold text-white">Skills Improved</h5>
-                </div>
-                <p className="text-xs text-gray-300 leading-relaxed">Visual search speed, micro-saccadic eye movement efficiency, spatial scanning discipline, and sustained concentration stamina.</p>
-              </div>
-              <div className="p-4 rounded-xl border border-gray-800 bg-white/[0.02]">
-                <div className="flex items-center gap-2.5 mb-2">
-                  <div className="w-7 h-7 rounded-lg bg-purple-600 flex items-center justify-center"><Eye className="w-3.5 h-3.5 text-white" /></div>
-                  <h5 className="text-xs font-bold text-white">Peripheral Vision</h5>
-                </div>
-                <p className="text-xs text-gray-300 leading-relaxed">Each cleared grid expands to a larger, denser board, widening the visual field you must scan without losing track of the next target number.</p>
-              </div>
+              ))}
             </div>
-          </div>
-        </DrillAccordion>
-
-        {/* ── ACCORDION 3: FAQ ── */}
-        <DrillAccordion
-          id="faq"
-          title="Frequently Asked Questions"
-          isOpen={openAccordion === 'faq'}
-          onToggle={() => setOpenAccordion(openAccordion === 'faq' ? null : 'faq')}
-        >
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            {FAQ_ITEMS.map((item, i) => (
-              <div key={i} className="bg-[#05060b] border border-gray-800 rounded-xl p-5">
-                <h4 className="text-sm font-bold text-gray-200 mb-2">{item.q}</h4>
-                <p className="text-xs text-gray-400 leading-relaxed">{item.a}</p>
-              </div>
-            ))}
           </div>
         </DrillAccordion>
         </div>
         )}
-
-        {/* ── RELATED COGNITIVE DRILLS (6 CARDS) ── */}
-        {!isFullscreen && (
-        <section className="mt-4">
-          <h2 className="text-sm font-bold text-slate-400 uppercase tracking-wider mb-3">
-            Related Cognitive Drills
-          </h2>
-          <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
-            {RELATED_DRILLS.map((drill) => (
-              <Link
-                key={drill.id}
-                href={drill.href}
-                className="group bg-[#0c0c16] border border-white/5 hover:border-cyan-500/40 rounded-xl p-3.5 transition-all duration-200 hover:-translate-y-0.5 flex flex-col justify-between"
-              >
-                <div>
-                  <div className="text-[10px] font-bold text-cyan-400 uppercase tracking-wider mb-1">{drill.cat}</div>
-                  <div className="text-xs font-bold text-white group-hover:text-cyan-300 transition-colors">{drill.name}</div>
-                  <div className="text-[11px] text-slate-400 mt-1 line-clamp-2 leading-relaxed">{drill.desc}</div>
-                </div>
-                <div className="text-[10px] font-bold text-slate-500 group-hover:text-cyan-400 mt-3 flex items-center gap-1 transition-colors">
-                  Train Drill <span>→</span>
-                </div>
-              </Link>
-            ))}
-          </div>
-        </section>
-        )}
       </main>
-
-      {/* ── FOOTER ── */}
-      {!isFullscreen && <DrillFooter />}
     </div>
   );
 }

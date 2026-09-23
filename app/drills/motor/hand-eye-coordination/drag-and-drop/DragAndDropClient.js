@@ -2,89 +2,81 @@
 import { isIdleFrameSkippable } from '@/lib/performance';
 
 import React, { useState, useEffect, useRef, useCallback } from 'react';
-import Link from 'next/link';
 
 import { 
-  Activity, AlertCircle, ArrowRight, Brain, ChevronRight, 
-  Crosshair, Eye, GraduationCap, Info, Lightbulb, 
-  Play, RefreshCw, Target, Timer, TrendingUp, Trophy, 
-  Volume2, VolumeX, Flame, Share2, Sliders, LogOut, Award,
-  Shield, Users, Zap, ZapOff, Move, PenTool, Video, Star
+  AlertCircle, Move, PenTool, RefreshCw, 
+  Share2, TrendingUp, Volume2, VolumeX, 
+  Users, Zap, ZapOff, LogOut
 } from 'lucide-react';
 
 import generateShareCard, { shareScoreCard } from '../../../../../components/ShareScoreCard';
 import { getPlayerName } from '../../../../../lib/leaderboard';
 import { drillAudio } from '../../../../../lib/drillAudio';
+import { useDrillSensitivity } from '../../../../../lib/drillSensitivity';
 import { drillFlash } from '../../../../../lib/drillFlash';
 import { drillTimeout } from '../../../../../lib/drillTimeout';
 import { MAX_LEVEL, getStartLevel, getDifficultyProgress, getComboBonusLevel } from '../../../../../lib/drillDifficulty';
 import { getComboMultiplier, getFpsScoreGrade } from '../../../../../lib/scoringEngine';
-import { createBackdropCache, getCanvasDpr, drawPulseRing } from '../../../../../lib/canvasFx';
-import useUnexpectedExitGuard from '../../../../../lib/useUnexpectedExitGuard';
-import DrillFooter from '../../../../../components/drill/DrillFooter';
+import { createBackdropCache, getCanvasDpr, createHitRing, drawHitRings } from '../../../../../lib/canvasFx';
 import DrillCountdown from '../../../../../components/drill/DrillCountdown';
 import DrillAccordion from '../../../../../components/drill/DrillAccordion';
 import FpsStartCard from '../../../../../components/drill/FpsStartCard';
+import DrillResultCard from '../../../../../components/drill/DrillResultCard';
+import useImmersiveMode from '@/lib/useImmersiveMode';
+import useUnexpectedExitGuard from '@/lib/useUnexpectedExitGuard';
 
 /**
- * Draws a hollow blue bucket target container with empty inside space (no white lines or notches).
+ * Draws a hollow tactical bucket target container with empty inside space.
  */
 function drawHollowBucketTarget(ctx, x, y, r, lifeRatio, isHighCombo) {
-  const primaryBlue = isHighCombo ? '#00f0ff' : '#38bdf8';
-  const timerColor = lifeRatio < 0.25 ? '#ef4444' : '#60a5fa';
+  const primaryEmerald = isHighCombo ? '#34d399' : '#10b981';
+  const timerColor = lifeRatio < 0.25 ? '#ef4444' : (isHighCombo ? '#34d399' : '#10b981');
 
   ctx.save();
 
   // 1. Transparent / Faint radial gradient for empty inside space
   const insideGrad = ctx.createRadialGradient(x, y, 0, x, y, r);
-  insideGrad.addColorStop(0, 'rgba(56, 189, 248, 0.08)');
-  insideGrad.addColorStop(0.75, 'rgba(56, 189, 248, 0.02)');
-  insideGrad.addColorStop(1, 'rgba(56, 189, 248, 0.0)');
+  insideGrad.addColorStop(0, 'rgba(16, 185, 129, 0.08)');
+  insideGrad.addColorStop(0.75, 'rgba(16, 185, 129, 0.02)');
+  insideGrad.addColorStop(1, 'rgba(16, 185, 129, 0.0)');
   ctx.fillStyle = insideGrad;
   ctx.beginPath();
   ctx.arc(x, y, r, 0, Math.PI * 2);
   ctx.fill();
 
   // 2. Inner subtle drop-zone guide ring
-  ctx.strokeStyle = 'rgba(56, 189, 248, 0.3)';
+  ctx.strokeStyle = 'rgba(16, 185, 129, 0.3)';
   ctx.lineWidth = 1.5;
   ctx.beginPath();
   ctx.arc(x, y, Math.max(4, r * 0.7), 0, Math.PI * 2);
   ctx.stroke();
 
-  // 3. Main Solid Blue Bucket Rim (Circle outline with empty space inside, NO white lines)
-  ctx.strokeStyle = primaryBlue;
+  // 3. Main Solid Emerald Bucket Rim
+  ctx.strokeStyle = primaryEmerald;
   ctx.lineWidth = 3.5;
   ctx.beginPath();
   ctx.arc(x, y, r, 0, Math.PI * 2);
-  ctx.stroke();
-
-  // 4. Radial Timer Ring Arc around Bucket Rim
-  ctx.strokeStyle = timerColor;
-  ctx.lineWidth = 3;
-  ctx.beginPath();
-  ctx.arc(x, y, r + 7, -Math.PI / 2, -Math.PI / 2 + (Math.PI * 2 * lifeRatio));
   ctx.stroke();
 
   ctx.restore();
 }
 
 /**
- * Draws the small blue ball without glow or white center part.
+ * Draws the draggable ball with clean tactical styling.
  */
-function drawSmallBlueBall(ctx, x, y, r, isDragging) {
+function drawDraggableBall(ctx, x, y, r, isDragging, isHighCombo) {
   ctx.save();
 
-  const baseBlue = isDragging ? '#00f0ff' : '#38bdf8';
+  const baseEmerald = (isDragging || isHighCombo) ? '#34d399' : '#10b981';
 
-  // Solid clean blue ball body without glow or white center dot
-  ctx.fillStyle = baseBlue;
+  // Solid clean emerald ball body without glow or white center dot
+  ctx.fillStyle = baseEmerald;
   ctx.beginPath();
   ctx.arc(x, y, r, 0, Math.PI * 2);
   ctx.fill();
 
   // Clean subtle inner border stroke for sharpness
-  ctx.strokeStyle = '#0284c7';
+  ctx.strokeStyle = '#059669';
   ctx.lineWidth = 1.5;
   ctx.beginPath();
   ctx.arc(x, y, r, 0, Math.PI * 2);
@@ -120,7 +112,6 @@ const saveData = (data) => {
   } catch (e) {}
 };
 
-
 const getLevelConfig = (level) => {
   const p = getDifficultyProgress(level); // 0 -> 1 across L1..L15
   return {
@@ -136,55 +127,29 @@ const getLevelConfig = (level) => {
 // ACCORDION DATA
 // ============================================================
 const RULES_ITEMS = [
-  { title: "Target Drop", text: "Score +100 PTS × Combo for dropping ball cleanly inside moving target container." },
-  { title: "Continuous Combo", text: "Chain successful releases to build combo multiplier up to 3.0x max." },
-  { title: "Level Progression", text: "Score increases level every 250 PTS. Containers shrink & speed accelerates." },
-  { title: "Miss / Timeout", text: "Releasing outside container or letting target expire resets active combo multiplier." }
+  { num: "1", text: "Target Drop", highlight: "+100 PTS", result: "×Combo Mult" },
+  { num: "2", text: "Continuous Combo", highlight: "Up to 3.0× PTS", result: "Maintains Flow" },
+  { num: "3", text: "Level Up", highlight: "+1 / 250 PTS", result: "Shrink & Accelerate" },
+  { num: "4", text: "Miss / Timeout", highlight: "Penalty", result: "Resets Combo (-0.8s)" }
 ];
 
-const ABOUT_TEXT = `Drag & Drop Precision Training is a mechanical motor drill designed to refine raw cursor control, spatial dragging accuracy, and deceleration release timing.
+const ABOUT_TEXT = `Drag & Drop Precision Training is a mechanical motor drill designed to refine raw cursor control, spatial dragging accuracy, and deceleration release timing. Dragging is measurably slower and more error-prone than simply pointing at the same target with the same device (MacKenzie, Sellen & Buxton, 1991), and the carry obeys the Steering Law: the time to stay inside a corridor scales with its length divided by its width, so a lane half as wide takes about twice as long to cross cleanly (Accot & Zhai, 1997).
 
 By click-holding, transporting, and releasing objects into moving target containers, players build smooth muscle memory for pixel-accurate computer navigation in competitive games and professional software.
 
 As your score rises, target containers shrink and movement speed accelerates, continuously pushing your spatial control ceiling.`;
 
-const FAQ_ITEMS = [
-  { q: "What is the Drag and Drop Precision Trainer?", a: "The Drag and Drop Precision Trainer is a specialized motor drill designed to test and refine fine cursor control, spatial dragging accuracy, and deceleration timing." },
-  { q: "How does drag and drop training improve mouse control?", a: "By requiring you to click, transport, and accurately release objects into moving target zones under time pressure, it strengthens micro-motor pathways and cursor stability." },
-  { q: "Does drag precision training benefit FPS players?", a: "Yes, dragging and releasing precise coordinates trains mouse deceleration and stopping power, essential for crosshair placement and inventory management." },
-  { q: "How does difficulty scale in this drill?", a: "As your score increases, the level scales from 1 to 15, shrinking target containers, accelerating movement speed, and shortening target lifespan." },
-  { q: "What happens when a drop misses the target?", a: "Releasing outside the target zone resets your current combo multiplier to zero and triggers a red error flash without point loss." },
-  { q: "How is drag accuracy calculated?", a: "Accuracy is calculated as total successful target drops divided by total drop attempts, displayed as a real-time percentage." },
-  { q: "Can I adjust mouse sensitivity for this drill?", a: "Yes, the Universal Sens slider allows you to match your raw input multiplier and cm/360 sensitivity setting." },
-  { q: "Is this drag and drop drill free?", a: "Yes, the drill is 100% free with no sign-ups or downloads required, running directly in modern web browsers." },
-  { q: "How do combo multipliers work?", a: "Sustaining consecutive accurate drops builds combo multipliers up to 3.0x bonus points per successful placement." },
-  { q: "Can graphic designers and editors benefit from this drill?", a: "Yes, designers and editors build high-precision dragging dexterity needed for adjusting nodes, layers, and clip placement on timelines." },
-  { q: "Does this drill support touch screen input?", a: "This drill requires pointer-lock mouse input for cursor control, so it is not playable on touch-only phones or tablets. Use a desktop or laptop with a mouse for the full experience." },
-  { q: "How long should I train drag precision daily?", a: "A 10-15 minute daily session helps build muscle memory and maintain high baseline cursor control." },
-  { q: "How is high performance maintained during gameplay?", a: "The canvas engine utilizes cached backdrop grid rendering and hardware-accelerated requestAnimationFrame loops for smooth 60+ FPS performance." },
-  { q: "What is the best technique for high scores?", a: "Maintain smooth, controlled dragging speed rather than rushing, avoiding premature drops outside target boundaries." },
-  { q: "How does the 45-second session timer work?", a: "Each session runs for a fixed 45 seconds, giving you a standardized time window to score maximum points and benchmark your performance." }
-];
-
-const RELATED_DRILLS = [
-  { id: "aim-trainer", name: "Aim Trainer Elite", cat: "Motor Coordination", desc: "Score-based dynamic target acquisition drill.", href: "/drills/motor/hand-eye-coordination/aim-trainer" },
-  { id: "precision-flick-shot", name: "Precision Flick Shot", cat: "Motor Coordination", desc: "Precision single-target click accuracy trainer.", href: "/drills/motor/hand-eye-coordination/precision-flick-shot" },
-  { id: "flick-shot-training", name: "Pro Flick Trainer", cat: "FPS Flicking", desc: "Snap to targets in time-attack mode with precision flicking.", href: "/drills/fps/flick-shot-training" },
-  { id: "target-switching-swarm", name: "Target Switching", cat: "FPS Multi-Kill", desc: "Flick and track target arrays rapidly.", href: "/drills/fps/target-switching-swarm" },
-  { id: "steady-hand", name: "Steady Hand Trainer", cat: "Motor Control", desc: "Improve fine motor mouse control and stability.", href: "/drills/motor/precision-control/steady-hand" },
-  { id: "rapid-tapping", name: "Rapid Tapping", cat: "Motor Speed", desc: "Boost physical clicking speed and stamina.", href: "/drills/motor/movement-speed/rapid-tapping" }
-];
-
 // ============================================================
 // MAIN COMPONENT
 // ============================================================
-export default function DragAndDropClient() {
+export default function DragAndDropClient({ copy } = {}) {
   const [gameState, setGameState] = useState('start'); // 'start' | 'countdown' | 'playing' | 'gameOver'
   const [isFullscreen, setIsFullscreen] = useState(false);
+  useImmersiveMode(isFullscreen); // locks the page behind while the drill fills the screen
   const [soundEnabled, setSoundEnabled] = useState(true);
   const [flashEnabled, setFlashEnabled] = useState(true);
   const [pointerLocked, setPointerLocked] = useState(false);
-  const [universalSens, setUniversalSens] = useState(1.0);
+  const universalSens = useDrillSensitivity();
   const [openAccordion, setOpenAccordion] = useState(null);
   const [isTouchOnlyDevice, setIsTouchOnlyDevice] = useState(false);
   const [countdownValue, setCountdownValue] = useState(3);
@@ -221,11 +186,9 @@ export default function DragAndDropClient() {
     crosshair: { x: 0, y: 0, initialized: false },
     score: 0, level: 1, combo: 0, bestCombo: 0, timeLeft: DRILL_DURATION,
     drops: 0, misses: 0, timeouts: 0, totalActions: 0,
-    particles: [], hitMarkers: [], screenShake: 0,
+    particles: [], hitMarkers: [], hitRings: [], screenShake: 0,
     logicalWidth: 800, logicalHeight: 450
   });
-
-  const cmPer360 = (30 / universalSens).toFixed(1);
 
   const triggerFlash = useCallback(() => {
     if (!drillFlash.isEnabled()) return;
@@ -288,11 +251,6 @@ export default function DragAndDropClient() {
       const isTouchCapable = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
       setIsTouchOnlyDevice(isTouchCapable && !hasFinePointer);
 
-      try {
-        const savedSens = localStorage.getItem('dragAndDropPro_sens');
-        if (savedSens) setUniversalSens(parseFloat(savedSens));
-      } catch (e) {}
-
       const saved = getSavedData();
       setBestScore(saved.bestScore || 0);
       setBestCombo(saved.bestCombo || 0);
@@ -307,49 +265,24 @@ export default function DragAndDropClient() {
     };
   }, []);
 
-  useEffect(() => {
-    if (gameState !== 'playing') {
-      try { localStorage.setItem('dragAndDropPro_sens', universalSens.toString()); } catch (e) {}
-    }
-  }, [universalSens, gameState]);
-
-  // Fullscreen Listener
-  useEffect(() => {
-    const handleFullscreenChange = () => setIsFullscreen(!!document.fullscreenElement);
-    document.addEventListener('fullscreenchange', handleFullscreenChange);
-    return () => document.removeEventListener('fullscreenchange', handleFullscreenChange);
-  }, []);
-
-  const handleExitDrill = useCallback(async () => {
+  const handleExitDrill = useCallback(() => {
     markIntentionalExit();
     countdownTimeoutsRef.current.forEach(clearTimeout);
     countdownTimeoutsRef.current = [];
     startingRef.current = false;
+    gameActiveRef.current = false;
 
-    if (document.fullscreenElement) {
-      await document.exitFullscreen().catch(() => {});
-    }
+    setIsFullscreen(false);
     if (document.pointerLockElement) {
       document.exitPointerLock();
     }
     setGameState('start');
   }, []);
 
-  // Stop the drill if the player leaves any way other than the in-app Exit
-  // button (back gesture, tab switch, Esc) instead of running invisibly.
   const { markIntentionalExit } = useUnexpectedExitGuard({
     active: gameState === 'playing' || gameState === 'countdown',
     onUnexpectedExit: handleExitDrill,
   });
-
-  const resumeDrill = useCallback(async () => {
-    if (containerRef.current && !document.fullscreenElement) {
-      try { await containerRef.current.requestFullscreen(); } catch (e) {}
-    }
-    if (canvasRef.current && !document.pointerLockElement) {
-      try { await canvasRef.current.requestPointerLock(); } catch (e) {}
-    }
-  }, []);
 
   // End Game Management
   const endGame = useCallback(() => {
@@ -367,7 +300,7 @@ export default function DragAndDropClient() {
 
     setAnalytics({
       accuracy: finalAccuracy, drops: e.drops, misses: e.misses,
-      timeouts: e.timeouts, bestCombo: e.bestCombo, levelReached: e.level,
+      timeouts: e.timeouts, bestCombo: e.bestCombo, levelReached: Math.floor(e.level),
       grade
     });
 
@@ -377,7 +310,7 @@ export default function DragAndDropClient() {
     const isNewHigh = e.score > prevSaved.bestScore;
     setIsNewBest(isNewHigh);
 
-    const runBestLevel = Math.max(prevSaved.bestLevel, bestLevelRunRef.current);
+    const runBestLevel = Math.floor(Math.max(prevSaved.bestLevel, bestLevelRunRef.current));
     const updatedData = {
       bestScore: Math.max(prevSaved.bestScore, e.score),
       bestCombo: Math.max(prevSaved.bestCombo, e.bestCombo),
@@ -428,16 +361,12 @@ export default function DragAndDropClient() {
       crosshair: { ...engine.current.crosshair },
       score: 0, level: startLevel, combo: 0, bestCombo: 0, timeLeft: DRILL_DURATION,
       drops: 0, misses: 0, timeouts: 0, totalActions: 0,
-      particles: [], hitMarkers: [], screenShake: 0, logicalWidth: w, logicalHeight: h
+      particles: [], hitMarkers: [], hitRings: [], screenShake: 0, logicalWidth: w, logicalHeight: h
     };
 
     spawnPositions(w, h, config);
 
-    try {
-      if (containerRef.current && !document.fullscreenElement) {
-        await containerRef.current.requestFullscreen();
-      }
-    } catch(e) {}
+    setIsFullscreen(true);
 
     setGameState('countdown');
     setCountdownValue(3);
@@ -459,10 +388,34 @@ export default function DragAndDropClient() {
   }, [spawnPositions]);
 
   useEffect(() => {
-    const handlePointerLockChange = () => setPointerLocked(document.pointerLockElement === canvasRef.current);
+    const handleKeyDown = (e) => {
+      if (e.key === 'Escape') {
+        handleExitDrill();
+      }
+    };
+    const handlePointerLockChange = () => {
+      const isLocked = document.pointerLockElement === canvasRef.current;
+      setPointerLocked(isLocked);
+      if (!isLocked && (gameState === 'playing' || gameState === 'countdown')) {
+        handleExitDrill();
+      }
+    };
+    const handleFullscreenChange = () => {
+      if (!document.fullscreenElement && (gameState === 'playing' || gameState === 'countdown')) {
+        handleExitDrill();
+      }
+    };
+
+    window.addEventListener('keydown', handleKeyDown);
     document.addEventListener('pointerlockchange', handlePointerLockChange);
-    return () => document.removeEventListener('pointerlockchange', handlePointerLockChange);
-  }, []);
+    document.addEventListener('fullscreenchange', handleFullscreenChange);
+
+    return () => {
+      window.removeEventListener('keydown', handleKeyDown);
+      document.removeEventListener('pointerlockchange', handlePointerLockChange);
+      document.removeEventListener('fullscreenchange', handleFullscreenChange);
+    };
+  }, [gameState, handleExitDrill]);
 
   useEffect(() => {
     const handleMouseMove = (e) => {
@@ -483,18 +436,14 @@ export default function DragAndDropClient() {
       if (e.target.tagName === 'BUTTON' || e.target.closest('button')) return;
       if (!containerRef.current || !containerRef.current.contains(e.target)) return;
 
-      if (gameState === 'playing') {
-        if (!pointerLocked && canvasRef.current) {
-          resumeDrill();
-        } else if (pointerLocked) {
-          const eRef = engine.current;
-          const ch = eRef.crosshair;
-          const dist = Math.hypot(ch.x - eRef.ball.x, ch.y - eRef.ball.y);
+      if (gameState === 'playing' && pointerLocked) {
+        const eRef = engine.current;
+        const ch = eRef.crosshair;
+        const dist = Math.hypot(ch.x - eRef.ball.x, ch.y - eRef.ball.y);
 
-          if (dist <= eRef.ball.r + 14) {
-            eRef.ball.dragging = true;
-            drillAudio.playBeep(400, 'sine', 0.05);
-          }
+        if (dist <= eRef.ball.r + 14) {
+          eRef.ball.dragging = true;
+          drillAudio.playBeep(400, 'sine', 0.05);
         }
       }
     };
@@ -520,7 +469,9 @@ export default function DragAndDropClient() {
             bestLevelRunRef.current = Math.max(bestLevelRunRef.current, eRef.level);
 
             drillAudio.playHit();
-            createExplosion(eRef.bucket.x, eRef.bucket.y, '#3b82f6');
+            const bucketColor = eRef.combo >= 10 ? '#34d399' : '#10b981';
+            createExplosion(eRef.bucket.x, eRef.bucket.y, bucketColor);
+            eRef.hitRings.push(createHitRing(eRef.bucket.x, eRef.bucket.y, eRef.bucket.r, bucketColor));
             createHitMarker(eRef.ball.x, eRef.ball.y);
             setUiScore(eRef.score);
 
@@ -547,7 +498,7 @@ export default function DragAndDropClient() {
       document.removeEventListener('mousedown', handleMouseDown);
       document.removeEventListener('mouseup', handleMouseUp);
     };
-  }, [gameState, pointerLocked, universalSens, triggerFlash, createExplosion, createHitMarker, spawnPositions, resumeDrill]);
+  }, [gameState, pointerLocked, universalSens, triggerFlash, createExplosion, createHitMarker, spawnPositions]);
 
   useEffect(() => {
     const cvs = canvasRef.current;
@@ -670,21 +621,36 @@ export default function DragAndDropClient() {
         const b = e.bucket;
         const lifeRatio = Math.max(0, e.lifeTimer / e.maxLife);
         const isHighCombo = e.combo >= 10;
-        const targetColor = isHighCombo ? '#00f0ff' : '#38bdf8';
 
-        drawPulseRing(ctx, b.x, b.y, b.r, targetColor, 1 - lifeRatio);
         drawHollowBucketTarget(ctx, b.x, b.y, b.r, lifeRatio, isHighCombo);
 
         const ball = e.ball;
-        drawSmallBlueBall(ctx, ball.x, ball.y, ball.r, ball.dragging);
+        drawDraggableBall(ctx, ball.x, ball.y, ball.r, ball.dragging, isHighCombo);
       }
+
+      // Render particles
+      for (let i = e.particles.length - 1; i >= 0; i--) {
+        const p = e.particles[i];
+        p.x += p.vx;
+        p.y += p.vy;
+        p.life -= dt * 2.5;
+        if (p.life <= 0) { e.particles.splice(i, 1); continue; }
+        ctx.globalAlpha = p.life;
+        ctx.fillStyle = p.color;
+        ctx.beginPath();
+        ctx.arc(p.x, p.y, p.size || 2.5, 0, Math.PI * 2);
+        ctx.fill();
+      }
+      ctx.globalAlpha = 1.0;
+
+      drawHitRings(ctx, e.hitRings, dt);
 
       ctx.lineWidth = 2.0;
       for (let i = e.hitMarkers.length - 1; i >= 0; i--) {
         const hm = e.hitMarkers[i];
         hm.life -= dt * 4.5;
         if (hm.life <= 0) { e.hitMarkers.splice(i, 1); continue; }
-        ctx.globalAlpha = hm.life; ctx.strokeStyle = '#60a5fa';
+        ctx.globalAlpha = hm.life; ctx.strokeStyle = '#ffffff';
         const s = 6 + (1 - hm.life) * 8;
         ctx.beginPath();
         ctx.moveTo(hm.x - s, hm.y - s); ctx.lineTo(hm.x + s, hm.y + s);
@@ -695,9 +661,11 @@ export default function DragAndDropClient() {
 
       const ch = e.crosshair;
       if (ch.initialized && (gameState === 'playing' || gameState === 'start')) {
-        const activeColor = pointerLocked ? '#3b82f6' : '#eab308';
-        ctx.strokeStyle = activeColor;
-        ctx.fillStyle = activeColor;
+        ctx.save();
+        ctx.shadowColor = 'rgba(0, 0, 0, 0.9)';
+        ctx.shadowBlur = 3;
+        ctx.strokeStyle = '#ffffff';
+        ctx.fillStyle = '#ffffff';
 
         ctx.lineWidth = 2;
         ctx.beginPath(); ctx.arc(ch.x, ch.y, 14, 0, Math.PI * 2); ctx.stroke();
@@ -712,6 +680,7 @@ export default function DragAndDropClient() {
         ctx.stroke();
 
         ctx.beginPath(); ctx.arc(ch.x, ch.y, 2, 0, Math.PI * 2); ctx.fill();
+        ctx.restore();
       }
 
       ctx.restore();
@@ -757,40 +726,30 @@ export default function DragAndDropClient() {
     <div className="min-h-screen bg-[#050508] text-white flex flex-col font-sans select-none">
       {/* ── MAIN CONTENT AREA ── */}
       <main className="flex-1 max-w-6xl w-full mx-auto px-4 py-6 flex flex-col gap-6">
-        {/* Title */}
+        {/* Title & AIO Header */}
         {!isFullscreen && (
-          <div className="text-center">
-            <h1 className="text-2xl sm:text-3xl font-black tracking-tight text-white uppercase">
-              Drag &amp; Drop Precision
-              <span data-seo-kw="1" className="block text-sm font-semibold text-slate-400 mt-1 normal-case tracking-normal">
-                Drag &amp; Drop Mouse Trainer
-              </span>
+          <div className="flex flex-col gap-1">
+            <h1 className="text-2xl sm:text-3xl font-black tracking-tight text-white">
+              <span data-seo-kw="1">{copy?.title || "Drag & Drop Mouse Trainer"}</span>
+              <span className="block text-sm font-semibold text-slate-400 mt-1">{copy?.subtitle || "Drag and drop mouse accuracy drill for placing targets precisely and improving cursor coordination"}</span>
             </h1>
-            <p className="text-xs text-slate-400 mt-1">
-              Spatial Drag &amp; Drop Target Alignment • 15 Levels
-            </p>
           </div>
         )}
 
         {/* Live Stat Cards */}
         {!isFullscreen && (
-          <div className="grid grid-cols-4 gap-2.5 max-w-2xl mx-auto w-full">
-            <div className="bg-[#0d0d18] border border-white/5 rounded-xl p-2.5 text-center">
-              <div className="text-[10px] uppercase font-bold text-slate-500 tracking-wider">Score</div>
-              <div className="text-lg sm:text-xl font-black text-white tabular-nums">{uiScore}</div>
-            </div>
-            <div className="bg-[#0d0d18] border border-white/5 rounded-xl p-2.5 text-center">
-              <div className="text-[10px] uppercase font-bold text-slate-500 tracking-wider">Time</div>
-              <div className={`text-lg sm:text-xl font-black tabular-nums ${uiTimeLeft <= 10 ? 'text-red-400 animate-pulse' : 'text-white'}`}>{uiTimeLeft}s</div>
-            </div>
-            <div className="bg-[#0d0d18] border border-white/5 rounded-xl p-2.5 text-center">
-              <div className="text-[10px] uppercase font-bold text-slate-500 tracking-wider">Accuracy</div>
-              <div className="text-lg sm:text-xl font-black text-blue-400 tabular-nums">{analytics.accuracy}%</div>
-            </div>
-            <div className="bg-[#0d0d18] border border-white/5 rounded-xl p-2.5 text-center">
-              <div className="text-[10px] uppercase font-bold text-slate-500 tracking-wider">Best Score</div>
-              <div className="text-lg sm:text-xl font-black text-amber-400 tabular-nums">{bestScore}</div>
-            </div>
+          <div className="grid grid-cols-4 gap-2 w-full -mb-2">
+            {[
+              { label: "Score", val: uiScore },
+              { label: "Time Left", val: `${uiTimeLeft}s`, highlight: uiTimeLeft <= 10 },
+              { label: "Accuracy", val: `${analytics.accuracy}%`, color: "text-blue-400" },
+              { label: "Best Score", val: bestScore, color: "text-amber-400" },
+            ].map((s, i) => (
+              <div key={i} className="border border-white/[0.06] bg-white/[0.015] px-2 py-2 rounded-xl text-center">
+                <div className="text-[9px] sm:text-[10px] uppercase font-bold text-slate-500 tracking-wider mb-0.5">{s.label}</div>
+                <div className={`text-xs sm:text-sm md:text-base font-black tabular-nums truncate ${s.highlight ? "text-red-400 animate-pulse" : s.color || "text-white"}`}>{s.val}</div>
+              </div>
+            ))}
           </div>
         )}
 
@@ -798,10 +757,10 @@ export default function DragAndDropClient() {
         <div 
           ref={containerRef} 
           onContextMenu={(e) => { if (gameActiveRef.current) e.preventDefault(); }}
-          className={`relative overflow-hidden flex flex-col transition-all duration-150 select-none bg-[#080811] text-white border border-white/10 ${
+          className={`overflow-hidden flex flex-col select-none bg-[#080811] text-white ${
             isFullscreen 
-              ? 'fixed inset-0 z-[100] w-screen h-[100dvh] bg-[#080811] rounded-none border-none flex flex-col items-center justify-center' 
-              : 'w-full rounded-2xl bg-[#080811] aspect-video min-h-[460px] sm:min-h-[500px] max-h-[88vh] relative overflow-hidden flex flex-col'
+              ? 'fixed inset-0 z-[100] w-screen h-[100dvh] bg-[#050508] flex flex-col items-center justify-center' 
+              : 'w-full rounded-2xl aspect-video min-h-[460px] md:min-h-[500px] max-h-[88vh] max-md:portrait:aspect-[3/4] max-md:portrait:min-h-[420px] max-md:portrait:max-h-[76vh] max-md:landscape:min-h-[340px] max-md:landscape:max-h-[85vh] bg-[#080811] border border-white/10 relative overflow-hidden flex flex-col'
           }`}
           style={{ touchAction: gameActiveRef.current ? 'none' : 'auto' }}
         >
@@ -858,26 +817,8 @@ export default function DragAndDropClient() {
             </div>
           )}
 
-          {/* PAUSE OVERLAY IF POINTER LOCK LOST DURING PLAY */}
-          {gameState === 'playing' && !pointerLocked && (
-            <div 
-              className="absolute inset-0 z-40 bg-black/70 backdrop-blur-sm flex items-center justify-center cursor-pointer"
-              onClick={(e) => { 
-                e.stopPropagation(); 
-                resumeDrill();
-              }}
-            >
-              <div className="text-center animate-pulse pointer-events-none">
-                <AlertCircle className="w-12 h-12 text-blue-400 mx-auto mb-3" />
-                <h2 className="text-2xl font-black text-white tracking-widest uppercase mb-1">Game Paused</h2>
-                <p className="text-xs text-gray-300 font-medium">Click to resume — fullscreen and cursor lock will re-engage.</p>
-              </div>
-            </div>
-          )}
-
           <canvas 
             ref={canvasRef} 
-            onClick={() => { if (gameState === 'playing' && !pointerLocked) resumeDrill(); }}
             className={`block absolute top-0 left-0 w-full h-full touch-none z-10 ${gameState === 'playing' ? 'cursor-none' : ''}`} 
           />
 
@@ -885,19 +826,10 @@ export default function DragAndDropClient() {
           {gameState === 'start' && (
             <FpsStartCard
               icon={Move}
-              accent="blue"
-              title="Drag & Drop Precision"
-              subtitle="Spatial Drag & Drop Target Alignment • 15 Levels"
-              rules={[
-                { icon: Target, accent: 'blue', title: 'Drag Blue Ball into Moving Bucket (+100 PTS)', text: 'Grab the blue ball and drop it cleanly inside the hollow moving blue bucket' },
-                { icon: Zap, accent: 'red', title: 'Miss / Timeout Penalty', text: 'Dropping off-target or timing out resets your combo streak' },
-              ]}
-              sensitivity={{ value: universalSens, onChange: setUniversalSens, cmPer360 }}
-              stats={[
-                { icon: Trophy, label: 'Best Score', value: bestScore, color: 'text-white', accent: 'slate' },
-                { icon: Flame, label: 'Best Combo', value: `${bestCombo}x`, color: 'text-blue-400', accent: 'blue' },
-                { icon: TrendingUp, label: 'Best Level', value: `Lv. ${bestLevel}`, color: 'text-cyan-400', accent: 'cyan' },
-              ]}
+              accent="emerald"
+              title={copy?.title || "Drag & Drop Mouse Trainer"}
+              subtitle={copy?.subtitle || "Spatial Drag & Drop Target Alignment • 15 Levels"}
+              buttonText={copy?.startButtonText || "START DRILL"}
               isTouchOnlyDevice={isTouchOnlyDevice}
               onStart={enterDrill}
             />
@@ -908,188 +840,111 @@ export default function DragAndDropClient() {
             <DrillCountdown value={countdownValue} subtitle="GET READY" />
           )}
 
-          {/* END SCREEN */}
+          {/* END SCREEN — Universal Result Card */}
           {gameState === 'gameOver' && analytics.grade && (
-            <div className="absolute inset-0 z-40 flex bg-neutral-950/98 select-none font-sans" style={{ background: 'rgba(5,5,8,0.97)' }} onPointerDown={e => e.stopPropagation()}>
-              
-              {/* Left Grade Panel */}
-              <div className="w-[36%] flex flex-col items-center justify-center gap-1 border-r border-white/5 px-4" style={{ background: 'radial-gradient(ellipse 260px 200px at 50% 30%, rgba(59,130,246,.12), transparent 70%)' }}>
-                {isNewBest && (
-                  <span className="text-[9.5px] font-bold text-yellow-400 bg-yellow-500/10 border border-yellow-500/25 px-2.5 py-0.5 rounded-full mb-1 animate-pulse">
-                    NEW BEST
-                  </span>
-                )}
-                <div className={`text-5xl sm:text-6xl font-black leading-none ${analytics.grade.color}`}>
-                  {analytics.grade.letter}
-                </div>
-                <div className="text-[10px] uppercase tracking-widest text-slate-500 text-center font-bold mt-1">
-                  {analytics.grade.label}
-                </div>
-                <div className="text-3xl sm:text-4xl font-black text-white mt-2 tabular-nums">
-                  {uiScore}
-                </div>
-                <div className="text-[9px] uppercase tracking-widest text-slate-500">Points</div>
-              </div>
-
-              {/* Right Stats & Actions Panel */}
-              <div className="flex-1 flex flex-col justify-center gap-3 px-6 py-4 min-w-0">
-                
-                {/* 4 Stat Tiles */}
-                <div className="grid grid-cols-2 sm:grid-cols-4 gap-2">
-                  <div className="bg-black border border-white/5 p-2.5 rounded-xl text-center">
-                    <p className="text-sm sm:text-base font-black text-white">{analytics.accuracy}%</p>
-                    <p className="text-[7.5px] sm:text-[8.5px] font-bold uppercase tracking-wider text-gray-400 mt-0.5">Accuracy</p>
-                  </div>
-                  <div className="bg-black border border-white/5 p-2.5 rounded-xl text-center">
-                    <p className="text-sm sm:text-base font-black text-white">{analytics.drops}</p>
-                    <p className="text-[7.5px] sm:text-[8.5px] font-bold uppercase tracking-wider text-gray-400 mt-0.5">Target Drops</p>
-                  </div>
-                  <div className="bg-black border border-white/5 p-2.5 rounded-xl text-center">
-                    <p className="text-sm sm:text-base font-black text-white">{analytics.bestCombo}x</p>
-                    <p className="text-[7.5px] sm:text-[8.5px] font-bold uppercase tracking-wider text-gray-400 mt-0.5">Max Combo</p>
-                  </div>
-                  <div className="bg-black border border-white/5 p-2.5 rounded-xl text-center">
-                    <p className="text-sm sm:text-base font-black text-white">Lv. {analytics.levelReached}</p>
-                    <p className="text-[7.5px] sm:text-[8.5px] font-bold uppercase tracking-wider text-gray-400 mt-0.5">Peak Level</p>
-                  </div>
-                </div>
-
-                {/* Action Buttons */}
-                <div className="flex gap-2">
-                  <button 
-                    onClick={enterDrill} 
-                    className="flex-1 py-3 rounded-[13px] bg-gradient-to-r from-blue-500 to-indigo-600 text-white font-bold text-xs uppercase tracking-wide cursor-pointer transition-transform active:scale-[0.98] shadow-md flex items-center justify-center gap-1.5"
-                  >
-                    <RefreshCw className="w-3.5 h-3.5" /> Play Again
-                  </button>
-                  <button 
-                    onClick={shareDrillLink} 
-                    className="w-11 flex-shrink-0 rounded-[13px] bg-white/[0.04] border border-white/10 flex items-center justify-center text-slate-400 hover:text-white cursor-pointer active:scale-90 transition-transform" 
-                    title="Share Score"
-                  >
-                    <Share2 className="w-4 h-4" />
-                  </button>
-                  <button 
-                    onClick={handleExitDrill} 
-                    className="w-11 flex-shrink-0 rounded-[13px] bg-white/[0.04] border border-white/10 flex items-center justify-center text-slate-400 hover:text-white cursor-pointer active:scale-90 transition-transform" 
-                    title="Exit Fullscreen & Return"
-                  >
-                    <LogOut className="w-4 h-4 text-red-400" />
-                  </button>
-                </div>
-
-              </div>
-            </div>
+            <DrillResultCard
+              accent="emerald"
+              grade={analytics.grade}
+              score={uiScore}
+              isNewBest={isNewBest}
+              playAgainText={copy?.playAgainText || "Play Again"}
+              shareText={copy?.shareText || "Share Score"}
+              exitText={copy?.exitText || "Exit"}
+              stats={[
+                { value: analytics.accuracy, suffix: "%", label: copy?.accuracyLabel || "Accuracy" },
+                { value: analytics.drops, label: copy?.targetDropsLabel || "Target Drops" },
+                { value: `${analytics.bestCombo}x`, label: copy?.maxComboLabel || "Max Combo" },
+                { value: `Lv. ${analytics.levelReached}`, label: copy?.peakLevelLabel || "Peak Level" },
+              ]}
+              onPlayAgain={enterDrill}
+              onBeforeShare={() => setIsFullscreen(false)}
+              onShare={shareDrillLink}
+              onExit={handleExitDrill}
+            />
           )}
         </div>
 
         {/* ── ACCORDIONS ── */}
         {!isFullscreen && (
-          <div className="[&>div]:!mt-0">
+          <div className="[&>div]:!mt-0 font-sans">
             <DrillAccordion
               id="rules"
-              title="Drill Instructions & Scoring System"
+              title={copy?.rulesTitle || "Drill Instructions & Scoring System"}
               isOpen={openAccordion === 'rules'}
               onToggle={() => setOpenAccordion(openAccordion === 'rules' ? null : 'rules')}
             >
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
-                {RULES_ITEMS.map((item, i) => (
-                  <div key={i} className="bg-black p-4 rounded-xl border border-white/10">
-                    <p className="text-sm font-bold text-white mb-1">{item.title}</p>
-                    <p className="text-xs text-gray-300 leading-relaxed">{item.text}</p>
-                  </div>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                {(copy?.rulesItems || RULES_ITEMS).map((item, i) => (
+                  <RuleItem key={i} num={item.num} text={item.text} highlight={item.highlight} result={item.result} />
                 ))}
               </div>
             </DrillAccordion>
 
             <DrillAccordion
               id="about"
-              title="About Drag & Drop Precision Trainer"
+              title={copy?.aboutTitle || "About Drag & Drop Mouse Trainer"}
               isOpen={openAccordion === 'about'}
               onToggle={() => setOpenAccordion(openAccordion === 'about' ? null : 'about')}
             >
-              <div className="space-y-8">
-                <div className="space-y-4">
-                  {ABOUT_TEXT.split('\n\n').map((para, i) => (
-                    <p key={i} className="text-sm leading-relaxed text-gray-300">{para}</p>
-                  ))}
-                </div>
+              {copy?.aboutContent ? (
+                copy.aboutContent
+              ) : (
+                <div className="space-y-6">
+                  <div className="space-y-3">
+                    <h3 className="text-base font-bold text-white">Fine Motor Spatial Dragging &amp; Deceleration</h3>
+                    {ABOUT_TEXT.split('\n\n').map((para, i) => (
+                      <p key={i} className="text-sm leading-relaxed text-gray-300">{para}</p>
+                    ))}
+                  </div>
 
-                <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-                  <div className="p-4 rounded-xl border border-gray-800 bg-white/[0.02]">
-                    <div className="flex items-center gap-2.5 mb-2">
-                      <div className="w-7 h-7 rounded-lg bg-blue-600 flex items-center justify-center"><Users className="w-3.5 h-3.5 text-white" /></div>
-                      <h5 className="text-xs font-bold text-white">Who Should Use This?</h5>
+                  <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                    <div className="p-4 rounded-xl border border-white/10 bg-white/[0.02]">
+                      <div className="flex items-center gap-2.5 mb-2">
+                        <div className="w-7 h-7 rounded-lg bg-blue-600 flex items-center justify-center"><Users className="w-3.5 h-3.5 text-white" /></div>
+                        <h4 className="text-xs font-bold text-white">Target Audiences</h4>
+                      </div>
+                      <p className="text-xs text-gray-300 leading-relaxed">Graphic designers dragging nodes and layers, video editors placing timeline clips, FPS gamers refining inventory drags, and anyone wanting steadier cursor control.</p>
                     </div>
-                    <p className="text-xs text-gray-300 leading-relaxed">Graphic designers dragging nodes and layers, video editors placing timeline clips, FPS gamers refining inventory drags, and anyone wanting steadier cursor control.</p>
-                  </div>
-                  <div className="p-4 rounded-xl border border-gray-800 bg-white/[0.02]">
-                    <div className="flex items-center gap-2.5 mb-2">
-                      <div className="w-7 h-7 rounded-lg bg-emerald-600 flex items-center justify-center"><TrendingUp className="w-3.5 h-3.5 text-white" /></div>
-                      <h5 className="text-xs font-bold text-white">Skills Improved</h5>
+                    <div className="p-4 rounded-xl border border-white/10 bg-white/[0.02]">
+                      <div className="flex items-center gap-2.5 mb-2">
+                        <div className="w-7 h-7 rounded-lg bg-emerald-600 flex items-center justify-center"><TrendingUp className="w-3.5 h-3.5 text-white" /></div>
+                        <h4 className="text-xs font-bold text-white">Steering Dynamics</h4>
+                      </div>
+                      <p className="text-xs text-gray-300 leading-relaxed">Continuous cursor movement under sustained switch pressure tests Accot-Zhai steering law throughput and deceleration control.</p>
                     </div>
-                    <p className="text-xs text-gray-300 leading-relaxed">Spatial dragging accuracy, cursor deceleration control, click-hold coordination, and precise release timing.</p>
-                  </div>
-                  <div className="p-4 rounded-xl border border-gray-800 bg-white/[0.02]">
-                    <div className="flex items-center gap-2.5 mb-2">
-                      <div className="w-7 h-7 rounded-lg bg-purple-600 flex items-center justify-center"><PenTool className="w-3.5 h-3.5 text-white" /></div>
-                      <h5 className="text-xs font-bold text-white">Release Timing</h5>
+                    <div className="p-4 rounded-xl border border-white/10 bg-white/[0.02]">
+                      <div className="flex items-center gap-2.5 mb-2">
+                        <div className="w-7 h-7 rounded-lg bg-purple-600 flex items-center justify-center"><PenTool className="w-3.5 h-3.5 text-white" /></div>
+                        <h4 className="text-xs font-bold text-white">Release Timing Precision</h4>
+                      </div>
+                      <p className="text-xs text-gray-300 leading-relaxed">Decelerate your cursor smoothly and release inside the moving container boundary — releasing outside it breaks your combo chain.</p>
                     </div>
-                    <p className="text-xs text-gray-300 leading-relaxed">Decelerate your cursor smoothly and release inside the moving container boundary — releasing outside it breaks your combo chain.</p>
                   </div>
                 </div>
-              </div>
-            </DrillAccordion>
-
-            <DrillAccordion
-              id="faq"
-              title="Frequently Asked Questions"
-              isOpen={openAccordion === 'faq'}
-              onToggle={() => setOpenAccordion(openAccordion === 'faq' ? null : 'faq')}
-            >
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                {FAQ_ITEMS.map((item, i) => (
-                  <div key={i} className="bg-[#05060b] border border-gray-800 rounded-xl p-5">
-                    <h4 className="text-sm font-bold text-gray-200 mb-2">{item.q}</h4>
-                    <p className="text-xs text-gray-400 leading-relaxed">{item.a}</p>
-                  </div>
-                ))}
-              </div>
+              )}
             </DrillAccordion>
           </div>
         )}
-
-        {/* ── RELATED MOTOR DRILLS ── */}
-        {!isFullscreen && (
-          <section className="mt-4">
-            <h2 className="text-sm font-bold text-slate-400 uppercase tracking-wider mb-3 font-sans">
-              Related Motor &amp; FPS Drills
-            </h2>
-            <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
-              {RELATED_DRILLS.map((drill) => (
-                <Link
-                  key={drill.id}
-                  href={drill.href}
-                  className="group bg-[#0c0c16] border border-white/5 hover:border-blue-500/40 rounded-xl p-3.5 transition-all duration-200 hover:-translate-y-0.5 flex flex-col justify-between"
-                >
-                  <div>
-                    <div className="text-[10px] font-bold text-blue-400 uppercase tracking-wider mb-1">{drill.cat}</div>
-                    <div className="text-xs font-bold text-white group-hover:text-blue-300 transition-colors">{drill.name}</div>
-                    <div className="text-[11px] text-slate-400 mt-1 line-clamp-2 leading-relaxed">{drill.desc}</div>
-                  </div>
-                  <div className="text-[10px] font-bold text-slate-500 group-hover:text-blue-400 mt-3 flex items-center gap-1 transition-colors">
-                    Train Drill <span>→</span>
-                  </div>
-                </Link>
-              ))}
-            </div>
-          </section>
-        )}
-
-        {/* ── FOOTER ── */}
-        {!isFullscreen && <DrillFooter />}
-
       </main>
+    </div>
+  );
+}
+
+// === Subcomponents ===
+function RuleItem({ num, text, highlight = '', result }) {
+  return (
+    <div className="flex items-center gap-2.5 sm:gap-3 bg-black px-3 py-2 sm:px-4 sm:py-2.5 rounded-xl border border-white/10 shadow-sm font-sans">
+      <div className="w-6 h-6 sm:w-7 sm:h-7 rounded-lg bg-white/10 border border-white/20 flex items-center justify-center text-white text-xs sm:text-sm font-black shadow flex-shrink-0">
+        {num}
+      </div>
+      <div className="flex-1 min-w-0 flex items-center justify-between gap-2">
+        <p className="text-xs sm:text-sm font-medium text-gray-200 font-sans truncate">
+          {text}{highlight && <span className="font-bold text-white"> {highlight}</span>}
+        </p>
+        <div className="text-[11px] sm:text-xs font-bold px-2 py-0.5 sm:px-2.5 sm:py-1 rounded-md bg-[#050811] border border-white/10 text-white whitespace-nowrap shadow-inner flex-shrink-0">
+          {result}
+        </div>
+      </div>
     </div>
   );
 }

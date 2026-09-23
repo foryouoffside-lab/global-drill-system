@@ -6,8 +6,8 @@ import Link from 'next/link';
 
 import {
   Activity, AlertCircle, ArrowRight, ChevronRight, Eye,
-  Flame, Play, RefreshCw, Target, Timer, TrendingUp,
-  Trophy, Volume2, VolumeX, Zap, ZapOff, Share2,
+  Play, RefreshCw, Target, Timer, TrendingUp,
+  Volume2, VolumeX, Zap, ZapOff, Share2,
   Users, Sparkles, Sliders, LogOut, Award,
   Crosshair
 } from 'lucide-react';
@@ -15,25 +15,29 @@ import {
 import generateShareCard, { shareScoreCard } from '../../../../components/ShareScoreCard';
 import { getPlayerName } from '../../../../lib/leaderboard';
 import { drillAudio } from '../../../../lib/drillAudio';
+import { useDrillSensitivity } from '../../../../lib/drillSensitivity';
 import { drillFlash } from '../../../../lib/drillFlash';
-import { getStartLevel, getDifficultyProgress, getComboBonusLevel } from '../../../../lib/drillDifficulty';
+import { drillPenalty } from '../../../../lib/drillPenalty';
+import { getStartLevel, getDifficultyProgress, ramp } from '../../../../lib/drillDifficulty';
 import { getComboMultiplier, getFpsScoreGrade } from '../../../../lib/scoringEngine';
-import { createBackdropCache, getCanvasDpr, drawPulseRing } from '../../../../lib/canvasFx';
-import useUnexpectedExitGuard from '../../../../lib/useUnexpectedExitGuard';
-import DrillFooter from '../../../../components/drill/DrillFooter';
+import { createBackdropCache, getCanvasDpr, createHitRing, drawHitRings } from '../../../../lib/canvasFx';
 import DrillCountdown from '../../../../components/drill/DrillCountdown';
 import DrillAccordion from '../../../../components/drill/DrillAccordion';
 import FpsStartCard from '../../../../components/drill/FpsStartCard';
+import DrillResultCard from '../../../../components/drill/DrillResultCard';
+import useImmersiveMode from '@/lib/useImmersiveMode';
+import useUnexpectedExitGuard from '@/lib/useUnexpectedExitGuard';
 
-const DRILL_DURATION = 45; // 45 seconds focused duration
-const POINTS_PER_LEVEL = 2500; // Reach L15 in the first third of the run under sustained headshots (incl. reload cycles), not in ~2s
-const ELITE_SCORE = 40000; // 100% mark for letter grade — realistic-perfect (100% headshots incl. reload cycles) ceiling is ~130000, so this rewards sustained headshot-heavy play without requiring literal robotic perfection
+// ============================================================
+// TUNING CONSTANTS
+// ============================================================
+const DRILL_DURATION = 45; // starting clock only; a run grows past this
+const POINTS_PER_LEVEL = 1400; // 200 -> 1400 (7x)
+const ELITE_SCORE = 54000; // 18000 -> 54000 (3x)
 const MAGAZINE_SIZE = 30;
-// Minimum share of a magazine that must land before emptying it counts as
-// controlled fire. Below this, the player sprayed through the pattern instead of
-// resetting — which is exactly the habit this drill exists to break.
-const DISCIPLINE_HIT_RATE = 0.4;
-const STORAGE_KEY = 'skilldrills_fps_recoil_control_v2';
+const DISCIPLINE_HIT_RATE = 0.4; // minimum share of magazine required
+const TIME_PENALTY = 0.6; // opt-in penalty on discipline failure
+const STORAGE_KEY = 'skilldrills_fps_recoil_control_v3';
 
 // 30-bullet spray pattern (AK-47 style vertical rise & horizontal sweep)
 const RECOIL_PATTERN = [
@@ -61,14 +65,26 @@ const saveData = (data) => {
   } catch (e) {}
 };
 
+const getLevelConfig = (level, combo = 0) => {
+  const p = getDifficultyProgress(level); // 0 at L1, 1 at L15, unbounded above
+  const heat = (getComboMultiplier(combo) - 1) / 2;
+  return {
+    radius:         Math.max(10.0, ramp(16.0, 11.0, p) * (1 - heat * 0.15)),
+    speed:          ramp(75, 220, p) * (1 + heat * 0.20),
+    recoilMult:     ramp(1.8, 4.0, p) * (1 + heat * 0.15),
+    strafeInterval: Math.max(0.4, ramp(1.3, 0.6, p) * (1 - heat * 0.20)),
+    hitPad:         Math.max(2, ramp(7, 3, p) * (1 - heat * 0.25)),
+  };
+};
+
 // ============================================================
 // ACCORDION & DRILL DATA
 // ============================================================
 const RULES_ITEMS = [
-  { num: "1", text: "Headshot Hit", highlight: "+100 PTS × Combo × Level", result: "Top Priority Target Zone" },
-  { num: "2", text: "Chest / Limb Hit", highlight: "+40 / +20 PTS × Level", result: "Maintains Combo Streak" },
-  { num: "3", text: "Level Progression", highlight: "+1 Level / 2500 PTS", result: "Speed & Recoil Scale" },
-  { num: "4", text: "Magazine Discipline", highlight: "Mag Reset + Reload", result: "30-Bullet Controlled Spray" }
+  { num: "1", text: "Headshot Hit", highlight: "+100 PTS (No Time Bonus)", result: "×Combo Mult" },
+  { num: "2", text: "Chest / Limb Hit", highlight: "+40 / +20 PTS", result: "Maintains Streak" },
+  { num: "3", text: "Level Up", highlight: "+1 / 1400 PTS", result: "Adaptive Recoil" },
+  { num: "4", text: "Empty Mag / Miss", highlight: "Penalty", result: "Resets Combo (-0.6s)" }
 ];
 
 const ABOUT_INTRO = [
@@ -77,9 +93,9 @@ const ABOUT_INTRO = [
 ];
 
 const ABOUT_CARDS = [
-  { icon: Users, iconBg: 'bg-blue-600', title: "Who Should Use This?", text: "CS2, Valorant, Apex Legends, and CoD players looking to improve spray transfers, evasive target tracking, and multi-kill spray control." },
-  { icon: TrendingUp, iconBg: 'bg-red-600', title: "First 10 Rounds Matter", text: "The first 5-8 rounds of any spray pattern have the most predictable vertical rise. Mastering this initial pull-down wins the vast majority of gunfights." },
-  { icon: Zap, iconBg: 'bg-orange-600', title: "Spray Discipline", text: "Teaches you not to dump full magazines aimlessly. Controlled bursts and tracking accuracy prevent empty mag penalties." },
+  { icon: Users, iconBg: "bg-blue-600", title: "Who Should Use This?", text: "CS2, Valorant, Apex Legends, and CoD players looking to improve spray transfers, evasive target tracking, and multi-kill spray control." },
+  { icon: TrendingUp, iconBg: "bg-red-600", title: "First 10 Rounds Matter", text: "The first 5-8 rounds of any spray pattern have the most predictable vertical rise. Mastering this initial pull-down wins the vast majority of gunfights." },
+  { icon: Zap, iconBg: "bg-orange-600", title: "Spray Discipline", text: "Teaches you not to dump full magazines aimlessly. Controlled bursts and tracking accuracy prevent empty mag penalties." },
 ];
 
 const ABOUT_SECTIONS = [
@@ -93,23 +109,6 @@ const ABOUT_SECTIONS = [
   }
 ];
 
-const FAQ_ITEMS = [
-  { q: "What is recoil control?", a: "Recoil control is the mechanical compensation players perform by moving their mouse in the exact opposite direction of a weapon's automatic firing kickback to keep bullet placement accurate." },
-  { q: "How do I control recoil in CS2?", a: "In CS2, weapons like the AK-47 have set spray patterns. You must pull down your mouse for the first 10 bullets, then drift it left and right in a mirror shape of the spray pattern." },
-  { q: "How do I improve spray control?", a: "You can improve spray control by practicing to slowly build the muscle memory to counter-steer the movement of the weapon accurately." },
-  { q: "What is spray pattern training?", a: "Spray pattern training involves memorizing the exact offset path of bullets during sustained automatic fire and practicing the reverse path to hold a tight cluster." },
-  { q: "How often should I practice recoil control?", a: "Daily practice of 5 to 10 minutes before launching competitive matches is highly recommended to build and maintain weapon control muscle memory." },
-  { q: "Can recoil training improve aim?", a: "Yes, aim is a combination of initial flick acquisition and subsequent tracking or recoil compensation. Mastering recoil ensures your follow-up shots connect after the initial flick." },
-  { q: "Does this help Valorant players?", a: "Yes, Valorant weapons like the Vandal have vertical recoil for the first few shots, followed by horizontal sway. Training spray control helps you manage the early vertical climb and control bursts." },
-  { q: "Does this help CS2 players?", a: "Yes, CS2 has fixed spray patterns, making recoil control training extremely effective as the patterns can be memorized and executed perfectly with practice." },
-  { q: "What is recoil compensation?", a: "Recoil compensation is the physical mouse pull-down and horizontal counter-steering done by players to keep their crosshair aligned on the target despite weapon climb." },
-  { q: "Why do my bullets spread?", a: "Bullets spread due to a combination of recoil (the predictable path the gun kicks) and inaccuracy bloom (the random spread deviation caused by movement or sustained fire)." },
-  { q: "How do professional players control recoil?", a: "Professional players rely on deeply ingrained muscle memory to instantly pull their mouse down and sway left-to-right at precise intervals based on the weapon they are firing." },
-  { q: "What is spray transfer training?", a: "Spray transfer training is the advanced skill of shifting your spray from one target to another while maintaining continuous automatic fire, adjusting for the active recoil offsets." },
-  { q: "Can recoil control improve consistency?", a: "Yes, knowing how to control your spray means you don't have to rely entirely on single-tap headshots, giving you a reliable backup option in close-to-medium range fights." },
-  { q: "Is this recoil trainer free?", a: "Yes, this Recoil Control Trainer is 100% free, runs in any modern web browser, and does not require downloads or sign-ups." },
-  { q: "What skills does this drill improve?", a: "It improves mouse pull-down timing, spray discipline, weapon pattern familiarity, horizontal control, and physical muscle memory." }
-];
 
 const RELATED_DRILLS = [
   { id: "target-acquisition", name: "Target Acquisition Pro", cat: "FPS Precision", desc: "Master visual discrimination and threat selection under pressure.", href: "/drills/fps/target-acquisition" },
@@ -120,13 +119,15 @@ const RELATED_DRILLS = [
   { id: "pro-smooth-pursuit", name: "Pro Smooth Pursuit", cat: "FPS Tracking", desc: "Train continuous target velocity matching.", href: "/drills/fps/pro-smooth-pursuit" }
 ];
 
-export default function RecoilControlClient() {
+export default function RecoilControlClient({ copy = null }) {
   const [gameState, setGameState] = useState('start'); // 'start' | 'countdown' | 'playing' | 'gameOver'
   const [isFullscreen, setIsFullscreen] = useState(false);
+  useImmersiveMode(isFullscreen); // locks the page behind while the drill fills the screen
   const [soundEnabled, setSoundEnabled] = useState(true);
   const [flashEnabled, setFlashEnabled] = useState(true);
+  const [penaltyEnabled, setPenaltyEnabled] = useState(false);
   const [pointerLocked, setPointerLocked] = useState(false);
-  const [universalSens, setUniversalSens] = useState(1.0);
+  const universalSens = useDrillSensitivity();
   const [openAccordion, setOpenAccordion] = useState(null);
   const [isTouchOnlyDevice, setIsTouchOnlyDevice] = useState(false);
   const [countdownValue, setCountdownValue] = useState(3);
@@ -169,11 +170,9 @@ export default function RecoilControlClient() {
     ammo: 30, isReloading: false, shotCountInSpray: 0, lastShotTime: 0,
     hitsThisMagazine: 0,
     totalShots: 0, headshots: 0, chestHits: 0, limbHits: 0, disciplineFailures: 0, maxCombo: 0,
-    particles: [], hitMarkers: [], screenShake: 0,
+    particles: [], hitMarkers: [], hitRings: [], screenShake: 0,
     logicalWidth: 800, logicalHeight: 450
   });
-
-  const cmPer360 = (30 / universalSens).toFixed(1);
 
   const triggerFlash = useCallback(() => {
     if (!drillFlash.isEnabled()) return;
@@ -187,14 +186,10 @@ export default function RecoilControlClient() {
     if (typeof window !== 'undefined') {
       setSoundEnabled(drillAudio.isEnabled());
       setFlashEnabled(drillFlash.isEnabled());
+      setPenaltyEnabled(drillPenalty.isEnabled());
       const hasFinePointer = window.matchMedia('(pointer: fine)').matches;
       const isTouchCapable = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
       setIsTouchOnlyDevice(isTouchCapable && !hasFinePointer);
-
-      try {
-        const savedSens = localStorage.getItem('recoil_sens');
-        if (savedSens) setUniversalSens(parseFloat(savedSens));
-      } catch (e) {}
 
       const saved = getSavedData();
       setBestScore(saved.bestScore || 0);
@@ -211,20 +206,7 @@ export default function RecoilControlClient() {
     };
   }, []);
 
-  useEffect(() => {
-    if (gameState !== 'playing') {
-      try { localStorage.setItem('recoil_sens', universalSens.toString()); } catch (e) {}
-    }
-  }, [universalSens, gameState]);
-
-  // Fullscreen change listener
-  useEffect(() => {
-    const handleFullscreenChange = () => setIsFullscreen(!!document.fullscreenElement);
-    document.addEventListener('fullscreenchange', handleFullscreenChange);
-    return () => document.removeEventListener('fullscreenchange', handleFullscreenChange);
-  }, []);
-
-  const handleExitDrill = useCallback(async () => {
+  const handleExitDrill = useCallback(() => {
     markIntentionalExit();
     countdownTimeoutsRef.current.forEach(clearTimeout);
     countdownTimeoutsRef.current = [];
@@ -232,51 +214,35 @@ export default function RecoilControlClient() {
       clearTimeout(reloadTimeoutRef.current);
       reloadTimeoutRef.current = null;
     }
+    gameActiveRef.current = false;
     startingRef.current = false;
     isMouseDownRef.current = false;
 
-    if (document.fullscreenElement) {
-      await document.exitFullscreen().catch(() => {});
-    }
+    setIsFullscreen(false);
     if (document.pointerLockElement) {
       document.exitPointerLock();
     }
     setGameState('start');
   }, []);
 
-  // Stop the drill if the player leaves any way other than the in-app Exit
-  // button (back gesture, tab switch, Esc) instead of running invisibly.
   const { markIntentionalExit } = useUnexpectedExitGuard({
     active: gameState === 'playing' || gameState === 'countdown',
     onUnexpectedExit: handleExitDrill,
   });
 
-  const resumeDrill = useCallback(async () => {
-    if (containerRef.current && !document.fullscreenElement) {
-      try { await containerRef.current.requestFullscreen(); } catch (e) {}
-    }
-    if (canvasRef.current && !document.pointerLockElement) {
-      try { await canvasRef.current.requestPointerLock(); } catch (e) {}
-    }
-  }, []);
-
-  // Recalibrated Level configuration driving target size, movement, and recoil scaling
-  const getLevelConfig = (level) => {
-    const p = getDifficultyProgress(level); // 0 -> 1 across L1..L15
-    return {
-      radius:         Math.max(11.0, 16.0 - p * 5.0),
-      speed:          75 + p * 145,                  // 75 -> 220 px/s slower smooth movement
-      recoilMult:     1.8 + p * 2.2,                 // 1.8 -> 4.0x strong recoil kick magnitude
-      strafeInterval: Math.max(0.6, 1.3 - p * 0.6), // Slower, calmer direction swaps (s)
-      hitPad:         Math.max(3, 7 - p * 4),        // Hit padding
-    };
-  };
-
   const createExplosion = (x, y, color) => {
-    for (let i = 0; i < 15; i++) {
+    for (let i = 0; i < 14; i++) {
       const angle = Math.random() * Math.PI * 2;
-      const speed = Math.random() * 5 + 1;
-      engine.current.particles.push({ x, y, vx: Math.cos(angle) * speed, vy: Math.sin(angle) * speed, life: 1.0, color });
+      const speed = Math.random() * 4 + 1.5;
+      engine.current.particles.push({
+        x,
+        y,
+        vx: Math.cos(angle) * speed,
+        vy: Math.sin(angle) * speed,
+        life: 1.0,
+        radius: Math.random() * 2.2 + 1.2,
+        color,
+      });
     }
   };
 
@@ -316,14 +282,14 @@ export default function RecoilControlClient() {
     const e = engine.current;
     const hits = e.headshots + e.chestHits + e.limbHits;
     const finalAccuracy = e.totalShots > 0 ? Math.round((hits / e.totalShots) * 100) : 0;
-    
+    const peakLevel = Math.floor(bestLevelRunRef.current);
     const rating = getFpsScoreGrade(e.score, ELITE_SCORE);
     const grade = { letter: rating.grade, label: rating.label, color: rating.color };
 
     setAnalytics({
       accuracy: finalAccuracy, totalShots: e.totalShots, headshots: e.headshots,
       chestHits: e.chestHits, limbHits: e.limbHits, disciplineFailures: e.disciplineFailures,
-      maxCombo: e.maxCombo, finalLevel: e.level, grade
+      maxCombo: e.maxCombo, finalLevel: peakLevel, grade
     });
 
     setUiScore(e.score);
@@ -332,7 +298,7 @@ export default function RecoilControlClient() {
     const isNewHigh = e.score > prevSaved.bestScore;
     setIsNewBest(isNewHigh);
 
-    const runBestLevel = Math.max(prevSaved.bestLevel, bestLevelRunRef.current);
+    const runBestLevel = Math.floor(Math.max(prevSaved.bestLevel, bestLevelRunRef.current));
     const updatedData = {
       bestScore: Math.max(prevSaved.bestScore, e.score),
       bestCombo: Math.max(prevSaved.bestCombo, e.maxCombo),
@@ -367,8 +333,7 @@ export default function RecoilControlClient() {
     setUiIsReloading(false);
     lastTimeRef.current = DRILL_DURATION;
 
-    const saved = getSavedData();
-    const startLevel = getStartLevel(saved.bestLevel);
+    const startLevel = getStartLevel();
     bestLevelRunRef.current = startLevel;
 
     setAnalytics({
@@ -387,15 +352,11 @@ export default function RecoilControlClient() {
       ammo: 30, isReloading: false, shotCountInSpray: 0, lastShotTime: 0,
       hitsThisMagazine: 0,
       totalShots: 0, headshots: 0, chestHits: 0, limbHits: 0, disciplineFailures: 0, maxCombo: 0,
-      particles: [], hitMarkers: [], screenShake: 0,
+      particles: [], hitMarkers: [], hitRings: [], screenShake: 0,
       logicalWidth: w, logicalHeight: h
     };
 
-    try {
-      if (containerRef.current && !document.fullscreenElement) {
-        await containerRef.current.requestFullscreen();
-      }
-    } catch(e) {}
+    setIsFullscreen(true);
 
     setGameState('countdown');
     setCountdownValue(3);
@@ -428,7 +389,7 @@ export default function RecoilControlClient() {
     countdownTimeoutsRef.current = [t1, t2, t3, t4];
   }, []);
 
-  // Pointer lock change listener — release trigger when pointer lock is lost
+  // Pointer lock change listener — exit drill on pointer lock loss
   useEffect(() => {
     const handlePointerLockChange = () => {
       const locked = document.pointerLockElement === canvasRef.current;
@@ -437,11 +398,34 @@ export default function RecoilControlClient() {
         isMouseDownRef.current = false;
         engine.current.shotCountInSpray = 0;
         engine.current.recoilOffset = { x: 0, y: 0 };
+        if (gameState === 'playing' || gameState === 'countdown') {
+          handleExitDrill();
+        }
       }
     };
     document.addEventListener('pointerlockchange', handlePointerLockChange);
     return () => document.removeEventListener('pointerlockchange', handlePointerLockChange);
-  }, []);
+  }, [gameState, handleExitDrill]);
+
+  // Escape key & fullscreenchange exit handlers
+  useEffect(() => {
+    const handleKeyDown = (e) => {
+      if (e.key === 'Escape' && (gameState === 'playing' || gameState === 'countdown')) {
+        handleExitDrill();
+      }
+    };
+    const handleFullscreenChange = () => {
+      if (!document.fullscreenElement && isFullscreen && (gameState === 'playing' || gameState === 'countdown')) {
+        handleExitDrill();
+      }
+    };
+    window.addEventListener('keydown', handleKeyDown);
+    document.addEventListener('fullscreenchange', handleFullscreenChange);
+    return () => {
+      window.removeEventListener('keydown', handleKeyDown);
+      document.removeEventListener('fullscreenchange', handleFullscreenChange);
+    };
+  }, [gameState, isFullscreen, handleExitDrill]);
 
   // Scoped Raw Input Mouse Move & Mouse Down/Up Event Handlers
   useEffect(() => {
@@ -459,15 +443,11 @@ export default function RecoilControlClient() {
       if (e.target.tagName === 'BUTTON' || e.target.closest('button')) return;
       if (!containerRef.current || !containerRef.current.contains(e.target)) return;
 
-      if (gameState === 'playing') {
-        if (!pointerLocked && canvasRef.current) {
-          resumeDrill();
-        } else if (pointerLocked) {
-          isMouseDownRef.current = true;
-          if (engine.current.ammo <= 0 && !engine.current.isReloading) {
-            drillAudio.playPenalty();
-            reloadMagazine();
-          }
+      if (gameState === 'playing' && pointerLocked) {
+        isMouseDownRef.current = true;
+        if (engine.current.ammo <= 0 && !engine.current.isReloading) {
+          drillAudio.playPenalty();
+          reloadMagazine();
         }
       }
     };
@@ -486,7 +466,7 @@ export default function RecoilControlClient() {
       document.removeEventListener('mousedown', handleMouseDown);
       document.removeEventListener('mouseup', handleMouseUp);
     };
-  }, [gameState, pointerLocked, universalSens, resumeDrill, reloadMagazine]);
+  }, [gameState, pointerLocked, universalSens, reloadMagazine]);
 
   // Main Physics & Canvas Render Loop with Backdrop Caching and Capped DPR
   useEffect(() => {
@@ -508,7 +488,7 @@ export default function RecoilControlClient() {
           backdropCacheRef.current = createBackdropCache(width, height, (bCtx, w, h) => {
             bCtx.fillStyle = '#050508';
             bCtx.fillRect(0, 0, w, h);
-            bCtx.strokeStyle = 'rgba(239, 68, 68, 0.04)';
+            bCtx.strokeStyle = 'rgba(255, 255, 255, 0.03)';
             bCtx.lineWidth = 1;
             const cx = w / 2, cy = h / 2;
             bCtx.beginPath();
@@ -561,7 +541,7 @@ export default function RecoilControlClient() {
           lastTimeRef.current = intTime;
         }
 
-        const config = getLevelConfig(e.level);
+        const config = getLevelConfig(e.level, e.combo);
 
         // Move target with evasive random 2D strafe movement that scales with level (p)
         e.target.strafeTimer = (e.target.strafeTimer || 0) - dt;
@@ -631,21 +611,27 @@ export default function RecoilControlClient() {
               e.hitsThisMagazine++;
               if (e.combo > e.maxCombo) e.maxCombo = e.combo;
 
+              // This drill evaluates a full automatic magazine, so a correct
+              // bullet must not extend the clock. Otherwise one 30-round spray
+              // can refill the entire session before recoil control is tested.
               if (hitZone === 'head') e.headshots++;
               else if (hitZone === 'chest') e.chestHits++;
               else e.limbHits++;
 
               const ZONE_POINTS = { head: 100, chest: 40, limb: 20 };
-              const levelMult = 1 + getDifficultyProgress(e.level) * 0.5; // 1.0 -> 1.5
+              const levelMult = 1 + getDifficultyProgress(e.level) * 0.5;
               e.score += Math.round(ZONE_POINTS[hitZone] * getComboMultiplier(e.combo) * levelMult);
 
-              // Monotonic level progression
-              const rawLevel = Math.floor(e.score / POINTS_PER_LEVEL) + 1 + getComboBonusLevel(e.combo);
+              const rawLevel = (e.score / POINTS_PER_LEVEL) + 1;
               e.level = Math.max(e.level, rawLevel);
               bestLevelRunRef.current = Math.max(bestLevelRunRef.current, e.level);
 
               drillAudio.playHit();
-              createExplosion(bulletX, bulletY, hitZone === 'head' ? '#ef4444' : '#f59e0b');
+              const isStreak = e.combo >= 10;
+              const zoneColor = hitZone === 'head' ? (isStreak ? '#34d399' : '#10b981') : (isStreak ? '#6ee7b7' : '#059669');
+              const zoneRadius = hitZone === 'head' ? rHead : hitZone === 'chest' ? rChest : rLimb;
+              createExplosion(bulletX, bulletY, zoneColor);
+              e.hitRings.push(createHitRing(bulletX, bulletY, zoneRadius, zoneColor));
               createHitMarker(bulletX, bulletY);
               setUiScore(e.score);
 
@@ -661,9 +647,11 @@ export default function RecoilControlClient() {
               const magHitRate = e.hitsThisMagazine / MAGAZINE_SIZE;
               if (magHitRate < DISCIPLINE_HIT_RATE) {
                 e.disciplineFailures++;
+                if (drillPenalty.isEnabled()) e.timeLeft -= TIME_PENALTY;
                 e.combo = 0;
                 triggerFlash();
                 drillAudio.playPenalty();
+              } else {
               }
               reloadMagazine();
             }
@@ -689,41 +677,53 @@ export default function RecoilControlClient() {
         ctx.fillRect(0, 0, w, h);
       }
 
-      // Draw Target with zone boundaries
+      // Draw Target with zone boundaries (Emerald / Mint Tactical Palette)
       if (gameState === 'playing' || gameState === 'start') {
-        const config = getLevelConfig(e.level);
+        const config = getLevelConfig(e.level, e.combo);
         const r = config.radius;
         const tx = e.target.x;
         const ty = e.target.y;
-
-        drawPulseRing(ctx, tx, ty, r * 1.5, '#ef4444', e.target.pulseSeed);
+        const isStreak = e.combo >= 10;
 
         // Limb Zone (Bottom)
-        ctx.fillStyle = 'rgba(239, 68, 68, 0.25)';
+        ctx.fillStyle = isStreak ? 'rgba(52, 211, 153, 0.22)' : 'rgba(16, 185, 129, 0.22)';
         ctx.beginPath(); ctx.arc(tx, ty + r * 0.75, r * 0.55, 0, Math.PI * 2); ctx.fill();
-        ctx.strokeStyle = 'rgba(239, 68, 68, 0.6)';
+        ctx.strokeStyle = 'rgba(16, 185, 129, 0.6)';
         ctx.lineWidth = 1.5; ctx.stroke();
 
         // Chest Zone (Middle)
-        ctx.fillStyle = 'rgba(239, 68, 68, 0.45)';
+        ctx.fillStyle = isStreak ? 'rgba(52, 211, 153, 0.42)' : 'rgba(16, 185, 129, 0.42)';
         ctx.beginPath(); ctx.arc(tx, ty, r * 0.7, 0, Math.PI * 2); ctx.fill();
-        ctx.strokeStyle = 'rgba(239, 68, 68, 0.8)';
+        ctx.strokeStyle = 'rgba(16, 185, 129, 0.8)';
         ctx.lineWidth = 1.5; ctx.stroke();
 
-        // Head Zone (Top - Brightest)
-        ctx.fillStyle = '#ef4444';
+        // Head Zone (Top - High-Priority Bullseye)
+        ctx.fillStyle = isStreak ? '#34d399' : '#10b981';
         ctx.beginPath(); ctx.arc(tx, ty - r * 0.75, r * 0.4, 0, Math.PI * 2); ctx.fill();
         ctx.strokeStyle = '#ffffff';
         ctx.lineWidth = 2; ctx.stroke();
       }
 
-      // Render Particles
+      // Render Particles (14 circular arc particles with delta-time alpha decay)
       for (let i = e.particles.length - 1; i >= 0; i--) {
         const p = e.particles[i];
-        p.x += p.vx; p.y += p.vy; p.life -= dt * 2.5;
-        if (p.life <= 0) { e.particles.splice(i, 1); continue; }
-        ctx.globalAlpha = p.life; ctx.fillStyle = p.color; ctx.fillRect(p.x, p.y, 3, 3);
+        p.x += p.vx;
+        p.y += p.vy;
+        p.life -= dt * 2.5;
+        if (p.life <= 0) {
+          e.particles.splice(i, 1);
+          continue;
+        }
+        ctx.save();
+        ctx.globalAlpha = Math.max(0, p.life);
+        ctx.fillStyle = p.color;
+        ctx.beginPath();
+        ctx.arc(p.x, p.y, p.radius || 2, 0, Math.PI * 2);
+        ctx.fill();
+        ctx.restore();
       }
+
+      drawHitRings(ctx, e.hitRings, dt);
 
       // Render Hit Markers
       ctx.lineWidth = 2.0;
@@ -740,29 +740,40 @@ export default function RecoilControlClient() {
       }
       ctx.globalAlpha = 1.0;
 
-      // Draw Crosshair (incorporates recoil offset when firing)
+      // Draw Tactical Pro White Crosshair (#ffffff with rgba(0,0,0,0.9) drop shadow blur 3)
       const ch = e.crosshair;
       if (ch.initialized && (gameState === 'playing' || gameState === 'start')) {
         const renderX = ch.x + (isMouseDownRef.current ? e.recoilOffset.x : 0);
         const renderY = ch.y + (isMouseDownRef.current ? e.recoilOffset.y : 0);
-        const activeColor = pointerLocked ? '#ef4444' : '#3b82f6';
-        
-        ctx.strokeStyle = activeColor;
-        ctx.fillStyle = activeColor;
-        
-        ctx.lineWidth = 2;
-        ctx.beginPath(); ctx.arc(renderX, renderY, 16, 0, Math.PI * 2); ctx.stroke();
 
+        ctx.save();
+        ctx.shadowColor = 'rgba(0, 0, 0, 0.9)';
+        ctx.shadowBlur = 3;
+        ctx.strokeStyle = '#ffffff';
+        ctx.fillStyle = '#ffffff';
+
+        // Outer reticle circle
         ctx.lineWidth = 1.5;
-        const gap = 6;
         ctx.beginPath();
-        ctx.moveTo(renderX, renderY - 16); ctx.lineTo(renderX, renderY - gap);
-        ctx.moveTo(renderX, renderY + 16); ctx.lineTo(renderX, renderY + gap);
-        ctx.moveTo(renderX - 16, renderY); ctx.lineTo(renderX - gap, renderY);
-        ctx.moveTo(renderX + 16, renderY); ctx.lineTo(renderX + gap, renderY);
+        ctx.arc(renderX, renderY, 15, 0, Math.PI * 2);
         ctx.stroke();
-        
-        ctx.beginPath(); ctx.arc(renderX, renderY, 2, 0, Math.PI * 2); ctx.fill();
+
+        // Cross lines
+        const chSize = 14;
+        const chGap = 5;
+        ctx.lineWidth = 1.5;
+        ctx.beginPath();
+        ctx.moveTo(renderX, renderY - chSize); ctx.lineTo(renderX, renderY - chGap);
+        ctx.moveTo(renderX, renderY + chSize); ctx.lineTo(renderX, renderY + chGap);
+        ctx.moveTo(renderX - chSize, renderY); ctx.lineTo(renderX - chGap, renderY);
+        ctx.moveTo(renderX + chSize, renderY); ctx.lineTo(renderX + chGap, renderY);
+        ctx.stroke();
+
+        // Center dot
+        ctx.beginPath();
+        ctx.arc(renderX, renderY, 1.8, 0, Math.PI * 2);
+        ctx.fill();
+        ctx.restore();
       }
 
       ctx.restore();
@@ -807,38 +818,42 @@ export default function RecoilControlClient() {
   const accuracy = gameState === 'gameOver' ? analytics.accuracy : uiAccuracy;
 
   return (
-    <div className="min-h-screen select-none bg-[#050508] text-white font-sans">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-6 space-y-6 font-sans">
+    <div className="min-h-screen bg-[#050508] text-white flex flex-col font-sans select-none">
+      {/* ── MAIN CONTENT AREA ── */}
+      <main className="flex-1 max-w-6xl w-full mx-auto px-4 pt-6 pb-0 flex flex-col gap-6">
         
-        {/* CENTERED PAGE HEADING */}
+        {/* Title */}
         {!isFullscreen && (
-          <h1 className="text-2xl sm:text-3xl font-black text-center text-white tracking-tight font-sans">
-            Recoil Control Pro
-            <span data-seo-kw="1" className="block text-sm font-semibold text-slate-400 mt-1 normal-case tracking-normal">
-              Recoil Control Trainer
-            </span>
-          </h1>
+          <div className="flex flex-col gap-1">
+            <h1 className="text-2xl sm:text-3xl font-black tracking-tight text-white">
+              {copy?.h1Prefix || null}
+              <span data-seo-kw="1">{copy?.h1Keyword || "Recoil Control"}</span>
+              {copy?.h1Suffix || " Trainer"}
+            </h1>
+            <p className="text-[13px] text-slate-400 leading-relaxed">
+              {copy?.caption || (
+                <>
+                  Recoil control is a learned motor program that keeps automatic weapon fire locked on target.
+                </>
+              )}
+            </p>
+          </div>
         )}
 
         {/* 4-STAT CARD ROW */}
         {!isFullscreen && (
-          <div className="grid grid-cols-4 gap-2.5 max-w-2xl mx-auto w-full">
-            <div className="bg-[#0d0d18] border border-white/5 rounded-xl p-2.5 text-center">
-              <div className="text-[10px] uppercase font-bold text-slate-500 tracking-wider">Score</div>
-              <div className="text-lg sm:text-xl font-black text-white tabular-nums">{uiScore}</div>
-            </div>
-            <div className="bg-[#0d0d18] border border-white/5 rounded-xl p-2.5 text-center">
-              <div className="text-[10px] uppercase font-bold text-slate-500 tracking-wider">Time</div>
-              <div className={`text-lg sm:text-xl font-black tabular-nums ${uiTimeLeft <= 10 ? 'text-red-400 animate-pulse' : 'text-white'}`}>{uiTimeLeft}s</div>
-            </div>
-            <div className="bg-[#0d0d18] border border-white/5 rounded-xl p-2.5 text-center">
-              <div className="text-[10px] uppercase font-bold text-slate-500 tracking-wider">Accuracy</div>
-              <div className="text-lg sm:text-xl font-black text-red-400 tabular-nums">{accuracy}%</div>
-            </div>
-            <div className="bg-[#0d0d18] border border-white/5 rounded-xl p-2.5 text-center">
-              <div className="text-[10px] uppercase font-bold text-slate-500 tracking-wider">Best Score</div>
-              <div className="text-lg sm:text-xl font-black text-amber-400 tabular-nums">{bestScore}</div>
-            </div>
+          <div className="grid grid-cols-4 gap-2 w-full -mb-2">
+            {[
+              { label: copy?.statScore || 'Score', value: uiScore },
+              { label: copy?.statTime || 'Time', value: `${uiTimeLeft}s`, color: uiTimeLeft <= 10 ? "text-red-400 animate-pulse" : "text-white" },
+              { label: copy?.statAccuracy || 'Accuracy', value: `${accuracy}%`, color: "text-red-400" },
+              { label: copy?.statBest || 'Best Score', value: bestScore, color: "text-amber-400" },
+            ].map((card) => (
+              <div key={card.label} className="border border-white/[0.06] bg-white/[0.015] px-2 py-2 rounded-xl text-center">
+                <div className="text-[10px] font-bold tracking-wider uppercase text-slate-500">{card.label}</div>
+                <div className={`text-base sm:text-lg font-black tabular-nums ${card.color || 'text-white'}`}>{card.value}</div>
+              </div>
+            ))}
           </div>
         )}
 
@@ -846,11 +861,11 @@ export default function RecoilControlClient() {
         <div 
           ref={containerRef} 
           onContextMenu={(e) => { if (gameActiveRef.current) e.preventDefault(); }}
-          className={`relative overflow-hidden flex flex-col transition-all duration-150 select-none bg-[#080811] text-white border border-white/10 ${
+          className={
             isFullscreen 
-              ? 'fixed inset-0 z-[100] w-screen h-[100dvh] bg-[#080811] rounded-none border-none flex flex-col items-center justify-center' 
-              : 'w-full rounded-2xl bg-[#080811] aspect-video min-h-[460px] sm:min-h-[500px] max-h-[88vh] relative overflow-hidden flex flex-col'
-          }`}
+              ? "fixed inset-0 z-[100] w-screen h-[100dvh] bg-[#050508] flex flex-col items-center justify-center" 
+              : "w-full rounded-2xl aspect-video min-h-[460px] md:min-h-[500px] max-h-[88vh] max-md:portrait:aspect-[3/4] max-md:portrait:min-h-[420px] max-md:portrait:max-h-[76vh] max-md:landscape:min-h-[340px] max-md:landscape:max-h-[85vh] bg-[#080811] border border-white/10 relative overflow-hidden flex flex-col"
+          }
           style={{ touchAction: gameActiveRef.current ? 'none' : 'auto' }}
         >
           {/* DOM Flash Overlay */}
@@ -862,17 +877,17 @@ export default function RecoilControlClient() {
           {(gameState === 'playing' || gameState === 'countdown') && (
             <>
               <div className="absolute top-4 left-4 z-30 pointer-events-none">
-                <p className="text-[10px] font-semibold uppercase tracking-wider text-white/50">Score</p>
+                <p className="text-[10px] font-semibold uppercase tracking-wider text-white/50">{copy?.statScore || 'Score'}</p>
                 <p className="text-2xl sm:text-3xl font-bold text-white tabular-nums leading-tight">{uiScore}</p>
               </div>
               <div className="absolute top-4 right-4 z-30 pointer-events-none text-right">
-                <p className="text-[10px] font-semibold uppercase tracking-wider text-white/50">Time</p>
-                <p className={`text-2xl sm:text-3xl font-bold tabular-nums leading-tight ${uiTimeLeft <= 10 ? 'text-red-400' : 'text-white'}`}>{uiTimeLeft}s</p>
+                <p className="text-[10px] font-semibold uppercase tracking-wider text-white/50">{copy?.statTime || 'Time'}</p>
+                <p className={`text-2xl sm:text-3xl font-bold tabular-nums leading-tight ${uiTimeLeft <= 10 ? "text-red-400" : "text-white"}`}>{uiTimeLeft}s</p>
               </div>
               <div className="absolute bottom-4 left-4 z-30 pointer-events-none flex items-center gap-2">
-                <p className="text-[10px] font-semibold uppercase tracking-wider text-white/50">Ammo</p>
-                <p className={`text-lg font-bold font-mono tabular-nums ${uiIsReloading ? 'text-yellow-400 animate-pulse' : uiAmmo <= 5 ? 'text-red-400' : 'text-white'}`}>
-                  {uiIsReloading ? 'RELOADING...' : `${uiAmmo} / 30`}
+                <p className="text-[10px] font-semibold uppercase tracking-wider text-white/50">{copy?.statAmmo || 'Ammo'}</p>
+                <p className={`text-lg font-bold font-mono tabular-nums ${uiIsReloading ? "text-yellow-400 animate-pulse" : uiAmmo <= 5 ? "text-red-400" : "text-white"}`}>
+                  {uiIsReloading ? (copy?.statReloading || "RELOADING...") : `${uiAmmo} / 30`}
                 </p>
               </div>
             </>
@@ -893,7 +908,7 @@ export default function RecoilControlClient() {
                 className="p-2.5 rounded-full bg-black/60 border border-white/10 text-slate-400 hover:text-white transition-colors cursor-pointer"
                 title="Toggle Miss Flash"
               >
-                {flashEnabled ? <Zap className="w-4 h-4 text-red-400" /> : <ZapOff className="w-4 h-4 text-slate-500" />}
+                {flashEnabled ? <Zap className="w-4 h-4 text-emerald-400" /> : <ZapOff className="w-4 h-4 text-slate-500" />}
               </button>
               <button
                 onPointerDown={(e) => e.stopPropagation()}
@@ -907,51 +922,24 @@ export default function RecoilControlClient() {
                 className="p-2.5 rounded-full bg-black/60 border border-white/10 text-slate-400 hover:text-white transition-colors cursor-pointer"
                 title="Toggle Sound"
               >
-                {soundEnabled ? <Volume2 className="w-4 h-4 text-red-400" /> : <VolumeX className="w-4 h-4 text-slate-500" />}
+                {soundEnabled ? <Volume2 className="w-4 h-4 text-emerald-400" /> : <VolumeX className="w-4 h-4 text-slate-500" />}
               </button>
-            </div>
-          )}
-
-          {/* PAUSE OVERLAY IF POINTER LOCK LOST DURING PLAY */}
-          {gameState === 'playing' && !pointerLocked && (
-            <div 
-              className="absolute inset-0 z-40 bg-black/70 backdrop-blur-sm flex items-center justify-center cursor-pointer"
-              onClick={(e) => { 
-                e.stopPropagation(); 
-                resumeDrill();
-              }}
-            >
-              <div className="text-center animate-pulse pointer-events-none">
-                <AlertCircle className="w-12 h-12 text-red-400 mx-auto mb-3" />
-                <h2 className="text-2xl font-black text-white tracking-widest uppercase mb-1">Game Paused</h2>
-                <p className="text-xs text-gray-300 font-medium">Click to resume — fullscreen and cursor lock will re-engage.</p>
-              </div>
             </div>
           )}
 
           <canvas 
             ref={canvasRef} 
-            onClick={() => { if (gameState === 'playing' && !pointerLocked) resumeDrill(); }}
-            className={`block absolute top-0 left-0 w-full h-full touch-none z-10 ${gameState === 'playing' ? 'cursor-none' : ''}`} 
+            className={`block absolute top-0 left-0 w-full h-full touch-none z-10 ${gameState === "playing" ? "cursor-none" : ""}`}
           />
 
           {/* START MODAL */}
           {gameState === 'start' && (
             <FpsStartCard
               icon={Crosshair}
-              accent="redOrange"
-              title="Recoil Control Pro"
-              subtitle="Weapon Spray Patterns & Motor Compensation • 15 Levels"
-              rules={[
-                { icon: Target, accent: 'red', title: 'Objective', text: 'Counteract 30-Bullet Kick' },
-                { icon: Zap, accent: 'orange', title: 'Headshot', text: '+100 PTS Base' },
-              ]}
-              sensitivity={{ value: universalSens, onChange: setUniversalSens, cmPer360 }}
-              stats={[
-                { icon: Trophy, label: 'Best Score', value: bestScore, color: 'text-white', accent: 'slate' },
-                { icon: Flame, label: 'Best Combo', value: `${bestCombo}x`, color: 'text-red-400', accent: 'red' },
-                { icon: TrendingUp, label: 'Best Level', value: `Lv. ${bestLevel}`, color: 'text-blue-400', accent: 'blue' },
-              ]}
+              accent="emerald"
+              title={copy?.startTitle || "Recoil Control Pro"}
+              subtitle={copy?.startSubtitle || "Weapon Spray Patterns & Motor Compensation • Endless Level Progression"}
+              startButtonText={copy?.startButtonText}
               isTouchOnlyDevice={isTouchOnlyDevice}
               onStart={enterDrill}
             />
@@ -959,97 +947,52 @@ export default function RecoilControlClient() {
 
           {/* COUNTDOWN OVERLAY */}
           {gameState === 'countdown' && (
-            <DrillCountdown value={countdownValue} subtitle="GET READY" />
+            <DrillCountdown value={countdownValue} subtitle={copy?.getReady || "GET READY"} />
           )}
 
-          {/* END SCREEN */}
+          {/* END SCREEN — Universal Result Card */}
           {gameState === 'gameOver' && analytics.grade && (
-            <div className="absolute inset-0 z-40 flex bg-neutral-950/98 select-none font-sans" style={{ background: 'rgba(5,5,8,0.97)' }} onPointerDown={e => e.stopPropagation()}>
-              
-              {/* Left Grade Panel */}
-              <div className="w-[36%] flex flex-col items-center justify-center gap-1 border-r border-white/5 px-4" style={{ background: 'radial-gradient(ellipse 260px 200px at 50% 30%, rgba(239,68,68,.12), transparent 70%)' }}>
-                {isNewBest && (
-                  <span className="text-[9.5px] font-bold text-yellow-400 bg-yellow-500/10 border border-yellow-500/25 px-2.5 py-0.5 rounded-full mb-1 animate-pulse">
-                    NEW BEST
-                  </span>
-                )}
-                <div className={`text-5xl sm:text-6xl font-black leading-none ${analytics.grade.color}`}>
-                  {analytics.grade.letter}
-                </div>
-                <div className="text-[10px] uppercase tracking-widest text-slate-500 text-center font-bold mt-1">
-                  {analytics.grade.label}
-                </div>
-                <div className="text-3xl sm:text-4xl font-black text-white mt-2 tabular-nums">
-                  {uiScore}
-                </div>
-                <div className="text-[9px] uppercase tracking-widest text-slate-500">Points</div>
-              </div>
-
-              {/* Right Stats & Actions Panel */}
-              <div className="flex-1 flex flex-col justify-center gap-3 px-6 py-4 min-w-0">
-                
-                {/* 4 Stat Tiles */}
-                <div className="grid grid-cols-2 sm:grid-cols-4 gap-2">
-                  <div className="bg-black border border-white/5 p-2.5 rounded-xl text-center">
-                    <p className="text-sm sm:text-base font-black text-white">{analytics.accuracy}%</p>
-                    <p className="text-[7.5px] sm:text-[8.5px] font-bold uppercase tracking-wider text-gray-400 mt-0.5">Accuracy</p>
-                  </div>
-                  <div className="bg-black border border-white/5 p-2.5 rounded-xl text-center">
-                    <p className="text-sm sm:text-base font-black text-white">{analytics.headshots}</p>
-                    <p className="text-[7.5px] sm:text-[8.5px] font-bold uppercase tracking-wider text-gray-400 mt-0.5">Headshots</p>
-                  </div>
-                  <div className="bg-black border border-white/5 p-2.5 rounded-xl text-center">
-                    <p className="text-sm sm:text-base font-black text-white">{analytics.maxCombo}x</p>
-                    <p className="text-[7.5px] sm:text-[8.5px] font-bold uppercase tracking-wider text-gray-400 mt-0.5">Max Combo</p>
-                  </div>
-                  <div className="bg-black border border-white/5 p-2.5 rounded-xl text-center">
-                    <p className="text-sm sm:text-base font-black text-white">Lv. {analytics.finalLevel}</p>
-                    <p className="text-[7.5px] sm:text-[8.5px] font-bold uppercase tracking-wider text-gray-400 mt-0.5">Peak Level</p>
-                  </div>
-                </div>
-
-                {/* Action Buttons */}
-                <div className="flex gap-2">
-                  <button 
-                    onClick={enterDrill} 
-                    className="flex-1 py-3 rounded-[13px] bg-gradient-to-r from-red-600 to-orange-600 text-white font-bold text-xs uppercase tracking-wide cursor-pointer transition-transform active:scale-[0.98] shadow-md flex items-center justify-center gap-1.5"
-                  >
-                    <RefreshCw className="w-3.5 h-3.5" /> Play Again
-                  </button>
-                  <button 
-                    onClick={shareScore} 
-                    className="w-11 flex-shrink-0 rounded-[13px] bg-white/[0.04] border border-white/10 flex items-center justify-center text-slate-400 hover:text-white cursor-pointer active:scale-90 transition-transform" 
-                    title="Share Score"
-                  >
-                    <Share2 className="w-4 h-4" />
-                  </button>
-                  <button 
-                    onClick={handleExitDrill} 
-                    className="w-11 flex-shrink-0 rounded-[13px] bg-white/[0.04] border border-white/10 flex items-center justify-center text-slate-400 hover:text-white cursor-pointer active:scale-90 transition-transform" 
-                    title="Exit Fullscreen & Return"
-                  >
-                    <LogOut className="w-4 h-4 text-red-400" />
-                  </button>
-                </div>
-
-              </div>
-            </div>
+            <DrillResultCard
+              accent="emerald"
+              grade={analytics.grade}
+              score={uiScore}
+              isNewBest={isNewBest}
+              stats={[
+                { value: analytics.accuracy, suffix: "%", label: copy?.statAccuracy || "Accuracy" },
+                { value: analytics.headshots, label: copy?.statHeadshots || "Headshots" },
+                { value: `${analytics.maxCombo}x`, label: copy?.statMaxCombo || "Max Combo" },
+                { value: `Lv. ${analytics.finalLevel}`, label: copy?.statPeakLevel || "Peak Level" },
+              ]}
+              playAgainText={copy?.playAgainText}
+              shareText={copy?.shareText}
+              exitText={copy?.exitText}
+              onPlayAgain={enterDrill}
+              onBeforeShare={() => setIsFullscreen(false)}
+              onShare={shareScore}
+              onExit={handleExitDrill}
+            />
           )}
-
         </div>
 
+        {/* Stage Caption */}
+        {!isFullscreen && (
+          <p className="text-xs text-slate-400 leading-relaxed -mt-2">
+            {copy?.bottomCaption || "Counter weapon spray patterns with smooth mouse pull-down to keep full-auto bursts locked on target."}
+          </p>
+        )}
 
         {/* ── ACCORDIONS ── */}
         {!isFullscreen && (
           <div className="[&>div]:!mt-0 font-sans">
             <DrillAccordion
               id="rules"
-              title="Drill Instructions & Scoring System"
+              singleLineTitle
+              title={copy?.rulesTitle || "Drill Instructions & Scoring System"}
               isOpen={openAccordion === 'rules'}
               onToggle={() => setOpenAccordion(openAccordion === 'rules' ? null : 'rules')}
             >
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                {RULES_ITEMS.map((item, i) => (
+                {(copy?.rulesItems || RULES_ITEMS).map((item, i) => (
                   <RuleItem key={i} num={item.num} text={item.text} highlight={item.highlight} result={item.result} />
                 ))}
               </div>
@@ -1057,156 +1000,72 @@ export default function RecoilControlClient() {
 
             <DrillAccordion
               id="about"
-              title="About Recoil Control Pro"
+              singleLineTitle
+              title={copy?.aboutTitle || "About Recoil Control Trainer"}
               isOpen={openAccordion === 'about'}
               onToggle={() => setOpenAccordion(openAccordion === 'about' ? null : 'about')}
             >
-              <div className="space-y-8">
+              <div className="space-y-8 font-sans">
                 <section>
-                  <h4 className="text-base font-bold text-white mb-2 flex items-center gap-2">
-                    <Eye className="w-4 h-4 text-red-400" /> What Is Recoil Control Training?
-                  </h4>
-                  {ABOUT_INTRO.map((para, i) => (
-                    <p key={i} className={`text-sm leading-relaxed text-gray-300 ${i < ABOUT_INTRO.length - 1 ? 'mb-3' : ''}`}>{para}</p>
+                  <h3 className="text-sm font-bold text-white mb-2 flex items-center gap-2">
+                    <Crosshair className="w-4 h-4 text-emerald-400" /> {copy?.whyMattersTitle || "Why Recoil Control Matters"}
+                  </h3>
+                  <p className="text-sm leading-relaxed text-gray-300 mb-3">
+                    {copy?.whyMattersLead || "Recoil control is a learned open-loop motor program: the spray pattern is fixed, so you can run the counter-movement without waiting to see where the bullets land. Motor output gets more variable as a movement gets faster and more forceful (Schmidt et al., 1979), which is why a smooth pull-down repeats better than a hard one."}
+                  </p>
+                  {(copy?.aboutIntro || ABOUT_INTRO).map((para, i, arr) => (
+                    <p key={i} className={`text-sm leading-relaxed text-gray-300 ${i < arr.length - 1 ? "mb-3" : ""}`}>{para}</p>
                   ))}
                 </section>
 
                 <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-                  {ABOUT_CARDS.map((card, i) => (
+                  {(copy?.aboutCards || ABOUT_CARDS).map((card, i) => (
                     <div key={i} className="p-4 rounded-xl border border-gray-800 bg-white/[0.02]">
                       <div className="flex items-center gap-2.5 mb-2">
-                        <div className={`w-7 h-7 rounded-lg ${card.iconBg} flex items-center justify-center`}>
-                          <card.icon className="w-3.5 h-3.5 text-white" />
+                        <div className={`w-7 h-7 rounded-lg ${card.iconBg || 'bg-emerald-600'} flex items-center justify-center`}>
+                          {card.icon ? <card.icon className="w-3.5 h-3.5 text-white" /> : <Crosshair className="w-3.5 h-3.5 text-white" />}
                         </div>
-                        <h5 className="text-xs font-bold text-white">{card.title}</h5>
+                        <h4 className="text-xs font-bold text-white">{card.title}</h4>
                       </div>
                       <p className="text-xs text-gray-300 leading-relaxed">{card.text}</p>
                     </div>
                   ))}
                 </div>
 
-                {ABOUT_SECTIONS.map((section, i) => (
+                {(copy?.aboutSections || ABOUT_SECTIONS).map((section, i) => (
                   <section key={i}>
-                    <h4 className="text-base font-bold text-white mb-2 flex items-center gap-2">
-                      <section.icon className="w-4 h-4 text-red-400" /> {section.title}
-                    </h4>
+                    <h3 className="text-sm font-bold text-white mb-2 flex items-center gap-2">
+                      {section.icon ? <section.icon className="w-4 h-4 text-emerald-400" /> : <Eye className="w-4 h-4 text-emerald-400" />} {section.title}
+                    </h3>
                     {section.paragraphs.map((para, j) => (
-                      <p key={j} className={`text-sm leading-relaxed text-gray-300 ${j < section.paragraphs.length - 1 ? 'mb-3' : ''}`}>{para}</p>
+                      <p key={j} className={`text-sm leading-relaxed text-gray-300 ${j < section.paragraphs.length - 1 ? "mb-3" : ""}`}>{para}</p>
                     ))}
                   </section>
                 ))}
               </div>
             </DrillAccordion>
-
-            <DrillAccordion
-              id="faq"
-              title="Frequently Asked Questions"
-              isOpen={openAccordion === 'faq'}
-              onToggle={() => setOpenAccordion(openAccordion === 'faq' ? null : 'faq')}
-            >
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                {FAQ_ITEMS.map((item, i) => (
-                  <FAQItem key={i} q={item.q} a={item.a} />
-                ))}
-              </div>
-            </DrillAccordion>
           </div>
         )}
-
-        {/* ── RELATED FPS DRILLS ── */}
-        {!isFullscreen && (
-          <section className="mt-4 font-sans">
-            <h2 className="text-sm font-bold text-slate-400 uppercase tracking-wider mb-3 font-sans">
-              Related FPS Drills
-            </h2>
-            <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
-              {RELATED_DRILLS.map((drill) => (
-                <Link
-                  key={drill.id}
-                  href={drill.href}
-                  className="group bg-[#0c0c16] border border-white/5 hover:border-red-500/40 rounded-xl p-3.5 transition-all duration-200 hover:-translate-y-0.5 flex flex-col justify-between"
-                >
-                  <div>
-                    <div className="text-[10px] font-bold text-red-400 uppercase tracking-wider mb-1">{drill.cat}</div>
-                    <div className="text-xs font-bold text-white group-hover:text-red-300 transition-colors">{drill.name}</div>
-                    <div className="text-[11px] text-slate-400 mt-1 line-clamp-2 leading-relaxed">{drill.desc}</div>
-                  </div>
-                  <div className="text-[10px] font-bold text-slate-500 group-hover:text-red-400 mt-3 flex items-center gap-1 transition-colors">
-                    Train Drill <span>→</span>
-                  </div>
-                </Link>
-              ))}
-            </div>
-          </section>
-        )}
-
-        {/* ── FOOTER ── */}
-        {!isFullscreen && <DrillFooter />}
-
-      </div>
+      </main>
     </div>
   );
 }
 
 // === Subcomponents ===
-function StatCard({ icon, value, label, unit = '', accentColor = 'border-white/10' }) {
+function RuleItem({ num, text, highlight = '', result }) {
   return (
-    <div className={`rounded-xl border ${accentColor} bg-black backdrop-blur-md p-1.5 sm:p-2.5 text-center flex flex-col items-center justify-center transition-all duration-300 shadow-md hover:-translate-y-0.5 pointer-events-none font-sans`}>
-      <div className="w-6 h-6 sm:w-7 sm:h-7 rounded-lg bg-black border border-white/10 flex items-center justify-center mb-1 shadow-inner">
-        {icon}
+    <div className="flex items-center gap-2.5 sm:gap-3 bg-black px-3 py-2 sm:px-4 sm:py-2.5 rounded-xl border border-white/10 shadow-sm font-sans">
+      <div className="w-6 h-6 sm:w-7 sm:h-7 rounded-lg bg-white/10 border border-white/20 flex items-center justify-center text-white text-xs sm:text-sm font-black shadow flex-shrink-0">
+        {num}
       </div>
-      <p className="text-xs sm:text-lg lg:text-xl font-black tracking-tight text-white leading-none truncate w-full font-sans font-mono tabular-nums">
-        {value}<span className="text-[9px] sm:text-xs font-semibold ml-0.5 text-gray-400 font-sans">{unit}</span>
-      </p>
-      <p className="text-[8px] sm:text-[9.5px] font-bold uppercase tracking-wider text-gray-400 mt-1 truncate w-full">{label}</p>
-    </div>
-  );
-}
-
-function RuleItem({ num, color, text, highlight = '', result }) {
-  const colorClasses = {
-    red: 'bg-red-500/10 border-red-500/20 text-red-400',
-    orange: 'bg-orange-500/10 border-orange-500/20 text-orange-400',
-    blue: 'bg-blue-500/10 border-blue-500/20 text-blue-400',
-    green: 'bg-emerald-500/10 border-emerald-500/20 text-emerald-400',
-  };
-  const badgeClass = colorClasses[color] || 'bg-white/10 border-white/20 text-white';
-
-  return (
-    <div className="flex items-center gap-4 bg-black p-4 rounded-xl border border-white/10 shadow-sm">
-      <div className="w-8 h-8 rounded-xl bg-white/10 border border-white/20 flex items-center justify-center text-white text-base font-black shadow-lg flex-shrink-0">{num}</div>
-      <div className="flex-1 flex flex-col sm:flex-row sm:items-center justify-between gap-2">
-        <p className="text-sm font-medium text-gray-100 font-sans">
-          {text}{highlight && <span className="font-black font-sans text-white"> {highlight}</span>}
+      <div className="flex-1 min-w-0 flex items-center justify-between gap-2">
+        <p className="text-xs sm:text-sm font-medium text-gray-200 font-sans truncate">
+          {text}{highlight && <span className="font-bold text-white"> {highlight}</span>}
         </p>
-        <div className={`text-xs font-black px-3 py-1.5 rounded-lg border whitespace-nowrap shadow-inner tracking-wide text-center sm:text-left ${badgeClass}`}>
+        <div className="text-[11px] sm:text-xs font-bold px-2 py-0.5 sm:px-2.5 sm:py-1 rounded-md bg-[#050811] border border-white/10 text-white whitespace-nowrap shadow-inner flex-shrink-0">
           {result}
         </div>
       </div>
-    </div>
-  );
-}
-
-function RelatedCard({ href, title, desc }) {
-  return (
-    <Link href={href} className="group p-5 bg-black rounded-2xl border border-gray-800 hover:border-red-500/50 hover:bg-white/[0.02] transition-all flex flex-col justify-between">
-      <div>
-        <h4 className="font-bold text-white group-hover:text-red-400 transition-colors mb-1 text-base">{title}</h4>
-        <p className="text-xs text-gray-400 leading-relaxed line-clamp-2">{desc}</p>
-      </div>
-      <div className="flex items-center gap-1 mt-4 text-xs text-red-400 font-bold font-mono">
-        <span>TRY DRILL</span>
-        <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
-      </div>
-    </Link>
-  );
-}
-
-function FAQItem({ q, a }) {
-  return (
-    <div className="bg-[#05060b] border border-gray-800 rounded-xl p-5 hover:border-gray-700 transition-colors">
-      <h4 className="text-sm font-bold text-gray-200 mb-2">{q}</h4>
-      <p className="text-xs text-gray-200 leading-relaxed">{a}</p>
     </div>
   );
 }

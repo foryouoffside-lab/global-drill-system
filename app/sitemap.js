@@ -21,11 +21,14 @@
 //     earn or realistically can earn, measured in Search Console.
 
 import { DRILLS } from '../lib/drillsRegistry';
+import { LOCALES, DEFAULT_LOCALE, LOCALIZED_ROUTES, hasLocalizedRoute, localeUrl } from '../lib/i18n/locales';
 
 const BASE_URL = 'https://skilldrills.online';
 
 // Bump the entry for a section when that section's copy or drills genuinely change.
 const UPDATED = {
+  // The five locale trees went live together.
+  localized: '2026-09-01',
   home: '2026-08-21',
   directory: '2026-08-21',
   // Every hub was rewritten in the 2026-08-21 crawlability pass (SSR restored,
@@ -49,6 +52,36 @@ const UPDATED = {
 // 2026-08-25: title + H1 sub-line + internal anchor text retargeted onto
 // measured Bing search demand.
 const UPDATED_OVERRIDES = {
+  '/drills/physical/reflex-training/drop-catch': '2026-09-20',
+  '/drills/physical/reflex-training/quick-dodge': '2026-09-20',
+  '/drills/physical/reflex-training/reaction-chain': '2026-09-20',
+  '/drills/physical/balance-training/stability-challenge': '2026-09-20',
+  '/drills/physical/coordination/complex-pattern': '2026-09-20',
+  '/drills/physical/coordination/cross-body-movement': '2026-09-20',
+  '/drills/physical/coordination/dynamic-grid-evasion': '2026-09-20',
+  '/drills/physical/fitness/agility-ladder': '2026-09-20',
+  '/drills/physical/fitness/jump-sequence': '2026-09-20',
+  '/drills/physical/fitness/speed-drill': '2026-09-20',
+  '/drills/visual/depth-perception/distance-judgment': '2026-09-20',
+  '/drills/visual/reaction-speed/light-reaction': '2026-09-20',
+  '/drills/visual/reaction-speed/go/no-go': '2026-09-20',
+  '/drills/visual/visual-recognition/visual-search': '2026-09-20',
+  '/drills/visual-tracking/constant-slow-pursuit': '2026-09-20',
+  '/drills/visual-tracking/directional-chaos-pursuit': '2026-09-20',
+  '/drills/visual-tracking/dynamic-evasion-pursuit': '2026-09-20',
+  '/drills/visual-tracking/ghosting-suppress-pursuit': '2026-09-20',
+  '/drills/visual-tracking/infinity-pursuit': '2026-09-20',
+  '/drills/visual-tracking/momentum-teleport-pursuit': '2026-09-20',
+    '/drills/visual-tracking/peripheral-ping-pursuit': '2026-09-20',
+    '/drills/visual-tracking/predictive-pursuit': '2026-09-20',
+    '/drills/visual-tracking/sine-wave-pursuit': '2026-09-20',
+  '/drills/visual-tracking/spatial-shift-pursuit': '2026-09-20',
+  '/drills/visual-tracking/split-screen-tracking': '2026-09-20',
+  '/drills/visual-tracking/staircase-step': '2026-09-20',
+  '/drills/visual-tracking/strobe-prediction-pursuit': '2026-09-20',
+  '/drills/visual-tracking/triangular-pursuit': '2026-09-20',
+  '/drills/visual-tracking/zig-zag-path-pursuit': '2026-09-20',
+  '/drills/visual/tracking-accuracy/moving-target': '2026-09-20',
   '/drills/motor/movement-speed/rapid-tapping': '2026-08-25',
   '/drills/motor/movement-speed/keyboard-recognition': '2026-08-25',
   '/drills/motor/hand-eye-coordination/precision-flick-shot': '2026-08-25',
@@ -59,15 +92,19 @@ const UPDATED_OVERRIDES = {
   '/drills/memory/short-term-memory/color-sequence': '2026-08-25',
   '/drills/memory/short-term-memory/word-recall': '2026-08-25',
   '/drills/memory/spatial-memory/grid-memorization': '2026-08-25',
-  '/drills/physical/reflex-training/peripheral-threat-sweeper': '2026-08-25',
-  '/drills/visual/tracking-accuracy/pursuit-tracker': '2026-08-25',
-  // Hub titles retargeted the same day. /drills, /drills/visual and
+  '/drills/physical/reflex-training/peripheral-threat-sweeper': '2026-09-20',
+  '/drills/visual/tracking-accuracy/pursuit-tracker': '2026-09-20',
+  '/drills/visual/tracking-accuracy/multiple-targets': '2026-09-20',
+  '/drills/visual/visual-recognition/entropic-grid': '2026-09-20',
+  '/drills/visual/visual-recognition/rhythm-anomaly': '2026-09-20',
+  '/drills/visual': '2026-09-20',
+  // Hub titles retargeted the same day. /drills and /drills/visual-tracking
   // /drills/visual-tracking were deliberately left alone, so they are absent.
   '/drills/cognitive': '2026-08-25',
   '/drills/memory': '2026-08-25',
   '/drills/fps': '2026-08-25',
   '/drills/motor': '2026-08-25',
-  '/drills/physical': '2026-08-25',
+  '/drills/physical': '2026-09-20',
   '/drills/reaction-speed': '2026-08-25',
 };
 
@@ -128,14 +165,45 @@ export default async function sitemap() {
           HUB_PRIORITY[path]
         )
       ),
+    // About carries the entity description and the measurement methodology, so
+    // it ranks above the legal pages: it is the page that answers "who is making
+    // this claim", which is what both Google's quality guidance and the answer
+    // engines weight when deciding whether to cite a tool site at all.
+    entry('/about', UPDATED.legal, 'monthly', 0.5),
     // Low priority but genuinely indexable, and a site with no reachable legal
     // pages reads as low-trust to both search engines and users.
     entry('/privacy', UPDATED.legal, 'yearly', 0.3),
     entry('/terms', UPDATED.legal, 'yearly', 0.3),
-    // Google Play links this as the account-deletion URL, so it must stay
-    // reachable and indexable even though it has no search value.
     entry('/delete-account', UPDATED.legal, 'yearly', 0.3),
   ];
+
+  // Rule 1 applied to the locale trees: derive them from LOCALIZED_ROUTES
+  // rather than restating 55 URLs by hand, so a route that exists under
+  // app/pt but not app/ko (or vice versa) cannot silently ship as a 404 in
+  // the sitemap. LOCALIZED_ROUTES is the same list the language switcher and
+  // the header search resolve against.
+const LOCALIZED_PRIORITY = {
+    '/': 0.9,
+    '/drills': 0.9,
+    '/drills/fps': 0.9,
+    '/drills/motor/movement-speed/rapid-tapping': 0.9,
+    '/drills/reaction-speed/reaction-time-test': 0.9,
+    '/drills/reaction-speed/reflex-training-drill': 0.85,
+  };
+  const localizedEntries = LOCALES
+    .filter((loc) => loc !== DEFAULT_LOCALE)
+    .flatMap((loc) =>
+      LOCALIZED_ROUTES
+        .filter((route) => hasLocalizedRoute(loc, route))
+        .map((route) =>
+          entry(
+            localeUrl(loc, route),
+            UPDATED_OVERRIDES[route] ?? UPDATED.localized,
+            'weekly',
+            LOCALIZED_PRIORITY[route] ?? 0.8
+          )
+        )
+    );
 
   const drillEntries = DRILLS.map((drill) =>
     entry(
@@ -146,5 +214,5 @@ export default async function sitemap() {
     )
   );
 
-  return [...staticEntries, ...drillEntries];
+  return [...staticEntries, ...localizedEntries, ...drillEntries];
 }

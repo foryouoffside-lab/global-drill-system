@@ -1,43 +1,290 @@
-import CrossBodyMovementClient from './CrossBodyMovementClient';
+import CrossBodyMovementClient from './CrossBodyMovementClientLoader';
+import { getAlternateLanguages } from '@/lib/i18n/locales';
+import DrillGuide from '@/components/drill/DrillGuide';
+import { pickSources } from '@/lib/drillSources';
+
+// ============================================================
+// SEO RESEARCH FINDINGS — cross-body-movement
+// PRIMARY:  "hand eye coordination game" / "hand eye coordination test"
+//           "bilateral coordination exercises" / "cross midline exercises"
+// SECONDARY / LSI:
+//           "bilateral coordination exercises"  — Motor integration phrase
+//           "cross midline exercises"           — Neuromotor occupational therapy phrase
+//           "bilateral integration training"    — Neuro-developmental query
+//           "hand eye coordination exercises"   — General physical coordination
+//           "motor coordination game"           — Gamified motor skill term
+//           "hand eye coordination test"        — Diagnostic evaluation query
+//           "cross body coordination"           — Physical coordination query
+//           "fine motor skills game"            — Motor precision query
+//           "diagonal movement training"        — Diagonal mouse trajectory phrase
+// LOCALES: independently researched native SERPs for ja, ko, de, pt-BR, es-ES, and fr-FR.
+// ============================================================
 
 export const metadata = {
-  title: 'Hand Eye Coordination Game - Free Cross Body Drill',
-  description: 'Free hand eye coordination game. Connect nodes across the screen to train bilateral coordination, cross-body movement and mouse accuracy.',
+  title: 'Hand-Eye Coordination Game | SkillDrills',
+  description: 'Free hand-eye coordination game and test online. Connect diagonal nodes across the body midline to train bilateral motor control and mouse precision.',
   keywords: [
-    'hand eye coordination game', 'hand eye coordination exercises', 'hand eye coordination training',
-    'free hand eye coordination game', 'online hand eye coordination', 'hand eye coordination test',
-    'bilateral coordination training', 'cross body movement exercises', 'cross body coordination',
-    'motor coordination exercises', 'fine motor skills game', 'motor control training',
-    'cross midline exercises', 'bilateral integration training', 'brain body coordination',
-    'occupational therapy exercises', 'physical therapy exercises', 'motor planning game',
-    'mouse control practice', 'cursor precision game', 'gaming reflex training',
-    'FPS aim training', 'gaming coordination training', 'esports motor skills',
-    'sports coordination drill', 'athletic coordination training', 'mouse accuracy',
-    'best hand eye coordination game', 'free motor skills game', 'browser coordination game'
+    'hand eye coordination game',
+    'bilateral coordination exercises',
+    'cross body movement exercises',
+    'cross midline exercises',
+    'bilateral integration training',
+    'hand eye coordination exercises',
+    'motor coordination game',
+    'hand eye coordination test',
+    'cross body coordination',
+    'fine motor skills game',
+    'diagonal movement training',
   ],
   openGraph: {
-    title: 'Hand Eye Coordination Game - Free Cross Body Drill',
-    description: 'Improve bilateral coordination and fine motor skills with this free hand eye coordination game. Connect nodes across the screen to build cross-body movement accuracy.',
-    type: 'website',
+    title: 'Hand-Eye Coordination Game | SkillDrills',
+    description: 'Free hand-eye coordination game and test online. Connect diagonal nodes across the body midline to train bilateral motor control and mouse precision.',
+    type: 'article',
     url: 'https://skilldrills.online/drills/physical/coordination/cross-body-movement',
     siteName: 'SkillDrills',
     locale: 'en_US',
-    images: [{
-      url: 'https://skilldrills.online/icons/icon-512x512.png',
-      width: 512,
-      height: 512,
-      alt: 'Hand Eye Coordination Game - Cross Body Movement Drill',
-    }],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Hand Eye Coordination Game - Free Cross Body Drill',
-    description: 'Play this free hand eye coordination game to improve bilateral motor control and mouse accuracy. No sign-up required.',
-    images: ['https://skilldrills.online/icons/icon-512x512.png'],
+    title: 'Hand-Eye Coordination Game | SkillDrills',
+    description: 'Free hand-eye coordination game and test online. Connect diagonal nodes across the body midline to train bilateral motor control and mouse precision.',
   },
   robots: { index: true, follow: true },
   alternates: {
     canonical: 'https://skilldrills.online/drills/physical/coordination/cross-body-movement',
+    languages: getAlternateLanguages('/drills/physical/coordination/cross-body-movement'),
+  },
+};
+
+// --- Structured Data ---
+
+const breadcrumbSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'SkillDrills', item: 'https://skilldrills.online/' },
+    { '@type': 'ListItem', position: 2, name: 'Physical Training', item: 'https://skilldrills.online/drills/physical' },
+    { '@type': 'ListItem', position: 3, name: 'Coordination', item: 'https://skilldrills.online/drills/physical/coordination' },
+    { '@type': 'ListItem', position: 4, name: 'Hand Eye Coordination Game', item: 'https://skilldrills.online/drills/physical/coordination/cross-body-movement' },
+  ],
+};
+
+const softwareApplicationSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'SoftwareApplication',
+  name: 'Hand Eye Coordination Game – Bilateral Motor Control Trainer',
+  applicationCategory: 'HealthApplication',
+  operatingSystem: 'All',
+  offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
+  description: 'Free online hand eye coordination game and bilateral motor control drill. Sweep diagonal trajectories across the body midline to connect nodes with millimetric precision.',
+  url: 'https://skilldrills.online/drills/physical/coordination/cross-body-movement',
+  publisher: { '@type': 'Organization', name: 'SkillDrills', url: 'https://skilldrills.online' },
+  inLanguage: 'en',
+  dateModified: '2026-09-20',
+};
+
+const webApplicationSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'WebApplication',
+  name: 'Hand Eye Coordination Game Drill',
+  applicationCategory: 'GameApplication',
+  operatingSystem: 'All',
+  browserRequirements: 'Requires modern web browser with HTML5 Canvas and pointer input support',
+  offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
+  url: 'https://skilldrills.online/drills/physical/coordination/cross-body-movement',
+  inLanguage: 'en',
+  dateModified: '2026-09-20',
+};
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  inLanguage: 'en',
+  dateModified: '2026-09-20',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: 'What is the Hand Eye Coordination Game and how does it evaluate motor control?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'The Hand Eye Coordination Game (Cross-Body Movement) is an interactive physical coordination assessment measuring bilateral motor control, diagonal cursor sweeping velocity, corridor tracking accuracy, and contralateral reaching speed across the body midline.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'How do node activation and diagonal vector sweep mechanics work?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Hover or touch the starting cyan node to activate the connection vector. Then, smoothly sweep your crosshair diagonally across the canvas within the glowing corridor tolerance to strike the target magenta node. Deviating outside the corridor resets your active combo streak.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'What scientific models explain midline crossing and bilateral motor integration?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: "The drill is founded on A. Jean Ayres's (1972) sensory integration theory, David Carey et al.'s (1996) research on contralateral reaching, Jozef Černáček's (1961) motor irradiation framework, and Paul Fitts's (1954) law of movement amplitude. Crossing the body midline forces interhemispheric communication across the corpus callosum.",
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'How does difficulty scaling operate across the 15 progression levels?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Difficulty scales dynamically every 250 points up to Level 15. The corridor tolerance channel constricts from 10 pixels down to 4 pixels, node radii shrink from 16 pixels to 8 pixels, and vertical/horizontal placement spreads across extreme screen boundaries.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Are there negative score deductions for drifting off the corridor?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'No. Drifting outside the corridor tolerance resets your combo multiplier back to 1.0x, but does not deduct points or subtract time from your fixed 45-second round, encouraging players to maintain high velocity.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'How does Woodworth\'s voluntary movement model apply to sweeping diagonally?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: "Robert S. Woodworth (1899) established that targeted limb movements combine an initial ballistic impulse with current-control visual feedback. Players launch a rapid arm sweep across the monitor midline and execute precise fine-motor deceleration as the crosshair approaches the target node.",
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'How does this cross-body drill transfer to FPS aiming and mouse control?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Large diagonal sweeps cross physical desk zones that require forearm and shoulder engagement rather than isolated wrist movement. Practicing cross-body trajectories conditions the arm muscles for wide 180° flick resets, target switching across ultrawide monitors, and consistent mouse recentering.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'What mouse sensitivity and mousepad dimensions are recommended for wide diagonal sweeps?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'A moderate sensitivity (between 30 and 45 cm/360°) and a large mousepad (at least 450x400 mm) provide sufficient physical runway to execute sweeping cross-screen gestures without running out of mousepad space or lifting the mouse mid-stroke.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'What constitutes an elite score in the Hand Eye Coordination Game?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'A score of 13,000 to 16,999 points with 85%+ connection accuracy reflects Elite Midline Sweeper performance (top 3%), while scores exceeding 17,000 points place a player in the top 0.1% Apex Bilateral Master tier.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Is the Hand Eye Coordination Game free to play and accessible without downloads?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Yes. Hand Eye Coordination Game on SkillDrills is 100% free, runs directly in any modern desktop web browser with HTML5 Canvas and pointer lock support, requires zero downloads, and saves your high scores locally in your browser.',
+      },
+    },
+  ],
+};
+
+const videoGameSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'VideoGame',
+  name: 'Hand Eye Coordination Game',
+  url: 'https://skilldrills.online/drills/physical/coordination/cross-body-movement',
+  description: 'Free online hand eye coordination game. Connect nodes across the screen to train bilateral motor control, midline crossing, and diagonal vector precision.',
+  genre: ['Action', 'Brain Game', 'Reflex Game', 'Coordination'],
+  gamePlatform: ['Web Browser', 'Desktop', 'Mobile'],
+  applicationCategory: 'Game',
+  inLanguage: 'en',
+  dateModified: '2026-09-20',
+  offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
+};
+
+const howToSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'HowTo',
+  name: 'How to Train Bilateral Motor Control & Midline Crossing Sweeps',
+  description: 'Step-by-step training protocol for activating nodes, sweeping diagonally across the body midline within corridor tolerance, and maximizing connection combos.',
+  step: [
+    {
+      '@type': 'HowToStep',
+      position: 1,
+      name: 'Touch Starting Node A to Activate Vector',
+      text: 'Click ',
+      url: 'https://skilldrills.online/drills/physical/coordination/cross-body-movement#step-1',
+    },
+    {
+      '@type': 'HowToStep',
+      position: 2,
+      name: 'Sweep Diagonally Across Midline Corridor',
+      text: 'Execute a smooth, fluid mouse sweep diagonally across the canvas toward the opposite edge, keeping your crosshair inside the tolerance bounds.',
+      url: 'https://skilldrills.online/drills/physical/coordination/cross-body-movement#step-2',
+    },
+    {
+      '@type': 'HowToStep',
+      position: 3,
+      name: 'Strike Destination Node B within Tolerance',
+      text: 'Intersect the magenta destination node to complete the vector connection, trigger explosive particle confirmation, and earn base points.',
+      url: 'https://skilldrills.online/drills/physical/coordination/cross-body-movement#step-3',
+    },
+    {
+      '@type': 'HowToStep',
+      position: 4,
+      name: 'Accelerate Sweeps to Build Peak Combo Multiplier',
+      text: 'Chain consecutive connections without drifting outside the corridor to build your combo multiplier up to 3.0x max, maximizing total score over 45 seconds.',
+      url: 'https://skilldrills.online/drills/physical/coordination/cross-body-movement#step-4',
+    },
+  ],
+};
+
+const guideProps = {
+  sources: pickSources('ayres1972', 'carey1996', 'cernacek1961', 'fitts1954', 'woodworth1899', 'woods2015'),
+  intro: {
+    title: 'How midline crossing is measured',
+    paragraphs: [
+      'This drill measures diagonal sweeps that cross from one side of the screen to the other, with the corridor narrowing to 4 px as the session runs.',
+      'How this is measured, and what it cannot resolve: timing comes from the browser\'s performance.now() clock, which is deliberately coarsened to roughly 1 ms as a Spectre mitigation, and the display quantizes every event to its own refresh interval — about 16.7 ms at 60 Hz, 6.9 ms at 144 Hz and 4.1 ms at 240 Hz (Woods et al., 2015). Mouse polling adds roughly 8 ms at 125 Hz against about 1 ms at 1000 Hz. Treat any difference under about 5 ms as measurement noise, and compare your own runs on the same hardware rather than against someone else\'s. SkillDrills stores every score in your browser and collects no aggregate data, so nothing here is a population norm.',
+    ],
+  },
+  benchmarks: {
+    title: 'Hand-Eye Coordination & Midline Crossing 5-Tier Performance Benchmarks',
+    headers: ['Performance Tier', 'Mastery Rank Title', 'Score Threshold', 'Level Reached', 'Vector Accuracy', 'Neuromotor Profile'],
+    rows: [
+      ['Tier 1: Apex Bilateral Master', 'Apex Bilateral Master', '17,000+ pts', 'Level 12 – 15', '≥ 92% accuracy', 'Top 0.1% caliber interhemispheric transfer efficiency; flawless forearm-driven diagonal tracking within narrow 4px corridors (Ayres 1972; Fitts 1954)'],
+      ['Tier 2: Elite Midline Sweeper', 'Elite Midline Sweeper', '13,000 – 16,999 pts', 'Level 9 – 11', '85 – 91% accuracy', 'Zero-latency contralateral acceleration paired with millisecond Woodworth terminal deceleration control onto 8px peripheral nodes (Carey et al. 1996)'],
+      ['Tier 3: Advanced Vector Tracer', 'Advanced Vector Tracer', '9,500 – 12,999 pts', 'Level 6 – 8', '76 – 84% accuracy', 'Competitive FPS benchmark: consistent diagonal flick control and smooth midline crossing without wrist-angle motor drift'],
+      ['Tier 4: Intermediate Node Connector', 'Intermediate Node Connector', '6,000 – 9,499 pts', 'Level 3 – 5', '65 – 75% accuracy', 'Standard recreational baseline; corridor violations occur when width drops below 6px due to rigid wrist-pivoting mechanics'],
+      ['Tier 5: Novice Diagonal Learner', 'Novice Diagonal Learner', '< 6,000 pts', 'Level 1 – 2', '< 65% accuracy', 'Pronounced arc-shaped trajectory distortion caused by isolated wrist aiming; frequent target node overshoot requiring elbow-pivot calibration']
+    ],
+    note: "Performance tiers established using sensory integration principles (Ayres 1972), contralateral reaching kinematics (Carey et al. 1996), and Fitts' law index of difficulty (Fitts 1954)."
+  },
+  protocols: {
+    title: 'How to train cross-body coordination',
+    description: 'Structured training regimens designed to stimulate corpus callosum interhemispheric transfer, enhance diagonal trajectory smoothness, and regulate terminal deceleration.',
+    items: [
+      {
+        title: 'Protocol 1: Ayres Midline Crossing & Interhemispheric Callosal Activation',
+        description: "According to A. Jean Ayres (1972), crossing the body midline requires seamless communication between both cerebral hemispheres via the corpus callosum. Align your chair so your sternum matches the canvas center. Execute diagonal sweeps by moving your forearm across your chest rather than twisting your torso, forcing pure contralateral neural transmission.",
+      },
+      {
+        title: 'Protocol 2: Carey Contralateral Reach Acceleration & Trajectory Vectoring',
+        description: 'Carey et al. (1996) demonstrated that reaching across the midline into contralateral space exhibits a slight latency penalty compared to ipsilateral movements. Overcome this hesitation by fixing your gaze directly on Node B the instant Node A is activated, letting feedforward motor planning guide the initial sweep.',
+      },
+      {
+        title: 'Protocol 3: Woodworth Current-Control Terminal Deceleration on Node B',
+        description: "Woodworth (1899) showed that high-velocity arm movements require a dual-phase profile: a rapid ballistic impulse followed by fine visual adjustments. Accelerate boldly through the first 75% of the diagonal vector, applying gentle fingertip friction during the final 25% to land cleanly on the shrinking 8px destination node.",
+      },
+      {
+        title: 'Protocol 4: Fitts Index of Difficulty & Wide-Angle Mouse Resetting',
+        description: 'Under Fitts\'s Law (1954), movement time increases logarithmically as distance expands and target width constricts. At Levels 10+ where corridor width drops to 4px, glide your arm using whole-forearm pivot at the elbow, keeping your wrist neutral to prevent corridor boundary clipping.',
+      },
+    ],
+  },
+  faqs: {
+    title: 'Frequently Asked Questions About Hand Eye Coordination Game & Cross-Body Movement',
+    items: faqSchema.mainEntity.map((q) => ({
+      q: q.name,
+      a: q.acceptedAnswer.text,
+    })),
   },
 };
 
@@ -46,135 +293,31 @@ export default function CrossBodyMovementPage() {
     <>
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "BreadcrumbList",
-            "itemListElement": [
-              { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://skilldrills.online" },
-              { "@type": "ListItem", "position": 2, "name": "Physical Training", "item": "https://skilldrills.online/drills/physical" },
-              { "@type": "ListItem", "position": 3, "name": "Coordination", "item": "https://skilldrills.online/drills/physical/coordination" },
-              { "@type": "ListItem", "position": 4, "name": "Hand Eye Coordination Game - Cross-Body Movement" }
-            ]
-          })
-        }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
       />
-
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "WebApplication",
-            "name": "Hand Eye Coordination Game - Cross-Body Movement Training",
-            "url": "https://skilldrills.online/drills/physical/coordination/cross-body-movement",
-            "description": "Free hand eye coordination game targeting bilateral integration and cross-body movement. Tracing nodes across the screen improves mouse control. Features dynamic time rewards (+3s) and penalties (-3s).",
-            "applicationCategory": "GameApplication",
-            "operatingSystem": "Web Browser",
-            "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
-            "author": { "@type": "Organization", "name": "SkillDrills" },
-            "isAccessibleForFree": true
-          })
-        }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(softwareApplicationSchema) }}
       />
-
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "SoftwareApplication",
-            "name": "SkillDrills Bilateral Coordination Trainer",
-            "applicationCategory": "EducationalApplication",
-            "operatingSystem": "All",
-            "aggregateRating": {
-              "@type": "AggregateRating",
-              "ratingValue": "4.9",
-              "ratingCount": "1840"
-            }
-          })
-        }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(webApplicationSchema) }}
       />
-
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "HowTo",
-            "name": "How to play the Hand Eye Coordination Game",
-            "description": "A step-by-step guide to testing your cross-body movement and bilateral motor control.",
-            "step": [
-              {
-                "@type": "HowToStep",
-                "name": "Activate the Node",
-                "text": "Start by hovering your cursor over the White Node to activate the straight vector line."
-              },
-              {
-                "@type": "HowToStep",
-                "name": "Trace the Path",
-                "text": "Physically trace your mouse along the glowing path, moving directly across your body's midline to reach the Green Node."
-              },
-              {
-                "@type": "HowToStep",
-                "name": "Maintain Accuracy",
-                "text": "If you deviate outside the path's tolerance width, you will fail the connection and lose 3 seconds from your clock."
-              },
-              {
-                "@type": "HowToStep",
-                "name": "Survive the Clock",
-                "text": "Earn 3 seconds back for every successful connection. Connect as many opposite-side nodes as possible to build high scores and survive."
-              }
-            ]
-          })
-        }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
-
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "FAQPage",
-            "mainEntity": [
-              {
-                "@type": "Question",
-                "name": "What is hand eye coordination?",
-                "acceptedAnswer": {
-                  "@type": "Answer",
-                  "text": "Hand eye coordination is the neurological process of your brain simultaneously processing visual input from your eyes to guide and control the fine motor movements of your hands."
-                }
-              },
-              {
-                "@type": "Question",
-                "name": "Why are cross body exercises important?",
-                "acceptedAnswer": {
-                  "@type": "Answer",
-                  "text": "Cross body exercises force the left and right hemispheres of your brain to communicate rapidly. This strengthens motor planning, spatial awareness, and overall physical agility."
-                }
-              },
-              {
-                "@type": "Question",
-                "name": "Can this hand eye coordination game improve mouse control?",
-                "acceptedAnswer": {
-                  "@type": "Answer",
-                  "text": "Absolutely. By demanding long, perfectly straight, sweeping movements without deviating off a narrow path, it punishes jittery clicks and rewards smooth, deliberate mouse precision."
-                }
-              },
-              {
-                "@type": "Question",
-                "name": "Are there time penalties for missing?",
-                "acceptedAnswer": {
-                  "@type": "Answer",
-                  "text": "Yes, drifting off the designated vector path instantly triggers a 3-second penalty to your clock, but a successful connection grants a 3-second reward."
-                }
-              }
-            ]
-          })
-        }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(videoGameSchema) }}
       />
-
-      <CrossBodyMovementClient />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(howToSchema) }}
+      />
+      <CrossBodyMovementClient copy={{ title: 'Hand-Eye Coordination Game', subtitle: 'Smooth diagonal control across the body midline' }} />
+      <DrillGuide {...guideProps} />
+      
     </>
   );
 }

@@ -1,12 +1,11 @@
 'use client';
 
 import React, { useState, useEffect, useRef, useCallback } from 'react';
-import Link from 'next/link';
 
 import {
   Volume2, VolumeX,
-  Play, RefreshCw, Target,
-  Share2, LogOut, RotateCw, Eye, Users, TrendingUp, Zap, ZapOff, Brain, Crosshair, Trophy
+  RefreshCw,
+  Share2, LogOut, Users, TrendingUp, Zap, ZapOff, Brain, Crosshair
 } from 'lucide-react';
 
 import generateShareCard, { shareScoreCard } from '../../../../../components/ShareScoreCard';
@@ -22,8 +21,8 @@ import DrillCountdown from '../../../../../components/drill/DrillCountdown';
 import DrillAccordion from '../../../../../components/drill/DrillAccordion';
 import DrillFlashOverlay from '../../../../../components/drill/DrillFlashOverlay';
 import DrillRuleItem from '../../../../../components/drill/DrillRuleItem';
-import DrillFAQItem from '../../../../../components/drill/DrillFAQItem';
 import FpsStartCard from '../../../../../components/drill/FpsStartCard';
+import useImmersiveMode from '@/lib/useImmersiveMode';
 
 const DRILL_DURATION = 45; // 45 seconds duration
 const POINTS_PER_HIT = 150;
@@ -31,15 +30,6 @@ const POINTS_PER_LEVEL = 750; // 5 finds per level, matching the old cadence
 const ELITE_SCORE = 1000; // Target score for S+ rating (rebalanced after combo removal)
 const STORAGE_KEY = 'skilldrills_visual_entropic_grid_v4';
 const CHARS = "ABCDEFGHJKLMNPQRSTUVWXYZ23456789";
-
-const RELATED_DRILLS = [
-  { id: "visual-search", name: "Visual Search", cat: "Visual Recognition", desc: "Conjunctive search for target symbols among noise.", href: "/drills/visual/visual-recognition/visual-search" },
-  { id: "rhythm-anomaly", name: "Rhythm Anomaly", cat: "Visual Recognition", desc: "Temporal anomaly detection & visual flash tracking.", href: "/drills/visual/visual-recognition/rhythm-anomaly" },
-  { id: "moving-target", name: "Moving Target Pro", cat: "Visual Tracking", desc: "Kinetic visual tracking and smooth pursuit interception.", href: "/drills/visual/tracking-accuracy/moving-target" },
-  { id: "multiple-targets", name: "Multiple Targets", cat: "Visual Tracking", desc: "Multi-object tracking & visual working memory.", href: "/drills/visual/tracking-accuracy/multiple-targets" },
-  { id: "pursuit-tracker", name: "Pursuit Tracker", cat: "Visual Tracking", desc: "Smooth pursuit tracking accuracy and velocity alignment.", href: "/drills/visual/tracking-accuracy/pursuit-tracker" },
-  { id: "distance-judgment", name: "Distance Judgment Pro", cat: "Depth Perception", desc: "3D stereoscopic depth estimation & intercept timing.", href: "/drills/visual/depth-perception/distance-judgment" }
-];
 
 const getSavedData = () => {
   try {
@@ -60,9 +50,10 @@ const saveData = (data) => {
 const getRandomChar = () => CHARS[Math.floor(Math.random() * CHARS.length)];
 const getRandomString = () => getRandomChar() + getRandomChar();
 
-export default function EntropicGridClient() {
+export default function EntropicGridClient({ copy } = {}) {
   const [gameState, setGameState] = useState('start'); // 'start' | 'countdown' | 'playing' | 'gameOver'
   const [isFullscreen, setIsFullscreen] = useState(false);
+  useImmersiveMode(isFullscreen); // locks the page behind while the drill fills the screen
   const [soundEnabled, setSoundEnabled] = useState(true);
   const [flashEnabled, setFlashEnabled] = useState(true);
   const [openAccordion, setOpenAccordion] = useState(null);
@@ -123,13 +114,6 @@ export default function EntropicGridClient() {
     }
   }, []);
 
-  // Fullscreen change listener
-  useEffect(() => {
-    const handleFullscreenChange = () => setIsFullscreen(!!document.fullscreenElement);
-    document.addEventListener('fullscreenchange', handleFullscreenChange);
-    return () => document.removeEventListener('fullscreenchange', handleFullscreenChange);
-  }, []);
-
   const clearGameTimeouts = useCallback(() => {
     gameTimeoutsRef.current.forEach(clearTimeout);
     gameTimeoutsRef.current = [];
@@ -146,9 +130,7 @@ export default function EntropicGridClient() {
     startingRef.current = false;
     gameActiveRef.current = false;
 
-    if (document.fullscreenElement) {
-      await document.exitFullscreen().catch(() => {});
-    }
+    setIsFullscreen(false);
     setGameState('start');
   }, [clearGameTimeouts]);
 
@@ -181,7 +163,7 @@ export default function EntropicGridClient() {
       accuracy: finalAccuracy,
       perfectHits: e.perfectHits,
       missedClicks: e.missedClicks,
-      finalLevel: e.level,
+      finalLevel: Math.floor(e.level),
       grade,
     });
 
@@ -193,7 +175,7 @@ export default function EntropicGridClient() {
 
     const updatedData = {
       bestScore: Math.max(prevSaved.bestScore, e.score),
-      bestLevel: Math.max(prevSaved.bestLevel, e.level),
+      bestLevel: Math.max(prevSaved.bestLevel, Math.floor(e.level)),
       totalSessions: (prevSaved.totalSessions || 0) + 1,
     };
     saveData(updatedData);
@@ -348,12 +330,7 @@ export default function EntropicGridClient() {
       missedClicks: 0,
     };
 
-    // Auto Fullscreen on Start
-    try {
-      if (containerRef.current && !document.fullscreenElement) {
-        await containerRef.current.requestFullscreen();
-      }
-    } catch (e) {}
+    setIsFullscreen(true);
 
     // Countdown sequence: 3 -> 2 -> 1 -> GO
     setGameState('countdown');
@@ -417,6 +394,7 @@ export default function EntropicGridClient() {
   }, [applyEntropyNoise, clearGameTimeouts, endGame, generateGrid]);
 
   const shareScore = useCallback(async () => {
+    setIsFullscreen(false);
     const url = 'https://skilldrills.online/drills/visual/visual-recognition/entropic-grid';
     try {
       const canvas = generateShareCard({
@@ -446,39 +424,36 @@ export default function EntropicGridClient() {
       <main className="flex-1 max-w-6xl w-full mx-auto px-4 py-6 flex flex-col gap-6">
         {/* Title */}
         {!isFullscreen && (
-          <div className="text-center">
+          <div className="text-left">
             <h1 className="text-2xl sm:text-3xl font-black tracking-tight text-white">
-              ENTROPIC GRID
-              <span data-seo-kw="1" className="block text-sm font-semibold text-slate-400 mt-1 normal-case tracking-normal">
-                Entropic Grid Visual Search
-              </span>
+              <span data-seo-kw="1">{copy?.title || "Entropic Grid Visual Search"}</span>
             </h1>
-            <p className="text-xs text-slate-400 mt-1">
-              Visual Noise Suppression & Code Recognition
+            <p className="text-sm text-slate-400 mt-1">
+              A visual attention test measures how fast you can find a target among competing items — here, target codes hidden in a 100-cell field.
             </p>
           </div>
         )}
 
         {/* Live Stat Cards */}
         {!isFullscreen && (
-          <div className="grid grid-cols-4 gap-2.5 max-w-2xl mx-auto w-full">
-            <div className="bg-[#0d0d18] border border-white/5 rounded-xl p-2.5 text-center">
+          <div className="grid grid-cols-4 gap-2 w-full">
+            <div className="bg-[#0d0d18] border border-white/5 rounded-xl p-3 text-center">
               <div className="text-[10px] uppercase font-bold text-slate-500 tracking-wider">Score</div>
-              <div className="text-lg sm:text-xl font-black text-blue-400 tabular-nums">{uiScore}</div>
+              <div className="text-base sm:text-lg font-black text-blue-400 tabular-nums">{uiScore}</div>
             </div>
-            <div className="bg-[#0d0d18] border border-white/5 rounded-xl p-2.5 text-center">
+            <div className="bg-[#0d0d18] border border-white/5 rounded-xl p-3 text-center">
               <div className="text-[10px] uppercase font-bold text-slate-500 tracking-wider">Time</div>
-              <div className={`text-lg sm:text-xl font-black tabular-nums ${uiTimeLeft <= 10 ? 'text-red-400 animate-pulse' : 'text-white'}`}>
+              <div className={`text-base sm:text-lg font-black tabular-nums ${uiTimeLeft <= 10 ? 'text-red-400 animate-pulse' : 'text-white'}`}>
                 {uiTimeLeft}s
               </div>
             </div>
-            <div className="bg-[#0d0d18] border border-white/5 rounded-xl p-2.5 text-center">
+            <div className="bg-[#0d0d18] border border-white/5 rounded-xl p-3 text-center">
               <div className="text-[10px] uppercase font-bold text-slate-500 tracking-wider">Level</div>
-              <div className="text-lg sm:text-xl font-black text-indigo-400 tabular-nums">L{level}</div>
+              <div className="text-base sm:text-lg font-black text-indigo-400 tabular-nums">L{level}</div>
             </div>
-            <div className="bg-[#0d0d18] border border-white/5 rounded-xl p-2.5 text-center">
+            <div className="bg-[#0d0d18] border border-white/5 rounded-xl p-3 text-center">
               <div className="text-[10px] uppercase font-bold text-slate-500 tracking-wider">Best Score</div>
-              <div className="text-lg sm:text-xl font-black text-amber-400 tabular-nums">{bestScore}</div>
+              <div className="text-base sm:text-lg font-black text-amber-400 tabular-nums">{bestScore}</div>
             </div>
           </div>
         )}
@@ -576,7 +551,6 @@ export default function EntropicGridClient() {
                     <button
                       key={index}
                       onPointerDown={(e) => handleCellClick(index, e)}
-                      onClick={(e) => handleCellClick(index, e)}
                       className={`w-full h-full rounded-md border flex items-center justify-center font-mono font-bold text-[9px] sm:text-[11px] md:text-xs select-none transition-all duration-100 cursor-pointer ${bgClass}`}
                     >
                       {cell.text}
@@ -595,14 +569,6 @@ export default function EntropicGridClient() {
               accent="blue"
               title="Entropic Grid"
               subtitle="Visual Noise Suppression • Target Recognition"
-              rules={[
-                { icon: Target, accent: 'blue', title: 'Find Target Code', text: 'Scan noisy letter grid to locate target code pair (+150 PTS)' },
-                { icon: Zap, accent: 'cyan', title: 'Dynamic Noise Reshuffle', text: 'Distractor grid elements reshuffle every 700ms under timed pressure' },
-              ]}
-              stats={[
-                { icon: Trophy, label: 'Best Score', value: bestScore, color: 'text-white', accent: 'slate' },
-                { icon: TrendingUp, label: 'Best Level', value: `Lv. ${bestLevel}`, color: 'text-blue-400', accent: 'blue' },
-              ]}
               isTouchOnlyDevice={false}
               onStart={enterDrill}
             />
@@ -696,9 +662,9 @@ export default function EntropicGridClient() {
               onToggle={() => setOpenAccordion(openAccordion === 'rules' ? null : 'rules')}
             >
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <DrillRuleItem num="1" text="Find Target Code Cell" highlight="+150 PTS" result="Target Match" />
-                <DrillRuleItem num="2" text="Progressive Difficulty" highlight="Up to 6 Live Targets" result="Guaranteed placements grow with level" />
-                <DrillRuleItem num="3" text="Entropy Noise Engine" highlight="700ms Regeneration" result="Dynamic visual noise" />
+                <DrillRuleItem num="1" text="Find Target Code" highlight="Scan Noisy Letter Grid" result="+150 PTS per target code pair" />
+                <DrillRuleItem num="2" text="Dynamic Noise Reshuffle" highlight="700ms Regeneration" result="Distractors reshuffle continuously" />
+                <DrillRuleItem num="3" text="Progressive Difficulty" highlight="Up to 6 Live Targets" result="Guaranteed placements grow with level" />
                 <DrillRuleItem num="4" text="Miss / Timeout" highlight="Zero Penalties" result="No score or time loss" />
               </div>
             </DrillAccordion>
@@ -711,11 +677,11 @@ export default function EntropicGridClient() {
             >
               <div className="space-y-8">
                 <section>
-                  <h4 className="text-base font-bold text-white mb-2 flex items-center gap-2">
+                  <h3 className="text-base font-bold text-white mb-2 flex items-center gap-2">
                     <Brain className="w-4 h-4 text-blue-400" /> What Is Entropic Grid Training?
-                  </h4>
+                  </h3>
                   <p className="text-sm leading-relaxed mb-3">
-                    <strong>Entropic Grid Training</strong> is an advanced visual search and concentration drill designed to measure visual noise suppression capacity. The <strong>Entropic Grid drill</strong> presents a 100-cell alphanumeric grid with dynamic entropy noise continuously regenerating background characters, testing your ability to isolate and click specific 2-character targets.
+                    <strong>Entropic Grid Training</strong> is an advanced visual search and concentration drill designed to measure visual noise suppression capacity. The <strong>Entropic Grid drill</strong> presents a 100-cell alphanumeric grid with dynamic entropy noise continuously regenerating background characters, testing your ability to isolate and click specific 2-character targets. How long that takes depends less on the number of items than on similarity — search slows as the target resembles its distractors and as the distractors differ from each other (Duncan &amp; Humphreys, 1989; Treisman &amp; Gelade, 1980). Here the background regenerates every 700 ms, so the display never settles into a pattern you can memorise.
                   </p>
                   <p className="text-sm leading-relaxed">
                     By practicing <strong>peripheral visual noise filtering</strong>, you expand your visual search field and increase target recognition speed under high-distraction environments.
@@ -726,21 +692,21 @@ export default function EntropicGridClient() {
                   <div className="p-4 rounded-xl border border-gray-800 bg-white/[0.02]">
                     <div className="flex items-center gap-2.5 mb-2">
                       <div className="w-7 h-7 rounded-lg bg-blue-600 flex items-center justify-center"><Users className="w-3.5 h-3.5 text-white" /></div>
-                      <h5 className="text-xs font-bold text-white">Who Should Use This?</h5>
+                      <h4 className="text-xs font-bold text-white">Who Should Use This?</h4>
                     </div>
                     <p className="text-xs text-gray-300 leading-relaxed">Gamers improving visual scanning speed, pilots & drivers enhancing visual focus under noise, and professionals building concentration stamina.</p>
                   </div>
                   <div className="p-4 rounded-xl border border-gray-800 bg-white/[0.02]">
                     <div className="flex items-center gap-2.5 mb-2">
                       <div className="w-7 h-7 rounded-lg bg-cyan-600 flex items-center justify-center"><TrendingUp className="w-3.5 h-3.5 text-white" /></div>
-                      <h5 className="text-xs font-bold text-white">Skills Improved</h5>
+                      <h4 className="text-xs font-bold text-white">Skills Improved</h4>
                     </div>
                     <p className="text-xs text-gray-300 leading-relaxed">Visual search speed, selective attention, visual noise filtering, target recognition, and sustained concentration stamina.</p>
                   </div>
                   <div className="p-4 rounded-xl border border-gray-800 bg-white/[0.02]">
                     <div className="flex items-center gap-2.5 mb-2">
                       <div className="w-7 h-7 rounded-lg bg-purple-600 flex items-center justify-center"><Zap className="w-3.5 h-3.5 text-white" /></div>
-                      <h5 className="text-xs font-bold text-white">Quadrant Scanning</h5>
+                      <h4 className="text-xs font-bold text-white">Quadrant Scanning</h4>
                     </div>
                     <p className="text-xs text-gray-300 leading-relaxed">Scan the 100-cell grid systematically in 4 quadrants to rapidly isolate target codes despite background noise.</p>
                   </div>
@@ -748,50 +714,7 @@ export default function EntropicGridClient() {
 
               </div>
             </DrillAccordion>
-
-            <DrillAccordion
-              id="faq"
-              title="Frequently Asked Questions"
-              isOpen={openAccordion === 'faq'}
-              onToggle={() => setOpenAccordion(openAccordion === 'faq' ? null : 'faq')}
-            >
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <DrillFAQItem q="What is the Entropic Grid Drill?" a="A free visual search and concentration exercise. Find target 2-character codes on a 100-cell grid while entropy noise continuously reshuffles background cells." />
-                <DrillFAQItem q="How does progressive difficulty work?" a="Every 5 targets found you level up, the target code swaps to a new 12-second cycle, and the number of guaranteed live target cells on the grid grows (up to 6)." />
-                <DrillFAQItem q="Are there negative score or time penalties?" a="No. Tapping a wrong cell never deducts score points or reduces remaining timer seconds — the cell just flashes red and you keep scanning." />
-                <DrillFAQItem q="Does difficulty decrease on mistakes?" a="No. Your level only ever goes up — a mistake never takes you back down, so you can safely master your current grid size." />
-                <DrillFAQItem q="How long does each drill session last?" a="Each round is timed for exactly 45 seconds of continuous focus." />
-                <DrillFAQItem q="Do I need to sign up?" a="No registration required. This drill runs directly in your browser with instant response." />
-              </div>
-            </DrillAccordion>
           </div>
-        )}
-
-        {/* RELATED DRILLS GRID */}
-        {!isFullscreen && (
-          <section className="mt-4">
-            <h2 className="text-sm font-bold text-slate-400 uppercase tracking-wider mb-3">
-              Related Visual Drills
-            </h2>
-            <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
-              {RELATED_DRILLS.map((drill) => (
-                <Link
-                  key={drill.id}
-                  href={drill.href}
-                  className="group bg-[#0c0c16] border border-white/5 hover:border-blue-500/40 rounded-xl p-3.5 transition-all duration-200 hover:-translate-y-0.5 flex flex-col justify-between"
-                >
-                  <div>
-                    <div className="text-[10px] font-bold text-blue-400 uppercase tracking-wider mb-1">{drill.cat}</div>
-                    <div className="text-xs font-bold text-white group-hover:text-blue-300 transition-colors">{drill.name}</div>
-                    <div className="text-[11px] text-slate-400 mt-1 line-clamp-2 leading-relaxed">{drill.desc}</div>
-                  </div>
-                  <div className="text-[10px] font-bold text-slate-500 group-hover:text-blue-400 mt-3 flex items-center gap-1 transition-colors">
-                    Train Drill <span>→</span>
-                  </div>
-                </Link>
-              ))}
-            </div>
-          </section>
         )}
 
         {/* SITE FOOTER */}

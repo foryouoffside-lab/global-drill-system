@@ -2,47 +2,57 @@
 
 import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
-import { Brain, Target, Star, Clock, Play, Eye, Zap, Home, ChevronRight, Cpu, Sparkles } from "lucide-react";
+import {
+  ArrowLeft,
+  Brain,
+  Layers,
+  Zap,
+  Home,
+  ChevronRight,
+  Sparkles,
+  Shuffle,
+  Target,
+  Clock,
+  ShieldCheck
+} from "lucide-react";
 import { DRILLS } from "@/lib/drillsRegistry";
 import { getDifficultyRank } from "@/lib/scoringEngine";
+import { getDrillTagline, sortByInterest } from "@/lib/drillCatalog";
 import SiteFooter from "@/components/SiteFooter";
 import Reveal from "@/components/Reveal";
+import DrillCarousel from "@/components/drill/DrillCarousel";
 import StickyMobileCta from "@/components/StickyMobileCta";
-import ResetDrillButton from "@/components/drill/ResetDrillButton";
+import AdjacentHubs from "@/components/AdjacentHubs";
+import { useTranslation } from "@/lib/i18n/useTranslation";
+import { hasLocalizedRoute } from "@/lib/i18n/locales";
+import { getLocalizedDrill } from "@/lib/i18n/drillNames";
+import { isIdleFrameSkippable } from "@/lib/performance";
 
-const cogDrills = DRILLS.filter(d => d.category === 'cognitive');
+const cogDrills = DRILLS.filter((d) => d.category === "cognitive");
 
 const FOLDER_TO_STORAGE_KEY = {
-  'concentration-stamina': 'skilldrills_concentration_stamina_v3',
-  'divided-attention': 'skilldrills_divided_attention_v7',
-  'multi-tasking': 'skilldrills_multi_tasking_v7',
-  'concentration-grid': 'skilldrills_concentration_grid_v4',
-  'distraction-fighter': 'skilldrills_distraction_fighter_v9',
-  'reaction-time': 'skilldrills_reaction_time_v7',
-  'symbol-matching': 'skilldrills_symbol_matching_v7',
-  'rsvp-reader': 'skilldrills_rsvp_reader_v8',
+  "concentration-stamina": "skilldrills_concentration_stamina_v3",
+  "divided-attention": "skilldrills_divided_attention_v7",
+  "multi-tasking": "skilldrills_multi_tasking_v7",
+  "concentration-grid": "skilldrills_concentration_grid_v4",
+  "distraction-fighter": "skilldrills_distraction_fighter_v9",
+  "reaction-time": "skilldrills_reaction_time_v7",
+  "symbol-matching": "skilldrills_symbol_matching_v7",
+  "rsvp-reader": "skilldrills_rsvp_reader_v8",
 };
 
 const cognitiveCategories = [
   {
-    name: "Attention Training",
-    folderName: "attention",
-    icon: Eye,
-    color: "violet",
-    bgColor: "bg-violet-500/10 border-violet-500/20 text-violet-400",
-    textColor: "text-violet-400",
-    description: "Train divided, selective, and sustained attention with structured focus challenges.",
-    drills: cogDrills.filter(d => ['divided-attention', 'multi-tasking', 'concentration-stamina'].includes(d.folderName)).sort((a, b) => getDifficultyRank(a.difficulty) - getDifficultyRank(b.difficulty))
-  },
-  {
-    name: "Focus & Concentration",
+    name: "Focus & Inhibition",
     folderName: "focus",
     icon: Target,
     color: "purple",
     bgColor: "bg-purple-500/10 border-purple-500/20 text-purple-400",
     textColor: "text-purple-400",
-    description: "Build deep work stamina, resist distractions, and stay lock-in ready.",
-    drills: cogDrills.filter(d => ['concentration-grid', 'distraction-fighter'].includes(d.folderName)).sort((a, b) => getDifficultyRank(a.difficulty) - getDifficultyRank(b.difficulty))
+    description: "Train selective focus, suppress distractions, and master inhibitory control",
+    drills: cogDrills
+      .filter((d) => ["distraction-fighter", "concentration-grid"].includes(d.folderName))
+      .sort((a, b) => getDifficultyRank(a.difficulty) - getDifficultyRank(b.difficulty)),
   },
   {
     name: "Processing Speed",
@@ -51,18 +61,34 @@ const cognitiveCategories = [
     color: "purple",
     bgColor: "bg-purple-500/10 border-purple-500/20 text-purple-400",
     textColor: "text-purple-400",
-    description: "Reaction time tests, cognitive flexibility, and symbol matching exercises.",
-    drills: cogDrills.filter(d => ['reaction-time', 'symbol-matching', 'rsvp-reader'].includes(d.folderName)).sort((a, b) => getDifficultyRank(a.difficulty) - getDifficultyRank(b.difficulty))
+    description: "Accelerate visual identification, rapid recognition, and decision speed",
+    drills: cogDrills
+      .filter((d) => ["symbol-matching", "reaction-time", "rsvp-reader"].includes(d.folderName))
+      .sort((a, b) => getDifficultyRank(a.difficulty) - getDifficultyRank(b.difficulty)),
+  },
+  {
+    name: "Attention & Task Switching",
+    folderName: "attention",
+    icon: Shuffle,
+    color: "purple",
+    bgColor: "bg-purple-500/10 border-purple-500/20 text-purple-400",
+    textColor: "text-purple-400",
+    description: "Enhance divided attention, multi-tasking, and vigilance endurance",
+    drills: cogDrills
+      .filter((d) => ["divided-attention", "multi-tasking", "concentration-stamina"].includes(d.folderName))
+      .sort((a, b) => getDifficultyRank(a.difficulty) - getDifficultyRank(b.difficulty)),
   },
 ];
 
-function handleCardMouseMove(e) {
-  const rect = e.currentTarget.getBoundingClientRect();
-  e.currentTarget.style.setProperty('--mx', `${e.clientX - rect.left}px`);
-  e.currentTarget.style.setProperty('--my', `${e.clientY - rect.top}px`);
-}
+// Flat, interest-ordered list for the carousel picker
+const orderedCognitiveDrills = sortByInterest(
+  cognitiveCategories.flatMap((category) =>
+    category.drills.map((drill) => ({ ...drill, icon: category.icon }))
+  )
+);
 
-export default function CognitiveHubClient() {
+export default function CognitiveHubClient({ faqs = [] }) {
+  const { locale, t, localizeHref } = useTranslation();
   const [isClient, setIsClient] = useState(false);
   const [drillLevels, setDrillLevels] = useState({});
   const canvasRef = useRef(null);
@@ -75,7 +101,7 @@ export default function CognitiveHubClient() {
     if (!isClient) return;
     try {
       const levels = {};
-      cogDrills.forEach(d => {
+      cogDrills.forEach((d) => {
         const k = FOLDER_TO_STORAGE_KEY[d.folderName];
         if (!k) return;
         const raw = localStorage.getItem(k);
@@ -85,26 +111,21 @@ export default function CognitiveHubClient() {
             if (parsed && parsed.bestLevel) {
               levels[d.folderName] = parsed.bestLevel;
             }
-          } catch (e) {}
+          } catch {}
         }
       });
       setDrillLevels(levels);
-    } catch (e) {}
+    } catch {}
   }, [isClient]);
 
-  // Neural connection background animation with tab visibility pause
+  // Neural particle background effect
   useEffect(() => {
     if (!isClient) return;
     const canvas = canvasRef.current;
     if (!canvas) return;
     const ctx = canvas.getContext("2d");
+    if (!ctx) return;
     let animationFrameId;
-    let isTabVisible = true;
-
-    const handleVisibilityChange = () => {
-      isTabVisible = !document.hidden;
-    };
-    document.addEventListener("visibilitychange", handleVisibilityChange);
 
     const resize = () => {
       canvas.width = canvas.offsetWidth;
@@ -119,329 +140,337 @@ export default function CognitiveHubClient() {
       particles.push({
         x: Math.random() * canvas.width,
         y: Math.random() * canvas.height,
-        vx: (Math.random() - 0.5) * 0.3,
-        vy: (Math.random() - 0.5) * 0.3,
-        radius: Math.random() * 2 + 1
+        vx: (Math.random() - 0.5) * 0.25,
+        vy: (Math.random() - 0.5) * 0.25,
+        radius: Math.random() * 2 + 1,
+        color: i % 2 === 0 ? "rgba(168, 85, 247, " : "rgba(129, 140, 248, ",
       });
     }
 
-    const draw = () => {
-      if (isTabVisible) {
-        ctx.clearRect(0, 0, canvas.width, canvas.height);
-        ctx.fillStyle = "rgba(168, 85, 247, 0.25)";
-        ctx.strokeStyle = "rgba(168, 85, 247, 0.05)";
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      particles.forEach((p) => {
+        ctx.beginPath();
+        ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
+        ctx.fillStyle = p.color + "0.3)";
+        ctx.fill();
+      });
+      return () => {
+        window.removeEventListener("resize", resize);
+      };
+    }
 
-        particles.forEach((p, index) => {
-          p.x += p.vx;
-          p.y += p.vy;
+    let isVisible = true;
+    const observer = new IntersectionObserver(([entry]) => {
+      isVisible = entry.isIntersecting;
+    });
+    observer.observe(canvas);
 
-          if (p.x < 0 || p.x > canvas.width) p.vx *= -1;
-          if (p.y < 0 || p.y > canvas.height) p.vy *= -1;
-
-          ctx.beginPath();
-          ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
-          ctx.fill();
-
-          for (let j = index + 1; j < particles.length; j++) {
-            const p2 = particles[j];
-            const dist = Math.hypot(p.x - p2.x, p.y - p2.y);
-            if (dist < 120) {
-              ctx.beginPath();
-              ctx.moveTo(p.x, p.y);
-              ctx.lineTo(p2.x, p2.y);
-              ctx.stroke();
-            }
-          }
-        });
+    let lastTime = 0;
+    const draw = (timestamp) => {
+      if (!timestamp) timestamp = 0;
+      if (!isVisible || isIdleFrameSkippable(false, timestamp, lastTime)) {
+        animationFrameId = requestAnimationFrame(draw);
+        return;
       }
+      lastTime = timestamp;
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+      particles.forEach((p, index) => {
+        p.x += p.vx;
+        p.y += p.vy;
+
+        if (p.x < 0 || p.x > canvas.width) p.vx *= -1;
+        if (p.y < 0 || p.y > canvas.height) p.vy *= -1;
+
+        ctx.beginPath();
+        ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
+        ctx.fillStyle = p.color + "0.35)";
+        ctx.fill();
+
+        for (let j = index + 1; j < particles.length; j++) {
+          const p2 = particles[j];
+          const dist = Math.hypot(p.x - p2.x, p.y - p2.y);
+          if (dist < 125) {
+            ctx.beginPath();
+            ctx.moveTo(p.x, p.y);
+            ctx.lineTo(p2.x, p2.y);
+            ctx.strokeStyle = `rgba(168, 85, 247, ${0.08 * (1 - dist / 125)})`;
+            ctx.lineWidth = 1;
+            ctx.stroke();
+          }
+        }
+      });
 
       animationFrameId = requestAnimationFrame(draw);
     };
-    draw();
+
+    animationFrameId = requestAnimationFrame(draw);
 
     return () => {
       cancelAnimationFrame(animationFrameId);
+      observer.disconnect();
       window.removeEventListener("resize", resize);
-      document.removeEventListener("visibilitychange", handleVisibilityChange);
     };
   }, [isClient]);
 
-  const getDifficultyColor = (difficulty) => {
-    switch(difficulty) {
-      case 'Beginner': return 'bg-emerald-500/10 text-emerald-400 border-emerald-500/20';
-      case 'Intermediate': return 'bg-amber-500/10 text-amber-400 border-amber-500/20';
-      case 'Advanced': return 'bg-orange-500/10 text-orange-400 border-orange-500/20';
-      case 'Expert': return 'bg-rose-500/10 text-rose-400 border-rose-500/20';
-      default: return 'bg-slate-500/10 text-slate-400 border-slate-500/20';
-    }
-  };
-
-  const totalDrills = cognitiveCategories.reduce((acc, cat) => acc + cat.drills.length, 0);
-
   return (
-    <div className="min-h-screen bg-canvas text-ink-1 font-sans selection:bg-violet-500/30 selection:text-violet-300 relative overflow-hidden">
-      
-      <canvas style={{ touchAction: 'none' }} ref={canvasRef} className="absolute inset-0 w-full h-full pointer-events-none z-0 opacity-40" />
-
-      {/* Structured SEO Data */}
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "CollectionPage",
-            "name": "Cognitive Brain Training - Free Drills",
-            "url": "https://skilldrills.online/drills/cognitive",
-            "description": `${totalDrills} cognitive training drills across Attention, Focus, and Processing Speed.`,
-            "isPartOf": { "@type": "WebSite", "name": "SkillDrills", "url": "https://skilldrills.online" },
-            "about": { "@type": "Thing", "name": "Cognitive Training" },
-            "numberOfItems": totalDrills,
-            "itemListElement": cognitiveCategories.flatMap(category =>
-              category.drills.map(drill => ({
-                ...drill,
-                categoryFolder: category.folderName
-              }))
-            ).map((drill, index) => ({
-              "@type": "ListItem",
-              "position": index + 1,
-              "item": {
-                "@type": "WebApplication",
-                "name": drill.name,
-                "url": `https://skilldrills.online/drills/cognitive/${drill.categoryFolder}/${drill.folderName}`,
-                "description": drill.description,
-                "applicationCategory": "EducationalApplication",
-                "operatingSystem": "Web"
-              }
-            }))
-          })
-        }}
+    <div className="min-h-screen bg-canvas text-ink-1 font-sans selection:bg-purple-500/30 selection:text-purple-300 relative overflow-hidden">
+      <canvas
+        style={{ touchAction: "none" }}
+        ref={canvasRef}
+        className="absolute inset-0 w-full h-full pointer-events-none z-0 opacity-25"
       />
-      
+
+      {/* Layered premium background: hub-tinted mesh blobs */}
+      <div className="absolute inset-0 pointer-events-none overflow-hidden z-0">
+        <div className="absolute -top-32 left-1/2 -translate-x-1/2 w-[1100px] h-[480px] bg-purple-600/[0.12] rounded-full blur-[150px]" />
+        <div className="absolute top-[30%] -right-40 w-[480px] h-[480px] bg-indigo-500/[0.08] rounded-full blur-[140px]" />
+      </div>
+
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 relative z-10">
-        
-        {/* Breadcrumb */}
+        {/* Breadcrumb Navigation */}
         <nav aria-label="Breadcrumb" className="mb-8">
-          <ol className="flex flex-wrap items-center gap-2 text-xs font-mono text-ink-3 uppercase tracking-wider">
-            <li><Link href="/" className="flex items-center gap-1.5 hover:text-violet-400 transition-colors"><Home className="w-3.5 h-3.5" /><span>HQ</span></Link></li>
-            <li className="text-hairline-2" aria-hidden="true"><ChevronRight className="w-3 h-3" /></li>
-            <li><Link href="/drills" className="hover:text-violet-400 transition-colors">Drills</Link></li>
-            <li className="text-hairline-2" aria-hidden="true"><ChevronRight className="w-3 h-3" /></li>
-            <li><span className="text-violet-400 font-bold" aria-current="page">Cognitive Hub</span></li>
+          <ol className="flex items-center gap-2 text-xs font-mono text-ink-3 uppercase tracking-wider">
+            <li>
+              <Link
+                href={localizeHref("/")}
+                className="flex items-center gap-1.5 hover:text-purple-400 transition-colors"
+              >
+                <Home className="w-3.5 h-3.5" />
+                <span>{t("ui.nav.hq", "HQ")}</span>
+              </Link>
+            </li>
+            <li>
+              <ChevronRight className="w-3 h-3 text-hairline-2" />
+            </li>
+            <li>
+              <Link
+                href={hasLocalizedRoute(locale, "/drills") ? localizeHref("/drills") : "/drills"}
+                className="hover:text-purple-400 transition-colors"
+              >
+                {t("ui.nav.drills", "DRILLS")}
+              </Link>
+            </li>
+            <li>
+              <ChevronRight className="w-3 h-3 text-hairline-2" />
+            </li>
+            <li>
+              <span className="text-purple-400 font-bold" aria-current="page">
+                {t("header.cognitive", "COGNITIVE")}
+              </span>
+            </li>
           </ol>
         </nav>
 
-        {/* Header with compact inline chip next to H1 */}
+        {/* Page heading — crisp white typography, no images */}
+        <div className="mb-8">
+          <h1 className="text-2xl sm:text-3xl font-bold tracking-tight text-ink-1">
+            {t("hubs.cognitive.h1", "Free Cognitive Training & Brain Games")}
+          </h1>
+          <p className="mt-2 text-sm sm:text-base text-ink-2 leading-relaxed">
+            {t(
+              "hubs.cognitive.desc",
+              "Free browser drills for attention, concentration, memory, reaction time, and processing speed."
+            )}
+          </p>
+        </div>
+
+        {/* Drill picker: one drill at a time, arrows to move, 'View all' for grid with live autonomous animations */}
         <Reveal>
-          <div className="mb-8 bg-surface-1 border border-hairline rounded-3xl p-6 sm:p-8 flex flex-col md:flex-row md:items-center justify-between gap-6 relative overflow-hidden backdrop-blur-xl shadow-xl">
-            <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-violet-500 to-indigo-500 opacity-70" />
-            <div className="flex items-start gap-4">
-              <div className="relative p-3.5 bg-violet-500/10 border border-violet-500/30 rounded-2xl text-violet-400 shadow-inner shrink-0">
-                <div className="absolute -inset-1.5 rounded-2xl bg-violet-500/30 opacity-60 blur-md -z-10" />
-                <Brain className="w-8 h-8 animate-pulse" />
-              </div>
-              <div>
-                <div className="inline-flex items-center gap-2 mb-1">
-                  <h1 className="text-2xl sm:text-4xl font-extrabold text-ink-1 tracking-tight uppercase">Brain Training &amp; Decision Speed</h1>
-                  <span className="px-2.5 py-0.5 rounded-full text-2xs font-mono font-bold bg-violet-500/10 border border-violet-500/20 text-violet-400">
-                    {totalDrills} DRILLS ONLINE
-                  </span>
+          <DrillCarousel
+            headingId="cognitive-drills"
+            heading={t("hubs.cognitive.drillsHeading", "Cognitive drills")}
+            accent="purple"
+            icon={Brain}
+            showcase
+            allLabel={t("ui.viewAll", "View all")}
+            drills={orderedCognitiveDrills.map((drill) => {
+              const fallbackTagline = getDrillTagline(drill.href, drill.description);
+              const localized = getLocalizedDrill(drill.href, locale, drill.name, fallbackTagline);
+              return {
+                href: drill.href,
+                name: localized.name,
+                tagline: localized.tagline,
+                difficulty: drill.difficulty,
+                duration: drill.duration,
+                icon: drill.icon,
+              };
+            })}
+          />
+        </Reveal>
+
+        {/* Cognitive Training Domains - 3 Category Cards with Crawlable Links */}
+        <Reveal className="mb-12">
+          <div className="bg-surface-1 border border-hairline rounded-3xl p-6 sm:p-8 relative overflow-hidden backdrop-blur-xl shadow-xl">
+            <div className="flex items-center gap-2 mb-6">
+              <Layers className="w-5 h-5 text-purple-400" />
+              <h2 className="text-base sm:text-lg font-semibold tracking-tight text-ink-1">
+                Cognitive Training Domains
+              </h2>
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
+              {cognitiveCategories.map((cat) => {
+                const Icon = cat.icon;
+                return (
+                  <div
+                    key={cat.folderName}
+                    className="bg-surface-2/80 border border-hairline rounded-2xl p-5 flex flex-col justify-between"
+                  >
+                    <div>
+                      <div className="flex items-center gap-3 mb-3">
+                        <div className="w-9 h-9 rounded-xl bg-purple-500/10 border border-purple-500/20 text-purple-400 flex items-center justify-center shrink-0">
+                          <Icon className="w-4 h-4" />
+                        </div>
+                        <div>
+                          <h3 className="text-sm font-semibold tracking-tight text-ink-1">
+                            {cat.name}
+                          </h3>
+                          <span className="text-xs font-medium text-purple-400">
+                            {cat.drills.length} {cat.drills.length === 1 ? "Drill" : "Drills"}
+                          </span>
+                        </div>
+                      </div>
+                      <p className="text-xs text-ink-2 leading-relaxed mb-4">
+                        {cat.description}
+                      </p>
+                    </div>
+
+                    <div className="space-y-2 pt-3 border-t border-hairline">
+                      {cat.drills.map((drill) => {
+                        const href = hasLocalizedRoute(locale, drill.href)
+                          ? localizeHref(drill.href)
+                          : drill.href;
+                        const fallbackTagline = getDrillTagline(drill.href, drill.description);
+                        const localized = getLocalizedDrill(drill.href, locale, drill.name, fallbackTagline);
+                        return (
+                          <Link
+                            key={drill.href}
+                            href={href}
+                            className="group/item flex items-center justify-between p-2 rounded-xl bg-surface-1/60 hover:bg-purple-500/10 border border-hairline hover:border-purple-500/30 transition-all text-sm"
+                          >
+                            <span className="font-medium text-ink-1 group-hover/item:text-purple-300 transition-colors truncate pr-2">
+                              {localized.name}
+                            </span>
+                            <span className="text-xs font-medium text-ink-3 group-hover/item:text-purple-400 shrink-0 flex items-center gap-1">
+                              {drill.duration}
+                              <ChevronRight className="w-3 h-3 transition-transform group-hover/item:translate-x-0.5" />
+                            </span>
+                          </Link>
+                        );
+                      })}
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+        </Reveal>
+
+        {/* Engine & Hardware Optimization */}
+        <Reveal className="mb-14">
+          <div className="rounded-3xl bg-surface-1/70 border border-hairline p-6 sm:p-8 backdrop-blur-xl shadow-xl">
+            <div className="flex items-center gap-2 mb-6">
+              <Sparkles className="w-5 h-5 text-purple-400" />
+              <h2 className="text-base sm:text-lg font-semibold tracking-tight text-ink-1">
+                Engine &amp; Hardware Optimization
+              </h2>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+              <div className="bg-surface-2/80 border border-hairline rounded-2xl p-5">
+                <div className="w-8 h-8 rounded-lg bg-purple-500/10 border border-purple-500/20 text-purple-400 flex items-center justify-center mb-3">
+                  <Clock className="w-4 h-4" />
                 </div>
-                <p className="text-ink-2 mt-2 text-sm sm:text-base max-w-xl leading-relaxed">
-                  Train reaction speeds, selective attention thresholds, and cognitive processing flexibility.
+                <h3 className="text-sm font-semibold tracking-tight text-ink-1 mb-1.5">
+                  Millisecond-Precision Stimulus Timers
+                </h3>
+                <p className="text-2xs text-ink-3 leading-relaxed">
+                  High-precision monotonic performance timers track visual cues and interference onset at the browser&apos;s native ~1ms resolution, preventing frame-delayed reaction measurements.
+                </p>
+              </div>
+
+              <div className="bg-surface-2/80 border border-hairline rounded-2xl p-5">
+                <div className="w-8 h-8 rounded-lg bg-purple-500/10 border border-purple-500/20 text-purple-400 flex items-center justify-center mb-3">
+                  <Shuffle className="w-4 h-4" />
+                </div>
+                <h3 className="text-sm font-semibold tracking-tight text-ink-1 mb-1.5">
+                  Dynamic Interference Engine
+                </h3>
+                <p className="text-2xs text-ink-3 leading-relaxed">
+                  Real-time Stroop and distractor conflict algorithms dynamically calibrate difficulty thresholds to stress selective attention without input bottlenecking.
+                </p>
+              </div>
+
+              <div className="bg-surface-2/80 border border-hairline rounded-2xl p-5">
+                <div className="w-8 h-8 rounded-lg bg-purple-500/10 border border-purple-500/20 text-purple-400 flex items-center justify-center mb-3">
+                  <ShieldCheck className="w-4 h-4" />
+                </div>
+                <h3 className="text-sm font-semibold tracking-tight text-ink-1 mb-1.5">
+                  Local Zero-Telemetry Storage
+                </h3>
+                <p className="text-2xs text-ink-3 leading-relaxed">
+                  Processes composite accuracy and cognitive stamina locally in-browser. Zero server hops or telemetry payloads ensure total privacy and immediate feedback.
                 </p>
               </div>
             </div>
           </div>
         </Reveal>
 
-        {/* Start Here Band */}
-        <Reveal className="mb-10">
-          <div className="p-5 rounded-3xl bg-surface-1 border border-hairline backdrop-blur-xl shadow-xl">
-            <h2 className="text-xs font-mono font-bold uppercase tracking-wider text-violet-400 mb-3">
-              Recommended Start Routines
-            </h2>
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
-              <Link
-                href="/drills/cognitive/focus/distraction-fighter"
-                className="p-3.5 rounded-xl bg-surface-2 border border-hairline hover:border-violet-500/40 hover:-translate-y-0.5 active:scale-[0.98] transition-all group"
-              >
-                <p className="text-xs font-bold text-ink-1 group-hover:text-violet-400 transition-colors">New to Cognitive Training</p>
-                <p className="text-[10px] text-ink-3 mt-1">Stroop task interference &amp; focus check</p>
-              </Link>
-              <Link
-                href="/drills/cognitive/focus/concentration-grid"
-                className="p-3.5 rounded-xl bg-surface-2 border border-hairline hover:border-violet-500/40 hover:-translate-y-0.5 active:scale-[0.98] transition-all group"
-              >
-                <p className="text-xs font-bold text-ink-1 group-hover:text-violet-400 transition-colors">Concentration Grid Warm-up</p>
-                <p className="text-[10px] text-ink-3 mt-1">Sequential scanning &amp; visual search</p>
-              </Link>
-              <Link
-                href="/drills/cognitive/processing-speed/reaction-time"
-                className="p-3.5 rounded-xl bg-surface-2 border border-hairline hover:border-violet-500/40 hover:-translate-y-0.5 active:scale-[0.98] transition-all group"
-              >
-                <p className="text-xs font-bold text-ink-1 group-hover:text-violet-400 transition-colors">Full Cognitive Circuit</p>
-                <p className="text-[10px] text-ink-3 mt-1">Reflex & attention finisher</p>
-              </Link>
-            </div>
-          </div>
-        </Reveal>
-
-        {/* Drills Grid by Category */}
-        {cognitiveCategories.map((category) => {
-          const CategoryIcon = category.icon;
-          return (
-            <Reveal key={category.name} className="mb-12 relative">
-              <div className="flex items-center gap-2 mb-6 border-b border-hairline pb-3">
-                <div className="w-1 h-6 rounded-full bg-violet-500" />
-                <h2 className="text-lg font-bold uppercase tracking-wider text-ink-1 font-mono">{category.name}</h2>
-                <span className="px-2 py-0.5 text-2xs font-mono rounded bg-surface-2 border border-hairline text-violet-400 font-bold">
-                  {category.drills.length} DRILL{category.drills.length > 1 ? 'S' : ''}
-                </span>
+        {/* FAQs Section (SEO / AEO / GEO) */}
+        {faqs?.length > 0 && (
+          <Reveal className="mb-14">
+            <div className="rounded-3xl bg-surface-1/70 border border-hairline p-6 sm:p-8 backdrop-blur-xl shadow-xl">
+              <div className="flex items-center gap-2 mb-6">
+                <Sparkles className="w-5 h-5 text-purple-400" />
+              <h2 className="text-base sm:text-lg font-semibold tracking-tight text-ink-1">
+                  {t("home.faqTitle", "Frequently Asked Questions")}
+                </h2>
               </div>
 
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                {category.drills.map((drill, index) => {
-                  const bestLevel = drillLevels[drill.folderName];
-                  const storageKeys = [FOLDER_TO_STORAGE_KEY[drill.folderName]].filter(Boolean);
-                  return (
-                  <Link
-                    key={index}
-                    href={`/drills/cognitive/${category.folderName}/${drill.folderName}`}
-                    onMouseMove={handleCardMouseMove}
-                    className="group relative isolate overflow-hidden bg-surface-1 backdrop-blur-xl rounded-2xl border border-hairline hover:border-violet-500/40 transition-all duration-300 hover:-translate-y-1.5 focus:outline-none focus:ring-1 focus:ring-violet-500/50 shadow-xl hover:shadow-2xl hover:shadow-violet-500/10"
-                  >
-                    {/* Top accent hairline */}
-                    <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-violet-500 to-indigo-500 opacity-0 group-hover:opacity-70 transition-opacity duration-300" />
-
-                    {/* Cursor-tracked spotlight */}
-                    <span
-                      aria-hidden="true"
-                      className="pointer-events-none absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-                      style={{ background: 'radial-gradient(260px circle at var(--mx, 50%) var(--my, 50%), rgba(139,92,246,0.16), transparent 70%)' }}
-                    />
-
-                    {/* Tactical corner brackets (targeting-reticle feel) */}
-                    <span aria-hidden="true" className="absolute top-2.5 left-2.5 w-3 h-3 border-t-2 border-l-2 border-violet-500/0 group-hover:border-violet-500/70 transition-colors duration-300 rounded-tl-sm" />
-                    <span aria-hidden="true" className="absolute top-2.5 right-2.5 w-3 h-3 border-t-2 border-r-2 border-violet-500/0 group-hover:border-violet-500/70 transition-colors duration-300 rounded-tr-sm" />
-                    <span aria-hidden="true" className="absolute bottom-2.5 left-2.5 w-3 h-3 border-b-2 border-l-2 border-violet-500/0 group-hover:border-violet-500/70 transition-colors duration-300 rounded-bl-sm" />
-                    <span aria-hidden="true" className="absolute bottom-2.5 right-2.5 w-3 h-3 border-b-2 border-r-2 border-violet-500/0 group-hover:border-violet-500/70 transition-colors duration-300 rounded-br-sm" />
-
-                    <div className="relative p-6">
-                      <div className="flex items-start justify-between mb-4">
-                        <div className="relative p-2.5 rounded-lg border bg-violet-500/10 border-violet-500/20 text-violet-400 group-hover:scale-110 group-hover:border-violet-500/40 transition-transform">
-                          <div className="absolute -inset-1.5 rounded-xl bg-violet-500/30 opacity-0 group-hover:opacity-60 blur-md -z-10 transition-opacity" />
-                          <CategoryIcon className="w-5 h-5" />
-                        </div>
-                        <div className="flex items-center gap-1.5">
-                          <ResetDrillButton
-                            storageKeys={storageKeys}
-                            drillName={drill.name}
-                            onReset={() => setDrillLevels((prev) => {
-                              const next = { ...prev };
-                              delete next[drill.folderName];
-                              return next;
-                            })}
-                          />
-                          {bestLevel && (
-                            <div className="px-2 py-0.5 rounded-full text-[9px] font-mono font-bold tracking-wide border border-violet-500/20 bg-violet-500/10 text-violet-400">
-                              Lv. {bestLevel}
-                            </div>
-                          )}
-                          <div className={`px-2.5 py-0.5 rounded-full text-[9px] font-mono font-bold tracking-wide border uppercase ${getDifficultyColor(drill.difficulty)}`}>
-                            {drill.difficulty}
-                          </div>
-                        </div>
-                      </div>
-                      
-                      <h3 className="text-base font-bold text-ink-1 mb-2 group-hover:text-violet-400 transition-colors uppercase tracking-tight font-mono">
-                        {drill.name}
-                      </h3>
-                      
-                      <p className="text-xs text-ink-2 mb-4 leading-relaxed min-h-[48px]">
-                        {drill.description}
-                      </p>
-                      
-                      <div className="flex items-center gap-4 mb-4 text-2xs font-mono text-ink-3 border-b border-hairline pb-3">
-                        <div className="flex items-center gap-1">
-                          <Clock className="w-3.5 h-3.5 text-violet-400" />
-                          <span>{drill.duration}</span>
-                        </div>
-                        <div className="flex items-center gap-1">
-                          <Cpu className="w-3.5 h-3.5 text-violet-400" />
-                          <span>Cognitive Loop</span>
-                        </div>
-                      </div>
-                      
-                      <div className="flex items-center justify-between">
-                        <span className="text-2xs font-bold text-ink-3 uppercase tracking-widest">{category.name}</span>
-                        <div className="flex items-center gap-1 text-violet-400 group-hover:gap-2 transition-all font-bold text-xs uppercase tracking-widest font-mono">
-                          <span>EXEC_DRILL</span>
-                          <Play className="w-3.5 h-3.5 fill-current" />
-                        </div>
-                      </div>
-                    </div>
-                  </Link>
-                  );
-                })}
-              </div>
-            </Reveal>
-          );
-        })}
-
-        {/* Benefits Grid */}
-        <Reveal className="mb-12">
-          <div className="bg-surface-1 border border-hairline rounded-3xl p-8 relative overflow-hidden backdrop-blur-xl shadow-xl">
-            <h3 className="text-lg font-bold uppercase tracking-wider text-ink-1 mb-6 flex items-center gap-2 font-mono">
-              <Sparkles className="w-5 h-5 text-violet-400" />
-              COGNITIVE CAPACITY METRICS
-            </h3>
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
-              {[
-                { emoji: "🧠", title: "Selective Attention", desc: "Augment signal-vs-noise filtering and target lock retention." },
-                { emoji: "🎯", title: "Focus Inhibition", desc: "Suppress cognitive ambient noise to preserve high focus waveforms." },
-                { emoji: "⚡", title: "Synapse Speed", desc: "Optimize dual-task response coefficients under split-load tests." },
-                { emoji: "🧩", title: "Task Switching", desc: "Maximize rule-switching agility and recursive analysis vectors." }
-              ].map((benefit, i) => (
-                <div key={i} className="bg-surface-2 border border-hairline rounded-xl p-4">
-                  <h4 className="font-bold text-violet-400 mb-1 flex items-center gap-2 uppercase text-xs tracking-wider font-mono">
-                    <span>{benefit.emoji}</span>{benefit.title}
-                  </h4>
-                  <p className="text-xs text-ink-2 leading-relaxed">{benefit.desc}</p>
-                </div>
-              ))}
+              <dl className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                {faqs.map((f, i) => (
+                  <div key={i} className="bg-surface-2/80 border border-hairline rounded-2xl p-5 flex flex-col justify-start">
+                    <dt className="font-bold text-ink-1 text-sm font-sans flex items-start gap-2.5">
+                      <span className="text-purple-400 font-mono text-xs font-bold shrink-0 mt-0.5">
+                        Q{i + 1}.
+                      </span>
+                      <span>{f.q}</span>
+                    </dt>
+                    <dd className="mt-2.5 text-xs text-ink-3 leading-relaxed pl-6 font-sans">
+                      {f.a}
+                    </dd>
+                  </div>
+                ))}
+              </dl>
             </div>
-          </div>
-        </Reveal>
+          </Reveal>
+        )}
 
-        {/* Explore Related Hubs */}
-        <Reveal className="mt-12 mb-8 border-t border-hairline pt-12">
-          <h2 className="text-base font-bold tracking-widest text-center text-ink-1 font-mono uppercase mb-8">Explore Adjacent Hubs</h2>
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 max-w-5xl mx-auto">
-            <Link href="/drills/memory" className="group bg-surface-1 backdrop-blur-xl border border-hairline rounded-xl p-5 hover:border-indigo-500/40 transition-all duration-200 hover:-translate-y-0.5 text-center">
-              <div className="text-2xl mb-2">💾</div>
-              <h3 className="font-bold text-ink-1 group-hover:text-indigo-400 transition-colors uppercase text-xs font-mono">Memory Hub</h3>
-              <p className="text-2xs text-ink-3 uppercase mt-1 font-mono">Working &amp; spatial recall</p>
-            </Link>
-            <Link href="/drills/reaction-speed" className="group bg-surface-1 backdrop-blur-xl border border-hairline rounded-xl p-5 hover:border-amber-500/40 transition-all duration-200 hover:-translate-y-0.5 text-center">
-              <div className="text-2xl mb-2">⚡</div>
-              <h3 className="font-bold text-ink-1 group-hover:text-amber-400 transition-colors uppercase text-xs font-mono">Reaction Speed</h3>
-              <p className="text-2xs text-ink-3 uppercase mt-1 font-mono">Reflex latency tests</p>
-            </Link>
-            <Link href="/drills/visual-tracking" className="group bg-surface-1 backdrop-blur-xl border border-hairline rounded-xl p-5 hover:border-cyan-500/40 transition-all duration-200 hover:-translate-y-0.5 text-center">
-              <div className="text-2xl mb-2">👁️</div>
-              <h3 className="font-bold text-ink-1 group-hover:text-cyan-400 transition-colors uppercase text-xs font-mono">Visual Tracking</h3>
-              <p className="text-2xs text-ink-3 uppercase mt-1 font-mono">Smooth pursuit labs</p>
-            </Link>
-            <Link href="/drills/motor" className="group bg-surface-1 backdrop-blur-xl border border-hairline rounded-xl p-5 hover:border-emerald-500/40 transition-all duration-200 hover:-translate-y-0.5 text-center">
-              <div className="text-2xl mb-2">🖐️</div>
-              <h3 className="font-bold text-ink-1 group-hover:text-emerald-400 transition-colors uppercase text-xs font-mono">Motor Control</h3>
-              <p className="text-2xs text-ink-3 uppercase mt-1 font-mono">Aim &amp; click accuracy</p>
-            </Link>
-          </div>
-        </Reveal>
+        {/* Clean Adjacent Hubs Navigation */}
+        <AdjacentHubs currentCat="cognitive" />
+
+        {/* Back Link */}
+        <div className="mt-12 border-t border-hairline pt-6">
+          <Link
+            href={hasLocalizedRoute(locale, "/drills") ? localizeHref("/drills") : "/drills"}
+            className="inline-flex items-center gap-2 text-xs font-mono uppercase font-bold text-ink-3 hover:text-ink-1 transition-colors"
+          >
+            <ArrowLeft className="w-4 h-4" />
+            {t("ui.returnToAllSectors", "Return to All Sectors")}
+          </Link>
+        </div>
       </div>
 
-      <StickyMobileCta href="/drills/cognitive/focus/distraction-fighter" label="Start Cognitive Drill" categoryName="Cognitive" />
+      <StickyMobileCta
+        href={
+          hasLocalizedRoute(locale, "/drills/cognitive/focus/distraction-fighter")
+            ? localizeHref("/drills/cognitive/focus/distraction-fighter")
+            : "/drills/cognitive/focus/distraction-fighter"
+        }
+        label={t("hubs.cognitive.startCta", "Start Cognitive Drill")}
+        categoryName={t("header.cognitive", "Cognitive")}
+      />
       <SiteFooter />
     </div>
   );

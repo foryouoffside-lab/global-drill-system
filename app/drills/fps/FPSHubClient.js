@@ -1,99 +1,210 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import Link from "next/link";
-import { 
-  Clock, Play, Crosshair, Zap, Eye, 
-  Gamepad2, Home, ChevronRight, Cpu, Sparkles
-} from "lucide-react";
+import Link from 'next/link';
+import {
+  ArrowLeft,
+  Crosshair,
+  Eye,
+  Zap,
+  Home,
+  ChevronRight,
+  Target,
+  Sparkles,
+  MousePointer,
+  Cpu,
+  Layers
+} from 'lucide-react';
 import { DRILLS } from '@/lib/drillsRegistry';
+import { getDrillTagline, sortByInterest } from '@/lib/drillCatalog';
 import { getDifficultyRank } from '@/lib/scoringEngine';
 import SiteFooter from '@/components/SiteFooter';
 import Reveal from '@/components/Reveal';
+import AdjacentHubs from '@/components/AdjacentHubs';
+import { useTranslation } from '@/lib/i18n/useTranslation';
+import DrillCarousel from '@/components/drill/DrillCarousel';
 import StickyMobileCta from '@/components/StickyMobileCta';
-import ResetDrillButton from '@/components/drill/ResetDrillButton';
+import { hasLocalizedRoute } from '@/lib/i18n/locales';
+import { getLocalizedDrill } from '@/lib/i18n/drillNames';
 
-// Mapping: drill folderName → actual localStorage STORAGE_KEY, for drills whose
-// key doesn't match the generic `skilldrills_fps_${folderName}_v2` guess below.
+// Mapping: drill folderName → actual localStorage STORAGE_KEY
 const FOLDER_TO_STORAGE_KEY = {
-  'flick-shot-training': 'skilldrills_fps_flick_shot_v2',
-  '180-degree-awareness': 'skilldrills_fps_180_awareness_v2',
-  'angle-hold-trainer': 'skilldrills_fps_angle_hold_v2',
-  'anti-strafe-jitter-duel': 'skilldrills_fps_anti_strafe_jitter_v2',
-  'anti-zigzag-movement-trainer': 'skilldrills_fps_anti_zigzag_v2',
+  'flick-shot-training': 'skilldrills_fps_flick_shot_v3',
+  '180-degree-awareness': 'skilldrills_fps_180_awareness_v3',
+  'instant-response': 'skilldrills_fps_instant_response_v3',
+  'flow-state': 'skilldrills_fps_flow_state_v3',
+  'micro-correction-precision': 'skilldrills_fps_micro_correction_v3',
+  'angle-hold-trainer': 'skilldrills_fps_angle_hold_v3',
+  'anti-strafe-jitter-duel': 'skilldrills_fps_anti_strafe_jitter_v3',
+  'anti-zigzag-movement-trainer': 'skilldrills_fps_anti_zigzag_v3',
+  'target-acquisition': 'skilldrills_fps_target_acquisition_v3',
+  'target-prioritization': 'skilldrills_fps_target_prioritization_v3',
+  'target-switching-swarm': 'skilldrills_fps_target_switching_swarm_v3',
+  'recoil-control': 'skilldrills_fps_recoil_control_v3',
+  'vertical-air-track': 'skilldrills_fps_vertical_air_track_v3',
+  'strafe-tracking': 'skilldrills_fps_strafe_tracking_v3',
+  'pro-smooth-pursuit': 'skilldrills_fps_pro_smooth_pursuit_v3',
 };
 
-// Mapping: drill folderName → drillId (for tier badge display)
-const FOLDER_TO_DRILL_ID = {
-  'flick-shot-training': 'pro-flick',
-  'target-acquisition': 'target-acquisition',
-  'strafe-tracking': 'strafe-tracking',
-  'pro-smooth-pursuit': 'pro-smooth-pursuit',
-  'vertical-air-track': 'vertical-air-track',
-  'recoil-control': 'recoil-control',
-  'target-switching-swarm': 'target-switching-swarm',
-  'target-prioritization': 'target-prioritization',
-  'flow-state': 'flow-state',
-  '180-degree-awareness': '180-degree-awareness',
-  'angle-hold-trainer': 'angle-hold-trainer',
-  'instant-response': 'instant-response',
-  'micro-correction-precision': 'micro-correction',
-  'anti-strafe-jitter-duel': 'anti-strafe',
-  'anti-zigzag-movement-trainer': 'anti-zigzag-movement-trainer',
+// Tactical game metadata & categorized discipline taxonomy
+const DRILL_METADATA = {
+  'flick-shot-training': {
+    discipline: 'clicking',
+    disciplineName: 'Precision Clicking',
+    games: ['Valorant', 'CS2'],
+    icon: Crosshair,
+    focus: 'Flick Precision',
+  },
+  'micro-correction-precision': {
+    discipline: 'clicking',
+    disciplineName: 'Precision Clicking',
+    games: ['Valorant', 'CS2'],
+    icon: Crosshair,
+    focus: 'Micro Adjustments',
+  },
+  'target-acquisition': {
+    discipline: 'clicking',
+    disciplineName: 'Precision Clicking',
+    games: ['Valorant', 'CS2'],
+    icon: Crosshair,
+    focus: 'Contrast Snapping',
+  },
+  'target-prioritization': {
+    discipline: 'clicking',
+    disciplineName: 'Precision Clicking',
+    games: ['Valorant', 'Apex'],
+    icon: Crosshair,
+    focus: 'Priority Threat',
+  },
+  'target-switching-swarm': {
+    discipline: 'clicking',
+    disciplineName: 'Precision Clicking',
+    games: ['Apex', 'CS2'],
+    icon: Crosshair,
+    focus: 'Multi-Switching',
+  },
+  'strafe-tracking': {
+    discipline: 'tracking',
+    disciplineName: 'Tracking & Smoothness',
+    games: ['Apex', 'Overwatch 2'],
+    icon: Eye,
+    focus: 'Erratic ADAD Strafe',
+  },
+  'pro-smooth-pursuit': {
+    discipline: 'tracking',
+    disciplineName: 'Tracking & Smoothness',
+    games: ['Apex', 'Overwatch 2'],
+    icon: Eye,
+    focus: '360Hz Pursuit Curve',
+  },
+  'vertical-air-track': {
+    discipline: 'tracking',
+    disciplineName: 'Tracking & Smoothness',
+    games: ['Apex', 'Overwatch 2'],
+    icon: Eye,
+    focus: 'Parabolic Aerial Trajectory',
+  },
+  'anti-strafe-jitter-duel': {
+    discipline: 'tracking',
+    disciplineName: 'Tracking & Smoothness',
+    games: ['Apex', 'Close Range'],
+    icon: Eye,
+    focus: 'Physics Jitter Duel',
+  },
+  'anti-zigzag-movement-trainer': {
+    discipline: 'tracking',
+    disciplineName: 'Tracking & Smoothness',
+    games: ['Apex', 'Warzone'],
+    icon: Eye,
+    focus: 'Evasive Direction Shifts',
+  },
+  'recoil-control': {
+    discipline: 'recoil',
+    disciplineName: 'Recoil & Angles',
+    games: ['CS2', 'Valorant'],
+    icon: Target,
+    focus: 'S-Curve Spray Counter',
+  },
+  'angle-hold-trainer': {
+    discipline: 'recoil',
+    disciplineName: 'Recoil & Angles',
+    games: ['CS2', 'Valorant'],
+    icon: Target,
+    focus: 'Crosshair Placement & Peeks',
+  },
+  'instant-response': {
+    discipline: 'reflex',
+    disciplineName: 'Reflex & Reaction',
+    games: ['All FPS', 'Warm-Up'],
+    icon: Zap,
+    focus: 'Visual Trigger Speed',
+  },
+  '180-degree-awareness': {
+    discipline: 'reflex',
+    disciplineName: 'Reflex & Reaction',
+    games: ['All FPS', 'Tactical'],
+    icon: Zap,
+    focus: 'Screen Edge Peripheral Snap',
+  },
+  'flow-state': {
+    discipline: 'reflex',
+    disciplineName: 'Reflex & Reaction',
+    games: ['All FPS', 'Warm-Up'],
+    icon: Zap,
+    focus: 'Sequential Rhythm',
+  },
 };
 
-const fpsDrills = DRILLS.filter(d => d.category === 'fps');
+const fpsDrills = DRILLS.filter((d) => d.category === 'fps');
 
 const fpsCategories = [
   {
-    name: "Precision Clicking",
-    folderName: "fps",
+    id: 'clicking',
+    name: 'Precision Clicking',
     icon: Crosshair,
-    color: "red",
-    bgColor: "bg-red-500/10 border-red-500/20 text-red-400",
-    textColor: "text-red-400",
-    description: "Master flick shots, precision clicking, and cognitive prioritization",
-    drills: fpsDrills.filter(d => ['flick-shot-training', 'target-acquisition', 'micro-correction-precision', 'target-prioritization', 'target-switching-swarm'].includes(d.folderName)).sort((a, b) => getDifficultyRank(a.difficulty) - getDifficultyRank(b.difficulty))
+    description: 'Target snapping, micro-corrections, and rapid single-shot precision clicking',
+    drills: fpsDrills
+      .filter((d) => DRILL_METADATA[d.folderName]?.discipline === 'clicking')
+      .sort((a, b) => getDifficultyRank(a.difficulty) - getDifficultyRank(b.difficulty)),
   },
   {
-    name: "Tracking & Switching",
-    folderName: "fps",
+    id: 'tracking',
+    name: 'Tracking & Smoothness',
     icon: Eye,
-    color: "red",
-    bgColor: "bg-red-500/10 border-red-500/20 text-red-400",
-    textColor: "text-red-400",
-    description: "Smooth aim, reactive tracking, and multi-target flick-switching",
-    drills: fpsDrills.filter(d => ['strafe-tracking', 'pro-smooth-pursuit', 'vertical-air-track', 'anti-strafe-jitter-duel', 'anti-zigzag-movement-trainer'].includes(d.folderName)).sort((a, b) => getDifficultyRank(a.difficulty) - getDifficultyRank(b.difficulty))
+    description: 'Continuous crosshair maintenance on evasive, accelerating, and aerial targets',
+    drills: fpsDrills
+      .filter((d) => DRILL_METADATA[d.folderName]?.discipline === 'tracking')
+      .sort((a, b) => getDifficultyRank(a.difficulty) - getDifficultyRank(b.difficulty)),
   },
   {
-    name: "Movement & Recoil",
-    folderName: "fps",
-    icon: Gamepad2,
-    color: "orange",
-    bgColor: "bg-orange-500/10 border-orange-500/20 text-orange-400",
-    textColor: "text-orange-400",
-    description: "Strafing-shooting synchronization, cover peeking, and spray patterns",
-    drills: fpsDrills.filter(d => ['recoil-control', 'angle-hold-trainer'].includes(d.folderName)).sort((a, b) => getDifficultyRank(a.difficulty) - getDifficultyRank(b.difficulty))
+    id: 'recoil',
+    name: 'Recoil & Angles',
+    icon: Target,
+    description: 'Pattern compensation, crosshair placement, and tactical angle holding',
+    drills: fpsDrills
+      .filter((d) => DRILL_METADATA[d.folderName]?.discipline === 'recoil')
+      .sort((a, b) => getDifficultyRank(a.difficulty) - getDifficultyRank(b.difficulty)),
   },
   {
-    name: "Reflex & Awareness",
-    folderName: "fps",
+    id: 'reflex',
+    name: 'Reflex & Reaction',
     icon: Zap,
-    color: "red",
-    bgColor: "bg-red-500/10 border-red-500/20 text-red-400",
-    textColor: "text-red-400",
-    description: "Instant reflex response, extreme-speed prediction, and peripheral vision",
-    drills: fpsDrills.filter(d => ['instant-response', '180-degree-awareness', 'flow-state'].includes(d.folderName)).sort((a, b) => getDifficultyRank(a.difficulty) - getDifficultyRank(b.difficulty))
-  }
+    description: 'Simple and choice reaction speed, peripheral awareness, and rhythm flow',
+    drills: fpsDrills
+      .filter((d) => DRILL_METADATA[d.folderName]?.discipline === 'reflex')
+      .sort((a, b) => getDifficultyRank(a.difficulty) - getDifficultyRank(b.difficulty)),
+  },
 ];
 
-function handleCardMouseMove(e) {
-  const rect = e.currentTarget.getBoundingClientRect();
-  e.currentTarget.style.setProperty('--mx', `${e.clientX - rect.left}px`);
-  e.currentTarget.style.setProperty('--my', `${e.clientY - rect.top}px`);
-}
+// Flat, interest-ordered list for the carousel picker
+const orderedFpsDrills = sortByInterest(
+  fpsCategories.flatMap((category) =>
+    category.drills.map((drill) => ({ ...drill, icon: category.icon }))
+  )
+);
 
-export default function FPSHubClient() {
+export default function FPSHubClient({ faqs = [] }) {
+  const { locale, t, localizeHref } = useTranslation();
   const [isClient, setIsClient] = useState(false);
   const [drillLevels, setDrillLevels] = useState({});
 
@@ -101,17 +212,21 @@ export default function FPSHubClient() {
     setIsClient(true);
   }, []);
 
+  // Retrieve saved personal bests from localStorage
   useEffect(() => {
     if (!isClient) return;
     try {
       const levels = {};
-      fpsDrills.forEach(d => {
+      const allFps = DRILLS.filter((d) => d.category === 'fps');
+      allFps.forEach((d) => {
         const override = FOLDER_TO_STORAGE_KEY[d.folderName];
-        const keys = override ? [override] : [
-          `skilldrills_fps_${d.folderName.replace(/-/g, '_')}_v2`,
-          `skilldrills_fps_${d.folderName.replace(/-/g, '_')}_v1`,
-          `skilldrills_${d.folderName.replace(/-/g, '_')}`,
-        ];
+        const keys = override
+          ? [override]
+          : [
+              `skilldrills_fps_${d.folderName.replace(/-/g, '_')}_v3`,
+              `skilldrills_fps_${d.folderName.replace(/-/g, '_')}_v2`,
+              `skilldrills_${d.folderName.replace(/-/g, '_')}`,
+            ];
         for (const k of keys) {
           const raw = localStorage.getItem(k);
           if (raw) {
@@ -121,342 +236,267 @@ export default function FPSHubClient() {
                 levels[d.folderName] = parsed.bestLevel;
                 break;
               }
-            } catch (e) {}
+            } catch {}
           }
         }
       });
       setDrillLevels(levels);
-    } catch (e) {}
+    } catch {}
   }, [isClient]);
 
-
-  const getDifficultyColor = (difficulty) => {
-    switch(difficulty) {
-      case 'Beginner': return 'bg-emerald-500/10 text-emerald-400 border-emerald-500/20';
-      case 'Intermediate': return 'bg-amber-500/10 text-amber-400 border-amber-500/20';
-      case 'Advanced': return 'bg-orange-500/10 text-orange-400 border-orange-500/20';
-      case 'Expert': return 'bg-red-500/10 text-red-400 border-red-500/20';
-      default: return 'bg-slate-500/10 text-slate-400 border-slate-500/20';
-    }
-  };
-
-  const totalDrills = fpsCategories.reduce((acc, cat) => acc + cat.drills.length, 0);
-
-  const jsonLd = {
-    "@context": "https://schema.org",
-    "@type": "CollectionPage",
-    "name": "FPS Aim Training Drills",
-    "url": "https://skilldrills.online/drills/fps",
-    "description": `${totalDrills} free FPS aim training drills for Valorant, CS2, Apex Legends, Overwatch 2 and all FPS games.`,
-    "isPartOf": { "@type": "WebSite", "name": "SkillDrills", "url": "https://skilldrills.online" },
-    "about": { "@type": "Thing", "name": "FPS Gaming Aim Training" },
-    "numberOfItems": totalDrills,
-    "itemListElement": fpsCategories.flatMap(cat => cat.drills).map((drill, index) => ({
-      "@type": "ListItem",
-      "position": index + 1,
-      "item": {
-        "@type": "WebApplication",
-        "name": drill.name,
-        "url": `https://skilldrills.online${drill.href}`,
-        "description": drill.description,
-        "applicationCategory": "GameApplication",
-        "operatingSystem": "Web"
-      }
-    }))
-  };
-
-
   return (
-    <div className="min-h-screen bg-canvas text-ink-1 font-sans selection:bg-red-500/30 selection:text-red-300 relative overflow-hidden">
-
-      {/* SEO Structured Data */}
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify(jsonLd)
-        }}
-      />
-
-      {/* Layered premium background: hub-tinted mesh blobs + grid + grain */}
+    <div className="min-h-screen bg-canvas text-ink-1 font-sans selection:bg-red-500/30 selection:text-red-200 relative overflow-hidden">
+      {/* Tactical ambient background: Red/Orange glow + subtle grid mesh */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden">
-        <div className="absolute -top-32 left-1/2 -translate-x-1/2 w-[1100px] h-[480px] bg-red-600/[0.12] rounded-full blur-[150px]" />
-        <div className="absolute top-[30%] -right-40 w-[480px] h-[480px] bg-orange-500/[0.08] rounded-full blur-[140px]" />
+        <div className="absolute -top-32 left-1/2 -translate-x-1/2 w-[1100px] h-[480px] bg-red-600/[0.10] rounded-full blur-[160px]" />
+        <div className="absolute top-[25%] -right-40 w-[460px] h-[460px] bg-orange-500/[0.07] rounded-full blur-[140px]" />
         <div
-          className="absolute inset-0 opacity-[0.3]"
+          className="absolute inset-0 opacity-[0.25]"
           style={{
-            backgroundImage: 'linear-gradient(rgba(255,255,255,0.025) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.025) 1px, transparent 1px)',
-            backgroundSize: '44px 44px',
-            maskImage: 'radial-gradient(ellipse 80% 50% at 50% 10%, black 40%, transparent 90%)',
-          }}
-        />
-        <div
-          className="absolute inset-0 opacity-[0.04] mix-blend-overlay"
-          style={{
-            backgroundImage: "url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E\")",
+            backgroundImage:
+              'linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px)',
+            backgroundSize: '40px 40px',
+            maskImage: 'radial-gradient(ellipse 85% 60% at 50% 15%, black 40%, transparent 90%)',
           }}
         />
       </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 relative z-10">
-        
         {/* Breadcrumb Navigation */}
-        <nav aria-label="Breadcrumb" className="mb-8">
+        <nav aria-label="Breadcrumb" className="mb-6">
           <ol className="flex items-center gap-2 text-xs font-mono text-ink-3 uppercase tracking-wider">
-            <li><Link href="/" className="flex items-center gap-1.5 hover:text-red-400 transition-colors"><Home className="w-3.5 h-3.5" /><span>HQ</span></Link></li>
+            <li>
+              <Link
+                href={localizeHref('/')}
+                className="flex items-center gap-1.5 hover:text-red-400 transition-colors"
+              >
+                <Home className="w-3.5 h-3.5" />
+                <span>{t('ui.nav.hq', 'HQ')}</span>
+              </Link>
+            </li>
             <li><ChevronRight className="w-3 h-3 text-hairline-2" /></li>
-            <li><Link href="/drills" className="hover:text-red-400 transition-colors">Drills</Link></li>
+            <li>
+              <Link
+                href={hasLocalizedRoute(locale, '/drills') ? localizeHref('/drills') : '/drills'}
+                className="hover:text-red-400 transition-colors"
+              >
+                {t('ui.nav.drills', 'DRILLS')}
+              </Link>
+            </li>
             <li><ChevronRight className="w-3 h-3 text-hairline-2" /></li>
-            <li><span className="text-red-400 font-bold" aria-current="page">FPS Sector</span></li>
+            <li>
+              <span className="text-red-400 font-bold" aria-current="page">
+                {t('header.fps', 'FPS AIM')}
+              </span>
+            </li>
           </ol>
         </nav>
 
-        {/* Desktop Only Mobile Warning Banner */}
-        <div className="lg:hidden mb-6 p-4 rounded-xl bg-red-500/10 border border-red-500/30 text-red-300">
-          <div className="flex items-center gap-2 mb-1">
-            <span className="text-xs font-mono font-bold uppercase tracking-wider text-red-400">
-              Only Desktop Supported
-            </span>
-          </div>
-          <p className="text-xs leading-relaxed text-red-200/90 font-sans">
-            This category uses precise mouse and keyboard input and isn't built for touch. You can still browse and read about the drills here, but for the real experience, switch to a laptop or desktop.
+        {/* Page heading */}
+        <div className="mb-8">
+          <h1 className="text-2xl sm:text-3xl font-bold tracking-tight text-ink-1">
+            {t('hubs.fps.h1', 'FPS Aim Training & Free Aim Trainer')}
+          </h1>
+          <p className="mt-2 text-sm sm:text-base text-ink-2 leading-relaxed">
+            {t(
+              'hubs.fps.desc',
+              'Free browser FPS aim training for flick shots, tracking, recoil control, target switching, and reaction drills.'
+            )}
           </p>
         </div>
 
-        {/* Header with compact inline chip next to H1 */}
+        {/* Drill Matrix - Swipeable Carousel */}
         <Reveal>
-          <div className="mb-8 bg-surface-1/80 border border-hairline rounded-3xl p-6 sm:p-8 flex flex-col md:flex-row md:items-center justify-between gap-6 relative overflow-hidden backdrop-blur-xl shadow-xl">
-            <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-red-500 to-orange-500 opacity-70" />
-            <div className="flex items-start gap-4">
-              <div className="relative p-3.5 bg-gradient-to-br from-red-500 to-orange-500 rounded-2xl text-white shadow-lg shrink-0">
-                <div className="absolute -inset-2 rounded-2xl bg-gradient-to-br from-red-500 to-orange-500 opacity-40 blur-lg -z-10" />
-                <Gamepad2 className="w-8 h-8" />
-              </div>
-              <div>
-                <div className="inline-flex items-center gap-2 mb-1">
-                  <h1 className="text-2xl sm:text-4xl font-extrabold text-ink-1 tracking-tight uppercase">Free FPS Aim Trainer</h1>
-                  <span className="px-2.5 py-0.5 rounded-full text-2xs font-mono font-bold bg-red-500/10 border border-red-500/20 text-red-400">
-                    {totalDrills} DRILLS ONLINE
-                  </span>
+          <DrillCarousel
+            headingId="fps-drills"
+            heading={t('hubs.fps.drillsHeading', 'FPS aim drills')}
+            accent="red"
+            icon={Crosshair}
+            showcase
+            allLabel={t('ui.viewAll', 'View all')}
+            drills={orderedFpsDrills.map((drill) => {
+              const fallbackTagline = getDrillTagline(drill.href, drill.description);
+              const localized = getLocalizedDrill(drill.href, locale, drill.name, fallbackTagline);
+              return {
+                href: drill.href,
+                name: localized.name,
+                tagline: localized.tagline,
+                difficulty: drill.difficulty,
+                duration: drill.duration,
+                icon: drill.icon,
+              };
+            })}
+          />
+        </Reveal>
+
+        {/* FPS Training Domains - 4 Category Cards with Crawlable Links */}
+        <Reveal className="mb-14">
+          <div className="bg-surface-1 border border-hairline rounded-3xl p-6 sm:p-8 relative overflow-hidden backdrop-blur-xl shadow-xl">
+            <div className="flex items-center gap-2 mb-6">
+              <Layers className="w-5 h-5 text-red-400" />
+              <h2 className="text-base sm:text-lg font-semibold tracking-tight text-ink-1">
+                FPS Training Domains
+              </h2>
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
+              {fpsCategories.map((cat) => {
+                const Icon = cat.icon;
+                return (
+                  <div
+                    key={cat.id}
+                    className="bg-surface-2/80 border border-hairline rounded-2xl p-5 flex flex-col justify-between"
+                  >
+                    <div>
+                      <div className="flex items-center gap-3 mb-3">
+                        <div className="w-9 h-9 rounded-xl bg-red-500/10 border border-red-500/20 text-red-400 flex items-center justify-center shrink-0">
+                          <Icon className="w-4 h-4" />
+                        </div>
+                        <div>
+                          <h3 className="text-sm font-semibold tracking-tight text-ink-1">
+                            {cat.name}
+                          </h3>
+                          <span className="text-xs font-medium text-red-400">
+                            {cat.drills.length} {cat.drills.length === 1 ? 'Drill' : 'Drills'}
+                          </span>
+                        </div>
+                      </div>
+                      <p className="text-xs text-ink-2 leading-relaxed mb-4">
+                        {cat.description}
+                      </p>
+                    </div>
+
+                    <div className="space-y-2 pt-3 border-t border-hairline">
+                      {cat.drills.map((drill) => {
+                        const href = hasLocalizedRoute(locale, drill.href)
+                          ? localizeHref(drill.href)
+                          : drill.href;
+                        const fallbackTagline = getDrillTagline(drill.href, drill.description);
+                        const localized = getLocalizedDrill(drill.href, locale, drill.name, fallbackTagline);
+                        return (
+                          <Link
+                            key={drill.href}
+                            href={href}
+                            className="group/item flex items-center justify-between p-2 rounded-xl bg-surface-1/60 hover:bg-red-500/10 border border-hairline hover:border-red-500/30 transition-all text-sm"
+                          >
+                            <span className="font-medium text-ink-1 group-hover/item:text-red-300 transition-colors truncate pr-2">
+                              {localized.name}
+                            </span>
+                            <span className="text-xs font-medium text-ink-3 group-hover/item:text-red-400 shrink-0 flex items-center gap-1">
+                              {drill.duration}
+                              <ChevronRight className="w-3 h-3 transition-transform group-hover/item:translate-x-0.5" />
+                            </span>
+                          </Link>
+                        );
+                      })}
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+        </Reveal>
+
+        {/* Pro Aim Architecture & Technical Specifications */}
+        <Reveal className="mb-14">
+          <div className="rounded-3xl bg-surface-1/70 border border-hairline p-6 sm:p-8 backdrop-blur-xl shadow-xl">
+            <div className="flex items-center gap-2 mb-6">
+              <Sparkles className="w-5 h-5 text-red-400" />
+              <h2 className="text-base sm:text-lg font-semibold tracking-tight text-ink-1">
+                Engine &amp; Hardware Optimization
+              </h2>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+              <div className="bg-surface-2/80 border border-hairline rounded-2xl p-5">
+                <div className="w-8 h-8 rounded-lg bg-red-500/10 border border-red-500/20 text-red-400 flex items-center justify-center mb-3">
+                  <MousePointer className="w-4 h-4" />
                 </div>
-                <p className="text-ink-2 mt-2 text-sm sm:text-base max-w-xl leading-relaxed">
-                  Hone mouse raw-input reflexes, smooth target tracking, and extreme 180° awareness indicators.
+                <h3 className="text-sm font-semibold tracking-tight text-ink-1 mb-1.5">
+                  Raw Pointer Lock
+                </h3>
+                <p className="text-2xs text-ink-3 leading-relaxed">
+                  Bypasses browser cursor boundaries and OS acceleration curves. Your mouse moves with true 1:1 hardware translation just like native esports clients.
+                </p>
+              </div>
+
+              <div className="bg-surface-2/80 border border-hairline rounded-2xl p-5">
+                <div className="w-8 h-8 rounded-lg bg-red-500/10 border border-red-500/20 text-red-400 flex items-center justify-center mb-3">
+                  <Cpu className="w-4 h-4" />
+                </div>
+                <h3 className="text-sm font-semibold tracking-tight text-ink-1 mb-1.5">
+                  High Refresh Physics
+                </h3>
+                <p className="text-2xs text-ink-3 leading-relaxed">
+                  Physics runs decoupled from rendering and keeps up with refresh rates to 360Hz. Targets glide smoothly without jitter, judder, or frame drops.
+                </p>
+              </div>
+
+              <div className="bg-surface-2/80 border border-hairline rounded-2xl p-5">
+                <div className="w-8 h-8 rounded-lg bg-red-500/10 border border-red-500/20 text-red-400 flex items-center justify-center mb-3">
+                  <Target className="w-4 h-4" />
+                </div>
+                <h3 className="text-sm font-semibold tracking-tight text-ink-1 mb-1.5">
+                  Cross-Game Calibration
+                </h3>
+                <p className="text-2xs text-ink-3 leading-relaxed">
+                  Standardized sensitivity mapping matches your exact Valorant, CS2, or Apex Legends config so muscle memory translates directly into your matches.
                 </p>
               </div>
             </div>
           </div>
         </Reveal>
 
-        {/* Start Here Band */}
-        <Reveal className="mb-10">
-          <div className="p-5 rounded-2xl bg-surface-1/80 backdrop-blur-xl border border-hairline shadow-lg">
-            <h2 className="text-xs font-mono font-bold uppercase tracking-wider text-red-400 mb-3">
-              Recommended Start Routines
-            </h2>
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
-              <Link
-                href="/drills/fps/flick-shot-training"
-                className="p-3.5 rounded-xl bg-surface-2/80 border border-hairline hover:border-red-500/40 hover:-translate-y-0.5 active:scale-[0.98] transition-all group"
-              >
-                <p className="text-xs font-bold text-ink-1 group-hover:text-red-400 transition-colors">New to FPS Aim Training</p>
-                <p className="text-[10px] text-ink-3 mt-1">Single-target flick precision baseline</p>
-              </Link>
-              <Link
-                href="/drills/fps/strafe-tracking"
-                className="p-3.5 rounded-xl bg-surface-2/80 border border-hairline hover:border-red-500/40 hover:-translate-y-0.5 active:scale-[0.98] transition-all group"
-              >
-                <p className="text-xs font-bold text-ink-1 group-hover:text-red-400 transition-colors">Tracking &amp; Smooth Aim</p>
-                <p className="text-[10px] text-ink-3 mt-1">Continuous target tracking routine</p>
-              </Link>
-              <Link
-                href="/drills/fps/target-switching-swarm"
-                className="p-3.5 rounded-xl bg-surface-2/80 border border-hairline hover:border-red-500/40 hover:-translate-y-0.5 active:scale-[0.98] transition-all group"
-              >
-                <p className="text-xs font-bold text-ink-1 group-hover:text-red-400 transition-colors">Full FPS Aim Circuit</p>
-                <p className="text-[10px] text-ink-3 mt-1">Complete target switching &amp; recoil circuit</p>
-              </Link>
+        {/* Frequently Asked Questions (SEO / AEO / GEO) */}
+        {faqs?.length > 0 && (
+          <Reveal className="mb-14">
+            <div className="rounded-3xl bg-surface-1/70 border border-hairline p-6 sm:p-8 backdrop-blur-xl shadow-xl">
+              <div className="flex items-center gap-2 mb-6">
+                <Sparkles className="w-5 h-5 text-red-400" />
+              <h2 className="text-base sm:text-lg font-semibold tracking-tight text-ink-1">
+                  {t('home.faqTitle', 'Frequently Asked Questions')}
+                </h2>
+              </div>
+
+              <dl className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                {faqs.map((f, i) => (
+                  <div key={i} className="bg-surface-2/80 border border-hairline rounded-2xl p-5 flex flex-col justify-start">
+                    <dt className="font-bold text-ink-1 text-sm font-sans flex items-start gap-2.5">
+                      <span className="text-red-400 font-mono text-xs font-bold shrink-0 mt-0.5">
+                        Q{i + 1}.
+                      </span>
+                      <span>{f.q}</span>
+                    </dt>
+                    <dd className="mt-2.5 text-xs text-ink-3 leading-relaxed pl-6 font-sans">
+                      {f.a}
+                    </dd>
+                  </div>
+                ))}
+              </dl>
             </div>
-          </div>
-        </Reveal>
+          </Reveal>
+        )}
 
-        {/* Drills Grid by Category */}
-        {fpsCategories.map((category) => {
-          const CategoryIcon = category.icon;
-          return (
-            <Reveal key={category.name} className="mb-12 relative">
-              <div className="flex items-center gap-2 mb-6 border-b border-hairline pb-3">
-                <div className="w-1 h-6 rounded-full bg-red-500" />
-                <h2 className="text-lg font-bold uppercase tracking-wider text-ink-1 font-mono">{category.name}</h2>
-                <span className="px-2 py-0.5 text-2xs font-mono rounded bg-surface-2 border border-hairline text-red-400 font-bold">
-                  {category.drills.length} DRILL{category.drills.length > 1 ? 'S' : ''}
-                </span>
-              </div>
+        {/* Clean Adjacent Hubs Navigation */}
+        <AdjacentHubs currentCat="fps" />
 
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                {category.drills.map((drill, index) => {
-                  const drillPath = drill.href;
-                  const bestLevel = drillLevels[drill.folderName];
-                  const resetOverride = FOLDER_TO_STORAGE_KEY[drill.folderName];
-                  const storageKeys = resetOverride ? [resetOverride] : [
-                    `skilldrills_fps_${drill.folderName.replace(/-/g, '_')}_v2`,
-                    `skilldrills_fps_${drill.folderName.replace(/-/g, '_')}_v1`,
-                    `skilldrills_${drill.folderName.replace(/-/g, '_')}`,
-                  ];
-                  return (
-                    <Link
-                      key={index}
-                      href={drillPath}
-                      onMouseMove={handleCardMouseMove}
-                      className="group relative isolate overflow-hidden bg-surface-1/80 backdrop-blur-xl border border-hairline hover:border-red-500/40 rounded-2xl transition-all duration-300 hover:-translate-y-1.5 focus:outline-none focus:ring-1 focus:ring-red-500/50 shadow-xl hover:shadow-2xl hover:shadow-red-500/10"
-                    >
-                      {/* Top accent hairline */}
-                      <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-red-500 to-orange-500 opacity-0 group-hover:opacity-70 transition-opacity duration-300" />
+        {/* Back Link */}
+        <div className="mt-12 border-t border-hairline pt-6">
+          <Link 
+            href={hasLocalizedRoute(locale, '/drills') ? localizeHref('/drills') : '/drills'}
+            className="inline-flex items-center gap-2 text-xs font-mono uppercase font-bold text-ink-3 hover:text-ink-1 transition-colors"
+          >
+            <ArrowLeft className="w-4 h-4" />
+            {t('ui.returnToAllSectors', 'Return to All Sectors')}
+          </Link>
+        </div>
 
-                      {/* Cursor-tracked spotlight */}
-                      <span
-                        aria-hidden="true"
-                        className="pointer-events-none absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-                        style={{ background: 'radial-gradient(260px circle at var(--mx, 50%) var(--my, 50%), rgba(239,68,68,0.16), transparent 70%)' }}
-                      />
-
-                      {/* Tactical corner brackets (targeting-reticle feel) */}
-                      <span aria-hidden="true" className="absolute top-2.5 left-2.5 w-3 h-3 border-t-2 border-l-2 border-red-500/0 group-hover:border-red-500/70 transition-colors duration-300 rounded-tl-sm" />
-                      <span aria-hidden="true" className="absolute top-2.5 right-2.5 w-3 h-3 border-t-2 border-r-2 border-red-500/0 group-hover:border-red-500/70 transition-colors duration-300 rounded-tr-sm" />
-                      <span aria-hidden="true" className="absolute bottom-2.5 left-2.5 w-3 h-3 border-b-2 border-l-2 border-red-500/0 group-hover:border-red-500/70 transition-colors duration-300 rounded-bl-sm" />
-                      <span aria-hidden="true" className="absolute bottom-2.5 right-2.5 w-3 h-3 border-b-2 border-r-2 border-red-500/0 group-hover:border-red-500/70 transition-colors duration-300 rounded-br-sm" />
-
-                      <div className="relative p-6">
-                        <div className="flex items-start justify-between mb-4">
-                          <div className="relative p-2.5 rounded-xl border bg-red-500/10 border-red-500/20 text-red-400 group-hover:scale-110 group-hover:border-red-500/40 transition-transform">
-                            <div className="absolute -inset-1.5 rounded-xl bg-red-500/30 opacity-0 group-hover:opacity-60 blur-md -z-10 transition-opacity" />
-                            <CategoryIcon className="w-5 h-5" />
-                          </div>
-                          <div className="flex items-center gap-1.5">
-                            <ResetDrillButton
-                              storageKeys={storageKeys}
-                              drillName={drill.name}
-                              onReset={() => setDrillLevels((prev) => {
-                                const next = { ...prev };
-                                delete next[drill.folderName];
-                                return next;
-                              })}
-                            />
-                            {bestLevel && (
-                              <div className="px-2 py-0.5 rounded-full text-[9px] font-mono font-bold tracking-wide border border-blue-500/20 bg-blue-500/10 text-blue-400">
-                                Lv. {bestLevel}
-                              </div>
-                            )}
-                            <div className={`px-2.5 py-0.5 rounded-full text-[9px] font-mono font-bold tracking-wide border uppercase ${getDifficultyColor(drill.difficulty)}`}>
-                              {drill.difficulty}
-                            </div>
-                          </div>
-                        </div>
-
-                        <h3 className="text-base font-bold text-ink-1 mb-2 group-hover:text-red-400 transition-colors uppercase tracking-tight font-mono">
-                          {drill.name}
-                        </h3>
-
-                        <p className="text-xs text-ink-2 mb-4 leading-relaxed min-h-[48px]">
-                          {drill.description}
-                        </p>
-
-                        <div className="flex items-center gap-4 mb-4 text-2xs font-mono text-ink-3 border-b border-hairline pb-3">
-                          <div className="flex items-center gap-1">
-                            <Clock className="w-3.5 h-3.5 text-red-400" />
-                            <span>{drill.duration}</span>
-                          </div>
-                          <div className="flex items-center gap-1">
-                            <Cpu className="w-3.5 h-3.5 text-red-400" />
-                            <span>Aim Engine</span>
-                          </div>
-                        </div>
-
-                        <div className="flex items-center justify-between">
-                          <span className="text-2xs font-bold text-ink-3 uppercase tracking-widest">{category.name}</span>
-                          <div className="flex items-center gap-1 text-red-400 group-hover:gap-2 transition-all font-bold text-xs uppercase tracking-widest font-mono">
-                            <span>EXEC_DRILL</span>
-                            <Play className="w-3.5 h-3.5 fill-current" />
-                          </div>
-                        </div>
-                      </div>
-                    </Link>
-                  );
-                })}
-              </div>
-            </Reveal>
-          );
-        })}
-
-        {/* Training Guide Section */}
-        <Reveal className="mb-12">
-          <div className="bg-surface-1/80 border border-hairline rounded-3xl p-8 relative overflow-hidden backdrop-blur-xl shadow-xl">
-            <h3 className="text-lg font-bold uppercase tracking-wider text-ink-1 mb-6 flex items-center gap-2 font-mono">
-              <Sparkles className="w-5 h-5 text-red-400" />
-              RECOMMENDED TRAINING PROTOCOLS
-            </h3>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-              <div className="bg-surface-2 border border-hairline rounded-xl p-4">
-                <h4 className="font-bold text-red-400 mb-2 flex items-center gap-2 uppercase text-xs tracking-wider font-mono">
-                  <span>🌅</span> Phase 01: Warm-Up
-                </h4>
-                <ul className="text-2xs font-mono text-ink-2 space-y-1.5">
-                  <li className="flex items-start gap-1"><span className="text-red-400">•</span> Single Target Track (2 runs)</li>
-                  <li className="flex items-start gap-1"><span className="text-red-400">•</span> Instant Response (2 runs)</li>
-                  <li className="flex items-start gap-1"><span className="text-red-400">•</span> Pro Smooth Pursuit (1 run)</li>
-                </ul>
-              </div>
-              <div className="bg-surface-2 border border-hairline rounded-xl p-4">
-                <h4 className="font-bold text-red-400 mb-2 flex items-center gap-2 uppercase text-xs tracking-wider font-mono">
-                  <span>🎯</span> Phase 02: Core Load
-                </h4>
-                <ul className="text-2xs font-mono text-ink-2 space-y-1.5">
-                  <li className="flex items-start gap-1"><span className="text-red-400">•</span> Flick Shot Training (3 runs)</li>
-                  <li className="flex items-start gap-1"><span className="text-red-400">•</span> Reactive Tracking (3 runs)</li>
-                  <li className="flex items-start gap-1"><span className="text-red-400">•</span> Peripheral Awareness (2 runs)</li>
-                </ul>
-              </div>
-              <div className="bg-surface-2 border border-hairline rounded-xl p-4">
-                <h4 className="font-bold text-red-400 mb-2 flex items-center gap-2 uppercase text-xs tracking-wider font-mono">
-                  <span>⚡</span> Phase 03: Overload
-                </h4>
-                <ul className="text-2xs font-mono text-ink-2 space-y-1.5">
-                  <li className="flex items-start gap-1"><span className="text-red-400">•</span> 360Hz Pro Tracking (2 runs)</li>
-                  <li className="flex items-start gap-1"><span className="text-red-400">•</span> Predictive Tracking (2 runs)</li>
-                  <li className="flex items-start gap-1"><span className="text-red-400">•</span> Target Swarm (2 runs)</li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </Reveal>
-
-        {/* Explore Related Hubs */}
-        <Reveal className="mt-12 mb-8 border-t border-hairline pt-12">
-          <h2 className="text-base font-bold tracking-widest text-center text-ink-1 font-mono uppercase mb-8">Explore Adjacent Hubs</h2>
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 max-w-5xl mx-auto">
-            <Link href="/drills/cognitive" className="group bg-surface-1 border border-hairline rounded-xl p-5 hover:border-violet-500/40 transition-all duration-200 hover:-translate-y-1 text-center">
-              <div className="text-2xl mb-2">🧠</div>
-              <h3 className="font-bold text-ink-1 group-hover:text-violet-400 transition-colors uppercase text-xs font-mono">Cognitive Hub</h3>
-              <p className="text-2xs text-ink-3 uppercase mt-1 font-mono">Focus &amp; decision speed</p>
-            </Link>
-            <Link href="/drills/visual" className="group bg-surface-1 border border-hairline rounded-xl p-5 hover:border-fuchsia-500/40 transition-all duration-200 hover:-translate-y-1 text-center">
-              <div className="text-2xl mb-2">👁️</div>
-              <h3 className="font-bold text-ink-1 group-hover:text-fuchsia-400 transition-colors uppercase text-xs font-mono">Visual Hub</h3>
-              <p className="text-2xs text-ink-3 uppercase mt-1 font-mono">Saccades &amp; fov</p>
-            </Link>
-            <Link href="/drills/motor" className="group bg-surface-1 border border-hairline rounded-xl p-5 hover:border-emerald-500/40 transition-all duration-200 hover:-translate-y-1 text-center">
-              <div className="text-2xl mb-2">🖐️</div>
-              <h3 className="font-bold text-ink-1 group-hover:text-emerald-400 transition-colors uppercase text-xs font-mono">Motor Control</h3>
-              <p className="text-2xs text-ink-3 uppercase mt-1 font-mono">Hand-eye coordination</p>
-            </Link>
-            <Link href="/drills/memory" className="group bg-surface-1 border border-hairline rounded-xl p-5 hover:border-indigo-500/40 transition-all duration-200 hover:-translate-y-1 text-center">
-              <div className="text-2xl mb-2">💾</div>
-              <h3 className="font-bold text-ink-1 group-hover:text-indigo-400 transition-colors uppercase text-xs font-mono">Memory Hub</h3>
-              <p className="text-2xs text-ink-3 uppercase mt-1 font-mono">Working &amp; sequence recall</p>
-            </Link>
-          </div>
-        </Reveal>
+        <StickyMobileCta
+          href={hasLocalizedRoute(locale, '/drills/fps/flick-shot-training') ? localizeHref('/drills/fps/flick-shot-training') : '/drills/fps/flick-shot-training'}
+          label={t('hubs.fps.startCta', 'Start FPS Drill')}
+          categoryName={t('header.fps', 'FPS Aim')}
+        />
       </div>
 
-      <StickyMobileCta href="/drills/fps/flick-shot-training" label="Start FPS Drill" categoryName="FPS" />
       <SiteFooter />
     </div>
   );

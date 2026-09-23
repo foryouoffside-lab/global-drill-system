@@ -1,13 +1,12 @@
 'use client';
 
 import React, { useState, useEffect, useRef, useCallback } from 'react';
-import Link from 'next/link';
 
 import {
   Brain, Play, RefreshCw,
   TrendingUp, Volume2, VolumeX,
   Zap, ZapOff, Users, Share2, ArrowLeft,
-  MapPin, Target, Trophy
+  MapPin
 } from 'lucide-react';
 
 import generateShareCard, { shareScoreCard } from '../../../../../components/ShareScoreCard';
@@ -22,8 +21,8 @@ import DrillCountdown from '../../../../../components/drill/DrillCountdown';
 import DrillAccordion from '../../../../../components/drill/DrillAccordion';
 import DrillFlashOverlay from '../../../../../components/drill/DrillFlashOverlay';
 import DrillRuleItem from '../../../../../components/drill/DrillRuleItem';
-import DrillFAQItem from '../../../../../components/drill/DrillFAQItem';
 import FpsStartCard from '../../../../../components/drill/FpsStartCard';
+import useImmersiveMode from '@/lib/useImmersiveMode';
 
 const DRILL_DURATION = 45; // 45 seconds duration
 const POINTS_PER_HIT = 150;
@@ -47,9 +46,10 @@ const saveData = (data) => {
   } catch (e) {}
 };
 
-export default function ObjectLocationClient() {
+export default function ObjectLocationClient({ copy = null }) {
   const [gameState, setGameState] = useState('start'); // 'start' | 'countdown' | 'playing' | 'gameOver'
   const [isFullscreen, setIsFullscreen] = useState(false);
+  useImmersiveMode(isFullscreen); // locks the page behind while the drill fills the screen
   const [soundEnabled, setSoundEnabled] = useState(true);
   const [flashEnabled, setFlashEnabled] = useState(true);
   const [openAccordion, setOpenAccordion] = useState(null);
@@ -116,9 +116,7 @@ export default function ObjectLocationClient() {
     startingRef.current = false;
     gameActiveRef.current = false;
 
-    if (document.fullscreenElement) {
-      await document.exitFullscreen().catch(() => {});
-    }
+    setIsFullscreen(false);
     setGameState('start');
   }, [clearGameTimeouts]);
 
@@ -128,7 +126,7 @@ export default function ObjectLocationClient() {
   });
 
   // Stop all timers/intervals on unmount (e.g. in-app nav away mid-drill) —
-  // visibilitychange/pagehide/fullscreenchange don't fire on SPA route changes.
+  // visibilitychange/pagehide don't fire on SPA route changes.
   useEffect(() => {
     return () => {
       countdownTimeoutsRef.current.forEach(clearTimeout);
@@ -149,7 +147,7 @@ export default function ObjectLocationClient() {
 
     const e = engine.current;
     const totalTries = e.perfectHits + e.missedClicks;
-    const finalAccuracy = totalTries > 0 ? Math.round((e.perfectHits / totalTries) * 100) : 100;
+    const finalAccuracy = totalTries > 0 ? Math.round((e.perfectHits / totalTries) * 100) : 0;
 
     const grade = getFpsScoreGrade(e.score, ELITE_SCORE);
 
@@ -157,7 +155,7 @@ export default function ObjectLocationClient() {
       accuracy: finalAccuracy,
       perfectHits: e.perfectHits,
       missedClicks: e.missedClicks,
-      finalLevel: e.level,
+      finalLevel: Math.floor(e.level),
       grade,
     });
 
@@ -169,7 +167,7 @@ export default function ObjectLocationClient() {
 
     const updatedData = {
       bestScore: Math.max(prevSaved.bestScore, e.score),
-      bestLevel: Math.max(prevSaved.bestLevel, e.level),
+      bestLevel: Math.max(prevSaved.bestLevel, Math.floor(e.level)),
       totalSessions: (prevSaved.totalSessions || 0) + 1,
     };
     saveData(updatedData);
@@ -368,12 +366,7 @@ export default function ObjectLocationClient() {
       targetObject: '',
     };
 
-    // Auto Fullscreen on Start
-    try {
-      if (containerRef.current && !document.fullscreenElement) {
-        await containerRef.current.requestFullscreen();
-      }
-    } catch (e) {}
+    setIsFullscreen(true);
 
     // Countdown sequence: 3 -> 2 -> 1 -> GO
     setGameState('countdown');
@@ -429,6 +422,7 @@ export default function ObjectLocationClient() {
   }, [clearGameTimeouts, endGame, startSequenceCycle]);
 
   const shareScore = useCallback(async () => {
+    setIsFullscreen(false);
     const url = 'https://skilldrills.online/drills/memory/spatial-memory/object-location';
     try {
       const canvas = generateShareCard({
@@ -458,41 +452,31 @@ export default function ObjectLocationClient() {
       <main className="flex-1 max-w-6xl w-full mx-auto px-4 py-6 flex flex-col gap-6">
         {/* Title */}
         {!isFullscreen && (
-        <div className="text-center">
-          <h1 className="text-2xl sm:text-3xl font-black tracking-tight text-white">
-            OBJECT LOCATION
-            <span data-seo-kw="1" className="block text-sm font-semibold text-slate-400 mt-1 normal-case tracking-normal">
-              Object Location Memory Test
-            </span>
-          </h1>
-          <p className="text-xs text-slate-400 mt-1">
-            Spatial Object Memory Recall Under Speed Constraints
-          </p>
-        </div>
+          <div className="flex flex-col gap-1">
+            <h1 className="text-2xl sm:text-3xl font-black tracking-tight text-white">
+              {copy?.h1Prefix || null}
+              <span data-seo-kw="1">{copy?.h1Keyword || "Object Location Memory Test"}</span>
+              {copy?.h1Suffix || null}
+              <span className="block text-sm font-semibold text-slate-400 mt-1">{copy?.subtitle || "Object location memory test for remembering where items appear on expanding grids and improving spatial recall"}</span>
+            </h1>
+          </div>
         )}
 
         {/* Live Stat Cards */}
         {!isFullscreen && (
-        <div className="grid grid-cols-4 gap-2.5 max-w-2xl mx-auto w-full">
-          <div className="bg-[#0d0d18] border border-white/5 rounded-xl p-2.5 text-center">
-            <div className="text-[10px] uppercase font-bold text-slate-500 tracking-wider">Score</div>
-            <div className="text-lg sm:text-xl font-black text-emerald-400 tabular-nums">{uiScore}</div>
+          <div className="grid grid-cols-4 gap-2 w-full -mb-2">
+            {[
+              { label: copy?.statScore || "Score", val: uiScore, color: "text-emerald-400" },
+              { label: copy?.statTime || "Time", val: `${uiTimeLeft}s`, highlight: uiTimeLeft <= 10 },
+              { label: copy?.statLevel || "Level", val: `${copy?.levelPrefix || "Lv."} ${level}`, color: "text-indigo-400" },
+              { label: copy?.statBestScore || "Best Score", val: bestScore, color: "text-amber-400" },
+            ].map((s, i) => (
+              <div key={i} className="border border-white/[0.06] bg-white/[0.015] px-2 py-2 rounded-xl text-center">
+                <div className="text-[9px] sm:text-[10px] uppercase font-bold text-slate-500 tracking-wider mb-0.5">{s.label}</div>
+                <div className={`text-xs sm:text-sm md:text-base font-black tabular-nums truncate ${s.highlight ? "text-red-400 animate-pulse" : s.color || "text-white"}`}>{s.val}</div>
+              </div>
+            ))}
           </div>
-          <div className="bg-[#0d0d18] border border-white/5 rounded-xl p-2.5 text-center">
-            <div className="text-[10px] uppercase font-bold text-slate-500 tracking-wider">Time</div>
-            <div className={`text-lg sm:text-xl font-black tabular-nums ${uiTimeLeft <= 10 ? 'text-red-400 animate-pulse' : 'text-white'}`}>
-              {uiTimeLeft}s
-            </div>
-          </div>
-          <div className="bg-[#0d0d18] border border-white/5 rounded-xl p-2.5 text-center">
-            <div className="text-[10px] uppercase font-bold text-slate-500 tracking-wider">Level</div>
-            <div className="text-lg sm:text-xl font-black text-indigo-400 tabular-nums">Lv. {level}</div>
-          </div>
-          <div className="bg-[#0d0d18] border border-white/5 rounded-xl p-2.5 text-center">
-            <div className="text-[10px] uppercase font-bold text-slate-500 tracking-wider">Best Score</div>
-            <div className="text-lg sm:text-xl font-black text-amber-400 tabular-nums">{bestScore}</div>
-          </div>
-        </div>
         )}
 
         {/* Game Stage Container */}
@@ -509,12 +493,12 @@ export default function ObjectLocationClient() {
           {(gameState === 'playing' || gameState === 'countdown') && (
             <>
               <div className="absolute top-4 left-4 z-30 pointer-events-none">
-                <p className="text-[10px] font-semibold uppercase tracking-wider text-white/50">Score</p>
+                <p className="text-[10px] font-semibold uppercase tracking-wider text-white/50">{copy?.statScore || "Score"}</p>
                 <p className="text-2xl sm:text-3xl font-bold text-white tabular-nums leading-tight">{uiScore}</p>
               </div>
 
               <div className="absolute top-4 right-4 z-30 pointer-events-none text-right">
-                <p className="text-[10px] font-semibold uppercase tracking-wider text-white/50">Time</p>
+                <p className="text-[10px] font-semibold uppercase tracking-wider text-white/50">{copy?.statTime || "Time"}</p>
                 <p className={`text-2xl sm:text-3xl font-bold tabular-nums leading-tight ${uiTimeLeft <= 10 ? 'text-red-400' : 'text-white'}`}>{uiTimeLeft}s</p>
               </div>
             </>
@@ -564,7 +548,7 @@ export default function ObjectLocationClient() {
                   <div className="mb-1.5 flex flex-col items-center justify-center shrink-0 animate-in fade-in duration-200">
                     <div className="px-3.5 py-1 rounded-xl bg-white/[0.04] border border-white/10">
                       <span className="text-xs font-bold uppercase tracking-widest text-slate-400">
-                        MEMORIZE OBJECT LOCATIONS
+                        {copy?.memorizePrompt || "MEMORIZE OBJECT LOCATIONS"}
                       </span>
                     </div>
                   </div>
@@ -575,7 +559,7 @@ export default function ObjectLocationClient() {
                   <div className="mb-1.5 flex flex-col items-center justify-center shrink-0 animate-in fade-in zoom-in-95 duration-200">
                     <div className="flex items-center gap-2 px-3.5 py-1 rounded-xl bg-cyan-950/60 border border-cyan-500/40">
                       <span className="text-xs font-black uppercase tracking-widest text-cyan-400 flex items-center gap-1">
-                        <MapPin className="w-3.5 h-3.5 text-cyan-400 animate-pulse" /> TARGET:
+                        <MapPin className="w-3.5 h-3.5 text-cyan-400 animate-pulse" /> {copy?.targetPrompt || "TARGET:"}
                       </span>
                       <span className="text-2xl sm:text-3xl">
                         {targetObject}
@@ -605,17 +589,17 @@ export default function ObjectLocationClient() {
 
                   if (phase === 'memorize') {
                     if (hasObject) {
-                      cellStyle = "bg-white/10 border border-white/20 shadow-inner";
+                      cellStyle = "bg-white/10 border border-white/20";
                       content = objectLocations[i];
                     }
                   } else if (phase === 'locate') {
                     cellStyle = "bg-white/[0.04] border border-white/10 hover:bg-white/10 active:scale-95 transition-all cursor-pointer";
                   } else if (phase === 'result') {
                     if (isTargetLocation) {
-                      cellStyle = "bg-emerald-500 shadow-[0_0_20px_rgba(16,185,129,0.6)] border-emerald-300";
+                      cellStyle = "bg-emerald-500 border-emerald-300";
                       content = objectLocations[i];
                     } else if (isWrongClick) {
-                      cellStyle = "bg-red-600 shadow-[0_0_20px_rgba(239,68,68,0.6)] border-red-400";
+                      cellStyle = "bg-red-600 border-red-400";
                     }
                   }
 
@@ -642,16 +626,8 @@ export default function ObjectLocationClient() {
             <FpsStartCard
               icon={MapPin}
               accent="emerald"
-              title="Object Location Pro"
-              subtitle="Spatial Object Memory • Location Recall"
-              rules={[
-                { icon: Target, accent: 'emerald', title: 'Memorize Object Positions', text: 'Study where each emoji object is placed on the grid' },
-                { icon: Zap, accent: 'blue', title: 'Locate Target Object', text: 'Tap the correct grid cell when prompted for a target object' },
-              ]}
-              stats={[
-                { icon: Trophy, label: 'Best Score', value: bestScore, color: 'text-white', accent: 'slate' },
-                { icon: TrendingUp, label: 'Best Level', value: `Lv. ${bestLevel}`, color: 'text-purple-400', accent: 'purple' },
-              ]}
+              title={copy?.startTitle || "Object Location Pro"}
+              subtitle={copy?.startSubtitle || "Spatial Object Memory • Location Recall"}
               isTouchOnlyDevice={false}
               onStart={enterDrill}
             />
@@ -659,7 +635,7 @@ export default function ObjectLocationClient() {
 
           {/* COUNTDOWN OVERLAY (3-2-1-GO) */}
           {gameState === 'countdown' && (
-            <DrillCountdown value={countdownValue} subtitle="GET READY" />
+            <DrillCountdown value={countdownValue} subtitle={copy?.countdownSubtitle || "GET READY"} />
           )}
 
           {/* END SCREEN (GAME OVER) */}
@@ -670,7 +646,7 @@ export default function ObjectLocationClient() {
               <div className="w-[36%] flex flex-col items-center justify-center gap-1 border-r border-white/5 px-4" style={{ background: 'radial-gradient(ellipse 260px 200px at 50% 30%, rgba(16,185,129,.12), transparent 70%)' }}>
                 {isNewBest && (
                   <span className="text-[9.5px] font-bold text-yellow-400 bg-yellow-500/10 border border-yellow-500/25 px-2.5 py-0.5 rounded-full mb-1 animate-pulse">
-                    NEW BEST
+                    {copy?.newBest || "NEW BEST"}
                   </span>
                 )}
                 <div className={`text-5xl sm:text-6xl font-black leading-none ${analytics.grade?.color || 'text-emerald-400'}`}>
@@ -682,7 +658,7 @@ export default function ObjectLocationClient() {
                 <div className="text-3xl sm:text-4xl font-black text-white mt-2 tabular-nums">
                   {uiScore}
                 </div>
-                <div className="text-[9px] uppercase tracking-widest text-slate-500">Points</div>
+                <div className="text-[9px] uppercase tracking-widest text-slate-500">{copy?.pointsLabel || "Points"}</div>
               </div>
 
               {/* Right Stats & Actions Panel */}
@@ -692,15 +668,15 @@ export default function ObjectLocationClient() {
                 <div className="grid grid-cols-3 gap-2">
                   <div className="bg-black border border-white/5 p-2.5 rounded-xl text-center">
                     <p className="text-sm sm:text-base font-black text-white">{analytics.accuracy}%</p>
-                    <p className="text-[7.5px] sm:text-[8.5px] font-bold uppercase tracking-wider text-gray-400 mt-0.5">Accuracy</p>
+                    <p className="text-[7.5px] sm:text-[8.5px] font-bold uppercase tracking-wider text-gray-400 mt-0.5">{copy?.statAccuracy || "Accuracy"}</p>
                   </div>
                   <div className="bg-black border border-white/5 p-2.5 rounded-xl text-center">
-                    <p className="text-sm sm:text-base font-black text-white">Lvl {analytics.finalLevel}</p>
-                    <p className="text-[7.5px] sm:text-[8.5px] font-bold uppercase tracking-wider text-gray-400 mt-0.5">Peak Level</p>
+                    <p className="text-sm sm:text-base font-black text-white">{copy?.levelPrefix || "Lv."} {analytics.finalLevel}</p>
+                    <p className="text-[7.5px] sm:text-[8.5px] font-bold uppercase tracking-wider text-gray-400 mt-0.5">{copy?.statPeakLevel || "Peak Level"}</p>
                   </div>
                   <div className="bg-black border border-white/5 p-2.5 rounded-xl text-center">
                     <p className="text-sm sm:text-base font-black text-white">{analytics.perfectHits}</p>
-                    <p className="text-[7.5px] sm:text-[8.5px] font-bold uppercase tracking-wider text-gray-400 mt-0.5">Perfects</p>
+                    <p className="text-[7.5px] sm:text-[8.5px] font-bold uppercase tracking-wider text-gray-400 mt-0.5">{copy?.statPerfects || "Perfects"}</p>
                   </div>
                 </div>
 
@@ -710,7 +686,7 @@ export default function ObjectLocationClient() {
                     onClick={enterDrill} 
                     className="flex-1 py-3 rounded-[13px] bg-gradient-to-r from-emerald-600 to-green-600 text-white font-bold text-xs uppercase tracking-wide cursor-pointer transition-transform active:scale-[0.98] shadow-md flex items-center justify-center gap-1.5"
                   >
-                    <RefreshCw className="w-3.5 h-3.5" /> Play Again
+                    <RefreshCw className="w-3.5 h-3.5" /> {copy?.btnPlayAgain || "Play Again"}
                   </button>
                   <button 
                     onClick={shareScore} 
@@ -722,7 +698,7 @@ export default function ObjectLocationClient() {
                   <button 
                     onClick={handleExitDrill} 
                     className="w-11 flex-shrink-0 rounded-[13px] bg-white/[0.04] border border-white/10 flex items-center justify-center text-slate-400 hover:text-white cursor-pointer active:scale-90 transition-transform" 
-                    title="Exit Fullscreen & Return"
+                    title="Exit Drill & Return"
                   >
                     <ArrowLeft className="w-4 h-4 text-red-400" />
                   </button>
@@ -739,32 +715,36 @@ export default function ObjectLocationClient() {
           <div className="[&>div]:!mt-0">
           <DrillAccordion
             id="rules"
-            title="Drill Instructions & Scoring System"
+            title={copy?.rulesTitle || "Drill Instructions & Scoring System"}
             isOpen={openAccordion === 'rules'}
             onToggle={() => setOpenAccordion(openAccordion === 'rules' ? null : 'rules')}
           >
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-              <DrillRuleItem num="1" text="Find Target Location" highlight="+150 PTS" result="Level Up (+1 Obj)" />
-              <DrillRuleItem num="2" text="Level Progression" highlight="Grid 3x3 → 7x7" result="Difficulty naturally scales" />
-              <DrillRuleItem num="3" text="Miss / Timeout" highlight="Zero Penalties" result="No score or time loss" />
-              <DrillRuleItem num="4" text="Difficulty Never Drops" highlight="Stays at Current Level" result="A miss just replays the round" />
+              {(copy?.rulesItems || [
+                { num: "1", text: "Memorize Positions & Find Target", highlight: "+150 PTS", result: "Level Up (+1 Obj)" },
+                { num: "2", text: "Level Progression", highlight: "Grid 3x3 → 7x7", result: "Difficulty naturally scales" },
+                { num: "3", text: "Miss / Timeout", highlight: "Zero Penalties", result: "No score or time loss" },
+                { num: "4", text: "Difficulty Never Drops", highlight: "Stays at Current Level", result: "A miss just replays the round" }
+              ]).map((r, i) => (
+                <DrillRuleItem key={i} num={r.num} text={r.text} highlight={r.highlight} result={r.result} />
+              ))}
             </div>
           </DrillAccordion>
 
           {/* ACCORDION 2: ABOUT OBJECT LOCATION PRO */}
           <DrillAccordion
             id="about"
-            title="About Object Location Pro"
+            title={copy?.aboutTitle || "About Object Location Pro"}
             isOpen={openAccordion === 'about'}
             onToggle={() => setOpenAccordion(openAccordion === 'about' ? null : 'about')}
           >
             <div className="space-y-8">
               <section>
-                <h4 className="text-base font-bold text-white mb-2 flex items-center gap-2">
+                <h3 className="text-base font-bold text-white mb-2 flex items-center gap-2">
                   <Brain className="w-4 h-4 text-emerald-400" /> What Is Object Location Training?
-                </h4>
+                </h3>
                 <p className="text-sm leading-relaxed mb-3">
-                  <strong>Object Location Training</strong> is a core spatial position memory exercise designed to measure visual mapping capacity. The <strong>Object Location drill</strong> presents multiple emoji objects on 3x3 to 7x7 matrices, testing your ability to lock in object positions and identify specific target locations when the grid goes blank.
+                  <strong>Object Location Training</strong> is a core spatial position memory exercise designed to measure visual mapping capacity. The <strong>Object Location drill</strong> presents multiple emoji objects on 3x3 to 7x7 matrices, testing your ability to lock in object positions and identify specific target locations when the grid goes blank. Eals and Silverman (1994) measured object-location memory with object arrays much like this one, and it runs into the same ceiling of about four items as other visual working memory tasks (Luck & Lockhart, 1997).
                 </p>
                 <p className="text-sm leading-relaxed">
                   By practicing <strong>spatial position anchoring</strong>, you expand your visual short-term memory buffer and increase your layout retrieval speed under time pressure.
@@ -775,21 +755,21 @@ export default function ObjectLocationClient() {
                 <div className="p-4 rounded-xl border border-gray-800 bg-white/[0.02]">
                   <div className="flex items-center gap-2.5 mb-2">
                     <div className="w-7 h-7 rounded-lg bg-blue-600 flex items-center justify-center"><Users className="w-3.5 h-3.5 text-white" /></div>
-                    <h5 className="text-xs font-bold text-white">Who Should Use This?</h5>
+                    <h4 className="text-xs font-bold text-white">Who Should Use This?</h4>
                   </div>
                   <p className="text-xs text-gray-300 leading-relaxed">Gamers improving map awareness, STEM students strengthening spatial reasoning, and professionals wanting to enhance visual position retention.</p>
                 </div>
                 <div className="p-4 rounded-xl border border-gray-800 bg-white/[0.02]">
                   <div className="flex items-center gap-2.5 mb-2">
                     <div className="w-7 h-7 rounded-lg bg-emerald-600 flex items-center justify-center"><TrendingUp className="w-3.5 h-3.5 text-white" /></div>
-                    <h5 className="text-xs font-bold text-white">Skills Improved</h5>
+                    <h4 className="text-xs font-bold text-white">Skills Improved</h4>
                   </div>
                   <p className="text-xs text-gray-300 leading-relaxed">Spatial position memory, multiple object location recall, visual-spatial working memory, and layout mapping.</p>
                 </div>
                 <div className="p-4 rounded-xl border border-gray-800 bg-white/[0.02]">
                   <div className="flex items-center gap-2.5 mb-2">
                     <div className="w-7 h-7 rounded-lg bg-purple-600 flex items-center justify-center"><Zap className="w-3.5 h-3.5 text-white" /></div>
-                    <h5 className="text-xs font-bold text-white">Spatial Anchoring</h5>
+                    <h4 className="text-xs font-bold text-white">Spatial Anchoring</h4>
                   </div>
                   <p className="text-xs text-gray-300 leading-relaxed">Associate specific icons with grid corners or edges to quickly locate targets when the grid resets.</p>
                 </div>
@@ -797,66 +777,12 @@ export default function ObjectLocationClient() {
 
             </div>
           </DrillAccordion>
-
-          {/* ACCORDION 3: FREQUENTLY ASKED QUESTIONS */}
-          <DrillAccordion
-            id="faq"
-            title="Frequently Asked Questions"
-            isOpen={openAccordion === 'faq'}
-            onToggle={() => setOpenAccordion(openAccordion === 'faq' ? null : 'faq')}
-          >
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-              <DrillFAQItem q="What is the Object Location Drill?" a="A free spatial position memory exercise. Memorize illuminated object locations, then tap the target object's position on a blank grid." />
-              <DrillFAQItem q="How does progressive difficulty work?" a="Starts on a 3x3 grid with 2 objects. Clearing rounds adds objects and expands the grid up to 7x7." />
-              <DrillFAQItem q="Are there negative score or time penalties?" a="No. Tapping a wrong location never deducts score points or reduces remaining timer seconds — the round just replays at the same difficulty." />
-              <DrillFAQItem q="Does difficulty decrease on mistakes?" a="No. Your level only ever goes up — a mistake never takes you back down, so you can safely master your current grid size." />
-              <DrillFAQItem q="How long does each drill session last?" a="Each round is timed for exactly 45 seconds of continuous focus." />
-              <DrillFAQItem q="Do I need to sign up?" a="No registration required. This drill runs directly in your browser with instant response." />
-              <DrillFAQItem q="What cognitive skill does Object Location train?" a="It trains spatial position memory — binding a specific item to a specific location in a mental map, then retrieving that binding once the visual cues disappear. Each object-location pair has to be individually encoded." />
-              <DrillFAQItem q="How is this different from Grid Memorization?" a="Grid Memorization recalls which cells were lit, treating them as a single pattern. Object Location requires binding a specific object identity to a specific position, then retrieving one target location on demand — closer to real-world 'where did I put that' memory." />
-              <DrillFAQItem q="What is object-location binding and why is it useful?" a="Object-location binding is how the brain links 'what' and 'where' information into a single memory trace, powered largely by the hippocampus. Practicing it strengthens the same memory systems used to remember where you parked or left your keys." />
-              <DrillFAQItem q="What is a good score on this drill?" a="Consistently clearing 5x5 grids with 6+ objects is a strong intermediate benchmark. Elite spatial memorizers track object positions on 7x7 grids with 10+ items using systematic anchor-point strategies." />
-            </div>
-          </DrillAccordion>
           </div>
-        )}
-
-        {/* RELATED DRILLS GRID */}
-        {!isFullscreen && (
-          <section className="mt-4">
-            <h2 className="text-sm font-bold text-slate-400 uppercase tracking-wider mb-3">
-              Related Memory Drills
-            </h2>
-            <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
-              <RelatedCard href="/drills/memory/spatial-memory/path-tracing" title="Path Tracing" desc="Retrace animated path sequences on expanding grids." cat="Spatial Memory" />
-              <RelatedCard href="/drills/memory/spatial-memory/grid-memorization" title="Grid Memorization" desc="Memorize progressive spatial grid patterns." cat="Spatial Memory" />
-              <RelatedCard href="/drills/memory/working-memory/n-back" title="Dual N-Back" desc="The gold standard working memory trainer." cat="Working Memory" />
-              <RelatedCard href="/drills/memory/short-term-memory/word-recall" title="Word Recall" desc="Free recall random word lists under time pressure." cat="Short-Term Memory" />
-              <RelatedCard href="/drills/memory/short-term-memory/color-sequence" title="Color Sequence" desc="Watch and recall color sequences." cat="Short-Term Memory" />
-              <RelatedCard href="/drills/memory/short-term-memory/digit-span" title="Digit Span" desc="Train numerical short-term memory capacity." cat="Short-Term Memory" />
-            </div>
-          </section>
         )}
       </main>
 
       {/* ── FOOTER ── */}
       {!isFullscreen && <DrillFooter />}
     </div>
-  );
-}
-
-// === Subcomponents ===
-function RelatedCard({ href, title, desc, cat }) {
-  return (
-    <Link href={href} className="group bg-[#0c0c16] border border-white/5 hover:border-emerald-500/40 rounded-xl p-3.5 transition-all duration-200 hover:-translate-y-0.5 flex flex-col justify-between">
-      <div>
-        {cat && <div className="text-[10px] font-bold text-emerald-400 uppercase tracking-wider mb-1">{cat}</div>}
-        <div className="text-xs font-bold text-white group-hover:text-emerald-300 transition-colors">{title}</div>
-        <div className="text-[11px] text-slate-400 mt-1 line-clamp-2 leading-relaxed">{desc}</div>
-      </div>
-      <div className="text-[10px] font-bold text-slate-500 group-hover:text-emerald-400 mt-3 flex items-center gap-1 transition-colors">
-        Train Drill <span>→</span>
-      </div>
-    </Link>
   );
 }

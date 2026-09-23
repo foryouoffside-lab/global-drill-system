@@ -2,7 +2,6 @@
 import { isIdleFrameSkippable } from '@/lib/performance';
 
 import React, { useState, useEffect, useRef, useCallback } from 'react';
-import Link from 'next/link';
 
 import {
   Activity, AlertCircle, ArrowRight, ChevronRight, Crosshair,
@@ -15,6 +14,7 @@ import {
 import generateShareCard, { shareScoreCard } from '../../../../../components/ShareScoreCard';
 import { getPlayerName } from '../../../../../lib/leaderboard';
 import { drillAudio } from '../../../../../lib/drillAudio';
+import { useDrillSensitivity } from '../../../../../lib/drillSensitivity';
 import { drillFlash } from '../../../../../lib/drillFlash';
 import { MAX_LEVEL, getStartLevel, getNextLevel, getDifficultyProgress, getComboBonusLevel } from '../../../../../lib/drillDifficulty';
 import { getComboMultiplier, getFpsScoreGrade } from '../../../../../lib/scoringEngine';
@@ -23,7 +23,9 @@ import useUnexpectedExitGuard from '../../../../../lib/useUnexpectedExitGuard';
 import DrillFooter from '../../../../../components/drill/DrillFooter';
 import DrillCountdown from '../../../../../components/drill/DrillCountdown';
 import DrillAccordion from '../../../../../components/drill/DrillAccordion';
+import DrillRuleItem from '../../../../../components/drill/DrillRuleItem';
 import FpsStartCard from '../../../../../components/drill/FpsStartCard';
+import useImmersiveMode from '@/lib/useImmersiveMode';
 
 // ============================================================
 // TUNING CONSTANTS
@@ -66,29 +68,9 @@ const ABOUT_TEXT = `The Reflex Game Online (Quick Dodge) tests raw reaction spee
 
 As your score increases, the level scales up to Level 15+. Obstacle speed accelerates from 300 px/s up to 1600+ px/s, and enemy spawn density grows exponentially.
 
-Successfully dodging threats builds huge combo multipliers and accelerates your score climb across a fixed 45-second session.`;
+Successfully dodging threats builds huge combo multipliers and accelerates your score climb across a fixed 45-second session.
 
-const FAQ_ITEMS = [
-  { q: "What is a Reflex Game Online?", a: "A reflex game is an interactive browser drill where players must navigate a cursor to evade dynamic, homing threats. It tests raw reaction speed, spatial awareness, and cursor precision under heavy cognitive load." },
-  { q: "How does this dodge challenge improve coordination?", a: "By forcing you to process multiple peripheral threats simultaneously and execute precise, non-jittery mouse movements to escape tight corridors, it heavily strengthens visual-motor integration." },
-  { q: "Does this improve FPS gaming?", a: "Yes. Surviving high-level evasion drills requires elite mouse agility and peripheral scanning. These translate directly to dodging utility, counter-strafing, and fluid crosshair placement in tactical shooters." },
-  { q: "Is this good for Valorant or CS2?", a: "Absolutely. The rapid threat identification and repositioning translates directly to dodging flashes, grenades, and ultimate abilities while maintaining crosshair control." },
-  { q: "Does it improve hand-eye coordination?", a: "Yes, because you must physically move your mouse to navigate the safe coordinates you visually identified, syncing your visual cortex with your motor cortex." },
-  { q: "How does difficulty scaling work?", a: "As you score points, your level rises up to Level 15. Obstacle speed accelerates from 300 px/s up to 1600+ px/s, and spawn delay decreases." },
-  { q: "Are there score penalties for getting hit?", a: "No. Getting hit resets your combo streak and clears current obstacles for a brief reset, but does not deduct points or reduce your session timer." },
-  { q: "How long does each session run?", a: "Each session runs for a fixed 45 seconds, providing a standardized performance benchmark." },
-  { q: "What is a good score in Quick Dodge?", a: "Scoring 8,000+ points earns a Gold or Platinum grade, while reaching 17,000+ points with high evasion accuracy places you in the Master tier." },
-  { q: "Is this free?", a: "Yes! The SkillDrills Reflex Game Online is entirely free, ad-free, and runs purely in your web browser with zero downloads required." }
-];
-
-const RELATED_DRILLS = [
-  { id: "reaction-chain", name: "Reaction Chain", cat: "Reflex Training", desc: "Train precision stopping and impulse arrest on incoming targets.", href: "/drills/physical/reflex-training/reaction-chain" },
-  { id: "peripheral-threat-sweeper", name: "Peripheral Threat Sweeper", cat: "Reflex Training", desc: "Scan peripheral boundaries and eliminate approaching targets.", href: "/drills/physical/reflex-training/peripheral-threat-sweeper" },
-  { id: "agility-ladder", name: "Motor Sequencing (Agility Ladder)", cat: "Physical Fitness", desc: "Master bilateral motor sequencing and rhythmic mouse sweeps.", href: "/drills/physical/fitness/agility-ladder" },
-  { id: "cross-body-movement", name: "Cross-Body Movement", cat: "Physical Coordination", desc: "Improve bilateral motor coordination and cross-body tracking.", href: "/drills/physical/coordination/cross-body-movement" },
-  { id: "dynamic-grid-evasion", name: "Dynamic Grid Evasion", cat: "Physical Coordination", desc: "Evade dynamic grid hazards with rapid motor adjustments.", href: "/drills/physical/coordination/dynamic-grid-evasion" },
-  { id: "stability-challenge", name: "Stability Challenge", cat: "Physical Balance", desc: "Test static and dynamic balance holding capabilities.", href: "/drills/physical/balance-training/stability-challenge" }
-];
+By the time you see where a pursuer is, it has moved. Fast movements are planned in advance from an internal model of how the limb and the target will behave, not corrected continuously in flight (Kawato, 1999), because vision needs roughly 100–150 ms to alter a movement already under way (Woodworth, 1899). As the threats speed up, the window for a mid-course correction closes and only the prediction is left.`;
 
 // Rapid difficulty parameters formula driven by drillDifficulty
 const getLevelConfig = (level, combo = 0) => {
@@ -129,13 +111,14 @@ const spawnObstacle = (w, h, level, combo, ch) => {
 // ============================================================
 // MAIN COMPONENT
 // ============================================================
-export default function QuickDodgeClient() {
+export default function QuickDodgeClient({ copy = {} } = {}) {
   const [gameState, setGameState] = useState('start'); // 'start' | 'countdown' | 'playing' | 'gameOver'
   const [isFullscreen, setIsFullscreen] = useState(false);
+  useImmersiveMode(isFullscreen); // locks the page behind while the drill fills the screen
   const [soundEnabled, setSoundEnabled] = useState(true);
   const [flashEnabled, setFlashEnabled] = useState(true);
-  const [pointerLocked, setPointerLocked] = useState(false);
-  const [universalSens, setUniversalSens] = useState(1.0);
+  const [, setPointerLocked] = useState(false);
+  const universalSens = useDrillSensitivity();
   const [openAccordion, setOpenAccordion] = useState(null);
   const [isTouchOnlyDevice, setIsTouchOnlyDevice] = useState(false);
   const [countdownValue, setCountdownValue] = useState(3);
@@ -174,8 +157,6 @@ export default function QuickDodgeClient() {
     logicalWidth: 800, logicalHeight: 450, peakSpeed: 300
   });
 
-  const cmPer360 = (30 / universalSens).toFixed(1);
-
   const triggerFlash = useCallback(() => {
     if (!drillFlash.isEnabled()) return;
     const id = Date.now() + Math.random();
@@ -191,15 +172,10 @@ export default function QuickDodgeClient() {
       const isTouchCapable = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
       setIsTouchOnlyDevice(isTouchCapable && !hasFinePointer);
 
-      try {
-        const savedSens = localStorage.getItem('quickDodge_sens');
-        if (savedSens) setUniversalSens(parseFloat(savedSens));
-      } catch (e) {}
-
       const saved = getSavedData();
       setBestScore(saved.bestScore || 0);
       setBestCombo(saved.bestCombo || 0);
-      setBestLevel(saved.bestLevel || 1);
+      setBestLevel(Math.floor(saved.bestLevel || 1));
     }
   }, []);
 
@@ -209,27 +185,13 @@ export default function QuickDodgeClient() {
     };
   }, []);
 
-  useEffect(() => {
-    if (gameState !== 'playing') {
-      try { localStorage.setItem('quickDodge_sens', universalSens.toString()); } catch (e) {}
-    }
-  }, [universalSens, gameState]);
-
-  useEffect(() => {
-    const handleFullscreenChange = () => setIsFullscreen(!!document.fullscreenElement);
-    document.addEventListener('fullscreenchange', handleFullscreenChange);
-    return () => document.removeEventListener('fullscreenchange', handleFullscreenChange);
-  }, []);
-
   const handleExitDrill = useCallback(async () => {
     markIntentionalExit();
     countdownTimeoutsRef.current.forEach(clearTimeout);
     countdownTimeoutsRef.current = [];
     startingRef.current = false;
 
-    if (document.fullscreenElement) {
-      await document.exitFullscreen().catch(() => {});
-    }
+    setIsFullscreen(false);
     if (document.pointerLockElement) {
       document.exitPointerLock();
     }
@@ -271,7 +233,7 @@ export default function QuickDodgeClient() {
 
     const e = engine.current;
     const totalEvents = e.dodges + e.hitsTaken;
-    const accuracyPct = totalEvents > 0 ? Math.round((e.dodges / totalEvents) * 100) : 100;
+    const accuracyPct = totalEvents > 0 ? Math.round((e.dodges / totalEvents) * 100) : 0;
     const rating = getFpsScoreGrade(e.score, ELITE_SCORE);
 
     const grade = { letter: rating.grade, label: rating.label, color: rating.color };
@@ -282,7 +244,7 @@ export default function QuickDodgeClient() {
       missedSequences: e.hitsTaken,
       peakSpeed: Math.round(e.peakSpeed),
       maxCombo: Math.round(e.bestStreak),
-      finalLevel: e.level,
+      finalLevel: Math.floor(e.level),
       grade
     });
 
@@ -292,7 +254,7 @@ export default function QuickDodgeClient() {
     const isNewHigh = e.score > prevSaved.bestScore;
     setIsNewBest(isNewHigh);
 
-    const runBestLevel = Math.max(prevSaved.bestLevel, bestLevelRunRef.current);
+    const runBestLevel = Math.floor(Math.max(prevSaved.bestLevel, bestLevelRunRef.current));
     const updatedData = {
       bestScore: Math.max(prevSaved.bestScore, e.score),
       bestCombo: Math.max(prevSaved.bestCombo, e.bestStreak),
@@ -338,11 +300,14 @@ export default function QuickDodgeClient() {
       logicalWidth: w, logicalHeight: h, peakSpeed: getLevelConfig(startLevel).speed
     };
 
-    try {
-      if (containerRef.current && !document.fullscreenElement) {
-        await containerRef.current.requestFullscreen();
-      }
-    } catch(e) {}
+    setIsFullscreen(true);
+
+    // Request pointer lock from the Start button gesture. Waiting until the
+    // countdown finishes can be rejected by the browser, leaving the player
+    // reticle in its fallback color and making it look missing.
+    if (canvasRef.current && !document.pointerLockElement && !isTouchOnlyDevice) {
+      canvasRef.current.requestPointerLock().catch(() => {});
+    }
 
     setGameState('countdown');
     setCountdownValue(3);
@@ -355,9 +320,6 @@ export default function QuickDodgeClient() {
       gameActiveRef.current = true;
       startingRef.current = false;
       setGameState('playing');
-      if (canvasRef.current && !document.pointerLockElement && !isTouchOnlyDevice) {
-        canvasRef.current.requestPointerLock().catch(() => {});
-      }
     }, 2450);
 
     countdownTimeoutsRef.current = [t1, t2, t3, t4];
@@ -579,8 +541,10 @@ export default function QuickDodgeClient() {
       ctx.globalAlpha = 1.0;
 
       const ch = e.crosshair;
-      if (ch.initialized && (gameState === 'playing' || gameState === 'start')) {
-        let activeColor = pointerLocked ? '#10b981' : '#eab308';
+      if (ch.initialized && (gameState === 'playing' || gameState === 'countdown' || gameState === 'start')) {
+        // The player reticle is always green; pointer-lock state should not
+        // make the primary gameplay visual look like a missing target.
+        let activeColor = '#10b981';
         if (e.combo >= 2.0) activeColor = '#a855f7';
         if (e.combo >= 3.0) activeColor = '#ef4444';
 
@@ -599,7 +563,20 @@ export default function QuickDodgeClient() {
         ctx.moveTo(ch.x + 14, ch.y); ctx.lineTo(ch.x + gap, ch.y);
         ctx.stroke();
 
-        ctx.beginPath(); ctx.arc(ch.x, ch.y, 2, 0, Math.PI * 2); ctx.fill();
+        // Match the green player orb shown in the drill preview. The old
+        // 2px center dot was too small to read against the dark canvas.
+        ctx.save();
+        ctx.shadowColor = 'rgba(16, 185, 129, 0.9)';
+        ctx.shadowBlur = 12;
+        ctx.fillStyle = '#10b981';
+        ctx.beginPath(); ctx.arc(ch.x, ch.y, 7, 0, Math.PI * 2); ctx.fill();
+        ctx.shadowBlur = 0;
+        ctx.strokeStyle = '#a7f3d0';
+        ctx.lineWidth = 1.5;
+        ctx.beginPath(); ctx.arc(ch.x, ch.y, 7, 0, Math.PI * 2); ctx.stroke();
+        ctx.fillStyle = '#ecfdf5';
+        ctx.beginPath(); ctx.arc(ch.x - 2, ch.y - 2, 2, 0, Math.PI * 2); ctx.fill();
+        ctx.restore();
       }
 
       ctx.restore();
@@ -617,6 +594,7 @@ export default function QuickDodgeClient() {
   }, [gameState, endGame, applyPenalty]);
 
   const shareScore = useCallback(async () => {
+    setIsFullscreen(false);
     const url = 'https://skilldrills.online/drills/physical/reflex-training/quick-dodge';
     try {
       const canvas = generateShareCard({
@@ -647,33 +625,37 @@ export default function QuickDodgeClient() {
       <main className="flex-1 max-w-6xl w-full mx-auto px-4 py-6 flex flex-col gap-6">
         {/* Title */}
         {!isFullscreen && (
-          <div className="text-center">
-            <h1 className="text-2xl sm:text-3xl font-black tracking-tight text-white uppercase">
-              Reflex Game Online (Quick Dodge)
+          <div className="flex flex-col gap-2">
+            <div className="flex items-center gap-2">
+              <h1 className="text-2xl sm:text-3xl font-black tracking-tight text-white">
+              <span data-seo-kw="1">{copy?.title || "Quick Dodge Challenge"}</span>
+              {copy?.subtitle && (
+                <span className="block text-sm font-semibold text-slate-400 mt-1">
+                  {copy.subtitle}
+                </span>
+              )}
             </h1>
-            <p className="text-xs text-slate-400 mt-1">
-              Mouse Control &amp; Evasive Agility • 15 Levels
-            </p>
+            </div>
           </div>
         )}
 
         {/* Live Stat Cards */}
         {!isFullscreen && (
-          <div className="grid grid-cols-4 gap-2.5 max-w-2xl mx-auto w-full">
-            <div className="bg-[#0d0d18] border border-white/5 rounded-xl p-2.5 text-center">
-              <div className="text-[10px] uppercase font-bold text-slate-500 tracking-wider">Score</div>
+          <div className="grid grid-cols-4 gap-2 w-full">
+            <div className="bg-white/[0.02] border border-white/[0.06] rounded-xl p-2.5 text-center">
+              <div className="text-[10px] uppercase font-bold text-slate-500 tracking-wider">{copy?.hudLabels?.score || 'Score'}</div>
               <div className="text-lg sm:text-xl font-black text-white tabular-nums">{uiScore}</div>
             </div>
-            <div className="bg-[#0d0d18] border border-white/5 rounded-xl p-2.5 text-center">
-              <div className="text-[10px] uppercase font-bold text-slate-500 tracking-wider">Time</div>
+            <div className="bg-white/[0.02] border border-white/[0.06] rounded-xl p-2.5 text-center">
+              <div className="text-[10px] uppercase font-bold text-slate-500 tracking-wider">{copy?.hudLabels?.time || 'Time'}</div>
               <div className={`text-lg sm:text-xl font-black tabular-nums ${uiTimeLeft <= 10 ? 'text-red-400 animate-pulse' : 'text-white'}`}>{uiTimeLeft}s</div>
             </div>
-            <div className="bg-[#0d0d18] border border-white/5 rounded-xl p-2.5 text-center">
-              <div className="text-[10px] uppercase font-bold text-slate-500 tracking-wider">Best Score</div>
-              <div className="text-lg sm:text-xl font-black text-amber-400 tabular-nums">{bestScore}</div>
+            <div className="bg-white/[0.02] border border-white/[0.06] rounded-xl p-2.5 text-center">
+              <div className="text-[10px] uppercase font-bold text-slate-500 tracking-wider">{copy?.hudLabels?.bestScore || 'Best Score'}</div>
+              <div className="text-lg sm:text-xl font-black text-yellow-400 tabular-nums">{bestScore}</div>
             </div>
-            <div className="bg-[#0d0d18] border border-white/5 rounded-xl p-2.5 text-center">
-              <div className="text-[10px] uppercase font-bold text-slate-500 tracking-wider">Best Combo</div>
+            <div className="bg-white/[0.02] border border-white/[0.06] rounded-xl p-2.5 text-center">
+              <div className="text-[10px] uppercase font-bold text-slate-500 tracking-wider">{copy?.hudLabels?.bestCombo || 'Best Combo'}</div>
               <div className="text-lg sm:text-xl font-black text-rose-400 tabular-nums">{bestCombo}x</div>
             </div>
           </div>
@@ -683,7 +665,7 @@ export default function QuickDodgeClient() {
         <div 
           ref={containerRef} 
           onContextMenu={(e) => { if (gameActiveRef.current) e.preventDefault(); }}
-          className={`relative overflow-hidden flex flex-col transition-all duration-150 select-none bg-[#080811] text-white border border-white/10 ${
+          className={`overflow-hidden flex flex-col select-none bg-[#080811] text-white border border-white/10 ${
             isFullscreen 
               ? 'fixed inset-0 z-[100] w-screen h-[100dvh] bg-[#080811] rounded-none border-none flex flex-col items-center justify-center' 
               : 'w-full rounded-2xl bg-[#080811] aspect-video min-h-[460px] sm:min-h-[500px] max-h-[88vh] relative overflow-hidden flex flex-col'
@@ -698,11 +680,11 @@ export default function QuickDodgeClient() {
           {(gameState === 'playing' || gameState === 'countdown') && (
             <>
               <div className="absolute top-4 left-4 z-30 pointer-events-none">
-                <p className="text-[10px] font-semibold uppercase tracking-wider text-white/50">Score</p>
+                <p className="text-[10px] font-semibold uppercase tracking-wider text-white/50">{copy?.hudLabels?.score || 'Score'}</p>
                 <p className="text-2xl sm:text-3xl font-bold text-white tabular-nums leading-tight">{uiScore}</p>
               </div>
               <div className="absolute top-4 right-4 z-30 pointer-events-none text-right">
-                <p className="text-[10px] font-semibold uppercase tracking-wider text-white/50">Time</p>
+                <p className="text-[10px] font-semibold uppercase tracking-wider text-white/50">{copy?.hudLabels?.time || 'Time'}</p>
                 <p className={`text-2xl sm:text-3xl font-bold tabular-nums leading-tight ${uiTimeLeft <= 10 ? 'text-red-400' : 'text-white'}`}>{uiTimeLeft}s</p>
               </div>
             </>
@@ -752,18 +734,8 @@ export default function QuickDodgeClient() {
             <FpsStartCard
               icon={ShieldAlert}
               accent="red"
-              title="Reflex Game Online"
-              subtitle="Mouse Control & Evasive Agility • 15 Levels"
-              rules={[
-                { icon: Target, accent: 'red', title: 'Evade Homing Obstacles', text: 'Navigate crosshair to dodge red threats spawning from edge boundaries' },
-                { icon: Zap, accent: 'rose', title: 'Streak Reset', text: 'Getting hit resets your combo streak without score or time penalties' },
-              ]}
-              sensitivity={{ value: universalSens, onChange: setUniversalSens, cmPer360 }}
-              stats={[
-                { icon: Trophy, label: 'Best Score', value: bestScore, color: 'text-white', accent: 'slate' },
-                { icon: Flame, label: 'Best Combo', value: `${bestCombo}x`, color: 'text-rose-400', accent: 'rose' },
-                { icon: TrendingUp, label: 'Best Level', value: `Lv. ${bestLevel}`, color: 'text-blue-400', accent: 'blue' },
-              ]}
+              title={copy?.title || "Quick Dodge"}
+              subtitle={copy?.subtitle || "Kinetic Evasion Reflex Drill • 15 Levels"}
               isTouchOnlyDevice={isTouchOnlyDevice}
               onStart={enterDrill}
             />
@@ -771,7 +743,7 @@ export default function QuickDodgeClient() {
 
           {/* COUNTDOWN OVERLAY */}
           {gameState === 'countdown' && (
-            <DrillCountdown value={countdownValue} subtitle="GET READY" />
+            <DrillCountdown value={countdownValue} subtitle={copy?.hudLabels?.getReady || "GET READY"} />
           )}
 
           {/* END SCREEN */}
@@ -782,7 +754,7 @@ export default function QuickDodgeClient() {
               <div className="w-[36%] flex flex-col items-center justify-center gap-1 border-r border-white/5 px-4" style={{ background: 'radial-gradient(ellipse 260px 200px at 50% 30%, rgba(239,68,68,.12), transparent 70%)' }}>
                 {isNewBest && (
                   <span className="text-[9.5px] font-bold text-yellow-400 bg-yellow-500/10 border border-yellow-500/25 px-2.5 py-0.5 rounded-full mb-1 animate-pulse">
-                    NEW BEST
+                    {copy?.resultLabels?.newBest || 'NEW BEST'}
                   </span>
                 )}
                 <div className={`text-5xl sm:text-6xl font-black leading-none ${analytics.grade.color}`}>
@@ -794,7 +766,7 @@ export default function QuickDodgeClient() {
                 <div className="text-3xl sm:text-4xl font-black text-white mt-2 tabular-nums">
                   {uiScore}
                 </div>
-                <div className="text-[9px] uppercase tracking-widest text-slate-500">Points</div>
+                <div className="text-[9px] uppercase tracking-widest text-slate-500">{copy?.resultLabels?.points || 'Points'}</div>
               </div>
 
               {/* Right Stats & Actions Panel */}
@@ -804,19 +776,19 @@ export default function QuickDodgeClient() {
                 <div className="grid grid-cols-2 sm:grid-cols-4 gap-2">
                   <div className="bg-black border border-white/5 p-2.5 rounded-xl text-center">
                     <p className="text-sm sm:text-base font-black text-white">{analytics.accuracy}%</p>
-                    <p className="text-[7.5px] sm:text-[8.5px] font-bold uppercase tracking-wider text-gray-400 mt-0.5">Accuracy</p>
+                    <p className="text-[7.5px] sm:text-[8.5px] font-bold uppercase tracking-wider text-gray-400 mt-0.5">{copy?.resultLabels?.accuracy || 'Accuracy'}</p>
                   </div>
                   <div className="bg-black border border-white/5 p-2.5 rounded-xl text-center">
                     <p className="text-sm sm:text-base font-black text-white">{analytics.sequencesCleared}</p>
-                    <p className="text-[7.5px] sm:text-[8.5px] font-bold uppercase tracking-wider text-gray-400 mt-0.5">Dodges</p>
+                    <p className="text-[7.5px] sm:text-[8.5px] font-bold uppercase tracking-wider text-gray-400 mt-0.5">{copy?.resultLabels?.dodges || 'Dodges'}</p>
                   </div>
                   <div className="bg-black border border-white/5 p-2.5 rounded-xl text-center">
                     <p className="text-sm sm:text-base font-black text-white">{analytics.peakSpeed} px/s</p>
-                    <p className="text-[7.5px] sm:text-[8.5px] font-bold uppercase tracking-wider text-gray-400 mt-0.5">Peak Speed</p>
+                    <p className="text-[7.5px] sm:text-[8.5px] font-bold uppercase tracking-wider text-gray-400 mt-0.5">{copy?.resultLabels?.peakSpeed || 'Peak Speed'}</p>
                   </div>
                   <div className="bg-black border border-white/5 p-2.5 rounded-xl text-center">
                     <p className="text-sm sm:text-base font-black text-white">Lv. {analytics.finalLevel}</p>
-                    <p className="text-[7.5px] sm:text-[8.5px] font-bold uppercase tracking-wider text-gray-400 mt-0.5">Peak Level</p>
+                    <p className="text-[7.5px] sm:text-[8.5px] font-bold uppercase tracking-wider text-gray-400 mt-0.5">{copy?.resultLabels?.peakLevel || 'Peak Level'}</p>
                   </div>
                 </div>
 
@@ -826,7 +798,7 @@ export default function QuickDodgeClient() {
                     onClick={enterDrill} 
                     className="flex-1 py-3 rounded-[13px] bg-gradient-to-r from-red-600 to-orange-600 text-white font-bold text-xs uppercase tracking-wide cursor-pointer transition-transform active:scale-[0.98] shadow-md flex items-center justify-center gap-1.5"
                   >
-                    <RefreshCw className="w-3.5 h-3.5" /> Play Again
+                    <RefreshCw className="w-3.5 h-3.5" /> {copy?.resultLabels?.playAgain || 'Play Again'}
                   </button>
                   <button 
                     onClick={shareScore} 
@@ -838,7 +810,7 @@ export default function QuickDodgeClient() {
                   <button 
                     onClick={handleExitDrill} 
                     className="w-11 flex-shrink-0 rounded-[13px] bg-white/[0.04] border border-white/10 flex items-center justify-center text-slate-400 hover:text-white cursor-pointer active:scale-90 transition-transform" 
-                    title="Exit Fullscreen & Return"
+                    title="Exit Drill & Return"
                   >
                     <LogOut className="w-4 h-4 text-red-400" />
                   </button>
@@ -854,76 +826,46 @@ export default function QuickDodgeClient() {
           <div className="[&>div]:!mt-0">
             <DrillAccordion
               id="rules"
-              title="Drill Instructions & Scoring System"
+              title={copy?.rulesTitle || "Drill Instructions & Scoring System"}
               isOpen={openAccordion === 'rules'}
               onToggle={() => setOpenAccordion(openAccordion === 'rules' ? null : 'rules')}
             >
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
-                {RULES_ITEMS.map((item, i) => (
-                  <div key={i} className="bg-black p-4 rounded-xl border border-white/10">
-                    <p className="text-sm font-bold text-white mb-1">{item.title}</p>
-                    <p className="text-xs text-gray-300 leading-relaxed">{item.text}</p>
-                  </div>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-2.5 sm:gap-3 font-sans">
+                {(copy?.rulesItems || RULES_ITEMS).map((item, i) => (
+                  <DrillRuleItem key={i} num={item.num || String(i + 1)} title={item.title} detail={item.text} />
                 ))}
               </div>
             </DrillAccordion>
 
             <DrillAccordion
               id="about"
-              title="About Reflex Game Online (Quick Dodge)"
+              title={copy?.aboutTitle || "About Quick Dodge (Reflex Game Online)"}
               isOpen={openAccordion === 'about'}
               onToggle={() => setOpenAccordion(openAccordion === 'about' ? null : 'about')}
             >
               <div className="space-y-4">
-                {ABOUT_TEXT.split('\n\n').map((para, i) => (
-                  <p key={i} className="text-sm leading-relaxed text-gray-300">{para}</p>
-                ))}
-              </div>
-            </DrillAccordion>
-
-            <DrillAccordion
-              id="faq"
-              title="Frequently Asked Questions"
-              isOpen={openAccordion === 'faq'}
-              onToggle={() => setOpenAccordion(openAccordion === 'faq' ? null : 'faq')}
-            >
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                {FAQ_ITEMS.map((item, i) => (
-                  <div key={i} className="bg-[#05060b] border border-gray-800 rounded-xl p-5">
-                    <h4 className="text-sm font-bold text-gray-200 mb-2">{item.q}</h4>
-                    <p className="text-xs text-gray-400 leading-relaxed">{item.a}</p>
-                  </div>
-                ))}
+                {copy?.aboutSections ? (
+                  copy.aboutSections.map((sec, idx) => (
+                    <div key={idx} className="bg-white/[0.02] border border-white/[0.06] rounded-xl p-4">
+                      <h3 className="text-sm font-bold text-white mb-1">{sec.title}</h3>
+                      {sec.subtitle && <h4 className="text-xs font-semibold text-slate-400 mb-2">{sec.subtitle}</h4>}
+                      <p className="text-xs leading-relaxed text-slate-300">{sec.content}</p>
+                    </div>
+                  ))
+                ) : (
+                  <>
+                    <h3 className="text-sm font-bold text-white flex items-center gap-2">
+                      <ShieldAlert className="w-4 h-4 text-red-400" />
+                      Kinetic Collision Evasion & Trajectory Planning
+                    </h3>
+                    {(copy?.aboutText || ABOUT_TEXT).split('\n\n').map((para, i) => (
+                      <p key={i} className="text-sm leading-relaxed text-gray-300">{para}</p>
+                    ))}
+                  </>
+                )}
               </div>
             </DrillAccordion>
           </div>
-        )}
-
-        {/* ── RELATED PHYSICAL & REFLEX DRILLS ── */}
-        {!isFullscreen && (
-          <section className="mt-4">
-            <h2 className="text-sm font-bold text-slate-400 uppercase tracking-wider mb-3 font-sans">
-              Related Physical &amp; Reflex Drills
-            </h2>
-            <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
-              {RELATED_DRILLS.map((drill) => (
-                <Link
-                  key={drill.id}
-                  href={drill.href}
-                  className="group bg-[#0c0c16] border border-white/5 hover:border-red-500/40 rounded-xl p-3.5 transition-all duration-200 hover:-translate-y-0.5 flex flex-col justify-between"
-                >
-                  <div>
-                    <div className="text-[10px] font-bold text-red-400 uppercase tracking-wider mb-1">{drill.cat}</div>
-                    <div className="text-xs font-bold text-white group-hover:text-red-300 transition-colors">{drill.name}</div>
-                    <div className="text-[11px] text-slate-400 mt-1 line-clamp-2 leading-relaxed">{drill.desc}</div>
-                  </div>
-                  <div className="text-[10px] font-bold text-slate-500 group-hover:text-red-400 mt-3 flex items-center gap-1 transition-colors">
-                    Train Drill <span>→</span>
-                  </div>
-                </Link>
-              ))}
-            </div>
-          </section>
         )}
 
         {/* ── FOOTER ── */}

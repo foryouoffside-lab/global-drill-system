@@ -1,11 +1,10 @@
 'use client';
 
 import React, { useState, useEffect, useRef, useCallback } from 'react';
-import Link from 'next/link';
 
 import {
-  Brain, Play, RefreshCw, TrendingUp, Volume2, VolumeX,
-  Zap, ZapOff, Users, Share2, ArrowLeft, Heart, Target, Trophy
+  Brain, RefreshCw, TrendingUp, Volume2, VolumeX,
+  Zap, ZapOff, Users, Share2, ArrowLeft
 } from 'lucide-react';
 
 import generateShareCard, { shareScoreCard } from '../../../../../components/ShareScoreCard';
@@ -20,11 +19,10 @@ import DrillCountdown from '../../../../../components/drill/DrillCountdown';
 import DrillAccordion from '../../../../../components/drill/DrillAccordion';
 import DrillFlashOverlay from '../../../../../components/drill/DrillFlashOverlay';
 import DrillRuleItem from '../../../../../components/drill/DrillRuleItem';
-import DrillFAQItem from '../../../../../components/drill/DrillFAQItem';
 import FpsStartCard from '../../../../../components/drill/FpsStartCard';
+import useImmersiveMode from '@/lib/useImmersiveMode';
 
 const DRILL_DURATION = 45; // 45 seconds duration
-const MAX_LIVES = 5;
 const POINTS_PER_HIT = 150;
 const POINTS_PER_LEVEL = 1200; // 8 matches per level, matching the old cadence
 const START_LEVEL = 3; // 3-Back is the starting difficulty
@@ -48,9 +46,10 @@ const saveData = (data) => {
   } catch (e) {}
 };
 
-export default function NBackClient() {
+export default function NBackClient({ copy = null }) {
   const [gameState, setGameState] = useState('start'); // 'start' | 'countdown' | 'playing' | 'gameOver'
   const [isFullscreen, setIsFullscreen] = useState(false);
+  useImmersiveMode(isFullscreen); // locks the page behind while the drill fills the screen
   const [soundEnabled, setSoundEnabled] = useState(true);
   const [flashEnabled, setFlashEnabled] = useState(true);
   const [openAccordion, setOpenAccordion] = useState(null);
@@ -65,7 +64,6 @@ export default function NBackClient() {
 
   // HUD & Best Stats State
   const [uiScore, setUiScore] = useState(0);
-  const [uiLives, setUiLives] = useState(MAX_LIVES);
   const [uiTimeLeft, setUiTimeLeft] = useState(DRILL_DURATION);
   const [bestScore, setBestScore] = useState(0);
   const [bestLevel, setBestLevel] = useState(3);
@@ -94,7 +92,6 @@ export default function NBackClient() {
   const engine = useRef({
     score: 0,
     level: 3,
-    lives: MAX_LIVES,
     timeLeft: DRILL_DURATION,
     perfectHits: 0,
     missedClicks: 0,
@@ -116,9 +113,7 @@ export default function NBackClient() {
     startingRef.current = false;
     gameActiveRef.current = false;
 
-    if (document.fullscreenElement) {
-      await document.exitFullscreen().catch(() => {});
-    }
+    setIsFullscreen(false);
     setGameState('start');
   }, [clearGameTimeouts]);
 
@@ -128,7 +123,7 @@ export default function NBackClient() {
   });
 
   // Stop all timers/intervals on unmount (e.g. in-app nav away mid-drill) —
-  // visibilitychange/pagehide/fullscreenchange don't fire on SPA route changes.
+  // visibilitychange/pagehide don't fire on SPA route changes.
   useEffect(() => {
     return () => {
       countdownTimeoutsRef.current.forEach(clearTimeout);
@@ -149,7 +144,7 @@ export default function NBackClient() {
 
     const e = engine.current;
     const totalTries = e.perfectHits + e.missedClicks;
-    const finalAccuracy = totalTries > 0 ? Math.round((e.perfectHits / totalTries) * 100) : 100;
+    const finalAccuracy = totalTries > 0 ? Math.round((e.perfectHits / totalTries) * 100) : 0;
 
     const grade = getFpsScoreGrade(e.score, ELITE_SCORE);
 
@@ -157,7 +152,7 @@ export default function NBackClient() {
       accuracy: finalAccuracy,
       perfectHits: e.perfectHits,
       missedClicks: e.missedClicks,
-      finalLevel: e.level,
+      finalLevel: Math.floor(e.level),
       grade,
     });
 
@@ -169,7 +164,7 @@ export default function NBackClient() {
 
     const updatedData = {
       bestScore: Math.max(prevSaved.bestScore, e.score),
-      bestLevel: Math.max(prevSaved.bestLevel, e.level),
+      bestLevel: Math.max(prevSaved.bestLevel, Math.floor(e.level)),
       totalSessions: (prevSaved.totalSessions || 0) + 1,
     };
     saveData(updatedData);
@@ -226,18 +221,6 @@ export default function NBackClient() {
       drillAudio?.playPenalty?.();
       triggerFlash();
 
-      if (!isTimeout) {
-        // Wrong click deducts 1 life! Timeouts cost no lives.
-        e.lives -= 1;
-        const remainingLives = Math.max(0, e.lives);
-        setUiLives(remainingLives);
-
-        if (remainingLives <= 0) {
-          endGame();
-          return;
-        }
-      }
-
       setPhase('result');
       phaseRef.current = 'result';
 
@@ -248,7 +231,7 @@ export default function NBackClient() {
       }, 600);
       gameTimeoutsRef.current.push(tNext);
     }
-  }, [clearGameTimeouts, triggerFlash, endGame]);
+  }, [clearGameTimeouts, triggerFlash]);
 
   // Generate and Display Next Letter
   const startNextLetter = useCallback(() => {
@@ -317,7 +300,6 @@ export default function NBackClient() {
 
     setIsNewBest(false);
     setUiScore(0);
-    setUiLives(MAX_LIVES);
     setUiTimeLeft(DRILL_DURATION);
     setNBackLevel(3);
     setPhase('memorize');
@@ -327,18 +309,12 @@ export default function NBackClient() {
     engine.current = {
       score: 0,
       level: 3,
-      lives: MAX_LIVES,
-      timeLeft: DRILL_DURATION,
+        timeLeft: DRILL_DURATION,
       perfectHits: 0,
       missedClicks: 0,
     };
 
-    // Auto Fullscreen on Start
-    try {
-      if (containerRef.current && !document.fullscreenElement) {
-        await containerRef.current.requestFullscreen();
-      }
-    } catch (e) {}
+    setIsFullscreen(true);
 
     // Countdown sequence: 3 -> 2 -> 1 -> GO
     setGameState('countdown');
@@ -365,7 +341,7 @@ export default function NBackClient() {
       startingRef.current = false;
       setGameState('playing');
 
-      // Start 45s decimal timer
+      // Start the 45s active timer; initial N-letter memorization is untimed.
       if (timerIntervalRef.current) clearInterval(timerIntervalRef.current);
       let lastTime = performance.now();
 
@@ -375,6 +351,8 @@ export default function NBackClient() {
         lastTime = now;
 
         const eRef = engine.current;
+        if (phaseRef.current === 'memorize') return;
+
         if (eRef.timeLeft > 0) {
           eRef.timeLeft = Math.max(0, eRef.timeLeft - deltaSec);
           setUiTimeLeft(Math.ceil(eRef.timeLeft));
@@ -394,6 +372,7 @@ export default function NBackClient() {
   }, [clearGameTimeouts, endGame, startNextLetter]);
 
   const shareScore = useCallback(async () => {
+    setIsFullscreen(false);
     const url = 'https://skilldrills.online/drills/memory/working-memory/n-back';
     try {
       const canvas = generateShareCard({
@@ -422,41 +401,31 @@ export default function NBackClient() {
       <main className="flex-1 max-w-6xl w-full mx-auto px-4 py-6 flex flex-col gap-6">
         {/* Title */}
         {!isFullscreen && (
-        <div className="text-center">
-          <h1 className="text-2xl sm:text-3xl font-black tracking-tight text-white">
-            3-BACK TRAINING PRO
-            <span data-seo-kw="1" className="block text-sm font-semibold text-slate-400 mt-1 normal-case tracking-normal">
-              3-Back Working Memory Test
-            </span>
-          </h1>
-          <p className="text-xs text-slate-400 mt-1">
-            Working Memory & Executive Control Under Speed Constraints
-          </p>
-        </div>
+          <div className="flex flex-col gap-1">
+            <h1 className="text-2xl sm:text-3xl font-black tracking-tight text-white">
+              {copy?.h1Prefix || null}
+              <span data-seo-kw="1">{copy?.h1Keyword || "N-Back Working Memory Test"}</span>
+              {copy?.h1Suffix || null}
+              <span className="block text-sm font-semibold text-slate-400 mt-1">{copy?.subtitle || "N-back working memory test for comparing letters across steps and improving focus, recall, and cognitive processing speed"}</span>
+            </h1>
+          </div>
         )}
 
         {/* Live Stat Cards */}
         {!isFullscreen && (
-        <div className="grid grid-cols-4 gap-2.5 max-w-2xl mx-auto w-full">
-          <div className="bg-[#0d0d18] border border-white/5 rounded-xl p-2.5 text-center">
-            <div className="text-[10px] uppercase font-bold text-slate-500 tracking-wider">Score</div>
-            <div className="text-lg sm:text-xl font-black text-cyan-400 tabular-nums">{uiScore}</div>
+          <div className="grid grid-cols-4 gap-2 w-full -mb-2">
+            {[
+              { label: copy?.statScore || "Score", val: uiScore, color: "text-cyan-400" },
+              { label: copy?.statTime || "Time", val: `${uiTimeLeft}s`, highlight: uiTimeLeft <= 10 },
+              { label: copy?.statLevel || "Level", val: `${nBackLevel}-Back`, color: "text-indigo-400" },
+              { label: copy?.statBest || "Best Score", val: bestScore, color: "text-amber-400" },
+            ].map((s, i) => (
+              <div key={i} className="border border-white/[0.06] bg-white/[0.015] px-2 py-2 rounded-xl text-center">
+                <div className="text-[9px] sm:text-[10px] uppercase font-bold text-slate-500 tracking-wider mb-0.5">{s.label}</div>
+                <div className={`text-xs sm:text-sm md:text-base font-black tabular-nums truncate ${s.highlight ? "text-red-400 animate-pulse" : s.color || "text-white"}`}>{s.val}</div>
+              </div>
+            ))}
           </div>
-          <div className="bg-[#0d0d18] border border-white/5 rounded-xl p-2.5 text-center">
-            <div className="text-[10px] uppercase font-bold text-slate-500 tracking-wider">Time</div>
-            <div className={`text-lg sm:text-xl font-black tabular-nums ${uiTimeLeft <= 10 ? 'text-red-400 animate-pulse' : 'text-white'}`}>
-              {uiTimeLeft}s
-            </div>
-          </div>
-          <div className="bg-[#0d0d18] border border-white/5 rounded-xl p-2.5 text-center">
-            <div className="text-[10px] uppercase font-bold text-slate-500 tracking-wider">Level</div>
-            <div className="text-lg sm:text-xl font-black text-indigo-400 tabular-nums">{nBackLevel}-Back</div>
-          </div>
-          <div className="bg-[#0d0d18] border border-white/5 rounded-xl p-2.5 text-center">
-            <div className="text-[10px] uppercase font-bold text-slate-500 tracking-wider">Best Score</div>
-            <div className="text-lg sm:text-xl font-black text-amber-400 tabular-nums">{bestScore}</div>
-          </div>
-        </div>
         )}
 
         {/* Game Stage Container */}
@@ -473,24 +442,12 @@ export default function NBackClient() {
           {(gameState === 'playing' || gameState === 'countdown') && (
             <>
               <div className="absolute top-4 left-4 z-30 pointer-events-none">
-                <p className="text-[10px] font-semibold uppercase tracking-wider text-white/50">Score</p>
+                <p className="text-[10px] font-semibold uppercase tracking-wider text-white/50">{copy?.hudScore || "Score"}</p>
                 <p className="text-2xl sm:text-3xl font-bold text-white tabular-nums leading-tight">{uiScore}</p>
-                <div className="flex items-center gap-1 mt-1">
-                  {Array.from({ length: MAX_LIVES }).map((_, i) => (
-                    <Heart
-                      key={i}
-                      className={`w-3.5 h-3.5 sm:w-4 sm:h-4 transition-all duration-200 ${
-                        i < uiLives
-                          ? 'text-red-500 fill-red-500 drop-shadow-[0_0_6px_rgba(239,68,68,0.6)]'
-                          : 'text-gray-700 fill-gray-800/40'
-                      }`}
-                    />
-                  ))}
-                </div>
               </div>
 
               <div className="absolute top-4 right-4 z-30 pointer-events-none text-right">
-                <p className="text-[10px] font-semibold uppercase tracking-wider text-white/50">Time</p>
+                <p className="text-[10px] font-semibold uppercase tracking-wider text-white/50">{copy?.hudTime || "Time"}</p>
                 <p className={`text-2xl sm:text-3xl font-bold tabular-nums leading-tight ${uiTimeLeft <= 10 ? 'text-red-400' : 'text-white'}`}>{uiTimeLeft}s</p>
               </div>
             </>
@@ -498,7 +455,7 @@ export default function NBackClient() {
 
           {/* IN-GAME HUD SOUND + FLASH TOGGLES */}
           {(gameState === 'playing' || gameState === 'countdown') && (
-            <div className="absolute bottom-4 right-4 z-40 flex items-center gap-2">
+            <div className="absolute bottom-4 max-sm:bottom-28 right-4 z-40 flex items-center gap-2">
               <button
                 onPointerDown={(e) => e.stopPropagation()}
                 onClick={(e) => {
@@ -536,7 +493,7 @@ export default function NBackClient() {
               
               {/* N-Back Mode Indicator */}
               <div className="mb-2 px-4 py-1 rounded-full bg-white/[0.04] border border-white/10 text-cyan-400 font-extrabold tracking-widest text-xs uppercase">
-                {nBackLevel}-BACK TRAINING
+                {nBackLevel}{copy?.modeSuffix || "-BACK TRAINING"}
               </div>
 
               {/* Letter Display Box */}
@@ -550,7 +507,7 @@ export default function NBackClient() {
               <div className="w-full max-w-md flex flex-col gap-3 mt-auto pb-2 shrink-0">
                 {phase === 'memorize' && (
                   <div className="text-slate-400 text-xs font-bold uppercase tracking-widest animate-pulse text-center mb-1">
-                    Memorizing first {nBackLevel} letters...
+                    {copy?.memorizingText ? copy.memorizingText.replace('{n}', nBackLevel) : `Memorizing first ${nBackLevel} letters...`}
                   </div>
                 )}
 
@@ -564,7 +521,7 @@ export default function NBackClient() {
                         : 'bg-gradient-to-r from-cyan-600 to-blue-600 text-white border-cyan-400/40 shadow-[0_0_20px_rgba(6,182,212,0.3)] active:scale-95 cursor-pointer'
                     }`}
                   >
-                    MATCH
+                    {copy?.btnMatch || "MATCH"}
                   </button>
                   <button 
                     onPointerDown={(e) => { e.preventDefault(); e.stopPropagation(); handleJudgment(false); }}
@@ -575,7 +532,7 @@ export default function NBackClient() {
                         : 'bg-white/10 text-white border-white/20 shadow-lg active:scale-95 cursor-pointer'
                     }`}
                   >
-                    NO MATCH
+                    {copy?.btnNoMatch || "NO MATCH"}
                   </button>
                 </div>
               </div>
@@ -588,16 +545,8 @@ export default function NBackClient() {
             <FpsStartCard
               icon={Brain}
               accent="cyan"
-              title="Dual N-Back Training Pro"
-              subtitle="Working Memory • Sequence Updating"
-              rules={[
-                { icon: Target, accent: 'cyan', title: 'Compare to N Steps Ago', text: 'Determine if current item matches the item N steps back in sequence' },
-                { icon: Zap, accent: 'blue', title: 'Match / No Match Decision', text: 'Respond quickly with Match or No Match for each stimulus' },
-              ]}
-              stats={[
-                { icon: Trophy, label: 'Best Score', value: bestScore, color: 'text-white', accent: 'slate' },
-                { icon: TrendingUp, label: 'Best Level', value: `${bestLevel}-Back`, color: 'text-purple-400', accent: 'purple' },
-              ]}
+              title={copy?.startTitle || "Dual N-Back Training Pro"}
+              subtitle={copy?.startSubtitle || "Working Memory • Sequence Updating"}
               isTouchOnlyDevice={false}
               onStart={enterDrill}
             />
@@ -605,7 +554,7 @@ export default function NBackClient() {
 
           {/* COUNTDOWN OVERLAY (3-2-1-GO) */}
           {gameState === 'countdown' && (
-            <DrillCountdown value={countdownValue} subtitle="GET READY" />
+            <DrillCountdown value={countdownValue} subtitle={copy?.countdownSubtitle || "GET READY"} />
           )}
 
           {/* END SCREEN (GAME OVER) */}
@@ -616,7 +565,7 @@ export default function NBackClient() {
               <div className="w-[36%] flex flex-col items-center justify-center gap-1 border-r border-white/5 px-4" style={{ background: 'radial-gradient(ellipse 260px 200px at 50% 30%, rgba(6,182,212,.12), transparent 70%)' }}>
                 {isNewBest && (
                   <span className="text-[9.5px] font-bold text-yellow-400 bg-yellow-500/10 border border-yellow-500/25 px-2.5 py-0.5 rounded-full mb-1 animate-pulse">
-                    NEW BEST
+                    {copy?.newBest || "NEW BEST"}
                   </span>
                 )}
                 <div className={`text-5xl sm:text-6xl font-black leading-none ${analytics.grade?.color || 'text-cyan-400'}`}>
@@ -628,7 +577,7 @@ export default function NBackClient() {
                 <div className="text-3xl sm:text-4xl font-black text-white mt-2 tabular-nums">
                   {uiScore}
                 </div>
-                <div className="text-[9px] uppercase tracking-widest text-slate-500">Points</div>
+                <div className="text-[9px] uppercase tracking-widest text-slate-500">{copy?.statPoints || "Points"}</div>
               </div>
 
               {/* Right Stats & Actions Panel */}
@@ -638,15 +587,15 @@ export default function NBackClient() {
                 <div className="grid grid-cols-3 gap-2">
                   <div className="bg-black border border-white/5 p-2.5 rounded-xl text-center">
                     <p className="text-sm sm:text-base font-black text-white">{analytics.accuracy}%</p>
-                    <p className="text-[7.5px] sm:text-[8.5px] font-bold uppercase tracking-wider text-gray-400 mt-0.5">Accuracy</p>
+                    <p className="text-[7.5px] sm:text-[8.5px] font-bold uppercase tracking-wider text-gray-400 mt-0.5">{copy?.statAccuracy || "Accuracy"}</p>
                   </div>
                   <div className="bg-black border border-white/5 p-2.5 rounded-xl text-center">
                     <p className="text-sm sm:text-base font-black text-white">{analytics.finalLevel}-Back</p>
-                    <p className="text-[7.5px] sm:text-[8.5px] font-bold uppercase tracking-wider text-gray-400 mt-0.5">Peak Level</p>
+                    <p className="text-[7.5px] sm:text-[8.5px] font-bold uppercase tracking-wider text-gray-400 mt-0.5">{copy?.statPeakLevel || "Peak Level"}</p>
                   </div>
                   <div className="bg-black border border-white/5 p-2.5 rounded-xl text-center">
                     <p className="text-sm sm:text-base font-black text-white">{analytics.perfectHits}</p>
-                    <p className="text-[7.5px] sm:text-[8.5px] font-bold uppercase tracking-wider text-gray-400 mt-0.5">Perfects</p>
+                    <p className="text-[7.5px] sm:text-[8.5px] font-bold uppercase tracking-wider text-gray-400 mt-0.5">{copy?.statPerfects || "Perfects"}</p>
                   </div>
                 </div>
 
@@ -656,7 +605,7 @@ export default function NBackClient() {
                     onClick={enterDrill} 
                     className="flex-1 py-3 rounded-[13px] bg-gradient-to-r from-cyan-600 to-blue-600 text-white font-bold text-xs uppercase tracking-wide cursor-pointer transition-transform active:scale-[0.98] shadow-md flex items-center justify-center gap-1.5"
                   >
-                    <RefreshCw className="w-3.5 h-3.5" /> Play Again
+                    <RefreshCw className="w-3.5 h-3.5" /> {copy?.btnPlayAgain || "Play Again"}
                   </button>
                   <button 
                     onClick={shareScore} 
@@ -668,7 +617,7 @@ export default function NBackClient() {
                   <button 
                     onClick={handleExitDrill} 
                     className="w-11 flex-shrink-0 rounded-[13px] bg-white/[0.04] border border-white/10 flex items-center justify-center text-slate-400 hover:text-white cursor-pointer active:scale-90 transition-transform" 
-                    title="Exit Fullscreen & Return"
+                    title="Exit Drill & Return"
                   >
                     <ArrowLeft className="w-4 h-4 text-red-400" />
                   </button>
@@ -685,33 +634,37 @@ export default function NBackClient() {
           <div className="[&>div]:!mt-0">
           <DrillAccordion
             id="rules"
-            title="Drill Instructions & Scoring System"
+            title={copy?.rulesTitle || "Drill Instructions & Scoring System"}
             isOpen={openAccordion === 'rules'}
             onToggle={() => setOpenAccordion(openAccordion === 'rules' ? null : 'rules')}
           >
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-              <DrillRuleItem num="1" text="Correct Match / No Match" highlight="+150 PTS" result="Per correct judgment" />
-              <DrillRuleItem num="2" text="Level Progression" highlight="3-Back → 4-Back+" result="Every 1200 points earned" />
-              <DrillRuleItem num="3" text="Display Speeds Up" highlight="2000ms → 1200ms Floor" result="Faster letters at higher levels" />
-              <DrillRuleItem num="4" text="Timeout (No Response)" highlight="Zero Penalties" result="No score, time, or life lost" />
-              <DrillRuleItem num="5" text="Wrong Judgment" highlight="-1 Life (5 total)" result="Drill ends early if lives reach 0" />
+              {(copy?.rulesItems || [
+                { num: "1", text: "Correct Match / No Match (N Steps Ago)", highlight: "+150 PTS", result: "Per correct judgment" },
+                { num: "2", text: "Level Progression", highlight: "3-Back → 4-Back+", result: "Every 1200 points earned" },
+                { num: "3", text: "Display Speeds Up", highlight: "2000ms → 1200ms Floor", result: "Faster letters at higher levels" },
+                { num: "4", text: "Timeout (No Response)", highlight: "Zero Penalties", result: "No score, time, or life lost" },
+                { num: "5", text: "Wrong Judgment", highlight: "Breaks your streak", result: "Costs no score and no time — the run lasts the full clock" }
+              ]).map((item, idx) => (
+                <DrillRuleItem key={idx} num={item.num} text={item.text} highlight={item.highlight} result={item.result} />
+              ))}
             </div>
           </DrillAccordion>
 
-          {/* ACCORDION 2: ABOUT 3-BACK TRAINING PRO */}
+          {/* ACCORDION 2: ABOUT N-BACK TRAINING */}
           <DrillAccordion
             id="about"
-            title="About 3-Back Training Pro"
+            title="About N-Back Working Memory Test"
             isOpen={openAccordion === 'about'}
             onToggle={() => setOpenAccordion(openAccordion === 'about' ? null : 'about')}
           >
             <div className="space-y-8">
               <section>
-                <h4 className="text-base font-bold text-white mb-2 flex items-center gap-2">
+                <h3 className="text-base font-bold text-white mb-2 flex items-center gap-2">
                   <Brain className="w-4 h-4 text-cyan-400" /> What Is N-Back Training?
-                </h4>
+                </h3>
                 <p className="text-sm leading-relaxed mb-3">
-                  <strong>N-Back Training</strong> is the gold-standard cognitive working memory paradigm used across neuroscientific research to measure fluid intelligence and memory updating capacity. The <strong>3-Back Training drill</strong> presents continuous letter streams, requiring you to determine whether the current item matches the letter presented 'N' steps ago.
+                  <strong>N-Back Training</strong> is the gold-standard cognitive working memory paradigm used across neuroscientific research to measure fluid intelligence and memory updating capacity. The <strong>N-Back Working Memory Test</strong> presents continuous stimulus streams, requiring you to determine whether the current item matches the item presented &apos;N&apos; steps ago. You have to hold a short list and update it continuously at the same time, and that combination of storage plus manipulation is what working memory means in Baddeley and Hitch&apos;s (1974) model, with its capacity sitting near four items (Cowan, 2001).
                 </p>
                 <p className="text-sm leading-relaxed">
                   By practicing <strong>working memory updating</strong>, you expand your executive control buffer and strengthen information manipulation speed under time pressure.
@@ -722,89 +675,35 @@ export default function NBackClient() {
                 <div className="p-4 rounded-xl border border-gray-800 bg-white/[0.02]">
                   <div className="flex items-center gap-2.5 mb-2">
                     <div className="w-7 h-7 rounded-lg bg-blue-600 flex items-center justify-center"><Users className="w-3.5 h-3.5 text-white" /></div>
-                    <h5 className="text-xs font-bold text-white">Who Should Use This?</h5>
+                    <h4 className="text-xs font-bold text-white">Who Should Use This?</h4>
                   </div>
                   <p className="text-xs text-gray-300 leading-relaxed">Students improving focus, professionals maintaining mental agility, researchers studying working memory, and cognitive athletes.</p>
                 </div>
                 <div className="p-4 rounded-xl border border-gray-800 bg-white/[0.02]">
                   <div className="flex items-center gap-2.5 mb-2">
                     <div className="w-7 h-7 rounded-lg bg-cyan-600 flex items-center justify-center"><TrendingUp className="w-3.5 h-3.5 text-white" /></div>
-                    <h5 className="text-xs font-bold text-white">Skills Improved</h5>
+                    <h4 className="text-xs font-bold text-white">Skills Improved</h4>
                   </div>
                   <p className="text-xs text-gray-300 leading-relaxed">Working memory capacity, cognitive control, sustained attention, information updating, and executive function.</p>
                 </div>
                 <div className="p-4 rounded-xl border border-gray-800 bg-white/[0.02]">
                   <div className="flex items-center gap-2.5 mb-2">
                     <div className="w-7 h-7 rounded-lg bg-purple-600 flex items-center justify-center"><Zap className="w-3.5 h-3.5 text-white" /></div>
-                    <h5 className="text-xs font-bold text-white">Sub-Vocalization</h5>
+                    <h4 className="text-xs font-bold text-white">Sub-Vocalization</h4>
                   </div>
-                  <p className="text-xs text-gray-300 leading-relaxed">Mentally repeat the last 3 letters in order to keep your working memory buffer continuously updated.</p>
+                  <p className="text-xs text-gray-300 leading-relaxed">Mentally repeat the last N items in order to keep your working memory buffer continuously updated.</p>
                 </div>
               </div>
 
             </div>
           </DrillAccordion>
-
-          {/* ACCORDION 3: FREQUENTLY ASKED QUESTIONS */}
-          <DrillAccordion
-            id="faq"
-            title="Frequently Asked Questions"
-            isOpen={openAccordion === 'faq'}
-            onToggle={() => setOpenAccordion(openAccordion === 'faq' ? null : 'faq')}
-          >
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-              <DrillFAQItem q="What is the 3-Back Training Pro Drill?" a="A free N-Back working memory task. Letters appear every 2 seconds. Compare current letter to the one from 3 steps back." />
-              <DrillFAQItem q="Why is N-Back considered the gold standard?" a="It requires continuous working memory updating and executive control. Neuroscientific research shows improvements in working memory capacity and fluid intelligence." />
-              <DrillFAQItem q="How does progressive difficulty work?" a="Starts at 3-Back. Every 1200 points earned (roughly 8 correct judgments) automatically increments the N-Back level to 4-Back and beyond, and the letter display speeds up." />
-              <DrillFAQItem q="Are there negative score or time penalties?" a="No incorrect judgment ever deducts score points or reduces remaining timer seconds. A timed-out (unanswered) letter costs nothing at all. A wrong Match/No Match click costs 1 of your 5 lives, though — see the next question." />
-              <DrillFAQItem q="What are the hearts / lives for?" a="You start each run with 5 lives. A wrong Match/No Match judgment costs 1 life (a timeout costs none); if you run out, the drill ends immediately and shows your results. This keeps a bad guessing streak from dragging the full 45 seconds." />
-              <DrillFAQItem q="Does difficulty decrease on mistakes?" a="No. Your N-Back level only ever goes up — a mistake never takes you back down, so you can safely master your current level." />
-              <DrillFAQItem q="How long does each drill session last?" a="Each round is timed for exactly 45 seconds of continuous focus." />
-              <DrillFAQItem q="Do I need to sign up?" a="No registration required. This drill runs directly in your browser with instant response." />
-              <DrillFAQItem q="What is the difference between N-Back and Dual N-Back?" a="This drill is a single-modality (letter) N-Back. Dual N-Back adds a second, simultaneous stream (typically spatial position) that must be tracked independently — a harder variant sometimes linked to fluid intelligence gains in research, though results are debated." />
-              <DrillFAQItem q="Can N-Back training increase IQ?" a="Some early studies suggested N-Back training could raise fluid intelligence scores, though later replication attempts produced mixed results. What is well-supported is that regular N-Back practice reliably improves performance on working-memory tasks themselves." />
-              <DrillFAQItem q="What is a good N-Back level to reach?" a="Comfortably sustaining 3-Back with high accuracy is a solid baseline. Advancing to 4-Back or 5-Back with consistent accuracy places you well above average working memory capacity." />
-            </div>
-          </DrillAccordion>
           </div>
         )}
 
-        {/* RELATED DRILLS GRID */}
-        {!isFullscreen && (
-          <section className="mt-4">
-            <h2 className="text-sm font-bold text-slate-400 uppercase tracking-wider mb-3">
-              Related Memory Drills
-            </h2>
-            <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
-              <RelatedCard href="/drills/memory/spatial-memory/path-tracing" title="Path Tracing" desc="Retrace animated path sequences on expanding grids." cat="Spatial Memory" />
-              <RelatedCard href="/drills/memory/spatial-memory/object-location" title="Object Location" desc="Memorize and locate emoji objects on grids." cat="Spatial Memory" />
-              <RelatedCard href="/drills/memory/spatial-memory/grid-memorization" title="Grid Memorization" desc="Memorize progressive spatial grid patterns." cat="Spatial Memory" />
-              <RelatedCard href="/drills/memory/short-term-memory/word-recall" title="Word Recall" desc="Free recall random word lists under time pressure." cat="Short-Term Memory" />
-              <RelatedCard href="/drills/memory/short-term-memory/color-sequence" title="Color Sequence" desc="Watch and recall color sequences." cat="Short-Term Memory" />
-              <RelatedCard href="/drills/memory/short-term-memory/digit-span" title="Digit Span" desc="Train numerical short-term memory capacity." cat="Short-Term Memory" />
-            </div>
-          </section>
-        )}
       </main>
 
       {/* SITE FOOTER */}
       {!isFullscreen && <DrillFooter />}
     </div>
-  );
-}
-
-// === Subcomponents ===
-function RelatedCard({ href, title, desc, cat }) {
-  return (
-    <Link href={href} className="group bg-[#0c0c16] border border-white/5 hover:border-cyan-500/40 rounded-xl p-3.5 transition-all duration-200 hover:-translate-y-0.5 flex flex-col justify-between">
-      <div>
-        {cat && <div className="text-[10px] font-bold text-cyan-400 uppercase tracking-wider mb-1">{cat}</div>}
-        <div className="text-xs font-bold text-white group-hover:text-cyan-300 transition-colors">{title}</div>
-        <div className="text-[11px] text-slate-400 mt-1 line-clamp-2 leading-relaxed">{desc}</div>
-      </div>
-      <div className="text-[10px] font-bold text-slate-500 group-hover:text-cyan-400 mt-3 flex items-center gap-1 transition-colors">
-        Train Drill <span>→</span>
-      </div>
-    </Link>
   );
 }

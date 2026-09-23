@@ -3,23 +3,32 @@
 import { useState, useEffect, Suspense } from 'react';
 import { useSearchParams } from 'next/navigation';
 import Link from 'next/link';
-import { Search, ChevronRight, Zap, Target, Filter } from 'lucide-react';
+import { Search, ChevronRight, Target, Filter } from 'lucide-react';
 import { searchDrills } from '@/lib/searchDrills';
 import { DRILLS } from '@/lib/drillsRegistry';
 import SiteFooter from '@/components/SiteFooter';
 import Reveal from '@/components/Reveal';
-import DrillLoading from '@/components/DrillLoading';
+
+// useSearchParams() opts its whole subtree out of static rendering, so when it
+// sat at the top of the page the prerendered HTML was nothing but the loading
+// spinner -- no heading, no input, no drill list, until JS hydrated. Isolating
+// it here keeps the entire page static and lets ?q= arrive a moment later.
+function QueryParamSync({ onQuery }) {
+  const searchParams = useSearchParams();
+  const q = searchParams.get('q') || '';
+  useEffect(() => {
+    if (q) onQuery(q);
+  }, [q, onQuery]);
+  return null;
+}
 
 function SearchResultsContent() {
-  const searchParams = useSearchParams();
-  const initialQuery = searchParams.get('q') || '';
-  const [query, setQuery] = useState(initialQuery);
+  const [query, setQuery] = useState('');
   const [categoryFilter, setCategoryFilter] = useState('all');
-  const [results, setResults] = useState([]);
-
-  useEffect(() => {
-    setQuery(initialQuery);
-  }, [initialQuery]);
+  // Seeded with the full registry so the first paint is the complete drill
+  // list. Starting at [] rendered the "No Drills Found" empty state for a
+  // frame before the effect below ran.
+  const [results, setResults] = useState(DRILLS);
 
   useEffect(() => {
     const matched = query.trim() ? searchDrills(query) : DRILLS;
@@ -44,8 +53,11 @@ function SearchResultsContent() {
 
   return (
     <div className="min-h-screen bg-[#050508] text-gray-100 font-sans flex flex-col">
+      <Suspense fallback={null}>
+        <QueryParamSync onQuery={setQuery} />
+      </Suspense>
       <main className="flex-1 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 w-full">
-        
+
         {/* Page Header */}
         <div className="max-w-3xl mb-8">
           <h1 className="text-3xl sm:text-4xl font-extrabold text-white tracking-tight mb-3">
@@ -92,7 +104,7 @@ function SearchResultsContent() {
             Showing <strong className="text-white">{results.length}</strong> {results.length === 1 ? 'drill' : 'drills'}
             {query.trim() ? <> for &ldquo;<span className="text-blue-400">{query}</span>&rdquo;</> : ''}
           </span>
-          <span className="font-mono text-gray-500">113 Total Registry Items</span>
+          <span className="font-mono text-gray-500">{DRILLS.length} Total Registry Items</span>
         </div>
 
         {/* Results Grid */}
@@ -153,9 +165,5 @@ function SearchResultsContent() {
 }
 
 export default function SearchPage() {
-  return (
-    <Suspense fallback={<DrillLoading />}>
-      <SearchResultsContent />
-    </Suspense>
-  );
+  return <SearchResultsContent />;
 }

@@ -2,12 +2,9 @@
 import { isIdleFrameSkippable } from '@/lib/performance';
 
 import React, { useState, useEffect, useRef, useCallback } from 'react';
-import Link from 'next/link';
 import {
-  AlertCircle, ArrowRight, ChevronRight, Cpu,
-  GraduationCap, Lightbulb, Play, RefreshCw, Target,
-  Timer, Trophy, Volume2, VolumeX, Zap, ZapOff, Share2,
-  Keyboard, Settings, LogOut, Award, Flame, TrendingUp
+  Cpu, Keyboard, LogOut, RefreshCw, Share2,
+  Target, TrendingUp, Volume2, VolumeX, Zap, ZapOff
 } from 'lucide-react';
 
 import generateShareCard, { shareScoreCard } from '@/components/ShareScoreCard';
@@ -17,11 +14,13 @@ import { drillFlash } from '@/lib/drillFlash';
 import { drillTimeout } from '@/lib/drillTimeout';
 import { getComboMultiplier } from '@/lib/scoringEngine';
 import useUnexpectedExitGuard from '@/lib/useUnexpectedExitGuard';
-import DrillFooter from '@/components/drill/DrillFooter';
 import DrillCountdown from '@/components/drill/DrillCountdown';
 import DrillAccordion from '@/components/drill/DrillAccordion';
 import FpsStartCard from '@/components/drill/FpsStartCard';
+import useImmersiveMode from '@/lib/useImmersiveMode';
+import { useTranslation } from '@/lib/i18n/useTranslation';
 
+import { KEYBOARD_RECOGNITION_I18N } from '@/lib/i18n/drills/keyboardRecognition';
 // ============================================================
 // TUNING CONSTANTS
 // ============================================================
@@ -150,35 +149,21 @@ const RULES_ITEMS = [
   { title: "Combos & Sequences", text: "Chain unbroken prompt matches to build score multipliers and adaptive speed." }
 ];
 
-const ABOUT_TEXT = `The Keyboard Recognition & Keybind Speed Trainer is an advanced neuro-motor training tool designed to bridge the gap between visual prompt recognition and physical keybind execution. Unlike static typing drills, competitive gamers must trigger disparate bindings instantly from any finger coordinate — this drill isolates that exact neural pathway for titles like Valorant, CS2, and Fortnite.
+const ABOUT_TEXT = `The Keyboard Speed Test is an advanced neuro-motor training tool designed to bridge the gap between visual prompt recognition and physical keybind execution. Unlike static typing drills, competitive gamers must trigger disparate bindings instantly from any finger coordinate — this drill isolates that exact neural pathway for titles like Valorant, CS2, and Fortnite.
 
 The adaptive difficulty engine tracks your performance in real time, increasing prompt speed on streaks and slowing down when you struggle.
 
 Fake prompts require you to freeze rather than react, training the same response inhibition and self-control needed to avoid panic inputs in clutch rounds.`;
 
-const FAQ_ITEMS = [
-  { q: "What is the Keyboard Recognition & Keybind Speed Trainer?", a: "It is a premium cognitive-motor training drill that displays key binds, sequences, or fake prompts at the center of the screen. You must type the matching inputs as quickly and accurately as possible while avoiding invalid commands." },
-  { q: "How does keybind training improve gaming performance?", a: "By reinforcing the subconscious link between a tactical visual event (like needing to cast a spell, reload, or deploy a wall) and the physical key location on your keyboard, you reduce input latency and bypass conscious search time, developing pure muscle memory." },
-  { q: "What custom options are available?", a: "You can select exactly which keys are enabled using our visual keyboard layout, choose from 10 gameplay modes (including Gaming Keys, Sequences, and Memory Sequences), and pick a difficulty from Adaptive Engine to Expert. Your best score and accuracy are automatically saved in your browser." },
-  { q: "What gaming presets are pre-loaded?", a: "We provide pre-loaded profiles for top competitive titles: Valorant, CS2, Fortnite, Minecraft, League of Legends, and Apex Legends, equipping you with the standard layouts of each game immediately." },
-  { q: "How does Fake Prompt Mode train response inhibition?", a: "It displays commands like 'Fire', 'Jump', or invalid characters that you must actively ignore. Pressing any key fails the prompt. This trains cognitive self-control, helping you avoid panic inputs in intense clutch situations." }
-];
-
-const RELATED_DRILLS = [
-  { id: "finger-sequencing", name: "Sequence Aim Trainer", cat: "Motor Speed", desc: "Train multi-target ordered clicking and finger dexterity under time pressure.", href: "/drills/motor/movement-speed/finger-sequencing" },
-  { id: "rapid-tapping", name: "Rapid Tapping Test", cat: "Motor Speed", desc: "Test finger tapping velocity and neuromuscular speed.", href: "/drills/motor/movement-speed/rapid-tapping" },
-  { id: "drag-and-drop", name: "Drag & Drop Precision", cat: "Motor Coordination", desc: "Master mouse spatial drag control and release timing.", href: "/drills/motor/hand-eye-coordination/drag-and-drop" },
-  { id: "aim-trainer", name: "Aim Trainer Elite", cat: "Motor Coordination", desc: "Dynamic targets that shrink with streak and lives system.", href: "/drills/motor/hand-eye-coordination/aim-trainer" },
-  { id: "steady-hand", name: "Steady Hand Trainer", cat: "Motor Control", desc: "Trace a winding path corridor with shrinking width on streak.", href: "/drills/motor/precision-control/steady-hand" },
-  { id: "tracing", name: "Tracing Control", cat: "Motor Control", desc: "Precision cursor tracking and path stability trainer.", href: "/drills/motor/precision-control/tracing" }
-];
 
 // ============================================================
 // MAIN COMPONENT
 // ============================================================
-export default function KeyboardRecognitionClient() {
+export default function KeyboardRecognitionClient({ copy = null }) {
+  const { t, locale } = useTranslation(KEYBOARD_RECOGNITION_I18N);
   const [gameState, setGameState] = useState('start'); // 'start' | 'countdown' | 'playing' | 'gameOver'
   const [isFullscreen, setIsFullscreen] = useState(false);
+  useImmersiveMode(isFullscreen); // locks the page behind while the drill fills the screen
   const [soundEnabled, setSoundEnabled] = useState(true);
   const [flashEnabled, setFlashEnabled] = useState(true);
   const [openAccordion, setOpenAccordion] = useState(null);
@@ -249,12 +234,6 @@ export default function KeyboardRecognitionClient() {
     };
   }, []);
 
-  useEffect(() => {
-    const handleFullscreenChange = () => setIsFullscreen(!!document.fullscreenElement);
-    document.addEventListener('fullscreenchange', handleFullscreenChange);
-    return () => document.removeEventListener('fullscreenchange', handleFullscreenChange);
-  }, []);
-
   const handleExitDrill = useCallback(async () => {
     markIntentionalExit();
     countdownTimeoutsRef.current.forEach(clearTimeout);
@@ -262,9 +241,7 @@ export default function KeyboardRecognitionClient() {
     if (engine.current.promptTimer) clearTimeout(engine.current.promptTimer);
     startingRef.current = false;
 
-    if (document.fullscreenElement) {
-      await document.exitFullscreen().catch(() => {});
-    }
+    setIsFullscreen(false);
     setGameState('start');
   }, []);
 
@@ -274,6 +251,35 @@ export default function KeyboardRecognitionClient() {
     active: gameState === 'playing' || gameState === 'countdown',
     onUnexpectedExit: handleExitDrill,
   });
+
+  useEffect(() => {
+    const onFullscreenChange = () => {
+      if (!document.fullscreenElement && !document.webkitFullscreenElement) {
+        if (gameState === 'playing' || gameState === 'countdown') {
+          handleExitDrill();
+        }
+      }
+    };
+    document.addEventListener('fullscreenchange', onFullscreenChange);
+    document.addEventListener('webkitfullscreenchange', onFullscreenChange);
+    return () => {
+      document.removeEventListener('fullscreenchange', onFullscreenChange);
+      document.removeEventListener('webkitfullscreenchange', onFullscreenChange);
+    };
+  }, [gameState, handleExitDrill]);
+
+  useEffect(() => {
+    const onKeyDownGlobal = (e) => {
+      if (e.key === 'Escape' || e.code === 'Escape') {
+        if (gameState === 'playing' || gameState === 'countdown') {
+          e.preventDefault();
+          handleExitDrill();
+        }
+      }
+    };
+    window.addEventListener('keydown', onKeyDownGlobal, true);
+    return () => window.removeEventListener('keydown', onKeyDownGlobal, true);
+  }, [gameState, handleExitDrill]);
 
   const handleLoadPreset = (presetName) => {
     setSelectedProfile(presetName);
@@ -458,7 +464,7 @@ export default function KeyboardRecognitionClient() {
 
     const e = engine.current;
     const totalKp = e.totalKeypresses;
-    const finalAccuracy = totalKp > 0 ? Math.round((e.correctKeypresses / totalKp) * 100) : 100;
+    const finalAccuracy = totalKp > 0 ? Math.round((e.correctKeypresses / totalKp) * 100) : 0;
 
     const sessionMinutes = (DRILL_DURATION - e.timeLeft) / 60;
     const kpm = sessionMinutes > 0 ? Math.round(totalKp / sessionMinutes) : 0;
@@ -520,11 +526,7 @@ export default function KeyboardRecognitionClient() {
       totalPromptsCount: 0, correctSequencesCount: 0, failedSequencesCount: 0, fakeIgnoredCount: 0, fakeFailsCount: 0
     };
 
-    try {
-      if (containerRef.current && !document.fullscreenElement) {
-        await containerRef.current.requestFullscreen();
-      }
-    } catch(e) {}
+    setIsFullscreen(true);
 
     setGameState('countdown');
     setCountdownValue(3);
@@ -547,6 +549,11 @@ export default function KeyboardRecognitionClient() {
   useEffect(() => {
     const handleKeyDown = (evt) => {
       if (gameState !== 'playing' || !gameActiveRef.current) return;
+      if (evt.code === 'Escape' || evt.key === 'Escape') {
+        evt.preventDefault();
+        handleExitDrill();
+        return;
+      }
       if (['Tab', 'AltLeft', 'AltRight', 'Space'].includes(evt.code)) {
         evt.preventDefault();
       }
@@ -675,6 +682,7 @@ export default function KeyboardRecognitionClient() {
   }, [gameState, endGame]);
 
   const shareScore = useCallback(async () => {
+    setIsFullscreen(false);
     const url = 'https://skilldrills.online/drills/motor/movement-speed/keyboard-recognition';
     try {
       const canvas = generateShareCard({
@@ -684,14 +692,14 @@ export default function KeyboardRecognitionClient() {
         bestCombo: analytics.maxCombo,
         rating: { letter: analytics.grade?.letter || 'C', label: analytics.grade?.label || 'Keep Going', emoji: '🎯' },
         newBest: isNewBest,
-        drillName: 'Keyboard Recognition',
+        drillName: 'Keyboard Speed Test',
         playerName: getPlayerName(),
       });
       await shareScoreCard(url, canvas);
     } catch (e) {
-      const text = `🎯 I scored ${uiScore} PTS on Keyboard Recognition Pro! Accuracy: ${analytics.accuracy}%. Test your reflexes at skilldrills.online!`;
+      const text = `🎯 I scored ${uiScore} PTS on the Keyboard Speed Test! Accuracy: ${analytics.accuracy}%. Test your reflexes at skilldrills.online!`;
       if (typeof navigator !== 'undefined' && navigator.share) {
-        navigator.share({ title: 'My Keyboard Recognition Pro Score', text, url }).catch(() => {});
+        navigator.share({ title: 'My Keyboard Speed Test Score', text, url }).catch(() => {});
       } else if (typeof navigator !== 'undefined' && navigator.clipboard) {
         navigator.clipboard.writeText(text);
         alert('Score card copied to clipboard!');
@@ -703,40 +711,32 @@ export default function KeyboardRecognitionClient() {
     <div className="min-h-screen bg-[#050508] text-white flex flex-col font-sans select-none">
       {/* ── MAIN CONTENT AREA ── */}
       <main className="flex-1 max-w-6xl w-full mx-auto px-4 py-6 flex flex-col gap-6">
-        {/* Title */}
+        {/* Title & AIO Header */}
         {!isFullscreen && (
-          <div className="text-center">
-            <h1 className="text-2xl sm:text-3xl font-black tracking-tight text-white uppercase">
-              Keyboard Recognition Pro
-              <span data-seo-kw="1" className="block text-sm font-semibold text-slate-400 mt-1 normal-case tracking-normal">
-                Keyboard Speed Test
+          <div className="flex flex-col gap-1">
+            <h1 className="text-2xl sm:text-3xl font-black tracking-tight text-white">
+              {copy?.title || t('keyboardRecognition.title', 'Keyboard Speed Test')}
+              <span data-seo-kw="1" className="block text-sm font-semibold text-slate-400 mt-1">
+                {copy?.subtitle || t('keyboardRecognition.subtitle', 'Keybind Reaction Trainer & Speed Test')}
               </span>
             </h1>
-            <p className="text-xs text-slate-400 mt-1">
-              Keybind Muscle Memory &amp; Response Inhibition • 45s Timer
-            </p>
           </div>
         )}
 
         {/* Live Stat Cards */}
         {!isFullscreen && (
-          <div className="grid grid-cols-4 gap-2.5 max-w-2xl mx-auto w-full">
-            <div className="bg-[#0d0d18] border border-white/5 rounded-xl p-2.5 text-center">
-              <div className="text-[10px] uppercase font-bold text-slate-500 tracking-wider">Score</div>
-              <div className="text-lg sm:text-xl font-black text-white tabular-nums">{uiScore}</div>
-            </div>
-            <div className="bg-[#0d0d18] border border-white/5 rounded-xl p-2.5 text-center">
-              <div className="text-[10px] uppercase font-bold text-slate-500 tracking-wider">Time</div>
-              <div className={`text-lg sm:text-xl font-black tabular-nums ${uiTimeLeft <= 10 ? 'text-red-400 animate-pulse' : 'text-white'}`}>{uiTimeLeft}s</div>
-            </div>
-            <div className="bg-[#0d0d18] border border-white/5 rounded-xl p-2.5 text-center">
-              <div className="text-[10px] uppercase font-bold text-slate-500 tracking-wider">Accuracy</div>
-              <div className="text-lg sm:text-xl font-black text-emerald-400 tabular-nums">{uiAccuracy}%</div>
-            </div>
-            <div className="bg-[#0d0d18] border border-white/5 rounded-xl p-2.5 text-center">
-              <div className="text-[10px] uppercase font-bold text-slate-500 tracking-wider">Best Score</div>
-              <div className="text-lg sm:text-xl font-black text-amber-400 tabular-nums">{bestScore}</div>
-            </div>
+          <div className="grid grid-cols-4 gap-2 w-full -mb-2">
+            {[
+              { label: t('keyboardRecognition.score', 'Score'), val: uiScore },
+              { label: t('keyboardRecognition.timeLeft', 'Time Left'), val: `${uiTimeLeft}s`, highlight: uiTimeLeft <= 10 },
+              { label: t('keyboardRecognition.accuracy', 'Accuracy'), val: `${uiAccuracy}%`, color: "text-emerald-400" },
+              { label: t('keyboardRecognition.bestScore', 'Best Score'), val: bestScore, color: "text-amber-400" },
+            ].map((s, i) => (
+              <div key={i} className="border border-white/[0.06] bg-white/[0.015] px-2 py-2 rounded-xl text-center">
+                <div className="text-[9px] sm:text-[10px] uppercase font-bold text-slate-500 tracking-wider mb-0.5">{s.label}</div>
+                <div className={`text-xs sm:text-sm md:text-base font-black tabular-nums truncate ${s.highlight ? "text-red-400 animate-pulse" : s.color || "text-white"}`}>{s.val}</div>
+              </div>
+            ))}
           </div>
         )}
 
@@ -744,10 +744,10 @@ export default function KeyboardRecognitionClient() {
         <div 
           ref={containerRef} 
           onContextMenu={(e) => { if (gameActiveRef.current) e.preventDefault(); }}
-          className={`relative overflow-hidden flex flex-col transition-all duration-150 select-none bg-[#080811] text-white border border-white/10 ${
+          className={`overflow-hidden flex flex-col select-none bg-[#080811] text-white ${
             isFullscreen 
-              ? 'fixed inset-0 z-[100] w-screen h-[100dvh] bg-[#080811] rounded-none border-none flex flex-col items-center justify-center' 
-              : 'w-full rounded-2xl bg-[#080811] aspect-video min-h-[460px] sm:min-h-[500px] max-h-[88vh] relative overflow-hidden flex flex-col'
+              ? 'fixed inset-0 z-[100] w-screen h-[100dvh] bg-[#050508] flex flex-col items-center justify-center' 
+              : 'w-full rounded-2xl aspect-video min-h-[460px] md:min-h-[500px] max-h-[88vh] max-md:portrait:aspect-[3/4] max-md:portrait:min-h-[420px] max-md:portrait:max-h-[76vh] max-md:landscape:min-h-[340px] max-md:landscape:max-h-[85vh] bg-[#080811] border border-white/10 relative overflow-hidden flex flex-col'
           }`}
         >
           {/* DOM Flash Overlay */}
@@ -759,11 +759,11 @@ export default function KeyboardRecognitionClient() {
           {(gameState === 'playing' || gameState === 'countdown') && (
             <>
               <div className="absolute top-4 left-4 z-30 pointer-events-none">
-                <p className="text-[10px] font-semibold uppercase tracking-wider text-white/50">Score</p>
+                <p className="text-[10px] font-semibold uppercase tracking-wider text-white/50">{t('keyboardRecognition.score', 'Score')}</p>
                 <p className="text-2xl sm:text-3xl font-bold text-white tabular-nums leading-tight">{uiScore}</p>
               </div>
               <div className="absolute top-4 right-4 z-30 pointer-events-none text-right">
-                <p className="text-[10px] font-semibold uppercase tracking-wider text-white/50">Time</p>
+                <p className="text-[10px] font-semibold uppercase tracking-wider text-white/50">{t('keyboardRecognition.time', 'Time')}</p>
                 <p className={`text-2xl sm:text-3xl font-bold tabular-nums leading-tight ${uiTimeLeft <= 10 ? 'text-red-400' : 'text-white'}`}>{uiTimeLeft}s</p>
               </div>
             </>
@@ -815,7 +815,7 @@ export default function KeyboardRecognitionClient() {
               <div className="w-[95%] max-w-5xl flex items-center justify-center flex-wrap">
 
                 {promptDisplay.type === 'fake' && (
-                  <div className="text-6xl md:text-8xl lg:text-[9rem] font-black uppercase text-amber-500 font-sans tracking-wide drop-shadow-[0_0_20px_rgba(245,158,11,0.4)] whitespace-nowrap">
+                  <div className="text-6xl md:text-8xl lg:text-[9rem] font-black uppercase text-amber-500 font-sans tracking-wide whitespace-nowrap">
                     {promptDisplay.text}
                   </div>
                 )}
@@ -824,13 +824,13 @@ export default function KeyboardRecognitionClient() {
                   <div className="flex gap-4 md:gap-8 items-center justify-center flex-wrap">
                     {promptDisplay.showMemoryContent ? (
                       promptDisplay.textList.map((ch, i) => (
-                        <span key={i} className="font-mono font-black text-cyan-400 text-6xl md:text-8xl lg:text-9xl drop-shadow-[0_0_20px_rgba(6,182,212,0.4)]">{ch}</span>
+                        <span key={i} className="font-mono font-black text-cyan-400 text-6xl md:text-8xl lg:text-9xl">{ch}</span>
                       ))
                     ) : (
                       promptDisplay.textList.map((ch, i) => {
                         const isTyped = i < promptDisplay.typedCount;
                         return (
-                          <span key={i} className={`w-20 h-24 md:w-28 md:h-32 rounded-3xl border-[3px] flex items-center justify-center font-black font-mono transition-all text-5xl md:text-6xl ${isTyped ? 'border-emerald-500 bg-emerald-500/10 text-emerald-400 shadow-[0_0_15px_rgba(16,185,129,0.3)]' : 'border-dashed border-slate-700 text-slate-700'}`}>
+                          <span key={i} className={`${ch.length > 3 ? 'w-28 md:w-36 text-4xl md:text-5xl' : 'w-20 md:w-28 text-5xl md:text-6xl'} h-24 md:h-32 rounded-3xl border-[3px] flex items-center justify-center font-black font-mono transition-all whitespace-nowrap ${isTyped ? 'border-emerald-500 bg-emerald-500/10 text-emerald-400 shadow-[0_0_15px_rgba(16,185,129,0.3)]' : 'border-dashed border-slate-700 text-slate-700'}`}>
                             {isTyped ? ch : ''}
                           </span>
                         );
@@ -845,7 +845,7 @@ export default function KeyboardRecognitionClient() {
                       const isTyped = i < promptDisplay.typedCount;
                       const isCurrent = i === promptDisplay.typedCount;
                       return (
-                        <span key={i} className={`w-20 h-24 md:w-28 md:h-32 rounded-3xl border-[3px] flex items-center justify-center font-black font-mono transition-all text-4xl md:text-6xl ${isTyped ? 'border-emerald-500 bg-emerald-500/20 text-emerald-400 shadow-[0_0_20px_rgba(16,185,129,0.4)] scale-95' : isCurrent ? 'border-white bg-slate-800 text-white shadow-[0_0_20px_rgba(255,255,255,0.2)] scale-110' : 'border-slate-800 bg-slate-900 text-slate-600'}`}>
+                        <span key={i} className={`${ch.length > 3 ? 'w-28 md:w-36 text-3xl md:text-5xl' : 'w-20 md:w-28 text-4xl md:text-6xl'} h-24 md:h-32 rounded-3xl border-[3px] flex items-center justify-center font-black font-mono transition-all whitespace-nowrap ${isTyped ? 'border-emerald-500 bg-emerald-500/20 text-emerald-400 shadow-[0_0_20px_rgba(16,185,129,0.4)] scale-95' : isCurrent ? 'border-white bg-slate-800 text-white shadow-[0_0_20px_rgba(255,255,255,0.2)] scale-110' : 'border-slate-800 bg-slate-900 text-slate-600'}`}>
                           {ch}
                         </span>
                       );
@@ -854,7 +854,7 @@ export default function KeyboardRecognitionClient() {
                 )}
 
                 {['single', 'combo'].includes(promptDisplay.type) && (
-                  <div className="text-5xl md:text-7xl lg:text-[8rem] font-mono font-black text-white tracking-widest drop-shadow-[0_0_25px_rgba(255,255,255,0.2)] whitespace-nowrap overflow-visible">
+                  <div className="text-5xl md:text-7xl lg:text-[8rem] font-mono font-black text-white tracking-widest whitespace-nowrap overflow-visible">
                     {promptDisplay.text}
                   </div>
                 )}
@@ -867,25 +867,17 @@ export default function KeyboardRecognitionClient() {
             <FpsStartCard
               icon={Keyboard}
               accent="emerald"
-              title="Keyboard Recognition Pro"
-              subtitle="Keybind Muscle Memory & Response Inhibition • 60s Timer"
-              rules={[
-                { icon: Target, accent: 'emerald', title: 'Match Prompt Before Timeout', text: 'Press the matching key on your physical keyboard before target timer expires' },
-                { icon: Zap, accent: 'red', title: 'Incorrect Key Penalty', text: 'Pressing the wrong key or timing out resets your streak' },
-              ]}
-              stats={[
-                { icon: Trophy, label: 'Best Score', value: bestScore, color: 'text-white', accent: 'slate' },
-                { icon: Keyboard, label: 'Keys Active', value: enabledKeys.length, color: 'text-emerald-400', accent: 'emerald' },
-                { icon: Timer, label: 'Duration', value: '60s', color: 'text-blue-400', accent: 'blue' },
-              ]}
+              title={copy?.startTitle || t('keyboardRecognition.startTitle', 'Keyboard Speed Test')}
+              subtitle={copy?.startSubtitle || t('keyboardRecognition.startSubtitle', 'Keybind Muscle Memory & Response Inhibition • 60s Timer')}
               isTouchOnlyDevice={isTouchOnlyDevice}
+              touchBlockedLabel={t('keyboardRecognition.keyboardRequired', 'Keyboard Required')}
               onStart={enterDrill}
             />
           )}
 
           {/* COUNTDOWN OVERLAY */}
           {gameState === 'countdown' && (
-            <DrillCountdown value={countdownValue} subtitle="GET READY" />
+            <DrillCountdown value={countdownValue} subtitle={t('keyboardRecognition.getReady', 'GET READY')} />
           )}
 
           {/* END SCREEN */}
@@ -908,7 +900,7 @@ export default function KeyboardRecognitionClient() {
                 <div className="text-3xl sm:text-4xl font-black text-white mt-2 tabular-nums">
                   {uiScore}
                 </div>
-                <div className="text-[9px] uppercase tracking-widest text-slate-500">Points</div>
+                <div className="text-[9px] uppercase tracking-widest text-slate-500">{t('keyboardRecognition.points', 'Points')}</div>
               </div>
 
               {/* Right Stats & Actions Panel */}
@@ -918,19 +910,19 @@ export default function KeyboardRecognitionClient() {
                 <div className="grid grid-cols-2 sm:grid-cols-4 gap-2">
                   <div className="bg-black border border-white/5 p-2.5 rounded-xl text-center">
                     <p className="text-sm sm:text-base font-black text-white">{analytics.accuracy}%</p>
-                    <p className="text-[7.5px] sm:text-[8.5px] font-bold uppercase tracking-wider text-gray-400 mt-0.5">Accuracy</p>
+                    <p className="text-[7.5px] sm:text-[8.5px] font-bold uppercase tracking-wider text-gray-400 mt-0.5">{t('keyboardRecognition.accuracy', 'Accuracy')}</p>
                   </div>
                   <div className="bg-black border border-white/5 p-2.5 rounded-xl text-center">
                     <p className="text-sm sm:text-base font-black text-white">{analytics.avgReaction}<span className="text-[10px] text-gray-500">ms</span></p>
-                    <p className="text-[7.5px] sm:text-[8.5px] font-bold uppercase tracking-wider text-gray-400 mt-0.5">Avg Reaction</p>
+                    <p className="text-[7.5px] sm:text-[8.5px] font-bold uppercase tracking-wider text-gray-400 mt-0.5">{t('keyboardRecognition.avgReaction', 'Avg Reaction')}</p>
                   </div>
                   <div className="bg-black border border-white/5 p-2.5 rounded-xl text-center">
                     <p className="text-sm sm:text-base font-black text-white">{analytics.maxCombo}x</p>
-                    <p className="text-[7.5px] sm:text-[8.5px] font-bold uppercase tracking-wider text-gray-400 mt-0.5">Max Combo</p>
+                    <p className="text-[7.5px] sm:text-[8.5px] font-bold uppercase tracking-wider text-gray-400 mt-0.5">{t('keyboardRecognition.maxCombo', 'Max Combo')}</p>
                   </div>
                   <div className="bg-black border border-white/5 p-2.5 rounded-xl text-center">
                     <p className="text-sm sm:text-base font-black text-white">{analytics.kpm}</p>
-                    <p className="text-[7.5px] sm:text-[8.5px] font-bold uppercase tracking-wider text-gray-400 mt-0.5">KPM</p>
+                    <p className="text-[7.5px] sm:text-[8.5px] font-bold uppercase tracking-wider text-gray-400 mt-0.5">{t('keyboardRecognition.kpm', 'KPM')}</p>
                   </div>
                 </div>
 
@@ -940,19 +932,19 @@ export default function KeyboardRecognitionClient() {
                     onClick={enterDrill} 
                     className="flex-1 py-3 rounded-[13px] bg-gradient-to-r from-emerald-600 to-teal-600 text-white font-bold text-xs uppercase tracking-wide cursor-pointer transition-transform active:scale-[0.98] shadow-md flex items-center justify-center gap-1.5"
                   >
-                    <RefreshCw className="w-3.5 h-3.5" /> Play Again
+                    <RefreshCw className="w-3.5 h-3.5" /> {t('keyboardRecognition.playAgain', 'Play Again')}
                   </button>
                   <button 
                     onClick={shareScore} 
                     className="w-11 flex-shrink-0 rounded-[13px] bg-white/[0.04] border border-white/10 flex items-center justify-center text-slate-400 hover:text-white cursor-pointer active:scale-90 transition-transform" 
-                    title="Share Score"
+                    title={t('keyboardRecognition.shareScore', 'Share Score')}
                   >
                     <Share2 className="w-4 h-4 text-emerald-400" />
                   </button>
                   <button 
                     onClick={handleExitDrill} 
                     className="w-11 flex-shrink-0 rounded-[13px] bg-white/[0.04] border border-white/10 flex items-center justify-center text-slate-400 hover:text-white cursor-pointer active:scale-90 transition-transform" 
-                    title="Exit Fullscreen & Return"
+                    title={t('keyboardRecognition.exitDrill', 'Exit Drill & Return')}
                   >
                     <LogOut className="w-4 h-4 text-red-400" />
                   </button>
@@ -969,12 +961,12 @@ export default function KeyboardRecognitionClient() {
             <div className="rounded-2xl border border-white/10 bg-[#080811] p-5 shadow-xl">
               <div className="flex items-center gap-2 mb-4 pb-3 border-b border-white/5">
                 <Cpu className="w-4 h-4 text-emerald-400" />
-                <h2 className="font-bold text-white text-xs tracking-wide uppercase font-mono">Session Configuration</h2>
+                <h2 className="font-bold text-white text-xs tracking-wide uppercase font-mono">{t('keyboardRecognition.sessionConfig', 'Session Configuration')}</h2>
               </div>
 
               <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-4">
                 <div>
-                  <label className="text-[9px] text-slate-400 font-mono font-bold uppercase tracking-wider block mb-1.5">Gameplay Mode</label>
+                  <label className="text-[9px] text-slate-400 font-mono font-bold uppercase tracking-wider block mb-1.5">{t('keyboardRecognition.gameplayMode', 'Gameplay Mode')}</label>
                   <select value={trainingMode} onChange={(e) => setTrainingMode(e.target.value)} className="w-full text-xs font-bold bg-[#040609] border border-white/10 rounded-lg p-2 text-white focus:outline-none focus:border-emerald-500 transition-colors">
                     <option value="dynamic">Dynamic Mixed Progression</option><option value="single">Single Key Recognition</option>
                     <option value="letters">Letters Only (A-Z)</option><option value="numbers">Numbers Only (0-9)</option>
@@ -984,7 +976,7 @@ export default function KeyboardRecognitionClient() {
                   </select>
                 </div>
                 <div>
-                  <label className="text-[9px] text-slate-400 font-mono font-bold uppercase tracking-wider block mb-1.5">Difficulty</label>
+                  <label className="text-[9px] text-slate-400 font-mono font-bold uppercase tracking-wider block mb-1.5">{t('keyboardRecognition.difficulty', 'Difficulty')}</label>
                   <select value={difficultySetting} onChange={(e) => setDifficultySetting(e.target.value)} className="w-full text-xs font-bold bg-[#040609] border border-white/10 rounded-lg p-2 text-white focus:outline-none focus:border-emerald-500 transition-colors">
                     <option value="adaptive">Adaptive Engine</option><option value="easy">Easy (1.5x Time)</option>
                     <option value="medium">Medium (1.0x Time)</option><option value="hard">Hard (0.75x Time)</option>
@@ -992,7 +984,7 @@ export default function KeyboardRecognitionClient() {
                   </select>
                 </div>
                 <div>
-                  <label className="text-[9px] text-slate-400 font-mono font-bold uppercase tracking-wider block mb-1.5">Esports Presets</label>
+                  <label className="text-[9px] text-slate-400 font-mono font-bold uppercase tracking-wider block mb-1.5">{t('keyboardRecognition.esportsPresets', 'Esports Presets')}</label>
                   <div className="grid grid-cols-3 gap-1">
                     {Object.keys(PRESETS_ANNOTATED).map(pName => (
                       <button key={pName} onClick={() => handleLoadPreset(pName)} className={`py-1 px-1 rounded text-[9px] font-mono font-bold border transition-colors ${selectedProfile === pName ? 'border-emerald-500 bg-emerald-500/10 text-emerald-400' : 'border-white/10 bg-[#040609] text-slate-400 hover:text-white'}`}>{pName}</button>
@@ -1002,7 +994,7 @@ export default function KeyboardRecognitionClient() {
               </div>
 
               <div className="flex items-center justify-between mb-3 pt-2 border-t border-white/5">
-                <h3 className="text-[10px] font-mono font-bold text-slate-400 uppercase tracking-widest">Active Key Bindings Map</h3>
+                <h3 className="text-[10px] font-mono font-bold text-slate-400 uppercase tracking-widest">{t('keyboardRecognition.activeKeyMap', 'Active Key Bindings Map')}</h3>
                 <span className="px-2.5 py-0.5 text-[10px] font-mono rounded bg-white/5 border border-white/10 text-slate-300">Selected Keys: {enabledKeys.length}</span>
               </div>
 
@@ -1035,82 +1027,115 @@ export default function KeyboardRecognitionClient() {
           <div className="[&>div]:!mt-0">
             <DrillAccordion
               id="rules"
-              title="Drill Instructions & Scoring System"
+              title={t('keyboardRecognition.rulesTitle', 'Drill Instructions & Scoring System')}
               isOpen={openAccordion === 'rules'}
               onToggle={() => setOpenAccordion(openAccordion === 'rules' ? null : 'rules')}
             >
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
-                {RULES_ITEMS.map((item, i) => (
-                  <div key={i} className="bg-black p-4 rounded-xl border border-white/10">
-                    <p className="text-sm font-bold text-white mb-1">{item.title}</p>
-                    <p className="text-xs text-gray-300 leading-relaxed">{item.text}</p>
-                  </div>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-2.5 sm:gap-3">
+                {[
+                  {
+                    num: '1',
+                    text: t('keyboardRecognition.rule1TextShort', 'Match active key prompt before timer expires'),
+                    highlight: t('keyboardRecognition.rule1Highlight', 'Target Key'),
+                    result: '+120 PTS',
+                  },
+                  {
+                    num: '2',
+                    text: t('keyboardRecognition.rule2TextShort', 'Inhibit motor impulse on fake red invalid prompts'),
+                    highlight: t('keyboardRecognition.rule2Highlight', 'Trap Guard'),
+                    result: '+200 PTS',
+                  },
+                  {
+                    num: '3',
+                    text: t('keyboardRecognition.rule3TextShort', 'Wrong keypress or falling for trap reset streak'),
+                    highlight: t('keyboardRecognition.rule3Highlight', 'Penalty'),
+                    result: 'Combo Reset',
+                  },
+                  {
+                    num: '4',
+                    text: t('keyboardRecognition.rule4TextShort', 'Maintain consecutive correct strokes for scaling pace'),
+                    highlight: t('keyboardRecognition.rule4Highlight', 'Streak Scaling'),
+                    result: 'Up to 3.0×',
+                  },
+                ].map((item, i) => (
+                  <RuleItem
+                    key={i}
+                    num={item.num}
+                    text={item.text}
+                    highlight={item.highlight}
+                    result={item.result}
+                  />
                 ))}
               </div>
             </DrillAccordion>
 
             <DrillAccordion
               id="about"
-              title="About Keyboard Recognition Pro"
+              title={t('keyboardRecognition.aboutTitle', 'About the Keyboard Speed Test')}
               isOpen={openAccordion === 'about'}
               onToggle={() => setOpenAccordion(openAccordion === 'about' ? null : 'about')}
             >
-              <div className="space-y-4">
-                {ABOUT_TEXT.split('\n\n').map((para, i) => (
-                  <p key={i} className="text-sm leading-relaxed text-gray-300">{para}</p>
-                ))}
-              </div>
-            </DrillAccordion>
+              <div className="space-y-6">
+                <div className="space-y-3">
+                  <h3 className="text-base font-bold text-white flex items-center gap-2">
+                    <Keyboard className="w-4 h-4 text-emerald-400" /> {t('keyboardRecognition.aboutHeading', 'Bridging Visual Prompt Recognition & Keybind Execution')}
+                  </h3>
+                  <p className="text-sm leading-relaxed text-gray-300">
+                    {t('keyboardRecognition.aboutP1', 'The Keyboard Speed Test is an advanced neuro-motor training tool designed to bridge the gap between visual prompt detection and subconscious mechanical execution. In competitive titles like Valorant, CS2, Fortnite, Minecraft, and Apex Legends, clutch split-second decisions demand firing abilities and utility without glancing at the physical keyboard.')}
+                  </p>
+                  <p className="text-sm leading-relaxed text-gray-300">
+                    {t('keyboardRecognition.aboutP2', 'By training under F.C. Donders\' (1868) choice reaction paradigm, Hick\'s (1952) law of alternative stimuli, and Gordon Logan\'s (1984) response inhibition countermanding, this drill directly conditions the corticospinal pathways responsible for rapid finger articulation while purging hesitation and panic key-smashing. Simple visual reaction on its own takes roughly 200–250 ms (Woods et al., 2015), and every extra key you might have to choose between adds to that: Hick\'s Law puts choice reaction time at approximately a logarithmic function of the number of alternatives (Hick, 1952). Practice does not beat that law — it makes each key mapping automatic so the choice step shrinks.')}
+                  </p>
+                </div>
 
-            <DrillAccordion
-              id="faq"
-              title="Frequently Asked Questions"
-              isOpen={openAccordion === 'faq'}
-              onToggle={() => setOpenAccordion(openAccordion === 'faq' ? null : 'faq')}
-            >
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                {FAQ_ITEMS.map((item, i) => (
-                  <div key={i} className="bg-[#05060b] border border-gray-800 rounded-xl p-5">
-                    <h4 className="text-sm font-bold text-gray-200 mb-2">{item.q}</h4>
-                    <p className="text-xs text-gray-400 leading-relaxed">{item.a}</p>
+                <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                  <div className="p-4 rounded-xl border border-white/10 bg-white/[0.02]">
+                    <div className="flex items-center gap-2.5 mb-2">
+                      <div className="w-7 h-7 rounded-lg bg-emerald-600 flex items-center justify-center"><Target className="w-3.5 h-3.5 text-white" /></div>
+                      <h4 className="text-xs font-bold text-white">{t('keyboardRecognition.card1Title', 'Target Audience')}</h4>
+                    </div>
+                    <p className="text-xs text-gray-300 leading-relaxed">{t('keyboardRecognition.card1Desc', 'Competitive gamers, speedtypers, and esports players developing unhesitating muscle memory for high-frequency keybind setups.')}</p>
                   </div>
-                ))}
+                  <div className="p-4 rounded-xl border border-white/10 bg-white/[0.02]">
+                    <div className="flex items-center gap-2.5 mb-2">
+                      <div className="w-7 h-7 rounded-lg bg-teal-600 flex items-center justify-center"><TrendingUp className="w-3.5 h-3.5 text-white" /></div>
+                      <h4 className="text-xs font-bold text-white">{t('keyboardRecognition.card2Title', 'Cognitive Benefits')}</h4>
+                    </div>
+                    <p className="text-xs text-gray-300 leading-relaxed">{t('keyboardRecognition.card2Desc', 'Reduces choice latency, exercises working-memory sequence recall, and trains response inhibition to prevent panic inputs.')}</p>
+                  </div>
+                  <div className="p-4 rounded-xl border border-white/10 bg-white/[0.02]">
+                    <div className="flex items-center gap-2.5 mb-2">
+                      <div className="w-7 h-7 rounded-lg bg-blue-600 flex items-center justify-center"><Zap className="w-3.5 h-3.5 text-white" /></div>
+                      <h4 className="text-xs font-bold text-white">{t('keyboardRecognition.card3Title', 'Adaptive Difficulty')}</h4>
+                    </div>
+                    <p className="text-xs text-gray-300 leading-relaxed">{t('keyboardRecognition.card3Desc', 'Dynamically scales prompt display windows from 1.5x down to 0.55x, with automated trap frequency modulation.')}</p>
+                  </div>
+                </div>
               </div>
             </DrillAccordion>
           </div>
         )}
 
-        {/* ── RELATED MOTOR DRILLS ── */}
-        {!isFullscreen && (
-          <section className="mt-4">
-            <h2 className="text-sm font-bold text-slate-400 uppercase tracking-wider mb-3 font-sans">
-              Related Motor &amp; Speed Drills
-            </h2>
-            <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
-              {RELATED_DRILLS.map((drill) => (
-                <Link
-                  key={drill.id}
-                  href={drill.href}
-                  className="group bg-[#0c0c16] border border-white/5 hover:border-emerald-500/40 rounded-xl p-3.5 transition-all duration-200 hover:-translate-y-0.5 flex flex-col justify-between"
-                >
-                  <div>
-                    <div className="text-[10px] font-bold text-emerald-400 uppercase tracking-wider mb-1">{drill.cat}</div>
-                    <div className="text-xs font-bold text-white group-hover:text-emerald-300 transition-colors">{drill.name}</div>
-                    <div className="text-[11px] text-slate-400 mt-1 line-clamp-2 leading-relaxed">{drill.desc}</div>
-                  </div>
-                  <div className="text-[10px] font-bold text-slate-500 group-hover:text-emerald-400 mt-3 flex items-center gap-1 transition-colors">
-                    Train Drill <span>→</span>
-                  </div>
-                </Link>
-              ))}
-            </div>
-          </section>
-        )}
-
-        {/* ── FOOTER ── */}
-        {!isFullscreen && <DrillFooter />}
-
       </main>
+    </div>
+  );
+}
+
+// === Subcomponents ===
+function RuleItem({ num, text, highlight = '', result }) {
+  return (
+    <div className="flex items-center gap-2.5 sm:gap-3 bg-black px-3 py-2 sm:px-4 sm:py-2.5 rounded-xl border border-white/10 shadow-sm font-sans">
+      <div className="w-6 h-6 sm:w-7 sm:h-7 rounded-lg bg-white/10 border border-white/20 flex items-center justify-center text-white text-xs sm:text-sm font-black shadow flex-shrink-0">
+        {num}
+      </div>
+      <div className="flex-1 min-w-0 flex items-center justify-between gap-2">
+        <p className="text-xs sm:text-sm font-medium text-gray-200 font-sans truncate">
+          {text}{highlight && <span className="font-bold text-white"> {highlight}</span>}
+        </p>
+        <div className="text-[11px] sm:text-xs font-bold px-2 py-0.5 sm:px-2.5 sm:py-1 rounded-md bg-[#050811] border border-white/10 text-white whitespace-nowrap shadow-inner flex-shrink-0">
+          {result}
+        </div>
+      </div>
     </div>
   );
 }

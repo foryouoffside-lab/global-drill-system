@@ -32,7 +32,7 @@ const nextConfig = {
     // 'unsafe-eval' is only needed by next dev's HMR/react-refresh.
     const csp = [
       "default-src 'self'",
-      `script-src 'self' 'unsafe-inline'${isProd ? '' : " 'unsafe-eval'"} https://cdn.vercel-insights.com`,
+      `script-src 'self' 'unsafe-inline'${isProd ? '' : " 'unsafe-eval'"} https://cdn.vercel-insights.com https://va.vercel-scripts.com`,
       "style-src 'self' 'unsafe-inline'",
       // All imagery is first-party or a build-time OG image; data: covers the
       // inline SVG icons. No remote host needs to be allowed.
@@ -50,7 +50,15 @@ const nextConfig = {
       // an injected form from posting somewhere else.
       "base-uri 'self'",
       "form-action 'self'",
-      'upgrade-insecure-requests',
+      // Production is HTTPS, so this is free there. It is omitted only when
+      // ALLOW_INSECURE_LOCAL=1, which exists for testing a production build from
+      // a phone on the LAN: the page is reachable over plain http://<lan-ip>:3000,
+      // and this directive would rewrite every CSS and JS request to https on a
+      // port with no TLS listener -- the page then renders as unstyled HTML with
+      // the sr-only blocks visible. localhost is exempt as a trustworthy origin,
+      // so the problem only appears over the network address. Never set this in
+      // production; Vercel does not, so the directive always ships there.
+      ...(process.env.ALLOW_INSECURE_LOCAL === '1' ? [] : ['upgrade-insecure-requests']),
     ].join('; ');
 
     return [
@@ -166,6 +174,25 @@ const nextConfig = {
       { source: '/drills/fps/reactive-tracking', destination: '/drills/fps/strafe-tracking', permanent: true },
       { source: '/drills/cognitive/problem-solving/logic-puzzles', destination: '/drills/cognitive', permanent: true },
 
+      // keyboard-tester was a stale duplicate of the keyboard-recognition drill
+      // component under a second URL. keyboard-recognition is the maintained,
+      // fully localized version (2026-09-20); consolidate onto it rather than
+      // leaving two near-identical drills live.
+      { source: '/drills/motor/keyboard-tester', destination: '/drills/motor/movement-speed/keyboard-recognition', permanent: true },
+      { source: '/de/drills/motor/keyboard-tester', destination: '/de/drills/motor/movement-speed/keyboard-recognition', permanent: true },
+      { source: '/es/drills/motor/keyboard-tester', destination: '/es/drills/motor/movement-speed/keyboard-recognition', permanent: true },
+      { source: '/fr/drills/motor/keyboard-tester', destination: '/fr/drills/motor/movement-speed/keyboard-recognition', permanent: true },
+      { source: '/ja/drills/motor/keyboard-tester', destination: '/ja/drills/motor/movement-speed/keyboard-recognition', permanent: true },
+      { source: '/ko/drills/motor/keyboard-tester', destination: '/ko/drills/motor/movement-speed/keyboard-recognition', permanent: true },
+      { source: '/pt/teste-de-teclado', destination: '/pt/drills/motor/movement-speed/keyboard-recognition', permanent: true },
+
+      // Re-slugged drill: reaction-simulator -> reaction-game (retargeted to "reaction game")
+      {
+        source: '/drills/reaction-speed/reaction-simulator',
+        destination: '/drills/reaction-speed/reaction-game',
+        permanent: true,
+      },
+
       // Whole subtrees that no longer exist. These sit after the specific
       // rules above because Next matches redirects in array order.
       { source: '/drills/motor/timing-accuracy/:path*', destination: '/drills/motor', permanent: true },
@@ -230,7 +257,7 @@ const nextConfig = {
   // ============================================
   
   experimental: {
-    optimizeCss: false,
+    optimizeCss: true,
     optimizePackageImports: [
       'lucide-react', 
       '@vercel/analytics',
@@ -238,20 +265,12 @@ const nextConfig = {
     ],
   },
   
-  // ============================================
-  // WEBPACK SPLIT CHUNKS (Reduces TBT)
-  // ============================================
-  
-  webpack: (config, { isServer, dev }) => {
-    return config;
-  },
-  
   eslint: {
-    ignoreDuringBuilds: true,
+    ignoreDuringBuilds: false,
   },
 
   typescript: {
-    ignoreBuildErrors: true,
+    ignoreBuildErrors: false,
   },
 
   // ============================================

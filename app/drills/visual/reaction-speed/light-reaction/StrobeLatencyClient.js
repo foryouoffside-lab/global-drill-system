@@ -1,22 +1,19 @@
 'use client';
 
 import React, { useState, useEffect, useRef, useCallback } from 'react';
-import Link from 'next/link';
 
-import { 
-  Volume2, VolumeX,
-  Play, RefreshCw, Target,
-  Share2, ArrowLeft, RotateCw, Eye, Users, TrendingUp, Zap, ZapOff, Brain, Sun, Trophy
-} from 'lucide-react';
+import { Volume2, VolumeX, Target, Eye, Users, TrendingUp, Zap, ZapOff, Brain, Trophy } from 'lucide-react';
 
+import { isIdleFrameSkippable } from '@/lib/performance';
 import generateShareCard, { shareScoreCard } from '../../../../../components/ShareScoreCard';
 import { getPlayerName } from '../../../../../lib/leaderboard';
 import { drillAudio } from '../../../../../lib/drillAudio';
 import { drillFlash } from '../../../../../lib/drillFlash';
 import { drillTimeout } from '../../../../../lib/drillTimeout';
-import { getFpsScoreGrade } from '../../../../../lib/scoringEngine';
-import { MAX_LEVEL } from '../../../../../lib/drillDifficulty';
-import { drawTacticalTarget, getCanvasDpr } from '../../../../../lib/canvasFx';
+import { drillPenalty } from '../../../../../lib/drillPenalty';
+import { getFpsScoreGrade, getComboMultiplier } from '../../../../../lib/scoringEngine';
+import { getDifficultyProgress, getStartLevel, ramp } from '../../../../../lib/drillDifficulty';
+import { getCanvasDpr } from '../../../../../lib/canvasFx';
 import useDrillFlash from '../../../../../lib/useDrillFlash';
 import useUnexpectedExitGuard from '../../../../../lib/useUnexpectedExitGuard';
 import DrillFooter from '../../../../../components/drill/DrillFooter';
@@ -24,31 +21,30 @@ import DrillCountdown from '../../../../../components/drill/DrillCountdown';
 import DrillAccordion from '../../../../../components/drill/DrillAccordion';
 import DrillFlashOverlay from '../../../../../components/drill/DrillFlashOverlay';
 import DrillRuleItem from '../../../../../components/drill/DrillRuleItem';
-import DrillFAQItem from '../../../../../components/drill/DrillFAQItem';
 import FpsStartCard from '../../../../../components/drill/FpsStartCard';
+import DrillResultCard from '../../../../../components/drill/DrillResultCard';
+import useImmersiveMode from '@/lib/useImmersiveMode';
 
-const DRILL_DURATION = 45; // 45 seconds duration
+// ============================================================
+// TUNING CONSTANTS
+// ============================================================
+const DRILL_DURATION = 45; // starting clock only; a run grows past this
 const POINTS_PER_HIT = 150;
-const POINTS_PER_LEVEL = 750; // 5 hits per level, matching the old cadence
-const ELITE_SCORE = 1000; // Target score for S+ rating (rebalanced after combo removal)
-const STORAGE_KEY = 'skilldrills_visual_light_reaction_v4';
+const POINTS_PER_LEVEL = 5250; // 750 -> 5250 (7x)
+const ELITE_SCORE = 15000; // 1000 -> 15000 (scaled for unbounded runs)
+const TIME_PER_HIT = 2; // +2s per valid hit, capped at 60s
+const TIME_PENALTY = 1; // -1s on miss / spam / timeout (opt-in gated)
+const STORAGE_KEY = 'skilldrills_visual_light_reaction_v5';
 
-const RELATED_DRILLS = [
-  { id: "go-no-go", name: "Go / No-Go", cat: "Reaction Speed", desc: "Response inhibition & selective reaction speed.", href: "/drills/visual/reaction-speed/go/no-go" },
-  { id: "moving-target", name: "Moving Target", cat: "Visual Tracking", desc: "Kinetic visual tracking and target intercept.", href: "/drills/visual/tracking-accuracy/moving-target" },
-  { id: "visual-search", name: "Visual Search", cat: "Visual Recognition", desc: "Conjunctive visual search speed & pattern recognition.", href: "/drills/visual/visual-recognition/visual-search" },
-  { id: "multiple-targets", name: "Multiple Targets", cat: "Visual Tracking", desc: "Track multiple moving targets across dynamic paths.", href: "/drills/visual/tracking-accuracy/multiple-targets" },
-  { id: "distance-judgment", name: "Distance Judgment Pro", cat: "Depth Perception", desc: "3D stereoscopic depth estimation & intercept timing.", href: "/drills/visual/depth-perception/distance-judgment" },
-  { id: "entropic-grid", name: "Entropic Grid", cat: "Visual Recognition", desc: "Visual search speed & pattern recognition grid.", href: "/drills/visual/visual-recognition/entropic-grid" }
-];
+
 
 const getSavedData = () => {
   try {
     const raw = localStorage.getItem(STORAGE_KEY);
-    if (!raw) return { bestScore: 0, bestLevel: 1, totalSessions: 0 };
-    return { bestScore: 0, bestLevel: 1, totalSessions: 0, ...JSON.parse(raw) };
+    if (!raw) return { bestScore: 0, bestCombo: 0, bestLevel: 1, totalSessions: 0 };
+    return { bestScore: 0, bestCombo: 0, bestLevel: 1, totalSessions: 0, ...JSON.parse(raw) };
   } catch (e) {
-    return { bestScore: 0, bestLevel: 1, totalSessions: 0 };
+    return { bestScore: 0, bestCombo: 0, bestLevel: 1, totalSessions: 0 };
   }
 };
 
@@ -58,8 +54,19 @@ const saveData = (data) => {
   } catch (e) {}
 };
 
-// Clean 2D Target Renderer matching deploy style (104px diameter / 52px radius)
-function draw2dLightTarget(ctx, x, y, targetState, lastLatencyMs, isSpamming) {
+// Continuous unbounded difficulty with streak heat
+const getLevelConfig = (level, combo = 0) => {
+  const p = getDifficultyProgress(level);
+  const heat = (getComboMultiplier(combo) - 1) / 2;
+  return {
+    flashWindow: Math.max(50, ramp(300, 70, p) * (1 - heat * 0.30)),
+    minDelay: Math.max(300, ramp(1000, 400, p) * (1 - heat * 0.25)),
+    maxDelay: Math.max(500, ramp(2500, 800, p) * (1 - heat * 0.25)),
+  };
+};
+
+// Clean 2D Target Renderer (104px diameter / 52px radius)
+function draw2dLightTarget(ctx, x, y, targetState) {
   ctx.save();
 
   const radius = 52;
@@ -96,33 +103,39 @@ function draw2dLightTarget(ctx, x, y, targetState, lastLatencyMs, isSpamming) {
   ctx.restore();
 }
 
-export default function StrobeLatencyClient() {
+export default function StrobeLatencyClient({ copy } = {}) {
   const [gameState, setGameState] = useState('start'); // 'start' | 'countdown' | 'playing' | 'gameOver'
   const [isFullscreen, setIsFullscreen] = useState(false);
+  useImmersiveMode(isFullscreen); // locks the page behind while the drill fills the screen
   const [soundEnabled, setSoundEnabled] = useState(true);
   const [flashEnabled, setFlashEnabled] = useState(true);
+  const [penaltyEnabled, setPenaltyEnabled] = useState(false);
   const [openAccordion, setOpenAccordion] = useState(null);
   const [countdownValue, setCountdownValue] = useState(3);
   const { flashes, triggerFlash } = useDrillFlash();
 
   // Strobe Target State
-  const [level, setLevel] = useState(1);
+  const [uiLevel, setUiLevel] = useState(1);
+  const [uiCombo, setUiCombo] = useState(0);
   const [targetState, setTargetState] = useState('idle'); // 'idle' | 'waiting' | 'flashing' | 'hit' | 'miss'
   const [lastLatencyMs, setLastLatencyMs] = useState(0);
-  const [isProcessing, setIsProcessing] = useState(false);
   const [isSpamming, setIsSpamming] = useState(false);
 
   // HUD & Best Stats State
   const [uiScore, setUiScore] = useState(0);
   const [uiTimeLeft, setUiTimeLeft] = useState(DRILL_DURATION);
   const [bestScore, setBestScore] = useState(0);
+  const [bestCombo, setBestCombo] = useState(0);
   const [bestLevel, setBestLevel] = useState(1);
+  const [totalSessions, setTotalSessions] = useState(0);
   const [isNewBest, setIsNewBest] = useState(false);
 
   const [analytics, setAnalytics] = useState({
     accuracy: 100,
     perfectHits: 0,
     missedClicks: 0,
+    avgReactionTime: 0,
+    maxCombo: 0,
     finalLevel: 1,
     grade: null,
   });
@@ -132,12 +145,13 @@ export default function StrobeLatencyClient() {
   const targetCanvasRef = useRef(null);
   const countdownTimeoutsRef = useRef([]);
   const gameTimeoutsRef = useRef([]);
-  const timerIntervalRef = useRef(null);
   const flashDelayTimeoutRef = useRef(null);
   const flashWindowTimeoutRef = useRef(null);
   const spamCooldownTimerRef = useRef(null);
   const startingRef = useRef(false);
   const gameActiveRef = useRef(false);
+  const bestLevelRunRef = useRef(1);
+  const lastTimeRef = useRef(DRILL_DURATION);
 
   const flashStartTimeRef = useRef(0);
   const isFlashingRef = useRef(false);
@@ -147,12 +161,15 @@ export default function StrobeLatencyClient() {
   const engine = useRef({
     score: 0,
     level: 1,
+    combo: 0,
+    maxCombo: 0,
     timeLeft: DRILL_DURATION,
     perfectHits: 0,
     missedClicks: 0,
+    reactionTimes: [],
   });
 
-  // Precision 2D target renderer (fixed 100px diameter, 50px radius)
+  // Precision 2D target renderer
   const drawTarget = useCallback(() => {
     const cvs = targetCanvasRef.current;
     if (!cvs) return;
@@ -177,8 +194,8 @@ export default function StrobeLatencyClient() {
     const cx = w / 2;
     const cy = h / 2;
 
-    draw2dLightTarget(ctx, cx, cy, targetState, lastLatencyMs, isSpamming);
-  }, [targetState, lastLatencyMs, isSpamming]);
+    draw2dLightTarget(ctx, cx, cy, targetState);
+  }, [targetState]);
 
   useEffect(() => {
     drawTarget();
@@ -195,17 +212,13 @@ export default function StrobeLatencyClient() {
     if (typeof window !== 'undefined') {
       setSoundEnabled(drillAudio.isEnabled());
       setFlashEnabled(drillFlash.isEnabled());
+      setPenaltyEnabled(drillPenalty.isEnabled(TIME_PER_HIT === 2));
       const saved = getSavedData();
       setBestScore(saved.bestScore || 0);
+      setBestCombo(saved.bestCombo || 0);
       setBestLevel(saved.bestLevel || 1);
+      setTotalSessions(saved.totalSessions || 0);
     }
-  }, []);
-
-  // Fullscreen change listener
-  useEffect(() => {
-    const handleFullscreenChange = () => setIsFullscreen(!!document.fullscreenElement);
-    document.addEventListener('fullscreenchange', handleFullscreenChange);
-    return () => document.removeEventListener('fullscreenchange', handleFullscreenChange);
   }, []);
 
   const clearGameTimeouts = useCallback(() => {
@@ -221,17 +234,11 @@ export default function StrobeLatencyClient() {
     countdownTimeoutsRef.current.forEach(clearTimeout);
     countdownTimeoutsRef.current = [];
     clearGameTimeouts();
-    if (timerIntervalRef.current) clearInterval(timerIntervalRef.current);
     startingRef.current = false;
     gameActiveRef.current = false;
 
-    if (document.fullscreenElement) {
-      await document.exitFullscreen().catch(() => {});
-    }
+    setIsFullscreen(false);
     setGameState('start');
-    // markIntentionalExit is a stable ref-backed callback (empty deps in
-    // useUnexpectedExitGuard) declared below — omitted here to avoid a
-    // temporal-dead-zone reference in this dependency array.
   }, [clearGameTimeouts]);
 
   const { markIntentionalExit } = useUnexpectedExitGuard({
@@ -244,13 +251,15 @@ export default function StrobeLatencyClient() {
     markIntentionalExit();
     gameActiveRef.current = false;
     startingRef.current = false;
-    if (timerIntervalRef.current) clearInterval(timerIntervalRef.current);
     clearGameTimeouts();
     setGameState('gameOver');
 
     const e = engine.current;
     const totalTries = e.perfectHits + e.missedClicks;
     const finalAccuracy = totalTries > 0 ? Math.round((e.perfectHits / totalTries) * 100) : 100;
+    const avgRt = e.reactionTimes.length > 0
+      ? Math.round(e.reactionTimes.reduce((a, b) => a + b, 0) / e.reactionTimes.length)
+      : 0;
 
     const rating = getFpsScoreGrade(e.score, ELITE_SCORE);
     const grade = {
@@ -263,7 +272,9 @@ export default function StrobeLatencyClient() {
       accuracy: finalAccuracy,
       perfectHits: e.perfectHits,
       missedClicks: e.missedClicks,
-      finalLevel: e.level,
+      avgReactionTime: avgRt,
+      maxCombo: e.maxCombo,
+      finalLevel: Math.floor(bestLevelRunRef.current),
       grade,
     });
 
@@ -273,18 +284,62 @@ export default function StrobeLatencyClient() {
     const isNewHigh = e.score > prevSaved.bestScore;
     setIsNewBest(isNewHigh);
 
+    const runBestLevel = Math.max(prevSaved.bestLevel, Math.floor(bestLevelRunRef.current));
     const updatedData = {
       bestScore: Math.max(prevSaved.bestScore, e.score),
-      bestLevel: Math.max(prevSaved.bestLevel, e.level),
+      bestCombo: Math.max(prevSaved.bestCombo || 0, e.maxCombo),
+      bestLevel: runBestLevel,
       totalSessions: (prevSaved.totalSessions || 0) + 1,
     };
     saveData(updatedData);
 
     setBestScore(updatedData.bestScore);
+    setBestCombo(updatedData.bestCombo);
     setBestLevel(updatedData.bestLevel);
+    setTotalSessions(updatedData.totalSessions);
 
     drillAudio?.playSessionEnd?.();
   }, [clearGameTimeouts, markIntentionalExit]);
+
+  // Main RAF loop for clock draining
+  useEffect(() => {
+    if (gameState !== 'playing') return;
+
+    let animId;
+    let lastTime = performance.now();
+
+    const loop = (now) => {
+      if (isIdleFrameSkippable(gameState === 'playing', now, lastTime)) {
+        animId = requestAnimationFrame(loop);
+        return;
+      }
+
+      const dt = Math.min((now - lastTime) / 1000, 0.1);
+      lastTime = now;
+
+      const e = engine.current;
+      if (gameActiveRef.current) {
+        if (e.timeLeft > 0) e.timeLeft -= dt;
+        if (e.timeLeft <= 0) {
+          e.timeLeft = 0;
+          setUiTimeLeft(0);
+          endGame();
+          return;
+        }
+
+        const ceilSec = Math.ceil(e.timeLeft);
+        if (ceilSec !== lastTimeRef.current) {
+          lastTimeRef.current = ceilSec;
+          setUiTimeLeft(ceilSec);
+        }
+      }
+
+      animId = requestAnimationFrame(loop);
+    };
+
+    animId = requestAnimationFrame(loop);
+    return () => cancelAnimationFrame(animId);
+  }, [gameState, endGame]);
 
   // Trigger Next Strobe Flash Cycle
   const triggerNextStrobeCycle = useCallback(() => {
@@ -293,8 +348,11 @@ export default function StrobeLatencyClient() {
     setTargetState('waiting');
     isFlashingRef.current = false;
 
-    // Random inter-flash delay interval (1000ms to 2500ms)
-    const randomDelay = Math.floor(1000 + Math.random() * 1500);
+    const e = engine.current;
+    const config = getLevelConfig(e.level, e.combo);
+
+    // Random inter-flash delay interval
+    const randomDelay = Math.floor(config.minDelay + Math.random() * (config.maxDelay - config.minDelay));
 
     flashDelayTimeoutRef.current = setTimeout(() => {
       if (!gameActiveRef.current || isSpammingRef.current) return;
@@ -303,8 +361,7 @@ export default function StrobeLatencyClient() {
       flashStartTimeRef.current = performance.now();
       setTargetState('flashing');
 
-      // Strobe flash duration window (shrinks from 300ms down to 100ms as level advances)
-      const flashWindow = Math.max(100, 300 - engine.current.level * 15);
+      const flashWindow = config.flashWindow;
 
       flashWindowTimeoutRef.current = setTimeout(function checkFlashExpiry() {
         if (!gameActiveRef.current || isSpammingRef.current) return;
@@ -313,10 +370,11 @@ export default function StrobeLatencyClient() {
           return;
         }
         if (isFlashingRef.current) {
-          // Missed flash window: NO negative score or time deduction!
           isFlashingRef.current = false;
-          const e = engine.current;
           e.missedClicks++;
+          if (drillPenalty.isEnabled(TIME_PER_HIT === 2)) e.timeLeft -= TIME_PENALTY;
+          e.combo = 0;
+          setUiCombo(0);
           setTargetState('miss');
 
           drillAudio?.playPenalty?.();
@@ -349,12 +407,19 @@ export default function StrobeLatencyClient() {
     const isRapidClick = timeSinceLastClick > 0 && timeSinceLastClick < 320;
     const isClickingIdleGap = !isFlashingRef.current;
 
+    const e = engine.current;
+
     if (isRapidClick || isClickingIdleGap || isSpammingRef.current) {
       // Continuous / spam clicking detected — suppress light flash
       isSpammingRef.current = true;
       setIsSpamming(true);
       setTargetState('idle');
       isFlashingRef.current = false;
+
+      e.missedClicks++;
+      if (drillPenalty.isEnabled(TIME_PER_HIT === 2)) e.timeLeft -= TIME_PENALTY;
+      e.combo = 0;
+      setUiCombo(0);
 
       if (flashDelayTimeoutRef.current) clearTimeout(flashDelayTimeoutRef.current);
       if (flashWindowTimeoutRef.current) clearTimeout(flashWindowTimeoutRef.current);
@@ -374,8 +439,6 @@ export default function StrobeLatencyClient() {
       return;
     }
 
-    const e = engine.current;
-
     if (isFlashingRef.current) {
       // PERFECT STROBE FLASH HIT!
       isFlashingRef.current = false;
@@ -383,19 +446,26 @@ export default function StrobeLatencyClient() {
 
       const reactionTime = Math.round(performance.now() - flashStartTimeRef.current);
       setLastLatencyMs(reactionTime);
+      e.reactionTimes.push(reactionTime);
 
       e.perfectHits++;
-      e.score += POINTS_PER_HIT;
+      e.combo += 1;
+      if (e.combo > e.maxCombo) e.maxCombo = e.combo;
 
-      // Level up every POINTS_PER_LEVEL score earned (score-based, monotonic —
-      // never gated on a streak, so a miss can never take a level away)
-      const nextLevel = Math.floor(e.score / POINTS_PER_LEVEL) + 1;
-      if (nextLevel > e.level) {
-        e.level = nextLevel;
-        setLevel(e.level);
-      }
+      const levelMult = 1 + getDifficultyProgress(e.level) * 0.5;
+      e.score += Math.round(POINTS_PER_HIT * getComboMultiplier(e.combo) * levelMult);
+
+      // Time bonus on clean hit
+      e.timeLeft = Math.min(60, e.timeLeft + TIME_PER_HIT);
+
+      // Continuous level progression
+      const nextLevel = (e.score / POINTS_PER_LEVEL) + 1;
+      e.level = Math.max(e.level, nextLevel);
+      bestLevelRunRef.current = Math.max(bestLevelRunRef.current, e.level);
 
       setUiScore(e.score);
+      setUiLevel(Math.floor(e.level));
+      setUiCombo(e.combo);
       setTargetState('waiting');
       drillAudio?.playHit?.();
       triggerNextStrobeCycle();
@@ -418,27 +488,30 @@ export default function StrobeLatencyClient() {
 
     drillAudio?.init?.();
 
+    const startLevel = getStartLevel();
+    bestLevelRunRef.current = startLevel;
+
     setIsNewBest(false);
     setUiScore(0);
+    setUiLevel(startLevel);
+    setUiCombo(0);
     setUiTimeLeft(DRILL_DURATION);
-    setLevel(1);
+    lastTimeRef.current = DRILL_DURATION;
     setTargetState('idle');
     setLastLatencyMs(0);
 
     engine.current = {
       score: 0,
-      level: 1,
+      level: startLevel,
+      combo: 0,
+      maxCombo: 0,
       timeLeft: DRILL_DURATION,
       perfectHits: 0,
       missedClicks: 0,
+      reactionTimes: [],
     };
 
-    // Auto Fullscreen on Start
-    try {
-      if (containerRef.current && !document.fullscreenElement) {
-        await containerRef.current.requestFullscreen();
-      }
-    } catch (e) {}
+    setIsFullscreen(true);
 
     // Countdown sequence: 3 -> 2 -> 1 -> GO
     setGameState('countdown');
@@ -464,58 +537,34 @@ export default function StrobeLatencyClient() {
       gameActiveRef.current = true;
       startingRef.current = false;
       setGameState('playing');
-
-      // Start 45s decimal timer
-      if (timerIntervalRef.current) clearInterval(timerIntervalRef.current);
-      let lastTime = performance.now();
-
-      timerIntervalRef.current = setInterval(() => {
-        const now = performance.now();
-        const deltaSec = (now - lastTime) / 1000;
-        lastTime = now;
-
-        const eRef = engine.current;
-        if (eRef.timeLeft > 0) {
-          eRef.timeLeft = Math.max(0, eRef.timeLeft - deltaSec);
-          setUiTimeLeft(Math.ceil(eRef.timeLeft));
-        }
-
-        if (eRef.timeLeft <= 0) {
-          eRef.timeLeft = 0;
-          setUiTimeLeft(0);
-          endGame();
-        }
-      }, 100);
-
       triggerNextStrobeCycle();
     }, 2450);
 
     countdownTimeoutsRef.current = [t1, t2, t3, t4];
-  }, [clearGameTimeouts, endGame, triggerNextStrobeCycle]);
+  }, [clearGameTimeouts, triggerNextStrobeCycle]);
 
   const shareScore = useCallback(async () => {
     const url = 'https://skilldrills.online/drills/visual/reaction-speed/light-reaction';
     try {
       const canvas = generateShareCard({
         score: uiScore,
-        bestScore,
         accuracy: analytics.accuracy,
-        rating: { letter: analytics.grade?.letter || 'C', label: analytics.grade?.label || 'Keep Going', emoji: '⚡' },
-        newBest: isNewBest,
+        speed: analytics.avgReactionTime,
         drillName: 'Light Reaction Pro',
+        rank: analytics.grade?.letter || 'A',
+        rankName: analytics.grade?.label || 'ELITE REFLEX',
         playerName: getPlayerName(),
+        level: analytics.finalLevel,
+        date: new Date().toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' }),
+        url: 'skilldrills.online/drills/visual/reaction-speed/light-reaction'
       });
       await shareScoreCard(url, canvas);
     } catch (e) {
-      const text = `🎯 I scored ${uiScore} PTS (Peak Level: Lvl ${analytics.finalLevel}) on Light Reaction Pro! Accuracy: ${analytics.accuracy}%. Train visual reflexes at skilldrills.online!`;
-      if (typeof navigator !== 'undefined' && navigator.share) {
-        navigator.share({ title: 'My Reflex Score', text, url }).catch(() => {});
-      } else if (typeof navigator !== 'undefined' && navigator.clipboard) {
-        navigator.clipboard.writeText(text);
-        alert('Score card copied to clipboard!');
+      if (navigator.share) {
+        navigator.share({ title: 'My Reflex Score', text: `I scored ${uiScore} on Light Reaction Pro!`, url }).catch(() => {});
       }
     }
-  }, [uiScore, bestScore, analytics, isNewBest]);
+  }, [uiScore, analytics]);
 
   return (
     <div className="min-h-screen bg-[#050508] text-white flex flex-col font-sans select-none">
@@ -523,37 +572,31 @@ export default function StrobeLatencyClient() {
       <main className="flex-1 max-w-6xl w-full mx-auto px-4 py-6 flex flex-col gap-6">
         {/* Title */}
         {!isFullscreen && (
-          <div className="text-center">
+          <div className="text-left">
             <h1 className="text-2xl sm:text-3xl font-black tracking-tight text-white">
-              LIGHT REACTION PRO
-              <span data-seo-kw="1" className="block text-sm font-semibold text-slate-400 mt-1 normal-case tracking-normal">
-                Light Reaction Reflex Test
-              </span>
+              <span data-seo-kw="1">{copy?.title || "Light Reaction Reflex Test"}</span>
             </h1>
-            <p className="text-xs text-slate-400 mt-1">
-              Visual Strobe Latency & Millisecond Reflex Speed
-            </p>
           </div>
         )}
 
         {/* Live Stat Cards */}
         {!isFullscreen && (
-          <div className="grid grid-cols-4 gap-2.5 max-w-2xl mx-auto w-full">
-            <div className="bg-[#0d0d18] border border-white/5 rounded-xl p-2.5 text-center">
+          <div className="grid grid-cols-4 gap-2 w-full">
+            <div className="bg-[#0c0c16] border border-white/5 rounded-xl p-2.5 text-center">
               <div className="text-[10px] uppercase font-bold text-slate-500 tracking-wider">Score</div>
               <div className="text-lg sm:text-xl font-black text-amber-400 tabular-nums">{uiScore}</div>
             </div>
-            <div className="bg-[#0d0d18] border border-white/5 rounded-xl p-2.5 text-center">
+            <div className="bg-[#0c0c16] border border-white/5 rounded-xl p-2.5 text-center">
               <div className="text-[10px] uppercase font-bold text-slate-500 tracking-wider">Time</div>
               <div className={`text-lg sm:text-xl font-black tabular-nums ${uiTimeLeft <= 10 ? 'text-red-400 animate-pulse' : 'text-white'}`}>
                 {uiTimeLeft}s
               </div>
             </div>
-            <div className="bg-[#0d0d18] border border-white/5 rounded-xl p-2.5 text-center">
+            <div className="bg-[#0c0c16] border border-white/5 rounded-xl p-2.5 text-center">
               <div className="text-[10px] uppercase font-bold text-slate-500 tracking-wider">Level</div>
-              <div className="text-lg sm:text-xl font-black text-indigo-400 tabular-nums">L{level}</div>
+              <div className="text-lg sm:text-xl font-black text-indigo-400 tabular-nums">L{uiLevel}</div>
             </div>
-            <div className="bg-[#0d0d18] border border-white/5 rounded-xl p-2.5 text-center">
+            <div className="bg-[#0c0c16] border border-white/5 rounded-xl p-2.5 text-center">
               <div className="text-[10px] uppercase font-bold text-slate-500 tracking-wider">Best Score</div>
               <div className="text-lg sm:text-xl font-black text-amber-400 tabular-nums">{bestScore}</div>
             </div>
@@ -571,20 +614,14 @@ export default function StrobeLatencyClient() {
           <DrillFlashOverlay flashes={flashes} />
 
           {/* IN-BOX OVERLAY HUD */}
-          {gameState === 'playing' && (
+          {(gameState === 'playing' || gameState === 'countdown') && (
             <>
-              {/* TOP-LEFT: SCORE & LATENCY */}
-              <div className="absolute top-4 left-4 z-30 pointer-events-none flex flex-col gap-2">
+              {/* TOP-LEFT: SCORE */}
+              <div className="absolute top-4 left-4 z-30 pointer-events-none flex flex-col gap-1">
                 <div>
                   <p className="text-[10px] font-semibold uppercase tracking-wider text-white/50">Score</p>
                   <p className="text-2xl sm:text-3xl font-black text-white tabular-nums leading-tight">{uiScore}</p>
                 </div>
-                {lastLatencyMs > 0 && (
-                  <div className="flex items-center gap-1.5 bg-black/50 backdrop-blur-md px-2.5 py-1 rounded-full border border-white/10 w-fit">
-                    <span className="text-[9px] font-bold uppercase tracking-wider text-white/60">Latency</span>
-                    <span className="text-xs font-black text-emerald-400">{lastLatencyMs}ms</span>
-                  </div>
-                )}
               </div>
 
               {/* TOP-RIGHT: TIME LEFT */}
@@ -596,7 +633,7 @@ export default function StrobeLatencyClient() {
           )}
 
           {/* IN-GAME HUD SOUND + FLASH TOGGLES */}
-          {gameState === 'playing' && (
+          {(gameState === 'playing' || gameState === 'countdown') && (
             <div className="absolute bottom-4 right-4 z-40 flex items-center gap-2">
               <button
                 onPointerDown={(e) => e.stopPropagation()}
@@ -647,16 +684,8 @@ export default function StrobeLatencyClient() {
             <FpsStartCard
               icon={Zap}
               accent="amber"
-              title="Light Reaction Pro"
-              subtitle="Visual Strobe Latency • Reflex Speed"
-              rules={[
-                { icon: Target, accent: 'amber', title: 'Strobe Flash Stimulus', text: 'Tap instantly when target circle flashes (+150 PTS)' },
-                { icon: Zap, accent: 'orange', title: 'Millisecond Reflex Latency', text: 'Benchmark pure visual motor reaction speed across random intervals' },
-              ]}
-              stats={[
-                { icon: Trophy, label: 'Best Score', value: bestScore, color: 'text-white', accent: 'slate' },
-                { icon: TrendingUp, label: 'Best Level', value: `Lv. ${bestLevel}`, color: 'text-blue-400', accent: 'blue' },
-              ]}
+              title={copy?.startCardTitle || "Light Reaction Pro"}
+              subtitle={copy?.startCardSubtitle || "Visual Strobe Latency • Reflex Speed"}
               isTouchOnlyDevice={false}
               onStart={enterDrill}
             />
@@ -667,74 +696,24 @@ export default function StrobeLatencyClient() {
             <DrillCountdown value={countdownValue} subtitle="GET READY" />
           )}
 
-          {/* END SCREEN */}
+          {/* UNIVERSAL RESULT CARD */}
           {gameState === 'gameOver' && analytics.grade && (
-            <div className="absolute inset-0 z-40 flex bg-neutral-950/98 select-none font-sans" style={{ background: 'rgba(5,5,8,0.97)' }} onPointerDown={e => e.stopPropagation()}>
-              
-              {/* Left Grade Panel */}
-              <div className="w-[36%] flex flex-col items-center justify-center gap-1 border-r border-white/5 px-4" style={{ background: 'radial-gradient(ellipse 260px 200px at 50% 30%, rgba(245,158,11,.12), transparent 70%)' }}>
-                {isNewBest && (
-                  <span className="text-[9.5px] font-bold text-yellow-400 bg-yellow-500/10 border border-yellow-500/25 px-2.5 py-0.5 rounded-full mb-1 animate-pulse">
-                    NEW BEST
-                  </span>
-                )}
-                <div className={`text-5xl sm:text-6xl font-black leading-none ${analytics.grade?.color || 'text-amber-400'}`}>
-                  {analytics.grade?.grade || analytics.grade?.letter || 'C'}
-                </div>
-                <div className="text-[10px] uppercase tracking-widest text-slate-500 text-center font-bold mt-1">
-                  {analytics.grade?.label || 'Good Effort'}
-                </div>
-                <div className="text-3xl sm:text-4xl font-black text-white mt-2 tabular-nums">
-                  {uiScore}
-                </div>
-                <div className="text-[9px] uppercase tracking-widest text-slate-500">Points</div>
-              </div>
-
-              {/* Right Stats & Actions Panel */}
-              <div className="flex-1 flex flex-col justify-center gap-3 px-6 py-4 min-w-0">
-                
-                {/* 3 Stat Tiles */}
-                <div className="grid grid-cols-3 gap-2">
-                  <div className="bg-black border border-white/5 p-2.5 rounded-xl text-center">
-                    <p className="text-sm sm:text-base font-black text-white">{analytics.accuracy}%</p>
-                    <p className="text-[7.5px] sm:text-[8.5px] font-bold uppercase tracking-wider text-gray-400 mt-0.5">Accuracy</p>
-                  </div>
-                  <div className="bg-black border border-white/5 p-2.5 rounded-xl text-center">
-                    <p className="text-sm sm:text-base font-black text-white">Lvl {analytics.finalLevel}</p>
-                    <p className="text-[7.5px] sm:text-[8.5px] font-bold uppercase tracking-wider text-gray-400 mt-0.5">Peak Level</p>
-                  </div>
-                  <div className="bg-black border border-white/5 p-2.5 rounded-xl text-center">
-                    <p className="text-sm sm:text-base font-black text-white">{analytics.perfectHits}</p>
-                    <p className="text-[7.5px] sm:text-[8.5px] font-bold uppercase tracking-wider text-gray-400 mt-0.5">Perfects</p>
-                  </div>
-                </div>
-
-                {/* Action Buttons */}
-                <div className="flex gap-2">
-                  <button 
-                    onClick={enterDrill} 
-                    className="flex-1 py-3 rounded-[13px] bg-gradient-to-r from-amber-600 to-yellow-600 text-white font-bold text-xs uppercase tracking-wide cursor-pointer transition-transform active:scale-[0.98] shadow-md flex items-center justify-center gap-1.5"
-                  >
-                    <RefreshCw className="w-3.5 h-3.5" /> Play Again
-                  </button>
-                  <button 
-                    onClick={shareScore} 
-                    className="w-11 flex-shrink-0 rounded-[13px] bg-white/[0.04] border border-white/10 flex items-center justify-center text-slate-400 hover:text-white cursor-pointer active:scale-90 transition-transform" 
-                    title="Share Score"
-                  >
-                    <Share2 className="w-4 h-4" />
-                  </button>
-                  <button 
-                    onClick={handleExitDrill} 
-                    className="w-11 flex-shrink-0 rounded-[13px] bg-white/[0.04] border border-white/10 flex items-center justify-center text-slate-400 hover:text-white cursor-pointer active:scale-90 transition-transform" 
-                    title="Return to Options"
-                  >
-                    <ArrowLeft className="w-4 h-4 text-red-400" />
-                  </button>
-                </div>
-
-              </div>
-            </div>
+            <DrillResultCard
+              accent="amber"
+              grade={analytics.grade}
+              score={uiScore}
+              isNewBest={isNewBest}
+              stats={[
+                { label: 'Accuracy', value: analytics.accuracy, suffix: '%' },
+                { label: 'Avg Reaction', value: analytics.avgReactionTime, suffix: 'ms' },
+                { label: 'Peak Level', value: `Lv. ${analytics.finalLevel}` },
+                { label: 'Max Combo', value: analytics.maxCombo, suffix: 'x' },
+              ]}
+              onPlayAgain={enterDrill}
+              onBeforeShare={() => setIsFullscreen(false)}
+              onShare={shareScore}
+              onExit={handleExitDrill}
+            />
           )}
 
         </div>
@@ -749,10 +728,15 @@ export default function StrobeLatencyClient() {
               onToggle={() => setOpenAccordion(openAccordion === 'rules' ? null : 'rules')}
             >
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <DrillRuleItem num="1" text="White Strobe Flash" highlight="+150 PTS" result="Tap Instantly" />
-                <DrillRuleItem num="2" text="Progressive Difficulty" highlight="300ms → 100ms Floor" result="Flash window shrinks per level" />
+                <DrillRuleItem num="1" text="White Strobe Flash" highlight="+150 PTS" result="× Combo × Level bonus (+2s per hit, max 60s)" />
+                <DrillRuleItem num="2" text="Progressive Difficulty" highlight="Continuous Scaling" result="Flash window tightens as streak climbs" />
                 <DrillRuleItem num="3" text="Anti-Spam Detection" highlight="1.2s Cooldown" result="Rapid/early taps pause the strobe" />
-                <DrillRuleItem num="4" text="False Start / Missed Flash" highlight="Zero Penalties" result="No score or time loss" />
+                <DrillRuleItem 
+                  num="4" 
+                  text="False Start / Missed Flash" 
+                  highlight={penaltyEnabled ? "-0.8s Penalty" : "Zero Penalties (Default)"} 
+                  result={penaltyEnabled ? "Deducts 0.8s & resets combo" : "Resets combo. Time penalty is opt-in via settings"} 
+                />
               </div>
             </DrillAccordion>
 
@@ -764,11 +748,11 @@ export default function StrobeLatencyClient() {
             >
               <div className="space-y-8">
                 <section>
-                  <h4 className="text-base font-bold text-white mb-2 flex items-center gap-2">
+                  <h3 className="text-base font-bold text-white mb-2 flex items-center gap-2">
                     <Brain className="w-4 h-4 text-amber-400" /> What Is Light Reaction Training?
-                  </h4>
+                  </h3>
                   <p className="text-sm leading-relaxed mb-3">
-                    <strong>Light Reaction Training</strong> measures visual motor latency and raw reflex response speed. The <strong>Light Reaction drill</strong> presents a central target that flashes white at unpredictable millisecond intervals, challenging you to react instantly upon visual stimulus onset.
+                    <strong>Light Reaction Training</strong> measures visual motor latency and raw reflex response speed. The <strong>Light Reaction drill</strong> presents a central target that flashes white at unpredictable millisecond intervals, challenging you to react instantly upon visual stimulus onset. Healthy adults typically land around 200–250 ms (Woods et al., 2015; Kosinski, 2008). It is not a reflex: a true spinal reflex runs in tens of milliseconds, while this involves the visual cortex and motor cortex, which is why it is roughly ten times slower.
                   </p>
                   <p className="text-sm leading-relaxed">
                     By training with randomized strobe intervals, you reduce visual reaction latency and build millisecond-level reflex precision for athletics and competitive esports.
@@ -779,21 +763,21 @@ export default function StrobeLatencyClient() {
                   <div className="p-4 rounded-xl border border-gray-800 bg-white/[0.02]">
                     <div className="flex items-center gap-2.5 mb-2">
                       <div className="w-7 h-7 rounded-lg bg-blue-600 flex items-center justify-center"><Users className="w-3.5 h-3.5 text-white" /></div>
-                      <h5 className="text-xs font-bold text-white">Who Should Use This?</h5>
+                      <h4 className="text-xs font-bold text-white">Who Should Use This?</h4>
                     </div>
                     <p className="text-xs text-gray-300 leading-relaxed">FPS gamers, sprinters, martial artists, and drivers building lightning-fast visual motor reaction speed.</p>
                   </div>
                   <div className="p-4 rounded-xl border border-gray-800 bg-white/[0.02]">
                     <div className="flex items-center gap-2.5 mb-2">
                       <div className="w-7 h-7 rounded-lg bg-amber-600 flex items-center justify-center"><TrendingUp className="w-3.5 h-3.5 text-white" /></div>
-                      <h5 className="text-xs font-bold text-white">Skills Improved</h5>
+                      <h4 className="text-xs font-bold text-white">Skills Improved</h4>
                     </div>
                     <p className="text-xs text-gray-300 leading-relaxed">Visual reaction speed, motor latency, reflex speed, millisecond stimulus detection, and visual focus readiness.</p>
                   </div>
                   <div className="p-4 rounded-xl border border-gray-800 bg-white/[0.02]">
                     <div className="flex items-center gap-2.5 mb-2">
                       <div className="w-7 h-7 rounded-lg bg-purple-600 flex items-center justify-center"><Zap className="w-3.5 h-3.5 text-white" /></div>
-                      <h5 className="text-xs font-bold text-white">Reflex Readiness</h5>
+                      <h4 className="text-xs font-bold text-white">Reflex Readiness</h4>
                     </div>
                     <p className="text-xs text-gray-300 leading-relaxed">Maintain relaxed visual focus on the center reticle to respond immediately without anticipating or false-starting.</p>
                   </div>
@@ -801,52 +785,7 @@ export default function StrobeLatencyClient() {
 
               </div>
             </DrillAccordion>
-
-            <DrillAccordion
-              id="faq"
-              title="Frequently Asked Questions"
-              isOpen={openAccordion === 'faq'}
-              onToggle={() => setOpenAccordion(openAccordion === 'faq' ? null : 'faq')}
-            >
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <DrillFAQItem q="What is the Light Reaction Pro Drill?" a="A free visual reflex speed test. Tap the target as fast as possible when it flashes bright white." />
-                <DrillFAQItem q="What is a good visual reaction time?" a="Average human visual reaction time is ~250ms, while elite gamers and reflex athletes consistently achieve sub-180ms reaction latencies." />
-                <DrillFAQItem q="How does progressive difficulty work?" a="Every 5 successful hits you level up, and the flash window shrinks from 300ms down to a 100ms floor. The inter-flash delay stays randomized between 1000ms and 2500ms so the strobe timing can't be anticipated." />
-                <DrillFAQItem q="Are there negative score or time penalties?" a="No. Premature taps or missed flashes never deduct score points or reduce remaining timer seconds — you simply wait for the next flash." />
-                <DrillFAQItem q="Does difficulty decrease on mistakes?" a="No. Your level only ever goes up — a mistake never takes you back down, so you can safely push your current level to its limit." />
-                <DrillFAQItem q="Why did my tap not register?" a="Tapping before the flash appears, or tapping faster than roughly 3 times per second, is treated as spam clicking rather than a genuine reaction — the strobe pauses for 1.2 seconds of stillness before resuming, so guessing can't substitute for a real reaction." />
-                <DrillFAQItem q="How long does each drill session last?" a="Each round is timed for exactly 45 seconds of continuous focus." />
-                <DrillFAQItem q="Do I need to sign up?" a="No registration required. This drill is completely free and works instantly in your browser." />
-              </div>
-            </DrillAccordion>
           </div>
-        )}
-
-        {/* RELATED DRILLS GRID */}
-        {!isFullscreen && (
-          <section className="mt-4">
-            <h2 className="text-sm font-bold text-slate-400 uppercase tracking-wider mb-3">
-              Related Visual Drills
-            </h2>
-            <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
-              {RELATED_DRILLS.map((drill) => (
-                <Link
-                  key={drill.id}
-                  href={drill.href}
-                  className="group bg-[#0c0c16] border border-white/5 hover:border-amber-500/40 rounded-xl p-3.5 transition-all duration-200 hover:-translate-y-0.5 flex flex-col justify-between"
-                >
-                  <div>
-                    <div className="text-[10px] font-bold text-amber-400 uppercase tracking-wider mb-1">{drill.cat}</div>
-                    <div className="text-xs font-bold text-white group-hover:text-amber-300 transition-colors">{drill.name}</div>
-                    <div className="text-[11px] text-slate-400 mt-1 line-clamp-2 leading-relaxed">{drill.desc}</div>
-                  </div>
-                  <div className="text-[10px] font-bold text-slate-500 group-hover:text-amber-400 mt-3 flex items-center gap-1 transition-colors">
-                    Train Drill <span>→</span>
-                  </div>
-                </Link>
-              ))}
-            </div>
-          </section>
         )}
 
         {/* SITE FOOTER */}

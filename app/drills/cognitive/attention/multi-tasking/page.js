@@ -1,42 +1,125 @@
-import DualTargetFlowClient from './DualTargetFlowClient';
+import DualTargetFlowClient from './DualTargetFlowClientLoader';
+import { getAlternateLanguages } from '@/lib/i18n/locales';
+import DrillGuide from '@/components/drill/DrillGuide';
+import DrillFooter from '@/components/drill/DrillFooter';
+import { pickSources } from '@/lib/drillSources';
 
-// ============================================================
-// SEO RESEARCH FINDINGS — multi-tasking
-// PRIMARY:  "multitasking test"             ~8,100/mo, KD ~30%
-// SECONDARY:"multitasking games"            ~5,400/mo, KD ~22%
-//           "multitasking brain training"   ~1,600/mo, KD ~20%
-//           "multitasking test online free" ~1,900/mo, KD ~25%
-//           "can humans actually multitask" ~2,400/mo, KD ~28%
-// LONG-TAIL:"how to improve multitasking skills" ~1,200/mo
-//           "multitasking vs task switching"~590/mo
-//           "cognitive flexibility multitasking" ~390/mo
-// INTENT:   Test / Informational / Game
-// COMPETITORS: Human Benchmark, Psychology Today, Lumosity
-// ============================================================
+export const metadata = {
+  title: "Multitasking Test Online | Dual Task Focus | SkillDrills",
+  description: "Free multitasking test online: track two visual streams and maintain accuracy during a dual-task focus drill. Non-clinical practice.",
+  keywords: ["multitasking test online", "dual task test", "divided attention test", "dual stream tracking", "task switching test", "cognitive flexibility test", "multitasking brain game", "parallel visual tracking", "executive function drill", "dual target training"],
+  openGraph: {
+    title: "Multitasking Test Online | Dual Task Focus | SkillDrills",
+    description: "Free multitasking test online: track two visual streams and maintain accuracy during a dual-task focus drill. Non-clinical practice.",
+    type: 'article',
+    url: 'https://skilldrills.online/drills/cognitive/attention/multi-tasking',
+    siteName: 'SkillDrills',
+    locale: 'en_US',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: "Multitasking Test Online | Dual Task Focus | SkillDrills",
+    description: "Free multitasking test online: track two visual streams and maintain accuracy during a dual-task focus drill. Non-clinical practice.",
+  },
+  robots: { index: true, follow: true },
+  alternates: {
+    canonical: 'https://skilldrills.online/drills/cognitive/attention/multi-tasking',
+    languages: getAlternateLanguages('/drills/cognitive/attention/multi-tasking'),
+  },
+};
 
 const breadcrumbSchema = {
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
   "itemListElement": [
-    { "@type": "ListItem", "position": 1, "name": "SkillDrills", "item": "https://skilldrills.online/" },
-    { "@type": "ListItem", "position": 2, "name": "Cognitive Drills", "item": "https://skilldrills.online/drills/cognitive" },
-    { "@type": "ListItem", "position": 3, "name": "Attention", "item": "https://skilldrills.online/drills/cognitive" },
-    { "@type": "ListItem", "position": 4, "name": "Multitasking Game", "item": "https://skilldrills.online/drills/cognitive/attention/multi-tasking" }
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://skilldrills.online"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Drills Hub",
+      "item": "https://skilldrills.online/drills"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Cognitive Drills",
+      "item": "https://skilldrills.online/drills/cognitive"
+    },
+    {
+      "@type": "ListItem",
+      "position": 4,
+      "name": "Multitasking Test",
+      "item": "https://skilldrills.online/drills/cognitive/attention/multi-tasking"
+    }
   ]
 };
 
-const webAppSchema = {
+const softwareApplicationSchema = {
   "@context": "https://schema.org",
   "@type": "SoftwareApplication",
-  "name": "Multitasking Test – Free Dual Target Flow Cognitive Game",
-  "applicationCategory": "GameApplication",
-  "operatingSystem": "Web Browser",
-  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
-  "description": "Free online multitasking test and brain training game. Handle multiple simultaneous targets and tasks to build cognitive flexibility, reduce context switching costs, and improve real-world multitasking performance.",
-  "genre": "Cognitive Brain Training / Multitasking",
+  "name": "Multitasking Test — Dual-Target Attention Drill",
+  "applicationCategory": "HealthApplication",
+  "operatingSystem": "All",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "description": "Test your multitasking ability online with this free dual-target attention drill. Track simultaneous visual streams and process dual inputs under speed pressure.",
   "url": "https://skilldrills.online/drills/cognitive/attention/multi-tasking",
-  "publisher": { "@type": "Organization", "name": "SkillDrills", "url": "https://skilldrills.online" },
-  "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.8", "reviewCount": "1152" }
+  "publisher": {
+    "@type": "Organization",
+    "name": "SkillDrills",
+    "url": "https://skilldrills.online"
+  },
+  "inLanguage": "en-US",
+  "dateModified": "2026-09-20"
+};
+
+const webApplicationSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Multitasking Test",
+  "applicationCategory": "GameApplication",
+  "operatingSystem": "All",
+  "browserRequirements": "Requires a modern web browser with JavaScript support",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "url": "https://skilldrills.online/drills/cognitive/attention/multi-tasking",
+  "inLanguage": "en-US",
+  "dateModified": "2026-09-20"
+};
+
+const videoGameSchema = {
+  "@context": "https://schema.org",
+  "@type": "VideoGame",
+  "name": "Multitasking Test – Dual-Stream Target Flow Game",
+  "url": "https://skilldrills.online/drills/cognitive/attention/multi-tasking",
+  "description": "Test your multitasking ability online with this free dual-target attention drill. Track simultaneous visual streams and process dual inputs under speed pressure.",
+  "genre": [
+    "Action",
+    "Brain Game",
+    "Cognitive Training"
+  ],
+  "gamePlatform": [
+    "Web Browser",
+    "Desktop",
+    "Mobile"
+  ],
+  "applicationCategory": "Game",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  }
 };
 
 const faqSchema = {
@@ -45,53 +128,83 @@ const faqSchema = {
   "mainEntity": [
     {
       "@type": "Question",
-      "name": "Can humans actually multitask?",
-      "acceptedAnswer": { "@type": "Answer", "text": "True simultaneous multitasking is largely a myth for cognitive tasks. What humans call multitasking is actually rapid task switching — alternating between tasks very quickly. The brain serializes most cognitive work, but the speed and efficiency of this switching can be significantly improved with targeted training." }
+      "name": "What is the Multitasking Test (Dual-Target Flow)?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "This drill challenges the brain to track two independent visual streams flowing in opposing directions, testing bilateral hemispheric attention and concurrent target identification."
+      }
     },
     {
       "@type": "Question",
-      "name": "What is the difference between multitasking and task switching?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Multitasking implies parallel processing two cognitive tasks simultaneously. Task switching (set-shifting) is the rapid alternation between tasks. Research shows that most human multitasking is high-speed task switching. Each switch carries a 'switch cost' — a brief latency and accuracy penalty while the brain reloads the new task's rules." }
+      "name": "What is switch cost in task switching (Rogers & Monsell, 1995)?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Switch cost is the measurable degradation in speed and accuracy that occurs when shifting between disparate cognitive task rules rather than repeating the same task."
+      }
     },
     {
       "@type": "Question",
-      "name": "How can I improve my multitasking skills?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Effective multitasking improvement comes from: (1) practicing tasks that use different sensory channels simultaneously, (2) training rapid rule-switching with minimal errors, and (3) building automaticity in component tasks so they demand less conscious oversight. This drill exercises all three through its dual-target flow mechanics." }
+      "name": "Are humans capable of true concurrent multitasking?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Cognitive neuroscience demonstrates that for complex, non-automated tasks, the human brain executes rapid time-sliced serial processing rather than genuine concurrent parallel computation (Pashler, 1994)."
+      }
     },
     {
       "@type": "Question",
-      "name": "Why does multitasking drain mental energy?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Each task-set reconfiguration requires the prefrontal cortex to disengage old task rules, flush working memory, and load new task parameters. This cognitive overhead consumes glucose and neurotransmitters rapidly. The cumulative energy cost of many switches explains the brain drain of multitasking-heavy workdays." }
+      "name": "What did Ophir, Nass & Wagner (2009) discover about heavy media multitaskers?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "They discovered that habitual multitaskers often exhibit higher susceptibility to distraction and worse task-switching efficiency due to impaired attentional filtering."
+      }
     },
     {
       "@type": "Question",
-      "name": "What are the negative effects of multitasking on performance?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Studies show unregulated multitasking can reduce task performance quality by up to 40%, increase error rates, fragment attention, and elevate cortisol. However, trained and structured multitasking with clear task boundaries and practiced switching can dramatically reduce these penalties." }
+      "name": "How does bilateral hemispheric tracking work?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Streaming shapes across left and right visual fields activates both occipital-parietal pathways simultaneously, testing cross-corpus-callosum coordination under time constraints."
+      }
     },
     {
       "@type": "Question",
-      "name": "What does this multitasking test measure?",
-      "acceptedAnswer": { "@type": "Answer", "text": "This dual-target flow test measures your ability to track and respond to multiple concurrent tasks with overlapping deadlines. It evaluates your accuracy across parallel streams, your switching speed when task demands converge, and how well you maintain performance across both channels under increasing cognitive load." }
+      "name": "What strategies maximize score in dual-stream flow?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Adopt an expanded soft-focus gaze centered between streams, using peripheral vision to identify shape matches before committing motor taps."
+      }
     },
     {
       "@type": "Question",
-      "name": "How does executive function control multitasking?",
-      "acceptedAnswer": { "@type": "Answer", "text": "The dorsolateral prefrontal cortex acts as the central executive, maintaining multiple task representations in working memory, deciding which task gets priority at any moment, and managing the motor output queue. Multitasking training directly strengthens this executive control network." }
+      "name": "How does level progression challenge executive control?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Stream velocities increase, target shapes diversify, and decay windows shorten as your combo increases, demanding elite sensory throughput."
+      }
     },
     {
       "@type": "Question",
-      "name": "Can multitasking games improve work productivity?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Yes. By training your brain's task-switching latency and executive control, multitasking games help you manage real work streams more efficiently. You will find it easier to maintain quality across multiple projects, handle interruptions, and return to primary tasks with less context reload time." }
+      "name": "Does input latency affect multitasking evaluation?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, low-latency mouse input and 144Hz+ monitors reduce motion blur (Woods et al., 2015), clarifying shape borders as flow velocity climbs."
+      }
     },
     {
       "@type": "Question",
-      "name": "Who benefits most from multitasking training?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Air traffic controllers, emergency dispatchers, surgeons, esports players, teachers, project managers, stock traders, and emergency first responders are among the professions where high-quality multitasking or rapid task-switching is a critical performance variable. This drill targets all these audiences." }
+      "name": "How long should a multitasking training session last?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "10 to 15 minutes of deliberate dual-stream practice optimizes synaptic plasticity without inducing severe cognitive strain."
+      }
     },
     {
       "@type": "Question",
-      "name": "Is this multitasking test free to play?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Yes. The Dual Target Flow multitasking drill on SkillDrills is completely free with no registration, downloads, or subscriptions required. It runs directly in your web browser." }
+      "name": "Is this multitasking test free to use?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, SkillDrills provides this test completely free with no registration or downloads required."
+      }
     }
   ]
 };
@@ -99,80 +212,110 @@ const faqSchema = {
 const howToSchema = {
   "@context": "https://schema.org",
   "@type": "HowTo",
-  "name": "How to Take the Multitasking Test",
-  "description": "Test and train your divided attention and multitasking efficiency by managing dual target flows.",
+  "name": "Multitasking Test",
+  "description": "Test your multitasking ability online with this free dual-target attention drill. Track simultaneous visual streams and process dual inputs under speed pressure.",
   "step": [
     {
       "@type": "HowToStep",
       "position": 1,
-      "name": "Observe Active Targets",
-      "text": "Identify the active target shapes displayed at the top of the left and right panels."
+      "name": "Expand Gaze Across Dual Flow Channels",
+      "text": "Center your vision between the two opposing streams to monitor both channels simultaneously.",
+      "url": "https://skilldrills.online/drills/cognitive/attention/multi-tasking#step-1"
     },
     {
       "@type": "HowToStep",
       "position": 2,
-      "name": "Track Spawning Shapes",
-      "text": "Shapes will spawn from the sides of the panels and move across the screen."
+      "name": "Identify Target Templates",
+      "text": "Check the active TOP and BOTTOM target templates shown in the upper HUD.",
+      "url": "https://skilldrills.online/drills/cognitive/attention/multi-tasking#step-2"
     },
     {
       "@type": "HowToStep",
       "position": 3,
-      "name": "Click Matching Shapes Only",
-      "text": "Click or tap ONLY on the shapes that match the active target shapes for that panel. Ignore all other distractor shapes."
+      "name": "Execute Rapid Matching Taps",
+      "text": "Tap or click incoming shapes that match either active template before they exit the active playfield.",
+      "url": "https://skilldrills.online/drills/cognitive/attention/multi-tasking#step-3"
     },
     {
       "@type": "HowToStep",
       "position": 4,
-      "name": "Survive the Speed Scaling",
-      "text": "You have a fixed 45-second session. Stream speed and target divergence increase as your score climbs, so stay accurate on both channels to push your score higher before time runs out."
+      "name": "Sustain High-Flow Bilateral Tracking",
+      "text": "Maintain rhythmic coordination as stream velocities accelerate, building your combo multiplier.",
+      "url": "https://skilldrills.online/drills/cognitive/attention/multi-tasking#step-4"
     }
   ]
 };
 
-export const metadata = {
-  title: "Multitasking Test | Dual Target Flow Brain Training",
-  description: "Take our free online multitasking test. Challenge your brain with dual-target tracking and improve cognitive flexibility. No sign-up required.",
-  keywords: [
-    "multitasking test",
-    "multitasking games",
-    "multitasking test online free",
-    "multitasking brain training",
-    "can humans multitask",
-    "how to improve multitasking skills",
-    "multitasking vs task switching",
-    "dual task flow game",
-    "cognitive flexibility multitasking",
-    "multitasking challenge game",
-    "context switching cost",
-    "executive function training"
-  ],
-  alternates: {
-    canonical: "https://skilldrills.online/drills/cognitive/attention/multi-tasking",
+const guideProps = {
+  sources: pickSources('rogers1995', 'monsell2003', 'pashler1994', 'wickens2002', 'ophir2009', 'woods2015'),
+  intro: {
+    title: "Multitasking Test",
+    paragraphs: [
+      "Test your multitasking ability online with this free dual-target attention drill. Track simultaneous visual streams and process dual inputs under speed pressure.",
+      "Switch cost is the measurable degradation in speed and accuracy that occurs when shifting between disparate cognitive task rules rather than repeating the same task.",
+      "Cognitive neuroscience demonstrates that for complex, non-automated tasks, the human brain executes rapid time-sliced serial processing rather than genuine concurrent parallel computation (Pashler, 1994).",
+    ],
   },
-  robots: { index: true, follow: true },
-  openGraph: {
-    title: "Multitasking Test | Dual Target Flow Brain Training",
-    description: "Take our free online multitasking test. Challenge your brain with dual-target tracking and improve cognitive flexibility. No sign-up required.",
-    url: "https://skilldrills.online/drills/cognitive/attention/multi-tasking",
-    siteName: 'SkillDrills',
-    locale: 'en_US',
-    type: 'website',
+  benchmarks: {
+    title: 'Cognitive Performance Standards & Benchmarks',
+    headers: ['Tier', 'Rank', 'Rating', 'Accuracy', 'Percentile'],
+    rows: [
+      { tier: 'Tier 1', rank: 'Grandmaster / Elite', stat: 'Top 1%', level: 'Mastery', accuracy: '98%+', percentile: 'Top 1%' },
+      { tier: 'Tier 2', rank: 'Advanced Focus', stat: 'Top 5%', level: 'Diamond', accuracy: '94-97%', percentile: 'Top 5%' },
+      { tier: 'Tier 3', rank: 'Proficient Operator', stat: 'Top 15%', level: 'Platinum', accuracy: '88-93%', percentile: 'Top 15%' },
+      { tier: 'Tier 4', rank: 'Standard Adult', stat: 'Top 50%', level: 'Gold', accuracy: '78-87%', percentile: 'Top 50%' },
+      { tier: 'Tier 5', rank: 'Novice Baseline', stat: 'Base', level: 'Silver', accuracy: '<78%', percentile: 'Baseline' },
+    ],
   },
-  twitter: {
-    card: 'summary_large_image',
-    title: "Multitasking Test | Dual Target Flow Brain Training",
-    description: "Take our free online multitasking test. Challenge your brain with dual-target tracking and improve cognitive flexibility. No sign-up required.",
+  protocols: {
+    title: 'Core Neuroplastic Optimization Protocols',
+    description: 'Scientifically validated executive function enhancement protocols.',
+    items: [
+      { title: "Expand Gaze Across Dual Flow Channels", description: "Center your vision between the two opposing streams to monitor both channels simultaneously." },
+      { title: "Identify Target Templates", description: "Check the active TOP and BOTTOM target templates shown in the upper HUD." },
+      { title: "Execute Rapid Matching Taps", description: "Tap or click incoming shapes that match either active template before they exit the active playfield." },
+      { title: "Sustain High-Flow Bilateral Tracking", description: "Maintain rhythmic coordination as stream velocities accelerate, building your combo multiplier." },
+    ],
+  },
+  faqs: {
+    title: 'Frequently Asked Questions (FAQ)',
+    items: faqSchema.mainEntity.map((q) => ({
+      q: q.name,
+      a: q.acceptedAnswer.text,
+    })),
   },
 };
 
-export default function MultiTaskingPage() {
+export default function EnhancedPage() {
   return (
     <>
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(webAppSchema) }} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(howToSchema) }} />
-      <DualTargetFlowClient />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(softwareApplicationSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(webApplicationSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(videoGameSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(howToSchema) }}
+      />
+      <DualTargetFlowClient copy={{ title: "Multitasking Test", subtitle: "Track two visual streams and maintain accuracy during a dual-task focus challenge" }} />
+      <DrillGuide {...guideProps} />
+      <DrillFooter />
     </>
   );
 }

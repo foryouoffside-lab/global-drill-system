@@ -1,21 +1,5 @@
 import Link from 'next/link';
 import { SearchX } from 'lucide-react';
-import { DRILLS } from '@/lib/drillsRegistry';
-
-export const metadata = {
-  title: 'Page Not Found - SkillDrills',
-  description: `The page you are looking for does not exist. Explore ${DRILLS.length}+ free brain training, FPS aim, memory, reaction and visual drills on SkillDrills.`,
-  keywords: ['404', 'page not found', 'skilldrills', 'free drills', 'brain training', 'FPS aim trainer'],
-  robots: {
-    index: false,
-    follow: true,
-  },
-  openGraph: {
-    title: 'Page Not Found - SkillDrills',
-    description: `This page does not exist. Discover ${DRILLS.length}+ free training drills on SkillDrills.`,
-    url: 'https://skilldrills.online',
-  },
-};
 
 export default function NotFound() {
   return (
@@ -41,7 +25,7 @@ export default function NotFound() {
         </h1>
         <p className="text-ink-2 mb-8 leading-relaxed">
           The drill page you&apos;re looking for doesn&apos;t exist or has been moved.
-          Explore {DRILLS.length}+ free training drills below.
+          Explore 80+ free training drills below.
         </p>
 
         <div className="flex flex-col sm:flex-row gap-3 justify-center">

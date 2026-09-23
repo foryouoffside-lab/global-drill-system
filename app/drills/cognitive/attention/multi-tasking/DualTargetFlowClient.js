@@ -1,42 +1,64 @@
 'use client';
 
 import React, { useState, useEffect, useRef, useCallback } from 'react';
-import Link from 'next/link';
-import {
-  Target, Volume2, VolumeX,
-  Play, RefreshCw, Share2, LogOut, ArrowLeft, Users, TrendingUp, Zap, ZapOff, Flame, Trophy
-} from 'lucide-react';
+import { Target, Volume2, VolumeX, Play, RefreshCw, Share2, LogOut, ArrowLeft, Users, TrendingUp, Zap, ZapOff } from 'lucide-react';
 
+import { isIdleFrameSkippable } from '@/lib/performance';
 import generateShareCard, { shareScoreCard } from '../../../../../components/ShareScoreCard';
 import { drillAudio } from '../../../../../lib/drillAudio';
 import { drillFlash } from '../../../../../lib/drillFlash';
 import { drillTimeout } from '../../../../../lib/drillTimeout';
+import { drillPenalty } from '../../../../../lib/drillPenalty';
 import { getPlayerName } from '../../../../../lib/leaderboard';
-import { getFpsScoreGrade } from '../../../../../lib/scoringEngine';
-import { getDifficultyProgress, getStartLevel } from '../../../../../lib/drillDifficulty';
+import { getFpsScoreGrade, getComboMultiplier } from '../../../../../lib/scoringEngine';
+import { getDifficultyProgress, getStartLevel, ramp } from '../../../../../lib/drillDifficulty';
 import useDrillFlash from '../../../../../lib/useDrillFlash';
 import useUnexpectedExitGuard from '../../../../../lib/useUnexpectedExitGuard';
-import DrillFooter from '../../../../../components/drill/DrillFooter';
 import DrillCountdown from '../../../../../components/drill/DrillCountdown';
 import DrillAccordion from '../../../../../components/drill/DrillAccordion';
 import DrillFlashOverlay from '../../../../../components/drill/DrillFlashOverlay';
 import FpsStartCard from '../../../../../components/drill/FpsStartCard';
+import DrillResultCard from '../../../../../components/drill/DrillResultCard';
+import useImmersiveMode from '@/lib/useImmersiveMode';
 
-const DRILL_DURATION = 45;
+function RuleItem({ num, text, highlight = '', result }) {
+  return (
+    <div className="flex items-center gap-3 bg-black px-3.5 py-2.5 rounded-xl border border-white/10 shadow-sm font-sans min-w-0">
+      <div className="w-7 h-7 rounded-lg bg-white/10 border border-white/20 flex items-center justify-center text-white text-xs font-black shadow-lg flex-shrink-0">
+        {num}
+      </div>
+      <div className="flex-1 flex items-center justify-between gap-2 min-w-0">
+        <p className="text-xs sm:text-sm font-medium text-gray-100 font-sans truncate">
+          {text}{highlight && <span className="font-bold text-white"> ({highlight})</span>}
+        </p>
+        <div className="text-[11px] sm:text-xs font-bold px-2.5 py-1 rounded-lg bg-[#050811] border border-white/10 text-white whitespace-nowrap shadow-inner tracking-wide flex-shrink-0">
+          {result}
+        </div>
+      </div>
+    </div>
+  );
+}
+
+// ============================================================
+// TUNING CONSTANTS
+// ============================================================
+const DRILL_DURATION = 45; // starting clock only; a run grows past this
 const POINTS_PER_HIT = 100;
-const POINTS_PER_LEVEL = 250;
-const ELITE_SCORE = 7500; // Target score for S+ rating (rebalanced after combo removal)
-const STORAGE_KEY = 'skilldrills_multi_tasking_v7';
+const POINTS_PER_LEVEL = 1750; // 250 -> 1750 (7x)
+const ELITE_SCORE = 24000; // 7500 -> 24000 (~3.2x)
+const TIME_PER_HIT = 2; // +2s on clean hit, capped at 60s
+const TIME_PENALTY = 1; // -1s on wrong tap or missed target (opt-in gated)
+const STORAGE_KEY = 'skilldrills_multi_tasking_v8';
 
 const SHAPES = ['▲', '●', '■', '★', '◆', '⬣', '❖', '⏣'];
 
 const getSavedData = () => {
   try {
     const raw = localStorage.getItem(STORAGE_KEY);
-    if (!raw) return { bestScore: 0, bestLevel: 1, totalSessions: 0 };
-    return { bestScore: 0, bestLevel: 1, totalSessions: 0, ...JSON.parse(raw) };
+    if (!raw) return { bestScore: 0, bestCombo: 0, bestLevel: 1, totalSessions: 0 };
+    return { bestScore: 0, bestCombo: 0, bestLevel: 1, totalSessions: 0, ...JSON.parse(raw) };
   } catch (e) {
-    return { bestScore: 0, bestLevel: 1, totalSessions: 0 };
+    return { bestScore: 0, bestCombo: 0, bestLevel: 1, totalSessions: 0 };
   }
 };
 
@@ -46,21 +68,21 @@ const saveData = (data) => {
   } catch (e) {}
 };
 
-
-
-const getLevelConfig = (level) => {
-  const p = getDifficultyProgress(level); // 0 -> 1 across L1..L15
+// Continuous unbounded difficulty with streak heat
+const getLevelConfig = (level, combo = 0) => {
+  const p = getDifficultyProgress(level); // 0 at L1, 1 at L15, unbounded above
+  const heat = (getComboMultiplier(combo) - 1) / 2;
   return {
-    speed: 3.2 + p * 5.0,                    // Move speed multiplier 3.2 -> 8.2 (gets faster as level increases)
-    spawnRate: Math.max(320, 950 - p * 630)   // Spawn delay 950ms -> 320ms (accelerates as level increases)
+    speed: ramp(3.2, 9.5, p) * (1 + heat * 0.25),
+    spawnRate: Math.max(160, ramp(950, 220, p) * (1 - heat * 0.25))
   };
 };
 
 const RULES_ITEMS = [
-  { title: "Dual Target Streams", text: "Two independent shape streams flow simultaneously across the screen (top/bottom in portrait mode, left/right in landscape)." },
-  { title: "Target Matching", text: "Check your active TOP and BOTTOM target shapes shown at the top. Tap only the shapes that match the active target for that stream." },
-  { title: "Opposite Flow Directions", text: "In portrait mode, the top stream flows Right-to-Left while the bottom stream flows Left-to-Right." },
-  { title: "Progressive Challenge", text: "Stream speed accelerates and target shapes diverge as you score higher and advance through levels." }
+  { num: "1", text: "Dual Streams", highlight: "Top+Bottom / L+R", result: "Opposing Streams Flow" },
+  { num: "2", text: "Target Match", highlight: "+100 PTS", result: "Tap Active Template" },
+  { num: "3", text: "Bilateral", highlight: "Wide Peripheral", result: "Split Focus Across" },
+  { num: "4", text: "Miss / Mistake", highlight: "Resets Combo", result: "−0.8s on Penalty" }
 ];
 
 const ABOUT_TEXT = `Multi-Tasking (Dual-Target Flow) is an advanced cognitive drill designed to assess and train multi-stream visual tracking and divided attention under severe time constraints. Derived from cognitive workload research in aviation and high-speed motor sports, this drill challenges the brain's executive control system to monitor two independent perceptual channels concurrently.
@@ -69,33 +91,13 @@ By streaming distinct geometric shapes across left and right visual fields, the 
 
 As your score increases, stream velocity accelerates and target templates diverge, pushing your visual processing throughput to elite levels.`;
 
-const FAQ_ITEMS = [
-  { q: "Can humans actually multitask?", a: "True simultaneous multitasking is largely a myth for cognitive tasks. What humans call multitasking is actually rapid task switching — alternating between tasks very quickly. The brain serializes most cognitive work, but the speed and efficiency of this switching can be significantly improved with targeted training." },
-  { q: "What is the difference between multitasking and task switching?", a: "Multitasking implies parallel processing two cognitive tasks simultaneously. Task switching (set-shifting) is the rapid alternation between tasks. Research shows that most human multitasking is high-speed task switching. Each switch carries a 'switch cost' — a brief latency and accuracy penalty while the brain reloads the new task's rules." },
-  { q: "How can I improve my multitasking skills?", a: "Effective multitasking improvement comes from: (1) practicing tasks that use different sensory channels simultaneously, (2) training rapid rule-switching with minimal errors, and (3) building automaticity in component tasks so they demand less conscious oversight. This drill exercises all three through its dual-target flow mechanics." },
-  { q: "Why does multitasking drain mental energy?", a: "Each task-set reconfiguration requires the prefrontal cortex to disengage old task rules, flush working memory, and load new task parameters. This cognitive overhead consumes glucose and neurotransmitters rapidly. The cumulative energy cost of many switches explains the brain drain of multitasking-heavy workdays." },
-  { q: "What are the negative effects of multitasking on performance?", a: "Studies show unregulated multitasking can reduce task performance quality by up to 40%, increase error rates, fragment attention, and elevate cortisol. However, trained and structured multitasking with clear task boundaries and practiced switching can dramatically reduce these penalties." },
-  { q: "What does this multitasking test measure?", a: "This dual-target flow test measures your ability to track and respond to multiple concurrent tasks with overlapping deadlines. It evaluates your accuracy across parallel streams, your switching speed when task demands converge, and how well you maintain performance across both channels under increasing cognitive load." },
-  { q: "How does executive function control multitasking?", a: "The dorsolateral prefrontal cortex acts as the central executive, maintaining multiple task representations in working memory, deciding which task gets priority at any moment, and managing the motor output queue. Multitasking training directly strengthens this executive control network." },
-  { q: "Can multitasking games improve work productivity?", a: "Yes. By training your brain's task-switching latency and executive control, multitasking games help you manage real work streams more efficiently. You will find it easier to maintain quality across multiple projects, handle interruptions, and return to primary tasks with less context reload time." },
-  { q: "Who benefits most from multitasking training?", a: "Air traffic controllers, emergency dispatchers, surgeons, esports players, teachers, project managers, stock traders, and emergency first responders are among the professions where high-quality multitasking or rapid task-switching is a critical performance variable. This drill targets all these audiences." },
-  { q: "Is this multitasking test free to play?", a: "Yes. The Dual Target Flow multitasking drill on SkillDrills is completely free with no registration, downloads, or subscriptions required. It runs directly in your web browser." }
-];
-
-const RELATED_DRILLS = [
-  { id: "divided-attention", name: "Divided Attention", cat: "Attention", desc: "Track and react to multiple independent target streams simultaneously.", href: "/drills/cognitive/attention/divided-attention" },
-  { id: "rsvp-reader", name: "RSVP Speed Reader", cat: "Processing Speed", desc: "Process rapid serial visual presentation text streams.", href: "/drills/cognitive/processing-speed/rsvp-reader" },
-  { id: "concentration-stamina", name: "Concentration Stamina", cat: "Attention", desc: "Sustain continuous visual focus through prolonged high-density sequences.", href: "/drills/cognitive/attention/concentration-stamina" },
-  { id: "distraction-fighter", name: "Distraction Fighter", cat: "Focus", desc: "Filter out high-interference Stroop visual distractors.", href: "/drills/cognitive/focus/distraction-fighter" },
-  { id: "reaction-time", name: "Reaction Time", cat: "Processing Speed", desc: "Train choice reaction speed and visual reflex latency.", href: "/drills/cognitive/processing-speed/reaction-time" },
-  { id: "concentration-grid", name: "Concentration Grid", cat: "Focus", desc: "Scan and tap sequential numbers on expanding grid matrices.", href: "/drills/cognitive/focus/concentration-grid" }
-];
-
-export default function DualTargetFlowClient() {
+export default function DualTargetFlowClient({ copy } = {}) {
   const [gameState, setGameState] = useState('start'); // 'start' | 'countdown' | 'playing' | 'gameOver'
   const [isFullscreen, setIsFullscreen] = useState(false);
+  useImmersiveMode(isFullscreen); // locks the page behind while the drill fills the screen
   const [soundEnabled, setSoundEnabled] = useState(true);
   const [flashEnabled, setFlashEnabled] = useState(true);
+  const [penaltyEnabled, setPenaltyEnabled] = useState(false);
   const [openAccordion, setOpenAccordion] = useState(null);
   const [isMobile, setIsMobile] = useState(false);
   const [isPortrait, setIsPortrait] = useState(false);
@@ -104,7 +106,10 @@ export default function DualTargetFlowClient() {
   // Live HUD State
   const [uiScore, setUiScore] = useState(0);
   const [uiTimeLeft, setUiTimeLeft] = useState(DRILL_DURATION);
+  const [uiLevel, setUiLevel] = useState(1);
+  const [uiCombo, setUiCombo] = useState(0);
   const [bestScore, setBestScore] = useState(0);
+  const [bestCombo, setBestCombo] = useState(0);
   const [bestLevel, setBestLevel] = useState(1);
   const [totalSessions, setTotalSessions] = useState(0);
   const [isNewBest, setIsNewBest] = useState(false);
@@ -118,6 +123,7 @@ export default function DualTargetFlowClient() {
     accuracy: 100,
     successfulHits: 0,
     misses: 0,
+    maxCombo: 0,
     finalLevel: 1,
     grade: null
   });
@@ -127,15 +133,20 @@ export default function DualTargetFlowClient() {
   const leftContainerRef = useRef(null);
   const rightContainerRef = useRef(null);
   const countdownTimeoutsRef = useRef([]);
-  const timerIntervalRef = useRef(null);
   const leftSpawnTimerRef = useRef(null);
   const rightSpawnTimerRef = useRef(null);
   const targetChangeIntervalRef = useRef(null);
   const animationFramesRef = useRef(new Set());
+  const startingRef = useRef(false);
+  const gameActiveRef = useRef(false);
+  const bestLevelRunRef = useRef(1);
+  const lastTimeRef = useRef(DRILL_DURATION);
 
   const engine = useRef({
     score: 0,
     level: 1,
+    combo: 0,
+    maxCombo: 0,
     successfulHits: 0,
     misses: 0,
     timeLeft: DRILL_DURATION,
@@ -146,11 +157,12 @@ export default function DualTargetFlowClient() {
 
   const { flashes, triggerFlash } = useDrillFlash();
 
-  // Responsive device check
+  // Responsive device check & storage load
   useEffect(() => {
     if (typeof window !== 'undefined') {
       setSoundEnabled(drillAudio.isEnabled());
       setFlashEnabled(drillFlash.isEnabled());
+      setPenaltyEnabled(drillPenalty.isEnabled(TIME_PER_HIT === 2));
       const checkDevice = () => {
         setIsMobile(window.innerWidth < 768);
         setIsPortrait(window.innerHeight > window.innerWidth);
@@ -161,16 +173,13 @@ export default function DualTargetFlowClient() {
 
       const saved = getSavedData();
       setBestScore(saved.bestScore || 0);
+      setBestCombo(saved.bestCombo || 0);
       setBestLevel(saved.bestLevel || 1);
       setTotalSessions(saved.totalSessions || 0);
-
-      const handleFs = () => setIsFullscreen(!!document.fullscreenElement);
-      document.addEventListener('fullscreenchange', handleFs);
 
       return () => {
         window.removeEventListener('resize', checkDevice);
         window.removeEventListener('orientationchange', checkDevice);
-        document.removeEventListener('fullscreenchange', handleFs);
       };
     }
   }, []);
@@ -179,7 +188,6 @@ export default function DualTargetFlowClient() {
   useEffect(() => {
     return () => {
       countdownTimeoutsRef.current.forEach(clearTimeout);
-      if (timerIntervalRef.current) clearInterval(timerIntervalRef.current);
       if (leftSpawnTimerRef.current) clearTimeout(leftSpawnTimerRef.current);
       if (rightSpawnTimerRef.current) clearTimeout(rightSpawnTimerRef.current);
       if (targetChangeIntervalRef.current) clearInterval(targetChangeIntervalRef.current);
@@ -188,33 +196,73 @@ export default function DualTargetFlowClient() {
     };
   }, []);
 
+  const { markIntentionalExit } = useUnexpectedExitGuard({
+    active: gameState === 'playing' || gameState === 'countdown',
+    onUnexpectedExit: () => {
+      countdownTimeoutsRef.current.forEach(clearTimeout);
+      countdownTimeoutsRef.current = [];
+      if (leftSpawnTimerRef.current) clearTimeout(leftSpawnTimerRef.current);
+      if (rightSpawnTimerRef.current) clearTimeout(rightSpawnTimerRef.current);
+      if (targetChangeIntervalRef.current) clearInterval(targetChangeIntervalRef.current);
+      animationFramesRef.current.forEach(id => cancelAnimationFrame(id));
+      animationFramesRef.current.clear();
+      startingRef.current = false;
+      gameActiveRef.current = false;
+      if (leftContainerRef.current) leftContainerRef.current.innerHTML = '';
+      if (rightContainerRef.current) rightContainerRef.current.innerHTML = '';
+      setIsFullscreen(false);
+      setGameState('start');
+    },
+  });
+
   const handleExitDrill = useCallback(async () => {
     markIntentionalExit();
     countdownTimeoutsRef.current.forEach(clearTimeout);
     countdownTimeoutsRef.current = [];
-    if (timerIntervalRef.current) clearInterval(timerIntervalRef.current);
     if (leftSpawnTimerRef.current) clearTimeout(leftSpawnTimerRef.current);
     if (rightSpawnTimerRef.current) clearTimeout(rightSpawnTimerRef.current);
     if (targetChangeIntervalRef.current) clearInterval(targetChangeIntervalRef.current);
     animationFramesRef.current.forEach(id => cancelAnimationFrame(id));
     animationFramesRef.current.clear();
+    startingRef.current = false;
+    gameActiveRef.current = false;
 
     if (leftContainerRef.current) leftContainerRef.current.innerHTML = '';
     if (rightContainerRef.current) rightContainerRef.current.innerHTML = '';
 
-    if (document.fullscreenElement) {
-      await document.exitFullscreen().catch(() => {});
+    if (typeof document !== 'undefined' && document.fullscreenElement) {
+      try {
+        await document.exitFullscreen();
+      } catch (err) {}
     }
+    setIsFullscreen(false);
     setGameState('start');
-  }, []);
+  }, [markIntentionalExit]);
 
-  const { markIntentionalExit } = useUnexpectedExitGuard({
-    active: gameState === 'playing' || gameState === 'countdown',
-    onUnexpectedExit: handleExitDrill,
-  });
+  // Keyboard and Fullscreen Lifecycle (Rule 6)
+  useEffect(() => {
+    const handleKeyDown = (e) => {
+      if (e.key === 'Escape') {
+        handleExitDrill();
+      }
+    };
+    const handleFullscreenChange = () => {
+      if (!document.fullscreenElement && isFullscreen) {
+        handleExitDrill();
+      }
+    };
+    window.addEventListener('keydown', handleKeyDown);
+    document.addEventListener('fullscreenchange', handleFullscreenChange);
+    return () => {
+      window.removeEventListener('keydown', handleKeyDown);
+      document.removeEventListener('fullscreenchange', handleFullscreenChange);
+    };
+  }, [handleExitDrill, isFullscreen]);
 
   const endGame = useCallback(() => {
-    if (timerIntervalRef.current) clearInterval(timerIntervalRef.current);
+    markIntentionalExit();
+    gameActiveRef.current = false;
+    startingRef.current = false;
     if (leftSpawnTimerRef.current) clearTimeout(leftSpawnTimerRef.current);
     if (rightSpawnTimerRef.current) clearTimeout(rightSpawnTimerRef.current);
     if (targetChangeIntervalRef.current) clearInterval(targetChangeIntervalRef.current);
@@ -228,41 +276,86 @@ export default function DualTargetFlowClient() {
 
     const e = engine.current;
     const totalActs = e.successfulHits + e.misses;
-    const acc = totalActs > 0 ? Math.round((e.successfulHits / totalActs) * 100) : 100;
+    const acc = totalActs > 0 ? Math.round((e.successfulHits / totalActs) * 100) : 0;
 
-    const gradeObj = getFpsScoreGrade(e.score, ELITE_SCORE);
+    const rating = getFpsScoreGrade(e.score, ELITE_SCORE);
+    const gradeObj = {
+      letter: rating.grade || rating.letter || 'C',
+      label: rating.label || 'Keep Going',
+      color: rating.color || 'text-blue-400',
+    };
 
     setAnalytics({
       accuracy: acc,
       successfulHits: e.successfulHits,
       misses: e.misses,
-      finalLevel: e.level,
+      maxCombo: e.maxCombo,
+      finalLevel: Math.floor(bestLevelRunRef.current),
       grade: gradeObj
     });
 
-    const isNew = e.score > bestScore;
-    if (isNew) {
-      setIsNewBest(true);
-      setBestScore(e.score);
-    } else {
-      setIsNewBest(false);
-    }
+    setUiScore(e.score);
 
-    const newBestLevel = Math.max(bestLevel, e.level);
-    setBestLevel(newBestLevel);
+    const prevSaved = getSavedData();
+    const isNew = e.score > prevSaved.bestScore;
+    setIsNewBest(isNew);
 
-    setTotalSessions((prev) => {
-      const next = prev + 1;
-      saveData({
-        bestScore: Math.max(bestScore, e.score),
-        bestLevel: newBestLevel,
-        totalSessions: next
-      });
-      return next;
-    });
+    const runBestLevel = Math.max(prevSaved.bestLevel, Math.floor(bestLevelRunRef.current));
+    const updatedData = {
+      bestScore: Math.max(prevSaved.bestScore, e.score),
+      bestCombo: Math.max(prevSaved.bestCombo || 0, e.maxCombo),
+      bestLevel: runBestLevel,
+      totalSessions: (prevSaved.totalSessions || 0) + 1
+    };
+    saveData(updatedData);
+
+    setBestScore(updatedData.bestScore);
+    setBestCombo(updatedData.bestCombo);
+    setBestLevel(updatedData.bestLevel);
+    setTotalSessions(updatedData.totalSessions);
 
     drillAudio.playSessionEnd();
-  }, [bestScore, bestLevel]);
+  }, [markIntentionalExit]);
+
+  // Main RAF loop for clock draining
+  useEffect(() => {
+    if (gameState !== 'playing') return;
+
+    let animId;
+    let lastTime = performance.now();
+
+    const loop = (now) => {
+      if (isIdleFrameSkippable(gameState === 'playing', now, lastTime)) {
+        animId = requestAnimationFrame(loop);
+        return;
+      }
+
+      const dt = Math.min((now - lastTime) / 1000, 0.1);
+      lastTime = now;
+
+      const e = engine.current;
+      if (gameActiveRef.current) {
+        if (e.timeLeft > 0) e.timeLeft -= dt;
+        if (e.timeLeft <= 0) {
+          e.timeLeft = 0;
+          setUiTimeLeft(0);
+          endGame();
+          return;
+        }
+
+        const ceilSec = Math.ceil(e.timeLeft);
+        if (ceilSec !== lastTimeRef.current) {
+          lastTimeRef.current = ceilSec;
+          setUiTimeLeft(ceilSec);
+        }
+      }
+
+      animId = requestAnimationFrame(loop);
+    };
+
+    animId = requestAnimationFrame(loop);
+    return () => cancelAnimationFrame(animId);
+  }, [gameState, endGame]);
 
   const setRandomTargets = useCallback(() => {
     const e = engine.current;
@@ -279,34 +372,75 @@ export default function DualTargetFlowClient() {
   const applyHit = useCallback(() => {
     const e = engine.current;
     e.successfulHits += 1;
+    e.combo += 1;
+    if (e.combo > e.maxCombo) e.maxCombo = e.combo;
 
-    e.score += POINTS_PER_HIT;
+    const levelMult = 1 + getDifficultyProgress(e.level) * 0.5;
+    e.score += Math.round(POINTS_PER_HIT * getComboMultiplier(e.combo) * levelMult);
 
-    const rawLevel = Math.floor(e.score / POINTS_PER_LEVEL) + 1;
-    if (rawLevel > e.level) {
-      e.level = rawLevel;
-      if (e.level >= 3) e.isDiverged = true;
-    }
+    // Time bonus on clean hit
+    e.timeLeft = Math.min(60, e.timeLeft + TIME_PER_HIT);
+
+    // Continuous level progression
+    const rawLevel = (e.score / POINTS_PER_LEVEL) + 1;
+    e.level = Math.max(e.level, rawLevel);
+    bestLevelRunRef.current = Math.max(bestLevelRunRef.current, e.level);
+    if (e.level >= 3) e.isDiverged = true;
 
     setUiScore(e.score);
+    setUiLevel(Math.floor(e.level));
+    setUiCombo(e.combo);
     drillAudio.playHit();
   }, []);
 
   const applyPenalty = useCallback(() => {
     const e = engine.current;
     e.misses += 1;
+    if (drillPenalty.isEnabled(TIME_PER_HIT === 2)) e.timeLeft -= TIME_PENALTY;
+    e.combo = 0;
+    setUiCombo(0);
     triggerFlash();
     drillAudio.playPenalty();
   }, [triggerFlash]);
 
+  // Imperative hit-impact ring + spark burst, mirrors lib/useHitBurst.js for a raw-DOM container
+  const spawnHitBurst = useCallback((container, x, y, color) => {
+    const ring = document.createElement('div');
+    ring.className = 'fx-hit-ring';
+    ring.style.left = `${x - 20}px`;
+    ring.style.top = `${y - 20}px`;
+    ring.style.width = '40px';
+    ring.style.height = '40px';
+    ring.style.borderWidth = '3px';
+    ring.style.borderColor = color;
+    container.appendChild(ring);
+    setTimeout(() => { if (ring.isConnected) ring.remove(); }, 480);
+
+    for (let i = 0; i < 8; i++) {
+      const angle = Math.random() * Math.PI * 2;
+      const dist = 20 + Math.random() * 26;
+      const spark = document.createElement('div');
+      spark.className = 'fx-hit-spark';
+      spark.style.left = `${x}px`;
+      spark.style.top = `${y}px`;
+      spark.style.width = '6px';
+      spark.style.height = '6px';
+      spark.style.background = color;
+      spark.style.setProperty('--tx', `${Math.cos(angle) * dist}px`);
+      spark.style.setProperty('--ty', `${Math.sin(angle) * dist}px`);
+      container.appendChild(spark);
+      setTimeout(() => { if (spark.isConnected) spark.remove(); }, 480);
+    }
+  }, []);
+
   // DOM Shape Spawner
   const createShape = useCallback((side) => {
     const container = side === 'left' ? leftContainerRef.current : rightContainerRef.current;
-    if (!container) return;
+    if (!container || !gameActiveRef.current) return;
 
     const e = engine.current;
     const targetGlyph = side === 'left' ? e.leftTarget : e.rightTarget;
-    const config = getLevelConfig(e.level);
+    const config = getLevelConfig(e.level, e.combo);
 
     const el = document.createElement('div');
     el.style.position = 'absolute';
@@ -346,7 +480,7 @@ export default function DualTargetFlowClient() {
         evt.stopPropagation();
         evt.preventDefault();
       }
-      if (isHandled) return;
+      if (isHandled || !gameActiveRef.current) return;
       isHandled = true;
 
       const currentTarget = side === 'left' ? engine.current.leftTarget : engine.current.rightTarget;
@@ -354,6 +488,7 @@ export default function DualTargetFlowClient() {
       if (glyph === currentTarget) {
         el.style.color = '#60a5fa';
         el.style.textShadow = '0 0 20px #60a5fa';
+        spawnHitBurst(container, parseFloat(el.style.left) || 0, parseFloat(el.style.top) || 0, '#60a5fa');
         applyHit();
         setTimeout(() => { if (el.isConnected) el.remove(); }, 120);
       } else {
@@ -367,7 +502,7 @@ export default function DualTargetFlowClient() {
 
     let animId;
     function animate(currentTime) {
-      if (!el.isConnected) return;
+      if (!el.isConnected || !gameActiveRef.current) return;
       const elapsed = currentTime - startTime;
       const progress = drillTimeout.isEnabled() ? elapsed / duration : Math.min(elapsed / duration, 0.999);
 
@@ -379,38 +514,38 @@ export default function DualTargetFlowClient() {
       } else {
         el.remove();
         const currentTarget = side === 'left' ? engine.current.leftTarget : engine.current.rightTarget;
-        if (glyph === currentTarget && !isHandled) {
+        if (glyph === currentTarget && !isHandled && gameActiveRef.current) {
           applyPenalty();
         }
       }
     }
     animId = requestAnimationFrame(animate);
     animationFramesRef.current.add(animId);
-  }, [applyHit, applyPenalty]);
+  }, [applyHit, applyPenalty, spawnHitBurst]);
 
   const scheduleLeftSpawn = useCallback(() => {
+    if (!gameActiveRef.current) return;
     createShape('left');
-    const config = getLevelConfig(engine.current.level);
+    const config = getLevelConfig(engine.current.level, engine.current.combo);
     leftSpawnTimerRef.current = setTimeout(scheduleLeftSpawn, config.spawnRate);
   }, [createShape]);
 
   const scheduleRightSpawn = useCallback(() => {
+    if (!gameActiveRef.current) return;
     createShape('right');
-    const config = getLevelConfig(engine.current.level);
+    const config = getLevelConfig(engine.current.level, engine.current.combo);
     rightSpawnTimerRef.current = setTimeout(scheduleRightSpawn, config.spawnRate);
   }, [createShape]);
 
   // Enter Drill
   const enterDrill = useCallback(async () => {
-    try {
-      if (containerRef.current && !document.fullscreenElement) {
-        await containerRef.current.requestFullscreen();
-      }
-    } catch (e) {}
+    if (startingRef.current) return;
+    startingRef.current = true;
+
+    setIsFullscreen(true);
 
     countdownTimeoutsRef.current.forEach(clearTimeout);
     countdownTimeoutsRef.current = [];
-    if (timerIntervalRef.current) clearInterval(timerIntervalRef.current);
     if (leftSpawnTimerRef.current) clearTimeout(leftSpawnTimerRef.current);
     if (rightSpawnTimerRef.current) clearTimeout(rightSpawnTimerRef.current);
     if (targetChangeIntervalRef.current) clearInterval(targetChangeIntervalRef.current);
@@ -422,15 +557,21 @@ export default function DualTargetFlowClient() {
 
     drillAudio.init();
 
-    const saved = getSavedData();
-    const startLevel = getStartLevel(saved.bestLevel);
+    const startLevel = getStartLevel();
+    bestLevelRunRef.current = startLevel;
 
+    setIsNewBest(false);
     setUiScore(0);
+    setUiLevel(startLevel);
+    setUiCombo(0);
     setUiTimeLeft(DRILL_DURATION);
+    lastTimeRef.current = DRILL_DURATION;
 
     engine.current = {
       score: 0,
       level: startLevel,
+      combo: 0,
+      maxCombo: 0,
       successfulHits: 0,
       misses: 0,
       timeLeft: DRILL_DURATION,
@@ -459,17 +600,10 @@ export default function DualTargetFlowClient() {
     }, 2100);
 
     const t4 = setTimeout(() => {
+      gameActiveRef.current = true;
+      startingRef.current = false;
       setGameState('playing');
       setRandomTargets();
-
-      let remaining = DRILL_DURATION;
-      timerIntervalRef.current = setInterval(() => {
-        remaining -= 1;
-        setUiTimeLeft(remaining);
-        if (remaining <= 0) {
-          endGame();
-        }
-      }, 1000);
 
       scheduleLeftSpawn();
       setTimeout(scheduleRightSpawn, 300);
@@ -480,30 +614,30 @@ export default function DualTargetFlowClient() {
     }, 2450);
 
     countdownTimeoutsRef.current = [t1, t2, t3, t4];
-  }, [endGame, setRandomTargets, scheduleLeftSpawn, scheduleRightSpawn]);
+  }, [setRandomTargets, scheduleLeftSpawn, scheduleRightSpawn]);
 
   const shareResult = useCallback(async () => {
     const url = 'https://skilldrills.online/drills/cognitive/attention/multi-tasking';
     try {
       const canvas = generateShareCard({
         score: uiScore,
-        bestScore,
         accuracy: analytics.accuracy,
-        rating: { letter: analytics.grade?.grade || analytics.grade?.letter || 'C', label: analytics.grade?.label || 'Keep Going', emoji: '🎯' },
-        newBest: isNewBest,
-        drillName: 'Multi-Tasking',
+        speed: 0,
+        drillName: 'Multitasking Test',
+        rank: analytics.grade?.letter || 'A',
+        rankName: analytics.grade?.label || 'DUAL FLOW MASTER',
         playerName: getPlayerName(),
+        level: analytics.finalLevel,
+        date: new Date().toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' }),
+        url: 'skilldrills.online/drills/cognitive/attention/multi-tasking'
       });
       await shareScoreCard(url, canvas);
     } catch (e) {
-      const text = `🎯 I scored ${uiScore} PTS (Level ${analytics.finalLevel}) on Multi-Tasking! Dual-stream tracking accuracy: ${analytics.accuracy}%. Practice free cognitive focus drills at skilldrills.online! ⚡`;
-      if (typeof navigator !== 'undefined' && navigator.share) {
-        navigator.share({ title: 'Multi-Tasking Score', text, url }).catch(() => {});
-      } else if (typeof navigator !== 'undefined' && navigator.clipboard) {
-        navigator.clipboard.writeText(`${text} ${url}`);
+      if (navigator.share) {
+        navigator.share({ title: 'Multitasking Test Score', text: `I scored ${uiScore} on Multitasking Test!`, url }).catch(() => {});
       }
     }
-  }, [uiScore, bestScore, analytics, isNewBest]);
+  }, [uiScore, analytics]);
 
   return (
     <div className="min-h-screen bg-[#050508] text-white flex flex-col font-sans select-none">
@@ -511,41 +645,29 @@ export default function DualTargetFlowClient() {
       <main className="flex-1 max-w-6xl w-full mx-auto px-4 py-6 flex flex-col gap-6">
         {/* Title */}
         {!isFullscreen && (
-        <div className="text-center">
-          <h1 className="text-2xl sm:text-3xl font-black tracking-tight text-white">
-            MULTI-TASKING
-            <span data-seo-kw="1" className="block text-sm font-semibold text-slate-400 mt-1 normal-case tracking-normal">
-              Multitasking Test
-            </span>
-          </h1>
-          <p className="text-xs text-slate-400 mt-1">
-            Dual-Stream Visual Tracking & Bilateral Hemispheric Focus
-          </p>
-        </div>
+          <div className="flex flex-col gap-1">
+            <h1 className="text-2xl sm:text-3xl font-black tracking-tight text-white">
+              <span data-seo-kw="1">{copy?.title || "Multitasking Test"}</span>
+              <span className="block text-sm font-semibold text-slate-400 mt-1">{copy?.subtitle || "Multitasking cognitive test for monitoring parallel target streams and improving task-switching speed"}</span>
+            </h1>
+          </div>
         )}
 
         {/* Live Stat Cards */}
         {!isFullscreen && (
-        <div className="grid grid-cols-4 gap-2.5 max-w-2xl mx-auto w-full">
-          <div className="bg-[#0d0d18] border border-white/5 rounded-xl p-2.5 text-center">
-            <div className="text-[10px] uppercase font-bold text-slate-500 tracking-wider">Score</div>
-            <div className="text-lg sm:text-xl font-black text-blue-400 tabular-nums">{uiScore}</div>
+          <div className="grid grid-cols-4 gap-2 w-full -mb-2">
+            {[
+              { label: copy?.statScore || 'Score', value: uiScore, tone: 'text-blue-400' },
+              { label: copy?.statTime || 'Time', value: `${uiTimeLeft}s`, tone: uiTimeLeft <= 10 ? 'text-red-400 animate-pulse' : 'text-white' },
+              { label: copy?.statLevel || 'Level', value: `L${uiLevel}`, tone: 'text-blue-400' },
+              { label: copy?.statBest || 'Best Score', value: bestScore, tone: 'text-amber-400' },
+            ].map((s) => (
+              <div key={s.label} className="rounded-lg border border-white/[0.06] bg-white/[0.015] px-2 py-2 text-center">
+                <div className="text-[9.5px] uppercase font-semibold text-slate-500 tracking-[0.12em]">{s.label}</div>
+                <div className={`text-lg sm:text-xl font-black tabular-nums font-mono mt-0.5 ${s.tone}`}>{s.value}</div>
+              </div>
+            ))}
           </div>
-          <div className="bg-[#0d0d18] border border-white/5 rounded-xl p-2.5 text-center">
-            <div className="text-[10px] uppercase font-bold text-slate-500 tracking-wider">Time</div>
-            <div className={`text-lg sm:text-xl font-black tabular-nums ${uiTimeLeft <= 10 ? 'text-red-400 animate-pulse' : 'text-white'}`}>
-              {uiTimeLeft}s
-            </div>
-          </div>
-          <div className="bg-[#0d0d18] border border-white/5 rounded-xl p-2.5 text-center">
-            <div className="text-[10px] uppercase font-bold text-slate-500 tracking-wider">Level</div>
-            <div className="text-lg sm:text-xl font-black text-indigo-400 tabular-nums">L{engine.current.level}</div>
-          </div>
-          <div className="bg-[#0d0d18] border border-white/5 rounded-xl p-2.5 text-center">
-            <div className="text-[10px] uppercase font-bold text-slate-500 tracking-wider">Best Score</div>
-            <div className="text-lg sm:text-xl font-black text-amber-400 tabular-nums">{bestScore}</div>
-          </div>
-        </div>
         )}
 
         {/* Game Stage Container */}
@@ -559,21 +681,23 @@ export default function DualTargetFlowClient() {
           <DrillFlashOverlay flashes={flashes} />
 
           {/* IN-BOX OVERLAY HUD */}
-          {gameState === 'playing' && (
+          {(gameState === 'playing' || gameState === 'countdown') && (
             <>
-              <div className="absolute top-4 left-4 z-30 pointer-events-none">
-                <p className="text-[10px] font-semibold uppercase tracking-wider text-white/50">Score</p>
-                <p className="text-2xl sm:text-3xl font-black text-white tabular-nums leading-tight">{uiScore}</p>
+              <div className="absolute top-4 left-4 z-30 pointer-events-none flex flex-col gap-1">
+                <div>
+                  <p className="text-[10px] font-semibold uppercase tracking-wider text-white/50">{copy?.statScore || 'Score'}</p>
+                  <p className="text-2xl sm:text-3xl font-black text-white tabular-nums leading-tight">{uiScore}</p>
+                </div>
               </div>
               <div className="absolute top-4 right-4 z-30 pointer-events-none text-right">
-                <p className="text-[10px] font-semibold uppercase tracking-wider text-white/50">Time Left</p>
+                <p className="text-[10px] font-semibold uppercase tracking-wider text-white/50">{copy?.timeLeft || 'Time Left'}</p>
                 <p className={`text-2xl sm:text-3xl font-black tabular-nums leading-tight ${uiTimeLeft <= 10 ? 'text-red-400 animate-pulse' : 'text-white'}`}>{uiTimeLeft}s</p>
               </div>
             </>
           )}
 
           {/* IN-GAME HUD SOUND + FLASH TOGGLES */}
-          {gameState === 'playing' && (
+          {(gameState === 'playing' || gameState === 'countdown') && (
             <div className="absolute bottom-4 right-4 z-40 flex items-center gap-2">
               <button
                 onPointerDown={(e) => e.stopPropagation()}
@@ -590,18 +714,18 @@ export default function DualTargetFlowClient() {
                 {flashEnabled ? <Zap className="w-4 h-4 text-red-400" /> : <ZapOff className="w-4 h-4 text-slate-500" />}
               </button>
               <button
-              onPointerDown={(e) => e.stopPropagation()}
-              onClick={(e) => {
-                e.stopPropagation();
-                setSoundEnabled((v) => {
-                  drillAudio.setEnabled(!v);
-                  return !v;
-                });
-              }}
-              className="p-2.5 rounded-full bg-black/60 border border-white/10 text-slate-400 hover:text-white transition-colors cursor-pointer"
-              title="Toggle Sound"
-            >
-              {soundEnabled ? <Volume2 className="w-4 h-4 text-blue-400" /> : <VolumeX className="w-4 h-4 text-slate-500" />}
+                onPointerDown={(e) => e.stopPropagation()}
+                onClick={(e) => {
+                  e.stopPropagation();
+                  setSoundEnabled((v) => {
+                    drillAudio.setEnabled(!v);
+                    return !v;
+                  });
+                }}
+                className="p-2.5 rounded-full bg-black/60 border border-white/10 text-slate-400 hover:text-white transition-colors cursor-pointer"
+                title="Toggle Sound"
+              >
+                {soundEnabled ? <Volume2 className="w-4 h-4 text-blue-400" /> : <VolumeX className="w-4 h-4 text-slate-500" />}
               </button>
             </div>
           )}
@@ -614,7 +738,7 @@ export default function DualTargetFlowClient() {
 
               {/* Stream 1 Container (Left in landscape, Top in portrait - Right to Left flow) */}
               <div className={`relative flex-1 ${isPortrait ? 'w-full h-1/2 border-b border-white/10' : 'h-full w-1/2 border-r border-white/10'} overflow-hidden`}>
-                {/* Top / Left Target Badge - Centered at Top of Section */}
+                {/* Top / Left Target Badge */}
                 <div className="absolute top-3 left-1/2 -translate-x-1/2 z-30 pointer-events-none">
                   <div className="bg-black/75 backdrop-blur-md px-3.5 py-1 rounded-xl border border-white/10 flex items-center gap-2 shadow-lg">
                     <span className="text-[10px] font-bold text-slate-400 uppercase">TARGET:</span>
@@ -626,7 +750,7 @@ export default function DualTargetFlowClient() {
 
               {/* Stream 2 Container (Right in landscape, Bottom in portrait - Left to Right flow) */}
               <div className={`relative flex-1 ${isPortrait ? 'w-full h-1/2' : 'h-full w-1/2'} overflow-hidden`}>
-                {/* Bottom / Right Target Badge - Centered at Top of Bottom Section */}
+                {/* Bottom / Right Target Badge */}
                 <div className="absolute top-3 left-1/2 -translate-x-1/2 z-30 pointer-events-none">
                   <div className="bg-black/75 backdrop-blur-md px-3.5 py-1 rounded-xl border border-white/10 flex items-center gap-2 shadow-lg">
                     <span className="text-[10px] font-bold text-slate-400 uppercase">TARGET:</span>
@@ -643,16 +767,8 @@ export default function DualTargetFlowClient() {
             <FpsStartCard
               icon={Target}
               accent="blue"
-              title="Multi-Tasking"
-              subtitle="Dual-Stream Tracking • Peripheral Focus"
-              rules={[
-                { icon: Target, accent: 'emerald', title: 'Tap Shapes Matching Active Targets', text: 'Track active shapes and tap matching targets in the dual-stream layout' },
-                { icon: Zap, accent: 'blue', title: 'Dual Stream Focus', text: 'Simultaneously monitor left and right target streams without missing' },
-              ]}
-              stats={[
-                { icon: Trophy, label: 'Best Score', value: bestScore, color: 'text-white', accent: 'slate' },
-                { icon: TrendingUp, label: 'Best Level', value: `Lv. ${bestLevel}`, color: 'text-blue-400', accent: 'blue' },
-              ]}
+              title={copy?.startTitle || "Multitasking Test"}
+              subtitle={copy?.startSubtitle || "Dual-Stream Tracking"}
               isTouchOnlyDevice={false}
               onStart={enterDrill}
             />
@@ -660,110 +776,66 @@ export default function DualTargetFlowClient() {
 
           {/* COUNTDOWN OVERLAY */}
           {gameState === 'countdown' && (
-            <DrillCountdown value={countdownValue} subtitle="GET READY" />
+            <DrillCountdown value={countdownValue} subtitle={copy?.getReady || "GET READY"} />
           )}
 
-          {/* END SCREEN */}
+          {/* UNIVERSAL RESULT CARD */}
           {gameState === 'gameOver' && analytics.grade && (
-            <div className="absolute inset-0 z-40 flex bg-neutral-950/98 select-none font-sans" style={{ background: 'rgba(5,5,8,0.97)' }} onPointerDown={e => e.stopPropagation()}>
-              
-              {/* Left Grade Panel */}
-              <div className="w-[36%] flex flex-col items-center justify-center gap-1 border-r border-white/5 px-4" style={{ background: 'radial-gradient(ellipse 260px 200px at 50% 30%, rgba(59,130,246,.12), transparent 70%)' }}>
-                {isNewBest && (
-                  <span className="text-[9.5px] font-bold text-yellow-400 bg-yellow-500/10 border border-yellow-500/25 px-2.5 py-0.5 rounded-full mb-1 animate-pulse">
-                    NEW BEST
-                  </span>
-                )}
-                <div className={`text-5xl sm:text-6xl font-black leading-none ${analytics.grade.color}`}>
-                  {analytics.grade.grade || analytics.grade.letter}
-                </div>
-                <div className="text-[10px] uppercase tracking-widest text-slate-500 text-center font-bold mt-1">
-                  {analytics.grade.label}
-                </div>
-                <div className="text-3xl sm:text-4xl font-black text-white mt-2 tabular-nums">
-                  {uiScore}
-                </div>
-                <div className="text-[9px] uppercase tracking-widest text-slate-500">Points</div>
-              </div>
-
-              {/* Right Stats & Actions Panel */}
-              <div className="flex-1 flex flex-col justify-center gap-3 px-6 py-4 min-w-0">
-                
-                <div className="grid grid-cols-3 gap-2">
-                  <div className="bg-black border border-white/5 p-2.5 rounded-xl text-center">
-                    <p className="text-sm sm:text-base font-black text-white">{analytics.accuracy}%</p>
-                    <p className="text-[7.5px] sm:text-[8.5px] font-bold uppercase tracking-wider text-gray-400 mt-0.5">Accuracy</p>
-                  </div>
-                  <div className="bg-black border border-white/5 p-2.5 rounded-xl text-center">
-                    <p className="text-sm sm:text-base font-black text-emerald-400">{analytics.successfulHits}</p>
-                    <p className="text-[7.5px] sm:text-[8.5px] font-bold uppercase tracking-wider text-gray-400 mt-0.5">Hits</p>
-                  </div>
-                  <div className="bg-black border border-white/5 p-2.5 rounded-xl text-center">
-                    <p className="text-sm sm:text-base font-black text-red-400">{analytics.misses}</p>
-                    <p className="text-[7.5px] sm:text-[8.5px] font-bold uppercase tracking-wider text-gray-400 mt-0.5">Errors</p>
-                  </div>
-                </div>
-
-                <div className="flex gap-2">
-                  <button 
-                    type="button"
-                    onClick={enterDrill} 
-                    className="flex-1 py-3 rounded-[13px] bg-gradient-to-r from-blue-600 to-cyan-600 text-white font-bold text-xs uppercase tracking-wide cursor-pointer transition-transform active:scale-[0.98] shadow-md flex items-center justify-center gap-1.5"
-                  >
-                    <RefreshCw className="w-3.5 h-3.5" /> Play Again
-                  </button>
-                  <button 
-                    type="button"
-                    onClick={shareResult} 
-                    className="w-11 flex-shrink-0 rounded-[13px] bg-white/[0.04] border border-white/10 flex items-center justify-center text-slate-400 hover:text-white cursor-pointer active:scale-90 transition-transform" 
-                    title="Share Score"
-                  >
-                    <Share2 className="w-4 h-4" />
-                  </button>
-                  <button 
-                    type="button"
-                    onClick={handleExitDrill} 
-                    className="w-11 flex-shrink-0 rounded-[13px] bg-white/[0.04] border border-white/10 flex items-center justify-center text-slate-400 hover:text-white cursor-pointer active:scale-90 transition-transform" 
-                    title="Return to Options"
-                  >
-                    <LogOut className="w-4 h-4 text-red-400" />
-                  </button>
-                </div>
-
-              </div>
-            </div>
+            <DrillResultCard
+              accent="cyan"
+              grade={analytics.grade}
+              score={uiScore}
+              isNewBest={isNewBest}
+              stats={[
+                { label: copy?.accuracy || 'Accuracy', value: analytics.accuracy, suffix: '%' },
+                { label: copy?.hits || 'Hits', value: analytics.successfulHits },
+                { label: copy?.peakLevel || 'Peak Level', value: `Lv. ${analytics.finalLevel}` },
+                { label: copy?.maxCombo || 'Max Combo', value: analytics.maxCombo, suffix: 'x' },
+              ]}
+              onPlayAgain={enterDrill}
+              onBeforeShare={() => setIsFullscreen(false)}
+              onShare={shareResult}
+              onExit={handleExitDrill}
+            />
           )}
 
         </div>
+
+        {/* Stage Caption */}
+        {!isFullscreen && (
+          <p className="text-xs text-slate-400 leading-relaxed -mt-2">
+            {copy?.caption || 'Monitor and tap matching symbols across dual opposing streams as flow speed and shapes accelerate.'}
+          </p>
+        )}
 
         {/* ACCORDIONS */}
         {!isFullscreen && (
           <div className="[&>div]:!mt-0">
             <DrillAccordion
               id="rules"
-              title="Drill Instructions & Scoring System"
+              title={copy?.rulesTitle || "Drill Instructions & Scoring System"}
               isOpen={openAccordion === 'rules'}
               onToggle={() => setOpenAccordion(openAccordion === 'rules' ? null : 'rules')}
             >
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 font-sans">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-3 font-sans">
                 {RULES_ITEMS.map((item, i) => (
-                  <div key={i} className="bg-black p-4 rounded-xl border border-white/10">
-                    <p className="text-sm font-bold text-white mb-1">{item.title}</p>
-                    <p className="text-xs text-gray-300 leading-relaxed">{item.text}</p>
-                  </div>
+                  <RuleItem key={i} num={item.num} text={copy?.ruleItems?.[i]?.text || item.text} highlight={copy?.ruleItems?.[i]?.highlight || item.highlight} result={copy?.ruleItems?.[i]?.result || item.result} />
                 ))}
               </div>
             </DrillAccordion>
 
             <DrillAccordion
               id="about"
-              title="About Multi-Tasking"
+              title={copy?.aboutTitle || "About Multitasking Test & Dual-Target Flow"}
               isOpen={openAccordion === 'about'}
               onToggle={() => setOpenAccordion(openAccordion === 'about' ? null : 'about')}
             >
               <div className="space-y-8 font-sans">
                 <section>
                   <div className="space-y-4">
+                    <p className="text-sm leading-relaxed text-gray-300">
+                      {copy?.aboutLead || 'Human multitasking relies on rapid task switching rather than true simultaneous processing, incurring a measurable 100–300 ms switch penalty as cognitive goals alternate (Rogers & Monsell, 1995; Monsell, 2003). This dual-stream flow drill trains prefrontal executive control to manage concurrent target streams under escalating velocity (Pashler, 1994).'}
+                    </p>
                     {ABOUT_TEXT.split('\n\n').map((para, i) => (
                       <p key={i} className="text-sm leading-relaxed text-gray-300">{para}</p>
                     ))}
@@ -774,75 +846,29 @@ export default function DualTargetFlowClient() {
                   <div className="p-4 rounded-xl border border-gray-800 bg-white/[0.02]">
                     <div className="flex items-center gap-2.5 mb-2">
                       <div className="w-7 h-7 rounded-lg bg-blue-600 flex items-center justify-center"><Users className="w-3.5 h-3.5 text-white" /></div>
-                      <h5 className="text-xs font-bold text-white">Who Should Use This?</h5>
+                      <h5 className="text-xs font-bold text-white">{copy?.audienceTitle || 'Who Should Use This?'}</h5>
                     </div>
-                    <p className="text-xs text-gray-300 leading-relaxed">Air traffic controllers, emergency dispatchers, esports players, project managers, and anyone who juggles multiple live task streams under time pressure.</p>
+                    <p className="text-xs text-gray-300 leading-relaxed">{copy?.audienceText || 'Air traffic controllers, emergency dispatchers, esports players, project managers, and anyone who juggles multiple live task streams under time pressure.'}</p>
                   </div>
                   <div className="p-4 rounded-xl border border-gray-800 bg-white/[0.02]">
                     <div className="flex items-center gap-2.5 mb-2">
                       <div className="w-7 h-7 rounded-lg bg-emerald-600 flex items-center justify-center"><TrendingUp className="w-3.5 h-3.5 text-white" /></div>
-                      <h5 className="text-xs font-bold text-white">Skills Improved</h5>
+                      <h5 className="text-xs font-bold text-white">{copy?.skillsTitle || 'Skills Improved'}</h5>
                     </div>
-                    <p className="text-xs text-gray-300 leading-relaxed">Dual-stream visual tracking, peripheral target acquisition, bilateral hemispheric processing, and prefrontal executive control.</p>
+                    <p className="text-xs text-gray-300 leading-relaxed">{copy?.skillsText || 'Dual-stream visual tracking, peripheral target acquisition, bilateral hemispheric processing, and prefrontal executive control.'}</p>
                   </div>
                   <div className="p-4 rounded-xl border border-gray-800 bg-white/[0.02]">
                     <div className="flex items-center gap-2.5 mb-2">
                       <div className="w-7 h-7 rounded-lg bg-purple-600 flex items-center justify-center"><Zap className="w-3.5 h-3.5 text-white" /></div>
-                      <h5 className="text-xs font-bold text-white">Task-Switching Speed</h5>
+                      <h5 className="text-xs font-bold text-white">{copy?.flexibilityTitle || 'Task-Switching Speed'}</h5>
                     </div>
-                    <p className="text-xs text-gray-300 leading-relaxed">Left and right target templates rotate and diverge as you level up, forcing you to reload task rules fast and minimize switch-cost errors.</p>
+                    <p className="text-xs text-gray-300 leading-relaxed">{copy?.flexibilityText || 'Left and right target templates rotate and diverge as you level up, forcing you to reload task rules fast and minimize switch-cost errors.'}</p>
                   </div>
                 </div>
               </div>
             </DrillAccordion>
-
-            <DrillAccordion
-              id="faq"
-              title="Frequently Asked Questions"
-              isOpen={openAccordion === 'faq'}
-              onToggle={() => setOpenAccordion(openAccordion === 'faq' ? null : 'faq')}
-            >
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 font-sans">
-                {FAQ_ITEMS.map((item, i) => (
-                  <div key={i} className="bg-[#05060b] border border-gray-800 rounded-xl p-5">
-                    <h4 className="text-sm font-bold text-gray-200 mb-2">{item.q}</h4>
-                    <p className="text-xs text-gray-400 leading-relaxed">{item.a}</p>
-                  </div>
-                ))}
-              </div>
-            </DrillAccordion>
           </div>
         )}
-
-        {/* RELATED DRILLS GRID */}
-        {!isFullscreen && (
-          <section className="mt-4">
-            <h2 className="text-sm font-bold text-slate-400 uppercase tracking-wider mb-3">
-              Related Cognitive Drills
-            </h2>
-            <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
-              {RELATED_DRILLS.map((drill) => (
-                <Link
-                  key={drill.id}
-                  href={drill.href}
-                  className="group bg-[#0c0c16] border border-white/5 hover:border-blue-500/40 rounded-xl p-3.5 transition-all duration-200 hover:-translate-y-0.5 flex flex-col justify-between"
-                >
-                  <div>
-                    <div className="text-[10px] font-bold text-blue-400 uppercase tracking-wider mb-1">{drill.cat}</div>
-                    <div className="text-xs font-bold text-white group-hover:text-blue-300 transition-colors">{drill.name}</div>
-                    <div className="text-[11px] text-slate-400 mt-1 line-clamp-2 leading-relaxed">{drill.desc}</div>
-                  </div>
-                  <div className="text-[10px] font-bold text-slate-500 group-hover:text-blue-400 mt-3 flex items-center gap-1 transition-colors">
-                    Train Drill <span>→</span>
-                  </div>
-                </Link>
-              ))}
-            </div>
-          </section>
-        )}
-
-        {/* SITE FOOTER */}
-        {!isFullscreen && <DrillFooter />}
 
       </main>
     </div>

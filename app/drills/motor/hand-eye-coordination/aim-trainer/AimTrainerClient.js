@@ -5,42 +5,43 @@ import React, { useState, useEffect, useRef, useCallback } from 'react';
 import Link from 'next/link';
 
 import { 
-  Activity, AlertCircle, ArrowRight, Brain, ChevronRight, 
-  Crosshair, Eye, GraduationCap, Info, Lightbulb, 
-  Play, RefreshCw, Target, Timer, TrendingUp, Trophy, 
-  Volume2, VolumeX, Flame, Share2, Sliders, LogOut, Award,
-  Shield, Users, Zap, ZapOff, MousePointer2, Star
+  AlertCircle, Crosshair, Target, TrendingUp,
+  Volume2, VolumeX, Users, Zap, ZapOff
 } from 'lucide-react';
 
 import generateShareCard, { shareScoreCard } from '../../../../../components/ShareScoreCard';
 import { getPlayerName } from '../../../../../lib/leaderboard';
 import { drillAudio } from '../../../../../lib/drillAudio';
+import { useDrillSensitivity } from '../../../../../lib/drillSensitivity';
 import { drillFlash } from '../../../../../lib/drillFlash';
 import { drillTimeout } from '../../../../../lib/drillTimeout';
-import { MAX_LEVEL, getStartLevel, getDifficultyProgress, getComboBonusLevel } from '../../../../../lib/drillDifficulty';
+import { drillPenalty } from '../../../../../lib/drillPenalty';
+import { getStartLevel, getDifficultyProgress, ramp } from '../../../../../lib/drillDifficulty';
 import { getComboMultiplier, getFpsScoreGrade } from '../../../../../lib/scoringEngine';
-import { createBackdropCache, getCanvasDpr, drawPulseRing, drawTacticalTarget } from '../../../../../lib/canvasFx';
-import useUnexpectedExitGuard from '../../../../../lib/useUnexpectedExitGuard';
-import DrillFooter from '../../../../../components/drill/DrillFooter';
+import { createBackdropCache, getCanvasDpr, drawTacticalTarget, createHitRing, drawHitRings } from '../../../../../lib/canvasFx';
 import DrillCountdown from '../../../../../components/drill/DrillCountdown';
 import DrillAccordion from '../../../../../components/drill/DrillAccordion';
 import FpsStartCard from '../../../../../components/drill/FpsStartCard';
+import DrillResultCard from '../../../../../components/drill/DrillResultCard';
+import useImmersiveMode from '@/lib/useImmersiveMode';
+import { useTranslation } from '@/lib/i18n/useTranslation';
+import { AIM_TRAINER_I18N } from '@/lib/i18n/drills/aimTrainer';
+import useUnexpectedExitGuard from '@/lib/useUnexpectedExitGuard';
 
 // ============================================================
 // TUNING CONSTANTS
 // ============================================================
-const DRILL_DURATION = 45; // 45 seconds focused duration
-const POINTS_PER_LEVEL = 250; // Aggressive progression
-const ELITE_SCORE = 16000;
-const STORAGE_KEY = 'skilldrills_motor_aim_trainer_v2';
-const OLD_STORAGE_KEY = 'aimTrainerElite_bestScore';
+const DRILL_DURATION = 45; // starting clock only; a run grows past this
+const POINTS_PER_LEVEL = 1750; // 250 -> 1750 (7x)
+const ELITE_SCORE = 48000; // 16000 -> 48000 (3x)
+const TIME_PER_HIT = 2; // +2s on clean hit, capped at 60s
+const TIME_PENALTY = 1; // opt-in on miss or timeout
+const STORAGE_KEY = 'skilldrills_motor_aim_trainer_v3';
 
 const getSavedData = () => {
   try {
     const raw = localStorage.getItem(STORAGE_KEY);
     if (raw) return { bestScore: 0, bestCombo: 0, bestLevel: 1, totalSessions: 0, ...JSON.parse(raw) };
-    const legacy = localStorage.getItem(OLD_STORAGE_KEY);
-    if (legacy) return { bestScore: parseInt(legacy, 10) || 0, bestCombo: 0, bestLevel: 1, totalSessions: 0 };
     return { bestScore: 0, bestCombo: 0, bestLevel: 1, totalSessions: 0 };
   } catch (e) {
     return { bestScore: 0, bestCombo: 0, bestLevel: 1, totalSessions: 0 };
@@ -53,14 +54,14 @@ const saveData = (data) => {
   } catch (e) {}
 };
 
-
-const getLevelConfig = (level) => {
-  const p = getDifficultyProgress(level); // 0 -> 1 across L1..L15
+const getLevelConfig = (level, combo = 0) => {
+  const p = getDifficultyProgress(level); // 0 at L1, 1 at L15, unbounded above
+  const heat = (getComboMultiplier(combo) - 1) / 2;
   return {
-    radius: Math.max(12, 26 - p * 14),     // 26 -> 12 px
-    speed: 80 + p * 220,                   // 80 -> 300 px/s
-    maxLife: Math.max(1.0, 2.8 - p * 1.8), // 2.8 -> 1.0 s
-    targetCount: 2                         // Fixed at 2 targets at a time
+    radius:      Math.max(8, ramp(26, 12, p) * (1 - heat * 0.15)),
+    speed:       ramp(80, 370, p) * (1 + heat * 0.20),
+    maxLife:     ramp(2.8, 0.40, p) * (1 - heat * 0.20),
+    targetCount: 2
   };
 };
 
@@ -76,7 +77,7 @@ const spawnTarget = (w, h, config) => {
     radius: config.radius,
     age: 0,
     ttl: config.maxLife,
-    color: '#22c55e'
+    color: '#10b981'
   };
 };
 
@@ -84,55 +85,27 @@ const spawnTarget = (w, h, config) => {
 // ACCORDION DATA
 // ============================================================
 const RULES_ITEMS = [
-  { title: "Target Hit", text: "Score +100 PTS × Combo per hit on active moving target." },
-  { title: "Continuous Combo", text: "Chain successful target hits to build combo multiplier up to 3.0x max." },
-  { title: "Level Progression", text: "Score increases level every 250 PTS. Targets shrink & speed up." },
-  { title: "Miss / Timeout", text: "Missing shots or letting targets expire resets active combo multiplier." }
+  { num: "1", text: "Target Hit", highlight: "+100 PTS (+2s, max 60s)", result: "×Combo Mult" },
+  { num: "2", text: "Continuous Combo", highlight: "Up to 3.0× PTS", result: "Maintains Flow" },
+  { num: "3", text: "Level Up", highlight: "+1 / 1750 PTS", result: "Shrink & Accelerate" },
+  { num: "4", text: "Miss / Timeout", highlight: "Penalty", result: "Resets Combo (-0.8s)" }
 ];
 
-const ABOUT_TEXT = `Aim Trainer Elite is a dynamic target acquisition drill designed to refine raw mouse precision, eye-hand motor coordination, and click timing speed. Unlike static target shooting, targets continuously move and shrink across the canvas area.
 
-By balancing speed with careful crosshair placement, players build muscle memory and suppress panic clicks during intense competitive gunfights in games like Valorant, CS2, and Apex Legends.
-
-As your score rises, targets shrink from 26px to 12px and movement speed accelerates, continuously pushing your mechanical skill ceiling.`;
-
-const FAQ_ITEMS = [
-  { q: "What is Aim Trainer Elite?", a: "Aim Trainer Elite is a dynamic target acquisition drill designed to test and refine your mouse accuracy, target acquisition speed, and click timing." },
-  { q: "How does this aim trainer improve mouse precision?", a: "By spawning targets that dynamically shrink, move, and expire, the drill conditions fine motor control and rapid eye-to-hand target acquisition." },
-  { q: "Does this help Valorant and CS2 aim?", a: "Yes, micro-flicking and clicking small targets directly translates to first-shot headshot precision in tactical shooters like Valorant and CS2." },
-  { q: "How does score-based difficulty scaling work?", a: "As your score increases, the game engine automatically advances your level from 1 to 15, reducing target sizes and increasing movement speed." },
-  { q: "What happens when a target times out?", a: "When a target expires before you click it, your combo streak resets and a red error flash triggers without point loss." },
-  { q: "How is tracking accuracy calculated?", a: "Accuracy is calculated as the ratio of successful target hits divided by total clicks, displayed as a percentage on the result dashboard." },
-  { q: "Can I play this aim trainer on mobile devices?", a: "This drill requires pointer-lock mouse input for crosshair control, so it is not playable on touch-only phones or tablets. Use a desktop or laptop with a mouse for the full experience." },
-  { q: "Does this trainer support universal mouse sensitivity?", a: "Yes, you can adjust the Universal Sens slider to calibrate raw input cm/360 sensitivity before starting your session." },
-  { q: "What is the best way to practice with Aim Trainer Elite?", a: "Focus on accuracy first before building speed. Rushed clicks reset your combo, while clean centered clicks build combo multipliers." },
-  { q: "How often should I warm up with this aim trainer?", a: "A 10-15 minute session before playing competitive matches helps prime your motor cortex and eye-hand coordination." },
-  { q: "Is this aim trainer completely free?", a: "Yes, Aim Trainer Elite is 100% free, requires no downloads or account registration, and runs natively in any modern web browser." },
-  { q: "What is combo scaling in this drill?", a: "Sustaining consecutive hits without missing or letting targets expire builds combo multipliers up to 3.0x bonus points per hit." },
-  { q: "Does this help with reaction speed?", a: "Yes, fast-expiring targets at higher difficulty levels train your brain to register target locations and execute click commands faster." },
-  { q: "What causes missed clicks?", a: "Missed clicks occur when you fire before your crosshair is fully centered over the target hitbox, or when you over-flick past the target edge." },
-  { q: "How does the 45-second session timer work?", a: "Each session runs for a fixed 45 seconds, giving you a standardized time window to score maximum points and benchmark your performance." }
-];
-
-const RELATED_DRILLS = [
-  { id: "precision-flick-shot", name: "Precision Flick Shot", cat: "Motor Coordination", desc: "Train precise clicking on moving target arrays.", href: "/drills/motor/hand-eye-coordination/precision-flick-shot" },
-  { id: "flick-shot-training", name: "Pro Flick Trainer", cat: "FPS Flicking", desc: "Snap to targets in time-attack mode with precision flicking.", href: "/drills/fps/flick-shot-training" },
-  { id: "target-switching-swarm", name: "Target Switching", cat: "FPS Multi-Kill", desc: "Flick and track target arrays rapidly.", href: "/drills/fps/target-switching-swarm" },
-  { id: "180-degree-awareness", name: "180° Awareness Pro", cat: "FPS Awareness", desc: "Flick to flanking perimeter spawns.", href: "/drills/fps/180-degree-awareness" },
-  { id: "steady-hand", name: "Steady Hand Trainer", cat: "Motor Control", desc: "Improve fine motor mouse control and stability.", href: "/drills/motor/precision-control/steady-hand" },
-  { id: "rapid-tapping", name: "Rapid Tapping", cat: "Motor Speed", desc: "Boost physical clicking speed and stamina.", href: "/drills/motor/movement-speed/rapid-tapping" }
-];
 
 // ============================================================
 // MAIN COMPONENT
 // ============================================================
-export default function AimTrainerClient() {
+export default function AimTrainerClient({ copy = {} } = {}) {
+  const { t } = useTranslation(AIM_TRAINER_I18N);
   const [gameState, setGameState] = useState('start'); // 'start' | 'countdown' | 'playing' | 'gameOver'
   const [isFullscreen, setIsFullscreen] = useState(false);
+  useImmersiveMode(isFullscreen); // locks the page behind while the drill fills the screen
   const [soundEnabled, setSoundEnabled] = useState(true);
   const [flashEnabled, setFlashEnabled] = useState(true);
+  const [penaltyEnabled, setPenaltyEnabled] = useState(false);
   const [pointerLocked, setPointerLocked] = useState(false);
-  const [universalSens, setUniversalSens] = useState(1.0);
+  const universalSens = useDrillSensitivity();
   const [openAccordion, setOpenAccordion] = useState(null);
   const [isTouchOnlyDevice, setIsTouchOnlyDevice] = useState(false);
   const [countdownValue, setCountdownValue] = useState(3);
@@ -167,10 +140,8 @@ export default function AimTrainerClient() {
     targets: [],
     score: 0, level: 1, combo: 0, bestCombo: 0, timeLeft: DRILL_DURATION,
     hits: 0, misses: 0, timeouts: 0, totalClicks: 0,
-    particles: [], hitMarkers: [], screenShake: 0, logicalWidth: 800, logicalHeight: 450
+    particles: [], hitMarkers: [], hitRings: [], screenShake: 0, logicalWidth: 800, logicalHeight: 450
   });
-
-  const cmPer360 = (30 / universalSens).toFixed(1);
 
   const triggerFlash = useCallback(() => {
     if (!drillFlash.isEnabled()) return;
@@ -180,14 +151,16 @@ export default function AimTrainerClient() {
   }, []);
 
   const createExplosion = useCallback((x, y, color) => {
-    for (let i = 0; i < 10; i++) {
+    for (let i = 0; i < 14; i++) {
       const angle = Math.random() * Math.PI * 2;
       const speed = 1.0 + Math.random() * 3.5;
       engine.current.particles.push({
         x, y,
         vx: Math.cos(angle) * speed,
         vy: Math.sin(angle) * speed,
-        life: 0.8,
+        life: 1.0,
+        maxLife: 1.0,
+        radius: 1.5 + Math.random() * 2.0,
         color
       });
     }
@@ -202,14 +175,10 @@ export default function AimTrainerClient() {
     if (typeof window !== 'undefined') {
       setSoundEnabled(drillAudio.isEnabled());
       setFlashEnabled(drillFlash.isEnabled());
+      setPenaltyEnabled(drillPenalty.isEnabled(TIME_PER_HIT === 2));
       const hasFinePointer = window.matchMedia('(pointer: fine)').matches;
       const isTouchCapable = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
       setIsTouchOnlyDevice(isTouchCapable && !hasFinePointer);
-
-      try {
-        const savedSens = localStorage.getItem('aimTrainerElite_sens');
-        if (savedSens) setUniversalSens(parseFloat(savedSens));
-      } catch (e) {}
 
       const saved = getSavedData();
       setBestScore(saved.bestScore || 0);
@@ -225,49 +194,24 @@ export default function AimTrainerClient() {
     };
   }, []);
 
-  useEffect(() => {
-    if (gameState !== 'playing') {
-      try { localStorage.setItem('aimTrainerElite_sens', universalSens.toString()); } catch (e) {}
-    }
-  }, [universalSens, gameState]);
-
-  // Fullscreen Listener
-  useEffect(() => {
-    const handleFullscreenChange = () => setIsFullscreen(!!document.fullscreenElement);
-    document.addEventListener('fullscreenchange', handleFullscreenChange);
-    return () => document.removeEventListener('fullscreenchange', handleFullscreenChange);
-  }, []);
-
   const handleExitDrill = useCallback(async () => {
     markIntentionalExit();
     countdownTimeoutsRef.current.forEach(clearTimeout);
     countdownTimeoutsRef.current = [];
     startingRef.current = false;
+    gameActiveRef.current = false;
 
-    if (document.fullscreenElement) {
-      await document.exitFullscreen().catch(() => {});
-    }
+    setIsFullscreen(false);
     if (document.pointerLockElement) {
       document.exitPointerLock();
     }
     setGameState('start');
   }, []);
 
-  // Stop the drill if the player leaves any way other than the in-app Exit
-  // button (back gesture, tab switch, Esc) instead of running invisibly.
   const { markIntentionalExit } = useUnexpectedExitGuard({
     active: gameState === 'playing' || gameState === 'countdown',
     onUnexpectedExit: handleExitDrill,
   });
-
-  const resumeDrill = useCallback(async () => {
-    if (containerRef.current && !document.fullscreenElement) {
-      try { await containerRef.current.requestFullscreen(); } catch (e) {}
-    }
-    if (canvasRef.current && !document.pointerLockElement) {
-      try { await canvasRef.current.requestPointerLock(); } catch (e) {}
-    }
-  }, []);
 
   // End Game Management
   const endGame = useCallback(() => {
@@ -279,13 +223,13 @@ export default function AimTrainerClient() {
     const e = engine.current;
     const totalAttempts = e.totalClicks;
     const finalAccuracy = totalAttempts > 0 ? Math.round((e.hits / totalAttempts) * 100) : 0;
-
+    const peakLevel = Math.floor(bestLevelRunRef.current);
     const rating = getFpsScoreGrade(e.score, ELITE_SCORE);
     const grade = { letter: rating.grade, label: rating.label, color: rating.color };
 
     setAnalytics({
       accuracy: finalAccuracy, hits: e.hits, misses: e.misses,
-      timeouts: e.timeouts, bestCombo: e.bestCombo, levelReached: e.level,
+      timeouts: e.timeouts, bestCombo: e.bestCombo, levelReached: peakLevel,
       grade
     });
 
@@ -295,7 +239,7 @@ export default function AimTrainerClient() {
     const isNewHigh = e.score > prevSaved.bestScore;
     setIsNewBest(isNewHigh);
 
-    const runBestLevel = Math.max(prevSaved.bestLevel, bestLevelRunRef.current);
+    const runBestLevel = Math.max(prevSaved.bestLevel, peakLevel);
     const updatedData = {
       bestScore: Math.max(prevSaved.bestScore, e.score),
       bestCombo: Math.max(prevSaved.bestCombo, e.bestCombo),
@@ -326,8 +270,7 @@ export default function AimTrainerClient() {
     setUiTimeLeft(DRILL_DURATION);
     lastTimeRef.current = DRILL_DURATION;
 
-    const saved = getSavedData();
-    const startLevel = getStartLevel(saved.bestLevel);
+    const startLevel = getStartLevel();
     bestLevelRunRef.current = startLevel;
 
     setAnalytics({
@@ -337,7 +280,7 @@ export default function AimTrainerClient() {
 
     const w = engine.current.logicalWidth || 800;
     const h = engine.current.logicalHeight || 450;
-    const config = getLevelConfig(startLevel);
+    const config = getLevelConfig(startLevel, 0);
 
     const initTargets = [];
     for (let i = 0; i < config.targetCount; i++) {
@@ -349,14 +292,10 @@ export default function AimTrainerClient() {
       targets: initTargets,
       score: 0, level: startLevel, combo: 0, bestCombo: 0, timeLeft: DRILL_DURATION,
       hits: 0, misses: 0, timeouts: 0, totalClicks: 0,
-      particles: [], hitMarkers: [], screenShake: 0, logicalWidth: w, logicalHeight: h
+      particles: [], hitMarkers: [], hitRings: [], screenShake: 0, logicalWidth: w, logicalHeight: h
     };
 
-    try {
-      if (containerRef.current && !document.fullscreenElement) {
-        await containerRef.current.requestFullscreen();
-      }
-    } catch(e) {}
+    setIsFullscreen(true);
 
     setGameState('countdown');
     setCountdownValue(3);
@@ -378,10 +317,37 @@ export default function AimTrainerClient() {
   }, []);
 
   useEffect(() => {
-    const handlePointerLockChange = () => setPointerLocked(document.pointerLockElement === canvasRef.current);
+    const handleKeyDown = (e) => {
+      if (e.key === 'Escape' && (gameState === 'playing' || gameState === 'countdown')) {
+        handleExitDrill();
+      }
+    };
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, [gameState, handleExitDrill]);
+
+  useEffect(() => {
+    const handlePointerLockChange = () => {
+      const locked = document.pointerLockElement === canvasRef.current;
+      setPointerLocked(locked);
+      if (!locked && (gameState === 'playing' || gameState === 'countdown')) {
+        handleExitDrill();
+      }
+    };
+    const handleFullscreenChange = () => {
+      const isFs = !!document.fullscreenElement;
+      setIsFullscreen(isFs);
+      if (!isFs && (gameState === 'playing' || gameState === 'countdown')) {
+        handleExitDrill();
+      }
+    };
     document.addEventListener('pointerlockchange', handlePointerLockChange);
-    return () => document.removeEventListener('pointerlockchange', handlePointerLockChange);
-  }, []);
+    document.addEventListener('fullscreenchange', handleFullscreenChange);
+    return () => {
+      document.removeEventListener('pointerlockchange', handlePointerLockChange);
+      document.removeEventListener('fullscreenchange', handleFullscreenChange);
+    };
+  }, [gameState, handleExitDrill]);
 
   useEffect(() => {
     const handleMouseMove = (e) => {
@@ -397,53 +363,53 @@ export default function AimTrainerClient() {
       if (e.target.tagName === 'BUTTON' || e.target.closest('button')) return;
       if (!containerRef.current || !containerRef.current.contains(e.target)) return;
 
-      if (gameState === 'playing') {
-        if (!pointerLocked && canvasRef.current) {
-          resumeDrill();
-        } else if (pointerLocked) {
-          const eRef = engine.current;
-          const ch = eRef.crosshair;
-          let hitIndex = -1;
+      if (gameState === 'playing' && pointerLocked) {
+        const eRef = engine.current;
+        const ch = eRef.crosshair;
+        let hitIndex = -1;
 
-          eRef.totalClicks++;
+        eRef.totalClicks++;
 
-          for (let i = 0; i < eRef.targets.length; i++) {
-            const tgt = eRef.targets[i];
-            const dist = Math.hypot(ch.x - tgt.x, ch.y - tgt.y);
-            if (dist <= tgt.radius + 8) {
-              hitIndex = i;
-              break;
-            }
+        for (let i = 0; i < eRef.targets.length; i++) {
+          const tgt = eRef.targets[i];
+          const dist = Math.hypot(ch.x - tgt.x, ch.y - tgt.y);
+          if (dist <= tgt.radius + 8) {
+            hitIndex = i;
+            break;
           }
+        }
 
-          if (hitIndex !== -1) {
-            const hitTgt = eRef.targets[hitIndex];
-            eRef.hits++;
-            eRef.combo++;
-            if (eRef.combo > eRef.bestCombo) eRef.bestCombo = eRef.combo;
+        if (hitIndex !== -1) {
+          const hitTgt = eRef.targets[hitIndex];
+          eRef.hits++;
+          eRef.combo++;
+          if (eRef.combo > eRef.bestCombo) eRef.bestCombo = eRef.combo;
 
-            const levelMult = 1 + getDifficultyProgress(eRef.level) * 0.5;
-            eRef.score += Math.round(100 * getComboMultiplier(eRef.combo) * levelMult);
+          const levelMult = 1 + getDifficultyProgress(eRef.level) * 0.5;
+          eRef.score += Math.round(100 * getComboMultiplier(eRef.combo) * levelMult);
+          eRef.timeLeft = Math.min(60, eRef.timeLeft + TIME_PER_HIT);
 
-            const rawLevel = Math.floor(eRef.score / POINTS_PER_LEVEL) + 1 + getComboBonusLevel(eRef.combo);
-            eRef.level = Math.max(eRef.level, rawLevel);
-            bestLevelRunRef.current = Math.max(bestLevelRunRef.current, eRef.level);
+          const rawLevel = (eRef.score / POINTS_PER_LEVEL) + 1;
+          eRef.level = Math.max(eRef.level, rawLevel);
+          bestLevelRunRef.current = Math.max(bestLevelRunRef.current, eRef.level);
 
-            drillAudio.playHit();
-            createExplosion(hitTgt.x, hitTgt.y, '#22c55e');
-            createHitMarker(ch.x, ch.y);
-            setUiScore(eRef.score);
+          drillAudio.playHit();
+          const hitColor = eRef.combo >= 10 ? '#34d399' : '#10b981';
+          createExplosion(hitTgt.x, hitTgt.y, hitColor);
+          eRef.hitRings.push(createHitRing(hitTgt.x, hitTgt.y, hitTgt.radius, hitColor));
+          createHitMarker(ch.x, ch.y);
+          setUiScore(eRef.score);
 
-            const cfg = getLevelConfig(eRef.level);
-            eRef.targets[hitIndex] = spawnTarget(eRef.logicalWidth, eRef.logicalHeight, cfg);
-          } else {
-            eRef.misses++;
-            eRef.combo = 0;
-            eRef.screenShake = 6;
-            triggerFlash();
-            drillAudio.playPenalty();
-            createExplosion(ch.x, ch.y, '#ef4444');
-          }
+          const cfg = getLevelConfig(eRef.level, eRef.combo);
+          eRef.targets[hitIndex] = spawnTarget(eRef.logicalWidth, eRef.logicalHeight, cfg);
+        } else {
+          eRef.misses++;
+          eRef.combo = 0;
+          eRef.screenShake = 6;
+          triggerFlash();
+          drillAudio.playPenalty();
+          createExplosion(ch.x, ch.y, '#ef4444');
+          if (drillPenalty.isEnabled(TIME_PER_HIT === 2)) eRef.timeLeft -= TIME_PENALTY;
         }
       }
     };
@@ -454,7 +420,7 @@ export default function AimTrainerClient() {
       document.removeEventListener('mousemove', handleMouseMove);
       document.removeEventListener('mousedown', handleMouseDown);
     };
-  }, [gameState, pointerLocked, universalSens, triggerFlash, createExplosion, createHitMarker, resumeDrill]);
+  }, [gameState, pointerLocked, universalSens, triggerFlash, createExplosion, createHitMarker]);
 
   useEffect(() => {
     const cvs = canvasRef.current;
@@ -527,7 +493,7 @@ export default function AimTrainerClient() {
           lastTimeRef.current = intTime;
         }
 
-        const config = getLevelConfig(e.level);
+        const config = getLevelConfig(e.level, e.combo);
 
         for (let i = e.targets.length - 1; i >= 0; i--) {
           const tgt = e.targets[i];
@@ -548,6 +514,7 @@ export default function AimTrainerClient() {
             triggerFlash();
             drillAudio.playPenalty();
             createExplosion(tgt.x, tgt.y, '#ef4444');
+            if (drillPenalty.isEnabled(TIME_PER_HIT === 2)) e.timeLeft -= TIME_PENALTY;
             e.targets[i] = spawnTarget(w, h, config);
           }
         }
@@ -577,14 +544,14 @@ export default function AimTrainerClient() {
 
       if (gameState === 'playing' || gameState === 'start') {
         for (const tgt of e.targets) {
-          const progress = Math.min(1, tgt.age / tgt.ttl);
-          const targetColor = e.combo >= 10 ? '#38bdf8' : '#00ff88';
-
-          drawPulseRing(ctx, tgt.x, tgt.y, tgt.radius, targetColor, progress);
+          const targetColor = e.combo >= 10 ? '#34d399' : '#10b981';
           drawTacticalTarget(ctx, tgt.x, tgt.y, tgt.radius, targetColor, false);
         }
       }
 
+      drawHitRings(ctx, e.hitRings, dt);
+
+      // Hit markers
       ctx.lineWidth = 2.0;
       for (let i = e.hitMarkers.length - 1; i >= 0; i--) {
         const hm = e.hitMarkers[i];
@@ -599,11 +566,33 @@ export default function AimTrainerClient() {
       }
       ctx.globalAlpha = 1.0;
 
+      // Circular arc particles with delta-time alpha decay
+      for (let i = e.particles.length - 1; i >= 0; i--) {
+        const p = e.particles[i];
+        p.x += p.vx;
+        p.y += p.vy;
+        p.life -= dt * 2.5;
+        if (p.life <= 0) {
+          e.particles.splice(i, 1);
+          continue;
+        }
+        ctx.save();
+        ctx.globalAlpha = Math.max(0, p.life);
+        ctx.fillStyle = p.color;
+        ctx.beginPath();
+        ctx.arc(p.x, p.y, p.radius || 2, 0, Math.PI * 2);
+        ctx.fill();
+        ctx.restore();
+      }
+
+      // Tactical Pro White Crosshair with drop shadow
       const ch = e.crosshair;
       if (ch.initialized && (gameState === 'playing' || gameState === 'start')) {
-        const activeColor = pointerLocked ? '#22c55e' : '#eab308';
-        ctx.strokeStyle = activeColor;
-        ctx.fillStyle = activeColor;
+        ctx.save();
+        ctx.shadowColor = 'rgba(0, 0, 0, 0.9)';
+        ctx.shadowBlur = 3;
+        ctx.strokeStyle = '#ffffff';
+        ctx.fillStyle = '#ffffff';
 
         ctx.lineWidth = 2;
         ctx.beginPath(); ctx.arc(ch.x, ch.y, 14, 0, Math.PI * 2); ctx.stroke();
@@ -618,6 +607,7 @@ export default function AimTrainerClient() {
         ctx.stroke();
 
         ctx.beginPath(); ctx.arc(ch.x, ch.y, 2, 0, Math.PI * 2); ctx.fill();
+        ctx.restore();
       }
 
       ctx.restore();
@@ -654,7 +644,7 @@ export default function AimTrainerClient() {
         navigator.share({ title: 'My Aim Trainer Elite Score', text, url }).catch(() => {});
       } else if (typeof navigator !== 'undefined' && navigator.clipboard) {
         navigator.clipboard.writeText(text);
-        alert('Score card copied to clipboard!');
+        alert(t('aimTrainer.scoreCopied', 'Score card copied to clipboard!'));
       }
     }
   }, [uiScore, bestScore, analytics, isNewBest]);
@@ -663,35 +653,35 @@ export default function AimTrainerClient() {
     <div className="min-h-screen bg-[#050508] text-white flex flex-col font-sans select-none">
       {/* ── MAIN CONTENT AREA ── */}
       <main className="flex-1 max-w-6xl w-full mx-auto px-4 py-6 flex flex-col gap-6">
-        {/* Title */}
+        {/* Title & AIO Snippet */}
         {!isFullscreen && (
-          <div className="text-center">
-            <h1 className="text-2xl sm:text-3xl font-black tracking-tight text-white uppercase">
-              Aim Trainer Elite
-            </h1>
-            <p className="text-xs text-slate-400 mt-1">
-              Dynamic Moving Targets &amp; Precision Click Timing • 15 Levels
-            </p>
+          <div className="text-left">
+            <h1 className="text-2xl sm:text-3xl font-black tracking-tight text-white">
+            {copy?.h1Prefix || null}
+            <span data-seo-kw="1">{copy?.h1Keyword || copy?.title || t('aimTrainer.title', 'Aim Trainer Elite')}</span>
+            {copy?.h1Suffix || null}
+            <span className="block text-sm font-semibold text-slate-400 mt-1">{copy?.subtitle || 'Online aim trainer for mouse accuracy, target acquisition, reaction speed, and precision click timing'}</span>
+          </h1>
           </div>
         )}
 
         {/* Live Stat Cards */}
         {!isFullscreen && (
-          <div className="grid grid-cols-4 gap-2.5 max-w-2xl mx-auto w-full">
+          <div className="grid grid-cols-4 gap-2 w-full">
             <div className="bg-[#0d0d18] border border-white/5 rounded-xl p-2.5 text-center">
-              <div className="text-[10px] uppercase font-bold text-slate-500 tracking-wider">Score</div>
+              <div className="text-[10px] uppercase font-bold text-slate-500 tracking-wider">{t('aimTrainer.score', 'Score')}</div>
               <div className="text-lg sm:text-xl font-black text-white tabular-nums">{uiScore}</div>
             </div>
             <div className="bg-[#0d0d18] border border-white/5 rounded-xl p-2.5 text-center">
-              <div className="text-[10px] uppercase font-bold text-slate-500 tracking-wider">Time</div>
-              <div className={`text-lg sm:text-xl font-black tabular-nums ${uiTimeLeft <= 10 ? 'text-red-400 animate-pulse' : 'text-white'}`}>{uiTimeLeft}s</div>
+              <div className="text-[10px] uppercase font-bold text-slate-500 tracking-wider">{t('aimTrainer.time', 'Time')}</div>
+              <div className={`text-lg sm:text-xl font-black tabular-nums ${uiTimeLeft <= 10 ? "text-red-400 animate-pulse" : "text-white"}`}>{uiTimeLeft}s</div>
             </div>
             <div className="bg-[#0d0d18] border border-white/5 rounded-xl p-2.5 text-center">
-              <div className="text-[10px] uppercase font-bold text-slate-500 tracking-wider">Accuracy</div>
+              <div className="text-[10px] uppercase font-bold text-slate-500 tracking-wider">{t('aimTrainer.accuracy', 'Accuracy')}</div>
               <div className="text-lg sm:text-xl font-black text-green-400 tabular-nums">{analytics.accuracy}%</div>
             </div>
             <div className="bg-[#0d0d18] border border-white/5 rounded-xl p-2.5 text-center">
-              <div className="text-[10px] uppercase font-bold text-slate-500 tracking-wider">Best Score</div>
+              <div className="text-[10px] uppercase font-bold text-slate-500 tracking-wider">{t('aimTrainer.bestScore', 'Best Score')}</div>
               <div className="text-lg sm:text-xl font-black text-amber-400 tabular-nums">{bestScore}</div>
             </div>
           </div>
@@ -701,10 +691,10 @@ export default function AimTrainerClient() {
         <div 
           ref={containerRef} 
           onContextMenu={(e) => { if (gameActiveRef.current) e.preventDefault(); }}
-          className={`relative overflow-hidden flex flex-col transition-all duration-150 select-none bg-[#080811] text-white border border-white/10 ${
+          className={`overflow-hidden flex flex-col select-none bg-[#080811] text-white border border-white/10 ${
             isFullscreen 
-              ? 'fixed inset-0 z-[100] w-screen h-[100dvh] bg-[#080811] rounded-none border-none flex flex-col items-center justify-center' 
-              : 'w-full rounded-2xl bg-[#080811] aspect-video min-h-[460px] sm:min-h-[500px] max-h-[88vh] relative overflow-hidden flex flex-col'
+              ? "fixed inset-0 z-[100] w-screen h-[100dvh] bg-[#080811] rounded-none border-none flex flex-col items-center justify-center" 
+              : "w-full rounded-2xl bg-[#080811] aspect-video min-h-[460px] sm:min-h-[500px] max-h-[88vh] relative overflow-hidden flex flex-col"
           }`}
           style={{ touchAction: gameActiveRef.current ? 'none' : 'auto' }}
         >
@@ -717,12 +707,12 @@ export default function AimTrainerClient() {
           {(gameState === 'playing' || gameState === 'countdown') && (
             <>
               <div className="absolute top-4 left-4 z-30 pointer-events-none">
-                <p className="text-[10px] font-semibold uppercase tracking-wider text-white/50">Score</p>
+                <p className="text-[10px] font-semibold uppercase tracking-wider text-white/50">{t('aimTrainer.score', 'Score')}</p>
                 <p className="text-2xl sm:text-3xl font-bold text-white tabular-nums leading-tight">{uiScore}</p>
               </div>
               <div className="absolute top-4 right-4 z-30 pointer-events-none text-right">
-                <p className="text-[10px] font-semibold uppercase tracking-wider text-white/50">Time</p>
-                <p className={`text-2xl sm:text-3xl font-bold tabular-nums leading-tight ${uiTimeLeft <= 10 ? 'text-red-400' : 'text-white'}`}>{uiTimeLeft}s</p>
+                <p className="text-[10px] font-semibold uppercase tracking-wider text-white/50">{t('aimTrainer.time', 'Time')}</p>
+                <p className={`text-2xl sm:text-3xl font-bold tabular-nums leading-tight ${uiTimeLeft <= 10 ? "text-red-400" : "text-white"}`}>{uiTimeLeft}s</p>
               </div>
             </>
           )}
@@ -761,27 +751,9 @@ export default function AimTrainerClient() {
             </div>
           )}
 
-          {/* PAUSE OVERLAY IF POINTER LOCK LOST DURING PLAY */}
-          {gameState === 'playing' && !pointerLocked && (
-            <div 
-              className="absolute inset-0 z-40 bg-black/70 backdrop-blur-sm flex items-center justify-center cursor-pointer"
-              onClick={(e) => { 
-                e.stopPropagation(); 
-                resumeDrill();
-              }}
-            >
-              <div className="text-center animate-pulse pointer-events-none">
-                <AlertCircle className="w-12 h-12 text-green-400 mx-auto mb-3" />
-                <h2 className="text-2xl font-black text-white tracking-widest uppercase mb-1">Game Paused</h2>
-                <p className="text-xs text-gray-300 font-medium">Click to resume — fullscreen and cursor lock will re-engage.</p>
-              </div>
-            </div>
-          )}
-
           <canvas 
             ref={canvasRef} 
-            onClick={() => { if (gameState === 'playing' && !pointerLocked) resumeDrill(); }}
-            className={`block absolute top-0 left-0 w-full h-full touch-none z-10 ${gameState === 'playing' ? 'cursor-none' : ''}`} 
+            className={`block absolute top-0 left-0 w-full h-full touch-none z-10 ${gameState === "playing" ? "cursor-none" : ""}`}
           />
 
           {/* START MODAL */}
@@ -789,18 +761,9 @@ export default function AimTrainerClient() {
             <FpsStartCard
               icon={Crosshair}
               accent="emerald"
-              title="Aim Trainer Elite"
-              subtitle="Dynamic Moving Targets & Precision Click Timing • 15 Levels"
-              rules={[
-                { icon: Target, accent: 'emerald', title: 'Hit Targets (+100 PTS)', text: 'Acquire and click moving targets rapidly before they disappear' },
-                { icon: Zap, accent: 'red', title: 'Miss / Timeout Penalty', text: 'Missing or timing out resets your combo streak' },
-              ]}
-              sensitivity={{ value: universalSens, onChange: setUniversalSens, cmPer360 }}
-              stats={[
-                { icon: Trophy, label: 'Best Score', value: bestScore, color: 'text-white', accent: 'slate' },
-                { icon: Flame, label: 'Best Combo', value: `${bestCombo}x`, color: 'text-emerald-400', accent: 'emerald' },
-                { icon: TrendingUp, label: 'Best Level', value: `Lv. ${bestLevel}`, color: 'text-blue-400', accent: 'blue' },
-              ]}
+              title={copy?.title || t('aimTrainer.title', 'Aim Trainer Elite')}
+              subtitle={copy?.subtitle || t('aimTrainer.subtitle', 'Dynamic Moving Targets & Precision Click Timing • Endless Level Progression')}
+              buttonText={copy?.startButtonText || "START DRILL"}
               isTouchOnlyDevice={isTouchOnlyDevice}
               onStart={enterDrill}
             />
@@ -808,191 +771,125 @@ export default function AimTrainerClient() {
 
           {/* COUNTDOWN OVERLAY */}
           {gameState === 'countdown' && (
-            <DrillCountdown value={countdownValue} subtitle="GET READY" />
+            <DrillCountdown value={countdownValue} subtitle={t('aimTrainer.getReady', 'GET READY')} />
           )}
 
-          {/* END SCREEN */}
+          {/* END SCREEN — Universal Result Card */}
           {gameState === 'gameOver' && analytics.grade && (
-            <div className="absolute inset-0 z-40 flex bg-neutral-950/98 select-none font-sans" style={{ background: 'rgba(5,5,8,0.97)' }} onPointerDown={e => e.stopPropagation()}>
-              
-              {/* Left Grade Panel */}
-              <div className="w-[36%] flex flex-col items-center justify-center gap-1 border-r border-white/5 px-4" style={{ background: 'radial-gradient(ellipse 260px 200px at 50% 30%, rgba(34,197,94,.12), transparent 70%)' }}>
-                {isNewBest && (
-                  <span className="text-[9.5px] font-bold text-yellow-400 bg-yellow-500/10 border border-yellow-500/25 px-2.5 py-0.5 rounded-full mb-1 animate-pulse">
-                    NEW BEST
-                  </span>
-                )}
-                <div className={`text-5xl sm:text-6xl font-black leading-none ${analytics.grade.color}`}>
-                  {analytics.grade.letter}
-                </div>
-                <div className="text-[10px] uppercase tracking-widest text-slate-500 text-center font-bold mt-1">
-                  {analytics.grade.label}
-                </div>
-                <div className="text-3xl sm:text-4xl font-black text-white mt-2 tabular-nums">
-                  {uiScore}
-                </div>
-                <div className="text-[9px] uppercase tracking-widest text-slate-500">Points</div>
-              </div>
-
-              {/* Right Stats & Actions Panel */}
-              <div className="flex-1 flex flex-col justify-center gap-3 px-6 py-4 min-w-0">
-                
-                {/* 4 Stat Tiles */}
-                <div className="grid grid-cols-2 sm:grid-cols-4 gap-2">
-                  <div className="bg-black border border-white/5 p-2.5 rounded-xl text-center">
-                    <p className="text-sm sm:text-base font-black text-white">{analytics.accuracy}%</p>
-                    <p className="text-[7.5px] sm:text-[8.5px] font-bold uppercase tracking-wider text-gray-400 mt-0.5">Accuracy</p>
-                  </div>
-                  <div className="bg-black border border-white/5 p-2.5 rounded-xl text-center">
-                    <p className="text-sm sm:text-base font-black text-white">{analytics.hits}</p>
-                    <p className="text-[7.5px] sm:text-[8.5px] font-bold uppercase tracking-wider text-gray-400 mt-0.5">Target Hits</p>
-                  </div>
-                  <div className="bg-black border border-white/5 p-2.5 rounded-xl text-center">
-                    <p className="text-sm sm:text-base font-black text-white">{analytics.bestCombo}x</p>
-                    <p className="text-[7.5px] sm:text-[8.5px] font-bold uppercase tracking-wider text-gray-400 mt-0.5">Max Combo</p>
-                  </div>
-                  <div className="bg-black border border-white/5 p-2.5 rounded-xl text-center">
-                    <p className="text-sm sm:text-base font-black text-white">Lv. {analytics.levelReached}</p>
-                    <p className="text-[7.5px] sm:text-[8.5px] font-bold uppercase tracking-wider text-gray-400 mt-0.5">Peak Level</p>
-                  </div>
-                </div>
-
-                {/* Action Buttons */}
-                <div className="flex gap-2">
-                  <button 
-                    onClick={enterDrill} 
-                    className="flex-1 py-3 rounded-[13px] bg-gradient-to-r from-green-500 to-emerald-600 text-white font-bold text-xs uppercase tracking-wide cursor-pointer transition-transform active:scale-[0.98] shadow-md flex items-center justify-center gap-1.5"
-                  >
-                    <RefreshCw className="w-3.5 h-3.5" /> Play Again
-                  </button>
-                  <button 
-                    onClick={shareScore} 
-                    className="w-11 flex-shrink-0 rounded-[13px] bg-white/[0.04] border border-white/10 flex items-center justify-center text-slate-400 hover:text-white cursor-pointer active:scale-90 transition-transform" 
-                    title="Share Score"
-                  >
-                    <Share2 className="w-4 h-4" />
-                  </button>
-                  <button 
-                    onClick={handleExitDrill} 
-                    className="w-11 flex-shrink-0 rounded-[13px] bg-white/[0.04] border border-white/10 flex items-center justify-center text-slate-400 hover:text-white cursor-pointer active:scale-90 transition-transform" 
-                    title="Exit Fullscreen & Return"
-                  >
-                    <LogOut className="w-4 h-4 text-red-400" />
-                  </button>
-                </div>
-
-              </div>
-            </div>
+            <DrillResultCard
+              accent="emerald"
+              grade={analytics.grade}
+              score={uiScore}
+              isNewBest={isNewBest}
+              playAgainText={copy?.playAgainText || "Play Again"}
+              shareText={copy?.shareText || "Share Score"}
+              exitText={copy?.exitText || "Exit"}
+              stats={[
+                { value: analytics.accuracy, suffix: "%", label: copy?.accuracyLabel || t('aimTrainer.accuracy', 'Accuracy') },
+                { value: analytics.hits, label: copy?.targetHitsLabel || t('aimTrainer.targetHits', 'Target Hits') },
+                { value: `${analytics.bestCombo}x`, label: copy?.maxComboLabel || t('aimTrainer.maxCombo', 'Max Combo') },
+                { value: `Lv. ${analytics.levelReached}`, label: copy?.peakLevelLabel || t('aimTrainer.peakLevel', 'Peak Level') },
+              ]}
+              onPlayAgain={enterDrill}
+              onBeforeShare={() => setIsFullscreen(false)}
+              onShare={shareScore}
+              onExit={handleExitDrill}
+            />
           )}
         </div>
 
+        {/* Drill Caption */}
+        {!isFullscreen && (
+          <p className="text-xs text-slate-400 leading-relaxed -mt-2">
+            {copy?.caption || t('aimTrainer.caption', 'Acquire and click targets as quickly and accurately as possible before they expire.')}
+          </p>
+        )}
+
         {/* ── ACCORDIONS ── */}
         {!isFullscreen && (
-          <div className="[&>div]:!mt-0">
+          <div className="rounded-2xl border border-slate-900 bg-[#070b13] shadow-xl p-3 sm:p-4 [&>div]:!mt-0 font-sans">
             <DrillAccordion
               id="rules"
-              title="Drill Instructions & Scoring System"
+              title={copy?.rulesTitle || t('aimTrainer.rulesTitle', 'Drill Instructions & Scoring System')}
               isOpen={openAccordion === 'rules'}
               onToggle={() => setOpenAccordion(openAccordion === 'rules' ? null : 'rules')}
             >
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
-                {RULES_ITEMS.map((item, i) => (
-                  <div key={i} className="bg-black p-4 rounded-xl border border-white/10">
-                    <p className="text-sm font-bold text-white mb-1">{item.title}</p>
-                    <p className="text-xs text-gray-300 leading-relaxed">{item.text}</p>
-                  </div>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                {(copy?.rulesItems || RULES_ITEMS).map((item, i) => (
+                  <RuleItem key={i} num={item.num} text={item.text} highlight={item.highlight} result={item.result} />
                 ))}
               </div>
             </DrillAccordion>
 
             <DrillAccordion
               id="about"
-              title="About Aim Trainer Elite"
+              title={copy?.aboutTitle || t('aimTrainer.aboutTitle', 'About Aim Trainer Elite')}
               isOpen={openAccordion === 'about'}
               onToggle={() => setOpenAccordion(openAccordion === 'about' ? null : 'about')}
             >
-              <div className="space-y-8">
-                <div className="space-y-4">
-                  {ABOUT_TEXT.split('\n\n').map((para, i) => (
-                    <p key={i} className="text-sm leading-relaxed text-gray-300">{para}</p>
-                  ))}
-                </div>
+              <div className="space-y-6">
+                <section>
+                  <h3 className="text-base font-bold text-white mb-2 flex items-center gap-2">
+                    <Target className="w-4 h-4 text-emerald-400" /> {t('aimTrainer.aboutHeading', 'What Is Aim Trainer Elite?')}
+                  </h3>
+                  <p className="text-sm leading-relaxed mb-3 text-slate-300">
+                    {t('aimTrainer.aboutP1', "An aim trainer measures how quickly and how accurately you can move a mouse cursor onto a target and click it. Fitts's Law describes the trade-off it exposes: movement time grows with the logarithm of the distance to a target divided by that target's width, so a target half the size costs about the same extra time as one twice as far away (Fitts, 1954; MacKenzie, 1992).")}
+                  </p>
+                  <p className="text-sm leading-relaxed mb-3 text-slate-300">
+                    {t('aimTrainer.aboutP2', "Aim Trainer Elite is a dynamic target acquisition drill engineered to isolate and refine your visual-motor latency, micro-flick precision, and click timing under accelerating difficulty. Grounded in Fitts's Law and two-component motor control theory, targets dynamically shrink, accelerate, and expire across the canvas.")}
+                  </p>
+                  <p className="text-sm leading-relaxed text-slate-400">
+                    {t('aimTrainer.aboutP3', "By balancing rapid ballistic cursor propulsion with terminal deceleration control, players train muscle memory and eliminate panic-clicking under intense competitive conditions.")}
+                  </p>
+                </section>
 
                 <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
                   <div className="p-4 rounded-xl border border-gray-800 bg-white/[0.02]">
                     <div className="flex items-center gap-2.5 mb-2">
-                      <div className="w-7 h-7 rounded-lg bg-blue-600 flex items-center justify-center"><Users className="w-3.5 h-3.5 text-white" /></div>
-                      <h5 className="text-xs font-bold text-white">Who Should Use This?</h5>
+                      <div className="w-7 h-7 rounded-lg bg-emerald-600 flex items-center justify-center"><Users className="w-3.5 h-3.5 text-white" /></div>
+                      <h4 className="text-xs font-bold text-white">{t('aimTrainer.card1Title', 'Who Should Use This?')}</h4>
                     </div>
-                    <p className="text-xs text-gray-300 leading-relaxed">FPS gamers sharpening Valorant/CS2/Apex click accuracy, esports hopefuls building warmup routines, and anyone wanting faster, steadier mouse control.</p>
+                    <p className="text-xs text-gray-300 leading-relaxed">{t('aimTrainer.card1Desc', 'Competitive tactical shooter players (Valorant, CS2, Apex Legends) and visual-motor athletes refining mouse precision.')}</p>
                   </div>
                   <div className="p-4 rounded-xl border border-gray-800 bg-white/[0.02]">
                     <div className="flex items-center gap-2.5 mb-2">
-                      <div className="w-7 h-7 rounded-lg bg-emerald-600 flex items-center justify-center"><TrendingUp className="w-3.5 h-3.5 text-white" /></div>
-                      <h5 className="text-xs font-bold text-white">Skills Improved</h5>
+                      <div className="w-7 h-7 rounded-lg bg-cyan-600 flex items-center justify-center"><TrendingUp className="w-3.5 h-3.5 text-white" /></div>
+                      <h4 className="text-xs font-bold text-white">{t('aimTrainer.card2Title', 'Skills Improved')}</h4>
                     </div>
-                    <p className="text-xs text-gray-300 leading-relaxed">Mouse accuracy, target acquisition speed, eye-hand coordination, and click timing under pressure.</p>
+                    <p className="text-xs text-gray-300 leading-relaxed">{t('aimTrainer.card2Desc', 'Target acquisition speed, micro-flick accuracy, ballistic impulse control, and click timing synchronization.')}</p>
                   </div>
                   <div className="p-4 rounded-xl border border-gray-800 bg-white/[0.02]">
                     <div className="flex items-center gap-2.5 mb-2">
-                      <div className="w-7 h-7 rounded-lg bg-purple-600 flex items-center justify-center"><MousePointer2 className="w-3.5 h-3.5 text-white" /></div>
-                      <h5 className="text-xs font-bold text-white">Click Timing Precision</h5>
+                      <div className="w-7 h-7 rounded-lg bg-purple-600 flex items-center justify-center"><Zap className="w-3.5 h-3.5 text-white" /></div>
+                      <h4 className="text-xs font-bold text-white">{t('aimTrainer.card3Title', "Fitts's Law Tuning")}</h4>
                     </div>
-                    <p className="text-xs text-gray-300 leading-relaxed">Center your crosshair fully over the shrinking hitbox before firing — early or over-flicked clicks break your combo chain.</p>
+                    <p className="text-xs text-gray-300 leading-relaxed">{t('aimTrainer.card3Desc', 'Progressively trains high Index of Difficulty (ID) movements where target size contracts and distance scales.')}</p>
                   </div>
                 </div>
               </div>
             </DrillAccordion>
-
-            <DrillAccordion
-              id="faq"
-              title="Frequently Asked Questions"
-              isOpen={openAccordion === 'faq'}
-              onToggle={() => setOpenAccordion(openAccordion === 'faq' ? null : 'faq')}
-            >
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                {FAQ_ITEMS.map((item, i) => (
-                  <div key={i} className="bg-[#05060b] border border-gray-800 rounded-xl p-5">
-                    <h4 className="text-sm font-bold text-gray-200 mb-2">{item.q}</h4>
-                    <p className="text-xs text-gray-400 leading-relaxed">{item.a}</p>
-                  </div>
-                ))}
-              </div>
-            </DrillAccordion>
           </div>
         )}
-
-        {/* ── RELATED MOTOR DRILLS ── */}
-        {!isFullscreen && (
-          <section className="mt-4">
-            <h2 className="text-sm font-bold text-slate-400 uppercase tracking-wider mb-3 font-sans">
-              Related Motor &amp; FPS Drills
-            </h2>
-            <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
-              {RELATED_DRILLS.map((drill) => (
-                <Link
-                  key={drill.id}
-                  href={drill.href}
-                  className="group bg-[#0c0c16] border border-white/5 hover:border-green-500/40 rounded-xl p-3.5 transition-all duration-200 hover:-translate-y-0.5 flex flex-col justify-between"
-                >
-                  <div>
-                    <div className="text-[10px] font-bold text-green-400 uppercase tracking-wider mb-1">{drill.cat}</div>
-                    <div className="text-xs font-bold text-white group-hover:text-green-300 transition-colors">{drill.name}</div>
-                    <div className="text-[11px] text-slate-400 mt-1 line-clamp-2 leading-relaxed">{drill.desc}</div>
-                  </div>
-                  <div className="text-[10px] font-bold text-slate-500 group-hover:text-green-400 mt-3 flex items-center gap-1 transition-colors">
-                    Train Drill <span>→</span>
-                  </div>
-                </Link>
-              ))}
-            </div>
-          </section>
-        )}
-
-        {/* ── FOOTER ── */}
-        {!isFullscreen && <DrillFooter />}
-
       </main>
+    </div>
+  );
+}
+
+// === Subcomponents ===
+function RuleItem({ num, text, highlight = '', result }) {
+  return (
+    <div className="flex items-center gap-2.5 sm:gap-3 bg-black px-3 py-2 sm:px-4 sm:py-2.5 rounded-xl border border-white/10 shadow-sm font-sans">
+      <div className="w-6 h-6 sm:w-7 sm:h-7 rounded-lg bg-white/10 border border-white/20 flex items-center justify-center text-white text-xs sm:text-sm font-black shadow flex-shrink-0">
+        {num}
+      </div>
+      <div className="flex-1 min-w-0 flex items-center justify-between gap-2">
+        <p className="text-xs sm:text-sm font-medium text-gray-200 font-sans truncate">
+          {text}{highlight && <span className="font-bold text-white"> {highlight}</span>}
+        </p>
+        <div className="text-[11px] sm:text-xs font-bold px-2 py-0.5 sm:px-2.5 sm:py-1 rounded-md bg-[#050811] border border-white/10 text-white whitespace-nowrap shadow-inner flex-shrink-0">
+          {result}
+        </div>
+      </div>
     </div>
   );
 }

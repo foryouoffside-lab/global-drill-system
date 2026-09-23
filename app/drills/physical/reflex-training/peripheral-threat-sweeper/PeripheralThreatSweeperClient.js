@@ -15,23 +15,31 @@ import {
 import generateShareCard, { shareScoreCard } from '../../../../../components/ShareScoreCard';
 import { getPlayerName } from '../../../../../lib/leaderboard';
 import { drillAudio } from '../../../../../lib/drillAudio';
+import { useDrillSensitivity } from '../../../../../lib/drillSensitivity';
 import { drillFlash } from '../../../../../lib/drillFlash';
-import { MAX_LEVEL, getStartLevel, getNextLevel, getDifficultyProgress, getComboBonusLevel } from '../../../../../lib/drillDifficulty';
+import { drillTimeout } from '../../../../../lib/drillTimeout';
+import { drillPenalty } from '../../../../../lib/drillPenalty';
+import { MAX_LEVEL, getStartLevel, getDifficultyProgress, ramp } from '../../../../../lib/drillDifficulty';
 import { getComboMultiplier, getFpsScoreGrade } from '../../../../../lib/scoringEngine';
-import { createBackdropCache, getCanvasDpr, drawPulseRing, drawTacticalTarget } from '../../../../../lib/canvasFx';
+import { createBackdropCache, getCanvasDpr, drawPulseRing, drawTacticalTarget, createHitRing, drawHitRings } from '../../../../../lib/canvasFx';
 import useUnexpectedExitGuard from '../../../../../lib/useUnexpectedExitGuard';
 import DrillFooter from '../../../../../components/drill/DrillFooter';
 import DrillCountdown from '../../../../../components/drill/DrillCountdown';
 import DrillAccordion from '../../../../../components/drill/DrillAccordion';
+import DrillRuleItem from '../../../../../components/drill/DrillRuleItem';
 import FpsStartCard from '../../../../../components/drill/FpsStartCard';
+import DrillResultCard from '../../../../../components/drill/DrillResultCard';
+import useImmersiveMode from '@/lib/useImmersiveMode';
 
 // ============================================================
 // TUNING CONSTANTS
 // ============================================================
-const DRILL_DURATION = 45; // 45 seconds fixed duration
-const POINTS_PER_LEVEL = 250; // Aggressive progression to L15
-const ELITE_SCORE = 17000; // Target score for S grade
-const STORAGE_KEY = 'skilldrills_physical_peripheral_sweeper_v3';
+const DRILL_DURATION = 45; // starting clock only; a run grows past this
+const POINTS_PER_LEVEL = 1750; // 250 -> 1750 (7x)
+const ELITE_SCORE = 24000; // 17000 -> 24000 (1.4x)
+const TIME_PER_HIT = 2; // +2s on threat sweep, capped at 60s
+const TIME_PENALTY = 1; // -1s on miss / core breach (opt-in gated)
+const STORAGE_KEY = 'skilldrills_physical_peripheral_sweeper_v4';
 
 const getSavedData = () => {
   try {
@@ -49,48 +57,63 @@ const saveData = (data) => {
   } catch (e) {}
 };
 
+// Continuous unbounded difficulty with streak heat
+const getLevelConfig = (level, combo = 0) => {
+  const p = getDifficultyProgress(level); // 0 at L1, 1 at L15, unbounded above
+  const heat = (getComboMultiplier(combo) - 1) / 2;
+  return {
+    baseSpeed: ramp(80, 520, p) * (1 + heat * 0.25),
+    spawnInterval: Math.max(0.20, ramp(1.4, 0.28, p) * (1 - heat * 0.25)),
+    hitPad: Math.max(16, ramp(26, 18, p)),
+  };
+};
 
-// ============================================================
-// ACCORDION DATA
-// ============================================================
 const RULES_ITEMS = [
-  { title: "Threat Interception", text: "Click threat node in outer vision to score +100 PTS scaled with combo multiplier." },
+  { title: "Threat Interception", text: "Click threat node in outer vision to score +100 PTS scaled with combo multiplier (+2s per sweep, max 60s)." },
   { title: "Combo System", text: "Chain unbroken threat sweeps to build combo multiplier up to 3.0x max." },
-  { title: "Level Progression", text: "Score increases level every 250 PTS. Threat speed & spawn density accelerate." },
-  { title: "Core Breach / Miss", text: "Missing threat or allowing core breach resets combo streak to 1.0x." }
-];
-
-const FAQ_ITEMS = [
-  { q: "What is peripheral vision training?", a: "Peripheral vision training involves exercises designed to expand your active field of view, allowing your brain to process and react to visual stimuli occurring outside of your direct central focus." },
-  { q: "How does the Peripheral Threat Sweeper work?", a: "You must keep your gaze anchored to a central core while identifying and intercepting threat nodes that spawn at the screen's edges and move inward, bridging the gap between visual detection and motor execution." },
-  { q: "Why is peripheral awareness important for gamers?", a: "In esports titles like Valorant, CS2, and Apex Legends, players must keep their crosshair focused centrally while simultaneously monitoring the minimap, ammo, and flanking enemies. Strong peripheral vision reduces tunnel vision and reaction delay." },
-  { q: "What are the different threat types?", a: "As the game difficulty adapts, you will face Standard threats (Red, linear path), Fast threats (Orange, moving 1.6x speed), and Evasive threats (Purple, wobbling and altering their trajectory)." },
-  { q: "How does difficulty scale in Peripheral Threat Sweeper?", a: "As your score increases, the level rises up to Level 15. Threat movement speed accelerates from 80 px/s up to 500 px/s, spawn interval drops from 1.4s down to 0.3s, and evasive wobbling threats appear more frequently." },
-  { q: "What happens when I miss or allow a core breach?", a: "Missing a threat or allowing a core breach resets your combo multiplier back to 1.0x and triggers a red flash overlay. There are no score deductions or time penalties." },
-  { q: "How long does each session run?", a: "Each session runs for a fixed 45 seconds. The game timer counts down steadily from 45s to 0s, providing a standard, reproducible performance benchmark." },
-  { q: "Does this game help with Valorant or CS2 aim?", a: "Yes. It trains rapid peripheral target acquisition and micro-flicks. Spotting enemy movement off-center without losing crosshair control is critical for tactical shooter success." },
-  { q: "What is a good score in Peripheral Threat Sweeper?", a: "Scoring 8,000+ points earns a Gold or Platinum grade, while reaching 17,000+ points with 90%+ accuracy places you in the Master tier." },
-  { q: "Is this reflex game free to play?", a: "Yes, Peripheral Threat Sweeper on SkillDrills is 100% free, ad-free, and runs entirely in your web browser with zero downloads." }
-];
-
-const RELATED_DRILLS = [
-  { id: "stability-challenge", name: "Stability Challenge", cat: "Physical Balance", desc: "Test static and dynamic balance holding capabilities.", href: "/drills/physical/balance-training/stability-challenge" },
-  { id: "complex-pattern", name: "Complex Pattern", cat: "Physical Coordination", desc: "Train complex multi-limb movement patterns.", href: "/drills/physical/coordination/complex-pattern" },
-  { id: "cross-body-movement", name: "Cross-Body Movement", cat: "Physical Coordination", desc: "Improve bilateral motor coordination and cross-body tracking.", href: "/drills/physical/coordination/cross-body-movement" },
-  { id: "dynamic-grid-evasion", name: "Dynamic Grid Evasion", cat: "Physical Coordination", desc: "Evade dynamic grid hazards with rapid motor adjustments.", href: "/drills/physical/coordination/dynamic-grid-evasion" },
-  { id: "quick-dodge", name: "Quick Dodge", cat: "Reflex Training", desc: "Evade homing obstacles using 1:1 raw mouse input.", href: "/drills/physical/reflex-training/quick-dodge" }
+  { title: "Level Progression", text: "Score increases level continuously. Threat speed & spawn density accelerate dynamically." },
+  { title: "Core Breach / Miss", text: "Missing threat or allowing core breach resets combo streak (and deducts 0.8s if enabled in settings)." }
 ];
 
 // ============================================================
-// MAIN COMPONENT
+// ABOUT & BIOMECHANICAL RESEARCH DATA
 // ============================================================
-export default function PeripheralThreatSweeperClient() {
+const ABOUT_SECTIONS = [
+  {
+    icon: Eye,
+    title: "Covert Attentional Orienting & Peripheral Scanning",
+    subtitle: "Posner spatial cueing without foveal fixation shifts",
+    content: "Peripheral threat interception trains covert orienting of visual attention (Posner, 1980). Rather than constantly shifting primary eye gaze away from the central core, players maintain central fixation while covertly allocating attentional resources across the 360-degree radial periphery. Detail falls away sharply from the centre of gaze, but attention can still be shifted to a peripheral location while the eyes stay put, and a valid cue to that location speeds responses up (Posner, 1980)."
+  },
+  {
+    icon: Target,
+    title: "Pre-Attentive Feature Integration & Saliency Maps",
+    subtitle: "Treisman parallel visual search across radial angles",
+    content: "Newly spawned inward-moving threat vectors trigger pre-attentive motion and color feature detectors across the peripheral retina (Treisman & Gelade, 1980). High-contrast red and orange threat nodes generate instantaneous pop-out effects, alerting the parietal cortex to compute intercept angles. A single distinguishing feature such as colour is found in roughly the same time however many distractors surround it, while a target needing two features combined has to be searched for (Treisman & Gelade, 1980) — which is what makes some threats here easy to catch at the edge and others not."
+  },
+  {
+    icon: Shield,
+    title: "Two-Component Ballistic Flick & Core Protection",
+    subtitle: "Woodworth rapid motor snaps coupled with terminal capture adjustments",
+    content: "Target sweeps demand Woodworth\'s (1899) classic two-component motor control: an initial open-loop ballistic wrist snap covering 85%+ of the radial distance, followed by fine visual adjustments to intercept targets before they breach the central perimeter."
+  },
+  {
+    icon: Activity,
+    title: "Useful Field of View & Multi-Vector Bandwidth",
+    subtitle: "Expanding cognitive processing area under high-density spawn rates",
+    content: "As levels scale, spawn intervals compress from 1.4s down to 0.20s, and threat velocities accelerate up to 520 px/s. This expands the functional Useful Field of View (UFOV), conditioning the central nervous system to process multi-vector spatial hazards simultaneously."
+  }
+];
+
+export default function PeripheralThreatSweeperClient({ copy = {} } = {}) {
   const [gameState, setGameState] = useState('start'); // 'start' | 'countdown' | 'playing' | 'gameOver'
   const [isFullscreen, setIsFullscreen] = useState(false);
+  useImmersiveMode(isFullscreen); // locks the page behind while the drill fills the screen
   const [soundEnabled, setSoundEnabled] = useState(true);
   const [flashEnabled, setFlashEnabled] = useState(true);
+  const [penaltyEnabled, setPenaltyEnabled] = useState(false);
   const [pointerLocked, setPointerLocked] = useState(false);
-  const [universalSens, setUniversalSens] = useState(1.0);
+  const universalSens = useDrillSensitivity();
   const [openAccordion, setOpenAccordion] = useState(null);
   const [isTouchOnlyDevice, setIsTouchOnlyDevice] = useState(false);
   const [countdownValue, setCountdownValue] = useState(3);
@@ -99,6 +122,7 @@ export default function PeripheralThreatSweeperClient() {
   // HUD & Best Stats State
   const [uiScore, setUiScore] = useState(0);
   const [uiTimeLeft, setUiTimeLeft] = useState(DRILL_DURATION);
+  const [uiLevel, setUiLevel] = useState(1);
   const [bestScore, setBestScore] = useState(0);
   const [bestCombo, setBestCombo] = useState(0);
   const [bestLevel, setBestLevel] = useState(1);
@@ -126,11 +150,9 @@ export default function PeripheralThreatSweeperClient() {
     nextThreatId: 0,
     score: 0, level: 1, combo: 0, timeLeft: DRILL_DURATION,
     successfulSweeps: 0, missedClicks: 0, breaches: 0, maxCombo: 0, totalActions: 0,
-    spawnTimer: 0, particles: [], hitMarkers: [], screenShake: 0, shieldGlow: 0,
+    spawnTimer: 0, particles: [], hitMarkers: [], hitRings: [], screenShake: 0, shieldGlow: 0,
     logicalWidth: 800, logicalHeight: 450, peakSpeed: 80
   });
-
-  const cmPer360 = (30 / universalSens).toFixed(1);
 
   const triggerFlash = useCallback(() => {
     if (!drillFlash.isEnabled()) return;
@@ -143,14 +165,10 @@ export default function PeripheralThreatSweeperClient() {
     if (typeof window !== 'undefined') {
       setSoundEnabled(drillAudio.isEnabled());
       setFlashEnabled(drillFlash.isEnabled());
+      setPenaltyEnabled(drillPenalty.isEnabled(TIME_PER_HIT === 2));
       const hasFinePointer = window.matchMedia('(pointer: fine)').matches;
       const isTouchCapable = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
       setIsTouchOnlyDevice(isTouchCapable && !hasFinePointer);
-
-      try {
-        const savedSens = localStorage.getItem('threatSweeper_sens');
-        if (savedSens) setUniversalSens(parseFloat(savedSens));
-      } catch (e) {}
 
       const saved = getSavedData();
       setBestScore(saved.bestScore || 0);
@@ -165,27 +183,14 @@ export default function PeripheralThreatSweeperClient() {
     };
   }, []);
 
-  useEffect(() => {
-    if (gameState !== 'playing') {
-      try { localStorage.setItem('threatSweeper_sens', universalSens.toString()); } catch (e) {}
-    }
-  }, [universalSens, gameState]);
-
-  useEffect(() => {
-    const handleFullscreenChange = () => setIsFullscreen(!!document.fullscreenElement);
-    document.addEventListener('fullscreenchange', handleFullscreenChange);
-    return () => document.removeEventListener('fullscreenchange', handleFullscreenChange);
-  }, []);
-
   const handleExitDrill = useCallback(async () => {
     markIntentionalExit();
     countdownTimeoutsRef.current.forEach(clearTimeout);
     countdownTimeoutsRef.current = [];
     startingRef.current = false;
+    gameActiveRef.current = false;
 
-    if (document.fullscreenElement) {
-      await document.exitFullscreen().catch(() => {});
-    }
+    setIsFullscreen(false);
     if (document.pointerLockElement) {
       document.exitPointerLock();
     }
@@ -197,27 +202,9 @@ export default function PeripheralThreatSweeperClient() {
     onUnexpectedExit: handleExitDrill,
   });
 
-  const resumeDrill = useCallback(async () => {
-    if (containerRef.current && !document.fullscreenElement) {
-      try { await containerRef.current.requestFullscreen(); } catch (e) {}
-    }
-    if (canvasRef.current && !document.pointerLockElement) {
-      try { await canvasRef.current.requestPointerLock(); } catch (e) {}
-    }
-  }, []);
-
-  const getLevelConfig = (level) => {
-    const p = getDifficultyProgress(level);
-    return {
-      baseSpeed: 80 + p * 420,
-      spawnInterval: Math.max(0.3, 1.4 - p * 1.1),
-      hitPad: 12 - p * 5,
-    };
-  };
-
   const spawnThreat = useCallback((width, height, currentLevel) => {
     const e = engine.current;
-    const config = getLevelConfig(currentLevel);
+    const config = getLevelConfig(currentLevel, e.combo);
 
     const angle = Math.random() * Math.PI * 2;
     const radarLimit = Math.min(width, height) * 0.46;
@@ -255,6 +242,9 @@ export default function PeripheralThreatSweeperClient() {
 
   const applyPenalty = useCallback(() => {
     const e = engine.current;
+    if (drillPenalty.isEnabled(TIME_PER_HIT === 2)) {
+      e.timeLeft -= TIME_PENALTY;
+    }
     e.combo = 0;
     e.screenShake = 12;
     triggerFlash();
@@ -262,6 +252,7 @@ export default function PeripheralThreatSweeperClient() {
   }, [triggerFlash]);
 
   const endGame = useCallback(() => {
+    markIntentionalExit();
     gameActiveRef.current = false;
     startingRef.current = false;
     setGameState('gameOver');
@@ -269,14 +260,14 @@ export default function PeripheralThreatSweeperClient() {
 
     const e = engine.current;
     const totalAttempts = e.successfulSweeps + e.missedClicks + e.breaches;
-    const accuracyPct = totalAttempts > 0 ? Math.round((e.successfulSweeps / totalAttempts) * 100) : 100;
+    const accuracyPct = totalAttempts > 0 ? Math.round((e.successfulSweeps / totalAttempts) * 100) : 0;
     const rating = getFpsScoreGrade(e.score, ELITE_SCORE);
 
-    const grade = { letter: rating.grade, label: rating.label, color: rating.color };
+    const grade = { letter: rating.grade || rating.letter || 'C', label: rating.label || 'Keep Going', color: rating.color || 'text-emerald-400' };
 
     setAnalytics({
       accuracy: accuracyPct, successfulSweeps: e.successfulSweeps, missedClicks: e.missedClicks, breaches: e.breaches,
-      peakSpeed: Math.round(e.peakSpeed), maxCombo: e.maxCombo, finalLevel: e.level, grade
+      peakSpeed: Math.round(e.peakSpeed), maxCombo: e.maxCombo, finalLevel: Math.floor(bestLevelRunRef.current), grade
     });
 
     setUiScore(e.score);
@@ -285,7 +276,7 @@ export default function PeripheralThreatSweeperClient() {
     const isNewHigh = e.score > prevSaved.bestScore;
     setIsNewBest(isNewHigh);
 
-    const runBestLevel = Math.max(prevSaved.bestLevel, bestLevelRunRef.current);
+    const runBestLevel = Math.max(prevSaved.bestLevel || 1, Math.floor(bestLevelRunRef.current));
     const updatedData = {
       bestScore: Math.max(prevSaved.bestScore, e.score),
       bestCombo: Math.max(prevSaved.bestCombo, e.maxCombo),
@@ -299,7 +290,7 @@ export default function PeripheralThreatSweeperClient() {
     setBestLevel(updatedData.bestLevel);
 
     drillAudio.playSessionEnd();
-  }, []);
+  }, [markIntentionalExit]);
 
   const enterDrill = useCallback(async () => {
     if (startingRef.current) return;
@@ -310,14 +301,14 @@ export default function PeripheralThreatSweeperClient() {
 
     drillAudio.init();
 
+    const startLevel = getStartLevel();
+    bestLevelRunRef.current = startLevel;
+
     setIsNewBest(false);
     setUiScore(0);
+    setUiLevel(startLevel);
     setUiTimeLeft(DRILL_DURATION);
     lastTimeRef.current = DRILL_DURATION;
-
-    const saved = getSavedData();
-    const startLevel = getStartLevel(saved.bestLevel);
-    bestLevelRunRef.current = startLevel;
 
     const w = engine.current.logicalWidth || 800;
     const h = engine.current.logicalHeight || 450;
@@ -328,17 +319,13 @@ export default function PeripheralThreatSweeperClient() {
       nextThreatId: 0,
       score: 0, level: startLevel, combo: 0, timeLeft: DRILL_DURATION,
       successfulSweeps: 0, missedClicks: 0, breaches: 0, maxCombo: 0, totalActions: 0,
-      spawnTimer: 0, particles: [], hitMarkers: [], screenShake: 0, shieldGlow: 0,
+      spawnTimer: 0, particles: [], hitMarkers: [], hitRings: [], screenShake: 0, shieldGlow: 0,
       logicalWidth: w, logicalHeight: h, peakSpeed: 80
     };
 
     spawnThreat(w, h, startLevel);
 
-    try {
-      if (containerRef.current && !document.fullscreenElement) {
-        await containerRef.current.requestFullscreen();
-      }
-    } catch(e) {}
+    setIsFullscreen(true);
 
     setGameState('countdown');
     setCountdownValue(3);
@@ -394,6 +381,7 @@ export default function PeripheralThreatSweeperClient() {
       const eng = engine.current;
       const cx = eng.logicalWidth / 2;
       const cy = eng.logicalHeight / 2;
+      const config = getLevelConfig(eng.level, eng.combo);
 
       let intercepted = false;
       for (let i = eng.threats.length - 1; i >= 0; i--) {
@@ -402,26 +390,30 @@ export default function PeripheralThreatSweeperClient() {
         const ty = cy + Math.sin(t.angle) * t.distance;
         const dist = Math.hypot(eng.crosshair.x - tx, eng.crosshair.y - ty);
 
-        if (dist <= 22) {
+        if (dist <= config.hitPad) {
           intercepted = true;
           eng.successfulSweeps++;
+          eng.timeLeft = Math.min(60, eng.timeLeft + TIME_PER_HIT);
           eng.combo++;
           if (eng.combo > eng.maxCombo) eng.maxCombo = eng.combo;
 
           const mult = getComboMultiplier(eng.combo);
-          const basePts = Math.round(100 * mult);
+          const levelBonus = 1 + getDifficultyProgress(eng.level) * 0.5;
+          const basePts = Math.round(100 * mult * levelBonus);
           eng.score += basePts;
-          setUiScore(eng.score);
 
-          const nextLvl = Math.max(eng.level, getNextLevel(eng.score, 1, POINTS_PER_LEVEL) + getComboBonusLevel(eng.combo));
-          if (nextLvl > eng.level) {
-            eng.level = nextLvl;
-            bestLevelRunRef.current = Math.max(bestLevelRunRef.current, nextLvl);
-            drillAudio.playHit();
-          }
+          // Continuous level progression
+          const rawLevel = (eng.score / POINTS_PER_LEVEL) + 1;
+          eng.level = Math.max(eng.level, rawLevel);
+          bestLevelRunRef.current = Math.max(bestLevelRunRef.current, eng.level);
+
+          setUiScore(eng.score);
+          setUiLevel(Math.floor(eng.level));
 
           drillAudio.playHit();
-          createExplosion(tx, ty, t.type === 'fast' ? '#f97316' : t.type === 'wobble' ? '#a855f7' : '#ef4444');
+          const hitColor = t.type === 'fast' ? '#f97316' : t.type === 'wobble' ? '#a855f7' : (eng.combo >= 10 ? '#38bdf8' : '#ef4444');
+          createExplosion(tx, ty, hitColor);
+          eng.hitRings.push(createHitRing(tx, ty, 14, hitColor));
           eng.threats.splice(i, 1);
           return;
         }
@@ -513,7 +505,7 @@ export default function PeripheralThreatSweeperClient() {
           lastTimeRef.current = intTime;
         }
 
-        const cfg = getLevelConfig(e.level);
+        const cfg = getLevelConfig(e.level, e.combo);
         if (cfg.baseSpeed > e.peakSpeed) e.peakSpeed = cfg.baseSpeed;
 
         e.spawnTimer += dt;
@@ -586,6 +578,8 @@ export default function PeripheralThreatSweeperClient() {
       }
       ctx.globalAlpha = 1.0;
 
+      drawHitRings(ctx, e.hitRings, dt);
+
       const ch = e.crosshair;
       if (ch.initialized && (gameState === 'playing' || gameState === 'start')) {
         const activeColor = pointerLocked ? '#10b981' : '#eab308';
@@ -641,7 +635,6 @@ export default function PeripheralThreatSweeperClient() {
         navigator.share({ title: 'My Peripheral Threat Sweeper Score', text, url }).catch(() => {});
       } else if (typeof navigator !== 'undefined' && navigator.clipboard) {
         navigator.clipboard.writeText(text);
-        alert('Score card copied to clipboard!');
       }
     }
   }, [uiScore, bestScore, analytics, isNewBest]);
@@ -652,37 +645,36 @@ export default function PeripheralThreatSweeperClient() {
       <main className="flex-1 max-w-6xl w-full mx-auto px-4 py-6 flex flex-col gap-6">
         {/* Title */}
         {!isFullscreen && (
-          <div className="text-center">
-            <h1 className="text-2xl sm:text-3xl font-black tracking-tight text-white uppercase">
-              Peripheral Threat Sweeper
-              <span data-seo-kw="1" className="block text-sm font-semibold text-slate-400 mt-1 normal-case tracking-normal">
-                Peripheral Vision Test
-              </span>
+          <div className="text-left">
+            <h1 className="text-2xl sm:text-3xl font-black tracking-tight text-white">
+              <span data-seo-kw="1">{copy?.title || "Peripheral Threat Sweeper"}</span>
+              {copy?.subtitle && (
+                <span className="block text-sm font-semibold text-slate-400 mt-1">
+                  {copy.subtitle}
+                </span>
+              )}
             </h1>
-            <p className="text-xs text-slate-400 mt-1">
-              Peripheral Vision &amp; Shield Defense • 15 Levels
-            </p>
           </div>
         )}
 
         {/* Live Stat Cards */}
         {!isFullscreen && (
-          <div className="grid grid-cols-4 gap-2.5 max-w-2xl mx-auto w-full">
-            <div className="bg-[#0d0d18] border border-white/5 rounded-xl p-2.5 text-center">
-              <div className="text-[10px] uppercase font-bold text-slate-500 tracking-wider">Score</div>
-              <div className="text-lg sm:text-xl font-black text-white tabular-nums">{uiScore}</div>
+          <div className="grid grid-cols-4 gap-2 w-full">
+            <div className="bg-white/[0.02] border border-white/[0.06] rounded-xl p-3 text-center">
+              <div className="text-[10px] uppercase font-bold text-slate-400 tracking-wider">{copy?.hudLabels?.score || 'Score'}</div>
+              <div className="text-lg sm:text-2xl font-black text-white tabular-nums">{uiScore}</div>
             </div>
-            <div className="bg-[#0d0d18] border border-white/5 rounded-xl p-2.5 text-center">
-              <div className="text-[10px] uppercase font-bold text-slate-500 tracking-wider">Time</div>
-              <div className={`text-lg sm:text-xl font-black tabular-nums ${uiTimeLeft <= 10 ? 'text-red-400 animate-pulse' : 'text-white'}`}>{uiTimeLeft}s</div>
+            <div className="bg-white/[0.02] border border-white/[0.06] rounded-xl p-3 text-center">
+              <div className="text-[10px] uppercase font-bold text-slate-400 tracking-wider">{copy?.hudLabels?.time || 'Time'}</div>
+              <div className={`text-lg sm:text-2xl font-black tabular-nums ${uiTimeLeft <= 10 ? 'text-red-400 animate-pulse' : 'text-white'}`}>{uiTimeLeft}s</div>
             </div>
-            <div className="bg-[#0d0d18] border border-white/5 rounded-xl p-2.5 text-center">
-              <div className="text-[10px] uppercase font-bold text-slate-500 tracking-wider">Best Score</div>
-              <div className="text-lg sm:text-xl font-black text-amber-400 tabular-nums">{bestScore}</div>
+            <div className="bg-white/[0.02] border border-white/[0.06] rounded-xl p-3 text-center">
+              <div className="text-[10px] uppercase font-bold text-slate-400 tracking-wider">{copy?.hudLabels?.bestScore || 'Best Score'}</div>
+              <div className="text-lg sm:text-2xl font-black text-amber-400 tabular-nums">{bestScore}</div>
             </div>
-            <div className="bg-[#0d0d18] border border-white/5 rounded-xl p-2.5 text-center">
-              <div className="text-[10px] uppercase font-bold text-slate-500 tracking-wider">Best Combo</div>
-              <div className="text-lg sm:text-xl font-black text-emerald-400 tabular-nums">{bestCombo}x</div>
+            <div className="bg-white/[0.02] border border-white/[0.06] rounded-xl p-3 text-center">
+              <div className="text-[10px] uppercase font-bold text-slate-400 tracking-wider">{copy?.hudLabels?.bestCombo || 'Best Combo'}</div>
+              <div className="text-lg sm:text-2xl font-black text-emerald-400 tabular-nums">{bestCombo}x</div>
             </div>
           </div>
         )}
@@ -691,7 +683,7 @@ export default function PeripheralThreatSweeperClient() {
         <div 
           ref={containerRef} 
           onContextMenu={(e) => { if (gameActiveRef.current) e.preventDefault(); }}
-          className={`relative overflow-hidden flex flex-col transition-all duration-150 select-none bg-[#080811] text-white border border-white/10 ${
+          className={`overflow-hidden flex flex-col select-none bg-[#080811] text-white border border-white/10 ${
             isFullscreen 
               ? 'fixed inset-0 z-[100] w-screen h-[100dvh] bg-[#080811] rounded-none border-none flex flex-col items-center justify-center' 
               : 'w-full rounded-2xl bg-[#080811] aspect-video min-h-[460px] sm:min-h-[500px] max-h-[88vh] relative overflow-hidden flex flex-col'
@@ -705,12 +697,14 @@ export default function PeripheralThreatSweeperClient() {
           {/* IN-BOX OVERLAY HUD */}
           {(gameState === 'playing' || gameState === 'countdown') && (
             <>
-              <div className="absolute top-4 left-4 z-30 pointer-events-none">
-                <p className="text-[10px] font-semibold uppercase tracking-wider text-white/50">Score</p>
-                <p className="text-2xl sm:text-3xl font-bold text-white tabular-nums leading-tight">{uiScore}</p>
+              <div className="absolute top-4 left-4 z-30 pointer-events-none flex flex-col gap-1">
+                <div>
+                  <p className="text-[10px] font-semibold uppercase tracking-wider text-white/50">{copy?.hudLabels?.score || 'Score'}</p>
+                  <p className="text-2xl sm:text-3xl font-bold text-white tabular-nums leading-tight">{uiScore}</p>
+                </div>
               </div>
               <div className="absolute top-4 right-4 z-30 pointer-events-none text-right">
-                <p className="text-[10px] font-semibold uppercase tracking-wider text-white/50">Time</p>
+                <p className="text-[10px] font-semibold uppercase tracking-wider text-white/50">{copy?.hudLabels?.time || 'Time'}</p>
                 <p className={`text-2xl sm:text-3xl font-bold tabular-nums leading-tight ${uiTimeLeft <= 10 ? 'text-red-400' : 'text-white'}`}>{uiTimeLeft}s</p>
               </div>
             </>
@@ -760,18 +754,8 @@ export default function PeripheralThreatSweeperClient() {
             <FpsStartCard
               icon={Eye}
               accent="emerald"
-              title="Peripheral Threat Sweeper"
-              subtitle="Peripheral Vision & Shield Defense • 15 Levels"
-              rules={[
-                { icon: Target, accent: 'emerald', title: 'Intercept Edge Threats (+100 PTS)', text: 'Detect and neutralize threat vectors invading from outer edges' },
-                { icon: Zap, accent: 'red', title: 'Core Breach Penalty', text: 'Allowing threats to breach the central core resets your combo' },
-              ]}
-              sensitivity={{ value: universalSens, onChange: setUniversalSens, cmPer360 }}
-              stats={[
-                { icon: Trophy, label: 'Best Score', value: bestScore, color: 'text-white', accent: 'slate' },
-                { icon: Flame, label: 'Best Combo', value: `${bestCombo}x`, color: 'text-emerald-400', accent: 'emerald' },
-                { icon: TrendingUp, label: 'Best Level', value: `Lv. ${bestLevel}`, color: 'text-blue-400', accent: 'blue' },
-              ]}
+              title={copy?.title || "Peripheral Threat Sweeper"}
+              subtitle={copy?.subtitle || "Peripheral Vision & Shield Defense • Continuous Scaling"}
               isTouchOnlyDevice={isTouchOnlyDevice}
               onStart={enterDrill}
             />
@@ -779,81 +763,27 @@ export default function PeripheralThreatSweeperClient() {
 
           {/* COUNTDOWN OVERLAY */}
           {gameState === 'countdown' && (
-            <DrillCountdown value={countdownValue} subtitle="GET READY" />
+            <DrillCountdown value={countdownValue} subtitle={copy?.hudLabels?.getReady || "GET READY"} />
           )}
 
-          {/* END SCREEN */}
+          {/* UNIVERSAL RESULT CARD */}
           {gameState === 'gameOver' && analytics.grade && (
-            <div className="absolute inset-0 z-40 flex bg-neutral-950/98 select-none font-sans" style={{ background: 'rgba(5,5,8,0.97)' }} onPointerDown={e => e.stopPropagation()}>
-              
-              {/* Left Grade Panel */}
-              <div className="w-[36%] flex flex-col items-center justify-center gap-1 border-r border-white/5 px-4" style={{ background: 'radial-gradient(ellipse 260px 200px at 50% 30%, rgba(16,185,129,.12), transparent 70%)' }}>
-                {isNewBest && (
-                  <span className="text-[9.5px] font-bold text-yellow-400 bg-yellow-500/10 border border-yellow-500/25 px-2.5 py-0.5 rounded-full mb-1 animate-pulse">
-                    NEW BEST
-                  </span>
-                )}
-                <div className={`text-5xl sm:text-6xl font-black leading-none ${analytics.grade.color}`}>
-                  {analytics.grade.letter}
-                </div>
-                <div className="text-[10px] uppercase tracking-widest text-slate-500 text-center font-bold mt-1">
-                  {analytics.grade.label}
-                </div>
-                <div className="text-3xl sm:text-4xl font-black text-white mt-2 tabular-nums">
-                  {uiScore}
-                </div>
-                <div className="text-[9px] uppercase tracking-widest text-slate-500">Points</div>
-              </div>
-
-              {/* Right Stats & Actions Panel */}
-              <div className="flex-1 flex flex-col justify-center gap-3 px-6 py-4 min-w-0">
-                
-                {/* 4 Stat Tiles */}
-                <div className="grid grid-cols-2 sm:grid-cols-4 gap-2">
-                  <div className="bg-black border border-white/5 p-2.5 rounded-xl text-center">
-                    <p className="text-sm sm:text-base font-black text-white">{analytics.accuracy}%</p>
-                    <p className="text-[7.5px] sm:text-[8.5px] font-bold uppercase tracking-wider text-gray-400 mt-0.5">Accuracy</p>
-                  </div>
-                  <div className="bg-black border border-white/5 p-2.5 rounded-xl text-center">
-                    <p className="text-sm sm:text-base font-black text-white">{analytics.successfulSweeps}</p>
-                    <p className="text-[7.5px] sm:text-[8.5px] font-bold uppercase tracking-wider text-gray-400 mt-0.5">Sweeps</p>
-                  </div>
-                  <div className="bg-black border border-white/5 p-2.5 rounded-xl text-center">
-                    <p className="text-sm sm:text-base font-black text-white">{analytics.maxCombo}x</p>
-                    <p className="text-[7.5px] sm:text-[8.5px] font-bold uppercase tracking-wider text-gray-400 mt-0.5">Max Combo</p>
-                  </div>
-                  <div className="bg-black border border-white/5 p-2.5 rounded-xl text-center">
-                    <p className="text-sm sm:text-base font-black text-white">Lv. {analytics.finalLevel}</p>
-                    <p className="text-[7.5px] sm:text-[8.5px] font-bold uppercase tracking-wider text-gray-400 mt-0.5">Peak Level</p>
-                  </div>
-                </div>
-
-                {/* Action Buttons */}
-                <div className="flex gap-2">
-                  <button 
-                    onClick={enterDrill} 
-                    className="flex-1 py-3 rounded-[13px] bg-gradient-to-r from-emerald-600 to-teal-600 text-white font-bold text-xs uppercase tracking-wide cursor-pointer transition-transform active:scale-[0.98] shadow-md flex items-center justify-center gap-1.5"
-                  >
-                    <RefreshCw className="w-3.5 h-3.5" /> Play Again
-                  </button>
-                  <button 
-                    onClick={shareScore} 
-                    className="w-11 flex-shrink-0 rounded-[13px] bg-white/[0.04] border border-white/10 flex items-center justify-center text-slate-400 hover:text-white cursor-pointer active:scale-90 transition-transform" 
-                    title="Share Score"
-                  >
-                    <Share2 className="w-4 h-4 text-emerald-400" />
-                  </button>
-                  <button 
-                    onClick={handleExitDrill} 
-                    className="w-11 flex-shrink-0 rounded-[13px] bg-white/[0.04] border border-white/10 flex items-center justify-center text-slate-400 hover:text-white cursor-pointer active:scale-90 transition-transform" 
-                    title="Exit Fullscreen & Return"
-                  >
-                    <LogOut className="w-4 h-4 text-red-400" />
-                  </button>
-                </div>
-
-              </div>
-            </div>
+            <DrillResultCard
+              accent="emerald"
+              grade={analytics.grade}
+              score={uiScore}
+              isNewBest={isNewBest}
+              stats={[
+                { label: copy?.resultLabels?.accuracy || copy?.hudLabels?.accuracy || 'Accuracy', value: analytics.accuracy, suffix: '%' },
+                { label: copy?.resultLabels?.sweeps || copy?.hudLabels?.sweeps || 'Sweeps', value: analytics.successfulSweeps },
+                { label: copy?.resultLabels?.breaches || copy?.hudLabels?.breaches || 'Breaches', value: analytics.breaches },
+                { label: copy?.resultLabels?.peakLevel || copy?.hudLabels?.peakLevel || 'Peak Level', value: `Lv. ${analytics.finalLevel}` },
+              ]}
+              onPlayAgain={enterDrill}
+              onBeforeShare={() => setIsFullscreen(false)}
+              onShare={shareScore}
+              onExit={handleExitDrill}
+            />
           )}
         </div>
 
@@ -862,108 +792,41 @@ export default function PeripheralThreatSweeperClient() {
           <div className="[&>div]:!mt-0">
             <DrillAccordion
               id="rules"
-              title="Drill Instructions & Scoring System"
+              title={copy?.rulesTitle || "Drill Instructions & Scoring System"}
               isOpen={openAccordion === 'rules'}
               onToggle={() => setOpenAccordion(openAccordion === 'rules' ? null : 'rules')}
             >
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
-                {RULES_ITEMS.map((item, i) => (
-                  <div key={i} className="bg-black p-4 rounded-xl border border-white/10">
-                    <p className="text-sm font-bold text-white mb-1">{item.title}</p>
-                    <p className="text-xs text-gray-300 leading-relaxed">{item.text}</p>
-                  </div>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-2.5 sm:gap-3 font-sans">
+                {(copy?.rulesItems || RULES_ITEMS).map((item, i) => (
+                  <DrillRuleItem key={i} num={item.num || String(i + 1)} title={item.title} detail={item.text} />
                 ))}
               </div>
             </DrillAccordion>
 
             <DrillAccordion
               id="about"
-              title="About Peripheral Threat Sweeper"
+              title={copy?.aboutTitle || "About Peripheral Threat Sweeper"}
               isOpen={openAccordion === 'about'}
               onToggle={() => setOpenAccordion(openAccordion === 'about' ? null : 'about')}
             >
-              <div className="space-y-8">
-                <section>
-                  <h4 className="text-base font-bold text-white mb-2 flex items-center gap-2">
-                    <Eye className="w-4 h-4 text-emerald-400" /> What Is Peripheral Threat Sweeper Vision Training?
-                  </h4>
-                  <p className="text-sm leading-relaxed text-gray-300 mb-3">
-                    <strong>Peripheral Threat Sweeper</strong> isolates and expands your active visual field, training your brain to process off-center stimuli without taking your direct gaze off primary focal points. Red threat nodes spawn at outer edge coordinates and travel inward toward your central shield core.
-                  </p>
-                  <p className="text-sm leading-relaxed text-gray-300">
-                    By mastering peripheral target scanning, players in CS2, Valorant, and Apex Legends reduce tunnel vision, detect flankers faster, and maintain crosshair alignment while processing minimap and peripheral cues — spotting enemy movement at the edges of the monitor instantly while keeping the crosshair locked on the primary angle.
-                  </p>
-                </section>
-
-                <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-                  <div className="p-4 rounded-xl border border-gray-800 bg-white/[0.02]">
-                    <div className="flex items-center gap-2.5 mb-2">
-                      <div className="w-7 h-7 rounded-lg bg-blue-600 flex items-center justify-center"><Users className="w-3.5 h-3.5 text-white" /></div>
-                      <h5 className="text-xs font-bold text-white">Who Should Use This?</h5>
+              <div className="space-y-4">
+                {(copy?.aboutSections || ABOUT_SECTIONS).map((sec, idx) => {
+                  const icons = [Eye, Target, Shield, Activity];
+                  const IconComp = sec.icon || icons[idx % icons.length];
+                  return (
+                    <div key={idx} className="bg-white/[0.02] border border-white/[0.06] rounded-xl p-4">
+                      <div className="flex items-center gap-2 mb-1.5">
+                        {IconComp && <IconComp className="w-4 h-4 text-emerald-400 shrink-0" />}
+                        <h3 className="text-sm font-bold text-white tracking-wide">{sec.title}</h3>
+                      </div>
+                      <h4 className="text-xs font-semibold text-slate-400 mb-2">{sec.subtitle}</h4>
+                      <p className="text-xs leading-relaxed text-slate-300">{sec.content}</p>
                     </div>
-                    <p className="text-xs text-gray-300 leading-relaxed">FPS players reducing tunnel vision, esports competitors monitoring minimap and flanks, and anyone training off-center visual awareness.</p>
-                  </div>
-                  <div className="p-4 rounded-xl border border-gray-800 bg-white/[0.02]">
-                    <div className="flex items-center gap-2.5 mb-2">
-                      <div className="w-7 h-7 rounded-lg bg-emerald-600 flex items-center justify-center"><TrendingUp className="w-3.5 h-3.5 text-white" /></div>
-                      <h5 className="text-xs font-bold text-white">Skills Improved</h5>
-                    </div>
-                    <p className="text-xs text-gray-300 leading-relaxed">Peripheral vision range, spatial awareness, off-center target acquisition, and split-attention reaction speed.</p>
-                  </div>
-                  <div className="p-4 rounded-xl border border-gray-800 bg-white/[0.02]">
-                    <div className="flex items-center gap-2.5 mb-2">
-                      <div className="w-7 h-7 rounded-lg bg-purple-600 flex items-center justify-center"><Shield className="w-3.5 h-3.5 text-white" /></div>
-                      <h5 className="text-xs font-bold text-white">Threat Types</h5>
-                    </div>
-                    <p className="text-xs text-gray-300 leading-relaxed">Standard threats move in a straight line, Fast threats close 1.6x quicker, and Evasive threats wobble their trajectory — each demands a different scan pattern.</p>
-                  </div>
-                </div>
-              </div>
-            </DrillAccordion>
-
-            <DrillAccordion
-              id="faq"
-              title="Frequently Asked Questions"
-              isOpen={openAccordion === 'faq'}
-              onToggle={() => setOpenAccordion(openAccordion === 'faq' ? null : 'faq')}
-            >
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                {FAQ_ITEMS.map((item, i) => (
-                  <div key={i} className="bg-[#05060b] border border-gray-800 rounded-xl p-5">
-                    <h4 className="text-sm font-bold text-gray-200 mb-2">{item.q}</h4>
-                    <p className="text-xs text-gray-400 leading-relaxed">{item.a}</p>
-                  </div>
-                ))}
+                  );
+                })}
               </div>
             </DrillAccordion>
           </div>
-        )}
-
-        {/* ── RELATED PHYSICAL DRILLS ── */}
-        {!isFullscreen && (
-          <section className="mt-4">
-            <h2 className="text-sm font-bold text-slate-400 uppercase tracking-wider mb-3 font-sans">
-              Related Physical &amp; Reflex Drills
-            </h2>
-            <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
-              {RELATED_DRILLS.map((drill) => (
-                <Link
-                  key={drill.id}
-                  href={drill.href}
-                  className="group bg-[#0c0c16] border border-white/5 hover:border-emerald-500/40 rounded-xl p-3.5 transition-all duration-200 hover:-translate-y-0.5 flex flex-col justify-between"
-                >
-                  <div>
-                    <div className="text-[10px] font-bold text-emerald-400 uppercase tracking-wider mb-1">{drill.cat}</div>
-                    <div className="text-xs font-bold text-white group-hover:text-emerald-300 transition-colors">{drill.name}</div>
-                    <div className="text-[11px] text-slate-400 mt-1 line-clamp-2 leading-relaxed">{drill.desc}</div>
-                  </div>
-                  <div className="text-[10px] font-bold text-slate-500 group-hover:text-emerald-400 mt-3 flex items-center gap-1 transition-colors">
-                    Train Drill <span>→</span>
-                  </div>
-                </Link>
-              ))}
-            </div>
-          </section>
         )}
 
         {/* ── FOOTER ── */}

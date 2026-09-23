@@ -1,14 +1,9 @@
 'use client';
 
 import React, { useState, useEffect, useRef, useCallback } from 'react';
-import Link from 'next/link';
-
 import {
-  Activity, AlertCircle, ArrowRight, Award, Brain, ChevronRight,
-  Eye, GraduationCap, Play, RefreshCw, RotateCw, Target,
-  Timer, TrendingUp, Trophy, Volume2, VolumeX,
-  Zap, ZapOff, Users, Sparkles, Share2, LogOut, CheckCircle, XCircle,
-  Crosshair, Search
+  Brain, RefreshCw, TrendingUp, Volume2, VolumeX,
+  Zap, ZapOff, Users, Share2, LogOut, Crosshair, Search
 } from 'lucide-react';
 
 import generateShareCard, { shareScoreCard } from '../../../../../components/ShareScoreCard';
@@ -24,8 +19,8 @@ import DrillCountdown from '../../../../../components/drill/DrillCountdown';
 import DrillAccordion from '../../../../../components/drill/DrillAccordion';
 import DrillFlashOverlay from '../../../../../components/drill/DrillFlashOverlay';
 import DrillRuleItem from '../../../../../components/drill/DrillRuleItem';
-import DrillFAQItem from '../../../../../components/drill/DrillFAQItem';
 import FpsStartCard from '../../../../../components/drill/FpsStartCard';
+import useImmersiveMode from '@/lib/useImmersiveMode';
 
 const DRILL_DURATION = 45; // 45 seconds duration
 const POINTS_PER_HIT = 150;
@@ -52,14 +47,6 @@ const saveData = (data) => {
   } catch (e) {}
 };
 
-const RELATED_DRILLS = [
-  { id: "entropic-grid", name: "Entropic Grid", cat: "Visual Recognition", desc: "Find 2-character target codes under dynamic noise.", href: "/drills/visual/visual-recognition/entropic-grid" },
-  { id: "rhythm-anomaly", name: "Rhythm Anomaly", cat: "Visual Recognition", desc: "Temporal anomaly detection & visual flash tracking.", href: "/drills/visual/visual-recognition/rhythm-anomaly" },
-  { id: "moving-target", name: "Moving Target Pro", cat: "Visual Tracking", desc: "Kinetic visual tracking and smooth pursuit interception.", href: "/drills/visual/tracking-accuracy/moving-target" },
-  { id: "multiple-targets", name: "Multiple Targets", cat: "Visual Tracking", desc: "Multi-object tracking & visual working memory.", href: "/drills/visual/tracking-accuracy/multiple-targets" },
-  { id: "pursuit-tracker", name: "Pursuit Tracker", cat: "Visual Tracking", desc: "Smooth pursuit tracking accuracy and velocity alignment.", href: "/drills/visual/tracking-accuracy/pursuit-tracker" },
-  { id: "distance-judgment", name: "Distance Judgment Pro", cat: "Depth Perception", desc: "3D stereoscopic depth estimation & intercept timing.", href: "/drills/visual/depth-perception/distance-judgment" }
-];
 
 const SEARCH_PAIRS = [
   { target: 'C', distractors: ['O', 'Q', 'G'] },
@@ -76,9 +63,10 @@ const SEARCH_PAIRS = [
   { target: '3', distractors: ['8', 'B', 'E'] }
 ];
 
-export default function VisualSearchClient() {
+export default function VisualSearchClient({ copy } = {}) {
   const [gameState, setGameState] = useState('start'); // 'start' | 'countdown' | 'playing' | 'gameOver'
   const [isFullscreen, setIsFullscreen] = useState(false);
+  useImmersiveMode(isFullscreen); // locks the page behind while the drill fills the screen
   const [soundEnabled, setSoundEnabled] = useState(true);
   const [flashEnabled, setFlashEnabled] = useState(true);
   const [openAccordion, setOpenAccordion] = useState(null);
@@ -137,13 +125,6 @@ export default function VisualSearchClient() {
     }
   }, []);
 
-  // Fullscreen change listener
-  useEffect(() => {
-    const handleFullscreenChange = () => setIsFullscreen(!!document.fullscreenElement);
-    document.addEventListener('fullscreenchange', handleFullscreenChange);
-    return () => document.removeEventListener('fullscreenchange', handleFullscreenChange);
-  }, []);
-
   const clearGameTimeouts = useCallback(() => {
     gameTimeoutsRef.current.forEach(clearTimeout);
     gameTimeoutsRef.current = [];
@@ -158,9 +139,7 @@ export default function VisualSearchClient() {
     startingRef.current = false;
     gameActiveRef.current = false;
 
-    if (document.fullscreenElement) {
-      await document.exitFullscreen().catch(() => {});
-    }
+    setIsFullscreen(false);
     setGameState('start');
   }, [clearGameTimeouts]);
 
@@ -193,7 +172,7 @@ export default function VisualSearchClient() {
       accuracy: finalAccuracy,
       perfectHits: e.perfectHits,
       missedClicks: e.missedClicks,
-      finalLevel: e.level,
+      finalLevel: Math.floor(e.level),
       grade,
     });
 
@@ -205,7 +184,7 @@ export default function VisualSearchClient() {
 
     const updatedData = {
       bestScore: Math.max(prevSaved.bestScore, e.score),
-      bestLevel: Math.max(prevSaved.bestLevel, e.level),
+      bestLevel: Math.max(prevSaved.bestLevel, Math.floor(e.level)),
       totalSessions: (prevSaved.totalSessions || 0) + 1,
     };
     saveData(updatedData);
@@ -326,12 +305,7 @@ export default function VisualSearchClient() {
       missedClicks: 0,
     };
 
-    // Auto Fullscreen on Start
-    try {
-      if (containerRef.current && !document.fullscreenElement) {
-        await containerRef.current.requestFullscreen();
-      }
-    } catch (e) {}
+    setIsFullscreen(true);
 
     // Countdown sequence: 3 -> 2 -> 1 -> GO
     setGameState('countdown');
@@ -387,6 +361,7 @@ export default function VisualSearchClient() {
   }, [clearGameTimeouts, endGame, generateGrid]);
 
   const shareScore = useCallback(async () => {
+    setIsFullscreen(false);
     const url = 'https://skilldrills.online/drills/visual/visual-recognition/visual-search';
     try {
       const canvas = generateShareCard({
@@ -414,24 +389,19 @@ export default function VisualSearchClient() {
     <div className="min-h-screen bg-[#050508] text-white flex flex-col font-sans select-none">
       {/* ── MAIN CONTENT AREA ── */}
       <main className="flex-1 max-w-6xl w-full mx-auto px-4 py-6 flex flex-col gap-6">
-        {/* Title */}
+        {/* Title & AIO Snippet */}
         {!isFullscreen && (
-          <div className="text-center">
+          <div className="text-left">
             <h1 className="text-2xl sm:text-3xl font-black tracking-tight text-white">
-              VISUAL SEARCH
-              <span data-seo-kw="1" className="block text-sm font-semibold text-slate-400 mt-1 normal-case tracking-normal">
-                Conjunctive Visual Search Test
-              </span>
+              <span data-seo-kw="1">{copy?.title || "Conjunctive Visual Search Test"}</span>
             </h1>
-            <p className="text-xs text-slate-400 mt-1">
-              Conjunctive Target Scanning & Feature Discrimination
-            </p>
+            {copy?.subtitle && <p className="text-sm text-slate-400 mt-1">{copy.subtitle}</p>}
           </div>
         )}
 
         {/* Live Stat Cards */}
         {!isFullscreen && (
-          <div className="grid grid-cols-4 gap-2.5 max-w-2xl mx-auto w-full">
+          <div className="grid grid-cols-4 gap-2 w-full">
             <div className="bg-[#0d0d18] border border-white/5 rounded-xl p-2.5 text-center">
               <div className="text-[10px] uppercase font-bold text-slate-500 tracking-wider">Score</div>
               <div className="text-lg sm:text-xl font-black text-cyan-400 tabular-nums">{uiScore}</div>
@@ -546,10 +516,9 @@ export default function VisualSearchClient() {
                     <button
                       key={i}
                       onPointerDown={(e) => handleCellClick(i, e)}
-                      onClick={(e) => handleCellClick(i, e)}
                       className={`w-full h-full aspect-square rounded-sm sm:rounded-md flex items-center justify-center text-[10px] xs:text-xs sm:text-sm font-black font-mono leading-none tracking-tighter transition-all duration-100 focus:outline-none touch-none border ${cellStyle} active:scale-90 cursor-pointer`}
                       style={{ transform: `rotate(${cell.rotation}deg)` }}
-                      aria-label="Search Cell"
+                      aria-label={`Search Cell ${cell.char}`}
                     >
                       {cell.char}
                     </button>
@@ -565,16 +534,8 @@ export default function VisualSearchClient() {
             <FpsStartCard
               icon={Search}
               accent="cyan"
-              title="Visual Search"
-              subtitle="Conjunctive Scanning • Target Isolation"
-              rules={[
-                { icon: Target, accent: 'cyan', title: "Find Dynamic Target Symbol", text: "Locate target symbol ('C', 'E', 'P', etc.) hidden among rotated distractor symbols (+150 PTS)" },
-                { icon: Zap, accent: 'blue', title: "Randomized Symbol Field", text: "Scan past rotated distractor symbols under timed pressure with dynamic target shifts" },
-              ]}
-              stats={[
-                { icon: Trophy, label: 'Best Score', value: bestScore, color: 'text-white', accent: 'slate' },
-                { icon: TrendingUp, label: 'Best Level', value: `Lv. ${bestLevel}`, color: 'text-blue-400', accent: 'blue' },
-              ]}
+              title={copy?.title || "Visual Search"}
+              subtitle={copy?.subtitle || "Conjunctive Scanning • Target Isolation"}
               isTouchOnlyDevice={false}
               onStart={enterDrill}
             />
@@ -660,6 +621,13 @@ export default function VisualSearchClient() {
 
         </div>
 
+        {/* Drill Caption */}
+        {!isFullscreen && (
+          <p className="text-xs text-slate-400 leading-relaxed -mt-2">
+            Scan the dense grid and click the target letter C hidden among rotated distractor shapes.
+          </p>
+        )}
+
         {/* ACCORDION 1: DRILL INSTRUCTIONS & SCORING */}
         {!isFullscreen && (
           <div className="[&>div]:!mt-0">
@@ -670,9 +638,9 @@ export default function VisualSearchClient() {
               onToggle={() => setOpenAccordion(openAccordion === 'rules' ? null : 'rules')}
             >
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <DrillRuleItem num="1" text="Find Dynamic Target Symbol" highlight="+150 PTS" result="Target Match" />
-                <DrillRuleItem num="2" text="Constant Grid Layout" highlight="12×8 Grid" result="Target symbol & location shift" />
-                <DrillRuleItem num="3" text="Conjunctive Feature Search" highlight="Rotated Distractors" result="Visual discrimination" />
+                <DrillRuleItem num="1" text="Find Dynamic Target Symbol" highlight="Rotated Distractors" result="+150 PTS per target symbol found" />
+                <DrillRuleItem num="2" text="Randomized Symbol Field" highlight="12×8 Conjunctive Grid" result="Target symbol & location shift under time pressure" />
+                <DrillRuleItem num="3" text="Conjunctive Feature Search" highlight="Rotated Distractor Shapes" result="Active serial scanning" />
                 <DrillRuleItem num="4" text="Miss / Timeout" highlight="Zero Penalties" result="No score or time loss" />
               </div>
             </DrillAccordion>
@@ -685,11 +653,14 @@ export default function VisualSearchClient() {
             >
               <div className="space-y-8">
                 <section>
-                  <h4 className="text-base font-bold text-white mb-2 flex items-center gap-2">
+                  <h3 className="text-base font-bold text-white mb-2 flex items-center gap-2">
                     <Brain className="w-4 h-4 text-cyan-400" /> What Is Visual Search Training?
-                  </h4>
+                  </h3>
+                  <p className="text-sm leading-relaxed mb-3 text-gray-300">
+                    A conjunction search is looking for something that no single feature identifies &mdash; a red square among red circles and blue squares, where colour alone and shape alone both fail. Searches like that get slower roughly in proportion to the number of distractors on screen, while a target defined by one unique feature &quot;pops out&quot; in about the same time no matter how many distractors there are (Treisman &amp; Gelade, 1980; Wolfe, 1994).
+                  </p>
                   <p className="text-sm leading-relaxed mb-3">
-                    <strong>Visual Search Training</strong> is an advanced selective attention drill based on classic conjunctive search paradigms. The <strong>Visual Search drill</strong> challenges you to locate a single target letter ('C') hidden among rotated distractor letters ('O').
+                    <strong>Visual Search Training</strong> is an advanced selective attention drill based on classic conjunctive search paradigms. The <strong>Visual Search drill</strong> challenges you to locate a single target letter (&apos;C&apos;) hidden among rotated distractor letters (&apos;O&apos;).
                   </p>
                   <p className="text-sm leading-relaxed">
                     Unlike simple feature search where targets pop out automatically, conjunctive search requires active serial scanning across rotated distractors, training visual processing speed and selective visual focus.
@@ -700,72 +671,29 @@ export default function VisualSearchClient() {
                   <div className="p-4 rounded-xl border border-gray-800 bg-white/[0.02]">
                     <div className="flex items-center gap-2.5 mb-2">
                       <div className="w-7 h-7 rounded-lg bg-blue-600 flex items-center justify-center"><Users className="w-3.5 h-3.5 text-white" /></div>
-                      <h5 className="text-xs font-bold text-white">Who Should Use This?</h5>
+                      <h4 className="text-xs font-bold text-white">Who Should Use This?</h4>
                     </div>
                     <p className="text-xs text-gray-300 leading-relaxed">Gamers improving target detection speed, proofreaders & inspectors enhancing visual accuracy, and cognitive training enthusiasts.</p>
                   </div>
                   <div className="p-4 rounded-xl border border-gray-800 bg-white/[0.02]">
                     <div className="flex items-center gap-2.5 mb-2">
                       <div className="w-7 h-7 rounded-lg bg-cyan-600 flex items-center justify-center"><TrendingUp className="w-3.5 h-3.5 text-white" /></div>
-                      <h5 className="text-xs font-bold text-white">Skills Improved</h5>
+                      <h4 className="text-xs font-bold text-white">Skills Improved</h4>
                     </div>
                     <p className="text-xs text-gray-300 leading-relaxed">Conjunctive visual search speed, selective attention, feature discrimination, target isolation, and visual scanning stamina.</p>
                   </div>
                   <div className="p-4 rounded-xl border border-gray-800 bg-white/[0.02]">
                     <div className="flex items-center gap-2.5 mb-2">
                       <div className="w-7 h-7 rounded-lg bg-purple-600 flex items-center justify-center"><Zap className="w-3.5 h-3.5 text-white" /></div>
-                      <h5 className="text-xs font-bold text-white">Z-Pattern Scanning</h5>
+                      <h4 className="text-xs font-bold text-white">Z-Pattern Scanning</h4>
                     </div>
-                    <p className="text-xs text-gray-300 leading-relaxed">Scan the grid systematically in Z-pattern rows to locate the target 'C' efficiently without missing cells.</p>
+                    <p className="text-xs text-gray-300 leading-relaxed">Scan the grid systematically in Z-pattern rows to locate the target &apos;C&apos; efficiently without missing cells.</p>
                   </div>
                 </div>
 
               </div>
             </DrillAccordion>
-
-            <DrillAccordion
-              id="faq"
-              title="Frequently Asked Questions"
-              isOpen={openAccordion === 'faq'}
-              onToggle={() => setOpenAccordion(openAccordion === 'faq' ? null : 'faq')}
-            >
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <DrillFAQItem q="What is the Visual Search Drill?" a="A free conjunctive search exercise. Find the target letter 'C' hidden among rotated 'O' distractors." />
-                <DrillFAQItem q="How does target location change?" a="The grid size stays constant while target 'C' shifts location continuously across the grid as you find each target." />
-                <DrillFAQItem q="Are there negative score or time penalties?" a="No. Tapping a wrong cell never deducts score points or reduces remaining timer seconds — the cell just flashes red and you keep scanning." />
-                <DrillFAQItem q="Does difficulty decrease on mistakes?" a="No. Your level only ever goes up — a mistake never takes you back down, so you can safely master your current grid size." />
-                <DrillFAQItem q="How long does each drill session last?" a="Each round is timed for exactly 45 seconds of continuous focus." />
-                <DrillFAQItem q="Do I need to sign up?" a="No registration required. This drill runs directly in your browser with instant response." />
-              </div>
-            </DrillAccordion>
           </div>
-        )}
-
-        {/* RELATED DRILLS GRID */}
-        {!isFullscreen && (
-          <section className="mt-4">
-            <h2 className="text-sm font-bold text-slate-400 uppercase tracking-wider mb-3">
-              Related Visual Drills
-            </h2>
-            <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
-              {RELATED_DRILLS.map((drill) => (
-                <Link
-                  key={drill.id}
-                  href={drill.href}
-                  className="group bg-[#0c0c16] border border-white/5 hover:border-cyan-500/40 rounded-xl p-3.5 transition-all duration-200 hover:-translate-y-0.5 flex flex-col justify-between"
-                >
-                  <div>
-                    <div className="text-[10px] font-bold text-cyan-400 uppercase tracking-wider mb-1">{drill.cat}</div>
-                    <div className="text-xs font-bold text-white group-hover:text-cyan-300 transition-colors">{drill.name}</div>
-                    <div className="text-[11px] text-slate-400 mt-1 line-clamp-2 leading-relaxed">{drill.desc}</div>
-                  </div>
-                  <div className="text-[10px] font-bold text-slate-500 group-hover:text-cyan-400 mt-3 flex items-center gap-1 transition-colors">
-                    Train Drill <span>→</span>
-                  </div>
-                </Link>
-              ))}
-            </div>
-          </section>
         )}
 
         {/* SITE FOOTER */}

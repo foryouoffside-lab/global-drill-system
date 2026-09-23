@@ -1,7 +1,8 @@
 'use client';
 
 import React from 'react';
-import { AlertCircle, Play, Sliders } from 'lucide-react';
+import { useTranslation } from '@/lib/i18n/useTranslation';
+import { AlertCircle, Play } from 'lucide-react';
 
 // Static, fully-literal per-accent Tailwind classes — never string-concatenated at
 // runtime, so Tailwind's content scanner picks up every variant regardless of which
@@ -215,23 +216,34 @@ function getAccent(name) {
  * Drop it in wherever `gameState === 'start'`.
  *
  * @param {React.ComponentType} icon - main badge icon
- * @param {keyof ACCENTS} accent - card-wide theme (badge, subtitle, slider, button)
+ * @param {keyof ACCENTS} accent - card-wide theme (badge, button)
  * @param {string} title
- * @param {string} subtitle
- * @param {{value:number, onChange:(v:number)=>void, cmPer360:string}|null} sensitivity - omit to hide the slider block
  * @param {boolean} isTouchOnlyDevice
+ * @param {string} touchBlockedLabel - what the drill actually needs, shown in place
+ *   of the start button on a touch-only device. Most of these drills aim with a
+ *   pointer-locked mouse, hence the default; a few need something else.
  * @param {() => void} onStart
  */
 export default function FpsStartCard({
   icon: Icon,
   accent = 'emerald',
   title,
-  subtitle,
-  sensitivity = null,
+  // Every drill using this card has always passed `rules` and `stats`, but the
+  // signature never accepted them, so React dropped both silently and the card
+  // rendered as an icon, a title and a button over an empty canvas. The ACCENTS
+  // map still carries the chipBg/chipBorder/chipText tokens the rows were meant
+  // to use, which is what gave it away. Declaring them here both restores the
+  // copy and removes the prop-type error the .tsx drills were reporting.
+  //   rules: [{ icon, accent, title, text }]
+  //   stats: [{ icon, label, value, color, accent }]
+  rules = null,
+  stats = null,
   isTouchOnlyDevice = false,
+  touchBlockedLabel = 'Mouse Required for Pointer Lock',
   onStart,
-  maxWidthClassName = 'max-w-[360px]',
+  maxWidthClassName = 'max-w-[380px]',
 }) {
+  const { t } = useTranslation();
   const a = getAccent(accent);
 
   return (
@@ -260,43 +272,70 @@ export default function FpsStartCard({
 
           <div>
             <h2 className="text-[19px] font-black tracking-tight text-white leading-tight">{title}</h2>
-            {subtitle && (
-              <p className={`text-[10px] ${a.subtitleText} uppercase tracking-[0.15em] font-semibold mt-1`}>{subtitle}</p>
-            )}
           </div>
 
-          {sensitivity && (
-            <div className="bg-black/40 border border-white/5 p-3 rounded-xl text-left text-xs mt-0.5">
-              <div className="flex justify-between items-center mb-2">
-                <span className="text-[10px] font-bold text-slate-300 uppercase flex items-center gap-1.5">
-                  <div className={`w-5 h-5 rounded-md ${a.chipBg} flex items-center justify-center`}>
-                    <Sliders className={`w-3 h-3 ${a.chipText}`} />
+          {/* Rules. Hairline rows on the card background per the house style --
+              never darker panels pasted onto it. */}
+          {rules?.length ? (
+            <ul className="flex flex-col gap-1.5 text-left mt-1">
+              {rules.map((rule, i) => {
+                const ra = getAccent(rule.accent || accent);
+                const RIcon = rule.icon;
+                return (
+                  <li
+                    key={i}
+                    className="flex items-start gap-2.5 rounded-[11px] border border-white/[0.07] bg-white/[0.012] px-3 py-2"
+                  >
+                    {RIcon && (
+                      <span className={`shrink-0 mt-[1px] w-6 h-6 rounded-lg ${ra.chipBg} border ${ra.chipBorder} flex items-center justify-center`}>
+                        <RIcon className={`w-3.5 h-3.5 ${ra.chipText}`} />
+                      </span>
+                    )}
+                    <span className="min-w-0">
+                      <span className="block text-[11.5px] font-bold text-white leading-snug">{rule.title}</span>
+                      {rule.text && (
+                        <span className="block text-[11px] text-slate-400 leading-relaxed mt-0.5">{rule.text}</span>
+                      )}
+                    </span>
+                  </li>
+                );
+              })}
+            </ul>
+          ) : null}
+
+          {/* Personal bests, read from localStorage by the drill. Never anyone
+              else's numbers -- this site collects no aggregate data. */}
+          {stats?.length ? (
+            <div className={`grid gap-1.5 mt-0.5 ${stats.length >= 3 ? 'grid-cols-3' : 'grid-cols-2'}`}>
+              {stats.map((stat, i) => {
+                const SIcon = stat.icon;
+                return (
+                  <div
+                    key={i}
+                    className="rounded-[11px] border border-white/[0.07] bg-white/[0.012] px-2 py-2 text-center"
+                  >
+                    <span className="flex items-center justify-center gap-1 text-[9px] uppercase tracking-[0.12em] font-semibold text-slate-500">
+                      {SIcon && <SIcon className="w-3 h-3" />} {stat.label}
+                    </span>
+                    <span className={`block text-[15px] font-black font-mono tabular-nums mt-0.5 ${stat.color || 'text-white'}`}>
+                      {stat.value}
+                    </span>
                   </div>
-                  Universal Sens
-                </span>
-                <span className={`${a.chipText} font-bold text-xs ${a.chipBg} border ${a.chipBorder} rounded-md px-2 py-0.5`}>
-                  {sensitivity.value.toFixed(2)}x <span className="text-[9px] text-slate-500">({sensitivity.cmPer360} cm/360)</span>
-                </span>
-              </div>
-              <input
-                type="range" min="0.1" max="3.0" step="0.05"
-                value={sensitivity.value}
-                onChange={(e) => sensitivity.onChange(parseFloat(e.target.value))}
-                className={`w-full h-1.5 bg-slate-800 rounded-lg appearance-none cursor-pointer ${a.sliderAccent}`}
-              />
+                );
+              })}
             </div>
-          )}
+          ) : null}
 
           {isTouchOnlyDevice ? (
             <div className="w-full py-2.5 rounded-[13px] bg-red-950/60 border border-red-500/30 font-bold text-[11px] text-red-400 flex items-center justify-center gap-2 mt-0.5">
-              <AlertCircle className="w-4 h-4 text-red-400" /> Mouse Required for Pointer Lock
+              <AlertCircle className="w-4 h-4 text-red-400" /> {touchBlockedLabel}
             </div>
           ) : (
             <button
               onClick={onStart}
-              className={`w-full py-[11px] rounded-[13px] bg-gradient-to-r ${a.buttonGradient} font-bold text-[12.5px] tracking-wide active:scale-[0.97] transition-transform ${a.buttonGlow} cursor-pointer text-white flex items-center justify-center gap-2 mt-0.5`}
+              className={`w-full py-[11px] rounded-[13px] bg-gradient-to-r ${a.buttonGradient} font-bold text-[12.5px] tracking-wide uppercase active:scale-[0.97] transition-transform ${a.buttonGlow} cursor-pointer text-white flex items-center justify-center gap-2 mt-0.5`}
             >
-              <Play className="w-4 h-4 fill-white" /> START DRILL
+              <Play className="w-4 h-4 fill-white" /> {t('ui.start', 'Start Drill')}
             </button>
           )}
         </div>

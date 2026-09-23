@@ -5,34 +5,39 @@ import React, { useState, useEffect, useRef, useCallback } from 'react';
 import Link from 'next/link';
 
 import {
-  Activity, AlertCircle, ArrowRight, Brain, ChevronRight, Crosshair,
-  Eye, Flame, GraduationCap, RefreshCw, Target,
-  Timer, TrendingUp, Trophy, Volume2, VolumeX,
-  Zap, ZapOff, Users, Share2,
-  LogOut, Award
+  Brain, Crosshair,
+  Target, TrendingUp, Volume2, VolumeX,
+  Zap, ZapOff, Users
 } from 'lucide-react';
 
 import generateShareCard, { shareScoreCard } from '../../../../components/ShareScoreCard';
 import { getPlayerName } from '../../../../lib/leaderboard';
 import { drillAudio } from '../../../../lib/drillAudio';
+import { useDrillSensitivity } from '../../../../lib/drillSensitivity';
 import { drillFlash } from '../../../../lib/drillFlash';
 import { drillTimeout } from '../../../../lib/drillTimeout';
-import { getStartLevel, getDifficultyProgress, getComboBonusLevel } from '../../../../lib/drillDifficulty';
+import { drillPenalty } from '../../../../lib/drillPenalty';
+import { getStartLevel, getDifficultyProgress, ramp } from '../../../../lib/drillDifficulty';
 import { getComboMultiplier, getFpsScoreGrade } from '../../../../lib/scoringEngine';
-import { createBackdropCache, getCanvasDpr, drawPulseRing, drawTacticalTarget } from '../../../../lib/canvasFx';
-import useUnexpectedExitGuard from '../../../../lib/useUnexpectedExitGuard';
-import DrillFooter from '../../../../components/drill/DrillFooter';
+import { createBackdropCache, getCanvasDpr, drawTacticalTarget, createHitRing, drawHitRings } from '../../../../lib/canvasFx';
 import DrillCountdown from '../../../../components/drill/DrillCountdown';
 import DrillAccordion from '../../../../components/drill/DrillAccordion';
 import FpsStartCard from '../../../../components/drill/FpsStartCard';
+import DrillResultCard from '../../../../components/drill/DrillResultCard';
+import useImmersiveMode from '@/lib/useImmersiveMode';
+import useUnexpectedExitGuard from '@/lib/useUnexpectedExitGuard';
 
 // ============================================================
 // TUNING CONSTANTS
 // ============================================================
-const DRILL_DURATION = 45; // 45 seconds focused duration
-const POINTS_PER_LEVEL = 250; // Aggressive progression
-const ELITE_SCORE = 17000;
-const STORAGE_KEY = 'skilldrills_fps_180_awareness_v2';
+const DRILL_DURATION = 45; // starting clock only; a run grows past this
+const POINTS_PER_LEVEL = 1750; // 250 -> 1750 (7x)
+const ELITE_SCORE = 51000; // 17000 -> 51000 (3x)
+
+const TIME_PER_HIT = 2;
+const TIME_PENALTY = 1;
+
+const STORAGE_KEY = 'skilldrills_fps_180_awareness_v3';
 
 const getSavedData = () => {
   try {
@@ -52,22 +57,16 @@ const saveData = (data) => {
 
 
 const getLevelConfig = (level, combo = 0) => {
-  const p = getDifficultyProgress(level); // 0 -> 1 across L1..L15
-  const curve = p * p;
-  const heat = Math.min(1.0, combo / 50);
-
-  const baseRadius   = Math.max(13, 32 - curve * 19);     // 32 -> 13 px
-  const baseTtl      = Math.max(380, 1300 - curve * 920); // 1300 -> 380 ms
-  const baseSpawnMin = 480 - curve * 350;                 // 480 -> 130 ms
-  const baseSpawnMax = 680 - curve * 490;                 // 680 -> 190 ms
+  const p = getDifficultyProgress(level); // 0 at L1, 1 at L15, unbounded above
+  const heat = (getComboMultiplier(combo) - 1) / 2;
 
   return {
-    radius:        Math.max(9,   baseRadius   - heat * 5),
-    ttl:           Math.max(260, baseTtl      - heat * 150),
-    spawnDelayMin: Math.max(90,  baseSpawnMin - heat * 70),
-    spawnDelayMax: Math.max(140, baseSpawnMax - heat * 90),
-    edgeProb:      0.25 + p * 0.65, // 0.25 -> 0.90
-    hitPad:        Math.max(1,   (12 - curve * 7) - heat * 3),
+    radius:        Math.max(4, ramp(32,   7,   p) * (1 - heat * 0.38)),
+    ttl:                       ramp(1300, 90,  p) * (1 - heat * 0.39),
+    spawnDelayMin:             ramp(480,  20,  p) * (1 - heat * 0.54),
+    spawnDelayMax:             ramp(680,  35,  p) * (1 - heat * 0.47),
+    edgeProb:      Math.min(0.95, 0.25 + p * 0.65),
+    hitPad:                    ramp(12,   0.2, p) * (1 - heat * 0.60),
     drift:         p < 0.6 ? 0 : (p - 0.6) * 55, // px/sec lateral drift from L10
   };
 };
@@ -76,22 +75,13 @@ const getLevelConfig = (level, combo = 0) => {
 // ACCORDION DATA
 // ============================================================
 const RULES_ITEMS = [
-  { title: "Successful Hit (+100 PTS)", text: "Chain hits to build score and combo multiplier up to 3.0x max." },
-  { title: "180° Edge Spawns & Streak Heat", text: "Targets spawn at extreme left/right edges, shrinking & speeding up as your streak grows." }
+  { num: "1", text: "Edge Target Hit", highlight: "+100 PTS (+2s, max 60s)", result: "×Combo Mult" },
+  { num: "2", text: "180° Spawns", highlight: "Extreme Peripheral", result: "Faster & Smaller" },
+  { num: "3", text: "Level Progression", highlight: "+1 Level / 1750 PTS", result: "Adaptive Scaling" },
+  { num: "4", text: "Miss / Timeout", highlight: "Penalty", result: "Resets Combo (-0.8s)" }
 ];
 
-const FAQ_ITEMS = [
-  { q: "What is FPS awareness training?", a: "FPS awareness training involves specific drills designed to improve your ability to detect, process, and react to peripheral visual information and unexpected threats in a 3D gaming environment." },
-  { q: "How do professional FPS players and esports pros improve awareness?", a: "Pros utilize a mix of VOD reviews, dedicated aim trainers with wide field-of-view scenarios, and 180-degree flick drills to build unconscious competence in spatial mapping — the same skill many esports organizations train to maintain peak mechanical performance." },
-  { q: "Can awareness drills improve reaction time?", a: "Yes, by repeatedly exposing the brain to peripheral stimuli, visual processing speed increases, reducing the cognitive load required to react to flanking enemies." },
-  { q: "How does peripheral vision training help in FPS games?", a: "Strong peripheral vision lets you notice subtle movements or pixel changes at the edge of your screen without taking your crosshair off your primary angle. Playing with an ultra-wide field of view (FOV) in-game and drilling edge-of-screen spawns like this trainer both reinforce that skill." },
-  { q: "How do I stop getting flanked in FPS games?", a: "Improving spatial audio processing and training high-speed 180-degree turnaround flicks will allow you to quickly neutralize flankers before they secure the kill." },
-  { q: "What is situational awareness in gaming?", a: "Situational awareness is the holistic understanding of game state, audio cues, minimap information, and peripheral visual data to anticipate enemy actions." },
-  { q: "Does this drill help with CS2, Valorant, and other FPS games?", a: "Yes. In Valorant, quick target acquisition and reacting to utility or flashes off-screen is critical, and in CS2 flicking to an unexpected target on the edge of your monitor can win clutch rounds. Fast-paced shooters like Apex Legends, Overwatch 2, and Call of Duty benefit the same way." },
-  { q: "How often should I train 180° awareness?", a: "For optimal results, implement 10-15 minutes of awareness and wide-flick training into your daily warmup routine before queuing competitive matches." },
-  { q: "What skills does this drill improve?", a: "It targets peripheral detection, audio-spatial translation, saccadic eye movement, large-angle mouse flick consistency, and target acquisition speed as shrinking targets spawn across a wider horizontal plane under time pressure." },
-  { q: "Is this awareness trainer free, and do I need to sign up?", a: "Yes, this drill is completely free and runs directly in your browser with 1:1 hardware raw input — no registration required." }
-];
+
 
 const RELATED_DRILLS = [
   { id: "flick-shot-training", name: "Pro Flick Trainer", cat: "FPS Flicking", desc: "Snap to targets in time-attack mode with precision flicking.", href: "/drills/fps/flick-shot-training" },
@@ -105,13 +95,14 @@ const RELATED_DRILLS = [
 // ============================================================
 // MAIN COMPONENT
 // ============================================================
-export default function AwarenessDrillClient() {
+export default function AwarenessDrillClient({ copy = null }) {
   const [gameState, setGameState] = useState('start'); // 'start' | 'countdown' | 'playing' | 'gameOver'
   const [isFullscreen, setIsFullscreen] = useState(false);
+  useImmersiveMode(isFullscreen); // locks the page behind while the drill fills the screen
   const [soundEnabled, setSoundEnabled] = useState(true);
   const [flashEnabled, setFlashEnabled] = useState(true);
   const [pointerLocked, setPointerLocked] = useState(false);
-  const [universalSens, setUniversalSens] = useState(1.0);
+  const universalSens = useDrillSensitivity();
   const [openAccordion, setOpenAccordion] = useState(null);
   const [isTouchOnlyDevice, setIsTouchOnlyDevice] = useState(false);
   const [countdownValue, setCountdownValue] = useState(3);
@@ -124,9 +115,10 @@ export default function AwarenessDrillClient() {
   const [bestCombo, setBestCombo] = useState(0);
   const [bestLevel, setBestLevel] = useState(1);
   const [isNewBest, setIsNewBest] = useState(false);
+  const [penaltyEnabled, setPenaltyEnabled] = useState(false);
 
   const [analytics, setAnalytics] = useState({
-    accuracy: 100, successfulHits: 0, missedClicks: 0, timeouts: 0, 
+    accuracy: 100, successfulHits: 0, missedClicks: 0, idleClicks: 0, timeouts: 0, 
     avgReactionTime: 0, maxCombo: 0, finalLevel: 1, grade: null
   });
 
@@ -145,11 +137,9 @@ export default function AwarenessDrillClient() {
     crosshair: { x: 0, y: 0, initialized: false },
     target: { active: false, x: 0, y: 0, radius: 30, age: 0, spawnTime: 0, ttl: 1200, drift: 0, vx: 1 },
     score: 0, level: 1, combo: 0, timeLeft: DRILL_DURATION, nextSpawnTime: 0,
-    successfulHits: 0, missedClicks: 0, timeouts: 0, maxCombo: 0, reactionTimes: [], totalActions: 0,
-    particles: [], hitMarkers: [], screenShake: 0, logicalWidth: 800, logicalHeight: 450
+    successfulHits: 0, missedClicks: 0, idleClicks: 0, timeouts: 0, maxCombo: 0, reactionTimes: [], totalActions: 0,
+    particles: [], hitMarkers: [], hitRings: [], screenShake: 0, logicalWidth: 800, logicalHeight: 450
   });
-
-  const cmPer360 = (30 / universalSens).toFixed(1);
 
   const triggerFlash = useCallback(() => {
     if (!drillFlash.isEnabled()) return;
@@ -163,14 +153,10 @@ export default function AwarenessDrillClient() {
     if (typeof window !== 'undefined') {
       setSoundEnabled(drillAudio.isEnabled());
       setFlashEnabled(drillFlash.isEnabled());
+      setPenaltyEnabled(drillPenalty.isEnabled(TIME_PER_HIT === 2));
       const hasFinePointer = window.matchMedia('(pointer: fine)').matches;
       const isTouchCapable = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
       setIsTouchOnlyDevice(isTouchCapable && !hasFinePointer);
-
-      try {
-        const savedSens = localStorage.getItem('awareness180_sens');
-        if (savedSens) setUniversalSens(parseFloat(savedSens));
-      } catch (e) {}
 
       const saved = getSavedData();
       setBestScore(saved.bestScore || 0);
@@ -186,53 +172,28 @@ export default function AwarenessDrillClient() {
     };
   }, []);
 
-  useEffect(() => {
-    if (gameState !== 'playing') {
-      try { localStorage.setItem('awareness180_sens', universalSens.toString()); } catch (e) {}
-    }
-  }, [universalSens, gameState]);
-
-  // Fullscreen change listener
-  useEffect(() => {
-    const handleFullscreenChange = () => setIsFullscreen(!!document.fullscreenElement);
-    document.addEventListener('fullscreenchange', handleFullscreenChange);
-    return () => document.removeEventListener('fullscreenchange', handleFullscreenChange);
-  }, []);
-
-  const handleExitDrill = useCallback(async () => {
+  const handleExitDrill = useCallback(() => {
     markIntentionalExit();
     countdownTimeoutsRef.current.forEach(clearTimeout);
     countdownTimeoutsRef.current = [];
     startingRef.current = false;
+    gameActiveRef.current = false;
 
-    if (document.fullscreenElement) {
-      await document.exitFullscreen().catch(() => {});
-    }
+    setIsFullscreen(false);
     if (document.pointerLockElement) {
       document.exitPointerLock();
     }
     setGameState('start');
   }, []);
 
-  // Stop the drill if the player leaves any way other than the in-app Exit
-  // button (back gesture, tab switch, Esc) instead of running invisibly.
   const { markIntentionalExit } = useUnexpectedExitGuard({
     active: gameState === 'playing' || gameState === 'countdown',
     onUnexpectedExit: handleExitDrill,
   });
 
-  const resumeDrill = useCallback(async () => {
-    if (containerRef.current && !document.fullscreenElement) {
-      try { await containerRef.current.requestFullscreen(); } catch (e) {}
-    }
-    if (canvasRef.current && !document.pointerLockElement) {
-      try { await canvasRef.current.requestPointerLock(); } catch (e) {}
-    }
-  }, []);
-
-  const spawnTarget = useCallback((time, width, height, currentLevel) => {
+  const spawnTarget = useCallback((time, width, height, currentLevel, currentCombo) => {
     const e = engine.current;
-    const config = getLevelConfig(currentLevel, e.combo);
+    const config = getLevelConfig(currentLevel, currentCombo);
     
     const margin = config.radius + 15;
     const isEdge = Math.random() < config.edgeProb;
@@ -268,7 +229,7 @@ export default function AwarenessDrillClient() {
   }, []);
 
   const createExplosion = (x, y, color) => {
-    for (let i = 0; i < 12; i++) {
+    for (let i = 0; i < 14; i++) {
       const angle = Math.random() * Math.PI * 2;
       const speed = Math.random() * 4 + 1;
       engine.current.particles.push({ x, y, vx: Math.cos(angle) * speed, vy: Math.sin(angle) * speed, life: 1.0, color });
@@ -287,7 +248,8 @@ export default function AwarenessDrillClient() {
     if (document.pointerLockElement) document.exitPointerLock();
     
     const e = engine.current;
-    const finalAccuracy = e.totalActions > 0 ? Math.round((e.successfulHits / e.totalActions) * 100) : 0;
+    const totalAttempts = e.successfulHits + e.missedClicks + e.idleClicks + e.timeouts;
+    const finalAccuracy = totalAttempts > 0 ? Math.round((e.successfulHits / totalAttempts) * 100) : 0;
     const avgRt = e.reactionTimes.length > 0 
       ? Math.round(e.reactionTimes.reduce((a, b) => a + b, 0) / e.reactionTimes.length) 
       : 0;
@@ -297,8 +259,8 @@ export default function AwarenessDrillClient() {
 
     setAnalytics({
       accuracy: finalAccuracy, successfulHits: e.successfulHits, missedClicks: e.missedClicks,
-      timeouts: e.timeouts, avgReactionTime: avgRt, maxCombo: e.maxCombo, finalLevel: e.level,
-      grade
+      idleClicks: e.idleClicks, timeouts: e.timeouts, avgReactionTime: avgRt, maxCombo: e.maxCombo,
+      finalLevel: Math.floor(e.level), grade
     });
 
     setUiScore(e.score);
@@ -307,7 +269,7 @@ export default function AwarenessDrillClient() {
     const isNewHigh = e.score > prevSaved.bestScore;
     setIsNewBest(isNewHigh);
 
-    const runBestLevel = Math.max(prevSaved.bestLevel, bestLevelRunRef.current);
+    const runBestLevel = Math.max(prevSaved.bestLevel, Math.floor(bestLevelRunRef.current));
     const updatedData = {
       bestScore: Math.max(prevSaved.bestScore, e.score),
       bestCombo: Math.max(prevSaved.bestCombo, e.maxCombo),
@@ -339,11 +301,11 @@ export default function AwarenessDrillClient() {
     lastTimeRef.current = DRILL_DURATION;
 
     const saved = getSavedData();
-    const startLevel = getStartLevel(saved.bestLevel);
+    const startLevel = getStartLevel();
     bestLevelRunRef.current = startLevel;
 
     setAnalytics({
-      accuracy: 100, successfulHits: 0, missedClicks: 0, timeouts: 0,
+      accuracy: 100, successfulHits: 0, missedClicks: 0, idleClicks: 0, timeouts: 0,
       avgReactionTime: 0, maxCombo: 0, finalLevel: startLevel, grade: null
     });
 
@@ -355,15 +317,11 @@ export default function AwarenessDrillClient() {
       target: { active: false, x: 0, y: 0, radius: 30, age: 0, spawnTime: 0, ttl: 1200, drift: 0, vx: 1 },
       score: 0, level: startLevel, combo: 0, timeLeft: DRILL_DURATION,
       nextSpawnTime: performance.now() + 500, successfulHits: 0, missedClicks: 0,
-      timeouts: 0, maxCombo: 0, reactionTimes: [], totalActions: 0,
-      particles: [], hitMarkers: [], screenShake: 0, logicalWidth: w, logicalHeight: h
+      idleClicks: 0, timeouts: 0, maxCombo: 0, reactionTimes: [], totalActions: 0,
+      particles: [], hitMarkers: [], hitRings: [], screenShake: 0, logicalWidth: w, logicalHeight: h
     };
 
-    try {
-      if (containerRef.current && !document.fullscreenElement) {
-        await containerRef.current.requestFullscreen();
-      }
-    } catch(e) {}
+    setIsFullscreen(true);
 
     setGameState('countdown');
     setCountdownValue(3);
@@ -396,11 +354,42 @@ export default function AwarenessDrillClient() {
     countdownTimeoutsRef.current = [t1, t2, t3, t4];
   }, []);
 
+  // Handle ESC / pointer lock drop / fullscreen exit directly
   useEffect(() => {
-    const handlePointerLockChange = () => setPointerLocked(document.pointerLockElement === canvasRef.current);
-    document.addEventListener('pointerlockchange', handlePointerLockChange);
-    return () => document.removeEventListener('pointerlockchange', handlePointerLockChange);
-  }, []);
+    const handleKeyDown = (e) => {
+      if (e.code === 'Escape') {
+        if (gameState === 'playing' || gameState === 'countdown') {
+          handleExitDrill();
+        }
+      }
+    };
+
+    const handleLockChange = () => {
+      const isLocked = document.pointerLockElement === canvasRef.current;
+      setPointerLocked(isLocked);
+      if (!isLocked && (gameState === 'playing' || gameState === 'countdown')) {
+        handleExitDrill();
+      }
+    };
+
+    const handleFullscreenChange = () => {
+      const isFs = !!(document.fullscreenElement || document.webkitFullscreenElement);
+      setIsFullscreen(isFs);
+      if (!isFs && isFullscreen && (gameState === 'playing' || gameState === 'countdown')) {
+        handleExitDrill();
+      }
+    };
+
+    window.addEventListener('keydown', handleKeyDown, true);
+    document.addEventListener('pointerlockchange', handleLockChange);
+    document.addEventListener('fullscreenchange', handleFullscreenChange);
+
+    return () => {
+      window.removeEventListener('keydown', handleKeyDown, true);
+      document.removeEventListener('pointerlockchange', handleLockChange);
+      document.removeEventListener('fullscreenchange', handleFullscreenChange);
+    };
+  }, [gameState, isFullscreen, handleExitDrill]);
 
   useEffect(() => {
     const handleMouseMove = (e) => {
@@ -416,18 +405,23 @@ export default function AwarenessDrillClient() {
       if (e.target.tagName === 'BUTTON' || e.target.closest('button')) return;
       if (!containerRef.current || !containerRef.current.contains(e.target)) return;
 
-      if (gameState === 'playing') {
-        if (!pointerLocked && canvasRef.current) {
-          resumeDrill();
-        } else if (pointerLocked) {
-          const eRef = engine.current;
+      if (gameState === 'playing' && pointerLocked) {
+        const eRef = engine.current;
           const ch = eRef.crosshair;
           const tgt = eRef.target;
-          const config = getLevelConfig(eRef.level);
+          const config = getLevelConfig(eRef.level, eRef.combo);
 
           eRef.totalActions++;
 
-          if (tgt.active) {
+          if (!tgt.active) {
+            eRef.idleClicks++;
+            if (drillPenalty.isEnabled(TIME_PER_HIT === 2)) eRef.timeLeft -= TIME_PENALTY;
+            eRef.combo = 0;
+            eRef.screenShake = 6;
+            triggerFlash();
+            drillAudio.playPenalty();
+            createExplosion(ch.x, ch.y, '#ef4444');
+          } else {
             const dist = Math.hypot(ch.x - tgt.x, ch.y - tgt.y);
 
             if (dist <= tgt.radius + config.hitPad) {
@@ -441,37 +435,34 @@ export default function AwarenessDrillClient() {
               const levelMult = 1 + getDifficultyProgress(eRef.level) * 0.5;
               eRef.score += Math.round(100 * getComboMultiplier(eRef.combo) * levelMult);
 
-              const rawLevel = Math.floor(eRef.score / POINTS_PER_LEVEL) + 1 + getComboBonusLevel(eRef.combo);
+              eRef.timeLeft = Math.min(60, eRef.timeLeft + TIME_PER_HIT);
+
+              const rawLevel = (eRef.score / POINTS_PER_LEVEL) + 1;
               eRef.level = Math.max(eRef.level, rawLevel);
               bestLevelRunRef.current = Math.max(bestLevelRunRef.current, eRef.level);
 
               drillAudio.playHit();
-              createExplosion(tgt.x, tgt.y, '#10b981');
+              const hitColor = eRef.combo >= 10 ? '#34d399' : '#10b981';
+              createExplosion(tgt.x, tgt.y, hitColor);
+              eRef.hitRings.push(createHitRing(tgt.x, tgt.y, tgt.radius, hitColor));
               createHitMarker(ch.x, ch.y);
               setUiScore(eRef.score);
 
               tgt.active = false;
-              const nextConfig = getLevelConfig(eRef.level);
+              const nextConfig = getLevelConfig(eRef.level, eRef.combo);
               eRef.nextSpawnTime = performance.now() + (nextConfig.spawnDelayMin + Math.random() * (nextConfig.spawnDelayMax - nextConfig.spawnDelayMin));
             } else {
               eRef.missedClicks++;
+              if (drillPenalty.isEnabled(TIME_PER_HIT === 2)) eRef.timeLeft -= TIME_PENALTY;
               eRef.combo = 0;
               eRef.screenShake = 6;
               triggerFlash();
               drillAudio.playPenalty();
               createExplosion(ch.x, ch.y, '#ef4444');
             }
-          } else {
-            eRef.missedClicks++;
-            eRef.combo = 0;
-            eRef.screenShake = 6;
-            triggerFlash();
-            drillAudio.playPenalty();
-            createExplosion(ch.x, ch.y, '#ef4444');
           }
         }
-      }
-    };
+      };
 
     document.addEventListener('mousemove', handleMouseMove);
     document.addEventListener('mousedown', handleMouseDown);
@@ -479,7 +470,7 @@ export default function AwarenessDrillClient() {
       document.removeEventListener('mousemove', handleMouseMove);
       document.removeEventListener('mousedown', handleMouseDown);
     };
-  }, [gameState, pointerLocked, universalSens, triggerFlash, resumeDrill]);
+  }, [gameState, pointerLocked, universalSens, triggerFlash]);
 
   useEffect(() => {
     const cvs = canvasRef.current;
@@ -553,7 +544,7 @@ export default function AwarenessDrillClient() {
         }
 
         if (!e.target.active && time >= e.nextSpawnTime) {
-          spawnTarget(time, w, h, e.level);
+          spawnTarget(time, w, h, e.level, e.combo);
         }
 
         if (e.target.active) {
@@ -571,13 +562,14 @@ export default function AwarenessDrillClient() {
             tgt.active = false;
             e.timeouts++;
             e.totalActions++;
+            if (drillPenalty.isEnabled(TIME_PER_HIT === 2)) e.timeLeft -= TIME_PENALTY;
             e.combo = 0;
             e.screenShake = 6;
             triggerFlash();
             drillAudio.playPenalty();
             createExplosion(tgt.x, tgt.y, '#ef4444');
 
-            const nextConfig = getLevelConfig(e.level);
+            const nextConfig = getLevelConfig(e.level, e.combo);
             e.nextSpawnTime = time + (nextConfig.spawnDelayMin + Math.random() * (nextConfig.spawnDelayMax - nextConfig.spawnDelayMin));
           }
         }
@@ -629,12 +621,12 @@ export default function AwarenessDrillClient() {
 
       if ((gameState === 'playing' || gameState === 'start') && e.target.active) {
         const tgt = e.target;
-        const progress = Math.min(1, tgt.age / tgt.ttl);
-        const targetColor = e.combo >= 10 ? '#38bdf8' : '#10b981';
+        const targetColor = e.combo >= 10 ? '#34d399' : '#10b981';
 
-        drawPulseRing(ctx, tgt.x, tgt.y, tgt.radius, targetColor, progress);
         drawTacticalTarget(ctx, tgt.x, tgt.y, tgt.radius, targetColor, true);
       }
+
+      drawHitRings(ctx, e.hitRings, dt);
 
       ctx.lineWidth = 2.0;
       for (let i = e.hitMarkers.length - 1; i >= 0; i--) {
@@ -650,11 +642,31 @@ export default function AwarenessDrillClient() {
       }
       ctx.globalAlpha = 1.0;
 
+      // Render dynamic particles
+      for (let i = e.particles.length - 1; i >= 0; i--) {
+        const p = e.particles[i];
+        p.x += p.vx;
+        p.y += p.vy;
+        p.life -= dt * 2.5;
+        if (p.life <= 0) {
+          e.particles.splice(i, 1);
+          continue;
+        }
+        ctx.globalAlpha = p.life;
+        ctx.fillStyle = p.color;
+        ctx.beginPath();
+        ctx.arc(p.x, p.y, 2.5, 0, Math.PI * 2);
+        ctx.fill();
+      }
+      ctx.globalAlpha = 1.0;
+
       const ch = e.crosshair;
       if (ch.initialized && (gameState === 'playing' || gameState === 'start')) {
-        const activeColor = pointerLocked ? '#10b981' : '#34d399';
-        ctx.strokeStyle = activeColor;
-        ctx.fillStyle = activeColor;
+        ctx.save();
+        ctx.shadowColor = 'rgba(0, 0, 0, 0.9)';
+        ctx.shadowBlur = 3;
+        ctx.strokeStyle = '#ffffff';
+        ctx.fillStyle = '#ffffff';
 
         ctx.lineWidth = 2;
         ctx.beginPath(); ctx.arc(ch.x, ch.y, 14, 0, Math.PI * 2); ctx.stroke();
@@ -669,6 +681,7 @@ export default function AwarenessDrillClient() {
         ctx.stroke();
 
         ctx.beginPath(); ctx.arc(ch.x, ch.y, 2, 0, Math.PI * 2); ctx.fill();
+        ctx.restore();
       }
 
       ctx.restore();
@@ -710,46 +723,40 @@ export default function AwarenessDrillClient() {
     }
   }, [uiScore, bestScore, analytics, isNewBest]);
 
-  const accuracy = gameState === 'gameOver' ? analytics.accuracy : (engine.current.totalActions > 0 ? Math.round((engine.current.successfulHits / engine.current.totalActions) * 100) : 100);
+  const totalActions = engine.current.successfulHits + engine.current.missedClicks + engine.current.idleClicks + engine.current.timeouts;
+  const accuracy = gameState === 'gameOver' ? analytics.accuracy : (totalActions > 0 ? Math.round((engine.current.successfulHits / totalActions) * 100) : 100);
 
   return (
     <div className="min-h-screen bg-[#050508] text-white flex flex-col font-sans select-none">
       {/* ── MAIN CONTENT AREA ── */}
-      <main className="flex-1 max-w-6xl w-full mx-auto px-4 py-6 flex flex-col gap-6">
+      <main className="flex-1 max-w-6xl w-full mx-auto px-4 pt-6 pb-0 flex flex-col gap-6">
         {/* Title */}
         {!isFullscreen && (
-          <div className="text-center">
+          <div className="flex flex-col gap-1">
             <h1 className="text-2xl sm:text-3xl font-black tracking-tight text-white">
-              180° AWARENESS PRO
-              <span data-seo-kw="1" className="block text-sm font-semibold text-slate-400 mt-1 normal-case tracking-normal">
-                180° Snap Turn Aim Trainer
-              </span>
+              <span data-seo-kw="1">{copy?.h1Keyword || "180° Aim Trainer"}</span>
+              {copy?.h1Suffix !== undefined ? copy.h1Suffix : " — Snap Turn Awareness"}
             </h1>
-            <p className="text-xs text-slate-400 mt-1">
-              Hardware Raw Input • Endless Level Progression
+            <p className="text-sm text-slate-400 font-medium">
+              {copy?.subtitle || "Master rapid peripheral detection, large-angle flick transitions, and snap turn deceleration."}
             </p>
           </div>
         )}
 
         {/* Live Stat Cards */}
         {!isFullscreen && (
-          <div className="grid grid-cols-4 gap-2.5 max-w-2xl mx-auto w-full">
-            <div className="bg-[#0d0d18] border border-white/5 rounded-xl p-2.5 text-center">
-              <div className="text-[10px] uppercase font-bold text-slate-500 tracking-wider">Score</div>
-              <div className="text-lg sm:text-xl font-black text-white tabular-nums">{uiScore}</div>
-            </div>
-            <div className="bg-[#0d0d18] border border-white/5 rounded-xl p-2.5 text-center">
-              <div className="text-[10px] uppercase font-bold text-slate-500 tracking-wider">Time</div>
-              <div className={`text-lg sm:text-xl font-black tabular-nums ${uiTimeLeft <= 10 ? 'text-red-400 animate-pulse' : 'text-white'}`}>{uiTimeLeft}s</div>
-            </div>
-            <div className="bg-[#0d0d18] border border-white/5 rounded-xl p-2.5 text-center">
-              <div className="text-[10px] uppercase font-bold text-slate-500 tracking-wider">Accuracy</div>
-              <div className="text-lg sm:text-xl font-black text-blue-400 tabular-nums">{accuracy}%</div>
-            </div>
-            <div className="bg-[#0d0d18] border border-white/5 rounded-xl p-2.5 text-center">
-              <div className="text-[10px] uppercase font-bold text-slate-500 tracking-wider">Best Score</div>
-              <div className="text-lg sm:text-xl font-black text-amber-400 tabular-nums">{bestScore}</div>
-            </div>
+          <div className="grid grid-cols-4 gap-2 w-full -mb-2">
+            {[
+              { label: copy?.statScore || 'Score', value: uiScore },
+              { label: copy?.statTime || 'Time', value: `${uiTimeLeft}s`, color: uiTimeLeft <= 10 ? 'text-red-400 animate-pulse' : 'text-white' },
+              { label: copy?.statAccuracy || 'Accuracy', value: `${accuracy}%`, color: 'text-blue-400' },
+              { label: copy?.statBestScore || 'Best Score', value: bestScore, color: 'text-amber-400' },
+            ].map((card) => (
+              <div key={card.label} className="border border-white/[0.06] bg-white/[0.015] px-2 py-2 rounded-xl text-center">
+                <div className="text-[10px] font-bold tracking-wider uppercase text-slate-500">{card.label}</div>
+                <div className={`text-base sm:text-lg font-black tabular-nums ${card.color || 'text-white'}`}>{card.value}</div>
+              </div>
+            ))}
           </div>
         )}
 
@@ -757,11 +764,11 @@ export default function AwarenessDrillClient() {
         <div 
           ref={containerRef} 
           onContextMenu={(e) => { if (gameActiveRef.current) e.preventDefault(); }}
-          className={`relative overflow-hidden flex flex-col transition-all duration-150 select-none bg-[#080811] text-white ${
+          className={
             isFullscreen 
-              ? 'fixed inset-0 z-[100] w-screen h-[100dvh] bg-[#080811] rounded-none border-none flex flex-col items-center justify-center' 
-              : 'w-full rounded-2xl bg-[#080811] aspect-video min-h-[460px] sm:min-h-[500px] max-h-[88vh] relative overflow-hidden flex flex-col'
-          }`}
+              ? 'fixed inset-0 z-[100] w-screen h-[100dvh] bg-[#050508] flex flex-col items-center justify-center' 
+              : 'w-full rounded-2xl aspect-video min-h-[460px] md:min-h-[500px] max-h-[88vh] max-md:portrait:aspect-[3/4] max-md:portrait:min-h-[420px] max-md:portrait:max-h-[76vh] max-md:landscape:min-h-[340px] max-md:landscape:max-h-[85vh] bg-[#080811] border border-white/10 relative overflow-hidden flex flex-col'
+          }
           style={{ touchAction: gameActiveRef.current ? 'none' : 'auto' }}
         >
           {/* DOM Flash Overlay (Red only) */}
@@ -817,26 +824,8 @@ export default function AwarenessDrillClient() {
             </div>
           )}
 
-          {/* PAUSE OVERLAY IF POINTER LOCK LOST DURING PLAY */}
-          {gameState === 'playing' && !pointerLocked && (
-            <div 
-              className="absolute inset-0 z-40 bg-black/70 backdrop-blur-sm flex items-center justify-center cursor-pointer"
-              onClick={(e) => { 
-                e.stopPropagation(); 
-                resumeDrill();
-              }}
-            >
-              <div className="text-center animate-pulse pointer-events-none">
-                <AlertCircle className="w-12 h-12 text-emerald-400 mx-auto mb-3" />
-                <h2 className="text-2xl font-black text-white tracking-widest uppercase mb-1">Game Paused</h2>
-                <p className="text-xs text-gray-300 font-medium">Click to resume — fullscreen and cursor lock will re-engage.</p>
-              </div>
-            </div>
-          )}
-
           <canvas 
             ref={canvasRef} 
-            onClick={() => { if (gameState === 'playing' && !pointerLocked) resumeDrill(); }}
             className={`block absolute top-0 left-0 w-full h-full touch-none z-10 ${gameState === 'playing' ? 'cursor-none' : ''}`} 
           />
 
@@ -845,18 +834,8 @@ export default function AwarenessDrillClient() {
             <FpsStartCard
               icon={Target}
               accent="emerald"
-              title="180° Awareness Pro"
-              subtitle="Hardware Raw Input • Endless Level Progression"
-              rules={[
-                { icon: Zap, accent: 'emerald', title: 'Hit Targets (+100 PTS)', text: 'Chain hits to build score and combo up to 3.0x' },
-                { icon: Crosshair, accent: 'blue', title: '180° Edge Spawns', text: 'Targets spawn at extreme edges, shrinking & speeding up on a streak' },
-              ]}
-              sensitivity={{ value: universalSens, onChange: setUniversalSens, cmPer360 }}
-              stats={[
-                { icon: Trophy, label: 'Best Score', value: bestScore, color: 'text-white', accent: 'slate' },
-                { icon: Flame, label: 'Best Combo', value: `${bestCombo}x`, color: 'text-emerald-400', accent: 'emerald' },
-                { icon: TrendingUp, label: 'Best Level', value: `Lv. ${bestLevel}`, color: 'text-blue-400', accent: 'blue' },
-              ]}
+              title={copy?.startTitle || "180° Awareness Pro"}
+              subtitle={copy?.startSubtitle || "Hardware Raw Input • Endless Level Progression"}
               isTouchOnlyDevice={isTouchOnlyDevice}
               onStart={enterDrill}
             />
@@ -864,120 +843,75 @@ export default function AwarenessDrillClient() {
 
           {/* COUNTDOWN OVERLAY */}
           {gameState === 'countdown' && (
-            <DrillCountdown value={countdownValue} subtitle="GET READY" />
+            <DrillCountdown value={countdownValue} subtitle={copy?.getReady || "GET READY"} />
           )}
 
-          {/* END SCREEN */}
+          {/* END SCREEN — universal card, shared by every drill */}
           {gameState === 'gameOver' && analytics.grade && (
-            <div className="absolute inset-0 z-40 flex bg-neutral-950/98 select-none font-sans" style={{ background: 'rgba(5,5,8,0.97)' }} onPointerDown={e => e.stopPropagation()}>
-              
-              {/* Left Grade Panel */}
-              <div className="w-[36%] flex flex-col items-center justify-center gap-1 border-r border-white/5 px-4" style={{ background: 'radial-gradient(ellipse 260px 200px at 50% 30%, rgba(16,185,129,.12), transparent 70%)' }}>
-                {isNewBest && (
-                  <span className="text-[9.5px] font-bold text-yellow-400 bg-yellow-500/10 border border-yellow-500/25 px-2.5 py-0.5 rounded-full mb-1 animate-pulse">
-                    NEW BEST
-                  </span>
-                )}
-                <div className={`text-5xl sm:text-6xl font-black leading-none ${analytics.grade.color}`}>
-                  {analytics.grade.letter}
-                </div>
-                <div className="text-[10px] uppercase tracking-widest text-slate-500 text-center font-bold mt-1">
-                  {analytics.grade.label}
-                </div>
-                <div className="text-3xl sm:text-4xl font-black text-white mt-2 tabular-nums">
-                  {uiScore}
-                </div>
-                <div className="text-[9px] uppercase tracking-widest text-slate-500">Points</div>
-              </div>
-
-              {/* Right Stats & Actions Panel */}
-              <div className="flex-1 flex flex-col justify-center gap-3 px-6 py-4 min-w-0">
-                
-                {/* 4 Stat Tiles */}
-                <div className="grid grid-cols-2 sm:grid-cols-4 gap-2">
-                  <div className="bg-black border border-white/5 p-2.5 rounded-xl text-center">
-                    <p className="text-sm sm:text-base font-black text-white">{analytics.accuracy}%</p>
-                    <p className="text-[7.5px] sm:text-[8.5px] font-bold uppercase tracking-wider text-gray-400 mt-0.5">Accuracy</p>
-                  </div>
-                  <div className="bg-black border border-white/5 p-2.5 rounded-xl text-center">
-                    <p className="text-sm sm:text-base font-black text-white">{analytics.avgReactionTime}<span className="text-[10px] text-gray-500">ms</span></p>
-                    <p className="text-[7.5px] sm:text-[8.5px] font-bold uppercase tracking-wider text-gray-400 mt-0.5">Avg Reaction</p>
-                  </div>
-                  <div className="bg-black border border-white/5 p-2.5 rounded-xl text-center">
-                    <p className="text-sm sm:text-base font-black text-white">{analytics.maxCombo}x</p>
-                    <p className="text-[7.5px] sm:text-[8.5px] font-bold uppercase tracking-wider text-gray-400 mt-0.5">Max Combo</p>
-                  </div>
-                  <div className="bg-black border border-white/5 p-2.5 rounded-xl text-center">
-                    <p className="text-sm sm:text-base font-black text-white">Lv. {analytics.finalLevel}</p>
-                    <p className="text-[7.5px] sm:text-[8.5px] font-bold uppercase tracking-wider text-gray-400 mt-0.5">Peak Level</p>
-                  </div>
-                </div>
-
-                {/* Action Buttons */}
-                <div className="flex gap-2">
-                  <button 
-                    onClick={enterDrill} 
-                    className="flex-1 py-3 rounded-[13px] bg-gradient-to-r from-emerald-600 to-teal-600 text-white font-bold text-xs uppercase tracking-wide cursor-pointer transition-transform active:scale-[0.98] shadow-md flex items-center justify-center gap-1.5"
-                  >
-                    <RefreshCw className="w-3.5 h-3.5" /> Play Again
-                  </button>
-                  <button 
-                    onClick={shareScore} 
-                    className="w-11 flex-shrink-0 rounded-[13px] bg-white/[0.04] border border-white/10 flex items-center justify-center text-slate-400 hover:text-white cursor-pointer active:scale-90 transition-transform" 
-                    title="Share Score"
-                  >
-                    <Share2 className="w-4 h-4" />
-                  </button>
-                  <button 
-                    onClick={handleExitDrill} 
-                    className="w-11 flex-shrink-0 rounded-[13px] bg-white/[0.04] border border-white/10 flex items-center justify-center text-slate-400 hover:text-white cursor-pointer active:scale-90 transition-transform" 
-                    title="Exit Fullscreen & Return"
-                  >
-                    <LogOut className="w-4 h-4 text-red-400" />
-                  </button>
-                </div>
-
-              </div>
-            </div>
+            <DrillResultCard
+              accent="emerald"
+              grade={analytics.grade}
+              score={uiScore}
+              isNewBest={isNewBest}
+              stats={[
+                { value: analytics.accuracy, suffix: '%', label: 'Accuracy' },
+                { value: analytics.avgReactionTime, suffix: 'ms', label: 'Avg Reaction' },
+                { value: `${analytics.maxCombo}x`, label: 'Max Combo' },
+                { value: `Lv. ${analytics.finalLevel}`, label: 'Peak Level' },
+              ]}
+              onPlayAgain={enterDrill}
+              onBeforeShare={() => setIsFullscreen(false)}
+              onShare={shareScore}
+              onExit={handleExitDrill}
+            />
           )}
 
         </div>
+
+        {/* Stage Caption */}
+        {!isFullscreen && (
+          <p className="text-xs text-slate-400 leading-relaxed -mt-2">
+            {copy?.stageCaption || "Spot and snap to targets spawning at extreme screen edges before they expire."}
+          </p>
+        )}
 
         {/* ── ACCORDIONS ── */}
         {!isFullscreen && (
           <div className="[&>div]:!mt-0">
             <DrillAccordion
               id="rules"
-              title="Drill Instructions & Scoring System"
+              singleLineTitle
+              title={copy?.rulesTitle || "Drill Instructions & Scoring System"}
               isOpen={openAccordion === 'rules'}
               onToggle={() => setOpenAccordion(openAccordion === 'rules' ? null : 'rules')}
             >
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
-                {RULES_ITEMS.map((item, i) => (
-                  <div key={i} className="bg-black p-4 rounded-xl border border-white/10">
-                    <p className="text-sm font-bold text-white mb-1">{item.title}</p>
-                    <p className="text-xs text-gray-300 leading-relaxed">{item.text}</p>
-                  </div>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 font-sans">
+                {(copy?.rulesItems || RULES_ITEMS).map((item, i) => (
+                  <RuleItem key={i} num={item.num} text={item.text} highlight={item.highlight} result={item.result} />
                 ))}
               </div>
             </DrillAccordion>
 
             <DrillAccordion
               id="about"
-              title="About 180° Awareness Pro"
+              singleLineTitle
+              title={copy?.aboutTitle || "About 180° Awareness Pro"}
               isOpen={openAccordion === 'about'}
               onToggle={() => setOpenAccordion(openAccordion === 'about' ? null : 'about')}
             >
               <div className="space-y-8">
                 <section>
-                  <h4 className="text-base font-bold text-white mb-2 flex items-center gap-2">
-                    <Brain className="w-4 h-4 text-red-400" /> What Is 180° Awareness Training?
-                  </h4>
+                  <h3 className="text-base font-bold text-white mb-2 flex items-center gap-2">
+                    <Brain className="w-4 h-4 text-red-400" /> {copy?.aboutHeading || "What Is 180° Awareness Training?"}
+                  </h3>
                   <p className="text-sm leading-relaxed mb-3 text-gray-300">
-                    <strong>180° Awareness Pro</strong> isolates and exercises your ability to process visual information outside of your immediate focal point. Unlike standard aim trainers that prioritize micro-corrections, this awareness drill challenges spatial coordinate sweeps, forcing you to detect targets and execute rapid 180-degree turnarounds.
+                    {copy?.aboutText1 || "A 180° turn is the longest mouse movement in a shooter. Under Fitts's law the time it takes scales with how far you move and how small the target is (Fitts, 1954) — so most of the cost is not the turn itself, it is reacquiring the target once you land."}
+                  </p>
+                  <p className="text-sm leading-relaxed mb-3 text-gray-300">
+                    {copy?.aboutText2 || "180° Awareness Pro isolates and exercises your ability to process visual information outside of your immediate focal point. Unlike standard aim trainers that prioritize micro-corrections, this awareness drill challenges spatial coordinate sweeps, forcing you to detect targets and execute rapid 180-degree turnarounds."}
                   </p>
                   <p className="text-sm leading-relaxed text-gray-300">
-                    By consistently performing situational awareness training, players map their physical mouse pad space to the game engine's virtual space, enabling accurate blind flicks and rapid threat responses in tactical shooters like CS2 and Valorant. Fast clicks before target expiration condition you to react to stimuli immediately, lowering baseline mechanical hesitation while building large-angle flick consistency.
+                    {copy?.aboutText3 || "By consistently performing situational awareness training, players map their physical mouse pad space to the game engine's virtual space, enabling accurate blind flicks and rapid threat responses in tactical shooters like CS2 and Valorant. Fast clicks before target expiration condition you to react to stimuli immediately, lowering baseline mechanical hesitation while building large-angle flick consistency."}
                   </p>
                 </section>
 
@@ -985,77 +919,50 @@ export default function AwarenessDrillClient() {
                   <div className="p-4 rounded-xl border border-gray-800 bg-white/[0.02]">
                     <div className="flex items-center gap-2.5 mb-2">
                       <div className="w-7 h-7 rounded-lg bg-blue-600 flex items-center justify-center"><Users className="w-3.5 h-3.5 text-white" /></div>
-                      <h5 className="text-xs font-bold text-white">Who Should Use This?</h5>
+                      <h4 className="text-xs font-bold text-white">Who Should Use This?</h4>
                     </div>
                     <p className="text-xs text-gray-300 leading-relaxed">FPS gamers who keep getting flanked, CS2 & Valorant players building clutch-round reflexes, and esports competitors sharpening blind-flick consistency.</p>
                   </div>
                   <div className="p-4 rounded-xl border border-gray-800 bg-white/[0.02]">
                     <div className="flex items-center gap-2.5 mb-2">
                       <div className="w-7 h-7 rounded-lg bg-emerald-600 flex items-center justify-center"><TrendingUp className="w-3.5 h-3.5 text-white" /></div>
-                      <h5 className="text-xs font-bold text-white">Skills Improved</h5>
+                      <h4 className="text-xs font-bold text-white">Skills Improved</h4>
                     </div>
                     <p className="text-xs text-gray-300 leading-relaxed">Peripheral detection, audio-spatial translation, saccadic eye movement, large-angle flick consistency, and target acquisition speed.</p>
                   </div>
                   <div className="p-4 rounded-xl border border-gray-800 bg-white/[0.02]">
                     <div className="flex items-center gap-2.5 mb-2">
                       <div className="w-7 h-7 rounded-lg bg-purple-600 flex items-center justify-center"><Zap className="w-3.5 h-3.5 text-white" /></div>
-                      <h5 className="text-xs font-bold text-white">180° Flick Consistency</h5>
+                      <h4 className="text-xs font-bold text-white">180° Flick Consistency</h4>
                     </div>
-                    <p className="text-xs text-gray-300 leading-relaxed">Chain rapid full-turn snaps onto shrinking, edge-spawning targets to build the muscle memory for clean blind flicks under pressure.</p>
+                    <p className="text-xs text-gray-300 leading-relaxed">Chain rapid full-turn snaps onto edge-spawning targets to build the muscle memory for clean blind flicks under pressure.</p>
                   </div>
                 </div>
-              </div>
-            </DrillAccordion>
-
-            <DrillAccordion
-              id="faq"
-              title="Frequently Asked Questions"
-              isOpen={openAccordion === 'faq'}
-              onToggle={() => setOpenAccordion(openAccordion === 'faq' ? null : 'faq')}
-            >
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                {FAQ_ITEMS.map((item, i) => (
-                  <div key={i} className="bg-[#05060b] border border-gray-800 rounded-xl p-5">
-                    <h4 className="text-sm font-bold text-gray-200 mb-2">{item.q}</h4>
-                    <p className="text-xs text-gray-400 leading-relaxed">{item.a}</p>
-                  </div>
-                ))}
               </div>
             </DrillAccordion>
           </div>
         )}
 
-        {/* ── RELATED FPS DRILLS ── */}
-        {!isFullscreen && (
-          <section className="mt-4">
-            <h2 className="text-sm font-bold text-slate-400 uppercase tracking-wider mb-3 font-sans">
-              Related FPS Drills
-            </h2>
-            <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
-              {RELATED_DRILLS.map((drill) => (
-                <Link
-                  key={drill.id}
-                  href={drill.href}
-                  className="group bg-[#0c0c16] border border-white/5 hover:border-red-500/40 rounded-xl p-3.5 transition-all duration-200 hover:-translate-y-0.5 flex flex-col justify-between"
-                >
-                  <div>
-                    <div className="text-[10px] font-bold text-red-400 uppercase tracking-wider mb-1">{drill.cat}</div>
-                    <div className="text-xs font-bold text-white group-hover:text-red-300 transition-colors">{drill.name}</div>
-                    <div className="text-[11px] text-slate-400 mt-1 line-clamp-2 leading-relaxed">{drill.desc}</div>
-                  </div>
-                  <div className="text-[10px] font-bold text-slate-500 group-hover:text-red-400 mt-3 flex items-center gap-1 transition-colors">
-                    Train Drill <span>→</span>
-                  </div>
-                </Link>
-              ))}
-            </div>
-          </section>
-        )}
-
-        {/* ── FOOTER ── */}
-        {!isFullscreen && <DrillFooter />}
-
       </main>
+    </div>
+  );
+}
+
+// === Subcomponents ===
+function RuleItem({ num, text, highlight = '', result }) {
+  return (
+    <div className="flex items-center gap-2.5 sm:gap-3 bg-black px-3 py-2 sm:px-4 sm:py-2.5 rounded-xl border border-white/10 shadow-sm font-sans">
+      <div className="w-6 h-6 sm:w-7 sm:h-7 rounded-lg bg-white/10 border border-white/20 flex items-center justify-center text-white text-xs sm:text-sm font-black shadow flex-shrink-0">
+        {num}
+      </div>
+      <div className="flex-1 min-w-0 flex items-center justify-between gap-2">
+        <p className="text-xs sm:text-sm font-medium text-gray-200 font-sans truncate">
+          {text}{highlight && <span className="font-bold text-white"> {highlight}</span>}
+        </p>
+        <div className="text-[11px] sm:text-xs font-bold px-2 py-0.5 sm:px-2.5 sm:py-1 rounded-md bg-[#050811] border border-white/10 text-white whitespace-nowrap shadow-inner flex-shrink-0">
+          {result}
+        </div>
+      </div>
     </div>
   );
 }

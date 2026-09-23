@@ -5,33 +5,38 @@ import React, { useState, useEffect, useRef, useCallback } from 'react';
 import Link from 'next/link';
 
 import {
-  Activity, AlertCircle, ArrowRight, ChevronRight, Eye,
-  Flame, RefreshCw, Target, Timer, TrendingUp,
-  Trophy, Volume2, VolumeX, Zap, ZapOff, Share2,
-  Users, LogOut, Award
+  Eye, Target, TrendingUp,
+  Volume2, VolumeX, Zap, ZapOff, Users
 } from 'lucide-react';
 
 import generateShareCard, { shareScoreCard } from '../../../../components/ShareScoreCard';
 import { getPlayerName } from '../../../../lib/leaderboard';
 import { drillAudio } from '../../../../lib/drillAudio';
+import { useDrillSensitivity } from '../../../../lib/drillSensitivity';
 import { drillFlash } from '../../../../lib/drillFlash';
 import { drillTimeout } from '../../../../lib/drillTimeout';
-import { getStartLevel, getDifficultyProgress, getComboBonusLevel } from '../../../../lib/drillDifficulty';
+import { drillPenalty } from '../../../../lib/drillPenalty';
+import { getStartLevel, getDifficultyProgress, ramp } from '../../../../lib/drillDifficulty';
 import { getComboMultiplier, getFpsScoreGrade } from '../../../../lib/scoringEngine';
-import { createBackdropCache, getCanvasDpr, drawPulseRing, drawTacticalTarget } from '../../../../lib/canvasFx';
-import useUnexpectedExitGuard from '../../../../lib/useUnexpectedExitGuard';
-import DrillFooter from '../../../../components/drill/DrillFooter';
+import { createBackdropCache, getCanvasDpr, drawTacticalTarget, createHitRing, drawHitRings } from '../../../../lib/canvasFx';
 import DrillCountdown from '../../../../components/drill/DrillCountdown';
 import DrillAccordion from '../../../../components/drill/DrillAccordion';
 import FpsStartCard from '../../../../components/drill/FpsStartCard';
+import DrillResultCard from '../../../../components/drill/DrillResultCard';
+import useImmersiveMode from '@/lib/useImmersiveMode';
+import useUnexpectedExitGuard from '@/lib/useUnexpectedExitGuard';
 
 // ============================================================
 // TUNING CONSTANTS
 // ============================================================
-const DRILL_DURATION = 45; // 45 seconds focused duration
-const POINTS_PER_LEVEL = 200; // Aggressive progression
-const ELITE_SCORE = 16000; // 100% mark for letter grade
-const STORAGE_KEY = 'skilldrills_fps_instant_response_v2';
+const DRILL_DURATION = 45; // starting clock only; a run grows past this
+const POINTS_PER_LEVEL = 1400; // 200 -> 1400 (7x)
+const ELITE_SCORE = 48000; // 16000 -> 48000 (3x)
+
+const TIME_PER_HIT = 2;
+const TIME_PENALTY = 1;
+
+const STORAGE_KEY = 'skilldrills_fps_instant_response_v3';
 const SPAM_CALM_WINDOW = 350;
 
 const getSavedData = () => {
@@ -50,15 +55,28 @@ const saveData = (data) => {
   } catch (e) {}
 };
 
+const getLevelConfig = (level, combo = 0) => {
+  const p = getDifficultyProgress(level); // 0 at L1, 1 at L15, unbounded above
+  const heat = (getComboMultiplier(combo) - 1) / 2;
+
+  return {
+    flashWindow:   Math.max(40, ramp(550, 90, p) * (1 - heat * 0.35)),
+    targetRadius:  35,
+    idleMin:       ramp(700, 300, p) * (1 - heat * 0.40),
+    idleMax:       ramp(2200, 1000, p) * (1 - heat * 0.35),
+    hitPad:        Math.max(0.5, ramp(10, 2, p) * (1 - heat * 0.50)),
+    feintChance:   p < 0.5 ? 0 : Math.min(0.35, (p - 0.5) * 0.35),
+  };
+};
 
 // ============================================================
 // ACCORDION DATA
 // ============================================================
 const RULES_ITEMS = [
-  { num: "1", text: "Flash Reaction Hit", highlight: "+100 PTS", result: "Click Immediately On Flash" },
-  { num: "2", text: "Speed Bonus System", highlight: "Up to +150 PTS", result: "Sub-150ms Reactions" },
-  { num: "3", text: "Level Progression", highlight: "+1 Level / 200 PTS", result: "Exposure: 550ms → 200ms" },
-  { num: "4", text: "Feint & Pre-fire Penalties", highlight: "Zero Penalties", result: "Combo resets, no time or score lost" }
+  { num: "1", text: "Flash Reaction Hit", highlight: "+100 PTS (+2s, max 60s)", result: "×Combo Mult" },
+  { num: "2", text: "Speed Bonus", highlight: "Sub-150ms Hit", result: "Up to +150 PTS" },
+  { num: "3", text: "Level Progression", highlight: "+1 Level / 1400 PTS", result: "Adaptive Windows" },
+  { num: "4", text: "Miss / Pre-fire", highlight: "Failure Penalty", result: "Resets Combo (-0.8s)" }
 ];
 
 const ABOUT_INTRO = [
@@ -66,24 +84,24 @@ const ABOUT_INTRO = [
 ];
 
 const ABOUT_CARDS = [
-  { icon: Users, iconBg: 'bg-blue-600', title: "Who Should Use This?", text: "CS2, Valorant, and Apex Legends players sharpening raw visual reaction latency, plus any FPS player chasing faster trigger response without relying on hardware." },
-  { icon: TrendingUp, iconBg: 'bg-emerald-600', title: "Skills Improved", text: "Visual stimulus processing speed, trigger discipline, anticipation control, and consistent sub-200ms reaction latency." },
-  { icon: Target, iconBg: 'bg-purple-600', title: "Speed Bonus & Feints", text: "Sub-150ms reactions earn up to +150 bonus points, while dim feints unlocking at Level 8 test your trigger discipline under pressure." },
+  { icon: Users, iconBg: "bg-blue-600", title: "Who Should Use This?", text: "CS2, Valorant, and Apex Legends players sharpening raw visual reaction latency, plus any FPS player chasing faster trigger response without relying on hardware." },
+  { icon: TrendingUp, iconBg: "bg-emerald-600", title: "Skills Improved", text: "Visual stimulus processing speed, trigger discipline, anticipation control, and consistent sub-200ms reaction latency." },
+  { icon: Target, iconBg: "bg-purple-600", title: "Speed Bonus & Feints", text: "Sub-150ms reactions earn up to +150 bonus points, while dim feints unlocking at higher levels test your trigger discipline under pressure." },
 ];
 
 const ABOUT_SECTIONS = [
   {
-    icon: Activity,
+    icon: Zap,
     title: "Progressive Difficulty & Exposure Window",
     paragraphs: [
-      "By exposing players to randomized idle intervals and shrinking flash windows (from 550ms down to 200ms), Instant Response Pro conditions the nervous system to react to visual flashes with zero hesitation while eliminating premature anticipation clicking."
+      "By exposing players to randomized idle intervals and shrinking flash windows, Instant Response Pro conditions the nervous system to react to visual flashes with zero hesitation while eliminating premature anticipation clicking."
     ]
   },
   {
     icon: Zap,
     title: "Speed Bonus & Trigger Discipline",
     paragraphs: [
-      "Sub-150ms reactions earn up to +150 speed bonus points, directly rewarding high neurological processing speed. Pre-firing during idle states or clicking dim feints (which unlock at Level 8) breaks your combo multiplier, forcing absolute trigger discipline under extreme speed constraints."
+      "Sub-150ms reactions earn up to +150 speed bonus points, directly rewarding high neurological processing speed. Pre-firing during idle states or clicking dim feints breaks your combo multiplier, forcing absolute trigger discipline under extreme speed constraints."
     ]
   }
 ];
@@ -96,12 +114,12 @@ const FAQ_ITEMS = [
   { q: "Does this drill help in CS2?", a: "Absolutely. CS2 gunfights are won in milliseconds. Improving visual stimulus response speed directly translates to winning quick-peek engagements." },
   { q: "What is raw reflex latency?", a: "Raw reflex latency is the speed at which your motor reflex fires upon seeing a visual color/light change on screen, independent of cursor movement." },
   { q: "How often should I train my reflexes?", a: "We recommend daily 10-15 minute reflex sessions as a warm-up before queueing up competitive matches." },
-  { q: "Why does missing reset my combo instead of penalizing my time or score?", a: "To keep every run comparable, this drill never drains your clock or deducts points. Pre-firing, missing, and timing out only reset your combo multiplier, so your final score stays a clean measure of skill." },
+  { q: "Why does missing reset my combo instead of penalizing my time or score?", a: "By default, pre-firing, missing, or timing out only resets your combo multiplier to keep baseline training accessible. If you want a stricter challenge with clock deductions (-0.8s per error), you can enable Time Penalty in the session settings." },
   { q: "What is click timing consistency?", a: "Consistency measures the deviation between your reaction times. Lower deviation means highly stable and predictable in-game reflexes." },
   { q: "Does sleep affect my reaction time?", a: "Yes, fatigue and sleep deprivation can degrade reaction time by 50ms or more, heavily impacting gaming performance." },
   { q: "What games benefit from reflex training?", a: "All fast-paced shooters like Apex Legends, Call of Duty, Overwatch 2, CS2, Valorant, and Spectre Divide." },
   { q: "Is this reflex test free?", a: "Yes, it is 100% free and runs directly in your browser with raw pointer lock precision." },
-  { q: "How does dynamic scaling make the drill harder?", a: "As your score increases, the flash duration decreases from 550ms down to a minimum of 200ms, forcing higher neural speed." },
+  { q: "How does dynamic scaling make the drill harder?", a: "As your score increases, the flash duration decreases dynamically with continuous progression, forcing higher neural speed." },
   { q: "What is anticipation clicking?", a: "Anticipation clicking (pre-firing) is clicking based on timing prediction rather than visual stimulus response, which is penalized in this drill." },
   { q: "Does peripheral vision play a role here?", a: "Even though the target is centered, keeping your visual focus sharp and relaxed helps register the flash state faster." }
 ];
@@ -118,12 +136,15 @@ const RELATED_DRILLS = [
 // ============================================================
 // MAIN COMPONENT
 // ============================================================
-export default function InstantResponseClient() {
+export default function InstantResponseClient({ copy = null }) {
   const [gameState, setGameState] = useState('start'); // 'start' | 'countdown' | 'playing' | 'gameOver'
   const [isFullscreen, setIsFullscreen] = useState(false);
+  useImmersiveMode(isFullscreen); // locks the page behind while the drill fills the screen
   const [soundEnabled, setSoundEnabled] = useState(true);
   const [flashEnabled, setFlashEnabled] = useState(true);
+  const [penaltyEnabled, setPenaltyEnabled] = useState(false);
   const [pointerLocked, setPointerLocked] = useState(false);
+  const universalSens = useDrillSensitivity();
   const [openAccordion, setOpenAccordion] = useState(null);
   const [isTouchOnlyDevice, setIsTouchOnlyDevice] = useState(false);
   const [countdownValue, setCountdownValue] = useState(3);
@@ -159,7 +180,7 @@ export default function InstantResponseClient() {
     target: { isExposed: false, isFeint: false, exposeStartTime: 0, flashWindow: 550 },
     score: 0, level: 1, combo: 0, timeLeft: DRILL_DURATION, nextExposeTime: 0, lastClickTime: -Infinity,
     successfulHits: 0, missedClicks: 0, preFires: 0, timeouts: 0, totalShots: 0,
-    reactionTimes: [], maxCombo: 0, particles: [], hitMarkers: [], screenShake: 0,
+    reactionTimes: [], maxCombo: 0, particles: [], hitMarkers: [], hitRings: [], screenShake: 0,
     logicalWidth: 800, logicalHeight: 450
   });
 
@@ -175,6 +196,7 @@ export default function InstantResponseClient() {
     if (typeof window !== 'undefined') {
       setSoundEnabled(drillAudio.isEnabled());
       setFlashEnabled(drillFlash.isEnabled());
+      setPenaltyEnabled(drillPenalty.isEnabled(TIME_PER_HIT === 2));
 
       const hasFinePointer = window.matchMedia('(pointer: fine)').matches;
       const isTouchCapable = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
@@ -194,59 +216,72 @@ export default function InstantResponseClient() {
     };
   }, []);
 
-  // Fullscreen change listener
-  useEffect(() => {
-    const handleFullscreenChange = () => setIsFullscreen(!!document.fullscreenElement);
-    document.addEventListener('fullscreenchange', handleFullscreenChange);
-    return () => document.removeEventListener('fullscreenchange', handleFullscreenChange);
-  }, []);
-
-  const handleExitDrill = useCallback(async () => {
+  const handleExitDrill = useCallback(() => {
     markIntentionalExit();
     countdownTimeoutsRef.current.forEach(clearTimeout);
     countdownTimeoutsRef.current = [];
     startingRef.current = false;
+    gameActiveRef.current = false;
 
-    if (document.fullscreenElement) {
-      await document.exitFullscreen().catch(() => {});
-    }
+    setIsFullscreen(false);
     if (document.pointerLockElement) {
       document.exitPointerLock();
     }
     setGameState('start');
+    setUiScore(0);
+    setUiTimeLeft(DRILL_DURATION);
+    setUiAccuracy(100);
+    lastTimeRef.current = DRILL_DURATION;
+    setAnalytics({
+      accuracy: 100, successfulHits: 0, missedClicks: 0,
+      preFires: 0, timeouts: 0, avgReactionMs: 0,
+      maxCombo: 0, finalLevel: 1, grade: null
+    });
   }, []);
 
-  // Stop the drill if the player leaves any way other than the in-app Exit
-  // button (back gesture, tab switch, Esc) instead of running invisibly.
   const { markIntentionalExit } = useUnexpectedExitGuard({
     active: gameState === 'playing' || gameState === 'countdown',
     onUnexpectedExit: handleExitDrill,
   });
 
-  const resumeDrill = useCallback(async () => {
-    if (containerRef.current && !document.fullscreenElement) {
-      try { await containerRef.current.requestFullscreen(); } catch (e) {}
-    }
-    if (canvasRef.current && !document.pointerLockElement) {
-      try { await canvasRef.current.requestPointerLock(); } catch (e) {}
-    }
-  }, []);
-
-  const getLevelConfig = (level) => {
-    const p = getDifficultyProgress(level); // 0 -> 1 across L1..L15
-    return {
-      flashWindow:   Math.max(200, 550 - p * 350),   // 550 -> 200 ms
-      targetRadius:  35,                             // fixed — difficulty comes from timing, not target size
-      idleMin:       700 - p * 300,                  // 700 -> 400 ms
-      idleMax:       2200 - p * 900,                 // 2200 -> 1300 ms
-      hitPad:        10  - p * 6,                    // 10 -> 4 px
-      feintChance:   p < 0.5 ? 0 : (p - 0.5) * 0.5,  // 0 -> 0.25 from L8
+  useEffect(() => {
+    const handleKeyDown = (e) => {
+      if (e.key === 'Escape') {
+        if (gameState === 'playing' || gameState === 'countdown') {
+          e.preventDefault();
+          e.stopPropagation();
+          handleExitDrill();
+        }
+      }
     };
-  };
 
-  const spawnTargetExposure = useCallback((time, currentLevel) => {
+    const handleLockChange = () => {
+      const isLocked = document.pointerLockElement === canvasRef.current;
+      setPointerLocked(isLocked);
+      if (!isLocked && (gameState === 'playing' || gameState === 'countdown')) {
+        handleExitDrill();
+      }
+    };
+
+    const handleFullscreenChange = () => {
+      if (!document.fullscreenElement && isFullscreen && (gameState === 'playing' || gameState === 'countdown')) {
+        handleExitDrill();
+      }
+    };
+
+    window.addEventListener('keydown', handleKeyDown, true);
+    document.addEventListener('pointerlockchange', handleLockChange);
+    document.addEventListener('fullscreenchange', handleFullscreenChange);
+    return () => {
+      window.removeEventListener('keydown', handleKeyDown, true);
+      document.removeEventListener('pointerlockchange', handleLockChange);
+      document.removeEventListener('fullscreenchange', handleFullscreenChange);
+    };
+  }, [gameState, isFullscreen, handleExitDrill]);
+
+  const spawnTargetExposure = useCallback((time, currentLevel, currentCombo) => {
     const e = engine.current;
-    const config = getLevelConfig(currentLevel);
+    const config = getLevelConfig(currentLevel, currentCombo);
     const isFeint = Math.random() < config.feintChance;
     
     const windowDuration = isFeint ? 60 : config.flashWindow;
@@ -260,7 +295,7 @@ export default function InstantResponseClient() {
   }, []);
 
   const createExplosion = (x, y, color) => {
-    for (let i = 0; i < 15; i++) {
+    for (let i = 0; i < 14; i++) {
       const angle = Math.random() * Math.PI * 2;
       const speed = Math.random() * 5 + 1;
       engine.current.particles.push({ x, y, vx: Math.cos(angle) * speed, vy: Math.sin(angle) * speed, life: 1.0, color });
@@ -291,7 +326,7 @@ export default function InstantResponseClient() {
     setAnalytics({
       accuracy: finalAccuracy, successfulHits: e.successfulHits, missedClicks: e.missedClicks,
       preFires: e.preFires, timeouts: e.timeouts, avgReactionMs: avgRt,
-      maxCombo: e.maxCombo, finalLevel: e.level, grade
+      maxCombo: e.maxCombo, finalLevel: Math.floor(e.level), grade
     });
 
     setUiScore(e.score);
@@ -300,7 +335,7 @@ export default function InstantResponseClient() {
     const isNewHigh = e.score > prevSaved.bestScore;
     setIsNewBest(isNewHigh);
 
-    const runBestLevel = Math.max(prevSaved.bestLevel, bestLevelRunRef.current);
+    const runBestLevel = Math.max(prevSaved.bestLevel, Math.floor(bestLevelRunRef.current));
     const updatedData = {
       bestScore: Math.max(prevSaved.bestScore, e.score),
       bestCombo: Math.max(prevSaved.bestCombo, e.maxCombo),
@@ -333,7 +368,7 @@ export default function InstantResponseClient() {
     lastTimeRef.current = DRILL_DURATION;
 
     const saved = getSavedData();
-    const startLevel = getStartLevel(saved.bestLevel);
+    const startLevel = getStartLevel();
     bestLevelRunRef.current = startLevel;
 
     setAnalytics({
@@ -350,15 +385,11 @@ export default function InstantResponseClient() {
       score: 0, level: startLevel, combo: 0, timeLeft: DRILL_DURATION,
       nextExposeTime: performance.now() + 1000, lastClickTime: -Infinity,
       successfulHits: 0, missedClicks: 0, preFires: 0, timeouts: 0, totalShots: 0,
-      reactionTimes: [], maxCombo: 0, particles: [], hitMarkers: [], screenShake: 0,
+      reactionTimes: [], maxCombo: 0, particles: [], hitMarkers: [], hitRings: [], screenShake: 0,
       logicalWidth: w, logicalHeight: h
     };
 
-    try {
-      if (containerRef.current && !document.fullscreenElement) {
-        await containerRef.current.requestFullscreen();
-      }
-    } catch(e) {}
+    setIsFullscreen(true);
 
     // Countdown sequence: 3 -> 2 -> 1 -> GO
     setGameState('countdown');
@@ -392,92 +423,88 @@ export default function InstantResponseClient() {
     countdownTimeoutsRef.current = [t1, t2, t3, t4];
   }, []);
 
-  // Pointer lock change listener
-  useEffect(() => {
-    const handlePointerLockChange = () => setPointerLocked(document.pointerLockElement === canvasRef.current);
-    document.addEventListener('pointerlockchange', handlePointerLockChange);
-    return () => document.removeEventListener('pointerlockchange', handlePointerLockChange);
-  }, []);
-
   // Scoped Raw Input Mouse Move & Mouse Down Event Handlers
   useEffect(() => {
     const handleMouseMove = (e) => {
       if (gameState !== 'playing' || !pointerLocked || !canvasRef.current) return;
       const w = engine.current.logicalWidth;
       const h = engine.current.logicalHeight;
-      engine.current.crosshair.x = Math.max(0, Math.min(w, engine.current.crosshair.x + e.movementX));
-      engine.current.crosshair.y = Math.max(0, Math.min(h, engine.current.crosshair.y + e.movementY));
+      engine.current.crosshair.x = Math.max(0, Math.min(w, engine.current.crosshair.x + e.movementX * universalSens));
+      engine.current.crosshair.y = Math.max(0, Math.min(h, engine.current.crosshair.y + e.movementY * universalSens));
     };
 
     const handleMouseDown = (e) => {
       if (e.target.tagName === 'BUTTON' || e.target.closest('button')) return;
       if (!containerRef.current || !containerRef.current.contains(e.target)) return;
 
-      if (gameState === 'playing') {
-        if (!pointerLocked && canvasRef.current) {
-          resumeDrill();
-        } else if (pointerLocked) {
-          const eRef = engine.current;
-          const w = eRef.logicalWidth;
-          const h = eRef.logicalHeight;
-          const targetX = w / 2;
-          const targetY = h / 2;
-          const config = getLevelConfig(eRef.level);
+      if (gameState === 'playing' && pointerLocked) {
+        const eRef = engine.current;
+        const w = eRef.logicalWidth;
+        const h = eRef.logicalHeight;
+        const targetX = w / 2;
+        const targetY = h / 2;
+        const config = getLevelConfig(eRef.level, eRef.combo);
 
-          eRef.totalShots++;
-          eRef.lastClickTime = performance.now();
+        eRef.totalShots++;
+        eRef.lastClickTime = performance.now();
 
-          if (!eRef.target.isExposed || eRef.target.isFeint) {
-            // PRE-FIRE FAILURE
-            eRef.preFires++;
+        if (!eRef.target.isExposed || eRef.target.isFeint) {
+          // PRE-FIRE FAILURE
+          eRef.preFires++;
+          if (drillPenalty.isEnabled(TIME_PER_HIT === 2)) eRef.timeLeft -= TIME_PENALTY;
+          eRef.combo = 0;
+          eRef.screenShake = 8;
+          triggerFlash();
+          drillAudio.playPenalty();
+          createExplosion(targetX, targetY, '#ef4444');
+          eRef.target.isExposed = false;
+        } else {
+          const ch = eRef.crosshair;
+          const dist = Math.hypot(ch.x - targetX, ch.y - targetY);
+
+          if (dist <= config.targetRadius + config.hitPad) {
+            // SUCCESSFUL REACTION HIT
+            eRef.successfulHits++;
+            eRef.combo++;
+            if (eRef.combo > eRef.maxCombo) eRef.maxCombo = eRef.combo;
+            
+            const reactionMs = performance.now() - eRef.target.exposeStartTime;
+            eRef.reactionTimes.push(reactionMs);
+
+            const speedBonus = Math.max(0, Math.min(150, Math.round((500 - reactionMs) / 350 * 150)));
+            const levelMult = 1 + getDifficultyProgress(eRef.level) * 0.5;
+            eRef.score += Math.round((100 + speedBonus) * getComboMultiplier(eRef.combo) * levelMult);
+
+            eRef.timeLeft = Math.min(60, eRef.timeLeft + TIME_PER_HIT);
+
+            const rawLevel = (eRef.score / POINTS_PER_LEVEL) + 1;
+            eRef.level = Math.max(eRef.level, rawLevel);
+            bestLevelRunRef.current = Math.max(bestLevelRunRef.current, eRef.level);
+
+            drillAudio.playHit();
+            const hitColor = eRef.combo >= 10 ? '#34d399' : '#10b981';
+            createExplosion(targetX, targetY, hitColor);
+            eRef.hitRings.push(createHitRing(targetX, targetY, config.targetRadius, hitColor));
+            createHitMarker(ch.x, ch.y);
+            setUiScore(eRef.score);
+
+            eRef.target.isExposed = false;
+            const nextConfig = getLevelConfig(eRef.level, eRef.combo);
+            eRef.nextExposeTime = performance.now() + (nextConfig.idleMin + Math.random() * (nextConfig.idleMax - nextConfig.idleMin));
+          } else {
+            // MISS FAILURE
+            eRef.missedClicks++;
+            if (drillPenalty.isEnabled(TIME_PER_HIT === 2)) eRef.timeLeft -= TIME_PENALTY;
             eRef.combo = 0;
             eRef.screenShake = 8;
             triggerFlash();
             drillAudio.playPenalty();
-            eRef.target.isExposed = false;
-          } else {
-            const ch = eRef.crosshair;
-            const dist = Math.hypot(ch.x - targetX, ch.y - targetY);
-
-            if (dist <= config.targetRadius + config.hitPad) {
-              // SUCCESSFUL REACTION HIT
-              eRef.successfulHits++;
-              eRef.combo++;
-              if (eRef.combo > eRef.maxCombo) eRef.maxCombo = eRef.combo;
-              
-              const reactionMs = performance.now() - eRef.target.exposeStartTime;
-              eRef.reactionTimes.push(reactionMs);
-
-              const speedBonus = Math.max(0, Math.min(150, Math.round((500 - reactionMs) / 350 * 150)));
-              const levelMult = 1 + getDifficultyProgress(eRef.level) * 0.5;
-              eRef.score += Math.round((100 + speedBonus) * getComboMultiplier(eRef.combo) * levelMult);
-
-              const rawLevel = Math.floor(eRef.score / POINTS_PER_LEVEL) + 1 + getComboBonusLevel(eRef.combo);
-              eRef.level = Math.max(eRef.level, rawLevel);
-              bestLevelRunRef.current = Math.max(bestLevelRunRef.current, eRef.level);
-
-              drillAudio.playHit();
-              createExplosion(targetX, targetY, '#00ff88');
-              createHitMarker(ch.x, ch.y);
-              setUiScore(eRef.score);
-
-              eRef.target.isExposed = false;
-              const nextConfig = getLevelConfig(eRef.level);
-              eRef.nextExposeTime = performance.now() + (nextConfig.idleMin + Math.random() * (nextConfig.idleMax - nextConfig.idleMin));
-            } else {
-              // MISS FAILURE
-              eRef.missedClicks++;
-              eRef.combo = 0;
-              eRef.screenShake = 8;
-              triggerFlash();
-              drillAudio.playPenalty();
-              createExplosion(ch.x, ch.y, '#ef4444');
-            }
+            createExplosion(ch.x, ch.y, '#ef4444');
           }
-
-          const totalAttempts = eRef.successfulHits + eRef.missedClicks + eRef.preFires + eRef.timeouts;
-          setUiAccuracy(totalAttempts > 0 ? Math.round((eRef.successfulHits / totalAttempts) * 100) : 100);
         }
+
+        const totalAttempts = eRef.successfulHits + eRef.missedClicks + eRef.preFires + eRef.timeouts;
+        setUiAccuracy(totalAttempts > 0 ? Math.round((eRef.successfulHits / totalAttempts) * 100) : 100);
       }
     };
 
@@ -487,7 +514,7 @@ export default function InstantResponseClient() {
       document.removeEventListener('mousemove', handleMouseMove);
       document.removeEventListener('mousedown', handleMouseDown);
     };
-  }, [gameState, pointerLocked, triggerFlash, resumeDrill]);
+  }, [gameState, pointerLocked, universalSens, triggerFlash]);
 
   // Main Physics & Canvas Render Loop
   useEffect(() => {
@@ -510,7 +537,7 @@ export default function InstantResponseClient() {
             bCtx.fillStyle = '#050508';
             bCtx.fillRect(0, 0, w, h);
             
-            bCtx.strokeStyle = 'rgba(0, 255, 136, 0.04)';
+            bCtx.strokeStyle = 'rgba(16, 185, 129, 0.04)';
             bCtx.lineWidth = 1;
             const cx = w / 2, cy = h / 2;
             bCtx.beginPath();
@@ -563,7 +590,7 @@ export default function InstantResponseClient() {
         }
 
         if (!e.target.isExposed && time >= e.nextExposeTime && (time - e.lastClickTime) >= SPAM_CALM_WINDOW) {
-          spawnTargetExposure(time, e.level);
+          spawnTargetExposure(time, e.level, e.combo);
         }
 
         if (e.target.isExposed) {
@@ -574,6 +601,7 @@ export default function InstantResponseClient() {
 
             if (!e.target.isFeint) {
               e.timeouts++;
+              if (drillPenalty.isEnabled(TIME_PER_HIT === 2)) e.timeLeft -= TIME_PENALTY;
               e.combo = 0;
               e.screenShake = 8;
               triggerFlash();
@@ -584,7 +612,7 @@ export default function InstantResponseClient() {
               setUiAccuracy(totalAttempts > 0 ? Math.round((e.successfulHits / totalAttempts) * 100) : 100);
             }
 
-            const config = getLevelConfig(e.level);
+            const config = getLevelConfig(e.level, e.combo);
             e.nextExposeTime = time + (config.idleMin + Math.random() * (config.idleMax - config.idleMin));
           }
         }
@@ -609,28 +637,21 @@ export default function InstantResponseClient() {
       }
 
       if (gameState === 'playing' || gameState === 'start') {
-        const config = getLevelConfig(e.level);
+        const config = getLevelConfig(e.level, e.combo);
         const r = config.targetRadius;
         const cx = w / 2;
         const cy = h / 2;
         const t = e.target;
 
         if (t.isExposed) {
-          const age = time - t.exposeStartTime;
-          const progress = Math.min(1, age / t.flashWindow);
-
           if (t.isFeint) {
             ctx.globalAlpha = 0.35;
-            ctx.fillStyle = '#00ff88';
+            ctx.fillStyle = '#10b981';
             ctx.beginPath(); ctx.arc(cx, cy, r * 0.85, 0, Math.PI * 2); ctx.fill();
             ctx.globalAlpha = 1.0;
           } else {
-            const lifePercent = 1 - progress;
-            const targetColor = e.combo >= 10 ? '#38bdf8' : '#00ff88';
-            const ringColor = lifePercent > 0.5 ? targetColor : (lifePercent > 0.25 ? '#eab308' : '#ef4444');
-
-            drawPulseRing(ctx, cx, cy, r, targetColor, progress);
-            drawTacticalTarget(ctx, cx, cy, r, ringColor, true);
+            const targetColor = e.combo >= 10 ? '#34d399' : '#10b981';
+            drawTacticalTarget(ctx, cx, cy, r, targetColor, true);
           }
         } else {
           ctx.fillStyle = '#1e293b';
@@ -642,10 +663,19 @@ export default function InstantResponseClient() {
 
       for (let i = e.particles.length - 1; i >= 0; i--) {
         const p = e.particles[i];
-        p.x += p.vx; p.y += p.vy; p.life -= dt * 2.5;
+        p.x += p.vx;
+        p.y += p.vy;
+        p.life -= dt * 2.5;
         if (p.life <= 0) { e.particles.splice(i, 1); continue; }
-        ctx.globalAlpha = p.life; ctx.fillStyle = p.color; ctx.fillRect(p.x, p.y, 3, 3);
+        ctx.globalAlpha = Math.max(0, p.life);
+        ctx.fillStyle = p.color;
+        ctx.beginPath();
+        ctx.arc(p.x, p.y, 2.5, 0, Math.PI * 2);
+        ctx.fill();
       }
+      ctx.globalAlpha = 1.0;
+
+      drawHitRings(ctx, e.hitRings, dt);
 
       ctx.lineWidth = 2.0;
       for (let i = e.hitMarkers.length - 1; i >= 0; i--) {
@@ -653,7 +683,7 @@ export default function InstantResponseClient() {
         hm.life -= dt * 4.5;
         if (hm.life <= 0) { e.hitMarkers.splice(i, 1); continue; }
         ctx.globalAlpha = hm.life; ctx.strokeStyle = '#ffffff';
-        const s = 6 + (1 - hm.life) * 8;
+        const s = 6 + (1 - hm.life) * 8; 
         ctx.beginPath();
         ctx.moveTo(hm.x - s, hm.y - s); ctx.lineTo(hm.x + s, hm.y + s);
         ctx.moveTo(hm.x + s, hm.y - s); ctx.lineTo(hm.x - s, hm.y + s);
@@ -663,23 +693,34 @@ export default function InstantResponseClient() {
 
       const ch = e.crosshair;
       if (ch.initialized && (gameState === 'playing' || gameState === 'start')) {
-        const activeColor = pointerLocked ? '#00ff88' : '#eab308';
+        const activeColor = '#ffffff';
+        ctx.save();
+        ctx.shadowColor = 'rgba(0, 0, 0, 0.9)';
+        ctx.shadowBlur = 3;
         ctx.strokeStyle = activeColor;
         ctx.fillStyle = activeColor;
-        
-        ctx.lineWidth = 2;
-        ctx.beginPath(); ctx.arc(ch.x, ch.y, 16, 0, Math.PI * 2); ctx.stroke();
 
-        ctx.lineWidth = 1.5;
-        const gap = 6;
+        ctx.lineWidth = 2;
         ctx.beginPath();
-        ctx.moveTo(ch.x, ch.y - 16); ctx.lineTo(ch.x, ch.y - gap);
-        ctx.moveTo(ch.x, ch.y + 16); ctx.lineTo(ch.x, ch.y + gap);
-        ctx.moveTo(ch.x - 16, ch.y); ctx.lineTo(ch.x - gap, ch.y);
-        ctx.moveTo(ch.x + 16, ch.y); ctx.lineTo(ch.x + gap, ch.y);
+        ctx.arc(ch.x, ch.y, 14, 0, Math.PI * 2);
         ctx.stroke();
-        
-        ctx.beginPath(); ctx.arc(ch.x, ch.y, 2, 0, Math.PI * 2); ctx.fill();
+
+        const gap = 4;
+        ctx.beginPath();
+        ctx.moveTo(ch.x, ch.y - 14);
+        ctx.lineTo(ch.x, ch.y - gap);
+        ctx.moveTo(ch.x, ch.y + 14);
+        ctx.lineTo(ch.x, ch.y + gap);
+        ctx.moveTo(ch.x - 14, ch.y);
+        ctx.lineTo(ch.x - gap, ch.y);
+        ctx.moveTo(ch.x + 14, ch.y);
+        ctx.lineTo(ch.x + gap, ch.y);
+        ctx.stroke();
+
+        ctx.beginPath();
+        ctx.arc(ch.x, ch.y, 2, 0, Math.PI * 2);
+        ctx.fill();
+        ctx.restore();
       }
 
       ctx.restore();
@@ -726,41 +767,32 @@ export default function InstantResponseClient() {
   return (
     <div className="min-h-screen bg-[#050508] text-white flex flex-col font-sans select-none">
       {/* ── MAIN CONTENT AREA ── */}
-      <main className="flex-1 max-w-6xl w-full mx-auto px-4 py-6 flex flex-col gap-6">
+      <main className="flex-1 max-w-6xl w-full mx-auto px-4 pt-6 pb-0 flex flex-col gap-6">
         {/* Title */}
         {!isFullscreen && (
-          <div className="text-center">
+          <div className="flex flex-col gap-1">
             <h1 className="text-2xl sm:text-3xl font-black tracking-tight text-white">
-              INSTANT RESPONSE PRO
-              <span data-seo-kw="1" className="block text-sm font-semibold text-slate-400 mt-1 normal-case tracking-normal">
-                FPS Reaction Time Test
-              </span>
+              <span data-seo-kw="1">{copy?.h1Keyword || "FPS Reaction Time Test"}</span>
+              {copy?.h1Suffix !== undefined ? copy.h1Suffix : " — Gaming Reflex Trainer"}
+              <span className="block text-sm font-semibold text-slate-400 mt-1">{copy?.subtitle || "FPS reaction time test for visual reflex speed, click latency, and trigger discipline in competitive gaming"}</span>
             </h1>
-            <p className="text-xs text-slate-400 mt-1">
-              Visual Reaction Latency &amp; Reflex • 15 Levels
-            </p>
           </div>
         )}
 
         {/* Live Stat Cards */}
         {!isFullscreen && (
-          <div className="grid grid-cols-4 gap-2.5 max-w-2xl mx-auto w-full">
-            <div className="bg-[#0d0d18] border border-white/5 rounded-xl p-2.5 text-center">
-              <div className="text-[10px] uppercase font-bold text-slate-500 tracking-wider">Score</div>
-              <div className="text-lg sm:text-xl font-black text-emerald-400 tabular-nums">{uiScore}</div>
-            </div>
-            <div className="bg-[#0d0d18] border border-white/5 rounded-xl p-2.5 text-center">
-              <div className="text-[10px] uppercase font-bold text-slate-500 tracking-wider">Time</div>
-              <div className={`text-lg sm:text-xl font-black tabular-nums ${uiTimeLeft <= 10 ? 'text-red-400 animate-pulse' : 'text-white'}`}>{uiTimeLeft}s</div>
-            </div>
-            <div className="bg-[#0d0d18] border border-white/5 rounded-xl p-2.5 text-center">
-              <div className="text-[10px] uppercase font-bold text-slate-500 tracking-wider">Accuracy</div>
-              <div className="text-lg sm:text-xl font-black text-blue-400 tabular-nums">{accuracy}%</div>
-            </div>
-            <div className="bg-[#0d0d18] border border-white/5 rounded-xl p-2.5 text-center">
-              <div className="text-[10px] uppercase font-bold text-slate-500 tracking-wider">Best Score</div>
-              <div className="text-lg sm:text-xl font-black text-amber-400 tabular-nums">{bestScore}</div>
-            </div>
+          <div className="grid grid-cols-4 gap-2 w-full -mb-2">
+            {[
+              { label: copy?.statScore || 'Score', value: uiScore, color: 'text-emerald-400' },
+              { label: copy?.statTime || 'Time', value: `${uiTimeLeft}s`, color: uiTimeLeft <= 10 ? 'text-red-400 animate-pulse' : 'text-white' },
+              { label: copy?.statAccuracy || 'Accuracy', value: `${accuracy}%`, color: 'text-blue-400' },
+              { label: copy?.statBestScore || 'Best Score', value: bestScore, color: 'text-amber-400' },
+            ].map((card) => (
+              <div key={card.label} className="border border-white/[0.06] bg-white/[0.015] px-2 py-2 rounded-xl text-center">
+                <div className="text-[10px] font-bold tracking-wider uppercase text-slate-500">{card.label}</div>
+                <div className={`text-base sm:text-lg font-black tabular-nums ${card.color || 'text-white'}`}>{card.value}</div>
+              </div>
+            ))}
           </div>
         )}
 
@@ -768,11 +800,11 @@ export default function InstantResponseClient() {
         <div 
           ref={containerRef} 
           onContextMenu={(e) => { if (gameActiveRef.current) e.preventDefault(); }}
-          className={`relative overflow-hidden flex flex-col transition-all duration-150 select-none bg-[#080811] text-white border border-white/10 ${
+          className={
             isFullscreen 
-              ? 'fixed inset-0 z-[100] w-screen h-[100dvh] bg-[#080811] rounded-none border-none flex flex-col items-center justify-center' 
-              : 'w-full rounded-2xl bg-[#080811] aspect-video min-h-[460px] sm:min-h-[500px] max-h-[88vh] relative overflow-hidden flex flex-col'
-          }`}
+              ? "fixed inset-0 z-[100] w-screen h-[100dvh] bg-[#050508] flex flex-col items-center justify-center" 
+              : "w-full rounded-2xl aspect-video min-h-[460px] md:min-h-[500px] max-h-[88vh] max-md:portrait:aspect-[3/4] max-md:portrait:min-h-[420px] max-md:portrait:max-h-[76vh] max-md:landscape:min-h-[340px] max-md:landscape:max-h-[85vh] bg-[#080811] border border-white/10 relative overflow-hidden flex flex-col"
+          }
           style={{ touchAction: gameActiveRef.current ? 'none' : 'auto' }}
         >
           {/* DOM Flash Overlay */}
@@ -789,7 +821,7 @@ export default function InstantResponseClient() {
               </div>
               <div className="absolute top-4 right-4 z-30 pointer-events-none text-right">
                 <p className="text-[10px] font-semibold uppercase tracking-wider text-white/50">Time</p>
-                <p className={`text-2xl sm:text-3xl font-bold tabular-nums leading-tight ${uiTimeLeft <= 10 ? 'text-red-400' : 'text-white'}`}>{uiTimeLeft}s</p>
+                <p className={`text-2xl sm:text-3xl font-bold tabular-nums leading-tight ${uiTimeLeft <= 10 ? "text-red-400" : "text-white"}`}>{uiTimeLeft}s</p>
               </div>
             </>
           )}
@@ -828,27 +860,9 @@ export default function InstantResponseClient() {
             </div>
           )}
 
-          {/* PAUSE OVERLAY IF POINTER LOCK LOST DURING PLAY */}
-          {gameState === 'playing' && !pointerLocked && (
-            <div 
-              className="absolute inset-0 z-40 bg-black/70 backdrop-blur-sm flex items-center justify-center cursor-pointer"
-              onClick={(e) => { 
-                e.stopPropagation(); 
-                resumeDrill();
-              }}
-            >
-              <div className="text-center animate-pulse pointer-events-none">
-                <AlertCircle className="w-12 h-12 text-emerald-400 mx-auto mb-3" />
-                <h2 className="text-2xl font-black text-white tracking-widest uppercase mb-1">Game Paused</h2>
-                <p className="text-xs text-gray-300 font-medium">Click to resume — fullscreen and cursor lock will re-engage.</p>
-              </div>
-            </div>
-          )}
-
           <canvas 
             ref={canvasRef} 
-            onClick={() => { if (gameState === 'playing' && !pointerLocked) resumeDrill(); }}
-            className={`block absolute top-0 left-0 w-full h-full touch-none z-10 ${gameState === 'playing' ? 'cursor-none' : ''}`} 
+            className={`block absolute top-0 left-0 w-full h-full touch-none z-10 ${gameState === "playing" ? "cursor-none" : ""}`}
           />
 
           {/* START MODAL */}
@@ -856,17 +870,8 @@ export default function InstantResponseClient() {
             <FpsStartCard
               icon={Target}
               accent="emerald"
-              title="Instant Response Pro"
-              subtitle="Visual Reaction Latency & Reflex • 15 Levels"
-              rules={[
-                { icon: Target, accent: 'emerald', title: 'Objective', text: 'Click Flash Stimulus' },
-                { icon: AlertCircle, accent: 'red', title: 'Failure Rule', text: 'Pre-fire / Miss / Timeout' },
-              ]}
-              stats={[
-                { icon: Trophy, label: 'Best Score', value: bestScore, color: 'text-white', accent: 'slate' },
-                { icon: Flame, label: 'Best Combo', value: `${bestCombo}x`, color: 'text-emerald-400', accent: 'emerald' },
-                { icon: TrendingUp, label: 'Best Level', value: `Lv. ${bestLevel}`, color: 'text-blue-400', accent: 'blue' },
-              ]}
+              title={copy?.startTitle || "Instant Response Pro"}
+              subtitle={copy?.startSubtitle || "Visual Reaction Latency & Reflex • Endless Level Progression"}
               isTouchOnlyDevice={isTouchOnlyDevice}
               onStart={enterDrill}
             />
@@ -874,96 +879,50 @@ export default function InstantResponseClient() {
 
           {/* COUNTDOWN OVERLAY */}
           {gameState === 'countdown' && (
-            <DrillCountdown value={countdownValue} subtitle="GET READY" />
+            <DrillCountdown value={countdownValue} subtitle={copy?.getReady || "GET READY"} />
           )}
 
-          {/* END SCREEN */}
+          {/* END SCREEN — universal card, shared by every drill */}
           {gameState === 'gameOver' && analytics.grade && (
-            <div className="absolute inset-0 z-40 flex bg-neutral-950/98 select-none font-sans" style={{ background: 'rgba(5,5,8,0.97)' }} onPointerDown={e => e.stopPropagation()}>
-              
-              {/* Left Grade Panel */}
-              <div className="w-[36%] flex flex-col items-center justify-center gap-1 border-r border-white/5 px-4" style={{ background: 'radial-gradient(ellipse 260px 200px at 50% 30%, rgba(16,185,129,.12), transparent 70%)' }}>
-                {isNewBest && (
-                  <span className="text-[9.5px] font-bold text-yellow-400 bg-yellow-500/10 border border-yellow-500/25 px-2.5 py-0.5 rounded-full mb-1 animate-pulse">
-                    NEW BEST
-                  </span>
-                )}
-                <div className={`text-5xl sm:text-6xl font-black leading-none ${analytics.grade.color}`}>
-                  {analytics.grade.letter}
-                </div>
-                <div className="text-[10px] uppercase tracking-widest text-slate-500 text-center font-bold mt-1">
-                  {analytics.grade.label}
-                </div>
-                <div className="text-3xl sm:text-4xl font-black text-white mt-2 tabular-nums">
-                  {uiScore}
-                </div>
-                <div className="text-[9px] uppercase tracking-widest text-slate-500">Points</div>
-              </div>
-
-              {/* Right Stats & Actions Panel */}
-              <div className="flex-1 flex flex-col justify-center gap-3 px-6 py-4 min-w-0">
-                
-                {/* 4 Stat Tiles */}
-                <div className="grid grid-cols-2 sm:grid-cols-4 gap-2">
-                  <div className="bg-black border border-white/5 p-2.5 rounded-xl text-center">
-                    <p className="text-sm sm:text-base font-black text-white">{analytics.accuracy}%</p>
-                    <p className="text-[7.5px] sm:text-[8.5px] font-bold uppercase tracking-wider text-gray-400 mt-0.5">Accuracy</p>
-                  </div>
-                  <div className="bg-black border border-white/5 p-2.5 rounded-xl text-center">
-                    <p className="text-sm sm:text-base font-black text-white">{analytics.avgReactionMs}<span className="text-[10px] text-gray-500">ms</span></p>
-                    <p className="text-[7.5px] sm:text-[8.5px] font-bold uppercase tracking-wider text-gray-400 mt-0.5">Avg Reaction</p>
-                  </div>
-                  <div className="bg-black border border-white/5 p-2.5 rounded-xl text-center">
-                    <p className="text-sm sm:text-base font-black text-white">{analytics.maxCombo}x</p>
-                    <p className="text-[7.5px] sm:text-[8.5px] font-bold uppercase tracking-wider text-gray-400 mt-0.5">Max Combo</p>
-                  </div>
-                  <div className="bg-black border border-white/5 p-2.5 rounded-xl text-center">
-                    <p className="text-sm sm:text-base font-black text-white">Lv. {analytics.finalLevel}</p>
-                    <p className="text-[7.5px] sm:text-[8.5px] font-bold uppercase tracking-wider text-gray-400 mt-0.5">Peak Level</p>
-                  </div>
-                </div>
-
-                {/* Action Buttons */}
-                <div className="flex gap-2">
-                  <button 
-                    onClick={enterDrill} 
-                    className="flex-1 py-3 rounded-[13px] bg-gradient-to-r from-emerald-600 to-teal-600 text-white font-bold text-xs uppercase tracking-wide cursor-pointer transition-transform active:scale-[0.98] shadow-md flex items-center justify-center gap-1.5"
-                  >
-                    <RefreshCw className="w-3.5 h-3.5" /> Play Again
-                  </button>
-                  <button 
-                    onClick={shareScore} 
-                    className="w-11 flex-shrink-0 rounded-[13px] bg-white/[0.04] border border-white/10 flex items-center justify-center text-slate-400 hover:text-white cursor-pointer active:scale-90 transition-transform" 
-                    title="Share Score"
-                  >
-                    <Share2 className="w-4 h-4" />
-                  </button>
-                  <button 
-                    onClick={handleExitDrill} 
-                    className="w-11 flex-shrink-0 rounded-[13px] bg-white/[0.04] border border-white/10 flex items-center justify-center text-slate-400 hover:text-white cursor-pointer active:scale-90 transition-transform" 
-                    title="Exit Fullscreen & Return"
-                  >
-                    <LogOut className="w-4 h-4 text-red-400" />
-                  </button>
-                </div>
-
-              </div>
-            </div>
+            <DrillResultCard
+              accent="emerald"
+              grade={analytics.grade}
+              score={uiScore}
+              isNewBest={isNewBest}
+              stats={[
+                { value: analytics.accuracy, suffix: "%", label: "Accuracy" },
+                { value: analytics.avgReactionMs, suffix: "ms", label: "Avg Reaction" },
+                { value: `${analytics.maxCombo}x`, label: "Max Combo" },
+                { value: `Lv. ${analytics.finalLevel}`, label: "Peak Level" },
+              ]}
+              onPlayAgain={enterDrill}
+              onBeforeShare={() => setIsFullscreen(false)}
+              onShare={shareScore}
+              onExit={handleExitDrill}
+            />
           )}
 
         </div>
+
+        {/* Drill Caption */}
+        {!isFullscreen && (
+          <p className="text-xs text-slate-400 leading-relaxed -mt-2">
+            {copy?.stageCaption || "Click the instant the center target flashes green while holding discipline against feint triggers."}
+          </p>
+        )}
 
         {/* ── ACCORDIONS ── */}
         {!isFullscreen && (
           <div className="[&>div]:!mt-0">
             <DrillAccordion
               id="rules"
-              title="Drill Instructions & Scoring System"
+              singleLineTitle
+              title={copy?.rulesTitle || "Drill Instructions & Scoring System"}
               isOpen={openAccordion === 'rules'}
               onToggle={() => setOpenAccordion(openAccordion === 'rules' ? null : 'rules')}
             >
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                {RULES_ITEMS.map((item, i) => (
+                {(copy?.rulesItems || RULES_ITEMS).map((item, i) => (
                   <RuleItem key={i} num={item.num} text={item.text} highlight={item.highlight} result={item.result} />
                 ))}
               </div>
@@ -971,17 +930,21 @@ export default function InstantResponseClient() {
 
             <DrillAccordion
               id="about"
-              title="About Instant Response Pro"
+              singleLineTitle
+              title={copy?.aboutTitle || "About Instant Response Pro"}
               isOpen={openAccordion === 'about'}
               onToggle={() => setOpenAccordion(openAccordion === 'about' ? null : 'about')}
             >
               <div className="space-y-8">
                 <section>
-                  <h4 className="text-base font-bold text-white mb-2 flex items-center gap-2">
+                  <h3 className="text-base font-bold text-white mb-2 flex items-center gap-2">
                     <Eye className="w-4 h-4 text-emerald-400" /> What Is Instant Response Training?
-                  </h4>
+                  </h3>
+                  <p className="text-sm leading-relaxed mb-3 text-gray-300">
+                    FPS reaction time is how long it takes to see an enemy and click. A typical adult reacts to a simple visual stimulus in 200&ndash;250&nbsp;ms, and what you measure here also contains your display&rsquo;s refresh interval and your mouse&rsquo;s polling delay (Woods et al., 2015).
+                  </p>
                   {ABOUT_INTRO.map((para, i) => (
-                    <p key={i} className={`text-sm leading-relaxed text-gray-300 ${i < ABOUT_INTRO.length - 1 ? 'mb-3' : ''}`}>{para}</p>
+                    <p key={i} className={`text-sm leading-relaxed text-gray-300 ${i < ABOUT_INTRO.length - 1 ? "mb-3" : ""}`}>{para}</p>
                   ))}
                 </section>
 
@@ -992,7 +955,7 @@ export default function InstantResponseClient() {
                         <div className={`w-7 h-7 rounded-lg ${card.iconBg} flex items-center justify-center`}>
                           <card.icon className="w-3.5 h-3.5 text-white" />
                         </div>
-                        <h5 className="text-xs font-bold text-white">{card.title}</h5>
+                        <h4 className="text-xs font-bold text-white">{card.title}</h4>
                       </div>
                       <p className="text-xs text-gray-300 leading-relaxed">{card.text}</p>
                     </div>
@@ -1001,62 +964,22 @@ export default function InstantResponseClient() {
 
                 {ABOUT_SECTIONS.map((section, i) => (
                   <section key={i}>
-                    <h4 className="text-base font-bold text-white mb-2 flex items-center gap-2">
+                    <h3 className="text-base font-bold text-white mb-2 flex items-center gap-2">
                       <section.icon className="w-4 h-4 text-emerald-400" /> {section.title}
-                    </h4>
+                    </h3>
                     {section.paragraphs.map((para, j) => (
-                      <p key={j} className={`text-sm leading-relaxed text-gray-300 ${j < section.paragraphs.length - 1 ? 'mb-3' : ''}`}>{para}</p>
+                      <p key={j} className={`text-sm leading-relaxed text-gray-300 ${j < section.paragraphs.length - 1 ? "mb-3" : ""}`}>{para}</p>
                     ))}
                   </section>
-                ))}
-              </div>
-            </DrillAccordion>
-
-            <DrillAccordion
-              id="faq"
-              title="Frequently Asked Questions"
-              isOpen={openAccordion === 'faq'}
-              onToggle={() => setOpenAccordion(openAccordion === 'faq' ? null : 'faq')}
-            >
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                {FAQ_ITEMS.map((item, i) => (
-                  <FAQItem key={i} q={item.q} a={item.a} />
                 ))}
               </div>
             </DrillAccordion>
           </div>
         )}
 
-        {/* ── RELATED FPS DRILLS ── */}
-        {!isFullscreen && (
-          <section className="mt-4">
-            <h2 className="text-sm font-bold text-slate-400 uppercase tracking-wider mb-3">
-              Related FPS Drills
-            </h2>
-            <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
-              {RELATED_DRILLS.map((drill) => (
-                <Link
-                  key={drill.id}
-                  href={drill.href}
-                  className="group bg-[#0c0c16] border border-white/5 hover:border-emerald-500/40 rounded-xl p-3.5 transition-all duration-200 hover:-translate-y-0.5 flex flex-col justify-between"
-                >
-                  <div>
-                    <div className="text-[10px] font-bold text-emerald-400 uppercase tracking-wider mb-1">{drill.cat}</div>
-                    <div className="text-xs font-bold text-white group-hover:text-emerald-300 transition-colors">{drill.name}</div>
-                    <div className="text-[11px] text-slate-400 mt-1 line-clamp-2 leading-relaxed">{drill.desc}</div>
-                  </div>
-                  <div className="text-[10px] font-bold text-slate-500 group-hover:text-emerald-400 mt-3 flex items-center gap-1 transition-colors">
-                    Train Drill <span>→</span>
-                  </div>
-                </Link>
-              ))}
-            </div>
-          </section>
-        )}
+
       </main>
 
-      {/* ── FOOTER ── */}
-      {!isFullscreen && <DrillFooter />}
     </div>
   );
 }
@@ -1064,25 +987,18 @@ export default function InstantResponseClient() {
 // === Subcomponents ===
 function RuleItem({ num, text, highlight = '', result }) {
   return (
-    <div className="flex items-center gap-4 bg-black p-4 rounded-xl border border-white/10 shadow-sm font-sans">
-      <div className="w-8 h-8 rounded-xl bg-white/10 border border-white/20 flex items-center justify-center text-white text-base font-black shadow-lg flex-shrink-0">{num}</div>
-      <div className="flex-1 flex flex-col sm:flex-row sm:items-center justify-between gap-2">
-        <p className="text-sm font-medium text-gray-100 font-sans">
-          {text}{highlight && <span className="font-black font-sans text-white"> {highlight}</span>}
+    <div className="flex items-center gap-2.5 sm:gap-3 bg-black px-3 py-2 sm:px-4 sm:py-2.5 rounded-xl border border-white/10 shadow-sm font-sans">
+      <div className="w-6 h-6 sm:w-7 sm:h-7 rounded-lg bg-white/10 border border-white/20 flex items-center justify-center text-white text-xs sm:text-sm font-black shadow flex-shrink-0">
+        {num}
+      </div>
+      <div className="flex-1 min-w-0 flex items-center justify-between gap-2">
+        <p className="text-xs sm:text-sm font-medium text-gray-200 font-sans truncate">
+          {text}{highlight && <span className="font-bold text-white"> {highlight}</span>}
         </p>
-        <div className="text-xs font-black px-3 py-1.5 rounded-lg bg-[#050811] border border-white/10 text-white whitespace-nowrap shadow-inner tracking-wide text-center sm:text-left">
+        <div className="text-[11px] sm:text-xs font-bold px-2 py-0.5 sm:px-2.5 sm:py-1 rounded-md bg-[#050811] border border-white/10 text-white whitespace-nowrap shadow-inner flex-shrink-0">
           {result}
         </div>
       </div>
-    </div>
-  );
-}
-
-function FAQItem({ q, a }) {
-  return (
-    <div className="bg-[#05060b] border border-gray-800 rounded-xl p-5 hover:border-gray-700 transition-colors font-sans">
-      <h4 className="text-sm font-bold text-gray-200 mb-2">{q}</h4>
-      <p className="text-xs text-gray-200 leading-relaxed">{a}</p>
     </div>
   );
 }

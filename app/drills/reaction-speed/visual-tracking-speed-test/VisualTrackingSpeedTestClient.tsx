@@ -2,38 +2,45 @@
 
 import React, { useState, useEffect, useRef, useCallback } from 'react';
 import Link from 'next/link';
-import {
-  Volume2, VolumeX,
-  Play, RefreshCw, Target,
-  Share2, LogOut, Eye, Users, TrendingUp, Zap, ZapOff, Trophy
-} from 'lucide-react';
+import { Volume2, VolumeX, Target, Eye, Users, TrendingUp, Zap, ZapOff, Trophy } from 'lucide-react';
 
+import { isIdleFrameSkippable } from '@/lib/performance';
 import generateShareCard, { shareScoreCard } from '../../../../components/ShareScoreCard';
 import { getPlayerName } from '../../../../lib/leaderboard';
 import { drillAudio } from '../../../../lib/drillAudio';
 import { drillFlash } from '../../../../lib/drillFlash';
 import { drillTimeout } from '../../../../lib/drillTimeout';
-import { getFpsScoreGrade } from '../../../../lib/scoringEngine';
-import { getDifficultyProgress, getStartLevel } from '../../../../lib/drillDifficulty';
+import { drillPenalty } from '../../../../lib/drillPenalty';
+import { getFpsScoreGrade, getComboMultiplier } from '../../../../lib/scoringEngine';
+import { getDifficultyProgress, getStartLevel, ramp } from '../../../../lib/drillDifficulty';
 import useDrillFlash from '../../../../lib/useDrillFlash';
 import useUnexpectedExitGuard from '../../../../lib/useUnexpectedExitGuard';
-import DrillFooter from '../../../../components/drill/DrillFooter';
 import DrillCountdown from '../../../../components/drill/DrillCountdown';
 import DrillAccordion from '../../../../components/drill/DrillAccordion';
 import DrillFlashOverlay from '../../../../components/drill/DrillFlashOverlay';
 import FpsStartCard from '../../../../components/drill/FpsStartCard';
+import DrillResultCard from '../../../../components/drill/DrillResultCard';
+import useImmersiveMode from '@/lib/useImmersiveMode';
+import { getVisualTrackingSpeedTestUi } from '@/lib/i18n/drills/visualTrackingSpeedTestNative';
+import { drawTacticalTarget, createHitRing, drawHitRings } from '@/lib/canvasFx';
 
-const DRILL_DURATION = 45; // 45 seconds focused duration
+// ============================================================
+// TUNING CONSTANTS
+// ============================================================
+const DRILL_DURATION = 45; // starting clock only; a run grows past this
 const POINTS_PER_HIT = 100;
-const POINTS_PER_LEVEL = 250;
-const ELITE_SCORE = 6000; // Rebalanced after combo removal
-const STORAGE_KEY = 'skilldrills_visual_tracking_speed_test_v2';
+const POINTS_PER_LEVEL = 1750; // 250 -> 1750 (7x)
+const ELITE_SCORE = 18000; // 6000 -> 18000 (3x)
+const TIME_PER_HIT = 2; // +2s per valid hit, capped at 60s
+const TIME_PENALTY = 1; // -1s on miss / target timeout (opt-in gated)
+const STORAGE_KEY = 'skilldrills_visual_tracking_speed_test_v3';
+const TARGET_FILL_COLOR = '#ef4444';
 
 const RELATED_DRILLS = [
   { id: "barrier-sequence-pursuit", name: "Jiggle Peek Trainer", cat: "Reaction Speed", desc: "Train angle holding and cover peeking reaction reflexes.", href: "/drills/reaction-speed/barrier-sequence-pursuit" },
   { id: "fps-tracking-trainer", name: "FPS Tracking Trainer", cat: "Reaction Speed", desc: "Condition tracking accuracy against dynamic moving targets.", href: "/drills/reaction-speed/fps-tracking-trainer" },
   { id: "market-doors-pursuit", name: "Corner Checking Trainer", cat: "Reaction Speed", desc: "Saccadic eye sweep & doorway clearing trainer.", href: "/drills/reaction-speed/market-doors-pursuit" },
-  { id: "reaction-simulator", name: "Reaction Simulator", cat: "Reaction Speed", desc: "Simulate rapid combat reaction scenarios.", href: "/drills/reaction-speed/reaction-simulator" },
+  { id: "reaction-game", name: "Reaction Game", cat: "Reaction Speed", desc: "Simulate rapid combat reaction scenarios.", href: "/drills/reaction-speed/reaction-game" },
   { id: "reaction-time-test", name: "Reaction Time Test", cat: "Reaction Speed", desc: "Measure pure visual reaction speed in milliseconds.", href: "/drills/reaction-speed/reaction-time-test" },
   { id: "reflex-training-drill", name: "Reflex Training Drill", cat: "Reaction Speed", desc: "High-speed reflex triggers & visual target hitting.", href: "/drills/reaction-speed/reflex-training-drill" }
 ];
@@ -41,49 +48,90 @@ const RELATED_DRILLS = [
 const getSavedData = () => {
   try {
     const raw = localStorage.getItem(STORAGE_KEY);
-    if (!raw) return { bestScore: 0, bestLevel: 1, totalSessions: 0 };
-    return { bestScore: 0, bestLevel: 1, totalSessions: 0, ...JSON.parse(raw) };
+    if (!raw) return { bestScore: 0, bestCombo: 0, bestLevel: 1, totalSessions: 0 };
+    return { bestScore: 0, bestCombo: 0, bestLevel: 1, totalSessions: 0, ...JSON.parse(raw) };
   } catch (e) {
-    return { bestScore: 0, bestLevel: 1, totalSessions: 0 };
+    return { bestScore: 0, bestCombo: 0, bestLevel: 1, totalSessions: 0 };
   }
 };
 
-const saveData = (data: { bestScore: number; bestLevel: number; totalSessions: number }) => {
+const saveData = (data: { bestScore: number; bestCombo?: number; bestLevel: number; totalSessions: number }) => {
   try {
     localStorage.setItem(STORAGE_KEY, JSON.stringify(data));
   } catch (e) {}
 };
 
+// Continuous unbounded difficulty with streak heat
+const getLevelConfig = (level: number, combo = 0) => {
+  const p = getDifficultyProgress(level); // 0 at L1, 1 at L15, unbounded above
+  const heat = (getComboMultiplier(combo) - 1) / 2;
 
-// Smooth difficulty curve parameters driving Level 1 to Level 15
-const getLevelConfig = (level: number) => {
-  const p = getDifficultyProgress(level); // 0 -> 1 across L1..L15
   return {
-    radius: Math.max(12, Math.round(28 - p * 16)),           // 28px -> 12px
-    ttl: Math.max(380, Math.round(1300 - p * 880)),           // 1300ms -> 380ms
-    spawnDelayMin: Math.max(120, Math.round(550 - p * 400)), // 550ms -> 150ms
-    spawnDelayMax: Math.max(180, Math.round(750 - p * 520)), // 750ms -> 230ms
-    speed: Math.min(7.0, 1.5 + p * 5.5) * 60,                // Tracking velocity (px/s)
+    radius:        Math.max(6, ramp(28, 7, p) * (1 - heat * 0.25)),
+    ttl:           ramp(1300, 90, p) * (1 - heat * 0.32),
+    spawnDelayMin: ramp(550, 20, p) * (1 - heat * 0.30),
+    spawnDelayMax: ramp(750, 35, p) * (1 - heat * 0.30),
+    speed:         ramp(90, 750, p) * (1 + heat * 0.40),
+    hitPad:        Math.max(4, ramp(14, 2, p) * (1 - heat * 0.50)),
   };
 };
 
-type Particle = { x: number; y: number; vx: number; vy: number; color: string; life: number };
-type RingBurst = { x: number; y: number; startR: number; maxR: number; life: number; maxLife: number; color: string };
+const RULES_ITEMS = [
+  { num: '1', textKey: 'visualTracking.rule1Text', text: 'Intercept Kinetic Targets', highlightKey: 'visualTracking.rule1Highlight', highlight: '+100 PTS', resultKey: 'visualTracking.rule1Result', result: '× Combo × Level bonus (+2s per hit, max 60s)' },
+  { num: '2', textKey: 'visualTracking.rule2Text', text: 'Combo & Heat System', highlightKey: 'visualTracking.rule2Highlight', highlight: 'Up to 3.0x Multiplier', resultKey: 'visualTracking.rule2Result', result: 'Higher streaks increase velocity and bounce frequency' },
+  { num: '3', textKey: 'visualTracking.rule3Text', text: 'Level Progression', highlightKey: 'visualTracking.rule3Highlight', highlight: 'Continuous Scaling', resultKey: 'visualTracking.rule3Result', result: 'Targets shrink, accelerate, and time-to-live tightens' },
+  {
+    num: '4',
+    textKey: 'visualTracking.rule4Text',
+    text: 'Miss & Timeout Rules',
+    highlightKey: 'visualTracking.rule4NoPenalty',
+    highlight: 'Zero Penalties (Default)',
+    resultKey: 'visualTracking.rule4NoPenaltyResult',
+    result: 'Resets combo. Time penalty is opt-in via settings'
+  },
+];
 
-export default function VisualTrackingSpeedTestClient() {
+type Particle = { x: number; y: number; vx: number; vy: number; color: string; life: number };
+
+export interface VisualTrackingSpeedTestClientProps {
+  copy?: Record<string, any>;
+}
+
+export default function VisualTrackingSpeedTestClient({ copy }: VisualTrackingSpeedTestClientProps = {}) {
+  const ui = copy || getVisualTrackingSpeedTestUi().visualTrackingSpeedTest;
+  const t = (key: string, fallback: string) => {
+    const field = key.split('.').pop() || '';
+    const aliases: Record<string, string> = {
+      rotateAlert: 'rotate',
+      startSubtitle: 'subtitle',
+      rulesTitle: 'rules',
+      aboutTitle: 'about',
+      aboutCard1Title: 'audience',
+      aboutCard1Desc: 'audienceText',
+      aboutCard2Title: 'pursuit',
+      aboutCard2Desc: 'pursuitText',
+      aboutCard3Title: 'intercept',
+      aboutCard3Desc: 'interceptText',
+    };
+    return ui[aliases[field] || field] || fallback;
+  };
   const [gameState, setGameState] = useState<'start' | 'countdown' | 'playing' | 'gameOver'>('start');
   const [isFullscreen, setIsFullscreen] = useState<boolean>(false);
+  useImmersiveMode(isFullscreen); // locks the page behind while the drill fills the screen
   const [soundEnabled, setSoundEnabled] = useState(true);
   const [flashEnabled, setFlashEnabled] = useState(true);
+  const [penaltyEnabled, setPenaltyEnabled] = useState(false);
   const [openAccordion, setOpenAccordion] = useState<string | null>(null);
   const [isMobile, setIsMobile] = useState<boolean>(false);
-  const [isPortrait, setIsPortrait] = useState<boolean>(false);
   const [countdownValue, setCountdownValue] = useState<number | string>(3);
 
   // HUD & Best Stats State
   const [uiScore, setUiScore] = useState<number>(0);
   const [uiTimeLeft, setUiTimeLeft] = useState<number>(DRILL_DURATION);
+  const [uiLevel, setUiLevel] = useState<number>(1);
+  const [uiCombo, setUiCombo] = useState<number>(0);
   const [bestScore, setBestScore] = useState<number>(0);
+  const [bestCombo, setBestCombo] = useState<number>(0);
   const [bestLevel, setBestLevel] = useState<number>(1);
   const [totalSessions, setTotalSessions] = useState<number>(0);
   const [isNewBest, setIsNewBest] = useState<boolean>(false);
@@ -95,6 +143,7 @@ export default function VisualTrackingSpeedTestClient() {
     missedClicks: 0,
     timeouts: 0,
     avgReactionTime: 0,
+    maxCombo: 0,
     finalLevel: 1,
     grade: null as any
   });
@@ -104,11 +153,15 @@ export default function VisualTrackingSpeedTestClient() {
   const containerRef = useRef<HTMLDivElement | null>(null);
   const animationRef = useRef<number | null>(null);
   const countdownTimeoutsRef = useRef<NodeJS.Timeout[]>([]);
-  const timerIntervalRef = useRef<NodeJS.Timeout | null>(null);
+  const bestLevelRunRef = useRef(1);
+  const lastTimeRef = useRef(DRILL_DURATION);
+  const mousePosRef = useRef<{ x: number; y: number; active: boolean }>({ x: 0, y: 0, active: false });
 
   const engine = useRef({
     score: 0,
     level: 1,
+    combo: 0,
+    maxCombo: 0,
     successfulHits: 0,
     missedClicks: 0,
     timeouts: 0,
@@ -116,7 +169,7 @@ export default function VisualTrackingSpeedTestClient() {
     timeLeft: DRILL_DURATION,
     screenShake: 0,
     particles: [] as Particle[],
-    rings: [] as RingBurst[],
+    hitRings: [] as ReturnType<typeof createHitRing>[],
     target: {
       active: false,
       x: 0,
@@ -137,14 +190,14 @@ export default function VisualTrackingSpeedTestClient() {
     if (typeof window !== 'undefined') {
       setSoundEnabled(drillAudio.isEnabled());
       setFlashEnabled(drillFlash.isEnabled());
+      setPenaltyEnabled(drillPenalty.isEnabled(TIME_PER_HIT === 2));
+
       const checkDeviceAndOrientation = () => {
         const ua = navigator.userAgent || '';
         const hasTouch = ('ontouchstart' in window) || (navigator.maxTouchPoints > 0);
         const mobileDevice = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(ua) || (window.innerWidth < 768) || hasTouch;
         setIsMobile(mobileDevice);
 
-        const portrait = window.innerHeight > window.innerWidth;
-        setIsPortrait(portrait);
       };
 
       checkDeviceAndOrientation();
@@ -153,6 +206,7 @@ export default function VisualTrackingSpeedTestClient() {
 
       const saved = getSavedData();
       setBestScore(saved.bestScore || 0);
+      setBestCombo(saved.bestCombo || 0);
       setBestLevel(saved.bestLevel || 1);
       setTotalSessions(saved.totalSessions || 0);
 
@@ -163,18 +217,10 @@ export default function VisualTrackingSpeedTestClient() {
     }
   }, []);
 
-  // Fullscreen Listener
-  useEffect(() => {
-    const handleFullscreenChange = () => setIsFullscreen(!!document.fullscreenElement);
-    document.addEventListener('fullscreenchange', handleFullscreenChange);
-    return () => document.removeEventListener('fullscreenchange', handleFullscreenChange);
-  }, []);
-
   // Cleanup Timeouts on Unmount
   useEffect(() => {
     return () => {
       countdownTimeoutsRef.current.forEach(clearTimeout);
-      if (timerIntervalRef.current) clearInterval(timerIntervalRef.current);
     };
   }, []);
 
@@ -183,11 +229,8 @@ export default function VisualTrackingSpeedTestClient() {
     markIntentionalExit();
     countdownTimeoutsRef.current.forEach(clearTimeout);
     countdownTimeoutsRef.current = [];
-    if (timerIntervalRef.current) clearInterval(timerIntervalRef.current);
 
-    if (document.fullscreenElement) {
-      await document.exitFullscreen().catch(() => {});
-    }
+    setIsFullscreen(false);
     setGameState('start');
   }, []);
 
@@ -196,16 +239,35 @@ export default function VisualTrackingSpeedTestClient() {
     onUnexpectedExit: handleExitDrill,
   });
 
+  // Handle direct escape key and fullscreenchange lifecycle
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'Escape' && (gameState === 'playing' || gameState === 'countdown')) {
+        handleExitDrill();
+      }
+    };
+    const handleFullscreenChange = () => {
+      if (!document.fullscreenElement && isFullscreen && (gameState === 'playing' || gameState === 'countdown')) {
+        handleExitDrill();
+      }
+    };
+    window.addEventListener('keydown', handleKeyDown);
+    document.addEventListener('fullscreenchange', handleFullscreenChange);
+    return () => {
+      window.removeEventListener('keydown', handleKeyDown);
+      document.removeEventListener('fullscreenchange', handleFullscreenChange);
+    };
+  }, [gameState, isFullscreen, handleExitDrill]);
+
   // Complete Drill Session cleanly
   const endGame = useCallback(() => {
     if (animationRef.current) cancelAnimationFrame(animationRef.current);
-    if (timerIntervalRef.current) clearInterval(timerIntervalRef.current);
 
     setGameState('gameOver');
 
     const e = engine.current;
     const totalActions = e.successfulHits + e.missedClicks + e.timeouts;
-    const acc = totalActions > 0 ? Math.round((e.successfulHits / totalActions) * 100) : 100;
+    const acc = totalActions > 0 ? Math.round((e.successfulHits / totalActions) * 100) : 0;
     const avgRt = e.reactionTimes.length > 0
       ? Math.round(e.reactionTimes.reduce((a, b) => a + b, 0) / e.reactionTimes.length)
       : 0;
@@ -219,41 +281,41 @@ export default function VisualTrackingSpeedTestClient() {
       missedClicks: e.missedClicks,
       timeouts: e.timeouts,
       avgReactionTime: avgRt,
-      finalLevel: e.level,
+      maxCombo: e.maxCombo,
+      finalLevel: Math.floor(bestLevelRunRef.current),
       grade: gradeObj
     });
 
-    const isNew = e.score > bestScore;
-    if (isNew) {
-      setIsNewBest(true);
-      setBestScore(e.score);
-    } else {
-      setIsNewBest(false);
-    }
+    setUiScore(e.score);
 
-    const newBestLevel = Math.max(bestLevel, e.level);
-    setBestLevel(newBestLevel);
+    const prevSaved = getSavedData();
+    const isNew = e.score > prevSaved.bestScore;
+    setIsNewBest(isNew);
 
-    setTotalSessions((prev) => {
-      const next = prev + 1;
-      saveData({
-        bestScore: Math.max(bestScore, e.score),
-        bestLevel: newBestLevel,
-        totalSessions: next
-      });
-      return next;
-    });
+    const runBestLevel = Math.max(prevSaved.bestLevel, Math.floor(bestLevelRunRef.current));
+    const updatedData = {
+      bestScore: Math.max(prevSaved.bestScore, e.score),
+      bestCombo: Math.max(prevSaved.bestCombo || 0, e.maxCombo),
+      bestLevel: runBestLevel,
+      totalSessions: (prevSaved.totalSessions || 0) + 1
+    };
+    saveData(updatedData);
+
+    setBestScore(updatedData.bestScore);
+    setBestCombo(updatedData.bestCombo);
+    setBestLevel(updatedData.bestLevel);
+    setTotalSessions(updatedData.totalSessions);
 
     drillAudio.playSessionEnd();
-  }, [bestScore, bestLevel]);
+  }, []);
 
-  // Target Spawn & Smooth Pursuit Tracking Physics
-  const spawnTarget = useCallback((W: number, H: number, level: number) => {
+  // Moving Target Spawn & Physics
+  const spawnTarget = useCallback((W: number, H: number, level: number, combo: number) => {
     const e = engine.current;
-    const config = getLevelConfig(level);
+    const config = getLevelConfig(level, combo);
 
-    const baseR = isMobile ? 26 : 24;
-    const radius = Math.max(14, Math.round(baseR - (getDifficultyProgress(level) * 8)));
+    const baseR = isMobile ? config.radius + 2 : config.radius;
+    const radius = Math.max(6, baseR);
 
     const marginX = W * 0.12;
     const marginY = H * 0.16;
@@ -278,27 +340,30 @@ export default function VisualTrackingSpeedTestClient() {
 
   // Enter Drill (Full Screen -> 321GO Countdown with Sound -> Playing)
   const enterDrill = useCallback(async () => {
-    try {
-      if (containerRef.current && !document.fullscreenElement) {
-        await containerRef.current.requestFullscreen();
-      }
-    } catch (e) {}
+    setIsFullscreen(true);
 
     countdownTimeoutsRef.current.forEach(clearTimeout);
     countdownTimeoutsRef.current = [];
-    if (timerIntervalRef.current) clearInterval(timerIntervalRef.current);
 
     drillAudio.init();
 
-    const saved = getSavedData();
-    const startLevel = getStartLevel(saved.bestLevel);
+    const startLevel = getStartLevel();
+    bestLevelRunRef.current = startLevel;
 
     setUiScore(0);
+    setUiLevel(startLevel);
+    setUiCombo(0);
     setUiTimeLeft(DRILL_DURATION);
+    lastTimeRef.current = DRILL_DURATION;
+    setIsNewBest(false);
+
+    mousePosRef.current = { x: 0, y: 0, active: false };
 
     engine.current = {
       score: 0,
       level: startLevel,
+      combo: 0,
+      maxCombo: 0,
       successfulHits: 0,
       missedClicks: 0,
       timeouts: 0,
@@ -306,7 +371,7 @@ export default function VisualTrackingSpeedTestClient() {
       timeLeft: DRILL_DURATION,
       screenShake: 0,
       particles: [],
-      rings: [],
+      hitRings: [],
       target: {
         active: false,
         x: 0, y: 0, vx: 0, vy: 0, radius: 24, spawnTime: 0, ttl: 1200
@@ -336,21 +401,11 @@ export default function VisualTrackingSpeedTestClient() {
 
     const t4 = setTimeout(() => {
       setGameState('playing');
-
-      // Start 1-second Interval Timer (45 seconds duration)
-      let remaining = DRILL_DURATION;
-      timerIntervalRef.current = setInterval(() => {
-        remaining -= 1;
-        setUiTimeLeft(remaining);
-        if (remaining <= 0) {
-          endGame();
-        }
-      }, 1000);
-
+      engine.current.nextSpawnTime = performance.now() + 200;
     }, 2450);
 
     countdownTimeoutsRef.current = [t1, t2, t3, t4];
-  }, [endGame]);
+  }, []);
 
   // Target Click / Tap Handler
   const handleCanvasInteraction = useCallback((clientX: number, clientY: number) => {
@@ -363,25 +418,37 @@ export default function VisualTrackingSpeedTestClient() {
     const clickY = clientY - rect.top;
 
     const e = engine.current;
+    const config = getLevelConfig(e.level, e.combo);
+    const hitPad = isMobile ? config.hitPad + 10 : config.hitPad;
 
     if (e.target.active) {
       const dist = Math.hypot(clickX - e.target.x, clickY - e.target.y);
-      const hitPad = isMobile ? 24 : 14;
       if (dist <= e.target.radius + hitPad) {
         const rt = Math.round(performance.now() - e.target.spawnTime);
         e.reactionTimes.push(rt);
         e.successfulHits += 1;
-        e.score += POINTS_PER_HIT;
+        e.combo += 1;
+        if (e.combo > e.maxCombo) e.maxCombo = e.combo;
 
-        // Monotonic level progression as user scores points
-        const rawLevel = Math.floor(e.score / POINTS_PER_LEVEL) + 1;
+        const levelMult = 1 + getDifficultyProgress(e.level) * 0.5;
+        e.score += Math.round(POINTS_PER_HIT * getComboMultiplier(e.combo) * levelMult);
+
+        // Time bonus on clean hit
+        e.timeLeft = Math.min(60, e.timeLeft + TIME_PER_HIT);
+
+        // Continuous unbounded level progression
+        const rawLevel = (e.score / POINTS_PER_LEVEL) + 1;
         e.level = Math.max(e.level, rawLevel);
+        bestLevelRunRef.current = Math.max(bestLevelRunRef.current, e.level);
 
         setUiScore(e.score);
+        setUiLevel(Math.floor(e.level));
+        setUiCombo(e.combo);
         drillAudio.playHit();
 
-        // Particles explosion (Constant Red)
-        for (let i = 0; i < 10; i++) {
+        // Particles explosion (14 particles with combo color shift)
+        const hitColor = e.combo >= 10 ? '#34d399' : e.combo >= 5 ? '#f59e0b' : TARGET_FILL_COLOR;
+        for (let i = 0; i < 14; i++) {
           const angle = Math.random() * Math.PI * 2;
           const spd = 2 + Math.random() * 4;
           e.particles.push({
@@ -389,32 +456,26 @@ export default function VisualTrackingSpeedTestClient() {
             y: e.target.y,
             vx: Math.cos(angle) * spd,
             vy: Math.sin(angle) * spd,
-            color: '#ef4444',
+            color: hitColor,
             life: 1.0
           });
         }
 
-        // Ring Burst Effect
-        e.rings.push({
-          x: e.target.x,
-          y: e.target.y,
-          startR: e.target.radius * 0.4,
-          maxR: e.target.radius * 2.6,
-          life: 0.28,
-          maxLife: 0.28,
-          color: '#ef4444'
-        });
+        // Ring Burst Effect (canonical dual expanding rings)
+        e.hitRings.push(createHitRing(e.target.x, e.target.y, e.target.radius, hitColor));
 
         e.target.active = false;
-        const config = getLevelConfig(e.level);
         const delay = config.spawnDelayMin + Math.random() * (config.spawnDelayMax - config.spawnDelayMin);
         e.nextSpawnTime = performance.now() + delay;
         return;
       }
     }
 
-    // Missed click on empty space: no penalty, just flash + audio feedback
+    // Missed click on empty space: optional time penalty + combo reset
     e.missedClicks += 1;
+    if (drillPenalty.isEnabled(TIME_PER_HIT === 2)) e.timeLeft -= TIME_PENALTY;
+    e.combo = 0;
+    setUiCombo(0);
     e.screenShake = 6;
     triggerFlash();
     drillAudio.playPenalty();
@@ -434,6 +495,7 @@ export default function VisualTrackingSpeedTestClient() {
       if (!container) return;
       const rect = container.getBoundingClientRect();
       const dpr = Math.min(window.devicePixelRatio || 1, 2);
+      if (cvs.width === Math.trunc(rect.width * dpr) && cvs.height === Math.trunc(rect.height * dpr)) return;
       cvs.width = rect.width * dpr;
       cvs.height = rect.height * dpr;
       ctx.scale(dpr, dpr);
@@ -446,6 +508,11 @@ export default function VisualTrackingSpeedTestClient() {
     let lastTime = performance.now();
 
     const draw = (now: number) => {
+      if (isIdleFrameSkippable(gameState === 'playing', now, lastTime)) {
+        animationRef.current = requestAnimationFrame(draw);
+        return;
+      }
+
       const dt = Math.min((now - lastTime) / 1000, 0.1);
       lastTime = now;
 
@@ -453,6 +520,23 @@ export default function VisualTrackingSpeedTestClient() {
       const W = rect.width;
       const H = rect.height;
       const e = engine.current;
+
+      // Clock draining in RAF loop
+      if (gameState === 'playing') {
+        if (e.timeLeft > 0) e.timeLeft -= dt;
+        if (e.timeLeft <= 0) {
+          e.timeLeft = 0;
+          setUiTimeLeft(0);
+          endGame();
+          return;
+        }
+
+        const ceilSec = Math.ceil(e.timeLeft);
+        if (ceilSec !== lastTimeRef.current) {
+          lastTimeRef.current = ceilSec;
+          setUiTimeLeft(ceilSec);
+        }
+      }
 
       // Screen Shake Effect
       ctx.save();
@@ -481,7 +565,7 @@ export default function VisualTrackingSpeedTestClient() {
 
       // Spawn Target if inactive
       if (!e.target.active && now >= e.nextSpawnTime) {
-        spawnTarget(W, H, e.level);
+        spawnTarget(W, H, e.level, e.combo);
       }
 
       // Target Tracking Physics & Bounce
@@ -502,80 +586,25 @@ export default function VisualTrackingSpeedTestClient() {
         if (drillTimeout.isEnabled() && age >= t.ttl) {
           e.target.active = false;
           e.timeouts += 1;
+          if (drillPenalty.isEnabled(TIME_PER_HIT === 2)) e.timeLeft -= TIME_PENALTY;
+          e.combo = 0;
+          setUiCombo(0);
           e.screenShake = 6;
           triggerFlash();
           drillAudio.playPenalty();
-          const config = getLevelConfig(e.level);
+          const config = getLevelConfig(e.level, e.combo);
           const delay = config.spawnDelayMin + Math.random() * (config.spawnDelayMax - config.spawnDelayMin);
           e.nextSpawnTime = now + delay;
         }
       }
 
-      // Draw Target (Tactical Red Target Sphere matching reference design)
+      // Draw active target
       if (e.target.active) {
-        const t = e.target;
-        const r = t.radius;
-        ctx.save();
-
-        // Ghost outer ring
-        ctx.globalAlpha = 0.2;
-        ctx.strokeStyle = '#ef4444';
-        ctx.lineWidth = 1.0;
-        ctx.beginPath();
-        ctx.arc(t.x, t.y, r + 5, 0, Math.PI * 2);
-        ctx.stroke();
-
-        // Tactical outer ring
-        ctx.globalAlpha = 0.55;
-        ctx.strokeStyle = '#ef4444';
-        ctx.lineWidth = 1.8;
-        ctx.beginPath();
-        ctx.arc(t.x, t.y, r, 0, Math.PI * 2);
-        ctx.stroke();
-
-        // Filled red body with subtle glow
-        ctx.globalAlpha = 0.88;
-        ctx.shadowColor = '#ef4444';
-        ctx.shadowBlur = 14;
-        ctx.fillStyle = '#ef4444';
-        ctx.beginPath();
-        ctx.arc(t.x, t.y, r * 0.82, 0, Math.PI * 2);
-        ctx.fill();
-        ctx.shadowBlur = 0;
-
-        // Highlight sheen
-        ctx.globalAlpha = 0.3;
-        ctx.fillStyle = '#ffffff';
-        ctx.beginPath();
-        ctx.arc(t.x - r * 0.2, t.y - r * 0.2, r * 0.28, 0, Math.PI * 2);
-        ctx.fill();
-
-        // Bright white center core
-        ctx.globalAlpha = 1.0;
-        ctx.fillStyle = '#ffffff';
-        ctx.beginPath();
-        ctx.arc(t.x, t.y, Math.max(2.5, r * 0.18), 0, Math.PI * 2);
-        ctx.fill();
-
-        ctx.restore();
+        drawTacticalTarget(ctx, e.target.x, e.target.y, e.target.radius, TARGET_FILL_COLOR);
       }
 
       // Ring Bursts Draw
-      for (let i = e.rings.length - 1; i >= 0; i--) {
-        const ring = e.rings[i];
-        ring.life -= dt;
-        if (ring.life <= 0) { e.rings.splice(i, 1); continue; }
-        const progress = 1 - ring.life / ring.maxLife;
-        const currentR = ring.startR + (ring.maxR - ring.startR) * progress;
-        ctx.save();
-        ctx.globalAlpha = (ring.life / ring.maxLife) * 0.75;
-        ctx.strokeStyle = ring.color;
-        ctx.lineWidth = 2.5;
-        ctx.beginPath();
-        ctx.arc(ring.x, ring.y, currentR, 0, Math.PI * 2);
-        ctx.stroke();
-        ctx.restore();
-      }
+      drawHitRings(ctx, e.hitRings, dt);
 
       // Particles Update & Draw
       for (let i = e.particles.length - 1; i >= 0; i--) {
@@ -595,6 +624,31 @@ export default function VisualTrackingSpeedTestClient() {
       }
       ctx.globalAlpha = 1.0;
 
+      // Tactical Pro White Crosshair
+      if (mousePosRef.current.active && gameState === 'playing') {
+        const { x: mx, y: my } = mousePosRef.current;
+        ctx.save();
+        ctx.shadowColor = 'rgba(0, 0, 0, 0.9)';
+        ctx.shadowBlur = 3;
+        ctx.strokeStyle = '#ffffff';
+        ctx.lineWidth = 1.5;
+
+        // 4 crosshair arms: 14px outer, 4px inner gap
+        ctx.beginPath();
+        ctx.moveTo(mx, my - 14); ctx.lineTo(mx, my - 4);
+        ctx.moveTo(mx, my + 4);  ctx.lineTo(mx, my + 14);
+        ctx.moveTo(mx - 14, my); ctx.lineTo(mx - 4, my);
+        ctx.moveTo(mx + 4, my);  ctx.lineTo(mx + 14, my);
+        ctx.stroke();
+
+        // Center dot
+        ctx.fillStyle = '#ffffff';
+        ctx.beginPath();
+        ctx.arc(mx, my, 2, 0, Math.PI * 2);
+        ctx.fill();
+        ctx.restore();
+      }
+
       ctx.restore();
       animationRef.current = requestAnimationFrame(draw);
     };
@@ -605,7 +659,7 @@ export default function VisualTrackingSpeedTestClient() {
       if (animationRef.current) cancelAnimationFrame(animationRef.current);
       ro.disconnect();
     };
-  }, [gameState, spawnTarget, triggerFlash, isMobile]);
+  }, [gameState, endGame, spawnTarget, triggerFlash]);
 
   // Share Score Card helper
   const sharePage = useCallback(async () => {
@@ -613,62 +667,61 @@ export default function VisualTrackingSpeedTestClient() {
     try {
       const canvas = generateShareCard({
         score: uiScore,
-        bestScore,
         accuracy: analytics.accuracy,
-        rating: { letter: analytics.grade?.letter || 'C', label: analytics.grade?.label || 'Keep Going', emoji: '🎯' },
-        newBest: isNewBest,
-        drillName: 'Visual Tracking Speed Test',
+        speed: analytics.avgReactionTime,
+        drillName: ui.title,
+        rank: analytics.grade?.letter || 'A',
+        rankName: analytics.grade?.label || 'ELITE REFLEX',
         playerName: getPlayerName(),
+        level: analytics.finalLevel,
+        date: new Date().toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' }),
+        url: 'skilldrills.online/drills/reaction-speed/visual-tracking-speed-test'
       });
+
       await shareScoreCard(url, canvas);
-    } catch (e) {
-      const text = `🎯 I scored ${uiScore} PTS (Level ${analytics.finalLevel}) on Visual Tracking Speed Test! Tracking accuracy: ${analytics.accuracy}%. Practice free vision drills at skilldrills.online! ⚡`;
-      if (typeof navigator !== 'undefined' && navigator.share) {
-        navigator.share({ title: 'Visual Tracking Speed Test Score', text, url }).catch(() => {});
-      } else if (typeof navigator !== 'undefined' && navigator.clipboard) {
-        navigator.clipboard.writeText(`${text} ${url}`);
-        alert('Score & drill link copied to clipboard!');
+    } catch (err) {
+      if (navigator.share) {
+        navigator.share({
+          title: ui.title,
+        text: ui.shareText.replace('{score}', String(uiScore)),
+          url
+        }).catch(() => {});
       }
     }
-  }, [uiScore, bestScore, analytics, isNewBest]);
+  }, [ui, uiScore, analytics]);
 
   return (
     <div className="min-h-screen bg-[#050508] text-white flex flex-col font-sans select-none">
-      {/* ── MAIN CONTENT AREA ── */}
+      
+      {/* Main Container */}
       <main className="flex-1 max-w-6xl w-full mx-auto px-4 py-6 flex flex-col gap-6">
-        {/* Title */}
+
+        {/* Drill Header */}
         {!isFullscreen && (
-          <div className="text-center">
+          <div className="flex flex-col gap-1">
             <h1 className="text-2xl sm:text-3xl font-black tracking-tight text-white">
-              VISUAL TRACKING SPEED TEST
+              <span data-seo-kw="1">{copy?.title || t('visualTracking.title', 'Visual Tracking Speed Test')}</span>
             </h1>
-            <p className="text-xs text-slate-400 mt-1">
-              Smooth Pursuit Agility & Target Velocity Tracking
+            <p className="text-[13px] text-slate-400 leading-relaxed">
+              {copy?.caption || t('visualTracking.caption', 'Visual tracking speed is how well your eyes follow a moving target and re-acquire it after a sudden change of direction.')}
             </p>
           </div>
         )}
 
         {/* Live Stat Cards */}
         {!isFullscreen && (
-          <div className="grid grid-cols-4 gap-2.5 max-w-2xl mx-auto w-full">
-            <div className="bg-[#0d0d18] border border-white/5 rounded-xl p-2.5 text-center">
-              <div className="text-[10px] uppercase font-bold text-slate-500 tracking-wider">Score</div>
-              <div className="text-lg sm:text-xl font-black text-red-400 tabular-nums">{uiScore}</div>
-            </div>
-            <div className="bg-[#0d0d18] border border-white/5 rounded-xl p-2.5 text-center">
-              <div className="text-[10px] uppercase font-bold text-slate-500 tracking-wider">Time</div>
-              <div className={`text-lg sm:text-xl font-black tabular-nums ${uiTimeLeft <= 10 ? 'text-red-400 animate-pulse' : 'text-white'}`}>
-                {uiTimeLeft}s
+          <div className="grid grid-cols-4 gap-2 w-full -mb-2">
+            {[
+              { label: t('visualTracking.score', 'Score'), value: uiScore, color: 'text-red-400' },
+              { label: t('visualTracking.time', 'Time'), value: `${uiTimeLeft}s`, color: uiTimeLeft <= 10 ? 'text-red-400 animate-pulse' : 'text-white' },
+              { label: t('visualTracking.level', 'Level'), value: `L${uiLevel}`, color: 'text-indigo-400' },
+              { label: t('visualTracking.bestScore', 'Best Score'), value: bestScore, color: 'text-amber-400' },
+            ].map(card => (
+              <div key={card.label} className="border border-white/[0.06] bg-white/[0.015] px-2 py-2 rounded-xl text-center">
+                <div className="text-[10px] font-bold tracking-wider uppercase text-slate-500">{card.label}</div>
+                <div className={`text-base sm:text-lg font-black tabular-nums ${card.color || 'text-white'}`}>{card.value}</div>
               </div>
-            </div>
-            <div className="bg-[#0d0d18] border border-white/5 rounded-xl p-2.5 text-center">
-              <div className="text-[10px] uppercase font-bold text-slate-500 tracking-wider">Level</div>
-              <div className="text-lg sm:text-xl font-black text-indigo-400 tabular-nums">L{engine.current.level}</div>
-            </div>
-            <div className="bg-[#0d0d18] border border-white/5 rounded-xl p-2.5 text-center">
-              <div className="text-[10px] uppercase font-bold text-slate-500 tracking-wider">Best Score</div>
-              <div className="text-lg sm:text-xl font-black text-amber-400 tabular-nums">{bestScore}</div>
-            </div>
+            ))}
           </div>
         )}
 
@@ -685,12 +738,12 @@ export default function VisualTrackingSpeedTestClient() {
           {/* IN-BOX OVERLAY HUD */}
           {(gameState === 'playing' || gameState === 'countdown') && (
             <>
-              <div className="absolute top-4 left-4 z-30 pointer-events-none">
-                <p className="text-[10px] font-semibold uppercase tracking-wider text-white/50">Score</p>
+              <div className="absolute top-4 left-4 z-30 pointer-events-none flex flex-col">
+                <p className="text-[10px] font-semibold uppercase tracking-wider text-white/50">{t('visualTracking.score', 'Score')}</p>
                 <p className="text-2xl sm:text-3xl font-black text-white tabular-nums leading-tight">{uiScore}</p>
               </div>
               <div className="absolute top-4 right-4 z-30 pointer-events-none text-right">
-                <p className="text-[10px] font-semibold uppercase tracking-wider text-white/50">Time Left</p>
+                <p className="text-[10px] font-semibold uppercase tracking-wider text-white/50">{t('visualTracking.timeLeft', 'Time Left')}</p>
                 <p className={`text-2xl sm:text-3xl font-black tabular-nums leading-tight ${uiTimeLeft <= 10 ? 'text-red-400 animate-pulse' : 'text-white'}`}>{uiTimeLeft}s</p>
               </div>
             </>
@@ -733,8 +786,19 @@ export default function VisualTrackingSpeedTestClient() {
           {/* CANVAS */}
           <canvas 
             ref={canvasRef} 
-            onPointerDown={(e) => handleCanvasInteraction(e.clientX, e.clientY)}
-            className="block absolute top-0 left-0 w-full h-full z-10 cursor-crosshair touch-none" 
+            onPointerDown={(e) => {
+              const rect = e.currentTarget.getBoundingClientRect();
+              mousePosRef.current = { x: e.clientX - rect.left, y: e.clientY - rect.top, active: true };
+              handleCanvasInteraction(e.clientX, e.clientY);
+            }}
+            onPointerMove={(e) => {
+              const rect = e.currentTarget.getBoundingClientRect();
+              mousePosRef.current = { x: e.clientX - rect.left, y: e.clientY - rect.top, active: true };
+            }}
+            onPointerLeave={() => {
+              mousePosRef.current.active = false;
+            }}
+            className="block absolute top-0 left-0 w-full h-full z-10 touch-none cursor-crosshair"
           />
 
           {/* START CARD */}
@@ -742,16 +806,8 @@ export default function VisualTrackingSpeedTestClient() {
             <FpsStartCard
               icon={Target}
               accent="red"
-              title="Visual Tracking Speed Test"
-              subtitle="Smooth Pursuit Agility • Target Velocity Tracking"
-              rules={[
-                { icon: Target, accent: 'red', title: 'Track Moving Targets', text: 'Maintain continuous cursor tracking on smooth motion trajectories' },
-                { icon: Zap, accent: 'orange', title: 'Smooth Pursuit Agility', text: 'Adapt to accelerating target velocity and dynamic direction changes' },
-              ]}
-              stats={[
-                { icon: Trophy, label: 'Best Score', value: bestScore, color: 'text-white', accent: 'slate' },
-                { icon: TrendingUp, label: 'Best Level', value: `Lv. ${bestLevel}`, color: 'text-blue-400', accent: 'blue' },
-              ]}
+              title={copy?.title || t('visualTracking.title', 'Visual Tracking Speed Test')}
+              subtitle={copy?.subtitle || t('visualTracking.startSubtitle', 'Smooth Pursuit • Kinetic Interception')}
               isTouchOnlyDevice={false}
               onStart={enterDrill}
             />
@@ -759,80 +815,27 @@ export default function VisualTrackingSpeedTestClient() {
 
           {/* COUNTDOWN OVERLAY */}
           {gameState === 'countdown' && (
-            <DrillCountdown value={countdownValue} subtitle="GET READY" />
+            <DrillCountdown value={countdownValue} subtitle={t('visualTracking.getReady', 'GET READY')} />
           )}
 
-          {/* END SCREEN */}
+          {/* UNIVERSAL RESULT CARD */}
           {gameState === 'gameOver' && analytics.grade && (
-            <div className="absolute inset-0 z-40 flex bg-neutral-950/98 select-none font-sans" style={{ background: 'rgba(5,5,8,0.97)' }} onPointerDown={e => e.stopPropagation()}>
-              
-              {/* Left Grade Panel */}
-              <div className="w-[36%] flex flex-col items-center justify-center gap-1 border-r border-white/5 px-4" style={{ background: 'radial-gradient(ellipse 260px 200px at 50% 30%, rgba(239,68,68,.12), transparent 70%)' }}>
-                {isNewBest && (
-                  <span className="text-[9.5px] font-bold text-yellow-400 bg-yellow-500/10 border border-yellow-500/25 px-2.5 py-0.5 rounded-full mb-1 animate-pulse">
-                    NEW BEST
-                  </span>
-                )}
-                <div className={`text-5xl sm:text-6xl font-black leading-none ${analytics.grade.color}`}>
-                  {analytics.grade.letter}
-                </div>
-                <div className="text-[10px] uppercase tracking-widest text-slate-500 text-center font-bold mt-1">
-                  {analytics.grade.label}
-                </div>
-                <div className="text-3xl sm:text-4xl font-black text-white mt-2 tabular-nums">
-                  {uiScore}
-                </div>
-                <div className="text-[9px] uppercase tracking-widest text-slate-500">Points</div>
-              </div>
-
-              {/* Right Stats & Actions Panel */}
-              <div className="flex-1 flex flex-col justify-center gap-3 px-6 py-4 min-w-0">
-                
-                {/* 3 Stat Tiles */}
-                <div className="grid grid-cols-3 gap-2">
-                  <div className="bg-black border border-white/5 p-2.5 rounded-xl text-center">
-                    <p className="text-sm sm:text-base font-black text-white">{analytics.accuracy}%</p>
-                    <p className="text-[7.5px] sm:text-[8.5px] font-bold uppercase tracking-wider text-gray-400 mt-0.5">Accuracy</p>
-                  </div>
-                  <div className="bg-black border border-white/5 p-2.5 rounded-xl text-center">
-                    <p className="text-sm sm:text-base font-black text-white">{analytics.avgReactionTime}<span className="text-[10px] text-gray-500">ms</span></p>
-                    <p className="text-[7.5px] sm:text-[8.5px] font-bold uppercase tracking-wider text-gray-400 mt-0.5">Avg Reaction</p>
-                  </div>
-                  <div className="bg-black border border-white/5 p-2.5 rounded-xl text-center">
-                    <p className="text-sm sm:text-base font-black text-white">Lv. {analytics.finalLevel}</p>
-                    <p className="text-[7.5px] sm:text-[8.5px] font-bold uppercase tracking-wider text-gray-400 mt-0.5">Peak Level</p>
-                  </div>
-                </div>
-
-                {/* Action Buttons */}
-                <div className="flex gap-2">
-                  <button
-                    type="button"
-                    onClick={enterDrill}
-                    className="flex-1 py-3 rounded-[13px] bg-gradient-to-r from-red-600 to-rose-600 text-white font-bold text-xs uppercase tracking-wide cursor-pointer transition-transform active:scale-[0.98] shadow-md flex items-center justify-center gap-1.5"
-                  >
-                    <RefreshCw className="w-3.5 h-3.5" /> Play Again
-                  </button>
-                  <button
-                    type="button"
-                    onClick={sharePage}
-                    className="w-11 flex-shrink-0 rounded-[13px] bg-white/[0.04] border border-white/10 flex items-center justify-center text-slate-400 hover:text-white cursor-pointer active:scale-90 transition-transform"
-                    title="Share Score"
-                  >
-                    <Share2 className="w-4 h-4" />
-                  </button>
-                  <button
-                    type="button"
-                    onClick={handleExitDrill}
-                    className="w-11 flex-shrink-0 rounded-[13px] bg-white/[0.04] border border-white/10 flex items-center justify-center text-slate-400 hover:text-white cursor-pointer active:scale-90 transition-transform"
-                    title="Return to Options"
-                  >
-                    <LogOut className="w-4 h-4 text-red-400" />
-                  </button>
-                </div>
-
-              </div>
-            </div>
+            <DrillResultCard
+              accent="rose"
+              grade={analytics.grade}
+              score={uiScore}
+              isNewBest={isNewBest}
+              stats={[
+                { label: t('visualTracking.accuracy', 'Accuracy'), value: analytics.accuracy, suffix: '%' },
+                { label: t('visualTracking.avgReaction', 'Avg Reaction'), value: analytics.avgReactionTime, suffix: 'ms' },
+                { label: t('visualTracking.peakLevel', 'Peak Level'), value: `Lv. ${analytics.finalLevel}` },
+                { label: t('visualTracking.maxCombo', 'Max Combo'), value: analytics.maxCombo, suffix: 'x' },
+              ]}
+              onPlayAgain={enterDrill}
+              onBeforeShare={() => setIsFullscreen(false)}
+              onShare={sharePage}
+              onExit={handleExitDrill}
+            />
           )}
 
         </div>
@@ -842,119 +845,69 @@ export default function VisualTrackingSpeedTestClient() {
           <div className="[&>div]:!mt-0">
             <DrillAccordion
               id="rules"
-              title="Drill Instructions & Scoring System"
+              title={t('visualTracking.rulesTitle', 'Drill Instructions & Scoring System')}
               isOpen={openAccordion === 'rules'}
               onToggle={() => setOpenAccordion(openAccordion === 'rules' ? null : 'rules')}
             >
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 font-sans">
-                <RuleItem num="1" text="Track Moving Targets" highlight="+100 PTS" result="Adds to score & levels you up" />
-                <RuleItem num="2" text="Level Progression" highlight="Every 250 PTS" result="Target moves faster & shrinks" />
-                <RuleItem num="3" text="Miss / Timeout" highlight="No Penalty" result="Triggers red alert, score safe" />
-                <RuleItem num="4" text="Session Length" highlight="45 Seconds" result="Beat your best before time's up" />
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-3 font-sans">
+                {ui.ruleItems.map((item: any, index: number) => (
+                  <RuleItem
+                    key={String(index + 1)}
+                    num={String(index + 1)}
+                    text={item.title}
+                    highlight={penaltyEnabled ? item.penaltyDetail : item.detail}
+                    result={penaltyEnabled ? item.penaltyBadge : item.badge}
+                  />
+                ))}
               </div>
             </DrillAccordion>
 
             <DrillAccordion
               id="about"
-              title="About Visual Tracking Speed Test"
+              title={t('visualTracking.aboutTitle', 'About Visual Tracking Speed Test')}
               isOpen={openAccordion === 'about'}
               onToggle={() => setOpenAccordion(openAccordion === 'about' ? null : 'about')}
             >
               <div className="space-y-8 font-sans">
                 <section>
-                  <h4 className="text-base font-bold text-white mb-2 flex items-center gap-2">
-                    <Eye className="w-4 h-4 text-red-400" /> What Is Visual Tracking & Smooth Pursuit Training?
-                  </h4>
+                  <h3 className="text-base font-bold text-white mb-2 flex items-center gap-2">
+                    <Eye className="w-4 h-4 text-red-400" /> {t('visualTracking.aboutHeading', 'What Is Visual Tracking & Kinetic Target Interception?')}
+                  </h3>
                   <p className="text-sm leading-relaxed mb-3 text-gray-300">
-                    <strong>Visual Tracking Speed Test</strong> measures your ability to maintain foveal visual contact with moving targets across smooth pursuit paths. Smooth pursuit is the voluntary eye movement used to lock onto moving objects smoothly.
+                    {t('visualTracking.aboutP1', 'Visual Tracking Speed Test measures how fast and accurately you can acquire, track, and click targets gliding dynamically across your visual field. Unlike static flicking, moving target interception requires predicting projectile trajectory and matching crosshair speed to intercept point. Smooth pursuit keeps pace up to roughly 30°/s, and a catch-up saccade follows an abrupt change about 100–130 ms later (Rashbass, 1961).')}
                   </p>
                   <p className="text-sm leading-relaxed text-gray-300">
-                    In FPS esports, motorsports, and ball sports, visual tracking latency dictates how fast you adapt to target velocity changes. Training smooth pursuit agility minimizes visual lag and improves click synchronization.
+                    {t('visualTracking.aboutP2', 'Consistently intercepting high-velocity targets builds ocular smooth pursuit, dynamic visual acuity (DVA), and click-timing precision across diverse gaming environments.')}
                   </p>
                 </section>
 
                 <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-                  <div className="p-4 rounded-xl border border-gray-800 bg-white/[0.02]">
+                  <div className="p-4 rounded-xl border border-white/[0.07] bg-white/[0.012]">
                     <div className="flex items-center gap-2.5 mb-2">
                       <div className="w-7 h-7 rounded-lg bg-red-600 flex items-center justify-center"><Users className="w-3.5 h-3.5 text-white" /></div>
-                      <h5 className="text-xs font-bold text-white">Who Should Use This?</h5>
+                      <h4 className="text-xs font-bold text-white">{t('visualTracking.aboutCard1Title', 'Who Should Use This?')}</h4>
                     </div>
-                    <p className="text-xs text-gray-300 leading-relaxed">FPS gamers, esports players, athletes, and anyone wanting to improve visual pursuit speed and click timing.</p>
+                    <p className="text-xs text-slate-300 leading-relaxed">{t('visualTracking.aboutCard1Desc', 'Fast-paced FPS, arena shooter, and battle royale players looking to improve moving target interception and predictive clicks.')}</p>
                   </div>
-                  <div className="p-4 rounded-xl border border-gray-800 bg-white/[0.02]">
+                  <div className="p-4 rounded-xl border border-white/[0.07] bg-white/[0.012]">
                     <div className="flex items-center gap-2.5 mb-2">
                       <div className="w-7 h-7 rounded-lg bg-emerald-600 flex items-center justify-center"><TrendingUp className="w-3.5 h-3.5 text-white" /></div>
-                      <h5 className="text-xs font-bold text-white">Smooth Pursuit Agility</h5>
+                      <h4 className="text-xs font-bold text-white">{t('visualTracking.aboutCard2Title', 'Dynamic Visual Acuity')}</h4>
                     </div>
-                    <p className="text-xs text-gray-300 leading-relaxed">Conditions your visual cortex to track accelerating target vectors with minimal retinal slip.</p>
+                    <p className="text-xs text-slate-300 leading-relaxed">{t('visualTracking.aboutCard2Desc', 'Improves your ability to clearly resolve details and boundaries of moving targets across 2D visual angles.')}</p>
                   </div>
-                  <div className="p-4 rounded-xl border border-gray-800 bg-white/[0.02]">
+                  <div className="p-4 rounded-xl border border-white/[0.07] bg-white/[0.012]">
                     <div className="flex items-center gap-2.5 mb-2">
                       <div className="w-7 h-7 rounded-lg bg-blue-600 flex items-center justify-center"><Zap className="w-3.5 h-3.5 text-white" /></div>
-                      <h5 className="text-xs font-bold text-white">Adaptive Target Velocity</h5>
+                      <h4 className="text-xs font-bold text-white">{t('visualTracking.aboutCard3Title', 'Kinetic Intercept Precision')}</h4>
                     </div>
-                    <p className="text-xs text-gray-300 leading-relaxed">Target velocity accelerates and target sizes shrink dynamically as you level up, testing your limits.</p>
+                    <p className="text-xs text-slate-300 leading-relaxed">{t('visualTracking.aboutCard3Desc', 'Trains the neuromuscular connection to execute click commands precisely at the interception point.')}</p>
                   </div>
                 </div>
               </div>
             </DrillAccordion>
-
-            <DrillAccordion
-              id="faq"
-              title="Frequently Asked Questions"
-              isOpen={openAccordion === 'faq'}
-              onToggle={() => setOpenAccordion(openAccordion === 'faq' ? null : 'faq')}
-            >
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 font-sans">
-                <FAQItem q="What is a visual tracking speed test?" a="It is an interactive vision utility where you track and tap moving targets to measure visual processing latency and tracking precision." />
-                <FAQItem q="What is smooth pursuit in vision?" a="Smooth pursuit is the visual eye movement mechanism that allows your eyes to closely follow a moving target across your visual field." />
-                <FAQItem q="Can you train visual tracking speed?" a="Yes. Regular visual pursuit training sharpens brain-to-hand coordination, reduces tracking lag, and improves click timing." />
-                <FAQItem q="How does visual tracking help in FPS gaming?" a="In games like CS2, Valorant, Apex Legends, and Overwatch 2, enemies strafe rapidly. Fast visual tracking lets you stay locked onto targets." />
-                <FAQItem q="Does monitor refresh rate affect visual tracking?" a="Yes! High refresh rates (144Hz, 240Hz, 360Hz) render target motion with less motion blur and lower input delay." />
-                <FAQItem q="Is this visual tracking test free?" a="Yes, all drills on SkillDrills are 100% free with no signups, downloads, or pop-up ads required." />
-                <FAQItem q="How does level progression work?" a="Every 250 points earned levels up the drill, accelerating target speed, shrinking target diameter, and shortening spawn TTL." />
-                <FAQItem q="What happens if I miss a click?" a="Clicking empty background space triggers a red alert flash and a miss is logged against your accuracy — there's no score penalty, so keep going." />
-                <FAQItem q="Can traditional athletes use this test?" a="Yes. Athletes in baseball, tennis, motorsports, and hockey use visual tracking exercises to improve spatial pursuit reflexes." />
-                <FAQItem q="Does this test support touchscreens and mobile devices?" a="Yes! It features generous touch hitpads and automatic orientation warnings for mobile devices." />
-                <FAQItem q="How often should I practice visual tracking?" a="A daily 5-10 minute session warms up your eye-hand coordination and maintains optimal visual pursuit readiness." />
-                <FAQItem q="Should I lead the target or click directly on it?" a="Focus your eyes directly on the center core of the target and execute a smooth click synced with its movement vector." />
-                <FAQItem q="Does mouse DPI affect visual tracking?" a="Using a comfortable mouse DPI (400-1600 DPI) ensures smooth crosshair control without overshooting moving targets." />
-                <FAQItem q="What is a good score on this test?" a="A score above 5,000 indicates strong visual pursuit skills, while scores exceeding 10,000 represent elite tracking precision." />
-                <FAQItem q="How does this test measure reaction time?" a="It records the millisecond latency between target appearance and your successful click input." />
-              </div>
-            </DrillAccordion>
           </div>
         )}
-
-        {/* RELATED DRILLS GRID */}
-        {!isFullscreen && (
-          <section className="mt-4">
-            <h2 className="text-sm font-bold text-slate-400 uppercase tracking-wider mb-3">
-              Related Reaction Speed Drills
-            </h2>
-            <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
-              {RELATED_DRILLS.map((drill) => (
-                <Link
-                  key={drill.id}
-                  href={drill.href}
-                  className="group bg-[#0c0c16] border border-white/5 hover:border-red-500/40 rounded-xl p-3.5 transition-all duration-200 hover:-translate-y-0.5 flex flex-col justify-between"
-                >
-                  <div>
-                    <div className="text-[10px] font-bold text-red-400 uppercase tracking-wider mb-1">{drill.cat}</div>
-                    <div className="text-xs font-bold text-white group-hover:text-red-300 transition-colors">{drill.name}</div>
-                    <div className="text-[11px] text-slate-400 mt-1 line-clamp-2 leading-relaxed">{drill.desc}</div>
-                  </div>
-                  <div className="text-[10px] font-bold text-slate-500 group-hover:text-red-400 mt-3 flex items-center gap-1 transition-colors">
-                    Train Drill <span>→</span>
-                  </div>
-                </Link>
-              ))}
-            </div>
-          </section>
-        )}
-
-        {/* SITE FOOTER */}
-        {!isFullscreen && <DrillFooter />}
 
       </main>
     </div>
@@ -964,25 +917,18 @@ export default function VisualTrackingSpeedTestClient() {
 // === Subcomponents ===
 function RuleItem({ num, text, highlight = '', result }: { num: string; text: string; highlight?: string; result: string }) {
   return (
-    <div className="flex items-center gap-4 bg-black p-4 rounded-xl border border-white/10 shadow-sm font-sans">
-      <div className="w-8 h-8 rounded-xl bg-white/10 border border-white/20 flex items-center justify-center text-white text-base font-black shadow-lg flex-shrink-0">{num}</div>
-      <div className="flex-1 flex flex-col sm:flex-row sm:items-center justify-between gap-2">
-        <p className="text-sm font-medium text-gray-100 font-sans">
+    <div className="flex items-center gap-3 bg-black px-4 py-3 rounded-xl border border-white/10 shadow-sm font-sans min-w-0">
+      <div className="w-7 h-7 rounded-lg bg-white/10 border border-white/20 flex items-center justify-center text-white text-xs font-black shadow-lg flex-shrink-0">
+        {num}
+      </div>
+      <div className="flex-1 flex items-center justify-between gap-2 min-w-0">
+        <p className="text-xs sm:text-sm font-medium text-gray-100 font-sans truncate">
           {text}{highlight && <span className="font-black text-white"> ({highlight})</span>}
         </p>
-        <div className="text-xs font-black px-3 py-1.5 rounded-lg bg-[#050811] border border-white/10 text-white whitespace-nowrap shadow-inner tracking-wide text-center sm:text-left">
+        <div className="text-xs font-black px-2.5 py-1 rounded-lg bg-[#050811] border border-white/10 text-white whitespace-nowrap shadow-inner tracking-wide flex-shrink-0">
           {result}
         </div>
       </div>
-    </div>
-  );
-}
-
-function FAQItem({ q, a }: { q: string; a: string }) {
-  return (
-    <div className="bg-[#05060b] border border-gray-800 rounded-xl p-5 hover:border-gray-700 transition-colors font-sans">
-      <h4 className="text-sm font-bold text-gray-200 mb-2">{q}</h4>
-      <p className="text-xs text-gray-400 leading-relaxed">{a}</p>
     </div>
   );
 }
