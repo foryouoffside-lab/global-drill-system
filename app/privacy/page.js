@@ -1,10 +1,10 @@
 import Link from 'next/link';
 
-const LAST_UPDATED = 'August 22, 2026';
+const LAST_UPDATED = 'October 1, 2026';
 
 export const metadata = {
   title: 'Privacy Policy - SkillDrills',
-  description: 'How SkillDrills collects, uses, and protects your data on skilldrills.online and in the SkillDrills mobile app.',
+  description: 'How SkillDrills collects, uses, and protects your data on skilldrills.online and in the Flint mobile app.',
   alternates: { canonical: 'https://skilldrills.online/privacy' },
   robots: { index: true, follow: true },
 };
@@ -28,12 +28,12 @@ export default function PrivacyPolicyPage() {
         <p className="text-[12px] text-slate-500 mb-8">Last updated: {LAST_UPDATED}</p>
 
         <Section title="Overview">
-          <p>SkillDrills (&quot;we&quot;, &quot;us&quot;) provides free training drills at skilldrills.online and a companion SkillDrills mobile app. This policy explains what information we collect across the website and the app, why we collect it, and how you can control or delete it.</p>
+          <p>SkillDrills (&quot;we&quot;, &quot;us&quot;) provides free training drills at skilldrills.online and a companion mobile app, <strong className="text-slate-300">Flint</strong> (formerly the SkillDrills app), on Google Play. This policy explains what information we collect across the website and the app, why we collect it, and how you can control or delete it.</p>
         </Section>
 
         <Section title="Information we collect">
           <p><strong className="text-slate-300">Using our website.</strong> You can use skilldrills.online and play drills without creating an account. We use Vercel Analytics and Speed Insights to understand traffic and page performance — these are cookie-less and don&apos;t collect personally identifiable information.</p>
-          <p><strong className="text-slate-300">Account information (mobile app).</strong> Signing in to the SkillDrills app requires a Google account. We receive your name, email address, and profile photo from Google Sign-In to create your player profile.</p>
+          <p><strong className="text-slate-300">Account information (mobile app).</strong> Signing in to the Flint app requires a Google account. We receive your name, email address, and profile photo from Google Sign-In to create your player profile.</p>
           <p><strong className="text-slate-300">Gameplay data (mobile app).</strong> Drill scores, streaks, XP/level progress, and daily challenge history are stored against your account so your progress is saved and can sync across sessions.</p>
           <p><strong className="text-slate-300">Diagnostic data (mobile app).</strong> We use Firebase Crashlytics to automatically collect crash reports and basic device information (device model, OS version, app version) so we can find and fix bugs. This data is not linked to your name or used for advertising.</p>
           <p><strong className="text-slate-300">Usage analytics (mobile app).</strong> The app uses Firebase Analytics to understand which drills and features are actually used — screen views and events like completing a drill (drill, category, score). It doesn&apos;t use cookies or track you across other websites or apps, and isn&apos;t used for advertising.</p>
@@ -41,11 +41,16 @@ export default function PrivacyPolicyPage() {
         </Section>
 
         <Section title="How we use this information">
-          <p>To operate the website and app, save and display your progress, personalize daily challenges, keep things working correctly, and diagnose bugs and performance issues. We do not run ads and we do not sell your personal information to anyone.</p>
+          <p>To operate the website and app, save and display your progress, personalize daily challenges, keep things working correctly, and diagnose bugs and performance issues. The mobile app also shows ads, as described under Advertising below. We do not sell your personal information to anyone.</p>
+        </Section>
+
+        <Section title="Advertising (mobile app)">
+          <p>The Flint app is free and is supported by full-screen ads shown between drills — never while you are playing. The website does not show ads. App ads are served by Google AdMob. To show and measure ads, AdMob may collect your device&apos;s advertising ID, approximate location (from your IP address), and information about how you interact with ads. Google&apos;s use of this data is described at <span className="text-slate-300">policies.google.com/technologies/partner-sites</span>.</p>
+          <p>If you are in the EEA, UK or Switzerland, the app asks for your consent before personalised ads are shown, and you can change your choice at any time from <span className="text-slate-300">Progress → Ad privacy choices</span>. Anywhere, you can reset or delete your advertising ID, or opt out of personalised ads, in your phone&apos;s <span className="text-slate-300">Settings → Google → Ads</span> (or Settings → Privacy → Ads).</p>
         </Section>
 
         <Section title="Who we share data with">
-          <p>The app&apos;s data is stored using Firebase (Google Cloud) as our backend infrastructure provider, and diagnostic/usage data is processed by Firebase Crashlytics and Firebase Analytics as described above. The website&apos;s traffic and performance data is processed by Vercel. These providers process data on our behalf under their own security and data-processing terms — we do not sell or share your data with anyone else, including advertisers.</p>
+          <p>The app&apos;s data is stored using Firebase (Google Cloud) as our backend infrastructure provider, and diagnostic/usage data is processed by Firebase Crashlytics and Firebase Analytics as described above. App ads are served by Google AdMob as described under Advertising. The website&apos;s traffic and performance data is processed by Vercel. These providers process data on our behalf under their own security and data-processing terms — we do not sell your data, and we do not give your name, email or gameplay data to advertisers.</p>
         </Section>
 
         <Section title="What other players can see">

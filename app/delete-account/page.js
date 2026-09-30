@@ -6,13 +6,13 @@ import Link from 'next/link';
 // page is that URL (entered in Play Console under Data safety → Data deletion).
 // The in-app path stays the primary route; this page documents both.
 
-const LAST_UPDATED = 'August 22, 2026';
+const LAST_UPDATED = 'October 1, 2026';
 const CONTACT_EMAIL = 'skilldrills.contact@gmail.com';
 
 export const metadata = {
-  title: 'Delete Your Account - SkillDrills',
+  title: 'Delete Your Flint Account - SkillDrills',
   description:
-    'How to permanently delete your SkillDrills account and all associated data, from inside the app or by email request.',
+    'How to permanently delete your Flint app account (formerly the SkillDrills app) and all associated data, from inside the app or by email request.',
   alternates: { canonical: 'https://skilldrills.online/delete-account' },
   robots: { index: true, follow: true },
 };
@@ -37,13 +37,14 @@ export default function DeleteAccountPage() {
           &larr; Back to SkillDrills
         </Link>
 
-        <h1 className="text-[26px] font-black text-white mt-5 mb-1">Delete your account</h1>
+        <h1 className="text-[26px] font-black text-white mt-5 mb-1">Delete your Flint account</h1>
         <p className="text-[12px] text-slate-500 mb-8">Last updated: {LAST_UPDATED}</p>
 
         <Section title="Who this applies to">
           <p>
-            This page covers the <strong className="text-slate-300">SkillDrills mobile app</strong>,
-            which is the only part of SkillDrills that has accounts. Playing drills on
+            This page covers the <strong className="text-slate-300">Flint mobile app</strong>{' '}
+            (formerly the SkillDrills app) on Google Play, which is the only part of SkillDrills
+            that has accounts. Playing drills on
             skilldrills.online does not create an account and stores nothing about you that needs
             deleting.
           </p>
@@ -53,7 +54,7 @@ export default function DeleteAccountPage() {
           <p>
             Deleting your account permanently removes your player profile (display name and profile
             photo), your wins, losses, streak and EIQ ranking, your reserved username, and your duel
-            history. Your Google sign-in link to SkillDrills is also removed.
+            history. Your Google sign-in link to Flint is also removed.
           </p>
           <p>
             Solo drill scores and settings that live only on your device are erased along with the
@@ -68,7 +69,7 @@ export default function DeleteAccountPage() {
         <Section title="Option 1 — delete it yourself in the app">
           <p>This is the fastest route and needs no waiting on us:</p>
           <p>
-            Open SkillDrills &rarr; <span className="text-slate-300">Progress</span> &rarr;{' '}
+            Open Flint &rarr; <span className="text-slate-300">Progress</span> &rarr;{' '}
             <span className="text-slate-300">Delete Account &amp; Wipe Data</span> &rarr; confirm.
           </p>
           <p>
@@ -80,7 +81,7 @@ export default function DeleteAccountPage() {
           <p>
             If you have already uninstalled the app, or you cannot sign in, email{' '}
             <span className="text-slate-300">{CONTACT_EMAIL}</span> from the email address attached
-            to your SkillDrills account, with the subject{' '}
+            to your Flint account, with the subject{' '}
             <span className="text-slate-300">&quot;Delete my account&quot;</span>.
           </p>
           <p>
