@@ -6,3 +6,4 @@
 | /ja/drills | done | PENDING | docs/seo/research/ja/drills-directory.md | FAQ claims corrected; metadata unchanged |
 | C:/Program Files/Git/ja/drills/cognitive/processing-speed/reaction-time | done | PENDING | docs/seo/research/ja/reaction-time.md | H1 選択反応時間テスト; percentile columns removed |
 | C:/Program Files/Git/ja/drills/cognitive/processing-speed/rsvp-reader | done | PENDING | docs/seo/research/ja/rsvp-reader.md | direct answer; unsourced claims removed |
+| C:/Program Files/Git/ja/drills/cognitive/processing-speed/symbol-matching | done | PENDING | docs/seo/research/ja/symbol-matching.md | direct answer; demand not verified |
