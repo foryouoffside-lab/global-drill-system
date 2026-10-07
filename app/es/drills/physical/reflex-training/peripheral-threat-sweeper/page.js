@@ -22,7 +22,7 @@ import { pickSources } from '@/lib/drillSources';
 // ============================================================
 
 export const metadata = {
-  title: "Entrenar visión periférica | Test online",
+  title: "Test de Visión Periférica Online | Entrenamiento",
   description: "Test gratis de visión periférica en el navegador. Mantén la mirada en el centro, detecta amenazas laterales y practica el campo visual útil (UFOV).",
   keywords: [
     "entrenar visión periférica",
@@ -41,7 +41,7 @@ export const metadata = {
     languages: getAlternateLanguages('/drills/physical/reflex-training/peripheral-threat-sweeper'),
   },
   openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
-    title: "Entrenar visión periférica | Test online",
+    title: "Test de Visión Periférica Online | Entrenamiento",
     description: "Test gratis de visión periférica en el navegador. Mantén la mirada en el centro, detecta amenazas laterales y practica el campo visual útil (UFOV).",
     url: 'https://skilldrills.online/es/drills/physical/reflex-training/peripheral-threat-sweeper',
     siteName: 'SkillDrills',
@@ -50,7 +50,7 @@ export const metadata = {
   },
   twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: 'summary_large_image',
-    title: "Entrenar visión periférica | Test online",
+    title: "Test de Visión Periférica Online | Entrenamiento",
     description: "Test gratis de visión periférica en el navegador. Mantén la mirada en el centro, detecta amenazas laterales y practica el campo visual útil (UFOV).",
   },
   robots: { index: true, follow: true },
@@ -334,7 +334,7 @@ export default function LocalizedPeripheralThreatSweeperPageEs() {
       />
       <PeripheralThreatSweeperClient
         copy={{
-          title: "Entrenar Visión Periférica",
+          title: "Test de Visión Periférica Online",
           subtitle: "Mira al centro y detecta amenazas laterales",
           description: "La visión periférica es aquello que puedes detectar sin mirar directamente. El nivel de detalle decrece de forma acusada desde el centro de la mirada, pero la atención puede dirigirse hacia un punto periférico mientras los ojos permanecen fijos, acelerando la respuesta motriz (Posner, 1980). Una característica única como el color se detecta en un tiempo similar con independencia de distracciones, mientras que objetivos que combinan rasgos demandan búsqueda atencional activa (Treisman & Gelade, 1980) — lo que hace que algunas amenazas sean sencillas de interceptar en el margen y otras no.",
           hudLabels: {
