@@ -131,7 +131,7 @@ const faqSchema = {
       "name": "How does smooth pursuit tracking affect aim in fast-paced gaming?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "In tracking-heavy titles like Apex Legends or Overwatch, sustained weapon damage requires continuous cursor-on-hitbox alignment. High smooth pursuit gain eliminates overshooting during enemy strafes, turning erratic flicking into fluid, sustained damage output."
+        "text": "In tracking-heavy titles like Apex Legends or Overwatch, sustained weapon damage requires continuous cursor-on-hitbox alignment. Smoother tracking helps you stay on target during enemy strafes instead of flicking back and forth."
       }
     },
     {
@@ -139,7 +139,7 @@ const faqSchema = {
       "name": "What is a normal smooth pursuit score and time on target percentage?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Unpracticed users typically score 60 to 99 points with 50% to 69% on-target contact. Proficient trackers score 100 to 139 points, while elite competitive visual athletes achieve 140 to 180+ points with greater than 95% continuous contact and streaks above 25 seconds."
+        "text": "Scores depend on speed settings, display and input device. The score bands on this page are editorial practice targets, not population norms; compare your own sessions on the same setup."
       }
     },
     {
@@ -147,7 +147,7 @@ const faqSchema = {
       "name": "Can smooth pursuit eye tracking be trained and improved?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Yes. Ocular motor neuroplasticity allows cerebellar adaptation to improve both smooth pursuit gain and predictive feedforward trajectories. Consistent training reduces corrective saccade count and broadens the velocity bandwidth of stable tracking."
+        "text": "Yes, practice can improve your score on this task. Whether it changes eye-movement measures such as pursuit gain cannot be read from a cursor score, so use it as practice, not as a diagnostic."
       }
     },
     {
@@ -375,19 +375,19 @@ export default function AutoPursuitPage() {
           <div>
             <h4 className="font-semibold text-white">How does smooth pursuit tracking affect aim in fast-paced gaming?</h4>
             <p className="text-slate-300 mt-1">
-              In tracking-heavy titles like Apex Legends or Overwatch, sustained weapon damage requires continuous cursor-on-hitbox alignment. High smooth pursuit gain eliminates overshooting during enemy strafes, turning erratic flicking into fluid, sustained damage output.
+              In tracking-heavy titles like Apex Legends or Overwatch, sustained weapon damage requires continuous cursor-on-hitbox alignment. Smoother tracking helps you stay on target during enemy strafes instead of flicking back and forth.
             </p>
           </div>
           <div>
             <h4 className="font-semibold text-white">What is a normal smooth pursuit score and time on target percentage?</h4>
             <p className="text-slate-300 mt-1">
-              Unpracticed users typically score 60 to 99 points with 50% to 69% on-target contact. Proficient trackers score 100 to 139 points, while elite competitive visual athletes achieve 140 to 180+ points with greater than 95% continuous contact and streaks above 25 seconds.
+              Scores depend on speed settings, display and input device. The score bands on this page are editorial practice targets, not population norms; compare your own sessions on the same setup.
             </p>
           </div>
           <div>
             <h4 className="font-semibold text-white">Can smooth pursuit eye tracking be trained and improved?</h4>
             <p className="text-slate-300 mt-1">
-              Yes. Ocular motor neuroplasticity allows cerebellar adaptation to improve both smooth pursuit gain and predictive feedforward trajectories. Consistent training reduces corrective saccade count and broadens the velocity bandwidth of stable tracking.
+              Yes, practice can improve your score on this task. Whether it changes eye-movement measures such as pursuit gain cannot be read from a cursor score, so use it as practice, not as a diagnostic.
             </p>
           </div>
           <div>
