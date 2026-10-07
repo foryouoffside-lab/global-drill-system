@@ -329,7 +329,8 @@ const guideProps = {
 };
 
 const deCopy = {
-  title: "CPS Test",
+  title: "CPS-Test",
+  subtitle: "Klickgeschwindigkeit messen und Klick-Ausdauer in 45 Sekunden trainieren",
   desc: "Ein CPS-Test misst, wie viele Klicks pro Sekunde Sie mit der Maustaste ausführen können. Normales Einzelfinger-Klicken erreicht typischerweise 5–7 Klicks pro Sekunde (Halstead Finger-Tapping-Norm: 50–55 Taps/10s). Höhere Werte basieren auf speziellen Techniken wie Jitter- oder Butterfly-Clicking.",
   score: "Punkte",
   timeLeft: "Verbleibende Zeit",
