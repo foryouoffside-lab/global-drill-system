@@ -5,8 +5,8 @@ import { getAlternateLanguages } from '@/lib/i18n/locales';
 import { pickSources } from '@/lib/drillSources';
 
 export const metadata = {
-  title: "Split-Screen Tracking – Divided Attention | SkillDrills",
-  description: "Train divided visual attention across orthogonal vertical and horizontal planes simultaneously. Free online bilateral gaze exercise, no sign-up.",
+  title: "Divided Attention Test – Split-Screen Tracking | SkillDrills",
+  description: "Free divided attention test online: track two targets moving on horizontal and vertical paths at the same time. No sign-up.",
   keywords: [
     "split-screen tracking",
     "divided visual attention",
@@ -27,8 +27,8 @@ export const metadata = {
   },
   robots: { index: true, follow: true },
   openGraph: {
-    title: "Split-Screen Tracking – Divided Attention | SkillDrills",
-    description: "Train divided visual attention across orthogonal vertical and horizontal planes simultaneously. Free online bilateral gaze exercise, no sign-up.",
+    title: "Divided Attention Test – Split-Screen Tracking | SkillDrills",
+    description: "Free divided attention test online: track two targets moving on horizontal and vertical paths at the same time. No sign-up.",
     url: "https://skilldrills.online/drills/visual-tracking/split-screen-tracking",
     siteName: 'SkillDrills',
     locale: 'en_US',
@@ -36,8 +36,8 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: "Split-Screen Tracking – Divided Attention | SkillDrills",
-    description: "Train divided visual attention across orthogonal vertical and horizontal planes simultaneously. Free online bilateral gaze exercise, no sign-up.",
+    title: "Divided Attention Test – Split-Screen Tracking | SkillDrills",
+    description: "Free divided attention test online: track two targets moving on horizontal and vertical paths at the same time. No sign-up.",
   },
 };
 
@@ -223,6 +223,7 @@ const faqSchema = {
 const guide = {
   heading: "Split-Screen Tracking - Divided Attention & Bilateral Pursuit Standards",
   intro: [
+    "Split-Screen Tracking is a free divided attention test in your browser. Two targets move at once, one on a horizontal path and one on a vertical path, and you track both at the same time. Choose a speed and duration, press start, and keep both targets in view.",
     "The human visual apparatus is physiologically constrained by the microscopic dimensions of the fovea centralis, which covers a high-acuity field of only 1 to 2 degrees. When two distinct targets move concurrently across spatially separated planes, optical foveation of both points simultaneously is biologically impossible. The central nervous system faces an executive dilemma: oscillate gaze rhythmically via ballistic saccades, or establish a central gaze anchor and expand covert spatial attention bimodally across both visual hemifields.",
     "Seminal multiple object tracking (MOT) research by Pylyshyn & Storm (1988) demonstrated that the primate brain utilizes visual indexing mechanisms (FINSTs) to track multiple entities concurrently without serial focal scanning. Expanding on this, Alvarez & Cavanagh (2005) proved that visual tracking resources are segregated across the cerebral hemispheres: dividing one target to the left visual field (right hemisphere) and one to the right visual field (left hemisphere) yields a measurable 'bilateral field advantage', avoiding intra-hemispheric attentional bottlenecks.",
     "Oscillating gaze rapidly between separated nodes imposes significant neurological overhead. Each saccadic transit incurs a latency of 20 to 50 milliseconds and triggers saccadic suppression—a brief threshold elevation during which visual processing is partially blind. Split-Screen Tracking conditions a stable central anchor coupled with multifocal covert attention (Cavanagh & Alvarez, 2005; Green & Bavelier, 2006). By coupling a vertical trajectory on the left with a horizontal trajectory on the right, this drill prevents Gestalt common fate grouping and trains true dual-stream cognitive processing."
