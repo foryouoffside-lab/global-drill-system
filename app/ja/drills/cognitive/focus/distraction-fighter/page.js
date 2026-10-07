@@ -259,6 +259,9 @@ export default function JapaneseDistractionFighterPage() {
         sources={sources}
       >
         <p>
+          ストループテストとは、色の名前を表す文字が別の色のインクで書かれているときに、文字の意味ではなくインクの色を答える課題です。読む自動処理を抑える必要があるため、色と文字が一致するときより答えるのが遅くなります。このページでは45秒間、インク色を素早く選んで反応の速さと正確さを確かめられます。
+        </p>
+        <p>
           ストループ効果（Stroop Effect）は、1935年にJ.リドリー・ストループによって報告されて以来、認知心理学および神経科学において最も堅牢で信頼性の高い知見の一つとして知られています（Stroop, 1935）。文字の意味と異なるインク色を提示された際、人間の反応速度は著しく低下し、エラー率が上昇します。
         </p>
 
@@ -279,7 +282,7 @@ export default function JapaneseDistractionFighterPage() {
 
         <h3>データ透明性と非医療用免責事項</h3>
         <p>
-          データ透明性と非医療用免責事項：SkillDrillsは個人を特定するデータやスコアを外部サーバーへ一切収集・送信しません。すべてのスコアおよび設定値はお使いのブラウザのローカルストレージにのみ保存されます。本ドリルは認知機能向上とセルフチェックを目的とした無料ブラウザゲームであり、医療機器やADHD等の診断ツールではありません。注意や集中に関する医学的な懸念がある場合は、専門医にご相談ください。
+          データ透明性と非医療用免責事項：アカウント登録は不要で、スコアや設定値はお使いのブラウザのローカルストレージに保存されます。サイト全体のアクセス状況は匿名で計測しています（詳細はプライバシーポリシー）。本ドリルは認知機能向上とセルフチェックを目的とした無料ブラウザゲームであり、医療機器やADHD等の診断ツールではありません。注意や集中に関する医学的な懸念がある場合は、専門医にご相談ください。
         </p>
 
         <h3>ストループテスト 実力判定基準（45秒セッション）</h3>
@@ -300,21 +303,21 @@ export default function JapaneseDistractionFighterPage() {
                 <td className="p-2.5 border border-white/10">&gt; 18,000 PTS</td>
                 <td className="p-2.5 border border-white/10">&gt; 96%</td>
                 <td className="p-2.5 border border-white/10">完全な衝動遮断・高速弁別</td>
-                <td className="p-2.5 border border-white/10">卓越した認知柔軟性と実行制御</td>
+                <td className="p-2.5 border border-white/10">高い安定性</td>
               </tr>
               <tr>
                 <td className="p-2.5 border border-white/10 font-bold text-amber-400">Tier 2 (上級)</td>
                 <td className="p-2.5 border border-white/10">12,000 – 17,999 PTS</td>
                 <td className="p-2.5 border border-white/10">92 – 95%</td>
                 <td className="p-2.5 border border-white/10">わずかな干渉・安定タップ</td>
-                <td className="p-2.5 border border-white/10">上位水準・強固な集中持続力</td>
+                <td className="p-2.5 border border-white/10">安定した集中の持続</td>
               </tr>
               <tr>
                 <td className="p-2.5 border border-white/10 font-bold text-blue-400">Tier 3 (中級)</td>
                 <td className="p-2.5 border border-white/10">7,000 – 11,999 PTS</td>
                 <td className="p-2.5 border border-white/10">85 – 91%</td>
                 <td className="p-2.5 border border-white/10">標準的なストループ干渉</td>
-                <td className="p-2.5 border border-white/10">一般的な成人平均レベル</td>
+                <td className="p-2.5 border border-white/10">中程度の水準</td>
               </tr>
               <tr>
                 <td className="p-2.5 border border-white/10 font-bold text-slate-400">Tier 4 (初級)</td>
@@ -334,7 +337,7 @@ export default function JapaneseDistractionFighterPage() {
           </table>
         </div>
         <p className="text-xs text-slate-400 mt-1 mb-4 leading-relaxed">
-          ※本ベンチマークはStroop（1935）、MacLeod（1991）、Woodsら（2015）の実験心理学知見を元に、ブラウザ上のタップ・クリック操作向けに規格化されたものです。
+          ※この表は45秒セッション向けに編集した練習の目安です。Stroop（1935）、MacLeod（1991）、Woodsら（2015）の研究を背景にしていますが、標準化された基準や統計ではありません。
         </p>
 
         <h3>認知的抑制力を鍛える4つの実践プロトコル</h3>
