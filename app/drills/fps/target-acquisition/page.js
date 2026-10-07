@@ -4,8 +4,8 @@ import DrillFooter from '@/components/drill/DrillFooter';
 import { pickSources } from '@/lib/drillSources';
 import { getAlternateLanguages } from '@/lib/i18n/locales';
 export const metadata = {
-  title: "Target Acquisition Aim Trainer – Precision | SkillDrills",
-  description: "Free target acquisition aim trainer. Train visual target detection, threat discrimination and first-shot flick accuracy under time pressure.",
+  title: "Target Acquisition Aim Trainer: First Shot | SkillDrills",
+  description: "Free target acquisition aim trainer for Valorant, CS2 and Apex. Practice spotting the right target and landing an accurate first shot under time pressure.",
   keywords: [
     "target acquisition aim trainer",
     "target acquisition trainer",
@@ -29,8 +29,8 @@ export const metadata = {
     follow: true,
   },
   openGraph: {
-    title: "Target Acquisition Aim Trainer – Precision | SkillDrills",
-    description: "Master visual target acquisition speed, feature contrast discrimination, and first-shot flick accuracy for competitive tactical FPS shooters like Valorant, CS2, and Apex Legends.",
+    title: "Target Acquisition Aim Trainer: First Shot | SkillDrills",
+    description: "Free target acquisition aim trainer for Valorant, CS2 and Apex. Practice spotting the right target and landing an accurate first shot under time pressure.",
     url: "https://skilldrills.online/drills/fps/target-acquisition",
     siteName: 'SkillDrills',
     locale: 'en_US',
@@ -38,8 +38,8 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: "Target Acquisition Aim Trainer – Precision | SkillDrills",
-    description: "Master visual target acquisition speed, feature contrast discrimination, and first-shot flick accuracy for competitive tactical FPS shooters like Valorant, CS2, and Apex Legends.",
+    title: "Target Acquisition Aim Trainer: First Shot | SkillDrills",
+    description: "Free target acquisition aim trainer for Valorant, CS2 and Apex. Practice spotting the right target and landing an accurate first shot under time pressure.",
   },
 };
 
@@ -76,7 +76,7 @@ export default function TargetAcquisitionPage() {
     "name": "Target Acquisition Aim Trainer",
     "applicationCategory": "GameApplication",
     "operatingSystem": "Web Browser",
-    "dateModified": "2026-09-05",
+    "dateModified": "2026-10-08",
     "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
     "description": "A free browser FPS drill training visual target identification speed, threat recognition, and first-shot accuracy for competitive FPS games.",
     "genre": "FPS Training / Target Acquisition",
@@ -94,7 +94,7 @@ export default function TargetAcquisitionPage() {
     "name": "Target Acquisition Aim Trainer",
     "url": "https://skilldrills.online/drills/fps/target-acquisition",
     "description": "A free browser FPS drill training visual target identification speed, threat recognition, and first-shot accuracy for competitive FPS games.",
-    "dateModified": "2026-09-05",
+    "dateModified": "2026-10-08",
     "gamePlatform": "Web Browser",
     "genre": ["FPS Training", "Aim Trainer", "Target Acquisition"],
     "playMode": "SinglePlayer",
@@ -106,7 +106,7 @@ export default function TargetAcquisitionPage() {
   const faqSchema = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
-    "dateModified": "2026-09-05",
+    "dateModified": "2026-10-08",
     "mainEntity": [
       {
         "@type": "Question",
@@ -174,10 +174,10 @@ export default function TargetAcquisitionPage() {
       },
       {
         "@type": "Question",
-        "name": "How does raw unaccelerated mouse input improve target acquisition consistency?",
+        "name": "Does mouse acceleration hurt target acquisition consistency?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Hardware raw input establishes a strictly linear relationship between physical hand displacement and onscreen reticle motion, allowing the motor cortex to reliably calibrate the exact ballistic impulse needed to land on the target."
+          "text": "A linear relationship between hand movement and reticle movement lets the motor system calibrate the ballistic impulse needed to land on a target, while acceleration makes the same movement cover different distances. This drill uses Pointer Lock but does not request unadjusted input, so turn off OS pointer acceleration before you practice."
         }
       },
       {
@@ -225,8 +225,9 @@ export default function TargetAcquisitionPage() {
   };
 
   const targetAcquisitionGuide = {
-    heading: "Target Acquisition Aim Trainer Guide & Visual Discrimination Biomechanics",
+    heading: "What is a target acquisition aim trainer?",
     intro: [
+      "A target acquisition aim trainer trains the first step of aiming: finding the right target quickly and landing an accurate first shot. In this drill you pick out the correct target from distractors, flick to it and click under time pressure. It builds first-shot accuracy for Valorant, CS2 and Apex Legends.",
       "Target Acquisition Aim Trainer is a specialized perceptual-cognitive drill engineered to cultivate split-second visual detection, feature contrast discrimination, and lethal first-shot accuracy. In tactical shooters such as Valorant, Counter-Strike 2, and Rainbow Six Siege, round outcomes hinge on the first 300 milliseconds of sightline exposure: the combatant who spots, identifies, and snaps to the opponent's critical silhouette first wins the engagement.",
       "The theoretical foundation of visual search and object identification was formulated by Anne Treisman & Garry Gelade (1980) in Feature-Integration Theory. Treisman demonstrated that low-level visual features—such as luminance contrast, color pop-out, and edge orientation—are extracted preattentively and simultaneously across the entire visual field. Only when focused spatial attention is directed to a specific coordinate are these features bound into a recognizable enemy threat.",
       "Expanding on parallel visual processing, Jeremy M. Wolfe's (1994, 2007) Guided Search model details how top-down cognitive expectations combine with bottom-up sensory salience maps to prioritize attention. When players train visual contrast discrimination, their visual cortex learns to reject low-contrast background clutter and distractors instantly, shortening the latency between target appearance and motor initiation.",
@@ -234,19 +235,19 @@ export default function TargetAcquisitionPage() {
       "How this is measured: every event is timestamped with the browser's performance.now() high-resolution clock, entirely on your device -- no score is uploaded. Two things this cannot control: browser timers are deliberately coarsened as a Spectre mitigation (typically to about 1 ms), and your display quantizes the stimulus to its refresh interval -- about 16.7 ms per frame at 60 Hz, 6.9 ms at 144 Hz and 4.1 ms at 240 Hz (Woods et al., 2015). Mouse polling adds roughly 8 ms at 125 Hz versus 1 ms at 1000 Hz. So treat differences smaller than about 5 ms as measurement noise, and compare your own runs on the same hardware rather than against someone else's setup."
     ],
     benchmarks: {
-      title: "Target Acquisition & Discrimination Latency Benchmarks",
+      title: "How fast should target acquisition be?",
       headers: ["Performance Tier", "Acquisition Latency", "First-Shot Accuracy", "Competitive In-Game Implication"],
       rows: [
-        ["Tier 1 (Apex Sentinel / Radiant Pro)", "Sub-260 ms", "95% – 99%+", "Instantaneous preattentive threat detection; flawless first-bullet headshots with zero discrimination hesitation"],
-        ["Tier 2 (Competitive Master / Tier-2 Esports)", "260 – 320 ms", "88% – 95%", "Exceptional visual spotting speed; decisive priority target engagement with minimal distractor interference"],
-        ["Tier 3 (High-Skill Diamond / Ascendant)", "320 – 400 ms", "80% – 88%", "Solid first-shot accuracy; experiences slight 50–80 ms delays when multiple high-density clusters appear"],
-        ["Tier 4 (Intermediate / Gold / Platinum)", "400 – 500 ms", "70% – 80%", "Prone to serial scanning; occasionally clicks lower-priority distractors out of order or overshoots target"],
+        ["Tier 1 (Elite)", "Sub-260 ms", "95% – 99%+", "Instantaneous preattentive threat detection; flawless first-bullet headshots with zero discrimination hesitation"],
+        ["Tier 2 (Competitive)", "260 – 320 ms", "88% – 95%", "Exceptional visual spotting speed; decisive priority target engagement with minimal distractor interference"],
+        ["Tier 3 (High-Skill)", "320 – 400 ms", "80% – 88%", "Solid first-shot accuracy; experiences slight 50–80 ms delays when multiple high-density clusters appear"],
+        ["Tier 4 (Intermediate)", "400 – 500 ms", "70% – 80%", "Prone to serial scanning; occasionally clicks lower-priority distractors out of order or overshoots target"],
         ["Tier 5 (Developing / Novice)", "500 ms+", "Sub-70%", "High visual clutter confusion; slow target acquisition causing frequent losses in initial peek duels"]
       ],
       note: "Acquisition latency represents elapsed time from target cluster presentation to first validated click on the priority stimulus, timed with high-resolution digital chronometry (Woods et al., 2015)."
     },
     techniques: {
-      title: "Evidence-Based Protocols for Perfecting Target Acquisition",
+      title: "How do you improve target acquisition in FPS games?",
       items: [
         {
           name: "Preattentive Parallel Scanning Over Serial Peeking",
