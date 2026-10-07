@@ -14,3 +14,4 @@
 | /drills/physical/fitness/agility-ladder | done | 82ea1ba1 | docs/seo/research/en/agility-ladder.md | intent mismatch logged for owner; FAQ hedged |
 | /drills/physical/fitness/jump-sequence | done | 7bc49543 | docs/seo/research/en/jump-sequence.md | no demand evidence for primary; claims hedged |
 | /drills/physical/fitness/speed-drill | done | a7ec030c | docs/seo/research/en/speed-drill.md | intent mismatch fixed; FAQ added (11 items) |
+| /drills/physical/reflex-training/drop-catch | done | d23cb595 | docs/seo/research/en/drop-catch.md | Bing unavailable; claims hedged |
