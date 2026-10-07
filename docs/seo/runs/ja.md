@@ -15,3 +15,4 @@
 | C:/Program Files/Git/ja/drills/motor | done | PENDING | docs/seo/research/ja/motor-hub.md | removed sub-millisecond claim; description names 連打測定 |
 | C:/Program Files/Git/ja/drills/memory | done | PENDING | docs/seo/research/ja/memory-hub.md | audit pass, no source change |
 | C:/Program Files/Git/ja/drills/physical | done | PENDING | docs/seo/research/ja/physical-hub.md | audit pass, no source change |
+| C:/Program Files/Git/ja/drills/visual | done | PENDING | docs/seo/research/ja/visual-hub.md | audit pass, no source change |
