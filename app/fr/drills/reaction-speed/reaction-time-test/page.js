@@ -137,7 +137,7 @@ const faqSchema = {
       "name": "Quel est le temps de réaction moyen d'un être humain face à un stimulus visuel ?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Le temps de réaction visuel moyen chez un adulte sain se situe entre 200 et 250 millisecondes (ms) (Kosinski, 2008). Les scores inférieurs à 190 ms sont considérés comme excellents, tandis que les athlètes d'esport de haut niveau (Valorant, CS2) et les pilotes de Formule 1 atteignent régulièrement des moyennes situées entre 150 et 170 ms."
+        "text": "Le temps de réaction visuel moyen chez un adulte sain se situe entre 200 et 250 millisecondes (ms) (Kosinski, 2008). Dans ce test, un résultat sous 190 ms est très rapide ; l'écran, la souris et l'état de fatigue modifient le score mesuré, donc comparez plutôt vos moyennes sur le même appareil."
       }
     },
     {
@@ -145,7 +145,7 @@ const faqSchema = {
       "name": "Comment ce test mesure-t-il les millisecondes avec une telle exactitude ?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Notre outil s'appuie sur l'API performance.now() native du navigateur, qui fournit des horodatages à résolution millisecondaire (environ 1 ms). Aucun aller-retour serveur (ping réseau) n'interfère : la détection est traitée localement sur le thread matériel du client (Woods et al., 2015)."
+        "text": "Le test s'appuie sur l'API performance.now() du navigateur, dont la résolution est d'environ 1 ms. Aucun aller-retour serveur n'interfère : le chronométrage se fait localement dans votre navigateur. La latence de l'écran et de la souris s'ajoute toutefois au résultat (Woods et al., 2015)."
       }
     },
     {
@@ -201,7 +201,7 @@ const faqSchema = {
       "name": "En quoi le temps de réaction est-il déterminant dans des jeux comme Valorant, CS2 ou League of Legends ?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Lors d'un duel de 'peeking' en ligne, l'avantage de l'attaquant combiné aux latences réseau confère une fenêtre de tir de moins de 200 ms. Disposer d'un temps de réaction sous les 170 ms permet de punir une ligne tenue ou d'activer instantanément une compétence d'esquive défensive (Flash / Zhonya)."
+        "text": "Dans un duel au tir, quelques dizaines de millisecondes peuvent départager deux joueurs, mais le résultat dépend aussi du réseau, de la visée et de l'anticipation. Ce test mesure uniquement votre réaction visuelle simple, pas ces autres facteurs."
       }
     },
     {
@@ -293,7 +293,7 @@ const howToSchema = {
       "@type": "HowToStep",
       "position": 4,
       "name": "Analyse de la Moyenne & Comparaison au Barème",
-      "text": "Répétez 5 à 10 essais pour éliminer les valeurs aberrantes et consultez votre percentile de performance."
+      "text": "Répétez 5 à 10 essais pour éliminer les valeurs aberrantes et comparez votre moyenne au barème."
     }
   ]
 };
@@ -301,22 +301,22 @@ const howToSchema = {
 const reactionGuide = {
   heading: "Guide Scientifique du Temps de Réaction & Barèmes Officiels",
   intro: [
-    "Le test de temps de réaction mesure le délai total requis par le système nerveux central pour détecter un stimulus lumineux, le décoder au sein du cortex visuel primaire (V1) et transmettre l'influx moteur aux fléchisseurs de l'index via la moelle épinière.",
-    "Dans l'esport de compétition (CS2, Valorant, League of Legends, Apex Legends) ainsi que dans les sports à haute vitesse (Formule 1, escrime, tennis de table), chaque gain de 10 ms décuple l'efficacité du premier engagement et la capacité d'interception d'actions imprévues.",
-    "Mesure rigoureuse sans latence réseau : notre moteur exécute les calculs de chronométrie directement en local via l'API performance.now(), garantissant une précision millisecondaire exempte de toute fluctuation de connexion internet.",
+    "Un test de temps de réaction mesure, en millisecondes, le délai entre l'apparition d'un signal visuel et votre clic. Chez l'adulte, la moyenne se situe autour de 200 à 250 ms (Kosinski, 2008). Répétez 5 essais : une moyenne est plus fiable qu'un score isolé, car l'écran et la souris ajoutent leur propre latence.",
+    "Ce délai couvre la détection du stimulus par la rétine, son traitement par le cortex visuel, la décision, puis la commande motrice envoyée à l'index.",
+    "Le chronométrage s'effectue localement dans votre navigateur via l'API performance.now(), sans aller-retour réseau : la connexion internet n'influence pas le résultat.",
     "Considérations matérielles : les écrans 60 Hz ajoutent jusqu'à 16,6 ms de délai d'affichage par trame. L'utilisation d'une dalle 144 Hz ou 240 Hz couplée à une souris optique à 1000 Hz est fortement préconisée pour révéler votre véritable potentiel physiologique (Woods et al., 2015)."
   ],
   benchmarks: {
-    title: "Tableau de Référence International du Temps de Réaction Visuel",
-    headers: ["Temps de Réaction (ms)", "Palier de Performance", "Percentile Mondial", "Rang Esport Estimé", "Profil Neurophysiologique"],
+    title: "Temps de réaction moyen : repères en millisecondes",
+    headers: ["Temps de réaction (ms)", "Palier", "Lecture"],
     rows: [
-      ["< 150 ms", "Surhumain / Légendaire (Godlike)", "Top 1%", "Pilotes F1 / Joueurs Esport Pros", "Anticipation synaptique exceptionnelle, limite biologique de conduction neuronale"],
-      ["150 – 190 ms", "Élite Esport (Elite Tier)", "Top 5%", "Radiant / Immortel / Challenger", "Traitement visuel fovéal ultra-rapide, activation motrice immédiate et épurée"],
-      ["190 – 240 ms", "Avancé / Compétitif (Advanced)", "Top 25%", "Diamant / Ascendant", "Excellente discrimination du stimulus et coordination œil-main solide"],
-      ["240 – 280 ms", "Moyenne Standard Adulte (Average)", "Médiane 50%", "Gold / Platine", "Vitesse de réaction classique chez un adulte sain sur écran standard"],
-      ["300 ms+", "Débutant / Fatigue (Developing)", "Derniers 20%", "Argent / Bronze", "Fatigue nerveuse, manque de sommeil ou latence d'affichage matérielle excessive"]
+      ["Moins de 150 ms", "Très rapide", "Rare sur un test avec écran et souris ; vérifiez qu'il ne s'agit pas d'une anticipation"],
+      ["150 – 190 ms", "Rapide", "Réaction visuelle très vive, souvent associée à un écran à haut taux de rafraîchissement"],
+      ["190 – 250 ms", "Dans la moyenne", "Zone typique d'un adulte en bonne forme (Kosinski, 2008)"],
+      ["250 – 300 ms", "À améliorer", "Écran 60 Hz, souris lente ou attention dispersée peuvent expliquer l'écart"],
+      ["Plus de 300 ms", "Lent", "Fatigue, manque de sommeil ou latence d'affichage importante"]
     ],
-    note: "Données calibrées sur les études académiques de chronométrie mentale humaine (Kosinski, 2008; Woods et al., 2015). Les affichages 60 Hz ajoutent un délai mécanique d'environ 16,7 ms par trame."
+    note: "Repères indicatifs, non issus d'un panel de joueurs SkillDrills. Sources : Kosinski (2008) ; Woods et al. (2015). Un écran 60 Hz ajoute jusqu'à environ 16,7 ms par image."
   },
   techniques: {
     title: "Physiologie Sensorielle & Principes d'Optimisation des Réflexes",
