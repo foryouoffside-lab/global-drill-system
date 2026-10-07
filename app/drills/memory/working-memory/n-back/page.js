@@ -135,7 +135,7 @@ export default function NBackPage() {
         "name": "Can N-Back training improve fluid intelligence (IQ)?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Landmark research by Jaeggi et al. (2008) demonstrated that adaptive N-back training led to improvements in fluid intelligence (Gf) on non-verbal reasoning tasks. While transfer effect sizes vary across studies, N-back reliably enhances working memory capacity and attentional control."
+          "text": "Jaeggi et al. (2008) reported that adaptive N-back training improved fluid intelligence on non-verbal reasoning tasks, but later meta-analyses (for example Melby-Lervåg and Hulme, 2013) found little evidence that working memory training transfers to reasoning. Treat N-back as practice for the task itself, and do not expect an IQ gain."
         }
       },
       {
@@ -143,7 +143,7 @@ export default function NBackPage() {
         "name": "What is a normal adult score on the 3-Back test?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Healthy young adults typically perform with 65% to 80% accuracy on a standard 3-back task. Achieving sustained accuracy above 85% or successfully operating at 4-back reflects superior executive working memory."
+          "text": "This drill has no population norm, because SkillDrills collects no aggregate data. In research N-back tasks accuracy falls as n rises, and most people find 3-back clearly harder than 2-back. Compare your accuracy and level with your own earlier runs on the same device."
         }
       },
       {
@@ -273,7 +273,7 @@ export default function NBackPage() {
 
       <DrillGuide
         lead={[
-          "The N-Back Working Memory Test is the premier neuropsychological paradigm for evaluating continuous working memory updating, executive cognitive control, and active information maintenance under time pressure. Originating from Wayne K. Kirchner's (1958) seminal research on rapidly changing information retention, the n-back task has become the gold standard in cognitive neuroscience.",
+          "An N-back test shows a stream of letters and asks whether the current letter matches the one shown n steps earlier. In this free online version you start at 3-back and the letters speed up from 2000 ms to 1200 ms as you level up, so it trains working-memory updating, not just storage.",
           "Unlike passive span tests that measure raw storage capacity, the N-Back task requires participants to continuously update a dynamic mental buffer. As letters appear in rapid succession, users must decide whether the current letter matches the one presented exactly N steps earlier (starting at 3-back, progressing to 4-back and beyond), constantly ejecting old tokens and encoding new stimuli.",
           "How this is measured: every event is timestamped with the browser's performance.now() high-resolution clock, entirely on your device -- no score is uploaded. Browser timers are deliberately coarsened as a Spectre mitigation (typically to about 1 ms), and your display quantizes each change to its refresh interval, about 16.7 ms per frame at 60 Hz (Woods et al., 2015). Treat differences smaller than about 5 ms as measurement noise, and compare your own runs on the same hardware.",
           "Data transparency: SkillDrills collects no aggregate data. Your scores and settings live only in your browser's localStorage and are never uploaded, so this site publishes no user averages, percentiles or player counts. Every figure quoted here comes from the published work in the References panel below.",
@@ -299,27 +299,27 @@ export default function NBackPage() {
         ]}
         benchmarks={[
           {
-            tier: "Tier 1: Superior Working Memory (Executive Elite / 99th Percentile)",
+            tier: "Tier 1: Exceptional",
             range: "4-Back to 5-Back+ Level (1,200+ Points)",
             desc: "Executive elite; maintains a rolling 4-to-5 item mental FIFO queue; instantaneous token replacement; sub-600 ms response latency; accuracy exceeding 92%."
           },
           {
-            tier: "Tier 2: High Average (Strong Updating Control / 85th–95th Percentile)",
+            tier: "Tier 2: Advanced",
             range: "Solid 3-Back with 4-Back Transitions (900 – 1,199 Points)",
             desc: "Exceeds standard adult baseline; sustains continuous 3-back updating with minimal intrusion errors; successfully transitions into 4-back trials; 80% – 91% accuracy."
           },
           {
-            tier: "Tier 3: Average Adult Baseline (50th Percentile Normal)",
+            tier: "Tier 3: Typical",
             range: "Stable 3-Back (600 – 899 Points)",
-            desc: "Normative adult baseline (Kirchner, 1958; Jaeggi et al., 2008); maintains a 3-item sub-vocal buffer; occasionally drops oldest token during rapid presentation; 65% – 79% accuracy."
+            desc: "maintains a 3-item sub-vocal buffer; occasionally drops oldest token during rapid presentation; 65% – 79% accuracy."
           },
           {
-            tier: "Tier 4: Low Average (Executive Buffer Decay / 15th–30th Percentile)",
+            tier: "Tier 4: Developing",
             range: "Inconsistent 3-Back (400 – 599 Points)",
             desc: "Struggles with continuous 3-item FIFO updating; frequent 2-back vs. 3-back confusion (lure intrusion errors); accuracy near chance on match trials (50% – 64%)."
           },
           {
-            tier: "Tier 5: Impaired / Below Average (< 15th Percentile)",
+            tier: "Tier 5: Starting out",
             range: "Sub-3-Back (< 400 Points)",
             desc: "Severe working memory updating bottleneck; unable to maintain 3 sequential items in active buffer across transitions; frequent timeouts and accuracy below 50%."
           }
@@ -390,11 +390,11 @@ export default function NBackPage() {
           },
           {
             q: "Can N-Back training improve fluid intelligence (IQ)?",
-            a: "Landmark research by Jaeggi et al. (2008) demonstrated that adaptive N-back training led to improvements in fluid intelligence (Gf) on non-verbal reasoning tasks. While transfer effect sizes vary across studies, N-back reliably enhances working memory capacity and attentional control."
+            a: "Jaeggi et al. (2008) reported that adaptive N-back training improved fluid intelligence on non-verbal reasoning tasks, but later meta-analyses (for example Melby-Lervåg and Hulme, 2013) found little evidence that working memory training transfers to reasoning. Treat N-back as practice for the task itself, and do not expect an IQ gain."
           },
           {
             q: "What is a normal adult score on the 3-Back test?",
-            a: "Healthy young adults typically perform with 65% to 80% accuracy on a standard 3-back task. Achieving sustained accuracy above 85% or successfully operating at 4-back reflects superior executive working memory."
+            a: "This drill has no population norm, because SkillDrills collects no aggregate data. In research N-back tasks accuracy falls as n rises, and most people find 3-back clearly harder than 2-back. Compare your accuracy and level with your own earlier runs on the same device."
           },
           {
             q: "What is the difference between single N-Back and Dual N-Back?",
