@@ -239,8 +239,9 @@ const howToSchema = {
 const guideProps = {
   sources: pickSources('meyer1988', 'fitts1954', 'mackenzie1992', 'elliott2010', 'woodworth1899', 'woods2015'),
   intro: {
-    title: 'The Biomechanics of Ballistic Micro-Flicks and Submovement Optimization',
+    title: `What Is a Flick Shot Mouse Accuracy Test? Micro-Flicks and Submovements`,
     paragraphs: [
+      `A flick shot mouse accuracy test measures how precisely you can snap your cursor onto a target in one fast movement. In this free drill the targets shrink and decay, and a bulls-eye hit scores more than an edge hit, so it rewards precision as well as speed.`,
       'In competitive marksmanship and human-computer interaction, a flick shot is a high-velocity, discrete manual aiming movement executed under extreme time constraints. Robert S. Woodworth (1899) first established that goal-directed movements operate via a dual-phase control architecture: an initial ballistic impulse that propels the limb toward the target, followed by a current control phase where visual feedback guides terminal adjustments.',
       'In their seminal theoretical framework, David E. Meyer et al. (1988) formulated the Stochastic Optimized Submovement Model. They proved that human motor output is subject to neural noise proportional to movement velocity. When players flick too fast, primary movement endpoint scatter increases. If the primary impulse lands outside the target boundaries, a costly secondary corrective submovement (~150–200 ms latency) must be triggered.',
       'To achieve elite flicking throughput (MacKenzie, 1992), aimers must calibrate their ballistic impulse velocity so that the primary movement distribution falls reliably within target confines. By rewarding inner bulls-eye center hits, this drill trains the sensorimotor system to tighten endpoint distribution dispersion and minimize corrective deceleration submovements.',
@@ -331,7 +332,7 @@ const guideProps = {
 };
 
 const copyEn = {
-  title: "Precision Flick Shot",
+  title: "Mouse Accuracy Test: Precision Flick Shot",
   subtitle: "Precision flick aim drill for hitting shrinking targets, improving micro-corrections, and building accurate mouse control",
   startButtonText: "START DRILL",
   playAgainText: "Play Again",
