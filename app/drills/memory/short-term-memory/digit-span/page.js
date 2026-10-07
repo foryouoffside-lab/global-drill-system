@@ -4,8 +4,8 @@ import { getAlternateLanguages } from '@/lib/i18n/locales';
 import { pickSources } from '@/lib/drillSources';
 
 export const metadata = {
-  title: "Digit Span Memory Test – Number Recall | SkillDrills",
-  description: "Free digit span memory test. See how many numbers you can repeat back, and learn the chunking that stretches it past the usual limit.",
+  title: "Digit Span Test – Free Online Number Memory | SkillDrills",
+  description: "Free online digit span test. Repeat growing number strings in order, find your digit span, and learn the chunking that stretches it.",
   keywords: [
     "digit span test",
     "digit span memory test",
@@ -29,7 +29,7 @@ export const metadata = {
     follow: true,
   },
   openGraph: {
-    title: "Digit Span Memory Test – Number Recall | SkillDrills",
+    title: "Digit Span Test – Free Online Number Memory | SkillDrills",
     description: "Measure and train numerical working memory with our free online Digit Span Memory Test. Master phonological chunking, test Miller's 7±2 limit, and build focus.",
     url: "https://skilldrills.online/drills/memory/short-term-memory/digit-span",
     siteName: 'SkillDrills',
@@ -38,7 +38,7 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: "Digit Span Memory Test – Number Recall | SkillDrills",
+    title: "Digit Span Test – Free Online Number Memory | SkillDrills",
     description: "Measure and train numerical working memory with our free online Digit Span Memory Test. Master phonological chunking, test Miller's 7±2 limit, and build focus.",
   },
 };
@@ -241,9 +241,9 @@ export default function DigitSpanPage() {
   };
 
   const digitSpanGuide = {
-    heading: "Digit Span Memory Test Guide & Working Memory Capacity",
+    heading: "Digit Span Test Guide: How Working Memory Span Works",
     intro: [
-      "Digit Span Memory Test is the premier neuropsychological assessment of verbal short-term memory, working memory span, and phonological processing capacity. Employed for over a century in cognitive psychology and clinical intelligence batteries, digit span measures the quantitative boundaries of the human mind's immediate holding buffer.",
+      "A digit span test shows a string of numbers and asks you to enter them back in order. In this free online version the string grows by one digit when you succeed and shrinks after a miss, so it settles on the longest sequence you can hold: your digit span. Miller (1956) put the typical limit near seven.",
       "The theoretical foundation of digit span began with George A. Miller's seminal 1956 paper, 'The Magical Number Seven, Plus or Minus Two', which identified human immediate memory span as approximately seven discrete informational items. David Wechsler (1939, 1955, 2008) incorporated forward, backward, and sequencing digit span into the Wechsler Adult Intelligence Scale (WAIS), establishing it as the clinical gold standard for the Working Memory Index (WMI).",
       "According to Alan Baddeley's multicomponent working memory model (Baddeley & Hitch, 1974; Baddeley, 1986, 2000), numerical strings are temporarily maintained in the Phonological Loop. The phonological store holds acoustic traces that decay within 1.5 to 2.0 seconds unless refreshed by the articulatory rehearsal component ('inner voice'). Furthermore, Nelson Cowan (2001, 2010) demonstrated that when rehearsal is controlled, pure unchunked focal capacity is strictly $4 \\pm 1$ items; reaching higher digit spans relies entirely on strategic chunking.",
       "Featuring high-precision digital chronometry (Woods et al., 2015), this drill tests your raw capacity and response cadence, converging on your true span through an adaptive psychometric staircase.",
@@ -252,16 +252,16 @@ export default function DigitSpanPage() {
       "This drill is a free browser game for practice and interest. It is not a medical device, a diagnostic instrument, or a screening or treatment tool for any condition, and no score here says anything about your health or your memory in a clinical sense. If you have concerns about your memory or thinking, speak to a qualified clinician."
     ],
     benchmarks: {
-      title: "Normative Digit Span & Working Memory Benchmarks",
+      title: "What Is a Good Digit Span? Score Bands",
       headers: ["Performance Tier", "Digit Span (Length)", "WAIS Scaled Equiv.", "Cognitive Storage & Processing Profile"],
       rows: [
-        ["Tier 1 (Superior / Clinical 99th Percentile)", "Span 9 – 12+ Digits", "Scaled Score 16 – 19", "Mnemonic elite; executes 3-to-4 digit rhythmic clustering; flawless phonological loop maintenance; sub-350 ms per-key input cadence"],
-        ["Tier 2 (High Average / 85th–95th Percentile)", "Span 7 – 8 Digits", "Scaled Score 12 – 15", "Reaches Miller's classic 7-item threshold; constructs stable binary/triplet chunks; robust against temporal decay; 350 – 500 ms cadence"],
-        ["Tier 3 (Average Adult Baseline / 50th Percentile)", "Span 5 – 6 Digits", "Scaled Score 8 – 11", "Normal adult population average; manages basic paired chunking; begins encountering acoustic confusion and decay beyond 6 digits; 500 – 700 ms cadence"],
-        ["Tier 4 (Low Average / Memory Bottleneck)", "Span 4 Digits", "Scaled Score 5 – 7", "Operates at Cowan's raw 4-item capacity limit; struggles when strings exceed 4 digits without vocal rehearsal; 700 – 950 ms cadence"],
-        ["Tier 5 (Impaired / Below Average Span)", "Span 3 Digits", "Scaled Score 1 – 4", "Difficulty holding 3 sequential digits; high susceptibility to immediate decay and cognitive distraction; input cadence exceeding 950 ms"]
+        ["Tier 1 (Exceptional)", "Span 9 – 12+ Digits", "Scaled Score 16 – 19", "Mnemonic elite; executes 3-to-4 digit rhythmic clustering; flawless phonological loop maintenance; sub-350 ms per-key input cadence"],
+        ["Tier 2 (Advanced)", "Span 7 – 8 Digits", "Scaled Score 12 – 15", "Reaches Miller's classic 7-item threshold; constructs stable binary/triplet chunks; robust against temporal decay; 350 – 500 ms cadence"],
+        ["Tier 3 (Typical)", "Span 5 – 6 Digits", "Scaled Score 8 – 11", "Normal adult population average; manages basic paired chunking; begins encountering acoustic confusion and decay beyond 6 digits; 500 – 700 ms cadence"],
+        ["Tier 4 (Developing)", "Span 4 Digits", "Scaled Score 5 – 7", "Operates at Cowan's raw 4-item capacity limit; struggles when strings exceed 4 digits without vocal rehearsal; 700 – 950 ms cadence"],
+        ["Tier 5 (Starting out)", "Span 3 Digits", "Scaled Score 1 – 4", "Difficulty holding 3 sequential digits; high susceptibility to immediate decay and cognitive distraction; input cadence exceeding 950 ms"]
       ],
-      note: "Digit span indicates maximum error-free string length; WAIS scaled score equivalence reflects adult normative standardization (Wechsler, 2008; Woods et al., 2015)."
+      note: "Digit span indicates maximum error-free string length; the WAIS scaled-score column is an indicative reference, not a clinical score, and the bands are an editorial guide rather than population norms (Wechsler, 2008; Woods et al., 2015)."
     },
     techniques: {
       title: "Evidence-Based Protocols to Expand Digit Span Memory",
@@ -337,8 +337,8 @@ export default function DigitSpanPage() {
       />
       <DigitSpanClient
         copy={{
-          h1Keyword: "Digit Span Memory Test",
-          h1Suffix: " - Free Number Recall Game"
+          h1Keyword: "Digit Span Test",
+          h1Suffix: " - Free Online Number Memory Game"
         }}
       />
       <DrillGuide guide={digitSpanGuide} />
