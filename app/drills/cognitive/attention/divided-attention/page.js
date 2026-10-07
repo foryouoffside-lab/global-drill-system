@@ -155,7 +155,7 @@ const faqSchema = {
       "name": "Can you actually improve divided attention or multitasking?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Yes. Studies by Spelke, Hirst & Neisser (1976) proved that extensive deliberate practice can automatize perceptual classification, drastically reducing central bottleneck interference and allowing near-simultaneous execution without significant error escalation."
+        "text": "Possibly. Spelke, Hirst & Neisser (1976) reported that two participants trained over many weeks could perform two tasks together with far less interference. That was a small laboratory study, so treat it as evidence that practice can reduce dual-task cost, not a guarantee for this drill."
       }
     },
     {
@@ -187,7 +187,7 @@ const faqSchema = {
       "name": "Does monitor refresh rate influence dual-task scores?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Yes, high-refresh displays (144Hz+) provide crisper motion vectors (Woods et al., 2015), allowing the brain to compute spatial tracking positions faster and freeing up cognitive cycles for numeric discrimination."
+        "text": "A high-refresh display (144Hz or more) shows motion in smaller steps than a 60Hz one, and display timing affects what a browser test can resolve (Woods et al., 2015). It is not required, and whether it changes your score is something to check by comparing your own runs on one setup."
       }
     },
     {
@@ -260,10 +260,10 @@ const guideProps = {
     title: 'Cognitive Performance Standards & Benchmarks',
     headers: ['Tier', 'Rank', 'Rating', 'Accuracy', 'Percentile'],
     rows: [
-      { tier: 'Tier 1', rank: 'Grandmaster / Elite', stat: 'Top 1%', level: 'Mastery', accuracy: '98%+', percentile: 'Top 1%' },
-      { tier: 'Tier 2', rank: 'Advanced Focus', stat: 'Top 5%', level: 'Diamond', accuracy: '94-97%', percentile: 'Top 5%' },
-      { tier: 'Tier 3', rank: 'Proficient Operator', stat: 'Top 15%', level: 'Platinum', accuracy: '88-93%', percentile: 'Top 15%' },
-      { tier: 'Tier 4', rank: 'Standard Adult', stat: 'Top 50%', level: 'Gold', accuracy: '78-87%', percentile: 'Top 50%' },
+      { tier: 'Tier 1', rank: 'Grandmaster / Elite', stat: 'Highest tier', level: 'Mastery', accuracy: '98%+', percentile: 'Highest tier' },
+      { tier: 'Tier 2', rank: 'Advanced Focus', stat: 'Upper tier', level: 'Diamond', accuracy: '94-97%', percentile: 'Upper tier' },
+      { tier: 'Tier 3', rank: 'Proficient Operator', stat: 'Above-average tier', level: 'Platinum', accuracy: '88-93%', percentile: 'Above-average tier' },
+      { tier: 'Tier 4', rank: 'Standard Adult', stat: 'Mid tier', level: 'Gold', accuracy: '78-87%', percentile: 'Mid tier' },
       { tier: 'Tier 5', rank: 'Novice Baseline', stat: 'Base', level: 'Silver', accuracy: '<78%', percentile: 'Baseline' },
     ],
   },
