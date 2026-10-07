@@ -241,7 +241,7 @@ const faqSchema = {
       "name": "Can multiple object tracking capacity be improved with practice?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Yes. Neuroplastic adaptation through consistent MOT drill sessions strengthens parietal-frontal attentional networks, optimizes centroid fixation discipline, and increases tracking speed thresholds across consecutive training sessions (Faubert, 2013)."
+        "text": "Yes. Faubert (2013) reported that tracking speed thresholds rose across consecutive 3D-MOT training sessions, so practice can raise your limit on this task; how far it transfers to other skills is less certain."
       }
     },
     {
@@ -258,6 +258,7 @@ const faqSchema = {
 const multipleTargetsGuide = {
   heading: "The Psychophysics & Cognitive Science of Multiple Object Tracking (MOT)",
   intro: [
+    "The Multiple Object Tracking test shows several identical objects, briefly marks some as targets, then sets them all moving. Keep track of the targets among the distractors and pick them out when the objects stop. Most people can follow about four or five at once, so the test finds your own limit.",
     "Multiple Object Tracking (MOT) is a foundational cognitive psychophysics paradigm first formalized by Zenon Pylyshyn and Ron Storm (1988) to investigate how the human visual architecture maintains real-time spatial representations of independent moving items. Real-world visual environments—such as fast team sports, chaotic driving intersections, and tactical gaming—rarely present solitary focal stimuli; instead, they demand continuous parallel monitoring of multiple entities dispersed across the visual field.",
     "Prior to the MOT paradigm, classical models of visual attention posited a single movable 'spotlight' that sequentially scanned items. Pylyshyn and Storm demonstrated that human observers can track 4 to 5 identical moving items in parallel without scanning, establishing the theory of visual indexing ('FINSTs' or Fingers of Instantiation). FINSTs function as pre-attentive mental pointers that stick to objects and continuously track their spatial coordinates through dense motion, independent of object properties like color or shape.",
     "Subsequent neuroimaging and psychophysical research by Patrick Cavanagh and George Alvarez (2004, 2005) revealed that attentional tracking is mediated by independent multifocal spotlights divided across the left and right cerebral hemispheres. When target objects are distributed across both visual hemifields, tracking capacity is substantially higher than when all targets are confined to a single hemifield, demonstrating that each hemisphere possesses dedicated tracking resources.",
@@ -267,7 +268,7 @@ const multipleTargetsGuide = {
     title: "Multiple object tracking bands (editorial guide)",
     headers: ["Performance Band", "Effective Capacity", "Score & Accuracy Threshold", "Visual Attention & Cognitive Profile"],
     rows: [
-      ["Tier 1: Apex Multifocal Tracker", "5+ Targets Parallel", "Score: 60 PTS (3/3) | 100% Accuracy (Max Speed)", "Pro-grade parallel visual indexing; flawless bilateral hemifield distribution with zero collision desynchronization. Typical of elite pro gamers, fighter pilots, and pro athletes (Faubert, 2013; Green & Bavelier, 2006)."],
+      ["Tier 1: Apex Multifocal Tracker", "5+ Targets Parallel", "Score: 60 PTS (3/3) | 100% Accuracy (Max Speed)", "Best band in this drill: all targets tracked at the highest speed. A practice target, not a professional standard."],
       ["Tier 2: Advanced Parallel Indexer", "4 Targets Parallel", "Score: 50 – 59 PTS | 85 – 99% Accuracy", "Robust multifocal tracking; successfully maintains target-distractor differentiation through dense collision trajectories with minimal centroid drift."],
       ["Tier 3: Competent Divided Attention", "3 Targets Parallel", "Score: 40 – 49 PTS | 70 – 84% Accuracy", "Standard adult tracking baseline; reliable 3-target tracking under moderate speeds, but susceptible to identity swaps during close spatial clustering."],
       ["Tier 4: Developing Spatial Memory", "2 Targets Parallel", "Score: 20 – 39 PTS | 50 – 69% Accuracy", "Tendency to collapse multifocal attention into a single wandering foveal spotlight; struggles to suppress distractors during high-velocity deflections."],
