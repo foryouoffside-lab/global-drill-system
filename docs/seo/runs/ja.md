@@ -22,3 +22,4 @@
 | C:/Program Files/Git/ja/drills/motor/precision-control/steady-hand | done | PENDING | docs/seo/research/ja/steady-hand.md | イライラ棒ゲーム primary (Bing 192); English H1 subtitle fixed |
 | C:/Program Files/Git/ja/drills/physical/coordination/dynamic-grid-evasion | done | PENDING | docs/seo/research/ja/dynamic-grid-evasion.md | 危険マス回避ゲーム (deconflict 反射神経テスト); demand unverified |
 | C:/Program Files/Git/ja/drills/physical/fitness/speed-drill | done | PENDING | docs/seo/research/ja/speed-drill.md | 連打ゲーム primary (Bing 1252) |
+| C:/Program Files/Git/ja/drills/physical/reflex-training/drop-catch | done | PENDING | docs/seo/research/ja/drop-catch.md | H1 simplified; demand unverified |
