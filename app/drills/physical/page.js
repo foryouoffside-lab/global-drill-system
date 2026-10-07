@@ -1,16 +1,6 @@
 import PhysicalDrillsClient from './PhysicalDrillsClient';
 import { getAlternateLanguages } from '@/lib/i18n/locales';
 
-// ============================================================
-// SEO METADATA OPTIMIZATION — /drills/physical (Sector Hub)
-// PRIMARY: "physical training drills"     ~480/mo, KD ~15%
-//          "coordination training game"   ~250/mo, KD ~10%
-// SECONDARY:
-//   "reflex test online"                  ~74,000/mo
-//   "balance exercises online"            ~2,900/mo
-//   "hand eye coordination game"          ~1,600/mo
-// ============================================================
-
 export const metadata = {
   // GSC (180d): physical drills (pos 9.0) and physical fitness drills (pos 50)
   // land here against a title that never said "physical drills".
@@ -67,7 +57,7 @@ export const metadata = {
 
 Object.assign(metadata, {
   title: 'Physical Reflex & Agility Drills | SkillDrills',
-  description: 'Choose from 11 free browser drills for reaction time, footwork, balance, coordination, and fast target decisions. No sign-up.',
+  description: 'Free reflex and agility drills for reaction time, dodging, footwork rhythm, balance and coordination. 11 browser drills, no sign-up.',
   keywords: [
     'physical drills online', 'reaction time drills', 'reflex training online',
     'agility drills online', 'coordination drills', 'balance training online',
@@ -101,10 +91,10 @@ const collectionSchema = {
   "@context": "https://schema.org",
   "@type": "CollectionPage",
   "inLanguage": "en",
-  "dateModified": "2026-09-20",
-  "name": "Free Physical Training Drills - Reflex, Balance & Coordination",
+  "dateModified": "2026-10-08",
+  "name": "Physical Reflex & Agility Drills",
   "url": "https://skilldrills.online/drills/physical",
-  "description": "11 free physical training drills covering reaction time tests, reflex games, balance training, agility ladder drills, and hand eye coordination exercises. No sign-up required.",
+  "description": "Free reflex and agility drills for reaction time, dodging, footwork rhythm, balance and coordination. 11 browser drills, no sign-up.",
   "author": { "@type": "Organization", "name": "SkillDrills", "url": "https://skilldrills.online" },
   "hasPart": [
     // Balance Training (1 Drill)
@@ -129,93 +119,90 @@ const faqSchema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
   "inLanguage": "en",
-  "dateModified": "2026-09-20",
+  "dateModified": "2026-10-08",
   "mainEntity": [
     {
       "@type": "Question",
-      "name": "How do computerized agility ladder drills translate to real-world footwork and athletic agility?",
+      "name": "What drills are in the physical training hub?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Computerized scrolling agility ladders train high-speed visual cue recognition and rhythm synchronization. By conditioning the brain to execute rapid, timed movement decisions in response to moving targets, your motor cortex accelerates cadence timing, directly translating into faster change-of-direction (COD) speed, tighter footwork, and reduced ground contact time in sports like basketball, soccer, and tennis."
+        "text": "The hub has 11 browser drills grouped into reflex and evasion (Drop Catch, Quick Dodge, Reaction Chain, Peripheral Threat Sweeper), agility and fitness (Agility Ladder, Jump Sequence, Speed Drill), coordination and pathing, and balance and stability."
       }
     },
     {
       "@type": "Question",
-      "name": "What is an impulse arrest reaction chain, and how does it prevent over-committing in sports?",
+      "name": "Are these reflex tests and agility drills real physical exercise?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "An impulse arrest reaction chain measures your neuromuscular ability to rapidly cancel or alter an already-initiated action when an unexpected decoy or penalty cue appears. Conditioning inhibitory pathways in the basal ganglia and prefrontal cortex allows athletes to halt forward momentum in under 150 milliseconds, preventing dangerous over-commitments against feints, fakes, or unpredictable opponent dodges."
+        "text": "No. They are mouse and keyboard tasks on a screen that practise visual timing, decision speed and movement sequencing. They do not replace strength work, plyometrics, mobility practice or sport-specific coaching."
       }
     },
     {
       "@type": "Question",
-      "name": "How does virtual balance training (like wind force stability challenges) improve physical equilibrium?",
+      "name": "How do the agility ladder drills work?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Dynamic equilibrium relies on continuous sensorimotor integration between visual gaze stability, the inner ear vestibular system, and proprioceptive feedback. Wind-force resistance drills train the central nervous system to calculate micro-counter-forces in real time, conditioning stabilizing muscle recruitment and postural control to resist sudden directional perturbations."
+        "text": "Agility Ladder scrolls footwork cues toward you and asks you to respond on time with the matching input. It practises rhythm and visual cue recognition at the screen; it does not train the footwork itself."
       }
     },
     {
       "@type": "Question",
-      "name": "Why is cross-body movement and bilateral coordination essential for athletic performance?",
+      "name": "What is the Reaction Chain drill?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Cross-body movements require neural signals to cross the corpus callosum, bridging the brain's left and right hemispheres. Multi-node coordinate interception drills coordinate diagonal kinetic chains (such as right arm extension synchronized with left rotational mechanics), improving multi-directional agility, striking power, and whole-body spatial awareness."
+        "text": "Reaction Chain asks you to respond to a sequence of cues and stop yourself when a decoy appears, so you practise inhibiting a response you have already started. The score reflects this browser task only."
       }
     },
     {
       "@type": "Question",
-      "name": "How do fast 3x3 grid evasion drills improve real-time dodge reaction times?",
+      "name": "What does the Stability Challenge measure?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Unlike predictable static reaction tests, dynamic 3x3 grid evasion drills present chaotic, multi-vector obstacles with randomized speeds. This trains the parietal cortex to maintain continuous predictive spatial mapping, cutting choice-reaction latency from an average of 280ms down to under 190ms in high-pressure evasive scenarios."
+        "text": "It asks you to keep a marker steady against simulated force and drift using continuous corrections with your mouse. It measures control in the game, not real balance or posture."
       }
     },
     {
       "@type": "Question",
-      "name": "How does peripheral vision scanning enhance athletic awareness and injury prevention?",
+      "name": "Do cross-body and grid evasion drills improve coordination?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Peripheral threat sweeper drills expand your Functional Field of View (FFOV). Processing moving stimuli on the perimeter activates the brain's magnocellular visual pathway, triggering rapid evasive motor responses to approaching threats or blindside opponents without requiring direct central foveation, significantly reducing sports injury risks."
+        "text": "Cross Body Movement and Dynamic Grid Evasion practise alternating timing and choosing a path across a compact grid. They give repeatable practice at those tasks; carry-over to sport or daily movement varies and is not guaranteed."
       }
     },
     {
       "@type": "Question",
-      "name": "What is the optimal training routine for physical reaction and agility drills?",
+      "name": "What does Peripheral Threat Sweeper train?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "The optimal protocol is 15 to 25 minutes of high-intensity cognitive-agility drills per session, 3 to 5 times per week. Because neuromuscular precision demands maximum synaptic energy, practicing past 30 minutes induces Central Nervous System (CNS) fatigue, which degrades reaction mechanics and provides diminishing returns."
+        "text": "It trains noticing and responding to targets that appear toward the edge of the screen while you keep looking at the centre. It is a screen task, not an eye test or a medical vision assessment."
       }
     },
     {
       "@type": "Question",
-      "name": "Can online browser-based reflex games complement physical gym agility training?",
+      "name": "How long should a physical reflex session last?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Yes. While digital drills do not replace musculoskeletal strength or plyometric power, they specifically isolate and accelerate the perceptual-cognitive phase of athleticism. By speeding up visual detection, threat interpretation, and motor command firing, athletes reduce perceptual lag, allowing physical strength and agility to execute with maximum efficiency on the field."
+        "text": "Use a few focused rounds and stop when accuracy or attention drops. Short, regular sessions under the same conditions are easier to compare than one long session while tired."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can browser reflex games complement gym or sports training?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "They can add practice for visual timing and quick decisions alongside normal training. They do not build strength, power or conditioning, and no browser result predicts performance in a sport."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do these drills work on mobile?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "They are designed for a desktop browser with a mouse and keyboard. Touchscreens change the task, so scores on a phone are not comparable with desktop scores."
       }
     }
   ]
 };
-
-faqSchema.mainEntity.push(
-  {
-    "@type": "Question",
-    "name": "What drills are included in the Physical Training hub?",
-    "acceptedAnswer": {
-      "@type": "Answer",
-      "text": "The hub contains 11 browser drills grouped into reflex and evasion, agility and fitness, coordination and pathing, and balance and stability. Choose a card to open the individual drill and its localized training guide."
-    }
-  },
-  {
-    "@type": "Question",
-    "name": "Do browser physical drills replace strength or balance training?",
-    "acceptedAnswer": {
-      "@type": "Answer",
-      "text": "No. These drills train visual timing, decision speed, cursor control, and movement sequencing. They complement physical conditioning but do not replace strength work, plyometrics, mobility practice, or sport-specific coaching."
-    }
-  }
-);
 
 export default function PhysicalDrillsPage() {
   return (
