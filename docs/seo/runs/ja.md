@@ -34,3 +34,4 @@
 | C:/Program Files/Git/ja/drills/visual-tracking/split-screen-tracking | done | PENDING | docs/seo/research/ja/split-screen-tracking.md | direct answer; percentile column removed; demand unverified |
 | C:/Program Files/Git/ja/drills/visual-tracking/staircase-step | done | PENDING | docs/seo/research/ja/staircase-step.md | direct answer; percentile column removed; demand unverified |
 | C:/Program Files/Git/ja/drills/visual-tracking/strobe-prediction-pursuit | done | PENDING | docs/seo/research/ja/strobe-prediction-pursuit.md | direct answer; percentile column removed; demand unverified |
+| C:/Program Files/Git/ja/drills/visual-tracking/triangular-pursuit | done | PENDING | docs/seo/research/ja/triangular-pursuit.md | direct answer; percentile column removed; demand unverified |
