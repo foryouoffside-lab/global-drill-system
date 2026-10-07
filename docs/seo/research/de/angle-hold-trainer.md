@@ -16,3 +16,6 @@ Date: 2026-10-08 · Market: Germany, `de-DE`
 ## Scores (B3)
 - `Aim Trainer`: demand 5 (proxy), ease 1, intent fit 3. `Crosshair Placement`: demand 3 (proxy), ease 3, intent fit 5. Decision: keep `Crosshair Placement` as page differentiator.
 - Trend: not available, 2026-10-08.
+
+## Claim fix 2026-10-08
+- Removed unsupported "Sub-Millisekunden" precision wording from FAQ/body (performance.now resolution is browser-dependent, about 1 ms); schema and visible text share the same source.

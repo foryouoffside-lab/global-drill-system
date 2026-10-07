@@ -346,7 +346,7 @@ export default function GermanAngleHoldPage() {
       {
         title: "Messmethodik und Sensor-Präzision",
         paragraphs: [
-          "Angle Hold Pro verwendet die HTML5 Pointer Lock API und performance.now() Zeitstempel, um Klick-Latenzen im Sub-Millisekunden-Bereich zu erfassen – ohne Browser-Mausbeschleunigung oder Glättungsfilter."
+          "Angle Hold Pro verwendet die HTML5 Pointer Lock API und performance.now() Zeitstempel, um Klick-Latenzen im Millisekundenbereich zu erfassen."
         ]
       }
     ]
