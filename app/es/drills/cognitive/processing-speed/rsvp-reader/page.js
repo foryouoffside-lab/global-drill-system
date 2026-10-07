@@ -6,11 +6,11 @@ import DrillFooter from '@/components/drill/DrillFooter';
 import { pickSources } from '@/lib/drillSources';
 
 export const metadata = {
-  title: "Lectura Rápida | Lector RSVP | SkillDrills",
+  title: "Lectura Rápida Online | Lector RSVP | SkillDrills",
   description: "Entrenamiento de lectura rápida gratis: procesa palabras en un punto fijo y sigue PPM y precisión. No es una prueba clínica.",
   keywords: ["lectura rápida", "test de velocidad de lectura", "velocidad de lectura", "lector rápido online", "RSVP lectura", "palabras por minuto", "entrenamiento de lectura rápida"],
   openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
-    title: "Lectura Rápida | Lector RSVP | SkillDrills",
+    title: "Lectura Rápida Online | Lector RSVP | SkillDrills",
     description: "Entrenamiento de lectura rápida gratis: procesa palabras en un punto fijo y sigue PPM y precisión. No es una prueba clínica.",
     type: 'article',
     url: 'https://skilldrills.online/es/drills/cognitive/processing-speed/rsvp-reader',
@@ -19,7 +19,7 @@ export const metadata = {
   },
   twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: 'summary_large_image',
-    title: "Lectura Rápida | Lector RSVP | SkillDrills",
+    title: "Lectura Rápida Online | Lector RSVP | SkillDrills",
     description: "Entrenamiento de lectura rápida gratis: procesa palabras en un punto fijo y sigue PPM y precisión. No es una prueba clínica.",
   },
   robots: { index: true, follow: true },
@@ -317,7 +317,7 @@ export default function EnhancedPageEs() {
       />
       <RSVPReaderClient
         copy={{
-          title: "Lectura rápida",
+          title: "Lectura rápida online",
           subtitle: "Procesa palabras en un punto fijo y entrena tu velocidad de lectura",
           startTitle: "Entrenamiento RSVP",
           startSubtitle: "Reconocimiento de palabras • Enfoque ORP",
