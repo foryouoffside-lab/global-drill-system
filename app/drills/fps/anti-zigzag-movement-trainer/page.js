@@ -4,8 +4,8 @@ import DrillFooter from '@/components/drill/DrillFooter';
 import { pickSources } from '@/lib/drillSources';
 import { getAlternateLanguages } from '@/lib/i18n/locales';
 export const metadata = {
-  title: "Anti-Zigzag Aim Trainer – Evasive Tracking | SkillDrills",
-  description: "Free anti-zigzag aim trainer. Track evasive multi-directional movement and slide cancels without overshooting, for Apex, Warzone and Overwatch 2.",
+  title: "Anti-Zigzag Aim Trainer: Evasive Tracking | SkillDrills",
+  description: "Free anti-zigzag aim trainer for Apex, Warzone and Overwatch 2. Practice tracking erratic zigzag movement and slide cancels in your browser.",
   keywords: [
     "anti-zigzag aim trainer",
     "anti zigzag movement trainer",
@@ -22,7 +22,7 @@ export const metadata = {
     "free anti zigzag tracking drill",
     "reactive direction swap aim practice",
     "high ttk tracking trainer",
-    "hardware raw input anti zigzag",
+    "anti zigzag aim trainer",
     "continuous strafe tracking aim",
     "anti overflicking tracking trainer"
   ],
@@ -35,8 +35,8 @@ export const metadata = {
     follow: true,
   },
   openGraph: {
-    title: "Anti-Zigzag Aim Trainer – Evasive Tracking | SkillDrills",
-    description: "Master reactive tracking against erratic zigzag movement, slide cancels, and desync strafes in Apex Legends, Warzone, and Overwatch 2 with raw pointer lock.",
+    title: "Anti-Zigzag Aim Trainer: Evasive Tracking | SkillDrills",
+    description: "Free anti-zigzag aim trainer for Apex, Warzone and Overwatch 2. Practice tracking erratic zigzag movement and slide cancels in your browser.",
     url: "https://skilldrills.online/drills/fps/anti-zigzag-movement-trainer",
     siteName: 'SkillDrills',
     locale: 'en_US',
@@ -44,8 +44,8 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: "Anti-Zigzag Aim Trainer – Evasive Tracking | SkillDrills",
-    description: "Master reactive tracking against erratic zigzag movement, slide cancels, and desync strafes in Apex Legends, Warzone, and Overwatch 2 with raw pointer lock.",
+    title: "Anti-Zigzag Aim Trainer: Evasive Tracking | SkillDrills",
+    description: "Free anti-zigzag aim trainer for Apex, Warzone and Overwatch 2. Practice tracking erratic zigzag movement and slide cancels in your browser.",
   },
 };
 
@@ -73,7 +73,7 @@ export default function AntiZigzagPage() {
       "price": "0",
       "priceCurrency": "USD"
     },
-    "description": "Free browser-based anti-zigzag aim trainer. Track evasive multi-directional movement and slide cancels with raw pointer lock."
+    "description": "Free browser-based anti-zigzag aim trainer. Track evasive multi-directional movement and slide cancels with pointer lock mouse input."
   };
 
   const softwareSchema = {
@@ -82,9 +82,9 @@ export default function AntiZigzagPage() {
     "name": "Anti-Zigzag Aim Trainer",
     "applicationCategory": "GameApplication",
     "operatingSystem": "Web Browser",
-    "dateModified": "2026-09-05",
+    "dateModified": "2026-10-08",
     "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
-    "description": "Master reactive tracking against erratic zigzag movement, slide cancels, and desync strafes with raw pointer lock.",
+    "description": "Master reactive tracking against erratic zigzag movement, slide cancels, and desync strafes with pointer lock mouse input.",
     "genre": "FPS Training / Anti-Zigzag",
     "url": "https://skilldrills.online/drills/fps/anti-zigzag-movement-trainer",
     "publisher": {
@@ -99,8 +99,8 @@ export default function AntiZigzagPage() {
     "@type": "VideoGame",
     "name": "Anti-Zigzag Aim Trainer",
     "url": "https://skilldrills.online/drills/fps/anti-zigzag-movement-trainer",
-    "description": "Master reactive tracking against erratic zigzag movement, slide cancels, and desync strafes with raw pointer lock.",
-    "dateModified": "2026-09-05",
+    "description": "Master reactive tracking against erratic zigzag movement, slide cancels, and desync strafes with pointer lock mouse input.",
+    "dateModified": "2026-10-08",
     "gamePlatform": "Web Browser",
     "genre": ["FPS Training", "Aim Trainer", "Reactive Tracking"],
     "playMode": "SinglePlayer",
@@ -112,7 +112,7 @@ export default function AntiZigzagPage() {
   const faqSchema = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
-    "dateModified": "2026-09-05",
+    "dateModified": "2026-10-08",
     "mainEntity": [
       {
         "@type": "Question",
@@ -214,7 +214,7 @@ export default function AntiZigzagPage() {
         "@type": "HowToStep",
         "position": 2,
         "name": "Engage Fullscreen and Pointer Lock",
-        "text": "Click Start Drill to lock your mouse cursor with raw 1:1 hardware input and zero browser acceleration.",
+        "text": "Click Start Drill to lock your mouse cursor to the canvas with Pointer Lock. Turn off OS pointer acceleration first so movement stays consistent.",
         "url": "https://skilldrills.online/drills/fps/anti-zigzag-movement-trainer#step-2"
       },
       {
@@ -235,27 +235,28 @@ export default function AntiZigzagPage() {
   };
 
   const antiZigzagGuide = {
-    heading: "Anti-Zigzag Aim Training Guide & Evasive Tracking Benchmarks",
+    heading: "What is an anti-zigzag aim trainer?",
     intro: [
+      "An anti-zigzag aim trainer teaches you to keep your crosshair on an opponent who zigzags in a V pattern instead of a straight line. This drill sends a target on erratic multi-direction paths while you hold aim, then scores continuous time on target. It suits tracking in Apex, Warzone and Overwatch 2.",
       "In competitive first-person shooters characterized by dynamic movement mechanics—such as Apex Legends, Call of Duty: Warzone, and Overwatch 2—opponents leverage erratic multi-directional zigzagging, slide-canceling, and crouch-spams to break crosshair lock and induce visual-motor desynchronization. While linear smooth pursuit tracking relies on anticipating a continuous trajectory (Krauzlis, 2004), zigzag tracking forces the motor system into a continuous steering task governed by dynamic speed-accuracy constraints (Fitts, 1954; Accot & Zhai, 1997). Action video game players exhibit enhanced visual attention, spatial resolution, and temporal tracking bandwidth (Green & Bavelier, 2003), yet when targets execute sudden oblique vector reversals, the visual system experiences acute retinal slip (Rashbass, 1961), demanding sub-second deceleration and multi-axis wrist re-orientation.",
       "The core mechanical error committed by novice trackers during evasive movement is over-flicking behind the target's outer sweep apex. When an enemy zigzags in a V-pattern, their velocity momentarily drops to zero at the reversal apex before accelerating back through the central corridor. Attempting to chase the outer extremes causes severe overshoot and antagonist muscle fighting. Elite aimers utilize center-line 'V-crossover' anchoring, keeping visual focus anchored on the central axis and executing smooth velocity-matched micro-adjustments as the opponent crosses back through the reticle.",
-      "Anti-Zigzag Aim Trainer runs directly in modern web browsers via the HTML5 Pointer Lock API with raw 1:1 hardware coordinate mapping, performance.now() chronometry, and zero mouse smoothing. Browser timers are coarsened to about 1 ms for security, so treat sub-5 ms differences as noise. By reducing USB polling jitter (Woods et al., 2015) and testing continuous dwell-time damage mechanics against scaling zigzag frequency, this drill trains the sensorimotor suppression required to eliminate panic flicks and conquer evasive gunfights.",
+      "Anti-Zigzag Aim Trainer runs directly in modern web browsers via the HTML5 Pointer Lock API with performance.now() chronometry. It does not request unadjusted input, so turn off OS pointer acceleration for consistent movement. Browser timers are coarsened to about 1 ms for security, so treat sub-5 ms differences as noise. By testing continuous dwell-time damage mechanics against scaling zigzag frequency, this drill trains the sensorimotor suppression required to eliminate panic flicks and conquer evasive gunfights.",
       "How this is measured: every event is timestamped with the browser's performance.now() high-resolution clock, entirely on your device -- no score is uploaded. Two things this cannot control: browser timers are deliberately coarsened as a Spectre mitigation (typically to about 1 ms), and your display quantizes the stimulus to its refresh interval -- about 16.7 ms per frame at 60 Hz, 6.9 ms at 144 Hz and 4.1 ms at 240 Hz (Woods et al., 2015). Mouse polling adds roughly 8 ms at 125 Hz versus 1 ms at 1000 Hz. So treat differences smaller than about 5 ms as measurement noise, and compare your own runs on the same hardware rather than against someone else's setup."
     ],
     benchmarks: {
-      title: "Evasive Movement & Zigzag Direction-Swap Latency Tiers",
+      title: "How fast can you re-acquire a zigzagging target?",
       headers: ["Tracking Phase / Sensorimotor Stage", "Typical Latency Range", "Neural Pathway & Biomechanical Function", "Combat Implication"],
       rows: [
         ["Lateral-to-Diagonal Crossover Detection", "160 – 210 ms", "Retinal slip signals processed in primary visual cortex (V1) and Middle Temporal (MT/V5) motion areas", "Latency required for the eye to perceive that the opponent has initiated a direction reversal"],
         ["Antagonist Deceleration & Re-Vectoring", "85 – 135 ms", "Corticospinal motor burst to forearm flexors and thenar muscle groups; halting mouse inertia", "Physical time needed to arrest crosshair momentum and initiate opposite vector"],
         ["Foveal Realignment & Corridor Centering", "65 – 105 ms", "Corrective catch-up micro-saccade and fine wrist articulation to re-establish reticle contact", "Dwell re-engagement on target hitbox to restart damage ticks"],
         ["Total Unprimed Re-Acquisition Window", "310 – 450 ms", "Sum total turnaround interval from unpredicted zigzag flip to confirmed reticle lock", "Natural human latency window where bullet damage drops during evasive strafes"],
-        ["Elite Primed Evasive Tracking", "215 – 295 ms", "Anticipatory velocity damping and relaxed antagonist motor suppression at V-crossover", "Master-tier tracking uptime achieved by top-tier Apex Predators and Call of Duty pros"]
+        ["Elite Primed Evasive Tracking", "215 – 295 ms", "Anticipatory velocity damping and relaxed antagonist motor suppression at V-crossover", "Fast, well-primed evasive tracking on this drill's scale"]
       ],
       note: "Metrics synthesized from oculomotor research (Rashbass, 1961; Krauzlis, 2004), continuous steering control (Accot & Zhai, 1997; Fitts, 1954), and digital chronometry benchmarks (Woods et al., 2015). Individual performance varies with mouse polling rate, display refresh rate, and forearm muscle relaxation."
     },
     techniques: {
-      title: "Evidence-Based Evasive Tracking & Anti-Zigzag Techniques",
+      title: "How do you track an enemy who zigzags?",
       items: [
         {
           name: "Center-Line V-Crossover Anchoring",
@@ -281,7 +282,7 @@ export default function AntiZigzagPage() {
     },
     steps: [
       "Select your in-game sensitivity using the Universal Sensitivity Selector to guarantee 1:1 muscle memory transfer.",
-      "Click 'Start Drill' to engage fullscreen mode and enable raw Pointer Lock input without browser mouse acceleration.",
+      "Click 'Start Drill' to engage fullscreen mode and enable Pointer Lock mouse capture.",
       "Lock visual focus on the moving target as it executes rapid, multi-directional diagonal zigzag patterns.",
       "Maintain continuous crosshair dwell on the target sphere, focusing on the central V-crossover axis.",
       "Eliminate targets before their lifespan expires to chain streak multipliers and advance through dynamic difficulty levels."
