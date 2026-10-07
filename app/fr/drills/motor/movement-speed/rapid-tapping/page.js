@@ -6,8 +6,8 @@ import DrillFooter from '@/components/drill/DrillFooter';
 import { pickSources } from '@/lib/drillSources';
 
 export const metadata = {
-  title: 'Test CPS | Vitesse de clic | SkillDrills',
-  description: 'Mesurez vos clics par seconde (CPS) et votre endurance sur 45 secondes. Test gratuit dans le navigateur.',
+  title: 'Test CPS en ligne : clics par seconde | SkillDrills',
+  description: 'Test CPS gratuit : comptez vos clics par seconde sur 45 s dans le navigateur, avec CPS moyen, pic de 5 s et endurance. Sans inscription.',
   keywords: [
     'test CPS',
     'test de vitesse de clic',
@@ -23,7 +23,7 @@ export const metadata = {
     'endurance de clic',
   ],
   openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
-    title: 'Test CPS | Vitesse de clic | SkillDrills',
+    title: 'Test CPS en ligne : clics par seconde | SkillDrills',
     description: 'Test gratuit de CPS et d’endurance de clic dans le navigateur pendant 45 secondes.',
     type: 'article',
     url: 'https://skilldrills.online/fr/drills/motor/movement-speed/rapid-tapping',
@@ -32,7 +32,7 @@ export const metadata = {
   },
   twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: 'summary_large_image',
-    title: 'Test CPS | Vitesse de clic | SkillDrills',
+    title: 'Test CPS en ligne : clics par seconde | SkillDrills',
     description: 'Mesurez vos clics par seconde et votre endurance avec un test gratuit.',
   },
   robots: { index: true, follow: true },
@@ -136,7 +136,7 @@ const faqSchema = {
       name: 'Pourquoi le test dure-t-il 45 secondes au lieu de 5 ou 10 secondes ?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Une courte salve de 5 secondes ne mesure que la vitesse explosive. Une épreuve de 45 secondes met à l’épreuve la résistance à l’accumulation d’acide lactique et la stabilité du rythme sous fatigue musculaire.',
+        text: 'Une courte salve de 5 secondes ne mesure que la vitesse explosive. Une épreuve de 45 secondes met à l’épreuve l’endurance de la main et la stabilité du rythme sous fatigue musculaire.',
       },
     },
     {
@@ -226,7 +226,8 @@ const guideProps = {
   intro: {
     title: 'Fondements Physiologiques de la Fréquence de Clic',
     paragraphs: [
-      'Un test de CPS mesure le débit moteur digital. Avec un seul doigt, la cadence soutenue se situe naturellement autour de 5 à 7 clics par seconde, correspondant au rythme de frappe physiologique de référence chez l’adulte sain (Halstead, 1947 ; Todor & Kyprie, 1980). Les salves supérieures relèvent de programmes moteurs en boucle ouverte (Keele, 1968).',
+      'Un test CPS compte vos clics de souris par seconde. Ici, la mesure dure 45 secondes et donne votre CPS moyen, votre pic sur 5 secondes et votre endurance. Avec un seul doigt, la cadence soutenue se situe autour de 5 à 7 clics par seconde chez l’adulte (Halstead, 1947 ; Todor & Kyprie, 1980).',
+      'Les salves plus rapides relèvent de programmes moteurs en boucle ouverte (Keele, 1968).',
       'Facteurs de mesure : L’horloge interne performance.now() et la fréquence d’échantillonnage de la souris déterminent la résolution. Comparez toujours vos scores sur le même équipement.',
     ],
   },
@@ -241,7 +242,7 @@ const guideProps = {
         stat: '16.0+ CPS',
         level: '20.0+ CPS',
         accuracy: 'Butterfly / Drag Clicking',
-        percentile: 'Top 1% (Élite)',
+        percentile: 'Élite',
       },
       {
         tier: 'Tier 2',
@@ -249,7 +250,7 @@ const guideProps = {
         stat: '12.0–15.9 CPS',
         level: '15.0–19.0 CPS',
         accuracy: 'Jitter Clicking Maîtrisé',
-        percentile: 'Top 5% (Avancé)',
+        percentile: 'Avancé',
       },
       {
         tier: 'Tier 3',
@@ -257,7 +258,7 @@ const guideProps = {
         stat: '9.0–11.9 CPS',
         level: '11.0–14.0 CPS',
         accuracy: 'Frappe Mono-Doigt Rapide',
-        percentile: 'Top 20% (Solide)',
+        percentile: 'Solide',
       },
       {
         tier: 'Tier 4',
@@ -309,7 +310,8 @@ const guideProps = {
 };
 
 const frCopy = {
-  title: "Test de CPS",
+  title: "Test CPS en ligne",
+  subtitle: "Comptez vos clics par seconde pendant 45 secondes",
   desc: "Un test de CPS mesure le nombre de clics par seconde réalisables avec une souris. Le clic standard à un doigt atteint environ 5 à 7 clics par seconde (norme de tapping de Halstead, 50–55 frappes/10s). Les scores supérieurs reposent sur des techniques avancées comme le jitter clicking ou le butterfly clicking.",
   score: "Score",
   timeLeft: "Temps Restant",
