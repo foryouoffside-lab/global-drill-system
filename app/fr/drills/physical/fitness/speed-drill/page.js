@@ -57,11 +57,11 @@ export const metadata = {
 };
 
 Object.assign(metadata, {
-  title: 'Test CPS | Clics par Seconde | SkillDrills',
-  description: 'Test CPS gratuit dans le navigateur. Cliquez sur des cibles mobiles qui rétrécissent pour travailler vitesse, précision, réaction et acquisition.',
-  keywords: ['test CPS', 'clics par seconde', 'click test', 'test de clic', 'vitesse de clic', 'compteur de clics', 'jeu de réflexes', 'précision de la souris', 'clic rapide', 'test de réaction'],
-  openGraph: { ...metadata.openGraph, title: 'Test CPS | Clics par Seconde | SkillDrills', description: 'Test CPS gratuit dans le navigateur. Cliquez sur des cibles mobiles qui rétrécissent pour travailler vitesse, précision, réaction et acquisition.' },
-  twitter: { ...metadata.twitter, title: 'Test CPS | Clics par Seconde | SkillDrills', description: 'Test CPS gratuit dans le navigateur. Cliquez sur des cibles mobiles qui rétrécissent pour travailler vitesse, précision, réaction et acquisition.' },
+  title: 'Jeu de rapidité à la souris : cibles rapides | SkillDrills',
+  description: 'Jeu de rapidité à la souris gratuit : cliquez des cibles qui rétrécissent avant qu’elles disparaissent. Travaillez vitesse, précision et réaction.',
+  keywords: ['jeu de rapidité souris', 'test de rapidité souris', 'jeu de clic rapide', 'précision de la souris', 'jeu de réflexes', 'entraînement souris', 'cibles qui rétrécissent', 'flick souris'],
+  openGraph: { ...metadata.openGraph, title: 'Jeu de rapidité à la souris : cibles rapides | SkillDrills', description: 'Cliquez des cibles qui rétrécissent avant qu’elles disparaissent. Jeu gratuit de vitesse et de précision à la souris.' },
+  twitter: { ...metadata.twitter, title: 'Jeu de rapidité à la souris : cibles rapides | SkillDrills', description: 'Cliquez des cibles qui rétrécissent avant qu’elles disparaissent. Jeu gratuit de vitesse et de précision à la souris.' },
 });
 
 const breadcrumbSchema = {
@@ -89,7 +89,7 @@ const breadcrumbSchema = {
     {
       "@type": "ListItem",
       "position": 4,
-      "name": "Test de Clics par Seconde & Speed Drill",
+      "name": "Jeu de rapidité à la souris",
       "item": "https://skilldrills.online/fr/drills/physical/fitness/speed-drill"
     }
   ]
@@ -100,7 +100,7 @@ const softwareApplicationSchema = {
   "@type": "SoftwareApplication", "sameAs": ["https://en.wikipedia.org/wiki/Reaction_time"],
   "inLanguage": "fr-FR",
   "dateModified": "2026-09-20",
-  "name": "Test de Clics par Seconde et Entraînement de Réflexes Souris",
+  "name": "Jeu de rapidité à la souris",
   "applicationCategory": "HealthApplication",
   "operatingSystem": "All",
   "offers": {
@@ -257,7 +257,7 @@ const howToSchema = {
 };
 
 const speedGuide = {
-  heading: "Guide Neuromusculaire de Vitesse de Clic, CPS et Acquisition de Cibles",
+  heading: "Guide du jeu de rapidité à la souris : vitesse de clic et acquisition de cibles",
   intro: {
     title: "Fondements Scientifiques du Contrôle Moteur Rapide et des Flicks Balistiques",
     paragraphs: [
@@ -271,9 +271,9 @@ const speedGuide = {
     title: "Grille de Performance en 5 Niveaux de Vitesse de Clic et d'Acquisition",
     headers: ["Palier et Niveau", "Titre (Rank Title)", "Score Ciblé", "Précision et Temps de Réaction", "Note Globale", "Profil Neuromoteur"],
     rows: [
-      ["Tier 1: Tireur d'Élite Vitesse Ultime", "Apex Velocity Sniper", "24 000+ points", "> 95% / < 160 ms", "Grade S", "Top 0,1% de l'élite eSport. Flicks parfaits de Woodworth, déclenchement instantané au diamètre maximal et maîtrise sur cibles de 12 px (Woodworth 1899; Fitts 1954)"],
-      ["Tier 2: Attaquant Réflexe de Précision", "Precision Reflex Striker", "17 000 – 23 999 points", "90 – 94% / 160 – 190 ms", "Grade A", "Top 3% semi-professionnel. Orientation périphérique vive et contrôle moteur stable avec racha ininterrompue en vitesse 3.0x"],
-      ["Tier 3: Intercepteur Rapide de Cibles", "Rapid Target Interceptor", "11 000 – 16 999 points", "82 – 89% / 191 – 230 ms", "Grade B", "Top 15% joueurs compétitifs. Cadence régulière et exploitation tactique du bonus de +0,6s pour pérenniser la session"],
+      ["Tier 1: Tireur d'Élite Vitesse Ultime", "Apex Velocity Sniper", "24 000+ points", "> 95% / < 160 ms", "Grade S", "Niveau élite.Flicks parfaits de Woodworth, déclenchement instantané au diamètre maximal et maîtrise sur cibles de 12 px (Woodworth 1899; Fitts 1954)"],
+      ["Tier 2: Attaquant Réflexe de Précision", "Precision Reflex Striker", "17 000 – 23 999 points", "90 – 94% / 160 – 190 ms", "Grade A", "Niveau avancé.Orientation périphérique vive et contrôle moteur stable avec racha ininterrompue en vitesse 3.0x"],
+      ["Tier 3: Intercepteur Rapide de Cibles", "Rapid Target Interceptor", "11 000 – 16 999 points", "82 – 89% / 191 – 230 ms", "Grade B", "Niveau compétitif.Cadence régulière et exploitation tactique du bonus de +0,6s pour pérenniser la session"],
       ["Tier 4: Pratiquant en Développement", "Developing Tapping Trainee", "6 000 – 10 999 points", "70 – 81% / 231 – 280 ms", "Grade C", "Moyenne des adultes. Au-delà d'une vitesse 2.0x, des hésitations de freinage et des clics périphériques apparaissent"],
       ["Tier 5: Débutant en Pointage", "Novice Target Pointer", "< 6 000 points", "< 70% / > 280 ms", "Grade D", "Phase d'apprentissage initial. Clics désordonnés à l'approche de l'extinction de la cible; recentrage de l'attention recommandé"]
     ],
@@ -344,9 +344,9 @@ export default function LocalizedSpeedDrillPageFr() {
       />
       <SpeedDrillClient
         copy={{
-          title: "Test de Clics par Seconde & Test CPS Souris",
-          subtitle: "Acquisition Balistique de Cibles et CPS Dynamique • Difficulté Évolutive Continue",
-          description: "Le test de vitesse mesure votre rapidité à viser une cible et à cliquer dessus à mesure qu'elle rétrécit et que le temps diminue. La loi de Fitts (1954) dicte la limite : le temps de déplacement croît avec le logarithme de la distance divisée par la largeur. Le mouvement se décompose en deux phases — une impulsion balistique initiale rapide, puis une correction visuelle plus lente (Woodworth, 1899) — et les cibles qui rétrécissent rendent les hésitations très coûteuses.",
+          title: "Jeu de rapidité à la souris",
+          subtitle: "Cliquez les cibles qui rétrécissent avant qu’elles disparaissent",
+          description: "Ce jeu de rapidité à la souris n’est pas un compteur de CPS : il mesure à quelle vitesse et avec quelle précision vous visez puis cliquez des cibles qui rétrécissent. Pour compter vos clics par seconde, utilisez le test CPS. Le jeu mesure votre rapidité à viser une cible et à cliquer dessus à mesure qu'elle rétrécit et que le temps diminue. La loi de Fitts (1954) dicte la limite : le temps de déplacement croît avec le logarithme de la distance divisée par la largeur. Le mouvement se décompose en deux phases — une impulsion balistique initiale rapide, puis une correction visuelle plus lente (Woodworth, 1899) — et les cibles qui rétrécissent rendent les hésitations très coûteuses.",
           hudLabels: {
             score: "Score",
             time: "Temps",
