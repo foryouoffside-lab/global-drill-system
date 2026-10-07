@@ -114,6 +114,7 @@ const UPDATED_OVERRIDES = {
 const AUDIT_2026_10_07 = [
   '/',
   '/drills/fps',
+  '/drills/cognitive',
   '/drills/visual',
   '/drills/visual-tracking',
   '/drills/visual/tracking-accuracy/pursuit-tracker',

@@ -117,7 +117,7 @@ const faqSchema = {
       "name": "¿Un aim trainer en navegador es tan rápido y sensible como un software descargable?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Sí. SkillDrills implementa la API estándar W3C Raw Pointer Lock y renderizado por aceleración de hardware en HTML5 Canvas. Esto omite por completo las curvas de aceleración del ratón del sistema operativo y los bordes del escritorio, procesando deltas de movimiento directos del sensor (movementX y movementY). Gracias a una física de paso de tiempo fijo desacoplada del renderizado, la plataforma ofrece una respuesta instantánea 1:1 apta para monitores de 144 Hz, 240 Hz y 360 Hz sin requerir instalaciones ni consumir espacio en disco."
+        "text": "Para entrenar, en gran medida sí. SkillDrills dibuja en un Canvas HTML5 y usa la API Pointer Lock del navegador, que oculta el cursor y entrega el movimiento relativo del ratón (movementX/movementY), de modo que los flicks largos no se detienen en el borde de la pantalla. El movimiento de los objetivos se calcula con el tiempo transcurrido y no con el número de fotogramas, así que los ejercicios se comportan igual en pantallas de 144 Hz, 240 Hz o 360 Hz. La entrada del navegador sigue pasando por los ajustes de puntero del sistema operativo: mantén el DPI, la sensibilidad y la aceleración del ratón sin cambios entre sesiones cuando compares resultados."
       }
     },
     {

@@ -22,6 +22,7 @@ import SiteFooter from '@/components/SiteFooter';
 import Reveal from '@/components/Reveal';
 import AdjacentHubs from '@/components/AdjacentHubs';
 import { useTranslation } from '@/lib/i18n/useTranslation';
+import { getHubCopy, drillCountLabel } from '@/lib/i18n/hubCopy';
 import DrillCarousel from '@/components/drill/DrillCarousel';
 import StickyMobileCta from '@/components/StickyMobileCta';
 import { hasLocalizedRoute } from '@/lib/i18n/locales';
@@ -205,6 +206,7 @@ const orderedFpsDrills = sortByInterest(
 
 export default function FPSHubClient({ faqs = [] }) {
   const { locale, t, localizeHref } = useTranslation();
+  const hubCopy = getHubCopy('fps', locale);
   const [isClient, setIsClient] = useState(false);
   const [drillLevels, setDrillLevels] = useState({});
 
@@ -309,7 +311,7 @@ export default function FPSHubClient({ faqs = [] }) {
         <Reveal>
           <DrillCarousel
             headingId="fps-drills"
-            heading={t('hubs.fps.drillsHeading', 'FPS aim drills')}
+            heading={hubCopy.drillsHeading}
             accent="red"
             icon={Crosshair}
             showcase
@@ -335,7 +337,7 @@ export default function FPSHubClient({ faqs = [] }) {
             <div className="flex items-center gap-2 mb-6">
               <Layers className="w-5 h-5 text-red-400" />
               <h2 className="text-base sm:text-lg font-semibold tracking-tight text-ink-1">
-                FPS Training Domains
+                {hubCopy.domainsTitle}
               </h2>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
@@ -353,15 +355,15 @@ export default function FPSHubClient({ faqs = [] }) {
                         </div>
                         <div>
                           <h3 className="text-sm font-semibold tracking-tight text-ink-1">
-                            {cat.name}
+                            {hubCopy.domains[cat.id].name}
                           </h3>
                           <span className="text-xs font-medium text-red-400">
-                            {cat.drills.length} {cat.drills.length === 1 ? 'Drill' : 'Drills'}
+                            {drillCountLabel(hubCopy, cat.drills.length)}
                           </span>
                         </div>
                       </div>
                       <p className="text-xs text-ink-2 leading-relaxed mb-4">
-                        {cat.description}
+                        {hubCopy.domains[cat.id].description}
                       </p>
                     </div>
 
@@ -402,7 +404,7 @@ export default function FPSHubClient({ faqs = [] }) {
             <div className="flex items-center gap-2 mb-6">
               <Sparkles className="w-5 h-5 text-red-400" />
               <h2 className="text-base sm:text-lg font-semibold tracking-tight text-ink-1">
-                Engine &amp; Hardware Optimization
+                {hubCopy.engineTitle}
               </h2>
             </div>
 
@@ -412,10 +414,10 @@ export default function FPSHubClient({ faqs = [] }) {
                   <MousePointer className="w-4 h-4" />
                 </div>
                 <h3 className="text-sm font-semibold tracking-tight text-ink-1 mb-1.5">
-                  Raw Pointer Lock
+                  {hubCopy.engine[0].title}
                 </h3>
                 <p className="text-2xs text-ink-3 leading-relaxed">
-                  Bypasses browser cursor boundaries and OS acceleration curves. Your mouse moves with true 1:1 hardware translation just like native esports clients.
+                  {hubCopy.engine[0].text}
                 </p>
               </div>
 
@@ -424,10 +426,10 @@ export default function FPSHubClient({ faqs = [] }) {
                   <Cpu className="w-4 h-4" />
                 </div>
                 <h3 className="text-sm font-semibold tracking-tight text-ink-1 mb-1.5">
-                  High Refresh Physics
+                  {hubCopy.engine[1].title}
                 </h3>
                 <p className="text-2xs text-ink-3 leading-relaxed">
-                  Physics runs decoupled from rendering and keeps up with refresh rates to 360Hz. Targets glide smoothly without jitter, judder, or frame drops.
+                  {hubCopy.engine[1].text}
                 </p>
               </div>
 
@@ -436,10 +438,10 @@ export default function FPSHubClient({ faqs = [] }) {
                   <Target className="w-4 h-4" />
                 </div>
                 <h3 className="text-sm font-semibold tracking-tight text-ink-1 mb-1.5">
-                  Cross-Game Calibration
+                  {hubCopy.engine[2].title}
                 </h3>
                 <p className="text-2xs text-ink-3 leading-relaxed">
-                  Standardized sensitivity mapping matches your exact Valorant, CS2, or Apex Legends config so muscle memory translates directly into your matches.
+                  {hubCopy.engine[2].text}
                 </p>
               </div>
             </div>
@@ -492,7 +494,7 @@ export default function FPSHubClient({ faqs = [] }) {
 
         <StickyMobileCta
           href={hasLocalizedRoute(locale, '/drills/fps/flick-shot-training') ? localizeHref('/drills/fps/flick-shot-training') : '/drills/fps/flick-shot-training'}
-          label={t('hubs.fps.startCta', 'Start FPS Drill')}
+          label={hubCopy.startCta}
           categoryName={t('header.fps', 'FPS Aim')}
         />
       </div>

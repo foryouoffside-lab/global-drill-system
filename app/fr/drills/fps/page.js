@@ -117,7 +117,7 @@ const faqSchema = {
       "name": "Un aim trainer en ligne sur navigateur est-il aussi performant qu'une application installée ?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Absolument. SkillDrills utilise l'API standard Pointer Lock du W3C couplée au rendu accéléré par le GPU via HTML5 Canvas. Cette technologie contourne totalement les courbes d'accélération logicielle du système d'exploitation et capture directement les deltas bruts du capteur optique (movementX et movementY) avec une latence d'entrée quasi nulle. Grâce à une boucle physique cadencée à pas de temps fixe indépendante de l'affichage, les exercices garantissent une réactivité 1:1 parfaitement fluide, nativement optimisée pour les écrans 144 Hz, 240 Hz et 360 Hz, sans encombrer votre disque dur."
+        "text": "Pour s'entraîner, en grande partie oui. SkillDrills dessine sur un Canvas HTML5 et utilise l'API Pointer Lock du navigateur, qui masque le curseur et fournit le déplacement relatif de la souris (movementX/movementY) : un long flick ne s'arrête donc pas au bord de l'écran. Le mouvement des cibles est calculé à partir du temps écoulé et non du nombre d'images ; les exercices restent donc cohérents sur des écrans 144 Hz, 240 Hz ou 360 Hz. L'entrée du navigateur passe toutefois toujours par les réglages de pointeur du système d'exploitation : gardez le même DPI, la même sensibilité et la même accélération de souris d'une session à l'autre pour comparer vos scores."
       }
     },
     {

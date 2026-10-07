@@ -22,6 +22,7 @@ import DrillCarousel from '@/components/drill/DrillCarousel';
 import StickyMobileCta from '@/components/StickyMobileCta';
 import AdjacentHubs from '@/components/AdjacentHubs';
 import { useTranslation } from '@/lib/i18n/useTranslation';
+import { getHubCopy, drillCountLabel } from '@/lib/i18n/hubCopy';
 import { getLocalizedDrill } from '@/lib/i18n/drillNames';
 import { hasLocalizedRoute } from '@/lib/i18n/locales';
 
@@ -69,6 +70,7 @@ const trackingCategories = [
 
 export default function VisualTrackingDrillsClient({ faqs = [] }: { faqs?: Array<{ q: string; a: string }> }) {
   const { locale, localizeHref, t } = useTranslation();
+  const hubCopy = getHubCopy('visual-tracking', locale);
   const [isClient, setIsClient] = useState(false);
   const [drillBadges, setDrillBadges] = useState<Record<string, string>>({});
 
@@ -208,7 +210,7 @@ export default function VisualTrackingDrillsClient({ faqs = [] }: { faqs?: Array
             <div className="flex items-center gap-2 mb-6">
               <Layers className="w-5 h-5 text-cyan-400" />
               <h2 className="text-sm sm:text-base font-bold uppercase tracking-wider text-ink-1 font-mono">
-                Tracking Domains
+                {hubCopy.domainsTitle}
               </h2>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
@@ -227,15 +229,15 @@ export default function VisualTrackingDrillsClient({ faqs = [] }: { faqs?: Array
                         </div>
                         <div>
                           <h3 className="text-sm font-bold font-mono uppercase tracking-wider text-ink-1">
-                            {cat.name}
+                            {hubCopy.domains[cat.id].name}
                           </h3>
                           <span className="text-[10px] font-mono text-cyan-400">
-                            {drillsInCat.length} {drillsInCat.length === 1 ? 'Drill' : 'Drills'}
+                            {drillCountLabel(hubCopy, drillsInCat.length)}
                           </span>
                         </div>
                       </div>
                       <p className="text-xs text-ink-2 leading-relaxed mb-4">
-                        {cat.description}
+                        {hubCopy.domains[cat.id].description}
                       </p>
                     </div>
 
@@ -276,7 +278,7 @@ export default function VisualTrackingDrillsClient({ faqs = [] }: { faqs?: Array
             <div className="flex items-center gap-2 mb-6">
               <Sparkles className="w-5 h-5 text-cyan-400" />
               <h2 className="text-sm sm:text-base font-bold uppercase tracking-wider text-ink-1 font-mono">
-                Engine &amp; Hardware Optimization
+                {hubCopy.engineTitle}
               </h2>
             </div>
 
@@ -286,10 +288,10 @@ export default function VisualTrackingDrillsClient({ faqs = [] }: { faqs?: Array
                   <Cpu className="w-4 h-4" />
                 </div>
                 <h3 className="text-xs font-mono font-bold uppercase tracking-wider text-ink-1 mb-1.5">
-                  Decoupled Physics Engine
+                  {hubCopy.engine[0].title}
                 </h3>
                 <p className="text-2xs text-ink-3 leading-relaxed">
-                  Advances target motion from elapsed time, so a busy frame changes the next position instead of changing the intended path speed.
+                  {hubCopy.engine[0].text}
                 </p>
               </div>
 
@@ -298,10 +300,10 @@ export default function VisualTrackingDrillsClient({ faqs = [] }: { faqs?: Array
                   <Activity className="w-4 h-4" />
                 </div>
                 <h3 className="text-xs font-mono font-bold uppercase tracking-wider text-ink-1 mb-1.5">
-                  Sub-Pixel Vector Smoothing
+                  {hubCopy.engine[1].title}
                 </h3>
                 <p className="text-2xs text-ink-3 leading-relaxed">
-                  Sub-pixel coordinates and a single canvas keep the moving point continuous without creating a large DOM tree or per-frame React updates.
+                  {hubCopy.engine[1].text}
                 </p>
               </div>
 
@@ -310,10 +312,10 @@ export default function VisualTrackingDrillsClient({ faqs = [] }: { faqs?: Array
                   <Zap className="w-4 h-4" />
                 </div>
                 <h3 className="text-xs font-mono font-bold uppercase tracking-wider text-ink-1 mb-1.5">
-                  360Hz Display Calibration
+                  {hubCopy.engine[2].title}
                 </h3>
                 <p className="text-2xs text-ink-3 leading-relaxed">
-                  The loop is capped at a predictable render budget and skips redundant high-refresh callbacks to leave CPU time for the browser and input.
+                  {hubCopy.engine[2].text}
                 </p>
               </div>
             </div>

@@ -117,7 +117,7 @@ const faqSchema = {
       "name": "Ist ein Online-Browser-Aim-Trainer genauso reaktionsschnell wie installierte Software?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Ja. SkillDrills nutzt die standardisierte W3C Raw Pointer Lock API und hardwarebeschleunigte HTML5-Canvas-Technologie. Dadurch werden Mausbeschleunigungskurven des Betriebssystems und Desktopgrenzen umgangen und reine Rohdaten-Deltas (movementX / movementY) verarbeitet. In Kombination mit entkoppelter Fixed-Timestep-Physik ermöglicht dies latenzfreies Zielen bei 144Hz, 240Hz und 360Hz ohne Installation und ohne Speicherbelastung."
+        "text": "Für das Training im Wesentlichen ja. SkillDrills zeichnet auf einem HTML5-Canvas und nutzt die Pointer-Lock-API des Browsers, die den Mauszeiger ausblendet und relative Mausbewegungen (movementX/movementY) liefert, sodass auch lange Flicks nicht am Bildschirmrand enden. Die Zielbewegung wird aus der verstrichenen Zeit statt aus der Bildzahl berechnet und bleibt daher auf 144-, 240- und 360-Hz-Displays konsistent. Die Browsereingabe läuft aber weiterhin über die Zeigereinstellungen Ihres Betriebssystems; halten Sie DPI, Empfindlichkeit und Mausbeschleunigung zwischen den Sitzungen konstant, wenn Sie Ergebnisse vergleichen."
       }
     },
     {

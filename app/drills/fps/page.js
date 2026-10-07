@@ -102,7 +102,7 @@ const faqSchema = {
       "name": "Is an online browser aim trainer as responsive as downloadable software?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Yes. SkillDrills utilizes the modern HTML5 Canvas API and the W3C Raw Pointer Lock API, which completely bypasses operating system mouse acceleration curves and desktop boundaries to process unadjusted hardware movement deltas (movementX/movementY). Coupled with decoupled fixed-timestep physics capable of rendering at 240Hz, 360Hz, and beyond, browser drills deliver 1:1 esports-grade hardware translation with zero downloads or install footprint."
+        "text": "For practice, mostly. SkillDrills draws on an HTML5 Canvas and uses the browser's Pointer Lock API, which hides the cursor and delivers relative mouse movement (movementX/movementY), so long flicks never stop at the screen edge. Target motion is calculated from elapsed time rather than frame count, so drills behave consistently on 144 Hz, 240 Hz, or 360 Hz displays. Browser input still passes through your operating system's pointer settings, so keep your DPI, sensitivity, and mouse-acceleration settings unchanged between sessions when you compare scores."
       }
     },
     {

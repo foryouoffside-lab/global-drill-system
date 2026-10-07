@@ -24,6 +24,7 @@ import DrillCarousel from "@/components/drill/DrillCarousel";
 import StickyMobileCta from "@/components/StickyMobileCta";
 import AdjacentHubs from "@/components/AdjacentHubs";
 import { useTranslation } from "@/lib/i18n/useTranslation";
+import { getHubCopy, drillCountLabel } from "@/lib/i18n/hubCopy";
 import { hasLocalizedRoute } from "@/lib/i18n/locales";
 import { getLocalizedDrill } from "@/lib/i18n/drillNames";
 import { isIdleFrameSkippable } from "@/lib/performance";
@@ -89,6 +90,7 @@ const orderedCognitiveDrills = sortByInterest(
 
 export default function CognitiveHubClient({ faqs = [] }) {
   const { locale, t, localizeHref } = useTranslation();
+  const hubCopy = getHubCopy('cognitive', locale);
   const [isClient, setIsClient] = useState(false);
   const [drillLevels, setDrillLevels] = useState({});
   const canvasRef = useRef(null);
@@ -280,7 +282,7 @@ export default function CognitiveHubClient({ faqs = [] }) {
         <Reveal>
           <DrillCarousel
             headingId="cognitive-drills"
-            heading={t("hubs.cognitive.drillsHeading", "Cognitive drills")}
+            heading={hubCopy.drillsHeading}
             accent="purple"
             icon={Brain}
             showcase
@@ -306,7 +308,7 @@ export default function CognitiveHubClient({ faqs = [] }) {
             <div className="flex items-center gap-2 mb-6">
               <Layers className="w-5 h-5 text-purple-400" />
               <h2 className="text-base sm:text-lg font-semibold tracking-tight text-ink-1">
-                Cognitive Training Domains
+                {hubCopy.domainsTitle}
               </h2>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
@@ -324,15 +326,15 @@ export default function CognitiveHubClient({ faqs = [] }) {
                         </div>
                         <div>
                           <h3 className="text-sm font-semibold tracking-tight text-ink-1">
-                            {cat.name}
+                            {hubCopy.domains[cat.folderName].name}
                           </h3>
                           <span className="text-xs font-medium text-purple-400">
-                            {cat.drills.length} {cat.drills.length === 1 ? "Drill" : "Drills"}
+                            {drillCountLabel(hubCopy, cat.drills.length)}
                           </span>
                         </div>
                       </div>
                       <p className="text-xs text-ink-2 leading-relaxed mb-4">
-                        {cat.description}
+                        {hubCopy.domains[cat.folderName].description}
                       </p>
                     </div>
 
@@ -373,7 +375,7 @@ export default function CognitiveHubClient({ faqs = [] }) {
             <div className="flex items-center gap-2 mb-6">
               <Sparkles className="w-5 h-5 text-purple-400" />
               <h2 className="text-base sm:text-lg font-semibold tracking-tight text-ink-1">
-                Engine &amp; Hardware Optimization
+                {hubCopy.engineTitle}
               </h2>
             </div>
 
@@ -383,10 +385,10 @@ export default function CognitiveHubClient({ faqs = [] }) {
                   <Clock className="w-4 h-4" />
                 </div>
                 <h3 className="text-sm font-semibold tracking-tight text-ink-1 mb-1.5">
-                  Millisecond-Precision Stimulus Timers
+                  {hubCopy.engine[0].title}
                 </h3>
                 <p className="text-2xs text-ink-3 leading-relaxed">
-                  High-precision monotonic performance timers track visual cues and interference onset at the browser&apos;s native ~1ms resolution, preventing frame-delayed reaction measurements.
+                  {hubCopy.engine[0].text}
                 </p>
               </div>
 
@@ -395,10 +397,10 @@ export default function CognitiveHubClient({ faqs = [] }) {
                   <Shuffle className="w-4 h-4" />
                 </div>
                 <h3 className="text-sm font-semibold tracking-tight text-ink-1 mb-1.5">
-                  Dynamic Interference Engine
+                  {hubCopy.engine[1].title}
                 </h3>
                 <p className="text-2xs text-ink-3 leading-relaxed">
-                  Real-time Stroop and distractor conflict algorithms dynamically calibrate difficulty thresholds to stress selective attention without input bottlenecking.
+                  {hubCopy.engine[1].text}
                 </p>
               </div>
 
@@ -407,10 +409,10 @@ export default function CognitiveHubClient({ faqs = [] }) {
                   <ShieldCheck className="w-4 h-4" />
                 </div>
                 <h3 className="text-sm font-semibold tracking-tight text-ink-1 mb-1.5">
-                  Local Zero-Telemetry Storage
+                  {hubCopy.engine[2].title}
                 </h3>
                 <p className="text-2xs text-ink-3 leading-relaxed">
-                  Processes composite accuracy and cognitive stamina locally in-browser. Zero server hops or telemetry payloads ensure total privacy and immediate feedback.
+                  {hubCopy.engine[2].text}
                 </p>
               </div>
             </div>

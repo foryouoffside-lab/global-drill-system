@@ -117,7 +117,7 @@ const faqSchema = {
       "name": "Um treinador de mira online no navegador tem a mesma precisão e resposta de um software instalado?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Sim. O SkillDrills utiliza a API nativa Pointer Lock do W3C combinada com aceleração de hardware via HTML5 Canvas. Essa arquitetura ignora totalmente as curvas de aceleração de ponteiro do sistema operacional e processa os deltas brutos do sensor óptico (movementX e movementY) com latência de entrada praticamente nula. Operando em uma física de passo de tempo fixo desacoplada da taxa de quadros, a plataforma garante resposta 1:1 ultrafluida e compatibilidade total com monitores gamer de 144 Hz, 240 Hz e 360 Hz, tudo sem exigir instalação ou ocupar espaço no seu SSD."
+        "text": "Para treino, em grande parte sim. O SkillDrills desenha em um Canvas HTML5 e usa a API Pointer Lock do navegador, que oculta o cursor e entrega o movimento relativo do mouse (movementX/movementY); assim, flicks longos não param na borda da tela. O movimento dos alvos é calculado pelo tempo decorrido, e não pela contagem de quadros, por isso os treinos se comportam de forma consistente em monitores de 144 Hz, 240 Hz ou 360 Hz. A entrada no navegador ainda passa pelas configurações de ponteiro do sistema operacional; mantenha DPI, sensibilidade e aceleração do mouse iguais entre as sessões ao comparar resultados."
       }
     },
     {
