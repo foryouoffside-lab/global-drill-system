@@ -21,3 +21,4 @@
 | C:/Program Files/Git/ja/drills/motor/hand-eye-coordination/aim-trainer | done | PENDING | docs/seo/research/ja/aim-trainer.md | エイム練習 head term (Bing 1933) |
 | C:/Program Files/Git/ja/drills/motor/precision-control/steady-hand | done | PENDING | docs/seo/research/ja/steady-hand.md | イライラ棒ゲーム primary (Bing 192); English H1 subtitle fixed |
 | C:/Program Files/Git/ja/drills/physical/coordination/dynamic-grid-evasion | done | PENDING | docs/seo/research/ja/dynamic-grid-evasion.md | 危険マス回避ゲーム (deconflict 反射神経テスト); demand unverified |
+| C:/Program Files/Git/ja/drills/physical/fitness/speed-drill | done | PENDING | docs/seo/research/ja/speed-drill.md | 連打ゲーム primary (Bing 1252) |
