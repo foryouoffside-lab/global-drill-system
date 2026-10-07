@@ -14,7 +14,7 @@ Suggest, Bing (us) and GSC worked. WebSearch is a generic index, not a live SERP
 Tool: game-specific aim practice. Head term is dominated by established aim trainers (authority gate real; Suggest names Valorant, CS2, Fortnite).
 
 ## Competitors (proxy)
-aiming.pro, onlineaimtrainer.com, aimtrainer.online, fpstrain.us (taken from with the FPS hub log of 2026-10-07: all are tool pages titled "Aim Trainer" plus free/online/browser). Gap: none states measurement limits or links the training to a written methodology.
+aiming.pro, onlineaimtrainer.com, aimtrainer.online, fpstrain.us (taken from the FPS hub log of 2026-10-07: all are tool pages titled "Aim Trainer" plus free/online/browser). Gap: none states measurement limits or links the training to a written methodology.
 
 ## PAA-style questions
 Existing FAQ covers what it is, Fitts's Law, two-component model, transfer to Valorant/CS2, good score, difficulty scaling, miss penalty, sensitivity, refresh/polling, warm-up. Suggest adds "does aim training work", "what is an aim trainer" (answered by the new direct-answer paragraph).
