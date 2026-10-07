@@ -6,7 +6,7 @@ import DrillFooter from '@/components/drill/DrillFooter';
 import { pickSources } from '@/lib/drillSources';
 
 export const metadata = {
-  title: 'Reacción de teclado | Test de teclas | SkillDrills',
+  title: 'Test de Reacción con Teclado | SkillDrills',
   description: 'Pulsa la tecla mostrada para medir tu reacción, precisión y velocidad de keybinds. Test gratuito en el navegador.',
   keywords: [
     'test de reacción con tecla',
@@ -23,7 +23,7 @@ export const metadata = {
     'test de teclas online',
   ],
   openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
-    title: 'Reacción de teclado | Test de teclas | SkillDrills',
+    title: 'Test de Reacción con Teclado | SkillDrills',
     description: 'Mide reacción, precisión y velocidad de keybinds pulsando la tecla mostrada en el navegador.',
     type: 'article',
     url: 'https://skilldrills.online/es/drills/motor/movement-speed/keyboard-recognition',
@@ -32,7 +32,7 @@ export const metadata = {
   },
   twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: 'summary_large_image',
-    title: 'Reacción de teclado | Test de teclas | SkillDrills',
+    title: 'Test de Reacción con Teclado | SkillDrills',
     description: 'Test gratuito de reacción de teclado y keybinds en el navegador.',
   },
   robots: { index: true, follow: true },
