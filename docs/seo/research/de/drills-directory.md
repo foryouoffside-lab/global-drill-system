@@ -17,3 +17,6 @@ Date: 2026-10-08 · Market: Germany, `de-DE`
 ## Scores (B3)
 - `Reaktionstest` / `CPS-Test` as directory lead: demand 4-5, ease 2, intent fit 3 (directory is a hub, not the tool itself).
 - Trend: not available, 2026-10-08.
+
+## Claim fix 2026-10-08
+- Removed unsupported "Sub-Millisekunden" precision wording from FAQ/body (performance.now resolution is browser-dependent, about 1 ms); schema and visible text share the same source.

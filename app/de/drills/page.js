@@ -118,7 +118,7 @@ const faqSchema = {
       "name": "Wie berechnet SkillDrills Latenz und Reaktionszeit im Webbrowser ohne Verzögerung?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Die Plattform nutzt die hochpräzise Browser-API performance.now(), die Zeitstempel im Sub-Millisekunden-Bereich (Mikrosekundengenauigkeit) liefert. Visuelle Stimuli und Benutzereingaben werden direkt über hardwarebeschleunigte Canvas-Rendering-Schleifen (requestAnimationFrame) und die Pointer Lock API ohne Render-Queues verarbeitet."
+        "text": "Die Plattform nutzt die hochpräzise Browser-API performance.now(), die Zeitstempel mit einer browserabhängigen Auflösung von etwa 1 ms liefert. Visuelle Stimuli und Benutzereingaben werden direkt über hardwarebeschleunigte Canvas-Rendering-Schleifen (requestAnimationFrame) und die Pointer Lock API ohne Render-Queues verarbeitet."
       }
     },
     {
