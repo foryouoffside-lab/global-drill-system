@@ -318,6 +318,7 @@ export default function InstantResponseJaPage() {
         copy={{
           h1Keyword: "反応速度テスト",
           h1Suffix: " - FPSクリック反応",
+          subtitle: "視覚反応の遅れ、クリック速度、発砲の規律を計測・練習します",
           statScore: "スコア",
           statTime: "残り時間",
           statAccuracy: "命中率",

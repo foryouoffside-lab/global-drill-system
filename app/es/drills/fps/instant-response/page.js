@@ -228,6 +228,7 @@ export default function InstantResponseEsPage() {
   const copyEs = {
     h1Keyword: "Test de Reflejos",
     h1Suffix: " — tiempo de reacción FPS",
+    subtitle: "Mide y entrena la latencia de reacción visual, la velocidad de clic y la disciplina de gatillo",
     statScore: "Puntuación",
     statTime: "Tiempo Restante",
     statAccuracy: "Precisión",

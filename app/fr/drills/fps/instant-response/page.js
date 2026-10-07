@@ -228,6 +228,7 @@ export default function InstantResponseFrPage() {
   const copyFr = {
     h1Keyword: "Test de Temps de Réaction",
     h1Suffix: " — réflexes FPS",
+    subtitle: "Mesurez et entraînez la latence de réaction visuelle, la vitesse de clic et la discipline de gâchette",
     statScore: "Score",
     statTime: "Temps Restant",
     statAccuracy: "Précision",

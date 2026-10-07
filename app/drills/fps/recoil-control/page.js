@@ -297,7 +297,7 @@ export default function RecoilControlPage() {
   };
   const copyEn = {
     h1Prefix: null,
-    h1Keyword: "Recoil Control Trainer",
+    h1Keyword: "Recoil Control",
     h1Suffix: null,
     rulesItems: [
       { num: "1", text: "Headshot Precision", highlight: "+100 PTS / +0.25s", result: "Top Priority Target Zone" },

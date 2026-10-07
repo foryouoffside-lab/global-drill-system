@@ -229,6 +229,7 @@ export default function InstantResponsePtPage() {
   const copyPt = {
     h1Keyword: "Teste de Reflexo",
     h1Suffix: " — tempo de reação FPS",
+    subtitle: "Meça e treine a latência de reação visual, a velocidade do clique e a disciplina de gatilho",
     statScore: "Pontuação",
     statTime: "Tempo Restante",
     statAccuracy: "Precisão",

@@ -318,6 +318,7 @@ export default function InstantResponseKoPage() {
         copy={{
           h1Keyword: "반응속도 테스트",
           h1Suffix: " - FPS 클릭 반응 측정",
+          subtitle: "시각 반응 지연, 클릭 속도, 트리거 규율을 측정하고 훈련합니다",
           statScore: "점수",
           statTime: "남은 시간",
           statAccuracy: "명중률",

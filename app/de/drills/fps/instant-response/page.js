@@ -284,6 +284,7 @@ export default function InstantResponseDePage() {
   const copyDe = {
     h1Keyword: "Reaktionszeit Test",
     h1Suffix: " – FPS-Reflexe messen",
+    subtitle: "Visuelle Reaktionslatenz, Klickgeschwindigkeit und Schussdisziplin messen und trainieren",
     statScore: "Punkte",
     statTime: "Zeit",
     statAccuracy: "Präzision",
