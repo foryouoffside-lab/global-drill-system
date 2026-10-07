@@ -2,3 +2,4 @@
 |---|---|---|---|---|
 | /pt/drills/motor/movement-speed/rapid-tapping | done | 636148ad | docs/seo/research/pt/rapid-tapping.md | title adds CPS Test (cps test 2,491 Bing BR); percentile claims removed |
 | /pt/drills/physical/balance-training/stability-challenge | done | PENDING | docs/seo/research/pt/stability-challenge.md | fixed duplicated headings from bad replace; native title; fabricated percentiles removed; demand not verified |
+| /pt/drills/reaction-speed/reaction-time-test | done | SHA | docs/seo/research/pt/reaction-time-test.md | title Teste de Reflexo Online; percentile/rank claims removed |
