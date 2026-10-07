@@ -11,3 +11,4 @@
 | C:/Program Files/Git/ja/drills/fps/angle-hold-trainer | done | PENDING | docs/seo/research/ja/angle-hold-trainer.md | 置きエイム primary (Bing 686); client About still English (D2) |
 | C:/Program Files/Git/ja/drills/fps/recoil-control | done | PENDING | docs/seo/research/ja/recoil-control.md | keep リコイル練習; overclaims softened; demand not verified in Bing |
 | C:/Program Files/Git/ja/drills/fps/strafe-tracking | done | PENDING | docs/seo/research/ja/strafe-tracking.md | ストレイフ追いエイム (deconflicts 追いエイム練習); demand unverified |
+| C:/Program Files/Git/ja/drills/fps/target-acquisition | done | PENDING | docs/seo/research/ja/target-acquisition.md | keep VALORANT エイム練習 long-tail; overclaims softened |
