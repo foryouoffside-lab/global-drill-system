@@ -6,7 +6,7 @@ import { pickSources } from '@/lib/drillSources';
 
 export const metadata = {
   title: "Smooth Pursuit Eye Training – Sine Wave | SkillDrills",
-  description: "Track oscillating targets along sinusoidal wave curves. Condition smooth pursuit velocity gain and rhythmic ocular motor control online. Free, no sign-up.",
+  description: "Free smooth pursuit exercise: follow a target along a sine wave to practise steady, rhythmic eye tracking in your browser. No sign-up.",
   keywords: [
     "smooth pursuit eye training",
     "sine wave pursuit training",
@@ -28,7 +28,7 @@ export const metadata = {
   robots: { index: true, follow: true },
   openGraph: {
     title: "Smooth Pursuit Eye Training – Sine Wave | SkillDrills",
-    description: "Track oscillating targets along sinusoidal wave curves. Condition smooth pursuit velocity gain and rhythmic ocular motor control online. Free, no sign-up.",
+    description: "Free smooth pursuit exercise: follow a target along a sine wave to practise steady, rhythmic eye tracking in your browser. No sign-up.",
     url: "https://skilldrills.online/drills/visual-tracking/sine-wave-pursuit",
     siteName: 'SkillDrills',
     locale: 'en_US',
@@ -37,7 +37,7 @@ export const metadata = {
   twitter: {
     card: 'summary_large_image',
     title: "Smooth Pursuit Eye Training – Sine Wave | SkillDrills",
-    description: "Track oscillating targets along sinusoidal wave curves. Condition smooth pursuit velocity gain and rhythmic ocular motor control online. Free, no sign-up.",
+    description: "Free smooth pursuit exercise: follow a target along a sine wave to practise steady, rhythmic eye tracking in your browser. No sign-up.",
   },
 };
 
@@ -223,6 +223,7 @@ const faqSchema = {
 const guide = {
   heading: "Sine Wave Pursuit - Ocular Motor Training Standards",
   intro: [
+    "Sine Wave Pursuit is a free smooth pursuit exercise. A target moves along a repeating sine wave and you follow it steadily with your eyes, keeping up as it speeds and slows through each curve. Choose a speed and duration, press start, and aim for a smooth, even track.",
     "The fidelity of the human oculomotor smooth pursuit system is most rigorously tested when tracking harmonic oscillatory trajectories rather than simple linear paths. Along a sinusoidal curve, target velocity and acceleration fluctuate continuously: speed reaches its maximum at the central zero-crossing axis, while decelerating smoothly to zero at the orbital crests and troughs before reversing direction (Stark et al., 1962; Robinson, 1965).",
     "Neurological investigations by David Robinson (1965) and Barnes (2008) established that while unpredictable motion produces a mandatory 130 to 150 ms sensorimotor delay (phase lag), periodic sinusoidal stimulation triggers rapid cerebellar adaptation. By establishing a predictive internal rhythm, feedforward motor commands fire directly to extraocular motor nuclei, achieving zero phase lag synchronization.",
     "When tracking frequency or velocity exceeds physiological limits, pursuit gain collapses. As demonstrated by Rashbass (1961) and Bahill et al. (1980), when eye velocity lags target speed, the visual system resorts to stuttered catch-up saccades. Sine Wave Pursuit conditions the extraocular neuromuscular apparatus to sustain seamless unity gain (1.0) without saccadic disruptions."
