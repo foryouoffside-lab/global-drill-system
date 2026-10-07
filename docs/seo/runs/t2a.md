@@ -18,3 +18,4 @@
 | /drills/physical/reflex-training/peripheral-threat-sweeper | done | 945316f2 | docs/seo/research/en/peripheral-threat-sweeper.md | medical-intent SERP; disclaimer added |
 | /drills/physical/reflex-training/quick-dodge | done | f77e016d | docs/seo/research/en/quick-dodge.md | demand not verified; claims hedged |
 | /drills/physical/reflex-training/reaction-chain | done | 25a20b99 | docs/seo/research/en/reaction-chain.md | H1/title mismatch fixed |
+| /drills/reaction-speed/barrier-sequence-pursuit | done | b63d0c6a | docs/seo/research/en/barrier-sequence-pursuit.md | research only; copy already clean |
