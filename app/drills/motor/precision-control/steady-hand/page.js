@@ -156,6 +156,14 @@ const faqSchema = {
     },
     {
       '@type': 'Question',
+      name: 'How is this different from the buzzer wire steady hand game?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'The classic steady hand game is a physical circuit: you move a metal loop along a bent wire and a buzzer sounds on contact. This drill keeps the same idea on screen. You move the cursor along a corridor instead of a wire, a wall touch resets you to the start instead of sounding a buzzer, and the corridor narrows each lap.',
+      },
+    },
+    {
+      '@type': 'Question',
       name: 'Can steady hand drills benefit digital artists and surgeons?',
       acceptedAnswer: {
         '@type': 'Answer',
@@ -223,8 +231,9 @@ const howToSchema = {
 const guideProps = {
   sources: pickSources('accot1997', 'woodworth1899', 'fitts1954', 'woods2015'),
   intro: {
-    title: 'How hand steadiness is measured',
+    title: 'What is the steady hand game, and how is it measured?',
     paragraphs: [
+      'The steady hand game is a precision test where you guide a cursor along a winding corridor without touching its walls. This free browser version narrows the corridor with every lap, from 50 px down to 12 px, so it tests how steadily you control the mouse and how well you slow down for tight turns.',
       'How this is measured, and what it cannot resolve: timing comes from the browser\'s performance.now() clock, which is deliberately coarsened to roughly 1 ms as a Spectre mitigation, and the display quantizes every target to its own refresh interval — about 16.7 ms at 60 Hz, 6.9 ms at 144 Hz and 4.1 ms at 240 Hz (Woods et al., 2015). Mouse polling adds roughly 8 ms at 125 Hz against about 1 ms at 1000 Hz. Treat any difference under about 5 ms as measurement noise, and compare your own runs on the same mouse and display rather than against someone else\'s setup. SkillDrills stores every score in your browser and collects no aggregate data, so nothing here is a population norm.',
     ],
   },
