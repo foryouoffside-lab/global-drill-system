@@ -41,3 +41,4 @@
 | C:/Program Files/Git/ja/drills/visual-tracking/ghosting-suppress-pursuit | done | PENDING | docs/seo/research/ja/ghosting-suppress-pursuit.md | H1 shortened; demand unverified |
 | C:/Program Files/Git/ja/drills/visual-tracking/infinity-pursuit | done | PENDING | docs/seo/research/ja/infinity-pursuit.md | perfection wording softened; demand unverified |
 | C:/Program Files/Git/ja/drills/visual-tracking/momentum-teleport-pursuit | done | PENDING | docs/seo/research/ja/momentum-teleport-pursuit.md | overclaim softened; demand unverified |
+| C:/Program Files/Git/ja/drills/visual-tracking/predictive-pursuit | done | PENDING | docs/seo/research/ja/predictive-pursuit.md | direct answer; demand unverified |
