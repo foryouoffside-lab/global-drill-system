@@ -87,7 +87,7 @@ export default function ZigZagPathPursuitPageFR() {
     "@type": "VideoGame",
     "name": "Défi de Poursuite en Zigzag",
     "gamePlatform": "Navigateur web",
-    "genre": ["Entraînement visuel", "Exercice de poursuite oculaire", "Réflexes pour l esports"],
+    "genre": ["Entraînement visuel", "Exercice de poursuite oculaire", "Poursuite visuelle"],
     "dateModified": "2026-09-20"
   };
 
@@ -111,7 +111,7 @@ export default function ZigZagPathPursuitPageFR() {
       {
         "@type": "HowToStep",
         "name": "Freinage Précis au Sommet de Virage",
-        "text": "À l approche immédiate du sommet en dent de scie, enclenchez la décélération pour ne pas déborder hors du virage."
+        "text": "À l’approche immédiate du sommet en dent de scie, enclenchez la décélération pour ne pas déborder hors du virage."
       },
       {
         "@type": "HowToStep",
@@ -139,15 +139,15 @@ export default function ZigZagPathPursuitPageFR() {
         "name": "Quels centres cérébraux pilotent la décélération avant chaque virage?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Le cervelet (vermis dorsal et flocculus), les ganglions de la base et le cortex frontal (FEF) émettent des décharges inhibitrices anticipatoires pour freiner le regard à l angle exact."
+          "text": "Le cervelet (vermis dorsal et flocculus), les ganglions de la base et le cortex frontal (FEF) émettent des décharges inhibitrices anticipatoires pour freiner le regard à l’angle exact."
         }
       },
       {
         "@type": "Question",
-        "name": "Qu est-ce que le dépassement et comment l éviter?",
+        "name": "Qu’est-ce que le dépassement et comment l’éviter?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "C est l inertie motrice qui propulse le regard au-delà du sommet. On le réduit en renforçant le modèle prédictif anticipé par des entraînements répétés."
+          "text": "C’est l’inertie motrice qui propulse le regard au-delà du sommet. On le réduit en renforçant le modèle prédictif anticipé par des entraînements répétés."
         }
       },
       {
@@ -155,31 +155,31 @@ export default function ZigZagPathPursuitPageFR() {
         "name": "Quel avantage ce module offre-t-il aux sportifs et joueurs compétitifs?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Il affine la faculté de bloquer net la visée sur un angle et d enchaîner sans flottement sur une cible fuyante en mouvement saccadé."
+          "text": "Il fait travailler l’arrêt du regard sur un virage et la reprise dans l’autre sens, un geste proche du suivi de cible dans un jeu. Aucune étude ne démontre à ce jour un gain direct de score ou de performance sportive à partir de cet exercice."
         }
       },
       {
         "@type": "Question",
-        "name": "Pourquoi insister sur l immobilité stricte de la tête?",
+        "name": "Pourquoi insister sur l’immobilité stricte de la tête?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Garder la tête fixe neutralise la compensation du réflexe vestibulo-oculaire (RVO), concentrant l ensemble du travail sur la commande oculomotrice pure."
+          "text": "Garder la tête fixe neutralise la compensation du réflexe vestibulo-oculaire (RVO), concentrant l’ensemble du travail sur la commande oculomotrice pure."
         }
       },
       {
         "@type": "Question",
-        "name": "Quel est le volume quotidien optimal d entraînement?",
+        "name": "Quel est le volume quotidien optimal d’entraînement?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Des séquences de 6 à 10 minutes par jour, découpées en séries courtes de 60 secondes avec des pauses de repos, maximisent l adaptation synaptique."
+          "text": "Des séquences de 6 à 10 minutes par jour, découpées en séries courtes de 60 secondes avec des pauses de repos, suffisent pour suivre votre progression. Arrêtez-vous en cas de fatigue oculaire."
         }
       },
       {
         "@type": "Question",
-        "name": "Qu est-ce que le glissement rétinien lors des renversements de cap?",
+        "name": "Qu’est-ce que le glissement rétinien lors des renversements de cap?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "C est le décrochage visuel instantané qui survient quand la cible bifurque, servant de stimulus biologique pour déclencher la saccade de correction."
+          "text": "C’est le décrochage visuel instantané qui survient quand la cible bifurque, servant de stimulus biologique pour déclencher la saccade de correction."
         }
       },
       {
@@ -187,15 +187,15 @@ export default function ZigZagPathPursuitPageFR() {
         "name": "Un écran 144Hz ou 240Hz fait-il une réelle différence?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Oui, il restitue le point d impact du virage avec une netteté totale et sans latence d affichage, optimisant l estimation temporelle du freinage."
+          "text": "Un peu. Un écran à 144 Hz ou plus affiche la cible plus souvent qu’un écran à 60 Hz, ce qui rend le virage plus lisible. Comparez toujours vos séries sur le même écran."
         }
       },
       {
         "@type": "Question",
-        "name": "En quoi le zigzag diffère-t-il d une onde sinusoïdale?",
+        "name": "En quoi le zigzag diffère-t-il d’une onde sinusoïdale?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "L onde sinusoïdale amortit sa course en courbe aux sommets, alors que le zigzag maintient sa pleine vitesse jusqu au point angulaire avant de bifurquer net."
+          "text": "L’onde sinusoïdale amortit sa course en courbe aux sommets, alors que le zigzag maintient sa pleine vitesse jusqu’au point angulaire avant de bifurquer net."
         }
       },
       {
@@ -203,15 +203,16 @@ export default function ZigZagPathPursuitPageFR() {
         "name": "Comment le calcul de performance évalue-t-il la précision?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "L algorithme scrute la distance pixel continue entre le curseur et la cible, en sanctionnant lourdement les dépassements et les coupes anticipées."
+          "text": "L’algorithme scrute la distance pixel continue entre le curseur et la cible, en sanctionnant lourdement les dépassements et les coupes anticipées."
         }
       }
     ]
   };
 
   const guide = {
-    title: "Guide Scientifique de Poursuite en Zigzag et Contrôle d Inflexion",
+    title: "Guide Scientifique de Poursuite en Zigzag et Contrôle d’Inflexion",
     intro: [
+      "Cet exercice de poursuite visuelle en zigzag vous demande de suivre du regard une cible qui file en diagonale puis repart brusquement dans l’autre sens. À chaque virage, le regard doit freiner puis repartir. L’exercice mesure l’erreur aux virages et les pertes de cible. Ce n’est pas un test médical.",
       "La poursuite visuelle le long de trajectoires brisées en zigzag à segments multiples constitue l'un des défis de coordination les plus exigeants en neuro-optométrie et en préparation visuelle sportive. Contrairement aux mouvements cardinaux simples, le suivi de vecteurs diagonaux requiert une innervation proportionnelle et continue de paires musculaires distinctes, reliant les centres prémoteurs pontiques horizontaux (PPRF) et les noyaux mésencéphaliques verticaux (riMLF; Orban de Xivry & Lefèvre, 2007).",
       "Le stress neurocomputationnel culmine aux sommets d'inflexion aigus où la trajectoire s'inverse brusquement. Lors de cette rupture angulaire, le glissement rétinien instantané s'emballe tandis que l'erreur de positionnement fovéal explose. Les recherches fondamentales de de Brouwer et al. (2002) et Heinen et al. (2005) ont établi que les saccades de rattrapage (catch-up saccades) sont déclenchées par une boucle neuronale partagée au sein du colliculus supérieur et des champs oculaires frontaux (FEF), intégrant l'écart spatial et l'erreur de vitesse pour produire un réajustement balistique rigoureux.",
       "Sans préparation motrice ciblée, le système oculomoteur subit d'importants dépassements par inertie ou des raccourcissements prématurés, entraînant des latences de réacquisition prolongées et une instabilité fovéale. En revanche, l'exposition répétée aux tracés alternés en zigzag active les modèles internes prédictifs du cervelet (Barnes, 2008; Krauzlis, 2004; Orban de Xivry & Lefèvre, 2007), assurant une décélération anticipée avant chaque sommet, réduisant l'erreur saccadique et favorisant un réengagement fluide sur la trajectoire diagonale opposée.",
@@ -220,21 +221,21 @@ export default function ZigZagPathPursuitPageFR() {
     ],
     benchmarks: {
       title: "Normes de Performance en Zigzag (Vitesse et Précision aux Inflexions)",
-      headers: ["Niveau de Maîtrise", "Multiplicateur de Vitesse", "Erreur au Sommet", "Latence Saccadique de Virage", "Percentile Mondial"],
+      headers: ["Niveau", "Multiplicateur de vitesse", "Erreur au virage", "Latence au virage"],
       rows: [
-        ["Élite / Maître de la Reversion Rapide", "3.5x – 5.0x+", "Erreur < 12 px (fixation parfaite au virage)", "Latence < 110 ms (freinage prédictif)", "Top 1.5%"],
-        ["Maître / Haute Discipline Vectorielle", "2.5x – 3.5x", "Erreur < 22 px (microsaccades minimes)", "Latence < 140 ms (virages fluides)", "Top 8%"],
-        ["Avancé / Athlète Compétitif", "1.8x – 2.5x", "Erreur < 38 px (réacquisition rapide)", "Latence < 180 ms (transitions stables)", "Top 25%"],
-        ["Intermédiaire / Pratiquant Régulier", "1.2x – 1.8x", "Erreur 38 – 70 px (dépassements et virages coupés)", "Latence 180 – 240 ms (corrections multiples)", "Moyenne 45%"],
-        ["Débutant / Non Initié", "0.5x – 1.2x", "Erreur > 70 px (perte complète aux sommets)", "Latence > 250 ms (dépassement marqué)", "Niveau de Base"]
+        ["Très maîtrisé", "3.5x – 5.0x+", "Moins de 12 px", "Moins de 110 ms"],
+        ["Maîtrisé", "2.5x – 3.5x", "Moins de 22 px", "Moins de 140 ms"],
+        ["Avancé", "1.8x – 2.5x", "Moins de 38 px", "Moins de 180 ms"],
+        ["Intermédiaire", "1.2x – 1.8x", "38 – 70 px (dépassements et virages coupés)", "180 – 240 ms"],
+        ["Débutant", "0.5x – 1.2x", "Plus de 70 px (cible perdue aux virages)", "Plus de 250 ms"]
       ],
-      note: "Barèmes établis d après de Brouwer et al. (2002) sur la dynamique des saccades correctives et Krauzlis (2004) sur le contrôle moteur lors de rapides changements de vitesse et de direction."
+      note: "Repères éditoriaux propres à cet exercice, non issus d’un panel de joueurs ni de normes cliniques. Contexte : de Brouwer et al. (2002) ; Krauzlis (2004)."
     },
     steps: [
       { title: "Fixez la cible au centre", text: "Gardez la tête stable et suivez du regard le premier segment diagonal." },
-      { title: "Suivez la diagonale sans couper", text: "Accompagnez la cible jusqu au bout de chaque segment et gardez le regard au centre." },
-      { title: "Freinez avant le virage", text: "Réduisez l impulsion avant l inflexion pour éviter que le regard ne dépasse l angle." },
-      { title: "Augmentez le rythme avec précision", text: "Montez la vitesse seulement lorsque les pertes de cible et l erreur aux virages restent stables." }
+      { title: "Suivez la diagonale sans couper", text: "Accompagnez la cible jusqu’au bout de chaque segment et gardez le regard au centre." },
+      { title: "Freinez avant le virage", text: "Réduisez l’impulsion avant l’inflexion pour éviter que le regard ne dépasse l’angle." },
+      { title: "Augmentez le rythme avec précision", text: "Montez la vitesse seulement lorsque les pertes de cible et l’erreur aux virages restent stables." }
     ],
     instructions: [
       "Fixez la cible fovéale et suivez la course diagonale initiale.",
@@ -243,9 +244,9 @@ export default function ZigZagPathPursuitPageFR() {
       "Augmentez la vitesse dès que votre erreur de virage demeure sous les 38 px."
     ],
     tips: [
-      "Ne coupez pas la courbe: parcourez l arête complète jusqu au point angulaire extrême.",
+      "Ne coupez pas la courbe: parcourez l’arête complète jusqu’au point angulaire extrême.",
       "Conservez une prise détendue sur la souris pour éviter toute tension au poignet.",
-      "Gardez une respiration régulière pour stabiliser l innervation musculaire des yeux."
+      "Gardez une respiration régulière pour stabiliser l’innervation musculaire des yeux."
     ],
     sources,
     faqs: faqSchema.mainEntity.map(({ name, acceptedAnswer }) => ({ q: name, a: acceptedAnswer.text }))
@@ -282,7 +283,7 @@ export default function ZigZagPathPursuitPageFR() {
         copy={{
           title: "Poursuite visuelle en zigzag",
           subtitle: "Exercice de diagonales et de virages rapides",
-          description: "Suivez une cible en zigzag et mesurez les pertes et l erreur aux virages."
+          description: "Suivez une cible en zigzag et mesurez les pertes et l’erreur aux virages."
         }}
       />
       <DrillGuide guide={guide} />
