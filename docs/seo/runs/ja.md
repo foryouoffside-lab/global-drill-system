@@ -17,3 +17,4 @@
 | C:/Program Files/Git/ja/drills/physical | done | PENDING | docs/seo/research/ja/physical-hub.md | audit pass, no source change |
 | C:/Program Files/Git/ja/drills/visual | done | PENDING | docs/seo/research/ja/visual-hub.md | audit pass, no source change |
 | C:/Program Files/Git/ja/drills/reaction-speed | done | PENDING | docs/seo/research/ja/reaction-speed-hub.md | audit pass, no source change |
+| C:/Program Files/Git/ja/drills/motor/movement-speed/keyboard-recognition | done | PENDING | docs/seo/research/ja/keyboard-recognition.md | H1 キーボード反応速度テスト; demand unverified |
