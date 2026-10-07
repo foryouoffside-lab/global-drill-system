@@ -11,13 +11,13 @@ import { pickSources } from '@/lib/drillSources';
 //                    "tiempo de reacción" — 9 exact / 10 broad.
 // SECONDARY / LSI:
 //                    Google Suggest: online, gaming, click, and F1 modifiers.
-// NATIVE TITLE:      Test de reflejos online | SkillDrills
+// NATIVE TITLE:      Test de Reacción y Reflejos Online | SkillDrills
 // ============================================================
 
 export const metadata = {
-  title: 'Test de reflejos online | SkillDrills',
+  title: 'Test de Reacción y Reflejos Online | SkillDrills',
   description:
-    'Haz un test de reflejos gratis: mide tu tiempo de reacción visual en milisegundos, consulta la media de varios intentos y compara tu regularidad.',
+    'Haz un test de reacción gratis: mide tus reflejos visuales en milisegundos, consulta la media de varios intentos y compara tu regularidad.',
   keywords: [
     'test de reflejos',
     'test de reacción',
@@ -35,7 +35,7 @@ export const metadata = {
     languages: getAlternateLanguages('/drills/reaction-speed/reaction-time-test'),
   },
   openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
-    title: 'Test de reflejos online | SkillDrills',
+    title: 'Test de Reacción y Reflejos Online | SkillDrills',
     description:
       'Mide tus reflejos y tu tiempo de reacción visual en milisegundos. Completa varios intentos y compara tu media y regularidad.',
     url: 'https://skilldrills.online/es/drills/reaction-speed/reaction-time-test',
@@ -45,7 +45,7 @@ export const metadata = {
   },
   twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: 'summary_large_image',
-    title: 'Test de reflejos online | SkillDrills',
+    title: 'Test de Reacción y Reflejos Online | SkillDrills',
     description:
       'Pon a prueba tus reflejos visuales en milisegundos y compara tus marcas con varios intentos, directamente en el navegador.',
   },
@@ -374,7 +374,7 @@ export default function SpanishReactionTimeTestPage() {
       />
       <ReactionTimeTestWrapper
         copy={{
-          title: 'Test de Reflejos',
+          title: 'Test de Reacción y Reflejos',
           subtitle: 'Mide tu tiempo de reacción visual en milisegundos',
           caption: 'Haz clic en cuanto aparezca la señal para medir tus reflejos visuales.',
         }}
