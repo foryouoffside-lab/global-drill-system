@@ -10,8 +10,8 @@ import { pickSources } from '@/lib/drillSources';
 // ============================================================
 
 export const metadata = {
-  title: 'マウス精度テスト | 手の安定性 | SkillDrills',
-  description: 'カーソルで狭いコースをたどり、マウス精度と手の安定性を測る無料テスト。',
+  title: 'イライラ棒ゲーム｜マウス精度と手の安定性テスト | SkillDrills',
+  description: '無料のイライラ棒ゲーム。壁に触れずに狭いコースをカーソルでたどり、マウス精度と手の安定性をブラウザで測れます。登録不要。',
   keywords: [
     'マウス精度テスト', 'カーソル精度', '手の安定性', 'イライラ棒',
     'マウス 軌跡 テスト', '微細運動', 'カーソル操作 練習',
@@ -19,8 +19,8 @@ export const metadata = {
     '手ぶれ コントロール', '精密マウス操作',
   ],
   openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
-    title: 'マウス精度テスト | 手の安定性 | SkillDrills',
-    description: 'カーソルで狭いコースをたどり、マウス精度と手の安定性を測る無料テスト。',
+    title: 'イライラ棒ゲーム｜マウス精度と手の安定性テスト | SkillDrills',
+    description: '無料のイライラ棒ゲーム。壁に触れずに狭いコースをカーソルでたどり、マウス精度と手の安定性をブラウザで測れます。登録不要。',
     type: 'article',
     url: 'https://skilldrills.online/ja/drills/motor/precision-control/steady-hand',
     siteName: 'SkillDrills',
@@ -28,8 +28,8 @@ export const metadata = {
   },
   twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: 'summary_large_image',
-    title: 'マウス精度テスト | 手の安定性 | SkillDrills',
-    description: 'カーソルで狭いコースをたどり、マウス精度と手の安定性を測る無料テスト。',
+    title: 'イライラ棒ゲーム｜マウス精度と手の安定性テスト | SkillDrills',
+    description: '無料のイライラ棒ゲーム。壁に触れずに狭いコースをカーソルでたどり、マウス精度と手の安定性をブラウザで測れます。登録不要。',
   },
   robots: { index: true, follow: true },
   alternates: {
@@ -226,8 +226,7 @@ const guideProps = {
   sources: pickSources('accot1997', 'woodworth1899', 'fitts1954', 'woods2015'),
   intro: {
     title: '手ブレと微細運動精度の測定方法と限界',
-    paragraphs: [
-      '測定精度とディスプレイの特性について：本ドリルにおける時間計測はブラウザの performance.now() API（Spectre緩和策により約1ミリ秒分解能に制限）を用いています。また画面表示はディスプレイのリフレッシュレート（60Hzで約16.7ms、144Hzで約6.9ms、240Hzで約4.1ms）単位で量子化されます（Woods et al., 2015）。マウスのポーリングレート（125Hzで約8ms、1000Hzで約1msの遅延）も入力軌跡のサンプリング密度に影響します。約5ミリ秒未満の差は測定ノイズとして解釈し、他人の環境と比較するのではなく、同一デバイス上での自己記録の推移を追跡してください。SkillDrillsではすべてのスコアをお使いの端末のブラウザ（LocalStorage）にのみ安全に保存し、外部サーバーへの個人データ収集は一切行いません。',
+    paragraphs: [      'イライラ棒ゲームとは、壁に触れないように狭いコースの中をカーソルでたどってゴールを目指す、手の安定性を試すゲームです。このページでは通路が少しずつ狭くなるコースを、壁に触れずに何周クリアできるかでマウス精度と手の安定性を確認できます。',      '測定精度とディスプレイの特性について：本ドリルにおける時間計測はブラウザの performance.now() API（Spectre緩和策により約1ミリ秒分解能に制限）を用いています。また画面表示はディスプレイのリフレッシュレート（60Hzで約16.7ms、144Hzで約6.9ms、240Hzで約4.1ms）単位で量子化されます（Woods et al., 2015）。マウスのポーリングレート（125Hzで約8ms、1000Hzで約1msの遅延）も入力軌跡のサンプリング密度に影響します。約5ミリ秒未満の差は測定ノイズとして解釈し、他人の環境と比較するのではなく、同一デバイス上での自己記録の推移を追跡してください。スコアはお使いのブラウザ（LocalStorage）に保存されます。',
     ],
   },
   benchmark: {
@@ -309,8 +308,9 @@ const guideProps = {
 };
 
 const jaCopy = {
-  h1Keyword: 'マウス精度テスト',
-  h1Suffix: '（手の安定性・イライラ棒）',
+  h1Keyword: 'イライラ棒ゲーム',
+  h1Suffix: '（マウス精度・手の安定性）',
+  subtitle: '壁に触れずに狭いコースをたどる微細運動テスト',
   caption: 'イライラ棒ゲームは、壁に一度も触れずに狭い電撃コースに沿ってカーソルをゴールまで導くことで、反射速度ではなく微細運動の安定性を精密に測定します。難易度はステアリングの法則（Accot & Zhai, 1997）に支配されており、通路の通過時間は長さを通路幅で割った値に比例します。中心線上をキープする動作は閉ループ課題であり、運動中も視覚が絶え間なく手の軌道を修正し続けます（Woodworth, 1899）。',
   statLaps: 'クリア周回数',
   statTime: '残り時間',

@@ -19,3 +19,4 @@
 | C:/Program Files/Git/ja/drills/reaction-speed | done | PENDING | docs/seo/research/ja/reaction-speed-hub.md | audit pass, no source change |
 | C:/Program Files/Git/ja/drills/motor/movement-speed/keyboard-recognition | done | PENDING | docs/seo/research/ja/keyboard-recognition.md | H1 キーボード反応速度テスト; demand unverified |
 | C:/Program Files/Git/ja/drills/motor/hand-eye-coordination/aim-trainer | done | PENDING | docs/seo/research/ja/aim-trainer.md | エイム練習 head term (Bing 1933) |
+| C:/Program Files/Git/ja/drills/motor/precision-control/steady-hand | done | PENDING | docs/seo/research/ja/steady-hand.md | イライラ棒ゲーム primary (Bing 192); English H1 subtitle fixed |
