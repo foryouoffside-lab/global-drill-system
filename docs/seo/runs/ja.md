@@ -23,3 +23,4 @@
 | C:/Program Files/Git/ja/drills/physical/coordination/dynamic-grid-evasion | done | PENDING | docs/seo/research/ja/dynamic-grid-evasion.md | 危険マス回避ゲーム (deconflict 反射神経テスト); demand unverified |
 | C:/Program Files/Git/ja/drills/physical/fitness/speed-drill | done | PENDING | docs/seo/research/ja/speed-drill.md | 連打ゲーム primary (Bing 1252) |
 | C:/Program Files/Git/ja/drills/physical/reflex-training/drop-catch | done | PENDING | docs/seo/research/ja/drop-catch.md | H1 simplified; demand unverified |
+| C:/Program Files/Git/ja/drills/physical/reflex-training/peripheral-threat-sweeper | done | PENDING | docs/seo/research/ja/peripheral-threat-sweeper.md | 周辺視野トレーニングゲーム; Bing 22 |

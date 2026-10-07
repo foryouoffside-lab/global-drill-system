@@ -22,7 +22,7 @@ import { pickSources } from '@/lib/drillSources';
 // ============================================================
 
 export const metadata = {
-  title: "周辺視野トレーニング｜動体視力テストゲーム",
+  title: "周辺視野トレーニングゲーム｜ブラウザで脅威を探す | SkillDrills",
   description: "無料の周辺視野トレーニングゲーム。中央を見たまま外側の脅威を見つけ、動体視力と有効視野（UFOV）を練習できます。",
   keywords: [
     "周辺視野 トレーニング",
@@ -42,7 +42,7 @@ export const metadata = {
     languages: getAlternateLanguages('/drills/physical/reflex-training/peripheral-threat-sweeper'),
   },
   openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
-    title: "周辺視野トレーニング｜動体視力テストゲーム",
+    title: "周辺視野トレーニングゲーム｜ブラウザで脅威を探す | SkillDrills",
     description: "無料の周辺視野トレーニングゲーム。中央を見たまま外側の脅威を見つけ、動体視力と有効視野（UFOV）を練習できます。",
     url: 'https://skilldrills.online/ja/drills/physical/reflex-training/peripheral-threat-sweeper',
     siteName: 'SkillDrills',
@@ -51,7 +51,7 @@ export const metadata = {
   },
   twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: 'summary_large_image',
-    title: "周辺視野トレーニング｜動体視力テストゲーム",
+    title: "周辺視野トレーニングゲーム｜ブラウザで脅威を探す | SkillDrills",
     description: "無料の周辺視野トレーニングゲーム。中央を見たまま外側の脅威を見つけ、動体視力と有効視野（UFOV）を練習できます。",
   },
   robots: { index: true, follow: true },
@@ -203,7 +203,7 @@ const faqSchema = {
     },
     {
       "@type": "Question",
-      "name": "周辺視野スリーパーにおける上位1%（Tier 1: Apex Guardian）の認定スコア基準は？",
+      "name": "周辺視野スリーパーにおけるTier 1: Apex Guardianの認定スコア基準は？",
       "acceptedAnswer": {
         "@type": "Answer",
         "text": "最上位のTier 1「Apex Peripheral Guardian（S判定）」に到達するには、24,000点以上のスコア、90%以上の迎撃精度、そして450 px/sを超える極限速度のノード生還が求められます。中級者の平均到達ラインはTier 3（11,000〜16,999点）付近です。"
@@ -262,6 +262,7 @@ const guideProps = {
   intro: {
     title: "周辺視野の知覚測定と有効視野(UFOV)の科学的メカニズム",
     paragraphs: [
+      "周辺視野トレーニングゲームとは、視線を中央に置いたまま、視野の外側に現れる対象に気づいて反応する練習です。このページでは中央を見たまま外側の脅威を見つけてクリックし、周辺での気づきの速さと正確さを確認できます。スポーツやFPSの視野の使い方の練習として使えますが、視力や視野の検査ではありません。",
       "人間の視覚システムにおいて、視線の中心（中心窩）は全視野のわずか1〜2度に過ぎず、文字の読書や細部の精緻な識別を担当しています。これに対し、中心窩を取り巻く広大な網膜周辺部は解像度こそ大幅に低下するものの、光の明暗変化や高速な物体の移動を高感度に捉える桿体細胞が密集しています。本ドリルは、視線そのものを動かすことなく脳内の注意リソースを柔軟に周辺部へと投射する「潜在的空間注意（Covert Spatial Attention）」の処理速度を正確に測定・訓練します（Posner, 1980）。",
       "周辺視野におけるターゲット迎撃の動作は、フィッツの法則（Fitts's Law, 1954）およびウッドワース（Woodworth, 1899）の二段階運動制御モデルに支配されます。目標座標までの移動時間（MT）は、中心からの放射距離とターゲットの物理サイズの比率の対数関数に比例します。外周から迫るノードを迎撃する際、プレイヤーは最初の85%以上の移動距離を視覚フィードバックなしに一気に投げ出す「開ループ弾道フリック（Ballistic Snap）」で跳躍し、着地直前のわずかな瞬間に微細な視覚的軌道修正を行って迎撃を完了します。",
       "カーリーン・ボールら（Ball et al., 1988）の研究によると、情報過多や交戦時の過度な緊張状態において、人間の認識可能な空間範囲が著しく縮小する現象を「トンネルビジョン」と呼びます。本ドリルはレベル1の緩やかな1.4秒出現間隔からスタートし、徐々に0.20秒間隔まで短縮され、360度全方位から秒速520ピクセルの猛スピードで同時侵入が発生します。これにより大脳頭頂葉の時空間処理キャパシティ（Useful Field of View, 有効視野）を強制的に拡大させ、実戦の乱戦下でも死角からの奇襲を見落とさない屈強な神経回路を構築します。",
@@ -272,9 +273,9 @@ const guideProps = {
     title: "周辺視野リアクション＆脅威迎撃 公式ベンチマーク規格",
     headers: ['階級 (Tier)', '称号・ランク', '基準スコア', '迎撃精度・生存速度', '評価グレード', '能力水準'],
     rows: [
-      ['Tier 1', '至高の周辺守護神 (Apex Peripheral Guardian)', '24,000点 以上', '精度 90%+ / 450+ px/s', 'S グレード', '上位 1%（異次元の有効視野）'],
-      ['Tier 2', '精密放射スイーパー (Precision Radial Sweeper)', '17,000 〜 23,999点', '精度 82〜89% / 350〜449 px/s', 'A グレード', '上位 10%（プロ競技レベル）'],
-      ['Tier 3', '熟練の視野防衛者 (Skilled Field Defender)', '11,000 〜 16,999点', '精度 74〜81% / 250〜349 px/s', 'B グレード', '上位 30%（安定した動体視力）'],
+      ['Tier 1', '至高の周辺守護神 (Apex Peripheral Guardian)', '24,000点 以上', '精度 90%+ / 450+ px/s', 'S グレード', '非常に広い有効視野'],
+      ['Tier 2', '精密放射スイーパー (Precision Radial Sweeper)', '17,000 〜 23,999点', '精度 82〜89% / 350〜449 px/s', 'A グレード', 'プロ競技レベル'],
+      ['Tier 3', '熟練の視野防衛者 (Skilled Field Defender)', '11,000 〜 16,999点', '精度 74〜81% / 250〜349 px/s', 'B グレード', '安定した動体視力'],
       ['Tier 4', '発展途上の追跡者 (Developing Parafoveal Tracker)', '6,000 〜 10,999点', '精度 65〜73% / 160〜249 px/s', 'C グレード', '平均層（一般ゲーマー）'],
       ['Tier 5', 'トンネル視野警戒層 (Novice Tunnel Vision Vulnerable)', '6,000点 未満', '精度 65%未満 / 160 px/s 未満', 'D グレード', '初級者（周辺視野の拡張推奨）'],
     ],
@@ -340,7 +341,7 @@ export default function PeripheralThreatSweeperJaPage() {
       />
       <PeripheralThreatSweeperClient
         copy={{
-          title: "周辺視野トレーニング",
+          title: "周辺視野トレーニングゲーム",
           subtitle: "中央を見たまま、周辺の脅威を見つける",
           hudLabels: {
             score: "現在スコア",
