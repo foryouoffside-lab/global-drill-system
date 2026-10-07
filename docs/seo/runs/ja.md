@@ -36,3 +36,4 @@
 | C:/Program Files/Git/ja/drills/visual-tracking/strobe-prediction-pursuit | done | PENDING | docs/seo/research/ja/strobe-prediction-pursuit.md | direct answer; percentile column removed; demand unverified |
 | C:/Program Files/Git/ja/drills/visual-tracking/triangular-pursuit | done | PENDING | docs/seo/research/ja/triangular-pursuit.md | direct answer; percentile column removed; demand unverified |
 | C:/Program Files/Git/ja/drills/visual-tracking/zig-zag-path-pursuit | done | PENDING | docs/seo/research/ja/zig-zag-path-pursuit.md | direct answer; percentile column removed; demand unverified |
+| C:/Program Files/Git/ja/drills/visual-tracking/directional-chaos-pursuit | done | PENDING | docs/seo/research/ja/directional-chaos-pursuit.md | H1 de-stuffed; demand unverified |
