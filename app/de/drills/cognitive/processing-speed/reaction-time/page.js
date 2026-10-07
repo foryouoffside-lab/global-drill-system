@@ -6,12 +6,12 @@ import DrillFooter from '@/components/drill/DrillFooter';
 import { pickSources } from '@/lib/drillSources';
 
 export const metadata = {
-  title: "Wahlreaktionszeit-Test | Entscheidungstempo | SkillDrills",
-  description: "Kostenloser Wahlreaktionszeit-Test im Browser: Wähle das Ziel nach einer wechselnden Regel. Übung für Entscheidungstempo, kein klinischer Test.",
+  title: "Reaktionszeit-Test mit Regelwechsel | SkillDrills",
+  description: "Kostenloser Reaktionszeit-Test im Browser (Wahlreaktion): Wähle das Ziel nach einer wechselnden Regel. Übung für Entscheidungstempo, kein klinischer Test.",
   keywords: ["Reaktionstest", "Reaktionszeit Test", "Reaktionszeit Test online", "Reaktionszeit messen", "Wahlreaktionszeit", "Entscheidungsgeschwindigkeit", "Reaktionstest kostenlos", "visuelle Reaktionszeit"],
   openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
-    title: "Wahlreaktionszeit-Test | Entscheidungstempo | SkillDrills",
-    description: "Kostenloser Wahlreaktionszeit-Test im Browser: Wähle das Ziel nach einer wechselnden Regel. Übung für Entscheidungstempo, kein klinischer Test.",
+    title: "Reaktionszeit-Test mit Regelwechsel | SkillDrills",
+    description: "Kostenloser Reaktionszeit-Test im Browser (Wahlreaktion): Wähle das Ziel nach einer wechselnden Regel. Übung für Entscheidungstempo, kein klinischer Test.",
     type: 'article',
     url: 'https://skilldrills.online/de/drills/cognitive/processing-speed/reaction-time',
     siteName: 'SkillDrills',
@@ -19,8 +19,8 @@ export const metadata = {
   },
   twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: 'summary_large_image',
-    title: "Wahlreaktionszeit-Test | Entscheidungstempo | SkillDrills",
-    description: "Kostenloser Wahlreaktionszeit-Test im Browser: Wähle das Ziel nach einer wechselnden Regel. Übung für Entscheidungstempo, kein klinischer Test.",
+    title: "Reaktionszeit-Test mit Regelwechsel | SkillDrills",
+    description: "Kostenloser Reaktionszeit-Test im Browser (Wahlreaktion): Wähle das Ziel nach einer wechselnden Regel. Übung für Entscheidungstempo, kein klinischer Test.",
   },
   robots: { index: true, follow: true },
   alternates: {
@@ -316,9 +316,9 @@ export default function LocalizedCognitivePage() {
       />
       <EliteNeuroSwitchClient
         copy={{
-          title: "Reaktionszeit-Test",
+          title: "Reaktionszeit-Test mit Regelwechsel",
           subtitle: "Wähle das passende Ziel nach wechselnden Farben und trainiere Entscheidungstempo",
-          startTitle: "Reaktionszeit-Test",
+          startTitle: "Reaktionszeit-Test mit Regelwechsel",
           startSubtitle: "Wahlreaktion • Entscheidungstempo",
           stageCaption: "Klicke das Ziel, das zur aktiven Regel passt. Farbe und Regel wechseln schnell.",
           rulesTitle: "Drill-Anleitung und Punktesystem",
