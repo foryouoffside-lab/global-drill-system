@@ -21,8 +21,8 @@ import { pickSources } from '@/lib/drillSources';
 // ============================================================
 
 export const metadata = {
-  title: "Reaktionstest online | Raster-Ausweichspiel | SkillDrills",
-  description: "Kostenloser Reaktionstest online mit Raster-Ausweichspiel: Erkennen Sie Gefahren im 3x3-Gitter und wechseln Sie schnell in sichere Felder.",
+  title: "Raster-Ausweichspiel | Gefahren erkennen | SkillDrills",
+  description: "Kostenloses Raster-Ausweichspiel online: Erkenne Gefahren im 3x3-Gitter und trainiere deine Reaktion in 15 Leveln direkt im Browser.",
   keywords: [
     "Reaktionstest online kostenlos",
     "Reaktionszeit Test",
@@ -40,8 +40,8 @@ export const metadata = {
     languages: getAlternateLanguages('/drills/physical/coordination/dynamic-grid-evasion'),
   },
   openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
-    title: "Reaktionstest online | Raster-Ausweichspiel | SkillDrills",
-    description: "Kostenloser Reaktionstest online mit Raster-Ausweichspiel: Erkennen Sie Gefahren im 3x3-Gitter und wechseln Sie schnell in sichere Felder.",
+    title: "Raster-Ausweichspiel | Gefahren erkennen | SkillDrills",
+    description: "Kostenloses Raster-Ausweichspiel online: Erkenne Gefahren im 3x3-Gitter und trainiere deine Reaktion in 15 Leveln direkt im Browser.",
     url: 'https://skilldrills.online/de/drills/physical/coordination/dynamic-grid-evasion',
     siteName: 'SkillDrills',
     locale: 'de_DE',
@@ -49,8 +49,8 @@ export const metadata = {
   },
   twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: 'summary_large_image',
-    title: "Reaktionstest online | Raster-Ausweichspiel | SkillDrills",
-    description: "Kostenloser Reaktionstest online mit Raster-Ausweichspiel: Erkennen Sie Gefahren im 3x3-Gitter und wechseln Sie schnell in sichere Felder.",
+    title: "Raster-Ausweichspiel | Gefahren erkennen | SkillDrills",
+    description: "Kostenloses Raster-Ausweichspiel online: Erkenne Gefahren im 3x3-Gitter und trainiere deine Reaktion in 15 Leveln direkt im Browser.",
   },
   robots: { index: true, follow: true },
 };
@@ -364,7 +364,7 @@ export default function DynamicGridEvasionGermanPage() {
       />
       <DynamicGridEvasionClient
         copy={{
-          title: "Reaktionstest online",
+          title: "Raster-Ausweichspiel online",
           subtitle: "Gefahren erkennen und sicher ausweichen • 15 Level",
           rulesTitle: "Trainingsregeln & Punktesystem",
           rules: [
