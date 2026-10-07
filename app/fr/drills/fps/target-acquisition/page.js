@@ -229,7 +229,7 @@ export default function TargetAcquisitionFrPage() {
   const targetAcquisitionGuide = {
     heading: "Aim Trainer Valorant : acquisition de cibles et premier tir",
     intro: [
-      "Pour qui cherche un aim trainer Valorant, ce drill mesure le passage de la détection d'une menace au placement du réticule et au premier tir précis. Il travaille l'acquisition de cibles, la détection visuelle et la précision du premier tir pour Valorant, Counter-Strike 2 et Rainbow Six Siege, où les 300 premières millisecondes de contact visuel pèsent sur le duel.",
+      "Pour qui cherche un aim trainer Valorant, ce drill mesure le passage de la détection d'une menace au placement du réticule et au premier tir précis. Il travaille l'acquisition de cibles, la détection visuelle et la précision du premier tir comme on le rencontre dans les FPS tactiques. Il ne reproduit ni le recul, ni le réseau, ni la carte d'un jeu précis.",
       "Le socle théorique de la prospection visuelle et de l'identification a été posé par Anne Treisman et Garry Gelade (1980) au travers de la Théorie de l'Intégration des Traits. Treisman a prouvé que les propriétés visuelles primaires — comme le contraste de brillance, les couleurs saillantes et l'orientation des bordures — sont perçues en parallèle sur tout le champ oculaire. Ce n'est qu'avec la focalisation de l'attention spatiale que ces éléments fusionnent en une cible ennemie distincte.",
       "En prolongeant le traitement parallèle, le modèle Guided Search de Jeremy M. Wolfe (1994, 2007) décrit l'interaction entre cartes de saillance sensorielle et attentes cognitives. En s'exerçant au tri de contrastes, le cortex visuel apprend à écarter immédiatement les distracteurs d'arrière-plan, réduisant le délai entre stimulus visuel et amorce motrice.",
       "En synthétisant les lois biomécaniques de Paul M. Fitts (1954), la théorie des sous-mouvements optimisés de David E. Meyer et al. (1988) et la chronométrie numérique à haute résolution (Woods et al., 2015), cet exercice prépare les réflexes à bannir toute hésitation pour enchaîner des tirs précis sous pression compétitive.",
@@ -239,11 +239,11 @@ export default function TargetAcquisitionFrPage() {
       title: "Barèmes Scientifiques d'Acquisition de Cibles et Latence de Discrimination",
       headers: ["Niveau de Performance", "Latence d'Acquisition", "Précision du Premier Tir", "Impact Compétitif en Match"],
       rows: [
-        ["Tier 1 (Apex Sentinel / Radiant Pro)", "<260 ms", "95% – 99%+", "Détection instantanée sans hésitation ; tirs tête létaux dès la première balle sans aucune hésitation de tri"],
-        ["Tier 2 (Maître Compétitif / Tier-2 Esports)", "260 – 320 ms", "88% – 95%", "Remarquable vitesse d'identification ; engagement prioritaire précis avec distraction périphérique minime"],
-        ["Tier 3 (Diamant / Ascendant)", "320 – 400 ms", "80% – 88%", "Précision solide au premier coup ; légers retards de 50 à 80 ms en présence de grappes de cibles denses"],
-        ["Tier 4 (Intermédiaire / Or / Platine)", "400 – 500 ms", "70% – 80%", "Tendance au balayage séquentiel lent ; clics sporadiques sur des distracteurs ou dépassements de cible"],
-        ["Tier 5 (Débutant / Novice)", ">500 ms", "<70%", "Désorientation face aux décors chargés ; lenteur d'acquisition causant des défaites régulières lors des premiers tirs"]
+        ["Palier 1 (Très rapide)", "<260 ms", "95% – 99%+", "Détection immédiate, premier clic précis sans hésitation de tri"],
+        ["Palier 2 (Rapide)", "260 – 320 ms", "88% – 95%", "Identification rapide ; engagement prioritaire précis malgré les distracteurs"],
+        ["Palier 3 (Correct)", "320 – 400 ms", "80% – 88%", "Précision solide au premier clic ; léger retard quand les cibles sont nombreuses"],
+        ["Palier 4 (En progression)", "400 – 500 ms", "70% – 80%", "Balayage séquentiel lent ; clics sur des distracteurs ou dépassements de cible"],
+        ["Palier 5 (Débutant)", ">500 ms", "<70%", "Difficulté face aux décors chargés ; acquisition lente de la cible"]
       ],
       note: "La latence d'acquisition correspond au temps écoulé entre l'apparition de la grappe et le premier clic validé sur la cible prioritaire, chronométré avec précision numérique (Woods et al., 2015)."
     },
@@ -279,7 +279,7 @@ export default function TargetAcquisitionFrPage() {
       "Réalisez un flick net vers le centre du blanc et tirez pour engranger +100 PTS (+0,4s de temps bonus).",
       "Neutralisez les cibles restantes par ordre décroissant de brillance pour remporter le bonus de +400 PTS et valider le palier."
     ],
-    audience: "Joueurs compétitifs sur Valorant, Counter-Strike 2, Apex Legends et Overwatch 2 désireux d'améliorer leur détection d'ennemis, de réussir leurs premiers tirs à la tête et d'ignorer la pollution visuelle.",
+    audience: "Joueurs de FPS tactiques qui veulent s'exercer à repérer une cible parmi des distracteurs et à réussir leur premier clic. Aim trainer indépendant, non affilié à Riot Games ni à Valve.",
     faqs: faqSchema.mainEntity.map(e => ({ q: e.name, a: e.acceptedAnswer.text })),
     sources: pickSources('woods2015', 'fitts1954', 'meyer1988', 'treisman1980', 'wolfe2007'),
     related: [
@@ -287,7 +287,7 @@ export default function TargetAcquisitionFrPage() {
       { href: "/fr/drills/fps/flick-shot-training", label: "Entraînement Flick Shot" },
       { href: "/fr/drills/fps/micro-correction-precision", label: "Entraînement de Micro-Correction" },
       { href: "/fr/drills/fps/strafe-tracking", label: "Entraînement Strafe Tracking" },
-      { href: "/fr/drills/fps/180-degree-awareness", label: "Entraînement Conscience 180° Pro" }
+      { href: "/fr/drills/fps/180-degree-awareness", label: "Entraînement Conscience 180°" }
     ]
   };
 
