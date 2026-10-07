@@ -145,10 +145,10 @@ const faqSchema = {
     },
     {
       '@type': 'Question',
-      name: 'How does this drill improve FPS recoil control and flick muscle memory?',
+      name: 'Does this drill help with FPS recoil patterns?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Mastering weapon recoil patterns in tactical FPS games (such as CS2, Valorant, or Apex Legends) requires storing geometric vector sequences in working memory and translating them into physical mouse motor pulses without visual guidance. This drill directly exercises that precise visual-motor coupling.',
+        text: 'Recoil patterns in tactical shooters involve remembering a shape and reproducing it with the mouse, which is the same kind of task this drill practises on a path. This site has no study showing a transfer to any specific game, so use it as visual-motor memory practice.',
       },
     },
     {
@@ -250,10 +250,10 @@ const guideProps = {
     title: 'Pattern Memory Game & Spatial Recall Benchmarks',
     headers: ['Tier', 'Rank Title', 'Score Benchmark', 'Peak Level', 'Path Accuracy', 'Editorial Band'],
     rows: [
-      ['Tier 1', 'Apex Pattern Master', '17,000+ pts', 'Level 12–15', '> 92% accuracy', 'Exceptional (Top 0.5%)'],
-      ['Tier 2', 'Elite Sequence Tracer', '13,000–16,999 pts', 'Level 9–11', '85–91% accuracy', 'Advanced (Top 5%)'],
-      ['Tier 3', 'Advanced Spatial Navigator', '9,500–12,999 pts', 'Level 6–8', '76–84% accuracy', 'Strong (Top 20%)'],
-      ['Tier 4', 'Intermediate Waypoint Recaller', '6,000–9,499 pts', 'Level 3–5', '65–75% accuracy', 'Typical (Top 50%)'],
+      ['Tier 1', 'Apex Pattern Master', '17,000+ pts', 'Level 12–15', '> 92% accuracy', 'Exceptional'],
+      ['Tier 2', 'Elite Sequence Tracer', '13,000–16,999 pts', 'Level 9–11', '85–91% accuracy', 'Advanced'],
+      ['Tier 3', 'Advanced Spatial Navigator', '9,500–12,999 pts', 'Level 6–8', '76–84% accuracy', 'Strong'],
+      ['Tier 4', 'Intermediate Waypoint Recaller', '6,000–9,499 pts', 'Level 3–5', '65–75% accuracy', 'Typical'],
       ['Tier 5', 'Novice Trajectory Learner', '< 6,000 pts', 'Level 1–2', '< 65% accuracy', 'Starting Out (Baseline)'],
     ],
     note: 'Empirical standards derived from visuospatial working memory research (Baddeley & Hitch 1974, Cowan 2001) and serial motor sequencing performance (Lashley 1951, Woodworth 1899).',

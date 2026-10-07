@@ -7,3 +7,4 @@
 | /drills/cognitive/focus/distraction-fighter | done | e77628f8 | docs/seo/research/en/distraction-fighter.md | FAQ claim softened |
 | /drills/cognitive/processing-speed/rsvp-reader | done | 2ab4f047 | docs/seo/research/en/rsvp-reader.md | FAQ claim softened; percentile labels removed |
 | /drills/cognitive/processing-speed/symbol-matching | done | e4482908 | docs/seo/research/en/symbol-matching.md | title changed to measured vocabulary; non-clinical label kept |
+| /drills/physical/balance-training/stability-challenge | done | 31c26903 | docs/seo/research/en/stability-challenge.md | demand not verified; mouse accuracy test 76 noted |
