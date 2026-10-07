@@ -23,3 +23,6 @@ Date: 2026-10-08 · Market: Germany, `de-DE` · Tools: autocomplete.py (gl=de hl
 ## Scores (B3)
 - `Reaktionstest`: demand 4, ease 2, intent fit 3. `Reaktionszeit Test`: demand 3, ease 3, intent fit 4. Decision: keep title `Reaktionstest online: Reaktionszeit in ms`.
 - Trend: not available, 2026-10-08.
+
+## Claim fix 2026-10-08
+- Removed unsupported "Sub-Millisekunden" precision wording from FAQ/body (performance.now resolution is browser-dependent, about 1 ms); schema and visible text share the same source.
