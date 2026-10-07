@@ -161,10 +161,10 @@ const faqSchema = {
     },
     {
       '@type': 'Question',
-      name: 'How does this drill transfer to tactical FPS games like Valorant and Apex Legends?',
+      name: 'Does this drill help in tactical FPS games like Valorant and Apex Legends?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Competitive shooters feature area-of-effect abilities (molotovs, grenade clusters, air strikes) that require instant peripheral hazard identification and evasive repositioning without breaking crosshair awareness. This drill builds that exact visual-spatial reflex loop.',
+        text: 'Shooters feature area-of-effect hazards that call for spotting danger at the edge of view and moving away quickly, which is the kind of reaction this drill practises. This site has no study showing a transfer to any specific game, so use it as reaction practice.',
       },
     },
     {
@@ -259,7 +259,7 @@ const guideProps = {
     title: 'Dynamic Grid Evasion & Spatial Reflex 5-Tier Performance Benchmarks',
     headers: ['Performance Tier', 'Mastery Rank Title', 'Score Threshold', 'Level Reached', 'Warning Window', 'Neuromotor Evasion Profile'],
     rows: [
-      ['Tier 1: Apex Grid Evader', 'Apex Grid Evader', '17,000+ pts', 'Level 12 – 15', '0.45 – 0.60s window', 'Top 0.1% parallel pre-attentive feature extraction; flawless predictive flick evasion within 0.45s critical blast windows (Treisman 1980; Posner 1980)'],
+      ['Tier 1: Apex Grid Evader', 'Apex Grid Evader', '17,000+ pts', 'Level 12 – 15', '0.45 – 0.60s window', 'Parallel pre-attentive feature extraction; flawless predictive flick evasion within 0.45s critical blast windows (Treisman 1980; Posner 1980)'],
       ['Tier 2: Master Spatial Scanner', 'Master Spatial Scanner', '13,000 – 16,999 pts', 'Level 9 – 11', '0.65 – 0.80s window', 'Rapid covert visual orientation and fluid ballistic trajectory execution onto safe grid sectors without hesitation (Woodworth 1899)'],
       ['Tier 3: Proficient Hazard Dodger', 'Proficient Hazard Dodger', '9,500 – 12,999 pts', 'Level 6 – 8', '0.85 – 1.05s window', 'Competitive gaming standard; consistent visual detection of 3–5 hazard cells with minimal motor overshoot'],
       ['Tier 4: Intermediate Sector Evader', 'Intermediate Sector Evader', '6,000 – 9,499 pts', 'Level 3 – 5', '1.10 – 1.25s window', 'Recreational average; occasional combo drops under multiple concurrent hazard activations due to serial scanning delay'],
