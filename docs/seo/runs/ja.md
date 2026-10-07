@@ -27,3 +27,4 @@
 | C:/Program Files/Git/ja/drills/physical/reflex-training/quick-dodge | done | PENDING | docs/seo/research/ja/quick-dodge.md | 避けゲー title; demand unverified |
 | C:/Program Files/Git/ja/drills/physical/reflex-training/reaction-chain | done | PENDING | docs/seo/research/ja/reaction-chain.md | オーバーフリック改善; demand unverified |
 | C:/Program Files/Git/ja/drills/reaction-speed/reaction-game | done | PENDING | docs/seo/research/ja/reaction-game.md | 反応速度ゲーム (deconflict テスト); demand unverified in Bing |
+| C:/Program Files/Git/ja/drills/reaction-speed/saccadic-gallery | done | PENDING | docs/seo/research/ja/saccadic-gallery.md | direct answer; medical-sounding labels removed |
