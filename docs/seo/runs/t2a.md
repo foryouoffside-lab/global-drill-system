@@ -10,3 +10,4 @@
 | /drills/physical/balance-training/stability-challenge | done | 31c26903 | docs/seo/research/en/stability-challenge.md | demand not verified; mouse accuracy test 76 noted |
 | /drills/physical/coordination/complex-pattern | done | c0aeae41 | docs/seo/research/en/complex-pattern.md | percentile labels removed; FAQ hedged |
 | /drills/physical/coordination/cross-body-movement | done | 8e17666a | docs/seo/research/en/cross-body-movement.md | Bing unavailable; FAQ hedged |
+| /drills/physical/coordination/dynamic-grid-evasion | done | 4ed64eed | docs/seo/research/en/dynamic-grid-evasion.md | intent fit weak (PE-lesson SERP); FAQ hedged |
