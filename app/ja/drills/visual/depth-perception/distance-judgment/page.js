@@ -69,14 +69,14 @@ export default function JapaneseDistanceJudgmentPage() {
       { "@type": "ListItem", "position": 1, "name": "ホーム", "item": "https://skilldrills.online/ja" },
       { "@type": "ListItem", "position": 2, "name": "ドリル一覧", "item": "https://skilldrills.online/ja/drills" },
       { "@type": "ListItem", "position": 3, "name": "視覚トレーニング", "item": "https://skilldrills.online/ja/drills/visual" },
-      { "@type": "ListItem", "position": 4, "name": "深視力検査 (Distance Judgment)", "item": "https://skilldrills.online/ja/drills/visual/depth-perception/distance-judgment" }
+      { "@type": "ListItem", "position": 4, "name": "深視力検査", "item": "https://skilldrills.online/ja/drills/visual/depth-perception/distance-judgment" }
     ]
   };
 
   const softwareSchema = {
     "@context": "https://schema.org",
     "@type": "SoftwareApplication", "sameAs": ["https://en.wikipedia.org/wiki/Depth_perception"],
-    "name": "深視力検査・三桿法トレーニング (Distance Judgment)",
+    "name": "深視力検査・三桿法トレーニング",
     "applicationCategory": "HealthApplication",
     "operatingSystem": "Web Browser",
     "offers": { "@type": "Offer", "price": "0", "priceCurrency": "JPY" },
@@ -85,7 +85,7 @@ export default function JapaneseDistanceJudgmentPage() {
       "オプティカルルーミング（網膜像拡大率）によるミリ秒単位の到達予測判定",
       "ターゲット深度プレーンとの誤差率測定（5%未満でパーフェクト判定）",
       "進行に応じたアプローチ速度の動的加速シミュレーション",
-      "プライバシー完全配慮のローカル保存（外部サーバー送信なし）"
+      "ローカル保存（練習スコアは外部送信しない）"
     ],
     "url": "https://skilldrills.online/ja/drills/visual/depth-perception/distance-judgment",
     "dateModified": "2026-09-11"
@@ -95,7 +95,7 @@ export default function JapaneseDistanceJudgmentPage() {
     "@context": "https://schema.org",
     "@type": "WebApplication",
     "name": "深視力検査 (三桿法) – 無料オンライン深視力シミュレーター | SkillDrills",
-    "alternateName": "深視力テスト (Distance Judgment)",
+    "alternateName": "深視力テスト",
     "url": "https://skilldrills.online/ja/drills/visual/depth-perception/distance-judgment",
     "dateModified": "2026-09-11",
     "description": "大型免許・中型免許・二種免許の取得や更新時に課される深視力検査（三桿法）をWeb上で練習できるシミュレーター。奥行き知覚と遠近感のタイミングを精密に測定。",
@@ -113,7 +113,7 @@ export default function JapaneseDistanceJudgmentPage() {
 const videoGameSchema = {
   "@context": "https://schema.org",
   "@type": "VideoGame",
-  "name": "深視力検査 (Distance Judgment Simulator)",
+  "name": "深視力検査 シミュレーター",
   "url": "https://skilldrills.online/ja/drills/visual/depth-perception/distance-judgment",
   "description": "Interactive 3D depth perception and distance judgment simulator. Train stereoscopic visual alignment and binocular parallax.",
   "dateModified": "2026-09-11",
@@ -261,7 +261,7 @@ const howToSchema = {
       "深視力（奥行き知覚・立体視・遠近感）とは、対象物がどれだけ離れているか、また空間内でどちらが手前にありどちらが奥にあるかという相対的な距離の差を三次元的に正確に把握する高度な視覚認知機能です。日本の道路交通法では、車体が大きく死角の多い大型車や、多数の乗客を乗せるバス・タクシー等の安全運行において極めて重要な能力と定められており、大型第一種・第二種免許、中型免許、準中型免許、牽引免許の取得・更新時に三桿法（さんかんほう）による深視力検査が厳格に義務付けられています。",
       "本ドリルは、Harvey J. Howard（1919）が航空適性検査のために考案した三桿法装置（Howard-Dolman apparatus）の幾何学的原理と、David N. Lee（1976）やDavid Regan & Kenneth I. Beverley（1978）が提唱した生態学的光学的拡大理論（オプティカルルーミングおよび接触余裕時間τ）をWebブラウザ上で忠実にシミュレーション化したものです。遠景から接近する3Dターゲットが中央の基準深度リングと完全に同一平面上に達した瞬間を迎撃することで、視覚皮質における動的奥行き判定能力と運動タイミング制御を集中的に鍛え上げます。",
       "測定精度とディスプレイハードウェア特性について：迎撃時の深度ズレはクライアント端末の高精度タイマーAPI（performance.now()）によってミリ秒単位でリアルタイム記録され、基準直径に対する相対誤差率（|実測値 - 基準値| / 基準値）として即時算出されます。通常の60Hzモニターでは約16.7msのフレーム更新間隔が生じるため、可能であれば144Hz（約6.9ms）以上のゲーミングモニターで練習すると、より精密な網膜像拡大勾配が得られ、正確なタイミング感覚を養うことができます（Woods et al., 2015）。",
-      "プライバシーとデータ保護方針：SkillDrillsでは利用者の個人情報、検査スコア、眼科的指標などを外部サーバーに送信または収集することは一切ありません。すべての練習スコア、セッション履歴、レベル進捗は利用者の端末内（ブラウザのローカルストレージ）にのみ安全に保持されます。"
+      "プライバシーとデータ保護方針：SkillDrillsでは利用者の個人情報、検査スコア、眼科的指標などをこのページの練習では外部サーバーに送信しません（サイト全体の匿名アクセス計測はプライバシーポリシーをご覧ください）。すべての練習スコア、セッション履歴、レベル進捗は利用者の端末内（ブラウザのローカルストレージ）に保存されます。"
     ],
     benchmarks: {
       title: "深視力判定および深度誤差基準（エディトリアルガイド）",
@@ -348,7 +348,7 @@ const howToSchema = {
       />
       <DistanceJudgmentClient
         copy={{
-          title: "深視力検査 (Distance Judgment)",
+          title: "深視力検査",
           subtitle: "三桿法の深視力練習・奥行知覚テスト",
           caption: "深視力（奥行き知覚）とは、空間内の物体がどれだけ離れているか、前後の位置関係を正確に把握する視覚機能です。網膜像の両眼視差（Julesz, 1971）と、接近する物体の輪郭拡大率（オプティカル・ルーミングによる接触余裕時間τの算出: Lee, 1976; Regan & Beverley, 1978）が中枢神経系で処理されます。平面ディスプレイ上では両眼視差が一定となるため、本ドリルは運動視差と光学的拡大率による動的距離判定能力（Howard, 1919の三桿法に連動）を集中的に測定・強化します。",
           statScore: "スコア",
@@ -383,7 +383,7 @@ const howToSchema = {
           aboutTitle: "深視力検査と三桿法トレーニングについて",
           overviewTitle: "深視力検査（三桿法）とは何か？",
           overviewLead: "深視力とは、物体の遠近感や立体感、動く物との距離の差を正しく把握する視力のことです。日本の道路交通法では、大型自動車免許、中型免許、牽引免許、第二種免許（タクシー・バス）の取得および更新時に、三桿法（さんかんほう）と呼ばれる深視力検査が義務付けられています。",
-          overviewBody: "三桿法では、2.5m離れた位置から覗き込み、3本の棒のうち中央の棒が前後に移動します。3本が一直線に並んだと感じた瞬間にボタンを押し、3回の平均誤差が20mm（2cm）以内であれば合格となります。本シミュレーターは、奥から接近するターゲットが特定深度の基準リングに合致する瞬間を捉える動的迎撃方式を採用しており、三桿法で最も重要となるオプティカルルーミング（光学的拡大率）の知覚を徹底的に訓練できます。",
+          overviewBody: "三桿法では、2.5m離れた位置から覗き込み、3本の棒のうち中央の棒が前後に移動します。3本が一直線に並んだと感じた瞬間にボタンを押し、3回の平均誤差が20mm（2cm）以内であれば合格となります。本シミュレーターは、奥から接近するターゲットが特定深度の基準リングに合致する瞬間を捉える動的迎撃方式を採用しており、三桿法で最も重要となるオプティカルルーミング（光学的拡大率）の知覚を訓練できます。",
           aboutCards: [
             { iconBg: "bg-blue-600", title: "対象者", text: "大型・中型・二種免許の更新を控えているドライバー、フォークリフト等の重機オペレーター、球技アスリート、立体視に不安のある方。" },
             { iconBg: "bg-cyan-600", title: "鍛えられる能力", text: "奥行き知覚、接近物体の輪郭拡大率（ルーミング）の検知力、動体認知速度、タイミングの再現性。" },
@@ -401,7 +401,7 @@ const howToSchema = {
               title: "オプティカルルーミングと到達予測（Time-to-Contact）",
               paragraphs: [
                 "物体が自分に向かって接近してくる時、網膜上の像は線形ではなく加速度的に拡大します。脳はこの拡大率（τ変数）を計算して『あと何ミリ秒で到達するか』を予測しています（Lee, 1976）。",
-                "本ドリルで加速するターゲットの到達タイミングを繰り返し体感することで、視覚皮質におけるルーミング処理速度が向上し、三桿法の実機でも落ち着いて並びを判定できるようになります。"
+                "本ドリルで加速するターゲットの到達タイミングを繰り返し体感することで、到達のタイミングに慣れる練習になります。実際の検査の合否を保証するものではありません。"
               ]
             }
           ]
