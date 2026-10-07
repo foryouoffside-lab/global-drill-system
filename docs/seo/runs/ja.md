@@ -38,3 +38,4 @@
 | C:/Program Files/Git/ja/drills/visual-tracking/zig-zag-path-pursuit | done | PENDING | docs/seo/research/ja/zig-zag-path-pursuit.md | direct answer; percentile column removed; demand unverified |
 | C:/Program Files/Git/ja/drills/visual-tracking/directional-chaos-pursuit | done | PENDING | docs/seo/research/ja/directional-chaos-pursuit.md | H1 de-stuffed; demand unverified |
 | C:/Program Files/Git/ja/drills/visual-tracking/dynamic-evasion-pursuit | done | PENDING | docs/seo/research/ja/dynamic-evasion-pursuit.md | H1 de-stuffed; demand unverified |
+| C:/Program Files/Git/ja/drills/visual-tracking/ghosting-suppress-pursuit | done | PENDING | docs/seo/research/ja/ghosting-suppress-pursuit.md | H1 shortened; demand unverified |
