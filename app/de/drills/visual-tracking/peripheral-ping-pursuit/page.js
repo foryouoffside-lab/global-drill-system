@@ -15,7 +15,7 @@ import { pickSources } from '@/lib/drillSources';
 // ============================================================
 
 export const metadata = {
-  title: "Peripheres Sehen trainieren | SkillDrills",
+  title: "Peripheres Sehen üben | Randreize erkennen | SkillDrills",
   description: "Verfolge ein zentrales Ziel und reagiere auf kurze Randreize, ohne den Blick abzuwenden. Kostenlose Browserübung mit Reaktionszeit und Blickstabilität.",
   keywords: [
     "peripheres sehen trainieren",
@@ -30,7 +30,7 @@ export const metadata = {
     "peripheres sehen online üben"
   ],
   openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
-    title: "Peripheres Sehen trainieren | SkillDrills",
+    title: "Peripheres Sehen üben | Randreize erkennen | SkillDrills",
     description: "Zentrales Ziel verfolgen und Randreize erkennen, ohne den Blick abzuwenden. Kostenlose Übung direkt im Browser.",
     type: "website",
     url: "https://skilldrills.online/de/drills/visual-tracking/peripheral-ping-pursuit",
@@ -39,7 +39,7 @@ export const metadata = {
   },
   twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: "summary_large_image",
-    title: "Peripheres Sehen trainieren | SkillDrills",
+    title: "Peripheres Sehen üben | Randreize erkennen | SkillDrills",
     description: "Übe zentrale Blickverfolgung und die Wahrnehmung kurzer Randreize direkt im Browser.",
   },
   robots: { index: true, follow: true },
