@@ -2,8 +2,8 @@ import MotorDrillsClient from './MotorDrillsClient';
 import { getAlternateLanguages } from '@/lib/i18n/locales';
 
 export const metadata = {
-  title: 'Mouse Precision Training & Aim Drills | SkillDrills',
-  description: 'Free browser drills for mouse accuracy, aim control, CPS clicking, keyboard speed, and hand-eye coordination. No sign-up.',
+  title: 'CPS Test, Aim Trainer & Mouse Precision Drills | SkillDrills',
+  description: 'Free CPS test, aim trainer and mouse precision drills for click speed, accuracy, steady-hand control and keyboard speed. 8 drills, no sign-up.',
   keywords: [
     'mouse precision training', 'mouse accuracy test', 'aim trainer online',
     'motor skills drills', 'hand eye coordination training', 'click speed test',
@@ -15,8 +15,8 @@ export const metadata = {
     'free browser motor drills', 'no download aim trainer', 'how to improve mouse accuracy',
   ],
   openGraph: {
-    title: 'Mouse Precision Training & Aim Drills | SkillDrills',
-    description: 'Free browser drills for mouse accuracy, aim control, CPS clicking, keyboard speed, and hand-eye coordination. No sign-up.',
+    title: 'CPS Test, Aim Trainer & Mouse Precision Drills | SkillDrills',
+    description: 'Free CPS test, aim trainer and mouse precision drills for click speed, accuracy, steady-hand control and keyboard speed. 8 drills, no sign-up.',
     type: 'website',
     url: 'https://skilldrills.online/drills/motor',
     siteName: 'SkillDrills',
@@ -30,8 +30,8 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Mouse Precision Training & Aim Drills | SkillDrills',
-    description: 'Free browser drills for mouse accuracy, aim control, CPS clicking, keyboard speed, and hand-eye coordination. No sign-up.',
+    title: 'CPS Test, Aim Trainer & Mouse Precision Drills | SkillDrills',
+    description: 'Free CPS test, aim trainer and mouse precision drills for click speed, accuracy, steady-hand control and keyboard speed. 8 drills, no sign-up.',
     images: ['https://skilldrills.online/icons/icon-512x512.png'],
   },
   robots: { index: true, follow: true },
@@ -45,70 +45,70 @@ const faqSchema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
   "inLanguage": "en-US",
-  "dateModified": "2026-09-20",
+  "dateModified": "2026-10-08",
   "mainEntity": [
     {
       "@type": "Question",
-      "name": "How do online motor skills drills improve hand-eye coordination?",
+      "name": "What is a good CPS score?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Motor skills drills train the visuomotor feedback loop linking retinal image acquisition in the visual cortex to motor planning in the cerebellum and efferent signals in the motor cortex. By executing high-frequency micro-adjustments, rapid mouse clicks, and path-tracing challenges, your nervous system reduces sensorimotor delay, translating visual target changes into precise physical movement in under 180 milliseconds."
+        "text": "Plain clicking on public click-speed tests is commonly reported at roughly 6 to 7 clicks per second over a few seconds, and faster techniques such as jitter or butterfly clicking can score higher on some mice. Results depend heavily on your mouse, test length and technique, so use your own repeated scores as the baseline."
       }
     },
     {
       "@type": "Question",
-      "name": "What is a good CPS (Clicks Per Second) score, and what are the main clicking techniques?",
+      "name": "How do motor skills drills help hand-eye coordination?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "An average person achieves 6 to 8 clicks per second (CPS) using standard finger tapping. Competitive gamers utilize specialized techniques: Jitter Clicking (tensing forearm muscles to vibrate the finger onto the switch) yields 10 to 14 CPS, while Butterfly Clicking (alternating index and middle fingers on a dual-registering switch) can exceed 15 to 22 CPS. For long-term health and precision, controlled jitter or standard rhythmic tapping is recommended to prevent repetitive strain injury (RSI)."
+        "text": "They give you repeatable aiming, tracing and click tasks that pair what you see with how you move the mouse. Practice usually improves the tasks you train; how far that carries into sport or daily life varies by person, and these drills are not a clinical test."
       }
     },
     {
       "@type": "Question",
-      "name": "How does mouse path-tracing and steady hand training eliminate cursor jitter?",
+      "name": "How can I improve mouse accuracy?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Cursor overshooting and erratic jitter stem from weak antagonist muscle deceleration—the inability of opposing hand muscles to brake momentum smoothly. Steady hand games and sinusoidal wave-tracing drills force continuous sub-pixel coordinate tracking, conditioning stabilizing muscle fibers in the wrist and forearm to suppress involuntary micro-tremors during fine pointing tasks."
+        "text": "Start with Aim Trainer for target acquisition, then Steady Hand Game and Mouse Tracing Game for slow, controlled movement. Keep desk, mouse, sensitivity and screen the same between sessions, practise in short blocks, and compare accuracy before speed."
       }
     },
     {
       "@type": "Question",
-      "name": "What is Fitts's Law, and how does it optimize mouse movement speed and accuracy?",
+      "name": "What is Fitts's law?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Fitts's Law is an established human-computer interaction principle stating that movement time is a logarithmic ratio of target distance divided by target width (MT = a + b * log2(2D/W)). Motor precision drills condition two-phase motor execution: an initial ballistic high-velocity sweep covering 80% to 90% of the distance, followed by a rapid sensory-guided micro-deceleration to cleanly acquire the target without bouncing or overshooting."
+        "text": "Fitts's law (Fitts, 1954) predicts that the time to hit a target grows with its distance and shrinks as the target gets wider, commonly written MT = a + b log2(2D/W). It is why small, far targets take longer to click and why precision drills use varied target sizes."
       }
     },
     {
       "@type": "Question",
-      "name": "Why is keyboard dexterity and finger sequencing crucial for gaming and typing speed?",
+      "name": "Which motor drill should I start with?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Keyboard dexterity relies on digit independence, specifically overcoming the anatomical tendon linkage between the ring and pinky fingers. Finger sequencing and keyboard recognition drills isolate finger actuation patterns, reducing chord transition latency, boosting touch-typing words-per-minute (WPM), and eliminating accidental key presses during high actions-per-minute (APM) gameplay."
+        "text": "Start with CPS Test for click speed, Aim Trainer for mouse accuracy, Steady Hand Game for fine control, and Keyboard Speed Test or Sequence Aim Trainer for input sequencing. Precision Flick Shot and Drag and Drop Test add fast movements and cursor timing."
       }
     },
     {
       "@type": "Question",
-      "name": "What grip and posture provide the highest mouse precision and wrist stability?",
+      "name": "Are these motor skills tests clinical or diagnostic?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Ergonomists and pro esports players recommend an anchored forearm posture where the fleshy part of the forearm rests flat on the desk or mousepad, avoiding hard wrist pressure that compresses the carpal tunnel. A relaxed claw or hybrid fingertip grip allows fingers to control minute vertical micro-corrections while the wrist and arm manage broader directional sweeps."
+        "text": "No. They are free browser practice tools for mouse and keyboard skill. They do not assess motor development or medical conditions; for those concerns see a qualified clinician."
       }
     },
     {
       "@type": "Question",
-      "name": "How long does it take to develop muscle memory for fine motor control?",
+      "name": "How accurate are browser-based motor and mouse tests?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Neural motor adaptation begins within the first 15 to 20 minutes of deliberate practice, but permanent motor consolidation requires 2 to 4 weeks of consistent training (15 minutes daily, 4 to 6 days per week). Sleep plays a critical biological role: slow-wave and REM sleep cycles consolidate motor memory traces from the cerebellum into the primary motor cortex (M1), converting deliberate effort into subconscious procedural reflex."
+        "text": "Browser timers are precise, but the input and display path is not: results are bounded by display refresh rate (about 16 ms per frame at 60 Hz, 8 ms at 120 Hz) and mouse polling rate. Scores are best used to track your own progress on the same hardware, not to compare with people on different setups."
       }
     },
     {
       "@type": "Question",
-      "name": "How accurate are browser-based motor and mouse tests compared to desktop applications?",
+      "name": "Do the motor drills work on phones and tablets?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Browser timers are precise; the browser's input and display path is not. performance.now() resolves to 0.1ms, but end-to-end measurement is bounded by display refresh (about 8ms at 120Hz, 16ms at 60Hz) and mouse polling (about 1ms at 1000Hz, 8ms at 125Hz). These drills therefore resolve real differences of roughly 5ms and upward, which is enough to track your own progress on the same hardware and not enough to compare your score against someone else's on different hardware. A desktop application with raw input access can do better; any site claiming sub-millisecond precision from a web browser is overstating the platform."
+        "text": "They are designed for a desktop browser with a mouse and keyboard. Touchscreens change the task, so scores from a phone are not comparable with mouse scores."
       }
     }
   ]
@@ -128,9 +128,9 @@ const collectionSchema = {
   "@type": "CollectionPage",
   "inLanguage": "en-US",
   "dateModified": "2026-09-20",
-  "name": "Mouse Precision Training & Aim Drills",
+  "name": "CPS Test, Aim Trainer & Mouse Precision Drills",
   "url": "https://skilldrills.online/drills/motor",
-  "description": "8 free browser drills for mouse accuracy, aim control, CPS clicking, keyboard speed, and hand-eye coordination. No sign-up required.",
+  "description": "Free CPS test, aim trainer and mouse precision drills for click speed, accuracy, steady-hand control and keyboard speed. 8 drills, no sign-up.",
   "author": { "@type": "Organization", "name": "SkillDrills", "url": "https://skilldrills.online" },
   "hasPart": [
     // Hand-Eye Coordination (3 Drills)
