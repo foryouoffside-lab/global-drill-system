@@ -13,3 +13,4 @@
 | /drills/physical/coordination/dynamic-grid-evasion | done | 4ed64eed | docs/seo/research/en/dynamic-grid-evasion.md | intent fit weak (PE-lesson SERP); FAQ hedged |
 | /drills/physical/fitness/agility-ladder | done | 82ea1ba1 | docs/seo/research/en/agility-ladder.md | intent mismatch logged for owner; FAQ hedged |
 | /drills/physical/fitness/jump-sequence | done | 7bc49543 | docs/seo/research/en/jump-sequence.md | no demand evidence for primary; claims hedged |
+| /drills/physical/fitness/speed-drill | done | a7ec030c | docs/seo/research/en/speed-drill.md | intent mismatch fixed; FAQ added (11 items) |
