@@ -20,7 +20,7 @@ import { pickSources } from '@/lib/drillSources';
 // ============================================================
 
 export const metadata = {
-  title: "Maus bremsen beim Aim | Reflex-Test",
+  title: "Overflicking stoppen | Flick-Stopp-Training",
   description: "Kostenloser Aim-Drill im Browser. Triff bewegte Ziele, stoppe den Cursor sauber und trainiere Mauspräzision sowie Overflick-Kontrolle.",
   keywords: [
     "aim trainer kostenlos online",
@@ -39,7 +39,7 @@ export const metadata = {
     languages: getAlternateLanguages('/drills/physical/reflex-training/reaction-chain'),
   },
   openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
-    title: "Maus bremsen beim Aim | Reflex-Test",
+    title: "Overflicking stoppen | Flick-Stopp-Training",
     description: "Triff bewegte Ziele, stoppe den Cursor sauber und trainiere Mauspräzision sowie Overflick-Kontrolle im Browser.",
     url: 'https://skilldrills.online/de/drills/physical/reflex-training/reaction-chain',
     siteName: 'SkillDrills',
@@ -48,7 +48,7 @@ export const metadata = {
   },
   twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: 'summary_large_image',
-    title: "Maus bremsen beim Aim | Reflex-Test",
+    title: "Overflicking stoppen | Flick-Stopp-Training",
     description: "Bewegte Ziele treffen, den Cursor sauber stoppen und Overflick-Kontrolle trainieren.",
   },
 };
@@ -343,7 +343,7 @@ export default function LocalizedReactionChainPageDe() {
       />
       <ReactionChainClient
         copy={{
-          title: "Maus bremsen beim Aim",
+          title: "Overflicking stoppen",
           subtitle: "Zielen, treffen, den Cursor sauber stoppen",
           badge: "Impulskontrolle Reflex-Test",
           description: "Eine schnelle Bewegung punktgenau auf einem Ziel anzuhalten ist neuromotorisch weitaus anspruchsvoller als das Beschleunigen. Ausführung und Hemmung konkurrieren als unabhängige Prozesse im Gehirn (Logan & Cowan, 1984). Verzögert sich das Bremsen, führt die Trägheit zu fatalen Overflicks (Woodworth, 1899). Fangen Sie anstürmende Knoten ab und stoppen Sie den Cursor abrupt auf den Punkt.",
