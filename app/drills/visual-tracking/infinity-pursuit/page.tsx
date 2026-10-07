@@ -6,7 +6,7 @@ import { pickSources } from '@/lib/drillSources';
 
 export const metadata = {
   title: "Figure-8 Eye Exercise – Infinity Pursuit | SkillDrills",
-  description: "Track targets along continuous figure-8 infinity loops. Train bilateral ocular motor coordination and midline crossing. Free, no sign-up.",
+  description: "Free figure-8 eye tracking exercise: follow a target around a continuous infinity loop in your browser. Adjustable speed, no sign-up.",
   keywords: [
     "infinity pursuit",
     "figure-8 eye tracking exercise",
@@ -28,7 +28,7 @@ export const metadata = {
   robots: { index: true, follow: true },
   openGraph: {
     title: "Figure-8 Eye Exercise – Infinity Pursuit | SkillDrills",
-    description: "Track targets along continuous figure-8 infinity loops. Train bilateral ocular motor coordination and midline crossing. Free, no sign-up.",
+    description: "Free figure-8 eye tracking exercise: follow a target around a continuous infinity loop in your browser. Adjustable speed, no sign-up.",
     url: "https://skilldrills.online/drills/visual-tracking/infinity-pursuit",
     siteName: 'SkillDrills',
     locale: 'en_US',
@@ -37,7 +37,7 @@ export const metadata = {
   twitter: {
     card: 'summary_large_image',
     title: "Figure-8 Eye Exercise – Infinity Pursuit | SkillDrills",
-    description: "Track targets along continuous figure-8 infinity loops. Train bilateral ocular motor coordination and midline crossing. Free, no sign-up.",
+    description: "Free figure-8 eye tracking exercise: follow a target around a continuous infinity loop in your browser. Adjustable speed, no sign-up.",
   },
 };
 
@@ -77,7 +77,7 @@ const softwareApplicationSchema = {
     "price": "0",
     "priceCurrency": "USD"
   },
-  "description": "Track targets along continuous figure-8 infinity loops. Train bilateral ocular motor coordination and midline crossing. Free, no sign-up.",
+  "description": "Free figure-8 eye tracking exercise: follow a target around a continuous infinity loop in your browser. Adjustable speed, no sign-up.",
   "url": "https://skilldrills.online/drills/visual-tracking/infinity-pursuit",
   "publisher": {
     "@type": "Organization",
@@ -108,7 +108,7 @@ const videoGameSchema = {
   "@type": "VideoGame",
   "name": "Infinity Pursuit",
   "url": "https://skilldrills.online/drills/visual-tracking/infinity-pursuit",
-  "description": "Track targets along continuous figure-8 infinity loops. Train bilateral ocular motor coordination and midline crossing. Free, no sign-up.",
+  "description": "Free figure-8 eye tracking exercise: follow a target around a continuous infinity loop in your browser. Adjustable speed, no sign-up.",
   "genre": [
     "Action",
     "Eye Tracking",
@@ -131,7 +131,7 @@ const howToSchema = {
   "@context": "https://schema.org",
   "@type": "HowTo",
   "name": "How to Train Eye Tracking with Infinity Pursuit",
-  "description": "Track targets along continuous figure-8 infinity loops. Train bilateral ocular motor coordination and midline crossing. Free, no sign-up.",
+  "description": "Free figure-8 eye tracking exercise: follow a target around a continuous infinity loop in your browser. Adjustable speed, no sign-up.",
   "dateModified": "2026-09-12",
   "step": [
     {
@@ -238,7 +238,7 @@ const faqSchema = {
       "name": "How does display refresh rate improve figure-8 pursuit smoothness?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Smooth curvature tracking requires dense spatial-temporal updates. A 144Hz or 240Hz refresh rate delivers sub-7ms frame updates, providing the ocular motor system with a seamless continuous trajectory (Woods et al., 2015)."
+        "text": "Smooth curvature tracking requires dense spatial-temporal updates. A 144Hz or 240Hz refresh rate delivers frame updates every 7 ms or less, providing the ocular motor system with a seamless continuous trajectory (Woods et al., 2015)."
       }
     },
     {
@@ -255,6 +255,7 @@ const faqSchema = {
 const guide = {
   heading: "Infinity Pursuit - Ocular Motor Training Standards",
   intro: [
+    "Infinity Pursuit is a free figure-8 eye tracking exercise. A target travels around a continuous infinity-shaped loop, and you follow it smoothly with your eyes, crossing the centre on every lap. Pick a speed and duration, press start, and keep your head still while you track.",
     
     
       "Smooth pursuit is not a single muscle action; it requires continuous, proportional firing across all six extraocular muscles to guide the fovea along 2D spatial curves (Robinson, 1965; Leigh & Zee, 2015). While one-dimensional tracking exercises isolated horizontal or vertical muscles, real-world sports and gaming environments require simultaneous multi-axial coordination.",
@@ -310,7 +311,7 @@ const guide = {
     },
     {
         "q": "How does display refresh rate improve figure-8 pursuit smoothness?",
-        "a": "Smooth curvature tracking requires dense spatial-temporal updates. A 144Hz or 240Hz refresh rate delivers sub-7ms frame updates, providing the ocular motor system with a seamless continuous trajectory (Woods et al., 2015)."
+        "a": "Smooth curvature tracking requires dense spatial-temporal updates. A 144Hz or 240Hz refresh rate delivers frame updates every 7 ms or less, providing the ocular motor system with a seamless continuous trajectory (Woods et al., 2015)."
     },
     {
         "q": "Is my training history private?",
