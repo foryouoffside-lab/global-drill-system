@@ -14,3 +14,6 @@ Date: 2026-10-08 · Market: Germany, `de-DE`
 - No change required: `Augentraining online` is a live Suggest string; `Blicksprünge` is the plain-language form of the Suggest term `Sakkadentraining`, which appears in H2s. Risk noted: therapy-intent searchers; the page makes no medical claim.
 - B3: demand 3 (proxy), ease 3, intent fit 3.
 - Trend: not available, 2026-10-08.
+
+## Claim fix 2026-10-08
+- Removed unsupported "Sub-Millisekunden" precision wording from FAQ/body (performance.now resolution is browser-dependent, about 1 ms); schema and visible text share the same source.
