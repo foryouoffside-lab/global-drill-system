@@ -22,3 +22,4 @@
 | /drills/reaction-speed/fps-tracking-trainer | done | 1d71facf | docs/seo/research/en/fps-tracking-trainer.md | research only |
 | /drills/reaction-speed/market-doors-pursuit | done | 2dc901c0 | docs/seo/research/en/market-doors-pursuit.md | demand not verified; no change |
 | /drills/reaction-speed/reaction-game | done | e878528f | docs/seo/research/en/reaction-game.md | shared-file edit: en title line only |
+| /drills/reaction-speed/saccadic-gallery | done | de797a3b | docs/seo/research/en/saccadic-gallery.md | claims hedged; percentile labels removed |
