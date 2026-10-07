@@ -13,7 +13,7 @@ import { pickSources } from '@/lib/drillSources';
 
 export const metadata = {
   title: 'エイム練習｜無料ブラウザエイムトレーナー | SkillDrills',
-  description: '無料のブラウザ型エイム練習。動くターゲットでマウス精度、フリック速度、初弾の捕捉を測定します。',
+  description: '無料のブラウザ型エイム練習。縮みながら動く標的をクリックして、マウス精度・フリック速度・初弾の捕捉を測定。Apex・VALORANT・CS2向け、登録不要。',
   keywords: ['エイム練習', '無料 ブラウザ エイム練習', 'エイムトレーナー', 'マウス精度テスト', 'フリックエイム練習', '置きエイム練習', '追いエイム', '初弾命中率', 'ターゲット切り替え', 'VALORANT エイム練習'],
   alternates: {
     canonical: 'https://skilldrills.online/ja/drills/motor/hand-eye-coordination/aim-trainer',
@@ -247,7 +247,7 @@ export default function AimTrainerJapanesePage() {
 
       <AimTrainerClient
         copy={{
-          title: 'エイム練習 (Aim Trainer)',
+          title: 'エイム練習',
           subtitle: '動く標的へのエイム・マウス精度・フリック練習',
           caption: '小さくなりながら移動するターゲットを消滅前に素早く正確にクリック。フィッツの法則に基づく動的難易度調整。',
           startButtonText: '訓練開始',
@@ -255,7 +255,7 @@ export default function AimTrainerJapanesePage() {
           shareText: '結果を共有',
           exitText: '終了する',
           rulesTitle: '操作方法 & スコア獲得ルール',
-          aboutTitle: 'エイム練習(Aim Trainer Elite)について',
+          aboutTitle: 'このエイム練習について',
           rulesItems: [
             {
               num: "1",
@@ -291,7 +291,10 @@ export default function AimTrainerJapanesePage() {
         sources={sources}
       >
         <p>
-          マウスを用いたターゲット捕捉（Aiming）は、人間とコンピュータの相互作用（HCI）およびスポーツ精神物理学において最も過酷な微細運動協調課題の一つです。タクティカルFPSでの交戦や外科手術ロボットの操作、精密な視覚運動検査において、ヒトの神経筋システムは2次元の視覚座標を、手・手首・前腕のサブミリ単位の急速な筋収縮へと変換しなければなりません（Fitts, 1954; MacKenzie, 1992）。
+          エイム練習とは、画面上の標的にマウスカーソルを素早く正確に合わせてクリックする練習です。このページでは縮みながら動く標的を消える前にクリックし、命中率とスコアでマウス精度とフリックの安定を確認できます。Apex、VALORANT、CS2などのFPS向けに、ブラウザだけで登録なしで始められます。
+        </p>
+        <p>
+          マウスを用いたターゲット捕捉（Aiming）は、人間とコンピュータの相互作用（HCI）およびスポーツ精神物理学において最も過酷な微細運動協調課題の一つです。タクティカルFPSでの交戦や外科手術ロボットの操作、精密な視覚運動検査において、ヒトの神経筋システムは2次元の視覚座標を、手・手首・前腕のごく小さな急速な筋収縮へと変換しなければなりません（Fitts, 1954; MacKenzie, 1992）。
         </p>
 
         <h3>フィッツの法則（Fitts&apos;s Law）と難易度指数（Index of Difficulty）</h3>
@@ -314,7 +317,7 @@ export default function AimTrainerJapanesePage() {
             <strong>初期弾道インパルス（オープンループ期）：</strong> 中枢神経系が事前にプログラムした神経筋バーストを発令し、移動距離の80〜90%を一気にカバーします。この弾道フェーズは約120〜180ミリ秒で完了するため、視覚フィードバックによる軌道修正は間に合いません。
           </li>
           <li>
-            <strong>終末減速・微小フィードバック制御（クローズドループ期）：</strong> クロスヘアがターゲット外縁に接近すると、網膜スリップ誤差が小脳および運動皮質へ送られ、着弾直前のサブミリ単位の微修正が行われてクリックが実行されます。
+            <strong>終末減速・微小フィードバック制御（クローズドループ期）：</strong> クロスヘアがターゲット外縁に接近すると、網膜スリップ誤差が小脳および運動皮質へ送られ、着弾直前のごく小さな微修正が行われてクリックが実行されます。
           </li>
         </ol>
         <p>
