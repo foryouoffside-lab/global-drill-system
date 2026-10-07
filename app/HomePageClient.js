@@ -100,26 +100,26 @@ const categoryConfigs = [
 const features = [
   {
     icon: Zap,
-    title: 'Real-time Telemetry',
-    description: 'Instant latency, precision, and accuracy metrics updated every millisecond',
+    title: 'Live Session Stats',
+    description: 'Latency, precision, and accuracy readouts update as you play. Timings are bounded by your display and input hardware.',
     gradient: 'from-amber-400 to-yellow-500',
   },
   {
     icon: BarChart3,
     title: 'Local Progress Curves',
-    description: 'Track scores and neural adaptation rates privately in your browser',
+    description: 'Track scores and progress privately in your browser',
     gradient: 'from-blue-400 to-indigo-500',
   },
   {
     icon: Trophy,
     title: 'Adaptive Progression',
-    description: 'Dynamic difficulty curves adjust target speeds to keep you in peak flow',
+    description: 'Difficulty scales with your streak, so each drill stays challenging as you improve',
     gradient: 'from-orange-400 to-red-500',
   },
   {
     icon: Shield,
-    title: 'Validated Paradigms',
-    description: 'Modeled directly on established cognitive psych instruments and esports standards',
+    title: 'Established Paradigms',
+    description: 'Built on established cognitive psychology tasks and esports training patterns. Not a clinical test.',
     gradient: 'from-purple-400 to-violet-500',
   },
   {
@@ -130,7 +130,7 @@ const features = [
   },
   {
     icon: Users,
-    title: 'Zero Latency & Friction',
+    title: 'Zero Friction',
     description: '100% free, client-side execution with zero account registration or credit card',
     gradient: 'from-pink-400 to-rose-500',
   },
@@ -311,7 +311,7 @@ export default function HomePageClient({ copy = {}, faqs = [] }) {
                 <div className="flex items-center justify-between text-xs font-mono">
                   <span className="text-cyan-400 font-bold flex items-center gap-1.5">
                     <span className="w-1.5 h-1.5 rounded-full bg-cyan-400 animate-pulse" />
-                    {t('hudEngineTelemetry', 'ENGINE TELEMETRY')}
+                    {t('hudEngineTelemetry', 'SAMPLE READOUT')}
                   </span>
                   <span className="text-emerald-400 font-bold">{t('hudReady', 'READY')}</span>
                 </div>
@@ -358,7 +358,7 @@ export default function HomePageClient({ copy = {}, faqs = [] }) {
                       <div className="w-2 h-2 rounded-full bg-yellow-500/80" />
                       <div className="w-2 h-2 rounded-full bg-emerald-500/80" />
                     </div>
-                    <span className="font-bold text-white tracking-wider ml-1">{t('hudCalibration', 'TELEMETRY CALIBRATION')}</span>
+                    <span className="font-bold text-white tracking-wider ml-1">{t('hudCalibration', 'SAMPLE CALIBRATION VIEW')}</span>
                   </div>
                   <span className="px-2 py-0.5 rounded-full bg-blue-500/10 text-blue-400 border border-blue-500/20 text-[10px] font-mono">
                     {t('hudSubPixel', 'SUB-PIXEL ENGINE')}

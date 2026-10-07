@@ -17,3 +17,10 @@ Date: 2026-10-07 · Route: `/`
 - Visible FAQ (6 questions) plus matching FAQPage JSON-LD on the English home: what SkillDrills is, free/no account, areas covered, timing accuracy, mouse vs touch, data collected. Every answer restates facts already published on `/about`, `/privacy` and `/llms.txt`; no new numbers other than the registry drill count.
 - Locale homes unchanged (they pass no `faqs`).
 - B3 score for the FAQ target (brand/entity queries, AI answer text): demand 3 (brand queries dominate GSC clicks), competition ease 5 (own brand), intent fit 5.
+
+## Claim corrections on the home and its six locale copies (same pass)
+- `Real-time Telemetry … updated every millisecond` → `Live Session Stats` (timings are bounded by display and input hardware; /about says so).
+- `neural adaptation rates` removed (nothing measures neural adaptation).
+- `peak flow` / `Validated Paradigms` / `Zero Latency` removed: no validation study exists and latency cannot be zero. Now `Established Paradigms … Not a clinical test`.
+- The static HUD mock (`140ms`, `98.4%`, `240 Hz`) is now labelled `SAMPLE READOUT` / `SAMPLE CALIBRATION VIEW` in all seven languages, so it no longer reads as a measurement.
+- Locale copy is native phrasing, not translation of the English sentence; no new keywords introduced.
