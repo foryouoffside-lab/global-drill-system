@@ -227,7 +227,7 @@ const faqSchema = {
       "name": "Wie hoch ist die zeitliche Messgenauigkeit der Reaktionserfassung im Browser?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Die Zeitmessung basiert auf performance.now(), die browserintern im Sub-Millisekunden-Bereich arbeitet. Frame-Quantisierungen des Monitors (16,67 ms bei 60 Hz) können Messschwankungen erzeugen; Abweichungen unter 5 ms gelten als messtechnisches Rauschen."
+        "text": "Die Zeitmessung basiert auf performance.now(), deren Auflösung browserabhängig bei etwa 1 ms liegt. Frame-Quantisierungen des Monitors (16,67 ms bei 60 Hz) können Messschwankungen erzeugen; Abweichungen unter 5 ms gelten als messtechnisches Rauschen."
       }
     },
     {

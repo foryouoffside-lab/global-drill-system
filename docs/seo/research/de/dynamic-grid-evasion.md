@@ -16,3 +16,6 @@ Date: 2026-10-08 · Market: Germany, `de-DE`
 ## Scores (B3)
 - `Ausweichspiel`: demand 1-2 (proxy), ease 4, intent fit 4. Demand not verified.
 - Trend: not available, 2026-10-08.
+
+## Claim fix 2026-10-08
+- Removed unsupported "Sub-Millisekunden" precision wording from FAQ/body (performance.now resolution is browser-dependent, about 1 ms); schema and visible text share the same source.
