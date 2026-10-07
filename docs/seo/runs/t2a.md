@@ -8,3 +8,4 @@
 | /drills/cognitive/processing-speed/rsvp-reader | done | 2ab4f047 | docs/seo/research/en/rsvp-reader.md | FAQ claim softened; percentile labels removed |
 | /drills/cognitive/processing-speed/symbol-matching | done | e4482908 | docs/seo/research/en/symbol-matching.md | title changed to measured vocabulary; non-clinical label kept |
 | /drills/physical/balance-training/stability-challenge | done | 31c26903 | docs/seo/research/en/stability-challenge.md | demand not verified; mouse accuracy test 76 noted |
+| /drills/physical/coordination/complex-pattern | done | c0aeae41 | docs/seo/research/en/complex-pattern.md | percentile labels removed; FAQ hedged |
