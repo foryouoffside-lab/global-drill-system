@@ -6,7 +6,7 @@ import { pickSources } from '@/lib/drillSources';
 
 export const metadata = {
   title: "Staircase Step – Vertical Eye Tracking Drill | SkillDrills",
-  description: "Condition vertical smooth pursuit and elevation saccades across multi-step staircase paths online. Midbrain oculomotor agility training, free.",
+  description: "Free vertical eye tracking exercise: follow a target up and down a staircase path of slides and sudden height changes. No sign-up.",
   keywords: [
     "staircase step pursuit",
     "vertical eye tracking exercise",
@@ -28,7 +28,7 @@ export const metadata = {
   robots: { index: true, follow: true },
   openGraph: {
     title: "Staircase Step – Vertical Eye Tracking Drill | SkillDrills",
-    description: "Condition vertical smooth pursuit and elevation saccades across multi-step staircase paths online. Midbrain oculomotor agility training, free.",
+    description: "Free vertical eye tracking exercise: follow a target up and down a staircase path of slides and sudden height changes. No sign-up.",
     url: "https://skilldrills.online/drills/visual-tracking/staircase-step",
     siteName: 'SkillDrills',
     locale: 'en_US',
@@ -37,7 +37,7 @@ export const metadata = {
   twitter: {
     card: 'summary_large_image',
     title: "Staircase Step – Vertical Eye Tracking Drill | SkillDrills",
-    description: "Condition vertical smooth pursuit and elevation saccades across multi-step staircase paths online. Midbrain oculomotor agility training, free.",
+    description: "Free vertical eye tracking exercise: follow a target up and down a staircase path of slides and sudden height changes. No sign-up.",
   },
 };
 
@@ -223,6 +223,7 @@ const faqSchema = {
 const guide = {
   heading: "Staircase Step - Vertical Eye Tracking & Elevation Oculomotor Standards",
   intro: [
+    "Staircase Step is a free vertical eye tracking exercise. A target slides sideways and then drops or climbs in steps along a staircase path, so you follow both horizontal motion and sudden height changes. Pick a speed and duration, press start, and follow the target along every step.",
     "The human oculomotor system utilizes fundamentally segregated neuroanatomical circuitry for horizontal versus vertical gaze shifts. While horizontal pursuits and saccades are generated via the pontine paramedian reticular formation (PPRF), vertical oculomotor dynamics are governed exclusively by specialized midbrain nuclei—primarily the rostral interstitial nucleus of the medial longitudinal fasciculus (riMLF) and the interstitial nucleus of Cajal (Büttner-Ennever & Horn, 1997).",
     "Psychophysical assessments (Rottach et al., 1996; Ke et al., 2013) demonstrate that vertical smooth pursuit naturally suffers from lower velocity gain, heightened phase lag, and elevated latency compared to horizontal pursuit. Furthermore, a marked directional asymmetry exists: upward tracking (elevation) deteriorates significantly faster under increased velocity than downward tracking, triggering compensatory catch-up saccades earlier in the movement cycle.",
     "Modern digital habits—such as reading horizontal text, smartphone scrolling, and widescreen monitors—disproportionately stimulate horizontal ocular pathways, leaving vertical midbrain circuits chronically under-conditioned. Staircase Step counteracts this deficit by guiding targets across multi-tiered orthogonal ramps and vertical steps, combining diagonal smooth pursuit with precise re-targeting saccades at right-angle corners (Collewijn & Tamminga, 1984; Lisberger, 2010)."
