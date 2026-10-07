@@ -32,3 +32,4 @@
 | C:/Program Files/Git/ja/drills/reaction-speed/market-doors-pursuit | done | PENDING | docs/seo/research/ja/market-doors-pursuit.md | audit pass, no source change; demand unverified |
 | C:/Program Files/Git/ja/drills/reaction-speed/visual-tracking-speed-test | done | PENDING | docs/seo/research/ja/visual-tracking-speed-test.md | audit pass, no source change |
 | C:/Program Files/Git/ja/drills/visual-tracking/split-screen-tracking | done | PENDING | docs/seo/research/ja/split-screen-tracking.md | direct answer; percentile column removed; demand unverified |
+| C:/Program Files/Git/ja/drills/visual-tracking/staircase-step | done | PENDING | docs/seo/research/ja/staircase-step.md | direct answer; percentile column removed; demand unverified |
