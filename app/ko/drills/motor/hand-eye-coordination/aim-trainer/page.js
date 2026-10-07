@@ -175,7 +175,7 @@ const faqSchema = {
       name: '발로란트나 배틀그라운드 실력 향상에 직접적인 도움이 되나요?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: '네, 매우 직접적인 도움이 됩니다. 전술 슈팅 게임에서 승패를 가르는 5~15도 각도의 헤드샷 마이크로 플릭과 초탄 착탄 타이밍을 집중적으로 단련할 수 있습니다.',
+        text: '보조 연습으로 도움이 될 수 있습니다. 헤드샷 마이크로 플릭과 초탄 타이밍을 반복해 연습할 수 있지만, 실전 게임 실력 향상이 보장되지는 않습니다.',
       },
     },
     {
@@ -183,7 +183,7 @@ const faqSchema = {
       name: '에임 연습 점수 기준표는 어떻게 되나요?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: '입문자는 8,000점 미만, 일반적인 중급 게이머는 18,000~31,999점(레벨 6~8), 상위 랭커는 32,000점 이상, 프로 수준의 최상위권은 48,000점 이상(레벨 12 이상, 명중률 95% 초과)을 기록합니다.',
+        text: 'SkillDrills의 참고 구간은 입문 8,000점 미만, 중급 18,000~31,999점(레벨 6~8), 상급 32,000점 이상, 최상위 구간 48,000점 이상(레벨 12 이상, 명중률 95% 초과)입니다. 게임 랭크나 사용자 통계가 아닌 연습용 기준입니다.',
       },
     },
     {
@@ -286,7 +286,7 @@ export default function AimTrainerKoreanPage() {
 
       <DrillGuide
         eyebrow="운동 제어 정신물리학 & 인간-컴퓨터 상호작용 (HCI)"
-        title="에임 연습의 과학: 피츠의 법칙과 2요소 운동 모델을 통한 마우스 정밀도 극대화"
+        title="에임 연습의 과학: 피츠의 법칙과 2요소 운동 모델을 통한 마우스 정밀도 이해하기"
         sources={sources}
       >
         <p>
@@ -327,7 +327,7 @@ export default function AimTrainerKoreanPage() {
 
         <h3>에임 연습 실력 평가 기준표 (45초 세션 기준)</h3>
         <p>
-          아래 표는 SkillDrills의 45초 세션 기준 점수, 명중률 및 최대 콤보를 기반으로 한 게이머 실력 지표입니다.
+          아래 표는 SkillDrills의 45초 세션 점수, 명중률 및 최대 콤보를 참고용으로 나눈 구간입니다. 사용자 통계나 게임 랭크와 무관하며, 같은 기기에서 본인 기록을 비교할 때만 의미가 있습니다.
         </p>
         <div className="overflow-x-auto my-4">
           <table className="w-full text-left border-collapse border border-white/10 text-xs sm:text-sm">
@@ -346,28 +346,28 @@ export default function AimTrainerKoreanPage() {
                 <td className="p-2.5 border border-white/10">&gt; 48,000 PTS</td>
                 <td className="p-2.5 border border-white/10">Level 12+</td>
                 <td className="p-2.5 border border-white/10">&gt; 95% (콤보 25+)</td>
-                <td className="p-2.5 border border-white/10">최상위 FPS 랭커 / 프로급 명사수</td>
+                <td className="p-2.5 border border-white/10">최상위 참고 구간</td>
               </tr>
               <tr>
                 <td className="p-2.5 border border-white/10 font-bold text-cyan-400">Tier 2 (고수)</td>
                 <td className="p-2.5 border border-white/10">32,000 – 47,999 PTS</td>
                 <td className="p-2.5 border border-white/10">Level 9–11</td>
                 <td className="p-2.5 border border-white/10">88% – 94% (콤보 18–24)</td>
-                <td className="p-2.5 border border-white/10">경쟁전 상위권 / 정밀 플래거</td>
+                <td className="p-2.5 border border-white/10">상급 참고 구간</td>
               </tr>
               <tr>
                 <td className="p-2.5 border border-white/10 font-bold text-blue-400">Tier 3 (중급)</td>
                 <td className="p-2.5 border border-white/10">18,000 – 31,999 PTS</td>
                 <td className="p-2.5 border border-white/10">Level 6–8</td>
                 <td className="p-2.5 border border-white/10">78% – 87% (콤보 12–17)</td>
-                <td className="p-2.5 border border-white/10">안정적인 에임 / 일반 경쟁전 유저</td>
+                <td className="p-2.5 border border-white/10">안정적인 중간 구간</td>
               </tr>
               <tr>
                 <td className="p-2.5 border border-white/10 font-bold text-amber-400">Tier 4 (초급)</td>
                 <td className="p-2.5 border border-white/10">8,000 – 17,999 PTS</td>
                 <td className="p-2.5 border border-white/10">Level 3–5</td>
                 <td className="p-2.5 border border-white/10">65% – 77% (콤보 6–11)</td>
-                <td className="p-2.5 border border-white/10">에임 개발 단계 / 미스샷 다수 발생</td>
+                <td className="p-2.5 border border-white/10">연습 단계 / 미스 다수 발생</td>
               </tr>
               <tr>
                 <td className="p-2.5 border border-white/10 font-bold text-rose-400">Tier 5 (입문)</td>
@@ -380,7 +380,7 @@ export default function AimTrainerKoreanPage() {
           </table>
         </div>
 
-        <h3>에임 능력을 비약적으로 끌어올리는 4가지 실천법</h3>
+        <h3>에임 연습을 효율적으로 하는 4가지 실천법</h3>
         <p>
           표적 획득 잠복기를 체계적으로 단축하고 미세 플릭 정확도를 최고조로 끌어올리기 위해, 훈련 중 다음 네 가지 근거 중심의 신경운동 프로토콜을 적용하십시오:
         </p>
@@ -422,13 +422,13 @@ export default function AimTrainerKoreanPage() {
           <div className="border-b border-white/10 pb-3">
             <h4 className="font-bold text-white text-sm mb-1">발로란트나 배틀그라운드 실력 향상에 직접적인 도움이 되나요?</h4>
             <p className="text-xs sm:text-sm text-slate-300">
-              네, 매우 직접적인 도움이 됩니다. 전술 슈팅 게임에서 승패를 가르는 5~15도 각도의 헤드샷 마이크로 플릭과 초탄 착탄 타이밍을 집중적으로 단련할 수 있습니다.
+              보조 연습으로 도움이 될 수 있습니다. 헤드샷 마이크로 플릭과 초탄 타이밍을 반복해 연습할 수 있지만, 실전 게임 실력 향상이 보장되지는 않습니다.
             </p>
           </div>
           <div className="border-b border-white/10 pb-3">
             <h4 className="font-bold text-white text-sm mb-1">에임 연습 점수 기준표는 어떻게 되나요?</h4>
             <p className="text-xs sm:text-sm text-slate-300">
-              입문자는 8,000점 미만, 일반적인 중급 게이머는 18,000~31,999점(레벨 6~8), 상위 랭커는 32,000점 이상, 프로 수준의 최상위권은 48,000점 이상(레벨 12 이상, 명중률 95% 초과)을 기록합니다.
+              SkillDrills의 참고 구간은 입문 8,000점 미만, 중급 18,000~31,999점(레벨 6~8), 상급 32,000점 이상, 최상위 구간 48,000점 이상(레벨 12 이상, 명중률 95% 초과)입니다. 게임 랭크나 사용자 통계가 아닌 연습용 기준입니다.
             </p>
           </div>
           <div className="border-b border-white/10 pb-3">
