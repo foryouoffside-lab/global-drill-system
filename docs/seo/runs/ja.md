@@ -4,3 +4,4 @@
 | /ja/drills/reaction-speed/reaction-time-test | done | see git log | docs/seo/research/ja/reaction-time-test.md | primary 反射神経テスト・反応速度テスト |
 | /ja/drills/reaction-speed/reflex-training-drill | done | PENDING | docs/seo/research/ja/reflex-training-drill.md | primary 反射神経ゲーム (Bing 1054) |
 | /ja/drills | done | PENDING | docs/seo/research/ja/drills-directory.md | FAQ claims corrected; metadata unchanged |
+| C:/Program Files/Git/ja/drills/cognitive/processing-speed/reaction-time | done | PENDING | docs/seo/research/ja/reaction-time.md | H1 選択反応時間テスト; percentile columns removed |
