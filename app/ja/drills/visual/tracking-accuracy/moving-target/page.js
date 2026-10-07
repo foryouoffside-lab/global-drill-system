@@ -22,7 +22,7 @@ export const metadata = {
     "FPS 移動標的",
     "動くボール 追う"
   ],
-  openGraph: {
+  openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
     title: "動体視力テスト | 移動標的トレーニング | SkillDrills",
     description: "動く標的を追って軌道を予測し、動体視力と視線追跡を練習する無料ブラウザドリル。医療診断ではありません。",
     type: 'article',
@@ -30,7 +30,7 @@ export const metadata = {
     siteName: 'SkillDrills',
     locale: 'ja_JP',
   },
-  twitter: {
+  twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: 'summary_large_image',
     title: "動体視力テスト | 移動標的トレーニング | SkillDrills",
     description: "移動標的の軌道予測と迎撃精度を練習する無料動体視力ドリル。画面やマウス環境で結果は変わります。",

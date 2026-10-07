@@ -28,7 +28,7 @@ export const metadata = {
     index: true,
     follow: true,
   },
-  openGraph: {
+  openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
     title: "FPS Fokus Training | Flow Aim Trainer | SkillDrills",
     description: "Übe Konzentrationsausdauer und ruhiges Tracking im kostenlosen Browser-Trainer für FPS. Stelle die Schwierigkeit passend zu deinem Aim ein.",
     url: "https://skilldrills.online/de/drills/fps/flow-state",
@@ -36,7 +36,7 @@ export const metadata = {
     locale: 'de_DE',
     type: 'website',
   },
-  twitter: {
+  twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: 'summary_large_image',
     title: "FPS Fokus Training | Flow Aim Trainer | SkillDrills",
     description: "Übe Konzentrationsausdauer und ruhiges Tracking im kostenlosen Browser-Trainer für FPS. Stelle die Schwierigkeit passend zu deinem Aim ein.",

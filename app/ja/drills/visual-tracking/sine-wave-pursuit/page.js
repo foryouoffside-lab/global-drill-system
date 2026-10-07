@@ -29,7 +29,7 @@ export const metadata = {
     "追従利得 テスト",
     "折り返し 視線 練習"
   ],
-  openGraph: {
+  openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
     title: "サイン波の眼球追従トレーニング | SkillDrills",
     description: "正弦波の標的を水平・垂直に追う無料ブラウザ練習。追従の遅れ、速度の一致、折り返し時の誤差を記録。",
     type: "website",
@@ -37,7 +37,7 @@ export const metadata = {
     siteName: "SkillDrills",
     locale: "ja_JP",
   },
-  twitter: {
+  twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: "summary_large_image",
     title: "サイン波の眼球追従トレーニング | SkillDrills",
     description: "周期的に動く標的を追視し、速度の一致と折り返し時の位置誤差を確認する短時間ドリル。",

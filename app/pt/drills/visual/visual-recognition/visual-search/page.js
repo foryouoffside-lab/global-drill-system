@@ -23,14 +23,14 @@ export const metadata = {
     "teste de símbolos",
     "encontrar letras"
 ],
-  openGraph: {
+  openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
     title: "Busca Visual | Atenção Seletiva | SkillDrills",
     description: "Encontre um alvo entre distratores e pratique atenção seletiva, velocidade de varredura e controle da interferência.",
     type: "website",
     url: "https://skilldrills.online/pt/drills/visual/visual-recognition/visual-search",
     siteName: "SkillDrills",
   },
-  twitter: {
+  twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: "summary_large_image",
     title: "Busca Visual | Atenção Seletiva | SkillDrills",
     description: "Treino de busca visual entre caracteres semelhantes.",

@@ -36,7 +36,7 @@ export const metadata = {
     canonical: 'https://skilldrills.online/es/drills/physical/coordination/dynamic-grid-evasion',
     languages: getAlternateLanguages('/drills/physical/coordination/dynamic-grid-evasion'),
   },
-  openGraph: {
+  openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
     title: "Juego de reflejos con ratón | SkillDrills",
     description: "Juego gratis de reflejos con ratón. Detecta zonas peligrosas en la cuadrícula 3x3 y muévete a una casilla segura para entrenar reacciones periféricas.",
     url: 'https://skilldrills.online/es/drills/physical/coordination/dynamic-grid-evasion',
@@ -44,7 +44,7 @@ export const metadata = {
     locale: 'es_ES',
     type: 'website',
   },
-  twitter: {
+  twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: 'summary_large_image',
     title: "Juego de reflejos con ratón | SkillDrills",
     description: "Juego gratis de reflejos con ratón. Detecta zonas peligrosas en la cuadrícula 3x3 y muévete a una casilla segura para entrenar reacciones periféricas.",

@@ -9,7 +9,7 @@ export const metadata = {
   title: "Multitasking-Test | Dual-Stream-Tracking | SkillDrills",
   description: "Kostenloser Multitasking-Test im Browser: Verfolge zwei Symbolströme gleichzeitig. Keine klinische Diagnose, sondern ein kognitiver Selbstcheck.",
   keywords: ["Multitasking Test", "Dual Stream Tracking", "Multitasking Gehirntraining", "Aufgabenumschaltung Test", "Kognitive Flexibilitat Test", "Geteilte Aufmerksamkeit Uben", "Bilateraler Sehtest", "Multitasking Fahigkeit Test", "Reaktionsschnelligkeit Test", "Exekutive Funktionen Training", "Gehirn Multitasking", "Visuelle Doppelaufgabe"],
-  openGraph: {
+  openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
     title: "Multitasking Test – Dual-Stream Fokus | SkillDrills",
     description: "Kostenloser Online-Multitasking-Test: Verfolge zwei gegenläufige Symbol-Streams gleichzeitig und messe kognitive Belastung und Reaktionszeit im Browser.",
     type: 'article',
@@ -17,7 +17,7 @@ export const metadata = {
     siteName: 'SkillDrills',
     locale: 'de_DE',
   },
-  twitter: {
+  twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: 'summary_large_image',
     title: "Multitasking Test – Dual-Stream Fokus | SkillDrills",
     description: "Kostenloser Online-Multitasking-Test: Verfolge zwei gegenläufige Symbol-Streams gleichzeitig und messe kognitive Belastung und Reaktionszeit im Browser.",

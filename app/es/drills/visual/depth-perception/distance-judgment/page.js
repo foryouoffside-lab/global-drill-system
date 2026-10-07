@@ -31,7 +31,7 @@ export const metadata = {
     'test de Howard-Dolman',
     'percepción espacial visual',
   ],
-  openGraph: {
+  openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
     title: 'Test de percepción de profundidad online | SkillDrills',
     description: 'Test de percepción de profundidad y estereopsis online. Practica el cálculo de distancias con un objetivo móvil; no es un diagnóstico médico.',
     type: 'article',
@@ -39,7 +39,7 @@ export const metadata = {
     siteName: 'SkillDrills',
     locale: 'es_ES',
   },
-  twitter: {
+  twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: 'summary_large_image',
     title: 'Test de percepción de profundidad online | SkillDrills',
     description: 'Test de percepción de profundidad y estereopsis online. Practica el cálculo de distancias con un objetivo móvil; no es un diagnóstico médico.',

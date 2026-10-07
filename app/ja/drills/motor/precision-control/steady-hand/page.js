@@ -18,7 +18,7 @@ export const metadata = {
     '狭いコース トレーニング', 'マウス迷路', 'マウス操作 精度',
     '手ぶれ コントロール', '精密マウス操作',
   ],
-  openGraph: {
+  openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
     title: 'マウス精度テスト | 手の安定性 | SkillDrills',
     description: 'カーソルで狭いコースをたどり、マウス精度と手の安定性を測る無料テスト。',
     type: 'article',
@@ -26,7 +26,7 @@ export const metadata = {
     siteName: 'SkillDrills',
     locale: 'ja_JP',
   },
-  twitter: {
+  twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: 'summary_large_image',
     title: 'マウス精度テスト | 手の安定性 | SkillDrills',
     description: 'カーソルで狭いコースをたどり、マウス精度と手の安定性を測る無料テスト。',

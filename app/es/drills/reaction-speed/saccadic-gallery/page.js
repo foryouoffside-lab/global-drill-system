@@ -32,7 +32,7 @@ export const metadata = {
     canonical: 'https://skilldrills.online/es/drills/reaction-speed/saccadic-gallery',
     languages: getAlternateLanguages('/drills/reaction-speed/saccadic-gallery'),
   },
-  openGraph: {
+  openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
     title: 'Entrenamiento Visual Online · Saltos Oculares | SkillDrills',
     description:
       'Mueve la mirada entre objetivos y practica escaneo visual, reacción y coordinación ojo-mano con este drill gratuito.',
@@ -41,7 +41,7 @@ export const metadata = {
     siteName: 'SkillDrills',
     locale: 'es_ES',
   },
-  twitter: {
+  twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: 'summary_large_image',
     title: 'Entrenamiento Visual Online · Saltos Oculares | SkillDrills',
     description:

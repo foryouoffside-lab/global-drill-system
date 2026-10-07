@@ -21,7 +21,7 @@ export const metadata = {
     "FPS 이동 타깃",
     "궤적 예측"
   ],
-  openGraph: {
+  openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
     title: "동체시력 테스트 | 이동 표적 훈련 | SkillDrills",
     description: "움직이는 표적의 궤적을 예측하고 동체시력과 시각 추적을 연습하는 무료 브라우저 드릴입니다. 의료 진단용이 아닙니다.",
     type: 'article',
@@ -29,7 +29,7 @@ export const metadata = {
     siteName: 'SkillDrills',
     locale: 'ko_KR',
   },
-  twitter: {
+  twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: 'summary_large_image',
     title: "동체시력 테스트 | 이동 표적 훈련 | SkillDrills",
     description: "이동 표적을 따라가며 궤적 예측과 요격 타이밍을 연습하는 무료 동체시력 트레이너입니다.",

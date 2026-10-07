@@ -22,7 +22,7 @@ export const metadata = {
     'WASD 반응속도 테스트',
     '키보드 반사신경 테스트',
   ],
-  openGraph: {
+  openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
     title: '키보드 반응속도 테스트 | 키 입력 속도 | SkillDrills',
     description: '화면에 뜬 키를 눌러 반응속도와 선택 반응 시간을 측정하는 무료 테스트.',
     type: 'article',
@@ -30,7 +30,7 @@ export const metadata = {
     siteName: 'SkillDrills',
     locale: 'ko_KR',
   },
-  twitter: {
+  twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: 'summary_large_image',
     title: '키보드 반응속도 테스트 | 키 입력 속도 | SkillDrills',
     description: '표시된 키를 눌러 키보드 반응속도를 측정하는 무료 테스트.',

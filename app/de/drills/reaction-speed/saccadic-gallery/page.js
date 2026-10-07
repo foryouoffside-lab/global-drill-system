@@ -31,7 +31,7 @@ export const metadata = {
     canonical: 'https://skilldrills.online/de/drills/reaction-speed/saccadic-gallery',
     languages: getAlternateLanguages('/drills/reaction-speed/saccadic-gallery'),
   },
-  openGraph: {
+  openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
     title: 'Augentraining Online · Blicksprünge trainieren | SkillDrills',
     description:
       'Trainiere Blicksprünge zwischen Zielpunkten und verbessere visuelle Zielerfassung mit einem kostenlosen Browser-Drill.',
@@ -40,7 +40,7 @@ export const metadata = {
     siteName: 'SkillDrills',
     locale: 'de_DE',
   },
-  twitter: {
+  twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: 'summary_large_image',
     title: 'Augentraining Online · Blicksprünge trainieren | SkillDrills',
     description:

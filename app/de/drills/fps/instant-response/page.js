@@ -42,7 +42,7 @@ export const metadata = {
     index: true,
     follow: true,
   },
-  openGraph: {
+  openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
     title: "Reaktionszeit Test | FPS-Reflexe messen | SkillDrills",
     description: "Kostenloser Reaktionszeit Test im Browser: Miss Klicklatenz und visuelle Reflexe in Millisekunden für CS2 und Valorant.",
     url: "https://skilldrills.online/de/drills/fps/instant-response",
@@ -50,7 +50,7 @@ export const metadata = {
     locale: 'de_DE',
     type: 'website',
   },
-  twitter: {
+  twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: 'summary_large_image',
     title: "Reaktionszeit Test | FPS-Reflexe messen | SkillDrills",
     description: "Kostenloser Reaktionszeit Test im Browser: Miss Klicklatenz und visuelle Reflexe in Millisekunden für CS2 und Valorant.",

@@ -32,7 +32,7 @@ export const metadata = {
     canonical: 'https://skilldrills.online/ja/drills/cognitive/focus/distraction-fighter',
     languages: getAlternateLanguages('/drills/cognitive/focus/distraction-fighter'),
   },
-  openGraph: {
+  openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
     title: 'ストループテスト | 選択的注意トレーニング | SkillDrills',
     description:
       '無料ブラウザのストループテストで、文字ではなくインクの色を選びます。選択的注意を練習する非臨床セルフチェックです。',
@@ -41,7 +41,7 @@ export const metadata = {
     locale: 'ja_JP',
     type: 'website',
   },
-  twitter: {
+  twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: 'summary_large_image',
     title: 'ストループテスト | 選択的注意トレーニング | SkillDrills',
     description: '無料ブラウザのストループテストで、文字ではなくインクの色を選びます。選択的注意を練習する非臨床セルフチェックです。',

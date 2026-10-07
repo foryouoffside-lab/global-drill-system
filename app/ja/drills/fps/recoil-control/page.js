@@ -46,7 +46,7 @@ export const metadata = {
     index: true,
     follow: true,
   },
-  openGraph: {
+  openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
     title: "リコイル練習｜FPS反動制御・スプレー練習 | SkillDrills",
     description: "無料ブラウザのリコイル練習で銃ごとの反動パターンを覚え、VALORANT・CS2・Apexのスプレー精度を高めます。",
     url: "https://skilldrills.online/ja/drills/fps/recoil-control",
@@ -54,7 +54,7 @@ export const metadata = {
     locale: 'ja_JP',
     type: 'website',
   },
-  twitter: {
+  twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: 'summary_large_image',
     title: "リコイル練習｜FPS反動制御・スプレー練習 | SkillDrills",
     description: "無料ブラウザのリコイル練習で銃ごとの反動パターンを覚え、VALORANT・CS2・Apexのスプレー精度を高めます。",

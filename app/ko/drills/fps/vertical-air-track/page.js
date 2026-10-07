@@ -45,7 +45,7 @@ export const metadata = {
     index: true,
     follow: true,
   },
-  openGraph: {
+  openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
     title: "수직 에임 연습 - 공중 트래킹 | SkillDrills",
     description: "브라우저에서 무료로 수직 에임과 공중 타겟 트래킹을 훈련하세요. Y축 마우스 제어와 낙하 궤적 예측을 측정합니다.",
     url: "https://skilldrills.online/ko/drills/fps/vertical-air-track",
@@ -53,7 +53,7 @@ export const metadata = {
     locale: 'ko_KR',
     type: 'website',
   },
-  twitter: {
+  twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: 'summary_large_image',
     title: "수직 에임 연습 - 공중 트래킹 | SkillDrills",
     description: "브라우저에서 무료로 수직 에임과 공중 타겟 트래킹을 훈련하세요. Y축 마우스 제어와 낙하 궤적 예측을 측정합니다.",

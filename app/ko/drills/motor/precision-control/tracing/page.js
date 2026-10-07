@@ -9,7 +9,7 @@ export const metadata = {
   title: '마우스 트레이싱 게임 | 커서 추적 테스트 | SkillDrills',
   description: '움직이는 파형을 커서로 따라가며 마우스 추적과 미세 제어를 연습하는 무료 브라우저 테스트.',
   keywords: ['마우스 트레이싱 게임', '마우스 선 따라가기', '커서 추적 테스트', '마우스 트래킹 연습', '정밀 마우스 제어', '마우스 궤적 테스트', '연속 트래킹 연습', '미세 운동 조절', 'FPS 트래킹 에임', '마우스 움직임 연습', '커서 경로 추적', '손목 컨트롤 연습'],
-  openGraph: {
+  openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
     title: '마우스 트레이싱 게임 | 커서 추적 테스트 | SkillDrills',
     description: '움직이는 파형을 커서로 따라가며 마우스 추적과 미세 제어를 연습하는 무료 브라우저 테스트.',
     type: 'article',
@@ -17,7 +17,7 @@ export const metadata = {
     siteName: 'SkillDrills',
     locale: 'ko_KR',
   },
-  twitter: {
+  twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: 'summary_large_image',
     title: '마우스 트레이싱 게임 | 커서 추적 테스트 | SkillDrills',
     description: '움직이는 파형을 커서로 따라가며 마우스 추적과 미세 제어를 연습하는 무료 브라우저 테스트.',

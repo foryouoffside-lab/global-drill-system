@@ -9,7 +9,7 @@ export const metadata = {
   title: "集中力テスト | 持続的注意の測定 | SkillDrills",
   description: "無料ブラウザの集中力テストで持続的注意、誤反応の抑制、ルール切り替えを確認。医療診断ではないセルフチェックです。",
   keywords: ["集中力テスト", "集中力テスト 無料", "集中力 測定", "持続的注意 テスト", "注意力 テスト", "ビジランス テスト", "集中力 ゲーム", "抑制機能 テスト", "集中力 トレーニング", "集中力テスト ブラウザ", "CPTテスト オンライン"],
-  openGraph: {
+  openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
     title: "集中力テスト | 持続的注意の測定 | SkillDrills",
     description: "無料ブラウザの集中力テストで持続的注意、誤反応の抑制、ルール切り替えを確認。医療診断ではないセルフチェックです。",
     type: 'article',
@@ -17,7 +17,7 @@ export const metadata = {
     siteName: 'SkillDrills',
     locale: 'ja_JP',
   },
-  twitter: {
+  twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: 'summary_large_image',
     title: "集中力テスト | 持続的注意の測定 | SkillDrills",
     description: "無料ブラウザの集中力テストで持続的注意、誤反応の抑制、ルール切り替えを確認。医療診断ではないセルフチェックです。",

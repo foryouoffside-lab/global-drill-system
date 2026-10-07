@@ -40,7 +40,7 @@ export const metadata = {
     canonical: 'https://skilldrills.online/pt/drills/physical/fitness/speed-drill',
     languages: getAlternateLanguages('/drills/physical/fitness/speed-drill'),
   },
-  openGraph: {
+  openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
     title: "Teste de Cliques por Segundo & Teste de CPS Online – Treino de Velocidade | SkillDrills",
     description: "Teste gratuito de cliques por segundo (CPS) e treino de velocidade motora para mouse. Intercepte alvos dinâmicos que encolhem com impulsos balísticos e reflexos neuromusculares ultrarrápidos.",
     url: 'https://skilldrills.online/pt/drills/physical/fitness/speed-drill',
@@ -48,7 +48,7 @@ export const metadata = {
     locale: 'pt_BR',
     type: 'website',
   },
-  twitter: {
+  twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: 'summary_large_image',
     title: "Teste de Cliques por Segundo & Teste de CPS Online – Treino de Velocidade | SkillDrills",
     description: "Teste gratuito de cliques por segundo (CPS) e treino de velocidade motora para mouse. Intercepte alvos dinâmicos que encolhem com impulsos balísticos e reflexos neuromusculares ultrarrápidos.",

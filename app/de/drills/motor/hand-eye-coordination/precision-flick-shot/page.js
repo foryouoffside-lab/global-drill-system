@@ -13,7 +13,7 @@ export const metadata = {
     'Zielgenauigkeit testen', 'Flick Shot Training', 'FPS Aim Training', 'Zielerfassung trainieren',
     'Klickgenauigkeit Maus', 'CS2 Aim Training', 'Valorant Aim Training', 'Micro Flick Trainer',
   ],
-  openGraph: {
+  openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
     title: 'Flick Aim Trainer | Mausgenauigkeit testen | SkillDrills',
     description: 'Kostenloser Flick-Aim-Trainer im Browser: Teste Mausgenauigkeit, Zielerfassung und Trefferquote für FPS, CS2 und VALORANT ohne Download.',
     type: 'article',
@@ -21,7 +21,7 @@ export const metadata = {
     siteName: 'SkillDrills',
     locale: 'de_DE',
   },
-  twitter: {
+  twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: 'summary_large_image',
     title: 'Flick Aim Trainer | Mausgenauigkeit testen | SkillDrills',
     description: 'Kostenloser Flick-Aim-Trainer im Browser: Teste Mausgenauigkeit, Zielerfassung und Trefferquote für FPS, CS2 und VALORANT ohne Download.',

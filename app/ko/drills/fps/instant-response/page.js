@@ -28,7 +28,7 @@ export const metadata = {
     index: true,
     follow: true,
   },
-  openGraph: {
+  openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
     title: "반응속도 테스트 | FPS 클릭 반응 측정 | SkillDrills",
     description: "무료 브라우저 반응속도 테스트로 시각 신호부터 클릭까지의 시간을 측정하고 FPS 교전 반응을 비교하세요.",
     url: "https://skilldrills.online/ko/drills/fps/instant-response",
@@ -36,7 +36,7 @@ export const metadata = {
     locale: 'ko_KR',
     type: 'website',
   },
-  twitter: {
+  twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: 'summary_large_image',
     title: "반응속도 테스트 | FPS 클릭 반응 측정 | SkillDrills",
     description: "무료 브라우저 반응속도 테스트로 시각 신호부터 클릭까지의 시간을 측정하고 FPS 교전 반응을 비교하세요.",

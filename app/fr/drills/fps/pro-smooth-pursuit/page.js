@@ -28,7 +28,7 @@ export const metadata = {
     index: true,
     follow: true,
   },
-  openGraph: {
+  openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
     title: "Aim Trainer | Tracking FPS Fluide | SkillDrills",
     description: "Entraînez le tracking fluide sur des cibles mobiles : aim trainer FPS gratuit dans le navigateur.",
     url: "https://skilldrills.online/fr/drills/fps/pro-smooth-pursuit",
@@ -36,7 +36,7 @@ export const metadata = {
     locale: 'fr_FR',
     type: 'website',
   },
-  twitter: {
+  twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: 'summary_large_image',
     title: "Aim Trainer | Tracking FPS Fluide | SkillDrills",
     description: "Entraînez le tracking fluide sur des cibles mobiles : aim trainer FPS gratuit dans le navigateur.",

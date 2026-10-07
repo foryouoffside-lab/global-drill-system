@@ -28,7 +28,7 @@ export const metadata = {
     index: true,
     follow: true,
   },
-  openGraph: {
+  openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
     title: "Entrenamiento giro 180° | Puntería FPS | SkillDrills",
     description: "Detecta objetivos con visión periférica, gira 180° y frena el ratón con precisión en este entrenamiento FPS gratuito.",
     url: "https://skilldrills.online/es/drills/fps/180-degree-awareness",
@@ -36,7 +36,7 @@ export const metadata = {
     locale: 'es_ES',
     type: 'website',
   },
-  twitter: {
+  twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: 'summary_large_image',
     title: "Entrenamiento giro 180° | Puntería FPS | SkillDrills",
     description: "Detecta objetivos con visión periférica, gira 180° y frena el ratón con precisión en este entrenamiento FPS gratuito.",

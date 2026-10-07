@@ -9,7 +9,7 @@ export const metadata = {
   title: "選択反応時間テスト | 判断速度トレーニング | SkillDrills",
   description: "無料ブラウザの選択反応時間テスト：変化するルールに合うターゲットを選び、判断速度と正確さを練習します。臨床検査ではありません。",
   keywords: ["反応速度テスト", "反応速度テスト 無料", "反応速度 測定", "選択反応時間", "選択反応 テスト", "判断速度", "反射神経 テスト", "ヒックの法則"],
-  openGraph: {
+  openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
     title: "選択反応時間テスト | 判断速度トレーニング | SkillDrills",
     description: "無料ブラウザの選択反応時間テスト：変化するルールに合うターゲットを選び、判断速度と正確さを練習します。臨床検査ではありません。",
     type: 'article',
@@ -17,7 +17,7 @@ export const metadata = {
     siteName: 'SkillDrills',
     locale: 'ja_JP',
   },
-  twitter: {
+  twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: 'summary_large_image',
     title: "選択反応時間テスト | 判断速度トレーニング | SkillDrills",
     description: "無料ブラウザの選択反応時間テスト：変化するルールに合うターゲットを選び、判断速度と正確さを練習します。臨床検査ではありません。",

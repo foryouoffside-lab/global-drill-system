@@ -40,7 +40,7 @@ export const metadata = {
     canonical: 'https://skilldrills.online/es/drills/physical/fitness/speed-drill',
     languages: getAlternateLanguages('/drills/physical/fitness/speed-drill'),
   },
-  openGraph: {
+  openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
     title: "Test de Clics por Segundo & Prueba de Velocidad de Clic – Speed Drill | SkillDrills",
     description: "Test gratuito de clics por segundo (CPS) y entrenamiento de reflejos para ratón. Intercepta objetivos en movimiento que se encogen con impulsos balísticos y cronometría motora precisa.",
     url: 'https://skilldrills.online/es/drills/physical/fitness/speed-drill',
@@ -48,7 +48,7 @@ export const metadata = {
     locale: 'es_ES',
     type: 'website',
   },
-  twitter: {
+  twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: 'summary_large_image',
     title: "Test de Clics por Segundo & Prueba de Velocidad de Clic – Speed Drill | SkillDrills",
     description: "Test gratuito de clics por segundo (CPS) y entrenamiento de reflejos para ratón. Intercepta objetivos en movimiento que se encogen con impulsos balísticos y cronometría motora precisa.",

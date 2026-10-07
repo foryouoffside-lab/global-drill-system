@@ -37,7 +37,7 @@ export const metadata = {
     canonical: 'https://skilldrills.online/fr/drills/physical/fitness/agility-ladder',
     languages: getAlternateLanguages('/drills/physical/fitness/agility-ladder'),
   },
-  openGraph: {
+  openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
     title: "Exercices d'échelle d'agilité | SkillDrills",
     description: "Exercices gratuits d'échelle d'agilité en ligne. Suivez des appuis alternés pour travailler le jeu de jambes, le rythme et la coordination bilatérale.",
     url: 'https://skilldrills.online/fr/drills/physical/fitness/agility-ladder',
@@ -45,7 +45,7 @@ export const metadata = {
     locale: 'fr_FR',
     type: 'website',
   },
-  twitter: {
+  twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: 'summary_large_image',
     title: "Exercices d'échelle d'agilité | SkillDrills",
     description: "Exercices gratuits d'échelle d'agilité en ligne. Suivez des appuis alternés pour travailler le jeu de jambes, le rythme et la coordination bilatérale.",

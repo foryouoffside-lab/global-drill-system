@@ -26,7 +26,7 @@ export const metadata = {
     languages: getAlternateLanguages('/drills/visual-tracking/triangular-pursuit')
   },
   robots: { index: true, follow: true },
-  openGraph: {
+  openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
     title: "Rastreamento visual triangular | SkillDrills",
     description: "Acompanhe um alvo em uma rota triangular. Treino gratuito para rastreamento diagonal, erro nas quinas e perdas do alvo.",
     url: "https://skilldrills.online/pt/drills/visual-tracking/triangular-pursuit",
@@ -34,7 +34,7 @@ export const metadata = {
     locale: "pt_BR",
     type: "website"
   },
-  twitter: {
+  twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: "summary_large_image",
     title: "Rastreamento visual triangular | SkillDrills",
     description: "Acompanhe um alvo em uma rota triangular. Treino gratuito para rastreamento diagonal, erro nas quinas e perdas do alvo."

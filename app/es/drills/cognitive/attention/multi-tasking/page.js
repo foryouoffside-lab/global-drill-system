@@ -22,7 +22,7 @@ export const metadata = {
     "coordinacion interhemisferica test",
     "velocidad de alternancia atencional"
   ],
-  openGraph: {
+  openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
     title: "Test de Multitarea – Foco en Flujo Doble | SkillDrills",
     description: "Test de multitarea y flexibilidad cognitiva online: Rastrea dos flujos visuales opuestos en tiempo real y evalua el coste de alternancia mental sin registro.",
     type: 'article',
@@ -30,7 +30,7 @@ export const metadata = {
     siteName: 'SkillDrills',
     locale: 'es_ES',
   },
-  twitter: {
+  twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: 'summary_large_image',
     title: "Test de Multitarea – Foco en Flujo Doble | SkillDrills",
     description: "Test de multitarea y flexibilidad cognitiva online: Rastrea dos flujos visuales opuestos en tiempo real y evalua el coste de alternancia mental sin registro.",

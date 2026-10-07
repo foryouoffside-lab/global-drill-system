@@ -22,7 +22,7 @@ export const metadata = {
     "coordenacao inter-hemisferica teste",
     "teste de velocidade de alternancia"
   ],
-  openGraph: {
+  openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
     title: "Teste de Multitarefa – Foco em Fluxo Duplo | SkillDrills",
     description: "Teste de multitarefa e flexibilidade cognitiva online gratis: Monitore dois fluxos visuais opostos em tempo real e avalie a alternancia mental sob pressao.",
     type: 'article',
@@ -30,7 +30,7 @@ export const metadata = {
     siteName: 'SkillDrills',
     locale: 'pt_BR',
   },
-  twitter: {
+  twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: 'summary_large_image',
     title: "Teste de Multitarefa – Foco em Fluxo Duplo | SkillDrills",
     description: "Teste de multitarefa e flexibilidade cognitiva online gratis: Monitore dois fluxos visuais opostos em tempo real e avalie a alternancia mental sob pressao.",

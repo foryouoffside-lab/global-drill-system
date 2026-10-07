@@ -27,7 +27,7 @@ export const metadata = {
     languages: getAlternateLanguages('/drills/visual-tracking/staircase-step'),
   },
   robots: { index: true, follow: true },
-  openGraph: {
+  openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
     title: "Poursuite oculaire verticale | SkillDrills",
     description: "Suivez une cible qui monte et descend par paliers. Exercice gratuit avec retard du regard, pertes de cible et précision verticale.",
     url: "https://skilldrills.online/fr/drills/visual-tracking/staircase-step",
@@ -35,7 +35,7 @@ export const metadata = {
     locale: 'fr_FR',
     type: 'website',
   },
-  twitter: {
+  twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: 'summary_large_image',
     title: "Poursuite oculaire verticale | SkillDrills",
     description: "Suivez une cible qui monte et descend par paliers. Exercice gratuit avec retard du regard, pertes de cible et précision verticale.",

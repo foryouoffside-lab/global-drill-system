@@ -29,7 +29,7 @@ export const metadata = {
     "遮蔽 追従 練習",
     "予測視線 テスト"
   ],
-  openGraph: {
+  openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
     title: "予測視線トレーニング｜遮蔽後の軌道を追う | SkillDrills",
     description: "動く標的を追い、短い遮蔽のあとに現れる位置を予測する無料ブラウザ練習。反応時間と予測誤差を記録。",
     type: "website",
@@ -37,7 +37,7 @@ export const metadata = {
     siteName: "SkillDrills",
     locale: "ja_JP",
   },
-  twitter: {
+  twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: "summary_large_image",
     title: "予測視線トレーニング｜遮蔽後の軌道を追う | SkillDrills",
     description: "見えている軌道を手掛かりに、遮蔽中の標的位置を予測するブラウザドリル。無理のない短時間練習。",

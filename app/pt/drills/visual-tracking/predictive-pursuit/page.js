@@ -29,7 +29,7 @@ export const metadata = {
     "trajetória de alvo treino",
     "treino de visão dinâmica"
   ],
-  openGraph: {
+  openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
     title: "Rastreamento visual preditivo | SkillDrills",
     description: "Siga um alvo em movimento e estime sua posição após uma breve oclusão. Exercício gratuito no navegador com reação e erro de trajetória.",
     type: "website",
@@ -37,7 +37,7 @@ export const metadata = {
     siteName: "SkillDrills",
     locale: "pt_BR",
   },
-  twitter: {
+  twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: "summary_large_image",
     title: "Rastreamento visual preditivo | SkillDrills",
     description: "Exercício curto para seguir um alvo, manter a estimativa durante a oclusão e conferir o desvio na reaparição.",

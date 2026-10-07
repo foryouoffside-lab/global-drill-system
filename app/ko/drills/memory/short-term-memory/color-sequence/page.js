@@ -49,7 +49,7 @@ export const metadata = {
     index: true,
     follow: true,
   },
-  openGraph: {
+  openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
     title: '색깔 순서 기억 게임 | SkillDrills',
     description: '무료 색깔 순서 기억 게임: 빛과 소리로 제시되는 색상 순서를 기억해 같은 순서로 눌러 보세요.',
     url: 'https://skilldrills.online/ko/drills/memory/short-term-memory/color-sequence',
@@ -57,7 +57,7 @@ export const metadata = {
     locale: 'ko_KR',
     type: 'website',
   },
-  twitter: {
+  twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: 'summary_large_image',
     title: '색깔 순서 기억 게임 | SkillDrills',
     description: '무료 색깔 순서 기억 게임: 빛과 소리로 제시되는 색상 순서를 기억해 같은 순서로 눌러 보세요.',

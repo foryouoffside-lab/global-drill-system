@@ -40,7 +40,7 @@ export const metadata = {
     canonical: 'https://skilldrills.online/de/drills/physical/fitness/agility-ladder',
     languages: getAlternateLanguages('/drills/physical/fitness/agility-ladder'),
   },
-  openGraph: {
+  openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
     title: "Koordinationsleiter Übungen | SkillDrills",
     description: "Kostenlose Koordinationsleiter-Übungen online. Folge abwechselnden Sprossen und trainiere Beinarbeit, Schrittfolgen, Tempo und Rhythmus im Browser.",
     url: 'https://skilldrills.online/de/drills/physical/fitness/agility-ladder',
@@ -48,7 +48,7 @@ export const metadata = {
     locale: 'de_DE',
     type: 'website',
   },
-  twitter: {
+  twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: 'summary_large_image',
     title: "Koordinationsleiter Übungen | SkillDrills",
     description: "Kostenlose Koordinationsleiter-Übungen online. Folge abwechselnden Sprossen und trainiere Beinarbeit, Schrittfolgen, Tempo und Rhythmus im Browser.",

@@ -9,7 +9,7 @@ export const metadata = {
   title: "Lecture rapide | Lecteur RSVP | SkillDrills",
   description: "Entraînement de lecture rapide gratuit : traitez les mots à un point fixe et suivez les MPM et la précision. Ce n’est pas un test clinique.",
   keywords: ["lecture rapide", "test vitesse de lecture", "vitesse de lecture", "lecteur rapide en ligne", "RSVP lecture", "mots par minute", "entraînement lecture rapide"],
-  openGraph: {
+  openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
     title: "Lecture rapide | Lecteur RSVP | SkillDrills",
     description: "Entraînement de lecture rapide gratuit : traitez les mots à un point fixe et suivez les MPM et la précision. Ce n’est pas un test clinique.",
     type: 'article',
@@ -17,7 +17,7 @@ export const metadata = {
     siteName: 'SkillDrills',
     locale: 'fr_FR',
   },
-  twitter: {
+  twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: 'summary_large_image',
     title: "Lecture rapide | Lecteur RSVP | SkillDrills",
     description: "Entraînement de lecture rapide gratuit : traitez les mots à un point fixe et suivez les MPM et la précision. Ce n’est pas un test clinique.",

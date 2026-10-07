@@ -40,7 +40,7 @@ export const metadata = {
     canonical: 'https://skilldrills.online/pt/drills/physical/balance-training/stability-challenge',
     languages: getAlternateLanguages('/drills/physical/balance-training/stability-challenge'),
   },
-  openGraph: {
+  openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
     title: 'Estabilidade de Mira | Teste de Precisão | SkillDrills',
     description: 'Mantenha o retículo centrado e pratique firmeza, controle de recoil e precisão do mouse em um treino grátis no navegador.',
     url: 'https://skilldrills.online/pt/drills/physical/balance-training/stability-challenge',
@@ -48,7 +48,7 @@ export const metadata = {
     locale: 'pt_BR',
     type: 'website',
   },
-  twitter: {
+  twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: 'summary_large_image',
     title: 'Estabilidade de Mira | Teste de Precisão | SkillDrills',
     description: 'Mantenha o retículo centrado e pratique firmeza, controle de recoil e precisão do mouse em um treino grátis no navegador.',

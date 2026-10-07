@@ -15,7 +15,7 @@ export const metadata = {
   title: "듀얼 N-백 | 작업기억 훈련 게임 | SkillDrills",
   description: "무료 듀얼 N-백 훈련 게임: N단계 전 자극을 비교하며 작업기억 갱신과 집중력을 브라우저에서 연습하세요.",
   keywords: ['듀얼 N-백', 'N-백 게임', 'N-백 훈련', '작업기억력', '작업기억 훈련', '작업기억 갱신', 'N백 테스트', '두뇌 훈련 게임', '기억력 훈련', 'N-백 온라인'],
-  openGraph: {
+  openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
     title: "듀얼 N-백 | 작업기억 훈련 게임 | SkillDrills",
     description: "무료 듀얼 N-백 훈련 게임: N단계 전 자극을 비교하며 작업기억 갱신을 브라우저에서 연습하세요.",
     type: "website",
@@ -23,7 +23,7 @@ export const metadata = {
     siteName: "SkillDrills",
     locale: "ko_KR",
   },
-  twitter: {
+  twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: "summary_large_image",
     title: "듀얼 N-백 | 작업기억 훈련 게임 | SkillDrills",
     description: "무료 듀얼 N-백 훈련 게임: N단계 전 자극을 비교하며 작업기억 갱신을 브라우저에서 연습하세요.",

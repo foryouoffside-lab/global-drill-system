@@ -26,7 +26,7 @@ export const metadata = {
     index: true,
     follow: true,
   },
-  openGraph: {
+  openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
     title: "에임 연습 | 타겟 선택·위협 판단 | SkillDrills",
     description: "무료 브라우저 에임 연습으로 여러 적 중 위험한 타겟을 먼저 고르고 불필요한 사격을 멈추는 판단력을 측정하세요.",
     url: "https://skilldrills.online/ko/drills/fps/target-prioritization",
@@ -34,7 +34,7 @@ export const metadata = {
     locale: 'ko_KR',
     type: 'website',
   },
-  twitter: {
+  twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: 'summary_large_image',
     title: "에임 연습 | 타겟 선택·위협 판단 | SkillDrills",
     description: "무료 브라우저 에임 연습으로 여러 적 중 위험한 타겟을 먼저 고르고 불필요한 사격을 멈추는 판단력을 측정하세요.",

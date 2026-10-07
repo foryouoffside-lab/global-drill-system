@@ -21,7 +21,7 @@ export const metadata = {
     "visuelle Reaktionszeit üben",
     "Blickverfolgung im Browser"
   ],
-  openGraph: {
+  openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
     title: "Dreieckige Blickverfolgung | SkillDrills",
     description: "Verfolge ein Ziel auf einer Dreiecksbahn. Kostenlose Browserübung für diagonale Blickfolge, Eckpunktfehler und Zielverluste.",
     url: 'https://skilldrills.online/de/drills/visual-tracking/triangular-pursuit',
@@ -29,7 +29,7 @@ export const metadata = {
     locale: 'de_DE',
     type: 'website',
   },
-  twitter: {
+  twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: 'summary_large_image',
     title: "Dreieckige Blickverfolgung | SkillDrills",
     description: "Verfolge ein Ziel auf einer Dreiecksbahn. Kostenlose Browserübung für diagonale Blickfolge, Eckpunktfehler und Zielverluste.",

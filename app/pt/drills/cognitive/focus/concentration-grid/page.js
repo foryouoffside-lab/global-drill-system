@@ -34,7 +34,7 @@ export const metadata = {
     "tabela de schulte 5x5 gratis",
     "teste de atencao e foco online"
   ],
-  openGraph: {
+  openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
     title: "Tabela de Schulte Online – Treino de Foco e Visão Periférica | SkillDrills",
     description: "Treine visão periférica, leitura dinâmica e velocidade de busca visual com a tabela de Schulte online grátis. Toque números sequenciais em grades de 3x3 a 8x8 sem cadastro.",
     type: "website",
@@ -42,7 +42,7 @@ export const metadata = {
     siteName: "SkillDrills",
     locale: "pt_BR",
   },
-  twitter: {
+  twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: "summary_large_image",
     title: "Tabela de Schulte Online – Treino de Foco e Visão Periférica | SkillDrills",
     description: "Treine visão periférica, leitura dinâmica e velocidade de busca visual com a tabela de Schulte online grátis. Toque números sequenciais em grades de 3x3 a 8x8 sem cadastro.",

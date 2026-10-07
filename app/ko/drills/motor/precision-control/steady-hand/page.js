@@ -18,7 +18,7 @@ export const metadata = {
     '커서 제어 테스트', '마우스 미로 게임', '통로 따라가기',
     '손 떨림 제어', '게이밍 마우스 정밀도', '마우스 조작 연습',
   ],
-  openGraph: {
+  openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
     title: '마우스 정밀도 테스트 | 손 안정성 | SkillDrills',
     description: '마우스 커서로 좁은 경로를 따라가며 정밀도와 손 안정성을 측정하는 무료 브라우저 테스트.',
     type: 'article',
@@ -26,7 +26,7 @@ export const metadata = {
     siteName: 'SkillDrills',
     locale: 'ko_KR',
   },
-  twitter: {
+  twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: 'summary_large_image',
     title: '마우스 정밀도 테스트 | 손 안정성 | SkillDrills',
     description: '마우스 커서로 좁은 경로를 따라가며 정밀도와 손 안정성을 측정하는 무료 브라우저 테스트.',

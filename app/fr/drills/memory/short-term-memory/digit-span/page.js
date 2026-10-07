@@ -32,7 +32,7 @@ export const metadata = {
     index: true,
     follow: true,
   },
-  openGraph: {
+  openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
     title: "Test empan de chiffres en ligne | Mémoire | SkillDrills",
     description: "Test gratuit d’empan de chiffres : mémorisez une suite numérique croissante et restituez-la dans le bon ordre, directement dans le navigateur.",
     url: "https://skilldrills.online/fr/drills/memory/short-term-memory/digit-span",
@@ -40,7 +40,7 @@ export const metadata = {
     locale: 'fr_FR',
     type: 'website',
   },
-  twitter: {
+  twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: 'summary_large_image',
     title: "Test empan de chiffres en ligne | Mémoire | SkillDrills",
     description: "Test gratuit d’empan de chiffres : mémorisez une suite numérique croissante et restituez-la dans le bon ordre, directement dans le navigateur.",

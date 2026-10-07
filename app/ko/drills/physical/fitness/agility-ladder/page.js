@@ -41,7 +41,7 @@ export const metadata = {
     canonical: 'https://skilldrills.online/ko/drills/physical/fitness/agility-ladder',
     languages: getAlternateLanguages('/drills/physical/fitness/agility-ladder'),
   },
-  openGraph: {
+  openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
     title: "스텝레더 훈련 | 풋워크 민첩성 | SkillDrills",
     description: "무료 스텝레더 훈련과 풋워크 민첩성 드릴. 좌우 스텝을 리듬 있게 따라가며 운동 시퀀싱, 발놀림, 양측 협응을 단련합니다.",
     url: 'https://skilldrills.online/ko/drills/physical/fitness/agility-ladder',
@@ -49,7 +49,7 @@ export const metadata = {
     locale: 'ko_KR',
     type: 'website',
   },
-  twitter: {
+  twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: 'summary_large_image',
     title: "스텝레더 훈련 | 풋워크 민첩성 | SkillDrills",
     description: "무료 스텝레더 훈련과 풋워크 민첩성 드릴. 좌우 스텝을 리듬 있게 따라가며 운동 시퀀싱, 발놀림, 양측 협응을 단련합니다.",

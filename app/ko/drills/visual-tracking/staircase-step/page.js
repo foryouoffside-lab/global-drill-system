@@ -27,7 +27,7 @@ export const metadata = {
     languages: getAlternateLanguages("/drills/visual-tracking/staircase-step"),
   },
   robots: { index: true, follow: true },
-  openGraph: {
+  openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
     title: "상하 시선 추적 훈련｜수직 추적 드릴 | SkillDrills",
     description: "계단식으로 오르내리는 표적을 따라가는 무료 브라우저 훈련. 수직 추적, 시선 지연, 표적 손실을 기록합니다.",
     url: "https://skilldrills.online/ko/drills/visual-tracking/staircase-step",
@@ -35,7 +35,7 @@ export const metadata = {
     locale: "ko_KR",
     type: "website",
   },
-  twitter: {
+  twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: "summary_large_image",
     title: "상하 시선 추적 훈련｜수직 추적 드릴 | SkillDrills",
     description: "계단식으로 오르내리는 표적을 따라가는 무료 브라우저 훈련. 수직 추적, 시선 지연, 표적 손실을 기록합니다.",

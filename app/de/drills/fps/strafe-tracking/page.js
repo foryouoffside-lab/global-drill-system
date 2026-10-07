@@ -43,7 +43,7 @@ export const metadata = {
     index: true,
     follow: true,
   },
-  openGraph: {
+  openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
     title: "Tracking Aim Training | Strafe-Übung | SkillDrills",
     description: "Kostenloses Tracking-Aim-Training im Browser: Übe AD-Strafes, Richtungswechsel und reaktives Zielen für Apex und CS2.",
     url: "https://skilldrills.online/de/drills/fps/strafe-tracking",
@@ -51,7 +51,7 @@ export const metadata = {
     locale: 'de_DE',
     type: 'website',
   },
-  twitter: {
+  twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: 'summary_large_image',
     title: "Tracking Aim Training | Strafe-Übung | SkillDrills",
     description: "Kostenloses Tracking-Aim-Training im Browser: Übe AD-Strafes, Richtungswechsel und reaktives Zielen für Apex und CS2.",

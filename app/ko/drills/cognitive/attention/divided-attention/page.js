@@ -11,7 +11,7 @@ export const metadata = {
   keywords: ["분할 주의력 테스트", "분할주의력 검사", "이중과제 훈련", "듀얼태스크 연습", "멀티태스킹 뇌 훈련", "주의력 분할", "시지각 동시처리", "인지속도 검사", "뇌 기능 트레이닝",
     "분할주의력훈련",
     "듀얼태스크검사"],
-  openGraph: {
+  openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
     title: "분할 주의력 테스트・이중과제 훈련 – 듀얼태스크 인지능력 측정 | SkillDrills",
     description: "무료 브라우저 주의분할(이중과제) 테스트 도구. 움직이는 시각 표적 추적과 연속 숫자 분류를 동시에 수행하여 심리적 불응기(PRP)와 대뇌의 병목 정보처리 능력을 밀리초 단위로 정밀 측정합니다.",
     type: 'article',
@@ -19,7 +19,7 @@ export const metadata = {
     siteName: 'SkillDrills',
     locale: 'ko_KR',
   },
-  twitter: {
+  twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: 'summary_large_image',
     title: "분할 주의력 테스트・이중과제 훈련 – 듀얼태스크 인지능력 측정 | SkillDrills",
     description: "무료 브라우저 주의분할(이중과제) 테스트 도구. 움직이는 시각 표적 추적과 연속 숫자 분류를 동시에 수행하여 심리적 불응기(PRP)와 대뇌의 병목 정보처리 능력을 밀리초 단위로 정밀 측정합니다.",

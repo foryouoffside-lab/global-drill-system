@@ -23,7 +23,7 @@ export const metadata = {
     "무료 기억력 테스트",
     "작업기억력 테스트"
   ],
-  openGraph: {
+  openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
     title: "숫자 기억력 테스트 | 숫자 외우기 | SkillDrills",
     description: "무료 숫자 기억력 테스트: 점점 길어지는 숫자 배열을 기억한 뒤 같은 순서로 입력해 숫자 기억력과 작업기억을 연습하세요.",
     type: 'website',
@@ -31,7 +31,7 @@ export const metadata = {
     siteName: 'SkillDrills',
     locale: 'ko_KR',
   },
-  twitter: {
+  twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: 'summary_large_image',
     title: "숫자 기억력 테스트 | 숫자 외우기 | SkillDrills",
     description: "무료 숫자 기억력 테스트: 점점 길어지는 숫자 배열을 기억한 뒤 같은 순서로 입력해 숫자 기억력과 작업기억을 연습하세요.",

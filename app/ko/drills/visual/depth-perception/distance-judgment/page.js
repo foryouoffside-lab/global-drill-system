@@ -34,7 +34,7 @@ export const metadata = {
     '양안시 입체시',
     '시지각 공간 지각력',
   ],
-  openGraph: {
+  openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
     title: '입체시 검사 온라인 | 심시력·거리감 훈련 | SkillDrills',
     description: '입체시 검사와 심시력 연습을 위한 무료 온라인 시각 드릴. 다가오는 목표물의 거리감과 도달 타이밍을 측정하며, 의료 진단용 검사는 아닙니다.',
     type: 'article',
@@ -42,7 +42,7 @@ export const metadata = {
     siteName: 'SkillDrills',
     locale: 'ko_KR',
   },
-  twitter: {
+  twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: 'summary_large_image',
     title: '입체시 검사 온라인 | 심시력·거리감 훈련 | SkillDrills',
     description: '입체시 검사와 심시력 연습을 위한 무료 온라인 시각 드릴. 다가오는 목표물의 거리감과 도달 타이밍을 측정하며, 의료 진단용 검사는 아닙니다.',

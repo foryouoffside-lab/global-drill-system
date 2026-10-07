@@ -22,14 +22,14 @@ export const metadata = {
     "perception temporelle du mouvement",
     "perception du scintillement"
 ],
-  openGraph: {
+  openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
     title: "Discrimination Temporelle | Rythme Visuel | SkillDrills",
     description: "Trouvez la cellule en déphasage dans une grille pulsante et pratiquez la discrimination temporelle visuelle.",
     type: "website",
     url: "https://skilldrills.online/fr/drills/visual/visual-recognition/rhythm-anomaly",
     siteName: "SkillDrills",
   },
-  twitter: {
+  twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: "summary_large_image",
     title: "Discrimination Temporelle | Rythme Visuel | SkillDrills",
     description: "Trouvez la cellule en déphasage dans une grille pulsante et pratiquez la discrimination temporelle visuelle.",

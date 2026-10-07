@@ -45,7 +45,7 @@ export const metadata = {
     index: true,
     follow: true,
   },
-  openGraph: {
+  openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
     title: "Apex 縦エイム練習 - 空中トラッキング | SkillDrills",
     description: "ブラウザで無料のApex縦エイム練習。空中ターゲットを追い、Y軸マウス操作と落下軌道の予測精度を測定します。",
     url: "https://skilldrills.online/ja/drills/fps/vertical-air-track",
@@ -53,7 +53,7 @@ export const metadata = {
     locale: 'ja_JP',
     type: 'website',
   },
-  twitter: {
+  twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: 'summary_large_image',
     title: "Apex 縦エイム練習 - 空中トラッキング | SkillDrills",
     description: "ブラウザで無料のApex縦エイム練習。空中ターゲットを追い、Y軸マウス操作と落下軌道の予測精度を測定します。",

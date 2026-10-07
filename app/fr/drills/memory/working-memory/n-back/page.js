@@ -27,7 +27,7 @@ export const metadata = {
     index: true,
     follow: true,
   },
-  openGraph: {
+  openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
     title: "Test N-Back en ligne | Mémoire de travail | SkillDrills",
     description: "Fais le test N-Back en ligne, gratuitement : entraîne la mise à jour de la mémoire de travail en 2-back et 3-back.",
     url: "https://skilldrills.online/fr/drills/memory/working-memory/n-back",
@@ -35,7 +35,7 @@ export const metadata = {
     locale: 'fr_FR',
     type: 'website',
   },
-  twitter: {
+  twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: 'summary_large_image',
     title: "Test N-Back en ligne | Mémoire de travail | SkillDrills",
     description: "Fais le test N-Back en ligne, gratuitement : entraîne la mise à jour de la mémoire de travail en 2-back et 3-back.",

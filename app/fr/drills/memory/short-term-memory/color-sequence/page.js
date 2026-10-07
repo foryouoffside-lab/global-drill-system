@@ -33,7 +33,7 @@ export const metadata = {
     index: true,
     follow: true,
   },
-  openGraph: {
+  openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
     title: "Jeu Simon en ligne | Mémoire des couleurs | SkillDrills",
     description: "Joue à Simon gratuitement : mémorise une suite de couleurs et de sons qui s'allonge, puis reproduis-la dans le bon ordre.",
     url: "https://skilldrills.online/fr/drills/memory/short-term-memory/color-sequence",
@@ -41,7 +41,7 @@ export const metadata = {
     locale: 'fr_FR',
     type: 'website',
   },
-  twitter: {
+  twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: 'summary_large_image',
     title: "Jeu Simon en ligne | Mémoire des couleurs | SkillDrills",
     description: "Joue à Simon gratuitement : mémorise une suite de couleurs et de sons qui s'allonge, puis reproduis-la dans le bon ordre.",

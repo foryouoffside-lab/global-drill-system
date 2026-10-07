@@ -21,14 +21,14 @@ export const metadata = {
     "Flimmerfrequenz",
     "kritische Flimmerfrequenz"
 ],
-  openGraph: {
+  openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
     title: "Flimmerfusion | Visuelle Zeitauflösung | SkillDrills",
     description: "Finde asynchrone Lichtpulse im wechselnden Raster und übe Flimmererkennung und zeitliche visuelle Diskrimination.",
     type: "website",
     url: "https://skilldrills.online/de/drills/visual/visual-recognition/rhythm-anomaly",
     siteName: "SkillDrills",
   },
-  twitter: {
+  twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: "summary_large_image",
     title: "Flimmerfusion | Visuelle Zeitauflösung | SkillDrills",
     description: "Finde asynchrone Lichtpulse im wechselnden Raster und übe Flimmererkennung und zeitliche visuelle Diskrimination.",

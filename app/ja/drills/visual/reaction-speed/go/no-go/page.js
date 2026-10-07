@@ -21,7 +21,7 @@ export const metadata = {
     "誤反応 抑制",
     "SART 持続的注意"
   ],
-  openGraph: {
+  openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
     title: "Go/No-Goテスト | 反応抑制・衝動制御 | SkillDrills",
     description: "緑には反応し、赤では止まる。反応抑制と誤反応を無料オンラインで確認するGo/No-Go課題。診断用ではありません。",
     type: 'article',
@@ -29,7 +29,7 @@ export const metadata = {
     siteName: 'SkillDrills',
     locale: 'ja_JP',
   },
-  twitter: {
+  twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: 'summary_large_image',
     title: "Go/No-Goテスト | 反応抑制・衝動制御 | SkillDrills",
     description: "緑には反応し、赤では止まる反応抑制を練習する無料Go/No-Goテスト。"

@@ -29,7 +29,7 @@ export const metadata = {
     index: true,
     follow: true,
   },
-  openGraph: {
+  openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
     title: "Aim trainer en ligne | Précision souris | SkillDrills",
     description: "Aim trainer gratuit dans le navigateur pour travailler la visée, les flicks et la précision de souris.",
     url: "https://skilldrills.online/fr/drills/motor/hand-eye-coordination/aim-trainer",
@@ -37,7 +37,7 @@ export const metadata = {
     locale: 'fr_FR',
     type: 'website',
   },
-  twitter: {
+  twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: 'summary_large_image',
     title: "Aim trainer en ligne | Précision souris | SkillDrills",
     description: "Entraînement FPS dans le navigateur pour améliorer la visée, les micro-flicks et les réflexes.",

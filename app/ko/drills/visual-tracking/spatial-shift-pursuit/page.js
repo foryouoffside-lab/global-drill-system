@@ -36,7 +36,7 @@ export const metadata = {
     "화면 이동 추적",
     "시점 전환 에임 안정성"
   ],
-  openGraph: {
+  openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
     title: "화면 흔들림 추적 훈련｜공간 인지 드릴 | SkillDrills",
     description: "시야가 움직일 때도 표적을 따라가는 무료 브라우저 훈련. 공간 인지와 재포착 시간, 위치 오차를 기록합니다.",
     type: "website",
@@ -44,7 +44,7 @@ export const metadata = {
     siteName: "SkillDrills",
     locale: "ko_KR",
   },
-  twitter: {
+  twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: "summary_large_image",
     title: "화면 흔들림 추적 훈련｜공간 인지 드릴 | SkillDrills",
     description: "시야가 움직일 때도 표적을 따라가는 무료 브라우저 훈련. 공간 인지와 재포착 시간, 위치 오차를 기록합니다.",

@@ -28,7 +28,7 @@ export const metadata = {
     index: true,
     follow: true,
   },
-  openGraph: {
+  openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
     title: "FPS 集中力トレーニング | フローエイム | SkillDrills",
     description: "雑念を減らしてエイムのリズムを保つ無料FPS集中力トレーニング。難易度を合わせ、追いエイムの持続力を確認できます。",
     url: "https://skilldrills.online/ja/drills/fps/flow-state",
@@ -36,7 +36,7 @@ export const metadata = {
     locale: 'ja_JP',
     type: 'website',
   },
-  twitter: {
+  twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: 'summary_large_image',
     title: "FPS 集中力トレーニング | フローエイム | SkillDrills",
     description: "雑念を減らしてエイムのリズムを保つ無料FPS集中力トレーニング。難易度を合わせ、追いエイムの持続力を確認できます。",

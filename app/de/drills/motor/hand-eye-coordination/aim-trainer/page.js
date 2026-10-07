@@ -19,7 +19,7 @@ export const metadata = {
     canonical: 'https://skilldrills.online/de/drills/motor/hand-eye-coordination/aim-trainer',
     languages: getAlternateLanguages('/drills/motor/hand-eye-coordination/aim-trainer'),
   },
-  openGraph: {
+  openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
     title: 'Aim Trainer online | Mauspräzision testen | SkillDrills',
     description: 'Kostenloses FPS-Aim-Training im Browser für Mauspräzision, Zielerfassung und Klicktempo.',
     url: 'https://skilldrills.online/de/drills/motor/hand-eye-coordination/aim-trainer',
@@ -27,7 +27,7 @@ export const metadata = {
     locale: 'de_DE',
     type: 'website',
   },
-  twitter: {
+  twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: 'summary_large_image',
     title: 'Aim Trainer online | Mauspräzision testen | SkillDrills',
     description: 'Browsertraining für Mauspräzision, Micro-Flicks und Treffsicherheit in FPS-Spielen.',

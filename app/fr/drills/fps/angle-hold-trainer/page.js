@@ -29,7 +29,7 @@ export const metadata = {
     index: true,
     follow: true,
   },
-  openGraph: {
+  openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
     title: "Aim Trainer | Placement du Viseur | SkillDrills",
     description: "Aim trainer gratuit dans le navigateur : entraînez le placement du viseur, la tenue d'angle, l'écart au mur et la réaction au peek.",
     url: "https://skilldrills.online/fr/drills/fps/angle-hold-trainer",
@@ -37,7 +37,7 @@ export const metadata = {
     locale: 'fr_FR',
     type: 'website',
   },
-  twitter: {
+  twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: 'summary_large_image',
     title: "Aim Trainer | Placement du Viseur | SkillDrills",
     description: "Aim trainer gratuit dans le navigateur : entraînez le placement du viseur, la tenue d'angle, l'écart au mur et la réaction au peek.",

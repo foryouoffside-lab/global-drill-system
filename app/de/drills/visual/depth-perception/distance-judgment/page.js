@@ -30,7 +30,7 @@ export const metadata = {
     'räumliche Wahrnehmung',
     'Tiefensehen Führerschein',
   ],
-  openGraph: {
+  openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
     title: 'Räumliches Sehen Test online | Entfernungen üben',
     description: 'Kostenloser Test für räumliches Sehen und Tiefensehen. Übe Entfernungsschätzung mit einem bewegten Ziel im Browser; kein medizinischer Sehtest.',
     type: 'article',
@@ -38,7 +38,7 @@ export const metadata = {
     siteName: 'SkillDrills',
     locale: 'de_DE',
   },
-  twitter: {
+  twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: 'summary_large_image',
     title: 'Räumliches Sehen Test online | Entfernungen üben',
     description: 'Kostenloser Test für räumliches Sehen und Tiefensehen. Übe Entfernungsschätzung mit einem bewegten Ziel im Browser; kein medizinischer Sehtest.',

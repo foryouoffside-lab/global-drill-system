@@ -22,14 +22,14 @@ export const metadata = {
     "視覚的時間分解能",
     "視覚周期性 識別"
 ],
-  openGraph: {
+  openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
     title: "フリッカーテスト | 視覚の時間分解能 | SkillDrills",
     description: "点滅グリッドで位相差を見つけ、ちらつきの識別と視覚タイミングを練習できます。",
     type: "website",
     url: "https://skilldrills.online/ja/drills/visual/visual-recognition/rhythm-anomaly",
     siteName: "SkillDrills",
   },
-  twitter: {
+  twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: "summary_large_image",
     title: "フリッカーテスト | 視覚の時間分解能 | SkillDrills",
     description: "点滅グリッドで位相差を見つけ、ちらつきの識別と視覚タイミングを練習できます。",

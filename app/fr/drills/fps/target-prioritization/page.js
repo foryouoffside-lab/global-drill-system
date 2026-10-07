@@ -27,7 +27,7 @@ export const metadata = {
     index: true,
     follow: true,
   },
-  openGraph: {
+  openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
     title: "Aim Trainer | Priorisation des Cibles | SkillDrills",
     description: "Aim trainer gratuit dans le navigateur : choisissez la cible la plus dangereuse et entraînez l'ordre des cibles, la décision et le contrôle du tir.",
     url: "https://skilldrills.online/fr/drills/fps/target-prioritization",
@@ -35,7 +35,7 @@ export const metadata = {
     locale: 'fr_FR',
     type: 'website',
   },
-  twitter: {
+  twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: 'summary_large_image',
     title: "Aim Trainer | Priorisation des Cibles | SkillDrills",
     description: "Aim trainer gratuit dans le navigateur : choisissez la cible la plus dangereuse et entraînez l'ordre des cibles, la décision et le contrôle du tir.",

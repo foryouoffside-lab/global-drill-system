@@ -40,7 +40,7 @@ export const metadata = {
     canonical: 'https://skilldrills.online/ja/drills/physical/fitness/speed-drill',
     languages: getAlternateLanguages('/drills/physical/fitness/speed-drill'),
   },
-  openGraph: {
+  openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
     title: "クリック速度測定＆クリック連打テスト – 無料エイム反応速度練習 | SkillDrills",
     description: "無料オンラインクリック速度測定＆クリック連打テスト。縮小しながら高速移動するターゲットを瞬時に捕捉し、正確な高速タップ（連打）を撃ち込むことで、ミリ秒単位の神経反応性と弾道フリックエイム速度を科学的に鍛え上げます。",
     url: 'https://skilldrills.online/ja/drills/physical/fitness/speed-drill',
@@ -48,7 +48,7 @@ export const metadata = {
     locale: 'ja_JP',
     type: 'website',
   },
-  twitter: {
+  twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: 'summary_large_image',
     title: "クリック速度測定＆クリック連打テスト – 無料エイム反応速度練習 | SkillDrills",
     description: "無料オンラインクリック速度測定＆クリック連打テスト。縮小しながら高速移動するターゲットを瞬時に捕捉し、正確な高速タップ（連打）を撃ち込むことで、ミリ秒単位の神経反応性と弾道フリックエイム速度を科学的に鍛え上げます。",

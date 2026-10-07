@@ -97,6 +97,8 @@ function analyse(path, { status, location, html }) {
   const ogTitle = (html.match(/<meta[^>]*property="og:title"[^>]*>/i) || [])[0];
   const ogDesc = (html.match(/<meta[^>]*property="og:description"[^>]*>/i) || [])[0];
   const ogLocale = (html.match(/<meta[^>]*property="og:locale"[^>]*>/i) || [])[0];
+  const ogImage = (html.match(/<meta[^>]*property="og:image"[^>]*>/i) || [])[0];
+  const twImage = (html.match(/<meta[^>]*name="twitter:image"[^>]*>/i) || [])[0];
 
   const links = [...body.matchAll(/<a\s[^>]*href="([^"]+)"/gi)]
     .map((m) => m[1])
@@ -133,6 +135,8 @@ function analyse(path, { status, location, html }) {
     ogTitle: ogTitle ? attr(ogTitle, 'content') : null,
     ogDesc: ogDesc ? attr(ogDesc, 'content') : null,
     ogLocale: ogLocale ? attr(ogLocale, 'content') : null,
+    ogImage: ogImage ? attr(ogImage, 'content') : null,
+    twitterImage: twImage ? attr(twImage, 'content') : null,
     aggregateRating: /aggregateRating/i.test(jsonLd) || /aggregateRating/i.test(html),
     subMs: /sub-?millisecond/i.test(text) || /sub-?millisecond/i.test(jsonLd),
     links: [...new Set(links.filter((l) => l !== own))],

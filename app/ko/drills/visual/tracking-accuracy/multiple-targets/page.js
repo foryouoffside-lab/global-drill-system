@@ -21,7 +21,7 @@ export const metadata = {
     "시각 인지 훈련",
     "동체시력 다중 추적"
   ],
-  openGraph: {
+  openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
     title: "다중 객체 추적 테스트 | 주변시 훈련 | SkillDrills",
     description: "여러 움직이는 표적을 동시에 따라가는 무료 다중 객체 추적 테스트. 주변시와 분할 주의력을 연습하세요.",
     type: 'article',
@@ -29,7 +29,7 @@ export const metadata = {
     siteName: 'SkillDrills',
     locale: 'ko_KR',
   },
-  twitter: {
+  twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: 'summary_large_image',
     title: "다중 객체 추적 테스트 | 주변시 훈련 | SkillDrills",
     description: "여러 움직이는 표적을 동시에 추적하며 시각적 주의력과 공간 작업기억을 연습하세요.",

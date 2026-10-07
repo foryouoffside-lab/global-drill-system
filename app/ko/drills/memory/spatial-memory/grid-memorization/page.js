@@ -8,7 +8,7 @@ export const metadata = {
   title: "순간 기억력 테스트 | 시각 기억 게임 | SkillDrills",
   description: "무료 순간 기억력 테스트: 격자에서 잠깐 빛나는 칸의 위치를 기억하고 같은 패턴을 다시 눌러 시각 기억력과 공간 기억력을 훈련하세요.",
   keywords: ['순간 기억력 테스트', '시각 기억력 테스트', '시각 기억력 게임', '공간 기억력 테스트', '격자 패턴 기억', '기억력 테스트 그림', '시각 작업기억', '단기 시각 기억력', '패턴 기억력 훈련', '두뇌 기억력 게임'],
-  openGraph: {
+  openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
     title: "순간 기억력 테스트 | 시각 기억 게임 | SkillDrills",
     description: "무료 순간 기억력 테스트: 빛나는 격자 패턴의 위치를 기억하고 브라우저에서 바로 재현하세요.",
     type: 'website',
@@ -16,7 +16,7 @@ export const metadata = {
     siteName: 'SkillDrills',
     locale: 'ko_KR',
   },
-  twitter: {
+  twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: 'summary_large_image',
     title: "순간 기억력 테스트 | 시각 기억 게임 | SkillDrills",
     description: "무료 순간 기억력 테스트: 빛나는 격자 패턴의 위치를 기억하고 브라우저에서 바로 재현하세요.",

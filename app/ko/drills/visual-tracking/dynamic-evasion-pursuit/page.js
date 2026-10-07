@@ -31,7 +31,7 @@ export const metadata = {
     "시각 반응 훈련",
     "무료 눈 운동"
   ],
-  openGraph: {
+  openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
     title: "동체시력 테스트・급선회 표적 추적 | SkillDrills",
     description: "갑자기 급선회하는 표적을 시선으로 재포착하며 동체시력과 보정 사케드를 연습하는 무료 브라우저 훈련입니다.",
     type: "website",
@@ -39,7 +39,7 @@ export const metadata = {
     siteName: "SkillDrills",
     locale: "ko_KR",
   },
-  twitter: {
+  twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: "summary_large_image",
     title: "동체시력 테스트・급선회 표적 추적 | SkillDrills",
     description: "급선회하는 표적을 눈으로 재포착하고 시선 반응과 보정 사케드를 연습하는 무료 온라인 훈련입니다.",

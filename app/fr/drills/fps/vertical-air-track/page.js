@@ -30,7 +30,7 @@ export const metadata = {
     index: true,
     follow: true,
   },
-  openGraph: {
+  openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
     title: 'Aim Trainer - Tracking vertical FPS | SkillDrills',
     description: "Aim trainer gratuit dans le navigateur : entraînez le tracking vertical, l'axe Y et le suivi de cibles aériennes sur Apex et Overwatch 2.",
     url: 'https://skilldrills.online/fr/drills/fps/vertical-air-track',
@@ -38,7 +38,7 @@ export const metadata = {
     locale: 'fr_FR',
     type: 'website',
   },
-  twitter: {
+  twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: 'summary_large_image',
     title: 'Aim Trainer - Tracking vertical FPS | SkillDrills',
     description: "Aim trainer gratuit dans le navigateur : entraînez le tracking vertical, l'axe Y et le suivi de cibles aériennes sur Apex et Overwatch 2.",

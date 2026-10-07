@@ -28,6 +28,10 @@ Scope: Phase A of `2.md` (audit, inventory, site-wide technical pass) plus the f
 | English breadcrumb names in locale JSON-LD | 42 pages | 0 |
 | English hubs without BreadcrumbList | 3 | 0 |
 | Pages rendering English title/H1/guide on a locale tree | 2 (ja, ko `barrier-sequence-pursuit`) | 0 |
+| Pages without `og:image` / `twitter:image` | 478 / 477 | 0 / 0 |
+| Pages pointing at a 404 social image (`/og-default.svg`) | 9 | 0 |
+| H1 with a doubled word (`Recoil Control Trainer Trainer`) or repeated phrase (aim-trainer) | 2 | 0 |
+| Locale pages showing an English sub-line inside the H1 (`instant-response`) | 6 | 0 |
 | Locale pages with English body prose | 286 | 243 (see D2) |
 | `<html lang>` correct in server HTML on locale pages | 0/545 | 0/545 (see D3) |
 
@@ -43,7 +47,11 @@ Commits `f6f05c8`, `38e596d`, `3ba8e51`, `36eedbe`, `10e3a68`.
 - **Entity anchors (checklist 5.2):** English Wikipedia `sameAs` URLs added to the SoftwareApplication JSON-LD of 469 drill pages (81 English + locale copies) from a per-route concept map (e.g. N-back, Stroop effect, Fitts's law, Smooth pursuit, Memory span, Multiple object tracking). English drill pages with a Wikipedia link in JSON-LD: 7/81 before, 80/81 after (commit message `022dc98` says 74/81; the audit count is 80/81). Across all 567 drill URLs, 538 carry a `sameAs` that matches `wikipedia.org`; the rest already had a non-Wikipedia `sameAs` or are `symbol-matching`. Article titles were confirmed through search results (Wikipedia itself is not reachable from this environment); `symbol-matching` has no dedicated article and was left without one.
 - **Internal links:** locale home hero CTAs and category cards use `localizeHref`.
 - **Sitemap:** hreflang `xhtml:link` alternates on every URL that has locale versions; `lastmod` set from the git history (locale trees 2026-09-22, privacy/delete-account 2026-10-01, pages touched today 2026-10-07, locale-specific changes dated per locale URL).
+- **Social previews:** `app/opengraph-image.js` (1200×630, same template as the drill images, drill count from the registry) plus explicit `openGraph.images` / `twitter.images` on every locale page and the shared i18n metadata builders; the nine dead `og-default.svg` references now point at it. Pages in a segment that already has its own `opengraph-image` (English drills) are unchanged.
+- **H1s:** `recoil-control` (`Trainer Trainer`), `aim-trainer` (repeated phrase), native sub-lines on the six `instant-response` locale pages.
 - **Headers:** `Content-Language` per locale tree in `next.config.js`.
+
+Also checked: internal links — every link target in the rendered HTML is a 200 URL already in the sitemap (no 404s, no redirect chains); `<img>` alt text present on all 44 images sampled; the 126 sampled `<canvas>` elements carry no `aria-label` (left: drill render code).
 
 Checked and unchanged: robots.txt allows `GPTBot`, `OAI-SearchBot`, `PerplexityBot`, `ClaudeBot`, `Claude-SearchBot`, `Google-Extended`; `/search` is `noindex,follow` and absent from the sitemap; `llms.txt` counts match the registry (81); no `aggregateRating`; no numbered FAQ placeholders; home `testimonials` untouched.
 
@@ -56,6 +64,6 @@ See "Blockers and owner decisions" in `docs/seo/PAGE_QUEUE.md` (D1–D8). Highes
 ## Artifacts
 
 - `docs/seo/PAGE_QUEUE.md` — 641 rows, priority, status, research link, commit.
-- `docs/seo/audit/render-audit-2026-10-07.csv` — per-URL metrics after the fixes.
+- `docs/seo/audit/render-audit-2026-10-07.csv` — per-URL metrics after the fixes (columns include `ogImage` coverage via the script).
 - `docs/seo/audit/english-prose-leak-2026-10-07.csv` — localized pages with English prose, with the first offending node.
 - `docs/seo/research/{ja,ko,fr,es,pt,de,en}/` — per-page research logs for pages changed.

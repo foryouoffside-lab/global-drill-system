@@ -31,7 +31,7 @@ export const metadata = {
     "dynamische Blickreaktion",
     "Blickziel neu finden"
   ],
-  openGraph: {
+  openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
     title: "Sprungziel | Blickverfolgung | SkillDrills",
     description: "Finde ein versetztes Ziel mit einer Sakkade wieder und nimm anschließend seine Bewegung erneut auf.",
     type: "website",
@@ -39,7 +39,7 @@ export const metadata = {
     siteName: "SkillDrills",
     locale: "de_DE",
   },
-  twitter: {
+  twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: "summary_large_image",
     title: "Sprungziel wiederfinden | SkillDrills",
     description: "Übe den Blicksprung zu einem versetzten Ziel und die anschließende Blickfolge.",

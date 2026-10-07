@@ -22,7 +22,7 @@ export const metadata = {
     '연속 타깃 에임',
     '마우스 조작 훈련',
   ],
-  openGraph: {
+  openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
     title: '타겟 전환 연습・순서 클릭 테스트 | SkillDrills',
     description: '번호 타깃을 순서대로 클릭하며 타겟 전환 속도와 정확도를 측정하는 무료 에임 연습.',
     type: 'article',
@@ -30,7 +30,7 @@ export const metadata = {
     siteName: 'SkillDrills',
     locale: 'ko_KR',
   },
-  twitter: {
+  twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: 'summary_large_image',
     title: '타겟 전환 연습・순서 클릭 테스트 | SkillDrills',
     description: '번호 타깃을 순서대로 클릭하는 무료 타겟 전환 연습.',

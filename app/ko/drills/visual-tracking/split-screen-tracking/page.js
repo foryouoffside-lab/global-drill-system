@@ -27,7 +27,7 @@ export const metadata = {
     languages: getAlternateLanguages("/drills/visual-tracking/split-screen-tracking"),
   },
   robots: { index: true, follow: true },
-  openGraph: {
+  openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
     title: "화면 분할 추적 훈련｜분할 주의력 드릴 | SkillDrills",
     description: "좌우의 움직이는 표적을 동시에 따라가는 무료 브라우저 훈련. 시선 앵커, 좌우 차이, 표적 손실을 기록합니다.",
     url: "https://skilldrills.online/ko/drills/visual-tracking/split-screen-tracking",
@@ -35,7 +35,7 @@ export const metadata = {
     locale: "ko_KR",
     type: "website",
   },
-  twitter: {
+  twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: "summary_large_image",
     title: "화면 분할 추적 훈련｜분할 주의력 드릴 | SkillDrills",
     description: "좌우의 움직이는 표적을 동시에 따라가는 무료 브라우저 훈련. 시선 앵커, 좌우 차이, 표적 손실을 기록합니다.",

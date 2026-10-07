@@ -22,7 +22,7 @@ export const metadata = {
     'reacción de dedos teclado',
     'test de teclas online',
   ],
-  openGraph: {
+  openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
     title: 'Reacción de teclado | Test de teclas | SkillDrills',
     description: 'Mide reacción, precisión y velocidad de keybinds pulsando la tecla mostrada en el navegador.',
     type: 'article',
@@ -30,7 +30,7 @@ export const metadata = {
     siteName: 'SkillDrills',
     locale: 'es_ES',
   },
-  twitter: {
+  twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: 'summary_large_image',
     title: 'Reacción de teclado | Test de teclas | SkillDrills',
     description: 'Test gratuito de reacción de teclado y keybinds en el navegador.',

@@ -27,7 +27,7 @@ export const metadata = {
     languages: getAlternateLanguages("/drills/visual-tracking/dynamic-evasion-pursuit"),
   },
   robots: { index: true, follow: true },
-  openGraph: {
+  openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
     title: "Poursuite Oculaire Réactive | Cible Mobile | SkillDrills",
     description: "Rattrapez une cible mobile qui change de direction et travaillez vision dynamique, réactivité et refixation fovéale.",
     url: "https://skilldrills.online/fr/drills/visual-tracking/dynamic-evasion-pursuit",
@@ -35,7 +35,7 @@ export const metadata = {
     locale: "fr_FR",
     type: "website",
   },
-  twitter: {
+  twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: "summary_large_image",
     title: "Poursuite Oculaire Réactive | Cible Mobile | SkillDrills",
     description: "Rattrapez une cible mobile qui change de direction et travaillez vision dynamique, réactivité et refixation fovéale.",

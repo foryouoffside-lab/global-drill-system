@@ -39,7 +39,7 @@ export const metadata = {
     canonical: 'https://skilldrills.online/pt/drills/physical/reflex-training/reaction-chain',
     languages: getAlternateLanguages('/drills/physical/reflex-training/reaction-chain'),
   },
-  openGraph: {
+  openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
     title: "Frenagem de Mira | Treino de Reflexos",
     description: "Acerte alvos móveis, pare o cursor com precisão e pratique controle do overflick em um treino grátis no navegador.",
     url: 'https://skilldrills.online/pt/drills/physical/reflex-training/reaction-chain',
@@ -47,7 +47,7 @@ export const metadata = {
     locale: 'pt_BR',
     type: 'website',
   },
-  twitter: {
+  twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: 'summary_large_image',
     title: "Frenagem de Mira | Treino de Reflexos",
     description: "Acerte o alvo, freie o cursor com precisão e pratique controle do overflick.",

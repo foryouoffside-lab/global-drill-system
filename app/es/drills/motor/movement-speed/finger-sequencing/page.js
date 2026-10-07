@@ -22,7 +22,7 @@ export const metadata = {
     'coordinación mano ojo',
     'entrenamiento de precisión',
   ],
-  openGraph: {
+  openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
     title: 'Puntería secuencial | Cambio de objetivos | SkillDrills',
     description: 'Mide la transición entre objetivos numerados y la precisión de clic directamente en el navegador.',
     type: 'article',
@@ -30,7 +30,7 @@ export const metadata = {
     siteName: 'SkillDrills',
     locale: 'es_ES',
   },
-  twitter: {
+  twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: 'summary_large_image',
     title: 'Puntería secuencial | Cambio de objetivos | SkillDrills',
     description: 'Entrenamiento gratuito para cambiar de objetivo y hacer clic con precisión.',

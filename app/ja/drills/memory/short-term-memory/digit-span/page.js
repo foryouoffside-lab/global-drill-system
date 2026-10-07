@@ -23,7 +23,7 @@ export const metadata = {
     "順番記憶 テスト",
     "無料 脳トレ 数字"
   ],
-  openGraph: {
+  openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
     title: "数唱テスト｜数字記憶・ワーキングメモリ | SkillDrills",
     description: "無料の数唱テスト。表示される数字の列を覚え、同じ順番で入力して数字記憶とワーキングメモリを測定・練習できます。",
     type: 'website',
@@ -31,7 +31,7 @@ export const metadata = {
     siteName: 'SkillDrills',
     locale: 'ja_JP',
   },
-  twitter: {
+  twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: 'summary_large_image',
     title: "数唱テスト｜数字記憶・ワーキングメモリ | SkillDrills",
     description: "無料の数唱テスト。表示される数字の列を覚え、同じ順番で入力して数字記憶とワーキングメモリを測定・練習できます。",

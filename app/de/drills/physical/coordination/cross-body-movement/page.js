@@ -37,7 +37,7 @@ export const metadata = {
     canonical: 'https://skilldrills.online/de/drills/physical/coordination/cross-body-movement',
     languages: getAlternateLanguages('/drills/physical/coordination/cross-body-movement'),
   },
-  openGraph: {
+  openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
     title: "Hand-Auge-Koordination Test | SkillDrills",
     description: "Kostenloser Hand-Auge-Koordinationstest online. Verbinde diagonale Nodes über die Körpermitte und trainiere bilaterale Koordination sowie Mauspräzision.",
     url: 'https://skilldrills.online/de/drills/physical/coordination/cross-body-movement',
@@ -45,7 +45,7 @@ export const metadata = {
     locale: 'de_DE',
     type: 'website',
   },
-  twitter: {
+  twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: 'summary_large_image',
     title: "Hand-Auge-Koordination Test | SkillDrills",
     description: "Kostenloser Hand-Auge-Koordinationstest online. Verbinde diagonale Nodes über die Körpermitte und trainiere bilaterale Koordination sowie Mauspräzision.",

@@ -36,7 +36,7 @@ export const metadata = {
     canonical: 'https://skilldrills.online/es/drills/physical/coordination/cross-body-movement',
     languages: getAlternateLanguages('/drills/physical/coordination/cross-body-movement'),
   },
-  openGraph: {
+  openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
     title: "Test de coordinación ojo-mano | SkillDrills",
     description: 'Test gratis de coordinación ojo-mano online. Conecta nodos diagonales al cruzar la línea media para entrenar coordinación bilateral y precisión con el ratón.',
     url: 'https://skilldrills.online/es/drills/physical/coordination/cross-body-movement',
@@ -44,7 +44,7 @@ export const metadata = {
     locale: 'es_ES',
     type: 'website',
   },
-  twitter: {
+  twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: 'summary_large_image',
     title: "Test de coordinación ojo-mano | SkillDrills",
     description: 'Test gratis de coordinación ojo-mano online. Conecta nodos diagonales al cruzar la línea media para entrenar coordinación bilateral y precisión con el ratón.',

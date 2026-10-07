@@ -31,7 +31,7 @@ export const metadata = {
     "recaptura visual rápida",
     "perseguição ocular contínua"
   ],
-  openGraph: {
+  openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
     title: "Rastreamento de Alvo Teleportado | SkillDrills",
     description: "Pratique rastreamento ocular, reacquisição visual e sacadas rápidas quando um alvo muda de posição e mantém seu movimento.",
     type: "website",
@@ -39,7 +39,7 @@ export const metadata = {
     siteName: "SkillDrills",
     locale: "pt_BR",
   },
-  twitter: {
+  twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: "summary_large_image",
     title: "Rastreamento de Alvo Teleportado | SkillDrills",
     description: "Pratique reacquisição visual e sacadas rápidas quando um alvo muda de posição e mantém seu movimento.",

@@ -22,7 +22,7 @@ export const metadata = {
     'précision du curseur',
     'entraînement de réflexe souris',
   ],
-  openGraph: {
+  openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
     title: 'Entraînement de visée | Cibles ordonnées | SkillDrills',
     description: 'Mesurez vos transitions entre cibles numérotées et votre précision de clic dans le navigateur.',
     type: 'article',
@@ -30,7 +30,7 @@ export const metadata = {
     siteName: 'SkillDrills',
     locale: 'fr_FR',
   },
-  twitter: {
+  twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: 'summary_large_image',
     title: 'Entraînement de visée | Cibles ordonnées | SkillDrills',
     description: 'Entraînement gratuit pour changer de cible et cliquer avec précision.',

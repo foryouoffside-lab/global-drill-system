@@ -30,7 +30,7 @@ export const metadata = {
     "중심와 재포착",
     "반사적 안구 운동"
   ],
-  openGraph: {
+  openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
     title: "불규칙 안구 추적 훈련・카오스 방향 전환 테스트 – 사케드 회복 & 반응형 동체시력 | SkillDrills",
     description: "예측 불가능하게 급선회하는 표적을 안구 운동으로 신속히 재포착하는 보정 사케드 회복 및 반응형 동체시력 트레이닝. 뇌의 예측 모델을 배제하고 실시간 시각 반사 신경을 극대화합니다.",
     type: "website",
@@ -38,7 +38,7 @@ export const metadata = {
     siteName: "SkillDrills",
     locale: "ko_KR",
   },
-  twitter: {
+  twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: "summary_large_image",
     title: "불규칙 안구 추적 훈련・카오스 방향 전환 테스트 – 사케드 회복 & 반응형 동체시력 | SkillDrills",
     description: "무작위로 방향을 꺾는 표적에 대한 사케드 회복과 반응형 시선 추적을 훈련하는 무료 웹 기반 신경 시각 드릴.",

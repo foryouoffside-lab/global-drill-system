@@ -40,7 +40,7 @@ export const metadata = {
     canonical: 'https://skilldrills.online/ko/drills/physical/fitness/speed-drill',
     languages: getAlternateLanguages('/drills/physical/fitness/speed-drill'),
   },
-  openGraph: {
+  openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
     title: "클릭 속도 측정 & 마우스 반응속도 테스트 – 무료 광클 에임 드릴 | SkillDrills",
     description: "무료 온라인 클릭 속도 측정 및 마우스 반응속도 테스트 드릴. 실시간으로 이동하며 수축하는 타깃을 신속하게 포착하고 고속 연타(광클)를 수행하여 밀리초 단위의 신경근 반응성과 탄도성 플릭 조준력을 단련합니다.",
     url: 'https://skilldrills.online/ko/drills/physical/fitness/speed-drill',
@@ -48,7 +48,7 @@ export const metadata = {
     locale: 'ko_KR',
     type: 'website',
   },
-  twitter: {
+  twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: 'summary_large_image',
     title: "클릭 속도 측정 & 마우스 반응속도 테스트 – 무료 광클 에임 드릴 | SkillDrills",
     description: "무료 온라인 클릭 속도 측정 및 마우스 반응속도 테스트 드릴. 실시간으로 이동하며 수축하는 타깃을 신속하게 포착하고 고속 연타(광클)를 수행하여 밀리초 단위의 신경근 반응성과 탄도성 플릭 조준력을 단련합니다.",

@@ -31,7 +31,7 @@ export const metadata = {
     "cible mobile changement soudain",
     "poursuite oculaire en ligne"
   ],
-  openGraph: {
+  openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
     title: "Poursuite de Cible Téléportée | SkillDrills",
     description: "Pratiquez poursuite oculaire, réacquisition visuelle et saccades rapides lorsqu’une cible change de position en gardant son mouvement.",
     type: "website",
@@ -39,7 +39,7 @@ export const metadata = {
     siteName: "SkillDrills",
     locale: "fr_FR",
   },
-  twitter: {
+  twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: "summary_large_image",
     title: "Poursuite de Cible Téléportée | SkillDrills",
     description: "Pratiquez réacquisition visuelle et saccades rapides lorsqu’une cible change de position en gardant son mouvement.",

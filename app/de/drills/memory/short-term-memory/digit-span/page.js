@@ -24,7 +24,7 @@ export const metadata = {
     "gedächtnistest zahlen",
     "numerisches arbeitsgedächtnis"
   ],
-  openGraph: {
+  openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
     title: "Zahlenspanne Test online | Zahlen merken | SkillDrills",
     description: "Kostenloser Zahlenspanne-Test: Merke dir länger werdende Ziffernfolgen und gib sie im Browser in der richtigen Reihenfolge ein.",
     type: 'website',
@@ -32,7 +32,7 @@ export const metadata = {
     siteName: 'SkillDrills',
     locale: 'de_DE',
   },
-  twitter: {
+  twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: 'summary_large_image',
     title: "Zahlenspanne Test online | Zahlen merken | SkillDrills",
     description: "Kostenloser Zahlenspanne-Test: Merke dir länger werdende Ziffernfolgen und gib sie im Browser in der richtigen Reihenfolge ein.",

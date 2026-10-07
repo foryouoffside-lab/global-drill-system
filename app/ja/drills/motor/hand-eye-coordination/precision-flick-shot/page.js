@@ -13,7 +13,7 @@ export const metadata = {
     'フリックショット練習', 'FPS エイム練習', '初弾命中テスト', 'ターゲット切り替え練習',
     'フリック速度測定', 'マウスエイム練習', 'マイクロフリック', '着弾精度テスト',
   ],
-  openGraph: {
+  openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
     title: 'フリックエイム練習｜マウス精度テスト | SkillDrills',
     description: '無料のブラウザ型エイム練習。フリック精度、ターゲット捕捉時間、着弾率を測定し、FPSの初弾エイムを鍛えます。',
     type: 'article',
@@ -21,7 +21,7 @@ export const metadata = {
     siteName: 'SkillDrills',
     locale: 'ja_JP',
   },
-  twitter: {
+  twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: 'summary_large_image',
     title: 'フリックエイム練習｜マウス精度テスト | SkillDrills',
     description: '無料のブラウザ型エイム練習。フリック精度、ターゲット捕捉時間、着弾率を測定し、FPSの初弾エイムを鍛えます。',

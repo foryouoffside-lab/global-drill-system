@@ -30,7 +30,7 @@ export const metadata = {
     index: true,
     follow: true,
   },
-  openGraph: {
+  openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
     title: "Controle de Recoil | Treino de Spray FPS | SkillDrills",
     description: "Treino grátis de controle de recoil no navegador: pratique padrões de spray e compensação para CS2, Valorant e outros FPS.",
     url: "https://skilldrills.online/pt/drills/fps/recoil-control",
@@ -38,7 +38,7 @@ export const metadata = {
     locale: 'pt_BR',
     type: 'website',
   },
-  twitter: {
+  twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: 'summary_large_image',
     title: "Controle de Recoil | Treino de Spray FPS | SkillDrills",
     description: "Treino grátis de controle de recoil no navegador: pratique padrões de spray e compensação para CS2, Valorant e outros FPS.",

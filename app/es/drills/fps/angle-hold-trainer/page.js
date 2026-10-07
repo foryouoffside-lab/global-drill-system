@@ -29,7 +29,7 @@ export const metadata = {
     index: true,
     follow: true,
   },
-  openGraph: {
+  openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
     title: "Aim Trainer | Colocación de Mira | SkillDrills",
     description: "Aim trainer gratis en navegador: practica colocación de mira, retención de ángulos, separación de la esquina y reacción al peek.",
     url: "https://skilldrills.online/es/drills/fps/angle-hold-trainer",
@@ -37,7 +37,7 @@ export const metadata = {
     locale: 'es_ES',
     type: 'website',
   },
-  twitter: {
+  twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: 'summary_large_image',
     title: "Aim Trainer | Colocación de Mira | SkillDrills",
     description: "Aim trainer gratis en navegador: practica colocación de mira, retención de ángulos, separación de la esquina y reacción al peek.",

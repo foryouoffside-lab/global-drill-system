@@ -21,7 +21,7 @@ export const metadata = {
     "trajetória de alvo",
     "perseguição lenta"
   ],
-  openGraph: {
+  openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
     title: "Rastreamento Visual | Alvo Móvel | SkillDrills",
     description: "Acompanhe alvos móveis, preveja trajetórias e pratique perseguição visual e coordenação olho-mão gratuitamente no navegador.",
     type: 'article',
@@ -29,7 +29,7 @@ export const metadata = {
     siteName: 'SkillDrills',
     locale: 'pt_BR',
   },
-  twitter: {
+  twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: 'summary_large_image',
     title: "Rastreamento Visual | Alvo Móvel | SkillDrills",
     description: "Treine rastreamento visual, previsão de trajetória e interceptação de alvos móveis em tempo real.",

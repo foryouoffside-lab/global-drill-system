@@ -37,7 +37,7 @@ export const metadata = {
     canonical: 'https://skilldrills.online/es/drills/physical/fitness/agility-ladder',
     languages: getAlternateLanguages('/drills/physical/fitness/agility-ladder'),
   },
-  openGraph: {
+  openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
     title: "Ejercicios de escalera de agilidad | SkillDrills",
     description: 'Ejercicios gratis de escalera de agilidad online. Sigue pasos alternos para entrenar juego de pies, ritmo, coordinación bilateral y velocidad.',
     url: 'https://skilldrills.online/es/drills/physical/fitness/agility-ladder',
@@ -45,7 +45,7 @@ export const metadata = {
     locale: 'es_ES',
     type: 'website',
   },
-  twitter: {
+  twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: 'summary_large_image',
     title: "Ejercicios de escalera de agilidad | SkillDrills",
     description: 'Ejercicios gratis de escalera de agilidad online. Sigue pasos alternos para entrenar juego de pies, ritmo, coordinación bilateral y velocidad.',

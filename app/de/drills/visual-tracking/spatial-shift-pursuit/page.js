@@ -31,7 +31,7 @@ export const metadata = {
     "Bildschirmwackeln Aim Training",
     "Zielverfolgung bei Bildschirmwackeln"
   ],
-  openGraph: {
+  openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
     title: "Blickverfolgung bei Sichtfeldwechsel | SkillDrills",
     description: "Verfolge ein Ziel trotz verschobenem Sichtfeld. Kostenlose Browserübung mit Reaktionszeit, Wiedererfassung und Positionsabweichung.",
     type: "website",
@@ -39,7 +39,7 @@ export const metadata = {
     siteName: "SkillDrills",
     locale: "de_DE",
   },
-  twitter: {
+  twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: "summary_large_image",
     title: "Blickverfolgung bei Sichtfeldwechsel | SkillDrills",
     description: "Verfolge ein Ziel trotz verschobenem Sichtfeld. Kostenlose Browserübung mit Reaktionszeit, Wiedererfassung und Positionsabweichung.",

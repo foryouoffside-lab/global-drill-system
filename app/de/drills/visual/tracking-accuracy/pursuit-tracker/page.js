@@ -19,7 +19,7 @@ export const metadata = {
     "Smooth Pursuit Test",
     "visuelles Tracking"
   ],
-  openGraph: {
+  openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
     title: "Glatte Blickfolge | Zielverfolgung | SkillDrills",
     description: "Trainiere Blickfolge, Zielverfolgung und Auge-Hand-Koordination mit einem bewegten Ziel. Kostenlos im Browser, kein Diagnosetest.",
     type: 'article',
@@ -27,7 +27,7 @@ export const metadata = {
     siteName: 'SkillDrills',
     locale: 'de_DE',
   },
-  twitter: {
+  twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: 'summary_large_image',
     title: "Glatte Blickfolge | Zielverfolgung | SkillDrills",
     description: "Übe glatte Blickfolge und stabile Zielverfolgung im Browser. Ergebnisse hängen von Bildschirm und Maus ab.",

@@ -30,7 +30,7 @@ export const metadata = {
     canonical: 'https://skilldrills.online/ja/drills/physical/reflex-training/reaction-chain',
     languages: getAlternateLanguages('/drills/physical/reflex-training/reaction-chain'),
   },
-  openGraph: {
+  openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
     title: "エイム練習 無料ブラウザ｜停止精度テスト",
     description: "動く標的にカーソルを合わせて止める無料のブラウザ・エイム練習。フリック後の停止精度を確認できます。",
     url: 'https://skilldrills.online/ja/drills/physical/reflex-training/reaction-chain',
@@ -38,7 +38,7 @@ export const metadata = {
     locale: 'ja_JP',
     type: 'website',
   },
-  twitter: {
+  twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: 'summary_large_image',
     title: "エイム練習 無料ブラウザ｜停止精度テスト",
     description: "動く標的に合わせてカーソルを止め、フリック後の停止精度を練習できます。",

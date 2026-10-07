@@ -37,7 +37,7 @@ export const metadata = {
     canonical: 'https://skilldrills.online/fr/drills/physical/reflex-training/quick-dodge',
     languages: getAlternateLanguages('/drills/physical/reflex-training/quick-dodge'),
   },
-  openGraph: {
+  openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
     title: "Jeu d’esquive à la souris | Test de réflexes",
     description: "Jeu d’esquive à la souris gratuit. Évitez les projectiles, survivez plus longtemps et entraînez vos réflexes au navigateur.",
     url: 'https://skilldrills.online/fr/drills/physical/reflex-training/quick-dodge',
@@ -45,7 +45,7 @@ export const metadata = {
     locale: 'fr_FR',
     type: 'website',
   },
-  twitter: {
+  twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: 'summary_large_image',
     title: "Jeu d’esquive à la souris | Test de réflexes",
     description: "Évitez les projectiles, survivez plus longtemps et entraînez vos réflexes dans ce jeu gratuit au navigateur.",

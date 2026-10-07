@@ -29,7 +29,7 @@ export const metadata = {
     "周辺視野 オンライン",
     "スポーツビジョン 周辺視"
   ],
-  openGraph: {
+  openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
     title: "周辺視野トレーニング｜中心を見たまま反応 | SkillDrills",
     description: "中心の動く標的を追いながら、周辺の光刺激を目を向けずに見つける無料ブラウザ練習。",
     type: "website",
@@ -37,7 +37,7 @@ export const metadata = {
     siteName: "SkillDrills",
     locale: "ja_JP",
   },
-  twitter: {
+  twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: "summary_large_image",
     title: "周辺視野トレーニング｜中心を見たまま反応 | SkillDrills",
     description: "中心の動く標的を追いながら、周辺の光刺激に反応する無料オンライン練習。",

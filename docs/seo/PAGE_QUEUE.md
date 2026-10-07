@@ -6,11 +6,11 @@ Priority tiers: 0 = home, directory, 8 category hubs · 1 = English drills with 
 
 Status legend: `done` = passes scripts/seo_render_audit.mjs and the English-leak check, has a research log and a commit · `pending` = not yet worked in this pass (may already pass the mechanical audit) · `blocked` = needs an owner decision, see Blockers · `in-progress` = taken, not committed.
 
-Status counts: pending 372 · done 26 · blocked 243
+Status counts: done 33 · pending 365 · blocked 243
 
 | URL | locale | type | priority | status | research-log | commit | notes |
 |---|---|---|---|---|---|---|---|
-| / | en | home | 0 | pending |  |  |  |
+| / | en | home | 0 | done | docs/seo/research/en/home.md | 36eedbe, d701f10, 141a5f5 | FAQ + FAQPage added; stale typing claim and overstated feature copy corrected |
 | /drills | en | directory | 0 | pending | docs/seo/research/landing-directory-2026-09-20.md |  |  |
 | /drills/cognitive | en | hub | 0 | done | docs/seo/research/en/cognitive-hub.md | 10e3a68, 36eedbe | hub sections and unsupported claims fixed |
 | /drills/fps | en | hub | 0 | done | docs/seo/research/en/fps-hub.md | 10e3a68, 36eedbe | changed-since-09-20; hub sections and unsupported claims fixed |
@@ -20,122 +20,122 @@ Status counts: pending 372 · done 26 · blocked 243
 | /drills/reaction-speed | en | hub | 0 | pending | docs/seo/research/reaction-speed-hub-2026-09-20.md |  |  |
 | /drills/visual | en | hub | 0 | pending | docs/seo/research/visual-category-2026-09-20.md |  | changed-since-09-20 |
 | /drills/visual-tracking | en | hub | 0 | done | docs/seo/research/en/visual-tracking-hub.md | 10e3a68, 36eedbe | changed-since-09-20; hub sections and unsupported claims fixed |
-| /drills/cognitive/processing-speed/reaction-time | en | drill | 1 | pending | docs/seo/research/reaction-time-test-2026-09-20.md |  |  |
-| /drills/fps/180-degree-awareness | en | drill | 1 | pending |  |  |  |
-| /drills/fps/angle-hold-trainer | en | drill | 1 | pending |  |  |  |
+| /drills/cognitive/processing-speed/reaction-time | en | drill | 1 | pending | docs/seo/research/reaction-time-test-2026-09-20.md |  | changed-since-09-20 |
+| /drills/fps/180-degree-awareness | en | drill | 1 | pending |  |  | changed-since-09-20 |
+| /drills/fps/angle-hold-trainer | en | drill | 1 | pending |  |  | changed-since-09-20 |
 | /drills/fps/anti-strafe-jitter-duel | en | drill | 1 | pending |  |  | changed-since-09-20 |
 | /drills/fps/anti-zigzag-movement-trainer | en | drill | 1 | pending |  |  | changed-since-09-20 |
 | /drills/fps/flick-shot-training | en | drill | 1 | pending |  |  | changed-since-09-20 |
 | /drills/fps/flow-state | en | drill | 1 | pending |  |  | changed-since-09-20 |
-| /drills/fps/instant-response | en | drill | 1 | pending |  |  |  |
+| /drills/fps/instant-response | en | drill | 1 | pending |  |  | changed-since-09-20 |
 | /drills/fps/micro-correction-precision | en | drill | 1 | pending |  |  | changed-since-09-20 |
 | /drills/fps/pro-smooth-pursuit | en | drill | 1 | pending |  |  | changed-since-09-20 |
-| /drills/fps/recoil-control | en | drill | 1 | pending |  |  |  |
+| /drills/fps/recoil-control | en | drill | 1 | pending |  | 83d22ad | changed-since-09-20; H1 duplicate word fixed |
 | /drills/fps/strafe-tracking | en | drill | 1 | pending |  |  | changed-since-09-20 |
-| /drills/fps/target-acquisition | en | drill | 1 | pending |  |  |  |
-| /drills/fps/target-prioritization | en | drill | 1 | pending |  |  |  |
-| /drills/fps/target-switching-swarm | en | drill | 1 | pending |  |  |  |
-| /drills/fps/vertical-air-track | en | drill | 1 | pending |  |  |  |
-| /drills/memory/short-term-memory/color-sequence | en | drill | 1 | pending | docs/seo/research/color-sequence-2026-09-20.md |  |  |
-| /drills/memory/short-term-memory/digit-span | en | drill | 1 | pending | docs/seo/research/digit-span-2026-09-20.md |  |  |
-| /drills/memory/short-term-memory/word-recall | en | drill | 1 | pending | docs/seo/research/word-recall-2026-09-20.md |  |  |
+| /drills/fps/target-acquisition | en | drill | 1 | pending |  |  | changed-since-09-20 |
+| /drills/fps/target-prioritization | en | drill | 1 | pending |  |  | changed-since-09-20 |
+| /drills/fps/target-switching-swarm | en | drill | 1 | pending |  |  | changed-since-09-20 |
+| /drills/fps/vertical-air-track | en | drill | 1 | pending |  |  | changed-since-09-20 |
+| /drills/memory/short-term-memory/color-sequence | en | drill | 1 | pending | docs/seo/research/color-sequence-2026-09-20.md |  | changed-since-09-20 |
+| /drills/memory/short-term-memory/digit-span | en | drill | 1 | pending | docs/seo/research/digit-span-2026-09-20.md |  | changed-since-09-20 |
+| /drills/memory/short-term-memory/word-recall | en | drill | 1 | pending | docs/seo/research/word-recall-2026-09-20.md |  | changed-since-09-20 |
 | /drills/memory/spatial-memory/grid-memorization | en | drill | 1 | pending | docs/seo/research/grid-memorization-2026-09-20.md |  | changed-since-09-20 |
-| /drills/memory/spatial-memory/object-location | en | drill | 1 | pending | docs/seo/research/object-location-2026-09-20.md |  |  |
+| /drills/memory/spatial-memory/object-location | en | drill | 1 | pending | docs/seo/research/object-location-2026-09-20.md |  | changed-since-09-20 |
 | /drills/memory/spatial-memory/path-tracing | en | drill | 1 | pending | docs/seo/research/path-tracing-2026-09-20.md |  | changed-since-09-20 |
 | /drills/memory/working-memory/n-back | en | drill | 1 | pending | docs/seo/research/n-back-2026-09-20.md |  | changed-since-09-20 |
-| /drills/motor/hand-eye-coordination/aim-trainer | en | drill | 1 | pending | docs/seo/research/aim-trainer-2026-09-20.md |  | changed-since-09-20 |
-| /drills/motor/hand-eye-coordination/drag-and-drop | en | drill | 1 | pending | docs/seo/research/drag-and-drop-2026-09-20.md |  |  |
-| /drills/motor/hand-eye-coordination/precision-flick-shot | en | drill | 1 | pending | docs/seo/research/precision-flick-shot-2026-09-20.md |  |  |
-| /drills/motor/movement-speed/finger-sequencing | en | drill | 1 | pending | docs/seo/research/finger-sequencing-2026-09-20.md |  |  |
+| /drills/motor/hand-eye-coordination/aim-trainer | en | drill | 1 | pending | docs/seo/research/aim-trainer-2026-09-20.md | 83d22ad | changed-since-09-20; H1 repetition removed |
+| /drills/motor/hand-eye-coordination/drag-and-drop | en | drill | 1 | pending | docs/seo/research/drag-and-drop-2026-09-20.md |  | changed-since-09-20 |
+| /drills/motor/hand-eye-coordination/precision-flick-shot | en | drill | 1 | pending | docs/seo/research/precision-flick-shot-2026-09-20.md |  | changed-since-09-20 |
+| /drills/motor/movement-speed/finger-sequencing | en | drill | 1 | pending | docs/seo/research/finger-sequencing-2026-09-20.md |  | changed-since-09-20 |
 | /drills/motor/movement-speed/keyboard-recognition | en | drill | 1 | pending | docs/seo/research/keyboard-recognition-2026-09-20.md |  | changed-since-09-20 |
-| /drills/motor/movement-speed/rapid-tapping | en | drill | 1 | pending | docs/seo/research/rapid-tapping-2026-09-20.md |  |  |
-| /drills/motor/precision-control/steady-hand | en | drill | 1 | pending | docs/seo/research/steady-hand-2026-09-20.md |  |  |
-| /drills/motor/precision-control/tracing | en | drill | 1 | pending | docs/seo/research/tracing-2026-09-20.md |  |  |
-| /drills/reaction-speed/reaction-time-test | en | drill | 1 | pending | docs/seo/research/reaction-time-test-2026-09-20.md |  |  |
+| /drills/motor/movement-speed/rapid-tapping | en | drill | 1 | pending | docs/seo/research/rapid-tapping-2026-09-20.md |  | changed-since-09-20 |
+| /drills/motor/precision-control/steady-hand | en | drill | 1 | pending | docs/seo/research/steady-hand-2026-09-20.md |  | changed-since-09-20 |
+| /drills/motor/precision-control/tracing | en | drill | 1 | pending | docs/seo/research/tracing-2026-09-20.md |  | changed-since-09-20 |
+| /drills/reaction-speed/reaction-time-test | en | drill | 1 | pending | docs/seo/research/reaction-time-test-2026-09-20.md |  | changed-since-09-20 |
 | /drills/reaction-speed/reflex-training-drill | en | drill | 1 | pending | docs/seo/research/reflex-training-drill-2026-09-20.md |  | changed-since-09-20 |
 | /drills/cognitive/attention/concentration-stamina | en | drill | 2 | pending |  |  | changed-since-09-20 |
 | /drills/cognitive/attention/divided-attention | en | drill | 2 | pending |  |  | changed-since-09-20 |
 | /drills/cognitive/attention/multi-tasking | en | drill | 2 | pending |  |  | changed-since-09-20 |
 | /drills/cognitive/focus/concentration-grid | en | drill | 2 | pending |  |  | changed-since-09-20 |
-| /drills/cognitive/focus/distraction-fighter | en | drill | 2 | pending |  |  |  |
-| /drills/cognitive/processing-speed/rsvp-reader | en | drill | 2 | pending |  |  |  |
+| /drills/cognitive/focus/distraction-fighter | en | drill | 2 | pending |  |  | changed-since-09-20 |
+| /drills/cognitive/processing-speed/rsvp-reader | en | drill | 2 | pending |  |  | changed-since-09-20 |
 | /drills/cognitive/processing-speed/symbol-matching | en | drill | 2 | pending |  |  | changed-since-09-20 |
-| /drills/physical/balance-training/stability-challenge | en | drill | 2 | pending | docs/seo/research/stability-challenge-2026-09-20.md |  |  |
-| /drills/physical/coordination/complex-pattern | en | drill | 2 | pending | docs/seo/research/complex-pattern-2026-09-20.md |  |  |
-| /drills/physical/coordination/cross-body-movement | en | drill | 2 | pending | docs/seo/research/cross-body-movement-2026-09-20.md |  |  |
-| /drills/physical/coordination/dynamic-grid-evasion | en | drill | 2 | pending | docs/seo/research/dynamic-grid-evasion-2026-09-20.md |  |  |
-| /drills/physical/fitness/agility-ladder | en | drill | 2 | pending | docs/seo/research/agility-ladder-2026-09-20.md |  |  |
-| /drills/physical/fitness/jump-sequence | en | drill | 2 | pending | docs/seo/research/jump-sequence-2026-09-20.md |  |  |
-| /drills/physical/fitness/speed-drill | en | drill | 2 | pending | docs/seo/research/speed-drill-2026-09-20.md |  |  |
-| /drills/physical/reflex-training/drop-catch | en | drill | 2 | pending | docs/seo/research/drop-catch-2026-09-20.md |  |  |
-| /drills/physical/reflex-training/peripheral-threat-sweeper | en | drill | 2 | pending | docs/seo/research/peripheral-threat-sweeper-2026-09-20.md |  |  |
-| /drills/physical/reflex-training/quick-dodge | en | drill | 2 | pending | docs/seo/research/quick-dodge-2026-09-20.md |  |  |
-| /drills/physical/reflex-training/reaction-chain | en | drill | 2 | pending | docs/seo/research/reaction-chain-2026-09-20.md |  |  |
+| /drills/physical/balance-training/stability-challenge | en | drill | 2 | pending | docs/seo/research/stability-challenge-2026-09-20.md |  | changed-since-09-20 |
+| /drills/physical/coordination/complex-pattern | en | drill | 2 | pending | docs/seo/research/complex-pattern-2026-09-20.md |  | changed-since-09-20 |
+| /drills/physical/coordination/cross-body-movement | en | drill | 2 | pending | docs/seo/research/cross-body-movement-2026-09-20.md |  | changed-since-09-20 |
+| /drills/physical/coordination/dynamic-grid-evasion | en | drill | 2 | pending | docs/seo/research/dynamic-grid-evasion-2026-09-20.md |  | changed-since-09-20 |
+| /drills/physical/fitness/agility-ladder | en | drill | 2 | pending | docs/seo/research/agility-ladder-2026-09-20.md |  | changed-since-09-20 |
+| /drills/physical/fitness/jump-sequence | en | drill | 2 | pending | docs/seo/research/jump-sequence-2026-09-20.md |  | changed-since-09-20 |
+| /drills/physical/fitness/speed-drill | en | drill | 2 | pending | docs/seo/research/speed-drill-2026-09-20.md |  | changed-since-09-20 |
+| /drills/physical/reflex-training/drop-catch | en | drill | 2 | pending | docs/seo/research/drop-catch-2026-09-20.md |  | changed-since-09-20 |
+| /drills/physical/reflex-training/peripheral-threat-sweeper | en | drill | 2 | pending | docs/seo/research/peripheral-threat-sweeper-2026-09-20.md |  | changed-since-09-20 |
+| /drills/physical/reflex-training/quick-dodge | en | drill | 2 | pending | docs/seo/research/quick-dodge-2026-09-20.md |  | changed-since-09-20 |
+| /drills/physical/reflex-training/reaction-chain | en | drill | 2 | pending | docs/seo/research/reaction-chain-2026-09-20.md |  | changed-since-09-20 |
 | /drills/reaction-speed/barrier-sequence-pursuit | en | drill | 2 | pending | docs/seo/research/barrier-sequence-pursuit-2026-09-20.md |  | changed-since-09-20 |
 | /drills/reaction-speed/fps-tracking-trainer | en | drill | 2 | pending | docs/seo/research/fps-tracking-trainer-2026-09-20.md |  | changed-since-09-20 |
 | /drills/reaction-speed/market-doors-pursuit | en | drill | 2 | pending | docs/seo/research/market-doors-pursuit-2026-09-20.md |  | changed-since-09-20 |
 | /drills/reaction-speed/reaction-game | en | drill | 2 | pending | docs/seo/research/reaction-game-2026-09-20.md |  | changed-since-09-20 |
-| /drills/reaction-speed/saccadic-gallery | en | drill | 2 | pending | docs/seo/research/saccadic-gallery-2026-09-20.md |  |  |
+| /drills/reaction-speed/saccadic-gallery | en | drill | 2 | pending | docs/seo/research/saccadic-gallery-2026-09-20.md |  | changed-since-09-20 |
 | /drills/reaction-speed/visual-tracking-speed-test | en | drill | 2 | pending | docs/seo/research/visual-tracking-speed-test-2026-09-20.md |  | changed-since-09-20 |
 | /drills/visual-tracking/constant-slow-pursuit | en | drill | 2 | pending | docs/seo/research/constant-slow-pursuit-2026-09-20.md |  | changed-since-09-20 |
-| /drills/visual-tracking/directional-chaos-pursuit | en | drill | 2 | pending | docs/seo/research/directional-chaos-pursuit-2026-09-20.md |  |  |
-| /drills/visual-tracking/dynamic-evasion-pursuit | en | drill | 2 | pending | docs/seo/research/dynamic-evasion-pursuit-2026-09-20.md |  |  |
-| /drills/visual-tracking/ghosting-suppress-pursuit | en | drill | 2 | pending | docs/seo/research/ghosting-suppress-pursuit-2026-09-20.md |  |  |
-| /drills/visual-tracking/infinity-pursuit | en | drill | 2 | pending | docs/seo/research/infinity-pursuit-2026-09-20.md |  |  |
-| /drills/visual-tracking/momentum-teleport-pursuit | en | drill | 2 | pending | docs/seo/research/momentum-teleport-pursuit-2026-09-20.md |  |  |
-| /drills/visual-tracking/peripheral-ping-pursuit | en | drill | 2 | pending | docs/seo/research/peripheral-ping-pursuit-2026-09-20.md |  |  |
-| /drills/visual-tracking/predictive-pursuit | en | drill | 2 | pending | docs/seo/research/predictive-pursuit-2026-09-20.md |  |  |
-| /drills/visual-tracking/sine-wave-pursuit | en | drill | 2 | pending | docs/seo/research/sine-wave-pursuit-2026-09-20.md |  |  |
-| /drills/visual-tracking/spatial-shift-pursuit | en | drill | 2 | pending | docs/seo/research/spatial-shift-pursuit-2026-09-20.md |  |  |
-| /drills/visual-tracking/split-screen-tracking | en | drill | 2 | pending | docs/seo/research/split-screen-tracking-2026-09-20.md |  |  |
-| /drills/visual-tracking/staircase-step | en | drill | 2 | pending | docs/seo/research/staircase-step-2026-09-20.md |  |  |
+| /drills/visual-tracking/directional-chaos-pursuit | en | drill | 2 | pending | docs/seo/research/directional-chaos-pursuit-2026-09-20.md |  | changed-since-09-20 |
+| /drills/visual-tracking/dynamic-evasion-pursuit | en | drill | 2 | pending | docs/seo/research/dynamic-evasion-pursuit-2026-09-20.md |  | changed-since-09-20 |
+| /drills/visual-tracking/ghosting-suppress-pursuit | en | drill | 2 | pending | docs/seo/research/ghosting-suppress-pursuit-2026-09-20.md |  | changed-since-09-20 |
+| /drills/visual-tracking/infinity-pursuit | en | drill | 2 | pending | docs/seo/research/infinity-pursuit-2026-09-20.md |  | changed-since-09-20 |
+| /drills/visual-tracking/momentum-teleport-pursuit | en | drill | 2 | pending | docs/seo/research/momentum-teleport-pursuit-2026-09-20.md |  | changed-since-09-20 |
+| /drills/visual-tracking/peripheral-ping-pursuit | en | drill | 2 | pending | docs/seo/research/peripheral-ping-pursuit-2026-09-20.md |  | changed-since-09-20 |
+| /drills/visual-tracking/predictive-pursuit | en | drill | 2 | pending | docs/seo/research/predictive-pursuit-2026-09-20.md |  | changed-since-09-20 |
+| /drills/visual-tracking/sine-wave-pursuit | en | drill | 2 | pending | docs/seo/research/sine-wave-pursuit-2026-09-20.md |  | changed-since-09-20 |
+| /drills/visual-tracking/spatial-shift-pursuit | en | drill | 2 | pending | docs/seo/research/spatial-shift-pursuit-2026-09-20.md |  | changed-since-09-20 |
+| /drills/visual-tracking/split-screen-tracking | en | drill | 2 | pending | docs/seo/research/split-screen-tracking-2026-09-20.md |  | changed-since-09-20 |
+| /drills/visual-tracking/staircase-step | en | drill | 2 | pending | docs/seo/research/staircase-step-2026-09-20.md |  | changed-since-09-20 |
 | /drills/visual-tracking/strobe-prediction-pursuit | en | drill | 2 | pending | docs/seo/research/strobe-prediction-pursuit-2026-09-20.md |  | changed-since-09-20 |
-| /drills/visual-tracking/triangular-pursuit | en | drill | 2 | pending | docs/seo/research/triangular-pursuit-2026-09-20.md |  |  |
-| /drills/visual-tracking/zig-zag-path-pursuit | en | drill | 2 | pending | docs/seo/research/zig-zag-path-pursuit-2026-09-20.md |  |  |
-| /drills/visual/depth-perception/distance-judgment | en | drill | 2 | pending | docs/seo/research/distance-judgment-visual-2026-09-20.md |  |  |
-| /drills/visual/reaction-speed/go/no-go | en | drill | 2 | pending |  |  |  |
-| /drills/visual/reaction-speed/light-reaction | en | drill | 2 | pending | docs/seo/research/light-reaction-visual-2026-09-20.md |  |  |
-| /drills/visual/tracking-accuracy/moving-target | en | drill | 2 | pending | docs/seo/research/moving-target-2026-09-20.md |  |  |
-| /drills/visual/tracking-accuracy/multiple-targets | en | drill | 2 | pending | docs/seo/research/multiple-targets-2026-09-20.md |  |  |
+| /drills/visual-tracking/triangular-pursuit | en | drill | 2 | pending | docs/seo/research/triangular-pursuit-2026-09-20.md |  | changed-since-09-20 |
+| /drills/visual-tracking/zig-zag-path-pursuit | en | drill | 2 | pending | docs/seo/research/zig-zag-path-pursuit-2026-09-20.md |  | changed-since-09-20 |
+| /drills/visual/depth-perception/distance-judgment | en | drill | 2 | pending | docs/seo/research/distance-judgment-visual-2026-09-20.md |  | changed-since-09-20 |
+| /drills/visual/reaction-speed/go/no-go | en | drill | 2 | pending |  |  | changed-since-09-20 |
+| /drills/visual/reaction-speed/light-reaction | en | drill | 2 | pending | docs/seo/research/light-reaction-visual-2026-09-20.md |  | changed-since-09-20 |
+| /drills/visual/tracking-accuracy/moving-target | en | drill | 2 | pending | docs/seo/research/moving-target-2026-09-20.md |  | changed-since-09-20 |
+| /drills/visual/tracking-accuracy/multiple-targets | en | drill | 2 | pending | docs/seo/research/multiple-targets-2026-09-20.md |  | changed-since-09-20 |
 | /drills/visual/tracking-accuracy/pursuit-tracker | en | drill | 2 | pending | docs/seo/research/pursuit-tracker-2026-09-20.md |  | changed-since-09-20 |
 | /drills/visual/visual-recognition/entropic-grid | en | drill | 2 | pending | docs/seo/research/entropic-grid-2026-09-20.md |  | changed-since-09-20 |
 | /drills/visual/visual-recognition/rhythm-anomaly | en | drill | 2 | pending | docs/seo/research/rhythm-anomaly-2026-09-20.md |  | changed-since-09-20 |
 | /drills/visual/visual-recognition/visual-search | en | drill | 2 | pending | docs/seo/research/visual-search-2026-09-20.md |  | changed-since-09-20 |
-| /de | de | home | 3 | pending |  |  | changed-since-09-20 |
+| /de | de | home | 3 | done | docs/seo/research/en/home.md | 36eedbe, 141a5f5 | changed-since-09-20; localized links, drill count 81, overstated feature copy corrected |
 | /de/drills | de | directory | 3 | pending | docs/seo/research/landing-directory-2026-09-20.md |  | changed-since-09-20 |
 | /de/drills/fps | de | hub | 3 | done | docs/seo/research/en/fps-hub.md | 10e3a68 | changed-since-09-20; hub sections localized |
 | /de/drills/motor/movement-speed/rapid-tapping | de | drill | 3 | pending | docs/seo/research/rapid-tapping-2026-09-20.md |  | changed-since-09-20 |
-| /de/drills/reaction-speed/reaction-time-test | de | drill | 3 | pending | docs/seo/research/reaction-time-test-2026-09-20.md |  |  |
+| /de/drills/reaction-speed/reaction-time-test | de | drill | 3 | pending | docs/seo/research/reaction-time-test-2026-09-20.md |  | changed-since-09-20 |
 | /de/drills/reaction-speed/reflex-training-drill | de | drill | 3 | pending | docs/seo/research/reflex-training-drill-2026-09-20.md |  | changed-since-09-20 |
-| /es | es | home | 3 | pending |  |  | changed-since-09-20 |
+| /es | es | home | 3 | done | docs/seo/research/en/home.md | 36eedbe, 141a5f5 | changed-since-09-20; localized links, drill count 81, overstated feature copy corrected |
 | /es/drills | es | directory | 3 | pending | docs/seo/research/landing-directory-2026-09-20.md |  | changed-since-09-20 |
 | /es/drills/fps | es | hub | 3 | done | docs/seo/research/en/fps-hub.md | 10e3a68 | changed-since-09-20; hub sections localized |
 | /es/drills/motor/movement-speed/rapid-tapping | es | drill | 3 | pending | docs/seo/research/rapid-tapping-2026-09-20.md |  | changed-since-09-20 |
 | /es/drills/reaction-speed/reaction-time-test | es | drill | 3 | pending | docs/seo/research/reaction-time-test-2026-09-20.md |  | changed-since-09-20 |
 | /es/drills/reaction-speed/reflex-training-drill | es | drill | 3 | pending | docs/seo/research/reflex-training-drill-2026-09-20.md |  | changed-since-09-20 |
-| /fr | fr | home | 3 | pending |  |  | changed-since-09-20 |
+| /fr | fr | home | 3 | done | docs/seo/research/en/home.md | 36eedbe, 141a5f5 | changed-since-09-20; localized links, drill count 81, overstated feature copy corrected |
 | /fr/drills | fr | directory | 3 | pending | docs/seo/research/landing-directory-2026-09-20.md |  | changed-since-09-20 |
 | /fr/drills/fps | fr | hub | 3 | done | docs/seo/research/en/fps-hub.md | 10e3a68 | changed-since-09-20; hub sections localized |
 | /fr/drills/motor/movement-speed/rapid-tapping | fr | drill | 3 | pending | docs/seo/research/rapid-tapping-2026-09-20.md |  | changed-since-09-20 |
 | /fr/drills/reaction-speed/reaction-time-test | fr | drill | 3 | pending | docs/seo/research/reaction-time-test-2026-09-20.md |  | changed-since-09-20 |
 | /fr/drills/reaction-speed/reflex-training-drill | fr | drill | 3 | pending | docs/seo/research/reflex-training-drill-2026-09-20.md |  | changed-since-09-20 |
-| /ja | ja | home | 3 | pending |  |  | changed-since-09-20 |
+| /ja | ja | home | 3 | done | docs/seo/research/en/home.md | 36eedbe, 141a5f5 | changed-since-09-20; localized links, drill count 81, overstated feature copy corrected |
 | /ja/drills | ja | directory | 3 | pending | docs/seo/research/landing-directory-2026-09-20.md |  | changed-since-09-20 |
 | /ja/drills/fps | ja | hub | 3 | done | docs/seo/research/en/fps-hub.md | 10e3a68 | changed-since-09-20; hub sections localized |
 | /ja/drills/motor/movement-speed/rapid-tapping | ja | drill | 3 | pending | docs/seo/research/rapid-tapping-2026-09-20.md |  | changed-since-09-20 |
-| /ja/drills/reaction-speed/reaction-time-test | ja | drill | 3 | pending | docs/seo/research/reaction-time-test-2026-09-20.md |  |  |
+| /ja/drills/reaction-speed/reaction-time-test | ja | drill | 3 | pending | docs/seo/research/reaction-time-test-2026-09-20.md |  | changed-since-09-20 |
 | /ja/drills/reaction-speed/reflex-training-drill | ja | drill | 3 | pending | docs/seo/research/reflex-training-drill-2026-09-20.md |  | changed-since-09-20 |
-| /ko | ko | home | 3 | pending |  |  | changed-since-09-20 |
+| /ko | ko | home | 3 | done | docs/seo/research/en/home.md | 36eedbe, 141a5f5 | changed-since-09-20; localized links, drill count 81, overstated feature copy corrected |
 | /ko/drills | ko | directory | 3 | pending | docs/seo/research/landing-directory-2026-09-20.md |  | changed-since-09-20 |
 | /ko/drills/fps | ko | hub | 3 | done | docs/seo/research/en/fps-hub.md | 10e3a68 | changed-since-09-20; hub sections localized |
 | /ko/drills/motor/movement-speed/rapid-tapping | ko | drill | 3 | pending | docs/seo/research/rapid-tapping-2026-09-20.md |  | changed-since-09-20 |
-| /ko/drills/reaction-speed/reaction-time-test | ko | drill | 3 | pending | docs/seo/research/reaction-time-test-2026-09-20.md |  |  |
+| /ko/drills/reaction-speed/reaction-time-test | ko | drill | 3 | pending | docs/seo/research/reaction-time-test-2026-09-20.md |  | changed-since-09-20 |
 | /ko/drills/reaction-speed/reflex-training-drill | ko | drill | 3 | pending | docs/seo/research/reflex-training-drill-2026-09-20.md |  | changed-since-09-20 |
-| /pt | pt | home | 3 | pending |  |  | changed-since-09-20 |
+| /pt | pt | home | 3 | done | docs/seo/research/en/home.md | 36eedbe, 141a5f5 | changed-since-09-20; localized links, drill count 81, overstated feature copy corrected |
 | /pt/drills | pt | directory | 3 | pending | docs/seo/research/landing-directory-2026-09-20.md |  | changed-since-09-20 |
 | /pt/drills/fps | pt | hub | 3 | done | docs/seo/research/en/fps-hub.md | 10e3a68 | changed-since-09-20; hub sections localized |
 | /pt/drills/motor/movement-speed/rapid-tapping | pt | drill | 3 | pending | docs/seo/research/rapid-tapping-2026-09-20.md |  | changed-since-09-20 |
-| /pt/drills/reaction-speed/reaction-time-test | pt | drill | 3 | pending | docs/seo/research/reaction-time-test-2026-09-20.md |  |  |
+| /pt/drills/reaction-speed/reaction-time-test | pt | drill | 3 | pending | docs/seo/research/reaction-time-test-2026-09-20.md |  | changed-since-09-20 |
 | /pt/drills/reaction-speed/reflex-training-drill | pt | drill | 3 | pending | docs/seo/research/reflex-training-drill-2026-09-20.md |  | changed-since-09-20 |
 | /de/drills/cognitive | de | hub | 4 | done | docs/seo/research/en/cognitive-hub.md | 10e3a68 | hub sections localized |
 | /de/drills/cognitive/attention/concentration-stamina | de | drill | 4 | blocked |  |  | changed-since-09-20; en-prose-leak(3) — client About/FAQ copy is English, see D2 |
@@ -185,10 +185,10 @@ Status counts: pending 372 · done 26 · blocked 243
 | /de/drills/physical/fitness/agility-ladder | de | drill | 4 | blocked | docs/seo/research/agility-ladder-2026-09-20.md |  | changed-since-09-20; en-prose-leak(2) — client About/FAQ copy is English, see D2 |
 | /de/drills/physical/fitness/jump-sequence | de | drill | 4 | blocked | docs/seo/research/jump-sequence-2026-09-20.md |  | changed-since-09-20; en-prose-leak(2) — client About/FAQ copy is English, see D2 |
 | /de/drills/physical/fitness/speed-drill | de | drill | 4 | pending | docs/seo/research/speed-drill-2026-09-20.md |  | changed-since-09-20 |
-| /de/drills/physical/reflex-training/drop-catch | de | drill | 4 | pending | docs/seo/research/drop-catch-2026-09-20.md |  |  |
-| /de/drills/physical/reflex-training/peripheral-threat-sweeper | de | drill | 4 | pending | docs/seo/research/peripheral-threat-sweeper-2026-09-20.md |  |  |
-| /de/drills/physical/reflex-training/quick-dodge | de | drill | 4 | pending | docs/seo/research/quick-dodge-2026-09-20.md |  |  |
-| /de/drills/physical/reflex-training/reaction-chain | de | drill | 4 | pending | docs/seo/research/reaction-chain-2026-09-20.md |  |  |
+| /de/drills/physical/reflex-training/drop-catch | de | drill | 4 | pending | docs/seo/research/drop-catch-2026-09-20.md |  | changed-since-09-20 |
+| /de/drills/physical/reflex-training/peripheral-threat-sweeper | de | drill | 4 | pending | docs/seo/research/peripheral-threat-sweeper-2026-09-20.md |  | changed-since-09-20 |
+| /de/drills/physical/reflex-training/quick-dodge | de | drill | 4 | pending | docs/seo/research/quick-dodge-2026-09-20.md |  | changed-since-09-20 |
+| /de/drills/physical/reflex-training/reaction-chain | de | drill | 4 | pending | docs/seo/research/reaction-chain-2026-09-20.md |  | changed-since-09-20 |
 | /de/drills/reaction-speed | de | hub | 4 | pending | docs/seo/research/reaction-speed-hub-2026-09-20.md |  |  |
 | /de/drills/reaction-speed/barrier-sequence-pursuit | de | drill | 4 | pending | docs/seo/research/barrier-sequence-pursuit-2026-09-20.md |  | changed-since-09-20 |
 | /de/drills/reaction-speed/fps-tracking-trainer | de | drill | 4 | pending | docs/seo/research/fps-tracking-trainer-2026-09-20.md |  |  |
@@ -263,17 +263,17 @@ Status counts: pending 372 · done 26 · blocked 243
 | /es/drills/motor/precision-control/steady-hand | es | drill | 4 | pending | docs/seo/research/steady-hand-2026-09-20.md |  | changed-since-09-20 |
 | /es/drills/motor/precision-control/tracing | es | drill | 4 | blocked | docs/seo/research/tracing-2026-09-20.md |  | changed-since-09-20; en-prose-leak(2) — client About/FAQ copy is English, see D2 |
 | /es/drills/physical | es | hub | 4 | pending | docs/seo/research/physical-category-2026-09-20.md |  |  |
-| /es/drills/physical/balance-training/stability-challenge | es | drill | 4 | pending | docs/seo/research/stability-challenge-2026-09-20.md |  |  |
-| /es/drills/physical/coordination/complex-pattern | es | drill | 4 | blocked | docs/seo/research/complex-pattern-2026-09-20.md |  | en-prose-leak(1) — client About/FAQ copy is English, see D2 |
+| /es/drills/physical/balance-training/stability-challenge | es | drill | 4 | pending | docs/seo/research/stability-challenge-2026-09-20.md |  | changed-since-09-20 |
+| /es/drills/physical/coordination/complex-pattern | es | drill | 4 | blocked | docs/seo/research/complex-pattern-2026-09-20.md |  | changed-since-09-20; en-prose-leak(1) — client About/FAQ copy is English, see D2 |
 | /es/drills/physical/coordination/cross-body-movement | es | drill | 4 | blocked | docs/seo/research/cross-body-movement-2026-09-20.md |  | changed-since-09-20; en-prose-leak(1) — client About/FAQ copy is English, see D2 |
 | /es/drills/physical/coordination/dynamic-grid-evasion | es | drill | 4 | pending | docs/seo/research/dynamic-grid-evasion-2026-09-20.md |  | changed-since-09-20 |
 | /es/drills/physical/fitness/agility-ladder | es | drill | 4 | pending | docs/seo/research/agility-ladder-2026-09-20.md |  | changed-since-09-20 |
 | /es/drills/physical/fitness/jump-sequence | es | drill | 4 | blocked | docs/seo/research/jump-sequence-2026-09-20.md |  | changed-since-09-20; en-prose-leak(2) — client About/FAQ copy is English, see D2 |
-| /es/drills/physical/fitness/speed-drill | es | drill | 4 | pending | docs/seo/research/speed-drill-2026-09-20.md |  |  |
-| /es/drills/physical/reflex-training/drop-catch | es | drill | 4 | pending | docs/seo/research/drop-catch-2026-09-20.md |  |  |
-| /es/drills/physical/reflex-training/peripheral-threat-sweeper | es | drill | 4 | pending | docs/seo/research/peripheral-threat-sweeper-2026-09-20.md |  |  |
-| /es/drills/physical/reflex-training/quick-dodge | es | drill | 4 | pending | docs/seo/research/quick-dodge-2026-09-20.md |  |  |
-| /es/drills/physical/reflex-training/reaction-chain | es | drill | 4 | pending | docs/seo/research/reaction-chain-2026-09-20.md |  |  |
+| /es/drills/physical/fitness/speed-drill | es | drill | 4 | pending | docs/seo/research/speed-drill-2026-09-20.md |  | changed-since-09-20 |
+| /es/drills/physical/reflex-training/drop-catch | es | drill | 4 | pending | docs/seo/research/drop-catch-2026-09-20.md |  | changed-since-09-20 |
+| /es/drills/physical/reflex-training/peripheral-threat-sweeper | es | drill | 4 | pending | docs/seo/research/peripheral-threat-sweeper-2026-09-20.md |  | changed-since-09-20 |
+| /es/drills/physical/reflex-training/quick-dodge | es | drill | 4 | pending | docs/seo/research/quick-dodge-2026-09-20.md |  | changed-since-09-20 |
+| /es/drills/physical/reflex-training/reaction-chain | es | drill | 4 | pending | docs/seo/research/reaction-chain-2026-09-20.md |  | changed-since-09-20 |
 | /es/drills/reaction-speed | es | hub | 4 | pending | docs/seo/research/reaction-speed-hub-2026-09-20.md |  |  |
 | /es/drills/reaction-speed/barrier-sequence-pursuit | es | drill | 4 | pending | docs/seo/research/barrier-sequence-pursuit-2026-09-20.md |  | changed-since-09-20 |
 | /es/drills/reaction-speed/fps-tracking-trainer | es | drill | 4 | pending | docs/seo/research/fps-tracking-trainer-2026-09-20.md |  |  |
@@ -302,8 +302,8 @@ Status counts: pending 372 · done 26 · blocked 243
 | /es/drills/visual/reaction-speed/go/no-go | es | drill | 4 | blocked |  |  | changed-since-09-20; en-prose-leak(3) — client About/FAQ copy is English, see D2 |
 | /es/drills/visual/reaction-speed/light-reaction | es | drill | 4 | blocked | docs/seo/research/light-reaction-visual-2026-09-20.md |  | changed-since-09-20; en-prose-leak(1) — client About/FAQ copy is English, see D2 |
 | /es/drills/visual/tracking-accuracy/moving-target | es | drill | 4 | blocked | docs/seo/research/moving-target-2026-09-20.md |  | changed-since-09-20; en-prose-leak(4) — client About/FAQ copy is English, see D2 |
-| /es/drills/visual/tracking-accuracy/multiple-targets | es | drill | 4 | blocked | docs/seo/research/multiple-targets-2026-09-20.md |  | en-prose-leak(3) — client About/FAQ copy is English, see D2 |
-| /es/drills/visual/tracking-accuracy/pursuit-tracker | es | drill | 4 | blocked | docs/seo/research/pursuit-tracker-2026-09-20.md |  | en-prose-leak(3) — client About/FAQ copy is English, see D2 |
+| /es/drills/visual/tracking-accuracy/multiple-targets | es | drill | 4 | blocked | docs/seo/research/multiple-targets-2026-09-20.md |  | changed-since-09-20; en-prose-leak(3) — client About/FAQ copy is English, see D2 |
+| /es/drills/visual/tracking-accuracy/pursuit-tracker | es | drill | 4 | blocked | docs/seo/research/pursuit-tracker-2026-09-20.md |  | changed-since-09-20; en-prose-leak(3) — client About/FAQ copy is English, see D2 |
 | /es/drills/visual/visual-recognition/entropic-grid | es | drill | 4 | blocked | docs/seo/research/es/entropic-grid.md | 38e596d | changed-since-09-20; title/H1 de-duplicated; en-prose-leak(2) — client About/FAQ copy is English, see D2 |
 | /es/drills/visual/visual-recognition/rhythm-anomaly | es | drill | 4 | blocked | docs/seo/research/rhythm-anomaly-2026-09-20.md |  | changed-since-09-20; en-prose-leak(3) — client About/FAQ copy is English, see D2 |
 | /es/drills/visual/visual-recognition/visual-search | es | drill | 4 | blocked | docs/seo/research/visual-search-2026-09-20.md |  | changed-since-09-20; en-prose-leak(2) — client About/FAQ copy is English, see D2 |
@@ -348,17 +348,17 @@ Status counts: pending 372 · done 26 · blocked 243
 | /fr/drills/motor/precision-control/steady-hand | fr | drill | 4 | pending | docs/seo/research/steady-hand-2026-09-20.md |  | changed-since-09-20 |
 | /fr/drills/motor/precision-control/tracing | fr | drill | 4 | blocked | docs/seo/research/tracing-2026-09-20.md |  | changed-since-09-20; en-prose-leak(2) — client About/FAQ copy is English, see D2 |
 | /fr/drills/physical | fr | hub | 4 | pending | docs/seo/research/physical-category-2026-09-20.md |  |  |
-| /fr/drills/physical/balance-training/stability-challenge | fr | drill | 4 | pending | docs/seo/research/stability-challenge-2026-09-20.md |  |  |
-| /fr/drills/physical/coordination/complex-pattern | fr | drill | 4 | blocked | docs/seo/research/complex-pattern-2026-09-20.md |  | en-prose-leak(1) — client About/FAQ copy is English, see D2 |
+| /fr/drills/physical/balance-training/stability-challenge | fr | drill | 4 | pending | docs/seo/research/stability-challenge-2026-09-20.md |  | changed-since-09-20 |
+| /fr/drills/physical/coordination/complex-pattern | fr | drill | 4 | blocked | docs/seo/research/complex-pattern-2026-09-20.md |  | changed-since-09-20; en-prose-leak(1) — client About/FAQ copy is English, see D2 |
 | /fr/drills/physical/coordination/cross-body-movement | fr | drill | 4 | blocked | docs/seo/research/cross-body-movement-2026-09-20.md |  | changed-since-09-20; en-prose-leak(1) — client About/FAQ copy is English, see D2 |
 | /fr/drills/physical/coordination/dynamic-grid-evasion | fr | drill | 4 | pending | docs/seo/research/dynamic-grid-evasion-2026-09-20.md |  | changed-since-09-20 |
 | /fr/drills/physical/fitness/agility-ladder | fr | drill | 4 | pending | docs/seo/research/agility-ladder-2026-09-20.md |  | changed-since-09-20 |
 | /fr/drills/physical/fitness/jump-sequence | fr | drill | 4 | blocked | docs/seo/research/jump-sequence-2026-09-20.md |  | changed-since-09-20; en-prose-leak(2) — client About/FAQ copy is English, see D2 |
-| /fr/drills/physical/fitness/speed-drill | fr | drill | 4 | pending | docs/seo/research/speed-drill-2026-09-20.md |  |  |
-| /fr/drills/physical/reflex-training/drop-catch | fr | drill | 4 | pending | docs/seo/research/drop-catch-2026-09-20.md |  |  |
-| /fr/drills/physical/reflex-training/peripheral-threat-sweeper | fr | drill | 4 | pending | docs/seo/research/peripheral-threat-sweeper-2026-09-20.md |  |  |
-| /fr/drills/physical/reflex-training/quick-dodge | fr | drill | 4 | pending | docs/seo/research/quick-dodge-2026-09-20.md |  |  |
-| /fr/drills/physical/reflex-training/reaction-chain | fr | drill | 4 | pending | docs/seo/research/reaction-chain-2026-09-20.md |  |  |
+| /fr/drills/physical/fitness/speed-drill | fr | drill | 4 | pending | docs/seo/research/speed-drill-2026-09-20.md |  | changed-since-09-20 |
+| /fr/drills/physical/reflex-training/drop-catch | fr | drill | 4 | pending | docs/seo/research/drop-catch-2026-09-20.md |  | changed-since-09-20 |
+| /fr/drills/physical/reflex-training/peripheral-threat-sweeper | fr | drill | 4 | pending | docs/seo/research/peripheral-threat-sweeper-2026-09-20.md |  | changed-since-09-20 |
+| /fr/drills/physical/reflex-training/quick-dodge | fr | drill | 4 | pending | docs/seo/research/quick-dodge-2026-09-20.md |  | changed-since-09-20 |
+| /fr/drills/physical/reflex-training/reaction-chain | fr | drill | 4 | pending | docs/seo/research/reaction-chain-2026-09-20.md |  | changed-since-09-20 |
 | /fr/drills/reaction-speed | fr | hub | 4 | pending | docs/seo/research/reaction-speed-hub-2026-09-20.md |  |  |
 | /fr/drills/reaction-speed/barrier-sequence-pursuit | fr | drill | 4 | done | docs/seo/research/fr/barrier-sequence-pursuit.md | f6f05c8 | changed-since-09-20; title de-duplicated |
 | /fr/drills/reaction-speed/fps-tracking-trainer | fr | drill | 4 | pending | docs/seo/research/fps-tracking-trainer-2026-09-20.md |  |  |
@@ -387,7 +387,7 @@ Status counts: pending 372 · done 26 · blocked 243
 | /fr/drills/visual/reaction-speed/go/no-go | fr | drill | 4 | blocked |  |  | changed-since-09-20; en-prose-leak(3) — client About/FAQ copy is English, see D2 |
 | /fr/drills/visual/reaction-speed/light-reaction | fr | drill | 4 | blocked | docs/seo/research/light-reaction-visual-2026-09-20.md |  | changed-since-09-20; en-prose-leak(1) — client About/FAQ copy is English, see D2 |
 | /fr/drills/visual/tracking-accuracy/moving-target | fr | drill | 4 | blocked | docs/seo/research/moving-target-2026-09-20.md |  | changed-since-09-20; en-prose-leak(4) — client About/FAQ copy is English, see D2 |
-| /fr/drills/visual/tracking-accuracy/multiple-targets | fr | drill | 4 | blocked | docs/seo/research/multiple-targets-2026-09-20.md |  | en-prose-leak(3) — client About/FAQ copy is English, see D2 |
+| /fr/drills/visual/tracking-accuracy/multiple-targets | fr | drill | 4 | blocked | docs/seo/research/multiple-targets-2026-09-20.md |  | changed-since-09-20; en-prose-leak(3) — client About/FAQ copy is English, see D2 |
 | /fr/drills/visual/tracking-accuracy/pursuit-tracker | fr | drill | 4 | blocked | docs/seo/research/pursuit-tracker-2026-09-20.md |  | changed-since-09-20; en-prose-leak(3) — client About/FAQ copy is English, see D2 |
 | /fr/drills/visual/visual-recognition/entropic-grid | fr | drill | 4 | blocked | docs/seo/research/fr/entropic-grid.md | 38e596d | changed-since-09-20; title/H1 de-duplicated; en-prose-leak(2) — client About/FAQ copy is English, see D2 |
 | /fr/drills/visual/visual-recognition/rhythm-anomaly | fr | drill | 4 | blocked | docs/seo/research/rhythm-anomaly-2026-09-20.md |  | changed-since-09-20; en-prose-leak(3) — client About/FAQ copy is English, see D2 |
@@ -439,11 +439,11 @@ Status counts: pending 372 · done 26 · blocked 243
 | /ja/drills/physical/coordination/dynamic-grid-evasion | ja | drill | 4 | pending | docs/seo/research/dynamic-grid-evasion-2026-09-20.md |  | changed-since-09-20 |
 | /ja/drills/physical/fitness/agility-ladder | ja | drill | 4 | blocked | docs/seo/research/agility-ladder-2026-09-20.md |  | changed-since-09-20; en-prose-leak(2) — client About/FAQ copy is English, see D2 |
 | /ja/drills/physical/fitness/jump-sequence | ja | drill | 4 | blocked | docs/seo/research/jump-sequence-2026-09-20.md |  | changed-since-09-20; en-prose-leak(2) — client About/FAQ copy is English, see D2 |
-| /ja/drills/physical/fitness/speed-drill | ja | drill | 4 | pending | docs/seo/research/speed-drill-2026-09-20.md |  |  |
-| /ja/drills/physical/reflex-training/drop-catch | ja | drill | 4 | pending | docs/seo/research/drop-catch-2026-09-20.md |  |  |
-| /ja/drills/physical/reflex-training/peripheral-threat-sweeper | ja | drill | 4 | pending | docs/seo/research/peripheral-threat-sweeper-2026-09-20.md |  |  |
-| /ja/drills/physical/reflex-training/quick-dodge | ja | drill | 4 | pending | docs/seo/research/quick-dodge-2026-09-20.md |  |  |
-| /ja/drills/physical/reflex-training/reaction-chain | ja | drill | 4 | pending | docs/seo/research/reaction-chain-2026-09-20.md |  |  |
+| /ja/drills/physical/fitness/speed-drill | ja | drill | 4 | pending | docs/seo/research/speed-drill-2026-09-20.md |  | changed-since-09-20 |
+| /ja/drills/physical/reflex-training/drop-catch | ja | drill | 4 | pending | docs/seo/research/drop-catch-2026-09-20.md |  | changed-since-09-20 |
+| /ja/drills/physical/reflex-training/peripheral-threat-sweeper | ja | drill | 4 | pending | docs/seo/research/peripheral-threat-sweeper-2026-09-20.md |  | changed-since-09-20 |
+| /ja/drills/physical/reflex-training/quick-dodge | ja | drill | 4 | pending | docs/seo/research/quick-dodge-2026-09-20.md |  | changed-since-09-20 |
+| /ja/drills/physical/reflex-training/reaction-chain | ja | drill | 4 | pending | docs/seo/research/reaction-chain-2026-09-20.md |  | changed-since-09-20 |
 | /ja/drills/reaction-speed | ja | hub | 4 | pending | docs/seo/research/reaction-speed-hub-2026-09-20.md |  |  |
 | /ja/drills/reaction-speed/barrier-sequence-pursuit | ja | drill | 4 | done | docs/seo/research/ja/barrier-sequence-pursuit.md | f6f05c8 | changed-since-09-20; native content authored |
 | /ja/drills/reaction-speed/fps-tracking-trainer | ja | drill | 4 | pending | docs/seo/research/fps-tracking-trainer-2026-09-20.md |  |  |
@@ -524,11 +524,11 @@ Status counts: pending 372 · done 26 · blocked 243
 | /ko/drills/physical/coordination/dynamic-grid-evasion | ko | drill | 4 | pending | docs/seo/research/dynamic-grid-evasion-2026-09-20.md |  | changed-since-09-20 |
 | /ko/drills/physical/fitness/agility-ladder | ko | drill | 4 | blocked | docs/seo/research/agility-ladder-2026-09-20.md |  | changed-since-09-20; en-prose-leak(2) — client About/FAQ copy is English, see D2 |
 | /ko/drills/physical/fitness/jump-sequence | ko | drill | 4 | blocked | docs/seo/research/jump-sequence-2026-09-20.md |  | changed-since-09-20; en-prose-leak(2) — client About/FAQ copy is English, see D2 |
-| /ko/drills/physical/fitness/speed-drill | ko | drill | 4 | pending | docs/seo/research/speed-drill-2026-09-20.md |  |  |
-| /ko/drills/physical/reflex-training/drop-catch | ko | drill | 4 | pending | docs/seo/research/drop-catch-2026-09-20.md |  |  |
-| /ko/drills/physical/reflex-training/peripheral-threat-sweeper | ko | drill | 4 | pending | docs/seo/research/peripheral-threat-sweeper-2026-09-20.md |  |  |
-| /ko/drills/physical/reflex-training/quick-dodge | ko | drill | 4 | pending | docs/seo/research/quick-dodge-2026-09-20.md |  |  |
-| /ko/drills/physical/reflex-training/reaction-chain | ko | drill | 4 | pending | docs/seo/research/reaction-chain-2026-09-20.md |  |  |
+| /ko/drills/physical/fitness/speed-drill | ko | drill | 4 | pending | docs/seo/research/speed-drill-2026-09-20.md |  | changed-since-09-20 |
+| /ko/drills/physical/reflex-training/drop-catch | ko | drill | 4 | pending | docs/seo/research/drop-catch-2026-09-20.md |  | changed-since-09-20 |
+| /ko/drills/physical/reflex-training/peripheral-threat-sweeper | ko | drill | 4 | pending | docs/seo/research/peripheral-threat-sweeper-2026-09-20.md |  | changed-since-09-20 |
+| /ko/drills/physical/reflex-training/quick-dodge | ko | drill | 4 | pending | docs/seo/research/quick-dodge-2026-09-20.md |  | changed-since-09-20 |
+| /ko/drills/physical/reflex-training/reaction-chain | ko | drill | 4 | pending | docs/seo/research/reaction-chain-2026-09-20.md |  | changed-since-09-20 |
 | /ko/drills/reaction-speed | ko | hub | 4 | pending | docs/seo/research/reaction-speed-hub-2026-09-20.md |  |  |
 | /ko/drills/reaction-speed/barrier-sequence-pursuit | ko | drill | 4 | done | docs/seo/research/ko/barrier-sequence-pursuit.md | f6f05c8 | changed-since-09-20; native content authored |
 | /ko/drills/reaction-speed/fps-tracking-trainer | ko | drill | 4 | pending | docs/seo/research/fps-tracking-trainer-2026-09-20.md |  |  |
@@ -603,17 +603,17 @@ Status counts: pending 372 · done 26 · blocked 243
 | /pt/drills/motor/precision-control/steady-hand | pt | drill | 4 | pending | docs/seo/research/steady-hand-2026-09-20.md |  | changed-since-09-20 |
 | /pt/drills/motor/precision-control/tracing | pt | drill | 4 | blocked | docs/seo/research/tracing-2026-09-20.md |  | changed-since-09-20; en-prose-leak(2) — client About/FAQ copy is English, see D2 |
 | /pt/drills/physical | pt | hub | 4 | pending | docs/seo/research/physical-category-2026-09-20.md |  |  |
-| /pt/drills/physical/balance-training/stability-challenge | pt | drill | 4 | pending | docs/seo/research/stability-challenge-2026-09-20.md |  |  |
-| /pt/drills/physical/coordination/complex-pattern | pt | drill | 4 | blocked | docs/seo/research/complex-pattern-2026-09-20.md |  | en-prose-leak(1) — client About/FAQ copy is English, see D2 |
+| /pt/drills/physical/balance-training/stability-challenge | pt | drill | 4 | pending | docs/seo/research/stability-challenge-2026-09-20.md |  | changed-since-09-20 |
+| /pt/drills/physical/coordination/complex-pattern | pt | drill | 4 | blocked | docs/seo/research/complex-pattern-2026-09-20.md |  | changed-since-09-20; en-prose-leak(1) — client About/FAQ copy is English, see D2 |
 | /pt/drills/physical/coordination/cross-body-movement | pt | drill | 4 | blocked | docs/seo/research/cross-body-movement-2026-09-20.md |  | changed-since-09-20; en-prose-leak(1) — client About/FAQ copy is English, see D2 |
 | /pt/drills/physical/coordination/dynamic-grid-evasion | pt | drill | 4 | pending | docs/seo/research/dynamic-grid-evasion-2026-09-20.md |  | changed-since-09-20 |
 | /pt/drills/physical/fitness/agility-ladder | pt | drill | 4 | pending | docs/seo/research/agility-ladder-2026-09-20.md |  | changed-since-09-20 |
 | /pt/drills/physical/fitness/jump-sequence | pt | drill | 4 | blocked | docs/seo/research/jump-sequence-2026-09-20.md |  | changed-since-09-20; en-prose-leak(2) — client About/FAQ copy is English, see D2 |
-| /pt/drills/physical/fitness/speed-drill | pt | drill | 4 | pending | docs/seo/research/speed-drill-2026-09-20.md |  |  |
-| /pt/drills/physical/reflex-training/drop-catch | pt | drill | 4 | pending | docs/seo/research/drop-catch-2026-09-20.md |  |  |
-| /pt/drills/physical/reflex-training/peripheral-threat-sweeper | pt | drill | 4 | pending | docs/seo/research/peripheral-threat-sweeper-2026-09-20.md |  |  |
-| /pt/drills/physical/reflex-training/quick-dodge | pt | drill | 4 | pending | docs/seo/research/quick-dodge-2026-09-20.md |  |  |
-| /pt/drills/physical/reflex-training/reaction-chain | pt | drill | 4 | pending | docs/seo/research/reaction-chain-2026-09-20.md |  |  |
+| /pt/drills/physical/fitness/speed-drill | pt | drill | 4 | pending | docs/seo/research/speed-drill-2026-09-20.md |  | changed-since-09-20 |
+| /pt/drills/physical/reflex-training/drop-catch | pt | drill | 4 | pending | docs/seo/research/drop-catch-2026-09-20.md |  | changed-since-09-20 |
+| /pt/drills/physical/reflex-training/peripheral-threat-sweeper | pt | drill | 4 | pending | docs/seo/research/peripheral-threat-sweeper-2026-09-20.md |  | changed-since-09-20 |
+| /pt/drills/physical/reflex-training/quick-dodge | pt | drill | 4 | pending | docs/seo/research/quick-dodge-2026-09-20.md |  | changed-since-09-20 |
+| /pt/drills/physical/reflex-training/reaction-chain | pt | drill | 4 | pending | docs/seo/research/reaction-chain-2026-09-20.md |  | changed-since-09-20 |
 | /pt/drills/reaction-speed | pt | hub | 4 | pending | docs/seo/research/reaction-speed-hub-2026-09-20.md |  |  |
 | /pt/drills/reaction-speed/barrier-sequence-pursuit | pt | drill | 4 | pending | docs/seo/research/barrier-sequence-pursuit-2026-09-20.md |  | changed-since-09-20 |
 | /pt/drills/reaction-speed/fps-tracking-trainer | pt | drill | 4 | pending | docs/seo/research/fps-tracking-trainer-2026-09-20.md |  |  |
@@ -642,8 +642,8 @@ Status counts: pending 372 · done 26 · blocked 243
 | /pt/drills/visual/reaction-speed/go/no-go | pt | drill | 4 | blocked |  |  | changed-since-09-20; en-prose-leak(3) — client About/FAQ copy is English, see D2 |
 | /pt/drills/visual/reaction-speed/light-reaction | pt | drill | 4 | blocked | docs/seo/research/light-reaction-visual-2026-09-20.md |  | changed-since-09-20; en-prose-leak(1) — client About/FAQ copy is English, see D2 |
 | /pt/drills/visual/tracking-accuracy/moving-target | pt | drill | 4 | blocked | docs/seo/research/moving-target-2026-09-20.md |  | changed-since-09-20; en-prose-leak(4) — client About/FAQ copy is English, see D2 |
-| /pt/drills/visual/tracking-accuracy/multiple-targets | pt | drill | 4 | blocked | docs/seo/research/multiple-targets-2026-09-20.md |  | en-prose-leak(3) — client About/FAQ copy is English, see D2 |
-| /pt/drills/visual/tracking-accuracy/pursuit-tracker | pt | drill | 4 | blocked | docs/seo/research/pursuit-tracker-2026-09-20.md |  | en-prose-leak(3) — client About/FAQ copy is English, see D2 |
+| /pt/drills/visual/tracking-accuracy/multiple-targets | pt | drill | 4 | blocked | docs/seo/research/multiple-targets-2026-09-20.md |  | changed-since-09-20; en-prose-leak(3) — client About/FAQ copy is English, see D2 |
+| /pt/drills/visual/tracking-accuracy/pursuit-tracker | pt | drill | 4 | blocked | docs/seo/research/pursuit-tracker-2026-09-20.md |  | changed-since-09-20; en-prose-leak(3) — client About/FAQ copy is English, see D2 |
 | /pt/drills/visual/visual-recognition/entropic-grid | pt | drill | 4 | blocked | docs/seo/research/pt/entropic-grid.md | 38e596d | changed-since-09-20; title/H1 de-duplicated; en-prose-leak(2) — client About/FAQ copy is English, see D2 |
 | /pt/drills/visual/visual-recognition/rhythm-anomaly | pt | drill | 4 | blocked | docs/seo/research/rhythm-anomaly-2026-09-20.md |  | changed-since-09-20; en-prose-leak(3) — client About/FAQ copy is English, see D2 |
 | /pt/drills/visual/visual-recognition/visual-search | pt | drill | 4 | blocked | docs/seo/research/visual-search-2026-09-20.md |  | changed-since-09-20; en-prose-leak(2) — client About/FAQ copy is English, see D2 |

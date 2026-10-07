@@ -28,7 +28,7 @@ export const metadata = {
     index: true,
     follow: true,
   },
-  openGraph: {
+  openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
     title: "Concentration FPS | Entraînement de Flow | SkillDrills",
     description: "Gardez un rythme de visée stable et réduisez les distractions dans cet entraînement FPS gratuit. Adaptez le défi et mesurez votre tracking.",
     url: "https://skilldrills.online/fr/drills/fps/flow-state",
@@ -36,7 +36,7 @@ export const metadata = {
     locale: 'fr_FR',
     type: 'website',
   },
-  twitter: {
+  twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: 'summary_large_image',
     title: "Concentration FPS | Entraînement de Flow | SkillDrills",
     description: "Gardez un rythme de visée stable et réduisez les distractions dans cet entraînement FPS gratuit. Adaptez le défi et mesurez votre tracking.",

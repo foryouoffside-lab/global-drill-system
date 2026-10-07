@@ -13,7 +13,7 @@ export const metadata = {
     'mira FPS', 'treino de mira Valorant', 'treino de mira CS2', 'precisão do mouse',
     'aquisição de alvo', 'micro ajuste de mira', 'tiro na cabeça', 'flick shot grátis',
   ],
-  openGraph: {
+  openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
     title: 'Treino de mira Flick | Precisão do mouse | SkillDrills',
     description: 'Treine flick e teste a precisão do mouse no navegador. Meça tempo de aquisição, taxa de acerto e tiros no centro para FPS.',
     type: 'article',
@@ -21,7 +21,7 @@ export const metadata = {
     siteName: 'SkillDrills',
     locale: 'pt_BR',
   },
-  twitter: {
+  twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: 'summary_large_image',
     title: 'Treino de mira Flick | Precisão do mouse | SkillDrills',
     description: 'Treine flick e teste a precisão do mouse no navegador. Meça tempo de aquisição, taxa de acerto e tiros no centro para FPS.',

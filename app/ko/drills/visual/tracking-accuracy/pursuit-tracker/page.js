@@ -20,7 +20,7 @@ export const metadata = {
     "커서 추적",
     "스무스 퍼슈트"
   ],
-  openGraph: {
+  openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
     title: "에임 트래킹 테스트 | 시선 추적 훈련 | SkillDrills",
     description: "움직이는 표적을 따라가며 시선과 커서의 안정성을 연습하는 무료 브라우저 드릴입니다. 의료 검사가 아닙니다.",
     type: 'article',
@@ -28,7 +28,7 @@ export const metadata = {
     siteName: 'SkillDrills',
     locale: 'ko_KR',
   },
-  twitter: {
+  twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: 'summary_large_image',
     title: "에임 트래킹 테스트 | 시선 추적 훈련 | SkillDrills",
     description: "에임 트래킹과 시선 추적을 훈련하는 무료 드릴입니다. 화면과 마우스 환경에 따라 결과가 달라질 수 있습니다.",

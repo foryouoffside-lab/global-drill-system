@@ -8,7 +8,7 @@ export const metadata = {
   title: "Test de memoria visual online | SkillDrills",
   description: "Pon a prueba tu memoria visual online: memoriza patrones iluminados en una cuadrícula y reprodúcelos directamente en el navegador.",
   keywords: ['test de memoria visual', 'memoria visual test', 'test de memoria espacial', 'juego de memoria visual', 'matriz de memoria', 'memoria visoespacial', 'patrones visuales', 'memoria de trabajo visual', 'test de memoria online', 'entrenamiento de memoria visual'],
-  openGraph: {
+  openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
     title: "Test de memoria visual online | SkillDrills",
     description: "Pon a prueba tu memoria visual online: memoriza patrones iluminados en una cuadrícula y reprodúcelos directamente en el navegador.",
     type: 'website',
@@ -16,7 +16,7 @@ export const metadata = {
     siteName: 'SkillDrills',
     locale: 'es_ES',
   },
-  twitter: {
+  twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: 'summary_large_image',
     title: "Test de memoria visual online | SkillDrills",
     description: "Pon a prueba tu memoria visual online: memoriza patrones iluminados en una cuadrícula y reprodúcelos directamente en el navegador.",

@@ -37,7 +37,7 @@ export const metadata = {
     canonical: 'https://skilldrills.online/de/drills/physical/coordination/complex-pattern',
     languages: getAlternateLanguages('/drills/physical/coordination/complex-pattern'),
   },
-  openGraph: {
+  openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
     title: 'Muster merken Test | Visuelles Gedächtnis | SkillDrills',
     description: 'Merke dir einen aufleuchtenden Pfad, zeichne ihn nach und trainiere räumliches Gedächtnis sowie Mauskoordination im kostenlosen Browser-Spiel.',
     url: 'https://skilldrills.online/de/drills/physical/coordination/complex-pattern',
@@ -45,7 +45,7 @@ export const metadata = {
     locale: 'de_DE',
     type: 'website',
   },
-  twitter: {
+  twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: 'summary_large_image',
     title: 'Muster merken Test | Visuelles Gedächtnis | SkillDrills',
     description: 'Merke dir einen aufleuchtenden Pfad, zeichne ihn nach und trainiere räumliches Gedächtnis sowie Mauskoordination im kostenlosen Browser-Spiel.',

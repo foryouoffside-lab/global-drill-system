@@ -26,7 +26,7 @@ export const metadata = {
     languages: getAlternateLanguages('/drills/visual-tracking/strobe-prediction-pursuit')
   },
   robots: { index: true, follow: true },
-  openGraph: {
+  openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
     title: "Entraînement visuel stroboscopique | SkillDrills",
     description: "Prévoyez la trajectoire d’une cible masquée par des flashs. Exercice gratuit pour mesurer reprise, erreur et continuité du suivi.",
     url: "https://skilldrills.online/fr/drills/visual-tracking/strobe-prediction-pursuit",
@@ -34,7 +34,7 @@ export const metadata = {
     locale: "fr_FR",
     type: "website"
   },
-  twitter: {
+  twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: "summary_large_image",
     title: "Entraînement visuel stroboscopique | SkillDrills",
     description: "Prévoyez la trajectoire d’une cible masquée par des flashs. Exercice gratuit pour mesurer reprise, erreur et continuité du suivi."

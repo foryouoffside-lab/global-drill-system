@@ -21,7 +21,7 @@ export const metadata = {
     "signal Go et No-Go",
     "entraînement contrôle inhibiteur"
   ],
-  openGraph: {
+  openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
     title: "Test Go/No-Go | Inhibition de la réponse | SkillDrills",
     description: "Réagissez au vert et retenez-vous au rouge pour observer l’inhibition de la réponse et les erreurs de commission.",
     type: 'article',
@@ -29,7 +29,7 @@ export const metadata = {
     siteName: 'SkillDrills',
     locale: 'fr_FR',
   },
-  twitter: {
+  twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: 'summary_large_image',
     title: "Test Go/No-Go | Inhibition de la réponse | SkillDrills",
     description: "Entraînement en ligne du contrôle inhibiteur : réagissez au vert, retenez-vous au rouge.",

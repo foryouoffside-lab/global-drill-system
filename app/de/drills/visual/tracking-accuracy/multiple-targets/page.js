@@ -21,7 +21,7 @@ export const metadata = {
     "bewegte Objekte verfolgen",
     "MOT Training"
   ],
-  openGraph: {
+  openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
     title: "Mehrfach-Objektverfolgung | MOT-Test | SkillDrills",
     description: "Kostenloser MOT-Test: Verfolge mehrere bewegte Objekte unter Ablenkern. Übe geteilte Aufmerksamkeit und peripheres Sehen.",
     type: 'article',
@@ -29,7 +29,7 @@ export const metadata = {
     siteName: 'SkillDrills',
     locale: 'de_DE',
   },
-  twitter: {
+  twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: 'summary_large_image',
     title: "Mehrfach-Objektverfolgung | MOT-Test | SkillDrills",
     description: "Verfolge mehrere bewegte Objekte gleichzeitig und übe visuelle Aufmerksamkeit und peripheres Sehen im Browser.",

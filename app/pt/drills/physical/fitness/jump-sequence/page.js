@@ -36,7 +36,7 @@ export const metadata = {
     canonical: 'https://skilldrills.online/pt/drills/physical/fitness/jump-sequence',
     languages: getAlternateLanguages('/drills/physical/fitness/jump-sequence'),
   },
-  openGraph: {
+  openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
     title: "Exercícios para Aumentar o Salto Vertical & Treino Pliométrico | SkillDrills",
     description: "Treino online gratuito de impulsão, salto vertical e cálculo de trajetória aérea. Domine o timing de propulsão, sustentação no ar e interceptação parabólica de alvos até 900 px/s com base no ciclo de alongamento-encurtamento.",
     url: 'https://skilldrills.online/pt/drills/physical/fitness/jump-sequence',
@@ -44,7 +44,7 @@ export const metadata = {
     locale: 'pt_BR',
     type: 'website',
   },
-  twitter: {
+  twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: 'summary_large_image',
     title: "Exercícios para Aumentar o Salto Vertical & Treino Pliométrico | SkillDrills",
     description: "Treino online gratuito de impulsão, salto vertical e cálculo de trajetória aérea. Domine o timing de propulsão, sustentação no ar e interceptação parabólica de alvos até 900 px/s com base no ciclo de alongamento-encurtamento.",

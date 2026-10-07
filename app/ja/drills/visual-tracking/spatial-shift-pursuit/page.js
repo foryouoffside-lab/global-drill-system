@@ -31,7 +31,7 @@ export const metadata = {
     "画面揺れ 標的追従",
     "動く画面 追視"
   ],
-  openGraph: {
+  openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
     title: "視界ブレ追従トレーニング｜空間認知ドリル | SkillDrills",
     description: "画面や視野が動く中で標的を追う無料ブラウザ練習。空間認知、再捕捉までの時間、位置ずれを記録。",
     type: "website",
@@ -39,7 +39,7 @@ export const metadata = {
     siteName: "SkillDrills",
     locale: "ja_JP",
   },
-  twitter: {
+  twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: "summary_large_image",
     title: "視界ブレ追従トレーニング｜空間認知ドリル | SkillDrills",
     description: "画面や視野が動く中で標的を追う無料ブラウザ練習。空間認知、再捕捉までの時間、位置ずれを記録。",

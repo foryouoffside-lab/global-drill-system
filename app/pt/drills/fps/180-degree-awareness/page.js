@@ -28,7 +28,7 @@ export const metadata = {
     index: true,
     follow: true,
   },
-  openGraph: {
+  openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
     title: "Treino de mira 180° | Giro FPS | SkillDrills",
     description: "Perceba alvos pela visão periférica, vire 180° e pare a mira com precisão neste treino grátis de FPS no navegador.",
     url: "https://skilldrills.online/pt/drills/fps/180-degree-awareness",
@@ -36,7 +36,7 @@ export const metadata = {
     locale: 'pt_BR',
     type: 'website',
   },
-  twitter: {
+  twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: 'summary_large_image',
     title: "Treino de mira 180° | Giro FPS | SkillDrills",
     description: "Perceba alvos pela visão periférica, vire 180° e pare a mira com precisão neste treino grátis de FPS no navegador.",

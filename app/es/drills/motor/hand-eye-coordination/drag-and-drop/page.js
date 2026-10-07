@@ -13,7 +13,7 @@ export const metadata = {
     'test de arrastre', 'prueba de arrastrar y soltar', 'entrenamiento de arrastre', 'arrastre del ratón online',
     'test de control del ratón', 'coordinación mano-ojo ratón', 'test de motricidad fina ratón', 'juego de precisión ratón',
   ],
-  openGraph: {
+  openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
     title: 'Prueba de arrastre | Precisión del ratón | SkillDrills',
     description: 'Practica arrastrar y soltar en el navegador. Mide la precisión del ratón, el tiempo de movimiento y el momento de soltar el objetivo.',
     type: 'article',
@@ -21,7 +21,7 @@ export const metadata = {
     siteName: 'SkillDrills',
     locale: 'es_ES',
   },
-  twitter: {
+  twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: 'summary_large_image',
     title: 'Prueba de arrastre | Precisión del ratón | SkillDrills',
     description: 'Practica arrastrar y soltar en el navegador. Mide la precisión del ratón, el tiempo de movimiento y el momento de soltar el objetivo.',

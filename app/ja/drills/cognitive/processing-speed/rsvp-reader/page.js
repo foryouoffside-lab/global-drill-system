@@ -9,7 +9,7 @@ export const metadata = {
   title: "速読テスト | RSVP読書トレーニング | SkillDrills",
   description: "無料ブラウザの速読テストで、単語を固定位置に順番表示します。WPMと正確さを確認する非臨床の読書トレーニングです。",
   keywords: ["速読テスト", "速読テスト 無料", "読書速度 測定", "速読トレーニング", "RSVP速読", "WPM 読書速度", "読解速度 テスト", "速読アプリ"],
-  openGraph: {
+  openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
     title: "速読テスト | RSVP読書トレーニング | SkillDrills",
     description: "無料ブラウザの速読テストで、単語を固定位置に順番表示します。WPMと正確さを確認する非臨床の読書トレーニングです。",
     type: 'article',
@@ -17,7 +17,7 @@ export const metadata = {
     siteName: 'SkillDrills',
     locale: 'ja_JP',
   },
-  twitter: {
+  twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: 'summary_large_image',
     title: "速読テスト | RSVP読書トレーニング | SkillDrills",
     description: "無料ブラウザの速読テストで、単語を固定位置に順番表示します。WPMと正確さを確認する非臨床の読書トレーニングです。",

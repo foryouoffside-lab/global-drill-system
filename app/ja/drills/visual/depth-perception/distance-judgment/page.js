@@ -46,7 +46,7 @@ export const metadata = {
     index: true,
     follow: true,
   },
-  openGraph: {
+  openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
     title: "深視力検査・三桿法練習 | 無料オンライン | SkillDrills",
     description: "深視力検査（三桿法）のタイミングを無料で練習。大型・二種免許向けの奥行知覚を、ブラウザの動くターゲットで確認できます。医療検査ではありません。",
     url: "https://skilldrills.online/ja/drills/visual/depth-perception/distance-judgment",
@@ -54,7 +54,7 @@ export const metadata = {
     locale: 'ja_JP',
     type: 'website',
   },
-  twitter: {
+  twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: 'summary_large_image',
     title: "深視力検査・三桿法練習 | 無料オンライン | SkillDrills",
     description: "深視力検査（三桿法）のタイミングを無料で練習。大型・二種免許向けの奥行知覚を、ブラウザの動くターゲットで確認できます。医療検査ではありません。",

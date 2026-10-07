@@ -30,7 +30,7 @@ export const metadata = {
     canonical: 'https://skilldrills.online/ja/drills/reaction-speed/saccadic-gallery',
     languages: getAlternateLanguages('/drills/reaction-speed/saccadic-gallery'),
   },
-  openGraph: {
+  openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
     title: '動体視力トレーニング・視線移動ゲーム | SkillDrills',
     description:
       'ターゲットへ視線を素早く移して捕捉精度と反応速度を鍛える、無料の動体視力ブラウザゲーム。',
@@ -39,7 +39,7 @@ export const metadata = {
     siteName: 'SkillDrills',
     locale: 'ja_JP',
   },
-  twitter: {
+  twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: 'summary_large_image',
     title: '動体視力トレーニング・視線移動ゲーム | SkillDrills',
     description:

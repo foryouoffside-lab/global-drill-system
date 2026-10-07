@@ -11,7 +11,7 @@ export const metadata = {
   keywords: ["符号テスト SDMT", "情報処理速度 検査", "記号 数字 置換 テスト", "SDMT テスト 無料", "DSST テスト オンライン", "視覚走査 測定", "短期連想記憶 訓練", "認知機能 処理速度", "ウェクスラー 符号 検査", "脳トレ 記号合わせ",
     "符号検査 オンライン",
     "記号照合 脳トレ"],
-  openGraph: {
+  openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
     title: "符号数字置換検査 | SDMT方式の処理速度トレーニング | SkillDrills",
     description: "無料ブラウザの符号数字置換検査：SDMT方式の記号と数字の照合で、情報処理速度と視覚探索を練習します。臨床検査ではありません。",
     type: 'article',
@@ -19,7 +19,7 @@ export const metadata = {
     siteName: 'SkillDrills',
     locale: 'ja_JP',
   },
-  twitter: {
+  twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: 'summary_large_image',
     title: "符号数字置換検査 | SDMT方式の処理速度トレーニング | SkillDrills",
     description: "無料ブラウザの符号数字置換検査：SDMT方式の記号と数字の照合で、情報処理速度と視覚探索を練習します。臨床検査ではありません。",

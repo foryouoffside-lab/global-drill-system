@@ -31,7 +31,7 @@ export const metadata = {
     'perception spatiale',
     'test de Howard-Dolman',
   ],
-  openGraph: {
+  openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
     title: 'Test de perception de la profondeur en ligne | SkillDrills',
     description: 'Test gratuit de perception de la profondeur et de vision stéréoscopique. Entraînez l’appréciation des distances sur cible mobile; pas un diagnostic.',
     type: 'article',
@@ -39,7 +39,7 @@ export const metadata = {
     siteName: 'SkillDrills',
     locale: 'fr_FR',
   },
-  twitter: {
+  twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: 'summary_large_image',
     title: 'Test de perception de la profondeur en ligne | SkillDrills',
     description: 'Test gratuit de perception de la profondeur et de vision stéréoscopique. Entraînez l’appréciation des distances sur cible mobile; pas un diagnostic.',

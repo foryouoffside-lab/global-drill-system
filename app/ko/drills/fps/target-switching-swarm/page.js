@@ -47,7 +47,7 @@ export const metadata = {
     index: true,
     follow: true,
   },
-  openGraph: {
+  openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
     title: "타겟 스위칭 에임 연습 - 다중 타겟 전환 | SkillDrills",
     description: "브라우저에서 무료로 타겟 스위칭 에임을 훈련하세요. 여러 적 사이를 빠르게 전환하고 스프레이 전환과 연속 플릭 정확도를 측정합니다.",
     url: "https://skilldrills.online/ko/drills/fps/target-switching-swarm",
@@ -55,7 +55,7 @@ export const metadata = {
     locale: 'ko_KR',
     type: 'website',
   },
-  twitter: {
+  twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: 'summary_large_image',
     title: "타겟 스위칭 에임 연습 - 다중 타겟 전환 | SkillDrills",
     description: "브라우저에서 무료로 타겟 스위칭 에임을 훈련하세요. 여러 적 사이를 빠르게 전환하고 스프레이 전환과 연속 플릭 정확도를 측정합니다.",

@@ -40,7 +40,7 @@ export const metadata = {
     canonical: 'https://skilldrills.online/fr/drills/physical/fitness/speed-drill',
     languages: getAlternateLanguages('/drills/physical/fitness/speed-drill'),
   },
-  openGraph: {
+  openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
     title: "Test de Clics par Seconde & Test CPS Souris – Speed Drill | SkillDrills",
     description: "Test gratuit de clics par seconde (CPS) et entraînement de vitesse de réaction pour souris. Interceptez des cibles mobiles qui rétrécissent avec des flicks balistiques et une chronométrie ultra-précise.",
     url: 'https://skilldrills.online/fr/drills/physical/fitness/speed-drill',
@@ -48,7 +48,7 @@ export const metadata = {
     locale: 'fr_FR',
     type: 'website',
   },
-  twitter: {
+  twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: 'summary_large_image',
     title: "Test de Clics par Seconde & Test CPS Souris – Speed Drill | SkillDrills",
     description: "Test gratuit de clics par seconde (CPS) et entraînement de vitesse de réaction pour souris. Interceptez des cibles mobiles qui rétrécissent avec des flicks balistiques et une chronométrie ultra-précise.",

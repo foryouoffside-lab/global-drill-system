@@ -21,7 +21,7 @@ export const metadata = {
     "tiempo de reacción simple SRT",
     "entrenar velocidad de reacción"
   ],
-  openGraph: {
+  openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
     title: "Test de reflejos online | Tiempo de reacción visual",
     description: "Mide el intervalo entre una señal luminosa y tu clic en milisegundos, con varias rondas para comparar tu consistencia.",
     type: 'article',
@@ -29,7 +29,7 @@ export const metadata = {
     siteName: 'SkillDrills',
     locale: 'es_ES',
   },
-  twitter: {
+  twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: 'summary_large_image',
     title: "Test de reflejos online | Tiempo de reacción visual",
     description: "Entrena tus reflejos visuales con un estímulo luminoso imprevisible y sigue tus tiempos dentro del navegador.",

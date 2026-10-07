@@ -11,7 +11,7 @@ export const metadata = {
   keywords: ["기호 숫자 매칭 인지속도", "SDMT 인지 검사", "정보처리속도 테스트", "기호 쓰기 검사 온라인", "DSST 테스트", "시각 탐색 검사", "단기 연상기억 훈련", "두뇌 인지속도 측정", "신경심리 검사 무료", "성인 뇌 반응속도",
     "기호숫자검사",
     "웨슬러 인지처리속도"],
-  openGraph: {
+  openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
     title: "기호 숫자 검사 | SDMT 방식 처리속도 훈련 | SkillDrills",
     description: "무료 브라우저 기호 숫자 검사: SDMT 방식의 기호-숫자 매칭으로 정보처리속도와 시각 탐색을 연습합니다. 임상 검사가 아닙니다.",
     type: 'article',
@@ -19,7 +19,7 @@ export const metadata = {
     siteName: 'SkillDrills',
     locale: 'ko_KR',
   },
-  twitter: {
+  twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: 'summary_large_image',
     title: "기호 숫자 검사 | SDMT 방식 처리속도 훈련 | SkillDrills",
     description: "무료 브라우저 기호 숫자 검사: SDMT 방식의 기호-숫자 매칭으로 정보처리속도와 시각 탐색을 연습합니다. 임상 검사가 아닙니다.",

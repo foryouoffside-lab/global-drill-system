@@ -13,7 +13,7 @@ export const metadata = {
     'entraînement glisser-déposer', 'test glisser déposer en ligne', 'précision souris test', 'contrôle du curseur',
     'coordination main-œil souris', 'test de glissement du curseur', 'entraînement souris', 'motricité fine souris test',
   ],
-  openGraph: {
+  openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
     title: 'Test glisser-déposer | Précision souris | SkillDrills',
     description: 'Entraînez le glisser-déposer dans votre navigateur. Mesurez la précision de la souris, le temps de déplacement et le lâcher au bon endroit.',
     type: 'article',
@@ -21,7 +21,7 @@ export const metadata = {
     siteName: 'SkillDrills',
     locale: 'fr_FR',
   },
-  twitter: {
+  twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: 'summary_large_image',
     title: 'Test glisser-déposer | Précision souris | SkillDrills',
     description: 'Entraînez le glisser-déposer dans votre navigateur. Mesurez la précision de la souris, le temps de déplacement et le lâcher au bon endroit.',

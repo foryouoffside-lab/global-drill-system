@@ -30,7 +30,7 @@ export const metadata = {
     index: true,
     follow: true,
   },
-  openGraph: {
+  openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
     title: "Valorant Aim Trainer - Zielerfassung & First Shot",
     description: "Kostenloser Valorant Aim Trainer im Browser: Erkenne Ziele schneller, übe Zielerfassung und verbessere deine First-Shot-Accuracy für CS2 und Valorant.",
     url: "https://skilldrills.online/de/drills/fps/target-acquisition",
@@ -38,7 +38,7 @@ export const metadata = {
     locale: 'de_DE',
     type: 'website',
   },
-  twitter: {
+  twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: 'summary_large_image',
     title: "Valorant Aim Trainer - Zielerfassung & First Shot",
     description: "Kostenloser Valorant Aim Trainer im Browser: Erkenne Ziele schneller, übe Zielerfassung und verbessere deine First-Shot-Accuracy für CS2 und Valorant.",

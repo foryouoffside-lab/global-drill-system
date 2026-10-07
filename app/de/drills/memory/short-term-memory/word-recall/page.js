@@ -31,7 +31,7 @@ export const metadata = {
     index: true,
     follow: true,
   },
-  openGraph: {
+  openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
     title: "Wortgedächtnis Test online | Wörter merken | SkillDrills",
     description: "Kostenloser Wortgedächtnis-Test: Merke dir eine Wortliste, rufe die Wörter frei ab und trainiere dein verbales Arbeitsgedächtnis im Browser.",
     url: "https://skilldrills.online/de/drills/memory/short-term-memory/word-recall",
@@ -39,7 +39,7 @@ export const metadata = {
     locale: 'de_DE',
     type: 'website',
   },
-  twitter: {
+  twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: 'summary_large_image',
     title: "Wortgedächtnis Test online | Wörter merken | SkillDrills",
     description: "Kostenloser Wortgedächtnis-Test: Merke dir eine Wortliste, rufe die Wörter frei ab und trainiere dein verbales Arbeitsgedächtnis im Browser.",

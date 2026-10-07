@@ -16,7 +16,7 @@ export const metadata = {
     index: true,
     follow: true,
   },
-  openGraph: {
+  openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
     title: "코르시 블록 검사 | 공간 기억력 테스트",
     description: "빛나는 블록의 위치와 순서를 기억해 같은 순서로 누르세요. 무료 시공간 작업기억 브라우저 과제입니다.",
     url: "https://skilldrills.online/ko/drills/memory/spatial-memory/path-tracing",
@@ -24,7 +24,7 @@ export const metadata = {
     locale: 'ko_KR',
     type: 'website',
   },
-  twitter: {
+  twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: 'summary_large_image',
     title: "코르시 블록 검사 | 공간 기억력 테스트",
     description: "빛나는 블록의 위치와 순서를 기억해 같은 순서로 누르세요. 무료 시공간 작업기억 브라우저 과제입니다.",

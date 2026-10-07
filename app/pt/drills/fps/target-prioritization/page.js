@@ -28,7 +28,7 @@ export const metadata = {
     index: true,
     follow: true,
   },
-  openGraph: {
+  openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
     title: "Treino de Mira | Seleção de Alvos | SkillDrills",
     description: "Treino de mira grátis no navegador: escolha o alvo mais perigoso e pratique ordem de alvos, decisão tática e controle do disparo.",
     url: "https://skilldrills.online/pt/drills/fps/target-prioritization",
@@ -36,7 +36,7 @@ export const metadata = {
     locale: 'pt_BR',
     type: 'website',
   },
-  twitter: {
+  twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: 'summary_large_image',
     title: "Treino de Mira | Seleção de Alvos | SkillDrills",
     description: "Treino de mira grátis no navegador: escolha o alvo mais perigoso e pratique ordem de alvos, decisão tática e controle do disparo.",

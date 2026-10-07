@@ -28,7 +28,7 @@ export const metadata = {
     index: true,
     follow: true,
   },
-  openGraph: {
+  openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
       title: "180度 エイム練習 | 振り向きトレーナー | SkillDrills",
     description: "周辺視野で端の標的を捉え、180度振り向き後の初弾を止める無料ブラウザFPSエイム練習。",
     url: "https://skilldrills.online/ja/drills/fps/180-degree-awareness",
@@ -36,7 +36,7 @@ export const metadata = {
     locale: 'ja_JP',
     type: 'website',
   },
-  twitter: {
+  twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: 'summary_large_image',
     title: "180度 エイム練習 | 振り向きトレーナー | SkillDrills",
     description: "周辺視野で端の標的を捉え、180度振り向き後の初弾を止める無料ブラウザFPSエイム練習。",

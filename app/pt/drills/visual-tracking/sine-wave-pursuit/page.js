@@ -25,7 +25,7 @@ export const metadata = {
     languages: getAlternateLanguages('/drills/visual-tracking/sine-wave-pursuit'),
   },
   robots: { index: true, follow: true },
-  openGraph: {
+  openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
     title: "Rastreamento ocular senoidal | SkillDrills",
     description: "Siga um alvo em movimento senoidal na horizontal e na vertical. Exercício gratuito no navegador com atraso de fase e erro de posição.",
     url: "https://skilldrills.online/pt/drills/visual-tracking/sine-wave-pursuit",
@@ -33,7 +33,7 @@ export const metadata = {
     locale: 'pt_PT',
     type: 'website',
   },
-  twitter: {
+  twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: 'summary_large_image',
     title: "Rastreamento ocular senoidal | SkillDrills",
     description: "Exercício curto para acompanhar um alvo periódico e conferir a diferença de velocidade e o erro na mudança de direção.",

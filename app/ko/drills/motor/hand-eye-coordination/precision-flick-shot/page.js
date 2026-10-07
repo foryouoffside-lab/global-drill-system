@@ -13,7 +13,7 @@ export const metadata = {
     '조준 연습', '플릭샷 정확도 테스트', '발로란트 에임 연습', '표적 전환 연습',
     '끌어치기 연습', '에임 정밀도', 'FPS 에임 트레이너', '중심 명중률',
   ],
-  openGraph: {
+  openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
     title: '플릭샷 에임 연습 | 마우스 정확도 테스트 | SkillDrills',
     description: '무료 브라우저 플릭샷 에임 연습. 타깃 포착 시간, 명중률, 불스아이 비율을 측정하고 발로란트·오버워치 에임을 연습하세요.',
     type: 'article',
@@ -21,7 +21,7 @@ export const metadata = {
     siteName: 'SkillDrills',
     locale: 'ko_KR',
   },
-  twitter: {
+  twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: 'summary_large_image',
     title: '플릭샷 에임 연습 | 마우스 정확도 테스트 | SkillDrills',
     description: '무료 브라우저 플릭샷 에임 연습. 타깃 포착 시간, 명중률, 불스아이 비율을 측정하고 발로란트·오버워치 에임을 연습하세요.',

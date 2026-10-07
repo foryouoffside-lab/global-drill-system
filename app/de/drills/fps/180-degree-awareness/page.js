@@ -42,7 +42,7 @@ export const metadata = {
     index: true,
     follow: true,
   },
-  openGraph: {
+  openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
     title: "180-Grad-Aim-Training | FPS-Drehung | SkillDrills",
     description: "Übe peripheres Sehen, schnelle 180-Grad-Drehungen und sauberes Abstoppen im kostenlosen Browser-Trainer.",
     url: "https://skilldrills.online/de/drills/fps/180-degree-awareness",
@@ -50,7 +50,7 @@ export const metadata = {
     locale: 'de_DE',
     type: 'website',
   },
-  twitter: {
+  twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: 'summary_large_image',
     title: "180-Grad-Aim-Training | FPS-Drehung | SkillDrills",
     description: "Übe peripheres Sehen, schnelle 180-Grad-Drehungen und sauberes Abstoppen im kostenlosen Browser-Trainer.",

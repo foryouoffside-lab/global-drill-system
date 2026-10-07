@@ -37,7 +37,7 @@ export const metadata = {
     canonical: 'https://skilldrills.online/ja/drills/physical/coordination/complex-pattern',
     languages: getAlternateLanguages('/drills/physical/coordination/complex-pattern'),
   },
-  openGraph: {
+  openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
     title: "図形記憶テスト｜空間認識ゲーム | SkillDrills",
     description: "点滅する図形の経路を覚えてなぞる無料ゲーム。視空間記憶、パターン再現、マウス操作を練習できます。",
     url: 'https://skilldrills.online/ja/drills/physical/coordination/complex-pattern',
@@ -45,7 +45,7 @@ export const metadata = {
     locale: 'ja_JP',
     type: 'website',
   },
-  twitter: {
+  twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: 'summary_large_image',
     title: "図形記憶テスト｜空間認識ゲーム | SkillDrills",
     description: "点滅する図形の経路を覚えてなぞる無料ゲーム。視空間記憶、パターン再現、マウス操作を練習できます。",

@@ -18,7 +18,7 @@ export const metadata = {
     "discriminación visual",
     "ley de Hick"
   ],
-  openGraph: {
+  openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
     title: "Tiempo de Reacción de Elección | Velocidad de Decisión",
     description: "Test gratuito de tiempo de reacción de elección: selecciona el objetivo según una regla cambiante. Practica decisión visual; no es clínico.",
     type: 'article',
@@ -26,7 +26,7 @@ export const metadata = {
     siteName: 'SkillDrills',
     locale: 'es_ES',
   },
-  twitter: {
+  twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: 'summary_large_image',
     title: "Tiempo de Reacción de Elección | Velocidad de Decisión",
     description: "Test gratuito de tiempo de reacción de elección: selecciona el objetivo según una regla cambiante. Practica decisión visual; no es clínico.",

@@ -46,7 +46,7 @@ export const metadata = {
     index: true,
     follow: true,
   },
-  openGraph: {
+  openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
     title: "追いエイム練習 | FPSトラッキング | SkillDrills",
     description: "無料ブラウザの追いエイム練習でADADストレイフ、切り返し、Apex・OW2のトラッキング精度を鍛えます。",
     url: "https://skilldrills.online/ja/drills/fps/strafe-tracking",
@@ -54,7 +54,7 @@ export const metadata = {
     locale: 'ja_JP',
     type: 'website',
   },
-  twitter: {
+  twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: 'summary_large_image',
     title: "追いエイム練習 | FPSトラッキング | SkillDrills",
     description: "無料ブラウザの追いエイム練習でADADストレイフ、切り返し、Apex・OW2のトラッキング精度を鍛えます。",

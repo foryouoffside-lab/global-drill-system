@@ -24,7 +24,7 @@ export const metadata = {
     "test de memoria gratis",
     "secuencia de números"
   ],
-  openGraph: {
+  openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
     title: "Test de dígitos online | Memoria numérica | SkillDrills",
     description: "Test de dígitos gratis: memoriza secuencias numéricas cada vez más largas y repítelas en el orden exacto desde el navegador.",
     type: 'website',
@@ -32,7 +32,7 @@ export const metadata = {
     siteName: 'SkillDrills',
     locale: 'es_ES',
   },
-  twitter: {
+  twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: 'summary_large_image',
     title: "Test de dígitos online | Memoria numérica | SkillDrills",
     description: "Test de dígitos gratis: memoriza secuencias numéricas cada vez más largas y repítelas en el orden exacto desde el navegador.",

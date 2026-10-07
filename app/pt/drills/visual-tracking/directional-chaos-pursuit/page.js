@@ -27,7 +27,7 @@ export const metadata = {
     languages: getAlternateLanguages("/drills/visual-tracking/directional-chaos-pursuit"),
   },
   robots: { index: true, follow: true },
-  openGraph: {
+  openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
     title: "Rastreamento Ocular Reativo | SkillDrills",
     description: "Recapture um alvo que muda de direção e velocidade. Pratique reação visual, recuperação sacádica e visão dinâmica grátis no navegador.",
     url: "https://skilldrills.online/pt/drills/visual-tracking/directional-chaos-pursuit",
@@ -35,7 +35,7 @@ export const metadata = {
     locale: "pt_BR",
     type: "website",
   },
-  twitter: {
+  twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: "summary_large_image",
     title: "Rastreamento Ocular Reativo | SkillDrills",
     description: "Recapture um alvo imprevisível e pratique recuperação sacádica e reação visual gratuitamente.",

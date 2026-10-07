@@ -27,7 +27,7 @@ export const metadata = {
     languages: getAlternateLanguages('/drills/visual-tracking/spatial-shift-pursuit'),
   },
   robots: { index: true, follow: true },
-  openGraph: {
+  openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
     title: "Rastreamento visual com mudança espacial | SkillDrills",
     description: "Siga um alvo enquanto o campo visual muda. Exercício gratuito no navegador com reação, reaquisição e erro de posição.",
     url: "https://skilldrills.online/pt/drills/visual-tracking/spatial-shift-pursuit",
@@ -35,7 +35,7 @@ export const metadata = {
     locale: 'pt_PT',
     type: 'website',
   },
-  twitter: {
+  twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: 'summary_large_image',
     title: "Rastreamento visual com mudança espacial | SkillDrills",
     description: "Siga um alvo enquanto o campo visual muda. Exercício gratuito no navegador com reação, reaquisição e erro de posição.",

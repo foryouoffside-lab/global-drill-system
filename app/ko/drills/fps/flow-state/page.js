@@ -28,7 +28,7 @@ export const metadata = {
     index: true,
     follow: true,
   },
-  openGraph: {
+  openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
     title: "FPS 집중력 훈련 | 플로우 에임 트레이너 | SkillDrills",
     description: "잡념을 줄이고 에임 리듬을 유지하는 무료 FPS 집중력 훈련. 실력에 맞춰 난이도를 조절하고 트래킹 지속력을 확인하세요.",
     url: "https://skilldrills.online/ko/drills/fps/flow-state",
@@ -36,7 +36,7 @@ export const metadata = {
     locale: 'ko_KR',
     type: 'website',
   },
-  twitter: {
+  twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: 'summary_large_image',
     title: "FPS 집중력 훈련 | 플로우 에임 트레이너 | SkillDrills",
     description: "잡념을 줄이고 에임 리듬을 유지하는 무료 FPS 집중력 훈련. 실력에 맞춰 난이도를 조절하고 트래킹 지속력을 확인하세요.",

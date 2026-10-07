@@ -21,7 +21,7 @@ export const metadata = {
     "peripheres Sehen",
     "kognitives Training"
   ],
-  openGraph: {
+  openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
     title: "Visuelle Suche | Selektive Aufmerksamkeit | SkillDrills",
     description: "Finde Zielzeichen in einer wechselnden 10×10-Matrix und übe selektive Aufmerksamkeit und visuelles Scannen.",
     type: 'article',
@@ -29,7 +29,7 @@ export const metadata = {
     siteName: 'SkillDrills',
     locale: 'de_DE',
   },
-  twitter: {
+  twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: 'summary_large_image',
     title: "Visuelle Suche | Selektive Aufmerksamkeit | SkillDrills",
     description: "Finde Zielzeichen im wechselnden Raster und trainiere visuelle Aufmerksamkeit und Reizfilterung im Browser.",

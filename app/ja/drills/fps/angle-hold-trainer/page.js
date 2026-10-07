@@ -47,7 +47,7 @@ export const metadata = {
     index: true,
     follow: true,
   },
-  openGraph: {
+  openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
     title: "エイム練習 | 置きエイム・プリエイム | SkillDrills",
     description: "無料ブラウザのエイム練習で、角に置く幅と頭の高さを整え、敵の飛び出しへの初弾反応を測定します。",
     url: "https://skilldrills.online/ja/drills/fps/angle-hold-trainer",
@@ -55,7 +55,7 @@ export const metadata = {
     locale: 'ja_JP',
     type: 'website',
   },
-  twitter: {
+  twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: 'summary_large_image',
     title: "エイム練習 | 置きエイム・プリエイム | SkillDrills",
     description: "無料ブラウザのエイム練習で、角に置く幅と頭の高さを整え、敵の飛び出しへの初弾反応を測定します。",

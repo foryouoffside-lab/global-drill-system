@@ -40,7 +40,7 @@ export const metadata = {
     canonical: 'https://skilldrills.online/ko/drills/physical/reflex-training/peripheral-threat-sweeper',
     languages: getAlternateLanguages('/drills/physical/reflex-training/peripheral-threat-sweeper'),
   },
-  openGraph: {
+  openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
     title: "주변시야 훈련 | 동체시력 테스트",
     description: "무료 주변시야 훈련 게임. 중앙을 응시한 채 주변 위협을 찾아 동체시력, 반응속도와 시야 인지를 연습하세요.",
     url: 'https://skilldrills.online/ko/drills/physical/reflex-training/peripheral-threat-sweeper',
@@ -48,7 +48,7 @@ export const metadata = {
     locale: 'ko_KR',
     type: 'website',
   },
-  twitter: {
+  twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: 'summary_large_image',
     title: "주변시야 훈련 | 동체시력 테스트",
     description: "무료 주변시야 훈련 게임. 중앙을 응시한 채 주변 위협을 찾아 동체시력, 반응속도와 시야 인지를 연습하세요.",

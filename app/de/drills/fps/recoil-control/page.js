@@ -43,7 +43,7 @@ export const metadata = {
     index: true,
     follow: true,
   },
-  openGraph: {
+  openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
     title: "Rückstoßkontrolle lernen | FPS Spray Control | SkillDrills",
     description: "Kostenloses Recoil-Control-Training im Browser: Lerne Spray Patterns und Rückstoßkompensation für CS2, Valorant und Apex.",
     url: "https://skilldrills.online/de/drills/fps/recoil-control",
@@ -51,7 +51,7 @@ export const metadata = {
     locale: 'de_DE',
     type: 'website',
   },
-  twitter: {
+  twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: 'summary_large_image',
     title: "Rückstoßkontrolle lernen | FPS Spray Control | SkillDrills",
     description: "Kostenloses Recoil-Control-Training im Browser: Lerne Spray Patterns und Rückstoßkompensation für CS2, Valorant und Apex.",

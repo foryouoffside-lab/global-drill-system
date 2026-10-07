@@ -13,7 +13,7 @@ const legacyMetadata = {
     canonical: 'https://skilldrills.online/ja',
     languages: getAlternateLanguages('/ja'),
   },
-  openGraph: {
+  openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
     title: 'SkillDrills - 無料エイム練習＆反射神経・脳トレオンライントレーナー',
     description: '登録不要・ブラウザで今すぐプレイ可能な80以上の無料エイム＆反射神経トレーニングドリル。',
     url: 'https://skilldrills.online/ja',

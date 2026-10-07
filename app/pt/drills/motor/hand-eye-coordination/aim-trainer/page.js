@@ -19,7 +19,7 @@ export const metadata = {
     canonical: 'https://skilldrills.online/pt/drills/motor/hand-eye-coordination/aim-trainer',
     languages: getAlternateLanguages('/drills/motor/hand-eye-coordination/aim-trainer'),
   },
-  openGraph: {
+  openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
     title: 'Treino de mira online | Aim Trainer grátis | SkillDrills',
     description: 'Treino de mira e teste de reflexos FPS grátis. Acerte alvos móveis e refine a precisão do mouse.',
     url: 'https://skilldrills.online/pt/drills/motor/hand-eye-coordination/aim-trainer',
@@ -27,7 +27,7 @@ export const metadata = {
     locale: 'pt_BR',
     type: 'website',
   },
-  twitter: {
+  twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: 'summary_large_image',
     title: 'Treino de mira online | Aim Trainer grátis | SkillDrills',
     description: 'Treino de mira FPS no navegador para aprimorar micro-flicks, reflexos e precisão.',

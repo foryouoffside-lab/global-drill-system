@@ -40,7 +40,7 @@ export const metadata = {
     canonical: 'https://skilldrills.online/de/drills/physical/fitness/speed-drill',
     languages: getAlternateLanguages('/drills/physical/fitness/speed-drill'),
   },
-  openGraph: {
+  openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
     title: "Klickgeschwindigkeit Test & Klick Test Online – Schnelligkeitstraining | SkillDrills",
     description: "Kostenloser Klickgeschwindigkeit Test und Reflex-Speed-Drill. Erfasse schrumpfende Ziele mit ballistischen Flicks und maximaler Klickrate pro Sekunde mit mikrosekundengenauer Chronometrie.",
     url: 'https://skilldrills.online/de/drills/physical/fitness/speed-drill',
@@ -48,7 +48,7 @@ export const metadata = {
     locale: 'de_DE',
     type: 'website',
   },
-  twitter: {
+  twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: 'summary_large_image',
     title: "Klickgeschwindigkeit Test & Klick Test Online – Schnelligkeitstraining | SkillDrills",
     description: "Kostenloser Klickgeschwindigkeit Test und Reflex-Speed-Drill. Erfasse schrumpfende Ziele mit ballistischen Flicks und maximaler Klickrate pro Sekunde mit mikrosekundengenauer Chronometrie.",

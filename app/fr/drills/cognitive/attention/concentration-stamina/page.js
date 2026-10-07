@@ -22,7 +22,7 @@ export const metadata = {
     "test CPT en ligne",
     "exercice de concentration continue"
   ],
-  openGraph: {
+  openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
     title: "Test de Concentration | Attention Soutenue | SkillDrills",
     description: "Test gratuit de concentration dans le navigateur : évaluez l’attention soutenue, l’inhibition et les changements de règle. Non clinique.",
     type: 'article',
@@ -30,7 +30,7 @@ export const metadata = {
     siteName: 'SkillDrills',
     locale: 'fr_FR',
   },
-  twitter: {
+  twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: 'summary_large_image',
     title: "Test de Concentration | Attention Soutenue | SkillDrills",
     description: "Test gratuit de concentration dans le navigateur : évaluez l’attention soutenue, l’inhibition et les changements de règle. Non clinique.",

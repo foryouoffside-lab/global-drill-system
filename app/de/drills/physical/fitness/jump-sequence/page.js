@@ -40,7 +40,7 @@ export const metadata = {
     canonical: 'https://skilldrills.online/de/drills/physical/fitness/jump-sequence',
     languages: getAlternateLanguages('/drills/physical/fitness/jump-sequence'),
   },
-  openGraph: {
+  openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
     title: "Sprungkraft Trainieren & Plyometrisches Training – Flugbahn-Abfang-Spiel | SkillDrills",
     description: "Kostenloses Online-Training für Sprungkraft & plyometrisches Timing. Schulen Sie vertikalen Impuls, parabolische Flugbahn-Steuerung und das präzise Abfangen dynamischer Ziele.",
     url: 'https://skilldrills.online/de/drills/physical/fitness/jump-sequence',
@@ -48,7 +48,7 @@ export const metadata = {
     locale: 'de_DE',
     type: 'website',
   },
-  twitter: {
+  twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: 'summary_large_image',
     title: "Sprungkraft Trainieren & Plyometrisches Training – Flugbahn-Abfang-Spiel | SkillDrills",
     description: "Kostenloses Online-Training für Sprungkraft & plyometrisches Timing. Schulen Sie vertikalen Impuls, parabolische Flugbahn-Steuerung und das präzise Abfangen dynamischer Ziele.",

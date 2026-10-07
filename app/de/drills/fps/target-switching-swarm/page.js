@@ -30,7 +30,7 @@ export const metadata = {
     index: true,
     follow: true,
   },
-  openGraph: {
+  openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
     title: "Aim Trainer Zielwechsel - Multi-Target | SkillDrills",
     description: "Kostenloser Aim Trainer im Browser: Übe schnelle Zielwechsel, Multi-Target-Aiming und Spray Transfers für CS2 und Valorant.",
     url: "https://skilldrills.online/de/drills/fps/target-switching-swarm",
@@ -38,7 +38,7 @@ export const metadata = {
     locale: 'de_DE',
     type: 'website',
   },
-  twitter: {
+  twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: 'summary_large_image',
     title: "Aim Trainer Zielwechsel - Multi-Target | SkillDrills",
     description: "Kostenloser Aim Trainer im Browser: Übe schnelle Zielwechsel, Multi-Target-Aiming und Spray Transfers für CS2 und Valorant.",

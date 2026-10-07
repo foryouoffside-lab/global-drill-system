@@ -31,7 +31,7 @@ export const metadata = {
     index: true,
     follow: true,
   },
-  openGraph: {
+  openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
     title: "Teste de memória verbal online | Palavras | SkillDrills",
     description: "Teste grátis de memória verbal: memorize uma lista de palavras, faça a evocação livre e treine sua memória operacional no navegador.",
     url: "https://skilldrills.online/pt/drills/memory/short-term-memory/word-recall",
@@ -39,7 +39,7 @@ export const metadata = {
     locale: 'pt_BR',
     type: 'website',
   },
-  twitter: {
+  twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: 'summary_large_image',
     title: "Teste de memória verbal online | Palavras | SkillDrills",
     description: "Teste grátis de memória verbal: memorize uma lista de palavras, faça a evocação livre e treine sua memória operacional no navegador.",

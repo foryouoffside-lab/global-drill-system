@@ -21,7 +21,7 @@ export const metadata = {
     "exekutive Funktionen testen",
     "Go-Signal No-Go-Signal"
   ],
-  openGraph: {
+  openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
     title: "Go/No-Go-Test online | Impulskontrolle üben | SkillDrills",
     description: "Bei Grün reagieren, bei Rot zurückhalten: kostenloser Go/No-Go-Test für Reaktionshemmung und Fehlalarme.",
     type: 'article',
@@ -29,7 +29,7 @@ export const metadata = {
     siteName: 'SkillDrills',
     locale: 'de_DE',
   },
-  twitter: {
+  twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: 'summary_large_image',
     title: "Go/No-Go-Test online | Impulskontrolle üben | SkillDrills",
     description: "Go/No-Go-Übung für Reaktionshemmung: bei Grün klicken, bei Rot zurückhalten.",

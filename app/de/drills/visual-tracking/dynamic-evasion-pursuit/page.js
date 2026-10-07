@@ -31,7 +31,7 @@ export const metadata = {
     "Sehtraining Sport",
     "Sehtraining kostenlos"
   ],
-  openGraph: {
+  openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
     title: "Reaktives Augentraining | Korrektursakkaden | SkillDrills",
     description: "Verfolge ein ausweichendes Ziel und trainiere schnelle foveale Refixation bei plötzlichen Richtungswechseln kostenlos im Browser.",
     type: "website",
@@ -39,7 +39,7 @@ export const metadata = {
     siteName: "SkillDrills",
     locale: "de_DE",
   },
-  twitter: {
+  twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: "summary_large_image",
     title: "Reaktives Augentraining | Korrektursakkaden | SkillDrills",
     description: "Trainiere dynamisches Sehen und schnelle Blick-Refixation bei ausweichenden Zielbewegungen kostenlos online.",

@@ -36,7 +36,7 @@ export const metadata = {
     canonical: 'https://skilldrills.online/fr/drills/physical/coordination/dynamic-grid-evasion',
     languages: getAlternateLanguages('/drills/physical/coordination/dynamic-grid-evasion'),
   },
-  openGraph: {
+  openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
     title: "Jeu de réflexes à la souris | SkillDrills",
     description: "Jeu gratuit de réflexes à la souris. Détectez les zones dangereuses sur une grille 3x3 et rejoignez une case sûre pour entraîner vos réactions périphériques.",
     url: 'https://skilldrills.online/fr/drills/physical/coordination/dynamic-grid-evasion',
@@ -44,7 +44,7 @@ export const metadata = {
     locale: 'fr_FR',
     type: 'website',
   },
-  twitter: {
+  twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: 'summary_large_image',
     title: "Jeu de réflexes à la souris | SkillDrills",
     description: "Jeu gratuit de réflexes à la souris. Détectez les zones dangereuses sur une grille 3x3 et rejoignez une case sûre pour entraîner vos réactions périphériques.",

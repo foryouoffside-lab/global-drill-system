@@ -8,7 +8,7 @@ export const metadata = {
   title: "瞬間記憶テスト｜視覚記憶ゲーム | SkillDrills",
   description: "無料の瞬間記憶テスト。グリッドで一瞬だけ光るマスの位置を覚え、同じパターンを再現して視覚記憶と空間記憶を鍛えます。",
   keywords: ['瞬間記憶テスト', '視覚記憶テスト', '視覚記憶ゲーム', '空間記憶テスト', 'グリッド記憶', 'パターン記憶テスト', 'メモリーマトリクス', '記憶力トレーニング', '短期視覚記憶', '視覚的作業記憶'],
-  openGraph: {
+  openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
     title: "瞬間記憶テスト｜視覚記憶ゲーム | SkillDrills",
     description: "無料の瞬間記憶テスト。グリッドで一瞬だけ光るマスの位置を覚え、同じパターンを再現します。",
     type: 'website',
@@ -16,7 +16,7 @@ export const metadata = {
     siteName: 'SkillDrills',
     locale: 'ja_JP',
   },
-  twitter: {
+  twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: 'summary_large_image',
     title: "瞬間記憶テスト｜視覚記憶ゲーム | SkillDrills",
     description: "無料の瞬間記憶テスト。グリッドで一瞬だけ光るマスの位置を覚え、同じパターンを再現します。",

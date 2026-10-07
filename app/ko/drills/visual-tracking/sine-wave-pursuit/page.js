@@ -29,7 +29,7 @@ export const metadata = {
     "추적 속도 일치 테스트",
     "반환점 시선 훈련"
   ],
-  openGraph: {
+  openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
     title: "사인파 안구 추적 훈련 | SkillDrills",
     description: "정현파 표적을 가로와 세로로 따라가는 무료 브라우저 훈련. 추적 지연, 속도 일치, 반환점 오차를 기록합니다.",
     type: "website",
@@ -37,7 +37,7 @@ export const metadata = {
     siteName: "SkillDrills",
     locale: "ko_KR",
   },
-  twitter: {
+  twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: "summary_large_image",
     title: "사인파 안구 추적 훈련 | SkillDrills",
     description: "주기적으로 움직이는 표적을 따라가며 속도 일치와 반환점 위치 오차를 확인하는 짧은 훈련입니다.",

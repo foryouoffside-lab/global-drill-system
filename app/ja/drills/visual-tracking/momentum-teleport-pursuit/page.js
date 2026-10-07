@@ -31,7 +31,7 @@ export const metadata = {
     "サッカード 追視",
     "無料 視線追従 練習"
   ],
-  openGraph: {
+  openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
     title: "瞬間移動標的の視線再捕捉 | SkillDrills",
     description: "瞬間移動する標的を見つけ直し、動きの追視へ戻る無料の眼球運動トレーニング。",
     type: "website",
@@ -39,7 +39,7 @@ export const metadata = {
     siteName: "SkillDrills",
     locale: "ja_JP",
   },
-  twitter: {
+  twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: "summary_large_image",
     title: "瞬間移動標的の再捕捉練習 | SkillDrills",
     description: "位置が変わった標的を見つけ直し、動きの追視へ戻る練習です。",

@@ -31,7 +31,7 @@ export const metadata = {
     canonical: 'https://skilldrills.online/ko/drills/reaction-speed/saccadic-gallery',
     languages: getAlternateLanguages('/drills/reaction-speed/saccadic-gallery'),
   },
-  openGraph: {
+  openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
     title: '동체시력 훈련 · 시선 이동 게임 | SkillDrills',
     description:
       '화면의 타깃으로 시선을 빠르게 옮기며 동체시력과 시각 포착 속도를 연습하는 무료 브라우저 게임입니다.',
@@ -40,7 +40,7 @@ export const metadata = {
     siteName: 'SkillDrills',
     locale: 'ko_KR',
   },
-  twitter: {
+  twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: 'summary_large_image',
     title: '동체시력 훈련 · 시선 이동 게임 | SkillDrills',
     description:

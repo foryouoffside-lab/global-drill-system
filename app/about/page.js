@@ -26,7 +26,7 @@ export const metadata = {
     'A free, independent browser training site. How each drill measures reaction time, what browser timers can and cannot resolve, and what data is never collected.',
   alternates: { canonical: 'https://skilldrills.online/about' },
   robots: { index: true, follow: true },
-  openGraph: {
+  openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
     title: 'About SkillDrills - How These Drills Measure',
     description:
       'How SkillDrills measures reaction time and eye movement in the browser, the limits of those measurements, and why no score ever leaves your device.',

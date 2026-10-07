@@ -29,7 +29,7 @@ export const metadata = {
     "시선 고정 훈련",
     "주변시 온라인 테스트"
   ],
-  openGraph: {
+  openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
     title: "주변시 훈련｜중심을 보며 주변 반응 | SkillDrills",
     description: "중앙 표적을 따라가며 주변 빛 자극에 반응하는 무료 온라인 주변시 훈련.",
     type: "website",
@@ -37,7 +37,7 @@ export const metadata = {
     siteName: "SkillDrills",
     locale: "ko_KR",
   },
-  twitter: {
+  twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: "summary_large_image",
     title: "주변시 훈련｜중심을 보며 주변 반응 | SkillDrills",
     description: "중앙 표적에 시선을 고정한 채 주변 시야 변화를 감지하는 무료 훈련.",

@@ -28,7 +28,7 @@ export const metadata = {
     index: true,
     follow: true,
   },
-  openGraph: {
+  openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
     title: "エイム練習 | マイクロフリック微調整 | SkillDrills",
     description: "無料ブラウザのエイム練習で、初弾フリック後の微調整と指先の減速を鍛えます。VALORANT・CS2のヘッドショット精度を記録。",
     url: "https://skilldrills.online/ja/drills/fps/micro-correction-precision",
@@ -36,7 +36,7 @@ export const metadata = {
     locale: 'ja_JP',
     type: 'website',
   },
-  twitter: {
+  twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: 'summary_large_image',
     title: "エイム練習 | マイクロフリック微調整 | SkillDrills",
     description: "無料ブラウザのエイム練習で、初弾フリック後の微調整と指先の減速を鍛えます。VALORANT・CS2のヘッドショット精度を記録。",

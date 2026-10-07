@@ -35,7 +35,7 @@ export const metadata = {
     "역잔상 테스트",
     "움직이는 표적 시선 고정"
   ],
-  openGraph: {
+  openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
     title: "모니터 잔상 테스트・시선 고정 훈련 | SkillDrills",
     description: "움직이는 표적의 잔상과 번짐을 관찰하며 중심 표적에 시선을 고정하는 무료 브라우저 시각 훈련입니다.",
     type: "website",
@@ -43,7 +43,7 @@ export const metadata = {
     siteName: "SkillDrills",
     locale: "ko_KR",
   },
-  twitter: {
+  twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: "summary_large_image",
     title: "모니터 잔상 테스트・시선 고정 훈련 | SkillDrills",
     description: "동적 잔상과 모션 스미어를 뇌 수준에서 억제하여 중심와 시선 고정 안정성을 기르는 무료 온라인 안구 훈련.",

@@ -9,7 +9,7 @@ export const metadata = {
   title: "반응속도 테스트 | 선택 반응 시간 훈련 | SkillDrills",
   description: "무료 브라우저 반응속도 테스트: 바뀌는 규칙에 맞는 표적을 골라 선택 반응 시간과 판단 속도를 연습합니다. 임상 검사가 아닙니다.",
   keywords: ["반응속도 테스트", "반응속도 테스트 무료", "반응속도 테스트 온라인", "선택 반응 시간", "선택 반응 테스트", "판단 속도", "반응속도 측정", "인지 처리 속도"],
-  openGraph: {
+  openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
     title: "반응속도 테스트 | 선택 반응 시간 훈련 | SkillDrills",
     description: "무료 브라우저 반응속도 테스트: 바뀌는 규칙에 맞는 표적을 골라 선택 반응 시간과 판단 속도를 연습합니다. 임상 검사가 아닙니다.",
     type: 'article',
@@ -17,7 +17,7 @@ export const metadata = {
     siteName: 'SkillDrills',
     locale: 'ko_KR',
   },
-  twitter: {
+  twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: 'summary_large_image',
     title: "반응속도 테스트 | 선택 반응 시간 훈련 | SkillDrills",
     description: "무료 브라우저 반응속도 테스트: 바뀌는 규칙에 맞는 표적을 골라 선택 반응 시간과 판단 속도를 연습합니다. 임상 검사가 아닙니다.",

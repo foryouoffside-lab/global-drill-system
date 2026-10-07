@@ -27,7 +27,7 @@ export const metadata = {
     languages: getAlternateLanguages('/drills/visual-tracking/split-screen-tracking'),
   },
   robots: { index: true, follow: true },
-  openGraph: {
+  openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
     title: "Rastreamento visual em tela dividida | SkillDrills",
     description: "Acompanhe dois alvos em áreas separadas da tela. Treino gratuito com atenção dividida, estabilidade do olhar e erro por lado.",
     url: "https://skilldrills.online/pt/drills/visual-tracking/split-screen-tracking",
@@ -35,7 +35,7 @@ export const metadata = {
     locale: 'pt_PT',
     type: 'website',
   },
-  twitter: {
+  twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: 'summary_large_image',
     title: "Rastreamento visual em tela dividida | SkillDrills",
     description: "Acompanhe dois alvos em áreas separadas da tela. Treino gratuito com atenção dividida, estabilidade do olhar e erro por lado.",

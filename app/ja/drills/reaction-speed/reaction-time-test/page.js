@@ -34,7 +34,7 @@ export const metadata = {
     canonical: 'https://skilldrills.online/ja/drills/reaction-speed/reaction-time-test',
     languages: getAlternateLanguages('/drills/reaction-speed/reaction-time-test'),
   },
-  openGraph: {
+  openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
     title: '反応速度テスト｜反射神経をms測定 | SkillDrills',
     description:
       '画面の合図に合わせてクリックし、視覚反応の速さをミリ秒で測定。平均、誤差、ベンチマークをブラウザで確認できます。',
@@ -43,7 +43,7 @@ export const metadata = {
     locale: 'ja_JP',
     type: 'website',
   },
-  twitter: {
+  twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: 'summary_large_image',
     title: '反応速度テスト｜反射神経をms測定 | SkillDrills',
     description:

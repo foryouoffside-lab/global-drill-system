@@ -22,7 +22,7 @@ export const metadata = {
     "test attention soutenue et balayage oculaire",
     "exercices de lecture dynamique en ligne"
   ],
-  openGraph: {
+  openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
     title: "Table de Schulte en Ligne – Test de Concentration et Vision Périphérique | SkillDrills",
     description: "Entraînez votre vision périphérique, lecture rapide et vitesse d exploration visuelle avec la table de Schulte gratuite en ligne.",
     type: "website",
@@ -30,7 +30,7 @@ export const metadata = {
     siteName: "SkillDrills",
     locale: "fr_FR",
   },
-  twitter: {
+  twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: "summary_large_image",
     title: "Table de Schulte en Ligne – Test de Concentration et Vision Périphérique | SkillDrills",
     description: "Entraînez votre vision périphérique, lecture rapide et vitesse d exploration visuelle avec la table de Schulte gratuite en ligne.",

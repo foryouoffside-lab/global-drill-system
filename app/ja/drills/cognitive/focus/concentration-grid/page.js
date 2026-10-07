@@ -34,7 +34,7 @@ export const metadata = {
     "シュルテテーブル 5x5 練習",
     "オンライン 集中力 測定 テスト"
   ],
-  openGraph: {
+  openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
     title: "シュルテテーブル – 無料ブラウザ周辺視野・集中力トレーニング | SkillDrills",
     description: "無料のオンラインシュルテテーブル（Schulte Table）練習ツール。拡大するグリッド（3×3〜8×8）上の数字を連続タップし、速読に必要な周辺視野拡大、視覚探索速度、持続的集中力を鍛えます。",
     type: "website",
@@ -42,7 +42,7 @@ export const metadata = {
     siteName: "SkillDrills",
     locale: "ja_JP",
   },
-  twitter: {
+  twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: "summary_large_image",
     title: "シュルテテーブル – 無料ブラウザ周辺視野・集中力トレーニング | SkillDrills",
     description: "無料のオンラインシュルテテーブル（Schulte Table）練習ツール。拡大するグリッド（3×3〜8×8）上の数字を連続タップし、速読に必要な周辺視野拡大、視覚探索速度、持続的集中力を鍛えます。",

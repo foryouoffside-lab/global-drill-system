@@ -18,7 +18,7 @@ export const metadata = {
     'Hand-Auge-Koordination Maus', 'Maus Spurtreue', 'Korridor Spiel',
     'Maus Präzisionstraining', 'Cursor Kontrolle', 'Handzittern Maus',
   ],
-  openGraph: {
+  openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
     title: 'Maus-Präzisionstest | Ruhige Hand | SkillDrills',
     description: 'Führe den Cursor durch einen enger werdenden Korridor und messe Feinmotorik, Spurtreue und ruhige Hand. Kostenlos im Browser.',
     type: 'article',
@@ -26,7 +26,7 @@ export const metadata = {
     siteName: 'SkillDrills',
     locale: 'de_DE',
   },
-  twitter: {
+  twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: 'summary_large_image',
     title: 'Maus-Präzisionstest | Ruhige Hand | SkillDrills',
     description: 'Führe den Cursor durch einen enger werdenden Korridor und messe Feinmotorik, Spurtreue und ruhige Hand. Kostenlos im Browser.',

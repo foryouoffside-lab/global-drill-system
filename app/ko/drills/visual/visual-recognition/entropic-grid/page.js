@@ -21,7 +21,7 @@ export const metadata = {
     "슐테 그리드",
     "시각 인지 훈련"
   ],
-  openGraph: {
+  openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
     title: "시각 탐색 훈련 | 선택적 주의력 테스트 | SkillDrills",
     description: "변화하는 100셀 그리드에서 목표 코드를 찾는 무료 훈련. 선택적 주의력과 시각 스캐닝을 연습하세요.",
     type: 'article',
@@ -29,7 +29,7 @@ export const metadata = {
     siteName: 'SkillDrills',
     locale: 'ko_KR',
   },
-  twitter: {
+  twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: 'summary_large_image',
     title: "시각 탐색 훈련 | 선택적 주의력 테스트 | SkillDrills",
     description: "변화하는 그리드에서 목표 코드를 찾으며 시각적 주의력과 처리 속도를 연습하세요.",

@@ -21,7 +21,7 @@ export const metadata = {
     "標的ロスト 視線練習",
     "スポーツビジョン 追視"
   ],
-  openGraph: {
+  openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
     title: "三角形視線追従トレーニング | SkillDrills",
     description: "三角軌道の標的を追う無料練習。斜めの視線追従、角での再捕捉、追従誤差と標的ロストを記録。",
     url: 'https://skilldrills.online/ja/drills/visual-tracking/triangular-pursuit',
@@ -29,7 +29,7 @@ export const metadata = {
     locale: 'ja_JP',
     type: 'website',
   },
-  twitter: {
+  twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: 'summary_large_image',
     title: "三角形視線追従トレーニング | SkillDrills",
     description: "三角軌道の標的を追う無料練習。斜めの視線追従、角での再捕捉、追従誤差と標的ロストを記録。",

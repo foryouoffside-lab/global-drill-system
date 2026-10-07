@@ -21,7 +21,7 @@ export const metadata = {
     'teste de reação de teclas',
     'agilidade motora no teclado',
   ],
-  openGraph: {
+  openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
     title: 'Teste de reação do teclado | Keybinds | SkillDrills',
     description: 'Meça reação, precisão e velocidade de keybinds pressionando a tecla exibida no navegador.',
     type: 'article',
@@ -29,7 +29,7 @@ export const metadata = {
     siteName: 'SkillDrills',
     locale: 'pt_BR',
   },
-  twitter: {
+  twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: 'summary_large_image',
     title: 'Teste de reação do teclado | Keybinds | SkillDrills',
     description: 'Teste gratuito de reação do teclado e keybinds no navegador.',

@@ -31,7 +31,7 @@ export const metadata = {
     "시선 추적 온라인 훈련",
     "무료 사케드 훈련"
   ],
-  openGraph: {
+  openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
     title: "순간이동 표적 시선 재포착 | SkillDrills",
     description: "순간이동하는 표적을 다시 찾고 움직임 추적으로 돌아가는 무료 안구 운동 훈련입니다.",
     type: "website",
@@ -39,7 +39,7 @@ export const metadata = {
     siteName: "SkillDrills",
     locale: "ko_KR",
   },
-  twitter: {
+  twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: "summary_large_image",
     title: "순간이동 표적 재포착 연습 | SkillDrills",
     description: "위치가 바뀐 표적을 다시 찾고 움직임 추적으로 돌아가는 연습입니다.",

@@ -22,14 +22,14 @@ export const metadata = {
     "시각 변별력",
     "동적 시각 반응속도"
 ],
-  openGraph: {
+  openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
     title: "시각 리듬 검사 | 깜빡임 구별 | SkillDrills",
     description: "맥동 격자에서 위상차를 찾고 깜빡임 구별과 시각 타이밍을 연습하세요.",
     type: "website",
     url: "https://skilldrills.online/ko/drills/visual/visual-recognition/rhythm-anomaly",
     siteName: "SkillDrills",
   },
-  twitter: {
+  twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: "summary_large_image",
     title: "시각 리듬 검사 | 깜빡임 구별 | SkillDrills",
     description: "맥동 격자에서 위상차를 찾고 깜빡임 구별과 시각 타이밍을 연습하세요.",

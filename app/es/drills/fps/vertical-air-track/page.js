@@ -30,7 +30,7 @@ export const metadata = {
     index: true,
     follow: true,
   },
-  openGraph: {
+  openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
     title: 'Entrenador de Puntería Vertical - Tracking | SkillDrills',
     description: 'Entrena puntería vertical y tracking aéreo en el navegador. Practica el eje Y y predice caídas en Apex Legends y Overwatch 2.',
     url: 'https://skilldrills.online/es/drills/fps/vertical-air-track',
@@ -38,7 +38,7 @@ export const metadata = {
     locale: 'es_ES',
     type: 'website',
   },
-  twitter: {
+  twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: 'summary_large_image',
     title: 'Entrenador de Puntería Vertical - Tracking | SkillDrills',
     description: 'Entrena puntería vertical y tracking aéreo en el navegador. Practica el eje Y y predice caídas en Apex Legends y Overwatch 2.',

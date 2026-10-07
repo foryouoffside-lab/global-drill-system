@@ -9,7 +9,7 @@ export const metadata = {
   title: "집중력 테스트 | 지속 주의력 측정 | SkillDrills",
   description: "무료 브라우저 집중력 테스트로 지속 주의력, 오반응 억제, 규칙 전환 능력을 확인하세요. 의료 진단이 아닌 자기 점검입니다.",
   keywords: ["집중력 테스트", "집중력 테스트 무료", "집중력 테스트 사이트", "지속 주의력", "주의력 테스트", "공부 집중력 테스트", "집중력 테스트 게임", "집중력 훈련 게임", "억제 제어", "주의력 측정", "성인 집중력 테스트", "CPT 테스트"],
-  openGraph: {
+  openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
     title: "집중력 테스트 | 지속 주의력 측정 | SkillDrills",
     description: "무료 브라우저 집중력 테스트로 지속 주의력, 오반응 억제, 규칙 전환 능력을 확인하세요. 의료 진단이 아닌 자기 점검입니다.",
     type: 'article',
@@ -17,7 +17,7 @@ export const metadata = {
     siteName: 'SkillDrills',
     locale: 'ko_KR',
   },
-  twitter: {
+  twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: 'summary_large_image',
     title: "집중력 테스트 | 지속 주의력 측정 | SkillDrills",
     description: "무료 브라우저 집중력 테스트로 지속 주의력, 오반응 억제, 규칙 전환 능력을 확인하세요. 의료 진단이 아닌 자기 점검입니다.",

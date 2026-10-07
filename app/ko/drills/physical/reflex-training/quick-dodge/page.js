@@ -40,7 +40,7 @@ export const metadata = {
     canonical: 'https://skilldrills.online/ko/drills/physical/reflex-training/quick-dodge',
     languages: getAlternateLanguages('/drills/physical/reflex-training/quick-dodge'),
   },
-  openGraph: {
+  openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
     title: "마우스 피하기 게임 | 무료 순발력 테스트",
     description: "무료 마우스 피하기 게임. 날아오는 탄막을 커서로 피하며 순발력과 마우스 컨트롤을 브라우저에서 연습하세요.",
     url: 'https://skilldrills.online/ko/drills/physical/reflex-training/quick-dodge',
@@ -48,7 +48,7 @@ export const metadata = {
     locale: 'ko_KR',
     type: 'website',
   },
-  twitter: {
+  twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: 'summary_large_image',
     title: "마우스 피하기 게임 | 무료 순발력 테스트",
     description: "무료 마우스 피하기 게임. 날아오는 탄막을 커서로 피하며 순발력과 마우스 컨트롤을 브라우저에서 연습하세요.",

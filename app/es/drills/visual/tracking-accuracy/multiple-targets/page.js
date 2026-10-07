@@ -32,13 +32,13 @@ export const metadata = {
     type: "website",
     locale: "es_ES",
     alternateLocale: ["en_US", "de_DE", "ko_KR", "ja_JP", "pt_PT", "fr_FR"],
-    images: [{ url: "https://skilldrills.online/og-default.svg", width: 1200, height: 630 }],
+    images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
   },
   twitter: {
     card: "summary_large_image",
     title: "Seguimiento de Múltiples Objetos | MOT | SkillDrills",
     description: "Sigue varios objetos móviles y practica atención dividida, visión periférica y memoria espacial.",
-    images: ["https://skilldrills.online/og-default.svg"],
+    images: ["https://skilldrills.online/opengraph-image"],
   },
 };
 

@@ -31,7 +31,7 @@ export const metadata = {
     "눈으로 8자 그리기",
     "무료 시선 추적 연습"
   ],
-  openGraph: {
+  openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
     title: "8자 안구 운동 훈련 | SkillDrills",
     description: "움직이는 8자 표적을 두 눈으로 따라가며 시선 추적과 정중선 통과를 연습하는 무료 안구 운동 훈련입니다.",
     type: "website",
@@ -39,7 +39,7 @@ export const metadata = {
     siteName: "SkillDrills",
     locale: "ko_KR",
   },
-  twitter: {
+  twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: "summary_large_image",
     title: "8자 시선 추적 훈련 | SkillDrills",
     description: "8자 궤적을 따라가며 중앙을 지날 때 시선의 흔들림을 관찰하는 무료 온라인 훈련입니다.",

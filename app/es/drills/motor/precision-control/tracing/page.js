@@ -18,7 +18,7 @@ export const metadata = {
     'entrenamiento de puntería suave', 'precisión del trazado', 'juego de seguir la línea',
     'tracking ratón fps', 'coordinación visomotora', 'trazado de onda con ratón',
   ],
-  openGraph: {
+  openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
     title: 'Test de seguimiento del ratón | Trazado | SkillDrills',
     description: 'Sigue una onda en movimiento con el cursor y entrena seguimiento suave, precisión del trazado y control motor fino. Gratis en el navegador.',
     type: 'article',
@@ -26,7 +26,7 @@ export const metadata = {
     siteName: 'SkillDrills',
     locale: 'es_ES',
   },
-  twitter: {
+  twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: 'summary_large_image',
     title: 'Test de seguimiento del ratón | Trazado | SkillDrills',
     description: 'Sigue una onda en movimiento con el cursor y entrena seguimiento suave, precisión del trazado y control motor fino. Gratis en el navegador.',

@@ -40,7 +40,7 @@ export const metadata = {
     canonical: 'https://skilldrills.online/ja/drills/physical/fitness/jump-sequence',
     languages: getAlternateLanguages('/drills/physical/fitness/jump-sequence'),
   },
-  openGraph: {
+  openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
     title: "ジャンプ力トレーニング＆プライオメトリクス練習 – 無料滞空軌道迎撃ゲーム | SkillDrills",
     description: "無料オンラインのジャンプ力トレーニング＆プライオメトリクス練習ゲーム。クリックチャージによる垂直跳躍、滞空中の放物線軌道ステアリング、光学的タウ理論に基づく高速飛翔ターゲットの迎撃タイミングを科学的に鍛えます。",
     url: 'https://skilldrills.online/ja/drills/physical/fitness/jump-sequence',
@@ -48,7 +48,7 @@ export const metadata = {
     locale: 'ja_JP',
     type: 'website',
   },
-  twitter: {
+  twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: 'summary_large_image',
     title: "ジャンプ力トレーニング＆プライオメトリクス練習 – 無料滞空軌道迎撃ゲーム | SkillDrills",
     description: "無料オンラインのジャンプ力トレーニング＆プライオメトリクス練習ゲーム。クリックチャージによる垂直跳躍、滞空中の放物線軌道ステアリング、光学的タウ理論に基づく高速飛翔ターゲットの迎撃タイミングを科学的に鍛えます。",

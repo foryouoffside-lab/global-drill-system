@@ -31,7 +31,7 @@ export const metadata = {
     "augenübung kostenlos",
     "sichtziel verfolgen übung"
   ],
-  openGraph: {
+  openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
     title: "Liegende Acht | Blickverfolgung | SkillDrills",
     description: "Kostenlose Augenübung mit der liegenden Acht: übe Blickverfolgung und das Überqueren der visuellen Mittellinie.",
     type: "website",
@@ -39,7 +39,7 @@ export const metadata = {
     siteName: "SkillDrills",
     locale: "de_DE",
   },
-  twitter: {
+  twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: "summary_large_image",
     title: "Liegende Acht: Blickverfolgung | SkillDrills",
     description: "Folge einer liegenden Acht und beobachte flüssige Augenbewegungen beim Wechsel über die Mittellinie.",

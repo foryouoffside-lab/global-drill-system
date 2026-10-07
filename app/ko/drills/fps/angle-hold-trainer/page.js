@@ -30,7 +30,7 @@ export const metadata = {
     index: true,
     follow: true,
   },
-  openGraph: {
+  openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
     title: "에임 연습 | 대기 에임·각 쪼개기 | SkillDrills",
     description: "무료 브라우저 에임 연습으로 모퉁이에 조준선을 미리 두고 피킹 순간의 반응과 대기폭을 훈련하세요.",
     url: "https://skilldrills.online/ko/drills/fps/angle-hold-trainer",
@@ -38,7 +38,7 @@ export const metadata = {
     locale: 'ko_KR',
     type: 'website',
   },
-  twitter: {
+  twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: 'summary_large_image',
     title: "에임 연습 | 대기 에임·각 쪼개기 | SkillDrills",
     description: "무료 브라우저 에임 연습으로 모퉁이에 조준선을 미리 두고 피킹 순간의 반응과 대기폭을 훈련하세요.",

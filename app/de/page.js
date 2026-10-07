@@ -11,7 +11,7 @@ const legacyMetadata = {
     canonical: 'https://skilldrills.online/de',
     languages: getAlternateLanguages('/de'),
   },
-  openGraph: {
+  openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
     title: 'Kostenloser Aim Trainer & Gehirntraining Online | SkillDrills',
     description: 'Verbessere dein Aiming in Valorant, CS2, Reaktionszeit, CPS und Gedächtnis mit 81+ kostenlosen Übungen direkt im Browser.',
     url: 'https://skilldrills.online/de',

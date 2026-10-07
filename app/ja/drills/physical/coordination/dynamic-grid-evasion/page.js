@@ -38,7 +38,7 @@ export const metadata = {
     canonical: 'https://skilldrills.online/ja/drills/physical/coordination/dynamic-grid-evasion',
     languages: getAlternateLanguages('/drills/physical/coordination/dynamic-grid-evasion'),
   },
-  openGraph: {
+  openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
     title: "反射神経テスト｜無料ブラウザゲーム | SkillDrills",
     description: "無料の反射神経テスト・ブラウザゲーム。3×3グリッドの危険マスを周辺視野で見つけ、安全マスへ移動して反応速度と危機回避を鍛えます。",
     url: 'https://skilldrills.online/ja/drills/physical/coordination/dynamic-grid-evasion',
@@ -46,7 +46,7 @@ export const metadata = {
     locale: 'ja_JP',
     type: 'website',
   },
-  twitter: {
+  twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: 'summary_large_image',
     title: "反射神経テスト｜無料ブラウザゲーム | SkillDrills",
     description: "無料の反射神経テスト・ブラウザゲーム。3×3グリッドの危険マスを周辺視野で見つけ、安全マスへ移動して反応速度と危機回避を鍛えます。",

@@ -18,7 +18,7 @@ export const metadata = {
     'entraînement poursuite oculaire fluide', 'stabilité du tracé', 'jeu suivre la ligne',
     'tracking souris entraînement', 'coordination visuo-motrice', 'fluidité du mouvement souris',
   ],
-  openGraph: {
+  openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
     title: 'Test de suivi souris | Tracé du curseur | SkillDrills',
     description: 'Suivez une onde en mouvement avec le curseur pour entraîner le suivi fluide, la précision du tracé et la motricité fine. Gratuit dans le navigateur.',
     type: 'article',
@@ -26,7 +26,7 @@ export const metadata = {
     siteName: 'SkillDrills',
     locale: 'fr_FR',
   },
-  twitter: {
+  twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: 'summary_large_image',
     title: 'Test de suivi souris | Tracé du curseur | SkillDrills',
     description: 'Suivez une onde en mouvement avec le curseur pour entraîner le suivi fluide, la précision du tracé et la motricité fine. Gratuit dans le navigateur.',

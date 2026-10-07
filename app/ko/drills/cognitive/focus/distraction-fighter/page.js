@@ -32,7 +32,7 @@ export const metadata = {
     "인지 억제 테스트",
     "선택적 주의력 테스트"
   ],
-  openGraph: {
+  openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
     title: "스트룹 테스트 | 선택적 주의력 훈련 | SkillDrills",
     description: "무료 브라우저 스트룹 테스트에서 단어가 아닌 글자 색을 선택하세요. 선택적 주의와 반응 억제를 연습하는 비임상 자기 점검입니다.",
     type: "website",
@@ -40,7 +40,7 @@ export const metadata = {
     siteName: "SkillDrills",
     locale: "ko_KR",
   },
-  twitter: {
+  twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: "summary_large_image",
     title: "스트룹 테스트 | 선택적 주의력 훈련 | SkillDrills",
     description: "무료 브라우저 스트룹 테스트에서 단어가 아닌 글자 색을 선택하세요. 선택적 주의와 반응 억제를 연습하는 비임상 자기 점검입니다.",

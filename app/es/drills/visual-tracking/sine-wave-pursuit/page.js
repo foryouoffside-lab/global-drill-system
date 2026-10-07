@@ -25,7 +25,7 @@ export const metadata = {
     languages: getAlternateLanguages('/drills/visual-tracking/sine-wave-pursuit'),
   },
   robots: { index: true, follow: true },
-  openGraph: {
+  openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
     title: "Seguimiento ocular sinusoidal | SkillDrills",
     description: "Sigue un objetivo con movimiento sinusoidal horizontal y vertical. Ejercicio gratuito en navegador con desfase y error de posición.",
     url: "https://skilldrills.online/es/drills/visual-tracking/sine-wave-pursuit",
@@ -33,7 +33,7 @@ export const metadata = {
     locale: 'es_ES',
     type: 'website',
   },
-  twitter: {
+  twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: 'summary_large_image',
     title: "Seguimiento ocular sinusoidal | SkillDrills",
     description: "Ejercicio breve para seguir un objetivo periódico y revisar la diferencia de velocidad y el error al cambiar de dirección.",

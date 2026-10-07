@@ -22,7 +22,7 @@ export const metadata = {
     "exercice appariement de symboles",
     "test cognitif de symboles"
   ],
-  openGraph: {
+  openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
     title: "Test Symboles Chiffres | SDMT en Ligne | SkillDrills",
     description: "Test gratuit de symboles et chiffres dans le navigateur : entraînez l’appariement symbole-chiffre et la vitesse de traitement. Inspiré du SDMT, non clinique.",
     type: 'article',
@@ -30,7 +30,7 @@ export const metadata = {
     siteName: 'SkillDrills',
     locale: 'fr_FR',
   },
-  twitter: {
+  twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: 'summary_large_image',
     title: "Test Symboles Chiffres | SDMT en Ligne | SkillDrills",
     description: "Test gratuit de symboles et chiffres dans le navigateur : entraînez l’appariement symbole-chiffre et la vitesse de traitement. Inspiré du SDMT, non clinique.",

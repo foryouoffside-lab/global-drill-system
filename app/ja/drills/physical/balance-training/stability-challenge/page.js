@@ -35,7 +35,7 @@ export const metadata = {
     canonical: 'https://skilldrills.online/ja/drills/physical/balance-training/stability-challenge',
     languages: getAlternateLanguages('/drills/physical/balance-training/stability-challenge'),
   },
-  openGraph: {
+  openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
     title: "エイム安定化｜マウス安定性テスト | SkillDrills",
     description: "動くレティクルを中央に保つ無料のブラウザ練習。手ブレ、リコイル制御、マウスの安定性を確認できます。",
     url: 'https://skilldrills.online/ja/drills/physical/balance-training/stability-challenge',
@@ -43,7 +43,7 @@ export const metadata = {
     locale: 'ja_JP',
     type: 'website',
   },
-  twitter: {
+  twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: 'summary_large_image',
     title: "エイム安定化｜マウス安定性テスト | SkillDrills",
     description: "動くレティクルを中央に保つ無料のブラウザ練習。手ブレ、リコイル制御、マウスの安定性を確認できます。",

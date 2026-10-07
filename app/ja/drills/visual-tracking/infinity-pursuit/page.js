@@ -31,7 +31,7 @@ export const metadata = {
     "アイトラッキング 8の字",
     "無料 視線追従 練習"
   ],
-  openGraph: {
+  openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
     title: "8の字眼球運動トレーニング | SkillDrills",
     description: "8の字の動く標的を両眼で追い、視線追従と正中線通過を練習する無料の眼球運動トレーニング。",
     type: "website",
@@ -39,7 +39,7 @@ export const metadata = {
     siteName: "SkillDrills",
     locale: "ja_JP",
   },
-  twitter: {
+  twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: "summary_large_image",
     title: "8の字視線追従トレーニング | SkillDrills",
     description: "8の字の軌道を滑らかに追い、中心を通るときの視線の乱れを観察する無料トレーニング。",

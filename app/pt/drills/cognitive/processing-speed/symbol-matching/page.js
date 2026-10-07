@@ -22,7 +22,7 @@ export const metadata = {
     "exercicio de processamento visual",
     "teste cognitivo de simbolos"
   ],
-  openGraph: {
+  openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
     title: "Teste de Símbolos e Dígitos | SDMT Online | SkillDrills",
     description: "Teste gratuito de símbolos e dígitos no navegador: pratique pareamento símbolo-dígito e velocidade de processamento. Inspirado no SDMT, não é clínico.",
     type: 'article',
@@ -30,7 +30,7 @@ export const metadata = {
     siteName: 'SkillDrills',
     locale: 'pt_BR',
   },
-  twitter: {
+  twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: 'summary_large_image',
     title: "Teste de Símbolos e Dígitos | SDMT Online | SkillDrills",
     description: "Teste gratuito de símbolos e dígitos no navegador: pratique pareamento símbolo-dígito e velocidade de processamento. Inspirado no SDMT, não é clínico.",

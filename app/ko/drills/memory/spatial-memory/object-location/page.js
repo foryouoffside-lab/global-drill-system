@@ -16,7 +16,7 @@ export const metadata = {
     index: true,
     follow: true,
   },
-  openGraph: {
+  openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
     title: "공간 기억력 테스트 | 물체 위치 기억 | SkillDrills",
     description: "격자에서 물체 위치를 기억하고 화면이 사라진 뒤 목표 위치를 찾는 무료 공간 기억력 게임입니다.",
     url: "https://skilldrills.online/ko/drills/memory/spatial-memory/object-location",
@@ -24,7 +24,7 @@ export const metadata = {
     locale: 'ko_KR',
     type: 'website',
   },
-  twitter: {
+  twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: 'summary_large_image',
     title: "공간 기억력 테스트 | 물체 위치 기억 | SkillDrills",
     description: "격자에서 물체 위치를 기억하고 화면이 사라진 뒤 목표 위치를 찾는 무료 공간 기억력 게임입니다.",

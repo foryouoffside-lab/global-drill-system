@@ -40,7 +40,7 @@ export const metadata = {
     canonical: 'https://skilldrills.online/fr/drills/physical/balance-training/stability-challenge',
     languages: getAlternateLanguages('/drills/physical/balance-training/stability-challenge'),
   },
-  openGraph: {
+  openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
     title: 'Stabilité de visée | Test de précision souris | SkillDrills',
     description: 'Gardez le réticule centré et pratiquez la stabilité, le contrôle du recul et la précision souris dans un entraînement gratuit au navigateur.',
     url: 'https://skilldrills.online/fr/drills/physical/balance-training/stability-challenge',
@@ -48,7 +48,7 @@ export const metadata = {
     locale: 'fr_FR',
     type: 'website',
   },
-  twitter: {
+  twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: 'summary_large_image',
     title: 'Stabilité de visée | Test de précision souris | SkillDrills',
     description: 'Gardez le réticule centré et pratiquez la stabilité, le contrôle du recul et la précision souris dans un entraînement gratuit au navigateur.',

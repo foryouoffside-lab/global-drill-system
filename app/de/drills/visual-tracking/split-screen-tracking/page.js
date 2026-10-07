@@ -27,7 +27,7 @@ export const metadata = {
     languages: getAlternateLanguages("/drills/visual-tracking/split-screen-tracking"),
   },
   robots: { index: true, follow: true },
-  openGraph: {
+  openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
     title: "Geteilte Aufmerksamkeit: Blickverfolgung | SkillDrills",
     description: "Verfolge zwei bewegte Ziele in getrennten Bildschirmbereichen. Kostenlose Browserübung mit Ankerstabilität und Seitenvergleich.",
     url: "https://skilldrills.online/de/drills/visual-tracking/split-screen-tracking",
@@ -35,7 +35,7 @@ export const metadata = {
     locale: "de_DE",
     type: "website",
   },
-  twitter: {
+  twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: "summary_large_image",
     title: "Geteilte Aufmerksamkeit: Blickverfolgung | SkillDrills",
     description: "Verfolge zwei bewegte Ziele in getrennten Bildschirmbereichen. Kostenlose Browserübung mit Ankerstabilität und Seitenvergleich.",

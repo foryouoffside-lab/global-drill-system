@@ -30,7 +30,7 @@ export const metadata = {
     index: true,
     follow: true,
   },
-  openGraph: {
+  openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
     title: "Aim Trainer | Crosshair Placement | SkillDrills",
     description: "Kostenloser Aim Trainer im Browser: Übe Crosshair Placement, Winkel halten, Wandabstand und Reaktion auf Peeks in Valorant und CS2.",
     url: "https://skilldrills.online/de/drills/fps/angle-hold-trainer",
@@ -38,7 +38,7 @@ export const metadata = {
     locale: 'de_DE',
     type: 'website',
   },
-  twitter: {
+  twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: 'summary_large_image',
     title: "Aim Trainer | Crosshair Placement | SkillDrills",
     description: "Kostenloser Aim Trainer im Browser: Übe Crosshair Placement, Winkel halten, Wandabstand und Reaktion auf Peeks in Valorant und CS2.",

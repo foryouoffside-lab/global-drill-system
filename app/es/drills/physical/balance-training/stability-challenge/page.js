@@ -40,7 +40,7 @@ export const metadata = {
     canonical: 'https://skilldrills.online/es/drills/physical/balance-training/stability-challenge',
     languages: getAlternateLanguages('/drills/physical/balance-training/stability-challenge'),
   },
-  openGraph: {
+  openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
     title: 'Estabilidad de puntería | Test de ratón | SkillDrills',
     description: 'Mantén la retícula centrada y practica estabilidad, control del temblor y retroceso en un entrenamiento gratis de navegador.',
     url: 'https://skilldrills.online/es/drills/physical/balance-training/stability-challenge',
@@ -48,7 +48,7 @@ export const metadata = {
     locale: 'es_ES',
     type: 'website',
   },
-  twitter: {
+  twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: 'summary_large_image',
     title: 'Estabilidad de puntería | Test de ratón | SkillDrills',
     description: 'Mantén la retícula centrada y practica estabilidad, control del temblor y retroceso en un entrenamiento gratis de navegador.',

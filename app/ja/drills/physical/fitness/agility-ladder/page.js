@@ -39,7 +39,7 @@ export const metadata = {
     canonical: 'https://skilldrills.online/ja/drills/physical/fitness/agility-ladder',
     languages: getAlternateLanguages('/drills/physical/fitness/agility-ladder'),
   },
-  openGraph: {
+  openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
     title: "ラダートレーニング｜アジリティ練習 | SkillDrills",
     description: "無料のラダートレーニング・アジリティ練習。左右のステップをリズムよく追い、フットワークの俊敏性と運動シークエンスを鍛えます。",
     url: 'https://skilldrills.online/ja/drills/physical/fitness/agility-ladder',
@@ -47,7 +47,7 @@ export const metadata = {
     locale: 'ja_JP',
     type: 'website',
   },
-  twitter: {
+  twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: 'summary_large_image',
     title: "ラダートレーニング｜アジリティ練習 | SkillDrills",
     description: "無料のラダートレーニング・アジリティ練習。左右のステップをリズムよく追い、フットワークの俊敏性と運動シークエンスを鍛えます。",

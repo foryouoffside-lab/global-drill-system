@@ -25,7 +25,7 @@ export const metadata = {
     languages: getAlternateLanguages('/drills/visual-tracking/sine-wave-pursuit'),
   },
   robots: { index: true, follow: true },
-  openGraph: {
+  openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
     title: "Poursuite oculaire sinusoïdale | SkillDrills",
     description: "Suivez une cible mobile sinusoïdale horizontalement et verticalement. Exercice gratuit avec décalage de phase et écart de position.",
     url: "https://skilldrills.online/fr/drills/visual-tracking/sine-wave-pursuit",
@@ -33,7 +33,7 @@ export const metadata = {
     locale: 'fr_FR',
     type: 'website',
   },
-  twitter: {
+  twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: 'summary_large_image',
     title: "Poursuite oculaire sinusoïdale | SkillDrills",
     description: "Exercice court pour suivre une cible périodique et observer l écart de vitesse et de position au changement de direction.",

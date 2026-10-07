@@ -28,7 +28,7 @@ export const metadata = {
     index: true,
     follow: true,
   },
-  openGraph: {
+  openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
     title: "에임 연습 | 마이크로 플릭 미세조정 | SkillDrills",
     description: "무료 브라우저 에임 연습으로 초기 플릭 뒤 미세조정과 손끝 감속을 훈련하세요. 발로란트·CS2 헤드샷 정밀도를 측정합니다.",
     url: "https://skilldrills.online/ko/drills/fps/micro-correction-precision",
@@ -36,7 +36,7 @@ export const metadata = {
     locale: 'ko_KR',
     type: 'website',
   },
-  twitter: {
+  twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: 'summary_large_image',
     title: "에임 연습 | 마이크로 플릭 미세조정 | SkillDrills",
     description: "무료 브라우저 에임 연습으로 초기 플릭 뒤 미세조정과 손끝 감속을 훈련하세요. 발로란트·CS2 헤드샷 정밀도를 측정합니다.",

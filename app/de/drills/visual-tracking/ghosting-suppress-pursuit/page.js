@@ -31,7 +31,7 @@ export const metadata = {
     "Bewegungsschärfe testen",
     "Monitor Test kostenlos"
   ],
-  openGraph: {
+  openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
     title: "Monitor-Nachzieheffekt-Test | Blickstabilität | SkillDrills",
     description: "Beobachte Nachzieheffekte und helle Halos an einem bewegten Ziel und übe foveale Fixation, Bewegungsschärfe und Blickstabilität.",
     type: "website",
@@ -39,7 +39,7 @@ export const metadata = {
     siteName: "SkillDrills",
     locale: "de_DE",
   },
-  twitter: {
+  twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: "summary_large_image",
     title: "Monitor-Nachzieheffekt-Test | Blickstabilität | SkillDrills",
     description: "Beobachte Nachzieheffekte und helle Halos an einem bewegten Ziel und übe foveale Fixation und Blickstabilität.",

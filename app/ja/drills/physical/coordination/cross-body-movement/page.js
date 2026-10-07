@@ -37,7 +37,7 @@ export const metadata = {
     canonical: 'https://skilldrills.online/ja/drills/physical/coordination/cross-body-movement',
     languages: getAlternateLanguages('/drills/physical/coordination/cross-body-movement'),
   },
-  openGraph: {
+  openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
     title: "目と手の協応テスト｜協調運動ゲーム | SkillDrills",
     description: "無料の目と手の協応テスト・協調運動ゲーム。正中線を越える対角ノードをつなぎ、両側性の運動制御とマウス操作の精度を鍛えます。",
     url: 'https://skilldrills.online/ja/drills/physical/coordination/cross-body-movement',
@@ -45,7 +45,7 @@ export const metadata = {
     locale: 'ja_JP',
     type: 'website',
   },
-  twitter: {
+  twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: 'summary_large_image',
     title: "目と手の協応テスト｜協調運動ゲーム | SkillDrills",
     description: "無料の目と手の協応テスト・協調運動ゲーム。正中線を越える対角ノードをつなぎ、両側性の運動制御とマウス操作の精度を鍛えます。",

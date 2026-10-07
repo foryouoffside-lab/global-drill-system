@@ -39,7 +39,7 @@ export const metadata = {
     canonical: 'https://skilldrills.online/de/drills/physical/coordination/dynamic-grid-evasion',
     languages: getAlternateLanguages('/drills/physical/coordination/dynamic-grid-evasion'),
   },
-  openGraph: {
+  openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
     title: "Reaktionstest online | Raster-Ausweichspiel | SkillDrills",
     description: "Kostenloser Reaktionstest online mit Raster-Ausweichspiel: Erkennen Sie Gefahren im 3x3-Gitter und wechseln Sie schnell in sichere Felder.",
     url: 'https://skilldrills.online/de/drills/physical/coordination/dynamic-grid-evasion',
@@ -47,7 +47,7 @@ export const metadata = {
     locale: 'de_DE',
     type: 'website',
   },
-  twitter: {
+  twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: 'summary_large_image',
     title: "Reaktionstest online | Raster-Ausweichspiel | SkillDrills",
     description: "Kostenloser Reaktionstest online mit Raster-Ausweichspiel: Erkennen Sie Gefahren im 3x3-Gitter und wechseln Sie schnell in sichere Felder.",

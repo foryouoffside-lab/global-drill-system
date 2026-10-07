@@ -15,7 +15,7 @@ export const metadata = {
   title: "N-Back Test online | Arbeitsgedächtnis | SkillDrills",
   description: "N-Back-Test online: Prüfe die Aktualisierung des Arbeitsgedächtnisses in 2-Back und 3-Back direkt im Browser – kostenlos und ohne Anmeldung.",
   keywords: ['n-back test online', 'n-back test', 'arbeitsgedächtnis-test', 'dual n-back', 'n-back aufgabe', 'arbeitsgedächtnis training', '2-back test', '3-back test', 'arbeitsgedächtnis online', 'kognitives training n-back'],
-  openGraph: {
+  openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
     title: "N-Back Test online | Arbeitsgedächtnis | SkillDrills",
     description: "N-Back-Test online: Prüfe die Aktualisierung des Arbeitsgedächtnisses in 2-Back und 3-Back direkt im Browser – kostenlos.",
     type: "website",
@@ -23,7 +23,7 @@ export const metadata = {
     siteName: "SkillDrills",
     locale: "de_DE",
   },
-  twitter: {
+  twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: "summary_large_image",
     title: "N-Back Test online | Arbeitsgedächtnis | SkillDrills",
     description: "N-Back-Test online: Prüfe die Aktualisierung des Arbeitsgedächtnisses in 2-Back und 3-Back direkt im Browser – kostenlos.",

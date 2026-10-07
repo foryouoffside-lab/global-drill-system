@@ -31,7 +31,7 @@ export const metadata = {
     index: true,
     follow: true,
   },
-  openGraph: {
+  openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
     title: "단어 기억력 테스트 | 단어 회상 | SkillDrills",
     description: "무료 단어 기억력 테스트: 단어 목록을 기억한 뒤 자유롭게 회상하며 언어 기억력과 작업기억을 연습하세요.",
     url: "https://skilldrills.online/ko/drills/memory/short-term-memory/word-recall",
@@ -39,7 +39,7 @@ export const metadata = {
     locale: 'ko_KR',
     type: 'website',
   },
-  twitter: {
+  twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: 'summary_large_image',
     title: "단어 기억력 테스트 | 단어 회상 | SkillDrills",
     description: "무료 단어 기억력 테스트: 단어 목록을 기억한 뒤 자유롭게 회상하며 언어 기억력과 작업기억을 연습하세요.",

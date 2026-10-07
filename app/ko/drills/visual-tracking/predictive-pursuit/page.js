@@ -29,7 +29,7 @@ export const metadata = {
     "시각 작업 기억 훈련",
     "예측 에임 연습"
   ],
-  openGraph: {
+  openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
     title: "예측 추적 훈련｜가림 뒤 궤적 따라가기 | SkillDrills",
     description: "움직이는 표적을 따라가고 가림 뒤의 위치를 예상하는 무료 브라우저 드릴. 반응 시간과 위치 오차를 확인합니다.",
     type: "website",
@@ -37,7 +37,7 @@ export const metadata = {
     siteName: "SkillDrills",
     locale: "ko_KR",
   },
-  twitter: {
+  twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: "summary_large_image",
     title: "예측 추적 훈련｜가림 뒤 궤적 따라가기 | SkillDrills",
     description: "표적이 보이지 않는 동안 이동 방향을 이어서 추적하고 재출현 위치를 확인하는 짧은 시각 훈련입니다.",

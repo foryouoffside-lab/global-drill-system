@@ -13,7 +13,7 @@ export const metadata = {
     '드래그 정밀도', '드래그 앤 드롭 마우스 연습', '마우스 끌기 연습', '드래그 속도 테스트',
     '마우스 제어 테스트', '드래그 앤 드롭 게임', '인벤토리 드래그 연습', '마우스 정확도',
   ],
-  openGraph: {
+  openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
     title: '드래그 앤 드롭 연습 | 마우스 드래그 테스트 | SkillDrills',
     description: '무료 브라우저 드래그 앤 드롭 연습. 마우스 드래그 정확도, 놓기 타이밍, 타깃 정렬을 측정하며 조작 감각을 키우세요.',
     type: 'article',
@@ -21,7 +21,7 @@ export const metadata = {
     siteName: 'SkillDrills',
     locale: 'ko_KR',
   },
-  twitter: {
+  twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: 'summary_large_image',
     title: '드래그 앤 드롭 연습 | 마우스 드래그 테스트 | SkillDrills',
     description: '무료 브라우저 드래그 앤 드롭 연습. 마우스 드래그 정확도, 놓기 타이밍, 타깃 정렬을 측정하며 조작 감각을 키우세요.',

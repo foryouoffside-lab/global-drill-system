@@ -38,7 +38,7 @@ export const metadata = {
     canonical: 'https://skilldrills.online/ko/drills/physical/reflex-training/reaction-chain',
     languages: getAlternateLanguages('/drills/physical/reflex-training/reaction-chain'),
   },
-  openGraph: {
+  openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
     title: "마우스 에임 브레이킹 | 오버플릭 교정",
     description: "움직이는 표적을 맞춘 뒤 커서를 정확히 멈추는 브레이킹 훈련으로 오버플릭과 정지 조작을 연습하세요.",
     url: 'https://skilldrills.online/ko/drills/physical/reflex-training/reaction-chain',
@@ -46,7 +46,7 @@ export const metadata = {
     locale: 'ko_KR',
     type: 'website',
   },
-  twitter: {
+  twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: 'summary_large_image',
     title: "마우스 에임 브레이킹 | 오버플릭 교정",
     description: "표적을 맞춘 뒤 커서를 정확히 멈추며 오버플릭과 에임 정지 조작을 연습하세요.",

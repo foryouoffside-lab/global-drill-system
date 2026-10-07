@@ -9,7 +9,7 @@ export const metadata = {
   title: "Lectura Rápida | Lector RSVP | SkillDrills",
   description: "Entrenamiento de lectura rápida gratis: procesa palabras en un punto fijo y sigue PPM y precisión. No es una prueba clínica.",
   keywords: ["lectura rápida", "test de velocidad de lectura", "velocidad de lectura", "lector rápido online", "RSVP lectura", "palabras por minuto", "entrenamiento de lectura rápida"],
-  openGraph: {
+  openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
     title: "Lectura Rápida | Lector RSVP | SkillDrills",
     description: "Entrenamiento de lectura rápida gratis: procesa palabras en un punto fijo y sigue PPM y precisión. No es una prueba clínica.",
     type: 'article',
@@ -17,7 +17,7 @@ export const metadata = {
     siteName: 'SkillDrills',
     locale: 'es_ES',
   },
-  twitter: {
+  twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: 'summary_large_image',
     title: "Lectura Rápida | Lector RSVP | SkillDrills",
     description: "Entrenamiento de lectura rápida gratis: procesa palabras en un punto fijo y sigue PPM y precisión. No es una prueba clínica.",

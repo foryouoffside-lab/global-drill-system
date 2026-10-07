@@ -21,7 +21,7 @@ export const metadata = {
     "밀리초 반응속도 측정",
     "빛 반응속도 훈련"
   ],
-  openGraph: {
+  openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
     title: "반응속도 테스트 | 시각 반응시간 측정 | SkillDrills",
     description: "무료 반응속도 테스트로 시각 자극에 대한 클릭 지연을 밀리초로 확인하세요. 기기별 차이를 비교하는 연습용 도구입니다.",
     type: 'article',
@@ -29,7 +29,7 @@ export const metadata = {
     siteName: 'SkillDrills',
     locale: 'ko_KR',
   },
-  twitter: {
+  twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: 'summary_large_image',
     title: "반응속도 테스트 | 시각 반응시간 측정 | SkillDrills",
     description: "빛 신호가 나타나는 순간 클릭해 시각 반응속도를 훈련하고 기록하세요. 모든 결과는 현재 브라우저에서만 처리됩니다.",

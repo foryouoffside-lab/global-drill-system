@@ -28,7 +28,7 @@ export const metadata = {
     index: true,
     follow: true,
   },
-  openGraph: {
+  openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
       title: "180도 에임 연습 | 180도 턴 트레이너 | SkillDrills",
     description: "주변 시야로 가장자리 표적을 찾고 180도 화면 전환을 정확히 멈추는 무료 브라우저 FPS 훈련.",
     url: "https://skilldrills.online/ko/drills/fps/180-degree-awareness",
@@ -36,7 +36,7 @@ export const metadata = {
     locale: 'ko_KR',
     type: 'website',
   },
-  twitter: {
+  twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: 'summary_large_image',
     title: "180도 에임 연습 | 180도 턴 트레이너 | SkillDrills",
     description: "주변 시야로 가장자리 표적을 찾고 180도 화면 전환을 정확히 멈추는 무료 브라우저 FPS 훈련.",

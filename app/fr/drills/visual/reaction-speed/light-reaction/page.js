@@ -21,7 +21,7 @@ export const metadata = {
     "temps de réaction simple SRT",
     "entraînement de la vitesse de réaction"
   ],
-  openGraph: {
+  openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
     title: "Test de temps de réaction visuelle | Réflexes en ligne",
     description: "Mesurez en millisecondes l’intervalle entre un signal lumineux et votre clic, avec plusieurs essais pour suivre votre régularité.",
     type: 'article',
@@ -29,7 +29,7 @@ export const metadata = {
     siteName: 'SkillDrills',
     locale: 'fr_FR',
   },
-  twitter: {
+  twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: 'summary_large_image',
     title: "Test de temps de réaction visuelle | Réflexes en ligne",
     description: "Entraînez vos réflexes visuels avec un signal lumineux imprévisible et comparez vos temps dans le navigateur.",

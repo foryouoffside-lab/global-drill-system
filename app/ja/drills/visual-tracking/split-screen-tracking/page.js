@@ -27,7 +27,7 @@ export const metadata = {
     languages: getAlternateLanguages("/drills/visual-tracking/split-screen-tracking"),
   },
   robots: { index: true, follow: true },
-  openGraph: {
+  openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
     title: "画面分割追視トレーニング｜分割注意力ドリル | SkillDrills",
     description: "左右の動く標的を同時に追う無料ブラウザ練習。視線アンカー、左右差、標的ロストを記録。",
     url: "https://skilldrills.online/ja/drills/visual-tracking/split-screen-tracking",
@@ -35,7 +35,7 @@ export const metadata = {
     locale: "ja_JP",
     type: "website",
   },
-  twitter: {
+  twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: "summary_large_image",
     title: "画面分割追視トレーニング｜分割注意力ドリル | SkillDrills",
     description: "左右の動く標的を同時に追う無料ブラウザ練習。視線アンカー、左右差、標的ロストを記録。",

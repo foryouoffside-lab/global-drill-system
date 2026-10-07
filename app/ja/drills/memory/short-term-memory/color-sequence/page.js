@@ -49,7 +49,7 @@ export const metadata = {
     index: true,
     follow: true,
   },
-  openGraph: {
+  openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
     title: 'サイモンゲーム｜色順番記憶 | SkillDrills',
     description: '無料のサイモンゲーム。光る色と音の順番を覚え、同じ順序でタップして視覚ワーキングメモリを鍛えます。',
     url: 'https://skilldrills.online/ja/drills/memory/short-term-memory/color-sequence',
@@ -57,7 +57,7 @@ export const metadata = {
     locale: 'ja_JP',
     type: 'website',
   },
-  twitter: {
+  twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: 'summary_large_image',
     title: 'サイモンゲーム｜色順番記憶 | SkillDrills',
     description: '無料のサイモンゲーム。光る色と音の順番を覚え、同じ順序でタップして視覚ワーキングメモリを鍛えます。',

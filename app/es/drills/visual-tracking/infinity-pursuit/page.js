@@ -27,7 +27,7 @@ export const metadata = {
     languages: getAlternateLanguages("/drills/visual-tracking/infinity-pursuit"),
   },
   robots: { index: true, follow: true },
-  openGraph: {
+  openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
     title: "Ejercicio Ocular en Figura Ocho | SkillDrills",
     description: "Ejercicio ocular en ocho tumbado para practicar seguimiento ocular, persecución suave y coordinación binocular. Gratis en el navegador.",
     url: "https://skilldrills.online/es/drills/visual-tracking/infinity-pursuit",
@@ -35,7 +35,7 @@ export const metadata = {
     locale: "es_ES",
     type: "website",
   },
-  twitter: {
+  twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: "summary_large_image",
     title: "Ejercicio Ocular en Figura Ocho | SkillDrills",
     description: "Ejercicio ocular en ocho tumbado para practicar seguimiento ocular, persecución suave y coordinación binocular. Gratis en el navegador.",

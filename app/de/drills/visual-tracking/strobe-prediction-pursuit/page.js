@@ -26,7 +26,7 @@ export const metadata = {
     languages: getAlternateLanguages("/drills/visual-tracking/strobe-prediction-pursuit"),
   },
   robots: { index: true, follow: true },
-  openGraph: {
+  openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
     title: "Stroboskopisches Sehtraining | SkillDrills",
     description: "Verfolge ein in Dunkelphasen verborgenes Ziel. Kostenlose Browserübung für Blickvorhersage, Wiedererfassungsfehler und Trackingkontinuität.",
     url: "https://skilldrills.online/de/drills/visual-tracking/strobe-prediction-pursuit",
@@ -34,7 +34,7 @@ export const metadata = {
     locale: "de_DE",
     type: "website",
   },
-  twitter: {
+  twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: "summary_large_image",
     title: "Stroboskopisches Sehtraining | SkillDrills",
     description: "Verfolge ein in Dunkelphasen verborgenes Ziel. Kostenlose Browserübung für Blickvorhersage, Wiedererfassungsfehler und Trackingkontinuität.",

@@ -39,7 +39,7 @@ export const metadata = {
     canonical: 'https://skilldrills.online/es/drills/physical/reflex-training/drop-catch',
     languages: getAlternateLanguages('/drills/physical/reflex-training/drop-catch'),
   },
-  openGraph: {
+  openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
     title: "Test de la Regla | Tiempo de Reacción",
     description: "Atrapa objetivos verdes y evita señuelos rojos en un test de la regla gratuito para practicar reflejos y reacción visual.",
     url: 'https://skilldrills.online/es/drills/physical/reflex-training/drop-catch',
@@ -47,7 +47,7 @@ export const metadata = {
     locale: 'es_ES',
     type: 'website',
   },
-  twitter: {
+  twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: 'summary_large_image',
     title: "Test de la Regla | Tiempo de Reacción",
     description: "Atrapa objetivos verdes y evita señuelos rojos en un test de la regla gratuito para practicar reflejos y reacción visual.",

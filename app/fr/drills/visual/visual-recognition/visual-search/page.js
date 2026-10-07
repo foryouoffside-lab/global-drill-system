@@ -23,14 +23,14 @@ export const metadata = {
     "contrôle de l'interférence",
     "trouver des lettres"
 ],
-  openGraph: {
+  openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
     title: "Recherche Visuelle | Attention Sélective | SkillDrills",
     description: "Repérez une cible parmi les distracteurs et entraînez attention sélective, balayage visuel et contrôle de l’interférence.",
     type: "website",
     url: "https://skilldrills.online/fr/drills/visual/visual-recognition/visual-search",
     siteName: "SkillDrills",
   },
-  twitter: {
+  twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: "summary_large_image",
     title: "Recherche Visuelle | Attention Sélective | SkillDrills",
     description: "Entraînement de recherche visuelle parmi des caractères similaires.",

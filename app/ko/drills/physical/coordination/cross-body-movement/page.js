@@ -38,7 +38,7 @@ export const metadata = {
     canonical: 'https://skilldrills.online/ko/drills/physical/coordination/cross-body-movement',
     languages: getAlternateLanguages('/drills/physical/coordination/cross-body-movement'),
   },
-  openGraph: {
+  openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
     title: "눈 손 협응력 테스트 | 협응력 게임 | SkillDrills",
     description: "무료 눈 손 협응력 테스트와 협응력 게임. 신체 정중선을 가로지르는 대각선 노드를 연결하며 양측성 운동 제어와 마우스 정밀도를 훈련합니다.",
     url: 'https://skilldrills.online/ko/drills/physical/coordination/cross-body-movement',
@@ -46,7 +46,7 @@ export const metadata = {
     locale: 'ko_KR',
     type: 'website',
   },
-  twitter: {
+  twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: 'summary_large_image',
     title: "눈 손 협응력 테스트 | 협응력 게임 | SkillDrills",
     description: "무료 눈 손 협응력 테스트와 협응력 게임. 신체 정중선을 가로지르는 대각선 노드를 연결하며 양측성 운동 제어와 마우스 정밀도를 훈련합니다.",

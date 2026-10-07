@@ -21,7 +21,7 @@ export const metadata = {
     "Reflexe testen",
     "Reaktionsgeschwindigkeit trainieren"
   ],
-  openGraph: {
+  openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
     title: "Reaktionstest online | Visuelle Reaktionszeit | SkillDrills",
     description: "Miss deine einfache visuelle Reaktionszeit in Millisekunden bei einem unvorhersehbaren Lichtsignal. Online-Training mit transparenter Hardware-Grenze.",
     type: 'article',
@@ -29,7 +29,7 @@ export const metadata = {
     siteName: 'SkillDrills',
     locale: 'de_DE',
   },
-  twitter: {
+  twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: 'summary_large_image',
     title: "Reaktionstest online | Visuelle Reaktionszeit | SkillDrills",
     description: "Reagiere auf ein Lichtsignal und vergleiche deine visuelle Reaktionszeit in Millisekunden über mehrere Versuche.",

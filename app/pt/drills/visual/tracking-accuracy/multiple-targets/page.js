@@ -32,13 +32,13 @@ export const metadata = {
     type: "website",
     locale: "pt_BR",
     alternateLocale: ["en_US", "de_DE", "ko_KR", "ja_JP", "es_ES", "fr_FR"],
-    images: [{ url: "https://skilldrills.online/og-default.svg", width: 1200, height: 630 }],
+    images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
   },
   twitter: {
     card: "summary_large_image",
     title: "Rastreamento de Múltiplos Objetos | MOT | SkillDrills",
     description: "Acompanhe vários objetos móveis entre distratores e pratique atenção dividida, visão periférica e memória espacial.",
-    images: ["https://skilldrills.online/og-default.svg"],
+    images: ["https://skilldrills.online/opengraph-image"],
   },
 };
 

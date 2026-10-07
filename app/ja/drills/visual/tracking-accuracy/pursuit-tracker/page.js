@@ -19,7 +19,7 @@ export const metadata = {
     "FPS トラッキング",
     "手眼協調"
   ],
-  openGraph: {
+  openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
     title: "スムースパシュート | 視線追従トレーニング | SkillDrills",
     description: "動く標的を追って視線とカーソルを安定させる無料ブラウザ練習。医療診断ではありません。",
     type: 'article',
@@ -27,7 +27,7 @@ export const metadata = {
     siteName: 'SkillDrills',
     locale: 'ja_JP',
   },
-  twitter: {
+  twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: 'summary_large_image',
     title: "スムースパシュート | 視線追従トレーニング | SkillDrills",
     description: "スムースパシュートと視線追従の安定性を練習する無料ドリル。画面やマウス環境で結果は変わります。",

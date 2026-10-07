@@ -31,7 +31,7 @@ export const metadata = {
     "スポーツビジョン",
     "無料 視覚トレーニング"
   ],
-  openGraph: {
+  openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
     title: "動体視力・急旋回ターゲット訓練 | SkillDrills",
     description: "急旋回する標的を視線で再捕捉。補正サッケードと動体視力、追従性眼球運動を鍛える無料ブラウザトレーニング。",
     type: "website",
@@ -39,7 +39,7 @@ export const metadata = {
     siteName: "SkillDrills",
     locale: "ja_JP",
   },
-  twitter: {
+  twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: "summary_large_image",
     title: "動体視力・急旋回ターゲット訓練 | SkillDrills",
     description: "急旋回する標的を眼球で再捕捉し、視覚反応と補正サッケードを鍛える無料オンラインドリル。",

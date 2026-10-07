@@ -29,7 +29,7 @@ export const metadata = {
     "exercice vision périphérique en ligne",
     "entraînement visuel sport"
   ],
-  openGraph: {
+  openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
     title: "Entraînement vision périphérique | SkillDrills",
     description: "Suivez la cible centrale et détectez les signaux latéraux sans détourner le regard. Exercice gratuit en ligne.",
     type: "website",
@@ -37,7 +37,7 @@ export const metadata = {
     siteName: "SkillDrills",
     locale: "fr_FR",
   },
-  twitter: {
+  twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: "summary_large_image",
     title: "Entraînement vision périphérique | SkillDrills",
     description: "Pratiquez la fixation centrale et la détection de signaux latéraux dans le navigateur.",

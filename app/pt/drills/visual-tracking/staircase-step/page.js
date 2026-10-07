@@ -27,7 +27,7 @@ export const metadata = {
     languages: getAlternateLanguages('/drills/visual-tracking/staircase-step'),
   },
   robots: { index: true, follow: true },
-  openGraph: {
+  openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
     title: "Rastreamento ocular vertical | SkillDrills",
     description: "Acompanhe um alvo que sobe e desce em degraus. Treino gratuito no navegador com atraso do olhar, perdas e precisão vertical.",
     url: "https://skilldrills.online/pt/drills/visual-tracking/staircase-step",
@@ -35,7 +35,7 @@ export const metadata = {
     locale: 'pt_PT',
     type: 'website',
   },
-  twitter: {
+  twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: 'summary_large_image',
     title: "Rastreamento ocular vertical | SkillDrills",
     description: "Acompanhe um alvo que sobe e desce em degraus. Treino gratuito no navegador com atraso do olhar, perdas e precisão vertical.",

@@ -21,7 +21,7 @@ export const metadata = {
     "시선 이탈 줄이기 연습",
     "무료 동체시력 훈련"
   ],
-  openGraph: {
+  openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
     title: "지그재그 시선 추적 훈련 | SkillDrills",
     description: "지그재그 궤적 표적을 따라가는 무료 훈련. 안구 추적, 급격한 방향 전환, 시선 이탈을 확인합니다.",
     url: 'https://skilldrills.online/ko/drills/visual-tracking/zig-zag-path-pursuit',
@@ -29,7 +29,7 @@ export const metadata = {
     locale: 'ko_KR',
     type: 'website',
   },
-  twitter: {
+  twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: 'summary_large_image',
     title: "지그재그 시선 추적 훈련 | SkillDrills",
     description: "지그재그 궤적 표적을 따라가는 무료 훈련. 안구 추적, 급격한 방향 전환, 시선 이탈을 확인합니다.",

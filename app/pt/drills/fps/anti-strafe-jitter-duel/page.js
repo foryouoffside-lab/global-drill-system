@@ -28,7 +28,7 @@ export const metadata = {
     index: true,
     follow: true,
   },
-  openGraph: {
+  openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
       title: "Treino de Mira | Tracking Reativo & Strafe | SkillDrills",
     description: "Treino de mira grátis no navegador: acompanhe strafes ADAD imprevisíveis e pratique tracking reativo em duelos de curta distância.",
     url: "https://skilldrills.online/pt/drills/fps/anti-strafe-jitter-duel",
@@ -36,7 +36,7 @@ export const metadata = {
     locale: 'pt_BR',
     type: 'website',
   },
-  twitter: {
+  twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: 'summary_large_image',
       title: "Treino de Mira | Tracking Reativo & Strafe | SkillDrills",
     description: "Treino de mira grátis no navegador: acompanhe strafes ADAD imprevisíveis e pratique tracking reativo em duelos de curta distância.",

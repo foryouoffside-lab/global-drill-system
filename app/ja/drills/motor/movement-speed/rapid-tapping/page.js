@@ -39,7 +39,7 @@ export const metadata = {
     'マイクラ CPS',
     'クリック持久力 テスト',
   ],
-  openGraph: {
+  openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
     title: 'CPSテスト | 連打測定・クリック速度 | SkillDrills',
     description:
       'マウス連打でCPSとクリック持久力を測る無料ブラウザテスト。',
@@ -48,7 +48,7 @@ export const metadata = {
     siteName: 'SkillDrills',
     locale: 'ja_JP',
   },
-  twitter: {
+  twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: 'summary_large_image',
     title: 'CPSテスト | 連打測定・クリック速度 | SkillDrills',
     description:

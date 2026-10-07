@@ -33,7 +33,7 @@ export const metadata = {
     index: true,
     follow: true,
   },
-  openGraph: {
+  openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
     title: "Juego Simón online | Secuencia de colores | SkillDrills",
     description: "Juega a Simón online gratis: observa una secuencia creciente de colores y sonidos y repítela en el mismo orden desde el navegador.",
     url: "https://skilldrills.online/es/drills/memory/short-term-memory/color-sequence",
@@ -41,7 +41,7 @@ export const metadata = {
     locale: 'es_ES',
     type: 'website',
   },
-  twitter: {
+  twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: 'summary_large_image',
     title: "Juego Simón online | Secuencia de colores | SkillDrills",
     description: "Juega a Simón online gratis: observa una secuencia creciente de colores y sonidos y repítela en el mismo orden desde el navegador.",

@@ -8,7 +8,7 @@ export const metadata = {
   title: "Visueller Gedächtnistest online | SkillDrills",
   description: "Teste dein visuelles Gedächtnis online: Merke dir leuchtende Muster in einer Matrix und rekonstruiere sie direkt im Browser.",
   keywords: ['visueller gedächtnistest', 'visuelles gedächtnis test', 'gedächtnistest matrix', 'memory matrix', 'muster merken test', 'visuell-räumliches gedächtnis', 'räumliches gedächtnis test', 'visuelles arbeitsgedächtnis', 'muster gedächtnis', 'gedächtnistraining online'],
-  openGraph: {
+  openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
     title: "Visueller Gedächtnistest online | SkillDrills",
     description: "Teste dein visuelles Gedächtnis online: Merke dir leuchtende Muster in einer Matrix und rekonstruiere sie direkt im Browser.",
     type: 'website',
@@ -16,7 +16,7 @@ export const metadata = {
     siteName: 'SkillDrills',
     locale: 'de_DE',
   },
-  twitter: {
+  twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: 'summary_large_image',
     title: "Visueller Gedächtnistest online | SkillDrills",
     description: "Teste dein visuelles Gedächtnis online: Merke dir leuchtende Muster in einer Matrix und rekonstruiere sie direkt im Browser.",

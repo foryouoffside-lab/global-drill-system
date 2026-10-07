@@ -28,7 +28,7 @@ export const metadata = {
     index: true,
     follow: true,
   },
-  openGraph: {
+  openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
     title: "エイム練習 | ジグザグ移動・トラッキング | SkillDrills",
     description: "無料ブラウザのエイム練習で、ジグザグ移動やスライディングの切り返しを追い、照準の行き過ぎを測定します。",
     url: "https://skilldrills.online/ja/drills/fps/anti-zigzag-movement-trainer",
@@ -36,7 +36,7 @@ export const metadata = {
     locale: 'ja_JP',
     type: 'website',
   },
-  twitter: {
+  twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: 'summary_large_image',
     title: "エイム練習 | ジグザグ移動・トラッキング | SkillDrills",
     description: "無料ブラウザのエイム練習で、ジグザグ移動やスライディングの切り返しを追い、照準の行き過ぎを測定します。",

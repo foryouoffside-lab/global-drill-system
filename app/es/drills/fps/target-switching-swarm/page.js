@@ -30,7 +30,7 @@ export const metadata = {
     index: true,
     follow: true,
   },
-  openGraph: {
+  openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
     title: 'Aim Trainer Valorant - Cambio de objetivos | SkillDrills',
     description: 'Aim trainer gratis en el navegador: practica cambios rápidos de objetivo, transiciones continuas y spray transfer en Valorant y CS2.',
     url: 'https://skilldrills.online/es/drills/fps/target-switching-swarm',
@@ -38,7 +38,7 @@ export const metadata = {
     locale: 'es_ES',
     type: 'website',
   },
-  twitter: {
+  twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: 'summary_large_image',
     title: 'Aim Trainer Valorant - Cambio de objetivos | SkillDrills',
     description: 'Aim trainer gratis en el navegador: practica cambios rápidos de objetivo, transiciones continuas y spray transfer en Valorant y CS2.',

@@ -22,14 +22,14 @@ export const metadata = {
     "percepção temporal do movimento",
     "teste de pulso visual"
 ],
-  openGraph: {
+  openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
     title: "Discriminação Temporal | Ritmo Visual | SkillDrills",
     description: "Encontre a célula fora de fase numa matriz pulsante e pratique a discriminação temporal visual.",
     type: "website",
     url: "https://skilldrills.online/pt/drills/visual/visual-recognition/rhythm-anomaly",
     siteName: "SkillDrills",
   },
-  twitter: {
+  twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: "summary_large_image",
     title: "Discriminação Temporal | Ritmo Visual | SkillDrills",
     description: "Encontre a célula fora de fase numa matriz pulsante e pratique a discriminação temporal visual.",

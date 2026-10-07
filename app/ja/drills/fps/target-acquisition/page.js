@@ -30,7 +30,7 @@ export const metadata = {
     index: true,
     follow: true,
   },
-  openGraph: {
+  openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
     title: "VALORANT エイム練習 - ターゲット捕捉トレーナー | SkillDrills",
     description: "ブラウザですぐできる無料のVALORANTエイム練習。敵の発見・識別から初弾クリックまでの速さと命中率を測定します。",
     url: "https://skilldrills.online/ja/drills/fps/target-acquisition",
@@ -38,7 +38,7 @@ export const metadata = {
     locale: 'ja_JP',
     type: 'website',
   },
-  twitter: {
+  twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: 'summary_large_image',
     title: "VALORANT エイム練習 - ターゲット捕捉トレーナー | SkillDrills",
     description: "ブラウザですぐできる無料のVALORANTエイム練習。敵の発見・識別から初弾クリックまでの速さと命中率を測定します。",

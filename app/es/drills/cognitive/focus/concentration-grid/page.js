@@ -35,7 +35,7 @@ export const metadata = {
     "tabla de schulte 5x5 interactiva",
     "test de atencion y concentracion online"
   ],
-  openGraph: {
+  openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
     title: "Tabla de Schulte Online – Test de Concentración y Visión Periférica | SkillDrills",
     description: "Entrena tu visión periférica, lectura rápida y velocidad de búsqueda visual con la tabla de Schulte online gratis. Encuentra números secuenciales en cuadrículas en expansión (3x3 a 8x8) sin descargas.",
     type: "website",
@@ -43,7 +43,7 @@ export const metadata = {
     siteName: "SkillDrills",
     locale: "es_ES",
   },
-  twitter: {
+  twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: "summary_large_image",
     title: "Tabla de Schulte Online – Test de Concentración y Visión Periférica | SkillDrills",
     description: "Entrena tu visión periférica, lectura rápida y velocidad de búsqueda visual con la tabla de Schulte online gratis. Encuentra números secuenciales en cuadrículas en expansión (3x3 a 8x8) sin descargas.",

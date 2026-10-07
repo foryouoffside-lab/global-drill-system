@@ -21,7 +21,7 @@ export const metadata = {
     "フラッシュ反応テスト",
     "オンライン 反応速度"
   ],
-  openGraph: {
+  openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
     title: "反射神経テスト・反応速度測定 | 無料オンライン | SkillDrills",
     description: "反射神経テストで視覚反応速度をミリ秒測定。中央の光刺激に反応する無料オンライン練習で、画面・入力遅延を含む参考値です。",
     type: 'article',
@@ -29,7 +29,7 @@ export const metadata = {
     siteName: 'SkillDrills',
     locale: 'ja_JP',
   },
-  twitter: {
+  twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: 'summary_large_image',
     title: "反射神経テスト・反応速度測定 | 無料オンライン | SkillDrills",
     description: "反射神経テストで光刺激への反応速度を練習。複数試行のミリ秒スコアを同じ端末で比較できます。",

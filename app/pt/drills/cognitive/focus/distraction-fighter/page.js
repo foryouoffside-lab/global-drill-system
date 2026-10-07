@@ -22,7 +22,7 @@ export const metadata = {
     canonical: "https://skilldrills.online/pt/drills/cognitive/focus/distraction-fighter",
     languages: getAlternateLanguages('/drills/cognitive/focus/distraction-fighter')
   },
-  openGraph: {
+  openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
     title: "Teste de Stroop | Atenção Seletiva | SkillDrills",
     description: "Teste de Stroop grátis no navegador: escolha a cor da tinta, não a palavra. Um autocheck cognitivo não clínico.",
     url: "https://skilldrills.online/pt/drills/cognitive/focus/distraction-fighter",
@@ -30,7 +30,7 @@ export const metadata = {
     locale: "pt_BR",
     type: "website"
   },
-  twitter: {
+  twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: "summary_large_image",
     title: "Teste de Stroop | Atenção Seletiva | SkillDrills",
     description: "Teste de Stroop grátis no navegador: escolha a cor da tinta, não a palavra. Um autocheck cognitivo não clínico."

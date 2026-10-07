@@ -9,7 +9,7 @@ export const metadata = {
   title: "속독 테스트 | RSVP 읽기 훈련 | SkillDrills",
   description: "무료 브라우저 속독 테스트에서 단어를 한 지점에 빠르게 표시합니다. WPM과 정확도를 확인하는 비임상 읽기 훈련입니다.",
   keywords: ["속독 테스트", "속독 테스트 온라인", "속독 연습", "읽기 속도 측정", "독서 속도 테스트", "분당 단어수", "빠른 읽기 훈련", "RSVP 속독"],
-  openGraph: {
+  openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
     title: "속독 테스트 | RSVP 읽기 훈련 | SkillDrills",
     description: "무료 브라우저 속독 테스트에서 단어를 한 지점에 빠르게 표시합니다. WPM과 정확도를 확인하는 비임상 읽기 훈련입니다.",
     type: 'article',
@@ -17,7 +17,7 @@ export const metadata = {
     siteName: 'SkillDrills',
     locale: 'ko_KR',
   },
-  twitter: {
+  twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: 'summary_large_image',
     title: "속독 테스트 | RSVP 읽기 훈련 | SkillDrills",
     description: "무료 브라우저 속독 테스트에서 단어를 한 지점에 빠르게 표시합니다. WPM과 정확도를 확인하는 비임상 읽기 훈련입니다.",

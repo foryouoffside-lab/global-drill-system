@@ -30,7 +30,7 @@ export const metadata = {
     'cálculo de distâncias',
     'percepção espacial',
   ],
-  openGraph: {
+  openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
     title: 'Teste de estereopsia online | Noção de distância',
     description: 'Teste de estereopsia e percepção de profundidade online grátis. Treine a noção de distância com um alvo em movimento; não substitui exame oftalmológico.',
     type: 'article',
@@ -38,7 +38,7 @@ export const metadata = {
     siteName: 'SkillDrills',
     locale: 'pt_BR',
   },
-  twitter: {
+  twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: 'summary_large_image',
     title: 'Teste de estereopsia online | Noção de distância',
     description: 'Teste de estereopsia e percepção de profundidade online grátis. Treine a noção de distância com um alvo em movimento; não substitui exame oftalmológico.',

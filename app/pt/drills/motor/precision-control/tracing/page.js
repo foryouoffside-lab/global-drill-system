@@ -18,7 +18,7 @@ export const metadata = {
     'rastreamento do cursor', 'precisão do traçado', 'exercício de mira suave',
     'teste de fluidez motora mouse', 'jogo de seguir a linha', 'coordenação visomotora',
   ],
-  openGraph: {
+  openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
     title: 'Teste de rastreamento do mouse | Seguir linha | SkillDrills',
     description: 'Siga uma onda em movimento com o cursor e treine rastreamento contínuo, precisão do traçado e controle motor fino. Grátis no navegador.',
     type: 'article',
@@ -26,7 +26,7 @@ export const metadata = {
     siteName: 'SkillDrills',
     locale: 'pt_BR',
   },
-  twitter: {
+  twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: 'summary_large_image',
     title: 'Teste de rastreamento do mouse | Seguir linha | SkillDrills',
     description: 'Siga uma onda em movimento com o cursor e treine rastreamento contínuo, precisão do traçado e controle motor fino. Grátis no navegador.',

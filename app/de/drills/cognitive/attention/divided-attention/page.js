@@ -11,7 +11,7 @@ export const metadata = {
   keywords: ["Test der geteilten Aufmerksamkeit", "geteilte Aufmerksamkeit Test", "Dual-Task-Test", "Dual Task Training", "Multitasking Aufmerksamkeit", "geteilte Aufmerksamkeit Übungen", "kognitiver Engpass", "visuelles Multitasking", "Gehirntraining Dual Task", "Konzentrationstest",
     "dual task test online",
     "geteilte aufmerksamkeit aufgaben"],
-  openGraph: {
+  openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
     title: "Test der geteilten Aufmerksamkeit | Dual Task | SkillDrills",
     description: "Kostenloser Online-Test für geteilte Aufmerksamkeit (Dual-Task): Verfolge visuelle Ziele und klassifiziere Zahlenreihen zur Messung kognitiver Engpässe.",
     type: 'article',
@@ -19,7 +19,7 @@ export const metadata = {
     siteName: 'SkillDrills',
     locale: 'de_DE',
   },
-  twitter: {
+  twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: 'summary_large_image',
     title: "Test der geteilten Aufmerksamkeit | Dual Task | SkillDrills",
     description: "Kostenloser Online-Test für geteilte Aufmerksamkeit (Dual-Task): Verfolge visuelle Ziele und klassifiziere Zahlenreihen zur Messung kognitiver Engpässe.",

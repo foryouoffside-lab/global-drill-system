@@ -45,7 +45,7 @@ export const metadata = {
     index: true,
     follow: true,
   },
-  openGraph: {
+  openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
     title: 'VALORANT ターゲット切り替え - エイム練習 | SkillDrills',
     description: "ブラウザで無料のVALORANTターゲット切り替え練習。複数の敵を素早く渡り、スプレートランスファーと連続フリックの精度を測定します。",
     url: "https://skilldrills.online/ja/drills/fps/target-switching-swarm",
@@ -53,7 +53,7 @@ export const metadata = {
     locale: 'ja_JP',
     type: 'website',
   },
-  twitter: {
+  twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: 'summary_large_image',
     title: 'VALORANT ターゲット切り替え - エイム練習 | SkillDrills',
     description: "ブラウザで無料のVALORANTターゲット切り替え練習。複数の敵を素早く渡り、スプレートランスファーと連続フリックの精度を測定します。",

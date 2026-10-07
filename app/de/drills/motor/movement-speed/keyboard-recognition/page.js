@@ -22,7 +22,7 @@ export const metadata = {
     'Keybind Muskelgedächtnis',
     'Tastatur Reaktion online',
   ],
-  openGraph: {
+  openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
     title: 'Tastatur Reaktionszeit | Keybind Test | SkillDrills',
     description: 'Messe Reaktionszeit, Genauigkeit und Keybind-Tempo mit einer angezeigten Taste direkt im Browser.',
     type: 'article',
@@ -30,7 +30,7 @@ export const metadata = {
     siteName: 'SkillDrills',
     locale: 'de_DE',
   },
-  twitter: {
+  twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: 'summary_large_image',
     title: 'Tastatur Reaktionszeit | Keybind Test | SkillDrills',
     description: 'Kostenloser Test für Tastatur-Reaktion und Keybind-Tempo im Browser.',

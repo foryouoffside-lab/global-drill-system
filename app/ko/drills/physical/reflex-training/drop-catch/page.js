@@ -41,7 +41,7 @@ export const metadata = {
     canonical: 'https://skilldrills.online/ko/drills/physical/reflex-training/drop-catch',
     languages: getAlternateLanguages('/drills/physical/reflex-training/drop-catch'),
   },
-  openGraph: {
+  openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
     title: "자 반응속도 테스트 | 무료 반사신경 게임",
     description: "낙하하는 초록 표적을 잡고 붉은 함정을 피하는 무료 브라우저 반사신경 게임입니다.",
     url: 'https://skilldrills.online/ko/drills/physical/reflex-training/drop-catch',
@@ -49,7 +49,7 @@ export const metadata = {
     locale: 'ko_KR',
     type: 'website',
   },
-  twitter: {
+  twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: 'summary_large_image',
     title: "자 반응속도 테스트 | 무료 반사신경 게임",
     description: "낙하하는 초록 표적을 잡고 붉은 함정을 피하는 무료 브라우저 반사신경 게임입니다.",

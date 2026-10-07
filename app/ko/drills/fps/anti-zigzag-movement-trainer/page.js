@@ -28,7 +28,7 @@ export const metadata = {
     index: true,
     follow: true,
   },
-  openGraph: {
+  openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
     title: "에임 연습 | 지그재그 무빙·트래킹 | SkillDrills",
     description: "무료 브라우저 에임 연습으로 지그재그 회피 무빙과 슬라이딩 캔슬을 따라가며 방향 전환·오버슈팅을 측정하세요.",
     url: "https://skilldrills.online/ko/drills/fps/anti-zigzag-movement-trainer",
@@ -36,7 +36,7 @@ export const metadata = {
     locale: 'ko_KR',
     type: 'website',
   },
-  twitter: {
+  twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: 'summary_large_image',
     title: "에임 연습 | 지그재그 무빙·트래킹 | SkillDrills",
     description: "무료 브라우저 에임 연습으로 지그재그 회피 무빙과 슬라이딩 캔슬을 따라가며 방향 전환·오버슈팅을 측정하세요.",

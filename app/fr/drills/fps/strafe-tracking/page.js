@@ -30,7 +30,7 @@ export const metadata = {
     index: true,
     follow: true,
   },
-  openGraph: {
+  openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
     title: "Entraînement de Tracking | Visée FPS | SkillDrills",
     description: "Entraînement gratuit au tracking dans le navigateur : pratiquez la visée en mouvement, les strafes et les changements de direction.",
     url: "https://skilldrills.online/fr/drills/fps/strafe-tracking",
@@ -38,7 +38,7 @@ export const metadata = {
     locale: 'fr_FR',
     type: 'website',
   },
-  twitter: {
+  twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: 'summary_large_image',
     title: "Entraînement de Tracking | Visée FPS | SkillDrills",
     description: "Entraînement gratuit au tracking dans le navigateur : pratiquez la visée en mouvement, les strafes et les changements de direction.",

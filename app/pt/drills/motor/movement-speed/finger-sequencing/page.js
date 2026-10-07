@@ -22,7 +22,7 @@ export const metadata = {
     'teste de clique e precisão',
     'trajetória do mouse',
   ],
-  openGraph: {
+  openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
     title: 'Treino de mira sequencial | Teste de clique | SkillDrills',
     description: 'Clique nos alvos em ordem para medir troca de alvo e precisão no navegador.',
     type: 'article',
@@ -30,7 +30,7 @@ export const metadata = {
     siteName: 'SkillDrills',
     locale: 'pt_BR',
   },
-  twitter: {
+  twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: 'summary_large_image',
     title: 'Treino de mira sequencial | Teste de clique | SkillDrills',
     description: 'Treino de mira gratuito para trocar de alvo e clicar com precisão.',

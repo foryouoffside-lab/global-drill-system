@@ -32,7 +32,7 @@ export const metadata = {
     "selektive Aufmerksamkeit",
     "kognitive Inhibition"
   ],
-  openGraph: {
+  openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
     title: "Stroop-Test | Selektive Aufmerksamkeit | SkillDrills",
     description: "Kostenloser Stroop-Test im Browser: Wähle die Schriftfarbe statt des Wortes. Kein klinischer Test, sondern ein kognitiver Selbstcheck.",
     type: "website",
@@ -40,7 +40,7 @@ export const metadata = {
     siteName: "SkillDrills",
     locale: "de_DE",
   },
-  twitter: {
+  twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: "summary_large_image",
     title: "Stroop-Test | Selektive Aufmerksamkeit | SkillDrills",
     description: "Kostenloser Stroop-Test im Browser: Wähle die Schriftfarbe statt des Wortes. Kein klinischer Test, sondern ein kognitiver Selbstcheck.",

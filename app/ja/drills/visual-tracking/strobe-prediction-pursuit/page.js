@@ -26,7 +26,7 @@ export const metadata = {
     languages: getAlternateLanguages("/drills/visual-tracking/strobe-prediction-pursuit"),
   },
   robots: { index: true, follow: true },
-  openGraph: {
+  openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
     title: "ストロボ視覚トレーニング｜動体視力の予測練習 | SkillDrills",
     description: "点滅で隠れる標的の軌道を予測する無料練習。再点灯時のズレと追従の連続性を記録。",
     url: "https://skilldrills.online/ja/drills/visual-tracking/strobe-prediction-pursuit",
@@ -34,7 +34,7 @@ export const metadata = {
     locale: "ja_JP",
     type: "website",
   },
-  twitter: {
+  twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: "summary_large_image",
     title: "ストロボ視覚トレーニング｜動体視力の予測練習 | SkillDrills",
     description: "点滅で隠れる標的の軌道を予測する無料練習。再点灯時のズレと追従の連続性を記録。",

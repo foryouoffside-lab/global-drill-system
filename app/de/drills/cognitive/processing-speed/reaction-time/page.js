@@ -9,7 +9,7 @@ export const metadata = {
   title: "Wahlreaktionszeit-Test | Entscheidungstempo | SkillDrills",
   description: "Kostenloser Wahlreaktionszeit-Test im Browser: Wähle das Ziel nach einer wechselnden Regel. Übung für Entscheidungstempo, kein klinischer Test.",
   keywords: ["Reaktionstest", "Reaktionszeit Test", "Reaktionszeit Test online", "Reaktionszeit messen", "Wahlreaktionszeit", "Entscheidungsgeschwindigkeit", "Reaktionstest kostenlos", "visuelle Reaktionszeit"],
-  openGraph: {
+  openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
     title: "Wahlreaktionszeit-Test | Entscheidungstempo | SkillDrills",
     description: "Kostenloser Wahlreaktionszeit-Test im Browser: Wähle das Ziel nach einer wechselnden Regel. Übung für Entscheidungstempo, kein klinischer Test.",
     type: 'article',
@@ -17,7 +17,7 @@ export const metadata = {
     siteName: 'SkillDrills',
     locale: 'de_DE',
   },
-  twitter: {
+  twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: 'summary_large_image',
     title: "Wahlreaktionszeit-Test | Entscheidungstempo | SkillDrills",
     description: "Kostenloser Wahlreaktionszeit-Test im Browser: Wähle das Ziel nach einer wechselnden Regel. Übung für Entscheidungstempo, kein klinischer Test.",

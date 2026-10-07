@@ -9,7 +9,7 @@ export const metadata = {
   title: "Konzentrationstest | Daueraufmerksamkeit | SkillDrills",
   description: "Kostenloser Konzentrationstest im Browser: Prüfe Daueraufmerksamkeit, Impulskontrolle und Regelwechsel. Kein klinischer Diagnosetest.",
   keywords: ["Konzentrationstest", "Konzentrationstest online", "Konzentrationstest kostenlos", "Daueraufmerksamkeit Test", "Aufmerksamkeitstest", "Vigilanztest online", "Impulskontrolle Test", "Fokus Test kostenlos", "Gehirntraining Konzentration", "CPT Test online", "Konzentration üben"],
-  openGraph: {
+  openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
     title: "Konzentrationstest | Daueraufmerksamkeit | SkillDrills",
     description: "Kostenloser Konzentrationstest im Browser: Prüfe Daueraufmerksamkeit, Impulskontrolle und Regelwechsel. Kein klinischer Diagnosetest.",
     type: 'article',
@@ -17,7 +17,7 @@ export const metadata = {
     siteName: 'SkillDrills',
     locale: 'de_DE',
   },
-  twitter: {
+  twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: 'summary_large_image',
     title: "Konzentrationstest | Daueraufmerksamkeit | SkillDrills",
     description: "Kostenloser Konzentrationstest im Browser: Prüfe Daueraufmerksamkeit, Impulskontrolle und Regelwechsel. Kein klinischer Diagnosetest.",

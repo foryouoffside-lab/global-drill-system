@@ -30,7 +30,7 @@ export const metadata = {
     index: true,
     follow: true,
   },
-  openGraph: {
+  openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
     title: "반동 제어 연습 | FPS 스프레이 컨트롤 | SkillDrills",
     description: "총기별 반동 패턴과 수직 드래그를 익히는 무료 브라우저 반동 제어·스프레이 컨트롤 훈련.",
     url: "https://skilldrills.online/ko/drills/fps/recoil-control",
@@ -38,7 +38,7 @@ export const metadata = {
     locale: 'ko_KR',
     type: 'website',
   },
-  twitter: {
+  twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: 'summary_large_image',
     title: "반동 제어 연습 | FPS 스프레이 컨트롤 | SkillDrills",
     description: "총기별 반동 패턴과 수직 드래그를 익히는 무료 브라우저 반동 제어·스프레이 컨트롤 훈련.",

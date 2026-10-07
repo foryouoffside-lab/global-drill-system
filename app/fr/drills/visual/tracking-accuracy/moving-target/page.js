@@ -21,7 +21,7 @@ export const metadata = {
     "trajectoire visuelle",
     "vitesse de poursuite"
   ],
-  openGraph: {
+  openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
     title: "Poursuite Visuelle | Cible Mobile | SkillDrills",
     description: "Suivez des cibles mobiles, anticipez leur trajectoire et entraînez la coordination œil-main gratuitement dans le navigateur.",
     type: 'article',
@@ -29,7 +29,7 @@ export const metadata = {
     siteName: 'SkillDrills',
     locale: 'fr_FR',
   },
-  twitter: {
+  twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: 'summary_large_image',
     title: "Poursuite Visuelle | Cible Mobile | SkillDrills",
     description: "Entraînez la poursuite visuelle, l'anticipation de trajectoire et l'interception de cibles mobiles.",

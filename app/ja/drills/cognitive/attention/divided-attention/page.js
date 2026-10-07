@@ -11,7 +11,7 @@ export const metadata = {
   keywords: ["注意分割テスト", "二重課題 トレーニング", "デュアルタスク 練習", "注意の分割", "マルチタスク 脳トレ", "二重課題 テスト", "心理的不応期", "認知ボトルネック", "注意配分 テスト", "動体追従 数字処理",
     "二重課題 認知テスト",
     "注意分割 訓練 無料"],
-  openGraph: {
+  openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
     title: "注意分割テスト・二重課題トレーニング – デュアルタスク能力測定 | SkillDrills",
     description: "無料ブラウザ完結の注意分割テスト・デュアルタスク訓練ツール。動くターゲットの視覚追従と数字ストリームの偶数判定を同時に処理し、心理的不応期（PRP）と脳の認知ボトルネック処理能力を精密測定。",
     type: 'article',
@@ -19,7 +19,7 @@ export const metadata = {
     siteName: 'SkillDrills',
     locale: 'ja_JP',
   },
-  twitter: {
+  twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: 'summary_large_image',
     title: "注意分割テスト・二重課題トレーニング – デュアルタスク能力測定 | SkillDrills",
     description: "無料ブラウザ完結の注意分割テスト・デュアルタスク訓練ツール。動くターゲットの視覚追従と数字ストリームの偶数判定を同時に処理し、心理的不応期（PRP）と脳の認知ボトルネック処理能力を精密測定。",

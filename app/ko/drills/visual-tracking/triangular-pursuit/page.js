@@ -21,7 +21,7 @@ export const metadata = {
     "수직 수평 안구 협응",
     "온라인 동체시력 측정"
   ],
-  openGraph: {
+  openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
     title: "삼각형 시선 추적 훈련 | SkillDrills",
     description: "삼각 궤적 표적을 따라가는 무료 브라우저 훈련. 대각선 추적, 모서리 재포착, 추적 오차와 표적 손실을 기록합니다.",
     url: 'https://skilldrills.online/ko/drills/visual-tracking/triangular-pursuit',
@@ -29,7 +29,7 @@ export const metadata = {
     locale: 'ko_KR',
     type: 'website',
   },
-  twitter: {
+  twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: 'summary_large_image',
     title: "삼각형 시선 추적 훈련 | SkillDrills",
     description: "삼각 궤적 표적을 따라가는 무료 브라우저 훈련. 대각선 추적, 모서리 재포착, 추적 오차와 표적 손실을 기록합니다.",

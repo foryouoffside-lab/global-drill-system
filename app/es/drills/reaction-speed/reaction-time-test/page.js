@@ -34,7 +34,7 @@ export const metadata = {
     canonical: 'https://skilldrills.online/es/drills/reaction-speed/reaction-time-test',
     languages: getAlternateLanguages('/drills/reaction-speed/reaction-time-test'),
   },
-  openGraph: {
+  openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
     title: 'Test de reflejos online | SkillDrills',
     description:
       'Mide tus reflejos y tu tiempo de reacción visual en milisegundos. Completa varios intentos y compara tu media y regularidad.',
@@ -43,7 +43,7 @@ export const metadata = {
     locale: 'es_ES',
     type: 'website',
   },
-  twitter: {
+  twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: 'summary_large_image',
     title: 'Test de reflejos online | SkillDrills',
     description:

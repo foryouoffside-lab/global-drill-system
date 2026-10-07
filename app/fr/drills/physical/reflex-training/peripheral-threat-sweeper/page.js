@@ -40,7 +40,7 @@ export const metadata = {
     canonical: 'https://skilldrills.online/fr/drills/physical/reflex-training/peripheral-threat-sweeper',
     languages: getAlternateLanguages('/drills/physical/reflex-training/peripheral-threat-sweeper'),
   },
-  openGraph: {
+  openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
     title: "Vision périphérique | Test en ligne",
     description: "Test gratuit de vision périphérique au navigateur. Gardez le regard au centre, repérez les menaces latérales et entraînez le champ visuel utile (UFOV).",
     url: 'https://skilldrills.online/fr/drills/physical/reflex-training/peripheral-threat-sweeper',
@@ -48,7 +48,7 @@ export const metadata = {
     locale: 'fr_FR',
     type: 'website',
   },
-  twitter: {
+  twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: 'summary_large_image',
     title: "Vision périphérique | Test en ligne",
     description: "Test gratuit de vision périphérique au navigateur. Gardez le regard au centre, repérez les menaces latérales et entraînez le champ visuel utile (UFOV).",

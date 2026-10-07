@@ -21,7 +21,7 @@ export const metadata = {
     "シュルテグリッド",
     "視覚認知"
   ],
-  openGraph: {
+  openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
     title: "視覚探索トレーニング | 選択的注意テスト | SkillDrills",
     description: "変化する100セルグリッドから指定コードを探す無料ドリル。選択的注意と視覚的走査を練習できます。",
     type: 'article',
@@ -29,7 +29,7 @@ export const metadata = {
     siteName: 'SkillDrills',
     locale: 'ja_JP',
   },
-  twitter: {
+  twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: 'summary_large_image',
     title: "視覚探索トレーニング | 選択的注意テスト | SkillDrills",
     description: "変化するグリッドから指定コードを見つけ、視覚的注意と情報処理速度を練習できます。",

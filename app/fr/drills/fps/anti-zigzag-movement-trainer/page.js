@@ -28,7 +28,7 @@ export const metadata = {
     index: true,
     follow: true,
   },
-  openGraph: {
+  openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
       title: "Aim Trainer | Tracking Évasif | SkillDrills",
     description: "Aim trainer gratuit dans le navigateur : suivez les déplacements en zigzag et les slide cancels en contrôlant l'overshoot.",
     url: "https://skilldrills.online/fr/drills/fps/anti-zigzag-movement-trainer",
@@ -36,7 +36,7 @@ export const metadata = {
     locale: 'fr_FR',
     type: 'website',
   },
-  twitter: {
+  twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: 'summary_large_image',
       title: "Aim Trainer | Tracking Évasif | SkillDrills",
     description: "Aim trainer gratuit dans le navigateur : suivez les déplacements en zigzag et les slide cancels en contrôlant l'overshoot.",

@@ -31,7 +31,7 @@ export const metadata = {
     index: true,
     follow: true,
   },
-  openGraph: {
+  openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
     title: 'Treino de Mira Vertical - Tracking Aéreo | SkillDrills',
     description: 'Treine mira vertical e tracking aéreo no navegador. Pratique o eixo Y e a previsão de quedas no Apex Legends e Overwatch 2.',
     url: 'https://skilldrills.online/pt/drills/fps/vertical-air-track',
@@ -39,7 +39,7 @@ export const metadata = {
     locale: 'pt_BR',
     type: 'website',
   },
-  twitter: {
+  twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: 'summary_large_image',
     title: 'Treino de Mira Vertical - Tracking Aéreo | SkillDrills',
     description: 'Treine mira vertical e tracking aéreo no navegador. Pratique o eixo Y e a previsão de quedas no Apex Legends e Overwatch 2.',

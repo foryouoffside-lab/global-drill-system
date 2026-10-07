@@ -23,14 +23,14 @@ export const metadata = {
     "집중력 훈련",
     "틀린 글자 찾기"
 ],
-  openGraph: {
+  openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
     title: "글자 찾기 테스트 | 시각 탐색·선택적 주의 | SkillDrills",
     description: "회전된 문자 속에서 표적을 찾으며 시각 탐색과 선택적 주의력을 연습하는 무료 온라인 과제입니다.",
     type: "website",
     url: "https://skilldrills.online/ko/drills/visual/visual-recognition/visual-search",
     siteName: "SkillDrills",
   },
-  twitter: {
+  twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: "summary_large_image",
     title: "글자 찾기 테스트 | 시각 탐색·선택적 주의 | SkillDrills",
     description: "글자 속 표적을 찾는 시각 탐색 연습입니다.",

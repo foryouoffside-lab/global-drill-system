@@ -30,7 +30,7 @@ export const metadata = {
     index: true,
     follow: true,
   },
-  openGraph: {
+  openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
     title: 'Treino de Mira - Troca de Alvos Valorant | SkillDrills',
     description: 'Treino de mira grátis no navegador: pratique troca rápida de alvos, transições contínuas e spray transfer no Valorant e CS2.',
     url: 'https://skilldrills.online/pt/drills/fps/target-switching-swarm',
@@ -38,7 +38,7 @@ export const metadata = {
     locale: 'pt_BR',
     type: 'website',
   },
-  twitter: {
+  twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: 'summary_large_image',
     title: 'Treino de Mira - Troca de Alvos Valorant | SkillDrills',
     description: 'Treino de mira grátis no navegador: pratique troca rápida de alvos, transições contínuas e spray transfer no Valorant e CS2.',

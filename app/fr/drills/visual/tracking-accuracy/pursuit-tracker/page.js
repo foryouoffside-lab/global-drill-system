@@ -32,13 +32,13 @@ export const metadata = {
     type: "website",
     locale: "fr_FR",
     alternateLocale: ["en_US", "de_DE", "ko_KR", "ja_JP", "pt_PT", "es_ES"],
-    images: [{ url: "https://skilldrills.online/og-default.svg", width: 1200, height: 630 }],
+    images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
   },
   twitter: {
     card: "summary_large_image",
     title: "Poursuite Oculaire | Suivi Visuel | SkillDrills",
     description: "Entraînez la poursuite oculaire et la stabilité du regard dans le navigateur. Les résultats varient selon l'écran et la souris.",
-    images: ["https://skilldrills.online/og-default.svg"],
+    images: ["https://skilldrills.online/opengraph-image"],
   },
 };
 

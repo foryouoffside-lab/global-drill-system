@@ -32,7 +32,7 @@ export const metadata = {
     canonical: 'https://skilldrills.online/fr/drills/reaction-speed/reaction-time-test',
     languages: getAlternateLanguages('/drills/reaction-speed/reaction-time-test'),
   },
-  openGraph: {
+  openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
     title: "Test de temps de réaction en ligne | SkillDrills",
     description: "Mesurez vos réflexes visuels en millisecondes, répétez plusieurs essais et comparez votre moyenne et votre régularité.",
     url: 'https://skilldrills.online/fr/drills/reaction-speed/reaction-time-test',
@@ -40,7 +40,7 @@ export const metadata = {
     locale: 'fr_FR',
     type: 'website',
   },
-  twitter: {
+  twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: 'summary_large_image',
     title: "Test de temps de réaction en ligne | SkillDrills",
     description: "Mesurez votre vitesse de réaction visuelle en millisecondes en ligne gratuitement, avec des repères clairs sur la latence de l'appareil.",

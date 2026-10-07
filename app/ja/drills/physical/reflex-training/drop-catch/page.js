@@ -31,7 +31,7 @@ export const metadata = {
     canonical: 'https://skilldrills.online/ja/drills/physical/reflex-training/drop-catch',
     languages: getAlternateLanguages('/drills/physical/reflex-training/drop-catch'),
   },
-  openGraph: {
+  openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
     title: "定規落としゲーム｜反応時間テスト | SkillDrills",
     description: "落下する緑の標的をキャッチし、赤いダミーを避ける無料の反射神経ゲーム。ブラウザで反応時間を練習できます。",
     url: 'https://skilldrills.online/ja/drills/physical/reflex-training/drop-catch',
@@ -39,7 +39,7 @@ export const metadata = {
     locale: 'ja_JP',
     type: 'website',
   },
-  twitter: {
+  twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: 'summary_large_image',
     title: "定規落としゲーム｜反応時間テスト | SkillDrills",
     description: "落下する緑の標的をキャッチし、赤いダミーを避ける無料の反射神経ゲーム。ブラウザで反応時間を練習できます。",

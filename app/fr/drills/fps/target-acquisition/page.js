@@ -30,7 +30,7 @@ export const metadata = {
     index: true,
     follow: true,
   },
-  openGraph: {
+  openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
     title: "Aim Trainer Valorant - Acquisition de cibles | SkillDrills",
     description: "Aim trainer gratuit dans le navigateur pour Valorant et CS2 : travaillez l'acquisition de cibles, la détection visuelle et la précision du premier tir.",
     url: "https://skilldrills.online/fr/drills/fps/target-acquisition",
@@ -38,7 +38,7 @@ export const metadata = {
     locale: 'fr_FR',
     type: 'website',
   },
-  twitter: {
+  twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: 'summary_large_image',
     title: "Aim Trainer Valorant - Acquisition de cibles | SkillDrills",
     description: "Aim trainer gratuit dans le navigateur pour Valorant et CS2 : travaillez l'acquisition de cibles, la détection visuelle et la précision du premier tir.",

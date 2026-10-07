@@ -21,7 +21,7 @@ export const metadata = {
     "atenção sustentada SART",
     "sinal Go e No-Go"
   ],
-  openGraph: {
+  openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
     title: "Teste Go/No-Go | Controle inibitório | SkillDrills",
     description: "Responda ao verde e freie no vermelho para verificar controle inibitório, velocidade e erros de comissão.",
     type: 'article',
@@ -29,7 +29,7 @@ export const metadata = {
     siteName: 'SkillDrills',
     locale: 'pt_BR',
   },
-  twitter: {
+  twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: 'summary_large_image',
     title: "Teste Go/No-Go | Controle inibitório | SkillDrills",
     description: "Treino online de controle inibitório: responda ao verde e freie no vermelho.",

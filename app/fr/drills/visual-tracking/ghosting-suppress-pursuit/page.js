@@ -27,7 +27,7 @@ export const metadata = {
     languages: getAlternateLanguages("/drills/visual-tracking/ghosting-suppress-pursuit"),
   },
   robots: { index: true, follow: true },
-  openGraph: {
+  openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
     title: "Test de Rémanence Écran | SkillDrills",
     description: "Observez les traînées et halos d’une cible mobile et travaillez fixation fovéale, netteté du mouvement et stabilité du regard.",
     url: "https://skilldrills.online/fr/drills/visual-tracking/ghosting-suppress-pursuit",
@@ -35,7 +35,7 @@ export const metadata = {
     locale: "fr_FR",
     type: "website",
   },
-  twitter: {
+  twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: "summary_large_image",
     title: "Test de Rémanence Écran | SkillDrills",
     description: "Observez les traînées et halos d’une cible mobile et travaillez fixation fovéale, netteté du mouvement et stabilité du regard.",

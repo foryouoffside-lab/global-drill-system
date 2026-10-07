@@ -21,7 +21,7 @@ export const metadata = {
     "rastreo de blancos",
     "velocidad de seguimiento"
   ],
-  openGraph: {
+  openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
     title: "Seguimiento Visual | Objetivo Móvil | SkillDrills",
     description: "Sigue objetivos móviles, predice trayectorias y practica coordinación ojo-mano gratis en el navegador. No sustituye una evaluación clínica.",
     type: 'article',
@@ -29,7 +29,7 @@ export const metadata = {
     siteName: 'SkillDrills',
     locale: 'es_ES',
   },
-  twitter: {
+  twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: 'summary_large_image',
     title: "Seguimiento Visual | Objetivo Móvil | SkillDrills",
     description: "Entrena el seguimiento visual, la predicción de trayectorias y la intercepción de objetivos móviles.",

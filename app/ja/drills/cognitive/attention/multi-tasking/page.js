@@ -9,7 +9,7 @@ export const metadata = {
   title: "マルチタスクテスト | 二重ターゲット追従 | SkillDrills",
   description: "無料ブラウザで二つのターゲットを同時に追従するマルチタスク練習。医学的診断ではない認知セルフチェックです。",
   keywords: ["マルチタスク 練習", "マルチタスク テスト", "二重ターゲット 追従", "並行処理 能力 測定", "タスク切り替え コスト", "認知的柔軟性 テスト", "両視野 追従 訓練", "脳トレ マルチタスク", "注意配分 テスト", "大脳半球 協調 検査", "視覚ストリーム 処理", "情報処理速度 測定"],
-  openGraph: {
+  openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
     title: "マルチタスクテスト・二重ターゲット追従 – 並行処理能力診断 | SkillDrills",
     description: "無料ブラウザ完結のマルチタスクテスト。対向方向に流れる2つの独立した図形ストリームを両視野で同時に監視し、タスク切り替えコストと大脳半球間の協調処理能力を精密測定。",
     type: 'article',
@@ -17,7 +17,7 @@ export const metadata = {
     siteName: 'SkillDrills',
     locale: 'ja_JP',
   },
-  twitter: {
+  twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: 'summary_large_image',
     title: "マルチタスクテスト・二重ターゲット追従 – 並行処理能力診断 | SkillDrills",
     description: "無料ブラウザ完結のマルチタスクテスト。対向方向に流れる2つの独立した図形ストリームを両視野で同時に監視し、タスク切り替えコストと大脳半球間の協調処理能力を精密測定。",

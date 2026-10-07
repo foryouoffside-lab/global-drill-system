@@ -30,7 +30,7 @@ export const metadata = {
     index: true,
     follow: true,
   },
-  openGraph: {
+  openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
     title: "Treino de Mira Valorant - Aquisição de Alvos | SkillDrills",
     description: "Treino de mira gratuito no navegador para Valorant e CS2: pratique aquisição de alvos, detecção visual e precisão do primeiro tiro com métricas reais.",
     url: "https://skilldrills.online/pt/drills/fps/target-acquisition",
@@ -38,7 +38,7 @@ export const metadata = {
     locale: 'pt_BR',
     type: 'website',
   },
-  twitter: {
+  twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: 'summary_large_image',
     title: "Treino de Mira Valorant - Aquisição de Alvos | SkillDrills",
     description: "Treino de mira gratuito no navegador para Valorant e CS2: pratique aquisição de alvos, detecção visual e precisão do primeiro tiro com métricas reais.",

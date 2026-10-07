@@ -21,7 +21,7 @@ export const metadata = {
     "視野 注意力",
     "複数物体追跡"
   ],
-  openGraph: {
+  openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
     title: "複数対象追跡テスト | 周辺視野トレーニング | SkillDrills",
     description: "複数の動く標的を同時に追う無料MOTテスト。周辺視野と分割的視覚注意を練習できます。",
     type: 'article',
@@ -29,7 +29,7 @@ export const metadata = {
     siteName: 'SkillDrills',
     locale: 'ja_JP',
   },
-  twitter: {
+  twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: 'summary_large_image',
     title: "複数対象追跡テスト | 周辺視野トレーニング | SkillDrills",
     description: "複数の動く標的を同時に追う無料MOTテスト。視覚的注意と空間ワーキングメモリを練習できます。",

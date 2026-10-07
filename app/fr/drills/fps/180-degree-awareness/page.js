@@ -28,7 +28,7 @@ export const metadata = {
     index: true,
     follow: true,
   },
-  openGraph: {
+  openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
     title: "Entraînement demi-tour 180° | Visée FPS | SkillDrills",
     description: "Repérez une cible en vision périphérique, tournez à 180° et arrêtez le viseur avec précision dans ce drill FPS gratuit.",
     url: "https://skilldrills.online/fr/drills/fps/180-degree-awareness",
@@ -36,7 +36,7 @@ export const metadata = {
     locale: 'fr_FR',
     type: 'website',
   },
-  twitter: {
+  twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: 'summary_large_image',
     title: "Entraînement demi-tour 180° | Visée FPS | SkillDrills",
     description: "Repérez une cible en vision périphérique, tournez à 180° et arrêtez le viseur avec précision dans ce drill FPS gratuit.",

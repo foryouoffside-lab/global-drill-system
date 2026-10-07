@@ -18,7 +18,7 @@ export const metadata = {
     "réaction visuelle",
     "loi de Hick"
   ],
-  openGraph: {
+  openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
     title: "Temps de Réaction de Choix | Vitesse de Décision",
     description: "Test gratuit de temps de réaction de choix : sélectionnez la cible selon une règle qui change. Entraînez la décision visuelle ; non clinique.",
     type: 'article',
@@ -26,7 +26,7 @@ export const metadata = {
     siteName: 'SkillDrills',
     locale: 'fr_FR',
   },
-  twitter: {
+  twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: 'summary_large_image',
     title: "Temps de Réaction de Choix | Vitesse de Décision",
     description: "Test gratuit de temps de réaction de choix : sélectionnez la cible selon une règle qui change. Entraînez la décision visuelle ; non clinique.",

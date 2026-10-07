@@ -36,7 +36,7 @@ export const metadata = {
     canonical: 'https://skilldrills.online/es/drills/physical/fitness/jump-sequence',
     languages: getAlternateLanguages('/drills/physical/fitness/jump-sequence'),
   },
-  openGraph: {
+  openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
     title: "Ejercicios para Saltar Más Alto & Entrenamiento de Salto Vertical | SkillDrills",
     description: "Entrenamiento online gratuito de salto vertical y cálculo de trayectoria aérea. Domina el impulso pliométrico, el control en suspensión y la interceptación de blancos hasta 900 px/s basado en el ciclo de estiramiento-acortamiento.",
     url: 'https://skilldrills.online/es/drills/physical/fitness/jump-sequence',
@@ -44,7 +44,7 @@ export const metadata = {
     locale: 'es_ES',
     type: 'website',
   },
-  twitter: {
+  twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: 'summary_large_image',
     title: "Ejercicios para Saltar Más Alto & Entrenamiento de Salto Vertical | SkillDrills",
     description: "Entrenamiento online gratuito de salto vertical y cálculo de trayectoria aérea. Domina el impulso pliométrico, el control en suspensión y la interceptación de blancos hasta 900 px/s basado en el ciclo de estiramiento-acortamiento.",

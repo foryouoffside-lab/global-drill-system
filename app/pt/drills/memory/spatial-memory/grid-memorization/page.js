@@ -8,7 +8,7 @@ export const metadata = {
   title: "Teste de memória visual online | SkillDrills",
   description: "Teste sua memória visual online: memorize padrões de quadrados iluminados em uma grade e reconstrua o desenho direto no navegador.",
   keywords: ['teste de memória visual', 'jogo de memória visual', 'teste de memória espacial', 'matriz de memória', 'memória visuoespacial', 'grelha de memória', 'teste de padrões visuais', 'memória de trabalho visual', 'treino de memória visual', 'teste de memória online'],
-  openGraph: {
+  openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
     title: "Teste de memória visual online | SkillDrills",
     description: "Teste sua memória visual: memorize quadrados iluminados e reconstrua o padrão na grade, sem cadastro.",
     type: 'website',
@@ -16,7 +16,7 @@ export const metadata = {
     siteName: 'SkillDrills',
     locale: 'pt_BR',
   },
-  twitter: {
+  twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: 'summary_large_image',
     title: "Teste de memória visual online | SkillDrills",
     description: "Teste sua memória visual: memorize quadrados iluminados e reconstrua o padrão na grade, sem cadastro.",

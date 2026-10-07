@@ -14,7 +14,7 @@ const legacyMetadata = {
     canonical: 'https://skilldrills.online/es',
     languages: getAlternateLanguages('/es'),
   },
-  openGraph: {
+  openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
     title: 'SkillDrills - Aim Trainer Gratis y Entrenamiento Cerebral',
     description: 'Mejora tu puntería en Valorant, CS2, tiempo de reacción y memoria directamente en tu navegador.',
     url: 'https://skilldrills.online/es',

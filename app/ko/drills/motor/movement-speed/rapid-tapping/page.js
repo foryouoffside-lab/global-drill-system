@@ -40,7 +40,7 @@ export const metadata = {
     '클릭 지구력 테스트',
     '빠른 클릭 연습',
   ],
-  openGraph: {
+  openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
     title: 'CPS 테스트 | 클릭 속도 측정 | SkillDrills',
     description:
       '마우스 연타로 CPS와 클릭 지구력을 45초 동안 측정하는 무료 브라우저 테스트.',
@@ -49,7 +49,7 @@ export const metadata = {
     siteName: 'SkillDrills',
     locale: 'ko_KR',
   },
-  twitter: {
+  twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: 'summary_large_image',
     title: 'CPS 테스트 | 클릭 속도 측정 | SkillDrills',
     description:

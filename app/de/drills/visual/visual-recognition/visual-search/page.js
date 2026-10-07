@@ -22,14 +22,14 @@ export const metadata = {
     "Distraktoren",
     "Suchgeschwindigkeit"
 ],
-  openGraph: {
+  openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
     title: "Visuelle Suche | Aufmerksamkeitstest | SkillDrills",
     description: "Finde einen Zielbuchstaben zwischen ähnlichen Ablenkern und übe selektive Aufmerksamkeit im Browser.",
     type: "website",
     url: "https://skilldrills.online/de/drills/visual/visual-recognition/visual-search",
     siteName: "SkillDrills",
   },
-  twitter: {
+  twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: "summary_large_image",
     title: "Visuelle Suche | Aufmerksamkeitstest | SkillDrills",
     description: "Visuelle Suche zwischen ähnlichen Zeichen trainieren.",

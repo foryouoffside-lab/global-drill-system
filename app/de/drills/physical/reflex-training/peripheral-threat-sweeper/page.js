@@ -40,7 +40,7 @@ export const metadata = {
     canonical: 'https://skilldrills.online/de/drills/physical/reflex-training/peripheral-threat-sweeper',
     languages: getAlternateLanguages('/drills/physical/reflex-training/peripheral-threat-sweeper'),
   },
-  openGraph: {
+  openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
     title: "Peripheres Sehen trainieren | Test online",
     description: "Kostenloser Test für peripheres Sehen im Browser. Halte den Blick in der Mitte, erkenne Randbedrohungen und trainiere dein nutzbares Sehfeld (UFOV).",
     url: 'https://skilldrills.online/de/drills/physical/reflex-training/peripheral-threat-sweeper',
@@ -48,7 +48,7 @@ export const metadata = {
     locale: 'de_DE',
     type: 'website',
   },
-  twitter: {
+  twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: 'summary_large_image',
     title: "Peripheres Sehen trainieren | Test online",
     description: "Kostenloser Test für peripheres Sehen im Browser. Halte den Blick in der Mitte, erkenne Randbedrohungen und trainiere dein nutzbares Sehfeld (UFOV).",

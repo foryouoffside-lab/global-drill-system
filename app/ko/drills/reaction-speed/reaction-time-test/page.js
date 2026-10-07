@@ -37,7 +37,7 @@ export const metadata = {
     canonical: 'https://skilldrills.online/ko/drills/reaction-speed/reaction-time-test',
     languages: getAlternateLanguages('/drills/reaction-speed/reaction-time-test'),
   },
-  openGraph: {
+  openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
     title: '반응속도 테스트: 시각 반응 ms 측정 | SkillDrills',
     description:
       '무료 반응속도 테스트. 화면 신호에 즉시 클릭해 밀리초 단위 시각 반응 시간을 측정하고 평균과 오차를 확인하세요.',
@@ -46,7 +46,7 @@ export const metadata = {
     locale: 'ko_KR',
     type: 'website',
   },
-  twitter: {
+  twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: 'summary_large_image',
     title: '반응속도 테스트: 시각 반응 ms 측정 | SkillDrills',
     description:

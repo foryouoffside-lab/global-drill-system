@@ -9,7 +9,7 @@ export const metadata = {
   title: 'Maus-Tracking-Test | Pfad folgen | SkillDrills',
   description: 'Folge einer bewegten Welle mit dem Cursor und trainiere Spurtreue, flüssige Mausbewegung und Feinmotorik. Kostenlos im Browser.',
   keywords: ['Maus-Tracking-Test', 'Maus Pfad verfolgen', 'Maus-Tracing-Spiel', 'Feinmotorik Maus', 'Maus Spurtreue', 'Maus Tracking Trainer', 'Cursor verfolgen', 'Hand-Auge-Koordination Maus', 'Maus Präzisionstraining', 'FPS Tracking Aim', 'flüssige Mausbewegung', 'Mausbewegung üben'],
-  openGraph: {
+  openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
     title: 'Maus-Tracking-Test | Pfad folgen | SkillDrills',
     description: 'Folge einer bewegten Welle mit dem Cursor und trainiere Spurtreue, flüssige Mausbewegung und Feinmotorik. Kostenlos im Browser.',
     type: 'article',
@@ -17,7 +17,7 @@ export const metadata = {
     siteName: 'SkillDrills',
     locale: 'de_DE',
   },
-  twitter: {
+  twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: 'summary_large_image',
     title: 'Maus-Tracking-Test | Pfad folgen | SkillDrills',
     description: 'Folge einer bewegten Welle mit dem Cursor und trainiere Spurtreue, flüssige Mausbewegung und Feinmotorik. Kostenlos im Browser.',

@@ -38,7 +38,7 @@ export const metadata = {
     canonical: 'https://skilldrills.online/ko/drills/physical/coordination/dynamic-grid-evasion',
     languages: getAlternateLanguages('/drills/physical/coordination/dynamic-grid-evasion'),
   },
-  openGraph: {
+  openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
     title: "반응속도 테스트 게임 | 마우스 피하기 | SkillDrills",
     description: "무료 반응속도 테스트 게임과 마우스 피하기 훈련. 3x3 격자의 위험 구역을 주변시로 감지하고 안전 칸으로 이동하며 반사신경을 단련합니다.",
     url: 'https://skilldrills.online/ko/drills/physical/coordination/dynamic-grid-evasion',
@@ -46,7 +46,7 @@ export const metadata = {
     locale: 'ko_KR',
     type: 'website',
   },
-  twitter: {
+  twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: 'summary_large_image',
     title: "반응속도 테스트 게임 | 마우스 피하기 | SkillDrills",
     description: "무료 반응속도 테스트 게임과 마우스 피하기 훈련. 3x3 격자의 위험 구역을 주변시로 감지하고 안전 칸으로 이동하며 반사신경을 단련합니다.",

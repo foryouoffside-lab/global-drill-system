@@ -31,7 +31,7 @@ export const metadata = {
     index: true,
     follow: true,
   },
-  openGraph: {
+  openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
     title: "単語記憶テスト｜自由再生・言語性記憶 | SkillDrills",
     description: "無料の単語記憶テスト。単語リストを覚えて自由に再生し、言語性記憶とワーキングメモリをブラウザで練習できます。",
     url: "https://skilldrills.online/ja/drills/memory/short-term-memory/word-recall",
@@ -39,7 +39,7 @@ export const metadata = {
     locale: 'ja_JP',
     type: 'website',
   },
-  twitter: {
+  twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: 'summary_large_image',
     title: "単語記憶テスト｜自由再生・言語性記憶 | SkillDrills",
     description: "無料の単語記憶テスト。単語リストを覚えて自由に再生し、言語性記憶とワーキングメモリをブラウザで練習できます。",

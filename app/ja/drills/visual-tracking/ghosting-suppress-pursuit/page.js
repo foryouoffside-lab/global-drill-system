@@ -35,7 +35,7 @@ export const metadata = {
     "オーバードライブ 残像",
     "動く標的 視線固定"
   ],
-  openGraph: {
+  openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
     title: "モニター残像テスト・視線固定練習 | SkillDrills",
     description: "動く標的の残像とぼやけを見ながら、中心核への視線固定と動体視力を練習する無料ブラウザドリル。",
     type: "website",
@@ -43,7 +43,7 @@ export const metadata = {
     siteName: "SkillDrills",
     locale: "ja_JP",
   },
-  twitter: {
+  twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: "summary_large_image",
     title: "モニター残像テスト・視線固定練習 | SkillDrills",
     description: "動的残像やモーションスミアを脳内で能動的に抑制し、中心窩固視安定性を鍛える無料オンライントレーニング。",

@@ -30,7 +30,7 @@ export const metadata = {
     index: true,
     follow: true,
   },
-  openGraph: {
+  openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
     title: "Aim Trainer – Entraînement de visée | SkillDrills",
     description: "Aim trainer gratuit dans le navigateur pour travailler les flicks et le premier tir sur Valorant et CS2. Mesurez score, temps et précision.",
     url: "https://skilldrills.online/fr/drills/fps/flick-shot-training",
@@ -38,7 +38,7 @@ export const metadata = {
     locale: 'fr_FR',
     type: 'website',
   },
-  twitter: {
+  twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: 'summary_large_image',
     title: "Aim Trainer – Entraînement de visée | SkillDrills",
     description: "Aim trainer gratuit dans le navigateur pour travailler les flicks et le premier tir sur Valorant et CS2. Mesurez score, temps et précision.",

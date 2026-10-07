@@ -40,7 +40,7 @@ export const metadata = {
     canonical: 'https://skilldrills.online/es/drills/physical/reflex-training/quick-dodge',
     languages: getAlternateLanguages('/drills/physical/reflex-training/quick-dodge'),
   },
-  openGraph: {
+  openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
     title: "Juego de esquivar con el ratón | Reflejos",
     description: "Juego gratis de esquivar con el ratón. Evita proyectiles, sobrevive más tiempo y entrena reflejos y control preciso del cursor.",
     url: 'https://skilldrills.online/es/drills/physical/reflex-training/quick-dodge',
@@ -48,7 +48,7 @@ export const metadata = {
     locale: 'es_ES',
     type: 'website',
   },
-  twitter: {
+  twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: 'summary_large_image',
     title: "Juego de esquivar con el ratón | Reflejos",
     description: "Juego gratis de esquivar con el ratón. Evita proyectiles, sobrevive más tiempo y entrena reflejos y control preciso del cursor.",

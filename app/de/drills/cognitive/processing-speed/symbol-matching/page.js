@@ -11,7 +11,7 @@ export const metadata = {
   keywords: ["Symbol Digit Modalities Test", "Informationsverarbeitungsgeschwindigkeit Test", "Symbol Ziffern Zuordnung", "SDMT Test Online", "DSST Test Kostenlos", "Visuelles Scanning Test", "Kognitives Tempo Messen", "Assoziatives Gedachtnis Test", "Gehirntraining Symbole", "Verarbeitungsgeschwindigkeit Gehirn",
     "sdmt online kostenlos",
     "informationsverarbeitung test"],
-  openGraph: {
+  openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
     title: "Zahlen-Symbol-Test | SDMT Verarbeitungsgeschwindigkeit",
     description: "Kostenloser Zahlen-Symbol-Test im Browser: Übe Symbol-Ziffern-Zuordnung und visuelle Suche. SDMT-inspiriertes Training, kein klinischer Test.",
     type: 'article',
@@ -19,7 +19,7 @@ export const metadata = {
     siteName: 'SkillDrills',
     locale: 'de_DE',
   },
-  twitter: {
+  twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: 'summary_large_image',
     title: "Zahlen-Symbol-Test | SDMT Verarbeitungsgeschwindigkeit",
     description: "Kostenloser Zahlen-Symbol-Test im Browser: Übe Symbol-Ziffern-Zuordnung und visuelle Suche. SDMT-inspiriertes Training, kein klinischer Test.",

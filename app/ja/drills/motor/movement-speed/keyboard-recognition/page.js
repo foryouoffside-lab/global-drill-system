@@ -22,7 +22,7 @@ export const metadata = {
     '選択反応時間 テスト',
     '指先 運動制御',
   ],
-  openGraph: {
+  openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
     title: 'キーボード反応速度テスト | キー入力測定 | SkillDrills',
     description: '表示されたキーを押して反応時間と正確さを測る無料テスト。',
     type: 'article',
@@ -30,7 +30,7 @@ export const metadata = {
     siteName: 'SkillDrills',
     locale: 'ja_JP',
   },
-  twitter: {
+  twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: 'summary_large_image',
     title: 'キーボード反応速度テスト | キー入力測定 | SkillDrills',
     description: '表示されたキーへの反応速度を測る無料のブラウザテスト。',

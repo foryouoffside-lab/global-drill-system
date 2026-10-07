@@ -28,7 +28,7 @@ export const metadata = {
     index: true,
     follow: true,
   },
-  openGraph: {
+  openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
     title: "反応速度テスト | FPSクリック反応測定 | SkillDrills",
     description: "視覚刺激からクリックまでの反応時間をミリ秒で測定。置きエイムと飛び出し反応を確認できる無料ブラウザドリル。",
     url: "https://skilldrills.online/ja/drills/fps/instant-response",
@@ -36,7 +36,7 @@ export const metadata = {
     locale: 'ja_JP',
     type: 'website',
   },
-  twitter: {
+  twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: 'summary_large_image',
     title: "反応速度テスト | FPSクリック反応測定 | SkillDrills",
     description: "視覚刺激からクリックまでの反応時間をミリ秒で測定。置きエイムと飛び出し反応を確認できる無料ブラウザドリル。",

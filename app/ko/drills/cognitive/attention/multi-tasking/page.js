@@ -9,7 +9,7 @@ export const metadata = {
   title: "멀티태스킹 테스트 | 이중 표적 추적 | SkillDrills",
   description: "무료 브라우저 멀티태스킹 테스트로 양쪽 표적 흐름을 함께 추적하세요. 의료 진단이 아닌 인지 자기 점검입니다.",
   keywords: ["멀티태스킹 테스트", "이중 표적 추적 훈련", "멀티태스킹 게임", "병렬 처리 검사", "과제 전환 비용 측정", "주의 전환 훈련", "대뇌 반구 협응 검사", "인지 유연성 테스트", "두뇌 멀티태스킹", "시각 스트림 추적", "분할주의 집중력", "집중력 분할 검사"],
-  openGraph: {
+  openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
     title: "멀티태스킹 테스트・이중 표적 추적 훈련 – 병렬 인지 속도 측정 | SkillDrills",
     description: "무료 멀티태스킹 테스트. 반대 방향으로 흐르는 두 개의 도형 스트림을 동시에 추적하여 대뇌 반구 협응력과 과제 전환 비용을 정밀하게 진단합니다.",
     type: 'article',
@@ -17,7 +17,7 @@ export const metadata = {
     siteName: 'SkillDrills',
     locale: 'ko_KR',
   },
-  twitter: {
+  twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: 'summary_large_image',
     title: "멀티태스킹 테스트・이중 표적 추적 훈련 – 병렬 인지 속도 측정 | SkillDrills",
     description: "무료 멀티태스킹 테스트. 반대 방향으로 흐르는 두 개의 도형 스트림을 동시에 추적하여 대뇌 반구 협응력과 과제 전환 비용을 정밀하게 진단합니다.",

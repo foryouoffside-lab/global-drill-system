@@ -28,7 +28,7 @@ export const metadata = {
     index: true,
     follow: true,
   },
-  openGraph: {
+  openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
     title: "Entrenamiento de Puntería | Tracking FPS | SkillDrills",
     description: "Practica tracking suave sobre objetivos móviles: entrenamiento de puntería FPS gratis en navegador.",
     url: "https://skilldrills.online/es/drills/fps/pro-smooth-pursuit",
@@ -36,7 +36,7 @@ export const metadata = {
     locale: 'es_ES',
     type: 'website',
   },
-  twitter: {
+  twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: 'summary_large_image',
     title: "Entrenamiento de Puntería | Tracking FPS | SkillDrills",
     description: "Practica tracking suave sobre objetivos móviles: entrenamiento de puntería FPS gratis en navegador.",

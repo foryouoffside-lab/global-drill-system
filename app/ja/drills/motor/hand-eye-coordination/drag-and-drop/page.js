@@ -13,7 +13,7 @@ export const metadata = {
     'ドラッグ精度テスト', 'マウス制御トレーニング', 'ドラッグ抜けテスト', 'マウスボタン保持テスト',
     'ドラッグドロップゲーム', 'マウス練習ツール', 'UI操作練習', 'マウストレーナー',
   ],
-  openGraph: {
+  openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
     title: 'ドラッグ＆ドロップ練習｜マウス操作テスト | SkillDrills',
     description: '無料のブラウザ型ドラッグ＆ドロップ練習。マウス操作の精度、移動時間、狙った場所で離すタイミングを測定します。',
     type: 'article',
@@ -21,7 +21,7 @@ export const metadata = {
     siteName: 'SkillDrills',
     locale: 'ja_JP',
   },
-  twitter: {
+  twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: 'summary_large_image',
     title: 'ドラッグ＆ドロップ練習｜マウス操作テスト | SkillDrills',
     description: '無料のブラウザ型ドラッグ＆ドロップ練習。マウス操作の精度、移動時間、狙った場所で離すタイミングを測定します。',

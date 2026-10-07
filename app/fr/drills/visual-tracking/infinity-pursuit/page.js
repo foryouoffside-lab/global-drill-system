@@ -27,7 +27,7 @@ export const metadata = {
     languages: getAlternateLanguages("/drills/visual-tracking/infinity-pursuit"),
   },
   robots: { index: true, follow: true },
-  openGraph: {
+  openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
     title: "Exercice Oculaire en Huit | SkillDrills",
     description: "Exercice oculaire en huit couché pour pratiquer poursuite visuelle, coordination binoculaire et passage de la ligne médiane. Gratuit en ligne.",
     url: "https://skilldrills.online/fr/drills/visual-tracking/infinity-pursuit",
@@ -35,7 +35,7 @@ export const metadata = {
     locale: "fr_FR",
     type: "website",
   },
-  twitter: {
+  twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: "summary_large_image",
     title: "Exercice Oculaire en Huit | SkillDrills",
     description: "Exercice oculaire en huit couché pour pratiquer poursuite visuelle, coordination binoculaire et passage de la ligne médiane. Gratuit en ligne.",

@@ -13,7 +13,7 @@ export const metadata = {
     'test de puntería FPS', 'adquisición de objetivos', 'microajustes de mira', 'puntería para Valorant',
     'puntería para CS2', 'disparo rápido con ratón', 'test de precisión del ratón', 'flick shot gratis',
   ],
-  openGraph: {
+  openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
     title: 'Entrenamiento de flick | Test de puntería | SkillDrills',
     description: 'Entrena flick en el navegador y mide tu puntería con ratón: tiempo de adquisición, precisión y aciertos en el centro para FPS.',
     type: 'article',
@@ -21,7 +21,7 @@ export const metadata = {
     siteName: 'SkillDrills',
     locale: 'es_ES',
   },
-  twitter: {
+  twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: 'summary_large_image',
     title: 'Entrenamiento de flick | Test de puntería | SkillDrills',
     description: 'Entrena flick en el navegador y mide tu puntería con ratón: tiempo de adquisición, precisión y aciertos en el centro para FPS.',

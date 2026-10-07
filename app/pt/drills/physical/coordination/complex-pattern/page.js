@@ -40,7 +40,7 @@ export const metadata = {
     canonical: 'https://skilldrills.online/pt/drills/physical/coordination/complex-pattern',
     languages: getAlternateLanguages('/drills/physical/coordination/complex-pattern'),
   },
-  openGraph: {
+  openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
     title: 'Jogo de Memória Visual | Teste Espacial | SkillDrills',
     description: 'Memorize um caminho piscando, trace o padrão e pratique memória espacial e coordenação do mouse em um jogo grátis no navegador.',
     url: 'https://skilldrills.online/pt/drills/physical/coordination/complex-pattern',
@@ -48,7 +48,7 @@ export const metadata = {
     locale: 'pt_BR',
     type: 'website',
   },
-  twitter: {
+  twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: 'summary_large_image',
     title: 'Jogo de Memória Visual | Teste Espacial | SkillDrills',
     description: 'Memorize um caminho piscando, trace o padrão e pratique memória espacial e coordenação do mouse em um jogo grátis no navegador.',

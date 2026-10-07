@@ -29,7 +29,7 @@ export const metadata = {
     "Zielbahn vorhersagen",
     "visuelles Arbeitsgedächtnis Übung"
   ],
-  openGraph: {
+  openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
     title: "Prädiktive Blickverfolgung | SkillDrills",
     description: "Verfolge ein bewegtes Ziel und schätze seine Position nach kurzer Verdeckung. Kostenlose Browserübung mit Reaktionszeit und Abweichung.",
     type: "website",
@@ -37,7 +37,7 @@ export const metadata = {
     siteName: "SkillDrills",
     locale: "de_DE",
   },
-  twitter: {
+  twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: "summary_large_image",
     title: "Prädiktive Blickverfolgung | SkillDrills",
     description: "Kurze Browserübung für Blickfolge und Flugbahnvorhersage bei visueller Verdeckung. Miss Reaktionszeit und Positionsabweichung.",

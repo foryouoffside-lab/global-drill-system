@@ -36,7 +36,7 @@ export const metadata = {
     "슐테 테이블 5x5 연습",
     "온라인 집중력 테스트 무료"
   ],
-  openGraph: {
+  openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
     title: "슐테 테이블 – 무료 온라인 주변시야 집중력 격자 | SkillDrills",
     description: "무료 온라인 슐테 테이블(Schulte Table) 훈련 사이트. 확장되는 숫자 격자를 순서대로 터치하여 주변 시야 확장, 시각 탐색 속도 및 속독 집중력을 단련하세요.",
     type: "website",
@@ -44,7 +44,7 @@ export const metadata = {
     siteName: "SkillDrills",
     locale: "ko_KR",
   },
-  twitter: {
+  twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: "summary_large_image",
     title: "슐테 테이블 – 무료 온라인 주변시야 집중력 격자 | SkillDrills",
     description: "무료 온라인 슐테 테이블(Schulte Table) 훈련 사이트. 확장되는 숫자 격자를 순서대로 터치하여 주변 시야 확장, 시각 탐색 속도 및 속독 집중력을 단련하세요.",

@@ -29,7 +29,7 @@ export const metadata = {
     "ejercicio de visión periférica online",
     "entrenamiento visual para baloncesto"
   ],
-  openGraph: {
+  openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
     title: "Entrenamiento de visión periférica | SkillDrills",
     description: "Sigue el objetivo central y detecta señales laterales sin apartar la mirada. Ejercicio gratuito en navegador.",
     type: "website",
@@ -37,7 +37,7 @@ export const metadata = {
     siteName: "SkillDrills",
     locale: "es_ES",
   },
-  twitter: {
+  twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: "summary_large_image",
     title: "Entrenamiento de visión periférica | SkillDrills",
     description: "Practica la fijación central y la percepción de estímulos laterales directamente en el navegador.",

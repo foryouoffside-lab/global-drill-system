@@ -9,7 +9,7 @@ export const metadata = {
   title: "Leitura Rápida | Treino RSVP | SkillDrills",
   description: "Treino de leitura rápida grátis no navegador: veja palavras em um ponto fixo e acompanhe PPM e precisão. Não é um teste clínico.",
   keywords: ["leitura rápida", "teste de velocidade de leitura", "leitura dinâmica", "velocidade de leitura", "RSVP leitura", "palavras por minuto", "treino de leitura rápida"],
-  openGraph: {
+  openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
     title: "Leitura Rápida | Treino RSVP | SkillDrills",
     description: "Treino de leitura rápida grátis no navegador: veja palavras em um ponto fixo e acompanhe PPM e precisão. Não é um teste clínico.",
     type: 'article',
@@ -17,7 +17,7 @@ export const metadata = {
     siteName: 'SkillDrills',
     locale: 'pt_BR',
   },
-  twitter: {
+  twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: 'summary_large_image',
     title: "Leitura Rápida | Treino RSVP | SkillDrills",
     description: "Treino de leitura rápida grátis no navegador: veja palavras em um ponto fixo e acompanhe PPM e precisão. Não é um teste clínico.",

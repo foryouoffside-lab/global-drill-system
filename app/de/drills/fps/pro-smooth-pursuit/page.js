@@ -28,7 +28,7 @@ export const metadata = {
     index: true,
     follow: true,
   },
-  openGraph: {
+  openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
     title: "Aim Trainer | Smooth-Tracking üben | SkillDrills",
     description: "Flüssiges Tracking bewegter Ziele trainieren: kostenloser Aim Trainer für Apex, Overwatch 2 und FPS im Browser.",
     url: "https://skilldrills.online/de/drills/fps/pro-smooth-pursuit",
@@ -36,7 +36,7 @@ export const metadata = {
     locale: 'de_DE',
     type: 'website',
   },
-  twitter: {
+  twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: 'summary_large_image',
     title: "Aim Trainer | Smooth-Tracking üben | SkillDrills",
     description: "Flüssiges Tracking bewegter Ziele trainieren: kostenloser Aim Trainer für Apex, Overwatch 2 und FPS im Browser.",

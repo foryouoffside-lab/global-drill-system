@@ -30,7 +30,7 @@ export const metadata = {
     index: true,
     follow: true,
   },
-  openGraph: {
+  openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
     title: "Control de Retroceso | Entrenamiento FPS | SkillDrills",
     description: "Entrenamiento gratis de control de retroceso en navegador: practica patrones de spray y compensación para CS2, Valorant y otros FPS.",
     url: "https://skilldrills.online/es/drills/fps/recoil-control",
@@ -38,7 +38,7 @@ export const metadata = {
     locale: 'es_ES',
     type: 'website',
   },
-  twitter: {
+  twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: 'summary_large_image',
     title: "Control de Retroceso | Entrenamiento FPS | SkillDrills",
     description: "Entrenamiento gratis de control de retroceso en navegador: practica patrones de spray y compensación para CS2, Valorant y otros FPS.",

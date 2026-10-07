@@ -36,7 +36,7 @@ export const metadata = {
     canonical: 'https://skilldrills.online/fr/drills/physical/fitness/jump-sequence',
     languages: getAlternateLanguages('/drills/physical/fitness/jump-sequence'),
   },
-  openGraph: {
+  openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
     title: "Exercices pour Sauter Plus Haut & Détente Verticale en Ligne | SkillDrills",
     description: "Entraînement en ligne gratuit de détente verticale et calcul de trajectoire aérienne. Maîtrisez le dosage d'impulsion pliométrique, la sustentation et l'interception parabolique de cibles jusqu'à 900 px/s.",
     url: 'https://skilldrills.online/fr/drills/physical/fitness/jump-sequence',
@@ -44,7 +44,7 @@ export const metadata = {
     locale: 'fr_FR',
     type: 'website',
   },
-  twitter: {
+  twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: 'summary_large_image',
     title: "Exercices pour Sauter Plus Haut & Détente Verticale en Ligne | SkillDrills",
     description: "Entraînement en ligne gratuit de détente verticale et calcul de trajectoire aérienne. Maîtrisez le dosage d'impulsion pliométrique, la sustentation et l'interception parabolique de cibles jusqu'à 900 px/s.",

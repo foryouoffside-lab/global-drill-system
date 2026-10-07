@@ -23,14 +23,14 @@ export const metadata = {
     "記号探し",
     "文字探し テスト"
 ],
-  openGraph: {
+  openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
     title: "文字探しテスト | 視覚探索・選択的注意 | SkillDrills",
     description: "回転した文字の中から標的を探し、視覚探索と選択的注意を練習する無料オンライン課題。",
     type: "website",
     url: "https://skilldrills.online/ja/drills/visual/visual-recognition/visual-search",
     siteName: "SkillDrills",
   },
-  twitter: {
+  twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: "summary_large_image",
     title: "文字探しテスト | 視覚探索・選択的注意 | SkillDrills",
     description: "文字の中から標的を見つける視覚探索トレーニング。",

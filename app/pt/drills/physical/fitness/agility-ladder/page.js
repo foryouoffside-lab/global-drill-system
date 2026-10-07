@@ -37,7 +37,7 @@ export const metadata = {
     canonical: 'https://skilldrills.online/pt/drills/physical/fitness/agility-ladder',
     languages: getAlternateLanguages('/drills/physical/fitness/agility-ladder'),
   },
-  openGraph: {
+  openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
     title: "Treino de Escada de Agilidade | SkillDrills",
     description: 'Treino grátis de escada de agilidade online. Siga passadas alternadas para praticar footwork, ritmo, coordenação bilateral e velocidade dos pés.',
     url: 'https://skilldrills.online/pt/drills/physical/fitness/agility-ladder',
@@ -45,7 +45,7 @@ export const metadata = {
     locale: 'pt_BR',
     type: 'website',
   },
-  twitter: {
+  twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: 'summary_large_image',
     title: "Treino de Escada de Agilidade | SkillDrills",
     description: 'Treino grátis de escada de agilidade online. Siga passadas alternadas para praticar footwork, ritmo, coordenação bilateral e velocidade dos pés.',

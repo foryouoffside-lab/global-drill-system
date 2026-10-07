@@ -28,7 +28,7 @@ export const metadata = {
     index: true,
     follow: true,
   },
-  openGraph: {
+  openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
     title: "エイム練習 | トラッキングFPSトレーナー | SkillDrills",
     description: "動くターゲットを滑らかに追い、FPSのトラッキング精度を鍛える無料ブラウザドリル。",
     url: "https://skilldrills.online/ja/drills/fps/pro-smooth-pursuit",
@@ -36,7 +36,7 @@ export const metadata = {
     locale: 'ja_JP',
     type: 'website',
   },
-  twitter: {
+  twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: 'summary_large_image',
     title: "エイム練習 | トラッキングFPSトレーナー | SkillDrills",
     description: "動くターゲットを滑らかに追い、FPSのトラッキング精度を鍛える無料ブラウザドリル。",

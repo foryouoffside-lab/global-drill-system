@@ -27,7 +27,7 @@ export const metadata = {
     index: true,
     follow: true,
   },
-  openGraph: {
+  openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
     title: "Test de mémoire spatiale en ligne | SkillDrills",
     description: "Mémorise la position des objets dans la grille et retrouve l’emplacement cible après une brève exposition.",
     url: "https://skilldrills.online/fr/drills/memory/spatial-memory/object-location",
@@ -35,7 +35,7 @@ export const metadata = {
     locale: 'fr_FR',
     type: 'website',
   },
-  twitter: {
+  twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: 'summary_large_image',
     title: "Test de mémoire spatiale en ligne | SkillDrills",
     description: "Mémorise la position des objets dans la grille et retrouve l’emplacement cible après une brève exposition.",

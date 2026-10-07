@@ -31,7 +31,7 @@ export const metadata = {
     "recaptura visual rápida",
     "persecución ocular continua"
   ],
-  openGraph: {
+  openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
     title: "Seguimiento de Blanco Teletransportado | SkillDrills",
     description: "Practica seguimiento ocular, relocalización visual y sacadas rápidas cuando un objetivo cambia de posición y conserva su movimiento.",
     type: "website",
@@ -39,7 +39,7 @@ export const metadata = {
     siteName: "SkillDrills",
     locale: "es_ES",
   },
-  twitter: {
+  twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: "summary_large_image",
     title: "Seguimiento de Blanco Teletransportado | SkillDrills",
     description: "Practica relocalización visual y sacadas rápidas cuando un objetivo cambia de posición y conserva su movimiento.",

@@ -26,7 +26,7 @@ export const metadata = {
     index: true,
     follow: true,
   },
-  openGraph: {
+  openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
     title: "エイム練習 | ターゲット選択・脅威判定 | SkillDrills",
     description: "無料ブラウザのエイム練習で、複数の敵から危険な相手を先に選び、撃たない判断の速さを測定します。",
     url: "https://skilldrills.online/ja/drills/fps/target-prioritization",
@@ -34,7 +34,7 @@ export const metadata = {
     locale: 'ja_JP',
     type: 'website',
   },
-  twitter: {
+  twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: 'summary_large_image',
     title: "エイム練習 | ターゲット選択・脅威判定 | SkillDrills",
     description: "無料ブラウザのエイム練習で、複数の敵から危険な相手を先に選び、撃たない判断の速さを測定します。",

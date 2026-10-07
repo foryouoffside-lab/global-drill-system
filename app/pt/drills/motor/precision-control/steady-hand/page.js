@@ -18,7 +18,7 @@ export const metadata = {
     'precisão de mouse online', 'jogo de labirinto mouse', 'controle do cursor',
     'treino de precisão mouse', 'estabilidade da mão', 'caminho estreito mouse',
   ],
-  openGraph: {
+  openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
     title: 'Teste de precisão do mouse | Mão firme | SkillDrills',
     description: 'Siga um caminho que se estreita e meça precisão do cursor, controle motor fino e firmeza da mão. Teste grátis no navegador.',
     type: 'article',
@@ -26,7 +26,7 @@ export const metadata = {
     siteName: 'SkillDrills',
     locale: 'pt_BR',
   },
-  twitter: {
+  twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: 'summary_large_image',
     title: 'Teste de precisão do mouse | Mão firme | SkillDrills',
     description: 'Siga um caminho que se estreita e meça precisão do cursor, controle motor fino e firmeza da mão. Teste grátis no navegador.',

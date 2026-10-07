@@ -27,7 +27,7 @@ export const metadata = {
     languages: getAlternateLanguages("/drills/visual-tracking/ghosting-suppress-pursuit"),
   },
   robots: { index: true, follow: true },
-  openGraph: {
+  openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
     title: "Teste de Ghosting no Monitor | SkillDrills",
     description: "Observe rastros e halos em um alvo móvel e pratique fixação foveal, nitidez de movimento e estabilidade do olhar no navegador.",
     url: "https://skilldrills.online/pt/drills/visual-tracking/ghosting-suppress-pursuit",
@@ -35,7 +35,7 @@ export const metadata = {
     locale: "pt_BR",
     type: "website",
   },
-  twitter: {
+  twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: "summary_large_image",
     title: "Teste de Ghosting no Monitor | SkillDrills",
     description: "Observe rastros e halos em um alvo móvel e pratique fixação foveal, nitidez de movimento e estabilidade do olhar.",

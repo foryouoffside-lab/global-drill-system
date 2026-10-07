@@ -14,7 +14,7 @@ const legacyMetadata = {
     canonical: 'https://skilldrills.online/pt',
     languages: getAlternateLanguages('/pt'),
   },
-  openGraph: {
+  openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
     title: 'SkillDrills - Treino de Mira Grátis e Aim Trainer Online',
     description: 'Melhore sua mira no Valorant, CS2, tempo de reação, CPS e memória direto no navegador.',
     url: 'https://skilldrills.online/pt',

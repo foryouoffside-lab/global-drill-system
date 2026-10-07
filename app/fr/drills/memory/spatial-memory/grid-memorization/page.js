@@ -27,7 +27,7 @@ export const metadata = {
     index: true,
     follow: true,
   },
-  openGraph: {
+  openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
     title: "Test de mémoire visuelle en ligne | SkillDrills",
     description: "Teste ta mémoire visuelle : mémorise des cases éclairées et reproduis le motif dans une grille, sans inscription.",
     url: "https://skilldrills.online/fr/drills/memory/spatial-memory/grid-memorization",
@@ -35,7 +35,7 @@ export const metadata = {
     locale: 'fr_FR',
     type: 'website',
   },
-  twitter: {
+  twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: 'summary_large_image',
     title: "Test de mémoire visuelle en ligne | SkillDrills",
     description: "Teste ta mémoire visuelle : mémorise des cases éclairées et reproduis le motif dans une grille, sans inscription.",

@@ -34,7 +34,7 @@ export const metadata = {
     'Klicktest online',
     'CPS Klicktest',
   ],
-  openGraph: {
+  openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
     title: 'CPS-Test | Klickgeschwindigkeit messen | SkillDrills',
     description:
       'Kostenloser Browser-Test für Klicks pro Sekunde und 45 Sekunden Klick-Ausdauer.',
@@ -43,7 +43,7 @@ export const metadata = {
     siteName: 'SkillDrills',
     locale: 'de_DE',
   },
-  twitter: {
+  twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: 'summary_large_image',
     title: 'CPS-Test | Klickgeschwindigkeit messen | SkillDrills',
     description:

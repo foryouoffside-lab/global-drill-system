@@ -40,7 +40,7 @@ export const metadata = {
     canonical: 'https://skilldrills.online/ja/drills/physical/reflex-training/quick-dodge',
     languages: getAlternateLanguages('/drills/physical/reflex-training/quick-dodge'),
   },
-  openGraph: {
+  openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
     title: "マウス避けゲーム｜無料の反射神経テスト",
     description: "無料のマウス避けゲーム。迫る弾幕をカーソルでかわし、反射神経と回避操作をブラウザで練習できます。",
     url: 'https://skilldrills.online/ja/drills/physical/reflex-training/quick-dodge',
@@ -48,7 +48,7 @@ export const metadata = {
     locale: 'ja_JP',
     type: 'website',
   },
-  twitter: {
+  twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: 'summary_large_image',
     title: "マウス避けゲーム｜無料の反射神経テスト",
     description: "無料のマウス避けゲーム。迫る弾幕をカーソルでかわし、反射神経と回避操作をブラウザで練習できます。",

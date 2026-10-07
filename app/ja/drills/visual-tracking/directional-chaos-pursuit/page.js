@@ -31,7 +31,7 @@ export const metadata = {
     "動体視力 反応速度",
     "無料 視覚トレーニング"
   ],
-  openGraph: {
+  openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
     title: "動体視力トレーニング・不規則視線追従 | SkillDrills",
     description: "方向と速度が予測不能に変わる標的を目で再捕捉。サッケード回復と視線反応、動体視力を鍛える無料ブラウザドリル。",
     type: "website",
@@ -39,7 +39,7 @@ export const metadata = {
     siteName: "SkillDrills",
     locale: "ja_JP",
   },
-  twitter: {
+  twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: "summary_large_image",
     title: "動体視力トレーニング・不規則視線追従 | SkillDrills",
     description: "予測不能な標的を目で再捕捉し、視線反応と動体視力を鍛える無料トレーニング。",

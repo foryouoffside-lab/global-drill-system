@@ -36,7 +36,7 @@ export const metadata = {
     canonical: 'https://skilldrills.online/fr/drills/physical/coordination/cross-body-movement',
     languages: getAlternateLanguages('/drills/physical/coordination/cross-body-movement'),
   },
-  openGraph: {
+  openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
     title: "Test de coordination œil-main | SkillDrills",
     description: 'Test gratuit de coordination œil-main en ligne. Reliez des nœuds diagonaux en franchissant la ligne médiane : coordination bilatérale et précision à la souris.',
     url: 'https://skilldrills.online/fr/drills/physical/coordination/cross-body-movement',
@@ -44,7 +44,7 @@ export const metadata = {
     locale: 'fr_FR',
     type: 'website',
   },
-  twitter: {
+  twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: 'summary_large_image',
     title: "Test de coordination œil-main | SkillDrills",
     description: 'Test gratuit de coordination œil-main en ligne. Reliez des nœuds diagonaux en franchissant la ligne médiane : coordination bilatérale et précision à la souris.',

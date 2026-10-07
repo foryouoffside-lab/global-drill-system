@@ -16,7 +16,7 @@ export const metadata = {
     index: true,
     follow: true,
   },
-  openGraph: {
+  openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
     title: "Teste de Corsi online | Memória espacial",
     description: "Memorize blocos iluminados e toque neles na mesma ordem. Teste gratuito de memória espacial no navegador, sem cadastro.",
     url: "https://skilldrills.online/pt/drills/memory/spatial-memory/path-tracing",
@@ -24,7 +24,7 @@ export const metadata = {
     locale: 'pt_BR',
     type: 'website',
   },
-  twitter: {
+  twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: 'summary_large_image',
     title: "Teste de Corsi online | Memória espacial",
     description: "Memorize blocos iluminados e toque neles na mesma ordem. Teste gratuito de memória espacial no navegador, sem cadastro.",

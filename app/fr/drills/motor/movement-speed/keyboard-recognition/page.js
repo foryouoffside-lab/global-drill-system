@@ -22,7 +22,7 @@ export const metadata = {
     'réaction des doigts clavier',
     'test de réponse clavier',
   ],
-  openGraph: {
+  openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
     title: 'Réaction clavier | Test de touches | SkillDrills',
     description: 'Mesurez réaction, précision et raccourcis en appuyant sur la touche affichée dans le navigateur.',
     type: 'article',
@@ -30,7 +30,7 @@ export const metadata = {
     siteName: 'SkillDrills',
     locale: 'fr_FR',
   },
-  twitter: {
+  twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: 'summary_large_image',
     title: 'Réaction clavier | Test de touches | SkillDrills',
     description: 'Test gratuit de réaction clavier et de touches dans le navigateur.',

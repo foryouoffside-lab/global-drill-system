@@ -38,7 +38,7 @@ export const metadata = {
     canonical: 'https://skilldrills.online/es/drills/physical/reflex-training/reaction-chain',
     languages: getAlternateLanguages('/drills/physical/reflex-training/reaction-chain'),
   },
-  openGraph: {
+  openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
     title: "Frenado de puntería | Test de reflejos",
     description: "Acierta objetivos móviles, detén el ratón con precisión y practica el control del overflick en el navegador.",
     url: 'https://skilldrills.online/es/drills/physical/reflex-training/reaction-chain',
@@ -46,7 +46,7 @@ export const metadata = {
     locale: 'es_ES',
     type: 'website',
   },
-  twitter: {
+  twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: 'summary_large_image',
     title: "Frenado de puntería | Test de reflejos",
     description: "Acierta el objetivo, frena el ratón con precisión y practica el control del overflick.",

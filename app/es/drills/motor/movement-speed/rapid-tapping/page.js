@@ -39,7 +39,7 @@ export const metadata = {
     'prueba de clics por segundo',
     'entrenamiento de clics rápidos',
   ],
-  openGraph: {
+  openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
     title: 'Test de CPS | Clics por segundo | SkillDrills',
     description:
       'Test gratuito de CPS y resistencia de clic durante 45 segundos en el navegador.',
@@ -48,7 +48,7 @@ export const metadata = {
     siteName: 'SkillDrills',
     locale: 'es_ES',
   },
-  twitter: {
+  twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: 'summary_large_image',
     title: 'Test de CPS | Clics por segundo | SkillDrills',
     description:

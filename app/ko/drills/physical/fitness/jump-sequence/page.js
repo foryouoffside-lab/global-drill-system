@@ -40,7 +40,7 @@ export const metadata = {
     canonical: 'https://skilldrills.online/ko/drills/physical/fitness/jump-sequence',
     languages: getAlternateLanguages('/drills/physical/fitness/jump-sequence'),
   },
-  openGraph: {
+  openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
     title: "점프력 높이는 운동 & 서전트 점프 훈련 – 무료 플라이오메트릭 타이밍 드릴 | SkillDrills",
     description: "무료 온라인 점프력 및 서전트 점프 훈련 드릴. 수직 추진력 충전, 체공 포물선 궤적 연산, 공중 스티어링을 통해 신장-단축 주기(SSC) 탄성과 동적 표적 요격 타이밍을 과학적으로 단련합니다.",
     url: 'https://skilldrills.online/ko/drills/physical/fitness/jump-sequence',
@@ -48,7 +48,7 @@ export const metadata = {
     locale: 'ko_KR',
     type: 'website',
   },
-  twitter: {
+  twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: 'summary_large_image',
     title: "점프력 높이는 운동 & 서전트 점프 훈련 – 무료 플라이오메트릭 타이밍 드릴 | SkillDrills",
     description: "무료 온라인 점프력 및 서전트 점프 훈련 드릴. 수직 추진력 충전, 체공 포물선 궤적 연산, 공중 스티어링을 통해 신장-단축 주기(SSC) 탄성과 동적 표적 요격 타이밍을 과학적으로 단련합니다.",

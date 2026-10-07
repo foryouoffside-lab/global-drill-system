@@ -22,7 +22,7 @@ export const metadata = {
     '視覚 順序認識',
     'クリック 正確さ テスト',
   ],
-  openGraph: {
+  openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
     title: 'ターゲット切替エイム練習・順番クリック | SkillDrills',
     description: '番号順にターゲットをクリックし、切り替え速度と正確さを測る無料のエイム練習。',
     type: 'article',
@@ -30,7 +30,7 @@ export const metadata = {
     siteName: 'SkillDrills',
     locale: 'ja_JP',
   },
-  twitter: {
+  twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: 'summary_large_image',
     title: 'ターゲット切替エイム練習・順番クリック | SkillDrills',
     description: '番号順のターゲット切り替えを測る無料エイム練習。',

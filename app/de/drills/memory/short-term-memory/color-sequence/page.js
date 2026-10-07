@@ -49,7 +49,7 @@ export const metadata = {
     index: true,
     follow: true,
   },
-  openGraph: {
+  openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
     title: 'Senso Spiel online | Farbsequenz merken | SkillDrills',
     description: 'Senso-Spiel kostenlos im Browser: Merke dir eine wachsende Folge aus Farben und Tönen und wiederhole sie in der richtigen Reihenfolge.',
     url: 'https://skilldrills.online/de/drills/memory/short-term-memory/color-sequence',
@@ -57,7 +57,7 @@ export const metadata = {
     locale: 'de_DE',
     type: 'website',
   },
-  twitter: {
+  twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: 'summary_large_image',
     title: 'Senso Spiel online | Farbsequenz merken | SkillDrills',
     description: 'Senso-Spiel kostenlos im Browser: Merke dir eine wachsende Folge aus Farben und Tönen und wiederhole sie in der richtigen Reihenfolge.',

@@ -21,7 +21,7 @@ export const metadata = {
     "운동 억제 훈련",
     "지속적 수행 검사"
   ],
-  openGraph: {
+  openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
     title: "고노고 과제 | 반응 억제·충동 조절 테스트 | SkillDrills",
     description: "초록에는 반응하고 빨강에는 멈추며 반응 억제와 커미션 에러를 확인하는 무료 온라인 고노고 과제입니다.",
     type: 'article',
@@ -29,7 +29,7 @@ export const metadata = {
     siteName: 'SkillDrills',
     locale: 'ko_KR',
   },
-  twitter: {
+  twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: 'summary_large_image',
     title: "고노고 과제 | 반응 억제·충동 조절 테스트 | SkillDrills",
     description: "초록 신호에는 반응하고 빨간 신호에는 멈추는 반응 억제 연습입니다.",

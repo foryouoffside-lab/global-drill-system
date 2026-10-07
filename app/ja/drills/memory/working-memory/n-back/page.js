@@ -15,7 +15,7 @@ export const metadata = {
   title: "Nバック課題｜ワーキングメモリ訓練 | SkillDrills",
   description: "無料のNバック課題をブラウザで実施。N個前の文字を照合し、ワーキングメモリの更新と注意の切り替えを練習します。",
   keywords: ['Nバック課題', 'デュアルNバック', 'Nバック課題 ブラウザ', 'ワーキングメモリ訓練', '作業記憶トレーニング', 'Nバック オンライン', '2バック', '3バック', '認知トレーニング', '記憶力トレーニング'],
-  openGraph: {
+  openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
     title: "Nバック課題｜ワーキングメモリ訓練 | SkillDrills",
     description: "無料のNバック課題をブラウザで実施。N個前の文字を照合し、ワーキングメモリの更新を練習します。",
     type: "website",
@@ -23,7 +23,7 @@ export const metadata = {
     siteName: "SkillDrills",
     locale: "ja_JP",
   },
-  twitter: {
+  twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: "summary_large_image",
     title: "Nバック課題｜ワーキングメモリ訓練 | SkillDrills",
     description: "無料のNバック課題をブラウザで実施。N個前の文字を照合し、ワーキングメモリの更新を練習します。",

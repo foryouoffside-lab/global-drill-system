@@ -19,7 +19,7 @@ export const metadata = {
     canonical: 'https://skilldrills.online/es/drills/motor/hand-eye-coordination/aim-trainer',
     languages: getAlternateLanguages('/drills/motor/hand-eye-coordination/aim-trainer'),
   },
-  openGraph: {
+  openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
     title: 'Entrenamiento de puntería | Aim Trainer | SkillDrills',
     description: 'Aim trainer gratis en el navegador para entrenar la precisión del ratón, los flicks y la reacción.',
     url: 'https://skilldrills.online/es/drills/motor/hand-eye-coordination/aim-trainer',
@@ -27,7 +27,7 @@ export const metadata = {
     locale: 'es_ES',
     type: 'website',
   },
-  twitter: {
+  twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: 'summary_large_image',
     title: 'Entrenamiento de puntería | Aim Trainer | SkillDrills',
     description: 'Entrenamiento de puntería FPS en el navegador para mejorar precisión, flicks y reflejos.',

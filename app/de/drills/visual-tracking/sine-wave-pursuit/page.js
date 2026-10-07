@@ -29,7 +29,7 @@ export const metadata = {
     "Blickfolge Geschwindigkeit testen",
     "Bahn am Wendepunkt verfolgen"
   ],
-  openGraph: {
+  openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
     title: "Sinuswellen-Blickverfolgung | SkillDrills",
     description: "Verfolge ein sinusförmig bewegtes Ziel horizontal und vertikal. Kostenlose Browserübung mit Phasenabweichung und Positionsfehler.",
     type: "website",
@@ -37,7 +37,7 @@ export const metadata = {
     siteName: "SkillDrills",
     locale: "de_DE",
   },
-  twitter: {
+  twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: "summary_large_image",
     title: "Sinuswellen-Blickverfolgung | SkillDrills",
     description: "Kurze Übung für Blickfolge bei periodischer Bewegung. Prüfe Geschwindigkeit, Phasenabweichung und Fehler am Wendepunkt.",

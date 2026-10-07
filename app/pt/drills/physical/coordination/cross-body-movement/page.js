@@ -36,7 +36,7 @@ export const metadata = {
     canonical: 'https://skilldrills.online/pt/drills/physical/coordination/cross-body-movement',
     languages: getAlternateLanguages('/drills/physical/coordination/cross-body-movement'),
   },
-  openGraph: {
+  openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
     title: "Teste de Coordenação Mão e Olho | SkillDrills",
     description: 'Teste grátis de coordenação mão e olho online. Conecte nós diagonais cruzando a linha média para treinar coordenação bilateral e precisão com o mouse.',
     url: 'https://skilldrills.online/pt/drills/physical/coordination/cross-body-movement',
@@ -44,7 +44,7 @@ export const metadata = {
     locale: 'pt_BR',
     type: 'website',
   },
-  twitter: {
+  twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: 'summary_large_image',
     title: "Teste de Coordenação Mão e Olho | SkillDrills",
     description: 'Teste grátis de coordenação mão e olho online. Conecte nós diagonais cruzando a linha média para treinar coordenação bilateral e precisão com o mouse.',

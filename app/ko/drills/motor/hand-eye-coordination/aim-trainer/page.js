@@ -18,7 +18,7 @@ export const metadata = {
     canonical: 'https://skilldrills.online/ko/drills/motor/hand-eye-coordination/aim-trainer',
     languages: getAlternateLanguages('/drills/motor/hand-eye-coordination/aim-trainer'),
   },
-  openGraph: {
+  openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
     title: '에임 연습 사이트 | FPS 에임 트레이너 | SkillDrills',
     description: '무료 브라우저 에임 연습. 동적 타깃으로 마우스 정확도와 플릭 속도를 측정하세요.',
     url: 'https://skilldrills.online/ko/drills/motor/hand-eye-coordination/aim-trainer',
@@ -26,7 +26,7 @@ export const metadata = {
     locale: 'ko_KR',
     type: 'website',
   },
-  twitter: {
+  twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: 'summary_large_image',
     title: '에임 연습 사이트 | FPS 에임 트레이너 | SkillDrills',
     description: '설치 없는 무료 브라우저 에임 연습. 마우스 정확도와 마이크로 플릭 속도를 단련하세요.',

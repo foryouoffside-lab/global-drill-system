@@ -26,7 +26,7 @@ export const metadata = {
     index: true,
     follow: true,
   },
-  openGraph: {
+  openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
     title: "Test de Reflejos | Tiempo de Reacción FPS | SkillDrills",
     description: "Test de reflejos gratis en navegador: mide el tiempo entre el estímulo visual y el clic para entrenar reacciones FPS.",
     url: "https://skilldrills.online/es/drills/fps/instant-response",
@@ -34,7 +34,7 @@ export const metadata = {
     locale: 'es_ES',
     type: 'website',
   },
-  twitter: {
+  twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: 'summary_large_image',
     title: "Test de Reflejos | Tiempo de Reacción FPS | SkillDrills",
     description: "Test de reflejos gratis en navegador: mide el tiempo entre el estímulo visual y el clic para entrenar reacciones FPS.",

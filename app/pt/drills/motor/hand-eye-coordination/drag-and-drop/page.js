@@ -13,7 +13,7 @@ export const metadata = {
     'treino de arrastar e soltar', 'teste de mouse online', 'coordenação olho-mão mouse', 'velocidade de arrastar e soltar',
     'teste de precisão do mouse', 'arrastar e soltar no navegador', 'controle de cursor', 'treino de mouse',
   ],
-  openGraph: {
+  openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
     title: 'Teste de arrastar e soltar | Precisão do mouse | SkillDrills',
     description: 'Teste de arrastar e soltar no navegador. Meça precisão ao arrastar, tempo de movimento e o momento certo de soltar o alvo.',
     type: 'article',
@@ -21,7 +21,7 @@ export const metadata = {
     siteName: 'SkillDrills',
     locale: 'pt_BR',
   },
-  twitter: {
+  twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: 'summary_large_image',
     title: 'Teste de arrastar e soltar | Precisão do mouse | SkillDrills',
     description: 'Teste de arrastar e soltar no navegador. Meça precisão ao arrastar, tempo de movimento e o momento certo de soltar o alvo.',

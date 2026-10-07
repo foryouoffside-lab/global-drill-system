@@ -9,7 +9,7 @@ export const metadata = {
   title: 'マウストレースゲーム | カーソル追従テスト | SkillDrills',
   description: '動く波形をカーソルでなぞり、マウスの追従精度と手の滑らかな操作を測る無料テスト。',
   keywords: ['マウス トレース ゲーム', 'マウス 軌跡 なぞり 練習', '精密マウス操作 テスト', 'マウストラッキング 練習', 'カーソル 追従 測定', 'スムーズ追従 練習', 'マウス 手首 コントロール', 'マウス 精密 制御', 'FPS トラッキング 練習', 'カーソル軌跡 テスト', 'マウス操作 なめらか', '連続追従 トレーニング'],
-  openGraph: {
+  openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
     title: 'マウストレースゲーム | カーソル追従テスト | SkillDrills',
     description: '動く波形をカーソルでなぞり、マウスの追従精度と手の滑らかな操作を測る無料テスト。',
     type: 'article',
@@ -17,7 +17,7 @@ export const metadata = {
     siteName: 'SkillDrills',
     locale: 'ja_JP',
   },
-  twitter: {
+  twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: 'summary_large_image',
     title: 'マウストレースゲーム | カーソル追従テスト | SkillDrills',
     description: '動く波形をカーソルでなぞり、マウスの追従精度と手の滑らかな操作を測る無料テスト。',

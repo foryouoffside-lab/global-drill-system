@@ -15,7 +15,7 @@ export const metadata = {
   title: "Teste N-Back online | Memória de trabalho | SkillDrills",
   description: "Faça um teste N-Back online e grátis para praticar a atualização da memória de trabalho em 2-back e 3-back, direto no navegador.",
   keywords: ['teste n-back online', 'teste n-back', 'memória de trabalho', 'treino de memória de trabalho', 'dual n-back', 'tarefa n-back', '2-back', '3-back', 'teste de memória online', 'treino cognitivo'],
-  openGraph: {
+  openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
     title: "Teste N-Back online | Memória de trabalho | SkillDrills",
     description: "Faça um teste N-Back online e grátis para praticar a atualização da memória de trabalho em 2-back e 3-back.",
     type: "website",
@@ -23,7 +23,7 @@ export const metadata = {
     siteName: "SkillDrills",
     locale: "pt_BR",
   },
-  twitter: {
+  twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: "summary_large_image",
     title: "Teste N-Back online | Memória de trabalho | SkillDrills",
     description: "Faça um teste N-Back online e grátis para praticar a atualização da memória de trabalho em 2-back e 3-back.",
