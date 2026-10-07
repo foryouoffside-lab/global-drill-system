@@ -249,7 +249,7 @@ export default function GridMemorizationPage() {
 
   const gridGuide = {
     intro: [
-      "Visual Memory Test (Grid Memorization) is an interactive neurocognitive assessment designed to measure visuospatial working memory, pattern encoding capacity, and short-term matrix recall. Unlike verbal memory tests that rely on acoustic rehearsal, matrix pattern tasks isolate the non-verbal visual architecture of the brain.",
+      "A visual memory test flashes a pattern of lit cells on a grid, then asks you to tap the same cells from memory. In this free online version the grid grows from 4x4 to 5x5 as you succeed, and a miss replays the round, so it measures how large a spatial pattern you can hold.",
       "The clinical study of visuospatial span was pioneered by Pietro Corsi (1972) through the Corsi Block-Tapping Test, which demonstrated that visuospatial memory operates as a distinct neural system from verbal digit span (Milner, 1971). In 1997, Sergio Della Sala, Robert H. Logie, and colleagues developed the Visual Patterns Test (VPT) to specifically isolate static matrix pattern retention from dynamic sequential movement.",
       "In modern cognitive neuroscience, Robert H. Logie (1995) and Alan Baddeley (2000) subdivided the Visuo-Spatial Sketchpad into the 'Visual Cache' (a passive store for chromatic, brightness, and static matrix representations) and the 'Inner Scribe' (an active mechanism for spatial movement planning and rehearsal). Furthermore, research by Steven J. Luck & Edward K. Vogel (1997) and Nelson Cowan (2001) confirmed that unchunked visual working memory is strictly bounded to 3 to 4 independent items. Expanding matrix span requires spatial chunking—grouping lit cells into holistic Gestalt shapes.",
       "Calibrated with digital chronometric precision (Woods et al., 2015), this drill features a standardized 1.5-second memorization window and an adaptive staircase progression to measure your exact visuospatial pattern span under high-velocity conditions.",
@@ -258,16 +258,16 @@ export default function GridMemorizationPage() {
       "This drill is a free browser game for practice and interest. It is not a medical device, a diagnostic instrument, or a screening or treatment tool for any condition, and no score here says anything about your health or your memory in a clinical sense. If you have concerns about your memory or thinking, speak to a qualified clinician."
     ],
     benchmarks: {
-      title: "Normative Visuospatial Pattern Span Benchmarks",
+      title: "Visuospatial Pattern Span Score Bands",
       headers: ["Performance Tier", "Pattern Span (Cells)", "Drill Score", "Cognitive Storage & Chunking Profile"],
       rows: [
-        ["Tier 1 (Superior / Clinical 99th Percentile)", "Span 10 – 14+ Cells", "1,150+ Points", "Visuospatial elite; decomposes complex patterns into 2-3 geometric Gestalt primitives; flawless visual cache retention; sub-450 ms click cadence"],
-        ["Tier 2 (High Average / 85th–95th Percentile)", "Span 8 – 9 Cells", "850 – 1,149 Points", "Exceeds normal adult baseline; executes rapid shape chunking ('L' shapes, triplets); robust against visual interference; 450 – 650 ms cadence"],
-        ["Tier 3 (Average Adult Baseline / 50th Percentile)", "Span 6 – 7 Cells", "550 – 849 Points", "Normal adult population baseline (Della Sala et al., 1997); manages simple paired clusters; begins dropping peripheral cells on 5x5 grids; 650 – 900 ms cadence"],
-        ["Tier 4 (Low Average / Visuospatial Bottleneck)", "Span 5 Cells", "350 – 549 Points", "Operates near raw unchunked capacity limits (Cowan, 2001); attempts to memorize cells individually without geometric grouping; 900 – 1,200 ms cadence"],
-        ["Tier 5 (Impaired / Below Average Span)", "Span < 5 Cells", "< 350 Points", "Rapid visual trace decay; vulnerability to visual noise; struggles to hold patterns exceeding 4 cells across the 1.5s delay; cadence exceeding 1,200 ms"]
+        ["Tier 1 (Exceptional)", "Span 10 – 14+ Cells", "1,150+ Points", "Visuospatial elite; decomposes complex patterns into 2-3 geometric Gestalt primitives; flawless visual cache retention; sub-450 ms click cadence"],
+        ["Tier 2 (Advanced)", "Span 8 – 9 Cells", "850 – 1,149 Points", "Exceeds normal adult baseline; executes rapid shape chunking ('L' shapes, triplets); robust against visual interference; 450 – 650 ms cadence"],
+        ["Tier 3 (Typical)", "Span 6 – 7 Cells", "550 – 849 Points", "Normal adult population baseline (Della Sala et al., 1997); manages simple paired clusters; begins dropping peripheral cells on 5x5 grids; 650 – 900 ms cadence"],
+        ["Tier 4 (Developing)", "Span 5 Cells", "350 – 549 Points", "Operates near raw unchunked capacity limits (Cowan, 2001); attempts to memorize cells individually without geometric grouping; 900 – 1,200 ms cadence"],
+        ["Tier 5 (Starting out)", "Span < 5 Cells", "< 350 Points", "Rapid visual trace decay; vulnerability to visual noise; struggles to hold patterns exceeding 4 cells across the 1.5s delay; cadence exceeding 1,200 ms"]
       ],
-      note: "Cell span reflects maximum matrix configuration cleared during the 60-second active recall session; memorization and result reveals are untimed. Normative percentiles are mapped to Visual Patterns Test standards (Della Sala et al., 1997; Luck & Vogel, 1997; Woods et al., 2015)."
+      note: "Cell span reflects maximum matrix configuration cleared during the 60-second active recall session; memorization and result reveals are untimed. The bands are an editorial guide, not population norms, because SkillDrills collects no aggregate data; the task design follows (Della Sala et al., 1997; Luck & Vogel, 1997; Woods et al., 2015)."
     },
     techniques: {
       title: "Evidence-Based Protocols to Expand Matrix Visual Recall",
