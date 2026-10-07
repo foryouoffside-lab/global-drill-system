@@ -258,6 +258,7 @@ const faqSchema = {
 const movingTargetGuide = {
   heading: "Kinetic Visual Tracking & Trajectory Interception Science",
   intro: [
+    "The Moving Target Intercept test asks you to follow a target on an accelerating path and intercept it. It practises smooth pursuit and predicting where the target will be next, not only where it is now. Press start, track the target as it speeds up, and aim for accurate intercepts.",
     "Dynamic target interception is an essential perceptual-motor capability across fast-paced sports, aviation, martial arts, and competitive esports. Successfully striking an accelerating, non-linear moving object requires simultaneous execution of smooth pursuit eye movements, predictive trajectory extrapolation, and precise closed-loop motor timing.",
     "The neurobiology of visual motion tracking originates in specialized directionally-selective neurons in the middle temporal visual area (MT/V5) and medial superior temporal area (MST). These cortical regions compute target velocity vectors and transmit feedforward signals to the frontal eye fields (FEF) and the dorsolateral pontine nucleus, which in turn drive cerebellar purkinje cells to maintain ocular pursuit gain (Krauzlis, 2004).",
     "In his classic psychophysical paper, Rashbass (1961) demonstrated that smooth pursuit and saccadic eye movements operate under independent control mechanisms: pursuit is modulated by target retinal velocity error, whereas saccades correct positional displacement. When targets accelerate beyond 30 to 40 deg/s or ricochet off viewport boundaries, smooth pursuit gain degrades, necessitating rapid corrective catch-up saccades (Bahill et al., 1980).",
@@ -267,7 +268,7 @@ const movingTargetGuide = {
     title: "Moving target intercept bands (editorial guide)",
     headers: ["Performance Band", "Shift Pace Window", "Score & Combo Threshold", "Visual Tracking & Intercept Profile"],
     rows: [
-      ["Tier 1: Apex Kinetic Interceptor", "< 0.25s Shift Pace", "Score: 16,000+ | Combo 25x+", "Pro-grade smooth pursuit; flawless velocity extrapolation with zero catch-up saccade latency. Found in elite FPS pros and fighter pilots."],
+      ["Tier 1: Apex Kinetic Interceptor", "< 0.25s Shift Pace", "Score: 16,000+ | Combo 25x+", "Best band in this drill: accurate intercepts on fast, accelerating targets. A practice target, not a professional standard."],
       ["Tier 2: Advanced Dynamic Tracker", "0.25 – 0.45s Shift Pace", "Score: 10,500 – 15,999 | Combo 16x+", "Fluid ocular pursuit; rapid closed-loop motor corrections with minimal trajectory overshooting across accelerating targets."],
       ["Tier 3: Competent Visual Pursuit", "0.46 – 0.70s Shift Pace", "Score: 6,000 – 10,499 | Combo 9x+", "Reliable tracking baseline; consistent intercept timing on linear paths with minor recovery delay during sudden boundary bounces."],
       ["Tier 4: Developing Kinetic Tracker", "0.71 – 1.00s Shift Pace", "Score: 2,500 – 5,999 | Combo 4x+", "Relies heavily on reactive catch-up saccades rather than predictive pursuit; noticeable tracking hesitation at high speeds."],
@@ -285,7 +286,7 @@ const movingTargetGuide = {
       },
       {
         name: "Boundary Bounce Anticipation (Land & McLeod Saccadic Anchoring)",
-        desc: "Land & McLeod (2000) proved that elite hitters shift their gaze to predicted bounce locations ahead of the projectile rather than following it through the bounce.",
+        desc: "Land & McLeod (2000) found that skilled hitters shift their gaze to predicted bounce locations ahead of the projectile rather than following it through the bounce.",
         tips: "As the target approaches a canvas border, jump your cursor toward the predicted angle of reflection rather than chasing it into the wall."
       },
       {
