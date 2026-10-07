@@ -5,8 +5,8 @@ import RelatedDrills from '@/components/drill/RelatedDrills';
 import { pickSources } from '@/lib/drillSources';
 
 export const metadata = {
-  title: "Búsqueda Visual | Atención Selectiva | SkillDrills",
-  description: "Entrenamiento gratuito de búsqueda visual: encuentra códigos objetivo en una matriz 10×10 con distractores cambiantes. Practica atención selectiva.",
+  title: "Concentración en Cuadrícula | Escaneo Visual | SkillDrills",
+  description: "Entrenamiento gratuito de concentración en cuadrícula: encuentra códigos objetivo en una matriz 10×10 con distractores cambiantes. Practica atención selectiva.",
   keywords: [
     "búsqueda visual",
     "atención selectiva visual",
@@ -26,7 +26,7 @@ export const metadata = {
     languages: getAlternateLanguages('/drills/visual/visual-recognition/entropic-grid'),
   },
   openGraph: {
-    title: "Búsqueda Visual | Atención Selectiva | SkillDrills",
+    title: "Concentración en Cuadrícula | Escaneo Visual | SkillDrills",
     description: "Encuentra códigos objetivo en una matriz 10×10 con distractores cambiantes y practica atención selectiva y escaneo visual.",
     url: "https://skilldrills.online/es/drills/visual/visual-recognition/entropic-grid",
     type: "website",
@@ -36,7 +36,7 @@ export const metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Búsqueda Visual | Atención Selectiva | SkillDrills",
+    title: "Concentración en Cuadrícula | Escaneo Visual | SkillDrills",
     description: "Encuentra códigos en una cuadrícula cambiante y practica atención visual, escaneo y filtrado de distractores.",
     images: ["https://skilldrills.online/og-default.svg"],
   },
@@ -309,7 +309,7 @@ export default function EntropicGridPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
 
       <main className="container mx-auto px-4 py-8 max-w-5xl">
-        <EntropicGridClient copy={{ title: "Búsqueda Visual", subtitle: "Atención selectiva y escaneo visual" }} />
+        <EntropicGridClient copy={{ title: "Concentración en Cuadrícula", subtitle: "Escaneo visual y filtrado de distractores" }} />
         <DrillGuide guide={guideData} />
         <RelatedDrills related={guideData.related} />
       </main>

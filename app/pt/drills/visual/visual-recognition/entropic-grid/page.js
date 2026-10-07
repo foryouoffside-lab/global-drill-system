@@ -5,8 +5,8 @@ import RelatedDrills from '@/components/drill/RelatedDrills';
 import { pickSources } from '@/lib/drillSources';
 
 export const metadata = {
-  title: "Busca Visual | Atenção Seletiva | SkillDrills",
-  description: "Treino gratuito de busca visual: encontre códigos-alvo numa matriz 10×10 com distratores que mudam. Pratique atenção seletiva e escaneamento visual.",
+  title: "Concentração Visual | Escaneamento Visual | SkillDrills",
+  description: "Treino gratuito de concentração visual: encontre códigos-alvo numa matriz 10×10 com distratores que mudam. Pratique atenção seletiva e escaneamento visual.",
   keywords: [
     "busca visual",
     "atenção seletiva",
@@ -26,7 +26,7 @@ export const metadata = {
     languages: getAlternateLanguages('/drills/visual/visual-recognition/entropic-grid'),
   },
   openGraph: {
-    title: "Busca Visual | Atenção Seletiva | SkillDrills",
+    title: "Concentração Visual | Escaneamento Visual | SkillDrills",
     description: "Encontre códigos-alvo numa matriz 10×10 com distratores que mudam e pratique atenção seletiva e escaneamento visual.",
     url: "https://skilldrills.online/pt/drills/visual/visual-recognition/entropic-grid",
     type: "website",
@@ -36,7 +36,7 @@ export const metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Busca Visual | Atenção Seletiva | SkillDrills",
+    title: "Concentração Visual | Escaneamento Visual | SkillDrills",
     description: "Encontre códigos numa grade em mudança e pratique atenção seletiva, escaneamento visual e filtragem de distratores.",
     images: ["https://skilldrills.online/og-default.svg"],
   },
@@ -309,7 +309,7 @@ export default function EntropicGridPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
 
       <main className="container mx-auto px-4 py-8 max-w-5xl">
-        <EntropicGridClient copy={{ title: "Busca Visual", subtitle: "Atenção seletiva e escaneamento visual" }} />
+        <EntropicGridClient copy={{ title: "Concentração Visual", subtitle: "Escaneamento visual e atenção seletiva" }} />
         <DrillGuide guide={guideData} />
         <RelatedDrills related={guideData.related} />
       </main>
