@@ -222,6 +222,7 @@ const faqSchema = {
 const guideProps = {
   heading: "Bases Scientifiques de la Vision Périphérique et de l Attention Diffuse",
   intro: [
+    "Cet entraînement de vision périphérique vous demande de suivre une cible au centre de l’écran tout en repérant des signaux qui apparaissent sur les côtés, sans bouger les yeux. Il mesure le temps de réaction aux signaux latéraux et vos pertes de cible. Ce n’est pas un test de champ visuel médical.",
     "Le système visuel humain repose sur une division fonctionnelle stricte : la fovéa centrale assure une vision détaillée à haute résolution sur seulement 1° à 2° du champ visuel (voie parvocellulaire), tandis que l ensemble du champ périphérique est gouverné par les bâtonnets et la voie magnocellulaire, ultrasensibles au mouvement et aux fluctuations de luminance (Wolfe, 1994 ; Leigh & Zee, 2015). L instinct naturel pousse les yeux à lancer immédiatement une saccade vers tout stimulus excentré.",
     "L exercice Ping Pursuit pratique l attention spatiale diffuse : détecter des signaux périphériques sans dévier le regard de la cible centrale (Posner, 1980 ; Eriksen & St. James, 1986). En gardant la fixation au centre, il permet de comparer la poursuite et la détection latérale ; il ne promet ni modification du champ visuel ni traitement d un trouble oculaire.",
     "La latence d affichage et la fréquence d échantillonnage des périphériques influencent la détection temporelle des impulsions lumineuses (Woods et al., 2015). Toutes les données de performance sont traitées localement dans votre navigateur pour préserver votre vie privée."
@@ -270,7 +271,7 @@ const guideProps = {
     "Dès qu un éclair lumineux surgit en périphérie, enregistrez-le sans détourner les yeux du centre.",
     "Activez immédiatement la commande d entrée et observez votre indice de champ visuel utile."
   ],
-  audience: "Joueurs de jeux de tir compétitifs (Valorant, CS2, Overwatch 2, Apex Legends), sportifs de disciplines collectives et de combat, conducteurs et toute personne souhaitant contrer la vision en tunnel.",
+  audience: "Joueurs de jeux de tir, sportifs de disciplines collectives et de combat, et toute personne qui veut s'exercer à repérer des signaux latéraux en gardant le regard au centre.",
   faqs: faqSchema.mainEntity.map(item => ({
     q: item.name,
     a: item.acceptedAnswer.text
