@@ -6,7 +6,7 @@ import { getAlternateLanguages } from '@/lib/i18n/locales';
 import { pickSources } from '@/lib/drillSources';
 
 export const metadata = {
-  title: "Test de Rémanence Écran | SkillDrills",
+  title: "Test ghosting écran : cible mobile | SkillDrills",
   description: "Observez les traînées et halos d’une cible mobile et travaillez fixation fovéale, netteté du mouvement et stabilité du regard.",
   keywords: [
     "test de rémanence écran",
@@ -28,7 +28,7 @@ export const metadata = {
   },
   robots: { index: true, follow: true },
   openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
-    title: "Test de Rémanence Écran | SkillDrills",
+    title: "Test ghosting écran : cible mobile | SkillDrills",
     description: "Observez les traînées et halos d’une cible mobile et travaillez fixation fovéale, netteté du mouvement et stabilité du regard.",
     url: "https://skilldrills.online/fr/drills/visual-tracking/ghosting-suppress-pursuit",
     siteName: "SkillDrills",
@@ -37,7 +37,7 @@ export const metadata = {
   },
   twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: "summary_large_image",
-    title: "Test de Rémanence Écran | SkillDrills",
+    title: "Test ghosting écran : cible mobile | SkillDrills",
     description: "Observez les traînées et halos d’une cible mobile et travaillez fixation fovéale, netteté du mouvement et stabilité du regard.",
   },
 };
@@ -220,7 +220,7 @@ const faqSchema = {
       "name": "Ce protocole s’applique-t-il aux sports de balle comme le tennis ou le football ?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Absolument. Une balle rapide crée une traînée sur la rétine. Les athlètes dotés d'une fixation d'élite isolent la rotation et les coutures de la balle en dépit de la vitesse, améliorant ainsi leur réactivité spatiale."
+        "text": "Une balle rapide laisse une traînée sur la rétine, et garder le regard sur le bon détail est une compétence utile en sport. Cet exercice entraîne la fixation sur écran ; il ne prouve pas de gain sur le terrain."
       }
     },
     {
@@ -237,6 +237,7 @@ const faqSchema = {
 const guideProps = {
   heading: "Bases Neurophysiologiques de la Fixation Fovéale et Neutralisation du Flou Visuel",
   intro: [
+    "Ce test de ghosting d’écran vous fait suivre une cible mobile entourée de traînées et de halos. Vous gardez le regard sur son noyau plutôt que sur la traînée. Ce n’est pas un outil de diagnostic de votre moniteur : il montre comment le ghosting perturbe votre fixation, à comparer sur le même écran.",
     "Lorsqu’une cible rapide se déplace, son image peut laisser une traînée à cause de la réponse des pixels, du temps d’intégration visuelle et du mouvement du regard. Ce test utilise la traînée comme distraction contrôlée : l’objectif est de garder la fixation sur le noyau, sans en faire un examen clinique (Burr, 1980 ; Burr & Morgan, 1997).",
     "Filtrage visuel et microsaccades : pendant la fixation, de petits mouvements oculaires renouvellent la stimulation rétinienne et contribuent à maintenir la perception de la cible. L’exercice associe attention au noyau, poursuite fluide et correction brève lorsque le halo attire la vision périphérique (Martinez-Conde, Macknik, & Hubel, 2004 ; Rolfs, 2009 ; Krauzlis, 2004).",
     "Interaction avec le matériel et fréquence : 60 Hz, 120 Hz et 144 Hz présentent le mouvement à des intervalles différents, tandis que l’overdrive peut produire un halo clair de dépassement. Comparez le même écran et les mêmes réglages ; l’outil fonctionne dans le navigateur et conserve les résultats localement."
@@ -261,7 +262,7 @@ const guideProps = {
     title: "Normes de Performance en Fixation Fovéale et Suppression des Traînées Visuelles",
     headers: ["Niveau de Performance", "Multiplicateur de Vitesse", "Stabilité de Fixation Face aux Traînées Visuelles", "Profil Neuromoteur et Oculaire"],
     rows: [
-      ["Niveau 1 : Apex Fixation – Verrouillage Fovéal Pur", "2.0x+ Ultra-Vitesse", "Le regard demeure ancré sur le noyau de la cible malgré les anneaux d'artefacts denses et les rebonds rapides.", "Inhibition corticale parfaite du flou de mouvement et précision absolue des microsaccades (Burr, 1980 ; Martinez-Conde et al., 2004). Standard d'élite en sport et esport."],
+      ["Niveau 1 : Apex Fixation – Verrouillage Fovéal Pur", "2.0x+ Ultra-Vitesse", "Le regard demeure ancré sur le noyau de la cible malgré les anneaux d'artefacts denses et les rebonds rapides.", "Inhibition corticale parfaite du flou de mouvement et précision absolue des microsaccades (Burr, 1980 ; Martinez-Conde et al., 2004). Niveau de référence de l'exercice, sans valeur de classement."],
       ["Niveau 2 : Acuité de Fixation Supérieure", "1.4x – 1.9x Haute Vitesse", "Contour de la cible parfaitement isolé à vive allure ; distraction négligeable face aux traînées résiduelles.", "Remarquable filtrage sensorimoteur des muscles extraoculaires. Très grande efficacité dans les environnements riches en particules."],
       ["Niveau 3 : Standard Fonctionnel Solide", "1.0x – 1.3x Vitesse Standard", "Poursuite régulière à vitesse de référence ; brève hésitation lors des rebonds ou lorsque la traînée se densifie.", "Profil représentatif des adultes sains. Parfaitement adapté à la conduite automobile, aux loisirs sportifs et au jeu vidéo standard."],
       ["Niveau 4 : Dérive Oculaire – Pratique Recommandée", "0.7x – 0.9x Vitesse Modérée", "Le regard est régulièrement attiré vers l'arrière par les traînées ; le noyau de la cible s'échappe souvent de la fovéa.", "Filtrage cortical ralenti face au bruit visuel. Entraînement recommandé sur les paliers de vitesse inférieurs."],
@@ -308,7 +309,7 @@ export default function GhostingSuppressPursuitPageFr() {
       />
       <GhostingSuppressPursuitClient
         copy={{
-          title: "Test de Rémanence Écran – Fixation Oculaire",
+          title: "Test ghosting écran : cible mobile",
           subtitle: "Entraînement à la Stabilité Fovéale et à la Neutralisation du Flou Visuel",
           description: "En affichant des traînées d'arrachement et des anneaux fantômes stochastiques, cet exercice entraîne le cortex visuel à inhiber activement les perturbations d'arrière-plan pour focaliser la fovéa sur le noyau de la cible (Burr, 1980; Martinez-Conde et al., 2004)."
         }}
