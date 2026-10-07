@@ -68,7 +68,7 @@ export default function TriangularPursuitPageFR() {
     "applicationCategory": "HealthApplication",
     "operatingSystem": "Any",
     "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
-    "description": "Entraînement neurocognitif de poursuite continue et saccades de rattrapage le long d une trajectoire polygonale fermée.",
+    "description": "Entraînement neurocognitif de poursuite continue et saccades de rattrapage le long d’une trajectoire polygonale fermée.",
     "dateModified": "2026-09-20"
   };
 
@@ -87,7 +87,7 @@ export default function TriangularPursuitPageFR() {
     "@type": "VideoGame",
     "name": "Défi de Poursuite Triangulaire",
     "gamePlatform": "Navigateur web",
-    "genre": ["Entraînement visuel", "Exercice de poursuite oculaire", "Réflexes pour l esports"],
+    "genre": ["Entraînement visuel", "Exercice de poursuite oculaire", "Poursuite visuelle"],
     "dateModified": "2026-09-20"
   };
 
@@ -101,7 +101,7 @@ export default function TriangularPursuitPageFR() {
       {
         "@type": "HowToStep",
         "name": "Positionnement et Fixation Initiale",
-        "text": "Placez-vous à une distance de 50 à 60 cm de votre écran et fixez la cible circulaire dès son départ sur l une des arêtes."
+        "text": "Placez-vous à une distance de 50 à 60 cm de votre écran et fixez la cible circulaire dès son départ sur l’une des arêtes."
       },
       {
         "@type": "HowToStep",
@@ -111,12 +111,12 @@ export default function TriangularPursuitPageFR() {
       {
         "@type": "HowToStep",
         "name": "Freinage et Relance au Sommet",
-        "text": "À l arrivée sur le sommet de 60 degrés, freinez le regard et initiez une saccade rapide pour enchaîner sur le côté suivant."
+        "text": "À l’arrivée sur le sommet de 60 degrés, freinez le regard et initiez une saccade rapide pour enchaîner sur le côté suivant."
       },
       {
         "@type": "HowToStep",
         "name": "Progression de la Vitesse",
-        "text": "Augmentez la vitesse de déplacement lorsque votre précision aux sommets reste régulièrement en dessous de 35 pixels d écart."
+        "text": "Augmentez la vitesse de déplacement lorsque votre précision aux sommets reste régulièrement en dessous de 35 pixels d’écart."
       }
     ]
   };
@@ -128,10 +128,10 @@ export default function TriangularPursuitPageFR() {
     "mainEntity": [
       {
         "@type": "Question",
-        "name": "Pourquoi le suivi triangulaire est-il plus difficile qu une trajectoire circulaire?",
+        "name": "Pourquoi le suivi triangulaire est-il plus difficile qu’une trajectoire circulaire?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Contrairement aux cercles où l accélération est constante, le triangle impose des lignes droites et des sommets aigus de 60 degrés qui exigent de basculer instantanément de la poursuite lisse aux saccades de virage."
+          "text": "Contrairement aux cercles où l’accélération est constante, le triangle impose des lignes droites et des sommets aigus de 60 degrés qui exigent de basculer instantanément de la poursuite lisse aux saccades de virage."
         }
       },
       {
@@ -144,10 +144,10 @@ export default function TriangularPursuitPageFR() {
       },
       {
         "@type": "Question",
-        "name": "Qu est-ce qui provoque le dépassement (overshoot) aux sommets?",
+        "name": "Qu’est-ce qui provoque le dépassement (overshoot) aux sommets?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Il est causé par l inertie de la commande motrice de poursuite. Sans freinage anticipatoire feedforward, les muscles extraoculaires continuent sur la trajectoire initiale pendant 80 à 120 millisecondes."
+          "text": "Il est causé par l’inertie de la commande motrice de poursuite. Sans freinage anticipatoire feedforward, les muscles extraoculaires continuent sur la trajectoire initiale pendant 80 à 120 millisecondes."
         }
       },
       {
@@ -155,7 +155,7 @@ export default function TriangularPursuitPageFR() {
         "name": "En quoi cet exercice profite-t-il aux sportifs et aux joueurs de jeux de tir?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Il affine la capacité du cerveau à stopper net le regard sur un angle et à relancer une visée propre sans oscillations résiduelles."
+          "text": "Il fait travailler l’arrêt du regard sur un angle et la reprise sur le côté suivant, un geste proche du suivi de cible dans un jeu. Aucune étude ne démontre à ce jour un gain direct de score ou de performance sportive à partir de cet exercice."
         }
       },
       {
@@ -163,7 +163,7 @@ export default function TriangularPursuitPageFR() {
         "name": "Pourquoi la tête doit-elle demeurer immobile?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Garder la tête fixe isole le travail des muscles oculomoteurs purs, évitant que le réflexe vestibulo-oculaire (RVO) ne prenne le relais et n atténue l entraînement."
+          "text": "Garder la tête fixe isole le travail des muscles oculomoteurs purs, évitant que le réflexe vestibulo-oculaire (RVO) ne prenne le relais et n’atténue l’entraînement."
         }
       },
       {
@@ -171,15 +171,15 @@ export default function TriangularPursuitPageFR() {
         "name": "Combien de temps faut-il consacrer à cet exercice?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Des séances de 5 à 10 minutes par jour, réparties en blocs de 60 secondes entrecoupés de courtes pauses, suffisent à stimuler la plasticité cérébrale."
+          "text": "Des séances de 5 à 10 minutes par jour, réparties en blocs de 60 secondes entrecoupés de courtes pauses, suffisent pour suivre votre progression. Arrêtez-vous en cas de fatigue oculaire."
         }
       },
       {
         "@type": "Question",
-        "name": "Qu est-ce que le glissement rétinien (retinal slip) aux angles?",
+        "name": "Qu’est-ce que le glissement rétinien (retinal slip) aux angles?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "C est le décalage instantané de l image de la cible hors de la fovéa lorsque l objet bifurque, déclenchant le signal nerveux pour une saccade de correction."
+          "text": "C’est le décalage instantané de l’image de la cible hors de la fovéa lorsque l’objet bifurque, déclenchant le signal nerveux pour une saccade de correction."
         }
       },
       {
@@ -187,15 +187,15 @@ export default function TriangularPursuitPageFR() {
         "name": "Un écran à taux de rafraîchissement élevé apporte-t-il un avantage?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Les moniteurs à 144Hz ou plus affichent les images de virage avec une latence minimale, permettant au système visuel d anticiper la décélération plus fidèlement."
+          "text": "Les moniteurs à 144Hz ou plus affichent les images de virage avec une latence minimale, permettant au système visuel d’anticiper la décélération plus fidèlement."
         }
       },
       {
         "@type": "Question",
-        "name": "Qu appelle-t-on une saccade de rattrapage (catch-up saccade)?",
+        "name": "Qu’appelle-t-on une saccade de rattrapage (catch-up saccade)?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "C est un saut oculaire très bref (30 à 50 millisecondes) déclenché pour recaler instantanément la zone fovéale sur la cible qui a pris de l avance."
+          "text": "C’est un saut oculaire très bref (30 à 50 millisecondes) déclenché pour recaler instantanément la zone fovéale sur la cible qui a pris de l’avance."
         }
       },
       {
@@ -203,7 +203,7 @@ export default function TriangularPursuitPageFR() {
         "name": "Peut-on alterner le sens de rotation du triangle?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Oui, le module permet d inverser le sens horaire et antihoraire afin de stimuler de manière symétrique les hémisphères cérébraux droit et gauche."
+          "text": "Oui, le module permet d’inverser le sens horaire et antihoraire afin de varier le sens du parcours."
         }
       }
     ]
@@ -212,6 +212,7 @@ export default function TriangularPursuitPageFR() {
   const guide = {
     title: "Guide Scientifique de Poursuite Vectorielle et Dynamique des Sommets",
     intro: [
+      "Cet exercice de poursuite visuelle triangulaire vous demande de suivre du regard une cible qui parcourt un triangle. Aux trois angles de 60 degrés, le regard doit freiner puis repartir sur le côté suivant. L’exercice mesure l’erreur aux angles et les pertes de cible. Ce n’est pas un test médical.",
       "Le suivi visuel le long de polygones géométriques fermés requiert une coordination continue et ultra-précise entre les groupes musculaires extraoculaires horizontaux et verticaux. Lorsqu'une cible se déplace le long des côtés d'un triangle équilatéral, le système oculomoteur engage une poursuite oculaire lisse sur des vecteurs diagonaux non cardinaux, obligeant le tronc cérébral à équilibrer les signaux pontiques horizontaux (PPRF) avec les commandes motrices mésencéphaliques verticales (riMLF; Orban de Xivry & Lefèvre, 2007).",
       "Le principal défi neurophysiologique réside dans les trois sommets aigus de 60 degrés. À chaque virage abrupt, la vitesse de glissement rétinien s'effondre instantanément tandis que l'erreur de positionnement fovéal s'accroît brutalement. Les travaux pionniers de de Brouwer et al. (2002) et Heinen et al. (2005) ont démontré que les saccades de rattrapage (catch-up saccades) sont déclenchées par un calcul neuronal combinant l'écart de position et le glissement rétinien instantané, orchestré par les champs oculaires frontaux (FEF) et supplémentaires (SEF).",
       "Sans entraînement oculomoteur adapté, le regard a tendance à dépasser les sommets aigus par inertie (overshoot) ou à couper les angles prématurément, ce qui entraîne de multiples saccades correctives désordonnées et dégrade l'acuité dynamique. En revanche, la pratique régulière du suivi polygonal active les modèles internes prédictifs du cervelet (Bennett & Barnes, 2006; Barnes, 2008), permettant une décélération anticipée avant chaque sommet et une réacquisition fovéale ultra-rapide sur le vecteur suivant.",
@@ -220,30 +221,30 @@ export default function TriangularPursuitPageFR() {
     ],
     benchmarks: {
       title: "Normes de Performance de Poursuite Triangulaire (Vitesse et Précision aux Sommets)",
-      headers: ["Niveau de Maîtrise", "Multiplicateur de Vitesse", "Erreur au Sommet", "Latence Saccadique de Virage", "Percentile Mondial"],
+      headers: ["Niveau", "Multiplicateur de vitesse", "Erreur au sommet", "Latence au virage"],
       rows: [
-        ["Élite / Maîtrise Vectorielle Absolue", "3.5x – 5.0x+", "Erreur < 12 px (fixation parfaite au sommet)", "Latence < 110 ms (freinage prédictif)", "Top 1.5%"],
-        ["Maître / Haut Contrôle Vectoriel", "2.5x – 3.5x", "Erreur < 22 px (microsaccades minimales)", "Latence < 140 ms (virages nets)", "Top 8%"],
-        ["Avancé / Athlète Compétitif", "1.8x – 2.5x", "Erreur < 38 px (réacquisition rapide)", "Latence < 180 ms (transitions stables)", "Top 25%"],
-        ["Intermédiaire / Pratiquant Régulier", "1.2x – 1.8x", "Erreur 38 – 70 px (angles coupés / dépassements)", "Latence 180 – 240 ms (saccades multiples)", "Moyenne 45%"],
-        ["Débutant / Non Initié", "0.5x – 1.2x", "Erreur > 70 px (perte complète au virage)", "Latence > 250 ms (dépassement marqué)", "Niveau de Base"]
+        ["Très maîtrisé", "3.5x – 5.0x+", "Moins de 12 px", "Moins de 110 ms"],
+        ["Maîtrisé", "2.5x – 3.5x", "Moins de 22 px", "Moins de 140 ms"],
+        ["Avancé", "1.8x – 2.5x", "Moins de 38 px", "Moins de 180 ms"],
+        ["Intermédiaire", "1.2x – 1.8x", "38 – 70 px (angles coupés ou dépassés)", "180 – 240 ms"],
+        ["Débutant", "0.5x – 1.2x", "Plus de 70 px (cible perdue au virage)", "Plus de 250 ms"]
       ],
-      note: "Barèmes établis d après de Brouwer et al. (2002) sur la dynamique des saccades de rattrapage et Heinen et al. (2005) sur le contrôle moteur lors de virages angulaires aigus."
+      note: "Repères éditoriaux propres à cet exercice, non issus d’un panel de joueurs ni de normes cliniques. Contexte : de Brouwer et al. (2002) sur les saccades de rattrapage ; Heinen et al. (2005)."
     },
     steps: [
       { title: "Fixez la cible au centre", text: "Gardez la tête stable et suivez du regard le début de la trajectoire triangulaire." },
-      { title: "Suivez chaque côté en diagonale", text: "Accompagnez le segment droit sans couper l angle et gardez le regard au centre de la cible." },
-      { title: "Freinez aux sommets", text: "Ralentissez avant l angle de 60 degrés et faites une courte correction pour entrer sur le côté suivant." },
-      { title: "Augmentez la vitesse avec contrôle", text: "Montez le multiplicateur seulement lorsque l erreur aux angles et les pertes de cible restent stables." }
+      { title: "Suivez chaque côté en diagonale", text: "Accompagnez le segment droit sans couper l’angle et gardez le regard au centre de la cible." },
+      { title: "Freinez aux sommets", text: "Ralentissez avant l’angle de 60 degrés et faites une courte correction pour entrer sur le côté suivant." },
+      { title: "Augmentez la vitesse avec contrôle", text: "Montez le multiplicateur seulement lorsque l’erreur aux angles et les pertes de cible restent stables." }
     ],
     instructions: [
       "Fixez la cible fovéale et suivez le segment rectiligne sans bouger le cou.",
-      "Calibrez la décélération à l approche immédiate de chaque sommet du triangle.",
+      "Calibrez la décélération à l’approche immédiate de chaque sommet du triangle.",
       "Déclenchez une saccade vive pour vous réengager sans délai sur la nouvelle arête.",
-      "Rehaussez le multiplicateur de vitesse lorsque l erreur moyenne au virage reste inférieure à 35 px."
+      "Rehaussez le multiplicateur de vitesse lorsque l’erreur moyenne au virage reste inférieure à 35 px."
     ],
     tips: [
-      "Évitez de couper les angles: suivez la trajectoire jusqu au bout du sommet aigu.",
+      "Évitez de couper les angles: suivez la trajectoire jusqu’au bout du sommet aigu.",
       "Conservez une prise souple et détendue sur la souris pour éviter toute crispation.",
       "Respirez régulièrement pour préserver la stabilité oculomotrice lors des changements de cap."
     ],
@@ -282,7 +283,7 @@ export default function TriangularPursuitPageFR() {
         copy={{
           title: "Poursuite visuelle triangulaire",
           subtitle: "Exercice diagonal et reprise aux angles",
-          description: "Suivez une cible sur une route triangulaire et mesurez l erreur aux angles et les pertes de cible."
+          description: "Suivez une cible sur une route triangulaire et mesurez l’erreur aux angles et les pertes de cible."
         }}
       />
       <DrillGuide guide={guide} />
