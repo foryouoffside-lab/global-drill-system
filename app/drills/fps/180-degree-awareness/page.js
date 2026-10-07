@@ -5,7 +5,7 @@ import { pickSources } from '@/lib/drillSources';
 import { getAlternateLanguages } from '@/lib/i18n/locales';
 export const metadata = {
   title: "180° Aim Trainer: Snap Turn Practice | SkillDrills",
-  description: "Free 180 aim trainer for CS2 and Valorant. Practice 180 degree flicks and snap turns to targets that appear behind you, in your browser.",
+  description: "Free 180 aim trainer for CS2 and Valorant. Practice 180 degree flicks and snap turns to targets at the screen edges, in your browser.",
   keywords: [
     // Primary
     "180 aim trainer",
@@ -33,7 +33,7 @@ export const metadata = {
   },
   openGraph: {
     title: "180° Aim Trainer: Snap Turn Practice | SkillDrills",
-    description: "Free 180 aim trainer for CS2 and Valorant. Practice 180 degree flicks and snap turns to targets that appear behind you, in your browser.",
+    description: "Free 180 aim trainer for CS2 and Valorant. Practice 180 degree flicks and snap turns to targets at the screen edges, in your browser.",
     url: "https://skilldrills.online/drills/fps/180-degree-awareness",
     siteName: 'SkillDrills',
     locale: 'en_US',
@@ -47,7 +47,7 @@ export const metadata = {
   twitter: {
     card: 'summary_large_image',
     title: "180° Aim Trainer: Snap Turn Practice | SkillDrills",
-    description: "Free 180 aim trainer for CS2 and Valorant. Practice 180 degree flicks and snap turns to targets that appear behind you, in your browser.",
+    description: "Free 180 aim trainer for CS2 and Valorant. Practice 180 degree flicks and snap turns to targets at the screen edges, in your browser.",
   },
 };
 
