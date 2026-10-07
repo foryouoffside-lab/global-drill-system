@@ -16,3 +16,4 @@
 | C:/Program Files/Git/ja/drills/memory | done | PENDING | docs/seo/research/ja/memory-hub.md | audit pass, no source change |
 | C:/Program Files/Git/ja/drills/physical | done | PENDING | docs/seo/research/ja/physical-hub.md | audit pass, no source change |
 | C:/Program Files/Git/ja/drills/visual | done | PENDING | docs/seo/research/ja/visual-hub.md | audit pass, no source change |
+| C:/Program Files/Git/ja/drills/reaction-speed | done | PENDING | docs/seo/research/ja/reaction-speed-hub.md | audit pass, no source change |
