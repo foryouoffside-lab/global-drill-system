@@ -237,8 +237,9 @@ const howToSchema = {
 const guideProps = {
   sources: pickSources('lashley1951', 'keele1968', 'fitts1954', 'mackenzie1992', 'woods2015'),
   intro: {
-    title: 'How sequence aim training is measured',
+    title: `What Is a Sequence Aim Trainer, and How Is It Measured?`,
     paragraphs: [
+      `A sequence aim trainer has you click a set of targets in a required order, so you practise switching between targets instead of always picking the nearest one. This free browser drill shrinks the targets within each sequence, which tests how fast and how accurately you move from one target to the next.`,
       'Sequential target switching is clicking a set of targets in a required order rather than whichever is nearest. Each transition between two targets is a Fitts’s Law movement, timed by the log of the gap between them divided by their width (Fitts, 1954; MacKenzie, 1992), and the order itself is held as a pre-planned motor program rather than re-decided at each target (Lashley, 1951; Keele, 1968).',
       'How this is measured, and what it cannot resolve: timing comes from the browser’s performance.now() clock, which is deliberately coarsened to roughly 1 ms as a Spectre mitigation, and the display quantizes every target to its own refresh interval — about 16.7 ms at 60 Hz, 6.9 ms at 144 Hz and 4.1 ms at 240 Hz (Woods et al., 2015). Mouse polling adds roughly 8 ms at 125 Hz against about 1 ms at 1000 Hz. Treat any difference under about 5 ms as measurement noise, and compare your own runs on the same mouse and display rather than against someone else’s setup. SkillDrills stores every score in your browser and collects no aggregate data, so nothing here is a population norm.',
     ],
