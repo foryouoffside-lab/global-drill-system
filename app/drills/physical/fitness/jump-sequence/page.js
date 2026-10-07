@@ -165,10 +165,10 @@ const faqSchema = {
     },
     {
       '@type': 'Question',
-      name: 'How does charge-and-launch timing translate to athletic performance?',
+      name: 'Does charge-and-launch timing relate to athletic performance?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'In sprinting, hurdling, basketball rebounding, and volleyball spiking, athletes must modulate ground contact time and vertical impulse within fractions of a second. This drill trains the central nervous system to calculate exact force requirements under rapid temporal constraints.',
+        text: 'Jumping sports reward timing of force and takeoff, and this drill practises a simplified version of that timing with mouse input. It is a browser reflex game, not athletic training, and it does not measure or improve real jumping ability.',
       },
     },
     {
@@ -176,7 +176,7 @@ const faqSchema = {
       name: 'Does mid-air steering train motor coordination for competitive gaming?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Yes. Fast-paced movement shooters like Apex Legends, Overwatch, and Quake require continuous aerial trajectory control (air-strafing, rocket jumping) while tracking agile opponents. Mastering mid-air cursor adjustments sharpens micro-proprioception and spatial anticipation.',
+        text: 'It may help with timing and steering practice. Movement shooters ask for mid-air trajectory control, and the drill practises mid-air cursor steering, but this site has no study showing a transfer to competitive play.',
       },
     },
     {
@@ -208,7 +208,7 @@ const faqSchema = {
       name: 'What equipment is required to perform Jump Sequence training?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'No specialized hardware is required. The drill runs directly in any modern desktop or mobile browser. For optimal airborne steering precision, a standard desktop optical mouse set to 1:1 raw input is recommended.',
+        text: 'No specialized hardware is required. The drill runs directly in any modern desktop or mobile browser. For optimal airborne steering precision, a standard desktop mouse is recommended.',
       },
     },
   ],
@@ -279,9 +279,9 @@ const guideProps = {
     title: 'Jump Sequence Training & Trajectory Interception 5-Tier Performance Benchmarks',
     headers: ['Performance Tier', 'Mastery Rank Title', 'Score Threshold', 'Interception Rate & Speed', 'Performance Grade', 'Neuromotor Airborne Profile'],
     rows: [
-      ['Tier 1: Apex Trajectory Master', 'Apex Trajectory Master', '17,000+ pts', '92%+ Acc / 800+ px/s', 'Grade S (Top 0.1%)', 'Exceptional cerebellar forward modeling and optical tau time-to-contact estimation; flawless ballistic ascent interception (Komi 2000; Kawato 1999)'],
-      ['Tier 2: Precision Aerial Striker', 'Precision Aerial Striker', '12,000 – 16,999 pts', '84 – 91% Acc / 650 – 799 px/s', 'Grade A (Top 5%)', 'Advanced predictive liftoff impulse calibration with smooth mid-air parabolic steering and minimal terminal deceleration lag (Lee 1976)'],
-      ['Tier 3: Skilled Jump Interceptor', 'Skilled Jump Interceptor', '7,500 – 11,999 pts', '75 – 83% Acc / 500 – 649 px/s', 'Grade B (Top 20%)', 'Solid athletic baseline; consistent apex interception on linear flight paths with slight timing dispersion on high-arc targets'],
+      ['Tier 1: Apex Trajectory Master', 'Apex Trajectory Master', '17,000+ pts', '92%+ Acc / 800+ px/s', 'Grade S', 'Exceptional cerebellar forward modeling and optical tau time-to-contact estimation; flawless ballistic ascent interception (Komi 2000; Kawato 1999)'],
+      ['Tier 2: Precision Aerial Striker', 'Precision Aerial Striker', '12,000 – 16,999 pts', '84 – 91% Acc / 650 – 799 px/s', 'Grade A', 'Advanced predictive liftoff impulse calibration with smooth mid-air parabolic steering and minimal terminal deceleration lag (Lee 1976)'],
+      ['Tier 3: Skilled Jump Interceptor', 'Skilled Jump Interceptor', '7,500 – 11,999 pts', '75 – 83% Acc / 500 – 649 px/s', 'Grade B', 'Solid athletic baseline; consistent apex interception on linear flight paths with slight timing dispersion on high-arc targets'],
       ['Tier 4: Developing Parabola Navigator', 'Developing Parabola Navigator', '4,000 – 7,499 pts', '65 – 74% Acc / 350 – 499 px/s', 'Grade C (Average)', 'Recreational motor control; frequent late liftoff charges caused by reactive rather than predictive time-to-contact estimation'],
       ['Tier 5: Novice Liftoff Trainee', 'Novice Liftoff Trainee', '< 4,000 pts', '< 65% Acc / < 350 px/s', 'Grade D (Novice)', 'Early motor acquisition phase; struggles to gauge gravitational curvature, resulting in frequent target overshoot and low combo retention']
     ],
