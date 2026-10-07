@@ -288,18 +288,7 @@ const guideDe = {
     { title: "Schneller mentaler Neustart", body: "Wenn Sie den Faden verlieren, setzen Sie sofort beim nächsten Reiz neu an." }
   ],
   sources: pickSources('baddeley1974', 'baddeley1986', 'cowan2001', 'woods2015'),
-  faqs: [
-    { q: "Was ist der N-Back Arbeitsgedächtnis-Test?", a: "Ein neuropsychologisches Paradigma zur Messung der kontinuierlichen Informationsaktualisierung im Arbeitsgedächtnis." },
-    { q: "Wer erfand die N-Back-Aufgabe und zu welchem Zweck?", a: "Wayne K. Kirchner entwickelte die Aufgabe 1958 zur Erforschung des Behaltens dynamischer Informationen." },
-    { q: "Welche kognitiven Fähigkeiten misst N-Back primär?", a: "Kontinuierliche Aktualisierung, zentrale exekutive Kontrolle und Interferenzhemmung." },
-    { q: "Worin unterscheidet sich N-Back von einfachen Zahlen-Merktests?", a: "N-Back erfordert permanente dynamische Manipulation statt bloßer statischer Speicherung." },
-    { q: "Kann N-Back-Training die fluide Intelligenz (IQ) steigern?", a: "Studien wie Jaeggi et al. (2008) belegen bedeutsame Transfereffekte auf Problemlösungskompetenzen." },
-    { q: "Was ist ein normaler Wert für Erwachsene beim 3-Back-Test?", a: "Gesunde Erwachsene erreichen durchschnittlich 65% bis 80% Genauigkeit." },
-    { q: "Was ist der Unterschied zwischen Single N-Back und Dual N-Back?", a: "Single nutzt einen Reizkanal; Dual verarbeitet zeitgleich visuelle Positionen und akustische Buchstaben." },
-    { q: "Wie hilft das innerliche Mitsprechen (subvokales Wiederholen)?", a: "Es bindet die phonologische Schleife ein und verhindert das Verblassen der Reizspuren." },
-    { q: "Warum bricht die Leistung bei 4-Back und 5-Back oft deutlich ein?", a: "Weil die menschliche Aufmerksamkeitsspanne bei 4±1 Einheiten ihre biologische Grenze erreicht (Cowan, 2001)." },
-    { q: "Wie überträgt sich die Arbeitsgedächtniskapazität auf den Alltag?", a: "Sie erleichtert Multitasking, Programmieren, Textverständnis und strategische Entscheidungsfindung." }
-  ],
+  faqs: faqSchema.mainEntity.map(({ name, acceptedAnswer }) => ({ q: name, a: acceptedAnswer.text })),
   related: [
     { href: "/de/drills/memory/spatial-memory/path-tracing", title: "Pfadverfolgungs-Gedächtnistest", desc: "Räumliche Routen auf dynamischen Gittern nachvollziehen." },
     { href: "/de/drills/memory/spatial-memory/grid-memorization", title: "Visueller Gittertest", desc: "2D-Schachbrettmuster memorieren und visuelle Speicherkapazität testen." },

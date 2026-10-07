@@ -83,6 +83,10 @@ const nextConfig = {
           { key: 'X-DNS-Prefetch-Control', value: 'on' },
         ],
       },
+      ...Object.entries({ ko: 'ko-KR', ja: 'ja-JP', de: 'de-DE', pt: 'pt-BR', es: 'es-ES', fr: 'fr-FR' }).map(([locale, language]) => ({
+        source: `/${locale}/:path*`,
+        headers: [{ key: 'Content-Language', value: language }],
+      })),
       {
         // The site currently ships no API routes at all — the IndexNow relay was
         // deleted once it turned out `scripts/notify-indexnow.js` (postbuild)

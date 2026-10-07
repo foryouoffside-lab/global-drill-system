@@ -247,7 +247,8 @@ export default function ZigZagPathPursuitPagePT() {
       "Mantenha a musculatura dos ombros e pescoço totalmente relaxada.",
       "Respire com fluidez para manter a estabilidade do tônus ocular nas acelerações."
     ],
-    sources
+    sources,
+    faqs: faqSchema.mainEntity.map(({ name, acceptedAnswer }) => ({ q: name, a: acceptedAnswer.text }))
   };
 
   return (

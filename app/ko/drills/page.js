@@ -5,8 +5,8 @@ import { getLocalizedDrill } from '@/lib/i18n/drillNames';
 import { buildDirectoryMetadata, getDirectoryCollectionFields } from '@/lib/i18n/siteLandingSeoNative';
 
 const legacyMetadata = {
-  title: '에임 연습 & 두뇌 훈련 82종 무료 드릴 모음 | SkillDrills',
-  description: '8개 핵심 카테고리 82종 이상의 무료 온라인 피지컬 훈련. 발로란트 에임 연습, 반응속도 테스트, 시각 추적, 기억력 게임, 인지 능력 향상 드릴을 설치 없이 브라우저에서 즉시 시작하세요.',
+  title: '에임 연습 & 두뇌 훈련 81종 무료 드릴 모음 | SkillDrills',
+  description: '8개 핵심 카테고리 81종의 무료 온라인 피지컬 훈련. 발로란트 에임 연습, 반응속도 테스트, 시각 추적, 기억력 게임, 인지 능력 향상 드릴을 설치 없이 브라우저에서 즉시 시작하세요.',
   keywords: [
     '무료 에임 연습 사이트', '발로란트 에임 연습', '반응속도 테스트',
     '두뇌 훈련 게임', '기억력 테스트 게임', '시각 추적 훈련',
@@ -15,8 +15,8 @@ const legacyMetadata = {
     '스트룹 검사 온라인', '공간지각력 테스트', '피지컬 트레이닝 온라인'
   ],
   openGraph: {
-    title: '에임 연습 & 두뇌 훈련 82종 무료 드릴 모음 | SkillDrills',
-    description: '8개 핵심 카테고리 82종 이상의 무료 온라인 피지컬 훈련. 발로란트 에임 연습, 반응속도 테스트, 시각 추적, 기억력 게임, 인지 능력 향상 드릴을 설치 없이 브라우저에서 즉시 시작하세요.',
+    title: '에임 연습 & 두뇌 훈련 81종 무료 드릴 모음 | SkillDrills',
+    description: '8개 핵심 카테고리 81종의 무료 온라인 피지컬 훈련. 발로란트 에임 연습, 반응속도 테스트, 시각 추적, 기억력 게임, 인지 능력 향상 드릴을 설치 없이 브라우저에서 즉시 시작하세요.',
     type: 'website',
     url: 'https://skilldrills.online/ko/drills',
     siteName: 'SkillDrills',
@@ -30,8 +30,8 @@ const legacyMetadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: '에임 연습 & 두뇌 훈련 82종 무료 드릴 모음 | SkillDrills',
-    description: '8대 분야 82종 이상의 무료 온라인 에임 트레이너, 반응속도, 두뇌 인지 훈련.',
+    title: '에임 연습 & 두뇌 훈련 81종 무료 드릴 모음 | SkillDrills',
+    description: '8대 분야 81종의 무료 온라인 에임 트레이너, 반응속도, 두뇌 인지 훈련.',
     images: ['https://skilldrills.online/icons/icon-512x512.png'],
   },
   robots: { index: true, follow: true },
@@ -58,9 +58,9 @@ const breadcrumbSchema = {
 const collectionSchema = {
   "@context": "https://schema.org",
   "@type": "CollectionPage",
-  "name": "전체 에임 연습 및 인지 신체 훈련 도감 (82종)",
+  "name": "전체 에임 연습 및 인지 신체 훈련 도감 (81종)",
   "url": "https://skilldrills.online/ko/drills",
-  "description": "8대 핵심 분야 82종의 과학적 인터랙티브 훈련 드릴 모음. 에임 트레이너, 반응속도, 시각 추적, 인지 제어, 기억력 평가.",
+  "description": "8대 핵심 분야 81종의 과학적 인터랙티브 훈련 드릴 모음. 에임 트레이너, 반응속도, 시각 추적, 인지 제어, 기억력 평가.",
   "author": { "@type": "Organization", "name": "SkillDrills" },
   "hasPart": DRILLS.map((drill) => {
     const loc = getLocalizedDrill(drill.href, 'ko', drill.name);
@@ -82,7 +82,7 @@ const faqSchema = {
   "mainEntity": [
     {
       "@type": "Question",
-      "name": "SkillDrills의 82가지 훈련 드릴은 어떤 과학적 근거로 설계되었나요?",
+      "name": "SkillDrills의 81가지 훈련 드릴은 어떤 과학적 근거로 설계되었나요?",
       "acceptedAnswer": {
         "@type": "Answer",
         "text": "SkillDrills는 피츠의 법칙(Fitts's Law), 멘탈 크로노메트리(반응시간 측정학), 배들리의 작업기억 모델, 그리고 시각 운동 신경 통제 이론 등 저명한 신경과학 및 스포츠 운동역학 문헌을 기반으로 프로그래밍되었습니다. 각 드릴은 인위적인 게임성보다는 감각 수용체 자극, 중추신경계 정보 처리, 말초 운동 신경 명령 전달로 이어지는 신경 생리학적 루프를 정밀하게 자극하도록 수학적으로 보정되었습니다."

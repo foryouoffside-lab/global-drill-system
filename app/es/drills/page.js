@@ -5,8 +5,8 @@ import { getLocalizedDrill } from '@/lib/i18n/drillNames';
 import { buildDirectoryMetadata, getDirectoryCollectionFields } from '@/lib/i18n/siteLandingSeoNative';
 
 const legacyMetadata = {
-  title: 'Entrenador de Puntería: 82 Tests Gratis | SkillDrills',
-  description: '82 ejercicios online gratuitos en 8 categorías: puntería FPS para shooters, test de reacción, memoria, CPS y agudeza visual directamente en el navegador.',
+  title: 'Entrenador de Puntería: 81 Tests Gratis | SkillDrills',
+  description: '81 ejercicios online gratuitos en 8 categorías: puntería FPS para shooters, test de reacción, memoria, CPS y agudeza visual directamente en el navegador.',
   keywords: [
     'aim trainer gratis',
     'aim trainer online',
@@ -25,8 +25,8 @@ const legacyMetadata = {
     'coordinacion ojo mano test'
   ],
   openGraph: {
-    title: 'Entrenador de Puntería: 82 Tests Gratis | SkillDrills',
-    description: '82 ejercicios online gratuitos en 8 categorías: puntería FPS para shooters, test de reacción, memoria, CPS y agudeza visual directamente en el navegador.',
+    title: 'Entrenador de Puntería: 81 Tests Gratis | SkillDrills',
+    description: '81 ejercicios online gratuitos en 8 categorías: puntería FPS para shooters, test de reacción, memoria, CPS y agudeza visual directamente en el navegador.',
     type: 'website',
     url: 'https://skilldrills.online/es/drills',
     siteName: 'SkillDrills',
@@ -35,13 +35,13 @@ const legacyMetadata = {
       url: 'https://skilldrills.online/icons/icon-512x512.png',
       width: 512,
       height: 512,
-      alt: 'Catálogo Completo de 82 Ejercicios SkillDrills',
+      alt: 'Catálogo Completo de 81 Ejercicios SkillDrills',
     }],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Entrenador de Puntería: 82 Tests Gratis | SkillDrills',
-    description: '82 ejercicios online para puntería, velocidad de reacción, cognición y agudeza visual.',
+    title: 'Entrenador de Puntería: 81 Tests Gratis | SkillDrills',
+    description: '81 ejercicios online para puntería, velocidad de reacción, cognición y agudeza visual.',
     images: ['https://skilldrills.online/icons/icon-512x512.png'],
   },
   robots: { index: true, follow: true },
@@ -78,8 +78,8 @@ const breadcrumbSchema = {
 const collectionSchema = {
   "@context": "https://schema.org",
   "@type": "CollectionPage",
-  "name": "Catálogo Completo de 82 Ejercicios de Rendimiento SkillDrills",
-  "description": "Colección científica de 82 ejercicios interactivos para puntería FPS, velocidad de reacción, seguimiento visual, cognición, memoria, motricidad fina y percepción visual.",
+  "name": "Catálogo Completo de 81 Ejercicios de Rendimiento SkillDrills",
+  "description": "Colección científica de 81 ejercicios interactivos para puntería FPS, velocidad de reacción, seguimiento visual, cognición, memoria, motricidad fina y percepción visual.",
   "url": "https://skilldrills.online/es/drills",
   "inLanguage": "es",
   "hasPart": DRILLS.map((drill) => {
@@ -107,7 +107,7 @@ const faqSchema = {
   "mainEntity": [
     {
       "@type": "Question",
-      "name": "¿Cuáles son las bases científicas detrás de los 82 ejercicios de SkillDrills?",
+      "name": "¿Cuáles son las bases científicas detrás de los 81 ejercicios de SkillDrills?",
       "acceptedAnswer": {
         "@type": "Answer",
         "text": "SkillDrills se fundamenta en principios validados de la neurobiología motora y la psicología cognitiva, como la Ley de Fitts (compensación velocidad-precisión), la Ley de Hick (tiempo de decisión multialternativa), la teoría de integración de características visuales y los modelos de plasticidad sináptica. Cada ejercicio aísla circuitos neuromusculares y procesos atencionales específicos para generar adaptaciones duraderas."
@@ -158,7 +158,7 @@ const faqSchema = {
       "name": "¿Es necesario descargar programas o registrarse para utilizar la plataforma?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "No. Los 82 ejercicios se ejecutan íntegramente de forma local en el navegador web mediante Canvas HTML5 y WebGL ligero. No se requiere instalar software ni crear cuentas obligatorias. Todos los récords e historiales se almacenan localmente en el almacenamiento privado del navegador, garantizando total privacidad."
+        "text": "No. Los 81 ejercicios se ejecutan íntegramente de forma local en el navegador web mediante Canvas HTML5 y WebGL ligero. No se requiere instalar software ni crear cuentas obligatorias. Todos los récords e historiales se almacenan localmente en el almacenamiento privado del navegador, garantizando total privacidad."
       }
     },
     {

@@ -7,7 +7,7 @@ import { pickSources } from '@/lib/drillSources';
 
 export const metadata = {
   title: "Test de Símbolos y Dígitos | SDMT Online | SkillDrills",
-  description: "Test gratuito de símbolos y dígitos en el navegador: practica el emparejamiento símbolo-dígito y la velocidad de procesamiento. Inspirado en SDMT, no es clínico.",
+  description: "Test gratuito de símbolos y dígitos: practica el emparejamiento símbolo-dígito y la velocidad de procesamiento. Inspirado en SDMT, no es clínico.",
   keywords: [
     "test de simbolos y digitos",
     "test sdmt online",
@@ -24,7 +24,7 @@ export const metadata = {
   ],
   openGraph: {
     title: "Test de Símbolos y Dígitos | SDMT Online | SkillDrills",
-    description: "Test gratuito de símbolos y dígitos en el navegador: practica el emparejamiento símbolo-dígito y la velocidad de procesamiento. Inspirado en SDMT, no es clínico.",
+    description: "Test gratuito de símbolos y dígitos: practica el emparejamiento símbolo-dígito y la velocidad de procesamiento. Inspirado en SDMT, no es clínico.",
     type: 'article',
     url: 'https://skilldrills.online/es/drills/cognitive/processing-speed/symbol-matching',
     siteName: 'SkillDrills',
@@ -33,7 +33,7 @@ export const metadata = {
   twitter: {
     card: 'summary_large_image',
     title: "Test de Símbolos y Dígitos | SDMT Online | SkillDrills",
-    description: "Test gratuito de símbolos y dígitos en el navegador: practica el emparejamiento símbolo-dígito y la velocidad de procesamiento. Inspirado en SDMT, no es clínico.",
+    description: "Test gratuito de símbolos y dígitos: practica el emparejamiento símbolo-dígito y la velocidad de procesamiento. Inspirado en SDMT, no es clínico.",
   },
   robots: { index: true, follow: true },
   alternates: {

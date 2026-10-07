@@ -22,7 +22,7 @@ import { pickSources } from '@/lib/drillSources';
 
 export const metadata = {
   title: "Reaktionstest online | Raster-Ausweichspiel | SkillDrills",
-  description: "Kostenloser Reaktionstest online und Raster-Ausweichspiel. Erkennen Sie Gefahren im 3x3-Gitter und wechseln Sie schnell in sichere Felder für periphere Reaktionen.",
+  description: "Kostenloser Reaktionstest online mit Raster-Ausweichspiel: Erkennen Sie Gefahren im 3x3-Gitter und wechseln Sie schnell in sichere Felder.",
   keywords: [
     "Reaktionstest online kostenlos",
     "Reaktionszeit Test",
@@ -41,7 +41,7 @@ export const metadata = {
   },
   openGraph: {
     title: "Reaktionstest online | Raster-Ausweichspiel | SkillDrills",
-    description: "Kostenloser Reaktionstest online und Raster-Ausweichspiel. Erkennen Sie Gefahren im 3x3-Gitter und wechseln Sie schnell in sichere Felder für periphere Reaktionen.",
+    description: "Kostenloser Reaktionstest online mit Raster-Ausweichspiel: Erkennen Sie Gefahren im 3x3-Gitter und wechseln Sie schnell in sichere Felder.",
     url: 'https://skilldrills.online/de/drills/physical/coordination/dynamic-grid-evasion',
     siteName: 'SkillDrills',
     locale: 'de_DE',
@@ -50,7 +50,7 @@ export const metadata = {
   twitter: {
     card: 'summary_large_image',
     title: "Reaktionstest online | Raster-Ausweichspiel | SkillDrills",
-    description: "Kostenloser Reaktionstest online und Raster-Ausweichspiel. Erkennen Sie Gefahren im 3x3-Gitter und wechseln Sie schnell in sichere Felder für periphere Reaktionen.",
+    description: "Kostenloser Reaktionstest online mit Raster-Ausweichspiel: Erkennen Sie Gefahren im 3x3-Gitter und wechseln Sie schnell in sichere Felder.",
   },
   robots: { index: true, follow: true },
 };

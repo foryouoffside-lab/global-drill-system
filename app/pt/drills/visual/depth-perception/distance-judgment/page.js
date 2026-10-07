@@ -15,7 +15,7 @@ import { pickSources } from '@/lib/drillSources';
 // ============================================================
 
 export const metadata = {
-  title: 'Teste de estereopsia online | Noção de distância | SkillDrills',
+  title: 'Teste de estereopsia online | Noção de distância',
   description: 'Teste de estereopsia e percepção de profundidade online grátis. Treine a noção de distância com um alvo em movimento; não substitui exame oftalmológico.',
   keywords: [
     'teste de estereopsia',
@@ -31,7 +31,7 @@ export const metadata = {
     'percepção espacial',
   ],
   openGraph: {
-    title: 'Teste de estereopsia online | Noção de distância | SkillDrills',
+    title: 'Teste de estereopsia online | Noção de distância',
     description: 'Teste de estereopsia e percepção de profundidade online grátis. Treine a noção de distância com um alvo em movimento; não substitui exame oftalmológico.',
     type: 'article',
     url: 'https://skilldrills.online/pt/drills/visual/depth-perception/distance-judgment',
@@ -40,7 +40,7 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Teste de estereopsia online | Noção de distância | SkillDrills',
+    title: 'Teste de estereopsia online | Noção de distância',
     description: 'Teste de estereopsia e percepção de profundidade online grátis. Treine a noção de distância com um alvo em movimento; não substitui exame oftalmológico.',
   },
   robots: { index: true, follow: true },

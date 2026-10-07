@@ -6,7 +6,7 @@ import RelatedDrills from '@/components/drill/RelatedDrills';
 import DrillFooter from '@/components/drill/DrillFooter';
 
 export const metadata = {
-  title: "Valorant Aim Trainer - Zielerfassung & First Shot | SkillDrills",
+  title: "Valorant Aim Trainer - Zielerfassung & First Shot",
   description: "Kostenloser Valorant Aim Trainer im Browser: Erkenne Ziele schneller, übe Zielerfassung und verbessere deine First-Shot-Accuracy für CS2 und Valorant.",
   keywords: [
     "Valorant Aim Trainer",
@@ -31,7 +31,7 @@ export const metadata = {
     follow: true,
   },
   openGraph: {
-    title: "Valorant Aim Trainer - Zielerfassung & First Shot | SkillDrills",
+    title: "Valorant Aim Trainer - Zielerfassung & First Shot",
     description: "Kostenloser Valorant Aim Trainer im Browser: Erkenne Ziele schneller, übe Zielerfassung und verbessere deine First-Shot-Accuracy für CS2 und Valorant.",
     url: "https://skilldrills.online/de/drills/fps/target-acquisition",
     siteName: 'SkillDrills',
@@ -40,7 +40,7 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: "Valorant Aim Trainer - Zielerfassung & First Shot | SkillDrills",
+    title: "Valorant Aim Trainer - Zielerfassung & First Shot",
     description: "Kostenloser Valorant Aim Trainer im Browser: Erkenne Ziele schneller, übe Zielerfassung und verbessere deine First-Shot-Accuracy für CS2 und Valorant.",
   },
 };

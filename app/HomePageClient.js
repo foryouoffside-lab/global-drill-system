@@ -5,6 +5,7 @@ import Link from 'next/link';
 import Reveal from '@/components/Reveal';
 import HeroReactionTest from '@/components/HeroReactionTest';
 import SiteFooter from '@/components/SiteFooter';
+import { useTranslation } from '@/lib/i18n/useTranslation';
 import { DRILLS, DESKTOP_ONLY_CATEGORIES } from '@/lib/drillsRegistry';
 import {
   Target, ArrowRight, Zap, Trophy, BarChart3,
@@ -158,6 +159,7 @@ const audienceData = [
 
 export default function HomePageClient({ copy = {} }) {
   const [profile, setProfile] = useState(null);
+  const { localizeHref } = useTranslation();
 
   const totalDrillsCount = DRILLS.length;
   const totalCategoriesCount = categoryConfigs.length;
@@ -273,14 +275,14 @@ export default function HomePageClient({ copy = {} }) {
 
               <div className="flex flex-col sm:flex-row gap-3.5 justify-center lg:justify-start pt-2">
                 <Link
-                  href="/drills"
+                  href={localizeHref('/drills')}
                   className="inline-flex items-center justify-center gap-2.5 bg-gradient-to-r from-blue-600 via-blue-500 to-indigo-600 text-white px-8 py-3.5 rounded-xl font-bold hover:shadow-xl hover:shadow-blue-500/25 active:scale-[0.98] transition-all"
                 >
                   {t('heroExploreCta', `Explore All ${totalDrillsCount} Drills`)}
                   <ArrowRight className="w-4 h-4" aria-hidden="true" />
                 </Link>
                 <Link
-                  href="/drills/fps"
+                  href={localizeHref('/drills/fps')}
                   className="inline-flex items-center justify-center gap-2 bg-surface-1/90 border border-white/10 text-white px-7 py-3.5 rounded-xl font-bold hover:bg-surface-2 hover:border-white/20 active:scale-[0.98] transition-all"
                 >
                   <Crosshair className="w-4.5 h-4.5 text-red-400" aria-hidden="true" />
@@ -531,7 +533,7 @@ export default function HomePageClient({ copy = {} }) {
               return (
                 <Reveal key={cat.id} delay={idx * 40} className="h-full">
                   <Link
-                    href={cat.href}
+                    href={localizeHref(cat.href)}
                     className="group relative isolate flex h-full flex-col justify-between overflow-hidden bg-surface-1/80 backdrop-blur-xl border border-white/10 rounded-2xl p-5 hover:border-white/25 hover:-translate-y-1 active:scale-[0.98] transition-all duration-300 shadow-xl hover:shadow-2xl"
                   >
                     <div className="relative">
@@ -659,14 +661,14 @@ export default function HomePageClient({ copy = {} }) {
             </p>
             <div className="pt-5 flex flex-col sm:flex-row gap-4 justify-center items-center">
               <Link
-                href="/drills"
+                href={localizeHref('/drills')}
                 className="inline-flex items-center gap-2 bg-gradient-to-r from-blue-600 to-indigo-600 text-white px-9 py-4 rounded-xl font-bold hover:shadow-xl hover:shadow-blue-500/25 active:scale-[0.98] transition-all"
               >
                 {t('ctaExploreCta', `Browse All ${totalDrillsCount} Drills`)}
                 <ArrowRight className="w-5 h-5" aria-hidden="true" />
               </Link>
               <Link
-                href="/drills/fps"
+                href={localizeHref('/drills/fps')}
                 className="inline-flex items-center gap-2 bg-surface-2 border border-white/10 text-white px-8 py-4 rounded-xl font-bold hover:bg-surface-1 hover:border-white/20 active:scale-[0.98] transition-all"
               >
                 <Crosshair className="w-4.5 h-4.5 text-red-400" aria-hidden="true" />

@@ -330,18 +330,7 @@ const guideFr = {
     { title: "Reinitialisation mentale rapide", body: "Si vous perdez le fil du flux, reconnectez-vous immediatement sur la lettre suivante sans paniquer." }
   ],
   sources: pickSources('baddeley1974', 'baddeley1986', 'cowan2001', 'woods2015'),
-  faqs: [
-    { q: "Qu est-ce que le test de memoire de travail N-Back ?", a: "Un paradigme neuropsychologique destine a evaluer la mise a jour continue et l attention soutenue." },
-    { q: "Qui a invente la tache N-Back et pour quelle raison ?", a: "Wayne K. Kirchner l a concue en 1958 pour analyser la retention d informations dynamiques." },
-    { q: "Quelles fonctions executives sont principalement sollicitees ?", a: "L actualisation de la memoire de travail, l inhibition prefrontale et le controle cognitif." },
-    { q: "En quoi le N-Back differe-t-il d un simple test d empan ?", a: "Il requiert un renouvellement constant des traces mnesiques plutot qu un stockage fige." },
-    { q: "L entrainement au N-Back ameliore-t-il le QI fluide ?", a: "Les recherches de Jaeggi et al. (2008) mettent en evidence un transfert vers le raisonnement matriciel." },
-    { q: "Quelle est la moyenne habituelle pour un adulte au 3-Back ?", a: "Un adulte en bonne sante obtient generalement entre 65 % et 80 % de reussite." },
-    { q: "Quelle distinction existe-t-il entre Single et Dual N-Back ?", a: "Le Single N-Back utilise un flux unique ; le Dual N-Back gere simultanement deux canaux distincts." },
-    { q: "Quel est l interet de la vocalisation interieure ?", a: "Elle active la boucle phonologique pour empecher l estompement rapide de la trace mnesique." },
-    { q: "Pourquoi le 4-Back est-il particulierement difficile ?", a: "Parce qu il atteint le plafond biologique de capacite attentionnelle humaine de 4 unites (Cowan, 2001)." },
-    { q: "Comment ce travail s applique-t-il aux situations de la vie reelle ?", a: "Il developpe le multitache, la resolution de bugs, la prise de decision tactique et la clarte mentale." }
-  ],
+  faqs: faqSchema.mainEntity.map(({ name, acceptedAnswer }) => ({ q: name, a: acceptedAnswer.text })),
   related: [
     { href: "/fr/drills/memory/spatial-memory/path-tracing", title: "Test des Blocs de Corsi", desc: "Memoriser et reproduire des trajectoires sur grille animee." },
     { href: "/fr/drills/memory/spatial-memory/grid-memorization", title: "Test de Memoire Visuelle", desc: "Retenir des matrices de motifs geometriques sans indice verbal." },

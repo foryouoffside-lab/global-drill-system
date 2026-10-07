@@ -34,10 +34,10 @@ export default function LocalizedHomePage() {
     <HomePageClient
       copy={{
         srH2: 'SkillDrills - 무료 두뇌 훈련 & 에임 연습 플랫폼',
-        srBody: 'SkillDrills는 8개 카테고리에 걸쳐 82개의 인터랙티브 드릴을 무료로 제공하는 온라인 트레이닝 플랫폼입니다: FPS 에임 연습, 두뇌 훈련, 시각 트래킹, 작업 기억력 게임, 손-눈 협응 훈련, 반사신경 드릴, 시각 인지, 반응속도 테스트. 회원가입 없이 100% 브라우저에서 실행됩니다.',
+        srBody: 'SkillDrills는 8개 카테고리에 걸쳐 81개의 인터랙티브 드릴을 무료로 제공하는 온라인 트레이닝 플랫폼입니다: FPS 에임 연습, 두뇌 훈련, 시각 트래킹, 작업 기억력 게임, 손-눈 협응 훈련, 반사신경 드릴, 시각 인지, 반응속도 테스트. 회원가입 없이 100% 브라우저에서 실행됩니다.',
         heroH1: '에임도 두뇌도 함께 훈련',
-        heroSub: '정밀한 에임 컨트롤, 타겟 포착 속도, 작업 기억력을 키우세요. 82개의 무료 드릴을 8개 훈련 영역에서, 회원가입 없이 브라우저에서 바로 시작할 수 있습니다.',
-        heroExploreCta: '82개 드릴 전체 보기',
+        heroSub: '정밀한 에임 컨트롤, 타겟 포착 속도, 작업 기억력을 키우세요. 81개의 무료 드릴을 8개 훈련 영역에서, 회원가입 없이 브라우저에서 바로 시작할 수 있습니다.',
+        heroExploreCta: '81개 드릴 전체 보기',
         fpsHubCta: '에임 연습',
         statFreeDrills: '무료 드릴',
         statDomains: '훈련 영역',
@@ -103,8 +103,8 @@ export default function LocalizedHomePage() {
           { title: '데일리 트레이닝족', description: '빠른 정신적 워밍업과 매일의 컨디션 캘리브레이션을 위한 5분 짧은 세션.' },
         ],
         ctaH2: '지금 바로 훈련 시작',
-        ctaSub: '계정도, 결제도 필요 없습니다. 82개의 브라우저 기반 드릴이 바로 준비되어 있습니다.',
-        ctaExploreCta: '82개 드릴 전체 보기',
+        ctaSub: '계정도, 결제도 필요 없습니다. 81개의 브라우저 기반 드릴이 바로 준비되어 있습니다.',
+        ctaExploreCta: '81개 드릴 전체 보기',
         reactionTest: {
           headlineIdle: '클릭해서 시작',
           headlineWaiting: '초록색을 기다리세요',

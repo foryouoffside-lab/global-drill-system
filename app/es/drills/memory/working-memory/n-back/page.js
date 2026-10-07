@@ -287,18 +287,7 @@ const guideEs = {
     { title: "Reinicio atencional instantáneo", body: "Si pierde la secuencia, no intente recordar el pasado: tome la siguiente letra como punto 1 y reconstruya el búfer." }
   ],
   sources: pickSources('baddeley1974', 'baddeley1986', 'cowan2001', 'woods2015'),
-  faqs: [
-    { q: "¿Qué es el test de memoria de trabajo N-Back?", a: "Evaluación neurocognitiva que mide la actualización continua de la memoria de trabajo ante estímulos dinámicos." },
-    { q: "¿Quién inventó la tarea N-Back y cuál fue su propósito original?", a: "Wayne K. Kirchner en 1958, para estudiar los cambios en la retención de información con el envejecimiento." },
-    { q: "¿Qué facultad cognitiva evalúa principalmente el test N-Back?", a: "La actualización activa de la memoria de trabajo y el control ejecutivo prefrontal." },
-    { q: "¿En qué se diferencia el N-Back de los tests de amplitud de dígitos?", a: "N-Back requiere manipulación y reemplazo continuo en lugar de almacenamiento pasivo." },
-    { q: "¿Puede el entrenamiento N-Back mejorar la inteligencia fluida (CI)?", a: "Estudios científicos avalan mejoras significativas en razonamiento y control atencional." },
-    { q: "¿Cuál es la puntuación o precisión promedio en adultos en 3-Back?", a: "Entre el 65% y el 80% de aciertos en población adulta sana." },
-    { q: "¿Cuál es la diferencia entre Single N-Back y Dual N-Back?", a: "Single sigue un canal sensorial; Dual entrena visual y auditivo de forma simultánea e independiente." },
-    { q: "¿Cómo ayuda el repaso articulatorio subvocal en N-Back?", a: "Mantiene activas las huellas auditivas dentro del bucle fonológico impidiendo su pérdida." },
-    { q: "¿Por qué decae drásticamente el rendimiento en 4-Back y 5-Back?", a: "Porque sobrepasa el límite biológico del foco de atención humana de 4±1 ítems (Cowan, 2001)." },
-    { q: "¿Cómo se transfiere la memoria de trabajo a la vida real?", a: "Potencia la agilidad mental en análisis de datos, lectura compleja, programación y toma de decisiones tácticas." }
-  ],
+  faqs: faqSchema.mainEntity.map(({ name, acceptedAnswer }) => ({ q: name, a: acceptedAnswer.text })),
   related: [
     { href: "/es/drills/memory/spatial-memory/path-tracing", title: "Test de Trazado de Rutas", desc: "Retener rutas espaciales dinámicas sobre matrices progresivas." },
     { href: "/es/drills/memory/spatial-memory/grid-memorization", title: "Test de Memoria Visual de Cuadrícula", desc: "Memorizar patrones de tablero 2D y medir la capacidad de caché visual." },

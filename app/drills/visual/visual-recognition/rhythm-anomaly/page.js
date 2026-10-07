@@ -107,7 +107,7 @@ const faqSchema = {
       "name": "What is the Rhythm Anomaly test and what does it measure?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "The Rhythm Anomaly test is an interactive psychophysical assessment that measures visual temporal frequency discrimination. Observers view a 6x6 array of 36 pulsing cells where the background pulses at a baseline frequency, requiring the observer to rapidly detect and select the single cell pulsing at an accelerated, out-of-phase rate."
+        "text": "The Rhythm Anomaly test evaluates visual temporal discrimination by challenging observers to identify an out-of-sync, faster-pulsing cell among 35 synchronized background cells within a 6x6 matrix."
       }
     },
     {
@@ -115,7 +115,7 @@ const faqSchema = {
       "name": "How does the visual system detect out-of-sync rhythm and temporal frequency differences?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Temporal visual perception is mediated primarily by the magnocellular pathway, which possesses high temporal resolution (up to 40–50 Hz). When one cell pulses at a higher frequency or with phase lead, magnocellular transient neurons in primary visual cortex (V1) fire with distinct phase alignment, generating a salient preattentive motion-energy discrepancy that guides visual attention."
+        "text": "The magnocellular visual pathway processes rapid luminance oscillations and transient events up to 40–50 Hz. Phase leads in anomalous cells trigger early neuronal spikes in primary visual cortex, producing preattentive pop-out (Kelly, 1961)."
       }
     },
     {
@@ -123,7 +123,7 @@ const faqSchema = {
       "name": "What is the difference between magnocellular and parvocellular visual pathways in flicker detection?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "The magnocellular (M) pathway features large receptive fields, high contrast sensitivity, and rapid transient axonal conduction, making it optimized for detecting flicker, motion, and temporal anomalies. The parvocellular (P) pathway features smaller receptive fields and slower conduction, specialized for high spatial resolution, color discrimination, and fine detail."
+        "text": "Magnocellular neurons possess large receptive fields and high conduction velocity, optimized for temporal frequency, motion, and flicker. Parvocellular neurons have smaller receptive fields and slower conduction, optimized for fine color and high spatial detail (Holcombe, 2009)."
       }
     },
     {
@@ -131,7 +131,7 @@ const faqSchema = {
       "name": "What is Critical Flicker Frequency (CFF) and how does it relate to visual reaction speed?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Critical Flicker Frequency (CFF) is the threshold frequency at which an intermittent light stimulus transitions from appearing as a distinct flicker to a continuous, steady glow (typically 35–60 Hz in humans). A higher CFF indicates faster retinal temporal processing and shorter visual integration windows, correlating with superior dynamic visual acuity and faster reaction times."
+        "text": "Critical Flicker Frequency (CFF) is the rate at which intermittent light fuses into a steady source (35–60 Hz). Higher CFF thresholds reflect shorter temporal integration windows and faster perceptual sampling rates (De Lange, 1958)."
       }
     },
     {
@@ -139,7 +139,7 @@ const faqSchema = {
       "name": "What is a good score on the 36-cell Rhythm Anomaly test?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "In this 45-second drill, beginners typically score 50 to 99 points (Level 2–3). Competent visual performers achieve 100 to 149 points (Level 4–5), while elite visual athletes and competitive gamers reach 150 to 200+ points (Level 6–8+) with maximum streaks exceeding 10 consecutive detections."
+        "text": "Novices score 50 to 99 points (Level 2–3). Experienced visual performers reach 100 to 149 points, and elite athletes/esports competitors score 150 to 200+ points with streaks over 10 consecutive anomaly detections."
       }
     },
     {
@@ -147,7 +147,7 @@ const faqSchema = {
       "name": "Why does the drill grid pulse faster as your level increases?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "As consecutive hits build your speed level, the baseline pulse frequency accelerates and the temporal difference (delta-T) between the anomaly and background tightens. This forces your visual system to operate closer to its temporal resolution ceiling while shrinking reaction timeout windows."
+        "text": "Building consecutive hits accelerates the baseline grid pulse frequency and narrows the temporal discrimination window, progressively testing your visual system closer to its temporal resolution limits."
       }
     },
     {
@@ -155,7 +155,7 @@ const faqSchema = {
       "name": "What is the purpose of the entropy scramble background flashes?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "The entropy scramble randomly illuminates non-target cells to introduce transient visual noise. This prevents users from relying on peripheral flash detection alone, forcing the dorsal visual stream to evaluate genuine rhythmic periodicity rather than isolated luminance blips."
+        "text": "Entropy scramble flashes introduce brief non-periodic luminance blips, preventing users from relying on simple brightness detection and enforcing true temporal frequency comparison (Burr, 1980)."
       }
     },
     {
@@ -163,7 +163,7 @@ const faqSchema = {
       "name": "Are there score or time penalties for clicking incorrect cells?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "No. Misclicks and timeouts trigger a brief red flash and reset your current streak, but they never deduct accumulated points or shorten remaining session seconds, encouraging decisive perceptual commitment."
+        "text": "No. Misclicks and timeouts reset your current streak but never deduct accumulated score points or subtract remaining session time, encouraging fast and fluid visual exploration."
       }
     },
     {
@@ -171,7 +171,7 @@ const faqSchema = {
       "name": "How do refresh rates (60Hz vs 144Hz+) affect visual temporal perception?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "A 60 Hz display presents frames every 16.7 milliseconds, which can quantize smooth sinusoidal pulse cycles and introduce subtle display stutter. A 144 Hz or 240 Hz monitor provides frame intervals of 6.9 ms to 4.2 ms, rendering cleaner luminance waveforms that enhance temporal frequency discrimination."
+        "text": "Higher refresh rates (144 Hz–240 Hz) deliver frame intervals under 7 ms, rendering clean sinusoidal pulse curves that minimize temporal aliasing and enhance subtle phase-lead detection (Woods et al., 2015)."
       }
     },
     {
@@ -179,7 +179,7 @@ const faqSchema = {
       "name": "How do competitive gamers and athletes benefit from temporal rhythm training?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "High-level esports players, baseball batters, and tennis players rely on temporal discrimination to judge projectile speed, opponent animation startup frames, and subtle peripheral movement. Rhythm training sharpens temporal sensitivity and strengthens peripheral motion detection."
+        "text": "Dynamic athletes and gamers rely on temporal discrimination to recognize projectile trajectories, animation startup frames, and peripheral micro-movements, gaining a cognitive edge in time-pressured environments."
       }
     }
   ]

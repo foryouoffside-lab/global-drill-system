@@ -107,7 +107,7 @@ const faqSchema = {
       "name": "What is smooth pursuit eye tracking and how does it work?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Smooth pursuit is the continuous, voluntary ocular motor system that keeps the fovea locked onto a slowly moving target (up to 30–40 degrees per second). Unlike rapid ballistic saccades that jump from point to point, smooth pursuit matches eye velocity to target velocity to maintain clear, high-acuity retinal imaging without visual blur."
+        "text": "Smooth pursuit is the voluntary oculomotor system that maintains clear, high-acuity foveal fixation on a moving target up to 30–40 degrees per second. It functions as a closed-loop velocity matching mechanism rather than a series of static position jumps."
       }
     },
     {
@@ -115,7 +115,7 @@ const faqSchema = {
       "name": "Why do my eyes jump instead of moving smoothly when following a fast target?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "When target velocity exceeds the maximum capacity of the smooth pursuit system (typically above 30–40 deg/s) or changes vector abruptly, the brain detects retinal position error and initiates catch-up saccades. These rapid micro-jumps bring the fovea back onto the target because pursuit velocity alone cannot bridge the spatial deficit."
+        "text": "When target speed surpasses the pursuit system's maximum velocity capacity or undergoes sharp angular acceleration, retinal position error builds up. The brain automatically triggers catch-up saccades—rapid micro-jumps—to close the spatial gap (Bahill et al., 1980)."
       }
     },
     {
@@ -123,7 +123,7 @@ const faqSchema = {
       "name": "What is the difference between smooth pursuit and saccadic eye movements?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Saccades are high-velocity, ballistic jumps (up to 900 deg/s) triggered by positional retinal error to acquire new objects, during which vision is briefly suppressed. Smooth pursuit is a continuous, closed-loop tracking mechanism driven by retinal slip velocity that matches ocular velocity to target motion, functioning only when a moving stimulus is present."
+        "text": "Saccades are high-velocity, ballistic jumps driven by positional error during which vision is briefly suppressed. Smooth pursuit is continuous, closed-loop tracking driven by retinal slip velocity that maintains active visual intake while following a moving stimulus (Rashbass, 1961)."
       }
     },
     {
@@ -131,7 +131,7 @@ const faqSchema = {
       "name": "How does smooth pursuit tracking affect aim in fast-paced gaming?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "In competitive first-person shooters like Apex Legends, Overwatch, and Call of Duty, weapon time-to-kill depends on continuous cursor-to-hitbox alignment. High smooth pursuit gain eliminates jitter and overshooting during enemy strafes, allowing players to sustain continuous damage output rather than firing intermittent, reactive flick shots."
+        "text": "In tracking-heavy titles like Apex Legends or Overwatch, sustained weapon damage requires continuous cursor-on-hitbox alignment. High smooth pursuit gain eliminates overshooting during enemy strafes, turning erratic flicking into fluid, sustained damage output."
       }
     },
     {
@@ -139,7 +139,7 @@ const faqSchema = {
       "name": "What is a normal smooth pursuit score and time on target percentage?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "In this 45-second drill, general users typically score between 60 and 99 points with 50% to 69% on-target contact. Proficient trackers and competitive gamers achieve 100 to 139 points (70%–84% contact), while elite visual athletes reach 140 to 180+ points with over 95% continuous target contact and streaks exceeding 20 seconds."
+        "text": "Unpracticed users typically score 60 to 99 points with 50% to 69% on-target contact. Proficient trackers score 100 to 139 points, while elite competitive visual athletes achieve 140 to 180+ points with greater than 95% continuous contact and streaks above 25 seconds."
       }
     },
     {
@@ -147,7 +147,7 @@ const faqSchema = {
       "name": "Can smooth pursuit eye tracking be trained and improved?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Yes. Ocular motor neuroplasticity allows both smooth pursuit gain and predictive feedforward mechanisms to improve with structured training. Research demonstrates that progressive velocity tracking drills strengthen cerebellar floccular adaptation and reduce catch-up saccade frequency across 3 to 6 weeks of consistent practice."
+        "text": "Yes. Ocular motor neuroplasticity allows cerebellar adaptation to improve both smooth pursuit gain and predictive feedforward trajectories. Consistent training reduces corrective saccade count and broadens the velocity bandwidth of stable tracking."
       }
     },
     {
@@ -155,7 +155,7 @@ const faqSchema = {
       "name": "How does target speed scaling work in the Smooth Pursuit Tracker?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "The target orb begins at a baseline speed of 6 pixels per frame. As your sustained tracking streak compounds, orb velocity increases dynamically by +0.5 units per streak level while its active radius subtly contracts, testing your ability to maintain gaze holding under escalating velocity demands."
+        "text": "The target orb starts at 6 pixels per frame. As your sustained tracking streak compounds, speed dynamically scales by +0.5 units per streak tier while target radius contracts slightly, progressively testing your oculomotor holding limits."
       }
     },
     {
@@ -163,7 +163,7 @@ const faqSchema = {
       "name": "What causes tracking loss and streak reset during the drill?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "If your cursor slips outside the target's contact radius for more than 2 consecutive seconds (120 canvas frames), the tracking streak resets to zero and an audio-visual penalty triggers. Accrued score points are never subtracted, ensuring performance reflects sustained endurance rather than catastrophic failure."
+        "text": "Slipping outside the target orb's contact area for more than 2 consecutive seconds resets your tracking streak to zero. Accrued points are preserved, rewarding sustained consistency without punishing isolated lapses with total score resets."
       }
     },
     {
@@ -171,7 +171,7 @@ const faqSchema = {
       "name": "How do visual refresh rate and input latency impact pursuit accuracy?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Smooth pursuit relies on visual feedback delays of approximately 100 to 130 milliseconds. Higher monitor refresh rates (144 Hz to 360 Hz) and low-latency mice reduce display motion blur and input lag, enabling the visual cortex to compute more accurate velocity vectors and produce smoother motor commands."
+        "text": "Smooth pursuit depends on low visual feedback latency. High refresh rates (144 Hz–360 Hz) provide smoother retinal motion signals, reducing motion blur and allowing cortical areas MT/MST to compute more accurate velocity vectors (Woods et al., 2015)."
       }
     },
     {
@@ -179,7 +179,7 @@ const faqSchema = {
       "name": "How can athletes and esports players integrate smooth pursuit drills into their routine?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Perform 3 to 5 rounds of 45-second smooth pursuit tracking as a visual warm-up before gaming or athletic practice. Focus on smooth, continuous forearm sweeping rather than tense wrist micro-corrections, maintaining calm ocular fixation on the target's leading edge."
+        "text": "Run 3 to 5 rounds of 45-second smooth pursuit tracking as a daily ocular warm-up. Emphasize relaxed forearm movement and gaze anchoring on the leading edge of the target to prime smooth motor pathways before competition."
       }
     }
   ]

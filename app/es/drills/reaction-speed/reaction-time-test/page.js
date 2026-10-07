@@ -17,7 +17,7 @@ import { pickSources } from '@/lib/drillSources';
 export const metadata = {
   title: 'Test de reflejos online | SkillDrills',
   description:
-    'Haz un test de reflejos gratis: mide tu tiempo de reacción visual en milisegundos, consulta la media de varios intentos y compara tu regularidad en el navegador.',
+    'Haz un test de reflejos gratis: mide tu tiempo de reacción visual en milisegundos, consulta la media de varios intentos y compara tu regularidad.',
   keywords: [
     'test de reflejos',
     'test de reacción',

@@ -247,7 +247,8 @@ export default function ZigZagPathPursuitPageES() {
       "Mantenga el brazo y la muñeca sueltos sobre el ratón para una movilidad limpia.",
       "Respire con naturalidad para asegurar una oxigenación constante durante las aceleraciones."
     ],
-    sources
+    sources,
+    faqs: faqSchema.mainEntity.map(({ name, acceptedAnswer }) => ({ q: name, a: acceptedAnswer.text }))
   };
 
   return (

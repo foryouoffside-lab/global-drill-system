@@ -23,7 +23,7 @@ import { pickSources } from '@/lib/drillSources';
 
 export const metadata = {
   title: 'Sprungkraft Trainieren – Plyometrik | SkillDrills',
-  description: 'Kostenloses Sprungkraft-Training online. Fange parabelförmige Sprungziele am Scheitelpunkt ab und trainiere Timing und plyometrischen Rhythmus im Browser.',
+  description: 'Kostenloses Sprungkraft-Training online: Fange parabelförmige Sprungziele am Scheitelpunkt ab und trainiere Timing und plyometrischen Rhythmus.',
   keywords: [
     "Sprungkraft Trainieren Übungen",
     "Plyometrisches Training Sprungkraft",
@@ -58,10 +58,10 @@ export const metadata = {
 
 Object.assign(metadata, {
   title: 'Sprungkrafttraining online | Sprungfolge-Spiel | SkillDrills',
-  description: 'Kostenloses Sprungkraft- und Sprungfolge-Spiel im Browser. Dosieren Sie den Absprung, steuern Sie die Flugbahn und treffen Sie bewegte Ziele im richtigen Timing.',
+  description: 'Kostenloses Sprungkraft- und Sprungfolge-Spiel im Browser. Dosieren Sie den Absprung, steuern Sie die Flugbahn und treffen Sie bewegte Ziele.',
   keywords: ['Sprungkrafttraining', 'Sprungkoordination', 'Sprungfolge', 'plyometrisches Training', 'Vertikalsprung Training', 'Sprungspiel', 'Reaktionsschnelligkeit Sprung', 'Flugbahn Training', 'Sprung Timing', 'Koordination Sprung'],
-  openGraph: { ...metadata.openGraph, title: 'Sprungkrafttraining online | Sprungfolge-Spiel | SkillDrills', description: 'Kostenloses Sprungkraft- und Sprungfolge-Spiel im Browser. Dosieren Sie den Absprung, steuern Sie die Flugbahn und treffen Sie bewegte Ziele im richtigen Timing.' },
-  twitter: { ...metadata.twitter, title: 'Sprungkrafttraining online | Sprungfolge-Spiel | SkillDrills', description: 'Kostenloses Sprungkraft- und Sprungfolge-Spiel im Browser. Dosieren Sie den Absprung, steuern Sie die Flugbahn und treffen Sie bewegte Ziele im richtigen Timing.' },
+  openGraph: { ...metadata.openGraph, title: 'Sprungkrafttraining online | Sprungfolge-Spiel | SkillDrills', description: 'Kostenloses Sprungkraft- und Sprungfolge-Spiel im Browser. Dosieren Sie den Absprung, steuern Sie die Flugbahn und treffen Sie bewegte Ziele.' },
+  twitter: { ...metadata.twitter, title: 'Sprungkrafttraining online | Sprungfolge-Spiel | SkillDrills', description: 'Kostenloses Sprungkraft- und Sprungfolge-Spiel im Browser. Dosieren Sie den Absprung, steuern Sie die Flugbahn und treffen Sie bewegte Ziele.' },
 });
 
 const breadcrumbSchema = {

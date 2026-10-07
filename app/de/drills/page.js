@@ -5,8 +5,8 @@ import { getLocalizedDrill } from '@/lib/i18n/drillNames';
 import { buildDirectoryMetadata, getDirectoryCollectionFields } from '@/lib/i18n/siteLandingSeoNative';
 
 const legacyMetadata = {
-  title: 'Aim Trainer & Gehirntraining: 82 Übungen | SkillDrills',
-  description: '82 wissenschaftliche Online-Drills in 8 Kategorien: Aim Trainer für Shooter, Reaktionstest, Gedächtnistraining, CPS & Sehschärfe direkt im Browser.',
+  title: 'Aim Trainer & Gehirntraining: 81 Übungen | SkillDrills',
+  description: '81 wissenschaftliche Online-Drills in 8 Kategorien: Aim Trainer für Shooter, Reaktionstest, Gedächtnistraining, CPS & Sehschärfe direkt im Browser.',
   keywords: [
     'aim trainer kostenlos',
     'aim training online',
@@ -25,8 +25,8 @@ const legacyMetadata = {
     'sports vision training online'
   ],
   openGraph: {
-    title: 'Aim Trainer & Gehirntraining: 82 Übungen | SkillDrills',
-    description: '82 wissenschaftliche Online-Drills in 8 Kategorien: Aim Trainer für Shooter, Reaktionstest, Gedächtnistraining, CPS & Sehschärfe direkt im Browser.',
+    title: 'Aim Trainer & Gehirntraining: 81 Übungen | SkillDrills',
+    description: '81 wissenschaftliche Online-Drills in 8 Kategorien: Aim Trainer für Shooter, Reaktionstest, Gedächtnistraining, CPS & Sehschärfe direkt im Browser.',
     type: 'website',
     url: 'https://skilldrills.online/de/drills',
     siteName: 'SkillDrills',
@@ -35,13 +35,13 @@ const legacyMetadata = {
       url: 'https://skilldrills.online/icons/icon-512x512.png',
       width: 512,
       height: 512,
-      alt: 'SkillDrills Gesamtkatalog aller 82 Trainingsübungen',
+      alt: 'SkillDrills Gesamtkatalog aller 81 Trainingsübungen',
     }],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Aim Trainer & Gehirntraining: 82 Übungen | SkillDrills',
-    description: '82 wissenschaftliche Online-Drills für Aiming, Reaktionszeit, Kognition und Sehschärfe.',
+    title: 'Aim Trainer & Gehirntraining: 81 Übungen | SkillDrills',
+    description: '81 wissenschaftliche Online-Drills für Aiming, Reaktionszeit, Kognition und Sehschärfe.',
     images: ['https://skilldrills.online/icons/icon-512x512.png'],
   },
   robots: { index: true, follow: true },
@@ -78,8 +78,8 @@ const breadcrumbSchema = {
 const collectionSchema = {
   "@context": "https://schema.org",
   "@type": "CollectionPage",
-  "name": "SkillDrills Gesamtkatalog aller 82 Trainingsübungen",
-  "description": "Umfassende wissenschaftliche Sammlung von 82 interaktiven Leistungsdrills für FPS-Aiming, Reaktionsgeschwindigkeit, visuelle Nachverfolgung, Kognition, Gedächtnis, Feinmotorik, Ausdauer und dynamisches Sehen.",
+  "name": "SkillDrills Gesamtkatalog aller 81 Trainingsübungen",
+  "description": "Umfassende wissenschaftliche Sammlung von 81 interaktiven Leistungsdrills für FPS-Aiming, Reaktionsgeschwindigkeit, visuelle Nachverfolgung, Kognition, Gedächtnis, Feinmotorik, Ausdauer und dynamisches Sehen.",
   "url": "https://skilldrills.online/de/drills",
   "inLanguage": "de",
   "hasPart": DRILLS.map((drill) => {
@@ -107,7 +107,7 @@ const faqSchema = {
   "mainEntity": [
     {
       "@type": "Question",
-      "name": "Welche wissenschaftlichen Prinzipien liegen den 82 SkillDrills-Trainingsübungen zugrunde?",
+      "name": "Welche wissenschaftlichen Prinzipien liegen den 81 SkillDrills-Trainingsübungen zugrunde?",
       "acceptedAnswer": {
         "@type": "Answer",
         "text": "SkillDrills basiert auf etablierten Modellen der kognitiven Psychologie und motorischen Neurobiologie, darunter das Fitts'sche Gesetz (Geschwindigkeits-Genauigkeits-Abwägung), das Hick'sche Gesetz (Reaktionszeit bei Mehrfachwahl), okulomotorische Sakkaden- und Blickfolgemodelle sowie die Theorie der neuronalen Plastizität. Jede Übung isoliert spezifische sensorimotorische Signalwege zur gezielten Leistungssteigerung."
@@ -158,7 +158,7 @@ const faqSchema = {
       "name": "Werden für die Nutzung von SkillDrills Downloads, Installationen oder Registrierungen benötigt?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Nein. Sämtliche 82 Trainingsübungen sind als reine Web-Applikationen konzipiert und laufen vollständig clientseitig im Webbrowser. Es werden weder zusätzliche Plugins noch Registrierungen benötigt. Leistungsdaten und persönliche Rekorde werden lokal im Browser gespeichert, wodurch vollständiger Datenschutz gewährleistet ist."
+        "text": "Nein. Sämtliche 81 Trainingsübungen sind als reine Web-Applikationen konzipiert und laufen vollständig clientseitig im Webbrowser. Es werden weder zusätzliche Plugins noch Registrierungen benötigt. Leistungsdaten und persönliche Rekorde werden lokal im Browser gespeichert, wodurch vollständiger Datenschutz gewährleistet ist."
       }
     },
     {

@@ -127,6 +127,14 @@ export default function VisualTrackingDrillsPage() {
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
         "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://skilldrills.online" },
+          { "@type": "ListItem", "position": 2, "name": "Eye Tracking Training", "item": "https://skilldrills.online/drills/visual-tracking" }
+        ]
+      })}} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+        "@context": "https://schema.org",
         "@type": "CollectionPage",
         "name": `Free Eye Tracking Training Online - ${trackingDrillCount} Smooth Pursuit Drills`,
         "url": "https://skilldrills.online/drills/visual-tracking",

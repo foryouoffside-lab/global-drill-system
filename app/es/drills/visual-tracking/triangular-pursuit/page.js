@@ -247,7 +247,8 @@ export default function TriangularPursuitPageES() {
       "Conserve la mano y el antebrazo relajados sobre el ratón para evitar tensiones parásitas.",
       "Respira pausadamente para mantener una coordinación visomotora serena durante las variaciones de dirección."
     ],
-    sources
+    sources,
+    faqs: faqSchema.mainEntity.map(({ name, acceptedAnswer }) => ({ q: name, a: acceptedAnswer.text }))
   };
 
   return (

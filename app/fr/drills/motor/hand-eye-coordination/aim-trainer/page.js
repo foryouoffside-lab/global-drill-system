@@ -184,82 +184,82 @@ const faqSchema = {
   "mainEntity": [
     {
       "@type": "Question",
-      "name": "Qu est-ce que l Aim Trainer en ligne et comment fonctionne-t-il ?",
+      "name": "Qu'est-ce que l'Aim Trainer en ligne et comment fonctionne-t-il ?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "L Aim Trainer en ligne est un exercice interactif de coordination motrice concu pour entrainer la vitesse d acquisition de cible, la precision du clic et la regularite gestuelle de la souris sur des cibles dynamiques retrecissantes."
+        "text": "L'Aim Trainer en ligne est un exercice interactif de coordination motrice conçu pour entraîner la vitesse d'acquisition de cible, la précision du clic et la régularité gestuelle de la souris sur des cibles dynamiques rétrécissantes."
       }
     },
     {
       "@type": "Question",
-      "name": "Comment la loi de Fitts s applique-t-elle a la visee FPS ?",
+      "name": "Comment la loi de Fitts s'applique-t-elle à la visée FPS ?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "La loi de Paul M. Fitts (1954) etablit que le temps de mouvement necessaire pour atteindre une cible depend logarithmiquement du ratio entre la distance et la taille de la cible (Indice de Difficulte). Plus la cible est petite et eloignee, plus le controle neuromusculaire doit etre affine."
+        "text": "La loi de Paul M. Fitts (1954) établit que le temps de mouvement nécessaire pour atteindre une cible dépend logarithmiquement du ratio entre la distance et la taille de la cible (Indice de Difficulté). Plus la cible est petite et éloignée, plus le contrôle neuromusculaire doit être affiné."
       }
     },
     {
       "@type": "Question",
-      "name": "Qu est-ce que le modele a deux composantes de Woodworth ?",
+      "name": "Qu'est-ce que le modèle à deux composantes de Woodworth ?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Robert S. Woodworth (1899) et Elliott et al. (2010) ont demontre qu un mouvement de visee rapide comprend une premiere impulsion balistique en boucle ouverte (couvrant la majeure partie du trajet), suivie d une phase de controle terminal en boucle fermee utilisant le retour visuel."
+        "text": "Robert S. Woodworth (1899) et Elliott et al. (2010) ont démontré qu'un mouvement de visée rapide comprend une première impulsion balistique en boucle ouverte (couvrant la majeure partie du trajet), suivie d'une phase de contrôle terminal en boucle fermée utilisant le retour visuel."
       }
     },
     {
       "@type": "Question",
-      "name": "L entrainement aux micro-flicks se transfere-t-il a Valorant et CS2 ?",
+      "name": "L'entraînement aux micro-flicks se transfère-t-il à Valorant et CS2 ?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Oui, les duels dans les jeux de tir tactiques reposent sur des micro-ajustements balistiques de 5 a 15 degres pour ajuster la tete d un adversaire. Cet exercice entraine precisement ces mouvements de haute precision."
+        "text": "Oui, les duels dans les jeux de tir tactiques reposent sur des micro-ajustements balistiques de 5 à 15 degrés pour ajuster la tête d'un adversaire. Cet exercice entraîne précisément ces mouvements de haute précision."
       }
     },
     {
       "@type": "Question",
-      "name": "Qu est-ce qu un bon score sur cet Aim Trainer ?",
+      "name": "Qu'est-ce qu'un bon score sur cet Aim Trainer ?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Un joueur debutant se situe generalement en dessous de 8 000 points (Niveaux 1–2). Un joueur regulier atteint 18 000 a 31 999 points (Niveaux 6–8), tandis qu un compétiteur esport depasse 48 000 points avec plus de 95 % de precision."
+        "text": "Un joueur débutant se situe généralement en dessous de 8 000 points (Niveaux 1–2). Un joueur régulier atteint 18 000 à 31 999 points (Niveaux 6–8), tandis qu'un compétiteur esport dépasse 48 000 points avec plus de 95 % de précision."
       }
     },
     {
       "@type": "Question",
-      "name": "Comment fonctionne la difficulte adaptative dans cet exercice ?",
+      "name": "Comment fonctionne la difficulté adaptative dans cet exercice ?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Tous les 1 750 points marques, le niveau augmente: le rayon de la cible diminue de 26px a 8px, la vitesse augmente de 80px/s a 370px/s, et la duree de vie de la cible chute de 2,8s a 0,40s."
+        "text": "Tous les 1 750 points marqués, le niveau augmente : le rayon de la cible diminue de 26px à 8px, la vitesse augmente de 80px/s à 370px/s, et la durée de vie de la cible chute de 2,8s à 0,40s."
       }
     },
     {
       "@type": "Question",
-      "name": "Pourquoi les tirs rates penalist-ils le multiplicateur de combo ?",
+      "name": "Pourquoi les tirs ratés pénalisent-ils le multiplicateur de combo ?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Cliquer dans le vide ou laisser une cible disparaitre reinitialise le combo a 1,0x. Cela sanctionne le spam compulsif et encourage une visee deliberee et maitrisee."
+        "text": "Cliquer dans le vide ou laisser une cible disparaître réinitialise le combo à 1,0x. Cela sanctionne le spam compulsif et encourage une visée délibérée et maîtrisée."
       }
     },
     {
       "@type": "Question",
-      "name": "Cet exercice prend-il en charge la sensibilite universelle de la souris ?",
+      "name": "Cet exercice prend-il en charge la sensibilité universelle de la souris ?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Oui, il utilise l API Pointer Lock du navigateur web pour assurer un suivi direct 1:1 sans acceleration logicielle Windows, correspondant a votre reglage cm/360 habituel."
+        "text": "Oui, il utilise l'API Pointer Lock du navigateur web pour assurer un suivi direct 1:1 sans accélération logicielle Windows, correspondant à votre réglage cm/360 habituel."
       }
     },
     {
       "@type": "Question",
-      "name": "Quel est l impact du taux de rafraichissement de l ecran sur la visee ?",
+      "name": "Quel est l'impact du taux de rafraîchissement de l'écran sur la visée ?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Un ecran a 144 Hz ou 240 Hz et une souris a 1 000 Hz reduisent le delai d affichage et les saccades visuelles, permettant au cortex visuel de recevoir l information de position 10 a 12 ms plus tot par mouvement."
+        "text": "Un écran à 144 Hz ou 240 Hz et une souris à 1 000 Hz réduisent le délai d'affichage et les saccades visuelles, permettant au cortex visuel de recevoir l'information de position 10 à 12 ms plus tôt par mouvement."
       }
     },
     {
       "@type": "Question",
-      "name": "Quelle routine d echauffement produit les meilleurs gains de precision ?",
+      "name": "Quelle routine d'échauffement produit les meilleurs gains de précision ?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Une session quotidienne de 10 a 15 minutes axee sur la precision des micro-flicks et une acceleration progressive active le cortex moteur et stabilise la tenue de mire sous pression."
+        "text": "Une session quotidienne de 10 à 15 minutes axée sur la précision des micro-flicks et une accélération progressive active le cortex moteur et stabilise la tenue de mire sous pression."
       }
     }
   ]

@@ -106,7 +106,7 @@ const faqSchema = {
       name: 'What is a conjunctive visual search test?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'A conjunctive visual search test is a psychophysical assessment where an observer must locate a target defined by a combination of two or more visual features (such as shape, orientation, or color) embedded within a field of distractors that share individual features with the target.',
+        text: 'A conjunctive visual search test is a psychophysical assessment where an observer must locate a target defined by a combination of two or more visual features embedded within a field of distractors that share individual features with the target.',
       },
     },
     {
@@ -114,23 +114,23 @@ const faqSchema = {
       name: 'How does conjunctive search differ from simple feature search?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'In simple feature search (e.g., finding a red dot among green dots), the target differs by a single salient property and "pops out" preattentively with search times virtually independent of set size. In conjunctive search, the target shares features with distractors, requiring serial or guided attentional scanning where reaction time increases with the number of items.',
+        text: 'In simple feature search, the target differs by a single unique property (like color) and pops out preattentively. In conjunctive search, the target shares properties with distractors, requiring active attentional scanning where search time scales with grid density.',
       },
     },
     {
       '@type': 'Question',
-      name: "What is Anne Treisman's Feature Integration Theory?",
+      name: 'What is Anne Treisman\'s Feature Integration Theory?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Feature Integration Theory (Treisman & Gelade, 1980) posits that basic visual features (color, orientation, spatial frequency) are extracted automatically and in parallel across early visual cortex. Binding these separate features into a unified object representation requires focused spatial attention directed sequentially to candidate item locations.',
+        text: 'Treisman & Gelade (1980) demonstrated that while basic features are extracted automatically in parallel by early visual cortex, binding those features into an object requires focused spatial attention directed sequentially to candidate locations.',
       },
     },
     {
       '@type': 'Question',
-      name: "What is Jeremy Wolfe's Guided Search model?",
+      name: 'What is Jeremy Wolfe\'s Guided Search model?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'The Guided Search model (Wolfe, 1994) demonstrates that visual search is not strictly serial or random. Instead, top-down knowledge about target features primes preattentive visual channels, creating a spatial priority map that guides the spotlight of focused attention directly toward the most likely target candidates.',
+        text: 'Wolfe\'s Guided Search model (1994) shows that top-down knowledge about target attributes primes preattentive visual channels, generating a spatial priority map that guides focused attention directly toward the most likely target candidates.',
       },
     },
     {
@@ -138,7 +138,7 @@ const faqSchema = {
       name: 'What is a good target acquisition time on this 96-cell grid?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'On a 12x8 matrix of 96 cells, elite visual searchers locate each target in under 450 milliseconds (>1500 points in 45 seconds). Competitive performers average 450–700 ms per target (1000–1450 points), while untrained baselines typically require 701–1,100 ms per target.',
+        text: 'Elite visual searchers isolate each target in under 450 ms (>1,500 points in 45 seconds). Competitive performers average 450–700 ms per target, while untrained baselines require 701–1,100 ms per target.',
       },
     },
     {
@@ -146,7 +146,7 @@ const faqSchema = {
       name: 'Why do rotated distractor letters make visual search harder?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'As shown by Duncan & Humphreys (1989), search efficiency decreases as distractor-distractor homogeneity decreases and target-distractor similarity increases. Rotating distractor letters disrupts preattentive grouping, preventing the brain from filtering them out as a single background texture.',
+        text: 'As proven by Duncan & Humphreys (1989), rotating distractors breaks distractor homogeneity and eliminates preattentive texture grouping, forcing the visual cortex to evaluate candidate cells through active serial scrutiny.',
       },
     },
     {
@@ -154,7 +154,7 @@ const faqSchema = {
       name: 'Are there score or time penalties for clicking incorrect cells?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'No. Incorrect cell clicks flash red to signal a miss but do not deduct accumulated score points or shorten remaining seconds. This encourages decisive perceptual commitment while penalizing hesitation.',
+        text: 'No. Tapping an incorrect cell flashes red but never deducts score points or reduces timer seconds, encouraging rapid perceptual commitment and preventing visual hesitation.',
       },
     },
     {
@@ -162,7 +162,7 @@ const faqSchema = {
       name: 'How does perceptual load affect distractor suppression?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Perceptual Load Theory (Lavie, 1995) states that when a display imposes high perceptual load (dense 96-cell clutter with rotated symbols), early sensory capacity is fully consumed, preventing distractor processing and reducing involuntary distraction.',
+        text: 'Perceptual Load Theory (Lavie, 1995) proves that high visual clutter completely consumes sensory processing capacity, preventing distractor intrusion and enforcing strict selective focus.',
       },
     },
     {
@@ -170,7 +170,7 @@ const faqSchema = {
       name: 'What scanning pattern yields the highest visual search efficiency?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Systematic serpentine (Z-pattern) row scanning paired with an expanded parafoveal zoom lens (Eriksen & St. James, 1986) yields the highest search efficiency, eliminating redundant saccades and preventing accidental re-inspection of already-searched cells.',
+        text: 'A systematic serpentine (Z-pattern) row scan paired with an expanded zoom lens (Eriksen & St. James, 1986) yields the highest search efficiency, eliminating search overlap and ocular backtracking.',
       },
     },
     {
@@ -178,7 +178,7 @@ const faqSchema = {
       name: 'How does visual search performance translate to esports and athletics?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Competitive gamers and field athletes encounter dense, cluttered environments where identifying enemy micro-movements, projectiles, or open teammates demands rapid conjunctive feature binding. Faster search speed directly lowers reaction latency and expands situational awareness.',
+        text: 'High-level athletes and gamers operating in complex visual scenes depend on rapid conjunctive target binding to isolate opponents, track balls, and detect peripheral threats under extreme temporal pressure.',
       },
     },
   ],

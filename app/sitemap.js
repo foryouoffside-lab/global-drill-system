@@ -21,15 +21,15 @@
 //     earn or realistically can earn, measured in Search Console.
 
 import { DRILLS } from '../lib/drillsRegistry';
-import { LOCALES, DEFAULT_LOCALE, LOCALIZED_ROUTES, hasLocalizedRoute, localeUrl } from '../lib/i18n/locales';
+import { LOCALES, DEFAULT_LOCALE, LOCALIZED_ROUTES, hasLocalizedRoute, localeUrl, getAlternateLanguages } from '../lib/i18n/locales';
 
 const BASE_URL = 'https://skilldrills.online';
 
 // Bump the entry for a section when that section's copy or drills genuinely change.
 const UPDATED = {
-  // The five locale trees went live together.
-  localized: '2026-09-01',
-  home: '2026-08-21',
+  // The locale trees were rebuilt and re-shipped together on 2026-09-22.
+  localized: '2026-09-22',
+  home: '2026-10-07',
   directory: '2026-08-21',
   // Every hub was rewritten in the 2026-08-21 crawlability pass (SSR restored,
   // H1s and titles rewritten). The six hubs retargeted on 2026-08-25 carry that
@@ -41,6 +41,7 @@ const UPDATED = {
   // visual-tracking additionally got per-drill long-form guides.
   'visual-tracking': '2026-08-21',
   legal: '2026-08-22',
+  privacy: '2026-10-01',
 };
 
 // Per-URL overrides, for when a subset of a section changes rather than all of
@@ -108,6 +109,52 @@ const UPDATED_OVERRIDES = {
   '/drills/reaction-speed': '2026-08-25',
 };
 
+// 2026-10-07 audit pass. Keys that start with a locale prefix date only that
+// locale's page; bare routes date every version of the route.
+const AUDIT_2026_10_07 = [
+  '/',
+  '/drills/fps',
+  '/drills/visual',
+  '/drills/visual-tracking',
+  '/drills/visual/tracking-accuracy/pursuit-tracker',
+  '/drills/visual/visual-recognition/entropic-grid',
+  '/drills/visual/visual-recognition/rhythm-anomaly',
+  '/drills/visual/visual-recognition/visual-search',
+  '/drills/cognitive/processing-speed/symbol-matching',
+  '/drills/motor/movement-speed/keyboard-recognition',
+  ...['de', 'es', 'fr', 'pt', 'ja', 'ko'].map((l) => `/${l}/drills/memory/working-memory/n-back`),
+  ...['es', 'fr', 'pt'].flatMap((l) => [`/${l}/drills/visual-tracking/triangular-pursuit`, `/${l}/drills/visual-tracking/zig-zag-path-pursuit`]),
+  '/fr/drills/motor/hand-eye-coordination/aim-trainer',
+  ...[
+    '/drills/reaction-speed/barrier-sequence-pursuit',
+    '/drills/reaction-speed/fps-tracking-trainer',
+    '/drills/reaction-speed/market-doors-pursuit',
+    '/drills/reaction-speed/reaction-game',
+    '/drills/reaction-speed/reflex-training-drill',
+    '/drills/reaction-speed/visual-tracking-speed-test',
+    '/drills/visual-tracking/constant-slow-pursuit',
+  ].flatMap((route) => ['ko', 'ja', 'de', 'pt', 'es', 'fr'].map((l) => `/${l}${route}`)),
+  '/de/drills/visual-tracking/directional-chaos-pursuit',
+  '/de/drills/visual-tracking/dynamic-evasion-pursuit',
+  '/de/drills/fps/target-acquisition',
+  '/de/drills/physical/fitness/speed-drill',
+  '/de/drills/physical/fitness/jump-sequence',
+  '/de/drills/physical/coordination/dynamic-grid-evasion',
+  '/de/drills/visual/depth-perception/distance-judgment',
+  '/es/drills/physical/fitness/jump-sequence',
+  '/es/drills/reaction-speed/reaction-time-test',
+  '/es/drills/visual/depth-perception/distance-judgment',
+  '/es/drills/visual/reaction-speed/light-reaction',
+  '/fr/drills/physical/fitness/jump-sequence',
+  '/fr/drills/visual-tracking',
+  '/fr/drills/cognitive/processing-speed/reaction-time',
+  '/pt/drills/cognitive/processing-speed/reaction-time',
+  '/pt/drills/visual/depth-perception/distance-judgment',
+  '/pt/drills/visual/reaction-speed/light-reaction',
+  ...['de', 'es', 'fr', 'ja', 'ko'].map((l) => `/${l}/drills`),
+];
+for (const path of AUDIT_2026_10_07) UPDATED_OVERRIDES[path] = '2026-10-07';
+
 // Ranked by measured Search Console performance, then by realistic potential.
 // /drills/fps carries the most non-brand impressions of any page on the site;
 // /drills is the strongest converting hub; memory and visual have real query
@@ -142,12 +189,16 @@ const DRILL_PRIORITY_OVERRIDES = {
   '/drills/fps/flick-shot-training': 0.9,
 };
 
-const entry = (path, lastModified, changeFrequency, priority) => ({
-  url: `${BASE_URL}${path}`,
-  lastModified,
-  changeFrequency,
-  priority,
-});
+const entry = (path, lastModified, changeFrequency, priority, route = path) => {
+  const languages = getAlternateLanguages(route);
+  return {
+    url: `${BASE_URL}${path}`,
+    lastModified,
+    changeFrequency,
+    priority,
+    ...(Object.keys(languages).length > 2 && { alternates: { languages } }),
+  };
+};
 
 export default async function sitemap() {
   const staticEntries = [
@@ -172,9 +223,9 @@ export default async function sitemap() {
     entry('/about', UPDATED.legal, 'monthly', 0.5),
     // Low priority but genuinely indexable, and a site with no reachable legal
     // pages reads as low-trust to both search engines and users.
-    entry('/privacy', UPDATED.legal, 'yearly', 0.3),
+    entry('/privacy', UPDATED.privacy, 'yearly', 0.3),
     entry('/terms', UPDATED.legal, 'yearly', 0.3),
-    entry('/delete-account', UPDATED.legal, 'yearly', 0.3),
+    entry('/delete-account', UPDATED.privacy, 'yearly', 0.3),
   ];
 
   // Rule 1 applied to the locale trees: derive them from LOCALIZED_ROUTES
@@ -198,9 +249,10 @@ const LOCALIZED_PRIORITY = {
         .map((route) =>
           entry(
             localeUrl(loc, route),
-            UPDATED_OVERRIDES[route] ?? UPDATED.localized,
+            UPDATED_OVERRIDES[localeUrl(loc, route)] ?? UPDATED_OVERRIDES[route] ?? UPDATED.localized,
             'weekly',
-            LOCALIZED_PRIORITY[route] ?? 0.8
+            LOCALIZED_PRIORITY[route] ?? 0.8,
+            route
           )
         )
     );

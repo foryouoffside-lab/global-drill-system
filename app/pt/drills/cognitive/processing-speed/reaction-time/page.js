@@ -6,7 +6,7 @@ import DrillFooter from '@/components/drill/DrillFooter';
 import { pickSources } from '@/lib/drillSources';
 
 export const metadata = {
-  title: "Tempo de Reação de Escolha | Velocidade de Decisão | SkillDrills",
+  title: "Tempo de Reação de Escolha | Velocidade de Decisão",
   description: "Teste gratuito de tempo de reação de escolha: selecione o alvo conforme a regra que muda. Pratique decisão visual; não é clínico.",
   keywords: [
     "teste de reação",
@@ -19,7 +19,7 @@ export const metadata = {
     "lei de Hick"
   ],
   openGraph: {
-    title: "Tempo de Reação de Escolha | Velocidade de Decisão | SkillDrills",
+    title: "Tempo de Reação de Escolha | Velocidade de Decisão",
     description: "Teste gratuito de tempo de reação de escolha: selecione o alvo conforme a regra que muda. Pratique decisão visual; não é clínico.",
     type: 'article',
     url: 'https://skilldrills.online/pt/drills/cognitive/processing-speed/reaction-time',
@@ -28,7 +28,7 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: "Tempo de Reação de Escolha | Velocidade de Decisão | SkillDrills",
+    title: "Tempo de Reação de Escolha | Velocidade de Decisão",
     description: "Teste gratuito de tempo de reação de escolha: selecione o alvo conforme a regra que muda. Pratique decisão visual; não é clínico.",
   },
   robots: { index: true, follow: true },

@@ -167,7 +167,7 @@ const faqSchema = {
       name: 'What keyboard type provides the lowest input latency for testing?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Mechanical keyboards with linear switches, optical actuation, or magnetic Hall-effect sensors (with Rapid Trigger enabled) and 1000 Hz+ USB polling provide sub-millisecond hardware debounce, ensuring measured latency reflects purely neurological transmission.',
+        text: 'Mechanical keyboards with linear switches, optical actuation, or magnetic Hall-effect sensors (with Rapid Trigger enabled) and 1000 Hz+ USB polling keep hardware input delay low (a 1000 Hz poll rate reports every 1 ms), so more of the measured latency reflects your own reaction rather than the keyboard.',
       },
     },
     {

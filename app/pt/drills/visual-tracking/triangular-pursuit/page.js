@@ -247,7 +247,8 @@ export default function TriangularPursuitPagePT() {
       "Mantenha o braço e a mão relaxados no mouse para não transmitir tensão muscular desnecessária.",
       "Respire com cadência regular para manter o tônus motor estável durante as transições de velocidade."
     ],
-    sources
+    sources,
+    faqs: faqSchema.mainEntity.map(({ name, acceptedAnswer }) => ({ q: name, a: acceptedAnswer.text }))
   };
 
   return (

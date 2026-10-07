@@ -8,7 +8,7 @@ const trackingDrills = DRILLS.filter((d) => d.category === 'visual-tracking');
 
 const legacyMetadata = {
   title: 'Poursuite Oculaire & Acuité Visuelle Dynamique | SkillDrills',
-  description: 'Exercices de poursuite oculaire et acuité visuelle dynamique en ligne gratuits. 14 entraînements scientifiques : motricité oculaire et vision périphérique.',
+  description: 'Exercices de poursuite oculaire et acuité visuelle dynamique, gratuits en ligne. 14 entraînements : motricité oculaire et vision périphérique.',
   keywords: [
     'poursuite oculaire entrainement', 'acuite visuelle dynamique test', 'exercices de motricite oculaire',
     'mouvements saccadiques exercices', 'tracking visuel en ligne gratuit', 'entrainement des yeux sport',
@@ -18,7 +18,7 @@ const legacyMetadata = {
   ],
   openGraph: {
     title: 'Poursuite Oculaire & Acuité Visuelle Dynamique | SkillDrills',
-    description: 'Exercices de poursuite oculaire et acuité visuelle dynamique en ligne gratuits. 14 entraînements scientifiques : motricité oculaire et vision périphérique.',
+    description: 'Exercices de poursuite oculaire et acuité visuelle dynamique, gratuits en ligne. 14 entraînements : motricité oculaire et vision périphérique.',
     type: 'website',
     url: 'https://skilldrills.online/fr/drills/visual-tracking',
     siteName: 'SkillDrills',

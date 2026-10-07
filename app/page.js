@@ -5,13 +5,13 @@ import { buildHomeMetadata, buildHomeSchema } from '@/lib/i18n/siteLandingSeoNat
 
 const legacyMetadata = {
   title: 'Free Aim Trainer & Brain Training Drills | SkillDrills',
-  description: `Master your mind and mechanics with ${DRILLS.length}+ free interactive drills. Improve FPS aim, reaction time, memory, focus, typing speed, and mental fitness. No sign-up.`,
+  description: `Master your mind and mechanics with ${DRILLS.length}+ free interactive drills. Improve FPS aim, reaction time, memory, focus, and visual skills. No sign-up.`,
   keywords: [
     'free aim trainer', 'FPS aim trainer', 'flick shot training', 'tracking aim practice',
     'Valorant aim trainer', 'CS2 aim practice', 'free brain training', 'cognitive training',
-    'memory games', 'typing speed test', 'reaction time test', 'speed reading',
-    'mental math practice', 'focus training', 'brain games free', 'online drills',
-    'hand eye coordination', 'visual tracking', 'free typing test', 'peripheral vision test',
+    'memory games', 'reaction time test', 'speed reading',
+    'focus training', 'brain games free', 'online drills',
+    'hand eye coordination', 'visual tracking', 'peripheral vision test',
     'esports training', 'gaming skills trainer', 'free cognitive assessment',
     'working memory exercises', 'attention training', 'problem solving games',
     'skilldrills', 'skill drills', 'free online brain games', 'mental fitness training'

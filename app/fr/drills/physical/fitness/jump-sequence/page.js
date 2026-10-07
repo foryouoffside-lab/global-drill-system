@@ -19,7 +19,7 @@ import { pickSources } from '@/lib/drillSources';
 
 export const metadata = {
   title: 'Détente Verticale – Sauter Plus Haut | SkillDrills',
-  description: 'Exercices pour sauter plus haut en ligne gratuits. Interceptez des cibles en apesanteur pour développer votre détente verticale et vos réflexes au PC.',
+  description: 'Exercices pour sauter plus haut en ligne, gratuits : interceptez des cibles en apesanteur pour développer votre détente verticale et vos réflexes.',
   keywords: [
     "exercices pour sauter plus haut",
     "detente verticale entrainement volley basket",
@@ -53,11 +53,11 @@ export const metadata = {
 };
 
 Object.assign(metadata, {
-  title: 'Pliométrie & Détente Verticale | Jeu de Réflexes | SkillDrills',
-  description: "Jeu gratuit de pliométrie et détente verticale dans le navigateur. Dosez l'impulsion, guidez la trajectoire aérienne et interceptez des cibles mobiles en rythme.",
+  title: 'Pliométrie & Détente Verticale | Jeu de Réflexes',
+  description: "Jeu gratuit de pliométrie et détente verticale dans le navigateur. Dosez l'impulsion, guidez la trajectoire aérienne et interceptez des cibles mobiles.",
   keywords: ['pliométrie', 'détente verticale', 'exercices de saut', 'entraînement au saut', 'coordination du saut', 'temps de suspension', 'jeu de réflexes', 'jeu de saut', 'timing du saut', 'trajectoire aérienne'],
-  openGraph: { ...metadata.openGraph, title: 'Pliométrie & Détente Verticale | Jeu de Réflexes | SkillDrills', description: "Jeu gratuit de pliométrie et détente verticale dans le navigateur. Dosez l'impulsion, guidez la trajectoire aérienne et interceptez des cibles mobiles en rythme." },
-  twitter: { ...metadata.twitter, title: 'Pliométrie & Détente Verticale | Jeu de Réflexes | SkillDrills', description: "Jeu gratuit de pliométrie et détente verticale dans le navigateur. Dosez l'impulsion, guidez la trajectoire aérienne et interceptez des cibles mobiles en rythme." },
+  openGraph: { ...metadata.openGraph, title: 'Pliométrie & Détente Verticale | Jeu de Réflexes', description: "Jeu gratuit de pliométrie et détente verticale dans le navigateur. Dosez l'impulsion, guidez la trajectoire aérienne et interceptez des cibles mobiles." },
+  twitter: { ...metadata.twitter, title: 'Pliométrie & Détente Verticale | Jeu de Réflexes', description: "Jeu gratuit de pliométrie et détente verticale dans le navigateur. Dosez l'impulsion, guidez la trajectoire aérienne et interceptez des cibles mobiles." },
 });
 
 const breadcrumbSchema = {

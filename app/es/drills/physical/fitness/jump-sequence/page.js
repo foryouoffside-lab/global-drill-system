@@ -19,7 +19,7 @@ import { pickSources } from '@/lib/drillSources';
 
 export const metadata = {
   title: 'Saltar Más Alto – Salto Vertical | SkillDrills',
-  description: 'Ejercicios para saltar más alto online gratis. Intercepta objetivos en el vértice de su parábola y entrena sincronización motora y ritmo pliométrico en PC.',
+  description: 'Ejercicios para saltar más alto online gratis: intercepta objetivos en el vértice de su parábola y entrena sincronización y ritmo pliométrico.',
   keywords: [
     "ejercicios para saltar mas alto",
     "entrenamiento de salto vertical voleibol y basket",
@@ -53,11 +53,11 @@ export const metadata = {
 };
 
 Object.assign(metadata, {
-  title: 'Pliometría y Salto Vertical | Juego de Reflejos | SkillDrills',
-  description: 'Juego gratuito de pliometría y salto vertical en el navegador. Ajusta el impulso, controla la trayectoria aérea y acierta objetivos móviles con ritmo y coordinación.',
+  title: 'Pliometría y Salto Vertical | Juego de Reflejos',
+  description: 'Juego gratuito de pliometría y salto vertical en el navegador. Ajusta el impulso, controla la trayectoria aérea y acierta objetivos móviles con ritmo.',
   keywords: ['pliometría', 'entrenamiento de salto vertical', 'ejercicios de salto', 'coordinación en el salto', 'tiempo de suspensión', 'juego de reflejos', 'juego de salto', 'timing de salto', 'trayectoria aérea', 'reacción deportiva'],
-  openGraph: { ...metadata.openGraph, title: 'Pliometría y Salto Vertical | Juego de Reflejos | SkillDrills', description: 'Juego gratuito de pliometría y salto vertical en el navegador. Ajusta el impulso, controla la trayectoria aérea y acierta objetivos móviles con ritmo y coordinación.' },
-  twitter: { ...metadata.twitter, title: 'Pliometría y Salto Vertical | Juego de Reflejos | SkillDrills', description: 'Juego gratuito de pliometría y salto vertical en el navegador. Ajusta el impulso, controla la trayectoria aérea y acierta objetivos móviles con ritmo y coordinación.' },
+  openGraph: { ...metadata.openGraph, title: 'Pliometría y Salto Vertical | Juego de Reflejos', description: 'Juego gratuito de pliometría y salto vertical en el navegador. Ajusta el impulso, controla la trayectoria aérea y acierta objetivos móviles con ritmo.' },
+  twitter: { ...metadata.twitter, title: 'Pliometría y Salto Vertical | Juego de Reflejos', description: 'Juego gratuito de pliometría y salto vertical en el navegador. Ajusta el impulso, controla la trayectoria aérea y acierta objetivos móviles con ritmo.' },
 });
 
 const breadcrumbSchema = {

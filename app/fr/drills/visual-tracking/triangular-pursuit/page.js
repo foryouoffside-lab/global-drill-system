@@ -247,7 +247,8 @@ export default function TriangularPursuitPageFR() {
       "Conservez une prise souple et détendue sur la souris pour éviter toute crispation.",
       "Respirez régulièrement pour préserver la stabilité oculomotrice lors des changements de cap."
     ],
-    sources
+    sources,
+    faqs: faqSchema.mainEntity.map(({ name, acceptedAnswer }) => ({ q: name, a: acceptedAnswer.text }))
   };
 
   return (

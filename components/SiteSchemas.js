@@ -30,7 +30,7 @@ export default function SiteSchemas({ totalDrillsCount }) {
     name: 'SkillDrills',
     url: siteUrl,
     logo: 'https://skilldrills.online/icons/icon-512x512.png',
-    description: `Free online platform with ${totalDrillsCount} training drills for FPS gaming skills, cognitive enhancement, brain training, memory improvement, typing speed, and mental fitness.`,
+    description: `Free online platform with ${totalDrillsCount} training drills for FPS gaming skills, cognitive enhancement, brain training, memory improvement, and visual skills.`,
     email: 'support@skilldrills.online',
     foundingDate: '2026',
     contactPoint: {

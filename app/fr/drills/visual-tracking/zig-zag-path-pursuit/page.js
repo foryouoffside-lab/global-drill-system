@@ -247,7 +247,8 @@ export default function ZigZagPathPursuitPageFR() {
       "Conservez une prise détendue sur la souris pour éviter toute tension au poignet.",
       "Gardez une respiration régulière pour stabiliser l innervation musculaire des yeux."
     ],
-    sources
+    sources,
+    faqs: faqSchema.mainEntity.map(({ name, acceptedAnswer }) => ({ q: name, a: acceptedAnswer.text }))
   };
 
   return (

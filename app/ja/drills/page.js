@@ -5,8 +5,8 @@ import { getLocalizedDrill } from '@/lib/i18n/drillNames';
 import { buildDirectoryMetadata, getDirectoryCollectionFields } from '@/lib/i18n/siteLandingSeoNative';
 
 const legacyMetadata = {
-  title: '無料エイム練習＆脳トレ82種・全ドリル一覧 | SkillDrills',
-  description: '8大カテゴリー全82種の無料オンライン科学的トレーニングドリル一覧。VALORANT・Apex向けエイム練習、反射神経測定、動体視力、記憶力、認知機能向上テストをブラウザで即座に開始。',
+  title: '無料エイム練習＆脳トレ81種・全ドリル一覧 | SkillDrills',
+  description: '8大カテゴリー全81種の無料オンライン科学的トレーニングドリル一覧。VALORANT・Apex向けエイム練習、反射神経測定、動体視力、記憶力、認知機能向上テストをブラウザで即座に開始。',
   keywords: [
     '無料エイム練習サイト', 'エイム練習ゲーム', '反射神経テスト',
     '動体視力トレーニング', '脳トレゲーム無料', '記憶力テスト',
@@ -15,8 +15,8 @@ const legacyMetadata = {
     '深視力検査', 'ワーキングメモリテスト', 'スポーツビジョントレーニング'
   ],
   openGraph: {
-    title: '無料エイム練習＆脳トレ82種・全ドリル一覧 | SkillDrills',
-    description: '8大カテゴリー全82種の無料オンライン科学的トレーニングドリル一覧。VALORANT・Apex向けエイム練習、反射神経測定、動体視力、記憶力、認知機能向上テストをブラウザで即座に開始。',
+    title: '無料エイム練習＆脳トレ81種・全ドリル一覧 | SkillDrills',
+    description: '8大カテゴリー全81種の無料オンライン科学的トレーニングドリル一覧。VALORANT・Apex向けエイム練習、反射神経測定、動体視力、記憶力、認知機能向上テストをブラウザで即座に開始。',
     type: 'website',
     url: 'https://skilldrills.online/ja/drills',
     siteName: 'SkillDrills',
@@ -30,8 +30,8 @@ const legacyMetadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: '無料エイム練習＆脳トレ82種・全ドリル一覧 | SkillDrills',
-    description: '8大分野82種以上の無料エイムトレーナー、反射神経、認知機能トレーニング。',
+    title: '無料エイム練習＆脳トレ81種・全ドリル一覧 | SkillDrills',
+    description: '8大分野81種の無料エイムトレーナー、反射神経、認知機能トレーニング。',
     images: ['https://skilldrills.online/icons/icon-512x512.png'],
   },
   robots: { index: true, follow: true },
@@ -58,9 +58,9 @@ const breadcrumbSchema = {
 const collectionSchema = {
   "@context": "https://schema.org",
   "@type": "CollectionPage",
-  "name": "全エイム練習＆認知・身体トレーニングドリル一覧 (82種)",
+  "name": "全エイム練習＆認知・身体トレーニングドリル一覧 (81種)",
   "url": "https://skilldrills.online/ja/drills",
-  "description": "8大カテゴリー全82種の科学的インタラクティブ訓練ドリル集。エイムトレーナー、反応速度、動体視力追従、認知制御、記憶力検査。",
+  "description": "8大カテゴリー全81種の科学的インタラクティブ訓練ドリル集。エイムトレーナー、反応速度、動体視力追従、認知制御、記憶力検査。",
   "author": { "@type": "Organization", "name": "SkillDrills" },
   "hasPart": DRILLS.map((drill) => {
     const loc = getLocalizedDrill(drill.href, 'ja', drill.name);
@@ -82,7 +82,7 @@ const faqSchema = {
   "mainEntity": [
     {
       "@type": "Question",
-      "name": "SkillDrillsの82種のトレーニングドリルはどのような科学的根拠で設計されていますか？",
+      "name": "SkillDrillsの81種のトレーニングドリルはどのような科学的根拠で設計されていますか？",
       "acceptedAnswer": {
         "@type": "Answer",
         "text": "SkillDrillsはフィッツの法則（Fitts's Law）、メンタルクロノメトリー（反応時間測定学）、バドリーのワーキングメモリモデル、そして視覚運動神経制御理論など、第一線の神経科学およびスポーツ生体力学の知見に基づいて開発されています。単なるゲーム感覚ではなく、受容器の視覚刺激入力から大脳皮質の情報処理、末梢筋収縮へと至る神経生理学的伝達ループを精密に刺激・最適化するアルゴリズムを採用しています。"

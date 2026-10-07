@@ -37,10 +37,10 @@ export default function PortugueseHomePage() {
     <HomePageClient
       copy={{
         srH2: 'SkillDrills - Treino de Mira e Treino Cerebral Grátis',
-        srBody: 'SkillDrills é uma plataforma de treino online gratuita com 82 exercícios interativos em 8 categorias: treino de mira para FPS, treino cerebral, rastreamento visual, jogos de memória de trabalho, coordenação olho-mão, reflexos, reconhecimento visual e testes de tempo de reação. Sem cadastro, 100% no navegador.',
+        srBody: 'SkillDrills é uma plataforma de treino online gratuita com 81 exercícios interativos em 8 categorias: treino de mira para FPS, treino cerebral, rastreamento visual, jogos de memória de trabalho, coordenação olho-mão, reflexos, reconhecimento visual e testes de tempo de reação. Sem cadastro, 100% no navegador.',
         heroH1: 'Treine Mira e Mente',
-        heroSub: 'Desenvolva precisão mecânica, velocidade de aquisição de alvo e memória de trabalho. 82 treinos grátis no navegador, em 8 áreas de treino. Sem cadastro, prontos na hora.',
-        heroExploreCta: 'Ver os 82 treinos',
+        heroSub: 'Desenvolva precisão mecânica, velocidade de aquisição de alvo e memória de trabalho. 81 treinos grátis no navegador, em 8 áreas de treino. Sem cadastro, prontos na hora.',
+        heroExploreCta: 'Ver os 81 treinos',
         fpsHubCta: 'Treino de Mira',
         statFreeDrills: 'Treinos grátis',
         statDomains: 'Áreas',
@@ -106,8 +106,8 @@ export default function PortugueseHomePage() {
           { title: 'Treino diário', description: 'Microsessões de 5 minutos pensadas para aquecimento mental rápido e calibração motora diária.' },
         ],
         ctaH2: 'Comece a treinar agora',
-        ctaSub: 'Sem contas. Sem pagamentos. 82 treinos no navegador prontos para calibração instantânea.',
-        ctaExploreCta: 'Ver os 82 treinos',
+        ctaSub: 'Sem contas. Sem pagamentos. 81 treinos no navegador prontos para calibração instantânea.',
+        ctaExploreCta: 'Ver os 81 treinos',
         reactionTest: {
           headlineIdle: 'CLIQUE PARA COMEÇAR',
           headlineWaiting: 'ESPERE O VERDE',

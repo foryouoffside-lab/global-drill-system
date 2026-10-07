@@ -107,7 +107,7 @@ const faqSchema = {
       "name": "What is the concentration grid test and how does it measure visual focus?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "A concentration grid test is an empirical psychological exercise that evaluates visual scanning speed, selective attention, and distractor suppression. Observers must locate target stimuli within a high-density alphanumeric matrix while filtering out task-irrelevant distractors under strict temporal constraints."
+        "text": "The concentration grid test evaluates visual search speed, selective attention, and distractor filtering by measuring how rapidly an observer can locate targets in a dense, noisy matrix under timed conditions."
       }
     },
     {
@@ -115,7 +115,7 @@ const faqSchema = {
       "name": "What is the difference between parallel feature search and serial conjunctive search?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "In parallel feature search, a target defined by a unique elementary feature (such as a distinct color) 'pops out' preattentively across the entire visual field in constant time. In serial conjunctive search, where the target shares features with distractors, observers must focus attention sequentially on individual items, causing search time to increase linearly with set size."
+        "text": "Parallel search operates across the entire visual field simultaneously for simple unique features (pop-out effect). Conjunctive search requires focused serial inspection of individual items to bind multiple features together (Treisman & Gelade, 1980)."
       }
     },
     {
@@ -123,7 +123,7 @@ const faqSchema = {
       "name": "How does dynamic background noise affect visual recognition speed?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Dynamic visual noise (such as the 700ms cell regeneration in Entropic Grid) triggers bottom-up exogenous attentional capture. These transient luminance and character shifts compete with top-down visual search templates, testing the dorsal visual stream's capacity to suppress distractor interference."
+        "text": "Dynamic character shifts trigger involuntary exogenous attentional capture, forcing the visual cortex to expend cognitive effort suppressing task-irrelevant transients (Lavie, 1995)."
       }
     },
     {
@@ -131,7 +131,7 @@ const faqSchema = {
       "name": "What is a good score on the 100-cell Entropic Grid drill?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "General users typically score between 250 and 499 points (Level 2). Experienced visual scanners and competitive gamers reach 500 to 749 points (Level 3), while elite performers achieve 750 to 1,000+ points (Level 4–5), maintaining sub-1.5 second target acquisition times despite intense background noise."
+        "text": "Average users score between 250 and 499 points (Level 2). Experienced scanners achieve 500 to 749 points, while elite competitive performers reach 750 to 1,000+ points with sub-1.2 second average target acquisitions."
       }
     },
     {
@@ -139,7 +139,7 @@ const faqSchema = {
       "name": "Why does visual search become harder as difficulty levels increase?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "As difficulty levels advance, target code swap intervals accelerate and background entropy regeneration speeds up, increasing the perceptual load on visual short-term memory. Observers must manage faster cognitive re-indexing while maintaining spatial quadrant coverage."
+        "text": "Higher levels introduce faster target code swap cycles and accelerated entropy regeneration, testing the visual working memory buffer's ability to flush and prime new search templates under pressure."
       }
     },
     {
@@ -147,7 +147,7 @@ const faqSchema = {
       "name": "What is perceptual load theory and how does it prevent distraction?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Formulated by Nilli Lavie, perceptual load theory posits that when a task imposes high perceptual load—such as scanning complex 2-character codes in a 100-cell array—attentional capacity is fully consumed by task-relevant stimuli. This sensory saturation automatically excludes background distractors from cognitive processing."
+        "text": "Perceptual load theory states that when a task fully exhausts perceptual capacity, distractor stimuli are automatically excluded from cognitive processing, preventing distraction (Lavie, 1995)."
       }
     },
     {
@@ -155,7 +155,7 @@ const faqSchema = {
       "name": "Can visual scanning and pattern recognition speed be trained?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Yes. Neurocognitive studies confirm that regular visual search practice expands the effective attentional visual field (useful field of view), increases saccadic scanning efficiency, and accelerates template matching in the ventral occipitotemporal cortex."
+        "text": "Yes. Systematic visual search practice widens the useful field of view, trains faster parafoveal processing, and streamlines saccadic trajectory planning (Woods et al., 2015)."
       }
     },
     {
@@ -163,7 +163,7 @@ const faqSchema = {
       "name": "How does the 12-second target code swap mechanism work?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Every 12 seconds, or immediately upon reaching 5 target hits, the drill designates a new 2-character target code. This forces the visual working memory buffer to flush the previous search template and prime a new alphanumeric pattern, testing cognitive flexibility."
+        "text": "Every 12 seconds (or every 5 successful hits), the target changes to a new 2-character code, demanding cognitive flexibility and preventing habitual gaze fixation on a single character shape."
       }
     },
     {
@@ -171,7 +171,7 @@ const faqSchema = {
       "name": "Are there penalties for clicking incorrect cells in Entropic Grid?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "No. Tapping an incorrect cell triggers an instant red visual flash without deducting accrued points or subtracting timer seconds. This design encourages aggressive, fluid visual exploration without penalizing rapid decision-making."
+        "text": "No. Tapping a non-target cell produces a momentary red visual flash without score or time deductions, allowing users to scan aggressively without fear of catastrophic failure."
       }
     },
     {
@@ -179,7 +179,7 @@ const faqSchema = {
       "name": "How do gamers and professionals use concentration grids for cognitive warm-ups?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Athletes, pilots, and esports competitors use 2 to 3 rounds of 45-second concentration grid training as an oculomotor primer. It activates frontal-parietal attention networks, awakens peripheral parafoveal processing, and calms cognitive distractibility prior to performance."
+        "text": "Athletes and gamers utilize 2 to 3 rounds of 45-second concentration grid training to activate dorsal and ventral attention streams and sharpen parafoveal awareness prior to competition."
       }
     }
   ]

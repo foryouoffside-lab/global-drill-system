@@ -273,7 +273,7 @@ export default function DrillGuide({ guide = null, singleLineTitles = true, fram
           ))}
           {isVisualTrackingGuide && (
             <p className="mt-3 rounded-lg border border-cyan-400/15 bg-cyan-400/[0.04] px-3.5 py-3 text-[12px] leading-relaxed text-slate-400">
-              Scope note: this is browser-based visual-motion practice. It does not record eye position, diagnose an eye or neurological condition, or replace clinician-directed vision therapy. Stop for pain, dizziness, nausea, persistent blur, double vision, headache, or unusual visual symptoms.
+              {t('guide.visualScopeNote', 'Scope note: this is browser-based visual-motion practice. It does not record eye position, diagnose an eye or neurological condition, or replace clinician-directed vision therapy. Stop for pain, dizziness, nausea, persistent blur, double vision, headache, or unusual visual symptoms.')}
             </p>
           )}
         </div>

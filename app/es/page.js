@@ -37,10 +37,10 @@ export default function SpanishHomePage() {
     <HomePageClient
       copy={{
         srH2: 'SkillDrills - Aim Trainer y Entrenamiento Cerebral Gratis',
-        srBody: 'SkillDrills es una plataforma de entrenamiento online gratuita con 82 ejercicios interactivos en 8 categorías: aim trainer para FPS, entrenamiento cerebral, seguimiento visual, juegos de memoria de trabajo, coordinación ojo-mano, reflejos, reconocimiento visual y tests de tiempo de reacción. Sin registro, 100% en el navegador.',
+        srBody: 'SkillDrills es una plataforma de entrenamiento online gratuita con 81 ejercicios interactivos en 8 categorías: aim trainer para FPS, entrenamiento cerebral, seguimiento visual, juegos de memoria de trabajo, coordinación ojo-mano, reflejos, reconocimiento visual y tests de tiempo de reacción. Sin registro, 100% en el navegador.',
         heroH1: 'Entrena Puntería y Mente',
-        heroSub: 'Desarrolla precisión mecánica, velocidad de adquisición de objetivos y memoria de trabajo. 82 ejercicios gratis en el navegador, en 8 áreas de entrenamiento. Sin registro, listos al instante.',
-        heroExploreCta: 'Ver los 82 ejercicios',
+        heroSub: 'Desarrolla precisión mecánica, velocidad de adquisición de objetivos y memoria de trabajo. 81 ejercicios gratis en el navegador, en 8 áreas de entrenamiento. Sin registro, listos al instante.',
+        heroExploreCta: 'Ver los 81 ejercicios',
         fpsHubCta: 'Aim Trainer',
         statFreeDrills: 'Ejercicios gratis',
         statDomains: 'Áreas',
@@ -106,8 +106,8 @@ export default function SpanishHomePage() {
           { title: 'Entrenamiento diario', description: 'Microsesiones de 5 minutos pensadas para un calentamiento mental rápido y calibración motora diaria.' },
         ],
         ctaH2: 'Empieza a entrenar ya',
-        ctaSub: 'Sin cuentas. Sin pagos. 82 ejercicios en el navegador listos para calibración instantánea.',
-        ctaExploreCta: 'Ver los 82 ejercicios',
+        ctaSub: 'Sin cuentas. Sin pagos. 81 ejercicios en el navegador listos para calibración instantánea.',
+        ctaExploreCta: 'Ver los 81 ejercicios',
         reactionTest: {
           headlineIdle: 'HAZ CLIC PARA EMPEZAR',
           headlineWaiting: 'ESPERA AL VERDE',

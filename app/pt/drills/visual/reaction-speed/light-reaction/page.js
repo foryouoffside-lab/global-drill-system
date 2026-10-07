@@ -5,7 +5,7 @@ import RelatedDrills from '@/components/drill/RelatedDrills';
 import { pickSources } from '@/lib/drillSources';
 
 export const metadata = {
-  title: "Teste de reflexo online | Tempo de reação visual | SkillDrills",
+  title: "Teste de reflexo online | Tempo de reação visual",
   description: "Teste de reflexo online grátis: meça seu tempo de reação visual em milissegundos diante de um sinal luminoso. Resultado depende da tela; não é exame médico.",
   keywords: [
     "teste de reflexo",
@@ -22,7 +22,7 @@ export const metadata = {
     "treino de velocidade de reação"
   ],
   openGraph: {
-    title: "Teste de reflexo online | Tempo de reação visual | SkillDrills",
+    title: "Teste de reflexo online | Tempo de reação visual",
     description: "Meça o tempo entre o sinal luminoso e o clique em milissegundos, com várias tentativas para comparar sua consistência.",
     type: 'article',
     url: 'https://skilldrills.online/pt/drills/visual/reaction-speed/light-reaction',
@@ -31,7 +31,7 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: "Teste de reflexo online | Tempo de reação visual | SkillDrills",
+    title: "Teste de reflexo online | Tempo de reação visual",
     description: "Treine o reflexo visual com um estímulo luminoso imprevisível e acompanhe seus tempos no navegador.",
   },
   robots: { index: true, follow: true },

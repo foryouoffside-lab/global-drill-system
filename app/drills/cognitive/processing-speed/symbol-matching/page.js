@@ -5,14 +5,14 @@ import DrillFooter from '@/components/drill/DrillFooter';
 import { pickSources } from '@/lib/drillSources';
 
 export const metadata = {
-  title: "Symbol Matching Test Online | SDMT-Style Processing Speed Drill",
+  title: "Symbol Matching Test | SDMT-Style Processing Speed Drill",
   description: "Free symbol matching test online inspired by SDMT: practise visual scanning, symbol-to-digit lookup, and processing speed in your browser. Non-clinical.",
   keywords: ["symbol matching test online", "symbol matching test", "symbol digit modalities test", "sdmt test online", "digit symbol substitution test", "dsst test online", "processing speed test", "cognitive processing speed", "visual scanning test", "associative memory test",
     "sdmt cognitive assessment",
     "symbol matching speed game",
     "free neuropsychological test online"],
   openGraph: {
-    title: "Symbol Matching Test Online | SDMT-Style Processing Speed Drill",
+    title: "Symbol Matching Test | SDMT-Style Processing Speed Drill",
     description: "Free symbol matching test online inspired by SDMT: practise visual scanning, symbol-to-digit lookup, and processing speed in your browser. Non-clinical.",
     type: 'article',
     url: 'https://skilldrills.online/drills/cognitive/processing-speed/symbol-matching',
@@ -21,7 +21,7 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: "Symbol Matching Test Online | SDMT-Style Processing Speed Drill",
+    title: "Symbol Matching Test | SDMT-Style Processing Speed Drill",
     description: "Free symbol matching test online inspired by SDMT: practise visual scanning, symbol-to-digit lookup, and processing speed in your browser. Non-clinical.",
   },
   robots: { index: true, follow: true },

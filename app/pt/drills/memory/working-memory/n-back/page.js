@@ -288,18 +288,7 @@ const guidePt = {
     { title: "Reinício atencional sem lamentação", body: "Se perder o encadeamento, encare a próxima letra como o passo 1 e reconstrua a sequência sem hesitar." }
   ],
   sources: pickSources('baddeley1974', 'baddeley1986', 'cowan2001', 'woods2015'),
-  faqs: [
-    { q: "O que é o teste de memória operacional N-Back?", a: "Teste neurocognitivo que afere a atualização contínua e o controle executivo da memória de trabalho." },
-    { q: "Quem criou a tarefa N-Back e com qual propósito?", a: "Wayne K. Kirchner em 1958, para avaliar a retenção de dados mutáveis ao longo da idade." },
-    { q: "Quais faculdades cognitivas o N-Back principalmente avalia?", a: "Atualização de memória operacional, controle pré-frontal executivo e inibição de distrações." },
-    { q: "Qual é a diferença entre N-Back e testes de span simples?", a: "N-Back demanda manipulação e atualização em tempo real, enquanto o span simples é armazenamento passivo." },
-    { q: "O treino com N-Back pode melhorar a inteligência fluida (QI)?", a: "Estudos de destaque (como Jaeggi et al., 2008) registraram ganhos consistentes em raciocínio abstrato." },
-    { q: "Qual é a pontuação ou acurácia média de adultos no 3-Back?", a: "Varia entre 65% e 80% em adultos saudáveis, com índices superiores a 85% refletindo alto controle executivo." },
-    { q: "Qual a diferença entre Single N-Back e Dual N-Back?", a: "Single processa um único canal sensorial; Dual acompanha simultaneamente posição visual e som auditivo." },
-    { q: "Como a repetição subvocal ajuda no desempenho do N-Back?", a: "Recruta a alça fonológica, mantendo os dados ativos e protegidos contra o esquecimento imediato." },
-    { q: "Por que o desempenho cai drasticamente no 4-Back e 5-Back?", a: "Ultrapassa o limite biológico de atenção consciente humana de cerca de 4 itens (Cowan, 2001)." },
-    { q: "Como a memória operacional se aplica a tarefas do cotidiano?", a: "Aprimora o foco em programação de código, análise de dados complexos, leitura e decisões em esports." }
-  ],
+  faqs: faqSchema.mainEntity.map(({ name, acceptedAnswer }) => ({ q: name, a: acceptedAnswer.text })),
   related: [
     { href: "/pt/drills/memory/spatial-memory/path-tracing", title: "Teste de Rastreamento de Caminho", desc: "Memorizar trajetórias dinâmicas em matrizes progressivas." },
     { href: "/pt/drills/memory/spatial-memory/grid-memorization", title: "Teste de Memória Visual de Grade", desc: "Memorizar padrões em tabuleiros 2D e testar capacidade de retenção visual." },

@@ -17,7 +17,7 @@ import { pickSources } from '@/lib/drillSources';
 
 export const metadata = {
   title: 'Test de percepción de profundidad online | SkillDrills',
-  description: 'Test de percepción de profundidad y estereopsis online gratis. Practica el cálculo de distancias con un objetivo en movimiento; no es un diagnóstico oftalmológico.',
+  description: 'Test de percepción de profundidad y estereopsis online. Practica el cálculo de distancias con un objetivo móvil; no es un diagnóstico médico.',
   keywords: [
     'test de percepción de profundidad',
     'estereopsis',
@@ -33,7 +33,7 @@ export const metadata = {
   ],
   openGraph: {
     title: 'Test de percepción de profundidad online | SkillDrills',
-    description: 'Test de percepción de profundidad y estereopsis online gratis. Practica el cálculo de distancias con un objetivo en movimiento; no es un diagnóstico oftalmológico.',
+    description: 'Test de percepción de profundidad y estereopsis online. Practica el cálculo de distancias con un objetivo móvil; no es un diagnóstico médico.',
     type: 'article',
     url: 'https://skilldrills.online/es/drills/visual/depth-perception/distance-judgment',
     siteName: 'SkillDrills',
@@ -42,7 +42,7 @@ export const metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'Test de percepción de profundidad online | SkillDrills',
-    description: 'Test de percepción de profundidad y estereopsis online gratis. Practica el cálculo de distancias con un objetivo en movimiento; no es un diagnóstico oftalmológico.',
+    description: 'Test de percepción de profundidad y estereopsis online. Practica el cálculo de distancias con un objetivo móvil; no es un diagnóstico médico.',
   },
   robots: { index: true, follow: true },
   alternates: {

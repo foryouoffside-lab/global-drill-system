@@ -23,7 +23,7 @@ import { pickSources } from '@/lib/drillSources';
 
 export const metadata = {
   title: 'Klickgeschwindigkeit Test – Klick-Speed | SkillDrills',
-  description: 'Kostenloser Klickgeschwindigkeitstest online. Klicke blitzschnell auf auftauchende Ziele und trainiere CPS, Reaktionszeit und Zielgenauigkeit im Browser.',
+  description: 'Kostenloser Klickgeschwindigkeitstest online: Klicke blitzschnell auf auftauchende Ziele und trainiere CPS, Reaktionszeit und Zielgenauigkeit.',
   keywords: [
     "Klickgeschwindigkeit Test",
     "Klicks pro Sekunde Test",
@@ -57,11 +57,11 @@ export const metadata = {
 };
 
 Object.assign(metadata, {
-  title: 'Reaktionstest | Klickgeschwindigkeit & Zieltrainer | SkillDrills',
-  description: 'Kostenloser Reaktionstest im Browser. Klicken Sie schrumpfende Ziele schnell und präzise, um Reaktionszeit, Zielerfassung und Klickgeschwindigkeit zu trainieren.',
+  title: 'Reaktionstest | Klickgeschwindigkeit & Zieltrainer',
+  description: 'Kostenloser Reaktionstest im Browser: Klicken Sie schrumpfende Ziele schnell und trainieren Sie Reaktionszeit, Zielerfassung und Klickgeschwindigkeit.',
   keywords: ['Reaktionstest', 'Reaktionszeit Test', 'Klickgeschwindigkeitstest', 'Klicks pro Sekunde Test', 'Ziel-Trainer', 'Reflex Test', 'Maus Klicktest', 'Klickgenauigkeit', 'schnelle Klicks', 'Reaktionsspiel'],
-  openGraph: { ...metadata.openGraph, title: 'Reaktionstest | Klickgeschwindigkeit & Zieltrainer | SkillDrills', description: 'Kostenloser Reaktionstest im Browser. Klicken Sie schrumpfende Ziele schnell und präzise, um Reaktionszeit, Zielerfassung und Klickgeschwindigkeit zu trainieren.' },
-  twitter: { ...metadata.twitter, title: 'Reaktionstest | Klickgeschwindigkeit & Zieltrainer | SkillDrills', description: 'Kostenloser Reaktionstest im Browser. Klicken Sie schrumpfende Ziele schnell und präzise, um Reaktionszeit, Zielerfassung und Klickgeschwindigkeit zu trainieren.' },
+  openGraph: { ...metadata.openGraph, title: 'Reaktionstest | Klickgeschwindigkeit & Zieltrainer', description: 'Kostenloser Reaktionstest im Browser: Klicken Sie schrumpfende Ziele schnell und trainieren Sie Reaktionszeit, Zielerfassung und Klickgeschwindigkeit.' },
+  twitter: { ...metadata.twitter, title: 'Reaktionstest | Klickgeschwindigkeit & Zieltrainer', description: 'Kostenloser Reaktionstest im Browser: Klicken Sie schrumpfende Ziele schnell und trainieren Sie Reaktionszeit, Zielerfassung und Klickgeschwindigkeit.' },
 });
 
 const breadcrumbSchema = {

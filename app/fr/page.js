@@ -5,7 +5,7 @@ import { buildHomeMetadata, buildHomeSchema } from '@/lib/i18n/siteLandingSeoNat
 
 const legacyMetadata = {
   title: 'Aim Trainer Gratuit & Entraînement Cérébral en Ligne | SkillDrills',
-  description: 'Améliorez votre visée sur Valorant, CS2, temps de réaction, CPS et mémoire avec plus de 82 exercices interactifs gratuits directement sur votre navigateur.',
+  description: 'Améliorez votre visée sur Valorant, CS2, temps de réaction, CPS et mémoire avec 81 exercices interactifs gratuits directement sur votre navigateur.',
   keywords: [
     'aim trainer gratuit',
     'test de temps de réaction',
@@ -43,10 +43,10 @@ export default function FrenchHomePage() {
     <HomePageClient
       copy={{
         srH2: 'SkillDrills - Aim Trainer et Entraînement Cérébral Gratuits',
-        srBody: 'SkillDrills est une plateforme d\'entraînement en ligne gratuite proposant 82 exercices interactifs répartis en 8 catégories : aim trainer FPS, entraînement cérébral, suivi visuel, jeux de mémoire de travail, coordination œil-main, réflexes, reconnaissance visuelle et tests de temps de réaction. Sans inscription, 100% dans le navigateur.',
+        srBody: 'SkillDrills est une plateforme d\'entraînement en ligne gratuite proposant 81 exercices interactifs répartis en 8 catégories : aim trainer FPS, entraînement cérébral, suivi visuel, jeux de mémoire de travail, coordination œil-main, réflexes, reconnaissance visuelle et tests de temps de réaction. Sans inscription, 100% dans le navigateur.',
         heroH1: 'Affûtez Visée et Esprit',
-        heroSub: 'Développez votre précision mécanique, votre vitesse d\'acquisition de cible et votre mémoire de travail. 82 exercices gratuits dans le navigateur, répartis en 8 domaines. Sans inscription, disponibles instantanément.',
-        heroExploreCta: 'Voir les 82 exercices',
+        heroSub: 'Développez votre précision mécanique, votre vitesse d\'acquisition de cible et votre mémoire de travail. 81 exercices gratuits dans le navigateur, répartis en 8 domaines. Sans inscription, disponibles instantanément.',
+        heroExploreCta: 'Voir les 81 exercices',
         fpsHubCta: 'Aim Trainer',
         statFreeDrills: 'Exercices gratuits',
         statDomains: 'Domaines',
@@ -112,8 +112,8 @@ export default function FrenchHomePage() {
           { title: 'Adeptes du quotidien', description: 'Des micro-sessions de 5 minutes conçues pour un échauffement mental rapide et un calibrage moteur quotidien.' },
         ],
         ctaH2: 'Entraînez-vous maintenant',
-        ctaSub: 'Sans compte. Sans paiement. 82 exercices dans le navigateur, prêts pour un calibrage instantané.',
-        ctaExploreCta: 'Voir les 82 exercices',
+        ctaSub: 'Sans compte. Sans paiement. 81 exercices dans le navigateur, prêts pour un calibrage instantané.',
+        ctaExploreCta: 'Voir les 81 exercices',
         reactionTest: {
           headlineIdle: 'CLIQUEZ POUR COMMENCER',
           headlineWaiting: 'ATTENDEZ LE VERT',

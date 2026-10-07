@@ -34,10 +34,10 @@ export default function LocalizedHomePage() {
     <HomePageClient
       copy={{
         srH2: 'SkillDrills - Kostenloser Aim Trainer und Gehirntraining',
-        srBody: 'SkillDrills ist eine kostenlose Trainingsplattform mit 82 interaktiven Übungen in 8 Kategorien: Aim Trainer für FPS-Spiele, Gehirntraining, visuelles Tracking, Gedächtnisspiele, Motorik-Übungen, Reflextraining, visuelle Erkennung und Reaktionstests. Ohne Anmeldung, 100% direkt im Browser.',
+        srBody: 'SkillDrills ist eine kostenlose Trainingsplattform mit 81 interaktiven Übungen in 8 Kategorien: Aim Trainer für FPS-Spiele, Gehirntraining, visuelles Tracking, Gedächtnisspiele, Motorik-Übungen, Reflextraining, visuelle Erkennung und Reaktionstests. Ohne Anmeldung, 100% direkt im Browser.',
         heroH1: 'Trainiere Aim & Kopf',
-        heroSub: 'Baue mechanische Präzision, Zielerfassung und Arbeitsgedächtnis auf. 82 kostenlose Übungen im Browser, 8 Trainingsbereiche. Ohne Anmeldung, sofort startklar.',
-        heroExploreCta: 'Alle 82 Übungen ansehen',
+        heroSub: 'Baue mechanische Präzision, Zielerfassung und Arbeitsgedächtnis auf. 81 kostenlose Übungen im Browser, 8 Trainingsbereiche. Ohne Anmeldung, sofort startklar.',
+        heroExploreCta: 'Alle 81 Übungen ansehen',
         fpsHubCta: 'Aim Trainer',
         statFreeDrills: 'Kostenlose Übungen',
         statDomains: 'Bereiche',
@@ -103,8 +103,8 @@ export default function LocalizedHomePage() {
           { title: 'Tägliches Training', description: '5-Minuten-Sessions für schnelles mentales Aufwärmen und tägliche motorische Kalibrierung.' },
         ],
         ctaH2: 'Jetzt trainieren',
-        ctaSub: 'Keine Konten. Keine Zahlungen. 82 Übungen direkt im Browser, sofort startklar.',
-        ctaExploreCta: 'Alle 82 Übungen ansehen',
+        ctaSub: 'Keine Konten. Keine Zahlungen. 81 Übungen direkt im Browser, sofort startklar.',
+        ctaExploreCta: 'Alle 81 Übungen ansehen',
         reactionTest: {
           headlineIdle: 'JETZT KLICKEN',
           headlineWaiting: 'WARTE AUF GRÜN',

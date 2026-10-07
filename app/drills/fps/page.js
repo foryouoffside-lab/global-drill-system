@@ -121,6 +121,14 @@ export default function FPSHubPage() {
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
         "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://skilldrills.online" },
+          { "@type": "ListItem", "position": 2, "name": "FPS Aim Training", "item": "https://skilldrills.online/drills/fps" }
+        ]
+      })}} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+        "@context": "https://schema.org",
         "@type": "CollectionPage",
         "inLanguage": "en-US",
         "dateModified": "2026-09-20",

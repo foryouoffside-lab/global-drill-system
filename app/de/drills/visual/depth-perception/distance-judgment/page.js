@@ -16,7 +16,7 @@ import { pickSources } from '@/lib/drillSources';
 // ============================================================
 
 export const metadata = {
-  title: 'Räumliches Sehen Test online | Entfernungen üben | SkillDrills',
+  title: 'Räumliches Sehen Test online | Entfernungen üben',
   description: 'Kostenloser Test für räumliches Sehen und Tiefensehen. Übe Entfernungsschätzung mit einem bewegten Ziel im Browser; kein medizinischer Sehtest.',
   keywords: [
     'räumliches Sehen Test',
@@ -31,7 +31,7 @@ export const metadata = {
     'Tiefensehen Führerschein',
   ],
   openGraph: {
-    title: 'Räumliches Sehen Test online | Entfernungen üben | SkillDrills',
+    title: 'Räumliches Sehen Test online | Entfernungen üben',
     description: 'Kostenloser Test für räumliches Sehen und Tiefensehen. Übe Entfernungsschätzung mit einem bewegten Ziel im Browser; kein medizinischer Sehtest.',
     type: 'article',
     url: 'https://skilldrills.online/de/drills/visual/depth-perception/distance-judgment',
@@ -40,7 +40,7 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Räumliches Sehen Test online | Entfernungen üben | SkillDrills',
+    title: 'Räumliches Sehen Test online | Entfernungen üben',
     description: 'Kostenloser Test für räumliches Sehen und Tiefensehen. Übe Entfernungsschätzung mit einem bewegten Ziel im Browser; kein medizinischer Sehtest.',
   },
   robots: { index: true, follow: true },
