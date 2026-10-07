@@ -249,7 +249,7 @@ const howToSchema = {
 const guideProps = {
   sources: pickSources('mackworth1948', 'parasuraman1979', 'robertson1997', 'monsell2003', 'broadbent1958', 'woods2015'),
   intro: {
-    title: "Concentration Stamina – Attention Span Test",
+    title: "Attention Span Test – Concentration Stamina",
     paragraphs: [
       "Free attention span test online. Measure continuous visual focus, vigilance decay, and rule-switching stamina under speed pressure in this cognitive stamina drill.",
       "Norman Mackworth discovered during radar watch studies that human signal detection efficiency systematically degrades after 20-30 minutes of continuous monitoring due to habituation and cognitive resource depletion.",
@@ -260,10 +260,10 @@ const guideProps = {
     title: 'Cognitive Performance Standards & Benchmarks',
     headers: ['Tier', 'Rank', 'Rating', 'Accuracy', 'Percentile'],
     rows: [
-      { tier: 'Tier 1', rank: 'Grandmaster / Elite', stat: 'Top 1%', level: 'Mastery', accuracy: '98%+', percentile: 'Top 1%' },
-      { tier: 'Tier 2', rank: 'Advanced Focus', stat: 'Top 5%', level: 'Diamond', accuracy: '94-97%', percentile: 'Top 5%' },
-      { tier: 'Tier 3', rank: 'Proficient Operator', stat: 'Top 15%', level: 'Platinum', accuracy: '88-93%', percentile: 'Top 15%' },
-      { tier: 'Tier 4', rank: 'Standard Adult', stat: 'Top 50%', level: 'Gold', accuracy: '78-87%', percentile: 'Top 50%' },
+      { tier: 'Tier 1', rank: 'Grandmaster / Elite', stat: 'Highest tier', level: 'Mastery', accuracy: '98%+', percentile: 'Highest tier' },
+      { tier: 'Tier 2', rank: 'Advanced Focus', stat: 'Upper tier', level: 'Diamond', accuracy: '94-97%', percentile: 'Upper tier' },
+      { tier: 'Tier 3', rank: 'Proficient Operator', stat: 'Above-average tier', level: 'Platinum', accuracy: '88-93%', percentile: 'Above-average tier' },
+      { tier: 'Tier 4', rank: 'Standard Adult', stat: 'Mid tier', level: 'Gold', accuracy: '78-87%', percentile: 'Mid tier' },
       { tier: 'Tier 5', rank: 'Novice Baseline', stat: 'Base', level: 'Silver', accuracy: '<78%', percentile: 'Baseline' },
     ],
   },
@@ -313,7 +313,7 @@ export default function EnhancedPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(howToSchema) }}
       />
-      <ConcentrationStaminaClient copy={{ title: "Concentration Stamina – Attention Span Test", subtitle: "Attention span test for sustained focus, target discrimination, and cognitive endurance under time pressure" }} />
+      <ConcentrationStaminaClient copy={{ title: "Attention Span Test – Concentration Stamina", subtitle: "Attention span test for sustained focus, target discrimination, and cognitive endurance under time pressure" }} />
       <DrillGuide {...guideProps} />
       <DrillFooter />
     </>
