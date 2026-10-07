@@ -42,3 +42,4 @@
 | C:/Program Files/Git/ja/drills/visual-tracking/infinity-pursuit | done | PENDING | docs/seo/research/ja/infinity-pursuit.md | perfection wording softened; demand unverified |
 | C:/Program Files/Git/ja/drills/visual-tracking/momentum-teleport-pursuit | done | PENDING | docs/seo/research/ja/momentum-teleport-pursuit.md | overclaim softened; demand unverified |
 | C:/Program Files/Git/ja/drills/visual-tracking/predictive-pursuit | done | PENDING | docs/seo/research/ja/predictive-pursuit.md | direct answer; demand unverified |
+| C:/Program Files/Git/ja/drills/visual-tracking/sine-wave-pursuit | done | PENDING | docs/seo/research/ja/sine-wave-pursuit.md | direct answer; demand unverified |
