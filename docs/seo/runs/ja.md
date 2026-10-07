@@ -39,3 +39,4 @@
 | C:/Program Files/Git/ja/drills/visual-tracking/directional-chaos-pursuit | done | PENDING | docs/seo/research/ja/directional-chaos-pursuit.md | H1 de-stuffed; demand unverified |
 | C:/Program Files/Git/ja/drills/visual-tracking/dynamic-evasion-pursuit | done | PENDING | docs/seo/research/ja/dynamic-evasion-pursuit.md | H1 de-stuffed; demand unverified |
 | C:/Program Files/Git/ja/drills/visual-tracking/ghosting-suppress-pursuit | done | PENDING | docs/seo/research/ja/ghosting-suppress-pursuit.md | H1 shortened; demand unverified |
+| C:/Program Files/Git/ja/drills/visual-tracking/infinity-pursuit | done | PENDING | docs/seo/research/ja/infinity-pursuit.md | perfection wording softened; demand unverified |
