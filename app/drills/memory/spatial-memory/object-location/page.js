@@ -246,7 +246,7 @@ export default function ObjectLocationPage() {
 
   const objectLocationGuide = {
     intro: [
-      "Object Location Memory Test is an interactive neurocognitive assessment designed to evaluate spatial position memory, visual object-to-location binding, and layout recall. Unlike raw pattern tests that measure anonymous cell occupancy, object location tasks require the brain to bind distinct visual tokens with exact spatial coordinates.",
+      "An object location memory test shows several objects on a grid, hides them, then asks where a given object was. In this free online version the grid grows from 3x3 to 7x7 and each level adds one object, so it measures how many object positions you can hold at once.",
       "The clinical foundation of object-location testing was established by Marion Eals & Irwin Silverman (1994) in their pioneering research on spatial cognition, demonstrating that memory for object locations operates as a specialized evolutionary mechanism distinct from mental rotation. Earlier, Edward C. Tolman (1948) established the concept of cognitive mapping, showing how organisms form internal spatial models of their environment.",
       "In working memory architecture, Robert H. Logie (1995) and Alan Baddeley (2000) identified that object-location binding is coordinated by the Episodic Buffer, integrating inputs from the Visual Cache (object identities) with the Inner Scribe (spatial coordinates). Crucially, Steven J. Luck & Edward K. Vogel (1997) proved that feature conjunctions (binding identity to space) impose substantial attentional overhead, while Nelson Cowan (2001) demonstrated that unassisted focal working memory is strictly bounded to 3 to 4 independent item-location pairs.",
       "Following the chronometric standards set out by Woods et al. (2015), this drill utilizes a fixed 1.5-second memorization window and an adaptive difficulty staircase (scaling from 3x3 up to 7x7 matrices) to measure your precise spatial binding threshold.",
@@ -255,16 +255,16 @@ export default function ObjectLocationPage() {
       "This drill is a free browser game for practice and interest. It is not a medical device, a diagnostic instrument, or a screening or treatment tool for any condition, and no score here says anything about your health or your memory in a clinical sense. If you have concerns about your memory or thinking, speak to a qualified clinician."
     ],
     benchmarks: {
-      title: "Normative Object-Location Binding Span Benchmarks",
+      title: "Object-Location Binding Span Score Bands",
       headers: ["Performance Tier", "Objects & Grid Scale", "Drill Score", "Cognitive Binding & Spatial Mapping Profile"],
       rows: [
-        ["Tier 1 (Superior / Clinical 99th Percentile)", "Level 8 – 10+ (8 – 10+ Objects, 6x6–7x7 Grid)", "1,000+ Points", "Visuospatial elite; deploys rapid quadrantal partitioning and relational landmark anchoring; binds 8+ object-location pairs effortlessly; sub-500 ms target localization"],
-        ["Tier 2 (High Average / 85th–95th Percentile)", "Level 6 – 7 (6 – 7 Objects, 5x5–6x6 Grid)", "750 – 999 Points", "Exceeds standard adult baseline; robust semantic-spatial pairing; resists visual retroactive interference on expanding matrices; 500 – 700 ms localization"],
-        ["Tier 3 (Average Adult Baseline / 50th Percentile)", "Level 4 – 5 (4 – 5 Objects, 4x4–5x5 Grid)", "450 – 749 Points", "Normal population baseline (Eals & Silverman, 1994; CANTAB PAL); manages 4 item-location conjunctions (Cowan's limit); begins losing central items on 5x5 grids; 700 – 950 ms localization"],
-        ["Tier 4 (Low Average / Feature-Binding Bottleneck)", "Level 3 (3 Objects, 3x3–4x4 Grid)", "250 – 449 Points", "Recalls only 2–3 isolated objects; confuses coordinates of adjacent items; struggles when distractor objects are introduced; 950 – 1,300 ms localization"],
-        ["Tier 5 (Impaired / Below Average Span)", "Level 1 – 2 (2 Objects, 3x3 Grid)", "< 250 Points", "Rapid visual trace decay; failure of object-to-location binding; difficulty retrieving target coordinates even after minimal 1.5s delays; latency exceeding 1,300 ms"]
+        ["Tier 1 (Exceptional)", "Level 8 – 10+ (8 – 10+ Objects, 6x6–7x7 Grid)", "1,000+ Points", "Visuospatial elite; deploys rapid quadrantal partitioning and relational landmark anchoring; binds 8+ object-location pairs effortlessly; sub-500 ms target localization"],
+        ["Tier 2 (Advanced)", "Level 6 – 7 (6 – 7 Objects, 5x5–6x6 Grid)", "750 – 999 Points", "Exceeds standard adult baseline; robust semantic-spatial pairing; resists visual retroactive interference on expanding matrices; 500 – 700 ms localization"],
+        ["Tier 3 (Typical)", "Level 4 – 5 (4 – 5 Objects, 4x4–5x5 Grid)", "450 – 749 Points", "Normal population baseline (Eals & Silverman, 1994; CANTAB PAL); manages 4 item-location conjunctions (Cowan's limit); begins losing central items on 5x5 grids; 700 – 950 ms localization"],
+        ["Tier 4 (Developing)", "Level 3 (3 Objects, 3x3–4x4 Grid)", "250 – 449 Points", "Recalls only 2–3 isolated objects; confuses coordinates of adjacent items; struggles when distractor objects are introduced; 950 – 1,300 ms localization"],
+        ["Tier 5 (Starting out)", "Level 1 – 2 (2 Objects, 3x3 Grid)", "< 250 Points", "Rapid visual trace decay; failure of object-to-location binding; difficulty retrieving target coordinates even after minimal 1.5s delays; latency exceeding 1,300 ms"]
       ],
-      note: "Object count and grid scale reflect maximum difficulty cleared in 45-second session; normative percentiles mapped to Silverman-Eals OLM and CANTAB PAL standards (Eals & Silverman, 1994; Luck & Vogel, 1997; Woods et al., 2015)."
+      note: "Object count and grid scale reflect maximum difficulty cleared in 45-second session; The bands are an editorial guide, not population norms, because SkillDrills collects no aggregate data; the task design follows (Eals & Silverman, 1994; Luck & Vogel, 1997; Woods et al., 2015)."
     },
     techniques: {
       title: "Evidence-Based Protocols to Expand Object-Location Binding",
