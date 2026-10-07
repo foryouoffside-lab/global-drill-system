@@ -7,7 +7,7 @@ const motorDrills = DRILLS.filter((d) => d.category === 'motor');
 
 export const metadata = {
   title: 'Maus-Präzisionstest & Aim-Training | SkillDrills',
-  description: 'Kostenlose Browser-Drills für Mausgenauigkeit, Aim-Kontrolle, CPS, Tastaturtempo und Hand-Auge-Koordination.',
+  description: 'Kostenlose Browser-Drills für Mausgenauigkeit, Aim-Kontrolle, CPS-Test, Tastaturtempo und Hand-Auge-Koordination. Ohne Anmeldung.',
   keywords: [
     'Maus-Präzisionstest', 'Aim-Training', 'CPS-Test', 'Mausgenauigkeit',
     'Hand-Auge-Koordination', 'Tastatur Geschwindigkeit', 'Maus Präzisionstraining',
@@ -17,7 +17,7 @@ export const metadata = {
   ],
   openGraph: {
     title: 'Maus-Präzisionstest & Aim-Training | SkillDrills',
-    description: 'Kostenlose Browser-Drills für Mausgenauigkeit, Aim-Kontrolle, CPS, Tastaturtempo und Hand-Auge-Koordination.',
+    description: 'Kostenlose Browser-Drills für Mausgenauigkeit, Aim-Kontrolle, CPS-Test, Tastaturtempo und Hand-Auge-Koordination. Ohne Anmeldung.',
     type: 'website',
     url: 'https://skilldrills.online/de/drills/motor',
     siteName: 'SkillDrills',
@@ -27,7 +27,7 @@ export const metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'Maus-Präzisionstest & Aim-Training | SkillDrills',
-    description: 'Kostenlose Browser-Drills für Mausgenauigkeit, Aim-Kontrolle, CPS, Tastaturtempo und Hand-Auge-Koordination.',
+    description: 'Kostenlose Browser-Drills für Mausgenauigkeit, Aim-Kontrolle, CPS-Test, Tastaturtempo und Hand-Auge-Koordination. Ohne Anmeldung.',
     images: ['https://skilldrills.online/icons/icon-512x512.png'],
   },
   robots: { index: true, follow: true },
@@ -121,7 +121,7 @@ const faqSchema = {
       "name": "Wie zuverlässig und genau sind browserbasierte Maus- und Tastaturtests?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "SkillDrills nutzt moderne Web-APIs wie performance.now() mit einer Sub-Millisekunden-Auflösung von 0,1 ms. Die Messgrenzen werden primär durch die Hardware bestimmt: die Bildwiederholrate des Monitors (z. B. ~4,1 ms bei 240 Hz) und die Abfragerate (Polling-Rate) der Maus oder Tastatur (1 ms bei 1000 Hz). Die Genauigkeit reicht vollkommen aus, um zuverlässige Benchmark-Vergleiche und Hardwaretests durchzuführen."
+        "text": "SkillDrills nutzt moderne Web-APIs wie performance.now() mit einer browserabhängigen Auflösung von etwa 1 ms. Die Messgrenzen werden primär durch die Hardware bestimmt: die Bildwiederholrate des Monitors (z. B. ~4,1 ms bei 240 Hz) und die Abfragerate (Polling-Rate) der Maus oder Tastatur (1 ms bei 1000 Hz). Die Genauigkeit reicht vollkommen aus, um zuverlässige Benchmark-Vergleiche und Hardwaretests durchzuführen."
       }
     },
     {
