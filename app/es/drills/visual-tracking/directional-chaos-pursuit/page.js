@@ -6,7 +6,7 @@ import { getAlternateLanguages } from '@/lib/i18n/locales';
 import { pickSources } from '@/lib/drillSources';
 
 export const metadata = {
-  title: "Seguimiento Ocular Reactivo | SkillDrills",
+  title: "Seguimiento ocular con cambios de dirección | SkillDrills",
   description: "Recaptura un objetivo que cambia de dirección y velocidad. Practica reacción visual, sacadas correctoras y visión dinámica gratis.",
   keywords: [
     "seguimiento ocular",
@@ -28,7 +28,7 @@ export const metadata = {
   },
   robots: { index: true, follow: true },
   openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
-    title: "Seguimiento Ocular Reactivo | SkillDrills",
+    title: "Seguimiento ocular con cambios de dirección | SkillDrills",
     description: "Recaptura un objetivo que cambia de dirección y velocidad. Practica reacción visual, sacadas correctoras y visión dinámica gratis.",
     url: "https://skilldrills.online/es/drills/visual-tracking/directional-chaos-pursuit",
     siteName: "SkillDrills",
@@ -37,7 +37,7 @@ export const metadata = {
   },
   twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: "summary_large_image",
-    title: "Seguimiento Ocular Reactivo | SkillDrills",
+    title: "Seguimiento ocular con cambios de dirección | SkillDrills",
     description: "Recaptura un objetivo impredecible y practica reacción visual y recuperación de la mirada gratis.",
   },
 };
@@ -70,7 +70,7 @@ const breadcrumbSchema = {
 const softwareApplicationSchema = {
   "@context": "https://schema.org",
   "@type": "SoftwareApplication", "sameAs": ["https://en.wikipedia.org/wiki/Smooth_pursuit", "https://en.wikipedia.org/wiki/Saccade"],
-  "name": "Persecución Caótica Direccional – Seguimiento Ocular",
+  "name": "Seguimiento ocular con cambios de dirección",
   "applicationCategory": "HealthApplication",
   "operatingSystem": "Navegador",
   "dateModified": "2026-09-20",
@@ -324,7 +324,7 @@ export default function DirectionalChaosPursuitPageEs() {
       />
       <DirectionalChaosPursuitClient
         copy={{
-          title: "Persecución Caótica Direccional – Seguimiento Ocular",
+          title: "Seguimiento ocular con cambios de dirección",
           subtitle: "Entrenamiento de Recuperación Sacádica y Refixación Visual Inmediata",
           description: "A diferencia de los patrones geométricos predecibles, este ejercicio aplica perturbaciones continuas y rebotes elásticos aleatorios. El sistema oculomotor no puede anticipar el movimiento mediante modelos cerebelosos internos y se ve obligado a operar en circuito cerrado reflexivo, disparando microsacadas correctivas veloces para re-centrar el blanco en la fóvea (Bahill et al., 1980; Krauzlis, 2004)."
         }}
