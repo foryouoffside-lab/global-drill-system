@@ -6,14 +6,14 @@ import DrillFooter from '@/components/drill/DrillFooter';
 import { pickSources } from '@/lib/drillSources';
 
 export const metadata = {
-  title: "기호 숫자 검사 | SDMT 방식 처리속도 훈련 | SkillDrills",
-  description: "무료 브라우저 기호 숫자 검사: SDMT 방식의 기호-숫자 매칭으로 정보처리속도와 시각 탐색을 연습합니다. 임상 검사가 아닙니다.",
-  keywords: ["기호 숫자 매칭 인지속도", "SDMT 인지 검사", "정보처리속도 테스트", "기호 쓰기 검사 온라인", "DSST 테스트", "시각 탐색 검사", "단기 연상기억 훈련", "두뇌 인지속도 측정", "신경심리 검사 무료", "성인 뇌 반응속도",
+  title: "처리속도 테스트 | 기호 숫자 매칭 훈련 | SkillDrills",
+  description: "기호와 숫자를 짝지어 입력하는 무료 처리속도 테스트입니다. SDMT 방식으로 정보처리속도와 시각 탐색을 연습하며 임상 검사가 아닙니다.",
+  keywords: ["처리속도 테스트", "처리속도 훈련", "기호 숫자 매칭 인지속도", "SDMT 인지 검사", "정보처리속도 테스트", "기호 쓰기 검사 온라인", "DSST 테스트", "시각 탐색 검사", "단기 연상기억 훈련", "두뇌 인지속도 측정", "신경심리 검사 무료", "성인 뇌 반응속도",
     "기호숫자검사",
     "웨슬러 인지처리속도"],
   openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
-    title: "기호 숫자 검사 | SDMT 방식 처리속도 훈련 | SkillDrills",
-    description: "무료 브라우저 기호 숫자 검사: SDMT 방식의 기호-숫자 매칭으로 정보처리속도와 시각 탐색을 연습합니다. 임상 검사가 아닙니다.",
+    title: "처리속도 테스트 | 기호 숫자 매칭 훈련 | SkillDrills",
+    description: "기호와 숫자를 짝지어 입력하는 무료 처리속도 테스트입니다. SDMT 방식으로 정보처리속도와 시각 탐색을 연습하며 임상 검사가 아닙니다.",
     type: 'article',
     url: 'https://skilldrills.online/ko/drills/cognitive/processing-speed/symbol-matching',
     siteName: 'SkillDrills',
@@ -21,8 +21,8 @@ export const metadata = {
   },
   twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: 'summary_large_image',
-    title: "기호 숫자 검사 | SDMT 방식 처리속도 훈련 | SkillDrills",
-    description: "무료 브라우저 기호 숫자 검사: SDMT 방식의 기호-숫자 매칭으로 정보처리속도와 시각 탐색을 연습합니다. 임상 검사가 아닙니다.",
+    title: "처리속도 테스트 | 기호 숫자 매칭 훈련 | SkillDrills",
+    description: "기호와 숫자를 짝지어 입력하는 무료 처리속도 테스트입니다. SDMT 방식으로 정보처리속도와 시각 탐색을 연습하며 임상 검사가 아닙니다.",
   },
   robots: { index: true, follow: true },
   alternates: {
@@ -143,7 +143,7 @@ const faqSchema = {
       "name": "DSST 검사와의 차이점은 무엇인가요?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "DSST는 숫자를 보고 복잡한 기호를 직접 그려야 하지만, SDMT는 기호를 보고 친숙한 숫자를 입력하므로 순수한 대뇌 인지 속도를 정밀하게 분리해 냅니다."
+        "text": "DSST는 숫자를 보고 복잡한 기호를 직접 그려야 하지만, SDMT는 기호를 보고 친숙한 숫자를 입력하므로 그리기 동작의 영향을 줄이고 기호 대응과 입력 속도에 초점을 맞춥니다."
       }
     },
     {
@@ -159,7 +159,7 @@ const faqSchema = {
       "name": "정상 성인의 평균 수행 기준은?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "20~34세 정상 성인의 경우 90초 동안 대략 65~75개의 정답을 입력하는 것이 표준 임상 기준치입니다(Smith, 1973; Der & Deary, 2006)."
+        "text": "이 드릴은 임상 SDMT가 아니며 대응표와 시간이 달라 임상 규준을 그대로 적용할 수 없습니다. 연령에 따라 처리 속도가 달라진다는 연구가 있으므로(Der & Deary, 2006), 같은 기기에서 본인의 기록 변화를 비교하세요."
       }
     },
     {
@@ -175,7 +175,7 @@ const faqSchema = {
       "name": "대응표 암기가 속도에 미치는 영향은?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "기호와 숫자의 짝을 작업기억에 초반에 각인시키면 상단 표로 시선이 오가는 불필요한 안구 이동을 제거하여 속도가 급상승합니다."
+        "text": "기호와 숫자의 짝을 작업기억에 초반에 각인시키면 상단 표로 시선이 오가는 표를 확인하는 시선 이동이 줄어 속도가 빨라질 수 있습니다."
       }
     },
     {
@@ -191,7 +191,7 @@ const faqSchema = {
       "name": "나이가 들면 정보 처리 속도가 저하되나요?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "네, 자연스러운 노화에 따라 처리 속도가 다소 느려지지만 꾸준한 인지 운동과 유산소 활동으로 예방할 수 있습니다."
+        "text": "연령이 높아질수록 처리 속도가 완만하게 느려지는 경향이 보고되어 있습니다(Der & Deary, 2006). 개인차가 크며, 이 드릴이 노화에 따른 변화를 막는다고 주장하지는 않습니다."
       }
     },
     {
@@ -199,7 +199,7 @@ const faqSchema = {
       "name": "권장 훈련 주기는 어떻게 되나요?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "하루 10분 정도의 반복 플레이가 시각 스캔 속도와 즉각 연상 기억력을 끌어올리는 데 가장 좋습니다."
+        "text": "정해진 정답은 없습니다. 하루 10분 안팎의 짧은 세션을 반복하며 같은 조건에서 기록을 비교하는 방식이 부담이 적습니다."
       }
     },
     {
@@ -256,20 +256,21 @@ const guideProps = {
     title: "기호 숫자 매칭 인지속도・SDMT 인지 검사 – 정보처리속도 테스트",
     paragraphs: [
       "무료 온라인 기호 숫자 매칭 인지 검사(SDMT). 고유 기호와 숫자의 매핑 관계를 신속히 대조하여 정보 처리 속도, 시각 탐색 효율성, 단기 연상 기억력을 정밀하게 측정합니다.",
-      "DSST는 숫자를 보고 복잡한 기호를 직접 그려야 하지만, SDMT는 기호를 보고 친숙한 숫자를 입력하므로 순수한 대뇌 인지 속도를 정밀하게 분리해 냅니다.",
+      "DSST는 숫자를 보고 복잡한 기호를 직접 그려야 하지만, SDMT는 기호를 보고 친숙한 숫자를 입력하므로 그리기 동작의 영향을 줄이고 기호 대응과 입력 속도에 초점을 맞춥니다.",
       "(1) 중추 정보 처리 속도, (2) 시각 탐색 기민성, (3) 단기 연상 기억 형성력, (4) 지속적 집행 주의력입니다.",
     ],
   },
   benchmarks: {
-    title: '인지 수행 능력 표준 평가 벤치마크',
-    headers: ['등급 (Tier)', '호칭 (Rank)', '평가 기준', '도달 수준', '정확도', '백분위'],
+    title: '기호 숫자 매칭 수행 구간(참고용)',
+    headers: ['단계', '구간 이름', '해석', '도달 수준', '정확도 목표', '비고'],
     rows: [
-      { tier: 'Tier 1', rank: '그랜드마스터 / 초고속 연상기호 엘리트', stat: '상위 1%', level: '마스터리 (최상위)', accuracy: '98% 이상', percentile: '상위 1%' },
-      { tier: 'Tier 2', rank: '상급 기호 연합 인지자', stat: '상위 5%', level: '다이아몬드 (우수)', accuracy: '94–97%', percentile: '상위 5%' },
-      { tier: 'Tier 3', rank: '숙련 시각 탐색자', stat: '상위 15%', level: '플래티넘 (숙련)', accuracy: '88–93%', percentile: '상위 15%' },
-      { tier: 'Tier 4', rank: '일반 성인 표준', stat: '상위 50%', level: '골드 (표준)', accuracy: '78–87%', percentile: '상위 50%' },
-      { tier: 'Tier 5', rank: '초보 / 입문 기준선', stat: '기준선 (기초)', level: '실버 (기초)', accuracy: '78% 미만', percentile: '기준선 (하위)' },
+      { tier: 'Tier 1', rank: '최상위 구간', stat: '매우 높음', level: '최상위', accuracy: '98% 이상', percentile: '정확도 유지가 핵심' },
+      { tier: 'Tier 2', rank: '상급', stat: '높음', level: '우수', accuracy: '94–97%', percentile: '속도 상승 시 오답 관리' },
+      { tier: 'Tier 3', rank: '숙련', stat: '평균 이상', level: '숙련', accuracy: '88–93%', percentile: '속도와 정확도 균형' },
+      { tier: 'Tier 4', rank: '일반 수준', stat: '평균 범위', level: '표준', accuracy: '78–87%', percentile: '기본 규칙 익히기' },
+      { tier: 'Tier 5', rank: '입문', stat: '기준선', level: '기초', accuracy: '78% 미만', percentile: '천천히 정확하게 시작' },
     ],
+    note: '구간은 SkillDrills가 정한 참고용 구분이며 사용자 통계, 백분위 또는 임상 기준이 아닙니다.',
   },
   protocols: {
     title: '두뇌 처리 속도와 집중력을 극대화하는 4대 훈련 프로토콜',
@@ -319,7 +320,7 @@ export default function LocalizedCognitivePage() {
       />
       <SymbolMatchingClient
         copy={{
-          title: "기호 숫자 검사",
+          title: "처리속도 테스트",
           subtitle: "기호와 숫자의 대응을 빠르게 찾아 정보처리속도를 연습합니다",
           startTitle: "기호 숫자 매칭",
           stageCaption: "중앙의 표적 기호를 위 키와 비교한 뒤 맞는 숫자를 누르세요.",
