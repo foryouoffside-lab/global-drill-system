@@ -15,7 +15,7 @@ import { pickSources } from '@/lib/drillSources';
 // ============================================================
 
 export const metadata = {
-  title: "Dynamisches Sehen | Reaktive Blickverfolgung | SkillDrills",
+  title: "Reaktives Augentraining | Korrektursakkaden | SkillDrills",
   description: "Kostenloses Augentraining für plötzliche Richtungswechsel: Verfolge ein ausweichendes Ziel und übe schnelle foveale Refixation im Browser.",
   keywords: [
     "dynamisches Sehen Training",
@@ -32,7 +32,7 @@ export const metadata = {
     "Sehtraining kostenlos"
   ],
   openGraph: {
-    title: "Dynamisches Sehen | Reaktive Blickverfolgung | SkillDrills",
+    title: "Reaktives Augentraining | Korrektursakkaden | SkillDrills",
     description: "Verfolge ein ausweichendes Ziel und trainiere schnelle foveale Refixation bei plötzlichen Richtungswechseln kostenlos im Browser.",
     type: "website",
     url: "https://skilldrills.online/de/drills/visual-tracking/dynamic-evasion-pursuit",
@@ -41,7 +41,7 @@ export const metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Dynamisches Sehen | Reaktive Blickverfolgung | SkillDrills",
+    title: "Reaktives Augentraining | Korrektursakkaden | SkillDrills",
     description: "Trainiere dynamisches Sehen und schnelle Blick-Refixation bei ausweichenden Zielbewegungen kostenlos online.",
   },
   robots: { index: true, follow: true },

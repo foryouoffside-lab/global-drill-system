@@ -15,7 +15,7 @@ import { pickSources } from '@/lib/drillSources';
 // ============================================================
 
 export const metadata = {
-  title: "Dynamisches Sehen | Reaktive Blickverfolgung | SkillDrills",
+  title: "Dynamisches Sehen | Richtungswechsel-Training | SkillDrills",
   description: "Kostenloses Augentraining für plötzliche Richtungswechsel: Verfolge ein unvorhersehbares Ziel, übe Blicksprünge und schnelle Refixation.",
   keywords: [
     "dynamisches Sehen Training",
@@ -32,7 +32,7 @@ export const metadata = {
     "Sehtraining kostenlos"
   ],
   openGraph: {
-    title: "Dynamisches Sehen | Reaktive Blickverfolgung | SkillDrills",
+    title: "Dynamisches Sehen | Richtungswechsel-Training | SkillDrills",
     description: "Folge einem unvorhersehbaren Ziel und trainiere schnelle Refixation bei plötzlichen Richtungswechseln kostenlos im Browser.",
     type: "website",
     url: "https://skilldrills.online/de/drills/visual-tracking/directional-chaos-pursuit",
@@ -41,7 +41,7 @@ export const metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Dynamisches Sehen | Reaktive Blickverfolgung | SkillDrills",
+    title: "Dynamisches Sehen | Richtungswechsel-Training | SkillDrills",
     description: "Trainiere dynamisches Sehen und schnelle Blick-Refixation bei unvorhersehbaren Zielbewegungen.",
   },
   robots: { index: true, follow: true },
