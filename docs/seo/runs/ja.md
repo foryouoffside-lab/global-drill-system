@@ -25,3 +25,4 @@
 | C:/Program Files/Git/ja/drills/physical/reflex-training/drop-catch | done | PENDING | docs/seo/research/ja/drop-catch.md | H1 simplified; demand unverified |
 | C:/Program Files/Git/ja/drills/physical/reflex-training/peripheral-threat-sweeper | done | PENDING | docs/seo/research/ja/peripheral-threat-sweeper.md | 周辺視野トレーニングゲーム; Bing 22 |
 | C:/Program Files/Git/ja/drills/physical/reflex-training/quick-dodge | done | PENDING | docs/seo/research/ja/quick-dodge.md | 避けゲー title; demand unverified |
+| C:/Program Files/Git/ja/drills/physical/reflex-training/reaction-chain | done | PENDING | docs/seo/research/ja/reaction-chain.md | オーバーフリック改善; demand unverified |

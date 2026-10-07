@@ -12,7 +12,7 @@ import { pickSources } from '@/lib/drillSources';
 // ============================================================
 
 export const metadata = {
-  title: "エイム練習 無料ブラウザ｜停止精度テスト",
+  title: "オーバーフリック改善｜エイムの急停止精度を練習 | SkillDrills",
   description: "無料ブラウザのエイム練習。動く標的にカーソルを合わせて止め、フリック後の停止精度とオーバーフリックを練習できます。",
   keywords: [
     "エイム練習 無料 ブラウザ",
@@ -31,7 +31,7 @@ export const metadata = {
     languages: getAlternateLanguages('/drills/physical/reflex-training/reaction-chain'),
   },
   openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
-    title: "エイム練習 無料ブラウザ｜停止精度テスト",
+    title: "オーバーフリック改善｜エイムの急停止精度を練習 | SkillDrills",
     description: "動く標的にカーソルを合わせて止める無料のブラウザ・エイム練習。フリック後の停止精度を確認できます。",
     url: 'https://skilldrills.online/ja/drills/physical/reflex-training/reaction-chain',
     siteName: 'SkillDrills',
@@ -40,7 +40,7 @@ export const metadata = {
   },
   twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: 'summary_large_image',
-    title: "エイム練習 無料ブラウザ｜停止精度テスト",
+    title: "オーバーフリック改善｜エイムの急停止精度を練習 | SkillDrills",
     description: "動く標的に合わせてカーソルを止め、フリック後の停止精度を練習できます。",
   },
 };
@@ -252,6 +252,7 @@ const guideProps = {
   intro: {
     title: "無料ブラウザ・エイム練習で測る停止精度",
     paragraphs: [
+      "オーバーフリックとは、狙った位置を通り過ぎてしまうエイムのズレのことです。このページでは動く標的にカーソルを合わせて止める練習を繰り返し、フリック後の停止精度を確認できます。素早く振ることよりも、狙った位置でぴたりと止める力を伸ばすための練習です。",
       "マウスを標的に向けて素早く振り抜くことよりも、目標座標で1ピクセルも滑らせずにピタッと静止させることのほうが神経生体力学的に遥かに困難です。一般的なエイム練習ツールが標的をクリックする瞬間のみを重視するのに対し、リアクション・チェーンドリルは高速ノードを迎撃した直後にカーソルの運動慣性を強制停止させる最高峰の運動抑制（Motor Inhibition）能力を鍛え上げます。",
       "認知神経科学の金字塔であるローガンとコーワン（Logan & Cowan, 1984）の「競走モデル（Race Model）」によれば、運動を駆動する「Goプロセス」とそれを急停止させる「Stopプロセス」は大脳基底核内で並列に競い合っています。超高速で移動する標的上にカーソルを静止させるには、大脳右下前頭回（rIFG）および視床下核（STN）からの迅速な拮抗筋動員指令がGoプロセスの慣性に打ち勝たなければなりません（Verbruggen & Logan, 2008）。",
       "ウッドワース（Woodworth, 1899）の2相運動制御モデルが明かした通り、鋭いエイムは初動で大半の距離を詰める開ループ弾道インパルスと、終端での閉ループ微調整から成り立ちます。フィッツの法則（Fitts, 1954）に基づきノード速度が1,800 px/sに達すると視覚フィードバックを待つ時間猶予は完全に消失するため、小脳の内部モデルが予測した精密な減速タイミングのみがオーバーフリックを防ぐ防壁となります。",
@@ -262,9 +263,9 @@ const guideProps = {
     title: "エイムブレーキング・運動抑制 公式5段階ベンチマーク",
     headers: ["階層・ティア", "称号 (Rank Title)", "スコア基準値", "迎撃静止成功率", "総合グレード", "神経生体力学プロファイル"],
     rows: [
-      ["Tier 1: 究極のエイム制動マスター", "Apex Kinetic Arrester", "15,000点以上", "95%以上 / 1500+ px/s", "Grade S", "上位0.1%水準の驚異的衝動抑制力。1,800 px/sの超高速ノードでもオーバーフリックを一切起こさず瞬時ゼロ静止を完遂（Logan 1984; Woodworth 1899）"],
-      ["Tier 2: 精密キネティックスナイパー", "Precision Kinetic Sniper", "11,000 – 14,999点", "90 – 94% / 1200 – 1499 px/s", "Grade A", "上位3%プロゲーマー級の制動精度。鋭い初動フリック後も指先の摩擦力でカーソルを完璧にターゲット内にアンカー可能"],
-      ["Tier 3: 熟練の弾道制御パイロット", "Skilled Deceleration Pilot", "7,500 – 10,999点", "82 – 89% / 900 – 1199 px/s", "Grade B", "上位15%競技ランク帯水準。安定した中速域制動力を誇るが、超高速域で稀にスライススルーが発生"],
+      ["Tier 1: 究極のエイム制動マスター", "Apex Kinetic Arrester", "15,000点以上", "95%以上 / 1500+ px/s", "Grade S", "驚異的衝動抑制力。1,800 px/sの超高速ノードでもオーバーフリックを一切起こさず瞬時ゼロ静止を完遂（Logan 1984; Woodworth 1899）"],
+      ["Tier 2: 精密キネティックスナイパー", "Precision Kinetic Sniper", "11,000 – 14,999点", "90 – 94% / 1200 – 1499 px/s", "Grade A", "上級者水準の制動精度。鋭い初動フリック後も指先の摩擦力でカーソルを完璧にターゲット内にアンカー可能"],
+      ["Tier 3: 熟練の弾道制御パイロット", "Skilled Deceleration Pilot", "7,500 – 10,999点", "82 – 89% / 900 – 1199 px/s", "Grade B", "競技ランク帯水準。安定した中速域制動力を誇るが、超高速域で稀にスライススルーが発生"],
       ["Tier 4: 発展途上のブレーキ練習生", "Developing Stopper", "4,000 – 7,499点", "70 – 81% / 600 – 899 px/s", "Grade C", "一般成人平均値。慣性に引きずられて標的を行き過ぎる傾向があり、手首の力み抜きとブレーキ感覚の習得が課題"],
       ["Tier 5: 減速初級訓練生", "Novice Arrester Trainee", "< 4,000点", "< 70% / < 600 px/s", "Grade D", "運動抑制の遅れによるミスが頻発。拮抗筋の動員とマウスパッドへの下向き摩擦ブレーキの基礎練習が必要"]
     ],
@@ -335,7 +336,7 @@ export default function LocalizedReactionChainPageJa() {
       />
       <ReactionChainClient
         copy={{
-          title: "無料ブラウザ・エイム練習",
+          title: "オーバーフリック改善練習",
           subtitle: "標的に合わせ、カーソルを正確に止める",
           badge: "衝動抑制反射トレーニング",
           description: "リアクション・チェーンは、動く標的へカーソルを合わせてから停止する精度を測る無料のブラウザ・エイム練習です。反射神経テストよりも、フリック後のオーバーシュートと停止精度を記録します。",
