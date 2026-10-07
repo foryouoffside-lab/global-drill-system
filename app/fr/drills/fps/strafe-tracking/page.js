@@ -6,7 +6,7 @@ import { getAlternateLanguages } from '@/lib/i18n/locales';
 import { pickSources } from '@/lib/drillSources';
 
 export const metadata = {
-  title: "Entraînement de Tracking | Visée FPS | SkillDrills",
+  title: "Tracking aim : entraînement strafe FPS | SkillDrills",
   description: "Entraînement gratuit au tracking dans le navigateur : pratiquez la visée en mouvement, les strafes et les changements de direction.",
   keywords: [
     "entraînement tracking FPS",
@@ -31,7 +31,7 @@ export const metadata = {
     follow: true,
   },
   openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
-    title: "Entraînement de Tracking | Visée FPS | SkillDrills",
+    title: "Tracking aim : entraînement strafe FPS | SkillDrills",
     description: "Entraînement gratuit au tracking dans le navigateur : pratiquez la visée en mouvement, les strafes et les changements de direction.",
     url: "https://skilldrills.online/fr/drills/fps/strafe-tracking",
     siteName: 'SkillDrills',
@@ -40,7 +40,7 @@ export const metadata = {
   },
   twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: 'summary_large_image',
-    title: "Entraînement de Tracking | Visée FPS | SkillDrills",
+    title: "Tracking aim : entraînement strafe FPS | SkillDrills",
     description: "Entraînement gratuit au tracking dans le navigateur : pratiquez la visée en mouvement, les strafes et les changements de direction.",
   },
 };
@@ -127,7 +127,7 @@ export default function StrafeTrackingFrPage() {
         "name": "Comment la tension musculaire du bras altère-t-elle la précision en duel strafe ?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Une tension isométrique excessive dans l'avant-bras et le poignet active les muscles antagonistes, engendrant des micro-tremblements et retardant le freinage mécanique de la souris. Une prise détendue (30 % à 40 % de l'effort maximal) permet des inversions directionnelles nettes et fluides."
+          "text": "Une tension isométrique excessive dans l'avant-bras et le poignet active les muscles antagonistes, engendrant des micro-tremblements et retardant le freinage mécanique de la souris. Une prise plus détendue aide en général à inverser le mouvement plus proprement ; testez ce qui vous convient."
         }
       },
       {
@@ -135,7 +135,7 @@ export default function StrafeTrackingFrPage() {
         "name": "Dois-je regarder mon viseur ou le modèle de l'ennemi pendant le tracking ?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Fixez votre fovéa centrale directement sur le torse ou centre de masse de la cible adverse. Land & McLeod (2000) et Krauzlis (2004) ont prouvé que les signaux de vitesse oculaire proviennent du déplacement rétinien du blanc, laissant la vision périphérique et la proprioception aligner naturellement le viseur."
+          "text": "Fixez votre fovéa centrale directement sur le torse ou centre de masse de la cible adverse. Land & McLeod (2000) et Krauzlis (2004) décrivent le rôle du déplacement rétinien de la cible dans la poursuite ; la vision périphérique et la proprioception aident ensuite à aligner le viseur."
         }
       },
       {
@@ -151,7 +151,7 @@ export default function StrafeTrackingFrPage() {
         "name": "Quelle sensibilité de souris est idéale pour le strafe tracking réactif ?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Une sensibilité moyenne à modérément basse entre 28 cm et 42 cm par rotation de 360° offre l'équilibre parfait : suffisamment réactive pour pivoter au poignet et assez stable sur l'avant-bras pour éviter les dépassements de cible involontaires."
+          "text": "Il n'existe pas de valeur universelle. Reprenez la sensibilité de votre jeu : le plus important est de garder la même pour comparer vos séances, car une valeur trop haute provoque des dépassements et une valeur trop basse ralentit les inversions."
         }
       },
       {
@@ -159,7 +159,7 @@ export default function StrafeTrackingFrPage() {
         "name": "En quoi le Raw Input sans accélération optimise-t-il la lecture des strafes ?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Le matériel en raw input garantit une correspondance stricte de 1:1 entre le déplacement physique de la souris et l'affichage à l'écran. L'accélération logicielle introduit des variables non linéaires empêchant le cervelet d'évaluer la décélération requise avant chaque demi-tour."
+          "text": "Le raw input transmet le déplacement de la souris sans accélération logicielle, ce qui rend le rapport entre geste et mouvement du curseur plus régulier. C'est utile pour comparer vos séances et pour reproduire la sensation de votre jeu."
         }
       },
       {
@@ -167,7 +167,7 @@ export default function StrafeTrackingFrPage() {
         "name": "Le strafe tracking dans un navigateur se transfère-t-il efficacement en jeu ?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Oui. Cet exercice exploite la Pointer Lock API avec acquisition directe des deltas de souris sans accélération, calibrée à la sensibilité exacte de votre jeu, stimulant précisément les circuits visuomoteurs sollicités en tournoi."
+          "text": "En partie. L'exercice utilise le verrouillage du pointeur et les mouvements bruts de la souris, ce qui se rapproche d'un jeu de tir. Il ne reproduit ni le recul, ni le champ de vision, ni le réseau : vérifiez le transfert dans votre propre jeu."
         }
       },
       {
@@ -183,7 +183,7 @@ export default function StrafeTrackingFrPage() {
         "name": "Combien de temps s'entraîner quotidiennement au tracking de visée ?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Des séances quotidiennes de 15 à 20 minutes avec de courtes pauses maximisent l'apprentissage neuromusculaire tout en évitant la fatigue musculaire du bras et la saturation cognitive associées aux sessions excessives."
+          "text": "Des séances de 10 à 20 minutes avec de courtes pauses suffisent pour suivre votre progression sans fatiguer le bras ni la concentration. Arrêtez-vous en cas de douleur au poignet."
         }
       }
     ]
@@ -229,7 +229,7 @@ export default function StrafeTrackingFrPage() {
   const strafeTrackingGuide = {
     heading: "Guide du Tracking et de la Visée Réactive en Mouvement",
     intro: [
-      "Cet entraînement au tracking développe le suivi latéral réactif face aux esquives ADAD. Dans Apex Legends, Overwatch 2, The Finals et Call of Duty, garder le réticule sur la cible pendant ses changements de direction aide à maintenir les dégâts.",
+      "Cet entraînement de tracking aim vous fait garder le réticule sur une cible qui part en strafe latéral et change de direction. Il mesure le temps passé sur la cible, la précision et le combo. Il fait travailler le suivi réactif, sans prétendre prédire votre niveau en jeu.",
       "Les fondations neurophysiologiques de la poursuite visuelle du mouvement ont été éclairées par Richard J. Krauzlis (2004), montrant comment le cortex coordonne les mouvements oculaires de poursuite fluide via des circuits réciproques unissant le cortex visuel de mouvement (MT/V5), l'aire temporale supérieure médiane (MST) et le champ oculaire frontal (FEF). Dès qu'une cible accélère, ces structures évaluent en temps réel l'erreur de vitesse rétinienne afin d'ajuster les actions motrices oculaires et manuelles en symbiose.",
       "Lors d'une découverte majeure en psychophysique visuelle, Cyril Rashbass (1961) a prouvé que la poursuite fluide et les mouvements saccadiques dépendent de sous-systèmes physiologiques autonomes : les saccades répondent à l'écart de position, alors que la poursuite fluide réagit exclusivement à la vitesse rétinienne. En combat, les joueurs tentant de deviner les inversions déclenchent des saccades réflexes erronées, entraînant dépassements de cible (overshoot) et saccades parasitaires.",
       "En combinant le modèle de l'attention orientée de Michael I. Posner (1990), les paradigmes de repérage spatial de C. Shawn Green & Daphne Bavelier (2003) et la chronométrie numérique à faible latence (Woods et al., 2015), cet exercice conditionne le joueur à réprimer les anticipations hâtives, à relâcher la tension musculaire du bras et à développer une poursuite fluide strictement réactive sur des vecteurs dynamiques.",
@@ -239,13 +239,13 @@ export default function StrafeTrackingFrPage() {
       title: "Barèmes Scientifiques de Strafe Tracking et Latence d'Inversion",
       headers: ["Niveau de Performance", "% Temps sur Cible", "Latence d'Inversion", "Impact Compétitif en Match"],
       rows: [
-        ["Tier 1 (Apex Predator / Pro)", "85% – 95%+", "<180 ms", "Poursuite laser parfaite ; adaptation de vitesse immédiate sans dépassement lors de strafes fulgurants"],
-        ["Tier 2 (Maître Compétitif)", "72% – 85%", "180 – 220 ms", "Temps sur cible remarquable ; reprise véloce lors des virages ; remporte l'écrasante majorité des duels rapprochés"],
-        ["Tier 3 (Diamant / Avancé)", "58% – 72%", "220 – 270 ms", "Tracking linéaire consistant ; perte momentanée de contact (50–100 ms) face aux inversions imprévues"],
-        ["Tier 4 (Intermédiaire / Or)", "42% – 58%", "270 – 330 ms", "Anticipation excessive récurrente ; le viseur dépasse la cible avant d'effectuer de lentes saccades de correction"],
-        ["Tier 5 (Débutant / Novice)", "<42%", ">330 ms", "Micro-saccades heurtées ; difficulté à soutenir la vitesse latérale ; le réticule reste constamment en retard"]
+        ["Palier 1 (Très régulier)", "85% – 95%+", "<180 ms", "Suivi très régulier ; adaptation rapide de la vitesse sans dépassement lors des inversions"],
+        ["Palier 2 (Régulier)", "72% – 85%", "180 – 220 ms", "Bon temps sur cible ; reprise rapide lors des virages"],
+        ["Palier 3 (Correct)", "58% – 72%", "220 – 270 ms", "Tracking assez constant ; perte momentanée de contact face aux inversions imprévues"],
+        ["Palier 4 (En progression)", "42% – 58%", "270 – 330 ms", "Anticipation excessive récurrente ; le viseur dépasse la cible avant de se corriger"],
+        ["Palier 5 (Débutant)", "<42%", ">330 ms", "Corrections heurtées ; difficulté à soutenir la vitesse latérale ; le réticule reste en retard"]
       ],
-      note: "Le pourcentage sur cible correspond au temps de contact effectif divisé par la durée active du drill ; la latence d'inversion mesure le délai entre le changement de trajectoire de la cible et la réacquisition du réticule avec raw input (Woods et al., 2015)."
+      note: "Repères éditoriaux propres à cet exercice, sans lien avec un rang en jeu ni norme de population. Le pourcentage sur cible correspond au temps de contact effectif divisé par la durée active du drill ; la latence d'inversion mesure le délai entre le changement de trajectoire de la cible et la réacquisition du réticule avec raw input (Woods et al., 2015)."
     },
     techniques: {
       title: "Protocoles Fondés sur la Science pour le Strafe Tracking Réactif",
@@ -257,12 +257,12 @@ export default function StrafeTrackingFrPage() {
         },
         {
           name: "Découplage de la Tension du Poignet et de l'Avant-Bras",
-          desc: "Une tension isométrique soutenue bride la fluidité et prolonge le délai d'arrêt lors des revirements. Lorsque les muscles sont contractés, amorcer l'inversion exige d'inhiber le muscle antagoniste avant d'activer l'agoniste, ajoutant 40 à 80 ms de retard mécanique.",
-          tips: "Préservez une prise de souris légère (environ 30 % de la force maximale) pour pivoter sans la moindre résistance."
+          desc: "Une tension isométrique soutenue bride la fluidité et prolonge le délai d'arrêt lors des revirements. Lorsque les muscles sont contractés, amorcer l'inversion exige d'inhiber le muscle antagoniste avant d'activer l'agoniste, ce qui peut ajouter du retard au geste.",
+          tips: "Gardez une prise de souris légère pour pivoter sans résistance."
         },
         {
           name: "Ancrage Fovéal sur la Cible",
-          desc: "Verrouillez votre regard sur le mobile en mouvement et non sur votre propre réticule. Land & McLeod (2000) et Krauzlis (2004) ont démontré que les signaux de vitesse émanent de la dérive rétinienne de la cible. Surveiller le viseur génère des boucles de rétroaction qui provoquent des blocages.",
+          desc: "Verrouillez votre regard sur le mobile en mouvement et non sur votre propre réticule. Land & McLeod (2000) et Krauzlis (2004) décrivent le rôle de la dérive rétinienne de la cible dans la poursuite. Surveiller le viseur peut vous rendre plus hésitant.",
           tips: "Laissez la proprioception et la vision périphérique ajuster le pointeur pendant que votre fovéa mesure la vitesse ennemie."
         },
         {
@@ -279,7 +279,7 @@ export default function StrafeTrackingFrPage() {
       "Restez au contact de la cible pour faire grimper le multiplicateur de combo jusqu'à 3,0x et franchir des paliers tous les 1400 points.",
       "Consultez votre taux de précision et le temps hors cible sur le bilan final pour cibler vos points d'amélioration dans les virages."
     ],
-    audience: "Joueurs compétitifs sur Apex Legends, Overwatch 2, The Finals, Call of Duty Warzone, Valorant et CS2 désireux d'acquérir une précision de tracking chirurgicale, une réactivité vive aux changements de cap et un contrôle moteur affûté.",
+    audience: "Joueurs de jeux de tir qui veulent travailler le suivi de cibles en strafe, la réaction aux changements de direction et la régularité du geste.",
     faqs: faqSchema.mainEntity.map(e => ({ q: e.name, a: e.acceptedAnswer.text })),
     sources: pickSources('woods2015', 'krauzlis2004', 'posner1990', 'green2003', 'rashbass1961', 'land2000'),
     related: [
@@ -293,8 +293,8 @@ export default function StrafeTrackingFrPage() {
 
   const copyFr = {
     h1Prefix: null,
-    h1Keyword: "Entraînement de Tracking",
-    h1Suffix: " – Visée en Mouvement FPS",
+    h1Keyword: "Tracking aim",
+    h1Suffix: " : entraînement strafe FPS",
     caption: "Le strafe tracking consiste à maintenir son viseur verrouillé sur un adversaire aux mouvements imprévisibles. La poursuite oculaire humaine suit précisément jusqu'à environ 30°/s, et chaque virage brusque requiert une saccade de correction 100 à 130 ms après l'inversion (Rashbass, 1961 ; Krauzlis, 2004). Développez votre vitesse de synchronisation et vos réflexes de visée.",
     statStatus: "Statut",
     statusTracking: "SUIVI EN COURS",
@@ -306,7 +306,7 @@ export default function StrafeTrackingFrPage() {
     statScore: "Score",
     pausedTitle: "Partie en Pause",
     pausedPrompt: "Cliquez pour reprendre — le verrouillage du curseur sera réactivé.",
-    startTitle: "Entraînement de Tracking",
+    startTitle: "Tracking aim",
     startSubtitle: "Entrée Matérielle Brute · Progression Dynamique par Niveaux",
     startButtonText: "Lancer le Drill",
     getReady: "PRÉPAREZ-VOUS",
@@ -342,7 +342,7 @@ export default function StrafeTrackingFrPage() {
       },
       {
         title: "Efficacité sur TTK Long",
-        description: "Accroît la continuité de la visée sur cible, indispensable pour remporter les duels sur Apex Legends et Overwatch 2."
+        description: "Travaille la continuité de la visée sur une cible qui change de direction, utile dans les duels où l'adversaire esquive longtemps."
       }
     ]
   };
