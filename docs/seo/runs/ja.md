@@ -10,3 +10,4 @@
 | C:/Program Files/Git/ja/drills/cognitive/focus/distraction-fighter | done | PENDING | docs/seo/research/ja/distraction-fighter.md | direct answer; privacy claim corrected |
 | C:/Program Files/Git/ja/drills/fps/angle-hold-trainer | done | PENDING | docs/seo/research/ja/angle-hold-trainer.md | 置きエイム primary (Bing 686); client About still English (D2) |
 | C:/Program Files/Git/ja/drills/fps/recoil-control | done | PENDING | docs/seo/research/ja/recoil-control.md | keep リコイル練習; overclaims softened; demand not verified in Bing |
+| C:/Program Files/Git/ja/drills/fps/strafe-tracking | done | PENDING | docs/seo/research/ja/strafe-tracking.md | ストレイフ追いエイム (deconflicts 追いエイム練習); demand unverified |
