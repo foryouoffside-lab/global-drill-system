@@ -15,7 +15,7 @@ import { pickSources } from '@/lib/drillSources';
 // ============================================================
 
 export const metadata = {
-  title: "Poursuite de Cible Téléportée | SkillDrills",
+  title: "Poursuite oculaire : cible qui saute | SkillDrills",
   description: "Pratiquez poursuite oculaire, réacquisition visuelle et saccades rapides lorsqu’une cible change de position en gardant son mouvement.",
   keywords: [
     "cible téléportée poursuite oculaire",
@@ -32,7 +32,7 @@ export const metadata = {
     "poursuite oculaire en ligne"
   ],
   openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
-    title: "Poursuite de Cible Téléportée | SkillDrills",
+    title: "Poursuite oculaire : cible qui saute | SkillDrills",
     description: "Pratiquez poursuite oculaire, réacquisition visuelle et saccades rapides lorsqu’une cible change de position en gardant son mouvement.",
     type: "website",
     url: "https://skilldrills.online/fr/drills/visual-tracking/momentum-teleport-pursuit",
@@ -41,7 +41,7 @@ export const metadata = {
   },
   twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: "summary_large_image",
-    title: "Poursuite de Cible Téléportée | SkillDrills",
+    title: "Poursuite oculaire : cible qui saute | SkillDrills",
     description: "Pratiquez réacquisition visuelle et saccades rapides lorsqu’une cible change de position en gardant son mouvement.",
   },
   robots: { index: true, follow: true },
@@ -159,7 +159,7 @@ const faqSchema = {
       "name": "Pourquoi cet entraînement est-il bénéfique pour les joueurs de jeux vidéo (FPS) ?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Dans des jeux comme Apex Legends, Valorant ou Overwatch, les adversaires utilisent des dashs ou des sauts instantanés. Entraîner la réacquisition immédiate supprime le temps mort de recadrage du réticule."
+        "text": "Dans les jeux de tir, certains adversaires utilisent des dashs ou des sauts instantanés. Cet exercice fait travailler la reprise de cible après un saut de position ; le transfert vers le jeu n'est pas démontré."
       }
     },
     {
@@ -272,7 +272,7 @@ const guideProps = {
     "Lors du saut spatial subit, projardez immédiatement une saccade rectiligne vers la nouvelle coordonnée.",
     "Dès le contact visuel, enchaînez la poursuite continue en vous calquant sur la vitesse conservée du mobile."
   ],
-  audience: "Joueurs de jeux de tir compétitifs (Valorant, CS2, Overwatch 2, Apex Legends), sportifs de disciplines de balle confrontés à des trajectoires imprévisibles et adeptes de gymnastique oculaire.",
+  audience: "Joueurs de jeux de tir, sportifs de disciplines de balle confrontés à des trajectoires imprévisibles et adeptes de gymnastique oculaire.",
   faqs: faqSchema.mainEntity.map(item => ({
     q: item.name,
     a: item.acceptedAnswer.text
@@ -300,7 +300,7 @@ export default function FrenchMomentumTeleportPage() {
 
       <MomentumTeleportPursuitClient
         copy={{
-          title: "Poursuite de Cible Téléportée",
+          title: "Poursuite oculaire : cible qui saute",
           subtitle: "Réacquisition visuelle et suivi du mouvement",
           description: "Retrouvez une cible qui change de position, puis reprenez le suivi de son mouvement. Comparez le temps, la précision et le confort sans transformer le résultat en diagnostic."
         }}
