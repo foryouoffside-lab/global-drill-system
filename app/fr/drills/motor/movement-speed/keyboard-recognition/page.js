@@ -6,8 +6,8 @@ import DrillFooter from '@/components/drill/DrillFooter';
 import { pickSources } from '@/lib/drillSources';
 
 export const metadata = {
-  title: 'Réaction clavier | Test de touches | SkillDrills',
-  description: 'Appuyez sur la touche affichée pour mesurer votre réaction, votre précision et vos raccourcis. Test gratuit dans le navigateur.',
+  title: 'Test de réaction clavier en ligne | SkillDrills',
+  description: 'Test de réaction clavier gratuit : appuyez sur la touche affichée et mesurez votre temps de réaction, votre précision et vos touches par minute.',
   keywords: [
     'test de réaction clavier',
     'test vitesse clavier',
@@ -23,7 +23,7 @@ export const metadata = {
     'test de réponse clavier',
   ],
   openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
-    title: 'Réaction clavier | Test de touches | SkillDrills',
+    title: 'Test de réaction clavier en ligne | SkillDrills',
     description: 'Mesurez réaction, précision et raccourcis en appuyant sur la touche affichée dans le navigateur.',
     type: 'article',
     url: 'https://skilldrills.online/fr/drills/motor/movement-speed/keyboard-recognition',
@@ -32,7 +32,7 @@ export const metadata = {
   },
   twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: 'summary_large_image',
-    title: 'Réaction clavier | Test de touches | SkillDrills',
+    title: 'Test de réaction clavier en ligne | SkillDrills',
     description: 'Test gratuit de réaction clavier et de touches dans le navigateur.',
   },
   robots: { index: true, follow: true },
@@ -157,10 +157,10 @@ const faqSchema = {
     },
     {
       '@type': 'Question',
-      name: 'Combien de minutes par jour consacrer à cet exercice ?',
+      name: 'Est-ce un test de clavier pour vérifier les touches ou un test de frappe ?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: '10 à 15 minutes par jour en 3 ou 4 séries courtes. L’adaptation neuronale est rapide, mais la fatigue cérébrale altère immédiatement la capacité de retenue sur les pièges.',
+        text: 'Ni l’un ni l’autre. Ce n’est pas un testeur de touches défectueuses ni un test de vitesse de frappe en mots par minute : il mesure votre temps de réaction quand une touche s’affiche, votre précision et votre cadence en touches par minute.',
       },
     },
     {
@@ -226,6 +226,7 @@ const guideProps = {
   intro: {
     title: 'Fondements Scientifiques de la Vitesse de Clavier',
     paragraphs: [
+      'Ce test de réaction clavier chronomètre le délai entre l’affichage d’une touche et votre appui, puis calcule votre précision et vos touches par minute. Ce n’est pas un testeur de touches défectueuses ni un test de frappe en mots par minute : il entraîne les raccourcis et la réaction de choix.',
       'La rapidité de frappe est modélisée par le temps de réaction de choix (Donders, 1868 ; Hick, 1952). Le traitement du signal visuel prend environ 200–250 ms, chaque option supplémentaire complexifiant la prise de décision. La pratique régulière automatise la commande nerveuse et réduit la phase délibérative.',
       'Mesures dans le navigateur : L’horloge interne performance.now() et la fréquence de rafraîchissement d’écran (16,7 ms à 60 Hz ; 4,1 ms à 240 Hz) quantifient les mesures. Les écarts sous les 5 ms font partie de la marge de tolérance technique.',
     ],
@@ -241,7 +242,7 @@ const guideProps = {
         stat: 'Moins de 240 ms',
         level: '320+ KPM',
         accuracy: '98–100%',
-        percentile: 'Top 1% (Élite)',
+        percentile: 'Élite',
       },
       {
         tier: 'Tier 2',
@@ -249,7 +250,7 @@ const guideProps = {
         stat: '240–300 ms',
         level: '260–319 KPM',
         accuracy: '95–97%',
-        percentile: 'Top 5% (Avancé)',
+        percentile: 'Avancé',
       },
       {
         tier: 'Tier 3',
@@ -257,7 +258,7 @@ const guideProps = {
         stat: '300–380 ms',
         level: '200–259 KPM',
         accuracy: '90–94%',
-        percentile: 'Top 20% (Solide)',
+        percentile: 'Solide',
       },
       {
         tier: 'Tier 4',
