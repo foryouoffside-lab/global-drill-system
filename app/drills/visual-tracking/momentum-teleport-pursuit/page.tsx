@@ -6,7 +6,7 @@ import { pickSources } from '@/lib/drillSources';
 
 export const metadata = {
   title: "Teleport Gaze Tracking Drill – Momentum | SkillDrills",
-  description: "Track targets carrying momentum that teleport across the screen. Train rapid saccadic re-acquisition and continuous pursuit online. Free, no sign-up.",
+  description: "Free browser drill: follow a target that keeps its direction but jumps across the screen, and find it again quickly. No sign-up.",
   keywords: [
     "teleport tracking drill",
     "momentum eye tracking",
@@ -28,7 +28,7 @@ export const metadata = {
   robots: { index: true, follow: true },
   openGraph: {
     title: "Teleport Gaze Tracking Drill – Momentum | SkillDrills",
-    description: "Track targets carrying momentum that teleport across the screen. Train rapid saccadic re-acquisition and continuous pursuit online. Free, no sign-up.",
+    description: "Free browser drill: follow a target that keeps its direction but jumps across the screen, and find it again quickly. No sign-up.",
     url: "https://skilldrills.online/drills/visual-tracking/momentum-teleport-pursuit",
     siteName: 'SkillDrills',
     locale: 'en_US',
@@ -37,7 +37,7 @@ export const metadata = {
   twitter: {
     card: 'summary_large_image',
     title: "Teleport Gaze Tracking Drill – Momentum | SkillDrills",
-    description: "Track targets carrying momentum that teleport across the screen. Train rapid saccadic re-acquisition and continuous pursuit online. Free, no sign-up.",
+    description: "Free browser drill: follow a target that keeps its direction but jumps across the screen, and find it again quickly. No sign-up.",
   },
 };
 
@@ -223,6 +223,7 @@ const faqSchema = {
 const guide = {
   heading: "Momentum Teleport Pursuit - Ocular Motor Training Standards",
   intro: [
+    "Momentum Teleport Pursuit is a free browser drill where a target keeps moving in its direction but sometimes jumps to a new place on screen. You find it again as fast as you can and carry on following its motion. Choose a speed and duration, press start, and track the target.",
     "In natural dynamic environments, targets do not always move along unbroken, predictable paths. Rapid object deflections, sudden spatial repositioning, and visual occlusions force the human visual system to constantly coordinate two distinct ocular motor subsystems: ballistic saccades to locate the displaced object, and smooth pursuit to match its continuous velocity (Rashbass, 1961; Findlay & Walker, 1999).",
     "Momentum Teleport Pursuit isolates this exact neuromuscular mechanism. The target's spatial coordinates jump abruptly across the screen while its directional velocity vector is conserved. To excel, your oculomotor system must execute an accurate catch-up saccade to re-center the fovea, then instantaneously engage feedforward smooth pursuit to track the target without velocity lag (Bahill et al., 1980; Barnes, 2008).",
     "Hardware latency adds display quantization (~16.7 ms at 60 Hz, ~6.9 ms at 144 Hz) and input polling intervals (~8 ms at 125 Hz vs ~1 ms at 1,000 Hz), as documented by Woods et al. (2015). All scores remain stored strictly in local browser storage."
