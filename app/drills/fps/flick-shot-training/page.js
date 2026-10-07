@@ -4,8 +4,8 @@ import DrillFooter from '@/components/drill/DrillFooter';
 import { pickSources } from '@/lib/drillSources';
 import { getAlternateLanguages } from '@/lib/i18n/locales';
 export const metadata = {
-  title: "Flick Shot Trainer – Snap Aim Practice | SkillDrills",
-  description: "Train your snap aim and muscle memory with our online Flick Shot Trainer. Perfect for Valorant, CS2, and Apex Legends players looking to improve speed.",
+  title: "Flick Aim Trainer: Flick Shot Practice | SkillDrills",
+  description: "Free flick aim trainer for Valorant, CS2 and Apex Legends. Practice flick shots and snap aim with real-time feedback in your browser.",
   keywords: [
     "flick shot trainer",
     "flick aim trainer",
@@ -33,8 +33,8 @@ export const metadata = {
     follow: true,
   },
   openGraph: {
-    title: "Flick Shot Trainer – Snap Aim Practice | SkillDrills",
-    description: "Train your snap aim and muscle memory with our online Flick Shot Trainer. Perfect for Valorant, CS2, and Apex Legends players looking to improve speed.",
+    title: "Flick Aim Trainer: Flick Shot Practice | SkillDrills",
+    description: "Free flick aim trainer for Valorant, CS2 and Apex Legends. Practice flick shots and snap aim with real-time feedback in your browser.",
     url: "https://skilldrills.online/drills/fps/flick-shot-training",
     siteName: 'SkillDrills',
     locale: 'en_US',
@@ -42,8 +42,8 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: "Flick Shot Trainer – Snap Aim Practice | SkillDrills",
-    description: "Train your snap aim and muscle memory with our online Flick Shot Trainer. Perfect for Valorant, CS2, and Apex Legends players looking to improve speed.",
+    title: "Flick Aim Trainer: Flick Shot Practice | SkillDrills",
+    description: "Free flick aim trainer for Valorant, CS2 and Apex Legends. Practice flick shots and snap aim with real-time feedback in your browser.",
   },
 };
 
@@ -84,7 +84,7 @@ export default function FlickShotPage() {
     "description": "A free browser-based FPS aim trainer for improving flick shots, snap aim, and rapid target acquisition for competitive shooters.",
     "genre": "FPS Training / Flick Aim",
     "url": "https://skilldrills.online/drills/fps/flick-shot-training",
-    "dateModified": "2026-09-05",
+    "dateModified": "2026-10-08",
     "publisher": {
       "@type": "Organization",
       "name": "SkillDrills",
@@ -103,13 +103,13 @@ export default function FlickShotPage() {
     "playMode": "SinglePlayer",
     "applicationCategory": "Game",
     "operatingSystem": "Web Browser",
-    "dateModified": "2026-09-05"
+    "dateModified": "2026-10-08"
   };
 
   const faqSchema = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
-    "dateModified": "2026-09-05",
+    "dateModified": "2026-10-08",
     "mainEntity": [
       {
         "@type": "Question",
@@ -124,7 +124,7 @@ export default function FlickShotPage() {
         "name": "How do you improve flicking aim in FPS games?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Improve flicking aim by training smooth initial acceleration combined with muscular deceleration (stopping power) on raw input with zero hardware acceleration. Isolate target acquisition mechanics in dedicated daily drills of 15 to 20 minutes before playing competitive matches."
+          "text": "Improve flicking aim by training smooth initial acceleration combined with muscular deceleration (stopping power) with a consistent mouse setup and acceleration turned off. Isolate target acquisition mechanics in dedicated daily drills of 15 to 20 minutes before playing competitive matches."
         }
       },
       {
@@ -228,15 +228,16 @@ export default function FlickShotPage() {
   };
 
   const flickGuide = {
-    heading: "Flick Shot Training Guide & Biomechanical Aim Benchmarks",
+    heading: "What is a flick aim trainer?",
     intro: [
+      "A flick aim trainer is a practice tool for snapping your crosshair onto a target with one fast mouse movement and clicking. In this drill targets appear at new positions, you flick to each one and the speed and accuracy of every shot is recorded. It helps build the flick shots used in Valorant, CS2 and Apex Legends.",
       "Flick aim (snap targeting) is the biomechanical process of translating an ocular fixation into an explosive ballistic limb-and-wrist trajectory. In psychomotor science, human goal-directed aiming is governed by the two-component model (Elliott et al., 2010): an initial open-loop ballistic impulse that covers the bulk of the distance, followed by a closed-loop visual feedback phase that executes minute terminal homing corrections.",
       "Under Fitts's Law (Fitts, 1954), movement duration scales predictably with task difficulty: ID = log2(2D/W), where target distance (D) and target diameter (W) dictate movement time. Precision training optimizes agonist-antagonist muscular deceleration (Schmidt et al., 1979), enabling players to stop their mouse abruptly on target without overshooting.",
       "Hardware latency and digital chronometry significantly influence measurable flick performance. Browser chronometry in this trainer is driven by high-resolution performance.now() timestamps. At 1000 Hz mouse polling (1.0 ms USB intervals) and high-refresh displays (144 Hz at 6.94 ms, 240 Hz at 4.17 ms per frame), input quantization jitter is minimized, enabling pure neuromuscular acquisition testing (Woods et al., 2015).",
       "How this is measured: every event is timestamped with the browser's performance.now() high-resolution clock, entirely on your device -- no score is uploaded. Two things this cannot control: browser timers are deliberately coarsened as a Spectre mitigation (typically to about 1 ms), and your display quantizes the stimulus to its refresh interval -- about 16.7 ms per frame at 60 Hz, 6.9 ms at 144 Hz and 4.1 ms at 240 Hz (Woods et al., 2015). Mouse polling adds roughly 8 ms at 125 Hz versus 1 ms at 1000 Hz. So treat differences smaller than about 5 ms as measurement noise, and compare your own runs on the same hardware rather than against someone else's setup."
     ],
     benchmarks: {
-      title: "Target Acquisition & Movement Time (MT) Benchmarks",
+      title: "How fast should a flick shot be?",
       headers: ["Movement Phase / Metric", "Typical Latency (ms)", "Motor Control Mechanism", "Fitts's Law & Skill Phase"],
       rows: [
         ["Initial Visual Saccade & Latency", "180 – 220 ms", "Ocular foveation & visual cortex latency", "Stimulus detection prior to ballistic physical motion (Woods et al. 2015)"],
@@ -248,7 +249,7 @@ export default function FlickShotPage() {
       note: "Metrics synthesized from peer-reviewed psychomotor aiming literature (Fitts 1954; Schmidt et al. 1979; Elliott et al. 2010) and digital chronometry benchmarks (Woods et al. 2015). Individual latency varies with display refresh rate, USB mouse polling, and target amplitude."
     },
     techniques: {
-      title: "Optimal eDPI Sensitivity Alignment by Game",
+      title: "What sensitivity (eDPI) works best for flick aiming?",
       items: [
         {
           name: "Valorant Aim Calibration",
@@ -320,8 +321,8 @@ export default function FlickShotPage() {
       />
       <ProFlickClient
         copy={{
-          h1Keyword: "Flick Shot Trainer",
-          h1Suffix: " - Snap Aim Practice",
+          h1Keyword: "Flick Aim Trainer",
+          h1Suffix: " - Flick Shot Practice",
           subtitle: "Train your snap aim, ballistic muscle memory, and target acquisition with real-time feedback."
         }}
       />
