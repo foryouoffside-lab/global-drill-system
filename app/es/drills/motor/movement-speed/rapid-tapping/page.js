@@ -335,6 +335,7 @@ const guideProps = {
 
 const esCopy = {
   title: "Test de CPS",
+  subtitle: "Mide tus clics por segundo y tu resistencia de clic",
   desc: "Un test de CPS mide cuántas veces puedes pulsar el botón del ratón en un segundo. El cliqueo estándar con un solo dedo suele rondar los 5–7 clics por segundo (norma de tapping de Halstead, 50–55 golpes/10s). Las puntuaciones superiores provienen de técnicas avanzadas como jitter o butterfly clicking.",
   score: "Puntuación",
   timeLeft: "Tiempo Restante",
