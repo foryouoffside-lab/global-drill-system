@@ -138,7 +138,7 @@ const faqSchema = {
       name: 'What is a good target acquisition time on this 96-cell grid?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Elite visual searchers isolate each target in under 450 ms (>1,500 points in 45 seconds). Competitive performers average 450–700 ms per target, while untrained baselines require 701–1,100 ms per target.',
+        text: 'Scores depend on speed settings, display and input device. The score bands on this page are editorial practice targets, not population norms; compare your own sessions on the same setup.',
       },
     },
     {
@@ -146,7 +146,7 @@ const faqSchema = {
       name: 'Why do rotated distractor letters make visual search harder?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'As proven by Duncan & Humphreys (1989), rotating distractors breaks distractor homogeneity and eliminates preattentive texture grouping, forcing the visual cortex to evaluate candidate cells through active serial scrutiny.',
+        text: 'As reported by Duncan & Humphreys (1989), rotating distractors breaks distractor homogeneity and eliminates preattentive texture grouping, forcing the visual cortex to evaluate candidate cells through active serial scrutiny.',
       },
     },
     {
@@ -364,7 +364,7 @@ export default function VisualSearchPage() {
             <strong>Feature Discrepancy Isolation &amp; Distractor Suppression (Lavie, 1995; Duncan &amp; Humphreys, 1989):</strong> When searching for &apos;C&apos; among &apos;O&apos;, &apos;Q&apos;, and &apos;G&apos;, do not search for the full letter &apos;C&apos;. Instead, prime your visual system for <em>open gap detection</em>. Any continuous closed loop is instantly suppressed by early inhibitory feedback, leaving only broken arcs as candidate targets.
           </li>
           <li>
-            <strong>Structured Serpentine Sweeping (Bacon &amp; Egeth, 1994; Eriksen &amp; St. James, 1986):</strong> Avoid chaotic erratic eye jumps across the grid. Execute a disciplined serpentine raster scan (left-to-right on row 1, right-to-left on row 2), maintaining systematic coverage that guarantees zero redundant re-inspections.
+            <strong>Structured Serpentine Sweeping (Bacon &amp; Egeth, 1994; Eriksen &amp; St. James, 1986):</strong> Avoid chaotic erratic eye jumps across the grid. Execute a disciplined serpentine raster scan (left-to-right on row 1, right-to-left on row 2), maintaining systematic coverage that reduces redundant re-inspections.
           </li>
         </ul>
 
@@ -397,13 +397,13 @@ export default function VisualSearchPage() {
           <div className="border-b border-white/10 pb-3">
             <h4 className="font-bold text-white text-sm mb-1">What is a good target acquisition time on this 96-cell grid?</h4>
             <p className="text-xs sm:text-sm text-slate-300">
-              Elite visual searchers isolate each target in under 450 ms (&gt;1,500 points in 45 seconds). Competitive performers average 450–700 ms per target, while untrained baselines require 701–1,100 ms per target.
+              Scores depend on speed settings, display and input device. The score bands on this page are editorial practice targets, not population norms; compare your own sessions on the same setup.
             </p>
           </div>
           <div className="border-b border-white/10 pb-3">
             <h4 className="font-bold text-white text-sm mb-1">Why do rotated distractor letters make visual search harder?</h4>
             <p className="text-xs sm:text-sm text-slate-300">
-              As proven by Duncan &amp; Humphreys (1989), rotating distractors breaks distractor homogeneity and eliminates preattentive texture grouping, forcing the visual cortex to evaluate candidate cells through active serial scrutiny.
+              As reported by Duncan &amp; Humphreys (1989), rotating distractors breaks distractor homogeneity and eliminates preattentive texture grouping, forcing the visual cortex to evaluate candidate cells through active serial scrutiny.
             </p>
           </div>
           <div className="border-b border-white/10 pb-3">
