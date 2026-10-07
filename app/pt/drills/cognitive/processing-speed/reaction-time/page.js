@@ -6,8 +6,8 @@ import DrillFooter from '@/components/drill/DrillFooter';
 import { pickSources } from '@/lib/drillSources';
 
 export const metadata = {
-  title: "Tempo de Reação de Escolha | Velocidade de Decisão",
-  description: "Teste gratuito de tempo de reação de escolha: selecione o alvo conforme a regra que muda. Pratique decisão visual; não é clínico.",
+  title: "Teste de Reação de Escolha Online | SkillDrills",
+  description: "Teste de reação de escolha grátis: toque no alvo certo conforme a regra que muda e pratique velocidade de decisão. Treino, não exame clínico.",
   keywords: [
     "teste de reação",
     "teste de reação online",
@@ -19,8 +19,8 @@ export const metadata = {
     "lei de Hick"
   ],
   openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
-    title: "Tempo de Reação de Escolha | Velocidade de Decisão",
-    description: "Teste gratuito de tempo de reação de escolha: selecione o alvo conforme a regra que muda. Pratique decisão visual; não é clínico.",
+    title: "Teste de Reação de Escolha Online | SkillDrills",
+    description: "Teste de reação de escolha grátis: toque no alvo certo conforme a regra que muda e pratique velocidade de decisão. Treino, não exame clínico.",
     type: 'article',
     url: 'https://skilldrills.online/pt/drills/cognitive/processing-speed/reaction-time',
     siteName: 'SkillDrills',
@@ -28,8 +28,8 @@ export const metadata = {
   },
   twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: 'summary_large_image',
-    title: "Tempo de Reação de Escolha | Velocidade de Decisão",
-    description: "Teste gratuito de tempo de reação de escolha: selecione o alvo conforme a regra que muda. Pratique decisão visual; não é clínico.",
+    title: "Teste de Reação de Escolha Online | SkillDrills",
+    description: "Teste de reação de escolha grátis: toque no alvo certo conforme a regra que muda e pratique velocidade de decisão. Treino, não exame clínico.",
   },
   robots: { index: true, follow: true },
   alternates: {
@@ -268,14 +268,15 @@ const guideProps = {
   },
   benchmarks: {
     title: 'Padrões de Desempenho Cognitivo & Escala de Reação de Escolha (CRT)',
-    headers: ['Nível', 'Classificação', 'Faixa de Latência', 'Taxa de Precisão', 'Percentil'],
+    headers: ['Nível', 'Faixa', 'Faixa de Latência', 'Taxa de Precisão', 'Leitura'],
     rows: [
-      { tier: 'Tier 1', rank: 'Elite / Pro Gamer', stat: '< 210 ms', level: 'Mestrado', accuracy: '98%+', percentile: 'Top 1%' },
-      { tier: 'Tier 2', rank: 'Foco Avançado', stat: '210 – 249 ms', level: 'Diamante', accuracy: '94-97%', percentile: 'Top 5%' },
-      { tier: 'Tier 3', rank: 'Competente / Treinado', stat: '250 – 289 ms', level: 'Platina', accuracy: '88-93%', percentile: 'Top 15%' },
-      { tier: 'Tier 4', rank: 'Média Adulta Padrão', stat: '290 – 349 ms', level: 'Ouro', accuracy: '78-87%', percentile: 'Top 50%' },
-      { tier: 'Tier 5', rank: 'Iniciante / Linha de Base', stat: '≥ 350 ms', level: 'Prata', accuracy: '< 78%', percentile: 'Base' },
+      { tier: 'Tier 1', rank: 'Muito rápida', stat: '< 210 ms', level: 'Faixa 1', accuracy: '98%+', percentile: 'Rara; repita para confirmar' },
+      { tier: 'Tier 2', rank: 'Rápida', stat: '210 – 249 ms', level: 'Faixa 2', accuracy: '94-97%', percentile: 'Acima da faixa típica' },
+      { tier: 'Tier 3', rank: 'Boa', stat: '250 – 289 ms', level: 'Faixa 3', accuracy: '88-93%', percentile: 'Treinada' },
+      { tier: 'Tier 4', rank: 'Típica', stat: '290 – 349 ms', level: 'Faixa 4', accuracy: '78-87%', percentile: 'Faixa típica' },
+      { tier: 'Tier 5', rank: 'Mais lenta', stat: '≥ 350 ms', level: 'Faixa 5', accuracy: '< 78%', percentile: 'Ponto de partida' },
     ],
+    note: 'Faixas editoriais para comparar suas próprias sessões no mesmo equipamento; não são percentis de população nem normas clínicas.',
   },
   protocols: {
     title: 'Protocolos de Otimização Neuroplástica',
