@@ -55,7 +55,7 @@ const breadcrumbSchema = {
 
 const softwareApplicationSchema = {
   "@context": "https://schema.org",
-  "@type": "SoftwareApplication",
+  "@type": "SoftwareApplication", "sameAs": ["https://en.wikipedia.org/wiki/Reaction_time", "https://en.wikipedia.org/wiki/Mental_chronometry"],
   "name": "光反応テスト (視覚反射速度測定)",
   "applicationCategory": "HealthApplication",
   "operatingSystem": "Web Browser",

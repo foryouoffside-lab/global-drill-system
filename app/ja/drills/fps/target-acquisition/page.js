@@ -58,7 +58,7 @@ export default function TargetAcquisitionJaPage() {
 
   const softwareSchema = {
     "@context": "https://schema.org",
-    "@type": "SoftwareApplication",
+    "@type": "SoftwareApplication", "sameAs": ["https://en.wikipedia.org/wiki/Fitts%27s_law", "https://en.wikipedia.org/wiki/Reaction_time"],
     "name": "VALORANT エイム練習 - ターゲット捕捉トレーナー",
     "applicationCategory": "GameApplication",
     "operatingSystem": "Web Browser",

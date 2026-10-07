@@ -65,7 +65,7 @@ export default function ColorSequencePage() {
 
   const softwareSchema = {
     "@context": "https://schema.org",
-    "@type": "SoftwareApplication",
+    "@type": "SoftwareApplication", "sameAs": ["https://en.wikipedia.org/wiki/Short-term_memory", "https://en.wikipedia.org/wiki/Simon_(game)"],
     "name": "Color Memory Game",
     "applicationCategory": "EducationalApplication",
     "operatingSystem": "Web Browser",

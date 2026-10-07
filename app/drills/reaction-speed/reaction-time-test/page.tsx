@@ -120,7 +120,7 @@ const howToSchema = {
 
 const softwareApplicationSchema = {
   "@context": "https://schema.org",
-  "@type": "SoftwareApplication",
+  "@type": "SoftwareApplication", "sameAs": ["https://en.wikipedia.org/wiki/Mental_chronometry", "https://en.wikipedia.org/wiki/Reaction_time"],
   "name": "Reaction Time Test",
   "alternateName": ["Reaction Speed Test", "Reflex Test", "Human Benchmark Reaction Time"],
   "applicationCategory": "HealthApplication",

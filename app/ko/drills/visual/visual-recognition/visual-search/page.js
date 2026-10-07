@@ -55,7 +55,7 @@ const breadcrumbSchema = {
 
 const softwareApplicationSchema = {
   "@context": "https://schema.org",
-  "@type": "SoftwareApplication",
+  "@type": "SoftwareApplication", "sameAs": ["https://en.wikipedia.org/wiki/Visual_search", "https://en.wikipedia.org/wiki/Feature_integration_theory"],
   "name": "시각 탐색 검사 – 결합 특징 스캐닝",
   "applicationCategory": "HealthApplication",
   "operatingSystem": "All",

@@ -55,7 +55,7 @@ const breadcrumbSchema = {
 
 const softwareApplicationSchema = {
   '@context': 'https://schema.org',
-  '@type': 'SoftwareApplication',
+  '@type': 'SoftwareApplication', "sameAs": ["https://en.wikipedia.org/wiki/Fine_motor_skill"],
   inLanguage: 'pt-BR',
   name: 'Treino de Mira Sequencial – Teste de Clique',
   applicationCategory: 'HealthApplication',

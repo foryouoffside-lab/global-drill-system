@@ -78,7 +78,7 @@ export default function FlowStatePage() {
 
   const softwareSchema = {
     "@context": "https://schema.org",
-    "@type": "SoftwareApplication",
+    "@type": "SoftwareApplication", "sameAs": ["https://en.wikipedia.org/wiki/Flow_(psychology)"],
     "name": "Flow State Trainer",
     "applicationCategory": "GameApplication",
     "operatingSystem": "Web Browser",

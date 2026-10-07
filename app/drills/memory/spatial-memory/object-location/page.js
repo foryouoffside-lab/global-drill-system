@@ -60,7 +60,7 @@ export default function ObjectLocationPage() {
 
   const softwareSchema = {
     "@context": "https://schema.org",
-    "@type": "SoftwareApplication",
+    "@type": "SoftwareApplication", "sameAs": ["https://en.wikipedia.org/wiki/Spatial_memory"],
     "name": "Object Location Memory Test",
     "applicationCategory": "EducationalApplication",
     "operatingSystem": "Any",

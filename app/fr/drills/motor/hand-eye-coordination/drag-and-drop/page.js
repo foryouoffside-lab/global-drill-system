@@ -66,7 +66,7 @@ const breadcrumbSchema = {
 
 const softwareApplicationSchema = {
   '@context': 'https://schema.org',
-  '@type': 'SoftwareApplication',
+  '@type': 'SoftwareApplication', "sameAs": ["https://en.wikipedia.org/wiki/Drag_and_drop", "https://en.wikipedia.org/wiki/Hand%E2%80%93eye_coordination"],
   name: 'Test de Drag and Drop et Précision Souris',
   applicationCategory: 'HealthApplication',
   operatingSystem: 'All',

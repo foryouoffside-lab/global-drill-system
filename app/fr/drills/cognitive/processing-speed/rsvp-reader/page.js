@@ -62,7 +62,7 @@ const breadcrumbSchema = {
 
 const softwareApplicationSchema = {
   "@context": "https://schema.org",
-  "@type": "SoftwareApplication",
+  "@type": "SoftwareApplication", "sameAs": ["https://en.wikipedia.org/wiki/Rapid_serial_visual_presentation"],
   "name": "Lecteur RSVP – Test de Vitesse de Lecture WPM",
   "applicationCategory": "HealthApplication",
   "operatingSystem": "All",

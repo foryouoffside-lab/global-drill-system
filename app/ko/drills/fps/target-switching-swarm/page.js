@@ -75,7 +75,7 @@ export default function TargetSwitchingSwarmPageKo() {
 
   const softwareSchema = {
     "@context": "https://schema.org",
-    "@type": "SoftwareApplication",
+    "@type": "SoftwareApplication", "sameAs": ["https://en.wikipedia.org/wiki/Saccade", "https://en.wikipedia.org/wiki/Hand%E2%80%93eye_coordination"],
     "name": "타겟 스위칭 에임 연습 - 다중 타겟 전환",
     "applicationCategory": "GameApplication",
     "operatingSystem": "Web Browser",

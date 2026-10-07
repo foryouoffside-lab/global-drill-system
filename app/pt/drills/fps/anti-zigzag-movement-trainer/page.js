@@ -72,7 +72,7 @@ export default function AntiZigzagPtPage() {
 
   const softwareSchema = {
     "@context": "https://schema.org",
-    "@type": "SoftwareApplication",
+    "@type": "SoftwareApplication", "sameAs": ["https://en.wikipedia.org/wiki/Smooth_pursuit"],
     "name": "Treino de mira - tracking em zigue-zague",
     "applicationCategory": "GameApplication",
     "operatingSystem": "Web Browser",

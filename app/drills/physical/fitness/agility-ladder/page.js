@@ -80,7 +80,7 @@ const breadcrumbSchema = {
 
 const softwareApplicationSchema = {
   '@context': 'https://schema.org',
-  '@type': 'SoftwareApplication',
+  '@type': 'SoftwareApplication', "sameAs": ["https://en.wikipedia.org/wiki/Agility"],
   name: 'Agility Ladder Drills – Motor Sequencing & Rhythm Trainer',
   applicationCategory: 'HealthApplication',
   operatingSystem: 'All',

@@ -55,7 +55,7 @@ const breadcrumbSchema = {
 
 const softwareApplicationSchema = {
   '@context': 'https://schema.org',
-  '@type': 'SoftwareApplication',
+  '@type': 'SoftwareApplication', "sameAs": ["https://en.wikipedia.org/wiki/Fine_motor_skill"],
   inLanguage: 'ja-JP',
   name: 'ターゲット切替エイム練習・順番クリック',
   applicationCategory: 'HealthApplication',

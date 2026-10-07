@@ -85,7 +85,7 @@ const breadcrumbSchema = {
 
 const softwareApplicationSchema = {
   "@context": "https://schema.org",
-  "@type": "SoftwareApplication",
+  "@type": "SoftwareApplication", "sameAs": ["https://en.wikipedia.org/wiki/Reaction_time", "https://en.wikipedia.org/wiki/Peripheral_vision"],
   "name": "Juego de Esquivar con el Ratón y Visión Periférica",
   "applicationCategory": "HealthApplication",
   "operatingSystem": "All",

@@ -71,7 +71,7 @@ export default function RecoilControlDePage() {
 
   const softwareSchema = {
     "@context": "https://schema.org",
-    "@type": "SoftwareApplication",
+    "@type": "SoftwareApplication", "sameAs": ["https://en.wikipedia.org/wiki/Hand%E2%80%93eye_coordination"],
     "name": "Recoil Control Trainer",
     "applicationCategory": "GameApplication",
     "operatingSystem": "Web Browser",

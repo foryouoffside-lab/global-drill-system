@@ -62,7 +62,7 @@ const breadcrumbSchema = {
 
 const softwareApplicationSchema = {
   "@context": "https://schema.org",
-  "@type": "SoftwareApplication",
+  "@type": "SoftwareApplication", "sameAs": ["https://en.wikipedia.org/wiki/Peripheral_vision", "https://en.wikipedia.org/wiki/Saccade"],
   "name": "Treino de Visão Periférica e Atenção Encoberta",
   "operatingSystem": "Navegador Web",
   "applicationCategory": "HealthApplication",

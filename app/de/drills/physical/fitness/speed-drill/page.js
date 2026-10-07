@@ -97,7 +97,7 @@ const breadcrumbSchema = {
 
 const softwareApplicationSchema = {
   "@context": "https://schema.org",
-  "@type": "SoftwareApplication",
+  "@type": "SoftwareApplication", "sameAs": ["https://en.wikipedia.org/wiki/Reaction_time"],
   "name": "Klickgeschwindigkeit Test & Reflex Speed Trainer",
   "applicationCategory": "HealthApplication",
   "operatingSystem": "All",

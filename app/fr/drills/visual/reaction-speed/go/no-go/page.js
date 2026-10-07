@@ -55,7 +55,7 @@ const breadcrumbSchema = {
 
 const softwareApplicationSchema = {
   "@context": "https://schema.org",
-  "@type": "SoftwareApplication",
+  "@type": "SoftwareApplication", "sameAs": ["https://en.wikipedia.org/wiki/Inhibitory_control"],
   "name": "Test Go/No-Go d'Inhibition de Réponse",
   "applicationCategory": "HealthApplication",
   "operatingSystem": "Web Browser",

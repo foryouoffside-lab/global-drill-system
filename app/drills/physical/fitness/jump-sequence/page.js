@@ -89,7 +89,7 @@ const breadcrumbSchema = {
 
 const softwareApplicationSchema = {
   '@context': 'https://schema.org',
-  '@type': 'SoftwareApplication',
+  '@type': 'SoftwareApplication', "sameAs": ["https://en.wikipedia.org/wiki/Plyometrics"],
   name: 'Jump Sequence Training Drill',
   applicationCategory: 'HealthApplication',
   operatingSystem: 'Any',

@@ -89,7 +89,7 @@ const breadcrumbSchema = {
 
 const softwareApplicationSchema = {
   "@context": "https://schema.org",
-  "@type": "SoftwareApplication",
+  "@type": "SoftwareApplication", "sameAs": ["https://en.wikipedia.org/wiki/Reaction_time"],
   "name": "Maus-Ausweichspiel und kinetischer Reflex-Trainer",
   "applicationCategory": "HealthApplication",
   "operatingSystem": "All",

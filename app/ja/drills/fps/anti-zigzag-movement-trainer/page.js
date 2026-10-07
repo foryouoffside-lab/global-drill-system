@@ -56,7 +56,7 @@ export default function AntiZigzagJaPage() {
 
   const softwareSchema = {
     "@context": "https://schema.org",
-    "@type": "SoftwareApplication",
+    "@type": "SoftwareApplication", "sameAs": ["https://en.wikipedia.org/wiki/Smooth_pursuit"],
     "name": "エイム練習 - ジグザグ移動",
     "applicationCategory": "GameApplication",
     "operatingSystem": "Web Browser",

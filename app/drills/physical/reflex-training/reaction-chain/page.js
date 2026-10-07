@@ -94,7 +94,7 @@ const breadcrumbSchema = {
 
 const softwareApplicationSchema = {
   '@context': 'https://schema.org',
-  '@type': 'SoftwareApplication',
+  '@type': 'SoftwareApplication', "sameAs": ["https://en.wikipedia.org/wiki/Reaction_time", "https://en.wikipedia.org/wiki/Mental_chronometry"],
   name: 'Reaction Chain Impulse Arrest Drill',
   applicationCategory: 'HealthApplication',
   operatingSystem: 'Any',

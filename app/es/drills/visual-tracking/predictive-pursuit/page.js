@@ -62,7 +62,7 @@ const breadcrumbSchema = {
 
 const softwareApplicationSchema = {
   "@context": "https://schema.org",
-  "@type": "SoftwareApplication",
+  "@type": "SoftwareApplication", "sameAs": ["https://en.wikipedia.org/wiki/Smooth_pursuit"],
   "name": "Entrenamiento de Seguimiento Ocular Predictivo",
   "operatingSystem": "Navegador Web",
   "applicationCategory": "HealthApplication",

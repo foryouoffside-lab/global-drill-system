@@ -62,7 +62,7 @@ const breadcrumbSchema = {
 
 const softwareApplicationSchema = {
   "@context": "https://schema.org",
-  "@type": "SoftwareApplication",
+  "@type": "SoftwareApplication", "sameAs": ["https://en.wikipedia.org/wiki/Mental_chronometry", "https://en.wikipedia.org/wiki/Reaction_time"],
   "name": "선택 반응시간 및 판단 속도 진단 도구",
   "applicationCategory": "HealthApplication",
   "operatingSystem": "All",

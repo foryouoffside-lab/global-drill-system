@@ -76,7 +76,7 @@ const breadcrumbSchema = {
 
 const softwareApplicationSchema = {
   "@context": "https://schema.org",
-  "@type": "SoftwareApplication",
+  "@type": "SoftwareApplication", "sameAs": ["https://en.wikipedia.org/wiki/Time_perception"],
   "name": "Rhythm Anomaly Timing Test – Free Visual Temporal Perception Drill",
   "applicationCategory": "HealthApplication",
   "operatingSystem": "All",

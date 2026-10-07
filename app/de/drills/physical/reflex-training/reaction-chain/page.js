@@ -86,7 +86,7 @@ const breadcrumbSchema = {
 
 const softwareApplicationSchema = {
   "@context": "https://schema.org",
-  "@type": "SoftwareApplication",
+  "@type": "SoftwareApplication", "sameAs": ["https://en.wikipedia.org/wiki/Reaction_time", "https://en.wikipedia.org/wiki/Mental_chronometry"],
   "name": "Maus Bremskontrolle & Impulskontrolle Reflex-Test (Reaction Chain)",
   "applicationCategory": "HealthApplication",
   "operatingSystem": "All",

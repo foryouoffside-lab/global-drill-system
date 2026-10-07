@@ -63,7 +63,7 @@ export default function ZigZagPathPursuitPagePT() {
 
   const softwareApplicationSchema = {
     "@context": "https://schema.org",
-    "@type": "SoftwareApplication",
+    "@type": "SoftwareApplication", "sameAs": ["https://en.wikipedia.org/wiki/Smooth_pursuit", "https://en.wikipedia.org/wiki/Saccade"],
     "name": "Treinador de Perseguição em Zigue-Zague",
     "applicationCategory": "HealthApplication",
     "operatingSystem": "Any",

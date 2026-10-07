@@ -82,7 +82,7 @@ const webAppSchema = {
 
 const softwareSchema = {
   "@context": "https://schema.org",
-  "@type": "SoftwareApplication",
+  "@type": "SoftwareApplication", "sameAs": ["https://en.wikipedia.org/wiki/Visual_search", "https://en.wikipedia.org/wiki/Attention"],
   "name": "Tabla de Schulte Online (Concentration Grid)",
   "url": "https://skilldrills.online/es/drills/cognitive/focus/concentration-grid",
   "description": "Entrenador cognitivo interactivo basado en navegador que evalúa la velocidad de búsqueda visual y la atención sostenida mediante el toque secuencial de números en matrices en expansión.",

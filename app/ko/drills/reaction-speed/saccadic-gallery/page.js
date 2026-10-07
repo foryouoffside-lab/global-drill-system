@@ -62,7 +62,7 @@ const breadcrumbSchema = {
 
 const softwareApplicationSchema = {
   '@context': 'https://schema.org',
-  '@type': 'SoftwareApplication',
+  '@type': 'SoftwareApplication', "sameAs": ["https://en.wikipedia.org/wiki/Saccade"],
   name: '동체시력 훈련 · 시선 이동 게임',
   alternateName: ['동체시력 테스트', '동체시력 훈련', '동체시력 게임', '시선 이동 훈련'],
   applicationCategory: 'HealthApplication',

@@ -64,7 +64,7 @@ const breadcrumbSchema = {
 
 const softwareApplicationSchema = {
   "@context": "https://schema.org",
-  "@type": "SoftwareApplication",
+  "@type": "SoftwareApplication", "sameAs": ["https://en.wikipedia.org/wiki/Smooth_pursuit", "https://en.wikipedia.org/wiki/Saccade"],
   "name": "空間シフト追従トレーニング・視野座標系適応テスト",
   "applicationCategory": "HealthApplication",
   "operatingSystem": "All",

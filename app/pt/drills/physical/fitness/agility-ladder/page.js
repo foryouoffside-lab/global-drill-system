@@ -86,7 +86,7 @@ const breadcrumbSchema = {
 
 const softwareApplicationSchema = {
   "@context": "https://schema.org",
-  "@type": "SoftwareApplication",
+  "@type": "SoftwareApplication", "sameAs": ["https://en.wikipedia.org/wiki/Agility"],
   "name": "Treino de Escada de Agilidade & Sequenciamento Motor",
   "applicationCategory": "HealthApplication",
   "operatingSystem": "All",

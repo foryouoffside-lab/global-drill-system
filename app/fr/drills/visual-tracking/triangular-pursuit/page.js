@@ -63,7 +63,7 @@ export default function TriangularPursuitPageFR() {
 
   const softwareApplicationSchema = {
     "@context": "https://schema.org",
-    "@type": "SoftwareApplication",
+    "@type": "SoftwareApplication", "sameAs": ["https://en.wikipedia.org/wiki/Smooth_pursuit", "https://en.wikipedia.org/wiki/Saccade"],
     "name": "Entraîneur de Poursuite Oculaire Triangulaire",
     "applicationCategory": "HealthApplication",
     "operatingSystem": "Any",

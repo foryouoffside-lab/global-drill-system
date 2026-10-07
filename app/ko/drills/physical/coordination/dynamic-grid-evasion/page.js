@@ -87,7 +87,7 @@ const breadcrumbSchema = {
 
 const softwareApplicationSchema = {
   "@context": "https://schema.org",
-  "@type": "SoftwareApplication",
+  "@type": "SoftwareApplication", "sameAs": ["https://en.wikipedia.org/wiki/Reaction_time", "https://en.wikipedia.org/wiki/Peripheral_vision"],
   "name": "마우스 피하기 & 동체시력 테스트 게임",
   "applicationCategory": "HealthApplication",
   "operatingSystem": "All",

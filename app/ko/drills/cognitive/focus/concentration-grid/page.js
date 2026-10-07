@@ -69,7 +69,7 @@ export default function ConcentrationGridPageKo() {
 
   const softwareSchema = {
     "@context": "https://schema.org",
-    "@type": "SoftwareApplication",
+    "@type": "SoftwareApplication", "sameAs": ["https://en.wikipedia.org/wiki/Visual_search", "https://en.wikipedia.org/wiki/Attention"],
     "name": "슐테 테이블 온라인 (집중력 격자)",
     "applicationCategory": "EducationalApplication",
     "operatingSystem": "Web Browser",

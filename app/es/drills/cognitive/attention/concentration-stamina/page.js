@@ -75,7 +75,7 @@ const breadcrumbSchema = {
 
 const softwareApplicationSchema = {
   "@context": "https://schema.org",
-  "@type": "SoftwareApplication",
+  "@type": "SoftwareApplication", "sameAs": ["https://en.wikipedia.org/wiki/Vigilance_(psychology)", "https://en.wikipedia.org/wiki/Attention"],
   "name": "Test de Concentración y Atención Sostenida",
   "applicationCategory": "HealthApplication",
   "operatingSystem": "All",

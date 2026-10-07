@@ -86,7 +86,7 @@ const breadcrumbSchema = {
 
 const softwareApplicationSchema = {
   "@context": "https://schema.org",
-  "@type": "SoftwareApplication",
+  "@type": "SoftwareApplication", "sameAs": ["https://en.wikipedia.org/wiki/Hand%E2%80%93eye_coordination"],
   "name": "도형 순서 기억 & 패턴 기억력 테스트",
   "applicationCategory": "HealthApplication",
   "operatingSystem": "All",

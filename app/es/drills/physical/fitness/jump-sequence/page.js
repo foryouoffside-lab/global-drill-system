@@ -93,7 +93,7 @@ const breadcrumbSchema = {
 
 const softwareApplicationSchema = {
   "@context": "https://schema.org",
-  "@type": "SoftwareApplication",
+  "@type": "SoftwareApplication", "sameAs": ["https://en.wikipedia.org/wiki/Plyometrics"],
   "name": "Entrenador de Salto Vertical y Trayectoria Aérea",
   "applicationCategory": "HealthApplication",
   "operatingSystem": "All",

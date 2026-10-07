@@ -75,7 +75,7 @@ const breadcrumbSchema = {
 
 const softwareApplicationSchema = {
   "@context": "https://schema.org",
-  "@type": "SoftwareApplication",
+  "@type": "SoftwareApplication", "sameAs": ["https://en.wikipedia.org/wiki/Divided_attention"],
   "name": "Teste de Atenção Dividida – Dupla Tarefa",
   "applicationCategory": "HealthApplication",
   "operatingSystem": "All",

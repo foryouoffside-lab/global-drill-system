@@ -90,7 +90,7 @@ const webAppSchema = {
 
 const softwareSchema = {
   "@context": "https://schema.org",
-  "@type": "SoftwareApplication",
+  "@type": "SoftwareApplication", "sameAs": ["https://en.wikipedia.org/wiki/Visual_search", "https://en.wikipedia.org/wiki/Attention"],
   "name": "Schulte Table & Concentration Grid Trainer",
   "url": "https://skilldrills.online/drills/cognitive/focus/concentration-grid",
   "applicationCategory": "EducationalApplication",

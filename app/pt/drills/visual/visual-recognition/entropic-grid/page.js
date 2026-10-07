@@ -170,7 +170,7 @@ const breadcrumbSchema = {
 
 const softwareApplicationSchema = {
   "@context": "https://schema.org",
-  "@type": "SoftwareApplication",
+  "@type": "SoftwareApplication", "sameAs": ["https://en.wikipedia.org/wiki/Visual_search", "https://en.wikipedia.org/wiki/Feature_integration_theory"],
   "name": "Teste de Busca Visual",
   "operatingSystem": "Web Browser",
   "applicationCategory": "HealthApplication",

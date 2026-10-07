@@ -89,7 +89,7 @@ const breadcrumbSchema = {
 
 const softwareApplicationSchema = {
   "@context": "https://schema.org",
-  "@type": "SoftwareApplication",
+  "@type": "SoftwareApplication", "sameAs": ["https://en.wikipedia.org/wiki/Balance_(ability)"],
   "name": "Treinador de Estabilidade de Mira e Precisão do Mouse",
   "applicationCategory": "HealthApplication",
   "operatingSystem": "All",

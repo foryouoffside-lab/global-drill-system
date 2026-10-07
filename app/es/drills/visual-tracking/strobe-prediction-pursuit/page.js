@@ -56,7 +56,7 @@ export default function StrobePredictionPursuitPageES() {
 
   const softwareApplicationSchema = {
     "@context": "https://schema.org",
-    "@type": "SoftwareApplication",
+    "@type": "SoftwareApplication", "sameAs": ["https://en.wikipedia.org/wiki/Smooth_pursuit"],
     "name": "Entrenador de Visión Estroboscópica y Predicción",
     "applicationCategory": "HealthApplication",
     "operatingSystem": "Any",

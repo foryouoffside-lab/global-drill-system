@@ -62,7 +62,7 @@ const breadcrumbSchema = {
 
 const softwareApplicationSchema = {
   "@context": "https://schema.org",
-  "@type": "SoftwareApplication",
+  "@type": "SoftwareApplication", "sameAs": ["https://en.wikipedia.org/wiki/Smooth_pursuit"],
   "name": "예측 에임 연습・가림 궤적 예측 추적 테스트",
   "applicationCategory": "HealthApplication",
   "operatingSystem": "All",

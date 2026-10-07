@@ -69,7 +69,7 @@ const breadcrumbSchema = {
 
 const softwareApplicationSchema = {
   "@context": "https://schema.org",
-  "@type": "SoftwareApplication",
+  "@type": "SoftwareApplication", "sameAs": ["https://en.wikipedia.org/wiki/Divided_attention", "https://en.wikipedia.org/wiki/Smooth_pursuit"],
   "name": "화면 분할 시각 추적・분할 주의력 안구 훈련",
   "applicationCategory": "HealthApplication",
   "operatingSystem": "All",

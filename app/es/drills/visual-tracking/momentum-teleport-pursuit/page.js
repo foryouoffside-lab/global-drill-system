@@ -64,7 +64,7 @@ const breadcrumbSchema = {
 
 const softwareApplicationSchema = {
   "@context": "https://schema.org",
-  "@type": "SoftwareApplication",
+  "@type": "SoftwareApplication", "sameAs": ["https://en.wikipedia.org/wiki/Smooth_pursuit", "https://en.wikipedia.org/wiki/Saccade"],
   "name": "Entrenamiento de Seguimiento de Blanco Teletransportado con Inercia",
   "dateModified": "2026-09-20",
   "operatingSystem": "Navegador Web",

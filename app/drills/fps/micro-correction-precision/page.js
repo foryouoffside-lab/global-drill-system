@@ -72,7 +72,7 @@ export default function MicroCorrectionPage() {
 
   const softwareSchema = {
     "@context": "https://schema.org",
-    "@type": "SoftwareApplication",
+    "@type": "SoftwareApplication", "sameAs": ["https://en.wikipedia.org/wiki/Fitts%27s_law", "https://en.wikipedia.org/wiki/Fine_motor_skill"],
     "name": "Micro-Correction Aim Trainer",
     "applicationCategory": "GameApplication",
     "operatingSystem": "Web Browser",

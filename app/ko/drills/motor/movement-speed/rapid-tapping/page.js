@@ -77,7 +77,7 @@ const breadcrumbSchema = {
 
 const softwareApplicationSchema = {
   '@context': 'https://schema.org',
-  '@type': 'SoftwareApplication',
+  '@type': 'SoftwareApplication', "sameAs": ["https://en.wikipedia.org/wiki/Fine_motor_skill"],
   name: 'CPS 측정 – 마우스 클릭속도 테스트 및 광클 지속력 훈련',
   alternateName: ['CPS 측정', '클릭속도 테스트', '마우스 클릭 테스트', '초당 클릭수 테스트', '마우스 광클 훈련'],
   applicationCategory: 'HealthApplication',

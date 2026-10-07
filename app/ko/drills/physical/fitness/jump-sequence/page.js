@@ -97,7 +97,7 @@ const breadcrumbSchema = {
 
 const softwareApplicationSchema = {
   "@context": "https://schema.org",
-  "@type": "SoftwareApplication",
+  "@type": "SoftwareApplication", "sameAs": ["https://en.wikipedia.org/wiki/Plyometrics"],
   "name": "점프력 운동 & 서전트 점프 시퀀스 트레이너",
   "applicationCategory": "HealthApplication",
   "operatingSystem": "All",

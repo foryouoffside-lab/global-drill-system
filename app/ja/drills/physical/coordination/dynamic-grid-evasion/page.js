@@ -87,7 +87,7 @@ const breadcrumbSchema = {
 
 const softwareApplicationSchema = {
   "@context": "https://schema.org",
-  "@type": "SoftwareApplication",
+  "@type": "SoftwareApplication", "sameAs": ["https://en.wikipedia.org/wiki/Reaction_time", "https://en.wikipedia.org/wiki/Peripheral_vision"],
   "name": "反射神経ゲーム・動体視力トレーニング",
   "applicationCategory": "HealthApplication",
   "operatingSystem": "All",

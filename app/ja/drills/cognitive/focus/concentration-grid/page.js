@@ -81,7 +81,7 @@ const webAppSchema = {
 
 const softwareSchema = {
   "@context": "https://schema.org",
-  "@type": "SoftwareApplication",
+  "@type": "SoftwareApplication", "sameAs": ["https://en.wikipedia.org/wiki/Visual_search", "https://en.wikipedia.org/wiki/Attention"],
   "name": "シュルテテーブル (Schulte Table / Concentration Grid)",
   "url": "https://skilldrills.online/ja/drills/cognitive/focus/concentration-grid",
   "description": "拡大するグリッド上の連続する数字を素早くタップする、認知機能・周辺視野・視覚探索速度トレーニング用Webアプリ。",

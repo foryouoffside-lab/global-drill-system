@@ -53,7 +53,7 @@ const breadcrumbSchema = {
 
 const softwareApplicationSchema = {
   '@context': 'https://schema.org',
-  '@type': 'SoftwareApplication',
+  '@type': 'SoftwareApplication', "sameAs": ["https://en.wikipedia.org/wiki/Fine_motor_skill"],
   inLanguage: 'ko-KR',
   name: '전기충격 미로게임 – 마우스 정밀도 및 손떨림 측정기',
   applicationCategory: 'HealthApplication',

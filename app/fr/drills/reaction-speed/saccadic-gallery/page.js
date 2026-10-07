@@ -63,7 +63,7 @@ const breadcrumbSchema = {
 
 const softwareApplicationSchema = {
   '@context': 'https://schema.org',
-  '@type': 'SoftwareApplication',
+  '@type': 'SoftwareApplication', "sameAs": ["https://en.wikipedia.org/wiki/Saccade"],
   name: 'Entraînement Visuel · Exercices Oculaires',
   alternateName: ['Entraînement visuel', 'Entraînement visuel sportif', 'Exercice visuel', 'Exercices saccadiques'],
   applicationCategory: 'HealthApplication',

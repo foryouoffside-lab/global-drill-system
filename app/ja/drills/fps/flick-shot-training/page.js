@@ -56,7 +56,7 @@ export default function FlickShotJaPage() {
 
   const softwareSchema = {
     "@context": "https://schema.org",
-    "@type": "SoftwareApplication",
+    "@type": "SoftwareApplication", "sameAs": ["https://en.wikipedia.org/wiki/Fitts%27s_law", "https://en.wikipedia.org/wiki/Hand%E2%80%93eye_coordination"],
     "name": "エイム練習・フリックトレーナー",
     "applicationCategory": "GameApplication",
     "operatingSystem": "Web Browser",

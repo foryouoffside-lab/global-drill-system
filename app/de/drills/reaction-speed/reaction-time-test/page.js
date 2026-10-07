@@ -68,7 +68,7 @@ const breadcrumbSchema = {
 
 const softwareApplicationSchema = {
   '@context': 'https://schema.org',
-  '@type': 'SoftwareApplication',
+  '@type': 'SoftwareApplication', "sameAs": ["https://en.wikipedia.org/wiki/Mental_chronometry", "https://en.wikipedia.org/wiki/Reaction_time"],
   name: 'Reaktionstest (Reaktionszeit Test) – Kostenloses Reflex-Messwerkzeug',
   alternateName: ['Reaktionstest', 'Reaktionszeit Test', 'Reflex Test Online', 'Gaming Reaktionstest'],
   applicationCategory: 'HealthApplication',

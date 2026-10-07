@@ -88,7 +88,7 @@ export default function RecoilControlPage() {
 
   const softwareSchema = {
     "@context": "https://schema.org",
-    "@type": "SoftwareApplication",
+    "@type": "SoftwareApplication", "sameAs": ["https://en.wikipedia.org/wiki/Hand%E2%80%93eye_coordination"],
     "name": "Entrenamiento de Control de Retroceso y Spray",
     "applicationCategory": "GameApplication",
     "operatingSystem": "Web Browser",

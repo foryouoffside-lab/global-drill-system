@@ -70,7 +70,7 @@ export default function InstantResponseEsPage() {
 
   const softwareSchema = {
     "@context": "https://schema.org",
-    "@type": "SoftwareApplication",
+    "@type": "SoftwareApplication", "sameAs": ["https://en.wikipedia.org/wiki/Reaction_time", "https://en.wikipedia.org/wiki/Mental_chronometry"],
     "name": "Test de reflejos SkillDrills",
     "applicationCategory": "GameApplication",
     "operatingSystem": "Web Browser",

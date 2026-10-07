@@ -69,7 +69,7 @@ export default function ConcentrationGridPageDe() {
 
   const softwareSchema = {
     "@context": "https://schema.org",
-    "@type": "SoftwareApplication",
+    "@type": "SoftwareApplication", "sameAs": ["https://en.wikipedia.org/wiki/Visual_search", "https://en.wikipedia.org/wiki/Attention"],
     "name": "Schulte-Tabelle Online (Konzentrationsgitter)",
     "applicationCategory": "EducationalApplication",
     "operatingSystem": "Web Browser",

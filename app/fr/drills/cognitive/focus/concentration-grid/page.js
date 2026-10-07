@@ -80,7 +80,7 @@ const webAppSchema = {
 
 const softwareSchema = {
   "@context": "https://schema.org",
-  "@type": "SoftwareApplication",
+  "@type": "SoftwareApplication", "sameAs": ["https://en.wikipedia.org/wiki/Visual_search", "https://en.wikipedia.org/wiki/Attention"],
   "name": "Table de Schulte Trainer",
   "applicationCategory": "HealthApplication",
   "operatingSystem": "All",

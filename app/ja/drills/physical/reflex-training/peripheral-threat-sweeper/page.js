@@ -90,7 +90,7 @@ const breadcrumbSchema = {
 
 const softwareApplicationSchema = {
   "@context": "https://schema.org",
-  "@type": "SoftwareApplication",
+  "@type": "SoftwareApplication", "sameAs": ["https://en.wikipedia.org/wiki/Peripheral_vision"],
   "name": "周辺視野＆動体視力トレーニングツール (Peripheral Threat Sweeper)",
   "applicationCategory": "HealthApplication",
   "operatingSystem": "All",

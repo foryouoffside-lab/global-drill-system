@@ -97,7 +97,7 @@ const breadcrumbSchema = {
 
 const softwareApplicationSchema = {
   "@context": "https://schema.org",
-  "@type": "SoftwareApplication",
+  "@type": "SoftwareApplication", "sameAs": ["https://en.wikipedia.org/wiki/Reaction_time"],
   "name": "クリック速度測定・エイム連打反応トレーナー",
   "applicationCategory": "HealthApplication",
   "operatingSystem": "All",

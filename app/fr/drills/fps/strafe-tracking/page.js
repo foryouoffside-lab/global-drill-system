@@ -70,7 +70,7 @@ export default function StrafeTrackingFrPage() {
 
   const softwareSchema = {
     "@context": "https://schema.org",
-    "@type": "SoftwareApplication",
+    "@type": "SoftwareApplication", "sameAs": ["https://en.wikipedia.org/wiki/Smooth_pursuit"],
     "name": "Entraîneur de Strafe Tracking FPS",
     "applicationCategory": "GameApplication",
     "operatingSystem": "Web Browser",

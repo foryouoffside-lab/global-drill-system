@@ -66,7 +66,7 @@ const breadcrumbSchema = {
 
 const softwareApplicationSchema = {
   '@context': 'https://schema.org',
-  '@type': 'SoftwareApplication',
+  '@type': 'SoftwareApplication', "sameAs": ["https://en.wikipedia.org/wiki/Fitts%27s_law", "https://en.wikipedia.org/wiki/Hand%E2%80%93eye_coordination"],
   name: '플릭 에임 연습・마우스 정확도 테스트',
   applicationCategory: 'HealthApplication',
   operatingSystem: 'All',

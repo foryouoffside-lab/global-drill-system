@@ -97,7 +97,7 @@ const breadcrumbSchema = {
 
 const softwareApplicationSchema = {
   "@context": "https://schema.org",
-  "@type": "SoftwareApplication",
+  "@type": "SoftwareApplication", "sameAs": ["https://en.wikipedia.org/wiki/Plyometrics"],
   "name": "ジャンプ力トレーニング＆プライオメトリクス練習ドリル",
   "applicationCategory": "HealthApplication",
   "operatingSystem": "All",

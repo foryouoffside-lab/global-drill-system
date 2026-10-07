@@ -75,7 +75,7 @@ const breadcrumbSchema = {
 
 const softwareApplicationSchema = {
   "@context": "https://schema.org",
-  "@type": "SoftwareApplication",
+  "@type": "SoftwareApplication", "sameAs": ["https://en.wikipedia.org/wiki/Smooth_pursuit", "https://en.wikipedia.org/wiki/Saccade"],
   "name": "Rastreamento Ocular Vertical em Degraus",
   "operatingSystem": "Navegador Web",
   "applicationCategory": "HealthApplication",

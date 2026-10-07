@@ -58,7 +58,7 @@ export default function VerticalAirTrackEsPage() {
 
   const softwareSchema = {
     "@context": "https://schema.org",
-    "@type": "SoftwareApplication",
+    "@type": "SoftwareApplication", "sameAs": ["https://en.wikipedia.org/wiki/Smooth_pursuit", "https://en.wikipedia.org/wiki/Hand%E2%80%93eye_coordination"],
     "name": "Entrenador de Puntería Vertical - Tracking Aéreo",
     "applicationCategory": "GameApplication",
     "operatingSystem": "Any (Web Browser)",

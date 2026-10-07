@@ -57,7 +57,7 @@ export default function VerticalAirTrackPage() {
 
   const softwareSchema = {
     "@context": "https://schema.org",
-    "@type": "SoftwareApplication",
+    "@type": "SoftwareApplication", "sameAs": ["https://en.wikipedia.org/wiki/Smooth_pursuit", "https://en.wikipedia.org/wiki/Hand%E2%80%93eye_coordination"],
     "name": "Vertical Aim Trainer",
     "applicationCategory": "GameApplication",
     "operatingSystem": "Web Browser",

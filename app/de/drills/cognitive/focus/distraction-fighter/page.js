@@ -65,7 +65,7 @@ export default function DistractionFighterPageDe() {
 
   const softwareSchema = {
     "@context": "https://schema.org",
-    "@type": "SoftwareApplication",
+    "@type": "SoftwareApplication", "sameAs": ["https://en.wikipedia.org/wiki/Stroop_effect", "https://en.wikipedia.org/wiki/Inhibitory_control"],
     "name": "Stroop-Test Online (Farb-Wort-Interferenz)",
     "applicationCategory": "EducationalApplication",
     "operatingSystem": "Web Browser",

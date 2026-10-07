@@ -53,7 +53,7 @@ const breadcrumbSchema = {
 
 const softwareApplicationSchema = {
   '@context': 'https://schema.org',
-  '@type': 'SoftwareApplication',
+  '@type': 'SoftwareApplication', "sameAs": ["https://en.wikipedia.org/wiki/Fine_motor_skill"],
   inLanguage: 'fr-FR',
   name: 'Jeu du Fil Électrique – Test de Précision Souris et Tremblement',
   applicationCategory: 'HealthApplication',

@@ -55,7 +55,7 @@ export default function TargetPrioritizationFrPage() {
 
   const softwareSchema = {
     "@context": "https://schema.org",
-    "@type": "SoftwareApplication",
+    "@type": "SoftwareApplication", "sameAs": ["https://en.wikipedia.org/wiki/Visual_search", "https://en.wikipedia.org/wiki/Reaction_time"],
     "name": "Aim Trainer - priorisation des cibles",
     "applicationCategory": "GameApplication",
     "operatingSystem": "Web Browser",

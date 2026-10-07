@@ -61,7 +61,7 @@ const breadcrumbSchema = {
 
 const softwareApplicationSchema = {
   "@context": "https://schema.org",
-  "@type": "SoftwareApplication",
+  "@type": "SoftwareApplication", "sameAs": ["https://en.wikipedia.org/wiki/Task_switching_(psychology)", "https://en.wikipedia.org/wiki/Human_multitasking"],
   "name": "Multitasking Test — Dual-Target Attention Drill",
   "applicationCategory": "HealthApplication",
   "operatingSystem": "All",

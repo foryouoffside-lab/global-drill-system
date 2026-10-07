@@ -67,7 +67,7 @@ const breadcrumbSchema = {
 
 const softwareApplicationSchema = {
   '@context': 'https://schema.org',
-  '@type': 'SoftwareApplication',
+  '@type': 'SoftwareApplication', "sameAs": ["https://en.wikipedia.org/wiki/Depth_perception"],
   name: '원근감 및 입체시 거리 감각 측정기',
   applicationCategory: 'HealthApplication',
   operatingSystem: 'All',

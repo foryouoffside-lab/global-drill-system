@@ -72,7 +72,7 @@ export default function FlowStatePtPage() {
 
   const softwareSchema = {
     "@context": "https://schema.org",
-    "@type": "SoftwareApplication",
+    "@type": "SoftwareApplication", "sameAs": ["https://en.wikipedia.org/wiki/Flow_(psychology)"],
     "name": "Treino de foco FPS",
     "applicationCategory": "GameApplication",
     "operatingSystem": "Web Browser",

@@ -54,7 +54,7 @@ export default function TargetPrioritizationJaPage() {
 
   const softwareSchema = {
     "@context": "https://schema.org",
-    "@type": "SoftwareApplication",
+    "@type": "SoftwareApplication", "sameAs": ["https://en.wikipedia.org/wiki/Visual_search", "https://en.wikipedia.org/wiki/Reaction_time"],
     "name": "エイム練習 - ターゲット選択と脅威判定",
     "applicationCategory": "GameApplication",
     "operatingSystem": "Web Browser",

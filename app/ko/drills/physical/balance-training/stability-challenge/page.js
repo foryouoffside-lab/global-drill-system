@@ -83,7 +83,7 @@ const breadcrumbSchema = {
 
 const softwareApplicationSchema = {
   "@context": "https://schema.org",
-  "@type": "SoftwareApplication",
+  "@type": "SoftwareApplication", "sameAs": ["https://en.wikipedia.org/wiki/Balance_(ability)"],
   "name": "마우스 흔들림 보정 & 에임 안정성 테스트",
   "applicationCategory": "HealthApplication",
   "operatingSystem": "All",

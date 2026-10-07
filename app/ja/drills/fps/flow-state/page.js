@@ -56,7 +56,7 @@ export default function FlowStateJaPage() {
 
   const softwareSchema = {
     "@context": "https://schema.org",
-    "@type": "SoftwareApplication",
+    "@type": "SoftwareApplication", "sameAs": ["https://en.wikipedia.org/wiki/Flow_(psychology)"],
     "name": "FPS 集中力トレーニング",
     "applicationCategory": "GameApplication",
     "operatingSystem": "Web Browser",

@@ -70,7 +70,7 @@ export default function InstantResponseDePage() {
 
   const softwareSchema = {
     "@context": "https://schema.org",
-    "@type": "SoftwareApplication",
+    "@type": "SoftwareApplication", "sameAs": ["https://en.wikipedia.org/wiki/Reaction_time", "https://en.wikipedia.org/wiki/Mental_chronometry"],
     "name": "Reaktionszeit Test für FPS-Reflexe",
     "applicationCategory": "GameApplication",
     "operatingSystem": "Web Browser",

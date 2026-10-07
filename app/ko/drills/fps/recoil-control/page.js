@@ -74,7 +74,7 @@ export default function RecoilControlKoPage() {
 
   const softwareSchema = {
     "@context": "https://schema.org",
-    "@type": "SoftwareApplication",
+    "@type": "SoftwareApplication", "sameAs": ["https://en.wikipedia.org/wiki/Hand%E2%80%93eye_coordination"],
     "name": "반동 제어 연습 (Recoil Control Trainer)",
     "applicationCategory": "GameApplication",
     "operatingSystem": "Web Browser",

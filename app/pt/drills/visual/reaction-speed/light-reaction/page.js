@@ -55,7 +55,7 @@ const breadcrumbSchema = {
 
 const softwareApplicationSchema = {
   "@context": "https://schema.org",
-  "@type": "SoftwareApplication",
+  "@type": "SoftwareApplication", "sameAs": ["https://en.wikipedia.org/wiki/Reaction_time", "https://en.wikipedia.org/wiki/Mental_chronometry"],
   "name": "Teste de Reação à Luz (Tempo de Reação Simples)",
   "applicationCategory": "HealthApplication",
   "operatingSystem": "Web Browser",

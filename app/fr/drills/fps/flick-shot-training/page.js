@@ -74,7 +74,7 @@ export default function FlickShotFrPage() {
 
   const softwareSchema = {
     "@context": "https://schema.org",
-    "@type": "SoftwareApplication",
+    "@type": "SoftwareApplication", "sameAs": ["https://en.wikipedia.org/wiki/Fitts%27s_law", "https://en.wikipedia.org/wiki/Hand%E2%80%93eye_coordination"],
     "name": "Aim Trainer et Flick SkillDrills",
     "applicationCategory": "GameApplication",
     "operatingSystem": "Web Browser",

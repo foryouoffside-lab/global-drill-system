@@ -62,7 +62,7 @@ const breadcrumbSchema = {
 
 const softwareApplicationSchema = {
   "@context": "https://schema.org",
-  "@type": "SoftwareApplication",
+  "@type": "SoftwareApplication", "sameAs": ["https://en.wikipedia.org/wiki/Peripheral_vision", "https://en.wikipedia.org/wiki/Saccade"],
   "name": "주변시 핑 추적 훈련・중심시 주변시 통합 테스트",
   "applicationCategory": "HealthApplication",
   "operatingSystem": "웹 브라우저",

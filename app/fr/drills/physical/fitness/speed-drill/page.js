@@ -97,7 +97,7 @@ const breadcrumbSchema = {
 
 const softwareApplicationSchema = {
   "@context": "https://schema.org",
-  "@type": "SoftwareApplication",
+  "@type": "SoftwareApplication", "sameAs": ["https://en.wikipedia.org/wiki/Reaction_time"],
   "inLanguage": "fr-FR",
   "dateModified": "2026-09-20",
   "name": "Test de Clics par Seconde et Entraînement de Réflexes Souris",

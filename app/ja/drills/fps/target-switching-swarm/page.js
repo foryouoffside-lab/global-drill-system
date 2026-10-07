@@ -73,7 +73,7 @@ export default function TargetSwitchingSwarmPageJa() {
 
   const softwareSchema = {
     "@context": "https://schema.org",
-    "@type": "SoftwareApplication",
+    "@type": "SoftwareApplication", "sameAs": ["https://en.wikipedia.org/wiki/Saccade", "https://en.wikipedia.org/wiki/Hand%E2%80%93eye_coordination"],
     "name": "VALORANT ターゲット切り替え - エイム練習",
     "applicationCategory": "GameApplication",
     "operatingSystem": "Web Browser",

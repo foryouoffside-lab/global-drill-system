@@ -65,7 +65,7 @@ export default function DistractionFighterPageKo() {
 
   const softwareSchema = {
     "@context": "https://schema.org",
-    "@type": "SoftwareApplication",
+    "@type": "SoftwareApplication", "sameAs": ["https://en.wikipedia.org/wiki/Stroop_effect", "https://en.wikipedia.org/wiki/Inhibitory_control"],
     "name": "스트룹 검사 온라인 (Stroop Test)",
     "applicationCategory": "EducationalApplication",
     "operatingSystem": "Web Browser",

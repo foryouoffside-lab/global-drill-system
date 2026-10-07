@@ -89,7 +89,7 @@ const breadcrumbSchema = {
 
 const softwareApplicationSchema = {
   "@context": "https://schema.org",
-  "@type": "SoftwareApplication",
+  "@type": "SoftwareApplication", "sameAs": ["https://en.wikipedia.org/wiki/Balance_(ability)"],
   "name": "Entraîneur de Stabilité Souris et Contrôle de Visée",
   "applicationCategory": "HealthApplication",
   "operatingSystem": "All",

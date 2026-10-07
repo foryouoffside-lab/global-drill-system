@@ -61,7 +61,7 @@ const breadcrumbSchema = {
 
 const softwareApplicationSchema = {
   "@context": "https://schema.org",
-  "@type": "SoftwareApplication",
+  "@type": "SoftwareApplication", "sameAs": ["https://en.wikipedia.org/wiki/Divided_attention"],
   "name": "Divided Attention Test — Dual-Task Split Focus Drill",
   "applicationCategory": "HealthApplication",
   "operatingSystem": "All",

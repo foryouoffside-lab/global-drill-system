@@ -66,7 +66,7 @@ export default function AntiStrafeJitterJaPage() {
 
   const softwareSchema = {
     "@context": "https://schema.org",
-    "@type": "SoftwareApplication",
+    "@type": "SoftwareApplication", "sameAs": ["https://en.wikipedia.org/wiki/Smooth_pursuit"],
     "name": "エイム練習 - レレレ撃ち・トラッキング",
     "applicationCategory": "GameApplication",
     "operatingSystem": "Web Browser",

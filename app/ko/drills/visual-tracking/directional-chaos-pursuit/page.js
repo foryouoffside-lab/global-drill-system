@@ -63,7 +63,7 @@ const breadcrumbSchema = {
 
 const softwareApplicationSchema = {
   "@context": "https://schema.org",
-  "@type": "SoftwareApplication",
+  "@type": "SoftwareApplication", "sameAs": ["https://en.wikipedia.org/wiki/Smooth_pursuit", "https://en.wikipedia.org/wiki/Saccade"],
   "name": "불규칙 안구 추적 훈련・카오스 방향 전환 테스트 (Directional Chaos Pursuit)",
   "applicationCategory": "HealthApplication",
   "operatingSystem": "Web Browser",

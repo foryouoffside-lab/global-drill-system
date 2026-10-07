@@ -53,7 +53,7 @@ const breadcrumbSchema = {
 
 const softwareApplicationSchema = {
   '@context': 'https://schema.org',
-  '@type': 'SoftwareApplication',
+  '@type': 'SoftwareApplication', "sameAs": ["https://en.wikipedia.org/wiki/Fine_motor_skill"],
   inLanguage: 'en-US',
   name: 'Steady Hand Game – Mouse Path Tracing Drill',
   applicationCategory: 'HealthApplication',

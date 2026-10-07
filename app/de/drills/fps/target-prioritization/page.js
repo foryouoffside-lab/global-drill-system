@@ -55,7 +55,7 @@ export default function TargetPrioritizationDePage() {
 
   const softwareSchema = {
     "@context": "https://schema.org",
-    "@type": "SoftwareApplication",
+    "@type": "SoftwareApplication", "sameAs": ["https://en.wikipedia.org/wiki/Visual_search", "https://en.wikipedia.org/wiki/Reaction_time"],
     "name": "Aim Trainer - Zielauswahl und Bedrohung",
     "applicationCategory": "GameApplication",
     "operatingSystem": "Web Browser",

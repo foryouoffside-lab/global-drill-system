@@ -72,7 +72,7 @@ export default function TargetAcquisitionPage() {
 
   const softwareSchema = {
     "@context": "https://schema.org",
-    "@type": "SoftwareApplication",
+    "@type": "SoftwareApplication", "sameAs": ["https://en.wikipedia.org/wiki/Fitts%27s_law", "https://en.wikipedia.org/wiki/Reaction_time"],
     "name": "Target Acquisition Aim Trainer",
     "applicationCategory": "GameApplication",
     "operatingSystem": "Web Browser",

@@ -89,7 +89,7 @@ const breadcrumbSchema = {
 
 const softwareApplicationSchema = {
   "@context": "https://schema.org",
-  "@type": "SoftwareApplication",
+  "@type": "SoftwareApplication", "sameAs": ["https://en.wikipedia.org/wiki/Reaction_time"],
   "name": "마우스 피하기 게임 및 순발력 탄막 회피 시뮬레이터",
   "applicationCategory": "HealthApplication",
   "operatingSystem": "All",

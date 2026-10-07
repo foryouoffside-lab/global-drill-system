@@ -89,7 +89,7 @@ const breadcrumbSchema = {
 
 const softwareApplicationSchema = {
   "@context": "https://schema.org",
-  "@type": "SoftwareApplication",
+  "@type": "SoftwareApplication", "sameAs": ["https://en.wikipedia.org/wiki/Balance_(ability)"],
   "name": "Entrenador de Estabilidad de Ratón y Puntería FPS",
   "applicationCategory": "HealthApplication",
   "operatingSystem": "All",

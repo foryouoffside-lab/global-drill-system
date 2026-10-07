@@ -90,7 +90,7 @@ const breadcrumbSchema = {
 
 const softwareApplicationSchema = {
   "@context": "https://schema.org",
-  "@type": "SoftwareApplication",
+  "@type": "SoftwareApplication", "sameAs": ["https://en.wikipedia.org/wiki/Hand%E2%80%93eye_coordination", "https://en.wikipedia.org/wiki/Reaction_time"],
   "name": "자 반응속도 테스트 및 낙하 드롭 캐치 트레이너",
   "applicationCategory": "HealthApplication",
   "operatingSystem": "All",

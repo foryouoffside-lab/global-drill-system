@@ -58,7 +58,7 @@ export default function TargetAcquisitionKoPage() {
 
   const softwareSchema = {
     "@context": "https://schema.org",
-    "@type": "SoftwareApplication",
+    "@type": "SoftwareApplication", "sameAs": ["https://en.wikipedia.org/wiki/Fitts%27s_law", "https://en.wikipedia.org/wiki/Reaction_time"],
     "name": "발로란트 에임 연습 - 타겟 포착 트레이너",
     "applicationCategory": "GameApplication",
     "operatingSystem": "Web Browser",

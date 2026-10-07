@@ -76,7 +76,7 @@ const breadcrumbSchema = {
 
 const softwareApplicationSchema = {
   '@context': 'https://schema.org',
-  '@type': 'SoftwareApplication',
+  '@type': 'SoftwareApplication', "sameAs": ["https://en.wikipedia.org/wiki/Fine_motor_skill"],
   name: '連打測定・CPSテスト – クリック速度測定＆連打持久力診断ツール',
   alternateName: ['連打測定', 'CPSテスト', 'クリック速度測定', '連打ツール', '秒間クリック数測定'],
   applicationCategory: 'HealthApplication',

@@ -67,7 +67,7 @@ const breadcrumbSchema = {
 
 const softwareApplicationSchema = {
   '@context': 'https://schema.org',
-  '@type': 'SoftwareApplication',
+  '@type': 'SoftwareApplication', "sameAs": ["https://en.wikipedia.org/wiki/Mental_chronometry", "https://en.wikipedia.org/wiki/Reaction_time"],
   name: 'Teste de Reflexo e Tempo de Reação – Medidor Online Grátis',
   alternateName: ['Teste de Reflexo', 'Tempo de Reação', 'Teste de Reação Online', 'Teste de Reação FPS'],
   applicationCategory: 'HealthApplication',

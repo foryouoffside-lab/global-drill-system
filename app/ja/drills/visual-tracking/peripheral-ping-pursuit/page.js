@@ -62,7 +62,7 @@ const breadcrumbSchema = {
 
 const softwareApplicationSchema = {
   "@context": "https://schema.org",
-  "@type": "SoftwareApplication",
+  "@type": "SoftwareApplication", "sameAs": ["https://en.wikipedia.org/wiki/Peripheral_vision", "https://en.wikipedia.org/wiki/Saccade"],
   "name": "周辺視野ピン追従トレーニング・中心視周辺視統合テスト",
   "applicationCategory": "HealthApplication",
   "operatingSystem": "All",

@@ -69,7 +69,7 @@ export default function StrafeTrackingPage() {
 
   const softwareSchema = {
     "@context": "https://schema.org",
-    "@type": "SoftwareApplication",
+    "@type": "SoftwareApplication", "sameAs": ["https://en.wikipedia.org/wiki/Smooth_pursuit"],
     "name": "Strafe Tracking Aim Trainer",
     "applicationCategory": "GameApplication",
     "operatingSystem": "Web Browser",

@@ -58,7 +58,7 @@ export default function TargetSwitchingSwarmPtPage() {
 
   const softwareSchema = {
     "@context": "https://schema.org",
-    "@type": "SoftwareApplication",
+    "@type": "SoftwareApplication", "sameAs": ["https://en.wikipedia.org/wiki/Saccade", "https://en.wikipedia.org/wiki/Hand%E2%80%93eye_coordination"],
     "name": "Treino de Mira - Troca de Alvos Valorant",
     "applicationCategory": "GameApplication",
     "operatingSystem": "Any (Web Browser)",

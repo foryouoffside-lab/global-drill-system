@@ -72,7 +72,7 @@ const breadcrumbSchema = {
 
 const softwareApplicationSchema = {
   '@context': 'https://schema.org',
-  '@type': 'SoftwareApplication',
+  '@type': 'SoftwareApplication', "sameAs": ["https://en.wikipedia.org/wiki/Balance_(ability)"],
   name: 'Stability Challenge – Online Balance & Resistance Trainer',
   applicationCategory: 'HealthApplication',
   operatingSystem: 'All',

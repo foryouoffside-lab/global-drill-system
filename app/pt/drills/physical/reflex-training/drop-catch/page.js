@@ -87,7 +87,7 @@ const breadcrumbSchema = {
 
 const softwareApplicationSchema = {
   "@context": "https://schema.org",
-  "@type": "SoftwareApplication",
+  "@type": "SoftwareApplication", "sameAs": ["https://en.wikipedia.org/wiki/Hand%E2%80%93eye_coordination", "https://en.wikipedia.org/wiki/Reaction_time"],
   "name": "Teste da Régua Digital e Treino de Reflexo Drop Catch",
   "applicationCategory": "HealthApplication",
   "operatingSystem": "All",

@@ -89,7 +89,7 @@ const breadcrumbSchema = {
 
 const softwareApplicationSchema = {
   "@context": "https://schema.org",
-  "@type": "SoftwareApplication",
+  "@type": "SoftwareApplication", "sameAs": ["https://en.wikipedia.org/wiki/Agility"],
   "name": "Koordinationsleiter-Training & Motorische Sequenzierung",
   "applicationCategory": "HealthApplication",
   "operatingSystem": "All",

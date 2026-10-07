@@ -54,7 +54,7 @@ const breadcrumbSchema = {
 
 const softwareApplicationSchema = {
   "@context": "https://schema.org",
-  "@type": "SoftwareApplication",
+  "@type": "SoftwareApplication", "sameAs": ["https://en.wikipedia.org/wiki/Time_perception"],
   "name": "시각 리듬 검사·깜빡임 구별 훈련",
   "applicationCategory": "HealthApplication",
   "operatingSystem": "All",

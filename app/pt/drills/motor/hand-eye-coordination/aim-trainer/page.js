@@ -51,7 +51,7 @@ const breadcrumbSchema = {
 
 const softwareApplicationSchema = {
   '@context': 'https://schema.org',
-  '@type': 'SoftwareApplication',
+  '@type': 'SoftwareApplication', "sameAs": ["https://en.wikipedia.org/wiki/Fitts%27s_law", "https://en.wikipedia.org/wiki/Hand%E2%80%93eye_coordination"],
   inLanguage: 'pt-BR',
   name: 'Treino de Mira Online – Aim Trainer Grátis FPS',
   alternateName: ['Treino de Mira', 'Aim Trainer', 'Teste de Mira', 'Aim Trainer Online'],

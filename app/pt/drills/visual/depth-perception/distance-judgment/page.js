@@ -63,7 +63,7 @@ const breadcrumbSchema = {
 
 const softwareApplicationSchema = {
   '@context': 'https://schema.org',
-  '@type': 'SoftwareApplication',
+  '@type': 'SoftwareApplication', "sameAs": ["https://en.wikipedia.org/wiki/Depth_perception"],
   name: 'Teste de Percepção de Profundidade e Noção de Distância',
   applicationCategory: 'HealthApplication',
   operatingSystem: 'All',

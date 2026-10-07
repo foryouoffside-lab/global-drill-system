@@ -56,7 +56,7 @@ export default function AntiStrafeJitterKoPage() {
 
   const softwareSchema = {
     "@context": "https://schema.org",
-    "@type": "SoftwareApplication",
+    "@type": "SoftwareApplication", "sameAs": ["https://en.wikipedia.org/wiki/Smooth_pursuit"],
     "name": "에임 연습 - 무빙 트래킹",
     "applicationCategory": "GameApplication",
     "operatingSystem": "Web Browser",

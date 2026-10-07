@@ -69,7 +69,7 @@ const breadcrumbSchema = {
 
 const softwareApplicationSchema = {
   "@context": "https://schema.org",
-  "@type": "SoftwareApplication",
+  "@type": "SoftwareApplication", "sameAs": ["https://en.wikipedia.org/wiki/Smooth_pursuit"],
   "name": "Exercice Oculaire en Huit – Poursuite Visuelle",
   "dateModified": "2026-09-20",
   "applicationCategory": "HealthApplication",

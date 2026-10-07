@@ -78,7 +78,7 @@ export default function AntiZigzagPage() {
 
   const softwareSchema = {
     "@context": "https://schema.org",
-    "@type": "SoftwareApplication",
+    "@type": "SoftwareApplication", "sameAs": ["https://en.wikipedia.org/wiki/Smooth_pursuit"],
     "name": "Anti-Zigzag Aim Trainer",
     "applicationCategory": "GameApplication",
     "operatingSystem": "Web Browser",

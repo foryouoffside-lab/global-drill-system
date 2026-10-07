@@ -50,7 +50,7 @@ const breadcrumbSchema = {
 
 const softwareApplicationSchema = {
   '@context': 'https://schema.org',
-  '@type': 'SoftwareApplication',
+  '@type': 'SoftwareApplication', "sameAs": ["https://en.wikipedia.org/wiki/Fitts%27s_law", "https://en.wikipedia.org/wiki/Hand%E2%80%93eye_coordination"],
   inLanguage: 'ko-KR',
   name: '에임 연습 사이트 – 무료 온라인 FPS 에임 트레이너',
   alternateName: ['에임연습', '에임 연습', '에임 연습 사이트', 'FPS 에임 트레이너', 'Aim Trainer Online'],

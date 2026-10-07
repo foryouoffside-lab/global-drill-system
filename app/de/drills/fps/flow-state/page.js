@@ -73,7 +73,7 @@ export default function GermanFlowStatePage() {
 
   const softwareSchema = {
     "@context": "https://schema.org",
-    "@type": "SoftwareApplication",
+    "@type": "SoftwareApplication", "sameAs": ["https://en.wikipedia.org/wiki/Flow_(psychology)"],
     "name": "FPS Fokus Training",
     "applicationCategory": "GameApplication",
     "operatingSystem": "Web Browser",

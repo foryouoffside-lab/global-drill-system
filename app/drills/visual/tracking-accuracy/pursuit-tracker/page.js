@@ -76,7 +76,7 @@ const breadcrumbSchema = {
 
 const softwareApplicationSchema = {
   "@context": "https://schema.org",
-  "@type": "SoftwareApplication",
+  "@type": "SoftwareApplication", "sameAs": ["https://en.wikipedia.org/wiki/Smooth_pursuit"],
   "name": "Smooth Pursuit Tracker – Free Visual Aim Training Game",
   "applicationCategory": "HealthApplication",
   "operatingSystem": "All",

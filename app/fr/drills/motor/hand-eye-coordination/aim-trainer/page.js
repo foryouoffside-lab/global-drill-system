@@ -77,7 +77,7 @@ const breadcrumbSchema = {
 
 const softwareApplicationSchema = {
   "@context": "https://schema.org",
-  "@type": "SoftwareApplication",
+  "@type": "SoftwareApplication", "sameAs": ["https://en.wikipedia.org/wiki/Fitts%27s_law", "https://en.wikipedia.org/wiki/Hand%E2%80%93eye_coordination"],
   "inLanguage": "fr-FR",
   "name": "Aim Trainer en Ligne",
   "url": "https://skilldrills.online/fr/drills/motor/hand-eye-coordination/aim-trainer",

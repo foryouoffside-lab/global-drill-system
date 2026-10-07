@@ -79,7 +79,7 @@ const breadcrumbSchema = {
 
 const softwareApplicationSchema = {
   "@context": "https://schema.org",
-  "@type": "SoftwareApplication",
+  "@type": "SoftwareApplication", "sameAs": ["https://en.wikipedia.org/wiki/Smooth_pursuit"],
   "name": "Moving Target Intercept Test",
   "applicationCategory": "HealthApplication",
   "operatingSystem": "Web Browser",

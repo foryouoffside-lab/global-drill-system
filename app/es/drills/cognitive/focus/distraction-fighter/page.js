@@ -52,7 +52,7 @@ export default function DistractionFighterPageES() {
 
   const softwareApplicationSchema = {
     "@context": "https://schema.org",
-    "@type": "SoftwareApplication",
+    "@type": "SoftwareApplication", "sameAs": ["https://en.wikipedia.org/wiki/Stroop_effect", "https://en.wikipedia.org/wiki/Inhibitory_control"],
     "name": "Test de Stroop Trainer",
     "dateModified": "2026-09-20",
     "applicationCategory": "HealthApplication",

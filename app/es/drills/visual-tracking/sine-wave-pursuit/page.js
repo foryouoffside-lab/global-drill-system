@@ -73,7 +73,7 @@ const breadcrumbSchema = {
 
 const softwareApplicationSchema = {
   "@context": "https://schema.org",
-  "@type": "SoftwareApplication",
+  "@type": "SoftwareApplication", "sameAs": ["https://en.wikipedia.org/wiki/Smooth_pursuit"],
   "dateModified": "2026-09-20",
   "name": "Entrenamiento Ocular Sinusoidal",
   "operatingSystem": "Navegador Web",

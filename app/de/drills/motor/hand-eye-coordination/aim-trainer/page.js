@@ -51,7 +51,7 @@ const breadcrumbSchema = {
 
 const softwareApplicationSchema = {
   '@context': 'https://schema.org',
-  '@type': 'SoftwareApplication',
+  '@type': 'SoftwareApplication', "sameAs": ["https://en.wikipedia.org/wiki/Fitts%27s_law", "https://en.wikipedia.org/wiki/Hand%E2%80%93eye_coordination"],
   inLanguage: 'de-DE',
   name: 'Aim Trainer Online – Kostenloser FPS Aim Test',
   alternateName: ['Aim Trainer', 'FPS Aim Trainer', 'Maus Präzisionstest', 'Aim Trainer Online'],

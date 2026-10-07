@@ -72,7 +72,7 @@ export default function FlowStateFrPage() {
 
   const softwareSchema = {
     "@context": "https://schema.org",
-    "@type": "SoftwareApplication",
+    "@type": "SoftwareApplication", "sameAs": ["https://en.wikipedia.org/wiki/Flow_(psychology)"],
     "name": "Concentration FPS",
     "applicationCategory": "GameApplication",
     "operatingSystem": "Web Browser",

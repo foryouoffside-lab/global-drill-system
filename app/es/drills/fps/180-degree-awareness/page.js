@@ -56,7 +56,7 @@ export default function AwarenessDrillEsPage() {
 
   const softwareSchema = {
     "@context": "https://schema.org",
-    "@type": "SoftwareApplication",
+    "@type": "SoftwareApplication", "sameAs": ["https://en.wikipedia.org/wiki/Hand%E2%80%93eye_coordination", "https://en.wikipedia.org/wiki/Reaction_time"],
     "name": "Entrenamiento de Giro 180°",
     "applicationCategory": "GameApplication",
     "operatingSystem": "Navegador Web",

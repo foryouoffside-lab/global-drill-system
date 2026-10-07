@@ -62,7 +62,7 @@ const breadcrumbSchema = {
 
 const softwareApplicationSchema = {
   '@context': 'https://schema.org',
-  '@type': 'SoftwareApplication',
+  '@type': 'SoftwareApplication', "sameAs": ["https://en.wikipedia.org/wiki/Saccade"],
   name: 'Treino de Visão Periférica Online',
   alternateName: ['Treino de visão', 'Treino de visão periférica', 'Treino de visão de jogo', 'Exercícios sacádicos'],
   applicationCategory: 'HealthApplication',

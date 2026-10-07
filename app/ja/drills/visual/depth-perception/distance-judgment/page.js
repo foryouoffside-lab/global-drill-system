@@ -75,7 +75,7 @@ export default function JapaneseDistanceJudgmentPage() {
 
   const softwareSchema = {
     "@context": "https://schema.org",
-    "@type": "SoftwareApplication",
+    "@type": "SoftwareApplication", "sameAs": ["https://en.wikipedia.org/wiki/Depth_perception"],
     "name": "深視力検査・三桿法トレーニング (Distance Judgment)",
     "applicationCategory": "HealthApplication",
     "operatingSystem": "Web Browser",

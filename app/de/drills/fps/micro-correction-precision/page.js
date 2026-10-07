@@ -74,7 +74,7 @@ export default function MicroCorrectionDePage() {
 
   const softwareSchema = {
     "@context": "https://schema.org",
-    "@type": "SoftwareApplication",
+    "@type": "SoftwareApplication", "sameAs": ["https://en.wikipedia.org/wiki/Fitts%27s_law", "https://en.wikipedia.org/wiki/Fine_motor_skill"],
     "name": "Aim Trainer - Mikrokorrektur & Headshots",
     "applicationCategory": "GameApplication",
     "operatingSystem": "Web Browser",

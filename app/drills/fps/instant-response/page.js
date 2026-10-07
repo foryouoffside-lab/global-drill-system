@@ -80,7 +80,7 @@ export default function InstantResponsePage() {
 
   const softwareSchema = {
     "@context": "https://schema.org",
-    "@type": "SoftwareApplication",
+    "@type": "SoftwareApplication", "sameAs": ["https://en.wikipedia.org/wiki/Reaction_time", "https://en.wikipedia.org/wiki/Mental_chronometry"],
     "name": "FPS Reaction Time Test",
     "applicationCategory": "GameApplication",
     "operatingSystem": "Web Browser",

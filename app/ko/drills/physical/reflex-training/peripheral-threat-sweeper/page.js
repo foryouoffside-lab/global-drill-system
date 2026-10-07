@@ -89,7 +89,7 @@ const breadcrumbSchema = {
 
 const softwareApplicationSchema = {
   "@context": "https://schema.org",
-  "@type": "SoftwareApplication",
+  "@type": "SoftwareApplication", "sameAs": ["https://en.wikipedia.org/wiki/Peripheral_vision"],
   "name": "주변 시야 테스트 및 위협 스위퍼 트레이너",
   "applicationCategory": "HealthApplication",
   "operatingSystem": "All",

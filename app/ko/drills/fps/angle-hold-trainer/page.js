@@ -58,7 +58,7 @@ export default function KoreanAngleHoldPage() {
 
   const softwareSchema = {
     "@context": "https://schema.org",
-    "@type": "SoftwareApplication",
+    "@type": "SoftwareApplication", "sameAs": ["https://en.wikipedia.org/wiki/Reaction_time", "https://en.wikipedia.org/wiki/Hand%E2%80%93eye_coordination"],
     "name": "에임 연습 - 대기 에임",
     "applicationCategory": "GameApplication",
     "operatingSystem": "Web Browser",

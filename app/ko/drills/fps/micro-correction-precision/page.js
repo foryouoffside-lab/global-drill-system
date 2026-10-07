@@ -56,7 +56,7 @@ export default function MicroCorrectionKoPage() {
 
   const softwareSchema = {
     "@context": "https://schema.org",
-    "@type": "SoftwareApplication",
+    "@type": "SoftwareApplication", "sameAs": ["https://en.wikipedia.org/wiki/Fitts%27s_law", "https://en.wikipedia.org/wiki/Fine_motor_skill"],
     "name": "에임 연습 - 마이크로 플릭 미세조정",
     "applicationCategory": "GameApplication",
     "operatingSystem": "Web Browser",

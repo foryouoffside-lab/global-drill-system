@@ -53,7 +53,7 @@ const breadcrumbSchema = {
 
 const softwareApplicationSchema = {
   "@context": "https://schema.org",
-  "@type": "SoftwareApplication",
+  "@type": "SoftwareApplication", "sameAs": ["https://en.wikipedia.org/wiki/Time_perception"],
   "name": "Flimmerfusion und zeitliche visuelle Diskrimination",
   "applicationCategory": "HealthApplication",
   "operatingSystem": "All",

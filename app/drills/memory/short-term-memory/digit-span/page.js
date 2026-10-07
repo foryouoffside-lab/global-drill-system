@@ -57,7 +57,7 @@ export default function DigitSpanPage() {
 
   const softwareSchema = {
     "@context": "https://schema.org",
-    "@type": "SoftwareApplication",
+    "@type": "SoftwareApplication", "sameAs": ["https://en.wikipedia.org/wiki/Memory_span", "https://en.wikipedia.org/wiki/Short-term_memory"],
     "name": "Digit Span Memory Test",
     "applicationCategory": "EducationalApplication",
     "operatingSystem": "Web Browser",

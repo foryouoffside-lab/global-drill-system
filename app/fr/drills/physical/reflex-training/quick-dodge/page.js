@@ -85,7 +85,7 @@ const breadcrumbSchema = {
 
 const softwareApplicationSchema = {
   "@context": "https://schema.org",
-  "@type": "SoftwareApplication",
+  "@type": "SoftwareApplication", "sameAs": ["https://en.wikipedia.org/wiki/Reaction_time"],
   "name": "Jeu d'Esquive Souris & Test de Réflexes d'Évasion",
   "applicationCategory": "GameApplication",
   "operatingSystem": "Any",

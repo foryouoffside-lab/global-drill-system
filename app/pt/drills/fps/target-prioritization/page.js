@@ -56,7 +56,7 @@ export default function TargetPrioritizationPtPage() {
 
   const softwareSchema = {
     "@context": "https://schema.org",
-    "@type": "SoftwareApplication",
+    "@type": "SoftwareApplication", "sameAs": ["https://en.wikipedia.org/wiki/Visual_search", "https://en.wikipedia.org/wiki/Reaction_time"],
     "name": "Treino de mira - seleção de alvos",
     "applicationCategory": "GameApplication",
     "operatingSystem": "Web Browser",

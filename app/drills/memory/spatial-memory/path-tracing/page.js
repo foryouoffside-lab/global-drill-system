@@ -60,7 +60,7 @@ export default function PathTracingPage() {
 
   const softwareSchema = {
     "@context": "https://schema.org",
-    "@type": "SoftwareApplication",
+    "@type": "SoftwareApplication", "sameAs": ["https://en.wikipedia.org/wiki/Spatial_memory"],
     "name": "Path Tracing Memory Test",
     "applicationCategory": "EducationalApplication",
     "operatingSystem": "Any",

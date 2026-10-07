@@ -80,7 +80,7 @@ const breadcrumbSchema = {
 
 const softwareApplicationSchema = {
   "@context": "https://schema.org",
-  "@type": "SoftwareApplication",
+  "@type": "SoftwareApplication", "sameAs": ["https://en.wikipedia.org/wiki/Multiple_object_tracking"],
   "name": "SkillDrills 다중 객체 추적·주변시 훈련",
   "applicationCategory": "HealthApplication",
   "operatingSystem": "Any",

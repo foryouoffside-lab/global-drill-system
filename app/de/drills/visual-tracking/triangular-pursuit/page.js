@@ -74,7 +74,7 @@ const breadcrumbSchema = {
 
 const softwareApplicationSchema = {
   "@context": "https://schema.org",
-  "@type": "SoftwareApplication",
+  "@type": "SoftwareApplication", "sameAs": ["https://en.wikipedia.org/wiki/Smooth_pursuit", "https://en.wikipedia.org/wiki/Saccade"],
   "name": "Dreieckige Blickverfolgung – Polygon-Augentraining",
   "applicationCategory": "HealthApplication",
   "operatingSystem": "All",

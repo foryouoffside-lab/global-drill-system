@@ -73,7 +73,7 @@ const breadcrumbSchema = {
 
 const softwareApplicationSchema = {
   '@context': 'https://schema.org',
-  '@type': 'SoftwareApplication',
+  '@type': 'SoftwareApplication', "sameAs": ["https://en.wikipedia.org/wiki/Fine_motor_skill"],
   name: 'Teste de CPS – Treinador de Velocidade de Clique e Cliques Por Segundo',
   alternateName: ['Teste de CPS', 'CPS Test', 'Teste de Click', 'Teste de Velocidade de Clique'],
   applicationCategory: 'HealthApplication',

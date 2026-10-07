@@ -53,7 +53,7 @@ const breadcrumbSchema = {
 
 const softwareApplicationSchema = {
   '@context': 'https://schema.org',
-  '@type': 'SoftwareApplication',
+  '@type': 'SoftwareApplication', "sameAs": ["https://en.wikipedia.org/wiki/Fine_motor_skill"],
   inLanguage: 'de-DE',
   name: 'Heißer Draht – Maus-Präzision & Feinmotorik-Test',
   applicationCategory: 'HealthApplication',

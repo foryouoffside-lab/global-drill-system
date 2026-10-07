@@ -89,7 +89,7 @@ const breadcrumbSchema = {
 
 const softwareApplicationSchema = {
   "@context": "https://schema.org",
-  "@type": "SoftwareApplication",
+  "@type": "SoftwareApplication", "sameAs": ["https://en.wikipedia.org/wiki/Peripheral_vision"],
   "name": "Simulador de Visión Periférica y Ampliación de Campo Visual (UFOV)",
   "applicationCategory": "HealthApplication",
   "operatingSystem": "All",

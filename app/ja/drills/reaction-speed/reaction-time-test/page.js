@@ -67,7 +67,7 @@ const breadcrumbSchema = {
 
 const softwareApplicationSchema = {
   '@context': 'https://schema.org',
-  '@type': 'SoftwareApplication',
+  '@type': 'SoftwareApplication', "sameAs": ["https://en.wikipedia.org/wiki/Mental_chronometry", "https://en.wikipedia.org/wiki/Reaction_time"],
   name: '反射神経テスト・反応速度テスト – 無料ミリ秒(ms)測定＆診断ツール',
   alternateName: ['反射神経テスト', '反応速度テスト', '視覚反射測定器', 'FPS反応速度チェッカー'],
   applicationCategory: 'HealthApplication',

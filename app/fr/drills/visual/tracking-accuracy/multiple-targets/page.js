@@ -169,7 +169,7 @@ const breadcrumbSchema = {
 
 const softwareApplicationSchema = {
   "@context": "https://schema.org",
-  "@type": "SoftwareApplication",
+  "@type": "SoftwareApplication", "sameAs": ["https://en.wikipedia.org/wiki/Multiple_object_tracking"],
   "name": "Test de Poursuite d'Objets Multiples (MOT)",
   "operatingSystem": "Web Browser",
   "applicationCategory": "HealthApplication",

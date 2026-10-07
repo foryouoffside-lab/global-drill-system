@@ -60,7 +60,7 @@ export default function GridMemorizationPage() {
 
   const softwareSchema = {
     "@context": "https://schema.org",
-    "@type": "SoftwareApplication",
+    "@type": "SoftwareApplication", "sameAs": ["https://en.wikipedia.org/wiki/Spatial_memory", "https://en.wikipedia.org/wiki/Short-term_memory"],
     "name": "Visual Memory Test (Grid Memorization)",
     "applicationCategory": "EducationalApplication",
     "operatingSystem": "Any",

@@ -69,7 +69,7 @@ const breadcrumbSchema = {
 
 const softwareApplicationSchema = {
   "@context": "https://schema.org",
-  "@type": "SoftwareApplication",
+  "@type": "SoftwareApplication", "sameAs": ["https://en.wikipedia.org/wiki/Divided_attention", "https://en.wikipedia.org/wiki/Smooth_pursuit"],
   "name": "Split-Screen Augentraining – Geteilte Aufmerksamkeit",
   "applicationCategory": "HealthApplication",
   "operatingSystem": "All",

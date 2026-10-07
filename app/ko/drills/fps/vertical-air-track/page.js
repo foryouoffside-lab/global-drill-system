@@ -73,7 +73,7 @@ export default function VerticalAirTrackPageKo() {
 
   const softwareSchema = {
     "@context": "https://schema.org",
-    "@type": "SoftwareApplication",
+    "@type": "SoftwareApplication", "sameAs": ["https://en.wikipedia.org/wiki/Smooth_pursuit", "https://en.wikipedia.org/wiki/Hand%E2%80%93eye_coordination"],
     "name": "수직 에임 연습 - 공중 트래킹",
     "applicationCategory": "GameApplication",
     "operatingSystem": "Web Browser",

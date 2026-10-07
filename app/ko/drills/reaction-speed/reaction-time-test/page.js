@@ -70,7 +70,7 @@ const breadcrumbSchema = {
 
 const softwareApplicationSchema = {
   '@context': 'https://schema.org',
-  '@type': 'SoftwareApplication',
+  '@type': 'SoftwareApplication', "sameAs": ["https://en.wikipedia.org/wiki/Mental_chronometry", "https://en.wikipedia.org/wiki/Reaction_time"],
   name: '반응속도 테스트 – 밀리초(ms) 시각 반응속도 측정기',
   alternateName: ['반응속도 테스트', '반속테스트', '반사신경 측정기', 'FPS 반응속도 측정'],
   applicationCategory: 'HealthApplication',

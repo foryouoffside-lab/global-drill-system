@@ -56,7 +56,7 @@ export default function FlowStateKoPage() {
 
   const softwareSchema = {
     "@context": "https://schema.org",
-    "@type": "SoftwareApplication",
+    "@type": "SoftwareApplication", "sameAs": ["https://en.wikipedia.org/wiki/Flow_(psychology)"],
     "name": "FPS 집중력 훈련",
     "applicationCategory": "GameApplication",
     "operatingSystem": "Web Browser",

@@ -86,7 +86,7 @@ const breadcrumbSchema = {
 
 const softwareApplicationSchema = {
   "@context": "https://schema.org",
-  "@type": "SoftwareApplication",
+  "@type": "SoftwareApplication", "sameAs": ["https://en.wikipedia.org/wiki/Reaction_time", "https://en.wikipedia.org/wiki/Mental_chronometry"],
   "name": "마우스 에임 브레이킹 & 충동 억제 반사 훈련 (Reaction Chain)",
   "applicationCategory": "HealthApplication",
   "operatingSystem": "All",

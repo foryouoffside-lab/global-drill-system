@@ -64,7 +64,7 @@ const breadcrumbSchema = {
 
 const softwareApplicationSchema = {
   '@context': 'https://schema.org',
-  '@type': 'SoftwareApplication',
+  '@type': 'SoftwareApplication', "sameAs": ["https://en.wikipedia.org/wiki/Stroop_effect", "https://en.wikipedia.org/wiki/Inhibitory_control"],
   name: 'ストループテスト – 無料オンライン認知干渉・抑制機能テスト',
   alternateName: ['ストループテスト', 'ストループ効果テスト', 'Stroop Test Online Japan'],
   applicationCategory: 'HealthApplication',

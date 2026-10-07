@@ -90,7 +90,7 @@ const breadcrumbSchema = {
 
 const softwareApplicationSchema = {
   "@context": "https://schema.org",
-  "@type": "SoftwareApplication",
+  "@type": "SoftwareApplication", "sameAs": ["https://en.wikipedia.org/wiki/Agility"],
   "name": "스텝레더 훈련 & 민첩성 사다리운동 드릴",
   "applicationCategory": "HealthApplication",
   "operatingSystem": "All",

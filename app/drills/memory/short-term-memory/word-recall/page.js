@@ -57,7 +57,7 @@ export default function WordRecallPage() {
 
   const softwareSchema = {
     "@context": "https://schema.org",
-    "@type": "SoftwareApplication",
+    "@type": "SoftwareApplication", "sameAs": ["https://en.wikipedia.org/wiki/Free_recall", "https://en.wikipedia.org/wiki/Short-term_memory"],
     "name": "Verbal Memory Test",
     "applicationCategory": "EducationalApplication",
     "operatingSystem": "Web Browser",

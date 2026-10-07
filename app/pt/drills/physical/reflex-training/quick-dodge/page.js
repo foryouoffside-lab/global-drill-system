@@ -89,7 +89,7 @@ const breadcrumbSchema = {
 
 const softwareApplicationSchema = {
   "@context": "https://schema.org",
-  "@type": "SoftwareApplication",
+  "@type": "SoftwareApplication", "sameAs": ["https://en.wikipedia.org/wiki/Reaction_time"],
   "name": "Jogo de Desviar o Mouse e Treinador de Esquiva Kinetica",
   "applicationCategory": "HealthApplication",
   "operatingSystem": "All",

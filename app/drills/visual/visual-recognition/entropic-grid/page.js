@@ -76,7 +76,7 @@ const breadcrumbSchema = {
 
 const softwareApplicationSchema = {
   "@context": "https://schema.org",
-  "@type": "SoftwareApplication",
+  "@type": "SoftwareApplication", "sameAs": ["https://en.wikipedia.org/wiki/Visual_search", "https://en.wikipedia.org/wiki/Feature_integration_theory"],
   "name": "Entropic Grid Visual Search – Free Concentration Grid Test",
   "applicationCategory": "HealthApplication",
   "operatingSystem": "All",

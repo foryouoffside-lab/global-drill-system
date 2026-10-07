@@ -72,7 +72,7 @@ export default function ProSmoothPursuitJaPage() {
 
   const softwareSchema = {
     "@context": "https://schema.org",
-    "@type": "SoftwareApplication",
+    "@type": "SoftwareApplication", "sameAs": ["https://en.wikipedia.org/wiki/Smooth_pursuit"],
     "name": "エイム練習 - FPSトラッキング",
     "applicationCategory": "GameApplication",
     "operatingSystem": "Web Browser",

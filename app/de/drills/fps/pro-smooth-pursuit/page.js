@@ -73,7 +73,7 @@ export default function GermanProSmoothPursuitPage() {
 
   const softwareSchema = {
     "@context": "https://schema.org",
-    "@type": "SoftwareApplication",
+    "@type": "SoftwareApplication", "sameAs": ["https://en.wikipedia.org/wiki/Smooth_pursuit"],
     "name": "Aim Trainer - Smooth-Tracking",
     "applicationCategory": "GameApplication",
     "operatingSystem": "Web Browser",

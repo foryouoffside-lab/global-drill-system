@@ -74,7 +74,7 @@ export default function FlickShotPtPage() {
 
   const softwareSchema = {
     "@context": "https://schema.org",
-    "@type": "SoftwareApplication",
+    "@type": "SoftwareApplication", "sameAs": ["https://en.wikipedia.org/wiki/Fitts%27s_law", "https://en.wikipedia.org/wiki/Hand%E2%80%93eye_coordination"],
     "name": "Treino de Mira e Flick SkillDrills",
     "applicationCategory": "GameApplication",
     "operatingSystem": "Web Browser",

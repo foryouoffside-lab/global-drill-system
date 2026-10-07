@@ -72,7 +72,7 @@ export default function AntiStrafeJitterFrPage() {
 
   const softwareSchema = {
     "@context": "https://schema.org",
-    "@type": "SoftwareApplication",
+    "@type": "SoftwareApplication", "sameAs": ["https://en.wikipedia.org/wiki/Smooth_pursuit"],
     "name": "Aim Trainer - tracking réactif",
     "applicationCategory": "GameApplication",
     "operatingSystem": "Web Browser",

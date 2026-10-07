@@ -60,7 +60,7 @@ export default function NBackPage() {
 
   const softwareSchema = {
     "@context": "https://schema.org",
-    "@type": "SoftwareApplication",
+    "@type": "SoftwareApplication", "sameAs": ["https://en.wikipedia.org/wiki/N-back", "https://en.wikipedia.org/wiki/Working_memory"],
     "name": "N-Back Working Memory Test",
     "applicationCategory": "EducationalApplication",
     "operatingSystem": "Any",

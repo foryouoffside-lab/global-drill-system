@@ -75,7 +75,7 @@ export default function JapaneseAngleHoldPage() {
 
   const softwareSchema = {
     "@context": "https://schema.org",
-    "@type": "SoftwareApplication",
+    "@type": "SoftwareApplication", "sameAs": ["https://en.wikipedia.org/wiki/Reaction_time", "https://en.wikipedia.org/wiki/Hand%E2%80%93eye_coordination"],
     "name": "エイム練習 - 置きエイム",
     "applicationCategory": "GameApplication",
     "operatingSystem": "Web Browser",
