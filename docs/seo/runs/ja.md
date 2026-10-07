@@ -45,3 +45,4 @@
 | C:/Program Files/Git/ja/drills/visual-tracking/sine-wave-pursuit | done | PENDING | docs/seo/research/ja/sine-wave-pursuit.md | direct answer; demand unverified |
 | C:/Program Files/Git/ja/drills/visual-tracking/spatial-shift-pursuit | done | PENDING | docs/seo/research/ja/spatial-shift-pursuit.md | direct answer; demand unverified |
 | C:/Program Files/Git/ja/drills/visual/depth-perception/distance-judgment | done | PENDING | docs/seo/research/ja/distance-judgment.md | English removed; promise and privacy claims corrected; Suggest-backed 練習 intent |
+| C:/Program Files/Git/ja/drills/visual-tracking/constant-slow-pursuit | done | PENDING | docs/seo/research/ja/constant-slow-pursuit.md | audit pass, no source change; overlaps saccadic-gallery title |
