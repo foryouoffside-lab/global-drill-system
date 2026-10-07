@@ -6,7 +6,7 @@ import { pickSources } from '@/lib/drillSources';
 
 export const metadata = {
   title: "Predictive Eye Tracking Drill – Pursuit | SkillDrills",
-  description: "Condition predictive smooth pursuit across occluded trajectories. Train ocular working memory and feedforward motor control online. Free, no sign-up.",
+  description: "Free browser drill: follow a target along its path, estimate where it will reappear when it is hidden, and check your guess. No sign-up.",
   keywords: [
     "predictive eye tracking drill",
     "predictive pursuit",
@@ -28,7 +28,7 @@ export const metadata = {
   robots: { index: true, follow: true },
   openGraph: {
     title: "Predictive Eye Tracking Drill – Pursuit | SkillDrills",
-    description: "Condition predictive smooth pursuit across occluded trajectories. Train ocular working memory and feedforward motor control online. Free, no sign-up.",
+    description: "Free browser drill: follow a target along its path, estimate where it will reappear when it is hidden, and check your guess. No sign-up.",
     url: "https://skilldrills.online/drills/visual-tracking/predictive-pursuit",
     siteName: 'SkillDrills',
     locale: 'en_US',
@@ -37,7 +37,7 @@ export const metadata = {
   twitter: {
     card: 'summary_large_image',
     title: "Predictive Eye Tracking Drill – Pursuit | SkillDrills",
-    description: "Condition predictive smooth pursuit across occluded trajectories. Train ocular working memory and feedforward motor control online. Free, no sign-up.",
+    description: "Free browser drill: follow a target along its path, estimate where it will reappear when it is hidden, and check your guess. No sign-up.",
   },
 };
 
@@ -223,6 +223,7 @@ const faqSchema = {
 const guide = {
   heading: "Predictive Pursuit - Ocular Motor Training Standards",
   intro: [
+    "Predictive Pursuit is a free browser drill that practises anticipating motion. You follow a target along its path, and part of the time it is hidden, so you estimate where it will reappear and compare your guess with what happens. Pick a speed and duration, press start, and track the target.",
     "The human visual system faces a fundamental physiological barrier: sensorimotor processing latency requires approximately 130 to 150 milliseconds for retinal photoreceptor activations to navigate cortical pathways and trigger extraocular muscle contractions. Were visual tracking governed purely by closed-loop feedback, the fovea would suffer constant retinal slip, perpetually lagging behind moving targets. The evolutionary solution to this latency trap is predictive smooth pursuit.",
     "Pioneering research by David Robinson (1965) and Barnes (2008) established that the cerebellum, operating in tight synchrony with frontal eye fields (FEF), extracts velocity and directional vectors during the initial 100 to 200 ms of target flight. Based on these vectors, the brain constructs an internal forward model whose feedforward motor pulses drive extraocular muscles at the exact anticipated target speed, completely eliminating biological transit delay.",
     "In competitive sports and esports, targets frequently suffer visual occlusion behind physical obstacles, terrain, or smokescreens. Research by Bennett & Barnes (2003) demonstrated that frontal working memory stores velocity vectors and sustains oculomotor pursuit autonomously for up to two seconds during total sensory dropout. Predictive Pursuit isolates and conditions this vital feedforward capacity."
@@ -231,7 +232,7 @@ const guide = {
     title: "Trajectory Extrapolation & Occlusion Precision Benchmarks",
     headers: ["Performance Tier", "Extrapolation Accuracy (%)", "Emergence Landing Error", "Occlusion Pursuit Gain", "Predictive Profile"],
     rows: [
-      ["Elite (Esports / Pro Athletes)", "> 94%", "< 15 px (Pinpoint Emergence)", "0.95 – 1.02", "Flawless cerebellar forward model; zero latency lead positioning without corrective glissades."],
+      ["Elite (Esports / Pro Athletes)", "> 94%", "< 15 px (Pinpoint Emergence)", "0.95 – 1.02", "Flawless cerebellar forward model; lead positioning without corrective glissades."],
       ["Advanced (Competitive Rank)", "86% – 93%", "15 – 28 px", "0.88 – 0.94", "Excellent vector extrapolation; minimal post-emergence micro-saccadic adjustment."],
       ["Competent (Healthy Adult)", "76% – 85%", "29 – 45 px", "0.78 – 0.87", "Solid predictive baseline; mild trajectory drift during extended occlusion durations."],
       ["Developing (Elevated Lag)", "62% – 75%", "46 – 65 px", "0.65 – 0.77", "Predominantly reactive gaze control; noticeable deceleration during occlusion."],
