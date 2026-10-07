@@ -21,3 +21,4 @@
 | /drills/reaction-speed/barrier-sequence-pursuit | done | b63d0c6a | docs/seo/research/en/barrier-sequence-pursuit.md | research only; copy already clean |
 | /drills/reaction-speed/fps-tracking-trainer | done | 1d71facf | docs/seo/research/en/fps-tracking-trainer.md | research only |
 | /drills/reaction-speed/market-doors-pursuit | done | 2dc901c0 | docs/seo/research/en/market-doors-pursuit.md | demand not verified; no change |
+| /drills/reaction-speed/reaction-game | done | e878528f | docs/seo/research/en/reaction-game.md | shared-file edit: en title line only |

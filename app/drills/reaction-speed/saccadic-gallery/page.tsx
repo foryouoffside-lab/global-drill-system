@@ -178,7 +178,7 @@ const faqSchema = {
       "name": "How does monitor refresh rate affect saccade measurement?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "A 144Hz or 240Hz monitor displays targets with under 4–7 ms of frame latency (Woods et al., 2015), allowing the ocular motor system to perceive target emergence earlier."
+        "text": "A higher-refresh monitor (144Hz or 240Hz) redraws the screen more often than a 60Hz one, so targets can appear a few milliseconds sooner. Display timing limits what a browser test can resolve (Woods et al., 2015), so compare your own runs on one setup."
       }
     },
     {
@@ -186,7 +186,7 @@ const faqSchema = {
       "name": "Can saccadic training improve reading and cognitive focus?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Yes, efficient saccadic control ensures smooth line-to-line eye transitions and reduces fixation regressions during high-speed text processing and tactical reading."
+        "text": "This site has no study showing that this drill improves reading or focus. Saccades are the eye jumps used in reading, so the drill practises a related skill, but treat it as eye-movement practice, not a proven reading or focus treatment."
       }
     },
     {
@@ -259,10 +259,10 @@ const guideProps = {
     title: 'Standardized Performance Benchmarks',
     headers: ['Tier', 'Rank', 'Rating', 'Accuracy', 'Percentile'],
     rows: [
-      { tier: 'Tier 1', rank: 'Grandmaster / Pro', stat: 'Top 1%', level: 'Elite', accuracy: '98%+', percentile: 'Top 1%' },
-      { tier: 'Tier 2', rank: 'Master', stat: 'Top 5%', level: 'Diamond', accuracy: '94-97%', percentile: 'Top 5%' },
-      { tier: 'Tier 3', rank: 'Pro', stat: 'Top 15%', level: 'Platinum', accuracy: '88-93%', percentile: 'Top 15%' },
-      { tier: 'Tier 4', rank: 'Intermediate', stat: 'Top 50%', level: 'Gold', accuracy: '78-87%', percentile: 'Top 50%' },
+      { tier: 'Tier 1', rank: 'Grandmaster / Pro', stat: 'Highest tier', level: 'Elite', accuracy: '98%+', percentile: 'Highest tier' },
+      { tier: 'Tier 2', rank: 'Master', stat: 'Upper tier', level: 'Diamond', accuracy: '94-97%', percentile: 'Upper tier' },
+      { tier: 'Tier 3', rank: 'Pro', stat: 'Above-average tier', level: 'Platinum', accuracy: '88-93%', percentile: 'Above-average tier' },
+      { tier: 'Tier 4', rank: 'Intermediate', stat: 'Mid tier', level: 'Gold', accuracy: '78-87%', percentile: 'Mid tier' },
       { tier: 'Tier 5', rank: 'Novice', stat: 'Base', level: 'Silver', accuracy: '<78%', percentile: 'Novice' },
     ],
   },
