@@ -262,7 +262,7 @@ const howToSchema = {
 const guideProps = {
   sources: pickSources('woodworth1899', 'fitts1954', 'woods2015'),
   intro: {
-    title: 'Estabilidad del Ratón – Test de Puntería | SkillDrills',
+    title: 'Cómo se mide la estabilidad del cursor',
     paragraphs: [
       "La estabilidad del cursor del ratón bajo fuerzas dinámicas imprevistas es un reflejo fidedigno de la capacidad del sistema sensoriomotor para integrar información propioceptiva y correcciones visuales continuas. A diferencia de un movimiento de flick puramente balístico, la estabilización exige una regulación isométrica constante entre los grupos musculares agonistas y antagonistas del antebrazo y la mano. Este ejercicio evalúa cómo el córtex motor primario y el cerebelo modulan micropresiones de resistencia ante vectores de perturbación no anticipados (Nashner & McCollum, 1985).",
       "Siguiendo el modelo clásico de dos fases de Robert S. Woodworth (1899), cualquier movimiento manual guiado se compone de un impulso inicial abierto y una fase posterior de control continuo basada en retroalimentación visual de circuito cerrado (Current Control Phase). En este ejercicio de estabilidad, el usuario permanece constantemente en esta segunda fase: la simulación de viento recrea el arrastre ascendente y lateral del retroceso de las armas, obligando a los ojos a detectar la desviación respecto al centro y a emitir microcorrecciones continuas.",
@@ -283,29 +283,29 @@ const guideProps = {
     note: "La clasificación final evalúa el tiempo de permanencia en el anillo, roturas de trayectoria, fuerza de viento contrarrestada y puntuación total.",
   },
   protocols: {
-    title: 'Estabilidad del Ratón – Test de Puntería | SkillDrills',
-    description: 'Test de estabilidad del ratón gratis. Contrarresta fuerzas dinámicas para centrar la retícula, eliminar temblores y controlar el retroceso en shooters.',
+    title: 'Cómo entrenar la estabilidad del ratón',
+    description: 'Cuatro hábitos para mantener la retícula en el anillo cuando el viento empuja el cursor y el anillo se estrecha.',
     items: [
       {
-        title: 'Estabilidad del Ratón – Test de Puntería | SkillDrills',
-        description: 'Test de estabilidad del ratón gratis. Contrarresta fuerzas dinámicas para centrar la retícula, eliminar temblores y controlar el retroceso en shooters.'
+        title: 'Contrapresión suave',
+        description: 'Responde a cada empujón con una corrección pequeña y proporcional. Agarrar el ratón con fuerza añade temblor en lugar de quitarlo.'
       },
       {
-        title: 'Estabilidad del Ratón – Test de Puntería | SkillDrills',
-        description: 'Test de estabilidad del ratón gratis. Contrarresta fuerzas dinámicas para centrar la retícula, eliminar temblores y controlar el retroceso en shooters.'
+        title: 'Mirada en el centro del anillo',
+        description: 'Fija la vista en el centro y no en el cursor. Así detectas antes hacia dónde te empuja el viento y corriges con menos movimiento.'
       },
       {
-        title: 'Estabilidad del Ratón – Test de Puntería | SkillDrills',
-        description: 'Test de estabilidad del ratón gratis. Contrarresta fuerzas dinámicas para centrar la retícula, eliminar temblores y controlar el retroceso en shooters.'
+        title: 'Antebrazo relajado',
+        description: 'Apoya el antebrazo y mueve el ratón desde la muñeca y los dedos. Un brazo tenso reacciona más tarde y se pasa de largo.'
       },
       {
-        title: 'Estabilidad del Ratón – Test de Puntería | SkillDrills',
-        description: 'Test de estabilidad del ratón gratis. Contrarresta fuerzas dinámicas para centrar la retícula, eliminar temblores y controlar el retroceso en shooters.'
+        title: 'Anillo de 20 px en niveles altos',
+        description: 'Cuando el anillo se estrecha y la fuerza sube, reduce la amplitud de cada corrección y mantén un ritmo constante en vez de saltar de un lado a otro.'
       }
     ]
   },
   faqs: {
-    title: 'Estabilidad del Ratón – Test de Puntería | SkillDrills',
+    title: 'Preguntas frecuentes sobre la estabilidad del ratón',
     items: faqSchema.mainEntity.map(q => ({
       q: q.name,
       a: q.acceptedAnswer.text
@@ -357,19 +357,19 @@ export default function StabilityChallengeEsPage() {
           },
           rulesTitle: "Instrucciones del Ejercicio y Sistema de Puntuación",
           rulesItems: [
-            { title: 'Estabilidad del Ratón – Test de Puntería | SkillDrills', text: "Mantén la retícula en el centro del anillo de seguridad contra los vectores dinámicos del viento." },
-            { title: 'Estabilidad del Ratón – Test de Puntería | SkillDrills', text: "Mantén una estabilización ininterrumpida para acumular un multiplicador de combo de hasta 3.0x." },
-            { title: 'Estabilidad del Ratón – Test de Puntería | SkillDrills', text: "Cada 250 puntos subes de nivel. El anillo se contrae de 45px a 20px y las fuerzas se aceleran." },
-            { title: 'Estabilidad del Ratón – Test de Puntería | SkillDrills', text: "Salirte del anillo reinicia el combo a 1.0x instantáneamente, sin restar puntos ni tiempo." }
+            { title: 'Centro del anillo', text: "Mantén la retícula en el centro del anillo de seguridad contra los vectores dinámicos del viento." },
+            { title: 'Combo de estabilidad', text: "Mantén una estabilización ininterrumpida para acumular un multiplicador de combo de hasta 3.0x." },
+            { title: 'Subida de nivel', text: "Cada 250 puntos subes de nivel. El anillo se contrae de 45px a 20px y las fuerzas se aceleran." },
+            { title: 'Salir del anillo', text: "Salirte del anillo reinicia el combo a 1.0x instantáneamente, sin restar puntos ni tiempo." }
           ],
           aboutTitle: "Sobre el Desafío de Estabilidad",
           aboutHeading: "Compensación Dinámica de Fuerzas y Equilibrio Postural",
           aboutIntro: "El Desafío de Estabilidad es un ejercicio biomecánico de precisión motora fina y control postural. Vectores de viento empujan continuamente el cursor, requiriendo contrapresión suave y precisa.",
           aboutScience: "Fundamentado en los modelos de sinergia postural de Nashner & McCollum (1985) y en los principios de equilibrio de David A. Winter (1995), el ejercicio entrena correcciones visuales continuas en circuito cerrado (Woodworth, 1899). Conforme sube el puntaje, el anillo se reduce a 20px y la fuerza asciende a 850 unidades.",
           aboutCards: [
-            { title: 'Estabilidad del Ratón – Test de Puntería | SkillDrills', text: "Jugadores de shooters tácticos que buscan erradicar temblores involuntarios y dominar el control de retroceso en juegos como Valorant, CS2 y Apex Legends." },
-            { title: 'Estabilidad del Ratón – Test de Puntería | SkillDrills', text: "Compensación de vectores de fuerza, equilibrio postural, seguimiento de resistencia, estabilización de retícula y precisión en microajustes." },
-            { title: 'Estabilidad del Ratón – Test de Puntería | SkillDrills', text: "La contrapresión ininterrumpida requerida contra el empuje del viento simula de manera exacta el control fluido necesario para retener el alza de retroceso en fusiles." }
+            { title: 'Para quién es', text: "Jugadores de shooters tácticos que buscan erradicar temblores involuntarios y dominar el control de retroceso en juegos como Valorant, CS2 y Apex Legends." },
+            { title: 'Qué entrena', text: "Compensación de vectores de fuerza, equilibrio postural, seguimiento de resistencia, estabilización de retícula y precisión en microajustes." },
+            { title: 'Por qué funciona', text: "La contrapresión ininterrumpida requerida contra el empuje del viento simula de manera exacta el control fluido necesario para retener el alza de retroceso en fusiles." }
           ]
         }}
       />
