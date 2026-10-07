@@ -17,7 +17,7 @@ import { pickSources } from '@/lib/drillSources';
 export const metadata = {
   title: 'Reaktionstest online: Reaktionszeit in ms | SkillDrills',
   description:
-    'Kostenloser Reaktionstest für die visuelle Reaktionszeit: Miss deine Zeit in Millisekunden, werte mehrere Versuche aus und vergleiche deine Konstanz im Browser.',
+    'Kostenloser Reaktionstest im Browser: Miss deine visuelle Reaktionszeit in Millisekunden, werte mehrere Versuche aus und prüfe deine Konstanz.',
   keywords: [
     'reaktionstest',
     'reaktionszeit test',
