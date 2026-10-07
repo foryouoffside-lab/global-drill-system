@@ -23,3 +23,4 @@
 | /drills/reaction-speed/market-doors-pursuit | done | 2dc901c0 | docs/seo/research/en/market-doors-pursuit.md | demand not verified; no change |
 | /drills/reaction-speed/reaction-game | done | e878528f | docs/seo/research/en/reaction-game.md | shared-file edit: en title line only |
 | /drills/reaction-speed/saccadic-gallery | done | de797a3b | docs/seo/research/en/saccadic-gallery.md | claims hedged; percentile labels removed |
+| /drills/reaction-speed/visual-tracking-speed-test | done | 3bb93136 | docs/seo/research/en/visual-tracking-speed-test.md | shared-file edit: en title line only |
