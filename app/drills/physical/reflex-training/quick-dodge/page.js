@@ -37,7 +37,7 @@ import { pickSources } from '@/lib/drillSources';
 // ============================================================
 
 export const metadata = {
-  title: 'Cursor Dodge Game | Free Reflex Test',
+  title: 'Cursor Dodge Game | Free Reflex Test | SkillDrills',
   description:
     'Free cursor dodge game in your browser. Move through homing obstacles, survive longer, and train mouse control and evasive reactions.',
   keywords: [
@@ -58,7 +58,7 @@ export const metadata = {
   },
   robots: { index: true, follow: true },
   openGraph: {
-    title: 'Cursor Dodge Game | Free Reflex Test',
+    title: 'Cursor Dodge Game | Free Reflex Test | SkillDrills',
     description:
       'Move your cursor around homing obstacles, survive longer, and train evasive mouse control in a free browser game.',
     url: 'https://skilldrills.online/drills/physical/reflex-training/quick-dodge',
@@ -76,7 +76,7 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Cursor Dodge Game | Free Reflex Test',
+    title: 'Cursor Dodge Game | Free Reflex Test | SkillDrills',
     description:
       'Dodge homing obstacles with your cursor and train evasive mouse control in a free browser reflex game.',
     images: ['https://skilldrills.online/icons/icon-512x512.png'],
@@ -165,10 +165,10 @@ const faqSchema = {
     },
     {
       '@type': 'Question',
-      name: 'Does cursor evasion training translate to FPS gaming performance?',
+      name: 'Does cursor dodging help FPS gaming performance?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Yes. Evasion drills train spatial awareness, micro-repositioning under stress, and peripheral threat identification, which directly enhance counter-strafing, dodging grenade utility, and tracking opponents in games like Valorant, CS2, and Apex Legends.',
+        text: 'It may help as practice. The drill rehearses small mouse corrections and spotting threats under pressure, but this site has no study showing a transfer to counter-strafing, utility dodging or tracking in any specific game.',
       },
     },
     {
@@ -286,10 +286,10 @@ const guideProps = {
     title: 'Quick Dodge & Kinetic Evasion Benchmarks',
     headers: ['Tier', 'Rank Title', 'Score Benchmark', 'Accuracy & Velocity', 'Grade', 'Editorial Band'],
     rows: [
-      ['Tier 1', 'Apex Evasion Master', '24,000+ pts', '95%+ Acc / 1400+ px/s', 'Grade S', 'Top 5% (Elite)'],
-      ['Tier 2', 'Precision Vector Evader', '17,000–23,999 pts', '88–94% Acc / 1100–1399 px/s', 'Grade A', 'Top 20% (Advanced)'],
-      ['Tier 3', 'Kinetic Dodger', '11,000–16,999 pts', '80–87% Acc / 800–1099 px/s', 'Grade B', 'Top 50% (Competent)'],
-      ['Tier 4', 'Developing Tracker', '6,000–10,999 pts', '70–79% Acc / 500–799 px/s', 'Grade C', 'Top 75% (Developing)'],
+      ['Tier 1', 'Apex Evasion Master', '24,000+ pts', '95%+ Acc / 1400+ px/s', 'Grade S', 'Elite'],
+      ['Tier 2', 'Precision Vector Evader', '17,000–23,999 pts', '88–94% Acc / 1100–1399 px/s', 'Grade A', 'Advanced'],
+      ['Tier 3', 'Kinetic Dodger', '11,000–16,999 pts', '80–87% Acc / 800–1099 px/s', 'Grade B', 'Competent'],
+      ['Tier 4', 'Developing Tracker', '6,000–10,999 pts', '70–79% Acc / 500–799 px/s', 'Grade C', 'Developing'],
       ['Tier 5', 'Novice Swarm Vulnerable', '< 6,000 pts', '< 70% Acc / < 500 px/s', 'Grade D', 'Below Average (Novice)'],
     ],
     note: 'Empirical standards derived from cerebellar forward modeling (Kawato 1999), two-component motor control (Woodworth 1899), optical tau interception (Lee 1976), and chronometry bounds (Woods et al. 2015). Evaluates total points, dodge success rate, peak survived speed, and combo preservation.',
