@@ -29,3 +29,4 @@
 | C:/Program Files/Git/ja/drills/reaction-speed/reaction-game | done | PENDING | docs/seo/research/ja/reaction-game.md | 反応速度ゲーム (deconflict テスト); demand unverified in Bing |
 | C:/Program Files/Git/ja/drills/reaction-speed/saccadic-gallery | done | PENDING | docs/seo/research/ja/saccadic-gallery.md | direct answer; medical-sounding labels removed |
 | C:/Program Files/Git/ja/drills/reaction-speed/fps-tracking-trainer | done | PENDING | docs/seo/research/ja/fps-tracking-trainer.md | audit pass, no source change |
+| C:/Program Files/Git/ja/drills/reaction-speed/market-doors-pursuit | done | PENDING | docs/seo/research/ja/market-doors-pursuit.md | audit pass, no source change; demand unverified |
