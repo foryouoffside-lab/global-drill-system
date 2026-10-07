@@ -96,7 +96,7 @@ const softwareApplicationSchema = {
     "Millisecond reaction chronometry via the performance.now() API",
     "Dynamic difficulty scaling with progressively tightening stimulus windows",
     "Commission error (false alarm) and omission error tracking",
-    "Strict client-side local performance storage with zero telemetry"
+    "Scores are stored locally in your browser"
   ],
   "dateModified": "2026-09-05"
 };
@@ -211,7 +211,7 @@ const faqSchema = {
       "name": "What is considered a normal score or error rate on the Go/No-Go task?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Healthy young adults typically achieve commission error rates between 5% and 10% on standard Go/No-Go tasks with moderate stimulus windows. Elite tactical gamers, martial artists, and trained athletes frequently achieve commission error rates below 3% while maintaining rapid Go reaction latencies under 280 ms."
+        "text": "Commission error rates vary widely with the task: the share of No-Go trials, how fast stimuli appear and how much you favour speed over accuracy all change them. Use your own error rate across repeated sessions on the same device as your baseline; this page does not publish population norms."
       }
     },
     {
@@ -235,7 +235,7 @@ const faqSchema = {
       "name": "Can response inhibition and impulse control be improved with training?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Yes. Neuroplasticity research demonstrates that consistent, targeted response inhibition training strengthens functional connectivity within fronto-basal ganglia pathways. Regular practice reduces premature motor releases and tightens the stop-signal reaction time (SSRT), improving self-regulation and trigger discipline in real-world tasks."
+        "text": "Yes, practice can improve your performance on this task. Studies of response-inhibition training report mixed evidence on whether the gains carry over to everyday self-control, so treat the drill as practice for trigger discipline here, not as a treatment."
       }
     },
     {
@@ -260,16 +260,17 @@ const faqSchema = {
 const goNoGoGuide = {
   heading: "Neurocognitive Response Inhibition & Motor Suppression Standards",
   intro: [
+    "The Go/No-Go test measures how well you can hold back a response. Tap the green Go targets as fast as you can and do not tap the red No-Go targets. Each tap on a red target is a false alarm, so your score reflects both speed and impulse control. Press start to begin a 45-second session.",
     "Response inhibition represents the cornerstone executive faculty that allows humans to actively cancel, delay, or withhold actions that are no longer appropriate or advantageous. In tactical combat sports, competitive gaming, high-speed driving, and everyday decision-making, the ability to rapidly suppress a prepotent, reflexive motor action is often far more critical than raw movement velocity.",
     "The Go/No-Go paradigm traces its psychophysical origins to Franciscus Cornelis Donders (1868), who introduced the seminal 'C-reaction' subtraction method in mental chronometry. Donders demonstrated that presenting two distinct stimuli while instructing participants to respond to only one requires an additional layer of cognitive discrimination and selective motor withholding compared to simple reaction time.",
     "In 1984, Gordon D. Logan and colleagues formulated the 'Horse-Race Model' of response inhibition, demonstrating that behavioral restraint reflects an active computational contest between a sensory Go process and an inhibitory Stop process. Contemporary functional neuroimaging (Aron et al., 2014) confirms that this inhibitory brake is executed via a dedicated hyperdirect pathway connecting the right inferior frontal cortex (rIFC), presupplementary motor area, and subthalamic nucleus (STN).",
-    "Timing & Measurement Methodology: All stimulus presentations and motor click events are captured client-side using the high-resolution performance.now() API. Hardware latency adds display frame quantization (~16.7 ms at 60 Hz, ~6.9 ms at 144 Hz, ~4.1 ms at 240 Hz) and input polling intervals (~8 ms at 125 Hz vs ~1 ms at 1,000 Hz), as documented by Woods et al. (2015). All scores and error tracking remain strictly confined to your local browser storage with zero telemetry."
+    "Timing & Measurement Methodology: All stimulus presentations and motor click events are captured client-side using the high-resolution performance.now() API. Hardware latency adds display frame quantization (~16.7 ms at 60 Hz, ~6.9 ms at 144 Hz, ~4.1 ms at 240 Hz) and input polling intervals (~8 ms at 125 Hz vs ~1 ms at 1,000 Hz), as documented by Woods et al. (2015). All scores and error tracking remain stored in your local browser storage."
   ],
   benchmarks: {
     title: "Response inhibition bands (editorial guide)",
     headers: ["Performance Band", "Commission Error Rate (CER)", "Score & Combo Threshold", "Neuromuscular & Executive Profile"],
     rows: [
-      ["Tier 1: Apex Executive Braking", "< 2.0% CER", "Score: 16,000+ | Combo 30x+", "Elite rIFC-STN hyperdirect motor suppression; complete decoupling of sensory onset from reflexive motor firing."],
+      ["Tier 1: Apex Executive Braking", "< 2.0% CER", "Score: 16,000+ | Combo 30x+", "Fewest false alarms in this drill's bands. A practice target, not a clinical measure."],
       ["Tier 2: Superior Response Inhibition", "2.0% – 4.9% CER", "Score: 11,000 – 15,999 | Combo 20x+", "High-tier trigger discipline; rapid recovery from chromatic switches with minimal anticipation drift."],
       ["Tier 3: Solid Baseline Inhibition", "5.0% – 9.9% CER", "Score: 6,500 – 10,999 | Combo 12x+", "Healthy adult baseline; reliable Go target execution with occasional false alarm slips under high-frequency pacing."],
       ["Tier 4: Moderate Impulsivity", "10.0% – 18.0% CER", "Score: 3,000 – 6,499 | Combo 6x+", "Elevated prepotent motor priming; tendency to initiate finger flexion on visual onset before color identity verification."],
