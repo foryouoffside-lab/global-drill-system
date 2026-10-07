@@ -22,7 +22,7 @@ import { pickSources } from '@/lib/drillSources';
 // ============================================================
 
 export const metadata = {
-  title: 'Estabilidade de Mira | Teste de Precisão | SkillDrills',
+  title: 'Mira Tremendo? Treino de Firmeza do Mouse | SkillDrills',
   description: 'Treino grátis de mira no navegador. Mantenha o retículo no centro contra forças móveis e pratique firmeza, controle de recoil e precisão do mouse.',
   keywords: [
     "treino de mira online grátis",
@@ -41,7 +41,7 @@ export const metadata = {
     languages: getAlternateLanguages('/drills/physical/balance-training/stability-challenge'),
   },
   openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
-    title: 'Estabilidade de Mira | Teste de Precisão | SkillDrills',
+    title: 'Mira Tremendo? Treino de Firmeza do Mouse | SkillDrills',
     description: 'Mantenha o retículo centrado e pratique firmeza, controle de recoil e precisão do mouse em um treino grátis no navegador.',
     url: 'https://skilldrills.online/pt/drills/physical/balance-training/stability-challenge',
     siteName: 'SkillDrills',
@@ -50,7 +50,7 @@ export const metadata = {
   },
   twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: 'summary_large_image',
-    title: 'Estabilidade de Mira | Teste de Precisão | SkillDrills',
+    title: 'Mira Tremendo? Treino de Firmeza do Mouse | SkillDrills',
     description: 'Mantenha o retículo centrado e pratique firmeza, controle de recoil e precisão do mouse em um treino grátis no navegador.',
   },
   robots: { index: true, follow: true },
@@ -213,10 +213,10 @@ const faqSchema = {
     },
     {
       "@type": "Question",
-      "name": "Meus dados de desempenho e histórico de pontuações são enviados para servidores externos?",
+      "name": "Meus recordes e histórico de pontuações ficam salvos onde?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Não. O SkillDrills armazena 100% dos seus recordes, combos e dados analíticos de forma privada no armazenamento local (LocalStorage) do seu próprio navegador, sem telemetria invasiva ou necessidade de cadastro."
+        "text": "Seus recordes e combos ficam no armazenamento local (localStorage) do seu navegador e não exigem cadastro. Para saber como o site trata outros dados, consulte a política de privacidade."
       }
     }
   ]
@@ -262,50 +262,50 @@ const howToSchema = {
 const guideProps = {
   sources: pickSources('woodworth1899', 'fitts1954', 'woods2015'),
   intro: {
-    title: 'Estabilidade de Mira – Teste de Firmeza | SkillDrills',
+    title: 'Como a estabilidade da mira funciona e como é medida',
     paragraphs: [
       "A estabilidade do cursor do mouse sob perturbações externas é uma manifestação direta da capacidade do sistema neuromuscular de integrar propriocepção sensorial e correções visuais em tempo real. Diferente de um movimento de mira puramente balístico (como um tiro de flick), a estabilização exige regulação isométrica contínua entre grupos musculares agonistas e antagonistas do antebraço e da mão. Este exercício quantifica a eficácia com que o córtex motor primário e o cerebelo modulam essa micropressão frente a vetores de arrasto não antecipados (Nashner & McCollum, 1985).",
       "De acordo com o modelo clássico de controle motor de duas fases de Robert S. Woodworth (1899), movimentos manuais envolvem uma fase de impulso inicial seguida por ajustes microscópicos baseados em feedback sensorial de circuito fechado (Current Control Phase). No Desafio de Estabilidade, o jogador atua permanentemente nessa fase de circuito fechado: à medida que a física de vento simula a força de subida de recuo de armas ou tremores involuntários, o sistema visual detecta o desvio em relação ao centro e comanda contrações reflexas de restauração.",
       "A dinâmica da dificuldade segue os princípios de equilíbrio sob perturbação descritos por David A. Winter (1995) combinados com a Lei de Fitts (1954). Quando o anel seguro encolhe de 45px para 20px no Nível 15, a tolerância espacial diminui drasticamente, tornando o índice de dificuldade exponencialmente maior. Qualquer atraso superior a 50 milissegundos na resposta motora resulta no rompimento da borda do anel e na perda imediata da cadeia de combo.",
-      "Precisão de medição e latência de hardware: O cálculo da estabilidade percentual e das colisões de fronteira é realizado com base no relógio performance.now() da API do navegador, com resolução em microssegundos. Contudo, monitores convencionais de 60Hz introduzem uma quantização de quadros de ~16,7ms, enquanto telas de 144Hz e 240Hz reduzem esse atraso para 6,9ms e 4,1ms, respectivamente (Woods et al., 2015). Mouses com taxa de amostragem de 1000Hz diminuem a latência de entrada para menos de 1ms. Toda a análise analítica é computada exclusivamente no hardware local do usuário, garantindo privacidade absoluta e zero dependência de tráfego de rede."
+      "Precisão de medição e latência de hardware: O cálculo da estabilidade percentual e das colisões de fronteira é realizado com base no relógio performance.now() da API do navegador, com resolução em microssegundos. Contudo, monitores convencionais de 60Hz introduzem uma quantização de quadros de ~16,7ms, enquanto telas de 144Hz e 240Hz reduzem esse atraso para 6,9ms e 4,1ms, respectivamente (Woods et al., 2015). Mouses com taxa de amostragem de 1000Hz diminuem a latência de entrada para menos de 1ms. Toda a análise analítica é computada exclusivamente no hardware local do usuário, sem depender de tráfego de rede para calcular a pontuação."
     ]
   },
   benchmarks: {
-    title: "Tabela Oficial de Padrões e Classificação de Estabilidade",
-    headers: ["Nível", "Título do Nível", "Pontuação Alvo", "Estabilidade & Nível", "Nota", "Percentil Global"],
+    title: "Faixas de referência de estabilidade (editoriais)",
+    headers: ["Nível", "Título do Nível", "Pontuação Alvo", "Estabilidade & Nível", "Nota", "Leitura"],
     rows: [
-      ["Tier 1", "Mestre Supremo de Estabilidade", "17.000+ pontos", "Nível 12–15 / Estabilidade >92%", "Nota S+", "Top 0,5% (Controle Cirúrgico)"],
-      ["Tier 2", "Especialista em Compensação de Recuo", "13.000 a 16.999 pts", "Nível 9–11 / Estabilidade 85–91%", "Nota A", "Top 5% (Nível Competitivo)"],
-      ["Tier 3", "Controlador Seguro Avançado", "9.500 a 12.999 pts", "Nível 6–8 / Estabilidade 76–84%", "Nota B", "Top 20% (Firmeza Sólida)"],
-      ["Tier 4", "Praticante em Desenvolvimento", "6.000 a 9.499 pts", "Nível 3–5 / Estabilidade 65–75%", "Nota C", "50% (Média de Jogadores)"],
+      ["Tier 1", "Mestre Supremo de Estabilidade", "17.000+ pontos", "Nível 12–15 / Estabilidade >92%", "Nota S+", "Controle muito fino"],
+      ["Tier 2", "Especialista em Compensação de Recuo", "13.000 a 16.999 pts", "Nível 9–11 / Estabilidade 85–91%", "Nota A", "Nível competitivo"],
+      ["Tier 3", "Controlador Seguro Avançado", "9.500 a 12.999 pts", "Nível 6–8 / Estabilidade 76–84%", "Nota B", "Firmeza sólida"],
+      ["Tier 4", "Praticante em Desenvolvimento", "6.000 a 9.499 pts", "Nível 3–5 / Estabilidade 65–75%", "Nota C", "Faixa intermediária"],
       ["Tier 5", "Iniciante Suscetível a Tremores", "< 6.000 pontos", "Nível 1–2 / Estabilidade <65%", "Nota D", "Iniciante (Treino Recomendado)"],
     ],
-    note: "A classificação final pondera o tempo acumulado no anel, quantidade de quebras de estabilização, velocidade máxima de vento superada e pontuação bruta.",
+    note: "Faixas editoriais para comparar suas próprias sessões; não são percentis de população medidos. A classificação final pondera o tempo acumulado no anel, quantidade de quebras de estabilização, velocidade máxima de vento superada e pontuação bruta.",
   },
   protocols: {
-    title: 'Estabilidade de Mira – Teste de Firmeza | SkillDrills',
-    description: 'Teste de estabilidade de mira e firmeza do mouse grátis. Mantenha o retículo no centro contra vetores de força e elimine tremores para jogos de tiro no PC.',
+    title: 'Quatro etapas para segurar a mira firme contra a força',
+    description: 'Um passo a passo curto para praticar contra-pressão suave no mouse e reduzir tremores na mira.',
     items: [
       {
-        title: 'Estabilidade de Mira – Teste de Firmeza | SkillDrills',
-        description: 'Teste de estabilidade de mira e firmeza do mouse grátis. Mantenha o retículo no centro contra vetores de força e elimine tremores para jogos de tiro no PC.'
+        title: 'Centralize antes de começar',
+        description: 'Posicione o retículo no centro do anel seguro, relaxe o ombro e deixe o antebraço apoiado antes da contagem.'
       },
       {
-        title: 'Estabilidade de Mira – Teste de Firmeza | SkillDrills',
-        description: 'Teste de estabilidade de mira e firmeza do mouse grátis. Mantenha o retículo no centro contra vetores de força e elimine tremores para jogos de tiro no PC.'
+        title: 'Leia a direção da força',
+        description: 'Observe para onde a linha indicadora puxa o retículo e responda com uma contra-pressão pequena no sentido oposto.'
       },
       {
-        title: 'Estabilidade de Mira – Teste de Firmeza | SkillDrills',
-        description: 'Teste de estabilidade de mira e firmeza do mouse grátis. Mantenha o retículo no centro contra vetores de força e elimine tremores para jogos de tiro no PC.'
+        title: 'Corrija pouco e cedo',
+        description: 'Microajustes curtos funcionam melhor do que movimentos grandes. Evite apertar o mouse com força.'
       },
       {
-        title: 'Estabilidade de Mira – Teste de Firmeza | SkillDrills',
-        description: 'Teste de estabilidade de mira e firmeza do mouse grátis. Mantenha o retículo no centro contra vetores de força e elimine tremores para jogos de tiro no PC.'
+        title: 'Avance de nível com calma',
+        description: 'Conforme o anel encolhe, apoie o antebraço, mantenha o ritmo e só busque pontuação depois de ficar estável.'
       }
     ]
   },
   faqs: {
-    title: 'Estabilidade de Mira – Teste de Firmeza | SkillDrills',
+    title: 'Perguntas frequentes sobre estabilidade de mira',
     items: faqSchema.mainEntity.map(q => ({
       q: q.name,
       a: q.acceptedAnswer.text
@@ -342,7 +342,7 @@ export default function StabilityChallengePtPage() {
       />
       <StabilityChallengeClient
         copy={{
-          title: 'Estabilidade de Mira',
+          title: 'Treino de Firmeza do Mouse (Mira Estável)',
           subtitle: 'Mantenha o retículo no centro contra a força',
           hudLabels: {
             score: "Pontos",
@@ -357,19 +357,19 @@ export default function StabilityChallengePtPage() {
           },
           rulesTitle: "Instruções do Exercício e Sistema de Pontuação",
           rulesItems: [
-            { title: 'Estabilidade de Mira – Teste de Firmeza | SkillDrills', text: "Mantenha o retículo no centro do anel seguro contra os vetores dinâmicos de resistência do vento." },
-            { title: 'Estabilidade de Mira – Teste de Firmeza | SkillDrills', text: "Mantenha a estabilização ininterrupta para construir um multiplicador de combo de até 3.0x." },
-            { title: 'Estabilidade de Mira – Teste de Firmeza | SkillDrills', text: "A cada 250 pontos o nível sobe. O anel seguro encolhe de 45px para 20px e as forças aceleram." },
-            { title: 'Estabilidade de Mira – Teste de Firmeza | SkillDrills', text: "Derivar para fora do anel reseta o combo para 1.0x instantaneamente, sem perda de pontos ou tempo." }
+            { title: 'Segure o anel seguro', text: "Mantenha o retículo no centro do anel seguro contra os vetores dinâmicos de resistência do vento." },
+            { title: 'Construa o combo', text: "Mantenha a estabilização ininterrupta para construir um multiplicador de combo de até 3.0x." },
+            { title: 'Suba de nível', text: "A cada 250 pontos o nível sobe. O anel seguro encolhe de 45px para 20px e as forças aceleram." },
+            { title: 'Cuidado ao sair do anel', text: "Derivar para fora do anel reseta o combo para 1.0x instantaneamente, sem perda de pontos ou tempo." }
           ],
           aboutTitle: "Sobre o Desafio de Estabilidade",
           aboutHeading: "Compensação Dinâmica de Forças e Equilíbrio Postural",
           aboutIntro: "O Desafio de Estabilidade é um exercício biomecânico de precisão motora fina e estabilização postural. Vetores de vento empurram seu cursor continuamente, exigindo contra-pressão suave e precisa no mouse.",
           aboutScience: "Fundamentado nos modelos de sinergia postural de Nashner & McCollum (1985) e nos princípios de equilíbrio de David A. Winter (1995), o exercício treina correções motoras visuais de circuito fechado (Woodworth, 1899). Conforme a pontuação sobe, o anel contrai para 20px e as forças aceleram até 850 unidades.",
           aboutCards: [
-            { title: 'Estabilidade de Mira – Teste de Firmeza | SkillDrills', text: "Jogadores de FPS que buscam eliminar tremores na mira e dominar o controle de recoil em jogos competitivos como Valorant, CS2 e Apex Legends." },
-            { title: 'Estabilidade de Mira – Teste de Firmeza | SkillDrills', text: "Compensação de vetores de força, equilíbrio postural, rastreamento de resistência, estabilização de retículo e precisão de microajustes." },
-            { title: 'Estabilidade de Mira – Teste de Firmeza | SkillDrills', text: "A contra-pressão contínua exigida contra o vento simula exatamente o controle motor suave necessário para segurar o recuo de fuzis e armas automáticas." }
+            { title: 'Para quem é', text: "Jogadores de FPS que buscam eliminar tremores na mira e dominar o controle de recoil em jogos competitivos como Valorant, CS2 e Apex Legends." },
+            { title: 'O que o exercício treina', text: "Compensação de vetores de força, equilíbrio postural, rastreamento de resistência, estabilização de retículo e precisão de microajustes." },
+            { title: 'Por que importa nos jogos de tiro', text: "A contra-pressão contínua exigida contra o vento simula exatamente o controle motor suave necessário para segurar o recuo de fuzis e armas automáticas." }
           ]
         }}
       />
