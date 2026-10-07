@@ -12,3 +12,4 @@
 | C:/Program Files/Git/ja/drills/fps/recoil-control | done | PENDING | docs/seo/research/ja/recoil-control.md | keep リコイル練習; overclaims softened; demand not verified in Bing |
 | C:/Program Files/Git/ja/drills/fps/strafe-tracking | done | PENDING | docs/seo/research/ja/strafe-tracking.md | ストレイフ追いエイム (deconflicts 追いエイム練習); demand unverified |
 | C:/Program Files/Git/ja/drills/fps/target-acquisition | done | PENDING | docs/seo/research/ja/target-acquisition.md | keep VALORANT エイム練習 long-tail; overclaims softened |
+| C:/Program Files/Git/ja/drills/motor | done | PENDING | docs/seo/research/ja/motor-hub.md | removed sub-millisecond claim; description names 連打測定 |
