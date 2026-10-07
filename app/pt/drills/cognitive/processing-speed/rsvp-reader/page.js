@@ -6,11 +6,11 @@ import DrillFooter from '@/components/drill/DrillFooter';
 import { pickSources } from '@/lib/drillSources';
 
 export const metadata = {
-  title: "Leitura Rápida | Treino RSVP | SkillDrills",
+  title: "Leitura Rápida Online | Treino RSVP | SkillDrills",
   description: "Treino de leitura rápida grátis no navegador: veja palavras em um ponto fixo e acompanhe PPM e precisão. Não é um teste clínico.",
   keywords: ["leitura rápida", "teste de velocidade de leitura", "leitura dinâmica", "velocidade de leitura", "RSVP leitura", "palavras por minuto", "treino de leitura rápida"],
   openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
-    title: "Leitura Rápida | Treino RSVP | SkillDrills",
+    title: "Leitura Rápida Online | Treino RSVP | SkillDrills",
     description: "Treino de leitura rápida grátis no navegador: veja palavras em um ponto fixo e acompanhe PPM e precisão. Não é um teste clínico.",
     type: 'article',
     url: 'https://skilldrills.online/pt/drills/cognitive/processing-speed/rsvp-reader',
@@ -19,7 +19,7 @@ export const metadata = {
   },
   twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: 'summary_large_image',
-    title: "Leitura Rápida | Treino RSVP | SkillDrills",
+    title: "Leitura Rápida Online | Treino RSVP | SkillDrills",
     description: "Treino de leitura rápida grátis no navegador: veja palavras em um ponto fixo e acompanhe PPM e precisão. Não é um teste clínico.",
   },
   robots: { index: true, follow: true },
@@ -228,21 +228,21 @@ const howToSchema = {
       "@type": "HowToStep",
       "position": 2,
       "name": "Selecione a Velocidade Inicial (WPM)",
-      "text": "Comece em uma cadência confortável (ex: 300 WPM) para calibrar a taxa de assimilação léxica.",
+      "text": "Comece em uma cadência confortável (ex: 300 PPM) para calibrar a taxa de assimilação léxica.",
       "url": "https://skilldrills.online/pt/drills/cognitive/processing-speed/reaction-time#step-2"
     },
     {
       "@type": "HowToStep",
       "position": 3,
-      "name": "Iniba a Subvocalização Interna",
-      "text": "Absorva os conceitos de cada palavra visualmente sem pronunciá-las mentalmente na voz interna.",
+      "name": "Reduza a Voz Interna com Cuidado",
+      "text": "Tente captar cada palavra pelo olhar, sem pronunciá-la mentalmente. Se a compreensão cair, volte a um ritmo mais lento.",
       "url": "https://skilldrills.online/pt/drills/cognitive/processing-speed/reaction-time#step-3"
     },
     {
       "@type": "HowToStep",
       "position": 4,
       "name": "Avance Progressivamente a Dificuldade",
-      "text": "A cada bloco lido com clareza, aumente a taxa de palavras por minuto até alcançar patamares acima de 600 WPM.",
+      "text": "A cada bloco lido com clareza, aumente a taxa de palavras por minuto conforme a compreensão se mantiver.",
       "url": "https://skilldrills.online/pt/drills/cognitive/processing-speed/reaction-time#step-4"
     }
   ]
@@ -259,19 +259,20 @@ const guideProps = {
     ],
   },
   benchmarks: {
-    title: 'Padrões de Velocidade de Leitura & Baremos Cognitivos (WPM)',
-    headers: ['Nível', 'Classificação', 'Velocidade de Leitura', 'Taxa de Retenção', 'Percentil'],
+    title: 'Faixas de referência de velocidade de leitura (PPM)',
+    headers: ['Nível', 'Classificação', 'Velocidade de Leitura', 'Taxa de Retenção', 'Leitura'],
     rows: [
-      { tier: 'Tier 1', rank: 'Leitor Dinâmico de Elite', stat: '650 – 850+ WPM', level: 'Mestrado', accuracy: '95%+', percentile: 'Top 1%' },
-      { tier: 'Tier 2', rank: 'Leitor Avançado / Rápido', stat: '450 – 649 WPM', level: 'Diamante', accuracy: '90-94%', percentile: 'Top 5%' },
-      { tier: 'Tier 3', rank: 'Proficiente Acima da Média', stat: '300 – 449 WPM', level: 'Platina', accuracy: '85-89%', percentile: 'Top 15%' },
-      { tier: 'Tier 4', rank: 'Leitor Padrão Adulto', stat: '200 – 299 WPM', level: 'Ouro', accuracy: '75-84%', percentile: 'Top 50%' },
-      { tier: 'Tier 5', rank: 'Iniciante / Leitura Lenta', stat: '< 200 WPM', level: 'Prata', accuracy: '< 75%', percentile: 'Base' },
+      { tier: 'Tier 1', rank: 'Muito rápida', stat: '650 – 850+ PPM', level: 'Faixa 1', accuracy: '95%+', percentile: 'Confira a compreensão antes de subir' },
+      { tier: 'Tier 2', rank: 'Rápida', stat: '450 – 649 PPM', level: 'Faixa 2', accuracy: '90-94%', percentile: 'Acima da faixa típica' },
+      { tier: 'Tier 3', rank: 'Boa', stat: '300 – 449 PPM', level: 'Faixa 3', accuracy: '85-89%', percentile: 'Treinada' },
+      { tier: 'Tier 4', rank: 'Típica', stat: '200 – 299 PPM', level: 'Faixa 4', accuracy: '75-84%', percentile: 'Faixa típica de leitura' },
+      { tier: 'Tier 5', rank: 'Mais lenta', stat: '< 200 PPM', level: 'Faixa 5', accuracy: '< 75%', percentile: 'Ponto de partida' },
     ],
+    note: 'Faixas editoriais para comparar suas próprias sessões; não são percentis de população nem normas clínicas. Velocidade só vale com boa compreensão.',
   },
   protocols: {
     title: 'Protocolos de Otimização da Velocidade de Leitura',
-    description: 'Etapas comprovadas para acelerar a decodificação lexical e eliminar a voz mental.',
+    description: 'Etapas práticas para treinar o reconhecimento de palavras em ritmo crescente, sem perder a compreensão.',
     items: [
       { title: "Fixe o Olhar no Ponto Focal Central", description: "Mantenha seus olhos relaxados e focalizados exatamente na linha guia central sem mover as pupilas." },
       { title: "Selecione a Velocidade Inicial (WPM)", description: "Comece em uma cadência confortável (ex: 300 WPM) para calibrar a taxa de assimilação léxica." },

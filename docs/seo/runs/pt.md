@@ -6,3 +6,4 @@
 | /pt/drills/reaction-speed/reflex-training-drill | done | SHA | docs/seo/research/pt/reflex-training-drill.md | title Jogo de Reflexo: Multiplos Alvos; demand not verified |
 | /pt/drills/reaction-speed/reaction-game | done | SHA | docs/seo/research/pt/reaction-game.md | title Jogo de Reflexo Online; demand not verified |
 | /pt/drills/cognitive/processing-speed/reaction-time | done | SHA | docs/seo/research/pt/cognitive-reaction-time.md | title Teste de Reacao de Escolha Online; percentile claims removed |
+| /pt/drills/cognitive/processing-speed/rsvp-reader | done | SHA | docs/seo/research/pt/rsvp-reader.md | title Leitura Rapida Online; rsvp name demand not verified |
