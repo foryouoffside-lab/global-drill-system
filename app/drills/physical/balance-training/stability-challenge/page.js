@@ -153,10 +153,10 @@ const faqSchema = {
     },
     {
       '@type': 'Question',
-      name: 'How does the Stability Challenge transfer to recoil control in competitive FPS games?',
+      name: 'Does the Stability Challenge help with recoil control in FPS games?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Weapon spray patterns in games like CS2, Valorant, and Apex Legends impart continuous displacement vectors on the crosshair. Practicing continuous force counteraction builds the neuromuscular muscle memory required to pull down smoothly against weapon recoil climb.',
+        text: 'The drill practises holding the crosshair steady against a drifting force, which resembles pulling down against recoil in shooters. This site has no study showing that it transfers to a specific game, so treat it as steadiness practice and check it against your own results in-game.',
       },
     },
     {
@@ -251,10 +251,10 @@ const guideProps = {
     title: 'Stability Challenge & Balance Training Benchmarks',
     headers: ['Tier', 'Rank Title', 'Score Benchmark', 'Peak Level', 'Safe Ring Retention', 'Editorial Band'],
     rows: [
-      ['Tier 1', 'Apex Stabilizer', '15,300+ pts', 'Level 12–15', '> 94% time in ring', 'Exceptional (Top 1%)'],
-      ['Tier 2', 'Master Anchor', '12,000–15,299 pts', 'Level 9–11', '86–93% time in ring', 'Advanced (Top 5%)'],
-      ['Tier 3', 'Proficient Counterer', '9,500–11,999 pts', 'Level 6–8', '75–85% time in ring', 'Strong (Top 20%)'],
-      ['Tier 4', 'Intermediate Core', '6,000–9,499 pts', 'Level 3–5', '60–74% time in ring', 'Typical (Top 50%)'],
+      ['Tier 1', 'Apex Stabilizer', '15,300+ pts', 'Level 12–15', '> 94% time in ring', 'Exceptional'],
+      ['Tier 2', 'Master Anchor', '12,000–15,299 pts', 'Level 9–11', '86–93% time in ring', 'Advanced'],
+      ['Tier 3', 'Proficient Counterer', '9,500–11,999 pts', 'Level 6–8', '75–85% time in ring', 'Strong'],
+      ['Tier 4', 'Intermediate Core', '6,000–9,499 pts', 'Level 3–5', '60–74% time in ring', 'Typical'],
       ['Tier 5', 'Novice Perturbed', '< 6,000 pts', 'Level 1–2', '< 60% time in ring', 'Starting Out (Baseline)'],
     ],
     note: 'Empirical standards derived from postural perturbation research (Nashner & McCollum 1985, Winter 1995) and closed-loop motor stabilization metrics.',

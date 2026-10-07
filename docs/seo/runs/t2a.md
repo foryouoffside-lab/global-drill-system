@@ -6,3 +6,4 @@
 | /drills/cognitive/attention/multi-tasking | done | c4673f14 | docs/seo/research/en/multi-tasking.md | demand not verified (Bing 0); claims softened |
 | /drills/cognitive/focus/distraction-fighter | done | e77628f8 | docs/seo/research/en/distraction-fighter.md | FAQ claim softened |
 | /drills/cognitive/processing-speed/rsvp-reader | done | 2ab4f047 | docs/seo/research/en/rsvp-reader.md | FAQ claim softened; percentile labels removed |
+| /drills/cognitive/processing-speed/symbol-matching | done | e4482908 | docs/seo/research/en/symbol-matching.md | title changed to measured vocabulary; non-clinical label kept |
