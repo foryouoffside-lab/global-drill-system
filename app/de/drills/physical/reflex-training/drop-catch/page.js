@@ -22,8 +22,8 @@ import { pickSources } from '@/lib/drillSources';
 // ============================================================
 
 export const metadata = {
-  title: "Lineal-Falltest online | Reaktionszeit messen",
-  description: "Kostenloser Lineal-Falltest im Browser: Fange fallende Ziele, meide rote Fallen und übe deine Reaktionszeit in Millisekunden.",
+  title: "Lineal-Reaktionstest online | Reaktionszeit messen",
+  description: "Kostenloser Lineal-Reaktionstest im Browser: Fange fallende Ziele, meide rote Fallen und übe deine Reaktionszeit in Millisekunden.",
   keywords: [
     "Lineal-Falltest",
     "Reaktionszeit messen",
@@ -41,7 +41,7 @@ export const metadata = {
     languages: getAlternateLanguages('/drills/physical/reflex-training/drop-catch'),
   },
   openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
-    title: "Lineal-Falltest online | Reaktionszeit messen",
+    title: "Lineal-Reaktionstest online | Reaktionszeit messen",
     description: "Fange fallende grüne Ziele und meide rote Fallen in einem kostenlosen Browser-Drill für Reaktionszeit und visuelle Auswahl.",
     url: 'https://skilldrills.online/de/drills/physical/reflex-training/drop-catch',
     siteName: 'SkillDrills',
@@ -50,7 +50,7 @@ export const metadata = {
   },
   twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: 'summary_large_image',
-    title: "Lineal-Falltest online | Reaktionszeit messen",
+    title: "Lineal-Reaktionstest online | Reaktionszeit messen",
     description: "Fange fallende grüne Ziele und meide rote Fallen in einem kostenlosen Browser-Drill für Reaktionszeit und visuelle Auswahl.",
   },
   robots: { index: true, follow: true },
@@ -364,7 +364,7 @@ export default function LocalizedDropCatchPageDe() {
       />
       <DropCatchClient
         copy={{
-          title: "Lineal-Falltest & Drop Catch",
+          title: "Lineal-Reaktionstest & Drop Catch",
           subtitle: "Fallende Ziele fangen, rote Fallen meiden",
           hudLabels: {
             score: "Punkte",
