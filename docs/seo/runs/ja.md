@@ -8,3 +8,4 @@
 | C:/Program Files/Git/ja/drills/cognitive/processing-speed/rsvp-reader | done | PENDING | docs/seo/research/ja/rsvp-reader.md | direct answer; unsourced claims removed |
 | C:/Program Files/Git/ja/drills/cognitive/processing-speed/symbol-matching | done | PENDING | docs/seo/research/ja/symbol-matching.md | direct answer; demand not verified |
 | C:/Program Files/Git/ja/drills/cognitive/focus/distraction-fighter | done | PENDING | docs/seo/research/ja/distraction-fighter.md | direct answer; privacy claim corrected |
+| C:/Program Files/Git/ja/drills/fps/angle-hold-trainer | done | PENDING | docs/seo/research/ja/angle-hold-trainer.md | 置きエイム primary (Bing 686); client About still English (D2) |

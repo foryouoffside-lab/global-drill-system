@@ -18,12 +18,12 @@ import { pickSources } from '@/lib/drillSources';
 //                   "ピークアドバンテージ"      — Peeker's advantage netcode concept
 //                   "ヘッドライン 合わせ方"    — Head level crosshair alignment
 // EXCLUDED BRANDS:  "okiaimx" (2,475/mo), "aimlab" (200/mo), "kovaaks" (333/mo)
-// WINNER TITLE:     エイム練習 | 置きエイム・プリエイム | SkillDrills
+// WINNER TITLE:     置きエイム練習｜角待ち・飛び出し反応 | SkillDrills
 // ============================================================
 
 export const metadata = {
-  title: "エイム練習 | 置きエイム・プリエイム | SkillDrills",
-  description: "無料ブラウザのエイム練習で、角に置く幅と頭の高さを整え、敵の飛び出しへの初弾反応を測定します。",
+  title: "置きエイム練習｜角待ち・飛び出し反応 | SkillDrills",
+  description: "無料の置きエイム練習。角に置く幅と頭の高さを整え、敵の飛び出しに対する初弾の反応をブラウザで測定します。VALORANT・CS2の角待ち練習に。",
   keywords: [
     "エイム練習",
     "エイム練習 ブラウザ",
@@ -48,8 +48,8 @@ export const metadata = {
     follow: true,
   },
   openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
-    title: "エイム練習 | 置きエイム・プリエイム | SkillDrills",
-    description: "無料ブラウザのエイム練習で、角に置く幅と頭の高さを整え、敵の飛び出しへの初弾反応を測定します。",
+    title: "置きエイム練習｜角待ち・飛び出し反応 | SkillDrills",
+    description: "無料の置きエイム練習。角に置く幅と頭の高さを整え、敵の飛び出しに対する初弾の反応をブラウザで測定します。VALORANT・CS2の角待ち練習に。",
     url: "https://skilldrills.online/ja/drills/fps/angle-hold-trainer",
     siteName: 'SkillDrills',
     locale: 'ja_JP',
@@ -57,8 +57,8 @@ export const metadata = {
   },
   twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: 'summary_large_image',
-    title: "エイム練習 | 置きエイム・プリエイム | SkillDrills",
-    description: "無料ブラウザのエイム練習で、角に置く幅と頭の高さを整え、敵の飛び出しへの初弾反応を測定します。",
+    title: "置きエイム練習｜角待ち・飛び出し反応 | SkillDrills",
+    description: "無料の置きエイム練習。角に置く幅と頭の高さを整え、敵の飛び出しに対する初弾の反応をブラウザで測定します。VALORANT・CS2の角待ち練習に。",
   },
 };
 
@@ -247,7 +247,7 @@ export default function JapaneseAngleHoldPage() {
     intro: [
       "エイム練習の中でも置きエイムは、敵が出る位置にレティクルを先に置き、標的が重なった瞬間にクリックする練習です。このドリルは置き幅、ヘッドライン、飛び出し反応を測定し、VALORANT・CS2の角待ちを安定させます。",
       "VALORANTやCS2などのオンライン対戦ゲームでは、パケット通信遅延により攻撃側が角から飛び出した際に防御側より早く視認できる「ピークアドバンテージ（飛び出し有利）」が構造的に発生します（T_advantage = RTT_peeker/2 + RTT_holder/2 + T_interp）。この遅延不利を相殺するためには、壁の角に照準を密着させるのではなく、D_offset = v_peeker × T_reaction に基づいて壁から一定の隙間（置き幅）を空けて構えることが幾何学的に不可欠となります。",
-      "本ツールのクロノメトリーは、高リフレッシュレート同期とperformance.now()高精度タイムスタンプによって駆動されています。これにより入力量子化ジッターを最小限に抑え（Woods et al., 2015）、心理物理学的なトリガーディシプリンと飛び出し反応速度を厳密に測定します（Fitts, 1954; Hick, 1952）。",
+      "本ツールのクロノメトリーは、高リフレッシュレート同期とperformance.now()タイムスタンプで時間を記録します。表示や入力の量子化による誤差は残りますが（Woods et al., 2015）、トリガーディシプリンと飛び出し反応速度を同じ環境で比べられます（Fitts, 1954; Hick, 1952）。",
       "計測仕様について：すべての入力イベントはブラウザの高精度パフォーマンスAPIによってミリ秒単位で記録され、すべて端末内（クライアントサイド）で完結します。ブラウザのタイマーはSpectre緩和策として約1msに丸められており、ディスプレイ表示はリフレッシュレート（60Hzで約16.7ms、144Hzで約6.9ms、240Hzで約4.1ms）単位で量子化されます（Woods et al., 2015）。そのため約5ms未満の微小な数値差は測定環境のノイズとして考慮し、他人との比較よりも同一環境での自己記録推移の確認を推奨します。"
     ],
     benchmarks: {
@@ -298,20 +298,20 @@ export default function JapaneseAngleHoldPage() {
     faqs: faqSchema.mainEntity.map(e => ({ q: e.name, a: e.acceptedAnswer.text })),
     sources: pickSources('woods2015', 'fitts1954', 'meyer1988', 'woodworth1899'),
     related: [
-      { href: "/ja/drills/fps/flick-shot-training", label: "Pro Flick Trainer (フリックエイム訓練)" },
-      { href: "/ja/drills/fps/180-degree-awareness", label: "180° Awareness Pro (180度視点移動)" },
-      { href: "/ja/drills/fps/micro-correction-precision", label: "Micro Flicks (マイクロフリック練習)" },
-      { href: "/ja/drills/reaction-speed/reaction-time-test", label: "Reaction Time Test (反射神経テスト)" }
+      { href: "/ja/drills/fps/flick-shot-training", label: "フリックエイム訓練" },
+      { href: "/ja/drills/fps/180-degree-awareness", label: "180度視点移動の練習" },
+      { href: "/ja/drills/fps/micro-correction-precision", label: "マイクロフリック練習" },
+      { href: "/ja/drills/reaction-speed/reaction-time-test", label: "反射神経テスト・反応速度テスト" }
     ]
   };
 
   const copyJa = {
     h1Prefix: null,
-    h1Keyword: "エイム練習",
-    h1Suffix: " - 置きエイム・プリエイム",
-    subtitle: "プリエイム・飛び出し反応速度トレーナー",
+    h1Keyword: "置きエイム練習",
+    h1Suffix: " - 角待ち・プリエイム",
+    subtitle: "飛び出し反応速度トレーナー",
     caption: "壁角からの敵の飛び出し（ピーク）に対し、適切な置き幅を保って即座に射撃する置きエイム練習ツール。F.C.ドンデルスの単純反応時間（Donders, 1868）とアングル幾何学に基づき、ピークアドバンテージを打破する防御プリエイムを鍛えます。",
-    startTitle: "エイム練習 - 置きエイム",
+    startTitle: "置きエイム練習",
     startSubtitle: "プリエイム・飛び出し反応・トリガーディシプリン • エンドレス難易度進行",
     statScore: "スコア",
     statTime: "残り時間",
