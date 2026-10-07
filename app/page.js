@@ -45,11 +45,45 @@ export const metadata = {
 
 const homeSchema = buildHomeSchema('en', 'https://skilldrills.online', DRILLS.length);
 
+const homeFaqs = [
+  {
+    q: 'What is SkillDrills?',
+    a: `SkillDrills is a free collection of ${DRILLS.length} browser-based training drills for aim, reaction time, memory, attention, motor control and eye tracking. Every drill runs in your browser with no sign-up and nothing to install, and your scores stay on your own device.`,
+  },
+  {
+    q: 'Is SkillDrills free, and do I need an account?',
+    a: `Yes, all ${DRILLS.length} drills are free and no account is needed. You open a drill and start. Your best scores are saved in your browser's local storage, so clearing site data also clears them.`,
+  },
+  {
+    q: 'What skills can I train on SkillDrills?',
+    a: 'Eight areas: reaction speed, motor skills and mouse control, cognitive training, memory, FPS aim training, visual perception, eye tracking and smooth pursuit, and physical coordination. Each area has its own hub page that lists its drills.',
+  },
+  {
+    q: 'How accurate are the timings?',
+    a: 'Timings use performance.now(). Browser timers are coarsened to about 1 ms and displays quantize to the refresh interval (about 16.7 ms at 60 Hz), so differences under roughly 5 ms are measurement noise. Compare your own sessions on the same device rather than against other people.',
+  },
+  {
+    q: 'Do I need a mouse, or can I play on a phone?',
+    a: 'FPS, motor and physical drills need a mouse and are desktop-only. Memory and cognitive drills also work on phones and tablets.',
+  },
+  {
+    q: 'What data does SkillDrills collect?',
+    a: 'Drill scores and settings are stored in your browser, not on our servers. The website uses cookie-less Vercel Analytics and Speed Insights to measure traffic and page performance without collecting personally identifiable information. The Privacy page has the details.',
+  },
+];
+
+const homeFaqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: homeFaqs.map(({ q, a }) => ({ '@type': 'Question', name: q, acceptedAnswer: { '@type': 'Answer', text: a } })),
+};
+
 export default function HomePage() {
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(homeSchema) }} />
-      <HomePageClient />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(homeFaqSchema) }} />
+      <HomePageClient faqs={homeFaqs} />
     </>
   );
 }

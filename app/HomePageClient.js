@@ -157,7 +157,7 @@ const audienceData = [
   },
 ];
 
-export default function HomePageClient({ copy = {} }) {
+export default function HomePageClient({ copy = {}, faqs = [] }) {
   const [profile, setProfile] = useState(null);
   const { localizeHref } = useTranslation();
 
@@ -643,6 +643,26 @@ export default function HomePageClient({ copy = {} }) {
           </div>
         </div>
       </section>
+
+      {faqs.length > 0 && (
+        <section className="py-16 sm:py-20 border-t border-white/10" aria-labelledby="faq-heading">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <Reveal className="text-center mb-10 space-y-3">
+              <h2 id="faq-heading" className="text-2xl sm:text-4xl font-black tracking-tight text-white">
+                {t('faqHeading', 'Frequently Asked Questions')}
+              </h2>
+            </Reveal>
+            <dl className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              {faqs.map((f) => (
+                <div key={f.q} className="bg-surface-2/80 border border-hairline rounded-2xl p-5">
+                  <dt className="font-bold text-ink-1 text-sm font-sans">{f.q}</dt>
+                  <dd className="mt-2.5 text-xs text-ink-3 leading-relaxed font-sans">{f.a}</dd>
+                </div>
+              ))}
+            </dl>
+          </div>
+        </section>
+      )}
 
       {/* 7. CALL TO ACTION */}
       <section className="py-20 sm:py-24 border-t border-white/10 bg-surface-1/60 relative overflow-hidden" aria-labelledby="cta-heading">
