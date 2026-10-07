@@ -94,7 +94,7 @@ const softwareApplicationSchema = {
     "Millisecond reaction chronometry via the performance.now() API",
     "Dynamic difficulty scaling with progressively tightening strobe flash windows",
     "Anti-spam heuristic preventing false anticipation clicking",
-    "Strict client-side local performance storage with zero telemetry"
+    "Scores are stored locally in your browser"
   ],
   "dateModified": "2026-09-05"
 };
@@ -217,7 +217,7 @@ const faqSchema = {
       "name": "Can simple visual reaction time be improved through training?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Yes. Neuroplastic training strengthens corticospinal motor pathway excitability and optimizes covert attentional orienting (Posner, 1980). Action video game players demonstrate significantly faster visual reaction times without sacrificing motor accuracy compared to non-gamers (Dye, Green, & Bavelier, 2009)."
+        "text": "Practice can improve your times on this task. Action video game players have been shown to react faster to visual stimuli than non-gamers without losing motor accuracy (Dye, Green, & Bavelier, 2009)."
       }
     },
     {
@@ -258,6 +258,7 @@ const faqSchema = {
 const lightReactionGuide = {
   heading: "Visual Reflex Chronometry & Simple Reaction Time Standards",
   intro: [
+    "The Light Reaction test measures simple visual reaction time: the milliseconds between a light appearing and your response. Wait for the signal, react as fast as you can, and compare your times across rounds on the same device. Healthy adults typically react in roughly 200 to 250 ms, and screen and input lag add to the result.",
     "Simple reaction time (SRT) represents the elementary psychomotor latency between the sudden presentation of a solitary visual stimulus and the execution of an unconditioned motor release. In track sprinting, combat sports, motorsports, and competitive esports, millisecond differences in visual stimulus transduction govern defensive evasion, starting-block clearance, and immediate counter-play.",
     "The neuromuscular cascade underlying light reaction spans four distinct physiological stages: (1) retinal phototransduction (~20–40 ms as photons trigger rhodopsin isomerization), (2) afferent transmission along optic tract axons via the lateral geniculate nucleus to primary visual cortex V1 (~30–50 ms), (3) cortical perceptual and motor preparation within posterior parietal and supplementary motor areas (~50–80 ms), and (4) efferent corticospinal motor transmission descending the pyramidal tract to contract the digital flexor muscles (~30–50 ms), establishing the natural healthy baseline of ~200–250 ms (Kosinski, 2008; Jain et al., 2015; Shelton & Kumar, 2010).",
     "According to Piéron's Law (Piéron, 1952; Pins & Bonnet, 1996), reaction latency decreases as a hyperbolic function of stimulus luminance and contrast above background levels. This drill operationalizes Piéron's Law by projecting an ultra-high-contrast stark white strobe against an absorbing dark canvas, generating maximal transient ganglion cell depolarization to minimize sensory transduction overhead. Michael Posner's covert attention orienting paradigms (1980) and Daphne Bavelier's action video game studies (Dye, Green, & Bavelier, 2009) demonstrate that focused spatial anticipation can further compress cortical motor planning latency.",
@@ -267,8 +268,8 @@ const lightReactionGuide = {
     title: "Visual reaction latency bands (editorial guide)",
     headers: ["Performance Band", "Mean Reaction Latency", "Score & Combo Threshold", "Neuromuscular & Reflex Profile"],
     rows: [
-      ["Tier 1: Apex Neural Reflex", "< 180 ms Latency", "Score: 15,000+ | Combo 28x+", "Elite motor cortex excitability; optimal phototransduction and corticospinal conductivity found in pro esports and Olympic sprinters."],
-      ["Tier 2: Superior Visual Reflex", "180 – 219 ms Latency", "Score: 10,500 – 14,999 | Combo 18x+", "Rapid optic-motor coupling; consistent sub-220ms latencies with minimal temporal drift across long sessions."],
+      ["Tier 1: Apex Neural Reflex", "< 180 ms Latency", "Score: 15,000+ | Combo 28x+", "Fastest band in this drill. A practice target, not a clinical or athletic standard."],
+      ["Tier 2: Superior Visual Reflex", "180 – 219 ms Latency", "Score: 10,500 – 14,999 | Combo 18x+", "Rapid optic-motor coupling; consistent latencies under 220 ms with minimal temporal drift across long sessions."],
       ["Tier 3: Solid Baseline Reflex", "220 – 259 ms Latency", "Score: 6,000 – 10,499 | Combo 10x+", "Healthy adult baseline; typical unprimed visual motor response with occasional variance under fatigue."],
       ["Tier 4: Moderate Response Delay", "260 – 319 ms Latency", "Score: 2,500 – 5,999 | Combo 5x+", "Extended cognitive processing latency; susceptible to display lag, ocular fatigue, or mild attention lapses."],
       ["Tier 5: Extended Latency / Developing", "> 320 ms Latency", "Score: < 2,500 | Combo < 5x", "High temporal hesitation; substantial sensory processing overhead or uncalibrated 60 Hz hardware delays."]
