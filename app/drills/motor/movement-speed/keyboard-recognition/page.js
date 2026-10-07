@@ -237,8 +237,9 @@ const howToSchema = {
 const guideProps = {
   sources: pickSources('donders1868', 'hick1952', 'logan1984', 'sternberg1966', 'woods2015'),
   intro: {
-    title: 'How keyboard speed is measured',
+    title: `What Is a Keyboard Speed Test, and How Is It Measured?`,
     paragraphs: [
+      `This keyboard speed test measures how fast you press the right key after a prompt appears, not how many words you type. It shows a key, times your press, and adds fake prompts you must ignore plus a sequence-typing mode, so it tests choice reaction time and keybind recall.`,
       'How this is measured, and what it cannot resolve: timing comes from the browser\'s performance.now() clock, which is deliberately coarsened to roughly 1 ms as a Spectre mitigation, and the display quantizes every target to its own refresh interval — about 16.7 ms at 60 Hz, 6.9 ms at 144 Hz and 4.1 ms at 240 Hz (Woods et al., 2015). Mouse polling adds roughly 8 ms at 125 Hz against about 1 ms at 1000 Hz. Treat any difference under about 5 ms as measurement noise, and compare your own runs on the same mouse and display rather than against someone else\'s setup. SkillDrills stores every score in your browser and collects no aggregate data, so nothing here is a population norm.',
     ],
   },
@@ -347,7 +348,7 @@ export default function KeyboardRecognitionPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(howToSchema) }}
       />
-      <KeyboardRecognitionClient />
+      <KeyboardRecognitionClient copy={{ subtitle: 'Keybind reaction trainer for choice reaction time and key recall' }} />
       <DrillGuide {...guideProps} />
       <DrillFooter />
     </>
