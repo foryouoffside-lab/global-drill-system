@@ -136,7 +136,7 @@ const faqSchema = {
       name: '게이밍 키 바인드의 정상 반응속도는 얼마인가요?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: '일반 사용자는 380~480 ms를 기록하며, 숙련된 게이머는 240~300 ms 수준입니다. 상위 1% 프로급 선수는 240 ms 미만의 초고속 반응속도와 98% 이상의 함정 억제율을 달성합니다.',
+        text: '키 선택 반응은 단순 반응보다 길어서 사람과 기기에 따라 크게 다릅니다. 이 드릴의 참고 구간은 일반 380~480 ms, 숙련 240~300 ms 정도로 나눴지만 임상 기준이나 사용자 통계가 아니므로, 같은 키보드와 모니터에서 본인 기록의 추세를 비교하세요.',
       },
     },
     {
@@ -188,7 +188,7 @@ const howToSchema = {
   inLanguage: 'ko-KR',
   dateModified: '2026-09-20',
   name: '키보드 반응속도 및 키 바인드 머슬 메모리 훈련 방법',
-  description: '키보드 선택 반응속도와 반사 신경을 극대화하기 위한 단계별 트레이닝 가이드.',
+  description: '키보드 선택 반응속도와 반사 신경을 연습하기 위한 단계별 트레이닝 가이드.',
   step: [
     {
       '@type': 'HowToStep',
@@ -232,36 +232,36 @@ const guideProps = {
   },
   benchmark: {
     title: '키보드 반응속도 & 키 바인드 종합 벤치마크',
-    description: '단일 키 선택 반응 지연시간, 연속 타건 속도(KPM), 함정 억제율을 기반으로 구성된 표준 성취도 구간입니다.',
+    description: '단일 키 선택 반응 지연시간, 연속 타건 속도(KPM), 함정 억제율을 나눈 참고용 구간입니다. SkillDrills가 정한 구분이며 사용자 통계, 백분위, 게임 랭크와 무관합니다.',
     columns: ['등급 (Tier)', '호칭 (Rank)', '단일 키 반응 지연', '시퀀스 속도 (KPM)', '함정 억제율', '신경운동 제어 평가'],
     rows: [
       {
         tier: 'Tier 1',
-        rank: 'Apex Keybinder',
+        rank: '최상위',
         stat: '240 ms 미만',
         level: '320+ KPM',
         accuracy: '98–100%',
-        percentile: '상위 1% (프로급 머슬 메모리)',
+        percentile: '최상위 참고 구간',
       },
       {
         tier: 'Tier 2',
-        rank: 'Master Tactician',
+        rank: '상급',
         stat: '240–300 ms',
         level: '260–319 KPM',
         accuracy: '95–97%',
-        percentile: '상위 5% (상급 전술 오퍼레이터)',
+        percentile: '상급 참고 구간',
       },
       {
         tier: 'Tier 3',
-        rank: 'Proficient Operator',
+        rank: '숙련',
         stat: '300–380 ms',
         level: '200–259 KPM',
         accuracy: '90–94%',
-        percentile: '상위 20% (숙련 게이머)',
+        percentile: '숙련 참고 구간',
       },
       {
         tier: 'Tier 4',
-        rank: 'Intermediate Typist',
+        rank: '중급',
         stat: '380–480 ms',
         level: '140–199 KPM',
         accuracy: '80–89%',
@@ -269,7 +269,7 @@ const guideProps = {
       },
       {
         tier: 'Tier 5',
-        rank: 'Novice Keybinder',
+        rank: '입문',
         stat: '480 ms 초과',
         level: '140 KPM 미만',
         accuracy: '80% 미만',
