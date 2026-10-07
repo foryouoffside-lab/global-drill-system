@@ -30,3 +30,4 @@
 | C:/Program Files/Git/ja/drills/reaction-speed/saccadic-gallery | done | PENDING | docs/seo/research/ja/saccadic-gallery.md | direct answer; medical-sounding labels removed |
 | C:/Program Files/Git/ja/drills/reaction-speed/fps-tracking-trainer | done | PENDING | docs/seo/research/ja/fps-tracking-trainer.md | audit pass, no source change |
 | C:/Program Files/Git/ja/drills/reaction-speed/market-doors-pursuit | done | PENDING | docs/seo/research/ja/market-doors-pursuit.md | audit pass, no source change; demand unverified |
+| C:/Program Files/Git/ja/drills/reaction-speed/visual-tracking-speed-test | done | PENDING | docs/seo/research/ja/visual-tracking-speed-test.md | audit pass, no source change |
