@@ -33,3 +33,4 @@
 | C:/Program Files/Git/ja/drills/reaction-speed/visual-tracking-speed-test | done | PENDING | docs/seo/research/ja/visual-tracking-speed-test.md | audit pass, no source change |
 | C:/Program Files/Git/ja/drills/visual-tracking/split-screen-tracking | done | PENDING | docs/seo/research/ja/split-screen-tracking.md | direct answer; percentile column removed; demand unverified |
 | C:/Program Files/Git/ja/drills/visual-tracking/staircase-step | done | PENDING | docs/seo/research/ja/staircase-step.md | direct answer; percentile column removed; demand unverified |
+| C:/Program Files/Git/ja/drills/visual-tracking/strobe-prediction-pursuit | done | PENDING | docs/seo/research/ja/strobe-prediction-pursuit.md | direct answer; percentile column removed; demand unverified |
