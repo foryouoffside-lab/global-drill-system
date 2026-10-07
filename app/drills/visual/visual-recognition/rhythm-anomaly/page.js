@@ -139,7 +139,7 @@ const faqSchema = {
       "name": "What is a good score on the 36-cell Rhythm Anomaly test?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Novices score 50 to 99 points (Level 2–3). Experienced visual performers reach 100 to 149 points, and elite athletes/esports competitors score 150 to 200+ points with streaks over 10 consecutive anomaly detections."
+        "text": "Scores depend on speed settings, display and input device. The score bands on this page are editorial practice targets, not population norms; compare your own sessions on the same setup."
       }
     },
     {
@@ -392,7 +392,7 @@ export default function RhythmAnomalyPage() {
           <div>
             <h4 className="font-semibold text-white">What is a good score on the 36-cell Rhythm Anomaly test?</h4>
             <p className="text-slate-300 mt-1">
-              Novices score 50 to 99 points (Level 2–3). Experienced visual performers reach 100 to 149 points, and elite athletes/esports competitors score 150 to 200+ points with streaks over 10 consecutive anomaly detections.
+              Scores depend on speed settings, display and input device. The score bands on this page are editorial practice targets, not population norms; compare your own sessions on the same setup.
             </p>
           </div>
           <div>
