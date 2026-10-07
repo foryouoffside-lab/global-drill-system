@@ -5,7 +5,7 @@ import { pickSources } from '@/lib/drillSources';
 
 export const metadata = {
   title: "Erratic Motion Eye Drill – Chaos Pursuit | SkillDrills",
-  description: "Track erratic target trajectories with unpredictable velocity shifts. Condition reactive gaze re-acquisition online in your browser. Free, no sign-up.",
+  description: "Free browser drill: follow a target whose direction keeps changing unpredictably and practise catching up after each change. No sign-up.",
   keywords: [
     "directional chaos pursuit",
     "erratic motion eye drill",
@@ -27,7 +27,7 @@ export const metadata = {
   robots: { index: true, follow: true },
   openGraph: {
     title: "Erratic Motion Eye Drill – Chaos Pursuit | SkillDrills",
-    description: "Track erratic target trajectories with unpredictable velocity shifts. Condition reactive gaze re-acquisition online in your browser. Free, no sign-up.",
+    description: "Free browser drill: follow a target whose direction keeps changing unpredictably and practise catching up after each change. No sign-up.",
     url: "https://skilldrills.online/drills/visual-tracking/directional-chaos-pursuit",
     siteName: 'SkillDrills',
     locale: 'en_US',
@@ -36,7 +36,7 @@ export const metadata = {
   twitter: {
     card: 'summary_large_image',
     title: "Erratic Motion Eye Drill – Chaos Pursuit | SkillDrills",
-    description: "Track erratic target trajectories with unpredictable velocity shifts. Condition reactive gaze re-acquisition online in your browser. Free, no sign-up.",
+    description: "Free browser drill: follow a target whose direction keeps changing unpredictably and practise catching up after each change. No sign-up.",
   },
 };
 
@@ -76,7 +76,7 @@ const softwareApplicationSchema = {
     "price": "0",
     "priceCurrency": "USD"
   },
-  "description": "Track erratic target trajectories with unpredictable velocity shifts. Condition reactive gaze re-acquisition online in your browser. Free, no sign-up.",
+  "description": "Free browser drill: follow a target whose direction keeps changing unpredictably and practise catching up after each change. No sign-up.",
   "url": "https://skilldrills.online/drills/visual-tracking/directional-chaos-pursuit",
   "publisher": {
     "@type": "Organization",
@@ -107,7 +107,7 @@ const videoGameSchema = {
   "@type": "VideoGame",
   "name": "Directional Chaos Pursuit",
   "url": "https://skilldrills.online/drills/visual-tracking/directional-chaos-pursuit",
-  "description": "Track erratic target trajectories with unpredictable velocity shifts. Condition reactive gaze re-acquisition online in your browser. Free, no sign-up.",
+  "description": "Free browser drill: follow a target whose direction keeps changing unpredictably and practise catching up after each change. No sign-up.",
   "genre": [
     "Action",
     "Eye Tracking",
@@ -130,7 +130,7 @@ const howToSchema = {
   "@context": "https://schema.org",
   "@type": "HowTo",
   "name": "How to Train Eye Tracking with Directional Chaos Pursuit",
-  "description": "Track erratic target trajectories with unpredictable velocity shifts. Condition reactive gaze re-acquisition online in your browser. Free, no sign-up.",
+  "description": "Free browser drill: follow a target whose direction keeps changing unpredictably and practise catching up after each change. No sign-up.",
   "dateModified": "2026-09-12",
   "step": [
     {
@@ -254,6 +254,7 @@ const faqSchema = {
 const guide = {
   heading: "Directional Chaos Pursuit - Ocular Motor Training Standards",
   intro: [
+    "Directional Chaos Pursuit is a free browser drill where you follow a target whose direction keeps changing unpredictably. Because you cannot memorise the path, you practise reacting to each change and catching up with the target. Set the speed and duration, press start, and keep following the target for as long as you can.",
     
     
       "Most tracking drills use predictable geometric paths, which unintentionally allow the brain to substitute anticipatory motor prediction for actual visual pursuit (Bahill et al., 1980). Once a path repeats, internal models bypass real-time retinal error processing. Directional Chaos Pursuit eliminates this shortcut by applying continuous, pseudo-random velocity perturbations and elastic wall bounces, ensuring no two seconds of trajectory are identical.",
@@ -266,7 +267,7 @@ const guide = {
     title: "Directional Chaos Pursuit & Saccadic Recovery Benchmarks",
     headers: ["Performance Tier", "Speed Multiplier", "Gaze Recovery & Tracking Continuity", "Neuromotor & Ocular Profile"],
     rows: [
-      ["Tier 1: Apex Reactive Pursuit", "2.0x+", "Instantaneous catch-up saccade upon trajectory disruption; zero lag refixation onto new vector.", "Peak synaptic transmission speed between retinal periphery and oculomotor centers; elite esports tracking standard."],
+      ["Tier 1: Apex Reactive Pursuit", "2.0x+", "Quick catch-up eye movement after each trajectory change and an immediate return to following the target.", "Strongest recovery in this drill's tiers; a practice target, not a clinical or esports standard."],
       ["Tier 2: Superior Saccadic Recovery", "1.4x – 1.9x", "High-velocity re-centering with minimal oscillatory overshoot; smooth pursuit resumes in <180 ms.", "Exceptional extraocular coordination; rapid adaptation to erratic, non-linear directional switches."],
       ["Tier 3: Solid Baseline", "1.0x – 1.3x", "Consistent tracking across standard turns; minor latency lag on acute angle rebounds.", "Typical adult baseline; adequate for casual gaming, driving, and general sports reactions."],
       ["Tier 4: Delayed Refixation", "0.7x – 0.9x", "Target regularly escapes foveal capture; multiple secondary corrective saccades required.", "Elevated sensorimotor processing latency during direction shifts; benefits from sub-1.0x training."],
