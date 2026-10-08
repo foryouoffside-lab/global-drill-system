@@ -219,7 +219,7 @@ const faqSchema = {
       "name": "Qual é a estratégia fundamental para superar 17.000 pontos e conquistar o rank Apex Grid Evader?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "É indispensável manter a visão suave (soft gaze) no centro exato da matriz 3x3 e priorizar a célula segura mais próxima adjacente ao cursor atual. Sustentar uma sequência ininterrupta com multiplicador máximo de 3.0x durante toda a rodada de 45 segundos garante a pontuação máxima."
+        "text": "É indispensável manter a visão suave (soft gaze) no centro exato da matriz 3x3 e priorizar a célula segura mais próxima adjacente ao cursor atual. Sustentar uma sequência ininterrupta com multiplicador máximo de 3.0x durante toda a rodada de 45 segundos ajuda a maximizar a pontuação."
       }
     },
     {
@@ -235,7 +235,7 @@ const faqSchema = {
       "name": "O teste exige instalação de extensões ou envio de dados pessoais?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Não. Todo o processamento cinemático e estatístico roda diretamente no navegador web através de HTML5 Canvas e performance.now(). Seus recordes e estatísticas ficam guardados estritamente na memória local do seu navegador (LocalStorage), garantindo total privacidade."
+        "text": "Não. Todo o processamento cinemático e estatístico roda diretamente no navegador web através de HTML5 Canvas e performance.now(). Seus recordes e estatísticas ficam guardados estritamente na memória local do seu navegador (LocalStorage), mantendo os dados no seu dispositivo."
       }
     }
   ]
@@ -285,19 +285,19 @@ const gridGuide = {
     "O teste de esquiva em grade dinâmica (Dynamic Grid Evasion) submete o aparelho visuomotor a um regime de alta densidade informacional. Em vez de perseguir um alvo móvel isolado, o praticante deve monitorar simultaneamente 9 setores táticos em uma matriz 3x3, discernindo instantaneamente quais quadrantes apresentam risco de detonação iminente e executando uma rota de escape balística antes do término da janela de aviso.",
     "A célebre psicóloga cognitiva Anne Treisman e Garry Gelade (1980), em sua Teoria da Integração de Características, comprovaram que pistas visuais elementares e salientes (como cores contrastantes e bordas cintilantes) são segmentadas de forma pré-atencional e paralela pelo córtex visual. Ao adotar uma fixação visual descentralizada no centróide da matriz, o jogador ativa as células ganglionares parvocelulares e magnocelulares da retina periférica, permitindo registrar múltiplos avisos simultâneos sem necessidade de varredura ocular sacádica sequencial.",
     "A dinâmica de tempo de reação de escolha é aprofundada pelas investigações de Michael Posner (1980) sobre a orientação da atenção encoberta (covert spatial attention). Conforme a dificuldade ascende para os níveis 12 a 15, a janela de alarme colapsa de 1,4 segundos para escassos 0,45 segundos, enquanto o número de setores ameaçados sobe para 7 de 9. Nesse regime de estresse temporal, o controle voluntário endógeno é suplantado pelo modelo bifásico de Robert Woodworth (1899): um disparo motor balístico de alta velocidade seguido por frenagem micrométrica por atrito manual para estabilizar o cursor dentro da fronteira segura.",
-    "Rigor de cronometria computacional: A plataforma SkillDrills opera com a API nativa performance.now() em resolução sub-milissegundo no hardware do cliente. Variações cinemáticas perceptíveis decorrem da taxa de atualização do monitor (60Hz = 16,6ms; 144Hz = 6,9ms; 240Hz = 4,1ms) e da taxa de amostragem do mouse. Desvios inferiores a 5ms constituem tolerância física esperada."
+    "Rigor de cronometria computacional: A plataforma SkillDrills opera com a API nativa performance.now() em resolução de cerca de 1 ms no hardware do cliente. Variações cinemáticas perceptíveis decorrem da taxa de atualização do monitor (60Hz = 16,6ms; 144Hz = 6,9ms; 240Hz = 4,1ms) e da taxa de amostragem do mouse. Desvios inferiores a 5ms constituem tolerância física esperada."
   ],
   benchmarks: {
-    title: "Tabela de Classificação e Padrões de Desempenho em Esquiva Espacial (5 Níveis)",
-    headers: ["Nível / Rank", "Título de Mestria", "Pontuação Alvo", "Nível Atingido", "Janela de Aviso Suportada", "Perfil Neurofuncional de Esquiva"],
+    title: "Faixas de Referência de Desempenho em Esquiva Espacial (5 Níveis)",
+    headers: ["Faixa", "Classificação editorial", "Pontuação Alvo", "Nível Atingido", "Janela de Aviso Suportada", "Perfil Neurofuncional de Esquiva"],
     rows: [
-      ["Tier 1: Evadidor Apex Supremo", "Apex Grid Evader", "17.000+ pontos", "Nível 12 – 15", "0,45 – 0,60 s de aviso", "Processamento paralelo periférico de elite (top 0,1%); flicks balísticos instantâneos para refúgios seguros sob 7 ameaças ativas (Treisman 1980; Posner 1980)"],
-      ["Tier 2: Mestre em Varredura Espacial", "Master Spatial Scanner", "13.000 – 16.999 pts", "Nível 9 – 11", "0,65 – 0,80 s de aviso", "Excelente orientação de atenção encoberta de Posner; esquiva segura sob 5 a 6 células detonadas com frenagem de Woodworth estável"],
-      ["Tier 3: Desviador Tático Eficiente", "Proficient Hazard Dodger", "9.500 – 12.999 pts", "Nível 6 – 8", "0,85 – 1,05 s de aviso", "Desempenho sólido para games competitivos; boa tomada de decisão rápida e controle firme de atrito no mousepad"],
-      ["Tier 4: Evadidor de Setor Médio", "Intermediate Sector Evader", "6.000 – 9.499 pts", "Nível 3 – 5", "1,10 – 1,25 s de aviso", "Média padrão em adultos; falhas recorrentes provocadas por visão em túnel quando a janela de aviso desce para 1,0 segundo"],
-      ["Tier 5: Sobrevivente Inicial", "Novice Blast Survivor", "< 6.000 pontos", "Nível 1 – 2", "> 1,25 s de aviso", "Dificuldade na distribuição da atenção periférica; tendência a focar em células isoladas e ultrapassar os limites da célula segura"]
+      ["Faixa 1", "Muito alta", "17.000+ pontos", "Nível 12 – 15", "0,45 – 0,60 s de aviso", "Processamento paralelo periférico muito eficiente; flicks balísticos instantâneos para refúgios seguros sob 7 ameaças ativas (Treisman 1980; Posner 1980)"],
+      ["Faixa 2", "Alta", "13.000 – 16.999 pts", "Nível 9 – 11", "0,65 – 0,80 s de aviso", "Excelente orientação de atenção encoberta de Posner; esquiva segura sob 5 a 6 células detonadas com frenagem de Woodworth estável"],
+      ["Faixa 3", "Boa", "9.500 – 12.999 pts", "Nível 6 – 8", "0,85 – 1,05 s de aviso", "Desempenho sólido para games competitivos; boa tomada de decisão rápida e controle firme de atrito no mousepad"],
+      ["Faixa 4", "Intermediária", "6.000 – 9.499 pts", "Nível 3 – 5", "1,10 – 1,25 s de aviso", "Faixa intermediária; falhas recorrentes provocadas por visão em túnel quando a janela de aviso desce para 1,0 segundo"],
+      ["Faixa 5", "Inicial", "< 6.000 pontos", "Nível 1 – 2", "> 1,25 s de aviso", "Dificuldade na distribuição da atenção periférica; tendência a focar em células isoladas e ultrapassar os limites da célula segura"]
     ],
-    note: "Benchmarks consolidados a partir da Teoria de Integração de Características (Treisman & Gelade 1980), estudos de atenção espacial de Posner (1980) e princípios de controle motor de Woodworth (1899)."
+    note: "Faixas editoriais para comparar suas próprias sessões, não percentis de população nem normas clínicas. Benchmarks consolidados a partir da Teoria de Integração de Características (Treisman & Gelade 1980), estudos de atenção espacial de Posner (1980) e princípios de controle motor de Woodworth (1899)."
   },
   techniques: {
     title: "Protocolos Táticos para Aperfeiçoamento da Visão Periférica e Esquiva em Grade",
