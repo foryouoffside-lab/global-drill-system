@@ -27,3 +27,4 @@
 - /fr/…/constant-slow-pursuit | done | 7fab0910 | docs/seo/research/fr/constant-slow-pursuit.md | review log, no copy change
 - /fr/…/stability-challenge | done | 9bc4b18d | docs/seo/research/fr/stability-challenge.md | jeu de précision souris title/H1, replace placeholder headings, drop fabricated percentiles and unsourced claims
 - /fr/drills/memory/short-term-memory/color-sequence | done | 3c720deb | docs/seo/research/fr/color-sequence.md | title kept (jeu simon 28 Bing); copy cleanup
+- /fr/drills/cognitive/processing-speed/reaction-time | done | dca4c217 | docs/seo/research/fr/cognitive-reaction-time.md | demand not verified (Bing 0); distinct from reaction-time-test
