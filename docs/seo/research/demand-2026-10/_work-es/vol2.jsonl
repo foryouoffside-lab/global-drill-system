@@ -1,0 +1,70 @@
+{"phrase": "test de mecanografía", "cc": "es", "lang": "es-ES", "exact": 267, "broad": 296, "status": "ok"}
+{"phrase": "test de mecanografía", "cc": "mx", "lang": "es-MX", "exact": 8, "broad": 92, "status": "ok"}
+{"phrase": "test de velocidad de escritura", "cc": "es", "lang": "es-ES", "exact": 7, "broad": 7, "status": "ok"}
+{"phrase": "test de velocidad de escritura", "cc": "mx", "lang": "es-MX", "exact": 3, "broad": 3, "status": "ok"}
+{"phrase": "test de teclado", "cc": "es", "lang": "es-ES", "exact": 283, "broad": 298, "status": "ok"}
+{"phrase": "test de teclado", "cc": "mx", "lang": "es-MX", "exact": 148, "broad": 169, "status": "ok"}
+{"phrase": "test de clics", "cc": "es", "lang": "es-ES", "exact": 25, "broad": 25, "status": "ok"}
+{"phrase": "test de clics", "cc": "mx", "lang": "es-MX", "exact": 8, "broad": 8, "status": "ok"}
+{"phrase": "test de reacción", "cc": "es", "lang": "es-ES", "exact": 125, "broad": 125, "status": "ok"}
+{"phrase": "test de reacción", "cc": "mx", "lang": "es-MX", "exact": 6, "broad": 6, "status": "ok"}
+{"phrase": "test de reflejos", "cc": "es", "lang": "es-ES", "exact": 32, "broad": 32, "status": "ok"}
+{"phrase": "test de reflejos", "cc": "mx", "lang": "es-MX", "exact": 3, "broad": 3, "status": "ok"}
+{"phrase": "juegos de memoria", "cc": "es", "lang": "es-ES", "exact": 130, "broad": 426, "status": "ok"}
+{"phrase": "juegos de memoria", "cc": "mx", "lang": "es-MX", "exact": 41, "broad": 86, "status": "ok"}
+{"phrase": "test de memoria", "cc": "es", "lang": "es-ES", "exact": 24, "broad": 36, "status": "ok"}
+{"phrase": "test de memoria", "cc": "mx", "lang": "es-MX", "exact": 2, "broad": 4, "status": "ok"}
+{"phrase": "entrenamiento cerebral", "cc": "es", "lang": "es-ES", "exact": 0, "broad": 12, "status": "ok"}
+{"phrase": "entrenamiento cerebral", "cc": "mx", "lang": "es-MX", "exact": 0, "broad": 0, "status": "ok"}
+{"phrase": "juegos mentales", "cc": "es", "lang": "es-ES", "exact": 57, "broad": 151, "status": "ok"}
+{"phrase": "juegos mentales", "cc": "mx", "lang": "es-MX", "exact": 31, "broad": 56, "status": "ok"}
+{"phrase": "cálculo mental", "cc": "es", "lang": "es-ES", "exact": 33, "broad": 45, "status": "ok"}
+{"phrase": "cálculo mental", "cc": "mx", "lang": "es-MX", "exact": 46, "broad": 107, "status": "ok"}
+{"phrase": "lectura rápida", "cc": "es", "lang": "es-ES", "exact": 30, "broad": 30, "status": "ok"}
+{"phrase": "lectura rápida", "cc": "mx", "lang": "es-MX", "exact": 4, "broad": 4, "status": "ok"}
+{"phrase": "test de concentración", "cc": "es", "lang": "es-ES", "exact": 0, "broad": 0, "status": "ok"}
+{"phrase": "test de concentración", "cc": "mx", "lang": "es-MX", "exact": 0, "broad": 0, "status": "ok"}
+{"phrase": "test de stroop", "cc": "es", "lang": "es-ES", "exact": 23, "broad": 23, "status": "ok"}
+{"phrase": "test de stroop", "cc": "mx", "lang": "es-MX", "exact": 5, "broad": 5, "status": "ok"}
+{"phrase": "aim trainer", "cc": "es", "lang": "es-ES", "exact": 405, "broad": 595, "status": "ok"}
+{"phrase": "aim trainer", "cc": "mx", "lang": "es-MX", "exact": 23, "broad": 40, "status": "ok"}
+{"phrase": "test de cps", "cc": "es", "lang": "es-ES", "exact": 29, "broad": 29, "status": "ok"}
+{"phrase": "test de cps", "cc": "mx", "lang": "es-MX", "exact": 2, "broad": 2, "status": "ok"}
+{"phrase": "mecanografía", "cc": "mx", "lang": "es-MX", "exact": 959, "broad": 2836, "status": "ok"}
+{"phrase": "test de velocidad de mecanografía", "cc": "mx", "lang": "es-MX", "exact": 0, "broad": 0, "status": "ok"}
+{"phrase": "probar teclado", "cc": "mx", "lang": "es-MX", "exact": null, "broad": null, "status": "nodata"}
+{"phrase": "test de velocidad de clics", "cc": "mx", "lang": "es-MX", "exact": null, "broad": null, "status": "nodata"}
+{"phrase": "clics por segundo", "cc": "mx", "lang": "es-MX", "exact": null, "broad": null, "status": "nodata"}
+{"phrase": "tiempo de reacción", "cc": "mx", "lang": "es-MX", "exact": null, "broad": null, "status": "nodata"}
+{"phrase": "juegos para la memoria", "cc": "mx", "lang": "es-MX", "exact": null, "broad": null, "status": "nodata"}
+{"phrase": "ejercicios de memoria", "cc": "mx", "lang": "es-MX", "exact": null, "broad": null, "status": "nodata"}
+{"phrase": "juegos de agilidad mental", "cc": "mx", "lang": "es-MX", "exact": null, "broad": null, "status": "nodata"}
+{"phrase": "entrenar puntería", "cc": "mx", "lang": "es-MX", "exact": null, "broad": null, "status": "nodata"}
+{"phrase": "aim trainer valorant", "cc": "mx", "lang": "es-MX", "exact": null, "broad": null, "status": "error:<urlopen error [Errno 11001] getaddrinfo failed>"}
+{"phrase": "aim trainer free fire", "cc": "mx", "lang": "es-MX", "exact": null, "broad": null, "status": "error:<urlopen error [Errno 11001] getaddrinfo failed>"}
+{"phrase": "sensibilidad free fire", "cc": "mx", "lang": "es-MX", "exact": null, "broad": null, "status": "error:<urlopen error [Errno 11001] getaddrinfo failed>"}
+{"phrase": "entrenamiento de puntería", "cc": "mx", "lang": "es-MX", "exact": null, "broad": null, "status": "nodata"}
+{"phrase": "test de agilidad mental", "cc": "mx", "lang": "es-MX", "exact": null, "broad": null, "status": "nodata"}
+{"phrase": "juegos de cálculo mental", "cc": "mx", "lang": "es-MX", "exact": null, "broad": null, "status": "nodata"}
+{"phrase": "ejercicios de cálculo mental", "cc": "mx", "lang": "es-MX", "exact": null, "broad": null, "status": "nodata"}
+{"phrase": "juegos de concentración", "cc": "mx", "lang": "es-MX", "exact": null, "broad": null, "status": "nodata"}
+{"phrase": "ejercicios de concentración", "cc": "mx", "lang": "es-MX", "exact": null, "broad": null, "status": "nodata"}
+{"phrase": "test de atención", "cc": "mx", "lang": "es-MX", "exact": null, "broad": null, "status": "nodata"}
+{"phrase": "test de tiempo de reacción", "cc": "mx", "lang": "es-MX", "exact": null, "broad": null, "status": "error:<urlopen error [Errno 11001] getaddrinfo failed>"}
+{"phrase": "cuántas palabras por minuto escribo", "cc": "mx", "lang": "es-MX", "exact": null, "broad": null, "status": "nodata"}
+{"phrase": "palabras por minuto test", "cc": "mx", "lang": "es-MX", "exact": null, "broad": null, "status": "nodata"}
+{"phrase": "prueba de mecanografía", "cc": "mx", "lang": "es-MX", "exact": null, "broad": null, "status": "nodata"}
+{"phrase": "prueba de reflejos", "cc": "mx", "lang": "es-MX", "exact": null, "broad": null, "status": "nodata"}
+{"phrase": "juego de reflejos", "cc": "mx", "lang": "es-MX", "exact": null, "broad": null, "status": "nodata"}
+{"phrase": "tabla de schulte", "cc": "mx", "lang": "es-MX", "exact": null, "broad": null, "status": "nodata"}
+{"phrase": "juego de stroop", "cc": "mx", "lang": "es-MX", "exact": null, "broad": null, "status": "nodata"}
+{"phrase": "ejercicios de lectura rápida", "cc": "mx", "lang": "es-MX", "exact": null, "broad": null, "status": "nodata"}
+{"phrase": "test de velocidad de lectura", "cc": "mx", "lang": "es-MX", "exact": null, "broad": null, "status": "nodata"}
+{"phrase": "test de mecanografía", "cc": "ar", "lang": "es-AR", "exact": null, "broad": null, "status": "nodata"}
+{"phrase": "aim trainer", "cc": "ar", "lang": "es-AR", "exact": null, "broad": null, "status": "nodata"}
+{"phrase": "juegos de memoria", "cc": "ar", "lang": "es-AR", "exact": null, "broad": null, "status": "nodata"}
+{"phrase": "test de reacción", "cc": "ar", "lang": "es-AR", "exact": null, "broad": null, "status": "nodata"}
+{"phrase": "test de clics", "cc": "ar", "lang": "es-AR", "exact": null, "broad": null, "status": "nodata"}
+{"phrase": "test de velocidad de escritura", "cc": "ar", "lang": "es-AR", "exact": null, "broad": null, "status": "nodata"}
+{"phrase": "free fire sensibilidad", "cc": "mx", "lang": "es-MX", "exact": null, "broad": null, "status": "nodata"}
+{"phrase": "aim trainer free fire", "cc": "es", "lang": "es-ES", "exact": null, "broad": null, "status": "nodata"}

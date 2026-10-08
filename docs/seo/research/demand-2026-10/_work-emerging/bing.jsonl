@@ -1,0 +1,71 @@
+{"phrase": "tes kecepatan klik", "cc": "id", "lang": "id-ID", "exact": null, "broad": null, "status": "nodata"}
+{"phrase": "cps test", "cc": "id", "lang": "id-ID", "exact": null, "broad": null, "status": "nodata"}
+{"phrase": "tes kecepatan mengetik", "cc": "id", "lang": "id-ID", "exact": null, "broad": null, "status": "nodata"}
+{"phrase": "tes keyboard", "cc": "id", "lang": "id-ID", "exact": null, "broad": null, "status": "nodata"}
+{"phrase": "tes waktu reaksi", "cc": "id", "lang": "id-ID", "exact": null, "broad": null, "status": "nodata"}
+{"phrase": "tes refleks", "cc": "id", "lang": "id-ID", "exact": null, "broad": null, "status": "nodata"}
+{"phrase": "tıklama hızı testi", "cc": "tr", "lang": "tr-TR", "exact": 0, "broad": 0, "status": "ok"}
+{"phrase": "cps testi", "cc": "tr", "lang": "tr-TR", "exact": 0, "broad": 0, "status": "ok"}
+{"phrase": "yazma hızı testi", "cc": "tr", "lang": "tr-TR", "exact": 0, "broad": 0, "status": "ok"}
+{"phrase": "klavye testi", "cc": "tr", "lang": "tr-TR", "exact": 765, "broad": 1035, "status": "ok"}
+{"phrase": "refleks testi", "cc": "tr", "lang": "tr-TR", "exact": 0, "broad": 0, "status": "ok"}
+{"phrase": "tepki süresi testi", "cc": "tr", "lang": "tr-TR", "exact": 0, "broad": 0, "status": "ok"}
+{"phrase": "nişan alma antrenmanı", "cc": "tr", "lang": "tr-TR", "exact": 0, "broad": 0, "status": "ok"}
+{"phrase": "on parmak klavye", "cc": "tr", "lang": "tr-TR", "exact": 421, "broad": 581, "status": "ok"}
+{"phrase": "test klikania", "cc": "pl", "lang": "pl-PL", "exact": 133, "broad": 133, "status": "ok"}
+{"phrase": "test szybkości pisania", "cc": "pl", "lang": "pl-PL", "exact": 110, "broad": 110, "status": "ok"}
+{"phrase": "test klawiatury", "cc": "pl", "lang": "pl-PL", "exact": 1185, "broad": 2068, "status": "ok"}
+{"phrase": "test refleksu", "cc": "pl", "lang": "pl-PL", "exact": 0, "broad": 0, "status": "ok"}
+{"phrase": "test czasu reakcji", "cc": "pl", "lang": "pl-PL", "exact": 0, "broad": 0, "status": "ok"}
+{"phrase": "trening celowania", "cc": "pl", "lang": "pl-PL", "exact": 0, "broad": 0, "status": "ok"}
+{"phrase": "cps test", "cc": "pl", "lang": "pl-PL", "exact": 20641, "broad": 25419, "status": "ok"}
+{"phrase": "szybkość klikania", "cc": "pl", "lang": "pl-PL", "exact": 0, "broad": 0, "status": "ok"}
+{"phrase": "test velocità click", "cc": "it", "lang": "it-IT", "exact": 0, "broad": 0, "status": "ok"}
+{"phrase": "test velocità di scrittura", "cc": "it", "lang": "it-IT", "exact": null, "broad": null, "status": "error:<urlopen error _ssl.c:1015: The handshake operation timed out>"}
+{"phrase": "test tastiera", "cc": "it", "lang": "it-IT", "exact": 255, "broad": 595, "status": "ok"}
+{"phrase": "test riflessi", "cc": "it", "lang": "it-IT", "exact": 0, "broad": 0, "status": "ok"}
+{"phrase": "test tempo di reazione", "cc": "it", "lang": "it-IT", "exact": 0, "broad": 0, "status": "ok"}
+{"phrase": "allenamento mira", "cc": "it", "lang": "it-IT", "exact": 0, "broad": 0, "status": "ok"}
+{"phrase": "cps test", "cc": "it", "lang": "it-IT", "exact": 1355, "broad": 1450, "status": "ok"}
+{"phrase": "тест скорости клика", "cc": "ru", "lang": "ru-RU", "exact": 0, "broad": 0, "status": "ok"}
+{"phrase": "тест скорости печати", "cc": "ru", "lang": "ru-RU", "exact": 119, "broad": 119, "status": "ok"}
+{"phrase": "тест клавиатуры", "cc": "ru", "lang": "ru-RU", "exact": 306, "broad": 401, "status": "ok"}
+{"phrase": "тест реакции", "cc": "ru", "lang": "ru-RU", "exact": 78, "broad": 78, "status": "ok"}
+{"phrase": "тренировка аима", "cc": "ru", "lang": "ru-RU", "exact": 0, "broad": 0, "status": "ok"}
+{"phrase": "cps тест", "cc": "ru", "lang": "ru-RU", "exact": 0, "broad": 0, "status": "ok"}
+{"phrase": "клавиатурный тренажер", "cc": "ru", "lang": "ru-RU", "exact": 532, "broad": 861, "status": "ok"}
+{"phrase": "проверка клавиатуры онлайн", "cc": "ru", "lang": "ru-RU", "exact": 201, "broad": 201, "status": "ok"}
+{"phrase": "kiểm tra tốc độ click", "cc": "vn", "lang": "vi-VN", "exact": 0, "broad": 0, "status": "ok"}
+{"phrase": "test tốc độ gõ phím", "cc": "vn", "lang": "vi-VN", "exact": 42, "broad": 42, "status": "ok"}
+{"phrase": "kiểm tra bàn phím", "cc": "vn", "lang": "vi-VN", "exact": 106, "broad": 106, "status": "ok"}
+{"phrase": "kiểm tra phản xạ", "cc": "vn", "lang": "vi-VN", "exact": 0, "broad": 0, "status": "ok"}
+{"phrase": "luyện aim", "cc": "vn", "lang": "vi-VN", "exact": 0, "broad": 0, "status": "ok"}
+{"phrase": "cps test", "cc": "vn", "lang": "vi-VN", "exact": 441, "broad": 462, "status": "ok"}
+{"phrase": "kiểm tra tốc độ đánh máy", "cc": "vn", "lang": "vi-VN", "exact": 432, "broad": 432, "status": "ok"}
+{"phrase": "test tốc độ phản xạ", "cc": "vn", "lang": "vi-VN", "exact": 0, "broad": 0, "status": "ok"}
+{"phrase": "ทดสอบความเร็วคลิก", "cc": "th", "lang": "th-TH", "exact": 0, "broad": 0, "status": "ok"}
+{"phrase": "ทดสอบการพิมพ์", "cc": "th", "lang": "th-TH", "exact": 93, "broad": 93, "status": "ok"}
+{"phrase": "ทดสอบคีย์บอร์ด", "cc": "th", "lang": "th-TH", "exact": 111, "broad": 111, "status": "ok"}
+{"phrase": "ทดสอบปฏิกิริยา", "cc": "th", "lang": "th-TH", "exact": 0, "broad": 0, "status": "ok"}
+{"phrase": "ฝึกเล็ง", "cc": "th", "lang": "th-TH", "exact": 0, "broad": 0, "status": "ok"}
+{"phrase": "เกมฝึกความจำ", "cc": "th", "lang": "th-TH", "exact": 0, "broad": 0, "status": "ok"}
+{"phrase": "cps test", "cc": "th", "lang": "th-TH", "exact": 30, "broad": 31, "status": "ok"}
+{"phrase": "ทดสอบความเร็วพิมพ์ดีด", "cc": "th", "lang": "th-TH", "exact": 0, "broad": 0, "status": "ok"}
+{"phrase": "cps test", "cc": "ph", "lang": "en-PH", "exact": 216, "broad": 218, "status": "ok"}
+{"phrase": "typing test", "cc": "ph", "lang": "en-PH", "exact": 1649, "broad": 2379, "status": "ok"}
+{"phrase": "keyboard test", "cc": "ph", "lang": "en-PH", "exact": 61, "broad": 72, "status": "ok"}
+{"phrase": "reaction time test", "cc": "ph", "lang": "en-PH", "exact": 38, "broad": 39, "status": "ok"}
+{"phrase": "aim trainer", "cc": "ph", "lang": "en-PH", "exact": 11, "broad": 40, "status": "ok"}
+{"phrase": "cps test", "cc": "in", "lang": "en-IN", "exact": 552, "broad": 648, "status": "ok"}
+{"phrase": "typing test", "cc": "in", "lang": "en-IN", "exact": 9999, "broad": 18149, "status": "ok"}
+{"phrase": "keyboard test", "cc": "in", "lang": "en-IN", "exact": 212, "broad": 499, "status": "ok"}
+{"phrase": "reaction time test", "cc": "in", "lang": "en-IN", "exact": 45, "broad": 53, "status": "ok"}
+{"phrase": "aim trainer", "cc": "in", "lang": "en-IN", "exact": 39, "broad": 53, "status": "ok"}
+{"phrase": "memory game", "cc": "in", "lang": "en-IN", "exact": 6, "broad": 20, "status": "ok"}
+{"phrase": "टाइपिंग टेस्ट", "cc": "in", "lang": "hi-IN", "exact": 0, "broad": 2, "status": "ok"}
+{"phrase": "हिंदी टाइपिंग टेस्ट", "cc": "in", "lang": "hi-IN", "exact": 0, "broad": 0, "status": "ok"}
+{"phrase": "कीबोर्ड टेस्ट", "cc": "in", "lang": "hi-IN", "exact": 0, "broad": 0, "status": "ok"}
+{"phrase": "रिएक्शन टाइम टेस्ट", "cc": "in", "lang": "hi-IN", "exact": 0, "broad": 0, "status": "ok"}
+{"phrase": "माउस क्लिक स्पीड टेस्ट", "cc": "in", "lang": "hi-IN", "exact": 0, "broad": 0, "status": "ok"}
+{"phrase": "टाइपिंग स्पीड टेस्ट", "cc": "in", "lang": "hi-IN", "exact": 0, "broad": 0, "status": "ok"}
+{"phrase": "cps test", "cc": "in", "lang": "hi-IN", "exact": 23, "broad": 27, "status": "ok"}

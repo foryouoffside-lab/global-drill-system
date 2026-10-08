@@ -1,0 +1,91 @@
+\drills\cognitive\attention\concentration-stamina :: Test de Concentración | Atención Sostenida | SkillDrills
+\drills\cognitive\attention\divided-attention :: Test de Atención Dividida | Doble Tarea | SkillDrills
+\drills\cognitive\attention\multi-tasking :: Test de Multitarea | Rastreo Doble | SkillDrills
+\drills\cognitive\focus\concentration-grid :: Tabla de Schulte online | Rejilla de foco | SkillDrills
+\drills\cognitive\focus\distraction-fighter :: Test de Stroop | Atención Selectiva | SkillDrills
+\drills\cognitive :: Entrenamiento cerebral y concentración | SkillDrills
+\drills\cognitive\processing-speed\reaction-time :: Tiempo de Reacción de Elección | Velocidad de Decisión
+\drills\cognitive\processing-speed\rsvp-reader :: Lectura Rápida Online | Lector RSVP | SkillDrills
+\drills\cognitive\processing-speed\symbol-matching :: Test de Símbolos y Dígitos | SDMT Online | SkillDrills
+\drills\fps\180-degree-awareness :: Entrenamiento giro 180° | Puntería FPS | SkillDrills
+\drills\fps\angle-hold-trainer :: Aim Trainer | Colocación de Mira | SkillDrills
+\drills\fps\anti-strafe-jitter-duel :: Aim Trainer | Tracking Reactivo & Strafe | SkillDrills
+\drills\fps\anti-zigzag-movement-trainer :: Aim Trainer | Tracking en Zigzag | SkillDrills
+\drills\fps\flick-shot-training :: Aim Trainer - Entrenamiento de puntería | SkillDrills
+\drills\fps\flow-state :: Concentración FPS | Entrenamiento de Flow | SkillDrills
+\drills\fps\instant-response :: Test de Reflejos | Tiempo de Reacción FPS | SkillDrills
+\drills\fps\micro-correction-precision :: Aim Trainer | Microajustes de Puntería FPS | SkillDrills
+\drills\fps :: Entrenamiento de puntería FPS | SkillDrills
+\drills\fps\pro-smooth-pursuit :: Entrenamiento de Puntería | Tracking FPS | SkillDrills
+\drills\fps\recoil-control :: Control de Retroceso | Entrenamiento FPS | SkillDrills
+\drills\fps\strafe-tracking :: Tracking Aim Trainer: Strafe y Puntería FPS | SkillDrills
+\drills\fps\target-acquisition :: Aim Trainer Online - Adquisición de objetivos | SkillDrills
+\drills\fps\target-prioritization :: Aim Trainer | Selección de Objetivos | SkillDrills
+\drills\fps\target-switching-swarm :: Aim Trainer Valorant - Cambio de objetivos | SkillDrills
+\drills\fps\vertical-air-track :: Entrenador de Puntería Vertical - Tracking | SkillDrills
+\drills\memory :: ?
+\drills\memory\short-term-memory\color-sequence :: Juego Simón online | Secuencia de colores | SkillDrills
+\drills\memory\short-term-memory\digit-span :: Test de dígitos online | Memoria numérica | SkillDrills
+\drills\memory\short-term-memory\word-recall :: Test de memoria verbal online | Palabras | SkillDrills
+\drills\memory\spatial-memory\grid-memorization :: Test de memoria visual online | SkillDrills
+\drills\memory\spatial-memory\object-location :: Test de memoria espacial online | SkillDrills
+\drills\memory\spatial-memory\path-tracing :: Test de Corsi online | Bloques de Corsi | SkillDrills
+\drills\memory\working-memory\n-back :: Test N-Back online | Memoria de trabajo | SkillDrills
+\drills\motor\hand-eye-coordination\aim-trainer :: Entrenamiento de puntería | Aim Trainer | SkillDrills
+\drills\motor\hand-eye-coordination\drag-and-drop :: Prueba de arrastre | Precisión del ratón | SkillDrills
+\drills\motor\hand-eye-coordination\precision-flick-shot :: Entrenamiento de flick | Test de puntería | SkillDrills
+\drills\motor\movement-speed\finger-sequencing :: Puntería secuencial | Cambio de objetivos | SkillDrills
+\drills\motor\movement-speed\keyboard-recognition :: Test de Reacción con Teclado | SkillDrills
+\drills\motor\movement-speed\rapid-tapping :: Test de CPS | Clics por segundo | SkillDrills
+\drills\motor :: Precisión del ratón y puntería | SkillDrills
+\drills\motor\precision-control\steady-hand :: Juego del Pulso Online | Test de Mano Firme | SkillDrills
+\drills\motor\precision-control\tracing :: Test de seguimiento del ratón | Trazado | SkillDrills
+\drills :: ?
+\drills\physical\balance-training\stability-challenge :: Estabilidad de puntería | Test de ratón | SkillDrills
+\drills\physical\coordination\complex-pattern :: Juego de memoria visual | Test espacial | SkillDrills
+\drills\physical\coordination\cross-body-movement :: Test de coordinación ojo-mano | SkillDrills
+\drills\physical\coordination\dynamic-grid-evasion :: Juego de reflejos con ratón | SkillDrills
+\drills\physical\fitness\agility-ladder :: Ejercicios de escalera de agilidad | SkillDrills
+\drills\physical\fitness\jump-sequence :: Saltar Más Alto – Salto Vertical | SkillDrills
+\drills\physical\fitness\speed-drill :: Test de Clic Rápido: Objetivos que se Encogen | SkillDrills
+\drills\physical :: Entrenamiento de Agilidad & Test de Reflejos | SkillDrills
+\drills\physical\reflex-training\drop-catch :: Test de la Regla | Tiempo de Reacción
+\drills\physical\reflex-training\peripheral-threat-sweeper :: Test de Visión Periférica Online | Entrenamiento
+\drills\physical\reflex-training\quick-dodge :: Juego de esquivar con el ratón | Reflejos
+\drills\physical\reflex-training\reaction-chain :: Frenado de puntería | Test de reflejos
+\drills\reaction-speed\barrier-sequence-pursuit :: ?
+\drills\reaction-speed\fps-tracking-trainer :: ?
+\drills\reaction-speed\market-doors-pursuit :: ?
+\drills\reaction-speed :: ?
+\drills\reaction-speed\reaction-game :: ?
+\drills\reaction-speed\reaction-time-test :: ?
+\drills\reaction-speed\reflex-training-drill :: ?
+\drills\reaction-speed\saccadic-gallery :: Entrenamiento Visual Online · Saltos Oculares | SkillDrills
+\drills\reaction-speed\visual-tracking-speed-test :: ?
+\drills\visual-tracking\constant-slow-pursuit :: ?
+\drills\visual-tracking\directional-chaos-pursuit :: Seguimiento ocular con cambios de dirección | SkillDrills
+\drills\visual-tracking\dynamic-evasion-pursuit :: Seguimiento Ocular Reactivo | Objetivo Móvil | SkillDrills
+\drills\visual-tracking\ghosting-suppress-pursuit :: Test de Ghosting del Monitor | SkillDrills
+\drills\visual-tracking\infinity-pursuit :: Ejercicio Ocular en Figura Ocho | SkillDrills
+\drills\visual-tracking\momentum-teleport-pursuit :: Seguimiento de Blanco Teletransportado | SkillDrills
+\drills\visual-tracking :: ?
+\drills\visual-tracking\peripheral-ping-pursuit :: Fijación Central y Visión Periférica | SkillDrills
+\drills\visual-tracking\predictive-pursuit :: Seguimiento ocular predictivo | SkillDrills
+\drills\visual-tracking\sine-wave-pursuit :: Seguimiento ocular sinusoidal | SkillDrills
+\drills\visual-tracking\spatial-shift-pursuit :: Seguimiento visual con cambio espacial | SkillDrills
+\drills\visual-tracking\split-screen-tracking :: Seguimiento visual en pantalla dividida | SkillDrills
+\drills\visual-tracking\staircase-step :: Seguimiento ocular vertical | SkillDrills
+\drills\visual-tracking\strobe-prediction-pursuit :: Entrenamiento visual estroboscópico | SkillDrills
+\drills\visual-tracking\triangular-pursuit :: Seguimiento visual triangular | SkillDrills
+\drills\visual-tracking\zig-zag-path-pursuit :: Seguimiento visual en zigzag | SkillDrills
+\drills\visual\depth-perception\distance-judgment :: Test de percepción de profundidad online | SkillDrills
+\drills\visual :: Test de Agudeza Visual & Percepción | SkillDrills
+\drills\visual\reaction-speed\go\no-go :: Test Go/No-Go | Control inhibitorio | SkillDrills
+\drills\visual\reaction-speed\light-reaction :: Test de reacción online | Tiempo de reacción visual
+\drills\visual\tracking-accuracy\moving-target :: Seguimiento Visual | Objetivo Móvil | SkillDrills
+\drills\visual\tracking-accuracy\multiple-targets :: Seguimiento de Múltiples Objetos | MOT | SkillDrills
+\drills\visual\tracking-accuracy\pursuit-tracker :: Seguimiento Ocular | Persecución Visual | SkillDrills
+\drills\visual\visual-recognition\entropic-grid :: Concentración en Cuadrícula | Escaneo Visual | SkillDrills
+\drills\visual\visual-recognition\rhythm-anomaly :: Discriminación Temporal | Ritmo Visual | SkillDrills
+\drills\visual\visual-recognition\visual-search :: Búsqueda Visual | Atención Selectiva | SkillDrills
+ :: ?
