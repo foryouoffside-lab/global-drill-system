@@ -144,7 +144,7 @@ const faqSchema = {
       "name": "Por que fugir para os cantos da tela é a pior estratégia em níveis avançados?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Ao levar o cursor para as bordas ou cantos, o leque de escape físico é reduzido para menos de 90 graus, facilitando o encurralamento por projéteis cruzados. A estratégia dos mestres consiste em manter a base nos 30% centrais da tela, permitindo saídas em 360 graus com micro-ajustes milimétricos."
+        "text": "Ao levar o cursor para as bordas ou cantos, o leque de escape físico é reduzido para menos de 90 graus, facilitando o encurralamento por projéteis cruzados. A estratégia mais segura consiste em manter a base nos 30% centrais da tela, permitindo saídas em 360 graus com micro-ajustes milimétricos."
       }
     },
     {
@@ -152,7 +152,7 @@ const faqSchema = {
       "name": "Como a pontuação e os multiplicadores de combo se acumulam durante a partida?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "A cada segundo de sobrevivência pontos contínuos são somados. Quando você realiza uma 'raspagem rente' (Close Shave) passando a poucos pixels de uma esfera, o combo salta rapidamente até o teto de 3.0x. Completar os 45 segundos sem colisões é o único meio de ultrapassar a barreira de elite de 24.000 pontos."
+        "text": "A cada segundo de sobrevivência pontos contínuos são somados. Quando você realiza uma 'raspagem rente' (Close Shave) passando a poucos pixels de uma esfera, o combo salta rapidamente até o teto de 3.0x. Completar os 45 segundos sem colisões é o único meio de chegar à faixa mais alta de pontuação."
       }
     },
     {
@@ -259,20 +259,20 @@ const dodgeGuide = {
       "O Quick Dodge é uma plataforma avançada de treinamento perceptivo-motor concebida para lapidar a capacidade de navegar através de densas tempestades de projéteis com manobras microscópicas de mouse. Mais do que um mero teste de reação visual passiva, o exercício demanda a resolução proativa de problemas de intercepção espacial inversa: calcular vazios transitórios em um ambiente dinâmico sob constante aceleração.",
       "Segundo a teoria dos modelos internos cerebelares de Mitsuo Kawato (1999), a velocidade dos projéteis (superando 500 px/s) inviabiliza a correção contínua por feedback visual direto devido ao atraso de latência aferente (100 a 150 ms). O cérebro humano sobrevive antecipando a cinemática dos corpos: ao captar o ângulo de nascimento de uma esfera, o cerebelo dispara um programa motor balístico em malha aberta pré-calculado para posicionar a mão na rota de menor risco.",
       "Conforme o modelo de controle motor bifásico de Robert S. Woodworth (1899), cada ação rápida inicia-se com um impulso de aceleração aberto e finaliza-se com uma frenagem de precisão. Em velocidades críticas, a Lei de Fitts (1954) dita que a redução da área livre (W) eleva dramaticamente o índice de dificuldade. Realizar movimentos excessivamente longos desperdiça espaço e sela a derrota; o domínio pertence à micro-movimentação contida em raios inferiores a 15 px.",
-      "Para garantir fidelidade temporal sem desvios, o simulador opera por meio da API performance.now() do navegador. Em telas de 144Hz ou 240Hz acopladas a mouses gamer de 1000Hz de polling rate, o atraso de exibição é reduzido para menos de 4 ms, eliminando borrões em velocidades extremas e assegurando precisão pura (Woods et al., 2015). Seus dados ficam salvos unicamente no seu dispositivo."
+      "O simulador opera por meio da API performance.now() do navegador. Em telas de 144Hz ou 240Hz acopladas a mouses gamer de 1000Hz de polling rate, o atraso de exibição é reduzido para menos de 4 ms, eliminando borrões em velocidades extremas e assegurando precisão pura (Woods et al., 2015). Seus dados ficam salvos unicamente no seu dispositivo."
     ]
   },
   benchmarks: {
     title: "Tabela Oficial de Classificação em 5 Níveis para Esquiva com Mouse",
     headers: ["Nível e Categoria", "Título (Rank Title)", "Meta de Pontuação", "Taxa de Sobrevivência e Velocidade", "Classificação", "Perfil Neuromotor"],
     rows: [
-      ["Tier 1: Mestre Supremo de Esquiva Cinética", "Apex Kinetic Evader", "24.000+ pontos", "> 95% / 500+ px/s", "Grade S", "Top 0,1% da elite de eSports. Predição cerebelar perfeita de Kawato e micro-movimentação impecável entre mais de 50 projéteis (Kawato 1999; Woodworth 1899)"],
-      ["Tier 2: Estrategista de Trajetória Precisa", "Precision Trajectory Striker", "17.000 – 23.999 pontos", "90 – 94% / 400 – 499 px/s", "Grade A", "Top 3% semiprofissional. Excelente controle de espaço e posicionamento central estável sob fogo intenso"],
-      ["Tier 3: Piloto Ágil de Evasão", "Skilled Evasion Pilot", "11.000 – 16.999 pontos", "82 – 89% / 300 – 399 px/s", "Grade B", "Top 15% jogadores competitivos. Controle consistente de punho e boa capacidade de leitura precoce das ameaças"],
-      ["Tier 4: Praticante em Desenvolvimento", "Developing Dodger", "6.000 – 10.999 pontos", "70 – 81% / 200 – 299 px/s", "Grade C", "Média da população adulta. Tendência a fugir para os cantos em velocidades elevadas; recomenda-se treino de recentralização"],
-      ["Tier 5: Iniciante em Esquiva Motora", "Novice Evasion Trainee", "< 6.000 pontos", "< 70% / < 200 px/s", "Grade D", "Fase inicial. Colisões frequentes por atraso visual; recomenda-se relaxar a mão e ampliar o foco para a tela inteira"]
+      ["Faixa 1", "Muito alta", "24.000+ pontos", "> 95% / 500+ px/s", "Grade S", "Predição cerebelar perfeita de Kawato e micro-movimentação impecável entre mais de 50 projéteis (Kawato 1999; Woodworth 1899)"],
+      ["Faixa 2", "Alta", "17.000 – 23.999 pontos", "90 – 94% / 400 – 499 px/s", "Grade A", "Excelente controle de espaço e posicionamento central estável sob fogo intenso"],
+      ["Faixa 3", "Boa", "11.000 – 16.999 pontos", "82 – 89% / 300 – 399 px/s", "Grade B", "Controle consistente de punho e boa capacidade de leitura precoce das ameaças"],
+      ["Faixa 4", "Intermediária", "6.000 – 10.999 pontos", "70 – 81% / 200 – 299 px/s", "Grade C", "Média da população adulta. Tendência a fugir para os cantos em velocidades elevadas; recomenda-se treino de recentralização"],
+      ["Faixa 5", "Inicial", "< 6.000 pontos", "< 70% / < 200 px/s", "Grade D", "Fase inicial. Colisões frequentes por atraso visual; recomenda-se relaxar a mão e ampliar o foco para a tela inteira"]
     ],
-    note: "Critérios objetivos baseados nos modelos de Kawato (1999), análise bifásica de Woodworth (1899) e escala de dificuldade de Fitts (1954)."
+    note: "Faixas editoriais para comparar suas próprias sessões, não percentis de população nem normas clínicas. Critérios objetivos baseados nos modelos de Kawato (1999), análise bifásica de Woodworth (1899) e escala de dificuldade de Fitts (1954)."
   },
   techniques: {
     title: "4 Protocolos Práticos para Esquiva de Projéteis e Maestria de Mouse",
