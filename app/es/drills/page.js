@@ -142,7 +142,7 @@ const faqSchema = {
       "name": "¿En qué se diferencia SkillDrills de los juegos casuales o pasatiempos mentales tradicionales?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "A diferencia de juegos recreativos genéricos, SkillDrills emplea tareas de laboratorio estandarizadas como N-Back dual, pruebas de Stroop, redes de atención atencional y tablas de Schulte con métricas cuantitativas precisas. Los usuarios obtienen percentiles de rendimiento, distribuciones fisiológicas y curvas de aprendizaje comparadas con datos globales."
+        "text": "A diferencia de juegos recreativos genéricos, SkillDrills emplea tareas de laboratorio estandarizadas como N-Back dual, pruebas de Stroop, redes de atención atencional y tablas de Schulte con métricas cuantitativas precisas. Los resultados se guardan en tu navegador y sirven para comparar tus propias sesiones; el sitio no publica estadísticas de población."
       }
     },
     {

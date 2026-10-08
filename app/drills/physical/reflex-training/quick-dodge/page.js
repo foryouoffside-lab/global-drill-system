@@ -208,7 +208,7 @@ const faqSchema = {
       name: 'What constitutes an elite score in Quick Dodge?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Scores above 17,000 points represent the Apex tier (top 0.5% of performers), requiring sustained 90%+ evasion accuracy against 1,200+ px/s projectile velocities over the full 45-second duration.',
+        text: 'Scores above 17,000 points represent the Apex tier (practice stage 5), requiring sustained 90%+ evasion accuracy against 1,200+ px/s projectile velocities over the full 45-second duration.',
       },
     },
     {

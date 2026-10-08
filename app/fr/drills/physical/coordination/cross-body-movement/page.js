@@ -288,13 +288,13 @@ const crossBodyGuide = {
     title: "Grille d'Évaluation et Niveaux de Coordination Visuo-Motrice (5 Paliers)",
     headers: ["Palier / Rang", "Titre de Maîtrise", "Score Requis", "Niveau Culminant", "Précision Vectorielle", "Profil Neurophysiologique"],
     rows: [
-      ["Tier 1: Maître Bilatéral Suprême", "Apex Bilateral Master", "17 000+ points", "Niveau 12 – 15", "≥ 92 % de réussite", "Top 0,1 % ; transmission inter-hémisphérique remarquable ; balayages parfaits dans un couloir ultra-serré de 4px avec pivot coude irréprochable (Ayres 1972 ; Fitts 1954)"],
-      ["Tier 2: Balayeur de Ligne Médiane Elite", "Elite Midline Sweeper", "13 000 – 16 999 pts", "Niveau 9 – 11", "85 – 91 % de réussite", "Excellente accélération controlatérale et maîtrise du freinage de Woodworth sur des nœuds de 8px (Carey et al. 1996)"],
-      ["Tier 3: Traceur Vectoriel Avancé", "Advanced Vector Tracer", "9 500 – 12 999 pts", "Niveau 6 – 8", "76 – 84 % de réussite", "Coordination solide pour le tir compétitif ; légère dérive cinématique dès que le couloir passe sous les 6px"],
-      ["Tier 4: Connecteur Intermédiaire", "Intermediate Node Connector", "6 000 – 9 499 pts", "Niveau 3 – 5", "65 – 75 % de réussite", "Moyenne fonctionnelle standard ; ruptures de série dues à une crispation du poignet lors des grands mouvements obliques"],
-      ["Tier 5: Apprenti Diagonal Débutant", "Novice Diagonal Learner", "< 6 000 points", "Niveau 1 – 2", "< 65 % de réussite", "Difficulté marquée à traverser le plan sagittal central ; tendance à tracer des arcs de cercle entraînant des sorties de couloir"]
+      ["Palier 1", "Très avancé", "17 000+ points", "Niveau 12 – 15", "≥ 92 % de réussite", "Rythme très élevé et précis"],
+      ["Palier 2", "Avancé", "13 000 – 16 999 pts", "Niveau 9 – 11", "85 – 91 % de réussite", "Excellente accélération controlatérale et maîtrise du freinage de Woodworth sur des nœuds de 8px (Carey et al. 1996)"],
+      ["Palier 3", "Solide", "9 500 – 12 999 pts", "Niveau 6 – 8", "76 – 84 % de réussite", "Coordination solide pour le tir compétitif ; légère dérive cinématique dès que le couloir passe sous les 6px"],
+      ["Palier 4", "En progression", "6 000 – 9 499 pts", "Niveau 3 – 5", "65 – 75 % de réussite", "Moyenne fonctionnelle standard ; ruptures de série dues à une crispation du poignet lors des grands mouvements obliques"],
+      ["Palier 5", "Initial", "< 6 000 points", "Niveau 1 – 2", "< 65 % de réussite", "Difficulté marquée à traverser le plan sagittal central ; tendance à tracer des arcs de cercle entraînant des sorties de couloir"]
     ],
-    note: "Données étalonnées à partir de la théorie d'intégration sensorielle (Ayres 1972), des études de motricité controlatérale (Carey et al. 1996) et des constantes de Fitts (1954)."
+    note: "Paliers éditoriaux de pratique pour comparer vos propres séances ; ce ne sont pas des statistiques de population ni des normes cliniques. Données étalonnées à partir de la théorie d'intégration sensorielle (Ayres 1972), des études de motricité controlatérale (Carey et al. 1996) et des constantes de Fitts (1954)."
   },
   techniques: {
     title: "Protocoles Pratiques pour Optimiser le Balayage Diagonal et le Contrôle Bilatéral",

@@ -212,15 +212,15 @@ export default function StrobePredictionPursuitPageES() {
     ],
     benchmarks: {
       title: "Valores de Referencia de Eficiencia Oculomotora Estroboscópica",
-      headers: ["Nivel de Habilidad", "Precisión en Oscuridad (%)", "Error Medio (px)", "Latencia de Reajuste (ms)", "Rango Percentil"],
+      headers: ["Nivel de Habilidad", "Precisión en Oscuridad (%)", "Error Medio (px)", "Latencia de Reajuste (ms)", "Marcador de práctica"],
       rows: [
-        ["Principiante / No Entrenado", "< 45%", "> 85 px", "> 280 ms", "0% – 25%"],
-        ["Intermedio / Practicante Ocasional", "45% – 62%", "55 – 84 px", "210 – 280 ms", "25% – 60%"],
-        ["Avanzado / Competidor Regional", "63% – 78%", "35 – 54 px", "150 – 209 ms", "60% – 85%"],
-        ["Élite / Atleta de Alto Rendimiento", "79% – 89%", "20 – 34 px", "95 – 149 ms", "85% – 97%"],
-        ["Maestría Visomotora / Nivel Pro", "90%+", "< 20 px", "< 95 ms", "98% – 100%"]
+        ["Etapa 1", "< 45%", "> 85 px", "> 280 ms", "Ritmo muy alto con alta precisión"],
+        ["Etapa 2", "45% – 62%", "55 – 84 px", "210 – 280 ms", "Ritmo alto y regular"],
+        ["Etapa 3", "63% – 78%", "35 – 54 px", "150 – 209 ms", "Ritmo estable con algunos errores"],
+        ["Etapa 4", "79% – 89%", "20 – 34 px", "95 – 149 ms", "Ritmo medio con margen de mejora"],
+        ["Etapa 5", "90%+", "< 20 px", "< 95 ms", "Punto de partida"]
       ],
-      note: "Parámetros registrados a velocidad 1.0x con ciclos estroboscópicos de 400ms encendido / 400ms apagado a 60 fotogramas por segundo (Appelbaum et al., 2011; Bennett et al., 2007)."
+      note: "Etapas editoriales de práctica para comparar tus propias sesiones; no son estadísticas de población ni normas clínicas. Parámetros registrados a velocidad 1.0x con ciclos estroboscópicos de 400ms encendido / 400ms apagado a 60 fotogramas por segundo (Appelbaum et al., 2011; Bennett et al., 2007)."
     },
     techniques: {
       title: "4 Técnicas Fundamentales para Dominar la Oclusión Estroboscópica",

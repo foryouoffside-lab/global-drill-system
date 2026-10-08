@@ -264,15 +264,15 @@ const guide = {
   ],
   benchmarks: {
     title: "Bewertungsstandards für stroboskopisches Tracking & Extrapolation",
-    headers: ["Leistungsstufe", "Geschwindigkeit", "Landeversatz beim Aufblitzen", "Geschwindigkeitserhalt in Dunkelphase", "Populationsanteil"],
+    headers: ["Leistungsstufe", "Geschwindigkeit", "Landeversatz beim Aufblitzen", "Geschwindigkeitserhalt in Dunkelphase", "Einordnung"],
     rows: [
-      ["Elite / Voll adaptiert (Elite)", "3,5x bis 5,0x+", "Versatz < 12px (exakt im Zentrum)", "Geschwindigkeitsabfall 0% (perfekt gehalten)", "Top 1,5%"],
-      ["Master / Hohe Extrapolation (Master)", "2,5x bis 3,5x", "Versatz < 25px (sofortige Mikrosakkade)", "Geschwindigkeitsabfall < 15%", "Top 8%"],
-      ["Advanced / Wettkampfniveau (Advanced)", "1,8x bis 2,5x", "Versatz < 45px (rasche Re-Akquisition)", "Geschwindigkeitsabfall < 30%", "Top 25%"],
-      ["Intermediate / Grundstufe (Intermediate)", "1,2x bis 1,8x", "Versatz 45 bis 80px (Augen stoppen teils)", "Geschwindigkeitsabfall > 50%", "Mittlere 45%"],
-      ["Novice / Untrainiert (Novice)", "0,5x bis 1,2x", "Zielverlust (Suchbewegungen nach Aufblitzen)", "Vollständiger Stillstand in Dunkelphase", "Einstiegsbereich"]
+      ["Elite / Voll adaptiert (Elite)", "3,5x bis 5,0x+", "Versatz < 12px (exakt im Zentrum)", "Geschwindigkeitsabfall 0% (perfekt gehalten)", "Stufe 1"],
+      ["Master / Hohe Extrapolation (Master)", "2,5x bis 3,5x", "Versatz < 25px (sofortige Mikrosakkade)", "Geschwindigkeitsabfall < 15%", "Stufe 2"],
+      ["Advanced / Wettkampfniveau (Advanced)", "1,8x bis 2,5x", "Versatz < 45px (rasche Re-Akquisition)", "Geschwindigkeitsabfall < 30%", "Stufe 3"],
+      ["Intermediate / Grundstufe (Intermediate)", "1,2x bis 1,8x", "Versatz 45 bis 80px (Augen stoppen teils)", "Geschwindigkeitsabfall > 50%", "Stufe 4"],
+      ["Novice / Untrainiert (Novice)", "0,5x bis 1,2x", "Zielverlust (Suchbewegungen nach Aufblitzen)", "Vollständiger Stillstand in Dunkelphase", "Stufe 5"]
     ],
-    note: "Die Bewertungsmaßstäbe orientieren sich an den Strobe-Kognitionsstudien von Appelbaum et al. (2011) und den Okklusions-Blickfolgemodellen von Bennett et al. (2007)."
+    note: "Die Bewertungsmaßstäbe orientieren sich an den Strobe-Kognitionsstudien von Appelbaum et al. (2011) und den Okklusions-Blickfolgemodellen von Bennett et al. (2007). Die Bereiche sind redaktionelle Übungsmarken, keine Bevölkerungsstatistik."
   },
   techniques: [
     {

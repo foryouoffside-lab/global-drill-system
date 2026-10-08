@@ -326,7 +326,7 @@ export default function PortugueseAngleHoldPage() {
       {
         title: "Metodologia de Medição e Precisão do Sensor",
         paragraphs: [
-          "Angle Hold Pro utiliza a API HTML5 Pointer Lock e marcas de tempo de performance.now() para registrar latências de clique no nível de submilissegundo, sem aceleração de ponteiro do sistema operacional."
+          "Angle Hold Pro utiliza a API HTML5 Pointer Lock e marcas de tempo de performance.now() para registrar latências de clique com a resolução de tempo do navegador (~1 ms), sem aceleração de ponteiro do sistema operacional."
         ]
       }
     ]

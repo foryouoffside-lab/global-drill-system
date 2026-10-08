@@ -220,15 +220,15 @@ export default function TriangularPursuitPageES() {
     ],
     benchmarks: {
       title: "Valores de Referencia de Persecución Triangular (Velocidad y Precisión en Vértices)",
-      headers: ["Categoría de Habilidad", "Multiplicador de Velocidad", "Error en Vértice", "Latencia Sacádica de Giro", "Percentil Global"],
+      headers: ["Categoría de Habilidad", "Multiplicador de Velocidad", "Error en Vértice", "Latencia Sacádica de Giro", "Marcador de práctica"],
       rows: [
-        ["Élite / Dominio Vectorial Absoluto", "3.5x – 5.0x+", "Error < 12 px (adhesión perfecta en el vértice)", "Latencia < 110 ms (frenado anticipatorio)", "Top 1.5%"],
-        ["Maestro / Alto Control de Trayectoria", "2.5x – 3.5x", "Error < 22 px (únicamente microsacadas mínimas)", "Latencia < 140 ms (curvas limpias)", "Top 8%"],
-        ["Avanzado / Atleta de Competición", "1.8x – 2.5x", "Error < 38 px (rápida readquisición)", "Latencia < 180 ms (giros estables)", "Top 25%"],
-        ["Intermedio / Practicante Habitual", "1.2x – 1.8x", "Error 38 – 70 px (corte de esquinas / sobrepaso)", "Latencia 180 – 240 ms (sacadas múltiples)", "Rango Medio 45%"],
-        ["Principiante / No Iniciado", "0.5x – 1.2x", "Error > 70 px (desconexión total en esquinas)", "Latencia > 250 ms (sobrepaso evidente)", "Nivel Base"]
+        ["Etapa 1", "3.5x – 5.0x+", "Error < 12 px (adhesión perfecta en el vértice)", "Latencia < 110 ms (frenado anticipatorio)", "Ritmo muy alto con alta precisión"],
+        ["Etapa 2", "2.5x – 3.5x", "Error < 22 px (únicamente microsacadas mínimas)", "Latencia < 140 ms (curvas limpias)", "Ritmo alto y regular"],
+        ["Etapa 3", "1.8x – 2.5x", "Error < 38 px (rápida readquisición)", "Latencia < 180 ms (giros estables)", "Ritmo estable con algunos errores"],
+        ["Etapa 4", "1.2x – 1.8x", "Error 38 – 70 px (corte de esquinas / sobrepaso)", "Latencia 180 – 240 ms (sacadas múltiples)", "Ritmo medio con margen de mejora"],
+        ["Etapa 5", "0.5x – 1.2x", "Error > 70 px (desconexión total en esquinas)", "Latencia > 250 ms (sobrepaso evidente)", "Punto de partida"]
       ],
-      note: "Métricas basadas en de Brouwer et al. (2002) sobre dinámica de sacadas de captura y Heinen et al. (2005) sobre control motor en inversiones angulares bruscas."
+      note: "Etapas editoriales de práctica para comparar tus propias sesiones; no son estadísticas de población ni normas clínicas. Métricas basadas en de Brouwer et al. (2002) sobre dinámica de sacadas de captura y Heinen et al. (2005) sobre control motor en inversiones angulares bruscas."
     },
     steps: [
       { title: "Fija el objetivo en el centro", text: "Mantén la cabeza estable y acompaña con la mirada el inicio de la ruta triangular." },

@@ -241,15 +241,15 @@ const guideProps = {
   ],
   benchmarks: {
     title: "Baremos de Rendimiento en Seguimiento Vertical y Sacadas en Escalones",
-    headers: ["Nivel de Rendimiento", "Velocidad del Objetivo", "Precisión en Esquinas de Escalón", "Ganancia Vertical Estimada", "Percentil Poblacional"],
+    headers: ["Nivel de Rendimiento", "Velocidad del Objetivo", "Precisión en Esquinas de Escalón", "Ganancia Vertical Estimada", "Marcador de práctica"],
     rows: [
-      ["Élite (Esports / Pilotos)", "3.5x – 5.0x+", "Fijación limpia sin rebasar esquinas", "0.92 – 0.98 (sincronización casi instantánea)", "Top 1.5%"],
-      ["Avanzado (Competitivo)", "2.5x – 3.5x", "Foveación rápida mediante micro-sacada única", "0.85 – 0.92 (enfoque muy estable)", "Top 8%"],
-      ["Competente (Adulto Sano)", "1.8x – 2.5x", "Seguimiento regular en rampas; vacilación leve en vértices", "0.75 – 0.85 (control adecuado)", "Top 25%"],
-      ["En Desarrollo (Latencia)", "1.2x – 1.8x", "Demora en trayectos ascendentes; compensación cervical", "0.60 – 0.75 (frecuentes sacadas correctoras)", "45% Intermedios"],
-      ["Principiante (Ajuste Motor)", "0.5x – 1.2x", "Pérdida del blanco en esquinas; la cabeza sigue al objeto", "< 0.60 (saltos sacádicos desordenados)", "Nivel Inicial"]
+      ["Etapa 1", "3.5x – 5.0x+", "Fijación limpia sin rebasar esquinas", "0.92 – 0.98 (sincronización casi instantánea)", "Ritmo muy alto con alta precisión"],
+      ["Etapa 2", "2.5x – 3.5x", "Foveación rápida mediante micro-sacada única", "0.85 – 0.92 (enfoque muy estable)", "Ritmo alto y regular"],
+      ["Etapa 3", "1.8x – 2.5x", "Seguimiento regular en rampas; vacilación leve en vértices", "0.75 – 0.85 (control adecuado)", "Ritmo estable con algunos errores"],
+      ["Etapa 4", "1.2x – 1.8x", "Demora en trayectos ascendentes; compensación cervical", "0.60 – 0.75 (frecuentes sacadas correctoras)", "Ritmo medio con margen de mejora"],
+      ["Etapa 5", "0.5x – 1.2x", "Pérdida del blanco en esquinas; la cabeza sigue al objeto", "< 0.60 (saltos sacádicos desordenados)", "Punto de partida"]
     ],
-    note: "※ Basado en parametros de latencia vertical (Rottach et al., 1996) y dinamica celular del riMLF (Büttner-Ennever & Horn, 1997) en monitores 1080p a 50–70 cm."
+    note: "Etapas editoriales de práctica para comparar tus propias sesiones; no son estadísticas de población ni normas clínicas. ※ Basado en parametros de latencia vertical (Rottach et al., 1996) y dinamica celular del riMLF (Büttner-Ennever & Horn, 1997) en monitores 1080p a 50–70 cm."
   },
   techniques: {
     title: "Cuatro Técnicas Clave para el Seguimiento en Escalones",

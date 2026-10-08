@@ -56,13 +56,13 @@ const guideData = {
     title: "Referência de desempenho em perseguição ocular",
     headers: ["Nível / Categoria", "Tempo no Alvo (Time-on-Target)", "Acurácia Média de Rastreamento", "Supressão de Sacadas", "Marco Neurofisiológico"],
     rows: [
-      ["Nível 1: Elite Mundial (Top 1%)", "≥ 88%", "≥ 92%", "≥ 95% Supressão", "Perseguição contínua sem esforço, deslizamento retiniano quase nulo. Modelo interno cerebelar perfeitamente ajustado (Lisberger, 2010)."],
-      ["Nível 2: Atleta Avançado (Top 5%)", "76 – 87%", "84 – 91%", "88 – 94% Supressão", "Controle oculomotor apurado com rápida acomodação de fase em reversões angulares."],
-      ["Nível 3: Padrão Competente (Top 25%)", "62 – 75%", "72 – 83%", "78 – 87% Supressão", "Rastreamento estável em trajetórias lineares, sacadas esporádicas de correção em acelerações."],
-      ["Nível 4: Base Intermediária (Top 50%)", "48 – 61%", "60 – 71%", "65 – 77% Supressão", "Frequentes desvios do cursor com necessidade constante de correções sacádicas em degrau."],
-      ["Nível 5: Iniciante (Baseline)", "< 48%", "< 60%", "< 65% Supressão", "Latência visual elevada, movimentos bruscos e oscilações contínuas de overshoot."]
+      ["Faixa 1", "≥ 88%", "≥ 92%", "≥ 95% Supressão", "Perseguição contínua sem esforço, deslizamento retiniano quase nulo. Modelo interno cerebelar perfeitamente ajustado (Lisberger, 2010)."],
+      ["Faixa 2", "76 – 87%", "84 – 91%", "88 – 94% Supressão", "Controle oculomotor apurado com rápida acomodação de fase em reversões angulares."],
+      ["Faixa 3", "62 – 75%", "72 – 83%", "78 – 87% Supressão", "Rastreamento estável em trajetórias lineares, sacadas esporádicas de correção em acelerações."],
+      ["Faixa 4", "48 – 61%", "60 – 71%", "65 – 77% Supressão", "Frequentes desvios do cursor com necessidade constante de correções sacádicas em degrau."],
+      ["Faixa 5", "< 48%", "< 60%", "< 65% Supressão", "Latência visual elevada, movimentos bruscos e oscilações contínuas de overshoot."]
     ],
-    note: "Fundamentado em estudos neuroftalmológicos e de ciências do esporte (Rashbass 1961; Krauzlis 2004; Leigh & Zee 2015; Lisberger 2010)."
+    note: "Faixas editoriais de prática para comparar suas próprias sessões; não são estatísticas de população nem normas clínicas. Fundamentado em estudos neuroftalmológicos e de ciências do esporte (Rashbass 1961; Krauzlis 2004; Leigh & Zee 2015; Lisberger 2010)."
   },
   techniques: {
     title: "Princípios motores para melhorar o rastreamento ocular",

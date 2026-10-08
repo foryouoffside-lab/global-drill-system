@@ -291,13 +291,13 @@ const dropGuide = {
     title: "5-Stufen-Leistungsbenchmarks für Wahlreaktionszeit und Fallabfangung",
     headers: ["Stufe & Rang", "Titel (Rank Title)", "Punkteziel", "Wahlreaktionszeit & Genauigkeit", "Gesamtnote", "Neuromuskuläres Profil"],
     rows: [
-      ["Tier 1: Ultimativer Gravitations-Abfänger", "Apex Gravitational Interceptor", "24.000+ Punkte", "< 190 ms / > 95 %", "Grade S", "Top 0,1 % Niveau von Kampfpiloten und E-Sport-Profis. Perfekte Logan-Impulskontrolle und fehlerfreies Abfangen bei 1250 px/s (Lee 1976; Logan 1984)"],
-      ["Tier 2: Präzisions-Reflex-Striker", "Precision Reflex Striker", "17.000 – 23.999 Punkte", "195 – 240 ms / 90 – 94 %", "Grade A", "Top 10 % semiprofessioneller E-Sportler. Überragende Tau-Antizipation und stabiles Halten des 3,0x-Multiplikators bei 45 % Fallenquote"],
-      ["Tier 3: Erfahrener Drop-Catcher", "Skilled Drop Catcher", "11.000 – 16.999 Punkte", "245 – 310 ms / 82 – 89 %", "Grade B", "Top 35 % regelmäßiger Gamer. Solide Auge-Hand-Koordination und gute Nutzung des +0,6s-Zeitbonus für lange Überlebensdauer"],
-      ["Tier 4: Lernender Reflex-Athlet", "Developing Reflex Trainee", "6.000 – 10.999 Punkte", "311 – 370 ms / 70 – 81 %", "Grade C", "Durchschnittliches Erwachsenenniveau. Bei Geschwindigkeiten über 800 px/s treten Fehlklicks auf rote Fallen und Serienabbrüche auf"],
-      ["Tier 5: Einsteiger in Impulskontrolle", "Novice Decoy Learner", "< 6.000 Punkte", "> 370 ms / < 70 %", "Grade D", "Basisniveau. Überhastetes Klicken auf Täuschkörper durch optische Überforderung. Blickfixierung im oberen Drittel empfohlen"]
+      ["Stufe 1: Ultimativer Gravitations-Abfänger", "Apex Gravitational Interceptor", "24.000+ Punkte", "< 190 ms / > 95 %", "Grade S", "und E-Sport-Profis. Perfekte Logan-Impulskontrolle und fehlerfreies Abfangen bei 1250 px/s (Lee 1976; Logan 1984)"],
+      ["Stufe 2: Präzisions-Reflex-Striker", "Precision Reflex Striker", "17.000 – 23.999 Punkte", "195 – 240 ms / 90 – 94 %", "Grade A", "Überragende Tau-Antizipation und stabiles Halten des 3,0x-Multiplikators bei 45 % Fallenquote"],
+      ["Stufe 3: Erfahrener Drop-Catcher", "Skilled Drop Catcher", "11.000 – 16.999 Punkte", "245 – 310 ms / 82 – 89 %", "Grade B", "Solide Auge-Hand-Koordination und gute Nutzung des +0,6s-Zeitbonus für lange Überlebensdauer"],
+      ["Stufe 4: Lernender Reflex-Athlet", "Developing Reflex Trainee", "6.000 – 10.999 Punkte", "311 – 370 ms / 70 – 81 %", "Grade C", "Durchschnittliches Erwachsenenniveau. Bei Geschwindigkeiten über 800 px/s treten Fehlklicks auf rote Fallen und Serienabbrüche auf"],
+      ["Stufe 5: Einsteiger in Impulskontrolle", "Novice Decoy Learner", "< 6.000 Punkte", "> 370 ms / < 70 %", "Grade D", "Basisniveau. Überhastetes Klicken auf Täuschkörper durch optische Überforderung. Blickfixierung im oberen Drittel empfohlen"]
     ],
-    note: "Objektive Kriterien basierend auf der Donders-Typ-C-Chronometrie (1868), Lees optischer Tau-Theorie (1976) und Logans Hemmungsmodell (1984)."
+    note: "Objektive Kriterien basierend auf der Donders-Typ-C-Chronometrie (1868), Lees optischer Tau-Theorie (1976) und Logans Hemmungsmodell (1984). Die Bereiche sind redaktionelle Übungsmarken, keine Bevölkerungsstatistik."
   },
   techniques: {
     title: "4 Praxisprotokolle für maximale Fallreaktion & Impulsdisziplin",

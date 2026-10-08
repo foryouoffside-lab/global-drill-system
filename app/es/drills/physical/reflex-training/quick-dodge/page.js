@@ -266,13 +266,13 @@ const dodgeGuide = {
     title: "Baremo Oficial de Clasificación en 5 Niveles para Esquiva con Ratón",
     headers: ["Nivel y Categoría", "Título (Rank Title)", "Puntos Meta", "Tasa de Supervivencia y Velocidad", "Calificación", "Perfil Neuromotor"],
     rows: [
-      ["Tier 1: Maestro Supremo de Esquiva Cinética", "Apex Kinetic Evader", "24.000+ puntos", "> 95% / 500+ px/s", "Grade S", "Top 0,1% de élite en eSports. Predicción cerebelar intachable de Kawato y micro-movimiento impecable entre más de 50 proyectiles (Kawato 1999; Woodworth 1899)"],
-      ["Tier 2: Estratega de Trayectoria Precisa", "Precision Trajectory Striker", "17.000 – 23.999 puntos", "90 – 94% / 400 – 499 px/s", "Grade A", "Top 3% semiprofesional. Gran discernimiento espacial y conservación firme del enclave central frente a fuego nutrido"],
-      ["Tier 3: Piloto Ágil de Evasión", "Skilled Evasion Pilot", "11.000 – 16.999 puntos", "82 – 89% / 300 – 399 px/s", "Grade B", "Top 15% jugadores competitivos. Control estable de muñeca y capacidad temprana para leer los vectores de peligro"],
-      ["Tier 4: Aprendiz en Desarrollo", "Developing Dodger", "6.000 – 10.999 puntos", "70 – 81% / 200 – 299 px/s", "Grade C", "Promedio adulto. Tendencia a buscar refugio en las esquinas a velocidades altas; se aconseja ejercitar el retorno al centro"],
-      ["Tier 5: Principiante en Esquiva Motora", "Novice Evasion Trainee", "< 6.000 puntos", "< 70% / < 200 px/s", "Grade D", "Nivel inicial. Impactos frecuentes por demora perceptiva; se recomienda relajar la muñeca y abarcar visualmente la pantalla entera"]
+      ["Etapa 1", "Muy avanzada", "24.000+ puntos", "> 95% / 500+ px/s", "Grade S", "Predicción cerebelar intachable de Kawato y micro-movimiento impecable entre más de 50 proyectiles (Kawato 1999; Woodworth 1899)"],
+      ["Etapa 2", "Avanzada", "17.000 – 23.999 puntos", "90 – 94% / 400 – 499 px/s", "Grade A", "Gran discernimiento espacial y conservación firme del enclave central frente a fuego nutrido"],
+      ["Etapa 3", "Sólida", "11.000 – 16.999 puntos", "82 – 89% / 300 – 399 px/s", "Grade B", "Control estable de muñeca y capacidad temprana para leer los vectores de peligro"],
+      ["Etapa 4", "En desarrollo", "6.000 – 10.999 puntos", "70 – 81% / 200 – 299 px/s", "Grade C", "Promedio adulto. Tendencia a buscar refugio en las esquinas a velocidades altas; se aconseja ejercitar el retorno al centro"],
+      ["Etapa 5", "Inicial", "< 6.000 puntos", "< 70% / < 200 px/s", "Grade D", "Nivel inicial. Impactos frecuentes por demora perceptiva; se recomienda relajar la muñeca y abarcar visualmente la pantalla entera"]
     ],
-    note: "Parámetros basados en las formulaciones de Kawato (1999), el modelo en dos etapas de Woodworth (1899) y la escala de Fitts (1954)."
+    note: "Etapas editoriales de práctica para comparar tus propias sesiones; no son estadísticas de población ni normas clínicas. Parámetros basados en las formulaciones de Kawato (1999), el modelo en dos etapas de Woodworth (1899) y la escala de Fitts (1954)."
   },
   techniques: {
     title: "4 Protocolos Prácticos para Esquiva de Proyectiles y Destreza con el Ratón",

@@ -255,37 +255,37 @@ export default function LocalizedWordRecallPage() {
       headers: ["Nível de Desempenho", "Span de Palavras", "Pontuação de Evocação", "Perfil Cognitivo e de Recuperação"],
       rows: [
         [
-                "Nível 1 (Superior / Percentil 99)",
+                "Faixa 1",
                 "8 – 11+ Palavras",
                 "1.100+ Pontos",
                 "Mestre em mnemônica; utiliza cadeias narrativas profundas (Craik & Lockhart, 1972); cadência de resgate inferior a 800 ms por palavra"
         ],
         [
-                "Nivel 2 (Média Alta / Percentil 85–95)",
+                "Faixa 2",
                 "6 – 7 Palavras",
                 "850 – 1.099 Pontos",
                 "Supera a média adulta padrão; agrupa itens em pares ou trios; evocação consistente sob pressão temporal"
         ],
         [
-                "Nível 3 (Média Adulta / Percentil 50)",
+                "Faixa 3",
                 "4 – 5 Palavras",
                 "550 – 849 Pontos",
                 "Média populacional em tentativas iniciais de evocação livre; queda clássica em U nas palavras do meio"
         ],
         [
-                "Nível 4 (Média Baixa / Gargalo Verbal)",
+                "Faixa 4",
                 "3 Palavras",
                 "350 – 549 Pontos",
                 "Depende puramente do eco fonológico sem codificação semântica; dificuldade de ir além do buffer de recência"
         ],
         [
-                "Nível 5 (Span Reduzido)",
+                "Faixa 5",
                 "< 3 Palavras",
                 "< 350 Pontos",
                 "Rápido decaimento do traço de memória; forte interferência proativa; dificuldade de resgate sem pistas"
         ]
 ],
-      note: "O span de palavras reflete o maior comprimento sem erros alcançado na escada adaptativa; as normas refletem o ensaio 1 em adultos (Rey, 1964; Murdock, 1962)."
+      note: "Faixas editoriais de prática para comparar suas próprias sessões; não são estatísticas de população nem normas clínicas. O span de palavras reflete o maior comprimento sem erros alcançado na escada adaptativa; as normas refletem o ensaio 1 em adultos (Rey, 1964; Murdock, 1962)."
     },
     techniques: {
       title: "Protocolos Baseados em Evidências para Expandir a Memória Verbal",

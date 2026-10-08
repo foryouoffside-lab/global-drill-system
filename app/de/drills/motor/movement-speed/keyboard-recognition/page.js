@@ -232,7 +232,7 @@ const guideProps = {
   },
   benchmark: {
     title: 'Tastatur-Geschwindigkeit & Keybind-Reaktionsbenchmarks',
-    description: 'Orientierungswerte zur Leistungsbeurteilung. Beurteilt werden Wahlreaktionszeit bei Einzeltasten, Sequenz-Tipptempo und Fallen-Inhibition.',
+    description: 'Orientierungswerte zur Leistungsbeurteilung. Beurteilt werden Wahlreaktionszeit bei Einzeltasten, Sequenz-Tipptempo und Fallen-Inhibition. Die Bereiche sind redaktionelle Übungsmarken, keine Bevölkerungsstatistik.',
     columns: ['Tier', 'Rang', 'Einzeltasten-Latenz', 'Sequenz KPM', 'Hemmungs-Genauigkeit', 'Kategorie'],
     rows: [
       {
@@ -241,7 +241,7 @@ const guideProps = {
         stat: 'Unter 240 ms',
         level: '320+ KPM',
         accuracy: '98–100%',
-        percentile: 'Top 1% (Elite)',
+        category: 'Stufe 1',
       },
       {
         tier: 'Tier 2',
@@ -249,7 +249,7 @@ const guideProps = {
         stat: '240–300 ms',
         level: '260–319 KPM',
         accuracy: '95–97%',
-        percentile: 'Top 5% (Fortgeschritten)',
+        category: 'Stufe 2',
       },
       {
         tier: 'Tier 3',
@@ -257,7 +257,7 @@ const guideProps = {
         stat: '300–380 ms',
         level: '200–259 KPM',
         accuracy: '90–94%',
-        percentile: 'Top 20% (Solide)',
+        category: 'Stufe 3',
       },
       {
         tier: 'Tier 4',
@@ -265,7 +265,7 @@ const guideProps = {
         stat: '380–480 ms',
         level: '140–199 KPM',
         accuracy: '80–89%',
-        percentile: 'Durchschnitt',
+        category: 'Stufe 4',
       },
       {
         tier: 'Tier 5',
@@ -273,7 +273,7 @@ const guideProps = {
         stat: 'Über 480 ms',
         level: 'Unter 140 KPM',
         accuracy: 'Unter 80%',
-        percentile: 'Einsteiger',
+        category: 'Stufe 5',
       },
     ],
   },

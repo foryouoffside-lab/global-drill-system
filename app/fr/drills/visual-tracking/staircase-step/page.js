@@ -241,15 +241,15 @@ const guideProps = {
   ],
   benchmarks: {
     title: "Grille d'Évaluation de la Poursuite Verticale et Saccades en Paliers",
-    headers: ["Palier de Performance", "Vitesse de la Cible", "Précision sur les Arêtes des Marches", "Gain Vertical Estimé", "Centile de Population"],
+    headers: ["Palier de Performance", "Vitesse de la Cible", "Précision sur les Arêtes des Marches", "Gain Vertical Estimé", "Repère de pratique"],
     rows: [
-      ["Élite (Esports / Pilotes)", "3.5x – 5.0x+", "Verrouillage parfait sans dépassement d'arête", "0.92 – 0.98 (synchronisation quasi-instantanée)", "Top 1.5%"],
-      ["Avancé (Compétitif)", "2.5x – 3.5x", "Fovéation rapide par micro-saccade unique", "0.85 – 0.92 (regard très stable)", "Top 8%"],
-      ["Compétent (Adulte Sain)", "1.8x – 2.5x", "Suivi régulier sur rampes; légère hésitation aux sommets", "0.75 – 0.85 (maîtrise solide)", "Top 25%"],
-      ["En Développement (Latence)", "1.2x – 1.8x", "Retard en montée; compensation par le cou", "0.60 – 0.75 (saccades correctrices fréquentes)", "45% Intermédiaires"],
-      ["Débutant (Ajustement Moteur)", "0.5x – 1.2x", "Perte de cible aux angles; mouvements de tête parasites", "< 0.60 (saccades désordonnées)", "Palier Initial"]
+      ["Palier 1", "3.5x – 5.0x+", "Verrouillage parfait sans dépassement d'arête", "0.92 – 0.98 (synchronisation quasi-instantanée)", "Rythme très élevé et précis"],
+      ["Palier 2", "2.5x – 3.5x", "Fovéation rapide par micro-saccade unique", "0.85 – 0.92 (regard très stable)", "Rythme élevé et régulier"],
+      ["Palier 3", "1.8x – 2.5x", "Suivi régulier sur rampes; légère hésitation aux sommets", "0.75 – 0.85 (maîtrise solide)", "Rythme stable avec quelques erreurs"],
+      ["Palier 4", "1.2x – 1.8x", "Retard en montée; compensation par le cou", "0.60 – 0.75 (saccades correctrices fréquentes)", "Rythme moyen avec marge de progression"],
+      ["Palier 5", "0.5x – 1.2x", "Perte de cible aux angles; mouvements de tête parasites", "< 0.60 (saccades désordonnées)", "Point de départ"]
     ],
-    note: "※ Établi d'après les métriques de latence verticale de Rottach et al. (1996) et la dynamique du riMLF (Büttner-Ennever & Horn, 1997) sur écran 1080p à 50–70 cm."
+    note: "Paliers éditoriaux de pratique pour comparer vos propres séances ; ce ne sont pas des statistiques de population ni des normes cliniques. ※ Établi d'après les métriques de latence verticale de Rottach et al. (1996) et la dynamique du riMLF (Büttner-Ennever & Horn, 1997) sur écran 1080p à 50–70 cm."
   },
   techniques: {
     title: "Quatre Piliers Techniques pour la Poursuite en Marches d'Escalier",

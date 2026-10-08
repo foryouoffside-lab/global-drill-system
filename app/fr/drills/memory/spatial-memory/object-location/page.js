@@ -274,13 +274,13 @@ const objectLocationGuide = {
     title: "Paliers Normatifs de Liaison Objet-Localisation Spatiale",
     headers: ["Palier de Performance", "Objets & Échelle de Grille", "Score à l'Exercice", "Profil de Liaison Cognitive & Cartographie Spatiale"],
     rows: [
-      ["Palier 1 (Supérieur / 99e Percentile)", "Niveau 8 – 10+ (8 – 10+ objets, grille 6x6–7x7)", "1 000+ points", "Élite visuo-spatiale ; sectorisation rapide en quadrants et ancrage sur repères relationnels ; liaison sans effort de 8+ paires objet-localisation ; localisation cible sub-500 ms."],
-      ["Palier 2 (Moyenne Supérieure / 85e–95e Percentile)", "Niveau 6 – 7 (6 – 7 objets, grille 5x5–6x6)", "750 – 999 points", "Supérieur à la moyenne adulte standard ; appariement sémantico-spatial robuste ; résistance aux interférences rétroactives visuelles sur grilles larges ; localisation 500 – 700 ms."],
-      ["Palier 3 (Moyenne Adulte Standard / 50e Percentile)", "Niveau 4 – 5 (4 – 5 objets, grille 4x4–5x5)", "450 – 749 points", "Ligne de base de la population adulte saine (Eals & Silverman, 1994 ; CANTAB PAL) ; gère 4 conjonctions objet-position (limite de Cowan) ; perte des cibles centrales sur grilles 5x5 ; localisation 700 – 950 ms."],
-      ["Palier 4 (Moyenne Inférieure / Goulot de Liaison)", "Niveau 3 (3 objets, grille 3x3–4x4)", "250 – 449 points", "Rappel limité à 2–3 objets isolés ; confusion des coordonnées des objets contigus ; difficulté lors de l'introduction de distracteurs ; localisation 950 – 1 300 ms."],
-      ["Palier 5 (En Développement / Empan Restreint)", "Niveau 1 – 2 (2 objets, grille 3x3)", "< 250 points", "Dégradation rapide de la trace visuelle ; échec de la liaison objet-localisation ; difficulté à retrouver les coordonnées cibles après 1,5 s de délai ; latence supérieure à 1 300 ms."]
+      ["Palier 1", "Niveau 8 – 10+ (8 – 10+ objets, grille 6x6–7x7)", "1 000+ points", "Élite visuo-spatiale ; sectorisation rapide en quadrants et ancrage sur repères relationnels ; liaison sans effort de 8+ paires objet-localisation ; localisation cible sub-500 ms."],
+      ["Palier 2", "Niveau 6 – 7 (6 – 7 objets, grille 5x5–6x6)", "750 – 999 points", "Supérieur à la moyenne adulte standard ; appariement sémantico-spatial robuste ; résistance aux interférences rétroactives visuelles sur grilles larges ; localisation 500 – 700 ms."],
+      ["Palier 3", "Niveau 4 – 5 (4 – 5 objets, grille 4x4–5x5)", "450 – 749 points", "Ligne de base de la population adulte saine (Eals & Silverman, 1994 ; CANTAB PAL) ; gère 4 conjonctions objet-position (limite de Cowan) ; perte des cibles centrales sur grilles 5x5 ; localisation 700 – 950 ms."],
+      ["Palier 4", "Niveau 3 (3 objets, grille 3x3–4x4)", "250 – 449 points", "Rappel limité à 2–3 objets isolés ; confusion des coordonnées des objets contigus ; difficulté lors de l'introduction de distracteurs ; localisation 950 – 1 300 ms."],
+      ["Palier 5", "Niveau 1 – 2 (2 objets, grille 3x3)", "< 250 points", "Dégradation rapide de la trace visuelle ; échec de la liaison objet-localisation ; difficulté à retrouver les coordonnées cibles après 1,5 s de délai ; latence supérieure à 1 300 ms."]
     ],
-    note: "Le nombre d'objets et la dimension de la grille reflètent le niveau maximal validé durant la session de 45 secondes ; percentiles normatifs calibrés sur les standards Silverman-Eals OLM et CANTAB PAL (Eals & Silverman, 1994 ; Luck & Vogel, 1997 ; Woods et al., 2015)."
+    note: "Paliers éditoriaux de pratique pour comparer vos propres séances ; ce ne sont pas des statistiques de population ni des normes cliniques. Le nombre d'objets et la dimension de la grille reflètent le niveau maximal validé durant la session de 45 secondes ; repères éditoriaux inspirés des standards Silverman-Eals OLM et CANTAB PAL (Eals & Silverman, 1994 ; Luck & Vogel, 1997 ; Woods et al., 2015)."
   },
   techniques: {
     title: "Protocoles Scientifiques pour Développer la Mémoire de Localisation",

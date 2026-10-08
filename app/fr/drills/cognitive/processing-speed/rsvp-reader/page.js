@@ -262,11 +262,11 @@ const guideProps = {
     title: 'Paliers de vitesse de l’exercice RSVP (MPM)',
     headers: ['Palier', 'Profil', 'Vitesse', 'Exactitude', 'Lecture'],
     rows: [
-      { tier: 'Palier 1', rank: 'Très rapide', stat: '650 – 850+ MPM', level: 'Palier 1', accuracy: '95%+', percentile: 'Flux très rapide suivi avec précision' },
-      { tier: 'Palier 2', rank: 'Rapide', stat: '450 – 649 MPM', level: 'Palier 2', accuracy: '90-94%', percentile: 'Bon suivi aux hautes vitesses' },
-      { tier: 'Palier 3', rank: 'Confirmé', stat: '300 – 449 MPM', level: 'Palier 3', accuracy: '85-89%', percentile: 'Suivi régulier à vitesse soutenue' },
-      { tier: 'Palier 4', rank: 'Intermédiaire', stat: '200 – 299 MPM', level: 'Palier 4', accuracy: '75-84%', percentile: 'Cadence proche de la lecture courante' },
-      { tier: 'Palier 5', rank: 'Débutant', stat: '< 200 MPM', level: 'Palier 5', accuracy: '< 75%', percentile: 'Point de départ' },
+      { tier: 'Palier 1', rank: 'Très rapide', stat: '650 – 850+ MPM', level: 'Palier 1', accuracy: '95%+', marker: 'Flux très rapide suivi avec précision' },
+      { tier: 'Palier 2', rank: 'Rapide', stat: '450 – 649 MPM', level: 'Palier 2', accuracy: '90-94%', marker: 'Bon suivi aux hautes vitesses' },
+      { tier: 'Palier 3', rank: 'Confirmé', stat: '300 – 449 MPM', level: 'Palier 3', accuracy: '85-89%', marker: 'Suivi régulier à vitesse soutenue' },
+      { tier: 'Palier 4', rank: 'Intermédiaire', stat: '200 – 299 MPM', level: 'Palier 4', accuracy: '75-84%', marker: 'Cadence proche de la lecture courante' },
+      { tier: 'Palier 5', rank: 'Débutant', stat: '< 200 MPM', level: 'Palier 5', accuracy: '< 75%', marker: 'Point de départ' },
     ],
   },
   protocols: {

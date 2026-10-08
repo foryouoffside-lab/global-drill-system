@@ -266,13 +266,18 @@ const guideDe = {
     { label: "Urteilsgenauigkeit", desc: "Prozentsatz korrekter Treffer- und Nicht-Treffer-Entscheidungen." },
     { label: "Aktualisierungsrate", desc: "Entscheidungsgeschwindigkeit und Reaktionslatenz während der Reizfenster." }
   ],
-  benchmarks: [
-    { tier: "Tier 1: Exzellentes Arbeitsgedächtnis (Elite / Top 1%)", range: "4-Back bis 5-Back+ (1.200+ Punkte)", desc: "Hält eine 4-5-Elemente-FIFO-Warteschlange im Kopf; Latenz unter 600 ms; Genauigkeit über 92%." },
-    { tier: "Tier 2: Überdurchschnittlich (Top 5–15%)", range: "Stabiles 3-Back mit 4-Back-Übergang (900 – 1.199 Punkte)", desc: "Übertrifft die durchschnittliche Norm; meistert 3-Back mit minimalen Fehlern; Genauigkeit 80%–91%." },
-    { tier: "Tier 3: Durchschnittliche Norm (50th Percentile)", range: "Solides 3-Back (600 – 899 Punkte)", desc: "Normative Basislinie gesunder Erwachsener (Kirchner, 1958); 65%–79% Genauigkeit." },
-    { tier: "Tier 4: Unterdurchschnittlich (15–30%)", range: "Instabiles 3-Back (400 – 599 Punkte)", desc: "Schwierigkeiten bei 3 Elementen; häufige Verwechslung mit 2-Back; Genauigkeit 50%–64%." },
-    { tier: "Tier 5: Entwicklungsbedarf (< 15%)", range: "Unter 3-Back (< 400 Punkte)", desc: "Deutlicher Engpass bei der kontinuierlichen Informationsaktualisierung; Genauigkeit unter 50%." }
-  ],
+  benchmarks: {
+    title: 'Leistungsstufen',
+    headers: ['Stufe', 'Bereich', 'Profil'],
+    note: 'Die Bereiche sind redaktionelle Übungsmarken und keine Bevölkerungsstatistik.',
+    rows: [
+    ["Stufe 1: Sehr stabiles Arbeitsgedächtnis", "4-Back bis 5-Back+ (1.200+ Punkte)", "Hält eine 4-5-Elemente-FIFO-Warteschlange im Kopf; Latenz unter 600 ms; Genauigkeit über 92%."],
+    ["Stufe 2: Stabil", "Stabiles 3-Back mit 4-Back-Übergang (900 – 1.199 Punkte)", "Übertrifft die durchschnittliche Norm; meistert 3-Back mit minimalen Fehlern; Genauigkeit 80%–91%."],
+    ["Stufe 3: Solide Basis", "Solides 3-Back (600 – 899 Punkte)", "Normative Basislinie gesunder Erwachsener (Kirchner, 1958); 65%–79% Genauigkeit."],
+    ["Stufe 4: Im Aufbau", "Instabiles 3-Back (400 – 599 Punkte)", "Schwierigkeiten bei 3 Elementen; häufige Verwechslung mit 2-Back; Genauigkeit 50%–64%."],
+    ["Stufe 5: Einstieg", "Unter 3-Back (< 400 Punkte)", "Deutlicher Engpass bei der kontinuierlichen Informationsaktualisierung; Genauigkeit unter 50%."]
+    ]
+  },
   science: [
     { title: "Wayne K. Kirchner (1958): Ursprung des N-Back-Paradigmas", body: "Kirchner führte die Aufgabe ein, um das Behalten sich schnell verändernder Daten zu untersuchen." },
     { title: "Alan Baddeley (1986, 2000): Die zentrale Exekutive", body: "Im Arbeitsgedächtnismodell fordert N-Back die Koordination von phonologischer Schleife und dorsolateralem präfrontalem Kortex." },

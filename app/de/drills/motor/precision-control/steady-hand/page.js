@@ -239,7 +239,7 @@ const guideProps = {
         stat: 'Level 12+',
         level: '12–15 px',
         accuracy: 'Unter 2,5 px',
-        percentile: 'Exzeptionell (Top 1%)',
+        category: 'Stufe 1',
       },
       {
         tier: 'Tier 2',
@@ -247,7 +247,7 @@ const guideProps = {
         stat: 'Level 9–11',
         level: '16–22 px',
         accuracy: 'Unter 4,0 px',
-        percentile: 'Fortgeschritten (Top 5%)',
+        category: 'Stufe 2',
       },
       {
         tier: 'Tier 3',
@@ -255,7 +255,7 @@ const guideProps = {
         stat: 'Level 6–8',
         level: '23–32 px',
         accuracy: 'Unter 6,5 px',
-        percentile: 'Solide (Top 25%)',
+        category: 'Stufe 3',
       },
       {
         tier: 'Tier 4',
@@ -263,7 +263,7 @@ const guideProps = {
         stat: 'Level 3–5',
         level: '33–42 px',
         accuracy: 'Unter 9,0 px',
-        percentile: 'Durchschnitt',
+        category: 'Stufe 4',
       },
       {
         tier: 'Tier 5',
@@ -271,7 +271,7 @@ const guideProps = {
         stat: 'Level 1–2',
         level: '43–50 px',
         accuracy: 'Über 9,0 px',
-        percentile: 'Entwicklungsbedarf',
+        category: 'Stufe 5',
       },
     ],
   },

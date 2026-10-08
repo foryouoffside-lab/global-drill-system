@@ -230,7 +230,7 @@ const guideProps = {
   },
   benchmark: {
     title: 'Faixas de Referência no Jogo da Mão Firme',
-    description: 'Faixas editoriais, não percentis de população, para interpretar seus resultados com base na Lei de Accot & Zhai (1997). As faixas avaliam nível alcançado, largura da trilha e desvio médio.',
+    description: 'Faixas editoriais de prática para comparar suas próprias sessões; não são estatísticas de população nem normas clínicas. Faixas editoriais, não percentis de população, para interpretar seus resultados com base na Lei de Accot & Zhai (1997). As faixas avaliam nível alcançado, largura da trilha e desvio médio.',
     columns: ['Nível', 'Classificação', 'Nível Concluído', 'Largura da Pista', 'Desvio Médio', 'Faixa Editorial'],
     rows: [
       {
@@ -239,7 +239,7 @@ const guideProps = {
         stat: 'Nível 12+',
         level: '12–15 px',
         accuracy: 'Abaixo de 2,5 px',
-        percentile: 'Faixa 1',
+        marker: 'Faixa 1',
       },
       {
         tier: 'Tier 2',
@@ -247,7 +247,7 @@ const guideProps = {
         stat: 'Nível 9–11',
         level: '16–22 px',
         accuracy: 'Abaixo de 4,0 px',
-        percentile: 'Faixa 2',
+        marker: 'Faixa 2',
       },
       {
         tier: 'Tier 3',
@@ -255,7 +255,7 @@ const guideProps = {
         stat: 'Nível 6–8',
         level: '23–32 px',
         accuracy: 'Abaixo de 6,5 px',
-        percentile: 'Faixa 3',
+        marker: 'Faixa 3',
       },
       {
         tier: 'Tier 4',
@@ -263,7 +263,7 @@ const guideProps = {
         stat: 'Nível 3–5',
         level: '33–42 px',
         accuracy: 'Abaixo de 9,0 px',
-        percentile: 'Faixa 4',
+        marker: 'Faixa 4',
       },
       {
         tier: 'Tier 5',
@@ -271,7 +271,7 @@ const guideProps = {
         stat: 'Nível 1–2',
         level: '43–50 px',
         accuracy: 'Acima de 9,0 px',
-        percentile: 'Faixa 5',
+        marker: 'Faixa 5',
       },
     ],
   },

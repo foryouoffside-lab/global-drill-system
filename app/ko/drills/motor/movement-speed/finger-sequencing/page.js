@@ -241,7 +241,7 @@ const guideProps = {
         stat: '180 ms 미만',
         level: '레벨 12+',
         accuracy: '98–100%',
-        percentile: '상위 1% (최상위권)',
+        percentile: '최상위 단계',
       },
       {
         tier: 'Tier 2',
@@ -249,7 +249,7 @@ const guideProps = {
         stat: '180–230 ms',
         level: '레벨 9–11',
         accuracy: '95–97%',
-        percentile: '상위 5% (마스터)',
+        percentile: '상급 단계',
       },
       {
         tier: 'Tier 3',
@@ -257,7 +257,7 @@ const guideProps = {
         stat: '230–300 ms',
         level: '레벨 6–8',
         accuracy: '90–94%',
-        percentile: '상위 20% (숙련자)',
+        percentile: '중상급 단계',
       },
       {
         tier: 'Tier 4',

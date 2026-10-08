@@ -243,37 +243,37 @@ export default function LocalizedPathTracingPage() {
       headers: ["Nível de Desempenho", "Span e Grade", "Pontuação", "Perfil Cognitivo e Retenção de Trajetória"],
       rows: [
         [
-                "Nível 1 (Excepcional / Percentil 99)",
+                "Faixa 1",
                 "Span 10 – 14+ passos (grade 6x6–7x7)",
                 "1.200+ Pontos",
                 "Desempenho visoespacial de elite; decompõe percursos em 2–3 macrovetores; ensaio perfeito no escriba interno; resposta fluida em < 400 ms"
         ],
         [
-                "Nível 2 (Alto / Percentil 85–95)",
+                "Faixa 2",
                 "Span 8 – 9 passos (grade 5x5–6x6)",
                 "900 – 1.199 Pontos",
                 "Bem acima da média populacional; agrupamento direcional robusto (curvas em L, zigue-zagues); resistente à interferência; resposta em 400–600 ms"
         ],
         [
-                "Nível 3 (Média Adulta / Percentil 50)",
+                "Faixa 3",
                 "Span 5 – 7 passos (grade 4x4–5x5)",
                 "600 – 899 Pontos",
                 "Padrão médio da população (Corsi, 1972; Kessels et al., 2000, 5,4 ± 0,9 passos); executa 5–6 passos com facilidade; perde pontos intermediários em 5x5; 600–850 ms"
         ],
         [
-                "Nível 4 (Abaixo da Média / Sobrecarga Sequencial)",
+                "Faixa 4",
                 "Span 4 passos (grade 3x3–4x4)",
                 "400 – 599 Pontos",
                 "Opera no limite da retenção crua (Cowan, 2001); tenta guardar pontos soltos sem formar vetores, gerando saturação precoce; 850–1.100 ms"
         ],
         [
-                "Nível 5 (Treino Recomendado / Retenção Reduzida)",
+                "Faixa 5",
                 "Span < 4 passos (grade 3x3)",
                 "< 400 Pontos",
                 "Rápido declínio do vestígio temporal; frequentes trocas de ordem; lentidão de resposta acima de 1.100 ms"
         ]
 ],
-      note: "O número de passos e a dimensão da grade representam o nível máximo atingido em 45 segundos, equiparado aos parâmetros de Corsi Block-Tapping."
+      note: "Faixas editoriais de prática para comparar suas próprias sessões; não são estatísticas de população nem normas clínicas. O número de passos e a dimensão da grade representam o nível máximo atingido em 45 segundos, equiparado aos parâmetros de Corsi Block-Tapping."
     },
     techniques: {
       title: "Estratégias cientificamente respaldadas para expandir a memória sequencial",

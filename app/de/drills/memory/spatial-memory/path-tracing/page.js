@@ -241,33 +241,34 @@ export default function LocalizedPathTracingPage() {
     benchmarks: {
       title: "Normative Benchmarks zum sequentiellen Corsi-Block-Gedächtnis",
       headers: ["Leistungsstufe", "Spannengröße & Raster", "Punkte", "Kognitives Profil & Trajektorien-Repertoire"],
+      note: "Die Bereiche sind redaktionelle Übungsmarken und keine Bevölkerungsstatistik.",
       rows: [
         [
-                "Stufe 1 (Herausragend / Top 1%)",
+                "Stufe 1",
                 "Spanne 10 – 14+ Schritte (6x6–7x7 Raster)",
                 "1.200+ Punkte",
                 "Visuospaziale Elite; zerlegt komplexe Routen in 2–3 Makrovektoren; exzellentes Inner-Scribe-Rehearsal; flüssiger Abruf unter 400 ms"
         ],
         [
-                "Stufe 2 (Überdurchschnittlich / Top 15%)",
+                "Stufe 2",
                 "Spanne 8 – 9 Schritte (5x5–6x6 Raster)",
                 "900 – 1.199 Punkte",
                 "Deutlich über Populationsdurchschnitt; nutzt geometrisches Chunking (L-Turns, Zickzack); hohe Interferenzresistenz; 400–600 ms"
         ],
         [
-                "Stufe 3 (Durchschnitt Erwachsener / Median)",
+                "Stufe 3",
                 "Spanne 5 – 7 Schritte (4x4–5x5 Raster)",
                 "600 – 899 Punkte",
                 "Normaler Populationsdurchschnitt (Corsi, 1972; Kessels et al., 2000, 5,4 ± 0,9 Spanne); meistert 5–6 Schritte; verliert Wegpunkte auf 5x5; 600–850 ms"
         ],
         [
-                "Stufe 4 (Unterdurchschnittlich / Sequenzzerfall)",
+                "Stufe 4",
                 "Spanne 4 Schritte (3x3–4x4 Raster)",
                 "400 – 599 Punkte",
                 "Arbeitet an der Cowan-Grenze (2001); versucht Punkte isoliert zu merken; anfällig für Reihenfolgefehler; 850–1.100 ms"
         ],
         [
-                "Stufe 5 (Trainingsbedarf / Geringe Merkspanne)",
+                "Stufe 5",
                 "Spanne < 4 Schritte (3x3 Raster)",
                 "< 400 Punkte",
                 "Schneller Spurenzerfall; häufige Vertauschung der Reihenfolge; Schwierigkeiten ab 3 Schritten; Latenz über 1.100 ms"

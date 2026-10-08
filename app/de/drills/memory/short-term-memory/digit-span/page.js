@@ -238,33 +238,34 @@ const digitSpanGuide = {
   benchmarks: {
     title: "Normative Benchmarks für Zahlenspanne und Arbeitsgedächtnis",
     headers: ["Leistungsstufe", "Zahlenspanne (Länge)", "WAIS-Skalenwert Äquiv.", "Kognitives Speicher- & Verarbeitungsprofil"],
+    note: "Die Bereiche sind redaktionelle Übungsmarken und keine Bevölkerungsstatistik.",
     rows: [
   [
-    "Tier 1 (Exzellent / Top 1%)",
+    "Stufe 1",
     "9 – 12+ Ziffern",
     "Skalenwert 16 – 19",
     "Mnemotechnisches Spitzenniveau; nutzt 3- bis 4-stellige rhythmische Chunks; fehlerfreie phonologische Schleife; Klicktakt unter 350 ms."
   ],
   [
-    "Tier 2 (Überdurchschnittlich / Top 15%)",
+    "Stufe 2",
     "7 – 8 Ziffern",
     "Skalenwert 12 – 15",
     "Erreicht Millers 7-Ziffern-Schwelle; bildet stabile Ziffernpaare/-triplets; unempfindlich gegen Zeitverfall; 350 – 500 ms Kadenz."
   ],
   [
-    "Tier 3 (Erwachsenen-Basis / 50%)",
+    "Stufe 3",
     "5 – 6 Ziffern",
     "Skalenwert 8 – 11",
     "Normaler Durchschnitt gesunder Erwachsener; bewältigt einfache Paare; ab 7 Ziffern setzt akustische Überlagerung ein; 500 – 700 ms Kadenz."
   ],
   [
-    "Tier 4 (Unterdurchschnittlich / Engpass)",
+    "Stufe 4",
     "4 Ziffern",
     "Skalenwert 5 – 7",
     "Arbeitet an Cowans reiner 4-Punkte-Kapazitätsgrenze; ohne inneres Vorsagen scheitern Folgen über 4 Ziffern; 700 – 950 ms Kadenz."
   ],
   [
-    "Tier 5 (Trainingsbedarf / Niedrig)",
+    "Stufe 5",
     "3 Ziffern",
     "Skalenwert 1 – 4",
     "Schwierigkeiten bei 3 Ziffern in Folge; hohe Anfälligkeit für sofortigen Spurzerfall und Ablenkung; Tastkadenz über 950 ms."

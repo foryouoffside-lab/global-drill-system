@@ -272,13 +272,15 @@ const guideProps = {
   },
   benchmarks: {
     title: 'Standards de Performance Cognitive & Échelle de Vigilance Continue (CPT)',
-    headers: ['Niveau', 'Rang', 'Performance', 'Exactitude', 'Centile'],
+    headers: ['Niveau', 'Rang', 'Performance', 'Exactitude', 'Repère de pratique'],
+    note: "Paliers éditoriaux de pratique pour comparer vos propres séances ; ce ne sont pas des statistiques de population ni des normes cliniques.",
+
     rows: [
-      { tier: 'Tier 1', rank: 'Grand Maître / Élite', stat: 'Top 1%', level: 'Maîtrise', accuracy: '98%+', percentile: 'Top 1%' },
-      { tier: 'Tier 2', rank: 'Focus Avancé', stat: 'Top 5%', level: 'Diamant', accuracy: '94-97%', percentile: 'Top 5%' },
-      { tier: 'Tier 3', rank: 'Opérateur Compétent', stat: 'Top 15%', level: 'Platine', accuracy: '88-93%', percentile: 'Top 15%' },
-      { tier: 'Tier 4', rank: 'Moyenne Adulte Standard', stat: 'Top 50%', level: 'Or', accuracy: '78-87%', percentile: 'Top 50%' },
-      { tier: 'Tier 5', rank: 'Ligne de Base Initiale', stat: 'Base', level: 'Argent', accuracy: '< 78%', percentile: 'Base' },
+      { tier: 'Palier 1', rank: 'Très avancé', stat: 'Rythme très élevé', accuracy: '98%+', marker: 'Rythme très élevé et précis' },
+      { tier: 'Palier 2', rank: 'Avancé', stat: 'Rythme élevé', accuracy: '94-97%', marker: 'Rythme élevé et régulier' },
+      { tier: 'Palier 3', rank: 'Solide', stat: 'Rythme stable', accuracy: '88-93%', marker: 'Rythme stable avec quelques erreurs' },
+      { tier: 'Palier 4', rank: 'En progression', stat: 'Rythme moyen', accuracy: '78-87%', marker: 'Rythme moyen avec marge de progression' },
+      { tier: 'Palier 5', rank: 'Initial', stat: 'Rythme initial', accuracy: '< 78%', marker: 'Point de départ' },
     ],
   },
   protocols: {

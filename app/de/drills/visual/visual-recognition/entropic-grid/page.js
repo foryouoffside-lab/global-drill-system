@@ -252,13 +252,13 @@ const guideData = {
     title: "Orientierungswerte für visuelle Suche und selektive Aufmerksamkeit",
     headers: ["Leistungsstufe / Rang", "Erfolgreiche Treffer (45 Sek.)", "Mittlere Suchfixations-Latenz", "Rauschfilter-Genauigkeit", "Neurokognitive Verarbeitungsstufe"],
     rows: [
-      ["Elite / Profi-Klasse (Top 1%)", "18+ Treffer", "< 180 ms", "> 96%", "Perfekte Synthese aus paralleler Pop-out-Erkennung und zielgerichteter Top-Down-Suche (Wolfe, 2007)"],
-      ["Fortgeschrittene Suche (Top 5%)", "14 – 17 Treffer", "180 – 230 ms", "88 – 95%", "Hocheffiziente Unterdrückung dynamischer Distraktoren und optimierter Quadranten-Rasterscan"],
-      ["Durchschnittliches Niveau (Top 25%)", "10 – 13 Treffer", "230 – 300 ms", "76 – 87%", "Solide kognitive Verarbeitungsgeschwindigkeit; Kombination aus seriellem Abgleich und partieller Parallelerfassung"],
-      ["Anfänger-Niveau (Top 50%)", "7 – 9 Treffer", "300 – 400 ms", "65 – 75%", "Erhöhte Ablenkbarkeit durch visuelles Rauschen; verzögerte Zielerfassung (Visual Clutter Latenz)"],
+      ["Stufe 1: Elite / Profi-Klasse", "18+ Treffer", "< 180 ms", "> 96%", "Perfekte Synthese aus paralleler Pop-out-Erkennung und zielgerichteter Top-Down-Suche (Wolfe, 2007)"],
+      ["Stufe 2: Fortgeschrittene Suche", "14 – 17 Treffer", "180 – 230 ms", "88 – 95%", "Hocheffiziente Unterdrückung dynamischer Distraktoren und optimierter Quadranten-Rasterscan"],
+      ["Stufe 3: Durchschnittliches Niveau", "10 – 13 Treffer", "230 – 300 ms", "76 – 87%", "Solide kognitive Verarbeitungsgeschwindigkeit; Kombination aus seriellem Abgleich und partieller Parallelerfassung"],
+      ["Stufe 4: Anfänger-Niveau", "7 – 9 Treffer", "300 – 400 ms", "65 – 75%", "Erhöhte Ablenkbarkeit durch visuelles Rauschen; verzögerte Zielerfassung (Visual Clutter Latenz)"],
       ["Basis-Entwicklungsstufe (Baseline)", "< 7 Treffer", "> 400 ms", "< 65%", "Irreguläre Sakkadenwanderung und Informationsverlust im Arbeitsgedächtnis während des Flackerns"]
     ],
-    note: "Objektive Leistungswerte basierend auf der kognitionswissenschaftlichen Literatur zur visuellen Aufmerksamkeit (Treisman & Gelade 1980; Wolfe 2007; Duncan & Humphreys 1989; Posner 1980)."
+    note: "Objektive Leistungswerte basierend auf der kognitionswissenschaftlichen Literatur zur visuellen Aufmerksamkeit (Treisman & Gelade 1980; Wolfe 2007; Duncan & Humphreys 1989; Posner 1980). Die Bereiche sind redaktionelle Übungsmarken, keine Bevölkerungsstatistik."
   },
   techniques: {
     title: "Zielzeichen schneller finden und Ablenker ausblenden",
@@ -290,7 +290,7 @@ const guideData = {
     "Überfliege die vier Quadranten der Matrix und nutze deine periphere Sicht zur Identifikation charakteristischer Linienmerkmale.",
     "Blende das rhythmische Flackern der Hintergrunddistraktoren aus und klicke das Zielsymbol ohne Umwege an.",
     "Sobald ein Treffer erfolgt, erscheint sofort der nächste Code – halte den Rhythmus über die gesamten 45 Sekunden aufrecht.",
-    "Analysiere nach Ablauf der Zeit deine Trefferanzahl, durchschnittliche Latenz und Perzentil-Einstufung für dein gezieltes Training."
+    "Analysiere nach Ablauf der Zeit deine Trefferanzahl, durchschnittliche Latenz für dein gezieltes Training."
   ],
   audience: "FPS-Gamer (Valorant, CS2, Apex Legends, Overwatch), die ihre Zielerfassungszeit und Gegneridentifikation unter extremem visuellen Clutter perfektionieren wollen, Fluglotsen, Radiologen, Sicherheitskräfte sowie Fachkräfte, die große Datenmengen fehlerfrei scannen müssen.",
   faqs: faqSchema.mainEntity.map(e => ({ q: e.name, a: e.acceptedAnswer.text })),

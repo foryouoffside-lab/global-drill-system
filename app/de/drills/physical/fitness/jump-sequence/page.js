@@ -298,15 +298,15 @@ const jumpGuide = {
   ],
   benchmarks: {
     title: "Wissenschaftliche 5-Stufen-Normtabelle für das Sprungsequenz-Training",
-    headers: ["Leistungsstufe & Perzentil", "Rangtitel (Rank Title)", "Punktwert (45s)", "Genauigkeit & Geschwindigkeit", "Gesamtnote", "Neuromotorisches Profil"],
+    headers: ["Leistungsstufe", "Rangtitel (Rank Title)", "Punktwert (45s)", "Genauigkeit & Geschwindigkeit", "Gesamtnote", "Neuromotorisches Profil"],
     rows: [
-      ["Tier 1: Elite-Trajektorienmeister (Top 0,1%)", "Apex Trajectory Master", "17.000+ Punkte", "92%+ / 800 – 900 px/s", "Grade S", "Perfekte DVZ-Impulsberechnung, makelloses optisches Tau-Abfangen fliegender Ziele bei 900 px/s (Komi 2000; Kawato 1999; Lee 1976)"],
-      ["Tier 2: Präzisions-Flugangreifer (Top 3%)", "Precision Aerial Striker", "12.000 – 16.999 Punkte", "84 – 91% / 650 – 799 px/s", "Grade A", "Hervorragende Kleinhirn-Steuerung im freien Flug, stabile Konvergenz auf komprimierte 15–18-px-Ziele"],
-      ["Tier 3: Kompetenter Sprungabfänger", "Skilled Jump Interceptor", "7.500 – 11.999 Punkte", "75 – 83% / 500 – 649 px/s", "Grade B", "Solides Niveau im Leistungs- und eSport, verlässliche Impulsdosierung und gute Rebound-Rhythmik"],
-      ["Tier 4: Parabel-Navigator (Durchschnitt)", "Developing Parabola Navigator", "4.000 – 7.499 Punkte", "65 – 74% / 350 – 499 px/s", "Grade C", "Durchschnittliche zeitliche Koordination, bei Zielgeschwindigkeiten über 500 px/s häufen sich Landefehler"],
-      ["Tier 5: Einsteiger / Basistraining", "Novice Liftoff Trainee", "< 4.000 Punkte", "< 65% / < 350 px/s", "Grade D", "Fehldosierte Ladeimpulse, Verzögerung bei der Flugbahnkorrektur, Übung von Vorsteuerung empfohlen"]
+      ["Stufe 1: Elite-Trajektorienmeister ", "Apex Trajectory Master", "17.000+ Punkte", "92%+ / 800 – 900 px/s", "Grade S", "Perfekte DVZ-Impulsberechnung, makelloses optisches Tau-Abfangen fliegender Ziele bei 900 px/s (Komi 2000; Kawato 1999; Lee 1976)"],
+      ["Stufe 2: Präzisions-Flugangreifer ", "Precision Aerial Striker", "12.000 – 16.999 Punkte", "84 – 91% / 650 – 799 px/s", "Grade A", "Hervorragende Kleinhirn-Steuerung im freien Flug, stabile Konvergenz auf komprimierte 15–18-px-Ziele"],
+      ["Stufe 3: Kompetenter Sprungabfänger", "Skilled Jump Interceptor", "7.500 – 11.999 Punkte", "75 – 83% / 500 – 649 px/s", "Grade B", "Solides Niveau im Leistungs- und eSport, verlässliche Impulsdosierung und gute Rebound-Rhythmik"],
+      ["Stufe 4: Parabel-Navigator (Durchschnitt)", "Developing Parabola Navigator", "4.000 – 7.499 Punkte", "65 – 74% / 350 – 499 px/s", "Grade C", "Durchschnittliche zeitliche Koordination, bei Zielgeschwindigkeiten über 500 px/s häufen sich Landefehler"],
+      ["Stufe 5: Einsteiger / Basistraining", "Novice Liftoff Trainee", "< 4.000 Punkte", "< 65% / < 350 px/s", "Grade D", "Fehldosierte Ladeimpulse, Verzögerung bei der Flugbahnkorrektur, Übung von Vorsteuerung empfohlen"]
     ],
-    note: "Normiert nach den chronometrischen Standards des Dehnungs-Verkürzungs-Zyklus (Komi 2000), der Kleinhirn-Modellierung (Kawato 1999) und der optischen Tau-Theorie (Lee 1976)."
+    note: "Normiert nach den chronometrischen Standards des Dehnungs-Verkürzungs-Zyklus (Komi 2000), der Kleinhirn-Modellierung (Kawato 1999) und der optischen Tau-Theorie (Lee 1976). Die Bereiche sind redaktionelle Übungsmarken, keine Bevölkerungsstatistik."
   },
   techniques: {
     title: "Methodische Trainingsprotokolle für Sprungkraft & Flugbahnsteuerung",

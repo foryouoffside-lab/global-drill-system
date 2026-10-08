@@ -241,15 +241,15 @@ const guideProps = {
   ],
   benchmarks: {
     title: "Baremos de Rendimiento en Atención Dividida y Seguimiento Bilateral",
-    headers: ["Nivel de Rendimiento", "Velocidad del Objetivo", "Estabilidad del Anclaje Central", "Simetría Hemisférica (Error)", "Percentil Poblacional"],
+    headers: ["Nivel de Rendimiento", "Velocidad del Objetivo", "Estabilidad del Anclaje Central", "Simetría Hemisférica (Error)", "Marcador de práctica"],
     rows: [
-      ["Élite (Esports / Pilotos)", "3.5x – 5.0x+", "Anclaje central firme; 0 sacadas intrusivas", "< 3% de discrepancia (bloqueo bimodal)", "Top 1.5%"],
-      ["Avanzado (Competitivo)", "2.5x – 3.5x", "Anclaje estable; mínimas micro-sacadas", "< 7% de discrepancia (monitoreo dual firme)", "Top 8%"],
-      ["Competente (Adulto Sano)", "1.8x – 2.5x", "Foco central firme; leves sacadas en picos", "< 12% de discrepancia (leve dominancia lateral)", "Top 25%"],
-      ["En Desarrollo (División Ineficiente)", "1.2x – 1.8x", "Frecuentes sacadas involuntarias al objetivo más veloz", "15% – 25% de retraso en hemicampo no dominante", "45% Intermedios"],
-      ["Principiante (Visión de Túnel)", "0.5x – 1.2x", "Alternancia sacádica constante entre pantallas", "> 25% de pérdida completa de un blanco", "Nivel Inicial"]
+      ["Etapa 1", "3.5x – 5.0x+", "Anclaje central firme; 0 sacadas intrusivas", "< 3% de discrepancia (bloqueo bimodal)", "Ritmo muy alto con alta precisión"],
+      ["Etapa 2", "2.5x – 3.5x", "Anclaje estable; mínimas micro-sacadas", "< 7% de discrepancia (monitoreo dual firme)", "Ritmo alto y regular"],
+      ["Etapa 3", "1.8x – 2.5x", "Foco central firme; leves sacadas en picos", "< 12% de discrepancia (leve dominancia lateral)", "Ritmo estable con algunos errores"],
+      ["Etapa 4", "1.2x – 1.8x", "Frecuentes sacadas involuntarias al objetivo más veloz", "15% – 25% de retraso en hemicampo no dominante", "Ritmo medio con margen de mejora"],
+      ["Etapa 5", "0.5x – 1.2x", "Alternancia sacádica constante entre pantallas", "> 25% de pérdida completa de un blanco", "Punto de partida"]
     ],
-    note: "※ Evaluado segun los modelos MOT de Pylyshyn & Storm (1988) y metricas de reparto hemisferico de Alvarez & Cavanagh (2005) en pantallas 1080p a 50–70 cm de distancia."
+    note: "Etapas editoriales de práctica para comparar tus propias sesiones; no son estadísticas de población ni normas clínicas. ※ Evaluado segun los modelos MOT de Pylyshyn & Storm (1988) y metricas de reparto hemisferico de Alvarez & Cavanagh (2005) en pantallas 1080p a 50–70 cm de distancia."
   },
   techniques: {
     title: "Cuatro Técnicas Clave para la Atención Dividida en Pantalla Dividida",

@@ -241,15 +241,15 @@ const guideProps = {
   ],
   benchmarks: {
     title: "Grille d'Évaluation de l'Attention Divisée et Poursuite Bilatérale",
-    headers: ["Palier de Performance", "Vitesse de la Cible", "Stabilité de l'Ancre Centrale", "Symétrie Hémisphérique (Erreur)", "Centile de Population"],
+    headers: ["Palier de Performance", "Vitesse de la Cible", "Stabilité de l'Ancre Centrale", "Symétrie Hémisphérique (Erreur)", "Repère de pratique"],
     rows: [
-      ["Élite (Esports / Aviateurs)", "3.5x – 5.0x+", "Ancre centrale parfaite; 0 saccade intrusive", "< 3% d'écart (verrouillage bimodal)", "Top 1.5%"],
-      ["Avancé (Compétitif)", "2.5x – 3.5x", "Ancre stable; micro-saccades minimes", "< 7% d'écart (surveillance double régulière)", "Top 8%"],
-      ["Compétent (Adulte Sain)", "1.8x – 2.5x", "Regard central tenu; légères saccades aux pics", "< 12% d'écart (légère préférence latérale)", "Top 25%"],
-      ["En Développement (Division Inefficace)", "1.2x – 1.8x", "Saccades involontaires fréquentes vers la cible rapide", "15% – 25% de retard sur l'hémichamp faible", "45% Intermédiaires"],
-      ["Débutant (Vision Tunnel)", "0.5x – 1.2x", "Allers-retours permanents des yeux entre écrans", "> 25% de perte complète d'une trajectoire", "Palier Initial"]
+      ["Palier 1", "3.5x – 5.0x+", "Ancre centrale parfaite; 0 saccade intrusive", "< 3% d'écart (verrouillage bimodal)", "Rythme très élevé et précis"],
+      ["Palier 2", "2.5x – 3.5x", "Ancre stable; micro-saccades minimes", "< 7% d'écart (surveillance double régulière)", "Rythme élevé et régulier"],
+      ["Palier 3", "1.8x – 2.5x", "Regard central tenu; légères saccades aux pics", "< 12% d'écart (légère préférence latérale)", "Rythme stable avec quelques erreurs"],
+      ["Palier 4", "1.2x – 1.8x", "Saccades involontaires fréquentes vers la cible rapide", "15% – 25% de retard sur l'hémichamp faible", "Rythme moyen avec marge de progression"],
+      ["Palier 5", "0.5x – 1.2x", "Allers-retours permanents des yeux entre écrans", "> 25% de perte complète d'une trajectoire", "Point de départ"]
     ],
-    note: "※ Étalonné d'après les modélisations MOT de Pylyshyn & Storm (1988) et la distribution hémisphérique d'Alvarez & Cavanagh (2005) sur écran 1080p à 50–70 cm."
+    note: "Paliers éditoriaux de pratique pour comparer vos propres séances ; ce ne sont pas des statistiques de population ni des normes cliniques. ※ Étalonné d'après les modélisations MOT de Pylyshyn & Storm (1988) et la distribution hémisphérique d'Alvarez & Cavanagh (2005) sur écran 1080p à 50–70 cm."
   },
   techniques: {
     title: "Quatre Piliers Techniques pour l'Attention Divisée sur Écran Scindé",

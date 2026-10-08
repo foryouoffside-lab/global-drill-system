@@ -180,7 +180,7 @@ const faqSchema = {
       name: 'What score constitutes elite performance in Agility Ladder Drills?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Scores between 13,000 and 16,999 points indicate Elite Rhythm Sweeper performance (top 3%), while scores exceeding 17,000 points with 90%+ clearance accuracy at 750 px/s place a player in the top 0.1% Apex Agility Master tier.',
+        text: 'Scores between 13,000 and 16,999 points indicate Elite Rhythm Sweeper performance stage, while scores exceeding 17,000 points with 90%+ clearance accuracy at 750 px/s reach the Apex Agility Master tier.',
       },
     },
     {

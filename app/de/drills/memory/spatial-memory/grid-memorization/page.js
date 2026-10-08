@@ -222,33 +222,34 @@ const gridGuide = {
   benchmarks: {
     title: "Normative Benchmarks für visuelle Musterspannen",
     headers: ["Leistungsstufe", "Musterspanne (Felder)", "Punktzahl", "Kognitives Profil & Chunking-Muster"],
+    note: "Die Bereiche sind redaktionelle Übungsmarken und keine Bevölkerungsstatistik.",
     rows: [
   [
-    "Tier 1 (Exzellent / Top 1%)",
+    "Stufe 1",
     "10 – 14+ Felder",
     "1.150+ Punkte",
     "Hervorragende räumliche Merkfähigkeit; zerlegt komplexe Muster in 2–3 Gestalt-Primitive; fehlerfreie Beibehaltung im visuellen Cache; Klickfrequenz unter 450 ms."
   ],
   [
-    "Tier 2 (Überdurchschnittlich / Top 15%)",
+    "Stufe 2",
     "8 – 9 Felder",
     "850 – 1.149 Punkte",
     "Übertrifft den normalen Erwachsenen-Durchschnitt; wendet schnelles Formen-Chunking an; robust gegen visuelle Ablenkung; 450 – 650 ms Klickintervall."
   ],
   [
-    "Tier 3 (Erwachsenen-Basis / 50%)",
+    "Stufe 3",
     "6 – 7 Felder",
     "550 – 849 Punkte",
     "Standardwert gesunder Erwachsener (Della Sala et al., 1997); bewältigt einfache Paare; verliert Randfelder auf 5x5-Gittern; 650 – 900 ms Kadenz."
   ],
   [
-    "Tier 4 (Unterdurchschnittlich / Engpass)",
+    "Stufe 4",
     "5 Felder",
     "350 – 549 Punkte",
     "Arbeitet nahe der reinen physiologischen Kapazitätsgrenze (Cowan, 2001); versucht Felder einzeln ohne Formenbildung zu merken; 900 – 1.200 ms Kadenz."
   ],
   [
-    "Tier 5 (Trainingsbedarf / Niedrig)",
+    "Stufe 5",
     "< 5 Felder",
     "< 350 Punkte",
     "Rascher Zerfall der visuellen Spur; anfällig für visuelles Rauschen; Schwierigkeiten bei Mustern über 4 Feldern nach 1,5s Pause; Kadenz über 1.200 ms."

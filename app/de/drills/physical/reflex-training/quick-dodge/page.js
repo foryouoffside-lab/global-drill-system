@@ -266,13 +266,13 @@ const dodgeGuide = {
     title: "5-Stufen-Leistungsbenchmarks für Maus-Ausweichen und Projektilantizipation",
     headers: ["Stufe & Rang", "Titel (Rank Title)", "Punkteziel", "Ausweichquote & Maximalgeschwindigkeit", "Gesamtnote", "Neuromuskuläres Profil"],
     rows: [
-      ["Tier 1: Ultimativer Kinetik-Meister", "Apex Kinetic Evader", "24.000+ Punkte", "> 95 % / 500+ px/s", "Grade S", "Top 0,1 % Niveau. Perfekte zerebelläre Prädiktion und fehlerfreie Mikro-Ausweichmanöver bei über 50 Projektilen (Kawato 1999; Woodworth 1899)"],
-      ["Tier 2: Präzisions-Flugbahn-Stratege", "Precision Trajectory Striker", "17.000 – 23.999 Punkte", "90 – 94 % / 400 – 499 px/s", "Grade A", "Top 3 % E-Sport-Niveau. Exzellente Raumwahrnehmung und stabiles Halten der zentralen Sicherheitszone"],
-      ["Tier 3: Erfahrener Ausweichpilot", "Skilled Evasion Pilot", "11.000 – 16.999 Punkte", "82 – 89 % / 300 – 399 px/s", "Grade B", "Top 15 % kompetitive Spieler. Verlässliche Handgelenkskontrolle und frühzeitiges Erkennen von Gefahrenvektoren"],
-      ["Tier 4: Lernender Ausweichathlet", "Developing Dodger", "6.000 – 10.999 Punkte", "70 – 81 % / 200 – 299 px/s", "Grade C", "Durchschnittliches Erwachsenenniveau. Tendenz zum Flüchten an den Rand bei höherer Geschwindigkeit; Rezentrierung empfohlen"],
-      ["Tier 5: Einsteiger in Ausweichmotorik", "Novice Evasion Trainee", "< 6.000 Punkte", "< 70 % / < 200 px/s", "Grade D", "Basisniveau. Häufige Treffer durch verzögerte Reaktion. Empfohlen wird das Entspannen der Handhaltung und Weiten des Blicks"]
+      ["Stufe 1: Ultimativer Kinetik-Meister", "Apex Kinetic Evader", "24.000+ Punkte", "> 95 % / 500+ px/s", "Grade S", "Perfekte zerebelläre Prädiktion und fehlerfreie Mikro-Ausweichmanöver bei über 50 Projektilen (Kawato 1999; Woodworth 1899)"],
+      ["Stufe 2: Präzisions-Flugbahn-Stratege", "Precision Trajectory Striker", "17.000 – 23.999 Punkte", "90 – 94 % / 400 – 499 px/s", "Grade A", "Exzellente Raumwahrnehmung und stabiles Halten der zentralen Sicherheitszone"],
+      ["Stufe 3: Erfahrener Ausweichpilot", "Skilled Evasion Pilot", "11.000 – 16.999 Punkte", "82 – 89 % / 300 – 399 px/s", "Grade B", "Verlässliche Handgelenkskontrolle und frühzeitiges Erkennen von Gefahrenvektoren"],
+      ["Stufe 4: Lernender Ausweichathlet", "Developing Dodger", "6.000 – 10.999 Punkte", "70 – 81 % / 200 – 299 px/s", "Grade C", "Durchschnittliches Erwachsenenniveau. Tendenz zum Flüchten an den Rand bei höherer Geschwindigkeit; Rezentrierung empfohlen"],
+      ["Stufe 5: Einsteiger in Ausweichmotorik", "Novice Evasion Trainee", "< 6.000 Punkte", "< 70 % / < 200 px/s", "Grade D", "Basisniveau. Häufige Treffer durch verzögerte Reaktion. Empfohlen wird das Entspannen der Handhaltung und Weiten des Blicks"]
     ],
-    note: "Objektive Kriterien basierend auf Kawatos zerebellärer Prädiktionstheorie (1999), Woodworths Zweiphasenmodell (1899) und Fitts' Schwierigkeitsskalierung (1954)."
+    note: "Objektive Kriterien basierend auf Kawatos zerebellärer Prädiktionstheorie (1999), Woodworths Zweiphasenmodell (1899) und Fitts' Schwierigkeitsskalierung (1954). Die Bereiche sind redaktionelle Übungsmarken, keine Bevölkerungsstatistik."
   },
   techniques: {
     title: "4 Praxisprotokolle für maximale Ausweichpräzision & Reaktionsbeherrschung",

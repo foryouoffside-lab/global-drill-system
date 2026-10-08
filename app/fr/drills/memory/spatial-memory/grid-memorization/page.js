@@ -274,13 +274,13 @@ const gridGuide = {
     title: "Paliers de Référence Normatifs de l'Empan Matriciel Visuo-Spatial",
     headers: ["Palier de Performance", "Empan Matriciel (Cases)", "Score à l'Exercice", "Profil de Stockage & Stratégie de Chunking"],
     rows: [
-      ["Palier 1 (Supérieur / 99e Percentile)", "Empan 10 – 14+ cases", "1 150+ points", "Élite visuo-spatiale ; décomposition des motifs complexes en 2-3 formes géométriques de Gestalt ; rétention parfaite dans le cache visuel ; cadence de clic sub-450 ms."],
-      ["Palier 2 (Moyenne Supérieure / 85e–95e Percentile)", "Empan 8 – 9 cases", "850 – 1 149 points", "Supérieur à la moyenne adulte ; exécution rapide du chunking de formes (triplets, formes en L) ; grande résistance au bruit visuel ; cadence 450 – 650 ms."],
-      ["Palier 3 (Moyenne Adulte Standard / 50e Percentile)", "Empan 6 – 7 cases", "550 – 849 points", "Ligne de base de la population adulte saine (Della Sala et al., 1997) ; gère des regroupements simples ; perte des cases périphériques sur grilles 5x5 ; cadence 650 – 900 ms."],
-      ["Palier 4 (Moyenne Inférieure / Goulet d'Étranglement)", "Empan 5 cases", "350 – 549 points", "Proche de la limite brute de capacité sans chunking (Cowan, 2001) ; mémorisation isolée case par case sans regroupement géométrique ; cadence 900 – 1 200 ms."],
-      ["Palier 5 (En Développement / Empan Restreint)", "Empan < 5 cases", "< 350 points", "Dégradation rapide de la trace visuelle ; vulnérabilité aux interférences ; difficulté à retenir plus de 4 cases après le délai de 1,5 s ; cadence supérieure à 1 200 ms."]
+      ["Palier 1", "Empan 10 – 14+ cases", "1 150+ points", "Élite visuo-spatiale ; décomposition des motifs complexes en 2-3 formes géométriques de Gestalt ; rétention parfaite dans le cache visuel ; cadence de clic sub-450 ms."],
+      ["Palier 2", "Empan 8 – 9 cases", "850 – 1 149 points", "Supérieur à la moyenne adulte ; exécution rapide du chunking de formes (triplets, formes en L) ; grande résistance au bruit visuel ; cadence 450 – 650 ms."],
+      ["Palier 3", "Empan 6 – 7 cases", "550 – 849 points", "Ligne de base de la population adulte saine (Della Sala et al., 1997) ; gère des regroupements simples ; perte des cases périphériques sur grilles 5x5 ; cadence 650 – 900 ms."],
+      ["Palier 4", "Empan 5 cases", "350 – 549 points", "Proche de la limite brute de capacité sans chunking (Cowan, 2001) ; mémorisation isolée case par case sans regroupement géométrique ; cadence 900 – 1 200 ms."],
+      ["Palier 5", "Empan < 5 cases", "< 350 points", "Dégradation rapide de la trace visuelle ; vulnérabilité aux interférences ; difficulté à retenir plus de 4 cases après le délai de 1,5 s ; cadence supérieure à 1 200 ms."]
     ],
-    note: "L'empan correspond à la configuration matricielle maximale complétée sans faute durant la session de 45 secondes (Della Sala et al., 1997 ; Luck & Vogel, 1997 ; Woods et al., 2015)."
+    note: "Paliers éditoriaux de pratique pour comparer vos propres séances ; ce ne sont pas des statistiques de population ni des normes cliniques. L'empan correspond à la configuration matricielle maximale complétée sans faute durant la session de 45 secondes (Della Sala et al., 1997 ; Luck & Vogel, 1997 ; Woods et al., 2015)."
   },
   techniques: {
     title: "Protocoles Scientifiques pour Développer la Mémoire Matricielle",

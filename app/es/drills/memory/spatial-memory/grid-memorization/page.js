@@ -224,37 +224,37 @@ const gridGuide = {
     headers: ["Nivel de Rendimiento", "Span de Patrón (Celdas)", "Puntuación", "Perfil Cognitivo y Chunking"],
     rows: [
   [
-    "Nivel 1 (Sobresaliente / Percentil 99)",
+    "Etapa 1",
     "10 – 14+ Celdas",
     "1.150+ Puntos",
     "Rendimiento visoespacial de élite; descompone patrones complejos en 2-3 primitivas geométricas Gestalt; retención en caché visual impecable; cadencia de clic menor a 450 ms."
   ],
   [
-    "Nivel 2 (Alto / Percentil 85-95)",
+    "Etapa 2",
     "8 – 9 Celdas",
     "850 – 1.149 Puntos",
     "Supera el promedio adulto; ejecuta chunking geométrico rápido (formas de 'L', tríadas); resistente a la interferencia visual; cadencia de 450 a 650 ms."
   ],
   [
-    "Nivel 3 (Promedio Adulto / Percentil 50)",
+    "Etapa 3",
     "6 – 7 Celdas",
     "550 – 849 Puntos",
     "Línea base de la población adulta sana (Della Sala et al., 1997); gestiona agrupaciones simples; pierde celdas periféricas en cuadrículas de 5x5; cadencia de 650 a 900 ms."
   ],
   [
-    "Nivel 4 (Bajo Promedio / Cuello de Botella)",
+    "Etapa 4",
     "5 Celdas",
     "350 – 549 Puntos",
     "Opera en el límite fisiológico sin chunking (Cowan, 2001); intenta memorizar celdas individuales sin agrupar figuras; cadencia de 900 a 1.200 ms."
   ],
   [
-    "Nivel 5 (Bajo / Requiere Entrenamiento)",
+    "Etapa 5",
     "< 5 Celdas",
     "< 350 Puntos",
     "Rápido desvanecimiento de la huella visual; vulnerabilidad al ruido perceptual; dificultad para retener más de 4 celdas tras 1,5s; cadencia superior a 1.200 ms."
   ]
 ],
-    note: "El span de celdas refleja la configuración máxima de casillas completada con éxito durante la sesión de 45 segundos (Della Sala et al., 1997; Woods et al., 2015)."
+    note: "Etapas editoriales de práctica para comparar tus propias sesiones; no son estadísticas de población ni normas clínicas. El span de celdas refleja la configuración máxima de casillas completada con éxito durante la sesión de 45 segundos (Della Sala et al., 1997; Woods et al., 2015)."
   },
   techniques: {
     title: "Técnicas comprobadas para ampliar la memoria visual matricial",

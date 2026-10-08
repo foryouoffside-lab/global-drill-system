@@ -196,7 +196,7 @@ const faqSchema = {
       name: 'What constitutes an elite score in Reaction Chain?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Scores above 15,000 points represent the Master tier (top 0.5%), requiring 90%+ arrest accuracy against 1,400+ px/s node velocities over the 45-second duration.',
+        text: 'Scores above 15,000 points represent the Master tier (practice stage 5), requiring 90%+ arrest accuracy against 1,400+ px/s node velocities over the 45-second duration.',
       },
     },
     {

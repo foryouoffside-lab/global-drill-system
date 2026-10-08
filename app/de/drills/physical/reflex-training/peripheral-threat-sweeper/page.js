@@ -202,10 +202,10 @@ const faqSchema = {
     },
     {
       "@type": "Question",
-      "name": "Welche Kriterien müssen für die Elite-Kategorie Tier 1 (Apex Peripheral Guardian, Note S) erfüllt werden?",
+      "name": "Welche Kriterien müssen für die Elite-Kategorie Stufe 1 (Apex Peripheral Guardian, Note S) erfüllt werden?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Für Tier 1 (Note S) sind mindestens 24.000 Punkte, eine Trefferquote von 90 % oder höher sowie das erfolgreiche Abfangen von Geschwindigkeiten über 450 px/s erforderlich. Fortgeschrittene Spieler bewegen sich typischerweise im Bereich von Tier 3 (11.000 bis 16.999 Punkte)."
+        "text": "Für Stufe 1 (Note S) sind mindestens 24.000 Punkte, eine Trefferquote von 90 % oder höher sowie das erfolgreiche Abfangen von Geschwindigkeiten über 450 px/s erforderlich. Fortgeschrittene Spieler bewegen sich typischerweise im Bereich von Stufe 3 (11.000 bis 16.999 Punkte)."
       }
     },
     {
@@ -271,13 +271,13 @@ const guideProps = {
     title: "Offizielle Benchmarks für peripheres Reaktionsvermögen & Bedrohungsabwehr",
     headers: ['Stufe (Tier)', 'Rang & Klassifikation', 'Zielpunktzahl', 'Präzision & Geschwindigkeit', 'Note', 'Leistungsniveau'],
     rows: [
-      ['Tier 1', 'Erhabener Wächter des Blickfelds (Apex Peripheral Guardian)', '24.000+ Pkt.', '90%+ Treffer / 450+ px/s', 'Note S', 'Top 1% (Phänomenales UFOV)'],
-      ['Tier 2', 'Präzisions-Radialabfangjäger (Precision Radial Sweeper)', '17.000 – 23.999 Pkt.', '82–89% Treffer / 350–449 px/s', 'Note A', 'Top 10% (Turnier-Niveau)'],
-      ['Tier 3', 'Erfahrener Feldverteidiger (Skilled Field Defender)', '11.000 – 16.999 Pkt.', '74–81% Treffer / 250–349 px/s', 'Note B', 'Top 30% (Stabile Wahrnehmung)'],
-      ['Tier 4', 'Fortschreitender Raumverfolger (Developing Parafoveal Tracker)', '6.000 – 10.999 Pkt.', '65–73% Treffer / 160–249 px/s', 'Note C', 'Durchschnitt (Reguläre Spieler)'],
-      ['Tier 5', 'Tunnelblick-Gefährdeter Einsteiger (Novice Tunnel Vision Vulnerable)', '< 6.000 Pkt.', '< 65% Treffer / < 160 px/s', 'Note D', 'Basis (UFOV-Ausbau empfohlen)'],
+      ['Stufe 1', 'Erhabener Wächter des Blickfelds (Apex Peripheral Guardian)', '24.000+ Pkt.', '90%+ Treffer / 450+ px/s', 'Note S', 'Phänomenales UFOV'],
+      ['Stufe 2', 'Präzisions-Radialabfangjäger (Precision Radial Sweeper)', '17.000 – 23.999 Pkt.', '82–89% Treffer / 350–449 px/s', 'Note A', 'Turnier-Niveau'],
+      ['Stufe 3', 'Erfahrener Feldverteidiger (Skilled Field Defender)', '11.000 – 16.999 Pkt.', '74–81% Treffer / 250–349 px/s', 'Note B', 'Stabile Wahrnehmung'],
+      ['Stufe 4', 'Fortschreitender Raumverfolger (Developing Parafoveal Tracker)', '6.000 – 10.999 Pkt.', '65–73% Treffer / 160–249 px/s', 'Note C', 'Durchschnitt (Reguläre Spieler)'],
+      ['Stufe 5', 'Tunnelblick-Gefährdeter Einsteiger (Novice Tunnel Vision Vulnerable)', '< 6.000 Pkt.', '< 65% Treffer / < 160 px/s', 'Note D', 'Basis (UFOV-Ausbau empfohlen)'],
     ],
-    note: "Die Einstufung berücksichtigt Gesamtpunkte, Anzahl der Kern-Durchbrüche, höchste überlebte Knotengeschwindigkeit und maximale Combo-Länge.",
+    note: "Die Einstufung berücksichtigt Gesamtpunkte, Anzahl der Kern-Durchbrüche, höchste überlebte Knotengeschwindigkeit und maximale Combo-Länge. Die Bereiche sind redaktionelle Übungsmarken, keine Bevölkerungsstatistik.",
   },
   protocols: {
     title: "4-Stufen-Protokoll zur Maximierung des peripheren Sehvermögens",

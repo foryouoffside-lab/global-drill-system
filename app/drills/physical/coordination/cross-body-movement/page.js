@@ -171,7 +171,7 @@ const faqSchema = {
       name: 'What constitutes an elite score in the Hand Eye Coordination Game?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'A score of 13,000 to 16,999 points with 85%+ connection accuracy reflects Elite Midline Sweeper performance (top 3%), while scores exceeding 17,000 points place a player in the top 0.1% Apex Bilateral Master tier.',
+        text: 'A score of 13,000 to 16,999 points with 85%+ connection accuracy reflects Elite Midline Sweeper performance stage, while scores exceeding 17,000 points reach the Apex Bilateral Master tier.',
       },
     },
     {

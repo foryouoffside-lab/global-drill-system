@@ -289,15 +289,15 @@ const gridGuide = {
   ],
   benchmarks: {
     title: "Wissenschaftliche 5-Stufen-Normtabelle für das Raster-Ausweichtraining",
-    headers: ["Leistungsstufe & Perzentil", "Rangtitel (Rank Title)", "Punktwert (45s)", "Erreichtes Level", "Minimale Warnzeit", "Neuromotorisches Profil"],
+    headers: ["Leistungsstufe", "Rangtitel (Rank Title)", "Punktwert (45s)", "Erreichtes Level", "Minimale Warnzeit", "Neuromotorisches Profil"],
     rows: [
-      ["Tier 1: Elite-Ausweicher (Top 0,1%)", "Apex Grid Evader", "17.000+ Punkte", "Level 12 – 15", "0,45 – 0,60 s", "Perfekte parallele Reizverarbeitung, reflexartige ballistische Trajektorien, fehlerfreie Bremskontrolle"],
-      ["Tier 2: Meister-Raumscanner (Top 3%)", "Master Spatial Scanner", "13.000 – 16.999 Punkte", "Level 9 – 11", "0,65 – 0,80 s", "Exzellente exogene Aufmerksamkeit, sicheres Navigieren in engen Fluchtgassen unter 6 Gefahrenzellen"],
-      ["Tier 3: Kompetenter Gefahrenvermeider", "Proficient Hazard Dodger", "9.500 – 12.999 Punkte", "Level 6 – 8", "0,85 – 1,05 s", "Solide Hand-Auge-Koordination im eSports-Bereich, gelegentliche Verzögerungen bei Mehrfachgefahren"],
-      ["Tier 4: Durchschnittlicher Überlebender", "Intermediate Sector Evader", "6.000 – 9.499 Punkte", "Level 3 – 5", "1,10 – 1,25 s", "Typische Alltagsreaktionszeit, foveale Suchbewegungen verzögern ballistische Ausweichschritte"],
-      ["Tier 5: Einsteiger / Erholungsbedarf", "Novice Blast Survivor", "< 6.000 Punkte", "Level 1 – 2", "> 1,25 s", "Verzögerte Reizerfassung durch Tunnelblick, Neigung zum Übersteuern der rettenden Zellbegrenzung"]
+      ["Stufe 1: Elite-Ausweicher ", "Apex Grid Evader", "17.000+ Punkte", "Level 12 – 15", "0,45 – 0,60 s", "Perfekte parallele Reizverarbeitung, reflexartige ballistische Trajektorien, fehlerfreie Bremskontrolle"],
+      ["Stufe 2: Meister-Raumscanner ", "Master Spatial Scanner", "13.000 – 16.999 Punkte", "Level 9 – 11", "0,65 – 0,80 s", "Exzellente exogene Aufmerksamkeit, sicheres Navigieren in engen Fluchtgassen unter 6 Gefahrenzellen"],
+      ["Stufe 3: Kompetenter Gefahrenvermeider", "Proficient Hazard Dodger", "9.500 – 12.999 Punkte", "Level 6 – 8", "0,85 – 1,05 s", "Solide Hand-Auge-Koordination im eSports-Bereich, gelegentliche Verzögerungen bei Mehrfachgefahren"],
+      ["Stufe 4: Durchschnittlicher Überlebender", "Intermediate Sector Evader", "6.000 – 9.499 Punkte", "Level 3 – 5", "1,10 – 1,25 s", "Typische Alltagsreaktionszeit, foveale Suchbewegungen verzögern ballistische Ausweichschritte"],
+      ["Stufe 5: Einsteiger / Erholungsbedarf", "Novice Blast Survivor", "< 6.000 Punkte", "Level 1 – 2", "> 1,25 s", "Verzögerte Reizerfassung durch Tunnelblick, Neigung zum Übersteuern der rettenden Zellbegrenzung"]
     ],
-    note: "Normiert nach den chronometrischen Standards der Aufmerksamkeitsforschung (Treisman 1980, Posner 1980, Woodworth 1899, Woods et al. 2015)."
+    note: "Normiert nach den chronometrischen Standards der Aufmerksamkeitsforschung (Treisman 1980, Posner 1980, Woodworth 1899, Woods et al. 2015). Die Bereiche sind redaktionelle Übungsmarken, keine Bevölkerungsstatistik."
   },
   techniques: {
     title: "Methodische Trainingsprotokolle zur Steigerung der Reaktionsgeschwindigkeit",

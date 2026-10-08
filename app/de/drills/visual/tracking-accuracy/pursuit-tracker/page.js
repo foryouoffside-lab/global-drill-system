@@ -250,13 +250,13 @@ const guideData = {
     title: "Orientierungswerte für Blickfolge und Zielverfolgung",
     headers: ["Leistungsstufe / Rang", "Zielverfolgungs-Haltezeit (Time on Target)", "Mittlere Tracking-Präzision", "Sakkaden-Unterdrückung", "Neurophysiologisches Niveau"],
     rows: [
-      ["Weltklasse / Pro-Level (Top 1%)", "≥ 88%", "≥ 92%", "≥ 95% Unterdrückung", "Perfekte kontinuierliche Folgebewegung, minimaler Netzhautschlupf. Voll synchronisiertes Kleinhirn-Innenmodell (Lisberger, 2010)"],
-      ["Fortgeschritten / Athlet (Top 5%)", "76 – 87%", "84 – 91%", "88 – 94% Unterdrückung", "Hochpräzise Okulomotorik und rasche Phasenanpassung bei Richtungswechseln"],
-      ["Solider Standard (Top 25%)", "62 – 75%", "72 – 83%", "78 – 87% Unterdrückung", "Stabiles Tracking auf gleichmäßigen Bahnen, vereinzelte Korrektursakkaden bei Tempowechseln"],
-      ["Basis-Niveau (Top 50%)", "48 – 61%", "60 – 71%", "65 – 77% Unterdrückung", "Häufiges Abdriften des Cursors und stufenweises Nachführen via Catch-up-Sakkaden"],
+      ["Stufe 1: Weltklasse / Pro-Level", "≥ 88%", "≥ 92%", "≥ 95% Unterdrückung", "Perfekte kontinuierliche Folgebewegung, minimaler Netzhautschlupf. Voll synchronisiertes Kleinhirn-Innenmodell (Lisberger, 2010)"],
+      ["Stufe 2: Fortgeschritten / Athlet", "76 – 87%", "84 – 91%", "88 – 94% Unterdrückung", "Hochpräzise Okulomotorik und rasche Phasenanpassung bei Richtungswechseln"],
+      ["Stufe 3: Solider Standard", "62 – 75%", "72 – 83%", "78 – 87% Unterdrückung", "Stabiles Tracking auf gleichmäßigen Bahnen, vereinzelte Korrektursakkaden bei Tempowechseln"],
+      ["Stufe 4: Basis-Niveau", "48 – 61%", "60 – 71%", "65 – 77% Unterdrückung", "Häufiges Abdriften des Cursors und stufenweises Nachführen via Catch-up-Sakkaden"],
       ["Einsteiger / Untrainiert (Baseline)", "< 48%", "< 60%", "< 65% Unterdrückung", "Starke visuelle Latenz, ruckartige Handbewegungen und chronisches Überschwingen"]
     ],
-    note: "Basierend auf publizierten neuroophthalmologischen und sportwissenschaftlichen Studien (Rashbass 1961; Krauzlis 2004; Leigh & Zee 2015; Lisberger 2010)."
+    note: "Basierend auf publizierten neuroophthalmologischen und sportwissenschaftlichen Studien (Rashbass 1961; Krauzlis 2004; Leigh & Zee 2015; Lisberger 2010). Die Bereiche sind redaktionelle Übungsmarken, keine Bevölkerungsstatistik."
   },
   techniques: {
     title: "Vier Methoden für stabilere Blickfolge",

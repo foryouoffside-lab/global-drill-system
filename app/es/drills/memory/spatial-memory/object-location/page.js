@@ -243,37 +243,37 @@ export default function LocalizedObjectLocationPage() {
       headers: ["Nivel de Rendimiento", "Objetos y Cuadrícula", "Puntuación", "Perfil de Vinculación y Mapa Espacial"],
       rows: [
         [
-                "Nivel 1 (Sobresaliente / Percentil 99)",
+                "Etapa 1",
                 "Nivel 8 – 10+ (8–10+ objetos, matriz 6x6–7x7)",
                 "1.000+ Puntos",
                 "Rendimiento visoespacial de élite; utiliza escaneo por cuadrantes y anclaje por puntos clave; retiene 8+ parejas objeto-lugar con rapidez; localización en < 500 ms"
         ],
         [
-                "Nivel 2 (Alto / Percentil 85–95)",
+                "Etapa 2",
                 "Nivel 6 – 7 (6–7 objetos, matriz 5x5–6x6)",
                 "750 – 999 Puntos",
                 "Supera holgadamente la media; emparejamiento semántico-espacial sólido; resistente a la interferencia visual en cuadrículas amplias; localización en 500–700 ms"
         ],
         [
-                "Nivel 3 (Promedio Adulto / Percentil 50)",
+                "Etapa 3",
                 "Nivel 4 – 5 (4–5 objetos, matriz 4x4–5x5)",
                 "450 – 749 Puntos",
                 "Rango normal poblacional (Eals & Silverman, 1994); maneja unas 4 conjunciones (límite de Cowan); empieza a perder objetos centrales en 5x5; localización en 700–950 ms"
         ],
         [
-                "Nivel 4 (Bajo / Cuello de Botella en Vinculación)",
-                "Nivel 3 (3 objetos, matriz 3x3–4x4)",
+                "Etapa 4",
+                "Etapa 3",
                 "250 – 449 Puntos",
                 "Solo retiene 2–3 objetos aislados; confunde coordenadas adyacentes; vulnerable ante distractores; localización en 950–1.300 ms"
         ],
         [
-                "Nivel 5 (Entrenamiento Requerido / Brecha Retentiva)",
+                "Etapa 5",
                 "Nivel 1 – 2 (2 objetos, matriz 3x3)",
                 "< 250 Puntos",
                 "Rápido desvanecimiento del rastro visual; dificultad para vincular objetos a coordenadas; lentitud de respuesta superior a 1.300 ms"
         ]
 ],
-      note: "El número de objetos y la matriz representan el nivel máximo alcanzado en una sesión de 45 segundos, equiparado a los estándares de Silverman-Eals y CANTAB PAL."
+      note: "Etapas editoriales de práctica para comparar tus propias sesiones; no son estadísticas de población ni normas clínicas. El número de objetos y la matriz representan el nivel máximo alcanzado en una sesión de 45 segundos, equiparado a los estándares de Silverman-Eals y CANTAB PAL."
     },
     techniques: {
       title: "Estrategias con base científica para potenciar la retención espacial",

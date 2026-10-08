@@ -5,8 +5,8 @@ import { getAlternateLanguages } from '@/lib/i18n/locales';
 import { pickSources } from '@/lib/drillSources';
 
 export const metadata = {
-  title: "Zickzack-Blickverfolgung | SkillDrills",
-  description: "Verfolge ein Ziel auf einer Zickzackbahn. Kostenlose Übung für Blickfolge, Richtungswechsel und Zielverluste.",
+  title: "Blickfolge Übungen: Zickzack-Bahn | SkillDrills",
+  description: "Blickfolge üben: Verfolge ein Ziel auf einer Zickzackbahn und zähle Zielverluste an den Knickpunkten. Kostenlos im Browser, kein Augentest.",
   keywords: [
     "Zickzack Blickverfolgung Übung",
     "Zickzack Augentraining",
@@ -22,8 +22,8 @@ export const metadata = {
     "kostenloses Augentraining online"
   ],
   openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
-    title: "Zickzack-Blickverfolgung | SkillDrills",
-    description: "Verfolge ein Ziel auf einer Zickzackbahn. Kostenlose Übung für Blickfolge, Richtungswechsel und Zielverluste.",
+    title: "Blickfolge Übungen: Zickzack-Bahn | SkillDrills",
+    description: "Blickfolge üben: Verfolge ein Ziel auf einer Zickzackbahn und zähle Zielverluste an den Knickpunkten. Kostenlos im Browser, kein Augentest.",
     url: 'https://skilldrills.online/de/drills/visual-tracking/zig-zag-path-pursuit',
     siteName: 'SkillDrills',
     locale: 'de_DE',
@@ -31,8 +31,8 @@ export const metadata = {
   },
   twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: 'summary_large_image',
-    title: "Zickzack-Blickverfolgung | SkillDrills",
-    description: "Verfolge ein Ziel auf einer Zickzackbahn. Kostenlose Übung für Blickfolge, Richtungswechsel und Zielverluste.",
+    title: "Blickfolge Übungen: Zickzack-Bahn | SkillDrills",
+    description: "Blickfolge üben: Verfolge ein Ziel auf einer Zickzackbahn und zähle Zielverluste an den Knickpunkten. Kostenlos im Browser, kein Augentest.",
   },
   robots: { index: true, follow: true },
   alternates: {
@@ -214,7 +214,7 @@ const faqSchema = {
       "name": "Wie verbessert diese Übung das Strafe-Aiming in Ego-Shootern (CS2, Valorant, Apex)?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Gegner nutzen häufig kurze Ausweichbewegungen (AD-Strafes) oder zickzackförmiges Vorrücken. Die Übung beseitigt das Nachfedern des Fadenkreuzes an den Umkehrpunkten und sichert konstante Zielabdeckung bei Richtungswechseln."
+        "text": "Gegner wechseln beim Strafen schnell die Richtung. Die Übung trainiert, ein Ziel über abrupte Richtungsumkehren im Blick zu behalten. Ob sich das im Spiel auszahlt, hängt von deinem Aim-Training ab; ein Leistungsversprechen gibt es dafür nicht."
       }
     },
     {
@@ -222,7 +222,7 @@ const faqSchema = {
       "name": "Welche Vorteile ergeben sich für dynamische Sportarten (Tennis, Fußball, Kampfsport)?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Bei Zickzack-Dribblings, abrupten Richtungswechseln des Balls oder schnellen Meidbewegungen im Boxen verkürzt das Training die visuelle Re-Zentrierungszeit auf wenige Millisekunden."
+        "text": "Bei Zickzack-Läufen eines Balls oder schnellen Ausweichbewegungen im Boxen muss der Blick Richtungswechseln folgen. Die Übung lässt dich genau das am Bildschirm üben. Ein nachgewiesener Transfer auf den Sport ist damit nicht belegt."
       }
     },
     {
@@ -246,7 +246,7 @@ const faqSchema = {
       "name": "Warum ist ein 144Hz- oder 240Hz-Bildschirm für Zickzack-Drills überlegen?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Die Bildwiederholzeit sinkt von 16,7 ms (60Hz) auf 6,9 ms (144Hz) bzw. 4,2 ms (240Hz). Dies reduziert Bewegungsunschärfe an den spitzen Umkehrpunkten drastisch und erlaubt perfekt getimte Bremsimpulse (Woods et al., 2015)."
+        "text": "Ein Bild dauert bei 60 Hz rund 16,7 ms, bei 144 Hz rund 6,9 ms und bei 240 Hz rund 4,2 ms. Das mindert Bewegungsunschärfe an den Umkehrpunkten. Die Übung läuft auch auf 60 Hz; vergleiche Ergebnisse nur auf demselben Bildschirm (Woods et al., 2015)."
       }
     },
     {
@@ -254,7 +254,7 @@ const faqSchema = {
       "name": "Welche Hirnstrukturen passen sich bei regelmäßiger Zickzack-Blickverfolgung an?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Das frontale Augenfeld (FEF), das supplementäre Augenfeld (SEF) sowie die Lobuli VI-VII des Kleinhirnwurms optimieren ihre Feedbackschleifen. Das Zusammenspiel von Agonist und Antagonist wird millisekundengenau synchronisiert und okulärer Jitter dauerhaft eliminiert (Krauzlis, 2004)."
+        "text": "Für Blickfolge und Sakkaden sind unter anderem das frontale Augenfeld (FEF), das supplementäre Augenfeld (SEF) und der Kleinhirnwurm beteiligt. Wie stark sich diese Systeme durch diese Übung verändern, ist nicht gemessen; die Übung dient als Selbsttraining und ersetzt keine augenärztliche Untersuchung."
       }
     }
   ]
@@ -263,23 +263,23 @@ const faqSchema = {
 const guide = {
   heading: "Zickzack-Blickverfolgung – Richtungswechsel-Training: Antagonistische Augenmuskelbremsung und Fangsakkaden",
   intro: [
-    "Das Nachverfolgen visueller Reize entlang einer mehrgliedrigen, alternierenden Zickzack- oder Sägezahn-Trajektorie stellt den ultimativen Härtetest für das Zusammenspiel von stetiger Blickfolgebewegung und abrupter Vektorumkehr dar. Entlang der geraden Schrägsegmente feuern horizontale und vertikale Augenmuskelgruppen in präziser Synchronisation, um den retinalen Schlupf auf null zu minimieren. Doch im Moment des spitzen Knickpunkts müssen die bisherigen Beschleunigungsmuskeln schlagartig als elastische Bremsen fungieren, während die Antagonisten explosionsartig kontrahieren (Krauzlis, 2004).",
+    "Das Nachverfolgen visueller Reize entlang einer mehrgliedrigen, alternierenden Zickzack- oder Sägezahn-Trajektorie ist eine anspruchsvolle Aufgabe für das Zusammenspiel von stetiger Blickfolgebewegung und abrupter Vektorumkehr dar. Entlang der geraden Schrägsegmente feuern horizontale und vertikale Augenmuskelgruppen in präziser Synchronisation, um den retinalen Schlupf auf null zu minimieren. Doch im Moment des spitzen Knickpunkts müssen die bisherigen Beschleunigungsmuskeln schlagartig als elastische Bremsen fungieren, während die Antagonisten explosionsartig kontrahieren (Krauzlis, 2004).",
     "Die wesentliche Hürde dieses hochfrequenten Bewegungsmusters liegt in der sensomotorischen Übertragungslatenz des Menschen (~100 bis 150 ms). Bis die Information über den plötzlichen Richtungswechsel des Stimulus über die Fovea und das Sehzentrum im Mittelhirn ankommt, treibt die mechanische Trägheit der Augen den Blick über den Scheitelpunkt hinaus. Wie Arbeiten von de Brouwer et al. (2002) und Orban de Xivry & Lefèvre (2007) demonstrieren, schaltet das Zentralnervensystem an solchen Kanten blitzschnell von Folgebewegung auf Fangsakkaden um, koordiniert über die frontalen Augenfelder (FEF).",
-    "Systematisches Training an Zickzack-Bahnen baut im Kleinhirn hochpräzise interne Vorwärtsmodelle (Internal Forward Models) auf (Bennett & Barnes, 2006; Barnes, 2008). Dadurch wird das okulomotorische System befähigt, bereits 30 bis 40 ms vor Erreichen des Scheitelpunkts einen prädiktiven Bremsimpuls zu setzen. Der Blick 'haftet' regelrecht am Knickpunkt und wird mit einer einzigen, hochpräzisen Sakkade ohne zittrige Nachkorrekturen auf das nächste Bewegungssegment überführt. Okulärer Jitter wird eliminiert und die visuelle Sehschärfe bleibt ununterbrochen erhalten.",
+    "Systematisches Training an Zickzack-Bahnen baut im Kleinhirn hochpräzise interne Vorwärtsmodelle (Internal Forward Models) auf (Bennett & Barnes, 2006; Barnes, 2008). Dadurch wird das okulomotorische System befähigt, bereits vor Erreichen des Scheitelpunkts einen prädiktiven Bremsimpuls zu setzen. Der Blick 'haftet' regelrecht am Knickpunkt und wird mit einer einzigen, hochpräzisen Sakkade ohne zittrige Nachkorrekturen auf das nächste Bewegungssegment überführt. Okulärer Jitter wird eliminiert und die visuelle Sehschärfe bleibt ununterbrochen erhalten.",
     "Die Übung 'Zickzack-Blickverfolgung' wurde entwickelt, um diese hochdynamische Vektorkontrolle online zu trainieren. Durch das wiederholte Bewältigen spitzer Richtungswechsel eliminieren Sie Unruhe und Reaktionsverzögerungen bei unregelmäßig manövrierenden Zielen. Nutzen Sie 'Hilfslinie ausblenden' für reines internes Raumtraining und 'Zufallstempo' zur Ausschaltung starrer Rhythmusmuster.",
     "Hardware-Latenz und Messmethodik: Die Hardware-Latenz unterliegt der Bildschirmquantisierung (~16,7 ms bei 60 Hz, ~6,9 ms bei 144 Hz, ~4,1 ms bei 240 Hz) sowie den Polling-Intervallen der Eingabegeräte (~8 ms bei 125 Hz vs. ~1 ms bei 1.000 Hz), wie von Woods et al. (2015) dokumentiert. Alle Leistungsdaten und Reaktionsprofile werden ausschließlich lokal im Browser-Speicher (localStorage) gesichert und niemals extern übertragen."
   ],
   benchmarks: {
     title: "Leistungsstandards der Zickzack-Blickverfolgung (Geschwindigkeit & Scheitelpunkt-Präzision)",
-    headers: ["Leistungsstufe", "Empfohlene Geschwindigkeit", "Landefehler am Knickpunkt", "Umkehr-Sakkadenlatenz", "Populationsanteil"],
+    headers: ["Leistungsstufe", "Empfohlene Geschwindigkeit", "Landefehler am Knickpunkt", "Umkehr-Sakkadenlatenz", "Einordnung"],
     rows: [
-      ["Elite / Perfekte neuronale Adaptation (Elite)", "3.5x〜5.0x+", "Fehler < 12px (vollständige Haftung an Knickpunkten)", "Latenz < 110ms (perfekte Vorwärtsbremsung)", "Top 1.5%"],
-      ["Meister / Höchste Richtungsdisziplin (Master)", "2.5x〜3.5x", "Fehler < 22px (nur minimale Mikrosakkaden)", "Latenz < 140ms (geschmeidige Umkehr)", "Top 8%"],
-      ["Fortgeschritten / Wettkampfniveau (Advanced)", "1.8x〜2.5x", "Fehler < 38px (schnelle Wiedererfassung)", "Latenz < 180ms (solide Richtungswechsel)", "Top 25%"],
-      ["Mittelstufe / Grundlegend geübt (Intermediate)", "1.2x〜1.8x", "Fehler 38〜70px (Überschwinger & Kurvenschneiden)", "Latenz 180〜240ms (mehrere Korrekturen)", "Mittlere 45%"],
-      ["Einsteiger / Untrainiert", "0.5x〜1.2x", "Fehler > 70px (völliger Zielverlust an Knickpunkten)", "Latenz > 250ms (ausgeprägtes Überschwingen)", "Basisniveau"]
+      ["Elite / Perfekte neuronale Adaptation (Elite)", "3.5x〜5.0x+", "Fehler < 12px (vollständige Haftung an Knickpunkten)", "Latenz < 110ms (perfekte Vorwärtsbremsung)", "Stufe 1"],
+      ["Meister / Höchste Richtungsdisziplin (Master)", "2.5x〜3.5x", "Fehler < 22px (nur minimale Mikrosakkaden)", "Latenz < 140ms (geschmeidige Umkehr)", "Stufe 2"],
+      ["Fortgeschritten / Wettkampfniveau (Advanced)", "1.8x〜2.5x", "Fehler < 38px (schnelle Wiedererfassung)", "Latenz < 180ms (solide Richtungswechsel)", "Stufe 3"],
+      ["Mittelstufe / Grundlegend geübt (Intermediate)", "1.2x〜1.8x", "Fehler 38〜70px (Überschwinger & Kurvenschneiden)", "Latenz 180〜240ms (mehrere Korrekturen)", "Stufe 4"],
+      ["Einsteiger / Untrainiert", "0.5x〜1.2x", "Fehler > 70px (völliger Zielverlust an Knickpunkten)", "Latenz > 250ms (ausgeprägtes Überschwingen)", "Stufe 5"]
     ],
-    note: "Die Richtwerte basieren auf de Brouwer et al. (2002) zur Dynamik von Fangsakkaden sowie Krauzlis (2004) zur neuronalen Steuerung bei abrupten Geschwindigkeits- und Richtungsumkehren."
+    note: "Die Richtwerte basieren auf de Brouwer et al. (2002) zur Dynamik von Fangsakkaden sowie Krauzlis (2004) zur neuronalen Steuerung bei abrupten Geschwindigkeits- und Richtungsumkehren. Die Bereiche sind redaktionelle Übungsmarken, keine Bevölkerungsstatistik."
   },
   steps: [
     { title: "Das Ziel mittig erfassen", text: "Halten Sie den Kopf ruhig und verfolgen Sie das Ziel im ersten diagonalen Abschnitt." },
@@ -353,11 +353,11 @@ const guide = {
     },
     {
       "q": "Wie verbessert diese Übung das Strafe-Aiming in Ego-Shootern (CS2, Valorant, Apex)?",
-      "a": "Gegner nutzen häufig kurze Ausweichbewegungen (AD-Strafes) oder zickzackförmiges Vorrücken. Die Übung beseitigt das Nachfedern des Fadenkreuzes an den Umkehrpunkten und sichert konstante Zielabdeckung bei Richtungswechseln."
+      "a": "Gegner wechseln beim Strafen schnell die Richtung. Die Übung trainiert, ein Ziel über abrupte Richtungsumkehren im Blick zu behalten. Ob sich das im Spiel auszahlt, hängt von deinem Aim-Training ab; ein Leistungsversprechen gibt es dafür nicht."
     },
     {
       "q": "Welche Vorteile ergeben sich für dynamische Sportarten (Tennis, Fußball, Kampfsport)?",
-      "a": "Bei Zickzack-Dribblings, abrupten Richtungswechseln des Balls oder schnellen Meidbewegungen im Boxen verkürzt das Training die visuelle Re-Zentrierungszeit auf wenige Millisekunden."
+      "a": "Bei Zickzack-Läufen eines Balls oder schnellen Ausweichbewegungen im Boxen muss der Blick Richtungswechseln folgen. Die Übung lässt dich genau das am Bildschirm üben. Ein nachgewiesener Transfer auf den Sport ist damit nicht belegt."
     },
     {
       "q": "Wie sieht das optimale tägliche Trainingsprogramm aus?",
@@ -369,11 +369,11 @@ const guide = {
     },
     {
       "q": "Warum ist ein 144Hz- oder 240Hz-Bildschirm für Zickzack-Drills überlegen?",
-      "a": "Die Bildwiederholzeit sinkt von 16,7 ms (60Hz) auf 6,9 ms (144Hz) bzw. 4,2 ms (240Hz). Dies reduziert Bewegungsunschärfe an den spitzen Umkehrpunkten drastisch und erlaubt perfekt getimte Bremsimpulse (Woods et al., 2015)."
+      "a": "Ein Bild dauert bei 60 Hz rund 16,7 ms, bei 144 Hz rund 6,9 ms und bei 240 Hz rund 4,2 ms. Das mindert Bewegungsunschärfe an den Umkehrpunkten. Die Übung läuft auch auf 60 Hz; vergleiche Ergebnisse nur auf demselben Bildschirm (Woods et al., 2015)."
     },
     {
       "q": "Welche Hirnstrukturen passen sich bei regelmäßiger Zickzack-Blickverfolgung an?",
-      "a": "Das frontale Augenfeld (FEF), das supplementäre Augenfeld (SEF) sowie die Lobuli VI-VII des Kleinhirnwurms optimieren ihre Feedbackschleifen. Das Zusammenspiel von Agonist und Antagonist wird millisekundengenau synchronisiert und okulärer Jitter dauerhaft eliminiert (Krauzlis, 2004)."
+      "a": "Für Blickfolge und Sakkaden sind unter anderem das frontale Augenfeld (FEF), das supplementäre Augenfeld (SEF) und der Kleinhirnwurm beteiligt. Wie stark sich diese Systeme durch diese Übung verändern, ist nicht gemessen; die Übung dient als Selbsttraining und ersetzt keine augenärztliche Untersuchung."
     }
   ],
   sources: pickSources('debrouwer2002', 'heinen2005', 'orbandexivry2007', 'krauzlis2004', 'barnes2008', 'woods2015'),

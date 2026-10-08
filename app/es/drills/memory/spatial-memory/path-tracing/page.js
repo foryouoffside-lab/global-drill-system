@@ -243,37 +243,37 @@ export default function LocalizedPathTracingPage() {
       headers: ["Nivel de Rendimiento", "Amplitud y Cuadrícula", "Puntos", "Perfil Cognitivo y Retención de Trayectoria"],
       rows: [
         [
-                "Nivel 1 (Sobresaliente / Percentil 99)",
+                "Etapa 1",
                 "Amplitud 10 – 14+ pasos (matriz 6x6–7x7)",
                 "1.200+ Puntos",
                 "Élite visoespacial secuencial; divide rutas complejas en 2–3 macrovectores; repaso impecable en el escriba interno; pulsación rápida en < 400 ms"
         ],
         [
-                "Nivel 2 (Alto / Percentil 85–95)",
+                "Etapa 2",
                 "Amplitud 8 – 9 pasos (matriz 5x5–6x6)",
                 "900 – 1.199 Puntos",
                 "Supera holgadamente el promedio; agrupación vectorial sólida (giros en L, zigzags); resistente a la interferencia; cadencia de 400–600 ms"
         ],
         [
-                "Nivel 3 (Promedio Adulto / Percentil 50)",
+                "Etapa 3",
                 "Amplitud 5 – 7 pasos (matriz 4x4–5x5)",
                 "600 – 899 Puntos",
                 "Norma poblacional estándar (Corsi, 1972; Kessels et al., 2000, 5,4 ± 0,9 pasos); reproduce 5–6 pasos con soltura; omisiones intermedias en 5x5; 600–850 ms"
         ],
         [
-                "Nivel 4 (Bajo / Decaimiento Secuencial)",
+                "Etapa 4",
                 "Amplitud 4 pasos (matriz 3x3–4x4)",
                 "400 – 599 Puntos",
                 "Límite de la memoria sin agrupar (Cowan, 2001); memoriza puntos aislados provocando saturación temprana; cadencia de 850–1.100 ms"
         ],
         [
-                "Nivel 5 (Entrenamiento Requerido / Amplitud Reducida)",
+                "Etapa 5",
                 "Amplitud < 4 pasos (matriz 3x3)",
                 "< 400 Puntos",
                 "Rápido desvanecimiento del rastro temporal; errores frecuentes de transposición en el orden; lentitud de pulsación superior a 1.100 ms"
         ]
 ],
-      note: "La longitud de pasos y la cuadrícula corresponden al nivel máximo alcanzado en 45 segundos, comparado con los baremos de Corsi Block-Tapping."
+      note: "Etapas editoriales de práctica para comparar tus propias sesiones; no son estadísticas de población ni normas clínicas. La longitud de pasos y la cuadrícula corresponden al nivel máximo alcanzado en 45 segundos, comparado con los baremos de Corsi Block-Tapping."
     },
     techniques: {
       title: "Estrategias con respaldo científico para ampliar la memoria secuencial",

@@ -241,33 +241,34 @@ export default function LocalizedObjectLocationPage() {
     benchmarks: {
       title: "Normative Benchmarks zur räumlichen Objekt-Bindungskapazität",
       headers: ["Leistungsstufe", "Objektanzahl & Raster", "Punkte", "Kognitives Bindungs- & Raumprofil"],
+      note: "Die Bereiche sind redaktionelle Übungsmarken und keine Bevölkerungsstatistik.",
       rows: [
         [
-                "Stufe 1 (Herausragend / Top 1%)",
+                "Stufe 1",
                 "Level 8 – 10+ (8–10+ Objekte, 6x6–7x7 Raster)",
                 "1.000+ Punkte",
                 "Visuospaziale Elite; nutzt Quadranten-Scanning und Landmark-Verankerung; bindet 8+ Objekt-Orts-Paare mühelos; Zielsuche unter 500 ms"
         ],
         [
-                "Stufe 2 (Überdurchschnittlich / Top 15%)",
+                "Stufe 2",
                 "Level 6 – 7 (6–7 Objekte, 5x5–6x6 Raster)",
                 "750 – 999 Punkte",
                 "Deutlich über Normbereich; robuste semantisch-räumliche Paarung; hohe Resistenz gegen visuelle Interferenz; Zielsuche 500–700 ms"
         ],
         [
-                "Stufe 3 (Durchschnitt Erwachsener / Median)",
+                "Stufe 3",
                 "Level 4 – 5 (4–5 Objekte, 4x4–5x5 Raster)",
                 "450 – 749 Punkte",
                 "Normaler Populationsdurchschnitt (Eals & Silverman, 1994); bewältigt ca. 4 Verknüpfungen (Cowan-Limit); verliert zentrale Objekte auf 5x5; 700–950 ms"
         ],
         [
-                "Stufe 4 (Unterdurchschnittlich / Bindungsengpass)",
+                "Stufe 4",
                 "Level 3 (3 Objekte, 3x3–4x4 Raster)",
                 "250 – 449 Punkte",
                 "Erinnert nur 2–3 isolierte Objekte; verwechselt benachbarte Koordinaten; anfällig bei Zunahme von Distraktoren; 950–1.300 ms"
         ],
         [
-                "Stufe 5 (Trainingsbedarf / Geringe Merkspanne)",
+                "Stufe 5",
                 "Level 1 – 2 (2 Objekte, 3x3 Raster)",
                 "< 250 Punkte",
                 "Schneller Zerfall visueller Spuren; mangelnde Objekt-Orts-Verknüpfung; Zielfindung selbst nach 1,5 s Verzögerung erschwert; über 1.300 ms Latenz"

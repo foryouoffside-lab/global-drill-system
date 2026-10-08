@@ -271,13 +271,13 @@ const speedGuide = {
     title: "Baremo de 5 Niveles para Velocidad de Clic y Adquisición de Blancos",
     headers: ["Nivel y Categoría", "Título (Rank Title)", "Objetivo de Puntos", "Precisión y Tiempo de Reacción", "Calificación", "Perfil Neuromotor"],
     rows: [
-      ["Tier 1: Francotirador de Velocidad Ápice", "Apex Velocity Sniper", "24.000+ puntos", "> 95% / < 160 ms", "Grade S", "Top 0,1% de élite en eSports. Flicks impecables de Woodworth, disparo inmediato en diámetro máximo y dominio sobre dianas de 12 px (Woodworth 1899; Fitts 1954)"],
-      ["Tier 2: Atacante Reflexivo de Precisión", "Precision Reflex Striker", "17.000 – 23.999 puntos", "90 – 94% / 160 – 190 ms", "Grade A", "Top 3% semiprofesional. Orientación periférica veloz y control motor consolidado con racha continua a 3.0x de velocidad"],
-      ["Tier 3: Interceptor Ágil de Blancos", "Rapid Target Interceptor", "11.000 – 16.999 puntos", "82 – 89% / 191 – 230 ms", "Grade B", "Top 15% jugadores competitivos. Cadencia de disparo regular y aprovechamiento táctico del bono de +0,6s para sostener la sesión"],
-      ["Tier 4: Aprendiz en Desarrollo de Clic", "Developing Tapping Trainee", "6.000 – 10.999 puntos", "70 – 81% / 231 – 280 ms", "Grade C", "Nivel promedio adulto. Por encima de velocidad 2.0x aparecen vacilaciones en la desaceleración e impactos fuera del borde"],
-      ["Tier 5: Principiante en Puntería", "Novice Target Pointer", "< 6.000 puntos", "< 70% / > 280 ms", "Grade D", "Fase inicial. Clics desorganizados próximos al cierre del círculo; se recomienda relajar la mirada en el centro y anticipar la trayectoria"]
+      ["Etapa 1", "Muy avanzada", "24.000+ puntos", "> 95% / < 160 ms", "Grade S", "Flicks impecables de Woodworth, disparo inmediato en diámetro máximo y dominio sobre dianas de 12 px (Woodworth 1899; Fitts 1954)"],
+      ["Etapa 2", "Avanzada", "17.000 – 23.999 puntos", "90 – 94% / 160 – 190 ms", "Grade A", "Orientación periférica veloz y control motor consolidado con racha continua a 3.0x de velocidad"],
+      ["Etapa 3", "Sólida", "11.000 – 16.999 puntos", "82 – 89% / 191 – 230 ms", "Grade B", "Cadencia de disparo regular y aprovechamiento táctico del bono de +0,6s para sostener la sesión"],
+      ["Etapa 4", "En desarrollo", "6.000 – 10.999 puntos", "70 – 81% / 231 – 280 ms", "Grade C", "Nivel promedio adulto. Por encima de velocidad 2.0x aparecen vacilaciones en la desaceleración e impactos fuera del borde"],
+      ["Etapa 5", "Inicial", "< 6.000 puntos", "< 70% / > 280 ms", "Grade D", "Fase inicial. Clics desorganizados próximos al cierre del círculo; se recomienda relajar la mirada en el centro y anticipar la trayectoria"]
     ],
-    note: "Evaluación objetiva fundamentada en el análisis de impulsos de Woodworth (1899), la escala de Fitts (1954) y la cronometría perceptiva de Treisman (1980)."
+    note: "Etapas editoriales de práctica para comparar tus propias sesiones; no son estadísticas de población ni normas clínicas. Evaluación objetiva fundamentada en el análisis de impulsos de Woodworth (1899), la escala de Fitts (1954) y la cronometría perceptiva de Treisman (1980)."
   },
   techniques: {
     title: "4 Protocolos Prácticos para Aumentar el CPS y la Puntería Balística",

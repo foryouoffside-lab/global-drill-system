@@ -288,13 +288,13 @@ const crossBodyGuide = {
     title: "Baremos y Niveles de Desempeño en Coordinación Visomotora (5 Rangos)",
     headers: ["Rango / Nivel", "Título de Maestría", "Puntuación Mínima", "Nivel Alcanzado", "Precisión de Vector", "Diagnóstico Neurofisiológico"],
     rows: [
-      ["Tier 1: Maestro Bilateral Supremo", "Apex Bilateral Master", "17.000+ puntos", "Nivel 12 – 15", "≥ 92% acierto", "Top 0,1%; transferencia interhemisférica excepcional; barridos perfectos en canal estrecho de 4px con pivote de codo absoluto (Ayres 1972; Fitts 1954)"],
-      ["Tier 2: Barridor de Línea Media Elite", "Elite Midline Sweeper", "13.000 – 16.999 pts", "Nivel 9 – 11", "85 – 91% acierto", "Excelente aceleración contralateral con óptimo control de frenado de Woodworth sobre nodos de 8px (Carey et al. 1996)"],
-      ["Tier 3: Trazador Vectorial Avanzado", "Advanced Vector Tracer", "9.500 – 12.999 pts", "Nivel 6 – 8", "76 – 84% acierto", "Habilidad notable para shooters competitivos; ligera dispersión cinemática cuando el canal se estrecha por debajo de 6px"],
-      ["Tier 4: Conector Intermedio", "Intermediate Node Connector", "6.000 – 9.499 pts", "Nivel 3 – 5", "65 – 75% acierto", "Promedio habitual en adultos; pérdidas periódicas de racha causadas por rigidez de muñeca en trazos diagonales amplios"],
-      ["Tier 5: Aprendiz Diagonal Inicial", "Novice Diagonal Learner", "< 6.000 puntos", "Nivel 1 – 2", "< 65% acierto", "Dificultad acusada al atravesar el eje central; tendencia a describir trayectorias parabólicas en arco con pérdida del corredor"]
+      ["Etapa 1", "Muy avanzada", "17.000+ puntos", "Nivel 12 – 15", "≥ 92% acierto", "Ritmo muy alto con alta precisión"],
+      ["Etapa 2", "Avanzada", "13.000 – 16.999 pts", "Nivel 9 – 11", "85 – 91% acierto", "Excelente aceleración contralateral con óptimo control de frenado de Woodworth sobre nodos de 8px (Carey et al. 1996)"],
+      ["Etapa 3", "Sólida", "9.500 – 12.999 pts", "Nivel 6 – 8", "76 – 84% acierto", "Habilidad notable para shooters competitivos; ligera dispersión cinemática cuando el canal se estrecha por debajo de 6px"],
+      ["Etapa 4", "En desarrollo", "6.000 – 9.499 pts", "Nivel 3 – 5", "65 – 75% acierto", "Promedio habitual en adultos; pérdidas periódicas de racha causadas por rigidez de muñeca en trazos diagonales amplios"],
+      ["Etapa 5", "Inicial", "< 6.000 puntos", "Nivel 1 – 2", "< 65% acierto", "Dificultad acusada al atravesar el eje central; tendencia a describir trayectorias parabólicas en arco con pérdida del corredor"]
     ],
-    note: "Valores calibrados mediante la teoría de integración sensorial (Ayres 1972), investigaciones de alcance contralateral (Carey et al. 1996) y constantes de Fitts (1954)."
+    note: "Etapas editoriales de práctica para comparar tus propias sesiones; no son estadísticas de población ni normas clínicas. Valores calibrados mediante la teoría de integración sensorial (Ayres 1972), investigaciones de alcance contralateral (Carey et al. 1996) y constantes de Fitts (1954)."
   },
   techniques: {
     title: "Estrategias de Entrenamiento para Maximizar la Puntería Diagonal y Coordinación Bilateral",

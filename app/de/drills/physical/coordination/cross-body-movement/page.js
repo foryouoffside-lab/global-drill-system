@@ -289,13 +289,13 @@ const crossBodyGuide = {
     title: "Hand-Auge-Koordination & diagonale Mittellinien-Präzision 5-Stufen-Benchmarks",
     headers: ["Leistungsstufe", "Rangtitel (Rank Title)", "Punktwert-Spanne", "Erreichtes Level", "Verbindungsgenauigkeit", "Neuro-motorisches Profil"],
     rows: [
-      ["Tier 1: Apex Bilateral Master", "Apex Bilateral Master", "17.000+ Pkt.", "Level 12 – 15", "> 92% Genauigkeit", "Top 0,1%: Perfektionierte interhemisphärische Koordination und fehlerfreie Unterarmführung im extremen 4-px-Korridor (Ayres 1972; Fitts 1954)"],
-      ["Tier 2: Elite Midline Sweeper", "Elite Midline Sweeper", "13.000 – 16.999 Pkt.", "Level 9 – 11", "85 – 91% Genauigkeit", "Latenzfreie kontralaterale Beschleunigung und hochpräzise Woodworth-Abbremsung auf 8-px-Knoten (Carey et al. 1996)"],
-      ["Tier 3: Advanced Vector Tracer", "Advanced Vector Tracer", "9.500 – 12.999 Pkt.", "Level 6 – 8", "76 – 84% Genauigkeit", "Solides E-Sport-Niveau bei weiten Diagonal-Flicks und stabiler Mittellinien-Überkreuzung ohne nennenswerte Verzögerung"],
-      ["Tier 4: Intermediate Node Connector", "Intermediate Node Connector", "6.000 – 9.499 Pkt.", "Level 3 – 5", "65 – 75% Genauigkeit", "Standard-Koordination: Bei Korridorbreiten unter 6 px führen Handgelenk-Winkelgrenzen zu wiederholten Korridorverletzungen"],
-      ["Tier 5: Novice Diagonal Learner", "Novice Diagonal Learner", "< 6.000 Pkt.", "Level 1 – 2", "< 65% Genauigkeit", "Bogige Kurvenkrümmung durch reines Handgelenk-Schwenken, deutliches Überschießen an Eckzielen; Unterarmführung empfohlen"]
+      ["Stufe 1: Apex Bilateral Master", "Apex Bilateral Master", "17.000+ Pkt.", "Level 12 – 15", "> 92% Genauigkeit", "Perfektionierte interhemisphärische Koordination und fehlerfreie Unterarmführung im extremen 4-px-Korridor (Ayres 1972; Fitts 1954)"],
+      ["Stufe 2: Elite Midline Sweeper", "Elite Midline Sweeper", "13.000 – 16.999 Pkt.", "Level 9 – 11", "85 – 91% Genauigkeit", "Latenzfreie kontralaterale Beschleunigung und hochpräzise Woodworth-Abbremsung auf 8-px-Knoten (Carey et al. 1996)"],
+      ["Stufe 3: Advanced Vector Tracer", "Advanced Vector Tracer", "9.500 – 12.999 Pkt.", "Level 6 – 8", "76 – 84% Genauigkeit", "Solides E-Sport-Niveau bei weiten Diagonal-Flicks und stabiler Mittellinien-Überkreuzung ohne nennenswerte Verzögerung"],
+      ["Stufe 4: Intermediate Node Connector", "Intermediate Node Connector", "6.000 – 9.499 Pkt.", "Level 3 – 5", "65 – 75% Genauigkeit", "Standard-Koordination: Bei Korridorbreiten unter 6 px führen Handgelenk-Winkelgrenzen zu wiederholten Korridorverletzungen"],
+      ["Stufe 5: Novice Diagonal Learner", "Novice Diagonal Learner", "< 6.000 Pkt.", "Level 1 – 2", "< 65% Genauigkeit", "Bogige Kurvenkrümmung durch reines Handgelenk-Schwenken, deutliches Überschießen an Eckzielen; Unterarmführung empfohlen"]
     ],
-    note: "Wissenschaftlich begründete Standards abgeleitet aus sensorischer Integration (Ayres 1972), kontralateraler Bewegungsforschung (Carey et al. 1996) und motorischen Amplitudengesetzen (Fitts 1954)."
+    note: "Wissenschaftlich begründete Standards abgeleitet aus sensorischer Integration (Ayres 1972), kontralateraler Bewegungsforschung (Carey et al. 1996) und motorischen Amplitudengesetzen (Fitts 1954). Die Bereiche sind redaktionelle Übungsmarken, keine Bevölkerungsstatistik."
   },
   techniques: {
     title: "Praxis-Protokolle zur Steigerung der Hand-Auge-Koordination",

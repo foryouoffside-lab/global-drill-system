@@ -288,7 +288,7 @@ const gridGuide = {
     title: "Baremos y Niveles de Desempeño en Evasión Espacial y Reflejos (5 Rangos)",
     headers: ["Rango / Nivel", "Título de Maestría", "Puntuación Mínima", "Nivel Alcanzado", "Margen de Aviso Resistido", "Perfil Neurocognitivo de Evasión"],
     rows: [
-      ["Tier 1: Evasor Apex Supremo", "Apex Grid Evader", "17.000+ puntos", "Nivel 12 – 15", "0,45 – 0,60 s de aviso", "Procesamiento periférico de élite (top 0,1%); flicks balísticos sin fallos hacia zonas seguras bajo 7 amenazas activas (Treisman 1980; Posner 1980)"],
+      ["Tier 1: Evasor Apex Supremo", "Apex Grid Evader", "17.000+ puntos", "Nivel 12 – 15", "0,45 – 0,60 s de aviso", "Procesamiento periférico de élite; flicks balísticos sin fallos hacia zonas seguras bajo 7 amenazas activas (Treisman 1980; Posner 1980)"],
       ["Tier 2: Maestro de Escaneo Espacial", "Master Spatial Scanner", "13.000 – 16.999 pts", "Nivel 9 – 11", "0,65 – 0,80 s de aviso", "Excelente respuesta atencional exógena de Posner; evasión serena ante 5 o 6 celdas detonadas con óptimo frenado de Woodworth"],
       ["Tier 3: Evasor Táctico Eficaz", "Proficient Hazard Dodger", "9.500 – 12.999 pts", "Nivel 6 – 8", "0,85 – 1,05 s de aviso", "Habilidad destacada para videojuegos competitivos; buena velocidad de decisión y control firme de fricción sobre la alfombrilla"],
       ["Tier 4: Superviviente de Sector Medio", "Intermediate Sector Evader", "6.000 – 9.499 pts", "Nivel 3 – 5", "1,10 – 1,25 s de aviso", "Promedio habitual en adultos; pérdidas de racha por visión en túnel cuando el tiempo de aviso desciende de 1,0 segundo"],

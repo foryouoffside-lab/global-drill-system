@@ -240,37 +240,37 @@ const digitSpanGuide = {
     headers: ["Nivel de Rendimiento", "Amplitud (Dígitos)", "Escala WAIS Equiv.", "Perfil Cognitivo y Agrupamiento"],
     rows: [
   [
-    "Nivel 1 (Sobresaliente / Percentil 99)",
+    "Etapa 1",
     "9 – 12+ Dígitos",
     "Puntuación Escalar 16 – 19",
     "Nivel mnemónico de élite; agrupa en bloques rítmicos de 3 a 4 cifras; mantenimiento fonológico impecable; cadencia menor a 350 ms."
   ],
   [
-    "Nivel 2 (Alto / Percentil 85-95)",
+    "Etapa 2",
     "7 – 8 Dígitos",
     "Puntuación Escalar 12 – 15",
     "Alcanza el umbral de Miller (7 dígitos); construye tríadas estables; resistente al paso del tiempo; cadencia de 350 a 500 ms."
   ],
   [
-    "Nivel 3 (Promedio Adulto / Percentil 50)",
+    "Etapa 3",
     "5 – 6 Dígitos",
     "Puntuación Escalar 8 – 11",
     "Media poblacional adulta; procesa parejas sencillas; a partir de 6 dígitos surgen confusiones acústicas; cadencia de 500 a 700 ms."
   ],
   [
-    "Nivel 4 (Bajo Promedio / Cuello de Botella)",
+    "Etapa 4",
     "4 Dígitos",
     "Puntuación Escalar 5 – 7",
     "Opera en el límite fisiológico básico de Cowan; tropieza al superar 4 dígitos sin repaso verbal; cadencia de 700 a 950 ms."
   ],
   [
-    "Nivel 5 (Bajo / Requiere Entrenamiento)",
+    "Etapa 5",
     "3 Dígitos",
     "Puntuación Escalar 1 – 4",
     "Dificultad para mantener 3 cifras seguidas; alta vulnerabilidad a la distracción y al olvido inmediato; cadencia superior a 950 ms."
   ]
 ],
-    note: "La amplitud indica la longitud máxima de números repetida sin fallos. La equivalencia WAIS proviene de baremos normativos en adultos (Wechsler, 2008; Woods et al., 2015)."
+    note: "Etapas editoriales de práctica para comparar tus propias sesiones; no son estadísticas de población ni normas clínicas. La amplitud indica la longitud máxima de números repetida sin fallos. La equivalencia WAIS proviene de baremos normativos en adultos (Wechsler, 2008; Woods et al., 2015)."
   },
   techniques: {
     title: "Estrategias comprobadas para ampliar la memoria de dígitos",

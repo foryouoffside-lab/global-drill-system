@@ -272,15 +272,15 @@ const guideProps = {
   },
   benchmarks: {
     title: "Normes Officielles de Mémoire Visuo-Spatiale et Coordination Fine",
-    headers: ["Palier", "Titre du Rang", "Score Référence", "Précision du Tracé", "Note", "Percentile Global"],
+    headers: ["Palier", "Titre du Rang", "Score Référence", "Précision du Tracé", "Note", "Repère de pratique"],
     rows: [
-      ["Tier 1", "Maître Absolu des Motifs Visuels", "17 000+ points", "Niveau 12–15 / Précision >92%", "Note S+", "Top 0,5% (Capacité Exceptionnelle)"],
-      ["Tier 2", "Traceur de Séquences Élite", "13 000 à 16 999 pts", "Niveau 9–11 / Précision 85–91%", "Note A", "Top 5% (Niveau Avancé)"],
-      ["Tier 3", "Navigateur Spatial Confirmé", "9 500 à 12 999 pts", "Niveau 6–8 / Précision 76–84%", "Note B", "Top 20% (Forte Compétence)"],
-      ["Tier 4", "Pratiquant de Mémoire Intermédiaire", "6 000 à 9 499 pts", "Niveau 3–5 / Précision 65–75%", "Note C", "50% (Moyenne des Adultes Sains)"],
-      ["Tier 5", "Débutant en Mémorisation de Trajets", "< 6 000 points", "Niveau 1–2 / Précision <65%", "Note D", "Débutant (Entraînement Recommandé)"],
+      ["Palier 1", "Très avancé", "17 000+ points", "Niveau 12–15 / Précision >92%", "Note S+", "Rythme très élevé et précis"],
+      ["Palier 2", "Avancé", "13 000 à 16 999 pts", "Niveau 9–11 / Précision 85–91%", "Note A", "Rythme élevé et régulier"],
+      ["Palier 3", "Solide", "9 500 à 12 999 pts", "Niveau 6–8 / Précision 76–84%", "Note B", "Rythme stable avec quelques erreurs"],
+      ["Palier 4", "En progression", "6 000 à 9 499 pts", "Niveau 3–5 / Précision 65–75%", "Note C", "Rythme moyen avec marge de progression"],
+      ["Palier 5", "Initial", "< 6 000 points", "Niveau 1–2 / Précision <65%", "Note D", "Point de départ"],
     ],
-    note: "Normes standardisées calibrées sur la mémoire de travail visuo-spatiale (Baddeley & Hitch 1974 ; Cowan 2001) et le séquençage moteur sériel (Lashley 1951).",
+    note: "Paliers éditoriaux de pratique pour comparer vos propres séances ; ce ne sont pas des statistiques de population ni des normes cliniques. Normes standardisées calibrées sur la mémoire de travail visuo-spatiale (Baddeley & Hitch 1974 ; Cowan 2001) et le séquençage moteur sériel (Lashley 1951).",
   },
   protocols: {
     title: 'Jeu de Mémoire Visuelle – Mémoire Spatiale | SkillDrills',

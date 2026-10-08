@@ -270,13 +270,13 @@ const guideProps = {
     title: "Offizielle 5-Stufen-Benchmarks für Bremskontrolle & Bewegungsinhibition",
     headers: ["Leistungsstufe", "Offizieller Titel", "Punktebereich", "Brems-Erfolgsquote", "Gesamtnote", "Neuromotorisches Profil"],
     rows: [
-      ["Tier 1: Absoluter kinetischer Bremsmeister", "Apex Kinetic Arrester", "15.000+ Pkt.", "95%+ / 1500+ px/s", "Grade S", "Top 0,1% Niveau. Phänomenale Impulskontrolle: stoppt selbst bei 1.800 px/s ohne jeden Overflick abrupt im Knoten (Logan 1984; Woodworth 1899)"],
-      ["Tier 2: Präzisions-Kinetic-Sniper", "Precision Kinetic Sniper", "11.000 – 14.999 Pkt.", "90 – 94% / 1200 – 1499 px/s", "Grade A", "Top 3% Esport-Niveau. Exzellente Verzögerungskontrolle über die Fingerspitzen; minimale Rutschphasen nach hartem Flick"],
-      ["Tier 3: Erfahrener Verzögerungspilot", "Skilled Deceleration Pilot", "7.500 – 10.999 Pkt.", "82 – 89% / 900 – 1199 px/s", "Grade B", "Top 15% Competitive-Niveau. Solide Bremsung bei mittlerem Tempo; gelegentliche Durchrutschfehler bei Topspeed"],
-      ["Tier 4: Aufstrebender Brems-Trainee", "Developing Stopper", "4.000 – 7.499 Pkt.", "70 – 81% / 600 – 899 px/s", "Grade C", "Durchschnittliches Erwachsenenniveau. Tendenz zum Überschießen durch unzureichende Antagonisten-Aktivierung"],
-      ["Tier 5: Verzögerungs-Einsteiger", "Novice Arrester Trainee", "< 4.000 Pkt.", "< 70% / < 600 px/s", "Grade D", "Verzögerte Bewegungsinhibition führt zu häufigen Fehlschlägen; Grundlagen des Abbremsens über Haftreibung müssen geschult werden"]
+      ["Stufe 1: Absoluter kinetischer Bremsmeister", "Apex Kinetic Arrester", "15.000+ Pkt.", "95%+ / 1500+ px/s", "Grade S", "Phänomenale Impulskontrolle: stoppt selbst bei 1.800 px/s ohne jeden Overflick abrupt im Knoten (Logan 1984; Woodworth 1899)"],
+      ["Stufe 2: Präzisions-Kinetic-Sniper", "Precision Kinetic Sniper", "11.000 – 14.999 Pkt.", "90 – 94% / 1200 – 1499 px/s", "Grade A", "Exzellente Verzögerungskontrolle über die Fingerspitzen; minimale Rutschphasen nach hartem Flick"],
+      ["Stufe 3: Erfahrener Verzögerungspilot", "Skilled Deceleration Pilot", "7.500 – 10.999 Pkt.", "82 – 89% / 900 – 1199 px/s", "Grade B", "Solide Bremsung bei mittlerem Tempo; gelegentliche Durchrutschfehler bei Topspeed"],
+      ["Stufe 4: Aufstrebender Brems-Trainee", "Developing Stopper", "4.000 – 7.499 Pkt.", "70 – 81% / 600 – 899 px/s", "Grade C", "Durchschnittliches Erwachsenenniveau. Tendenz zum Überschießen durch unzureichende Antagonisten-Aktivierung"],
+      ["Stufe 5: Verzögerungs-Einsteiger", "Novice Arrester Trainee", "< 4.000 Pkt.", "< 70% / < 600 px/s", "Grade D", "Verzögerte Bewegungsinhibition führt zu häufigen Fehlschlägen; Grundlagen des Abbremsens über Haftreibung müssen geschult werden"]
     ],
-    note: "Kalibriert anhand des Logan-Pferderennmodells (1984), des Woodworth-Modells (1899) und des Fitts'schen Schwierigkeitsgesetzes (1954)."
+    note: "Kalibriert anhand des Logan-Pferderennmodells (1984), des Woodworth-Modells (1899) und des Fitts'schen Schwierigkeitsgesetzes (1954). Die Bereiche sind redaktionelle Übungsmarken, keine Bevölkerungsstatistik."
   },
   techniques: {
     title: "Praxistechniken für maximale Bremspräzision",

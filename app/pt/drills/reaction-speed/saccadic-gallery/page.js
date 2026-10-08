@@ -222,7 +222,7 @@ const faqSchema = {
       name: 'Este exercício sacádico é gratuito e sem instalação?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Sim. O simulador da SkillDrills é 100% gratuito, funciona diretamente no navegador e calcula os tempos com precisão de sub-milissegundos usando a API performance.now().',
+        text: 'Sim. O simulador da SkillDrills é 100% gratuito, funciona diretamente no navegador e calcula os tempos com a resolução de tempo do navegador (~1 ms) usando a API performance.now().',
       },
     },
   ],

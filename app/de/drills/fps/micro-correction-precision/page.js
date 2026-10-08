@@ -142,7 +142,7 @@ export default function MicroCorrectionDePage() {
         "name": "Was versteht man unter 'Target Confirmation' (Zielbestätigung) vor dem Schuss?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Target Confirmation bezeichnet die bewusste mikrosekundenschnelle visuelle Verifizierung, dass das Fadenkreuz tatsächlich zentriert auf dem Kopfziel ruht, bevor der Klickimpuls ausgelöst wird (Rolfs, 2009). Dieses Prinzip verhindert hastige Fehlschüsse und Recoil-Verschwendung."
+          "text": "Target Confirmation bezeichnet die bewusste blitzschnelle visuelle Verifizierung, dass das Fadenkreuz tatsächlich zentriert auf dem Kopfziel ruht, bevor der Klickimpuls ausgelöst wird (Rolfs, 2009). Dieses Prinzip verhindert hastige Fehlschüsse und Recoil-Verschwendung."
         }
       },
       {

@@ -267,11 +267,11 @@ const guidePt = {
     { label: "Velocidade de Atualização", desc: "Rapidez decisória e latência de resposta durante a apresentação dos estímulos." }
   ],
   benchmarks: [
-    { tier: "Tier 1: Memória Operacional Superior (Elite / Percentil 99)", range: "4-Back a 5-Back+ (1.200+ Pontos)", desc: "Controle executivo de elite; fila FIFO mental de 4 a 5 itens; latência inferior a 600 ms; acurácia superior a 92%." },
-    { tier: "Tier 2: Alto Médio (Controle Firme / Percentil 85–95)", range: "3-Back sólido com transição a 4-Back (900 – 1.199 Pontos)", desc: "Supera a média adulta; atualização 3-back contínua com poucas intrusões; acurácia de 80% a 91%." },
-    { tier: "Tier 3: Média Normal Adulta (Percentil 50)", range: "3-Back Estável (600 – 899 Pontos)", desc: "Padrão adulto normativo (Kirchner, 1958); mantém buffer de 3 itens com falhas ocasionais; acurácia de 65% a 79%." },
-    { tier: "Tier 4: Baixo Médio (Percentil 15–30)", range: "3-Back Instável (400 – 599 Pontos)", desc: "Dificuldade na atualização contínua de 3 itens; confusão com itens de 2 passos atrás; acurácia de 50% a 64%." },
-    { tier: "Tier 5: Abaixo da Média (< Percentil 15)", range: "Abaixo de 3-Back (< 400 Pontos)", desc: "Gargalo severo na atualização contínua; lapsos por timeout frequentes; acurácia inferior a 50%." }
+    { tier: "Faixa 1: Domínio avançado", range: "4-Back a 5-Back+ (1.200+ Pontos)", desc: "Controle executivo de elite; fila FIFO mental de 4 a 5 itens; latência inferior a 600 ms; acurácia superior a 92%." },
+    { tier: "Faixa 2: Avançada", range: "3-Back sólido com transição a 4-Back (900 – 1.199 Pontos)", desc: "Supera a média adulta; atualização 3-back contínua com poucas intrusões; acurácia de 80% a 91%." },
+    { tier: "Faixa 3: Sólida", range: "3-Back Estável (600 – 899 Pontos)", desc: "Padrão adulto normativo (Kirchner, 1958); mantém buffer de 3 itens com falhas ocasionais; acurácia de 65% a 79%." },
+    { tier: "Faixa 4: Em desenvolvimento", range: "3-Back Instável (400 – 599 Pontos)", desc: "Dificuldade na atualização contínua de 3 itens; confusão com itens de 2 passos atrás; acurácia de 50% a 64%." },
+    { tier: "Faixa 5: Inicial", range: "Abaixo de 3-Back (< 400 Pontos)", desc: "Gargalo severo na atualização contínua; lapsos por timeout frequentes; acurácia inferior a 50%. Faixas editoriais de prática, não estatísticas de população." }
   ],
   science: [
     { title: "Wayne K. Kirchner (1958): Criação do paradigma N-Back", body: "Propôs a tarefa para avaliar os efeitos do envelhecimento na retenção de estímulos em rápida alteração." },

@@ -42,7 +42,7 @@ export const metadata = {
   },
   openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
     title: "Klickgeschwindigkeit Test & Klick Test Online – Schnelligkeitstraining | SkillDrills",
-    description: "Kostenloser Klickgeschwindigkeit Test und Reflex-Speed-Drill. Erfasse schrumpfende Ziele mit ballistischen Flicks und maximaler Klickrate pro Sekunde mit mikrosekundengenauer Chronometrie.",
+    description: "Kostenloser Klickgeschwindigkeit Test und Reflex-Speed-Drill. Erfasse schrumpfende Ziele mit ballistischen Flicks und maximaler Klickrate pro Sekunde mit präziser Zeitmessung.",
     url: 'https://skilldrills.online/de/drills/physical/fitness/speed-drill',
     siteName: 'SkillDrills',
     locale: 'de_DE',
@@ -51,7 +51,7 @@ export const metadata = {
   twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: 'summary_large_image',
     title: "Klickgeschwindigkeit Test & Klick Test Online – Schnelligkeitstraining | SkillDrills",
-    description: "Kostenloser Klickgeschwindigkeit Test und Reflex-Speed-Drill. Erfasse schrumpfende Ziele mit ballistischen Flicks und maximaler Klickrate pro Sekunde mit mikrosekundengenauer Chronometrie.",
+    description: "Kostenloser Klickgeschwindigkeit Test und Reflex-Speed-Drill. Erfasse schrumpfende Ziele mit ballistischen Flicks und maximaler Klickrate pro Sekunde mit präziser Zeitmessung.",
   },
   robots: { index: true, follow: true },
 };
@@ -302,13 +302,13 @@ const speedGuide = {
     title: "5-Stufen-Leistungsbenchmarks für Klickgeschwindigkeit und Zielerfassung",
     headers: ["Stufe & Rang", "Titel (Rank Title)", "Punkteziel", "Trefferquote & Reaktionszeit", "Gesamtnote", "Neuromuskuläres Profil"],
     rows: [
-      ["Tier 1: Ultimativer Velocity-Scharfschütze", "Apex Velocity Sniper", "24.000+ Punkte", "> 95 % / < 160 ms", "Grade S", "Top 0,1 % der E-Sport-Elite. Perfekte Woodworth-Flicks und blitzartige Treffer auf 12-px-Schrumpfziele (Woodworth 1899; Fitts 1954)"],
-      ["Tier 2: Präzisions-Reflex-Striker", "Precision Reflex Striker", "17.000 – 23.999 Punkte", "90 – 94 % / 160 – 190 ms", "Grade A", "Top 3 % semiprofessionelles Niveau. Exzellente verdeckte Zielorientierung und stabile Serien bei 3,0-facher Zieldynamik"],
-      ["Tier 3: Erfahrener Ziel-Abfänger", "Rapid Target Interceptor", "11.000 – 16.999 Punkte", "82 – 89 % / 191 – 230 ms", "Grade B", "Top 15 % kompetitive Gamer. Zuverlässige Klickkadenz und taktische Nutzung des +0,6s-Zeitbonus für lange Überlebensdauer"],
-      ["Tier 4: Lernender Tapping-Athlet", "Developing Tapping Trainee", "6.000 – 10.999 Punkte", "70 – 81 % / 231 – 280 ms", "Grade C", "Durchschnittliches Erwachsenenniveau. Bei Geschwindigkeiten über 2,0x treten Bremsverzögerungen und Kantenfehlschüsse auf"],
-      ["Tier 5: Einsteiger in Zielerfassung", "Novice Target Pointer", "< 6.000 Punkte", "< 70 % / > 280 ms", "Grade D", "Basisniveau. Häufige Hektik-Klicks kurz vor Zielablauf. Empfohlen wird das Weiten des peripheren Sichtfelds aus der Mitte"]
+      ["Stufe 1: Ultimativer Velocity-Scharfschütze", "Apex Velocity Sniper", "24.000+ Punkte", "> 95 % / < 160 ms", "Grade S", "Perfekte Woodworth-Flicks und blitzartige Treffer auf 12-px-Schrumpfziele (Woodworth 1899; Fitts 1954)"],
+      ["Stufe 2: Präzisions-Reflex-Striker", "Precision Reflex Striker", "17.000 – 23.999 Punkte", "90 – 94 % / 160 – 190 ms", "Grade A", "Exzellente verdeckte Zielorientierung und stabile Serien bei 3,0-facher Zieldynamik"],
+      ["Stufe 3: Erfahrener Ziel-Abfänger", "Rapid Target Interceptor", "11.000 – 16.999 Punkte", "82 – 89 % / 191 – 230 ms", "Grade B", "Zuverlässige Klickkadenz und taktische Nutzung des +0,6s-Zeitbonus für lange Überlebensdauer"],
+      ["Stufe 4: Lernender Tapping-Athlet", "Developing Tapping Trainee", "6.000 – 10.999 Punkte", "70 – 81 % / 231 – 280 ms", "Grade C", "Durchschnittliches Erwachsenenniveau. Bei Geschwindigkeiten über 2,0x treten Bremsverzögerungen und Kantenfehlschüsse auf"],
+      ["Stufe 5: Einsteiger in Zielerfassung", "Novice Target Pointer", "< 6.000 Punkte", "< 70 % / > 280 ms", "Grade D", "Basisniveau. Häufige Hektik-Klicks kurz vor Zielablauf. Empfohlen wird das Weiten des peripheren Sichtfelds aus der Mitte"]
     ],
-    note: "Objektive Evaluierung auf Grundlage der Bewegungsanalyse nach Woodworth (1899), der Fitts'schen Schwierigkeitsskalierung (1954) und der visuellen Salienzforschung (Treisman 1980)."
+    note: "Objektive Evaluierung auf Grundlage der Bewegungsanalyse nach Woodworth (1899), der Fitts'schen Schwierigkeitsskalierung (1954) und der visuellen Salienzforschung (Treisman 1980). Die Bereiche sind redaktionelle Übungsmarken, keine Bevölkerungsstatistik."
   },
   techniques: {
     title: "4 Praxisprotokolle für maximale Klickgeschwindigkeit & Flick-Präzision",

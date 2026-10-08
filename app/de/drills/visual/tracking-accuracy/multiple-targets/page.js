@@ -251,13 +251,13 @@ const guideData = {
     title: "Orientierungswerte für Mehrfach-Objektverfolgung",
     headers: ["Leistungsstufe / Rang", "Simultan verfolgte Zielobjekte", "Maximales Bewegungstempo", "Trefferquote / Präzision", "Neurokognitive Leistungsstufe"],
     rows: [
-      ["Weltklasse / Pro-Level (Top 1%)", "5 – 6 Ziele", "Schnell (> 400 px/s)", "≥ 92%", "Geometrische Schwerpunkt-Fixierung und vollständige hemisphärische Parallelverarbeitung (Cavanagh & Alvarez, 2005)"],
-      ["Fortgeschritten / Athlet (Top 5%)", "4 – 5 Ziele", "Mittel-Schnell (300 – 400 px/s)", "82 – 91%", "Stabiles peripheres Tracking und verlässliche Trägheitsprädiktion bei dichten Kreuzungen"],
-      ["Solider Standard (Top 25%)", "3 – 4 Ziele", "Moderates Tempo (200 – 300 px/s)", "72 – 81%", "Typische Kapazitätsgrenze gesunder Erwachsener bei gleichmäßigen Trajektorien"],
-      ["Basis-Niveau (Top 50%)", "2 – 3 Ziele", "Niedrig-Moderat (150 – 200 px/s)", "60 – 71%", "Informationsverlust durch serielle Sakkaden (zu starke Fixierung auf Einzelobjekte)"],
+      ["Stufe 1: Weltklasse / Pro-Level", "5 – 6 Ziele", "Schnell (> 400 px/s)", "≥ 92%", "Geometrische Schwerpunkt-Fixierung und vollständige hemisphärische Parallelverarbeitung (Cavanagh & Alvarez, 2005)"],
+      ["Stufe 2: Fortgeschritten / Athlet", "4 – 5 Ziele", "Mittel-Schnell (300 – 400 px/s)", "82 – 91%", "Stabiles peripheres Tracking und verlässliche Trägheitsprädiktion bei dichten Kreuzungen"],
+      ["Stufe 3: Solider Standard", "3 – 4 Ziele", "Moderates Tempo (200 – 300 px/s)", "72 – 81%", "Typische Kapazitätsgrenze gesunder Erwachsener bei gleichmäßigen Trajektorien"],
+      ["Stufe 4: Basis-Niveau", "2 – 3 Ziele", "Niedrig-Moderat (150 – 200 px/s)", "60 – 71%", "Informationsverlust durch serielle Sakkaden (zu starke Fixierung auf Einzelobjekte)"],
       ["Einsteiger / Untrainiert (Baseline)", "< 2 Ziele", "Langsam (< 150 px/s)", "< 60%", "Überlastung des visuell-räumlichen Arbeitsgedächtnisses bei Kollisionen"]
     ],
-    note: "Basierend auf publizierten neurokognitiven und sportophthalmologischen Studien (Pylyshyn 1988; Cavanagh & Alvarez 2005; Green & Bavelier 2006; Faubert 2013)."
+    note: "Basierend auf publizierten neurokognitiven und sportophthalmologischen Studien (Pylyshyn 1988; Cavanagh & Alvarez 2005; Green & Bavelier 2006; Faubert 2013). Die Bereiche sind redaktionelle Übungsmarken, keine Bevölkerungsstatistik."
   },
   techniques: {
     title: "Mehrere Ziele verfolgen und Ablenkungen ausblenden",

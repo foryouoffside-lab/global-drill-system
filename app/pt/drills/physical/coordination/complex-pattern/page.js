@@ -272,15 +272,15 @@ const guideProps = {
   },
   benchmarks: {
     title: "Padrões Oficiais de Memória Visuoespacial e Coordenação Fina",
-    headers: ["Nível", "Título do Nível", "Pontuação Alvo", "Acurácia de Trajeto", "Nota", "Percentil Global"],
+    headers: ["Nível", "Título do Nível", "Pontuação Alvo", "Acurácia de Trajeto", "Nota", "Marcador de prática"],
     rows: [
-      ["Tier 1", "Mestre Supremo de Padrões Visuais", "17.000+ pontos", "Nível 12–15 / Acurácia >92%", "Nota S+", "Top 0,5% (Capacidade Excepcional)"],
-      ["Tier 2", "Rastreador de Sequências de Elite", "13.000 a 16.999 pts", "Nível 9–11 / Acurácia 85–91%", "Nota A", "Top 5% (Nível Avançado)"],
-      ["Tier 3", "Navegador Espacial Avançado", "9.500 a 12.999 pts", "Nível 6–8 / Acurácia 76–84%", "Nota B", "Top 20% (Alta Competência)"],
-      ["Tier 4", "Praticante de Memória Intermediário", "6.000 a 9.499 pts", "Nível 3–5 / Acurácia 65–75%", "Nota C", "50% (Média de Adultos Saudáveis)"],
-      ["Tier 5", "Iniciante em Retenção de Trajetos", "< 6.000 pontos", "Nível 1–2 / Acurácia <65%", "Nota D", "Iniciante (Treino Recomendado)"],
+      ["Faixa 1", "Muito avançada", "17.000+ pontos", "Nível 12–15 / Acurácia >92%", "Nota S+", "Ritmo muito alto com alta precisão"],
+      ["Faixa 2", "Avançada", "13.000 a 16.999 pts", "Nível 9–11 / Acurácia 85–91%", "Nota A", "Ritmo alto e regular"],
+      ["Faixa 3", "Sólida", "9.500 a 12.999 pts", "Nível 6–8 / Acurácia 76–84%", "Nota B", "Ritmo estável com alguns erros"],
+      ["Faixa 4", "Em desenvolvimento", "6.000 a 9.499 pts", "Nível 3–5 / Acurácia 65–75%", "Nota C", "Ritmo médio com margem de melhora"],
+      ["Faixa 5", "Inicial", "< 6.000 pontos", "Nível 1–2 / Acurácia <65%", "Nota D", "Ponto de partida"],
     ],
-    note: "Parâmetros estandardizados com base em capacidade de memória de trabalho visuoespacial (Baddeley & Hitch 1974; Cowan 2001) e sequenciamento motor serial (Lashley 1951).",
+    note: "Faixas editoriais de prática para comparar suas próprias sessões; não são estatísticas de população nem normas clínicas. Parâmetros estandardizados com base em capacidade de memória de trabalho visuoespacial (Baddeley & Hitch 1974; Cowan 2001) e sequenciamento motor serial (Lashley 1951).",
   },
   protocols: {
     title: 'Jogo de Memória Visual – Padrões Espaciais | SkillDrills',

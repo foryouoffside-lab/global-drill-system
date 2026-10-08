@@ -266,11 +266,11 @@ const guideEs = {
     { label: "Tasa de Actualización", desc: "Velocidad de decisión y latencia durante la exposición de los estímulos." }
   ],
   benchmarks: [
-    { tier: "Tier 1: Memoria de Trabajo Superior (Élite / Percentil 99)", range: "4-Back a 5-Back+ (1.200+ Puntos)", desc: "Control ejecutivo sobresaliente; cola mental FIFO de 4 a 5 ítems; latencia inferior a 600 ms; precisión superior al 92%." },
-    { tier: "Tier 2: Alto Promedio (Control Firme / Percentil 85–95)", range: "3-Back sólido con paso a 4-Back (900 – 1.199 Puntos)", desc: "Supera el estándar promedio; actualización 3-back con mínimos fallos de intrusión; precisión del 80% al 91%." },
-    { tier: "Tier 3: Promedio Normal Adulto (Percentil 50)", range: "3-Back Estable (600 – 899 Puntos)", desc: "Línea base adulta normativa (Kirchner, 1958); mantiene búfer de 3 ítems con pérdidas esporádicas; precisión del 65% al 79%." },
-    { tier: "Tier 4: Bajo Promedio (Percentil 15–30)", range: "3-Back Inconsistente (400 – 599 Puntos)", desc: "Dificultades con la actualización continua de 3 elementos; interferencia por familiaridad; precisión del 50% al 64%." },
-    { tier: "Tier 5: Necesita Mejora (< Percentil 15)", range: "Inferior a 3-Back (< 400 Puntos)", desc: "Cuello de botella severo en la actualización de memoria; frecuentes tiempos agotados; precisión inferior al 50%." }
+    { tier: "Etapa 1: Dominio avanzado", range: "4-Back a 5-Back+ (1.200+ Puntos)", desc: "Control ejecutivo sobresaliente; cola mental FIFO de 4 a 5 ítems; latencia inferior a 600 ms; precisión superior al 92%." },
+    { tier: "Etapa 2: Avanzada", range: "3-Back sólido con paso a 4-Back (900 – 1.199 Puntos)", desc: "Supera el estándar promedio; actualización 3-back con mínimos fallos de intrusión; precisión del 80% al 91%." },
+    { tier: "Etapa 3: Sólida", range: "3-Back Estable (600 – 899 Puntos)", desc: "Línea base adulta normativa (Kirchner, 1958); mantiene búfer de 3 ítems con pérdidas esporádicas; precisión del 65% al 79%." },
+    { tier: "Etapa 4: En desarrollo", range: "3-Back Inconsistente (400 – 599 Puntos)", desc: "Dificultades con la actualización continua de 3 elementos; interferencia por familiaridad; precisión del 50% al 64%." },
+    { tier: "Etapa 5: Inicial", range: "Inferior a 3-Back (< 400 Puntos)", desc: "Cuello de botella severo en la actualización de memoria; frecuentes tiempos agotados; precisión inferior al 50%. Rangos editoriales de práctica, no estadísticas de población." }
   ],
   science: [
     { title: "Wayne K. Kirchner (1958): Origen del paradigma N-Back", body: "Introdujo la tarea en 1958 para evaluar la retención de datos en constante cambio con la edad." },

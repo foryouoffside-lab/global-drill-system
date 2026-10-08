@@ -265,15 +265,15 @@ const guide = {
   ],
   benchmarks: {
     title: "Bewertungsstandards für geteilte Aufmerksamkeit & bilaterale Blickverfolgung",
-    headers: ["Leistungsstufe", "Geschwindigkeit", "Blickanker-Stabilität", "Hemisphären-Symmetrie", "Populationsanteil"],
+    headers: ["Leistungsstufe", "Geschwindigkeit", "Blickanker-Stabilität", "Hemisphären-Symmetrie", "Einordnung"],
     rows: [
-      ["Elite / Voll adaptiert (Elite)", "3,5x bis 5,0x+", "Absolut stabiler zentraler Anker, 0 Sakkaden", "Fehlerraten-Differenz < 3% (perfekt bimodal)", "Top 1,5%"],
-      ["Master / Fortgeschrittene Teilung (Master)", "2,5x bis 3,5x", "Sehr stabiler Anker, minimale Mikrosakkaden", "Fehlerraten-Differenz < 7% (stabile Erfassung)", "Top 8%"],
-      ["Advanced / Wettkampfniveau (Advanced)", "1,8x bis 2,5x", "Weitgehend zentral, Blicksprünge bei Tempo-Peaks", "Fehlerraten-Differenz < 12% (leichte Dominanz)", "Top 25%"],
-      ["Intermediate / Grundstufe (Intermediate)", "1,2x bis 1,8x", "Häufige unwillkürliche Blicksprünge zur Seite", "Spürbare Verzögerung auf einer Seite (15-25%)", "Mittlere 45%"],
-      ["Novice / Untrainiert (Novice)", "0,5x bis 1,2x", "Hektisches Hin- und Herspringen der Augen", "Regelmäßiger Totalverlust eines Ziels (> 25%)", "Einstiegsbereich"]
+      ["Elite / Voll adaptiert (Elite)", "3,5x bis 5,0x+", "Absolut stabiler zentraler Anker, 0 Sakkaden", "Fehlerraten-Differenz < 3% (perfekt bimodal)", "Stufe 1"],
+      ["Master / Fortgeschrittene Teilung (Master)", "2,5x bis 3,5x", "Sehr stabiler Anker, minimale Mikrosakkaden", "Fehlerraten-Differenz < 7% (stabile Erfassung)", "Stufe 2"],
+      ["Advanced / Wettkampfniveau (Advanced)", "1,8x bis 2,5x", "Weitgehend zentral, Blicksprünge bei Tempo-Peaks", "Fehlerraten-Differenz < 12% (leichte Dominanz)", "Stufe 3"],
+      ["Intermediate / Grundstufe (Intermediate)", "1,2x bis 1,8x", "Häufige unwillkürliche Blicksprünge zur Seite", "Spürbare Verzögerung auf einer Seite (15-25%)", "Stufe 4"],
+      ["Novice / Untrainiert (Novice)", "0,5x bis 1,2x", "Hektisches Hin- und Herspringen der Augen", "Regelmäßiger Totalverlust eines Ziels (> 25%)", "Stufe 5"]
     ],
-    note: "Die Richtwerte basieren auf den MOT-Geschwindigkeitsmodellen von Pylyshyn & Storm (1988) sowie den Hemifeld-Aufmerksamkeitsmetriken von Alvarez & Cavanagh (2005)."
+    note: "Die Richtwerte basieren auf den MOT-Geschwindigkeitsmodellen von Pylyshyn & Storm (1988) sowie den Hemifeld-Aufmerksamkeitsmetriken von Alvarez & Cavanagh (2005). Die Bereiche sind redaktionelle Übungsmarken, keine Bevölkerungsstatistik."
   },
   techniques: [
     {

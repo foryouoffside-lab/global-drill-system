@@ -294,15 +294,15 @@ const reactionGuide = {
   ],
   benchmarks: {
     title: 'Reaktionszeit Referenztabelle & Gaming-Einstufung',
-    headers: ['Reaktionszeit (ms)', 'Klassifizierung', 'Perzentil', 'Gaming-Rang Äquivalent', 'Neurologisches Profil'],
+    headers: ['Reaktionszeit (ms)', 'Klassifizierung', 'Einordnung', 'Gaming-Rang Äquivalent', 'Neurologisches Profil'],
     rows: [
-      ['< 150 ms', 'Übermenschlich / Godlike', 'Top 1%', 'F1-Fahrer / Radiant-Profis', 'Extremes Timing-Gefühl, Vorwegnahme und neuronale Bestwerte'],
-      ['150 – 190 ms', 'Elite-Kompetitiv', 'Top 5%', 'Immortal / Faceit Level 10', 'Herausragende Reizverarbeitung und blitzschnelle Muskelkontraktion'],
-      ['190 – 240 ms', 'Fortgeschrittener Gamer', 'Top 25%', 'Diamond / Ascendant', 'Sehr gute Reizunterscheidung und stabiles Abfeuern des Fadenkreuzes'],
-      ['240 – 280 ms', 'Menschlicher Durchschnitt', 'Mittelwert 50%', 'Gold / Platinum', 'Typischer gesunder Erwachsener unter Standard-60Hz-Bedingungen'],
-      ['> 300 ms', 'Gelegenheitsspieler', 'Unterste 20%', 'Silber / Bronze', 'Verlangsamung durch Müdigkeit, Unaufmerksamkeit oder Hardware-Latenz'],
+      ['< 150 ms', 'Übermenschlich / Godlike', 'Stufe 1', 'F1-Fahrer / Radiant-Profis', 'Extremes Timing-Gefühl, Vorwegnahme und neuronale Bestwerte'],
+      ['150 – 190 ms', 'Elite-Kompetitiv', 'Stufe 2', 'Immortal / Faceit Level 10', 'Herausragende Reizverarbeitung und blitzschnelle Muskelkontraktion'],
+      ['190 – 240 ms', 'Fortgeschrittener Gamer', 'Stufe 3', 'Diamond / Ascendant', 'Sehr gute Reizunterscheidung und stabiles Abfeuern des Fadenkreuzes'],
+      ['240 – 280 ms', 'Menschlicher Durchschnitt', 'Stufe 4', 'Gold / Platinum', 'Typischer gesunder Erwachsener unter Standard-60Hz-Bedingungen'],
+      ['> 300 ms', 'Gelegenheitsspieler', 'Stufe 5', 'Silber / Bronze', 'Verlangsamung durch Müdigkeit, Unaufmerksamkeit oder Hardware-Latenz'],
     ],
-    note: 'Diese Werte basieren auf neurowissenschaftlicher Reaktionszeit-Literatur (Kosinski, 2008; Woods et al., 2015). 60Hz-Monitore fügen ca. 16,7 ms Bildverzögerung hinzu.',
+    note: 'Diese Werte basieren auf neurowissenschaftlicher Reaktionszeit-Literatur (Kosinski, 2008; Woods et al., 2015). 60Hz-Monitore fügen ca. 16,7 ms Bildverzögerung hinzu. Die Bereiche sind redaktionelle Übungsmarken, keine Bevölkerungsstatistik.',
   },
   techniques: {
     title: 'Sensorische Latenz & Physiologische Mechanismen',

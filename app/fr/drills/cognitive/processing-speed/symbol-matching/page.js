@@ -275,11 +275,11 @@ const guideProps = {
     title: 'Paliers de l’exercice symboles et chiffres',
     headers: ['Palier', 'Profil', 'Efficacité', 'Exactitude', 'Lecture'],
     rows: [
-      { tier: 'Palier 1', rank: 'Très avancé', stat: 'Très rapide', level: 'Palier 1', accuracy: '98%+', percentile: 'Réponses très rapides et très exactes' },
-      { tier: 'Palier 2', rank: 'Avancé', stat: 'Rapide', level: 'Palier 2', accuracy: '94-97%', percentile: 'Réponses rapides et régulières' },
-      { tier: 'Palier 3', rank: 'Confirmé', stat: 'Soutenue', level: 'Palier 3', accuracy: '88-93%', percentile: 'Bonne cadence avec quelques erreurs' },
-      { tier: 'Palier 4', rank: 'Intermédiaire', stat: 'Moyenne', level: 'Palier 4', accuracy: '78-87%', percentile: 'Consultation fréquente de la clé' },
-      { tier: 'Palier 5', rank: 'Débutant', stat: 'Initiale', level: 'Palier 5', accuracy: '< 78%', percentile: 'Point de départ' },
+      { tier: 'Palier 1', rank: 'Très avancé', stat: 'Très rapide', level: 'Palier 1', accuracy: '98%+', marker: 'Réponses très rapides et très exactes' },
+      { tier: 'Palier 2', rank: 'Avancé', stat: 'Rapide', level: 'Palier 2', accuracy: '94-97%', marker: 'Réponses rapides et régulières' },
+      { tier: 'Palier 3', rank: 'Confirmé', stat: 'Soutenue', level: 'Palier 3', accuracy: '88-93%', marker: 'Bonne cadence avec quelques erreurs' },
+      { tier: 'Palier 4', rank: 'Intermédiaire', stat: 'Moyenne', level: 'Palier 4', accuracy: '78-87%', marker: 'Consultation fréquente de la clé' },
+      { tier: 'Palier 5', rank: 'Débutant', stat: 'Initiale', level: 'Palier 5', accuracy: '< 78%', marker: 'Point de départ' },
     ],
   },
   protocols: {

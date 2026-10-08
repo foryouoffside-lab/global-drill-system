@@ -220,15 +220,15 @@ export default function ZigZagPathPursuitPageES() {
     ],
     benchmarks: {
       title: "Valores de Referencia en Zigzag (Velocidad y Error de Inflexión)",
-      headers: ["Nivel de Habilidad", "Multiplicador de Velocidad", "Error en Vértice", "Latencia Sacádica de Giro", "Percentil Global"],
+      headers: ["Nivel de Habilidad", "Multiplicador de Velocidad", "Error en Vértice", "Latencia Sacádica de Giro", "Marcador de práctica"],
       rows: [
-        ["Élite / Maestro de la Reversión Rápida", "3.5x – 5.0x+", "Error < 12 px (adhesión perfecta en el giro)", "Latencia < 110 ms (frenado anticipatorio)", "Top 1.5%"],
-        ["Maestro / Alta Disciplina Vectorial", "2.5x – 3.5x", "Error < 22 px (únicamente microsacadas mínimas)", "Latencia < 140 ms (curvas fluidas)", "Top 8%"],
-        ["Avanzado / Atleta de Competición", "1.8x – 2.5x", "Error < 38 px (rápida readquisición)", "Latencia < 180 ms (giros estables)", "Top 25%"],
-        ["Intermedio / Practicante Habitual", "1.2x – 1.8x", "Error 38 – 70 px (sobrepaso y corte de esquinas)", "Latencia 180 – 240 ms (múltiples correcciones)", "Rango Medio 45%"],
-        ["Principiante / No Iniciado", "0.5x – 1.2x", "Error > 70 px (pérdida total en esquinas)", "Latencia > 250 ms (sobrepaso evidente)", "Nivel Base"]
+        ["Etapa 1", "3.5x – 5.0x+", "Error < 12 px (adhesión perfecta en el giro)", "Latencia < 110 ms (frenado anticipatorio)", "Ritmo muy alto con alta precisión"],
+        ["Etapa 2", "2.5x – 3.5x", "Error < 22 px (únicamente microsacadas mínimas)", "Latencia < 140 ms (curvas fluidas)", "Ritmo alto y regular"],
+        ["Etapa 3", "1.8x – 2.5x", "Error < 38 px (rápida readquisición)", "Latencia < 180 ms (giros estables)", "Ritmo estable con algunos errores"],
+        ["Etapa 4", "1.2x – 1.8x", "Error 38 – 70 px (sobrepaso y corte de esquinas)", "Latencia 180 – 240 ms (múltiples correcciones)", "Ritmo medio con margen de mejora"],
+        ["Etapa 5", "0.5x – 1.2x", "Error > 70 px (pérdida total en esquinas)", "Latencia > 250 ms (sobrepaso evidente)", "Punto de partida"]
       ],
-      note: "Métricas fundamentadas en de Brouwer et al. (2002) sobre dinámica de sacadas correctoras y Krauzlis (2004) sobre control motor en cambios rápidos de velocidad y sentido."
+      note: "Etapas editoriales de práctica para comparar tus propias sesiones; no son estadísticas de población ni normas clínicas. Métricas fundamentadas en de Brouwer et al. (2002) sobre dinámica de sacadas correctoras y Krauzlis (2004) sobre control motor en cambios rápidos de velocidad y sentido."
     },
     steps: [
       { title: "Fija el objetivo en el centro", text: "Mantén la cabeza estable y acompaña con la mirada el primer tramo diagonal." },

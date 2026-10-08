@@ -181,10 +181,10 @@ const faqSchema = {
     },
     {
       "@type": "Question",
-      "name": "¿Qué puntuación marca el nivel de maestría de élite (Tier 1: Master)?",
+      "name": "¿Qué puntuación marca la Etapa 1 de práctica?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "El rango Tier 1: Apex Pattern Master (Calificación S+) requiere 17.000 puntos o más, alcanzando los niveles 12 a 15 con una precisión de trazo media superior al 85% en complejas geometrías de 7 a 8 nodos. El percentil medio (Tier 4) se sitúa entre 6.000 y 9.499 puntos."
+        "text": "La Etapa 1 (Calificación S+) requiere 17.000 puntos o más, alcanzando los niveles 12 a 15 con una precisión de trazo media superior al 85% en complejas geometrías de 7 a 8 nodos. La Etapa 4 se sitúa entre 6.000 y 9.499 puntos."
       }
     },
     {
@@ -272,15 +272,15 @@ const guideProps = {
   },
   benchmarks: {
     title: "Estándares Oficiales de Memoria Visoespacial y Coordinación Fina",
-    headers: ["Nivel", "Título del Nivel", "Puntuación Diana", "Precisión de Trazo", "Nota", "Percentil Global"],
+    headers: ["Nivel", "Título del Nivel", "Puntuación Diana", "Precisión de Trazo", "Nota", "Marcador de práctica"],
     rows: [
-      ["Tier 1", "Maestro Supremo de Patrones Visuales", "17.000+ puntos", "Nivel 12–15 / Precisión >92%", "Nota S+", "Top 0,5% (Capacidad Excepcional)"],
-      ["Tier 2", "Trazador de Secuencias de Élite", "13.000 a 16.999 pts", "Nivel 9–11 / Precisión 85–91%", "Nota A", "Top 5% (Nivel Avanzado)"],
-      ["Tier 3", "Navegador Espacial Avanzado", "9.500 a 12.999 pts", "Nivel 6–8 / Precisión 76–84%", "Nota B", "Top 20% (Alta Competencia)"],
-      ["Tier 4", "Practicante de Memoria Intermedio", "6.000 a 9.499 pts", "Nivel 3–5 / Precisión 65–75%", "Nota C", "50% (Media de Población Adulta)"],
-      ["Tier 5", "Principiante en Retención de Rutas", "< 6.000 puntos", "Nivel 1–2 / Precisión <65%", "Nota D", "Principiante (Entrenamiento Recomendado)"],
+      ["Etapa 1", "Muy avanzada", "17.000+ puntos", "Nivel 12–15 / Precisión >92%", "Nota S+", "Ritmo muy alto con alta precisión"],
+      ["Etapa 2", "Avanzada", "13.000 a 16.999 pts", "Nivel 9–11 / Precisión 85–91%", "Nota A", "Ritmo alto y regular"],
+      ["Etapa 3", "Sólida", "9.500 a 12.999 pts", "Nivel 6–8 / Precisión 76–84%", "Nota B", "Ritmo estable con algunos errores"],
+      ["Etapa 4", "En desarrollo", "6.000 a 9.499 pts", "Nivel 3–5 / Precisión 65–75%", "Nota C", "Ritmo medio con margen de mejora"],
+      ["Etapa 5", "Inicial", "< 6.000 puntos", "Nivel 1–2 / Precisión <65%", "Nota D", "Punto de partida"],
     ],
-    note: "Parámetros estandarizados basados en capacidad de memoria de trabajo visoespacial (Baddeley & Hitch 1974; Cowan 2001) y secuenciación motora serial (Lashley 1951).",
+    note: "Etapas editoriales de práctica para comparar tus propias sesiones; no son estadísticas de población ni normas clínicas. Parámetros estandarizados basados en capacidad de memoria de trabajo visoespacial (Baddeley & Hitch 1974; Cowan 2001) y secuenciación motora serial (Lashley 1951).",
   },
   protocols: {
     title: 'Juego de Memoria Visual – Patrones Espaciales | SkillDrills',

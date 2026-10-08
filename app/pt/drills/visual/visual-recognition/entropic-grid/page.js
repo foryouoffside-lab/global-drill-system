@@ -56,13 +56,13 @@ const guideData = {
     title: "Referência de desempenho em busca visual e atenção seletiva",
     headers: ["Faixa de Desempenho", "Acertos Confirmados (45s)", "Latência Média de Fixação", "Precisão de Filtro de Ruído", "Perfil Neurocognitivo"],
     rows: [
-      ["Nível 1: Elite Perceptiva (Top 1%)", "18+ Acertos", "< 180 ms", "> 96%", "Síntese impecável de pop-out pré-atentivo e escaneamento top-down focado (Wolfe, 2007)."],
-      ["Nível 2: Busca Avançada (Top 5%)", "14 – 17 Acertos", "180 – 230 ms", "88 – 95%", "Filtro robusto de distratores dinâmicos e varredura eficiente por quadrantes."],
-      ["Nível 3: Padrão Médio (Top 25%)", "10 – 13 Acertos", "230 – 300 ms", "76 – 87%", "Velocidade de processamento padrão; combina escaneamento serial e detecção periférica."],
-      ["Nível 4: Nível Inicial (Top 50%)", "7 – 9 Acertos", "300 – 400 ms", "65 – 75%", "Vulnerável à captura de atenção pelo ruído visual e transições de tela (clutter latency)."],
-      ["Nível 5: Em Desenvolvimento (Baseline)", "< 7 Acertos", "> 400 ms", "< 65%", "Vagância sacádica desordenada e perda do modelo de busca na memória de trabalho."]
+      ["Faixa 1", "18+ Acertos", "< 180 ms", "> 96%", "Síntese impecável de pop-out pré-atentivo e escaneamento top-down focado (Wolfe, 2007)."],
+      ["Faixa 2", "14 – 17 Acertos", "180 – 230 ms", "88 – 95%", "Filtro robusto de distratores dinâmicos e varredura eficiente por quadrantes."],
+      ["Faixa 3", "10 – 13 Acertos", "230 – 300 ms", "76 – 87%", "Velocidade de processamento padrão; combina escaneamento serial e detecção periférica."],
+      ["Faixa 4", "7 – 9 Acertos", "300 – 400 ms", "65 – 75%", "Vulnerável à captura de atenção pelo ruído visual e transições de tela (clutter latency)."],
+      ["Faixa 5", "< 7 Acertos", "> 400 ms", "< 65%", "Vagância sacádica desordenada e perda do modelo de busca na memória de trabalho."]
     ],
-    note: "Baseado na literatura científica de atenção visual e busca seletiva (Treisman & Gelade 1980; Wolfe 2007; Duncan & Humphreys 1989; Posner 1980)."
+    note: "Faixas editoriais de prática para comparar suas próprias sessões; não são estatísticas de população nem normas clínicas. Baseado na literatura científica de atenção visual e busca seletiva (Treisman & Gelade 1980; Wolfe 2007; Duncan & Humphreys 1989; Posner 1980)."
   },
   techniques: {
     title: "Como encontrar alvos mais rápido e ignorar distratores",

@@ -241,15 +241,15 @@ const guideProps = {
   ],
   benchmarks: {
     title: "Tabela de Classificação em Atenção Dividida e Rastreamento Bilateral",
-    headers: ["Nível de Desempenho", "Velocidade do Alvo", "Estabilidade da Ancoragem Central", "Simetria Hemisférica (Erro)", "Percentil Populacional"],
+    headers: ["Nível de Desempenho", "Velocidade do Alvo", "Estabilidade da Ancoragem Central", "Simetria Hemisférica (Erro)", "Marcador de prática"],
     rows: [
-      ["Elite (Esports / Aviadores)", "3.5x – 5.0x+", "Fixação central estável; 0 sacadas intrusivas", "< 3% de discrepância (bloqueio bimodal)", "Top 1.5%"],
-      ["Avançado (Competitivo)", "2.5x – 3.5x", "Fixação estável; raras micro-sacadas", "< 7% de discrepância (monitorização dupla consistente)", "Top 8%"],
-      ["Competente (Adulto Saudável)", "1.8x – 2.5x", "Foco central mantido; sacadas ligeiras nos picos", "< 12% de discrepância (ligeira dominância unilateral)", "Top 25%"],
-      ["Em Desenvolvimento (Divisão Ineficiente)", "1.2x – 1.8x", "Sacadas involuntárias frequentes para o alvo mais rápido", "15% – 25% de atraso no hemicampo não dominante", "45% Intermédios"],
-      ["Iniciante (Visão em Túnel)", "0.5x – 1.2x", "Alternância constante entre ecrãs por sacadas balísticas", "> 25% de perda total de seguimento de um alvo", "Nível Inicial"]
+      ["Faixa 1", "3.5x – 5.0x+", "Fixação central estável; 0 sacadas intrusivas", "< 3% de discrepância (bloqueio bimodal)", "Ritmo muito alto com alta precisão"],
+      ["Faixa 2", "2.5x – 3.5x", "Fixação estável; raras micro-sacadas", "< 7% de discrepância (monitorização dupla consistente)", "Ritmo alto e regular"],
+      ["Faixa 3", "1.8x – 2.5x", "Foco central mantido; sacadas ligeiras nos picos", "< 12% de discrepância (ligeira dominância unilateral)", "Ritmo estável com alguns erros"],
+      ["Faixa 4", "1.2x – 1.8x", "Sacadas involuntárias frequentes para o alvo mais rápido", "15% – 25% de atraso no hemicampo não dominante", "Ritmo médio com margem de melhora"],
+      ["Faixa 5", "0.5x – 1.2x", "Alternância constante entre ecrãs por sacadas balísticas", "> 25% de perda total de seguimento de um alvo", "Ponto de partida"]
     ],
-    note: "※ Calibrado com base em limiares de capacidade MOT (Pylyshyn & Storm, 1988) e modelos de recursos hemisfericos bilaterais (Alvarez & Cavanagh, 2005) em ecrãs 1080p a 50–70 cm de distancia."
+    note: "Faixas editoriais de prática para comparar suas próprias sessões; não são estatísticas de população nem normas clínicas. ※ Calibrado com base em limiares de capacidade MOT (Pylyshyn & Storm, 1988) e modelos de recursos hemisfericos bilaterais (Alvarez & Cavanagh, 2005) em ecrãs 1080p a 50–70 cm de distancia."
   },
   techniques: {
     title: "Quatro Técnicas Fundamentais para a Atenção Dividida com Tela Dividida",

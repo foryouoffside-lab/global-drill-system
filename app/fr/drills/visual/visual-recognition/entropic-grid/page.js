@@ -56,13 +56,13 @@ const guideData = {
     title: "Repères de recherche visuelle et d’attention sélective",
     headers: ["Palier de Performance", "Réponses Exactes (45s)", "Latence Moyenne de Fixation", "Précision de Filtrage du Bruit", "Profil Neurocognitif"],
     rows: [
-      ["Palier 1 : Élite Perceptive (Top 1%)", "18+ Cibles", "< 180 ms", "> 96%", "Combinaison parfaite de détection pré-attentionnelle pop-out et de balayage top-down guidé (Wolfe, 2007)."],
-      ["Palier 2 : Recherche Confirmée (Top 5%)", "14 – 17 Cibles", "180 – 230 ms", "88 – 95%", "Excellent filtrage des distracteurs dynamiques et exploration structurée par quadrants."],
-      ["Palier 3 : Standard Solide (Top 25%)", "10 – 13 Cibles", "230 – 300 ms", "76 – 87%", "Vitesse d'analyse moyenne ; alterne contrôle sériel et repérage périphérique partiel."],
-      ["Palier 4 : Niveau de Base (Top 50%)", "7 – 9 Cibles", "300 – 400 ms", "65 – 75%", "Vulnérabilité à l'encombrement visuel et ralentissement face aux transitions d'affichage."],
-      ["Palier 5 : Débutant (Baseline)", "< 7 Cibles", "> 400 ms", "< 65%", "Saccades oculaires désordonnées et perte du modèle de la cible en mémoire de travail."]
+      ["Palier 1", "18+ Cibles", "< 180 ms", "> 96%", "Combinaison parfaite de détection pré-attentionnelle pop-out et de balayage top-down guidé (Wolfe, 2007)."],
+      ["Palier 2", "14 – 17 Cibles", "180 – 230 ms", "88 – 95%", "Excellent filtrage des distracteurs dynamiques et exploration structurée par quadrants."],
+      ["Palier 3", "10 – 13 Cibles", "230 – 300 ms", "76 – 87%", "Vitesse d'analyse moyenne ; alterne contrôle sériel et repérage périphérique partiel."],
+      ["Palier 4", "7 – 9 Cibles", "300 – 400 ms", "65 – 75%", "Vulnérabilité à l'encombrement visuel et ralentissement face aux transitions d'affichage."],
+      ["Palier 5", "< 7 Cibles", "> 400 ms", "< 65%", "Saccades oculaires désordonnées et perte du modèle de la cible en mémoire de travail."]
     ],
-    note: "Établi selon la littérature en psychologie cognitive visuelle (Treisman & Gelade 1980 ; Wolfe 2007 ; Duncan & Humphreys 1989 ; Posner 1980)."
+    note: "Paliers éditoriaux de pratique pour comparer vos propres séances ; ce ne sont pas des statistiques de population ni des normes cliniques. Établi selon la littérature en psychologie cognitive visuelle (Treisman & Gelade 1980 ; Wolfe 2007 ; Duncan & Humphreys 1989 ; Posner 1980)."
   },
   techniques: {
     title: "Comment trouver les cibles plus vite et filtrer les distracteurs",

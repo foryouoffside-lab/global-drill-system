@@ -260,13 +260,15 @@ const guideProps = {
   },
   benchmarks: {
     title: 'Estándares de Velocidad Lectora & Baremos Cognitivos (WPM)',
-    headers: ['Nivel', 'Categoría', 'Velocidad de Lectura', 'Tasa de Comprensión', 'Percentil'],
+    headers: ['Nivel', 'Categoría', 'Velocidad de Lectura', 'Tasa de Comprensión', 'Marcador de práctica'],
+    note: "Etapas editoriales de práctica para comparar tus propias sesiones; no son estadísticas de población ni normas clínicas.",
+
     rows: [
-      { tier: 'Tier 1', rank: 'Lector Rápido de Élite', stat: '650 – 850+ WPM', level: 'Maestría', accuracy: '95%+', percentile: 'Top 1%' },
-      { tier: 'Tier 2', rank: 'Lector Avanzado Veloz', stat: '450 – 649 WPM', level: 'Diamante', accuracy: '90-94%', percentile: 'Top 5%' },
-      { tier: 'Tier 3', rank: 'Competente Superior', stat: '300 – 449 WPM', level: 'Platino', accuracy: '85-89%', percentile: 'Top 15%' },
-      { tier: 'Tier 4', rank: 'Promedio Adulto Estándar', stat: '200 – 299 WPM', level: 'Oro', accuracy: '75-84%', percentile: 'Top 50%' },
-      { tier: 'Tier 5', rank: 'Iniciación / Lectura Lenta', stat: '< 200 WPM', level: 'Plata', accuracy: '< 75%', percentile: 'Base' },
+      { tier: 'Etapa 1', rank: 'Muy avanzada', stat: '650 – 850+ WPM', accuracy: '95%+', marker: 'Ritmo muy alto con alta precisión' },
+      { tier: 'Etapa 2', rank: 'Avanzada', stat: '450 – 649 WPM', accuracy: '90-94%', marker: 'Ritmo alto y regular' },
+      { tier: 'Etapa 3', rank: 'Sólida', stat: '300 – 449 WPM', accuracy: '85-89%', marker: 'Ritmo estable con algunos errores' },
+      { tier: 'Etapa 4', rank: 'En desarrollo', stat: '200 – 299 WPM', accuracy: '75-84%', marker: 'Ritmo medio con margen de mejora' },
+      { tier: 'Etapa 5', rank: 'Inicial', stat: '< 200 WPM', accuracy: '< 75%', marker: 'Punto de partida' },
     ],
   },
   protocols: {

@@ -171,7 +171,7 @@ const faqSchema = {
       "name": "What is considered an elite score on this test?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Scores above 15,000 points with an overall accuracy above 92% represent top 1% cognitive bandwidth, reflecting superior prefrontal executive control and high working memory throughput."
+        "text": "Scores above 15,000 points with an overall accuracy above 92% mark practice stage 5, reflecting strong prefrontal executive control and high working memory throughput."
       }
     },
     {
@@ -258,7 +258,8 @@ const guideProps = {
   },
   benchmarks: {
     title: 'Cognitive Performance Standards & Benchmarks',
-    headers: ['Tier', 'Rank', 'Rating', 'Accuracy', 'Percentile'],
+    note: 'Stages are editorial practice markers set by SkillDrills, not population statistics or percentiles.',
+    headers: ['Tier', 'Rank', 'Rating', 'Accuracy', 'Practice stage'],
     rows: [
       { tier: 'Tier 1', rank: 'Grandmaster / Elite', stat: 'Highest tier', level: 'Mastery', accuracy: '98%+', percentile: 'Highest tier' },
       { tier: 'Tier 2', rank: 'Advanced Focus', stat: 'Upper tier', level: 'Diamond', accuracy: '94-97%', percentile: 'Upper tier' },

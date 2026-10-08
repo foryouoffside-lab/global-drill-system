@@ -266,13 +266,13 @@ const dropGuide = {
     title: "Baremo de Rendimiento en 5 Niveles para Tiempo de Reacción de Elección",
     headers: ["Nivel y Categoría", "Título (Rank Title)", "Objetivo de Puntos", "Tiempo de Reacción y Precisión", "Calificación", "Perfil Neuromotor"],
     rows: [
-      ["Tier 1: Interceptor Gravitacional Ápice", "Apex Gravitational Interceptor", "24.000+ puntos", "< 190 ms / > 95%", "Grade S", "Top 0,1% de élite en eSports y pilotos de combate. Inhibición de Logan intachable y captura impecable a 1250 px/s (Lee 1976; Logan 1984)"],
-      ["Tier 2: Atacante Reflexivo de Precisión", "Precision Reflex Striker", "17.000 – 23.999 puntos", "195 – 240 ms / 90 – 94%", "Grade A", "Top 10% semiprofesional. Anticipación visual destacada y racha de 3.0x conservada con un 45% de señuelos en velocidad extrema"],
-      ["Tier 3: Interceptor Hábil de Caída", "Skilled Drop Catcher", "11.000 – 16.999 puntos", "245 – 310 ms / 82 – 89%", "Grade B", "Top 35% jugadores habituales. Coordinación óculo-manual eficiente y aprovechamiento constante del bono de +0,6s para prolongar la partida"],
-      ["Tier 4: Aprendiz en Desarrollo de Reflejos", "Developing Reflex Trainee", "6.000 – 10.999 puntos", "311 – 370 ms / 70 – 81%", "Grade C", "Nivel promedio adulto. Por encima de 800 px/s surgen pulsaciones involuntarias en señuelos rojos y rupturas de serie"],
-      ["Tier 5: Principiante en Freno Inhibitorio", "Novice Decoy Learner", "< 6.000 puntos", "> 370 ms / < 70%", "Grade D", "Fase inicial de aclimatación. Dificultad para discernir colores a alta velocidad; se aconseja fijar la vista en el tercio superior de la pantalla"]
+      ["Etapa 1", "Muy avanzada", "24.000+ puntos", "< 190 ms / > 95%", "Grade S", "Inhibición de Logan intachable y captura impecable a 1250 px/s (Lee 1976; Logan 1984)"],
+      ["Etapa 2", "Avanzada", "17.000 – 23.999 puntos", "195 – 240 ms / 90 – 94%", "Grade A", "Anticipación visual destacada y racha de 3.0x conservada con un 45% de señuelos en velocidad extrema"],
+      ["Etapa 3", "Sólida", "11.000 – 16.999 puntos", "245 – 310 ms / 82 – 89%", "Grade B", "Coordinación óculo-manual eficiente y aprovechamiento constante del bono de +0,6s para prolongar la partida"],
+      ["Etapa 4", "En desarrollo", "6.000 – 10.999 puntos", "311 – 370 ms / 70 – 81%", "Grade C", "Nivel promedio adulto. Por encima de 800 px/s surgen pulsaciones involuntarias en señuelos rojos y rupturas de serie"],
+      ["Etapa 5", "Inicial", "< 6.000 puntos", "> 370 ms / < 70%", "Grade D", "Fase inicial de aclimatación. Dificultad para discernir colores a alta velocidad; se aconseja fijar la vista en el tercio superior de la pantalla"]
     ],
-    note: "Parámetros basados en la cronometría Tipo C de Donders (1868), la teoría del tau de Lee (1976) y el marco inhibitorio de Logan (1984)."
+    note: "Etapas editoriales de práctica para comparar tus propias sesiones; no son estadísticas de población ni normas clínicas. Parámetros basados en la cronometría Tipo C de Donders (1868), la teoría del tau de Lee (1976) y el marco inhibitorio de Logan (1984)."
   },
   techniques: {
     title: "4 Protocolos Prácticos para Reacción de Caída y Supresión de Errores",

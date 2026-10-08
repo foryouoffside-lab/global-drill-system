@@ -16,23 +16,21 @@ import { pickSources } from '@/lib/drillSources';
 // ============================================================
 
 export const metadata = {
-  title: 'Räumliches Sehen Test online | Entfernungen üben',
-  description: 'Kostenloser Test für räumliches Sehen und Tiefensehen. Übe Entfernungsschätzung mit einem bewegten Ziel im Browser; kein medizinischer Sehtest.',
+  title: 'Entfernung schätzen: Tiefenwahrnehmung üben | SkillDrills',
+  description: 'Kein Sehtest: Schätze die Annäherung einer Kugel und klicke bei Deckung mit dem Zielring. Kostenlos im Browser, Auswertung als Timing-Fehler in Prozent.',
   keywords: [
-    'räumliches Sehen Test',
-    'Tiefensehen Test',
-    'Stereosehen',
-    'Sehtest räumliches Sehen online',
-    'Tiefenwahrnehmung testen',
+    'Entfernung schätzen',
     'Entfernung einschätzen',
     'Entfernungsschätzung üben',
-    '3D Sehtest',
+    'Tiefenwahrnehmung üben',
+    'Tiefenwahrnehmung Test',
+    'Time-to-Contact',
     'räumliche Wahrnehmung',
-    'Tiefensehen Führerschein',
+    'Abfang-Timing üben',
   ],
   openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
-    title: 'Räumliches Sehen Test online | Entfernungen üben',
-    description: 'Kostenloser Test für räumliches Sehen und Tiefensehen. Übe Entfernungsschätzung mit einem bewegten Ziel im Browser; kein medizinischer Sehtest.',
+    title: 'Entfernung schätzen: Tiefenwahrnehmung üben | SkillDrills',
+    description: 'Kein Sehtest: Schätze die Annäherung einer Kugel und klicke bei Deckung mit dem Zielring. Kostenlos im Browser, Auswertung als Timing-Fehler in Prozent.',
     type: 'article',
     url: 'https://skilldrills.online/de/drills/visual/depth-perception/distance-judgment',
     siteName: 'SkillDrills',
@@ -40,8 +38,8 @@ export const metadata = {
   },
   twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: 'summary_large_image',
-    title: 'Räumliches Sehen Test online | Entfernungen üben',
-    description: 'Kostenloser Test für räumliches Sehen und Tiefensehen. Übe Entfernungsschätzung mit einem bewegten Ziel im Browser; kein medizinischer Sehtest.',
+    title: 'Entfernung schätzen: Tiefenwahrnehmung üben | SkillDrills',
+    description: 'Kein Sehtest: Schätze die Annäherung einer Kugel und klicke bei Deckung mit dem Zielring. Kostenlos im Browser, Auswertung als Timing-Fehler in Prozent.',
   },
   robots: { index: true, follow: true },
   alternates: {
@@ -57,18 +55,18 @@ const breadcrumbSchema = {
     { '@type': 'ListItem', position: 1, name: 'Startseite', item: 'https://skilldrills.online/de' },
     { '@type': 'ListItem', position: 2, name: 'Visuelle Wahrnehmung', item: 'https://skilldrills.online/de/drills/visual' },
     { '@type': 'ListItem', position: 3, name: 'Tiefenwahrnehmung', item: 'https://skilldrills.online/de/drills/visual/depth-perception' },
-    { '@type': 'ListItem', position: 4, name: 'Räumliches Sehen Test', item: 'https://skilldrills.online/de/drills/visual/depth-perception/distance-judgment' },
+    { '@type': 'ListItem', position: 4, name: 'Entfernung schätzen', item: 'https://skilldrills.online/de/drills/visual/depth-perception/distance-judgment' },
   ],
 };
 
 const softwareApplicationSchema = {
   '@context': 'https://schema.org',
   '@type': 'SoftwareApplication', "sameAs": ["https://en.wikipedia.org/wiki/Depth_perception"],
-  name: 'Räumliches Sehen & Tiefenwahrnehmung Test',
-  applicationCategory: 'HealthApplication',
+  name: 'Entfernung schätzen: Tiefenwahrnehmung üben',
+  applicationCategory: 'GameApplication',
   operatingSystem: 'All',
   offers: { '@type': 'Offer', price: '0', priceCurrency: 'EUR' },
-  description: 'Wissenschaftlicher Online-Test für räumliches Sehen, optisches Looming und präzise Entfernungsschätzung herannahender Objekte.',
+  description: 'Browser-Übung zur Entfernungsschätzung: Eine Kugel nähert sich, der Klick im Moment der Deckung mit dem Zielring wird als Timing-Fehler in Prozent ausgewertet. Kein Sehtest.',
   url: 'https://skilldrills.online/de/drills/visual/depth-perception/distance-judgment',
   publisher: { '@type': 'Organization', name: 'SkillDrills', url: 'https://skilldrills.online/de' },
   dateModified: '2026-09-05',
@@ -77,7 +75,7 @@ const softwareApplicationSchema = {
 const webAppSchema = {
   '@context': 'https://schema.org',
   '@type': 'WebApplication',
-  name: 'Tiefenwahrnehmung Simulator Online',
+  name: 'Entfernung schätzen Online',
   applicationCategory: 'GameApplication',
   operatingSystem: 'All',
   browserRequirements: 'Moderner Webbrowser mit HTML5 Canvas und kontinuierlicher Pointer-Event-Unterstützung',
@@ -89,9 +87,9 @@ const webAppSchema = {
 const videoGameSchema = {
   '@context': 'https://schema.org',
   '@type': 'VideoGame',
-  name: 'Distance Judgment 3D Wahrnehmungsdrill',
+  name: 'Entfernung schätzen: Abfang-Timing-Drill',
   url: 'https://skilldrills.online/de/drills/visual/depth-perception/distance-judgment',
-  description: 'Visueller Interzeptions-Drill zum Training von Tiefenschärfe, Time-to-Contact (TTC) und Zielabfanggenauigkeit.',
+  description: 'Visueller Timing-Drill zum Üben von Entfernungsschätzung, Time-to-Contact (TTC) und Abfanggenauigkeit.',
   genre: ['Precision Game', 'Visual Training', 'Esports'],
   gamePlatform: ['Web Browser', 'Desktop', 'Mobile'],
   applicationCategory: 'Game',
@@ -101,8 +99,8 @@ const videoGameSchema = {
 const howToSchema = {
   '@context': 'https://schema.org',
   '@type': 'HowTo',
-  name: 'Anleitung zur Verbesserung von räumlichem Sehen und Entfernungsschätzung',
-  description: 'Systematisches Trainingsprotokoll zur Erkennung optischer Expansion und präzisen zeitlichen Abfangung.',
+  name: 'Anleitung zur Übung der Entfernungsschätzung',
+  description: 'Trainingsprotokoll, um die optische Expansion einer herannahenden Kugel zu beobachten und den Klick zeitlich genau zu setzen.',
   step: [
     {
       '@type': 'HowToStep',
@@ -122,7 +120,7 @@ const howToSchema = {
       '@type': 'HowToStep',
       position: 3,
       name: 'Exakter Koinzidenz-Abfang',
-      text: 'Drücke die Leertaste oder klicke im exakten Moment, in dem die Kugel den Zielring schneidet.',
+      text: 'Drücke die Leertaste oder klicke in dem Moment, in dem die Kugel den Zielring schneidet.',
       url: 'https://skilldrills.online/de/drills/visual/depth-perception/distance-judgment#step-3'
     },
     {
@@ -141,10 +139,10 @@ const faqSchema = {
   mainEntity: [
     {
       '@type': 'Question',
-      name: 'Was ist der Test für räumliches Sehen und Entfernungsschätzung?',
+      name: 'Was misst diese Übung zur Entfernungsschätzung, und was nicht?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Dieser Test misst deine Fähigkeit, Entfernungen und Annäherungsgeschwindigkeiten im dreidimensionalen Raum präzise zu beurteilen. Er nutzt monokulare Tiefenhinweise wie optisches Looming (Netzhautbildexpansion), um die Time-to-Contact (TTC) zu bestimmen.',
+        text: 'Du schätzt ein, wann eine herannahende Kugel den Zielring ausfüllt, und klickst in diesem Moment. Ausgewertet wird dein Timing-Fehler in Prozent. Es ist kein Sehtest und kein Test auf Stereosehen: Auf einem flachen Bildschirm gibt es keine binokulare Disparität, nur monokulare Hinweise wie die Größenzunahme (Looming).',
       },
     },
     {
@@ -152,7 +150,7 @@ const faqSchema = {
       name: 'Wie unterscheidet sich dieser Test vom klassischen Howard-Dolman-Test?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Der Howard-Dolman-Test (1919) verwendet drei physische Stäbchen zur Messung der binokularen Disparität (Stereosehschärfe). Auf einem flachen 2D-Bildschirm entfällt echte Stereoskopie; stattdessen trainiert dieser Test die dynamische optische Expansionsrate (Lee, 1976), die im realen Straßenverkehr und Sport entscheidend ist.',
+        text: 'Der Howard-Dolman-Test (1919) verwendet drei physische Stäbchen zur Messung der binokularen Disparität (Stereosehschärfe). Auf einem flachen 2D-Bildschirm entfällt echte Stereoskopie; stattdessen übt diese Übung das Einschätzen der optischen Expansionsrate (Lee, 1976).',
       },
     },
     {
@@ -160,31 +158,31 @@ const faqSchema = {
       name: 'Was versteht man unter optischem Looming und Time-to-Contact (TTC)?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Wenn sich ein Objekt nähert, wächst sein Bild auf der Netzhaut exponentiell. David Lee (1976) bewies mit der Tau-Variable, dass das Gehirn die verbleibende Zeit bis zur Kollision direkt aus dem Verhältnis von Bildgröße zu Expansionsrate berechnet, ohne die absolute Größe oder Distanz zu kennen.',
+        text: 'Wenn sich ein Objekt nähert, wächst sein Bild auf der Netzhaut exponentiell. David Lee (1976) beschrieb mit der Tau-Variable, wie sich die verbleibende Zeit bis zur Kollision aus dem Verhältnis von Bildgröße zu Expansionsrate ableiten lässt, ohne die absolute Größe oder Distanz zu kennen.',
       },
     },
     {
       '@type': 'Question',
-      name: 'Warum ist räumliches Sehen für den Führerschein und Berufskraftfahrer vorgeschrieben?',
+      name: 'Ersetzt diese Übung den Sehtest für den Führerschein?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Beim Überholen, Einfädeln und Rangieren müssen Fahrer Entfernungen zu anderen Fahrzeugen in Sekundenbruchteilen einschätzen. Eine Störung des räumlichen Sehens führt zu gravierenden Fehleinschätzungen des Bremswegs.',
+        text: 'Nein. Der Sehtest für die Fahrerlaubnis wird von einer anerkannten Stelle durchgeführt, etwa beim Augenarzt oder Optiker. Diese Übung ist ein Spiel zum Üben von Abfang-Timing und liefert keine Aussage über dein Sehvermögen.',
       },
     },
     {
       '@type': 'Question',
-      name: 'Warum scheitern viele Menschen an Sehtests für räumliches Sehen?',
+      name: 'Wann sollte ich mein räumliches Sehen augenärztlich prüfen lassen?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Häufige Ursachen sind unkorrigierte Fehlsichtigkeiten (unterschiedliche Sehstärke beider Augen / Anisometropie), Astigmatismus, Schielen (Strabismus) oder starke Übermüdung der Augenmuskeln durch Bildschirmarbeit.',
+        text: 'Bei Doppelbildern, häufigem Danebengreifen, Schielen oder unterschiedlicher Sehstärke beider Augen (Anisometropie) lass die Augen untersuchen. Ein schlechtes Ergebnis in dieser Übung ist kein Befund; Müdigkeit, Bildschirm und Eingabegerät beeinflussen es.',
       },
     },
     {
       '@type': 'Question',
-      name: 'Kann man räumliches Sehen und Entfernungsschätzung trainieren?',
+      name: 'Kann man Entfernungsschätzung und Abfang-Timing üben?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Ja. Während grobe anatomische Defekte augenärztlich korrigiert werden müssen, kann die neuronale Verarbeitungsgeschwindigkeit für optisches Looming und zeitliche Interzeption durch wiederholtes dynamisches Training messbar geschärft werden.',
+        text: 'Das Abfang-Timing in dieser Übung kannst du durch Wiederholung vermutlich verbessern, weil du Rückmeldung zu jedem Versuch bekommst. Ein Übertrag auf Straßenverkehr oder Sport ist nicht belegt, und anatomische Ursachen gehören in augenärztliche Hände.',
       },
     },
     {
@@ -197,18 +195,18 @@ const faqSchema = {
     },
     {
       '@type': 'Question',
-      name: 'Welche Rolle spielt räumliches Sehen in Sportarten wie Tennis oder Baseball?',
+      name: 'Warum ist Time-to-Contact bei Ballsportarten wichtig?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Athleten müssen die Flugbahn eines schnellen Balls in 200 bis 400 Millisekunden antizipieren. Die visuelle Extraktion der Expansionsrate steuert den exakten Zeitpunkt des Schwungs auf die Millisekunde genau.',
+        text: 'Bei schnellen Bällen bleibt nur ein Bruchteil einer Sekunde zum Reagieren. Die Forschung zu Time-to-Contact beschreibt, wie sich der Zeitpunkt des Treffens aus der Größenzunahme des Bildes abschätzen lässt (Lee, 1976). Die Übung zeigt dir diesen Hinweis am Bildschirm; ein Leistungsversprechen für den Sport gibt sie nicht.',
       },
     },
     {
       '@type': 'Question',
-      name: 'Welche Rolle spielt die Bildwiederholrate (Hz) des Monitors bei diesem Test?',
+      name: 'Welche Rolle spielt die Bildwiederholrate (Hz) des Monitors bei dieser Übung?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Monitore mit 144 Hz oder 240 Hz reduzieren die Anzeigeverzögerung auf unter 7 ms gegenüber 16,7 ms bei 60 Hz. Dies ermöglicht eine feinkörnigere visuelle Erkennung der Expansionskante im Moment des Abfangs.',
+        text: 'Ein Bild dauert bei 60 Hz rund 16,7 ms, bei 144 Hz rund 6,9 ms und bei 240 Hz rund 4,2 ms. Das verändert, wie fein du den Moment der Deckung sehen kannst. Vergleiche deine Ergebnisse deshalb nur auf demselben Monitor.',
       },
     },
     {
@@ -223,26 +221,27 @@ const faqSchema = {
 };
 
 const distanceGuideDe = {
-  heading: 'Räumliches Sehen testen: Entfernungsschätzung und Tiefensehen',
+  heading: 'Entfernung schätzen: Tiefenwahrnehmung und Abfang-Timing üben',
   intro: [
-    'Tiefenwahrnehmung (Stereosehen und räumliches Urteilsvermögen) ist die sensorische und neurologische Fähigkeit, den Raum dreidimensional zu erfassen und Entfernungen, räumliche Tiefenstaffelungen sowie Annäherungsgeschwindigkeiten von Objekten präzise zu beurteilen. Im Motorsport, in der Luftfahrt, beim Führen von Nutzfahrzeugen (Führerschein-Sehtest nach FeV) und im wettbewerbsorientierten E-Sport entscheidet diese Fähigkeit im Bruchteil einer Sekunde über erfolgreiches Abfangen oder folgenschwere Kollisionen.',
-    'Dieser Drill operationalisiert die geometrischen Grundlagen des klassischen Howard-Dolman-Stereoapparats (Howard, 1919) und der ökologischen Optik von David N. Lee (1976) sowie David Regan & Kenneth I. Beverley (1978). Durch das Projizieren einer dreidimensionalen Kugel entlang eines virtuellen Tunnels auf eine feste Referenzebene trainiert der Drill das visuelle System, optische Expansionsraten (Looming) und die geschätzte Kontaktzeit (Time-to-Contact, τ) unter stetig ansteigenden Geschwindigkeiten exakt zu berechnen.',
-    'Präzision & Messmethodik: Sämtliche Zeitstempel werden lokal über die hochauflösende performance.now()-Schnittstelle des Browsers mit Submillisekunden-Genauigkeit erfasst. Die Abweichung wird als relativer prozentualer Durchmesserfehler errechnet (|Tatsächlicher Durchmesser - Zieldurchmesser| / Zieldurchmesser). Physikalische Latenzen wie Monitor-Quantisierungszeiten (~16,7 ms bei 60 Hz, ~6,9 ms bei 144 Hz, ~4,1 ms bei 240 Hz) und USB-Abtastraten (125 Hz vs. 1000 Hz) bedingen messtechnische Toleranzen (Woods et al., 2015). Differenzen unter 5 ms stellen Messrauschen dar; vergleichen Sie Ergebnisse primär auf demselben Hardwaresetup.',
+    'Tiefenwahrnehmung ist die Fähigkeit, Entfernungen und die räumliche Reihenfolge von Objekten zu beurteilen. Dazu nutzt das Gehirn binokulare Hinweise (Stereosehen) und monokulare Hinweise wie Größenänderung, Überdeckung und Bewegungsparallaxe. Diese Übung ist kein Test des Stereosehens und keine augenärztliche Untersuchung.',
+    'Auf deinem flachen Bildschirm fehlt die binokulare Disparität, die der klassische Howard-Dolman-Apparat (Howard, 1919) misst. Hier siehst du nur einen monokularen Hinweis: Eine Kugel wächst entlang eines virtuellen Tunnels auf den Zielring zu. Aus dieser Größenzunahme lässt sich die Time-to-Contact (τ) ableiten (Lee, 1976; Regan & Beverley, 1978). Du übst, den Klick genau in dem Moment zu setzen, in dem die Kugel den Ring ausfüllt, bei stetig steigendem Tempo.',
+    'Präzision & Messmethodik: Sämtliche Zeitstempel werden lokal über die hochauflösende performance.now()-Schnittstelle des Browsers erfasst. Die Abweichung wird als relativer prozentualer Durchmesserfehler errechnet (|Tatsächlicher Durchmesser - Zieldurchmesser| / Zieldurchmesser). Physikalische Latenzen wie Monitor-Quantisierungszeiten (~16,7 ms bei 60 Hz, ~6,9 ms bei 144 Hz, ~4,1 ms bei 240 Hz) und USB-Abtastraten (125 Hz vs. 1000 Hz) bedingen messtechnische Toleranzen (Woods et al., 2015). Differenzen unter 5 ms stellen Messrauschen dar; vergleichen Sie Ergebnisse primär auf demselben Hardwaresetup.',
     'Datenschutz & Transparenz: SkillDrills erfasst keinerlei personenbezogene Daten, diagnostische Sehprofile oder zentrale Telemetrie. Sämtliche Bestleistungen, Fehlerquoten und Levelstufen verbleiben ausschließlich im lokalen Speicher (LocalStorage) Ihres Webbrowsers.'
   ],
   benchmarks: {
     title: 'Orientierungswerte für Tiefensehen und Zielgenauigkeit',
-    headers: ['Leistungsstufe', 'Mittlere Tiefenabweichung', 'Punkte & Level', 'Visuelles Profil'],
+    headers: ['Übungsstufe', 'Mittlere Tiefenabweichung', 'Punkte & Level', 'Einordnung'],
+    note: 'Die Bereiche sind redaktionelle Übungsmarken, keine Bevölkerungsstatistik und kein Sehbefund.',
     rows: [
-      ['Tier 1: Apex Stereoskopie-Meister', 'Unter 5,0 % Fehler', '1500+ Pkt | Level 7+', 'Exzellente Looming-Wahrnehmung, perfekte zeitliche Koinzidenz.'],
-      ['Tier 2: Hohe Tiefenschärfe', '5,0 % – 9,9 % Fehler', '1100 – 1499 Pkt | Level 5–6', 'Starke räumliche Vorausschau, sichere Anpassung an hohes Tempo.'],
-      ['Tier 3: Solide Basis-Wahrnehmung', '10,0 % – 15,9 % Fehler', '750 – 1099 Pkt | Level 3–4', 'Durchschnittliche gesunde Schärfe, leichte Latenz bei Höchsttempo.'],
-      ['Tier 4: Mäßige Tiefensensitivität', '16,0 % – 25,0 % Fehler', '450 – 749 Pkt | Level 2', 'Neigung zu verfrühtem Auslösen vor echter Deckungsgleichheit.'],
-      ['Tier 5: Entwicklungsbedarf', 'Über 25,0 % Fehler', 'Unter 450 Pkt | Level 1', 'Erhebliche zeitliche Schätzfehler, erhöhte Reaktionsstreuung.'],
+      ['Stufe 1', 'Unter 5,0 % Fehler', '1500+ Pkt | Level 7+', 'Sehr genaues Timing, Klick fast exakt bei Deckung.'],
+      ['Stufe 2', '5,0 % – 9,9 % Fehler', '1100 – 1499 Pkt | Level 5–6', 'Gutes Timing, stabile Anpassung an höheres Tempo.'],
+      ['Stufe 3', '10,0 % – 15,9 % Fehler', '750 – 1099 Pkt | Level 3–4', 'Solides Timing, leichte Verzögerung bei hohem Tempo.'],
+      ['Stufe 4', '16,0 % – 25,0 % Fehler', '450 – 749 Pkt | Level 2', 'Klick oft vor der vollständigen Deckung.'],
+      ['Stufe 5', 'Über 25,0 % Fehler', 'Unter 450 Pkt | Level 1', 'Große Schätzfehler; mehr Wiederholungen und langsamere Stufen helfen.'],
     ],
   },
   protocols: {
-    title: 'Übungen für räumliches Sehen und Entfernungsschätzung',
+    title: 'Übungen zur Entfernungsschätzung',
     items: [
       {
         title: 'Protokoll 1: Optische Expansion & TTC-Kalkulation (Lee 1976)',
@@ -269,9 +268,9 @@ const distanceGuideDe = {
     'Klicken Sie mit der Maus, tippen Sie auf den Bildschirm oder drücken Sie die Leertaste genau in dem Moment, in dem die Kugel den Zielring perfekt ausfüllt.',
     'Verfolgen Sie Ihre Präzisionsauswertung (<5% Fehler: Perfekt / +150 PKT) und passen Sie sich den steigenden Geschwindigkeiten über 45 Sekunden an.'
   ],
-  audience: 'Kraftfahrer und Berufskraftfahrer zur Vorbereitung auf den Sehtest für LKW- und Personenbeförderungs-Führerscheine, Sportler in Ballsportarten (Tennis, Baseball, Tischtennis), Piloten sowie Gamer, die ihre räumliche Einschätzung und ihr Abfang-Timing schulen möchten.',
+  audience: 'Gamer, Ballsportler und alle, die ihr Abfang-Timing und ihre Entfernungsschätzung am Bildschirm üben möchten. Wer sein Sehvermögen prüfen lassen will, geht zum Augenarzt oder Optiker.',
   faqs: {
-    title: 'Häufig gestellte Fragen zu räumlichem Sehen & Tiefentest',
+    title: 'Häufig gestellte Fragen zur Entfernungsschätzung',
     items: faqSchema.mainEntity.map((q) => ({
       q: q.name,
       a: q.acceptedAnswer.text,
@@ -289,14 +288,14 @@ const distanceGuideDe = {
 };
 
 const copyDe = {
-  title: 'Räumliches Sehen Test',
-  subtitle: 'Tiefensehen & Entfernung üben',
-  caption: 'Tiefenwahrnehmung ist die Beurteilung von Entfernung und räumlicher Reihenfolge. Auf einem flachen Bildschirm wird vor allem die optische Expansionsrate (Lee, 1976; Regan & Beverley, 1978) gemessen — die Geschwindigkeit, mit der das Bild auf der Netzhaut wächst, bestimmt die Time-to-Contact ohne Vorkenntnis von Größe oder Distanz.',
+  title: 'Entfernung schätzen',
+  subtitle: 'Tiefenwahrnehmung & Abfang-Timing üben',
+  caption: 'Kein Sehtest: Auf einem flachen Bildschirm übst du, die Größenzunahme einer Kugel (optische Expansion, Lee, 1976; Regan & Beverley, 1978) zu nutzen, um den Zeitpunkt der Deckung mit dem Zielring einzuschätzen.',
   statScore: 'Punkte',
   statTime: 'Zeit',
   statLevel: 'Level',
   statBestScore: 'Rekord',
-  startTitle: 'Räumliches Sehen Pro',
+  startTitle: 'Entfernung schätzen',
   startSubtitle: 'Bewegtes Ziel: Entfernung einschätzen und treffen',
   startBtn: 'Test starten',
   getReady: 'BEREITMACHEN',
@@ -321,12 +320,12 @@ const copyDe = {
   rule4Text: 'Verfehlen / Zeitüberschreitung',
   rule4Highlight: 'Kein Punktabzug',
   rule4Result: 'Nächstes Objekt startet sofort',
-  aboutTitle: 'Über den Test für räumliches Sehen',
-  overviewTitle: 'Was misst dieser Tiefenwahrnehmungstest?',
-  overviewLead: 'Räumliches Sehen ermöglicht es dem Menschen, Entfernungen einzuschätzen und Objekte im dreidimensionalen Raum zielsicher abzufangen.',
-  overviewBody: 'Der Test nutzt die optische Expansionsrate (Looming), um die Reaktionsgenauigkeit bei herannahenden Zielen zu bewerten. Er schult das Zusammenspiel von visueller Wahrnehmung und motorischer Timing-Präzision.',
+  aboutTitle: 'Über die Übung zur Entfernungsschätzung',
+  overviewTitle: 'Was misst diese Übung?',
+  overviewLead: 'Die Übung misst, wie genau du den Zeitpunkt der Deckung einer herannahenden Kugel mit dem Zielring einschätzt.',
+  overviewBody: 'Sie nutzt die optische Expansionsrate (Looming) als Hinweis und wertet den Klick als prozentualen Timing-Fehler. Sie ist kein Sehtest und ersetzt keine augenärztliche Untersuchung.',
   aboutCards: [
-    { iconBg: 'bg-blue-600', title: 'Zielgruppe', text: 'Autofahrer, Sportler (Tennis, Ballsport), Gamer und Berufstätige mit hohen Anforderungen an räumliche Orientierung.' },
+    { iconBg: 'bg-blue-600', title: 'Zielgruppe', text: 'Gamer, Ballsportler und alle, die Abfang-Timing am Bildschirm üben möchten.' },
     { iconBg: 'bg-cyan-600', title: 'Trainierte Fähigkeiten', text: 'Optisches Looming, Time-to-Contact Berechnung, Auge-Hand-Timing und räumliche Antizipation.' },
     { iconBg: 'bg-purple-600', title: 'Erfolgstipp', text: 'Blicke auf den stationären Zielring und löse im Moment der vollständigen Deckungsgleichheit aus.' }
   ]

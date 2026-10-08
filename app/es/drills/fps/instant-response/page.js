@@ -205,7 +205,7 @@ export default function InstantResponseEsPage() {
         "@type": "HowToStep",
         "position": 2,
         "name": "Iniciar Sesión con Bloqueo de Puntero",
-        "text": "Comienza la prueba en pantalla completa para registrar eventos con precisión de submilisegundos.",
+        "text": "Comienza la prueba en pantalla completa para registrar eventos con la resolución temporal del navegador (~1 ms).",
         "url": "https://skilldrills.online/es/drills/fps/instant-response#step-2"
       },
       {

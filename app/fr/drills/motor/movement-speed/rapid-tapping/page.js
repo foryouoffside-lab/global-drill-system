@@ -233,7 +233,7 @@ const guideProps = {
   },
   benchmark: {
     title: 'Tableau des Niveaux de CPS et Baremage Officiel',
-    description: 'Baremage basé sur la fréquence moyenne de clics par seconde, le pic de salve sur 5 secondes et la technique mobilisée.',
+    description: 'Paliers éditoriaux de pratique pour comparer vos propres séances ; ce ne sont pas des statistiques de population ni des normes cliniques. Baremage basé sur la fréquence moyenne de clics par seconde, le pic de salve sur 5 secondes et la technique mobilisée.',
     columns: ['Tier', 'Rang', 'CPS Moyen', 'Pic de Burst (5s)', 'Technique Mobilisée', 'Catégorie'],
     rows: [
       {
@@ -242,7 +242,7 @@ const guideProps = {
         stat: '16.0+ CPS',
         level: '20.0+ CPS',
         accuracy: 'Butterfly / Drag Clicking',
-        percentile: 'Élite',
+        marker: 'Élite',
       },
       {
         tier: 'Tier 2',
@@ -250,7 +250,7 @@ const guideProps = {
         stat: '12.0–15.9 CPS',
         level: '15.0–19.0 CPS',
         accuracy: 'Jitter Clicking Maîtrisé',
-        percentile: 'Avancé',
+        marker: 'Avancé',
       },
       {
         tier: 'Tier 3',
@@ -258,7 +258,7 @@ const guideProps = {
         stat: '9.0–11.9 CPS',
         level: '11.0–14.0 CPS',
         accuracy: 'Frappe Mono-Doigt Rapide',
-        percentile: 'Solide',
+        marker: 'Solide',
       },
       {
         tier: 'Tier 4',
@@ -266,7 +266,7 @@ const guideProps = {
         stat: '6.0–8.9 CPS',
         level: '7.5–10.0 CPS',
         accuracy: 'Mono-Doigt Standard',
-        percentile: 'Moyenne Standard',
+        marker: 'Moyenne Standard',
       },
       {
         tier: 'Tier 5',
@@ -274,7 +274,7 @@ const guideProps = {
         stat: 'Moins de 6.0 CPS',
         level: 'Moins de 7.5 CPS',
         accuracy: 'Mono-Doigt Débutant',
-        percentile: 'Débutant',
+        marker: 'Débutant',
       },
     ],
   },

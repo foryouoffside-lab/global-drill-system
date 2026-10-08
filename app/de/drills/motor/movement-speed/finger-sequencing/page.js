@@ -232,7 +232,7 @@ const guideProps = {
   },
   benchmark: {
     title: 'Standardisierte Leistungs-Benchmarks für Sequenz-Aiming',
-    description: 'Orientierungswerte zur persönlichen Leistungsbeurteilung. Dargestellt werden Latenz zwischen Klicks, Level-Obergrenze und Ketten-Genauigkeit.',
+    description: 'Orientierungswerte zur persönlichen Leistungsbeurteilung. Dargestellt werden Latenz zwischen Klicks, Level-Obergrenze und Ketten-Genauigkeit. Die Bereiche sind redaktionelle Übungsmarken, keine Bevölkerungsstatistik.',
     columns: ['Tier', 'Rang', 'Übergangs-Latenz', 'Level-Erreichung', 'Ketten-Genauigkeit', 'Kategorie'],
     rows: [
       {
@@ -241,7 +241,7 @@ const guideProps = {
         stat: 'Unter 180 ms',
         level: 'Stufe 12+',
         accuracy: '98–100%',
-        percentile: 'Top 1% (Elite)',
+        category: 'Stufe 1',
       },
       {
         tier: 'Tier 2',
@@ -249,7 +249,7 @@ const guideProps = {
         stat: '180–230 ms',
         level: 'Stufe 9–11',
         accuracy: '95–97%',
-        percentile: 'Top 5% (Fortgeschritten)',
+        category: 'Stufe 2',
       },
       {
         tier: 'Tier 3',
@@ -257,7 +257,7 @@ const guideProps = {
         stat: '230–300 ms',
         level: 'Stufe 6–8',
         accuracy: '90–94%',
-        percentile: 'Top 20% (Solide)',
+        category: 'Stufe 3',
       },
       {
         tier: 'Tier 4',
@@ -265,7 +265,7 @@ const guideProps = {
         stat: '300–400 ms',
         level: 'Stufe 3–5',
         accuracy: '82–89%',
-        percentile: 'Durchschnitt',
+        category: 'Stufe 4',
       },
       {
         tier: 'Tier 5',
@@ -273,7 +273,7 @@ const guideProps = {
         stat: 'Über 400 ms',
         level: 'Stufe 1–2',
         accuracy: 'Unter 82%',
-        percentile: 'Einsteiger',
+        category: 'Stufe 5',
       },
     ],
   },

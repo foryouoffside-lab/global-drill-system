@@ -246,7 +246,7 @@ export default function LocalizedWordRecallPage() {
       "La investigación científica de la memoria verbal comenzó con Hermann Ebbinghaus (1885) y su formulación matemática de la curva del olvido y la dinámica del aprendizaje serial. En 1958, el psicólogo suizo André Rey estandarizó el Test de Aprendizaje Auditivo-Verbal de Rey (RAVLT) para cuantificar la amplitud de memoria inmediata, la susceptibilidad a interferencias proactivas y retroactivas, y la retención demorada en poblaciones clínicas y asintomáticas.",
       "Bennet B. Murdock Jr. (1962) formuló matemáticamente el efecto de posición serial en el recuerdo libre, delimitando el efecto de primacía (consolidación a largo plazo de las primeras palabras) y el efecto de recencia (mantenimiento transitorio en el búfer ecoico a corto plazo). Posteriormente, Craik & Lockhart (1972) establecieron el modelo de niveles de procesamiento, demostrando que la codificación semántica profunda —como el encadenamiento narrativo y la categorización temática— supera con creces la simple repetición memorística superficial.",
       "Con cronometría digital de alta precisión en navegador (Woods et al., 2015), este ejercicio mide tanto tu amplitud de retención de palabras como tu velocidad de recuperación motora mediante un protocolo de escalera adaptativa que converge en tu capacidad cognitiva real.",
-      "Metodología de medición y latencia de hardware: Cada evento interactivo se registra localmente en el navegador a través de performance.now() con resolución de submilisegundos. Cabe destacar que los navegadores limitan la precisión temporal a ~1 ms como salvaguarda contra ataques de temporización (Spectre), y los monitores cuantizan la actualización visual a sus intervalos de refresco nativos (~16,7 ms a 60 Hz, ~6,9 ms a 144 Hz, ~4,1 ms a 240 Hz, Woods et al., 2015). Variaciones menores a 5 ms constituyen ruido instrumental habitual; compare sus progresos principalmente sobre el mismo hardware.",
+      "Metodología de medición y latencia de hardware: Cada evento interactivo se registra localmente en el navegador a través de performance.now() con la resolución temporal del navegador. Cabe destacar que los navegadores limitan la precisión temporal a ~1 ms como salvaguarda contra ataques de temporización (Spectre), y los monitores cuantizan la actualización visual a sus intervalos de refresco nativos (~16,7 ms a 60 Hz, ~6,9 ms a 144 Hz, ~4,1 ms a 240 Hz, Woods et al., 2015). Variaciones menores a 5 ms constituyen ruido instrumental habitual; compare sus progresos principalmente sobre el mismo hardware.",
       "Transparencia y privacidad de datos: SkillDrills no almacena ni recopila datos agregados de usuarios ni métricas de telemetría. Todas sus puntuaciones, tiempos de respuesta y progresiones de nivel permanecen guardadas estrictamente en el almacenamiento local (LocalStorage) de su navegador web y jamás se envían a servidores externos. Los baremos de referencia provienen íntegramente de la literatura científica citada a continuación.",
       "Aviso de salud y descargo de responsabilidad: Este ejercicio es un juego cognitivo web gratuito orientado al entrenamiento mental y la práctica personal. No constituye un dispositivo médico, una herramienta de diagnóstico clínico ni un tratamiento para el deterioro cognitivo o afecciones neurológicas. Si tiene inquietudes sobre su memoria o agudeza cognitiva, consulte a un profesional médico o neuropsicólogo colegiado."
     ],
@@ -255,37 +255,37 @@ export default function LocalizedWordRecallPage() {
       headers: ["Nivel de Rendimiento", "Amplitud (Palabras)", "Puntuación de Recuerdo", "Perfil Kognitivo y de Recuperación"],
       rows: [
         [
-                "Nivel 1 (Superior / Percentil 99)",
+                "Etapa 1",
                 "8 – 11+ Palabras",
                 "1.100+ Puntos",
                 "Dominio mnemotécnico; despliega cadenas narrativas profundas (Craik & Lockhart, 1972); cadencia de recuperación inferior a 800 ms"
         ],
         [
-                "Nivel 2 (Alto Promedio / Percentil 85–95)",
+                "Etapa 2",
                 "6 – 7 Palabras",
                 "850 – 1.099 Puntos",
                 "Supera la media adulta estándar; agrupa palabras en pares o tríadas; recuerdo consistente bajo presión de tiempo"
         ],
         [
-                "Nivel 3 (Promedio Adulto / Percentil 50)",
+                "Etapa 3",
                 "4 – 5 Palabras",
                 "550 – 849 Puntos",
                 "Media de la población en ensayos iniciales de recuerdo libre; muestra la clásica caída en U en palabras intermedias"
         ],
         [
-                "Nivel 4 (Bajo Promedio / Cuello de Botella)",
+                "Etapa 4",
                 "3 Palabras",
                 "350 – 549 Puntos",
                 "Depende exclusivamente del eco fonológico sin codificación semántica; dificultad para superar el búfer de recencia"
         ],
         [
-                "Nivel 5 (Amplitud Reducida)",
+                "Etapa 5",
                 "< 3 Palabras",
                 "< 350 Puntos",
                 "Rápido desvanecimiento de trazas mnémicas; alta interferencia proactiva; dificultad para evocar sin pistas"
         ]
 ],
-      note: "La amplitud de palabras indica la longitud máxima sin errores lograda en la escalera adaptativa; los baremos reflejan ensayos iniciales en adultos (Rey, 1964; Murdock, 1962)."
+      note: "Etapas editoriales de práctica para comparar tus propias sesiones; no son estadísticas de población ni normas clínicas. La amplitud de palabras indica la longitud máxima sin errores lograda en la escalera adaptativa; los baremos reflejan ensayos iniciales en adultos (Rey, 1964; Murdock, 1962)."
     },
     techniques: {
       title: "Protocolos Basados en Evidencia para Expandir la Amplitud Verbal",

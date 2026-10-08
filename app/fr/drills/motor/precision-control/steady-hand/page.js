@@ -231,7 +231,7 @@ const guideProps = {
   },
   benchmark: {
     title: 'Barème de Référence du Jeu du Fil Électrique',
-    description: 'Grille d\'évaluation issue du modèle de guidage d\'Accot & Zhai (1997). Les échelons intègrent le niveau atteint, la largeur du couloir et l\'écart moyen par rapport au centre.',
+    description: 'Paliers éditoriaux de pratique pour comparer vos propres séances ; ce ne sont pas des statistiques de population ni des normes cliniques. Grille d\'évaluation issue du modèle de guidage d\'Accot & Zhai (1997). Les échelons intègrent le niveau atteint, la largeur du couloir et l\'écart moyen par rapport au centre.',
     columns: ['Niveau', 'Titre de Rang', 'Palier Validé', 'Largeur de Voie', 'Écart Moyen', 'Niveau de Maîtrise'],
     rows: [
       {
@@ -240,7 +240,7 @@ const guideProps = {
         stat: 'Niveau 12+',
         level: '12–15 px',
         accuracy: 'Moins de 2,5 px',
-        percentile: 'Exceptionnel',
+        marker: 'Exceptionnel',
       },
       {
         tier: 'Tier 2',
@@ -248,7 +248,7 @@ const guideProps = {
         stat: 'Niveau 9–11',
         level: '16–22 px',
         accuracy: 'Moins de 4,0 px',
-        percentile: 'Avancé',
+        marker: 'Avancé',
       },
       {
         tier: 'Tier 3',
@@ -256,7 +256,7 @@ const guideProps = {
         stat: 'Niveau 6–8',
         level: '23–32 px',
         accuracy: 'Moins de 6,5 px',
-        percentile: 'Solide',
+        marker: 'Solide',
       },
       {
         tier: 'Tier 4',
@@ -264,7 +264,7 @@ const guideProps = {
         stat: 'Niveau 3–5',
         level: '33–42 px',
         accuracy: 'Moins de 9,0 px',
-        percentile: 'Moyen',
+        marker: 'Moyen',
       },
       {
         tier: 'Tier 5',
@@ -272,7 +272,7 @@ const guideProps = {
         stat: 'Niveau 1–2',
         level: '43–50 px',
         accuracy: 'Plus de 9,0 px',
-        percentile: 'En apprentissage',
+        marker: 'En apprentissage',
       },
     ],
   },

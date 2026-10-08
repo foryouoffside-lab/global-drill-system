@@ -243,37 +243,37 @@ export default function LocalizedObjectLocationPage() {
       headers: ["Nível de Desempenho", "Objetos e Grade", "Pontuação", "Perfil de Vinculação e Mapa Cognitivo"],
       rows: [
         [
-                "Nível 1 (Excepcional / Percentil 99)",
+                "Faixa 1",
                 "Nível 8 – 10+ (8–10+ objetos, grade 6x6–7x7)",
                 "1.000+ Pontos",
                 "Desempenho visoespacial de elite; domina varredura por quadrantes e ancoragem em marcos; retém 8+ pares objeto-posição com facilidade; resposta em < 500 ms"
         ],
         [
-                "Nível 2 (Alto / Percentil 85–95)",
+                "Faixa 2",
                 "Nível 6 – 7 (6–7 objetos, grade 5x5–6x6)",
                 "750 – 999 Pontos",
                 "Bem acima da média da população; estruturação semântico-espacial consistente; alta imunidade à interferência em grades amplas; resposta em 500–700 ms"
         ],
         [
-                "Nível 3 (Média Adulta / Percentil 50)",
+                "Faixa 3",
                 "Nivel 4 – 5 (4–5 objetos, grade 4x4–5x5)",
                 "450 – 749 Pontos",
                 "Padrão médio da população (Eals & Silverman, 1994); consolida 4 conjunções (limite de Cowan); começa a perder itens centrais em matrizes 5x5; resposta em 700–950 ms"
         ],
         [
-                "Nível 4 (Abaixo da Média / Sobrecarga de Vinculação)",
-                "Nível 3 (3 objetos, grade 3x3–4x4)",
+                "Faixa 4",
+                "Faixa 3",
                 "250 – 449 Pontos",
                 "Guarda apenas 2–3 itens isolados; confunde posições próximas; vulnerável com a inclusão de novos distratores; resposta em 950–1.300 ms"
         ],
         [
-                "Nível 5 (Treino Recomendado / Retenção Frágil)",
+                "Faixa 5",
                 "Nível 1 – 2 (2 objetos, grade 3x3)",
                 "< 250 Pontos",
                 "Declínio acelerado do vestígio visual; incapacidade de unir a figura à coordenada; tempo de localização acima de 1.300 ms"
         ]
 ],
-      note: "A contagem de objetos e as dimensões da grade retratam o patamar máximo completado em 45 segundos, equiparado aos parâmetros do Silverman-Eals OLM e do CANTAB PAL."
+      note: "Faixas editoriais de prática para comparar suas próprias sessões; não são estatísticas de população nem normas clínicas. A contagem de objetos e as dimensões da grade retratam o patamar máximo completado em 45 segundos, equiparado aos parâmetros do Silverman-Eals OLM e do CANTAB PAL."
     },
     techniques: {
       title: "Estratégias cientificamente respaldadas para expandir a memória espacial",

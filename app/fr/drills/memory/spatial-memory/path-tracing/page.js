@@ -274,13 +274,13 @@ const pathTracingGuide = {
     title: "Paliers Normatifs de l'Empan Séquentiel de Trajectoire Spatiale",
     headers: ["Palier de Performance", "Empan & Échelle de Grille", "Score à l'Exercice", "Profil Cognitif & Rétention de Trajectoire"],
     rows: [
-      ["Palier 1 (Supérieur / 99e Percentile)", "Empan 10 – 14+ étapes (grille 6x6–7x7)", "1 200+ points", "Élite séquentielle visuo-spatiale ; décomposition des parcours complexes en 2–3 macro-vecteurs directionnels ; mémorisation parfaite dans le scribe interne ; cadence de clic sub-400 ms."],
-      ["Palier 2 (Moyenne Supérieure / 85e–95e Percentile)", "Empan 8 – 9 étapes (grille 5x5–6x6)", "900 – 1 199 points", "Dépassement net des moyennes adultes standards ; groupement vectoriel robuste (virages en L, diagonales, zigzags) ; résistance aux interférences sérielles ; cadence 400 – 600 ms."],
-      ["Palier 3 (Moyenne Adulte Standard / 50e Percentile)", "Empan 5 – 7 étapes (grille 4x4–5x5)", "600 – 899 points", "Norme adulte saine (Corsi, 1972 ; Kessels et al., 2000, empan 5,4 ± 0,9) ; rétention fluide de séquences de 5–6 étapes ; perte des points de virage intermédiaires sur grilles 5x5 ; cadence 600 – 850 ms."],
-      ["Palier 4 (Moyenne Inférieure / Dégradation Sérielle)", "Empan 4 étapes (grille 3x3–4x4)", "400 – 599 points", "Proche de la limite brute sans chunking (Cowan, 2001) ; tentative de mémoriser chaque coordonnée isolément sans regrouper les vecteurs ; cadence 850 – 1 100 ms."],
-      ["Palier 5 (En Développement / Empan Restreint)", "Empan < 4 étapes (grille 3x3)", "< 400 points", "Dégradation temporelle rapide de la trace ; vulnérabilité aux inversions d'ordre séquentiel ; difficulté à maintenir plus de 3 étapes après le délai de rétention ; cadence supérieure à 1 100 ms."]
+      ["Palier 1", "Empan 10 – 14+ étapes (grille 6x6–7x7)", "1 200+ points", "Élite séquentielle visuo-spatiale ; décomposition des parcours complexes en 2–3 macro-vecteurs directionnels ; mémorisation parfaite dans le scribe interne ; cadence de clic sub-400 ms."],
+      ["Palier 2", "Empan 8 – 9 étapes (grille 5x5–6x6)", "900 – 1 199 points", "Dépassement net des moyennes adultes standards ; groupement vectoriel robuste (virages en L, diagonales, zigzags) ; résistance aux interférences sérielles ; cadence 400 – 600 ms."],
+      ["Palier 3", "Empan 5 – 7 étapes (grille 4x4–5x5)", "600 – 899 points", "Norme adulte saine (Corsi, 1972 ; Kessels et al., 2000, empan 5,4 ± 0,9) ; rétention fluide de séquences de 5–6 étapes ; perte des points de virage intermédiaires sur grilles 5x5 ; cadence 600 – 850 ms."],
+      ["Palier 4", "Empan 4 étapes (grille 3x3–4x4)", "400 – 599 points", "Proche de la limite brute sans chunking (Cowan, 2001) ; tentative de mémoriser chaque coordonnée isolément sans regrouper les vecteurs ; cadence 850 – 1 100 ms."],
+      ["Palier 5", "Empan < 4 étapes (grille 3x3)", "< 400 points", "Dégradation temporelle rapide de la trace ; vulnérabilité aux inversions d'ordre séquentiel ; difficulté à maintenir plus de 3 étapes après le délai de rétention ; cadence supérieure à 1 100 ms."]
     ],
-    note: "La longueur de l'empan et la dimension de la grille reflètent le niveau maximal validé durant la session de 45 secondes ; percentiles normatifs calibrés sur les standards des Blocs de Corsi (Corsi, 1972 ; Kessels et al., 2000 ; Woods et al., 2015)."
+    note: "Paliers éditoriaux de pratique pour comparer vos propres séances ; ce ne sont pas des statistiques de population ni des normes cliniques. La longueur de l'empan et la dimension de la grille reflètent le niveau maximal validé durant la session de 45 secondes ; repères éditoriaux inspirés des standards des Blocs de Corsi (Corsi, 1972 ; Kessels et al., 2000 ; Woods et al., 2015)."
   },
   techniques: {
     title: "Protocoles Scientifiques pour Développer la Mémoire de Trajectoire",

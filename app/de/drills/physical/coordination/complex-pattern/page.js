@@ -289,13 +289,13 @@ const patternGuide = {
     title: 'Muster Merken Test – Visuelles Gedächtnis | SkillDrills',
     headers: ["Leistungsstufe", "Rangtitel (Rank Title)", "Punktwert-Spanne", "Erreichtes Level", "Pfadgenauigkeit", "Neuro-kognitives & motorisches Profil"],
     rows: [
-      ["Tier 1: Apex Pattern Master", "Apex Pattern Master", "17.000+ Pkt.", "Level 12 – 15", "> 92% Genauigkeit", "Top 0,1%: Hochgradig automatisiertes räumliches Chunking und meisterhafte Unterarm-Finger-Präzision (Cowan 2001; Lashley 1951)"],
-      ["Tier 2: Elite Sequence Tracer", "Elite Sequence Tracer", "13.000 – 16.999 Pkt.", "Level 9 – 11", "85 – 91% Genauigkeit", "Top 3%: Sicheres Beherrschen spitzwinkliger 6–7-Knoten-Pfade und exzellentes motorisches Feedforward-Gedächtnis (Baddeley 1974)"],
-      ["Tier 3: Advanced Spatial Navigator", "Advanced Spatial Navigator", "9.500 – 12.999 Pkt.", "Level 6 – 8", "76 – 84% Genauigkeit", "Top 15%: Solides räumliches Vorstellungsvermögen auf dem Niveau ambitionierter E-Sportler und Eignungstest-Kandidaten"],
-      ["Tier 4: Intermediate Waypoint Recaller", "Intermediate Waypoint Recaller", "6.000 – 9.499 Pkt.", "Level 3 – 5", "65 – 75% Genauigkeit", "Typische biologische Kapazitätsgrenze: Bei mehr als 4 Knoten treten Verzögerungen beim Abrufen und Pfadverzerrungen auf"],
-      ["Tier 5: Novice Trajectory Learner", "Novice Trajectory Learner", "< 6.000 Pkt.", "Level 1 – 2", "< 65% Genauigkeit", "Instabile Enkodierung flüchtiger Reize, deutliches Überschießen an Eckpunkten; grundlegendes Chunking-Training empfohlen"]
+      ["Stufe 1: Apex Pattern Master", "Apex Pattern Master", "17.000+ Pkt.", "Level 12 – 15", "> 92% Genauigkeit", "Hochgradig automatisiertes räumliches Chunking und meisterhafte Unterarm-Finger-Präzision (Cowan 2001; Lashley 1951)"],
+      ["Stufe 2: Elite Sequence Tracer", "Elite Sequence Tracer", "13.000 – 16.999 Pkt.", "Level 9 – 11", "85 – 91% Genauigkeit", "Sicheres Beherrschen spitzwinkliger 6–7-Knoten-Pfade und exzellentes motorisches Feedforward-Gedächtnis (Baddeley 1974)"],
+      ["Stufe 3: Advanced Spatial Navigator", "Advanced Spatial Navigator", "9.500 – 12.999 Pkt.", "Level 6 – 8", "76 – 84% Genauigkeit", "Solides räumliches Vorstellungsvermögen auf dem Niveau ambitionierter E-Sportler und Eignungstest-Kandidaten"],
+      ["Stufe 4: Intermediate Waypoint Recaller", "Intermediate Waypoint Recaller", "6.000 – 9.499 Pkt.", "Level 3 – 5", "65 – 75% Genauigkeit", "Typische biologische Kapazitätsgrenze: Bei mehr als 4 Knoten treten Verzögerungen beim Abrufen und Pfadverzerrungen auf"],
+      ["Stufe 5: Novice Trajectory Learner", "Novice Trajectory Learner", "< 6.000 Pkt.", "Level 1 – 2", "< 65% Genauigkeit", "Instabile Enkodierung flüchtiger Reize, deutliches Überschießen an Eckpunkten; grundlegendes Chunking-Training empfohlen"]
     ],
-    note: "Objektive Standards abgeleitet aus der Arbeitsgedächtnisforschung (Baddeley & Hitch 1974; Cowan 2001) und seriellen motorischen Steuerungsmodellen (Lashley 1951; Woodworth 1899)."
+    note: "Objektive Standards abgeleitet aus der Arbeitsgedächtnisforschung (Baddeley & Hitch 1974; Cowan 2001) und seriellen motorischen Steuerungsmodellen (Lashley 1951; Woodworth 1899). Die Bereiche sind redaktionelle Übungsmarken, keine Bevölkerungsstatistik."
   },
   techniques: {
     title: 'Muster Merken Test – Visuelles Gedächtnis | SkillDrills',

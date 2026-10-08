@@ -290,15 +290,15 @@ const ladderGuide = {
   ],
   benchmarks: {
     title: "Wissenschaftliche 5-Stufen-Normtabelle für die Koordinationsleiter",
-    headers: ["Leistungsstufe & Perzentil", "Rangtitel (Rank Title)", "Punktwert (45s)", "Erreichtes Level", "Max. Scrollgeschwindigkeit", "Neuromotorisches Profil"],
+    headers: ["Leistungsstufe", "Rangtitel (Rank Title)", "Punktwert (45s)", "Erreichtes Level", "Max. Scrollgeschwindigkeit", "Neuromotorisches Profil"],
     rows: [
-      ["Tier 1: Elite-Leitermeister (Top 0,1%)", "Apex Ladder Master", "17.000+ Punkte", "Level 12 – 15", "600 – 750 px/s", "Vollendetes Lashley-Chunking, fehlerfreies Halten des relativen Timings bei maximalem Tempo von 750 px/s (Lashley 1951; Schmidt 1975)"],
-      ["Tier 2: Rhythmus-Sprinter (Top 3%)", "Elite Rhythm Sprinter", "13.000 – 16.999 Punkte", "Level 9 – 11", "480 – 599 px/s", "Exzellente beidseitige Umschaltgeschwindigkeit, präzise Fitts-Abbremskurven auf komprimierten 10–12-px-Sprossen"],
-      ["Tier 3: Kompetenter Sprossensequenzer", "Proficient Step Sequencer", "9.500 – 12.999 Punkte", "Level 6 – 8", "350 – 479 px/s", "Solides Leistungsniveau im Leistungs- und eSport, stabile Links-Rechts-Rhythmik mit kontrolliertem Handgelenksnap"],
-      ["Tier 4: Mittlerer Rhythmuslerner", "Intermediate Cadence Learner", "6.000 – 9.499 Punkte", "Level 3 – 5", "230 – 349 px/s", "Durchschnittliches motorisches Reaktionsniveau, sensorische Feedback-Verzögerungen führen ab 350 px/s zu Sprossenfehlern"],
-      ["Tier 5: Einsteiger / Basisschulung", "Novice Rung Climber", "< 6.000 Punkte", "Level 1 – 2", "< 230 px/s", "Stockende Einzelreaktionen, Rhythmusabbrüche durch visuelles Suchen, Übung von Blickzentrierung und Vorprogrammierung empfohlen"]
+      ["Stufe 1: Elite-Leitermeister ", "Apex Ladder Master", "17.000+ Punkte", "Level 12 – 15", "600 – 750 px/s", "Vollendetes Lashley-Chunking, fehlerfreies Halten des relativen Timings bei maximalem Tempo von 750 px/s (Lashley 1951; Schmidt 1975)"],
+      ["Stufe 2: Rhythmus-Sprinter ", "Elite Rhythm Sprinter", "13.000 – 16.999 Punkte", "Level 9 – 11", "480 – 599 px/s", "Exzellente beidseitige Umschaltgeschwindigkeit, präzise Fitts-Abbremskurven auf komprimierten 10–12-px-Sprossen"],
+      ["Stufe 3: Kompetenter Sprossensequenzer", "Proficient Step Sequencer", "9.500 – 12.999 Punkte", "Level 6 – 8", "350 – 479 px/s", "Solides Leistungsniveau im Leistungs- und eSport, stabile Links-Rechts-Rhythmik mit kontrolliertem Handgelenksnap"],
+      ["Stufe 4: Mittlerer Rhythmuslerner", "Intermediate Cadence Learner", "6.000 – 9.499 Punkte", "Level 3 – 5", "230 – 349 px/s", "Durchschnittliches motorisches Reaktionsniveau, sensorische Feedback-Verzögerungen führen ab 350 px/s zu Sprossenfehlern"],
+      ["Stufe 5: Einsteiger / Basisschulung", "Novice Rung Climber", "< 6.000 Punkte", "Level 1 – 2", "< 230 px/s", "Stockende Einzelreaktionen, Rhythmusabbrüche durch visuelles Suchen, Übung von Blickzentrierung und Vorprogrammierung empfohlen"]
     ],
-    note: "Normiert nach den chronometrischen Standards der motorischen Programmierung (Lashley 1951, Schmidt 1975, Fitts 1954, Woods et al. 2015)."
+    note: "Normiert nach den chronometrischen Standards der motorischen Programmierung (Lashley 1951, Schmidt 1975, Fitts 1954, Woods et al. 2015). Die Bereiche sind redaktionelle Übungsmarken, keine Bevölkerungsstatistik."
   },
   techniques: {
     title: "Methodische Trainingsprotokolle für Beinarbeit & Sprossenschnelligkeit",

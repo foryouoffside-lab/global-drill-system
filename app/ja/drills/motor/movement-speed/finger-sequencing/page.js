@@ -241,7 +241,7 @@ const guideProps = {
         stat: '180 ms未満',
         level: 'レベル 12+',
         accuracy: '98–100%',
-        percentile: '上位1%（プロ・エリート級）',
+        percentile: '最上位段階',
       },
       {
         tier: 'Tier 2',
@@ -249,7 +249,7 @@ const guideProps = {
         stat: '180–230 ms',
         level: 'レベル 9–11',
         accuracy: '95–97%',
-        percentile: '上位5%（上級マスター）',
+        percentile: '上級段階',
       },
       {
         tier: 'Tier 3',
@@ -257,7 +257,7 @@ const guideProps = {
         stat: '230–300 ms',
         level: 'レベル 6–8',
         accuracy: '90–94%',
-        percentile: '上位20%（中上級実力者）',
+        percentile: '中上級段階',
       },
       {
         tier: 'Tier 4',

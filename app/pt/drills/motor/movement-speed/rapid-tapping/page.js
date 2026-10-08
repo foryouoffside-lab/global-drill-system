@@ -254,7 +254,7 @@ const guideProps = {
   },
   benchmark: {
     title: 'Tabela de CPS: faixas de referência por técnica',
-    description: 'Faixas editoriais para comparar suas próprias sessões, sem percentis de população medidos. As linhas de dedo único baseiam-se em referências da neuropsicologia motora (Halstead 1947; Todor & Kyprie 1980), enquanto as linhas de jitter e butterfly refletem dados empíricos de jogadores de alto rendimento.',
+    description: 'Faixas editoriais de prática para comparar suas próprias sessões; não são estatísticas de população nem normas clínicas. Faixas editoriais para comparar suas próprias sessões, sem percentis de população medidos. As linhas de dedo único baseiam-se em referências da neuropsicologia motora (Halstead 1947; Todor & Kyprie 1980), enquanto as linhas de jitter e butterfly refletem dados empíricos de jogadores de alto rendimento.',
     columns: ['Nível', 'Título de Rango', 'CPS Médio', 'Pico (5s)', 'Técnica de Clique', 'Faixa'],
     rows: [
       {
@@ -263,7 +263,7 @@ const guideProps = {
         stat: '16.0+ CPS',
         level: '20.0+ CPS',
         accuracy: 'Butterfly / Drag Clicking',
-        percentile: 'Faixa excepcional',
+        marker: 'Faixa excepcional',
       },
       {
         tier: 'Tier 2',
@@ -271,7 +271,7 @@ const guideProps = {
         stat: '12.0–15.9 CPS',
         level: '15.0–19.0 CPS',
         accuracy: 'Jitter Clicking Dominado',
-        percentile: 'Faixa avançada',
+        marker: 'Faixa avançada',
       },
       {
         tier: 'Tier 3',
@@ -279,7 +279,7 @@ const guideProps = {
         stat: '9.0–11.9 CPS',
         level: '11.0–14.0 CPS',
         accuracy: 'Dedo Único Rápido / Tensão',
-        percentile: 'Faixa sólida',
+        marker: 'Faixa sólida',
       },
       {
         tier: 'Tier 4',
@@ -287,7 +287,7 @@ const guideProps = {
         stat: '6.0–8.9 CPS',
         level: '7.5–10.0 CPS',
         accuracy: 'Dedo Único Padrão',
-        percentile: 'Faixa média',
+        marker: 'Faixa média',
       },
       {
         tier: 'Tier 5',
@@ -295,7 +295,7 @@ const guideProps = {
         stat: '< 6.0 CPS',
         level: '< 7.5 CPS',
         accuracy: 'Dedo Único Básico',
-        percentile: 'Faixa inicial',
+        marker: 'Faixa inicial',
       },
     ],
   },

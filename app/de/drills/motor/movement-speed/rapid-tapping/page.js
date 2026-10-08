@@ -261,7 +261,7 @@ const guideProps = {
         stat: '16.0+ CPS',
         level: '20.0+ CPS',
         accuracy: 'Butterfly- / Drag-Klicken',
-        percentile: 'Sehr selten',
+        category: 'Sehr selten',
       },
       {
         tier: 'Stufe 2',
@@ -269,7 +269,7 @@ const guideProps = {
         stat: '12.0–15.9 CPS',
         level: '15.0–19.0 CPS',
         accuracy: 'Jitter-Klicken beherrscht',
-        percentile: 'Selten',
+        category: 'Selten',
       },
       {
         tier: 'Stufe 3',
@@ -277,7 +277,7 @@ const guideProps = {
         stat: '9.0–11.9 CPS',
         level: '11.0–14.0 CPS',
         accuracy: 'Schneller Einzelfinger mit Muskelspannung',
-        percentile: 'Überdurchschnittlich',
+        category: 'Überdurchschnittlich',
       },
       {
         tier: 'Stufe 4',
@@ -285,7 +285,7 @@ const guideProps = {
         stat: '6.0–8.9 CPS',
         level: '7.5–10.0 CPS',
         accuracy: 'Standard Einzelfinger',
-        percentile: 'Durchschnitt',
+        category: 'Durchschnitt',
       },
       {
         tier: 'Stufe 5',
@@ -293,7 +293,7 @@ const guideProps = {
         stat: '< 6.0 CPS',
         level: '< 7.5 CPS',
         accuracy: 'Untrainierter Einzelfinger',
-        percentile: 'Untrainiert',
+        category: 'Untrainiert',
       },
     ],
   },

@@ -233,7 +233,7 @@ const guideProps = {
   },
   benchmark: {
     title: 'Tableau des Performances en Vitesse et Réflexe Clavier',
-    description: 'Baremage pour évaluer votre progression. Comprend la latence sur touche unique, le rythme séquentiel (KPM) et la précision inhibitrice.',
+    description: 'Paliers éditoriaux de pratique pour comparer vos propres séances ; ce ne sont pas des statistiques de population ni des normes cliniques. Baremage pour évaluer votre progression. Comprend la latence sur touche unique, le rythme séquentiel (KPM) et la précision inhibitrice.',
     columns: ['Tier', 'Rang', 'Latence Touche Unique', 'Cadence KPM', 'Précision Inhibitrice', 'Catégorie'],
     rows: [
       {
@@ -242,7 +242,7 @@ const guideProps = {
         stat: 'Moins de 240 ms',
         level: '320+ KPM',
         accuracy: '98–100%',
-        percentile: 'Élite',
+        marker: 'Élite',
       },
       {
         tier: 'Tier 2',
@@ -250,7 +250,7 @@ const guideProps = {
         stat: '240–300 ms',
         level: '260–319 KPM',
         accuracy: '95–97%',
-        percentile: 'Avancé',
+        marker: 'Avancé',
       },
       {
         tier: 'Tier 3',
@@ -258,7 +258,7 @@ const guideProps = {
         stat: '300–380 ms',
         level: '200–259 KPM',
         accuracy: '90–94%',
-        percentile: 'Solide',
+        marker: 'Solide',
       },
       {
         tier: 'Tier 4',
@@ -266,7 +266,7 @@ const guideProps = {
         stat: '380–480 ms',
         level: '140–199 KPM',
         accuracy: '80–89%',
-        percentile: 'Moyenne Standard',
+        marker: 'Moyenne Standard',
       },
       {
         tier: 'Tier 5',
@@ -274,7 +274,7 @@ const guideProps = {
         stat: 'Plus de 480 ms',
         level: 'Moins de 140 KPM',
         accuracy: 'Moins de 80%',
-        percentile: 'Débutant',
+        marker: 'Débutant',
       },
     ],
   },

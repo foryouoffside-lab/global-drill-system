@@ -241,15 +241,15 @@ const guideProps = {
   ],
   benchmarks: {
     title: "Tabela de Classificação em Seguimento Vertical e Sacadas em Degraus",
-    headers: ["Nível de Desempenho", "Velocidade do Alvo", "Precisão nas Quinas dos Degraus", "Ganho Vertical Estimado", "Percentil Populacional"],
+    headers: ["Nível de Desempenho", "Velocidade do Alvo", "Precisão nas Quinas dos Degraus", "Ganho Vertical Estimado", "Marcador de prática"],
     rows: [
-      ["Élite (Esports / Pilotos)", "3.5x – 5.0x+", "Fixação angular sem desvio nos degraus", "0.92 – 0.98 (sincronização instantânea)", "Top 1.5%"],
-      ["Avançado (Competitivo)", "2.5x – 3.5x", "Foveação rápida por micro-sacada única", "0.85 – 0.92 (foco altamente estável)", "Top 8%"],
-      ["Competente (Adulto Saudável)", "1.8x – 2.5x", "Seguimento consistente nas rampas; ligeira hesitação nos vértices", "0.75 – 0.85 (controlo sólido)", "Top 25%"],
-      ["Em Desenvolvimento (Latência)", "1.2x – 1.8x", "Atraso nas subidas; compensação por inclinação do pescoço", "0.60 – 0.75 (sacadas corretivas frequentes)", "45% Intermédios"],
-      ["Iniciante (Ajuste Motor)", "0.5x – 1.2x", "Perda do alvo nos cantos; a cabeça acompanha o movimento", "< 0.60 (saltos sacádicos desordenados)", "Nível Inicial"]
+      ["Faixa 1", "3.5x – 5.0x+", "Fixação angular sem desvio nos degraus", "0.92 – 0.98 (sincronização instantânea)", "Ritmo muito alto com alta precisão"],
+      ["Faixa 2", "2.5x – 3.5x", "Foveação rápida por micro-sacada única", "0.85 – 0.92 (foco altamente estável)", "Ritmo alto e regular"],
+      ["Faixa 3", "1.8x – 2.5x", "Seguimento consistente nas rampas; ligeira hesitação nos vértices", "0.75 – 0.85 (controlo sólido)", "Ritmo estável com alguns erros"],
+      ["Faixa 4", "1.2x – 1.8x", "Atraso nas subidas; compensação por inclinação do pescoço", "0.60 – 0.75 (sacadas corretivas frequentes)", "Ritmo médio com margem de melhora"],
+      ["Faixa 5", "0.5x – 1.2x", "Perda do alvo nos cantos; a cabeça acompanha o movimento", "< 0.60 (saltos sacádicos desordenados)", "Ponto de partida"]
     ],
-    note: "※ Com base nas metricas de latencia vertical de Rottach et al. (1996) e dinamica neural do riMLF (Büttner-Ennever & Horn, 1997) em ecrãs 1080p a 50–70 cm."
+    note: "Faixas editoriais de prática para comparar suas próprias sessões; não são estatísticas de população nem normas clínicas. ※ Com base nas metricas de latencia vertical de Rottach et al. (1996) e dinamica neural do riMLF (Büttner-Ennever & Horn, 1997) em ecrãs 1080p a 50–70 cm."
   },
   techniques: {
     title: "Quatro Técnicas Fundamentais para o Rastreamento em Degraus",

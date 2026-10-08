@@ -56,13 +56,13 @@ const guideData = {
     title: "Referencias de búsqueda visual y atención selectiva",
     headers: ["Nivel / Categoría", "Aciertos Confirmados (45s)", "Latencia Media de Fijación", "Precisión de Filtrado de Ruido", "Perfil Neurocognitivo"],
     rows: [
-      ["Nivel 1: Élite Perceptiva (Top 1%)", "18+ Aciertos", "< 180 ms", "> 96%", "Síntesis perfecta de detección pop-out y escaneo top-down dirigido (Wolfe, 2007)."],
-      ["Nivel 2: Búsqueda Avanzada (Top 5%)", "14 – 17 Aciertos", "180 – 230 ms", "88 – 95%", "Filtro sobresaliente de distractores dinámicos y exploración eficaz por cuadrantes."],
-      ["Nivel 3: Nivel Estándar (Top 25%)", "10 – 13 Aciertos", "230 – 300 ms", "76 – 87%", "Velocidad de procesamiento habitual; combina análisis serial y percepción periférica."],
-      ["Nivel 4: Nivel Básico (Top 50%)", "7 – 9 Aciertos", "300 – 400 ms", "65 – 75%", "Sensibilidad al desorden visual y lentitud ante transiciones frecuentes (clutter latency)."],
-      ["Nivel 5: En Desarrollo (Baseline)", "< 7 Aciertos", "> 400 ms", "< 65%", "Fijaciones oculares dispersas y pérdida del código objetivo en la memoria de trabajo."]
+      ["Etapa 1", "18+ Aciertos", "< 180 ms", "> 96%", "Síntesis perfecta de detección pop-out y escaneo top-down dirigido (Wolfe, 2007)."],
+      ["Etapa 2", "14 – 17 Aciertos", "180 – 230 ms", "88 – 95%", "Filtro sobresaliente de distractores dinámicos y exploración eficaz por cuadrantes."],
+      ["Etapa 3", "10 – 13 Aciertos", "230 – 300 ms", "76 – 87%", "Velocidad de procesamiento habitual; combina análisis serial y percepción periférica."],
+      ["Etapa 4", "7 – 9 Aciertos", "300 – 400 ms", "65 – 75%", "Sensibilidad al desorden visual y lentitud ante transiciones frecuentes (clutter latency)."],
+      ["Etapa 5", "< 7 Aciertos", "> 400 ms", "< 65%", "Fijaciones oculares dispersas y pérdida del código objetivo en la memoria de trabajo."]
     ],
-    note: "Fundamentado en investigaciones sobre atención visual selectiva (Treisman & Gelade 1980; Wolfe 2007; Duncan & Humphreys 1989; Posner 1980)."
+    note: "Etapas editoriales de práctica para comparar tus propias sesiones; no son estadísticas de población ni normas clínicas. Fundamentado en investigaciones sobre atención visual selectiva (Treisman & Gelade 1980; Wolfe 2007; Duncan & Humphreys 1989; Posner 1980)."
   },
   techniques: {
     title: "Cómo encontrar objetivos más rápido e ignorar distractores",

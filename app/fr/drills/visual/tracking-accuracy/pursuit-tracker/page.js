@@ -56,13 +56,13 @@ const guideData = {
     title: "Repères de poursuite oculaire et de suivi visuel",
     headers: ["Niveau / Rang", "Temps sur la Cible (Time-on-Target)", "Précision Moyenne de Poursuite", "Suppression des Saccades", "Palier Neurophysiologique"],
     rows: [
-      ["Palier 1 : Élite Mondiale (Top 1%)", "≥ 88%", "≥ 92%", "≥ 95% Suppression", "Poursuite fluide continue sans faille, glissement rétinien quasi nul. Modèle interne cérébelleux parfaitement calibré (Lisberger, 2010)."],
-      ["Palier 2 : Athlète Confirmé (Top 5%)", "76 – 87%", "84 – 91%", "88 – 94% Suppression", "Excellente motilité oculaire et synchronisation de phase immédiate lors des inversions de cap."],
-      ["Palier 3 : Standard Solide (Top 25%)", "62 – 75%", "72 – 83%", "78 – 87% Suppression", "Suivi régulier sur trajectoires lentes, légères saccades correctives lors des pointes d'accélération."],
-      ["Palier 4 : Niveau de Base (Top 50%)", "48 – 61%", "60 – 71%", "65 – 77% Suppression", "Décrochages récurrents du curseur et recours systématique à des saccades de rattrapage par paliers."],
-      ["Palier 5 : Débutant (Baseline)", "< 48%", "< 60%", "< 65% Suppression", "Forte latence visuelle, gestes manuels heurtés et dépassements permanents (overshoot)."]
+      ["Palier 1", "≥ 88%", "≥ 92%", "≥ 95% Suppression", "Poursuite fluide continue sans faille, glissement rétinien quasi nul. Modèle interne cérébelleux parfaitement calibré (Lisberger, 2010)."],
+      ["Palier 2", "76 – 87%", "84 – 91%", "88 – 94% Suppression", "Excellente motilité oculaire et synchronisation de phase immédiate lors des inversions de cap."],
+      ["Palier 3", "62 – 75%", "72 – 83%", "78 – 87% Suppression", "Suivi régulier sur trajectoires lentes, légères saccades correctives lors des pointes d'accélération."],
+      ["Palier 4", "48 – 61%", "60 – 71%", "65 – 77% Suppression", "Décrochages récurrents du curseur et recours systématique à des saccades de rattrapage par paliers."],
+      ["Palier 5", "< 48%", "< 60%", "< 65% Suppression", "Forte latence visuelle, gestes manuels heurtés et dépassements permanents (overshoot)."]
     ],
-    note: "Établi d'après la littérature neuro-ophtalmologique et biomécanique sportive (Rashbass 1961 ; Krauzlis 2004 ; Leigh & Zee 2015 ; Lisberger 2010)."
+    note: "Paliers éditoriaux de pratique pour comparer vos propres séances ; ce ne sont pas des statistiques de population ni des normes cliniques. Établi d'après la littérature neuro-ophtalmologique et biomécanique sportive (Rashbass 1961 ; Krauzlis 2004 ; Leigh & Zee 2015 ; Lisberger 2010)."
   },
   techniques: {
     title: "Comment stabiliser le suivi visuel",

@@ -6,7 +6,7 @@ Priority tiers: 0 = home, directory, 8 category hubs · 1 = English drills with 
 
 Status legend: `done` = passes scripts/seo_render_audit.mjs and the English-leak check, has a research log and a commit · `pending` = not yet worked in this pass (may already pass the mechanical audit) · `blocked` = needs an owner decision, see Blockers · `in-progress` = taken, not committed.
 
-Status counts: done 394 · pending 4 · blocked 243
+Status counts: done 398 · pending 0 · blocked 243
 
 | URL | locale | type | priority | status | research-log | commit | notes |
 |---|---|---|---|---|---|---|---|
@@ -212,8 +212,8 @@ Status counts: done 394 · pending 4 · blocked 243
 | /de/drills/visual-tracking/staircase-step | de | drill | 4 | done | docs/seo/research/de/staircase-step.md | 2c533a4 | verified; demand not verified |
 | /de/drills/visual-tracking/strobe-prediction-pursuit | de | drill | 4 | done | docs/seo/research/de/strobe-prediction-pursuit.md | 4cad7b5 | verified |
 | /de/drills/visual-tracking/triangular-pursuit | de | drill | 4 | done | docs/seo/research/de/triangular-pursuit.md | cdb27e4 | verified; demand not verified |
-| /de/drills/visual-tracking/zig-zag-path-pursuit | de | drill | 4 | pending | docs/seo/research/zig-zag-path-pursuit-2026-09-20.md |  | changed-since-09-20 |
-| /de/drills/visual/depth-perception/distance-judgment | de | drill | 4 | pending | docs/seo/research/distance-judgment-visual-2026-09-20.md |  | changed-since-09-20 |
+| /de/drills/visual-tracking/zig-zag-path-pursuit | de | drill | 4 | done | docs/seo/research/de/zig-zag-path-pursuit.md | cleanup-2026-10-08 | finished in cleanup pass; percentile claims removed |
+| /de/drills/visual/depth-perception/distance-judgment | de | drill | 4 | done | docs/seo/research/de/distance-judgment.md | cleanup-2026-10-08 | finished in cleanup pass; percentile claims removed |
 | /de/drills/visual/reaction-speed/go/no-go | de | drill | 4 | blocked |  |  | changed-since-09-20; en-prose-leak(3) — client About/FAQ copy is English, see D2 |
 | /de/drills/visual/reaction-speed/light-reaction | de | drill | 4 | blocked | docs/seo/research/light-reaction-visual-2026-09-20.md |  | changed-since-09-20; en-prose-leak(1) — client About/FAQ copy is English, see D2 |
 | /de/drills/visual/tracking-accuracy/moving-target | de | drill | 4 | blocked | docs/seo/research/moving-target-2026-09-20.md |  | changed-since-09-20; en-prose-leak(4) — client About/FAQ copy is English, see D2 |
@@ -247,7 +247,7 @@ Status counts: done 394 · pending 4 · blocked 243
 | /es/drills/fps/target-switching-swarm | es | drill | 4 | blocked |  |  | changed-since-09-20; en-prose-leak(3) — client About/FAQ copy is English, see D2 |
 | /es/drills/fps/vertical-air-track | es | drill | 4 | blocked |  |  | changed-since-09-20; en-prose-leak(2) — client About/FAQ copy is English, see D2 |
 | /es/drills/memory | es | hub | 4 | done | docs/seo/research/es/memory-hub.md | e3426f92 | test de memoria online title (Suggest proxy) |
-| /es/drills/memory/short-term-memory/color-sequence | es | drill | 4 | pending | docs/seo/research/color-sequence-2026-09-20.md |  | changed-since-09-20 |
+| /es/drills/memory/short-term-memory/color-sequence | es | drill | 4 | done | docs/seo/research/es/color-sequence.md | cleanup-2026-10-08 | finished in cleanup pass; percentile claims removed |
 | /es/drills/memory/short-term-memory/digit-span | es | drill | 4 | blocked | docs/seo/research/digit-span-2026-09-20.md |  | changed-since-09-20; en-prose-leak(3) — client About/FAQ copy is English, see D2 |
 | /es/drills/memory/short-term-memory/word-recall | es | drill | 4 | blocked | docs/seo/research/word-recall-2026-09-20.md |  | changed-since-09-20; en-prose-leak(4) — client About/FAQ copy is English, see D2 |
 | /es/drills/memory/spatial-memory/grid-memorization | es | drill | 4 | blocked | docs/seo/research/grid-memorization-2026-09-20.md |  | changed-since-09-20; en-prose-leak(3) — client About/FAQ copy is English, see D2 |
@@ -459,7 +459,7 @@ Status counts: done 394 · pending 4 · blocked 243
 | /ja/drills/visual-tracking/ghosting-suppress-pursuit | ja | drill | 4 | done | docs/seo/research/ja/ghosting-suppress-pursuit.md | 960418c3 | H1 shortened; demand unverified |
 | /ja/drills/visual-tracking/infinity-pursuit | ja | drill | 4 | done | docs/seo/research/ja/infinity-pursuit.md | 05bd8374 | perfection wording softened; demand unverified |
 | /ja/drills/visual-tracking/momentum-teleport-pursuit | ja | drill | 4 | done | docs/seo/research/ja/momentum-teleport-pursuit.md | 86450161 | overclaim softened; demand unverified |
-| /ja/drills/visual-tracking/peripheral-ping-pursuit | ja | drill | 4 | pending | docs/seo/research/peripheral-ping-pursuit-2026-09-20.md |  | changed-since-09-20 |
+| /ja/drills/visual-tracking/peripheral-ping-pursuit | ja | drill | 4 | done | docs/seo/research/ja/peripheral-ping-pursuit.md | cleanup-2026-10-08 | finished in cleanup pass; percentile claims removed |
 | /ja/drills/visual-tracking/predictive-pursuit | ja | drill | 4 | done | docs/seo/research/ja/predictive-pursuit.md | e76efeec | direct answer; demand unverified |
 | /ja/drills/visual-tracking/sine-wave-pursuit | ja | drill | 4 | done | docs/seo/research/ja/sine-wave-pursuit.md | e7ca2719 | direct answer; demand unverified |
 | /ja/drills/visual-tracking/spatial-shift-pursuit | ja | drill | 4 | done | docs/seo/research/ja/spatial-shift-pursuit.md | d6d9b605 | direct answer; demand unverified |

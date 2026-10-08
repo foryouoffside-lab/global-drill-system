@@ -267,11 +267,11 @@ const guideKo = {
     { label: "작업기억 갱신 속도", desc: "자극 노출 창 내에서의 의사결정 신속성 및 반응 잠복기." }
   ],
   benchmarks: [
-    { tier: "Tier 1: 탁월한 작업기억 (Executive Elite / 상위 1%)", range: "4-Back ~ 5-Back+ 단계 (1,200점 이상)", desc: "엘리트 집행 기능; 4~5개 항목의 멘탈 선입선출 큐 완벽 유지; 즉각적인 토큰 교체; 600ms 미만 반응 지연; 정확도 92% 이상." },
-    { tier: "Tier 2: 우수 수준 (Strong Updating Control / 상위 5~15%)", range: "견고한 3-Back 및 4-Back 진입 (900 ~ 1,199점)", desc: "표준 성인 기준 초과; 간섭 오류를 최소화하며 연속 3-Back 갱신 유지; 4-Back 시도로 순조롭게 전환; 정확도 80%~91%." },
-    { tier: "Tier 3: 일반 성인 정상 기준치 (50th Percentile Normal)", range: "안정적인 3-Back (600 ~ 899점)", desc: "정상 성인 기준선 (Kirchner, 1958; Jaeggi et al., 2008); 3개 항목 음운 버퍼 유지; 빠른 제시 속도에서 간헐적 탈락 발생; 정확도 65%~79%." },
-    { tier: "Tier 4: 평균 이하 (Executive Buffer Decay / 하위 15~30%)", range: "불안정한 3-Back (400 ~ 599점)", desc: "연속적인 3개 항목 버퍼 갱신에 어려움; 2-Back과 3-Back 간섭 혼란 발생; 일치 시행 정확도 50%~64%로 저하." },
-    { tier: "Tier 5: 훈련 권장 (< 15th Percentile)", range: "3-Back 미만 (< 400점)", desc: "작업기억 정보 갱신 병목 현상; 전환 과정에서 3개 연속 항목을 활성 버퍼에 유지하지 못함; 빈번한 시간 초과 발생." }
+    { tier: "Tier 1: 탁월한 작업기억 (Executive Elite / 최상위 단계)", range: "4-Back ~ 5-Back+ 단계 (1,200점 이상)", desc: "엘리트 집행 기능; 4~5개 항목의 멘탈 선입선출 큐 완벽 유지; 즉각적인 토큰 교체; 600ms 미만 반응 지연; 정확도 92% 이상." },
+    { tier: "Tier 2: 우수 수준 (Strong Updating Control / 상급 단계)", range: "견고한 3-Back 및 4-Back 진입 (900 ~ 1,199점)", desc: "표준 성인 기준 초과; 간섭 오류를 최소화하며 연속 3-Back 갱신 유지; 4-Back 시도로 순조롭게 전환; 정확도 80%~91%." },
+    { tier: "Tier 3: 일반 성인 정상 기준치 (표준 단계)", range: "안정적인 3-Back (600 ~ 899점)", desc: "정상 성인 기준선 (Kirchner, 1958; Jaeggi et al., 2008); 3개 항목 음운 버퍼 유지; 빠른 제시 속도에서 간헐적 탈락 발생; 정확도 65%~79%." },
+    { tier: "Tier 4: 평균 이하 (Executive Buffer Decay / 기초~중간 단계)", range: "불안정한 3-Back (400 ~ 599점)", desc: "연속적인 3개 항목 버퍼 갱신에 어려움; 2-Back과 3-Back 간섭 혼란 발생; 일치 시행 정확도 50%~64%로 저하." },
+    { tier: "Tier 5: 훈련 권장 (기초 단계)", range: "3-Back 미만 (< 400점)", desc: "작업기억 정보 갱신 병목 현상; 전환 과정에서 3개 연속 항목을 활성 버퍼에 유지하지 못함; 빈번한 시간 초과 발생." }
   ],
   science: [
     { title: "Wayne K. Kirchner (1958): N-Back 패러다임의 창시", body: "커슈너는 1958년 연구에서 급변하는 정보의 파지 능력을 조사하기 위해 N-back 과제를 도입했습니다. 단순 단기 기억이 보존되어 있더라도, 낡은 정보를 실시간으로 버리고 새 정보를 추가하는 작업에서 결정적인 인지 병목이 발생함을 밝혔습니다." },

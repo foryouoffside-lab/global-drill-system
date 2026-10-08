@@ -270,13 +270,13 @@ const guideProps = {
     title: "Baremos Oficiales de Frenado de Puntería e Inhibición Motora (5 Niveles)",
     headers: ["Rango de Habilidad", "Título Oficial", "Puntuación de Corte", "Tasa de Parada con Éxito", "Grado Global", "Perfil Neuromotor"],
     rows: [
-      ["Tier 1: Maestro Supremo del Arresto Cinético", "Apex Kinetic Arrester", "15.000+ pts", "95%+ / 1500+ px/s", "Grade S", "Top 0,1% internacional. Capacidad de inhibición sobrehumana: detención instantánea a 1.800 px/s sin overflick (Logan 1984; Woodworth 1899)"],
-      ["Tier 2: Tirador de Precisión Cinética", "Precision Kinetic Sniper", "11.000 – 14.999 pts", "90 – 94% / 1200 – 1499 px/s", "Grade A", "Top 3% profesional. Desaceleración excepcional mediada por las yemas de los dedos; bloqueo firme tras aceleraciones violentas"],
-      ["Tier 3: Piloto Experimentado de Desaceleración", "Skilled Deceleration Pilot", "7.500 – 10.999 pts", "82 – 89% / 900 – 1199 px/s", "Grade B", "Top 15% competitivo. Frenada consistente a velocidad media; fallos ocasionales de deslizamiento a máxima aceleración"],
-      ["Tier 4: Alumno de Frenado en Evolución", "Developing Stopper", "4.000 – 7.499 pts", "70 – 81% / 600 – 899 px/s", "Grade C", "Promedio adulto estándar. Propensión a sobrepasar el blanco debido a una activación retardada de los músculos antagonistas"],
-      ["Tier 5: Practicante Inicial de Desaceleración", "Novice Arrester Trainee", "< 4.000 pts", "< 70% / < 600 px/s", "Grade D", "Inhibición motora deficiente con fallos constantes; requiere asimilar la frenada mecánica mediante fricción sobre la alfombrilla"]
+      ["Etapa 1", "Muy avanzada", "15.000+ pts", "95%+ / 1500+ px/s", "Grade S", "Capacidad de inhibición sobrehumana: detención instantánea a 1.800 px/s sin overflick (Logan 1984; Woodworth 1899)"],
+      ["Etapa 2", "Avanzada", "11.000 – 14.999 pts", "90 – 94% / 1200 – 1499 px/s", "Grade A", "Desaceleración excepcional mediada por las yemas de los dedos; bloqueo firme tras aceleraciones violentas"],
+      ["Etapa 3", "Sólida", "7.500 – 10.999 pts", "82 – 89% / 900 – 1199 px/s", "Grade B", "Frenada consistente a velocidad media; fallos ocasionales de deslizamiento a máxima aceleración"],
+      ["Etapa 4", "En desarrollo", "4.000 – 7.499 pts", "70 – 81% / 600 – 899 px/s", "Grade C", "Promedio adulto estándar. Propensión a sobrepasar el blanco debido a una activación retardada de los músculos antagonistas"],
+      ["Etapa 5", "Inicial", "< 4.000 pts", "< 70% / < 600 px/s", "Grade D", "Inhibición motora deficiente con fallos constantes; requiere asimilar la frenada mecánica mediante fricción sobre la alfombrilla"]
     ],
-    note: "Calibrado conforme al Modelo de Carrera de Logan (1984), el control motor bifásico de Woodworth (1899) y la Ley de Fitts (1954)."
+    note: "Etapas editoriales de práctica para comparar tus propias sesiones; no son estadísticas de población ni normas clínicas. Calibrado conforme al Modelo de Carrera de Logan (1984), el control motor bifásico de Woodworth (1899) y la Ley de Fitts (1954)."
   },
   techniques: {
     title: "Técnicas Prácticas de Frenado de Puntería",

@@ -231,7 +231,7 @@ const guideProps = {
   },
   benchmark: {
     title: 'Faixas de Referência de Velocidade e Reflexo de Teclas',
-    description: 'Faixas editoriais para comparar suas próprias sessões, não percentis de população nem normas clínicas. Abrange tempo de reação em tecla única, ritmo de sequências (KPM) e precisão inibitória.',
+    description: 'Faixas editoriais de prática para comparar suas próprias sessões; não são estatísticas de população nem normas clínicas. Faixas editoriais para comparar suas próprias sessões, não percentis de população nem normas clínicas. Abrange tempo de reação em tecla única, ritmo de sequências (KPM) e precisão inibitória.',
     columns: ['Tier', 'Classificação', 'Latência de Tecla Única', 'Velocidade KPM', 'Precisão Inibitória', 'Faixa'],
     rows: [
       {
@@ -240,7 +240,7 @@ const guideProps = {
         stat: 'Abaixo de 240 ms',
         level: '320+ KPM',
         accuracy: '98–100%',
-        percentile: 'Faixa 1',
+        marker: 'Faixa 1',
       },
       {
         tier: 'Tier 2',
@@ -248,7 +248,7 @@ const guideProps = {
         stat: '240–300 ms',
         level: '260–319 KPM',
         accuracy: '95–97%',
-        percentile: 'Faixa 2',
+        marker: 'Faixa 2',
       },
       {
         tier: 'Tier 3',
@@ -256,7 +256,7 @@ const guideProps = {
         stat: '300–380 ms',
         level: '200–259 KPM',
         accuracy: '90–94%',
-        percentile: 'Faixa 3',
+        marker: 'Faixa 3',
       },
       {
         tier: 'Tier 4',
@@ -264,7 +264,7 @@ const guideProps = {
         stat: '380–480 ms',
         level: '140–199 KPM',
         accuracy: '80–89%',
-        percentile: 'Faixa 4',
+        marker: 'Faixa 4',
       },
       {
         tier: 'Tier 5',
@@ -272,7 +272,7 @@ const guideProps = {
         stat: 'Acima de 480 ms',
         level: 'Abaixo de 140 KPM',
         accuracy: 'Abaixo de 80%',
-        percentile: 'Faixa 5',
+        marker: 'Faixa 5',
       },
     ],
   },

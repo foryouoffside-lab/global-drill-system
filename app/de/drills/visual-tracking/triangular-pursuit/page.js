@@ -271,15 +271,15 @@ const guide = {
   ],
   benchmarks: {
     title: "Leistungsstandards der dreieckigen Blickverfolgung (Geschwindigkeit & Scheitelpunkt-Präzision)",
-    headers: ["Leistungsstufe", "Empfohlene Geschwindigkeit", "Landefehler am Eckpunkt", "Sakkadische Latenz am Scheitelpunkt", "Populationsanteil"],
+    headers: ["Leistungsstufe", "Empfohlene Geschwindigkeit", "Landefehler am Eckpunkt", "Sakkadische Latenz am Scheitelpunkt", "Einordnung"],
     rows: [
-      ["Elite / Perfekte neuronale Adaptation (Elite)", "3.5x〜5.0x+", "Fehler < 12px (exakte Haftung am Scheitelpunkt)", "Latenz < 110ms (perfekte Vorwärtsbremsung)", "Top 1.5%"],
-      ["Meister / Höchste Vektorkontrolle (Master)", "2.5x〜3.5x", "Fehler < 22px (nur minimale Mikrosakkaden)", "Latenz < 140ms (präzises Eckpunkt-Handling)", "Top 8%"],
-      ["Fortgeschritten / Wettkampfniveau (Advanced)", "1.8x〜2.5x", "Fehler < 38px (schnelle Wiedererfassung)", "Latenz < 180ms (solide Richtungswechsel)", "Top 25%"],
-      ["Mittelstufe / Grundlegend geübt (Intermediate)", "1.2x〜1.8x", "Fehler 38〜70px (Kurvenschneiden / Überschwinger)", "Latenz 180〜240ms (mehrere Korrektursakkaden)", "Mittlere 45%"],
-      ["Einsteiger / Untrainiert (Novice)", "0.5x〜1.2x", "Fehler > 70px (völliger Zielverlust am Eckpunkt)", "Latenz > 250ms (ausgeprägter Overshoot)", "Basisniveau"]
+      ["Elite / Perfekte neuronale Adaptation (Elite)", "3.5x〜5.0x+", "Fehler < 12px (exakte Haftung am Scheitelpunkt)", "Latenz < 110ms (perfekte Vorwärtsbremsung)", "Stufe 1"],
+      ["Meister / Höchste Vektorkontrolle (Master)", "2.5x〜3.5x", "Fehler < 22px (nur minimale Mikrosakkaden)", "Latenz < 140ms (präzises Eckpunkt-Handling)", "Stufe 2"],
+      ["Fortgeschritten / Wettkampfniveau (Advanced)", "1.8x〜2.5x", "Fehler < 38px (schnelle Wiedererfassung)", "Latenz < 180ms (solide Richtungswechsel)", "Stufe 3"],
+      ["Mittelstufe / Grundlegend geübt (Intermediate)", "1.2x〜1.8x", "Fehler 38〜70px (Kurvenschneiden / Überschwinger)", "Latenz 180〜240ms (mehrere Korrektursakkaden)", "Stufe 4"],
+      ["Einsteiger / Untrainiert (Novice)", "0.5x〜1.2x", "Fehler > 70px (völliger Zielverlust am Eckpunkt)", "Latenz > 250ms (ausgeprägter Overshoot)", "Stufe 5"]
     ],
-    note: "Die Richtwerte basieren auf de Brouwer et al. (2002) zur Dynamik von Fangsakkaden sowie Heinen et al. (2005) zur neuronalen Steuerung an abrupten Richtungsumkehrpunkten."
+    note: "Die Richtwerte basieren auf de Brouwer et al. (2002) zur Dynamik von Fangsakkaden sowie Heinen et al. (2005) zur neuronalen Steuerung an abrupten Richtungsumkehrpunkten. Die Bereiche sind redaktionelle Übungsmarken, keine Bevölkerungsstatistik."
   },
   techniques: [
     {

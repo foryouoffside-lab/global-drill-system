@@ -264,12 +264,13 @@ const guideProps = {
   },
   benchmarks: {
     title: '運動制御パフォーマンス標準評価（ベンチマーク）',
-    headers: ['等級 (Tier)', '称号 (Rank)', '評価基準', '到達ランク', '正答率', 'パーセンタイル'],
+    note: '段階は SkillDrills が設けた練習用の目安であり、人口統計やパーセンタイルではありません。',
+    headers: ['等級 (Tier)', '称号 (Rank)', '評価基準', '到達ランク', '正答率', '練習段階'],
     rows: [
-      { tier: 'Tier 1', rank: 'グランドマスター / 超精密軌跡オペレーター', stat: '上位 1%', level: 'エリート（極限）', accuracy: '98% 以上', percentile: '上位 1%' },
-      { tier: 'Tier 2', rank: 'マスター / 精密追従スペシャリスト', stat: '上位 5%', level: 'ダイヤモンド（優秀）', accuracy: '94–97%', percentile: '上位 5%' },
-      { tier: 'Tier 3', rank: 'プロ / 熟練トラッカー', stat: '上位 15%', level: 'プラチナ（熟練）', accuracy: '88–93%', percentile: '上位 15%' },
-      { tier: 'Tier 4', rank: '一般 / 中級オペレーター', stat: '上位 50%', level: 'ゴールド（標準）', accuracy: '78–87%', percentile: '上位 50%' },
+      { tier: 'Tier 1', rank: 'グランドマスター / 超精密軌跡オペレーター', stat: '最上位段階', level: 'エリート（極限）', accuracy: '98% 以上', percentile: '最上位段階' },
+      { tier: 'Tier 2', rank: 'マスター / 精密追従スペシャリスト', stat: '上級段階', level: 'ダイヤモンド（優秀）', accuracy: '94–97%', percentile: '上級段階' },
+      { tier: 'Tier 3', rank: 'プロ / 熟練トラッカー', stat: '中上級段階', level: 'プラチナ（熟練）', accuracy: '88–93%', percentile: '中上級段階' },
+      { tier: 'Tier 4', rank: '一般 / 中級オペレーター', stat: '標準段階', level: 'ゴールド（標準）', accuracy: '78–87%', percentile: '標準段階' },
       { tier: 'Tier 5', rank: '入門・初期基準値', stat: '基準値（基礎）', level: 'シルバー（基礎）', accuracy: '78% 未満', percentile: '基準値（下位）' },
     ],
   },

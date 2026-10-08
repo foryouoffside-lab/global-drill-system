@@ -56,13 +56,13 @@ const guideData = {
     title: "Referencias de seguimiento ocular y precisión visual",
     headers: ["Nivel / Categoría", "Tiempo en el Blanco (Time-on-Target)", "Precisión Media de Rastreo", "Supresión de Sacadas", "Hito Neurofisiológico"],
     rows: [
-      ["Nivel 1: Élite Mundial (Top 1%)", "≥ 88%", "≥ 92%", "≥ 95% Supresión", "Persecución fluida ininterrumpida, deslizamiento retiniano nulo. Modelo interno cerebelar sincronizado (Lisberger, 2010)."],
-      ["Nivel 2: Atleta Avanzado (Top 5%)", "76 – 87%", "84 – 91%", "88 – 94% Supresión", "Excelente control oculomotor con inmediata adaptación de fase ante cambios angulares bruscos."],
-      ["Nivel 3: Estándar Competente (Top 25%)", "62 – 75%", "72 – 83%", "78 – 87% Supresión", "Rastreo consistente en curvas suaves, sacadas de ajuste esporádicas en aceleraciones."],
-      ["Nivel 4: Nivel Base (Top 50%)", "48 – 61%", "60 – 71%", "65 – 77% Supresión", "Desvíos reiterados del cursor y dependencia constante de sacadas de alcance escalonadas."],
-      ["Nivel 5: Principiante (Baseline)", "< 48%", "< 60%", "< 65% Supresión", "Marcada latencia visual, trazos manuales bruscos y excesivo sobreimpulso (overshoot)."]
+      ["Etapa 1", "≥ 88%", "≥ 92%", "≥ 95% Supresión", "Persecución fluida ininterrumpida, deslizamiento retiniano nulo. Modelo interno cerebelar sincronizado (Lisberger, 2010)."],
+      ["Etapa 2", "76 – 87%", "84 – 91%", "88 – 94% Supresión", "Excelente control oculomotor con inmediata adaptación de fase ante cambios angulares bruscos."],
+      ["Etapa 3", "62 – 75%", "72 – 83%", "78 – 87% Supresión", "Rastreo consistente en curvas suaves, sacadas de ajuste esporádicas en aceleraciones."],
+      ["Etapa 4", "48 – 61%", "60 – 71%", "65 – 77% Supresión", "Desvíos reiterados del cursor y dependencia constante de sacadas de alcance escalonadas."],
+      ["Etapa 5", "< 48%", "< 60%", "< 65% Supresión", "Marcada latencia visual, trazos manuales bruscos y excesivo sobreimpulso (overshoot)."]
     ],
-    note: "Basado en literatura neuroftalmológica y de ciencias del deporte (Rashbass 1961; Krauzlis 2004; Leigh & Zee 2015; Lisberger 2010)."
+    note: "Etapas editoriales de práctica para comparar tus propias sesiones; no son estadísticas de población ni normas clínicas. Basado en literatura neuroftalmológica y de ciencias del deporte (Rashbass 1961; Krauzlis 2004; Leigh & Zee 2015; Lisberger 2010)."
   },
   techniques: {
     title: "Cómo estabilizar el seguimiento visual",

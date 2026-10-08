@@ -180,7 +180,7 @@ const faqSchema = {
       name: 'What score constitutes elite performance in Dynamic Grid Evasion?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Scores between 13,000 and 16,999 points indicate Master Spatial Scanner proficiency (top 3%), while scores exceeding 17,000 points with survival at 0.45s warning latency place a user in the top 0.1% Apex Grid Evader tier.',
+        text: 'Scores between 13,000 and 16,999 points indicate Master Spatial Scanner proficiency stage, while scores exceeding 17,000 points with survival at 0.45s warning latency reach the Apex Grid Evader tier.',
       },
     },
     {

@@ -272,15 +272,15 @@ const guideProps = {
   },
   benchmarks: {
     title: "Tabla Oficial de Estándares y Clasificación de Estabilidad",
-    headers: ["Nivel", "Título del Nivel", "Puntuación Diana", "Estabilidad & Nivel", "Nota", "Percentil Global"],
+    headers: ["Nivel", "Título del Nivel", "Puntuación Diana", "Estabilidad & Nivel", "Nota", "Marcador de práctica"],
     rows: [
-      ["Tier 1", "Maestro Supremo de Estabilidad", "17.000+ puntos", "Nivel 12–15 / Estabilidad >92%", "Nota S+", "Top 0,5% (Control Quirúrgico)"],
-      ["Tier 2", "Especialista en Control de Retroceso", "13.000 a 16.999 pts", "Nivel 9–11 / Estabilidad 85–91%", "Nota A", "Top 5% (Nivel Competitivo)"],
-      ["Tier 3", "Estabilizador Táctico Avanzado", "9.500 a 12.999 pts", "Nivel 6–8 / Estabilidad 76–84%", "Nota B", "Top 20% (Firmeza Sólida)"],
-      ["Tier 4", "Practicante en Progresión", "6.000 a 9.499 pts", "Nivel 3–5 / Estabilidad 65–75%", "Nota C", "50% (Media de Jugadores)"],
-      ["Tier 5", "Principiante con Temblores", "< 6.000 puntos", "Nivel 1–2 / Estabilidad <65%", "Nota D", "Base (Entrenamiento Sugerido)"],
+      ["Etapa 1", "Muy avanzada", "17.000+ puntos", "Nivel 12–15 / Estabilidad >92%", "Nota S+", "Ritmo muy alto con alta precisión"],
+      ["Etapa 2", "Avanzada", "13.000 a 16.999 pts", "Nivel 9–11 / Estabilidad 85–91%", "Nota A", "Ritmo alto y regular"],
+      ["Etapa 3", "Sólida", "9.500 a 12.999 pts", "Nivel 6–8 / Estabilidad 76–84%", "Nota B", "Ritmo estable con algunos errores"],
+      ["Etapa 4", "En desarrollo", "6.000 a 9.499 pts", "Nivel 3–5 / Estabilidad 65–75%", "Nota C", "Ritmo medio con margen de mejora"],
+      ["Etapa 5", "Inicial", "< 6.000 puntos", "Nivel 1–2 / Estabilidad <65%", "Nota D", "Punto de partida"],
     ],
-    note: "La clasificación final evalúa el tiempo de permanencia en el anillo, roturas de trayectoria, fuerza de viento contrarrestada y puntuación total.",
+    note: "Etapas editoriales de práctica para comparar tus propias sesiones; no son estadísticas de población ni normas clínicas. La clasificación final evalúa el tiempo de permanencia en el anillo, roturas de trayectoria, fuerza de viento contrarrestada y puntuación total.",
   },
   protocols: {
     title: 'Cómo entrenar la estabilidad del ratón',

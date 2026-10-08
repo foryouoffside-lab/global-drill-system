@@ -259,12 +259,13 @@ const guideProps = {
   },
   benchmarks: {
     title: '인지 수행 능력 표준 평가 벤치마크',
-    headers: ['등급 (Tier)', '호칭 (Rank)', '평가 기준', '도달 수준', '정확도', '백분위'],
+    note: '단계는 SkillDrills가 정한 연습용 참고 구분이며 인구 통계나 백분위가 아닙니다.',
+    headers: ['등급 (Tier)', '호칭 (Rank)', '평가 기준', '도달 수준', '정확도', '연습 단계'],
     rows: [
-      { tier: 'Tier 1', rank: '그랜드마스터 / 최상위 엘리트', stat: '상위 1%', level: '마스터리 (최상위)', accuracy: '98% 이상', percentile: '상위 1%' },
-      { tier: 'Tier 2', rank: '고급 지속 집중자', stat: '상위 5%', level: '다이아몬드 (우수)', accuracy: '94–97%', percentile: '상위 5%' },
-      { tier: 'Tier 3', rank: '숙련 조작자', stat: '상위 15%', level: '플래티넘 (숙련)', accuracy: '88–93%', percentile: '상위 15%' },
-      { tier: 'Tier 4', rank: '일반 성인 표준', stat: '상위 50%', level: '골드 (표준)', accuracy: '78–87%', percentile: '상위 50%' },
+      { tier: 'Tier 1', rank: '그랜드마스터 / 최상위 엘리트', stat: '최상위 단계', level: '마스터리 (최상위)', accuracy: '98% 이상', percentile: '최상위 단계' },
+      { tier: 'Tier 2', rank: '고급 지속 집중자', stat: '상급 단계', level: '다이아몬드 (우수)', accuracy: '94–97%', percentile: '상급 단계' },
+      { tier: 'Tier 3', rank: '숙련 조작자', stat: '중상급 단계', level: '플래티넘 (숙련)', accuracy: '88–93%', percentile: '중상급 단계' },
+      { tier: 'Tier 4', rank: '일반 성인 표준', stat: '표준 단계', level: '골드 (표준)', accuracy: '78–87%', percentile: '표준 단계' },
       { tier: 'Tier 5', rank: '초보 / 입문 기준선', stat: '기준선 (기초)', level: '실버 (기초)', accuracy: '78% 미만', percentile: '기준선 (하위)' },
     ],
   },

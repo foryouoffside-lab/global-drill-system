@@ -246,40 +246,41 @@ export default function LocalizedWordRecallPage() {
       "Die wissenschaftliche Erforschung des verbalen Gedächtnisses begann mit Hermann Ebbinghaus (1885), der die mathematische Vergessenskurve und die Dynamik des seriellen Lernens formulierte. 1958 standardisierte der Schweizer Psychologe André Rey den Rey Auditory Verbal Learning Test (RAVLT), um Wortlistenlernen, proaktive und retroaktive Interferenzanfälligkeit sowie verzögerten Abruf in klinischen und gesunden Stichproben zu quantifizieren.",
       "Bennet B. Murdock Jr. formalisierte 1962 den seriellen Positionseffekt bei freier Wiedergabe und wies die Mechanismen des Primacy-Effekts (Langzeitkonsolidierung der ersten Wörter) und des Recency-Effekts (flüchtige Aufrechterhaltung im sensorisch-echoischen Puffer) nach. Craik & Lockhart (1972) bewiesen im 'Levels of Processing'-Ansatz, dass tiefe semantische Einbettung – wie narrative Verknüpfungen und thematisches Clustern – dem oberflächlichen Wiederholen weit überlegen ist.",
       "Dank browserbasierter digitaler Hochpräzisionschronometrie (Woods et al., 2015) misst dieser Drill sowohl Ihre Wortspanne als auch Ihre Abrufrate objektiv über ein adaptives Treppenstufenverfahren (Staircase-Protokoll), das sich präzise an Ihre individuelle Leistungsgrenze annähert.",
-      "Messmethodik & Hardwarelatenz: Jedes Interaktionsereignis wird lokal im Browser über performance.now() mit Submillisekunden-Auflösung erfasst. Zu beachten ist, dass moderne Browser Zeitgeber zum Schutz vor Timing-Angriffen (Spectre) auf etwa 1 ms runden und Bildschirme Ereignisse auf ihr jeweiliges Bildwiederholintervall quantisieren – etwa 16,7 ms bei 60 Hz, 6,9 ms bei 144 Hz und 4,1 ms bei 240 Hz (Woods et al., 2015). Abweichungen unter 5 ms sind als reguläres Messrauschen zu betrachten; vergleichen Sie eigene Trainingsdurchläufe primär auf identischer Hardware.",
+      "Messmethodik & Hardwarelatenz: Jedes Interaktionsereignis wird lokal im Browser über performance.now() erfasst. Zu beachten ist, dass moderne Browser Zeitgeber zum Schutz vor Timing-Angriffen (Spectre) auf etwa 1 ms runden und Bildschirme Ereignisse auf ihr jeweiliges Bildwiederholintervall quantisieren – etwa 16,7 ms bei 60 Hz, 6,9 ms bei 144 Hz und 4,1 ms bei 240 Hz (Woods et al., 2015). Abweichungen unter 5 ms sind als reguläres Messrauschen zu betrachten; vergleichen Sie eigene Trainingsdurchläufe primär auf identischer Hardware.",
       "Datentransparenz: SkillDrills erhebt keinerlei aggregierte Nutzerdaten oder zentrale Analysen. Ihre Testergebnisse, Fehlerquoten und Einstellungen werden ausschließlich im lokalen Speicher (LocalStorage) Ihres Browsers gesichert und niemals an externe Server übertragen. Sämtliche Richtwerte und Normen stammen aus den unten zitierten wissenschaftlichen Publikationen.",
       "Medizinischer Hinweis: Dieser Drill dient als kostenlose kognitive Trainingsübung zu Trainings- und Bildungszwecken. Er stellt kein Medizinprodukt, kein diagnostisches Instrument und kein therapeutisches Verfahren für kognitive Störungen oder neurodegenerative Erkrankungen dar. Bei gesundheitlichen Fragen oder Bedenken bezüglich Ihres Gedächtnisses wenden Sie sich bitte an qualifizierte Ärzte oder neuropsychologisches Fachpersonal."
     ],
     benchmarks: {
       title: "Normative Benchmarks für verbale freie Wiedergabe",
       headers: ["Leistungsstufe", "Wortspanne (Anzahl)", "Freie Wiedergabe Punkte", "Kognitives Profil & Abrufverhalten"],
+      note: "Die Bereiche sind redaktionelle Übungsmarken und keine Bevölkerungsstatistik.",
       rows: [
         [
-                "Tier 1 (Hervorragend / 99. Perzentil)",
+                "Stufe 1",
                 "8 – 11+ Wörter",
                 "1.100+ Punkte",
                 "Mnemotechnischer Meister; nutzt narrative Ketten; überwindet retroaktive Interferenz mühelos; Abruftakt unter 800 ms"
         ],
         [
-                "Tier 2 (Überdurchschnittlich / 85.–95. Perzentil)",
+                "Stufe 2",
                 "6 – 7 Wörter",
                 "850 – 1.099 Punkte",
                 "Übertrifft Standard-Erwachsenennorm; gruppiert Wörter paarweise; stabiler Abruf unter Zeitdruck"
         ],
         [
-                "Tier 3 (Durchschnitt Erwachsene / 50. Perzentil)",
+                "Stufe 3",
                 "4 – 5 Wörter",
                 "550 – 849 Punkte",
                 "Normbereich bei unvertrauten Listen im ersten Durchgang; zeigt typischen U-Kurven-Abfall in der Listenmitte"
         ],
         [
-                "Tier 4 (Unterdurchschnittlich / Engpass)",
+                "Stufe 4",
                 "3 Wörter",
                 "350 – 549 Punkte",
                 "Stützt sich rein auf den phonologischen Echospeicher ohne semantische Kodierung"
         ],
         [
-                "Tier 5 (Reduzierte Wortspanne)",
+                "Stufe 5",
                 "< 3 Wörter",
                 "< 350 Punkte",
                 "Schneller Zerfall von Gedächtnisspuren; hohe Anfälligkeit für proaktive Interferenz"

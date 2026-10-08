@@ -172,7 +172,7 @@ const faqSchema = {
       name: 'What constitutes an elite score in the Pattern Memory Game?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'A score of 13,000 to 16,999 points reflects Elite Sequence Tracer performance (top 3%), while scores exceeding 17,000 points with an 8+ waypoint streak place a player in the top 0.1% Apex Pattern Master tier.',
+        text: 'A score of 13,000 to 16,999 points reflects Elite Sequence Tracer performance stage, while scores exceeding 17,000 points with an 8+ waypoint streak reach the Apex Pattern Master tier.',
       },
     },
     {

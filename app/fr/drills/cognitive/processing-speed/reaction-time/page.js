@@ -271,11 +271,11 @@ const guideProps = {
     title: 'Repères de performance au temps de réaction de choix',
     headers: ['Palier', 'Profil', 'Latence de réaction', 'Exactitude', 'Lecture'],
     rows: [
-      { tier: 'Palier 1', rank: 'Très rapide', stat: '< 210 ms', level: 'Palier 1', accuracy: '98%+', percentile: 'Très rapide et très précis' },
-      { tier: 'Palier 2', rank: 'Avancé', stat: '210 – 249 ms', level: 'Palier 2', accuracy: '94-97%', percentile: 'Rapide et régulier' },
-      { tier: 'Palier 3', rank: 'Entraîné', stat: '250 – 289 ms', level: 'Palier 3', accuracy: '88-93%', percentile: 'Bon niveau d’entraînement' },
-      { tier: 'Palier 4', rank: 'Intermédiaire', stat: '290 – 349 ms', level: 'Palier 4', accuracy: '78-87%', percentile: 'Plage courante en laboratoire' },
-      { tier: 'Palier 5', rank: 'Débutant', stat: '≥ 350 ms', level: 'Palier 5', accuracy: '< 78%', percentile: 'Point de départ' },
+      { tier: 'Palier 1', rank: 'Très rapide', stat: '< 210 ms', level: 'Palier 1', accuracy: '98%+', marker: 'Très rapide et très précis' },
+      { tier: 'Palier 2', rank: 'Avancé', stat: '210 – 249 ms', level: 'Palier 2', accuracy: '94-97%', marker: 'Rapide et régulier' },
+      { tier: 'Palier 3', rank: 'Entraîné', stat: '250 – 289 ms', level: 'Palier 3', accuracy: '88-93%', marker: 'Bon niveau d’entraînement' },
+      { tier: 'Palier 4', rank: 'Intermédiaire', stat: '290 – 349 ms', level: 'Palier 4', accuracy: '78-87%', marker: 'Plage courante en laboratoire' },
+      { tier: 'Palier 5', rank: 'Débutant', stat: '≥ 350 ms', level: 'Palier 5', accuracy: '< 78%', marker: 'Point de départ' },
     ],
   },
   protocols: {

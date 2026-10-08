@@ -272,13 +272,15 @@ const guideProps = {
   },
   benchmarks: {
     title: 'Padrões de Desempenho Cognitivo & Escala de Atenção Sustentada (CPT)',
-    headers: ['Nível', 'Classificação', 'Faixa de Rendimento', 'Precisão', 'Percentil'],
+    headers: ['Nível', 'Classificação', 'Faixa de Rendimento', 'Precisão', 'Marcador de prática'],
+    note: "Faixas editoriais de prática para comparar suas próprias sessões; não são estatísticas de população nem normas clínicas.",
+
     rows: [
-      { tier: 'Tier 1', rank: 'Grande Mestre / Elite', stat: 'Top 1%', level: 'Mestrado', accuracy: '98%+', percentile: 'Top 1%' },
-      { tier: 'Tier 2', rank: 'Foco Avançado', stat: 'Top 5%', level: 'Diamante', accuracy: '94-97%', percentile: 'Top 5%' },
-      { tier: 'Tier 3', rank: 'Operador Proficiente', stat: 'Top 15%', level: 'Platina', accuracy: '88-93%', percentile: 'Top 15%' },
-      { tier: 'Tier 4', rank: 'Padrão Adulto Médio', stat: 'Top 50%', level: 'Ouro', accuracy: '78-87%', percentile: 'Top 50%' },
-      { tier: 'Tier 5', rank: 'Linha de Base Inicial', stat: 'Base', level: 'Prata', accuracy: '< 78%', percentile: 'Base' },
+      { tier: 'Faixa 1', rank: 'Muito avançada', stat: 'Ritmo muito alto', accuracy: '98%+', marker: 'Ritmo muito alto com alta precisão' },
+      { tier: 'Faixa 2', rank: 'Avançada', stat: 'Ritmo alto', accuracy: '94-97%', marker: 'Ritmo alto e regular' },
+      { tier: 'Faixa 3', rank: 'Sólida', stat: 'Ritmo estável', accuracy: '88-93%', marker: 'Ritmo estável com alguns erros' },
+      { tier: 'Faixa 4', rank: 'Em desenvolvimento', stat: 'Ritmo médio', accuracy: '78-87%', marker: 'Ritmo médio com margem de melhora' },
+      { tier: 'Faixa 5', rank: 'Inicial', stat: 'Ritmo inicial', accuracy: '< 78%', marker: 'Ponto de partida' },
     ],
   },
   protocols: {
