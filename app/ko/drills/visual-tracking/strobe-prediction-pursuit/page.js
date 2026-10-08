@@ -4,41 +4,18 @@ import RelatedDrills from '@/components/drill/RelatedDrills';
 import { getAlternateLanguages } from '@/lib/i18n/locales';
 import { pickSources } from '@/lib/drillSources';
 
+const url = 'https://skilldrills.online/ko/drills/visual-tracking/strobe-prediction-pursuit';
+const title = "스트로브 시각 훈련 | 점멸 가림 예측 연습 | SkillDrills";
+const description = "점멸로 일부 구간이 가려지는 표적의 움직임을 눈으로 예상하며 따라가는 무료 시각 훈련. 속도와 시간을 조절하며 연습하세요.";
+
 export const metadata = {
-  title: "스트로브 시각 훈련｜동체시력 예측 연습 | SkillDrills",
-  description: "점멸로 가려지는 표적의 궤적을 예측하는 무료 브라우저 훈련. 재등장 오차와 추적 연속성을 기록합니다.",
-  keywords: [
-    "스트로브 시각 훈련",
-    "동체시력 점멸 훈련",
-    "스트로브 안경 시력 훈련",
-    "가림 궤적 예측",
-    "점멸 표적 추적",
-    "시각 보간 훈련",
-    "예측 시선 추적",
-    "단속적 시각 차단 운동",
-    "속도 기억 안구 훈련",
-    "동체시력 예측 테스트",
-    "재등장 표적 오차",
-    "점멸 가림 시각 추종"
-  ],
-  alternates: {
-    canonical: "https://skilldrills.online/ko/drills/visual-tracking/strobe-prediction-pursuit",
-    languages: getAlternateLanguages("/drills/visual-tracking/strobe-prediction-pursuit"),
-  },
+  title,
+  description,
+  keywords: ["스트로브 시각 훈련", "스트로브 안경 훈련 차이", "점멸 가림 예측", "시선 추적 훈련", "눈 운동 게임", "궤적 예측", "움직이는 표적 추적", "시각 훈련 게임"],
+  alternates: { canonical: url, languages: getAlternateLanguages('/drills/visual-tracking/strobe-prediction-pursuit') },
+  openGraph: { images: [{ url: 'https://skilldrills.online/opengraph-image', width: 1200, height: 630 }], title, description, url, siteName: 'SkillDrills', locale: 'ko_KR', type: 'website' },
+  twitter: { images: ['https://skilldrills.online/opengraph-image'], card: 'summary_large_image', title, description },
   robots: { index: true, follow: true },
-  openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
-    title: "스트로브 시각 훈련｜동체시력 예측 연습 | SkillDrills",
-    description: "점멸로 가려지는 표적의 궤적을 예측하는 무료 브라우저 훈련. 재등장 오차와 추적 연속성을 기록합니다.",
-    url: "https://skilldrills.online/ko/drills/visual-tracking/strobe-prediction-pursuit",
-    siteName: "SkillDrills",
-    locale: "ko_KR",
-    type: "website",
-  },
-  twitter: { images: ["https://skilldrills.online/opengraph-image"],
-    card: "summary_large_image",
-    title: "스트로브 시각 훈련｜동체시력 예측 연습 | SkillDrills",
-    description: "점멸로 가려지는 표적의 궤적을 예측하는 무료 브라우저 훈련. 재등장 오차와 추적 연속성을 기록합니다.",
-  },
 };
 
 const breadcrumbSchema = {
@@ -60,315 +37,208 @@ const breadcrumbSchema = {
     {
       "@type": "ListItem",
       "position": 3,
-      "name": "스트로브 예측 추적",
+      "name": "스트로브 시각 훈련",
       "item": "https://skilldrills.online/ko/drills/visual-tracking/strobe-prediction-pursuit"
     }
   ]
 };
 
 const softwareApplicationSchema = {
-  "@context": "https://schema.org",
-  "@type": "SoftwareApplication", "sameAs": ["https://en.wikipedia.org/wiki/Smooth_pursuit"],
-  "name": "스트로브 동체시력 훈련・점멸 가림 궤적 예측 테스트",
-  "applicationCategory": "HealthApplication",
-  "operatingSystem": "All",
-  "offers": {
-    "@type": "Offer",
-    "price": "0",
-    "priceCurrency": "USD"
-  },
-  "description": "주기적 암전(스트로브) 속에서 사라진 표적의 이동 궤적을 뇌내 보간하여 선행 추종하는 동체시력 훈련. 스트로브 안경의 효과를 구현.",
-  "url": "https://skilldrills.online/ko/drills/visual-tracking/strobe-prediction-pursuit",
-  "publisher": {
-    "@type": "Organization",
-    "name": "SkillDrills",
-    "url": "https://skilldrills.online"
-  },
-  "dateModified": "2026-09-20"
+  '@context': 'https://schema.org',
+  '@type': 'SoftwareApplication',
+  name: "스트로브 시각 훈련",
+  applicationCategory: 'GameApplication',
+  operatingSystem: 'All',
+  offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
+  description,
+  url,
+  publisher: { '@type': 'Organization', name: 'SkillDrills', url: 'https://skilldrills.online/ko' },
+  inLanguage: 'ko',
+  dateModified: '2026-10-08',
 };
 
 const webAppSchema = {
-  "@context": "https://schema.org",
-  "@type": "WebApplication",
-  "name": "스트로브 동체시력 훈련・점멸 가림 궤적 예측 테스트",
-  "applicationCategory": "EducationalApplication",
-  "operatingSystem": "All",
-  "browserRequirements": "HTML5 Canvas 및 자바스크립트 지원 최신 브라우저",
-  "offers": {
-    "@type": "Offer",
-    "price": "0",
-    "priceCurrency": "USD"
-  },
-  "url": "https://skilldrills.online/ko/drills/visual-tracking/strobe-prediction-pursuit",
-  "dateModified": "2026-09-20"
+  '@context': 'https://schema.org',
+  '@type': 'WebApplication',
+  name: "스트로브 시각 훈련 웹 앱",
+  applicationCategory: 'GameApplication',
+  operatingSystem: 'All',
+  browserRequirements: 'HTML5 Canvas를 지원하는 최신 브라우저',
+  offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
+  url,
+  inLanguage: 'ko',
+  dateModified: '2026-10-08',
 };
 
 const videoGameSchema = {
-  "@context": "https://schema.org",
-  "@type": "VideoGame",
-  "name": "스트로브 동체시력 훈련・점멸 가림 궤적 예측 테스트",
-  "url": "https://skilldrills.online/ko/drills/visual-tracking/strobe-prediction-pursuit",
-  "description": "주기적 암전(스트로브) 속에서 사라진 표적의 이동 궤적을 뇌내 보간하여 선행 추종하는 동체시력 훈련. 스트로브 안경의 효과를 구현.",
-  "genre": [
-    "액션",
-    "동체시력 트레이닝",
-    "시각 예측 훈련"
-  ],
-  "gamePlatform": [
-    "Web Browser",
-    "Desktop",
-    "Mobile"
-  ],
-  "applicationCategory": "Game",
-  "offers": {
-    "@type": "Offer",
-    "price": "0",
-    "priceCurrency": "USD"
-  },
-  "dateModified": "2026-09-20"
+  '@context': 'https://schema.org',
+  '@type': 'VideoGame',
+  name: "스트로브 시각 훈련",
+  url,
+  description,
+  genre: ['Action Game', 'Aim Trainer'],
+  gamePlatform: ['Web Browser', 'Desktop', 'Mobile'],
+  applicationCategory: 'Game',
+  inLanguage: 'ko',
+  dateModified: '2026-10-08',
+  offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
 };
 
 const howToSchema = {
-  "@context": "https://schema.org",
-  "@type": "HowTo",
-  "name": "스트로브 가림 궤적 예측 추적 훈련 진행 방법",
-  "description": "주기적으로 암전되는 표적의 소실 구간을 뇌내에서 능동적으로 보간하고 선행 시선을 동기화하는 4단계 훈련 프로토콜.",
-  "dateModified": "2026-09-20",
-  "step": [
-    {
-      "@type": "HowToStep",
-      "position": 1,
-      "name": "스트로브 세션 매개변수 설정",
-      "text": "세션 시간(30~120초), 표적 이동 속도 배율, 구체 크기를 선택하고 필요에 따라 가이드 라인 숨김(Hide Line)을 활성화합니다.",
-      "url": "https://skilldrills.online/ko/drills/visual-tracking/strobe-prediction-pursuit#step-1"
-    },
-    {
-      "@type": "HowToStep",
-      "position": 2,
-      "name": "가시 구간에서의 순간 벡터 및 각속도 인코딩",
-      "text": "표적이 화면에 보이는 짧은 가시 구간(60프레임) 동안 표적의 속도와 진행 방향 벡터를 중심와로 빠르게 인지하여 소뇌 내부 모델에 입력합니다.",
-      "url": "https://skilldrills.online/ko/drills/visual-tracking/strobe-prediction-pursuit#step-2"
-    },
-    {
-      "@type": "HowToStep",
-      "position": 3,
-      "name": "암전 소실 구간에서의 능동적 안구 속도 유지",
-      "text": "표적이 깜빡이며 사라진 암전 구간(30프레임) 동안 안구를 멈추지 않고, 직전 속도를 기억하여 보이지 않는 궤적을 따라 시선을 능동 구동합니다.",
-      "url": "https://skilldrills.online/ko/drills/visual-tracking/strobe-prediction-pursuit#step-3"
-    },
-    {
-      "@type": "HowToStep",
-      "position": 4,
-      "name": "재점등 시점의 착지 오차 분석 및 피드포워드 교정",
-      "text": "표적이 다시 번쩍 나타나는 순간 중심와와 표적의 위치 오차를 즉각 확인하고 다음 암전 주기에서 안구 속도를 미세 조정합니다.",
-      "url": "https://skilldrills.online/ko/drills/visual-tracking/strobe-prediction-pursuit#step-4"
-    }
-  ]
+  '@context': 'https://schema.org',
+  '@type': 'HowTo',
+  name: "점멸 가림 예측 훈련 하는 방법",
+  description: "점멸(스트로브)로 일부 구간이 가려지며 움직이는 표적를 눈으로 따라가는 4단계 연습법입니다.",
+  step: [
+  {
+    "@type": "HowToStep",
+    "position": 1,
+    "name": "편한 자세 잡기",
+    "text": "화면에서 편한 거리를 두고 앉아 어깨와 손의 힘을 뺍니다."
+  },
+  {
+    "@type": "HowToStep",
+    "position": 2,
+    "name": "움직임 기억",
+    "text": "표적이 가려지기 직전의 방향과 속도를 눈여겨봅니다."
+  },
+  {
+    "@type": "HowToStep",
+    "position": 3,
+    "name": "부드럽게 따라가기",
+    "text": "커서가 아닌 표적을 눈으로 부드럽게 따라가며 세션을 진행합니다."
+  },
+  {
+    "@type": "HowToStep",
+    "position": 4,
+    "name": "설정 조절",
+    "text": "편안해지면 속도를 올리거나 경로 숨기기를 하나씩 추가합니다."
+  }
+].map((st) => ({ ...st, url: `${url}#step-${st.position}` })),
 };
 
+const faqs = [
+  {
+    "q": "점멸 가림 예측 훈련은 무엇인가요?",
+    "a": "점멸(스트로브)로 일부 구간이 가려지며 움직이는 표적를 눈으로 따라가는 브라우저 훈련입니다. 끊겨 보이는 동안 표적의 움직임을 예상하는 연습이 목적이며, 속도·시간·경로 표시를 조절할 수 있습니다. 시력 검사나 치료가 아니라 연습 도구입니다."
+  },
+  {
+    "q": "눈의 움직임을 직접 측정하나요?",
+    "a": "아닙니다. 브라우저는 시선이 어디를 향하는지 알 수 없고, 표적을 그린 위치와 설정만 알고 있습니다. 포인터는 보조일 뿐 커서 위치가 시선을 증명하지 않으며, 결과는 반복 가능한 연습 기록입니다."
+  },
+  {
+    "q": "스트로브 시각 훈련이란 무엇인가요?",
+    "a": "화면이 깜빡이듯 일부 구간이 가려지는 상황에서 표적의 움직임을 계속 따라가는 연습입니다. 스포츠 시각 훈련에서 쓰이는 스트로브 안경과 비슷한 아이디어이지만 이 페이지는 브라우저 화면 훈련입니다."
+  },
+  {
+    "q": "스트로브 안경 훈련과 같은가요?",
+    "a": "아닙니다. 스트로브 안경은 착용자의 시야 자체를 깜빡이게 하는 장비입니다. 이 페이지는 표적이 점멸로 가려지는 화면을 보는 연습이며 같은 효과를 낸다고 볼 수 없습니다."
+  },
+  {
+    "q": "빛 깜빡임이 위험하지 않나요?",
+    "a": "깜빡이는 화면은 빛에 민감한 사람에게 불편이나 발작 증상을 일으킬 수 있습니다. 광과민성 병력이 있으면 사용하지 마세요. 어지러움이나 두통이 생기면 즉시 중단합니다."
+  },
+  {
+    "q": "처음에는 어떤 설정으로 시작하나요?",
+    "a": "30~60초의 짧은 세션, 느린 속도, 경로 표시 상태로 시작하세요. 편안하게 따라갈 수 있게 된 뒤 속도를 올리고, 경로 숨기기와 무작위 속도는 한 번에 하나씩 추가합니다."
+  },
+  {
+    "q": "시선은 어디에 두어야 하나요?",
+    "a": "표적의 중심을 보고, 커서를 따라가지 않도록 하세요. 어깨와 목, 마우스를 쥔 손의 힘을 빼고 자연스럽게 깜빡이며 편안한 거리에서 화면을 봅니다."
+  },
+  {
+    "q": "이 훈련으로 시력이나 게임 실력이 좋아지나요?",
+    "a": "보장할 수 없습니다. 이 훈련은 눈으로 표적을 따라가는 연습이며 시력 개선, 질환 치료, FPS 에임 향상을 약속하지 않습니다. 눈에 문제가 의심되면 전문가의 진료를 받으세요."
+  },
+  {
+    "q": "화면과 환경이 결과에 영향을 주나요?",
+    "a": "주사율, 밝기, 대비, 화면 크기와 거리, 브라우저가 표적이 보이는 방식을 바꿉니다. 입력 장치와 화면 지연도 영향을 줄 수 있으니(Woods et al., 2015) 같은 환경에서 비교하세요."
+  },
+  {
+    "q": "얼마나 연습해야 하나요?",
+    "a": "5~10분처럼 짧고 반복 가능한 블록으로 하고 쉬세요. 눈이 피로하거나 건조하면 멈추고 먼 곳을 보며 깜빡이세요. 통증, 어지럼, 메스꺼움, 두통이 있으면 중단합니다."
+  }
+];
+
 const faqSchema = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "dateModified": "2026-09-20",
-  "mainEntity": [
-    {
-      "@type": "Question",
-      "name": "스트로브 예측 추적 훈련(Strobe Prediction Pursuit)이란 무엇인가요?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "움직이는 표적이 주기적으로 완전히 암전(소실)되는 환경 속에서, 시각적 실시간 피드백이 단절된 공백을 뇌내 운동 기억과 궤적 외삽으로 보간하여 선행 시선을 유지하는 고급 안구 운동 훈련입니다. 프로 스포츠 선수들이 착용하는 '스트로브 고글(액정 점멸 안경)'의 시각 인지 훈련 원리를 웹 브라우저 상에 완벽히 구현했습니다."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "스트로브 시각 훈련의 뇌과학적 원리는 무엇인가요?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "연속적인 시각 피드백을 주기적으로 차단하면 뇌는 실시간 감각 입력에 안주할 수 없게 됩니다. 이에 따라 중추신경계는 찰나의 가시 정보를 극대화하여 처리하고, 시각 작업기억과 소뇌의 순모델(Forward Model)을 강제 가동하여 미래 위치를 능동적으로 예측하는 강력한 신경가소성을 유도합니다(Appelbaum et al., 2011, 2012)."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "표적이 사라지는 순간 사람의 안구는 어떻게 반응하나요?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "일반적으로 원활추종 안구 운동은 망막에 맺히는 상의 미끄러짐 속도(Retinal Slip)에 의존하므로, 표적이 사라지면 100~200ms 이내에 속도가 급격히 떨어지며 정지합니다. 그러나 Bennett et al. (2007)의 연구에 따르면, 훈련된 관찰자는 소뇌의 속도 기억(Velocity Memory)을 활용하여 표적이 사라진 후에도 수백 밀리초 동안 추종 속도를 유지하거나 재등장을 예측하여 재가속할 수 있습니다."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "실제 프로 스포츠(야구, 하키, 축구 등)에서 어떻게 활용되나요?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "미국 메이저리그(MLB), 북미아이스하키리그(NHL), NFL 등 최정상급 구단에서 널리 활용되고 있습니다. Mitroff et al. (2013)의 아이스하키 선수 연구와 Smith & Mitroff (2016)의 실험에 따르면, 스트로브 훈련은 빠른 투사체의 궤적 예측 정확도를 높이고 수비수나 장애물로 시야가 가려지는 혼전 상황에서의 포구 성공률을 유의미하게 향상시킵니다."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "FPS 게임이나 e스포츠 교전에서 어떤 실전 이점이 있나요?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "연막탄(스모크) 속을 가로지르는 적, 엄폐물 뒤에서 찰나의 순간만 모습을 드러내는 지글 피킹(Jiggle Peeking) 적의 다음 출현 위치를 정확하게 프리에임(선조준)할 수 있습니다. 적이 보이지 않는 0.5초 동안에도 뇌 속에서 가상의 표적을 완벽히 트래킹할 수 있게 됩니다."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "광과민성 발작이나 눈 피로와 관련된 주의사항이 있나요?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "규칙적인 화면 점멸 자극이 포함되어 있으므로 광과민성 간질 병력이 있거나 편두통, 극심한 안구 건조증을 앓고 있는 사용자는 훈련을 피하거나 전문의와 상담하십시오. 훈련 중 어지럼증이나 불편감이 느껴지면 즉시 중단해야 합니다."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "일반적인 가림 예측 훈련(Predictive Pursuit)과의 차이점은 무엇인가요?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "일반 가림 훈련이 화면 중앙의 고정된 벽을 통과할 때의 단발성 예측이라면, 스트로브 훈련은 전체 궤적에 걸쳐 규칙적인 점멸 암전이 연속됩니다. 이를 통해 시간적 주기성 파악과 미세한 궤도 외삽-착지 사이클을 수십 회 이상 연속 반복하여 신경 적응 강도를 극대화합니다."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "가이드 라인 숨김(Hide Line) 옵션을 켜면 어떤 신경학적 훈련이 되나요?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "배경 궤적선이 사라지면 암전 중 표적 위치에 대한 외부 기하학적 단서가 완벽히 차단됩니다. 두정엽의 공간 처리 회로는 직전의 속도와 곡률 데이터만을 사용하여 완전한 내부 궤적 시뮬레이션을 수행해야 하므로 피드포워드 예측 제어 능력이 최고조로 단련됩니다."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "권장되는 훈련 시간과 세트 구성은 어떻게 되나요?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "1회 45~60초 세션을 2~3회 수행하여 매일 총 3~5분 정도 훈련하는 것이 이상적입니다. 암전 속에서의 뇌내 시뮬레이션은 전두엽과 소뇌에 상당한 인지 부하를 주므로, 짧고 밀도 높은 집중 훈련이 신경가소성 정착에 가장 효과적입니다."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "고주사율(144Hz/240Hz) 게이밍 모니터가 스트로브 훈련에 필수적인 이유는 무엇인가요?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "점멸 프레임 주기(가시 60프레임 / 암전 30프레임)를 밀리초 단위로 정확히 제어하기 위해서입니다. 60Hz(16.7ms)에서는 점멸 전환 시 최대 16.7ms의 타이밍 오차가 발생하지만, 144Hz(6.9ms)나 240Hz(4.2ms)에서는 칼 같은 프레임 타이밍이 유지되어 정밀한 소뇌 학습이 가능합니다(Woods et al., 2015)."
-      }
-    }
-  ]
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  inLanguage: 'ko',
+  mainEntity: faqs.map((f) => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } })),
 };
 
 const guide = {
-  heading: "스트로브 동체시력 훈련・점멸 가림 궤적 예측 테스트: 단속적 시각 정보 하에서의 궤적 선행 보간",
-  intro: [
-    "스트로브 시각 훈련(Stroboscopic Visual Training)은 연속적인 시각 입력을 주기적으로 차단하여 중추신경계가 파편화된 감각 정보만을 토대로 운동을 제어하도록 강제하는 혁신적인 신경 적응 패러다임입니다. 일반적으로 인간의 안구 운동은 망막에 맺히는 시각 피드백에 크게 의존하지만, 점멸에 의해 피드백 루프가 끊기면 뇌는 표적의 운동 역학에 대한 내부 순모델(Forward Internal Model)을 능동적으로 생성할 수밖에 없습니다(Appelbaum et al., 2011; Mitroff et al., 2013).",
-    "동적 표적이 암전 구간에 진입하면 망막상의 속도 신호는 순간적으로 제로가 됩니다. 비훈련자의 경우 원활추종 속도가 100~200밀리초 이내에 급격히 감속하여 방황 단속운동으로 붕괴됩니다. 그러나 Bennett et al. (2007)의 신경생리학 연구는 가림 자극을 반복 훈련받은 관찰자가 소뇌와 전두안야(FEF)의 예측 회로를 동원하여 암전 중에도 속도 기억(Velocity Memory)을 완벽히 유지하고, 표적 재출현 직전에 선행 가속하여 시선을 목표 지점에 정확히 착지시킬 수 있음을 입증했습니다.",
-    "스포츠 과학계에서는 액정 셔터가 탑재된 스트로브 안경을 MLB, NHL, 프로 농구 등 엘리트 구단의 공식 훈련 도구로 도입해 왔습니다. Smith & Mitroff (2016) 및 Appelbaum et al. (2012)의 연구에 따르면, 스트로브 훈련은 동체시력, 예측 타이밍, 시각적 단기 기억(VSTM), 그리고 장애물 뒤로 사라진 투사체에 대한 궤적 외삽 능력을 비약적으로 향상시킵니다. 시각적 안도감을 차단함으로써 선수는 물체의 초기 궤적에서 결정적인 운동 단서를 신속하게 추출하는 법을 터득하게 됩니다.",
-    "본 ‘스트로브 예측 추적(Strobe Prediction Pursuit)’ 드릴은 고가의 특수 장비 없이도 브라우저 환경에서 스트로브 훈련을 정밀하게 재현합니다. 1주기당 60프레임의 가시 구간과 30프레임의 완전 암전 구간이 교차 반복됩니다. 디스플레이 주사율 지연(144Hz 시 6.9ms)과 입력 장치 폴링 레이트(Woods et al., 2015)를 고려하여 재점등의 순간에 시선이 표적의 한가운데를 정확히 겨누도록 훈련하십시오. 모든 측정 데이터는 브라우저 로컬 스토리지에 안전하게 보관됩니다."
+  "heading": "점멸 가림 예측 훈련 가이드",
+  "intro": [
+    "스트로브 시각 훈련은 점멸(스트로브)로 일부 구간이 가려지며 움직이는 표적를 눈으로 따라가는 브라우저 훈련입니다. 끊겨 보이는 동안 표적의 움직임을 예상하는 연습을 반복해서 경험할 수 있고, 속도·시간·경로 표시를 조절할 수 있습니다.",
+    "움직이는 표적을 부드럽게 따라가는 눈의 움직임과 시선을 빠르게 옮기는 움직임은 서로 다른 움직임으로 설명됩니다. 이 훈련에서는 둘이 번갈아 쓰이는 상황을 연습할 수 있습니다.",
+    "브라우저는 표적을 그린 위치와 설정을 알 수 있지만 눈이 실제로 향한 위치는 기록하지 못합니다. 따라서 결과는 임상적 추적 능력이나 시력 수치가 아니라 반복 가능한 연습 기록으로 해석하세요.",
+    "편안한 거리와 자세에서, 같은 화면과 브라우저로 비교하세요. 주사율과 입력 장치도 영향을 줄 수 있습니다(Woods et al., 2015). 통증, 어지럼, 메스꺼움, 지속적인 흐림이나 이상 증상이 생기면 중단하세요."
   ],
-  benchmarks: {
-    title: "스트로브 예측 추적 성능 평가 기준 (속도 배율 및 재점등 착지 오차)",
-    headers: ["숙련도 등급", "권장 속도 배율", "재점등 시점 착지 오차", "암전 중 속도 유지율", "예상 인구 백분위"],
-    rows: [
-      ["엘리트 / 예측 신경 완전 적응 (Elite)", "3.5x ~ 5.0x+", "오차 < 12px (재점등 순간 중심 일치)", "암전 중 감속 0% (완전 유지)", "상위 1.5%"],
-      ["마스터 / 정밀 궤적 외삽 (Master)", "2.5x ~ 3.5x", "오차 < 25px (미세 단속운동 즉각 보정)", "암전 중 감속 < 15%", "상위 8%"],
-      ["어드밴스 / 실전 교전 수준 (Advanced)", "1.8x ~ 2.5x", "오차 < 45px (재출현 직후 신속 추종)", "암전 중 감속 < 30%", "상위 25%"],
-      ["인터미디에이트 / 기초 (Intermediate)", "1.2x ~ 1.8x", "오차 45 ~ 80px (암전 중 시선 정지)", "암전 중 안구 방황 (감속 > 50%)", "중위 45%"],
-      ["비기너 / 훈련 미경험 (Novice)", "0.5x ~ 1.2x", "표적 완전 상실 (재점등 후 탐색)", "암전 순간 안구 운동 정지", "입문 기준"]
+  "benchmarks": {
+    "title": "연습 단계 참고표",
+    "headers": [
+      "단계",
+      "연습 목표"
     ],
-    note: "평가 기준은 Appelbaum et al. (2011)의 스트로브 지각 적응 실험 및 Bennett et al. (2007)의 가림 시 원활추종 속도 기억 모델을 바탕으로 정립되었습니다."
+    "rows": [
+      [
+        "1단계",
+        "느린 속도, 경로 표시"
+      ],
+      [
+        "2단계",
+        "짧은 가림 뒤 따라붙기"
+      ],
+      [
+        "3단계",
+        "가림이 길어져도 흐름 유지"
+      ],
+      [
+        "4단계",
+        "경로 숨기기 추가"
+      ],
+      [
+        "5단계",
+        "무작위 속도 추가"
+      ]
+    ],
+    "note": "이 표는 SkillDrills의 연습 방향 안내입니다. 시각 기능 검사 기준, 사용자 통계, 백분위가 아닙니다."
   },
-  techniques: [
-    {
-      title: "가시 구간(점등 시)에서의 순간 벡터 및 각속도 인코딩",
-      description: "표적이 보이는 60프레임(약 0.4초)은 단순히 구경하는 시간이 아니라 표적의 순간 속도와 곡률을 망막 중심와로 뇌에 각인하는 핵심 샘플링 시간입니다. 직전 위치로부터의 이동 벡터를 찰나의 순간에 소뇌 내부 모델로 전달합니다.",
-      tips: [
-        "표적이 켜지는 순간 구체의 중심이 아닌 '진행 방향 앞머리'에 초점을 맞춘다",
-        "점멸의 주기적 템포(딱, 딱 하는 메트로놈 박자)를 마음속으로 카운트한다",
-        "표적의 형태와 잔상을 뚜렷하게 인식할 수 있는 최적 시청 거리(50~65cm)를 고수한다"
-      ]
-    },
-    {
-      title: "암전 구간(소실 시)에서의 능동적 피드포워드 안구 구동",
-      description: "표적이 사라지면 뇌는 본능적으로 '볼 것이 없으므로 안구를 멈추려' 합니다. 이러한 수동적 감속 반사를 의식적으로 억제하고, 사라지기 직전의 각속도를 유지하여 보이지 않는 허공을 부드럽게 가르는 '멘탈 트래킹'을 지속합니다.",
-      tips: [
-        "표적이 사라져도 마치 투명 탄환이 날아가고 있는 것처럼 시선을 계속 밀고 나간다",
-        "배경의 그리드나 화면 테두리 등 외부 공간 좌표를 기준으로 통과 예상 지점을 훑는다",
-        "‘Hide Line’ 옵션을 켜고 연습하여 선에 의존하지 않는 순수한 궤적 외삽 능력을 기른다"
-      ]
-    },
-    {
-      title: "재점등 순간 착지 오차에 대한 즉각적 자기 피드백과 보정",
-      description: "표적이 번쩍 다시 나타나는 찰나, 자신의 시선이 표적보다 '앞(오버슈트)'에 있었는지 '뒤(지연)'에 있었는지를 0.1초 내에 자각합니다. 이 망막 슬립 오차가 소뇌의 피드백 학습 신호가 되어 다음 암전 구간의 안구 속도를 자동 보정합니다.",
-      tips: [
-        "재점등 시 표적 뒤에 처져 있었다면 다음 암전에서는 안구 속도를 10% 더 빠르게 미는 느낌을 준다",
-        "재점등 시 표적을 앞질러 갔다면 급격한 도약운동을 자제하고 원활추종 속도를 차분히 맞춘다",
-        "3주기 연속으로 재점등 오차가 제로가 되는 리듬을 찾을 때까지 속도 배율을 일정하게 유지한다"
-      ]
-    },
-    {
-      title: "눈 깜빡임(블링크)과 점멸 사이클의 완전 동기화",
-      description: "표적이 켜져 있는 가시 구간에 눈을 깜빡이면 필수적인 샘플링 기회를 박탈당해 다음 암전 예측이 불가능해집니다. 눈 깜빡임은 표적이 암전되어 있는 30프레임 동안 신속하게 수행하거나 방향 전환 시점에 맞추어 제어합니다.",
-      tips: [
-        "표적이 직선 궤적으로 가장 안정적으로 날아가는 가시 구간에서는 절대로 눈 깜빡임을 참는다",
-        "실내 습도와 조명을 조절하여 안구 건조로 인한 불수의적 깜빡임 반사를 차단한다",
-        "암전 구간으로 들어가는 순간 숨을 얕게 내쉬며 시각 피질의 집중도를 극대화한다"
-      ]
-    }
-  ],
-  steps: [
-    { title: "빛이 켜질 때 속도 읽기", text: "표적이 보이는 동안 진행 방향과 속도를 파악하고 머리를 고정해 시선의 기준을 만듭니다." },
-    { title: "암전 중에도 궤적 예측하기", text: "표적이 사라져도 시선을 멈추지 말고 직전 움직임을 바탕으로 다시 나타날 위치까지 따라갑니다." },
-    { title: "재등장 순간의 오차 확인하기", text: "표적이 돌아온 순간 앞뒤로 얼마나 벗어났는지 확인하고 다음 암전에서 속도를 조금 조절합니다." },
-    { title: "안정된 뒤 난도 높이기", text: "짧은 세트로 연습하고 재등장 시 표적 손실이 줄어든 뒤 속도나 차단 난도를 한 단계 높입니다." }
-  ],
-  deviceCalibration: {
-    title: "스트로브 예측 추적을 위한 하드웨어 환경 및 인체공학적 세팅",
-    points: [
-      "디스플레이 주사율: 점멸 프레임 주기(가시 60프레임 / 암전 30프레임)의 시간적 정밀도를 유지하기 위해 144Hz 이상의 고주사율 게이밍 모니터를 권장합니다. 60Hz(16.7ms) 대비 프레임 간격을 6.9ms 이하로 단축합니다(Woods et al., 2015).",
-      "응답속도 및 잔상 제어: 표적이 암전될 때 디스플레이 잔상(고스팅)이 남지 않도록 1ms 이하의 고속 IPS 또는 OLED 패널을 권장합니다.",
-      "시청 거리 및 머리 자세: 화면 전체가 수평 시야각 40~45도 내에 들어오도록 모니터와 50~65cm 거리를 유지하고 머리가 흔들리지 않도록 올바른 착석 자세를 취합니다.",
-      "명암 대비 최적화: 검정 배경(#050508)과 사이버 레드(#ef4444) 표적의 대비를 극대화하고 실내 조명을 은은하게 조절하여 반사광을 완전히 제거합니다."
+  "techniques": {
+    "title": "연습 요령 4가지",
+    "items": [
+      {
+        "name": "끊겨도 흐름 유지하기",
+        "desc": "표적이 깜빡이며 끊겨 보여도 직전의 방향과 속도를 이어서 따라가세요. 다시 보일 위치를 가볍게 예상하되 서두르지 않습니다.",
+        "tips": "불편하면 속도를 낮추고 경로를 표시한 상태로 돌아가세요."
+      },
+      {
+        "name": "커서가 아닌 표적 보기",
+        "desc": "포인터는 보조일 뿐입니다. 커서가 아니라 표적을 눈으로 따라가며 어깨와 손의 힘을 빼세요.",
+        "tips": "목이나 머리를 같이 돌리지 않았는지 가끔 확인합니다."
+      },
+      {
+        "name": "한 번에 하나만 어렵게 하기",
+        "desc": "속도, 경로 숨기기, 무작위 속도를 각각 따로 올리세요. 편안함이 무너지면 이전 설정으로 돌아갑니다.",
+        "tips": "설정을 바꾸면 기록을 새로 시작합니다."
+      },
+      {
+        "name": "짧게 하고 쉬기",
+        "desc": "5~10분 단위로 하고 눈을 깜빡이며 먼 곳을 보세요. 오래 한다고 더 좋은 것은 아닙니다.",
+        "tips": "통증, 어지럼, 메스꺼움이 있으면 즉시 중단합니다."
+      }
     ]
   },
-  faqs: [
-    {
-      q: "스트로브 예측 추적 훈련(Strobe Prediction Pursuit)이란 무엇인가요?",
-      a: "움직이는 표적이 주기적으로 완전히 암전(소실)되는 환경 속에서, 시각적 실시간 피드백이 단절된 공백을 뇌내 운동 기억과 궤적 외삽으로 보간하여 선행 시선을 유지하는 고급 안구 운동 훈련입니다. 프로 스포츠 선수들이 착용하는 '스트로브 고글(액정 점멸 안경)'의 시각 인지 훈련 원리를 웹 브라우저 상에 완벽히 구현했습니다."
-    },
-    {
-      q: "스트로브 시각 훈련의 뇌과학적 원리는 무엇인가요?",
-      a: "연속적인 시각 피드백을 주기적으로 차단하면 뇌는 실시간 감각 입력에 안주할 수 없게 됩니다. 이에 따라 중추신경계는 찰나의 가시 정보를 극대화하여 처리하고, 시각 작업기억과 소뇌의 순모델(Forward Model)을 강제 가동하여 미래 위치를 능동적으로 예측하는 강력한 신경가소성을 유도합니다(Appelbaum et al., 2011, 2012)."
-    },
-    {
-      q: "표적이 사라지는 순간 사람의 안구는 어떻게 반응하나요?",
-      a: "일반적으로 원활추종 안구 운동은 망막에 맺히는 상의 미끄러짐 속도(Retinal Slip)에 의존하므로, 표적이 사라지면 100~200ms 이내에 속도가 급격히 떨어지며 정지합니다. 그러나 Bennett et al. (2007)의 연구에 따르면, 훈련된 관찰자는 소뇌의 속도 기억(Velocity Memory)을 활용하여 표적이 사라진 후에도 수백 밀리초 동안 추종 속도를 유지하거나 재등장을 예측하여 재가속할 수 있습니다."
-    },
-    {
-      q: "실제 프로 스포츠(야구, 하키, 축구 등)에서 어떻게 활용되나요?",
-      a: "미국 메이저리그(MLB), 북미아이스하키리그(NHL), NFL 등 최정상급 구단에서 널리 활용되고 있습니다. Mitroff et al. (2013)의 아이스하키 선수 연구와 Smith & Mitroff (2016)의 실험에 따르면, 스트로브 훈련은 빠른 투사체의 궤적 예측 정확도를 높이고 수비수나 장애물로 시야가 가려지는 혼전 상황에서의 포구 성공률을 유의미하게 향상시킵니다."
-    },
-    {
-      q: "FPS 게임이나 e스포츠 교전에서 어떤 실전 이점이 있나요?",
-      a: "연막탄(스모크) 속을 가로지르는 적, 엄폐물 뒤에서 찰나의 순간만 모습을 드러내는 지글 피킹(Jiggle Peeking) 적의 다음 출현 위치를 정확하게 프리에임(선조준)할 수 있습니다. 적이 보이지 않는 0.5초 동안에도 뇌 속에서 가상의 표적을 완벽히 트래킹할 수 있게 됩니다."
-    },
-    {
-      q: "광과민성 발작이나 눈 피로와 관련된 주의사항이 있나요?",
-      a: "규칙적인 화면 점멸 자극이 포함되어 있으므로 광과민성 간질 병력이 있거나 편두통, 극심한 안구 건조증을 앓고 있는 사용자는 훈련을 피하거나 전문의와 상담하십시오. 훈련 중 어지럼증이나 불편감이 느껴지면 즉시 중단해야 합니다."
-    },
-    {
-      q: "일반적인 가림 예측 훈련(Predictive Pursuit)과의 차이점은 무엇인가요?",
-      a: "일반 가림 훈련이 화면 중앙의 고정된 벽을 통과할 때의 단발성 예측이라면, 스트로브 훈련은 전체 궤적에 걸쳐 규칙적인 점멸 암전이 연속됩니다. 이를 통해 시간적 주기성 파악과 미세한 궤도 외삽-착지 사이클을 수십 회 이상 연속 반복하여 신경 적응 강도를 극대화합니다."
-    },
-    {
-      q: "가이드 라인 숨김(Hide Line) 옵션을 켜면 어떤 신경학적 훈련이 되나요?",
-      a: "배경 궤적선이 사라지면 암전 중 표적 위치에 대한 외부 기하학적 단서가 완벽히 차단됩니다. 두정엽의 공간 처리 회로는 직전의 속도와 곡률 데이터만을 사용하여 완전한 내부 궤적 시뮬레이션을 수행해야 하므로 피드포워드 예측 제어 능력이 최고조로 단련됩니다."
-    },
-    {
-      q: "권장되는 훈련 시간과 세트 구성은 어떻게 되나요?",
-      a: "1회 45~60초 세션을 2~3회 수행하여 매일 총 3~5분 정도 훈련하는 것이 이상적입니다. 암전 속에서의 뇌내 시뮬레이션은 전두엽과 소뇌에 상당한 인지 부하를 주므로, 짧고 밀도 높은 집중 훈련이 신경가소성 정착에 가장 효과적입니다."
-    },
-    {
-      q: "고주사율(144Hz/240Hz) 게이밍 모니터가 스트로브 훈련에 필수적인 이유는 무엇인가요?",
-      a: "점멸 프레임 주기(가시 60프레임 / 암전 30프레임)를 밀리초 단위로 정확히 제어하기 위해서입니다. 60Hz(16.7ms)에서는 점멸 전환 시 최대 16.7ms의 타이밍 오차가 발생하지만, 144Hz(6.9ms)나 240Hz(4.2ms)에서는 칼 같은 프레임 타이밍이 유지되어 정밀한 소뇌 학습이 가능합니다(Woods et al., 2015)."
-    }
+  "steps": [
+    "화면에서 편한 거리를 두고 앉아 어깨와 손의 힘을 뺍니다.",
+    "30~60초, 느린 속도, 경로 표시 상태로 시작합니다.",
+    "커서가 아닌 표적을 눈으로 부드럽게 따라갑니다.",
+    "편안해지면 속도를 올리거나 설정을 하나씩 추가합니다."
   ],
+  "audience": "점멸 가림 예측를 가볍게 연습해 보고 싶은 사용자와, 눈으로 표적을 따라가는 감각을 게임처럼 연습하려는 사람.",
+  faqs,
+  sources: pickSources('appelbaum2011', 'mitroff2013', 'smith2016', 'bennett2007', 'appelbaum2012', 'woods2015'),
   related: [
     { href: "/ko/drills/visual-tracking/predictive-pursuit", label: "예측 에임 연습・가림 궤적 추적 테스트" },
     { href: "/ko/drills/visual-tracking/ghosting-suppress-pursuit", label: "잔상 억제 안구 추종 훈련" },
@@ -376,7 +246,6 @@ const guide = {
     { href: "/ko/drills/visual-tracking/spatial-shift-pursuit", label: "화면 흔들림 공간 시프트 추적 훈련" },
     { href: "/ko/drills/visual-tracking/split-screen-tracking", label: "화면 분할 시각 추적" }
   ],
-  sources: pickSources('appelbaum2011', 'mitroff2013', 'smith2016', 'bennett2007', 'appelbaum2012', 'woods2015'),
 };
 
 export default function StrobePredictionPursuitKoPage() {
@@ -409,9 +278,9 @@ export default function StrobePredictionPursuitKoPage() {
 
       <StrobePredictionPursuitClient
         copy={{
-          title: "스트로브 예측 추적",
-          subtitle: "점멸 가림 속 동체시력 예측 연습",
-          description: "점멸로 보이지 않는 표적의 궤적을 예측하고 재등장 시선 오차와 표적 손실을 기록합니다."
+          title: "스트로브 시각 훈련",
+          subtitle: "점멸 가림 속 예측 연습",
+          description: "스트로브 시각 훈련은 점멸(스트로브)로 일부 구간이 가려지며 움직이는 표적를 눈으로 따라가는 연습입니다. 브라우저는 시선을 기록하지 않으며 포인터는 보조일 뿐이므로, 결과는 의료 검사가 아닌 연습 기록으로 보세요."
         }}
       />
       <DrillGuide guide={guide} />
