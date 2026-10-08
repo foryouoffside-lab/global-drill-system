@@ -15,12 +15,12 @@ import { pickSources } from '@/lib/drillSources';
 // ============================================================
 
 export const metadata = {
-  title: 'Teste de estereopsia online | Noção de distância',
-  description: 'Teste de estereopsia e percepção de profundidade online grátis. Treine a noção de distância com um alvo em movimento; não substitui exame oftalmológico.',
+  title: 'Treino de Noção de Distância | Percepção de Profundidade',
+  description: 'Treino grátis de noção de distância e percepção de profundidade: clique quando a esfera encaixar no anel. Não é teste de estereopsia nem exame de visão.',
   keywords: [
-    'teste de estereopsia',
+    'treino de noção de distância',
     'teste de percepção de profundidade',
-    'teste de estereopsia online',
+    'treino de percepção de profundidade',
     'noção de distância',
     'visão tridimensional',
     'teste de percepção de profundidade online',
@@ -31,8 +31,8 @@ export const metadata = {
     'percepção espacial',
   ],
   openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
-    title: 'Teste de estereopsia online | Noção de distância',
-    description: 'Teste de estereopsia e percepção de profundidade online grátis. Treine a noção de distância com um alvo em movimento; não substitui exame oftalmológico.',
+    title: 'Treino de Noção de Distância | Percepção de Profundidade',
+    description: 'Treino grátis de noção de distância e percepção de profundidade: clique quando a esfera encaixar no anel. Não é teste de estereopsia nem exame de visão.',
     type: 'article',
     url: 'https://skilldrills.online/pt/drills/visual/depth-perception/distance-judgment',
     siteName: 'SkillDrills',
@@ -40,8 +40,8 @@ export const metadata = {
   },
   twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: 'summary_large_image',
-    title: 'Teste de estereopsia online | Noção de distância',
-    description: 'Teste de estereopsia e percepção de profundidade online grátis. Treine a noção de distância com um alvo em movimento; não substitui exame oftalmológico.',
+    title: 'Treino de Noção de Distância | Percepção de Profundidade',
+    description: 'Treino grátis de noção de distância e percepção de profundidade: clique quando a esfera encaixar no anel. Não é teste de estereopsia nem exame de visão.',
   },
   robots: { index: true, follow: true },
   alternates: {
@@ -184,7 +184,7 @@ const faqSchema = {
       name: 'A noção de distância pode ser aprimorada com treino?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Sim. Embora limitações anatômicas graves requeiram auxílio médico, a agilidade do córtex visual em computar taxas de expansão óptica melhora expressivamente com treinos repetidos.',
+        text: 'Pode melhorar sua pontuação neste exercício com a prática, mas não há garantia de ganho fora da tela. Dificuldades de visão devem ser avaliadas por um profissional.',
       },
     },
     {
@@ -192,7 +192,7 @@ const faqSchema = {
       name: 'Como é calculada a margem de erro na pontuação?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Calcula-se o erro percentual relativo entre o diâmetro da esfera no momento do clique e o diâmetro exato do anel alvo. Erros abaixo de 5% garantem pontuação máxima.',
+        text: 'Calcula-se o erro percentual relativo entre o diâmetro da esfera no momento do clique e o diâmetro exato do anel alvo. Quanto menor o erro, maior a pontuação.',
       },
     },
     {
@@ -223,22 +223,22 @@ const faqSchema = {
 };
 
 const distanceGuidePt = {
-  heading: 'Teste de estereopsia e treino de noção de distância',
+  heading: 'Treino de noção de distância e percepção de profundidade',
   intro: [
     'A percepção de profundidade (visão estereoscópica e cálculo espacial) é a faculdade visual e neurológica que capacita o organismo a interpretar o ambiente em três dimensões e julgar com exatidão milimétrica a distância, o volume e a trajetória de alvos dinâmicos. Em esportes de alta velocidade (tênis, beisebol, automobilismo), na aviação, em exames psicotécnicos de direção (CNH profissional) e nos eSports táticos, estimar distâncias em frações de segundo define a linha divisória entre uma interceptação perfeita e uma colisão catastrófica.',
     'Este exercício recria digitalmente os fundamentos geométricos do clássico aparelho estereoscópico de Howard-Dolman (Howard, 1919) e as pesquisas seminais de óptica ecológica formuladas por David N. Lee (1976) e David Regan & Kenneth I. Beverley (1978). Projetando uma esfera 3D ao longo de um túnel virtual em direção a um plano de referência estático, o treino condiciona o córtex visual a processar a taxa de expansão retiniana (looming) e calcular o tempo até o contato (Time-to-Contact, τ) sob velocidades de aproximação crescentes.',
-    'Metrologia & Precisão de Amostragem: Todos os desvios de interceptação são capturados localmente por meio da API de hardware performance.now() em resolução sub-milissegundo. O erro é computado como o desvio percentual relativo (|Diâmetro Real - Diámetro Alvo| / Diâmetro Alvo). Fatores de latência de exibição (~16,7 ms a 60 Hz, ~6,9 ms a 144 Hz, ~4,1 ms a 240 Hz) e taxas de polling do mouse (125 Hz vs 1000 Hz) introduzem dispersões físicas padrão (Woods et al., 2015). Variações abaixo de 5 ms constituem ruído instrumental normal; realize comparações no mesmo hardware.',
+    'Metrologia & Precisão de Amostragem: Todos os desvios de interceptação são capturados localmente por meio da API de hardware performance.now() em resolução de cerca de 1 ms. O erro é computado como o desvio percentual relativo (|Diâmetro Real - Diámetro Alvo| / Diâmetro Alvo). Fatores de latência de exibição (~16,7 ms a 60 Hz, ~6,9 ms a 144 Hz, ~4,1 ms a 240 Hz) e taxas de polling do mouse (125 Hz vs 1000 Hz) introduzem dispersões físicas padrão (Woods et al., 2015). Variações abaixo de 5 ms constituem ruído instrumental normal; realize comparações no mesmo hardware.',
     'Transparência e Privacidade de Dados: O SkillDrills não coleta informações pessoais, relatórios diagnósticos de visão nem telemetria centralizada em servidores remotos. Todas as pontuações alcançadas, níveis superados e taxas de precisão permanecem gravadas estritamente no armazenamento local (LocalStorage) do seu navegador.'
   ],
   benchmarks: {
-    title: 'Referência de desempenho em percepção de profundidade',
+    title: 'Faixas de referência em percepção de profundidade',
     headers: ['Faixa de Desempenho', 'Erro Médio de Profundidade', 'Pontos e Nível', 'Perfil Visual'],
     rows: [
-      ['Tier 1: Mestre Estereoscópico Apex', 'Abaixo de 5,0% de erro', '1500+ pts | Nível 7+', 'Sensibilidade excepcional a expansão óptica; timing perfeito.'],
-      ['Tier 2: Alta Acuidade de Profundidade', '5,0% – 9,9% de erro', '1100 – 1499 pts | Nível 5–6', 'Forte antecipação espacial; boa adaptação a altas velocidades.'],
-      ['Tier 3: Noção de Distância Padrão', '10,0% – 15,9% de erro', '750 – 1099 pts | Nível 3–4', 'Média saudável; pequenos atrasos sob velocidades extremas.'],
-      ['Tier 4: Sensibilidade Moderada', '16,0% – 25,0% de erro', '450 – 749 pts | Nivel 2', 'Tendência a disparar precocemente antes do encaixe plano.'],
-      ['Tier 5: Em Desenvolvimento', 'Acima de 25,0% de erro', 'Abaixo de 450 pts | Nível 1', 'Erro temporal expressivo; necessidade de treino regular.'],
+      ['Faixa 1 (Muito alta)', 'Abaixo de 5,0% de erro', '1500+ pts | Nível 7+', 'Estimativa muito próxima do encaixe; bom timing.'],
+      ['Faixa 2 (Alta)', '5,0% – 9,9% de erro', '1100 – 1499 pts | Nível 5–6', 'Boa antecipação; boa adaptação a velocidades altas.'],
+      ['Faixa 3 (Boa)', '10,0% – 15,9% de erro', '750 – 1099 pts | Nível 3–4', 'Faixa intermediária; pequenos atrasos sob velocidades extremas.'],
+      ['Faixa 4 (Intermediária)', '16,0% – 25,0% de erro', '450 – 749 pts | Nível 2', 'Tendência a clicar cedo, antes do encaixe.'],
+      ['Faixa 5 (Inicial)', 'Acima de 25,0% de erro', 'Abaixo de 450 pts | Nível 1', 'Erro temporal maior; vale repetir em velocidade menor.'],
     ],
   },
   protocols: {
@@ -326,9 +326,9 @@ const copyPt = {
   overviewLead: 'Mede a precisão com que o cérebro processa o deslocamento tridimensional e estima distâncias.',
   overviewBody: 'Ao calcular o momento de contato por expansão de bordas, o teste refina o sincronismo olho-mão essencial para condutores, pilotos e atletas.',
   aboutCards: [
-    { iconBg: 'bg-blue-600', title: 'Público Indicado', text: 'Motoristas, pilotos, praticantes de esportes de raquete e bola, gamers e quem busca aprimorar a visão espacial.' },
+    { iconBg: 'bg-blue-600', title: 'Público Indicado', text: 'Motoristas, pilotos, praticantes de esportes de raquete e bola, gamers e quem quer praticar a estimativa de distância na tela.' },
     { iconBg: 'bg-cyan-600', title: 'Habilidades Treinadas', text: 'Expansão óptica, cálculo de Time-to-Contact, antecipação visomotora e acuidade espacial.' },
-    { iconBg: 'bg-purple-600', title: 'Dica de Mestre', text: 'Fixe os olhos na borda do anel e dispare apenas quando o contorno da esfera coincidir por completo.' }
+    { iconBg: 'bg-purple-600', title: 'Dica', text: 'Fixe os olhos na borda do anel e dispare apenas quando o contorno da esfera coincidir por completo.' }
   ]
 };
 
