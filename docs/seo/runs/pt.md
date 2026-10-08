@@ -13,3 +13,4 @@
 | /pt/drills/motor/hand-eye-coordination/aim-trainer | done | TBD:aim-trainer | docs/seo/research/pt/aim-trainer.md | title: treino de mira 385 + aim trainer 581 (Bing BR); rank labels neutralised |
 | /pt/drills/motor/movement-speed/keyboard-recognition | done | TBD:keyboard-recognition | docs/seo/research/pt/keyboard-recognition.md | title kept; teste de teclado 13,118 not adopted (tester intent); percentiles removed; demand not verified |
 | /pt/drills/motor/precision-control/steady-hand | done | TBD:steady-hand | docs/seo/research/pt/steady-hand.md | title kept; percentiles/rank names removed; demand not verified |
+| /pt/drills/memory/short-term-memory/color-sequence | done | TBD:color-sequence | docs/seo/research/pt/color-sequence.md | H1/schema/H2 unified on Jogo Simon; jogo da memoria is card-game intent; demand not verified |
