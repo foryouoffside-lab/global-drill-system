@@ -58,7 +58,7 @@ export default function StrobePredictionPursuitPagePT() {
     "@context": "https://schema.org",
     "@type": "SoftwareApplication", "sameAs": ["https://en.wikipedia.org/wiki/Smooth_pursuit"],
     "name": "Treinador de Visão Estroboscópica e Predição",
-    "applicationCategory": "HealthApplication",
+    "applicationCategory": "GameApplication",
     "operatingSystem": "Any",
     "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
     "description": "Treinamento cognitivo de rastreamento visual sob pulsos de oclusão estroboscópica periódica para atletas e jogadores de esports.",
@@ -129,18 +129,18 @@ export default function StrobePredictionPursuitPagePT() {
       },
       {
         "@type": "Question",
-        "name": "Como a oclusão estroboscópica melhora os reflexos e a antecipação?",
+        "name": "Como a oclusão estroboscópica se relaciona com a antecipação?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Ao privar temporariamente a retina de dados visuais, o córtex visual e o cerebelo são obrigados a recrutar modelos motores preditivos internos, acelerando o tempo de antecipação e a tomada de decisão motora."
+          "text": "Ao esconder o alvo por instantes, o exercício exige que você estime onde ele estará quando reaparecer. Não há garantia de que isso melhore reflexos ou decisões fora da tela."
         }
       },
       {
         "@type": "Question",
-        "name": "Qual é a base científica dos óculos estroboscópicos e deste exercício?",
+        "name": "Qual é a base dos óculos estroboscópicos e deste exercício?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Estudos pioneiros de Appelbaum et al. (2011) e Mitroff et al. (2013) demonstraram que atletas submetidos a treinamento estroboscópico apresentaram ganhos significativos em sensibilidade ao movimento e retenção de memória visual."
+          "text": "Estudos de Appelbaum et al. (2011) e Mitroff et al. (2013) investigaram o treinamento estroboscópico em atletas e relataram efeitos em tarefas de percepção de movimento e memória visual. Os resultados variam entre estudos, e este exercício não os reproduz nem os garante."
         }
       },
       {
@@ -205,22 +205,22 @@ export default function StrobePredictionPursuitPagePT() {
   const guide = {
     title: "Guia Neurocientífico de Visão Estroboscópica e Predição Cinética",
     intro: [
-      "O treinamento visual estroboscópico fundamenta-se na interrupção rítmica da entrada sensorial visual, alternando pulsos de luz e intervalos de oclusão total. Sob escuridão intermitente, a retina deixa de transmitir um fluxo contínuo de fótons. Consequentemente, as áreas visuo-corticais e o cerebelo são impedidos de atuar em circuito fechado de correção contínua, sendo forçados a gerar modelos internos feedforward altamente adaptativos baseados na cinemática do alvo (Appelbaum et al., 2011; Mitroff et al., 2013).",
-      "No momento em que o objeto móvel adentra a fase ocluída, o escorregamento retiniano cai a zero. Em indivíduos não condicionados, a perseguição ocular suave (smooth pursuit) desacelera e cessa completamente entre 100 e 200 milissegundos, fragmentando-se em sacadas caóticas de busca após o reacendimento. Pesquisas seminais de Bennett et al. (2007) e Leigh & Zee (2015) demonstraram que a oclusão estroboscópica condiciona os circuitos de memória de velocidade nos campos oculares frontais (FEF) e no flóculo cerebelar, permitindo sustentar o impulso oculomotor estável através do intervalo escuro e aterrissar fovealmente com precisão cirúrgica.",
-      "Em modalidades esportivas de alto rendimento (beisebol, hóquei no gelo, tênis e esportes eletrônicos de tiro), os óculos estroboscópicos com lentes de cristal líquido tornaram-se ferramentas consagradas de condicionamento neuromuscular (Smith & Mitroff, 2016). O Strobe Prediction Pursuit traz essa metodologia avançada para o ambiente web por meio de ciclos de 60 quadros visíveis e 30 quadros ocluídos. Em monitores de alta frequência (144 Hz ou superior) que garantem alternância com precisão de milissegundos (Woods et al., 2015), o exercício consolida o elo entre a captação foveal e a resposta motora antecipatória.",
+      "O treinamento visual estroboscópico fundamenta-se na interrupção rítmica da entrada sensorial visual, alternando pulsos de luz e intervalos de oclusão total. Sob escuridão intermitente, você precisa estimar o trajeto do alvo em vez de corrigi-lo continuamente com base no que vê (Appelbaum et al., 2011; Mitroff et al., 2013).",
+      "No momento em que o objeto móvel adentra a fase ocluída, o escorregamento retiniano cai a zero. Sem prática, o acompanhamento ocular suave (smooth pursuit) tende a desacelerar durante a oclusão e a se fragmentar em sacadas de busca após o alvo reaparecer. Pesquisas como as de Bennett et al. (2007) e Leigh & Zee (2015) indicam que o sistema de acompanhamento ocular consegue manter por um tempo o impulso do movimento durante uma oclusão breve, sustentando o olhar através do intervalo escuro e aterrissar com boa precisão.",
+      "Em alguns esportes (como beisebol, hóquei no gelo e tênis), os óculos estroboscópicos com lentes de cristal líquido são usados em alguns programas de treino esportivo (Smith & Mitroff, 2016). O Strobe Prediction Pursuit traz essa metodologia avançada para o ambiente web por meio de ciclos de 60 quadros visíveis e 30 quadros ocluídos. Em monitores de alta frequência (144 Hz ou superior) que permitem alternância mais precisa (Woods et al., 2015), o exercício consolida o elo entre a captação foveal e a resposta motora antecipatória.",
       "Metodologia cronométrica e privacidade de dados: todas as trajetórias, tempos de reação e erros de aterrissagem são processados localmente no seu dispositivo. O SkillDrills não coleta nem armazena dados de navegação em servidores remotos; seus recordes residem exclusivamente no localStorage do navegador. Esta ferramenta constitui um treino cognitivo e reflexivo educacional, sem caráter de diagnóstico ou intervenção médica."
     ],
     benchmarks: {
       title: "Parâmetros Globais de Eficiência Preditiva Estroboscópica",
-      headers: ["Nível / Categoria", "Precisão Oculta (%)", "Erro Médio (px)", "Tempo de Reaquisição (ms)", "Percentil Global"],
+      headers: ["Nível / Categoria", "Precisão Oculta (%)", "Erro Médio (px)", "Tempo de Reaquisição (ms)", "Referência"],
       rows: [
-        ["Iniciante / Não Adaptado", "< 45%", "> 85 px", "> 280 ms", "0% – 25%"],
-        ["Intermediário / Recreativo", "45% – 62%", "55 – 84 px", "210 – 280 ms", "25% – 60%"],
-        ["Avançado / Competidor Amador", "63% – 78%", "35 – 54 px", "150 – 209 ms", "60% – 85%"],
-        ["Elite / Atleta Semiprofissional", "79% – 89%", "20 – 34 px", "95 – 149 ms", "85% – 97%"],
-        ["Mundial / Mestre da Predição", "90%+", "< 20 px", "< 95 ms", "98% – 100%"]
+        ["Faixa 5 (Inicial)", "< 45%", "> 85 px", "> 280 ms", "Faixa 5"],
+        ["Faixa 4 (Intermediária)", "45% – 62%", "55 – 84 px", "210 – 280 ms", "Faixa 4"],
+        ["Faixa 3 (Boa)", "63% – 78%", "35 – 54 px", "150 – 209 ms", "Faixa 3"],
+        ["Faixa 2 (Alta)", "79% – 89%", "20 – 34 px", "95 – 149 ms", "Faixa 2"],
+        ["Faixa 1 (Muito alta)", "90%+", "< 20 px", "< 95 ms", "Faixa 1"]
       ],
-      note: "Métricas padronizadas para alvos a 1.0x de velocidade com ciclos estroboscópicos de 400ms de visibilidade / 400ms de escuridão total a 60 FPS (Appelbaum et al., 2011; Bennett et al., 2007)."
+      note: "Faixas editoriais para comparar suas próprias sessões, não percentis de população nem normas clínicas. Métricas padronizadas para alvos a 1.0x de velocidade com ciclos estroboscópicos de 400ms de visibilidade / 400ms de escuridão total a 60 FPS (Appelbaum et al., 2011; Bennett et al., 2007)."
     },
     techniques: {
       title: "4 Estratégias Fundamentais para Dominar a Oclusão Estroboscópica",
