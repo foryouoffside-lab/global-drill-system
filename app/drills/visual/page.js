@@ -50,8 +50,8 @@ export const metadata = {
 };
 
 Object.assign(metadata, {
-  title: 'Visual Reaction & Search Drills | SkillDrills',
-  description: `Choose from ${visualDrillCount} free browser drills for visual reaction time, target tracking, depth judgment, and visual search. No sign-up.`,
+  title: 'Visual Reaction, Tracking & Perception Drills | SkillDrills',
+  description: `${visualDrillCount} free visual drills: reaction time, target tracking, depth perception test, go/no-go and visual search. Browser-based, no sign-up.`,
   keywords: [
     'visual reaction drills', 'visual search test', 'dynamic vision training',
     'visual tracking drills', 'depth perception test', 'peripheral vision training',
@@ -60,12 +60,12 @@ Object.assign(metadata, {
   ],
   openGraph: {
     ...metadata.openGraph,
-    title: 'Visual Reaction & Search Drills | SkillDrills',
+    title: 'Visual Reaction, Tracking & Perception Drills | SkillDrills',
     description: `${visualDrillCount} free browser drills for visual reaction time, target tracking, depth judgment, and visual search.`,
   },
   twitter: {
     ...metadata.twitter,
-    title: 'Visual Reaction & Search Drills | SkillDrills',
+    title: 'Visual Reaction, Tracking & Perception Drills | SkillDrills',
     description: `Train visual reaction, tracking, depth judgment, and visual search with ${visualDrillCount} free drills.`,
   },
 });
@@ -74,87 +74,90 @@ const faqSchema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
   "inLanguage": "en",
-  "dateModified": "2026-09-20",
+  "dateModified": "2026-10-08",
   "mainEntity": [
     {
       "@type": "Question",
-      "name": "How do depth perception drills improve spatial judgment and athletic vision?",
+      "name": "What visual drills are in this hub?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Depth perception drills train binocular stereopsis and oculomotor convergence—the simultaneous inward turning of both eyes to triangulate distance. Conditioning the visual cortex to interpret subtle size, shadow, and disparity cues sharpens distance judgment, crucial for catching balls, driving, and estimating enemy distances in tactical 3D environments."
+        "text": "The hub has nine browser drills: Depth Perception Test, Chroma-Sync Lab (go/no-go), Strobe-Latency Lab (light reaction), Kinetic Intercept, Ghost-Link Tracking, Auto-Pursuit, Entropic Grid, Rhythm Anomaly and Visual Search."
       }
     },
     {
       "@type": "Question",
-      "name": "What is a Go/No-Go test, and how does it measure cognitive impulse control?",
+      "name": "Is the Depth Perception Test a medical eye test?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "A Go/No-Go test measures response inhibition and selective attention by requiring a rapid action on target stimuli (Go) while suppressing motor responses to distractors (No-Go). This engages the right inferior frontal cortex and basal ganglia, training your motor system to suppress misclicks and impulsive mistakes under high visual stress."
+        "text": "No. It asks you to judge relative distances on a screen. It does not diagnose eyesight or stereo vision problems and does not replace an eye examination by an optometrist or ophthalmologist."
       }
     },
     {
       "@type": "Question",
-      "name": "What is Multiple Object Tracking (MOT), and why is it used by pro athletes and pilots?",
+      "name": "What is a Go/No-Go test?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Multiple Object Tracking (MOT) challenges you to maintain spatial attention across 3 to 5 moving targets while ignoring identical moving distractors. Proven by cognitive neuroscience research, MOT expands the parietal visual attention buffer, enhancing situational awareness, split-second tactical decisions, and multi-opponent tracking in football, basketball, and esports."
+        "text": "A Go/No-Go test asks you to respond quickly to some stimuli (go) and hold back on others (no-go). It is a standard way to study response inhibition; here it is a browser practice task, not a clinical measure."
       }
     },
     {
       "@type": "Question",
-      "name": "How does visual search training (entropic grids) accelerate target acquisition?",
+      "name": "What is multiple object tracking?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Based on Anne Treisman's Feature Integration Theory, visual search drills train the brain to transition from slow serial scanning to rapid parallel feature extraction. Practicing on high-entropy visual grids conditions contrast sensitivity and visual noise filtering, helping you spot camouflaged enemies or sudden environmental changes instantaneously."
+        "text": "Multiple object tracking asks you to follow several moving targets among identical distractors. Ghost-Link Tracking uses this task format to practise sustained visual attention across moving objects."
       }
     },
     {
       "@type": "Question",
-      "name": "Why is light-based visual reaction time slower than auditory reaction time?",
+      "name": "What is visual search practice?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Visual reaction time averages approximately 190 to 250 milliseconds, which is roughly 40ms slower than auditory reaction time (150 to 170ms). This physiological difference exists because retinal photoreceptors require 20 to 40ms for chemical phototransduction, whereas auditory hair cells transmit mechanical vibrations to the auditory nerve almost instantaneously."
+        "text": "Visual search means finding a target among distractors. Entropic Grid and Visual Search present target-in-clutter tasks so you can practise scanning and spotting speed, and compare your own results over repeated sessions."
       }
     },
     {
       "@type": "Question",
-      "name": "What is visual rhythm anomaly detection, and how does it refine timing accuracy?",
+      "name": "Why is my visual reaction time different from other tests?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Visual rhythm anomaly drills test your brain's internal cerebellar clock by presenting continuous periodic visual pulses with subtle phase or interval irregularities. Training temporal sensitivity sharpens beat anticipation, rhythm synchronization, and rapid anomaly spotting in high-speed kinetic environments."
+        "text": "A browser result includes display refresh, input latency and the click as well as your own response. Compare scores on the same device and settings rather than against other people's numbers."
       }
     },
     {
       "@type": "Question",
-      "name": "How can you prevent digital eye strain and ciliary muscle fatigue during visual drills?",
+      "name": "How can I reduce eye strain during visual drills?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "To prevent asthenopia (eye strain), adhere to the clinical 20-20-20 rule: every 20 minutes of screen training, look at an object at least 20 feet away for 20 seconds. This fully relaxes the eye's ciliary muscles, resets focal accommodation, and prompts natural blink rates to restore the corneal tear film."
+        "text": "Take regular breaks and look at something distant. The 20-20-20 rule (every 20 minutes, look at something 20 feet away for 20 seconds) is a widely recommended habit for screen use. Stop if your eyes feel uncomfortable."
       }
     },
     {
       "@type": "Question",
-      "name": "Can online visual training games produce measurable improvements in real-world vision?",
+      "name": "Can visual training games improve real-world vision?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Yes. While drills do not alter the physical optical shape of the eyeball (like refractive error), they significantly improve perceptual learning and cortical neuroplasticity in visual areas V1 through V5. Athletes and gamers demonstrate measurable gains in visual processing speed, contrast sensitivity, and saccadic fixation efficiency with consistent daily practice."
+        "text": "They give structured practice at specific visual tasks, and people usually improve at the tasks they practise. They do not change eyesight or correct refractive error, and transfer to sport or driving is not guaranteed."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Which visual drill should I start with?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Start with Strobe-Latency Lab for a simple visual reaction baseline, Chroma-Sync Lab for response control, Auto-Pursuit or Kinetic Intercept for tracking, and Visual Search for scanning."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do visual browser drills replace an eye examination?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. These drills measure repeatable browser tasks such as visual timing, tracking, search and spatial judgment. They do not diagnose eyesight or eye disease. See a qualified eye-care professional for any vision concern."
       }
     }
   ]
 };
-
-faqSchema.mainEntity.push(
-  {
-    "@type": "Question",
-    "name": "What visual drills are included in this training hub?",
-    "acceptedAnswer": { "@type": "Answer", "text": "The hub contains nine browser drills across visual reaction and impulse control, target tracking and eye movement, and visual recognition and depth judgment. Choose a card to open the individual drill and its guide." }
-  },
-  {
-    "@type": "Question",
-    "name": "Do visual browser drills replace an eye examination?",
-    "acceptedAnswer": { "@type": "Answer", "text": "No. These drills measure repeatable browser tasks such as visual timing, tracking, search, and spatial judgment. They do not diagnose eyesight or eye disease and do not replace an optometrist or ophthalmologist." }
-  }
-);
 
 export default function VisualDrillsPage() {
   return (
@@ -171,7 +174,7 @@ export default function VisualDrillsPage() {
         "@context": "https://schema.org",
         "@type": "CollectionPage",
         "inLanguage": "en",
-        "dateModified": "2026-09-20",
+        "dateModified": "2026-10-08",
         "name": "Free Visual Training Online - Reaction Speed, Tracking & Perception Drills",
         "url": "https://skilldrills.online/drills/visual",
         "description": `${visualDrillCount} free visual training drills online. Reaction speed tests, tracking accuracy games, depth perception tests, and visual recognition exercises. No sign-up required.`,

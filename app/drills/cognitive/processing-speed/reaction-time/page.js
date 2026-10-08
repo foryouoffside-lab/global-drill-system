@@ -140,7 +140,7 @@ const faqSchema = {
       "name": "What is the difference between simple and choice reaction time?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Simple reaction time (SRT) requires responding to a single predictable stimulus (~200ms). Choice reaction time introduces a decision-making stage, increasing latency to ~250–350ms (Donders, 1868)."
+        "text": "Simple reaction time (SRT) requires responding to a single predictable stimulus. Choice reaction time adds a decision-making stage, so it is slower than simple reaction time (Donders, 1868)."
       }
     },
     {
@@ -156,7 +156,7 @@ const faqSchema = {
       "name": "What are typical human benchmarks for choice reaction time?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "General population average choice reaction time is 280–350ms. Highly trained gamers and elite athletes achieve choice reaction speeds between 180–230ms (Der & Deary, 2006)."
+        "text": "Choice reaction time is slower than simple reaction time and depends on the number of options and the task. Large studies show it slows gradually with age and varies widely between people (Der & Deary, 2006), so compare your own scores over time rather than against a single norm."
       }
     },
     {
@@ -164,7 +164,7 @@ const faqSchema = {
       "name": "How does rule switching add cognitive complexity?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Flipping target colors requires prefrontal task-set re-configuration, adding roughly 50–100ms of central switching latency until the new rule is consolidated."
+        "text": "Flipping the target colour means you must stop using the old rule and apply the new one. Task-switching studies generally find a slowdown right after a switch, which is why this drill changes the rule during play."
       }
     },
     {
@@ -172,7 +172,7 @@ const faqSchema = {
       "name": "Can choice reaction time be improved with training?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Yes. Repeated practice streamlines neural transmission pathways and automates stimulus-response mapping, reducing decision latency."
+        "text": "Practice usually makes you faster and more accurate at the task you practise, because the stimulus-response mapping becomes familiar. Transfer to other tasks varies and is not guaranteed."
       }
     },
     {
@@ -180,7 +180,7 @@ const faqSchema = {
       "name": "How does sleep deprivation degrade reaction speed?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Fatigue directly impairs synaptic efficiency in the prefrontal cortex, causing reaction times to spike by 50–100ms and increasing error rates."
+        "text": "Sleep loss is generally associated with slower and more variable reaction times and more errors in the research literature. Test when rested if you want comparable scores."
       }
     },
     {
@@ -196,7 +196,7 @@ const faqSchema = {
       "name": "What is the optimal training routine?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "10 to 15 minutes of choice reaction training daily primes the neuromuscular system for competitive speed."
+        "text": "Short, regular sessions of a few minutes under the same conditions are easier to compare than one long session. Stop when accuracy drops."
       }
     },
     {
@@ -253,24 +253,24 @@ const guideProps = {
     title: "Choice Reaction Time Test Guide & Decision Speed Benchmarks",
     paragraphs: [
       "Free choice reaction time test online. Measure decision-making latency, visual discrimination speed, and cognitive flexibility under dynamic rule-switching pressure.",
-      "Simple reaction time (SRT) requires responding to a single predictable stimulus (~200ms). Choice reaction time introduces a decision-making stage, increasing latency to ~250–350ms (Donders, 1868).",
+      "Simple reaction time (SRT) requires responding to a single predictable stimulus. Choice reaction time adds a decision-making stage, so it is slower than simple reaction time (Donders, 1868).",
       "Hick's Law states that choice reaction time increases logarithmically as a function of the number of stimulus-response alternatives available: RT = a + b * log2(n).",
     ],
   },
   benchmarks: {
-    title: 'Cognitive Performance Standards & Benchmarks',
-    headers: ['Tier', 'Rank', 'Rating', 'Accuracy', 'Percentile'],
+    title: 'Accuracy Bands for Your Own Sessions',
+    headers: ['Tier', 'Label', 'Accuracy'],
     rows: [
-      { tier: 'Tier 1', rank: 'Grandmaster / Elite', stat: 'Top 1%', level: 'Mastery', accuracy: '98%+', percentile: 'Top 1%' },
-      { tier: 'Tier 2', rank: 'Advanced Focus', stat: 'Top 5%', level: 'Diamond', accuracy: '94-97%', percentile: 'Top 5%' },
-      { tier: 'Tier 3', rank: 'Proficient Operator', stat: 'Top 15%', level: 'Platinum', accuracy: '88-93%', percentile: 'Top 15%' },
-      { tier: 'Tier 4', rank: 'Standard Adult', stat: 'Top 50%', level: 'Gold', accuracy: '78-87%', percentile: 'Top 50%' },
-      { tier: 'Tier 5', rank: 'Novice Baseline', stat: 'Base', level: 'Silver', accuracy: '<78%', percentile: 'Baseline' },
+      { tier: 'Tier 1', rank: 'Very consistent', accuracy: '98%+' },
+      { tier: 'Tier 2', rank: 'Strong', accuracy: '94-97%' },
+      { tier: 'Tier 3', rank: 'Solid', accuracy: '88-93%' },
+      { tier: 'Tier 4', rank: 'Developing', accuracy: '78-87%' },
+      { tier: 'Tier 5', rank: 'Starting out', accuracy: '<78%' },
     ],
   },
   protocols: {
-    title: 'Core Neuroplastic Optimization Protocols',
-    description: 'Scientifically validated executive function enhancement protocols.',
+    title: 'How to Play the Choice Reaction Test',
+    description: 'Four steps for each round.',
     items: [
       { title: "Inspect the Active Rule Banner", description: "Note the active color target rule displayed at the top of the canvas." },
       { title: "Discriminate Target Nodes", description: "As targets spawn across the field, instantly evaluate which node matches the active rule color." },

@@ -23,7 +23,7 @@ const DRILL_COUNT = DRILLS.length;
 export const metadata = {
   title: 'About SkillDrills - How These Drills Measure',
   description:
-    'A free, independent browser training site. How each drill measures reaction time, what browser timers can and cannot resolve, and what data is never collected.',
+    'A free, independent browser training site. How each drill measures reaction time, what browser timers can and cannot resolve, and how data is handled.',
   alternates: { canonical: 'https://skilldrills.online/about' },
   robots: { index: true, follow: true },
   openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
@@ -174,7 +174,7 @@ export default function AboutPage() {
             <p>
               Scores, personal bests and settings are written to your browser&apos;s local storage
               and stay there. They are not uploaded, not pooled, and not visible to anyone but you
-              &mdash; clearing your browser data deletes them permanently.
+              &mdash; clearing your browser data deletes them permanently. Cookie-less traffic and performance measurement on the website is described in the privacy policy.
             </p>
             <p>
               Because of that, this site has no aggregate performance statistics and will never
