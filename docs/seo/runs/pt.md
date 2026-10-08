@@ -16,3 +16,4 @@
 | /pt/drills/memory/short-term-memory/color-sequence | done | TBD:color-sequence | docs/seo/research/pt/color-sequence.md | H1/schema/H2 unified on Jogo Simon; jogo da memoria is card-game intent; demand not verified |
 | /pt/drills/physical/fitness/agility-ladder | done | TBD:agility-ladder | docs/seo/research/pt/agility-ladder.md | description no longer claims footwork training; tiers/top 0,1% removed; demand not verified |
 | /pt/drills/physical/coordination/dynamic-grid-evasion | done | TBD:dynamic-grid-evasion | docs/seo/research/pt/dynamic-grid-evasion.md | title kept (teste de reflexo 180); tiers/top 0,1%/sub-ms removed; shares keyword with reaction-time-test |
+| /pt/drills/physical/fitness/speed-drill | done | TBD:speed-drill | docs/seo/research/pt/speed-drill.md | title cliques por segundo 68 Bing BR; dedup from rapid-tapping; top-% tiers removed |

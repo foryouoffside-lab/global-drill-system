@@ -22,7 +22,7 @@ import { pickSources } from '@/lib/drillSources';
 // ============================================================
 
 export const metadata = {
-  title: 'Cliques por Segundo – Teste de CPS Online | SkillDrills',
+  title: 'Cliques por Segundo: Jogo de Alvos Rápidos | SkillDrills',
   description: 'Teste de cliques por segundo online grátis. Clique em alvos velozes para medir seu CPS, reflexos e precisão de clique rápido no navegador para jogos.',
   keywords: [
     "teste de cliques por segundo",
@@ -41,7 +41,7 @@ export const metadata = {
     languages: getAlternateLanguages('/drills/physical/fitness/speed-drill'),
   },
   openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
-    title: "Teste de Cliques por Segundo & Teste de CPS Online – Treino de Velocidade | SkillDrills",
+    title: "Cliques por Segundo: Jogo de Alvos Rápidos | SkillDrills",
     description: "Teste gratuito de cliques por segundo (CPS) e treino de velocidade motora para mouse. Intercepte alvos dinâmicos que encolhem com impulsos balísticos e reflexos neuromusculares ultrarrápidos.",
     url: 'https://skilldrills.online/pt/drills/physical/fitness/speed-drill',
     siteName: 'SkillDrills',
@@ -50,18 +50,18 @@ export const metadata = {
   },
   twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: 'summary_large_image',
-    title: "Teste de Cliques por Segundo & Teste de CPS Online – Treino de Velocidade | SkillDrills",
+    title: "Cliques por Segundo: Jogo de Alvos Rápidos | SkillDrills",
     description: "Teste gratuito de cliques por segundo (CPS) e treino de velocidade motora para mouse. Intercepte alvos dinâmicos que encolhem com impulsos balísticos e reflexos neuromusculares ultrarrápidos.",
   },
   robots: { index: true, follow: true },
 };
 
 Object.assign(metadata, {
-  title: 'Teste CPS | Cliques por Segundo | SkillDrills',
-  description: 'Teste CPS grátis no navegador. Acerte alvos móveis e encolhendo para praticar cliques rápidos, reação, precisão e aquisição de alvo.',
-  keywords: ['teste CPS', 'teste de cliques', 'cliques por segundo', 'teste de velocidade de clique', 'contador de cliques', 'treino de mira', 'teste de reação', 'clique rápido', 'precisão do mouse', 'jogo de reflexo'],
-  openGraph: { ...metadata.openGraph, title: 'Teste CPS | Cliques por Segundo | SkillDrills', description: 'Teste CPS grátis no navegador. Acerte alvos móveis e encolhendo para praticar cliques rápidos, reação, precisão e aquisição de alvo.' },
-  twitter: { ...metadata.twitter, title: 'Teste CPS | Cliques por Segundo | SkillDrills', description: 'Teste CPS grátis no navegador. Acerte alvos móveis e encolhendo para praticar cliques rápidos, reação, precisão e aquisição de alvo.' },
+  title: 'Cliques por Segundo: Jogo de Alvos Rápidos | SkillDrills',
+  description: 'Jogo grátis de cliques rápidos: acerte alvos que encolhem e treine velocidade de clique e precisão. Para contar só o CPS, use o teste de CPS.',
+  keywords: ['cliques por segundo jogo', 'teste de cliques', 'cliques por segundo', 'teste de velocidade de clique', 'contador de cliques', 'treino de mira', 'teste de reação', 'clique rápido', 'precisão do mouse', 'jogo de reflexo'],
+  openGraph: { ...metadata.openGraph, title: 'Cliques por Segundo: Jogo de Alvos Rápidos | SkillDrills', description: 'Jogo grátis de cliques rápidos: acerte alvos que encolhem e treine velocidade de clique e precisão. Para contar só o CPS, use o teste de CPS.' },
+  twitter: { ...metadata.twitter, title: 'Cliques por Segundo: Jogo de Alvos Rápidos | SkillDrills', description: 'Jogo grátis de cliques rápidos: acerte alvos que encolhem e treine velocidade de clique e precisão. Para contar só o CPS, use o teste de CPS.' },
 });
 
 const breadcrumbSchema = {
@@ -157,7 +157,7 @@ const faqSchema = {
       "name": "Por que acertar o alvo nos primeiros 150 milissegundos é vantajoso segundo a Lei de Fitts?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "A Lei de Fitts (1954) determina que o índice de dificuldade cresce logaritmicamente conforme o diâmetro do alvo diminui. Como cada círculo surge com 45 px e encolhe progressivamente até 12 px, agir imediatamente nos primeiros 150 ms aproveita a maior área de colisão permissível, garantindo acertos confiáveis e preservando a sequência de combos."
+        "text": "A Lei de Fitts (1954) determina que o índice de dificuldade cresce logaritmicamente conforme o diâmetro do alvo diminui. Como cada círculo surge com 45 px e encolhe progressivamente até 12 px, agir imediatamente nos primeiros 150 ms aproveita a maior área de colisão permissível, ajudando a acertar e a preservar a sequência de combos."
       }
     },
     {
@@ -213,7 +213,7 @@ const faqSchema = {
       "name": "Os dados de cliques, CPS e tempo de reação são enviados para servidores externos?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Não. Toda a cronometria de alta precisão baseada na API performance.now() e os cálculos de acertos são processados exclusivamente na CPU do seu navegador. Os recordes e métricas são mantidos unicamente no localStorage do seu dispositivo, garantindo total privacidade e funcionamento sem latência de rede."
+        "text": "Não. Toda a cronometria de alta precisão baseada na API performance.now() e os cálculos de acertos são processados exclusivamente na CPU do seu navegador. Os recordes e métricas são mantidos unicamente no localStorage do seu dispositivo, mantendo os dados no seu dispositivo e funcionamento sem latência de rede."
       }
     }
   ]
@@ -250,7 +250,7 @@ const howToSchema = {
       "@type": "HowToStep",
       "position": 4,
       "name": "Encadeamento de Bônus de Tempo e Calor de Combo (Streak Maintenance)",
-      "text": "Aproveite o crédito de +0,6s por alvo abatido para sustentar o multiplicador 3.0x de forma contínua, mirando o patamar de elite de 24.000 pontos.",
+      "text": "Aproveite o crédito de +0,6s por alvo abatido para sustentar o multiplicador 3.0x de forma contínua, mirando o patamar de 24.000 pontos.",
       "url": "https://skilldrills.online/pt/drills/physical/fitness/speed-drill#step-4"
     }
   ]
@@ -264,20 +264,20 @@ const speedGuide = {
       "O Speed Drill é uma plataforma neuromotora de alta intensidade concebida para quantificar e aprimorar a capacidade de localizar alvos espaciais imprevisíveis e disparar cliques com precisão milimétrica. Em cenários de velocidade extrema, as ações com o mouse seguem o clássico modelo de dois componentes de Robert S. Woodworth (1899). Na primeira etapa (impulso balístico em malha aberta), o córtex motor gera uma descarga neural que projeta a mão em direção ao alvo. Na segunda etapa (correção visual em malha fechada), os olhos ajustam o ponto final antes do acionamento mecânico do botão.",
       "A dinâmica de encolhimento contínuo dos alvos (de 45 px até 12 px) amplifica exponencialmente o desafio perceptivo-motor. Conforme a consagrada Lei de Fitts (1954), o índice de dificuldade (ID) cresce em escala logarítmica com a redução da largura do alvo. Um clique disparado nos primeiros 150 milissegundos encontra uma janela de tolerância ampla, enquanto a hesitação força o jogador a realizar correções microscópicas com risco severo de erro. A decisão rápida de disparo é o diferencial dos atletas de alto rendimento.",
       "O surgimento aleatório dos alvos mobiliza a Teoria da Integração de Características de Anne Treisman (Treisman & Gelade, 1980). Estímulos com forte contraste e dinâmica de encolhimento produzem mapas de saliência visual no colículo superior e córtex parietal, permitindo que a atenção encoberta oriente o movimento da mão antes mesmo de uma fixação foveal completa. Simultaneamente, o cérebro afere a margem de tempo até o colapso do alvo por meio da teoria óptica do tau (Lee, 1976).",
-      "Para assegurar fidedignidade laboratorial sem interferências de software, este drill opera por meio da API performance.now() do navegador. Monitores de alta frequência (144Hz ou 240Hz) combinados com mouses gamer com taxa de amostragem de 1000Hz diminuem a latência de exibição para menos de 4 ms, permitindo avaliações neuromusculares puras e sem filtros de suavização (Woods et al., 2015). Seus registros permanecem 100% privados no dispositivo."
+      "Este drill opera por meio da API performance.now() do navegador. Monitores de alta frequência (144Hz ou 240Hz) combinados com mouses gamer com taxa de amostragem de 1000Hz diminuem a latência de exibição para menos de 4 ms, permitindo avaliações neuromusculares puras e sem filtros de suavização (Woods et al., 2015). Seus registros permanecem 100% privados no dispositivo."
     ]
   },
   benchmarks: {
     title: "Tabela de Classificação em 5 Níveis de Velocidade e Aquisição de Alvos",
     headers: ["Nível e Patamar", "Título (Rank Title)", "Meta de Pontuação", "Precisão e Tempo de Reação", "Classificação", "Perfil Neuromuscular"],
     rows: [
-      ["Tier 1: Franco-Atirador de Velocidade Ápice", "Apex Velocity Sniper", "24.000+ pontos", "> 95% / < 160 ms", "Grade S", "Top 0,1% da elite de eSports. Flicks perfeitos de Woodworth, disparo instantâneo no diâmetro máximo e maestria sob alvos de 12 px (Woodworth 1899; Fitts 1954)"],
-      ["Tier 2: Atacante Reflexivo de Precisão", "Precision Reflex Striker", "17.000 – 23.999 pontos", "90 – 94% / 160 – 190 ms", "Grade A", "Top 3% semiprofissional. Orientação periférica rápida e controle muscular refinado com multiplicador sustentado em velocidade 3.0x"],
-      ["Tier 3: Interceptador Ágil de Alvos", "Rapid Target Interceptor", "11.000 – 16.999 pontos", "82 – 89% / 191 – 230 ms", "Grade B", "Top 15% jogadores competitivos. Cadência de clique firme e aproveitamento eficiente do bônus de +0,6s para prolongar a rodada"],
-      ["Tier 4: Praticante em Desenvolvimento", "Developing Tapping Trainee", "6.000 – 10.999 pontos", "70 – 81% / 231 – 280 ms", "Grade C", "Nível médio populacional. Em velocidades superiores a 2.0x, surgem hesitações na frenagem e cliques fora da borda do círculo"],
-      ["Tier 5: Iniciante em Apontamento", "Novice Target Pointer", "< 6.000 pontos", "< 70% / > 280 ms", "Grade D", "Fase inicial de adaptação. Cliques desordenados perto do sumiço do alvo; recomenda-se focar o olhar no centro e antecipar o movimento"]
+      ["Faixa 1", "Muito alta", "24.000+ pontos", "> 95% / < 160 ms", "Grade S", "Flicks perfeitos de Woodworth, disparo instantâneo no diâmetro máximo e maestria sob alvos de 12 px (Woodworth 1899; Fitts 1954)"],
+      ["Faixa 2", "Alta", "17.000 – 23.999 pontos", "90 – 94% / 160 – 190 ms", "Grade A", "Orientação periférica rápida e controle muscular refinado com multiplicador sustentado em velocidade 3.0x"],
+      ["Faixa 3", "Boa", "11.000 – 16.999 pontos", "82 – 89% / 191 – 230 ms", "Grade B", "Cadência de clique firme e aproveitamento eficiente do bônus de +0,6s para prolongar a rodada"],
+      ["Faixa 4", "Intermediária", "6.000 – 10.999 pontos", "70 – 81% / 231 – 280 ms", "Grade C", "Nível médio populacional. Em velocidades superiores a 2.0x, surgem hesitações na frenagem e cliques fora da borda do círculo"],
+      ["Faixa 5", "Inicial", "< 6.000 pontos", "< 70% / > 280 ms", "Grade D", "Fase inicial de adaptação. Cliques desordenados perto do sumiço do alvo; recomenda-se focar o olhar no centro e antecipar o movimento"]
     ],
-    note: "Métricas baseadas na mecânica de impulsos de Woodworth (1899), cálculo de dificuldade de Fitts (1954) e cronometria perceptiva de Treisman (1980)."
+    note: "Faixas editoriais para comparar suas próprias sessões, não percentis de população nem normas clínicas. Métricas baseadas na mecânica de impulsos de Woodworth (1899), cálculo de dificuldade de Fitts (1954) e cronometria perceptiva de Treisman (1980)."
   },
   techniques: {
     title: "4 Protocolos Práticos para Maximização de CPS e Flicks de Alta Velocidade",
@@ -344,7 +344,7 @@ export default function LocalizedSpeedDrillPagePt() {
       />
       <SpeedDrillClient
         copy={{
-          title: "Teste CPS",
+          title: "Cliques por Segundo",
           subtitle: "Acerte alvos que encolhem com rapidez e precisão",
           description: "O treino de velocidade mede quão rápido você consegue apontar para um alvo e clicar nele conforme ele encolhe e o tempo diminui. A Lei de Fitts (1954) estabelece o limite: o tempo de movimento cresce com o logaritmo da distância dividida pela largura. O movimento possui duas fases — um impulso balístico rápido e uma correção guiada pela visão (Woodworth, 1899) — e são os alvos que encolhem que tornam as correções lentas penalizadoras.",
           hudLabels: {
