@@ -39,3 +39,4 @@
 - /fr/drills/reaction-speed/saccadic-gallery | done | e7d9f7f5 | docs/seo/research/fr/saccadic-gallery.md | demand not verified (Bing 0); About H2 'exercices saccadiques' comes from shared client copy
 - /fr/drills/visual/depth-perception/distance-judgment | done | ea272da0 | docs/seo/research/fr/distance-judgment.md | demand not verified (Bing 0); title head term kept from Suggest
 - /fr/drills | done | 53300e4c | docs/seo/research/fr/drills-hub.md | hub; shared edit lib/i18n/siteLandingSeoNative.js fr entry
+- /fr/drills/memory | done | f4b56eaf | docs/seo/research/fr/memory-hub.md | hub; shared edit lib/i18n/memoryHubNative.js fr line (jeux de memoire 179 Bing)
