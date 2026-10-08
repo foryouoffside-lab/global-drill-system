@@ -17,7 +17,7 @@ import { pickSources } from '@/lib/drillSources';
 
 export const metadata = {
   title: 'Test de perception de la profondeur en ligne | SkillDrills',
-  description: 'Test gratuit de perception de la profondeur et de vision stéréoscopique. Entraînez l’appréciation des distances sur cible mobile; pas un diagnostic.',
+  description: 'Jeu gratuit d’appréciation des distances : cliquez quand la sphère qui grossit épouse l’anneau. Ne teste pas la vision stéréoscopique ni la vue.',
   keywords: [
     'test de perception de la profondeur',
     'vision stéréoscopique',
@@ -33,7 +33,7 @@ export const metadata = {
   ],
   openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
     title: 'Test de perception de la profondeur en ligne | SkillDrills',
-    description: 'Test gratuit de perception de la profondeur et de vision stéréoscopique. Entraînez l’appréciation des distances sur cible mobile; pas un diagnostic.',
+    description: 'Jeu gratuit d’appréciation des distances : cliquez quand la sphère qui grossit épouse l’anneau. Ne teste pas la vision stéréoscopique ni la vue.',
     type: 'article',
     url: 'https://skilldrills.online/fr/drills/visual/depth-perception/distance-judgment',
     siteName: 'SkillDrills',
@@ -42,7 +42,7 @@ export const metadata = {
   twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: 'summary_large_image',
     title: 'Test de perception de la profondeur en ligne | SkillDrills',
-    description: 'Test gratuit de perception de la profondeur et de vision stéréoscopique. Entraînez l’appréciation des distances sur cible mobile; pas un diagnostic.',
+    description: 'Jeu gratuit d’appréciation des distances : cliquez quand la sphère qui grossit épouse l’anneau. Ne teste pas la vision stéréoscopique ni la vue.',
   },
   robots: { index: true, follow: true },
   alternates: {
@@ -58,235 +58,312 @@ const breadcrumbSchema = {
     { '@type': 'ListItem', position: 1, name: 'Accueil', item: 'https://skilldrills.online/fr' },
     { '@type': 'ListItem', position: 2, name: 'Entraînement Visuel', item: 'https://skilldrills.online/fr/drills/visual' },
     { '@type': 'ListItem', position: 3, name: 'Perception de la Profondeur', item: 'https://skilldrills.online/fr/drills/visual/depth-perception' },
-    { '@type': 'ListItem', position: 4, name: 'Appréciation des Distances', item: 'https://skilldrills.online/fr/drills/visual/depth-perception/distance-judgment' },
+    { '@type': 'ListItem', position: 4, name: 'Appréciation des distances', item: 'https://skilldrills.online/fr/drills/visual/depth-perception/distance-judgment' },
   ],
 };
 
 const softwareApplicationSchema = {
-  '@context': 'https://schema.org',
-  '@type': 'SoftwareApplication', "sameAs": ["https://en.wikipedia.org/wiki/Depth_perception"],
-  name: 'Test de Perception de la Profondeur et des Distances',
-  applicationCategory: 'HealthApplication',
-  operatingSystem: 'All',
-  offers: { '@type': 'Offer', price: '0', priceCurrency: 'EUR' },
-  description: 'Évaluation visuelle interactive mesurant la précision d\'appréciation des distances et le temps de contact par expansion optique.',
-  url: 'https://skilldrills.online/fr/drills/visual/depth-perception/distance-judgment',
-  publisher: { '@type': 'Organization', name: 'SkillDrills', url: 'https://skilldrills.online/fr' },
-  dateModified: '2026-09-05',
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "Test de perception de la profondeur en ligne : appréciation des distances",
+  "applicationCategory": "GameApplication",
+  "operatingSystem": "All",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "description": "Jeu gratuit dans le navigateur : cliquez quand la sphère qui grossit coïncide avec l’anneau. Mesure l’écart en pourcentage, sans valeur médicale.",
+  "url": "https://skilldrills.online/fr/drills/visual/depth-perception/distance-judgment",
+  "publisher": {
+    "@type": "Organization",
+    "name": "SkillDrills",
+    "url": "https://skilldrills.online"
+  },
+  "inLanguage": "fr-FR",
+  "dateModified": "2026-09-05"
 };
 
 const webAppSchema = {
-  '@context': 'https://schema.org',
-  '@type': 'WebApplication',
-  name: 'Simulateur d\'Appréciation des Distances 3D',
-  applicationCategory: 'GameApplication',
-  operatingSystem: 'All',
-  browserRequirements: 'Navigateur moderne avec prise en charge HTML5 Canvas et Pointer Events',
-  offers: { '@type': 'Offer', price: '0', priceCurrency: 'EUR' },
-  url: 'https://skilldrills.online/fr/drills/visual/depth-perception/distance-judgment',
-  dateModified: '2026-09-05',
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Appréciation des distances en ligne",
+  "description": "Jeu d’appréciation du temps avant contact sur écran, jouable à la souris, au toucher ou au clavier.",
+  "applicationCategory": "GameApplication",
+  "operatingSystem": "All",
+  "browserRequirements": "Navigateur moderne avec JavaScript",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "url": "https://skilldrills.online/fr/drills/visual/depth-perception/distance-judgment",
+  "inLanguage": "fr-FR",
+  "dateModified": "2026-09-05"
 };
 
 const videoGameSchema = {
-  '@context': 'https://schema.org',
-  '@type': 'VideoGame',
-  name: 'Entraînement d\'Interception Visuelle en Relief',
-  url: 'https://skilldrills.online/fr/drills/visual/depth-perception/distance-judgment',
-  description: 'Exercice cinétique testant la précision temporelle dans l\'interception d\'une cible en approche tridimensionnelle.',
-  genre: ['Precision Game', 'Visual Training', 'Esports'],
-  gamePlatform: ['Web Browser', 'Desktop', 'Mobile'],
-  applicationCategory: 'Game',
-  offers: { '@type': 'Offer', price: '0', priceCurrency: 'EUR' }
+  "@context": "https://schema.org",
+  "@type": "VideoGame",
+  "name": "Appréciation des distances : sphère et anneau",
+  "url": "https://skilldrills.online/fr/drills/visual/depth-perception/distance-judgment",
+  "description": "Cliquez au moment où la sphère qui grossit épouse l’anneau cible.",
+  "genre": [
+    "Precision Game",
+    "Visual Training"
+  ],
+  "gamePlatform": [
+    "Web Browser",
+    "Desktop",
+    "Mobile"
+  ],
+  "applicationCategory": "Game",
+  "inLanguage": "fr-FR",
+  "dateModified": "2026-09-05",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  }
 };
 
-const howToSchema = {
-  '@context': 'https://schema.org',
-  '@type': 'HowTo',
-  name: 'Comment entraîner la perception de la profondeur et des distances',
-  description: 'Protocole structuré pour coordonner l\'expansion optique rétinienne avec le timing d\'interception.',
-  step: [
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "inLanguage": "fr-FR",
+  "dateModified": "2026-09-05",
+  "mainEntity": [
     {
-      '@type': 'HowToStep',
-      position: 1,
-      name: 'Fixer l\'anneau cible au centre du tunnel',
-      text: 'Portez votre regard sur l\'anneau repère stationnaire au milieu du tunnel virtuel.',
-      url: 'https://skilldrills.online/fr/drills/visual/depth-perception/distance-judgment#step-1'
+      "@type": "Question",
+      "name": "Que mesure ce test de perception de la profondeur ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Il mesure votre appréciation du moment où une sphère qui grossit épouse un anneau fixe. Vous cliquez au moment estimé et le jeu calcule l’écart en pourcentage. Ce n’est pas un examen de la vision stéréoscopique."
+      }
     },
     {
-      '@type': 'HowToStep',
-      position: 2,
-      name: 'Suivre la progression de la sphère',
-      text: 'Observez l\'objet qui s\'approche depuis l\'arrière-plan et grandit sur la rétine.',
-      url: 'https://skilldrills.online/fr/drills/visual/depth-perception/distance-judgment#step-2'
+      "@type": "Question",
+      "name": "Teste-t-il la vision stéréoscopique ou le relief ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Non. Sur un écran plat, il n’y a pas de disparité binoculaire. Le jeu s’appuie sur l’agrandissement de l’image, un indice monoculaire de temps avant contact (Lee, 1976 ; Regan & Beverley, 1978)."
+      }
     },
     {
-      '@type': 'HowToStep',
-      position: 3,
-      name: 'Cliquer à la superposition exacte',
-      text: 'Appuyez sur la barre d\'espace ou cliquez précisément quand la sphère coïncide avec l\'anneau.',
-      url: 'https://skilldrills.online/fr/drills/visual/depth-perception/distance-judgment#step-3'
+      "@type": "Question",
+      "name": "En quoi diffère-t-il du test de Howard-Dolman ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "L’appareil de Howard-Dolman (Howard, 1919) utilise des tiges réelles pour étudier la perception de la profondeur. Ce jeu utilise une sphère qui grossit à l’écran et ne peut pas le remplacer."
+      }
     },
     {
-      '@type': 'HowToStep',
-      position: 4,
-      name: 'Analyser l\'écart d\'interception',
-      text: 'Vérifiez votre pourcentage d\'erreur et calibrez votre anticipation pour les vitesses supérieures.',
-      url: 'https://skilldrills.online/fr/drills/visual/depth-perception/distance-judgment#step-4'
+      "@type": "Question",
+      "name": "Qu’est-ce que la variable tau ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Lee (1976) propose que le cerveau estime le temps avant contact à partir du rapport entre la taille de l’image et la vitesse à laquelle elle grandit, sans connaître la distance réelle."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Peut-on avoir une bonne acuité et rater le test ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Oui, parce que le jeu mesure surtout votre timing sur un indice d’agrandissement, pas la netteté de votre vue. Une mauvaise performance ne signifie pas un problème de vision."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Peut-on s’améliorer en s’entraînant ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Il est probable que la répétition améliore votre timing sur cette tâche. Rien ne prouve un effet sur la conduite ou le sport. Pour une question de vision, consultez un ophtalmologue."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Comment l’erreur est-elle calculée ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Le jeu compare le diamètre de la sphère au moment du clic à celui de l’anneau et exprime l’écart en pourcentage. Moins de 5 % d’erreur donne le score maximal de +150 points."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Faut-il une souris, ou le tactile suffit-il ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Vous pouvez cliquer avec la souris, toucher l’écran ou appuyer sur la barre d’espace."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Le taux de rafraîchissement de l’écran compte-t-il ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Oui. Un écran affiche une image toutes les 16,7 ms à 60 Hz, 6,9 ms à 144 Hz et 4,1 ms à 240 Hz (Woods et al., 2015). Comparez vos séances sur le même écran."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Mes scores sont-ils envoyés à un serveur ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Non. Les mesures de session sont enregistrées dans le LocalStorage de votre navigateur."
+      }
     }
   ]
 };
 
-const faqSchema = {
-  '@context': 'https://schema.org',
-  '@type': 'FAQPage',
-  mainEntity: [
+const howToSchema = {
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  "name": "Comment s’entraîner à apprécier les distances",
+  "description": "Quatre étapes pour cliquer au moment où la sphère épouse l’anneau.",
+  "step": [
     {
-      '@type': 'Question',
-      name: 'Qu\'est-ce que le test de perception de la profondeur et que mesure-t-il ?',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: 'Ce test évalue l\'aptitude du cortex visuel à évaluer les distances en 3D et à estimer le temps restant avant impact (Time-to-Contact) d\'après le taux d\'expansion de l\'image sur la rétine.',
-      },
+      "@type": "HowToStep",
+      "position": 1,
+      "name": "Fixez l’anneau cible",
+      "text": "Portez le regard sur l’anneau fixe au milieu du tunnel.",
+      "url": "https://skilldrills.online/fr/drills/visual/depth-perception/distance-judgment#step-1"
     },
     {
-      '@type': 'Question',
-      name: 'En quoi diffère-t-il du test traditionnel de Howard-Dolman ?',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: 'L\'appareil de Howard-Dolman (1919) utilise des tiges réelles pour mesurer la disparité binoculaire. Sur un écran plat en 2D, ce test mesure la composante dynamique de l\'expansion optique (Lee, 1976), capitale lors de la conduite et dans le sport.',
-      },
+      "@type": "HowToStep",
+      "position": 2,
+      "name": "Suivez la sphère",
+      "text": "Observez la sphère qui s’approche depuis le fond et grossit.",
+      "url": "https://skilldrills.online/fr/drills/visual/depth-perception/distance-judgment#step-2"
     },
     {
-      '@type': 'Question',
-      name: 'Qu\'est-ce que la variable Tau et le temps avant contact (TTC) ?',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: 'David Lee (1976) a prouvé que le cerveau déduit le délai avant collision en divisant la taille rétinienne par son taux d\'élargissement, sans avoir besoin de connaître la distance métrique réelle.',
-      },
+      "@type": "HowToStep",
+      "position": 3,
+      "name": "Cliquez à la superposition",
+      "text": "Cliquez, touchez l’écran ou appuyez sur la barre d’espace quand la sphère coïncide avec l’anneau.",
+      "url": "https://skilldrills.online/fr/drills/visual/depth-perception/distance-judgment#step-3"
     },
     {
-      '@type': 'Question',
-      name: 'Pourquoi l\'appréciation des distances est-elle exigée pour le permis poids lourd ?',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: 'Les conducteurs professionnels de camions et autocars doivent juger les distances de sécurité au millimètre près pour dépasser et freiner sans risquer de carambolage.',
-      },
-    },
-    {
-      '@type': 'Question',
-      name: 'Peut-on avoir 10/10 à chaque œil et échouer au test de profondeur ?',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: 'Oui. Une vision nette à chaque œil n\'empêche pas un déséquilibre de fusion binoculaire (anisométropie), un astigmatisme mal corrigé ou une fatigue visuelle réduisant l\'acuité spatiale.',
-      },
-    },
-    {
-      '@type': 'Question',
-      name: 'Peut-on améliorer son appréciation des distances par l\'entraînement ?',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: 'Oui. Bien que les troubles structurels relèvent de l\'ophtalmologie, la vitesse à laquelle le cerveau traite les indices d\'expansion optique gagne en vivacité avec des exercices réguliers.',
-      },
-    },
-    {
-      '@type': 'Question',
-      name: 'Comment est calculée la marge d\'erreur du score ?',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: 'Le système calcule l\'écart relatif en pourcentage entre le diamètre de la sphère lors de l\'appui et le diamètre exact de l\'anneau. Un écart inférieur à 5% accorde le score maximal.',
-      },
-    },
-    {
-      '@type': 'Question',
-      name: 'Quel est l\'intérêt dans les sports de raquette et de ballon ?',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: 'Au tennis, au baseball ou au football, les sportifs n\'ont que 300 millisecondes pour analyser la trajectoire de balle et déclencher leur geste au moment parfait.',
-      },
-    },
-    {
-      '@type': 'Question',
-      name: 'Le taux de rafraîchissement de l\'écran (Hz) joue-t-il un rôle ?',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: 'Un écran 144 Hz ou 240 Hz réduit le délai d\'affichage à moins de 7 ms contre 16,7 ms à 60 Hz, offrant une perception beaucoup plus fluide de l\'instant de chevauchement.',
-      },
-    },
-    {
-      '@type': 'Question',
-      name: 'Mes scores et données personnelles sont-ils protégés ?',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: 'Oui. Toutes les mesures et données de session sont enregistrées uniquement en local dans votre navigateur (LocalStorage), garantissant une confidentialité totale.',
-      },
-    },
-  ],
+      "@type": "HowToStep",
+      "position": 4,
+      "name": "Analysez l’écart",
+      "text": "Lisez votre pourcentage d’erreur et ajustez votre anticipation pour les vitesses suivantes.",
+      "url": "https://skilldrills.online/fr/drills/visual/depth-perception/distance-judgment#step-4"
+    }
+  ]
 };
 
 const distanceGuideFr = {
-  heading: 'Test de perception de la profondeur et appréciation des distances',
-  intro: [
-    'La perception de la profondeur (vision stéréoscopique et sens du relief) est la fonction sensorielle et neurologique permettant d\'interpréter l\'environnement en trois dimensions et de jauger avec une rigueur absolue la distance, le volume et la trajectoire des objets en mouvement. Dans le sport de haut niveau (tennis, baseball, sports mécaniques), l\'aviation, la conduite d\'urgence et l\'eSport compétitif, estimer une distance à la milliseconde près fait la différence entre une interception parfaite et une collision critique.',
-    'Ce drill transpose fidèlement sur le web les principes optiques de l\'appareil stéréoscopique classique de Howard-Dolman (Howard, 1919) et la théorie écologique de l\'expansion optique de David N. Lee (1976) ainsi que David Regan & Kenneth I. Beverley (1978). En projetant une sphère 3D le long d\'un tunnel virtuel vers un plan de référence fixe, l\'exercice entraîne le cortex visuel à extraire le taux de grossissement rétinien (looming) et à calculer le temps de contact résiduel (Time-to-Contact, τ) sous des vitesses d\'approche croissantes.',
-    'Métrologie & Précision d\'Échantillonnage : Tous les écarts d\'interception sont chronométrés localement à l\'aide de l\'API haute résolution performance.now() à l\'échelle de la sous-milliseconde. L\'erreur correspond au pourcentage de déviation relative (|Diamètre Réel - Diamètre Repère| / Diamètre Repère). Les latences matérielles (quantification d\'affichage de ~16,7 ms à 60 Hz, ~6,9 ms à 144 Hz, ~4,1 ms à 240 Hz) et les fréquences d\'interrogation de la souris (125 Hz vs 1000 Hz) introduisent une dispersion incompressible (Woods et al., 2015). Toute variation inférieure à 5 ms relève du bruit de mesure ; comparez vos séries sur le même matériel.',
-    'Confidentialité et Protection des Données : SkillDrills ne collecte aucune donnée personnelle, aucun bilan ophtalmologique ni aucune métrique d\'usage centralisée. L\'ensemble de vos scores, records et niveaux franchis reste strictement confiné dans le stockage local (LocalStorage) de votre navigateur.'
+  "heading": "Test de perception de la profondeur : appréciation des distances",
+  "intro": [
+    "Ce jeu d’appréciation des distances vous montre une sphère qui grossit dans un tunnel ; vous cliquez quand elle épouse l’anneau fixe. Le jeu calcule l’écart en pourcentage. Il s’appuie sur l’agrandissement de l’image et ne teste ni la vision stéréoscopique ni la vue : ce n’est pas un diagnostic.",
+    "La perception de la profondeur combine plusieurs indices : disparité binoculaire, perspective, taille relative et agrandissement de l’image. L’appareil de Howard-Dolman (Howard, 1919) étudie la disparité avec des tiges réelles. Ici, vous utilisez surtout l’indice d’agrandissement décrit par Lee (1976) et Regan et Beverley (1978), qui donne une estimation du temps avant contact.",
+    "Mesure et matériel : l’écart est calculé comme |diamètre de la sphère − diamètre de l’anneau| / diamètre de l’anneau. Les temps sont mesurés dans votre navigateur avec l’horloge performance.now(), dont la résolution est limitée. L’affichage ajoute un délai (16,7 ms à 60 Hz, 6,9 ms à 144 Hz, 4,1 ms à 240 Hz ; Woods et al., 2015) : comparez vos séances sur le même matériel.",
+    "Confidentialité : vos scores et vos records restent dans le stockage local (LocalStorage) de votre navigateur."
   ],
-  benchmarks: {
-    title: 'Repères de performance en perception de la profondeur',
-    headers: ['Niveau de Maîtrise', 'Erreur Moyenne de Profondeur', 'Points & Niveau', 'Profil Visuo-Moteur'],
-    rows: [
-      ['Tier 1 : Maître Stéréoscopique Apex', 'Moins de 5,0% d\'erreur', '1500+ pts | Niveau 7+', 'Sensibilité hors pair à l\'expansion optique ; synchronisation infaillible.'],
-      ['Tier 2 : Haute Acuité de Profondeur', '5,0% – 9,9% d\'erreur', '1100 – 1499 pts | Niveau 5–6', 'Excellente anticipation spatiale ; adaptation fluide aux vitesses soutenues.'],
-      ['Tier 3 : Niveau Standard Régulier', '10,0% – 15,9% d\'erreur', '750 – 1099 pts | Niveau 3–4', 'Moyenne saine ; léger retard d\'estimation sur les pointes de vitesse.'],
-      ['Tier 4 : Sensibilité Modérée', '16,0% – 25,0% d\'erreur', '450 – 749 pts | Niveau 2', 'Tendance à déclencher la frappe prématurément avant alignement.'],
-      ['Tier 5 : En Apprentissage', 'Plus de 25,0% d\'erreur', 'Moins de 450 pts | Niveau 1', 'Erreur d\'estimation notable ; un entraînement régulier est conseillé.'],
+  "benchmarks": {
+    "title": "Paliers du test de perception de la profondeur (5 niveaux de repère)",
+    "headers": [
+      "Palier",
+      "Erreur moyenne",
+      "Points et niveau",
+      "Lecture"
     ],
-  },
-  protocols: {
-    title: 'Comment entraîner l’appréciation des distances',
-    items: [
-      {
-        title: 'Protocole 1 : Analyse du Taux d\'Expansion Optique (Lee 1976)',
-        description: 'Fixez votre attention sur l\'accélération d\'élargissement des bords plutôt que sur le centre de la sphère.',
-      },
-      {
-        title: 'Protocole 2 : Contrôle de l\'Impulsivité Motrice',
-        description: 'Ne cédez pas à la panique de la vitesse ; attendez la superposition spatiale intégrale avant de cliquer.',
-      },
-      {
-        title: 'Protocole 3 : Ancrage du Regard sur l\'Anneau Repère',
-        description: 'Laissez votre vision fixée sur le plan d\'arrivée et laissez la sphère pénétrer votre zone focale.',
-      },
-      {
-        title: 'Protocole 4 : Clignements et Prévention de la Sécheresse Oculaire',
-        description: 'Pensez à cligner des yeux entre chaque tentative pour préserver un film lacrymal net et reposé.',
-      },
+    "rows": [
+      [
+        "Palier 1",
+        "Moins de 5,0 % d’erreur",
+        "1500+ pts | Niveau 7+",
+        "Clics très proches de la coïncidence"
+      ],
+      [
+        "Palier 2",
+        "5,0 % – 9,9 % d’erreur",
+        "1100 – 1499 pts | Niveau 5–6",
+        "Bonne anticipation à vitesse soutenue"
+      ],
+      [
+        "Palier 3",
+        "10,0 % – 15,9 % d’erreur",
+        "750 – 1099 pts | Niveau 3–4",
+        "Léger retard d’estimation aux pointes de vitesse"
+      ],
+      [
+        "Palier 4",
+        "16,0 % – 25,0 % d’erreur",
+        "450 – 749 pts | Niveau 2",
+        "Clics souvent trop précoces"
+      ],
+      [
+        "Palier 5",
+        "Plus de 25,0 % d’erreur",
+        "Moins de 450 pts | Niveau 1",
+        "Point de départ : attendez la coïncidence"
+      ]
     ],
+    "note": "Repères éditoriaux propres à cet exercice, sans lien avec un examen de la vue ni un classement de population."
   },
-  steps: [
-    'Cliquez sur "Démarrer le Test" pour initialiser la session d\'évaluation de 45 secondes.',
-    'Fixez votre regard de manière stable sur l\'anneau de référence cyan situé au plan médian.',
-    'Suivez l\'approche de la sphère 3D apparaissant au fond du corridor et accélérant vers vous.',
-    'Cliquez avec la souris, touchez l\'écran ou appuyez sur la barre d\'espace à la milliseconde exacte où la sphère s\'ajuste au diamètre de l\'anneau cible.',
-    'Consultez votre niveau de précision (<5% d\'erreur : Parfait / +150 PTS) et adaptez votre réflexe aux accélérations progressives durant 45 secondes.'
+  "steps": [
+    "Cliquez sur « Démarrer le test » pour lancer la séance de 45 secondes.",
+    "Fixez l’anneau de référence cyan au centre.",
+    "Suivez la sphère qui apparaît au fond du couloir et accélère vers vous.",
+    "Cliquez, touchez l’écran ou appuyez sur la barre d’espace quand la sphère s’ajuste à l’anneau.",
+    "Lisez votre erreur (moins de 5 % : parfait, +150 PTS) et adaptez votre rythme aux accélérations."
   ],
-  audience: 'Conducteurs et candidats aux permis de conduire professionnels (poids lourds, transport en commun), opérateurs d\'engins de manutention, athlètes de sports de raquette et de balle (tennis, badminton, baseball), pilotes et joueurs d\'eSport tactique cherchant à aiguiser leur appréciation des distances.',
-  faqs: {
-    title: 'Foire Aux Questions sur la Perception de Profondeur et des Distances',
-    items: faqSchema.mainEntity.map((q) => ({
-      q: q.name,
-      a: q.acceptedAnswer.text,
-    })),
+  "audience": "Joueurs, conducteurs et curieux qui veulent s’exercer à apprécier les distances et le temps avant contact sur écran.",
+  "related": [
+    {
+      "href": "/fr/drills/visual/tracking-accuracy/moving-target",
+      "label": "Interception de cible mobile"
+    },
+    {
+      "href": "/fr/drills/visual/reaction-speed/light-reaction",
+      "label": "Test de réaction à la lumière"
+    },
+    {
+      "href": "/fr/drills/visual/tracking-accuracy/multiple-targets",
+      "label": "Poursuite d’objets multiples"
+    },
+    {
+      "href": "/fr/drills/visual/tracking-accuracy/pursuit-tracker",
+      "label": "Suivi oculaire continu"
+    },
+    {
+      "href": "/fr/drills/visual/reaction-speed/go/no-go",
+      "label": "Contrôle d’impulsion Go / No-Go"
+    },
+    {
+      "href": "/fr/drills/visual/visual-recognition/entropic-grid",
+      "label": "Exploration de grille entropique"
+    }
+  ],
+  "techniques": {
+    "title": "Quatre conseils pour mieux estimer les distances",
+    "items": [
+      {
+        "name": "Regarder les bords de la sphère",
+        "desc": "Concentrez-vous sur la vitesse à laquelle les bords s’élargissent plutôt que sur le centre de la sphère (Lee, 1976).",
+        "tips": "Comparez vos séances sur le même matériel."
+      },
+      {
+        "name": "Contrôler l’impulsivité",
+        "desc": "Attendez la superposition complète avant de cliquer, même quand la vitesse augmente.",
+        "tips": "Testez et gardez ce qui vous réussit."
+      },
+      {
+        "name": "Garder le regard sur l’anneau",
+        "desc": "Laissez le regard sur le plan d’arrivée et laissez la sphère venir à vous.",
+        "tips": "Testez et gardez ce qui vous réussit."
+      },
+      {
+        "name": "Cligner entre les essais",
+        "desc": "Pensez à cligner des yeux entre chaque tentative pour garder une vision confortable.",
+        "tips": "Testez et gardez ce qui vous réussit."
+      }
+    ]
   },
-  sources: pickSources('howard1919', 'lee1976', 'regan1978', 'julesz1971', 'woods2015'),
-  related: [
-    { href: "/fr/drills/visual/tracking-accuracy/moving-target", label: "Interception de Cible Mobile" },
-    { href: "/fr/drills/visual/reaction-speed/light-reaction", label: "Test de Réaction à la Lumière" },
-    { href: "/fr/drills/visual/tracking-accuracy/multiple-targets", label: "Poursuite d'Objets Multiples" },
-    { href: "/fr/drills/visual/tracking-accuracy/pursuit-tracker", label: "Suivi Oculaire Continu" },
-    { href: "/fr/drills/visual/reaction-speed/go/no-go", label: "Contrôle d'Impulsion Go / No-Go" },
-    { href: "/fr/drills/visual/visual-recognition/entropic-grid", label: "Exploration de Grille Entropique" }
-  ]
+  "faqs": faqSchema.mainEntity.map(e => ({ q: e.name, a: e.acceptedAnswer.text })),
+  "sources": pickSources('howard1919', 'lee1976', 'regan1978', 'julesz1971', 'woods2015')
 };
 
 const copyFr = {
@@ -297,7 +374,7 @@ const copyFr = {
   statTime: 'Temps',
   statLevel: 'Niveau',
   statBestScore: 'Record',
-  startTitle: 'Appréciation des Distances Pro',
+  startTitle: 'Appréciation des distances',
   startSubtitle: 'Entraînez le timing avec une cible en mouvement',
   startBtn: 'Démarrer le Test',
   getReady: 'PRÉPAREZ-VOUS',
@@ -322,13 +399,13 @@ const copyFr = {
   rule4Text: 'Temps Écoulé / Manqué',
   rule4Highlight: 'Aucune Pénalité',
   rule4Result: 'Nouvelle cible sans perte de points',
-  aboutTitle: 'À Propos du Test de Perception de la Profondeur',
+  aboutTitle: 'À propos du test de perception de la profondeur',
   overviewTitle: 'Que mesure cette épreuve ?',
   overviewLead: 'Elle évalue la vitesse et la justesse avec lesquelles le cerveau décrypte une approche spatiale en 3D.',
-  overviewBody: 'En analysant le moment exact de coïncidence par expansion de contour, le test perfectionne la coordination visuo-motrice des conducteurs, pilotes et athlètes.',
+  overviewBody: 'En analysant le moment de coïncidence par expansion de contour, le jeu fait travailler le timing visuo-moteur sur cette tâche précise.',
   aboutCards: [
-    { iconBg: 'bg-blue-600', title: 'Public Visé', text: 'Automobilistes, pilotes, joueurs de sports de balle et amateurs de jeux vidéo d\'action rapide.' },
-    { iconBg: 'bg-cyan-600', title: 'Aptitudes Entraînées', text: 'Expansion optique, estimation du temps de contact, anticipation visuelle et acuité spatiale.' },
+    { iconBg: 'bg-blue-600', title: 'À qui s\'adresse ce jeu ?', text: 'Joueurs et curieux qui veulent s\'exercer à estimer le temps avant contact sur écran.' },
+    { iconBg: 'bg-cyan-600', title: 'Capacités exercées', text: 'Expansion optique, estimation du temps de contact, anticipation visuelle et acuité spatiale.' },
     { iconBg: 'bg-purple-600', title: 'Conseil Clé', text: 'Fixez l\'anneau cible et déclenchez votre clic au millimètre près quand les contours coïncident.' }
   ]
 };

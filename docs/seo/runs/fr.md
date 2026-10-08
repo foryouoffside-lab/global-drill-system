@@ -36,3 +36,4 @@
 - /fr/drills/physical/reflex-training/peripheral-threat-sweeper | done | bb460e00 | docs/seo/research/fr/peripheral-threat-sweeper.md | demand not verified (Bing 0); Suggest exercice vision peripherique
 - /fr/drills/physical/reflex-training/quick-dodge | done | 6e094e3f | docs/seo/research/fr/quick-dodge.md | demand not verified (Bing 0); distinct from dynamic-grid-evasion jeu d'evitement
 - /fr/drills/physical/reflex-training/reaction-chain | done | 840459a8 | docs/seo/research/fr/reaction-chain.md | demand not verified (Bing overflick 0)
+- /fr/drills/reaction-speed/saccadic-gallery | done | e7d9f7f5 | docs/seo/research/fr/saccadic-gallery.md | demand not verified (Bing 0); About H2 'exercices saccadiques' comes from shared client copy
