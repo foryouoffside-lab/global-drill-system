@@ -25,3 +25,4 @@
 | /pt/drills/motor | done | TBD:motor-hub | docs/seo/research/pt/motor-hub.md | title kept; FAQ overclaims softened |
 | /pt/drills/physical | done | TBD:physical-hub | docs/seo/research/pt/physical-hub.md | title kept; fabricated 280->190 ms and transfer claims removed |
 | /pt/drills/visual | done | TBD:visual-hub | docs/seo/research/pt/visual-hub.md | title kept; extraocular-muscle/UFOV/transfer claims softened |
+| /pt/drills/memory | done | TBD:memory-hub | docs/seo/research/pt/memory-hub.md | audited, no change needed; teste de memoria 147 / jogo da memória 516 Bing BR |
