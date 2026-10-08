@@ -282,7 +282,7 @@ export default function AwarenessDrillJaPage() {
       { href: "/ja/drills/fps/flick-shot-training", label: "フリック エイム 練習" },
       { href: "/ja/drills/fps/angle-hold-trainer", label: "置きエイム練習 (クロスヘアプレイスメント)" },
       { href: "/ja/drills/fps/micro-correction-precision", label: "マイクロフリック 練習" },
-      { href: "/ja/drills/reaction-speed/reaction-time-test", label: "反応速度測定テスト" }
+      { href: "/ja/drills/visual/reaction-speed/light-reaction", label: "反応速度測定テスト" }
     ]
   };
 

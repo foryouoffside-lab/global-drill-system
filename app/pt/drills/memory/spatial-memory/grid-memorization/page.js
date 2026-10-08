@@ -305,7 +305,7 @@ const gridGuide = {
     "label": "Teste de Dígitos (Span de Memória)"
   },
   {
-    "href": "/pt/drills/reaction-speed/reaction-time-test",
+    "href": "/pt/drills/visual/reaction-speed/light-reaction",
     "label": "Teste de Reflexo (Tempo de Reação)"
   },
   {

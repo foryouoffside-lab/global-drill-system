@@ -4,346 +4,375 @@ import DrillFooter from '@/components/drill/DrillFooter';
 import { getAlternateLanguages } from '@/lib/i18n/locales';
 import { pickSources } from '@/lib/drillSources';
 
-// ============================================================
-// SEO RESEARCH FINDINGS — de-DE (reaction-speed / reaction-time-test)
-// LIVE RESEARCH (2026-09-20): "Reaktionstest" — Bing 521 exact / 590 broad;
-//                    "Reaktionszeit Test" — 292 exact / 292 broad.
-// SECONDARY / LSI:
-//                    Google Suggest also shows online kostenlos/üben, but MPU and
-//                    driving-test intent are prominent, so the page qualifies its
-//                    promise as a browser-based visual reaction-time drill.
-// ============================================================
-
 export const metadata = {
-  title: 'Reaktionstest online: Reaktionszeit in ms | SkillDrills',
-  description:
-    'Kostenloser Reaktionstest im Browser: Miss deine visuelle Reaktionszeit in Millisekunden, werte mehrere Versuche aus und prüfe deine Konstanz.',
-  keywords: [
-    'reaktionstest',
-    'reaktionszeit test',
-    'reaktionstest online',
-    'reaktionstest online kostenlos',
-    'reaktionszeit messen',
-    'visuelle reaktionszeit',
-    'millisekunden reaktionstest',
-    'reaktionstest gaming',
-    'reaktionsgeschwindigkeit',
-    'reaktionszeit in millisekunden',
-    'reflexe testen',
+  "title": "Zeitgefühl-Test: Zielzeit treffen | SkillDrills",
+  "description": "Zeitgefühl-Test: Eine Zielzeit erscheint, du klickst, wenn sie verstrichen ist. Ein Timing-Spiel, kein Reaktionstest. Dafür: Reaktionstest (Lichtsignal).",
+  "keywords": [
+    "Zeitgefühl Test",
+    "Zeitschätzung Spiel",
+    "Timing Spiel",
+    "Zielzeit treffen",
+    "innere Uhr Test",
+    "Zeitgefühl trainieren",
+    "Timer stoppen Spiel",
+    "Klick-Timing üben"
   ],
-  alternates: {
-    canonical: 'https://skilldrills.online/de/drills/reaction-speed/reaction-time-test',
-    languages: getAlternateLanguages('/drills/reaction-speed/reaction-time-test'),
+  "alternates": {
+    "canonical": "https://skilldrills.online/de/drills/reaction-speed/reaction-time-test",
+    "languages": getAlternateLanguages('/drills/reaction-speed/reaction-time-test')
   },
-  openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
-    title: 'Reaktionstest online: Reaktionszeit in ms | SkillDrills',
-    description:
-      'Miss deine visuelle Reaktionszeit in Millisekunden, wiederhole mehrere Durchgänge und vergleiche Durchschnitt und Konstanz.',
-    url: 'https://skilldrills.online/de/drills/reaction-speed/reaction-time-test',
-    siteName: 'SkillDrills',
-    locale: 'de_DE',
-    type: 'website',
+  "openGraph": {
+    "images": [
+      {
+        "url": "https://skilldrills.online/opengraph-image",
+        "width": 1200,
+        "height": 630
+      }
+    ],
+    "title": "Zeitgefühl-Test: Zielzeit treffen | SkillDrills",
+    "description": "Schätze eine Zielzeit zwischen 1 und 8 Sekunden, klicke im richtigen Moment und sieh deinen Fehler in Millisekunden.",
+    "url": "https://skilldrills.online/de/drills/reaction-speed/reaction-time-test",
+    "siteName": "SkillDrills",
+    "locale": "de_DE",
+    "type": "website"
   },
-  twitter: { images: ["https://skilldrills.online/opengraph-image"],
-    card: 'summary_large_image',
-    title: 'Reaktionstest online: Reaktionszeit in ms | SkillDrills',
-    description:
-      'Kostenloser Browser-Test für visuelle Reaktionszeit in Millisekunden – mit mehreren Versuchen und ehrlichen Hinweisen zur Gerätelatenz.',
+  "twitter": {
+    "images": [
+      "https://skilldrills.online/opengraph-image"
+    ],
+    "card": "summary_large_image",
+    "title": "Zeitgefühl-Test: Zielzeit treffen | SkillDrills",
+    "description": "Timing-Spiel zur Zeitschätzung: Zielzeit merken, im richtigen Moment klicken, Abweichung in Millisekunden sehen."
   },
-  robots: { index: true, follow: true },
+  "robots": {
+    "index": true,
+    "follow": true
+  }
 };
 
-// --- Structured Data Schemas ---
-
 const breadcrumbSchema = {
-  '@context': 'https://schema.org',
-  '@type': 'BreadcrumbList',
-  itemListElement: [
-    { '@type': 'ListItem', position: 1, name: 'SkillDrills Startseite', item: 'https://skilldrills.online/de' },
-    { '@type': 'ListItem', position: 2, name: 'Drills Übersicht', item: 'https://skilldrills.online/de/drills' },
-    { '@type': 'ListItem', position: 3, name: 'Reaktionsschnelligkeit', item: 'https://skilldrills.online/de/drills/reaction-speed' },
-    { '@type': 'ListItem', position: 4, name: 'Reaktionstest', item: 'https://skilldrills.online/de/drills/reaction-speed/reaction-time-test' },
-  ],
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "SkillDrills Startseite",
+      "item": "https://skilldrills.online/de"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Drills Übersicht",
+      "item": "https://skilldrills.online/de/drills"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Reaktionsschnelligkeit",
+      "item": "https://skilldrills.online/de/drills/reaction-speed"
+    },
+    {
+      "@type": "ListItem",
+      "position": 4,
+      "name": "Zeitgefühl-Test",
+      "item": "https://skilldrills.online/de/drills/reaction-speed/reaction-time-test"
+    }
+  ]
 };
 
 const softwareApplicationSchema = {
-  '@context': 'https://schema.org',
-  '@type': 'SoftwareApplication', "sameAs": ["https://en.wikipedia.org/wiki/Mental_chronometry", "https://en.wikipedia.org/wiki/Reaction_time"],
-  name: 'Reaktionstest (Reaktionszeit Test) – Kostenloses Reflex-Messwerkzeug',
-  alternateName: ['Reaktionstest', 'Reaktionszeit Test', 'Reflex Test Online', 'Gaming Reaktionstest'],
-  applicationCategory: 'HealthApplication',
-  operatingSystem: 'All',
-  offers: { '@type': 'Offer', price: '0', priceCurrency: 'EUR' },
-  description:
-    'Präzises browserbasiertes Werkzeug zur Messung der visuellen Reaktionszeit in Millisekunden. Enthält wissenschaftliche Benchmarks, Esports-Ranglisten und Intervall-Timing-Training.',
-  browserRequirements: 'Moderner Webbrowser mit JavaScript-Unterstützung (Chrome, Firefox, Safari, Edge)',
-  softwareVersion: '2.0',
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "sameAs": [
+    "https://en.wikipedia.org/wiki/Time_perception"
+  ],
+  "name": "Zeitgefühl-Test: Zielzeit treffen",
+  "alternateName": [
+    "Zeitschätzung-Spiel",
+    "Timer-stoppen-Spiel",
+    "Innere-Uhr-Training"
+  ],
+  "applicationCategory": "GameApplication",
+  "operatingSystem": "All",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "EUR"
+  },
+  "description": "Browser-Spiel zur Zeitschätzung: Eine Zielzeit erscheint kurz, du klickst, sobald du sie für verstrichen hältst, und siehst die Abweichung in Millisekunden."
 };
 
 const webAppSchema = {
-  '@context': 'https://schema.org',
-  '@type': 'WebApplication',
-  name: 'Reaktionstest — Kostenloser visueller Reflex-Test | SkillDrills',
-  url: 'https://skilldrills.online/de/drills/reaction-speed/reaction-time-test',
-  description:
-    'Kostenloses Online-Tool zur Messung der visuellen Reaktionszeit und Reflexe in Millisekunden.',
-  applicationCategory: 'EducationalApplication',
-  operatingSystem: 'All',
-  browserRequirements: 'Erfordert einen modernen Webbrowser mit JavaScript.',
-  offers: { '@type': 'Offer', price: '0', priceCurrency: 'EUR' },
-  author: { '@type': 'Organization', name: 'SkillDrills', url: 'https://skilldrills.online' },
-  isAccessibleForFree: true,
-  learningResourceType: 'Educational Game',
-  teaches: 'Reaktionszeit, Reaktionsgeschwindigkeit, Visuelle Reizverarbeitung, Neuromuskuläre Latenz',
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Zeitgefühl-Test: Zielzeit treffen | SkillDrills",
+  "url": "https://skilldrills.online/de/drills/reaction-speed/reaction-time-test",
+  "description": "Kostenloses Online-Spiel zur Zeitschätzung. Es misst, wie nah dein Klick an einer Zielzeit liegt, und ist kein Test der Reaktionszeit auf ein Signal.",
+  "applicationCategory": "EducationalApplication",
+  "operatingSystem": "All",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "EUR"
+  },
+  "author": {
+    "@type": "Organization",
+    "name": "SkillDrills",
+    "url": "https://skilldrills.online"
+  },
+  "isAccessibleForFree": true,
+  "learningResourceType": "Educational Game",
+  "teaches": "Zeitschätzung, Intervall-Timing, gleichmäßiges Klick-Timing"
 };
 
 const videoGameSchema = {
-  '@context': 'https://schema.org',
-  '@type': 'VideoGame',
-  name: 'Reaktionstest - Kostenloser visueller Reflex-Geschwindigkeitstest',
-  url: 'https://skilldrills.online/de/drills/reaction-speed/reaction-time-test',
-  description: 'Reaktionstest - Kostenloser visueller Reflex-Geschwindigkeitstest',
-  genre: ['Reflex Game', 'Action', 'Esports Training'],
-  gamePlatform: ['Web Browser', 'Desktop', 'Mobile'],
-  applicationCategory: 'Game',
-  offers: { '@type': 'Offer', price: '0', priceCurrency: 'EUR' }
+  "@context": "https://schema.org",
+  "@type": "VideoGame",
+  "name": "Zeitgefühl-Test: Zielzeit treffen",
+  "url": "https://skilldrills.online/de/drills/reaction-speed/reaction-time-test",
+  "description": "Timing-Spiel: Eine Zielzeit zwischen 1 und 8 Sekunden merken und im richtigen Moment klicken.",
+  "genre": [
+    "Timing Game",
+    "Casual"
+  ],
+  "gamePlatform": [
+    "Web Browser",
+    "Desktop",
+    "Mobile"
+  ],
+  "applicationCategory": "Game",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "EUR"
+  }
 };
 
 const howToSchema = {
-  '@context': 'https://schema.org',
-  '@type': 'HowTo',
-  name: 'Anleitung: Visuelle Reaktionszeit messen',
-  description: 'So messen Sie Ihre Reaktionsgeschwindigkeit präzise im Browser.',
-  step: [
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  "name": "So spielst du den Zeitgefühl-Test",
+  "description": "Zielzeit merken, klicken, wenn sie verstrichen ist, und die Abweichung in Millisekunden ablesen.",
+  "step": [
     {
-      '@type': 'HowToStep',
-      position: 1,
-      name: 'Test starten',
-      text: 'Klicken Sie auf «Drill starten», um das Testfeld im Vollbildmodus zu öffnen.',
-      url: 'https://skilldrills.online/de/drills/reaction-speed/reaction-time-test#step-1'
+      "@type": "HowToStep",
+      "position": 1,
+      "name": "Drill starten",
+      "text": "Klicke oder tippe auf Drill Starten, um die Vollbild-Arena zu öffnen.",
+      "url": "https://skilldrills.online/de/drills/reaction-speed/reaction-time-test#step-1"
     },
     {
-      '@type': 'HowToStep',
-      position: 2,
-      name: 'Zielintervall einprägen',
-      text: 'Merken Sie sich das angezeigte Millisekunden-Zielintervall und konzentrieren Sie sich auf die Mitte.',
-      url: 'https://skilldrills.online/de/drills/reaction-speed/reaction-time-test#step-2'
+      "@type": "HowToStep",
+      "position": 2,
+      "name": "Zielzeit merken",
+      "text": "Lies die Zielzeit zwischen einer und acht Sekunden. Sie verschwindet nach kurzer Zeit wieder.",
+      "url": "https://skilldrills.online/de/drills/reaction-speed/reaction-time-test#step-2"
     },
     {
-      '@type': 'HowToStep',
-      position: 3,
-      name: 'Im richtigen Moment klicken',
-      text: 'Klicken Sie mit der Maus oder tippen Sie auf den Bildschirm, sobald das Signal ausgelöst wird.',
-      url: 'https://skilldrills.online/de/drills/reaction-speed/reaction-time-test#step-3'
+      "@type": "HowToStep",
+      "position": 3,
+      "name": "Klicken, wenn die Zeit um ist",
+      "text": "Klicke oder tippe, sobald du glaubst, dass die Zielzeit verstrichen ist. Während die Uhr läuft, gibt es keine Zahlenanzeige.",
+      "url": "https://skilldrills.online/de/drills/reaction-speed/reaction-time-test#step-3"
     },
     {
-      '@type': 'HowToStep',
-      position: 4,
-      name: 'Millisekunden-Auswertung prüfen',
-      text: 'Überprüfen Sie Ihre durchschnittliche Abweichung, Genauigkeit und Gaming-Rangstufe.',
-      url: 'https://skilldrills.online/de/drills/reaction-speed/reaction-time-test#step-4'
-    },
-  ],
+      "@type": "HowToStep",
+      "position": 4,
+      "name": "Abweichung prüfen",
+      "text": "Spiele mehrere Runden und vergleiche deinen durchschnittlichen Fehler und deine Konstanz.",
+      "url": "https://skilldrills.online/de/drills/reaction-speed/reaction-time-test#step-4"
+    }
+  ]
 };
 
 const faqSchema = {
-  '@context': 'https://schema.org',
-  '@type': 'FAQPage',
-  dateModified: '2026-09-20',
-  mainEntity: [
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "dateModified": "2026-10-08",
+  "mainEntity": [
     {
-      '@type': 'Question',
-      name: 'Was ist eine gute Reaktionszeit beim Menschen?',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: 'Die durchschnittliche menschliche Reaktionszeit auf visuelle Reize liegt bei etwa 200 bis 250 Millisekunden (ms) (Kosinski, 2008). Werte unter 200 ms gelten als überdurchschnittlich schnell, und Zeiten unter 180 ms erreichen das Niveau von professionellen E-Sportlern und Formel-1-Fahrern.',
-      },
+      "@type": "Question",
+      "name": "Ist das ein Reaktionstest?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Nein. Es ist ein Spiel zur Zeitschätzung. Eine Zielzeit wird gezeigt, du klickst, wenn du sie für verstrichen hältst, und der Drill zeigt deine Abweichung in Millisekunden. Wie schnell du auf ein Signal reagierst, misst der Reaktionstest (Lichtsignal)."
+      }
     },
     {
-      '@type': 'Question',
-      name: 'Wie wird die Reaktionszeit online gemessen?',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: 'Die Zeitspanne zwischen dem Erscheinen des visuellen Reizes auf dem Monitor und dem Registrieren des Klicks wird über die hochauflösende performance.now() API des Browsers mit etwa 1 ms Zeitauflösung clientseitig erfasst (Woods et al., 2015).',
-      },
+      "@type": "Question",
+      "name": "Wie funktioniert das Spiel?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Eine Zielzeit erscheint kurz und verschwindet dann. Ein leuchtender Orb ohne Zahlenanzeige läuft, während im Hintergrund die Uhr zählt, und du klickst, wenn du die Zielzeit für verstrichen hältst. Danach zeigt der Drill deine genaue Klickzeit und deinen Fehler."
+      }
     },
     {
-      '@type': 'Question',
-      name: 'Kann man seine Reaktionszeit durch Training verbessern?',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: 'Ja. Durch regelmäßiges Reaktionstraining werden die visuellen Wahrnehmungswege und die motorische Signalübertragung optimiert, was die Reaktionszeit typischerweise um 15 bis 30 Millisekunden verkürzen kann (Dye, Green, & Bavelier, 2009).',
-      },
+      "@type": "Question",
+      "name": "Wie lang sind die Zielzeiten?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Die Ziele beginnen zwischen 1 und etwa 2 Sekunden, die Obergrenze steigt mit dem Level bis maximal 8 Sekunden. Die Zielzeit wird mit drei Nachkommastellen angezeigt, zum Beispiel 3,250 s."
+      }
     },
     {
-      '@type': 'Question',
-      name: 'Warum schwankt die Reaktionszeit von Tag zu Tag?',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: 'Reaktionszeiten hängen stark von Schlafdauer, zirkadianem Rhythmus, kognitiver Ermüdung, Konzentration, Kaffeekonsum sowie der Monitor-Bildwiederholrate und Eingabeverzögerung der Hardware ab.',
-      },
+      "@type": "Question",
+      "name": "Wie wird die Punktzahl berechnet?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Dein Fehler ist die Klickzeit minus die Zielzeit. Ein Klick zählt als Treffer, wenn der Fehler innerhalb von 50 ms plus 5 % der Zielzeit liegt; bei 3 Sekunden sind das 200 ms. Je näher, desto mehr Punkte, unter 10 ms gibt es die Wertung EXACT, und aufeinanderfolgende Treffer erhöhen den Combo-Multiplikator bis 3,0x."
+      }
     },
     {
-      '@type': 'Question',
-      name: 'Beeinflusst die Bildwiederholrate (Hz) des Monitors das Ergebnis?',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: 'Ja, signifikant. Ein standardmäßiger 60-Hz-Monitor hat eine Bildaufbauzeit von 16,67 ms pro Frame. Gaming-Monitore mit 144 Hz (6,94 ms) oder 240 Hz (4,17 ms) stellen den Reiz früher dar und reduzieren die gemessene Hardware-Latenz um rund 10 bis 12 ms (Woods et al., 2015).',
-      },
+      "@type": "Question",
+      "name": "Was passiert bei zu frühem oder zu spätem Klick?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Beides zählt als Fehler. Ein Klick außerhalb des erlaubten Fensters ist ein Fehlversuch: Die Combo wird zurückgesetzt und ein roter Warnblitz erscheint, die Punktzahl bleibt aber erhalten."
+      }
     },
     {
-      '@type': 'Question',
-      name: 'Was ist der Unterschied zwischen einem Reflex und einer Reaktion?',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: 'Ein Reflex ist ein unwillkürlicher Rückenmarksbogen (wie der Kniesehnenreflex), der ohne Beteiligung des Gehirns in 20 bis 50 ms abläuft. Eine Reaktion erfordert die bewusste Reizverarbeitung im visuellen Kortex und motorische Befehle des Gehirns (150 bis 250+ ms).',
-      },
+      "@type": "Question",
+      "name": "Darf ich im Kopf mitzählen?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Ja, Zählen ist deine eigene Strategie. Der Orb hat keine Zahlenanzeige, seine Ringe pulsieren einmal pro Sekunde, was du als Takt nutzen kannst. Probiere Methoden aus und behalte die mit dem kleinsten durchschnittlichen Fehler."
+      }
     },
     {
-      '@type': 'Question',
-      name: 'Warum reagiert man auf Töne schneller als auf optische Reize?',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: 'Auditorische Signale erreichen den auditorischen Kortex im Hirnstamm in 8 bis 10 ms, während die Signalumwandlung in der Netzhaut und der Weg zum visuellen Kortex 20 bis 40 ms dauert. Akustische Reaktionen (140–160 ms) sind daher 30 bis 50 ms schneller (Shelton & Kumar, 2010).',
-      },
+      "@type": "Question",
+      "name": "Beeinflussen Bildwiederholrate und Eingabeverzögerung das Ergebnis?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Leicht. Klicks werden mit der Browser-Uhr performance.now() erfasst, aber dein Display zeigt bei 60 Hz alle 16,7 ms ein neues Bild, bei 144 Hz alle 6,9 ms und bei 240 Hz alle 4,2 ms, und Eingabegeräte fügen Abtastverzögerung hinzu (Woods et al., 2015). Vergleiche Ergebnisse auf demselben Gerät."
+      }
     },
     {
-      '@type': 'Question',
-      name: 'Wie verändert sich die Reaktionsgeschwindigkeit im Alter?',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: 'Die einfache Reaktionszeit erreicht zwischen dem 18. und 24. Lebensjahr ihren Höchstwert und verlangsamt sich danach um etwa 2 bis 6 ms pro Jahrzehnt (Der & Deary, 2006). Regelmäßiges Training und Sport verlangsamen diesen Prozess deutlich.',
-      },
+      "@type": "Question",
+      "name": "Kann ich mein Timing durch Üben verbessern?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Übung verbessert meist die geübte Aufgabe, dein durchschnittlicher Fehler in diesem Drill dürfte also sinken. Wie weit sich das auf andere Aufgaben überträgt, ist unterschiedlich und nicht garantiert."
+      }
     },
     {
-      '@type': 'Question',
-      name: 'Verkürzt Koffein die Reaktionszeit?',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: 'Ja. Eine moderate Dosis Koffein blockiert Adenosinrezeptoren im Zentralnervensystem, erhöht die Wachheit und kann die Reaktionszeit vorübergehend um 10 bis 20 ms verbessern (Smith, 2002).',
-      },
+      "@type": "Question",
+      "name": "Ist das dasselbe wie die 10-Sekunden-Challenge?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Die Idee ist ähnlich, ein Intervall ohne sichtbare Uhr einzuschätzen, aber das Ziel ändert sich jede Runde und ist nicht auf 10 Sekunden festgelegt. Bewertet wird außerdem die Größe deines Fehlers statt nur bestanden oder nicht bestanden."
+      }
     },
     {
-      '@type': 'Question',
-      name: 'Wie unterscheidet sich dieser Test von Human Benchmark?',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: 'Während Human Benchmark primär einfache Rot-zu-Grün-Klicks misst, trainiert SkillDrills die mentale Chronometrie (Zeitintervallschätzung), verhindert unüberlegtes Vorabklicken und bietet Combo-Multiplikatoren für realistischere Wettkampfbedingungen.',
-      },
-    },
-    {
-      '@type': 'Question',
-      name: 'Welche E-Sport-Titel profitieren von schnellen Reflexen?',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: 'Taktische Shooter wie CS2 und Valorant, Battle-Royale-Games wie Apex Legends sowie MOBAs (League of Legends) verlangen blitzschnelle Reaktionen beim Abfangen von Peeks und Ausweichen von Fähigkeiten.',
-      },
-    },
-    {
-      '@type': 'Question',
-      name: 'Funktioniert der Reaktionstest auf Smartphones und Tablets?',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: 'Ja, das Testfeld ist vollständig responsiv für Touchscreens optimiert und funktioniert auf iOS und Android im Hoch- sowie Querformat ohne Installation.',
-      },
-    },
-    {
-      '@type': 'Question',
-      name: 'Ist dieser Online-Reaktionstest völlig kostenlos?',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: 'Ja, alle Reaktions- und Kognitionstests auf SkillDrills sind zu 100 % kostenlos im Browser nutzbar – ohne Registrierung, ohne Downloads und ohne störende Werbung.',
-      },
-    },
-    {
-      '@type': 'Question',
-      name: 'Können traditionelle Sportler und Athleten von diesem Test profitieren?',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: 'Ja. Formel-1-Piloten, Kampfsportler (Boxen, Fechten), Sprinter und Rückschlagspieler (Tennis, Tischtennis) trainieren ihre visuelle Reaktionsschnelligkeit gezielt, um die neuromuskuläre Aktivierung und Auslösegeschwindigkeit schnell zuckender Muskelfasern zu schärfen.',
-      },
-    },
-    {
-      '@type': 'Question',
-      name: 'Sollte ich meinen Blick zentral fokussieren oder auf das periphere Sehen achten?',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: 'Ein leicht entspannter, zentraler Blick («weicher Fokus») ist optimal. Dadurch erfassen die lichtempfindlichen Stäbchenzellen des peripheren Sichtfelds Farb- und Signalwechsel im Testfeld blitzschnell, bevor der bewusste motorische Klickimpuls ausgelöst wird.',
-      },
-    },
-    {
-      '@type': 'Question',
-      name: 'Wie oft sollte ich meine Reaktionszeit testen und trainieren?',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: 'Eine kurze tägliche Trainingseinheit von 5 bis 10 Minuten liefert einen verlässlichen Referenzwert für Ihre kognitive Wachheit, hilft bei der Aufwärmphase vor Wettkämpfen und dokumentiert langfristige Verbesserungen der neuromuskulären Latenz.',
-      },
-    },
-  ],
+      "@type": "Question",
+      "name": "Ist es kostenlos und läuft es auf dem Handy?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Ja, kostenlos und ohne Anmeldung oder Download. Es läuft im mobilen Browser, aber Touch-Eingabe bringt eigene Latenz mit, vergleiche Ergebnisse daher nur mit anderen Versuchen auf demselben Gerät."
+      }
+    }
+  ]
 };
 
-faqSchema.mainEntity = faqSchema.mainEntity.slice(0, 10);
-
 const reactionGuide = {
-  heading: 'Reaktionstest Leitfaden & Benchmarks',
-  intro: [
-    'Die visuelle Reaktionszeit beschreibt das Intervall zwischen dem Auftreten eines optischen Reizes und der Ausführung der entsprechenden Muskelbewegung (z. B. Mausklick).',
-    'In kompetitiven Shootern wie Valorant und CS2 sowie im Motorsport entscheiden Millisekunden darüber, wer das Duell gewinnt oder Hindernissen rechtzeitig ausweicht.',
-    'Messmethode: Alle Zeitmessungen erfolgen lokal im Browser über die hochauflösende performance.now() API mit einer browserabhängigen Auflösung von etwa 1 ms. Es findet keine Verzögerung durch Server-Übertragungen statt.',
-    'Hardware-Einfluss: Ein Standardmonitor mit 60 Hz fügt bis zu 16,7 ms Anzeigelatenz pro Frame hinzu, während 144 Hz (6,9 ms) oder 240 Hz (4,2 ms) Monitore und eine Gaming-Maus mit 1000 Hz Polling-Rate Messverfälschungen minimieren (Woods et al., 2015).',
+  "heading": "Zeitgefühl-Test: So funktioniert das Zeitschätzungs-Spiel",
+  "intro": [
+    "Dies ist ein Spiel zur Zeitschätzung und kein Test der Reaktionszeit auf ein Signal. Eine Zielzeit zwischen einer und acht Sekunden wird kurz gezeigt, verschwindet, und du klickst, wenn du sie für verstrichen hältst. Der Drill zeigt den Abstand zwischen Klick und Ziel in Millisekunden. Wie schnell du auf ein visuelles Signal reagierst, testest du mit dem Reaktionstest (Lichtsignal).",
+    "Jeder Klick wird mit der Browser-Uhr performance.now() vollständig auf deinem Gerät erfasst. Dein Display rundet das Gesehene auf sein Aktualisierungsintervall: etwa 16,7 ms pro Bild bei 60 Hz, 6,9 ms bei 144 Hz und 4,2 ms bei 240 Hz (Woods et al., 2015). Die Mausabtastung fügt bei 125 Hz etwa 8 ms hinzu, bei 1000 Hz etwa 1 ms.",
+    "Unterschiede unter etwa 5 ms sind Messrauschen. Vergleiche deine eigenen Durchläufe auf derselben Hardware und nicht mit fremden Setups. Dies ist ein Übungswerkzeug, keine klinische Messung."
   ],
-  benchmarks: {
-    title: 'Reaktionszeit Referenztabelle & Gaming-Einstufung',
-    headers: ['Reaktionszeit (ms)', 'Klassifizierung', 'Einordnung', 'Übungsfokus', 'Neurologisches Profil'],
-    rows: [
-      ['< 150 ms', 'Extrem schnell', 'Stufe 1', 'Fokus: Vorwegnahme und Timing-Gefühl', 'Sehr kurze Zeiten treten meist bei Vorwegnahme auf; Fehlstarts vermeiden'],
-      ['150 – 190 ms', 'Sehr schnell', 'Stufe 2', 'Fokus: Konzentration und saubere Startposition', 'Schnelle Reizverarbeitung und Motorantwort'],
-      ['190 – 240 ms', 'Fortgeschrittener Gamer', 'Stufe 3', 'Diamond / Ascendant', 'Sehr gute Reizunterscheidung und stabiles Abfeuern des Fadenkreuzes'],
-      ['240 – 280 ms', 'Menschlicher Durchschnitt', 'Stufe 4', 'Gold / Platinum', 'Typischer gesunder Erwachsener unter Standard-60Hz-Bedingungen'],
-      ['> 300 ms', 'Gelegenheitsspieler', 'Stufe 5', 'Silber / Bronze', 'Verlangsamung durch Müdigkeit, Unaufmerksamkeit oder Hardware-Latenz'],
+  "benchmarks": {
+    "title": "So wird der Timing-Fehler gewertet",
+    "headers": [
+      "Wertung",
+      "Erlaubter Fehler",
+      "Beispiel bei 3,000 s Zielzeit"
     ],
-    note: 'Diese Werte basieren auf neurowissenschaftlicher Reaktionszeit-Literatur (Kosinski, 2008; Woods et al., 2015). 60Hz-Monitore fügen ca. 16,7 ms Bildverzögerung hinzu. Die Bereiche sind redaktionelle Übungsmarken, keine Bevölkerungsstatistik.',
-  },
-  techniques: {
-    title: 'Sensorische Latenz & Physiologische Mechanismen',
-    items: [
-      {
-        name: 'Visuelle Reizübertragung (~200–250 ms)',
-        desc: 'Photonen treffen auf die Netzhaut, werden in elektrische Nervenimpulse umgewandelt, erreichen den primären visuellen Kortex (V1) und senden den Klickbefehl über den motorischen Kortex an den Finger (Kosinski, 2008).',
-        tips: 'Halten Sie einen entspannten, weiten Blickwinkel, damit die peripheren Stäbchenzellen Lichtblitze schneller erfassen können.',
-      },
-      {
-        name: 'Auditorische Reaktionsüberlegenheit (~140–170 ms)',
-        desc: 'Schallwellen erreichen die Hörrinde über den Hirnstamm deutlich schneller als Lichtsignale die Sehrinde. Deshalb reagiert das Gehirn auf Töne 30 bis 50 ms schneller (Shelton & Kumar, 2010; Jain et al., 2015).',
-        tips: 'Nutzen Sie in Shootern stets akustische Hinweise wie Schritte oder Nachladegeräusche als primären Auslöser.',
-      },
-      {
-        name: 'Taktile Reizverarbeitung (~130–160 ms)',
-        desc: 'Vibrationen und Berührungsreize umgehen komplexe visuelle Auswertungsstufen und führen zu extrem schnellen Reflexreaktionen.',
-        tips: 'Mechanische Mausschalter mit klarem taktilem Druckpunkt verringern die Auslöseverzögerung.',
-      },
-      {
-        name: 'Optimierung von Bildschirm & Peripherie',
-        desc: 'Ein 60Hz-Monitor benötigt 16,7 ms pro Frame, während ein 240Hz-Esports-Monitor die Bildlatenz auf 4,1 ms senkt (Woods et al., 2015).',
-        tips: 'Nutzen Sie eine Gaming-Maus mit 1000 Hz Abtastrate und schalten Sie V-Sync im Grafiktreiber aus.',
-      },
+    "rows": [
+      [
+        "EXACT",
+        "Bis 10 ms",
+        "Klick zwischen 2,990 s und 3,010 s"
+      ],
+      [
+        "PERFECT",
+        "Bis 20 % des Trefferfensters",
+        "Innerhalb von 40 ms"
+      ],
+      [
+        "EXCELLENT",
+        "Bis 40 % des Trefferfensters",
+        "Innerhalb von 80 ms"
+      ],
+      [
+        "GOOD",
+        "Bis 60 % des Trefferfensters",
+        "Innerhalb von 120 ms"
+      ],
+      [
+        "OK",
+        "Bis 80 % des Trefferfensters",
+        "Innerhalb von 160 ms"
+      ],
+      [
+        "HIT",
+        "Bis zum vollen Trefferfenster",
+        "Innerhalb von 200 ms"
+      ]
     ],
+    "note": "Das Trefferfenster beträgt 50 ms plus 5 % der Zielzeit, längere Ziele sind in absoluten Zahlen also nachsichtiger. Das sind die Wertungsregeln dieses Drills, keine Bevölkerungsnormen."
   },
-  steps: [
-    'Klicken Sie auf «Drill starten», um den Vollbild-Reaktionstest zu öffnen.',
-    'Beachten Sie das angezeigte Zielintervall und fokussieren Sie die Mitte.',
-    'Klicken Sie sofort mit der Maus oder tippen Sie, sobald das Signal ausgelöst wird.',
-    'Wiederholen Sie den Test mehrfach, um Ihre Latenz, Genauigkeit und Rangstufe zu ermitteln.',
+  "techniques": {
+    "title": "Wege, ein kurzes Intervall einzuschätzen",
+    "items": [
+      {
+        "name": "Gleichmäßig zählen",
+        "desc": "Stilles Zählen in Unterteilungen gibt dir einen wiederholbaren inneren Takt. Unterschiedliche Zählgeschwindigkeiten passen zu unterschiedlichen Zielen.",
+        "tips": "Wähle eine Zählgeschwindigkeit und behalte sie für die ganze Sitzung, damit deine Fehler vergleichbar bleiben."
+      },
+      {
+        "name": "Den Sekundenpuls nutzen",
+        "desc": "Die Ringe um den Orb pulsieren einmal pro Sekunde. Wenn du jeden Puls als Tick zählst, addierst du ganze Sekunden und schätzt nur den Rest.",
+        "tips": "Bei Zielzeiten mit Nachkommastellen wie 3,250 s fällt der letzte Klick zwischen zwei Pulse."
+      },
+      {
+        "name": "Den Fehler auswerten",
+        "desc": "Nach jedem Klick zeigt der Drill, wann du geklickt hast. Bist du immer zu früh oder zu spät, verschiebe deinen inneren Takt entsprechend.",
+        "tips": "Eine gleichbleibende kleine Abweichung lässt sich leichter beheben als eine große zufällige Streuung."
+      }
+    ]
+  },
+  "steps": [
+    "Drücke Drill Starten, um die Vollbild-Arena zu öffnen.",
+    "Lies die Zielzeit, bevor sie verschwindet.",
+    "Klicke oder tippe, sobald du glaubst, dass die Zielzeit verstrichen ist.",
+    "Spiele mehrere Runden und vergleiche deinen durchschnittlichen Fehler und deine Konstanz."
   ],
-  audience: 'FPS- und MOBA-Spieler, Rennsportler, Athleten und alle, die ihre Reaktionsschnelligkeit und Reflexe objektiv messen und trainieren wollen.',
-  faqs: faqSchema.mainEntity.map((e) => ({ q: e.name, a: e.acceptedAnswer.text })),
-  sources: pickSources('kosinski2008', 'woods2015', 'jain2015', 'shelton2010', 'dye2009', 'der2006', 'smith2002'),
-  related: [
-    { href: '/de/drills/reaction-speed', label: 'Reaktionsschnelligkeit Hub' },
-    { href: '/de/drills/motor/movement-speed/rapid-tapping', label: 'CPS Test & Klick-Geschwindigkeit' },
-    { href: '/de/drills/reaction-speed/fps-tracking-trainer', label: 'FPS Tracking Trainer' },
-    { href: '/de/drills/fps/flick-shot-training', label: 'Flick Shot Trainer' },
-  ],
+  "audience": "Gamer, Musiker, Sportler und alle, die gleichmäßigeres Trigger-Timing und ein besseres Gefühl für kurze Intervalle üben möchten.",
+  "faqs": faqSchema.mainEntity.map((e) => ({ q: e.name, a: e.acceptedAnswer.text })),
+  "sources": pickSources('woods2015'),
+  "related": [
+    {
+      "href": "/de/drills/visual/reaction-speed/light-reaction",
+      "label": "Reaktionstest (Lichtsignal)"
+    },
+    {
+      "href": "/de/drills/reaction-speed",
+      "label": "Reaktionsschnelligkeit Hub"
+    },
+    {
+      "href": "/de/drills/motor/movement-speed/rapid-tapping",
+      "label": "CPS Test & Klick-Geschwindigkeit"
+    },
+    {
+      "href": "/de/drills/reaction-speed/fps-tracking-trainer",
+      "label": "FPS Tracking Trainer"
+    },
+    {
+      "href": "/de/drills/fps/flick-shot-training",
+      "label": "Flick Shot Trainer"
+    }
+  ]
 };
 
 export default function GermanReactionTimeTestPage() {
@@ -359,11 +388,11 @@ export default function GermanReactionTimeTestPage() {
       />
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(videoGameSchema) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(webAppSchema) }}
       />
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(webAppSchema) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(videoGameSchema) }}
       />
       <script
         type="application/ld+json"
@@ -375,9 +404,9 @@ export default function GermanReactionTimeTestPage() {
       />
       <ReactionTimeTestWrapper
         copy={{
-          title: 'Reaktionstest',
-          subtitle: 'Visuelle Reaktionszeit in Millisekunden messen',
-          caption: 'Warte auf das Signal und klicke sofort, um deine visuelle Reaktionszeit zu messen.',
+          title: "Zeitgefühl-Test: Zielzeit treffen",
+          subtitle: "Zeitschätzung: Zielzeit merken, im richtigen Moment klicken und die Abweichung in Millisekunden sehen",
+          caption: "Eine Zielzeit erscheint und verschwindet. Klicke, wenn du glaubst, dass diese Zeit vergangen ist.",
         }}
       />
       <DrillGuide guide={reactionGuide} />

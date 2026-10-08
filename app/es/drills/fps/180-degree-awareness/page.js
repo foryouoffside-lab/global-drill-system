@@ -282,7 +282,7 @@ export default function AwarenessDrillEsPage() {
       { href: "/es/drills/fps/flick-shot-training", label: "Entrenamiento de Flick Shot" },
       { href: "/es/drills/fps/angle-hold-trainer", label: "Entrenador de Colocación de Mira (Crosshair Placement)" },
       { href: "/es/drills/fps/micro-correction-precision", label: "Entrenamiento de Microcorrección" },
-      { href: "/es/drills/reaction-speed/reaction-time-test", label: "Test de Tiempo de Reacción" }
+      { href: "/es/drills/visual/reaction-speed/light-reaction", label: "Test de Tiempo de Reacción" }
     ]
   };
 

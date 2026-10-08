@@ -294,7 +294,7 @@ export default function AntiStrafeJitterJaPage() {
       { href: "/ja/drills/fps/pro-smooth-pursuit", label: "スムーズパースート・エイム練習" },
       { href: "/ja/drills/fps/flick-shot-training", label: "フリック エイム 練習" },
       { href: "/ja/drills/fps/180-degree-awareness", label: "180度 振り向き 練習" },
-      { href: "/ja/drills/reaction-speed/reaction-time-test", label: "反応速度測定テスト" }
+      { href: "/ja/drills/visual/reaction-speed/light-reaction", label: "反応速度測定テスト" }
     ]
   };
 

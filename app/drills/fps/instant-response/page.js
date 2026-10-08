@@ -294,7 +294,7 @@ export default function InstantResponsePage() {
       { href: "/drills/fps/angle-hold-trainer", label: "Crosshair Placement & Angle Hold Trainer" },
       { href: "/drills/fps/flick-shot-training", label: "Flick Shot Trainer" },
       { href: "/drills/fps/flow-state", label: "Flow State Trainer" },
-      { href: "/drills/reaction-speed/reaction-time-test", label: "Reaction Time Test" },
+      { href: "/drills/visual/reaction-speed/light-reaction", label: "Reaction Time Test" },
       { href: "/drills/reaction-speed/reflex-training-drill", label: "Reflex Training Drill" }
     ]
   };

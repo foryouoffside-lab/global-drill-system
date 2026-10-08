@@ -5,9 +5,11 @@ import RelatedDrills from '@/components/drill/RelatedDrills';
 import { pickSources } from '@/lib/drillSources';
 
 export const metadata = {
-  title: "Test de temps de réaction visuelle | Réflexes en ligne",
-  description: "Test de réflexes visuels gratuit : mesurez votre temps de réaction en millisecondes face à un signal lumineux. Dépend de l’écran, pas un diagnostic médical.",
+  title: "Test de réaction en ligne | Temps de réaction visuelle",
+  description: "Test de réaction gratuit : mesurez votre temps de réaction en millisecondes face à un signal lumineux. Dépend de l’écran, pas un diagnostic médical.",
   keywords: [
+    "test de réaction",
+    "test de réaction en ligne",
     "test de temps de réaction",
     "temps de réaction visuelle",
     "test de réflexes",
@@ -22,7 +24,7 @@ export const metadata = {
     "entraînement de la vitesse de réaction"
   ],
   openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
-    title: "Test de temps de réaction visuelle | Réflexes en ligne",
+    title: "Test de réaction en ligne | Temps de réaction visuelle",
     description: "Mesurez en millisecondes l’intervalle entre un signal lumineux et votre clic, avec plusieurs essais pour suivre votre régularité.",
     type: 'article',
     url: 'https://skilldrills.online/fr/drills/visual/reaction-speed/light-reaction',
@@ -31,7 +33,7 @@ export const metadata = {
   },
   twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: 'summary_large_image',
-    title: "Test de temps de réaction visuelle | Réflexes en ligne",
+    title: "Test de réaction en ligne | Temps de réaction visuelle",
     description: "Entraînez vos réflexes visuels avec un signal lumineux imprévisible et comparez vos temps dans le navigateur.",
   },
   robots: { index: true, follow: true },
@@ -301,7 +303,7 @@ export default function StrobeLatencyPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(howToSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(videoGameSchema) }} />
-      <StrobeLatencyClient copy={{ title: "Test de réflexes (réaction visuelle)", startCardTitle: "Test de réflexes", startCardSubtitle: "Réagissez au signal lumineux en ms" }} />
+      <StrobeLatencyClient copy={{ title: "Test de réaction (réflexes visuels)", startCardTitle: "Test de réaction", startCardSubtitle: "Réagissez au signal lumineux en ms" }} />
       <DrillGuide guide={lightReactionGuide} />
       <RelatedDrills />
     </>

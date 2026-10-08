@@ -322,7 +322,7 @@ const digitSpanGuide = {
     "label": "Schulte-Tabelle (Konzentrationsgitter)"
   },
   {
-    "href": "/de/drills/reaction-speed/reaction-time-test",
+    "href": "/de/drills/visual/reaction-speed/light-reaction",
     "label": "Reaktionstest (Reaktionszeit messen)"
   },
   {

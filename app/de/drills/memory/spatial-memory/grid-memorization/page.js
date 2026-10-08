@@ -306,7 +306,7 @@ const gridGuide = {
     "label": "Zahlenspannen-Test"
   },
   {
-    "href": "/de/drills/reaction-speed/reaction-time-test",
+    "href": "/de/drills/visual/reaction-speed/light-reaction",
     "label": "Reaktionstest (Reaktionszeit messen)"
   },
   {

@@ -5,9 +5,10 @@ import RelatedDrills from '@/components/drill/RelatedDrills';
 import { pickSources } from '@/lib/drillSources';
 
 export const metadata = {
-  title: "Test de reflejos online | Tiempo de reacción visual",
-  description: "Test de reflejos online gratis: mide tu tiempo de reacción visual en milisegundos ante una señal luminosa. Depende de la pantalla; no es diagnóstico médico.",
+  title: "Test de reacción online | Tiempo de reacción visual",
+  description: "Test de reacción online gratis: mide tu tiempo de reacción visual en milisegundos ante una señal luminosa. Depende de la pantalla; no es diagnóstico médico.",
   keywords: [
+    "test de reacción",
     "test de reflejos",
     "test de reflejos online",
     "test de tiempo de reacción",
@@ -22,7 +23,7 @@ export const metadata = {
     "entrenar velocidad de reacción"
   ],
   openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
-    title: "Test de reflejos online | Tiempo de reacción visual",
+    title: "Test de reacción online | Tiempo de reacción visual",
     description: "Mide el intervalo entre una señal luminosa y tu clic en milisegundos, con varias rondas para comparar tu consistencia.",
     type: 'article',
     url: 'https://skilldrills.online/es/drills/visual/reaction-speed/light-reaction',
@@ -31,7 +32,7 @@ export const metadata = {
   },
   twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: 'summary_large_image',
-    title: "Test de reflejos online | Tiempo de reacción visual",
+    title: "Test de reacción online | Tiempo de reacción visual",
     description: "Entrena tus reflejos visuales con un estímulo luminoso imprevisible y sigue tus tiempos dentro del navegador.",
   },
   robots: { index: true, follow: true },
@@ -301,7 +302,7 @@ export default function StrobeLatencyPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(howToSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(videoGameSchema) }} />
-      <StrobeLatencyClient copy={{ title: "Test de reflejos (reacción visual)", startCardTitle: "Test de reflejos", startCardSubtitle: "Responde al destello en milisegundos" }} />
+      <StrobeLatencyClient copy={{ title: "Test de reacción (reflejos visuales)", startCardTitle: "Test de reacción", startCardSubtitle: "Responde al destello en milisegundos" }} />
       <DrillGuide guide={lightReactionGuide} />
       <RelatedDrills />
     </>

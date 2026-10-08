@@ -301,7 +301,7 @@ export default function JapaneseAngleHoldPage() {
       { href: "/ja/drills/fps/flick-shot-training", label: "フリックエイム訓練" },
       { href: "/ja/drills/fps/180-degree-awareness", label: "180度視点移動の練習" },
       { href: "/ja/drills/fps/micro-correction-precision", label: "マイクロフリック練習" },
-      { href: "/ja/drills/reaction-speed/reaction-time-test", label: "反射神経テスト・反応速度テスト" }
+      { href: "/ja/drills/visual/reaction-speed/light-reaction", label: "反射神経テスト・反応速度テスト" }
     ]
   };
 

@@ -288,7 +288,7 @@ export default function AntiZigzagFrPage() {
       { href: "/fr/drills/reaction-speed/fps-tracking-trainer", label: "Entraînement Tracking FPS" },
       { href: "/fr/drills/fps/pro-smooth-pursuit", label: "Tracking Fluide Smooth Pursuit" },
       { href: "/fr/drills/fps/flick-shot-training", label: "Entraînement Flick Shot" },
-      { href: "/fr/drills/reaction-speed/reaction-time-test", label: "Test de Temps de Réaction" }
+      { href: "/fr/drills/visual/reaction-speed/light-reaction", label: "Test de Temps de Réaction" }
     ]
   };
 

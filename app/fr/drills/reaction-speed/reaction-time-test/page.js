@@ -5,47 +5,50 @@ import RelatedDrills from '@/components/drill/RelatedDrills';
 import { getAlternateLanguages } from '@/lib/i18n/locales';
 import { pickSources } from '@/lib/drillSources';
 
-// ============================================================
-// SEO RESEARCH FINDINGS — France & Francophonie (FR / FR-FR / FR-CA)
-// LIVE RESEARCH (2026-09-20): Bing returned 0 exact / 18 broad for
-// "temps de réaction" and 0 for the longer tested variants. Google Suggest
-// surfaces test en ligne, souris, clavier, humain, and rapidité de réaction.
-// French SERPs use test de temps de réaction, test de réaction, and réflexes;
-// no French volume or #1 ranking is claimed.
-// ============================================================
-
 export const metadata = {
-  title: "Test de temps de réaction en ligne | SkillDrills",
-  description: "Test de temps de réaction gratuit : mesurez vos réflexes visuels en millisecondes, comparez la moyenne de plusieurs essais et suivez votre régularité.",
-  keywords: [
-    "test de temps de réaction",
-    "test de réaction en ligne",
-    "temps de réaction",
-    "test de temps de réaction en ligne",
-    "temps de réaction souris",
-    "test de réaction clavier",
-    "test de rapidité de réaction",
-    "temps de réponse",
-    "réflexes visuels"
+  "title": "Jeu de perception du temps : temps cible | SkillDrills",
+  "description": "Jeu de perception du temps : cliquez quand le temps cible s’est écoulé. Pas un test de réaction : voir le Test de réaction (signal lumineux).",
+  "keywords": [
+    "jeu de perception du temps",
+    "jeu d’estimation du temps",
+    "jeu de timing",
+    "atteindre le temps cible",
+    "horloge interne jeu",
+    "entraîner la perception du temps",
+    "jeu arrêter le chrono",
+    "s’entraîner au timing du clic"
   ],
-  alternates: {
-    canonical: 'https://skilldrills.online/fr/drills/reaction-speed/reaction-time-test',
-    languages: getAlternateLanguages('/drills/reaction-speed/reaction-time-test'),
+  "alternates": {
+    "canonical": "https://skilldrills.online/fr/drills/reaction-speed/reaction-time-test",
+    "languages": getAlternateLanguages('/drills/reaction-speed/reaction-time-test')
   },
-  openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
-    title: "Test de temps de réaction en ligne | SkillDrills",
-    description: "Mesurez vos réflexes visuels en millisecondes, répétez plusieurs essais et comparez votre moyenne et votre régularité.",
-    url: 'https://skilldrills.online/fr/drills/reaction-speed/reaction-time-test',
-    siteName: 'SkillDrills',
-    locale: 'fr_FR',
-    type: 'website',
+  "openGraph": {
+    "images": [
+      {
+        "url": "https://skilldrills.online/opengraph-image",
+        "width": 1200,
+        "height": 630
+      }
+    ],
+    "title": "Jeu de perception du temps : temps cible | SkillDrills",
+    "description": "Estimez un temps cible entre 1 et 8 secondes, cliquez au bon moment et découvrez votre erreur en millisecondes.",
+    "url": "https://skilldrills.online/fr/drills/reaction-speed/reaction-time-test",
+    "siteName": "SkillDrills",
+    "locale": "fr_FR",
+    "type": "website"
   },
-  twitter: { images: ["https://skilldrills.online/opengraph-image"],
-    card: 'summary_large_image',
-    title: "Test de temps de réaction en ligne | SkillDrills",
-    description: "Mesurez votre vitesse de réaction visuelle en millisecondes en ligne gratuitement, avec des repères clairs sur la latence de l'appareil.",
+  "twitter": {
+    "images": [
+      "https://skilldrills.online/opengraph-image"
+    ],
+    "card": "summary_large_image",
+    "title": "Jeu de perception du temps : temps cible | SkillDrills",
+    "description": "Jeu d’estimation du temps : mémorisez le temps cible, cliquez quand il s’est écoulé et voyez votre écart en millisecondes."
   },
-  robots: { index: true, follow: true },
+  "robots": {
+    "index": true,
+    "follow": true
+  }
 };
 
 const breadcrumbSchema = {
@@ -73,7 +76,7 @@ const breadcrumbSchema = {
     {
       "@type": "ListItem",
       "position": 4,
-      "name": "Test de Temps de Réaction",
+      "name": "Jeu de perception du temps",
       "item": "https://skilldrills.online/fr/drills/reaction-speed/reaction-time-test"
     }
   ]
@@ -81,276 +84,295 @@ const breadcrumbSchema = {
 
 const softwareApplicationSchema = {
   "@context": "https://schema.org",
-  "@type": "SoftwareApplication", "sameAs": ["https://en.wikipedia.org/wiki/Mental_chronometry", "https://en.wikipedia.org/wiki/Reaction_time"],
-  "name": "Test de Temps de Réaction & Réflexes en Ligne",
-  "applicationCategory": "HealthApplication",
+  "@type": "SoftwareApplication",
+  "sameAs": [
+    "https://en.wikipedia.org/wiki/Time_perception"
+  ],
+  "name": "Jeu de perception du temps : temps cible",
+  "alternateName": [
+    "Jeu d’estimation du temps",
+    "Jeu arrêter le chrono",
+    "Entraînement de l’horloge interne"
+  ],
+  "applicationCategory": "GameApplication",
   "operatingSystem": "All",
   "offers": {
     "@type": "Offer",
     "price": "0",
-    "priceCurrency": "USD"
+    "priceCurrency": "EUR"
   },
-  "description": "Outil chronométrique haute précision pour mesurer le temps de réaction visuel en millisecondes (ms), évaluer les latences neuromusculaires et comparer ses performances aux benchmarks esports.",
-  "url": "https://skilldrills.online/fr/drills/reaction-speed/reaction-time-test",
-  "publisher": {
-    "@type": "Organization",
-    "name": "SkillDrills",
-    "url": "https://skilldrills.online/fr"
-  },
-  "inLanguage": "fr",
-  "dateModified": "2026-09-20"
+  "description": "Jeu de navigateur pour estimer le temps : un temps cible s’affiche, vous cliquez quand vous pensez qu’il s’est écoulé et voyez votre écart en millisecondes."
 };
 
-const webApplicationSchema = {
+const webAppSchema = {
   "@context": "https://schema.org",
   "@type": "WebApplication",
-  "name": "Test de Temps de Réaction & Réflexes en Ligne | SkillDrills",
+  "name": "Jeu de perception du temps : temps cible | SkillDrills",
+  "url": "https://skilldrills.online/fr/drills/reaction-speed/reaction-time-test",
+  "description": "Jeu gratuit d’estimation du temps en ligne. Il mesure l’écart entre votre clic et un temps cible, et ne mesure pas la réaction à un signal.",
   "applicationCategory": "EducationalApplication",
   "operatingSystem": "All",
-  "browserRequirements": "Requires HTML5 Canvas and JavaScript enabled browser",
   "offers": {
     "@type": "Offer",
     "price": "0",
-    "priceCurrency": "USD"
+    "priceCurrency": "EUR"
   },
-  "url": "https://skilldrills.online/fr/drills/reaction-speed/reaction-time-test",
-  "inLanguage": "fr",
-  "dateModified": "2026-09-20"
+  "author": {
+    "@type": "Organization",
+    "name": "SkillDrills",
+    "url": "https://skilldrills.online"
+  },
+  "isAccessibleForFree": true,
+  "learningResourceType": "Educational Game",
+  "teaches": "Estimation du temps, timing d’intervalle, régularité du moment du clic"
 };
 
 const videoGameSchema = {
   "@context": "https://schema.org",
   "@type": "VideoGame",
-  "name": "Test de Temps de Réaction Visuel",
+  "name": "Jeu de perception du temps : temps cible",
   "url": "https://skilldrills.online/fr/drills/reaction-speed/reaction-time-test",
-  "genre": ["Reflex Game", "Chronometry Trainer", "Esports Precision"],
-  "playMode": "SinglePlayer",
-  "description": "Mesurez vos réflexes visuels purs en millisecondes en réagissant instantanément aux stimuli graphiques sans délai réseau."
+  "description": "Jeu de timing : mémorisez un temps cible entre 1 et 8 secondes et cliquez au bon moment.",
+  "genre": [
+    "Timing Game",
+    "Casual"
+  ],
+  "gamePlatform": [
+    "Web Browser",
+    "Desktop",
+    "Mobile"
+  ],
+  "applicationCategory": "Game",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "EUR"
+  }
+};
+
+const howToSchema = {
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  "name": "Comment jouer au jeu de perception du temps",
+  "description": "Mémorisez le temps cible, cliquez quand il s’est écoulé et lisez votre erreur en millisecondes.",
+  "step": [
+    {
+      "@type": "HowToStep",
+      "position": 1,
+      "name": "Lancer l’exercice",
+      "text": "Cliquez ou touchez Démarrer pour ouvrir l’arène en plein écran.",
+      "url": "https://skilldrills.online/fr/drills/reaction-speed/reaction-time-test#step-1"
+    },
+    {
+      "@type": "HowToStep",
+      "position": 2,
+      "name": "Mémoriser le temps cible",
+      "text": "Lisez le temps cible, compris entre une et huit secondes. Il disparaît après un court instant.",
+      "url": "https://skilldrills.online/fr/drills/reaction-speed/reaction-time-test#step-2"
+    },
+    {
+      "@type": "HowToStep",
+      "position": 3,
+      "name": "Cliquer quand le temps est écoulé",
+      "text": "Cliquez ou touchez l’écran quand vous estimez que le temps cible s’est écoulé. Aucun affichage numérique pendant que le chrono tourne.",
+      "url": "https://skilldrills.online/fr/drills/reaction-speed/reaction-time-test#step-3"
+    },
+    {
+      "@type": "HowToStep",
+      "position": 4,
+      "name": "Examiner votre erreur",
+      "text": "Jouez plusieurs manches et comparez votre erreur moyenne et votre régularité.",
+      "url": "https://skilldrills.online/fr/drills/reaction-speed/reaction-time-test#step-4"
+    }
+  ]
 };
 
 const faqSchema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
+  "dateModified": "2026-10-08",
   "mainEntity": [
     {
       "@type": "Question",
-      "name": "Quel est le temps de réaction moyen d'un être humain face à un stimulus visuel ?",
+      "name": "Est-ce un test de temps de réaction ?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Le temps de réaction visuel moyen chez un adulte sain se situe entre 200 et 250 millisecondes (ms) (Kosinski, 2008). Dans ce test, un résultat sous 190 ms est très rapide ; l'écran, la souris et l'état de fatigue modifient le score mesuré, donc comparez plutôt vos moyennes sur le même appareil."
+        "text": "Non. C’est un jeu d’estimation du temps. Un temps cible est affiché, vous cliquez quand vous estimez qu’il s’est écoulé et l’exercice indique votre écart en millisecondes. Pour mesurer votre rapidité de réaction à un signal, utilisez le Test de réaction (signal lumineux)."
       }
     },
     {
       "@type": "Question",
-      "name": "Comment ce test mesure-t-il les millisecondes avec une telle exactitude ?",
+      "name": "Comment fonctionne le jeu ?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Le test s'appuie sur l'API performance.now() du navigateur, dont la résolution est d'environ 1 ms. Aucun aller-retour serveur n'interfère : le chronométrage se fait localement dans votre navigateur. La latence de l'écran et de la souris s'ajoute toutefois au résultat (Woods et al., 2015)."
+        "text": "Un temps cible apparaît un instant puis disparaît. Un orbe lumineux sans affichage numérique reste actif pendant que le chrono tourne en arrière-plan, et vous cliquez quand vous pensez que le temps cible est écoulé. L’exercice affiche ensuite l’instant exact de votre clic et votre erreur."
       }
     },
     {
       "@type": "Question",
-      "name": "Est-il scientifiquement possible d'améliorer son temps de réaction par l'entraînement ?",
+      "name": "Quelle est la durée des temps cibles ?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Oui. Des recherches en neurosciences cognitives (Dye, Green, & Bavelier, 2009) ont démontré qu'une pratique régulière de drills sensorimoteurs optimise le traitement visuel fovéal et réduit le délai de déclenchement moteur de 15 à 30 ms, tout en réduisant considérablement la variabilité inter-essais."
+        "text": "Les cibles commencent entre 1 et environ 2 secondes, et la limite haute augmente avec le niveau jusqu’à un maximum de 8 secondes. Le temps cible est affiché avec trois décimales, par exemple 3,250 s."
       }
     },
     {
       "@type": "Question",
-      "name": "Pourquoi les réflexes auditifs sont-ils systématiquement plus rapides que les réflexes visuels ?",
+      "name": "Comment le score est-il calculé ?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Le signal auditif met seulement 8 à 10 ms pour transiter des mécanorécepteurs de la cochlée jusqu'au tronc cérébral et au cortex auditif. À l'inverse, la phototransduction rétinienne implique des réactions chimiques complexes nécessitant 20 à 40 ms. De ce fait, le temps de réaction auditif (140-160 ms) devance toujours le temps visuel (Shelton & Kumar, 2010)."
+        "text": "Votre erreur est l’instant du clic moins le temps cible. Le clic compte comme réussi si l’erreur est dans la limite de 50 ms plus 5 % de la cible ; pour 3 secondes, cela fait 200 ms. Plus c’est proche, plus vous marquez de points, une erreur sous 10 ms est notée EXACT et les réussites consécutives augmentent un multiplicateur de combo jusqu’à 3,0×."
       }
     },
     {
       "@type": "Question",
-      "name": "Quel impact le taux de rafraîchissement de l'écran (Hz) a-t-il sur le résultat mesuré ?",
+      "name": "Que se passe-t-il si je clique trop tôt ou trop tard ?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Un écran 60 Hz n'actualise l'image que toutes les 16,6 ms, ajoutant une latence d'affichage incompressible. Sur un écran 144 Hz (6,9 ms) ou 240 Hz (4,1 ms), le stimulus apparaît physiquement plus tôt sur la dalle, ce qui améliore mécaniquement le score mesuré de 10 à 12 ms à performance physiologique identique (Woods et al., 2015)."
+        "text": "Les deux comptent comme une erreur. Un clic hors de la fenêtre autorisée est un échec : le combo est réinitialisé et une alerte rouge s’affiche, mais votre score est conservé."
       }
     },
     {
       "@type": "Question",
-      "name": "Quelle est la différence entre un réflexe spinal et un temps de réaction volontaire ?",
+      "name": "Puis-je compter dans ma tête ?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Un réflexe spinal (comme le réflexe rotulien) emprunte un arc réflexe monosynaptique sans transiter par les hémisphères cérébraux, s'exécutant en 20 à 50 ms. Le temps de réaction mesuré ici mobilise la rétine, les voies optiques, le cortex visuel primaire, les aires décisionnelles préfrontales et le cortex moteur, nécessitant au minimum 150 ms."
+        "text": "Oui, compter est votre propre stratégie. L’orbe n’a pas d’affichage numérique et ses anneaux pulsent une fois par seconde, ce que vous pouvez utiliser comme repère. Essayez plusieurs méthodes et gardez celle qui donne la plus petite erreur moyenne."
       }
     },
     {
       "@type": "Question",
-      "name": "Pourquoi mes scores varient-ils d'un jour à l'autre ou au cours de la journée ?",
+      "name": "La fréquence de rafraîchissement ou la latence d’entrée influencent-elles le résultat ?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "La chronométrie mentale fluctue en fonction des rythmes circadiens, de la dette de sommeil, de la charge cognitive préalable, de l'hydratation et de la consommation de stimulants comme la caféine, qui peut réduire temporairement la latence motrice de 10 à 20 ms en bloquant les récepteurs d'adénosine (Smith, 2002)."
+        "text": "Légèrement. Les clics sont horodatés avec l’horloge performance.now() du navigateur, mais votre écran affiche une nouvelle image toutes les 16,7 ms à 60 Hz, 6,9 ms à 144 Hz et 4,2 ms à 240 Hz, et les périphériques ajoutent un délai d’interrogation (Woods et al., 2015). Comparez les résultats sur le même appareil."
       }
     },
     {
       "@type": "Question",
-      "name": "Le vieillissement dégrade-t-il inéluctablement la vitesse de réaction ?",
+      "name": "La pratique peut-elle améliorer mon timing ?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Le pic de vitesse réflexe pure culmine entre 18 et 24 ans, avant de fléchir modérément d'environ 2 à 6 ms par décennie (Der & Deary, 2006). Néanmoins, le maintien d'une activité cardiovasculaire régulière et la pratique de jeux vidéo d'action préservent l'efficacité synaptique et compensent le ralentissement biologique."
+        "text": "La pratique améliore généralement la tâche travaillée : votre erreur moyenne sur cet exercice devrait donc diminuer. La mesure dans laquelle cela se transfère à d’autres tâches varie et n’est pas garantie."
       }
     },
     {
       "@type": "Question",
-      "name": "En quoi le temps de réaction est-il déterminant dans des jeux comme Valorant, CS2 ou League of Legends ?",
+      "name": "Est-ce la même chose que le défi des 10 secondes ?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Dans un duel au tir, quelques dizaines de millisecondes peuvent départager deux joueurs, mais le résultat dépend aussi du réseau, de la visée et de l'anticipation. Ce test mesure uniquement votre réaction visuelle simple, pas ces autres facteurs."
+        "text": "L’idée est proche, estimer un intervalle sans chrono visible, mais la cible change à chaque manche et n’est pas fixée à 10 secondes. L’exercice note aussi la taille de votre erreur plutôt qu’une simple réussite ou un échec."
       }
     },
     {
       "@type": "Question",
-      "name": "Le test fonctionne-t-il fidèlement sur smartphone et tablette tactile ?",
+      "name": "Est-ce gratuit et cela fonctionne-t-il sur mobile ?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Oui, le module prend en charge les événements tactiles PointerEvents avec une détection immédiate au contact de l'écran. Toutefois, les dalles tactiles des appareils mobiles introduisent généralement 10 à 30 ms de latence de numériseur supplémentaire comparé à une souris filaire 1000 Hz."
+        "text": "Oui, c’est gratuit, sans inscription ni téléchargement. Cela fonctionne dans un navigateur mobile, mais l’entrée tactile ajoute sa propre latence : comparez vos scores uniquement à d’autres essais sur le même appareil."
       }
-    },
-    {
-      "@type": "Question",
-      "name": "La caféine améliore-t-elle réellement la vitesse de réaction ?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Oui. La consommation modérée de caféine bloque les récepteurs centraux de l'adénosine, stimulant l'éveil cortical et réduisant temporairement le temps de réaction moteur de 10 à 20 ms (Smith, 2002)."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "En quoi ce test se distingue-t-il d'un outil comme Human Benchmark ?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Alors qu'un test classique se limite souvent à un simple clic binaire rouge/vert, notre outil évalue la chronométrie mentale et l'estimation d'intervalle, sanctionnant l'anticipation impulsive et offrant un barème comparatif multi-paliers adapté aux exigences compétitives modernes."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Ce test de temps de réaction en ligne est-il totalement gratuit ?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Oui, l'ensemble des modules d'évaluation et d'entraînement sur SkillDrills est accessible 100 % gratuitement, sans inscription, sans téléchargement d'application et sans publicités invasives."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Les athlètes de disciplines traditionnelles peuvent-ils tirer profit de ce test ?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Il peut servir de pratique complémentaire pour la vigilance et les réflexes, par exemple en sports de raquette ou de combat, sans garantie de transfert hors de l’écran."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Faut-il fixer le centre de l'écran ou privilégier la vision périphérique ?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Il est conseillé d'adopter une fixation attentionnelle détendue (« regard adouci »). Cela permet aux cellules en bâtonnets de la rétine périphérique, très sensibles aux variations lumineuses, de détecter l'éclair instantanément avant que le cortex moteur ne déclenche la frappe."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "À quelle fréquence est-il recommandé de mesurer et d'entraîner ses réflexes ?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Une courte session quotidienne de 5 à 10 minutes suffit pour établir une ligne de base neuro-fonctionnelle fiable, servir d'échauffement avant des parties compétitives et mesurer l'évolution de la vitesse de réaction au fil des semaines."
-      }
-    }
-  ]
-};
-
-faqSchema.mainEntity = faqSchema.mainEntity.slice(0, 10);
-
-const howToSchema = {
-  "@context": "https://schema.org",
-  "@type": "HowTo",
-  "name": "Comment Mesurer Précisément son Temps de Réaction en Ligne",
-  "description": "Protocole en 4 étapes pour évaluer votre vitesse de réaction visuelle avec un étalonnage scientifique.",
-  "step": [
-    {
-      "@type": "HowToStep",
-      "position": 1,
-      "name": "Lancement du Mode Plein Écran",
-      "text": "Cliquez sur la zone de test pour activer le mode immersif et minimiser les distractions visuelles."
-    },
-    {
-      "@type": "HowToStep",
-      "position": 2,
-      "name": "Fixation Attentionnelle & Préparation",
-      "text": "Fixez le centre du champ et préparez votre index sur le bouton de souris sans exercer de pression prématurée."
-    },
-    {
-      "@type": "HowToStep",
-      "position": 3,
-      "name": "Déclenchement Moteur Instantané",
-      "text": "Dès l'apparition du signal lumineux, cliquez le plus rapidement possible sans anticiper au hasard."
-    },
-    {
-      "@type": "HowToStep",
-      "position": 4,
-      "name": "Analyse de la Moyenne & Comparaison au Barème",
-      "text": "Répétez 5 à 10 essais pour éliminer les valeurs aberrantes et comparez votre moyenne au barème."
     }
   ]
 };
 
 const reactionGuide = {
-  heading: "Guide Scientifique du Temps de Réaction & Barèmes Officiels",
-  intro: [
-    "Un test de temps de réaction mesure, en millisecondes, le délai entre l'apparition d'un signal visuel et votre clic. Chez l'adulte, la moyenne se situe autour de 200 à 250 ms (Kosinski, 2008). Répétez 5 essais : une moyenne est plus fiable qu'un score isolé, car l'écran et la souris ajoutent leur propre latence.",
-    "Ce délai couvre la détection du stimulus par la rétine, son traitement par le cortex visuel, la décision, puis la commande motrice envoyée à l'index.",
-    "Le chronométrage s'effectue localement dans votre navigateur via l'API performance.now(), sans aller-retour réseau : la connexion internet n'influence pas le résultat.",
-    "Considérations matérielles : les écrans 60 Hz ajoutent jusqu'à 16,6 ms de délai d'affichage par trame. L'utilisation d'une dalle 144 Hz ou 240 Hz couplée à une souris optique à 1000 Hz est fortement préconisée pour révéler votre véritable potentiel physiologique (Woods et al., 2015)."
+  "heading": "Jeu de perception du temps : fonctionnement de l’exercice d’estimation",
+  "intro": [
+    "C’est un jeu d’estimation du temps, pas un test de temps de réaction. Un temps cible compris entre une et huit secondes s’affiche brièvement, disparaît, et vous cliquez quand vous estimez qu’il s’est écoulé. L’exercice indique l’écart entre votre clic et la cible en millisecondes. Pour tester votre rapidité de réaction à un signal visuel, utilisez le Test de réaction (signal lumineux).",
+    "Chaque clic est horodaté avec l’horloge performance.now() du navigateur, entièrement sur votre appareil. Votre écran quantifie ce que vous voyez selon son intervalle de rafraîchissement : environ 16,7 ms par image à 60 Hz, 6,9 ms à 144 Hz et 4,2 ms à 240 Hz (Woods et al., 2015). L’interrogation de la souris ajoute environ 8 ms à 125 Hz contre 1 ms à 1000 Hz.",
+    "Considérez les écarts inférieurs à environ 5 ms comme du bruit de mesure et comparez vos propres sessions sur le même matériel plutôt qu’avec la configuration d’une autre personne. C’est un outil d’entraînement, pas une mesure clinique."
   ],
-  benchmarks: {
-    title: "Temps de réaction moyen : repères en millisecondes",
-    headers: ["Temps de réaction (ms)", "Palier", "Lecture"],
-    rows: [
-      ["Moins de 150 ms", "Très rapide", "Rare sur un test avec écran et souris ; vérifiez qu'il ne s'agit pas d'une anticipation"],
-      ["150 – 190 ms", "Rapide", "Réaction visuelle très vive, souvent associée à un écran à haut taux de rafraîchissement"],
-      ["190 – 250 ms", "Dans la moyenne", "Zone typique d'un adulte en bonne forme (Kosinski, 2008)"],
-      ["250 – 300 ms", "À améliorer", "Écran 60 Hz, souris lente ou attention dispersée peuvent expliquer l'écart"],
-      ["Plus de 300 ms", "Lent", "Fatigue, manque de sommeil ou latence d'affichage importante"]
+  "benchmarks": {
+    "title": "Comment l’erreur de timing est notée",
+    "headers": [
+      "Note",
+      "Erreur autorisée",
+      "Exemple pour une cible de 3,000 s"
     ],
-    note: "Repères indicatifs, non issus d'un panel de joueurs SkillDrills. Sources : Kosinski (2008) ; Woods et al. (2015). Un écran 60 Hz ajoute jusqu'à environ 16,7 ms par image."
+    "rows": [
+      [
+        "EXACT",
+        "Jusqu’à 10 ms",
+        "Clic entre 2,990 s et 3,010 s"
+      ],
+      [
+        "PERFECT",
+        "Jusqu’à 20 % de la fenêtre de réussite",
+        "À moins de 40 ms"
+      ],
+      [
+        "EXCELLENT",
+        "Jusqu’à 40 % de la fenêtre de réussite",
+        "À moins de 80 ms"
+      ],
+      [
+        "GOOD",
+        "Jusqu’à 60 % de la fenêtre de réussite",
+        "À moins de 120 ms"
+      ],
+      [
+        "OK",
+        "Jusqu’à 80 % de la fenêtre de réussite",
+        "À moins de 160 ms"
+      ],
+      [
+        "HIT",
+        "Jusqu’à la fenêtre de réussite complète",
+        "À moins de 200 ms"
+      ]
+    ],
+    "note": "La fenêtre de réussite est de 50 ms plus 5 % du temps cible : les cibles longues sont donc plus tolérantes en valeur absolue. Ce sont les règles de score de cet exercice, pas des normes de population."
   },
-  techniques: {
-    title: "Physiologie Sensorielle & Principes d'Optimisation des Réflexes",
-    items: [
+  "techniques": {
+    "title": "Façons d’estimer un court intervalle",
+    "items": [
       {
-        name: "Chaîne de Traitement Visuelle (~200–250 ms)",
-        desc: "Délai incompressible requis par les photons pour activer la rhodopsine rétinienne, propager l'influx le long du nerf optique vers le corps genouillé latéral, puis activer le cortex moteur via le faisceau pyramidal (Kosinski, 2008)."
+        "name": "Compter à rythme constant",
+        "desc": "Compter mentalement des subdivisions vous donne un tempo interne reproductible. Différentes vitesses de comptage conviennent à différentes cibles.",
+        "tips": "Choisissez une vitesse de comptage et gardez-la pendant toute la séance pour que vos erreurs restent comparables."
       },
       {
-        name: "Avantage Chronométrique Auditif (~140–160 ms)",
-        desc: "La transduction mécanosensorielle de l'oreille interne s'effectue en quelques millisecondes, devançant les réactions biochimiques de la rétine de 30 à 50 ms (Shelton & Kumar, 2010)."
+        "name": "Utiliser la pulsation d’une seconde",
+        "desc": "Les anneaux autour de l’orbe pulsent une fois par seconde. En comptant chaque pulsation comme un tic, vous additionnez des secondes entières et n’estimez que le reste.",
+        "tips": "Avec des cibles à décimales comme 3,250 s, le dernier clic tombe entre deux pulsations."
       },
       {
-        name: "Suppression de la Latence d'Affichage Matérielle",
-        desc: "Un taux de rafraîchissement élevé (144Hz/240Hz) couplé à la désactivation de la synchronisation verticale (V-Sync) élimine le tamponnage des images et libère 10 à 15 ms de gain pur (Woods et al., 2015)."
-      },
-      {
-        name: "Posture & Régulation de la Tension Musculaire",
-        desc: "Une préhension détendue des doigts sur le commutateur de la souris évite la co-contraction d'inhibition des antagonistes, accélérant la course de clic lors de la prise de décision motrice."
+        "name": "Analyser l’erreur signée",
+        "desc": "Après chaque clic, l’exercice indique quand vous avez cliqué. Si vous êtes toujours en avance ou en retard, décalez votre comptage interne.",
+        "tips": "Un petit biais constant se corrige plus facilement qu’une grande dispersion aléatoire."
       }
     ]
   },
-  steps: [
-    "Positionnez-vous confortablement face à l'écran et centrez votre regard sur la zone d'affichage.",
-    "Reposez délicatement la pulpe de l'index sur le bouton gauche de la souris sans forcer.",
-    "Dès le basculement visuel de la cible, pressez instantanément le bouton sans hésitation.",
-    "Répétez une série de 5 mesures complètes pour consolider votre moyenne officielle en millisecondes."
+  "steps": [
+    "Appuyez sur Démarrer pour ouvrir l’arène en plein écran.",
+    "Lisez le temps cible avant qu’il ne disparaisse.",
+    "Cliquez ou touchez l’écran quand vous estimez que le temps cible s’est écoulé.",
+    "Jouez plusieurs manches et comparez votre erreur moyenne et votre régularité."
   ],
-  audience: "Joueurs d'esport sur Counter-Strike 2, Valorant, Apex Legends et League of Legends, athlètes de sports de combat et de vitesse, conducteurs et toute personne désireuse d'évaluer et de perfectionner sa vivacité neuromotrice.",
-  faqs: faqSchema.mainEntity.map(e => ({ q: e.name, a: e.acceptedAnswer.text })),
-  sources: pickSources('kosinski2008', 'woods2015', 'jain2015', 'shelton2010', 'dye2009', 'der2006', 'smith2002'),
+  "audience": "Joueurs, musiciens, sportifs et toute personne qui souhaite travailler un timing de clic plus régulier et un meilleur sens des intervalles courts.",
+  "faqs": faqSchema.mainEntity.map((e) => ({ q: e.name, a: e.acceptedAnswer.text })),
+  "sources": pickSources('woods2015'),
+  "related": [
+    {
+      "href": "/fr/drills/visual/reaction-speed/light-reaction",
+      "label": "Test de réaction (signal lumineux)"
+    },
+    {
+      "href": "/fr/drills/reaction-speed",
+      "label": "Vitesse de Réaction"
+    },
+    {
+      "href": "/fr/drills/motor/movement-speed/rapid-tapping",
+      "label": "Test de CPS"
+    },
+    {
+      "href": "/fr/drills/reaction-speed/fps-tracking-trainer",
+      "label": "Entraîneur de suivi FPS"
+    }
+  ]
 };
 
-export default function LocalizedReactionTimeTestPageFr() {
+export default function FrenchReactionTimeTestPage() {
   return (
     <>
       <script
@@ -363,7 +385,7 @@ export default function LocalizedReactionTimeTestPageFr() {
       />
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(webApplicationSchema) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(webAppSchema) }}
       />
       <script
         type="application/ld+json"
@@ -371,20 +393,20 @@ export default function LocalizedReactionTimeTestPageFr() {
       />
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(howToSchema) }}
       />
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(howToSchema) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
       <ReactionTimeTestWrapper
         copy={{
-          title: "Test de temps de réaction",
-          subtitle: "Mesurez vos réflexes visuels en millisecondes",
-          caption: "Cliquez dès que le signal apparaît pour mesurer votre temps de réaction visuelle.",
+          title: "Jeu de perception du temps",
+          subtitle: "Estimation du temps : mémorisez le temps cible, cliquez au bon moment et voyez votre erreur en millisecondes",
+          caption: "Un temps cible s’affiche puis disparaît. Cliquez quand vous pensez que ce temps s’est écoulé.",
         }}
       />
-      <DrillGuide {...reactionGuide} />
+      <DrillGuide guide={reactionGuide} />
       <RelatedDrills currentCategory="reaction-speed" currentHref="/drills/reaction-speed/reaction-time-test" />
       <DrillFooter />
     </>

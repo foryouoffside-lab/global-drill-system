@@ -311,7 +311,7 @@ export default function FlowStateJaPage() {
       { href: "/ja/drills/fps/anti-zigzag-movement-trainer", label: "ジグザグ移動 練習 (スライディング追従)" },
       { href: "/ja/drills/fps/anti-strafe-jitter-duel", label: "レレレ撃ち 練習 (ジッタートラッキング)" },
       { href: "/ja/drills/fps/instant-response", label: "FPS 反応速度 テスト" },
-      { href: "/ja/drills/reaction-speed/reaction-time-test", label: "反射神経テスト" }
+      { href: "/ja/drills/visual/reaction-speed/light-reaction", label: "反射神経テスト" }
     ]
   };
 

@@ -8,7 +8,7 @@ import { ImageResponse } from 'next/og';
 // Satori (the renderer behind ImageResponse) supports FLEXBOX ONLY — no CSS grid,
 // and every element with more than one child needs an explicit `display: flex`.
 
-export const alt = 'Reaction Time Test — free browser Reaction Speed drill on SkillDrills';
+export const alt = 'Stop the Timer Game — free browser time-estimation drill on SkillDrills';
 export const size = { width: 1200, height: 630 };
 export const contentType = 'image/png';
 
@@ -82,7 +82,7 @@ export default async function Image() {
               letterSpacing: -2,
             }}
           >
-            {"Reaction Time Test"}
+            {"Stop the Timer Game"}
           </div>
           <div
             style={{

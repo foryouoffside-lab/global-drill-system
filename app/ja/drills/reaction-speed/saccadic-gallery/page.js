@@ -286,7 +286,7 @@ const saccadicGuide = {
   sources: pickSources('rayner1998', 'fischer1984', 'leigh2015', 'woods2015'),
   related: [
     { href: '/ja/drills/reaction-speed', label: '反応速度 ハブ' },
-    { href: '/ja/drills/reaction-speed/reaction-time-test', label: '反応速度テスト' },
+    { href: '/ja/drills/visual/reaction-speed/light-reaction', label: '反応速度テスト' },
     { href: '/ja/drills/reaction-speed/reflex-training-drill', label: '反射神経ゲーム (瞬間認識ドリル)' },
     { href: '/ja/drills/reaction-speed/visual-tracking-speed-test', label: '動体視力テスト' },
   ],

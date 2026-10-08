@@ -286,7 +286,7 @@ const saccadicGuide = {
   sources: pickSources('rayner1998', 'fischer1984', 'leigh2015', 'woods2015'),
   related: [
     { href: '/pt/drills/reaction-speed', label: 'Hub Velocidade de Reação' },
-    { href: '/pt/drills/reaction-speed/reaction-time-test', label: 'Teste de Tempo de Reação' },
+    { href: '/pt/drills/visual/reaction-speed/light-reaction', label: 'Teste de Tempo de Reação' },
     { href: '/pt/drills/reaction-speed/reflex-training-drill', label: 'Teste de Reflexo (Multi-Alvos)' },
     { href: '/pt/drills/reaction-speed/visual-tracking-speed-test', label: 'Teste de Rastreamento Visual' },
   ],

@@ -283,7 +283,7 @@ export default function FlickShotDePage() {
     sources: pickSources('woods2015', 'elliott2010', 'fitts1954', 'schmidt1979'),
     related: [
       { href: "/de/drills/motor/hand-eye-coordination/aim-trainer", label: "Allgemeiner Aim Trainer Online" },
-      { href: "/de/drills/reaction-speed/reaction-time-test", label: "Reaktionszeit Test Online" },
+      { href: "/de/drills/visual/reaction-speed/light-reaction", label: "Reaktionszeit Test Online" },
       { href: "/de/drills/motor/movement-speed/rapid-tapping", label: "Klick-Geschwindigkeitstest (CPS)" },
       { href: "/de/drills/reaction-speed/reflex-training-drill", label: "Reflex Training Drill" }
     ]

@@ -694,14 +694,14 @@ export default function ReactionTimeTestClient({ copy }: ReactionTimeTestClientP
         accuracy: analytics.accuracy,
         rating: { letter: analytics.grade?.letter || 'C', label: analytics.grade?.label || 'Keep Going', emoji: '🎯' },
         newBest: isNewBest,
-        drillName: 'Reaction Time Test',
+        drillName: 'Stop the Timer Game',
         playerName: getPlayerName(),
       });
       await shareScoreCard(url, canvas);
     } catch (e) {
-      const text = `🎯 I scored ${uiScore} PTS (Avg Error: ±${analytics.avgReactionTime}ms) on Reaction Time Test! Practice free reflex drills at skilldrills.online! ⚡`;
+      const text = `🎯 I scored ${uiScore} PTS (Avg Error: ±${analytics.avgReactionTime}ms) on the Stop the Timer Game! Practice free timing drills at skilldrills.online! ⚡`;
       if (typeof navigator !== 'undefined' && navigator.share) {
-        navigator.share({ title: 'Reaction Time Test Score', text, url }).catch(() => {});
+        navigator.share({ title: 'Stop the Timer Game Score', text, url }).catch(() => {});
       } else if (typeof navigator !== 'undefined' && navigator.clipboard) {
         navigator.clipboard.writeText(`${text} ${url}`);
         alert('Score & drill link copied to clipboard!');
@@ -719,8 +719,8 @@ export default function ReactionTimeTestClient({ copy }: ReactionTimeTestClientP
         {!isFullscreen && (
           <div className="flex flex-col gap-1">
             <h1 className="text-2xl sm:text-3xl font-black tracking-tight text-white">
-              <span data-seo-kw="1">{copy?.title || t('reactionTimeTest.title', 'Reaction Time Test')}</span>
-              <span className="block text-sm font-semibold text-slate-400 mt-1">{copy?.subtitle || t('reactionTimeTest.subtitle', 'Visual reaction time test for measuring reflex speed, click latency, and response accuracy in milliseconds')}</span>
+              <span data-seo-kw="1">{copy?.title || t('reactionTimeTest.title', 'Stop the Timer Game')}</span>
+              <span className="block text-sm font-semibold text-slate-400 mt-1">{copy?.subtitle || t('reactionTimeTest.subtitle', 'Time-estimation drill: memorize the target time, click when it elapses and review your timing error in milliseconds')}</span>
             </h1>
           </div>
         )}
@@ -842,8 +842,8 @@ export default function ReactionTimeTestClient({ copy }: ReactionTimeTestClientP
             <FpsStartCard
               icon={Clock}
               accent="cyan"
-              title={copy?.title || t('reactionTimeTest.title', 'Reaction Time Test')}
-              subtitle={t('reactionTimeTest.startSubtitle', 'Visual Latency • Mental Chronometry')}
+              title={copy?.title || t('reactionTimeTest.title', 'Stop the Timer Game')}
+              subtitle={t('reactionTimeTest.startSubtitle', 'Time Estimation • Internal Clock')}
               isTouchOnlyDevice={false}
               onStart={enterDrill}
             />
@@ -879,7 +879,7 @@ export default function ReactionTimeTestClient({ copy }: ReactionTimeTestClientP
         {/* Drill Caption */}
         {!isFullscreen && (
           <p className="text-xs text-slate-400 leading-relaxed -mt-2">
-            {copy?.caption || t('reactionTimeTest.caption', 'Measure your visual reaction time in milliseconds by clicking the instant the target triggers.')}
+            {copy?.caption || t('reactionTimeTest.caption', 'A target time flashes, then disappears. Click when you think that much time has passed and see your error in milliseconds.')}
           </p>
         )}
 
@@ -907,23 +907,23 @@ export default function ReactionTimeTestClient({ copy }: ReactionTimeTestClientP
 
             <DrillAccordion
               id="about"
-              title={t('reactionTimeTest.aboutTitle', 'About Reaction Time Test')}
+              title={t('reactionTimeTest.aboutTitle', 'About the Stop the Timer Game')}
               isOpen={openAccordion === 'about'}
               onToggle={() => setOpenAccordion(openAccordion === 'about' ? null : 'about')}
             >
               <div className="space-y-8 font-sans">
                 <section>
                   <h3 className="text-base font-bold text-white mb-2 flex items-center gap-2">
-                    <Eye className="w-4 h-4 text-cyan-400" /> {t('reactionTimeTest.aboutHeading', 'What Is Visual Reaction Time & Mental Chronometry?')}
+                    <Eye className="w-4 h-4 text-cyan-400" /> {t('reactionTimeTest.aboutHeading', 'What Is Time Estimation?')}
                   </h3>
                   <p className="text-sm leading-relaxed mb-3 text-gray-300">
-                    {t('reactionTimeTest.aboutP1', 'Measure your visual reaction speed in milliseconds. A typical adult reacts in 200–250 ms; under 180 ms is elite.')}
+                    {t('reactionTimeTest.aboutP1', 'This is a time-estimation game, not a reaction test. You see a target time between one and eight seconds, then judge when that much time has passed and click.')}
                   </p>
                   <p className="text-sm leading-relaxed mb-3 text-gray-300">
-                    {t('reactionTimeTest.aboutP2', 'Reaction Time Test measures and conditions visual latency, internal clock calibration, and mental chronometry. In fast-paced FPS, racing, and sports games, the gap between two players is often a few tens of milliseconds, so shaving even a small amount off your visual response is what decides duels.')}
+                    {t('reactionTimeTest.aboutP2', 'Your score is the gap between your click and the target time, in milliseconds. Early and late clicks both count as error, so the drill practises steady, repeatable timing rather than speed. To measure how fast you respond to a signal, use the Light Reaction Test.')}
                   </p>
                   <p className="text-sm leading-relaxed text-gray-300">
-                    {t('reactionTimeTest.aboutP3', 'This drill isolates time estimation and visual stimulus latency. Training your temporal processing reduces visual reaction delay, improves hand-eye synchronization, and helps you execute actions with peak consistency.')}
+                    {t('reactionTimeTest.aboutP3', 'Practice tends to improve performance on the task you practise. Compare your average error across sessions on the same device rather than against other setups.')}
                   </p>
                 </section>
 
@@ -933,7 +933,7 @@ export default function ReactionTimeTestClient({ copy }: ReactionTimeTestClientP
                       <div className="w-7 h-7 rounded-lg bg-cyan-600 flex items-center justify-center"><Users className="w-3.5 h-3.5 text-white" /></div>
                       <h4 className="text-xs font-bold text-white">{t('reactionTimeTest.audienceTitle', 'Who Should Use This?')}</h4>
                     </div>
-                    <p className="text-xs text-gray-300 leading-relaxed">{t('reactionTimeTest.audienceDesc', 'Gamers, esports athletes, musicians, and drivers looking to refine visual response speed and internal timing rhythm.')}</p>
+                    <p className="text-xs text-gray-300 leading-relaxed">{t('reactionTimeTest.audienceDesc', 'Gamers, musicians, athletes, and anyone who wants steadier trigger timing and a better feel for short intervals.')}</p>
                   </div>
                   <div className="p-4 rounded-xl border border-gray-800 bg-white/[0.02]">
                     <div className="flex items-center gap-2.5 mb-2">

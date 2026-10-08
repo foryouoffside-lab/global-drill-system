@@ -288,7 +288,7 @@ export default function FlickShotPage() {
     related: [
       { href: "/drills/fps/180-degree-awareness", label: "180° Awareness Pro" },
       { href: "/drills/fps/angle-hold-trainer", label: "Crosshair Placement & Angle Hold Trainer" },
-      { href: "/drills/reaction-speed/reaction-time-test", label: "Reaction Time Test" },
+      { href: "/drills/visual/reaction-speed/light-reaction", label: "Reaction Time Test" },
       { href: "/drills/motor/movement-speed/rapid-tapping", label: "CPS Test & Click Speed Test" }
     ]
   };

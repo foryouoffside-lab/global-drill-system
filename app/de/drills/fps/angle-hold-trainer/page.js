@@ -293,7 +293,7 @@ export default function GermanAngleHoldPage() {
       { href: "/de/drills/fps/flick-shot-training", label: "Pro Flick Trainer" },
       { href: "/de/drills/fps/180-degree-awareness", label: "180° Awareness Pro" },
       { href: "/de/drills/fps/micro-correction-precision", label: "Micro-Correction Precision" },
-      { href: "/de/drills/reaction-speed/reaction-time-test", label: "Reaktionszeit-Test" }
+      { href: "/de/drills/visual/reaction-speed/light-reaction", label: "Reaktionszeit-Test" }
     ]
   };
 

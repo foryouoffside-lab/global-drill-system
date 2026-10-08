@@ -282,7 +282,7 @@ export default function AwarenessDrillKoPage() {
       { href: "/ko/drills/fps/flick-shot-training", label: "플릭 에임 연습" },
       { href: "/ko/drills/fps/angle-hold-trainer", label: "앵글 홀드 (크로스헤어 배치) 트레이너" },
       { href: "/ko/drills/fps/micro-correction-precision", label: "마이크로 플릭 연습" },
-      { href: "/ko/drills/reaction-speed/reaction-time-test", label: "반응속도 테스트" }
+      { href: "/ko/drills/visual/reaction-speed/light-reaction", label: "반응속도 테스트" }
     ]
   };
 

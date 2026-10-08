@@ -282,7 +282,7 @@ export default function AntiStrafeJitterPtPage() {
       { href: "/pt/drills/fps/pro-smooth-pursuit", label: "Treino de Perseguição Suave" },
       { href: "/pt/drills/fps/flick-shot-training", label: "Treino de Flick Shot" },
       { href: "/pt/drills/fps/180-degree-awareness", label: "Treino de Giro 180°" },
-      { href: "/pt/drills/reaction-speed/reaction-time-test", label: "Teste de Tempo de Reação" }
+      { href: "/pt/drills/visual/reaction-speed/light-reaction", label: "Teste de Tempo de Reação" }
     ]
   };
 

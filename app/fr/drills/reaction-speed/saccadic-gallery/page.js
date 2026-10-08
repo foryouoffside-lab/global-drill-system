@@ -334,7 +334,7 @@ const saccadicGuide = {
       "label": "Hub vitesse de réaction"
     },
     {
-      "href": "/fr/drills/reaction-speed/reaction-time-test",
+      "href": "/fr/drills/visual/reaction-speed/light-reaction",
       "label": "Test de temps de réaction"
     },
     {

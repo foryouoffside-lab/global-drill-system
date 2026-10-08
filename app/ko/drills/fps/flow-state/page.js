@@ -311,7 +311,7 @@ export default function FlowStateKoPage() {
       { href: "/ko/drills/fps/anti-zigzag-movement-trainer", label: "지그재그 무빙 트래킹 (슬라이딩 추적)" },
       { href: "/ko/drills/fps/anti-strafe-jitter-duel", label: "무빙 트래킹 에임 연습 (ADAD 지터)" },
       { href: "/ko/drills/fps/instant-response", label: "FPS 반응속도 테스트" },
-      { href: "/ko/drills/reaction-speed/reaction-time-test", label: "반응속도 테스트" }
+      { href: "/ko/drills/visual/reaction-speed/light-reaction", label: "반응속도 테스트" }
     ]
   };
 

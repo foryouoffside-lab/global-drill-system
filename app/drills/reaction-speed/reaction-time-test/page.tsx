@@ -4,19 +4,17 @@ import DrillGuide from '@/components/drill/DrillGuide';
 import DrillFooter from '@/components/drill/DrillFooter';
 import { pickSources } from '@/lib/drillSources';
 
-const TITLE = 'Reaction Time Test: Millisecond Timing Drill | SkillDrills';
-const DESCRIPTION = 'Free reaction timing test: a target time is shown, you click the instant it elapses and see your error in milliseconds. Includes reference ranges.';
+const TITLE = 'Stop the Timer Game: Time Estimation Drill | SkillDrills';
+const DESCRIPTION = 'Stop the timer game: a target time flashes, then you click when it has elapsed. A time-estimation drill, not a reaction test. See the Light Reaction Test.';
 
 export const metadata = {
   title: TITLE,
   description: DESCRIPTION,
   keywords: [
-    'reaction time test', 'reflex test', 'reaction test',
-    'average reaction time', 'reaction speed test',
-    'online reaction time test', 'click reaction test',
-    'human benchmark reaction time', 'gaming reflex test',
-    'how to improve reaction time', 'average reaction time in milliseconds',
-    'test your reaction time online', 'reaction latency test'
+    'stop the timer game', 'stop the clock game', 'time estimation game',
+    'timing game', 'time estimation test', 'internal clock test',
+    'time perception game', 'click on time game', '10 second challenge',
+    'timing accuracy game', 'timing practice'
   ],
   openGraph: {
     title: TITLE,
@@ -51,14 +49,14 @@ const breadcrumbSchema = {
     { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://skilldrills.online" },
     { "@type": "ListItem", "position": 2, "name": "Drills Hub", "item": "https://skilldrills.online/drills" },
     { "@type": "ListItem", "position": 3, "name": "Reaction Speed", "item": "https://skilldrills.online/drills/reaction-speed" },
-    { "@type": "ListItem", "position": 4, "name": "Reaction Time Test", "item": "https://skilldrills.online/drills/reaction-speed/reaction-time-test" }
+    { "@type": "ListItem", "position": 4, "name": "Stop the Timer Game", "item": "https://skilldrills.online/drills/reaction-speed/reaction-time-test" }
   ]
 };
 
 const webAppSchema = {
   "@context": "https://schema.org",
   "@type": "WebApplication",
-  "name": "Reaction Time Test: Millisecond Timing Drill | SkillDrills",
+  "name": TITLE,
   "url": "https://skilldrills.online/drills/reaction-speed/reaction-time-test",
   "dateModified": "2026-10-08",
   "description": DESCRIPTION,
@@ -69,34 +67,34 @@ const webAppSchema = {
   "author": { "@type": "Organization", "name": "SkillDrills", "url": "https://skilldrills.online" },
   "isAccessibleForFree": true,
   "learningResourceType": "Educational Game",
-  "teaches": "Reaction timing, interval estimation, response consistency"
+  "teaches": "Time estimation, interval timing, click timing consistency"
 };
 
 const howToSchema = {
   "@context": "https://schema.org",
   "@type": "HowTo",
-  "name": "How to Take the Reaction Time Test",
-  "description": "Memorise a target time, click the moment it elapses and read your error in milliseconds.",
+  "name": "How to Play the Stop the Timer Game",
+  "description": "Memorize a target time, click when you judge it has elapsed and read your error in milliseconds.",
   "step": [
     {
       "@type": "HowToStep",
       "position": 1,
       "name": "Launch the Drill",
-      "text": "Click or tap Start Drill to enter the fullscreen reaction test arena.",
+      "text": "Click or tap Start Drill to enter the fullscreen timing arena.",
       "url": "https://skilldrills.online/drills/reaction-speed/reaction-time-test#step-1"
     },
     {
       "@type": "HowToStep",
       "position": 2,
-      "name": "Memorize Target Interval",
-      "text": "Observe the target millisecond duration displayed on screen before the timing sequence begins.",
+      "name": "Memorize the Target Time",
+      "text": "Read the target time shown on screen, between one and eight seconds. It disappears after a short moment.",
       "url": "https://skilldrills.online/drills/reaction-speed/reaction-time-test#step-2"
     },
     {
       "@type": "HowToStep",
       "position": 3,
-      "name": "Click on Cue",
-      "text": "Click your mouse or tap your touchscreen at the exact instant the target interval elapses.",
+      "name": "Click When the Time Has Passed",
+      "text": "Click your mouse or tap your touchscreen when you judge that the target time has elapsed. There is no numeric readout while the clock runs.",
       "url": "https://skilldrills.online/drills/reaction-speed/reaction-time-test#step-3"
     },
     {
@@ -111,9 +109,9 @@ const howToSchema = {
 
 const softwareApplicationSchema = {
   "@context": "https://schema.org",
-  "@type": "SoftwareApplication", "sameAs": ["https://en.wikipedia.org/wiki/Mental_chronometry", "https://en.wikipedia.org/wiki/Reaction_time"],
-  "name": "Reaction Time Test",
-  "alternateName": ["Reaction Timing Test", "Interval Timing Drill"],
+  "@type": "SoftwareApplication", "sameAs": ["https://en.wikipedia.org/wiki/Time_perception"],
+  "name": "Stop the Timer Game",
+  "alternateName": ["Time Estimation Drill", "Stop the Clock Game"],
   "applicationCategory": "GameApplication",
   "operatingSystem": "All",
   "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
@@ -123,10 +121,10 @@ const softwareApplicationSchema = {
 const videoGameSchema = {
   "@context": "https://schema.org",
   "@type": "VideoGame",
-  "name": "Reaction Time Test: Millisecond Timing Drill",
+  "name": "Stop the Timer Game: Time Estimation Drill",
   "url": "https://skilldrills.online/drills/reaction-speed/reaction-time-test",
   "description": DESCRIPTION,
-  "genre": ["Reflex Game", "Action"],
+  "genre": ["Timing Game", "Casual"],
   "gamePlatform": ["Web Browser", "Desktop"],
   "applicationCategory": "Game",
   "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
@@ -139,169 +137,138 @@ const faqSchema = {
   "mainEntity": [
     {
       "@type": "Question",
-      "name": "Is this a classic reaction time test?",
+      "name": "Is this a reaction time test?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "No. This drill shows a target time, you click when that time has elapsed, and it reports your timing error in milliseconds. For a stimulus-and-click reaction test, where you click as soon as the screen changes, use the Light Reaction Test."
+        "text": "No. This is a time-estimation game. A target time is shown, you click when you judge that time has elapsed, and the drill reports your timing error in milliseconds. To measure how fast you react to a signal, use the Light Reaction Test."
       }
     },
     {
       "@type": "Question",
-      "name": "What is a good reaction time?",
+      "name": "How does the stop the timer game work?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Simple visual reaction time is commonly reported at about 200 to 250 ms for healthy adults (Kosinski, 2008), and auditory reaction time at about 140 to 160 ms (Jain et al., 2015). Browser tests usually read higher because of display and input latency."
+        "text": "A target time appears for a moment and then disappears. A glowing orb with no numeric readout runs while the clock counts in the background, and you click when you think the target time has passed. The drill then shows the exact time you clicked and your error."
       }
     },
     {
       "@type": "Question",
-      "name": "How is reaction time measured?",
+      "name": "How long are the target times?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Reaction time is the interval in milliseconds from a stimulus to a registered input, timestamped here with the browser's performance.now() clock. The measured value includes display refresh quantization and input polling delay as well as your own response (Woods et al., 2015)."
+        "text": "Targets start between 1 and roughly 2 seconds, and the upper limit rises with your level up to a maximum of 8 seconds. The target is shown with three decimals, for example 3.250s."
       }
     },
     {
       "@type": "Question",
-      "name": "Can you train your reaction time?",
+      "name": "How is the score calculated?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Practice usually improves performance on the task you practise. Some studies report that action video game players respond faster without losing accuracy (Dye, Green, & Bavelier, 2009); how far this carries to other tasks varies and is not guaranteed."
+        "text": "Your error is your click time minus the target time. A click counts as a hit when the error is within 50 ms plus 5% of the target, so a 3-second target allows 200 ms. Closer clicks earn more points, an error under 10 ms is rated EXACT, and consecutive hits raise a combo multiplier up to 3.0x."
       }
     },
     {
       "@type": "Question",
-      "name": "Why do reaction times vary?",
+      "name": "What happens if I click too early or too late?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Reaction times fluctuate with sleep, time of day, fatigue, age, attention, input hardware latency and display refresh rate."
+        "text": "Both count as error. A click outside the allowed window is a miss: it resets your combo and flashes a red alert, but your score is kept."
       }
     },
     {
       "@type": "Question",
-      "name": "Does monitor refresh rate affect reaction scores?",
+      "name": "Can I count in my head?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Yes. A 60 Hz monitor shows a new frame every 16.7 ms, so a signal can appear up to one frame late. At 144 Hz a frame lasts about 6.9 ms and at 240 Hz about 4.2 ms, so higher refresh rates reduce this delay."
+        "text": "Yes, counting is your own strategy. The orb has no numeric readout, and its rings pulse once per second, which you can use as a beat. Try different methods and keep the one that gives the smallest average error."
       }
     },
     {
       "@type": "Question",
-      "name": "Is reaction the same as a reflex?",
+      "name": "Does refresh rate or input lag affect the result?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "No. A reflex such as the knee-jerk reflex is an involuntary spinal response that does not need conscious processing. A reaction time involves perceiving a signal, deciding and making a voluntary movement, and takes much longer."
+        "text": "Slightly. Clicks are timestamped with the browser's performance.now() clock, but your display shows a new frame every 16.7 ms at 60 Hz, 6.9 ms at 144 Hz and 4.2 ms at 240 Hz, and input devices add polling delay (Woods et al., 2015). Compare scores on the same device."
       }
     },
     {
       "@type": "Question",
-      "name": "Why is auditory reaction time faster than visual reaction time?",
+      "name": "Can practice improve my timing?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Studies comparing the two usually find faster responses to sounds than to lights, which is commonly attributed to faster sensory transduction for sound (Shelton & Kumar, 2010; Jain et al., 2015)."
+        "text": "Practice usually improves performance on the task you practise, so your average error on this drill is likely to shrink. How far that carries over to other tasks varies and is not guaranteed."
       }
     },
     {
       "@type": "Question",
-      "name": "How does age affect reaction time?",
+      "name": "Is this the same as the 10 second challenge?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Simple reaction time is typically fastest in young adulthood and slows gradually with age (Der & Deary, 2006). Individual differences are large, so compare your own scores over time."
+        "text": "It is a similar idea, judging an interval without a visible clock, but the target changes every round and is not fixed at 10 seconds. It also scores the size of your error rather than a single pass or fail."
       }
     },
     {
       "@type": "Question",
-      "name": "Does caffeine improve reaction speed?",
+      "name": "Is it free, and does it work on mobile?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Some studies report that moderate caffeine improves alertness and reaction time (Smith, 2002). Effects differ between people and with dose, and too much can reduce steadiness."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "How does this drill differ from Human Benchmark?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Human Benchmark tests a simple wait-for-green click. This drill tests timing: you estimate a displayed interval and click when it elapses, which practises avoiding early clicks and keeping your trigger timing steady."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Is this reaction time test free?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Yes, all drills on SkillDrills are free with no sign-up or download."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Does this test work on mobile devices?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "It runs in a mobile browser, but touch input adds its own latency, so compare scores only against other attempts on the same device."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "How often should I test my reaction speed?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "A few short rounds at the same time of day make scores easy to compare. Stop when attention drops, because fatigue slows responses."
+        "text": "Yes, it is free with no sign-up or download. It runs in a mobile browser, but touch input adds its own latency, so compare scores only against other attempts on the same device."
       }
     }
   ]
 };
 
 const reactionGuide = {
-  heading: "Reaction Time Test Guide & Timing Reference Ranges",
+  heading: "Stop the Timer Game: How the Time-Estimation Drill Works",
   intro: [
-    "Reaction time is the interval between a stimulus and a response. This drill is a timing variant: it shows a target duration, you click when that duration has elapsed, and it reports the error in milliseconds. It practises steady trigger timing and avoiding early clicks. For a stimulus-and-click test, use the Light Reaction Test.",
-    "Every event is timestamped with the browser's performance.now() clock, entirely on your device. Browser timers are coarsened by browsers as a security measure, and your display quantizes what you see to its refresh interval: about 16.7 ms per frame at 60 Hz, 6.9 ms at 144 Hz and 4.2 ms at 240 Hz (Woods et al., 2015). Mouse polling adds roughly 8 ms at 125 Hz versus 1 ms at 1000 Hz.",
+    "This is a time-estimation game, not a reaction time test. A target time between one and eight seconds is shown briefly, it disappears, and you click when you judge that the time has passed. The drill reports the gap between your click and the target in milliseconds. To test how fast you react to a visual signal, use the Light Reaction Test instead.",
+    "Every click is timestamped with the browser's performance.now() clock, entirely on your device. Your display quantizes what you see to its refresh interval: about 16.7 ms per frame at 60 Hz, 6.9 ms at 144 Hz and 4.2 ms at 240 Hz (Woods et al., 2015). Mouse polling adds roughly 8 ms at 125 Hz versus 1 ms at 1000 Hz.",
     "Treat differences smaller than about 5 ms as measurement noise, and compare your own runs on the same hardware rather than against someone else's setup. This is a practice tool, not a clinical measurement."
   ],
   benchmarks: {
-    title: "Simple Visual Reaction Time Reference Ranges (ms)",
-    headers: ["Reaction time", "Reading", "Notes"],
+    title: "How Timing Error Is Rated",
+    headers: ["Rating", "Allowed error", "Example at a 3.000s target"],
     rows: [
-      ["Under 150 ms", "Unusually fast", "Often reflects anticipation or very low-latency equipment rather than a true response to the signal"],
-      ["150 - 200 ms", "Fast", "Quicker than the commonly reported adult range"],
-      ["200 - 250 ms", "Typical healthy adult", "Commonly reported range for simple visual reaction time (Kosinski, 2008)"],
-      ["250 - 300 ms", "Slightly slower", "Common on 60 Hz displays and with higher input latency"],
-      ["Over 300 ms", "Slow", "Can reflect fatigue, distraction or high display and input lag"]
+      ["EXACT", "Up to 10 ms", "Click between 2.990s and 3.010s"],
+      ["PERFECT", "Up to 20% of the hit window", "Within 40 ms"],
+      ["EXCELLENT", "Up to 40% of the hit window", "Within 80 ms"],
+      ["GOOD", "Up to 60% of the hit window", "Within 120 ms"],
+      ["OK", "Up to 80% of the hit window", "Within 160 ms"],
+      ["HIT", "Up to the full hit window", "Within 200 ms"]
     ],
-    note: "Reference ranges come from the reaction-time literature (Kosinski, 2008; Woods et al., 2015). They describe simple stimulus-and-click tasks and are given for orientation only; this drill scores timing error rather than reaction time."
+    note: "The hit window is 50 ms plus 5% of the target time, so longer targets are more forgiving in absolute terms. These are this drill's scoring rules, not population norms."
   },
   techniques: {
-    title: "Sensory Latency & Measurement Limits",
+    title: "Ways to Judge a Short Interval",
     items: [
       {
-        name: "Visual stimulus latency (about 200-250 ms)",
-        desc: "A visual signal must be sensed, processed and turned into a movement. Studies report roughly 200 to 250 ms for simple visual reaction time in healthy adults (Kosinski, 2008).",
-        tips: "Keep a relaxed gaze and avoid clicking early; anticipation produces misleadingly fast numbers."
+        name: "Count at a steady pace",
+        desc: "Counting subdivisions silently gives you a repeatable internal beat. Different counting speeds suit different targets.",
+        tips: "Pick one counting speed and keep it for a whole session so your errors are comparable."
       },
       {
-        name: "Auditory stimulus latency (about 140-170 ms)",
-        desc: "Responses to sounds are usually faster than responses to lights in comparison studies (Shelton & Kumar, 2010; Jain et al., 2015).",
-        tips: "In games, sound cues can give an earlier warning than visual ones."
+        name: "Use the one-second pulse",
+        desc: "The rings around the orb pulse once per second. Treating each pulse as a tick lets you add whole seconds and estimate only the remainder.",
+        tips: "Target times with decimals, such as 3.250s, mean the last click falls between pulses."
       },
       {
-        name: "Display and hardware lag",
-        desc: "A 60 Hz monitor can show a signal up to 16.7 ms late compared with about 4.2 ms at 240 Hz (Woods et al., 2015).",
-        tips: "A high-refresh display and a 1000 Hz polling mouse reduce measurement overhead."
+        name: "Review the signed error",
+        desc: "After each click the drill shows when you clicked. If you are consistently early or late, shift your internal count accordingly.",
+        tips: "A steady small bias is easier to fix than a large random spread."
       }
     ]
   },
   steps: [
-    "Press Start Drill to enter the fullscreen reaction arena.",
-    "Observe and memorize the target interval displayed before the clock begins.",
-    "Click your mouse or tap your touch screen at the exact moment the target interval elapses.",
+    "Press Start Drill to enter the fullscreen timing arena.",
+    "Read the target time shown on screen before it disappears.",
+    "Click your mouse or tap your touch screen when you judge that the target time has elapsed.",
     "Complete multiple rounds and compare your average timing error and consistency."
   ],
-  audience: "Gamers, drivers, athletes and anyone practising steady trigger timing and consistent responses.",
+  audience: "Gamers, musicians, athletes and anyone practising steady trigger timing and a better feel for short intervals.",
   faqs: faqSchema.mainEntity.map(e => ({ q: e.name, a: e.acceptedAnswer.text })),
-  sources: pickSources('kosinski2008', 'woods2015', 'jain2015', 'shelton2010', 'dye2009', 'der2006', 'smith2002'),
+  sources: pickSources('woods2015'),
   related: [
-    { href: "/drills/visual/reaction-speed/light-reaction", label: "Light Reaction Test" },
+    { href: "/drills/visual/reaction-speed/light-reaction", label: "Reaction Time Test (Light Reaction Test)" },
     { href: "/drills/reaction-speed/reflex-training-drill", label: "Reflex Training Drill" },
     { href: "/drills/reaction-speed/reaction-game", label: "Reaction Game" },
     { href: "/drills/reaction-speed/fps-tracking-trainer", label: "FPS Tracking Trainer" },
@@ -336,7 +303,7 @@ export default function ReactionTimeTestPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
-      <ReactionTimeTestWrapper copy={{ title: 'Reaction Time Test', subtitle: 'Millisecond timing drill: click the moment the target time elapses and review your error and consistency' }} />
+      <ReactionTimeTestWrapper copy={{ title: 'Stop the Timer Game', subtitle: 'Time-estimation drill: memorize the target time, click when it elapses and review your timing error in milliseconds' }} />
       <DrillGuide guide={reactionGuide} />
       <DrillFooter />
     </>

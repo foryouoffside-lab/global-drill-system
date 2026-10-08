@@ -236,7 +236,7 @@ const saccadicGuide = {
   sources: pickSources('rayner1998', 'fischer1984', 'leigh2015', 'woods2015'),
   related: [
     { href: '/ko/drills/reaction-speed', label: '반응 속도 허브' },
-    { href: '/ko/drills/reaction-speed/reaction-time-test', label: '반응속도 테스트' },
+    { href: '/ko/drills/visual/reaction-speed/light-reaction', label: '반응속도 테스트' },
     { href: '/ko/drills/reaction-speed/reflex-training-drill', label: '순발력 테스트 (반사신경 게임)' },
     { href: '/ko/drills/reaction-speed/visual-tracking-speed-test', label: '동체시력 테스트' },
   ],

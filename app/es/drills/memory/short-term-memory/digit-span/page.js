@@ -321,7 +321,7 @@ const digitSpanGuide = {
     "label": "Tabla de Schulte (Cuadrícula de Concentración)"
   },
   {
-    "href": "/es/drills/reaction-speed/reaction-time-test",
+    "href": "/es/drills/visual/reaction-speed/light-reaction",
     "label": "Test de Reflejos (Tiempo de Reacción)"
   },
   {

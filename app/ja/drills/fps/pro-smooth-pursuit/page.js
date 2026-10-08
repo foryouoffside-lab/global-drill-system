@@ -312,7 +312,7 @@ export default function ProSmoothPursuitJaPage() {
       { href: "/ja/drills/fps/anti-strafe-jitter-duel", label: "レレレ撃ち 練習 (ジッタートラッキング)" },
       { href: "/ja/drills/fps/flick-shot-training", label: "フリック エイム 練習" },
       { href: "/ja/drills/fps/micro-correction-precision", label: "マイクロフリック 練習" },
-      { href: "/ja/drills/reaction-speed/reaction-time-test", label: "反射神経テスト" }
+      { href: "/ja/drills/visual/reaction-speed/light-reaction", label: "反射神経テスト" }
     ]
   };
 

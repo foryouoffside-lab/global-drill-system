@@ -4,345 +4,375 @@ import DrillFooter from '@/components/drill/DrillFooter';
 import { getAlternateLanguages } from '@/lib/i18n/locales';
 import { pickSources } from '@/lib/drillSources';
 
-// ============================================================
-// SEO RESEARCH FINDINGS — es-ES / LATAM (reaction-speed / reaction-time-test)
-// LIVE RESEARCH (2026-09-20): "test de reflejos" — Bing 23 exact / 23 broad;
-//                    "test de reacción" — 13 exact / 13 broad;
-//                    "tiempo de reacción" — 9 exact / 10 broad.
-// SECONDARY / LSI:
-//                    Google Suggest: online, gaming, click, and F1 modifiers.
-// NATIVE TITLE:      Test de Reacción y Reflejos Online | SkillDrills
-// ============================================================
-
 export const metadata = {
-  title: 'Test de Reacción y Reflejos Online | SkillDrills',
-  description:
-    'Haz un test de reacción gratis: mide tus reflejos visuales en milisegundos, consulta la media de varios intentos y compara tu regularidad.',
-  keywords: [
-    'test de reflejos',
-    'test de reacción',
-    'tiempo de reacción',
-    'test de tiempo de reacción',
-    'test de reflejos online',
-    'test de reflejos gaming',
-    'test de reflejos para gaming',
-    'medir reflejos',
-    'tiempo de reacción en milisegundos',
-    'velocidad de reacción',
+  "title": "Juego de sentido del tiempo: acierta el tiempo | SkillDrills",
+  "description": "Juego de sentido del tiempo: ves un tiempo objetivo y haces clic cuando pasa. No es un test de reacción; para eso, Test de reacción (señal luminosa).",
+  "keywords": [
+    "juego de sentido del tiempo",
+    "juego de estimación del tiempo",
+    "juego de timing",
+    "acertar el tiempo objetivo",
+    "reloj interno juego",
+    "entrenar sentido del tiempo",
+    "juego parar el cronómetro",
+    "practicar timing de clic"
   ],
-  alternates: {
-    canonical: 'https://skilldrills.online/es/drills/reaction-speed/reaction-time-test',
-    languages: getAlternateLanguages('/drills/reaction-speed/reaction-time-test'),
+  "alternates": {
+    "canonical": "https://skilldrills.online/es/drills/reaction-speed/reaction-time-test",
+    "languages": getAlternateLanguages('/drills/reaction-speed/reaction-time-test')
   },
-  openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
-    title: 'Test de Reacción y Reflejos Online | SkillDrills',
-    description:
-      'Mide tus reflejos y tu tiempo de reacción visual en milisegundos. Completa varios intentos y compara tu media y regularidad.',
-    url: 'https://skilldrills.online/es/drills/reaction-speed/reaction-time-test',
-    siteName: 'SkillDrills',
-    locale: 'es_ES',
-    type: 'website',
+  "openGraph": {
+    "images": [
+      {
+        "url": "https://skilldrills.online/opengraph-image",
+        "width": 1200,
+        "height": 630
+      }
+    ],
+    "title": "Juego de sentido del tiempo: acierta el tiempo | SkillDrills",
+    "description": "Estima un tiempo objetivo de entre 1 y 8 segundos, haz clic en el momento justo y mira tu error en milisegundos.",
+    "url": "https://skilldrills.online/es/drills/reaction-speed/reaction-time-test",
+    "siteName": "SkillDrills",
+    "locale": "es_ES",
+    "type": "website"
   },
-  twitter: { images: ["https://skilldrills.online/opengraph-image"],
-    card: 'summary_large_image',
-    title: 'Test de Reacción y Reflejos Online | SkillDrills',
-    description:
-      'Pon a prueba tus reflejos visuales en milisegundos y compara tus marcas con varios intentos, directamente en el navegador.',
+  "twitter": {
+    "images": [
+      "https://skilldrills.online/opengraph-image"
+    ],
+    "card": "summary_large_image",
+    "title": "Juego de sentido del tiempo: acierta el tiempo | SkillDrills",
+    "description": "Juego de estimación del tiempo: memoriza el tiempo objetivo, haz clic cuando pase y ve tu desviación en milisegundos."
   },
-  robots: { index: true, follow: true },
+  "robots": {
+    "index": true,
+    "follow": true
+  }
 };
 
-// --- Structured Data Schemas ---
-
 const breadcrumbSchema = {
-  '@context': 'https://schema.org',
-  '@type': 'BreadcrumbList',
-  itemListElement: [
-    { '@type': 'ListItem', position: 1, name: 'SkillDrills Inicio', item: 'https://skilldrills.online/es' },
-    { '@type': 'ListItem', position: 2, name: 'Entrenamientos', item: 'https://skilldrills.online/es/drills' },
-    { '@type': 'ListItem', position: 3, name: 'Velocidad de Reacción', item: 'https://skilldrills.online/es/drills/reaction-speed' },
-    { '@type': 'ListItem', position: 4, name: 'Test de Reflejos', item: 'https://skilldrills.online/es/drills/reaction-speed/reaction-time-test' },
-  ],
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "SkillDrills Inicio",
+      "item": "https://skilldrills.online/es"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Entrenamientos",
+      "item": "https://skilldrills.online/es/drills"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Velocidad de Reacción",
+      "item": "https://skilldrills.online/es/drills/reaction-speed"
+    },
+    {
+      "@type": "ListItem",
+      "position": 4,
+      "name": "Juego de Sentido del Tiempo",
+      "item": "https://skilldrills.online/es/drills/reaction-speed/reaction-time-test"
+    }
+  ]
 };
 
 const softwareApplicationSchema = {
-  '@context': 'https://schema.org',
-  '@type': 'SoftwareApplication', "sameAs": ["https://en.wikipedia.org/wiki/Mental_chronometry", "https://en.wikipedia.org/wiki/Reaction_time"],
-  name: 'Test de Reflejos y Tiempo de Reacción – Medidor Online Gratuito',
-  alternateName: ['Test de Reflejos', 'Tiempo de Reacción', 'Test de Reacción Online', 'Test Reflejos Gaming'],
-  applicationCategory: 'HealthApplication',
-  operatingSystem: 'All',
-  offers: { '@type': 'Offer', price: '0', priceCurrency: 'EUR' },
-  description:
-    'Herramienta en el navegador para medir la velocidad de reacción visual en milisegundos (ms). Incluye comparativas científicas, rangos competitivos de esports y entrenamiento de cronometría mental.',
-  browserRequirements: 'Navegador web moderno con soporte para JavaScript (Chrome, Safari, Firefox, Edge)',
-  softwareVersion: '2.0',
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "sameAs": [
+    "https://en.wikipedia.org/wiki/Time_perception"
+  ],
+  "name": "Juego de sentido del tiempo: acierta el tiempo",
+  "alternateName": [
+    "Juego de estimación del tiempo",
+    "Juego de parar el cronómetro",
+    "Entrenamiento del reloj interno"
+  ],
+  "applicationCategory": "GameApplication",
+  "operatingSystem": "All",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "EUR"
+  },
+  "description": "Juego en el navegador para estimar el tiempo: se muestra un tiempo objetivo, haces clic cuando crees que ha pasado y ves tu desviación en milisegundos."
 };
 
 const webAppSchema = {
-  '@context': 'https://schema.org',
-  '@type': 'WebApplication',
-  name: 'Test de Reflejos — Medidor de Velocidad de Reacción Visual | SkillDrills',
-  url: 'https://skilldrills.online/es/drills/reaction-speed/reaction-time-test',
-  description:
-    'Herramienta gratuita para medir la velocidad de reacción visual y reflejos en milisegundos.',
-  applicationCategory: 'EducationalApplication',
-  operatingSystem: 'All',
-  browserRequirements: 'Requiere navegador web moderno con soporte para JavaScript.',
-  offers: { '@type': 'Offer', price: '0', priceCurrency: 'EUR' },
-  author: { '@type': 'Organization', name: 'SkillDrills', url: 'https://skilldrills.online' },
-  isAccessibleForFree: true,
-  learningResourceType: 'Educational Game',
-  teaches: 'Tiempo de Reacción, Velocidad de Reflejos, Procesamiento Visual, Latencia Neuromuscular',
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Juego de sentido del tiempo: acierta el tiempo | SkillDrills",
+  "url": "https://skilldrills.online/es/drills/reaction-speed/reaction-time-test",
+  "description": "Juego online gratuito de estimación del tiempo. Mide lo cerca que está tu clic de un tiempo objetivo; no mide la reacción ante una señal.",
+  "applicationCategory": "EducationalApplication",
+  "operatingSystem": "All",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "EUR"
+  },
+  "author": {
+    "@type": "Organization",
+    "name": "SkillDrills",
+    "url": "https://skilldrills.online"
+  },
+  "isAccessibleForFree": true,
+  "learningResourceType": "Educational Game",
+  "teaches": "Estimación del tiempo, timing de intervalos, regularidad en el momento del clic"
 };
 
 const videoGameSchema = {
-  '@context': 'https://schema.org',
-  '@type': 'VideoGame',
-  name: 'Test de Tiempo de Reacción - Juego Gratuito de Reflejos',
-  url: 'https://skilldrills.online/es/drills/reaction-speed/reaction-time-test',
-  description: 'Test de Tiempo de Reacción - Juego Gratuito de Reflejos',
-  genre: ['Reflex Game', 'Action', 'Esports Training'],
-  gamePlatform: ['Web Browser', 'Desktop', 'Mobile'],
-  applicationCategory: 'Game',
-  offers: { '@type': 'Offer', price: '0', priceCurrency: 'EUR' }
+  "@context": "https://schema.org",
+  "@type": "VideoGame",
+  "name": "Juego de sentido del tiempo: acierta el tiempo",
+  "url": "https://skilldrills.online/es/drills/reaction-speed/reaction-time-test",
+  "description": "Juego de timing: memoriza un tiempo objetivo de entre 1 y 8 segundos y haz clic en el momento justo.",
+  "genre": [
+    "Timing Game",
+    "Casual"
+  ],
+  "gamePlatform": [
+    "Web Browser",
+    "Desktop",
+    "Mobile"
+  ],
+  "applicationCategory": "Game",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "EUR"
+  }
 };
 
 const howToSchema = {
-  '@context': 'https://schema.org',
-  '@type': 'HowTo',
-  name: 'Cómo realizar el Test de Reflejos y Tiempo de Reacción',
-  description: 'Instrucciones para medir tu velocidad de reacción visual en el navegador.',
-  step: [
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  "name": "Cómo jugar al juego de sentido del tiempo",
+  "description": "Memoriza el tiempo objetivo, haz clic cuando haya pasado y lee tu error en milisegundos.",
+  "step": [
     {
-      '@type': 'HowToStep',
-      position: 1,
-      name: 'Iniciar el Drill',
-      text: 'Haz clic en «Iniciar Entrenamiento» para activar la arena de reflejos en pantalla completa.',
-      url: 'https://skilldrills.online/es/drills/reaction-speed/reaction-time-test#step-1'
+      "@type": "HowToStep",
+      "position": 1,
+      "name": "Iniciar el drill",
+      "text": "Haz clic o toca Iniciar Drill para entrar en la arena a pantalla completa.",
+      "url": "https://skilldrills.online/es/drills/reaction-speed/reaction-time-test#step-1"
     },
     {
-      '@type': 'HowToStep',
-      position: 2,
-      name: 'Memorizar el Intervalo',
-      text: 'Observa el intervalo objetivo en milisegundos mostrado en pantalla antes de iniciar la carrera.',
-      url: 'https://skilldrills.online/es/drills/reaction-speed/reaction-time-test#step-2'
+      "@type": "HowToStep",
+      "position": 2,
+      "name": "Memorizar el tiempo objetivo",
+      "text": "Lee el tiempo objetivo, de entre uno y ocho segundos. Desaparece al cabo de un instante.",
+      "url": "https://skilldrills.online/es/drills/reaction-speed/reaction-time-test#step-2"
     },
     {
-      '@type': 'HowToStep',
-      position: 3,
-      name: 'Hacer Clic en el Momento Exacto',
-      text: 'Haz clic con el ratón o pulsa la pantalla lo más rápido posible cuando se active el estímulo.',
-      url: 'https://skilldrills.online/es/drills/reaction-speed/reaction-time-test#step-3'
+      "@type": "HowToStep",
+      "position": 3,
+      "name": "Hacer clic cuando pase el tiempo",
+      "text": "Haz clic o toca cuando creas que ha transcurrido el tiempo objetivo. Mientras corre el reloj no hay lectura numérica.",
+      "url": "https://skilldrills.online/es/drills/reaction-speed/reaction-time-test#step-3"
     },
     {
-      '@type': 'HowToStep',
-      position: 4,
-      name: 'Analizar Resultados y Rango',
-      text: 'Revisa tu error promedio en milisegundos, porcentaje de precisión y clasificación de esports.',
-      url: 'https://skilldrills.online/es/drills/reaction-speed/reaction-time-test#step-4'
-    },
-  ],
+      "@type": "HowToStep",
+      "position": 4,
+      "name": "Revisar tu error",
+      "text": "Juega varias rondas y compara tu error medio y tu regularidad.",
+      "url": "https://skilldrills.online/es/drills/reaction-speed/reaction-time-test#step-4"
+    }
+  ]
 };
 
 const faqSchema = {
-  '@context': 'https://schema.org',
-  '@type': 'FAQPage',
-  dateModified: '2026-09-20',
-  mainEntity: [
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "dateModified": "2026-10-08",
+  "mainEntity": [
     {
-      '@type': 'Question',
-      name: '¿Cuál es un buen tiempo de reacción en humanos?',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: 'El tiempo de reacción promedio ante estímulos visuales en adultos sanos ronda entre 200 y 250 milisegundos (ms) (Kosinski, 2008). Marcas por debajo de 200 ms son poco habituales, y valores inferiores a 180 ms pueden deberse a anticipación o al dispositivo, no solo a la velocidad de reacción.',
-      },
+      "@type": "Question",
+      "name": "¿Es un test de reacción?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. Es un juego de estimación del tiempo. Se muestra un tiempo objetivo, haces clic cuando crees que ha pasado y el drill muestra tu desviación en milisegundos. Para medir la rapidez con la que reaccionas a una señal, usa el Test de reacción (señal luminosa)."
+      }
     },
     {
-      '@type': 'Question',
-      name: '¿Cómo se mide el tiempo de reacción en este test?',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: 'Se mide en milisegundos desde que el estímulo aparece en pantalla hasta que se registra la pulsación, utilizando la API de alta resolución performance.now() del navegador sin intermediación de servidores (Woods et al., 2015).',
-      },
+      "@type": "Question",
+      "name": "¿Cómo funciona el juego?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Un tiempo objetivo aparece un instante y desaparece. Un orbe luminoso sin lectura numérica sigue activo mientras el reloj cuenta en segundo plano, y haces clic cuando crees que ha pasado el tiempo objetivo. Después el drill muestra el momento exacto de tu clic y tu error."
+      }
     },
     {
-      '@type': 'Question',
-      name: '¿Se pueden entrenar y mejorar los reflejos?',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: 'Sí. El entrenamiento repetitivo optimiza las vías neuronales de percepción visual y la preparación motora, logrando mejoras consistentes de 15 a 30 ms sin sacrificar la precisión (Dye, Green, & Bavelier, 2009).',
-      },
+      "@type": "Question",
+      "name": "¿Cuánto duran los tiempos objetivo?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Los objetivos empiezan entre 1 y unos 2 segundos, y el límite superior sube con el nivel hasta un máximo de 8 segundos. El objetivo se muestra con tres decimales, por ejemplo 3,250 s."
+      }
     },
     {
-      '@type': 'Question',
-      name: '¿Por qué fluctúa el tiempo de reacción según el día?',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: 'Factores biológicos como el descanso, ritmo circadiano, cansancio cognitivo y cafeína influyen directamente, además de variables técnicas como la tasa de refresco del monitor y la latencia del ratón.',
-      },
+      "@type": "Question",
+      "name": "¿Cómo se calcula la puntuación?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Tu error es el momento del clic menos el tiempo objetivo. El clic cuenta como acierto si el error está dentro de 50 ms más el 5 % del objetivo; con 3 segundos son 200 ms. Cuanto más cerca, más puntos; un error inferior a 10 ms se valora como EXACT y los aciertos consecutivos suben un multiplicador de combo hasta 3,0x."
+      }
     },
     {
-      '@type': 'Question',
-      name: '¿Influyen los hercios (Hz) del monitor en el resultado?',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: 'Sí. Un monitor estándar de 60 Hz actualiza cada 16,67 ms, mientras que pantallas gaming de 144 Hz (6,94 ms) o 240 Hz (4,17 ms) muestran el estímulo antes, reduciendo la latencia percibida en unos 10 a 12 ms (Woods et al., 2015).',
-      },
+      "@type": "Question",
+      "name": "¿Qué pasa si hago clic demasiado pronto o demasiado tarde?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Ambos casos cuentan como error. Un clic fuera de la ventana permitida es un fallo: reinicia el combo y muestra una alerta roja, pero conservas la puntuación."
+      }
     },
     {
-      '@type': 'Question',
-      name: '¿En qué se diferencia un reflejo del tiempo de reacción?',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: 'Un reflejo es un circuito involuntario a nivel espinal (como el rotuliano) que toma de 20 a 50 ms sin pasar por el cerebro. El tiempo de reacción implica recepción en la corteza visual, análisis cognitivo y envío de la orden motora (150 a 250+ ms).',
-      },
+      "@type": "Question",
+      "name": "¿Puedo contar mentalmente?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sí, contar es tu propia estrategia. El orbe no tiene lectura numérica y sus anillos pulsan una vez por segundo, algo que puedes usar como pulso. Prueba métodos distintos y quédate con el que dé el menor error medio."
+      }
     },
     {
-      '@type': 'Question',
-      name: '¿Por qué la reacción auditiva es más rápida que la visual?',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: 'Las señales acústicas llegan a la corteza auditiva en 8–10 ms, mientras que la fototransducción retiniana toma de 20 a 40 ms. Por ende, la respuesta al sonido (140–160 ms) es 30 a 50 ms más rápida que a la luz (Shelton & Kumar, 2010).',
-      },
+      "@type": "Question",
+      "name": "¿Afectan la tasa de refresco o el retardo de entrada al resultado?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Ligeramente. Los clics se marcan con el reloj performance.now() del navegador, pero tu pantalla muestra un fotograma nuevo cada 16,7 ms a 60 Hz, 6,9 ms a 144 Hz y 4,2 ms a 240 Hz, y los dispositivos de entrada añaden retardo de sondeo (Woods et al., 2015). Compara resultados en el mismo dispositivo."
+      }
     },
     {
-      '@type': 'Question',
-      name: '¿Cómo afecta la edad a la velocidad de reacción?',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: 'El tiempo de reacción suele alcanzar su punto más ágil entre los 18 y 24 años, incrementándose aproximadamente 2 a 6 ms por década posterior (Der & Deary, 2006). La actividad física regular y los ejercicios de reflejos ayudan a frenar este declive.',
-      },
+      "@type": "Question",
+      "name": "¿Puede mejorar mi timing con la práctica?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "La práctica suele mejorar el rendimiento en la tarea entrenada, así que tu error medio en este drill probablemente se reduzca. Hasta qué punto se traslada a otras tareas varía y no está garantizado."
+      }
     },
     {
-      '@type': 'Question',
-      name: '¿La cafeína mejora los reflejos?',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: 'Sí. El consumo moderado de cafeína bloquea los receptores de adenosina en el sistema nervioso, aumentando la alerta y reduciendo de forma transitoria los tiempos de reacción entre 10 y 20 ms (Smith, 2002).',
-      },
+      "@type": "Question",
+      "name": "¿Es lo mismo que el reto de los 10 segundos?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "La idea es parecida, juzgar un intervalo sin reloj visible, pero el objetivo cambia en cada ronda y no se fija en 10 segundos. Además puntúa el tamaño de tu error en lugar de un simple acierto o fallo."
+      }
     },
     {
-      '@type': 'Question',
-      name: '¿Qué diferencia a SkillDrills de Human Benchmark?',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: 'A diferencia de medir únicamente el clic reactivo rojo a verde, SkillDrills entrena la estimación temporal (cronometría mental), castiga las anticipaciones descontroladas y suma multiplicadores de combo para simular situaciones competitivas.',
-      },
-    },
-    {
-      '@type': 'Question',
-      name: '¿Qué juegos de esports se benefician más de este entrenamiento?',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: 'Juegos de disparos tácticos (CS2, Valorant), battle royales (Apex Legends) y MOBAs (League of Legends), donde décimas de segundo determinan la victoria en duelos de asomadas o esquives.',
-      },
-    },
-    {
-      '@type': 'Question',
-      name: '¿Se puede utilizar en teléfonos móviles y tablets?',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: 'Sí, la plataforma está 100% optimizada para pantallas táctiles en iOS y Android, tanto en posición vertical como horizontal sin necesidad de instalar aplicaciones.',
-      },
-    },
-    {
-      '@type': 'Question',
-      name: '¿Este test de tiempo de reacción es completamente gratis?',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: 'Sí, todos los tests de reflejos y entrenamiento cognitivo en SkillDrills son 100% gratuitos, sin registros, descargas ni anuncios emergentes molestos.',
-      },
-    },
-    {
-      '@type': 'Question',
-      name: '¿Pueden los atletas de deportes tradicionales utilizar este test?',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: 'Sí. Pilotos de Fórmula 1, boxeadores, velocistas y jugadores de tenis o pádel entrenan su velocidad de reacción visual para optimizar la activación neuromuscular y la velocidad de respuesta de fibras de contracción rápida.',
-      },
-    },
-    {
-      '@type': 'Question',
-      name: '¿Debo fijar la mirada en el centro o utilizar la visión periférica?',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: 'Se recomienda mantener un enfoque visual relajado ("mirada suave"). Esto permite que los bastones fotorreceptores de la retina periférica capten el cambio visual de inmediato, reduciendo el tiempo hasta la pulsación motora.',
-      },
-    },
-    {
-      '@type': 'Question',
-      name: '¿Con qué frecuencia debería medir y entrenar mis reflejos?',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: 'Una sesión diaria de 5 a 10 minutos proporciona una referencia objetiva de tu estado de alerta neurológico, sirve como calentamiento antes de partidas competitivas y registra tu evolución a largo plazo.',
-      },
-    },
-  ],
+      "@type": "Question",
+      "name": "¿Es gratis y funciona en el móvil?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sí, es gratis, sin registro ni descarga. Funciona en un navegador móvil, pero la entrada táctil añade su propia latencia, así que compara resultados solo con otros intentos en el mismo dispositivo."
+      }
+    }
+  ]
 };
 
-faqSchema.mainEntity = faqSchema.mainEntity.slice(0, 10);
-
 const reactionGuide = {
-  heading: 'Guía del Test de Reflejos y Cronometría Mental',
-  intro: [
-    'El tiempo de reacción es el lapso transcurrido entre la percepción de un estímulo sensorial y la ejecución del movimiento motor voluntario.',
-    'En esports competitivos (Valorant, CS2, League of Legends) y en deportes de motor, pequeñas diferencias de milisegundos definen quién acierta el primer disparo o reacciona a tiempo ante imprevistos.',
-    'Metodología de Medición: Todas las lecturas se registran directamente en el dispositivo cliente mediante la API performance.now() de alta precisión, sin depender de conexiones externas.',
-    'Latenica de Hardware: Las pantallas habituales de 60 Hz agregan 16,7 ms de retardo por fotograma. El uso de pantallas de 144 Hz o 240 Hz y ratones con tasa de sondeo de 1000 Hz permite evaluar tu rendimiento biológico real (Woods et al., 2015).',
+  "heading": "Juego de sentido del tiempo: cómo funciona el drill de estimación",
+  "intro": [
+    "Es un juego de estimación del tiempo, no un test de reacción. Se muestra brevemente un tiempo objetivo de entre uno y ocho segundos, desaparece y haces clic cuando crees que ha pasado. El drill indica la diferencia entre tu clic y el objetivo en milisegundos. Para comprobar la rapidez con la que reaccionas a una señal visual, usa el Test de reacción (señal luminosa).",
+    "Cada clic se marca con el reloj performance.now() del navegador, íntegramente en tu dispositivo. Tu pantalla cuantiza lo que ves a su intervalo de refresco: unos 16,7 ms por fotograma a 60 Hz, 6,9 ms a 144 Hz y 4,2 ms a 240 Hz (Woods et al., 2015). El sondeo del ratón añade unos 8 ms a 125 Hz frente a 1 ms a 1000 Hz.",
+    "Considera ruido de medición las diferencias de menos de unos 5 ms y compara tus propias sesiones con el mismo equipo, no con el de otra persona. Es una herramienta de práctica, no una medición clínica."
   ],
-  benchmarks: {
-    title: 'Tabla de Referencia de Tiempos de Reacción',
-    headers: ['Latencia (ms)', 'Etapa', 'Lectura'],
-    rows: [
-      ['Menos de 150 ms', 'Etapa 1', 'Poco habitual con pantalla y ratón; comprueba que no sea una anticipación'],
-      ['150 – 190 ms', 'Etapa 2', 'Reacción visual muy rápida, a menudo con monitor de alta frecuencia'],
-      ['190 – 240 ms', 'Etapa 3', 'Zona habitual de un adulto en buena forma (Kosinski, 2008)'],
-      ['240 – 300 ms', 'Etapa 4', 'Un monitor de 60 Hz, un ratón lento o la falta de atención pueden explicar la diferencia'],
-      ['Más de 300 ms', 'Etapa 5', 'Cansancio, falta de sueño o latencia de pantalla elevada'],
+  "benchmarks": {
+    "title": "Cómo se valora el error de timing",
+    "headers": [
+      "Valoración",
+      "Error permitido",
+      "Ejemplo con objetivo de 3,000 s"
     ],
-    note: 'Etapas editoriales de práctica para comparar tus propias tentativas; no son estadísticas de población. Referencias: Kosinski (2008); Woods et al. (2015). Un monitor de 60 Hz añade ~16,7 ms por fotograma.',
-  },
-  techniques: {
-    title: 'Latencia Sensorial y Límites Fisiológicos',
-    items: [
-      {
-        name: 'Latencia del Estímulo Visual (~200–250 ms)',
-        desc: 'Los fotones alcanzan los fotorreceptores retinianos, viajan por el nervio óptico a la corteza visual primaria (V1) y activan la orden de clic en la corteza motora (Kosinski, 2008).',
-        tips: 'Mantén la mirada relajada en lugar de tensar los músculos oculares; la visión periférica detecta antes las variaciones lumínicas.',
-      },
-      {
-        name: 'Ventaja del Estímulo Auditivo (~140–170 ms)',
-        desc: 'Las señales sonoras viajan por el tronco encefálico a la corteza auditiva más rápido que la luz, logrando respuestas 30 a 50 ms más veloces (Shelton & Kumar, 2010; Jain et al., 2015).',
-        tips: 'En videojuegos de disparos, reaccionar a las pisadas acústicas brinda una ventaja enorme frente a esperar el contacto visual.',
-      },
-      {
-        name: 'Procesamiento Táctil (~130–160 ms)',
-        desc: 'Las vibraciones e impactos físicos evitan etapas cognitivas complejas, desencadenando arcos reflejos motores casi inmediatos.',
-        tips: 'Los interruptores mecánicos con tacto marcado aseguran una respuesta de pulsación consistente.',
-      },
-      {
-        name: 'Optimización de Pantalla y Hardware',
-        desc: 'Un monitor de 60 Hz añade 16,7 ms de retraso por cuadro frente a solo 4,1 ms en uno de 240 Hz (Woods et al., 2015).',
-        tips: 'Emplea ratones de 1000 Hz de sondeo y desactiva la sincronización vertical (V-Sync) para minimizar la latencia de entrada.',
-      },
+    "rows": [
+      [
+        "EXACT",
+        "Hasta 10 ms",
+        "Clic entre 2,990 s y 3,010 s"
+      ],
+      [
+        "PERFECT",
+        "Hasta el 20 % de la ventana de acierto",
+        "Dentro de 40 ms"
+      ],
+      [
+        "EXCELLENT",
+        "Hasta el 40 % de la ventana de acierto",
+        "Dentro de 80 ms"
+      ],
+      [
+        "GOOD",
+        "Hasta el 60 % de la ventana de acierto",
+        "Dentro de 120 ms"
+      ],
+      [
+        "OK",
+        "Hasta el 80 % de la ventana de acierto",
+        "Dentro de 160 ms"
+      ],
+      [
+        "HIT",
+        "Hasta la ventana de acierto completa",
+        "Dentro de 200 ms"
+      ]
     ],
+    "note": "La ventana de acierto es de 50 ms más el 5 % del tiempo objetivo, así que los objetivos largos son más permisivos en términos absolutos. Son las reglas de puntuación de este drill, no normas poblacionales."
   },
-  steps: [
-    'Pulsa «Iniciar Entrenamiento» para abrir la pantalla completa del test.',
-    'Memoriza el tiempo objetivo que aparece antes de comenzar la medición.',
-    'Haz clic o toca la pantalla tan pronto se active la señal del objetivo.',
-    'Realiza varias rondas para comprobar tu promedio de milisegundos, precisión y rango.',
+  "techniques": {
+    "title": "Formas de juzgar un intervalo corto",
+    "items": [
+      {
+        "name": "Contar a un ritmo constante",
+        "desc": "Contar subdivisiones en silencio te da un pulso interno repetible. Distintas velocidades de cuenta encajan con distintos objetivos.",
+        "tips": "Elige una velocidad de cuenta y mantenla durante toda la sesión para que tus errores sean comparables."
+      },
+      {
+        "name": "Usar el pulso de un segundo",
+        "desc": "Los anillos alrededor del orbe pulsan una vez por segundo. Si cuentas cada pulso como un tic, sumas segundos enteros y solo estimas el resto.",
+        "tips": "Con objetivos con decimales, como 3,250 s, el último clic cae entre dos pulsos."
+      },
+      {
+        "name": "Revisar el error con signo",
+        "desc": "Tras cada clic el drill muestra cuándo hiciste clic. Si siempre te adelantas o te retrasas, ajusta tu cuenta interna.",
+        "tips": "Un pequeño sesgo constante es más fácil de corregir que una gran dispersión aleatoria."
+      }
+    ]
+  },
+  "steps": [
+    "Pulsa Iniciar Drill para entrar en la arena a pantalla completa.",
+    "Lee el tiempo objetivo antes de que desaparezca.",
+    "Haz clic o toca cuando creas que ha transcurrido el tiempo objetivo.",
+    "Juega varias rondas y compara tu error medio y tu regularidad."
   ],
-  audience: 'Jugadores de esports de FPS y MOBA, pilotos de simracing, deportistas y cualquier usuario que busque poner a prueba y mejorar su agilidad mental y reflejos.',
-  faqs: faqSchema.mainEntity.map((e) => ({ q: e.name, a: e.acceptedAnswer.text })),
-  sources: pickSources('kosinski2008', 'woods2015', 'jain2015', 'shelton2010', 'dye2009', 'der2006', 'smith2002'),
-  related: [
-    { href: '/es/drills/reaction-speed', label: 'Hub de Velocidad de Reacción' },
-    { href: '/es/drills/motor/movement-speed/rapid-tapping', label: 'Test de CPS y Velocidad de Clic' },
-    { href: '/es/drills/reaction-speed/fps-tracking-trainer', label: 'Entrenador de Tracking FPS' },
-    { href: '/es/drills/fps/flick-shot-training', label: 'Entrenamiento de Flick Shot' },
-  ],
+  "audience": "Jugadores, músicos, deportistas y cualquiera que quiera practicar un timing de clic más constante y mejor noción de los intervalos cortos.",
+  "faqs": faqSchema.mainEntity.map((e) => ({ q: e.name, a: e.acceptedAnswer.text })),
+  "sources": pickSources('woods2015'),
+  "related": [
+    {
+      "href": "/es/drills/visual/reaction-speed/light-reaction",
+      "label": "Test de reacción (señal luminosa)"
+    },
+    {
+      "href": "/es/drills/reaction-speed",
+      "label": "Hub de Velocidad de Reacción"
+    },
+    {
+      "href": "/es/drills/motor/movement-speed/rapid-tapping",
+      "label": "Test de CPS y Velocidad de Clic"
+    },
+    {
+      "href": "/es/drills/reaction-speed/fps-tracking-trainer",
+      "label": "Entrenador de Tracking FPS"
+    },
+    {
+      "href": "/es/drills/fps/flick-shot-training",
+      "label": "Entrenamiento de Flick Shot"
+    }
+  ]
 };
 
 export default function SpanishReactionTimeTestPage() {
@@ -358,11 +388,11 @@ export default function SpanishReactionTimeTestPage() {
       />
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(videoGameSchema) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(webAppSchema) }}
       />
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(webAppSchema) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(videoGameSchema) }}
       />
       <script
         type="application/ld+json"
@@ -374,9 +404,9 @@ export default function SpanishReactionTimeTestPage() {
       />
       <ReactionTimeTestWrapper
         copy={{
-          title: 'Test de Reacción y Reflejos',
-          subtitle: 'Mide tu tiempo de reacción visual en milisegundos',
-          caption: 'Haz clic en cuanto aparezca la señal para medir tus reflejos visuales.',
+          title: "Juego de sentido del tiempo: acierta el tiempo",
+          subtitle: "Estimación del tiempo: memoriza el tiempo objetivo, haz clic en el momento justo y mira tu error en milisegundos",
+          caption: "Aparece un tiempo objetivo y desaparece. Haz clic cuando creas que ha pasado ese tiempo.",
         }}
       />
       <DrillGuide guide={reactionGuide} />

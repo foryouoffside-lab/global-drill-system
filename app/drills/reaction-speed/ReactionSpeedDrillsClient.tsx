@@ -84,8 +84,8 @@ export default function ReactionSpeedDrillsClient({ faqs = [], copy }: { faqs?: 
   const reactiveDrills = DRILLS.filter(d => d.category === 'reaction-speed').sort((a, b) => getDifficultyRank(a.difficulty) - getDifficultyRank(b.difficulty));
 
   // Interest-ordered list for the picker: the drill most people want first.
-  // reaction-time-test leads on measured demand (`reaction time test`, 10,978
-  // Bing exact/mo) rather than on difficulty order.
+  // reaction-time-test is the Stop the Timer Game (time estimation); the real
+  // reaction time test lives at /drills/visual/reaction-speed/light-reaction.
   const orderedReactiveDrills = sortByInterest(reactiveDrills);
 
   useEffect(() => {
@@ -365,7 +365,7 @@ export default function ReactionSpeedDrillsClient({ faqs = [], copy }: { faqs?: 
         </div>
 
         <StickyMobileCta
-          href={hasLocalizedRoute(locale, '/drills/reaction-speed/reaction-time-test') ? localizeHref('/drills/reaction-speed/reaction-time-test') : '/drills/reaction-speed/reaction-time-test'}
+          href={hasLocalizedRoute(locale, '/drills/visual/reaction-speed/light-reaction') ? localizeHref('/drills/visual/reaction-speed/light-reaction') : '/drills/visual/reaction-speed/light-reaction'}
           label={ui.startTest}
           categoryName={ui.breadcrumbCurrent}
         />

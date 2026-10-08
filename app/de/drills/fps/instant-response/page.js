@@ -277,7 +277,7 @@ export default function InstantResponseDePage() {
       { href: "/de/drills/fps/flick-shot-training", label: "Flick Shot Training" },
       { href: "/de/drills/fps/micro-correction-precision", label: "Mikrokorrektur Aiming" },
       { href: "/de/drills/fps/180-degree-awareness", label: "180 Grad Aiming" },
-      { href: "/de/drills/reaction-speed/reaction-time-test", label: "Reaktionszeittest" }
+      { href: "/de/drills/visual/reaction-speed/light-reaction", label: "Reaktionszeittest" }
     ]
   };
 

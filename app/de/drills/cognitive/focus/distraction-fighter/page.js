@@ -295,7 +295,7 @@ export default function DistractionFighterPageDe() {
       { href: "/de/drills/cognitive/attention/concentration-stamina", label: "Konzentrations-Ausdauer Test" },
       { href: "/de/drills/cognitive/processing-speed/symbol-matching", label: "Symbol Matching Speed Test" },
       { href: "/de/drills/reaction-speed/reaction-game", label: "Reaktionstest Spiel" },
-      { href: "/de/drills/reaction-speed/reaction-time-test", label: "Reaktionszeit Test" }
+      { href: "/de/drills/visual/reaction-speed/light-reaction", label: "Reaktionszeit Test" }
     ]
   };
 

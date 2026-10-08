@@ -305,7 +305,7 @@ const gridGuide = {
     "label": "数唱記憶スパンテスト"
   },
   {
-    "href": "/ja/drills/reaction-speed/reaction-time-test",
+    "href": "/ja/drills/visual/reaction-speed/light-reaction",
     "label": "反射神経・反応速度テスト"
   },
   {

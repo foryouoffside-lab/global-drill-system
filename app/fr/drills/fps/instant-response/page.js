@@ -326,7 +326,7 @@ export default function InstantResponseFrPage() {
       { href: "/fr/drills/fps/angle-hold-trainer", label: "Placement du Réticule et Tenue d'Angle" },
       { href: "/fr/drills/fps/flick-shot-training", label: "Entraînement Flick Shot" },
       { href: "/fr/drills/fps/180-degree-awareness", label: "Conscience Spatiale 180°" },
-      { href: "/fr/drills/reaction-speed/reaction-time-test", label: "Test de Temps de Réaction" },
+      { href: "/fr/drills/visual/reaction-speed/light-reaction", label: "Test de Temps de Réaction" },
       { href: "/fr/drills/reaction-speed/reflex-training-drill", label: "Entraînement aux Réflexes" }
     ]
   };

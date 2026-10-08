@@ -320,7 +320,7 @@ const digitSpanGuide = {
     "label": "슐테 테이블 (집중력 격자)"
   },
   {
-    "href": "/ko/drills/reaction-speed/reaction-time-test",
+    "href": "/ko/drills/visual/reaction-speed/light-reaction",
     "label": "반응속도 테스트"
   },
   {

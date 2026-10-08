@@ -4,347 +4,375 @@ import DrillFooter from '@/components/drill/DrillFooter';
 import { getAlternateLanguages } from '@/lib/i18n/locales';
 import { pickSources } from '@/lib/drillSources';
 
-// ============================================================
-// SEO RESEARCH FINDINGS — ja-JP (reaction-speed / reaction-time-test)
-// LIVE RESEARCH (2026-09-20): current Bing exact checks returned 0 for the tested
-// spaced variants; Google Suggest and Japanese SERPs surface 反応速度テスト,
-// 反射神経テスト, 無料, FPS, スマホ, マウス, and クリック modifiers.
-// SECONDARY / LSI:
-// DUAL-INTENT TITLE: 反射神経テスト・反応速度テスト｜ms測定 | SkillDrills
-// ============================================================
-
 export const metadata = {
-  title: '反射神経テスト・反応速度テスト｜ms測定 | SkillDrills',
-  description:
-    '無料の反射神経テスト・反応速度テスト。画面の合図に反応するまでの時間をミリ秒（ms）で測り、複数回の平均とばらつきも確認できます。登録不要。',
-  keywords: [
-    '反射神経テスト',
-    '反応速度テスト',
-    '反応速度テスト 無料',
-    '反応速度テスト fps',
-    '反応速度テスト スマホ',
-    'マウス 反応速度 テスト',
-    'クリック 反応速度 テスト',
-    '反応速度 測定',
-    'ミリ秒 反応速度',
-    '反射神経 ゲーム',
-    '反射神経 測定',
+  "title": "体内時計ゲーム｜目標タイムを狙う | SkillDrills",
+  "description": "目標タイムを見て、その時間が経った瞬間にクリックする時間感覚ゲーム。反応速度テストではありません。合図への反応は反射神経テスト（光反応）で。",
+  "keywords": [
+    "体内時計ゲーム",
+    "時間感覚ゲーム",
+    "タイミングゲーム",
+    "目標タイム ゲーム",
+    "ストップウォッチ ゲーム",
+    "時間感覚 トレーニング",
+    "タイミング練習",
+    "クリックタイミング"
   ],
-  alternates: {
-    canonical: 'https://skilldrills.online/ja/drills/reaction-speed/reaction-time-test',
-    languages: getAlternateLanguages('/drills/reaction-speed/reaction-time-test'),
+  "alternates": {
+    "canonical": "https://skilldrills.online/ja/drills/reaction-speed/reaction-time-test",
+    "languages": getAlternateLanguages('/drills/reaction-speed/reaction-time-test')
   },
-  openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
-    title: '反射神経テスト・反応速度テスト｜ms測定 | SkillDrills',
-    description:
-      '画面の合図に合わせてクリックし、視覚反応の速さをミリ秒で測定。平均、誤差、ベンチマークをブラウザで確認できます。',
-    url: 'https://skilldrills.online/ja/drills/reaction-speed/reaction-time-test',
-    siteName: 'SkillDrills',
-    locale: 'ja_JP',
-    type: 'website',
+  "openGraph": {
+    "images": [
+      {
+        "url": "https://skilldrills.online/opengraph-image",
+        "width": 1200,
+        "height": 630
+      }
+    ],
+    "title": "体内時計ゲーム｜目標タイムを狙う | SkillDrills",
+    "description": "1〜8秒の目標タイムを体内時計で狙い、クリックのズレをミリ秒で確認できる無料の時間感覚ゲームです。",
+    "url": "https://skilldrills.online/ja/drills/reaction-speed/reaction-time-test",
+    "siteName": "SkillDrills",
+    "locale": "ja_JP",
+    "type": "website"
   },
-  twitter: { images: ["https://skilldrills.online/opengraph-image"],
-    card: 'summary_large_image',
-    title: '反射神経テスト・反応速度テスト｜ms測定 | SkillDrills',
-    description:
-      '反応速度をミリ秒単位で測定し、複数回の平均と一貫性を確認できる無料テストです。',
+  "twitter": {
+    "images": [
+      "https://skilldrills.online/opengraph-image"
+    ],
+    "card": "summary_large_image",
+    "title": "体内時計ゲーム｜目標タイムを狙う | SkillDrills",
+    "description": "目標タイムを覚えて、経ったと思った瞬間にクリック。ズレをミリ秒で確認できる時間感覚ゲーム。"
   },
-  robots: { index: true, follow: true },
+  "robots": {
+    "index": true,
+    "follow": true
+  }
 };
 
-// --- Structured Data Schemas ---
-
 const breadcrumbSchema = {
-  '@context': 'https://schema.org',
-  '@type': 'BreadcrumbList',
-  itemListElement: [
-    { '@type': 'ListItem', position: 1, name: 'SkillDrills ホーム', item: 'https://skilldrills.online/ja' },
-    { '@type': 'ListItem', position: 2, name: '訓練ハブ', item: 'https://skilldrills.online/ja/drills' },
-    { '@type': 'ListItem', position: 3, name: '反射神経・反応速度', item: 'https://skilldrills.online/ja/drills/reaction-speed' },
-    { '@type': 'ListItem', position: 4, name: '反射神経テスト・反応速度テスト', item: 'https://skilldrills.online/ja/drills/reaction-speed/reaction-time-test' },
-  ],
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "SkillDrills ホーム",
+      "item": "https://skilldrills.online/ja"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "訓練ハブ",
+      "item": "https://skilldrills.online/ja/drills"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "反射神経・反応速度",
+      "item": "https://skilldrills.online/ja/drills/reaction-speed"
+    },
+    {
+      "@type": "ListItem",
+      "position": 4,
+      "name": "体内時計ゲーム",
+      "item": "https://skilldrills.online/ja/drills/reaction-speed/reaction-time-test"
+    }
+  ]
 };
 
 const softwareApplicationSchema = {
-  '@context': 'https://schema.org',
-  '@type': 'SoftwareApplication', "sameAs": ["https://en.wikipedia.org/wiki/Mental_chronometry", "https://en.wikipedia.org/wiki/Reaction_time"],
-  name: '反射神経テスト・反応速度テスト – 無料ミリ秒(ms)測定＆診断ツール',
-  alternateName: ['反射神経テスト', '反応速度テスト', '視覚反射測定器', 'FPS反応速度チェッカー'],
-  applicationCategory: 'HealthApplication',
-  operatingSystem: 'All',
-  offers: { '@type': 'Offer', price: '0', priceCurrency: 'JPY' },
-  description:
-    'ブラウザ上でミリ秒(ms)単位の視覚反応速度を測定するオンライン診断ツール。神経科学的ベンチマーク、ゲーマーランク判定、コンボ倍率スコアリングに対応。',
-  browserRequirements: 'JavaScript対応の最新Webブラウザ（Chrome, Edge, Safari, Firefox）',
-  softwareVersion: '2.0',
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "sameAs": [
+    "https://en.wikipedia.org/wiki/Time_perception"
+  ],
+  "name": "体内時計ゲーム｜目標タイムを狙う",
+  "alternateName": [
+    "時間感覚ゲーム",
+    "ストップタイマーゲーム",
+    "体内時計トレーニング"
+  ],
+  "applicationCategory": "GameApplication",
+  "operatingSystem": "All",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "JPY"
+  },
+  "description": "ブラウザで遊べる時間感覚ゲーム。目標タイムを見て、経ったと思った瞬間にクリックし、ズレをミリ秒で確認します。"
 };
 
 const webAppSchema = {
-  '@context': 'https://schema.org',
-  '@type': 'WebApplication',
-  name: '反射神経テスト・反応速度テスト — ミリ秒(ms) 視覚反射測定ツール | SkillDrills',
-  url: 'https://skilldrills.online/ja/drills/reaction-speed/reaction-time-test',
-  description:
-    '無料オンライン視覚反応速度・反射神経テストツール。画面の刺激に合わせてクリックし、ミリ秒単位で反応遅延を測定します。',
-  applicationCategory: 'EducationalApplication',
-  operatingSystem: 'All',
-  browserRequirements: 'JavaScript対応の最新Webブラウザが必要。',
-  offers: { '@type': 'Offer', price: '0', priceCurrency: 'JPY' },
-  author: { '@type': 'Organization', name: 'SkillDrills', url: 'https://skilldrills.online' },
-  isAccessibleForFree: true,
-  learningResourceType: 'Educational Game',
-  teaches: '反応速度, 反射神経, 視覚情報処理速度, 神経筋反応時間, メンタルクロノメトリー',
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "体内時計ゲーム｜目標タイムを狙う | SkillDrills",
+  "url": "https://skilldrills.online/ja/drills/reaction-speed/reaction-time-test",
+  "description": "無料の時間感覚ゲーム。クリックが目標タイムにどれだけ近いかを測るもので、合図への反応速度を測るテストではありません。",
+  "applicationCategory": "EducationalApplication",
+  "operatingSystem": "All",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "JPY"
+  },
+  "author": {
+    "@type": "Organization",
+    "name": "SkillDrills",
+    "url": "https://skilldrills.online"
+  },
+  "isAccessibleForFree": true,
+  "learningResourceType": "Educational Game",
+  "teaches": "時間の見積もり、インターバルタイミング、クリックタイミングの安定"
 };
 
 const videoGameSchema = {
-  '@context': 'https://schema.org',
-  '@type': 'VideoGame',
-  name: '反射神経テスト・反応速度測定ゲーム',
-  url: 'https://skilldrills.online/ja/drills/reaction-speed/reaction-time-test',
-  description: '反射神経テスト・反応速度測定ゲーム',
-  genre: ['Reflex Game', 'Action', 'Esports Training'],
-  gamePlatform: ['Web Browser', 'Desktop', 'Mobile'],
-  applicationCategory: 'Game',
-  offers: { '@type': 'Offer', price: '0', priceCurrency: 'JPY' }
+  "@context": "https://schema.org",
+  "@type": "VideoGame",
+  "name": "体内時計ゲーム｜目標タイムを狙う",
+  "url": "https://skilldrills.online/ja/drills/reaction-speed/reaction-time-test",
+  "description": "タイミングゲーム：1〜8秒の目標タイムを覚えて、経ったと思った瞬間にクリックします。",
+  "genre": [
+    "Timing Game",
+    "Casual"
+  ],
+  "gamePlatform": [
+    "Web Browser",
+    "Desktop",
+    "Mobile"
+  ],
+  "applicationCategory": "Game",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "JPY"
+  }
 };
 
 const howToSchema = {
-  '@context': 'https://schema.org',
-  '@type': 'HowTo',
-  name: '反射神経テスト・反応速度テストの測定手順',
-  description: 'ブラウザ上で画面の刺激に合わせて最速でクリックし、ミリ秒単位で視覚反応速度を測定する方法。',
-  step: [
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  "name": "体内時計ゲームの遊び方",
+  "description": "目標タイムを覚え、経ったと思った瞬間にクリックして、ズレをミリ秒で確認します。",
+  "step": [
     {
-      '@type': 'HowToStep',
-      position: 1,
-      name: 'テスト画面の起動',
-      text: '「トレーニング開始」ボタンを押して全画面の反応速度測定モードを立ち上げます。',
-      url: 'https://skilldrills.online/ja/drills/reaction-speed/reaction-time-test#step-1'
+      "@type": "HowToStep",
+      "position": 1,
+      "name": "ドリルを開始",
+      "text": "「ドリル開始」をクリックまたはタップして、全画面のアリーナを開きます。",
+      "url": "https://skilldrills.online/ja/drills/reaction-speed/reaction-time-test#step-1"
     },
     {
-      '@type': 'HowToStep',
-      position: 2,
-      name: '目標インターバルの把握',
-      text: '画面中央に表示される目標ミリ秒インターバルとシグナル待機状態を確認します。',
-      url: 'https://skilldrills.online/ja/drills/reaction-speed/reaction-time-test#step-2'
+      "@type": "HowToStep",
+      "position": 2,
+      "name": "目標タイムを覚える",
+      "text": "1〜8秒の目標タイムを読みます。数字はしばらくすると消えます。",
+      "url": "https://skilldrills.online/ja/drills/reaction-speed/reaction-time-test#step-2"
     },
     {
-      '@type': 'HowToStep',
-      position: 3,
-      name: '刺激出現の瞬間に即クリック',
-      text: 'ターゲット刺激が現れた瞬間に、最も速くマウスクリックまたは画面タップを行います。',
-      url: 'https://skilldrills.online/ja/drills/reaction-speed/reaction-time-test#step-3'
+      "@type": "HowToStep",
+      "position": 3,
+      "name": "時間が経ったらクリック",
+      "text": "目標タイムが経ったと思った瞬間にクリックまたはタップします。時計が進んでいる間、数字は表示されません。",
+      "url": "https://skilldrills.online/ja/drills/reaction-speed/reaction-time-test#step-3"
     },
     {
-      '@type': 'HowToStep',
-      position: 4,
-      name: 'ミリ秒遅延とランク診断の確認',
-      text: 'セッション完了後、ミリ秒平均誤差、正確度、反応速度の区分を確認します。',
-      url: 'https://skilldrills.online/ja/drills/reaction-speed/reaction-time-test#step-4'
-    },
-  ],
+      "@type": "HowToStep",
+      "position": 4,
+      "name": "ズレを確認",
+      "text": "数ラウンド遊んで、平均誤差と安定度を比べます。",
+      "url": "https://skilldrills.online/ja/drills/reaction-speed/reaction-time-test#step-4"
+    }
+  ]
 };
 
 const faqSchema = {
-  '@context': 'https://schema.org',
-  '@type': 'FAQPage',
-  dateModified: '2026-09-20',
-  mainEntity: [
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "dateModified": "2026-10-08",
+  "mainEntity": [
     {
-      '@type': 'Question',
-      name: '人間の平均的な反応速度は何ミリ秒ですか？',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: '視覚刺激に対する健康な成人の平均反応速度は約200〜250ミリ秒（ms）です（Kosinski, 2008）。200ms未満は極めて優秀であり、180ms以下は非常に速い水準です。',
-      },
+      "@type": "Question",
+      "name": "これは反応速度テストですか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "いいえ、時間感覚ゲームです。目標タイムが表示され、その時間が経ったと思った瞬間にクリックすると、ズレがミリ秒で表示されます。合図への反応の速さを測るには、反射神経テスト（光反応テスト）を使ってください。"
+      }
     },
     {
-      '@type': 'Question',
-      name: '反射神経テスト（反応速度テスト）はどのように測定されますか？',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: '画面上に視覚刺激が現れた瞬間から、ユーザーがマウスをクリックまたは画面をタップするまでの経過時間を、ブラウザの高精度 performance.now() API（1ミリ秒以下の高分解能クロック）を用いてクライアント側で直接計測します（Woods et al., 2015）。',
-      },
+      "@type": "Question",
+      "name": "ゲームの仕組みを教えてください。",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "目標タイムがしばらく表示されて消えます。その後、数字のない光る球体が動き、裏で時計が進みます。目標タイムが経ったと思った瞬間にクリックすると、クリックした正確な時刻と誤差が表示されます。"
+      }
     },
     {
-      '@type': 'Question',
-      name: '反応速度はトレーニングや反復練習で速くなりますか？',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: 'はい。日常的な反応反復ドリルを行うことで、視覚刺激を検知してから運動野へ指令を送る神経経路が活性化し、15〜30ミリ秒程度の反応時間短縮と入力のブレ（標準偏差）の抑制が期待できます（Dye, Green, & Bavelier, 2009）。',
-      },
+      "@type": "Question",
+      "name": "目標タイムはどのくらいの長さですか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "最初は約1〜2秒の範囲で始まり、レベルが上がると上限が伸びて最大8秒になります。目標は3.250sのように小数点以下3桁で表示されます。"
+      }
     },
     {
-      '@type': 'Question',
-      name: 'なぜ人や日によって反応速度にばらつきが出るのですか？',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: '睡眠時間、サーカディアンリズム（体内時計の覚醒度）、精神的疲労、年齢、集中状態、カフェイン摂取、および使用デバイスの入力遅延やディスプレイのリフレッシュレートによって日々変動します。',
-      },
+      "@type": "Question",
+      "name": "スコアはどう計算されますか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "誤差は「クリックの時刻 − 目標タイム」です。誤差が50ms＋目標の5%以内なら命中となり、3秒の目標なら200msです。近いほど高得点で、10ms未満はEXACT評価、連続命中でコンボ倍率が最大3.0倍まで上がります。"
+      }
     },
     {
-      '@type': 'Question',
-      name: 'モニターのリフレッシュレート（Hz）は測定結果に影響しますか？',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: '大きく影響します。一般的な60Hzモニターは1フレーム表示に16.67msのバッファ遅延が発生しますが、144Hz（約6.94ms）や240Hz（約4.17ms）のゲーミングモニターは視覚刺激をより早く目に届けるため、計測値が約10〜12ms改善することが科学的に実証されています（Woods et al., 2015）。',
-      },
+      "@type": "Question",
+      "name": "早すぎる、または遅すぎるクリックはどうなりますか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "どちらも誤差です。許容範囲外のクリックはミスとなり、コンボがリセットされて赤い警告が出ますが、スコアは維持されます。"
+      }
     },
     {
-      '@type': 'Question',
-      name: '「反射」と「反応時間」の違いは何ですか？',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: '膝蓋腱反射などの「反射」は脊髄レベルの回路を通り大脳を介さないため約20〜50msで生じます。一方「反応時間」は大脳の視覚皮質で刺激を認知し、判断を経て運動野から筋肉へ信号を送る随意運動であるため、通常150〜250ms以上の時間を要します。',
-      },
+      "@type": "Question",
+      "name": "頭の中でカウントしてもいいですか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "はい、カウントは自分の戦略です。球体に数字はなく、周囲のリングが1秒に1回脈打つので、拍として使えます。いろいろ試して、平均誤差が最も小さい方法を選びましょう。"
+      }
     },
     {
-      '@type': 'Question',
-      name: 'なぜ視覚より聴覚刺激のほうが反応速度が速いのですか？',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: '音の刺激は耳から脳幹・聴覚皮質へ約8〜10msで到達するのに対し、網膜の光電変換と視覚皮質への伝達には20〜40msかかります。そのため、人間の聴覚反応速度（約140〜160ms）は視覚反応速度よりも常に30〜50ms高速です（Shelton & Kumar, 2010; Jain et al., 2015）。',
-      },
+      "@type": "Question",
+      "name": "リフレッシュレートや入力遅延は結果に影響しますか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "わずかに影響します。クリックはブラウザのperformance.now()で記録されますが、ディスプレイは60Hzで16.7ms、144Hzで6.9ms、240Hzで4.2msごとにしか画面を更新せず、入力機器にもポーリング遅延があります（Woods et al., 2015）。比較は同じ端末で行ってください。"
+      }
     },
     {
-      '@type': 'Question',
-      name: '年齢を重ねると反応速度は低下しますか？',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: '単純反応速度は18〜24歳頃にピークを迎え、その後10年ごとに約2〜6msずつ緩やかに遅延する傾向があります（Der & Deary, 2006）。ただし、定期的な運動やエイムトレーニング・反応ドリルを継続することで神経伝達速度の維持が可能です。',
-      },
+      "@type": "Question",
+      "name": "練習でタイミングは上達しますか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "練習した課題は上達しやすい傾向があるため、このドリルの平均誤差は小さくなる可能性があります。他の課題にどこまで効果が及ぶかは人によって異なり、保証されません。"
+      }
     },
     {
-      '@type': 'Question',
-      name: 'カフェインを摂取すると反応速度は上がりますか？',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: '適量のカフェイン（コーヒーやエナジードリンク）は中枢神経系のアデノシン受容体をブロックして大脳の覚醒度を高め、反応速度を一時的に10〜20ms向上させることが確認されています（Smith, 2002）。',
-      },
+      "@type": "Question",
+      "name": "「10秒チャレンジ」と同じですか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "秒数を時計なしで見積もる点は似ていますが、目標はラウンドごとに変わり、10秒固定ではありません。また、成功か失敗かではなく誤差の大きさで採点します。"
+      }
     },
     {
-      '@type': 'Question',
-      name: '一般的なHuman BenchmarkとSkillDrillsの違いは何ですか？',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: '単純な赤から緑への色変化クリックのみを測る従来のベンチマークとは異なり、SkillDrillsではミリ秒インターバルの時間予測（メンタルクロノメトリー）、過剰な先走りクリックの抑制、および難易度に応じた連続コンボ倍率を統合し、実戦に即した神経制御力を鍛えます。',
-      },
-    },
-    {
-      '@type': 'Question',
-      name: 'VALORANTやApexなどのFPSゲームで反応速度はどう活きますか？',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: '敵が遮蔽物から飛び出してくるピーク（置きエイム）に対する撃ち合い勝率、敵のフラッシュやスモークへの即応、接近戦での初弾命中率に役立つ可能性があります。20msの差が撃ち合いの勝敗を分けます。',
-      },
-    },
-    {
-      '@type': 'Question',
-      name: 'スマートフォンやタブレットでも測定できますか？',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: 'はい。スマートフォンやタブレットのタッチスクリーンにも完全最適化されており、縦画面・横画面のどちらでもインストール不要・完全無料で即座に測定可能です。',
-      },
-    },
-    {
-      '@type': 'Question',
-      name: 'この反応速度テストは完全無料ですか？',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: 'はい。SkillDrillsのすべての反応速度テストおよび認知トレーニングツールは、会員登録やアプリのダウンロード、課金、邪魔なポップアップ広告なしで、ブラウザ上で100%完全無料でお使いいただけます。',
-      },
-    },
-    {
-      '@type': 'Question',
-      name: '一般のスポーツ選手やアスリートにも効果はありますか？',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: '素早い初動が求められる競技の補助練習として取り入れることはできますが、競技成績の向上は保証されません。',
-      },
-    },
-    {
-      '@type': 'Question',
-      name: '画面の中心を凝視すべきですか、それとも周辺視野を使うべきですか？',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: '目を細めて一点を凝視するよりも、ややリラックスした「ソフトフォーカス（周辺視野を広く保つ）」が推奨されます。網膜の周辺部に多い桿体細胞（光や動きの変化に極めて敏感）がシグナルを最速で捉え、指先への運動出力がスムーズになります。',
-      },
-    },
-    {
-      '@type': 'Question',
-      name: '反応速度の測定やトレーニングはどれくらいの頻度で行うべきですか？',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: '1日1回、5〜10分程度のセッションが最も効果的です。日々の神経的な覚醒状態や体調を客観的に把握するベンチマークとなり、ゲームのランクマッチ前のウォーミングアップとしても最適です。',
-      },
-    },
-  ],
+      "@type": "Question",
+      "name": "無料ですか？スマホでも遊べますか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "はい、無料で登録やダウンロードは不要です。スマホのブラウザでも動きますが、タッチ入力には独自の遅延があるため、同じ端末での記録同士で比べてください。"
+      }
+    }
+  ]
 };
 
-faqSchema.mainEntity = faqSchema.mainEntity.slice(0, 10);
-
 const reactionGuide = {
-  heading: '反射神経テスト・反応速度テスト ガイド＆ランク判定基準',
-  intro: [
-    '反射神経テスト（反応速度テスト）とは、画面の合図が出てからクリックするまでの時間をミリ秒（ms）で測るテストです。このページでは複数回の平均とばらつきを確認できます。視覚刺激への単純反応はおおよそ200〜250msとされ、ディスプレイやマウスの遅延も結果に含まれます。',
-    '反射神経テスト（反応速度テスト）は、視覚刺激を捉えてから脳の視覚皮質で知覚し、運動野から指先へクリック指令を伝達するまでのミリ秒（ms）単位のレイテンシを精密に測定するツールです。',
-    'VALORANT、CS2、Apex Legends、League of Legendsなどの競技eスポーツやモータースポーツにおいて、コンマ数秒のミリ秒差が撃ち合いの勝敗や危険回避の成否を決定づけます。',
-    '高精度測定の仕組み：本ツールはブラウザの performance.now() API を使用し、ミリ秒単位のクロックでタイムスタンプを記録します。測定スコアはローカル環境（ブラウザ内）で完結し、外部サーバーへの通信ラグは一切排除されています。',
-    'ハードウェア遅延への考慮：60Hzの通常モニターでは描画更新により最大約16.7msの遅延が生じますが、144Hz（約6.9ms）や240Hz（約4.2ms）のゲーミングモニターを使用し、ポーリングレート1000Hzのマウスで測定することで、より純粋な生体神経反射時間を測定できます（Woods et al., 2015）。',
+  "heading": "体内時計ゲームの仕組みと採点方法",
+  "intro": [
+    "これは反応速度テストではなく、時間感覚を試すゲームです。1〜8秒の目標タイムが短時間表示されて消え、その時間が経ったと思った瞬間にクリックします。クリックと目標のズレがミリ秒で表示されます。視覚的な合図への反応の速さを測りたい場合は、反射神経テスト（光反応テスト）を使ってください。",
+    "すべてのクリックは、端末内でブラウザのperformance.now()タイマーにより記録されます。ディスプレイは見える映像をリフレッシュ間隔に丸めます。60Hzで約16.7ms、144Hzで6.9ms、240Hzで4.2msです（Woods et al., 2015）。マウスのポーリングは125Hzで約8ms、1000Hzで約1msの遅延を加えます。",
+    "約5ms未満の差は測定ノイズとして扱い、他人の環境ではなく同じ端末での自分の記録同士で比べてください。これは練習用ツールであり、医学的な測定ではありません。"
   ],
-  benchmarks: {
-    title: '反射神経・反応速度ベンチマーク＆ゲーマーランク判定表',
-    headers: ['反応速度 (ms)', '区分', '位置づけ', '測定時の確認点', '解釈メモ'],
-    rows: [
-      ['< 150 ms', '異常に速い', '予測クリックの可能性', '合図の前にクリックしていないか確認', '単純視覚反応ではまれな範囲のため、機器遅延や予測クリックを先に疑います。'],
-      ['150 – 190 ms', 'とても速い', '速い方', '低遅延のモニターとマウスを使っているか', '機器遅延が小さく、集中できているときに出ることがある範囲です。'],
-      ['190 – 240 ms', '速い', 'やや速い', 'リフレッシュレートと入力遅延', '刺激の弁別とクリックのタイミングが安定している範囲です。'],
-      ['240 – 280 ms', '平均的', '平均的', '60Hz環境では表示遅延が加わる', '標準的な健康成人の視覚反応の範囲です（60Hz環境標準）。'],
-      ['> 300 ms', 'ゆっくり', '遅め', '疲労・睡眠不足や機器の入力遅延', '疲労や睡眠不足、モニター・機器の入力遅延が大きいと長くなります。'],
+  "benchmarks": {
+    "title": "タイミング誤差の評価",
+    "headers": [
+      "評価",
+      "許容誤差",
+      "目標3.000sの場合の例"
     ],
-    note: '本評価基準はヒト生体測定学の科学的文献（Kosinski, 2008; Woods et al., 2015）を基にした指標です。60Hzディスプレイでは1フレームあたり約16.7msの表示バッファ遅延が発生します。',
-  },
-  techniques: {
-    title: '感覚別の反応限界と科学的メカニズム',
-    items: [
-      {
-        name: '視覚刺激の伝達遅延 (~200–250ms)',
-        desc: '網膜の光受容体が光を電気信号へ変換し、視神経を通って大脳の一次視覚野（V1）へ送られ、運動野から指先へクリック指令が到達するまでの物理的所要時間です（Kosinski, 2008）。',
-        tips: '目に力を入れすぎずリラックスした広い視野を保つことで、周辺視野の桿体細胞が刺激変化を最速で捉えられます。',
-      },
-      {
-        name: '聴覚刺激の優位性 (~140–170ms)',
-        desc: '音刺激は脳幹から聴覚皮質に至る経路が短いため、一般に視覚刺激よりも40〜80msほど高速に反応できます（Shelton & Kumar, 2010; Jain et al., 2015）。',
-        tips: 'FPSゲームでは視覚で敵を確認する前に、足音やリロード音などのサウンド情報に先行して反応することが極めて有利です。',
-      },
-      {
-        name: '触覚・体性感覚の反射ループ (~130–160ms)',
-        desc: '物理的な振動や触覚刺激は複雑な視覚認識処理をバイパスするため、最も素早い筋肉反応を引き起こします。',
-        tips: 'タクタイル感の明確なメカニカルスイッチを使用することで、クリック入力のトリガー遅延を最小化できます。',
-      },
-      {
-        name: 'ディスプレイとデバイスの入力遅延最適化',
-        desc: '60Hzモニターの描画待ち時間は16.7msですが、240Hzモニターでは4.1msに短縮されます（Woods et al., 2015）。',
-        tips: '1000Hzポーリングレートのゲーミングマウス使用および垂直同期（V-Sync）のオフ設定を推奨します。',
-      },
+    "rows": [
+      [
+        "EXACT",
+        "10msまで",
+        "2.990s〜3.010sの間でクリック"
+      ],
+      [
+        "PERFECT",
+        "命中範囲の20%まで",
+        "40ms以内"
+      ],
+      [
+        "EXCELLENT",
+        "命中範囲の40%まで",
+        "80ms以内"
+      ],
+      [
+        "GOOD",
+        "命中範囲の60%まで",
+        "120ms以内"
+      ],
+      [
+        "OK",
+        "命中範囲の80%まで",
+        "160ms以内"
+      ],
+      [
+        "HIT",
+        "命中範囲いっぱいまで",
+        "200ms以内"
+      ]
     ],
+    "note": "命中範囲は50msに目標タイムの5%を足した値で、目標が長いほど絶対値では緩くなります。これはこのドリルの採点ルールであり、一般的な基準値ではありません。"
   },
-  steps: [
-    '「トレーニング開始」を押して全画面の反応速度測定モードを起動します。',
-    '画面中央の目標時間とシグナル待機状態を確認します。',
-    'ターゲットが現れた瞬間、最速でマウスをクリックまたは画面をタップします。',
-    '複数回試行してミリ秒平均値、正確度、およびゲーマーランク判定を確認します。',
+  "techniques": {
+    "title": "短い時間を見積もる方法",
+    "items": [
+      {
+        "name": "一定のペースで数える",
+        "desc": "心の中で細かく区切って数えると、再現しやすい体内リズムが作れます。目標によって合うカウント速度は異なります。",
+        "tips": "カウント速度を1つ決めてセッション中は変えないと、誤差を比べやすくなります。"
+      },
+      {
+        "name": "1秒ごとの脈動を使う",
+        "desc": "球体の周囲のリングは1秒に1回脈打ちます。脈動を1拍と数えれば、整数秒は足し算で済み、端数だけ見積もればよくなります。",
+        "tips": "3.250sのように小数がある目標では、最後のクリックは脈動と脈動の間に来ます。"
+      },
+      {
+        "name": "符号付きの誤差を確認する",
+        "desc": "クリックのたびに、いつクリックしたかが表示されます。いつも早い、または遅いなら、内部のカウントをその分ずらしましょう。",
+        "tips": "小さく一定した偏りは、大きくばらつく誤差より直しやすいです。"
+      }
+    ]
+  },
+  "steps": [
+    "「ドリル開始」を押して全画面のアリーナを開きます。",
+    "目標タイムが消える前に読み取ります。",
+    "目標タイムが経ったと思った瞬間にクリックまたはタップします。",
+    "数ラウンド遊んで、平均誤差と安定度を比べます。"
   ],
-  audience: 'FPS/MOBA競技ゲーマー（VALORANT, Apex, CS2, LoL）、格闘ゲーム競技者、モータースポーツドライバー、視覚反射能力を測定・強化したい全ての方。',
-  faqs: faqSchema.mainEntity.map((e) => ({ q: e.name, a: e.acceptedAnswer.text })),
-  sources: pickSources('kosinski2008', 'woods2015', 'jain2015', 'shelton2010', 'dye2009', 'der2006', 'smith2002'),
-  related: [
-    { href: '/ja/drills/reaction-speed', label: '反射神経ハブ' },
-    { href: '/ja/drills/reaction-speed/reflex-training-drill', label: '反射神経ゲーム' },
-    { href: '/ja/drills/reaction-speed/fps-tracking-trainer', label: 'FPS追従エイムトレーナー' },
-    { href: '/ja/drills/motor/movement-speed/rapid-tapping', label: '連打測定・CPSテスト' },
-    { href: '/ja/drills/fps/flick-shot-training', label: 'フリックショット練習' },
-  ],
+  "audience": "ゲーマー、音楽をする人、アスリートなど、クリックのタイミングを安定させ、短い時間の感覚を磨きたい方。",
+  "faqs": faqSchema.mainEntity.map((e) => ({ q: e.name, a: e.acceptedAnswer.text })),
+  "sources": pickSources('woods2015'),
+  "related": [
+    {
+      "href": "/ja/drills/visual/reaction-speed/light-reaction",
+      "label": "反射神経テスト（光反応テスト）"
+    },
+    {
+      "href": "/ja/drills/reaction-speed",
+      "label": "反射神経ハブ"
+    },
+    {
+      "href": "/ja/drills/reaction-speed/reflex-training-drill",
+      "label": "反射神経ゲーム"
+    },
+    {
+      "href": "/ja/drills/reaction-speed/fps-tracking-trainer",
+      "label": "FPS追従エイムトレーナー"
+    },
+    {
+      "href": "/ja/drills/motor/movement-speed/rapid-tapping",
+      "label": "連打測定・CPSテスト"
+    }
+  ]
 };
 
 export default function JapaneseReactionTimeTestPage() {
@@ -360,11 +388,11 @@ export default function JapaneseReactionTimeTestPage() {
       />
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(videoGameSchema) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(webAppSchema) }}
       />
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(webAppSchema) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(videoGameSchema) }}
       />
       <script
         type="application/ld+json"
@@ -376,9 +404,9 @@ export default function JapaneseReactionTimeTestPage() {
       />
       <ReactionTimeTestWrapper
         copy={{
-          title: '反射神経テスト・反応速度テスト',
-          subtitle: '合図への反応時間をミリ秒（ms）で測定',
-          caption: '画面の合図が出た瞬間にクリックして、視覚反応時間を測定します。',
+          title: "体内時計ゲーム｜目標タイムを狙う",
+          subtitle: "目標タイムを覚えて、経ったと思った瞬間にクリック。ズレをミリ秒で確認できる時間感覚ゲーム",
+          caption: "目標タイムが表示されて消えます。その時間が経ったと思った瞬間にクリックします。",
         }}
       />
       <DrillGuide guide={reactionGuide} />

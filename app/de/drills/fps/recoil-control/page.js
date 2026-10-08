@@ -299,7 +299,7 @@ export default function RecoilControlDePage() {
     related: [
       { href: "/de/drills/fps/flick-shot-training", label: "Flick Shot Training Online" },
       { href: "/de/drills/motor/hand-eye-coordination/aim-trainer", label: "Allgemeiner Aim Trainer Online" },
-      { href: "/de/drills/reaction-speed/reaction-time-test", label: "Reaktionszeit Test Online" },
+      { href: "/de/drills/visual/reaction-speed/light-reaction", label: "Reaktionszeit Test Online" },
       { href: "/de/drills/motor/movement-speed/rapid-tapping", label: "Klick-Geschwindigkeitstest (CPS)" }
     ]
   };

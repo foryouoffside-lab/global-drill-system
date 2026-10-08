@@ -312,7 +312,7 @@ export default function ProSmoothPursuitKoPage() {
       { href: "/ko/drills/fps/anti-strafe-jitter-duel", label: "무빙 트래킹 에임 연습 (ADAD 지터)" },
       { href: "/ko/drills/fps/flick-shot-training", label: "플릭 에임 연습 (Flick Shot)" },
       { href: "/ko/drills/fps/micro-correction-precision", label: "마이크로 플릭 에임 연습" },
-      { href: "/ko/drills/reaction-speed/reaction-time-test", label: "반응속도 테스트" }
+      { href: "/ko/drills/visual/reaction-speed/light-reaction", label: "반응속도 테스트" }
     ]
   };
 

@@ -300,7 +300,7 @@ export default function FlickShotEsPage() {
     related: [
       { href: "/es/drills/fps/180-degree-awareness", label: "Conciencia Espacial 180°" },
       { href: "/es/drills/fps/angle-hold-trainer", label: "Colocación de Mira y Retención de Ángulos" },
-      { href: "/es/drills/reaction-speed/reaction-time-test", label: "Test de Tiempo de Reacción" },
+      { href: "/es/drills/visual/reaction-speed/light-reaction", label: "Test de Tiempo de Reacción" },
       { href: "/es/drills/motor/movement-speed/rapid-tapping", label: "Test de CPS y Velocidad de Clics" }
     ]
   };

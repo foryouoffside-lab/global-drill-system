@@ -311,7 +311,7 @@ export default function AntiZigzagJaPage() {
       { href: "/ja/drills/fps/flick-shot-training", label: "フリック エイム 練習" },
       { href: "/ja/drills/fps/180-degree-awareness", label: "180度 振り向き 練習" },
       { href: "/ja/drills/fps/instant-response", label: "FPS 反応速度 テスト" },
-      { href: "/ja/drills/reaction-speed/reaction-time-test", label: "反射神経テスト" }
+      { href: "/ja/drills/visual/reaction-speed/light-reaction", label: "反射神経テスト" }
     ]
   };
 

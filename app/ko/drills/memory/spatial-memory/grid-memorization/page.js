@@ -305,7 +305,7 @@ const gridGuide = {
     "label": "숫자 기억 폭 테스트"
   },
   {
-    "href": "/ko/drills/reaction-speed/reaction-time-test",
+    "href": "/ko/drills/visual/reaction-speed/light-reaction",
     "label": "반응속도 테스트"
   },
   {

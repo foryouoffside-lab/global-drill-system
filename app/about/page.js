@@ -230,7 +230,7 @@ export default function AboutPage() {
                 the drill directory
               </Link>
               . The most-used starting points are the{' '}
-              <Link href="/drills/reaction-speed/reaction-time-test" className="text-violet-400 hover:text-violet-300 underline decoration-violet-400/40 underline-offset-2">
+              <Link href="/drills/visual/reaction-speed/light-reaction" className="text-violet-400 hover:text-violet-300 underline decoration-violet-400/40 underline-offset-2">
                 reaction time test
               </Link>{' '}
               and the{' '}

@@ -321,7 +321,7 @@ const digitSpanGuide = {
     "label": "Tabela de Schulte (Grade de Concentração)"
   },
   {
-    "href": "/pt/drills/reaction-speed/reaction-time-test",
+    "href": "/pt/drills/visual/reaction-speed/light-reaction",
     "label": "Teste de Reflexo (Tempo de Reação)"
   },
   {

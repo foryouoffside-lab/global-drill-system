@@ -293,7 +293,7 @@ export default function AwarenessDrillPage() {
       { href: "/drills/fps/flick-shot-training", label: "Flick Shot Trainer" },
       { href: "/drills/fps/angle-hold-trainer", label: "Crosshair Placement & Angle Hold Trainer" },
       { href: "/drills/fps/micro-correction-precision", label: "Micro-Correction Aim Trainer" },
-      { href: "/drills/reaction-speed/reaction-time-test", label: "Reaction Time Test" }
+      { href: "/drills/visual/reaction-speed/light-reaction", label: "Reaction Time Test" }
     ]
   };
 

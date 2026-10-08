@@ -295,7 +295,7 @@ export default function DistractionFighterPageKo() {
       { href: "/ko/drills/cognitive/attention/concentration-stamina", label: "집중력 지구력 테스트" },
       { href: "/ko/drills/cognitive/processing-speed/symbol-matching", label: "기호 일치 속도 테스트" },
       { href: "/ko/drills/reaction-speed/reaction-game", label: "반응속도 테스트 게임" },
-      { href: "/ko/drills/reaction-speed/reaction-time-test", label: "반응시간 측정 테스트" }
+      { href: "/ko/drills/visual/reaction-speed/light-reaction", label: "반응시간 측정 테스트" }
     ]
   };
 

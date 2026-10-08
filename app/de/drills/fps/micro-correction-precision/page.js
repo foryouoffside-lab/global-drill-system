@@ -282,7 +282,7 @@ export default function MicroCorrectionDePage() {
       { href: "/de/drills/fps/flick-shot-training", label: "Flick Shot Training" },
       { href: "/de/drills/fps/recoil-control", label: "Recoil Control Training" },
       { href: "/de/drills/fps/strafe-tracking", label: "Strafe Tracking Übung" },
-      { href: "/de/drills/reaction-speed/reaction-time-test", label: "Reaktionszeittest" }
+      { href: "/de/drills/visual/reaction-speed/light-reaction", label: "Reaktionszeittest" }
     ]
   };
 
