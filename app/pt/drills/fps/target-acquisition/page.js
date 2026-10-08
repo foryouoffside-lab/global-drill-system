@@ -172,10 +172,10 @@ export default function TargetAcquisitionPtPage() {
       },
       {
         "@type": "Question",
-        "name": "Como o hardware raw input melhora a consistência na detecção de alvos?",
+        "name": "A aceleração do mouse atrapalha o treino de mira?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "O hardware raw input mantém uma relação linear de 1:1 entre a mão e a tela, permitindo ao córtex motor calibrar impulsos balísticos com exatidão sem as distorções não lineares da aceleração do mouse."
+          "text": "Em geral, sim: a aceleração faz o mesmo movimento físico resultar em distâncias diferentes conforme a velocidade da mão, o que dificulta criar memória muscular. Use no jogo a mesma sensibilidade do treino e deixe a aceleração do mouse desligada."
         }
       },
       {
@@ -198,8 +198,8 @@ export default function TargetAcquisitionPtPage() {
       {
         "@type": "HowToStep",
         "position": 1,
-        "name": "Calibrar Sensibilidade com Entrada Bruta",
-        "text": "Configure sua sensibilidade exata e DPI nas opções de sessão para manter proporção física de 1:1 e travar o cursor.",
+        "name": "Calibrar Sensibilidade",
+        "text": "Configure sua sensibilidade exata e DPI nas opções de sessão para aproximar o movimento do mouse ao do seu jogo e travar o cursor.",
         "url": "https://skilldrills.online/pt/drills/fps/target-acquisition#step-1"
       },
       {
@@ -229,23 +229,23 @@ export default function TargetAcquisitionPtPage() {
   const targetAcquisitionGuide = {
     heading: "Treino de Mira Valorant: aquisição de alvos e primeiro tiro",
     intro: [
-      "Para quem procura treino de mira Valorant, este drill mede o caminho entre detectar uma ameaça na tela, identificar o alvo e acertar o primeiro tiro. Ele combina aquisição de alvos, detecção visual e precisão do primeiro disparo para Valorant, Counter-Strike 2 e Rainbow Six Siege, em que os primeiros 300 milissegundos de contato visual influenciam o duelo.",
+      "Para quem procura treino de mira Valorant, este drill mede o caminho entre detectar uma ameaça na tela, identificar o alvo e acertar o primeiro tiro. Ele combina aquisição de alvos, detecção visual e precisão do primeiro disparo para Valorant, Counter-Strike 2 e Rainbow Six Siege, em que o primeiro contato visual pesa no duelo.",
       "A base teórica da busca visual e identificação de objetos foi formulada por Anne Treisman & Garry Gelade (1980) na Teoria de Integração de Características. Treisman provou que características visuais primárias — como contraste de luminância, cores salientes e orientação de bordas — são extraídas em paralelo por todo o campo visual. Apenas quando a atenção espacial focada é direcionada à coordenada, esses traços são fundidos em uma ameaça inimiga identificável.",
       "Expandindo o processamento visual paralelo, o modelo Guided Search de Jeremy M. Wolfe (1994, 2007) detalha como mapas sensoriais de saliência se combinam com expectativas cognitivas para priorizar a atenção. Quando os jogadores treinam discriminação de contraste, o córtex visual aprende a rejeitar distrações de fundo instantaneamente, encurtando o tempo entre o surgimento do alvo e a ação motora.",
       "Integrando as leis motoras de Paul M. Fitts (1954), a teoria de submovimentos otimizados de David E. Meyer et al. (1988) e a cronometria digital de alta resolução (Woods et al., 2015), este exercício condiciona os reflexos a eliminarem hesitações cognitivas e executarem disparos rápidos e certeiros.",
       "Como isto é medido: cada evento é registrado pelo relógio de alta precisão performance.now() do navegador no seu próprio dispositivo — nenhum dado é transmitido externamente. Fatores de hardware: os temporizadores web operam com resolução em torno de 1 ms, e o monitor exibe imagens na frequência de atualização — 16,7 ms a 60 Hz, 6,9 ms a 144 Hz e 4,1 ms a 240 Hz (Woods et al., 2015). O polling rate do mouse soma cerca de 8 ms a 125 Hz contra 1 ms a 1000 Hz. Avalie seu progresso no mesmo equipamento."
     ],
     benchmarks: {
-      title: "Padrões Científicos de Aquisição de Alvos e Latência de Discriminação",
+      title: "Faixas de Referência de Aquisição de Alvos e Latência de Discriminação",
       headers: ["Nível de Desempenho", "Latência de Aquisição", "Precisão do Primeiro Tiro", "Impacto Competitivo no Jogo"],
       rows: [
-        ["Tier 1 (Apex Sentinel / Radiant Pro)", "<260 ms", "95% – 99%+", "Detecção instantânea de ameaças; headshots perfeitos na primeira bala sem qualquer hesitação de discriminação"],
-        ["Tier 2 (Mestre Competitivo / Tier-2 Esports)", "260 – 320 ms", "88% – 95%", "Excelente velocidade de localização visual; disparo prioritário assertivo com interferência mínima de distrações"],
-        ["Tier 3 (Diamante / Ascendente)", "320 – 400 ms", "80% – 88%", "Precisão sólida no primeiro tiro; apresenta leve atraso de 50 a 80 ms ao lidar com múltiplos alvos densos"],
-        ["Tier 4 (Intermediário / Ouro / Platina)", "400 – 500 ms", "70% – 80%", "Propenso a varreduras em série lentas; ocasionalmente clica em distrações secundárias ou ultrapassa o alvo"],
-        ["Tier 5 (Iniciante / Básico)", ">500 ms", "<70%", "Confusão em cenários visuais poluídos; lentidão na aquisição resultando em derrotas frequentes em duelos de abertura"]
+        ["Faixa 1 (Muito alta)", "<260 ms", "95% – 99%+", "Detecção instantânea de ameaças; headshots perfeitos na primeira bala sem qualquer hesitação de discriminação"],
+        ["Faixa 2 (Alta)", "260 – 320 ms", "88% – 95%", "Excelente velocidade de localização visual; disparo prioritário assertivo com interferência mínima de distrações"],
+        ["Faixa 3 (Boa)", "320 – 400 ms", "80% – 88%", "Precisão sólida no primeiro tiro; apresenta leve atraso de 50 a 80 ms ao lidar com múltiplos alvos densos"],
+        ["Faixa 4 (Intermediária)", "400 – 500 ms", "70% – 80%", "Propenso a varreduras em série lentas; ocasionalmente clica em distrações secundárias ou ultrapassa o alvo"],
+        ["Faixa 5 (Inicial)", ">500 ms", "<70%", "Confusão em cenários visuais poluídos; lentidão na aquisição resultando em derrotas frequentes em duelos de abertura"]
       ],
-      note: "A latência de aquisição representa o tempo decorrido entre a exibição do cluster e o primeiro clique validado no alvo prioritário, registrado com cronometria digital (Woods et al., 2015)."
+      note: "Faixas editoriais para comparar suas próprias sessões, não percentis de população nem normas clínicas. A latência de aquisição representa o tempo decorrido entre a exibição do cluster e o primeiro clique validado no alvo prioritário, registrado com cronometria digital (Woods et al., 2015)."
     },
     techniques: {
       title: "Protocolos Baseados em Evidências para Aperfeiçoar a Aquisição de Alvos",
@@ -273,7 +273,7 @@ export default function TargetAcquisitionPtPage() {
       ]
     },
     steps: [
-      "Configure o jogo de referência, DPI e sensibilidade exata nas opções de sessão para preservar proporção de 1:1 e travar o cursor.",
+      "Configure o jogo de referência, DPI e sensibilidade exata nas opções de sessão para aproximar o movimento do mouse ao do seu jogo e travar o cursor.",
       "Fixe a visão em um olhar central suave, aguardando o aparecimento do conjunto de alvos pela tela.",
       "Identifique visualmente o alvo mais brilhante e prioritário através da filtragem de contraste em paralelo.",
       "Execute um flick balístico limpo até o centro do alvo e clique para somar +100 PTS (+0,4s de tempo bônus).",
