@@ -206,7 +206,7 @@ export default function AntiStrafeJitterPage() {
         "@type": "HowToStep",
         "position": 1,
         "name": "Calibrate Game Sensitivity",
-        "text": "Match your in-game sensitivity in Session Settings to mirror your 1:1 hardware coordinate mapping."
+        "text": "Match your in-game sensitivity in Session Settings to mirror your hand-to-cursor mapping."
       },
       {
         "@type": "HowToStep",
@@ -276,7 +276,7 @@ export default function AntiStrafeJitterPage() {
       ]
     },
     steps: [
-      "Select your in-game sensitivity using the Universal Sensitivity Selector to guarantee exact 1:1 hardware muscle memory.",
+      "Select your in-game sensitivity using the Universal Sensitivity Selector to keep your muscle memory consistent.",
       "Click 'Start Drill' to engage fullscreen mode and enable Pointer Lock mouse capture.",
       "Lock visual focus on the jittering target sphere as it executes high-frequency horizontal ADAD strafes.",
       "Maintain continuous crosshair contact, absorbing rapid direction flips with relaxed wrist micro-corrections.",

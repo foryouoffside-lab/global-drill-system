@@ -183,7 +183,7 @@ const faqSchema = {
       name: 'What hardware settings optimize cursor deceleration and dragging precision?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Disable Windows mouse acceleration (Enhance Pointer Precision), use raw input with 800–1600 DPI, utilize a control-oriented cloth mousepad that provides predictable dynamic friction, and maintain a 1000 Hz+ mouse polling rate to eliminate position quantization jitter.',
+        text: 'Disable Windows mouse acceleration (Enhance Pointer Precision), use a consistent 800–1600 DPI, utilize a control-oriented cloth mousepad that provides predictable dynamic friction, and maintain a 1000 Hz+ mouse polling rate to eliminate position quantization jitter.',
       },
     },
     {

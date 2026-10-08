@@ -230,8 +230,8 @@ export default function TargetSwitchingSwarmEsPage() {
       title: "Tablas de Rendimiento: Target Switching y Latencia de Transición",
       headers: ["Nivel Competitivo", "Tiempo de Transición", "Tasa de Eliminación (Blancos/Min)", "Impacto en Partida Real"],
       rows: [
-        ["Tier 1 (Radiant / Faceit Nivel 10 / Pro)", "Menos de 210 ms", "110+ Blancos/min", "Spray transfers perfectos; cero pausa de confirmación; resolución fluida de situaciones 1v3"],
-        ["Tier 2 (Immortal / Faceit 8-9 / Master)", "210 – 260 ms", "92 – 110 Blancos/min", "Excelente fluidez en el encadenamiento; leve temblor en transiciones muy amplias; sólida tasa de bajas"],
+        ["Tier 1 (Etapa Avanzada)", "Menos de 210 ms", "110+ Blancos/min", "Spray transfers perfectos; cero pausa de confirmación; resolución fluida de situaciones 1v3"],
+        ["Tier 2 (Etapa Intermedia-Alta)", "210 – 260 ms", "92 – 110 Blancos/min", "Excelente fluidez en el encadenamiento; leve temblor en transiciones muy amplias; sólida tasa de bajas"],
         ["Tier 3 (Ascendant / Diamante / Avanzado)", "260 – 320 ms", "74 – 92 Blancos/min", "Eficaz en blancos agrupados; sufre cuando el siguiente objetivo está al otro extremo del monitor"],
         ["Tier 4 (Platino / Oro / Intermedio)", "320 – 400 ms", "56 – 74 Blancos/min", "Pausa evidente tras cada baja (100+ ms de retraso); tiende a pasarse del objetivo por frenado tardío"],
         ["Tier 5 (Plata / Bronce / Principiante)", "Más de 400 ms", "Menos de 56 Blancos/min", "Reubica la mano desde cero tras cada tiro; búsqueda visual lenta; tensión excesiva en la muñeca"]

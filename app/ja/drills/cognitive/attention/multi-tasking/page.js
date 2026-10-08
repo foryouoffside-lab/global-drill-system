@@ -164,7 +164,7 @@ const faqSchema = {
       "name": "両視野追従で鍛えられる脳の部位は？",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "後頭葉・頭頂葉の空間視覚経路と、左右の脳梁（Corpus Callosum）を通じた両半球間情報伝達が強化されます。"
+        "text": "後頭葉・頭頂葉の空間視覚経路と、左右の視野を同時に処理する練習になります。"
       }
     },
     {
@@ -262,7 +262,7 @@ const guideProps = {
     note: '段階は SkillDrills が設けた練習用の目安であり、人口統計やパーセンタイルではありません。',
     headers: ['等級 (Tier)', '称号 (Rank)', '評価基準', '到達ランク', '正答率', '練習段階'],
     rows: [
-      { tier: 'Tier 1', rank: 'グランドマスター / マルチタスクエリート', stat: '最上位段階', level: 'マスタリー（極限）', accuracy: '98% 以上', percentile: '最上位段階' },
+      { tier: 'Tier 1', rank: 'マルチタスクの最上位段階', stat: '最上位段階', level: 'マスタリー（極限）', accuracy: '98% 以上', percentile: '最上位段階' },
       { tier: 'Tier 2', rank: 'アドバンス・並行処理スペシャリスト', stat: '上級段階', level: 'ダイヤモンド（優秀）', accuracy: '94–97%', percentile: '上級段階' },
       { tier: 'Tier 3', rank: '熟練オペレーター', stat: '中上級段階', level: 'プラチナ（熟練）', accuracy: '88–93%', percentile: '中上級段階' },
       { tier: 'Tier 4', rank: '一般成人標準', stat: '標準段階', level: 'ゴールド（標準）', accuracy: '78–87%', percentile: '標準段階' },

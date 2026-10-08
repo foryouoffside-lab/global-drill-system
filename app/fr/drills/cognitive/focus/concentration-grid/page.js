@@ -268,7 +268,7 @@ const concentrationGridGuideFr = {
     title: "Barèmes de Performance de la Table de Schulte et Grille de Concentration (45s)",
     headers: ["Niveau de Maîtrise", "Score (45s)", "Grille Maximale", "Latence de Recherche", "Interprétation Neurocognitive"],
     rows: [
-      ["S+ (Élite)", "8.000+ PTS", "7x7+ (49+ cases)", "< 300 ms / chiffre", "Vitesse de balayage de classe mondiale, extension périphérique exceptionnelle et invariance rotationnelle immédiate."],
+      ["S+ (Palier Avancé)", "8.000+ PTS", "7x7+ (49+ cases)", "< 300 ms / chiffre", "Vitesse de balayage très élevée, extension périphérique exceptionnelle et invariance rotationnelle immédiate."],
       ["S (Maître)", "6.000 – 7.999 PTS", "6x6 (36 cases)", "300 – 450 ms / chiffre", "Efficacité d exploration supérieure ; pré-lecture parafovéale fluide et arrêts de fixation minimes."],
       ["A (Avancé)", "4.500 – 5.999 PTS", "5x5 (25 cases)", "450 – 600 ms / chiffre", "Solide traitement du champ visuel ; anticipation séquentielle par paires régulière sur grilles moyennes."],
       ["B (Compétent)", "3.000 – 4.499 PTS", "4x4 (16 cases)", "600 – 800 ms / chiffre", "Discipline de repérage au-dessus de la moyenne ; pauses occasionnelles de recentrage sur grands formats."],

@@ -239,8 +239,8 @@ export default function TargetSwitchingSwarmDePage() {
       title: "Benchmarks für Target Switching & Übergangslatenz",
       headers: ["Leistungsstufe", "Wechsel-Latenz", "Eliminationsrate (Ziele/Min)", "Wettkampf-Implikation (In-Game)"],
       rows: [
-        ["Tier 1 (Radiant / Faceit Level 10 / Profi)", "Unter 210 ms", "110+ Ziele/min", "Perfekte Multi-Target Spray Transfers; 0 ms Kill-Bestätigungs-Zögern; mühelose 1v3 Site-Verteidigungen"],
-        ["Tier 2 (Immortal / Faceit 8-9 / Master)", "210 – 260 ms", "92 – 110 Ziele/min", "Messerscharfe Zielsequenzierung; minimale Bremswobbler bei weiten Diagonal-Switches; zuverlässige Multikills"],
+        ["Stufe 5", "Unter 210 ms", "110+ Ziele/min", "Perfekte Multi-Target Spray Transfers; 0 ms Kill-Bestätigungs-Zögern; mühelose 1v3 Site-Verteidigungen"],
+        ["Stufe 4", "210 – 260 ms", "92 – 110 Ziele/min", "Messerscharfe Zielsequenzierung; minimale Bremswobbler bei weiten Diagonal-Switches; zuverlässige Multikills"],
         ["Tier 3 (Ascendant / Diamond / Fortgeschritten)", "260 – 320 ms", "74 – 92 Ziele/min", "Solide Zielwechsel in engen Clustern; spürbarer Zeitverlust bei Weitwinkel-Transfers über die Bildschirmmitte"],
         ["Tier 4 (Platin / Gold / Erfahren)", "320 – 400 ms", "56 – 74 Ziele/min", "Deutliche Bestätigungspause (über 100 ms Zögern nach Kills); häufiges Überschießen durch mangelnde Bremskraft"],
         ["Tier 5 (Silber / Bronze / Einsteiger)", "Über 400 ms", "Unter 56 Ziele/min", "Stoppt die Maus zwischen Zielen vollständig ab; visuelle Suche startet nach jedem Schuss neu; verkrampfte Hand"]

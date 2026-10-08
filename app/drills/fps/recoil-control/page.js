@@ -122,7 +122,7 @@ export default function RecoilControlPage() {
         "name": "Why is the first 8-10 bullet pull-down the most critical phase of a spray?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "For the first 8-10 rounds of an assault rifle spray (such as the AK-47), recoil climb is predominantly vertical with minimal horizontal deviation. Mastering this initial pull-down guarantees reliable kills within the standard 200-400ms time-to-kill window."
+          "text": "For the first 8-10 rounds of an assault rifle spray (such as the AK-47), recoil climb is predominantly vertical with minimal horizontal deviation. Practising this initial pull-down can help you land more hits within the standard 200-400ms time-to-kill window."
         }
       },
       {
@@ -202,7 +202,7 @@ export default function RecoilControlPage() {
         "@type": "HowToStep",
         "position": 1,
         "name": "Configure Game Sensitivity",
-        "text": "Align your DPI and in-game sensitivity in Session Settings to preserve 1:1 hardware coordinates.",
+        "text": "Align your DPI and in-game sensitivity in Session Settings to keep your hand-to-cursor mapping consistent.",
         "url": "https://skilldrills.online/drills/fps/recoil-control#step-1"
       },
       {
@@ -234,7 +234,7 @@ export default function RecoilControlPage() {
     intro: [
       "A recoil control trainer is a practice tool for learning to pull your mouse against a weapon's spray pattern. In this drill you hold fire at moving targets, pull down against the vertical climb and steer against horizontal sway, then review magazine accuracy and headshots. It suits CS2, Valorant and Apex Legends spray practice.",
       "Recoil Control Trainer is an empirical sensorimotor drill engineered to build the muscle memory required to counteract programmatic weapon spray patterns, vertical climb velocity, and horizontal sway in first-person shooters. In tactical and battle royale shooters such as Counter-Strike 2, VALORANT, Apex Legends, and PUBG, combat frequently extends beyond single-tap headshots. When targets execute erratic evasive maneuvers, sustained automatic fire with tight bullet grouping decides the gunfight.",
-      "The motor learning framework governing rapid recoil compensation is defined by Richard A. Schmidt and Timothy D. Lee's Generalized Motor Program (GMP) theory (Schmidt & Lee, 2011). Because 10-round bursts occur in under 700 milliseconds—faster than human closed-loop visual feedback can process individual bullet impacts—elite players execute a pre-structured open-loop motor program containing invariant relative timing and force parameters.",
+      "The motor learning framework governing rapid recoil compensation is defined by Richard A. Schmidt and Timothy D. Lee's Generalized Motor Program (GMP) theory (Schmidt & Lee, 2011). Because 10-round bursts occur in under 700 milliseconds—faster than human closed-loop visual feedback can process individual bullet impacts—experienced players are thought to execute a pre-structured open-loop motor program containing invariant relative timing and force parameters.",
       "This motor process aligns with Robert S. Woodworth's classic two-component model of aiming (Woodworth, 1899) and David E. Meyer's optimized submovement model (Meyer et al., 1988): an initial ballistic open-loop pull-down of the mouse followed by fine corrective submovements to compensate for horizontal sway and dynamic target strafes.",
       "Motor precision adheres to Fitts's Law (Fitts, 1954) and Schmidt's impulse variability model (Schmidt et al., 1979): as the velocity and force of downward mouse pulling increase, muscular output variability expands. By training with high-resolution digital chronometry using performance.now() (Woods et al., 2015), this drill isolates the steady pull-down velocity necessary to minimize grouping spread.",
       "How this is measured: every event is timestamped with the browser's performance.now() high-resolution clock, entirely on your device -- no score is uploaded. Two things this cannot control: browser timers are deliberately coarsened as a Spectre mitigation (typically to about 1 ms), and your display quantizes the stimulus to its refresh interval -- about 16.7 ms per frame at 60 Hz, 6.9 ms at 144 Hz and 4.1 ms at 240 Hz (Woods et al., 2015). Mouse polling adds roughly 8 ms at 125 Hz versus 1 ms at 1000 Hz. So treat differences smaller than about 5 ms as measurement noise, and compare your own runs on the same hardware rather than against someone else's setup."
@@ -277,7 +277,7 @@ export default function RecoilControlPage() {
       ]
     },
     steps: [
-      "Configure your exact game, DPI, and in-game sensitivity in Session Settings to preserve 1:1 hardware coordinates, then engage Pointer Lock.",
+      "Configure your exact game, DPI, and in-game sensitivity in Session Settings to keep your hand-to-cursor mapping consistent, then engage Pointer Lock.",
       "Press and hold the left mouse button to initiate automatic fire against the evasive tactical target.",
       "Execute a smooth downward mouse pull to counteract initial vertical rise, keeping bullets centered in the high-value head and chest zones.",
       "Counter-steer horizontally as the spray pattern develops, maintaining continuous connection through the entire 30-round magazine.",

@@ -231,8 +231,8 @@ export default function VerticalAirTrackEsPage() {
       title: "Tablas de Rendimiento: Rastreo Vertical y Tiempo de Contacto Aéreo",
       headers: ["Nivel Competitivo", "Tiempo de Contacto Útil", "Latencia de Inversión", "Impacto en Partida Real"],
       rows: [
-        ["Tier 1 (Predator / Gran Maestro / Pro)", "> 82% Uptime", "Menos de 180 ms", "Rastreo milimétrico en tirolinas y planeos; transición suave en la cúspide del arco"],
-        ["Tier 2 (Maestro Competitivo / Tier 2)", "70% – 82% Uptime", "180 – 230 ms", "Seguimiento estable; leves correcciones retardadas cuando el rival invierte la dirección"],
+        ["Tier 1 (Etapa Avanzada)", "> 82% Uptime", "Menos de 180 ms", "Rastreo milimétrico en tirolinas y planeos; transición suave en la cúspide del arco"],
+        ["Tier 2 (Etapa Intermedia-Alta)", "70% – 82% Uptime", "180 – 230 ms", "Seguimiento estable; leves correcciones retardadas cuando el rival invierte la dirección"],
         ["Tier 3 (Diamante / Avanzado)", "58% – 70% Uptime", "230 – 290 ms", "Sólido en la subida; pierde el contacto con frecuencia en la aceleración de descenso"],
         ["Tier 4 (Platino / Oro / Intermedio)", "45% – 58% Uptime", "290 – 360 ms", "Usa micro-flicks espasmódicos en lugar de un desplazamiento uniforme en el eje Y"],
         ["Tier 5 (Plata / Bronce / Principiante)", "< 45% Uptime", "Más de 360 ms", "Bloqueo de muñeca; la mira se queda sistemáticamente por detrás de las caídas"]

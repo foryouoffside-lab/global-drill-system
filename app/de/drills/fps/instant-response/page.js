@@ -178,7 +178,7 @@ export default function InstantResponseDePage() {
         "name": "Warum nutzt dieser Trainer die Pointer-Lock-API?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Die HTML5-Pointer-Lock-API umgeht die Windows-Zeigerbeschleunigung und Verarbeitungsengpässe des Desktop-Window-Managers, um direkte Hardware-Rohdaten ohne Verzerrung bereitzustellen."
+          "text": "Die HTML5-Pointer-Lock-API erfasst die Mausbewegung, fordert aber keine unbeschleunigte Eingabe an; schalte die Zeigerbeschleunigung des Betriebssystems aus, damit dieselbe Handbewegung immer dieselbe Strecke ergibt."
         }
       }
     ]
@@ -230,8 +230,8 @@ export default function InstantResponseDePage() {
       title: "FPS-Reaktionszeit & Klick-Latenz-Benchmarks (Millisekunden)",
       headers: ["Leistungsstufe (Tier)", "Reaktionszeit (ms)", "Neurologische Klassifikation", "Wettkampf-Einfluss im Spiel"],
       rows: [
-        ["Tier 1 (Profi / Tier 1 Esport)", "< 160 ms", "Genetisch & trainingstechnisch maximale neuronale Leitgeschwindigkeit", "Gewinnt praktisch jedes direkte Halte- und Peek-Duell auf der Kopflinie."],
-        ["Tier 2 (Elite / Faceit Lv10 & Radiant)", "160 – 190 ms", "Außergewöhnlich schnelle Reizverarbeitung und efferente Entladung", "Dominante Reflexe; kontert Crosshair-Placement-Fehler blitzschnell."],
+        ["Stufe 5: Sehr schnelle Reaktion", "< 160 ms", "Sehr kurze Reiz-Reaktions-Zeit unter vorbereiteten Bedingungen", "Fokus: Vorbereitung und Reizerwartung halten, ohne zu früh zu klicken."],
+        ["Stufe 4: Schnelle Reaktion", "160 – 190 ms", "Schnelle Reizverarbeitung und Motorantwort", "Fokus: Crosshair-Placement sauber halten, um Korrekturen zu sparen."],
         ["Tier 3 (Erfahren / Diamant & Ascendant)", "190 – 225 ms", "Überdurchschnittliche Reaktionsfähigkeit ambitionierter Gamer", "Solide Klickgeschwindigkeit; verliert nur gegen Spitzenreaktionen."],
         ["Tier 4 (Fortgeschritten / Gold & Platin)", "225 – 265 ms", "Durchschnittliche visuelle Reaktionszeit gesunder Erwachsener", "Gute Reaktionszeit; erfordert exzellentes Crosshair Placement als Ausgleich."],
         ["Tier 5 (Einsteiger / Silber & Casual)", "> 265 ms", "Verzögerte Reiz-Reaktions-Kopplung oder Hardware-Latenzen", "Häufiges Unterliegen in Reaktionsduellen; Schüsse fallen spürbar zu spät."]
@@ -264,7 +264,7 @@ export default function InstantResponseDePage() {
       ]
     },
     steps: [
-      "Stelle sicher, dass Hintergrundprogramme geschlossen sind, um maximale FPS und minimale Systemlatenz zu garantieren.",
+      "Stelle sicher, dass Hintergrundprogramme geschlossen sind, um FPS zu erhöhen und die Systemlatenz zu senken.",
       "Klicke auf Training starten, um den Vollbildmodus und die Pointer-Lock-API zu aktivieren.",
       "Fokussiere das zentrale Fadenkreuz, während dein Zeigefinger spielfrei auf der Maustaste aufliegt.",
       "Klicke blitzartig im exakten Moment des grünen Farbumschlags und widerstehe verfrühten Täuschungsreizen.",

@@ -230,7 +230,7 @@ const guideProps = {
     title: "Referencias para predecir trayectorias y seguir objetivos ocultos",
     headers: ["Nivel", "Precisión de la predicción (%)", "Desvío al reaparecer", "Coincidencia del seguimiento", "Perfil de anticipación"],
     rows: [
-      ["Élite (Esports / Deportistas)", "Más de 94%", "Menos de 15 px (Aterrizaje Exacto)", "0.95 – 1.02", "Modelo cerebelar impecable; anticipación milimétrica sin sacadas correctoras posteriores."],
+      ["Etapa Avanzada", "Más de 94%", "Menos de 15 px (Aterrizaje Exacto)", "0.95 – 1.02", "Modelo cerebelar impecable; anticipación milimétrica sin sacadas correctoras posteriores."],
       ["Avanzado (Nivel Competitivo)", "86% – 93%", "15 px – 28 px", "0.88 – 0.94", "Excelente extrapolación de vector con mínimo ajuste tras la reaparición."],
       ["Competente (Adulto Sano)", "76% – 85%", "29 px – 45 px", "0.78 – 0.87", "Predicción sólida con leve desviación en oclusiones prolongadas."],
       ["En Desarrollo", "62% – 75%", "46 px – 65 px", "0.65 – 0.77", "Predominio de control reactivo; desaceleración evidente durante el lapso de oclusión."],

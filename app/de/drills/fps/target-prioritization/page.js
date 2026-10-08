@@ -200,7 +200,7 @@ export default function TargetPrioritizationDePage() {
         "@type": "HowToStep",
         "position": 1,
         "name": "Mausempfindlichkeit kalibrieren",
-        "text": "Passe DPI und In-Game-Sensitivität in den Session-Einstellungen exakt an dein Hauptspiel an, um 1:1-Muskelgedächtnis zu bewahren.",
+        "text": "Passe DPI und In-Game-Sensitivität in den Session-Einstellungen exakt an dein Hauptspiel an, um dein Muskelgedächtnis konsistent zu halten.",
         "url": "https://skilldrills.online/de/drills/fps/target-prioritization#step-1"
       },
       {
@@ -240,7 +240,7 @@ export default function TargetPrioritizationDePage() {
       title: "Benchmarks für Bedrohungseinschätzung & Reaktionshemmung",
       headers: ["Leistungsstufe", "Entscheidungslatenz", "Prioritäts-Genauigkeit", "Wettkampf-Implikation (In-Game)"],
       rows: [
-        ["Tier 1 (Profi / Radiant / Global Elite)", "Unter 280 ms", "96% – 99%+", "Fehlerfreie Bedrohungsauswahl; sofortige Ausschaltung roter Gefahren ohne Friendly Fire bei Mehrfach-Pushes"],
+        ["Stufe 5", "Unter 280 ms", "96% – 99%+", "Fehlerfreie Bedrohungsauswahl; sofortige Ausschaltung roter Gefahren ohne Friendly Fire bei Mehrfach-Pushes"],
         ["Tier 2 (Master / Tier-2 Esports)", "280 – 340 ms", "90% – 96%", "Außergewöhnliche Entscheidungsgeschwindigkeit; blitzschnelle Korrektur nach Zieleskalation; unter 1% Fehlschussquote auf Verbündete"],
         ["Tier 3 (Diamond / Ascendant)", "340 – 420 ms", "82% – 90%", "Zuverlässige Priorisierung; 60–90 ms Zögern, wenn rote und gelbe Bedrohungen in engem Sichtfeld erscheinen"],
         ["Tier 4 (Gold / Platin)", "420 – 520 ms", "72% – 82%", "Anfällig für reflexartiges Panikfeuer; feuert gelegentlich auf grüne Einheiten oder voreilig auf gelbe Ziele"],
@@ -274,7 +274,7 @@ export default function TargetPrioritizationDePage() {
       ]
     },
     steps: [
-      "Passe In-Game-Sensitivität und DPI in den Session-Einstellungen für 1:1-Mauskoordinaten an und aktiviere die Mauszeigersperre.",
+      "Passe In-Game-Sensitivität und DPI in den Session-Einstellungen für eine konsistente Hand-zu-Cursor-Zuordnung an und aktiviere die Mauszeigersperre.",
       "Überwache das Zielfeld kontinuierlich auf das Auftauchen roter Hochrisiko-Bedrohungen.",
       "Schalte vorrangig aktive rote Ziele aus (+100 Punkte, +0,4s Bonuszeit auf die Runden-Uhr).",
       "Neutralisiere gelbe Sekundärziele, bevor deren Timer abläuft und sie zu roten Bedrohungen eskalieren.",

@@ -191,7 +191,7 @@ const faqSchema = {
       "name": "競技FPSにおけるトラッキングエイム向上に役立ちますか？",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "はい、Apex LegendsやOverwatchなど、高速移動する敵に照準を合わせ続ける「追いエイム（Tracking Aim）」の基礎体力作りに直結します。"
+        "text": "はい、Apex LegendsやOverwatchなど、高速移動する敵に照準を合わせ続ける「追いエイム（Tracking Aim）」の基礎体力作りに役立つ可能性があります。"
       }
     },
     {
@@ -267,7 +267,7 @@ const guideProps = {
     note: '段階は SkillDrills が設けた練習用の目安であり、人口統計やパーセンタイルではありません。',
     headers: ['等級 (Tier)', '称号 (Rank)', '評価基準', '到達ランク', '正答率', '練習段階'],
     rows: [
-      { tier: 'Tier 1', rank: 'グランドマスター / 超精密軌跡オペレーター', stat: '最上位段階', level: 'エリート（極限）', accuracy: '98% 以上', percentile: '最上位段階' },
+      { tier: 'Tier 1', rank: '超精密軌跡オペレーター', stat: '最上位段階', level: '最上位（極限）', accuracy: '98% 以上', percentile: '最上位段階' },
       { tier: 'Tier 2', rank: 'マスター / 精密追従スペシャリスト', stat: '上級段階', level: 'ダイヤモンド（優秀）', accuracy: '94–97%', percentile: '上級段階' },
       { tier: 'Tier 3', rank: 'プロ / 熟練トラッカー', stat: '中上級段階', level: 'プラチナ（熟練）', accuracy: '88–93%', percentile: '中上級段階' },
       { tier: 'Tier 4', rank: '一般 / 中級オペレーター', stat: '標準段階', level: 'ゴールド（標準）', accuracy: '78–87%', percentile: '標準段階' },
@@ -312,7 +312,7 @@ const jaCopy = {
     { num: "1", text: "軌跡追従", highlight: "エメラルド波形", result: "経路維持で1フレームあたり+1pt" },
     { num: "2", text: "速度上昇", highlight: "漸進的加速", result: "45秒で2.2 → 3.8 px/fに加速" },
     { num: "3", text: "フローボーナス", highlight: "スーパーフロー", result: "4秒連続維持で+5ptボーナス" },
-    { num: "4", text: "精密制御", highlight: "デスクトップ専用", result: "1:1 生マウス入力対応" }
+    { num: "4", text: "精密制御", highlight: "デスクトップ専用", result: "マウス入力対応" }
   ],
 };
 

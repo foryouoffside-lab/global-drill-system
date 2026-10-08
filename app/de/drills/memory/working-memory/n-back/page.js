@@ -261,7 +261,7 @@ const guideDe = {
     "Dieser Test ist ein kostenloses Browserspiel zu Übungs- und Trainingszwecken. Er ist kein Medizinprodukt und stellt kein diagnostisches Instrument dar."
   ],
   metrics: [
-    { label: "Spitzen-N-Back-Level", desc: "Höchste erreichte Stufe (3-Back Basis, 4-Back Fortgeschritten, 5-Back+ Elite)." },
+    { label: "Spitzen-N-Back-Level", desc: "Höchste erreichte Stufe (3-Back Basis, 4-Back Fortgeschritten, 5-Back+ höchste Übungsstufe)." },
     { label: "Gesamtpunktzahl", desc: "In 45 Sekunden erzielte Punkte (+150 Punkte pro korrekte Entscheidung)." },
     { label: "Urteilsgenauigkeit", desc: "Prozentsatz korrekter Treffer- und Nicht-Treffer-Entscheidungen." },
     { label: "Aktualisierungsrate", desc: "Entscheidungsgeschwindigkeit und Reaktionslatenz während der Reizfenster." }

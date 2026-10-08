@@ -196,7 +196,7 @@ const faqSchema = {
       "name": "¿Por qué es crucial no mover la cabeza durante la prueba?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "El movimiento cefálico activa el reflejo vestíbulo-ocular (RVO), compensando el desajuste con el oído interno. Mantener la cabeza fija garantiza que los músculos extraoculares asuman toda la carga de estabilización."
+        "text": "El movimiento cefálico activa el reflejo vestíbulo-ocular (RVO), compensando el desajuste con el oído interno. Mantener la cabeza fija hace que los músculos extraoculares asuman más carga de estabilización."
       }
     },
     {
@@ -261,7 +261,7 @@ const guideProps = {
     title: "Estándares de Rendimiento en Fijación Foveal y Supresión de Estelas Visuales",
     headers: ["Nivel de Rendimiento", "Multiplicador de Velocidad", "Estabilidad de Fijación ante Estelas Visuales", "Perfil Neuromotor y Oculomotor"],
     rows: [
-      ["Nivel 1: Apex Fijación – Bloqueo Foveal Puro", "2.0x+ Ultra-Velocidad", "La mirada permanece firmemente anclada en el núcleo del blanco a pesar de los densos anillos de estela y rebotes bruscos.", "Supresión cortical perfecta del desenfoque de movimiento y precisión absoluta en microsacadas (Burr, 1980; Martinez-Conde et al., 2004). Nivel de élite para deportes y esports."],
+      ["Nivel 1: Apex Fijación – Bloqueo Foveal Puro", "2.0x+ Ultra-Velocidad", "La mirada permanece firmemente anclada en el núcleo del blanco a pesar de los densos anillos de estela y rebotes bruscos.", "Supresión cortical perfecta del desenfoque de movimiento y precisión absoluta en microsacadas (Burr, 1980; Martinez-Conde et al., 2004)."],
       ["Nivel 2: Agudeza de Fijación Superior", "1.4x – 1.9x Alta Velocidad", "El contorno del blanco se percibe nítido a gran velocidad; mínima distracción ocasionada por los anillos de arrastre.", "Excelente filtrado sensoriomotor de los músculos extraoculares. Gran eficacia en situaciones colmadas de efectos visuales y partículas."],
       ["Nivel 3: Estándar Funcional Sólido", "1.0x – 1.3x Velocidad Estándar", "Seguimiento regular a velocidad habitual; breve titubeo durante rebotes rápidos o cuando los anillos se vuelven muy densos.", "Rango habitual en adultos sanos. Suficiente para la conducción vehicular, deportes recreativos y videojuegos convencionales."],
       ["Nivel 4: Deriva Visual – Requiere Práctica", "0.7x – 0.9x Velocidad Moderada", "La mirada se desvía periódicamente hacia las estelas posteriores; el núcleo del objetivo abandona frecuentemente la fóvea.", "Filtrado cortical pausado frente al ruido visual. Se aconseja consolidar la fijación en las velocidades más bajas."],

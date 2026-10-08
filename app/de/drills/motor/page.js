@@ -129,7 +129,7 @@ const faqSchema = {
       "name": "Welchen Einfluss haben DPI, In-Game-Sensitivität und eDPI auf das Muskelgedächtnis?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Die effektive Sensitivität (eDPI = DPI * Sensor-Multiplikator) entscheidet, ob primär die Feinmotorik aus den Fingern und dem Handgelenk oder die Grobmotorik aus Unterarm und Schulter beansprucht wird. High-Sensitivität ermöglicht schnelle Drehungen bei höherem Tremor-Risiko, während Low-Sensitivität gleichmäßigere Flugbahnen garantiert. Ein konsistenter eDPI-Wert ist essenziell, damit das Kleinhirn verlässliche interne Bewegungsmuster verankern kann."
+        "text": "Die effektive Sensitivität (eDPI = DPI * Sensor-Multiplikator) entscheidet, ob primär die Feinmotorik aus den Fingern und dem Handgelenk oder die Grobmotorik aus Unterarm und Schulter beansprucht wird. High-Sensitivität ermöglicht schnelle Drehungen bei höherem Tremor-Risiko, während Low-Sensitivität gleichmäßigere Flugbahnen begünstigt. Ein konsistenter eDPI-Wert ist essenziell, damit das Kleinhirn verlässliche interne Bewegungsmuster verankern kann."
       }
     },
     {

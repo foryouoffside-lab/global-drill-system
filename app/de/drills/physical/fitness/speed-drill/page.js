@@ -212,7 +212,7 @@ const faqSchema = {
       "name": "Warum ist der Zeitbonus von +0,6 Sekunden pro Treffer ein entscheidendes Spielelement?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Die Trainingsrunde startet mit einem Basistimer von 45 Sekunden. Jeder erfolgreiche Treffer fügt dem Zeitkonto 0,6 Sekunden hinzu. Gelingt es dem Spieler, Treffer ohne Unterbrechung aneinanderzureihen, kann er die Runde auf über 60 bis 90 Sekunden ausdehnen, maximale Multiplikatoren (bis zu 3,0x) aufbauen und Elite-Punktzahlen jenseits von 24.000 Punkten erreichen."
+        "text": "Die Trainingsrunde startet mit einem Basistimer von 45 Sekunden. Jeder erfolgreiche Treffer fügt dem Zeitkonto 0,6 Sekunden hinzu. Gelingt es dem Spieler, Treffer ohne Unterbrechung aneinanderzureihen, kann er die Runde auf über 60 bis 90 Sekunden ausdehnen, maximale Multiplikatoren (bis zu 3,0x) aufbauen und Punktzahlen jenseits von 24.000 Punkten erreichen."
       }
     },
     {
@@ -281,7 +281,7 @@ const howToSchema = {
       "@type": "HowToStep",
       "position": 4,
       "name": "Nutzung des Zeitbonus & Combo-Maximierung (Bonus Time & Streak Heat)",
-      "text": "Nutzen Sie den Zeitgewinn von +0,6s pro Treffer, um die Serie bis auf den 3,0x-Multiplikator auszubauen und das 24.000-Punkte-Elite-Ziel zu erreichen.",
+      "text": "Nutzen Sie den Zeitgewinn von +0,6s pro Treffer, um die Serie bis auf den 3,0x-Multiplikator auszubauen und das 24.000-Punkte-Ziel zu erreichen.",
       "url": "https://skilldrills.online/de/drills/physical/fitness/speed-drill#step-4"
     }
   ]

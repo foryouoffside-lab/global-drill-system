@@ -156,7 +156,7 @@ const faqSchema = {
       "name": "Was ist ein guter Durchschnittswert?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Der Durchschnitt liegt bei 280–350 ms. Profispieler und Spitzenathleten erreichen Werte von 180–230 ms (Der & Deary, 2006)."
+        "text": "Der Durchschnitt liegt bei 280–350 ms. Geübte Personen erreichen je nach Aufgabe und Setup oft niedrigere Werte (Der & Deary, 2006)."
       }
     },
     {

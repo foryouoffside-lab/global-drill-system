@@ -165,7 +165,7 @@ const faqSchema = {
       "name": "Quais são as médias humanas típicas no teste CRT?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "A média na população adulta varia entre 280ms e 350ms. Jogadores competitivos de esports e atletas profissionais alcançam valores entre 180ms e 230ms (Der & Deary, 2006)."
+        "text": "A média na população adulta varia entre 280ms e 350ms. Valores entre 180ms e 230ms são pouco comuns e dependem do dispositivo (Der & Deary, 2006)."
       }
     },
     {

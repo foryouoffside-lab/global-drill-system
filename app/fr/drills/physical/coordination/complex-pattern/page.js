@@ -181,7 +181,7 @@ const faqSchema = {
     },
     {
       "@type": "Question",
-      "name": "Quel score faut-il atteindre pour décrocher le rang d'élite (Tier 1 : Master) ?",
+      "name": "Quel score faut-il atteindre pour le Tier 1 (Master) ?",
       "acceptedAnswer": {
         "@type": "Answer",
         "text": "Le palier Tier 1 : Apex Pattern Master (Note S+) requiert 17 000 points ou plus, en validant les Niveaux 12 à 15 avec une précision moyenne supérieure à 85 % sur des tracés à 7 ou 8 sommets. La moyenne générale des joueurs (Tier 4) se situe entre 6 000 et 9 499 points."

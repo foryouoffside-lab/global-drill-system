@@ -147,7 +147,7 @@ const faqSchema = {
       "name": "Was versteht man unter der Schwerpunkt-Strategie (Centroid Strategy)?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Elite-Tracker fixieren ihren Blick nicht auf eine einzelne Kugel, sondern richten ihren Fokus weich auf den geometrischen Schwerpunkt (Centroid) des von allen Zielen aufgespannten Polygons. Indem die Augen im Zentrum verweilen, registriert das periphere Sehen die Formveränderungen des Gesamtsystems als Gestalt. Dadurch entfallen unruhige Sakkaden, und Verwechslungen bei Überlagerungen werden drastisch minimiert."
+        "text": "Geübte Tracker fixieren oft ihren Blick nicht auf eine einzelne Kugel, sondern richten ihren Fokus weich auf den geometrischen Schwerpunkt (Centroid) des von allen Zielen aufgespannten Polygons. Indem die Augen im Zentrum verweilen, registriert das periphere Sehen die Formveränderungen des Gesamtsystems als Gestalt. Dadurch entfallen unruhige Sakkaden, und Verwechslungen bei Überlagerungen werden drastisch minimiert."
       }
     },
     {
@@ -251,7 +251,7 @@ const guideData = {
     title: "Orientierungswerte für Mehrfach-Objektverfolgung",
     headers: ["Leistungsstufe / Rang", "Simultan verfolgte Zielobjekte", "Maximales Bewegungstempo", "Trefferquote / Präzision", "Neurokognitive Leistungsstufe"],
     rows: [
-      ["Stufe 1: Weltklasse / Pro-Level", "5 – 6 Ziele", "Schnell (> 400 px/s)", "≥ 92%", "Geometrische Schwerpunkt-Fixierung und vollständige hemisphärische Parallelverarbeitung (Cavanagh & Alvarez, 2005)"],
+      ["Stufe 1: Höchste Übungsstufe", "5 – 6 Ziele", "Schnell (> 400 px/s)", "≥ 92%", "Geometrische Schwerpunkt-Fixierung und vollständige hemisphärische Parallelverarbeitung (Cavanagh & Alvarez, 2005)"],
       ["Stufe 2: Fortgeschritten / Athlet", "4 – 5 Ziele", "Mittel-Schnell (300 – 400 px/s)", "82 – 91%", "Stabiles peripheres Tracking und verlässliche Trägheitsprädiktion bei dichten Kreuzungen"],
       ["Stufe 3: Solider Standard", "3 – 4 Ziele", "Moderates Tempo (200 – 300 px/s)", "72 – 81%", "Typische Kapazitätsgrenze gesunder Erwachsener bei gleichmäßigen Trajektorien"],
       ["Stufe 4: Basis-Niveau", "2 – 3 Ziele", "Niedrig-Moderat (150 – 200 px/s)", "60 – 71%", "Informationsverlust durch serielle Sakkaden (zu starke Fixierung auf Einzelobjekte)"],

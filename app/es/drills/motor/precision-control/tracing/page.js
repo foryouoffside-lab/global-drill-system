@@ -323,7 +323,7 @@ const esCopy = {
     { num: "1", text: "Trazar Trayectoria", highlight: "Onda Esmeralda", result: "+1 PT / frame dentro de ruta" },
     { num: "2", text: "Velocidad Progresiva", highlight: "Onda Dinámica", result: "2.2 → 3.8 px/f en 45s" },
     { num: "3", text: "Integridad de Flujo", highlight: "Súper Flujo", result: "4s seguidos otorgan +5 Bonus" },
-    { num: "4", text: "Control Estricto", highlight: "Exclusivo de Escritorio", result: "Entrada de ratón 1:1" }
+    { num: "4", text: "Control Estricto", highlight: "Exclusivo de Escritorio", result: "Ratón en escritorio" }
   ],
 };
 

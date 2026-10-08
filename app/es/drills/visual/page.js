@@ -138,7 +138,7 @@ const faqSchema = {
       "name": "¿Cuál es la frecuencia y duración óptima para los ejercicios de entrenamiento visual?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Se recomienda realizar sesiones de 15 a 20 minutos de alta concentración, entre 3 y 5 veces por semana. Los músculos ciliares y extraoculares sufren fatiga rápida si se sobrepasan los 25 minutos continuos, lo que reduce la plasticidad neural. Las sesiones cortas y regulares garantizan adaptaciones óptimas sin fatiga ocular."
+        "text": "Se recomienda realizar sesiones de 15 a 20 minutos de alta concentración, entre 3 y 5 veces por semana. Los músculos ciliares y extraoculares sufren fatiga rápida si se sobrepasan los 25 minutos continuos, lo que reduce la plasticidad neural. Las sesiones cortas y regulares ayudan a limitar la fatiga ocular."
       }
     },
     {

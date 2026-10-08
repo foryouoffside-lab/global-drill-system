@@ -122,7 +122,7 @@ export default function FlickShotPtPage() {
         "name": "Como melhorar o flick shot no Valorant e CS2?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Melhore o flick shot praticando aceleração balística controlada combinada com frenagem muscular contra o mousepad, mantendo sensibilidade bruta sem aceleração de hardware e dedicando 15 a 20 minutos diários a treinos isolados."
+          "text": "Melhore o flick shot praticando aceleração balística controlada combinada com frenagem muscular contra o mousepad, mantendo uma sensibilidade constante e dedicando 15 a 20 minutos diários a treinos isolados."
         }
       },
       {
@@ -241,7 +241,7 @@ export default function FlickShotPtPage() {
         ["Movimento Balístico Primário (Impulso)", "120 – 180 ms", "Explosão muscular agonista-antagonista", "Voo balístico em malha aberta cobrindo 80–90% da distância (Elliott et al. 2010)"],
         ["Microcorreção Secundária (Homing)", "60 – 120 ms", "Feedback visual sensorial e frenagem de atrito", "Fase terminal de malha fechada resolvendo o índice de dificuldade (Fitts 1954)"],
         ["Tempo Total de Aquisição (Bruto)", "360 – 520 ms", "Ciclo sensoriomotor completo + acionamento do clique", "Linha de base competitiva padrão entre jogadores casuais e proficientes"],
-        ["Aquisição Subconsciente de Elite", "240 – 320 ms", "Sinergia motora automatizada com microajustes mínimos", "Domínio de alto nível em FPS tático com parada precisa no alvo"]
+        ["Aquisição Subconsciente Avançada", "240 – 320 ms", "Sinergia motora automatizada com microajustes mínimos", "Prática de parada precisa no alvo com microajustes mínimos"]
       ],
       note: "Métricas sintetizadas a partir da literatura psicomotora de mira (Fitts 1954; Schmidt et al. 1979; Elliott et al. 2010) e benchmarks de cronometria digital (Woods et al. 2015). O desempenho varia com a taxa de atualização do monitor, polling rate do mouse e amplitude angular do alvo."
     },

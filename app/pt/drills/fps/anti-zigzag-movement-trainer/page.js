@@ -67,7 +67,7 @@ export default function AntiZigzagPtPage() {
       "price": "0",
       "priceCurrency": "USD"
     },
-    "description": "Treinador online de tracking contra zigue-zague e slide cancels com entrada bruta de mouse e sem aceleração."
+    "description": "Treinador online de tracking contra zigue-zague e slide cancels com Pointer Lock."
   };
 
   const softwareSchema = {
@@ -201,7 +201,7 @@ export default function AntiZigzagPtPage() {
         "@type": "HowToStep",
         "position": 1,
         "name": "Calibrar a Sensibilidade",
-        "text": "Ajuste a sensibilidade do jogo nas opções da sessão para manter transferência 1:1 de memória muscular com entrada bruta de hardware.",
+        "text": "Ajuste a sensibilidade do jogo nas opções da sessão para treinar com uma sensibilidade familiar.",
         "url": "https://skilldrills.online/pt/drills/fps/anti-zigzag-movement-trainer#step-1"
       },
       {
@@ -233,7 +233,7 @@ export default function AntiZigzagPtPage() {
     intro: [
       "O treino de mira para tracking em zigue-zague pratica manter a mira no alvo durante mudanças diagonais, slide cancels e movimentos evasivos. Este drill mede inversões de direção, controle de overshoot e tempo de contato em duelos de Apex, Warzone e Overwatch 2.",
       "O erro mecânico primordial de quem tenta rastrear alvos evasivos é o overshoot atrás do ápice externo da curva. Quando um oponente executa um zigue-zague em V, sua velocidade horizontal cai momentaneamente para zero no ponto de virada antes de acelerar de volta pelo centro. Tentar perseguir freneticamente esse ponto extremo faz com que o retículo passe direto e os músculos antagonistas travem. Miradores de elite utilizam a ancoragem no eixo central (V-Crossover): eles mantêm o foco visual no corredor central e aplicam microajustes suaves acompanhando a velocidade enquanto o alvo cruza de volta.",
-      "O Anti-Zigzag Aim Trainer roda diretamente no navegador moderno via HTML5 Pointer Lock API com mapeamento 1:1 de coordenadas de hardware, cronometria de alta resolução via performance.now() e zero suavização de cursor. Ao mitigar oscilações de taxa de amostragem USB (Woods et al., 2015) e testar a mecânica de dano por tempo de contato contínuo sob frequências crescentes de zigue-zague, este exercício desenvolve a supressão sensório-motora indispensável para extinguir correções de pânico e vencer duelos evasivos.",
+      "O Anti-Zigzag Aim Trainer roda diretamente no navegador moderno via HTML5 Pointer Lock API e cronometria via performance.now(). Ao testar a mecânica de dano por tempo de contato contínuo sob frequências crescentes de zigue-zague, este exercício pratica a supressão sensório-motora para reduzir correções de pânico (Woods et al., 2015).",
       "Metodologia de medição: todos os eventos de rastreamento são registrados localmente pelo relógio de alta precisão performance.now() do navegador. Variáveis do ecossistema: navegadores reduzem temporizadores a cerca de 1 ms por segurança contra Spectre; monitores quantizam estímulos conforme a taxa de atualização (16,7 ms a 60 Hz, 6,9 ms a 144 Hz e 4,1 ms a 240 Hz). O polling do mouse adiciona cerca de 1 ms a 1000 Hz. Variações inferiores a 5 ms constituem ruído instrumental; compare seus resultados em condições estáveis de hardware."
     ],
     benchmarks: {
@@ -244,7 +244,7 @@ export default function AntiZigzagPtPage() {
         ["Desaceleração Antagonista & Frenagem", "85 – 135 ms", "Disparo corticoespinal para flexores do antebraço e músculos tenares; corte de inércia", "Tempo físico necessário para deter o movimento do mouse e inverter o vetor"],
         ["Realinhamento Foveal & Centralização", "65 – 105 ms", "Microssacada corretiva de captura e articulação fina do punho para retomar contato", "Retomada do contato estável sobre a hitbox para reativar o dano contínuo"],
         ["Janela Total de Reaquisição Desprevenida", "310 – 450 ms", "Intervalo total entre a virada inesperada do zigue-zague e o travamento do retículo", "Queda natural de DPS onde disparos são perdidos contra alvos com boa movimentação"],
-        ["Tracking Evasivo de Nível Elite", "215 – 295 ms", "Amortecimento antecipado de velocidade e relaxamento muscular no V-crossover", "Padrão consistente alcançado por pro players de Apex Legends e Warzone"]
+        ["Tracking Evasivo Avançado", "215 – 295 ms", "Amortecimento antecipado de velocidade e relaxamento muscular no V-crossover", "Foque em um padrão consistente, com amortecimento antecipado"]
       ],
       note: "Métricas sintetizadas a partir de estudos oculomotores (Rashbass, 1961; Krauzlis, 2004), modelos de direção contínua (Accot & Zhai, 1997; Fitts, 1954) e testes de cronometria digital (Woods et al., 2015)."
     },
@@ -275,7 +275,7 @@ export default function AntiZigzagPtPage() {
     },
     steps: [
       "Selecione a sensibilidade do seu jogo principal no seletor para garantir transferência precisa de memória muscular.",
-      "Clique em Iniciar Treino para entrar em tela cheia e ativar o Pointer Lock sem aceleração de mouse.",
+      "Clique em Iniciar Treino para entrar em tela cheia e ativar o Pointer Lock.",
       "Fixe a atenção visual no alvo esférico enquanto ele executa movimentos diagonais rápidos em zigue-zague.",
       "Mantenha o retículo continuamente colado na esfera, priorizando a ancoragem no eixo central V-Crossover.",
       "Destrua alvos antes do término de sua vida útil para subir multiplicadores de combo e avançar de nível."

@@ -137,7 +137,7 @@ const faqSchema = {
       name: '¿Cuál es el promedio normal de CPS para jugadores casuales y competitivos?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Un usuario casual promedio alcanza entre 5,0 y 6,5 CPS con pulsación estándar de un solo dedo. Jugadores experimentados registran entre 8,0 y 10,5 CPS con buena técnica, mientras que competidores de élite en Minecraft PvP o juegos de ritmo alcanzan entre 12,0 y 16,0+ CPS con jitter clicking y más de 16,0–22,0 CPS con butterfly clicking.',
+        text: 'Un usuario casual promedio alcanza entre 5,0 y 6,5 CPS con pulsación estándar de un solo dedo. Jugadores experimentados registran entre 8,0 y 10,5 CPS con buena técnica, y técnicas como jitter clicking o butterfly clicking permiten registrar valores más altos, que dependen del dispositivo y de la técnica.',
       },
     },
     {

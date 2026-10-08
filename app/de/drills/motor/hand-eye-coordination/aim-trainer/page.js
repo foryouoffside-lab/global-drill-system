@@ -184,7 +184,7 @@ const faqSchema = {
       name: 'Welche Punktzahl gilt im Aim Trainer als gut?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Einsteiger erreichen meist unter 8.000 Punkte. Fortgeschrittene Spieler erzielen 18.000 bis 31.999 Punkte (Level 6–8), während E-Sportler und Profis über 48.000 Punkte bei über 95% Genauigkeit erreichen.',
+        text: 'Einsteiger erreichen meist unter 8.000 Punkte. Fortgeschrittene Spieler erzielen 18.000 bis 31.999 Punkte (Level 6–8), während über 48.000 Punkte bei über 95% Genauigkeit die höchste Übungsstufe markieren (redaktioneller Richtwert, keine Vergleichsdaten).',
       },
     },
     {
@@ -347,7 +347,7 @@ export default function AimTrainerGermanPage() {
                 <td className="p-2.5 border border-white/10">&gt; 48.000 PTS</td>
                 <td className="p-2.5 border border-white/10">Level 12+</td>
                 <td className="p-2.5 border border-white/10">&gt; 95% (Combo 25+)</td>
-                <td className="p-2.5 border border-white/10">Profi-Niveau / Elite-Marksman</td>
+                <td className="p-2.5 border border-white/10">Höchste Übungsstufe</td>
               </tr>
               <tr>
                 <td className="p-2.5 border border-white/10 font-bold text-cyan-400">Tier 2</td>
@@ -429,7 +429,7 @@ export default function AimTrainerGermanPage() {
           <div className="border-b border-white/10 pb-3">
             <h4 className="font-bold text-white text-sm mb-1">Welche Punktzahl gilt im Aim Trainer als gut?</h4>
             <p className="text-xs sm:text-sm text-slate-300">
-              Einsteiger erreichen meist unter 8.000 Punkte. Fortgeschrittene Spieler erzielen 18.000 bis 31.999 Punkte (Level 6–8), während E-Sportler und Profis über 48.000 Punkte bei über 95% Genauigkeit erreichen.
+              Einsteiger erreichen meist unter 8.000 Punkte. Fortgeschrittene Spieler erzielen 18.000 bis 31.999 Punkte (Level 6–8), während über 48.000 Punkte bei über 95% Genauigkeit die höchste Übungsstufe markieren (redaktioneller Richtwert, keine Vergleichsdaten).
             </p>
           </div>
           <div className="border-b border-white/10 pb-3">

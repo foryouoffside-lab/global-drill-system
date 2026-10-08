@@ -54,7 +54,7 @@ const multipleTargetsGuide = {
     title: "Repères de suivi multiple et d'attention visuelle",
     headers: ["Palier de Performance", "Capacité Effective", "Score & Seuil de Précision", "Profil d'Attention Visuelle et Cognition"],
     rows: [
-      ["Palier 1 : Suiveur Multifocal Apex", "5+ Cibles en Parallèle", "Score : 60 PTS (3/3) | Précision 100% (Vitesse Max)", "Indexation visuelle parallèle de niveau professionnel ; répartition hémisphérique bilatérale optimale sans perte lors des collisions denses. Caractéristique des sportifs d'élite, pilotes et pro gamers (Faubert, 2013 ; Green & Bavelier, 2006)."],
+      ["Palier 1 : Suiveur Multifocal Apex", "5+ Cibles en Parallèle", "Score : 60 PTS (3/3) | Précision 100% (Vitesse Max)", "Indexation visuelle parallèle ; répartition hémisphérique sans perte lors des collisions denses. Demande de l’entraînement et varie beaucoup d’une personne à l’autre."],
       ["Palier 2 : Indexeur Parallèle Avancé", "4 Cibles en Parallèle", "Score : 50 – 59 PTS | Précision 85 – 99%", "Poursuite multifocale solide ; maintient la distinction cible-distracteur lors de trajectoires denses avec une dérive centroïde négligeable."],
       ["Palier 3 : Attention Divisée Compétente", "3 Cibles en Parallèle", "Score : 40 – 49 PTS | Précision 70 – 84%", "Norme de référence chez l'adulte en bonne santé ; suivi fiable de 3 cibles à vitesse moyenne, sensible aux échanges d'identité lors des croisements rapprochés."],
       ["Palier 4 : Mémoire Spatiale en Progression", "2 Cibles en Parallèle", "Score : 20 – 39 PTS | Précision 50 – 69%", "Tendance à replier l'attention multifocale sur un unique point fovéal ; difficultés à filtrer les distracteurs lors des rebonds à forte accélération."],
@@ -102,7 +102,7 @@ const multipleTargetsGuide = {
     },
     {
         "q": "Combien d'objets en mouvement un être humain peut-il suivre simultanément ?",
-        "a": "En moyenne, un adulte en bonne santé peut suivre de manière fiable entre 3 et 4 cibles à vitesse modérée. Les athlètes professionnels de haut niveau et les pilotes de chasse entraînés atteignent 5 voire 6 cibles grâce à une connectivité pariétale optimisée (Cavanagh & Alvarez, 2005)."
+        "a": "En moyenne, un adulte en bonne santé peut suivre de manière fiable entre 3 et 4 cibles à vitesse modérée. Dépasser cette plage demande de l’entraînement et varie beaucoup d’une personne à l’autre (Cavanagh & Alvarez, 2005)."
     },
     {
         "q": "Pourquoi échoue-t-on si l'on regarde chaque sphère l'une après l'autre ?",
@@ -227,7 +227,7 @@ const faqSchema = {
         "name": "Combien d'objets en mouvement un être humain peut-il suivre simultanément ?",
         "acceptedAnswer": {
             "@type": "Answer",
-            "text": "En moyenne, un adulte en bonne santé peut suivre de manière fiable entre 3 et 4 cibles à vitesse modérée. Les athlètes professionnels de haut niveau et les pilotes de chasse entraînés atteignent 5 voire 6 cibles grâce à une connectivité pariétale optimisée (Cavanagh & Alvarez, 2005)."
+            "text": "En moyenne, un adulte en bonne santé peut suivre de manière fiable entre 3 et 4 cibles à vitesse modérée. Dépasser cette plage demande de l’entraînement et varie beaucoup d’une personne à l’autre (Cavanagh & Alvarez, 2005)."
         }
     },
     {

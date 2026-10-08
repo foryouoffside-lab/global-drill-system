@@ -152,7 +152,7 @@ export default function FlowStatePtPage() {
         "name": "Qual é a sensibilidade recomendada para treinos de flow?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Utilize sua sensibilidade nativa em jogo sem aceleração do Windows. O treinamento de flow busca consolidar a memória muscular que você usa nas partidas competitivas."
+          "text": "Utilize sua sensibilidade nativa em jogo com a aceleração do Windows desativada. O treinamento de flow busca consolidar a memória muscular que você usa nas partidas competitivas."
         }
       },
       {
@@ -207,7 +207,7 @@ export default function FlowStatePtPage() {
         "@type": "HowToStep",
         "position": 2,
         "name": "Ativar Entrada RAW e Trava de Cursor",
-        "text": "Clique no botão de início para ativar o modo de tela cheia e capturar o cursor sem aceleração de software.",
+        "text": "Clique no botão de início para ativar o modo de tela cheia e capturar o cursor.",
         "url": "https://skilldrills.online/pt/drills/fps/flow-state#step-2"
       },
       {
@@ -313,8 +313,8 @@ export default function FlowStatePtPage() {
       ]
     },
     steps: [
-      "Selecione sua sensibilidade de jogo habitual pelo seletor universal para garantir transferência 1:1 de memória muscular.",
-      "Clique em 'Iniciar' para ativar a tela cheia com bloqueio direto do ponteiro (Pointer Lock) sem aceleração do mouse.",
+      "Selecione sua sensibilidade de jogo habitual pelo seletor universal para treinar com uma sensibilidade familiar.",
+      "Clique em 'Iniciar' para ativar a tela cheia com bloqueio do ponteiro (Pointer Lock).",
       "Fixe a atenção visual no alvo em movimento contínuo ao longo de curvas Bézier orgânicas na tela.",
       "Mantenha a mira dentro do raio do alvo para preencher a barra de Flow e entrar na Zona.",
       "Sustente sequências ininterruptas de foco para multiplicar seus pontos e desenvolver resistência à fadiga mental.",

@@ -214,7 +214,7 @@ export default function MicroCorrectionPage() {
         "@type": "HowToStep",
         "position": 1,
         "name": "Calibração e Bloqueio de Ponteiro",
-        "text": "Configure sua sensibilidade e DPI reais para manter correspondência muscular 1:1 e ative o Pointer Lock no navegador."
+        "text": "Configure sua sensibilidade e DPI reais para manter sua sensibilidade habitual e ative o Pointer Lock no navegador."
       },
       {
         "@type": "HowToStep",
@@ -249,7 +249,7 @@ export default function MicroCorrectionPage() {
     statMaxCombo: "Combo Máximo",
     statPeakLevel: "Nível Máximo",
     startTitle: "Treino de mira - microajustes e headshots",
-    startSubtitle: "Entrada Bruta de Hardware • Progressão Contínua e Desaceleração",
+    startSubtitle: "Pointer Lock • Progressão Contínua e Desaceleração",
     getReady: "PREPARE-SE",
     toggleFlash: "Alternar Flash de Erro",
     toggleSound: "Alternar Efeitos Sonoros",
@@ -279,8 +279,8 @@ export default function MicroCorrectionPage() {
       title: "Tiers de Latência de Micro Correção e Aquisição de Alvo",
       headers: ["Nível de Desempenho", "Janela de Latência de Correção", "Mecânica de Controle Motor", "Implicação Competitiva no Jogo"],
       rows: [
-        ["Tier 1 (Precisão Ápice)", "Abaixo de 280 ms", "Frenagem quase instantânea; micro-ajustes com os dedos executados sem oscilações de overflick", "Conversão letal de primeiro tiro no Radiant, CS2 Faceit 10 e lobbies profissionais"],
-        ["Tier 2 (Pro Competitivo)", "280 – 340 ms", "Frenagem muscular disciplinada; transição suave do flick primário para o micro-ajuste final", "Vence duelos contra peeks agressivos; extrema consistência em alvos minúsculos"],
+        ["Tier 1 (Precisão Avançada)", "Abaixo de 280 ms", "Frenagem quase instantânea; micro-ajustes com os dedos executados sem oscilações de overflick", "Treina o primeiro tiro com frenagem controlada, sem passar do alvo"],
+        ["Tier 2 (Faixa Intermediária-Alta)", "280 – 340 ms", "Frenagem muscular disciplinada; transição suave do flick primário para o micro-ajuste final", "Prática de duelos contra peeks agressivos com consistência em alvos minúsculos"],
         ["Tier 3 (Alto Nível FPS)", "340 – 420 ms", "Boa aquisição de alvos; ocasionais desvios de 10 a 15px demandando submovimento duplo", "Alto rendimento tático; leve hesitação ao corrigir alvos com desnível vertical"],
         ["Tier 4 (Intermediário)", "420 – 520 ms", "Desaceleração frouxa; tendência de arrastar o mouse além da borda antes de iniciar a correção", "Vulnerável a strafes rápidos; dificuldade em transferências de tiro imediatas"],
         ["Tier 5 (Em Desenvolvimento)", "520 ms+", "Momentum balístico excessivo com overshoot acentuado; atraso na confirmação visual", "Frequentemente ultrapassa alvos em confrontos diretos; necessidade de reajustes amplos"]

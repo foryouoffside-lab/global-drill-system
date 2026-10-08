@@ -184,7 +184,7 @@ export default function FrenchAngleHoldPage() {
       },
       {
         "@type": "Question",
-        "name": "Ce simulateur prend-il en charge l'entrée brute de la souris (raw input) ?",
+        "name": "Comment ce simulateur capture-t-il le mouvement de la souris ?",
         "acceptedAnswer": {
           "@type": "Answer",
           "text": "Oui. Le simulateur exploite l'API HTML5 Pointer Lock avec chronométrie performance.now() pour garantir une réponse brute directe sans lissage ni accélération logicielle."
@@ -246,7 +246,7 @@ export default function FrenchAngleHoldPage() {
         ["Latence de Discrimination (Fake/Jiggle Peek)", "210 – 280 ms", "Identification cognitive Go/No-Go de l'engagement réel", "Discipline de tir sous pression de feinte (Hick, 1952)"],
         ["Déficit de Latence du Peeker's Advantage", "40 – 90 ms", "Transit réseau RTT client-serveur + tampon d'interpolation", "Avantage de transmission pour l'attaquant en mouvement"],
         ["Fenêtre Efficace de Réponse Défensive Nette", "250 – 340 ms", "Latence visuelle cumulée + compensation du déficit réseau", "Ligne de base standard pour défenseurs en FPS tactique"],
-        ["Précision d'Élite en Tenue avec Pré-Visée", "170 – 220 ms", "Écartement optimal en phase avec la vitesse adverse", "Maîtrise défensive de haut niveau (Valorant Radiant / CS2 Faceit 10)"]
+        ["Précision Avancée en Tenue avec Pré-Visée", "170 – 220 ms", "Écartement optimal en phase avec la vitesse adverse", "Tenue défensive affinée ; travail du pré-visée avec écartement stable"]
       ],
       note: "Données compilées selon les standards de la chronométrie cognitive (Donders, 1868; Hick, 1952; Woods et al., 2015) et des analyses réseau de Riot Games et Valve. Les latences effectives dépendent des hertz de l'écran, du polling de la souris et de la vigilance."
     },
@@ -295,6 +295,7 @@ export default function FrenchAngleHoldPage() {
 
   const copyFr = {
     h1Prefix: null,
+    bottomCaption: "Gardez votre viseur sur l’angle et cliquez dès que la cible apparaît.",
     h1Keyword: "Aim Trainer",
     h1Suffix: " — placement du viseur et angles",
     subtitle: "Entraînement à la Tenue d'Angle et Défense contre le Peeker's Advantage",
@@ -326,7 +327,7 @@ export default function FrenchAngleHoldPage() {
       {
         title: "Méthode de Mesure et Précision des Capteurs",
         paragraphs: [
-          "Angle Hold Pro s'appuie sur l'API HTML5 Pointer Lock et performance.now() pour chronométrer les temps de clic à la milliseconde près, sans accélération logicielle de la souris."
+          "Angle Hold Pro s'appuie sur l'API HTML5 Pointer Lock et performance.now() pour chronométrer les temps de clic à la milliseconde près."
         ]
       }
     ]

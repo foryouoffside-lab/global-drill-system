@@ -249,7 +249,7 @@ export default function MicroCorrectionPage() {
     statMaxCombo: "Combo Max",
     statPeakLevel: "Niveau Max",
     startTitle: "Aim Trainer - micro-ajustements et headshots",
-    startSubtitle: "Entrée Brute Hardware • Progression Continue et Décélération",
+    startSubtitle: "Pointer Lock • Progression Continue et Décélération",
     getReady: "PRÊT ?",
     toggleFlash: "Flash de tir manqué",
     toggleSound: "Effets sonores",
@@ -279,8 +279,8 @@ export default function MicroCorrectionPage() {
       title: "Paliers de Latence de Micro-Correction et Acquisition de Cible",
       headers: ["Niveau de Performance", "Fenêtre de Latence de Correction", "Mécanique de Contrôle Moteur", "Impact Compétitif en Match"],
       rows: [
-        ["Tier 1 (Précision Ultime)", "Moins de 280 ms", "Décélération quasi instantanée ; micro-ajustements aux doigts exécutés sans aucune oscillation", "Conversion létale du premier tir en Radiant, CS2 Faceit 10 et compétitions pro"],
-        ["Tier 2 (Pro Compétitif)", "280 – 340 ms", "Freinage musculaire discipliné ; transition fluide du flick primaire au micro-ajustement", "Remporte systématiquement les duels contre les lignes agressives ; headshots fiables"],
+        ["Tier 1 (Précision Avancée)", "Moins de 280 ms", "Décélération quasi instantanée ; micro-ajustements aux doigts exécutés sans aucune oscillation", "Entraîne le premier tir avec décélération contrôlée, sans dépasser la cible"],
+        ["Tier 2 (Palier Intermédiaire-Haut)", "280 – 340 ms", "Freinage musculaire discipliné ; transition fluide du flick primaire au micro-ajustement", "Entraîne les duels contre les lignes agressives avec des headshots réguliers"],
         ["Tier 3 (Haut Niveau FPS)", "340 – 420 ms", "Bonne acquisition de cible ; léger dépassement occasionnel de 10 à 15px demandant un double ajustement", "Efficacité tactique solide ; légère hésitation sur les décalages verticaux"],
         ["Tier 4 (Intermédiaire)", "420 – 520 ms", "Décélération hésitante ; tendance à glisser au-delà de la hitbox avant de corriger la visée", "Vulnérable aux contre-strafes rapides ; difficultés lors des transferts de tirs"],
         ["Tier 5 (En Progression)", "520 ms+", "Inertie balistique excessive avec overflick régulier ; retard de confirmation visuelle", "Dépasse fréquemment la cible en duel direct ; nécessité de réajustements amples"]

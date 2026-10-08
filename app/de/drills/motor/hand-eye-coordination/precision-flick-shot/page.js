@@ -177,7 +177,7 @@ const faqSchema = {
       name: 'Welche Hardware-Einstellungen optimieren das Flick-Training?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Ein 144Hz+ Monitor für geringste Anzeigeverzögerung, Rohdaten-Mausabfrage ohne Zeigerbeschleunigung und eine leichte Gaming-Maus mit reibungsarmem Pad.',
+        text: 'Ein 144Hz+ Monitor für geringste Anzeigeverzögerung, deaktivierte Zeigerbeschleunigung und eine leichte Gaming-Maus mit reibungsarmem Pad.',
       },
     },
     {

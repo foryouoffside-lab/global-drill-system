@@ -247,7 +247,7 @@ const guideProps = {
     rows: [
       [
         'Tier 1',
-        'Elite / Profi-Designer',
+        'Höchste Übungsstufe',
         'Lv. 12–15 (Combo > 18x)',
         '< 420 ms',
         '≥ 98,0%',

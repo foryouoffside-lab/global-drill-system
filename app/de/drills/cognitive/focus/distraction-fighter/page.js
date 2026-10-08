@@ -247,7 +247,7 @@ export default function DistractionFighterPageDe() {
       title: "Stroop-Test Leistungsstufen & Interferenz-Benchmarks (45-Sekunden-Lauf)",
       headers: ["Leistungsstufe", "Punktzahl (45s)", "Genauigkeitsquote", "Neurokognitive Bewertung"],
       rows: [
-        ["Tier 1 (Elite / Meister der Inhibition)", "Über 18.000 PTS", "Über 96%", "Vollständige Impulskontrolle; reflexartiges Ausblenden der Wortbedeutung bei maximaler Reaktionsschnelligkeit"],
+        ["Stufe 5 (höchste Übungsstufe)", "Über 18.000 PTS", "Über 96%", "Vollständige Impulskontrolle; reflexartiges Ausblenden der Wortbedeutung bei maximaler Reaktionsschnelligkeit"],
         ["Tier 2 (Fortgeschritten / Turnier-Niveau)", "12.000 – 17.999 PTS", "92 – 95%", "Sehr geringe Stroop-Interferenz; stabiler Klicktakt bei exzellenter kognitiver Flexibilität"],
         ["Tier 3 (Solider Durchschnitt)", "7.000 – 11.999 PTS", "85 – 91%", "Typische gesunde Interferenzverzögerung; gelegentliches Zögern bei stark kontrastierenden Farben"],
         ["Tier 4 (Basis / Gelegentliche Ablenkung)", "3.000 – 6.999 PTS", "75 – 84%", "Starke Neigung, dem Leseimpuls nachzugeben; Verlangsamung bei steigender Reizdichte"],
@@ -346,6 +346,7 @@ export default function DistractionFighterPageDe() {
             { title: "Serien & Boni", text: "Längere Trefferserien multiplizieren deine Punkte. Höhere Stufen fordern schnellere Entscheidungen bei mehr Farbauswahl." }
           ]
         }}
+        faqs={faqSchema.mainEntity.map((e) => ({ q: e.name, a: e.acceptedAnswer.text }))}
       />
       <DrillGuide guide={distractionFighterGuide} />
       <RelatedDrills />

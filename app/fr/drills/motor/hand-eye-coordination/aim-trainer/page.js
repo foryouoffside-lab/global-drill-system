@@ -243,7 +243,7 @@ const faqSchema = {
       "name": "Cet exercice prend-il en charge la sensibilité universelle de la souris ?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Oui, il utilise l'API Pointer Lock du navigateur web pour assurer un suivi direct 1:1 sans accélération logicielle Windows, correspondant à votre réglage cm/360 habituel."
+        "text": "Oui, il utilise l'API Pointer Lock du navigateur web pour capturer le mouvement de la souris, en respectant votre réglage cm/360 habituel."
       }
     },
     {
@@ -379,7 +379,7 @@ export default function AimTrainerFrenchPage() {
                 <td className="p-2.5 border border-white/10">48 000+ PTS</td>
                 <td className="p-2.5 border border-white/10">Niveau 12+</td>
                 <td className="p-2.5 border border-white/10">&gt; 95 % (Combo 25+)</td>
-                <td className="p-2.5 border border-white/10">Niveau esport élite : micro-corrections quasi-instantanées</td>
+                <td className="p-2.5 border border-white/10">Palier avancé : micro-corrections rapides</td>
               </tr>
               <tr>
                 <td className="p-2.5 border border-white/10 font-bold text-cyan-300">Palier 2 : Avancé</td>
@@ -479,7 +479,7 @@ export default function AimTrainerFrenchPage() {
           <div className="border-b border-white/10 pb-3">
             <h4 className="font-bold text-white text-sm mb-1">Cet exercice prend-il en charge la sensibilité universelle de la souris ?</h4>
             <p className="text-xs sm:text-sm text-slate-300">
-              Oui, il utilise l&apos;API Pointer Lock du navigateur web pour assurer un suivi direct 1:1 sans accélération logicielle Windows, correspondant à votre réglage cm/360 habituel.
+              Oui, il utilise l&apos;API Pointer Lock du navigateur web pour capturer le mouvement de la souris, en respectant votre réglage cm/360 habituel.
             </p>
           </div>
           <div className="border-b border-white/10 pb-3">

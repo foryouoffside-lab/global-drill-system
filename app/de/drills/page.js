@@ -134,7 +134,7 @@ const faqSchema = {
       "name": "Unterstützt SkillDrills das Aim-Training für kompetitive Shooter wie CS2, VALORANT und Apex Legends?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Ja. Die FPS-Kategorie umfasst spezialisierte Module für Micro-Adjustments, Target-Switching, Fadenkreuzstabilität, Vorhaltemaß (Angle Holding) und dynamische Rückstoßkontrolle. Durch standardisierte Sensitivitätsanpassungen und RAW-Mausabfrage über die Pointer Lock API werden Muskelgedächtnis und Mikromotorik 1:1 auf kompetitive Shooter übertragen."
+        "text": "Ja. Die FPS-Kategorie umfasst spezialisierte Module für Micro-Adjustments, Target-Switching, Fadenkreuzstabilität, Vorhaltemaß (Angle Holding) und dynamische Rückstoßkontrolle. Durch standardisierte Sensitivitätsanpassungen und Mauserfassung über die Pointer Lock API kannst du Muskelgedächtnis und Mikromotorik für kompetitive Shooter üben."
       }
     },
     {

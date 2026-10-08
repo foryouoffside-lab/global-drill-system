@@ -136,7 +136,7 @@ const faqSchema = {
       name: 'Quel est le temps de réaction standard sur une touche de jeu ?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Un utilisateur non entraîné se situe entre 380 et 480 ms. Les joueurs réguliers atteignent 240 à 300 ms, tandis que les joueurs compétitifs d’élite descendent sous la barre des 240 ms.',
+        text: 'Un utilisateur non entraîné se situe entre 380 et 480 ms. Les joueurs réguliers atteignent 240 à 300 ms, et passer sous la barre des 240 ms est peu courant.',
       },
     },
     {

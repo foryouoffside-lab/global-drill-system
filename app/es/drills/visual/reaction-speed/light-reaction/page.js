@@ -157,7 +157,7 @@ const faqSchema = {
       "name": "¿Cuál es el tiempo promedio de reacción visual simple en milisegundos?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "En personas jóvenes y sanas, la media oscila entre 200 ms y 250 ms. Deportistas profesionales, velocistas y jugadores de esports de élite alcanzan habitualmente marcas comprendidas entre 160 ms y 190 ms."
+        "text": "En personas jóvenes y sanas, la media oscila entre 200 ms y 250 ms. Marcas de entre 160 ms y 190 ms son poco habituales y dependen del dispositivo y de la anticipación."
       }
     },
     {
@@ -205,7 +205,7 @@ const faqSchema = {
       "name": "¿Qué causa el aviso de clics repetitivos (anti-spam) en esta prueba?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Pulsar antes de la aparición del destello o cliquear a ritmo acelerado desencadena un enfriamiento de 1,2 segundos. Esto garantiza que la métrica corresponda a una reacción visual y no a clics por azar."
+        "text": "Pulsar antes de la aparición del destello o cliquear a ritmo acelerado desencadena un enfriamiento de 1,2 segundos. Esto ayuda a que la métrica refleje una reacción visual y no clics al azar."
       }
     },
     {
@@ -233,13 +233,13 @@ const lightReactionGuide = {
     "El tiempo de reacción simple (SRT) cuantifica el retardo psicomotor elemental que separa la presentación de un estímulo visual imprevisto de la activación motora inmediata. En el atletismo de pista, el automovilismo, las artes marciales y el esport competitivo, diferencias de escasos milisegundos determinan fintas defensivas, salidas fulgurantes y contragolpes letales.",
     "La respuesta neuromuscular encadena cuatro fases fisiológicas cardinales: (1) fototransducción retiniana (~20–40 ms por isomerización de la rodopsina), (2) propagación aferente por el tracto óptico hacia el córtex visual primario V1 (~30–50 ms), (3) preparación perceptiva y motriz en áreas parietales y motoras suplementarias (~50–80 ms), y (4) descarga eferente por el haz corticoespinal para contraer los flexores digitales (~30–50 ms), configurando el rango biológico estándar de 200–250 ms (Kosinski, 2008; Jain et al., 2015; Shelton & Kumar, 2010).",
     "Conforme a la Ley de Piéron (1952; Pins & Bonnet, 1996), la latencia decrece de modo hiperbólico al aumentar la luminancia sobre el fondo. Este drill explota ese mecanismo proyectando un destello blanco estroboscópico de gran intensidad sobre un lienzo oscuro absorbente, generando una despolarización ganglionar inmediata. Los estudios de atención encubierta (Posner, 1980) y gaming (Dye et al., 2009) demuestran que la fijación espacial disminuye la demora en la corteza motora.",
-    "Metodología y Estándares de Medición: Los estímulos y las pulsaciones se cronometran con la API de alta resolución performance.now(). Las tolerancias por tasa de refresco del display y el sondeo USB (Woods et al., 2015) se compensan para garantizar resultados fieles y de tratamiento local."
+    "Metodología y Estándares de Medición: Los estímulos y las pulsaciones se cronometran con la API de alta resolución performance.now(). Las tolerancias por tasa de refresco del display y el sondeo USB (Woods et al., 2015) se compensan para acercar los resultados a la realidad con tratamiento local."
   ],
   benchmarks: {
     title: "Referencia del tiempo de reacción visual en navegador",
     headers: ["Banda de Rendimiento", "Latencia Media (ms)", "Puntuación y Umbral Combo", "Perfil Neuromuscular y de Reflejo"],
     rows: [
-      ["Tier 1: Reflejo Neural Apex", "< 180 ms", "15.000+ PTS | Combo 28x+", "Excitabilidad sobresaliente de la corteza motora; velocidad de conducción piramidal propia de velocistas olímpicos y jugadores de élite."],
+      ["Tier 1: Reflejo Neural Apex", "< 180 ms", "15.000+ PTS | Combo 28x+", "Reacción visual muy rápida; el resultado depende del dispositivo y de la anticipación."],
       ["Tier 2: Reflejo Visual Superior", "180 – 219 ms", "10.500 – 14.999 PTS | Combo 18x+", "Coordinación óptico-motora excelente; latencias regulares por debajo de 220 ms con escasa dispersión en sesiones largas."],
       ["Tier 3: Rendimiento Adulto Estándar", "220 – 259 ms", "6.000 – 10.499 PTS | Combo 10x+", "Promedio de adultos saludables; respuesta visual espontánea correcta con oscilaciones normales derivadas del cansancio."],
       ["Tier 4: Retardo Moderado de Respuesta", "260 – 319 ms", "2.500 – 5.999 PTS | Combo 5x+", "Procesamiento central dilatado; sensible a la fatiga visual, lapsos de vigilia o pantallas lentas de 60 Hz."],

@@ -161,7 +161,7 @@ const faqSchema = {
       name: 'Qual sensibilidade e DPI são recomendados?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Geralmente 800 DPI com sensibilidade entre 30 e 45 cm por volta completa de 360 graus garante velocidade com o braço e controle milimétrico com o punho.',
+        text: 'Geralmente 800 DPI com sensibilidade entre 30 e 45 cm por volta completa de 360 graus favorece velocidade com o braço e controle fino com o punho.',
       },
     },
     {

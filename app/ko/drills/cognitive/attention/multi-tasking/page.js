@@ -164,7 +164,7 @@ const faqSchema = {
       "name": "양측 반구 시각 훈련의 뇌과학적 효과는?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "좌우 시야를 동시에 처리함으로써 뇌량을 통한 좌우 반구 간 정보 교환 속도를 단련합니다."
+        "text": "좌우 시야를 동시에 처리함으로써 좌우 시야를 동시에 처리하는 연습이 됩니다."
       }
     },
     {
@@ -196,7 +196,7 @@ const faqSchema = {
       "name": "적정 훈련 빈도는?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "매일 10~15분 동안 집중해서 플레이하는 것이 인지적 탈진을 예방하며 뇌를 자극하는 길입니다."
+        "text": "매일 10~15분 동안 집중해서 플레이하는 것이 인지적 피로를 줄이며 꾸준히 이어가는 방법입니다."
       }
     },
     {
@@ -262,7 +262,7 @@ const guideProps = {
     note: '단계는 SkillDrills가 정한 연습용 참고 구분이며 인구 통계나 백분위가 아닙니다.',
     headers: ['등급 (Tier)', '호칭 (Rank)', '평가 기준', '도달 수준', '정확도', '연습 단계'],
     rows: [
-      { tier: 'Tier 1', rank: '그랜드마스터 / 멀티태스킹 엘리트', stat: '최상위 단계', level: '마스터리 (최상위)', accuracy: '98% 이상', percentile: '최상위 단계' },
+      { tier: 'Tier 1', rank: '멀티태스킹 최상위 단계', stat: '최상위 단계', level: '마스터리 (최상위)', accuracy: '98% 이상', percentile: '최상위 단계' },
       { tier: 'Tier 2', rank: '고급 병렬 처리자', stat: '상급 단계', level: '다이아몬드 (우수)', accuracy: '94–97%', percentile: '상급 단계' },
       { tier: 'Tier 3', rank: '숙련 조작자', stat: '중상급 단계', level: '플래티넘 (숙련)', accuracy: '88–93%', percentile: '중상급 단계' },
       { tier: 'Tier 4', rank: '일반 성인 표준', stat: '표준 단계', level: '골드 (표준)', accuracy: '78–87%', percentile: '표준 단계' },

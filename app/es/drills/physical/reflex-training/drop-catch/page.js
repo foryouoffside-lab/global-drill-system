@@ -176,7 +176,7 @@ const faqSchema = {
       "name": "¿Cómo compensa la bonificación de +0,6s por acierto la regularidad de juego?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Cada captura válida de un círculo verde añade +0,6 segundos de extensión al reloj de la prueba. Los participantes con gran velocidad y férreo control de impulsos pueden superar con creces los 45 segundos iniciales y batir el récord de élite de 24.000 puntos."
+        "text": "Cada captura válida de un círculo verde añade +0,6 segundos de extensión al reloj de la prueba. Los participantes con gran velocidad y férreo control de impulsos pueden superar con creces los 45 segundos iniciales y alcanzar el tope de 24.000 puntos."
       }
     },
     {
@@ -259,7 +259,7 @@ const dropGuide = {
       "Drop Catch es un simulador de cronometría psicomotora y control de impulsos que eleva la tradicional prueba de la regla escolar a un estándar digital de alta competición. En lugar de limitarse a cerrar los dedos sobre un objeto en caída física, el participante se enfrenta a una prueba de reacción discriminativa Tipo C de Donders (1868): atrapar dianas válidas en aceleración continua suprimiendo simultáneamente cualquier disparo frente a señuelos distractores.",
       "Bajo la influencia de la aceleración gravitatoria (s = 1/2gt²), la velocidad vertical de los objetos pasa de 400 px/s a un máximo de 1250 px/s. Conforme a la teoría del tau óptico (τ) de David N. Lee (1976), el córtex visual estima el margen hasta el impacto (Time-to-Contact) a través de la tasa de expansión retiniana del estímulo. Intentar calcular mentalmente la aceleración produce demoras fatales; la destreza radica en colocar el cursor de forma anticipada sobre la línea de caída.",
       "El mayor reto neurocognitivo estriba en los señuelos rojos que aparecen de forma aleatoria. Según el modelo de carrera de caballos (Horse-Race Model) de Gordon D. Logan (1984), en el sistema nervioso pugnan dos órdenes simultáneas: el impulso de acción predeterminado ('Go') y la orden de freno prefrontal ('Stop'). Solo cuando el control inhibitorio se impone al automatismo motor se evitan pulsaciones erróneas, habilidad indispensable en tiradores de élite.",
-      "Con vistas a garantizar una exactitud cronométrica estricta, la aplicación utiliza la interfaz performance.now() del navegador. En monitores de 144Hz o 240Hz, el rastro visual en blancos que caen a 1250 px/s se suprime por completo, posibilitando una discriminación perceptiva sin retardo de fotograma (Woods et al., 2015). Tus puntuaciones se resguardan únicamente en el almacenamiento local de tu ordenador."
+      "Para obtener una cronometría lo más precisa posible, la aplicación utiliza la interfaz performance.now() del navegador. En monitores de 144Hz o 240Hz, el rastro visual en blancos que caen a 1250 px/s se reduce, lo que facilita la discriminación perceptiva (Woods et al., 2015). Tus puntuaciones se resguardan únicamente en el almacenamiento local de tu ordenador."
     ]
   },
   benchmarks: {

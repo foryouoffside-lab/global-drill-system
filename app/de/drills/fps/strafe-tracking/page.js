@@ -256,8 +256,8 @@ export default function StrafeTrackingDePage() {
         ["Anfänger / Casual", "< 40 % Verweildauer", "< 1,2 Sekunden", "Häufiges Überreißen, starkes Zittern, Richtungswechsel-Latenz > 240 ms"],
         ["Fortgeschritten (Gold / Platin)", "40 – 58 % Verweildauer", "1,2 – 2,5 Sekunden", "Stabiles Verfolgen auf geraden Bahnen; verliert das Ziel bei schnellen AD-Cuts"],
         ["Diamant / Master", "58 – 74 % Verweildauer", "2,5 – 4,5 Sekunden", "Sehr gute Smoothness; zügige Korrektursakkaden mit Latenz von ca. 160–180 ms"],
-        ["Semi-Profi / Faceit 10", "74 – 86 % Verweildauer", "4,5 – 7,5 Sekunden", "Nahezu verzögerungsfreie Richtungsumkehr; exzellente Geschwindigkeitsanpassung"],
-        ["Weltklasse / Tier-1-Profi", "> 86 % Verweildauer", "> 7,5 Sekunden", "Perfekte okulomotorische Synchronisation; Fadenkreuz klebt förmlich am Zielzentrum"]
+        ["Stufe 4", "74 – 86 % Verweildauer", "4,5 – 7,5 Sekunden", "Nahezu verzögerungsfreie Richtungsumkehr; exzellente Geschwindigkeitsanpassung"],
+        ["Stufe 5", "> 86 % Verweildauer", "> 7,5 Sekunden", "Perfekte okulomotorische Synchronisation; Fadenkreuz klebt förmlich am Zielzentrum"]
       ],
       note: "Wissenschaftliche Richtwerte basierend auf Blickfolgestudien und sensomotorischer Reaktionsforschung (Rashbass 1961, Krauzlis 2004, Lisberger 2010)."
     },
@@ -319,7 +319,7 @@ export default function StrafeTrackingDePage() {
     pausedTitle: "Pausiert",
     pausedPrompt: "Klicke in den Bildschirm, um die Mauszeiger-Sperre zu reaktivieren und fortzufahren.",
     startTitle: "Tracking Aim Training",
-    startSubtitle: "Unberechenbare AD-Strafes & direkte Rohdaten-Eingabe • Dynamische Levelprogression",
+    startSubtitle: "Unberechenbare AD-Strafes & Pointer Lock • Dynamische Levelprogression",
     startButtonText: "Training starten",
     getReady: "Bereithalten",
     statLockStreak: "Max. Lock-on Serie",
@@ -345,7 +345,7 @@ export default function StrafeTrackingDePage() {
     aboutCards: [
       { iconBg: "bg-blue-600", title: "Zielgruppe", text: "Spieler in Apex Legends, Overwatch 2, CS2 und CoD, die ihre Trefferquote gegen agile, ausweichende Gegner im Nah- und Fernkampf maximieren wollen." },
       { iconBg: "bg-fuchsia-600", title: "Trainierte Fähigkeiten", text: "Reaktives Tracking, Ziel-Smoothness, Richtungswechsel-Antizipation, Verweildauer (Time on Target) und Hand-Auge-Koordination." },
-      { iconBg: "bg-orange-600", title: "Unverfälschte Mauseingabe", text: "Verwendet die Pointer-Lock-API ohne künstliche Glättung oder Beschleunigung – 1:1 identisch mit deinem Ingame-Mausgefühl." }
+      { iconBg: "bg-orange-600", title: "Pointer-Lock-Mauserfassung", text: "Verwendet die Pointer-Lock-API zur Mauserfassung. Unbeschleunigte Eingabe wird nicht angefordert, daher solltest du die Zeigerbeschleunigung des Betriebssystems ausschalten." }
     ]
   };
 

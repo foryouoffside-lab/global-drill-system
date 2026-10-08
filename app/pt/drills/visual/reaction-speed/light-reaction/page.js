@@ -157,7 +157,7 @@ const faqSchema = {
       "name": "Qual é a média de tempo de reação visual simples em milissegundos?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Em adultos jovens saudáveis, o tempo médio de reação visual simples situa-se entre 200 ms e 250 ms. Atletas de reflexo, velocistas olímpicos e jogadores profissionais de esportes eletrônicos costumam registrar marcas de 160 ms a 190 ms."
+        "text": "Em adultos jovens saudáveis, o tempo médio de reação visual simples situa-se entre 200 ms e 250 ms. Marcas de 160 ms a 190 ms são pouco comuns e dependem do dispositivo e da antecipação."
       }
     },
     {
@@ -239,7 +239,7 @@ const lightReactionGuide = {
     title: "Referência de tempo de reação visual no navegador",
     headers: ["Nível de Desempenho", "Latência Média (ms)", "Pontuação e Combo Limiar", "Perfil Neuromuscular e de Reflexo"],
     rows: [
-      ["Tier 1: Reflexo Neural Apex", "< 180 ms", "15.000+ PTS | Combo 28x+", "Excitabilidade extrema do córtex motor; condução corticoespinhal otimizada típica de velocistas de elite e pró-players."],
+      ["Tier 1: Reflexo Neural Apex", "< 180 ms", "15.000+ PTS | Combo 28x+", "Reação visual muito rápida; o resultado depende do dispositivo e da antecipação."],
       ["Tier 2: Reflexo Visual Superior", "180 – 219 ms", "10.500 – 14.999 PTS | Combo 18x+", "Excelente acoplamento óptico-motor; latências constantes abaixo de 220 ms com oscilação temporal mínima."],
       ["Tier 3: Padrão Adulto Consolidado", "220 – 259 ms", "6.000 – 10.499 PTS | Combo 10x+", "Faixa padrão para adultos saudáveis; resposta motora típica com pequenas variações causadas por cansaço natural."],
       ["Tier 4: Retardo Moderado de Resposta", "260 – 319 ms", "2.500 – 5.999 PTS | Combo 5x+", "Processamento central estendido; sensível a atrasos de monitor, fadiga ocular ou lapsos leves de vigília."],

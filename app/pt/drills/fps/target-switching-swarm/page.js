@@ -230,8 +230,8 @@ export default function TargetSwitchingSwarmPtPage() {
       title: "Padrões de Referência: Target Switching e Latenência de Transição",
       headers: ["Nível de Habilidade", "Tempo de Transição", "Taxa de Eliminação (Alvos/Min)", "Impacto Prático Competitivo"],
       rows: [
-        ["Tier 1 (Radiante / Faceit Nível 10 / Pro)", "Abaixo de 210 ms", "110+ Alvos/min", "Spray transfers impecáveis; zero atraso de confirmação; clutches 1v3 resolvidos com facilidade"],
-        ["Tier 2 (Imortal / Faceit 8-9 / Mestre)", "210 – 260 ms", "92 – 110 Alvos/min", "Sequenciamento de alvos limpo; leve oscilação em ângulos extremos; excelente taxa de trade de abates"],
+        ["Tier 1 (Faixa Avançada)", "Abaixo de 210 ms", "110+ Alvos/min", "Spray transfers impecáveis; zero atraso de confirmação; clutches 1v3 resolvidos com facilidade"],
+        ["Tier 2 (Faixa Intermediária-Alta)", "210 – 260 ms", "92 – 110 Alvos/min", "Sequenciamento de alvos limpo; leve oscilação em ângulos extremos; excelente taxa de trade de abates"],
         ["Tier 3 (Ascendente / Diamante / Avançado)", "260 – 320 ms", "74 – 92 Alvos/min", "Bom chaveamento em grupos próximos; perde precisão ao transferir a mira de um lado ao outro da tela"],
         ["Tier 4 (Platina / Ouro / Intermediário)", "320 – 400 ms", "56 – 74 Alvos/min", "Hesitação perceptível pós-abate (100+ ms); tendência a ultrapassar o alvo por frenagem tardia"],
         ["Tier 5 (Prata / Bronze / Iniciante)", "Acima de 400 ms", "Abaixo de 56 Alvos/min", "Reinicia a postura do braço entre cada alvo; busca visual começa do zero a cada kill; tensão muscular excessiva"]
@@ -268,7 +268,7 @@ export default function TargetSwitchingSwarmPtPage() {
       "Identifique visualmente os agrupamentos de alvos mais próximos para traçar sua rota de disparos.",
       "Destrua o primeiro alvo para somar +100 pontos e ganhar +0,35s no cronômetro da rodada.",
       "Redirecione o impulso do retículo imediatamente ao próximo alvo vizinho sem esperar confirmação visual.",
-      "Encadeie múltiplos abates sem errar para sustentar multiplicadores de combo e atingir pontuações de elite."
+      "Encadeie múltiplos abates sem errar para sustentar multiplicadores de combo e atingir pontuações mais altas."
     ],
     audience: "Jogadores competitivos de Valorant, CS2, Apex Legends e Overwatch que desejam acelerar a troca de alvos, dominar spray transfers e extinguir pausas hesitantes em tiroteios caóticos.",
     faqs: faqSchema.mainEntity.map(e => ({ q: e.name, a: e.acceptedAnswer.text })),

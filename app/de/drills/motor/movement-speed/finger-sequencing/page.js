@@ -168,7 +168,7 @@ const faqSchema = {
       name: 'Welche Hardware-Einstellungen liefern die verlässlichsten Messergebnisse?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Ein 144-Hz- oder 240-Hz-Monitor, eine Gaming-Maus mit 1000 Hz Polling-Rate und deaktivierte Zeigerbeschleunigung in Windows sorgen für unverzögerte und reproduzierbare 1:1-Messungen.',
+        text: 'Ein 144-Hz- oder 240-Hz-Monitor, eine Gaming-Maus mit 1000 Hz Polling-Rate und deaktivierte Zeigerbeschleunigung in Windows sorgen für reproduzierbarere Messungen.',
       },
     },
     {
@@ -316,7 +316,7 @@ const deCopy = {
   accuracy: "Präzision",
   bestScore: "Bestwert",
   startButtonText: "Training Starten",
-  startSubtitle: "Zielwechsel und Klickpräzision • 1:1 Roheingabe",
+  startSubtitle: "Zielwechsel und Klickpräzision • Pointer Lock",
   getReady: "BEREITMACHEN",
   rulesTitle: "Trainingsanleitung & Punktesystem",
   rulesItems: [

@@ -157,7 +157,7 @@ const faqSchema = {
       "name": "Quel est le temps moyen de réaction visuelle simple en millisecondes ?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Chez un adulte jeune et sain, la moyenne s'établit entre 200 ms et 250 ms. Les sportifs d'élite, sprinteurs et joueurs professionnels de jeux de tir atteignent fréquemment des moyennes comprises entre 160 ms et 190 ms."
+        "text": "Chez un adulte jeune et sain, la moyenne s'établit entre 200 ms et 250 ms. Des moyennes de 160 ms à 190 ms sont peu courantes et dépendent de l’appareil et de l’anticipation."
       }
     },
     {
@@ -205,7 +205,7 @@ const faqSchema = {
       "name": "Qu'est-ce qui déclenche la pause anti-spam de clics prématurés ?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Cliquer avant l'allumage ou spammer le bouton impose une temporisation automatique de 1,2 seconde. Cette contrainte élimine les coups d'avance pris au hasard et garantit une mesure neurobiologique authentique."
+        "text": "Cliquer avant l'allumage ou spammer le bouton impose une temporisation automatique de 1,2 seconde. Cette contrainte limite les clics au hasard et aide à mesurer une réaction visuelle."
       }
     },
     {

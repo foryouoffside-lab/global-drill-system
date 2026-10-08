@@ -176,7 +176,7 @@ const faqSchema = {
       name: 'このエイム練習はVALORANTやApex Legendsの実戦に役立ちますか？',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'はい。VALORANTにおけるヘッドショット初弾精度や、Apex Legendsにおける近接戦闘でのマイクロフリックは、まさにこのドリルが鍛える10〜15度の微小弾道修正能力に直結しています。',
+        text: 'はい。VALORANTにおけるヘッドショット初弾精度や、Apex Legendsにおける近接戦闘でのマイクロフリックは、まさにこのドリルが鍛える10〜15度の微小弾道修正能力に役立つ可能性があります。',
       },
     },
     {
@@ -184,7 +184,7 @@ const faqSchema = {
       name: 'エイム練習で良いスコアの目安はどれくらいですか？',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: '初級者は8,000点未満、中級者は18,000〜31,999点（レベル6〜8）、上級競技者は32,000点以上、競技プロ・エリート層は48,000点以上（レベル12以上、精度95%超）が目安です。',
+        text: '初級者は8,000点未満、中級者は18,000〜31,999点（レベル6〜8）、上級競技者は32,000点以上、さらに上の段階は48,000点以上（レベル12以上、精度95%超）が目安です。',
       },
     },
     {
@@ -208,7 +208,7 @@ const faqSchema = {
       name: 'ゲームごとのマウス感度と一致させることはできますか？',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'はい。Pointer Lock APIによるRawマウス入力に対応しており、訓練ハブ共通のマウス感度設定と連動して普段のゲームと同じ振り向きcm数で練習できます。',
+        text: 'はい。Pointer Lock APIに対応しており、訓練ハブ共通のマウス感度設定と連動して普段のゲームと同じ振り向きcm数で練習できます。',
       },
     },
     {
@@ -326,7 +326,7 @@ export default function AimTrainerJapanesePage() {
 
         <h3>入力ポーリング・表示更新と知覚遅延の最適化</h3>
         <p>
-          正確なクリックタイミングには、システム全体の入力遅延低減が不可欠です。ウッズら（2015）の報告にあるように、ヒトの神経伝達遅延は網膜受容（30〜50ms）、大脳皮質処理（60〜80ms）、皮質脊髄路運動伝達（40〜60ms）で構成されます。60Hzディスプレイの更新間隔は16.7msですが、144Hzでは6.9ms、240Hzでは4.1msに短縮され、終末減速フェーズにおける視覚的修正精度が飛躍的に向上します。
+          正確なクリックタイミングには、システム全体の入力遅延低減が不可欠です。ウッズら（2015）の報告にあるように、ヒトの神経伝達遅延は網膜受容（30〜50ms）、大脳皮質処理（60〜80ms）、皮質脊髄路運動伝達（40〜60ms）で構成されます。60Hzディスプレイの更新間隔は16.7msですが、144Hzでは6.9ms、240Hzでは4.1msに短縮され、終末減速フェーズにおける視覚的修正精度の向上に役立つ可能性があります。
         </p>
 
         <h3>エイム練習 パフォーマンス指標・実力目安表</h3>
@@ -346,11 +346,11 @@ export default function AimTrainerJapanesePage() {
             </thead>
             <tbody className="divide-y divide-white/5 text-slate-300">
               <tr>
-                <td className="p-2.5 border border-white/10 font-bold text-emerald-400">Tier 1 (エリート)</td>
+                <td className="p-2.5 border border-white/10 font-bold text-emerald-400">Tier 1 (最上位段階)</td>
                 <td className="p-2.5 border border-white/10">&gt; 48,000 PTS</td>
                 <td className="p-2.5 border border-white/10">Level 12+</td>
                 <td className="p-2.5 border border-white/10">&gt; 95% (コンボ25+)</td>
-                <td className="p-2.5 border border-white/10">FPSプロ競技者・最高峰マークスマン</td>
+                <td className="p-2.5 border border-white/10">最上位段階の目安</td>
               </tr>
               <tr>
                 <td className="p-2.5 border border-white/10 font-bold text-cyan-400">Tier 2 (エキスパート)</td>
@@ -426,13 +426,13 @@ export default function AimTrainerJapanesePage() {
           <div className="border-b border-white/10 pb-3">
             <h4 className="font-bold text-white text-sm mb-1">このエイム練習はVALORANTやApex Legendsの実戦に役立ちますか？</h4>
             <p className="text-xs sm:text-sm text-slate-300">
-              はい。VALORANTにおけるヘッドショット初弾精度や、Apex Legendsにおける近接戦闘でのマイクロフリックは、まさにこのドリルが鍛える10〜15度の微小弾道修正能力に直結しています。
+              はい。VALORANTにおけるヘッドショット初弾精度や、Apex Legendsにおける近接戦闘でのマイクロフリックは、まさにこのドリルが鍛える10〜15度の微小弾道修正能力に役立つ可能性があります。
             </p>
           </div>
           <div className="border-b border-white/10 pb-3">
             <h4 className="font-bold text-white text-sm mb-1">エイム練習で良いスコアの目安はどれくらいですか？</h4>
             <p className="text-xs sm:text-sm text-slate-300">
-              初級者は8,000点未満、中級者は18,000〜31,999点（レベル6〜8）、上級競技者は32,000点以上、競技プロ・エリート層は48,000点以上（レベル12以上、精度95%超）が目安です。
+              初級者は8,000点未満、中級者は18,000〜31,999点（レベル6〜8）、上級競技者は32,000点以上、さらに上の段階は48,000点以上（レベル12以上、精度95%超）が目安です。
             </p>
           </div>
           <div className="border-b border-white/10 pb-3">
@@ -450,7 +450,7 @@ export default function AimTrainerJapanesePage() {
           <div className="border-b border-white/10 pb-3">
             <h4 className="font-bold text-white text-sm mb-1">ゲームごとのマウス感度と一致させることはできますか？</h4>
             <p className="text-xs sm:text-sm text-slate-300">
-              はい。Pointer Lock APIによるRawマウス入力に対応しており、訓練ハブ共通のマウス感度設定と連動して普段のゲームと同じ振り向きcm数で練習できます。
+              はい。Pointer Lock APIに対応しており、訓練ハブ共通のマウス感度設定と連動して普段のゲームと同じ振り向きcm数で練習できます。
             </p>
           </div>
           <div className="border-b border-white/10 pb-3">

@@ -267,7 +267,7 @@ const guideProps = {
     headers: ['Übungsstufe', 'Bezeichnung', 'Leistungsbereich', 'Erreichte Stufe', 'Genauigkeit', 'Einordnung'],
     note: 'Die Bereiche sind redaktionelle Übungsmarken und keine Bevölkerungsstatistik.',
     rows: [
-      { tier: 'Stufe 1', rank: 'Sehr sicher', stat: 'Stufe 1 von 5', level: 'Elite (Exzellent)', accuracy: '98%+', category: 'Übungsmarke' },
+      { tier: 'Stufe 1', rank: 'Sehr sicher', stat: 'Stufe 1 von 5', level: 'Stufe 1 (Exzellent)', accuracy: '98%+', category: 'Übungsmarke' },
       { tier: 'Stufe 2', rank: 'Sicher', stat: 'Stufe 2 von 5', level: 'Diamant (Sehr gut)', accuracy: '94–97%', category: 'Übungsmarke' },
       { tier: 'Stufe 3', rank: 'Solide', stat: 'Stufe 3 von 5', level: 'Platin (Kompetent)', accuracy: '88–93%', category: 'Übungsmarke' },
       { tier: 'Stufe 4', rank: 'Aufbau', stat: 'Stufe 4 von 5', level: 'Gold (Standard)', accuracy: '78–87%', category: 'Übungsmarke' },
@@ -312,7 +312,7 @@ const deCopy = {
     { num: "1", text: "Pfad Verfolgen", highlight: "Smaragdwelle", result: "+1 Punkt / Frame auf Pfad" },
     { num: "2", text: "Geschwindigkeit", highlight: "Dynamische Welle", result: "2,2 → 3,8 px/f über 45s" },
     { num: "3", text: "Flow-Bonus", highlight: "Super Flow", result: "4s Pfadtreue bringt +5 Punkte" },
-    { num: "4", text: "Präzises Tracking", highlight: "Desktop Exklusiv", result: "1:1 Rohe Mauseingabe" }
+    { num: "4", text: "Präzises Tracking", highlight: "Desktop Exklusiv", result: "Pointer-Lock-Mauserfassung" }
   ],
 };
 

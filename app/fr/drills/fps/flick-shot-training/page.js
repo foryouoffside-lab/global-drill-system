@@ -146,7 +146,7 @@ export default function FlickShotFrPage() {
         "name": "Quelle est la sensibilité eDPI idéale pour le flick shot ?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Sur Valorant, une plage de 200 à 320 eDPI (ex. 800 DPI avec 0,25 à 0,4) assure une décélération optimale. Sur CS2, une sensibilité de 600 à 1000 eDPI garantit réactivité et contrôle des tirs à la tête."
+          "text": "Sur Valorant, une plage de 200 à 320 eDPI (ex. 800 DPI avec 0,25 à 0,4) assure une décélération optimale. Sur CS2, une sensibilité de 600 à 1000 eDPI favorise réactivité et contrôle des tirs à la tête."
         }
       },
       {
@@ -241,7 +241,7 @@ export default function FlickShotFrPage() {
         ["Mouvement Balistique Principal (Impulsion)", "120 – 180 ms", "Activation musculaire agoniste-antagoniste", "Trajectoire balistique en boucle ouverte couvrant 80–90% du trajet (Elliott et al. 2010)"],
         ["Micro-Correction Secondaire (Guidage)", "60 – 120 ms", "Rétroaction visuelle et freinage mécanique", "Phase finale en boucle fermée résolvant l'indice de difficulté (Fitts 1954)"],
         ["Temps Total d'Acquisition (Brut)", "360 – 520 ms", "Boucle sensorimotrice complète + déclenchement du clic", "Norme compétitive standard chez les joueurs réguliers"],
-        ["Acquisition Subconsciente d'Élite", "240 – 320 ms", "Synergie motrice automatisée sans corrections superflues", "Maîtrise compétitive de haut niveau en FPS tactique avec arrêt net sur cible"]
+        ["Acquisition Subconsciente Avancée", "240 – 320 ms", "Synergie motrice automatisée sans corrections superflues", "Entraîne l’arrêt net sur cible avec des micro-ajustements minimaux"]
       ],
       note: "Données synthétisées d'après la recherche en contrôle moteur (Fitts 1954; Schmidt et al. 1979; Elliott et al. 2010) et la chronométrie numérique (Woods et al. 2015). Les résultats varient selon le rafraîchissement de l'écran, le taux d'interrogation de la souris et l'amplitude de la cible."
     },

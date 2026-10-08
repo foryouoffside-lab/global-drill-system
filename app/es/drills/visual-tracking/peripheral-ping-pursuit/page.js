@@ -230,7 +230,7 @@ const guideProps = {
     title: "Métricas de Campo Visual Útil (UFOV) y Latencia Periférica",
     headers: ["Nivel de Rendimiento", "Campo Visual Útil (UFOV %)", "Tiempo de Reacción Periférico", "Estabilidad Central", "Perfil Neurofisiológico"],
     rows: [
-      ["Élite (Competición y deporte)", "Más de 92%", "Menos de 280 ms", "Más de 95%", "Desacoplamiento foveal perfecto; conciencia panorámica sin desviar la mirada central."],
+      ["Etapa Avanzada", "Más de 92%", "Menos de 280 ms", "Más de 95%", "Desacoplamiento foveal perfecto; conciencia panorámica sin desviar la mirada central."],
       ["Avanzado (Nivel Competitivo)", "85% – 92%", "280 ms – 340 ms", "90% – 95%", "Excelente distribución de atención encubierta; mínima demora ante estímulos laterales."],
       ["Competente (Adulto Sano)", "75% – 84%", "341 ms – 410 ms", "82% – 89%", "Sólida capacidad de doble tarea; leve visión en túnel con movimientos centrales rápidos."],
       ["En Desarrollo", "60% – 74%", "411 ms – 500 ms", "70% – 81%", "Retraso apreciable; micro-sacadas involuntarias frecuentes hacia los destellos periféricos."],

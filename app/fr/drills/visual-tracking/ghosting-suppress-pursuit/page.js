@@ -188,7 +188,7 @@ const faqSchema = {
       "name": "Quels sont les bénéfices directs de cet entraînement pour les joueurs de FPS ?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Dans les affrontements chargés d'explosions et d'effets visuels complexes, maintenir le réticule exactement au cœur de la cible adverse sans être perturbé par les traînées lumineuses garantit une précision de tir constante."
+        "text": "Dans les affrontements chargés d'explosions et d'effets visuels complexes, maintenir le réticule exactement au cœur de la cible adverse sans être perturbé par les traînées lumineuses aide à garder une précision de tir plus constante."
       }
     },
     {
@@ -196,7 +196,7 @@ const faqSchema = {
       "name": "Pourquoi faut-il maintenir la tête strictement immobile lors du test ?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Les mouvements de tête déclenchent le réflexe vestibulo-oculaire (RVO), compensant le suivi via l'oreille interne. L'immobilité de la tête garantit que les muscles oculomoteurs assument la totalité de la charge de stabilisation."
+        "text": "Les mouvements de tête déclenchent le réflexe vestibulo-oculaire (RVO), compensant le suivi via l'oreille interne. L’immobilité de la tête fait peser davantage de charge de stabilisation sur les muscles oculomoteurs."
       }
     },
     {

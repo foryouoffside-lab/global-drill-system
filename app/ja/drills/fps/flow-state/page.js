@@ -185,7 +185,7 @@ export default function FlowStateJaPage() {
         "name": "このドリルは仕事や勉強のディープワーク（深い集中）にも応用できますか？",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "はい。持続的注意は全般的な認知リソースです。視覚的注意の散漫を抑え、目の前の対象に没入し続ける訓練は、プログラミングや読書などの深い知的作業の持久力向上にも直結します。"
+          "text": "はい。持続的注意は全般的な認知リソースです。視覚的注意の散漫を抑え、目の前の対象に没入し続ける訓練は、プログラミングや読書などの深い知的作業の持久力向上にも役立つ可能性があります。"
         }
       }
     ]
@@ -201,14 +201,14 @@ export default function FlowStateJaPage() {
         "@type": "HowToStep",
         "position": 1,
         "name": "マウス感度を調整する",
-        "text": "プレイ中のメインFPSゲームと同じ感度を設定し、1:1のマッスルメモリーを確保します。",
+        "text": "プレイ中のメインFPSゲームと同じ感度を設定し、マッスルメモリーの定着に役立てます。",
         "url": "https://skilldrills.online/ja/drills/fps/flow-state#step-1"
       },
       {
         "@type": "HowToStep",
         "position": 2,
-        "name": "RAWポインターロックを有効化",
-        "text": "開始ボタンを押してフルスクリーン化し、OSの不要なマウス加速を完全に排除します。",
+        "name": "ポインターロックを有効化",
+        "text": "開始ボタンを押してフルスクリーン化し、ポインターロックを有効にします。",
         "url": "https://skilldrills.online/ja/drills/fps/flow-state#step-2"
       },
       {
@@ -236,7 +236,7 @@ export default function FlowStateJaPage() {
     statAccuracy: "トラッキング精度",
     statBestScore: "自己ベスト",
     startTitle: "フロー状態 エイム 練習",
-    startSubtitle: "ハードウェアRAW入力 • 集中力持続 • エンドレス難易度",
+    startSubtitle: "ポインターロック入力 • 集中力持続 • エンドレス難易度",
     getReady: "準備完了",
     pausedTitle: "集中一時停止",
     pausedSubtitle: "クリックして再開（マウスロックが再有効化されます）",
@@ -297,8 +297,8 @@ export default function FlowStateJaPage() {
       ]
     },
     steps: [
-      "ゲーム内感度セレクターで普段使用している感度を設定し、1:1のマッスルメモリーを確保します。",
-      "「ドリル開始」をクリックしてフルスクリーンRAWポインターロック状態に入ります。",
+      "ゲーム内感度セレクターで普段使用している感度を設定し、マッスルメモリーの定着に役立てます。",
+      "「ドリル開始」をクリックしてフルスクリーンのポインターロック状態に入ります。",
       "滑らかなベジェ曲線を描いて移動するターゲットの進行方向に視線を合わせます。",
       "ターゲット内に照準を維持し続け、フローメーターを満たしてゾーン状態へ突入します。",
       "途切れない集中チェーンを維持してスコア倍率を高め、疲れにくい強固な集中力を養います。"

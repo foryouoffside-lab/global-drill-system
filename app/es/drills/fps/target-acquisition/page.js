@@ -172,10 +172,10 @@ export default function TargetAcquisitionEsPage() {
       },
       {
         "@type": "Question",
-        "name": "¿Cómo mejora el Raw Input la regularidad en la adquisición de objetivos?",
+        "name": "¿Por qué importa una sensibilidad constante en la adquisición de objetivos?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "La entrada directa por hardware mantiene una correlación física estrictamente lineal entre la mano y la pantalla, permitiendo al sistema neuromuscular calcular el impulso balístico exacto sin las distorsiones de la aceleración."
+          "text": "Una sensibilidad constante mantiene estable la relación entre la mano y la pantalla, lo que ayuda al sistema neuromuscular a calibrar el impulso balístico."
         }
       },
       {
@@ -199,7 +199,7 @@ export default function TargetAcquisitionEsPage() {
         "@type": "HowToStep",
         "position": 1,
         "name": "Calibrar Sensibilidad con Entrada Directa",
-        "text": "Ajusta tu sensibilidad y DPI exactos en la configuración de sesión para sincronizar la relación 1:1 y bloquear el ratón.",
+        "text": "Ajusta tu sensibilidad y DPI exactos en la configuración de sesión para mantener tu relación habitual y bloquear el ratón.",
         "url": "https://skilldrills.online/es/drills/fps/target-acquisition#step-1"
       },
       {
@@ -239,8 +239,8 @@ export default function TargetAcquisitionEsPage() {
       title: "Baremos Científicos de Adquisición de Blancos y Latencia de Discriminación",
       headers: ["Nivel de Rendimiento", "Latencia de Adquisición", "Precisión de Primer Tiro", "Impacto Competitivo en Partida"],
       rows: [
-        ["Tier 1 (Apex Sentinel / Radiant Pro)", "<260 ms", "95% – 99%+", "Detección inmediata de blancos; tiros a la cabeza impecables a la primera bala sin vacilaciones de discriminación"],
-        ["Tier 2 (Maestro Competitivo / Tier-2 Esports)", "260 – 320 ms", "88% – 95%", "Gran velocidad de detección; acierto decisivo sobre la amenaza prioritaria con mínima distracción periférica"],
+        ["Tier 1 (Etapa Avanzada)", "<260 ms", "95% – 99%+", "Detección inmediata de blancos; tiros a la cabeza impecables a la primera bala sin vacilaciones de discriminación"],
+        ["Tier 2 (Etapa Intermedia-Alta)", "260 – 320 ms", "88% – 95%", "Gran velocidad de detección; acierto decisivo sobre la amenaza prioritaria con mínima distracción periférica"],
         ["Tier 3 (Diamante / Ascendente)", "320 – 400 ms", "80% – 88%", "Precisión sólida de primer disparo; manifiesta leves demoras de 50 a 80 ms ante múltiples blancos agrupados"],
         ["Tier 4 (Intermedio / Oro / Platino)", "400 – 500 ms", "70% – 80%", "Inclinación a búsquedas secuenciales lentas; en ocasiones dispara a distractores secundarios o sobrepasa el blanco"],
         ["Tier 5 (Iniciación / Novato)", ">500 ms", "<70%", "Confusión ante elementos visuales complejos; lentitud en la fijación de objetivos que causa derrotas en los primeros intercambios"]
@@ -273,7 +273,7 @@ export default function TargetAcquisitionEsPage() {
       ]
     },
     steps: [
-      "Indica tu juego de referencia, DPI y sensibilidad en los ajustes de sesión para mantener la correspondencia 1:1 y bloquear el cursor.",
+      "Indica tu juego de referencia, DPI y sensibilidad en los ajustes de sesión para mantener tu relación habitual y bloquear el cursor.",
       "Mantén la vista descansada en el centro de la pantalla, esperando la aparición del conjunto de objetivos.",
       "Identifica al instante el blanco de mayor brillo y prioridad mediante el filtrado visual de contrastes en paralelo.",
       "Ejecuta un flick limpio y rápido al centro del blanco y dispara para sumar +100 PTS (+0,4s de tiempo adicional).",

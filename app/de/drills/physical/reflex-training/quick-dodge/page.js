@@ -152,7 +152,7 @@ const faqSchema = {
       "name": "Wie setzen sich die Punkte und der Combo-Multiplikator zusammen?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Jede überlebte Sekunde bringt kontinuierlich Punkte. Wird ein Projektil haarscharf um wenige Pixel gestreift (Close Shave), steigt der Combo-Multiplikator rasant bis zum 3,0-fachen Maximum an. Nur ein fehlerfreier 45-Sekunden-Lauf erschließt den Elite-Bereich von über 24.000 Punkten."
+        "text": "Jede überlebte Sekunde bringt kontinuierlich Punkte. Wird ein Projektil haarscharf um wenige Pixel gestreift (Close Shave), steigt der Combo-Multiplikator rasant bis zum 3,0-fachen Maximum an. Nur ein fehlerfreier 45-Sekunden-Lauf erschließt den Bereich von über 24.000 Punkten."
       }
     },
     {

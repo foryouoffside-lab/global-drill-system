@@ -239,7 +239,7 @@ const movingTargetGuide = {
     title: "Repères de poursuite et de précision d'interception",
     headers: ["Palier de Performance", "Fenêtre de Pacing", "Score & Seuil de Combo", "Profil de Poursuite et d'Interception"],
     rows: [
-      ["Tier 1: Intercepteur Cinétique Apex", "< 0.25s Fenêtre", "16 000+ PTS | Combo 25x+", "Poursuite lente de niveau pro ; extrapolation parfaite sans latence de saccade correctrice. Niveau pilotes et joueurs d'élite."],
+      ["Tier 1: Intercepteur Cinétique Apex", "< 0.25s Fenêtre", "16 000+ PTS | Combo 25x+", "Poursuite lente avancée ; extrapolation sans latence de saccade correctrice."],
       ["Tier 2: Traqueur Dynamique Supérieur", "0.25 – 0.45s Fenêtre", "10 500 – 15 999 PTS | Combo 16x+", "Fluidité oculaire remarquable ; corrections vives en boucle fermée avec dépassement minime sur des cibles accélérées."],
       ["Tier 3: Standard Adulte Équilibré", "0.46 – 0.70s Fenêtre", "6 000 – 10 499 PTS | Combo 9x+", "Suivi régulier sur les trajectoires directes ; léger délai d'ajustement lors des rebonds inattendus contre les parois."],
       ["Tier 4: Traqueur en Évolution", "0.71 – 1.00s Fenêtre", "2 500 – 5 999 PTS | Combo 4x+", "Forte dépendance envers les saccades réactives au détriment de la poursuite fluide ; hésitation marquée à grande vitesse."],

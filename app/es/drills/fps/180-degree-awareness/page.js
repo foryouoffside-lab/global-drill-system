@@ -180,10 +180,10 @@ export default function AwarenessDrillEsPage() {
       },
       {
         "@type": "Question",
-        "name": "¿Admite este simulador entrada directa de ratón (raw input)?",
+        "name": "¿Cómo captura este simulador el movimiento del ratón?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Sí. Utiliza la API HTML5 Pointer Lock para brindar una respuesta 1:1 sin aceleración ni suavizado de software del sistema operativo."
+          "text": "Utiliza la API HTML5 Pointer Lock para capturar el movimiento del ratón dentro del navegador. El resultado depende de la configuración de tu sistema operativo y de tu ratón."
         }
       }
     ]
@@ -239,7 +239,7 @@ export default function AwarenessDrillEsPage() {
         ["Desaceleración y Frenado de Mira", "60 – 110 ms", "Frenado de músculos antagonistas (stopping power)", "Amortiguación de impulso de frenado (Schmidt 1979)"],
         ["Microcorrección Terminal y Clic", "70 – 130 ms", "Retroalimentación visual foveal y clic", "Fase de aproximación de la Ley de Fitts (Fitts 1954)"],
         ["Tiempo Total de Reincorporación 180°", "450 – 690 ms", "Bucle sensoriomotor completo de giro", "Línea base competitiva estándar entre jugadores"],
-        ["Ejecución Subconsciente de Élite 180°", "320 – 420 ms", "Sinergia de sensibilidad y memoria muscular pura", "Maestría en e-sports en situaciones de clutch en FPS"]
+        ["Ejecución Subconsciente Avanzada 180°", "320 – 420 ms", "Sinergia de sensibilidad y memoria muscular pura", "Práctica de giros de 180° con sensibilidad y memoria muscular estables"]
       ],
       note: "Datos extraídos de estudios biomecánicos y psicomotores (Rayner 1998; Fitts 1954; Schmidt et al. 1979; Elliott et al. 2010) y cronometría digital (Woods et al. 2015). La latencia final varía según la sensibilidad (cm/360°), la fricción de la alfombrilla y los hercios del monitor."
     },

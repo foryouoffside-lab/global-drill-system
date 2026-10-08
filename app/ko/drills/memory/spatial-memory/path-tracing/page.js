@@ -165,7 +165,7 @@ export default function LocalizedPathTracingPage() {
             "name": "공간 순서 기억력은 일상생활과 게임에서 어떻게 활용되나요?",
             "acceptedAnswer": {
                   "@type": "Answer",
-                  "text": "복잡한 길 찾기 경로 기억, 댄스나 스포츠 동작 시퀀스 암기, FPS나 MOBA 게임에서 맵 순찰 동선 및 스킬 콤보 시퀀스를 정확하게 실행하는 능력과 직결됩니다."
+                  "text": "복잡한 길 찾기 경로 기억, 댄스나 스포츠 동작 시퀀스 암기, FPS나 MOBA 게임에서 맵 순찰 동선 및 스킬 콤보 시퀀스를 정확하게 실행하는 능력과 관련된 연습이 될 수 있습니다."
             }
       },
       {

@@ -233,13 +233,13 @@ const movingTargetGuide = {
     "Das präzise Abfangen dynamischer Ziele ist eine elementare senso-motorische Kernkompetenz in Ballsportarten, im Motorsport, in der Luftfahrt und im wettbewerbsorientierten E-Sport. Das erfolgreiche Treffen eines beschleunigten Objekts verlangt die lückenlose Synchronisation von stetigen Blickfolgebewegungen, prädiktiver Bahnextrapolation und feinstabgestimmtem Bewegungstiming.",
     "Die neuronale Verarbeitung visueller Bewegung beginnt in richtungsselektiven Neuronen des mittleren temporalen Areals (MT/V5) und des medialen superioren temporalen Areals (MST). Diese Zentren berechnen Geschwindigkeits- und Richtungsvektoren und leiten Steuersignale an das frontale Augenfeld (FEF) und die Purkinje-Zellen des Kleinhirns weiter, um den Blickgewinn aufrechtzuerhalten (Krauzlis, 2004).",
     "In seiner grundlegenden Arbeit wies Rashbass (1961) nach, dass Smooth Pursuit und Sakkaden unabhängigen Kontrollsystemen unterliegen: Verfolgung wird durch die retinale Bildschlupfgeschwindigkeit gesteuert, während Sakkaden Positionsfehler kompensieren. Beschleunigt das Ziel über 30 bis 40°/s oder prallt ab, greifen aufholende Korrektursakkaden ein (Bahill et al., 1980).",
-    "Untersuchungen von Land & McLeod (2000) im Hochleistungssport belegen, dass Spitzenathleten ein bewegtes Objekt nicht passiv verfolgen, sondern antizipatorische Blicksprünge zu künftigen Abprall- und Treffpunkten ausführen. Genau diese Fähigkeit schult dieser Drill unter Realzeit-Bedingungen."
+    "Untersuchungen von Land & McLeod (2000) im Sport berichten, dass geübte Athleten ein bewegtes Objekt nicht passiv verfolgen, sondern antizipatorische Blicksprünge zu künftigen Abprall- und Treffpunkten ausführen. Genau diese Fähigkeit schult dieser Drill unter Realzeit-Bedingungen."
   ],
   benchmarks: {
     title: "Orientierungswerte für Zielverfolgung und Abfanggenauigkeit",
     headers: ["Leistungsband", "Pacing-Zeitfenster", "Punkte & Combo-Schwelle", "Visuelles Tracking- & Interzeptionsprofil"],
     rows: [
-      ["Tier 1: Apex Kinetischer Interzeptor", "< 0.25s Zeitfenster", "16.000+ Pkt. | Combo 25x+", "Profi-Blickfolge; makellose Geschwindigkeits-Extrapolation ohne Sakkaden-Latenz. Typisch für Spitzen-Gamer und Kampfjetpiloten."],
+      ["Tier 1: Apex Kinetischer Interzeptor", "< 0.25s Zeitfenster", "16.000+ Pkt. | Combo 25x+", "Fokus: Geschwindigkeits-Extrapolation ohne Sakkaden-Latenz."],
       ["Tier 2: Fortgeschrittener Tracker", "0.25 – 0.45s Zeitfenster", "10.500 – 15.999 Pkt. | Combo 16x+", "Flüssige Augenfolge; rasche Closed-Loop-Korrekturen mit minimalem Überschwingen bei beschleunigten Objekten."],
       ["Tier 3: Solide Verfolgungsleistung", "0.46 – 0.70s Zeitfenster", "6.000 – 10.499 Pkt. | Combo 9x+", "Verlässlicher Standard; konstantes Timing auf linearen Bahnen mit leichten Verzögerungen bei abrupten Wandabprallern."],
       ["Tier 4: Entwicklungsstufe", "0.71 – 1.00s Zeitfenster", "2.500 – 5.999 Pkt. | Combo 4x+", "Starke Abhängigkeit von reaktiven Aufholsakkaden statt prädiktiver Verfolgung; spürbare Zögerlichkeit bei hohem Tempo."],
@@ -257,7 +257,7 @@ const movingTargetGuide = {
       },
       {
         name: "Antizipation von Randabprallern (Land & McLeod Sakkadische Anker)",
-        desc: "Elite-Athleten springen mit dem Blick voraus zum vorausberechneten Abprallpunkt, anstatt dem Objekt in die Wand zu folgen (Land & McLeod, 2000).",
+        desc: "Geübte Athleten springen mit dem Blick voraus zum vorausberechneten Abprallpunkt, anstatt dem Objekt in die Wand zu folgen (Land & McLeod, 2000).",
         tips: "Nähert sich das Ziel einer Wand, versetze das Fadenkreuz vorab auf den Ausfallswinkel des Abprallers."
       },
       {

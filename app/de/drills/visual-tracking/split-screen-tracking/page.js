@@ -267,7 +267,7 @@ const guide = {
     title: "Bewertungsstandards für geteilte Aufmerksamkeit & bilaterale Blickverfolgung",
     headers: ["Leistungsstufe", "Geschwindigkeit", "Blickanker-Stabilität", "Hemisphären-Symmetrie", "Einordnung"],
     rows: [
-      ["Elite / Voll adaptiert (Elite)", "3,5x bis 5,0x+", "Absolut stabiler zentraler Anker, 0 Sakkaden", "Fehlerraten-Differenz < 3% (perfekt bimodal)", "Stufe 1"],
+      ["Höchste Übungsstufe / Voll adaptiert", "3,5x bis 5,0x+", "Absolut stabiler zentraler Anker, 0 Sakkaden", "Fehlerraten-Differenz < 3% (perfekt bimodal)", "Stufe 1"],
       ["Master / Fortgeschrittene Teilung (Master)", "2,5x bis 3,5x", "Sehr stabiler Anker, minimale Mikrosakkaden", "Fehlerraten-Differenz < 7% (stabile Erfassung)", "Stufe 2"],
       ["Advanced / Wettkampfniveau (Advanced)", "1,8x bis 2,5x", "Weitgehend zentral, Blicksprünge bei Tempo-Peaks", "Fehlerraten-Differenz < 12% (leichte Dominanz)", "Stufe 3"],
       ["Intermediate / Grundstufe (Intermediate)", "1,2x bis 1,8x", "Häufige unwillkürliche Blicksprünge zur Seite", "Spürbare Verzögerung auf einer Seite (15-25%)", "Stufe 4"],

@@ -191,7 +191,7 @@ export default function GermanAngleHoldPage() {
         "name": "Unterstützt dieser Trainer rohe Hardware-Mauseingaben?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Ja. Angle Hold Pro nutzt die HTML5 Pointer Lock API mit 1:1-Hardware-Übersetzung und timestampet Klicks über performance.now() frei von künstlicher Mausbeschleunigung oder Glättung."
+          "text": "Ja. Angle Hold Pro nutzt die HTML5 Pointer Lock API zur Mauserfassung und timestampet Klicks über performance.now(). Es wird keine unbeschleunigte Eingabe angefordert, daher können Zeigereinstellungen des Betriebssystems weiter wirken."
         }
       }
     ]
@@ -250,7 +250,7 @@ export default function GermanAngleHoldPage() {
         ["Diskriminations-Latenz (Fake / Jiggle Peek)", "210 – 280 ms", "Go/No-Go kognitive Erkennung eines echten Swings", "Trigger-Disziplin unter Köder-Druck (Hick, 1952)"],
         ["Peeker's Advantage Latenz-Defizit", "40 – 90 ms", "Client-Server RTT Paketübertragung + Interpolationspuffer", "Netzwerk-bedingter Zeitvorteil des bewegten Angreifers"],
         ["Effektives defensives Reaktionsfenster", "250 – 340 ms", "Kombinierte visuelle Latenz + Netcode-Defizit", "Standard-Baseline für kompetitive taktische FPS-Verteidiger"],
-        ["Elite Pre-Aim Vorhalte-Präzision", "170 – 220 ms", "Optimaler Wandabstand passend zur Gegnergeschwindigkeit", "Radiant / CS2 Faceit Level 10 Meisterschaft im Winkelhalten"]
+        ["Stufe 4: Pre-Aim-Feinabstimmung", "170 – 220 ms", "Optimaler Wandabstand passend zur Gegnergeschwindigkeit", "Fokus: Wandabstand an die Gegnergeschwindigkeit anpassen"]
       ],
       note: "Werte synthetisiert aus neurokognitiver Reaktionschronometrie (Donders, 1868; Hick, 1952; Woods et al., 2015) und Netcode-Analysen moderner Taktik-Shooter. Individuelle Reaktionszeiten variieren je nach Bildwiederholfrequenz, Mauseingabe-Polling und kognitiver Wachheit."
     },

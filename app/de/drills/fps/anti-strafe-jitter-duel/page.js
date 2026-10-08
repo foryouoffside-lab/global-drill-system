@@ -201,7 +201,7 @@ export default function AntiStrafeJitterDePage() {
         "@type": "HowToStep",
         "position": 1,
         "name": "In-Game-Empfindlichkeit einstellen",
-        "text": "Stimme deine Spiel-Sensitivität in den Session-Einstellungen ab, um exakt identisches 1:1-Hardware-Muskelgedächtnis abzubilden.",
+        "text": "Stimme deine Spiel-Sensitivität in den Session-Einstellungen ab, um dein Muskelgedächtnis konsistent zu halten.",
         "url": "https://skilldrills.online/de/drills/fps/anti-strafe-jitter-duel#step-1"
       },
       {
@@ -233,7 +233,7 @@ export default function AntiStrafeJitterDePage() {
     intro: [
       "Ein Aim Trainer für reaktives Tracking übt, das Fadenkreuz bei unberechenbaren ADAD-Strafes auf dem Ziel zu halten. Dieser Drill misst Nahkampf-Tracking, Richtungswechsel und Overshoot-Kontrolle für Apex, Overwatch 2 und Warzone.",
       "Ändert ein Gegner blitzschnell die Richtung, wandert das Zielbild aus der Fovea zentralis ab – es entsteht retinaler Schlupf. Das Gehirn kann diese Umkehr nicht voraussehen: Es muss die Abbremsung des Ziels erfassen, den Richtungswechsel im motorischen Kortex verarbeiten, die bestehende Mausbewegung abbremsen und eine gegenläufige Muskelkontraktion einleiten. In Spielen mit hoher Time-to-Kill (TTK) – wie Apex Legends, Overwatch 2 und Call of Duty: Warzone – gewinnt derjenige das Duell, der seine Fadenkreuz-Uptime auf der ausweichenden Hitbox maximiert.",
-      "Der Anti-Strafe Jitter Trainer nutzt die HTML5 Pointer Lock API mit 1:1-Hardwareübertragung, hochauflösender performance.now()-Chronometrie und eliminierter Mausbeschleunigung. Durch das Ausschalten von USB-Polling-Jitter und Browser-Interpolationsverzögerungen (Woods et al., 2015) trainiert dieses System exakt abgestimmte Brems- und Beschleunigungsmuster der Antagonistenmuskeln.",
+      "Der Anti-Strafe Jitter Trainer nutzt die HTML5 Pointer Lock API und hochauflösender performance.now()-Chronometrie. Es fordert keine unbeschleunigte Eingabe an, daher solltest du die Zeigerbeschleunigung des Betriebssystems ausschalten. Der Drill ist darauf ausgelegt, Brems- und Beschleunigungsmuster der Antagonistenmuskeln zu üben (Woods et al., 2015).",
       "Messmethodik: Alle Tracking-Ereignisse werden clientseitig über die performance.now()-Hochpräzisionsuhr deines Browsers gemessen – vollkommen ohne Server-Latenz. Zu berücksichtigen: Browser runden Zeitstempel aus Sicherheitsgründen (Spectre-Schutz) auf ca. 1 ms; Bildschirme quantisieren Bildfolgen über die Bildwiederholrate (16,7 ms bei 60 Hz, 6,9 ms bei 144 Hz, 4,1 ms bei 240 Hz). Die USB-Abfragerate fügt bei 1000 Hz ca. 1 ms hinzu. Unterschiede unter 5 ms stellen messtechnisches Rauschen dar; vergleiche Trainingsläufe stets auf identischer Hardware."
     ],
     benchmarks: {
@@ -244,7 +244,7 @@ export default function AntiStrafeJitterDePage() {
         ["Motorischer Umkehrimpuls", "80 – 130 ms", "Kortikospinale Signalübertragung & antagonistische Unterarm-Aktivierung", "Physische Zeitspanne zum Abstoppen und Richtungsumkehren der Maus"],
         ["Terminale Mikro-Zentrierung", "60 – 100 ms", "Feinmotorische foveale Nachjustierung der Hitbox-Position", "Beseitigung von Überschwingern und Einrasten des Fadenkreuzes"],
         ["Unvorbereitetes Gesamtreaktionsfenster", "300 – 440 ms", "Kumulative Summe aus Erkennung, Bremsung und Re-Zentrierung", "Standard-Latenzverlust bei unvorhersehbaren ADAD-Strafes"],
-        ["Elite Reaktives Tracking", "210 – 290 ms", "Antizipatorische Geschwindigkeitsanpassung & entspannte Muskelkontrolle", "Meisterschaftsniveau von Apex Predators und Overwatch OWL Profis"]
+        ["Stufe 4: Reaktives Tracking", "210 – 290 ms", "Antizipatorische Geschwindigkeitsanpassung & entspannte Muskelkontrolle", "Fokus: Geschwindigkeitswechsel früh antizipieren und entspannt nachführen"]
       ],
       note: "Metriken synthetisiert aus okulomotorischer Grundlagenforschung (Rashbass, 1961; Krauzlis, 2004), visueller Kognitionswissenschaft (Green & Bavelier, 2003) und digitaler Chronometrie (Woods et al., 2015)."
     },
@@ -274,7 +274,7 @@ export default function AntiStrafeJitterDePage() {
       ]
     },
     steps: [
-      "Stimme In-Game-Sensitivität und DPI in den Session-Einstellungen ab, um 1:1-Hardwarekoordinaten zu sichern.",
+      "Stimme In-Game-Sensitivität und DPI in den Session-Einstellungen ab, um deine Hand-zu-Cursor-Zuordnung konsistent zu halten.",
       "Klicke auf Start, um den Vollbildmodus zu aktivieren und den Hardware-Mauszeiger ohne Glättung zu sperren.",
       "Fixiere deinen Blick auf der unberechenbar ausweichenden Zielkugel bei hochfrequenten ADAD-Strafes.",
       "Halte dauerhaften Fadenkreuzkontakt und federe Richtungswechsel mit entspannten Handgelenksbewegungen ab.",

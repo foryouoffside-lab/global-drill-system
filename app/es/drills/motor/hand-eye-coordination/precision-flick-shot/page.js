@@ -129,7 +129,7 @@ const faqSchema = {
       name: '¿Por qué es fundamental la deceleración o frenado del ratón?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Porque sobrepasar el objetivo (overshoot) exige movimientos correctivos adicionales que demoran el disparo. La frenada firme garantiza el impacto a la primera.',
+        text: 'Porque sobrepasar el objetivo (overshoot) exige movimientos correctivos adicionales que demoran el disparo. La frenada firme ayuda a acertar a la primera.',
       },
     },
     {
@@ -177,7 +177,7 @@ const faqSchema = {
       name: '¿Qué configuraciones técnicas favorecen la respuesta del ratón?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Pantalla de 144 Hz o superior, entrada directa sin aceleración de Windows y un ratón ligero que reduzca la inercia del movimiento.',
+        text: 'Pantalla de 144 Hz o superior, la aceleración de puntero de Windows desactivada y un ratón ligero que reduzca la inercia del movimiento.',
       },
     },
     {

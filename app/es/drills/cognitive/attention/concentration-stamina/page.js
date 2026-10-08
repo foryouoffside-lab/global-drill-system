@@ -201,7 +201,7 @@ const faqSchema = {
       "name": "¿Cómo afecta la falta de sueño a los resultados?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "La fatiga por privación de sueño acelera exponencialmente el decaimiento de vigilancia y reduce a la mitad la estabilidad de respuesta."
+        "text": "La privación de sueño puede acelerar la pérdida de vigilancia y empeorar la estabilidad de respuesta."
       }
     },
     {

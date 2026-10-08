@@ -118,7 +118,7 @@ const faqSchema = {
       "name": "¿Cómo mide SkillDrills los tiempos de reacción y la latencia sin retrasos en el navegador?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "La plataforma utiliza la API de alta precisión performance.now(), capaz de registrar marcas temporales en microsegundos (fracciones de milisegundo). Mediante bucles de animación sincronizados con la tasa de refresco (requestAnimationFrame) y la Pointer Lock API para captura directa del ratón sin aceleración artificial, se eliminan los cuellos de botella de renderizado."
+        "text": "La plataforma utiliza la API de alta precisión performance.now(), capaz de registrar marcas temporales en microsegundos (fracciones de milisegundo). Mediante bucles de animación sincronizados con la tasa de refresco (requestAnimationFrame) y la Pointer Lock API para capturar el ratón dentro del navegador, se reducen los cuellos de botella de renderizado."
       }
     },
     {
@@ -126,7 +126,7 @@ const faqSchema = {
       "name": "¿Cuál es la rutina de entrenamiento recomendada para maximizar el progreso?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Se recomienda una sesión estructurada de 15 a 20 minutos diarios antes de competir o estudiar: 5 minutos de calentamiento oculomotor (seguimiento de trayectorias), 10 minutos de trabajo motor específico (flick shot o control de microajustes) y 5 minutos de control inhibitorio o memoria de trabajo. La constancia diaria estimula la mielinización de las vías neuronales implicadas."
+        "text": "Se recomienda una sesión estructurada de 15 a 20 minutos diarios antes de competir o estudiar: 5 minutos de calentamiento oculomotor (seguimiento de trayectorias), 10 minutos de trabajo motor específico (flick shot o control de microajustes) y 5 minutos de control inhibitorio o memoria de trabajo. La constancia diaria facilita medir tu progreso."
       }
     },
     {
@@ -134,7 +134,7 @@ const faqSchema = {
       "name": "¿Cómo transfiere el entrenamiento de puntería de SkillDrills a shooters como VALORANT, CS2 o Apex Legends?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Nuestros ejercicios de puntería FPS entrenan los componentes biomotores fundamentales: frenado balístico del ratón (mouse braking), colocación de mira en esquinas (angle holding), seguimiento de objetivos con strafe irregular y control de microajustes. Al coincidir la relación de sensibilidad con el espacio físico del mousepad, la memoria muscular se transfiere directamente al juego real."
+        "text": "Nuestros ejercicios de puntería FPS entrenan los componentes biomotores fundamentales: frenado balístico del ratón (mouse braking), colocación de mira en esquinas (angle holding), seguimiento de objetivos con strafe irregular y control de microajustes. Al coincidir la relación de sensibilidad con el espacio físico del mousepad, puedes practicar con una sensibilidad cercana a la de tu juego; no hay garantía de transferencia al juego real."
       }
     },
     {

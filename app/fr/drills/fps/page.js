@@ -133,7 +133,7 @@ const faqSchema = {
       "name": "Combien de minutes par jour faut-il s'entraîner pour progresser sans fatigue nerveuse ?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Les recherches en neurobiologie de l'apprentissage moteur indiquent qu'au-delà de 30 à 40 minutes d'exercices intensifs de motricité fine, la fatigue du système nerveux central entraîne une régression de la précision et favorise l'ancrage de mauvaises habitudes posturales. Le protocole d'entraînement optimal consiste en des sessions quotidiennes ciblées de 15 à 25 minutes, 4 à 5 fois par semaine. Cette stimulation brève mais intense déclenche la myélinisation des voies synaptiques motrices et optimise la rétention musculaire pendant les phases de repos et de sommeil bien plus efficacement que des sessions marathons de plusieurs heures."
+        "text": "Les recherches en neurobiologie de l'apprentissage moteur indiquent qu'au-delà de 30 à 40 minutes d'exercices intensifs de motricité fine, la fatigue du système nerveux central entraîne une régression de la précision et favorise l'ancrage de mauvaises habitudes posturales. Le protocole d'entraînement optimal consiste en des sessions quotidiennes ciblées de 15 à 25 minutes, 4 à 5 fois par semaine. Des séances brèves suivies de repos sont en général plus faciles à tenir que des sessions marathons de plusieurs heures."
       }
     }
   ]

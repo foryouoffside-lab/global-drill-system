@@ -129,7 +129,7 @@ export default function InstantResponsePage() {
         "name": "What is the average reaction time for competitive FPS gamers?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "While unconditioned human simple reaction time to visual stimuli averages between 220 and 260 milliseconds, competitive FPS players operating with high-refresh monitors (144 Hz–360 Hz) and high-polling gaming mice typically achieve latencies between 165 and 195 milliseconds. Elite esports professionals can reach sub-160 millisecond response times under primed, anticipatory conditions."
+          "text": "While unconditioned human simple reaction time to visual stimuli averages between 220 and 260 milliseconds, competitive FPS players operating with high-refresh monitors (144 Hz–360 Hz) and high-polling gaming mice typically achieve latencies between 165 and 195 milliseconds. Times below 160 milliseconds are rare and usually only occur under primed, anticipatory conditions."
         }
       },
       {
@@ -209,7 +209,7 @@ export default function InstantResponsePage() {
         "@type": "HowToStep",
         "position": 1,
         "name": "Align In-Game Sensitivity",
-        "text": "Configure the sensitivity converter in Session Settings to mirror your primary game's 1:1 hardware coordinate mapping."
+        "text": "Configure the sensitivity converter in Session Settings to mirror your primary game's hand-to-cursor mapping."
       },
       {
         "@type": "HowToStep",

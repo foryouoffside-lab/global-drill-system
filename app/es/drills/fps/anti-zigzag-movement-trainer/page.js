@@ -201,14 +201,14 @@ export default function AntiZigzagEsPage() {
         "@type": "HowToStep",
         "position": 1,
         "name": "Calibra tu Sensibilidad",
-        "text": "Configura la sensibilidad idéntica a la de tu shooter principal en el selector para garantizar transferencia limpia de memoria muscular.",
+        "text": "Configura la sensibilidad idéntica a la de tu shooter principal en el selector para practicar con una sensibilidad familiar.",
         "url": "https://skilldrills.online/es/drills/fps/anti-zigzag-movement-trainer#step-1"
       },
       {
         "@type": "HowToStep",
         "position": 2,
         "name": "Activa Pantalla Completa y Bloqueo de Puntero",
-        "text": "Haz clic en Comenzar para entrar en pantalla completa y bloquear el cursor de hardware 1:1 sin aceleración de sistema operativo.",
+        "text": "Haz clic en Comenzar para entrar en pantalla completa y bloquear el cursor.",
         "url": "https://skilldrills.online/es/drills/fps/anti-zigzag-movement-trainer#step-2"
       },
       {
@@ -233,7 +233,7 @@ export default function AntiZigzagEsPage() {
     intro: [
       "Un aim trainer para tracking en zigzag practica mantener la mira sobre el objetivo durante cambios de dirección, slide cancels y movimiento evasivo. Este drill mide inversiones de sentido, control del overshoot y tiempo de contacto en duelos de Apex, Warzone y Overwatch 2.",
       "El error técnico predominante en tiradores menos experimentados al enfrentarse a evasiones es el overshoot en el ápice externo del giro. Cuando un enemigo traza un zigzag en V, su velocidad horizontal desciende a cero en el vértice exterior antes de acelerar nuevamente cruzando el centro. Intentar perseguir ese giro extremo provoca que la mira salga proyectada y los músculos antagonistas se bloqueen. Los jugadores de élite aplican el anclaje V-Crossover: fijan el foco visual en el corredor central y efectúan microajustes progresivos igualando velocidad en cuanto el enemigo regresa al eje de tiro.",
-      "Anti-Zigzag Aim Trainer opera directamente en navegadores modernos mediante la API Pointer Lock de HTML5, con traslación 1:1 de hardware, cronometría por performance.now() y ausencia absoluta de filtrado de ratón. Al neutralizar la variabilidad de muestreo USB (Woods et al., 2015) y evaluar el daño por permanencia continua (dwell time) frente a frecuencias crecientes de cambio de rumbo, este ejercicio desarrolla la calma sensoriomotora requerida para erradicar las sacudidas de pánico y dominar los enfrentamientos más escurridizos.",
+      "Anti-Zigzag Aim Trainer opera directamente en navegadores modernos mediante la API Pointer Lock de HTML5, con cronometría por performance.now(). Al evaluar el daño por permanencia continua (dwell time) frente a frecuencias crecientes de cambio de rumbo, este ejercicio practica la calma sensoriomotora para reducir las sacudidas de pánico (Woods et al., 2015).",
       "Criterios de medición: cada cálculo de permanencia se realiza en cliente mediante el temporizador de alta resolución performance.now() del navegador. Factores contextuales: los navegadores redondean marcas temporales a ~1 ms por seguridad contra exploits de microarquitectura; los monitores cuantifican los estímulos en función del refresco (16,7 ms a 60 Hz, 6,9 ms a 144 Hz, 4,1 ms a 240 Hz). El sondeo del ratón añade ~1 ms a 1000 Hz. Variaciones por debajo de 5 ms representan ruido técnico; evalúa tu rendimiento comparando sesiones sobre la misma máquina."
     ],
     benchmarks: {
@@ -244,7 +244,7 @@ export default function AntiZigzagEsPage() {
         ["Frenado Antagonista & Inversión de Vector", "85 – 135 ms", "Impulso corticoespinal hacia flexores de antebrazo y masa tenar; detención de inercia", "Tiempo físico para detener la inercia del ratón e iniciar el vector opuesto"],
         ["Realineación Foveal & Centrado de Retícula", "65 – 105 ms", "Microsacada correctora y articulación fina de muñeca para sellar el contacto", "Reanudación del tiempo sobre la hitbox para restaurar el daño constante"],
         ["Ventana Total de Requisición Imprevista", "310 – 450 ms", "Periodo acumulado desde el quiebro imprevisto hasta la reanudación del disparo", "Intervalo humano natural de pérdida de daño en combate contra evasión rápida"],
-        ["Tracking Evasivo de Rango Profesional", "215 – 295 ms", "Atenuación anticipada de velocidad y control muscular relajado en el V-crossover", "Estándar exhibido por jugadores profesionales de Apex Legends y Warzone"]
+        ["Tracking Evasivo Avanzado", "215 – 295 ms", "Atenuación anticipada de velocidad y control muscular relajado en el V-crossover", "Foco en un patrón consistente con amortiguación anticipada"]
       ],
       note: "Métricas sintetizadas de investigaciones oculomotoras (Rashbass, 1961; Krauzlis, 2004), principios de control de dirección (Accot & Zhai, 1997; Fitts, 1954) y pruebas de cronometría digital (Woods et al., 2015)."
     },
@@ -274,8 +274,8 @@ export default function AntiZigzagEsPage() {
       ]
     },
     steps: [
-      "Elige tu sensibilidad habitual en el selector para asegurar una adaptación 1:1 de memoria neuromuscular.",
-      "Pulsa en Comenzar para pasar a pantalla completa y activar el Pointer Lock de hardware sin aceleración.",
+      "Elige tu sensibilidad habitual en el selector para practicar con una sensibilidad familiar.",
+      "Pulsa en Comenzar para pasar a pantalla completa y activar el Pointer Lock.",
       "Sigue con atención visual al objetivo esférico mientras traza trayectorias diagonales impredecibles en zigzag.",
       "Conserva la mira fijada sobre la esfera, priorizando el anclaje en el eje central del V-Crossover.",
       "Destruye objetivos antes de que concluya su tiempo para activar multiplicadores y progresar a niveles superiores."

@@ -201,7 +201,7 @@ const faqSchema = {
       "name": "Quel impact le manque de sommeil a-t-il sur les résultats ?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "La privation de sommeil accélère fortement le déclin de vigilance et multiplie par trois les erreurs de déclenchement intempestif."
+        "text": "La privation de sommeil peut accélérer le déclin de vigilance et augmenter les erreurs de déclenchement intempestif."
       }
     },
     {

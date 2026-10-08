@@ -156,10 +156,10 @@ export default function StrafeTrackingEsPage() {
       },
       {
         "@type": "Question",
-        "name": "¿De qué manera el Raw Input sin aceleración mejora la lectura de strafes?",
+        "name": "¿Por qué importa una sensibilidad constante al leer strafes?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "El hardware raw input garantiza una correlación física estricta de 1:1 entre el desplazamiento del ratón y el movimiento en pantalla. La aceleración añade variables dinámicas no lineales que dificultan al cerebelo calcular la desaceleración precisa antes de cada inversión."
+          "text": "Una relación estable entre el desplazamiento del ratón y el movimiento en pantalla facilita comparar sesiones. La aceleración añade variables dinámicas no lineales que dificultan al cerebelo calcular la desaceleración precisa antes de cada inversión."
         }
       },
       {
@@ -199,7 +199,7 @@ export default function StrafeTrackingEsPage() {
         "@type": "HowToStep",
         "position": 1,
         "name": "Calibrar Sensibilidad Exacta de Juego",
-        "text": "Ajusta tu sensibilidad y DPI en la configuración de sesión para sincronizar la escala física 1:1 y bloquear el cursor.",
+        "text": "Ajusta tu sensibilidad y DPI en la configuración de sesión para mantener tu escala habitual y bloquear el cursor.",
         "url": "https://skilldrills.online/es/drills/fps/strafe-tracking#step-1"
       },
       {
@@ -239,13 +239,13 @@ export default function StrafeTrackingEsPage() {
       title: "Paremos de Strafe Tracking Reactivo y Latencia de Inversión",
       headers: ["Nivel de Rendimiento", "% Tiempo en Blanco", "Latencia de Inversión", "Impacto Competitivo en Partida"],
       rows: [
-        ["Tier 1 (Apex Predator / Profesional)", "85% – 95%+", "<180 ms", "Seguimiento impecable como rayo láser; acoplamiento instantáneo de velocidad sin sobretiro ante strafes rápidos"],
-        ["Tier 2 (Maestro Competitivo)", "72% – 85%", "180 – 220 ms", "Excelente tiempo de mira en blanco; rápida readquisición tras cambios de sentido; gana la mayoría de duelos cerrados"],
+        ["Tier 1 (Etapa Avanzada)", "85% – 95%+", "<180 ms", "Seguimiento impecable como rayo láser; acoplamiento instantáneo de velocidad sin sobretiro ante strafes rápidos"],
+        ["Tier 2 (Etapa Intermedia-Alta)", "72% – 85%", "180 – 220 ms", "Excelente tiempo de mira en blanco; rápida readquisición tras cambios de sentido; buena base para duelos cerrados"],
         ["Tier 3 (Diamante / Avanzado)", "58% – 72%", "220 – 270 ms", "Tracking lineal consistente; sufre pérdidas puntuales del blanco (50–100 ms) en inversiones bruscas del oponente"],
         ["Tier 4 (Intermedio / Oro)", "42% – 58%", "270 – 330 ms", "Anticipación precipitada recurrente; la mira sobrepasa continuamente al rival antes de aplicar sacadas lentas de corrección"],
         ["Tier 5 (Iniciación / Novato)", "<42%", ">330 ms", "Temblores y falta de fluidez; dificultades para igualar la velocidad del blanco; la mira va constantemente con retraso"]
       ],
-      note: "El porcentaje de tiempo en blanco mide el contacto ininterrumpido dividido entre la duración activa de la sesión; la latencia de inversión cuantifica el tiempo entre el cambio de vector del objetivo y la recuperación de la cruceta con raw input (Woods et al., 2015)."
+      note: "El porcentaje de tiempo en blanco mide el contacto ininterrumpido dividido entre la duración activa de la sesión; la latencia de inversión cuantifica el tiempo entre el cambio de vector del objetivo y la recuperación de la cruceta (Woods et al., 2015)."
     },
     techniques: {
       title: "Protocolos Respaldados por Evidencia para Strafe Tracking Reactivo",
@@ -273,7 +273,7 @@ export default function StrafeTrackingEsPage() {
       ]
     },
     steps: [
-      "Selecciona tu juego principal, DPI y sensibilidad en las opciones de sesión para asegurar una correlación física 1:1 y bloquear el cursor.",
+      "Selecciona tu juego principal, DPI y sensibilidad en las opciones de sesión para mantener tu escala habitual y bloquear el cursor.",
       "Fija la vista en el objetivo brillante mientras inicia su desplazamiento impredecible de lado a lado.",
       "Desliza el ratón con presión relajada en el antebrazo, acompañando la velocidad horizontal de forma constante.",
       "Mantén el cursor sobre el blanco para incrementar el multiplicador de combo hasta 3,0x y subir de nivel cada 1400 puntos.",

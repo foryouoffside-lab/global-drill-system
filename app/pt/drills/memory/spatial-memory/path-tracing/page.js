@@ -246,7 +246,7 @@ export default function LocalizedPathTracingPage() {
                 "Faixa 1",
                 "Span 10 – 14+ passos (grade 6x6–7x7)",
                 "1.200+ Pontos",
-                "Desempenho visoespacial de elite; decompõe percursos em 2–3 macrovetores; ensaio perfeito no escriba interno; resposta fluida em < 400 ms"
+                "Desempenho visoespacial avançado; decompõe percursos em 2–3 macrovetores; ensaio perfeito no escriba interno; resposta fluida em < 400 ms"
         ],
         [
                 "Faixa 2",

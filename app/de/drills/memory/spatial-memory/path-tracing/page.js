@@ -247,7 +247,7 @@ export default function LocalizedPathTracingPage() {
                 "Stufe 1",
                 "Spanne 10 – 14+ Schritte (6x6–7x7 Raster)",
                 "1.200+ Punkte",
-                "Visuospaziale Elite; zerlegt komplexe Routen in 2–3 Makrovektoren; exzellentes Inner-Scribe-Rehearsal; flüssiger Abruf unter 400 ms"
+                "Fortgeschrittene Stufe: zerlegt komplexe Routen in 2–3 Makrovektoren; exzellentes Inner-Scribe-Rehearsal; flüssiger Abruf unter 400 ms"
         ],
         [
                 "Stufe 2",

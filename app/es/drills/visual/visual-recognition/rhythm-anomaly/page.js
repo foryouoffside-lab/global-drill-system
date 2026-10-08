@@ -167,7 +167,7 @@ const faqSchema = {
       "name": "¿Qué puntuación se considera óptima en la sesión de 45 segundos?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Los principiantes suelen registrar entre 50 y 99 puntos (Nivel 2–3). Usuarios habituales logran de 100 a 149 puntos, y competidores de élite o jugadores profesionales superan los 150 a 200+ puntos con rachas continuas."
+        "text": "Los principiantes suelen registrar entre 50 y 99 puntos (Nivel 2–3). Usuarios habituales logran de 100 a 149 puntos, y superar los 150 a 200+ puntos requiere rachas continuas."
       }
     },
     {
@@ -354,7 +354,7 @@ export default function RhythmAnomalyLocalePage() {
           <div>
             <h4 className="font-semibold text-white">¿Qué puntuación se considera óptima en la sesión de 45 segundos?</h4>
             <p className="text-slate-300 mt-1">
-              Los principiantes suelen registrar entre 50 y 99 puntos (Nivel 2–3). Usuarios habituales logran de 100 a 149 puntos, y competidores de élite o jugadores profesionales superan los 150 a 200+ puntos con rachas continuas.
+              Los principiantes suelen registrar entre 50 y 99 puntos (Nivel 2–3). Usuarios habituales logran de 100 a 149 puntos, y superar los 150 a 200+ puntos requiere rachas continuas.
             </p>
           </div>
           <div>

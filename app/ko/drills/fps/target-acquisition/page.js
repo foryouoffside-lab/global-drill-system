@@ -176,7 +176,7 @@ export default function TargetAcquisitionKoPage() {
       },
       {
         "@type": "Question",
-        "name": "윈도우 마우스 가속 끄기(원시 입력)가 타겟 획득 일관성에 어떤 도움을 주나요?",
+        "name": "윈도우 마우스 가속 끄기가 타겟 획득 일관성에 어떤 도움을 주나요?",
         "acceptedAnswer": {
           "@type": "Answer",
           "text": "마우스 가속을 끄면 손의 이동 거리와 조준선의 이동량이 일정한 비율을 유지해 근육 기억을 쌓기 쉽습니다. 게임과 운영체제의 가속 설정을 확인하되, 브라우저에서 연습할 때의 입력 처리는 환경에 따라 다를 수 있습니다."
@@ -187,7 +187,7 @@ export default function TargetAcquisitionKoPage() {
         "name": "타겟 획득 훈련은 매일 얼마나 연습하는 것이 좋은가요?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "매일 15~20분 정도의 고집중 세션이 가장 효과적입니다. 시각적 피로가 쌓이기 전 맑은 정신 상태에서 집중 훈련하는 것이 시각 피질과 운동 신경계의 시냅스 강화를 가장 빠르게 촉진합니다."
+          "text": "매일 15~20분 정도의 고집중 세션이 가장 효과적입니다. 시각적 피로가 쌓이기 전 맑은 정신 상태에서 집중 훈련하는 것이 집중을 유지하기에 좋습니다."
         }
       }
     ]
@@ -202,8 +202,8 @@ export default function TargetAcquisitionKoPage() {
       {
         "@type": "HowToStep",
         "position": 1,
-        "name": "원시 입력 감도 캘리브레이션",
-        "text": "실제 플레이하는 게임의 DPI 및 인게임 감도를 동일하게 설정하고, 포인터 락을 활성화하여 1:1 하드웨어 입력을 맞춥니다."
+        "name": "감도 캘리브레이션",
+        "text": "실제 플레이하는 게임의 DPI 및 인게임 감도를 동일하게 설정하고, 포인터 락을 활성화합니다."
       },
       {
         "@type": "HowToStep",

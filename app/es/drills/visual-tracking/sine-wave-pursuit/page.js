@@ -192,7 +192,7 @@ const faqSchema = {
       "name": "Que utilidad tiene en deportes de pelota?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "En tenis, padel y futbol, las pelotas trazan curvas y trayectorias oscilantes. El seguimiento suave garantiza una agudeza visual dinamica nitida en todo momento."
+        "text": "En tenis, padel y futbol, las pelotas trazan curvas y trayectorias oscilantes. El seguimiento suave ayuda a mantener una agudeza visual dinamica nitida."
       }
     },
     {
@@ -241,7 +241,7 @@ const guideProps = {
     title: "Baremos de Rendimiento en Seguimiento Sinusoidal y Ganancia de Velocidad",
     headers: ["Nivel de Rendimiento", "Ganancia de Velocidad", "Latencia de Desfase", "Sacadas por Ciclo", "Perfil Oculomotor"],
     rows: [
-      ["Élite (Esports / Pro)", "0.96 – 1.02", "< 15 ms (Sincronización Total)", "0 – 1 (Fluidez Continua)", "Sincronización rítmica cerebelosa perfecta sin desfase y enfoque foveal impecable."],
+      ["Etapa Avanzada", "0.96 – 1.02", "< 15 ms (Sincronización Total)", "0 – 1 (Fluidez Continua)", "Sincronización rítmica cerebelosa perfecta sin desfase y enfoque foveal impecable."],
       ["Avanzado (Competitivo)", "0.90 – 0.95", "15 – 30 ms", "2 – 3", "Alta fidelidad de recorrido con mínimas micro-sacadas en puntos de inversión."],
       ["Competente (Adulto Sano)", "0.82 – 0.89", "31 – 50 ms", "4 – 5", "Buen seguimiento armónico con ligero desajuste en frecuencias elevadas."],
       ["En Desarrollo (Con Desfase)", "0.70 – 0.81", "51 – 80 ms", "6 – 8", "Inestabilidad en vértices y sacadas correctoras frecuentes para recuperar el blanco."],

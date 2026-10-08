@@ -270,8 +270,8 @@ export default function ProSmoothPursuitPage() {
       title: "Tiers de Desempenho de Tracking Contínuo e Sincronização de Velocidade",
       headers: ["Nível de Desempenho", "Tempo em Alvo (%)", "Estado Neuromuscular e Oculomotor", "Implicação Competitiva no Jogo"],
       rows: [
-        ["Tier 1 (Feixe Perfeito)", "85% – 95%+", "Fixação foveal sem interrupções; correspondência de velocidade perfeita nas inflexões de curva sem micro-flicks", "Mira impecável em lobbies de Apex Predator, Top 500 Overwatch e torneios pro"],
-        ["Tier 2 (Pro Competitivo)", "72% – 85%", "Modulação fluida pelo antebraço; compensação de velocidade imediata ao atingir o ápice das curvas", "Vence duelos 1v1 prolongados de alto TTK contra alvos em esquiva com alta eficiência"],
+        ["Tier 1 (Feixe Perfeito)", "85% – 95%+", "Fixação foveal sem interrupções; correspondência de velocidade perfeita nas inflexões de curva sem micro-flicks", "Treina o acompanhamento contínuo de curvas fechadas sem perder a fixação"],
+        ["Tier 2 (Faixa Intermediária-Alta)", "72% – 85%", "Modulação fluida pelo antebraço; compensação de velocidade imediata ao atingir o ápice das curvas", "Prática de duelos 1v1 prolongados contra alvos em esquiva"],
         ["Tier 3 (Alto Nível FPS)", "58% – 72%", "Tracking linear sólido; pequenas hesitações de 10 a 15% durante inversões rápidas de trajetória", "Alto rendimento geral; ligeira perda de contato contra adversários com mobilidade aérea extrema"],
         ["Tier 4 (Intermediário)", "42% – 58%", "Tendência de usar micro-flicks sucessivos em vez de deslizar; tensão no punho provocando tremor", "Dificuldade em acompanhar personagens ágeis; desperdício considerável de munição"],
         ["Tier 5 (Em Desenvolvimento)", "Abaixo de 42%", "Arrasto constante atrás do alvo; incapacidade de sincronizar velocidade em mudanças de direção", "Perda frequente de duelos diretos; retícula frequentemente desalinhada da hitbox"]

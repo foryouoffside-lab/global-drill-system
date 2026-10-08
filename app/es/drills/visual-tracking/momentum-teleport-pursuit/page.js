@@ -232,7 +232,7 @@ const guideProps = {
     title: "Métricas de Reincorporación Espacial y Sincronización de Inercia",
     headers: ["Nivel", "Tiempo para reencontrar el objetivo", "Desvío al llegar", "Sincronización del movimiento", "Lectura práctica"],
     rows: [
-      ["Élite (Deporte y competición)", "< 140 ms", "< 3% (bloqueo foveal exacto)", "97%+", "Precisión balística impecable. Transición instantánea a la persecución suave sin oscilaciones de búsqueda."],
+      ["Etapa Avanzada", "< 140 ms", "< 3% (bloqueo foveal exacto)", "97%+", "Precisión balística impecable. Transición instantánea a la persecución suave sin oscilaciones de búsqueda."],
       ["Avanzado (Nivel Competitivo)", "140 – 180 ms", "3% – 6%", "91% – 96%", "Rápida recuperación espacial. Micro-sacada correctora mínima con alta fidelidad cinemática tras el aterrizaje."],
       ["Competente (Adulto Sano)", "181 – 240 ms", "7% – 14%", "80% – 90%", "Parámetro estándar saludable. Breve periodo refractario pos-sacádico seguido de persecución estable."],
       ["En Desarrollo", "241 – 320 ms", "15% – 24%", "68% – 79%", "Retraso perceptible en el salto ocular. Desvíos frecuentes por exceso requiriendo múltiples correcciones."],

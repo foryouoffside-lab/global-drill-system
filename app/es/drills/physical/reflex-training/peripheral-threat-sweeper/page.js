@@ -176,7 +176,7 @@ const faqSchema = {
       "name": "¿Qué sucede si una amenaza sobrepasa el escudo e impacta contra el núcleo central?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Si un nodo alcanza el perímetro central (breach), el multiplicador acumulado de racha se reinicia de inmediato a 1.0x y la pantalla proyecta un destello rojo de advertencia. Contener las brechas resulta indispensable para mantener la bonificación y acceder al rango de élite de 24.000 puntos."
+        "text": "Si un nodo alcanza el perímetro central (breach), el multiplicador acumulado de racha se reinicia de inmediato a 1.0x y la pantalla proyecta un destello rojo de advertencia. Contener las brechas resulta indispensable para mantener la bonificación y acceder al rango de 24.000 puntos."
       }
     },
     {

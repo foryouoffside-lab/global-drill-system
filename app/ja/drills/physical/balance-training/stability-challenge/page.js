@@ -286,7 +286,7 @@ const stabilityGuideJa = {
     title: "マウス安定性＆姿勢平衡制御 5段階ベンチマーク基準",
     headers: ["ティア・ランク", "称号 (Rank)", "目標スコア", "到達レベル", "セーフゾーン維持率", "神経筋安定性プロファイル"],
     rows: [
-      ["Tier 1: 頂点スタビライザー", "Apex Stabilizer", "15,300点以上", "Level 12 – 15", "94%以上 維持", "プロ級の拮抗筋共収縮とミリ秒単位の微細制動ブレーキ完成 (Nashner & McCollum, 1985)"],
+      ["Tier 1: 頂点スタビライザー", "Apex Stabilizer", "15,300点以上", "Level 12 – 15", "94%以上 維持", "拮抗筋共収縮とミリ秒単位の微細制動ブレーキ完成 (Nashner & McCollum, 1985)"],
       ["Tier 2: マスターアンカー", "Master Anchor", "12,000 – 15,299点", "Level 9 – 11", "86 – 93% 維持", "優れた外力相殺反応速度とブレのない中心レティクル保持力 (Winter, 1995)"],
       ["Tier 3: 熟練カウンター", "Proficient Counterer", "9,500 – 11,999点", "Level 6 – 8", "75 – 85% 維持", "一般的な競技ランク上位相当の平衡感覚と良好な軌道復帰力"],
       ["Tier 4: 中級コア", "Intermediate Core", "6,000 – 9,499点", "Level 3 – 5", "60 – 74% 維持", "外力急変時に一時的なレティクル逸脱が発生、前腕ブレーキ強化を推奨"],
@@ -376,7 +376,7 @@ export default function StabilityChallengeJaPage() {
           ],
           aboutTitle: "スタビリティチャレンジの概要",
           aboutHeading: "マウスエイムのブレ矯正と姿勢平衡制御",
-          aboutText: "本ドリルは、照準を中心から押し流そうとする動的外力ベクトルを瞬時に知覚し、正確に反対方向へ逆補正入力を加えてレティクルを固定する神経筋制御トレーニングです。VALORANT、Apex Legends、CS2のリコイル制御や手ブレ防止に直結します。"
+          aboutText: "本ドリルは、照準を中心から押し流そうとする動的外力ベクトルを瞬時に知覚し、正確に反対方向へ逆補正入力を加えてレティクルを固定する神経筋制御トレーニングです。VALORANT、Apex Legends、CS2のリコイル制御や手ブレ防止に役立つ可能性があります。"
         }}
       />
       <DrillGuide guide={stabilityGuideJa} />

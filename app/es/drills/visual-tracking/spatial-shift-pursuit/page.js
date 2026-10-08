@@ -138,7 +138,7 @@ const howToSchema = {
       "@type": "HowToStep",
       "position": 4,
       "name": "Reanude el Seguimiento Suave",
-      "text": "Acople el frenado de la sacada directamente con la velocidad angular del blanco para garantizar fluidez visual."
+      "text": "Acople el frenado de la sacada directamente con la velocidad angular del blanco para favorecer la fluidez visual."
     }
   ],
   "dateModified": "2026-09-20"
@@ -243,7 +243,7 @@ const guideProps = {
     title: "Baremos de Rendimiento en Cambio Espacial y Recuperación de Coordenadas",
     headers: ["Nivel de Rendimiento", "Tiempo de Re-Centrado (ms)", "Precisión de Seguimiento (%)", "Estabilidad Post-Sacádica", "Perfil Adaptativo"],
     rows: [
-      ["Élite (Esports / Pilotos)", "< 220 ms", "> 95%", "> 96% (Fijación Inmediata)", "Remapeo parietal perfecto y transición instantánea de sacada a seguimiento continuo."],
+      ["Etapa Avanzada", "< 220 ms", "> 95%", "> 96% (Fijación Inmediata)", "Remapeo parietal perfecto y transición instantánea de sacada a seguimiento continuo."],
       ["Avanzado (Competitivo)", "220 – 280 ms", "88% – 94%", "90% – 95%", "Elevada flexibilidad espacial con rápida re-adquisición del blanco y mínimo desvío."],
       ["Competente (Adulto Sano)", "281 – 360 ms", "78% – 87%", "80% – 89%", "Recuperación constante con leve vacilación ante giros combinados."],
       ["En Desarrollo (Latencia)", "361 – 450 ms", "65% – 77%", "68% – 79%", "Desorientación apreciable en desplazamientos bruscos que exige sacadas secundarias."],

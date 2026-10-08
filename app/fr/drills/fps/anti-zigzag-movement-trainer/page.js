@@ -78,7 +78,7 @@ export default function AntiZigzagFrPage() {
     "operatingSystem": "Web Browser",
     "dateModified": "2026-09-20",
     "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
-    "description": "Maîtrisez le tracking réactif face aux mouvements imprévisibles, aux zigzags en V et aux slide cancels avec entrée brute de souris.",
+    "description": "Maîtrisez le tracking réactif face aux mouvements imprévisibles, aux zigzags en V et aux slide cancels avec Pointer Lock.",
     "genre": "Entraînement FPS / Anti-Zigzag",
     "url": "https://skilldrills.online/fr/drills/fps/anti-zigzag-movement-trainer",
     "publisher": {
@@ -201,14 +201,14 @@ export default function AntiZigzagFrPage() {
         "@type": "HowToStep",
         "position": 1,
         "name": "Calibrer sa Sensibilité",
-        "text": "Harmonisez votre sensibilité de jeu dans les réglages pour garantir un transfert parfait de mémoire motrice en entrée 1:1.",
+        "text": "Harmonisez votre sensibilité de jeu dans les réglages pour vous entraîner avec une sensibilité familière.",
         "url": "https://skilldrills.online/fr/drills/fps/anti-zigzag-movement-trainer#step-1"
       },
       {
         "@type": "HowToStep",
         "position": 2,
         "name": "Activer le Plein Écran et le Pointer Lock",
-        "text": "Cliquez sur Démarrer pour passer en plein écran et verrouiller le curseur dans le Canvas sans accélération système.",
+        "text": "Cliquez sur Démarrer pour passer en plein écran et verrouiller le curseur dans le Canvas.",
         "url": "https://skilldrills.online/fr/drills/fps/anti-zigzag-movement-trainer#step-2"
       },
       {
@@ -233,7 +233,7 @@ export default function AntiZigzagFrPage() {
     intro: [
       "Un aim trainer pour le tracking évasif apprend à garder le viseur sur la cible pendant les changements de direction, les slide cancels et les déplacements en zigzag. Ce drill mesure les inversions de sens, le contrôle de l'overshoot et le temps de contact sur Apex, Warzone et Overwatch 2.",
       "L'erreur technique dominante commise par les tireurs novices lors de manœuvres d'esquive réside dans le sur-tir (overshoot) au-delà du sommet extérieur de la courbe. Lorsqu'un ennemi trace un zigzag en V, sa vitesse horizontale tombe fugitivement à zéro au point d'inversion avant de réaccélérer en retraversant le centre. Tenter de chasser ce sommet excentré projette inévitablement la souris trop loin et paralyse les muscles antagonistes. Les joueurs d'élite adoptent la technique de l'ancrage central (V-Crossover) : ils fixent l'attention sur le couloir médian et effectuent des micro-ajustements souples dès que la cible croise à nouveau le réticule.",
-      "Anti-Zigzag Aim Trainer s'exécute nativement dans votre navigateur via l'API Pointer Lock HTML5 avec une correspondance 1:1 du matériel, une horloge de précision performance.now() et sans aucun lissage artificiel. En réduisant les micro-variations de transmission USB (Woods et al., 2015) et en jaugeant la constance de contact (dwell time) contre des fréquences d'esquive accrues, cet exercice développe la sérénité neuromotrice requise pour bannir les micro-saccades de panique et triompher des cibles les plus insaisissables.",
+      "Anti-Zigzag Aim Trainer s'exécute nativement dans votre navigateur via l'API Pointer Lock HTML5 et une horloge performance.now(). En jaugeant la constance de contact (dwell time) contre des fréquences d'esquive accrues, cet exercice travaille la sérénité neuromotrice pour réduire les micro-saccades de panique (Woods et al., 2015).",
       "Modalités de chronométrie : l'ensemble des métriques est mesuré localement par l'horloge haute résolution performance.now() du navigateur. Paramètres environnementaux : les navigateurs dégradent volontairement la granularité des temps à ~1 ms par mesure de protection contre Spectre ; les écrans quantifient l'information visuelle selon le taux de rafraîchissement (16,7 ms à 60 Hz, 6,9 ms à 144 Hz et 4,1 ms à 240 Hz). Le polling souris requiert ~1 ms à 1000 Hz. Les écarts inférieurs à 5 ms relèvent du bruit d'observation ; veillez à comparer vos sessions sur une configuration matérielle constante."
     ],
     benchmarks: {
@@ -244,7 +244,7 @@ export default function AntiZigzagFrPage() {
         ["Freinage Antagoniste & Inversion Vectorielle", "85 – 135 ms", "Décharge motrice corticospinale aux fléchisseurs de l'avant-bras; arrêt de l'inertie", "Délai biomécanique indispensable pour stopper la souris et réenclencher l'opposé"],
         ["Réalignement Fovéal & Centrage du Viseur", "65 – 105 ms", "Micro-saccade de rattrapage et articulation subtile du poignet pour refaire contact", "Rétablissement de la présence sur la hitbox pour relancer les tics de dégâts"],
         ["Fenêtre Totale de Réacquisition Imprévue", "310 – 450 ms", "Délai cumulé entre la rupture de trajectoire et le verrouillage net du réticule", "Créneau naturel où les dégâts chutent face à un joueur doté d'un bon mouvement"],
-        ["Tracking Évasif de Rang Professionnel", "215 – 295 ms", "Amortissement anticipé de la vélocité et relâchement antagoniste au V-crossover", "Standard de maîtrise observé chez les compétiteurs d'Apex Legends et Warzone"]
+        ["Tracking Évasif Avancé", "215 – 295 ms", "Amortissement anticipé de la vélocité et relâchement antagoniste au V-crossover", "Vise un schéma constant avec amortissement anticipé"]
       ],
       note: "Données synthétisées d'études oculomotrices (Rashbass, 1961; Krauzlis, 2004), des théories de contrôle de trajectoire (Accot & Zhai, 1997; Fitts, 1954) et de chronométrie numérique (Woods et al., 2015)."
     },
@@ -274,8 +274,8 @@ export default function AntiZigzagFrPage() {
       ]
     },
     steps: [
-      "Sélectionnez votre sensibilité habituelle pour garantir un transfert fidèle de mémoire motrice en 1:1.",
-      "Cliquez sur Démarrer pour passer en plein écran et verrouiller le pointeur de souris sans accélération logicielle.",
+      "Sélectionnez votre sensibilité habituelle pour vous entraîner avec une sensibilité familière.",
+      "Cliquez sur Démarrer pour passer en plein écran et verrouiller le pointeur de souris.",
       "Fixez la sphère cible pendant qu'elle opère des zigzags diagonaux rapides et désordonnés.",
       "Conservez le réticule sur la sphère en privilégiant l'axe médian du V-Crossover.",
       "Détruisez les cibles avant l'expiration de leur temps imparti pour accroître vos multiplicateurs et monter de niveau."

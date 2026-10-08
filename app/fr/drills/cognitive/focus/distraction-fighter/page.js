@@ -209,7 +209,7 @@ export default function DistractionFighterPageFR() {
       title: "Repères de Performance au Test de Stroop (Session de 45 Secondes)",
       headers: ["Niveau de Maîtrise", "Score (45s)", "Taux de Précision", "Évaluation Neurocognitive"],
       rows: [
-        ["Tier 1 (Élite / Maître de l Inhibition)", "18.000+ PTS", "96%+", "Contrôle des impulsions parfait; blocage réflexe de la lecture avec réactivité maximale."],
+        ["Tier 1 (Palier Avancé)", "18.000+ PTS", "96%+", "Contrôle des impulsions parfait; blocage réflexe de la lecture avec réactivité maximale."],
         ["Tier 2 (Avancé / Niveau Compétition)", "12.000 – 17.999 PTS", "92% – 95%", "Interférence minimale; cadence stable avec remarquable flexibilité cognitive."],
         ["Tier 3 (Moyen / Pratiquant Régulier)", "7.000 – 11.999 PTS", "85% – 91%", "Latence d interférence saine standard; hésitations ponctuelles sur fortes oppositions."],
         ["Tier 4 (Base / Attention Discontinue)", "3.000 – 6.999 PTS", "75% – 84%", "Domination du réflexe de lecture; fort ralentissement quand le rythme s accélère."],
@@ -232,7 +232,7 @@ export default function DistractionFighterPageFR() {
         },
         {
           name: "Gestion du tempo et préservation du combo",
-          desc: "Les clics impulsifs précipités détruisent votre série de multiplicateurs. Un tempo régulier et méthodique garantit le meilleur score final.",
+          desc: "Les clics impulsifs précipités détruisent votre série de multiplicateurs. Un tempo régulier et méthodique aide à obtenir un meilleur score final.",
           tips: "Donnez toujours la priorité à l'exactitude avant la vitesse brute."
         },
         {

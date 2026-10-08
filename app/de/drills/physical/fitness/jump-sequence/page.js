@@ -300,7 +300,7 @@ const jumpGuide = {
     title: "Wissenschaftliche 5-Stufen-Normtabelle für das Sprungsequenz-Training",
     headers: ["Leistungsstufe", "Rangtitel (Rank Title)", "Punktwert (45s)", "Genauigkeit & Geschwindigkeit", "Gesamtnote", "Neuromotorisches Profil"],
     rows: [
-      ["Stufe 1: Elite-Trajektorienmeister ", "Apex Trajectory Master", "17.000+ Punkte", "92%+ / 800 – 900 px/s", "Grade S", "Perfekte DVZ-Impulsberechnung, makelloses optisches Tau-Abfangen fliegender Ziele bei 900 px/s (Komi 2000; Kawato 1999; Lee 1976)"],
+      ["Stufe 1: Fortgeschrittene Trajektorienkontrolle ", "Apex Trajectory Master", "17.000+ Punkte", "92%+ / 800 – 900 px/s", "Grade S", "Perfekte DVZ-Impulsberechnung, makelloses optisches Tau-Abfangen fliegender Ziele bei 900 px/s (Komi 2000; Kawato 1999; Lee 1976)"],
       ["Stufe 2: Präzisions-Flugangreifer ", "Precision Aerial Striker", "12.000 – 16.999 Punkte", "84 – 91% / 650 – 799 px/s", "Grade A", "Hervorragende Kleinhirn-Steuerung im freien Flug, stabile Konvergenz auf komprimierte 15–18-px-Ziele"],
       ["Stufe 3: Kompetenter Sprungabfänger", "Skilled Jump Interceptor", "7.500 – 11.999 Punkte", "75 – 83% / 500 – 649 px/s", "Grade B", "Solides Niveau im Leistungs- und eSport, verlässliche Impulsdosierung und gute Rebound-Rhythmik"],
       ["Stufe 4: Parabel-Navigator (Durchschnitt)", "Developing Parabola Navigator", "4.000 – 7.499 Punkte", "65 – 74% / 350 – 499 px/s", "Grade C", "Durchschnittliche zeitliche Koordination, bei Zielgeschwindigkeiten über 500 px/s häufen sich Landefehler"],

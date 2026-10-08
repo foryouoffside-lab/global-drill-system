@@ -185,7 +185,7 @@ const faqSchema = {
       name: 'What hardware optimizations improve flick shot responsiveness?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Use a high-refresh monitor (144 Hz or higher) to minimize display quantization delays (Woods et al., 2015), disable Windows Enhance Pointer Precision to guarantee 1:1 raw input mapping, and select an ultra-lightweight gaming mouse (under 65g) to reduce physical limb inertia.',
+        text: 'Use a high-refresh monitor (144 Hz or higher) to minimize display quantization delays (Woods et al., 2015), disable Windows Enhance Pointer Precision to reduce pointer-speed variation, and select an ultra-lightweight gaming mouse (under 65g) to reduce physical limb inertia.',
       },
     },
     {
@@ -230,7 +230,7 @@ const howToSchema = {
       '@type': 'HowToStep',
       position: 4,
       name: 'Brake Firmly and Eliminate Residual Drift',
-      text: 'Recruit antagonist wrist muscles to arrest mouse momentum dead on the bulls-eye before clicking to guarantee center-mass registration.',
+      text: 'Recruit antagonist wrist muscles to arrest mouse momentum dead on the bulls-eye before clicking to help register center-mass hits.',
       url: 'https://skilldrills.online/drills/motor/hand-eye-coordination/precision-flick-shot#step-4'
     },
   ],

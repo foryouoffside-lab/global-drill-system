@@ -281,7 +281,7 @@ export default function FlowStatePage() {
       ]
     },
     steps: [
-      "Select your in-game sensitivity using the Universal Sensitivity Selector to guarantee 1:1 muscle memory transfer.",
+      "Select your in-game sensitivity using the Universal Sensitivity Selector to keep your muscle memory consistent.",
       "Click 'Start Drill' to engage fullscreen mode and enable Pointer Lock mouse capture.",
       "Lock visual focus on the moving target as it navigates organic, continuous Bezier curves across the canvas.",
       "Maintain continuous crosshair dwell inside the target radius, entering the Flow Zone as the Flow Meter fills.",

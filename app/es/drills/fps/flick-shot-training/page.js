@@ -146,7 +146,7 @@ export default function FlickShotEsPage() {
         "name": "¿Cuál es el eDPI óptimo para entrenar flick shots?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "En Valorant, un rango de 200 a 320 eDPI (por ejemplo, 800 DPI con 0.25–0.4) garantiza máxima estabilidad. En CS2, un rango de 600 a 1000 eDPI brinda agilidad y control óptimo del primer disparo."
+          "text": "En Valorant, un rango de 200 a 320 eDPI (por ejemplo, 800 DPI con 0.25–0.4) suele aportar estabilidad. En CS2, un rango de 600 a 1000 eDPI brinda agilidad y control óptimo del primer disparo."
         }
       },
       {
@@ -241,7 +241,7 @@ export default function FlickShotEsPage() {
         ["Movimiento Balístico Primario (Impulso)", "120 – 180 ms", "Activación explosiva de músculos agonistas", "Vuelo balístico en bucle abierto que cubre el 80–90% de la distancia (Elliott et al. 2010)"],
         ["Microcorrección Secundaria (Ajuste)", "60 – 120 ms", "Retroalimentación visual y frenado mecánico", "Fase terminal en bucle cerrado resolviendo el índice de dificultad (Fitts 1954)"],
         ["Tiempo Total de Adquisición (Bruto)", "360 – 520 ms", "Ciclo sensoriomotor completo + ejecución del clic", "Línea de base estándar entre tiradores aficionados y avanzados"],
-        ["Adquisición Subconsciente de Élite", "240 – 320 ms", "Sinergia motora automatizada con microajustes mínimos", "Dominio competitivo de alto nivel en shooters tácticos con frenado limpio"]
+        ["Adquisición Subconsciente Avanzada", "240 – 320 ms", "Sinergia motora automatizada con microajustes mínimos", "Práctica de frenado limpio con microajustes mínimos"]
       ],
       note: "Métricas sintetizadas a partir de estudios de control motor (Fitts 1954; Schmidt et al. 1979; Elliott et al. 2010) y cronometría digital (Woods et al. 2015). El rendimiento individual varía según la tasa de refresco, el sondeo del ratón y la amplitud del objetivo."
     },

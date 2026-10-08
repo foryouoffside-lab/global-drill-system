@@ -196,8 +196,8 @@ export default function TargetPrioritizationEsPage() {
       {
         "@type": "HowToStep",
         "position": 1,
-        "name": "Calibrar Sensibilidad y Entrada Directa 1:1",
-        "text": "Establece tus DPI y sensibilidad idénticos a los del juego de referencia para garantizar memoria neuromuscular precisa.",
+        "name": "Calibrar Sensibilidad",
+        "text": "Establece tus DPI y sensibilidad idénticos a los del juego de referencia para practicar con memoria neuromuscular familiar.",
         "url": "https://skilldrills.online/es/drills/fps/target-prioritization#step-1"
       },
       {
@@ -237,8 +237,8 @@ export default function TargetPrioritizationEsPage() {
       title: "Baremos Científicos de Evaluación de Amenazas y Latencia de Decisión",
       headers: ["Nivel de Rendimiento", "Latencia de Resolución", "Precisión de Prioridad", "Impacto Competitivo en Partida"],
       rows: [
-        ["Tier 1 (Apex Commander / Radiant)", "<280 ms", "96% – 99%+", "Evaluación intachable de amenazas; eliminación instantánea del peligro crítico con 0% de fuego amigo en entradas caóticas"],
-        ["Tier 2 (Maestro Competitivo / Pro Tier-2)", "280 – 340 ms", "90% – 96%", "Rapidez de decisión excepcional; pronta recuperación tras escaladas de blancos; menos del 1% de disparos errados"],
+        ["Tier 1 (Etapa Avanzada)", "<280 ms", "96% – 99%+", "Evaluación intachable de amenazas; eliminación instantánea del peligro crítico con 0% de fuego amigo en entradas caóticas"],
+        ["Tier 2 (Etapa Intermedia-Alta)", "280 – 340 ms", "90% – 96%", "Rapidez de decisión excepcional; pronta recuperación tras escaladas de blancos; menos del 1% de disparos errados"],
         ["Tier 3 (Diamante / Ascendente)", "340 – 420 ms", "82% – 90%", "Fijación consistente de prioridades; duda sutil de 60 a 90 ms cuando coinciden amenazas rojas y amarillas contiguas"],
         ["Tier 4 (Intermedio / Oro / Platino)", "420 – 520 ms", "72% – 82%", "Propenso al disparo por pánico; en ocasiones impacta en verdes aliados o dispara a amarillos antes de despejar rojos"],
         ["Tier 5 (Iniciación / Disparo por Impulso)", ">520 ms", "<72%", "Frecuentes fallos de impulsividad; elevado fuego amigo; dificultad para filtrar elementos visuales en retakes"]
@@ -271,7 +271,7 @@ export default function TargetPrioritizationEsPage() {
       ]
     },
     steps: [
-      "Ajusta tu juego de referencia, DPI y sensibilidad en las opciones para mantener una escala 1:1 exacta con tu juego habitual.",
+      "Ajusta tu juego de referencia, DPI y sensibilidad en las opciones para mantener una escala cercana a la de tu juego habitual.",
       "Dirige la vista al centro de la pantalla y aguarda la salida simultánea de blancos rojos, amarillos y verdes.",
       "Detecta y neutraliza los objetivos rojos de alta prioridad con disparos veloces (+100 PTS / +0,4s de tiempo añadido).",
       "Elimina los blancos amarillos secundarios (+50 PTS / +0,4s) antes de que cambien a color rojo.",

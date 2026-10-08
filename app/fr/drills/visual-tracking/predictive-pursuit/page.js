@@ -181,7 +181,7 @@ const faqSchema = {
       "name": "Pourquoi doit-on éviter les saccades de recherche lors de l occlusion ?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Les saccades anarchiques provoquent une suppression saccadique et brisent la synchronisation de vitesse. Une poursuite fluide garantit une interception nette à la sortie (Krauzlis, 2004)."
+        "text": "Les saccades anarchiques provoquent une suppression saccadique et brisent la synchronisation de vitesse. Une poursuite fluide aide à intercepter proprement à la sortie (Krauzlis, 2004)."
       }
     },
     {

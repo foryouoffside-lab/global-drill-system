@@ -80,7 +80,7 @@ export default function VerticalAirTrackPageDe() {
     "operatingSystem": "Web Browser",
     "dateModified": "2026-09-20",
     "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
-    "description": "Kostenloser browserbasierter Vertical Aim Trainer mit Hardware-RAW-Mauseingabe. Trainiert Y-Achsen-Tracking und parabolische Flugkurven-Vorhersage.",
+    "description": "Kostenloser browserbasierter Vertical Aim Trainer mit Pointer-Lock-Mauserfassung. Trainiert Y-Achsen-Tracking und parabolische Flugkurven-Vorhersage.",
     "genre": "FPS Training / Vertikales Tracking",
     "url": "https://skilldrills.online/de/drills/fps/vertical-air-track",
     "publisher": {
@@ -99,7 +99,7 @@ export default function VerticalAirTrackPageDe() {
     "dateModified": "2026-09-20",
     "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
     "browserRequirements": "Pointer Lock API, JavaScript, HTML5 Canvas fähiger Webbrowser",
-    "description": "Kostenloser browserbasierter Vertical Aim Trainer mit Hardware-RAW-Mauseingabe. Trainiert Y-Achsen-Tracking und parabolische Flugkurven-Vorhersage.",
+    "description": "Kostenloser browserbasierter Vertical Aim Trainer mit Pointer-Lock-Mauserfassung. Trainiert Y-Achsen-Tracking und parabolische Flugkurven-Vorhersage.",
     "url": "https://skilldrills.online/de/drills/fps/vertical-air-track"
   };
 
@@ -108,7 +108,7 @@ export default function VerticalAirTrackPageDe() {
     "@type": "VideoGame",
     "name": "Aim Trainer - Vertikales Tracking",
     "url": "https://skilldrills.online/de/drills/fps/vertical-air-track",
-    "description": "Kostenloser browserbasierter Vertical Aim Trainer mit Hardware-RAW-Mauseingabe. Trainiert Y-Achsen-Tracking und parabolische Flugkurven-Vorhersage.",
+    "description": "Kostenloser browserbasierter Vertical Aim Trainer mit Pointer-Lock-Mauserfassung. Trainiert Y-Achsen-Tracking und parabolische Flugkurven-Vorhersage.",
     "dateModified": "2026-09-20",
     "gamePlatform": "Web Browser",
     "genre": ["FPS Training", "Aim Trainer", "Vertikales Tracking"],
@@ -256,7 +256,7 @@ export default function VerticalAirTrackPageDe() {
       title: "Vertikale Smooth-Pursuit & Luftziel-Tracking Benchmarks",
       headers: ["Leistungsstufe", "Luftziel-Trefferquote", "Apex-Richtungswechsel-Latenz", "In-Game Gefechtswirksamkeit"],
       rows: [
-        ["Tier 1 (Predator / Grandmaster / Luftabwehr-Elite)", "Mindestens 82%", "Unter 180 ms", "Perfektes Lasern fliegender Feinde bei Jumppad-Sprüngen; nahtlose Geschwindigkeitsanpassung am Scheitelpunkt"],
+        ["Stufe 5", "Mindestens 82%", "Unter 180 ms", "Perfektes Lasern fliegender Feinde bei Jumppad-Sprüngen; nahtlose Geschwindigkeitsanpassung am Scheitelpunkt"],
         ["Tier 2 (Master / Turnierspieler)", "70% – 82%", "180 – 230 ms", "Sehr stabile Y-Achsen-Führung; minimale Korrekturverzögerung beim Start, aber sichere Eliminierung in der Luft"],
         ["Tier 3 (Diamant / Ambitionierter Rang)", "56% – 70%", "230 – 290 ms", "Berechenbare Parabelbahnen werden gut getroffen; Schwierigkeiten bei abrupten Richtungswechseln im Sinkflug"],
         ["Tier 4 (Gold / Platin)", "40% – 56%", "290 – 360 ms", "Fadenkreuz fällt im beschleunigten Sinkflug zurück; Neigung zu ruckartigen Überkorrekturen"],

@@ -181,10 +181,10 @@ const faqSchema = {
     },
     {
       "@type": "Question",
-      "name": "¿Qué puntuación define a un jugador de nivel élite (Tier 1)?",
+      "name": "¿Qué puntuación corresponde al Tier 1?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Alcanzar 17.000 puntos o más con una estabilidad superior al 92% dentro del anillo de 20px (Niveles 12–15) te sitúa en el Tier 1: Apex Stability Master (Calificación S+), un rango alcanzado por menos del 0,5% de los competidores. La media general ronda los 6.000 a 9.499 puntos (Tier 4)."
+        "text": "Alcanzar 17.000 puntos o más con una estabilidad superior al 92% dentro del anillo de 20px (Niveles 12–15) te sitúa en el Tier 1: Apex Stability Master (Calificación S+). Es el nivel más alto de la escala de este drill; los Tiers son marcadores editoriales."
       }
     },
     {
@@ -200,7 +200,7 @@ const faqSchema = {
       "name": "¿Qué configuración de sensibilidad de ratón (DPI) es más aconsejable?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Se recomiendan sensibilidades moderadas a bajas (entre 800 y 1200 DPI nativos en relación 1:1 de Windows, o 200 a 350 eDPI en shooters tácticos). Esto permite que pequeños microtemblores involuntarios no saquen el cursor del estrecho perímetro de 20px."
+        "text": "Se recomiendan sensibilidades moderadas a bajas (entre 800 y 1200 DPI nativos, o 200 a 350 eDPI en shooters tácticos). Esto permite que pequeños microtemblores involuntarios no saquen el cursor del estrecho perímetro de 20px."
       }
     },
     {

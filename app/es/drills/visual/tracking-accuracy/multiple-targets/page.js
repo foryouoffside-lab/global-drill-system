@@ -54,7 +54,7 @@ const multipleTargetsGuide = {
     title: "Referencias de seguimiento múltiple y atención visual",
     headers: ["Nivel de Rendimiento", "Capacidad Efectiva", "Puntuación & Umbral de Precisión", "Perfil de Atención Visual y Cognición"],
     rows: [
-      ["Nivel 1: Rastreador Multifocal Apex", "5+ Blancos en Paralelo", "Score: 60 PTS (3/3) | Precisión 100% (Velocidad Máxima)", "Indexación visual paralela de nivel profesional; distribución perfecta entre hemisferios sin pérdida por colisión. Propio de atletas profesionales, pilotos militares y jugadores de élite (Faubert, 2013; Green & Bavelier, 2006)."],
+      ["Nivel 1: Rastreador Multifocal Apex", "5+ Blancos en Paralelo", "Score: 60 PTS (3/3) | Precisión 100% (Velocidad Máxima)", "Indexación visual paralela; distribución entre hemisferios sin pérdida por colisión. Exige práctica y varía mucho entre personas."],
       ["Nivel 2: Indexador Paralelo Avanzado", "4 Blancos en Paralelo", "Score: 50 – 59 PTS | Precisión 85 – 99%", "Rastreo multifocal robusto; mantiene diferenciación blanco-distractor en trayectorias con alta densidad de rebotes con mínimo desvío del centroide."],
       ["Nivel 3: Atención Dividida Competente", "3 Blancos en Paralelo", "Score: 40 – 49 PTS | Precisión 70 – 84%", "Referencia en adultos sanos; seguimiento fiable de 3 blancos a velocidad moderada, vulnerable a intercambios de identidad durante agrupamientos densos."],
       ["Nivel 4: Memoria Espacial en Desarrollo", "2 Blancos en Paralelo", "Score: 20 – 39 PTS | Precisión 50 – 69%", "Tendencia a colapsar la atención multifocal en un único punto foveal; dificultad para suprimir distractores en aceleraciones bruscas."],
@@ -102,7 +102,7 @@ const multipleTargetsGuide = {
     },
     {
         "q": "¿Cuántos objetos en movimiento puede rastrear a la vez una persona promedio?",
-        "a": "La media en adultos sanos se sitúa entre 3 y 4 objetos simultáneos a velocidades moderadas. Deportistas profesionales de élite y pilotos de caza entrenados logran monitorizar 5 o incluso 6 blancos en paralelo gracias a una arquitectura cortical optimizada (Cavanagh & Alvarez, 2005)."
+        "a": "La media en adultos sanos se sitúa entre 3 y 4 objetos simultáneos a velocidades moderadas. Superar ese rango exige práctica y puede variar mucho entre personas (Cavanagh & Alvarez, 2005)."
     },
     {
         "q": "¿Por qué fracasa la estrategia de mirar cada esfera una por una de forma consecutiva?",
@@ -227,7 +227,7 @@ const faqSchema = {
         "name": "¿Cuántos objetos en movimiento puede rastrear a la vez una persona promedio?",
         "acceptedAnswer": {
             "@type": "Answer",
-            "text": "La media en adultos sanos se sitúa entre 3 y 4 objetos simultáneos a velocidades moderadas. Deportistas profesionales de élite y pilotos de caza entrenados logran monitorizar 5 o incluso 6 blancos en paralelo gracias a una arquitectura cortical optimizada (Cavanagh & Alvarez, 2005)."
+            "text": "La media en adultos sanos se sitúa entre 3 y 4 objetos simultáneos a velocidades moderadas. Superar ese rango exige práctica y puede variar mucho entre personas (Cavanagh & Alvarez, 2005)."
         }
     },
     {

@@ -314,7 +314,7 @@ const reactionGuide = {
       {
         name: 'Vantagem do Estímulo Auditivo (~140–170 ms)',
         desc: 'Os sinais de áudio atingem o tronco encefálico e córtex auditivo mais rapidamente, resultando em respostas 30 a 50 ms mais rápidas que a visão (Shelton & Kumar, 2010; Jain et al., 2015).',
-        tips: 'Em jogos FPS, reagir ao som de passos garante uma vantagem substancial em relação a esperar o contato visual.',
+        tips: 'Em jogos FPS, reagir ao som de passos pode dar vantagem em relação a esperar o contato visual.',
       },
       {
         name: 'Processamento Tátil (~130–160 ms)',

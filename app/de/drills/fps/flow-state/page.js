@@ -277,7 +277,7 @@ export default function GermanFlowStatePage() {
       ]
     },
     steps: [
-      "Wählen Sie Ihre gewohnte Ingame-Sensitivität, um das Muskelgedächtnis 1:1 zu übertragen.",
+      "Wählen Sie Ihre gewohnte Ingame-Sensitivität, um dein Muskelgedächtnis konsistent zu halten.",
       "Klicken Sie auf 'Start', um den Vollbildmodus mit direkter Mauszeigersperre ohne Beschleunigung zu starten.",
       "Verfolgen Sie das Ziel fokussiert auf seinen organischen, fließenden Bézier-Kurven.",
       "Bleiben Sie kontinuierlich im Zielradius, um das Flow-Meter zu füllen und den Flow-Zustand zu erreichen.",

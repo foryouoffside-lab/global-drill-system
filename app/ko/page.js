@@ -114,7 +114,7 @@ export default function LocalizedHomePage() {
           sublineWaiting: '침착하게 기다리세요…',
           sublineGo: '지금!',
           sublineEarly: '초록색으로 바뀌기 전에 클릭했습니다',
-          labelElite: '엘리트',
+          labelElite: '매우 빠름',
           labelFast: '빠름',
           labelAverage: '평균',
           labelSlow: '느림',

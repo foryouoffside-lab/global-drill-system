@@ -234,7 +234,7 @@ const guideProps = {
     title: "Richtwerte für Bahnvorhersage und Genauigkeit bei Verdeckung",
     headers: ["Stufe", "Genauigkeit der Bahnvorhersage (%)", "Abweichung beim Austritt", "Übereinstimmung der Blickfolge", "Merkmal der Vorhersage"],
     rows: [
-      ["Elite", "Über 94%", "Unter 15 px (Perfekte Landung)", "0.95 – 1.02", "Vollständiges zerebelläres Vorwärtsmodell & latenzfreies Vorhaltemaß"],
+      ["Höchste Übungsstufe", "Über 94%", "Unter 15 px (Perfekte Landung)", "0.95 – 1.02", "Vollständiges zerebelläres Vorwärtsmodell & latenzfreies Vorhaltemaß"],
       ["Meister", "86% – 93%", "15 px – 28 px", "0.88 – 0.94", "Exzellente Vektorextrapolation mit minimaler Korrektur"],
       ["Diamant", "76% – 85%", "29 px – 45 px", "0.78 – 0.87", "Solide Prädiktion, leichte Drift bei langer Verdeckungsdauer"],
       ["Gold", "62% – 75%", "46 px – 65 px", "0.65 – 0.77", "Überwiegend reaktive Blicksteuerung, deutliche Korrektursakkaden"],

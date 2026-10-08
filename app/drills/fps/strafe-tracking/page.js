@@ -198,7 +198,7 @@ export default function StrafeTrackingPage() {
         "@type": "HowToStep",
         "position": 1,
         "name": "Calibrate Hardware Sensitivity",
-        "text": "Match your mouse sensitivity and DPI in Session Settings to mirror your primary competitive shooter profile for 1:1 motor transfer.",
+        "text": "Match your mouse sensitivity and DPI in Session Settings to mirror your primary competitive shooter profile for consistent motor memory.",
         "url": "https://skilldrills.online/drills/fps/strafe-tracking#step-1"
       },
       {
@@ -273,7 +273,7 @@ export default function StrafeTrackingPage() {
       ]
     },
     steps: [
-      "Configure your exact game, DPI, and in-game sensitivity in Session Settings to preserve 1:1 hardware coordinates, then lock the pointer.",
+      "Configure your exact game, DPI, and in-game sensitivity in Session Settings to keep your hand-to-cursor mapping consistent, then lock the pointer.",
       "Fixate your eyes onto the glowing target model as it begins its unpredictable strafing path across the display.",
       "Glide your mouse with relaxed forearm pressure, matching target speed and horizontal displacement without pausing.",
       "Build your continuous tracking uptime to increase the combo multiplier up to the 3.0x maximum, earning level advancements every 1400 points.",

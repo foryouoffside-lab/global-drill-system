@@ -241,8 +241,8 @@ const saccadicGuide = {
     title: 'Referenztabelle: Sakkaden-Latenz und Blicksprung-Präzision',
     headers: ['Sakkaden-Latenz', 'Leistungsstufe', 'Sakkadische Dynamik', 'Funktionale Einstufung', 'Empfohlener Trainingsfokus'],
     rows: [
-      ['< 130 ms', 'Tier 1 (Express-Sakkaden / Pro)', 'Subkortikale Direktauslösung (Colliculus Superior); minimale Hemmung', 'Profi-Esports & Kampfpiloten (Fischer & Boch, 1984)', 'Maximale Blicksprung-Weite trainieren'],
-      ['130 – 170 ms', 'Tier 2 (Elite)', 'Extrem schnelle kortikale Initiierung; kaum Fixationsverzögerung', 'Leistungsstarke Wettkämpfer & Ballsportler', 'Zielstopp-Präzision (kein Overshoot) festigen'],
+      ['< 130 ms', 'Stufe 5 (Express-Sakkaden)', 'Subkortikale Direktauslösung (Colliculus Superior); minimale Hemmung', 'Express-Sakkaden (Fischer & Boch, 1984)', 'Maximale Blicksprung-Weite trainieren'],
+      ['130 – 170 ms', 'Stufe 4', 'Extrem schnelle kortikale Initiierung; kaum Fixationsverzögerung', 'Fokus: Zielstopp und Fixation', 'Zielstopp-Präzision (kein Overshoot) festigen'],
       ['171 – 220 ms', 'Tier 3 (Fortgeschritten)', 'Normative gesunde Blicksprung-Latenz', 'Durchschnittlicher gesunder Erwachsener (Rayner, 1998)', 'Peripheren Wahrnehmungsradius erweitern'],
       ['221 – 280 ms', 'Tier 4 (Mittelstufe)', 'Verlängerte Fixationshemmung; spürbare Suchverzögerung', 'Gelegentliche Ermüdung oder unvollständige Erholung', '20-20-20 Augenpausen einlegen'],
       ['> 280 ms', 'Tier 5 (Basis / Dysmetrie)', 'Deutliche Sakkadendysmetrie mit korrigierenden Mikrosakkaden', 'Übermüdete Augenmuskeln oder Bildschirmüberlastung', 'Zunächst auf Treffergenauigkeit vor Schnelligkeit achten'],

@@ -234,7 +234,7 @@ const guideProps = {
     title: "Standard-Benchmarks für Harmonische Blickfolge & Geschwindigkeits-Gain (Sinusoidal Gain)",
     headers: ["Leistungsstufe", "Geschwindigkeits-Gain", "Phasennacheilung", "Nachholsakkaden pro Zyklus", "Tracking-Profil"],
     rows: [
-      ["Elite", "0.96 – 1.02", "Unter 15 ms (Vollsynchron)", "0 – 1 (Perfekte flüssige Spur)", "Vollständige zerebelläre Null-Phasen-Synchronisation"],
+      ["Höchste Übungsstufe", "0.96 – 1.02", "Unter 15 ms (Vollsynchron)", "0 – 1 (Perfekte flüssige Spur)", "Vollständige zerebelläre Null-Phasen-Synchronisation"],
       ["Meister", "0.90 – 0.95", "15 ms – 30 ms", "2 – 3", "Sehr hohe Spurtreue, minimale Wendepunkt-Korrektur"],
       ["Diamant", "0.82 – 0.89", "31 ms – 50 ms", "4 – 5", "Solide Wellenführung, leichte Drift bei hohem Tempo"],
       ["Gold", "0.70 – 0.81", "51 ms – 80 ms", "6 – 8", "Instabil an Scheitelpunkten, häufige Korrektursakkaden"],

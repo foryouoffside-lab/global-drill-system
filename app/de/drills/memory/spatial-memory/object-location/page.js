@@ -247,7 +247,7 @@ export default function LocalizedObjectLocationPage() {
                 "Stufe 1",
                 "Level 8 – 10+ (8–10+ Objekte, 6x6–7x7 Raster)",
                 "1.000+ Punkte",
-                "Visuospaziale Elite; nutzt Quadranten-Scanning und Landmark-Verankerung; bindet 8+ Objekt-Orts-Paare mühelos; Zielsuche unter 500 ms"
+                "Fortgeschrittene Stufe: nutzt Quadranten-Scanning und Landmark-Verankerung; bindet 8+ Objekt-Orts-Paare mühelos; Zielsuche unter 500 ms"
         ],
         [
                 "Stufe 2",

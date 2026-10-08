@@ -197,12 +197,12 @@ const faqSchema = {
       "name": "Wie funktioniert die Zeitverlängerung von +0,6 Sekunden pro erfolgreichem Treffer?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Jede erfolgreiche Neutralisierung bringt neben den Basispunkten (+100 Pkt. × Combo-Multiplikator) eine Verlängerung der Rundenzeit um 0,6 Sekunden ein. Konstante Treffer ohne Fehlschüsse erlauben es Spitzenathleten, die 30-Sekunden-Basisgrenze weit zu überschreiten und riesige Punktzahlen anzuhäufen."
+        "text": "Jede erfolgreiche Neutralisierung bringt neben den Basispunkten (+100 Pkt. × Combo-Multiplikator) eine Verlängerung der Rundenzeit um 0,6 Sekunden ein. Konstante Treffer ohne Fehlschüsse erlauben es, die 30-Sekunden-Basisgrenze weit zu überschreiten und riesige Punktzahlen anzuhäufen."
       }
     },
     {
       "@type": "Question",
-      "name": "Welche Kriterien müssen für die Elite-Kategorie Stufe 1 (Apex Peripheral Guardian, Note S) erfüllt werden?",
+      "name": "Welche Kriterien müssen für Stufe 1 (Apex Peripheral Guardian, Note S) erfüllt werden?",
       "acceptedAnswer": {
         "@type": "Answer",
         "text": "Für Stufe 1 (Note S) sind mindestens 24.000 Punkte, eine Trefferquote von 90 % oder höher sowie das erfolgreiche Abfangen von Geschwindigkeiten über 450 px/s erforderlich. Fortgeschrittene Spieler bewegen sich typischerweise im Bereich von Stufe 3 (11.000 bis 16.999 Punkte)."

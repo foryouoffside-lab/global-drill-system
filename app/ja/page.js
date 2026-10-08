@@ -116,7 +116,7 @@ export default function JapaneseHomePage() {
           sublineWaiting: 'じっと待つ…',
           sublineGo: '今だ！',
           sublineEarly: '緑になる前にクリックしてしまいました',
-          labelElite: 'エリート',
+          labelElite: '非常に速い',
           labelFast: '速い',
           labelAverage: '平均的',
           labelSlow: '遅い',

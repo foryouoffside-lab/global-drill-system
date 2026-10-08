@@ -168,7 +168,7 @@ const faqSchema = {
       name: 'Quelle configuration matérielle offre les mesures les plus fidèles ?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Un écran à taux de rafraîchissement élevé (144 Hz ou plus), une souris gamer cadencée à 1000 Hz et la désactivation de l’accélération du curseur sous Windows pour garantir un suivi linéaire 1:1 parfait.',
+        text: 'Un écran à taux de rafraîchissement élevé (144 Hz ou plus), une souris gamer cadencée à 1000 Hz et la désactivation de l’accélération du curseur sous Windows pour un suivi plus constant.',
       },
     },
     {
@@ -316,7 +316,7 @@ const frCopy = {
   accuracy: "Précision",
   bestScore: "Meilleur Score",
   startButtonText: "Démarrer l'Entraînement",
-  startSubtitle: "Changement de cible et clic précis • Entrée brute 1:1",
+  startSubtitle: "Changement de cible et clic précis • Pointer Lock",
   getReady: "PRÉPAREZ-VOUS",
   rulesTitle: "Instructions de l'Exercice et Système de Points",
   rulesItems: [

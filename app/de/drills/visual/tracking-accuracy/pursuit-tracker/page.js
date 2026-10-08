@@ -250,7 +250,7 @@ const guideData = {
     title: "Orientierungswerte für Blickfolge und Zielverfolgung",
     headers: ["Leistungsstufe / Rang", "Zielverfolgungs-Haltezeit (Time on Target)", "Mittlere Tracking-Präzision", "Sakkaden-Unterdrückung", "Neurophysiologisches Niveau"],
     rows: [
-      ["Stufe 1: Weltklasse / Pro-Level", "≥ 88%", "≥ 92%", "≥ 95% Unterdrückung", "Perfekte kontinuierliche Folgebewegung, minimaler Netzhautschlupf. Voll synchronisiertes Kleinhirn-Innenmodell (Lisberger, 2010)"],
+      ["Stufe 1: Höchste Übungsstufe", "≥ 88%", "≥ 92%", "≥ 95% Unterdrückung", "Perfekte kontinuierliche Folgebewegung, minimaler Netzhautschlupf. Voll synchronisiertes Kleinhirn-Innenmodell (Lisberger, 2010)"],
       ["Stufe 2: Fortgeschritten / Athlet", "76 – 87%", "84 – 91%", "88 – 94% Unterdrückung", "Hochpräzise Okulomotorik und rasche Phasenanpassung bei Richtungswechseln"],
       ["Stufe 3: Solider Standard", "62 – 75%", "72 – 83%", "78 – 87% Unterdrückung", "Stabiles Tracking auf gleichmäßigen Bahnen, vereinzelte Korrektursakkaden bei Tempowechseln"],
       ["Stufe 4: Basis-Niveau", "48 – 61%", "60 – 71%", "65 – 77% Unterdrückung", "Häufiges Abdriften des Cursors und stufenweises Nachführen via Catch-up-Sakkaden"],

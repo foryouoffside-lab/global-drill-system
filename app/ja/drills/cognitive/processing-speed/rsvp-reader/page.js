@@ -263,7 +263,7 @@ const guideProps = {
     headers: ['等級 (Tier)', '称号 (Rank)', '到達ランク', '正答率'],
     note: 'この表は練習の目安として編集したもので、統計や診断ではありません。環境によって結果は変わります。',
     rows: [
-      { tier: 'Tier 1', rank: 'グランドマスター / 超高速情報処理エリート', level: 'マスタリー（極限）', accuracy: '98% 以上' },
+      { tier: 'Tier 1', rank: '超高速情報処理の最上位段階', level: 'マスタリー（極限）', accuracy: '98% 以上' },
       { tier: 'Tier 2', rank: '上級速読スペシャリスト', level: 'ダイヤモンド（優秀）', accuracy: '94–97%' },
       { tier: 'Tier 3', rank: '熟練情報オペレーター', level: 'プラチナ（熟練）', accuracy: '88–93%' },
       { tier: 'Tier 4', rank: '一般成人標準', level: 'ゴールド（標準）', accuracy: '78–87%' },

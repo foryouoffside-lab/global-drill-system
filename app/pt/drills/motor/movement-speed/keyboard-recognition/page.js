@@ -135,7 +135,7 @@ const faqSchema = {
       name: 'Qual é o tempo de reação médio para teclas de jogos?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Usuários comuns registram entre 380 e 480 ms. Jogadores competitivos atingem médias entre 240 e 300 ms, enquanto atletas profissionais de esports operam abaixo de 240 ms com alta taxa de acerto.',
+        text: 'Usuários comuns registram entre 380 e 480 ms. Jogadores competitivos atingem médias entre 240 e 300 ms, e tempos abaixo de 240 ms são pouco comuns.',
       },
     },
     {

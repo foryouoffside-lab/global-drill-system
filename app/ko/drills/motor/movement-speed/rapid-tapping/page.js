@@ -138,7 +138,7 @@ const faqSchema = {
     },
     {
       '@type': 'Question',
-      name: '일반 게이머와 프로게이머의 평균 CPS 기준은 어떻게 되나요?',
+      name: '일반 사용자와 숙련자의 평균 CPS 기준은 어떻게 되나요?',
       acceptedAnswer: {
         '@type': 'Answer',
         text: '일반 사용자가 편안하게 검지 손가락으로 클릭할 때의 평균 속도는 5.0~6.5 CPS입니다. 게임 숙련자는 단일 클릭으로 8.0~10.5 CPS에 달하며, 마인크래프트 PvP 및 리듬 게임 전문가는 지터 클릭으로 12.0~16.0+ CPS, 버터플라이 클릭으로 16.0~20.0+ CPS를 기록합니다.',
@@ -274,7 +274,7 @@ const guideProps = {
       },
       {
         tier: 'Tier 2',
-        rank: '프로 경쟁자 (Pro Competitor)',
+        rank: '상급 클리커 (Advanced)',
         stat: '12.0–15.9 CPS',
         level: '15.0–19.0 CPS',
         accuracy: '지터 클릭 마스터',

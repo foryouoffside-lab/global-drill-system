@@ -237,7 +237,7 @@ const faqSchema = {
       "name": "Quel est l impact du manque de sommeil sur la localisation spatiale ?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "La fatigue reduit l efficacite synaptique hippocampique et parietale, provoquant des confusions de liaison (attribuer le bon objet a une mauvaise coordonnee) chez plus de 35 % des participants prives de sommeil."
+        "text": "La fatigue reduit l efficacite synaptique hippocampique et parietale, provoquant des confusions de liaison (attribuer le bon objet a une mauvaise coordonnee) chez des personnes privees de sommeil."
       }
     },
     {

@@ -334,7 +334,7 @@ const copyEn = {
     { num: "1", text: "Trace Corridor", highlight: "Tactical Emerald Path", result: "Goal Clear resets timer to 45s" },
     { num: "2", text: "Reaching Goal", highlight: "Endless Scaling", result: "Corridor narrows & tightens" },
     { num: "3", text: "Off-Path Reset", highlight: "Wall Collision", result: "Resets position to start" },
-    { num: "4", text: "Strict Tracking", highlight: "Desktop Exclusive", result: "1:1 Raw Mouse Input" }
+    { num: "4", text: "Strict Tracking", highlight: "Desktop Exclusive", result: "Pointer Lock Mouse Capture" }
   ],
 };
 

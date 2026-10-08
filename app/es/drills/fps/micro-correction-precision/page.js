@@ -126,7 +126,7 @@ export default function MicroCorrectionPage() {
         "name": "¿Qué es la desaceleración del ratón (frenado motor) en el apuntado FPS?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "La desaceleración del ratón es la capacidad biomecánica de frenar la inercia cinética de la mano de forma precisa e instantánea al final de un barrido rápido. Un frenado controlado evita sobrepasar la hitbox del adversario (overflick), garantizando que la retícula aterrice en el pixel del objetivo."
+          "text": "La desaceleración del ratón es la capacidad biomecánica de frenar la inercia cinética de la mano de forma precisa e instantánea al final de un barrido rápido. Un frenado controlado evita sobrepasar la hitbox del adversario (overflick), ayudando a que la retícula aterrice en el pixel del objetivo."
         }
       },
       {
@@ -174,7 +174,7 @@ export default function MicroCorrectionPage() {
         "name": "¿Cómo influyen los hercios del monitor y la tasa de sondeo del ratón en los micro flicks?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Monitores con alta tasa de refresco (144Hz a 360Hz) proporcionan mayor fluidez temporal y disminuyen el retardo de despliegue. Tasas de sondeo de 1000Hz o superiores garantizan lecturas de sensor con latencia inferior a 1 ms, permitiendo un seguimiento sub-pixel inmediato."
+          "text": "Monitores con alta tasa de refresco (144Hz a 360Hz) proporcionan mayor fluidez temporal y disminuyen el retardo de despliegue. Tasas de sondeo de 1000Hz o superiores reducen la latencia de lectura del sensor."
         }
       },
       {
@@ -279,8 +279,8 @@ export default function MicroCorrectionPage() {
       title: "Niveles de Latencia de Micro Corrección y Adquisición de Objetivos",
       headers: ["Nivel de Rendimiento", "Ventana de Latencia de Corrección", "Mecánica de Control Motor", "Impacto Competitivo en Juego"],
       rows: [
-        ["Tier 1 (Precisión Élite)", "Menos de 280 ms", "Frenado motor instantáneo; micro ajustes con la punta de los dedos ejecutados sin oscilaciones", "Conversión letal de primer impacto en rangos Radiant, CS2 Faceit 10 y ligas profesionales"],
-        ["Tier 2 (Pro Competitivo)", "280 – 340 ms", "Frenado muscular disciplinado; transición suave del flick principal al micro aterrizaje secundario", "Gana duelos sistemáticamente contra peeks agresivos; excelente consistencia en cabezas"],
+        ["Tier 1 (Precisión Avanzada)", "Menos de 280 ms", "Frenado motor instantáneo; micro ajustes con la punta de los dedos ejecutados sin oscilaciones", "Práctica de primer impacto con frenado controlado, sin sobrepasar el objetivo"],
+        ["Tier 2 (Etapa Intermedia-Alta)", "280 – 340 ms", "Frenado muscular disciplinado; transición suave del flick principal al micro aterrizaje secundario", "Práctica de duelos contra peeks agresivos con consistencia en cabezas"],
         ["Tier 3 (Nivel Avanzado FPS)", "340 – 420 ms", "Adquisición firme de objetivos; ocasional sobrepaso de 10 a 15px que requiere corrección doble", "Efectivo en tiroteos tácticos; ligera indecisión al ajustar en ejes verticales"],
         ["Tier 4 (Intermedio)", "420 – 520 ms", "Desaceleración imprecisa; tendencia a sobrepasar la silueta antes de corregir la posición", "Vulnerable frente a strafes rápidos; imprecisión durante transferencias de disparo"],
         ["Tier 5 (En Desarrollo)", "520 ms+", "Inercia balística excesiva con overflick recurrente; retraso en la confirmación visual", "Dificultad constante para conectar tiros a la cabeza; necesidad de rectificaciones amplias"]
@@ -313,7 +313,7 @@ export default function MicroCorrectionPage() {
       ]
     },
     steps: [
-      "Configura tu juego, DPI y sensibilidad idéntica en los ajustes de sesión para garantizar correspondencia muscular exacta de cm/360, bloqueando el puntero.",
+      "Configura tu juego, DPI y sensibilidad idéntica en los ajustes de sesión para mantener tu cm/360 habitual, bloqueando el puntero.",
       "Cuando surja el objetivo ancla, realiza un movimiento rápido que aproxime la retícula a la zona circundante cubriendo el 90% del trayecto.",
       "Frena con firmeza cerca del borde, efectúa un micro ajuste preciso con los dedos hacia el centro de la diana y valida la posición.",
       "Dispara con certeza manteniendo una cadencia controlada para maximizar tu racha de combo y progresar a través de niveles más reducidos."

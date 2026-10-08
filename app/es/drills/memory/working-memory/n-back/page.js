@@ -170,7 +170,7 @@ const faqSchema = {
       "name": "¿Puede el entrenamiento N-Back mejorar la inteligencia fluida (CI)?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "El célebre estudio de Jaeggi et al. (2008, PNAS) demostró que el entrenamiento N-back adaptativo produjo mejoras en la inteligencia fluida (Gf) en tareas de razonamiento matricial no verbal."
+        "text": "Jaeggi et al. (2008, PNAS) informaron mejoras en tareas de razonamiento matricial no verbal tras un entrenamiento N-back adaptativo, pero las réplicas han dado resultados mixtos y este drill no garantiza ganancias de inteligencia."
       }
     },
     {
@@ -260,7 +260,7 @@ const guideEs = {
     "Este ejercicio es un juego en línea gratuito con fines de entrenamiento y estimulación mental. No constituye un dispositivo médico ni un test diagnóstico clínico."
   ],
   metrics: [
-    { label: "Nivel N-Back Máximo", desc: "Mayor profundidad alcanzada (3-Back estándar, 4-Back avanzado, 5-Back+ élite)." },
+    { label: "Nivel N-Back Máximo", desc: "Mayor profundidad alcanzada (3-Back estándar, 4-Back avanzado, 5-Back+ muy avanzado)." },
     { label: "Puntuación Total", desc: "Puntos acumulados en la sesión de 45 segundos (+150 PTS por acierto)." },
     { label: "Precisión de Juicio", desc: "Porcentaje de decisiones correctas de coincidencia y no coincidencia." },
     { label: "Tasa de Actualización", desc: "Velocidad de decisión y latencia durante la exposición de los estímulos." }
@@ -276,7 +276,7 @@ const guideEs = {
     { title: "Wayne K. Kirchner (1958): Origen del paradigma N-Back", body: "Introdujo la tarea en 1958 para evaluar la retención de datos en constante cambio con la edad." },
     { title: "Alan Baddeley (1986, 2000): Control ejecutivo central", body: "En el modelo multicomponente, N-back mide la coordinación entre el bucle fonológico y la corteza prefrontal." },
     { title: "Adele Diamond (2013): Tríada de funciones ejecutivas", body: "Identificó la actualización de memoria de trabajo, el control inhibitorio y la flexibilidad cognitiva." },
-    { title: "Susanne M. Jaeggi et al. (2008): Transferencia a inteligencia fluida", body: "Demostró incrementos en pruebas de matrices progresivas tras entrenamiento N-back adaptativo." },
+    { title: "Susanne M. Jaeggi et al. (2008): Transferencia a inteligencia fluida", body: "Informó incrementos en pruebas de matrices progresivas tras entrenamiento N-back adaptativo; las réplicas han dado resultados mixtos." },
     { title: "Nelson Cowan (2001): Restricción de capacidad 4±1", body: "Demostró que el foco atencional consciente abarca cerca de 4 elementos independientes." },
     { title: "David L. Woods et al. (2015): Estándares cronométricos cognitivos", body: "Normalizó métricas de latencia de reacción y sensibilidad d' con precisión de milisegundos." }
   ],

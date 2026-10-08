@@ -136,7 +136,7 @@ const faqSchema = {
       name: 'Qual a sensibilidade de mouse recomendada para este teste?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Recomenda-se manter a mesma sensibilidade usada nos seus jogos competitivos habituais, geralmente entre 25 cm e 45 cm por giro de 360 graus. Isso garante transferência direta de memória muscular.',
+        text: 'Recomenda-se manter a mesma sensibilidade usada nos seus jogos competitivos habituais, geralmente entre 25 cm e 45 cm por giro de 360 graus. Isso ajuda a manter a sensibilidade familiar, sem garantia de transferência.',
       },
     },
     {
@@ -165,10 +165,10 @@ const faqSchema = {
     },
     {
       '@type': 'Question',
-      name: 'Qual configuração de hardware garante a maior precisão nos testes?',
+      name: 'Qual configuração de hardware ajuda a obter medições mais consistentes?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Um monitor de alta taxa de atualização (144 Hz ou superior), um mouse gamer com taxa de amostragem (polling rate) de 1000 Hz e a aceleração de ponteiro do Windows desativada para rastreamento 1:1 rigoroso.',
+        text: 'Um monitor de alta taxa de atualização (144 Hz ou superior), um mouse gamer com taxa de amostragem (polling rate) de 1000 Hz e a aceleração de ponteiro do Windows desativada para um rastreamento mais consistente.',
       },
     },
     {
@@ -316,7 +316,7 @@ const ptCopy = {
   accuracy: "Precisão",
   bestScore: "Melhor Pontuação",
   startButtonText: "Iniciar Treino",
-  startSubtitle: "Troca de alvo e clique preciso • Entrada direta 1:1",
+  startSubtitle: "Troca de alvo e clique preciso • Pointer Lock",
   getReady: "PREPARE-SE",
   rulesTitle: "Instruções do Treino e Sistema de Pontuação",
   rulesItems: [

@@ -150,7 +150,7 @@ export default function VerticalAirTrackFrPage() {
         "name": "Le tracking vertical aide-t-il sur Halo Infinite ?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Oui, Halo Infinite intègre des canons de projection, des répulseurs et des grappins. Cet entraînement garantit de placer les quatre salves complètes du Battle Rifle sur un Spartan en plein saut."
+          "text": "Oui, Halo Infinite intègre des canons de projection, des répulseurs et des grappins. Cet entraînement aide à pratiquer le placement des quatre salves du Battle Rifle sur un Spartan en plein saut."
         }
       },
       {
@@ -231,8 +231,8 @@ export default function VerticalAirTrackFrPage() {
       title: "Barème de Performance : Suivi Vertical et Temps de Contact Aérien",
       headers: ["Palier Compétitif", "Temps de Contact Utile", "Latence d'Inversion", "Impact en Partie Réelle"],
       rows: [
-        ["Tier 1 (Predator / Grand Maître / Pro)", "> 82% Uptime", "Moins de 180 ms", "Suivi chirurgical sur tyroliennes et vols ; transition parfaite à l'apex du saut"],
-        ["Tier 2 (Maître Compétitif / Tier 2)", "70% – 82% Uptime", "180 – 230 ms", "Poursuite régulière ; légères hésitations lors des inversions rapides de trajectoire"],
+        ["Tier 1 (Palier Avancé)", "> 82% Uptime", "Moins de 180 ms", "Suivi chirurgical sur tyroliennes et vols ; transition parfaite à l'apex du saut"],
+        ["Tier 2 (Palier Intermédiaire-Haut)", "70% – 82% Uptime", "180 – 230 ms", "Poursuite régulière ; légères hésitations lors des inversions rapides de trajectoire"],
         ["Tier 3 (Diamant / Avancé)", "58% – 70% Uptime", "230 – 290 ms", "Bonne montée ; décrochage fréquent lors de l'accélération de chute libre"],
         ["Tier 4 (Platine / Or / Intermédiaire)", "45% – 58% Uptime", "290 – 360 ms", "Recourt à des micro-flicks saccadés au lieu d'un mouvement fluide continu sur l'axe Y"],
         ["Tier 5 (Argent / Bronze / Débutant)", "< 45% Uptime", "Plus de 360 ms", "Poignet figé ; le réticule reste constamment à la traîne des cibles en chute"]
@@ -304,7 +304,7 @@ export default function VerticalAirTrackFrPage() {
           statMaxCombo: "Combo Max",
           statPeakLevel: "Niveau Max",
           startTitle: "Vertical Air-Track",
-          startSubtitle: "Entrée Souris Brute (Raw Input) • Progression Dynamique",
+          startSubtitle: "Pointer Lock • Progression Dynamique",
           startButtonText: "Démarrer l'Exercice",
           playAgainText: "Rejouer",
           shareText: "Partager le Score",

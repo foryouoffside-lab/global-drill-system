@@ -267,7 +267,7 @@ const guideProps = {
     note: '단계는 SkillDrills가 정한 연습용 참고 구분이며 인구 통계나 백분위가 아닙니다.',
     headers: ['등급 (Tier)', '호칭 (Rank)', '평가 기준', '도달 수준', '정확도', '연습 단계'],
     rows: [
-      { tier: 'Tier 1', rank: '그랜드마스터 / 초정밀 궤적 조작자', stat: '최상위 단계', level: '엘리트 (최상위)', accuracy: '98% 이상', percentile: '최상위 단계' },
+      { tier: 'Tier 1', rank: '초정밀 궤적 조작자', stat: '최상위 단계', level: '최상위 (극한)', accuracy: '98% 이상', percentile: '최상위 단계' },
       { tier: 'Tier 2', rank: '마스터 / 정밀 추적자', stat: '상급 단계', level: '다이아몬드 (우수)', accuracy: '94–97%', percentile: '상급 단계' },
       { tier: 'Tier 3', rank: '프로 / 숙련 제어자', stat: '중상급 단계', level: '플래티넘 (숙련)', accuracy: '88–93%', percentile: '중상급 단계' },
       { tier: 'Tier 4', rank: '일반 / 중급 조작자', stat: '표준 단계', level: '골드 (표준)', accuracy: '78–87%', percentile: '표준 단계' },
@@ -312,7 +312,7 @@ const koCopy = {
     { num: "1", text: "궤적 추종", highlight: "에메랄드 파형", result: "경로 유지 시 프레임당 +1점" },
     { num: "2", text: "속도 가속", highlight: "점진적 가속", result: "45초간 2.2 → 3.8 px/f 증속" },
     { num: "3", text: "플로우 보너스", highlight: "슈퍼 플로우", result: "4초 연속 유지 시 +5점 추가" },
-    { num: "4", text: "정밀 제어", highlight: "데스크톱 전용", result: "1:1 하드웨어 원시 마우스 입력" }
+    { num: "4", text: "정밀 제어", highlight: "데스크톱 전용", result: "마우스 입력 지원" }
   ],
 };
 

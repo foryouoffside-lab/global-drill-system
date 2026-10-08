@@ -242,7 +242,7 @@ export default function FlickShotDePage() {
         ["Ballistische Hauptbewegung (Initialimpuls)", "120 – 180 ms", "Agonistischer Muskelkraftstoß (Arm/Handgelenk)", "Überwindet 80–90 % der Gesamtdistanz (Elliott et al., 2010)"],
         ["Korrektives Abbremsen (Homing-Bremsung)", "60 – 120 ms", "Visuelle Rückkopplung & Mauspad-Reibung", "Closed-Loop Feinjustierung zur Zielerfassung (Fitts, 1954)"],
         ["Gesamte Zielerfassungszeit (Durchschnitt)", "360 – 520 ms", "Kompletter sensomotorischer Reaktionskreis", "Solide Basis für kompetitive Ranked-Matches"],
-        ["Elite-Präzision (Tier-1-Profi)", "240 – 320 ms", "Nahezu fehlerfreie automatisierte Motorsynergie", "Perfekt synchronisierte Mausbremsung auf Profiniveau"]
+        ["Stufe 4: Hohe Präzision", "240 – 320 ms", "Nahezu fehlerfreie automatisierte Motorsynergie", "Fokus: Mausbremsung und Klick sauber synchronisieren"]
       ],
       note: "Wissenschaftliche Benchmark-Werte basierend auf Fitts (1954), Schmidt et al. (1979), Elliott et al. (2010) und Woods et al. (2015)."
     },

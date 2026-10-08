@@ -136,7 +136,7 @@ const faqSchema = {
       name: '¿Qué sensibilidad de ratón es idónea para este ejercicio?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Mantén la misma sensibilidad con la que juegas en tus shooters habituales (generalmente de 25 a 45 cm por giro de 360 grados). Así aseguras una transferencia directa a tu memoria muscular.',
+        text: 'Mantén la misma sensibilidad con la que juegas en tus shooters habituales (generalmente de 25 a 45 cm por giro de 360 grados). Así practicas con una sensibilidad familiar, sin garantía de transferencia.',
       },
     },
     {
@@ -160,7 +160,7 @@ const faqSchema = {
       name: '¿Resulta útil para juegos rítmicos como osu!?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Sí. La lectura anticipada de patrones geométricos y la ejecución rítmica de clics ordenados se transfieren inmediatamente a la precisión de lectura y golpeo en mapas musicales.',
+        text: 'Sí. La lectura anticipada de patrones geométricos y la ejecución rítmica de clics ordenados pueden ayudar con la precisión de lectura y golpeo en mapas musicales, sin garantía de transferencia.',
       },
     },
     {
@@ -168,7 +168,7 @@ const faqSchema = {
       name: '¿Qué requisitos de hardware proporcionan los registros más fiables?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Un monitor de 144 Hz o superior, un ratón con tasa de sondeo (polling rate) de 1000 Hz y la desactivación de la aceleración del cursor de Windows para asegurar un seguimiento lineal 1:1 inalterado.',
+        text: 'Un monitor de 144 Hz o superior, un ratón con tasa de sondeo (polling rate) de 1000 Hz y la desactivación de la aceleración del cursor de Windows para un seguimiento más consistente.',
       },
     },
     {
@@ -316,7 +316,7 @@ const esCopy = {
   accuracy: "Precisión",
   bestScore: "Mejor Puntuación",
   startButtonText: "Iniciar Entrenamiento",
-  startSubtitle: "Cambio de objetivos y clic preciso • Entrada directa 1:1",
+  startSubtitle: "Cambio de objetivos y clic preciso • Pointer Lock",
   getReady: "PREPÁRATE",
   rulesTitle: "Instrucciones del Ejercicio y Sistema de Puntos",
   rulesItems: [

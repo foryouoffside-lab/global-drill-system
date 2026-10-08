@@ -78,7 +78,7 @@ export default function AntiStrafeJitterPtPage() {
     "operatingSystem": "Web Browser",
     "dateModified": "2026-09-20",
     "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
-    "description": "Aprimore o tracking reativo, a mira anti-strafe e o controle de trocas de tiro a curta distância com entrada bruta de mouse.",
+    "description": "Aprimore o tracking reativo, a mira anti-strafe e o controle de trocas de tiro a curta distância com Pointer Lock.",
     "genre": "Treino de FPS / Anti-Strafe",
     "url": "https://skilldrills.online/pt/drills/fps/anti-strafe-jitter-duel",
     "publisher": {
@@ -180,10 +180,10 @@ export default function AntiStrafeJitterPtPage() {
       },
       {
         "@type": "Question",
-        "name": "O simulador suporta entrada bruta de mouse sem aceleração?",
+        "name": "Como o simulador captura o movimento do mouse?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Sim. O sistema utiliza a API HTML5 Pointer Lock com carimbos de tempo via performance.now(), garantindo resposta 1:1 rigorosa."
+          "text": "O sistema utiliza a API HTML5 Pointer Lock com carimbos de tempo via performance.now(); o resultado depende das configurações do seu sistema e do seu mouse."
         }
       }
     ]
@@ -199,7 +199,7 @@ export default function AntiStrafeJitterPtPage() {
         "@type": "HowToStep",
         "position": 1,
         "name": "Calibre a sensibilidade do seu jogo",
-        "text": "Ajuste sua sensibilidade para espelhar exatamente a proporção física 1:1 do seu jogo competitivo."
+        "text": "Ajuste sua sensibilidade para se aproximar da do seu jogo competitivo."
       },
       {
         "@type": "HowToStep",
@@ -227,7 +227,7 @@ export default function AntiStrafeJitterPtPage() {
     intro: [
       "O treino de mira para tracking reativo pratica manter a mira no alvo quando o adversário alterna rapidamente entre ADAD. Este drill mede trocas de direção, controle de overshoot e contato em duelos curtos de Apex e Overwatch 2.",
       "Quando o alvo inverte o sentido abruptamente, a imagem escapa da fóvea e desliza pela retina. O cérebro não tem como antecipar a troca: ele precisa detectar a desaceleração, emitir o comando de reversão no córtex motor, frear a mão em movimento e iniciar nova aceleração. Em jogos com tempo para matar (TTK) elevado — como Apex Legends, Overwatch 2 e Call of Duty: Warzone — o sucesso depende do tempo total em que a mira permanece colada no hitbox do adversário.",
-      "O Anti-Strafe Jitter Trainer funciona sobre a API HTML5 Pointer Lock com mapeamento direto de hardware 1:1 e cronometria de alta precisão via performance.now(). Ao eliminar o ruído de interpolação do navegador (Woods et al., 2015), o simulador fornece medições laboratoriais para aprimorar o controle dos músculos antagonistas e eliminar os trancos na mira.",
+      "O Anti-Strafe Jitter Trainer funciona sobre a API HTML5 Pointer Lock e cronometria via performance.now(). O simulador fornece medições de tempo para praticar o controle dos músculos antagonistas e reduzir os trancos na mira (Woods et al., 2015).",
       "Como medir seu progresso: cada fração de segundo de contato é computada localmente sem upload de dados. Mantenha os mesmos parâmetros de sensibilidade e pegada para consolidar padrões motores consistentes."
     ],
     benchmarks: {
@@ -238,7 +238,7 @@ export default function AntiStrafeJitterPtPage() {
         ["Latência de Reversão Motora do Braço", "80 – 130 ms", "Transmissão corticoespinal para flexores/extensores e frenagem antagonista", "Tempo mecânico para frear o cursor e inverter o vetor do mouse"],
         ["Microalinhamento Foveal Terminal", "60 – 100 ms", "Centralização foveal fina e ajuste corretivo subcortical", "Eliminação de sobrecurso e fixação estável da retícula no alvo"],
         ["Janela Total de Reaquisição sem Previsão", "300 – 440 ms", "Soma de detecção visual, frenagem motora e recentralização", "Penalidade humana padrão em mudanças de direção imprevistas"],
-        ["Tracking Reativo de Elite Preparado", "210 – 290 ms", "Amortecimento antecipatório e supressão antagonista relaxada", "Domínio demonstrado por profissionais de Apex Legends e Overwatch"]
+        ["Tracking Reativo Avançado Preparado", "210 – 290 ms", "Amortecimento antecipatório e supressão antagonista relaxada", "Prática de amortecimento antecipatório e relaxamento motor"]
       ],
       note: "Métricas sintetizadas a partir de pesquisas oculomotoras (Rashbass, 1961; Krauzlis, 2004), neurociência de jogos de ação (Green & Bavelier, 2003) e cronometria digital (Woods et al., 2015). A precisão real varia com a taxa de atualização do monitor e o nível de tensão muscular."
     },
@@ -268,7 +268,7 @@ export default function AntiStrafeJitterPtPage() {
       ]
     },
     steps: [
-      "Defina sua sensibilidade para garantir a mesma proporção muscular 1:1 utilizada em jogo.",
+      "Defina sua sensibilidade próxima à utilizada em jogo.",
       "Clique em Iniciar Treino para ativar a tela cheia e travar o cursor com resposta bruta de hardware.",
       "Fixe a visão na esfera que realiza strafes laterais de alta frequência em ADAD.",
       "Mantenha o retículo sobre o alvo, absorvendo as mudanças com pequenos ajustes de pulso.",

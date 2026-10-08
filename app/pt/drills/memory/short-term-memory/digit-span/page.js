@@ -243,7 +243,7 @@ const digitSpanGuide = {
     "Tier 1 (Superior / Topo 1%)",
     "9 – 12+ Dígitos",
     "Escore 16 – 19",
-    "Nível mnemônico de elite; organiza números em blocos de 3 a 4 algarismos; retenção perfeita na alça fonológica; cadência abaixo de 350 ms."
+    "Nível mnemônico avançado; organiza números em blocos de 3 a 4 algarismos; retenção perfeita na alça fonológica; cadência abaixo de 350 ms."
   ],
   [
     "Tier 2 (Acima da Média / Topo 15%)",

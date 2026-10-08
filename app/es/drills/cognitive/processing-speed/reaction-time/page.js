@@ -165,7 +165,7 @@ const faqSchema = {
       "name": "¿Cuáles son los valores promedio normales en humanos?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "En adultos sanos, el promedio oscila entre 280ms y 350ms. Deportistas de élite y jugadores profesionales de esports logran registros de entre 180ms y 230ms (Der & Deary, 2006)."
+        "text": "En adultos sanos, el promedio oscila entre 280ms y 350ms. Registros de entre 180ms y 230ms son poco habituales y dependen del dispositivo (Der & Deary, 2006)."
       }
     },
     {

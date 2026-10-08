@@ -292,7 +292,7 @@ const concentrationGridGuide = {
     "Advance through expanding grids: clear smaller boards swiftly to unlock larger 5x5, 6x6, and 7x7 layouts.",
     "Sustain visual discipline: navigate rotated number tiles without breaking your scanning rhythm across the full 45 seconds."
   ],
-  audience: "Speed readers, competitive athletes, esports professionals, military/aviation candidates, and cognitive fitness enthusiasts seeking to widen peripheral visual span, improve visual search efficiency, and build mental focus stamina.",
+  audience: "Speed readers, competitive athletes, esports players, and cognitive fitness enthusiasts seeking to widen peripheral visual span, improve visual search efficiency, and build mental focus stamina.",
   faqs: faqSchema.mainEntity.map(e => ({ q: e.name, a: e.acceptedAnswer.text })),
   sources: pickSources('lu2022', 'treisman1980', 'rayner1998', 'rayner2016', 'wolfe2007', 'woods2015'),
   related: [

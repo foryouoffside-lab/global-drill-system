@@ -178,7 +178,7 @@ const faqSchema = {
       "name": "¿Qué puntuación o tiempo se considera bueno en la tabla de Schulte?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "En una tabla clásica de 5x5 (25 números), completar la búsqueda en menos de 25 segundos se considera un nivel excelente. En nuestro simulador dinámico de 45 segundos, alcanzar matrices de 6x6 o 7x7 y superar los 6.000 puntos sitúa al usuario en el rango de atletas de élite."
+        "text": "En una tabla clásica de 5x5 (25 números), completar la búsqueda en menos de 25 segundos se considera un nivel excelente. En nuestro simulador dinámico de 45 segundos, alcanzar matrices de 6x6 o 7x7 y superar los 6.000 puntos es una marca alta dentro de este simulador."
       }
     },
     {
@@ -246,7 +246,7 @@ const concentrationGridGuideEs = {
     title: "Baremos de Rendimiento de la Tabla de Schulte y Cuadrícula de Concentración (45s)",
     headers: ["Nivel de Rendimiento", "Puntuación (45s)", "Cuadrícula Máxima", "Latencia de Búsqueda", "Interpretación Neurocognitiva"],
     rows: [
-      ["S+ (Élite)", "8.000+ PTS", "7x7+ (49+ casillas)", "< 300 ms / objetivo", "Velocidad de escaneo visual de clase mundial, amplitud periférica sobresaliente e instantánea invarianza rotacional."],
+      ["S+ (Etapa Avanzada)", "8.000+ PTS", "7x7+ (49+ casillas)", "< 300 ms / objetivo", "Velocidad de escaneo visual muy alta, amplitud periférica sobresaliente e instantánea invarianza rotacional."],
       ["S (Maestría)", "6.000 – 7.999 PTS", "6x6 (36 casillas)", "300 – 450 ms / objetivo", "Eficiencia superior de búsqueda visual; pre-visualización parafoveal fluida y mínimas pausas de fijación."],
       ["A (Avanzado)", "4.500 – 5.999 PTS", "5x5 (25 casillas)", "450 – 600 ms / objetivo", "Sólido procesamiento del campo visual; chunking secuencial por pares constante en matrices de densidad media."],
       ["B (Competente)", "3.000 – 4.499 PTS", "4x4 (16 casillas)", "600 – 800 ms / objetivo", "Disciplina de búsqueda por encima del promedio; pausas ocasionales de re-fijación central en cuadrículas mayores."],

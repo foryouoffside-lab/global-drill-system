@@ -143,7 +143,7 @@ export default function AwarenessDrillFrPage() {
         "name": "Comment éviter de se faire contourner ou éliminer dans le dos en FPS ?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "En combinant les repères audio avec des rotations rapides à 180 degrés. Répéter la distance physique sur le tapis garantit de neutraliser la menace arrière avant d'être éliminé."
+          "text": "En combinant les repères audio avec des rotations rapides à 180 degrés. Répéter la distance physique sur le tapis aide à neutraliser la menace arrière plus vite."
         }
       },
       {
@@ -180,10 +180,10 @@ export default function AwarenessDrillFrPage() {
       },
       {
         "@type": "Question",
-        "name": "Ce simulateur prend-il en charge la saisie brute de la souris (raw input) ?",
+        "name": "Comment ce simulateur capture-t-il le mouvement de la souris ?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Oui. Le drill utilise l'API HTML5 Pointer Lock pour garantir une réponse brute 1:1 sans aucune accélération ni lissage matériel du curseur."
+          "text": "Le drill utilise l’API HTML5 Pointer Lock pour capturer le mouvement de la souris dans le navigateur. Le résultat dépend des réglages de votre système et de votre souris."
         }
       }
     ]
@@ -239,7 +239,7 @@ export default function AwarenessDrillFrPage() {
         ["Décélération et Freinage du Réticule", "60 – 110 ms", "Freinage des muscles antagonistes (stopping power)", "Amortissement de l'impulsion de freinage (Schmidt 1979)"],
         ["Micro-Correction Terminale et Clic", "70 – 130 ms", "Rétroaction visuelle fovéale et déclenchement du tir", "Phase d'approche selon la loi de Fitts (Fitts 1954)"],
         ["Temps Total de Réacquisition 180°", "450 – 690 ms", "Boucle sensorimotrice complète de rotation", "Ligne de base compétitive standard tous joueurs"],
-        ["Exécution Subconsciente d'Élite 180°", "320 – 420 ms", "Synergie sensibilité et mémoire musculaire en un geste", "Maîtrise e-sport lors des situations de clutch en FPS"]
+        ["Exécution Subconsciente Avancée 180°", "320 – 420 ms", "Synergie sensibilité et mémoire musculaire en un geste", "Entraîne les rotations à 180° avec une sensibilité et une mémoire musculaire stables"]
       ],
       note: "Données compilées selon les standards de la biomécanique et des sciences visuelles (Rayner 1998; Fitts 1954; Schmidt et al. 1979; Elliott et al. 2010) et de la chronométrie numérique (Woods et al. 2015). Les latences réelles dépendent de la sensibilité (cm/360°), du frottement du tapis et des hertz de l'écran."
     },
@@ -295,7 +295,7 @@ export default function AwarenessDrillFrPage() {
     statAccuracy: "Précision",
     statBestScore: "Meilleur Score",
     startTitle: "Entraînement Demi-Tour 180°",
-    startSubtitle: "Entrée Brute de Souris • Niveaux Infinis",
+    startSubtitle: "Pointer Lock • Niveaux Infinis",
     stageCaption: "Repérez les cibles sur les bords par vision périphérique et effectuez des demi-tours à 180° avant la fin du chronomètre.",
     rulesTitle: "Règles d'Entraînement et Système de Points",
     rulesItems: [

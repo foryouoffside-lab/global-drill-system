@@ -167,7 +167,7 @@ const faqSchema = {
       "name": "Qual é uma boa pontuação no teste de 45 segundos?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Iniciantes registram entre 50 e 99 pontos (Nível 2–3). Praticantes experientes alcançam 100 a 149 pontos, e atletas ou jogadores de elite ultrapassam 150 a 200+ pontos com sequências superiores a 10 acertos seguidos."
+        "text": "Iniciantes registram entre 50 e 99 pontos (Nível 2–3). Praticantes experientes alcançam 100 a 149 pontos, e ultrapassar 150 a 200+ pontos exige com sequências superiores a 10 acertos seguidos."
       }
     },
     {
@@ -354,7 +354,7 @@ export default function RhythmAnomalyLocalePage() {
           <div>
             <h4 className="font-semibold text-white">Qual é uma boa pontuação no teste de 45 segundos?</h4>
             <p className="text-slate-300 mt-1">
-              Iniciantes registram entre 50 e 99 pontos (Nível 2–3). Praticantes experientes alcançam 100 a 149 pontos, e atletas ou jogadores de elite ultrapassam 150 a 200+ pontos com sequências superiores a 10 acertos seguidos.
+              Iniciantes registram entre 50 e 99 pontos (Nível 2–3). Praticantes experientes alcançam 100 a 149 pontos, e ultrapassar 150 a 200+ pontos exige com sequências superiores a 10 acertos seguidos.
             </p>
           </div>
           <div>

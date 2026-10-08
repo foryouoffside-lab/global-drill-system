@@ -235,8 +235,8 @@ export default function MicroCorrectionDePage() {
       title: "Mikrokorrektur-Latenz & Präzisions-Benchmarks (Millisekunden & Trefferquote)",
       headers: ["Leistungsstufe (Skill-Tier)", "Korrekturzeit (ms)", "Mikro-Trefferquote", "Taktischer Nutzen im Match"],
       rows: [
-        ["Tier 1 (Profi / Radiant & Faceit Lv10)", "< 140 ms", "95% – 99%+", "Flick und Feinjustierung verschmelzen zu einer reflexartigen Einheit; maximale One-Tap-Quote."],
-        ["Tier 2 (Elite / Unsterblich & Faceit Lv8-9)", "140 – 190 ms", "88% – 95%", "Hervorragende Bremskontrolle; verfehlte Initial-Flicks werden blitzschnell korrigiert."],
+        ["Stufe 5: Sehr hohe Präzision", "< 140 ms", "95% – 99%+", "Fokus: Flick und Feinjustierung zu einer Bewegung verbinden."],
+        ["Stufe 4: Hohe Präzision", "140 – 190 ms", "88% – 95%", "Fokus: Bremskontrolle und schnelle Korrektur verfehlter Initial-Flicks."],
         ["Tier 3 (Erfahren / Diamant & Ascendant)", "190 – 250 ms", "80% – 88%", "Solide Feinkorrektur; leichte Handgelenksanspannung führt gelegentlich zu minimalem Overshoot."],
         ["Tier 4 (Fortgeschritten / Gold & Platin)", "250 – 340 ms", "70% – 80%", "Verzögerte Bremsung; Ziel wird oft überrissen, was zeitraubende Doppelkorrekturen erzwingt."],
         ["Tier 5 (Einsteiger / Silber & Bronze)", "> 340 ms", "< 70%", "Fehlende Fingergelenk-Nutzung; Korrekturen erfolgen mit dem ganzen Arm, was zu Fehlschüssen führt."]
@@ -269,7 +269,7 @@ export default function MicroCorrectionDePage() {
       ]
     },
     steps: [
-      "Stelle deine Ingame-Sensibilität ein und aktiviere die Pointer-Lock-API für direkte 1:1 Rohdatenübertragung.",
+      "Stelle deine Ingame-Sensibilität ein und aktiviere die Pointer-Lock-API zur Mauserfassung.",
       "Führe einen raschen ballistischen Flick auf das große Ankerziel aus und klicke es an.",
       "Bremse die Mausbewegung sofort ab und lokalisiere das unmittelbar daneben auftauchende Mikro-Ziel.",
       "Justiere das Fadenkreuz mit den Fingerkuppen nach und löse bei Zielbestätigung den Schuss aus.",
@@ -298,7 +298,7 @@ export default function MicroCorrectionDePage() {
     statMaxCombo: "Max Combo",
     statPeakLevel: "Level",
     startTitle: "Aim Trainer - Mikrokorrektur & Headshots",
-    startSubtitle: "Hardware-Rohdaten • Endlose Levelprogression & Bremskontrolle",
+    startSubtitle: "Pointer Lock • Endlose Levelprogression & Bremskontrolle",
     getReady: "BEREITMACHEN",
     toggleFlash: "Fehlschuss-Aufleuchten umschalten",
     toggleSound: "Soundeffekte umschalten",

@@ -136,7 +136,7 @@ const faqSchema = {
       name: '¿Cuál es el tiempo de reacción promedio en teclas gaming?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Los usuarios sin entrenamiento registran de 380 a 480 ms. Jugadores regulares consiguen de 240 a 300 ms, mientras que competidores de élite bajan de 240 ms con alta precisión.',
+        text: 'Los usuarios sin entrenamiento registran de 380 a 480 ms. Jugadores regulares consiguen de 240 a 300 ms, y tiempos inferiores a 240 ms son poco habituales.',
       },
     },
     {

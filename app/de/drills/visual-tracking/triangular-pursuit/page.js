@@ -273,7 +273,7 @@ const guide = {
     title: "Leistungsstandards der dreieckigen Blickverfolgung (Geschwindigkeit & Scheitelpunkt-Präzision)",
     headers: ["Leistungsstufe", "Empfohlene Geschwindigkeit", "Landefehler am Eckpunkt", "Sakkadische Latenz am Scheitelpunkt", "Einordnung"],
     rows: [
-      ["Elite / Perfekte neuronale Adaptation (Elite)", "3.5x〜5.0x+", "Fehler < 12px (exakte Haftung am Scheitelpunkt)", "Latenz < 110ms (perfekte Vorwärtsbremsung)", "Stufe 1"],
+      ["Höchste Übungsstufe / Starke Adaptation", "3.5x〜5.0x+", "Fehler < 12px (exakte Haftung am Scheitelpunkt)", "Latenz < 110ms (perfekte Vorwärtsbremsung)", "Stufe 1"],
       ["Meister / Höchste Vektorkontrolle (Master)", "2.5x〜3.5x", "Fehler < 22px (nur minimale Mikrosakkaden)", "Latenz < 140ms (präzises Eckpunkt-Handling)", "Stufe 2"],
       ["Fortgeschritten / Wettkampfniveau (Advanced)", "1.8x〜2.5x", "Fehler < 38px (schnelle Wiedererfassung)", "Latenz < 180ms (solide Richtungswechsel)", "Stufe 3"],
       ["Mittelstufe / Grundlegend geübt (Intermediate)", "1.2x〜1.8x", "Fehler 38〜70px (Kurvenschneiden / Überschwinger)", "Latenz 180〜240ms (mehrere Korrektursakkaden)", "Stufe 4"],

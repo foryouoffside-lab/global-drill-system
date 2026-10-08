@@ -195,7 +195,7 @@ export default function TargetPrioritizationFrPage() {
       {
         "@type": "HowToStep",
         "position": 1,
-        "name": "Calibrer sa Sensibilité en Entrée Brute 1:1",
+        "name": "Calibrer sa Sensibilité",
         "text": "Ajustez vos DPI et votre sensibilité conformément à votre jeu favori pour maintenir une mémoire musculaire parfaite.",
         "url": "https://skilldrills.online/fr/drills/fps/target-prioritization#step-1"
       },
@@ -236,8 +236,8 @@ export default function TargetPrioritizationFrPage() {
       title: "Barèmes Scientifiques de Priorisation des Menaces et Temps de Décision",
       headers: ["Niveau de Performance", "Latence de Résolution", "Précision de Priorité", "Impact Compétitif en Match"],
       rows: [
-        ["Tier 1 (Apex Commander / Radiant)", "<280 ms", "96% – 99%+", "Évaluation des menaces infaillible ; élimination immédiate du danger majeur avec 0% de tir ami lors d'assauts frénétiques"],
-        ["Tier 2 (Maître Compétitif / Pro Tier-2)", "280 – 340 ms", "90% – 96%", "Vitesse de décision remarquable ; reprise rapide après escalade des cibles ; moins de 1% d'erreurs de tir"],
+        ["Tier 1 (Palier Avancé)", "<280 ms", "96% – 99%+", "Évaluation des menaces infaillible ; élimination immédiate du danger majeur avec 0% de tir ami lors d'assauts frénétiques"],
+        ["Tier 2 (Palier Intermédiaire-Haut)", "280 – 340 ms", "90% – 96%", "Vitesse de décision remarquable ; reprise rapide après escalade des cibles ; moins de 1% d'erreurs de tir"],
         ["Tier 3 (Diamant / Ascendant)", "340 – 420 ms", "82% – 90%", "Sélection solide des priorités ; brève hésitation de 60 à 90 ms lorsque des cibles rouges et jaunes apparaissent proches"],
         ["Tier 4 (Intermédiaire / Or / Platine)", "420 – 520 ms", "72% – 82%", "Sujet aux tirs de panique ; touche parfois des alliés verts ou vise les jaunes avant de neutraliser les rouges"],
         ["Tier 5 (Débutant / Tir Réflexe)", ">520 ms", "<72%", "Multiples erreurs d'impulsion ; taux de tir ami élevé ; difficulté à traiter la surcharge visuelle lors des reprises de site"]
@@ -270,7 +270,7 @@ export default function TargetPrioritizationFrPage() {
       ]
     },
     steps: [
-      "Indiquez votre jeu de référence, votre sensibilité et vos DPI dans les réglages pour garantir une parité 1:1 rigoureuse.",
+      "Indiquez votre jeu de référence, votre sensibilité et vos DPI dans les réglages pour rester proche de votre jeu habituel.",
       "Concentrez votre regard au centre sans forcer et attendez l'apparition simultanée de cibles rouges, jaunes et vertes.",
       "Repérez et neutralisez les cibles rouges d'urgence avec des tirs nets (+100 PTS / +0,4s de bonus au chronomètre).",
       "Éliminez les cibles jaunes secondaires (+50 PTS / +0,4s) avant qu'elles ne virent au rouge.",

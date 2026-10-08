@@ -167,10 +167,10 @@ export default function AwarenessDrillDePage() {
       },
       {
         "@type": "Question",
-        "name": "Unterstützt dieser Trainer echte Hardware-Rohdaten (Pointer Lock API)?",
+        "name": "Nutzt dieser Trainer die Pointer Lock API?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Ja. Der Trainer nutzt die HTML5-Pointer-Lock-API für direkte 1:1 Rohdatenübertragung ohne Windows-Mausbeschleunigung oder Glättungsfilter – identisch zu deinem Ingame-Mausverhalten."
+          "text": "Ja. Der Trainer nutzt die HTML5-Pointer-Lock-API zur Mauserfassung, fordert aber keine unbeschleunigte (rohe) Eingabe an, sodass Zeigereinstellungen des Betriebssystems weiter wirken können. Schalte die Windows-Zeigerbeschleunigung aus, damit dieselbe Handbewegung immer dieselbe Strecke dreht."
         }
       },
       {
@@ -224,7 +224,7 @@ export default function AwarenessDrillDePage() {
       "180-Grad-Aim-Training bedeutet: einen Reiz am Bildschirmrand peripher wahrnehmen, mit einer großen Mausbewegung drehen und das Fadenkreuz auf dem Ziel sauber stoppen. Der Drill zerlegt die Reaktion auf Flanken in erkennbare Schritte und macht vor allem die Qualität des Abbremsens messbar; eine schnelle Drehung allein ist kein guter Treffer.",
       "Die biomechanische Ausführung einer 180-Grad-Drehung folgt dem Zwei-Komponenten-Modell zielgerichteter Bewegungen (Elliott et al., 2010). Aus Schulter und Ellenbogen wird ein ungeführter, ballistischer Schwung (Open-Loop) generiert, der rund 80 bis 90 Prozent der Gesamtdistanz abdeckt. Unmittelbar vor Erreichen der Zielzone greift die Antagonisten-Muskulatur (Schmidt et al., 1979) und bremst die Trägheit des Arms ab. Nach Fitts' Gesetz (Fitts, 1954) steigt die Schwierigkeit mit der Weite des Sprungs logarithmisch an: Je größer der Drehwinkel, desto kritischer ist eine exakt dosierte Bremsung zur Vermeidung zeitraubender Korrekturen.",
       "Dieser Trainer schult die synchrone Abstimmung von physischem Mauspad-Raum und virtuellem Raum. Das Gehirn lernt, wie viele Zentimeter Mausweg auf dem Pad exakt einer 180-Grad-Drehung im Spiel entsprechen. Dies ermöglicht blinde Instinkt-Flicks auf Flankenangreifer und blitzschnelles Abwenden von Flashbangs mit verlässlicher Rückkehr auf die Kopflinie.",
-      "Messpräzision & Hardware-Transparenz: Alle Reaktionszeiten werden direkt im Browser über performance.now() erfasst (Woods et al., 2015). Die Pointer-Lock-API garantiert direkte Rohdaten ohne künstliche Glättung. Beachte die Bildwiederholrate deines Monitors: Ein 144-Hz-Display aktualisiert alle 6,9 ms, ein 240-Hz-Display alle 4,1 ms. Abweichungen unter 5 ms spiegeln systembedingte Frame-Intervalle wider."
+      "Messpräzision & Hardware-Transparenz: Alle Reaktionszeiten werden direkt im Browser über performance.now() erfasst (Woods et al., 2015). Die Pointer-Lock-API erfasst die Mausbewegung, fordert aber keine unbeschleunigte Eingabe an; schalte die Zeigerbeschleunigung des Betriebssystems aus. Beachte die Bildwiederholrate deines Monitors: Ein 144-Hz-Display aktualisiert alle 6,9 ms, ein 240-Hz-Display alle 4,1 ms. Abweichungen unter 5 ms spiegeln systembedingte Frame-Intervalle wider."
     ],
     benchmarks: {
       title: "180-Grad-Drehung & Zielerfassungs-Benchmarks (Latenz & Biomechanik)",
@@ -235,7 +235,7 @@ export default function AwarenessDrillDePage() {
         ["Endphasen-Bremsung & Verzögerung", "60 – 110 ms", "Antagonistische Muskelbremsung stoppt die Armträgheit ab", "Dämpfungskontrolle (Schmidt et al., 1979)"],
         ["Foveale Feinjustierung & Klick", "70 – 130 ms", "Optische Zentrierung auf Zielmitte und Schussabgabe", "Fitts' Homing-Phase (Fitts, 1954)"],
         ["Gesamte 180°-Zielerfassungszeit", "450 – 690 ms", "Vollständiger Zyklus von Reizwahrnehmung bis Treffer", "Standardbereich für engagierte Shooter-Spieler"],
-        ["Elite Pro-Turn (Tier 1 Esport)", "320 – 420 ms", "Vollautomatisierter Einzelschwung mit perfektem Stopp", "Profi-Niveau in CS2 & Valorant Clutch-Duellen"]
+        ["Stufe 4: Fortgeschrittener Turn", "320 – 420 ms", "Vollautomatisierter Einzelschwung mit perfektem Stopp", "Fokus: Schwung und Stopp als eine einzige Bewegung halten"]
       ],
       note: "Die Benchmark-Werte basieren auf empirischen motorischen Reaktionsdaten und bewegungswissenschaftlicher Literatur (Rayner, 1998; Fitts, 1954; Schmidt et al., 1979; Elliott et al., 2010; Woods et al., 2015)."
     },
@@ -260,7 +260,7 @@ export default function AwarenessDrillDePage() {
         {
           name: "Zentrales Mauspad-Reset",
           desc: "Gewöhne dir an, die Maus in kurzen Feuerpausen oder beim Nachladen leicht anzuheben und wieder in die Mitte des Pads zurückzusetzen, um nicht am Pad-Rand festzuhängen.",
-          tips: "Ein sauberer Zentrierungs-Reset garantiert, dass dir im nächsten Überraschungsduell nicht der Platz ausgeht."
+          tips: "Ein sauberer Zentrierungs-Reset hilft dir, im nächsten Überraschungsduell nicht ohne Mausweg dazustehen."
         }
       ]
     },
@@ -291,7 +291,7 @@ export default function AwarenessDrillDePage() {
     statAccuracy: "Präzision",
     statBestScore: "Highscore",
     startTitle: "180° Awareness Pro",
-    startSubtitle: "Hardware-Rohdaten • Endlose Levelprogression & Raumwahrnehmung",
+    startSubtitle: "Pointer Lock • Endlose Levelprogression & Raumwahrnehmung",
     stageCaption: "Erfasse Ziele an den Bildschirmrändern über dein peripheres Sehen und führe präzise 180-Grad-Flicks aus, bevor der Timer abläuft.",
     rulesTitle: "Trainingsregeln & Punktesystem",
     rulesItems: [

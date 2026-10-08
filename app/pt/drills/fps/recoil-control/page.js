@@ -132,7 +132,7 @@ export default function RecoilControlPage() {
         "name": "Por que os primeiros 8 a 10 tiros são a fase mais crítica de um spray?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Na maioria dos atiradores táticos, os primeiros 8 a 10 disparos apresentam recuo quase puramente vertical e alta previsibilidade antes que a dispersão horizontal aleatória se intensifique. Dominar esse início garante abates rápidos no primeiro segundo do confronto."
+          "text": "Na maioria dos atiradores táticos, os primeiros 8 a 10 disparos apresentam recuo quase puramente vertical e alta previsibilidade antes que a dispersão horizontal aleatória se intensifique. Dominar esse início ajuda a ganhar duelos no primeiro segundo do confronto."
         }
       },
       {
@@ -188,7 +188,7 @@ export default function RecoilControlPage() {
         "name": "Este treinador de recoil funciona gratuitamente direto no navegador?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Sim, o treinador roda inteiramente no navegador web com captura de entrada bruta via Pointer Lock API, sem necessidade de downloads, contas ou taxas."
+          "text": "Sim, o treinador roda inteiramente no navegador web com captura do mouse via Pointer Lock API, sem necessidade de downloads, contas ou taxas."
         }
       },
       {
@@ -212,7 +212,7 @@ export default function RecoilControlPage() {
         "@type": "HowToStep",
         "position": 1,
         "name": "Calibração e Bloqueio de Ponteiro",
-        "text": "Ajuste sua sensibilidade real de jogo e trave o cursor com a Pointer Lock API para manter correspondência motora 1:1."
+        "text": "Ajuste sua sensibilidade real de jogo e trave o cursor com a Pointer Lock API para manter sua sensibilidade habitual."
       },
       {
         "@type": "HowToStep",
@@ -281,8 +281,8 @@ export default function RecoilControlPage() {
       title: "Tiers de Desempenho de Precisão por Carregador e Controle de Recoil",
       headers: ["Nível de Habilidade", "Precisão no Carregador (%)", "Características de Controle Motor", "Implicação Competitiva no Jogo"],
       rows: [
-        ["Tier 1 (Laser Apex)", "78% – 90%+", "Correspondência de velocidade quase perfeita; micro-compensações horizontais em todos os 30 tiros sem desperdício", "Spray transfers letais em múltiplos alvos em CS2 Faceit Nível 10, Valorant Radiant e Apex Predator"],
-        ["Tier 2 (Pro Competitivo)", "62% – 78%", "Agrupamento cirúrgico nos primeiros 10 tiros; recentralização rápida nas inversões horizontais do spray", "Vence duelos de fuzil em média distância com facilidade; consistência em spray transfers duplos"],
+        ["Tier 1 (Laser Apex)", "78% – 90%+", "Correspondência de velocidade quase perfeita; micro-compensações horizontais em todos os 30 tiros sem desperdício", "Treina spray transfers entre vários alvos com compensação estável"],
+        ["Tier 2 (Faixa Intermediária-Alta)", "62% – 78%", "Agrupamento cirúrgico nos primeiros 10 tiros; recentralização rápida nas inversões horizontais do spray", "Prática de duelos de fuzil em média distância com consistência em spray transfers duplos"],
         ["Tier 3 (Alto Nível FPS)", "48% – 62%", "Boa puxada vertical; pequenas oscilações de atraso entre os tiros 12 e 25 nas variações laterais", "Sprays confiáveis em curta e média distância; ligeira dificuldade em transferências de longo alcance"],
         ["Tier 4 (Intermediário)", "35% – 48%", "Velocidade de descida inconsistente; hesitação por volta do tiro 7 permitindo que o cano suba além da cabeça", "Vulnerável em tiroteios diretos de fuzil; forçado a depender de rajadas curtas para pontuar"],
         ["Tier 5 (Em Desenvolvimento)", "Abaixo de 35%", "Arrasto vertical atrasado ou excessivo; ausência de compensação lateral provocando dispersão descontrolada", "Perda consistente de duelos diretos; projéteis disparam aleatoriamente em torno do alvo"]

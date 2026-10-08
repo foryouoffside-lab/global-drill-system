@@ -273,7 +273,7 @@ const guide = {
     title: "Leistungsstandards der Zickzack-Blickverfolgung (Geschwindigkeit & Scheitelpunkt-Präzision)",
     headers: ["Leistungsstufe", "Empfohlene Geschwindigkeit", "Landefehler am Knickpunkt", "Umkehr-Sakkadenlatenz", "Einordnung"],
     rows: [
-      ["Elite / Perfekte neuronale Adaptation (Elite)", "3.5x〜5.0x+", "Fehler < 12px (vollständige Haftung an Knickpunkten)", "Latenz < 110ms (perfekte Vorwärtsbremsung)", "Stufe 1"],
+      ["Höchste Übungsstufe / Starke Adaptation", "3.5x〜5.0x+", "Fehler < 12px (vollständige Haftung an Knickpunkten)", "Latenz < 110ms (perfekte Vorwärtsbremsung)", "Stufe 1"],
       ["Meister / Höchste Richtungsdisziplin (Master)", "2.5x〜3.5x", "Fehler < 22px (nur minimale Mikrosakkaden)", "Latenz < 140ms (geschmeidige Umkehr)", "Stufe 2"],
       ["Fortgeschritten / Wettkampfniveau (Advanced)", "1.8x〜2.5x", "Fehler < 38px (schnelle Wiedererfassung)", "Latenz < 180ms (solide Richtungswechsel)", "Stufe 3"],
       ["Mittelstufe / Grundlegend geübt (Intermediate)", "1.2x〜1.8x", "Fehler 38〜70px (Überschwinger & Kurvenschneiden)", "Latenz 180〜240ms (mehrere Korrekturen)", "Stufe 4"],

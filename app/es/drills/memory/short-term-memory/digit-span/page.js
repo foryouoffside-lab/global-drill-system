@@ -243,7 +243,7 @@ const digitSpanGuide = {
     "Etapa 1",
     "9 – 12+ Dígitos",
     "Puntuación Escalar 16 – 19",
-    "Nivel mnemónico de élite; agrupa en bloques rítmicos de 3 a 4 cifras; mantenimiento fonológico impecable; cadencia menor a 350 ms."
+    "Nivel mnemónico avanzado; agrupa en bloques rítmicos de 3 a 4 cifras; mantenimiento fonológico impecable; cadencia menor a 350 ms."
   ],
   [
     "Etapa 2",

@@ -678,9 +678,9 @@ export default function DistractionFighterClient({ faqs, copy }) {
         </div>
 
         {/* Stage Caption */}
-        {!isFullscreen && (locale === 'en' || locale === 'ja') && (
+        {!isFullscreen && (locale === 'en' || locale === 'ja' || copy?.stageCaption) && (
           <p className="text-xs text-slate-400 leading-relaxed -mt-2">
-            {t('distractionFighter.stageCaption', 'Select the button matching the ink color while ignoring the conflicting word meaning.')}
+            {(locale !== 'en' && locale !== 'ja' && copy?.stageCaption) || t('distractionFighter.stageCaption', 'Select the button matching the ink color while ignoring the conflicting word meaning.')}
           </p>
         )}
 

@@ -172,10 +172,10 @@ export default function TargetAcquisitionFrPage() {
       },
       {
         "@type": "Question",
-        "name": "Comment le Raw Input sans accélération régule-t-il la régularité d'acquisition ?",
+        "name": "Pourquoi une sensibilité constante aide-t-elle l’acquisition de cibles ?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "L'acquisition matérielle brute assure une correspondance strictement linéaire entre le geste de la main et l'écran, autorisant le cortex moteur à calculer l'impulsion balistique sans les distorsions d'accélération logicielle."
+          "text": "Une sensibilité constante stabilise le rapport entre le geste de la main et l’écran, ce qui aide le système moteur à calibrer l’impulsion balistique."
         }
       },
       {
@@ -198,8 +198,8 @@ export default function TargetAcquisitionFrPage() {
       {
         "@type": "HowToStep",
         "position": 1,
-        "name": "Calibrer sa Sensibilité en Entrée Brute",
-        "text": "Paramétrez vos DPI et votre sensibilité dans les réglages de session pour assurer une parité 1:1 et verrouiller le pointeur.",
+        "name": "Calibrer sa Sensibilité",
+        "text": "Paramétrez vos DPI et votre sensibilité dans les réglages de session pour retrouver votre rapport habituel et verrouiller le pointeur.",
         "url": "https://skilldrills.online/fr/drills/fps/target-acquisition#step-1"
       },
       {
@@ -273,7 +273,7 @@ export default function TargetAcquisitionFrPage() {
       ]
     },
     steps: [
-      "Renseignez votre jeu, vos DPI et votre sensibilité dans les réglages de session pour garantir une parité 1:1 et verrouiller le pointeur.",
+      "Renseignez votre jeu, vos DPI et votre sensibilité dans les réglages de session pour retrouver votre rapport habituel et verrouiller le pointeur.",
       "Posez votre regard au centre sans forcer, en guettant l'apparition du groupe de cibles sur l'écran.",
       "Repérez sans délai la cible la plus lumineuse grâce au pré-filtrage visuel de contraste en parallèle.",
       "Réalisez un flick net vers le centre du blanc et tirez pour engranger +100 PTS (+0,4s de temps bonus).",

@@ -136,7 +136,7 @@ const faqSchema = {
       name: 'Was ist eine normale Reaktionszeit für einzelne Tasten?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Untrainierte Nutzer erreichen typischerweise 380 bis 480 ms. Geübte Spieler erzielen 240 bis 300 ms, während Elite-Esportler Latenzen unter 240 ms bei minimaler Fehlerquote realisieren.',
+        text: 'Untrainierte Nutzer erreichen typischerweise 380 bis 480 ms. Geübte Spieler erzielen 240 bis 300 ms, während Latenzen unter 240 ms bei minimaler Fehlerquote eine fortgeschrittene Übungsstufe markieren.',
       },
     },
     {

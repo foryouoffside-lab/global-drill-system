@@ -207,7 +207,7 @@ export default function AntiZigzagPage() {
         "@type": "HowToStep",
         "position": 1,
         "name": "Calibrate Sensitivity",
-        "text": "Match your in-game sensitivity using the Universal Sensitivity Selector to guarantee 1:1 muscle memory transfer.",
+        "text": "Match your in-game sensitivity using the Universal Sensitivity Selector to keep your muscle memory consistent.",
         "url": "https://skilldrills.online/drills/fps/anti-zigzag-movement-trainer#step-1"
       },
       {
@@ -281,7 +281,7 @@ export default function AntiZigzagPage() {
       ]
     },
     steps: [
-      "Select your in-game sensitivity using the Universal Sensitivity Selector to guarantee 1:1 muscle memory transfer.",
+      "Select your in-game sensitivity using the Universal Sensitivity Selector to keep your muscle memory consistent.",
       "Click 'Start Drill' to engage fullscreen mode and enable Pointer Lock mouse capture.",
       "Lock visual focus on the moving target as it executes rapid, multi-directional diagonal zigzag patterns.",
       "Maintain continuous crosshair dwell on the target sphere, focusing on the central V-crossover axis.",

@@ -267,7 +267,7 @@ const guide = {
     title: "Leistungsstandards für vertikale Blickverfolgung & Höhensakkaden",
     headers: ["Leistungsstufe", "Geschwindigkeit", "Kanten-Re-Targeting", "Vertikaler Gain (geschätzt)", "Einordnung"],
     rows: [
-      ["Elite / Voll adaptiert (Elite)", "3,5x bis 5,0x+", "Kein Überschießen an Stufenkanten", "Gain 0,92 bis 0,98 (nahezu verzögerungsfrei)", "Stufe 1"],
+      ["Höchste Übungsstufe / Voll adaptiert", "3,5x bis 5,0x+", "Kein Überschießen an Stufenkanten", "Gain 0,92 bis 0,98 (nahezu verzögerungsfrei)", "Stufe 1"],
       ["Master / Hohe Höhenkontrolle (Master)", "2,5x bis 3,5x", "Sofortiges Einrasten per Mikrosakkade", "Gain 0,85 bis 0,92 (sehr stabil)", "Stufe 2"],
       ["Advanced / Wettkampfniveau (Advanced)", "1,8x bis 2,5x", "Gleichmäßig auf Schrägen, minimale Kantenabweichung", "Gain 0,75 bis 0,85 (gute Führung)", "Stufe 3"],
       ["Intermediate / Grundstufe (Intermediate)", "1,2x bis 1,8x", "Verzögerungen bei Aufwärtsstufen, Nackenausgleich", "Gain 0,60 bis 0,75 (häufige Fangsakkaden)", "Stufe 4"],

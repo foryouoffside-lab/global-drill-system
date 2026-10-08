@@ -259,7 +259,7 @@ const digitSpanGuide = {
     title: "Baremes Neuropsychologiques de l Empan Digital (Population Adulte)",
     headers: ["Palier de Competence", "Empan Atteint", "Score Pondere", "Profil Neuropsychologique"],
     rows: [
-      ["Tier 1 (Elite / Memoire Prodigieuse)", "10+ Chiffres", "1 500+ PTS", "Maitrise exceptionnelle du chunking ternaire/quaternaire ; cadence subvocale ultra-rapide"],
+      ["Tier 1 (Palier Avance)", "10+ Chiffres", "1 500+ PTS", "Maitrise exceptionnelle du chunking ternaire/quaternaire ; cadence subvocale ultra-rapide"],
       ["Tier 2 (Superieur / Excellent Empan)", "8 – 9 Chiffres", "1 150 – 1 499 PTS", "Excellente boucle phonologique ; capacite de regroupement binaire fluide et reguliere"],
       ["Tier 3 (Moyenne Adulte Standard)", "6 – 7 Chiffres", "750 – 1 149 PTS", "Conforme a la moyenne normative de Miller (1956) ; bonne retention sans regroupement pousse"],
       ["Tier 4 (Sous la Moyenne / Vulnerabilite)", "4 – 5 Chiffres", "400 – 749 PTS", "Plafonnement au seuil unitaire de Cowan (2001) ; difficulte de repetition subvocale rapide"],

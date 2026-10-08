@@ -207,7 +207,7 @@ const faqSchema = {
       name: '게임 내 마우스 감도(eDPI/cm당 회전각)를 맞출 수 있나요?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: '네, Pointer Lock API를 통한 순수 마우스 로우 인풋을 지원하며 허브의 글로벌 마우스 감도 슬라이더와 연동되어 실제 인게임과 동일한 마우스 물리 이동 거리를 유지할 수 있습니다.',
+        text: '네, Pointer Lock API를 지원하며 허브의 글로벌 마우스 감도 슬라이더와 연동되어 실제 인게임과 동일한 마우스 물리 이동 거리를 유지할 수 있습니다.',
       },
     },
     {
@@ -317,7 +317,7 @@ export default function AimTrainerKoreanPage() {
           </li>
         </ol>
         <p>
-          초보자들은 흔히 <em>오버 플릭</em>(과도한 힘으로 지나친 후 되돌림)이나 <em>언더 플릭</em>(너무 일찍 멈추어 느리게 접근함)을 겪습니다. 엘리트 슈터는 탄도 임펄스를 타겟의 테두리에 정확히 도달하도록 최적화하여 종말 수정 오차를 최소화합니다 (Elliott et al., 2010; Woods et al., 2015).
+          초보자들은 흔히 <em>오버 플릭</em>(과도한 힘으로 지나친 후 되돌림)이나 <em>언더 플릭</em>(너무 일찍 멈추어 느리게 접근함)을 겪습니다. 숙련된 슈터는 탄도 임펄스를 타겟의 테두리에 정확히 도달하도록 최적화하여 종말 수정 오차를 최소화합니다 (Elliott et al., 2010; Woods et al., 2015).
         </p>
 
         <h3>입력 폴링율, 디스플레이 주사율 및 지연 시간</h3>
@@ -342,7 +342,7 @@ export default function AimTrainerKoreanPage() {
             </thead>
             <tbody className="divide-y divide-white/5 text-slate-300">
               <tr>
-                <td className="p-2.5 border border-white/10 font-bold text-emerald-400">Tier 1 (프로급)</td>
+                <td className="p-2.5 border border-white/10 font-bold text-emerald-400">Tier 1 (최상위 단계)</td>
                 <td className="p-2.5 border border-white/10">&gt; 48,000 PTS</td>
                 <td className="p-2.5 border border-white/10">Level 12+</td>
                 <td className="p-2.5 border border-white/10">&gt; 95% (콤보 25+)</td>
@@ -446,7 +446,7 @@ export default function AimTrainerKoreanPage() {
           <div className="border-b border-white/10 pb-3">
             <h4 className="font-bold text-white text-sm mb-1">게임 내 마우스 감도(eDPI/cm당 회전각)를 맞출 수 있나요?</h4>
             <p className="text-xs sm:text-sm text-slate-300">
-              네, Pointer Lock API를 통한 순수 마우스 로우 인풋을 지원하며 허브의 글로벌 마우스 감도 슬라이더와 연동되어 실제 인게임과 동일한 마우스 물리 이동 거리를 유지할 수 있습니다.
+              네, Pointer Lock API를 지원하며 허브의 글로벌 마우스 감도 슬라이더와 연동되어 실제 인게임과 동일한 마우스 물리 이동 거리를 유지할 수 있습니다.
             </p>
           </div>
           <div className="border-b border-white/10 pb-3">

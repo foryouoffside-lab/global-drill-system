@@ -233,7 +233,7 @@ const guideProps = {
     rows: [
       {
         tier: 'Tier 1',
-        rank: 'Apex Grandmaster',
+        rank: 'Advanced Tracer',
         stat: '1400+ pts',
         level: '95–100%',
         accuracy: '600+ frames',
@@ -323,7 +323,7 @@ const copyEn = {
     { num: "1", text: "Trace Corridor", highlight: "Emerald Wave", result: "+1 PT / frame locked-on" },
     { num: "2", text: "Speed Ramps", highlight: "Progressive Wave", result: "2.2 → 3.8 px/f over 45s" },
     { num: "3", text: "Flow Integrity", highlight: "Super Flow", result: "4s Lock-on yields +5 Bonus" },
-    { num: "4", text: "Strict Tracking", highlight: "Desktop Exclusive", result: "1:1 Raw Mouse Input" }
+    { num: "4", text: "Strict Tracking", highlight: "Desktop Exclusive", result: "Pointer Lock Mouse Capture" }
   ],
 };
 

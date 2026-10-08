@@ -296,7 +296,7 @@ const jumpGuide = {
     title: "Baremos y Niveles de Desempeño en Salto e Interceptación (5 Rangos)",
     headers: ["Rango / Nivel", "Título de Maestría", "Puntuación Mínima", "Velocidad de Blanco / Precisión", "Grado Global", "Perfil Neurofuncional en Suspensión"],
     rows: [
-      ["Tier 1: Maestro de Trayectoria Apex", "Apex Trajectory Master", "17.000+ puntos", "800 – 900 px/s / ≥ 92%", "Grade S", "Predicción gravitacional de élite; convergencia perfecta ante blancos ultrarrápidos y óptimo cálculo SSC (Komi 2000; Kawato 1999)"],
+      ["Tier 1: Maestro de Trayectoria Apex", "Apex Trajectory Master", "17.000+ puntos", "800 – 900 px/s / ≥ 92%", "Grade S", "Predicción gravitacional avanzada; convergencia perfecta ante blancos ultrarrápidos y óptimo cálculo SSC (Komi 2000; Kawato 1999)"],
       ["Tier 2: Atacante Aéreo de Precisión", "Precision Aerial Striker", "12.000 – 16.999 pts", "650 – 799 px/s / 84 – 91%", "Grade A", "Notable pilotaje en suspensión por modelo cerebelar; interceptación regular sobre esferas reducidas de 15-18px"],
       ["Tier 3: Interceptor de Salto Hábil", "Skilled Jump Interceptor", "7.500 – 11.999 pts", "500 – 649 px/s / 75 – 83%", "Grade B", "Nivel competitivo regular; buena dosificación del impulso y recuperación ágil tras el contacto con el suelo"],
       ["Tier 4: Navegador Parabólico en Desarrollo", "Developing Parabola Navigator", "4.000 – 7.499 pts", "350 – 499 px/s / 65 – 74%", "Grade C", "Promedio funcional habitual; pérdidas de racha por excesiva potencia de salto en blancos de baja cota"],

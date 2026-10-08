@@ -221,7 +221,7 @@ const faqSchema = {
     },
     {
       "@type": "Question",
-      "name": "Quelle méthode permet d'atteindre le palier d'élite de 17 000 points (Apex Bilateral) ?",
+      "name": "Quelle méthode permet d’atteindre le palier de 17 000 points (Apex Bilateral) ?",
       "acceptedAnswer": {
         "@type": "Answer",
         "text": "La fixation oculaire prédictive (gaze feedforward) est déterminante : dès que le curseur effleure le nœud A, le regard doit déjà être verrouillé sur les coordonnées du nœud B. Conserver le combo 3.0x sans interruption et maintenir plus de 92 % de précision aux niveaux 12 à 15 est indispensable."

@@ -281,8 +281,8 @@ export default function RecoilControlPage() {
       title: "Paliers de Performance de Précision par Chargeur et Contrôle de Spray",
       headers: ["Niveau de Maîtrise", "Précision par Chargeur (%)", "Caractéristiques du Contrôle Moteur", "Impact Compétitif en Match"],
       rows: [
-        ["Tier 1 (Laser Apex)", "78% – 90%+", "Vitesse de compensation quasi parfaite ; micro-ajustements latéraux constants sur les 30 balles", "Spray transfers létaux sur plusieurs adversaires en CS2 Faceit Niveau 10, Valorant Radiant et Apex Predator"],
-        ["Tier 2 (Pro Compétitif)", "62% – 78%", "Groupement chirurgical sur les 10 premières balles ; recentrage rapide lors des inversions de spray", "Remporte aisément les duels de fusil à moyenne distance ; grande régularité en spray transfers doubles"],
+        ["Tier 1 (Laser Apex)", "78% – 90%+", "Vitesse de compensation quasi parfaite ; micro-ajustements latéraux constants sur les 30 balles", "Entraîne les spray transfers entre plusieurs cibles avec une compensation stable"],
+        ["Tier 2 (Palier Intermédiaire-Haut)", "62% – 78%", "Groupement chirurgical sur les 10 premières balles ; recentrage rapide lors des inversions de spray", "Entraîne les duels de fusil à moyenne distance avec régularité en spray transfers doubles"],
         ["Tier 3 (Haut Niveau FPS)", "48% – 62%", "Bonne traction verticale ; légères hésitations ou surcompensation entre les balles 12 et 25", "Sprays fiables à courte et moyenne distance ; légère difficulté sur transferts lointains"],
         ["Tier 4 (Intermédiaire)", "35% – 48%", "Vitesse de descente instable ; hésitation vers la septième balle laissant le canon dépasser la tête", "Vulnérable lors des duels directs en tir continu ; contraint de privilégier de courtes rafales"],
         ["Tier 5 (En Progression)", "Moins de 35%", "Traction verticale tardive ou excessive ; absence d'ajustement latéral créant une dispersion anarchique", "Pertes fréquentes de duels directs ; dispersion totale des tirs autour de la cible"]

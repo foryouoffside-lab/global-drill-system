@@ -242,8 +242,8 @@ const saccadicGuide = {
     title: 'Tabla de Rendimiento en Latencia Sacádica y Precisión',
     headers: ['Latencia Sacádica', 'Clasificación', 'Dinámica del Salto Ocular', 'Contexto Funcional', 'Foco Recomendado'],
     rows: [
-      ['< 130 ms', 'Nivel 1 (Sacadas Exprés / Pro)', 'Disparo subcortical vía colículo superior; mínima inhibición', 'Deportistas profesionales y pilotos de caza (Fischer & Boch, 1984)', 'Entrenar amplitud máxima de salto visual'],
-      ['130 – 170 ms', 'Nivel 2 (Élite)', 'Activación cortical veloz; sin titubeos de fijación', 'Competidores de alto nivel en deportes de reacción', 'Consolidar precisión de parada sin sobrepasar el blanco'],
+      ['< 130 ms', 'Nivel 1 (Sacadas Exprés)', 'Disparo subcortical vía colículo superior; mínima inhibición', 'Rango poco habitual; depende del dispositivo y de la anticipación', 'Entrenar amplitud máxima de salto visual'],
+      ['130 – 170 ms', 'Nivel 2 (Avanzado)', 'Activación cortical veloz; sin titubeos de fijación', 'Rango rápido; depende del dispositivo', 'Consolidar precisión de parada sin sobrepasar el blanco'],
       ['171 – 220 ms', 'Nivel 3 (Avanzado / Estándar)', 'Latencia saludable de referencia para adultos', 'Promedio esperado en adultos sanos (Rayner, 1998)', 'Expandir el radio de percepción periférica'],
       ['221 – 280 ms', 'Nivel 4 (Intermedio)', 'Demora al soltar la fijación previa; leve retraso', 'Fatiga ocasional o recuperación incompleta', 'Hacer pausas 20-20-20 para descansar la vista'],
       ['> 280 ms', 'Nivel 5 (Base / Dismetría)', 'Dismetría sacádica visible con múltiples correcciones', 'Músculos oculares fatigados o distracciones en pantalla', 'Priorizar aterrizaje exacto antes que acelerar'],

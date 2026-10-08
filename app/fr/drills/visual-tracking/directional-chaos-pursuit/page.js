@@ -188,7 +188,7 @@ const faqSchema = {
       "name": "Pourquoi est-il indispensable de garder la tête immobile pendant l’exercice ?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Bouger la tête active le réflexe vestibulo-oculaire (RVO) issu de l’oreille interne, ce qui soulage artificiellement les muscles oculaires. L'immobilité de la tête garantit que les six muscles extraoculaires supportent toute la charge d'entraînement."
+        "text": "Bouger la tête active le réflexe vestibulo-oculaire (RVO) issu de l’oreille interne, ce qui soulage artificiellement les muscles oculaires. L’immobilité de la tête fait peser davantage de charge sur les muscles extraoculaires."
       }
     },
     {
@@ -246,7 +246,7 @@ const guideProps = {
     title: "Normes de Performance en Poursuite Chaotique et Récupération Saccadique",
     headers: ["Niveau de Performance", "Multiplicateur de Vitesse", "Délai de Refixation et Stabilité du Regard", "Profil Neuromoteur et Oculaire"],
     rows: [
-      ["Niveau 1 : Apex Réactif – Réflexes d’Élite", "2.0x+ Ultra-Vitesse", "La saccade corrective intervient dès la rupture de trajectoire ; refixation fluide et immédiate sur le nouveau vecteur.", "Vitesse de transmission synaptique optimale entre rétine et noyaux oculomoteurs. Niveau de référence de l’exercice, sans valeur de classement."],
+      ["Niveau 1 : Apex Réactif – Réflexes Avancés", "2.0x+ Ultra-Vitesse", "La saccade corrective intervient dès la rupture de trajectoire ; refixation fluide et immédiate sur le nouveau vecteur.", "Vitesse de transmission synaptique optimale entre rétine et noyaux oculomoteurs. Niveau de référence de l’exercice, sans valeur de classement."],
       ["Niveau 2 : Récupération Saccadique Supérieure", "1.4x – 1.9x Haute Vitesse", "Recentrage fovéal rapide avec dépassement oscillatoire minime ; poursuite fluide rétablie en moins de 180 ms.", "Coordination remarquable des muscles oculomoteurs externes. Excellente réactivité face aux variations d’angles brutales."],
       ["Niveau 3 : Standard Fonctionnel Solide", "1.0x – 1.3x Vitesse Standard", "Poursuite régulière de la trajectoire ; bref délai de latence lors des rebonds à angles très aigus.", "Profil habituel de l’adulte sain. Parfaitement adapté à la conduite, aux sports de loisir et aux jeux vidéo."],
       ["Niveau 4 : Refixation Retardée – Pratique Recommandée", "0.7x – 0.9x Vitesse Modérée", "La cible s’échappe fréquemment de la zone fovéale ; plusieurs saccades successives sont nécessaires pour retrouver l’alignement.", "Latence sensori-motrice accrue lors des changements de cap. Entraînement recommandé à vitesses réduites."],

@@ -291,7 +291,7 @@ const gridGuide = {
     title: "Wissenschaftliche 5-Stufen-Normtabelle für das Raster-Ausweichtraining",
     headers: ["Leistungsstufe", "Rangtitel (Rank Title)", "Punktwert (45s)", "Erreichtes Level", "Minimale Warnzeit", "Neuromotorisches Profil"],
     rows: [
-      ["Stufe 1: Elite-Ausweicher ", "Apex Grid Evader", "17.000+ Punkte", "Level 12 – 15", "0,45 – 0,60 s", "Perfekte parallele Reizverarbeitung, reflexartige ballistische Trajektorien, fehlerfreie Bremskontrolle"],
+      ["Stufe 1: Fortgeschrittenes Ausweichen ", "Apex Grid Evader", "17.000+ Punkte", "Level 12 – 15", "0,45 – 0,60 s", "Perfekte parallele Reizverarbeitung, reflexartige ballistische Trajektorien, fehlerfreie Bremskontrolle"],
       ["Stufe 2: Meister-Raumscanner ", "Master Spatial Scanner", "13.000 – 16.999 Punkte", "Level 9 – 11", "0,65 – 0,80 s", "Exzellente exogene Aufmerksamkeit, sicheres Navigieren in engen Fluchtgassen unter 6 Gefahrenzellen"],
       ["Stufe 3: Kompetenter Gefahrenvermeider", "Proficient Hazard Dodger", "9.500 – 12.999 Punkte", "Level 6 – 8", "0,85 – 1,05 s", "Solide Hand-Auge-Koordination im eSports-Bereich, gelegentliche Verzögerungen bei Mehrfachgefahren"],
       ["Stufe 4: Durchschnittlicher Überlebender", "Intermediate Sector Evader", "6.000 – 9.499 Punkte", "Level 3 – 5", "1,10 – 1,25 s", "Typische Alltagsreaktionszeit, foveale Suchbewegungen verzögern ballistische Ausweichschritte"],
@@ -310,12 +310,12 @@ const gridGuide = {
       {
         name: "Ballistischer Impuls und abrupte Abbremsung nach Woodworth (Impulse-Variability)",
         desc: "Vermeiden Sie kriechende, zögerliche Mausbewegungen. Trainieren Sie einen zweiphasigen motorischen Ablauf: Zuerst ein explosiver ballistischer Flick-Impuls, gefolgt von sofortiger mechanischer Reibung.",
-        tips: "Nutzen Sie Handballen und Ring-/Kleinfinger auf dem Mauspad als mechanische Bremse, um Punktlandungen in der sicheren Zelle zu garantieren."
+        tips: "Nutzen Sie Handballen und Ring-/Kleinfinger auf dem Mauspad als mechanische Bremse, um Punktlandungen in der sicheren Zelle zu unterstützen."
       },
       {
         name: "Hardware-Kalibrierung: Abtastrate (Polling Rate) und Display-Reaktionszeit",
         desc: "Stellen Sie Ihre Gaming-Maus auf mindestens 1.000 Hz USB-Polling-Rate ein, um die Eingabeverzögerung auf 1 ms zu senken.",
-        tips: "Schalten Sie die Windows-Zeigerbeschleunigung aus, um ein lineares 1:1-Verhältnis zwischen Handbewegung und Zeigerweg sicherzustellen."
+        tips: "Schalten Sie die Windows-Zeigerbeschleunigung aus, damit Handbewegung und Zeigerweg in einem gleichmäßigeren Verhältnis stehen."
       },
       {
         name: "0,45s-Extremzonen-Protokoll: Flucht in die nächstgelegene Nachbarzelle",

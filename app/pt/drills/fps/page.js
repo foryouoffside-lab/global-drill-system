@@ -125,7 +125,7 @@ const faqSchema = {
       "name": "O que faz mais diferença em partida: posicionamento de mira (pre-aim) ou flick reativo?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Em termos de taxa de vitória em shooters táticos, cerca de 70% dos confrontos são decididos por um bom posicionamento prévio de mira (pre-aim na altura da cabeça ao abrir cantos). No entanto, quando os adversários utilizam posições incomuns (off-angles), aberturas agressivas pulando ou quando surgem inimigos adicionais, o pre-aim isolado falha. É exatamente nesses 30% de situações dinâmicas e imprevisíveis que o flick rápido e a microcorreção precisa em menos de 200 ms garantem a sua sobrevivência e decidem o round."
+        "text": "Em termos de taxa de vitória em shooters táticos, cerca de 70% dos confrontos são decididos por um bom posicionamento prévio de mira (pre-aim na altura da cabeça ao abrir cantos). No entanto, quando os adversários utilizam posições incomuns (off-angles), aberturas agressivas pulando ou quando surgem inimigos adicionais, o pre-aim isolado falha. É exatamente nesses 30% de situações dinâmicas e imprevisíveis que o flick rápido e a microcorreção precisa em menos de 200 ms ajudam a sobreviver e podem decidir o round."
       }
     },
     {
@@ -133,7 +133,7 @@ const faqSchema = {
       "name": "Quantos minutos por dia devo treinar mira para evoluir sem fadiga mental e muscular?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Estudos de neurociência motora comprovam que, após 30 a 35 minutos de exercícios intensivos de coordenação motora fina, a fadiga do sistema nervoso central degrada a precisão e favorece o vício em vícios posturais incorretos. A metodologia ideal consiste em sessões concentradas de 15 a 25 minutos diários, realizadas de 4 a 6 dias por semana. Treinos curtos e consistentes seguidos de um bom descanso promovem a mielinização dos circuitos neurais e fixam a memória muscular com muito mais eficiência do que longas maratonas desgastantes de fim de semana."
+        "text": "Estudos de neurociência motora sugerem que, após 30 a 35 minutos de exercícios intensivos de coordenação motora fina, a fadiga do sistema nervoso central degrada a precisão e favorece o vício em vícios posturais incorretos. A metodologia ideal consiste em sessões concentradas de 15 a 25 minutos diários, realizadas de 4 a 6 dias por semana. Treinos curtos e consistentes seguidos de um bom descanso costumam ser mais fáceis de manter do que longas maratonas de fim de semana."
       }
     }
   ]

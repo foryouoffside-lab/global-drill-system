@@ -185,7 +185,7 @@ export default function TargetPrioritizationPage() {
         "name": "How often should competitive players train cognitive target prioritization?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Incorporating 10 minutes of target prioritization training into your daily pre-match routine conditions prefrontal inhibitory pathways, reinforcing trigger discipline before entering ranked queues."
+          "text": "Incorporating 10 minutes of target prioritization training into your daily pre-match routine is designed to practise trigger discipline before entering ranked queues."
         }
       }
     ]
@@ -201,7 +201,7 @@ export default function TargetPrioritizationPage() {
         "@type": "HowToStep",
         "position": 1,
         "name": "Calibrate Input Sensitivity",
-        "text": "Match mouse sensitivity in Session Settings to preserve 1:1 hardware motor muscle memory.",
+        "text": "Match mouse sensitivity in Session Settings to keep muscle memory consistent.",
         "url": "https://skilldrills.online/drills/fps/target-prioritization#step-1"
       },
       {
@@ -276,7 +276,7 @@ export default function TargetPrioritizationPage() {
       ]
     },
     steps: [
-      "Configure your matching in-game sensitivity and DPI in Session Settings to preserve 1:1 hardware coordinates, then lock the pointer.",
+      "Configure your matching in-game sensitivity and DPI in Session Settings to keep your hand-to-cursor mapping consistent, then lock the pointer.",
       "Survey the target arena, actively monitoring for the appearance of High-Threat (Red) combatants.",
       "Snap directly to eliminate active red threats first to score +100 PTS and extend the session clock by +0.4s.",
       "Transition to clear Medium-Threat (Yellow) targets before their timers expire and escalate into red threats.",

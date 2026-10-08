@@ -239,7 +239,7 @@ const movingTargetGuide = {
     title: "Referência de rastreamento e precisão de interceptação",
     headers: ["Nível de Desempenho", "Janela de Pacing", "Pontuação & Combo Limiar", "Perfil de Rastreamento e Interceptação"],
     rows: [
-      ["Tier 1: Interceptor Cinético Apex", "< 0.25s Janela", "16.000+ PTS | Combo 25x+", "Perseguição suave de elite; extrapolação vetorial perfeita sem atraso de sacada corretiva. Nível de pilotos e pró-players."],
+      ["Tier 1: Interceptor Cinético Apex", "< 0.25s Janela", "16.000+ PTS | Combo 25x+", "Perseguição suave avançada; extrapolação vetorial perfeita sem atraso de sacada corretiva."],
       ["Tier 2: Rastreador Dinâmico Superior", "0.25 – 0.45s Janela", "10.500 – 15.999 PTS | Combo 16x+", "Excelente fluidez ocular; rápidas correções em malha fechada com mínimo overshoot em alvos com aceleração contínua."],
       ["Tier 3: Padrão Adulto Consolidado", "0.46 – 0.70s Janela", "6.000 – 10.499 PTS | Combo 9x+", "Tracking seguro em linhas retas; ligeiro retardo de adaptação temporal quando ocorrem ricochetes repentinos nas paredes."],
       ["Tier 4: Rastreador em Desenvolvimento", "0.71 – 1.00s Janela", "2.500 – 5.999 PTS | Combo 4x+", "Dependência acentuada de sacadas reativas em vez de perseguição suave; hesitação perceptível em velocidades elevadas."],

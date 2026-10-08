@@ -142,7 +142,7 @@ export default function InstantResponseFrPage() {
         "name": "Le polling rate de la souris modifie-t-il la latence de clic ?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "À 1000 Hz, la souris transmet son statut chaque milliseconde contre 8,0 ms à 125 Hz. Un réglage à 1000 Hz ou plus garantit un enregistrement immédiat du tir."
+          "text": "À 1000 Hz, la souris transmet son statut chaque milliseconde contre 8,0 ms à 125 Hz. Un réglage à 1000 Hz ou plus réduit le délai d’enregistrement du tir."
         }
       },
       {
@@ -263,7 +263,7 @@ export default function InstantResponseFrPage() {
       headers: ["Niveau / Catégorie", "Latence Typique (ms)", "Mécanisme Neuromusculaire et Matériel", "Impact Réel en Partie"],
       rows: [
         ["Niveau 1 (Réflexe Surhumain)", "< 165 ms", "Alerte maximale, écran 240Hz+ et déclenchement automatique", "Victoire décisive sur toutes les ouvertures de ligne rapides"],
-        ["Niveau 2 (Niveau Pro)", "165 – 195 ms", "Excellente coordination sensorimotrice sur écran 240Hz", "Norme des joueurs de rang Radiant et niveau 10 Faceit"],
+        ["Niveau 2 (Palier Avancé)", "165 – 195 ms", "Excellente coordination sensorimotrice sur écran 240Hz", "Objectif : garder un timing stable et reproductible"],
         ["Niveau 3 (Compétitif Confirmé)", "195 – 225 ms", "Réflexe conditionné propre sur équipement 144Hz", "Tenue de ligne solide avec un bon placement de viseur"],
         ["Niveau 4 (Moyenne Joueurs)", "225 – 265 ms", "Moyenne des adultes non entraînés sur écran 60Hz à 144Hz", "Vulnérable face aux ouvertures agressives si la ligne est trop serrée"],
         ["Niveau 5 (Fatigue / Latence)", "265 – 330+ ms", "Fatigue musculaire, manque de sommeil ou latence d'affichage", "Retard notable entre la vision de l'adversaire et le tir"]

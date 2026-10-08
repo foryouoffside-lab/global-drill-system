@@ -240,7 +240,7 @@ const guideProps = {
     title: "Leistungswerte für Zielwechsel und Blickverfolgung",
     headers: ["Stufe", "Zeit zum Wiederfinden", "Abweichung bei der Ankunft", "Bewegungssynchronisation", "Praktische Einordnung"],
     rows: [
-      ["Spitzenklasse (Profi-Zielsicherheit und E-Sport)", "< 140 ms", "< 3% (punktgenaue Arretierung)", "97%+", "Exzellente ballistische Präzision. Unmittelbare Trägheitssynchronisation am Landepunkt ohne jegliches Nachzittern"],
+      ["Stufe 5 (höchste Übungsstufe)", "< 140 ms", "< 3% (punktgenaue Arretierung)", "97%+", "Exzellente ballistische Präzision. Unmittelbare Trägheitssynchronisation am Landepunkt ohne jegliches Nachzittern"],
       ["Fortgeschritten (Wettkampf-Level)", "140 – 180 ms", "3% – 6%", "91% – 96%", "Sehr rasche Zielreakquisition. Minimalste Korrektur nach der Landung; hohe post-sakkadische Spurtreue"],
       ["Kompetent (Gesunde Erwachsene)", "181 – 240 ms", "7% – 14%", "80% – 90%", "Solider Standardbereich. Kurze sensorische Refraktärzeit nach der Sakkade, gefolgt von stabiler Nachführung"],
       ["Aufbauend (Erhöhte Latenz)", "241 – 320 ms", "15% – 24%", "68% – 79%", "Spürbare Verzögerung beim Auslösen des Blicksprungs. Häufiges Überschießen und wiederholter Zielverlust"],

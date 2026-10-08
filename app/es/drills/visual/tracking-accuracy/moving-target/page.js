@@ -197,7 +197,7 @@ const faqSchema = {
       "name": "¿Cómo influyen los hercios del monitor (60 Hz vs 144 Hz vs 240 Hz) en el tracking?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "En 60 Hz la pantalla se actualiza cada 16,7 ms, causando saltos visuales que dificultan la predicción. Monitores a 144 Hz (6,9 ms) y 240 Hz (4,1 ms) garantizan un movimiento continuo, rebajando el error retiniano y elevando el porcentaje de aciertos (Woods et al., 2015)."
+        "text": "En 60 Hz la pantalla se actualiza cada 16,7 ms, causando saltos visuales que dificultan la predicción. Monitores a 144 Hz (6,9 ms) y 240 Hz (4,1 ms) ofrecen un movimiento más continuo, lo que puede reducir el error retiniano (Woods et al., 2015)."
       }
     },
     {
@@ -239,7 +239,7 @@ const movingTargetGuide = {
     title: "Referencia de seguimiento y precisión de intercepción",
     headers: ["Banda de Rendimiento", "Ventana de Pacing", "Puntuación y Umbral Combo", "Perfil de Seguimiento e Intercepción"],
     rows: [
-      ["Tier 1: Interceptor Cinético Apex", "< 0.25s Ventana", "16.000+ PTS | Combo 25x+", "Persecución suave de élite; extrapolación perfecta sin retraso de sacada correctora. Nivel de pilotos y profesionales."],
+      ["Tier 1: Interceptor Cinético Apex", "< 0.25s Ventana", "16.000+ PTS | Combo 25x+", "Persecución suave avanzada; extrapolación perfecta sin retraso de sacada correctora."],
       ["Tier 2: Rastreador Dinámico Superior", "0.25 – 0.45s Ventana", "10.500 – 15.999 PTS | Combo 16x+", "Fluidez ocular notable; ajustes rápidos en bucle cerrado con mínimo sobreimpulso en blancos acelerados."],
       ["Tier 3: Rendimiento Adulto Estándar", "0.46 – 0.70s Ventana", "6.000 – 10.499 PTS | Combo 9x+", "Seguimiento solvente en tramos rectos; leve retardo de adaptación ante rebotes imprevistos contra las paredes."],
       ["Tier 4: Rastreador en Desarrollo", "0.71 – 1.00s Ventana", "2.500 – 5.999 PTS | Combo 4x+", "Alta dependencia de sacadas reactivas frente a la persecución suave; vacilación apreciable a velocidades elevadas."],

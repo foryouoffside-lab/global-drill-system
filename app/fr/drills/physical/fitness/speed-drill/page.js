@@ -173,7 +173,7 @@ const faqSchema = {
       "name": "Quel bonus de temps est accordé à chaque cible détruite et comment progressent les points?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Chaque cible validée rapporte 100 points de base (multipliés par le niveau et le multiplicateur de série jusqu'à 3.0x) et crédite +0,6 seconde au chronomètre. Cet apport continu permet aux joueurs dotés d'une grande vivacité de prolonger la manche et de franchir le seuil d'élite de 24 000 points."
+        "text": "Chaque cible validée rapporte 100 points de base (multipliés par le niveau et le multiplicateur de série jusqu'à 3.0x) et crédite +0,6 seconde au chronomètre. Cet apport continu permet aux joueurs dotés d'une grande vivacité de prolonger la manche et de franchir le seuil de 24 000 points."
       }
     },
     {
@@ -271,7 +271,7 @@ const speedGuide = {
     title: "Grille de Performance en 5 Niveaux de Vitesse de Clic et d'Acquisition",
     headers: ["Palier et Niveau", "Titre (Rank Title)", "Score Ciblé", "Précision et Temps de Réaction", "Note Globale", "Profil Neuromoteur"],
     rows: [
-      ["Tier 1: Tireur d'Élite Vitesse Ultime", "Apex Velocity Sniper", "24 000+ points", "> 95% / < 160 ms", "Grade S", "Niveau élite.Flicks parfaits de Woodworth, déclenchement instantané au diamètre maximal et maîtrise sur cibles de 12 px (Woodworth 1899; Fitts 1954)"],
+      ["Tier 1: Tireur d'Élite Vitesse Ultime", "Apex Velocity Sniper", "24 000+ points", "> 95% / < 160 ms", "Grade S", "Flicks parfaits de Woodworth, déclenchement instantané au diamètre maximal et maîtrise sur cibles de 12 px (Woodworth 1899; Fitts 1954)"],
       ["Tier 2: Attaquant Réflexe de Précision", "Precision Reflex Striker", "17 000 – 23 999 points", "90 – 94% / 160 – 190 ms", "Grade A", "Niveau avancé.Orientation périphérique vive et contrôle moteur stable avec racha ininterrompue en vitesse 3.0x"],
       ["Tier 3: Intercepteur Rapide de Cibles", "Rapid Target Interceptor", "11 000 – 16 999 points", "82 – 89% / 191 – 230 ms", "Grade B", "Niveau compétitif.Cadence régulière et exploitation tactique du bonus de +0,6s pour pérenniser la session"],
       ["Tier 4: Pratiquant en Développement", "Developing Tapping Trainee", "6 000 – 10 999 points", "70 – 81% / 231 – 280 ms", "Grade C", "Moyenne des adultes. Au-delà d'une vitesse 2.0x, des hésitations de freinage et des clics périphériques apparaissent"],
@@ -377,7 +377,7 @@ export default function LocalizedSpeedDrillPageFr() {
             {
               title: "Frontières Spatiales Rétrécissantes et Loi de Fitts",
               subtitle: "Compromis vitesse-précision durant la contraction de la cible",
-              content: "Chaque cible rétrécit dès son apparition. Selon la loi de Fitts (1954), l'indice de difficulté augmente de façon logarithmique avec la réduction de largeur. Toucher le cercle dans son diamètre initial de 45 px garantit la régularité."
+              content: "Chaque cible rétrécit dès son apparition. Selon la loi de Fitts (1954), l'indice de difficulté augmente de façon logarithmique avec la réduction de largeur. Toucher le cercle dans son diamètre initial de 45 px favorise la régularité."
             },
             {
               title: "Saillance Visuelle Pré-Attentionnelle et Détection Périphérique",

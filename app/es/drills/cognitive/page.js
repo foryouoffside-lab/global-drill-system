@@ -104,7 +104,7 @@ const faqSchema = {
       "name": "¿Cómo ayuda la tabla de Schulte a la velocidad de lectura y procesamiento visual?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "La tabla de Schulte es una cuadrícula numérica desarrollada para evaluar la atención y el campo visual periférico. Al buscar y pulsar los números en orden secuencial sin mover la mirada fija del punto central, se entrena la visión periférica y la agilidad de exploración visual. Este ejercicio es ampliamente utilizado por pilotos de aviación, atletas de élite y lectores de alta velocidad para ampliar su ventana de reconocimiento visual y reducir el tiempo de búsqueda en pantallas complejas."
+        "text": "La tabla de Schulte es una cuadrícula numérica desarrollada para evaluar la atención y el campo visual periférico. Al buscar y pulsar los números en orden secuencial sin mover la mirada fija del punto central, se entrena la visión periférica y la agilidad de exploración visual. Este ejercicio practica la búsqueda visual ordenada; no hay garantía de que mejore el rendimiento fuera de la pantalla."
       }
     },
     {

@@ -77,7 +77,7 @@ const faqSchema = {
       "name": "Qual é a diferença fisiológica entre a perseguição ocular suave (Smooth Pursuit) e os movimentos sacádicos?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "A perseguição ocular suave (Smooth Pursuit Eye Movement) é um movimento contínuo e orgânico dos olhos para manter um objeto móvel estabilizado sobre a fóvea central da retina, onde a resolução óptica é máxima. Já as sacadas são disparos balísticos extremamente velozes (atingindo até 900 graus por segundo) entre dois pontos de fixação. Em esportes dinâmicos e tiroteios virtuais (FPS), o Smooth Pursuit garante a leitura nítida das trajetórias e desacelerações do alvo sem que a visão fique borrada."
+        "text": "A perseguição ocular suave (Smooth Pursuit Eye Movement) é um movimento contínuo e orgânico dos olhos para manter um objeto móvel estabilizado sobre a fóvea central da retina, onde a resolução óptica é máxima. Já as sacadas são disparos balísticos extremamente velozes (atingindo até 900 graus por segundo) entre dois pontos de fixação. Em esportes dinâmicos e tiroteios virtuais (FPS), o Smooth Pursuit ajuda a acompanhar trajetórias e desacelerações do alvo com mais nitidez."
       }
     },
     {

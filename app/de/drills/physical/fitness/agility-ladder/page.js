@@ -212,7 +212,7 @@ const faqSchema = {
       "name": "Welche Mauseinstellungen (DPI) und Grifftechniken sind für schnelle horizontale Sprossenwechsel optimal?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Der Fingertip- oder Claw-Grip bietet klare Vorteile: Schnelle 80-px-Schwünge können präzise aus den Fingergrundgelenken und dem Handgelenk ausgeführt werden, ohne den gesamten Unterarm ermüdend zu versetzen. Eine mittlere Mausempfindlichkeit ohne Windows-Zeigerbeschleunigung gewährleistet eine lineare 1:1-Wegstrecke."
+        "text": "Der Fingertip- oder Claw-Grip bietet klare Vorteile: Schnelle 80-px-Schwünge können präzise aus den Fingergrundgelenken und dem Handgelenk ausgeführt werden, ohne den gesamten Unterarm ermüdend zu versetzen. Eine mittlere Mausempfindlichkeit ohne Windows-Zeigerbeschleunigung unterstützt eine gleichmäßigere Wegstrecke."
       }
     },
     {
@@ -292,7 +292,7 @@ const ladderGuide = {
     title: "Wissenschaftliche 5-Stufen-Normtabelle für die Koordinationsleiter",
     headers: ["Leistungsstufe", "Rangtitel (Rank Title)", "Punktwert (45s)", "Erreichtes Level", "Max. Scrollgeschwindigkeit", "Neuromotorisches Profil"],
     rows: [
-      ["Stufe 1: Elite-Leitermeister ", "Apex Ladder Master", "17.000+ Punkte", "Level 12 – 15", "600 – 750 px/s", "Vollendetes Lashley-Chunking, fehlerfreies Halten des relativen Timings bei maximalem Tempo von 750 px/s (Lashley 1951; Schmidt 1975)"],
+      ["Stufe 1: Fortgeschrittenes Leiter-Timing ", "Apex Ladder Master", "17.000+ Punkte", "Level 12 – 15", "600 – 750 px/s", "Vollendetes Lashley-Chunking, fehlerfreies Halten des relativen Timings bei maximalem Tempo von 750 px/s (Lashley 1951; Schmidt 1975)"],
       ["Stufe 2: Rhythmus-Sprinter ", "Elite Rhythm Sprinter", "13.000 – 16.999 Punkte", "Level 9 – 11", "480 – 599 px/s", "Exzellente beidseitige Umschaltgeschwindigkeit, präzise Fitts-Abbremskurven auf komprimierten 10–12-px-Sprossen"],
       ["Stufe 3: Kompetenter Sprossensequenzer", "Proficient Step Sequencer", "9.500 – 12.999 Punkte", "Level 6 – 8", "350 – 479 px/s", "Solides Leistungsniveau im Leistungs- und eSport, stabile Links-Rechts-Rhythmik mit kontrolliertem Handgelenksnap"],
       ["Stufe 4: Mittlerer Rhythmuslerner", "Intermediate Cadence Learner", "6.000 – 9.499 Punkte", "Level 3 – 5", "230 – 349 px/s", "Durchschnittliches motorisches Reaktionsniveau, sensorische Feedback-Verzögerungen führen ab 350 px/s zu Sprossenfehlern"],

@@ -271,7 +271,7 @@ const guideProps = {
       },
       {
         tier: 'Tier 2',
-        rank: 'プロクリッカー (Pro Competitor)',
+        rank: '上級クリッカー (Advanced)',
         stat: '12.0–15.9 CPS',
         level: '15.0–19.0 CPS',
         accuracy: 'ジッタークリック習熟',

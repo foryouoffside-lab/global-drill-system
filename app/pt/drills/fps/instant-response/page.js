@@ -111,7 +111,7 @@ export default function InstantResponsePtPage() {
         "name": "Qual é o tempo de reação médio de um jogador de FPS?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "A média de adultos saudáveis em monitores comuns gira em torno de 220 a 250 ms. Jogadores profissionais de Valorant e CS2 em telas de 240 Hz alcançam marcas entre 150 e 190 ms."
+          "text": "A média de adultos saudáveis em monitores comuns gira em torno de 220 a 250 ms. Marcas entre 150 e 190 ms são pouco comuns e dependem do monitor e da antecipação."
         }
       },
       {
@@ -143,7 +143,7 @@ export default function InstantResponsePtPage() {
         "name": "O polling rate do mouse faz diferença no tempo de reação?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Sim. Um mouse configurado a 1000 Hz envia dados a cada 1,0 ms, enquanto a 125 Hz o intervalo sobe para 8,0 ms. Taxas superiores a 1000 Hz garantem registro instantâneo do clique no sistema operacional."
+          "text": "Sim. Um mouse configurado a 1000 Hz envia dados a cada 1,0 ms, enquanto a 125 Hz o intervalo sobe para 8,0 ms. Taxas superiores a 1000 Hz reduzem o atraso de registro do clique no sistema operacional."
         }
       },
       {
@@ -206,7 +206,7 @@ export default function InstantResponsePtPage() {
         "@type": "HowToStep",
         "position": 2,
         "name": "Ativar Modo Tela Cheia e Trava de Cursor",
-        "text": "Inicie o exercício para capturar a entrada bruta de coordenadas com resolução temporal de microsegundos.",
+        "text": "Inicie o exercício para capturar as coordenadas do mouse.",
         "url": "https://skilldrills.online/pt/drills/fps/instant-response#step-2"
       },
       {
@@ -264,7 +264,7 @@ export default function InstantResponsePtPage() {
       headers: ["Nível / Categoria", "Latência Típica (ms)", "Mecanismo Neuromuscular e Hardware", "Impacto Prático em Partidas FPS"],
       rows: [
         ["Nível 1 (Reflexo Sobre-Humano)", "< 165 ms", "Estado de alerta máximo, 240Hz+ e disparo automatizado", "Vitórias instantâneas em qualquer duelo de abertura angular"],
-        ["Nível 2 (Padrão Profissional)", "165 – 195 ms", "Excelente coordenação sensoriomotora em monitor de 240Hz", "Padrão de atletas de nível Radiante no Valorant e Nível 10 no CS2"],
+        ["Nível 2 (Faixa Avançada)", "165 – 195 ms", "Excelente coordenação sensoriomotora em monitor de 240Hz", "Objetivo: manter um tempo estável e repetível"],
         ["Nível 3 (Competitivo Avançado)", "195 – 225 ms", "Reflexo condicionado limpo em equipamentos de 144Hz", "Excelente retenção de ângulo com posicionamento correto de mira"],
         ["Nível 4 (Média dos Jogadores)", "225 – 265 ms", "Tempo padrão de adultos não treinados em telas de 60Hz a 144Hz", "Vulnerável a aberturas rápidas caso o ângulo não esteja ajustado"],
         ["Nível 5 (Fadiga / Input Lag)", "265 – 330+ ms", "Fadiga acumulada, sono inadequado ou atraso de entrada no PC", "Atraso perceptível entre avistar o inimigo e conseguir atirar"]

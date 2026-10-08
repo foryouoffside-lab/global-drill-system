@@ -54,7 +54,7 @@ const multipleTargetsGuide = {
     title: "Referência de desempenho no rastreamento múltiplo",
     headers: ["Faixa de Desempenho", "Capacidade Efetiva", "Pontuação & Limiar de Precisão", "Perfil de Atenção Visual e Cognição"],
     rows: [
-      ["Nível 1: Rastreador Multifocal Apex", "5+ Alvos em Paralelo", "Score: 60 PTS (3/3) | Precisão 100% (Velocidade Máxima)", "Indexação visual paralela profissional; distribuição hemifield perfeita sem perda por colisão. Típico de gamers profissionais de elite, pilotos de caça e atletas de alta performance (Faubert, 2013; Green & Bavelier, 2006)."],
+      ["Nível 1: Rastreador Multifocal Apex", "5+ Alvos em Paralelo", "Score: 60 PTS (3/3) | Precisão 100% (Velocidade Máxima)", "Indexação visual paralela; distribuição entre hemicampos sem perda por colisão. Exige prática e varia bastante entre pessoas."],
       ["Nível 2: Indexador Paralelo Avançado", "4 Alvos em Paralelo", "Score: 50 – 59 PTS | Precisão 85 – 99%", "Rastreamento multifocal robusto; mantém diferenciação alvo-distrator em trajetórias com alta densidade de colisão com desvio centroide mínimo."],
       ["Nível 3: Atenção Dividida Competente", "3 Alvos em Paralelo", "Score: 40 – 49 PTS | Precisão 70 – 84%", "Padrão de referência adulto saudável; rastreamento confiável de 3 alvos em velocidade moderada, suscetível a trocas em agrupamento espacial denso."],
       ["Nível 4: Memória Espacial em Desenvolvimento", "2 Alvos em Paralelo", "Score: 20 – 39 PTS | Precisão 50 – 69%", "Tendência a colapsar atenção multifocal em um único ponto foveal; dificuldade em suprimir distratores durante rebotes de alta aceleração."],
@@ -102,7 +102,7 @@ const multipleTargetsGuide = {
     },
     {
         "q": "Quantos objetos em movimento um ser humano consegue rastrear simultaneamente?",
-        "a": "Em média, adultos saudáveis conseguem rastrear com precisão entre 3 e 4 objetos simultaneamente em velocidades moderadas. Atletas profissionais de elite e pilotos treinados atingem 5 ou até 6 alvos em paralelo graças a uma arquitetura neural otimizada de alocação de recursos atencionais (Cavanagh & Alvarez, 2005)."
+        "a": "Em média, adultos saudáveis conseguem rastrear com precisão entre 3 e 4 objetos simultaneamente em velocidades moderadas. Superar essa faixa exige prática e varia bastante entre pessoas (Cavanagh & Alvarez, 2005)."
     },
     {
         "q": "Por que tentar olhar individualmente para cada esfera com movimentos sacádicos falha?",
@@ -227,7 +227,7 @@ const faqSchema = {
         "name": "Quantos objetos em movimento um ser humano consegue rastrear simultaneamente?",
         "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Em média, adultos saudáveis conseguem rastrear com precisão entre 3 e 4 objetos simultaneamente em velocidades moderadas. Atletas profissionais de elite e pilotos treinados atingem 5 ou até 6 alvos em paralelo graças a uma arquitetura neural otimizada de alocação de recursos atencionais (Cavanagh & Alvarez, 2005)."
+            "text": "Em média, adultos saudáveis conseguem rastrear com precisão entre 3 e 4 objetos simultaneamente em velocidades moderadas. Superar essa faixa exige prática e varia bastante entre pessoas (Cavanagh & Alvarez, 2005)."
         }
     },
     {

@@ -322,8 +322,8 @@ const ptCopy = {
   rulesItems: [
     { num: "1", text: "Traçar a Trajetória", highlight: "Onda Esmeralda", result: "+1 PT / frame dentro da linha" },
     { num: "2", text: "Velocidade Progressiva", highlight: "Onda Dinâmica", result: "2.2 → 3.8 px/f em 45s" },
-    { num: "3", text: "Integridade de Fluxo", highlight: "Super Fluxo", result: "4s seguidos garantem +5 Bônus" },
-    { num: "4", text: "Rastreamento Estrito", highlight: "Exclusivo Desktop", result: "Entrada bruta 1:1 do mouse" }
+    { num: "3", text: "Integridade de Fluxo", highlight: "Super Fluxo", result: "4s seguidos dão +5 Bônus" },
+    { num: "4", text: "Rastreamento Estrito", highlight: "Exclusivo Desktop", result: "Mouse no desktop" }
   ],
 };
 

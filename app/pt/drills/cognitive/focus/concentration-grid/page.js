@@ -177,7 +177,7 @@ const faqSchema = {
       "name": "O que é considerado uma boa pontuação ou tempo?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Numa tabela 5x5 tradicional (25 números), completar a sequência em menos de 25 segundos indica excelente proficiência. Neste simulador dinâmico de 45 segundos, ultrapassar 6.000 pontos e atingir grades de 6x6 ou 7x7 equivale ao padrão de atletas de alto nível."
+        "text": "Numa tabela 5x5 tradicional (25 números), completar a sequência em menos de 25 segundos indica excelente proficiência. Neste simulador dinâmico de 45 segundos, ultrapassar 6.000 pontos e atingir grades de 6x6 ou 7x7 é uma marca alta dentro deste simulador."
       }
     },
     {
@@ -193,7 +193,7 @@ const faqSchema = {
       "name": "Esta ferramenta é utilizada por pilotos e atletas profissionais?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Sim. Pilotos de caça, pilotos de corrida e atletas de esports competitivos treinam rotineiramente com grades de Schulte e concentração para acelerar reações sacádicas e monitorar múltiplos estímulos sob pressão."
+        "text": "Pode servir como prática complementar de busca visual e atenção, sem garantia de efeito fora da tela."
       }
     },
     {
@@ -245,7 +245,7 @@ const concentrationGridGuidePt = {
     title: "Tiers de Desempenho e Níveis de Varredura na Tabela de Schulte",
     headers: ["Nível", "Faixa de Pontuação", "Grade Máxima", "Latência de Busca", "Classificação Cognitiva"],
     rows: [
-      ["S+ (Elite)", "8.000+ PTS", "7x7+ (49+ blocos)", "< 300 ms / alvo", "Velocidade de varredura visual de classe mundial, amplitude periférica excepcional e invariância rotacional imediata."],
+      ["S+ (Faixa Avançada)", "8.000+ PTS", "7x7+ (49+ blocos)", "< 300 ms / alvo", "Velocidade de varredura visual muito alta, amplitude periférica excepcional e invariância rotacional imediata."],
       ["S (Mestre)", "6.000 – 7.999 PTS", "6x6 (36 blocos)", "300 – 450 ms / alvo", "Eficiência superior de busca visual; pré-visualização parafoveal contínua e pausas mínimas de fixação."],
       ["A (Avançado)", "4.500 – 5.999 PTS", "5x5 (25 blocos)", "450 – 600 ms / alvo", "Forte processamento de campo visual; agrupamento pareado consistente em matrizes de densidade média."],
       ["B (Proficiente)", "3.000 – 4.499 PTS", "4x4 (16 blocos)", "600 – 800 ms / alvo", "Disciplina de busca acima da média; pausas ocasionais para refixação central em grades maiores."],

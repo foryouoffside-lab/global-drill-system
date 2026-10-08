@@ -201,7 +201,7 @@ const faqSchema = {
       "name": "Welche taktische Bedeutung hat die Zeitgutschrift von +0,6 Sekunden pro gefangenem Ziel?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Die Runde startet mit einem Basiskonto von 45 Sekunden. Jeder erfolgreiche Treffer auf ein grünes Ziel fügt 0,6 Sekunden hinzu. Ein fehlerfreier Rhythmus ermöglicht es, die Runde über 60 oder 90 Sekunden am Leben zu halten, den 3,0x-Maximalmultiplikator auszubauen und Elite-Wertungen von über 24.000 Punkten zu erzielen."
+        "text": "Die Runde startet mit einem Basiskonto von 45 Sekunden. Jeder erfolgreiche Treffer auf ein grünes Ziel fügt 0,6 Sekunden hinzu. Ein fehlerfreier Rhythmus ermöglicht es, die Runde über 60 oder 90 Sekunden am Leben zu halten, den 3,0x-Maximalmultiplikator auszubauen und Wertungen von über 24.000 Punkten zu erzielen."
       }
     },
     {
@@ -291,7 +291,7 @@ const dropGuide = {
     title: "5-Stufen-Leistungsbenchmarks für Wahlreaktionszeit und Fallabfangung",
     headers: ["Stufe & Rang", "Titel (Rank Title)", "Punkteziel", "Wahlreaktionszeit & Genauigkeit", "Gesamtnote", "Neuromuskuläres Profil"],
     rows: [
-      ["Stufe 1: Ultimativer Gravitations-Abfänger", "Apex Gravitational Interceptor", "24.000+ Punkte", "< 190 ms / > 95 %", "Grade S", "und E-Sport-Profis. Perfekte Logan-Impulskontrolle und fehlerfreies Abfangen bei 1250 px/s (Lee 1976; Logan 1984)"],
+      ["Stufe 1: Ultimativer Gravitations-Abfänger", "Apex Gravitational Interceptor", "24.000+ Punkte", "< 190 ms / > 95 %", "Grade S", "Perfekte Logan-Impulskontrolle und fehlerfreies Abfangen bei 1250 px/s (Lee 1976; Logan 1984)"],
       ["Stufe 2: Präzisions-Reflex-Striker", "Precision Reflex Striker", "17.000 – 23.999 Punkte", "195 – 240 ms / 90 – 94 %", "Grade A", "Überragende Tau-Antizipation und stabiles Halten des 3,0x-Multiplikators bei 45 % Fallenquote"],
       ["Stufe 3: Erfahrener Drop-Catcher", "Skilled Drop Catcher", "11.000 – 16.999 Punkte", "245 – 310 ms / 82 – 89 %", "Grade B", "Solide Auge-Hand-Koordination und gute Nutzung des +0,6s-Zeitbonus für lange Überlebensdauer"],
       ["Stufe 4: Lernender Reflex-Athlet", "Developing Reflex Trainee", "6.000 – 10.999 Punkte", "311 – 370 ms / 70 – 81 %", "Grade C", "Durchschnittliches Erwachsenenniveau. Bei Geschwindigkeiten über 800 px/s treten Fehlklicks auf rote Fallen und Serienabbrüche auf"],

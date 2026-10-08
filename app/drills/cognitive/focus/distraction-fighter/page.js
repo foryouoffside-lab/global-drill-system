@@ -98,7 +98,7 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "How can I train my brain to block out distractions?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Effective methods include: (1) Stroop test and Flanker task practice (strengthens top-down inhibitory pathways), (2) mindfulness meditation (increases prefrontal cortex gray matter density), (3) single-tasking practice (training sustained focus without device interruptions), and (4) progressive exposure to distractor-rich environments during deliberate practice. This drill provides direct gamified inhibitory control exercise." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Effective methods include: (1) Stroop test and Flanker task practice (strengthens top-down inhibitory pathways), (2) mindfulness meditation (a common attention-practice approach), (3) single-tasking practice (training sustained focus without device interruptions), and (4) progressive exposure to distractor-rich environments during deliberate practice. This drill provides direct gamified inhibitory control exercise." }
     },
     {
       "@type": "Question",

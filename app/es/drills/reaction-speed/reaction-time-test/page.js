@@ -155,7 +155,7 @@ const faqSchema = {
       name: '¿Cuál es un buen tiempo de reacción en humanos?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'El tiempo de reacción promedio ante estímulos visuales en adultos sanos ronda entre 200 y 250 milisegundos (ms) (Kosinski, 2008). Marcas por debajo de 200 ms se consideran sumamente rápidas, y valores inferiores a 180 ms corresponden a la élite de jugadores de esports y pilotos de Fórmula 1.',
+        text: 'El tiempo de reacción promedio ante estímulos visuales en adultos sanos ronda entre 200 y 250 milisegundos (ms) (Kosinski, 2008). Marcas por debajo de 200 ms son poco habituales, y valores inferiores a 180 ms pueden deberse a anticipación o al dispositivo, no solo a la velocidad de reacción.',
       },
     },
     {
@@ -288,7 +288,7 @@ const reactionGuide = {
   intro: [
     'El tiempo de reacción es el lapso transcurrido entre la percepción de un estímulo sensorial y la ejecución del movimiento motor voluntario.',
     'En esports competitivos (Valorant, CS2, League of Legends) y en deportes de motor, pequeñas diferencias de milisegundos definen quién acierta el primer disparo o reacciona a tiempo ante imprevistos.',
-    'Metodología de Medición: Todas las lecturas se registran directamente en el dispositivo cliente mediante la API performance.now() de alta precisión, garantizando cero desfase por conexiones externas.',
+    'Metodología de Medición: Todas las lecturas se registran directamente en el dispositivo cliente mediante la API performance.now() de alta precisión, sin depender de conexiones externas.',
     'Latenica de Hardware: Las pantallas habituales de 60 Hz agregan 16,7 ms de retardo por fotograma. El uso de pantallas de 144 Hz o 240 Hz y ratones con tasa de sondeo de 1000 Hz permite evaluar tu rendimiento biológico real (Woods et al., 2015).',
   ],
   benchmarks: {

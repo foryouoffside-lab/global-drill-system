@@ -231,7 +231,7 @@ const guideProps = {
     title: "Mesures du Champ Visuel Utile (UFOV) et Temps de Réaction Périphérique",
     headers: ["Niveau de Performance", "Champ Visuel Utile (UFOV %)", "Temps de Réaction Périphérique", "Stabilité Centrale", "Profil Neurophysiologique"],
     rows: [
-      ["Élite (Compétition et sport)", "Supérieur à 92%", "Inférieur à 280 ms", "Supérieur à 95%", "Dissociation fovéale parfaite ; perception panoramique sans déviation de l axe oculaire central."],
+      ["Palier Avancé", "Supérieur à 92%", "Inférieur à 280 ms", "Supérieur à 95%", "Dissociation fovéale parfaite ; perception panoramique sans déviation de l axe oculaire central."],
       ["Avancé (Niveau Compétition)", "85% – 92%", "280 ms – 340 ms", "90% – 95%", "Excellente répartition de l attention diffuse ; temps de réaction minime aux signaux latéraux."],
       ["Compétent (Adulte Sain)", "75% – 84%", "341 ms – 410 ms", "82% – 89%", "Bonne capacité de double tâche ; légère vision en tunnel sous vitesse centrale élevée."],
       ["En Progression", "60% – 74%", "411 ms – 500 ms", "70% – 81%", "Retard sensible ; micro-saccades involontaires fréquentes vers les signaux lumineux périphériques."],

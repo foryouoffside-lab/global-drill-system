@@ -184,7 +184,7 @@ const faqSchema = {
       "name": "O que diferencia um jogador iniciante de um mestre de estabilidade (Tier 1)?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Um jogador iniciante (Tier 5) acumula menos de 6.000 pontos com estabilidade inferior a 65%, sofrendo constantes rupturas sob o vento. Um competidor de elite (Tier 1: Apex Stability Master / Nota S) atinge 17.000+ pontos, superando o Nível 12 com mais de 92% de tempo dentro do anel minúsculo de 20px."
+        "text": "Um jogador iniciante (Tier 5) acumula menos de 6.000 pontos com estabilidade inferior a 65%, sofrendo constantes rupturas sob o vento. Quem chega ao Tier 1 (Apex Stability Master / Nota S) atinge 17.000+ pontos, superando o Nível 12 com mais de 92% de tempo dentro do anel minúsculo de 20px."
       }
     },
     {
@@ -200,7 +200,7 @@ const faqSchema = {
       "name": "Qual sensibilidade de mouse (DPI / eDPI) é recomendada para estabilização?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Sensibilidades moderadas a baixas (entre 800 e 1200 DPI em 1:1, ou 200 a 350 eDPI em jogos táticos) facilitam correções microscópicas sem que tremores involuntários de pulso joguem o cursor fora do anel de 20px."
+        "text": "Sensibilidades moderadas a baixas (entre 800 e 1200 DPI, ou 200 a 350 eDPI em jogos táticos) facilitam correções microscópicas sem que tremores involuntários de pulso joguem o cursor fora do anel de 20px."
       }
     },
     {

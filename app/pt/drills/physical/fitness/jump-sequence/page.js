@@ -296,7 +296,7 @@ const jumpGuide = {
     title: "Tabela de Classificação e Padrões de Salto Vertical e Interceptação (5 Níveis)",
     headers: ["Nível / Rank", "Título de Mestria", "Pontuação Alvo", "Velocidade do Alvo / Precisão", "Grau Geral", "Perfil Neurofuncional em Suspensão"],
     rows: [
-      ["Tier 1: Mestre da Trajetória Apex", "Apex Trajectory Master", "17.000+ pontos", "800 – 900 px/s / ≥ 92%", "Grade S", "Predição gravitacional de elite; convergência perfeita com alvos ultrarrápidos e cálculo SSC impecável (Komi 2000; Kawato 1999)"],
+      ["Tier 1: Mestre da Trajetória Apex", "Apex Trajectory Master", "17.000+ pontos", "800 – 900 px/s / ≥ 92%", "Grade S", "Predição gravitacional avançada; convergência perfeita com alvos ultrarrápidos e cálculo SSC impecável (Komi 2000; Kawato 1999)"],
       ["Tier 2: Atacante Aéreo de Precisão", "Precision Aerial Striker", "12.000 – 16.999 pts", "650 – 799 px/s / 84 – 91%", "Grade A", "Excelente pilotagem em suspensão por modelo cerebelar; interceptação estável em esferas reduzidas de 15-18px"],
       ["Tier 3: Interceptor de Salto Habilidoso", "Skilled Jump Interceptor", "7.500 – 11.999 pts", "500 – 649 px/s / 75 – 83%", "Grade B", "Nível competitivo consistente; boa modulação da barra de impulsão e recuperação ágil de contato no solo"],
       ["Tier 4: Navegador Parabólico em Treino", "Developing Parabola Navigator", "4.000 – 7.499 pts", "350 – 499 px/s / 65 – 74%", "Grade C", "Média funcional padrão; quebras periódicas de racha provocadas por saltos com excesso de força em alvos baixos"],

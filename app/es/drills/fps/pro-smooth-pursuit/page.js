@@ -271,8 +271,8 @@ export default function ProSmoothPursuitPage() {
       title: "Niveles de Rendimiento de Tracking Continuo y Ajuste de Velocidad",
       headers: ["Nivel de Rendimiento", "Tiempo en Diana (%)", "Estado Neuromuscular y Oculomotor", "Impacto Competitivo en Juego"],
       rows: [
-        ["Tier 1 (Trazo Perfecto)", "85% – 95%+", "Fijación foveal ininterrumpida; sincronización exacta en inflexiones de curvatura sin micro sacadas", "Puntería de élite en rangos Apex Predator, Top 500 Overwatch y torneos profesionales"],
-        ["Tier 2 (Pro Competitivo)", "72% – 85%", "Modulación fluida del antebrazo; adaptación inmediata al alcanzar los vértices de curva", "Gana duelos prolongados 1v1 contra rivales con movilidad compleja y alto aprovechamiento de cargador"],
+        ["Tier 1 (Trazo Perfecto)", "85% – 95%+", "Fijación foveal ininterrumpida; sincronización exacta en inflexiones de curvatura sin micro sacadas", "Práctica de seguimiento continuo de curvas cerradas sin perder la fijación"],
+        ["Tier 2 (Etapa Intermedia-Alta)", "72% – 85%", "Modulación fluida del antebrazo; adaptación inmediata al alcanzar los vértices de curva", "Práctica de duelos prolongados 1v1 contra rivales con movilidad compleja"],
         ["Tier 3 (Nivel Avanzado FPS)", "58% – 72%", "Tracking lineal consistente; ligeras vacilaciones de 10 a 15% en cambios súbitos de trayectoria", "Excelente rendimiento general; pequeña pérdida de contacto frente a impulsos verticales o ganchos"],
         ["Tier 4 (Intermedio)", "42% – 58%", "Tendencia a emplear micro flicks en vez de un desplazamiento continuo; rigidez muscular que produce temblor", "Dificultad contra personajes ágiles; alto gasto de munición sin impacto efectivo"],
         ["Tier 5 (En Desarrollo)", "Menos de 42%", "Arrastre constante retrasado respecto a la diana; incapacidad de sincronizar velocidad en curvas", "Pérdida habitual de enfrentamientos directos; la retícula se descuelga continuamente"]

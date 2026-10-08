@@ -201,7 +201,7 @@ const faqSchema = {
       "name": "Como o estresse e o sono impactam a pontuação neste teste?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "A privação de sono afeta diretamente a neurotransmissão noradrenérgica e dopaminérgica, acelerando a perda de vigilância e triplicando os erros impulsivos."
+        "text": "A privação de sono afeta diretamente a neurotransmissão noradrenérgica e dopaminérgica, acelerando a perda de vigilância e aumentando os erros impulsivos."
       }
     },
     {

@@ -271,8 +271,8 @@ export default function ProSmoothPursuitPage() {
       title: "Paliers de Performance de Tracking Continu et Synchronisation de Vitesse",
       headers: ["Niveau de Performance", "Temps sur Cible (%)", "État Neuromusculaire et Oculomoteur", "Impact Compétitif en Match"],
       rows: [
-        ["Tier 1 (Faisceau Parfait)", "85% – 95%+", "Verrouillage fovéal ininterrompu ; vitesse parfaitement synchronisée aux sommets de courbe sans à-coups", "Visée d'élite en Apex Predator, Top 500 Overwatch et tournois majeurs"],
-        ["Tier 2 (Pro Compétitif)", "72% – 85%", "Modulation souple par l'avant-bras ; adaptation immédiate de la trajectoire aux inversions de courbure", "Remporte les duels 1v1 prolongés contre des cibles mobiles avec une excellente gestion de chargeur"],
+        ["Tier 1 (Faisceau Parfait)", "85% – 95%+", "Verrouillage fovéal ininterrompu ; vitesse parfaitement synchronisée aux sommets de courbe sans à-coups", "Entraîne le suivi continu des courbes serrées sans perte de fixation"],
+        ["Tier 2 (Palier Intermédiaire-Haut)", "72% – 85%", "Modulation souple par l'avant-bras ; adaptation immédiate de la trajectoire aux inversions de courbure", "Entraîne les duels 1v1 prolongés contre des cibles mobiles"],
         ["Tier 3 (Haut Niveau FPS)", "58% – 72%", "Tracking linéaire solide ; légères hésitations de 10 à 15% lors d'inversions de trajectoire imprévues", "Excellente efficacité tactique ; légère perte de contact sur des manœuvres aériennes verticales"],
         ["Tier 4 (Intermédiaire)", "42% – 58%", "Tendance à enchaîner des micro-flicks plutôt qu'un glissement fluide ; crispation du poignet générant des à-coups", "Vulnérable aux cibles très agiles ; dispersion de tirs considérable"],
         ["Tier 5 (En Progression)", "Moins de 42%", "Retard constant sur la cible mobile ; difficulté à synchroniser la vitesse lors des changements de direction", "Pertes fréquentes de duels directs ; le réticule décroche continuellement de la hitbox"]

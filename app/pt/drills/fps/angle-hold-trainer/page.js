@@ -184,7 +184,7 @@ export default function PortugueseAngleHoldPage() {
       },
       {
         "@type": "Question",
-        "name": "O simulador oferece suporte a entrada bruta de mouse (raw input)?",
+        "name": "Como o simulador captura o movimento do mouse?",
         "acceptedAnswer": {
           "@type": "Answer",
           "text": "Sim. Funciona com a API Pointer Lock do HTML5 com cronometria de alta resolução via performance.now(), eliminando qualquer aceleração ou suavização artificial do sistema."
@@ -246,7 +246,7 @@ export default function PortugueseAngleHoldPage() {
         ["Latência de Discriminação (Fake/Jiggle Peek)", "210 – 280 ms", "Identificação cognitiva Go/No-Go do avanço real", "Disciplina de gatilho sob pressão de isca (Hick, 1952)"],
         ["Déficit de Latência do Peeker's Advantage", "40 – 90 ms", "Trânsito de pacotes RTT cliente-servidor + buffer de interpolação", "Vantagem de transmissão do atacante em movimento"],
         ["Janela Efetiva de Resposta Defensiva Líquida", "250 – 340 ms", "Latência visual combinada + compensação de déficit de rede", "Linha de base padrão para defensores em FPS táticos"],
-        ["Precisão de Elite na Marcação com Pré-Mira", "170 – 220 ms", "Espaçamento ótimo alinhado à velocidade do swing", "Maestria defensiva de alto nível (Valorant Radiante / CS2 Faceit 10)"]
+        ["Precisão Avançada na Marcação com Pré-Mira", "170 – 220 ms", "Espaçamento ótimo alinhado à velocidade do swing", "Marcação defensiva refinada; prática de pré-mira com espaçamento estável"]
       ],
       note: "Métricas sintetizadas a partir de estudos de cronometria cognitiva (Donders, 1868; Hick, 1952; Woods et al., 2015) e pesquisas de engenharia de rede em FPS táticos. Os tempos variam com a taxa de quadros da tela, taxa de amostragem do mouse e estado de alerta."
     },
@@ -295,6 +295,7 @@ export default function PortugueseAngleHoldPage() {
 
   const copyPt = {
     h1Prefix: null,
+    bottomCaption: "Mantenha a mira no canto e clique assim que o alvo aparecer.",
     h1Keyword: "Treino de mira",
     h1Suffix: " — posicionamento e ângulos",
     subtitle: "Treino de Marcação de Pixel e Defesa contra Peeker's Advantage",
@@ -326,7 +327,7 @@ export default function PortugueseAngleHoldPage() {
       {
         title: "Metodologia de Medição e Precisão do Sensor",
         paragraphs: [
-          "Angle Hold Pro utiliza a API HTML5 Pointer Lock e marcas de tempo de performance.now() para registrar latências de clique com a resolução de tempo do navegador (~1 ms), sem aceleração de ponteiro do sistema operacional."
+          "Angle Hold Pro utiliza a API HTML5 Pointer Lock e marcas de tempo de performance.now() para registrar latências de clique com a resolução de tempo do navegador (~1 ms)."
         ]
       }
     ]

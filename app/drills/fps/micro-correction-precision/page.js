@@ -272,7 +272,7 @@ export default function MicroCorrectionPage() {
       ]
     },
     steps: [
-      "Configure your exact game, DPI, and in-game sensitivity in the Session Settings modal to guarantee 1:1 cm/360 motor memory transfer, then engage Pointer Lock.",
+      "Configure your exact game, DPI, and in-game sensitivity in the Session Settings modal to keep your cm/360 motor memory consistent, then engage Pointer Lock.",
       "When a micro-target spawns, execute a swift primary flick toward the target boundary covering approximately 90% of the displacement.",
       "Apply immediate muscular braking near the target rim, execute a subtle sub-degree fingertip micro-adjustment onto the target center, confirm visual lock, and click.",
       "Review your mean latency, accuracy percentage, and combo retention in the post-session analytics to diagnose undershoot versus overshoot tendencies."

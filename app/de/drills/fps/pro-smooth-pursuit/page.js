@@ -140,7 +140,7 @@ export default function GermanProSmoothPursuitPage() {
         "name": "Was versteht man unter fovealem Blick-Voraus-Führen (Gaze Leading)?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Nach Land & McLeod (2000) blicken Eliteschützen nicht starr auf das Zentrum, sondern richten den fovealen Blick 2–5 Pixel vor die führende Kante des Zielobjekts. Dieses vorausschauende Führen erlaubt dem motorischen Kortex, bevorstehende Richtungsänderungen vorab zu planen."
+          "text": "Nach Land & McLeod (2000) blicken geübte Schützen nicht starr auf das Zentrum, sondern richten den fovealen Blick 2–5 Pixel vor die führende Kante des Zielobjekts. Dieses vorausschauende Führen erlaubt dem motorischen Kortex, bevorstehende Richtungsänderungen vorab zu planen."
         }
       },
       {
@@ -164,7 +164,7 @@ export default function GermanProSmoothPursuitPage() {
         "name": "Wie beeinflussen Monitor-Bildwiederholrate und Maus-Polling das Tracking?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Monitore mit 144 bis 360 Hz liefern kontinuierliche Bewegungsinformationen ohne störende Bewegungsunschärfe (Woods et al., 2015). Eine Mausabfragerate von 1000 Hz oder mehr garantiert verzögerungsfreie Sensorübertragung ohne störende Stufenbildung."
+          "text": "Monitore mit 144 bis 360 Hz liefern kontinuierliche Bewegungsinformationen ohne störende Bewegungsunschärfe (Woods et al., 2015). Eine Mausabfragerate von 1000 Hz oder mehr kann die Sensorübertragung glatter und gleichmäßiger machen."
         }
       },
       {
@@ -204,7 +204,7 @@ export default function GermanProSmoothPursuitPage() {
         "@type": "HowToStep",
         "position": 1,
         "name": "Sensitivität präzise einstellen",
-        "text": "Stelle DPI und Spielsensitivität in den Session-Optionen ein, um dein gewohntes 1:1-Muskelgedächtnis zu bewahren.",
+        "text": "Stelle DPI und Spielsensitivität in den Session-Optionen ein, um dein Muskelgedächtnis konsistent zu halten.",
         "url": "https://skilldrills.online/de/drills/fps/pro-smooth-pursuit#step-1"
       },
       {
@@ -244,7 +244,7 @@ export default function GermanProSmoothPursuitPage() {
       title: "Tracking-Verweildauer & Geschwindigkeits-Kompensations-Stufen",
       headers: ["Leistungsstufe", "Ziel-Verweildauer %", "Neuromuskulärer & Okulomotorischer Zustand", "Kompetitive Ingame-Bedeutung"],
       rows: [
-        ["Stufe 1 (Apex Beam)", "85 % – 95 %+", "Lückenlose foveale Fixation; perfekter Geschwindigkeitsabgleich in Wendepunkten ohne Korrektursakkaden", "Tödliches Strahl-Tracking auf Apex-Predator- und Top-500-Overwatch-Niveau"],
+        ["Stufe 1 (Apex Beam)", "85 % – 95 %+", "Lückenlose foveale Fixation; perfekter Geschwindigkeitsabgleich in Wendepunkten ohne Korrektursakkaden", "Fokus: gleichmäßiges Strahl-Tracking ohne Korrektursakkaden"],
         ["Stufe 2 (Kompetitiver Pro)", "72 % – 85 %", "Flüssige Unterarm-Modulation; sofortige Geschwindigkeitskompensation am Scheitelpunkt", "Gewinnt ausgedehnte High-TTK-1v1-Duelle gegen strafende Gegner mit hoher Waffen-Effizienz"],
         ["Stufe 3 (Fortgeschritten)", "58 % – 72 %", "Solides lineares Tracking; leichtes Zögern und 10–15 % Trackingverlust bei schnellen Richtungswechseln", "Kompetitive Tracking-Leistung; leichte Defizite bei extrem erratischen Mobility-Manövern"],
         ["Stufe 4 (Mittelstufe)", "42 % – 58 %", "Neigung zum Nachflicken statt Gleiten; Unterarm-Anspannung erzeugt Ruckler und Übersteuern", "Anfällig für agile Charaktere; häufige Abrisse des Trefferstrahls während des Sprays"],
@@ -278,7 +278,7 @@ export default function GermanProSmoothPursuitPage() {
       ]
     },
     steps: [
-      "Stelle deine gewohnte Ingame-Sensitivität und DPI ein, um 1:1-Hardware-Koordinaten zu wahren, und sperre den Zeiger.",
+      "Stelle deine gewohnte Ingame-Sensitivität und DPI ein, um deine Hand-zu-Cursor-Zuordnung konsistent zu halten, und sperre den Zeiger.",
       "Fixiere das leuchtende Zielmodell, sobald es seine harmonische Lissajous-Bahn über den Bildschirm beginnt.",
       "Gleite mit entspanntem Unterarm aus dem Ellbogen heraus und passe deine Geschwindigkeit nahtlos an die Kurven an.",
       "Baue deine kontinuierliche Trefferzeit auf, um den Combo-Multiplikator auf bis zu 3,0x zu steigern und alle 1400 Punkte aufzusteigen.",

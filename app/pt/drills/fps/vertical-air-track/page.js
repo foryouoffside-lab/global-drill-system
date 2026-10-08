@@ -151,7 +151,7 @@ export default function VerticalAirTrackPtPage() {
         "name": "O treino vertical tem impacto em Halo Infinite?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Sim, Halo Infinite utiliza man cannons, ganchos (grappleshot) e saltos com propulsores. O treino vertical garante o acerto de rajadas completas de Battle Rifle em Spartans no ar."
+          "text": "Sim, Halo Infinite utiliza man cannons, ganchos (grappleshot) e saltos com propulsores. O treino vertical ajuda a praticar o acerto de rajadas completas de Battle Rifle em Spartans no ar."
         }
       },
       {
@@ -232,8 +232,8 @@ export default function VerticalAirTrackPtPage() {
       title: "Padrões de Referência: Rastreamento Vertical e Tempo de Contato no Ar",
       headers: ["Nível Competitivo", "Tempo de Contato Útil", "Latência de Inversão", "Impacto em Partida Real"],
       rows: [
-        ["Tier 1 (Predator / Grão-Mestre / Pro)", "> 82% Uptime", "Abaixo de 180 ms", "Rastreamento laser em alvos em tirolesas e voo; transição perfeita no ápice da parábola"],
-        ["Tier 2 (Mestre Competitivo / Tier 2)", "70% – 82% Uptime", "180 – 230 ms", "Rastreamento constante; pequenas correções atrasadas quando o alvo inverte de direção"],
+        ["Tier 1 (Faixa Avançada)", "> 82% Uptime", "Abaixo de 180 ms", "Rastreamento laser em alvos em tirolesas e voo; transição perfeita no ápice da parábola"],
+        ["Tier 2 (Faixa Intermediária-Alta)", "70% – 82% Uptime", "180 – 230 ms", "Rastreamento constante; pequenas correções atrasadas quando o alvo inverte de direção"],
         ["Tier 3 (Diamante / Avançado)", "58% – 70% Uptime", "230 – 290 ms", "Bom controle na subida; perde o alvo com frequência na aceleração da queda livre"],
         ["Tier 4 (Platina / Ouro / Intermediário)", "45% – 58% Uptime", "290 – 360 ms", "Recorre a micro-flicks espasmódicos em vez de movimento suave contínuo no eixo Y"],
         ["Tier 5 (Prata / Bronze / Iniciante)", "< 45% Uptime", "Acima de 360 ms", "Bloqueio do pulso; retícula fica para trás de qualquer alvo em queda livre acelerada"]

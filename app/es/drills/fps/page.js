@@ -133,7 +133,7 @@ const faqSchema = {
       "name": "¿Cuántos minutos al día se debe practicar puntería para progresar de manera óptima?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "La neurociencia del aprendizaje motor demuestra que tras unos 30 o 35 minutos de práctica continua de motricidad fina, la fatiga neuromuscular reduce notablemente la consolidación del aprendizaje. Por ello, la rutina más efectiva consiste en sesiones concentradas de 15 a 25 minutos al día, de 4 a 6 días por semana. Las sesiones breves y de alta intensidad seguidas de un descanso adecuado promueven la mielinización de las conexiones neuronales, consolidando la memoria muscular con mayor rapidez que las maratones esporádicas de fin de semana."
+        "text": "La neurociencia del aprendizaje motor sugiere que tras unos 30 o 35 minutos de práctica continua de motricidad fina, la fatiga neuromuscular reduce notablemente la consolidación del aprendizaje. Por ello, la rutina más efectiva consiste en sesiones concentradas de 15 a 25 minutos al día, de 4 a 6 días por semana. Las sesiones breves seguidas de un descanso adecuado suelen resultar más llevaderas que las maratones esporádicas de fin de semana."
       }
     }
   ]

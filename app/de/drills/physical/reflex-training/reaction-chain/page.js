@@ -250,7 +250,7 @@ const howToSchema = {
       "@type": "HowToStep",
       "position": 4,
       "name": "Streak-Multiplikator sichern und 15.000 Punkte anvisieren",
-      "text": "Halten Sie die Bremspräzision über 45 Sekunden aufrecht, um den 3,0x Multiplikator zu halten und den Elite-Score zu knacken."
+      "text": "Halten Sie die Bremspräzision über 45 Sekunden aufrecht, um den 3,0x Multiplikator zu halten und einen hohen Score zu erreichen."
     }
   ]
 };

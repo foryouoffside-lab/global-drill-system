@@ -258,7 +258,7 @@ const wordRecallGuide = {
     title: "Baremes Normatifs de Rappel Libre de Mots (Population Adulte)",
     headers: ["Palier de Performance", "Mots Restitues (Liste de 15)", "Score Moyen", "Diagnostic Cognitif"],
     rows: [
-      ["Tier 1 (Elite / Memoire Remarquable)", "13 – 15 Mots", "1 800+ PTS", "Organisation semantique categorielle spontanee ; elimination de l affaissement central"],
+      ["Tier 1 (Palier Avance)", "13 – 15 Mots", "1 800+ PTS", "Organisation semantique categorielle spontanee ; elimination de l affaissement central"],
       ["Tier 2 (Superieur / Tres Bon Rappel)", "10 – 12 Mots", "1 400 – 1 799 PTS", "Usage efficace de l imagerie visuelle ; bonne preservation des mots du milieu"],
       ["Tier 3 (Moyenne Normative Standard)", "7 – 9 Mots", "900 – 1 399 PTS", "Courbe en U classique de Murdock (1962) ; primaute et recence nettement preservees"],
       ["Tier 4 (Sous la Moyenne / Effacement)", "5 – 6 Mots", "500 – 899 PTS", "Recuperation quasi exclusive des derniers mots presentes ; saturation rapide de la boucle"],

@@ -201,7 +201,7 @@ export default function TargetAcquisitionPage() {
         "@type": "HowToStep",
         "position": 1,
         "name": "Calibrate Raw Input Sensitivity",
-        "text": "Configure matching sensitivity and DPI in Session Settings to preserve 1:1 hardware coordinates."
+        "text": "Configure matching sensitivity and DPI in Session Settings to keep your hand-to-cursor mapping consistent."
       },
       {
         "@type": "HowToStep",
@@ -272,7 +272,7 @@ export default function TargetAcquisitionPage() {
       ]
     },
     steps: [
-      "Configure your exact game, DPI, and in-game sensitivity in Session Settings to preserve 1:1 hardware coordinates, then lock the pointer.",
+      "Configure your exact game, DPI, and in-game sensitivity in Session Settings to keep your hand-to-cursor mapping consistent, then lock the pointer.",
       "Anchor your eyes in a centered soft gaze, awaiting the multi-target cluster spawn across the display.",
       "Visually identify the brightest, highest-priority target in the set using parallel contrast pre-filtering.",
       "Execute a crisp ballistic flick to the target centroid and click to score +100 PTS (+0.4s bonus timer).",

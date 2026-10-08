@@ -224,7 +224,7 @@ const faqSchema = {
       "name": "¿Qué técnica es indispensable para superar los 17.000 puntos y alcanzar el rango Apex Bilateral?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Es vital la anticipación visual inmediata (gaze feedforward): en el milisegundo exacto en que el cursor entra en contacto con el nodo A, la mirada debe saltar al nodo B del extremo opuesto. Conservar el combo 3.0x ininterrumpidamente durante 45 segundos y sostener más del 92% de precisión en los niveles 12 a 15 garantiza el rango maestro."
+        "text": "Es vital la anticipación visual inmediata (gaze feedforward): en el milisegundo exacto en que el cursor entra en contacto con el nodo A, la mirada debe saltar al nodo B del extremo opuesto. Conservar el combo 3.0x ininterrumpidamente durante 45 segundos y sostener más del 92% de precisión en los niveles 12 a 15 corresponde al rango más alto de este drill."
       }
     },
     {

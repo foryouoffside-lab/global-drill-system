@@ -8,7 +8,7 @@ const CITATION = /Journal|Frontiers|University|Psychological Review|Neuroscience
 
 const sourceStrings = new Set(
   [...readFileSync('lib/drillSources.js', 'utf8').matchAll(/(?:title|venue|authors):\s*(["'`])((?:\\.|(?!\1).)*)\1/g)].map((m) =>
-    m[2].replace(/\\'/g, "'").replace(/&/g, '&amp;').slice(0, 70)
+    m[2].replace(/\\'/g, "'").replace(/&/g, '&amp;').replace(/'/g, '&#x27;').slice(0, 70)
   )
 );
 

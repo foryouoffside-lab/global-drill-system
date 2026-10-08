@@ -305,7 +305,7 @@ const guideProps = {
     items: [
       {
         title: 'Protocolo 1: Calibração de Ritmo Motor Halstead (Pivô MCP Relaxado)',
-        description: 'No clique padrão de dedo único, ancore o pulso levemente no mousepad e faça o movimento apenas na articulação do nó do dedo (junta MCP). Manter o antebraço descontraído evita tensão muscular e garante controle simultâneo da mira.',
+        description: 'No clique padrão de dedo único, ancore o pulso levemente no mousepad e faça o movimento apenas na articulação do nó do dedo (junta MCP). Manter o antebraço descontraído ajuda a evitar tensão muscular e favorece o controle da mira.',
       },
       {
         title: 'Protocolo 2: Intervalos de Sprint Todor-Kyprie (Descanso Rápido)',

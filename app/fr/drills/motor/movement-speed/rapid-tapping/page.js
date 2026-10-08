@@ -168,7 +168,7 @@ const faqSchema = {
       name: 'Comment la cadence de clic se transfère-t-elle aux jeux FPS ?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Dans les jeux de tir tactique, la régularité du tapping garantit une excellente cadence de tir semi-automatique (pistolets, fusils de précision) sans altérer la stabilité de la visée.',
+        text: 'Dans les jeux de tir tactique, la régularité du tapping favorise une bonne cadence de tir semi-automatique (pistolets, fusils de précision) sans altérer la stabilité de la visée.',
       },
     },
     {

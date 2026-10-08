@@ -252,7 +252,7 @@ const guideData = {
     title: "Orientierungswerte für visuelle Suche und selektive Aufmerksamkeit",
     headers: ["Leistungsstufe / Rang", "Erfolgreiche Treffer (45 Sek.)", "Mittlere Suchfixations-Latenz", "Rauschfilter-Genauigkeit", "Neurokognitive Verarbeitungsstufe"],
     rows: [
-      ["Stufe 1: Elite / Profi-Klasse", "18+ Treffer", "< 180 ms", "> 96%", "Perfekte Synthese aus paralleler Pop-out-Erkennung und zielgerichteter Top-Down-Suche (Wolfe, 2007)"],
+      ["Stufe 1: Höchste Übungsstufe", "18+ Treffer", "< 180 ms", "> 96%", "Perfekte Synthese aus paralleler Pop-out-Erkennung und zielgerichteter Top-Down-Suche (Wolfe, 2007)"],
       ["Stufe 2: Fortgeschrittene Suche", "14 – 17 Treffer", "180 – 230 ms", "88 – 95%", "Hocheffiziente Unterdrückung dynamischer Distraktoren und optimierter Quadranten-Rasterscan"],
       ["Stufe 3: Durchschnittliches Niveau", "10 – 13 Treffer", "230 – 300 ms", "76 – 87%", "Solide kognitive Verarbeitungsgeschwindigkeit; Kombination aus seriellem Abgleich und partieller Parallelerfassung"],
       ["Stufe 4: Anfänger-Niveau", "7 – 9 Treffer", "300 – 400 ms", "65 – 75%", "Erhöhte Ablenkbarkeit durch visuelles Rauschen; verzögerte Zielerfassung (Visual Clutter Latenz)"],

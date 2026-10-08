@@ -152,7 +152,7 @@ export default function FlowStateEsPage() {
         "name": "¿Qué sensibilidad de ratón es recomendable para el flow?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Utiliza tu sensibilidad habitual en juego con entrada directa sin aceleración. El objetivo del flow es consolidar la memoria muscular que empleas en competición real."
+          "text": "Utiliza tu sensibilidad habitual en juego. El objetivo del flow es consolidar la memoria muscular que empleas en competición real."
         }
       },
       {
@@ -207,7 +207,7 @@ export default function FlowStateEsPage() {
         "@type": "HowToStep",
         "position": 2,
         "name": "Activar Modo Pantalla Completa y Bloqueo de Puntero",
-        "text": "Haz clic en iniciar para capturar el ratón sin aceleración por software y con entrada de coordenadas 1:1.",
+        "text": "Haz clic en iniciar para capturar el ratón.",
         "url": "https://skilldrills.online/es/drills/fps/flow-state#step-2"
       },
       {
@@ -313,8 +313,8 @@ export default function FlowStateEsPage() {
       ]
     },
     steps: [
-      "Selecciona tu sensibilidad dentro del juego usando el selector universal para asegurar la transferencia 1:1 de memoria muscular.",
-      "Haz clic en 'Iniciar' para activar la pantalla completa con Pointer Lock directo y sin aceleración del ratón del sistema.",
+      "Selecciona tu sensibilidad dentro del juego usando el selector universal para practicar con una sensibilidad familiar.",
+      "Haz clic en 'Iniciar' para activar la pantalla completa con Pointer Lock.",
       "Fija la atención visual en el blanco móvil a medida que recorre curvas Bézier continuas y orgánicas por el lienzo.",
       "Mantén la retícula continuamente dentro del radio del objetivo para recargar la barra de Flow y entrar en la Zona.",
       "Sostén rachas ininterrumpidas de concentración para multiplicar tu puntuación y forjar una resistencia atencional a prueba de fatiga."

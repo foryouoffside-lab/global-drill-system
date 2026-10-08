@@ -163,7 +163,7 @@ export default function ConcentrationGridPageDe() {
         "name": "Welche Zeit auf einer 5x5 Schulte-Tabelle gilt als guter Richtwert?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Eine Zeit unter 30 Sekunden gilt als überdurchschnittlich gut. Elite-Leser und trainierte Athleten bewältigen ein 5x5-Gitter (Zahlen 1 bis 25) oft in unter 20 bis 25 Sekunden."
+          "text": "Eine Zeit unter 30 Sekunden ist ein sinnvolles Zwischenziel. Mit Übung lässt sich ein 5x5-Gitter (Zahlen 1 bis 25) oft in unter 20 bis 25 Sekunden bewältigen; die Werte sind redaktionelle Richtwerte, keine Normdaten."
         }
       },
       {
@@ -252,7 +252,7 @@ export default function ConcentrationGridPageDe() {
       title: "Schulte-Tabelle & Konzentrationsgitter Leistungsklassen (45-Sekunden-Lauf)",
       headers: ["Leistungsstufe", "Punktzahl (45s)", "Maximales Gitter", "Suchlatenz", "Neurokognitive Bewertung"],
       rows: [
-        ["S+ (Elite)", "8.000+ PTS", "7x7+ (49+ Felder)", "< 300 ms / Ziffer", "Weltklasse-Suchgeschwindigkeit, herausragende periphere Blickspanne und sofortige Rotationsinvarianz."],
+        ["S+ (Stufe 5)", "8.000+ PTS", "7x7+ (49+ Felder)", "< 300 ms / Ziffer", "Fokus: sehr schnelle Suche, weite periphere Blickspanne und Rotationsinvarianz."],
         ["S (Master)", "6.000 – 7.999 PTS", "6x6 (36 Felder)", "300 – 450 ms / Ziffer", "Exzellente visuelle Sucheffizienz; nahtloses parafoveales Caching und minimale Fixationspausen."],
         ["A (Fortgeschritten)", "4.500 – 5.999 PTS", "5x5 (25 Felder)", "450 – 600 ms / Ziffer", "Starke visuelle Feldverarbeitung; konsistente paarweise Vorausschau bei mittlerer Gitterdichte."],
         ["B (Kompetent)", "3.000 – 4.499 PTS", "4x4 (16 Felder)", "600 – 800 ms / Ziffer", "Überdurchschnittliche Suchdisziplin; gelegentliche zentrale Refixationspausen bei größeren Rastern."],

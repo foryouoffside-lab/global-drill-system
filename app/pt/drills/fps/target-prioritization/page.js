@@ -133,7 +133,7 @@ export default function TargetPrioritizationPtPage() {
         "name": "O que é o Tempo de Reação com Sinal de Parada (SSRT)?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "O SSRT (Logan & Cowan, 1984) mede o tempo necessário para cancelar uma ordem motora já iniciada. Em shooters, jogadores de elite conseguem abortar o clique em cerca de 200–240 ms ao perceberem que a mira estava indo para um aliado ou chamariz."
+          "text": "O SSRT (Logan & Cowan, 1984) mede o tempo necessário para cancelar uma ordem motora já iniciada. Em shooters, é possível abortar o clique em cerca de 200–240 ms ao perceberem que a mira estava indo para um aliado ou chamariz."
         }
       },
       {
@@ -196,7 +196,7 @@ export default function TargetPrioritizationPtPage() {
       {
         "@type": "HowToStep",
         "position": 1,
-        "name": "Calibrar Hardware e Sensibilidade 1:1",
+        "name": "Calibrar Hardware e Sensibilidade",
         "text": "Configure seu DPI e sensibilidade idênticos ao jogo principal nas opções da sessão para manter memória muscular precisa.",
         "url": "https://skilldrills.online/pt/drills/fps/target-prioritization#step-1"
       },
@@ -237,8 +237,8 @@ export default function TargetPrioritizationPtPage() {
       title: "Padrões Científicos de Avaliação de Ameaças e Latência de Decisão",
       headers: ["Nível de Desempenho", "Latência de Resolução", "Precisão de Prioridade", "Impacto Competitivo no Jogo"],
       rows: [
-        ["Tier 1 (Apex Commander / Radiant)", "<280 ms", "96% – 99%+", "Avaliação perfeita de ameaças; eliminação imediata do perigo principal com 0% de fogo amigo em avanços caóticos"],
-        ["Tier 2 (Mestre Competitivo / Pro Tier-2)", "280 – 340 ms", "90% – 96%", "Velocidade de decisão excepcional; rápida recuperação após escalada de alvos; menos de 1% de disparos errôneos"],
+        ["Tier 1 (Faixa Avançada)", "<280 ms", "96% – 99%+", "Avaliação perfeita de ameaças; eliminação imediata do perigo principal com 0% de fogo amigo em avanços caóticos"],
+        ["Tier 2 (Faixa Intermediária-Alta)", "280 – 340 ms", "90% – 96%", "Velocidade de decisão excepcional; rápida recuperação após escalada de alvos; menos de 1% de disparos errôneos"],
         ["Tier 3 (Diamante / Ascendente)", "340 – 420 ms", "82% – 90%", "Engajamento sólido de prioridades; hesitação leve de 60 a 90 ms quando alvos vermelhos e amarelos surgem próximos"],
         ["Tier 4 (Intermediário / Ouro / Platina)", "420 – 520 ms", "72% – 82%", "Vulnerável a disparos em pânico; por vezes atinge alvos verdes aliados ou atira em amarelos antes de limpar vermelhos"],
         ["Tier 5 (Iniciante / Disparo por Impulso)", ">520 ms", "<72%", "Erros frequentes de impulso; alto índice de fogo amigo; dificuldade em filtrar poluição visual durante retakes"]
@@ -271,7 +271,7 @@ export default function TargetPrioritizationPtPage() {
       ]
     },
     steps: [
-      "Configure seu jogo de preferência, DPI e sensibilidade exata nas opções de sessão para manter a paridade física 1:1.",
+      "Configure seu jogo de preferência, DPI e sensibilidade exata nas opções de sessão para ficar próximo do seu jogo habitual.",
       "Fixe a atenção no centro da tela e aguarde a aparição simultânea de alvos vermelhos, amarelos e verdes.",
       "Localize e elimine os alvos vermelhos de alta prioridade com disparos rápidos (+100 PTS / +0,4s de bônus).",
       "Neutralize os alvos amarelos intermediários (+50 PTS / +0,4s) antes que escalem para a cor vermelha.",

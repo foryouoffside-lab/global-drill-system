@@ -296,7 +296,7 @@ const jumpGuide = {
     title: "Grille d'Évaluation et Niveaux de Détente et Interception (5 Paliers)",
     headers: ["Palier / Rang", "Titre de Maîtrise", "Score Requis", "Vitesse Cible / Précision", "Mention Globale", "Profil Neuromoteur en Sustentation"],
     rows: [
-      ["Tier 1: Maître de Trajectoire Apex", "Apex Trajectory Master", "17 000+ points", "800 – 900 px/s / ≥ 92 %", "Grade S", "Anticipation gravitationnelle d'élite ; interception parfaite sur cibles ultra-rapides et maîtrise du cycle SSC (Komi 2000 ; Kawato 1999)"],
+      ["Tier 1: Maître de Trajectoire Apex", "Apex Trajectory Master", "17 000+ points", "800 – 900 px/s / ≥ 92 %", "Grade S", "Anticipation gravitationnelle avancée ; interception parfaite sur cibles ultra-rapides et maîtrise du cycle SSC (Komi 2000 ; Kawato 1999)"],
       ["Tier 2: Attaquant Aérien de Précision", "Precision Aerial Striker", "12 000 – 16 999 pts", "650 – 799 px/s / 84 – 91 %", "Grade A", "Excellent pilotage en vol par modèle cérébelleux ; régularité d'interception sur des sphères étroites de 15-18px"],
       ["Tier 3: Intercepteur de Saut Confirmé", "Skilled Jump Interceptor", "7 500 – 11 999 pts", "500 – 649 px/s / 75 – 83 %", "Grade B", "Niveau compétitif solide ; bon dosage de l'impulsion et transition rapide dès le retour au sol"],
       ["Tier 4: Navigateur Parabolique en Progrès", "Developing Parabola Navigator", "4 000 – 7 499 pts", "350 – 499 px/s / 65 – 74 %", "Grade C", "Moyenne fonctionnelle standard ; ruptures de série dues à des sauts trop amples sur des cibles basses"],

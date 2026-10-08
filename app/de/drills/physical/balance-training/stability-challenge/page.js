@@ -286,7 +286,7 @@ const stabilityGuideDe = {
     title: "Maus-Präzision & Stabilitäts-Benchmarks (5 Leistungsstufen)",
     headers: ["Leistungsstufe & Tier", "Rang-Titel", "Punkte-Benchmark", "Erreichtes Level", "Sicherheitszonen-Halterate", "Neuromuskuläres Profil"],
     rows: [
-      ["Tier 1: Apex Stabilisator", "Apex Stabilizer", "15.300+ Punkte", "Level 12 – 15", "> 94% Halterate", "Elite-Antagonisten-Ko-Kontraktion und präzise Mikrostopp-Kontrolle (Nashner & McCollum, 1985)"],
+      ["Tier 1: Apex Stabilisator", "Apex Stabilizer", "15.300+ Punkte", "Level 12 – 15", "> 94% Halterate", "Fortgeschrittene Antagonisten-Ko-Kontraktion und präzise Mikrostopp-Kontrolle (Nashner & McCollum, 1985)"],
       ["Tier 2: Meister-Anker", "Master Anchor", "12.000 – 15.299 Punkte", "Level 9 – 11", "86 – 93% Halterate", "Exzellente Vektor-Kompensation und unerschütterliche Fadenkreuz-Zentrierung (Winter, 1995)"],
       ["Tier 3: Erfahrener Konterer", "Proficient Counterer", "9.500 – 11.999 Punkte", "Level 6 – 8", "75 – 85% Halterate", "Gehobener Wettkampf-Standard mit verlässlicher Gleichgewichtskontrolle und schneller Rückkehr"],
       ["Tier 4: Intermediärer Kern", "Intermediate Core", "6.000 – 9.499 Punkte", "Level 3 – 5", "60 – 74% Halterate", "Vorübergehendes Abdriften bei Kraftspitzen, gezieltes Unterarm-Bremstraining empfohlen"],
@@ -320,7 +320,7 @@ const stabilityGuideDe = {
     ]
   },
   steps: [
-    "Passe deine Ingame-Empfindlichkeit und DPI 1:1 an und aktiviere den Pointer Lock.",
+    "Passe deine Ingame-Empfindlichkeit und DPI konsistent an und aktiviere den Pointer Lock.",
     "Positioniere das Fadenkreuz im grünen zentralen Sicherheitskreis.",
     "Sobald die Windkraft das Fadenkreuz verschiebt, führe die Maus mit sanfter Gegenkraft in die entgegengesetzte Richtung.",
     "Halte das Fadenkreuz im Ring, um den Combo-Multiplikator auf bis zu 3.0x zu maximieren.",

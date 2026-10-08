@@ -171,7 +171,7 @@ const faqSchema = {
       "name": "O treino com N-Back pode melhorar a inteligência fluida (QI)?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "O estudo de Jaeggi et al. (2008, PNAS) comprovou que o treino adaptativo com N-back proporcionou ganhos significativos na inteligência fluida (Gf) medida por matrizes de raciocínio lógico."
+        "text": "Jaeggi et al. (2008, PNAS) relataram ganhos em matrizes de raciocínio após treino adaptativo com N-back, mas as replicações têm resultados mistos e este treino não garante ganhos de inteligência."
       }
     },
     {
@@ -261,13 +261,13 @@ const guidePt = {
     "Este exercício é um jogo de navegador gratuito voltado ao treino e interesse cognitivo. Não é um dispositivo médico nem um teste de diagnóstico clínico."
   ],
   metrics: [
-    { label: "Nível N-Back Máximo", desc: "Maior profundidade atingida (3-Back referência, 4-Back avançado, 5-Back+ elite)." },
+    { label: "Nível N-Back Máximo", desc: "Maior profundidade atingida (3-Back referência, 4-Back avançado, 5-Back+ muito avançado)." },
     { label: "Pontuação Total", desc: "Total acumulado durante os 45 segundos (+150 PTS por acerto, sem penalidade)." },
     { label: "Acurácia de Julgamento", desc: "Percentual de decisões corretas frente a erros de falso alarme e omissão." },
     { label: "Velocidade de Atualização", desc: "Rapidez decisória e latência de resposta durante a apresentação dos estímulos." }
   ],
   benchmarks: [
-    { tier: "Faixa 1: Domínio avançado", range: "4-Back a 5-Back+ (1.200+ Pontos)", desc: "Controle executivo de elite; fila FIFO mental de 4 a 5 itens; latência inferior a 600 ms; acurácia superior a 92%." },
+    { tier: "Faixa 1: Domínio avançado", range: "4-Back a 5-Back+ (1.200+ Pontos)", desc: "Controle executivo avançado; fila FIFO mental de 4 a 5 itens; latência inferior a 600 ms; acurácia superior a 92%." },
     { tier: "Faixa 2: Avançada", range: "3-Back sólido com transição a 4-Back (900 – 1.199 Pontos)", desc: "Supera a média adulta; atualização 3-back contínua com poucas intrusões; acurácia de 80% a 91%." },
     { tier: "Faixa 3: Sólida", range: "3-Back Estável (600 – 899 Pontos)", desc: "Padrão adulto normativo (Kirchner, 1958); mantém buffer de 3 itens com falhas ocasionais; acurácia de 65% a 79%." },
     { tier: "Faixa 4: Em desenvolvimento", range: "3-Back Instável (400 – 599 Pontos)", desc: "Dificuldade na atualização contínua de 3 itens; confusão com itens de 2 passos atrás; acurácia de 50% a 64%." },
@@ -277,7 +277,7 @@ const guidePt = {
     { title: "Wayne K. Kirchner (1958): Criação do paradigma N-Back", body: "Propôs a tarefa para avaliar os efeitos do envelhecimento na retenção de estímulos em rápida alteração." },
     { title: "Alan Baddeley (1986, 2000): Controle pelo Executivo Central", body: "No modelo multicomponente, N-back exige coordenação entre alça fonológica e córtex pré-frontal." },
     { title: "Adele Diamond (2013): Tríade das Funções Executivas", body: "Definiu atualização de memória operacional, controle inibitório e flexibilidade cognitiva como base." },
-    { title: "Susanne M. Jaeggi et al. (2008): Ganhos em inteligência fluida", body: "Demonstrou que o treino adaptativo de N-back gera ganhos no raciocínio abstrato e inteligência fluida." },
+    { title: "Susanne M. Jaeggi et al. (2008): Ganhos em inteligência fluida", body: "Relatou ganhos no raciocínio abstrato e na inteligência fluida após treino adaptativo de N-back; replicações têm resultados mistos." },
     { title: "Nelson Cowan (2001): Limite de capacidade 4±1", body: "Identificou que o foco consciente processa cerca de 4 blocos não agrupados de informação." },
     { title: "David L. Woods et al. (2015): Cronometria cognitiva padronizada", body: "Estabeleceu critérios rigorosos para métricas de tempo de reação e d' em exames computadorizados." }
   ],

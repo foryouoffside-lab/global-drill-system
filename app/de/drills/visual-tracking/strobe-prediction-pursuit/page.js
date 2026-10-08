@@ -266,7 +266,7 @@ const guide = {
     title: "Bewertungsstandards für stroboskopisches Tracking & Extrapolation",
     headers: ["Leistungsstufe", "Geschwindigkeit", "Landeversatz beim Aufblitzen", "Geschwindigkeitserhalt in Dunkelphase", "Einordnung"],
     rows: [
-      ["Elite / Voll adaptiert (Elite)", "3,5x bis 5,0x+", "Versatz < 12px (exakt im Zentrum)", "Geschwindigkeitsabfall 0% (perfekt gehalten)", "Stufe 1"],
+      ["Höchste Übungsstufe / Voll adaptiert", "3,5x bis 5,0x+", "Versatz < 12px (exakt im Zentrum)", "Geschwindigkeitsabfall 0% (perfekt gehalten)", "Stufe 1"],
       ["Master / Hohe Extrapolation (Master)", "2,5x bis 3,5x", "Versatz < 25px (sofortige Mikrosakkade)", "Geschwindigkeitsabfall < 15%", "Stufe 2"],
       ["Advanced / Wettkampfniveau (Advanced)", "1,8x bis 2,5x", "Versatz < 45px (rasche Re-Akquisition)", "Geschwindigkeitsabfall < 30%", "Stufe 3"],
       ["Intermediate / Grundstufe (Intermediate)", "1,2x bis 1,8x", "Versatz 45 bis 80px (Augen stoppen teils)", "Geschwindigkeitsabfall > 50%", "Stufe 4"],

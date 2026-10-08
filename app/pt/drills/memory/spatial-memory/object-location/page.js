@@ -246,7 +246,7 @@ export default function LocalizedObjectLocationPage() {
                 "Faixa 1",
                 "Nível 8 – 10+ (8–10+ objetos, grade 6x6–7x7)",
                 "1.000+ Pontos",
-                "Desempenho visoespacial de elite; domina varredura por quadrantes e ancoragem em marcos; retém 8+ pares objeto-posição com facilidade; resposta em < 500 ms"
+                "Desempenho visoespacial avançado; domina varredura por quadrantes e ancoragem em marcos; retém 8+ pares objeto-posição com facilidade; resposta em < 500 ms"
         ],
         [
                 "Faixa 2",

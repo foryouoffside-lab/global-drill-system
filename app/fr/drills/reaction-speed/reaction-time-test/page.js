@@ -241,7 +241,7 @@ const faqSchema = {
       "name": "Les athlètes de disciplines traditionnelles peuvent-ils tirer profit de ce test ?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Absolument. Les pilotes de sports mécaniques (Formule 1, moto), les boxeurs, les escrimeurs et les joueurs de sports de raquette (tennis de table, badminton) utilisent ces protocoles visuels pour affûter le recrutement des unités motrices rapides et la vigilance réflexe."
+        "text": "Il peut servir de pratique complémentaire pour la vigilance et les réflexes, par exemple en sports de raquette ou de combat, sans garantie de transfert hors de l’écran."
       }
     },
     {

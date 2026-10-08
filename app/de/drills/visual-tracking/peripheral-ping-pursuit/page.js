@@ -226,7 +226,7 @@ const guideProps = {
     title: "Standard-Benchmarks für Peripheres Gesichtsfeld & Reaktionslatenz (UFOV & Latenz)",
     headers: ["Leistungsstufe", "Nutzbares Gesichtsfeld (UFOV %)", "Reaktionszeit am Rand", "Blickstabilität", "Lesehilfe"],
     rows: [
-      ["Elite", "Über 92%", "Unter 280 ms", "Über 95%", "Perfekte foveale Entkopplung & maximale periphere Sensitivität"],
+      ["Höchste Übungsstufe", "Über 92%", "Unter 280 ms", "Über 95%", "Perfekte foveale Entkopplung & maximale periphere Sensitivität"],
       ["Meister", "85% – 92%", "280 ms – 340 ms", "90% – 95%", "Exzellente Aufmerksamkeitsverteilung & minimale Latenzen"],
       ["Diamant", "75% – 84%", "341 ms – 410 ms", "82% – 89%", "Solide Leistung bei zwei Aufgaben; bei höherem Tempo können Randreize übersehen werden"],
       ["Gold", "60% – 74%", "411 ms – 500 ms", "70% – 81%", "Verzögerte Reizweiterleitung & gelegentliche Blickabrisse"],

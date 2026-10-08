@@ -181,10 +181,10 @@ export default function KoreanAngleHoldPage() {
       },
       {
         "@type": "Question",
-        "name": "이 도구는 브라우저에서 하드웨어 마우스 로우 인풋을 지원하나요?",
+        "name": "이 도구는 브라우저에서 Pointer Lock을 지원하나요?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "네. HTML5 Pointer Lock API를 통해 운영체제 및 브라우저의 마우스 가속을 배제한 1:1 하드웨어 입력을 제공합니다. 모든 클릭 시간은 performance.now() 고해상도 타이머로 정밀 측정됩니다. 보안상 브라우저 타이머는 약 1ms로 반올림되며 디스플레이 주사율 오차를 감안할 때 5ms 미만의 차이는 측정 노이즈로 간주됩니다."
+          "text": "네. HTML5 Pointer Lock API를 통해 마우스 상대 이동량을 읽어 입력을 처리합니다. 모든 클릭 시간은 performance.now() 고해상도 타이머로 정밀 측정됩니다. 보안상 브라우저 타이머는 약 1ms로 반올림되며 디스플레이 주사율 오차를 감안할 때 5ms 미만의 차이는 측정 노이즈로 간주됩니다."
         }
       }
     ]

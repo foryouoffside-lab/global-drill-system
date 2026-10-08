@@ -201,7 +201,7 @@ export default function AntiZigzagDePage() {
         "@type": "HowToStep",
         "position": 1,
         "name": "Mausempfindlichkeit kalibrieren",
-        "text": "Stimme deine Spiel-Sensitivität in den Session-Einstellungen ab, um 1:1-Hardwarekoordinaten für dein Muskelgedächtnis zu sichern.",
+        "text": "Stimme deine Spiel-Sensitivität in den Session-Einstellungen ab, um deine Hand-zu-Cursor-Zuordnung für dein Muskelgedächtnis konsistent zu halten.",
         "url": "https://skilldrills.online/de/drills/fps/anti-zigzag-movement-trainer#step-1"
       },
       {
@@ -232,8 +232,8 @@ export default function AntiZigzagDePage() {
     heading: "Aim Trainer für Zickzack-Tracking und Ausweichbewegungen",
     intro: [
       "Ein Aim Trainer für Zickzack-Tracking übt, das Fadenkreuz bei unberechenbaren Ausweichbewegungen und Slide-Cancels auf dem Ziel zu halten. Dieser Drill misst Richtungswechsel, Overshoot-Kontrolle und Tracking-Uptime für Apex, Valorant und Warzone.",
-      "Der fundamentale mechanische Fehler ungeübter Schützen bei Ausweichbewegungen ist das Über-Flicken hinter den äußeren Scheitelpunkten der gegnerischen Kurve. Führt ein Gegner ein Zickzack-Muster in V-Form aus, fällt seine Geschwindigkeit am äußeren Umkehrpunkt für einen Sekundenbruchteil auf null ab, bevor er beschleunigt zurück durch die Mitte zieht. Wer versucht, den Wendepunkt hektisch zu jagen, überschießt unweigerlich und gerät in antagonistische Muskelblockaden. Elite-Tracker nutzen stattdessen das 'V-Crossover-Anchoring': Sie verankern ihren visuellen Fokus nahe der Mittelachse und vollziehen feine, geschwindigkeitsangepasste Mikro-Korrekturen, während der Gegner durch das Fadenkreuz zurückkehrt.",
-      "Der Anti-Zigzag Aim Trainer läuft direkt im modernen Webbrowser über die HTML5 Pointer Lock API mit nativer 1:1-Hardwareübertragung, performance.now()-Chronometrie und ohne künstliche Mausglättung. Durch die Minimierung von USB-Abfrage-Jitter (Woods et al., 2015) und das Trainieren kontinuierlicher Dwell-Time-Schadensmechaniken gegen steigende Zickzack-Frequenzen konditioniert diese Übung die notwendige sensomotorische Ruhe, um Panik-Flicks abzubauen und Ausweichduelle souverän zu dominieren.",
+      "Der fundamentale mechanische Fehler ungeübter Schützen bei Ausweichbewegungen ist das Über-Flicken hinter den äußeren Scheitelpunkten der gegnerischen Kurve. Führt ein Gegner ein Zickzack-Muster in V-Form aus, fällt seine Geschwindigkeit am äußeren Umkehrpunkt für einen Sekundenbruchteil auf null ab, bevor er beschleunigt zurück durch die Mitte zieht. Wer versucht, den Wendepunkt hektisch zu jagen, überschießt unweigerlich und gerät in antagonistische Muskelblockaden. Geübte Tracker nutzen stattdessen das 'V-Crossover-Anchoring': Sie verankern ihren visuellen Fokus nahe der Mittelachse und vollziehen feine, geschwindigkeitsangepasste Mikro-Korrekturen, während der Gegner durch das Fadenkreuz zurückkehrt.",
+      "Der Anti-Zigzag Aim Trainer läuft direkt im modernen Webbrowser über die HTML5 Pointer Lock API zur Mauserfassung und performance.now()-Chronometrie; unbeschleunigte Eingabe wird nicht angefordert, daher solltest du die Zeigerbeschleunigung des Betriebssystems ausschalten. Durch die Minimierung von USB-Abfrage-Jitter (Woods et al., 2015) und das Trainieren kontinuierlicher Dwell-Time-Schadensmechaniken gegen steigende Zickzack-Frequenzen konditioniert diese Übung die notwendige sensomotorische Ruhe, um Panik-Flicks abzubauen und Ausweichduelle souverän zu dominieren.",
       "Messmethodik: Alle Tracking-Ereignisse werden clientseitig über die performance.now()-Hochpräzisionsuhr deines Browsers erfasst – absolut verzögerungsfrei ohne Server-Latenzen. Zu berücksichtigen: Browser runden Zeitstempel aus Sicherheitsgründen (Spectre-Schutz) auf ca. 1 ms; Bildschirme quantisieren visuelle Reize über die Bildwiederholrate (16,7 ms bei 60 Hz, 6,9 ms bei 144 Hz, 4,1 ms bei 240 Hz). Die USB-Abfragerate fügt bei 1000 Hz ca. 1 ms hinzu. Latenzunterschiede unter 5 ms stellen messtechnisches Rauschen dar; vergleiche Trainingsläufe stets auf identischer Hardware."
     ],
     benchmarks: {
@@ -244,7 +244,7 @@ export default function AntiZigzagDePage() {
         ["Antagonistische Bremsung & Umvektorierung", "85 – 135 ms", "Kortikospinaler Impuls an Unterarm-Beuger/Thenarmuskeln; Stoppen der Trägheit", "Physische Zeit zum Abstoppen des Mausvektors und Einleiten der Gegenrichtung"],
         ["Foveale Re-Zentrierung & Korridor-Ausrichtung", "65 – 105 ms", "Korrektive Mikro-Sakkade und Handgelenksartikulation zur Fadenkreuz-Bindung", "Wiederherstellen des Dwell-Kontakts auf der Hitbox zur Schadensreaktivierung"],
         ["Unvorbereitetes Gesamtreaktionsfenster", "310 – 450 ms", "Gesamtdauer vom unvorhersehbaren Zickzack-Flip bis zum bestätigten Dwell-Lock", "Natürlicher Latenzverlust, in dem Projektilschaden bei Ausweichbewegungen einbricht"],
-        ["Elite Reaktives Ausweichtracking", "215 – 295 ms", "Antizipatorische Geschwindigkeitsanpassung & entspannte Muskelkontrolle im V-Korridor", "Meisterschaftsniveau von Apex Predators und Call of Duty Warzone Profis"]
+        ["Stufe 4: Reaktives Ausweichtracking", "215 – 295 ms", "Antizipatorische Geschwindigkeitsanpassung & entspannte Muskelkontrolle im V-Korridor", "Fokus: Geschwindigkeitswechsel im V-Korridor früh antizipieren"]
       ],
       note: "Metriken synthetisiert aus okulomotorischer Forschung (Rashbass, 1961; Krauzlis, 2004), Lenkgesetzen (Accot & Zhai, 1997; Fitts, 1954) und digitaler Chronometrie (Woods et al., 2015)."
     },
@@ -274,7 +274,7 @@ export default function AntiZigzagDePage() {
       ]
     },
     steps: [
-      "Stimme In-Game-Sensitivität und DPI in den Session-Einstellungen ab, um 1:1-Hardwarekoordinaten zu sichern.",
+      "Stimme In-Game-Sensitivität und DPI in den Session-Einstellungen ab, um deine Hand-zu-Cursor-Zuordnung konsistent zu halten.",
       "Klicke auf Start, um den Vollbildmodus zu aktivieren und den Hardware-Mauszeiger ohne Glättung zu sperren.",
       "Fixiere deinen Blick auf der Zielkugel, während sie schnelle, mehrachsige Zickzack-Muster ausführt.",
       "Halte dauerhaften Fadenkreuzkontakt auf dem Zielkörper und konzentriere dich auf die zentrale V-Achse.",

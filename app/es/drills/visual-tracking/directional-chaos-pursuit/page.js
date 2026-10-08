@@ -188,7 +188,7 @@ const faqSchema = {
       "name": "¿Por qué es crucial mantener la cabeza inmóvil durante el entrenamiento?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Mover la cabeza activa el reflejo vestíbulo-ocular (RVO) guiado por el oído interno, anulando el esfuerzo de los músculos oculares. Fijar la cabeza garantiza que los seis músculos extraoculares soporten toda la carga neuromuscular del ejercicio."
+        "text": "Mover la cabeza activa el reflejo vestíbulo-ocular (RVO) guiado por el oído interno, anulando el esfuerzo de los músculos oculares. Fijar la cabeza hace que los músculos extraoculares asuman más carga del ejercicio."
       }
     },
     {
@@ -245,7 +245,7 @@ const guideProps = {
     title: "Estándares de Rendimiento en Seguimiento Caótico y Recuperación Sacádica",
     headers: ["Nivel de Rendimiento", "Multiplicador de Velocidad", "Tiempo de Refijación y Estabilidad Ocular", "Perfil Neuromotor y Oculomotor"],
     rows: [
-      ["Nivel 1: Apex Reactivo – Reflejos de Élite", "2.0x+ Ultra-Velocidad", "La sacada de corrección impacta al instante del quiebre; fijación suave y continua sin oscilaciones sobre el nuevo vector.", "Máxima velocidad de conducción sináptica entre retina periférica y núcleos motores oculares. Nivel profesional para esports y deportes de alta dinámica."],
+      ["Nivel 1: Apex Reactivo – Reflejos Avanzados", "2.0x+ Ultra-Velocidad", "La sacada de corrección impacta al instante del quiebre; fijación suave y continua sin oscilaciones sobre el nuevo vector.", "Máxima velocidad de conducción sináptica entre retina periférica y núcleos motores oculares."],
       ["Nivel 2: Recuperación Sacádica Superior", "1.4x – 1.9x Alta Velocidad", "Recentrado veloz con mínimo sobreimpulso oscilatorio; retoma la persecución suave en menos de 180 ms.", "Excelente control de los músculos extraoculares. Gran adaptabilidad a cambios bruscos de dirección y ritmo."],
       ["Nivel 3: Estándar Funcional Sólido", "1.0x – 1.3x Velocidad Estándar", "Seguimiento fiable a velocidad normal; ligero retardo de latencia en rebotes con ángulos muy agudos.", "Rango habitual de adultos sanos. Totalmente suficiente para conducción vial, deportes de recreo y videojuegos."],
       ["Nivel 4: Refijación Tardía – Requiere Práctica", "0.7x – 0.9x Velocidad Moderada", "El blanco escapa habitualmente del área foveal; se requieren varias sacadas sucesivas para reenganchar la trayectoria.", "Latencia sensoriomotora aumentada ante giros imprevistos. Se recomienda consolidar la motilidad en velocidades más lentas."],

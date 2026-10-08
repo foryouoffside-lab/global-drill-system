@@ -152,7 +152,7 @@ export default function FlowStateFrPage() {
         "name": "Quelle sensibilité de souris choisir pour travailler le flow ?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Utilisez votre sensibilité réelle en jeu sans accélération logicielle. Le travail du flow sert à consolider la mémoire musculaire exploitée lors de vos véritables matches compétitifs."
+          "text": "Utilisez votre sensibilité réelle en jeu. Le travail du flow sert à consolider la mémoire musculaire exploitée lors de vos véritables matches compétitifs."
         }
       },
       {
@@ -313,8 +313,8 @@ export default function FlowStateFrPage() {
       ]
     },
     steps: [
-      "Sélectionnez votre sensibilité de jeu habituelle via le sélecteur universel pour garantir un transfert 1:1 de votre mémoire musculaire.",
-      "Cliquez sur 'Lancer' pour activer le plein écran avec verrouillage direct du pointeur (Pointer Lock) sans accélération de la souris.",
+      "Sélectionnez votre sensibilité de jeu habituelle via le sélecteur universel pour vous entraîner avec une sensibilité familière.",
+      "Cliquez sur 'Lancer' pour activer le plein écran avec verrouillage du pointeur (Pointer Lock).",
       "Fixez votre attention visuelle sur la cible en mouvement le long de courbes de Bézier continues et fluides.",
       "Maintenez le réticule au centre de la cible pour charger la jauge de Flow et entrer dans la Zone.",
       "Enchaînez des séries de concentration ininterrompues pour multiplier vos points et forger une endurance mentale résistante à la fatigue.",

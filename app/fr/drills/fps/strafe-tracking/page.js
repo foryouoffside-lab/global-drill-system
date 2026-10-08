@@ -156,10 +156,10 @@ export default function StrafeTrackingFrPage() {
       },
       {
         "@type": "Question",
-        "name": "En quoi le Raw Input sans accélération optimise-t-il la lecture des strafes ?",
+        "name": "Pourquoi une sensibilité constante aide-t-elle à lire les strafes ?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Le raw input transmet le déplacement de la souris sans accélération logicielle, ce qui rend le rapport entre geste et mouvement du curseur plus régulier. C'est utile pour comparer vos séances et pour reproduire la sensation de votre jeu."
+          "text": "Un rapport stable entre le geste et le mouvement du curseur rend les séances plus faciles à comparer. C'est utile pour comparer vos séances et pour reproduire la sensation de votre jeu."
         }
       },
       {
@@ -199,7 +199,7 @@ export default function StrafeTrackingFrPage() {
         "@type": "HowToStep",
         "position": 1,
         "name": "Étalonner sa Sensibilité en Jeu",
-        "text": "Configurez votre sensibilité et vos DPI dans les réglages de session pour reproduire un rapport 1:1 parfait et verrouiller le curseur.",
+        "text": "Configurez votre sensibilité et vos DPI dans les réglages de session pour retrouver votre rapport habituel et verrouiller le curseur.",
         "url": "https://skilldrills.online/fr/drills/fps/strafe-tracking#step-1"
       },
       {
@@ -245,7 +245,7 @@ export default function StrafeTrackingFrPage() {
         ["Palier 4 (En progression)", "42% – 58%", "270 – 330 ms", "Anticipation excessive récurrente ; le viseur dépasse la cible avant de se corriger"],
         ["Palier 5 (Débutant)", "<42%", ">330 ms", "Corrections heurtées ; difficulté à soutenir la vitesse latérale ; le réticule reste en retard"]
       ],
-      note: "Repères éditoriaux propres à cet exercice, sans lien avec un rang en jeu ni norme de population. Le pourcentage sur cible correspond au temps de contact effectif divisé par la durée active du drill ; la latence d'inversion mesure le délai entre le changement de trajectoire de la cible et la réacquisition du réticule avec raw input (Woods et al., 2015)."
+      note: "Repères éditoriaux propres à cet exercice, sans lien avec un rang en jeu ni norme de population. Le pourcentage sur cible correspond au temps de contact effectif divisé par la durée active du drill ; la latence d'inversion mesure le délai entre le changement de trajectoire de la cible et la réacquisition du réticule (Woods et al., 2015)."
     },
     techniques: {
       title: "Protocoles Fondés sur la Science pour le Strafe Tracking Réactif",
@@ -273,7 +273,7 @@ export default function StrafeTrackingFrPage() {
       ]
     },
     steps: [
-      "Indiquez votre jeu de référence, votre sensibilité et vos DPI dans les réglages de session pour assurer une parité 1:1 et verrouiller le curseur.",
+      "Indiquez votre jeu de référence, votre sensibilité et vos DPI dans les réglages de session pour retrouver votre rapport habituel et verrouiller le curseur.",
       "Concentrez votre regard sur la cible lumineuse dès qu'elle entame ses déplacements latéraux imprévisibles.",
       "Accompagnez la cible par un balayage fluide de l'avant-bras, en synchronisant la vitesse horizontale sans marquer d'arrêt.",
       "Restez au contact de la cible pour faire grimper le multiplicateur de combo jusqu'à 3,0x et franchir des paliers tous les 1400 points.",

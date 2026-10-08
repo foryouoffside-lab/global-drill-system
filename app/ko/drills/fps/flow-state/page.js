@@ -185,7 +185,7 @@ export default function FlowStateKoPage() {
         "name": "이 훈련이 학업이나 업무의 딥워크(Deep Work)에도 도움이 되나요?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "네. 지속적 주의력은 도메인을 초월하는 일반 인지 자원입니다. 시각적 산만함을 억제하고 대상에 깊이 침잠하는 훈련은 코딩, 독서, 연구 등 장시간 지적 집중 작업의 지구력 향상에 그대로 전이됩니다."
+          "text": "네. 시각적 산만함을 억제하고 대상에 깊이 침잠하는 훈련은 코딩, 독서, 연구 등 장시간 지적 집중 작업의 지구력 향상에 도움이 될 수 있습니다."
         }
       }
     ]
@@ -201,14 +201,14 @@ export default function FlowStateKoPage() {
         "@type": "HowToStep",
         "position": 1,
         "name": "마우스 감도 설정",
-        "text": "세션 설정에서 플레이하는 주력 게임의 감도를 일치시켜 1:1 근육 기억을 확보합니다.",
+        "text": "세션 설정에서 플레이하는 주력 게임의 감도를 일치시켜 근육 기억 정착에 도움이 됩니다.",
         "url": "https://skilldrills.online/ko/drills/fps/flow-state#step-1"
       },
       {
         "@type": "HowToStep",
         "position": 2,
-        "name": "전체화면 RAW 포인터 락 모드 진입",
-        "text": "시작 버튼을 클릭하여 윈도우 마우스 가속이 차단된 1:1 하드웨어 좌표 입력 상태로 진입합니다.",
+        "name": "전체화면 포인터 락 모드 진입",
+        "text": "시작 버튼을 클릭하여 전체화면 포인터 락 상태로 진입합니다.",
         "url": "https://skilldrills.online/ko/drills/fps/flow-state#step-2"
       },
       {
@@ -236,7 +236,7 @@ export default function FlowStateKoPage() {
     statAccuracy: "트래킹 정확도",
     statBestScore: "최고 점수",
     startTitle: "플로우 상태 에임 연습",
-    startSubtitle: "하드웨어 RAW 입력 • 주의집중 지구력 • 무한 난이도",
+    startSubtitle: "포인터 락 입력 • 주의집중 지구력 • 무한 난이도",
     getReady: "준비",
     pausedTitle: "몰입 일시 정지됨",
     pausedSubtitle: "클릭하여 계속하기 (마우스 포인터 락이 다시 켜집니다)",
@@ -297,8 +297,8 @@ export default function FlowStateKoPage() {
       ]
     },
     steps: [
-      "인게임 감도 변환기에서 본인이 사용하는 감도를 세팅하여 1:1 근육 기억을 유지합니다.",
-      "‘시작하기’를 눌러 마우스 가속이 배제된 전체화면 RAW 포인터 락 모드로 진입합니다.",
+      "인게임 감도 변환기에서 본인이 사용하는 감도를 세팅하여 근육 기억 정착에 도움이 됩니다.",
+      "‘시작하기’를 눌러 전체화면 포인터 락 모드로 진입합니다.",
       "유기적인 베지에 곡선을 그리며 이동하는 타겟의 진행 방향에 시선을 집중합니다.",
       "타겟 반경 안에 조준선을 지속 밀착시켜 플로우 게이지를 채우고 몰입 구역에 돌입합니다.",
       "끊김 없는 집중 체인을 이어가며 점수 배수를 극대화하고 강력한 인지 집중 지구력을 완성하세요."

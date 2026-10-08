@@ -213,7 +213,7 @@ const faqSchema = {
       "name": "Le N-Back permet-il d augmenter l intelligence fluide ?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "L etude retentissante de Susanne Jaeggi et al. (2008) a demontre un transfert significatif vers le raisonnement matriciel non verbal (intelligence fluide Gf) apres un entrainement adaptatif et intensif au Dual N-Back."
+        "text": "Susanne Jaeggi et al. (2008) ont rapporte un transfert vers le raisonnement matriciel non verbal (intelligence fluide Gf) apres un entrainement adaptatif au Dual N-Back, mais les replications donnent des resultats mixtes et aucun gain n est garanti."
       }
     },
     {
@@ -303,7 +303,7 @@ const guideFr = {
     "Ce drill est un jeu en ligne gratuit destiné à l'entraînement et à la curiosité cognitive. Il ne constitue en aucun cas un dispositif médical, un instrument d'évaluation clinique ou un protocole thérapeutique. Si vous avez des inquiétudes concernant votre mémoire ou vos facultés cognitives, veuillez consulter un professionnel de santé qualifié."
   ],
   metrics: [
-    { label: "Niveau N-Back maximal", desc: "Plus haut palier de profondeur atteint dans la session (3-Back fondamental, 4-Back avancé, 5-Back+ élite)." },
+    { label: "Niveau N-Back maximal", desc: "Plus haut palier de profondeur atteint dans la session (3-Back fondamental, 4-Back avancé, 5-Back+ très avancé)." },
     { label: "Score cumulé de session", desc: "Total des points accumulés en 45 secondes (+150 PTS par décision exacte de correspondance ou non-correspondance, sans pénalité négative)." },
     { label: "Précision de jugement", desc: "Pourcentage de jugements corrects par rapport aux erreurs d'omission et de fausse alerte." },
     { label: "Vitesse d'actualisation", desc: "Rapidité décisionnelle et latence de réponse durant les fenêtres d'exposition des stimuli reflétant l'efficacité exécutive." }
@@ -319,7 +319,7 @@ const guideFr = {
     { title: "Wayne K. Kirchner (1958) : Origine du paradigme N-Back", body: "Kirchner a concu cette epreuve pour analyser les mecanismes d actualisation de donnees a renouvellement rapide." },
     { title: "Alan Baddeley (1986, 2000) : L administrateur central", body: "Dans le modele de Baddeley, le N-Back mobilise la coordination entre la boucle phonologique et le cortex prefrontal dorsolateral." },
     { title: "Adele Diamond (2013) : Triade des fonctions executives", body: "Diamond a etabli que la mise a jour de la memoire de travail, l inhibition et la flexibilite mentale forment le socle cognitif." },
-    { title: "Susanne M. Jaeggi et al. (2008) : Transfert vers l intelligence fluide", body: "A demontre des gains mesurables sur les tests de raisonnement matriciel grace a l entrainement adaptatif au N-Back." },
+    { title: "Susanne M. Jaeggi et al. (2008) : Transfert vers l intelligence fluide", body: "A rapporte des gains sur les tests de raisonnement matriciel apres un entrainement adaptatif au N-Back ; replications mixtes." },
     { title: "Nelson Cowan (2001) : La limite de 4 unites", body: "Le foyer attentionnel actif de l etre humain retient environ 4 entites non structurees avant saturation." },
     { title: "David L. Woods et al. (2015) : Standards chronometriques", body: "A standardise la mesure precise des temps de reaction informatises et de la theorie de detection du signal." }
   ],

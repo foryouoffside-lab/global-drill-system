@@ -173,7 +173,7 @@ const faqSchema = {
       "name": "¿Cuánto tiempo se bonifica por cada acierto y cómo funciona la puntuación?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Cada impacto acertado otorga 100 puntos base multiplicados por el nivel de dificultad actual y el multiplicador de racha (hasta 3.0x), añadiendo además +0,6 segundos al temporizador. Esto permite a los atletas con buena cadencia prolongar su partida y superar la cota de élite de 24.000 puntos."
+        "text": "Cada impacto acertado otorga 100 puntos base multiplicados por el nivel de dificultad actual y el multiplicador de racha (hasta 3.0x), añadiendo además +0,6 segundos al temporizador. Esto permite a los atletas con buena cadencia prolongar su partida y superar la marca de 24.000 puntos."
       }
     },
     {
@@ -250,7 +250,7 @@ const howToSchema = {
       "@type": "HowToStep",
       "position": 4,
       "name": "Sostenimiento del Combo y Bônus de Tiempo (+0.6s Extensión)",
-      "text": "Encadene impactos consecutivos sin fallar para consolidar el multiplicador 3.0x y sobrepasar el límite de élite de 24.000 puntos.",
+      "text": "Encadene impactos consecutivos sin fallar para consolidar el multiplicador 3.0x y sobrepasar el límite de 24.000 puntos.",
       "url": "https://skilldrills.online/es/drills/physical/fitness/speed-drill#step-4"
     }
   ]
@@ -262,7 +262,7 @@ const speedGuide = {
     title: "Fundamentos Científicos del Control Motor Rápido y Puntería Balística",
     paragraphs: [
       "El Speed Drill es un sistema interactivo diseñado para evaluar y potenciar la velocidad de intercepción motora y la cadencia de clic bajo condiciones de tiempo crítico. Los movimientos a alta velocidad con el ratón responden al modelo clásico de dos etapas propuesto por Robert S. Woodworth (1899). En la primera fase (impulso balístico en bucle abierto), el córtex motor genera una descarga que traslada la mano cerca del objetivo. En la segunda fase (desaceleración y ajuste fino en bucle cerrado), los ojos refinan la posición final para ejecutar el disparo.",
-      "La reducción continua del diámetro del objetivo (de 45 px hasta 12 px) impone una exigencia psicomotora extrema. Según la Ley de Fitts (1954), el índice de dificultad (ID) se incrementa de forma logarítmica con cada milímetro que se contrae la diana. Accionar el clic en los primeros 150 milisegundos ofrece una ventana física amplia, mientras que dudar conduce a correcciones microscópicas con alto riesgo de fallo. La decisión rápida en el primer impulso separa a los tiradores ordinarios de la élite.",
+      "La reducción continua del diámetro del objetivo (de 45 px hasta 12 px) impone una exigencia psicomotora extrema. Según la Ley de Fitts (1954), el índice de dificultad (ID) se incrementa de forma logarítmica con cada milímetro que se contrae la diana. Accionar el clic en los primeros 150 milisegundos ofrece una ventana física amplia, mientras que dudar conduce a correcciones microscópicas con alto riesgo de fallo. La decisión rápida en el primer impulso ayuda a mantener el ritmo.",
       "La aparición imprevista de las dianas activa la Teoría de Integración de Características de Anne Treisman (Treisman & Gelade, 1980). Los contrastes lumínicos y el movimiento generan mapas de prominencia en el colículo superior y el córtex parietal, permitiendo que la atención encubierta coordine el inicio del desplazamiento antes de la fijación visual directa. A la vez, el sistema visual estima el tiempo hasta la extinción mediante el tau óptico (Lee, 1976).",
       "Con el propósito de proveer una medición rigurosa sin desfases artificiales, este simulador hace uso exclusivo de la interfaz performance.now() del navegador. El empleo de pantallas de 144Hz o 240Hz junto a ratones de 1.000Hz sitúa las latencias físicas por debajo de los 4 ms, haciendo posible un registro neuromotor genuino (Woods et al., 2015). Toda la información se conserva íntegramente en tu dispositivo."
     ]

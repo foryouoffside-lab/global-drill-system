@@ -208,7 +208,7 @@ export default function GermanColorSequencePage() {
         name: 'Welche Punktzahl oder Stufe gilt als überdurchschnittlich gut?',
         acceptedAnswer: {
           '@type': 'Answer',
-          text: 'Das Erreichen von Stufe 7 bis 8 (Sequenzlänge von 7–8 Farben) entspricht dem soliden Durchschnitt. Stufen ab Level 10 (über 1.300 Punkte) erfordern konsequentes Chunking und zählen zur Elite-Kategorie.',
+          text: 'Das Erreichen von Stufe 7 bis 8 (Sequenzlänge von 7–8 Farben) entspricht dem soliden Durchschnitt. Stufen ab Level 10 (über 1.300 Punkte) erfordern konsequentes Chunking und gehören zur fortgeschrittenen Übungsstufe.',
         },
       },
       {
@@ -290,7 +290,7 @@ export default function GermanColorSequencePage() {
       title: 'Senso-Spiel & Sequenzgedächtnis Leistungsstufen (45-Sekunden-Lauf)',
       headers: ['Leistungsstufe', 'Erreichte Stufe', 'Punktzahl (45s)', 'Merkstrategie & Kognitive Bewertung'],
       rows: [
-        ['Tier 1 (Großmeister / Elite-Gedächtnis)', 'Level 11+', 'Über 1.500 PTS', 'Exzellentes multimodales Chunking; simultane visuelle und rhythmisch-auditive Enkodierung'],
+        ['Stufe 5 (fortgeschrittenes Chunking)', 'Level 11+', 'Über 1.500 PTS', 'Exzellentes multimodales Chunking; simultane visuelle und rhythmisch-auditive Enkodierung'],
         ['Tier 2 (Fortgeschritten / Turnier-Niveau)', 'Level 8 – 10', '1.100 – 1.499 PTS', 'Sichere Überwindung der Cowan-Kapazitätsgrenze (4 Elemente); stabiles 2er/3er-Chunking'],
         ['Tier 3 (Solider Durchschnitt)', 'Level 5 – 7', '700 – 1.099 PTS', 'Typische gesunde Kurzzeitgedächtnis-Kapazität; leichte Unsicherheit bei schnellem Farbwechsel'],
         ['Tier 4 (Basis / Gelegentliche Aussetzer)', 'Level 3 – 4', '350 – 699 PTS', 'Arbeitsgedächtnis operiert an der natürlichen Kapazitätsgrenze; noch kein systematisches Chunking'],

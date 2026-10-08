@@ -232,7 +232,7 @@ const guideProps = {
     title: "Mesures de Réacquisition Spatiale et Synchronisation de l Inertie",
     headers: ["Niveau", "Temps pour retrouver la cible", "Écart à l’arrivée", "Synchronisation du mouvement", "Lecture pratique"],
     rows: [
-      ["Élite (Sport et compétition)", "< 140 ms", "< 3% (verrouillage parfait)", "97%+", "Précision balistique sans faille. Enchaînement immédiat avec la poursuite fluide sans oscillation de recherche."],
+      ["Palier Avancé", "< 140 ms", "< 3% (verrouillage parfait)", "97%+", "Précision balistique sans faille. Enchaînement immédiat avec la poursuite fluide sans oscillation de recherche."],
       ["Avancé (Niveau Compétition)", "140 – 180 ms", "3% – 6%", "91% – 96%", "Réacquisition spatiale rapide. Micro-saccade correctrice minime avec excellente fidélité cinématique."],
       ["Compétent (Adulte Sain)", "181 – 240 ms", "7% – 14%", "80% – 90%", "Valeur de référence standard. Courte pause réfractaire après la saccade suivie d un guidage stable."],
       ["En Progression", "241 – 320 ms", "15% – 24%", "68% – 79%", "Retard sensible dans l émission du saut oculaire. Dépassages fréquents nécessitant plusieurs ajustements."],

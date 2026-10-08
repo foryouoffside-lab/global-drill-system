@@ -166,7 +166,7 @@ const faqSchema = {
       "name": "Welche Punktzahl gilt im 45-Sekunden-Test als überdurchschnittlich?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Einsteiger erreichen typischerweise 50 bis 99 Punkte (Level 2–3). Fortgeschrittene erzielen 100 bis 149 Punkte, während Leistungssportler und Esports-Profis über 150 bis 200+ Punkte mit Trefferserien von über 10 fehlerfreien Klicks erzielen."
+        "text": "Einsteiger erreichen typischerweise 50 bis 99 Punkte (Level 2–3). Fortgeschrittene erzielen 100 bis 149 Punkte, während über 150 bis 200+ Punkte mit Trefferserien von über 10 fehlerfreien Klicks erzielen."
       }
     },
     {
@@ -353,7 +353,7 @@ export default function RhythmAnomalyLocalePage() {
           <div>
             <h4 className="font-semibold text-white">Welche Punktzahl gilt im 45-Sekunden-Test als überdurchschnittlich?</h4>
             <p className="text-slate-300 mt-1">
-              Einsteiger erreichen typischerweise 50 bis 99 Punkte (Level 2–3). Fortgeschrittene erzielen 100 bis 149 Punkte, während Leistungssportler und Esports-Profis über 150 bis 200+ Punkte mit Trefferserien von über 10 fehlerfreien Klicks erzielen.
+              Einsteiger erreichen typischerweise 50 bis 99 Punkte (Level 2–3). Fortgeschrittene erzielen 100 bis 149 Punkte, während über 150 bis 200+ Punkte mit Trefferserien von über 10 fehlerfreien Klicks erzielen.
             </p>
           </div>
           <div>

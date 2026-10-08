@@ -278,7 +278,7 @@ export default function VisualSearchLocalePage() {
                 <td className="py-2.5 px-3 font-semibold text-white">&lt; 450 ms</td>
                 <td className="py-2.5 px-3 tabular-nums">&gt; 1.500 Pkt (10+ Treffer)</td>
                 <td className="py-2.5 px-3 tabular-nums">Außergewöhnlich</td>
-                <td className="py-2.5 px-3">Elite Esports / Radar-Überwachung</td>
+                <td className="py-2.5 px-3">Höchste Übungsstufe</td>
               </tr>
               <tr>
                 <td className="py-2.5 px-3 font-bold text-teal-400">Tier 2</td>

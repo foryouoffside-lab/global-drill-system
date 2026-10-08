@@ -168,7 +168,7 @@ const faqSchema = {
       "name": "45초 테스트에서 우수한 성적으로 인정받는 기준은 얼마인가요?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "초보자는 300~550점(2~3개 탐색)을 기록합니다. 일반 성인은 600~1,000점(4~6개) 수준이며, 프로게이머나 숙련자는 1,500점 이상(10개 이상, 지연시간 450ms 이하)을 달성합니다."
+        "text": "초보자는 300~550점(2~3개 탐색)을 기록합니다. 일반 성인은 600~1,000점(4~6개) 수준이며, 숙련자는 1,500점 이상(10개 이상, 지연시간 450ms 이하)을 달성합니다."
       }
     },
     {
@@ -279,7 +279,7 @@ export default function VisualSearchLocalePage() {
                 <td className="py-2.5 px-3 font-semibold text-white">&lt; 450 ms</td>
                 <td className="py-2.5 px-3 tabular-nums">&gt; 1,500 PTS (10개+ 포착)</td>
                 <td className="py-2.5 px-3 tabular-nums">최우수</td>
-                <td className="py-2.5 px-3">엘리트 프로게이머 / 레이더 감시관</td>
+                <td className="py-2.5 px-3">숙련자</td>
               </tr>
               <tr>
                 <td className="py-2.5 px-3 font-bold text-teal-400">Tier 2</td>
@@ -358,7 +358,7 @@ export default function VisualSearchLocalePage() {
           <div>
             <h4 className="font-semibold text-white">45초 테스트에서 우수한 성적으로 인정받는 기준은 얼마인가요?</h4>
             <p className="text-slate-300 mt-1">
-              초보자는 300~550점(2~3개 탐색)을 기록합니다. 일반 성인은 600~1,000점(4~6개) 수준이며, 프로게이머나 숙련자는 1,500점 이상(10개 이상, 지연시간 450ms 이하)을 달성합니다.
+              초보자는 300~550점(2~3개 탐색)을 기록합니다. 일반 성인은 600~1,000점(4~6개) 수준이며, 숙련자는 1,500점 이상(10개 이상, 지연시간 450ms 이하)을 달성합니다.
             </p>
           </div>
           <div>

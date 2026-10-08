@@ -246,7 +246,7 @@ export default function LocalizedObjectLocationPage() {
                 "Etapa 1",
                 "Nivel 8 – 10+ (8–10+ objetos, matriz 6x6–7x7)",
                 "1.000+ Puntos",
-                "Rendimiento visoespacial de élite; utiliza escaneo por cuadrantes y anclaje por puntos clave; retiene 8+ parejas objeto-lugar con rapidez; localización en < 500 ms"
+                "Rendimiento visoespacial avanzado; utiliza escaneo por cuadrantes y anclaje por puntos clave; retiene 8+ parejas objeto-lugar con rapidez; localización en < 500 ms"
         ],
         [
                 "Etapa 2",

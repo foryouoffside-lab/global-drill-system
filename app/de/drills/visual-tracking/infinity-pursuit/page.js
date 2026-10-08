@@ -240,7 +240,7 @@ const guideProps = {
     title: "Leistungswerte bei der Blickverfolgung einer liegenden Acht",
     headers: ["Stufe", "Zielverfolgung", "Verluste an der Mitte", "Bahngenauigkeit", "Praktische Einordnung"],
     rows: [
-      ["Elite (Profi-Athleten & E-Sport)", "0,96 – 1,02", "< 2% (nahezu perfekt stufenlos)", "98%+", "Vollkommene Muskelkoordination. Keine Sakkaden an der Mittellinie; internes Kleinhirnmodell perfekt synchronisiert"],
+      ["Stufe 5 (höchste Übungsstufe)", "0,96 – 1,02", "< 2% (nahezu perfekt stufenlos)", "98%+", "Vollkommene Muskelkoordination. Keine Sakkaden an der Mittellinie; internes Kleinhirnmodell perfekt synchronisiert"],
       ["Fortgeschritten (Wettkampf-Level)", "0,90 – 0,95", "2% – 5%", "92% – 97%", "Hervorragende Blickfolgestabilität. Minimale Phasenverzögerung nur an extremen Scheitelpunkten; sichere Fovea-Arretierung"],
       ["Kompetent (Gesunde Erwachsene)", "0,80 – 0,89", "6% – 12%", "82% – 91%", "Solide Alltagsfähigkeit. Gelegentliche Korrektursakkaden beim Kreuzen des Zentrums oder am äußeren Scheitel"],
       ["Aufbauend (Erhöhte Latenz / Ermüdung)", "0,68 – 0,79", "13% – 22%", "70% – 81%", "Deutliche Nachlaufverzögerung. Wiederholte Blicksprünge, Anzeichen muskulärer Dysbalance oder zervikaler Mitbewegung"],

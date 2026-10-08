@@ -144,7 +144,7 @@ const faqSchema = {
       "name": "¿Por qué refugiarse en las esquinas o bordes de la pantalla es la peor opción en rondas avanzadas?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Desplazar el cursor hacia las paredes contrae las opciones de fuga física a un ángulo menor de 90 grados, facilitando que proyectiles convergentes bloqueen cualquier salida. Los tiradores expertos conservan el centro del tablero (área del 30%), garantizando rutas de escape simétricas en 360 grados mediante micro-maniobras de dedos."
+        "text": "Desplazar el cursor hacia las paredes contrae las opciones de fuga física a un ángulo menor de 90 grados, facilitando que proyectiles convergentes bloqueen cualquier salida. Los tiradores expertos conservan el centro del tablero (área del 30%), dejando rutas de escape simétricas en 360 grados mediante micro-maniobras de dedos."
       }
     },
     {
@@ -152,7 +152,7 @@ const faqSchema = {
       "name": "¿Cómo se calculan la puntuación continua y los multiplicadores de racha?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Cada segundo de supervivencia suma puntos base continuos. Realizar una esquiva rozando el proyectil a escasos píxeles (Close Shave) eleva exponencialmente el multiplicador hasta el tope de 3.0x. Completar los 45 segundos sin recibir impactos es la única vía para franquear la meta de élite de 24.000 puntos."
+        "text": "Cada segundo de supervivencia suma puntos base continuos. Realizar una esquiva rozando el proyectil a escasos píxeles (Close Shave) eleva exponencialmente el multiplicador hasta el tope de 3.0x. Completar los 45 segundos sin recibir impactos es la única vía para franquear la meta de 24.000 puntos."
       }
     },
     {
@@ -259,7 +259,7 @@ const dodgeGuide = {
       "Quick Dodge es un simulador de motricidad fina y respuesta visomotora ideado para entrenar la navegación ágil a través de torbellinos de proyectiles cinéticos mediante movimientos milimétricos de ratón. Más allá de un mero reflejo visual pasivo, el reto radica en resolver problemas de intercepción espacial inversa: calcular huecos dinámicos en un entorno sometido a aceleración constante.",
       "A tenor de los modelos internos del cerebelo descubiertos por Mitsuo Kawato (1999), la alta velocidad de los proyectiles (más de 500 px/s) hace inviable la corrección reactiva por bucle visual continuo debido al retardo aferente (100 a 150 ms). El sistema nervioso se protege anticipando la cinemática de los cuerpos: al detectar el vector de nacimiento de una esfera, el cerebelo descarga una orden motora balística precalculada para posicionar el ratón en la zona de menor riesgo.",
       "Conforme al modelo de control motor bifásico de Robert S. Woodworth (1899), todo movimiento rápido arranca con un impulso balístico inicial y concluye con una deceleración de precisión. En fases de alta velocidad, la Ley de Fitts (1954) indica que la merma del espacio libre (W) dispara de forma logarítmica la dificultad. Desplazarse con trazados amplios dilapida espacio y conduce al error; la maestría pertenece al micro-movimiento retenido en márgenes menores de 15 px.",
-      "Para proveer una medición cronométrica rigurosa sin variabilidad externa, el entorno hace uso de la interfaz performance.now() del navegador. En monitores de 144Hz o 240Hz junto a ratones con 1000Hz de tasa de sondeo, el retardo se comprime por debajo de los 4 ms, suprimiendo estelas a velocidades vertiginosas y garantizando precisión pura (Woods et al., 2015). Tus datos se conservan estrictamente en tu terminal."
+      "Para proveer una medición cronométrica rigurosa sin variabilidad externa, el entorno hace uso de la interfaz performance.now() del navegador. En monitores de 144Hz o 240Hz junto a ratones con 1000Hz de tasa de sondeo, el retardo se comprime por debajo de los 4 ms, suprimiendo estelas a velocidades vertiginosas y reduciendo el retardo (Woods et al., 2015). Tus datos se conservan estrictamente en tu terminal."
     ]
   },
   benchmarks: {
@@ -341,7 +341,7 @@ export default function LocalizedQuickDodgePageEs() {
         copy={{
           title: "Juego de Esquivar con el Ratón",
           subtitle: "Esquiva proyectiles y sobrevive más",
-          description: "Esquivar a un perseguidor es una cuestión de predicción, no de simple reacción: en el momento en que observas dónde está, ya ha cambiado de posición. Las maniobras rápidas se planifican de antemano mediante modelos internos cerebelares (Kawato, 1999) en vez de rectificarse en pleno vuelo, dado que la visión precisa de 100 a 150 ms para intervenir (Woodworth, 1899). Conforme la velocidad escala, la ventana de corrección se extingue y solo la predicción garantiza el éxito.",
+          description: "Esquivar a un perseguidor es una cuestión de predicción, no de simple reacción: en el momento en que observas dónde está, ya ha cambiado de posición. Las maniobras rápidas se planifican de antemano mediante modelos internos cerebelares (Kawato, 1999) en vez de rectificarse en pleno vuelo, dado que la visión precisa de 100 a 150 ms para intervenir (Woodworth, 1899). Conforme la velocidad escala, la ventana de corrección se extingue y solo la predicción permite acertar con regularidad.",
           badge: "Test de Esquiva y Reflejos",
           hudLabels: {
             score: "Puntuación",

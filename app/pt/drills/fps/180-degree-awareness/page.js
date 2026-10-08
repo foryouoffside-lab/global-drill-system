@@ -143,7 +143,7 @@ export default function AwarenessDrillPtPage() {
         "name": "Como parar de morrer de costas ou ser flanqueado em FPS?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Combinando áudio espacial com giros rápidos e calibrados de 180 graus. Treinar a distância física exata no mousepad garante virar e acertar o inimigo antes de ser eliminado."
+          "text": "Combinando áudio espacial com giros rápidos e calibrados de 180 graus. Treinar a distância física exata no mousepad ajuda a virar e acertar o inimigo antes de ser eliminado."
         }
       },
       {
@@ -180,10 +180,10 @@ export default function AwarenessDrillPtPage() {
       },
       {
         "@type": "Question",
-        "name": "O treino suporta entrada bruta de mouse (raw input) sem aceleração?",
+        "name": "Como o treino captura o movimento do mouse?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Sim. O simulador utiliza a API HTML5 Pointer Lock, garantindo resposta direta de 1:1 sem aceleração de ponteiro do Windows ou do navegador."
+          "text": "O simulador utiliza a API HTML5 Pointer Lock para capturar o movimento do mouse no navegador. O resultado depende das configurações do seu sistema e do seu mouse."
         }
       }
     ]
@@ -227,7 +227,7 @@ export default function AwarenessDrillPtPage() {
     intro: [
       "O treino de mira 180° ensina uma sequência prática: perceber um alvo na borda pela visão periférica, virar com o braço e parar a mira sobre o alvo. Ele reproduz a leitura de um flanco no FPS sem confundir velocidade de giro com precisão de finalização.",
       "A conversão dessa detecção em uma reorientação virtual completa de 180° opera sob o modelo de impulso em dois componentes (Elliott et al., 2010). Um impulso balístico inicial de malha aberta cobre de 80% a 90% da rotação necessária, seguido imediatamente pela frenagem muscular antagonista para evitar que o retículo ultrapasse o alvo (Schmidt et al., 1979). Pela Lei de Fitts (Fitts, 1954), quanto maior a amplitude angular, maior a dificuldade da tarefa, tornando o controle de parada e a área do mousepad determinantes.",
-      "A cronometria digital neste treinador é executada através de registros de alta resolução performance.now() sob a API Pointer Lock do HTML5. Timers de navegadores possuem leve suavização por mitigações de hardware (~1 ms), portanto diferenças menores que 5 ms devem ser interpretadas como ruído natural. A operação com taxa de amostragem de 1000 Hz no mouse e monitor com alta taxa de atualização elimina distorções e garante medições fiéis de sua velocidade e precisão (Woods et al., 2015).",
+      "A cronometria digital neste treinador é executada através de registros de alta resolução performance.now() sob a API Pointer Lock do HTML5. Timers de navegadores possuem leve suavização por mitigações de hardware (~1 ms), portanto diferenças menores que 5 ms devem ser interpretadas como ruído natural. A operação com taxa de amostragem de 1000 Hz no mouse e monitor com alta taxa de atualização reduz distorções nas medições de sua velocidade e precisão (Woods et al., 2015).",
       "Como medir seu desempenho: cada disparo e deslocamento é registrado localmente no seu computador com clock de alta precisão. Mantenha as mesmas configurações de DPI, sensibilidade no jogo e espaço físico no mousepad entre as sessões para consolidar padrões motores confiáveis."
     ],
     benchmarks: {
@@ -239,7 +239,7 @@ export default function AwarenessDrillPtPage() {
         ["Desaceleração e Frenagem da Mira", "60 – 110 ms", "Frenagem de músculos antagonistas (stopping power)", "Amortecimento de impulso de parada (Schmidt 1979)"],
         ["Microajuste Terminal e Clique", "70 – 130 ms", "Feedback visual foveal e disparo do gatilho", "Fase de aproximação pela Lei de Fitts (Fitts 1954)"],
         ["Tempo Total de Reaquisição de 180°", "450 – 690 ms", "Ciclo sensoriomotor completo de virada", "Linha de base competitiva padrão de operadores"],
-        ["Execução Subconsciente de Elite 180°", "320 – 420 ms", "Sinergia de sensibilidade e memória muscular pura", "Domínio de e-sports em embreagens táticas de FPS"]
+        ["Execução Subconsciente Avançada 180°", "320 – 420 ms", "Sinergia de sensibilidade e memória muscular pura", "Prática de giros de 180° com sensibilidade e memória muscular estáveis"]
       ],
       note: "Métricas sintetizadas a partir de estudos clássicos de controle motor e neurociência visual (Rayner 1998; Fitts 1954; Schmidt et al. 1979; Elliott et al. 2010) e padrões de cronometria digital (Woods et al. 2015). Latências reais variam com a sensibilidade física (cm/360°), atrito do mousepad e taxa de quadros."
     },
@@ -295,7 +295,7 @@ export default function AwarenessDrillPtPage() {
     statAccuracy: "Precisão",
     statBestScore: "Recorde",
     startTitle: "Treino de Giro 180°",
-    startSubtitle: "Entrada Bruta de Mouse • Progressão Infinita de Níveis",
+    startSubtitle: "Pointer Lock • Progressão Infinita de Níveis",
     stageCaption: "Identifique alvos nas bordas com visão periférica e realize giros rápidos de 180° antes que o temporizador expire.",
     rulesTitle: "Regras de Treino e Sistema de Pontuação",
     rulesItems: [

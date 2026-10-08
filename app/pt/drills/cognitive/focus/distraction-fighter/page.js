@@ -209,7 +209,7 @@ export default function DistractionFighterPagePT() {
       title: "Parâmetros de Desempenho no Teste de Stroop (Sessão de 45 Segundos)",
       headers: ["Nível de Habilidade", "Pontuação (45s)", "Taxa de Precisão", "Avaliação Neurocognitiva"],
       rows: [
-        ["Tier 1 (Elite / Mestre da Inibição)", "18.000+ PTS", "96%+", "Controle de impulso impecável; supressão instantânea da leitura com reação ultrarrápida."],
+        ["Tier 1 (Faixa Avançada)", "18.000+ PTS", "96%+", "Controle de impulso impecável; supressão instantânea da leitura com reação ultrarrápida."],
         ["Tier 2 (Avançado / Nível Competitivo)", "12.000 – 17.999 PTS", "92% – 95%", "Interferência mínima de Stroop; cadência estável com excelente flexibilidade cognitiva."],
         ["Tier 3 (Médio / Praticante Regular)", "7.000 – 11.999 PTS", "85% – 91%", "Latência de interferência saudável típica; hesitações pontuais com cores contrastantes."],
         ["Tier 4 (Básico / Foco Intermitente)", "3.000 – 6.999 PTS", "75% – 84%", "Predomínio do impulso de leitura; redução acentuada da velocidade com a dificuldade."],
@@ -246,7 +246,7 @@ export default function DistractionFighterPagePT() {
       "Fixe o olhar no termo central sem tentar lê-lo linguisticamente.",
       "Iniba a compreensão semântica e isole a cor física da fonte.",
       "Selecione o botão inferior que corresponde à cor visual observada.",
-      "Sustente acertos consecutivos para acumular bônus de combo e alcançar os níveis de elite."
+      "Sustente acertos consecutivos para acumular bônus de combo e alcançar níveis mais altos."
     ],
     audience: "Estudantes, profissionais em ambientes de trabalho integrados, atletas de esports e quem busca blindar a mente contra distrações cotidianas.",
     faqs: faqSchema.mainEntity.map((e) => ({ q: e.name, a: e.acceptedAnswer.text })),

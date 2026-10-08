@@ -204,7 +204,7 @@ export default function FlickShotPage() {
         "@type": "HowToStep",
         "position": 1,
         "name": "Calibrate Hardware Sensitivity & Reset",
-        "text": "Bring your crosshair back to the neutral center area while matching your competitive in-game eDPI to preserve 1:1 muscle memory."
+        "text": "Bring your crosshair back to the neutral center area while matching your competitive in-game eDPI to keep muscle memory consistent."
       },
       {
         "@type": "HowToStep",

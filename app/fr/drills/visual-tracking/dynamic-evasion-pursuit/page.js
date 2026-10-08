@@ -188,7 +188,7 @@ const faqSchema = {
       "name": "Pourquoi faut-il impérativement garder la tête immobile pendant le test ?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Bouger la tête active le réflexe vestibulo-oculaire (RVO) de l'oreille interne, compensant artificiellement le retard moteur. L'immobilité stricte de la tête garantit que les six muscles oculomoteurs réalisent l'ensemble de l'effort."
+        "text": "Bouger la tête active le réflexe vestibulo-oculaire (RVO) de l'oreille interne, compensant artificiellement le retard moteur. L’immobilité de la tête fait peser davantage d’effort sur les muscles oculomoteurs."
       }
     },
     {
@@ -262,7 +262,7 @@ const guideProps = {
     title: "Normes de Performance en Poursuite Évasive et Refixation Saccadique",
     headers: ["Niveau de Performance", "Multiplicateur de Vitesse", "Refixation Saccadique lors des Ruptures Évasives", "Profil Neuromoteur et Oculaire"],
     rows: [
-      ["Niveau 1 : Apex Réactif – Réflexes d’Élite", "2.0x+ Ultra-Vitesse", "La saccade corrective intervient en moins de 150 ms ; verrouillage fovéal immédiat sans oscillation résiduelle.", "Vitesse maximale de conduction synaptique entre fovéa et noyaux oculomoteurs. Niveau de référence de l'exercice, sans valeur de classement."],
+      ["Niveau 1 : Apex Réactif – Réflexes Avancés", "2.0x+ Ultra-Vitesse", "La saccade corrective intervient en moins de 150 ms ; verrouillage fovéal immédiat sans oscillation résiduelle.", "Vitesse maximale de conduction synaptique entre fovéa et noyaux oculomoteurs. Niveau de référence de l'exercice, sans valeur de classement."],
       ["Niveau 2 : Agilité Visuelle Supérieure", "1.4x – 1.9x Haute Vitesse", "Recentrage rapide et fiable en 1 à 2 images vidéo ; reprise immédiate de la vitesse de poursuite continue.", "Contrôle remarquable des muscles oculomoteurs externes. Excellente maîtrise face aux déplacements d'esquive imprévisibles."],
       ["Niveau 3 : Standard Fonctionnel Solide", "1.0x – 1.3x Vitesse Standard", "Suivi régulier des portions linéaires ; léger retard de latence lors des ruptures à angle aigu.", "Profil représentatif des adultes sains. Parfaitement adapté à la conduite automobile, aux sports de loisir et aux jeux vidéo."],
       ["Niveau 4 : Refixation Retardée – Pratique Recommandée", "0.7x – 0.9x Vitesse Modérée", "La cible décroche de la fovéa sur la majorité des ruptures ; nécessite plusieurs saccades successives pour reprendre l'alignement.", "Latence sensori-motrice augmentée lors des changements de cap. Entraînement recommandé à vitesses réduites."],

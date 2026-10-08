@@ -209,7 +209,7 @@ export default function DistractionFighterPageES() {
       title: "Baremos de Rendimiento en el Test de Stroop (Sesión de 45 Segundos)",
       headers: ["Nivel de Habilidad", "Puntuación (45s)", "Tasa de Precisión", "Evaluación Neurocognitiva"],
       rows: [
-        ["Tier 1 (Élite / Maestro de la Inhibición)", "18.000+ PTS", "96%+", "Control de impulsos sobresaliente; supresión instantánea de la lectura con respuesta ultrarrápida."],
+        ["Tier 1 (Etapa Avanzada)", "18.000+ PTS", "96%+", "Control de impulsos sobresaliente; supresión instantánea de la lectura con respuesta ultrarrápida."],
         ["Tier 2 (Avanzado / Nivel Competitivo)", "12.000 – 17.999 PTS", "92% – 95%", "Interferencia mínima de Stroop; cadencia sólida y elevada flexibilidad cognitiva."],
         ["Tier 3 (Medio / Usuario Habitual)", "7.000 – 11.999 PTS", "85% – 91%", "Demora de interferencia normal en adultos sanos; ligeras vacilaciones ante contrastes marcados."],
         ["Tier 4 (Básico / Atención Intermitente)", "3.000 – 6.999 PTS", "75% – 84%", "Influencia predominante del impulso lector; enlentecimiento claro ante mayor dificultad."],

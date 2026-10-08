@@ -274,7 +274,7 @@ const gridGuide = {
     title: "Paliers de Référence Normatifs de l'Empan Matriciel Visuo-Spatial",
     headers: ["Palier de Performance", "Empan Matriciel (Cases)", "Score à l'Exercice", "Profil de Stockage & Stratégie de Chunking"],
     rows: [
-      ["Palier 1", "Empan 10 – 14+ cases", "1 150+ points", "Élite visuo-spatiale ; décomposition des motifs complexes en 2-3 formes géométriques de Gestalt ; rétention parfaite dans le cache visuel ; cadence de clic sub-450 ms."],
+      ["Palier 1", "Empan 10 – 14+ cases", "1 150+ points", "Décomposition des motifs complexes en 2-3 formes géométriques de Gestalt ; rétention parfaite dans le cache visuel ; cadence de clic sub-450 ms."],
       ["Palier 2", "Empan 8 – 9 cases", "850 – 1 149 points", "Supérieur à la moyenne adulte ; exécution rapide du chunking de formes (triplets, formes en L) ; grande résistance au bruit visuel ; cadence 450 – 650 ms."],
       ["Palier 3", "Empan 6 – 7 cases", "550 – 849 points", "Ligne de base de la population adulte saine (Della Sala et al., 1997) ; gère des regroupements simples ; perte des cases périphériques sur grilles 5x5 ; cadence 650 – 900 ms."],
       ["Palier 4", "Empan 5 cases", "350 – 549 points", "Proche de la limite brute de capacité sans chunking (Cowan, 2001) ; mémorisation isolée case par case sans regroupement géométrique ; cadence 900 – 1 200 ms."],

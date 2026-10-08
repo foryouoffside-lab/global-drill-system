@@ -256,8 +256,8 @@ export default function RecoilControlDePage() {
         ["Anfänger / Casual", "< 45 % Treffer", "> 85 Pixel Streuung", "Unkoordinierter Abwärtszug, spätes Gegensteuern, starkes Überreißen"],
         ["Fortgeschritten (Gold / Platin)", "45 – 65 % Treffer", "50 – 85 Pixel Streuung", "Zuverlässiges vertikales Abfangen der ersten 5 Schüsse; Probleme im Kurvenverlauf"],
         ["Diamant / Master", "65 – 80 % Treffer", "30 – 50 Pixel Streuung", "Vollständig automatisiertes Abzugsmuster; saubere Kompensation der ersten 15 Kugeln"],
-        ["Semi-Profi / Faceit 10", "80 – 90 % Treffer", "18 – 30 Pixel Streuung", "Exzellente horizontale Driftkontrolle, flüssiger Übergang in Spray Transfers"],
-        ["Weltklasse / Tier-1-Profi", "> 90 % Treffer", "< 18 Pixel Streuung", "Perfekte kinästhetische Motorsynergie; punktgenaue Bündelung kompletter Magazine"]
+        ["Stufe 4", "80 – 90 % Treffer", "18 – 30 Pixel Streuung", "Exzellente horizontale Driftkontrolle, flüssiger Übergang in Spray Transfers"],
+        ["Stufe 5", "> 90 % Treffer", "< 18 Pixel Streuung", "Perfekte kinästhetische Motorsynergie; punktgenaue Bündelung kompletter Magazine"]
       ],
       note: "Wissenschaftliche Richtwerte basierend auf motorischer Bewegungsvariabilität (Schmidt et al. 1979, Meyer et al. 1988, Woodworth 1899)."
     },
@@ -342,7 +342,7 @@ export default function RecoilControlDePage() {
       "Durch das wiederholte Einprägen der vertikalen Anfangsbremsung und der seitlichen Gegenlenkung erzielst du in CS2, Valorant und Apex Legends selbst auf mittlere und weite Distanzen extrem dichte Treffergruppen."
     ],
     aboutCards: [
-      { iconBg: "bg-blue-600", title: "Zielgruppe", text: "FPS-Spieler in CS2, Valorant, Apex Legends und CoD, die ihre Dauerfeuer-Präzision und Spray Transfers auf Elite-Niveau heben wollen." },
+      { iconBg: "bg-blue-600", title: "Zielgruppe", text: "FPS-Spieler in CS2, Valorant, Apex Legends und CoD, die ihre Dauerfeuer-Präzision und Spray Transfers verbessern wollen." },
       { iconBg: "bg-red-600", title: "Schüsse 1–8 sind entscheidend", text: "Die ersten Schüsse steigen linear an. Wer dieses Zeitfenster perfekt kompensiert, beendet das Duell, bevor zufällige Streuung einsetzt." },
       { iconBg: "bg-orange-600", title: "Abzugskontrolle wahren", text: "Verhindert sinnloses Verballern kompletter Magazine. Gezieltes Absetzen und Zurücksetzen des Musters spart Munition und Trefferzeit." }
     ],

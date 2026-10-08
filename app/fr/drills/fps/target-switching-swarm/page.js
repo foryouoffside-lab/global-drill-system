@@ -230,8 +230,8 @@ export default function TargetSwitchingSwarmFrPage() {
       title: "Barème de Performance : Target Switching et Vitesse de Transition",
       headers: ["Palier de Compétence", "Temps de Transition", "Cadence d'Élimination (Cibles/Min)", "Impact en Partie Classée"],
       rows: [
-        ["Tier 1 (Radiant / Faceit Niveau 10 / Pro)", "Moins de 210 ms", "110+ Cibles/min", "Spray transfers parfaits ; zéro hésitation ; clutches 1v3 remportés avec assurance"],
-        ["Tier 2 (Immortal / Faceit 8-9 / Master)", "210 – 260 ms", "92 – 110 Cibles/min", "Excellente régularité d'enchaînement ; légères oscillations sur les grands angles ; multi-kills réguliers"],
+        ["Tier 1 (Palier Avancé)", "Moins de 210 ms", "110+ Cibles/min", "Spray transfers parfaits ; zéro hésitation ; clutches 1v3 remportés avec assurance"],
+        ["Tier 2 (Palier Intermédiaire-Haut)", "210 – 260 ms", "92 – 110 Cibles/min", "Excellente régularité d'enchaînement ; légères oscillations sur les grands angles ; multi-kills réguliers"],
         ["Tier 3 (Ascendant / Diamant / Avancé)", "260 – 320 ms", "74 – 92 Cibles/min", "Solide sur cibles regroupées ; difficultés sur les bascules traversant l'écran"],
         ["Tier 4 (Platine / Or / Intermédiaire)", "320 – 400 ms", "56 – 74 Cibles/min", "Hésitation nette après chaque élimination (100+ ms) ; dépassements fréquents par freinage tardif"],
         ["Tier 5 (Argent / Bronze / Débutant)", "Plus de 400 ms", "Moins de 56 Cibles/min", "Replace la souris entre chaque tir ; recherche visuelle repartant de zéro ; crispation musculaire"]
@@ -304,7 +304,7 @@ export default function TargetSwitchingSwarmFrPage() {
           statMaxCombo: "Combo Max",
           statPeakLevel: "Niveau Max",
           startTitle: "Target Switching Swarm",
-          startSubtitle: "Entrée Souris Brute (Raw Input) • Progression Continue",
+          startSubtitle: "Pointer Lock • Progression Continue",
           stageCaption: "Enchaînez les tirs rapidement entre les cibles avant la fin de leur chronomètre. Évitez les tirs manqués pour maximiser le combo !",
           rulesTitle: "Règles d'Entraînement & Système de Score",
           aboutTitle: "À Propos du Target Switching dans les FPS",

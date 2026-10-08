@@ -227,7 +227,7 @@ const gridGuide = {
     "Etapa 1",
     "10 – 14+ Celdas",
     "1.150+ Puntos",
-    "Rendimiento visoespacial de élite; descompone patrones complejos en 2-3 primitivas geométricas Gestalt; retención en caché visual impecable; cadencia de clic menor a 450 ms."
+    "Rendimiento visoespacial avanzado; descompone patrones complejos en 2-3 primitivas geométricas Gestalt; retención en caché visual impecable; cadencia de clic menor a 450 ms."
   ],
   [
     "Etapa 2",

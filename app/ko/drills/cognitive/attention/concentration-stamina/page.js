@@ -180,7 +180,7 @@ const faqSchema = {
       "name": "유산소 운동이 주의력 유지에 미치는 효과는?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "가벼운 운동은 대뇌 혈류량을 늘리고 도파민 분비를 촉진하여 지속 주의력 피로 저항성을 높여줍니다."
+        "text": "가벼운 운동은 기분 전환과 휴식에 도움이 될 수 있습니다."
       }
     },
     {
@@ -188,7 +188,7 @@ const faqSchema = {
       "name": "모니터 주사율이 검사에 미치는 영향은?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "144Hz 이상의 디스플레이는 자극 출현 타이밍의 오차를 5ms 이내로 줄여주어(Woods et al., 2015) 정밀한 측정을 보장합니다."
+        "text": "144Hz 이상의 디스플레이는 자극 출현 타이밍의 오차를 줄이는 데 도움이 되어(Woods et al., 2015) 정밀한 측정에 도움이 됩니다."
       }
     },
     {
@@ -262,7 +262,7 @@ const guideProps = {
     note: '단계는 SkillDrills가 정한 연습용 참고 구분이며 인구 통계나 백분위가 아닙니다.',
     headers: ['등급 (Tier)', '호칭 (Rank)', '평가 기준', '도달 수준', '정확도', '연습 단계'],
     rows: [
-      { tier: 'Tier 1', rank: '그랜드마스터 / 최상위 엘리트', stat: '최상위 단계', level: '마스터리 (최상위)', accuracy: '98% 이상', percentile: '최상위 단계' },
+      { tier: 'Tier 1', rank: '최상위 단계', stat: '최상위 단계', level: '마스터리 (최상위)', accuracy: '98% 이상', percentile: '최상위 단계' },
       { tier: 'Tier 2', rank: '고급 지속 집중자', stat: '상급 단계', level: '다이아몬드 (우수)', accuracy: '94–97%', percentile: '상급 단계' },
       { tier: 'Tier 3', rank: '숙련 조작자', stat: '중상급 단계', level: '플래티넘 (숙련)', accuracy: '88–93%', percentile: '중상급 단계' },
       { tier: 'Tier 4', rank: '일반 성인 표준', stat: '표준 단계', level: '골드 (표준)', accuracy: '78–87%', percentile: '표준 단계' },

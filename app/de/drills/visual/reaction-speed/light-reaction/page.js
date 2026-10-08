@@ -239,7 +239,7 @@ const lightReactionGuide = {
     title: "Orientierungswerte für visuelle Reaktionszeit im Browser",
     headers: ["Leistungsklasse", "Mittlere Latenzzeit (ms)", "Score- & Combo-Schwelle", "Neuromuskuläres & Reflex-Profil"],
     rows: [
-      ["Tier 1: Spitzenklasse / Apex-Reflex", "< 180 ms", "15.000+ Punkte | Combo 28x+", "Außergewöhnliche kortikospinale Erregbarkeit und minimale synaptische Verzögerung; typisch für E-Sport-Profis und olympische Sprinter."],
+      ["Tier 1: Spitzenklasse / Apex-Reflex", "< 180 ms", "15.000+ Punkte | Combo 28x+", "Außergewöhnliche kortikospinale Erregbarkeit und minimale synaptische Verzögerung;."],
       ["Tier 2: Überdurchschnittlich / Superior", "180 – 219 ms", "10.500 – 14.999 Punkte | Combo 18x+", "Exzellente optomotorische Kopplung; gleichmäßige sub-220ms Latenzen mit minimaler Streuung über lange Sitzungen."],
       ["Tier 3: Solider Standard / Baseline", "220 – 259 ms", "6.000 – 10.499 Punkte | Combo 10x+", "Gesunder Erwachsenen-Standard; typische unvorbereitete motorische Antwort mit leichter Varianz bei Ermüdung."],
       ["Tier 4: Moderate Verzögerung", "260 – 319 ms", "2.500 – 5.999 Punkte | Combo 5x+", "Verlängerte zentrale Signalverarbeitung; anfällig für Monitor-Latenz, Augenmüdigkeit oder Konzentrationsschwankungen."],

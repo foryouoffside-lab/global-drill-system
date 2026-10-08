@@ -150,7 +150,7 @@ export default function TargetAcquisitionDePage() {
         "name": "Welcher Mausgriff eignet sich am besten für schnelle Zielerfassung?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Claw-Grip und Fingertip-Grip bieten optimale Hebelverhältnisse: Der Unterarm liefert die Kraft für weite Flicks, während die Fingergelenke im Moment der Zielankunft sofortige Mikrokontrolle garantieren."
+          "text": "Claw-Grip und Fingertip-Grip bieten optimale Hebelverhältnisse: Der Unterarm liefert die Kraft für weite Flicks, während die Fingergelenke im Moment der Zielankunft Mikrokontrolle ermöglichen."
         }
       },
       {
@@ -219,8 +219,8 @@ export default function TargetAcquisitionDePage() {
       title: "Zielerfassungs-Latenz & Erstschuss-Benchmarks (Millisekunden & Trefferquote)",
       headers: ["Leistungsstufe (Tier)", "Erfassungs-Latenz", "Erstschuss-Präzision", "Wettkampf-Einfluss im Match"],
       rows: [
-        ["Tier 1 (Profi / Radiant & Faceit Lv10)", "< 260 ms", "95% – 99%+", "Reflexartiges Bedrohungsscreening; fehlerfreie One-Tap-Kopfschüsse ohne Zögern."],
-        ["Tier 2 (Elite / Unsterblich & Faceit Lv8-9)", "260 – 320 ms", "88% – 95%", "Hervorragende Zielerkennung; schaltet Primärziele auch in dichten Szenarien blitzschnell aus."],
+        ["Stufe 5", "< 260 ms", "95% – 99%+", "Reflexartiges Bedrohungsscreening; fehlerfreie One-Tap-Kopfschüsse ohne Zögern."],
+        ["Stufe 4", "260 – 320 ms", "88% – 95%", "Hervorragende Zielerkennung; schaltet Primärziele auch in dichten Szenarien blitzschnell aus."],
         ["Tier 3 (Erfahren / Diamant & Ascendant)", "320 – 400 ms", "80% – 88%", "Solide Erstschussquote; bei mehreren Zielen entsteht gelegentlich eine kurze Orientierungslatenz."],
         ["Tier 4 (Fortgeschritten / Gold & Platin)", "400 – 500 ms", "70% – 80%", "Verzögerte Zielselektion; neigt zu Fehlklicks auf sekundäre Ziele oder leichten Überrissen."],
         ["Tier 5 (Einsteiger / Silber & Bronze)", "> 500 ms", "< 70%", "Suchbewegungen der Augen dauern zu lange; verliert Peek-Duelle durch verspätete Schussabgabe."]

@@ -168,7 +168,7 @@ const faqSchema = {
       "name": "45秒のテストで優秀とされるスコアはどのくらいですか？",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "初心者は300〜550点（2〜3回発見）、標準的な成人で600〜1,000点（4〜6回）です。プロゲーマーや熟練者は1,500点以上（10回以上、潜時450ms以下）を記録します。"
+        "text": "初心者は300〜550点（2〜3回発見）、標準的な成人で600〜1,000点（4〜6回）です。熟練者は1,500点以上（10回以上、潜時450ms以下）を記録します。"
       }
     },
     {
@@ -279,7 +279,7 @@ export default function VisualSearchLocalePage() {
                 <td className="py-2.5 px-3 font-semibold text-white">&lt; 450 ms</td>
                 <td className="py-2.5 px-3 tabular-nums">&gt; 1,500 PTS (10回以上検出)</td>
                 <td className="py-2.5 px-3 tabular-nums">卓越</td>
-                <td className="py-2.5 px-3">プロゲーマー / レーダー迎撃管制官</td>
+                <td className="py-2.5 px-3">熟練者</td>
               </tr>
               <tr>
                 <td className="py-2.5 px-3 font-bold text-teal-400">Tier 2</td>
@@ -358,7 +358,7 @@ export default function VisualSearchLocalePage() {
           <div>
             <h4 className="font-semibold text-white">45秒のテストで優秀とされるスコアはどのくらいですか？</h4>
             <p className="text-slate-300 mt-1">
-              初心者は300〜550点（2〜3回発見）、標準的な成人で600〜1,000点（4〜6回）です。プロゲーマーや熟練者は1,500点以上（10回以上、潜時450ms以下）を記録します。
+              初心者は300〜550点（2〜3回発見）、標準的な成人で600〜1,000点（4〜6回）です。熟練者は1,500点以上（10回以上、潜時450ms以下）を記録します。
             </p>
           </div>
           <div>

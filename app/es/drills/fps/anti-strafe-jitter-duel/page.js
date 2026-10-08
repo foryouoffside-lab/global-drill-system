@@ -180,10 +180,10 @@ export default function AntiStrafeJitterEsPage() {
       },
       {
         "@type": "Question",
-        "name": "¿Admite el simulador entrada directa de ratón sin aceleración?",
+        "name": "¿Cómo captura el simulador el movimiento del ratón?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Sí. Opera con la API HTML5 Pointer Lock y cronometría mediante performance.now(), garantizando una respuesta limpia y directa de 1:1."
+          "text": "Opera con la API HTML5 Pointer Lock y cronometría mediante performance.now(); el resultado depende de la configuración de tu sistema operativo y de tu ratón."
         }
       }
     ]
@@ -199,7 +199,7 @@ export default function AntiStrafeJitterEsPage() {
         "@type": "HowToStep",
         "position": 1,
         "name": "Calibra la sensibilidad de tu juego",
-        "text": "Ajusta la sensibilidad para replicar con precisión 1:1 la memoria muscular de tu shooter habitual."
+        "text": "Ajusta la sensibilidad para acercarte a la de tu shooter habitual."
       },
       {
         "@type": "HowToStep",
@@ -227,7 +227,7 @@ export default function AntiStrafeJitterEsPage() {
     intro: [
       "Un aim trainer para tracking reactivo practica mantener la mira sobre el objetivo cuando el rival alterna rápidamente entre ADAD. Este drill mide cambios de dirección, control del overshoot y contacto en duelos cortos de Apex y Overwatch 2.",
       "Cuando un objetivo cambia bruscamente de dirección, la imagen sale de la fóvea y se produce un deslizamiento retiniano. El cerebro no puede predecir el giro: necesita captar la desaceleración, emitir la orden motora de frenado, detener la mano e impulsar el movimiento contrario. En juegos con TTK elevado —como Apex Legends, Overwatch 2 y Warzone— la victoria depende del tiempo efectivo que la cruceta se mantiene sobre la hitbox del enemigo en movimiento.",
-      "Anti-Strafe Jitter Trainer opera bajo la API HTML5 Pointer Lock con traducción 1:1 directa de hardware y marcas de tiempo de alta precisión performance.now(). Al suprimir la latencia de interpolación del software (Woods et al., 2015), ofrece métricas precisas para adiestrar a los músculos antagonistas y eliminar los temblores en la mira.",
+      "Anti-Strafe Jitter Trainer opera bajo la API HTML5 Pointer Lock con marcas de tiempo performance.now(). Ofrece métricas de tiempo para practicar el control de los músculos antagonistas y reducir los temblores en la mira (Woods et al., 2015).",
       "Evaluación del rendimiento: cada décima de segundo de puntería se computa de forma local en tu ordenador. Mantén constantes los ajustes de DPI y sensibilidad para consolidar patrones motores estables."
     ],
     benchmarks: {
@@ -238,7 +238,7 @@ export default function AntiStrafeJitterEsPage() {
         ["Latencia de Reversión Motora del Brazo", "80 – 130 ms", "Transmisión corticoespinal a flexores/extensores y frenado antagonista", "Tiempo físico para detener la deriva del ratón e iniciar el vector opuesto"],
         ["Microalineamiento Foveal Terminal", "60 – 100 ms", "Centrado foveal fino y reajuste subumbral", "Eliminación de sobreimpulso y bloqueo definitivo de la mira en la hitbox"],
         ["Ventana Total de Reincorporación sin Preaviso", "300 – 440 ms", "Suma de detección visual, reversión motora y recentrado final", "Penalización humana inevitable ante giros completamente imprevistos"],
-        ["Tracking Reactivo de Élite con Preparación", "210 – 290 ms", "Amortiguación de velocidad anticipatoria y supresión motora relajada", "Nivel de maestría de profesionales en torneos de Apex Legends y Overwatch"]
+        ["Tracking Reactivo Avanzado con Preparación", "210 – 290 ms", "Amortiguación de velocidad anticipatoria y supresión motora relajada", "Práctica de amortiguación anticipada de velocidad y control relajado"]
       ],
       note: "Datos basados en estudios oculomotores (Rashbass, 1961; Krauzlis, 2004), ciencias cognitivas del videojuego (Green & Bavelier, 2003) y cronometría digital (Woods et al., 2015). La precisión final varía con los hercios de la pantalla y la relajación muscular."
     },
@@ -268,7 +268,7 @@ export default function AntiStrafeJitterEsPage() {
       ]
     },
     steps: [
-      "Ajusta tu sensibilidad para mantener la misma memoria muscular 1:1 que tienes en tu juego habitual.",
+      "Ajusta tu sensibilidad a la que usas en tu juego habitual.",
       "Pulsa Iniciar Drill para pasar a pantalla completa y activar la entrada directa de ratón Pointer Lock.",
       "Clava la mirada en la esfera que ejecuta movimientos erráticos laterales en ADAD.",
       "Mantén la cruceta pegada al blanco absorbiendo las oscilaciones con la muñeca relajada.",

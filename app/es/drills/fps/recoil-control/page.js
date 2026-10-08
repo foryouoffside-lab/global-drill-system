@@ -132,7 +132,7 @@ export default function RecoilControlPage() {
         "name": "¿Por qué los primeros 8 a 10 disparos son la fase más crítica del spray?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "En la mayoría de shooters tácticos, las primeras 8 a 10 balas siguen un retroceso principalmente vertical altamente predecible. Controlar esta fase inicial garantiza bajas letales en la fracción inicial del duelo."
+          "text": "En la mayoría de shooters tácticos, las primeras 8 a 10 balas siguen un retroceso principalmente vertical altamente predecible. Controlar esta fase inicial ayuda a ganar duelos en su fracción inicial."
         }
       },
       {
@@ -212,7 +212,7 @@ export default function RecoilControlPage() {
         "@type": "HowToStep",
         "position": 1,
         "name": "Configuración y Bloqueo de Puntero",
-        "text": "Ajusta tus parámetros exactos de DPI y sensibilidad y activa el Pointer Lock para mantener correspondencia 1:1."
+        "text": "Ajusta tus parámetros exactos de DPI y sensibilidad y activa el Pointer Lock para mantener tu sensibilidad habitual."
       },
       {
         "@type": "HowToStep",
@@ -281,8 +281,8 @@ export default function RecoilControlPage() {
       title: "Niveles de Rendimiento de Precisión por Cargador y Control de Spray",
       headers: ["Nivel de Habilidad", "Precisión por Cargador (%)", "Características de Control Motor", "Impacto Competitivo en Juego"],
       rows: [
-        ["Tier 1 (Láser Apex)", "78% – 90%+", "Ajuste de velocidad casi perfecto; micro compensaciones laterales a lo largo de las 30 balas sin dispersión", "Spray transfers letales sobre múltiples rivales en CS2 Faceit Nivel 10, Valorant Radiant y Apex Predator"],
-        ["Tier 2 (Pro Competitivo)", "62% – 78%", "Agrupación precisa en los primeros 10 disparos; recentrado ágil en oscilaciones laterales del spray", "Gana sistemáticamente duelos de fusil a media distancia; excelente regularidad en spray transfers dobles"],
+        ["Tier 1 (Láser Apex)", "78% – 90%+", "Ajuste de velocidad casi perfecto; micro compensaciones laterales a lo largo de las 30 balas sin dispersión", "Práctica de spray transfers entre varios blancos con compensación estable"],
+        ["Tier 2 (Etapa Intermedia-Alta)", "62% – 78%", "Agrupación precisa en los primeros 10 disparos; recentrado ágil en oscilaciones laterales del spray", "Práctica de duelos de fusil a media distancia con regularidad en spray transfers dobles"],
         ["Tier 3 (Nivel Avanzado FPS)", "48% – 62%", "Buena bajada vertical; ligeras vacilaciones o sobrecompensación entre las balas 12 y 25", "Sprays consistentes a corta y media distancia; leve dificultad en transferencias lejanas"],
         ["Tier 4 (Intermedio)", "35% – 48%", "Velocidad de bajada desigual; dudas en torno a la séptima bala permitiendo que la mira supere la cabeza", "Vulnerable en intercambios directos de fuego continuo; obligado a recurrir a ráfagas cortas"],
         ["Tier 5 (En Desarrollo)", "Menos de 35%", "Arrastre vertical tardío o errático; falta de ajuste lateral que produce dispersión descontrolada", "Pérdida continua de duelos directos; la ráfaga se dispersa por completo alrededor del blanco"]
@@ -315,7 +315,7 @@ export default function RecoilControlPage() {
       ]
     },
     steps: [
-      "Configura tu sensibilidad y DPI habituales para garantizar equivalencia muscular de cm/360 y bloquea el cursor.",
+      "Configura tu sensibilidad y DPI habituales para mantener tu cm/360 habitual y bloquea el cursor.",
       "Al iniciar el fuego, aplica una bajada suave y constante que neutralice la subida inicial del cañón.",
       "Superada la décima bala, modula el ratón a los lados en sentido opuesto a la desviación horizontal del arma.",
       "Mantén todos los disparos agrupados en la diana central para elevar el multiplicador de combo y avanzar de nivel."

@@ -262,7 +262,7 @@ export default function InstantResponseEsPage() {
       headers: ["Nivel / Categoría", "Latencia Típica (ms)", "Mecanismo Neuromuscular y Hardware", "Impacto Práctico en Partidas"],
       rows: [
         ["Nivel 1 (Reflejo Sobrehumano)", "< 165 ms", "Máxima activación sensorial, monitor de 240Hz+ y respuesta instintiva", "Ventaja decisiva en aperturas angulares y duelos rápidos"],
-        ["Nivel 2 (Nivel Profesional)", "165 – 195 ms", "Gran sincronización motora en monitores competitivos de 240Hz", "Rango común en jugadores de rango Radiante y Nivel 10 en Faceit"],
+        ["Nivel 2 (Etapa Avanzada)", "165 – 195 ms", "Gran sincronización motora en monitores competitivos de 240Hz", "Objetivo: mantener una sincronización estable y repetible"],
         ["Nivel 3 (Competitivo Alto)", "195 – 225 ms", "Reflejo limpio en pantallas estándar de 144Hz", "Sólida retención de esquinas combinada con buena colocación de mira"],
         ["Nivel 4 (Media General)", "225 – 265 ms", "Media de jugadores sin entrenamiento en paneles de 60Hz a 144Hz", "Vulnerable ante aperturas agresivas si el ángulo está muy cerrado"],
         ["Nivel 5 (Fatiga / Latencia)", "265 – 330+ ms", "Cansancio muscular, falta de descanso o retraso por hardware", "Retardo evidente entre divisar al oponente y lograr disparar"]

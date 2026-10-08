@@ -227,7 +227,7 @@ const gridGuide = {
     "Tier 1 (Superior / Topo 1%)",
     "10 – 14+ Células",
     "1.150+ Pontos",
-    "Desempenho visoespacial de elite; divide padrões complexos em 2-3 primitivas geométricas Gestalt; retenção impecável no cache visual; cadência de clique abaixo de 450 ms."
+    "Desempenho visoespacial avançado; divide padrões complexos em 2-3 primitivas geométricas Gestalt; retenção impecável no cache visual; cadência de clique abaixo de 450 ms."
   ],
   [
     "Tier 2 (Acima da Média / Topo 15%)",

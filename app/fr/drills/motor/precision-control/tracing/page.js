@@ -323,7 +323,7 @@ const frCopy = {
     { num: "1", text: "Tracer la Trajectoire", highlight: "Onde Émeraude", result: "+1 PT / image sur la trajectoire" },
     { num: "2", text: "Vitesse Progressive", highlight: "Onde Dynamique", result: "2,2 → 3,8 px/img sur 45s" },
     { num: "3", text: "Intégrité du Flux", highlight: "Super Flux", result: "4s de verrouillage = +5 Bonus" },
-    { num: "4", text: "Suivi Précis", highlight: "Exclusif Bureau", result: "Entrée souris brute 1:1" }
+    { num: "4", text: "Suivi Précis", highlight: "Exclusif Bureau", result: "Souris sur ordinateur" }
   ],
 };
 
