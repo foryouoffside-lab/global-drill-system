@@ -72,7 +72,7 @@ const softwareApplicationSchema = {
   "@type": "SoftwareApplication", "sameAs": ["https://en.wikipedia.org/wiki/Smooth_pursuit"],
   "name": "Exercício Ocular em Oito – Rastreamento Ocular",
   "dateModified": "2026-09-20",
-  "applicationCategory": "HealthApplication",
+  "applicationCategory": "GameApplication",
   "operatingSystem": "Navegador",
   "offers": {
     "@type": "Offer",
@@ -261,13 +261,13 @@ const guideProps = {
     title: "Métricas de desempenho no oito deitado",
     headers: ["Nível", "Acompanhamento do alvo", "Perdas no centro", "Precisão da trajetória", "Leitura prática"],
     rows: [
-      ["Muito estável", "Alvo quase sempre acompanhado", "Raras", "98% ou mais", "Ritmo confortável; use como referência pessoal, não como diagnóstico."],
-      ["Estável", "Acompanhamento contínuo", "Poucas", "92%–97%", "Boa consistência; teste uma pequena progressão de velocidade."],
-      ["Funcional", "Algumas correções", "Ocasionalmente", "82%–91%", "Base adequada para repetir sessões lentas e observar evolução."],
-      ["Em desenvolvimento", "Atrasos perceptíveis", "Frequentes", "70%–81%", "Diminua o ritmo, faça pausas e compare apenas sessões feitas nas mesmas condições."],
-      ["Instável", "Perde o alvo com frequência", "Muitas", "Abaixo de 70%", "Volte ao ritmo mais lento; interrompa se houver desconforto visual."]
+      ["Faixa 1 (Muito alta)", "Alvo quase sempre acompanhado", "Raras", "98% ou mais", "Ritmo confortável; use como referência pessoal, não como diagnóstico."],
+      ["Faixa 2 (Alta)", "Acompanhamento contínuo", "Poucas", "92%–97%", "Boa consistência; teste uma pequena progressão de velocidade."],
+      ["Faixa 3 (Boa)", "Algumas correções", "Ocasionalmente", "82%–91%", "Base adequada para repetir sessões lentas e observar evolução."],
+      ["Faixa 4 (Intermediária)", "Atrasos perceptíveis", "Frequentes", "70%–81%", "Diminua o ritmo, faça pausas e compare apenas sessões feitas nas mesmas condições."],
+      ["Faixa 5 (Inicial)", "Perde o alvo com frequência", "Muitas", "Abaixo de 70%", "Volte ao ritmo mais lento; interrompa se houver desconforto visual."]
     ],
-    note: "As faixas são referências internas para comparar sessões na mesma tela e distância; não são valores normativos clínicos. O acompanhamento do alvo não mede acuidade visual nem confirma uma condição médica."
+    note: "Faixas editoriais para comparar suas próprias sessões, não percentis de população nem normas clínicas. As faixas são referências internas para comparar sessões na mesma tela e distância; não são valores normativos clínicos. O acompanhamento do alvo não mede acuidade visual nem confirma uma condição médica."
   },
   faqs: faqSchema.mainEntity.map(e => ({ q: e.name, a: e.acceptedAnswer.text })),
   sources: pickSources('barnes2008', 'krauzlis2004', 'robinson1965', 'leighzee2015', 'woods2015', 'salthouse1980'),

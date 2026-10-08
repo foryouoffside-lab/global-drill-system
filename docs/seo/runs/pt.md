@@ -34,3 +34,4 @@
 | /pt/drills/visual-tracking/directional-chaos-pursuit | done | TBD:directional-chaos-pursuit | docs/seo/research/pt/directional-chaos-pursuit.md | title kept; elite tiers, synapse and transfer claims removed; demand not verified |
 | /pt/drills/visual-tracking/dynamic-evasion-pursuit | done | TBD:dynamic-evasion-pursuit | docs/seo/research/pt/dynamic-evasion-pursuit.md | title kept; elite tiers/neuroplasticity/transfer claims removed; demand not verified |
 | /pt/drills/visual-tracking/ghosting-suppress-pursuit | done | TBD:ghosting-suppress-pursuit | docs/seo/research/pt/ghosting-suppress-pursuit.md | title kept (teste de ghosting 134 Bing BR); elite tiers/transfer claims removed |
+| /pt/drills/visual-tracking/infinity-pursuit | done | TBD:infinity-pursuit | docs/seo/research/pt/infinity-pursuit.md | title kept; benchmark labels neutral; demand not verified |
