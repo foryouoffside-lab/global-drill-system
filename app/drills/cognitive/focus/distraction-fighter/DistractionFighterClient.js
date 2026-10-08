@@ -678,7 +678,7 @@ export default function DistractionFighterClient({ faqs, copy }) {
         </div>
 
         {/* Stage Caption */}
-        {!isFullscreen && (
+        {!isFullscreen && (locale === 'en' || locale === 'ja') && (
           <p className="text-xs text-slate-400 leading-relaxed -mt-2">
             {t('distractionFighter.stageCaption', 'Select the button matching the ink color while ignoring the conflicting word meaning.')}
           </p>
@@ -726,29 +726,31 @@ export default function DistractionFighterClient({ faqs, copy }) {
                   </section>
                 )}
 
-                <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-                  <div className="p-4 rounded-xl border border-white/[0.07] bg-white/[0.012]">
-                    <div className="flex items-center gap-2.5 mb-2">
-                      <div className="w-7 h-7 rounded-lg bg-blue-600 flex items-center justify-center"><Users className="w-3.5 h-3.5 text-white" /></div>
-                      <h5 className="text-xs font-bold text-white">{t('distractionFighter.card1Title', 'Who Should Use This?')}</h5>
+                {(locale === 'en' || locale === 'ja') && (
+                  <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                    <div className="p-4 rounded-xl border border-white/[0.07] bg-white/[0.012]">
+                      <div className="flex items-center gap-2.5 mb-2">
+                        <div className="w-7 h-7 rounded-lg bg-blue-600 flex items-center justify-center"><Users className="w-3.5 h-3.5 text-white" /></div>
+                        <h5 className="text-xs font-bold text-white">{t('distractionFighter.card1Title', 'Who Should Use This?')}</h5>
+                      </div>
+                      <p className="text-xs text-slate-300 leading-relaxed">{t('distractionFighter.card1Desc', 'Open-office workers fighting visual and auditory noise, students building single-task discipline, and anyone who wants to strengthen impulse control against notifications.')}</p>
                     </div>
-                    <p className="text-xs text-slate-300 leading-relaxed">{t('distractionFighter.card1Desc', 'Open-office workers fighting visual and auditory noise, students building single-task discipline, and anyone who wants to strengthen impulse control against notifications.')}</p>
-                  </div>
-                  <div className="p-4 rounded-xl border border-white/[0.07] bg-white/[0.012]">
-                    <div className="flex items-center gap-2.5 mb-2">
-                      <div className="w-7 h-7 rounded-lg bg-emerald-600 flex items-center justify-center"><TrendingUp className="w-3.5 h-3.5 text-white" /></div>
-                      <h5 className="text-xs font-bold text-white">{t('distractionFighter.card2Title', 'Skills Improved')}</h5>
+                    <div className="p-4 rounded-xl border border-white/[0.07] bg-white/[0.012]">
+                      <div className="flex items-center gap-2.5 mb-2">
+                        <div className="w-7 h-7 rounded-lg bg-emerald-600 flex items-center justify-center"><TrendingUp className="w-3.5 h-3.5 text-white" /></div>
+                        <h5 className="text-xs font-bold text-white">{t('distractionFighter.card2Title', 'Skills Improved')}</h5>
+                      </div>
+                      <p className="text-xs text-slate-300 leading-relaxed">{t('distractionFighter.card2Desc', 'Stroop interference resistance, cognitive inhibition, top-down attentional control, and resistance to the automatic orienting reflex.')}</p>
                     </div>
-                    <p className="text-xs text-slate-300 leading-relaxed">{t('distractionFighter.card2Desc', 'Stroop interference resistance, cognitive inhibition, top-down attentional control, and resistance to the automatic orienting reflex.')}</p>
-                  </div>
-                  <div className="p-4 rounded-xl border border-white/[0.07] bg-white/[0.012]">
-                    <div className="flex items-center gap-2.5 mb-2">
-                      <div className="w-7 h-7 rounded-lg bg-purple-600 flex items-center justify-center"><Brain className="w-3.5 h-3.5 text-white" /></div>
-                      <h5 className="text-xs font-bold text-white">{t('distractionFighter.card3Title', 'Inhibitory Control')}</h5>
+                    <div className="p-4 rounded-xl border border-white/[0.07] bg-white/[0.012]">
+                      <div className="flex items-center gap-2.5 mb-2">
+                        <div className="w-7 h-7 rounded-lg bg-purple-600 flex items-center justify-center"><Brain className="w-3.5 h-3.5 text-white" /></div>
+                        <h5 className="text-xs font-bold text-white">{t('distractionFighter.card3Title', 'Inhibitory Control')}</h5>
+                      </div>
+                      <p className="text-xs text-slate-300 leading-relaxed">{t('distractionFighter.card3Desc', 'Suppress the automatic urge to read the word and tap its semantic color — success means isolating raw ink-color perception under time pressure.')}</p>
                     </div>
-                    <p className="text-xs text-slate-300 leading-relaxed">{t('distractionFighter.card3Desc', 'Suppress the automatic urge to read the word and tap its semantic color — success means isolating raw ink-color perception under time pressure.')}</p>
                   </div>
-                </div>
+                )}
               </div>
             </DrillAccordion>
 

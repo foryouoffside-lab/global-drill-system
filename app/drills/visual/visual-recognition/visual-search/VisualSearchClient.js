@@ -624,7 +624,7 @@ export default function VisualSearchClient({ copy } = {}) {
         </div>
 
         {/* Drill Caption */}
-        {!isFullscreen && (
+        {!isFullscreen && locale === 'en' && (
           <p className="text-xs text-slate-400 leading-relaxed -mt-2">
             Scan the dense grid and click the target letter C hidden among rotated distractor shapes.
           </p>

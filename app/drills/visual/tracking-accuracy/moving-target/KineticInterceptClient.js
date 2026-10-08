@@ -552,9 +552,11 @@ export default function KineticInterceptClient({ copy } = {}) {
             <h1 className="text-2xl sm:text-3xl font-black tracking-tight text-white">
               <span data-seo-kw="1">{copy?.title || "Moving Target Intercept Test"}</span>
             </h1>
-            <p className="text-sm text-slate-400 mt-1 leading-relaxed">
-              Smooth pursuit is the eye movement that follows a target moving steadily across your field of view.
-            </p>
+            {locale === 'en' && (
+              <p className="text-sm text-slate-400 mt-1 leading-relaxed">
+                Smooth pursuit is the eye movement that follows a target moving steadily across your field of view.
+              </p>
+            )}
           </div>
         )}
 

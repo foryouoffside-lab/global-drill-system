@@ -818,7 +818,7 @@ export default function CrossBodyMovementClient({ copy = {} } = {}) {
         </div>
 
         {/* Drill Caption */}
-        {!isFullscreen && (
+        {!isFullscreen && locale === 'en' && (
           <p className="text-xs text-slate-400 leading-relaxed -mt-2">
             Sweep the cursor across the screen to connect opposite-side nodes before the corridor narrows.
           </p>

@@ -507,9 +507,11 @@ export default function AutoPursuitClient({ copy } = {}) {
             <h1 className="text-2xl sm:text-3xl font-black tracking-tight text-white">
               <span data-seo-kw="1">{copy?.title || "Smooth Pursuit Tracker"}</span>
             </h1>
-            <p className="text-sm text-slate-400 mt-1">
-              Smooth pursuit is the eye movement that follows a continuously moving target, distinct from the saccades that jump between fixed points.
-            </p>
+            {locale === 'en' && (
+              <p className="text-sm text-slate-400 mt-1">
+                Smooth pursuit is the eye movement that follows a continuously moving target, distinct from the saccades that jump between fixed points.
+              </p>
+            )}
           </div>
         )}
 

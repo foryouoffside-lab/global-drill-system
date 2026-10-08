@@ -645,9 +645,11 @@ diagnostics = "Low target identification accuracy. Anchor your gaze centrally an
             <h1 className="text-2xl sm:text-3xl font-black tracking-tight text-white">
               <span data-seo-kw="1">{copy?.title || "Multiple Object Tracking Test"}</span>
             </h1>
-            <p className="text-[13px] text-slate-400 leading-relaxed">
-              A multiple object tracking (MOT) test asks you to follow several moving targets among identical moving distractors, then identify them at the end.
-            </p>
+            {locale === 'en' && (
+              <p className="text-[13px] text-slate-400 leading-relaxed">
+                A multiple object tracking (MOT) test asks you to follow several moving targets among identical moving distractors, then identify them at the end.
+              </p>
+            )}
           </div>
         )}
 
