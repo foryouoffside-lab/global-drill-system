@@ -78,7 +78,7 @@ const softwareApplicationSchema = {
   "@type": "SoftwareApplication", "sameAs": ["https://en.wikipedia.org/wiki/Smooth_pursuit", "https://en.wikipedia.org/wiki/Saccade"],
   "name": "Rastreamento com Mudança Espacial",
   "operatingSystem": "Navegador Web",
-  "applicationCategory": "HealthApplication",
+  "applicationCategory": "GameApplication",
   "offers": {
     "@type": "Offer",
     "price": "0.00",
@@ -93,7 +93,7 @@ const webAppSchema = {
   "@type": "WebApplication",
   "name": "Exercício de Rastreamento com Mudança Espacial",
   "url": "https://skilldrills.online/pt/drills/visual-tracking/spatial-shift-pursuit",
-  "applicationCategory": "SportsApplication",
+  "applicationCategory": "GameApplication",
   "operatingSystem": "Todos os navegadores modernos",
   "browserRequirements": "Requer suporte a JavaScript e HTML5 Canvas",
   "dateModified": "2026-09-20"
@@ -103,7 +103,7 @@ const videoGameSchema = {
   "@context": "https://schema.org",
   "@type": "VideoGame",
   "name": "Rastreamento visual com mudança espacial",
-  "description": "Desafio de agilidade visual onde o praticante sustenta o enquadramento ocular foveal perante rotacoes e translacoes repentinas do referencial.",
+  "description": "Exercício de rastreamento em que o campo visual se desloca de repente e o jogador precisa reencontrar e seguir o alvo.",
   "genre": ["Treino Visual", "Seguimento Ocular", "Treino de Reflexos"],
   "playMode": "SinglePlayer",
   "gamePlatform": "Navegador Web",
@@ -114,31 +114,31 @@ const howToSchema = {
   "@context": "https://schema.org",
   "@type": "HowTo",
   "name": "Como Treinar o Rastreamento sob Mudança Espacial",
-  "description": "Protocolo metódico para aprimorar o remapeamento de coordenadas e a rápida re-aquisição foveal após desvios espaciais bruscos.",
+  "description": "Passo a passo para reencontrar e voltar a acompanhar o alvo depois de uma mudança brusca no campo visual.",
   "step": [
     {
       "@type": "HowToStep",
       "position": 1,
       "name": "Estabeleça a Fixação Inicial",
-      "text": "Posicione-se a 50-70 cm do ecra. Inicie o seguimento continuo mantendo o alvo no centro visual."
+      "text": "Posicione-se a 50-70 cm da tela. Comece o acompanhamento mantendo o alvo no centro da visão."
     },
     {
       "@type": "HowToStep",
       "position": 2,
       "name": "Identifique o Deslocamento Global",
-      "text": "Quando o referencial girar ou transladar bruscamente, processe o vetor de deslocamento global em vez de procurar cegamente."
+      "text": "Quando o quadro girar ou se deslocar de repente, perceba primeiro a direção do deslocamento em vez de procurar às cegas."
     },
     {
       "@type": "HowToStep",
       "position": 3,
       "name": "Execute a Sacada Balística de Recuperação",
-      "text": "Dispare um salto ocular direto e preciso para as novas coordenadas calculadas sem correções intermédias."
+      "text": "Leve o olhar de forma direta para a nova posição do alvo, sem muitas correções intermediárias."
     },
     {
       "@type": "HowToStep",
       "position": 4,
-      "name": "Retome o Seguimento Suave sem Interrupção",
-      "text": "Integre a desaceleração da sacada imediatamente na velocidade de seguimento da nova trajetória para manter ganho unitário."
+      "name": "Retome o Acompanhamento Suave",
+      "text": "Assim que reencontrar o alvo, volte a acompanhar a nova trajetória na mesma velocidade dele."
     }
   ],
   "dateModified": "2026-09-20"
@@ -150,82 +150,82 @@ const faqSchema = {
   "mainEntity": [
     {
       "@type": "Question",
-      "name": "O que e o exercicio Spatial Shift Pursuit?",
+      "name": "O que é o exercício de rastreamento com mudança espacial?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "O Spatial Shift Pursuit treina a adaptabilidade oculomotora forcando os olhos a compensar mudancas e rotacoes subitas no referencial espacial, aprimorando a velocidade de re-aquisicao do alvo (Krauzlis, 2004)."
+        "text": "É um exercício em que o campo visual se desloca ou gira de repente e você precisa reencontrar o alvo e voltar a acompanhá-lo (Krauzlis, 2004). A página registra o desempenho nessa tarefa; não mede a visão."
       }
     },
     {
       "@type": "Question",
-      "name": "Como mudancas bruscas de referencial afetam a visao?",
+      "name": "Como mudanças bruscas de referencial afetam a visão?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Quando o espaco visual sofre uma translacao ou rotacao rapida, o mapa retinotopico desorganiza-se. O cerebro precisa recalcular um novo vetor motor para re-estabilizar o olhar (Robinson, 1965)."
+        "text": "Quando o espaço visual se desloca ou gira rapidamente, a imagem do alvo muda de posição na retina e o olhar precisa se reajustar para reencontrá-lo (Robinson, 1965)."
       }
     },
     {
       "@type": "Question",
-      "name": "Qual o papel do cortex parietal posterior (PPC) neste exercicio?",
+      "name": "Qual o papel do córtex parietal posterior (PPC) neste exercício?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "O PPC combina sinais da retina com a informacao motora de eferencia para converter coordenadas retinotopicas em referencias centradas na cabeca e no espaco real (Findlay & Gilchrist, 1999)."
+        "text": "A pesquisa descreve o PPC como uma região que combina sinais da retina com informação motora para relacionar a posição do alvo na retina com a posição no espaço (Findlay & Gilchrist, 1999). O exercício não mede essa atividade cerebral."
       }
     },
     {
       "@type": "Question",
-      "name": "O que e a sacada de recuperacao balistica?",
+      "name": "O que é a sacada de recuperação balística?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Quando o alvo salta para alem do campo foveal, os musculos oculares disparam uma sacada ultrarrapida de ate 500 graus por segundo para alcancar a nova posicao antes de retomar o seguimento suave (Rashbass, 1961)."
+        "text": "É um salto rápido do olhar que leva a visão central até a nova posição do alvo antes de o acompanhamento suave recomeçar (Rashbass, 1961)."
       }
     },
     {
       "@type": "Question",
-      "name": "Como este treino ajuda na mira de jogos FPS?",
+      "name": "Este treino ajuda na mira de jogos FPS?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Em tiroteios intensos sob recuo de armas, explosões com tremor de tela ou giros bruscos de camara, o exercicio reduz o tempo necessario para reenquadrar inimigos em fuga."
+        "text": "Em jogos de tiro há recuo, tremor de tela e giros bruscos de câmera que desviam o alvo do centro. O exercício pratica reencontrar um alvo depois de uma mudança assim, mas não há garantia de transferência para a mira no jogo."
       }
     },
     {
       "@type": "Question",
-      "name": "Qual o beneficio para modalidades desportivas dinamicas?",
+      "name": "Serve para esportes dinâmicos?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Em desportos como futebol, basquetebol ou automobilismo, o atleta muda de direcao rapidamente enquanto a bola ou adversarios se deslocam em trajetorias cruzadas."
+        "text": "Em esportes como futebol, basquete ou automobilismo, bola e adversários se movem em trajetórias cruzadas. O exercício pratica o acompanhamento visual na tela; não substitui treino esportivo nem garante ganho em campo."
       }
     },
     {
       "@type": "Question",
-      "name": "Como funciona a transicao da sacada para o seguimento suave?",
+      "name": "Como funciona a transição da sacada para o acompanhamento suave?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Conhecida como handshake oculomotor, o sistema funde a travagem do salto sacadico diretamente com a velocidade angular do alvo para evitar interrupcoes visuais."
+        "text": "Depois do salto do olhar, o acompanhamento precisa recomeçar na velocidade do alvo. Quanto mais cedo isso acontece, menos tempo você passa sem acompanhar o alvo."
       }
     },
     {
       "@type": "Question",
-      "name": "Quantas sessoes de treino sao recomendadas?",
+      "name": "Quantas sessões de treino são recomendadas?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Recomenda-se realizar de 4 a 6 series de 60 segundos por dia (cerca de 5 a 8 minutos). Sessoes breves de alta intensidade maximizam a plasticidade cerebelar sem fatiga excessiva."
+        "text": "Uma sugestão prática é fazer algumas séries curtas de 60 segundos, com pausas. Não há um número fixo comprovado; pare se sentir cansaço ou desconforto visual."
       }
     },
     {
       "@type": "Question",
-      "name": "Este exercicio e gratuito e acessivel sem registo?",
+      "name": "Este exercício é gratuito e funciona sem cadastro?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Sim, o SkillDrills oferece o treino totalmente gratuito no navegador, sem necessidade de transferencias ou criacao de contas."
+        "text": "Sim, o SkillDrills oferece o treino gratuitamente no navegador, sem download e sem criar conta."
       }
     },
     {
       "@type": "Question",
-      "name": "A taxa de atualizacao do ecra tem impacto no treino?",
+      "name": "A taxa de atualização da tela tem impacto no treino?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Monitores com taxas de 144Hz ou superiores diminuem a latencia de exibicao e a pixelizacao do movimento, proporcionando pistas visuais continuas para os centros visuais motores (Woods et al., 2015)."
+        "text": "Monitores de 144 Hz ou mais mostram o movimento com mais quadros por segundo e reduzem o atraso entre quadros (Woods et al., 2015). Compare sessões apenas no mesmo equipamento."
       }
     }
   ],
@@ -235,44 +235,44 @@ const faqSchema = {
 const guideProps = {
   heading: "Fundamentos Científicos do Rastreamento com Mudança Espacial e Adaptação Ocular",
   intro: [
-    "No ambiente natural e desportivo, o rastreamento visual quase nunca ocorre sobre cenários estáticos e uniformes. Seja durante sprints em piso irregular, manobras automotivas em alta velocidade ou combates em jogos de tiro em primeira pessoa marcados por tremores de ecrã e viragens bruscas de câmara, o referencial espacial do observador pode transladar-se ou rodar instantaneamente (Krauzlis, 2004; Robinson, 1965). Manter um alvo crítico bloqueado na fóvea central nestas condições adversas exige extrema agilidade adaptativa.",
-    "Investigações neurofisiológicas de Findlay & Gilchrist (1999) e Kahlon & Lisberger (1996) revelaram que os estímulos luminosos são codificados primeiramente em eixos oculocêntricos (retinotópicos). No momento em que todo o cenário sofre um desvio espacial, essa codificação colapsa. O córtex parietal posterior (PPC) intervém calculando a fusão de sinais visuais e cópias eferentes motoras para transladar a informação para coordenadas estáveis centradas na cabeça e no espaço.",
-    "Com base nessa nova representação topográfica, o sistema nervoso central emite uma sequência motora sincronizada: primeiro, uma sacada balística de alta velocidade fecha a distância para a nova localização do alvo. No instante da aterragem, o sistema funde a desaceleração sacádica diretamente na velocidade do novo percurso linear, sustentando o ganho foveal sem hesitações (Rashbass, 1961)."
+    "No dia a dia e no esporte, o rastreamento visual raramente acontece sobre cenários parados. Em sprints em piso irregular, na direção em alta velocidade ou em jogos de tiro em primeira pessoa, com tremores de tela e giros bruscos de câmera, o quadro de referência do observador pode se deslocar ou girar de repente (Krauzlis, 2004; Robinson, 1965). Reencontrar e manter o alvo na visão central nessas condições exige adaptação rápida.",
+    "Pesquisas de Findlay & Gilchrist (1999) e Kahlon & Lisberger (1996) descrevem que a posição dos estímulos é inicialmente representada em relação à retina. Quando todo o cenário se desloca, essa referência muda de uma vez, e regiões como o córtex parietal posterior ajudam a relacionar sinais visuais e comandos motores para localizar o alvo no espaço. Este exercício não mede essas estruturas; ele registra seu desempenho na tarefa.",
+    "Em seguida, o olhar costuma dar um salto rápido (sacada) até a nova posição do alvo e, ao chegar, retoma o acompanhamento suave na velocidade dele (Rashbass, 1961). O exercício pratica essa sequência de reencontrar o alvo e voltar a segui-lo sem hesitar."
   ],
   benchmarks: {
-    title: "Tabela de Classificação em Mudança Espacial e Recuperação de Coordenadas",
-    headers: ["Nível de Desempenho", "Tempo de Re-Centragem (ms)", "Precisão de Rastreamento (%)", "Estabilidade Pós-Sacádica", "Perfil Adaptativo"],
+    title: "Faixas de Referência em Mudança Espacial e Reencontro do Alvo",
+    headers: ["Nível de Desempenho", "Tempo de Recentralização (ms)", "Precisão de Rastreamento (%)", "Estabilidade Pós-Sacádica", "Perfil Adaptativo"],
     rows: [
-      ["Élite (Esports / Pilotos)", "< 220 ms", "> 95%", "> 96% (Fixação Imediata)", "Remapeamento parietal perfeito e transição instantânea de sacada para seguimento contínuo."],
-      ["Avançado (Competitivo)", "220 – 280 ms", "88% – 94%", "90% – 95%", "Elevada flexibilidade espacial com rápida recuperação do alvo e desvio mínimo."],
-      ["Competente (Adulto Saudável)", "281 – 360 ms", "78% – 87%", "80% – 89%", "Recuperação consistente com ligeira hesitação em rotações simultâneas."],
-      ["Em Desenvolvimento (Latência)", "361 – 450 ms", "65% – 77%", "68% – 79%", "Desorientação visível em mudanças bruscas exigindo múltiplas sacadas corretivas."],
-      ["Iniciante (Ajuste Motor)", "> 450 ms", "< 65%", "< 68%", "Perda do enquadramento referencial e procura ocular reativa."]
+      ["Faixa 1 (Muito alta)", "< 220 ms", "> 95%", "> 96% (Fixação imediata)", "Transição muito rápida da sacada para o acompanhamento contínuo."],
+      ["Faixa 2 (Alta)", "220 – 280 ms", "88% – 94%", "90% – 95%", "Boa adaptação espacial, com recuperação rápida do alvo e pouco desvio."],
+      ["Faixa 3 (Boa)", "281 – 360 ms", "78% – 87%", "80% – 89%", "Recuperação consistente, com leve hesitação em rotações simultâneas."],
+      ["Faixa 4 (Intermediária)", "361 – 450 ms", "65% – 77%", "68% – 79%", "Dificuldade visível em mudanças bruscas, com várias sacadas corretivas."],
+      ["Faixa 5 (Inicial)", "> 450 ms", "< 65%", "< 68%", "Perda do referencial e busca visual reativa."]
     ],
-    note: "※ Medições efetuadas em ecrãs 1080p a uma distância de 50–70 cm com velocidades de 1.0x a 1.5x e desvios aleatórios de referencial. Avaliado pelo tempo de re-centragem e bloqueio pós-sacádico."
+    note: "Faixas editoriais para comparar suas próprias sessões, não percentis de população nem normas clínicas. ※ Referência para telas 1080p a 50–70 cm, velocidades de 1.0x a 1.5x e desvios aleatórios do referencial, avaliada pelo tempo de recentralização e pela estabilidade após a sacada."
   },
   techniques: {
-    title: "Quatro Estratégias Fundamentais para o Rastreamento com Mudança Espacial",
+    title: "Quatro Estratégias para o Rastreamento com Mudança Espacial",
     items: [
       {
-        name: "Remapeamento Parietal de Coordenadas",
-        desc: "No momento do salto espacial, não procure apenas o ponto isolado. Capte o vetor global de deslocamento de todo o enquadramento para que o córtex atualize a matriz espacial instantaneamente.",
+        name: "Perceba o Deslocamento Global",
+        desc: "No momento da mudança, não procure apenas o ponto isolado. Perceba para onde o quadro inteiro se deslocou e use essa informação para reencontrar o alvo.",
         tips: "Concentre-se em perceber para onde todo o ambiente saltou."
       },
       {
-        name: "Recentralização Sacádica Balística",
-        desc: "Assim que as novas coordenadas forem identificadas, dispare um salto ocular firme num único tempo. A hesitação gera sacadas fracionadas que atrasam a fixação.",
-        tips: "Direcione o centro do olhar com a rapidez e firmeza de um chicote."
+        name: "Recentralização Direta",
+        desc: "Assim que perceber a nova posição, leve o olhar até ela de uma vez. A hesitação gera vários saltos pequenos que atrasam a fixação.",
+        tips: "Leve o olhar com um movimento firme e direto."
       },
       {
-        name: "Transição Fluida Pós-Sacádica",
-        desc: "Não imobilize os músculos oculares ao tocar nas novas coordenadas. Entre imediatamente no sentido de deslocamento do alvo para prosseguir a perseguição.",
-        tips: "Aterre na trajetória com a fluidez de um patinador a entrar na curva."
+        name: "Retomada Fluida",
+        desc: "Ao reencontrar o alvo, não pare. Entre imediatamente no sentido do movimento dele para seguir acompanhando.",
+        tips: "Volte ao acompanhamento com fluidez, sem frear."
       },
       {
-        name: "Ancoragem Rotacional Visual",
-        desc: "Quando o salto incluir rotação angular, mantenha a orientação fixando mentalmente o centro do ecrã como eixo de gravidade visual estável.",
-        tips: "Mantenha o centro do monitor como bússola neutra permanente."
+        name: "Referência no Centro da Tela",
+        desc: "Quando a mudança incluir rotação, use o centro da tela como ponto de referência para manter a orientação.",
+        tips: "Use o centro do monitor como referência."
       }
     ]
   },

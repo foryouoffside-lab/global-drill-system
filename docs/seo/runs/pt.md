@@ -39,3 +39,4 @@
 | /pt/drills/visual-tracking/peripheral-ping-pursuit | done | TBD:peripheral-ping-pursuit | docs/seo/research/pt/peripheral-ping-pursuit.md | title kept; privacy absolute and physiology claims softened; demand not verified |
 | /pt/drills/visual-tracking/predictive-pursuit | done | TBD:predictive-pursuit | docs/seo/research/pt/predictive-pursuit.md | title kept; elite tier, plasticity and cerebellum claims removed; demand not verified |
 | /pt/drills/visual-tracking/sine-wave-pursuit | done | TBD:sine-wave-pursuit | docs/seo/research/pt/sine-wave-pursuit.md | title kept; schema/FAQ/intro rewritten as accented pt-BR (was unaccented pt-PT); overclaims removed; demand not verified |
+| /pt/drills/visual-tracking/spatial-shift-pursuit | done | TBD:spatial-shift-pursuit | docs/seo/research/pt/spatial-shift-pursuit.md | title kept; schema/FAQ/intro rewritten as accented pt-BR (was unaccented pt-PT); overclaims removed; demand not verified |
