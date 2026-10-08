@@ -325,7 +325,7 @@ export default function EnhancedPageEs() {
       />
       <EliteNeuroSwitchClient
         copy={{
-          title: "Test de Reacción",
+          title: "Tiempo de Reacción de Elección",
           subtitle: "Elige el objetivo según el color activo y entrena la velocidad de decisión",
           startTitle: "Test de Reacción",
           startSubtitle: "Reacción de elección • Velocidad de decisión",

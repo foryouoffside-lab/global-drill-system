@@ -10,8 +10,8 @@ import { pickSources } from '@/lib/drillSources';
 // ============================================================
 
 export const metadata = {
-  title: 'Precisión del ratón | Test de mano firme | SkillDrills',
-  description: 'Sigue un trazado cada vez más estrecho y mide precisión del cursor, control motor fino y estabilidad de la mano. Gratis en el navegador.',
+  title: 'Juego del Pulso Online | Test de Mano Firme | SkillDrills',
+  description: 'Juego del pulso online: sigue un trazado cada vez más estrecho y mide la precisión del cursor y la estabilidad de la mano. Gratis.',
   keywords: [
     'test de precisión del ratón', 'test de mano firme', 'precisión del cursor',
     'seguir un trazado', 'control motor fino', 'coordinación ojo mano ratón',
@@ -19,8 +19,8 @@ export const metadata = {
     'estabilidad de la mano', 'camino estrecho ratón', 'prueba de precisión del mouse',
   ],
   openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
-    title: 'Precisión del ratón | Test de mano firme | SkillDrills',
-    description: 'Sigue un trazado cada vez más estrecho y mide precisión del cursor, control motor fino y estabilidad de la mano. Gratis en el navegador.',
+    title: 'Juego del Pulso Online | Test de Mano Firme | SkillDrills',
+    description: 'Juego del pulso online: sigue un trazado cada vez más estrecho y mide la precisión del cursor y la estabilidad de la mano. Gratis.',
     type: 'article',
     url: 'https://skilldrills.online/es/drills/motor/precision-control/steady-hand',
     siteName: 'SkillDrills',
@@ -28,8 +28,8 @@ export const metadata = {
   },
   twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: 'summary_large_image',
-    title: 'Precisión del ratón | Test de mano firme | SkillDrills',
-    description: 'Sigue un trazado cada vez más estrecho y mide precisión del cursor, control motor fino y estabilidad de la mano. Gratis en el navegador.',
+    title: 'Juego del Pulso Online | Test de Mano Firme | SkillDrills',
+    description: 'Juego del pulso online: sigue un trazado cada vez más estrecho y mide la precisión del cursor y la estabilidad de la mano. Gratis.',
   },
   robots: { index: true, follow: true },
   alternates: {
@@ -307,8 +307,9 @@ const guideProps = {
 };
 
 const esCopy = {
-  h1Keyword: 'Precisión del Ratón',
+  h1Keyword: 'Juego del Pulso Online',
   h1Suffix: ' (Test de Mano Firme)',
+  subtitle: 'Sigue un trazado estrecho y mejora el control del cursor',
   caption: 'El Juego del Pulso evalúa la firmeza de tu mano y tu precisión motora fina al guiar el cursor por un sendero iluminado sin tocar las paredes. Basado en la Ley de Accot-Zhai (1997) y en el control en bucle cerrado de Woodworth (1899).',
   statLaps: 'Vueltas',
   statTime: 'Tiempo Restante',

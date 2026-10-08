@@ -6,7 +6,7 @@ import { getAlternateLanguages } from '@/lib/i18n/locales';
 import { pickSources } from '@/lib/drillSources';
 
 export const metadata = {
-  title: "Prueba de Ghosting del Monitor | SkillDrills",
+  title: "Test de Ghosting del Monitor | SkillDrills",
   description: "Observa estelas y halos en un objetivo móvil y practica fijación foveal, nitidez de movimiento y estabilidad de la mirada.",
   keywords: [
     "prueba de ghosting del monitor",
@@ -28,7 +28,7 @@ export const metadata = {
   },
   robots: { index: true, follow: true },
   openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
-    title: "Prueba de Ghosting del Monitor | SkillDrills",
+    title: "Test de Ghosting del Monitor | SkillDrills",
     description: "Observa estelas y halos en un objetivo móvil y practica fijación foveal, nitidez de movimiento y estabilidad de la mirada.",
     url: "https://skilldrills.online/es/drills/visual-tracking/ghosting-suppress-pursuit",
     siteName: "SkillDrills",
@@ -37,7 +37,7 @@ export const metadata = {
   },
   twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: "summary_large_image",
-    title: "Prueba de Ghosting del Monitor | SkillDrills",
+    title: "Test de Ghosting del Monitor | SkillDrills",
     description: "Observa estelas y halos en un objetivo móvil y practica fijación foveal, nitidez de movimiento y estabilidad de la mirada.",
   },
 };
@@ -100,7 +100,7 @@ const webAppSchema = {
 const videoGameSchema = {
   "@context": "https://schema.org",
   "@type": "VideoGame",
-  "name": "Prueba de Ghosting del Monitor – Fijación Foveal",
+  "name": "Test de Ghosting del Monitor – Fijación Foveal",
   "description": "Entrenador visual en el navegador para observar estelas en un objetivo móvil y practicar fijación foveal y estabilidad de la mirada.",
   "genre": ["Prueba de Monitor", "Entrenamiento de Motilidad Ocular", "Entrenamiento de Reacción Visual"],
   "playMode": "Un jugador",
@@ -308,7 +308,7 @@ export default function GhostingSuppressPursuitPageEs() {
       />
       <GhostingSuppressPursuitClient
         copy={{
-          title: "Prueba de Ghosting del Monitor – Fijación Ocular",
+          title: "Test de Ghosting del Monitor – Fijación Ocular",
           subtitle: "Entrenamiento de Estabilidad Foveal y Supresión de Imágenes Residuales",
           description: "Al proyectar estelas de arrastre y anillos fantasma estocásticos, este ejercicio entrena a la corteza visual para inhibir activamente las distracciones lumínicas, afianzando la fóvea en el centro del blanco (Burr, 1980; Martinez-Conde et al., 2004)."
         }}

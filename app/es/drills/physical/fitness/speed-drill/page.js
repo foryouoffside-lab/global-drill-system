@@ -22,7 +22,7 @@ import { pickSources } from '@/lib/drillSources';
 // ============================================================
 
 export const metadata = {
-  title: 'Test de Clics por Segundo – Velocidad CPS | SkillDrills',
+  title: 'Test de Clic Rápido: Objetivos que se Encogen | SkillDrills',
   description: 'Test de clics por segundo online gratis. Haz clic rápido en objetivos emergentes para medir tu CPS, velocidad de reacción y puntería rápida en el PC.',
   keywords: [
     "test de clics por segundo",
@@ -41,7 +41,7 @@ export const metadata = {
     languages: getAlternateLanguages('/drills/physical/fitness/speed-drill'),
   },
   openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
-    title: "Test de Clics por Segundo & Prueba de Velocidad de Clic – Speed Drill | SkillDrills",
+    title: "Test de Clic Rápido: Objetivos que se Encogen | SkillDrills",
     description: "Test gratuito de clics por segundo (CPS) y entrenamiento de reflejos para ratón. Intercepta objetivos en movimiento que se encogen con impulsos balísticos y cronometría motora precisa.",
     url: 'https://skilldrills.online/es/drills/physical/fitness/speed-drill',
     siteName: 'SkillDrills',
@@ -50,18 +50,18 @@ export const metadata = {
   },
   twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: 'summary_large_image',
-    title: "Test de Clics por Segundo & Prueba de Velocidad de Clic – Speed Drill | SkillDrills",
+    title: "Test de Clic Rápido: Objetivos que se Encogen | SkillDrills",
     description: "Test gratuito de clics por segundo (CPS) y entrenamiento de reflejos para ratón. Intercepta objetivos en movimiento que se encogen con impulsos balísticos y cronometría motora precisa.",
   },
   robots: { index: true, follow: true },
 };
 
 Object.assign(metadata, {
-  title: 'Test de Clics por Segundo | CPS y Reflejos | SkillDrills',
+  title: 'Test de Clic Rápido: Objetivos que se Encogen | SkillDrills',
   description: 'Test gratuito de clics por segundo en el navegador. Acierta objetivos móviles que se encogen para practicar velocidad, precisión y reflejos.',
   keywords: ['test de clics por segundo', 'test de CPS', 'velocidad de click', 'contador de clicks', 'prueba de click', 'entrenamiento de puntería', 'juego de reflejos', 'clics rápidos', 'precisión del ratón', 'test de reacción'],
-  openGraph: { ...metadata.openGraph, title: 'Test de Clics por Segundo | CPS y Reflejos | SkillDrills', description: 'Test gratuito de clics por segundo en el navegador. Acierta objetivos móviles que se encogen para practicar velocidad, precisión y reflejos.' },
-  twitter: { ...metadata.twitter, title: 'Test de Clics por Segundo | CPS y Reflejos | SkillDrills', description: 'Test gratuito de clics por segundo en el navegador. Acierta objetivos móviles que se encogen para practicar velocidad, precisión y reflejos.' },
+  openGraph: { ...metadata.openGraph, title: 'Test de Clic Rápido: Objetivos que se Encogen | SkillDrills', description: 'Test gratuito de clics por segundo en el navegador. Acierta objetivos móviles que se encogen para practicar velocidad, precisión y reflejos.' },
+  twitter: { ...metadata.twitter, title: 'Test de Clic Rápido: Objetivos que se Encogen | SkillDrills', description: 'Test gratuito de clics por segundo en el navegador. Acierta objetivos móviles que se encogen para practicar velocidad, precisión y reflejos.' },
 });
 
 const breadcrumbSchema = {
@@ -344,7 +344,7 @@ export default function LocalizedSpeedDrillPageEs() {
       />
       <SpeedDrillClient
         copy={{
-          title: "Test de Clics por Segundo & Prueba de Velocidad de Clic",
+          title: "Test de Clic Rápido: Objetivos que se Encogen",
           subtitle: "Adquisición Balística de Blancos y CPS Dinámico • Dificultad con Escalado Continuo",
           description: "El entrenamiento de velocidad mide con qué rapidez puedes apuntar a un objetivo y hacer clic en él a medida que se encoge y el tiempo disminuye. La Ley de Fitts (1954) fija la base: el tiempo de movimiento crece con el logaritmo de la distancia dividida entre la anchura. El movimiento consta de dos partes — un impulso balístico inicial rápido y una corrección visual posterior más lenta (Woodworth, 1899) — y los objetivos que se contraen hacen costosas las correcciones lentas.",
           hudLabels: {

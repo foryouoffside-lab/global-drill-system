@@ -15,7 +15,7 @@ import { pickSources } from '@/lib/drillSources';
 // ============================================================
 
 export const metadata = {
-  title: "Entrenamiento de visión periférica | SkillDrills",
+  title: "Fijación Central y Visión Periférica | SkillDrills",
   description: "Sigue el objetivo central y responde a señales laterales sin apartar la mirada. Ejercicio gratuito en navegador con reacción y estabilidad de fijación.",
   keywords: [
     "entrenamiento de visión periférica",
@@ -30,7 +30,7 @@ export const metadata = {
     "entrenamiento visual para baloncesto"
   ],
   openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
-    title: "Entrenamiento de visión periférica | SkillDrills",
+    title: "Fijación Central y Visión Periférica | SkillDrills",
     description: "Sigue el objetivo central y detecta señales laterales sin apartar la mirada. Ejercicio gratuito en navegador.",
     type: "website",
     url: "https://skilldrills.online/es/drills/visual-tracking/peripheral-ping-pursuit",
@@ -39,7 +39,7 @@ export const metadata = {
   },
   twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: "summary_large_image",
-    title: "Entrenamiento de visión periférica | SkillDrills",
+    title: "Fijación Central y Visión Periférica | SkillDrills",
     description: "Practica la fijación central y la percepción de estímulos laterales directamente en el navegador.",
   },
   robots: { index: true, follow: true },
@@ -298,7 +298,7 @@ export default function SpanishPeripheralPingPage() {
 
       <PeripheralPingPursuitClient
         copy={{
-          title: "Entrenamiento de visión periférica y fijación central",
+          title: "Fijación central y visión periférica",
           subtitle: "Evaluación de Doble Tarea: Fijación Foveal Central y Detección de Estímulos Laterales",
           description: "Ejercicio visual para practicar la atención periférica: sigue el objetivo central y detecta destellos en los márgenes sin apartar los ojos. Compara tus resultados en el navegador."
         }}
