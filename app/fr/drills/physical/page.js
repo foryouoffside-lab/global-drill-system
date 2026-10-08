@@ -38,18 +38,18 @@ export const metadata = {
 };
 
 Object.assign(metadata, {
-  title: 'Test de réflexes & agilité | SkillDrills',
-  description: '11 exercices gratuits dans le navigateur pour temps de réaction, vivacité, équilibre, coordination motrice et esquive.',
-  keywords: ['test de réflexes', 'entraînement agilité', 'temps de réaction test', 'coordination motrice', 'équilibre corporel', 'vivacité sportive', 'coordination œil-main', 'jeu d’esquive', 'entraînement sportif en ligne', 'exercices réflexes gratuits'],
+  title: 'Exercices de réflexes et d’agilité en ligne | SkillDrills',
+  description: `${physicalDrills.length} exercices gratuits dans le navigateur : réflexes, esquive, vision périphérique, échelle d’agilité, équilibre et coordination.`,
+  keywords: ['exercices de réflexes', 'test de réflexe en ligne', 'jeu d’esquive', 'vision périphérique exercices', 'échelle d’agilité en ligne', 'coordination œil-main', 'équilibre souris', 'temps de réaction', 'exercices réflexes gratuits'],
   openGraph: {
     ...metadata.openGraph,
-    title: 'Test de réflexes & agilité | SkillDrills',
-    description: '11 exercices gratuits dans le navigateur pour réflexes, temps de réaction, vivacité et coordination motrice.',
+    title: 'Exercices de réflexes et d’agilité en ligne | SkillDrills',
+    description: `${physicalDrills.length} exercices gratuits dans le navigateur : réflexes, esquive, vision périphérique, échelle d’agilité, équilibre et coordination.`,
   },
   twitter: {
     ...metadata.twitter,
-    title: 'Test de réflexes & agilité | SkillDrills',
-    description: 'Entraînez réflexes, vivacité, équilibre et coordination avec 11 exercices gratuits.',
+    title: 'Exercices de réflexes et d’agilité en ligne | SkillDrills',
+    description: `${physicalDrills.length} exercices gratuits dans le navigateur : réflexes, esquive, vision périphérique, échelle d’agilité, équilibre et coordination.`,
   },
   alternates: { ...metadata.alternates, languages: getAlternateLanguages('/drills/physical') },
 });
@@ -60,7 +60,7 @@ const breadcrumbSchema = {
   "itemListElement": [
     { "@type": "ListItem", "position": 1, "name": "SkillDrills", "item": "https://skilldrills.online/fr" },
     { "@type": "ListItem", "position": 2, "name": "Exercices de Performance", "item": "https://skilldrills.online/fr/drills" },
-    { "@type": "ListItem", "position": 3, "name": "Réflexes Physiques & Agilité", "item": "https://skilldrills.online/fr/drills/physical" }
+    { "@type": "ListItem", "position": 3, "name": "Réflexes et agilité", "item": "https://skilldrills.online/fr/drills/physical" }
   ]
 };
 
@@ -69,9 +69,9 @@ const collectionSchema = {
   "@type": "CollectionPage",
   "inLanguage": "fr",
   "dateModified": "2026-09-20",
-  "name": "Entraînement d'Agilité & Réflexes (11 Exercices)",
+  "name": `Exercices de réflexes et d’agilité (${physicalDrills.length} exercices)`,
   "url": "https://skilldrills.online/fr/drills/physical",
-  "description": "11 exercices interactifs pour le temps de réaction, l'équilibre, la coordination motrice, l'échelle de rythme et l'esquive d'obstacles.",
+  "description": `${physicalDrills.length} exercices gratuits dans le navigateur : réflexes, esquive, vision périphérique, échelle d’agilité, équilibre et coordination.`,
   "author": { "@type": "Organization", "name": "SkillDrills" },
   "hasPart": physicalDrills.map((drill) => {
     const loc = getLocalizedDrill(drill.href, 'fr', drill.name);
@@ -95,83 +95,86 @@ const faqSchema = {
   "mainEntity": [
     {
       "@type": "Question",
-      "name": "Comment l'entraînement digital à l'échelle de rythme se transfère-t-il aux appuis et à l'agilité athlétique ?",
+      "name": "Quels exercices contient la catégorie réflexes et agilité ?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Les exercices d'échelle d'agilité sur écran entraînent la reconnaissance ultra-rapide des stimuli visuels et la synchronisation du rythme dans le cortex visuel. En stimulant le cortex moteur à prendre des décisions motrices en millisecondes face à des cibles mouvantes, la vitesse de conduction nerveuse s'accélère, réduisant le temps de contact au sol et optimisant les changements de direction (COD) au football, au basketball et au tennis."
+        "text": `La catégorie réunit ${physicalDrills.length} exercices dans le navigateur : test de réflexe, jeu d’esquive, freinage de visée, vision périphérique, jeu d’évitement sur grille, échelle d’agilité, jeu de précision souris, jeu de rapidité et autres exercices de coordination. Chaque carte ouvre l’exercice associé.`
       }
     },
     {
       "@type": "Question",
-      "name": "Qu'est-ce qu'une chaîne de réaction avec inhibition d'impulsion et comment évite-t-elle l'engagement excessif ?",
+      "name": "Ces exercices sont-ils de vrais exercices physiques ?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Le test d'arrêt d'impulsion (Impulse Arrest) évalue la capacité neuromusculaire à interrompre ou réorienter instantanément une action déjà amorcée lorsqu'un leurre ou une feinte adverse survient. Le renforcement des voies inhibitrices dans les ganglions de la base et le cortex préfrontal permet de freiner son élan en moins de 150 ms, neutralisant les feintes sans se faire déborder."
+        "text": "Non. Ce sont des jeux à la souris ou au clavier qui travaillent le timing visuel, la vitesse de décision et le contrôle du curseur. Ils ne remplacent ni la force, ni la pliométrie, ni la mobilité, ni l’entraînement propre à un sport."
       }
     },
     {
       "@type": "Question",
-      "name": "Comment le travail virtuel de stabilité contre des vecteurs de force renforce-t-il l'équilibre physique ?",
+      "name": "L’échelle d’agilité en ligne améliore-t-elle les appuis ?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "L'équilibre dynamique repose sur l'intégration sensorielle continue entre la fixation oculaire, le système vestibulaire de l'oreille interne et les propriocepteurs musculaires et articulaires. Résister à des vecteurs dynamiques de vent et de force sur l'écran force le système nerveux central à calculer des micro-forces antagonistes en temps réel, activant les muscles stabilisateurs posturaux face aux perturbations brutales."
+        "text": "Aucune étude ne le démontre. C’est un jeu de rythme à la souris inspiré de l’échelle d’agilité : il travaille l’alternance gauche-droite et le séquençage, pas le jeu de jambes."
       }
     },
     {
       "@type": "Question",
-      "name": "Pourquoi le franchissement de la ligne médiane (Cross-Body Movement) est-il capital pour la coordination corporelle ?",
+      "name": "À quoi sert le jeu d’esquive et d’évitement ?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Les mouvements croisant la ligne médiane du corps exigent une transmission synaptique soutenue à travers le corps calleux entre les deux hémisphères cérébraux. Les exercices d'interception synchronisent les chaînes cinétiques diagonales, amplifiant l'agilité multidirectionnelle, la puissance rotationnelle et la perception spatiale tridimensionnelle."
+        "text": "Il vous demande de repérer des dangers à l’écran et de déplacer le curseur vers une zone sûre. Il exerce l’anticipation et le contrôle du curseur ; le transfert vers un sport ou un jeu précis n’est pas démontré."
       }
     },
     {
       "@type": "Question",
-      "name": "De combien les exercices d'esquive sur grille 3x3 réduisent-ils le temps de réaction en situation d'évitement ?",
+      "name": "Que travaille l’exercice de vision périphérique ?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Contrairement aux tests statiques prévisibles, les zones de danger dynamiques imposent une mise à jour permanente de la cartographie spatiale dans le lobe pariétal. Cela abaisse le temps de réaction de choix (Choice Reaction Time) sous pression d'une moyenne de 280 ms à moins de 190 ms."
+        "text": "Il vous demande de fixer le centre de l’écran et de cliquer sur des cibles qui arrivent des bords. Il fait travailler la détection en périphérie, mais n’est ni un test médical ni une preuve d’élargissement du champ visuel."
       }
     },
     {
       "@type": "Question",
-      "name": "Quel est le rôle de la vision périphérique (champ visuel utile UFOV) dans l'anticipation et la prévention des blessures ?",
+      "name": "Quelle est la différence entre le test de réflexe et le jeu de freinage de visée ?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Le balayage des menaces périphériques élargit le champ visuel fonctionnel (FFOV). Les stimuli en périphérie stimulent la voie visuelle magnocellulaire, déclenchant des mouvements moteurs réflexes d'esquive sans exiger une fixation fovéale directe, ce qui prévient les collisions et chocs imprévus dans les sports de contact."
+        "text": "Le test de réflexe mesure la réaction à des cibles qui tombent, avec des leurres à ignorer. Le freinage de visée mesure la capacité à arrêter le curseur dans une cible mobile."
       }
     },
     {
       "@type": "Question",
-      "name": "Quelle est la routine d'entraînement optimale pour l'agilité et les réflexes physiques ?",
+      "name": "Mes résultats dépendent-ils de mon matériel ?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Le protocole recommandé est de 15 à 25 minutes de haute intensité, 3 à 5 fois par semaine. La précision neuromusculaire mobilisant des réserves synaptiques massives, dépasser 30 minutes déclenche une fatigue du système nerveux central (SNC), dégradant la mécanique réflexe et limitant les gains d'apprentissage."
+        "text": "Oui. Écran, souris, navigateur et système ajoutent leur propre délai. Un écran affiche une image toutes les 16,7 ms à 60 Hz, 6,9 ms à 144 Hz et 4,1 ms à 240 Hz (Woods et al., 2015) : comparez vos séances avec le même matériel."
       }
     },
     {
       "@type": "Question",
-      "name": "Les exercices de réflexes sur navigateur peuvent-ils compléter l'entraînement physique en salle ou sur le terrain ?",
+      "name": "Combien de temps s’entraîner ?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Oui. S'ils ne remplacent pas le renforcement musculaire ou la pliométrie, les exercices numériques isolent et perfectionnent la phase perceptivo-cognitive du geste sportif. En accélérant la détection visuelle, l'évaluation des risques et la commande motrice, ils permettent à la puissance athlétique de s'exprimer sur le terrain sans retard d'exécution."
+        "text": "Il n’existe pas de durée prouvée. Quelques séances courtes, reposées et régulières, sur le même matériel, permettent de suivre vos résultats ; arrêtez-vous en cas de fatigue ou d’inconfort."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Ces exercices fonctionnent-ils sur téléphone ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "La plupart demandent une souris et un ordinateur. Vérifiez la page de chaque exercice."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Mes scores sont-ils envoyés à un serveur ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Non. Vos records restent dans le LocalStorage de votre navigateur et aucun compte n’est nécessaire."
       }
     }
   ]
 };
-
-faqSchema.mainEntity.push(
-  {
-    "@type": "Question",
-    "name": "Combien d’exercices contient la catégorie d’entraînement physique ?",
-    "acceptedAnswer": { "@type": "Answer", "text": "La catégorie réunit 11 exercices dans le navigateur autour de quatre axes : réflexes et esquive, vivacité et condition physique, coordination et trajectoires, puis équilibre et stabilité. Chaque carte ouvre l’exercice associé." }
-  },
-  {
-    "@type": "Question",
-    "name": "Les exercices de réflexes dans le navigateur remplacent-ils l’entraînement physique ?",
-    "acceptedAnswer": { "@type": "Answer", "text": "Non. Ils travaillent le timing visuel, la vitesse de décision, la précision du contrôle et l’enchaînement des mouvements. Ils complètent, sans les remplacer, la force, la pliométrie, la mobilité et l’entraînement propre à un sport." }
-  }
-);
 
 export default function PhysicalDrillsPage() {
   return (
