@@ -29,3 +29,4 @@
 - /fr/drills/memory/short-term-memory/color-sequence | done | 3c720deb | docs/seo/research/fr/color-sequence.md | title kept (jeu simon 28 Bing); copy cleanup
 - /fr/drills/cognitive/processing-speed/reaction-time | done | dca4c217 | docs/seo/research/fr/cognitive-reaction-time.md | demand not verified (Bing 0); distinct from reaction-time-test
 - /fr/drills/cognitive/processing-speed/rsvp-reader | done | 83db22b4 | docs/seo/research/fr/rsvp-reader.md | Bing lecture rapide 23; page is target detection not reader
+- /fr/drills/cognitive/processing-speed/symbol-matching | done | 45f6a827 | docs/seo/research/fr/symbol-matching.md | demand not verified (Bing 0); SDMT suggest proxy

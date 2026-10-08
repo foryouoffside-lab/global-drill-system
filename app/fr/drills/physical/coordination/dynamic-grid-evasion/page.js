@@ -7,7 +7,7 @@ import { pickSources } from '@/lib/drillSources';
 // ============================================================
 // RECHERCHE DE MOTS-CLÉS NATIFS (SERP FRANCE / FR-FR)
 // Clusters natifs à intention forte; concurrence non mesurée :
-// - "jeu d'esquive à la souris en ligne" (Requête dominante gaming réflexe)
+// - "jeu d'évitement" (Suggest gl=fr: jeux d'évitement; Bing exact 0, non vérifié)
 // - "test de vision périphérique en ligne gratuit" (Évaluation visuelle et cognitive)
 // - "jeu d'esquive de zone réflexe" (Entraînement à la détection spatiale)
 // - "entraînement aux réflexes spatiaux" (Neuro-motricité appliquée)
@@ -18,8 +18,8 @@ import { pickSources } from '@/lib/drillSources';
 // ============================================================
 
 export const metadata = {
-  title: "Jeu de réflexes à la souris | SkillDrills",
-  description: "Jeu gratuit de réflexes à la souris. Détectez les zones dangereuses sur une grille 3x3 et rejoignez une case sûre pour entraîner vos réactions périphériques.",
+  title: "Jeu d’évitement sur grille 3x3 à la souris | SkillDrills",
+  description: "Jeu d’évitement gratuit : repérez les cases qui vont exploser sur une grille 3x3 et rejoignez une case sûre à la souris. 15 niveaux, 45 secondes.",
   keywords: [
     "jeu d'esquive à la souris en ligne",
     "test de vision périphérique en ligne",
@@ -37,8 +37,8 @@ export const metadata = {
     languages: getAlternateLanguages('/drills/physical/coordination/dynamic-grid-evasion'),
   },
   openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
-    title: "Jeu de réflexes à la souris | SkillDrills",
-    description: "Jeu gratuit de réflexes à la souris. Détectez les zones dangereuses sur une grille 3x3 et rejoignez une case sûre pour entraîner vos réactions périphériques.",
+    title: "Jeu d’évitement sur grille 3x3 à la souris | SkillDrills",
+    description: "Jeu d’évitement gratuit : repérez les cases qui vont exploser sur une grille 3x3 et rejoignez une case sûre à la souris. 15 niveaux, 45 secondes.",
     url: 'https://skilldrills.online/fr/drills/physical/coordination/dynamic-grid-evasion',
     siteName: 'SkillDrills',
     locale: 'fr_FR',
@@ -46,8 +46,8 @@ export const metadata = {
   },
   twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: 'summary_large_image',
-    title: "Jeu de réflexes à la souris | SkillDrills",
-    description: "Jeu gratuit de réflexes à la souris. Détectez les zones dangereuses sur une grille 3x3 et rejoignez une case sûre pour entraîner vos réactions périphériques.",
+    title: "Jeu d’évitement sur grille 3x3 à la souris | SkillDrills",
+    description: "Jeu d’évitement gratuit : repérez les cases qui vont exploser sur une grille 3x3 et rejoignez une case sûre à la souris. 15 niveaux, 45 secondes.",
   },
   robots: { index: true, follow: true },
 };
@@ -77,7 +77,7 @@ const breadcrumbSchema = {
     {
       "@type": "ListItem",
       "position": 4,
-      "name": "Jeu d'Esquive à la Souris & Vision Périphérique",
+      "name": "Jeu d’évitement sur grille 3x3",
       "item": "https://skilldrills.online/fr/drills/physical/coordination/dynamic-grid-evasion"
     }
   ]
@@ -85,21 +85,21 @@ const breadcrumbSchema = {
 
 const softwareApplicationSchema = {
   "@context": "https://schema.org",
-  "@type": "SoftwareApplication", "sameAs": ["https://en.wikipedia.org/wiki/Reaction_time", "https://en.wikipedia.org/wiki/Peripheral_vision"],
-  "name": "Jeu d'Esquive à la Souris et Vision Périphérique",
-  "applicationCategory": "HealthApplication",
+  "@type": "SoftwareApplication",
+  "name": "Jeu d’évitement sur grille 3x3 à la souris",
+  "applicationCategory": "GameApplication",
   "operatingSystem": "All",
   "offers": {
     "@type": "Offer",
     "price": "0",
     "priceCurrency": "USD"
   },
-  "description": "Outil neurocognitif d'évaluation des réflexes spatiaux, du balayage périphérique et de l'évitement rapide sur une grille 3x3 sous contrainte temporelle.",
+  "description": "Jeu gratuit dans le navigateur : repérez les cases qui vont exploser sur une grille 3x3 et rejoignez une case sûre avant l’explosion.",
   "url": "https://skilldrills.online/fr/drills/physical/coordination/dynamic-grid-evasion",
   "publisher": {
     "@type": "Organization",
     "name": "SkillDrills",
-    "url": "https://skilldrills.online/fr"
+    "url": "https://skilldrills.online"
   },
   "inLanguage": "fr-FR",
   "dateModified": "2026-09-20"
@@ -108,10 +108,11 @@ const softwareApplicationSchema = {
 const webApplicationSchema = {
   "@context": "https://schema.org",
   "@type": "WebApplication",
-  "name": "Entraîneur d'Évitement et Réflexes Spatiaux",
-  "applicationCategory": "EducationalApplication",
+  "name": "Jeu d’évitement sur grille 3x3",
+  "description": "Jeu d’évitement gratuit dans le navigateur, avec 15 niveaux de difficulté croissante sur 45 secondes.",
+  "applicationCategory": "GameApplication",
   "operatingSystem": "All",
-  "browserRequirements": "Navigateur moderne supportant HTML5 Canvas et Pointer Lock API",
+  "browserRequirements": "Navigateur moderne avec JavaScript",
   "offers": {
     "@type": "Offer",
     "price": "0",
@@ -125,14 +126,13 @@ const webApplicationSchema = {
 const videoGameSchema = {
   "@context": "https://schema.org",
   "@type": "VideoGame",
-  "name": "Jeu d'Évitement sur Grille Dynamique (Dynamic Grid Evasion)",
+  "name": "Jeu d’évitement sur grille dynamique (Dynamic Grid Evasion)",
   "url": "https://skilldrills.online/fr/drills/physical/coordination/dynamic-grid-evasion",
-  "description": "Exercice intensif d'évitement d'explosions sur une matrice 3x3 pour aiguiser la vision périphérique et la vivacité de réaction dans les jeux compétitifs.",
+  "description": "Jeu d’évitement sur une grille 3x3 : repérez les cases dangereuses et rejoignez une case sûre à la souris.",
   "genre": [
-    "Coordination Drill",
-    "Reflex Training",
-    "Spatial Awareness",
-    "Action"
+    "Action",
+    "Reflex Game",
+    "Spatial Awareness"
   ],
   "gamePlatform": [
     "Web Browser",
@@ -157,82 +157,82 @@ const faqSchema = {
   "mainEntity": [
     {
       "@type": "Question",
-      "name": "Quel est le principe du test d'esquive et de vision périphérique sur la grille 3x3 ?",
+      "name": "Comment fonctionne ce jeu d’évitement sur grille 3x3 ?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "L'écran est fractionné en 9 cases tactiques. Des impulsions ambrées signalent des détonations imminentes dans plusieurs secteurs. L'utilisateur doit conserver un regard panoramique, repérer via sa vision périphérique les cases restant inactives et y projeter son curseur avant l'explosion rouge."
+        "text": "L’écran est divisé en 9 cases. Des bordures ambrées signalent les cases qui vont exploser en rouge. Vous repérez les cases restées sombres et déplacez votre curseur vers l’une d’elles avant l’explosion."
       }
     },
     {
       "@type": "Question",
-      "name": "Pourquoi une fixation visuelle au centre est-elle plus efficace qu'un balayage case par case ?",
+      "name": "Faut-il fixer le centre de la grille ou balayer case par case ?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "D'après la théorie de l'intégration des attributs d'Anne Treisman (1980), le traitement pré-attentionnel traite les contrastes lumineux de manière parallèle et instantanée. Inspecter les cases de façon séquentielle créerait un encombrement cognitif insurmontable lorsque le délai d'alerte tombe à 0,45 seconde."
+        "text": "Fixer le centre permet de voir les neuf cases d’un coup, alors qu’un balayage case par case demande du temps que le délai d’alerte ne laisse pas. La recherche sur les caractéristiques visuelles saillantes (Treisman & Gelade, 1980) soutient cette stratégie, que vous pouvez comparer à la vôtre."
       }
     },
     {
       "@type": "Question",
-      "name": "De quelle façon cet entraînement aide-t-il à esquiver les sorts et capacités dans LoL, Valorant ou CS2 ?",
+      "name": "Comment la difficulté augmente-t-elle sur les 15 niveaux ?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "En situation de tournoi, les capacités de zone (cocktails Molotov, grenades, ultimes) et les skillshots exigent une manœuvre d'évitement réflexe sans perdre l'orientation du combat. Cet exercice automatise l'attention exogène de Posner, permettant d'esquiver les menaces périphériques par pur réflexe moteur."
+        "text": "Le niveau monte tous les 250 points. Le délai d’avertissement passe de 1,4 s au niveau 1 à 0,45 s aux niveaux 12 à 15, et le nombre de cases dangereuses de 3 à 7 simultanément, avec 2 refuges au minimum."
       }
     },
     {
       "@type": "Question",
-      "name": "Comment s'accentuent la contrainte temporelle et le nombre de cases dangereuses au fil des 15 niveaux ?",
+      "name": "Une explosion fait-elle perdre des points ou du temps ?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Le niveau s'élève tous les 250 points. Le délai d'avertissement se comprime graduellement de 1,4 seconde au niveau 1 jusqu'à seulement 0,45 seconde aux niveaux 12 à 15, tandis que le nombre de zones compromises monte de 3 jusqu'à 7 cases simultanées, ne laissant que 2 refuges sécurisés."
+        "text": "Non. Aucun point acquis n’est retiré et le chronomètre de 45 secondes ne change pas. Être touché ramène seulement le multiplicateur de série à 1.0x."
       }
     },
     {
       "@type": "Question",
-      "name": "Subir une détonation fait-il perdre des points ou réduit-il la durée de l'exercice ?",
+      "name": "Comment placer le curseur dans la case sûre sans la dépasser ?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Aucun point acquis n'est retranché et le chronomètre de 45 secondes ne subit aucun raccourcissement. En revanche, être surpris dans une zone rouge remet immédiatement le multiplicateur de série à 1.0x, stimulant des décisions vives et sans hésitation."
+        "text": "Vers la case choisie, un grand mouvement suivi d’un freinage court correspond au modèle à deux phases de Woodworth (1899). Reposer légèrement la main sur le tapis aide certains joueurs à s’arrêter net."
       }
     },
     {
       "@type": "Question",
-      "name": "Quelle est la cinématique motrice optimale pour immobiliser le curseur au sein de la zone refuge ?",
+      "name": "Quelle sensibilité de souris choisir pour ce jeu ?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "On met en pratique le modèle biphasique de Robert Woodworth (1899) : un flick balistique très rapide vers la case sécurisée complété par un freinage instantané obtenu en exerçant une légère pression verticale de la pulpe des doigts et de la paume sur le tapis de souris pour absorber l'inertie."
+        "text": "Il n’y a pas de réglage unique. Une sensibilité trop basse oblige à de grands mouvements du bras, une sensibilité très haute rend l’arrêt difficile. Gardez celle de votre jeu et comparez vos séances avec le même réglage."
       }
     },
     {
       "@type": "Question",
-      "name": "En quoi le réglage de la sensibilité souris influence-t-il la survie lors des paliers experts ?",
+      "name": "Comment atteindre le palier 1 de 17 000 points ?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Une sensibilité trop basse nécessite des mouvements de bras d'une grande amplitude qui gaspillent la fenêtre critique de 0,45s. Une sensibilité intermédiaire bien équilibrée (28 à 38 cm par tour de 360°) permet d'enchaîner les transitions d'une case à l'autre par de courtes impulsions du poignet et des doigts."
+        "text": "Gardez le regard au centre, choisissez toujours la case sûre la plus proche de votre curseur et conservez le multiplicateur 3.0x sur les 45 secondes. Les paliers sont des repères propres à l’exercice, pas des classements."
       }
     },
     {
       "@type": "Question",
-      "name": "Quelle ligne de conduite permet d'excéder les 17 000 points pour décrocher le titre Apex Grid Evader ?",
+      "name": "Quelle différence entre attention volontaire et réflexe ici ?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "La clé réside dans le maintien d'une vision périphérique ouverte au centre exact de la grille 3x3 et l'adoption systématique du refuge sécurisé adjacent le plus immédiat. Conserver le multiplicateur maximum de 3.0x de manière ininterrompue pendant les 45 secondes garantit le score d'élite."
+        "text": "Posner (1980) distingue l’attention dirigée volontairement, plus lente, de celle attirée par un signal visuel soudain. Ce jeu vous fait réagir aux bordures ambrées, donc au signal, plutôt que de chercher activement."
       }
     },
     {
       "@type": "Question",
-      "name": "Quelle est la nuance fondamentale entre attention endogène et exogène lors de ce drill ?",
+      "name": "Ce jeu entraîne-t-il à esquiver dans les jeux vidéo ?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Selon Michael Posner (1980), l'attention endogène est volontaire et nécessite environ 300ms, tandis que l'attention exogène est automatique et déclenchée par des éclairs visuels en 100 à 150ms. Cet entraînement conditionne le réflexe exogène face à l'apparition des bordures ambrées."
+        "text": "Il travaille la détection de signaux visuels en périphérie et le déplacement rapide du curseur. Aucune étude ne démontre un transfert vers un jeu précis : testez dans votre propre jeu."
       }
     },
     {
       "@type": "Question",
-      "name": "L'exercice nécessite-t-il le moindre téléchargement ou l'enregistrement de données personnelles ?",
+      "name": "Faut-il installer quelque chose ou créer un compte ?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Aucune installation n'est requise. L'ensemble des calculs cinématiques s'exécute localement dans le navigateur grâce à HTML5 Canvas et l'API haute fidélité performance.now(). Vos records et bilans statistiques demeurent rigoureusement stockés dans la mémoire de votre navigateur (LocalStorage)."
+        "text": "Non. Le jeu fonctionne dans le navigateur, sans installation ni compte, et vos records sont stockés dans le LocalStorage de votre navigateur."
       }
     }
   ]
@@ -241,95 +241,131 @@ const faqSchema = {
 const howToSchema = {
   "@context": "https://schema.org",
   "@type": "HowTo",
-  "name": "Protocole d'Exécution du Test d'Évitement sur Grille et Réflexes Spatiaux",
-  "description": "Guide en 4 étapes pour surveiller la grille 3x3, identifier les secteurs sécurisés et éviter les détonations.",
+  "name": "Comment jouer au jeu d’évitement sur grille 3x3",
+  "description": "Quatre étapes pour surveiller la grille, repérer les cases sûres et éviter les explosions.",
   "step": [
     {
       "@type": "HowToStep",
       "position": 1,
-      "name": "Positionnement Médian et Focale Décentralisée",
-      "text": "Placez le curseur au centre de la grille 3x3 et adoptez un regard ouvert englobant la totalité des 9 compartiments.",
-      "url": "https://skilldrills.online/fr/drills/physical/coordination/dynamic-grid-evasion#etape-1"
+      "name": "Placez le curseur au centre",
+      "text": "Placez le curseur au milieu de la grille 3x3 et gardez un regard large qui englobe les neuf cases.",
+      "url": "https://skilldrills.online/fr/drills/physical/coordination/dynamic-grid-evasion#step-1"
     },
     {
       "@type": "HowToStep",
       "position": 2,
-      "name": "Détection Périphérique des Lignes d'Avertissement",
-      "text": "Repérez instantanément par vision périphérique les cases qui ne clignotent pas en ambre et constituent des zones sûres.",
-      "url": "https://skilldrills.online/fr/drills/physical/coordination/dynamic-grid-evasion#etape-2"
+      "name": "Repérez les cases sombres",
+      "text": "Repérez par vision périphérique les cases qui ne clignotent pas en ambre : ce sont les zones sûres.",
+      "url": "https://skilldrills.online/fr/drills/physical/coordination/dynamic-grid-evasion#step-2"
     },
     {
       "@type": "HowToStep",
       "position": 3,
-      "name": "Flick Balistique et Verrouillage en Zone Sûre",
-      "text": "Projettez le curseur vers le secteur sécurisé le plus accessible avant la fin du décompte et l'explosion rouge.",
-      "url": "https://skilldrills.online/fr/drills/physical/coordination/dynamic-grid-evasion#etape-3"
+      "name": "Rejoignez la case sûre",
+      "text": "Déplacez le curseur vers la case sûre la plus proche avant l’explosion rouge.",
+      "url": "https://skilldrills.online/fr/drills/physical/coordination/dynamic-grid-evasion#step-3"
     },
     {
       "@type": "HowToStep",
       "position": 4,
-      "name": "Maintien de Série et Prolongation du Combo 3.0x",
-      "text": "Enchaînez les évitements consécutifs pour stabiliser le multiplicateur à 3.0x et maximiser votre résultat sur 45 secondes.",
-      "url": "https://skilldrills.online/fr/drills/physical/coordination/dynamic-grid-evasion#etape-4"
+      "name": "Gardez la série",
+      "text": "Enchaînez les évitements pour maintenir le multiplicateur 3.0x pendant les 45 secondes.",
+      "url": "https://skilldrills.online/fr/drills/physical/coordination/dynamic-grid-evasion#step-4"
     }
   ]
 };
 
 const gridGuide = {
-  heading: "Fondements Neurocognitifs : Attention Spatiale et Évitement Réflexe Périphérique",
-  subtitle: "Théorie de Treisman, paradigme d'orientation de Posner et freinage de Woodworth appliqués à la réactivité",
-  intro: [
-    "L'exercice d'évitement sur grille dynamique (Dynamic Grid Evasion) place le système visuo-moteur sous une haute densité de contraintes temporelles. Au lieu d'effectuer le suivi d'une cible isolée, l'exécutant doit surveiller en continu 9 compartiments tactiques au sein d'une matrice 3x3, décoder en une fraction de seconde quelles cases vont exploser et engager une trajectoire de fuite balistique vers une zone préservée.",
-    "La chercheuse en psychologie cognitive Anne Treisman et Garry Gelade (1980), dans leur célèbre Théorie de l'Intégration des Attributs, ont démontré que les caractéristiques visuelles primaires saillantes (clignotements, ruptures chromatiques) sont extraites en parallèle au stade pré-attentionnel par le cortex visuel. En fixant paisiblement le centre de la grille, la rétine périphérique met à contribution ses cellules magnocellulaires, ce qui permet de capter l'état des 9 compartiments d'un seul coup d'œil sans mouvements oculaires saccadiques lents.",
-    "Ce modèle est corroboré par les travaux pionniers de Michael Posner (1980) sur l'orientation de l'attention spatiale dissimulée (covert attention). Lorsque la session atteint les niveaux 12 à 15, la fenêtre de réaction s'amenuise de 1,4 seconde à un éclair de 0,45 seconde tandis que 7 cases sur 9 deviennent explosives. Dans ces circonstances extrêmes, la commande motrice s'organise selon le modèle en deux phases de Robert Woodworth (1899) : une accélération balistique initiale fulgurante suivie d'un freinage micrométrique par frottement digital sur le tapis.",
-    "Précision d'échantillonnage et latence d'affichage : Ce test tourne intégralement sur la machine cliente via l'API performance.now() à une résolution inférieure à la milliseconde. La latence globale observée dépend du taux de rafraîchissement de votre écran (60Hz = 16,6ms ; 144Hz = 6,9ms ; 240Hz = 4,1ms) et de la fréquence de rapport de la souris. Les fluctuations sous 5ms correspondent aux tolérances matérielles usuelles."
+  "heading": "Jeu d’évitement sur grille 3x3 : comment ça marche",
+  "subtitle": "Attention spatiale périphérique (Treisman, Posner) et freinage en deux phases (Woodworth)",
+  "intro": [
+    "Ce jeu d’évitement vous place devant une grille de 9 cases dont certaines vont exploser. Vous repérez les cases restées sombres et rejoignez l’une d’elles à la souris avant l’explosion rouge. Il dure 45 secondes, compte 15 niveaux et exerce la détection périphérique et le déplacement rapide du curseur.",
+    "Treisman et Gelade (1980) ont montré que les caractéristiques visuelles saillantes, comme un clignotement ou un changement de couleur, sont repérées en parallèle sur le champ visuel. En fixant le centre de la grille, vous pouvez donc voir l’état des neuf cases sans balayage séquentiel.",
+    "Posner (1980) a décrit l’orientation de l’attention vers un lieu sans bouger les yeux. Du niveau 12 au niveau 15, la fenêtre de réaction tombe de 1,4 s à 0,45 s pendant que 7 cases sur 9 deviennent dangereuses. Le déplacement vers la case sûre suit le modèle en deux phases de Woodworth (1899) : un mouvement rapide puis une correction fine.",
+    "Mesure et matériel : le test s’exécute dans votre navigateur avec l’horloge performance.now(), dont la résolution est limitée. Un écran à 60 Hz affiche une image toutes les 16,7 ms et un écran à 144 Hz toutes les 6,9 ms (Woods et al., 2015) : comparez vos séances sur le même matériel."
   ],
-  benchmarks: {
-    title: "Grille d'Évaluation et Niveaux d'Évitement Spatial (5 Paliers)",
-    headers: ["Palier / Rang", "Titre de Maîtrise", "Score Requis", "Niveau Atteint", "Délai d'Alerte Maîtrisé", "Profil Neurofonctionnel d'Évitement"],
-    rows: [
-      ["Tier 1: Évacuateur Apex Suprême", "Apex Grid Evader", "17 000+ points", "Niveau 12 – 15", "0,45 – 0,60 s d'alerte", "Extraction périphérique parallèle d'élite (top 0,1 %) ; flicks balistiques parfaits vers les zones libres sous 7 menaces actives (Treisman 1980 ; Posner 1980)"],
-      ["Tier 2: Maître du Balayage Spatial", "Master Spatial Scanner", "13 000 – 16 999 pts", "Niveau 9 – 11", "0,65 – 0,80 s d'alerte", "Remarquable attention exogène de Posner ; évitement fluide face à 5 ou 6 détonations avec contrôle de décélération de Woodworth"],
-      ["Tier 3: Évitateur Tactique Confirmé", "Proficient Hazard Dodger", "9 500 – 12 999 pts", "Niveau 6 – 8", "0,85 – 1,05 s d'alerte", "Très bon niveau pour le tir compétitif ; prise de décision instantanée et friction bien dosée sur le tapis"],
-      ["Tier 4: Rescapé de Secteur Moyen", "Intermediate Sector Evader", "6 000 – 9 499 pts", "Niveau 3 – 5", "1,10 – 1,25 s d'alerte", "Moyenne fonctionnelle standard ; ruptures de série causées par une vision tunnel lorsque le délai descend sous 1,0 seconde"],
-      ["Tier 5: Apprenti Évacuateur Novice", "Novice Blast Survivor", "< 6 000 points", "Niveau 1 – 2", "> 1,25 s d'alerte", "Difficulté à appréhender la périphérie du regard ; tendance à fixer un seul secteur et à dépasser les limites de la case sûre"]
+  "benchmarks": {
+    "title": "Paliers du jeu d’évitement (5 niveaux de repère)",
+    "headers": [
+      "Palier",
+      "Score requis",
+      "Niveau atteint",
+      "Délai d’alerte",
+      "Lecture"
     ],
-    note: "Paliers définis à partir de la Théorie de l'Intégration des Attributs (Treisman & Gelade 1980), des études d'attention spatiale de Posner (1980) et du modèle moteur de Woodworth (1899)."
+    "rows": [
+      [
+        "Palier 1",
+        "17 000+ points",
+        "Niveau 12 – 15",
+        "0,45 – 0,60 s",
+        "Évitement fluide face à 7 cases dangereuses"
+      ],
+      [
+        "Palier 2",
+        "13 000 – 16 999 pts",
+        "Niveau 9 – 11",
+        "0,65 – 0,80 s",
+        "Bonne gestion de 5 à 6 explosions simultanées"
+      ],
+      [
+        "Palier 3",
+        "9 500 – 12 999 pts",
+        "Niveau 6 – 8",
+        "0,85 – 1,05 s",
+        "Décisions rapides, arrêts bien dosés"
+      ],
+      [
+        "Palier 4",
+        "6 000 – 9 499 pts",
+        "Niveau 3 – 5",
+        "1,10 – 1,25 s",
+        "Séries interrompues quand le délai passe sous 1 s"
+      ],
+      [
+        "Palier 5",
+        "Moins de 6 000 points",
+        "Niveau 1 – 2",
+        "Plus de 1,25 s",
+        "Point de départ : cherchez à voir toute la grille"
+      ]
+    ],
+    "note": "Repères éditoriaux propres à cet exercice, établis sur le niveau atteint et le délai d’alerte. Ce ne sont ni des normes cliniques ni un classement de population."
   },
-  techniques: {
-    title: "Protocoles Pratiques pour Développer la Vision Périphérique et l'Évitement sur Grille",
-    items: [
+  "techniques": {
+    "title": "Quatre techniques pour mieux éviter sur la grille",
+    "items": [
       {
-        name: "Fixation Décentralisée au Centroïde de la Matrice (Treisman Decentralized Fixation)",
-        desc: "Maintenez le regard détendu au centre géométrique de la grille 3x3 sans vous focaliser sur une cellule en particulier. Ouvrez votre champ visuel périphérique afin que la rétine capte l'éclat ambré simultanément sur l'ensemble des zones.",
-        tips: "Ne suivez pas le curseur des yeux ; fiez-vous au guidage proprioceptif de votre bras pour orienter le pointeur vers la zone dégagée."
+        "name": "Fixer le centre de la grille",
+        "desc": "Gardez le regard détendu sur le centre sans vous attacher à une case. Laissez la périphérie repérer l’éclat ambré sur l’ensemble des zones.",
+        "tips": "Ne suivez pas le curseur des yeux : guidez-le avec votre bras."
       },
       {
-        name: "Déclenchement Exogène Réflexe de Posner (Exogenous Attention Trigger)",
-        desc: "Mettez à profit l'orientation exogène établie par Posner (1980). Plutôt que de réfléchir activement à l'emplacement du danger, déplacez la main de manière réflexe vers le compartiment resté sombre et sans clignotement.",
-        tips: "L'absence d'éclairage ambré constitue votre feu vert pour une évacuation instantanée."
+        "name": "Réagir à l’absence de signal",
+        "desc": "Ne cherchez pas d’abord où est le danger : dirigez la main vers une case restée sombre.",
+        "tips": "Une case sans bordure ambrée est votre refuge."
       },
       {
-        name: "Flick Balistique et Freinage par Friction de Woodworth (Boundary Deceleration)",
-        desc: "Amorcez le déplacement à vitesse balistique maximale puis appuyez légèrement la tranche de la paume et l'auriculaire contre le tapis au moment de pénétrer dans la case cible.",
-        tips: "Ce contact freine net le curseur et empêche tout dérapage hors du périmètre sécurisé."
+        "name": "Mouvement rapide puis freinage",
+        "desc": "Partez vite vers la case choisie, puis ralentissez en entrant dans la case pour ne pas la dépasser.",
+        "tips": "Un léger appui de la main sur le tapis peut aider à s’arrêter net."
       },
       {
-        name: "Règle de Fuite vers la Case Sécurisée la Plus Proche (Nearest Safe Sector Rule)",
-        desc: "Dans les derniers niveaux où 7 cases détonent à un rythme effréné de 0,45s, vouloir choisir la zone 'idéale' provoque un temps d'arrêt fatal.",
-        tips: "Fuyez sans la moindre hésitation vers le compartiment libre le plus proche de votre curseur (horizontal, vertical ou diagonal immédiat)."
+        "name": "Choisir la case sûre la plus proche",
+        "desc": "Aux niveaux élevés, chercher la case idéale coûte du temps : visez le refuge le plus proche de votre curseur, en horizontal, vertical ou diagonale.",
+        "tips": "Une décision rapide vaut mieux qu’un déplacement parfait mais tardif."
       }
     ]
   },
-  steps: [
-    "Installez-vous confortablement et positionnez le pointeur au centre de la grille 3x3.",
-    "Gardez les yeux détendus au centre afin de surveiller les signaux lumineux par vision périphérique.",
-    "Glissez promptement le curseur vers la case sûre la plus proche avant l'explosion rouge.",
-    "Maintenez le combo 3.0x sans interruption pour décrocher le rang Apex au bout des 45 secondes."
+  "steps": [
+    "Placez le curseur au centre de la grille 3x3.",
+    "Gardez les yeux détendus au centre pour surveiller les signaux en périphérie.",
+    "Rejoignez la case sûre la plus proche avant l’explosion rouge.",
+    "Maintenez le combo 3.0x pendant les 45 secondes."
   ],
-  audience: "Joueurs d'esport (LoL, Valorant, CS2, Apex Legends), athlètes de sports de balle et de combat, et toute personne désireuse d'aiguiser sa vision périphérique et sa vitesse d'esquive réflexe.",
-  faqs: faqSchema.mainEntity.map(e => ({ q: e.name, a: e.acceptedAnswer.text })),
-  sources: pickSources('posner1980', 'treisman1980', 'woodworth1899', 'fitts1954', 'woods2015'),
+  "audience": "Joueurs, sportifs et toute personne qui veut s’exercer à la détection périphérique et à l’évitement rapide à la souris.",
+  "faqs": faqSchema.mainEntity.map(e => ({ q: e.name, a: e.acceptedAnswer.text })),
+  "sources": pickSources('posner1980', 'treisman1980', 'woodworth1899', 'fitts1954', 'woods2015')
 };
 
 export default function DynamicGridEvasionPageFr() {
@@ -361,7 +397,7 @@ export default function DynamicGridEvasionPageFr() {
       />
       <DynamicGridEvasionClient
         copy={{
-          title: "Jeu de réflexes à la souris",
+          title: "Jeu d’évitement sur grille 3x3",
           subtitle: "Repérez le danger et rejoignez une case sûre • 15 niveaux",
           hudLabels: {
             score: "Score",
@@ -369,28 +405,28 @@ export default function DynamicGridEvasionPageFr() {
             bestScore: "Meilleur Score",
             bestCombo: "Meilleur Combo"
           },
-          rulesTitle: "Règles du Test d'Évitement et Barème de Points",
+          rulesTitle: "Règles du jeu et barème de points",
           rules: [
             { title: "Évitement des Zones Dangereuses", text: "Dirigez le réticule vers les cases sécurisées avant que les bordures ambrées n'explosent en rouge." },
             { title: "Multiplicateur de Série", text: "Survivez à plusieurs vagues consécutives sans dégât pour élever le combo jusqu'à 3.0x." },
             { title: "Montée en Difficulté", text: "Tous les 250 points le niveau augmente, réduisant le délai d'avertissement de 1,4s à 0,45s et imposant jusqu'à 7 zones dangereuses." },
             { title: "Impact d'une Détonation", text: "Être touché par une détonation ramène le combo à 1.0x sans la moindre déduction de score." }
           ],
-          aboutTitle: "À Propos de l'Entraînement d'Évitement sur Grille",
-          aboutHeading: "Attention Spatiale Périphérique et Évitement Balistique des Dangers",
-          aboutText: "Cet exercice repose sur la Théorie de l'Intégration des Attributs d'Anne Treisman (1980) et sur le Paradigme d'Orientation Spatiale de Michael Posner (1980). La configuration sur matrice 3x3 stimule la vision périphérique et développe des réactions de dégagement indispensables pour échapper aux zones d'effet (AOE), tirs de suppression et grenades dans les jeux compétitifs.",
+          aboutTitle: "À propos du jeu d’évitement sur grille",
+          aboutHeading: "Attention périphérique et évitement rapide",
+          aboutText: "Cet exercice s’appuie sur la théorie de l’intégration des attributs de Treisman et Gelade (1980) et sur les travaux de Posner (1980) sur l’orientation de l’attention. La grille 3x3 fait travailler la détection périphérique et le déplacement rapide vers une zone sûre.",
           aboutCards: [
             {
-              title: "Public Visé",
-              desc: "Joueurs de FPS et de MOBA désireux de fluidifier l'esquive des sorts de zone et tirs ennemis, et toute personne cherchant à aiguiser ses réflexes spatiaux."
+              title: "À qui s’adresse ce jeu ?",
+              desc: "Joueurs et toute personne qui veut s’exercer à repérer des signaux en périphérie et à réagir vite avec la souris."
             },
             {
-              title: "Aptitudes Développées",
-              desc: "Balayage visuel parallèle, attention exogène réflexe, réduction du temps de réaction de choix et maîtrise du freinage moteur."
+              title: "Capacités exercées",
+              desc: "Détection visuelle en parallèle, attention attirée par un signal, décision rapide et freinage du curseur."
             },
             {
               title: "Vision Périphérique",
-              desc: "La focalisation au centre de la grille combat la vision en tunnel et développe une perception spatiale panoramique à 360 degrés."
+              desc: "Fixer le centre de la grille vous apprend à utiliser la périphérie du regard plutôt que de fixer une seule case."
             }
           ]
         }}
