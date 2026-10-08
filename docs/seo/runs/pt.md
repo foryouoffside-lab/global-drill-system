@@ -32,3 +32,4 @@
 | /pt/drills/reaction-speed/market-doors-pursuit | done | TBD:market-doors-pursuit | docs/seo/research/pt/market-doors-pursuit.md | audited, title kept, no change needed |
 | /pt/drills/reaction-speed/visual-tracking-speed-test | done | TBD:visual-tracking-speed-test | docs/seo/research/pt/visual-tracking-speed-test.md | audited, no change needed; demand not verified |
 | /pt/drills/visual-tracking/directional-chaos-pursuit | done | TBD:directional-chaos-pursuit | docs/seo/research/pt/directional-chaos-pursuit.md | title kept; elite tiers, synapse and transfer claims removed; demand not verified |
+| /pt/drills/visual-tracking/dynamic-evasion-pursuit | done | TBD:dynamic-evasion-pursuit | docs/seo/research/pt/dynamic-evasion-pursuit.md | title kept; elite tiers/neuroplasticity/transfer claims removed; demand not verified |
