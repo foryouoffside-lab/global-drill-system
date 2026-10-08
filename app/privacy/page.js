@@ -1,6 +1,6 @@
 import Link from 'next/link';
 
-const LAST_UPDATED = 'October 1, 2026';
+const LAST_UPDATED = 'October 9, 2026';
 
 export const metadata = {
   title: 'Privacy Policy - SkillDrills',
@@ -37,6 +37,9 @@ export default function PrivacyPolicyPage() {
           <p><strong className="text-slate-300">Gameplay data (mobile app).</strong> Drill scores, streaks, XP/level progress, and daily challenge history are stored against your account so your progress is saved and can sync across sessions.</p>
           <p><strong className="text-slate-300">Diagnostic data (mobile app).</strong> We use Firebase Crashlytics to automatically collect crash reports and basic device information (device model, OS version, app version) so we can find and fix bugs. This data is not linked to your name or used for advertising.</p>
           <p><strong className="text-slate-300">Usage analytics (mobile app).</strong> The app uses Firebase Analytics to understand which drills and features are actually used — screen views and events like completing a drill (drill, category, score). It doesn&apos;t use cookies or track you across other websites or apps, and isn&apos;t used for advertising.</p>
+          <p><strong className="text-slate-300">Language cookie (website).</strong> The website sets one first-party cookie, <code>skilldrills_locale</code>, that remembers your language (for example English or Japanese) for up to one year so we do not have to guess it on every visit. To choose a first language we read the country that our hosting provider infers from your IP address for that single request; we do not store the country or the IP address ourselves. The cookie contains no personal information and is not used for tracking or advertising. You can delete it in your browser settings at any time.</p>
+          <p><strong className="text-slate-300">Data on your device (website).</strong> Drills save things like your best score and your settings in your browser&apos;s local storage on your own device. This data stays on your device and is not sent to us; clearing your browser data removes it.</p>
+          <p><strong className="text-slate-300">Hosting logs (website).</strong> Like any website, our hosting provider (Vercel) receives your IP address and basic request details such as the page requested and your browser type, to deliver pages and keep the service secure.</p>
           <p><strong className="text-slate-300">Device preferences (mobile app).</strong> Settings like sound on/off are stored locally on your device only and are never sent to us.</p>
         </Section>
 

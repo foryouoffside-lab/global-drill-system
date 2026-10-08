@@ -1,10 +1,10 @@
 import Link from 'next/link';
 
-const LAST_UPDATED = 'August 22, 2026';
+const LAST_UPDATED = 'October 9, 2026';
 
 export const metadata = {
   title: 'Terms of Service - SkillDrills',
-  description: 'The terms that apply when you use skilldrills.online or the SkillDrills mobile app.',
+  description: 'The terms that apply when you use skilldrills.online or the Flint mobile app (formerly the SkillDrills app).',
   alternates: { canonical: 'https://skilldrills.online/terms' },
   robots: { index: true, follow: true },
 };
@@ -28,7 +28,7 @@ export default function TermsOfServicePage() {
         <p className="text-[12px] text-slate-500 mb-8">Last updated: {LAST_UPDATED}</p>
 
         <Section title="Acceptance of terms">
-          <p>By using skilldrills.online or creating an account in the SkillDrills mobile app, you agree to these terms. If you don&apos;t agree, please don&apos;t use the website or app.</p>
+          <p>By using skilldrills.online or creating an account in the Flint mobile app (formerly the SkillDrills app), you agree to these terms. If you don&apos;t agree, please don&apos;t use the website or app.</p>
         </Section>
 
         <Section title="The service">
@@ -40,6 +40,7 @@ export default function TermsOfServicePage() {
         </Section>
 
         <Section title="Your account (mobile app)">
+          <p>The Flint mobile app is free and is supported by ads shown between drills, as described in our Privacy Policy. The website does not show ads.</p>
           <p>The mobile app requires signing in with a Google account and choosing a player name. You&apos;re responsible for the activity on your account and for keeping your Google account secure. One account per person, please.</p>
         </Section>
 
