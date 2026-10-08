@@ -11,13 +11,13 @@ import { pickSources } from '@/lib/drillSources';
 //                    "tempo de reação" — 49 exact / 49 broad.
 // SECONDARY / LSI:
 //                    Google Suggest: mouse, click, F1, Valorant, and FPS modifiers.
-// NATIVE TITLE:      Teste de reflexo: tempo de reação em ms | SkillDrills
+// NATIVE TITLE:      Teste de Reflexo Online | Tempo de Reação | SkillDrills
 // ============================================================
 
 export const metadata = {
-  title: 'Teste de reflexo: tempo de reação em ms | SkillDrills',
+  title: 'Teste de Reflexo Online | Tempo de Reação | SkillDrills',
   description:
-    'Faça um teste de reflexo grátis: meça seu tempo de reação visual em milissegundos, veja a média de várias tentativas e compare sua consistência no navegador.',
+    'Teste de reflexo grátis: meça seu tempo de reação visual em ms, veja a média de várias tentativas e compare sua consistência no navegador.',
   keywords: [
     'teste de reflexo',
     'teste de reação',
@@ -35,7 +35,7 @@ export const metadata = {
     languages: getAlternateLanguages('/drills/reaction-speed/reaction-time-test'),
   },
   openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
-    title: 'Teste de reflexo: tempo de reação em ms | SkillDrills',
+    title: 'Teste de Reflexo Online | Tempo de Reação | SkillDrills',
     description:
       'Teste seus reflexos online, meça o tempo de reação visual em milissegundos e compare média e consistência no navegador.',
     url: 'https://skilldrills.online/pt/drills/reaction-speed/reaction-time-test',
@@ -45,7 +45,7 @@ export const metadata = {
   },
   twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: 'summary_large_image',
-    title: 'Teste de reflexo: tempo de reação em ms | SkillDrills',
+    title: 'Teste de Reflexo Online | Tempo de Reação | SkillDrills',
     description:
       'Meça seus reflexos e o tempo de reação visual em milissegundos. Faça várias tentativas e confira sua média sem baixar nada.',
   },
@@ -74,7 +74,7 @@ const softwareApplicationSchema = {
   operatingSystem: 'All',
   offers: { '@type': 'Offer', price: '0', priceCurrency: 'BRL' },
   description:
-    'Ferramenta online no navegador para medir a velocidade de reação visual em milissegundos (ms). Inclui comparativos científicos, patamares para esports e treino de cronometria mental.',
+    'Ferramenta online no navegador para medir a velocidade de reação visual em milissegundos (ms). Inclui faixas de referência e treino de cronometria mental.',
   browserRequirements: 'Navegador moderno com suporte a JavaScript (Chrome, Edge, Firefox, Safari)',
   softwareVersion: '2.0',
 };
@@ -139,7 +139,7 @@ const howToSchema = {
       '@type': 'HowToStep',
       position: 4,
       name: 'Verificar os Resultados',
-      text: 'Analise sua média de erro em milissegundos, taxa de precisão e classificação equivalente em esports.',
+      text: 'Analise sua média de erro em milissegundos e sua taxa de precisão.',
       url: 'https://skilldrills.online/pt/drills/reaction-speed/reaction-time-test#step-4'
     },
   ],
@@ -155,7 +155,7 @@ const faqSchema = {
       name: 'Qual é um bom tempo de reação humana?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'O tempo médio de reação visual de um adulto saudável varia entre 200 e 250 milissegundos (ms) (Kosinski, 2008). Resultados abaixo de 200 ms são muito rápidos, e marcas inferiores a 180 ms representam a elite de jogadores profissionais de esports e pilotos de automobilismo.',
+        text: 'O tempo médio de reação visual de um adulto saudável varia entre 200 e 250 milissegundos (ms) (Kosinski, 2008). Resultados abaixo de 200 ms são rápidos; valores muito baixos pedem repetição, porque podem vir de antecipação do sinal ou de um equipamento de baixa latência.',
       },
     },
     {
@@ -163,7 +163,7 @@ const faqSchema = {
       name: 'Como o tempo de reação é medido?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'A latência é calculada do estímulo visual até a entrada do clique usando a API performance.now() do navegador, garantindo precisão inferior a um milissegundo localmente (Woods et al., 2015).',
+        text: 'A latência é calculada do estímulo visual até a entrada do clique usando a API performance.now() do navegador, sem depender de conexão externa; o resultado ainda inclui a latência da tela e do mouse (Woods et al., 2015).',
       },
     },
     {
@@ -227,7 +227,7 @@ const faqSchema = {
       name: 'Qual o diferencial deste teste em relação ao Human Benchmark?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Enquanto o Human Benchmark testa apenas cliques simples de mudança de cor, o SkillDrills treina a cronometria mental (estimativa de tempo), previne cliques afobados e aplica multiplicadores de combo para simular a pressão competitiva real.',
+        text: 'Além de medir o clique em resposta ao sinal, este teste pede que você estime o tempo, registra a média de várias tentativas e usa combo para incentivar consistência. Compare apenas resultados feitos no mesmo equipamento.',
       },
     },
     {
@@ -288,20 +288,20 @@ const reactionGuide = {
   intro: [
     'O tempo de reação é o intervalo decorrido entre a apresentação de um estímulo sensorial e a execução da resposta motora correspondente.',
     'Nos esportes eletrônicos competitivos (Valorant, CS2, League of Legends) e no automobilismo, pequenas frações de segundo decidem duelos de mira e desvios de emergência.',
-    'Metodologia de Medição: Utilizamos a API performance.now() de alta precisão do navegador para capturar medições em nível de sub-milissegundos localmente, sem interferência de ping ou conexões externas.',
-    'Latência de Hardware: Monitores convencionais de 60 Hz adicionam cerca de 16,7 ms de atraso de exibição por quadro. O uso de telas de 144 Hz ou 240 Hz e mouses gamers com taxa de atualização de 1000 Hz garante a medição mais fiel da sua biologia (Woods et al., 2015).',
+    'Metodologia de Medição: Utilizamos o relógio de alta resolução do navegador (performance.now()) para medir o intervalo localmente, sem interferência de ping; tela e mouse ainda somam latência ao resultado.',
+    'Latência de Hardware: Monitores convencionais de 60 Hz adicionam cerca de 16,7 ms de atraso de exibição por quadro. O uso de telas de 144 Hz ou 240 Hz e mouses gamers com taxa de atualização de 1000 Hz reduzem a latência do equipamento no resultado (Woods et al., 2015).',
   ],
   benchmarks: {
-    title: 'Tabela de Referência de Reflexos Visuais & Patamares Gamer',
-    headers: ['Latência / Erro (ms)', 'Classificação', 'Percentil', 'Equivalência Gamer', 'Perfil Neurológico'],
+    title: 'Tabela de referência: tempo de reação visual em ms',
+    headers: ['Latência / Erro (ms)', 'Faixa', 'Leitura', 'Contexto de uso', 'O que observar'],
     rows: [
-      ['< 150 ms', 'Sobre-humano / Godlike', 'Top 1%', 'Piloto de F1 / Pro Radiant', 'Antecipação apurada e resposta sináptica no limite fisiológico humano'],
-      ['150 – 190 ms', 'Elite Competitiva', 'Top 5%', 'Imortal / Faceit Level 10', 'Processamento visual de nível profissional e ativação motora instantânea'],
-      ['190 – 240 ms', 'Gamer Avançado', 'Top 25%', 'Diamante / Ascendente', 'Discriminação rápida de estímulos e liberação consistente do gatilho'],
-      ['240 – 280 ms', 'Média Humana Padrão', 'Mediana 50%', 'Ouro / Platina', 'Resposta visual padrão de um adulto saudável em monitor 60Hz'],
-      ['> 300 ms', 'Iniciante / Casual', 'Inferior 20%', 'Prata / Bronze', 'Hesitação motora, cansaço acumulado ou atraso de periféricos'],
+      ['< 150 ms', 'Muito rápida', 'Rara', 'Repita antes de confiar no valor', 'Pode indicar antecipação do sinal ou equipamento de baixa latência'],
+      ['150 – 190 ms', 'Rápida', 'Acima da faixa típica', 'Bom ponto de partida para treino de FPS', 'Resposta visual rápida e consistente entre tentativas'],
+      ['190 – 240 ms', 'Boa', 'Faixa comum de quem treina', 'Use para acompanhar evolução', 'Reação estável, com pouca variação entre tentativas'],
+      ['240 – 280 ms', 'Típica', 'Faixa típica em tela de 60 Hz', 'Compare sessões no mesmo equipamento', 'Resposta visual comum de adultos em monitor 60 Hz'],
+      ['> 300 ms', 'Mais lenta', 'Acima da faixa típica', 'Revise sono, foco e periféricos', 'Hesitação, cansaço ou atraso do equipamento'],
     ],
-    note: 'Valores baseados na literatura médica de cronometria humana (Kosinski, 2008; Woods et al., 2015). Telas de 60Hz somam ~16,7ms de atraso.',
+    note: 'Faixas editoriais para comparar suas próprias tentativas, baseadas na literatura de cronometria mental (Kosinski, 2008; Woods et al., 2015). Não são percentis de população nem normas clínicas; telas de 60 Hz somam cerca de 16,7 ms de atraso.',
   },
   techniques: {
     title: 'Latência Sensorial & Limites Fisiológicos',
@@ -332,7 +332,7 @@ const reactionGuide = {
     'Clique em «Iniciar Treino» para acessar a área de medição em tela cheia.',
     'Memorize o intervalo alvo exibido antes do início da contagem.',
     'Clique ou toque na tela imediatamente ao detectar o disparo do alvo.',
-    'Complete várias tentativas para registrar sua média, estabilidade e patente.',
+    'Complete várias tentativas para registrar sua média e sua estabilidade.',
   ],
   audience: 'Jogadores de FPS/MOBA, pilotos de automobilismo e simuladores, atletas e qualquer pessoa que deseje avaliar e aprimorar a velocidade de reação e reflexos.',
   faqs: faqSchema.mainEntity.map((e) => ({ q: e.name, a: e.acceptedAnswer.text })),

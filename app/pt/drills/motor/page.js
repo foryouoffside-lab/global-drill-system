@@ -81,7 +81,7 @@ const faqSchema = {
       "name": "Como os exercícios de habilidades motoras melhoram a coordenação olho-mão?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Os exercícios motores estimulam o ciclo visuomotor conectando a aquisição de alvos na retina pelo córtex visual, o planejamento motor no cerebelo e a transmissão eferente via córtex motor primário para a musculatura da mão. Micro-ajustes frequentes e rápidos reduzem a latência sensóriomotora, permitindo executar trajetórias motoras de alta precisão em menos de 180 ms."
+        "text": "Os exercícios motores estimulam o ciclo visuomotor conectando a aquisição de alvos na retina pelo córtex visual, o planejamento motor no cerebelo e a transmissão eferente via córtex motor primário para a musculatura da mão. Micro-ajustes frequentes e rápidos fazem parte desse ciclo; o tempo de resposta varia de pessoa para pessoa."
       }
     },
     {
@@ -89,7 +89,7 @@ const faqSchema = {
       "name": "Qual é a pontuação média de CPS (cliques por segundo) e quais são as técnicas de clique?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "No toque tradicional com um único dedo, a média é de 6 a 8 CPS. No cenário competitivo, técnicas especializadas são utilizadas: o Jitter Click (vibração controlada dos músculos do antebraço, alcançando 10 a 14 CPS) e o Butterfly Click (alternância rápida entre os dedos indicador e médio no switch, atingindo 15 a 22 CPS). Para prevenir LER e tendinite, recomenda-se cadência rítmica sem tensão estática excessiva."
+        "text": "No clique tradicional com um único dedo, o ritmo costuma ser menor. Jogadores usam técnicas como o Jitter Click (vibração controlada do antebraço) e o Butterfly Click (alternância rápida entre os dedos indicador e médio), que podem aumentar o CPS, mas variam muito de pessoa para pessoa. Para prevenir LER e tendinite, recomenda-se cadência rítmica sem tensão estática excessiva."
       }
     },
     {
@@ -97,7 +97,7 @@ const faqSchema = {
       "name": "Como o jogo da mão firme e o traçado de caminhos eliminam tremores e instabilidade na mira?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "O overshooting (passar do alvo) e as oscilações bruscas decorrem de fraqueza na força de desaceleração dos músculos antagonistas. Conduzir o cursor por corredores estreitos e seguir ondas senoidais exige controle contínuo em nível sub-pixel. Esse treino condiciona as fibras musculares estabilizadoras do punho e antebraço, suprimindo micro-tremores involuntários."
+        "text": "O overshooting (passar do alvo) e as oscilações bruscas costumam vir de dificuldade em frear o movimento. Conduzir o cursor por corredores estreitos e seguir ondas senoidais exige controle contínuo e fino; pratique devagar para reduzir oscilações."
       }
     },
     {
@@ -121,7 +121,7 @@ const faqSchema = {
       "name": "Qual empunhadura e postura oferecem maior estabilidade e precisão de mira com o mouse?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Especialistas em ergonomia e atletas de eSports indicam o apoio do antebraço plano sobre a mesa ou mousepad, evitando pressão concentrada no punho que possa comprimir o túnel do carpo. Uma pegada claw (garra) relaxada ou fingertip (ponta dos dedos) permite micro-ajustes verticais rápidos com os dedos, enquanto o braço coordena varreduras amplas."
+        "text": "Uma sugestão comum de ergonomia é o apoio do antebraço plano sobre a mesa ou mousepad, evitando pressão concentrada no punho que possa comprimir o túnel do carpo. Uma pegada claw (garra) relaxada ou fingertip (ponta dos dedos) permite micro-ajustes verticais rápidos com os dedos, enquanto o braço coordena varreduras amplas."
       }
     },
     {
@@ -129,7 +129,7 @@ const faqSchema = {
       "name": "Quanto tempo leva para consolidar a memória muscular para controle motor fino?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "A adaptação neural inicial ocorre nos primeiros 15 a 20 minutos de prática concentrada, mas a consolidação permanente da memória motora exige de 2 a 4 semanas de treino consistente (15 minutos diários, 4 a 6 dias por semana). O sono é fundamental: as fases NREM de ondas lentas e REM transferem os padrões motores do cerebelo para o córtex motor primário (M1)."
+        "text": "Sessões curtas e regulares costumam funcionar melhor do que sessões longas e raras. Acompanhe sua evolução comparando suas próprias pontuações ao longo das semanas; o ritmo de melhora varia de pessoa para pessoa."
       }
     },
     {
@@ -137,7 +137,7 @@ const faqSchema = {
       "name": "Quão precisos são os testes de coordenação motora no navegador em comparação com softwares instalados?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "O cronômetro interno do navegador (performance.now()) tem resolução de 0,1 ms, mas a medição prática é limitada pela taxa de atualização da tela (aprox. 8,3 ms a 120 Hz, 16,6 ms a 60 Hz) e pela taxa de amostragem do mouse (1 ms a 1000 Hz, 8 ms a 125 Hz). Os testes registram variações reais a partir de 5 ms, sendo ideais para acompanhar sua evolução no mesmo hardware."
+        "text": "O cronômetro interno do navegador (performance.now()) tem resolução de cerca de 1 ms, mas a medição prática é limitada pela taxa de atualização da tela (aprox. 8,3 ms a 120 Hz, 16,6 ms a 60 Hz) e pela taxa de amostragem do mouse (1 ms a 1000 Hz, 8 ms a 125 Hz). Variações abaixo de 5 ms devem ser tratadas como ruído; os testes servem para acompanhar sua evolução no mesmo hardware."
       }
     }
   ]

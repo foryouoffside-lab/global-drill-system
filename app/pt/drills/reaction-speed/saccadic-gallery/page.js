@@ -69,7 +69,7 @@ const softwareApplicationSchema = {
   operatingSystem: 'All',
   offers: { '@type': 'Offer', price: '0', priceCurrency: 'BRL' },
   description:
-    'Ferramenta científica interativa para treino de movimentos sacádicos rápidos, fixação foveal e agilidade de varredura visual em tela.',
+    'Ferramenta interativa para praticar movimentos sacádicos rápidos, fixação do olhar e varredura visual em tela.',
   browserRequirements: 'Navegador moderno com suporte a HTML5 Canvas e JavaScript',
   softwareVersion: '2.0',
 };
@@ -80,7 +80,7 @@ const webAppSchema = {
   name: 'Treino de Visão Periférica Online | SkillDrills',
   url: 'https://skilldrills.online/pt/drills/reaction-speed/saccadic-gallery',
   description:
-    'Treino de movimentos sacádicos gratuito no navegador para aprimorar a velocidade de saltos oculares e aquisição periférica.',
+    'Treino de movimentos sacádicos gratuito no navegador para praticar saltos do olhar e aquisição periférica.',
   applicationCategory: 'EducationalApplication',
   operatingSystem: 'All',
   browserRequirements: 'Requer navegador moderno com suporte a JavaScript.',
@@ -107,7 +107,7 @@ const howToSchema = {
   '@context': 'https://schema.org',
   '@type': 'HowTo',
   name: 'Como realizar exercícios sacádicos e acelerar os saltos oculares',
-  description: 'Passo a passo para aprimorar a transição do olhar entre alvos e reduzir a latência de fixação.',
+  description: 'Passo a passo para praticar a transição do olhar entre alvos.',
   step: [
     {
       '@type': 'HowToStep',
@@ -206,7 +206,7 @@ const faqSchema = {
       name: 'Exercícios sacádicos podem ajudar na velocidade de leitura?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Sim. Um controle sacádico eficiente garante trocas de linha suaves e diminui regressões de leitura, acelerando a interpretação textual.',
+        text: 'A leitura envolve sacadas, mas este exercício mede apenas a tarefa na tela e não prova melhora na leitura. Use-o como prática de varredura visual.',
       },
     },
     {
@@ -233,21 +233,21 @@ const saccadicGuide = {
   heading: 'Guia de Exercícios Sacádicos: Velocidade de Saltos Oculares e Fixação Foveal',
   intro: [
     'Os movimentos sacádicos são saltos balísticos de altíssima velocidade que transportam o centro da visão foveal de uma coordenada para outra (Rayner, 1998; Fischer & Boch, 1984).',
-    'Com velocidades que superam 700°/s, as sacadas colocam o cérebro em modo de supressão sacádica para evitar borrões na retina. Se os olhos não atingirem o ponto com precisão cirúrgica (dismetria sacádica), micro-sacadas de ajuste serão necessárias, adicionando atrasos cruciais. Este exercício fortalece o freio ocular e aterrissagem em um único movimento decisivo.',
+    'Com velocidades que superam 700°/s, as sacadas colocam o cérebro em modo de supressão sacádica para evitar borrões na retina. Se os olhos não atingirem o ponto com precisão (dismetria sacádica), micro-sacadas de ajuste serão necessárias, adicionando atrasos cruciais. Este exercício pratica frear o olhar e aterrissar no alvo em um único movimento.',
     'Metodologia de medição no navegador: todos os tempos são medidos localmente via High Resolution Time API (performance.now()). Considere as latências do monitor (~16,7 ms em 60 Hz, ~6,9 ms em 144 Hz e ~4,1 ms em 240 Hz; Woods et al., 2015) e a taxa de atualização do mouse. Variações inferiores a 5 ms representam ruído de medição.',
     'Treine sempre no mesmo computador e tela para acompanhar seu progresso fisiológico e reflexos oculares.',
   ],
   benchmarks: {
-    title: 'Tabela de Desempenho em Latência Sacádica e Precisão',
+    title: 'Faixas de Referência de Latência Sacádica e Precisão',
     headers: ['Latência Sacádica (Reação)', 'Classificação', 'Dinâmica do Salto Ocular', 'Contexto Funcional', 'Foco Recomendado'],
     rows: [
-      ['< 130 ms', 'Nível 1 (Sacadas Expressas / Pro)', 'Disparo subcortical via colículo superior; inibição mínima', 'Atletas de ponta e pilotos de caça (Fischer & Boch, 1984)', 'Treinar amplitude máxima de salto visual'],
-      ['130 – 170 ms', 'Nível 2 (Elite)', 'Iniciação cortical extremamente rápida; sem hesitação', 'Competidores de alto nível em esportes de reação', 'Consolidar precisão de parada sem ultrapassar o alvo'],
-      ['171 – 220 ms', 'Nível 3 (Avançado / Padrão)', 'Latência saudável de referência para adultos', 'Média esperada para adultos saudáveis (Rayner, 1998)', 'Expandir o raio de percepção periférica'],
-      ['221 – 280 ms', 'Nível 4 (Intermediário)', 'Atraso na liberação da fixação; leve hesitação', 'Fadiga ocasional ou recuperação incompleta', 'Fazer pausas 20-20-20 para descanso dos olhos'],
-      ['> 280 ms', 'Nível 5 (Base / Dismetria)', 'Dismetria sacádica evidente com múltiplas correções', 'Músculos oculares fatigados ou distrações na tela', 'Priorizar aterrissagem precisa antes de focar em velocidade'],
+      ['< 130 ms', 'Faixa 1 (Muito alta)', 'Disparo subcortical via colículo superior; inibição mínima', 'Latências muito baixas, ligadas a sacadas expressas (Fischer & Boch, 1984)', 'Treinar amplitude máxima de salto visual'],
+      ['130 – 170 ms', 'Faixa 2 (Alta)', 'Iniciação cortical extremamente rápida; sem hesitação', 'Resposta rápida em tarefas de reação', 'Consolidar precisão de parada sem ultrapassar o alvo'],
+      ['171 – 220 ms', 'Faixa 3 (Boa)', 'Latência saudável de referência para adultos', 'Faixa de referência para leitura e varredura visual (Rayner, 1998)', 'Expandir o raio de percepção periférica'],
+      ['221 – 280 ms', 'Faixa 4 (Intermediária)', 'Atraso na liberação da fixação; leve hesitação', 'Fadiga ocasional ou recuperação incompleta', 'Fazer pausas 20-20-20 para descanso dos olhos'],
+      ['> 280 ms', 'Faixa 5 (Inicial)', 'Dismetria sacádica evidente com múltiplas correções', 'Músculos oculares fatigados ou distrações na tela', 'Priorizar aterrissagem precisa antes de focar em velocidade'],
     ],
-    note: 'Classificação baseada em estudos de oculomotricidade (Rayner, 1998; Fischer & Boch, 1984; Leigh & Zee, 2015) adaptada para telas digitais (Woods et al., 2015).',
+    note: 'Faixas editoriais para comparar suas próprias sessões, não percentis de população nem normas clínicas. Baseadas em estudos de oculomotricidade (Rayner, 1998; Fischer & Boch, 1984; Leigh & Zee, 2015) adaptada para telas digitais (Woods et al., 2015).',
   },
   techniques: {
     title: 'Técnicas para Maximizar a Velocidade dos Saltos Oculares',
@@ -281,7 +281,7 @@ const saccadicGuide = {
     'Centralize a fóvea no meio do alvo e clique para registrar a latência.',
     'Repita as rodadas e avalie sua média de latência sacádica.',
   ],
-  audience: 'Jogadores de FPS (Valorant, CS2, Apex Legends), atletas de esportes rápidos e qualquer pessoa buscando treinar reflexos e coordenação olho-mão.',
+  audience: 'Jogadores de FPS (Valorant, CS2, Apex Legends) e qualquer pessoa que queira praticar varredura visual e coordenação olho-mão.',
   faqs: faqSchema.mainEntity.map((e) => ({ q: e.name, a: e.acceptedAnswer.text })),
   sources: pickSources('rayner1998', 'fischer1984', 'leigh2015', 'woods2015'),
   related: [

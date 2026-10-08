@@ -20,8 +20,8 @@ import { pickSources } from '@/lib/drillSources';
 // ============================================================
 
 export const metadata = {
-  title: 'Teste de CPS | Cliques por segundo | SkillDrills',
-  description: 'Meça seus cliques por segundo (CPS) e sua resistência por 45 segundos. Teste grátis no navegador, sem download.',
+  title: 'Teste de CPS (CPS Test) Online | SkillDrills',
+  description: 'Teste de CPS grátis: meça seus cliques por segundo e a resistência de clique em 45 segundos, direto no navegador, sem baixar nada.',
   keywords: [
     'teste de CPS',
     'teste de velocidade de clique',
@@ -37,7 +37,7 @@ export const metadata = {
     'treino de cliques rápidos',
   ],
   openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
-    title: 'Teste de CPS | Cliques por segundo | SkillDrills',
+    title: 'Teste de CPS (CPS Test) Online | SkillDrills',
     description:
       'Teste grátis de CPS e resistência de clique no navegador durante 45 segundos.',
     type: 'article',
@@ -47,7 +47,7 @@ export const metadata = {
   },
   twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: 'summary_large_image',
-    title: 'Teste de CPS | Cliques por segundo | SkillDrills',
+    title: 'Teste de CPS (CPS Test) Online | SkillDrills',
     description:
       'Meça cliques por segundo e resistência de clique em um teste gratuito.',
   },
@@ -253,9 +253,9 @@ const guideProps = {
     ],
   },
   benchmark: {
-    title: 'Classificação de CPS & Tabela Oficial de Percentis',
-    description: 'Guia editorial para interpretar seu próprio desempenho. As linhas de dedo único baseiam-se em referências da neuropsicologia motora (Halstead 1947; Todor & Kyprie 1980), enquanto as linhas de jitter e butterfly refletem dados empíricos de jogadores de alto rendimento.',
-    columns: ['Nível', 'Título de Rango', 'CPS Médio', 'Pico (5s)', 'Técnica de Clique', 'Classificação'],
+    title: 'Tabela de CPS: faixas de referência por técnica',
+    description: 'Faixas editoriais para comparar suas próprias sessões, sem percentis de população medidos. As linhas de dedo único baseiam-se em referências da neuropsicologia motora (Halstead 1947; Todor & Kyprie 1980), enquanto as linhas de jitter e butterfly refletem dados empíricos de jogadores de alto rendimento.',
+    columns: ['Nível', 'Título de Rango', 'CPS Médio', 'Pico (5s)', 'Técnica de Clique', 'Faixa'],
     rows: [
       {
         tier: 'Tier 1',
@@ -263,7 +263,7 @@ const guideProps = {
         stat: '16.0+ CPS',
         level: '20.0+ CPS',
         accuracy: 'Butterfly / Drag Clicking',
-        percentile: 'Top 0.1% Excepcional',
+        percentile: 'Faixa excepcional',
       },
       {
         tier: 'Tier 2',
@@ -271,7 +271,7 @@ const guideProps = {
         stat: '12.0–15.9 CPS',
         level: '15.0–19.0 CPS',
         accuracy: 'Jitter Clicking Dominado',
-        percentile: 'Top 3% Avançado',
+        percentile: 'Faixa avançada',
       },
       {
         tier: 'Tier 3',
@@ -279,7 +279,7 @@ const guideProps = {
         stat: '9.0–11.9 CPS',
         level: '11.0–14.0 CPS',
         accuracy: 'Dedo Único Rápido / Tensão',
-        percentile: 'Top 15% Sólido',
+        percentile: 'Faixa sólida',
       },
       {
         tier: 'Tier 4',
@@ -287,7 +287,7 @@ const guideProps = {
         stat: '6.0–8.9 CPS',
         level: '7.5–10.0 CPS',
         accuracy: 'Dedo Único Padrão',
-        percentile: 'Top 50% Médio',
+        percentile: 'Faixa média',
       },
       {
         tier: 'Tier 5',
@@ -295,7 +295,7 @@ const guideProps = {
         stat: '< 6.0 CPS',
         level: '< 7.5 CPS',
         accuracy: 'Dedo Único Básico',
-        percentile: 'Base 20% Em Treinamento',
+        percentile: 'Faixa inicial',
       },
     ],
   },
@@ -309,7 +309,7 @@ const guideProps = {
       },
       {
         title: 'Protocolo 2: Intervalos de Sprint Todor-Kyprie (Descanso Rápido)',
-        description: 'Alterne 5 segundos de cliques na velocidade máxima com 3 segundos de cliques controlados e calmos. Esse treinamento em degraus ensina o sistema nervoso a sustentar descargas de alta frequência enquanto posterga o acúmulo de ácido lático.',
+        description: 'Alterne 5 segundos de cliques na velocidade máxima com 3 segundos de cliques controlados e calmos. Esse treinamento em degraus ensina o sistema nervoso a sustentar descargas de alta frequência enquanto você aprende a sustentar o ritmo.',
       },
       {
         title: 'Protocolo 3: Micro-Vibração Isométrica (Estabilização de Jitter Clicking)',
@@ -391,4 +391,5 @@ export default function PortugueseRapidTappingPage() {
     </>
   );
 }
+
 

@@ -65,7 +65,7 @@ export default function ZigZagPathPursuitPagePT() {
     "@context": "https://schema.org",
     "@type": "SoftwareApplication", "sameAs": ["https://en.wikipedia.org/wiki/Smooth_pursuit", "https://en.wikipedia.org/wiki/Saccade"],
     "name": "Treinador de Perseguição em Zigue-Zague",
-    "applicationCategory": "HealthApplication",
+    "applicationCategory": "GameApplication",
     "operatingSystem": "Any",
     "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
     "description": "Treinamento neuromuscular de rastreamento dinâmico em dente de serra e supressão de ultrapassagem sacádica em reversões angulares agudas.",
@@ -152,7 +152,7 @@ export default function ZigZagPathPursuitPagePT() {
       },
       {
         "@type": "Question",
-        "name": "Como este exercício aprimora o desempenho em jogos competitivos (FPS)?",
+        "name": "Como este exercício se relaciona com jogos competitivos (FPS)?",
         "acceptedAnswer": {
           "@type": "Answer",
           "text": "Ele condiciona o controle de mira em microcorreções rápidas, permitindo frear o retículo exatamente sobre o oponente que realiza strafe evasivo em zigue-zague."
@@ -163,7 +163,7 @@ export default function ZigZagPathPursuitPagePT() {
         "name": "Por que não devo movimentar a cabeça junto com os olhos?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Movimentar a cabeça aciona o reflexo vestíbulo-ocular que mascara a fraqueza oculomotora, reduzindo o ganho neuromuscular que o treino proporciona."
+          "text": "Movimentar a cabeça aciona o reflexo vestíbulo-ocular, que mistura o esforço da cabeça com o dos olhos e atrapalha a leitura do exercício."
         }
       },
       {
@@ -171,7 +171,7 @@ export default function ZigZagPathPursuitPagePT() {
         "name": "Qual é a duração recomendada por sessão?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Sessões de 6 a 10 minutos por dia em rodadas curtas de 60 segundos são ideais para gerar neuroplasticidade sem fadiga visual excessiva."
+          "text": "Sessões de 6 a 10 minutos por dia em rodadas curtas de 60 segundos são ajudam a evitar fadiga visual excessiva."
         }
       },
       {
@@ -187,7 +187,7 @@ export default function ZigZagPathPursuitPagePT() {
         "name": "Como um monitor de alta taxa de atualização impacta este treino?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Monitores de 144Hz a 240Hz exibem o ponto de quebra da curva sem atrasos, permitindo que o cérebro inicie o processo de desaceleração vários milissegundos mais cedo."
+          "text": "Monitores de 144 Hz a 240 Hz mostram o ponto de quebra da curva com menos atraso entre quadros, o que facilita perceber a mudança."
         }
       },
       {
@@ -215,20 +215,20 @@ export default function ZigZagPathPursuitPagePT() {
       "O rastreamento motor ocular ao longo de polilinhas em zigue-zague de múltiplos segmentos representa um dos desafios de coordenação mais complexos na visão esportiva e na neuro-optometria. Ao contrário dos deslocamentos retilíneos simples, o seguimento de trajetórias diagonais exige a inervação proporcional e contínua de pares musculares distintos, harmonizando os centros pré-motores pontinos horizontais (PPRF) com os núcleos mesencefálicos verticais (riMLF; Orban de Xivry & Lefèvre, 2007).",
       "A sobrecarga neurocomputacional atinge o ápice nas inflexões agudas em que a trajetória inverte abruptamente o sentido. No momento dessa deflexão súbita, o deslizamento retiniano instantâneo eleva-se de maneira drástica enquanto o erro de posição foveal sofre um pico agudo. As pesquisas clássicas de de Brouwer et al. (2002) e Heinen et al. (2005) demonstraram que as sacadas de recuperação (catch-up saccades) são disparadas por um circuito computacional compartilhado no colículo superior e nos campos oculares frontais (FEF), integrando o desvio posicional e o erro de velocidade para efetuar correções balísticas milimétricas.",
       "Sem um condicionamento visual específico, o sistema oculomotor apresenta ultrapassagens excessivas ou cortes antecipados de curva, acarretando latências prolongadas de reaquisição e instabilidade foveal. Em contrapartida, a prática deliberada em trajetórias de zigue-zague estimula os modelos internos preditivos do cerebelo (Barnes, 2008; Krauzlis, 2004; Orban de Xivry & Lefèvre, 2007), permitindo uma desaceleração antecipada antes de cada vértice, atenuando o erro sacádico e acelerando o reengajamento suave ao longo do vetor diagonal de saída.",
-      "O exercício de Rastreamento visual em zigue-zague isola e aprimora essas vias sensoriomotoras críticas no navegador web. Ao seguir o alvo em sua trajetória contínua e alternada, o usuário desenvolve a equalização de velocidade na perseguição suave e uma reancoragem foveal precisa nas inflexões. O recurso de ocultar a linha elimina guias espaciais para avaliar a estimativa perceptiva em tempo real, enquanto a velocidade variável rompe automatismos para desenvolver agilidade visual adaptativa.",
+      "O exercício de Rastreamento visual em zigue-zague pratica essa habilidade no navegador. Ao seguir o alvo em sua trajetória contínua e alternada, o usuário desenvolve a equalização de velocidade na perseguição suave e uma reancoragem foveal precisa nas inflexões. O recurso de ocultar a linha elimina guias espaciais para avaliar a estimativa perceptiva em tempo real, enquanto a velocidade variável rompe automatismos para desenvolver agilidade visual adaptativa.",
       "Metodologia de medição e latência de hardware: As estimativas temporais incorporam a quantização de atualização das telas (~16,7 ms a 60 Hz, ~6,9 ms a 144 Hz, ~4,1 ms a 240 Hz) e os intervalos de varredura dos dispositivos de entrada (~8 ms a 125 Hz contra ~1 ms a 1.000 Hz), conforme detalhado por Woods et al. (2015). Todas as suas pontuações e registros de precisão residem exclusivamente no armazenamento local (localStorage) do seu navegador, resguardando total privacidade sem transmissão externa."
     ],
     benchmarks: {
       title: "Padrões de Eficiência em Zigue-Zague (Velocidade e Erro de Inflexão)",
-      headers: ["Nível de Habilidade", "Multiplicador de Velocidade", "Erro no Vértice", "Latência da Sacada de Virada", "Percentil Global"],
+      headers: ["Nível de Habilidade", "Multiplicador de Velocidade", "Erro no Vértice", "Latência da Sacada de Virada", "Referência"],
       rows: [
-        ["Elite / Mestre da Reversão Rápida", "3.5x – 5.0x+", "Erro < 12 px (fixação perfeita na inflexão)", "Latência < 110 ms (frenagem preditiva)", "Top 1.5%"],
-        ["Mestre / Alta Disciplina Vetorial", "2.5x – 3.5x", "Erro < 22 px (apenas microssacadas mínimas)", "Latência < 140 ms (curvas fluidas)", "Top 8%"],
-        ["Avançado / Atleta Competitivo", "1.8x – 2.5x", "Erro < 38 px (reaquisição veloz)", "Latência < 180 ms (viradas estáveis)", "Top 25%"],
-        ["Intermediário / Praticante Regular", "1.2x – 1.8x", "Erro 38 – 70 px (ultrapassagem e corte de curvas)", "Latência 180 – 240 ms (múltiplas correções)", "Médio 45%"],
-        ["Iniciante / Não Treinado", "0.5x – 1.2x", "Erro > 70 px (perda total nos vértices)", "Latência > 250 ms (ultrapassagem evidente)", "Base"]
+        ["Faixa 1 (Muito alta)", "3.5x – 5.0x+", "Erro < 12 px (fixação perfeita na inflexão)", "Latência < 110 ms (frenagem preditiva)", "Faixa 1"],
+        ["Faixa 2 (Alta)", "2.5x – 3.5x", "Erro < 22 px (apenas microssacadas mínimas)", "Latência < 140 ms (curvas fluidas)", "Faixa 2"],
+        ["Faixa 3 (Boa)", "1.8x – 2.5x", "Erro < 38 px (reaquisição veloz)", "Latência < 180 ms (viradas estáveis)", "Faixa 3"],
+        ["Faixa 4 (Intermediária)", "1.2x – 1.8x", "Erro 38 – 70 px (ultrapassagem e corte de curvas)", "Latência 180 – 240 ms (múltiplas correções)", "Faixa 4"],
+        ["Faixa 5 (Inicial)", "0.5x – 1.2x", "Erro > 70 px (perda total nos vértices)", "Latência > 250 ms (ultrapassagem evidente)", "Faixa 5"]
       ],
-      note: "Parâmetros baseados em de Brouwer et al. (2002) sobre dinâmica de sacadas corretivas e Krauzlis (2004) sobre controle motor em reversões rápidas de velocidade e direção."
+      note: "Faixas editoriais para comparar suas próprias sessões, não percentis de população nem normas clínicas. Parâmetros baseados em de Brouwer et al. (2002) sobre dinâmica de sacadas corretivas e Krauzlis (2004) sobre controle motor em reversões rápidas de velocidade e direção."
     },
     steps: [
       { title: "Fixe o alvo no centro", text: "Mantenha a cabeça estável e acompanhe o primeiro segmento diagonal com os olhos." },

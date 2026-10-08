@@ -71,7 +71,7 @@ const softwareApplicationSchema = {
   "@context": "https://schema.org",
   "@type": "SoftwareApplication", "sameAs": ["https://en.wikipedia.org/wiki/Smooth_pursuit", "https://en.wikipedia.org/wiki/Saccade"],
   "name": "Rastreamento Ocular Reativo – Alvo Móvel",
-  "applicationCategory": "HealthApplication",
+  "applicationCategory": "GameApplication",
   "operatingSystem": "Navegador",
   "dateModified": "2026-09-20",
   "offers": {
@@ -177,7 +177,7 @@ const faqSchema = {
     },
     {
       "@type": "Question",
-      "name": "De que forma este exercício aprimora a mira de acompanhamento em jogos competitivos?",
+      "name": "De que forma este exercício se relaciona com a mira de acompanhamento em jogos competitivos?",
       "acceptedAnswer": {
         "@type": "Answer",
         "text": "Em jogos de tiro rápido, oponentes alternam deslocamentos laterais com mudanças rápidas de sentido. Este treino pratica a readquisição visual do alvo, reduzindo a hesitação quando a trajetória muda."
@@ -196,7 +196,7 @@ const faqSchema = {
       "name": "Qual é a duração e a frequência diária recomendadas?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Sessões diárias de 5 a 10 minutos (5 a 8 blocos de 60 segundos). Como as rupturas angulares exigem esforço máximo de foco e contração muscular rápida, séries curtas evitam o cansaço visual e potencializam a neuroplasticidade."
+        "text": "Sessões diárias de 5 a 10 minutos (5 a 8 blocos de 60 segundos). Como as rupturas angulares exigem esforço máximo de foco e contração muscular rápida, séries curtas evitam o cansaço visual e ajudam a manter o conforto visual."
       }
     },
     {
@@ -212,7 +212,7 @@ const faqSchema = {
       "name": "Qual a relevância da taxa de atualização do monitor (Hz) para o rastreamento evasivo?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Monitores de 144 Hz ou superiores reduzem a latência entre quadros para menos de 6,9 ms (Woods et al., 2015), exibindo a quebra angular no exato instante em que ela ocorre, permitindo respostas sacádicas muito mais velozes."
+        "text": "Monitores de 144 Hz ou superiores reduzem a latência entre quadros para menos de 6,9 ms (Woods et al., 2015), exibindo a quebra angular no exato instante em que ela ocorre, o que facilita perceber a mudança de direção."
       }
     },
     {
@@ -220,7 +220,7 @@ const faqSchema = {
       "name": "Este exercício traz benefícios para modalidades esportivas convencionais?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Sim. No futebol, basquete, tênis e artes marciais, adversários e bolas realizam fintas e mudanças imprevisíveis de trajeto. A capacidade de reajustar o olhar rapidamente é determinante para antecipação espacial e tempo de reação esportivo."
+        "text": "Pode ajudar como prática extra de acompanhamento visual, mas não há garantia de transferência para esportes ou jogos; o exercício mede apenas a tarefa na tela."
       }
     },
     {
@@ -261,13 +261,13 @@ const guideProps = {
     title: "Padrões de Desempenho em Perseguição Evasiva e Refixação Sacádica",
     headers: ["Nível de Desempenho", "Multiplicador de Velocidade", "Refixação Sacádica nas Quebras Evasivas", "Perfil Neuromotor e Oculomotor"],
     rows: [
-      ["Nível 1: Apex Reativo – Reflexos de Elite", "2.0x+ Ultra-Velocidade", "Sacada corretiva dispara com latência inferior a 150 ms; fixação foveal instantânea sem oscilação pós-sacádica.", "Velocidade máxima de transmissão sináptica entre fóvea e centros oculomotores. Padrão de elite para competidores de esports e atletas de alta reação."],
-      ["Nível 2: Agilidade Visual Superior", "1.4x – 1.9x Alta Velocidade", "Recentralização rápida e consistente em 1 a 2 quadros de vídeo; retomada fluida da velocidade de perseguição.", "Músculos extraoculares altamente treinados. Domínio expressivo sobre manobras de esquiva e deslocamentos laterais evasivos."],
-      ["Nível 3: Padrão Funcional Sólido", "1.0x – 1.3x Velocidade Padrão", "Acompanhamento confiável nos trechos lineares; ligeiro atraso latente diante de quebras angulares agudas.", "Faixa normativa para adultos saudáveis. Totalmente suficiente para direção diária, esportes recreativos e jogos casuais."],
-      ["Nível 4: Refixação Tardia – Requer Prática", "0.7x – 0.9x Velocidade Moderada", "O alvo escapa da fóvea na maioria das manobras evasivas; múltiplas sacadas corretivas necessárias para reengajar.", "Latência sensoriomotora elevada em rupturas de rumo. Recomenda-se consolidação prévia em velocidades moderadas."],
-      ["Nível 5: Instabilidade Inicial – Iniciante", "< 0.7x Baixa Velocidade", "O olhar permanece preso na trajetória antiga do alvo, sofrendo atraso substancial antes da reação.", "Coordenação motora ocular elementar necessita de desenvolvimento em trajetórias contínuas com imobilização estrita da cabeça."]
+      ["Faixa 1 (Muito alta)", "2.0x+ Ultra-Velocidade", "Sacada corretiva dispara com latência inferior a 150 ms; fixação foveal instantânea sem oscilação pós-sacádica.", "Referência editorial para comparar suas sessões."],
+      ["Faixa 2 (Alta)", "1.4x – 1.9x Alta Velocidade", "Recentralização rápida e consistente em 1 a 2 quadros de vídeo; retomada fluida da velocidade de perseguição.", "Músculos extraoculares altamente treinados. Domínio expressivo sobre manobras de esquiva e deslocamentos laterais evasivos."],
+      ["Faixa 3 (Boa)", "1.0x – 1.3x Velocidade Padrão", "Acompanhamento confiável nos trechos lineares; ligeiro atraso latente diante de quebras angulares agudas.", "Faixa normativa para adultos saudáveis. Totalmente suficiente para direção diária, esportes recreativos e jogos casuais."],
+      ["Faixa 4 (Intermediária)", "0.7x – 0.9x Velocidade Moderada", "O alvo escapa da fóvea na maioria das manobras evasivas; múltiplas sacadas corretivas necessárias para reengajar.", "Latência sensoriomotora elevada em rupturas de rumo. Recomenda-se consolidação prévia em velocidades moderadas."],
+      ["Faixa 5 (Inicial)", "< 0.7x Baixa Velocidade", "O olhar permanece preso na trajetória antiga do alvo, sofrendo atraso substancial antes da reação.", "Coordenação motora ocular elementar necessita de desenvolvimento em trajetórias contínuas com imobilização estrita da cabeça."]
     ],
-    note: "Baremos fundamentados em investigações neurofisiológicas sobre latência sacádica, compensação de deslizamento retiniano e retomada de perseguição sob quebras angulares abruptas (Bahill et al., 1980; Rashbass, 1961; Krauzlis, 2004; Barnes, 2008)."
+    note: "Faixas editoriais para comparar suas próprias sessões, não percentis de população nem normas clínicas. Baremos fundamentados em investigações neurofisiológicas sobre latência sacádica, compensação de deslizamento retiniano e retomada de perseguição sob quebras angulares abruptas (Bahill et al., 1980; Rashbass, 1961; Krauzlis, 2004; Barnes, 2008)."
   },
   faqs: faqSchema.mainEntity.map(e => ({ q: e.name, a: e.acceptedAnswer.text })),
   sources: pickSources('bahill1980', 'barnes2008', 'krauzlis2004', 'robinson1965', 'rashbass1961', 'woods2015'),

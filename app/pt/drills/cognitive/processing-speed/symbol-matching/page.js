@@ -84,7 +84,7 @@ const softwareApplicationSchema = {
     "price": "0",
     "priceCurrency": "USD"
   },
-  "description": "Teste SDMT e substituição de símbolos e dígitos online grátis: Meça velocidade de processamento cognitivo, rastreamento visual e memória associativa.",
+  "description": "Treino online grátis inspirado no SDMT: pratique pareamento de símbolos e dígitos, busca visual e memória associativa. Não é o teste clínico.",
   "url": "https://skilldrills.online/pt/drills/cognitive/processing-speed/symbol-matching",
   "publisher": {
     "@type": "Organization",
@@ -117,7 +117,7 @@ const videoGameSchema = {
   "@type": "VideoGame",
   "name": "Jogo de Correspondência de Símbolos e Dígitos",
   "url": "https://skilldrills.online/pt/drills/cognitive/processing-speed/symbol-matching",
-  "description": "Teste SDMT e substituição de símbolos e dígitos online grátis: Meça velocidade de processamento cognitivo, rastreamento visual e memória associativa.",
+  "description": "Treino online grátis inspirado no SDMT: pratique pareamento de símbolos e dígitos, busca visual e memória associativa. Não é o teste clínico.",
   "genre": [
     "Action",
     "Brain Game",
@@ -146,7 +146,7 @@ const faqSchema = {
       "name": "O que é o teste SDMT (Symbol Digit Modalities Test)?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "O SDMT é um teste neuropsicológico padrão ouro desenvolvido por Aaron Smith (1973) para avaliar velocidade de processamento da informação, rastreamento visual e atenção sustentada."
+        "text": "O SDMT é um teste neuropsicológico amplamente usado, desenvolvido por Aaron Smith (1973) para avaliar velocidade de processamento da informação, rastreamento visual e atenção sustentada."
       }
     },
     {
@@ -228,7 +228,7 @@ const howToSchema = {
   "@context": "https://schema.org",
   "@type": "HowTo",
   "name": "Como Realizar o Teste SDMT de Correspondência de Símbolos",
-  "description": "Teste SDMT e substituição de símbolos e dígitos online grátis: Meça velocidade de processamento cognitivo, rastreamento visual e memória associativa.",
+  "description": "Treino online grátis inspirado no SDMT: pratique pareamento de símbolos e dígitos, busca visual e memória associativa. Não é o teste clínico.",
   "step": [
     {
       "@type": "HowToStep",
@@ -272,15 +272,16 @@ const guideProps = {
     ],
   },
   benchmarks: {
-    title: 'Padrões de Desempenho Cognitivo & Escala do Teste SDMT',
-    headers: ['Nível', 'Classificação', 'Faixa de Rendimento', 'Precisão', 'Percentil'],
+    title: 'Faixas de referência para o treino de símbolos e dígitos',
+    headers: ['Nível', 'Classificação', 'Faixa de Rendimento', 'Precisão', 'Leitura'],
     rows: [
-      { tier: 'Tier 1', rank: 'Grande Mestre / Elite', stat: 'Top 1%', level: 'Mestrado', accuracy: '98%+', percentile: 'Top 1%' },
-      { tier: 'Tier 2', rank: 'Foco Avançado', stat: 'Top 5%', level: 'Diamante', accuracy: '94-97%', percentile: 'Top 5%' },
-      { tier: 'Tier 3', rank: 'Operador Proficiente', stat: 'Top 15%', level: 'Platina', accuracy: '88-93%', percentile: 'Top 15%' },
-      { tier: 'Tier 4', rank: 'Padrão Adulto Médio', stat: 'Top 50%', level: 'Ouro', accuracy: '78-87%', percentile: 'Top 50%' },
-      { tier: 'Tier 5', rank: 'Linha de Base Inicial', stat: 'Base', level: 'Prata', accuracy: '< 78%', percentile: 'Base' },
+      { tier: 'Tier 1', rank: 'Muito rápida', stat: 'Faixa 1', level: 'Faixa 1', accuracy: '98%+', percentile: 'Rara; repita para confirmar' },
+      { tier: 'Tier 2', rank: 'Rápida', stat: 'Faixa 2', level: 'Faixa 2', accuracy: '94-97%', percentile: 'Acima da faixa típica' },
+      { tier: 'Tier 3', rank: 'Boa', stat: 'Faixa 3', level: 'Faixa 3', accuracy: '88-93%', percentile: 'Treinada' },
+      { tier: 'Tier 4', rank: 'Típica', stat: 'Faixa 4', level: 'Faixa 4', accuracy: '78-87%', percentile: 'Faixa típica' },
+      { tier: 'Tier 5', rank: 'Ponto de partida', stat: 'Faixa 5', level: 'Faixa 5', accuracy: '< 78%', percentile: 'Ponto de partida' },
     ],
+    note: 'Faixas editoriais para comparar suas próprias sessões; não são percentis de população, escores do SDMT clínico nem normas.',
   },
   protocols: {
     title: 'Protocolos de Treinamento e Otimização Perceptiva',

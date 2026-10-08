@@ -15,7 +15,7 @@ import { pickSources } from '@/lib/drillSources';
 // ============================================================
 
 export const metadata = {
-  title: "Treino de visão periférica | SkillDrills",
+  title: "Visão Periférica e Fixação Central | SkillDrills",
   description: "Siga o alvo central e responda a sinais laterais sem desviar o olhar. Exercício gratuito no navegador com tempo de reação e estabilidade da fixação.",
   keywords: [
     "treino de visão periférica",
@@ -30,7 +30,7 @@ export const metadata = {
     "exercício visual online"
   ],
   openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
-    title: "Treino de visão periférica | SkillDrills",
+    title: "Visão Periférica e Fixação Central | SkillDrills",
     description: "Siga o alvo central e responda a sinais laterais sem desviar o olhar. Exercício gratuito no navegador.",
     type: "website",
     url: "https://skilldrills.online/pt/drills/visual-tracking/peripheral-ping-pursuit",
@@ -39,7 +39,7 @@ export const metadata = {
   },
   twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: "summary_large_image",
-    title: "Treino de visão periférica | SkillDrills",
+    title: "Visão Periférica e Fixação Central | SkillDrills",
     description: "Pratique fixação central e percepção de sinais laterais em uma sessão curta no navegador.",
   },
   robots: { index: true, follow: true },
@@ -65,7 +65,7 @@ const softwareApplicationSchema = {
   "@type": "SoftwareApplication", "sameAs": ["https://en.wikipedia.org/wiki/Peripheral_vision", "https://en.wikipedia.org/wiki/Saccade"],
   "name": "Treino de Visão Periférica e Atenção Encoberta",
   "operatingSystem": "Navegador Web",
-  "applicationCategory": "HealthApplication",
+  "applicationCategory": "GameApplication",
   "offers": {
     "@type": "Offer",
     "price": "0.00",
@@ -224,19 +224,19 @@ const guideProps = {
   intro: [
     "A retina humana opera com uma divisão funcional de trabalho: a visão foveal de alta acuidade ocupa apenas os 1° a 2° centrais do campo visual (via parvocelular), enquanto a vasta extensão do espaço circundante é processada pela retina periférica, dominada por bastonetes e pela via magnocelular, altamente especializada em dinâmica de luminosidade e movimento (Wolfe, 1994; Leigh & Zee, 2015). O reflexo instintivo primitivo induz sacadas imediatas a qualquer estímulo excêntrico.",
     "O exercício Ping Pursuit pratica a atenção espacial encoberta: detectar eventos periféricos sem desviar o olhar do alvo central (Posner, 1980; Eriksen & St. James, 1986). Ao manter a fixação central, a sessão compara a continuidade do rastreamento com a resposta aos sinais laterais; ela não promete alterar o campo visual ou tratar uma condição ocular.",
-    "Latências de hardware e tempos de resposta do painel influenciam a detecção temporal de transientes luminosos (Woods et al., 2015). Todos os dados e escores são gerados e armazenados localmente no navegador, garantindo privacidade completa."
+    "Latências de hardware e tempos de resposta do painel influenciam a detecção temporal de transientes luminosos (Woods et al., 2015). Todos os dados e escores são gerados e armazenados localmente no navegador, mantendo os dados no seu navegador."
   ],
   benchmarks: {
     title: "Benchmarks de Campo Visual Útil (UFOV) e Latência Periférica",
     headers: ["Nível de Desempenho", "Campo Visual Útil (UFOV %)", "Tempo de Reação Periférico", "Estabilidade Central", "Perfil Neurofisiológico"],
     rows: [
-      ["Desempenho elevado (Competição / Atletas)", "Acima de 92%", "Abaixo de 280 ms", "Acima de 95%", "Desacoplamento foveal perfeito; percepção panorâmica sem desvio da fixação central."],
-      ["Avançado (Nível Competitivo)", "85% – 92%", "280 ms – 340 ms", "90% – 95%", "Excelente distribuição de atenção encoberta; mínima hesitação ao responder a estímulos laterais."],
-      ["Competente (Adulto Saudável)", "75% – 84%", "341 ms – 410 ms", "82% – 89%", "Boa capacidade de dupla tarefa; leve visão em túnel em velocidades centrais elevadas."],
-      ["Em Desenvolvimento", "60% – 74%", "411 ms – 500 ms", "70% – 81%", "Atraso perceptível; micro-sacadas involuntárias frequentes em direção aos estímulos periféricos."],
-      ["Iniciante / Nível Base", "Abaixo de 60%", "Acima de 500 ms", "Abaixo de 70%", "Forte visão em túnel; quebra constante da perseguição central ao surgir o lampejo."]
+      ["Faixa 1 (Muito alta)", "Acima de 92%", "Abaixo de 280 ms", "Acima de 95%", "Desacoplamento foveal perfeito; percepção panorâmica sem desvio da fixação central."],
+      ["Faixa 2 (Alta)", "85% – 92%", "280 ms – 340 ms", "90% – 95%", "Excelente distribuição de atenção encoberta; mínima hesitação ao responder a estímulos laterais."],
+      ["Faixa 3 (Boa)", "75% – 84%", "341 ms – 410 ms", "82% – 89%", "Boa capacidade de dupla tarefa; leve visão em túnel em velocidades centrais elevadas."],
+      ["Faixa 4 (Intermediária)", "60% – 74%", "411 ms – 500 ms", "70% – 81%", "Atraso perceptível; micro-sacadas involuntárias frequentes em direção aos estímulos periféricos."],
+      ["Faixa 5 (Inicial)", "Abaixo de 60%", "Acima de 500 ms", "Abaixo de 70%", "Forte visão em túnel; quebra constante da perseguição central ao surgir o lampejo."]
     ],
-    note: "※ Valores baseados em testes padronizados a 50–70 cm da tela com sessões de dupla tarefa de 60 segundos. Apenas tentativas com perseguição central contínua são pontuadas."
+    note: "Faixas editoriais para comparar suas próprias sessões, não percentis de população nem normas clínicas. ※ Valores baseados em testes padronizados a 50–70 cm da tela com sessões de dupla tarefa de 60 segundos. Apenas tentativas com perseguição central contínua são pontuadas."
   },
   techniques: {
     title: "Quatro Princípios Essenciais para Expandir a Visão Periférica",
@@ -258,7 +258,7 @@ const guideProps = {
       },
       {
         name: "Controle Respiratório Parassimpático",
-        desc: "O estresse simpático comprime o campo visual, gerando visão em túnel imediata (Eriksen & St. James, 1986). A respiração nasal lenta reduz a frequência cardíaca e mantém a amplitude visual panorâmica.",
+        desc: "Tensão e estresse podem estreitar a atenção visual (Eriksen & St. James, 1986). Respirar com calma ajuda a manter a atenção ampla durante o exercício.",
         tips: "Inspire lentamente por 4 segundos e expire por 6 segundos para relaxar a musculatura cervical e ocular."
       }
     ]

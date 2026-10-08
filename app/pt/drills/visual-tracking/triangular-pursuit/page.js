@@ -65,7 +65,7 @@ export default function TriangularPursuitPagePT() {
     "@context": "https://schema.org",
     "@type": "SoftwareApplication", "sameAs": ["https://en.wikipedia.org/wiki/Smooth_pursuit", "https://en.wikipedia.org/wiki/Saccade"],
     "name": "Treinador de Rastreamento Ocular Triangular",
-    "applicationCategory": "HealthApplication",
+    "applicationCategory": "GameApplication",
     "operatingSystem": "Any",
     "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
     "description": "Treinamento neuromuscular de rastreamento ocular contínuo e sacadas de alta aceleração em trajetórias poligonais fechadas.",
@@ -163,7 +163,7 @@ export default function TriangularPursuitPagePT() {
         "name": "Qual é a postura correta da cabeça durante o treino?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "A cabeça deve permanecer completamente estática. Mover a cabeça anula o estímulo oculomotor puro e transfere a carga para o reflexo vestíbulo-ocular (RVO)."
+          "text": "A cabeça deve permanecer completamente estática. Mover a cabeça mistura o esforço dos olhos com o do reflexo vestíbulo-ocular (RVO)."
         }
       },
       {
@@ -171,7 +171,7 @@ export default function TriangularPursuitPagePT() {
         "name": "Com que frequência devo realizar este exercício?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Sessões de 5 a 10 minutos diários, divididas em séries de 60 segundos com pausas curtas para descanso visual, são ideais para induzir neuroplasticidade."
+          "text": "Sessões de 5 a 10 minutos diários, divididas em séries de 60 segundos com pausas curtas para descanso visual, são confortáveis para a visão."
         }
       },
       {
@@ -187,7 +187,7 @@ export default function TriangularPursuitPagePT() {
         "name": "Como monitores com alta taxa de atualização influenciam os resultados?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Telas de 144Hz ou 240Hz reduzem o atraso entre quadros no momento exato da virada no vértice, facilitando a percepção temporal da desaceleração."
+          "text": "Telas de 144 Hz ou 240 Hz reduzem o atraso entre quadros no momento da virada no vértice, o que facilita perceber a desaceleração."
         }
       },
       {
@@ -203,7 +203,7 @@ export default function TriangularPursuitPagePT() {
         "name": "Posso ajustar a velocidade e a direção do movimento?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Sim, o aplicativo permite alterar o multiplicador de velocidade, a duração da sessão e a direção horária ou anti-horária para equilibrar ambos os hemisférios visuais."
+          "text": "Sim, o aplicativo permite alterar o multiplicador de velocidade, a duração da sessão e a direção horária ou anti-horária."
         }
       }
     ]
@@ -219,16 +219,16 @@ export default function TriangularPursuitPagePT() {
       "Metodologia de medição e latência de hardware: As estimativas temporais incorporam a quantização de atualização das telas (~16,7 ms a 60 Hz, ~6,9 ms a 144 Hz, ~4,1 ms a 240 Hz) e os intervalos de varredura dos dispositivos de entrada (~8 ms a 125 Hz contra ~1 ms a 1.000 Hz), conforme detalhado por Woods et al. (2015). Todas as suas pontuações e registros de precisão residem exclusivamente no armazenamento local (localStorage) do seu navegador, resguardando total privacidade sem transmissão externa."
     ],
     benchmarks: {
-      title: "Padrões de Desempenho de Perseguição Triangular (Velocidade e Erro em Vértices)",
-      headers: ["Nível de Habilidade", "Multiplicador de Velocidade", "Erro no Vértice", "Latência da Sacada de Virada", "Percentil Global"],
+      title: "Faixas de Referência de Perseguição Triangular (Velocidade e Erro em Vértices)",
+      headers: ["Nível de Habilidade", "Multiplicador de Velocidade", "Erro no Vértice", "Latência da Sacada de Virada", "Referência"],
       rows: [
-        ["Elite / Mestre da Dinâmica Vetorial", "3.5x – 5.0x+", "Erro < 12 px (fixação perfeita no vértice)", "Latência < 110 ms (frenagem preditiva)", "Top 1.5%"],
-        ["Mestre / Alto Controle Vetorial", "2.5x – 3.5x", "Erro < 22 px (apenas microssacadas mínimas)", "Latência < 140 ms (curvas limpas)", "Top 8%"],
-        ["Avançado / Atleta Competitivo", "1.8x – 2.5x", "Erro < 38 px (reaquisição veloz)", "Latência < 180 ms (viradas estáveis)", "Top 25%"],
-        ["Intermediário / Praticante Regular", "1.2x – 1.8x", "Erro 38 – 70 px (corte de curvas / overshoot)", "Latência 180 – 240 ms (sacadas múltiplas)", "Médio 45%"],
-        ["Iniciante / Não Treinado", "0.5x – 1.2x", "Erro > 70 px (perda total no vértice)", "Latência > 250 ms (ultrapassagem evidente)", "Base"]
+        ["Faixa 1 (Muito alta)", "3.5x – 5.0x+", "Erro < 12 px (fixação perfeita no vértice)", "Latência < 110 ms (frenagem preditiva)", "Faixa 1"],
+        ["Faixa 2 (Alta)", "2.5x – 3.5x", "Erro < 22 px (apenas microssacadas mínimas)", "Latência < 140 ms (curvas limpas)", "Faixa 2"],
+        ["Faixa 3 (Boa)", "1.8x – 2.5x", "Erro < 38 px (reaquisição veloz)", "Latência < 180 ms (viradas estáveis)", "Faixa 3"],
+        ["Faixa 4 (Intermediária)", "1.2x – 1.8x", "Erro 38 – 70 px (corte de curvas / overshoot)", "Latência 180 – 240 ms (sacadas múltiplas)", "Faixa 4"],
+        ["Faixa 5 (Inicial)", "0.5x – 1.2x", "Erro > 70 px (perda total no vértice)", "Latência > 250 ms (ultrapassagem evidente)", "Faixa 5"]
       ],
-      note: "Padrões fundamentados em de Brouwer et al. (2002) sobre dinâmica de sacadas corretivas e Heinen et al. (2005) sobre controle motor em reversões abruptas de trajetória."
+      note: "Faixas editoriais para comparar suas próprias sessões, não percentis de população nem normas clínicas. Padrões fundamentados em de Brouwer et al. (2002) sobre dinâmica de sacadas corretivas e Heinen et al. (2005) sobre controle motor em reversões abruptas de trajetória."
     },
     steps: [
       { title: "Fixe o alvo no centro", text: "Mantenha a cabeça estável e acompanhe o início da rota triangular com o olhar." },

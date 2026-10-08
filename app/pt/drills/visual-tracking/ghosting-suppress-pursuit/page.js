@@ -71,7 +71,7 @@ const softwareApplicationSchema = {
   "@context": "https://schema.org",
   "@type": "SoftwareApplication", "sameAs": ["https://en.wikipedia.org/wiki/Smooth_pursuit"],
   "name": "Supressão de Rastros Visuais – Fixação Ocular",
-  "applicationCategory": "HealthApplication",
+  "applicationCategory": "GameApplication",
   "operatingSystem": "Navegador",
   "dateModified": "2026-09-20",
   "offers": {
@@ -196,7 +196,7 @@ const faqSchema = {
       "name": "Por que a imobilização estrita da cabeça é obrigatória?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Mover a cabeça engaja o reflexo vestíbulo-ocular (RVO), o que mascara falhas no controle fino dos músculos retos e oblíquos. Manter o queixo fixo garante que todo o esforço de compensação seja puramente oculomotor."
+        "text": "Mover a cabeça engaja o reflexo vestíbulo-ocular (RVO), o que mascara falhas no controle fino dos músculos retos e oblíquos. Manter o queixo fixo ajuda a concentrar o esforço nos movimentos dos olhos."
       }
     },
     {
@@ -220,7 +220,7 @@ const faqSchema = {
       "name": "Há transferência deste treino para esportes dinâmicos como beisebol ou tênis?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Sim. Bolas em alta velocidade produzem arrastamento visual no campo de visão periférica. Atletas com controle de fixação superior conseguem distinguir a costura e o giro da bola sem perder a nitidez foveal."
+        "text": "Pode ajudar como prática extra de fixação do olhar, mas não há garantia de transferência para esportes; o exercício mede apenas a tarefa na tela."
       }
     },
     {
@@ -261,13 +261,13 @@ const guideProps = {
     title: "Padrões de Desempenho em Fixação Foveal e Supressão de Rastros Visuais",
     headers: ["Nível de Desempenho", "Multiplicador de Velocidade", "Estabilidade de Fixação sob Rastros Visuais", "Perfil Neuromotor e Oculomotor"],
     rows: [
-      ["Nível 1: Apex Fixação – Bloqueio Foveal Puro", "2.0x+ Ultra-Velocidade", "O olhar permanece inabalavelmente ancorado no núcleo do alvo mesmo diante de anéis de arrasto densos e quiques rápidos.", "Supressão cortical impecável do desfoque de movimento e precisão microssacádica absoluta (Burr, 1980; Martinez-Conde et al., 2004). Padrão de elite em esportes e esports."],
-      ["Nível 2: Acuidade de Fixação Superior", "1.4x – 1.9x Alta Velocidade", "O contorno do alvo é perfeitamente isolado em alta velocidade; distração mínima causada pelos anéis residuais de cauda.", "Excelente filtragem sensoriomotora dos músculos extraoculares. Alto desempenho em cenários saturados de partículas e efeitos visuais."],
-      ["Nível 3: Padrão Funcional Sólido", "1.0x – 1.3x Velocidade Padrão", "Perseguição estável na velocidade base; breve hesitação momentânea durante quiques ou aumento da densidade de rastros.", "Faixa normativa em adultos saudáveis. Plenamente satisfatória para direção diária, esportes recreativos e jogos casuais."],
-      ["Nível 4: Desvio Ocular – Requer Treino", "0.7x – 0.9x Velocidade Moderada", "O olhar é recorrentemente atraído para trás em direção aos rastros visuais; o núcleo do alvo escapa frequentemente da fóvea.", "Filtragem cortical lenta de ruído visual. Recomenda-se prática consistente nos patamares iniciais de velocidade."],
-      ["Nível 5: Perda de Fixação – Iniciante", "< 0.7x Baixa Velocidade", "Os olhos oscilam de forma desordenada entre o alvo principal e os anéis fantasmas; perda completa do foco.", "Coordenação neuromuscular básica requer desenvolvimento em velocidades lentas com imobilização rigorosa da cabeça."]
+      ["Faixa 1 (Muito alta)", "2.0x+ Ultra-Velocidade", "O olhar permanece inabalavelmente ancorado no núcleo do alvo mesmo diante de anéis de arrasto densos e quiques rápidos.", "Supressão cortical impecável do desfoque de movimento e precisão microssacádica absoluta (Burr, 1980; Martinez-Conde et al., 2004)."],
+      ["Faixa 2 (Alta)", "1.4x – 1.9x Alta Velocidade", "O contorno do alvo é perfeitamente isolado em alta velocidade; distração mínima causada pelos anéis residuais de cauda.", "Excelente filtragem sensoriomotora dos músculos extraoculares. Alto desempenho em cenários saturados de partículas e efeitos visuais."],
+      ["Faixa 3 (Boa)", "1.0x – 1.3x Velocidade Padrão", "Perseguição estável na velocidade base; breve hesitação momentânea durante quiques ou aumento da densidade de rastros.", "Faixa normativa em adultos saudáveis. Plenamente satisfatória para direção diária, esportes recreativos e jogos casuais."],
+      ["Faixa 4 (Intermediária)", "0.7x – 0.9x Velocidade Moderada", "O olhar é recorrentemente atraído para trás em direção aos rastros visuais; o núcleo do alvo escapa frequentemente da fóvea.", "Filtragem cortical lenta de ruído visual. Recomenda-se prática consistente nos patamares iniciais de velocidade."],
+      ["Faixa 5 (Inicial)", "< 0.7x Baixa Velocidade", "Os olhos oscilam de forma desordenada entre o alvo principal e os anéis fantasmas; perda completa do foco.", "Coordenação neuromuscular básica requer desenvolvimento em velocidades lentas com imobilização rigorosa da cabeça."]
     ],
-    note: "Baremos fundamentados em pesquisas neurofisiológicas sobre controle de fixação foveal, dinâmica de microssacadas e supressão cortical de desfoque retiniano (Burr, 1980; Martinez-Conde et al., 2004; Rolfs, 2009; Krauzlis, 2004)."
+    note: "Faixas editoriais para comparar suas próprias sessões, não percentis de população nem normas clínicas. Baremos fundamentados em pesquisas neurofisiológicas sobre controle de fixação foveal, dinâmica de microssacadas e supressão cortical de desfoque retiniano (Burr, 1980; Martinez-Conde et al., 2004; Rolfs, 2009; Krauzlis, 2004)."
   },
   faqs: faqSchema.mainEntity.map(e => ({ q: e.name, a: e.acceptedAnswer.text })),
   sources: pickSources('burr1980', 'martinezconde2004', 'rolfs2009', 'krauzlis2004', 'barnes2008', 'woods2015'),

@@ -22,7 +22,7 @@ import { pickSources } from '@/lib/drillSources';
 // ============================================================
 
 export const metadata = {
-  title: "Treino de Visão Periférica | Teste Online",
+  title: "Defesa Radial: Treino de Visão Periférica",
   description: "Teste grátis de visão periférica no navegador. Fixe o olhar no centro, detecte ameaças nas bordas e treine seu campo visual útil (UFOV).",
   keywords: [
     "treinar visão periférica",
@@ -41,7 +41,7 @@ export const metadata = {
     languages: getAlternateLanguages('/drills/physical/reflex-training/peripheral-threat-sweeper'),
   },
   openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
-    title: "Treino de Visão Periférica | Teste Online",
+    title: "Defesa Radial: Treino de Visão Periférica",
     description: "Teste grátis de visão periférica no navegador. Fixe o olhar no centro, detecte ameaças nas bordas e treine seu campo visual útil (UFOV).",
     url: 'https://skilldrills.online/pt/drills/physical/reflex-training/peripheral-threat-sweeper',
     siteName: 'SkillDrills',
@@ -50,7 +50,7 @@ export const metadata = {
   },
   twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: 'summary_large_image',
-    title: "Treino de Visão Periférica | Teste Online",
+    title: "Defesa Radial: Treino de Visão Periférica",
     description: "Teste grátis de visão periférica no navegador. Fixe o olhar no centro, detecte ameaças nas bordas e treine seu campo visual útil (UFOV).",
   },
   robots: { index: true, follow: true },
@@ -259,20 +259,20 @@ const guideProps = {
       "No sistema visual humano, a fóvea central — responsável pela máxima acuidade e resolução de cores — ocupa apenas de 1 a 2 graus de todo o campo visual. Toda a região periférica circundante apresenta menor resolução espacial estática, mas possui altíssima concentração de células fotorreceptoras do tipo bastonete, especializadas na detecção imediata de movimento, cintilação e luminosidade. Este exercício foi planejado para condicionar a atenção espacial encoberta (Posner, 1980): a capacidade neural de alocar processamento atencional no canto dos olhos sem desviar a direção foveal primária.",
       "A dinâmica de cada varredura periférica é regida pela clássica Lei de Fitts (1954) e pelo modelo de controle motor bifásico de Woodworth (1899). O tempo de resposta aumenta logaritmicamente conforme a distância radial até o vetor cresce e o diâmetro da ameaça diminui. Ao rebater ameaças velozes em aproximação contínua, o atleta precisa lançar o mouse com um movimento balístico em malha aberta cobrindo 85%+ do trajeto, aplicando uma desaceleração microscópica no ponto de impacto antes do clique.",
       "Estudos clássicos de Karlene Ball et al. (1988) evidenciam que, sob situações de estresse e fadiga competitiva, o campo de visão funcional pode sofrer uma contração drástica conhecida como 'visão de túnel'. O simulador contrapõe esse colapso iniciando com intervalos moderados de 1,4 segundo e progredindo dinamicamente até cadências extremas de 0,20 segundo com nós a 520 px/s. Esse estímulo contínuo força o córtex parietal a expandir permanentemente o Useful Field of View (UFOV), conferindo consciência espacial panorâmica inabalável.",
-      "Para garantir precisão laboratorial em milissegundos, o sistema afere tempos de reação por meio da API performance.now() do navegador. Em telas gamer com taxas de 144Hz ou 240Hz, o borrão de arraste dos nós radiais a 520 px/s é eliminado, possibilitando discriminação perceptiva sem atraso de renderização (Woods et al., 2015). Seus recordes permanecem guardados unicamente no seu computador, preservando total sigilo."
+      "O sistema mede tempos de reação por meio da API performance.now() do navegador. Em telas gamer com taxas de 144Hz ou 240Hz, o borrão de arraste dos nós radiais a 520 px/s é eliminado, possibilitando discriminação perceptiva sem atraso de renderização (Woods et al., 2015). Seus recordes permanecem guardados unicamente no seu computador, preservando total sigilo."
     ]
   },
   benchmarks: {
     title: "Tabela Oficial de Classificação para Visão Periférica e Defesa Radial",
     headers: ['Nível (Tier)', 'Título & Classificação', 'Pontuação Meta', 'Precisão & Velocidade', 'Grau', 'Nível de Percepção'],
     rows: [
-      ['Tier 1', 'Guardião Supremo do Campo Visual (Apex Peripheral Guardian)', '24.000+ pts', '90%+ Acertos / 450+ px/s', 'Grau S', 'Top 1% (UFOV Extraordinário)'],
-      ['Tier 2', 'Interceptador Radial de Precisão (Precision Radial Sweeper)', '17.000 – 23.999 pts', '82–89% Acertos / 350–449 px/s', 'Grau A', 'Top 10% (Nível Competitivo)'],
-      ['Tier 3', 'Defensor de Campo Ágil (Skilled Field Defender)', '11.000 – 16.999 pts', '74–81% Acertos / 250–349 px/s', 'Grau B', 'Top 30% (Percepção Consistente)'],
-      ['Tier 4', 'Praticante Parafoveal em Progresso (Developing Parafoveal Tracker)', '6.000 – 10.999 pts', '65–73% Acertos / 160–249 px/s', 'Grau C', 'Média (Jogadores Regulares)'],
-      ['Tier 5', 'Iniciante Sujeito a Visão de Túnel (Novice Tunnel Vision Vulnerable)', '< 6.000 pts', '< 65% Acertos / < 160 px/s', 'Grau D', 'Básico (Expansão de UFOV Recomendada)'],
+      ['Faixa 1', 'Muito alta', '24.000+ pts', '90%+ Acertos / 450+ px/s', 'Grau S', 'UFOV Extraordinário'],
+      ['Faixa 2', 'Alta', '17.000 – 23.999 pts', '82–89% Acertos / 350–449 px/s', 'Grau A', 'Nível Competitivo'],
+      ['Faixa 3', 'Boa', '11.000 – 16.999 pts', '74–81% Acertos / 250–349 px/s', 'Grau B', 'Percepção Consistente'],
+      ['Faixa 4', 'Intermediária', '6.000 – 10.999 pts', '65–73% Acertos / 160–249 px/s', 'Grau C', 'Média (Jogadores Regulares)'],
+      ['Faixa 5', 'Inicial', '< 6.000 pts', '< 65% Acertos / < 160 px/s', 'Grau D', 'Básico (Expansão de UFOV Recomendada)'],
     ],
-    note: "A avaliação leva em conta pontos totais, quantidade de brechas sofridas no núcleo, velocidade máxima sobrevivida e comprimento máximo de combo.",
+    note: "Faixas editoriais para comparar suas próprias sessões, não percentis de população nem normas clínicas. A avaliação leva em conta pontos totais, quantidade de brechas sofridas no núcleo, velocidade máxima sobrevivida e comprimento máximo de combo.",
   },
   protocols: {
     title: "Protocolo de 4 Fases para Maximização da Visão Periférica",
@@ -334,7 +334,7 @@ export default function LocalizedPeripheralThreatSweeperPagePt() {
       />
       <PeripheralThreatSweeperClient
         copy={{
-          title: "Treino de Visão Periférica",
+          title: "Defesa Radial: Treino de Visão Periférica",
           subtitle: "Fixe o centro e detecte ameaças nas bordas",
           description: "A visão periférica é aquilo que você consegue detectar sem olhar diretamente. Os detalhes diminuem acentuadamente a partir do centro do olhar, mas a atenção pode ser direcionada para um ponto periférico enquanto os olhos permanecem parados, acelerando a resposta motora (Posner, 1980). Uma característica única como a cor é localizada quase no mesmo tempo independentemente de distrações, enquanto alvos que combinam traços exigem busca atencional ativa (Treisman & Gelade, 1980) — o que torna algumas ameaças fáceis de interceptar na borda e outras desafiadoras.",
           hudLabels: {

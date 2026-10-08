@@ -6,8 +6,8 @@ import { getAlternateLanguages } from '@/lib/i18n/locales';
 import { pickSources } from '@/lib/drillSources';
 
 export const metadata = {
-  title: "Treino de Tracking | Mira em Movimento | SkillDrills",
-  description: "Treino grátis de tracking no navegador: pratique mira em movimento, strafes e mudanças de direção para Apex e Overwatch 2.",
+  title: "Treino de Tracking Online | Mira em Movimento | SkillDrills",
+  description: "Treino grátis de tracking no navegador: pratique mira em movimento, strafes e mudanças de direção para Valorant, CS2 e Apex.",
   keywords: [
     "treino de tracking",
     "treino de tracking online",
@@ -31,8 +31,8 @@ export const metadata = {
     follow: true,
   },
   openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
-    title: "Treino de Tracking | Mira em Movimento | SkillDrills",
-    description: "Treino grátis de tracking no navegador: pratique mira em movimento, strafes e mudanças de direção para Apex e Overwatch 2.",
+    title: "Treino de Tracking Online | Mira em Movimento | SkillDrills",
+    description: "Treino grátis de tracking no navegador: pratique mira em movimento, strafes e mudanças de direção para Valorant, CS2 e Apex.",
     url: "https://skilldrills.online/pt/drills/fps/strafe-tracking",
     siteName: 'SkillDrills',
     locale: 'pt_BR',
@@ -40,8 +40,8 @@ export const metadata = {
   },
   twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: 'summary_large_image',
-    title: "Treino de Tracking | Mira em Movimento | SkillDrills",
-    description: "Treino grátis de tracking no navegador: pratique mira em movimento, strafes e mudanças de direção para Apex e Overwatch 2.",
+    title: "Treino de Tracking Online | Mira em Movimento | SkillDrills",
+    description: "Treino grátis de tracking no navegador: pratique mira em movimento, strafes e mudanças de direção para Valorant, CS2 e Apex.",
   },
 };
 
@@ -156,10 +156,10 @@ export default function StrafeTrackingPtPage() {
       },
       {
         "@type": "Question",
-        "name": "Como o input bruto (Raw Input) melhora o tracking em comparação com aceleração do mouse?",
+        "name": "A aceleração do mouse atrapalha o tracking?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "O hardware raw input assegura proporção estrita de 1:1 entre o deslocamento físico do mouse e os pixels na tela. A aceleração adiciona variáveis não lineares de velocidade, dificultando enormemente os cálculos do cerebelo para frear e inverter o movimento com exatidão."
+          "text": "Em geral, sim: a aceleração faz o mesmo movimento físico resultar em distâncias diferentes conforme a velocidade da mão, o que dificulta criar memória muscular. Para treinar tracking, use no jogo a mesma configuração de sensibilidade e deixe a aceleração do mouse desligada."
         }
       },
       {
@@ -167,7 +167,7 @@ export default function StrafeTrackingPtPage() {
         "name": "O treino de strafe tracking no navegador realmente melhora a mira nos jogos instalados?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Sim. Este treino utiliza a Pointer Lock API com deltas puros de mouse sem aceleração e calibração de sensibilidade idêntica à do seu jogo principal, condicionando exatamente as vias visomotoras de leitura de mudança de vetor empregadas nas partidas competitivas."
+          "text": "Pode ajudar como prática extra de perseguição e leitura de inversões, mas não há garantia de transferência direta para o jogo. O treino usa a Pointer Lock API e permite informar a sensibilidade do seu jogo; compare resultados sempre com o mesmo mouse e configuração."
         }
       },
       {
@@ -199,7 +199,7 @@ export default function StrafeTrackingPtPage() {
         "@type": "HowToStep",
         "position": 1,
         "name": "Calibrar Sensibilidade do Jogo",
-        "text": "Configure sua sensibilidade exata e DPI nas opções de sessão para preservar a proporção de hardware de 1:1 e travar o ponteiro.",
+        "text": "Configure sua sensibilidade exata e DPI nas opções de sessão para que o movimento do mouse seja próximo ao do seu jogo e travar o ponteiro.",
         "url": "https://skilldrills.online/pt/drills/fps/strafe-tracking#step-1"
       },
       {
@@ -236,16 +236,16 @@ export default function StrafeTrackingPtPage() {
       "Como isto é mensurado: cada evento é registrado pelo relógio de alta resolução performance.now() do navegador, rodando estritamente no seu dispositivo — nenhum dado é enviado externamente. Fatores do hardware: os timers de navegadores são mitigados para cerca de 1 ms, e a tela quantiza os estímulos de acordo com a taxa de atualização — aproximadamente 16,7 ms a 60 Hz, 6,9 ms a 144 Hz e 4,1 ms a 240 Hz (Woods et al., 2015). O polling rate do mouse adiciona cerca de 8 ms a 125 Hz contra 1 ms a 1000 Hz. Trate variações inferiores a 5 ms como ruído e compare seus dados no mesmo hardware."
     ],
     benchmarks: {
-      title: "Padrões Científicos de Strafe Tracking e Latência de Inversão",
+      title: "Faixas de Referência de Strafe Tracking e Latência de Inversão",
       headers: ["Nível de Desempenho", "% Tempo no Alvo", "Latência de Inversão", "Impacto Competitivo no Jogo"],
       rows: [
-        ["Tier 1 (Predator / Pro)", "85% – 95%+", "<180 ms", "Rastreamento impecável tipo raio laser; sincronização de velocidade imediata com overshoot nulo contra strafes rápidos"],
-        ["Tier 2 (Mestre Competitivo)", "72% – 85%", "180 – 220 ms", "Tempo de mira contínua excepcional; recuperação veloz após mudanças de sentido; vence a maioria dos duelos em curta distância"],
-        ["Tier 3 (Diamante / Avançado)", "58% – 72%", "220 – 270 ms", "Tracking linear sólido; perda momentânea do alvo (50–100 ms) durante inversões bruscas e inesperadas do oponente"],
-        ["Tier 4 (Intermediário / Ouro)", "42% – 58%", "270 – 330 ms", "Previsão precipitada recorrente; a mira frequentemente ultrapassa o alvo antes de efetuar sacadas lentas de correção"],
-        ["Tier 5 (Iniciante / Básico)", "<42%", ">330 ms", "Oscilação acentuada na mira; dificuldade em acompanhar a aceleração lateral; cursor fica sistematicamente atrás do alvo"]
+        ["Faixa 1 (Muito alta)", "85% – 95%+", "<180 ms", "Rastreamento muito consistente; sincronização de velocidade imediata com overshoot nulo contra strafes rápidos"],
+        ["Faixa 2 (Alta)", "72% – 85%", "180 – 220 ms", "Tempo de mira contínua excepcional; recuperação veloz após mudanças de sentido; vence a maioria dos duelos em curta distância"],
+        ["Faixa 3 (Boa)", "58% – 72%", "220 – 270 ms", "Tracking linear sólido; perda momentânea do alvo (50–100 ms) durante inversões bruscas e inesperadas do oponente"],
+        ["Faixa 4 (Intermediária)", "42% – 58%", "270 – 330 ms", "Previsão precipitada recorrente; a mira frequentemente ultrapassa o alvo antes de efetuar sacadas lentas de correção"],
+        ["Faixa 5 (Inicial)", "<42%", ">330 ms", "Oscilação acentuada na mira; dificuldade em acompanhar a aceleração lateral; cursor fica sistematicamente atrás do alvo"]
       ],
-      note: "A porcentagem de tempo no alvo reflete o contato contínuo acumulado dividido pela duração total do treino; a latência de inversão mensura o tempo decorrido entre a mudança do vetor do alvo e a reaquisição da retícula com raw input (Woods et al., 2015)."
+      note: "Faixas editoriais para comparar suas próprias sessões, não percentis de população nem normas clínicas. A porcentagem de tempo no alvo reflete o contato contínuo acumulado dividido pela duração total do treino; a latência de inversão mensura o tempo decorrido entre a mudança do vetor do alvo e a reaquisição da retícula (Woods et al., 2015)."
     },
     techniques: {
       title: "Protocolos Baseados em Evidências para Strafe Tracking Reativo",
@@ -273,7 +273,7 @@ export default function StrafeTrackingPtPage() {
       ]
     },
     steps: [
-      "Configure o jogo de referência, DPI e sensibilidade exata nas opções da sessão para manter proporção de 1:1 e travar o cursor.",
+      "Configure o jogo de referência, DPI e sensibilidade exata nas opções da sessão para aproximar o movimento do mouse ao do seu jogo e travar o cursor.",
       "Fixe os olhos no modelo luminoso enquanto ele inicia seus movimentos laterais imprevisíveis pela tela.",
       "Deslize o mouse com pressão controlada e suave no antebraço, acompanhando a velocidade horizontal sem interrupções.",
       "Mantenha o cursor sobre o alvo de forma contínua para acumular multiplicadores de combo de até 3,0x e avançar de nível a cada 1400 pontos.",
@@ -307,7 +307,7 @@ export default function StrafeTrackingPtPage() {
     pausedTitle: "Jogo Pausado",
     pausedPrompt: "Clique para retomar — o bloqueio do cursor será reativado.",
     startTitle: "Treino de Tracking",
-    startSubtitle: "Entrada Direta de Hardware · Progressão Contínua de Níveis",
+    startSubtitle: "Mira Travada · Progressão Contínua de Níveis",
     startButtonText: "Iniciar Treino",
     getReady: "PREPARE-SE",
     statLockStreak: "Maior Sequência Contínua",

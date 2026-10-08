@@ -19,7 +19,7 @@ import { pickSources } from '@/lib/drillSources';
 
 export const metadata = {
   title: "Treino de Escada de Agilidade | SkillDrills",
-  description: 'Treino grátis de escada de agilidade online. Siga passadas alternadas para praticar footwork, ritmo, coordenação bilateral e velocidade dos pés.',
+  description: 'Jogo de ritmo inspirado na escada de agilidade: clique degraus alternados com o mouse e treine cadência e coordenação. Não treina os pés.',
   keywords: [
     "treino de escada de agilidade",
     "exercicios na escada de agilidade",
@@ -31,7 +31,7 @@ export const metadata = {
     "treino de sequenciamento motor",
     "cadencia e reflexo motor",
     "treino de agilidade online",
-    "velocidade dos pés treino"
+    "jogo de ritmo com mouse"
   ],
   alternates: {
     canonical: 'https://skilldrills.online/pt/drills/physical/fitness/agility-ladder',
@@ -39,7 +39,7 @@ export const metadata = {
   },
   openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
     title: "Treino de Escada de Agilidade | SkillDrills",
-    description: 'Treino grátis de escada de agilidade online. Siga passadas alternadas para praticar footwork, ritmo, coordenação bilateral e velocidade dos pés.',
+    description: 'Jogo de ritmo inspirado na escada de agilidade: clique degraus alternados com o mouse e treine cadência e coordenação. Não treina os pés.',
     url: 'https://skilldrills.online/pt/drills/physical/fitness/agility-ladder',
     siteName: 'SkillDrills',
     locale: 'pt_BR',
@@ -48,7 +48,7 @@ export const metadata = {
   twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: 'summary_large_image',
     title: "Treino de Escada de Agilidade | SkillDrills",
-    description: 'Treino grátis de escada de agilidade online. Siga passadas alternadas para praticar footwork, ritmo, coordenação bilateral e velocidade dos pés.',
+    description: 'Jogo de ritmo inspirado na escada de agilidade: clique degraus alternados com o mouse e treine cadência e coordenação. Não treina os pés.',
   },
   robots: { index: true, follow: true },
 };
@@ -78,7 +78,7 @@ const breadcrumbSchema = {
     {
       "@type": "ListItem",
       "position": 4,
-      "name": "Treino de Escada de Agilidade & Footwork",
+      "name": "Treino de Escada de Agilidade (Ritmo com Mouse)",
       "item": "https://skilldrills.online/pt/drills/physical/fitness/agility-ladder"
     }
   ]
@@ -128,7 +128,7 @@ const videoGameSchema = {
   "@type": "VideoGame",
   "name": "Jogo de Escada de Agilidade (Agility Ladder Drill)",
   "url": "https://skilldrills.online/pt/drills/physical/fitness/agility-ladder",
-  "description": "Treinamento de ritmo neuromuscular e sequenciamento motor em degraus descendentes para domínio de footwork e counter-strafing.",
+  "description": "Jogo de ritmo e sequenciamento motor com mouse em degraus descendentes, inspirado na escada de agilidade e no ritmo de counter-strafing.",
   "genre": [
     "Fitness Drill",
     "Motor Sequencing",
@@ -169,7 +169,7 @@ const faqSchema = {
       "name": "O que afirma a teoria de Schmidt sobre o Programa Motor Generalizado (GMP) neste treino?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Richard Schmidt (1975) provou que movimentos velozes e rítmicos preservam a invariância temporal relativa. Embora a velocidade dos degraus acelere de 150 para 750 px/s, a proporção de tempo entre as passadas laterais (1:1:1:1) permanece constante, permitindo adaptar a cadência motora sem reaprender o gesto."
+        "text": "Richard Schmidt (1975) propôs que movimentos velozes e rítmicos preservam a invariância temporal relativa. Embora a velocidade dos degraus acelere de 150 para 750 px/s, a proporção de tempo entre as passadas laterais (1:1:1:1) permanece constante, permitindo adaptar a cadência motora sem reaprender o gesto."
       }
     },
     {
@@ -177,7 +177,7 @@ const faqSchema = {
       "name": "Como este exercício aprimora a mecânica de counter-strafing em jogos como CS2 e Valorant?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "O counter-strafing perfeito exige alternar passadas laterais em tempos rigorosos para anular a inércia do boneco e estabilizar o primeiro tiro. Este drill desenvolve o ritmo de alternância esquerda-direita no cérebro, sincronizando o tempo de parada e disparo com precisão milimétrica."
+        "text": "O counter-strafing perfeito exige alternar passadas laterais em tempos rigorosos para anular a inércia do boneco e estabilizar o primeiro tiro. Este drill treina o ritmo de alternância esquerda-direita com o mouse; não há garantia de transferência direta para o jogo."
       }
     },
     {
@@ -217,7 +217,7 @@ const faqSchema = {
       "name": "Como atingir a pontuação máxima de 17.000 pontos e o título de Apex Ladder Master?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "É mandatório manter a sequência de 4 degraus como um chunk contínuo sem hesitação intermediária, preservando o multiplicador de 3.0x durante todos os 45 segundos. Manter o ritmo consistente mesmo quando a velocidade ultrapassa 600 px/s é a marca dos mestres da cadência."
+        "text": "É mandatório manter a sequência de 4 degraus como um chunk contínuo sem hesitação intermediária, preservando o multiplicador de 3.0x durante todos os 45 segundos. Manter o ritmo consistente mesmo quando a velocidade ultrapassa 600 px/s indica boa consistência de cadência."
       }
     },
     {
@@ -243,7 +243,7 @@ const howToSchema = {
   "@context": "https://schema.org",
   "@type": "HowTo",
   "name": "Protocolo de Execução da Escada de Agilidade e Sequenciamento Motor",
-  "description": "Passo a passo para conectar degraus em cadência alternada esquerda-direita e dominar o treino de footwork.",
+  "description": "Passo a passo para conectar degraus em cadência alternada esquerda-direita e praticar o ritmo de alternância.",
   "step": [
     {
       "@type": "HowToStep",
@@ -280,22 +280,22 @@ const ladderGuide = {
   heading: "Fundamentação Biomecânica: Sequenciamento Motor Serial e Cadência Rítmica",
   subtitle: "Ordenação serial de Lashley, invariância temporal de Schmidt (GMP) e dinâmica de interceptação de Fitts",
   intro: [
-    "O treino na escada de agilidade (Agility Ladder Drill) é um dos pilares da preparação física no atletismo, futebol, boxe e basquete para o desenvolvimento de velocidade de pés (footwork) e agilidade neuromuscular. No simulador digital, a escada de solo é transposta para um padrão cinemático contínuo que testa a capacidade do sistema nervoso de executar sequências bilaterais rápidas em resposta a alvos em rolagem vertical.",
+    "O treino na escada de agilidade (Agility Ladder Drill) é um exercício comum de preparação física no atletismo, futebol, boxe e basquete para trabalhar a velocidade dos pés. Este jogo não treina os pés: a escada de solo é transposta para um padrão cinemático contínuo que testa a capacidade do sistema nervoso de executar sequências bilaterais rápidas em resposta a alvos em rolagem vertical.",
     "O neuropsicólogo pioneiro Karl Lashley (1951), em seu estudo seminal sobre 'A Ordem Serial no Comportamento', demonstrou que ações motoras em alta cadência não podem ser controladas por feedback sensorial passo a passo, devido ao atraso de latência da alça reflexa (mínimo de 100-150ms). O cérebro precisa pré-programar os 4 passos da escada como um 'bloco motor unificado' (motor chunk), disparando a alternância completa em um único impulso sincronizado.",
     "Esse princípio é reforçado pela teoria do Programa Motor Generalizado (GMP) de Richard A. Schmidt (1975), que estabelece a invariância temporal relativa: a estrutura proporcional do ritmo permanece constante independentemente da aceleração absoluta da tarefa. Conforme a velocidade escala de 150 px/s para 750 px/s e as hitboxes diminuem de 18 para 10 pixels, o atleta do mouse deve aplicar as correções preditivas de Fitts (1954), interceptando alvos móveis através de antecipação angular inferior sem colapsar a cadência metronômica.",
-    "Especificações de precisão técnica: Este treino opera diretamente no motor Canvas com mensuração por performance.now() em resolução sub-milissegundo. O desempenho percebido correlaciona-se com a taxa de atualização do monitor (60Hz = 16,6ms; 144Hz = 6,9ms; 240Hz = 4,1ms) e a frequência de polling do mouse. Oscilações inferiores a 5ms constituem variações normais de hardware."
+    "Especificações de precisão técnica: Este treino opera diretamente no motor Canvas com mensuração por performance.now() em resolução de cerca de 1 ms. O desempenho percebido correlaciona-se com a taxa de atualização do monitor (60Hz = 16,6ms; 144Hz = 6,9ms; 240Hz = 4,1ms) e a frequência de polling do mouse. Oscilações inferiores a 5ms constituem variações normais de hardware."
   ],
   benchmarks: {
-    title: "Tabela de Classificação e Padrões de Agilidade Motora (5 Níveis)",
-    headers: ["Nível / Rank", "Título de Mestria", "Pontuação Alvo", "Nível Atingido", "Velocidade de Rolagem", "Perfil Neurofuncional de Cadência"],
+    title: "Faixas de Referência de Agilidade Motora (5 Níveis)",
+    headers: ["Faixa", "Classificação editorial", "Pontuação Alvo", "Nível Atingido", "Velocidade de Rolagem", "Perfil Neurofuncional de Cadência"],
     rows: [
-      ["Tier 1: Mestre da Escada Apex", "Apex Ladder Master", "17.000+ pontos", "Nível 12 – 15", "600 – 750 px/s", "Agrupamento serial de 4 passos perfeito (top 0,1%); manutenção impecável de cadência metronômica a 750 px/s (Lashley 1951; Schmidt 1975)"],
-      ["Tier 2: Velocista de Ritmo Elite", "Elite Rhythm Sprinter", "13.000 – 16.999 pts", "Nível 9 – 11", "480 – 599 px/s", "Excelente alternância bilateral em alta cadência; interceptação preditiva consistente em degraus estreitos de 10-12px (Fitts 1954)"],
-      ["Tier 3: Sequenciador de Passadas Hábil", "Proficient Step Sequencer", "9.500 – 12.999 pts", "Nível 6 – 8", "350 – 479 px/s", "Nível avançado para atletas e jogadores competitivos; boa coordenação de punho e controle de ritmo estável"],
-      ["Tier 4: Praticante de Cadência Média", "Intermediate Cadence Learner", "6.000 – 9.499 pts", "Nível 3 – 5", "230 – 349 px/s", "Média funcional padrão em adultos; quebras periódicas de ritmo quando a rolagem ultrapassa 350 px/s devido a hesitação sensorial"],
-      ["Tier 5: Escalador Iniciante", "Novice Rung Climber", "< 6.000 pontos", "Nível 1 – 2", "< 230 px/s", "Dificuldade na integração rítmica dos 4 passos; tendência a reagir a cada degrau individualmente com perda de alinhamento"]
+      ["Faixa 1", "Muito alta", "17.000+ pontos", "Nível 12 – 15", "600 – 750 px/s", "Agrupamento serial de 4 passos perfeito; manutenção impecável de cadência metronômica a 750 px/s (Lashley 1951; Schmidt 1975)"],
+      ["Faixa 2", "Alta", "13.000 – 16.999 pts", "Nível 9 – 11", "480 – 599 px/s", "Excelente alternância bilateral em alta cadência; interceptação preditiva consistente em degraus estreitos de 10-12px (Fitts 1954)"],
+      ["Faixa 3", "Boa", "9.500 – 12.999 pts", "Nível 6 – 8", "350 – 479 px/s", "Nível avançado para atletas e jogadores competitivos; boa coordenação de punho e controle de ritmo estável"],
+      ["Faixa 4", "Intermediária", "6.000 – 9.499 pts", "Nível 3 – 5", "230 – 349 px/s", "Faixa intermediária; quebras periódicas de ritmo quando a rolagem ultrapassa 350 px/s devido a hesitação sensorial"],
+      ["Faixa 5", "Inicial", "< 6.000 pontos", "Nível 1 – 2", "< 230 px/s", "Dificuldade na integração rítmica dos 4 passos; tendência a reagir a cada degrau individualmente com perda de alinhamento"]
     ],
-    note: "Padrões consolidados com base na ordenação serial motora (Lashley 1951), teoria do GMP (Schmidt 1975) e dinâmica de interceptação de Fitts (1954)."
+    note: "Faixas editoriais para comparar suas próprias sessões, não percentis de população nem normas clínicas. Padrões consolidados com base na ordenação serial motora (Lashley 1951), teoria do GMP (Schmidt 1975) e dinâmica de interceptação de Fitts (1954)."
   },
   techniques: {
     title: "Protocolos Práticos para Domínio do Ritmo e Agilidade na Escada",
@@ -328,7 +328,7 @@ const ladderGuide = {
     "Conecte os degraus 2, 3 e 4 em um único movimento rítmico contínuo sem hesitar.",
     "Preserve o multiplicador de 3.0x ininterruptamente para atingir o nível Apex durante os 45 segundos."
   ],
-  audience: "Atletas de futebol, basquete, tênis e atletismo buscando aprimorar a velocidade de passadas e coordenação de pés, além de gamers de eSports treinando ritmo de counter-strafing.",
+  audience: "Gamers de eSports que querem praticar ritmo de counter-strafing e quem busca um exercício de cadência e coordenação olho-mão. Não substitui o treino físico com escada no chão.",
   faqs: faqSchema.mainEntity.map(e => ({ q: e.name, a: e.acceptedAnswer.text })),
   sources: pickSources('lashley1951', 'schmidt1975', 'fitts1954', 'woodworth1899', 'woods2015')
 };
@@ -378,12 +378,12 @@ export default function AgilityLadderPagePt() {
             { title: "Quebra de Sequência", text: "Errar a ordem ou perder um degrau reinicia o multiplicador para 1.0x, sem perda de pontuação." }
           ],
           aboutTitle: "Sobre a Escada de Agilidade e Sequenciamento Motor",
-          aboutHeading: "Coordenação Bilateral e Ritmo Neuromuscular de Footwork",
-          aboutText: "Inspirado nos exercícios tradicionais de escada de agilidade do futebol e do boxe, este treino desenvolve a velocidade de passadas e o sequenciamento serial de Lashley (1951). A alternância rítmica do cursor condiciona reflexos fundamentais para o counter-strafing em jogos de tiro e aprimora a cadência motora de atletas e competidores de eSports.",
+          aboutHeading: "Ritmo e Coordenação Bilateral com o Mouse",
+          aboutText: "Inspirado nos exercícios tradicionais de escada de agilidade do futebol e do boxe, este jogo pratica o sequenciamento serial descrito por Lashley (1951). A alternância rítmica do cursor exercita a cadência motora com o mouse, útil como prática extra de ritmo para jogos de tiro.",
           aboutCards: [
             {
               title: "Público-Alvo",
-              desc: "Gamers buscando aperfeiçoar o ritmo de counter-strafing e paradas de mira, atletas desenvolvendo agilidade de pés e praticantes de coordenação fina."
+              desc: "Gamers buscando praticar o ritmo de counter-strafing e paradas de mira, e praticantes de coordenação fina com o mouse."
             },
             {
               title: "Habilidades Desenvolvidas",

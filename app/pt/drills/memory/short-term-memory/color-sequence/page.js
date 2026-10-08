@@ -57,14 +57,14 @@ export default function PortugueseColorSequencePage() {
       { "@type": "ListItem", "position": 1, "name": "SkillDrills", "item": "https://skilldrills.online/pt" },
       { "@type": "ListItem", "position": 2, "name": "Treinos de Memória", "item": "https://skilldrills.online/pt/drills/memory" },
       { "@type": "ListItem", "position": 3, "name": "Memória de Curto Prazo", "item": "https://skilldrills.online/pt/drills/memory" },
-      { "@type": "ListItem", "position": 4, "name": "Jogo da Memória Online", "item": "https://skilldrills.online/pt/drills/memory/short-term-memory/color-sequence" }
+      { "@type": "ListItem", "position": 4, "name": "Jogo Simon Online", "item": "https://skilldrills.online/pt/drills/memory/short-term-memory/color-sequence" }
     ]
   };
 
   const softwareSchema = {
     "@context": "https://schema.org",
     "@type": "SoftwareApplication",
-    "name": "Jogo da Memória Online",
+    "name": "Jogo Simon Online",
     "applicationCategory": "EducationalApplication",
     "operatingSystem": "Web Browser",
     "dateModified": "2026-09-11",
@@ -82,7 +82,7 @@ export default function PortugueseColorSequencePage() {
   const webAppSchema = {
     "@context": "https://schema.org",
     "@type": "WebApplication",
-    "name": "Jogo da Memória Online",
+    "name": "Jogo Simon Online",
     "url": "https://skilldrills.online/pt/drills/memory/short-term-memory/color-sequence",
     "description": "Jogo de memória online gratuito para navegador com 6 blocos cromáticos e protocolo adaptativo em escada. Pratique retenção de sequências e agrupamento cognitivo.",
     "dateModified": "2026-09-11",
@@ -116,10 +116,10 @@ const faqSchema = {
     "mainEntity": [
       {
         "@type": "Question",
-        "name": "O que é o Jogo da Memória Online de sequências de cores?",
+        "name": "O que é o Jogo Simon Online de sequências de cores?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "O Jogo da Memória Online de sequências de cores é um exercício cognitivo interativo projetado para testar e expandir a memória operacional visual. O jogador observa uma sequência luminosa expansiva entre seis botões coloridos, retém a ordem temporal exata no buffer de memória de curto prazo e reproduz a cadeia de cores com precisão."
+          "text": "O Jogo Simon Online de sequências de cores é um exercício cognitivo interativo projetado para testar e expandir a memória operacional visual. O jogador observa uma sequência luminosa expansiva entre seis botões coloridos, retém a ordem temporal exata no buffer de memória de curto prazo e reproduz a cadeia de cores com precisão."
         }
       },
       {
@@ -188,10 +188,10 @@ const faqSchema = {
       },
       {
         "@type": "Question",
-        "name": "O jogo da memória online é gratuito e funciona no celular e computador?",
+        "name": "O jogo Simon online é gratuito e funciona no celular e computador?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Sim. O Jogo da Memória Online da SkillDrills é 100% gratuito, roda direto no navegador em smartphones, tablets e computadores sem necessidade de download, instalação ou cadastro, medindo respostas localmente pelo relógio de alta resolução performance.now()."
+          "text": "Sim. O Jogo Simon Online da SkillDrills é 100% gratuito, roda direto no navegador em smartphones, tablets e computadores sem necessidade de download, instalação ou cadastro, medindo respostas localmente pelo relógio de alta resolução performance.now()."
         }
       }
     ]
@@ -255,7 +255,7 @@ const faqSchema = {
     rule4Text: 'Dificuldade Adaptativa',
     rule4Highlight: 'Sobe e Desce',
     rule4Result: 'O tamanho da sequência acompanha sua capacidade atual',
-    aboutTitle: 'Sobre o Jogo da Memória de Sequência de Cores',
+    aboutTitle: 'Sobre o Jogo Simon: Sequência de Cores',
     overviewTitle: 'O que é o Treino de Memória Operacional Visual?',
     overviewLead: 'A memória de trabalho visual armazena cerca de 4 itens simples por vez, limite determinado pela contagem de objetos e não pela complexidade de cada um (Luck & Vogel, 1997; Cowan, 2001). Uma sequência expansiva de cores desafia diretamente essa fronteira cognitiva.',
     aboutIntro: [
@@ -278,7 +278,7 @@ const faqSchema = {
     ],
     tapPrompt: 'Toque na Sequência em Ordem',
     evaluating: 'Avaliando...',
-    startCardTitle: 'Jogo da Memória Online',
+    startCardTitle: 'Jogo Simon Online',
     startCardSubtitle: 'Memória de cores • sequência crescente',
     getReady: 'PREPARE-SE',
     newBest: 'NOVO RECORDE',
@@ -292,9 +292,9 @@ const faqSchema = {
   };
 
   const ptColorSequenceGuide = {
-    heading: "Guia do Jogo da Memória Online: Memória Operacional e Retenção Sequencial",
+    heading: "Guia do Jogo Simon Online: Memória Operacional e Retenção Sequencial",
     intro: [
-      "O Jogo da Memória Online de sequências de cores é uma ferramenta interativa desenvolvida para mensurar, desafiar e expandir a capacidade de memória operacional visual e a retenção temporal de padrões. Diferente dos jogos tradicionais de encontrar pares estáticos de cartas em tabuleiros, este teste dinâmico desafia a amplitude imediata (span) do cérebro para reter estímulos cromáticos que surgem em ordem temporal estrita.",
+      "O Jogo Simon Online de sequências de cores é uma ferramenta interativa desenvolvida para mensurar, desafiar e expandir a capacidade de memória operacional visual e a retenção temporal de padrões. Diferente dos jogos tradicionais de encontrar pares estáticos de cartas em tabuleiros, este teste dinâmico desafia a amplitude imediata (span) do cérebro para reter estímulos cromáticos que surgem em ordem temporal estrita.",
       "A arquitetura da memória humana foi amplamente documentada pela neuropsicologia cognitiva. Enquanto George A. Miller (1956) postulou o limite de $7 \pm 2$ itens para memória verbal, pesquisas contemporâneas em memória puramente visual conduzidas por Nelson Cowan (2001) e pela dupla Steven J. Luck & Edward K. Vogel (1997) comprovaram que a capacidade da memória operacional visual não agrupada é de aproximadamente 4 itens independentes. Sem estratégias ativas de recodificação, a capacidade de retenção imediata sofre colapso além do quarto elemento.",
       "Segundo o modelo de memória operacional de Alan Baddeley (Baddeley & Hitch, 1974; Baddeley, 2000), o processamento de sequências visuais recruta ativamente o esboço visuoespacial (visuospatial sketchpad). Robert H. Logie (1995) subdividiu este componente em cache visual (armazenamento estático temporário de cores e formas) e escriba interno (mecanismo ativo de ensaio de sequências espaciais e temporais). Praticantes experientes conectam esse esboço à alça fonológica, gerando uma codificação dual (visual e subvocal) que dobra a resiliência do buffer de memória.",
       "Utilizando cronometria de alta resolução pelo relógio performance.now() do navegador (Woods et al., 2015), o teste avalia tanto a extensão máxima da sequência retida quanto o tempo de reação motor por toque, fornecendo uma métrica confiável de velocidade de processamento cognitivo e resistência à fadiga mental sob pressão.",
@@ -306,13 +306,13 @@ const faqSchema = {
       title: "Benchmarks de Memória Operacional Visual e Retenção Sequencial",
       headers: ["Nível de Desempenho", "Extensão da Sequência (Cores)", "Nível da Escada Adaptativa", "Perfil de Armazenamento e Recuperação Cognitiva"],
       rows: [
-        ["Nível 1 (Elite / Memória de Trabalho Superior)", "9 a 11+ Cores", "Nível 7 a 9+", "Supera com facilidade o gargalo de 4 itens de Cowan; executa agrupamento bimodal contínuo (trajetória espacial + apoio subvocal rápido); latência média por clique < 400 ms."],
-        ["Nível 2 (Capacidade Cognitiva Elevada)", "7 a 8 Cores", "Nível 5 a 6", "Atinge o clássico limiar de 7 itens de Miller; constrói blocos associativos de 2 a 3 cores; retenção estável de ordem sequencial com cadência de 400 a 550 ms por estímulo."],
-        ["Nível 3 (Média Adulta da População)", "5 a 6 Cores", "Nível 3 a 4", "Padrão médio saudável; opera com agrupamento elementar, mas apresenta sensibilidade ao decaimento nos elementos centrais da cadeia; cadência de 550 a 750 ms."],
-        ["Nível 4 (Buffer Sequencial Básico)", "4 Cores", "Nível 2", "Opera no limite biológico bruto de Cowan (cerca de 4 itens isolados); apresenta falhas quando a sequência exige recodificação sem auxílio verbal; cadência de 750 a 1.000 ms."],
-        ["Nível 5 (Iniciante / Sobrecarga Cognitiva)", "3 Cores", "Nível 1", "Dificuldade para reter 3 estímulos cromáticos consecutivos; alta vulnerabilidade à interferência perceptual e decaimento imediato; cadência superior a 1.000 ms por toque."]
+        ["Nível 1 (Muito alto)", "9 a 11+ Cores", "Nível 7 a 9+", "Supera com facilidade o gargalo de 4 itens de Cowan; executa agrupamento bimodal contínuo (trajetória espacial + apoio subvocal rápido); latência média por clique < 400 ms."],
+        ["Nível 2 (Alto)", "7 a 8 Cores", "Nível 5 a 6", "Atinge o clássico limiar de 7 itens de Miller; constrói blocos associativos de 2 a 3 cores; retenção estável de ordem sequencial com cadência de 400 a 550 ms por estímulo."],
+        ["Nível 3 (Intermediário)", "5 a 6 Cores", "Nível 3 a 4", "Faixa intermediária; opera com agrupamento elementar, mas apresenta sensibilidade ao decaimento nos elementos centrais da cadeia; cadência de 550 a 750 ms."],
+        ["Nível 4 (Básico)", "4 Cores", "Nível 2", "Opera perto do limite de Cowan (cerca de 4 itens isolados); apresenta falhas quando a sequência exige recodificação sem auxílio verbal; cadência de 750 a 1.000 ms."],
+        ["Nível 5 (Inicial)", "3 Cores", "Nível 1", "Dificuldade para reter 3 estímulos cromáticos consecutivos; alta vulnerabilidade à interferência perceptual e decaimento imediato; cadência superior a 1.000 ms por toque."]
       ],
-      note: "A extensão corresponde ao número de itens na sequência (nível + 2); a cadência de entrada afere o tempo médio entre a percepção e o toque em cada cor na fase de reprodução (Woods et al., 2015)."
+      note: "Faixas editoriais para comparar suas próprias sessões, não médias de população nem normas clínicas. A extensão corresponde ao número de itens na sequência (nível + 2); a cadência de entrada afere o tempo médio entre a percepção e o toque em cada cor na fase de reprodução (Woods et al., 2015)."
     },
     techniques: {
       title: "Técnicas Baseadas em Evidências para Ampliar a Memória Sequencial",
