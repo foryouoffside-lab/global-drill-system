@@ -6,7 +6,7 @@ import { pickSources } from '@/lib/drillSources';
 
 export const metadata = {
   title: "Peripheral Vision Training – Ping Pursuit | SkillDrills",
-  description: "Condition peripheral visual awareness and split-field target detection while maintaining central gaze anchoring online. Free, no sign-up required.",
+  description: "Free peripheral vision training game: keep your eyes on the centre and react to targets at the edges of the screen. No sign-up.",
   keywords: [
     "peripheral vision training drill",
     "peripheral ping pursuit",
@@ -28,7 +28,7 @@ export const metadata = {
   robots: { index: true, follow: true },
   openGraph: {
     title: "Peripheral Vision Training Drill – Ping Pursuit | SkillDrills",
-    description: "Condition peripheral visual awareness and split-field target detection while maintaining central gaze anchoring online. Free, no sign-up required.",
+    description: "Free peripheral vision training game: keep your eyes on the centre and react to targets at the edges of the screen. No sign-up.",
     url: "https://skilldrills.online/drills/visual-tracking/peripheral-ping-pursuit",
     siteName: 'SkillDrills',
     locale: 'en_US',
@@ -37,7 +37,7 @@ export const metadata = {
   twitter: {
     card: 'summary_large_image',
     title: "Peripheral Vision Training Drill – Ping Pursuit | SkillDrills",
-    description: "Condition peripheral visual awareness and split-field target detection while maintaining central gaze anchoring online. Free, no sign-up required.",
+    description: "Free peripheral vision training game: keep your eyes on the centre and react to targets at the edges of the screen. No sign-up.",
   },
 };
 
@@ -223,6 +223,7 @@ const faqSchema = {
 const guide = {
   heading: "Peripheral Ping Pursuit - Ocular Motor Training Standards",
   intro: [
+    "Peripheral Ping Pursuit is a free peripheral vision training game. You keep your eyes on the centre of the screen and react to targets that appear at the edges without looking away from the middle. Set the difficulty, press start, and respond to each ping while holding your gaze steady.",
     "The human retina is characterized by functional division of labor: high-acuity foveal vision occupies only the central 1° to 2° of the visual field (parvocellular pathway), while the vast majority of our visual space is processed by the peripheral retina, dominated by rod photoreceptors and the magnocellular pathway specialized for motion and luminance dynamics (Wolfe, 1994; Leigh & Zee, 2015). Under natural instinct, the brain fires ballistic saccades toward any eccentric flash.",
     "Peripheral Ping Pursuit conditions the vital cognitive skill of covert spatial attention—the ability to expand your functional visual field and detect transient events across peripheral sectors without moving your eyes away from a central target (Posner, 1980; Eriksen & St. James, 1986). By enforcing strict foveal fixation on the central target, this drill trains the frontal eye field to tonically suppress involuntary saccades while conditioning magnocellular pathways to register eccentric flashes instantly (Findlay & Walker, 1999).",
     "Hardware latency adds display quantization (~16.7 ms at 60 Hz, ~6.9 ms at 144 Hz) and input polling intervals (~8 ms at 125 Hz vs ~1 ms at 1,000 Hz), as documented by Woods et al. (2015). All scores remain stored strictly in local browser storage."

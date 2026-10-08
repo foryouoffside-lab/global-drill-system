@@ -6,7 +6,7 @@ import { pickSources } from '@/lib/drillSources';
 
 export const metadata = {
   title: "Eye Fixation Stability Training – Ghosting | SkillDrills",
-  description: "Train steady foveal fixation and suppress retinal ghosting artifacts along moving trajectories. Build gaze stability online. Free, no sign-up.",
+  description: "Free browser drill: keep following a moving target while visual trails and ghost images try to pull your attention away. No sign-up.",
   keywords: [
     "ghosting suppress pursuit",
     "eye fixation stability training",
@@ -28,7 +28,7 @@ export const metadata = {
   robots: { index: true, follow: true },
   openGraph: {
     title: "Eye Fixation Stability Training – Ghosting | SkillDrills",
-    description: "Train steady foveal fixation and suppress retinal ghosting artifacts along moving trajectories. Build gaze stability online. Free, no sign-up.",
+    description: "Free browser drill: keep following a moving target while visual trails and ghost images try to pull your attention away. No sign-up.",
     url: "https://skilldrills.online/drills/visual-tracking/ghosting-suppress-pursuit",
     siteName: 'SkillDrills',
     locale: 'en_US',
@@ -37,7 +37,7 @@ export const metadata = {
   twitter: {
     card: 'summary_large_image',
     title: "Eye Fixation Stability Training – Ghosting | SkillDrills",
-    description: "Train steady foveal fixation and suppress retinal ghosting artifacts along moving trajectories. Build gaze stability online. Free, no sign-up.",
+    description: "Free browser drill: keep following a moving target while visual trails and ghost images try to pull your attention away. No sign-up.",
   },
 };
 
@@ -77,7 +77,7 @@ const softwareApplicationSchema = {
     "price": "0",
     "priceCurrency": "USD"
   },
-  "description": "Train steady foveal fixation and suppress retinal ghosting artifacts along moving trajectories. Build gaze stability online. Free, no sign-up.",
+  "description": "Free browser drill: keep following a moving target while visual trails and ghost images try to pull your attention away. No sign-up.",
   "url": "https://skilldrills.online/drills/visual-tracking/ghosting-suppress-pursuit",
   "publisher": {
     "@type": "Organization",
@@ -108,7 +108,7 @@ const videoGameSchema = {
   "@type": "VideoGame",
   "name": "Ghosting Suppress Pursuit",
   "url": "https://skilldrills.online/drills/visual-tracking/ghosting-suppress-pursuit",
-  "description": "Train steady foveal fixation and suppress retinal ghosting artifacts along moving trajectories. Build gaze stability online. Free, no sign-up.",
+  "description": "Free browser drill: keep following a moving target while visual trails and ghost images try to pull your attention away. No sign-up.",
   "genre": [
     "Action",
     "Eye Tracking",
@@ -131,7 +131,7 @@ const howToSchema = {
   "@context": "https://schema.org",
   "@type": "HowTo",
   "name": "How to Train Eye Tracking with Ghosting Suppress Pursuit",
-  "description": "Train steady foveal fixation and suppress retinal ghosting artifacts along moving trajectories. Build gaze stability online. Free, no sign-up.",
+  "description": "Free browser drill: keep following a moving target while visual trails and ghost images try to pull your attention away. No sign-up.",
   "dateModified": "2026-09-12",
   "step": [
     {
@@ -255,6 +255,7 @@ const faqSchema = {
 const guide = {
   heading: "Ghosting Suppress Pursuit - Ocular Motor Training Standards",
   intro: [
+    "Ghosting Suppress Pursuit is a free browser drill where you follow a moving target while visual trails and ghost images stream behind it. The goal is to keep your gaze on the real target and ignore the afterimages. Set the speed and duration, press start, and keep tracking the target.",
     
     
       "When objects move across the visual field, physical display latency and biological retinal persistence can generate trailing ghost artifacts and perceptual motion smear (Burr, 1980). Without robust attentional filtering, trailing visual noise draws foveal gaze backward, disrupting smooth pursuit gain and causing targeting errors.",

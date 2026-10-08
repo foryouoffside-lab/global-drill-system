@@ -6,7 +6,7 @@ import { pickSources } from '@/lib/drillSources';
 
 export const metadata = {
   title: "Spatial Shift Pursuit – Adaptive Eye Tracking | SkillDrills",
-  description: "Condition adaptive ocular motor control across dynamically shifting and rotating spatial reference frames online. Free browser test, no sign-up.",
+  description: "Free browser drill: follow a target through sudden speed and direction shifts and lock back onto it quickly. Adjustable speed, no sign-up.",
   keywords: [
     "spatial shift pursuit",
     "adaptive eye tracking drill",
@@ -28,7 +28,7 @@ export const metadata = {
   robots: { index: true, follow: true },
   openGraph: {
     title: "Spatial Shift Pursuit – Adaptive Eye Tracking | SkillDrills",
-    description: "Condition adaptive ocular motor control across dynamically shifting and rotating spatial reference frames online. Free browser test, no sign-up.",
+    description: "Free browser drill: follow a target through sudden speed and direction shifts and lock back onto it quickly. Adjustable speed, no sign-up.",
     url: "https://skilldrills.online/drills/visual-tracking/spatial-shift-pursuit",
     siteName: 'SkillDrills',
     locale: 'en_US',
@@ -37,7 +37,7 @@ export const metadata = {
   twitter: {
     card: 'summary_large_image',
     title: "Spatial Shift Pursuit – Adaptive Eye Tracking | SkillDrills",
-    description: "Condition adaptive ocular motor control across dynamically shifting and rotating spatial reference frames online. Free browser test, no sign-up.",
+    description: "Free browser drill: follow a target through sudden speed and direction shifts and lock back onto it quickly. Adjustable speed, no sign-up.",
   },
 };
 
@@ -223,6 +223,7 @@ const faqSchema = {
 const guide = {
   heading: "Spatial Shift Pursuit - Ocular Motor Training Standards",
   intro: [
+    "Spatial Shift Pursuit is a free browser drill where a target changes speed and direction suddenly while its path shifts in space. You re-lock onto the target after each shift and keep following it. Set the speed and duration, press start, and track the target.",
     "Smooth pursuit tracking in real-world scenarios rarely takes place across static, predictable backgrounds. Whether navigating high-speed automotive turns, sprint accelerations, or fast-paced tactical FPS shootouts characterized by aggressive screen shake and camera flicks, the observer's visual reference frame can displace or rotate instantaneously (Krauzlis, 2004; Robinson, 1965). Holding a high-priority target locked within the central fovea under these disruptive conditions demands adaptive oculomotor agility: Spatial Shift Pursuit.",
     "Seminal investigations by Findlay & Gilchrist (1999) and Kahlon & Lisberger (1996) demonstrated that visual motion inputs are initially registered in eye-centered (retinotopic) coordinate systems. When the entire visual environment undergoes a sudden frame shift, retinotopic coordinates break down. The posterior parietal cortex (PPC) intervenes by integrating retinal signals with efference copy motor commands to execute rapid coordinate transformations into head-centered (craniotopic) and space-fixed (allocentric) reference maps.",
     "Driven by this remapped spatial representation, the central nervous system deploys a synchronized two-stage response: first, a high-velocity ballistic catch-up saccade (peaking up to 500°/s) closes the spatial gap to the remapped target position. Instantaneously upon saccadic landing, the oculomotor apparatus must execute a seamless pursuit handshake—matching the target's current velocity vector without hesitation (Rashbass, 1961). Spatial Shift Pursuit systematically trains this critical neuromuscular circuit to ensure uninterrupted target tracking."

@@ -5,7 +5,7 @@ import { pickSources } from '@/lib/drillSources';
 
 export const metadata = {
   title: "Triangular Pursuit Eye Tracking – Vision Drill | SkillDrills",
-  description: "Condition acute-angle gaze direction shifts and deceleration-acceleration dynamics along triangular trajectories. Free, no sign-up.",
+  description: "Free browser drill: follow a target around a triangle and handle its sharp corners with steady eye tracking. Adjustable speed, no sign-up.",
   keywords: [
     "triangular pursuit",
     "eye tracking accuracy drill",
@@ -27,7 +27,7 @@ export const metadata = {
   robots: { index: true, follow: true },
   openGraph: {
     title: "Triangular Pursuit Eye Tracking – Vision Drill | SkillDrills",
-    description: "Condition acute-angle gaze direction shifts and deceleration-acceleration dynamics along triangular trajectories. Free, no sign-up.",
+    description: "Free browser drill: follow a target around a triangle and handle its sharp corners with steady eye tracking. Adjustable speed, no sign-up.",
     url: "https://skilldrills.online/drills/visual-tracking/triangular-pursuit",
     siteName: 'SkillDrills',
     locale: 'en_US',
@@ -36,7 +36,7 @@ export const metadata = {
   twitter: {
     card: 'summary_large_image',
     title: "Triangular Pursuit Eye Tracking – Vision Drill | SkillDrills",
-    description: "Condition acute-angle gaze direction shifts and deceleration-acceleration dynamics along triangular trajectories. Free, no sign-up.",
+    description: "Free browser drill: follow a target around a triangle and handle its sharp corners with steady eye tracking. Adjustable speed, no sign-up.",
   },
 };
 
@@ -76,7 +76,7 @@ const softwareApplicationSchema = {
     "price": "0",
     "priceCurrency": "USD"
   },
-  "description": "Condition acute-angle gaze direction shifts and deceleration-acceleration dynamics along triangular trajectories. Free, no sign-up.",
+  "description": "Free browser drill: follow a target around a triangle and handle its sharp corners with steady eye tracking. Adjustable speed, no sign-up.",
   "url": "https://skilldrills.online/drills/visual-tracking/triangular-pursuit",
   "publisher": {
     "@type": "Organization",
@@ -107,7 +107,7 @@ const videoGameSchema = {
   "@type": "VideoGame",
   "name": "Triangular Pursuit",
   "url": "https://skilldrills.online/drills/visual-tracking/triangular-pursuit",
-  "description": "Condition acute-angle gaze direction shifts and deceleration-acceleration dynamics along triangular trajectories. Free, no sign-up.",
+  "description": "Free browser drill: follow a target around a triangle and handle its sharp corners with steady eye tracking. Adjustable speed, no sign-up.",
   "genre": [
     "Action",
     "Eye Tracking",
@@ -130,7 +130,7 @@ const howToSchema = {
   "@context": "https://schema.org",
   "@type": "HowTo",
   "name": "How to Train Eye Tracking with Triangular Pursuit",
-  "description": "Condition acute-angle gaze direction shifts and deceleration-acceleration dynamics along triangular trajectories. Free, no sign-up.",
+  "description": "Free browser drill: follow a target around a triangle and handle its sharp corners with steady eye tracking. Adjustable speed, no sign-up.",
   "dateModified": "2026-09-12",
   "step": [
     {
@@ -267,6 +267,7 @@ const guide = {
 
   heading: "Triangular Pursuit - Ocular Motor Training Standards",
   intro: [
+    "Triangular Pursuit is a free browser drill where a target travels around a triangle. You follow it along the straight edges and through the sharp corners, where it must change direction. Choose a speed and duration, press start, and keep tracking the target around each corner.",
     
     
     "Tracking visual stimuli along closed geometric polygons demands continuous coordination between horizontal and vertical extraocular muscle groups. When a target moves along the straight edges of an equilateral triangle, the ocular motor system engages smooth pursuit across non-cardinal diagonal vectors, requiring the brainstem to balance horizontal pontine signals (PPRF) with vertical midbrain commands (riMLF).",

@@ -131,7 +131,7 @@ const faqSchema = {
       "name": "What is a good score on the 100-cell Entropic Grid drill?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Average users score between 250 and 499 points (Level 2). Experienced scanners achieve 500 to 749 points, while elite competitive performers reach 750 to 1,000+ points with sub-1.2 second average target acquisitions."
+        "text": "Scores depend on speed settings, display and input device. The score bands on this page are editorial practice targets, not population norms; compare your own sessions on the same setup."
       }
     },
     {
@@ -375,7 +375,7 @@ export default function EntropicGridPage() {
           <div>
             <h4 className="font-semibold text-white">What is a good score on the 100-cell Entropic Grid drill?</h4>
             <p className="text-slate-300 mt-1">
-              Average users score between 250 and 499 points (Level 2). Experienced scanners achieve 500 to 749 points, while elite competitive performers reach 750 to 1,000+ points with sub-1.2 second average target acquisitions.
+              Scores depend on speed settings, display and input device. The score bands on this page are editorial practice targets, not population norms; compare your own sessions on the same setup.
             </p>
           </div>
           <div>

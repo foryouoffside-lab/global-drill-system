@@ -5,7 +5,7 @@ import { pickSources } from '@/lib/drillSources';
 
 export const metadata = {
   title: "Zig-Zag Path Pursuit – Eye Tracking Drill | SkillDrills",
-  description: "Condition rapid multi-vector gaze tracking and overshoot suppression along acute zig-zag saw-tooth trajectories. Free, no sign-up.",
+  description: "Free zig-zag eye tracking drill: follow a target along a saw-tooth path with sharp direction changes. Adjustable speed, no sign-up.",
     keywords: [
     "zig-zag path pursuit",
     "eye tracking coordination drill",
@@ -27,7 +27,7 @@ export const metadata = {
   robots: { index: true, follow: true },
   openGraph: {
     title: "Zig-Zag Path Pursuit – Eye Tracking Drill | SkillDrills",
-    description: "Condition rapid multi-vector gaze tracking and overshoot suppression along acute zig-zag saw-tooth trajectories. Free, no sign-up.",
+    description: "Free zig-zag eye tracking drill: follow a target along a saw-tooth path with sharp direction changes. Adjustable speed, no sign-up.",
     url: "https://skilldrills.online/drills/visual-tracking/zig-zag-path-pursuit",
     siteName: 'SkillDrills',
     locale: 'en_US',
@@ -36,7 +36,7 @@ export const metadata = {
   twitter: {
     card: 'summary_large_image',
     title: "Zig-Zag Path Pursuit – Eye Tracking Drill | SkillDrills",
-    description: "Condition rapid multi-vector gaze tracking and overshoot suppression along acute zig-zag saw-tooth trajectories. Free, no sign-up.",
+    description: "Free zig-zag eye tracking drill: follow a target along a saw-tooth path with sharp direction changes. Adjustable speed, no sign-up.",
   },
 };
 
@@ -76,7 +76,7 @@ const softwareApplicationSchema = {
     "price": "0",
     "priceCurrency": "USD"
   },
-  "description": "Condition rapid multi-vector gaze tracking and overshoot suppression along acute zig-zag saw-tooth trajectories. Free, no sign-up.",
+  "description": "Free zig-zag eye tracking drill: follow a target along a saw-tooth path with sharp direction changes. Adjustable speed, no sign-up.",
   "url": "https://skilldrills.online/drills/visual-tracking/zig-zag-path-pursuit",
   "publisher": {
     "@type": "Organization",
@@ -107,7 +107,7 @@ const videoGameSchema = {
   "@type": "VideoGame",
   "name": "Zig-Zag Path Pursuit",
   "url": "https://skilldrills.online/drills/visual-tracking/zig-zag-path-pursuit",
-  "description": "Condition rapid multi-vector gaze tracking and overshoot suppression along acute zig-zag saw-tooth trajectories. Free, no sign-up.",
+  "description": "Free zig-zag eye tracking drill: follow a target along a saw-tooth path with sharp direction changes. Adjustable speed, no sign-up.",
   "genre": [
     "Action",
     "Eye Tracking",
@@ -130,7 +130,7 @@ const howToSchema = {
   "@context": "https://schema.org",
   "@type": "HowTo",
   "name": "How to Train Eye Tracking with Zig-Zag Path Pursuit",
-  "description": "Condition rapid multi-vector gaze tracking and overshoot suppression along acute zig-zag saw-tooth trajectories. Free, no sign-up.",
+  "description": "Free zig-zag eye tracking drill: follow a target along a saw-tooth path with sharp direction changes. Adjustable speed, no sign-up.",
   "dateModified": "2026-09-12",
   "step": [
     {
@@ -267,6 +267,7 @@ const guide = {
 
   heading: "Zig-Zag Path Pursuit - Ocular Motor Training Standards",
   intro: [
+    "Zig-Zag Path Pursuit is a free eye tracking drill. A target moves along a saw-tooth path with sharp direction changes, and you follow it without overshooting the turns. Pick a speed and duration, press start, and keep following the target along the zig-zag.",
     
     
     "Ocular motor tracking across multi-segment zig-zag polylines represents one of the most demanding coordination challenges in sports vision and neuro-optometry. Unlike cardinal horizontal or vertical movements, diagonal trajectory tracking requires continuous proportional innervation of distinct muscle pairings across horizontal pontine premotor centers (paramedian pontine reticular formation, PPRF) and vertical midbrain premotor centers (rostral interstitial nucleus of the medial longitudinal fasciculus, riMLF).",

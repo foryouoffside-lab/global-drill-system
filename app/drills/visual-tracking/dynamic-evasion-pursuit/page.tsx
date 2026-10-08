@@ -6,7 +6,7 @@ import { pickSources } from '@/lib/drillSources';
 
 export const metadata = {
   title: "Reactive Eye Tracking Drill – Evasion Pursuit | SkillDrills",
-  description: "Track evasive targets that actively evade your cursor. Condition predictive tracking and reactive gaze recovery online. Free, no sign-up.",
+  description: "Free browser drill: follow a target that moves in straight lines, then cuts away in a new direction without warning. Adjustable speed, no sign-up.",
   keywords: [
     "dynamic evasion pursuit",
     "reactive eye tracking drill",
@@ -28,7 +28,7 @@ export const metadata = {
   robots: { index: true, follow: true },
   openGraph: {
     title: "Reactive Eye Tracking Drill – Evasion Pursuit | SkillDrills",
-    description: "Track evasive targets that actively evade your cursor. Condition predictive tracking and reactive gaze recovery online. Free, no sign-up.",
+    description: "Free browser drill: follow a target that moves in straight lines, then cuts away in a new direction without warning. Adjustable speed, no sign-up.",
     url: "https://skilldrills.online/drills/visual-tracking/dynamic-evasion-pursuit",
     siteName: 'SkillDrills',
     locale: 'en_US',
@@ -37,7 +37,7 @@ export const metadata = {
   twitter: {
     card: 'summary_large_image',
     title: "Reactive Eye Tracking Drill – Evasion Pursuit | SkillDrills",
-    description: "Track evasive targets that actively evade your cursor. Condition predictive tracking and reactive gaze recovery online. Free, no sign-up.",
+    description: "Free browser drill: follow a target that moves in straight lines, then cuts away in a new direction without warning. Adjustable speed, no sign-up.",
   },
 };
 
@@ -77,7 +77,7 @@ const softwareApplicationSchema = {
     "price": "0",
     "priceCurrency": "USD"
   },
-  "description": "Track evasive targets that actively evade your cursor. Condition predictive tracking and reactive gaze recovery online. Free, no sign-up.",
+  "description": "Free browser drill: follow a target that moves in straight lines, then cuts away in a new direction without warning. Adjustable speed, no sign-up.",
   "url": "https://skilldrills.online/drills/visual-tracking/dynamic-evasion-pursuit",
   "publisher": {
     "@type": "Organization",
@@ -108,7 +108,7 @@ const videoGameSchema = {
   "@type": "VideoGame",
   "name": "Dynamic Evasion Pursuit",
   "url": "https://skilldrills.online/drills/visual-tracking/dynamic-evasion-pursuit",
-  "description": "Track evasive targets that actively evade your cursor. Condition predictive tracking and reactive gaze recovery online. Free, no sign-up.",
+  "description": "Free browser drill: follow a target that moves in straight lines, then cuts away in a new direction without warning. Adjustable speed, no sign-up.",
   "genre": [
     "Action",
     "Aim Trainer",
@@ -131,7 +131,7 @@ const howToSchema = {
   "@context": "https://schema.org",
   "@type": "HowTo",
   "name": "How to Train Eye Tracking with Dynamic Evasion Pursuit",
-  "description": "Track evasive targets that actively evade your cursor. Condition predictive tracking and reactive gaze recovery online. Free, no sign-up.",
+  "description": "Free browser drill: follow a target that moves in straight lines, then cuts away in a new direction without warning. Adjustable speed, no sign-up.",
   "dateModified": "2026-09-12",
   "step": [
     {
@@ -206,7 +206,7 @@ const faqSchema = {
       "name": "How does this drill benefit traditional sports like soccer, tennis, and basketball?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Athletes in ball and court sports constantly deal with unexpected direction changes from defenders, ball deflections, and spin-induced hops. Conditioning rapid saccadic re-fixation ensures visual lock is re-established in under 200 ms."
+        "text": "Athletes in ball and court sports constantly deal with unexpected direction changes from defenders, ball deflections, and spin-induced hops. Practising rapid re-fixation helps you re-establish visual lock on a target more quickly."
       }
     },
     {
@@ -246,7 +246,7 @@ const faqSchema = {
       "name": "Are session metrics stored locally on SkillDrills?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "All performance metrics, high scores, and tracking accuracies are stored exclusively in your browser's local storage with zero server-side telemetry."
+        "text": "All performance metrics, high scores, and tracking accuracies are stored exclusively in your browser's local storage."
       }
     }
   ]
@@ -255,9 +255,10 @@ const faqSchema = {
 const guide = {
   heading: "Dynamic Evasion Pursuit - Ocular Motor Training Standards",
   intro: [
+    "Dynamic Evasion Pursuit is a free browser drill where a target moves in straight lines and then cuts away in a new direction without warning. You follow it with your eyes and re-find it after each cut. Choose a speed and duration, press start, and keep the target in view.",
     
     
-      "Predictable pursuit pathways enable the brain to use feedforward anticipatory motor commands, tracking targets with zero latency (Bahill et al., 1980). However, real-world competitive encounters—such as an opposing player executing an evasive strafe or a ball deflecting off an opponent—feature abrupt trajectory disruptions where feedforward models fail.",
+      "Predictable pursuit pathways enable the brain to use feedforward anticipatory motor commands, tracking targets with very little lag (Bahill et al., 1980). However, real-world competitive encounters—such as an opposing player executing an evasive strafe or a ball deflecting off an opponent—feature abrupt trajectory disruptions where feedforward models fail.",
       "Dynamic Evasion Pursuit isolates reactive gaze re-acquisition. Targets move along straight paths before executing sharp, unannounced directional cuts. When the target cuts, smooth pursuit velocity matching fails instantly, producing retinal position error that triggers a rapid catch-up saccade to re-center the fovea (Rashbass, 1961; Krauzlis, 2004; Barnes, 2008).",
     "Hardware latency adds display quantization (~16.7 ms at 60 Hz, ~6.9 ms at 144 Hz) and input polling intervals (~8 ms at 125 Hz vs ~1 ms at 1,000 Hz), as documented by Woods et al. (2015). All scores remain stored strictly in local browser storage."
   
@@ -267,7 +268,7 @@ const guide = {
     title: "Reactive Evasive Target Pursuit & Saccadic Recentering Benchmarks",
     headers: ["Performance Tier", "Speed Multiplier", "Saccadic Recentering at Evasive Breaks", "Neuromotor & Ocular Profile"],
     rows: [
-      ["Tier 1: Apex Reactive Tracking", "2.0x+", "Corrective saccade lands with sub-150 ms latency; immediate foveal lock with zero post-saccadic oscillation.", "Peak synaptic transmission between fovea and oculomotor centers; elite standard for esports and dynamic combat sports."],
+      ["Tier 1: Apex Reactive Tracking", "2.0x+", "Corrective saccade lands quickly and smooth pursuit resumes at once.", "Strongest recovery in this drill's tiers; a practice target, not a clinical or esports standard."],
       ["Tier 2: Superior Visual Agility", "1.4x – 1.9x", "Fast, reliable recentering within 1–2 video frames; seamless re-engagement of smooth pursuit velocity.", "Highly trained extraocular motor control; rapid mastery over abrupt evasive opponent strafes."],
       ["Tier 3: Solid Baseline", "1.0x – 1.3x", "Consistent tracking along linear segments; slight latency delay during acute evasive breaks.", "Normative range for healthy adults; fully sufficient for daily visual tasks, driving, and recreational gaming."],
       ["Tier 4: Delayed Refixation", "0.7x – 0.9x", "Target escapes foveal capture on nearly every evasive maneuver; multiple corrective saccades needed to recover.", "Elevated sensorimotor processing latency during direction breaks; foundational practice at low speeds recommended."],
@@ -294,7 +295,7 @@ const guide = {
     },
     {
         "q": "How does this drill benefit traditional sports like soccer, tennis, and basketball?",
-        "a": "Athletes in ball and court sports constantly deal with unexpected direction changes from defenders, ball deflections, and spin-induced hops. Conditioning rapid saccadic re-fixation ensures visual lock is re-established in under 200 ms."
+        "a": "Athletes in ball and court sports constantly deal with unexpected direction changes from defenders, ball deflections, and spin-induced hops. Practising rapid re-fixation helps you re-establish visual lock on a target more quickly."
     },
     {
         "q": "How does Dynamic Evasion Pursuit differ from Directional Chaos Pursuit?",
@@ -314,7 +315,7 @@ const guide = {
     },
     {
         "q": "Are session metrics stored locally on SkillDrills?",
-        "a": "All performance metrics, high scores, and tracking accuracies are stored exclusively in your browser's local storage with zero server-side telemetry."
+        "a": "All performance metrics, high scores, and tracking accuracies are stored exclusively in your browser's local storage."
     }
 ],
   sources: pickSources('bahill1980', 'rashbass1961', 'krauzlis2004', 'robinson1965', 'barnes2008', 'woods2015'),

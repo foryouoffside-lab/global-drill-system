@@ -93,7 +93,7 @@ const softwareApplicationSchema = {
     "Millisecond looming velocity and distance estimation tracking",
     "Dynamic accelerating approach speeds from 2200ms to 500ms",
     "Percentage-based spatial depth deviation measurement (<5% Perfect, <12% Close)",
-    "Strict client-side local performance storage with zero telemetry"
+    "Scores are stored locally in your browser"
   ],
   "dateModified": "2026-09-05"
 };
@@ -264,16 +264,17 @@ const faqSchema = {
 const distanceGuide = {
   heading: "Distance Judgment & Stereoscopic Depth Perception Standards",
   intro: [
+    "The Distance Judgment depth perception test asks you to judge how far away an approaching target is and intercept it in time. It relies on how fast the target grows on screen, not on stereo vision, so it is a timing drill, not a clinical eye test. Start, watch the target approach, and act when it is in range.",
     "Depth perception is the visual and neurological faculty that enables organisms to perceive the world in three dimensions and accurately judge the distance, spatial volume, and trajectory of objects. In dynamic sports (such as baseball, tennis, and motorsports), aviation, tactical driving, and competitive esports, split-second distance estimation determines the difference between a clean interception and a catastrophic collision.",
     "This drill operationalizes the classic Howard-Dolman stereoscopic apparatus (Howard, 1919) and ecological optical expansion theory (Lee, 1976; Regan & Beverley, 1978). By projecting a 3D target along a deep visual tunnel toward a stationary target depth plane, the drill trains your visual cortex to calculate looming velocity, visual expansion rate, and time-to-contact (TTC) under accelerating approach speeds.",
     "Timing & Measurement Methodology: All intercept deviations are captured client-side using the high-resolution performance.now() API. Deviation is computed as the relative percentage error (|Actual Diameter - Target Diameter| / Target Diameter). Hardware latency adds display quantization delay (~16.7 ms at 60 Hz, ~6.9 ms at 144 Hz, ~4.1 ms at 240 Hz) and input polling intervals (~8 ms at 125 Hz vs ~1 ms at 1000 Hz), as documented by Woods et al. (2015). Compare runs on the same hardware setup for consistent longitudinal tracking.",
-    "Data Transparency: SkillDrills collects zero personal data, diagnostic metrics, or aggregate telemetry. All scores, level progressions, and accuracy percentages remain stored strictly in your browser's local storage."
+    "Data Transparency: Scores, level progressions, and accuracy percentages are stored in your browser's local storage."
   ],
   benchmarks: {
     title: "Depth judgment and intercept bands (editorial guide)",
     headers: ["Performance Band", "Depth Deviation Error", "Score & Level Range", "Visual Neuromuscular Profile"],
     rows: [
-      ["Tier 1: Apex Stereoscopic Master", "< 5.0% Mean Error", "Score: 1,500+ | Level 7+", "Elite optical looming sensitivity; flawless time-to-contact extraction and tightly timed trigger release."],
+      ["Tier 1: Top Band", "< 5.0% Mean Error", "Score: 1,500+ | Level 7+", "Best band in this drill: low distance error and well-timed trigger release. A practice target, not a clinical standard."],
       ["Tier 2: Superior Depth Acuity", "5.0% – 9.9% Mean Error", "Score: 1,100 – 1,499 | Level 5–6", "High-tier spatial anticipation; smooth adaptation to high-speed target compression."],
       ["Tier 3: Solid Baseline Depth", "10.0% – 15.9% Mean Error", "Score: 750 – 1,099 | Level 3–4", "Healthy adult baseline; reliable depth alignment under moderate velocities, minor latency breakdown under peak speed."],
       ["Tier 4: Moderate Sensitivity", "16.0% – 25.0% Mean Error", "Score: 450 – 749 | Level 2", "Susceptible to optical illusions; tendency to trigger prematurely before full planar coincidence."],
