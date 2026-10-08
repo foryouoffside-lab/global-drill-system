@@ -33,3 +33,4 @@
 - /fr/drills/physical/coordination/dynamic-grid-evasion | done | 09881a94 | docs/seo/research/fr/dynamic-grid-evasion.md | demand not verified (Bing 0); retargeted away from reflex pages
 - /fr/drills/physical/fitness/agility-ladder | done | a3978e56 | docs/seo/research/fr/agility-ladder.md | demand not verified (Bing 0); honest framing as mouse rhythm game
 - /fr/drills/physical/reflex-training/drop-catch | done | 3b1c1910 | docs/seo/research/fr/drop-catch.md | demand not verified (Bing 0); test de la regle collides with menstrual intent
+- /fr/drills/physical/reflex-training/peripheral-threat-sweeper | done | bb460e00 | docs/seo/research/fr/peripheral-threat-sweeper.md | demand not verified (Bing 0); Suggest exercice vision peripherique
