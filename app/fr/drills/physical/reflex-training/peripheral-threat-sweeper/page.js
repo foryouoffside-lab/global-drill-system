@@ -22,8 +22,8 @@ import { pickSources } from '@/lib/drillSources';
 // ============================================================
 
 export const metadata = {
-  title: "Vision périphérique | Test en ligne",
-  description: "Test gratuit de vision périphérique au navigateur. Gardez le regard au centre, repérez les menaces latérales et entraînez le champ visuel utile (UFOV).",
+  title: "Exercices de vision périphérique en ligne | SkillDrills",
+  description: "Jeu gratuit de vision périphérique : fixez le centre et cliquez les nœuds qui convergent avant qu’ils touchent le noyau. Pas un test médical.",
   keywords: [
     "entraîner sa vision périphérique",
     "test de vision périphérique en ligne",
@@ -41,8 +41,8 @@ export const metadata = {
     languages: getAlternateLanguages('/drills/physical/reflex-training/peripheral-threat-sweeper'),
   },
   openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
-    title: "Vision périphérique | Test en ligne",
-    description: "Test gratuit de vision périphérique au navigateur. Gardez le regard au centre, repérez les menaces latérales et entraînez le champ visuel utile (UFOV).",
+    title: "Exercices de vision périphérique en ligne | SkillDrills",
+    description: "Jeu gratuit de vision périphérique : fixez le centre et cliquez les nœuds qui convergent avant qu’ils touchent le noyau. Pas un test médical.",
     url: 'https://skilldrills.online/fr/drills/physical/reflex-training/peripheral-threat-sweeper',
     siteName: 'SkillDrills',
     locale: 'fr_FR',
@@ -50,8 +50,8 @@ export const metadata = {
   },
   twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: 'summary_large_image',
-    title: "Vision périphérique | Test en ligne",
-    description: "Test gratuit de vision périphérique au navigateur. Gardez le regard au centre, repérez les menaces latérales et entraînez le champ visuel utile (UFOV).",
+    title: "Exercices de vision périphérique en ligne | SkillDrills",
+    description: "Jeu gratuit de vision périphérique : fixez le centre et cliquez les nœuds qui convergent avant qu’ils touchent le noyau. Pas un test médical.",
   },
   robots: { index: true, follow: true },
 };
@@ -81,7 +81,7 @@ const breadcrumbSchema = {
     {
       "@type": "ListItem",
       "position": 4,
-      "name": "Vision Périphérique et Balayage Radial",
+      "name": "Exercices de vision périphérique",
       "item": "https://skilldrills.online/fr/drills/physical/reflex-training/peripheral-threat-sweeper"
     }
   ]
@@ -89,125 +89,153 @@ const breadcrumbSchema = {
 
 const softwareApplicationSchema = {
   "@context": "https://schema.org",
-  "@type": "SoftwareApplication", "sameAs": ["https://en.wikipedia.org/wiki/Peripheral_vision"],
-  "name": "Simulateur de Vision Périphérique et Champ Visuel Utile (UFOV)",
-  "applicationCategory": "HealthApplication",
+  "@type": "SoftwareApplication",
+  "name": "Exercices de vision périphérique en ligne",
+  "applicationCategory": "GameApplication",
   "operatingSystem": "All",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "description": "Jeu gratuit dans le navigateur : fixez le centre, repérez les nœuds qui convergent depuis les bords et cliquez dessus avant qu’ils touchent le noyau.",
   "url": "https://skilldrills.online/fr/drills/physical/reflex-training/peripheral-threat-sweeper",
+  "publisher": {
+    "@type": "Organization",
+    "name": "SkillDrills",
+    "url": "https://skilldrills.online"
+  },
+  "inLanguage": "fr-FR",
+  "dateModified": "2026-09-20"
+};
+
+const webApplicationSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Exercices de vision périphérique en ligne",
+  "description": "Jeu de vision périphérique jouable à la souris, avec une difficulté croissante : nœuds plus rapides et plus fréquents.",
+  "applicationCategory": "GameApplication",
+  "operatingSystem": "All",
+  "browserRequirements": "Navigateur moderne avec JavaScript",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "url": "https://skilldrills.online/fr/drills/physical/reflex-training/peripheral-threat-sweeper",
+  "inLanguage": "fr-FR",
+  "dateModified": "2026-09-20"
+};
+
+const videoGameSchema = {
+  "@context": "https://schema.org",
+  "@type": "VideoGame",
+  "name": "Défense radiale : vision périphérique",
+  "url": "https://skilldrills.online/fr/drills/physical/reflex-training/peripheral-threat-sweeper",
+  "description": "Fixez le centre et neutralisez les nœuds qui convergent depuis les bords.",
+  "genre": [
+    "Action",
+    "Reflex Game"
+  ],
+  "gamePlatform": [
+    "Web Browser",
+    "Desktop",
+    "Mobile"
+  ],
+  "applicationCategory": "Game",
   "inLanguage": "fr-FR",
   "dateModified": "2026-09-20",
   "offers": {
     "@type": "Offer",
     "price": "0",
     "priceCurrency": "USD"
-  },
-};
-
-const webApplicationSchema = {
-  "@context": "https://schema.org",
-  "@type": "WebApplication",
-  "name": "Entraîneur d'Attention Visuelle Couverte et Balayage Radial 360°",
-  "url": "https://skilldrills.online/fr/drills/physical/reflex-training/peripheral-threat-sweeper",
-  "description": "Drill de navigateur pour garder le regard au centre, repérer les menaces latérales et entraîner le champ visuel utile.",
-  "inLanguage": "fr-FR",
-  "dateModified": "2026-09-20",
-  "browserRequirements": "Requires JavaScript and HTML5 Canvas support",
-  "genre": "Training, Reflex, Vision, Attention"
-};
-
-const videoGameSchema = {
-  "@context": "https://schema.org",
-  "@type": "VideoGame",
-  "name": "Entraînement de Vision Périphérique et Défense Radiale",
-  "gamePlatform": "Web Browser",
-  "url": "https://skilldrills.online/fr/drills/physical/reflex-training/peripheral-threat-sweeper",
-  "inLanguage": "fr-FR",
-  "dateModified": "2026-09-20",
-  "applicationSubCategory": "Esports Cognitive Vision Drill"
+  }
 };
 
 const faqSchema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
+  "inLanguage": "fr-FR",
+  "dateModified": "2026-09-20",
   "mainEntity": [
     {
       "@type": "Question",
-      "name": "Comment cet exercice entraîne-t-il la vision périphérique sans bouger les yeux?",
+      "name": "Comment cet exercice travaille-t-il la vision périphérique ?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Ce module s'appuie sur le paradigme d'orientation de l'attention spatiale couverte de Michael Posner (1980). En maintenant le regard rigoureusement fixé sur le noyau central, le joueur apprend à projeter son attention par le coin de l'œil sur l'ensemble des 360° périphériques, épargnant les 150 à 200 ms nécessaires aux saccades oculaires fovéales."
+        "text": "Vous fixez le noyau au centre de l’écran et vous cliquez sur les nœuds rouges et orangés qui convergent depuis les bords, sans suivre leur trajet des yeux. Cela s’appuie sur l’orientation de l’attention sans mouvement des yeux décrite par Posner (1980)."
       }
     },
     {
       "@type": "Question",
-      "name": "Quel rôle joue la théorie de l'intégration des traits d'Anne Treisman dans la détection?",
+      "name": "Pourquoi les nœuds colorés se repèrent-ils sans chercher ?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "D'après Anne Treisman (1980), les stimuli périphériques à fort contraste (nœuds rouges et orangés en mouvement convergent) stimulent directement des détecteurs de traits pré-attentionnels sur la rétine périphérique. Ils produisent un effet d'émergence instantané (pop-out) qui alerte le cortex pariétal sans balayage oculaire fastidieux."
+        "text": "Selon Treisman et Gelade (1980), une caractéristique visuelle simple comme la couleur se repère en parallèle, presque indépendamment du nombre d’éléments à l’écran. Les nœuds contrastés ressortent donc sans balayage séquentiel."
       }
     },
     {
       "@type": "Question",
-      "name": "Comment s'articule le modèle moteur de Woodworth (1899) lors des balayages radiaux?",
+      "name": "Que signifie le champ visuel utile (UFOV) ?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Chaque frappe radiale suit les deux étapes théorisées par Robert S. Woodworth : une propulsion balistique initiale du poignet en boucle ouverte franchissant plus de 85% du trajet, complétée par une micro-décélération visuelle finale en boucle fermée pour neutraliser le nœud avant qu'il ne franchisse le bouclier."
+        "text": "Le champ visuel utile désigne la zone dont on peut extraire de l’information en un coup d’œil, sans bouger les yeux ni la tête (Ball et al., 1988). Cet exercice fait travailler la détection en périphérie, mais n’en mesure pas l’étendue."
       }
     },
     {
       "@type": "Question",
-      "name": "Qu'est-ce que le Champ Visuel Utile (UFOV) et comment ce drill contribue-t-il à son expansion?",
+      "name": "Cet exercice est-il un test de vision médical ?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Le Useful Field of View (UFOV), documenté par Karlene Ball et al. (1988), désigne l'emprise spatiale à l'intérieur de laquelle le cerveau capte des données en un éclair sans mouvement de la tête ni des yeux. Accélérer les vecteurs à 520 px/s et resserrer le délai d'apparition à 0,20 s contraint le système visuel à élargir ce périmètre fonctionnel, éradiquant la vision en tunnel."
+        "text": "Non. C’est un jeu d’entraînement et il ne remplace pas un examen chez un ophtalmologue. Si vous avez des doutes sur votre champ de vision, consultez un professionnel de santé."
       }
     },
     {
       "@type": "Question",
-      "name": "Pourquoi est-il crucial de repositionner le curseur au centre après chaque frappe?",
+      "name": "Comment fonctionne le geste de frappe vers un nœud ?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Le recentrage immédiat préserve une équidistance parfaite de 360° vis-à-vis de toute menace ultérieure. Laisser la souris égarée en bordure extérieure double la distance de réaction requise pour intercepter une cible arrivant du côté opposé selon la loi de Fitts, provoquant des brèches fatales."
+        "text": "Le modèle en deux phases de Woodworth (1899) décrit une impulsion rapide vers la cible puis une correction fine avant le clic. C’est la logique de chaque frappe radiale."
       }
     },
     {
       "@type": "Question",
-      "name": "Que se passe-t-il lorsqu'un vecteur franchit le bouclier et heurte le noyau central?",
+      "name": "Pourquoi ramener le curseur au centre ?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Si un nœud pénètre le périmètre central (brèche), le multiplicateur de série accumulé retombe instantanément à 1.0x et l'écran émet un flash rouge d'alerte. Préserver l'étanchéité du noyau est indispensable pour maintenir le rythme de score et atteindre les 24 000 points d'élite."
+        "text": "Le centre est à égale distance de tous les bords. Revenir au centre après chaque frappe raccourcit le trajet vers le nœud suivant, quelle que soit sa direction (loi de Fitts, 1954)."
       }
     },
     {
       "@type": "Question",
-      "name": "Quelle sensibilité de souris privilégier pour les frappes périphériques à 360 degrés?",
+      "name": "Que se passe-t-il si un nœud touche le noyau ?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Une sensibilité moyenne à modérément élevée (eDPI entre 800 et 1400 dans les FPS compétitifs) est préconisée. Elle autorise des flicks dynamiques dans n'importe quel quadrant sans décoller la souris ni forcer sur l'épaule, sollicitant les mouvements fins du poignet et des doigts."
+        "text": "Une brèche est comptée, le multiplicateur de série retombe à 1.0x et l’écran clignote en rouge. Chaque nœud neutralisé rapporte des points et 0,6 s de temps."
       }
     },
     {
       "@type": "Question",
-      "name": "Comment une fréquence d'affichage élevée (144Hz/240Hz) favorise-t-elle la rétine périphérique?",
+      "name": "Comment la difficulté évolue-t-elle ?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "La rétine périphérique est ultrasensible au mouvement et aux variations de contraste. Les dalles 144Hz et 240Hz rafraîchissent les nœuds filant à 520 px/s avec une précision de 4,1 ms, stimulant les cellules ganglionnaires magnocellulaires bien plus promptement qu'un écran standard à 60Hz."
+        "text": "L’intervalle d’apparition passe de 1,4 s à 0,20 s et la vitesse des nœuds de 160 à 520 px/s au fil des niveaux."
       }
     },
     {
       "@type": "Question",
-      "name": "Combien de séries par jour sont conseillées pour éviter la fatigue visuelle?",
+      "name": "Un écran à 144 Hz ou 240 Hz change-t-il l’expérience ?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Il est suggéré d'accomplir 3 à 5 sessions de 45 secondes par jour, en observant une minute de détente visuelle au loin entre chaque manche (règle des 20-20-20). L'effort attentionnel pariétal étant soutenu, la brièveté des séries garantit une assimilation nerveuse optimale."
+        "text": "L’affichage ajoute un délai propre : 16,7 ms entre deux images à 60 Hz, 6,9 ms à 144 Hz, 4,1 ms à 240 Hz (Woods et al., 2015). Comparez vos séances sur le même écran."
       }
     },
     {
       "@type": "Question",
-      "name": "Mes données de performance et métriques de balayage sont-elles conservées en toute sécurité?",
+      "name": "Mes scores sont-ils envoyés à un serveur ?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Oui, sans aucune exception. Le moteur Canvas, la chronométrie haute précision via performance.now() et la détection de collision opèrent intégralement dans votre navigateur. Vos scores sont stockés exclusivement dans le localStorage de votre équipement, sans télémesure externe."
+        "text": "Non. Le jeu s’exécute dans votre navigateur et vos scores restent dans son LocalStorage."
       }
     }
   ]
@@ -216,92 +244,119 @@ const faqSchema = {
 const howToSchema = {
   "@context": "https://schema.org",
   "@type": "HowTo",
-  "name": "Protocole en 4 Étapes pour le Balayage Périphérique et la Défense Radiale 360°",
-  "description": "Méthode scientifique pour élargir le champ visuel utile, développer l'attention couverte et protéger le noyau contre des attaques simultanées.",
+  "name": "Comment s’entraîner à la vision périphérique avec ce jeu",
+  "description": "Quatre étapes pour fixer le centre, repérer les nœuds et les neutraliser.",
   "step": [
     {
       "@type": "HowToStep",
       "position": 1,
-      "name": "Fixation Fovéale Centrale et Attention Couverte (Core Eye Fixation)",
-      "text": "Fixez fermement le regard sur le noyau central sans scruter les bordures, en ouvrant votre champ perceptif du coin de l'œil (Posner, 1980).",
+      "name": "Fixez le noyau central",
+      "text": "Gardez le regard sur le noyau, au centre, sans suivre les nœuds des yeux (Posner, 1980).",
       "url": "https://skilldrills.online/fr/drills/physical/reflex-training/peripheral-threat-sweeper#step-1"
     },
     {
       "@type": "HowToStep",
       "position": 2,
-      "name": "Détection Pré-Attentionnelle Pop-Out de Treisman (Feature Saliency)",
-      "text": "Identifiez sans délai les nœuds rouges et orangés en trajectoire convergente sur la rétine périphérique via les cartes de saillance directe.",
+      "name": "Repérez les nœuds colorés",
+      "text": "Repérez les nœuds rouges et orangés qui convergent depuis les bords grâce à votre vision périphérique.",
       "url": "https://skilldrills.online/fr/drills/physical/reflex-training/peripheral-threat-sweeper#step-2"
     },
     {
       "@type": "HowToStep",
       "position": 3,
-      "name": "Flick Balistique Radial de Woodworth (Radial Ballistic Snap)",
-      "text": "Propulsez la souris d'une impulsion vive du poignet vers le vecteur et cliquez avant que le nœud ne traverse le bouclier (+0,6s de temps).",
+      "name": "Frappez le nœud",
+      "text": "Déplacez la souris d’un geste rapide vers le nœud et cliquez avant qu’il n’atteigne le noyau.",
       "url": "https://skilldrills.online/fr/drills/physical/reflex-training/peripheral-threat-sweeper#step-3"
     },
     {
       "@type": "HowToStep",
       "position": 4,
-      "name": "Recentrage Systématique et Pérennité du Combo (Recentering)",
-      "text": "Ramenez instantanément le curseur au centre après chaque touche pour reconstituer la couverture équidistante à 360° vers les 24 000 points.",
+      "name": "Revenez au centre",
+      "text": "Ramenez le curseur au centre après chaque frappe pour rester à égale distance de tous les bords.",
       "url": "https://skilldrills.online/fr/drills/physical/reflex-training/peripheral-threat-sweeper#step-4"
     }
   ]
 };
 
 const guideProps = {
-  sources: pickSources('posner1980', 'treisman1980', 'woodworth1899', 'fitts1954', 'woods2015'),
-  intro: {
-    title: "Fondements Biomécaniques de la Vision Périphérique et du Champ Visuel Utile (UFOV)",
-    paragraphs: [
-      "Dans l'appareil visuel humain, la fovéa centrale — zone de netteté maximale et de discrimination chromatique — ne couvre que 1 à 2 degrés de l'ensemble du champ visuel. Toute la périphérie environnante perd en pouvoir séparateur statique, mais possède une remarquable concentration de cellules photoréceptrices à bâtonnets, dévolues à la détection ultra-rapide des flux cinétiques, du scintillement et des contrastes. Cet exercice a été spécialement pensé pour conditionner l'attention spatiale couverte (Posner, 1980) : l'aptitude neuronale à déplacer ses ressources d'analyse sur les marges latérales sans bouger les yeux de leur cible centrale.",
-      "La cinétique de chaque balayage périphérique s'accorde avec la loi de Fitts (1954) et le modèle de commande motrice en deux temps de Woodworth (1899). Le temps d'action augmente de façon logarithmique selon la distance radiale à franchir et la finesse de la cible. Face à des nœuds plongeant vers le centre, le participant doit amorcer un flick balistique en boucle ouverte parcourant plus de 85% de la distance, puis opérer un micro-freinage optique au moment précis du déclenchement.",
-      "Les travaux fondateurs de Karlene Ball et al. (1988) démontrent que sous pression cognitive et fatigue compétitive, le champ de perception visuel fonctionnel peut subir une constriction brutale communément appelée 'vision en tunnel'. Ce programme prévient cette dégradation en débutant à un rythme accessible de 1,4 seconde pour atteindre progressivement 0,20 seconde à des allures de 520 px/s. Ce conditionnement force le cortex pariétal à dilater durablement le Useful Field of View (UFOV), procurant une lucidité spatiale intégrale.",
-      "Pour offrir une rigueur chronométrique irréprochable, l'application s'appuie sur l'API performance.now() du navigateur. Sur les écrans de jeu cadencés à 144Hz ou 240Hz, le déchirement visuel des nœuds radiaux filant à 520 px/s disparaît, autorisant une détection sans aucune latence de trame (Woods et al., 2015). Vos statistiques restent rigoureusement conservées sur votre terminal."
+  "intro": {
+    "title": "Exercices de vision périphérique : comment ça marche",
+    "paragraphs": [
+      "Ce jeu de vision périphérique vous demande de fixer un noyau au centre de l’écran et de cliquer sur les nœuds rouges et orangés qui convergent depuis les bords, sans les suivre des yeux. Il travaille la détection en périphérie et la rapidité de réponse à la souris. Ce n’est pas un test médical du champ visuel.",
+      "La fovéa, zone de vision la plus nette, ne couvre qu’une petite partie du champ visuel ; la périphérie détecte surtout le mouvement et les contrastes. Posner (1980) a montré que l’attention peut être déplacée vers la périphérie sans bouger les yeux, et Treisman et Gelade (1980) que des caractéristiques simples comme la couleur se repèrent en parallèle.",
+      "Le champ visuel utile (Ball et al., 1988) désigne la zone dont on extrait de l’information en un coup d’œil. Ce jeu fait travailler la détection en périphérie en accélérant les nœuds de 160 à 520 px/s et en réduisant l’intervalle d’apparition de 1,4 s à 0,20 s, sans prouver un élargissement de ce champ.",
+      "Mesure et matériel : le jeu s’exécute dans votre navigateur avec l’horloge performance.now(), dont la résolution est limitée. Votre écran affiche une image toutes les 16,7 ms à 60 Hz et toutes les 6,9 ms à 144 Hz (Woods et al., 2015) : comparez vos séances sur le même matériel."
     ]
   },
-  benchmarks: {
-    title: "Grille Officielle d'Évaluation pour la Vision Périphérique et la Défense Radiale",
-    headers: ['Palier (Tier)', 'Titre et Qualification', 'Score Ciblé', 'Précision et Vitesse', 'Note', 'Niveau de Perception'],
-    rows: [
-      ['Tier 1', 'Gardien Suprême du Champ Visuel (Apex Peripheral Guardian)', '24 000+ pts', '90%+ Touches / 450+ px/s', 'Note S', 'Top 1% (UFOV Remarquable)'],
-      ['Tier 2', 'Intercepteur Radial de Précision (Precision Radial Sweeper)', '17 000 – 23 999 pts', '82–89% Touches / 350–449 px/s', 'Note A', 'Top 10% (Niveau Compétitif)'],
-      ['Tier 3', 'Défenseur de Champ Agile (Skilled Field Defender)', '11 000 – 16 999 pts', '74–81% Touches / 250–349 px/s', 'Note B', 'Top 30% (Perception Robuste)'],
-      ['Tier 4', 'Pratiquant Parafovéal en Évolution (Developing Parafoveal Tracker)', '6 000 – 10 999 pts', '65–73% Touches / 160–249 px/s', 'Note C', 'Moyenne (Joueurs Réguliers)'],
-      ['Tier 5', 'Débutant Vulnérable au Tunnel (Novice Tunnel Vision Vulnerable)', '< 6 000 pts', '< 65% Touches / < 160 px/s', 'Note D', 'Base (Élargissement UFOV Préconisé)'],
+  "benchmarks": {
+    "title": "Paliers de l’exercice de vision périphérique (5 niveaux de repère)",
+    "headers": [
+      "Palier",
+      "Score ciblé",
+      "Précision et vitesse",
+      "Lecture"
     ],
-    note: "Le classement intègre le score global, le nombre de brèches subies au noyau, la vitesse de pointe survécue et la longueur de série ininterrompue.",
+    "rows": [
+      [
+        "Palier 1",
+        "24 000+ pts",
+        "90 %+ de touches / 450+ px/s",
+        "Détection fiable à très haute vitesse"
+      ],
+      [
+        "Palier 2",
+        "17 000 – 23 999 pts",
+        "82 – 89 % / 350 – 449 px/s",
+        "Bonne gestion de plusieurs nœuds simultanés"
+      ],
+      [
+        "Palier 3",
+        "11 000 – 16 999 pts",
+        "74 – 81 % / 250 – 349 px/s",
+        "Détection stable, quelques brèches"
+      ],
+      [
+        "Palier 4",
+        "6 000 – 10 999 pts",
+        "65 – 73 % / 160 – 249 px/s",
+        "Tendance à fixer les nœuds plutôt que le centre"
+      ],
+      [
+        "Palier 5",
+        "Moins de 6 000 pts",
+        "Moins de 65 % / moins de 160 px/s",
+        "Point de départ : apprenez à fixer le noyau"
+      ]
+    ],
+    "note": "Repères éditoriaux propres à cet exercice, établis sur le score, les brèches subies et la vitesse atteinte. Ce ne sont ni des normes cliniques ni un classement de population."
   },
-  protocols: {
-    title: "Protocole en 4 Phases pour le Développement de la Vision Périphérique",
-    description: "Méthode systématique pour consolider la fixation fovéale, élargir le champ visuel et enchaîner les réceptions radiales sans délai.",
-    items: [
+  "protocols": {
+    "title": "Quatre habitudes pour mieux utiliser la périphérie",
+    "description": "Des gestes simples pour fixer le centre et enchaîner les frappes.",
+    "items": [
       {
-        title: "Protocole 1: Conditionnement d'Attention Couverte de Posner",
-        description: "Fixez le noyau central et réprimez l'envie réflexe de suivre les cibles avec les yeux. Éliminez la latence des saccades en projetant votre attention mentale dans les 4 quadrants (Posner 1980)."
+        "title": "Fixer le noyau sans suivre les nœuds",
+        "description": "Gardez les yeux sur le noyau central et résistez à l’envie de suivre les nœuds du regard (Posner, 1980)."
       },
       {
-        title: "Protocole 2: Reconnaissance Pré-Attentionnelle Pop-Out de Treisman",
-        description: "Entraînez la rétine périphérique à traiter les nœuds convergents rouges et orangés comme des indices saillants immédiats sans recherche séquentielle (Treisman & Gelade 1980)."
+        "title": "Repérer la couleur d’abord",
+        "description": "Laissez les nœuds rouges et orangés ressortir sans les chercher un par un (Treisman & Gelade, 1980)."
       },
       {
-        title: "Protocole 3: Flick Radial Balistique de Woodworth avec Décélération",
-        description: "À la vue de la trajectoire, projetez la souris d'un coup de poignet sec en boucle ouverte, avant d'ajuster du bout des doigts au moment du clic (Woodworth 1899)."
+        "title": "Frapper puis corriger",
+        "description": "Lancez la souris d’un geste rapide vers le nœud, puis ajustez du bout des doigts avant le clic (Woodworth, 1899)."
       },
       {
-        title: "Protocole 4: Dilatation UFOV sous Haute Densité et Tri des Priorités",
-        description: "Dans les paliers avancés à cadence de 0,20 s, estimez la proximité de plusieurs nœuds en parallèle et neutralisez en premier lieu les plus menaçants (Woods et al. 2015)."
+        "title": "Traiter le plus proche du noyau en premier",
+        "description": "Quand plusieurs nœuds arrivent, neutralisez d’abord celui qui est le plus proche du noyau."
       }
     ]
   },
-  faqs: {
-    title: "Foire Aux Questions (FAQ) sur la Vision Périphérique et la Défense",
-    items: faqSchema.mainEntity.map(q => ({
-      q: q.name,
-      a: q.acceptedAnswer.text
-    }))
-  }
+  "faqs": {
+    "title": "Questions fréquentes",
+    "items": faqSchema.mainEntity.map((q) => ({ q: q.name, a: q.acceptedAnswer.text }))
+  },
+  "sources": pickSources('posner1980', 'treisman1980', 'woodworth1899', 'fitts1954', 'woods2015')
 };
 
 export default function LocalizedPeripheralThreatSweeperPageFr() {
@@ -333,9 +388,9 @@ export default function LocalizedPeripheralThreatSweeperPageFr() {
       />
       <PeripheralThreatSweeperClient
         copy={{
-          title: "Vision Périphérique",
+          title: "Exercices de vision périphérique",
           subtitle: "Fixez le centre et repérez les menaces latérales",
-          description: "La vision périphérique correspond à ce que vous percevez sans regarder directement. Les détails s'estompent rapidement depuis le centre du regard, mais l'attention peut être orientée vers la périphérie pendant que les yeux demeurent immobiles, accélérant la réaction motrice (Posner, 1980). Un trait unique comme la couleur se repère en un temps constant indépendamment des distracteurs, tandis que des cibles combinant plusieurs critères imposent une recherche active (Treisman & Gelade, 1980) — ce qui rend certaines menaces aisées à cueillir en bordure et d'autres plus exigeantes.",
+          description: "La vision périphérique correspond à ce que vous percevez sans regarder directement. L’attention peut être orientée vers la périphérie pendant que les yeux restent immobiles (Posner, 1980), et un trait simple comme la couleur se repère en parallèle, alors que des cibles combinant plusieurs critères imposent une recherche active (Treisman & Gelade, 1980).",
           hudLabels: {
             score: "Score",
             time: "Temps",
@@ -353,14 +408,14 @@ export default function LocalizedPeripheralThreatSweeperPageFr() {
             breaches: "Brèches",
             peakLevel: "Niveau Max"
           },
-          rulesTitle: "Règles du Drill et Système de Points",
+          rulesTitle: "Règles du jeu et système de points",
           rulesItems: [
             { title: "Défense du Noyau et Points", text: "Cliquez sur les nœuds rouges et orangés convergents avant qu'ils ne touchent le noyau central. Chaque neutralisation rapporte 100 points de base (pondérés par le niveau et le combo) et +0,6s de temps." },
             { title: "Sanction en Cas de Brèche", text: "Si un nœud pénètre le noyau central, une brèche (breach) est décomptée : la série de combo retombe à 1.0x et l'écran émet un flash rouge d'alerte." },
             { title: "Accélération Évolutive", text: "À mesure que les points augmentent, l'intervalle de spawn se réduit de 1,4s à 0,20s et la vitesse des vecteurs grimpe de 160 px/s à 520 px/s." },
             { title: "Recentrage Tactique", text: "Ramenez le curseur sur le noyau central après chaque frappe pour conserver une couverture équidistante à 360° vers tous les quadrants." }
           ],
-          aboutTitle: "À Propos de la Vision Périphérique et de l'Attention Couverte",
+          aboutTitle: "À propos des exercices de vision périphérique",
           aboutSections: [
             {
               title: "Orientation Attentionnelle Couverte et Balayage Périphérique",
@@ -375,12 +430,12 @@ export default function LocalizedPeripheralThreatSweeperPageFr() {
             {
               title: "Flick Balistique et Sauvegarde du Noyau",
               subtitle: "Mouvement rapide de Woodworth complété par un freinage millimétré",
-              content: "Les balayages nécessitent le contrôle en deux temps de Woodworth (1899) : une détente balistique initiale du poignet couvrant plus de 85% de la trajectoire, relayée par des micro-corrections visuelles avant le clic."
+              content: "Les balayages nécessitent le contrôle en deux temps de Woodworth (1899) : une impulsion initiale rapide, relayée par des micro-corrections visuelles avant le clic."
             },
             {
               title: "Champ Visuel Utile et Traitement Multi-Vectoriel",
               subtitle: "Élargissement de la capacité cognitive sous haute fréquence d'apparition",
-              content: "En compressant les délais de spawn et en accélérant les cibles à 520 px/s, le module développe le Useful Field of View (UFOV), habituant le système nerveux à parer simultanément des attaques multiples."
+              content: "En raccourcissant les délais d'apparition et en accélérant les cibles jusqu'à 520 px/s, le jeu sollicite la détection en périphérie (voir Ball et al., 1988, sur le champ visuel utile) sans prouver un élargissement de ce champ."
             }
           ]
         }}

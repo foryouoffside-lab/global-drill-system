@@ -32,3 +32,4 @@
 - /fr/drills/cognitive/processing-speed/symbol-matching | done | 45f6a827 | docs/seo/research/fr/symbol-matching.md | demand not verified (Bing 0); SDMT suggest proxy
 - /fr/drills/physical/coordination/dynamic-grid-evasion | done | 09881a94 | docs/seo/research/fr/dynamic-grid-evasion.md | demand not verified (Bing 0); retargeted away from reflex pages
 - /fr/drills/physical/fitness/agility-ladder | done | a3978e56 | docs/seo/research/fr/agility-ladder.md | demand not verified (Bing 0); honest framing as mouse rhythm game
+- /fr/drills/physical/reflex-training/drop-catch | done | 3b1c1910 | docs/seo/research/fr/drop-catch.md | demand not verified (Bing 0); test de la regle collides with menstrual intent
