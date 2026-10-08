@@ -20,3 +20,4 @@
 | /pt/drills/physical/reflex-training/drop-catch | done | TBD:drop-catch | docs/seo/research/pt/drop-catch.md | title kept; demand not verified; top-% tiers removed |
 | /pt/drills/physical/reflex-training/peripheral-threat-sweeper | done | TBD:peripheral-threat-sweeper | docs/seo/research/pt/peripheral-threat-sweeper.md | title kept; demand not verified; tiers neutralised |
 | /pt/drills/physical/reflex-training/quick-dodge | done | TBD:quick-dodge | docs/seo/research/pt/quick-dodge.md | title kept; demand not verified; tiers neutralised |
+| /pt/drills/physical/reflex-training/reaction-chain | done | TBD:reaction-chain | docs/seo/research/pt/reaction-chain.md | title kept; demand not verified; tiers neutralised |

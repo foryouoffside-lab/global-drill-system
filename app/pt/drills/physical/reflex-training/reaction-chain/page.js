@@ -271,13 +271,13 @@ const guideProps = {
     title: "Escala Oficial de 5 Níveis para Frenagem de Mira e Inibição Motora",
     headers: ["Nível de Habilidade", "Título Oficial", "Faixa de Pontuação", "Taxa de Sucesso na Parada", "Classificação", "Perfil Neuromotor"],
     rows: [
-      ["Tier 1: Mestre Supremo da Parada Cinética", "Apex Kinetic Arrester", "15.000+ pts", "95%+ / 1500+ px/s", "Grade S", "Top 0,1% mundial. Controle de inibição sobre-humano: estanca instantaneamente mesmo em nós a 1.800 px/s sem qualquer overflick (Logan 1984; Woodworth 1899)"],
-      ["Tier 2: Atirador de Precisão Cinética", "Precision Kinetic Sniper", "11.000 – 14.999 pts", "90 – 94% / 1200 – 1499 px/s", "Grade A", "Top 3% profissional. Excelente desaceleração via pontas dos dedos; travamento sólido após flicadas intensas"],
-      ["Tier 3: Piloto Experiente de Desaceleração", "Skilled Deceleration Pilot", "7.500 – 10.999 pts", "82 – 89% / 900 – 1199 px/s", "Grade B", "Top 15% competitivo. Frenagem consistente em médias velocidades; falhas esporádicas de derrapagem em velocidades extremas"],
-      ["Tier 4: Praticante de Frenagem em Evolução", "Developing Stopper", "4.000 – 7.499 pts", "70 – 81% / 600 – 899 px/s", "Grade C", "Média padrão. Tendência a passar do alvo por falta de engajamento antagonista no momento certo"],
-      ["Tier 5: Aluno Iniciante de Desaceleração", "Novice Arrester Trainee", "< 4.000 pts", "< 70% / < 600 px/s", "Grade D", "Atraso na inibição motora gera erros frequentes; necessário treinar desaceleração mecânica no mousepad"]
+      ["Faixa 1", "Muito alta", "15.000+ pts", "95%+ / 1500+ px/s", "Grade S", "Controle de inibição: estanca instantaneamente mesmo em nós a 1.800 px/s sem qualquer overflick (Logan 1984; Woodworth 1899)"],
+      ["Faixa 2", "Alta", "11.000 – 14.999 pts", "90 – 94% / 1200 – 1499 px/s", "Grade A", "Excelente desaceleração via pontas dos dedos; travamento sólido após flicadas intensas"],
+      ["Faixa 3", "Boa", "7.500 – 10.999 pts", "82 – 89% / 900 – 1199 px/s", "Grade B", "Frenagem consistente em médias velocidades; falhas esporádicas de derrapagem em velocidades extremas"],
+      ["Faixa 4", "Intermediária", "4.000 – 7.499 pts", "70 – 81% / 600 – 899 px/s", "Grade C", "Média padrão. Tendência a passar do alvo por falta de engajamento antagonista no momento certo"],
+      ["Faixa 5", "Inicial", "< 4.000 pts", "< 70% / < 600 px/s", "Grade D", "Atraso na inibição motora gera erros frequentes; necessário treinar desaceleração mecânica no mousepad"]
     ],
-    note: "Calibrado com base no Modelo de Corrida de Logan (1984), no controle bifásico de Woodworth (1899) e na Lei de Fitts (1954)."
+    note: "Faixas editoriais para comparar suas próprias sessões, não percentis de população nem normas clínicas. Calibrado com base no Modelo de Corrida de Logan (1984), no controle bifásico de Woodworth (1899) e na Lei de Fitts (1954)."
   },
   techniques: {
     title: "Técnicas Práticas de Frenagem de Mira",
