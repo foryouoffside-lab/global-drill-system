@@ -40,3 +40,4 @@
 - /fr/drills/visual/depth-perception/distance-judgment | done | ea272da0 | docs/seo/research/fr/distance-judgment.md | demand not verified (Bing 0); title head term kept from Suggest
 - /fr/drills | done | 53300e4c | docs/seo/research/fr/drills-hub.md | hub; shared edit lib/i18n/siteLandingSeoNative.js fr entry
 - /fr/drills/memory | done | f4b56eaf | docs/seo/research/fr/memory-hub.md | hub; shared edit lib/i18n/memoryHubNative.js fr line (jeux de memoire 179 Bing)
+- /fr/drills/reaction-speed | done | 4f792158 | docs/seo/research/fr/reaction-speed-hub.md | hub; shared edit lib/i18n/reactionSpeedHubNative.js fr line
