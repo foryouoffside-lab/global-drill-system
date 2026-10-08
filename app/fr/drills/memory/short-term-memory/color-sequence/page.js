@@ -54,22 +54,22 @@ export default function FrenchColorSequencePage() {
     "@type": "BreadcrumbList",
     "itemListElement": [
       { "@type": "ListItem", "position": 1, "name": "SkillDrills", "item": "https://skilldrills.online/fr" },
-      { "@type": "ListItem", "position": 2, "name": "Entrainements de Memoire", "item": "https://skilldrills.online/fr/drills/memory" },
-      { "@type": "ListItem", "position": 3, "name": "Memoire a Court Terme", "item": "https://skilldrills.online/fr/drills/memory" },
-      { "@type": "ListItem", "position": 4, "name": "Jeu Simon des Couleurs", "item": "https://skilldrills.online/fr/drills/memory/short-term-memory/color-sequence" }
+      { "@type": "ListItem", "position": 2, "name": "Entraînements de mémoire", "item": "https://skilldrills.online/fr/drills/memory" },
+      { "@type": "ListItem", "position": 3, "name": "Mémoire à court terme", "item": "https://skilldrills.online/fr/drills/memory" },
+      { "@type": "ListItem", "position": 4, "name": "Jeu Simon des couleurs", "item": "https://skilldrills.online/fr/drills/memory/short-term-memory/color-sequence" }
     ]
   };
 
   const softwareSchema = {
     "@context": "https://schema.org",
     "@type": "SoftwareApplication",
-    "name": "Jeu Simon en Ligne",
+    "name": "Jeu Simon en ligne",
     "applicationCategory": "EducationalApplication",
     "operatingSystem": "Web Browser",
     "dateModified": "2026-09-16",
     "offers": { "@type": "Offer", "price": "0", "priceCurrency": "EUR" },
-    "description": "Entrainement interactif gratuit de la memoire de travail visuelle evaluant la retention de suites chromatiques sequentielles et le chunking.",
-    "genre": "Entrainement Cognitif / Memoire Visuelle de Travail",
+    "description": "Jeu gratuit dans le navigateur : retenez et reproduisez des suites de couleurs de plus en plus longues pour exercer la mémoire de travail visuelle.",
+    "genre": "Entraînement cognitif / mémoire visuelle de travail",
     "url": "https://skilldrills.online/fr/drills/memory/short-term-memory/color-sequence",
     "publisher": {
       "@type": "Organization",
@@ -81,9 +81,9 @@ export default function FrenchColorSequencePage() {
   const webAppSchema = {
     "@context": "https://schema.org",
     "@type": "WebApplication",
-    "name": "Jeu Simon en Ligne",
+    "name": "Jeu Simon en ligne",
     "url": "https://skilldrills.online/fr/drills/memory/short-term-memory/color-sequence",
-    "description": "Jeu de memoire Simon en ligne gratuit pour navigateur avec 6 touches colorees et difficulte adaptative en escalier.",
+    "description": "Jeu de mémoire Simon gratuit dans le navigateur, avec 6 touches colorées et une difficulté adaptative.",
     "dateModified": "2026-09-16",
     "applicationCategory": "GameApplication",
     "operatingSystem": "All",
@@ -95,11 +95,11 @@ export default function FrenchColorSequencePage() {
   const videoGameSchema = {
     "@context": "https://schema.org",
     "@type": "VideoGame",
-    "name": "Jeu Simon – Suite de Couleurs",
+    "name": "Jeu Simon : suite de couleurs",
     "url": "https://skilldrills.online/fr/drills/memory/short-term-memory/color-sequence",
-    "description": "Jeu electronique classique de sequence de couleurs dans le navigateur pour developper l empan mnesique et la vivacite.",
-    "genre": ["Jeu de Memoire", "Entrainement Cerebral", "Puzzle"],
-    "gamePlatform": ["Navigateur Web", "Mobile", "Tablette", "Bureau"],
+    "description": "Jeu de suites de couleurs inspiré du Simon électronique, jouable dans le navigateur.",
+    "genre": ["Jeu de mémoire", "Entraînement cognitif", "Puzzle"],
+    "gamePlatform": ["Navigateur web", "Mobile", "Tablette", "Bureau"],
     "applicationCategory": "Game",
     "offers": { "@type": "Offer", "price": "0", "priceCurrency": "EUR" }
   };
@@ -110,74 +110,74 @@ export default function FrenchColorSequencePage() {
     "mainEntity": [
       {
         "@type": "Question",
-        "name": "Qu est-ce que le Jeu Simon et comment fonctionne-t-il ?",
+        "name": "Qu’est-ce que le jeu Simon et comment fonctionne-t-il ?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Le jeu Simon est un defi classique de memorisation sequentielle. L appareil emet une suite croissante de signaux lumineux et sonores. Le joueur doit enregistrer la sequence et la restituer sans faute dans le meme ordre en cliquant sur les touches."
+          "text": "Le jeu Simon est un défi de mémorisation séquentielle. Une suite de signaux lumineux et sonores s’allonge à chaque manche, et vous devez la reproduire dans le même ordre en cliquant sur les touches colorées."
         }
       },
       {
         "@type": "Question",
-        "name": "Quelles fonctions cerebrales sont sollicitees par ce jeu ?",
+        "name": "Quelles fonctions cognitives ce jeu sollicite-t-il ?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Il mobilise principalement la memoire de travail visuelle et le calepin visuo-spatial (Baddeley & Hitch, 1974), stimulant l attention soutenue, l encodage en serie et l activite synaptique du cortex prefrontal."
+          "text": "Il sollicite surtout la mémoire de travail visuelle, que le modèle de Baddeley et Hitch (1974) rattache au calepin visuo-spatial, ainsi que l’attention soutenue et l’encodage en série."
         }
       },
       {
         "@type": "Question",
-        "name": "Quelle est la limite d empan selon Luck et Vogel (1997) ?",
+        "name": "Quelle est la limite d’empan selon Luck et Vogel (1997) ?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Steven Luck et Edward Vogel ont etabli que la memoire de travail visuelle humaine plafonne a environ 3 ou 4 unites d information simultanees. Au-dela de 4 elements, le recours au regroupement mental devient indispensable."
+          "text": "Luck et Vogel (1997) ont montré que la mémoire de travail visuelle retient environ 3 à 4 éléments en même temps. Au-delà, regrouper les éléments en blocs devient nécessaire."
         }
       },
       {
         "@type": "Question",
-        "name": "Qu est-ce que la methode de chunking et comment l appliquer ?",
+        "name": "Qu’est-ce que le chunking et comment l’appliquer ici ?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Le chunking (Miller, 1956) consiste a fusionner des items distincts en blocs porteurs de sens. En retenant deux groupes de trois couleurs plutot que six couleurs separees, la charge cognitive imposee au cerveau est reduite de moitie."
+          "text": "Le chunking (Miller, 1956) consiste à regrouper des éléments en blocs porteurs de sens. Retenir deux groupes de trois couleurs plutôt que six couleurs isolées réduit le nombre d’éléments à garder en tête."
         }
       },
       {
         "@type": "Question",
-        "name": "Pourquoi cet entrainement comporte-t-il 6 couleurs au lieu de 4 ?",
+        "name": "Pourquoi six couleurs au lieu des quatre du Simon classique ?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "L ajout du violet et de l orange etend la configuration a 6 touches, augmentant l entropie de choix et offrant un defi cognitif superieur aux utilisateurs souhaitant repousser leurs limites."
+          "text": "Le violet et l’orange portent le clavier à six touches. Plus de choix possibles à chaque étape rendent la suite plus difficile à deviner et à mémoriser."
         }
       },
       {
         "@type": "Question",
-        "name": "Existe-t-il une penalite de temps lors d une erreur ?",
+        "name": "Y a-t-il une pénalité en cas d’erreur ?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Aucun temps n est deduit du chronometre. En cas d echec, le moteur adaptatif reduit simplement la sequence d un palier pour permettre la poursuite de l exercice sans blocage."
+          "text": "Aucun temps n’est retiré du chronomètre et les points déjà gagnés sont conservés. Après une erreur ou un délai dépassé, la suite recule d’un niveau pour que la séance continue."
         }
       },
       {
         "@type": "Question",
-        "name": "Quel palier correspond a une performance de haut niveau ?",
+        "name": "Quel niveau correspond à une bonne performance ?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Franchir les niveaux 7 ou 8 (sequences de 7 a 8 couleurs) represente un score solide. Depasser le niveau 10 (plus de 1 300 points) suppose un chunking rigoureux et correspond au centile d elite."
+          "text": "Les paliers du tableau sont des repères propres à ce jeu : à partir du niveau 8, vous retenez des suites de plus de quatre couleurs, ce qui suppose un regroupement actif. Ce ne sont pas des statistiques de population."
         }
       },
       {
         "@type": "Question",
-        "name": "Ce jeu reduit-il les oublis de la vie courante ?",
+        "name": "Ce jeu améliore-t-il la mémoire dans la vie courante ?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Oui. L entrainement a l encodage sequentiel renforce la resistance attentionnelle quotidienne, facilitant la retention rapide de codes, de consignes etapes par etapes et de listes courtes."
+          "text": "Rien ne prouve un effet sur la mémoire du quotidien. Le jeu entraîne la reproduction de suites, une tâche précise : voyez-le comme un exercice, pas comme un traitement."
         }
       },
       {
         "@type": "Question",
-        "name": "Le jeu est-il adapte aux ecrans tactiles ?",
+        "name": "Le jeu fonctionne-t-il sur écran tactile ?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "L interface reagit de maniere instantanee aux gestes tactiles sur smartphones et tablettes ainsi qu aux clics de souris sur ordinateur de bureau."
+          "text": "Oui. Les touches répondent au toucher sur smartphone et tablette ainsi qu’au clic de souris sur ordinateur."
         }
       },
       {
@@ -185,7 +185,7 @@ export default function FrenchColorSequencePage() {
         "name": "Ce jeu Simon est-il gratuit et sans inscription ?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Oui, SkillDrills propose cet outil gratuitement et sans publicite bloquante, directement dans le navigateur sans installation ni collecte de donnees."
+          "text": "Oui. Il est gratuit, sans compte ni installation, et vos records restent stockés dans le navigateur de votre appareil."
         }
       }
     ]
@@ -194,36 +194,36 @@ export default function FrenchColorSequencePage() {
   const howToSchema = {
     "@context": "https://schema.org",
     "@type": "HowTo",
-    "name": "Comment Jouer au Jeu Simon des Couleurs",
-    "description": "Guide en 4 etapes pour entrainer sa memoire de travail visuelle et restituer de longues suites chromatiques.",
+    "name": "Comment jouer au jeu Simon des couleurs",
+    "description": "Quatre étapes pour retenir et reproduire de longues suites de couleurs.",
     "step": [
       {
         "@type": "HowToStep",
         "position": 1,
         "url": "https://skilldrills.online/fr/drills/memory/short-term-memory/color-sequence#step-1",
-        "name": "Suivez Attentivement l Allumage des Touches",
-        "text": "Concentrez votre regard au centre des 6 boutons pour capter la succession de lumieres et de sons sans precipitation."
+        "name": "Suivez l’allumage des touches",
+        "text": "Gardez le regard au centre des six boutons pour capter la succession de lumières et de sons sans vous précipiter."
       },
       {
         "@type": "HowToStep",
         "position": 2,
         "url": "https://skilldrills.online/fr/drills/memory/short-term-memory/color-sequence#step-2",
-        "name": "Associez les Couleurs en Blocs Rhythmiques",
-        "text": "Regroupez les stimuli par doublets ou triplets mentaux pour depasser le goulot d etranglement des 4 items."
+        "name": "Regroupez les couleurs en blocs",
+        "text": "Regroupez les signaux par deux ou trois pour dépasser la limite d’environ quatre éléments."
       },
       {
         "@type": "HowToStep",
         "position": 3,
         "url": "https://skilldrills.online/fr/drills/memory/short-term-memory/color-sequence#step-3",
-        "name": "Reproduisez la Sequence sans Hesitation",
-        "text": "Des l apparition du signal actif, cliquez sur les touches dans l ordre exact avec un rythme regulier."
+        "name": "Reproduisez la suite sans hésiter",
+        "text": "Dès que la main passe à vous, cliquez sur les touches dans l’ordre exact, à un rythme régulier."
       },
       {
         "@type": "HowToStep",
         "position": 4,
         "url": "https://skilldrills.online/fr/drills/memory/short-term-memory/color-sequence#step-4",
-        "name": "Augmentez les Paliers pour un Score Record",
-        "text": "A chaque reussite, la chaine s enrichit d une couleur supplementaire, augmentant le multiplicateur de points."
+        "name": "Montez de niveau",
+        "text": "À chaque réussite, la suite s’allonge d’une couleur et le bonus de niveau augmente vos points."
       }
     ]
   };
@@ -231,102 +231,102 @@ export default function FrenchColorSequencePage() {
   const frCopy = {
     title: 'Jeu Simon en ligne',
     subtitle: 'Mémorise les couleurs et reproduis la suite exacte',
-    caption: 'Suivez et restituez la suite lumineuse dans l ordre exact au fil de son allongement progressif.',
+    caption: 'Suivez la suite lumineuse et reproduisez-la dans l’ordre exact à mesure qu’elle s’allonge.',
     statScore: 'Score',
     statTime: 'Temps',
     statLevel: 'Niveau',
     statBestScore: 'Record',
-    rulesTitle: 'Regles du Jeu et Attribution des Points',
-    rule1Text: 'Restitution Sequentielle',
+    rulesTitle: 'Règles du jeu et attribution des points',
+    rule1Text: 'Reproduction de la suite',
     rule1Highlight: '+100 PTS',
-    rule1Result: 'Reproduisez les touches eclairees dans l ordre exact de defilement',
-    rule2Text: 'Bonus de Niveau',
+    rule1Result: 'Reproduisez les touches éclairées dans l’ordre exact',
+    rule2Text: 'Bonus de niveau',
     rule2Highlight: '+10% PTS / Niveau',
-    rule2Result: 'Les chaines plus longues declenchent des multiplicateurs accrus',
-    rule3Text: 'Erreur ou Delai Depasse',
+    rule2Result: 'Les suites plus longues rapportent plus de points',
+    rule3Text: 'Erreur ou délai dépassé',
     rule3Highlight: '-1 Niveau',
-    rule3Result: 'Aucune perte de points accumules; reajustement de la difficulte',
-    rule4Text: 'Difficulte Adaptative',
+    rule3Result: 'Aucun point perdu ; la difficulté est réajustée',
+    rule4Text: 'Difficulté adaptative',
     rule4Highlight: 'Dynamique',
-    rule4Result: 'La longueur de chaine correspond fidelement a votre capacite actuelle',
-    aboutTitle: 'A Propos du Jeu Simon de Suite de Couleurs',
-    overviewTitle: 'Que developpe le jeu de memoire des couleurs ?',
-    overviewLead: 'La memoire visuelle de travail ne peut maintenir simultanement que 4 items simples (Luck & Vogel, 1997; Cowan, 2001). Une chaine chromatique expansive sollicite directement cette frontiere neurobiologique.',
+    rule4Result: 'La longueur de la suite suit votre capacité du moment',
+    aboutTitle: 'À propos du jeu Simon de suite de couleurs',
+    overviewTitle: 'Que travaille le jeu de mémoire des couleurs ?',
+    overviewLead: 'La mémoire de travail visuelle ne retient qu’environ 4 éléments simples à la fois (Luck & Vogel, 1997 ; Cowan, 2001). Une suite de couleurs qui s’allonge pousse directement contre cette limite.',
     aboutIntro: [
-      'L entrainement mnemonique visuel cible la capacite cerebrale a encoder, maintenir et restituer des sequences de stimuli dans un ordre temporel rigoureux.',
-      'En exercant la repetition de couleurs, vous affinez vos reflexe de regroupement cognitif (chunking) et renforcez votre stabilite face a la contrainte de temps.',
+      'Ce jeu entraîne l’encodage, le maintien et la reproduction de suites de stimuli dans un ordre précis.',
+      'À force de répéter des suites de couleurs, vous affinez le regroupement en blocs (chunking) et votre calme face au chronomètre.',
     ],
     aboutCards: [
-      { title: 'A qui s adresse ce jeu ?', text: 'Etudiants, candidats aux concours, seniors et joueurs d e-sport souhaitant stimuler leur empan mnesique et leur reactivite.' },
-      { title: 'Capacites sollicitees', text: 'Empan visuel, encodage serie dans le calepin visuo-spatial (Baddeley & Hitch, 1974) et vitesse d execution.' },
-      { title: 'Strategie de Chunking', text: 'Assemblez les couleurs en blocs melodiques ou trajets visuels pour depasser aisement le seuil des 4 elements (Miller, 1956).' },
+      { title: 'À qui s’adresse ce jeu ?', text: 'Étudiants, seniors, joueurs et toute personne qui veut s’exercer à retenir des suites.' },
+      { title: 'Capacités sollicitées', text: 'Empan visuel, encodage en série dans le calepin visuo-spatial (Baddeley & Hitch, 1974) et rapidité d’exécution.' },
+      { title: 'Stratégie de chunking', text: 'Assemblez les couleurs en blocs rythmés ou en trajets visuels pour dépasser le seuil de 4 éléments (Miller, 1956).' },
     ],
   };
 
   const frColorSequenceGuide = {
-    heading: 'Guide du Jeu Simon et de la Memoire Visuelle de Travail',
+    heading: 'Guide du jeu Simon et de la mémoire visuelle de travail',
     intro: [
-      'Le Jeu de Mémoire des Séquences de Couleurs est un outil d\'évaluation et d\'entraînement cognitif rigoureux conçu pour tester, stimuler et étendre la mémoire de travail visuelle et la rétention séquentielle de motifs. Popularisé à l\'origine par Ralph Baer et Howard Morrison avec le jeu électronique Simon (1978), ce protocole adaptatif exige d\'encoder des stimuli chromatiques dynamiques, de les organiser dans des tampons mnésiques structurés et de les restituer dans un ordre temporel rigoureux.',
-      'L\'architecture de la mémoire humaine à court terme a été minutieusement cartographiée par la psychologie cognitive. Alors que George A. Miller (1956) a mis en évidence le goulot d\'étranglement verbal de $7 \\pm 2$ éléments, les travaux fondamentaux de Nelson Cowan (2001) et de Steven J. Luck & Edward K. Vogel (1997) ont démontré que la capacité brute de la mémoire de travail visuelle est strictement limitée à environ 4 unités indépendantes. En l\'absence de stratégies actives de recodage, la rétention humaine s\'effondre rapidement au-delà de quatre éléments consécutifs.',
-      'Dans le modèle multicomposant de mémoire de travail d\'Alan Baddeley (Baddeley & Hitch, 1974 ; Baddeley, 2000), le traitement des séries visuelles mobilise le calepin visuo-spatial (Visuospatial Sketchpad). Robert H. Logie (1995) a scindé ce sous-système en cache visuel passif (qui retient les couleurs et formes) et en scribe interne (qui répète activement les trajectoires spatio-temporelles). Les pratiquants expérimentés associent ce registre à la boucle phonologique pour générer un double encodage (visuel et subvocal), doublant ainsi la résilience du tampon mnésique.',
-      'Grâce à une chronométrie numérique de haute précision à la milliseconde (Woods et al., 2015), cet entraînement mesure à la fois l\'empan maximal de la séquence retenue et le temps de réaction moteur à chaque appui, offrant un étalonnage fidèle de l\'intégrité de la mémoire opérationnelle et de l\'endurance mentale sous pression.',
-      'Méthodologie de mesure et latence matérielle : Chaque événement interactif est horodaté localement via l\'horloge haute résolution performance.now() du navigateur – aucune donnée de performance n\'est transmise sur le réseau. Les navigateurs modernes brident volontairement la précision à ~1 ms pour contrer les attaques par canal auxiliaire (Spectre), et votre écran quantifie chaque rafraîchissement selon sa fréquence native (~16,7 ms à 60 Hz, ~6,9 ms à 144 Hz, ~4,1 ms à 240 Hz ; Woods et al., 2015). Les écarts inférieurs à 5 ms constituent un bruit instrumental normal ; comparez vos résultats sur un équipement identique.',
-      'Transparence et respect de la vie privée : SkillDrills ne collecte aucune donnée agrégée d\'utilisateurs ni télémétrie. Vos scores, temps de réponse et progressions restent strictement confinés dans le stockage local (localStorage) de votre navigateur et ne sont jamais téléversés. Tous les barèmes cités proviennent directement des publications scientifiques évaluées par des pairs et recensées ci-dessous.',
-      'Avertissement médical et non-diagnostic : Cet exercice est un jeu d\'entraînement cognitif sur navigateur web gratuit destiné à la pratique personnelle et à l\'hygiène cérébrale. Il ne constitue en aucun cas un dispositif médical, un outil de diagnostic clinique ou un protocole de rééducation neurologique. Si vous avez des inquiétudes concernant votre mémoire ou votre fonctionnement cognitif, veuillez consulter un médecin spécialiste ou un neuropsychologue qualifié.'
+      'Le jeu Simon en ligne vous montre une suite de couleurs et de sons qui s’allonge à chaque manche ; vous la reproduisez dans le bon ordre. Il travaille la mémoire de travail visuelle, dont la capacité tourne autour de 4 éléments (Cowan, 2001). C’est un exercice gratuit dans le navigateur, pas un test médical.',
+      'Le jeu électronique Simon a été popularisé par Ralph Baer et Howard Morrison (1978). Cette version l’étend à six touches avec une difficulté adaptative : vous encodez des stimuli colorés, les organisez en blocs mentaux, puis les restituez dans l’ordre.',
+      'Alors que George A. Miller (1956) évoquait 7 ± 2 éléments, les travaux de Nelson Cowan (2001) et de Luck et Vogel (1997) situent la capacité de la mémoire de travail visuelle autour de 4 unités indépendantes. Sans stratégie de regroupement, la rétention chute vite au-delà de quatre éléments consécutifs.',
+      'Dans le modèle de Baddeley et Hitch (1974), les suites visuelles passent par le calepin visuo-spatial. Associer les couleurs à de petits sons ou à un mot intérieur donne un double encodage qui peut aider à retenir plus longtemps.',
+      'Mesure et matériel : chaque appui est horodaté localement avec l’horloge performance.now() du navigateur, dont la résolution est volontairement limitée. Votre écran affiche une image toutes les 16,7 ms à 60 Hz et toutes les 6,9 ms à 144 Hz (Woods et al., 2015) : comparez vos séances sur le même matériel.',
+      'Confidentialité : vos scores et vos records restent dans le stockage local (localStorage) de votre navigateur.',
+      'Avertissement : ce jeu d’entraînement n’est ni un dispositif médical ni un outil de diagnostic. En cas d’inquiétude sur votre mémoire, consultez un médecin ou un neuropsychologue.'
     ],
     benchmarks: {
-      title: 'Baremes de Performance au Jeu Simon (Session de 45 secondes)',
-      headers: ['Palier de Competence', 'Niveau Atteint', 'Score (45s)', 'Strategie Mnemonique et Diagnostic'],
+      title: 'Paliers de performance au jeu Simon (séance de 45 secondes)',
+      headers: ['Palier', 'Niveau atteint', 'Score (45 s)', 'Stratégie de mémorisation'],
       rows: [
-        ['Tier 1 (Grand Maitre / Elite)', 'Niveau 11+', 'Plus de 1 500 PTS', 'Chunking multimodal parfait; encodage visuel et auditif simultane'],
-        ['Tier 2 (Avance / Niveau Tournoi)', 'Niveau 8 – 10', '1 100 – 1 499 PTS', 'Depassement solide de la limite de Cowan (4 items); regroupement binaire fluide'],
-        ['Tier 3 (Moyenne Solide)', 'Niveau 5 – 7', '700 – 1 099 PTS', 'Capacite classique de memoire a court terme; hesitation lors des cadences rapides'],
-        ['Tier 4 (Base / Oublis Ponctuels)', 'Niveau 3 – 4', '350 – 699 PTS', 'Memoire de travail a son seuil biologique; absence de chunking structure'],
-        ['Tier 5 (Debutant / Taux d Erreur Eleve)', 'Sous le Niveau 3', 'Moins de 350 PTS', 'Difficulte des le 3e signal; interference liee a la persistance retinienne']
+        ['Palier 1 (très avancé)', 'Niveau 11+', 'Plus de 1 500 PTS', 'Regroupement en blocs maîtrisé ; encodage visuel et sonore'],
+        ['Palier 2 (avancé)', 'Niveau 8 – 10', '1 100 – 1 499 PTS', 'Suites de plus de 4 couleurs retenues grâce au regroupement binaire'],
+        ['Palier 3 (solide)', 'Niveau 5 – 7', '700 – 1 099 PTS', 'Capacité classique de mémoire à court terme ; hésitation aux cadences rapides'],
+        ['Palier 4 (en progression)', 'Niveau 3 – 4', '350 – 699 PTS', 'Mémoire de travail à sa limite ; regroupement encore peu structuré'],
+        ['Palier 5 (débutant)', 'Sous le niveau 3', 'Moins de 350 PTS', 'Difficulté dès le 3e signal ; commencez par les niveaux lents']
       ],
-      note: 'Baremes standardises pour des sequences dynamiques a 6 teintes sur une epreuve de 45 secondes (Luck & Vogel, 1997; Cowan, 2001; Woods et al., 2015).'
+      note: 'Repères éditoriaux propres à ce jeu (suites à 6 teintes, séance de 45 secondes). Ce ne sont ni des normes cliniques ni un classement de population.'
     },
     techniques: {
-      title: '4 methodes scientifiques pour memoriser des suites de couleurs plus longues',
+      title: '4 méthodes pour mémoriser des suites de couleurs plus longues',
       items: [
         {
-          name: 'Regroupement Rythmique (Chunking de Miller)',
-          desc: 'N enregistrez pas les couleurs une a une. Repetez mentalement les initiales selon une cadence cadensee (ex. "Rouge-Bleu ... Vert-Jaune").',
-          tips: 'Scindez systematiquement la chaine en paires des qu elle depasse 4 elements.'
+          name: 'Regroupement rythmique (chunking)',
+          desc: 'N’enregistrez pas les couleurs une à une. Répétez mentalement les initiales sur un rythme (par exemple « Rouge-Bleu … Vert-Jaune »).',
+          tips: 'Scindez la suite en paires dès qu’elle dépasse 4 éléments.'
         },
         {
-          name: 'Visualisation d un Trajet Spatial',
-          desc: 'Reliez les positions des touches eclairees par un fil imaginaire (triangle, diagonale ou arc de cercle) au lieu de manipuler des noms de couleurs abstraits.',
-          tips: 'Le cortex parietal traite la figure geometrique comme un ensemble indivisible.'
+          name: 'Visualiser un trajet',
+          desc: 'Reliez les touches éclairées par un fil imaginaire (triangle, diagonale, arc) au lieu de manipuler des noms de couleurs.',
+          tips: 'Retenir une figure géométrique est souvent plus simple que retenir une liste.'
         },
         {
-          name: 'Exploitation des Frequences Sonores',
-          desc: 'Chaque couleur possede sa tonalite propre. Retenez la petite melodie creee pour doubler le stockage visuel par un encodage auditif fiable.',
-          tips: 'Conservez le son active pour beneficier du double codage sensoriel.'
+          name: 'S’appuyer sur les sons',
+          desc: 'Chaque couleur a sa tonalité. Retenez la petite mélodie obtenue pour doubler l’encodage visuel par un encodage auditif.',
+          tips: 'Gardez le son activé pour profiter du double codage.'
         },
         {
-          name: 'Concentration Ciblee sur la Dernière Touche',
-          desc: 'La base de la sequence reste identique d un tour a l autre ; portez l essentiel de votre attention sur le nouvel element qui vient s ajouter a la fin.',
-          tips: 'Consolidez le debut en boucle de fond et concentrez l attention vive sur la derniere pulsation.'
+          name: 'Concentrer l’attention sur la dernière touche',
+          desc: 'Le début de la suite reste identique d’un tour à l’autre : consacrez l’essentiel de votre attention à l’élément qui vient de s’ajouter.',
+          tips: 'Révisez le début en tâche de fond et concentrez-vous sur la fin.'
         }
       ]
     },
     steps: [
-      'Lancez la session de 45 secondes et stabilisez votre regard sur le centre.',
-      'Observez avec precision la suite d illuminations et de signaux sonores.',
-      'Reorganisez mentalement la suite en blocs couples de deux ou trois teintes.',
-      'Des que la commande passe a vous, pressez les touches dans l ordre avec assurance.',
-      'Franchissez les paliers successifs pour accroitre vos multiplicateurs et votre record.'
+      'Lancez la séance de 45 secondes et fixez le centre des touches.',
+      'Observez la suite de lumières et de sons.',
+      'Regroupez mentalement la suite en blocs de deux ou trois couleurs.',
+      'Dès que la main passe à vous, appuyez sur les touches dans l’ordre.',
+      'Franchissez les niveaux pour augmenter votre score et votre record.'
     ],
-    audience: 'Etudiants, candidats, professionnels et joueurs competitifs souhaitant optimiser leur memoire de travail, leurs strategies de chunking et leur sang-froid.',
+    audience: 'Étudiants, candidats à des concours, seniors et joueurs qui veulent s’exercer au regroupement et à la mémorisation de suites.',
     faqs: faqSchema.mainEntity.map(e => ({ q: e.name, a: e.acceptedAnswer.text })),
     sources: pickSources('miller1956', 'cowan2001', 'baddeley1974', 'luck1997', 'woods2015'),
     related: [
-      { href: "/fr/drills/memory/short-term-memory/digit-span", label: "Test d Empan de Chiffres" },
-      { href: "/fr/drills/memory/short-term-memory/word-recall", label: "Test de Memoire Verbale" },
-      { href: "/fr/drills/memory/spatial-memory/grid-memorization", label: "Memoire Spatiale sur Grille" },
-      { href: "/fr/drills/cognitive/focus/concentration-grid", label: "Table de Schulte en Ligne" },
-      { href: "/fr/drills/cognitive/focus/distraction-fighter", label: "Test de Stroop en Ligne" }
+      { href: "/fr/drills/memory/short-term-memory/digit-span", label: "Test d’empan de chiffres" },
+      { href: "/fr/drills/memory/short-term-memory/word-recall", label: "Test de mémoire verbale" },
+      { href: "/fr/drills/memory/spatial-memory/grid-memorization", label: "Mémoire spatiale sur grille" },
+      { href: "/fr/drills/cognitive/focus/concentration-grid", label: "Table de Schulte en ligne" },
+      { href: "/fr/drills/cognitive/focus/distraction-fighter", label: "Test de Stroop en ligne" }
     ]
   };
 
