@@ -27,3 +27,4 @@
 | /pt/drills/visual | done | TBD:visual-hub | docs/seo/research/pt/visual-hub.md | title kept; extraocular-muscle/UFOV/transfer claims softened |
 | /pt/drills/memory | done | TBD:memory-hub | docs/seo/research/pt/memory-hub.md | audited, no change needed; teste de memoria 147 / jogo da memória 516 Bing BR |
 | /pt/drills/reaction-speed | done | TBD:reaction-speed-hub | docs/seo/research/pt/reaction-speed-hub.md | audited, no change needed; teste de reação 183, tempo de reação 100 Bing BR |
+| /pt/drills/reaction-speed/fps-tracking-trainer | done | TBD:fps-tracking-trainer | docs/seo/research/pt/fps-tracking-trainer.md | title Treino de Mira Tracking: Alvos Móveis (suggest proxy); demand not verified; lib/i18n/drills/fpsTrackingTrainer.js pt title |
