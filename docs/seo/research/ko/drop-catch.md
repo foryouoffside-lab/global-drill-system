@@ -14,7 +14,7 @@ Tools and shared data: `docs/seo/research/ko/drills-directory.md`. Bing 0 / Nave
 Falling green/red target game. Not a physical ruler-drop test; the page says so and answers the `자 떨어뜨리기` comparison in the FAQ instead of claiming it is one.
 
 ## B3
-Demand 1 (low/unmeasured), competition ease 3 (unverified), intent fit 3. Decision: title leads with the honest descriptor `낙하 반응속도 게임`, keeps `자 떨어뜨리기 테스트` as the comparison term.
+Demand 1 (low/unmeasured), competition ease 3 (unverified), intent fit 3. Decision: title `자 떨어뜨리기 반응속도 게임 | 초록 표적 잡기` (distinct from reaction-game `반응속도 게임 · 낙하 표적 테스트`).
 
 ## Defects found / changes
 - Old H1/title called the page `자 반응속도 테스트` (a ruler-drop test); it is a falling-target choice task. Retitled.

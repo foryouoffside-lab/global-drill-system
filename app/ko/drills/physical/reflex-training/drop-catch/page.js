@@ -5,7 +5,7 @@ import { getAlternateLanguages } from '@/lib/i18n/locales';
 import { pickSources } from '@/lib/drillSources';
 
 const url = 'https://skilldrills.online/ko/drills/physical/reflex-training/drop-catch';
-const title = "낙하 반응속도 게임 | 자 떨어뜨리기 테스트 | SkillDrills";
+const title = "자 떨어뜨리기 반응속도 게임 | 초록 표적 잡기 | SkillDrills";
 const description = "떨어지는 초록 표적만 클릭하고 붉은 함정은 피하는 무료 반응속도 게임. 자 떨어뜨리기 테스트처럼 낙하 타이밍과 순발력을 연습하세요.";
 
 export const metadata = {
@@ -43,7 +43,7 @@ const breadcrumbSchema = {
     {
       "@type": "ListItem",
       "position": 4,
-      "name": "낙하 반응속도 게임 · 드롭 캐치",
+      "name": "자 떨어뜨리기 반응속도 게임 · 드롭 캐치",
       "item": "https://skilldrills.online/ko/drills/physical/reflex-training/drop-catch"
     }
   ]
@@ -288,7 +288,7 @@ export default function LocalizedDropCatchPageKo() {
       />
       <DropCatchClient
         copy={{
-          title: "낙하 반응속도 게임 · 드롭 캐치",
+          title: "자 떨어뜨리기 반응속도 게임 · 드롭 캐치",
           subtitle: "낙하 표적을 잡고 붉은 함정을 피하기",
           hudLabels: {
             score: "현재 점수",
