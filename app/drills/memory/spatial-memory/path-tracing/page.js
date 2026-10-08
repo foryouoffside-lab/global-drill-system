@@ -247,7 +247,7 @@ export default function PathTracingPage() {
 
   const pathTracingGuide = {
     intro: [
-      "The Path Tracing Memory Test evaluates sequential visuospatial working memory, dynamic route retention, and directional trajectory reconstruction across progressive 3x3 to 7x7 matrix grids. Rooted in the pioneering neuropsychological Corsi Block-Tapping paradigm (Milner, 1971; Corsi, 1972) and Robert H. Logie's (1995) 'Inner Scribe' model, this assessment isolates active spatiotemporal movement encoding from static visual pattern storage.",
+      "A path tracing memory test, based on the Corsi block-tapping task, shows a route across a grid and asks you to retrace it in the same order. In this free online version the grid grows from 3x3 to 7x7 and each level adds one step, so it measures your spatial span.",
       "During each trial, an animated target illuminates across a sequence of matrix coordinates at standardized 500 ms intervals. Users must encode both spatial coordinates and temporal order, then faithfully retrace the entire route in exact chronological sequence during 60 seconds of active tracing time; path demonstrations are untimed.",
       "In working memory architecture, Logie (1995) and Alan Baddeley (2000) identified that sequential movement is retained by the Inner Scribe, a dynamic spatial rehearsal loop. George A. Miller (1956) and Herbert A. Simon (1974) proved that sequential performance hinges on directional chunking, while Nelson Cowan (2001) established that unassisted focal working memory is limited to roughly 4 items.",
       "Standardized normative studies on computerized Corsi block tasks (Kessels et al., 2000) established the healthy adult forward spatial span at 5.4 ± 0.9 steps, showing that sequential retention is highly sensitive to cognitive fatigue, sleep, and executive function.",
@@ -256,16 +256,16 @@ export default function PathTracingPage() {
       "This drill is a free browser game for practice and interest. It is not a medical device, a diagnostic instrument, or a screening or treatment tool for any condition, and no score here says anything about your health or your memory in a clinical sense. If you have concerns about your memory or thinking, speak to a qualified clinician."
     ],
     benchmarks: {
-      title: "Normative Spatial Path Sequence Span Benchmarks",
+      title: "Spatial Path Sequence Span Score Bands",
       headers: ["Performance Tier", "Span Range & Grid Scale", "Drill Score", "Cognitive Profile & Trajectory Retention"],
       rows: [
-        ["Tier 1 (Superior / Clinical 99th Percentile)", "Span 10 – 14+ Steps (6x6–7x7 Grid)", "1,200+ Points", "Visuospatial sequential elite; decomposes complex multi-grid routes into 2–3 directional macro-vectors; flawless inner scribe trajectory buffering; rapid sub-400 ms tapping cadence"],
-        ["Tier 2 (High Average / 85th–95th Percentile)", "Span 8 – 9 Steps (5x5–6x6 Grid)", "900 – 1,199 Points", "Exceeds normal population averages; executes robust spatial vector grouping (L-turns, diagonals, zigzag runs); resistant to serial interference; 400 – 600 ms cadence"],
-        ["Tier 3 (Average Adult Baseline / 50th Percentile)", "Span 5 – 7 Steps (4x4–5x5 Grid)", "600 – 899 Points", "Normative adult baseline (Corsi, 1972; Kessels et al., 2000, 5.4 ± 0.9 span); comfortably manages 5–6 step sequences; begins dropping intermediate turn waypoints on 5x5 grids; 600 – 850 ms cadence"],
-        ["Tier 4 (Low Average / Sequential Decay)", "Span 4 Steps (3x3–4x4 Grid)", "400 – 599 Points", "Operates near unchunked working memory boundary (Cowan, 2001); attempts to recall each dot coordinate independently without spatial vector chunking; 850 – 1,100 ms cadence"],
-        ["Tier 5 (Impaired / Below Average Span)", "Span < 4 Steps (3x3 Grid)", "< 400 Points", "Rapid temporal trace decay; vulnerability to order transpositions; struggles to hold sequences beyond 3 steps across the retention delay; tapping cadence exceeding 1,100 ms"]
+        ["Tier 1 (Exceptional)", "Span 10 – 14+ Steps (6x6–7x7 Grid)", "1,200+ Points", "Visuospatial sequential elite; decomposes complex multi-grid routes into 2–3 directional macro-vectors; flawless inner scribe trajectory buffering; rapid sub-400 ms tapping cadence"],
+        ["Tier 2 (Advanced)", "Span 8 – 9 Steps (5x5–6x6 Grid)", "900 – 1,199 Points", "Exceeds normal population averages; executes robust spatial vector grouping (L-turns, diagonals, zigzag runs); resistant to serial interference; 400 – 600 ms cadence"],
+        ["Tier 3 (Typical)", "Span 5 – 7 Steps (4x4–5x5 Grid)", "600 – 899 Points", "Normative adult baseline (Corsi, 1972; Kessels et al., 2000, 5.4 ± 0.9 span); comfortably manages 5–6 step sequences; begins dropping intermediate turn waypoints on 5x5 grids; 600 – 850 ms cadence"],
+        ["Tier 4 (Developing)", "Span 4 Steps (3x3–4x4 Grid)", "400 – 599 Points", "Operates near unchunked working memory boundary (Cowan, 2001); attempts to recall each dot coordinate independently without spatial vector chunking; 850 – 1,100 ms cadence"],
+        ["Tier 5 (Starting out)", "Span < 4 Steps (3x3 Grid)", "< 400 Points", "Rapid temporal trace decay; vulnerability to order transpositions; struggles to hold sequences beyond 3 steps across the retention delay; tapping cadence exceeding 1,100 ms"]
       ],
-      note: "Span length and grid scale reflect maximum difficulty cleared during 60 seconds of active tracing; path demonstrations and result reveals are untimed. Normative percentiles are mapped to Corsi Block-Tapping standards (Corsi, 1972; Kessels et al., 2000; Woods et al., 2015)."
+      note: "Span length and grid scale reflect maximum difficulty cleared during 60 seconds of active tracing; path demonstrations and result reveals are untimed. The bands are an editorial guide, not population norms, because SkillDrills collects no aggregate data; the task design follows (Corsi, 1972; Kessels et al., 2000; Woods et al., 2015)."
     },
     techniques: {
       title: "Evidence-Based Protocols to Expand Spatial Path Memory",

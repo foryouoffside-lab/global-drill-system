@@ -236,7 +236,7 @@ export default function WordRecallPage() {
   const wordRecallGuide = {
     heading: "Verbal Memory Test Guide & Immediate Free Recall",
     intro: [
-      "Verbal Memory Test (Word Recall) is a clinical-grade cognitive exercise engineered to assess and strengthen verbal working memory, semantic associative encoding, and immediate free recall capacity. Free recall testing represents one of the most demanding benchmarks of human cognitive architecture, requiring the brain to retrieve information without external prompts or multiple-choice cues.",
+      "A verbal memory test shows a list of words and asks you to type back as many as you can remember. In this free online version the list grows when you recall it correctly and shrinks after a miss, and word order does not matter, so it finds your free-recall word span.",
       "The scientific study of verbal memory began with Hermann Ebbinghaus (1885), who mathematically formulated the human forgetting curve and the dynamics of serial learning. In 1958, Swiss psychologist André Rey introduced the Rey Auditory Verbal Learning Test (RAVLT), which standardized word list learning to quantify immediate memory span, proactive and retroactive interference, and delayed retrieval across clinical populations.",
       "In 1962, Bennet B. Murdock Jr. mathematically formalized the Serial Position Effect in free recall, demonstrating the distinct operations of the Primacy Effect (long-term consolidation of initial items) and the Recency Effect (temporary maintenance of terminal items in the sensory echoic buffer). Later, Fergus I. M. Craik & Robert S. Lockhart (1972) established the 'Levels of Processing' framework, proving that deep semantic encoding—such as narrative linking and thematic clustering—vastly outperforms shallow rote rehearsal.",
       "Featuring high-precision digital chronometry (Woods et al., 2015), this drill measures both word span and retrieval throughput, converging on your true verbal memory capacity through an adaptive staircase protocol.",
@@ -245,16 +245,16 @@ export default function WordRecallPage() {
       "This drill is a free browser game for practice and interest. It is not a medical device, a diagnostic instrument, or a screening or treatment tool for any condition, and no score here says anything about your health or your memory in a clinical sense. If you have concerns about your memory or thinking, speak to a qualified clinician."
     ],
     benchmarks: {
-      title: "Normative Verbal Free Recall & Word Span Benchmarks",
+      title: "Verbal Free Recall & Word Span Score Bands",
       headers: ["Performance Tier", "Word Span (Count)", "Free Recall Score", "Cognitive Storage & Retrieval Profile"],
       rows: [
-        ["Tier 1 (Superior / Clinical 99th Percentile)", "Span 8 – 11+ Words", "1,100+ Points", "Mnemonic master; deploys deep semantic narrative chaining (Craik & Lockhart, 1972); effortlessly overcomes retroactive interference; sub-800 ms per-word retrieval cadence"],
-        ["Tier 2 (High Average / 85th–95th Percentile)", "Span 6 – 7 Words", "850 – 1,099 Points", "Exceeds standard adult baseline; clusters words into relational pairs or triplets; consistent free recall under time pressure with 800 – 1,100 ms cadence"],
-        ["Tier 3 (Average Adult Baseline / 50th Percentile)", "Span 4 – 5 Words", "550 – 849 Points", "Normal population average on initial free recall trials; manages basic paired chunking; shows classic serial position dip where middle words drop; 1,100 – 1,500 ms cadence"],
-        ["Tier 4 (Low Average / Verbal Recall Bottleneck)", "Span 3 Words", "350 – 549 Points", "Relies strictly on phonological echo without semantic encoding; struggles to recall words beyond the immediate recency buffer; 1,500 – 2,000 ms cadence"],
-        ["Tier 5 (Impaired / Below Average Span)", "Span < 3 Words", "< 350 Points", "Rapid memory trace decay; severe proactive interference; difficulty retrieving words without external recognition prompts; cadence exceeding 2,000 ms"]
+        ["Tier 1 (Exceptional)", "Span 8 – 11+ Words", "1,100+ Points", "Mnemonic master; deploys deep semantic narrative chaining (Craik & Lockhart, 1972); effortlessly overcomes retroactive interference; sub-800 ms per-word retrieval cadence"],
+        ["Tier 2 (Advanced)", "Span 6 – 7 Words", "850 – 1,099 Points", "Exceeds standard adult baseline; clusters words into relational pairs or triplets; consistent free recall under time pressure with 800 – 1,100 ms cadence"],
+        ["Tier 3 (Typical)", "Span 4 – 5 Words", "550 – 849 Points", "Normal population average on initial free recall trials; manages basic paired chunking; shows classic serial position dip where middle words drop; 1,100 – 1,500 ms cadence"],
+        ["Tier 4 (Developing)", "Span 3 Words", "350 – 549 Points", "Relies strictly on phonological echo without semantic encoding; struggles to recall words beyond the immediate recency buffer; 1,500 – 2,000 ms cadence"],
+        ["Tier 5 (Starting out)", "Span < 3 Words", "< 350 Points", "Rapid memory trace decay; severe proactive interference; difficulty retrieving words without external recognition prompts; cadence exceeding 2,000 ms"]
       ],
-      note: "Word span indicates maximum error-free list length achieved on the adaptive staircase; normative scores reflect adult free recall trial 1 baselines (Rey, 1964; Murdock, 1962; Woods et al., 2015)."
+      note: "Word span indicates maximum error-free list length achieved on the adaptive staircase; the bands are an editorial guide, not population norms (task design: Rey, 1964; Murdock, 1962; Woods et al., 2015)."
     },
     techniques: {
       title: "Evidence-Based Protocols to Expand Verbal Free Recall",

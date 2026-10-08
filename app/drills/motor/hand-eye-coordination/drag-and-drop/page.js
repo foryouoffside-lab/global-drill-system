@@ -237,8 +237,9 @@ const howToSchema = {
 const guideProps = {
   sources: pickSources('accot1997', 'mackenzie1991', 'fitts1954', 'elliott2010', 'woods2015'),
   intro: {
-    title: 'The Biomechanics of Dragging, Steering, and Sensorimotor Deceleration',
+    title: `What Is a Drag and Drop Test? Dragging, Steering and Deceleration`,
     paragraphs: [
+      `A drag and drop test measures how accurately you can pick up an item with the mouse and release it on a target. This free browser drill has you drag items to their target containers, and your accuracy and a combo multiplier set the score, so it trains controlled dragging rather than simple clicking.`,
       'In human-computer interaction, continuous dragging represents a fundamentally distinct neuromuscular challenge compared to point-and-click targeting. While discrete pointing is governed by Fitts\'s Law (Fitts, 1954), dragging requires sustained isometric co-contraction of digit flexor muscles to keep the mouse switch depressed while simultaneously coordinating multiaxial limb translation across a physical surface.',
       'In their seminal empirical evaluation, MacKenzie, Sellen, and Buxton (1991) proved that dragging tasks suffer an inherent throughput penalty of 15% to 25% relative to discrete pointing. The continuous downward force alters the frictional coefficient between mouse skate skates and the mousepad, restricts fine finger articulation, and elevates neuromuscular motor noise.',
       'Furthermore, Johnny Accot and Shumin Zhai (1997) formulated the Steering Law to mathematically describe trajectory-constrained motor performance: movement time scales with the integral of distance over tunnel width along the entire trajectory. In dynamic dragging tasks, users must continually balance forward momentum against the necessity of decelerating within a moving terminal boundary (Elliott et al., 2010), engaging antagonistic muscle groups to prevent overshooting.',

@@ -232,9 +232,10 @@ const howToSchema = {
 const guideProps = {
   sources: pickSources('halstead1947', 'todor1980', 'keele1968', 'woods2015'),
   intro: {
-    title: 'How click speed is measured',
+    title: `What Is a CPS Test, and How Is Click Speed Measured?`,
     paragraphs: [
-      'A CPS test counts mouse clicks in one second. Sustained one-finger clicking runs to roughly 5\u20137 clicks per second, anchored to the published finger tapping baseline of about 50\u201355 taps per 10 seconds for a healthy adult\u2019s dominant index finger (Halstead, 1947; Todor & Kyprie, 1980). Bursts above that are open-loop: they run as a pre-programmed motor sequence rather than one deliberate press per click (Keele, 1968).',
+      `A CPS test counts how many times you click a mouse button in one second. This free browser version runs a 45-second tapping drill, so it shows your burst speed and how well you hold it as the pace builds. It runs in your browser with no download.`,
+      'Sustained one-finger clicking runs to roughly 5\u20137 clicks per second, anchored to the published finger tapping baseline of about 50\u201355 taps per 10 seconds for a healthy adult\u2019s dominant index finger (Halstead, 1947; Todor & Kyprie, 1980). Bursts above that are open-loop: they run as a pre-programmed motor sequence rather than one deliberate press per click (Keele, 1968).',
       'How this is measured, and what it cannot resolve: timing comes from the browser\'s performance.now() clock, which is deliberately coarsened to roughly 1 ms as a Spectre mitigation, and the display quantizes every target to its own refresh interval — about 16.7 ms at 60 Hz, 6.9 ms at 144 Hz and 4.1 ms at 240 Hz (Woods et al., 2015). Mouse polling adds roughly 8 ms at 125 Hz against about 1 ms at 1000 Hz. Treat any difference under about 5 ms as measurement noise, and compare your own runs on the same mouse and display rather than against someone else\'s setup. SkillDrills stores every score in your browser and collects no aggregate data, so nothing here is a population norm.',
     ],
   },

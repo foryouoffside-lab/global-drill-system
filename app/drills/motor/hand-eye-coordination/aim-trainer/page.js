@@ -248,7 +248,7 @@ const howToSchema = {
 const copyEn = {
   h1Keyword: "Aim Trainer Online",
   h1Suffix: null,
-  subtitle: "Online aim trainer for mouse accuracy, target acquisition, reaction speed, and precision click timing",
+  subtitle: "Free mouse accuracy, target acquisition, and click-timing drill",
   rulesItems: [
     { num: "1", text: "Target Hit", highlight: "+100 PTS / +0.6s", result: "Acquire & Click Moving Targets" },
     { num: "2", text: "Continuous Combo", highlight: "Up to 3.0× Points", result: "Chain Consecutive Hits" },
@@ -261,8 +261,9 @@ const guideProps = {
   sources: pickSources('fitts1954', 'mackenzie1992', 'elliott2010', 'woodworth1899', 'woods2015'),
   eyebrow: "Motor Control Psychophysics & Human-Computer Interaction",
   intro: {
-    title: "The Science of Mouse Aim, Fitts's Law & Motor Acquisition Precision",
+    title: `What Is an Aim Trainer? Fitts's Law and Mouse Precision`,
     paragraphs: [
+      `An aim trainer is a browser drill where you click moving targets as fast and accurately as you can to train mouse control. This free one scores each hit and miss, scales difficulty with your score, and tracks accuracy and streak, so you can see whether your aim improves between sessions.`,
       "Target acquisition with a computer mouse is among the most demanding fine motor coordination tasks evaluated in human-computer interaction (HCI) and sports psychophysics. Whether clearing corners in tactical first-person shooters, operating surgical robotic interfaces, or conducting rapid visual-motor inspection, the human neuromuscular system must translate two-dimensional visual coordinates into rapid, sub-millimeter physical contractions of the hand, wrist, and forearm (Fitts, 1954; MacKenzie, 1992).",
     ],
   },

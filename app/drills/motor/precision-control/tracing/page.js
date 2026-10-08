@@ -220,8 +220,9 @@ const howToSchema = {
 const guideProps = {
   sources: pickSources('accot1997', 'krauzlis2004', 'rashbass1961', 'woodworth1899', 'woods2015'),
   intro: {
-    title: 'How continuous tracking is measured',
+    title: `What Is a Mouse Tracing Game, and How Is Tracking Measured?`,
     paragraphs: [
+      `A mouse tracing game asks you to keep your cursor on a wave that scrolls across the screen. This free browser drill speeds the wave up and widens its swings over 45 seconds and scores how well you stay on it, a measure called flow integrity, so it trains smooth cursor tracking.`,
       'How this is measured, and what it cannot resolve: timing comes from the browser\'s performance.now() clock, which is deliberately coarsened to roughly 1 ms as a Spectre mitigation, and the display quantizes every target to its own refresh interval — about 16.7 ms at 60 Hz, 6.9 ms at 144 Hz and 4.1 ms at 240 Hz (Woods et al., 2015). Mouse polling adds roughly 8 ms at 125 Hz against about 1 ms at 1000 Hz. Treat any difference under about 5 ms as measurement noise, and compare your own runs on the same mouse and display rather than against someone else\'s setup. SkillDrills stores every score in your browser and collects no aggregate data, so nothing here is a population norm.',
     ],
   },
@@ -304,8 +305,8 @@ const guideProps = {
 };
 
 const copyEn = {
-  title: "Mouse Tracing Game",
-  subtitle: "Cursor tracking & smooth tracing • 45s",
+  title: "Mouse Tracking Test",
+  subtitle: "Mouse tracing game: follow the wave • 45s",
   startButtonText: "Start Drill",
   trainAgain: "Train Again",
   shareTitle: "Share Score",
