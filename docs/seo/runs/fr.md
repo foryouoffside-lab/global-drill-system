@@ -42,3 +42,4 @@
 - /fr/drills/memory | done | f4b56eaf | docs/seo/research/fr/memory-hub.md | hub; shared edit lib/i18n/memoryHubNative.js fr line (jeux de memoire 179 Bing)
 - /fr/drills/reaction-speed | done | 4f792158 | docs/seo/research/fr/reaction-speed-hub.md | hub; shared edit lib/i18n/reactionSpeedHubNative.js fr line
 - /fr/drills/motor | done | d3f923fc | docs/seo/research/fr/motor-hub.md | hub; H1/H2 from client dictionary left (D2)
+- /fr/drills/physical | done | a732beba | docs/seo/research/fr/physical-hub.md | hub; demand not verified (Bing 0)
