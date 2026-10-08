@@ -6,7 +6,7 @@ import { getAlternateLanguages } from '@/lib/i18n/locales';
 import { pickSources } from '@/lib/drillSources';
 
 export const metadata = {
-  title: "Poursuite Oculaire Réactive | Cible Mobile | SkillDrills",
+  title: "Exercice de poursuite oculaire : cible mobile | SkillDrills",
   description: "Rattrapez une cible mobile qui change de direction. Travaillez la vision dynamique, la réactivité et la refixation fovéale en ligne.",
   keywords: [
     "poursuite oculaire",
@@ -28,7 +28,7 @@ export const metadata = {
   },
   robots: { index: true, follow: true },
   openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
-    title: "Poursuite Oculaire Réactive | Cible Mobile | SkillDrills",
+    title: "Exercice de poursuite oculaire : cible mobile | SkillDrills",
     description: "Rattrapez une cible mobile qui change de direction et travaillez vision dynamique, réactivité et refixation fovéale.",
     url: "https://skilldrills.online/fr/drills/visual-tracking/dynamic-evasion-pursuit",
     siteName: "SkillDrills",
@@ -37,7 +37,7 @@ export const metadata = {
   },
   twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: "summary_large_image",
-    title: "Poursuite Oculaire Réactive | Cible Mobile | SkillDrills",
+    title: "Exercice de poursuite oculaire : cible mobile | SkillDrills",
     description: "Rattrapez une cible mobile qui change de direction et travaillez vision dynamique, réactivité et refixation fovéale.",
   },
 };
@@ -196,7 +196,7 @@ const faqSchema = {
       "name": "Quel volume d’entraînement quotidien est conseillé ?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Nous conseillons 5 à 10 minutes par jour (5 à 8 blocs de 60 secondes). Les ruptures angulaires sollicitant intensément l'attention et la motricité réflexe, des formats concis préviennent l'épuisement oculaire et stimulent la neuroplasticité."
+        "text": "Nous conseillons 5 à 10 minutes par jour (5 à 8 blocs de 60 secondes). Les ruptures angulaires sollicitant intensément l'attention et la motricité réflexe, des formats concis préviennent l'épuisement oculaire."
       }
     },
     {
@@ -220,7 +220,7 @@ const faqSchema = {
       "name": "Cet exercice apporte-t-il des bénéfices aux athlètes de sports collectifs ?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Oui. Au football, au tennis ou au basketball, les feintes d'adversaires et les trajectoires de balles déviées exigent une réacquisition fovéale immédiate. Cette agilité visuelle affine la vitesse d'anticipation motrice."
+        "text": "Au football, au tennis ou au basketball, les feintes et les balles déviées demandent de retrouver vite la cible du regard. Cet exercice entraîne ce mécanisme sur écran, sans preuve que le gain se transfère au terrain."
       }
     },
     {
@@ -237,6 +237,7 @@ const faqSchema = {
 const guideProps = {
   heading: "Bases Neurophysiologiques de la Poursuite Oculaire Réactive",
   intro: [
+    "Cet exercice de poursuite oculaire avec cible mobile vous demande de suivre du regard un point qui file en ligne droite puis change brusquement de direction. À chaque virage, votre regard décroche et doit rattraper la cible. Ce n’est pas un test médical : c’est un entraînement avec un repère de progression personnel.",
     "Les entraînements oculaires traditionnels reposent souvent sur des trajectoires régulières, au sein desquelles le cervelet aide à anticiper le mouvement grâce à une commande motrice prédictive (Bahill, Iandolo, & Troost, 1980). Ici, la cible parcourt des segments rectilignes avant de changer soudainement de direction, comme dans les sports rapides et les jeux compétitifs.",
     "Glissement rétinien et saccades de rattrapage : lors d'une déviation imprévisible, l'image se déplace sur la rétine plus vite que la poursuite fluide ne peut la compenser. Le cortex visuel et le colliculus supérieur traitent cette erreur et orientent une saccade corrective pour ramener la fovéa sur la cible (Rashbass, 1961 ; Krauzlis, 2004 ; Barnes, 2008).",
     "Fréquence de rafraîchissement et latence d'affichage : un écran à 60 Hz peut imposer jusqu'à 16,7 ms entre deux images, tandis que 144 Hz ou 240 Hz réduisent cet intervalle. L'application fonctionne dans le navigateur et conserve les résultats localement, sans inscription."
@@ -261,7 +262,7 @@ const guideProps = {
     title: "Normes de Performance en Poursuite Évasive et Refixation Saccadique",
     headers: ["Niveau de Performance", "Multiplicateur de Vitesse", "Refixation Saccadique lors des Ruptures Évasives", "Profil Neuromoteur et Oculaire"],
     rows: [
-      ["Niveau 1 : Apex Réactif – Réflexes d’Élite", "2.0x+ Ultra-Vitesse", "La saccade corrective intervient en moins de 150 ms ; verrouillage fovéal immédiat sans oscillation résiduelle.", "Vitesse maximale de conduction synaptique entre fovéa et noyaux oculomoteurs. Standard des compétiteurs professionnels d'esport et athlètes de pointe."],
+      ["Niveau 1 : Apex Réactif – Réflexes d’Élite", "2.0x+ Ultra-Vitesse", "La saccade corrective intervient en moins de 150 ms ; verrouillage fovéal immédiat sans oscillation résiduelle.", "Vitesse maximale de conduction synaptique entre fovéa et noyaux oculomoteurs. Niveau de référence de l'exercice, sans valeur de classement."],
       ["Niveau 2 : Agilité Visuelle Supérieure", "1.4x – 1.9x Haute Vitesse", "Recentrage rapide et fiable en 1 à 2 images vidéo ; reprise immédiate de la vitesse de poursuite continue.", "Contrôle remarquable des muscles oculomoteurs externes. Excellente maîtrise face aux déplacements d'esquive imprévisibles."],
       ["Niveau 3 : Standard Fonctionnel Solide", "1.0x – 1.3x Vitesse Standard", "Suivi régulier des portions linéaires ; léger retard de latence lors des ruptures à angle aigu.", "Profil représentatif des adultes sains. Parfaitement adapté à la conduite automobile, aux sports de loisir et aux jeux vidéo."],
       ["Niveau 4 : Refixation Retardée – Pratique Recommandée", "0.7x – 0.9x Vitesse Modérée", "La cible décroche de la fovéa sur la majorité des ruptures ; nécessite plusieurs saccades successives pour reprendre l'alignement.", "Latence sensori-motrice augmentée lors des changements de cap. Entraînement recommandé à vitesses réduites."],
@@ -308,7 +309,7 @@ export default function DynamicEvasionPursuitPageFr() {
       />
       <DynamicEvasionPursuitClient
         copy={{
-          title: "Poursuite Oculaire Réactive – Cible Mobile",
+          title: "Exercice de poursuite oculaire : cible mobile",
           subtitle: "Entraînement de Refixation Fovéale et Réaction aux Ruptures Brusques",
           description: "En alternant trajectoires linéaires régulières et ruptures d'angles imprévisibles, cet exercice empêche l'anticipation motrice cérébelleuse. Le système oculomoteur opère en boucle fermée, déclenchant des saccades rapides pour recentrer la cible sur la fovéa (Bahill et al., 1980; Krauzlis, 2004)."
         }}

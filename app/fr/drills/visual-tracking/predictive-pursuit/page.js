@@ -173,7 +173,7 @@ const faqSchema = {
       "name": "Quel est l intérêt de cet entraînement pour les sportifs de balle ?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Au baseball, au cricket ou au tennis, la vitesse de la balle dépasse la vitesse maximale de réaction. Les athlètes projettent la trajectoire avant la frappe (Kowler, 1989)."
+        "text": "Au baseball, au cricket ou au tennis, la vitesse de la balle dépasse la vitesse maximale de réaction. Les athlètes projettent la trajectoire avant la frappe (Kowler, 1989). Cet exercice entraîne ce réflexe d’anticipation sur écran, sans preuve de transfert au terrain."
       }
     },
     {
@@ -222,15 +222,16 @@ const faqSchema = {
 const guideProps = {
   heading: "Principes Scientifiques de la Poursuite Oculaire Prédictive et Extrapolation",
   intro: [
+    "Cet exercice de poursuite oculaire prédictive vous fait suivre une cible mobile qui disparaît brièvement : vous devez estimer où elle réapparaît. Il mesure le temps de réaction et l’écart de trajectoire. C’est un entraînement avec des repères personnels, pas un examen médical.",
     "Le système visuel humain est confronté à un obstacle physiologique incontournable : un temps de latence sensorimotrice de 130 à 150 millisecondes pour que l influx lumineux rétinien chemine jusqu aux centres corticaux et déclenche la contraction des muscles oculomoteurs. Si le guidage du regard fonctionnait purement par boucle de rétroaction réactive, la fovéa subirait un glissement rétinien continu (retinal slip), restant constamment en retard sur les cibles mobiles. L adaptation évolutive face à ce défi réside dans la poursuite oculaire prédictive.",
     "Les recherches pionnières de Robinson (1965) et Barnes (2008) ont mis en évidence la capacité du cervelet, en lien direct avec les champs oculaires frontaux (FEF), à extraire la vitesse et la trajectoire de la cible dans les 100 à 200 premières millisecondes de son parcours. Grâce à ces paramètres, le cerveau émet un modèle interne feedforward qui propulse le regard à la vitesse future estimée, éliminant totalement le retard temporel biologique.",
-    "Dans les sports dynamiques et l esport, les cibles disparaissent fréquemment derrière des décors, obstacles ou zones de fumée. Les travaux expérimentaux de Bennett & Barnes (2003) ont démontré que la mémoire de travail visuelle frontale stocke la dynamique cinétique et maintient la poursuite oculaire sans aucun stimulus direct pendant près de deux secondes. L exercice Predictive Pursuit développe précisément cette faculté motrice d anticipation."
+    "Dans les sports et les jeux, les cibles disparaissent parfois derrière un obstacle. Bennett & Barnes (2003) ont montré que le regard peut continuer à suivre le mouvement quelques instants sans stimulus visible. Cet exercice fait travailler cette anticipation sur écran, sans promesse de transfert au terrain."
   ],
   benchmarks: {
     title: "Repères pour prévoir une trajectoire sous masquage",
     headers: ["Niveau", "Précision de la prévision (%)", "Écart à la réapparition", "Correspondance de la poursuite", "Profil d anticipation"],
     rows: [
-      ["Élite (Esport / Athlètes)", "Supérieur à 94%", "Inférieur à 15 px (Atterrissage Parfait)", "0.95 – 1.02", "Modèle cérébelleux optimal ; anticipation millimétrique sans saccade correctrice consécutive."],
+      ["Très précis","Supérieur à 94%", "Inférieur à 15 px (Atterrissage Parfait)", "0.95 – 1.02", "Modèle cérébelleux optimal ; anticipation millimétrique sans saccade correctrice consécutive."],
       ["Avancé (Niveau Compétition)", "86% – 93%", "15 px – 28 px", "0.88 – 0.94", "Excellente extrapolation vectorielle avec minime ajustement à la réapparition."],
       ["Compétent (Adulte Sain)", "76% – 85%", "29 px – 45 px", "0.78 – 0.87", "Prédiction solide avec légère dérive lors d occlusions prolongées."],
       ["En Progression", "62% – 75%", "46 px – 65 px", "0.65 – 0.77", "Prédominance du contrôle réactif ; décélération notable dans la zone masquée."],
@@ -270,7 +271,7 @@ const guideProps = {
     "Pendant le passage masqué, poursuivez le glissement oculaire régulier sur la trajectoire extrapolée.",
     "Reprenez le contact fovéal dès la réapparition du mobile et observez votre précision d anticipation."
   ],
-  audience: "Joueurs de jeux de tir compétitifs (Valorant, CS2, Overwatch 2, Apex Legends), sportifs de disciplines de balle (tennis, baseball) et passionnés d entraînement neurovisuel.",
+  audience: "Joueurs de jeux de tir, sportifs de disciplines de balle et toute personne qui veut s’exercer à anticiper la trajectoire d’une cible masquée.",
   faqs: faqSchema.mainEntity.map(item => ({
     q: item.name,
     a: item.acceptedAnswer.text

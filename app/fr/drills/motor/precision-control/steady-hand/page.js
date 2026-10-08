@@ -10,8 +10,8 @@ import { pickSources } from '@/lib/drillSources';
 // ============================================================
 
 export const metadata = {
-  title: 'Précision souris | Test de main sûre | SkillDrills',
-  description: 'Suivez un tracé de plus en plus étroit pour mesurer la précision du curseur et la stabilité de la main. Test gratuit dans le navigateur.',
+  title: 'Jeu du fil électrique : précision souris | SkillDrills',
+  description: 'Jeu du fil électrique gratuit : guidez le curseur sans toucher les parois d’un tracé de plus en plus étroit et mesurez la stabilité de votre main.',
   keywords: [
     'test de précision souris', 'test de main sûre', 'précision du curseur',
     'suivre un tracé', 'motricité fine souris', 'stabilité de la main',
@@ -19,8 +19,8 @@ export const metadata = {
     'couloir étroit', 'coordination œil-main', 'test de trajectoire souris',
   ],
   openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
-    title: 'Précision souris | Test de main sûre | SkillDrills',
-    description: 'Suivez un tracé de plus en plus étroit pour mesurer la précision du curseur et la stabilité de la main. Test gratuit dans le navigateur.',
+    title: 'Jeu du fil électrique : précision souris | SkillDrills',
+    description: 'Guidez le curseur sans toucher les parois d’un tracé qui se rétrécit. Jeu gratuit de stabilité de la main dans le navigateur.',
     type: 'article',
     url: 'https://skilldrills.online/fr/drills/motor/precision-control/steady-hand',
     siteName: 'SkillDrills',
@@ -28,8 +28,8 @@ export const metadata = {
   },
   twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: 'summary_large_image',
-    title: 'Précision souris | Test de main sûre | SkillDrills',
-    description: 'Suivez un tracé de plus en plus étroit pour mesurer la précision du curseur et la stabilité de la main. Test gratuit dans le navigateur.',
+    title: 'Jeu du fil électrique : précision souris | SkillDrills',
+    description: 'Jeu du fil électrique gratuit pour mesurer la précision du curseur et la stabilité de la main.',
   },
   robots: { index: true, follow: true },
   alternates: {
@@ -225,6 +225,7 @@ const guideProps = {
   intro: {
     title: 'Comment la stabilité de la main et la précision sont mesurées',
     paragraphs: [
+      'Le jeu du fil électrique en ligne vous demande de guider le curseur le long d’un tracé qui se rétrécit sans toucher les parois. Il mesure la stabilité de la main et la précision de la souris : tours réussis, contacts avec les parois et série sans erreur. Ce n’est pas un test médical de tremblement.',
       'Fiabilité des mesures et contraintes matérielles : La mesure temporelle provient de l\'API performance.now() du navigateur, quantifiée à ~1 ms pour des raisons de sécurité. L\'affichage est synchronisé avec le taux de rafraîchissement de l\'écran — ~16,7 ms à 60 Hz, ~6,9 ms à 144 Hz et ~4,1 ms à 240 Hz (Woods et al., 2015). Le taux d\'interrogation de la souris ajoute ~8 ms à 125 Hz contre ~1 ms à 1000 Hz. Tout écart inférieur à 5 ms relève du bruit de mesure. SkillDrills stocke vos performances uniquement dans votre navigateur.',
     ],
   },
@@ -239,7 +240,7 @@ const guideProps = {
         stat: 'Niveau 12+',
         level: '12–15 px',
         accuracy: 'Moins de 2,5 px',
-        percentile: 'Exceptionnel (Top 1%)',
+        percentile: 'Exceptionnel',
       },
       {
         tier: 'Tier 2',
@@ -247,7 +248,7 @@ const guideProps = {
         stat: 'Niveau 9–11',
         level: '16–22 px',
         accuracy: 'Moins de 4,0 px',
-        percentile: 'Avancé (Top 5%)',
+        percentile: 'Avancé',
       },
       {
         tier: 'Tier 3',
@@ -255,7 +256,7 @@ const guideProps = {
         stat: 'Niveau 6–8',
         level: '23–32 px',
         accuracy: 'Moins de 6,5 px',
-        percentile: 'Solide (Top 25%)',
+        percentile: 'Solide',
       },
       {
         tier: 'Tier 4',
@@ -307,8 +308,9 @@ const guideProps = {
 };
 
 const frCopy = {
-  h1Keyword: 'Test de Précision Souris',
-  h1Suffix: ' (Main Sûre)',
+  h1Keyword: 'Jeu du fil électrique',
+  h1Suffix: ' (précision souris)',
+  subtitle: 'Guidez le curseur dans un tracé étroit sans toucher les parois',
   caption: 'Le jeu du fil électrique teste la stabilité de votre main et votre motricité fine en guidant le curseur sans toucher les parois d\'un parcours étroit. Fondé sur la loi de direction d\'Accot-Zhai (1997) et le contrôle en boucle fermée de Woodworth (1899).',
   statLaps: 'Tours',
   statTime: 'Temps Restant',

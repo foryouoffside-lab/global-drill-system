@@ -6,7 +6,7 @@ import { getAlternateLanguages } from '@/lib/i18n/locales';
 import { pickSources } from '@/lib/drillSources';
 
 export const metadata = {
-  title: "Poursuite Oculaire Réactive | SkillDrills",
+  title: "Exercice de poursuite oculaire chaotique | SkillDrills",
   description: "Rattrapez une cible qui change de direction et de vitesse. Travaillez la réactivité visuelle, les saccades et la vision dynamique en ligne.",
   keywords: [
     "poursuite oculaire",
@@ -28,7 +28,7 @@ export const metadata = {
   },
   robots: { index: true, follow: true },
   openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
-    title: "Poursuite Oculaire Réactive | SkillDrills",
+    title: "Exercice de poursuite oculaire chaotique | SkillDrills",
     description: "Rattrapez une cible qui change de direction et de vitesse. Travaillez la réactivité visuelle, les saccades et la vision dynamique en ligne.",
     url: "https://skilldrills.online/fr/drills/visual-tracking/directional-chaos-pursuit",
     siteName: "SkillDrills",
@@ -37,7 +37,7 @@ export const metadata = {
   },
   twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: "summary_large_image",
-    title: "Poursuite Oculaire Réactive | SkillDrills",
+    title: "Exercice de poursuite oculaire chaotique | SkillDrills",
     description: "Rattrapez une cible imprévisible et entraînez la réactivité du regard gratuitement en ligne.",
   },
 };
@@ -180,7 +180,7 @@ const faqSchema = {
       "name": "Quel est l’intérêt direct de cet entraînement pour le suivi dans les jeux de tir (FPS) ?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Dans des jeux comme Apex Legends, Overwatch 2 ou CS2, les adversaires utilisent des déplacements latéraux imprévisibles pour casser la visée. Cet entraînement réduit la désorientation visuelle et accélère la réacquisition fovéale des cibles mobiles."
+        "text": "Dans les jeux de tir, les adversaires changent de direction pour casser la visée. Cet exercice fait travailler la reprise de cible après un changement brusque ; le transfert vers le jeu n’est pas démontré par ce test."
       }
     },
     {
@@ -220,7 +220,7 @@ const faqSchema = {
       "name": "Cet entraînement apporte-t-il des bénéfices concrets dans les sports réels (tennis, football) ?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Oui. Les balles à effet, rebonds sur gazon et déviations aériennes sollicitent exactement ce mécanisme de refixation fovéale d'urgence. Les athlètes dotés d'une réacquisition rapide conservent la trajectoire visuelle sans décrochage."
+        "text": "Les balles à effet et les rebonds irréguliers sollicitent le même type de reprise du regard. Cet exercice reproduit ce mécanisme sur écran, mais il ne prouve pas de gain en tennis ou en football."
       }
     },
     {
@@ -237,6 +237,7 @@ const faqSchema = {
 const guideProps = {
   heading: "Bases Neuroscientifiques de la Poursuite Oculaire Chaotique et des Saccades",
   intro: [
+    "Cet exercice de poursuite oculaire chaotique vous demande de suivre du regard une cible dont la direction et la vitesse changent sans prévenir. Vous ne pouvez pas anticiper : chaque virage oblige l’œil à rattraper la cible par une saccade. Ce n’est pas un test médical ; il sert d’entraînement et de repère personnel.",
     "La plupart des exercices de suivi visuel recourent à des figures géométriques prévisibles, ce qui permet aux circuits cérébelleux de remplacer la boucle sensorielle en temps réel par une commande motrice prédictive (Bahill, Iandolo, & Troost, 1980). La Poursuite Chaotique Directionnelle élimine ce raccourci : des perturbations vectorielles continues et des rebonds aléatoires empêchent toute prédiction, contraignant les centres oculomoteurs à opérer dans une boucle réflexe de rétroaction.",
     "Dynamique des Saccades de Rattrapage et Glissement Rétinien : dès qu'une rupture ou une accélération imprévue survient, la vitesse angulaire dépasse la capacité de la poursuite fluide (~30°/s), projetant l'image hors de la fovéa centrale. Le cortex visuel et le colliculus supérieur mesurent l'erreur de position et déclenchent une saccade corrective en 150 à 200 ms (Rashbass, 1961 ; Krauzlis, 2004 ; Barnes, 2008). La rapidité avec laquelle le regard recentre la cible et rétablit le niveau de poursuite définit l'agilité oculomotrice de haut niveau.",
     "Latence Matérielle et Échantillonnage Temporel : les écrans standards à 60 Hz ajoutent jusqu'à 16,7 ms de latence d'affichage, tandis que les dalles à 144 Hz ou 240 Hz réduisent ce délai sous 4,2 ms (Woods et al., 2015). Cet outil fonctionne intégralement dans le navigateur, assurant la protection absolue de vos données avec un stockage exclusivement local."
@@ -245,7 +246,7 @@ const guideProps = {
     title: "Normes de Performance en Poursuite Chaotique et Récupération Saccadique",
     headers: ["Niveau de Performance", "Multiplicateur de Vitesse", "Délai de Refixation et Stabilité du Regard", "Profil Neuromoteur et Oculaire"],
     rows: [
-      ["Niveau 1 : Apex Réactif – Réflexes d’Élite", "2.0x+ Ultra-Vitesse", "La saccade corrective intervient dès la rupture de trajectoire ; refixation fluide et immédiate sur le nouveau vecteur.", "Vitesse de transmission synaptique optimale entre rétine et noyaux oculomoteurs. Standard des compétiteurs professionnels d’esport et de sport dynamique."],
+      ["Niveau 1 : Apex Réactif – Réflexes d’Élite", "2.0x+ Ultra-Vitesse", "La saccade corrective intervient dès la rupture de trajectoire ; refixation fluide et immédiate sur le nouveau vecteur.", "Vitesse de transmission synaptique optimale entre rétine et noyaux oculomoteurs. Niveau de référence de l’exercice, sans valeur de classement."],
       ["Niveau 2 : Récupération Saccadique Supérieure", "1.4x – 1.9x Haute Vitesse", "Recentrage fovéal rapide avec dépassement oscillatoire minime ; poursuite fluide rétablie en moins de 180 ms.", "Coordination remarquable des muscles oculomoteurs externes. Excellente réactivité face aux variations d’angles brutales."],
       ["Niveau 3 : Standard Fonctionnel Solide", "1.0x – 1.3x Vitesse Standard", "Poursuite régulière de la trajectoire ; bref délai de latence lors des rebonds à angles très aigus.", "Profil habituel de l’adulte sain. Parfaitement adapté à la conduite, aux sports de loisir et aux jeux vidéo."],
       ["Niveau 4 : Refixation Retardée – Pratique Recommandée", "0.7x – 0.9x Vitesse Modérée", "La cible s’échappe fréquemment de la zone fovéale ; plusieurs saccades successives sont nécessaires pour retrouver l’alignement.", "Latence sensori-motrice accrue lors des changements de cap. Entraînement recommandé à vitesses réduites."],
@@ -324,7 +325,7 @@ export default function DirectionalChaosPursuitPageFr() {
       />
       <DirectionalChaosPursuitClient
         copy={{
-          title: "Poursuite Oculaire Chaotique – Chaos Pursuit",
+          title: "Exercice de poursuite oculaire chaotique",
           subtitle: "Entraînement aux Saccades de Rattrapage et Refixation Visuelle",
           description: "Face à des trajectoires imprévisibles et des rebonds stochastiques, le cerveau ne peut exploiter les modèles prédictifs du cervelet. Le système oculomoteur bascule en boucle réflexe fermée, déclenchant des saccades de rattrapage rapides pour ramener immédiatement la cible sur la fovéa centrale (Bahill et al., 1980; Krauzlis, 2004)."
         }}

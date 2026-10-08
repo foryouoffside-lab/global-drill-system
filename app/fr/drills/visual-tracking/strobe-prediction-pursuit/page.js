@@ -61,7 +61,7 @@ export default function StrobePredictionPursuitPageFR() {
     "applicationCategory": "HealthApplication",
     "operatingSystem": "Any",
     "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
-    "description": "Entraînement neurocognitif de poursuite visuelle sous impulsions périodiques d occlusion stroboscopique pour sportifs et joueurs compétitifs.",
+    "description": "Entraînement neurocognitif de poursuite visuelle sous impulsions périodiques d’occlusion stroboscopique pour sportifs et joueurs compétitifs.",
     "dateModified": "2026-09-20"
   };
 
@@ -80,15 +80,15 @@ export default function StrobePredictionPursuitPageFR() {
     "@type": "VideoGame",
     "name": "Défi de Vision Stroboscopique et Extrapolation",
     "gamePlatform": "Web Browser",
-    "genre": ["Entraînement visuel", "Exercice cognitif", "Réflexes pour l esport"],
+    "genre": ["Entraînement visuel", "Exercice cognitif", "Poursuite visuelle"],
     "dateModified": "2026-09-20"
   };
 
   const howToSchema = {
     "@context": "https://schema.org",
     "@type": "HowTo",
-    "name": "Comment Entraîner l Anticipation Visuelle sous Occlusion Stroboscopique",
-    "description": "Protocole pour stimuler le modèle interne cérébelleux par des impulsions d obscurité intermittente.",
+    "name": "Comment Entraîner l’Anticipation Visuelle sous Occlusion Stroboscopique",
+    "description": "Protocole pour stimuler le modèle interne cérébelleux par des impulsions d’obscurité intermittente.",
     "dateModified": "2026-09-20",
     "step": [
       {
@@ -98,13 +98,13 @@ export default function StrobePredictionPursuitPageFR() {
       },
       {
         "@type": "HowToStep",
-        "name": "Extrapolation en Phase d Obscurité",
+        "name": "Extrapolation en Phase d’Obscurité",
         "text": "Dès que la cible disparaît durant le masquage stroboscopique, poursuivez le mouvement du curseur en extrapolant sa position."
       },
       {
         "@type": "HowToStep",
         "name": "Réalignement Visuel Immédiat",
-        "text": "À la réapparition de la lumière, vérifiez l écart de prédiction et réajustez le curseur sans à-coups brusques."
+        "text": "À la réapparition de la lumière, vérifiez l’écart de prédiction et réajustez le curseur sans à-coups brusques."
       },
       {
         "@type": "HowToStep",
@@ -121,18 +121,18 @@ export default function StrobePredictionPursuitPageFR() {
     "mainEntity": [
       {
         "@type": "Question",
-        "name": "En quoi consiste l entraînement à la vision stroboscopique dans le sport?",
+        "name": "En quoi consiste l’entraînement à la vision stroboscopique dans le sport?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Il s agit d une méthode où la vue est masquée par intermittence à haute fréquence, contraignant le cerveau à prédire les trajectoires sans assistance visuelle continue."
+          "text": "Il s agit d’une méthode où la vue est masquée par intermittence à haute fréquence, contraignant le cerveau à prédire les trajectoires sans assistance visuelle continue."
         }
       },
       {
         "@type": "Question",
-        "name": "Comment l occlusion stroboscopique améliore-t-elle l anticipation motrice?",
+        "name": "Comment l’occlusion stroboscopique améliore-t-elle l’anticipation motrice?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "En privant temporairement les yeux d informations en continu, elle force le cervelet et le cortex pariétal à mobiliser des modèles moteurs internes prédictifs feedforward."
+          "text": "En privant temporairement les yeux d’informations en continu, elle force le cervelet et le cortex pariétal à mobiliser des modèles moteurs internes prédictifs feedforward."
         }
       },
       {
@@ -140,7 +140,7 @@ export default function StrobePredictionPursuitPageFR() {
         "name": "Quelles sont les preuves scientifiques de cet entraînement?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Les recherches menées par Appelbaum et al. (2011) et Mitroff et al. (2013) démontrent une amélioration notable de la mémoire à court terme visuelle et de la réactivité spatiale chez les athlètes."
+          "text": "Les recherches menées par Appelbaum et al. (2011) et Mitroff et al. (2013) ont étudié l’entraînement stroboscopique sur la mémoire visuelle à court terme chez des athlètes. Ces résultats portent sur des lunettes stroboscopiques ; cet exercice sur écran reproduit le principe, sans preuve équivalente."
         }
       },
       {
@@ -148,7 +148,7 @@ export default function StrobePredictionPursuitPageFR() {
         "name": "Quelle est la différence avec un entraînement de poursuite visuelle classique?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "La poursuite classique s effectue en boucle fermée avec ajustements visuels continus. L exercice stroboscopique bascule en boucle ouverte durant les masquages, imposant une pure extrapolation."
+          "text": "La poursuite classique s effectue en boucle fermée avec ajustements visuels continus. L’exercice stroboscopique bascule en boucle ouverte durant les masquages, imposant une pure extrapolation."
         }
       },
       {
@@ -156,7 +156,7 @@ export default function StrobePredictionPursuitPageFR() {
         "name": "Quels sports bénéficient le plus de la vision stroboscopique?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Le tennis, le baseball, le hockey, les gardiens de but au football, les arts martiaux et les disciplines esports comme les jeux de tir à la première personne."
+          "text": "Les sports de balle rapides, comme le tennis, le baseball ou le hockey, ont été les plus étudiés avec des lunettes stroboscopiques. Cet exercice sur écran n’a pas été validé pour un sport en particulier."
         }
       },
       {
@@ -164,12 +164,12 @@ export default function StrobePredictionPursuitPageFR() {
         "name": "Que faire si la cible réapparaît loin de la position de mon curseur?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Conservez un mouvement fluide. Effectuez une micro-saccade de recalage sans geste saccadé et ajustez votre estimation pour le cycle d obscurité suivant."
+          "text": "Conservez un mouvement fluide. Effectuez une micro-saccade de recalage sans geste saccadé et ajustez votre estimation pour le cycle d’obscurité suivant."
         }
       },
       {
         "@type": "Question",
-        "name": "Quelle durée d entraînement quotidien est recommandée?",
+        "name": "Quelle durée d’entraînement quotidien est recommandée?",
         "acceptedAnswer": {
           "@type": "Answer",
           "text": "Des sessions courtes de 8 à 12 minutes quotidiennes, fractionnées en séries de 60 à 90 secondes, sont idéales pour stimuler la plasticité cérébrale sans générer de fatigue oculaire."
@@ -180,7 +180,7 @@ export default function StrobePredictionPursuitPageFR() {
         "name": "Faut-il impérativement un écran gaming pour pratiquer cet exercice?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Cet outil fonctionne parfaitement sur un écran standard à 60Hz, mais un taux de rafraîchissement élevé (144Hz ou 240Hz) optimise la fluidité des cycles d occultation."
+          "text": "Cet outil fonctionne parfaitement sur un écran standard à 60Hz, mais un taux de rafraîchissement élevé (144Hz ou 240Hz) optimise la fluidité des cycles d’occultation."
         }
       },
       {
@@ -188,7 +188,7 @@ export default function StrobePredictionPursuitPageFR() {
         "name": "Comment le calcul de précision en phase masquée est-il établi?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "L algorithme calcule la proximité spatiale moyenne entre le curseur de la souris et la position exacte calculée de la cible tout au long de la période d extinction."
+          "text": "L’algorithme calcule la proximité spatiale moyenne entre le curseur de la souris et la position exacte calculée de la cible tout au long de la période d’extinction."
         }
       },
       {
@@ -196,7 +196,7 @@ export default function StrobePredictionPursuitPageFR() {
         "name": "Cet exercice virtuel remplace-t-il les lunettes stroboscopiques réelles?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Bien que les lunettes physiques masquent la totalité du champ de vision dans l espace réel, ce module numérique sollicite fidèlement les mêmes circuits neuronaux de prédiction spatio-temporelle."
+          "text": "Bien que les lunettes physiques masquent la totalité du champ de vision dans l’espace réel, ce module numérique sollicite fidèlement les mêmes circuits neuronaux de prédiction spatio-temporelle."
         }
       }
     ]
@@ -205,55 +205,56 @@ export default function StrobePredictionPursuitPageFR() {
   const guide = {
     title: "Guide Neuroscientifique de Vision Stroboscopique et Anticipation",
     intro: [
-      "L entraînement visuel stroboscopique constitue une méthode neuro-visuelle validée scientifiquement, caractérisée par l interruption périodique de l entrée lumineuse continue par de brèves phases d occultation complète. Privé de signaux sensorimoteurs ininterrompus, le système nerveux central doit compenser ce manque d informations cinématiques en activant des modèles internes prédictifs feedforward élaborés par le cervelet et le cortex pariétal (Appelbaum et al., 2011 ; Mitroff et al., 2013).",
-      "Lorsqu une cible mobile bascule dans une phase d obscurité, le glissement rétinien chute instantanément à zéro. Chez un individu non entraîné, la poursuite visuelle lisse s effondre en 100 à 200 millisecondes, se désorganisant en saccades de rattrapage erratiques au réallumage. Les travaux fondamentaux de Bennett et al. (2007) et Leigh & Zee (2015) ont démontré qu un protocole d occlusion structuré stimule les réseaux de mémoire de vitesse au sein des champs oculaires frontaux (FEF) et du flocculus cérébelleux, permettant de maintenir la commande motrice extraoculaire continue à travers l intervalle masqué et d atterrir fovéalement sur les coordonnées prévues.",
-      "Dans le sport d élite (hockey sur glace, tennis, baseball et tir de précision), les lunettes stroboscopiques à obturateur à cristaux liquides sont devenues un outil privilégié d affûtage neuromusculaire (Smith & Mitroff, 2016). Strobe Prediction Pursuit intègre cette technologie de pointe dans le navigateur par une alternance cyclique de 60 images visibles et 30 images occultées. Associé à des fréquences d affichage élevées (144 Hz et plus) qui garantissent une synchronisation temporelle à la milliseconde près (Woods et al., 2015), cet exercice affine l articulation entre saisie fovéale et anticipation motrice réflexe.",
-      "Méthodologie et confidentialité des mesures : l ensemble des extrapolations et calculs de latence s effectue en temps réel sur le terminal de l utilisateur. SkillDrills ne collecte aucune donnée personnelle ni agrégée sur des serveurs externes ; vos scores demeurent strictement stockés dans le localStorage de votre navigateur. Cette application constitue un entraînement cognitif et réflexe à visée pédagogique et sportive, sans vocation diagnostique médicale."
+      "Cet exercice d’entraînement visuel stroboscopique vous fait suivre une cible mobile qui disparaît par intermittence : vous devez continuer à estimer sa trajectoire pendant les phases masquées. Il mesure l’erreur au rallumage et la reprise du suivi. C’est un entraînement avec des repères personnels, pas un examen médical.",
+      "L’entraînement visuel stroboscopique est une méthode étudiée en recherche, caractérisée par l’interruption périodique de l’entrée lumineuse continue par de brèves phases d’occultation complète. Privé de signaux sensorimoteurs ininterrompus, le système nerveux central doit compenser ce manque d’informations cinématiques en activant des modèles internes prédictifs feedforward élaborés par le cervelet et le cortex pariétal (Appelbaum et al., 2011 ; Mitroff et al., 2013).",
+      "Lorsqu une cible mobile bascule dans une phase d’obscurité, le glissement rétinien chute instantanément à zéro. Chez un individu non entraîné, la poursuite visuelle lisse s effondre en 100 à 200 millisecondes, se désorganisant en saccades de rattrapage erratiques au réallumage. Les travaux fondamentaux de Bennett et al. (2007) et Leigh & Zee (2015) ont démontré qu’un protocole d’occlusion structuré stimule les réseaux de mémoire de vitesse au sein des champs oculaires frontaux (FEF) et du flocculus cérébelleux, permettant de maintenir la commande motrice extraoculaire continue à travers l’intervalle masqué et d’atterrir fovéalement sur les coordonnées prévues.",
+      "Des lunettes stroboscopiques à obturateur à cristaux liquides ont été utilisées dans des études en sport (Smith & Mitroff, 2016). Cet exercice reprend le principe sur écran, avec une alternance de 60 images visibles et 30 images masquées. La fréquence d’affichage de l’écran influence la précision de l’alternance (Woods et al., 2015) : comparez vos séries sur le même écran.",
+      "Méthodologie et confidentialité des mesures : l’ensemble des extrapolations et calculs de latence s effectue en temps réel sur le terminal de l’utilisateur. SkillDrills ne collecte aucune donnée personnelle ni agrégée sur des serveurs externes ; vos scores demeurent strictement stockés dans le localStorage de votre navigateur. Cette application constitue un entraînement cognitif et réflexe à visée pédagogique et sportive, sans vocation diagnostique médicale."
     ],
     benchmarks: {
-      title: "Repères de Performance d Extrapolation et de Précision Stroboscopique",
-      headers: ["Niveau de Maîtrise", "Précision Masquée (%)", "Erreur Moyenne (px)", "Temps de Recalage (ms)", "Percentile Estimé"],
+      title: "Repères de Performance d’Extrapolation et de Précision Stroboscopique",
+      headers: ["Niveau", "Précision masquée (%)", "Erreur moyenne (px)", "Temps de recalage (ms)"],
       rows: [
-        ["Débutant / Non Initié", "< 45%", "> 85 px", "> 280 ms", "0% – 25%"],
-        ["Intermédiaire / Sportif Amateur", "45% – 62%", "55 – 84 px", "210 – 280 ms", "25% – 60%"],
-        ["Avancé / Athlète Compétitif", "63% – 78%", "35 – 54 px", "150 – 209 ms", "60% – 85%"],
-        ["Élite / Niveau National", "79% – 89%", "20 – 34 px", "95 – 149 ms", "85% – 97%"],
-        ["Maître de l Anticipation / Pro", "90%+", "< 20 px", "< 95 ms", "98% – 100%"]
+        ["Débutant", "Moins de 45 %", "Plus de 85 px", "Plus de 280 ms"],
+        ["Intermédiaire", "45 – 62 %", "55 – 84 px", "210 – 280 ms"],
+        ["Avancé", "63 – 78 %", "35 – 54 px", "150 – 209 ms"],
+        ["Très précis", "79 – 89 %", "20 – 34 px", "95 – 149 ms"],
+        ["Excellent", "90 % et plus", "Moins de 20 px", "Moins de 95 ms"]
       ],
-      note: "Données mesurées à vitesse 1.0x avec un cycle stroboscopique de 400ms visible / 400ms masqué à 60 images par seconde (Appelbaum et al., 2011 ; Bennett et al., 2007)."
+      note: "Repères éditoriaux propres à cet exercice (vitesse 1.0x, cycle de 400 ms visible / 400 ms masqué, 60 images par seconde), non issus d’un panel ni de normes cliniques. Contexte : Appelbaum et al. (2011) ; Bennett et al. (2007)."
     },
     techniques: {
       title: "4 Piliers Techniques pour Maîtriser l'Occlusion Stroboscopique",
       items: [
         {
           name: "Mémorisation Active du Vecteur de Vitesse",
-          desc: "Durant les 60 images lumineuses, focalisez l attention fovéale sur l encodage précis de la vitesse angulaire et de la courbure dans la mémoire motrice cérébelleuse.",
-          tips: "Ne relâchez pas vos muscles oculaires lors de l extinction : continuez d impulser le regard à la même vitesse."
+          desc: "Durant les 60 images lumineuses, focalisez l’attention fovéale sur l’encodage précis de la vitesse angulaire et de la courbure dans la mémoire motrice cérébelleuse.",
+          tips: "Ne relâchez pas vos muscles oculaires lors de l’extinction : continuez d’impulser le regard à la même vitesse."
         },
         {
           name: "Projection Cinématique de la Trajectoire Masquée",
-          desc: "Prolongez mentalement la trajectoire invisible comme si la cible traversait un tunnel couvert, sans dévier l axe d attention spatiale.",
+          desc: "Prolongez mentalement la trajectoire invisible comme si la cible traversait un tunnel couvert, sans dévier l’axe d’attention spatiale.",
           tips: "Visualisez une traînée lumineuse imaginaire qui guide votre regard à travers le noir."
         },
         {
           name: "Calibrage Prédictif de la Ré-Acquisition Fovéale",
-          desc: "Juste avant la fin du créneau d obscurité, positionnez le centre du regard sur les coordonnées d émergence estimées pour éliminer toute saccade tardive.",
+          desc: "Juste avant la fin du créneau d’obscurité, positionnez le centre du regard sur les coordonnées d’émergence estimées pour éliminer toute saccade tardive.",
           tips: "Intériorisez le tempo régulier des flashs stroboscopiques pour anticiper la milliseconde de rallumage."
         },
         {
-          name: "Inhibition de l Arrêt Sacadé et Continuité Motrice",
-          desc: "Neutralisez le réflexe primaire de figer les yeux ou d émettre des saccades de recherche anarchiques lors de la disparition. Fiez-vous à l élan interne du modèle.",
+          name: "Inhibition de l’Arrêt Sacadé et Continuité Motrice",
+          desc: "Neutralisez le réflexe primaire de figer les yeux ou d’émettre des saccades de recherche anarchiques lors de la disparition. Fiez-vous à l’élan interne du modèle.",
           tips: "Gardez les muscles extraoculaires détendus et fluides pour maintenir une trajectoire continue."
         }
       ]
     },
     steps: [
       { title: "Fixez la cible pendant la lumière", text: "Suivez le déplacement initial et mémorisez sa direction et sa vitesse sans bouger la tête." },
-      { title: "Continuez pendant l extinction", text: "Quand la cible disparaît, maintenez le regard sur la trajectoire prévue sans vous arrêter ni chercher au hasard." },
-      { title: "Vérifiez l écart au rallumage", text: "Observez si le regard arrive avant ou après la cible, puis corrigez doucement le cycle suivant." },
+      { title: "Continuez pendant l’extinction", text: "Quand la cible disparaît, maintenez le regard sur la trajectoire prévue sans vous arrêter ni chercher au hasard." },
+      { title: "Vérifiez l’écart au rallumage", text: "Observez si le regard arrive avant ou après la cible, puis corrigez doucement le cycle suivant." },
       { title: "Augmentez la difficulté progressivement", text: "Travaillez par blocs courts et augmentez la vitesse seulement lorsque la précision masquée reste stable." }
     ],
-    audience: "Sportifs de balle et de raquette, pilotes, joueurs compétitifs d esport (FPS/MOBA) et professionnels exigeant une anticipation visuo-spatiale d exception.",
+    audience: "Sportifs de balle et de raquette, joueurs de jeux de tir et toute personne qui veut s’exercer à estimer la trajectoire d’une cible masquée par intermittence.",
     faqs: faqSchema.mainEntity.map(item => ({
       q: item.name,
       a: item.acceptedAnswer.text

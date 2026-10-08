@@ -6,7 +6,7 @@ import { getAlternateLanguages } from '@/lib/i18n/locales';
 import { pickSources } from '@/lib/drillSources';
 
 export const metadata = {
-  title: "Exercice Oculaire en Huit | SkillDrills",
+  title: "Exercice des yeux en huit couché | SkillDrills",
   description: "Exercice oculaire en huit couché pour pratiquer poursuite visuelle, coordination binoculaire et passage de la ligne médiane. Gratuit en ligne.",
   keywords: [
     "exercice oculaire en huit",
@@ -28,7 +28,7 @@ export const metadata = {
   },
   robots: { index: true, follow: true },
   openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
-    title: "Exercice Oculaire en Huit | SkillDrills",
+    title: "Exercice des yeux en huit couché | SkillDrills",
     description: "Exercice oculaire en huit couché pour pratiquer poursuite visuelle, coordination binoculaire et passage de la ligne médiane. Gratuit en ligne.",
     url: "https://skilldrills.online/fr/drills/visual-tracking/infinity-pursuit",
     siteName: "SkillDrills",
@@ -37,7 +37,7 @@ export const metadata = {
   },
   twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: "summary_large_image",
-    title: "Exercice Oculaire en Huit | SkillDrills",
+    title: "Exercice des yeux en huit couché | SkillDrills",
     description: "Exercice oculaire en huit couché pour pratiquer poursuite visuelle, coordination binoculaire et passage de la ligne médiane. Gratuit en ligne.",
   },
 };
@@ -237,6 +237,7 @@ const faqSchema = {
 const guideProps = {
   heading: "Bases Neurophysiologiques de la Lemniscate et de la Coordination Binoculaire",
   intro: [
+    "Cet exercice des yeux en huit couché vous demande de suivre du regard un point qui parcourt une lemniscate, en passant par le centre à chaque boucle. Il mesure le suivi de la cible et les pertes au centre. Ce n’est pas un examen ophtalmologique ni de la rééducation orthoptique.",
     "La figure en huit couché, aussi appelée lemniscate, réunit des courbes diagonales et des passages par le centre dans une tâche de poursuite visuelle. La cible se déplace continûment afin de pratiquer un regard qui reste accroché sans transformer chaque virage en une suite de sauts. Il s’agit d’un exercice visuel, pas d’un examen ophtalmologique ou orthoptique.",
     "Le passage central permet d’observer la transition entre les hémichamps visuels droit et gauche. Gardez la cible nette et notez si le regard quitte la trajectoire, effectue un petit saut ou nécessite une pause. Cette observation décrit la séance et ne permet pas de poser un diagnostic binoculaire ou neurologique.",
     "La réponse dépend de la distance à l’écran, de la taille de la cible, du rafraîchissement et de la fatigue. Utilisez un affichage confortable, clignez naturellement et privilégiez la régularité à la vitesse. En cas de douleur, vision double, nausée ou vertige, arrêtez et demandez un avis professionnel."
@@ -308,7 +309,7 @@ export default function InfinityPursuitPageFr() {
       />
       <InfinityPursuitClient
         copy={{
-          title: "Exercice Oculaire en Huit",
+          title: "Exercice des yeux en huit couché",
           subtitle: "Poursuite visuelle et coordination binoculaire",
           description: "Suivez une cible sur un huit couché, observez le passage de la ligne médiane et pratiquez une poursuite fluide à un rythme confortable."
         }}

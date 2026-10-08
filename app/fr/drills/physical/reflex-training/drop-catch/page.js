@@ -22,8 +22,8 @@ import { pickSources } from '@/lib/drillSources';
 // ============================================================
 
 export const metadata = {
-  title: "Test de la règle | Temps de réaction",
-  description: "Test de la règle gratuit dans le navigateur : attrapez les cibles vertes, évitez les leurres rouges et entraînez vos réflexes.",
+  title: "Test de réflexe en ligne : cibles qui tombent | SkillDrills",
+  description: "Test de réflexe gratuit dans le navigateur : cliquez les cibles vertes qui tombent et laissez passer les leurres rouges. Inspiré du test de la règle.",
   keywords: [
     "test de la règle",
     "test de réaction avec une règle",
@@ -40,7 +40,7 @@ export const metadata = {
     languages: getAlternateLanguages('/drills/physical/reflex-training/drop-catch'),
   },
   openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
-    title: "Test de la règle | Temps de réaction",
+    title: "Test de réflexe en ligne : cibles qui tombent | SkillDrills",
     description: "Attrapez les cibles vertes et évitez les leurres rouges dans un test de la règle gratuit pour exercer vos réflexes visuels.",
     url: 'https://skilldrills.online/fr/drills/physical/reflex-training/drop-catch',
     siteName: 'SkillDrills',
@@ -49,7 +49,7 @@ export const metadata = {
   },
   twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: 'summary_large_image',
-    title: "Test de la règle | Temps de réaction",
+    title: "Test de réflexe en ligne : cibles qui tombent | SkillDrills",
     description: "Attrapez les cibles vertes et évitez les leurres rouges dans un test de la règle gratuit pour exercer vos réflexes visuels.",
   },
   robots: { index: true, follow: true },
@@ -80,7 +80,7 @@ const breadcrumbSchema = {
     {
       "@type": "ListItem",
       "position": 4,
-      "name": "Test de la Règle & Drop Catch",
+      "name": "Test de réflexe : cibles qui tombent",
       "item": "https://skilldrills.online/fr/drills/physical/reflex-training/drop-catch"
     }
   ]
@@ -88,17 +88,22 @@ const breadcrumbSchema = {
 
 const softwareApplicationSchema = {
   "@context": "https://schema.org",
-  "@type": "SoftwareApplication", "sameAs": ["https://en.wikipedia.org/wiki/Hand%E2%80%93eye_coordination", "https://en.wikipedia.org/wiki/Reaction_time"],
-  "name": "Test de la Règle Numérique et Entraîneur de Réflexes Drop Catch",
-  "applicationCategory": "HealthApplication",
+  "@type": "SoftwareApplication",
+  "name": "Test de réflexe en ligne : cibles qui tombent",
+  "applicationCategory": "GameApplication",
   "operatingSystem": "All",
   "offers": {
     "@type": "Offer",
     "price": "0",
     "priceCurrency": "USD"
   },
-  "description": "Test numérique de la règle pour attraper des cibles vertes, éviter les leurres rouges et exercer le temps de réaction visuel.",
+  "description": "Jeu de réflexes gratuit dans le navigateur : cliquez les cibles vertes qui tombent et laissez passer les leurres rouges.",
   "url": "https://skilldrills.online/fr/drills/physical/reflex-training/drop-catch",
+  "publisher": {
+    "@type": "Organization",
+    "name": "SkillDrills",
+    "url": "https://skilldrills.online"
+  },
   "inLanguage": "fr-FR",
   "dateModified": "2026-09-20"
 };
@@ -106,13 +111,17 @@ const softwareApplicationSchema = {
 const webApplicationSchema = {
   "@context": "https://schema.org",
   "@type": "WebApplication",
-  "name": "Test de la règle et entraînement des réflexes",
-  "url": "https://skilldrills.online/fr/drills/physical/reflex-training/drop-catch",
-  "description": "Entraînement de la réaction visuelle dans le navigateur avec des cibles vertes et des leurres rouges.",
+  "name": "Test de réflexe : cibles qui tombent",
+  "description": "Test de réflexe numérique inspiré du test de la règle, avec cibles vertes à attraper et leurres rouges à ignorer.",
   "applicationCategory": "GameApplication",
-  "operatingSystem": "Web Browser",
-  "browserRequirements": "JavaScript et HTML5 Canvas requis",
-  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+  "operatingSystem": "All",
+  "browserRequirements": "Navigateur moderne avec JavaScript",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "url": "https://skilldrills.online/fr/drills/physical/reflex-training/drop-catch",
   "inLanguage": "fr-FR",
   "dateModified": "2026-09-20"
 };
@@ -120,95 +129,112 @@ const webApplicationSchema = {
 const videoGameSchema = {
   "@context": "https://schema.org",
   "@type": "VideoGame",
-  "name": "Drop Catch : jeu de réflexes et de réaction",
+  "name": "Drop Catch : test de réflexe et de retenue",
   "url": "https://skilldrills.online/fr/drills/physical/reflex-training/drop-catch",
-  "description": "Attrapez les cibles vertes et ignorez les leurres rouges dans un jeu de réaction visuelle.",
-  "gamePlatform": "Web Browser",
-  "applicationSubCategory": "Entraînement de la réaction motrice"
+  "description": "Attrapez les cibles vertes qui tombent et ignorez les leurres rouges dans un jeu de réaction visuelle.",
+  "genre": [
+    "Action",
+    "Reflex Game"
+  ],
+  "gamePlatform": [
+    "Web Browser",
+    "Desktop",
+    "Mobile"
+  ],
+  "applicationCategory": "Game",
+  "inLanguage": "fr-FR",
+  "dateModified": "2026-09-20",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  }
 };
 
 const faqSchema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
+  "inLanguage": "fr-FR",
+  "dateModified": "2026-09-20",
   "mainEntity": [
     {
       "@type": "Question",
-      "name": "Comment ce simulateur Drop Catch transpose-t-il le test classique de la règle d'EPS?",
+      "name": "Quel rapport avec le test de la règle qui tombe ?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Le test scolaire traditionnel calcule le temps de réaction en mesurant la chute physique d'une règle graduée selon les lois de la pesanteur (d = 1/2gt²). Drop Catch numérise cette accélération verticale non linéaire (de 400 à 1250 px/s) et y adjoint la dimension cognitive du paradigme Go/No-Go : intercepter les cibles vertes légitimes et ignorer les leurres rouges piégés."
+        "text": "Le test classique mesure le temps de réaction en regardant de quelle hauteur on rattrape une règle lâchée. Ici, des cibles tombent à l’écran (de 400 à 1250 px/s) et vous ne devez cliquer que sur les vertes : c’est une version numérique qui ajoute le choix."
       }
     },
     {
       "@type": "Question",
-      "name": "Quel est le principe de la tâche de discrimination de type C de Donders (1868)?",
+      "name": "Qu’est-ce que la tâche de type C de Donders (1868) ?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Franciscus Donders (1868) a défini le temps de réaction de type C comme une situation où plusieurs stimuli apparaissent mais un seul exige une action motrice. L'analyse perceptuelle préalable nécessaire pour distinguer la bonne cible allonge le temps de réponse de 80 à 120 ms par rapport à un réflexe visuel simple."
+        "text": "Donders a distingué plusieurs types de temps de réaction. Dans le type C, plusieurs stimuli apparaissent et un seul demande une réponse. Devoir identifier la bonne cible allonge le temps de réponse par rapport à un réflexe simple."
       }
     },
     {
       "@type": "Question",
-      "name": "Comment la théorie de l'optique tau de David N. Lee régit-elle l'interception?",
+      "name": "Que dit la théorie du tau optique de Lee (1976) ?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Énoncée par David N. Lee (1976), la théorie du tau optique (τ) montre que le cerveau évalue le temps restant avant impact (Time-to-Contact) directement à partir de la vitesse d'expansion de la silhouette rétinienne. Cela permet d'anticiper la milliseconde précise du clic sans avoir à calculer mathématiquement distance et vitesse."
+        "text": "Lee (1976) propose que le cerveau estime le temps avant contact à partir de la vitesse d’agrandissement de l’image de l’objet. Pour cette raison, viser le couloir de chute à l’avance aide plus que calculer la distance."
       }
     },
     {
       "@type": "Question",
-      "name": "De quelle manière le modèle de course de chevaux de Logan explique-t-il l'inhibition du tir?",
+      "name": "Pourquoi les leurres rouges sont-ils difficiles à ignorer ?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Gordon D. Logan (1984) a démontré qu'à chaque apparition de cible, deux commandes entrent en compétition interne : l'impulsion motrice d'action ('Go') et le signal de frein préfrontal ('Stop'). Si la couleur rouge est identifiée à temps, le veto inhibiteur l'emporte et suspend la pression du doigt, évitant un clic dommageable."
+        "text": "Selon le modèle de course de Logan et Cowan (1984), l’impulsion « go » et le signal « stop » se disputent la réponse. Si le rouge est identifié à temps, le clic est retenu."
       }
     },
     {
       "@type": "Question",
-      "name": "Quelle sanction est appliquée si l'on clique par mégarde sur un leurre rouge?",
+      "name": "Que se passe-t-il si je clique sur un leurre rouge ?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Cliquer sur un leurre rouge réinitialise instantanément le multiplicateur de série à 1.0x, retranche des points accumulés et génère un flash visuel d'avertissement. En conditions compétitives, cela simule le tir ami avec la pénalité maximale."
+        "text": "Le multiplicateur de série revient à 1.0x et une alerte visuelle s’affiche. Les cibles vertes restent la seule source de points."
       }
     },
     {
       "@type": "Question",
-      "name": "Comment le crédit de temps de +0,6s par cible verte récompense-t-il la régularité?",
+      "name": "Comment fonctionne le bonus de temps de +0,6 s ?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Chaque interception réussie d'un cercle vert octroie +0,6 seconde additionnelle au chronomètre. Les joueurs réguliers et maîtres de leurs impulsions peuvent prolonger leur session bien au-delà des 45 secondes de départ pour viser le palier d'élite de 24 000 points."
+        "text": "Chaque cible verte attrapée ajoute 0,6 seconde au chronomètre. Une série régulière peut donc prolonger la manche au-delà des 45 secondes de départ."
       }
     },
     {
       "@type": "Question",
-      "name": "Où est-il optimal de fixer son regard pour anticiper la descente des cibles?",
+      "name": "Où regarder pour anticiper la chute ?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Il est recommandé de positionner sa vision dans le tiers supérieur de la zone de jeu. Observer le point d'apparition permet de discriminer la couleur verte ou rouge dans les 50 premières millisecondes et d'aligner le curseur sur l'axe de chute avant que la gravité n'accélère la trajectoire."
+        "text": "Beaucoup de joueurs gardent le regard dans la partie haute de la zone, où les cibles apparaissent, pour repérer la couleur avant que la cible n’accélère. Testez et gardez ce qui vous convient."
       }
     },
     {
       "@type": "Question",
-      "name": "En quoi les écrans 144Hz ou 240Hz améliorent-ils l'interception de cibles rapides?",
+      "name": "Un écran à 144 Hz ou 240 Hz change-t-il la mesure ?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "À 1250 px/s, une dalle 60Hz n'actualise la cible que tous les 20,8 pixels, produisant un effet de flou cinétique marqué. À 240Hz (4,1 ms par trame), le pas de déplacement chute à 5,2 pixels, procurant une netteté totale essentielle au calcul rétinien de l'optique tau."
+        "text": "Oui, l’affichage compte : l’intervalle entre deux images est de 16,7 ms à 60 Hz, 6,9 ms à 144 Hz et 4,1 ms à 240 Hz (Woods et al., 2015). Comparez vos séances sur le même écran."
       }
     },
     {
       "@type": "Question",
-      "name": "Quelle prise de souris facilite les micro-ajustements verticaux d'interception?",
+      "name": "Quelle prise de souris est conseillée ?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "La prise Fingertip (du bout des doigts) s'avère particulièrement adaptée aux trajectoires verticales. Elle autorise des mouvements avant-arrière très vifs par simple flexion des phalanges sans mobiliser l'avant-bras entier, faisant gagner de précieuses fractions de seconde."
+        "text": "Aucune prise n’est démontrée comme la meilleure. La prise du bout des doigts permet des corrections verticales fines, mais gardez celle avec laquelle vous êtes le plus régulier."
       }
     },
     {
       "@type": "Question",
-      "name": "Mes données de temps de réaction et statistiques sont-elles téléversées sur des serveurs?",
+      "name": "Mes résultats sont-ils envoyés sur un serveur ?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Non, absolument aucune donnée n'est envoyée à l'extérieur. Toute la physique et la chronométrie basée sur performance.now() s'exécutent strictement dans votre navigateur web. Vos records sont conservés uniquement dans le localStorage de votre terminal."
+        "text": "Non. Le jeu s’exécute dans votre navigateur et vos records restent dans son LocalStorage."
       }
     }
   ]
@@ -217,97 +243,124 @@ const faqSchema = {
 const howToSchema = {
   "@context": "https://schema.org",
   "@type": "HowTo",
-  "name": "Protocole en 4 Étapes pour l'Interception Gravitationnelle et le Contrôle Inhibiteur",
-  "description": "Entraînement méthodique pour affiner le temps de réaction de choix, le calcul de chute libre et la discipline de tir.",
+  "name": "Comment jouer au test de réflexe Drop Catch",
+  "description": "Quatre étapes pour attraper les cibles vertes et ignorer les leurres rouges.",
   "step": [
     {
       "@type": "HowToStep",
       "position": 1,
-      "name": "Ancrage Visuel dans le Tiers Supérieur (Upper Third Visual Anchoring)",
-      "text": "Maintenez le regard dans le tiers supérieur de l'écran afin de classifier la cible (verte ou rouge) dans les 50 premières millisecondes après apparition.",
+      "name": "Regardez la partie haute",
+      "text": "Gardez le regard sur la partie haute de la zone pour identifier la couleur de la cible dès son apparition.",
       "url": "https://skilldrills.online/fr/drills/physical/reflex-training/drop-catch#step-1"
     },
     {
       "@type": "HowToStep",
       "position": 2,
-      "name": "Positionnement Précédent sur l'Axe de Chute (Pre-Positioning)",
-      "text": "Déplacez promptement le pointeur sur l'axe vertical de descente avant que la pesanteur ne propulse l'objet au-delà de 800 px/s.",
+      "name": "Placez le curseur sur l’axe de chute",
+      "text": "Déplacez le pointeur sur la verticale de la cible avant qu’elle n’accélère.",
       "url": "https://skilldrills.online/fr/drills/physical/reflex-training/drop-catch#step-2"
     },
     {
       "@type": "HowToStep",
       "position": 3,
-      "name": "Veto Inhibiteur de Logan devant les Leurres Rouges (Stop-Signal Veto)",
-      "text": "Dès qu'une teinte rouge est identifiée, relâchez la tension musculaire de l'index et laissez passer l'objet sans cliquer pour préserver le combo.",
+      "name": "Ignorez les leurres rouges",
+      "text": "Dès qu’un cercle rouge est identifié, ne cliquez pas et laissez-le tomber pour garder votre série.",
       "url": "https://skilldrills.online/fr/drills/physical/reflex-training/drop-catch#step-3"
     },
     {
       "@type": "HowToStep",
       "position": 4,
-      "name": "Interception dans le Tiers Médian et Bonus Temporel (+0.6s Streak)",
-      "text": "Déclenchez le clic avec assurance dans la zone médiane pour engranger +0,6s de temps par touche et stabiliser le multiplicateur 3.0x jusqu'à 24 000 points.",
+      "name": "Cliquez les cibles vertes",
+      "text": "Cliquez les cibles vertes avant le bas de l’écran pour gagner 0,6 s et monter le multiplicateur jusqu’à 3.0x.",
       "url": "https://skilldrills.online/fr/drills/physical/reflex-training/drop-catch#step-4"
     }
   ]
 };
 
 const dropGuide = {
-  heading: "Guide de Biomécanique de Chute Libre, Temps de Réaction et Contrôle Inhibiteur",
-  intro: {
-    title: "Bases Scientifiques de la Discrimination des Stimuli et du Frein Moteur",
-    paragraphs: [
-      "Le Drop Catch est un module d'évaluation chronométrique et de maîtrise des impulsions qui hisse le test traditionnel de la règle à un niveau d'exigence sportive d'élite. Au lieu de refermer mécaniquement les doigts sur une règle tombant sous gravité, le sujet réalise une tâche discriminative de type C de Donders (1868) : capturer avec justesse des cibles en accélération constante tout en inhibant scrupuleusement ses actions devant des leurres pièges.",
-      "Sous l'emprise de l'accélération gravitationnelle (s = 1/2gt²), la vitesse des objets s'accroît de 400 px/s à 1250 px/s. D'après la théorie du tau optique (τ) de David N. Lee (1976), le système visuel déduit l'échéance de contact (Time-to-Contact) à partir de la vitesse d'expansion de l'image sur la rétine. Toute tentative de calcul conscient provoque un retard préjudiciable : la clé réside dans le pré-positionnement du curseur sur le couloir vertical de chute.",
-      "La complexité neurologique majeure provient des leurres rouges aléatoires. Selon le modèle de course de chevaux (Horse-Race Model) de Gordon D. Logan (1984), deux mécanismes entrent en compétition dans le système nerveux : la commande motrice instinctive ('Go') et l'instruction de blocage préfrontal ('Stop'). Ce n'est que lorsque le contrôle inhibiteur prévaut sur l'impulsion automatique que l'erreur de clic est conjurée, compétence fondamentale pour les compétiteurs d'eSport.",
-      "Pour fournir des données rigoureuses et sans distorsion, l'outil s'appuie sur l'API performance.now() du navigateur. Sur des écrans à 144Hz ou 240Hz, le déchirement visuel des objets plongeant à 1250 px/s est entièrement neutralisé, autorisant une discrimination instantanée (Woods et al., 2015). Vos performances restent stockées uniquement dans la mémoire locale de votre appareil."
+  "heading": "Test de réflexe en ligne : comment fonctionne Drop Catch",
+  "intro": {
+    "title": "Test de réflexe et retenue : bases du jeu",
+    "paragraphs": [
+      "Drop Catch est un test de réflexe en ligne : des cercles tombent de plus en plus vite et vous ne cliquez que sur les verts, en laissant passer les rouges. Il s’inspire du test de la règle qui tombe, avec un choix en plus. Ce n’est ni un test médical ni un test étalonné.",
+      "Dans le test de la règle, on rattrape un objet lâché ; ici, la vitesse de chute passe de 400 à 1250 px/s. Lee (1976) propose que l’on estime le temps avant contact à partir de l’agrandissement de l’image de l’objet, ce qui explique l’intérêt de placer le curseur sur l’axe de chute à l’avance.",
+      "Les leurres rouges ajoutent un choix : selon Donders (1868), reconnaître la bonne cible allonge le temps de réponse, et selon le modèle de Logan et Cowan (1984), l’impulsion de cliquer et le signal d’arrêt se disputent la réponse.",
+      "Mesure et matériel : le jeu s’exécute dans votre navigateur avec l’horloge performance.now(), dont la résolution est limitée. L’affichage ajoute un délai (16,7 ms à 60 Hz, 6,9 ms à 144 Hz, 4,1 ms à 240 Hz ; Woods et al., 2015) : comparez vos séances sur le même matériel."
     ]
   },
-  benchmarks: {
-    title: "Grille de Performance en 5 Niveaux pour le Temps de Réaction de Choix",
-    headers: ["Palier et Catégorie", "Titre (Rank Title)", "Objectif de Points", "Temps de Réaction et Précision", "Note Globale", "Profil Neuromoteur"],
-    rows: [
-      ["Tier 1: Intercepteur Gravitationnel Ultime", "Apex Gravitational Interceptor", "24 000+ points", "< 190 ms / > 95%", "Grade S", "Top 0,1% de l'élite eSport et pilotes de chasse. Inhibition de Logan infaillible et interception parfaite à 1250 px/s (Lee 1976; Logan 1984)"],
-      ["Tier 2: Attaquant Réflexe de Précision", "Precision Reflex Striker", "17 000 – 23 999 points", "195 – 240 ms / 90 – 94%", "Grade A", "Top 10% semi-professionnel. Excellente anticipation visuelle et maintien solide de la série 3.0x face à 45% de leurres rapides"],
-      ["Tier 3: Intercepteur Émérite de Chute", "Skilled Drop Catcher", "11 000 – 16 999 points", "245 – 310 ms / 82 – 89%", "Grade B", "Top 35% joueurs réguliers. Coordination œil-main efficace et bonne utilisation du bonus de +0,6s pour prolonger la manche"],
-      ["Tier 4: Pratiquant en Développement", "Developing Reflex Trainee", "6 000 – 10 999 points", "311 – 370 ms / 70 – 81%", "Grade C", "Niveau moyen adulte. Au-delà de 800 px/s, des clics impulsifs sur les leurres rouges surviennent et brisent les séries"],
-      ["Tier 5: Débutant en Contrôle Inhibiteur", "Novice Decoy Learner", "< 6 000 points", "> 370 ms / < 70%", "Grade D", "Phase d'initiation. Difficulté à discriminer les couleurs sous vitesse; focalisation conseillée dans le tiers supérieur de l'écran"]
+  "benchmarks": {
+    "title": "Paliers du test de réflexe Drop Catch (5 niveaux de repère)",
+    "headers": [
+      "Palier",
+      "Objectif de points",
+      "Temps de réaction et précision",
+      "Lecture"
     ],
-    note: "Critères reposant sur la chronométrie de Donders (1868), l'optique tau de Lee (1976) et le modèle inhibiteur de Logan (1984)."
+    "rows": [
+      [
+        "Palier 1",
+        "24 000+ points",
+        "Moins de 190 ms / plus de 95 %",
+        "Interception à 1250 px/s sans clic sur un leurre"
+      ],
+      [
+        "Palier 2",
+        "17 000 – 23 999 points",
+        "195 – 240 ms / 90 – 94 %",
+        "Bonne anticipation, série 3.0x tenue malgré les leurres"
+      ],
+      [
+        "Palier 3",
+        "11 000 – 16 999 points",
+        "245 – 310 ms / 82 – 89 %",
+        "Coordination œil-main efficace, bonus de temps bien utilisé"
+      ],
+      [
+        "Palier 4",
+        "6 000 – 10 999 points",
+        "311 – 370 ms / 70 – 81 %",
+        "Clics impulsifs sur les leurres au-delà de 800 px/s"
+      ],
+      [
+        "Palier 5",
+        "Moins de 6 000 points",
+        "Plus de 370 ms / moins de 70 %",
+        "Point de départ : repérez la couleur avant de cliquer"
+      ]
+    ],
+    "note": "Repères éditoriaux propres à cet exercice, sans lien avec une norme clinique ni un classement de population. Les temps affichés dépendent aussi de votre écran et de votre souris."
   },
-  techniques: {
-    title: "4 Protocoles Pratiques pour Réflexes de Chute et Suppression d'Erreurs",
-    items: [
+  "steps": [
+    "Installez-vous confortablement et regardez la partie haute de la zone.",
+    "Identifiez la couleur du cercle qui descend.",
+    "Cliquez les cibles vertes dans la zone médiane et laissez passer les rouges.",
+    "Utilisez le bonus de +0,6 s pour maintenir le multiplicateur 3.0x."
+  ],
+  "audience": "Élèves, sportifs et joueurs qui veulent une version numérique du test de la règle avec choix et retenue.",
+  "protocols": {
+    "title": "Quatre techniques pour attraper sans cliquer sur les leurres",
+    "description": "Quatre habitudes simples pour attraper les bonnes cibles.",
+    "items": [
       {
-        name: "Ancrage Visuel dans le Tiers Supérieur (Upper Third Visual Anchoring)",
-        desc: "Ne suivez pas la cible des yeux depuis le sommet jusqu'au bas de l'écran. Verrouillez votre regard dans le tiers supérieur pour catégoriser la couleur dès 50 ms et pré-positionner la souris.",
-        tips: "Ne pourchassez pas la cible par l'arrière : cueillez-la au point d'interception prévu."
+        "title": "Regarder en haut de la zone",
+        "description": "Ne suivez pas la cible du regard jusqu’en bas : gardez la partie haute pour repérer la couleur dès l’apparition et préparer le curseur. Cueillez la cible au point d’interception prévu plutôt que de la poursuivre."
       },
       {
-        name: "Veto Inhibiteur Stop-Signal de Logan (Logan Stop-Signal Veto)",
-        desc: "Maîtrisez le réflexe primaire de l'index qui tend à presser sur tout mouvement. Dès la moindre perception de rouge, relâchez instantanément la musculature des doigts.",
-        tips: "Un clic sur un leurre anéantit tout le multiplicateur 3.0x accumulé; s'abstenir est tout aussi profitable que frapper juste."
+        "title": "Retenir le clic devant le rouge",
+        "description": "Dès qu’un cercle rouge est identifié, relâchez la tension du doigt et laissez-le passer. Un clic sur un leurre ramène le multiplicateur à 1.0x : s’abstenir vaut autant que viser juste."
       },
       {
-        name: "Interception Gravitationnelle par Tau Optique (Optical Tau Interception)",
-        desc: "La vitesse croît de façon exponentielle au fil de la chute. Déclenchez le tir dans la zone médiane de l'écran avant que la cible n'atteigne une vitesse d'échappement critique.",
-        tips: "N'attendez pas la bordure inférieure critique : validez le point dans la large fenêtre du tiers central."
+        "title": "Intercepter dans la zone médiane",
+        "description": "La vitesse augmente pendant la chute. Cliquez dans la partie centrale, avant que la cible n’atteigne sa vitesse maximale. N’attendez pas le bord inférieur."
       },
       {
-        name: "Micro-Ajustement Vertical Fingertip (Fingertip Vertical Micro-Steering)",
-        desc: "N'écrasez pas la main lourdement sur le tapis. Adoptez une prise du bout des doigts pour ajuster la trajectoire verticale par simple flexion des phalanges sans friction superflue.",
-        tips: "Pilotez les corrections de hauteur avec les doigts tout en maintenant l'avant-bras souple et ancré."
+        "title": "Corriger avec les doigts",
+        "description": "Ajustez la hauteur par de petits mouvements des doigts et gardez l’avant-bras souple. Gardez la prise avec laquelle vous êtes le plus régulier."
       }
     ]
   },
-  steps: [
-    "Adoptez une posture équilibrée et fixez le tiers supérieur de l'aire de jeu.",
-    "Déterminez en 50 ms si le cercle descendant est vert (à capturer) ou rouge (à éviter).",
-    "Interceptez les cibles vertes dans la zone médiane et laissez filer les leurres rouges.",
-    "Capitalisez sur le bonus de +0,6s par cible pour maintenir le multiplicateur 3.0x et viser 24 000 points."
-  ],
-  audience: "Élèves et sportifs désireux de mesurer le test de la règle avec une rigueur numérique, ainsi que joueurs de FPS souhaitant aiguiser leur discernement et leur rapidité décisionnelle.",
-  faqs: faqSchema.mainEntity.map(e => ({ q: e.name, a: e.acceptedAnswer.text })),
-  sources: pickSources('donders1868', 'lee1976', 'logan1984', 'woodworth1899', 'fitts1954', 'woods2015')
+  "faqs": faqSchema.mainEntity.map(e => ({ q: e.name, a: e.acceptedAnswer.text })),
+  "sources": pickSources('donders1868', 'lee1976', 'logan1984', 'woodworth1899', 'fitts1954', 'woods2015')
 };
 
 export default function LocalizedDropCatchPageFr() {
@@ -339,9 +392,9 @@ export default function LocalizedDropCatchPageFr() {
       />
       <DropCatchClient
         copy={{
-          title: "Test de la Règle & Temps de Réaction en Ligne",
-          subtitle: "Attrapez les cibles vertes, évitez les leurres",
-          description: "Le test de la règle et de chute libre mesure la promptitude avec laquelle vous réagissez à un objet tombant et votre capacité à vous abstenir lorsqu'il ne faut pas intervenir. Intercepter ne nécessite pas de dissocier distance et vitesse : l'image rétinienne en expansion définit le temps de contact par elle-même (Lee, 1976). La retenue procède d'un autre mécanisme — l'action et le freinage se disputent une course interne et le plus véloce l'emporte (Logan & Cowan, 1984). La réaction visuelle simple requiert déjà 200 à 250 ms avant tout début de mouvement (Woods et al., 2015).",
+          title: "Test de réflexe en ligne",
+          subtitle: "Attrapez les cibles vertes qui tombent, évitez les leurres",
+          description: "Ce test de réflexe en ligne s’inspire du test de la règle qui tombe : vous réagissez à un objet qui chute et vous devez aussi savoir vous retenir quand il ne faut pas cliquer. Le temps avant contact peut être estimé à partir de l’agrandissement de l’image de la cible (Lee, 1976) ; la retenue vient d’une course interne entre l’impulsion de cliquer et le signal d’arrêt (Logan & Cowan, 1984).",
           hudLabels: {
             score: "Score",
             time: "Temps",
@@ -355,14 +408,14 @@ export default function LocalizedDropCatchPageFr() {
             fatalDecoys: "Leurres Fatals",
             peakLevel: "Niveau Max"
           },
-          rulesTitle: "Règles du Drill et Barème de Points",
+          rulesTitle: "Règles du jeu et barème de points",
           rulesItems: [
             { title: "Capture des Cibles Vertes", text: "Cliquez sur les cercles verts avant qu'ils ne touchent le bas. Chaque capture rapporte 100 points de base (pondérés par le niveau et le combo) et crédite +0,6s au temps." },
             { title: "Leurres Piégés (Decoys)", text: "Ne cliquez pas sur les cercles rouges. Laissez-les tomber librement. Frapper un leurre annule l'intégralité du multiplicateur de série et déclenche une alerte visuelle." },
             { title: "Accélération Évolutive", text: "Au fil de votre score, la vitesse de chute grimpe de 400 px/s à 1250 px/s, le diamètre des cibles rétrécit et la part de leurres atteint 45%." },
             { title: "Multiplicateur et Survie", text: "Enchaînez les réceptions impeccables pour maintenir le multiplicateur 3.0x et profitez du gain continu de +0,6s par touche pour prolonger votre manche." }
           ],
-          aboutTitle: "À Propos du Test de la Règle et de l'Interception Gravitationnelle",
+          aboutTitle: "À propos du test de réflexe Drop Catch",
           aboutSections: [
             {
               title: "Accélération Gravitationnelle et Tau Optique d'Interception",
@@ -372,17 +425,17 @@ export default function LocalizedDropCatchPageFr() {
             {
               title: "Contrôle Inhibiteur et Signaux d'Arrêt de Logan",
               subtitle: "Paradigme de contre-ordre et inhibition motrice préfrontale",
-              content: "La vue de leurres rouges enclenche une compétition interne entre l'impulsion motrice réflexe 'Go' et l'inhibition 'Stop' (Logan et al., 1984). Les compétiteurs aguerris bloquent le geste involontaire jusqu'à la vérification de la couleur."
+              content: "La vue de leurres rouges enclenche une compétition interne entre l'impulsion motrice réflexe 'Go' et l'inhibition 'Stop' (Logan et al., 1984). Retenir son geste jusqu'à la vérification de la couleur évite le clic sur un leurre."
             },
             {
               title: "Chronométrie de Discrimination de Type C de Donders",
               subtitle: "Latence d'identification du stimulus avant le déclenchement moteur",
-              content: "Contrairement aux tests de réflexe simple, Drop Catch reproduit la tâche de type C de Donders (1868) : plusieurs stimuli surgissent mais seuls les conformes doivent être interceptés, exigeant 80 à 120 ms de traitement supplémentaire."
+              content: "Contrairement aux tests de réflexe simple, Drop Catch reproduit la tâche de type C de Donders (1868) : plusieurs stimuli surgissent mais seuls les cibles vertes doivent être interceptées, ce qui allonge le temps de réponse."
             },
             {
               title: "Flick Balistique et Décélération Finale en Deux Temps",
               subtitle: "Impulsion en boucle ouverte de Woodworth combinée aux ajustements précis",
-              content: "L'alignement de la souris obéit au modèle en deux phases de Woodworth (1899) : une propulsion initiale couvrant plus de 85% de la distance suivie de micro-corrections visuelles finales sous la loi de Fitts (1954)."
+              content: "L'alignement de la souris obéit au modèle en deux phases de Woodworth (1899) : une impulsion initiale suivie de micro-corrections visuelles finales, dans l'esprit de la loi de Fitts (1954)."
             }
           ]
         }}

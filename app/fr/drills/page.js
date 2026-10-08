@@ -107,66 +107,82 @@ const faqSchema = {
   "mainEntity": [
     {
       "@type": "Question",
-      "name": "Quels principes neuroscientifiques sous-tendent les 81 exercices de SkillDrills ?",
+      "name": "Quels exercices trouve-t-on sur SkillDrills ?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "SkillDrills s'appuie sur des paradigmes validés de neurobiologie motrice et de psychologie cognitive, notamment la Loi de Fitts (arbitrage vitesse-précision), la Loi de Hick (temps de décision face à choix multiples), la théorie d'intégration des caractéristiques visuelles et la plasticité synaptique. Chaque exercice isole des circuits neuromusculaires spécifiques pour induire des adaptations pérennes."
+        "text": `SkillDrills regroupe ${DRILLS.length} exercices gratuits dans le navigateur : visée et suivi de cible, réflexes et temps de réaction, mémoire, concentration, précision de la souris, coordination et suivi visuel. Chaque catégorie a sa page avec la liste de ses exercices.`
       }
     },
     {
       "@type": "Question",
-      "name": "Comment SkillDrills garantit-il une mesure de latence sans décalage dans le navigateur ?",
+      "name": "Faut-il créer un compte ou installer un logiciel ?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "La plateforme exploite l'API standard performance.now(), fournissant des horodatages à résolution millisecondaire (environ 1 ms). Grâce à des boucles de rendu matériellement accélérées (requestAnimationFrame) sur Canvas HTML5 et à la Pointer Lock API pour une capture directe de la souris sans accélération artificielle, les goulots d'étranglement de rendu sont éliminés."
+        "text": `Non. Les exercices fonctionnent dans un navigateur moderne, sans inscription ni téléchargement. Vos records sont stockés dans le LocalStorage de votre navigateur.`
       }
     },
     {
       "@type": "Question",
-      "name": "Quel protocole d'entraînement quotidien permet d'optimiser la progression ?",
+      "name": "Par quel exercice commencer ?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Un entraînement structuré de 15 à 20 minutes par jour avant vos sessions de jeu ou de travail est recommandé : 5 minutes d'échauffement oculomoteur (poursuite de trajectoires), 10 minutes d'exercices moteurs isolés (flick shot ou contrôle micromoteur) et 5 minutes de contrôle inhibiteur ou de mémoire de travail. La régularité quotidienne renforce la myélinisation des voies motrices."
+        "text": `Pour la vitesse de clic, ouvrez le test CPS. Pour la visée, l’aim trainer en ligne. Pour les réflexes, le test de réaction ou le jeu de réflexes. Pour la mémoire, les exercices de la catégorie mémoire, comme le jeu Simon.`
       }
     },
     {
       "@type": "Question",
-      "name": "Comment la visée entraînée sur SkillDrills se transfère-t-elle aux FPS comme VALORANT, CS2 et Apex ?",
+      "name": "Les exercices fonctionnent-ils sur téléphone ou tablette ?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Nos exercices de visée FPS ciblent les invariants biomoteurs essentiels : freinage balistique de la souris (mouse braking), tenue d'angle (crosshair placement), suivi de cibles en strafe erratique et micro-ajustements. En conservant un ratio de sensibilité identique à votre tapis de souris, la mémoire musculaire se transfère fidèlement en jeu compétitif."
+        "text": `Les exercices de mémoire, de concentration et de réaction fonctionnent au toucher. Les exercices de visée et de précision de la souris demandent une souris et un ordinateur.`
       }
     },
     {
       "@type": "Question",
-      "name": "En quoi SkillDrills se distingue-t-il des jeux cérébraux et casuals traditionnels ?",
+      "name": "Les résultats sont-ils des tests médicaux ?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Contrairement aux jeux de distraction grand public, SkillDrills utilise des protocoles de laboratoire standardisés (N-Back dual, effet Stroop, grilles de Schulte) assortis de métriques quantitatives rigoureuses. Les utilisateurs bénéficient de percentiles de performance et de distributions physiologiques comparées à des cohortes mondiales."
+        "text": `Non. Ce sont des jeux d’entraînement sans valeur de diagnostic. Les paliers affichés sont des repères propres à chaque exercice, pas des classements de population. Pour une question de santé, consultez un professionnel.`
       }
     },
     {
       "@type": "Question",
-      "name": "Quel est l'impact de la fréquence de rafraîchissement de l'écran sur les tests de réflexes ?",
+      "name": "Ces exercices me feront-ils progresser dans mes jeux ?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Un écran 60 Hz rafraîchit l'image toutes les 16,6 ms, alors qu'un moniteur 144 Hz (6,9 ms) ou 240 Hz (4,1 ms) réduit considérablement le décalage de trame et le flou cinétique. SkillDrills synchronise ses mesures sur le taux de rafraîchissement natif de votre moniteur, permettant d'exploiter pleinement les écrans de jeu haut de gamme."
+        "text": `Ils permettent de s’exercer à des tâches précises, comme viser, réagir ou mémoriser, et de suivre vos résultats d’une séance à l’autre. Aucune étude ne garantit un transfert vers un jeu précis : vérifiez l’effet dans le vôtre.`
       }
     },
     {
       "@type": "Question",
-      "name": "Faut-il installer un logiciel ou créer un compte pour s'entraîner sur SkillDrills ?",
+      "name": "Comment comparer deux séances de façon fiable ?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Non. Les 81 exercices fonctionnent entièrement côté client dans votre navigateur web. Aucun téléchargement de logiciel ni création de compte obligatoire ne sont requis. Toutes vos performances et données personnelles restent stockées localement dans votre navigateur afin de respecter scrupuleusement votre vie privée."
+        "text": `Utilisez le même appareil, le même écran et la même souris. L’affichage ajoute un délai : 16,7 ms entre deux images à 60 Hz, 6,9 ms à 144 Hz, 4,1 ms à 240 Hz (Woods et al., 2015).`
       }
     },
     {
       "@type": "Question",
-      "name": "Les exercices peuvent-ils être pratiqués sur smartphone ou tablette ?",
+      "name": "Que mesurent les tests de réaction du site ?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Les exercices cognitifs, de mémoire, de réflexes tactiles et de recherche visuelle sont pleinement optimisés pour les interfaces tactiles sur mobiles et tablettes. En revanche, pour les modules de visée FPS et de motricité fine au curseur, l'utilisation d'un ordinateur de bureau équipé d'une souris physique est indispensable."
+        "text": `Ils mesurent le temps entre un stimulus et votre clic ou votre appui. Le résultat comprend aussi le délai de l’écran, du périphérique et du navigateur : il sert à suivre vos progrès, pas à vous situer face à une norme.`
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Comment les catégories sont-elles organisées ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": `Les exercices sont classés par capacité travaillée : aim trainer et visée, contrôle cognitif, mémoire, motricité, réflexes physiques, perception visuelle, suivi visuel fluide, vitesse de réaction.`
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Quelles données sont enregistrées ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": `Vos scores et vos préférences restent dans le stockage local de votre navigateur. Consultez la page de confidentialité pour le détail.`
       }
     }
   ]

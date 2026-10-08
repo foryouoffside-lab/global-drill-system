@@ -6,7 +6,7 @@ import DrillFooter from '@/components/drill/DrillFooter';
 import { pickSources } from '@/lib/drillSources';
 
 export const metadata = {
-  title: "Temps de Réaction de Choix | Vitesse de Décision",
+  title: "Temps de réaction de choix : test en ligne | SkillDrills",
   description: "Test gratuit de temps de réaction de choix : sélectionnez la cible selon une règle qui change. Entraînez la décision visuelle ; non clinique.",
   keywords: [
     "test temps de réaction",
@@ -19,7 +19,7 @@ export const metadata = {
     "loi de Hick"
   ],
   openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
-    title: "Temps de Réaction de Choix | Vitesse de Décision",
+    title: "Temps de réaction de choix : test en ligne | SkillDrills",
     description: "Test gratuit de temps de réaction de choix : sélectionnez la cible selon une règle qui change. Entraînez la décision visuelle ; non clinique.",
     type: 'article',
     url: 'https://skilldrills.online/fr/drills/cognitive/processing-speed/reaction-time',
@@ -28,7 +28,7 @@ export const metadata = {
   },
   twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: 'summary_large_image',
-    title: "Temps de Réaction de Choix | Vitesse de Décision",
+    title: "Temps de réaction de choix : test en ligne | SkillDrills",
     description: "Test gratuit de temps de réaction de choix : sélectionnez la cible selon une règle qui change. Entraînez la décision visuelle ; non clinique.",
   },
   robots: { index: true, follow: true },
@@ -73,14 +73,14 @@ const softwareApplicationSchema = {
   "@context": "https://schema.org",
   "@type": "SoftwareApplication", "sameAs": ["https://en.wikipedia.org/wiki/Mental_chronometry", "https://en.wikipedia.org/wiki/Reaction_time"],
   "name": "Test de Temps de Réaction de Choix – CRT",
-  "applicationCategory": "HealthApplication",
+  "applicationCategory": "GameApplication",
   "operatingSystem": "All",
   "offers": {
     "@type": "Offer",
     "price": "0",
     "priceCurrency": "USD"
   },
-  "description": "Test de temps de réaction de choix en ligne gratuit: Mesurez votre vitesse de décision, discrimination visuelle et flexibilité cognitive sans inscription.",
+  "description": "Test de temps de réaction de choix gratuit dans le navigateur : cliquez la bonne cible selon une règle qui change et suivez votre vitesse de décision.",
   "url": "https://skilldrills.online/fr/drills/cognitive/processing-speed/reaction-time",
   "publisher": {
     "@type": "Organization",
@@ -113,7 +113,7 @@ const videoGameSchema = {
   "@type": "VideoGame",
   "name": "Test de Temps de Réaction de Choix – Jeu Cérébral",
   "url": "https://skilldrills.online/fr/drills/cognitive/processing-speed/reaction-time",
-  "description": "Test de temps de réaction de choix en ligne gratuit: Mesurez votre vitesse de décision, discrimination visuelle et flexibilité cognitive sans inscription.",
+  "description": "Test de temps de réaction de choix gratuit dans le navigateur : cliquez la bonne cible selon une règle qui change et suivez votre vitesse de décision.",
   "genre": [
     "Action",
     "Brain Game",
@@ -165,7 +165,7 @@ const faqSchema = {
       "name": "Quelles sont les valeurs moyennes observées chez l'être humain ?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "La moyenne générale se situe entre 280ms et 350ms. Les athlètes professionnels et joueurs esport de haut niveau atteignent 180ms à 230ms (Der & Deary, 2006)."
+        "text": "En laboratoire, le temps de réaction de choix d’un adulte se situe souvent autour de 280 à 350 ms, mais il dépend de la tâche, de l’âge et du matériel (Der & Deary, 2006). Les repères de ce test servent à suivre votre progression, pas à vous classer."
       }
     },
     {
@@ -173,7 +173,7 @@ const faqSchema = {
       "name": "Pourquoi les règles de couleur changent-elles en cours de session ?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "L'inversion dynamique des règles sollicite le cortex préfrontal pour reconfigurer la tâche et supprimer les réflexes moteurs obsolètes."
+        "text": "Le changement de règle vous oblige à abandonner la consigne précédente et à appliquer la nouvelle : c’est ce qui rend chaque cible plus exigeante qu’un simple clic de réaction."
       }
     },
     {
@@ -181,7 +181,7 @@ const faqSchema = {
       "name": "Peut-on améliorer sa vitesse de décision avec l'entraînement ?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Oui. Une pratique répétée consolide les connexions synaptiques, accélère le décodage sensoriel et réduit les latences d'hésitation motrice."
+        "text": "Une pratique répétée de la même tâche améliore généralement les performances sur cette tâche. Rien ne prouve que le gain se transfère à d’autres situations : suivez votre progression d’une séance à l’autre sur le même matériel."
       }
     },
     {
@@ -189,7 +189,7 @@ const faqSchema = {
       "name": "Comment l'âge influence-t-il le temps de réaction ?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "La rapidité culmine entre 18 et 25 ans, puis décline lentement d'environ 1 à 2ms par an. Un entraînement cognitif régulier permet d'atténuer ce ralentissement."
+        "text": "Les temps de réaction tendent à s’allonger lentement avec l’âge (Der & Deary, 2006). Les écarts entre personnes sont importants : comparez-vous surtout à vos propres séances."
       }
     },
     {
@@ -197,7 +197,7 @@ const faqSchema = {
       "name": "Le matériel informatique influe-t-il sur la mesure ?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Un moniteur à 144Hz ou plus et une souris cadencée à 1000Hz minimisent la latence d'affichage et de détection matérielle (Woods et al., 2015)."
+        "text": "Oui. L’écran, la souris et le navigateur ajoutent leur propre délai (Woods et al., 2015). Un écran à fréquence élevée réduit l’intervalle entre deux images : comparez vos séances sur le même matériel."
       }
     },
     {
@@ -205,7 +205,7 @@ const faqSchema = {
       "name": "Quel protocole d'entraînement est recommandé ?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Une session quotidienne de 10 à 15 minutes suffit pour stimuler la réactivité neuromusculaire avant des activités réclamant des réflexes aiguisés."
+        "text": "Il n’existe pas de protocole prouvé. Quelques séances courtes, régulières et reposées, sur le même appareil, permettent de suivre votre évolution sans fatigue."
       }
     },
     {
@@ -223,7 +223,7 @@ const howToSchema = {
   "@context": "https://schema.org",
   "@type": "HowTo",
   "name": "Comment Réaliser le Test de Temps de Réaction de Choix",
-  "description": "Test de temps de réaction de choix en ligne gratuit: Mesurez votre vitesse de décision, discrimination visuelle et flexibilité cognitive sans inscription.",
+  "description": "Test de temps de réaction de choix gratuit dans le navigateur : cliquez la bonne cible selon une règle qui change et suivez votre vitesse de décision.",
   "step": [
     {
       "@type": "HowToStep",
@@ -261,25 +261,26 @@ const guideProps = {
   intro: {
     title: "Neurosciences du Temps de Réaction de Choix & Rapidité de Décision",
     paragraphs: [
+      "Le temps de réaction de choix est le délai pour repérer la bonne cible parmi plusieurs et cliquer dessus. Ici, une règle de couleur change en cours de séance et vous mesurez votre vitesse de décision et votre exactitude. Avec un temps simple autour de 200 ms, un choix prend souvent 280 à 350 ms (Donders, 1868).",
       "Le temps de réaction de choix (CRT - Choice Reaction Time) est une métrique fondamentale en neurosciences cognitives pour évaluer l'efficacité de traitement du système nerveux central face à des alternatives multiples.",
       "Contrairement au temps de réaction simple (SRT, ~200ms) où la réponse est stéréotypée, la tâche de choix ajoute des étapes de discrimination sensorielle et de sélection d'action, portant le délai physiologique à 280–350ms (Donders, 1868).",
       "La loi de Hick-Hyman (Hick, 1952; Hyman, 1953) démontre que la latence décisionnelle augmente selon une fonction logarithmique du nombre de choix. Cet exercice introduit des renversements de règles pour solliciter le contrôle inhibiteur frontal.",
     ],
   },
   benchmarks: {
-    title: 'Standards de Performance Cognitive & Barèmes de Réaction de Choix (CRT)',
-    headers: ['Niveau', 'Rang', 'Latence de Réaction', 'Taux d Exactitude', 'Centile'],
+    title: 'Repères de performance au temps de réaction de choix',
+    headers: ['Palier', 'Profil', 'Latence de réaction', 'Exactitude', 'Lecture'],
     rows: [
-      { tier: 'Tier 1', rank: 'Élite / Pro Gamer', stat: '< 210 ms', level: 'Maîtrise', accuracy: '98%+', percentile: 'Top 1%' },
-      { tier: 'Tier 2', rank: 'Focus Avancé', stat: '210 – 249 ms', level: 'Diamant', accuracy: '94-97%', percentile: 'Top 5%' },
-      { tier: 'Tier 3', rank: 'Compétent / Entraîné', stat: '250 – 289 ms', level: 'Platine', accuracy: '88-93%', percentile: 'Top 15%' },
-      { tier: 'Tier 4', rank: 'Moyenne Adulte Standard', stat: '290 – 349 ms', level: 'Or', accuracy: '78-87%', percentile: 'Top 50%' },
-      { tier: 'Tier 5', rank: 'Débutant / Ligne de Base', stat: '≥ 350 ms', level: 'Argent', accuracy: '< 78%', percentile: 'Base' },
+      { tier: 'Palier 1', rank: 'Très rapide', stat: '< 210 ms', level: 'Palier 1', accuracy: '98%+', percentile: 'Très rapide et très précis' },
+      { tier: 'Palier 2', rank: 'Avancé', stat: '210 – 249 ms', level: 'Palier 2', accuracy: '94-97%', percentile: 'Rapide et régulier' },
+      { tier: 'Palier 3', rank: 'Entraîné', stat: '250 – 289 ms', level: 'Palier 3', accuracy: '88-93%', percentile: 'Bon niveau d’entraînement' },
+      { tier: 'Palier 4', rank: 'Intermédiaire', stat: '290 – 349 ms', level: 'Palier 4', accuracy: '78-87%', percentile: 'Plage courante en laboratoire' },
+      { tier: 'Palier 5', rank: 'Débutant', stat: '≥ 350 ms', level: 'Palier 5', accuracy: '< 78%', percentile: 'Point de départ' },
     ],
   },
   protocols: {
-    title: 'Protocoles d Optimisation Neuroplastique',
-    description: 'Directives validées scientifiquement pour aiguiser vos réflexes et accélérer la prise de décision.',
+    title: 'Conseils pour décider plus vite',
+    description: 'Quatre habitudes simples pour rester précis quand la règle change.',
     items: [
       { title: "Surveillez la Règle Active en Haut", description: "Observez le bandeau supérieur indiquant la couleur de la cible valide (ex: CLIQUEZ SUR ROUGE ou CLIQUEZ SUR BLEU)." },
       { title: "Distinguez les Cibles Visuelles", description: "Dès l'apparition des cibles à l'écran, déterminez instantanément quel élément correspond à la consigne active." },
@@ -288,7 +289,7 @@ const guideProps = {
     ],
   },
   faqs: {
-    title: 'Foire Aux Questions (FAQ)',
+    title: 'Questions fréquentes',
     items: faqSchema.mainEntity.map((q) => ({
       q: q.name,
       a: q.acceptedAnswer.text,
@@ -325,14 +326,14 @@ export default function EnhancedPageFr() {
       />
       <EliteNeuroSwitchClient
         copy={{
-          title: "Test de Réaction",
+          title: "Temps de réaction de choix",
           subtitle: "Choisissez la cible selon la couleur active et entraînez votre vitesse de décision",
-          startTitle: "Test de Réaction",
+          startTitle: "Temps de réaction de choix",
           startSubtitle: "Réaction de choix • Vitesse de décision",
           stageCaption: "Cliquez la cible qui correspond à la règle active. Les couleurs et la règle changent vite.",
           rulesTitle: "Instructions du test et score",
           aboutTitle: "Que mesure le test de réaction ?",
-          faqTitle: "Questions fréquentes",
+          faqTitle: "Test de réaction de choix : vos questions",
           labels: { score: "Score", time: "Temps", level: "Niveau", bestScore: "Meilleur score", timeLeft: "Temps restant", rule: "RÈGLE", ready: "PRÉPAREZ-VOUS", accuracy: "Précision", hits: "Réussites", peakLevel: "Niveau maximal", maxCombo: "Combo maximal" },
           ruleBanner: { RED: "CIBLE ROUGE", BLUE: "CIBLE BLEUE" },
           aboutLead: "Le temps de réaction de choix est l’intervalle nécessaire pour sélectionner la bonne réponse parmi plusieurs stimuli. Quand les choix augmentent, le temps de décision augmente généralement selon la loi de Hick.",

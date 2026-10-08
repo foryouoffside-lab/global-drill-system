@@ -38,11 +38,11 @@ export const metadata = {
 };
 
 Object.assign(metadata, {
-  title: 'Vision dynamique & recherche visuelle | SkillDrills',
-  description: '9 exercices gratuits dans le navigateur pour vision dynamique, recherche visuelle, temps de réaction, suivi de cibles et perception de la profondeur.',
-  keywords: ['acuité visuelle dynamique', 'test recherche visuelle', 'temps de réaction visuel', 'vision périphérique entraînement', 'mouvements oculaires', 'perception de profondeur', 'réaction visuelle', 'suivi de plusieurs objets', 'entraînement visuel gratuit'],
-  openGraph: { ...metadata.openGraph, title: 'Vision dynamique & recherche visuelle | SkillDrills', description: '9 exercices gratuits pour vision dynamique, recherche visuelle, temps de réaction et suivi de cibles.' },
-  twitter: { ...metadata.twitter, title: 'Vision dynamique & recherche visuelle | SkillDrills', description: 'Entraînez vision dynamique et recherche visuelle avec 9 exercices gratuits.' },
+  title: 'Exercices visuels : suivi, recherche, réaction | SkillDrills',
+  description: `${visualDrills.length} exercices gratuits dans le navigateur : suivi de cibles, recherche visuelle, réaction à la lumière et appréciation des distances. Pas un test de vue.`,
+  keywords: ['exercices visuels', 'recherche visuelle', 'suivi de cibles', 'temps de réaction visuel', 'réaction à la lumière', 'perception de la profondeur', 'poursuite visuelle', 'suivi de plusieurs objets', 'entraînement visuel gratuit'],
+  openGraph: { ...metadata.openGraph, title: 'Exercices visuels : suivi, recherche, réaction | SkillDrills', description: `${visualDrills.length} exercices gratuits dans le navigateur : suivi de cibles, recherche visuelle, réaction à la lumière et appréciation des distances. Pas un test de vue.` },
+  twitter: { ...metadata.twitter, title: 'Exercices visuels : suivi, recherche, réaction | SkillDrills', description: `${visualDrills.length} exercices gratuits dans le navigateur : suivi de cibles, recherche visuelle, réaction à la lumière et appréciation des distances. Pas un test de vue.` },
   alternates: { ...metadata.alternates, languages: getAlternateLanguages('/drills/visual') },
 });
 
@@ -52,7 +52,7 @@ const breadcrumbSchema = {
   "itemListElement": [
     { "@type": "ListItem", "position": 1, "name": "SkillDrills", "item": "https://skilldrills.online/fr" },
     { "@type": "ListItem", "position": 2, "name": "Exercices de Performance", "item": "https://skilldrills.online/fr/drills" },
-    { "@type": "ListItem", "position": 3, "name": "Perception Visuelle & Profondeur", "item": "https://skilldrills.online/fr/drills/visual" }
+    { "@type": "ListItem", "position": 3, "name": "Exercices visuels", "item": "https://skilldrills.online/fr/drills/visual" }
   ]
 };
 
@@ -61,9 +61,9 @@ const collectionSchema = {
   "@type": "CollectionPage",
   "inLanguage": "fr",
   "dateModified": "2026-09-20",
-  "name": "Entraînement de Perception Visuelle & Relief (9 Exercices)",
+  "name": `Exercices visuels : suivi, recherche, réaction (${visualDrills.length} exercices)`,
   "url": "https://skilldrills.online/fr/drills/visual",
-  "description": "9 exercices interactifs d'acuité visuelle dynamique, vision stéréoscopique, poursuite oculaire continue, recherche visuelle et réflexe lumineux.",
+  "description": `${visualDrills.length} exercices gratuits dans le navigateur : suivi de cibles, recherche visuelle, réaction à la lumière et appréciation des distances. Pas un test de vue.`,
   "author": { "@type": "Organization", "name": "SkillDrills" },
   "hasPart": visualDrills.map((drill) => {
     const loc = getLocalizedDrill(drill.href, 'fr', drill.name);
@@ -87,75 +87,86 @@ const faqSchema = {
   "mainEntity": [
     {
       "@type": "Question",
-      "name": "Comment l'entraînement de l'acuité visuelle dynamique (AVD) améliore-t-il la performance sportive et gaming ?",
+      "name": "Quels exercices contient la catégorie visuelle ?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Contrairement à l'acuité statique sur l'échelle de Monoyer, l'acuité visuelle dynamique mesure la capacité de la fovéa centrale à maintenir nette l'image rétinienne d'un objet en déplacement rapide. Intercepter des trajectoires complexes stimule les six muscles oculomoteurs et le cortex visuel, réduisant le temps de décision motrice au tennis, au football et dans les FPS."
+        "text": `La catégorie réunit ${visualDrills.length} exercices dans le navigateur : interception de cible mobile, poursuite d’objets multiples, suivi oculaire continu, réaction à la lumière, contrôle Go / No-Go, recherche visuelle, exploration de grille, anomalie de rythme et appréciation des distances.`
       }
     },
     {
       "@type": "Question",
-      "name": "Que mesure le test de perception de la profondeur basé sur le principe des trois tiges ?",
+      "name": "Ces exercices sont-ils un test de vue ?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Ce test évalue la stéréoscopie via la disparité binoculaire, c'est-à-dire le décalage géométrique projeté sur chaque rétine. Détecter l'instant exact où des tiges mobiles s'alignent sur un plan identique est fondamental pour évaluer les distances de freinage sur la route et calculer la profondeur des passes dans les sports collectifs."
+        "text": "Non. Ce sont des jeux de timing visuel, de suivi, de recherche et de jugement spatial. Ils ne diagnostiquent ni la vue ni les maladies oculaires et ne remplacent pas un examen chez un ophtalmologue ou un orthoptiste."
       }
     },
     {
       "@type": "Question",
-      "name": "Pourquoi la poursuite d'objets multiples (MOT) élargit-elle le champ visuel périphérique ?",
+      "name": "Le jeu d’appréciation des distances teste-t-il le relief ?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Le protocole MOT mobilise l'attention spatiale partagée dans le lobe pariétal et la mémoire de travail visuo-spatiale. Fixer le regard au centre tout en suivant plusieurs cibles oscillant dans les zones périphériques accroît le champ visuel fonctionnel (UFOV), améliorant la prise d'information sous haute pression temporelle."
+        "text": "Non. Sur un écran plat, il n’y a pas de disparité binoculaire. Le jeu s’appuie sur l’agrandissement de l’image d’une sphère pour estimer le temps avant contact (Lee, 1976)."
       }
     },
     {
       "@type": "Question",
-      "name": "Quelle est la différence entre la poursuite oculaire continue (Smooth Pursuit) et les saccades ?",
+      "name": "Que fait le suivi de plusieurs objets ?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "La poursuite continue permet aux yeux de glisser sans heurt le long d'une trajectoire fluide sans rupture visuelle. Les saccades sont des sauts abrupts qui induisent une brève suppression de la perception (cécité saccadique). Travailler la poursuite continue empêche les cibles mobiles de devenir floues lors des phases critiques."
+        "text": "Vous suivez plusieurs cibles parmi des objets identiques qui se déplacent. L’exercice sollicite l’attention partagée et la mémoire de travail visuelle, sans prouver un élargissement du champ visuel."
       }
     },
     {
       "@type": "Question",
-      "name": "En quoi le test de temps de réaction à la lumière diffère-t-il d'un test de réflexe conventionnel ?",
+      "name": "Quelle différence entre poursuite continue et saccades ?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Les tests de réaction classiques engagent des étapes cognitives de discrimination sémantique ou chromatique. Le test à la lumière isole la latence visuo-motrice primitive : il mesure strictement le délai entre la phototransduction rétinienne sous flash stroboscopique et l'activation électromyographique de l'index."
+        "text": "La poursuite lisse est le suivi régulier d’une cible mobile, les saccades sont les sauts rapides du regard. Les exercices de suivi demandent surtout de la poursuite, mais le site ne mesure pas vos mouvements oculaires."
       }
     },
     {
       "@type": "Question",
-      "name": "Quelles fonctions cérébrales sont stimulées par l'exploration visuelle sur matrices denses ?",
+      "name": "Que mesure le test de réaction à la lumière ?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Les tâches de recherche visuelle parmi des distracteurs orientés stimulent l'intégration des traits élémentaires dans le cortex strié et le filtrage inhibiteur dans le cortex préfrontal dorsolatéral. Le cerveau apprend ainsi à neutraliser le bruit visuel parasite et à identifier les indices critiques en quelques millisecondes."
+        "text": "Il mesure le temps entre l’apparition d’un signal lumineux à l’écran et votre clic. Le résultat inclut aussi le délai de l’écran, de la souris et du navigateur."
       }
     },
     {
       "@type": "Question",
-      "name": "Quelle est la posologie recommandée pour l'entraînement oculaire et la gymnastique visuelle ?",
+      "name": "Que travaille la recherche visuelle ?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "La recommandation scientifique est de 15 à 20 minutes de haute concentration, 3 à 5 fois par semaine. Les muscles ciliaires et oculomoteurs se fatiguant rapidement, dépasser 25 minutes consécutives génère une asthénopie (fatigue oculaire) qui bloque la plasticité synaptique. La régularité prime sur la durée."
+        "text": "Vous cherchez une cible parmi des éléments distracteurs. Cela fait travailler l’attention sélective et la vitesse de repérage sur cette tâche précise."
       }
     },
     {
       "@type": "Question",
-      "name": "Les exercices visuels sur navigateur remplacent-ils les examens chez l'ophtalmologiste ou l'orthoptiste ?",
+      "name": "Mes résultats dépendent-ils de mon matériel ?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Non. Ces outils fournissent un entraînement perceptivo-moteur et fonctionnel pour optimiser les performances des personnes saines et des athlètes, mais ils ne sauraient se substituer aux bilans orthoptiques ou médicaux de réfraction, de fond d'œil et de santé rétinienne."
+        "text": "Oui. Un écran affiche une image toutes les 16,7 ms à 60 Hz, 6,9 ms à 144 Hz et 4,1 ms à 240 Hz (Woods et al., 2015). Comparez vos séances avec le même écran, la même souris et le même navigateur."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Combien de temps s’entraîner ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Il n’existe pas de durée prouvée. Faites des séances courtes et régulières, reposez vos yeux en regardant au loin et arrêtez-vous en cas de fatigue ou d’inconfort."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Mes scores sont-ils envoyés à un serveur ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Non. Vos records restent dans le LocalStorage de votre navigateur et aucun compte n’est nécessaire."
       }
     }
   ]
 };
-
-faqSchema.mainEntity.push(
-  { "@type": "Question", "name": "Combien d’exercices contient la catégorie d’entraînement visuel ?", "acceptedAnswer": { "@type": "Answer", "text": "La catégorie réunit 9 exercices dans le navigateur autour de trois axes : réaction et contrôle des impulsions, suivi et mouvements oculaires, puis reconnaissance et profondeur. Chaque carte ouvre l’exercice associé." } },
-  { "@type": "Question", "name": "Les exercices visuels dans le navigateur remplacent-ils un examen de la vue ?", "acceptedAnswer": { "@type": "Answer", "text": "Non. Ils travaillent des tâches répétables de timing visuel, de suivi, de recherche et de jugement spatial. Ils ne diagnostiquent ni la vue ni les maladies oculaires et ne remplacent pas une consultation spécialisée." } }
-);
 
 export default function VisualDrillsPage() {
   return (

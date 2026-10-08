@@ -6,12 +6,12 @@ import DrillFooter from '@/components/drill/DrillFooter';
 import { pickSources } from '@/lib/drillSources';
 
 export const metadata = {
-  title: "Lecture rapide | Lecteur RSVP | SkillDrills",
-  description: "Entraînement de lecture rapide gratuit : traitez les mots à un point fixe et suivez les MPM et la précision. Ce n’est pas un test clinique.",
+  title: "Lecture rapide en ligne : entraînement RSVP | SkillDrills",
+  description: "Entraînement RSVP gratuit : repérez un mot cible dans un flux de 250 à 850 MPM, au même point de l’écran. Ni test de compréhension ni test clinique.",
   keywords: ["lecture rapide", "test vitesse de lecture", "vitesse de lecture", "lecteur rapide en ligne", "RSVP lecture", "mots par minute", "entraînement lecture rapide"],
   openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
-    title: "Lecture rapide | Lecteur RSVP | SkillDrills",
-    description: "Entraînement de lecture rapide gratuit : traitez les mots à un point fixe et suivez les MPM et la précision. Ce n’est pas un test clinique.",
+    title: "Lecture rapide en ligne : entraînement RSVP | SkillDrills",
+    description: "Entraînement RSVP gratuit : repérez un mot cible dans un flux de 250 à 850 MPM, au même point de l’écran. Ni test de compréhension ni test clinique.",
     type: 'article',
     url: 'https://skilldrills.online/fr/drills/cognitive/processing-speed/rsvp-reader',
     siteName: 'SkillDrills',
@@ -19,8 +19,8 @@ export const metadata = {
   },
   twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: 'summary_large_image',
-    title: "Lecture rapide | Lecteur RSVP | SkillDrills",
-    description: "Entraînement de lecture rapide gratuit : traitez les mots à un point fixe et suivez les MPM et la précision. Ce n’est pas un test clinique.",
+    title: "Lecture rapide en ligne : entraînement RSVP | SkillDrills",
+    description: "Entraînement RSVP gratuit : repérez un mot cible dans un flux de 250 à 850 MPM, au même point de l’écran. Ni test de compréhension ni test clinique.",
   },
   robots: { index: true, follow: true },
   alternates: {
@@ -63,15 +63,15 @@ const breadcrumbSchema = {
 const softwareApplicationSchema = {
   "@context": "https://schema.org",
   "@type": "SoftwareApplication", "sameAs": ["https://en.wikipedia.org/wiki/Rapid_serial_visual_presentation"],
-  "name": "Lecteur RSVP – Test de Vitesse de Lecture WPM",
-  "applicationCategory": "HealthApplication",
+  "name": "Lecture rapide en ligne : entraînement RSVP",
+  "applicationCategory": "GameApplication",
   "operatingSystem": "All",
   "offers": {
     "@type": "Offer",
     "price": "0",
     "priceCurrency": "USD"
   },
-  "description": "Lecteur RSVP et test de lecture rapide en ligne gratuit: Éliminez les saccades oculaires et entraînez votre vitesse de traitement lexical jusqu à 850 MPM.",
+  "description": "Entraînement RSVP gratuit dans le navigateur : repérez un mot cible dans un flux de mots affichés au même endroit, de 250 à 850 MPM.",
   "url": "https://skilldrills.online/fr/drills/cognitive/processing-speed/rsvp-reader",
   "publisher": {
     "@type": "Organization",
@@ -104,7 +104,7 @@ const videoGameSchema = {
   "@type": "VideoGame",
   "name": "Entraînement de Lecture Rapide RSVP",
   "url": "https://skilldrills.online/fr/drills/cognitive/processing-speed/rsvp-reader",
-  "description": "Lecteur RSVP et test de lecture rapide en ligne gratuit: Éliminez les saccades oculaires et entraînez votre vitesse de traitement lexical jusqu à 850 MPM.",
+  "description": "Entraînement RSVP gratuit dans le navigateur : repérez un mot cible dans un flux de mots affichés au même endroit, de 250 à 850 MPM.",
   "genre": [
     "Action",
     "Brain Game",
@@ -130,82 +130,82 @@ const faqSchema = {
   "mainEntity": [
     {
       "@type": "Question",
-      "name": "Qu'est-ce que le système RSVP (Présentation Visuelle Sérielle Rapide) ?",
+      "name": "Qu’est-ce que le RSVP (présentation visuelle sérielle rapide) ?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "La méthode RSVP est un procédé d'affichage qui présente les mots successivement au même emplacement fixe, supprimant les saccades oculaires et les régressions."
+        "text": "Le RSVP affiche les mots l’un après l’autre au même endroit de l’écran, ce qui supprime les déplacements des yeux le long de la ligne."
       }
     },
     {
       "@type": "Question",
-      "name": "Qu'est-ce que le Point de Reconnaissance Optimal (ORP) ?",
+      "name": "Qu’est-ce que le point de reconnaissance optimal (ORP) ?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "L'ORP (Optimal Recognition Point) est la position précise au sein d'un mot (légèrement à gauche du centre) où la fovéa décode le terme le plus rapidement (Rayner, 1998)."
+        "text": "L’ORP est la lettre d’un mot, un peu à gauche du centre, sur laquelle l’œil reconnaît le plus facilement le mot. Elle est mise en rouge dans l’exercice (Rayner, 1998)."
       }
     },
     {
       "@type": "Question",
-      "name": "Pourquoi la lecture conventionnelle sur papier est-elle plus lente ?",
+      "name": "Pourquoi la lecture classique est-elle plus lente ?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Dans la lecture classique, près de 80% du temps est mobilisé par les saccades oculaires (20 à 40ms) et les fixations, limitant la cadence à 200-250 mots par minute (Rayner, 2016)."
+        "text": "Lire un texte suppose des saccades et des fixations successives, et parfois des retours en arrière. Un lecteur adulte lit couramment 200 à 250 mots par minute (Rayner, 1998, 2016)."
       }
     },
     {
       "@type": "Question",
-      "name": "Quelle est la cadence de lecture standard et le palier de lecture rapide ?",
+      "name": "Que fait exactement cet exercice ?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "La moyenne adulte se situe entre 200 et 250 mots par minute (MPM). Grâce au système RSVP, un lecteur entraîné peut progresser de 500 à 850 MPM avec une bonne mémorisation."
+        "text": "Ce n’est pas un lecteur de texte : un flux de mots défile au centre et vous appuyez quand le mot cible s’affiche. Vous suivez votre score et votre exactitude à cinq vitesses, de 250 à 850 MPM."
       }
     },
     {
       "@type": "Question",
-      "name": "Conserve-t-on une bonne compréhension avec la lecture RSVP ?",
+      "name": "La compréhension tient-elle quand la vitesse augmente ?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Pour des textes descriptifs ou narratifs, la compréhension demeure constante jusqu'à 500-600 MPM. Au-delà de 800 MPM, un entraînement spécifique est nécessaire."
+        "text": "Pas toujours. Les études sur la lecture montrent que la compréhension baisse quand le rythme dépasse ce que l’on peut traiter (Rayner, 2016). Cet exercice mesure le repérage de mots, pas la compréhension d’un texte."
       }
     },
     {
       "@type": "Question",
-      "name": "Comment la méthode RSVP permet-elle d'éliminer la subvocalisation ?",
+      "name": "Le RSVP supprime-t-il la subvocalisation ?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "La subvocalisation est la prononciation mentale des mots. En affichant les mots à une cadence supérieure à la parole (>350 MPM), le cerveau traite directement le concept sans voix intérieure."
+        "text": "Rien ne le prouve. À un rythme élevé, la prononciation intérieure devient plus difficile à maintenir, mais cet exercice n’a pas été conçu pour la mesurer ni pour la supprimer."
       }
     },
     {
       "@type": "Question",
-      "name": "Quelle durée d'entraînement quotidien est préconisée ?",
+      "name": "Quelle durée d’entraînement est conseillée ?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Une pratique quotidienne de 10 à 15 minutes avec une augmentation graduelle de 50 MPM suffit pour stimuler la vitesse de reconnaissance sans fatigue visuelle."
+        "text": "Il n’existe pas de durée prouvée. Quelques séances courtes, reposées, avec une montée progressive de vitesse, permettent de suivre vos résultats sans fatigue visuelle."
       }
     },
     {
       "@type": "Question",
-      "name": "Le lecteur RSVP est-il adapté aux écrans de smartphones ?",
+      "name": "Le lecteur RSVP est-il adapté aux smartphones ?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Oui, il est particulièrement adapté aux petits écrans mobiles car il supprime le besoin de zoomer ou de faire défiler le texte de gauche à droite."
+        "text": "Oui, le flux de mots s’affiche à un seul endroit, ce qui convient aux petits écrans : pas de zoom ni de défilement."
       }
     },
     {
       "@type": "Question",
-      "name": "Pourquoi une lettre est-elle mise en valeur en rouge sur chaque mot ?",
+      "name": "Pourquoi une lettre est-elle colorée en rouge sur chaque mot ?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "La lettre colorée désigne le point ORP du mot, permettant au regard de se verrouiller instantanément sur le centre de décodage lexical optimal."
+        "text": "La lettre rouge marque le point ORP du mot et aide le regard à rester au même endroit du début à la fin du flux."
       }
     },
     {
       "@type": "Question",
-      "name": "Ce test et ce lecteur RSVP sont-ils totalement gratuits ?",
+      "name": "Cet exercice RSVP est-il gratuit ?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Oui, SkillDrills met à disposition cet outil en ligne entièrement gratuitement, sans inscription préalable ni logiciel à télécharger."
+        "text": "Oui. Il est gratuit, sans inscription ni téléchargement, directement dans le navigateur."
       }
     }
   ]
@@ -214,36 +214,36 @@ const faqSchema = {
 const howToSchema = {
   "@context": "https://schema.org",
   "@type": "HowTo",
-  "name": "Comment S'entraîner avec le Lecteur RSVP",
-  "description": "Lecteur RSVP et test de lecture rapide en ligne gratuit: Éliminez les saccades oculaires et entraînez votre vitesse de traitement lexical jusqu à 850 MPM.",
+  "name": "Comment s’entraîner avec l’exercice RSVP",
+  "description": "Entraînement RSVP gratuit dans le navigateur : repérez un mot cible dans un flux de mots affichés au même endroit, de 250 à 850 MPM.",
   "step": [
     {
       "@type": "HowToStep",
       "position": 1,
-      "name": "Fixez le Point Focal Central",
-      "text": "Gardez le regard détendu sur la mire centrale rouge sans bouger les yeux de gauche à droite.",
-      "url": "https://skilldrills.online/fr/drills/cognitive/processing-speed/reaction-time#step-1"
+      "name": "Fixez le point central",
+      "text": "Gardez le regard détendu sur la lettre rouge centrale, sans bouger les yeux de gauche à droite.",
+      "url": "https://skilldrills.online/fr/drills/cognitive/processing-speed/rsvp-reader#step-1"
     },
     {
       "@type": "HowToStep",
       "position": 2,
-      "name": "Réglez la Vitesse Initiale (MPM)",
-      "text": "Commencez par une cadence modérée (ex: 300 MPM) pour habituer votre cortex visuel au flux continu.",
-      "url": "https://skilldrills.online/fr/drills/cognitive/processing-speed/reaction-time#step-2"
+      "name": "Choisissez une vitesse de départ",
+      "text": "Commencez par une cadence modérée (250 MPM) pour vous habituer au flux de mots.",
+      "url": "https://skilldrills.online/fr/drills/cognitive/processing-speed/rsvp-reader#step-2"
     },
     {
       "@type": "HowToStep",
       "position": 3,
-      "name": "Supprimez la Prononciation Mentale",
-      "text": "Ne prononcez pas les mots dans votre esprit: laissez le sens global des termes émerger directement.",
-      "url": "https://skilldrills.online/fr/drills/cognitive/processing-speed/reaction-time#step-3"
+      "name": "Repérez le mot cible",
+      "text": "Gardez le mot cible en tête et appuyez dès qu’il apparaît, sans relire.",
+      "url": "https://skilldrills.online/fr/drills/cognitive/processing-speed/rsvp-reader#step-3"
     },
     {
       "@type": "HowToStep",
       "position": 4,
-      "name": "Augmentez Progressivement la Cadence",
-      "text": "Dès que vous êtes à l'aise, augmentez la vitesse par paliers de 50 MPM jusqu'à franchir le seuil des 600 MPM.",
-      "url": "https://skilldrills.online/fr/drills/cognitive/processing-speed/reaction-time#step-4"
+      "name": "Montez la vitesse par paliers",
+      "text": "Quand votre exactitude reste stable, passez au niveau suivant, jusqu’à 850 MPM.",
+      "url": "https://skilldrills.online/fr/drills/cognitive/processing-speed/rsvp-reader#step-4"
     }
   ]
 };
@@ -251,36 +251,36 @@ const howToSchema = {
 const guideProps = {
   sources: pickSources('rayner1998', 'rayner2016', 'woods2015'),
   intro: {
-    title: "Neurosciences de la Lecture Rapide RSVP & Point de Reconnaissance Optimal (ORP)",
+    title: "Lecture rapide RSVP : comment fonctionne l’entraînement",
     paragraphs: [
-      "La Présentation Visuelle Sérielle Rapide (RSVP - Rapid Serial Visual Presentation) est un paradigme expérimental des neurosciences cognitives visant à éliminer les contraintes motrices de l'appareil oculaire.",
-      "Dans la lecture classique d'une page, 80% du temps global est absorbé par l'exécution de saccades de translation (20 à 40ms) et de fixations discontinues (200 à 250ms), souvent alourdies par des régressions d'inattention (Rayner, 1998, 2016).",
-      "En présentant chaque mot exactement à l'emplacement de son Point de Reconnaissance Optimal (ORP), le protocole RSVP projette les unités lexicales au centre de la fovéa, propulsant le traitement d'information jusqu'à 850 mots par minute.",
+      "La lecture rapide en RSVP consiste à voir les mots défiler un par un au même endroit. Dans cet exercice gratuit, vous repérez un mot cible dans un flux de 250 à 850 mots par minute (MPM) et vous suivez votre score et votre exactitude. Ce n’est pas un test de compréhension ni un test médical.",
+      "Le RSVP est un paradigme de recherche sur la lecture : en affichant chaque mot au même endroit, on supprime les déplacements des yeux le long de la ligne. En lecture classique, les saccades et les fixations occupent une part importante du temps (Rayner, 1998, 2016).",
+      "Chaque mot est affiché avec sa lettre ORP, le point où la reconnaissance est la plus aisée. Les MPM décrivent la cadence d’affichage ; la latence de l’écran et de l’appareil influence aussi le résultat (Woods et al., 2015). Une cadence élevée ne garantit pas une bonne compréhension.",
     ],
   },
   benchmarks: {
-    title: 'Standards de Vitesse de Lecture & Barèmes Cognitifs (MPM)',
-    headers: ['Niveau', 'Catégorie', 'Vitesse de Lecture', 'Taux d Exactitude', 'Centile'],
+    title: 'Paliers de vitesse de l’exercice RSVP (MPM)',
+    headers: ['Palier', 'Profil', 'Vitesse', 'Exactitude', 'Lecture'],
     rows: [
-      { tier: 'Tier 1', rank: 'Lecteur Rapide d Élite', stat: '650 – 850+ MPM', level: 'Maîtrise', accuracy: '95%+', percentile: 'Top 1%' },
-      { tier: 'Tier 2', rank: 'Lecteur Avancé Rapide', stat: '450 – 649 MPM', level: 'Diamant', accuracy: '90-94%', percentile: 'Top 5%' },
-      { tier: 'Tier 3', rank: 'Compétent Supérieur', stat: '300 – 449 MPM', level: 'Platine', accuracy: '85-89%', percentile: 'Top 15%' },
-      { tier: 'Tier 4', rank: 'Moyenne Adulte Standard', stat: '200 – 299 MPM', level: 'Or', accuracy: '75-84%', percentile: 'Top 50%' },
-      { tier: 'Tier 5', rank: 'Débutant / Lecture Lente', stat: '< 200 MPM', level: 'Argent', accuracy: '< 75%', percentile: 'Base' },
+      { tier: 'Palier 1', rank: 'Très rapide', stat: '650 – 850+ MPM', level: 'Palier 1', accuracy: '95%+', percentile: 'Flux très rapide suivi avec précision' },
+      { tier: 'Palier 2', rank: 'Rapide', stat: '450 – 649 MPM', level: 'Palier 2', accuracy: '90-94%', percentile: 'Bon suivi aux hautes vitesses' },
+      { tier: 'Palier 3', rank: 'Confirmé', stat: '300 – 449 MPM', level: 'Palier 3', accuracy: '85-89%', percentile: 'Suivi régulier à vitesse soutenue' },
+      { tier: 'Palier 4', rank: 'Intermédiaire', stat: '200 – 299 MPM', level: 'Palier 4', accuracy: '75-84%', percentile: 'Cadence proche de la lecture courante' },
+      { tier: 'Palier 5', rank: 'Débutant', stat: '< 200 MPM', level: 'Palier 5', accuracy: '< 75%', percentile: 'Point de départ' },
     ],
   },
   protocols: {
-    title: 'Protocoles d Optimisation de la Vitesse de Lecture',
-    description: 'Directives validées pour développer une assimilation textuelle ultra-rapide.',
+    title: 'Quatre conseils pour suivre le flux de mots',
+    description: 'Des habitudes simples pour rester précis quand la vitesse augmente.',
     items: [
-      { title: "Fixez le Point Focal Central", description: "Gardez le regard détendu sur la mire centrale rouge sans bouger les yeux de gauche à droite." },
-      { title: "Réglez la Vitesse Initiale (MPM)", description: "Commencez par une cadence modérée (ex: 300 MPM) pour habituer votre cortex visuel au flux continu." },
-      { title: "Supprimez la Prononciation Mentale", description: "Ne prononcez pas les mots dans votre esprit: laissez le sens global des termes émerger directement." },
-      { title: "Augmentez Progressivement la Cadence", description: "Dès que vous êtes à l'aise, augmentez la vitesse par paliers de 50 MPM jusqu'à franchir le seuil des 600 MPM." },
+      { title: "Fixez le point central", description: "Gardez le regard détendu sur la lettre rouge centrale, sans bouger les yeux de gauche à droite." },
+      { title: "Choisissez une vitesse de départ", description: "Commencez par une cadence modérée (250 MPM) pour vous habituer au flux de mots." },
+      { title: "Repérez le mot cible", description: "Gardez le mot cible en tête et appuyez dès qu’il apparaît, sans relire." },
+      { title: "Montez la vitesse par paliers", description: "Quand votre exactitude reste stable, passez au niveau suivant, jusqu’à 850 MPM." },
     ],
   },
   faqs: {
-    title: 'Foire Aux Questions (FAQ)',
+    title: 'Questions fréquentes',
     items: faqSchema.mainEntity.map((q) => ({
       q: q.name,
       a: q.acceptedAnswer.text,
@@ -317,14 +317,14 @@ export default function EnhancedPageFr() {
       />
       <RSVPReaderClient
         copy={{
-          title: "Lecture rapide",
+          title: "Lecture rapide en ligne",
           subtitle: "Traitez les mots à un point fixe et entraînez votre vitesse de lecture",
           startTitle: "Entraînement RSVP",
           startSubtitle: "Reconnaissance des mots • Focalisation ORP",
           stageCaption: "Les mots apparaissent au centre. Appuyez quand le mot cible s’affiche.",
           rulesTitle: "Instructions de l’exercice et score",
           aboutTitle: "Qu’est-ce que la lecture RSVP ?",
-          faqTitle: "Questions fréquentes",
+          faqTitle: "Exercice RSVP : vos questions",
           labels: { score: "Score", time: "Temps", speed: "Vitesse", bestScore: "Meilleur score", timeLeft: "Temps restant", targetWord: "Mot cible", detected: "CIBLE DÉTECTÉE", ready: "PRÉPAREZ-VOUS", accuracy: "Précision", hits: "Réussites", errors: "Erreurs", points: "Points", playAgain: "Rejouer" },
           aboutLead: "Le RSVP affiche les mots un par un au même endroit de l’écran. Cela réduit une partie des mouvements oculaires, mais la compréhension peut baisser quand le rythme augmente.",
           aboutText: "Cet exercice entraîne la reconnaissance des mots au point optimal de reconnaissance (ORP). Les MPM décrivent le rythme d’affichage ; la latence de l’écran et du toucher influence aussi le résultat. 850 MPM est le niveau maximal de cet exercice, pas une promesse de compréhension générale à cette vitesse.",

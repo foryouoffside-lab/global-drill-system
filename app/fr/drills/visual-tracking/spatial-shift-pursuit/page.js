@@ -103,8 +103,8 @@ const videoGameSchema = {
   "@context": "https://schema.org",
   "@type": "VideoGame",
   "name": "Poursuite visuelle avec saut spatial",
-  "description": "Exercice de coordination oculaire evaluant la stabilite foveale lors de rotations et glissements subits du cadre de reference.",
-  "genre": ["Entraînement Visuel", "Poursuite Lente", "Entraînement des Réflexes"],
+  "description": "Exercice de poursuite oculaire : le champ visuel se décale ou pivote pendant que vous suivez une cible, et le temps de réacquisition est mesuré.",
+  "genre": ["Entraînement visuel", "Poursuite lente", "Entraînement des réflexes"],
   "playMode": "SinglePlayer",
   "gamePlatform": "Navigateur Web",
   "dateModified": "2026-09-20"
@@ -113,32 +113,32 @@ const videoGameSchema = {
 const howToSchema = {
   "@context": "https://schema.org",
   "@type": "HowTo",
-  "name": "Comment Maîtriser la Poursuite sous Déplacement Spatial",
-  "description": "Protocole methodologique pour remapper les coordonnees visuelles et re-foveer la cible immediatement apres un saut spatial.",
+  "name": "Comment suivre une cible quand le champ visuel se décale",
+  "description": "Quatre étapes pour retrouver la cible après un saut spatial et reprendre la poursuite.",
   "step": [
     {
       "@type": "HowToStep",
       "position": 1,
-      "name": "Établissez la Fovéation Initiale",
-      "text": "Placez-vous a 50-70 cm de votre ecran et maintenez une poursuite continue sur la trajectoire initiale de la cible."
+      "name": "Suivre la cible au départ",
+      "text": "Placez-vous à 50-70 cm de l’écran et gardez une poursuite continue sur la trajectoire initiale."
     },
     {
       "@type": "HowToStep",
       "position": 2,
-      "name": "Détectez le Saut Global du Cadre",
-      "text": "Des que le repere spatial bascule ou pivote, interpretez le vecteur global de translation sans balayer au hasard."
+      "name": "Repérer le décalage du champ",
+      "text": "Quand l’écran se décale ou pivote, repérez d’abord la direction du mouvement d’ensemble sans balayer au hasard."
     },
     {
       "@type": "HowToStep",
       "position": 3,
-      "name": "Exécutez une Saccade Balistique Nette",
-      "text": "Declenchez un bond saccadique direct vers les nouvelles coordonnees calculees sans hesitation parasite."
+      "name": "Retrouver la cible d’un seul saut",
+      "text": "Dirigez le regard vers la nouvelle position de la cible sans hésitation."
     },
     {
       "@type": "HowToStep",
       "position": 4,
-      "name": "Enchaînez en Poursuite Fluide Immédiate",
-      "text": "Fondez la deceleration de la saccade directement dans la vitesse de la nouvelle trajectoire pour preserver un gain parfait."
+      "name": "Reprendre la poursuite",
+      "text": "Dès que la cible est retrouvée, suivez sa trajectoire de façon fluide et comparez ensuite votre écart de position."
     }
   ],
   "dateModified": "2026-09-20"
@@ -150,82 +150,82 @@ const faqSchema = {
   "mainEntity": [
     {
       "@type": "Question",
-      "name": "Qu'est-ce que le drill Spatial Shift Pursuit ?",
+      "name": "Qu’est-ce qu’une poursuite visuelle avec saut spatial ?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Le Spatial Shift Pursuit developpe lagilite oculomotrice en exercant le regard a absorber des rotations et des deplacements imprevisibles du repere spatial (Krauzlis, 2004)."
+        "text": "Vous suivez une cible pendant que le champ visuel se décale ou pivote d’un coup. L’exercice mesure le temps que vous mettez à la retrouver, puis votre précision et votre écart de position. Ce n’est pas un test médical."
       }
     },
     {
       "@type": "Question",
-      "name": "Comment le saut du cadre spatial impacte-t-il la vision ?",
+      "name": "Pourquoi le décalage du champ perturbe-t-il le suivi ?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Lors dun glissement subit du champ visuel, le repere retinotopique se desorganise brievement. Le cortex doit reconfigurer un nouveau vecteur de visee (Robinson, 1965)."
+        "text": "Quand tout le champ bouge d’un coup, la position de la cible sur la rétine change brutalement. Le regard doit retrouver la cible avant de reprendre une poursuite fluide (Robinson, 1965 ; Krauzlis, 2004)."
       }
     },
     {
       "@type": "Question",
-      "name": "Quel est le role du cortex parietal posterieur (PPC) ?",
+      "name": "Qu’est-ce qu’une saccade ?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Le PPC integre les entrees retiniennes aux decharges motrices efferentes pour convertir les signaux visuels en coordonnees stables liees a la tete et a lespace (Findlay & Gilchrist, 1999)."
+        "text": "C’est un saut très rapide du regard d’un point à un autre. Après un saut spatial, une saccade ramène la fovéa sur la cible avant que la poursuite lente reprenne (Rashbass, 1961)."
       }
     },
     {
       "@type": "Question",
-      "name": "En quoi consiste la saccade balistique de rattrapage ?",
+      "name": "Que signifie le temps de réacquisition affiché ?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Il sagit dun saut oculaire ultrarapide atteignant 500 degres par seconde qui franchit instantanement lecart de position avant la reprise du suivi fluide (Rashbass, 1961)."
+        "text": "C’est le délai entre le décalage du champ et le moment où votre regard est de nouveau sur la cible. Il dépend de l’écran, de la distance, de la vitesse choisie et de votre attention, donc comparez vos séries dans les mêmes conditions."
       }
     },
     {
       "@type": "Question",
-      "name": "Quel avantage pour la precision dans les jeux FPS ?",
+      "name": "Cet exercice aide-t-il dans les jeux de tir ?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Sous leffet des secousses decran, du recul violent des armes ou de brusques mouvements de camera, ce drill permet de reverrouiller immediatement les adversaires."
+        "text": "Il reproduit la reprise de cible après un à-coup de caméra ou un recul, mais aucune étude ne démontre à ce jour un gain de score en jeu à partir de cet exercice."
       }
     },
     {
       "@type": "Question",
-      "name": "Quelle est l'utilite pour les sports de balle et d'equipe ?",
+      "name": "Faut-il anticiper le saut ?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Au football, basket-ball ou tennis de table, les changements de direction corporels frequents imposent de recalculer la trajectoire de la balle en une fraction de seconde."
+        "text": "Non. Les sauts sont aléatoires : il vaut mieux repérer la direction du mouvement d’ensemble, puis retrouver la cible d’un seul saut du regard plutôt que de la chercher en balayant l’écran."
       }
     },
     {
       "@type": "Question",
-      "name": "Qu'appelle-t-on la transition post-saccadique ?",
+      "name": "Que faire si je perds régulièrement la cible ?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Cest la jonction motrice associant la phase de freinage du saut saccadique a la reprise instantanee de la poursuite continue sans micro-arret."
+        "text": "Baissez la vitesse, gardez la tête immobile et fixez le centre de l’écran comme repère. Augmentez la vitesse seulement quand vous retrouvez la cible régulièrement."
       }
     },
     {
       "@type": "Question",
-      "name": "Quel volume dentrainement est conseille ?",
+      "name": "La fréquence de rafraîchissement de l’écran compte-t-elle ?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Nous suggerons 4 a 6 sessions de 60 secondes par jour (environ 5 a 8 minutes). Des stimulations courtes a haute intensite consolident la plasticite cerebelleuse."
+        "text": "Oui, un peu. Un écran à 144 Hz affiche le mouvement plus souvent qu’un écran à 60 Hz, ce qui peut rendre le décalage plus lisible. Comparez toujours sur le même écran (Woods et al., 2015)."
       }
     },
     {
       "@type": "Question",
-      "name": "Cette plateforme est-elle entierement gratuite ?",
+      "name": "Cet exercice est-il gratuit ?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Oui, SkillDrills propose cet outil gratuitement et directement dans votre navigateur web sans aucun abonnement requis."
+        "text": "Oui. Il fonctionne gratuitement dans votre navigateur, sans inscription, et vos résultats restent enregistrés localement sur votre appareil."
       }
     },
     {
       "@type": "Question",
-      "name": "La frequence de rafraichissement est-elle cruciale ?",
+      "name": "Combien de temps s’entraîner ?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Un moniteur a 144Hz ou plus supprime le flou de mouvement et permet une conversion de coordonnees spatiale plus nette pour le cortex visuel (Woods et al., 2015)."
+        "text": "Quelques séries de 60 secondes, soit 5 à 8 minutes par séance, suffisent pour suivre votre progression. Arrêtez-vous en cas de fatigue ou d’inconfort visuel."
       }
     }
   ],
@@ -233,52 +233,52 @@ const faqSchema = {
 };
 
 const guideProps = {
-  heading: "Bases Scientifiques de la Poursuite avec Saut Spatial et Remappage Oculaire",
+  heading: "Poursuite avec saut spatial : principes et repères",
   intro: [
-    "Dans les contextes reels et sportifs de haute competition, le suivi visuel ne sopere presque jamais sur des arriere-plans immobiles et previsibles. Que ce soit lors de virages serres a haute vitesse, daccelerations brusques ou daffrontements sous fortes secousses decran et pivots de camera rapides, le referentiel spatial de lobservateur peut translater ou pivoter instantanement (Krauzlis, 2004; Robinson, 1965). Conserver une cible au centre foveal sous de telles turbulences reclame une flexibilite oculomotrice superieure.",
-    "Les recherches fondamentales de Findlay & Gilchrist (1999) et Kahlon & Lisberger (1996) ont mis en lumiere que les signaux lumineux sont initialement traites sous des axes retinotopiques. Lorsquun saut brusque modifie le cadre densemble, ce codage seffondre. Le cortex parietal posterieur (PPC) intervient alors en croisant les perceptions visuelles et les signaux defférence motrice pour reconfigurer les coordonnees dans un repere stable.",
-    "A partir de cette cartographie reactualisee, le systeme nerveux declenche une reponse en deux etapes : dabord, une saccade balistique de haute vitesse comble lecart spatial vers la nouvelle position de la cible. Des latterrissage, lappareil oculomoteur execute une transition directe vers la poursuite lente le long du nouveau vecteur sans discontinute (Rashbass, 1961)."
+    "Cet exercice de poursuite visuelle avec saut spatial vous demande de suivre une cible alors que le champ visuel se décale ou pivote d’un coup. Il mesure le temps pour retrouver la cible, votre précision de suivi et l’écart de position. C’est un entraînement avec des repères personnels, pas un examen médical.",
+    "Quand tout le champ bouge, la cible quitte le centre de votre regard. Une saccade, saut rapide du regard, la ramène sur la fovéa, puis la poursuite lente reprend (Rashbass, 1961 ; Krauzlis, 2004). Le cerveau doit pour cela mettre à jour la position de la cible dans l’espace (Findlay & Gilchrist, 1999).",
+    "Le résultat dépend de l’écran, de la distance, de la vitesse choisie et de votre attention. Comparez vos séances dans les mêmes conditions."
   ],
   benchmarks: {
-    title: "Grille d'Évaluation du Saut Spatial et Récupération de Coordonnées",
-    headers: ["Palier de Performance", "Temps de Re-Centrage (ms)", "Précision de Suivi (%)", "Stabilité Post-Saccadique", "Profil Adaptatif"],
+    title: "Repères indicatifs de réacquisition après un saut spatial",
+    headers: ["Palier", "Temps de réacquisition", "Précision de suivi", "Lecture"],
     rows: [
-      ["Élite (Esports / Pilotes)", "< 220 ms", "> 95%", "> 96% (Verrouillage Immédiat)", "Remappage pariétal parfait et transition instantanée de saccade à poursuite continue."],
-      ["Avancé (Compétitif)", "220 – 280 ms", "88% – 94%", "90% – 95%", "Grande flexibilité spatiale avec ré-acquisition rapide et dérive minime."],
-      ["Compétent (Adulte Sain)", "281 – 360 ms", "78% – 87%", "80% – 89%", "Récupération régulière avec légère hésitation lors de rotations combinées."],
-      ["En Développement (Latence)", "361 – 450 ms", "65% – 77%", "68% – 79%", "Désorientation notable lors de sauts brusques nécessitant des saccades correctrices."],
-      ["Débutant (Ajustement Moteur)", "> 450 ms", "< 65%", "< 68%", "Perte du repère spatial de référence et suivi purement réactif."]
+      ["Très rapide", "Moins de 220 ms", "Plus de 95 %", "Retrouve la cible d’un seul saut et reprend la poursuite aussitôt"],
+      ["Rapide", "220 – 280 ms", "88 – 94 %", "Réacquisition rapide avec une dérive minime"],
+      ["Correct", "281 – 360 ms", "78 – 87 %", "Récupération régulière, légère hésitation quand le champ pivote"],
+      ["À travailler", "361 – 450 ms", "65 – 77 %", "Désorientation après les sauts brusques, saccades correctrices"],
+      ["Débutant", "Plus de 450 ms", "Moins de 65 %", "Suivi surtout réactif ; réduisez la vitesse"]
     ],
-    note: "※ Mesures calibrées sur écran 1080p à 50–70 cm aux vitesses 1.0x à 1.5x sous sauts spatiaux aléatoires. Évaluation basée sur le délai de re-centrage et la fixation post-saccadique."
+    note: "Repères éditoriaux propres à cet exercice, pour un écran à 50-70 cm entre 1.0x et 1.5x. Ce ne sont ni des normes cliniques ni un classement de population."
   },
   techniques: {
-    title: "Quatre Piliers Techniques pour la Poursuite sous Déplacement Spatial",
+    title: "Quatre points de technique après un saut spatial",
     items: [
       {
-        name: "Remappage Pariétal de Coordonnées",
-        desc: "Lors du saut spatial, ne cherchez pas uniquement le point isole. Saisissez le vecteur global de glissement pour que le cortex parietal reactualise immediatement la grille spatiale.",
-        tips: "Percevez dans quelle direction lensemble du plan a saute."
+        name: "Repérer le mouvement d’ensemble",
+        desc: "Ne cherchez pas seulement le point isolé : repérez dans quelle direction le champ entier s’est décalé, puis dirigez le regard vers la position attendue.",
+        tips: "Demandez-vous d’abord de quel côté l’ensemble de l’écran a bougé."
       },
       {
-        name: "Re-Centrage Saccadique Balistique",
-        desc: "Une fois la nouvelle direction integree, lancez un bond oculaire resolu dun seul trait. Lindecision produit des micro-saccades hesitantes qui allongent le temps de reponse.",
-        tips: "Projeter la fovea directement sur les nouvelles coordonnees avec la precision dun claquement de fouet."
+        name: "Retrouver la cible d’un seul saut",
+        desc: "Une fois la direction repérée, envoyez le regard franchement vers la nouvelle position. L’hésitation allonge le temps de réacquisition.",
+        tips: "Évitez de balayer l’écran ; visez directement le point attendu."
       },
       {
-        name: "Transition Fluide Post-Saccadique",
-        desc: "Ne bloquez pas le regard lors de limpact visuel. Enchainez directement la deceleration de la saccade dans la trajectoire active de la cible.",
-        tips: "Glissez dans le mouvement de la cible comme un patineur entrant sur la trajectoire."
+        name: "Enchaîner avec la poursuite",
+        desc: "Ne bloquez pas le regard à l’arrivée : reprenez tout de suite le mouvement fluide dans la direction de la cible.",
+        tips: "Accompagnez la cible dès que vous l’avez retrouvée."
       },
       {
-        name: "Ancrage Rotationnel Visuel",
-        desc: "Lorsque le saut inclut des rotations, preservez votre equilibre visuel en fixant mentalement le centre de lecran comme axe neutre invariant.",
-        tips: "Gardez le centre de lecran comme repere pivot permanent."
+        name: "Garder un repère au centre",
+        desc: "Quand le champ pivote, le centre de l’écran sert de repère stable pour se réorienter.",
+        tips: "Gardez la tête immobile et revenez au centre si vous perdez la cible."
       }
     ]
   },
   steps: [
     { title: "Fixez la cible au départ", text: "Installez-vous à une distance confortable et suivez la cible sans bouger la tête." },
-    { title: "Observez le changement du champ", text: "Quand l'écran se déplace, repérez d'abord la direction du mouvement de l'ensemble." },
+    { title: "Observez le changement du champ", text: "Quand l’écran se déplace, repérez d’abord la direction du mouvement de l’ensemble." },
     { title: "Récupérez la cible", text: "Déplacez le regard directement vers sa nouvelle position et observez le temps de réacquisition." },
     { title: "Reprenez la poursuite", text: "Une fois la cible retrouvée, suivez sa trajectoire et comparez précision et écart de position." }
   ],
