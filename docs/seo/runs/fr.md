@@ -1,0 +1,28 @@
+# fr run log (url | status | sha | research | notes)
+
+- /fr/…/rapid-tapping | done | 1da0fd7b | docs/seo/research/fr/rapid-tapping.md | native test CPS title/H1, French subtitle, direct answer, drop unsourced percentiles
+- /fr/…/speed-drill | done | ee95bb6f | docs/seo/research/fr/speed-drill.md | stop cannibalising test CPS, retarget jeu de rapidité souris
+- /fr/…/keyboard-recognition | done | 6f3c6c0e | docs/seo/research/fr/keyboard-recognition.md | test de réaction clavier title/H1, intent disambiguation FAQ
+- /fr/…/steady-hand | done | 2ecf3ce2 | docs/seo/research/fr/steady-hand.md | jeu du fil électrique title/H1, French subtitle, direct answer
+- /fr/…/reaction-time-test | done | cdea4cdb | docs/seo/research/fr/reaction-time-test.md | direct answer, remove unsourced percentile/esport claims
+- /fr/…/reflex-training-drill | done | ef851360 | docs/seo/research/fr/reflex-training-drill.md | jeu de réflexes en ligne title/H1/description
+- /fr/…/directional-chaos-pursuit | done | 3b984296 | docs/seo/research/fr/directional-chaos-pursuit.md | unique title, soften unsourced pro/sports claims, direct answer
+- /fr/…/dynamic-evasion-pursuit | done | 825ad732 | docs/seo/research/fr/dynamic-evasion-pursuit.md | unique title, soften unsourced claims, direct answer
+- /fr/…/ghosting-suppress-pursuit | done | 44ab015a | docs/seo/research/fr/ghosting-suppress-pursuit.md | test ghosting écran title, soften unsourced claims, direct answer
+- /fr/…/momentum-teleport-pursuit | done | 591d84cc | docs/seo/research/fr/momentum-teleport-pursuit.md | poursuite oculaire title, drop unsourced game claims
+- /fr/…/peripheral-ping-pursuit | done | 3d5dcf1b | docs/seo/research/fr/peripheral-ping-pursuit.md | direct answer, drop unsourced audience claims
+- /fr/…/sine-wave-pursuit | done | a2202f77 | docs/seo/research/fr/sine-wave-pursuit.md | restore French accents, native 10-question FAQ, drop unsourced elite/FPS claims
+- /fr/…/spatial-shift-pursuit | done | b5cd6892 | docs/seo/research/fr/spatial-shift-pursuit.md | restore French accents, native 10-question FAQ, drop unsourced claims
+- /fr/…/predictive-pursuit | done | b2161e34 | docs/seo/research/fr/predictive-pursuit.md | direct answer, drop unsourced pro/game claims
+- /fr/…/triangular-pursuit | done | dc630434 | docs/seo/research/fr/triangular-pursuit.md | direct answer, drop fabricated percentiles, fix apostrophes
+- /fr/…/zig-zag-path-pursuit | done | 8312640c | docs/seo/research/fr/zig-zag-path-pursuit.md | direct answer, drop fabricated percentiles, fix apostrophes
+- /fr/…/strobe-prediction-pursuit | done | 2882e656 | docs/seo/research/fr/strobe-prediction-pursuit.md | direct answer, drop percentile and unsourced pro claims
+- /fr/…/infinity-pursuit | done | 64382363 | docs/seo/research/fr/infinity-pursuit.md | exercice des yeux en huit title, direct answer
+- /fr/…/fps-tracking-trainer | done | 6ff22c49 | docs/seo/research/fr/fps-tracking-trainer.md | aim trainer en ligne title from measured Bing demand
+- /fr/…/strafe-tracking | done | d84c2022 | docs/seo/research/fr/strafe-tracking.md | tracking aim title, direct answer, drop rank/pro/absolute claims
+- /fr/…/target-acquisition | done | 2d3a327c | docs/seo/research/fr/target-acquisition.md | drop rank-mapped tiers and named-game claims, non-affiliation note
+- /fr/…/reaction-game | done | 331fd1f5 | docs/seo/research/fr/reaction-game.md | jeu de réaction en ligne title/H1/description
+- /fr/…/visual-tracking-speed-test | done | b2c1ce42 | docs/seo/research/fr/visual-tracking-speed-test.md | review log, no copy change
+- /fr/…/market-doors-pursuit | done | f24ffffd | docs/seo/research/fr/market-doors-pursuit.md | review log, title now unique after fps-tracking retarget
+- /fr/…/constant-slow-pursuit | done | 7fab0910 | docs/seo/research/fr/constant-slow-pursuit.md | review log, no copy change
+- /fr/…/stability-challenge | done | 9bc4b18d | docs/seo/research/fr/stability-challenge.md | jeu de précision souris title/H1, replace placeholder headings, drop fabricated percentiles and unsourced claims
