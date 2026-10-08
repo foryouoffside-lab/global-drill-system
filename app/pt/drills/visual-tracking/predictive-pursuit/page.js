@@ -65,7 +65,7 @@ const softwareApplicationSchema = {
   "@type": "SoftwareApplication", "sameAs": ["https://en.wikipedia.org/wiki/Smooth_pursuit"],
   "name": "Treino de Rastreamento Visual Preditivo",
   "operatingSystem": "Navegador Web",
-  "applicationCategory": "HealthApplication",
+  "applicationCategory": "GameApplication",
   "offers": {
     "@type": "Offer",
     "price": "0.00",
@@ -197,7 +197,7 @@ const faqSchema = {
       "name": "Qual a influência da taxa de atualização do monitor neste exercício?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Telas de alta frequência geram amostragens cinéticas mais suaves antes da oclusão, facilitando o cálculo exato da aceleração pelo cerebelo (Woods et al., 2015)."
+        "text": "Telas de alta frequência geram amostragens cinéticas mais suaves antes da oclusão, tornando a trajetória antes da oclusão mais fluida (Woods et al., 2015)."
       }
     },
     {
@@ -213,7 +213,7 @@ const faqSchema = {
       "name": "Adultos mais velhos conseguem melhorar a mira preditiva com treino?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Sim. Enquanto reflexos mecânicos diminuem ligeiramente com a idade, os modelos preditivos do cerebelo mantêm alta plasticidade e respondem muito bem ao treino estruturado (Kowler, 1989)."
+        "text": "A pesquisa sobre predição no acompanhamento ocular (Kowler, 1989) não permite prometer melhora com o treino. Você pode usar o exercício para comparar suas próprias sessões ao longo do tempo."
       }
     }
   ]
@@ -230,13 +230,13 @@ const guideProps = {
     title: "Referências para prever trajetórias e acompanhar alvos ocultos",
     headers: ["Nível", "Precisão da previsão (%)", "Desvio na reaparição", "Correspondência do acompanhamento", "Perfil de antecipação"],
     rows: [
-      ["Elite (Esports / Atletas)", "Acima de 94%", "Abaixo de 15 px (Aterrissagem Perfeita)", "0.95 – 1.02", "Modelo cerebelar perfeito; antecipação milimétrica sem hesitação ou sacadas corretivas."],
-      ["Avançado (Nível Competitivo)", "86% – 93%", "15 px – 28 px", "0.88 – 0.94", "Excelente extrapolação vetorial com mínima necessidade de correção após a saída."],
-      ["Competente (Adulto Saudável)", "76% – 85%", "29 px – 45 px", "0.78 – 0.87", "Predição sólida com leve deriva do olhar em oclusões mais longas."],
-      ["Em Desenvolvimento", "62% – 75%", "46 px – 65 px", "0.65 – 0.77", "Predomínio de controle reativo; desaceleração evidente durante o período ocluído."],
-      ["Iniciante / Nível Base", "Abaixo de 62%", "Acima de 65 px", "Abaixo de 0.65", "Parada imediata do olhar na oclusão; grande atraso na recaptura do alvo."]
+      ["Faixa 1 (Muito alta)", "Acima de 94%", "Abaixo de 15 px (Aterrissagem Perfeita)", "0.95 – 1.02", "Modelo cerebelar perfeito; antecipação milimétrica sem hesitação ou sacadas corretivas."],
+      ["Faixa 2 (Alta)", "86% – 93%", "15 px – 28 px", "0.88 – 0.94", "Excelente extrapolação vetorial com mínima necessidade de correção após a saída."],
+      ["Faixa 3 (Boa)", "76% – 85%", "29 px – 45 px", "0.78 – 0.87", "Predição sólida com leve deriva do olhar em oclusões mais longas."],
+      ["Faixa 4 (Intermediária)", "62% – 75%", "46 px – 65 px", "0.65 – 0.77", "Predomínio de controle reativo; desaceleração evidente durante o período ocluído."],
+      ["Faixa 5 (Inicial)", "Abaixo de 62%", "Acima de 65 px", "Abaixo de 0.65", "Parada imediata do olhar na oclusão; grande atraso na recaptura do alvo."]
     ],
-    note: "※ Testes realizados em 1080p a 50–70 cm da tela com velocidades de 1.0x a 1.5x. A pontuação avalia a precisão de chegada foveal na coordenada de saída sem sacadas corretivas posteriores."
+    note: "Faixas editoriais para comparar suas próprias sessões, não percentis de população nem normas clínicas. ※ Testes realizados em 1080p a 50–70 cm da tela com velocidades de 1.0x a 1.5x. A pontuação avalia a precisão de chegada foveal na coordenada de saída sem sacadas corretivas posteriores."
   },
   techniques: {
     title: "Quatro princípios para prever trajetórias com mais precisão",
@@ -270,7 +270,7 @@ const guideProps = {
     "Durante o trecho ocluído, mantenha o deslizar dos olhos pela trajetória prevista com velocidade constante.",
     "Reenquadre a fóvea no instante em que o alvo reaparecer e confira sua precisão de extrapolação."
   ],
-  audience: "Jogadores de shooters táticos (Valorant, CS2, Apex Legends, Overwatch), atletas de beisebol, tênis e esportes de alta velocidade, e praticantes de ginástica ocular funcional.",
+  audience: "Jogadores de shooters táticos (Valorant, CS2, Apex Legends, Overwatch), e quem quer praticar o acompanhamento visual com trajetórias que somem e reaparecem.",
   faqs: faqSchema.mainEntity.map(item => ({
     q: item.name,
     a: item.acceptedAnswer.text
