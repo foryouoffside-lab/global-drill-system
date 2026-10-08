@@ -31,3 +31,4 @@
 | /pt/drills/reaction-speed/barrier-sequence-pursuit | done | TBD:barrier-sequence-pursuit | docs/seo/research/pt/barrier-sequence-pursuit.md | title Treino de Reflexo FPS: Peek e Ângulos (suggest proxy); demand not verified; lib/i18n/drills/barrierSequencePursuit.js pt title |
 | /pt/drills/reaction-speed/market-doors-pursuit | done | TBD:market-doors-pursuit | docs/seo/research/pt/market-doors-pursuit.md | audited, title kept, no change needed |
 | /pt/drills/reaction-speed/visual-tracking-speed-test | done | TBD:visual-tracking-speed-test | docs/seo/research/pt/visual-tracking-speed-test.md | audited, no change needed; demand not verified |
+| /pt/drills/visual-tracking/directional-chaos-pursuit | done | TBD:directional-chaos-pursuit | docs/seo/research/pt/directional-chaos-pursuit.md | title kept; elite tiers, synapse and transfer claims removed; demand not verified |

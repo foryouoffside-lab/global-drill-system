@@ -71,7 +71,7 @@ const softwareApplicationSchema = {
   "@context": "https://schema.org",
   "@type": "SoftwareApplication", "sameAs": ["https://en.wikipedia.org/wiki/Smooth_pursuit", "https://en.wikipedia.org/wiki/Saccade"],
   "name": "Perseguição Caótica Direcional – Rastreamento Ocular",
-  "applicationCategory": "HealthApplication",
+  "applicationCategory": "GameApplication",
   "operatingSystem": "Navegador",
   "dateModified": "2026-09-20",
   "offers": {
@@ -101,7 +101,7 @@ const videoGameSchema = {
   "@context": "https://schema.org",
   "@type": "VideoGame",
   "name": "Perseguição Caótica Direcional – Treinador de Motilidade Visual",
-  "description": "Treinador visual reflexivo no navegador para rastrear alvos com guinadas caóticas e acelerações súbitas sem predição motora.",
+  "description": "Treinador visual reflexivo no navegador para rastrear alvos com guinadas caóticas e acelerações súbitas sem depender de antecipação.",
   "genre": ["Treino de motilidade ocular", "Treino de visão esportiva", "Treino de mira"],
   "playMode": "Um jogador",
   "applicationCategory": "Game",
@@ -156,7 +156,7 @@ const faqSchema = {
       "name": "O que é o exercício de Perseguição Caótica Direcional?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "É um exercício de motilidade ocular avançada em que o alvo sofre perturbações contínuas de aceleração e colisões de borda pseudo-aleatórias. Isso neutraliza a predição motora interna e força o sistema visual a treinar reflexos foveais puros de malha fechada."
+        "text": "É um exercício de motilidade ocular avançada em que o alvo sofre perturbações contínuas de aceleração e colisões de borda pseudo-aleatórias. Isso dificulta a antecipação e exige reagir ao movimento observado."
       }
     },
     {
@@ -177,10 +177,10 @@ const faqSchema = {
     },
     {
       "@type": "Question",
-      "name": "De que forma o treino caótico melhora a mira e o rastreamento em jogos de tiro?",
+      "name": "De que forma o treino caótico se relaciona com a mira e o rastreamento em jogos de tiro?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Em jogos como Apex Legends, Overwatch 2 e CS2, oponentes usam deslocamentos laterais imprevisíveis e mudanças rápidas de direção. Treinar recuperação sacádica encurta a perda de foco e acelera a reaquisição da mira sobre adversários evasivos."
+        "text": "Em jogos como Apex Legends, Overwatch 2 e CS2, oponentes usam deslocamentos laterais imprevisíveis e mudanças rápidas de direção. Praticar recuperação sacádica pode ajudar a treinar a reaquisição da mira sobre adversários evasivos."
       }
     },
     {
@@ -188,7 +188,7 @@ const faqSchema = {
       "name": "Por que é fundamental manter a cabeça fixa durante o teste?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Mover a cabeça ativa o reflexo vestíbulo-ocular (RVO) através dos canais semicirculares do ouvido interno, mascarando o déficit dos músculos oculares. Isolar a cabeça garante que apenas os seis músculos extraoculares façam o trabalho neuromuscular."
+        "text": "Mover a cabeça ativa o reflexo vestíbulo-ocular (RVO) através dos canais semicirculares do ouvido interno, mascarando o déficit dos músculos oculares. Isolar a cabeça ajuda a concentrar o esforço nos movimentos dos olhos."
       }
     },
     {
@@ -196,7 +196,7 @@ const faqSchema = {
       "name": "Qual é a recomendação ideal de tempo e frequência diária de treino?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Sessões diárias de 5 a 10 minutos (5 a 8 séries de 60 segundos). Como o rastreamento caótico demanda altíssima atenção visual e dezenas de sacadas corretivas por minuto, volumes curtos preservam a integridade sináptica e evitam fadiga ocular."
+        "text": "Sessões diárias de 5 a 10 minutos (5 a 8 séries de 60 segundos). Como o rastreamento caótico demanda altíssima atenção visual e dezenas de sacadas corretivas por minuto, volumes curtos ajudam a evitar fadiga ocular."
       }
     },
     {
@@ -220,7 +220,7 @@ const faqSchema = {
       "name": "O exercício traz transferência real para esportes convencionais como tênis e futebol?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Sim. Bolas com efeito, desvios no ar e rebotes inesperados desafiam a estabilidade foveal exatamente da mesma forma. Atletas com recuperação sacádica rápida conseguem manter o contato visual com a bola mesmo após deflexões acentuadas."
+        "text": "Pode ajudar como prática extra de acompanhamento visual, mas não há garantia de transferência para esportes ou jogos; o exercício mede apenas a tarefa na tela."
       }
     },
     {
@@ -245,13 +245,13 @@ const guideProps = {
     title: "Padrões de Desempenho em Rastreamento Caótico e Recuperação Sacádica",
     headers: ["Nível de Desempenho", "Multiplicador de Velocidade", "Tempo de Refixação e Estabilidade Ocular", "Perfil Neuromotor e Oculomotor"],
     rows: [
-      ["Nível 1: Apex Reativo – Reflexos de Elite", "2.0x+ Ultra-Velocidade", "Sacada corretiva dispara imediatamente após a inflexão; refixação contínua sem oscilação sobre o novo vetor.", "Velocidade sináptica máxima entre a retina periférica e os centros motores oculares. Padrão de elite em esportes de alta velocidade e esports."],
-      ["Nível 2: Recuperação Sacádica Superior", "1.4x – 1.9x Alta Velocidade", "Recentralização ágil com oscilação residual mínima; retoma perseguição lenta em menos de 180 ms.", "Excelente coordenação dos músculos retos e oblíquos externos. Rápida adaptação a mudanças bruscas de trajetória."],
-      ["Nível 3: Padrão Funcional Sólido", "1.0x – 1.3x Velocidade Padrão", "Acompanhamento consistente da trajetória média; breve retardo latente diante de quiques em ângulos agudos.", "Faixa típica de adultos saudáveis. Plenamente adequada para direção defensiva, esportes recreativos e jogos."],
-      ["Nível 4: Refixação Tardia – Requer Treino", "0.7x – 0.9x Velocidade Moderada", "O alvo escapa com frequência da fóvea; são necessárias múltiplas sacadas corretivas sucessivas para reencontrar o vetor.", "Latência sensoriomotora elevada em inversões direcionais; recomenda-se praticar inicialmente em velocidades reduzidas."],
-      ["Nível 5: Instabilidade Inicial – Iniciante", "< 0.7x Baixa Velocidade", "Perda frequente do campo visual; o olhar dispersa pela tela em busca do alvo em vez de acompanhá-lo fluidamente.", "Controle básico de motilidade ocular deve ser desenvolvido em trajetórias lineares ou sinusoidais previsíveis antes deste teste."]
+      ["Faixa 1 (Muito alta)", "2.0x+ Ultra-Velocidade", "Sacada corretiva dispara imediatamente após a inflexão; refixação contínua sem oscilação sobre o novo vetor.", "Referência editorial para comparar suas sessões."],
+      ["Faixa 2 (Alta)", "1.4x – 1.9x Alta Velocidade", "Recentralização ágil com oscilação residual mínima; retoma perseguição lenta em menos de 180 ms.", "Excelente coordenação dos músculos retos e oblíquos externos. Rápida adaptação a mudanças bruscas de trajetória."],
+      ["Faixa 3 (Boa)", "1.0x – 1.3x Velocidade Padrão", "Acompanhamento consistente da trajetória média; breve retardo latente diante de quiques em ângulos agudos.", "Faixa típica de adultos saudáveis. Plenamente adequada para direção defensiva, esportes recreativos e jogos."],
+      ["Faixa 4 (Intermediária)", "0.7x – 0.9x Velocidade Moderada", "O alvo escapa com frequência da fóvea; são necessárias múltiplas sacadas corretivas sucessivas para reencontrar o vetor.", "Latência sensoriomotora elevada em inversões direcionais; recomenda-se praticar inicialmente em velocidades reduzidas."],
+      ["Faixa 5 (Inicial)", "< 0.7x Baixa Velocidade", "Perda frequente do campo visual; o olhar dispersa pela tela em busca do alvo em vez de acompanhá-lo fluidamente.", "Controle básico de motilidade ocular deve ser desenvolvido em trajetórias lineares ou sinusoidais previsíveis antes deste teste."]
     ],
-    note: "Valores de referência baseados na cinemática de respostas oculomotoras e correção sacádica sob movimento caótico (Bahill et al., 1980; Barnes, 2008; Krauzlis, 2004; Robinson, 1965)."
+    note: "Faixas editoriais para comparar suas próprias sessões, não percentis de população nem normas clínicas. Valores de referência baseados na cinemática de respostas oculomotoras e correção sacádica sob movimento caótico (Bahill et al., 1980; Barnes, 2008; Krauzlis, 2004; Robinson, 1965)."
   },
   techniques: {
     title: "Quatro técnicas para melhorar a recuperação sacádica",
