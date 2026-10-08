@@ -14,3 +14,4 @@
 | /pt/drills/motor/movement-speed/keyboard-recognition | done | TBD:keyboard-recognition | docs/seo/research/pt/keyboard-recognition.md | title kept; teste de teclado 13,118 not adopted (tester intent); percentiles removed; demand not verified |
 | /pt/drills/motor/precision-control/steady-hand | done | TBD:steady-hand | docs/seo/research/pt/steady-hand.md | title kept; percentiles/rank names removed; demand not verified |
 | /pt/drills/memory/short-term-memory/color-sequence | done | TBD:color-sequence | docs/seo/research/pt/color-sequence.md | H1/schema/H2 unified on Jogo Simon; jogo da memoria is card-game intent; demand not verified |
+| /pt/drills/physical/fitness/agility-ladder | done | TBD:agility-ladder | docs/seo/research/pt/agility-ladder.md | description no longer claims footwork training; tiers/top 0,1% removed; demand not verified |
