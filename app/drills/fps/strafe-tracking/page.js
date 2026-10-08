@@ -5,8 +5,8 @@ import { getAlternateLanguages } from '@/lib/i18n/locales';
 import { pickSources } from '@/lib/drillSources';
 
 export const metadata = {
-  title: "Strafe Tracking Aim Trainer – Reactive Aim | SkillDrills",
-  description: "Train reactive strafe tracking, directional reversal reading, and continuous smooth pursuit aim for Apex Legends, Overwatch 2, Valorant, and CS2.",
+  title: "Strafe Tracking Aim Trainer: Reactive Aim | SkillDrills",
+  description: "Free strafe tracking aim trainer for Apex, Overwatch 2, Valorant and CS2. Practice reading ADAD direction reversals and tracking moving targets.",
   keywords: [
     "strafe tracking aim trainer",
     "strafe tracking",
@@ -30,8 +30,8 @@ export const metadata = {
     follow: true,
   },
   openGraph: {
-    title: "Strafe Tracking Aim Trainer – Reactive Aim | SkillDrills",
-    description: "Train reactive strafe tracking, directional reversal reading, and continuous smooth pursuit aim for Apex Legends, Overwatch 2, Valorant, and CS2.",
+    title: "Strafe Tracking Aim Trainer: Reactive Aim | SkillDrills",
+    description: "Free strafe tracking aim trainer for Apex, Overwatch 2, Valorant and CS2. Practice reading ADAD direction reversals and tracking moving targets.",
     url: "https://skilldrills.online/drills/fps/strafe-tracking",
     siteName: 'SkillDrills',
     locale: 'en_US',
@@ -39,8 +39,8 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: "Strafe Tracking Aim Trainer – Reactive Aim | SkillDrills",
-    description: "Train reactive strafe tracking, directional reversal reading, and continuous smooth pursuit aim for Apex Legends, Overwatch 2, Valorant, and CS2.",
+    title: "Strafe Tracking Aim Trainer: Reactive Aim | SkillDrills",
+    description: "Free strafe tracking aim trainer for Apex, Overwatch 2, Valorant and CS2. Practice reading ADAD direction reversals and tracking moving targets.",
   },
 };
 
@@ -64,7 +64,7 @@ export default function StrafeTrackingPage() {
     "applicationCategory": "Game",
     "operatingSystem": "Web Browser",
     "browserRequirements": "Requires HTML5 Canvas and Pointer Lock API support",
-    "dateModified": "2026-09-11"
+    "dateModified": "2026-10-08"
   };
 
   const softwareSchema = {
@@ -73,7 +73,7 @@ export default function StrafeTrackingPage() {
     "name": "Strafe Tracking Aim Trainer",
     "applicationCategory": "GameApplication",
     "operatingSystem": "Web Browser",
-    "dateModified": "2026-09-05",
+    "dateModified": "2026-10-08",
     "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
     "description": "Master reactive strafe tracking, counter-strafe reading, and smooth pursuit motor responses for competitive FPS games.",
     "genre": "FPS Training / Reactive Tracking",
@@ -91,7 +91,7 @@ export default function StrafeTrackingPage() {
     "name": "Strafe Tracking Aim Trainer",
     "url": "https://skilldrills.online/drills/fps/strafe-tracking",
     "description": "Master reactive strafe tracking, counter-strafe reading, and smooth pursuit motor responses for competitive FPS games.",
-    "dateModified": "2026-09-05",
+    "dateModified": "2026-10-08",
     "gamePlatform": "Web Browser",
     "genre": ["FPS Training", "Aim Trainer", "Reactive Tracking"],
     "playMode": "SinglePlayer",
@@ -103,7 +103,7 @@ export default function StrafeTrackingPage() {
   const faqSchema = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
-    "dateModified": "2026-09-05",
+    "dateModified": "2026-10-08",
     "mainEntity": [
       {
         "@type": "Question",
@@ -171,10 +171,10 @@ export default function StrafeTrackingPage() {
       },
       {
         "@type": "Question",
-        "name": "How does raw unaccelerated input improve strafe reading compared to mouse acceleration?",
+        "name": "Does mouse acceleration make strafe tracking harder?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Hardware raw input delivers a strict 1:1 relationship between physical mouse displacement and screen pixel motion. Mouse acceleration introduces non-linear velocity variables, making it significantly harder for the cerebellum to compute the exact hand deceleration needed during a strafe swap."
+          "text": "It can. With a consistent 1:1 relationship between hand movement and cursor movement, you can learn the exact hand deceleration a strafe swap needs. Acceleration makes the same hand movement produce different cursor distances. This drill uses Pointer Lock but does not request unadjusted input, so turn off OS pointer acceleration (Enhance pointer precision) before you practice."
         }
       },
       {
@@ -226,8 +226,9 @@ export default function StrafeTrackingPage() {
   };
 
   const strafeTrackingGuide = {
-    heading: "Strafe Tracking Aim Trainer Guide & Reactive Pursuit Biomechanics",
+    heading: "What is a strafe tracking aim trainer?",
     intro: [
+      "A strafe tracking aim trainer teaches you to keep your crosshair on an opponent who strafes left and right and reverses direction. This drill sends a target on unpredictable ADAD paths while you hold fire and follow it. It scores how long you stay on target, which helps Apex, Overwatch 2, Valorant and CS2 gunfights.",
       "Strafe Tracking Aim Trainer is a specialized neuromuscular conditioning drill engineered to isolate and refine reactive lateral tracking against unpredictable ADAD evasion. In modern competitive first-person shooters—most notably Apex Legends, Overwatch 2, The Finals, and Call of Duty—gunfight outcomes depend on tracking uptime: the continuous percentage of time your crosshair remains locked on an enemy while they execute rapid direction shifts, crouch spams, and erratic strafes.",
       "The neurological foundation of visual motion pursuit was elucidated by Richard J. Krauzlis (2004), detailing how the brain coordinates smooth pursuit eye movements through reciprocal circuits connecting the primary visual motion cortex (MT/V5), the medial superior temporal area (MST), and the frontal eye field (FEF). When a target moves, these structures compute real-time retinal velocity error to drive ocular and manual motor systems in synchronized pursuit.",
       "In a classical discovery in visual psychophysics, Cyril Rashbass (1961) demonstrated that smooth pursuit and saccadic movements are governed by distinct physiological subsystems: saccades respond to positional displacement, whereas smooth pursuit responds exclusively to retinal velocity (slip). In gunfights, players who attempt to 'predict' reversals frequently trigger involuntary catch-up saccades, resulting in overshooting and erratic aim stutter.",
@@ -235,19 +236,19 @@ export default function StrafeTrackingPage() {
       "How this is measured: every event is timestamped with the browser's performance.now() high-resolution clock, entirely on your device -- no score is uploaded. Two things this cannot control: browser timers are deliberately coarsened as a Spectre mitigation (typically to about 1 ms), and your display quantizes the stimulus to its refresh interval -- about 16.7 ms per frame at 60 Hz, 6.9 ms at 144 Hz and 4.1 ms at 240 Hz (Woods et al., 2015). Mouse polling adds roughly 8 ms at 125 Hz versus 1 ms at 1000 Hz. So treat differences smaller than about 5 ms as measurement noise, and compare your own runs on the same hardware rather than against someone else's setup."
     ],
     benchmarks: {
-      title: "Reactive Strafe Tracking & Reversal Response Benchmarks",
+      title: "What is a good strafe tracking score?",
       headers: ["Performance Tier", "Target On-Time %", "Reversal Latency", "Competitive In-Game Implication"],
       rows: [
-        ["Tier 1 (Apex Predator / Contenders)", "85% – 95%+", "<180 ms", "Laser-like reactive beam; seamless velocity matching with negligible directional overshoot against high-speed ADAD strafes"],
+        ["Tier 1 (Elite)", "85% – 95%+", "<180 ms", "Laser-like reactive beam; seamless velocity matching with negligible directional overshoot against high-speed ADAD strafes"],
         ["Tier 2 (Competitive Master)", "72% – 85%", "180 – 220 ms", "Exceptional tracking uptime; quick recovery after direction changes; wins majority of 1v1 close-range mirror duels"],
-        ["Tier 3 (Diamond / High-Skill)", "58% – 72%", "220 – 270 ms", "Solid linear tracking; experiences momentary target loss (50–100 ms) when opponent executes unexpected sharp reversals"],
-        ["Tier 4 (Intermediate / Gold)", "42% – 58%", "270 – 330 ms", "Frequent over-prediction; crosshair regularly overshoots the target before executing slow catch-up saccades"],
+        ["Tier 3 (High-Skill)", "58% – 72%", "220 – 270 ms", "Solid linear tracking; experiences momentary target loss (50–100 ms) when opponent executes unexpected sharp reversals"],
+        ["Tier 4 (Intermediate)", "42% – 58%", "270 – 330 ms", "Frequent over-prediction; crosshair regularly overshoots the target before executing slow catch-up saccades"],
         ["Tier 5 (Developing / Novice)", "Sub-42%", ">330 ms", "Severe tracking jitter; struggles to match strafe velocity; crosshair persistently lags behind evasive enemy movement"]
       ],
-      note: "On-target percentage reflects cumulative continuous contact divided by total active drill time; reversal latency measures time elapsed between target vector inversion and reticle re-acquisition, evaluated via unaccelerated raw input (Woods et al., 2015)."
+      note: "On-target percentage reflects cumulative continuous contact divided by total active drill time; reversal latency measures time elapsed between target vector inversion and reticle re-acquisition, timed with performance.now() (Woods et al., 2015). Tiers are this drill's own scale, not an official game rating."
     },
     techniques: {
-      title: "Evidence-Based Training Protocols for Reactive Strafe Tracking",
+      title: "How do you improve strafe tracking?",
       items: [
         {
           name: "Reactive Reading Over Premature Prediction",
@@ -296,6 +297,12 @@ export default function StrafeTrackingPage() {
     h1Prefix: null,
     h1Keyword: "Strafe Tracking Aim Trainer",
     h1Suffix: null,
+    startSubtitle: "Pointer Lock Mouse Input • Endless Level Progression",
+    aboutCards: [
+      { iconBg: "bg-blue-600", title: "Who Should Use This?", text: "Ranked players and esports competitors looking to track fast ADAD strafing and erratic movement patterns." },
+      { iconBg: "bg-fuchsia-600", title: "Skills Trained", text: "Reactive tracking, aim smoothness, counter-strafe reading, directional transition speed, and wrist glide control." },
+      { iconBg: "bg-orange-600", title: "Pointer Lock Mouse Input", text: "Mouse movement is captured with the browser Pointer Lock API so the cursor stays on the canvas. Turn off OS pointer acceleration to keep movement consistent." }
+    ],
     rulesItems: [
       { num: "1", text: "Tracking Alignment", highlight: "+50 PTS (+0.4s/s)", result: "×Combo Mult" },
       { num: "2", text: "Continuous Combo", highlight: "Up to 3.0×", result: "Max Multiplier" },

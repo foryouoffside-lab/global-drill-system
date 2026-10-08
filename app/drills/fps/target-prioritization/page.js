@@ -4,8 +4,8 @@ import { pickSources } from '@/lib/drillSources';
 import { getAlternateLanguages } from '@/lib/i18n/locales';
 import DrillFooter from '@/components/drill/DrillFooter';
 export const metadata = {
-  title: "Target Prioritization Aim Trainer – Threat Aim | SkillDrills",
-  description: "Free target prioritization aim trainer. Train threat evaluation, attention filtering and shot inhibition against mixed friendly and enemy targets.",
+  title: "Target Prioritization Aim Trainer: Threat Aim | SkillDrills",
+  description: "Free target prioritization aim trainer for Valorant, CS2 and Apex. Practice picking the right threat and holding fire on friendly targets, in your browser.",
   keywords: [
     "target prioritization aim trainer",
     "target prioritization trainer",
@@ -29,8 +29,8 @@ export const metadata = {
     follow: true,
   },
   openGraph: {
-    title: "Target Prioritization Aim Trainer – Threat Aim | SkillDrills",
-    description: "Master threat assessment speed, visual distractor filtering, response inhibition, and priority target selection for competitive shooters like Valorant, CS2, and Apex Legends.",
+    title: "Target Prioritization Aim Trainer: Threat Aim | SkillDrills",
+    description: "Free target prioritization aim trainer for Valorant, CS2 and Apex. Practice picking the right threat and holding fire on friendly targets, in your browser.",
     url: "https://skilldrills.online/drills/fps/target-prioritization",
     siteName: 'SkillDrills',
     locale: 'en_US',
@@ -38,8 +38,8 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: "Target Prioritization Aim Trainer – Threat Aim | SkillDrills",
-    description: "Master threat assessment speed, visual distractor filtering, response inhibition, and priority target selection for competitive shooters like Valorant, CS2, and Apex Legends.",
+    title: "Target Prioritization Aim Trainer: Threat Aim | SkillDrills",
+    description: "Free target prioritization aim trainer for Valorant, CS2 and Apex. Practice picking the right threat and holding fire on friendly targets, in your browser.",
   },
 };
 
@@ -76,7 +76,7 @@ export default function TargetPrioritizationPage() {
     "name": "Target Prioritization Aim Trainer",
     "applicationCategory": "GameApplication",
     "operatingSystem": "Web Browser",
-    "dateModified": "2026-09-05",
+    "dateModified": "2026-10-08",
     "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
     "description": "Improve your threat assessment speed, visual filtering, distractor suppression, and impulse control for competitive FPS games.",
     "genre": "FPS Training / Cognitive Threat Sorting",
@@ -94,7 +94,7 @@ export default function TargetPrioritizationPage() {
     "name": "Target Prioritization Aim Trainer",
     "url": "https://skilldrills.online/drills/fps/target-prioritization",
     "description": "Improve your threat assessment speed, visual filtering, distractor suppression, and impulse control for competitive FPS games.",
-    "dateModified": "2026-09-05",
+    "dateModified": "2026-10-08",
     "gamePlatform": "Web Browser",
     "genre": ["FPS Training", "Aim Trainer", "Threat Prioritization"],
     "playMode": "SinglePlayer",
@@ -106,7 +106,7 @@ export default function TargetPrioritizationPage() {
   const faqSchema = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
-    "dateModified": "2026-09-05",
+    "dateModified": "2026-10-08",
     "mainEntity": [
       {
         "@type": "Question",
@@ -229,8 +229,9 @@ export default function TargetPrioritizationPage() {
   };
 
   const targetPrioritizationGuide = {
-    heading: "Target Prioritization Aim Trainer Guide & Threat Assessment Biomechanics",
+    heading: "What is a target prioritization aim trainer?",
     intro: [
+      "A target prioritization aim trainer trains you to decide which target to shoot first and which to leave alone. In this drill enemy threats and friendly targets appear together, so you pick the highest-priority threat and hold fire on friendlies. It builds target selection and shot discipline for Valorant, CS2 and Apex Legends.",
       "Target Prioritization Aim Trainer is an advanced perceptual-cognitive drill engineered to cultivate instantaneous threat assessment, visual distractor suppression, and executive motor inhibition. In tactical shooters—including Valorant, Counter-Strike 2, Rainbow Six Siege, and Apex Legends—clutch survival depends not merely on mechanical flick accuracy, but on target selection: deciding which enemy must be eliminated first while actively suppressing the urge to fire on low-priority distractors or friendly teammates.",
       "The neurological foundation of motor inhibition and decision control was established by Logan and Cowan (1984) through the stop-signal paradigm. They demonstrated that human response execution and response inhibition operate as an interactive 'horse race' between a go-process and a stop-process in the fronto-basal-ganglia network. In chaotic firefights, players who lack inhibitory training suffer from panic firing, discharging their weapon before verifying target alignment.",
       "Visual filtering mechanics were formalized by Donald E. Broadbent (1958) and Anne Treisman (1964) in early filter and attenuation models of selective attention. When multiple visual stimuli compete for processing resources, the brain must deploy top-down attentional gating (Posner & Petersen, 1990) to suppress non-threatening movement while channeling focal attention toward the most imminent threat vector.",
@@ -238,19 +239,19 @@ export default function TargetPrioritizationPage() {
       "How this is measured: every event is timestamped with the browser's performance.now() high-resolution clock, entirely on your device -- no score is uploaded. Two things this cannot control: browser timers are deliberately coarsened as a Spectre mitigation (typically to about 1 ms), and your display quantizes the stimulus to its refresh interval -- about 16.7 ms per frame at 60 Hz, 6.9 ms at 144 Hz and 4.1 ms at 240 Hz (Woods et al., 2015). Mouse polling adds roughly 8 ms at 125 Hz versus 1 ms at 1000 Hz. So treat differences smaller than about 5 ms as measurement noise, and compare your own runs on the same hardware rather than against someone else's setup."
     ],
     benchmarks: {
-      title: "Threat Assessment & Executive Decision Latency Benchmarks",
+      title: "How fast should you prioritize targets?",
       headers: ["Performance Tier", "Resolution Latency", "Priority Accuracy", "Competitive In-Game Implication"],
       rows: [
-        ["Tier 1 (Apex Commander / Radiant Tactician)", "Sub-280 ms", "96% – 99%+", "Flawless threat assessment; instant neutralisation of primary threats with 0% friendly fire in multi-enemy pushes"],
-        ["Tier 2 (Competitive Master / Tier-2 Esports)", "280 – 340 ms", "90% – 96%", "Exceptional decision speed; rapid recovery after target escalation; under 1% distractor misclick rate"],
-        ["Tier 3 (High-Skill Diamond / Ascendant)", "340 – 420 ms", "82% – 90%", "Solid priority target engagement; slight 60–90 ms hesitation when red and yellow threats appear in close proximity"],
-        ["Tier 4 (Intermediate / Gold / Platinum)", "420 – 520 ms", "72% – 82%", "Susceptible to panic firing; occasionally fires on friendly green units or shoots yellow threats before clearing reds"],
+        ["Tier 1 (Elite)", "Sub-280 ms", "96% – 99%+", "Flawless threat assessment; instant neutralisation of primary threats with 0% friendly fire in multi-enemy pushes"],
+        ["Tier 2 (Competitive)", "280 – 340 ms", "90% – 96%", "Exceptional decision speed; rapid recovery after target escalation; under 1% distractor misclick rate"],
+        ["Tier 3 (High-Skill)", "340 – 420 ms", "82% – 90%", "Solid priority target engagement; slight 60–90 ms hesitation when red and yellow threats appear in close proximity"],
+        ["Tier 4 (Intermediate)", "420 – 520 ms", "72% – 82%", "Susceptible to panic firing; occasionally fires on friendly green units or shoots yellow threats before clearing reds"],
         ["Tier 5 (Developing / Panic Firing)", "520 ms+", "Sub-72%", "Frequent impulse errors; high friendly fire rate; struggles to filter visual clutter during chaotic site retakes"]
       ],
       note: "Resolution latency measures elapsed time from high-threat stimulus spawn to successful reticle click; priority accuracy represents valid threat eliminations divided by total trigger actions (Woods et al., 2015)."
     },
     techniques: {
-      title: "Evidence-Based Protocols for Perfecting Target Prioritization",
+      title: "How do you decide which target to shoot first?",
       items: [
         {
           name: "Executive Response Inhibition (Go/No-Go Discipline)",

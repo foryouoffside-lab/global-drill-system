@@ -4,8 +4,8 @@ import DrillFooter from '@/components/drill/DrillFooter';
 import { pickSources } from '@/lib/drillSources';
 import { getAlternateLanguages } from '@/lib/i18n/locales';
 export const metadata = {
-  title: "FPS Reaction Time Test – Gaming Reflex Speed | SkillDrills",
-  description: "Measure and train visual reaction time, click reflex speed, and stimulus response latency for competitive FPS gaming with raw pointer lock precision.",
+  title: "FPS Reaction Time Test: Gaming Reflex Trainer | SkillDrills",
+  description: "Free FPS reaction time test and trainer. Measure your click reflex to a visual stimulus and train out pre-firing. Runs in your browser, no download.",
   keywords: [
     "fps reaction time test",
     "gaming reflex test",
@@ -37,8 +37,8 @@ export const metadata = {
     follow: true,
   },
   openGraph: {
-    title: "FPS Reaction Time Test – Gaming Reflex Speed | SkillDrills",
-    description: "Measure and train visual reaction time, click reflex speed, and stimulus response latency for competitive FPS gaming with raw pointer lock precision.",
+    title: "FPS Reaction Time Test: Gaming Reflex Trainer | SkillDrills",
+    description: "Free FPS reaction time test and trainer. Measure your click reflex to a visual stimulus and train out pre-firing. Runs in your browser, no download.",
     url: "https://skilldrills.online/drills/fps/instant-response",
     siteName: 'SkillDrills',
     locale: 'en_US',
@@ -46,8 +46,8 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: "FPS Reaction Time Test – Gaming Reflex Speed | SkillDrills",
-    description: "Measure and train visual reaction time, click reflex speed, and stimulus response latency for competitive FPS gaming with raw pointer lock precision.",
+    title: "FPS Reaction Time Test: Gaming Reflex Trainer | SkillDrills",
+    description: "Free FPS reaction time test and trainer. Measure your click reflex to a visual stimulus and train out pre-firing. Runs in your browser, no download.",
   },
 };
 
@@ -75,7 +75,7 @@ export default function InstantResponsePage() {
       "price": "0",
       "priceCurrency": "USD"
     },
-    "description": "A free browser-based FPS reaction time test measuring visual reflex latency, trigger finger speed, and anti-pre-fire discipline with raw pointer lock."
+    "description": "A free browser-based FPS reaction time test measuring visual reflex latency, trigger finger speed, and anti-pre-fire discipline with pointer lock mouse input."
   };
 
   const softwareSchema = {
@@ -84,7 +84,7 @@ export default function InstantResponsePage() {
     "name": "FPS Reaction Time Test",
     "applicationCategory": "GameApplication",
     "operatingSystem": "Web Browser",
-    "dateModified": "2026-09-05",
+    "dateModified": "2026-10-08",
     "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
     "description": "A free browser-based FPS drill measuring and training visual reaction time, click reflex speed, and stimulus response latency for competitive gaming.",
     "genre": "FPS Training / Reaction Speed",
@@ -102,7 +102,7 @@ export default function InstantResponsePage() {
     "name": "FPS Reaction Time Test",
     "url": "https://skilldrills.online/drills/fps/instant-response",
     "description": "A free browser-based FPS drill measuring and training visual reaction time, click reflex speed, and stimulus response latency for competitive gaming.",
-    "dateModified": "2026-09-05",
+    "dateModified": "2026-10-08",
     "gamePlatform": "Web Browser",
     "genre": ["FPS Training", "Reaction Trainer", "Aim Trainer"],
     "playMode": "SinglePlayer",
@@ -114,7 +114,7 @@ export default function InstantResponsePage() {
   const faqSchema = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
-    "dateModified": "2026-09-05",
+    "dateModified": "2026-10-08",
     "mainEntity": [
       {
         "@type": "Question",
@@ -137,7 +137,7 @@ export default function InstantResponsePage() {
         "name": "Can visual reaction time be improved with deliberate training?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Yes. While innate nerve conduction velocity is largely fixed biologically, deliberate reaction training reduces cortical processing delays by strengthening synaptic pathways between visual motion areas (MT/V5) and the pre-motor cortex. Training also develops optimal pre-motor muscle priming and eliminates hesitation, shaving 20 to 40 milliseconds off raw stimulus response latency."
+          "text": "Yes. While innate nerve conduction velocity is largely fixed biologically, deliberate reaction training reduces cortical processing delays by strengthening synaptic pathways between visual motion areas (MT/V5) and the pre-motor cortex. Training also develops optimal pre-motor muscle priming and eliminates hesitation, which can reduce stimulus response latency over time."
         }
       },
       {
@@ -214,8 +214,8 @@ export default function InstantResponsePage() {
       {
         "@type": "HowToStep",
         "position": 2,
-        "name": "Engage Raw Pointer Lock",
-        "text": "Click 'Start Drill' to lock the system cursor and bypass OS mouse acceleration curves."
+        "name": "Engage Pointer Lock",
+        "text": "Click 'Start Drill' to lock the system cursor to the canvas. Turn off OS pointer acceleration first so movement stays consistent."
       },
       {
         "@type": "HowToStep",
@@ -233,19 +233,20 @@ export default function InstantResponsePage() {
   };
 
   const instantResponseGuide = {
-    heading: "FPS Reaction Time Test Guide & Chronometry Benchmarks",
+    heading: "What is an FPS reaction time test?",
     intro: [
+      "An FPS reaction time test measures how quickly you click after a visual stimulus appears. This drill uses random delays and fake signals so you cannot guess, and it penalizes pre-firing. Your result shows your click reflex in milliseconds, which you can compare across your own sessions on the same hardware.",
       "FPS Reaction Time Test is an empirical mental chronometry drill designed to measure, benchmark, and sharpen sensory-motor reflex latency for competitive first-person shooters. In high-stakes tactical shooters like Valorant and Counter-Strike 2, gunfight outcomes are decided within fractions of a second when an opponent swings across an held angle.",
       "The scientific foundation of mental chronometry was first formalized by Dutch ophthalmologist Franciscus Cornelis Donders (1868), whose pioneering subtraction method isolated Simple Reaction Time (Type A: unprimed detection to motor discharge) from complex Choice Reaction Time (Type B: cognitive stimulus discrimination and response selection, later formalized mathematically in Hick\'s Law, 1952). While choice tasks require variable cognitive arbitration, simple visual reaction time represents the raw neurological throughput of the human central nervous system.",
       "Timed with performance.now() hardware timestamping (Woods et al., 2015) and HTML5 Pointer Lock coordinate tracking, this drill isolates raw sensory detection from cursor travel time. By introducing randomized exposure intervals, variable flash durations, and feint penalty mechanics, it trains players to eliminate anticipation pre-firing and execute fast-twitch trigger pulls with ruthless consistency.",
       "How this is measured: every event is timestamped with the browser's performance.now() high-resolution clock, entirely on your device -- no score is uploaded. Two things this cannot control: browser timers are deliberately coarsened as a Spectre mitigation (typically to about 1 ms), and your display quantizes the stimulus to its refresh interval -- about 16.7 ms per frame at 60 Hz, 6.9 ms at 144 Hz and 4.1 ms at 240 Hz (Woods et al., 2015). Mouse polling adds roughly 8 ms at 125 Hz versus 1 ms at 1000 Hz. So treat differences smaller than about 5 ms as measurement noise, and compare your own runs on the same hardware rather than against someone else's setup."
     ],
     benchmarks: {
-      title: "Reaction Chronometry & Sensorimotor Latency Tiers",
+      title: "What is a good FPS reaction time?",
       headers: ["Performance Tier", "Measured Latency Window", "Neurological & Biomechanical State", "Competitive In-Game Implication"],
       rows: [
-        ["Tier 1 (Apex Reflex)", "130 – 165 ms", "Near-biological limit: optimized retinal transduction, primed motor cortex, low-latency hardware latency", "Wins nearly 100% of standard 50/50 corner-hold duels against common peekers"],
-        ["Tier 2 (Competitive Pro)", "165 – 195 ms", "Acute noradrenergic vigilance, high-refresh hardware (240Hz+), automated pre-motor firing", "Standard benchmark for Valorant Radiants, CS2 Faceit Level 10s, and Apex Predators"],
+        ["Tier 1 (Apex Reflex)", "130 – 165 ms", "Near-biological limit: optimized retinal transduction, primed motor cortex, low-latency hardware latency", "Fastest band on this drill's scale; an advantage in corner-hold duels"],
+        ["Tier 2 (Competitive Pro)", "165 – 195 ms", "Acute noradrenergic vigilance, high-refresh hardware (240Hz+), automated pre-motor firing", "Fast, well-practiced reaction on this drill's scale"],
         ["Tier 3 (High-Skill FPS)", "195 – 225 ms", "Consistent sensorimotor coordination, standard gaming hardware (144Hz), minimal hesitation", "Reliable hold capability on medium and wide angles with proper crosshair placement"],
         ["Tier 4 (Average Gamer)", "225 – 265 ms", "Unconditioned baseline human reaction latency, typical 60Hz–144Hz setup, slight cognitive latency", "Vulnerable to aggressive peeker's advantage swings unless holding tight off-angles"],
         ["Tier 5 (Fatigued / Lag)", "265 – 330+ ms", "Accumulated mental fatigue, sleep deficit, high peripheral input lag, or uncalibrated arousal", "Frequent late reactions, missed trigger opportunities, and vulnerability to fast swings"]
@@ -253,7 +254,7 @@ export default function InstantResponsePage() {
       note: "Latencies reflect Simple Reaction Time (SRT) under Donders' A-reaction framework (1868) measured with high-precision digital chronometry (Woods et al., 2015). Individual latency varies with monitor refresh rate, mouse switch actuation, and autonomic arousal levels."
     },
     techniques: {
-      title: "Evidence-Based Protocols for Optimizing Trigger Reaction Speed",
+      title: "How can you improve your reaction time for FPS games?",
       items: [
         {
           name: "Visual Anticipation & Foveal Centering",

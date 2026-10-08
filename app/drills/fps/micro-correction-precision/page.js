@@ -4,8 +4,8 @@ import DrillFooter from '@/components/drill/DrillFooter';
 import { pickSources } from '@/lib/drillSources';
 import { getAlternateLanguages } from '@/lib/i18n/locales';
 export const metadata = {
-  title: "Micro-Correction Aim Trainer – Headshots | SkillDrills",
-  description: "Master terminal deceleration, snap landing accuracy, and sub-degree micro-adjustments for tactical FPS games like Valorant and CS2 with raw pointer lock.",
+  title: "Micro-Correction Aim Trainer: Fine Adjustments | SkillDrills",
+  description: "Free micro-correction aim trainer for Valorant and CS2. Practice micro adjustments after a flick, from snap landing to a precise headshot, in your browser.",
   keywords: [
     "micro-correction aim trainer",
     "micro correction aim",
@@ -29,8 +29,8 @@ export const metadata = {
     follow: true,
   },
   openGraph: {
-    title: "Micro-Correction Aim Trainer – Headshots | SkillDrills",
-    description: "Master terminal deceleration, snap landing accuracy, and sub-degree micro-adjustments for tactical FPS games like Valorant and CS2 with raw pointer lock.",
+    title: "Micro-Correction Aim Trainer: Fine Adjustments | SkillDrills",
+    description: "Free micro-correction aim trainer for Valorant and CS2. Practice micro adjustments after a flick, from snap landing to a precise headshot, in your browser.",
     url: "https://skilldrills.online/drills/fps/micro-correction-precision",
     siteName: 'SkillDrills',
     locale: 'en_US',
@@ -38,8 +38,8 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: "Micro-Correction Aim Trainer – Headshots | SkillDrills",
-    description: "Master terminal deceleration, snap landing accuracy, and sub-degree micro-adjustments for tactical FPS games like Valorant and CS2 with raw pointer lock.",
+    title: "Micro-Correction Aim Trainer: Fine Adjustments | SkillDrills",
+    description: "Free micro-correction aim trainer for Valorant and CS2. Practice micro adjustments after a flick, from snap landing to a precise headshot, in your browser.",
   },
 };
 
@@ -76,7 +76,7 @@ export default function MicroCorrectionPage() {
     "name": "Micro-Correction Aim Trainer",
     "applicationCategory": "GameApplication",
     "operatingSystem": "Web Browser",
-    "dateModified": "2026-09-05",
+    "dateModified": "2026-10-08",
     "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
     "description": "A free browser FPS drill training micro-corrections, snap deceleration after large flicks, and precision headshot consistency for tactical shooters.",
     "genre": "FPS Training / Precision Aim",
@@ -94,7 +94,7 @@ export default function MicroCorrectionPage() {
     "name": "Micro-Correction Aim Trainer",
     "url": "https://skilldrills.online/drills/fps/micro-correction-precision",
     "description": "A free browser FPS drill training micro-corrections, snap deceleration after large flicks, and precision headshot consistency for tactical shooters.",
-    "dateModified": "2026-09-05",
+    "dateModified": "2026-10-08",
     "gamePlatform": "Web Browser",
     "genre": ["FPS Training", "Aim Trainer", "Precision Aim"],
     "playMode": "SinglePlayer",
@@ -106,7 +106,7 @@ export default function MicroCorrectionPage() {
   const faqSchema = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
-    "dateModified": "2026-09-05",
+    "dateModified": "2026-10-08",
     "mainEntity": [
       {
         "@type": "Question",
@@ -201,7 +201,7 @@ export default function MicroCorrectionPage() {
         "@type": "HowToStep",
         "position": 1,
         "name": "Configure Game Sensitivity",
-        "text": "Set your game and sensitivity in Session Settings to mirror your 1:1 hardware coordinates and bypass operating system mouse curves."
+        "text": "Set your game and sensitivity in Session Settings to mirror your in-game cm/360. Turn off OS pointer acceleration so movement stays consistent."
       },
       {
         "@type": "HowToStep",
@@ -225,19 +225,20 @@ export default function MicroCorrectionPage() {
   };
 
   const microCorrectionGuide = {
-    heading: "Micro-Correction Aim Trainer Guide & Precision Chronometry",
+    heading: "What is a micro-correction aim trainer?",
     intro: [
+      "A micro-correction aim trainer builds the small final adjustment you make after a flick lands near a target. In this drill you click an anchor target, then instantly adjust your crosshair onto a small micro-target. It trains deceleration and precise corrections, often called micro adjustments, for Valorant and CS2 headshots.",
       "Micro-Correction Aim Trainer is an empirical sensorimotor training drill engineered to isolate, calibrate, and master the secondary adjustment phase of visual targeting. In high-stakes competitive shooters such as Valorant, Counter-Strike 2, and Rainbow Six Siege, combat encounters are frequently won or lost by sub-degree corrections of only 5 to 25 pixels.",
       "The theoretical framework governing rapid targeted movement was established by Robert S. Woodworth (1899) in his seminal two-component model: an initial open-loop ballistic impulse propelling the limb toward the visual stimulus, followed by a closed-loop current control phase governed by continuous sensory feedback. This speed-accuracy trade-off was mathematically codified by Paul M. Fitts (1954) in Fitts' Law, where movement time scales logarithmically with target distance and inversely with target width (Index of Difficulty = log2(2D / W)).",
       "Later neuro-computational refinements by David E. Meyer et al. (1988) introduced the Stochastic Optimized Submovement Model, demonstrating that human motor control plans primary movements to fall slightly short of or near the target boundary, relying on rapid corrective submovements to resolve coordinate discrepancy without excessive kinetic overrun.",
-      "During the high-acuity terminal fixation phase, human ocular dynamics deploy microsaccades—involuntary, rapid foveal shifts of less than 1 degree—to refresh neural representations and center the retina over high-frequency visual targets (Rolfs, 2009; Martinez-Conde et al., 2004). This drill pairs raw pointer lock hardware input with performance.now() digital chronometry (Woods et al., 2015) to help players eliminate terminal oscillation, conquer overflick drift, and land pinpoint headshots with robotic consistency.",
+      "During the high-acuity terminal fixation phase, human ocular dynamics deploy microsaccades—involuntary, rapid foveal shifts of less than 1 degree—to refresh neural representations and center the retina over high-frequency visual targets (Rolfs, 2009; Martinez-Conde et al., 2004). This drill pairs pointer lock mouse input with performance.now() digital chronometry (Woods et al., 2015) to help players eliminate terminal oscillation, conquer overflick drift, and land pinpoint headshots with robotic consistency.",
       "How this is measured: every event is timestamped with the browser's performance.now() high-resolution clock, entirely on your device -- no score is uploaded. Two things this cannot control: browser timers are deliberately coarsened as a Spectre mitigation (typically to about 1 ms), and your display quantizes the stimulus to its refresh interval -- about 16.7 ms per frame at 60 Hz, 6.9 ms at 144 Hz and 4.1 ms at 240 Hz (Woods et al., 2015). Mouse polling adds roughly 8 ms at 125 Hz versus 1 ms at 1000 Hz. So treat differences smaller than about 5 ms as measurement noise, and compare your own runs on the same hardware rather than against someone else's setup."
     ],
     benchmarks: {
-      title: "Micro-Correction Latency & Target Acquisition Tiers",
+      title: "How fast should a micro-correction be?",
       headers: ["Performance Tier", "Correction Latency Window", "Motor Control Mechanics", "Competitive In-Game Implication"],
       rows: [
-        ["Tier 1 (Apex Precision)", "Sub-280 ms", "Near-instantaneous deceleration; sub-10px fingertip micro-adjustments executed with zero overshoot oscillation", "Lethal first-bullet headshot conversion in Radiant, CS2 Faceit 10, and high-tier competitive lobbies"],
+        ["Tier 1 (Elite Precision)", "Sub-280 ms", "Near-instantaneous deceleration; sub-10px fingertip micro-adjustments executed with zero overshoot oscillation", "Top of this drill's scale: precise first-bullet headshot corrections"],
         ["Tier 2 (Competitive Pro)", "280 – 340 ms", "Disciplined muscular braking; smooth transition from primary flick to secondary micro-landing", "Consistently out-duels aggressive angle peekers; reliable headshot accuracy on micro-targets"],
         ["Tier 3 (High-Skill FPS)", "340 – 420 ms", "Solid target acquisition; occasional 10–15px overshoot requiring minor dual-submovement corrections", "Effective tactical gunplay; minor hesitation when micro-adjusting across vertical offsets"],
         ["Tier 4 (Intermediate)", "420 – 520 ms", "Loose terminal braking; tendency to float or drag past hitboxes before initiating correction", "Prone to spraying or losing duels when targets perform rapid counter-strafes"],
@@ -246,7 +247,7 @@ export default function MicroCorrectionPage() {
       note: "Latencies represent combined deceleration, visual target confirmation, micro-adjustment, and click execution times measured via performance.now() chronometry (Woods et al., 2015)."
     },
     techniques: {
-      title: "Evidence-Based Protocols for Perfecting Terminal Deceleration & Micro-Aim",
+      title: "How do you improve micro adjustments in aiming?",
       items: [
         {
           name: "Terminal Muscular Braking & Pad Friction",
@@ -271,7 +272,7 @@ export default function MicroCorrectionPage() {
       ]
     },
     steps: [
-      "Configure your exact game, DPI, and in-game sensitivity in the Session Settings modal to guarantee 1:1 cm/360 motor memory transfer, then engage raw Pointer Lock.",
+      "Configure your exact game, DPI, and in-game sensitivity in the Session Settings modal to guarantee 1:1 cm/360 motor memory transfer, then engage Pointer Lock.",
       "When a micro-target spawns, execute a swift primary flick toward the target boundary covering approximately 90% of the displacement.",
       "Apply immediate muscular braking near the target rim, execute a subtle sub-degree fingertip micro-adjustment onto the target center, confirm visual lock, and click.",
       "Review your mean latency, accuracy percentage, and combo retention in the post-session analytics to diagnose undershoot versus overshoot tendencies."
@@ -340,7 +341,7 @@ export default function MicroCorrectionPage() {
           statMaxCombo: "Max Combo",
           statPeakLevel: "Peak Level",
           startTitle: "Micro-Correction Aim Trainer",
-          startSubtitle: "Hardware Raw Input • Endless Level Progression",
+          startSubtitle: "Pointer Lock Mouse Input • Endless Level Progression",
           getReady: "GET READY",
           toggleFlash: "Toggle Miss Flash",
           toggleSound: "Toggle Sound",

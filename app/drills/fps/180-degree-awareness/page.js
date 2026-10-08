@@ -4,8 +4,8 @@ import DrillFooter from '@/components/drill/DrillFooter';
 import { pickSources } from '@/lib/drillSources';
 import { getAlternateLanguages } from '@/lib/i18n/locales';
 export const metadata = {
-  title: "180° Aim Trainer — Snap Turn Awareness | SkillDrills",
-  description: "Master reaction speed and 180° snap turns with our free online 180 Aim Trainer. Practice spatial awareness and dominate CS2 & Valorant.",
+  title: "180° Aim Trainer: Snap Turn Practice | SkillDrills",
+  description: "Free 180 aim trainer for CS2 and Valorant. Practice 180 degree flicks and snap turns to targets at the screen edges, in your browser.",
   keywords: [
     // Primary
     "180 aim trainer",
@@ -32,8 +32,8 @@ export const metadata = {
     follow: true,
   },
   openGraph: {
-    title: "180° Aim Trainer — Snap Turn Awareness | SkillDrills",
-    description: "Master reaction speed and 180° snap turns with our free online 180 Aim Trainer. Practice spatial awareness and dominate CS2 & Valorant.",
+    title: "180° Aim Trainer: Snap Turn Practice | SkillDrills",
+    description: "Free 180 aim trainer for CS2 and Valorant. Practice 180 degree flicks and snap turns to targets at the screen edges, in your browser.",
     url: "https://skilldrills.online/drills/fps/180-degree-awareness",
     siteName: 'SkillDrills',
     locale: 'en_US',
@@ -46,8 +46,8 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: "180° Aim Trainer — Snap Turn Awareness | SkillDrills",
-    description: "Master reaction speed and 180° snap turns with our free online 180 Aim Trainer. Practice spatial awareness and dominate CS2 & Valorant.",
+    title: "180° Aim Trainer: Snap Turn Practice | SkillDrills",
+    description: "Free 180 aim trainer for CS2 and Valorant. Practice 180 degree flicks and snap turns to targets at the screen edges, in your browser.",
   },
 };
 
@@ -88,7 +88,7 @@ export default function AwarenessDrillPage() {
     "description": "An interactive web-based 180 flick aim trainer to improve reaction speed, snap turns, and spatial awareness for CS2 and Valorant.",
     "genre": "FPS Training / Situational Awareness",
     "url": "https://skilldrills.online/drills/fps/180-degree-awareness",
-    "dateModified": "2026-09-05",
+    "dateModified": "2026-10-08",
     "publisher": {
       "@type": "Organization",
       "name": "SkillDrills",
@@ -106,13 +106,13 @@ export default function AwarenessDrillPage() {
     "applicationCategory": "Game",
     "url": "https://skilldrills.online/drills/fps/180-degree-awareness",
     "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
-    "dateModified": "2026-09-05"
+    "dateModified": "2026-10-08"
   };
 
   const faqSchema = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
-    "dateModified": "2026-09-05",
+    "dateModified": "2026-10-08",
     "mainEntity": [
       {
         "@type": "Question",
@@ -188,10 +188,10 @@ export default function AwarenessDrillPage() {
       },
       {
         "@type": "Question",
-        "name": "Does this awareness trainer support raw mouse input?",
+        "name": "Does this awareness trainer use raw mouse input?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Yes. The trainer uses the browser HTML5 Pointer Lock API for 1:1 unaccelerated hardware mouse input, ensuring physical hand movement translates directly to virtual rotational degrees."
+          "text": "The trainer uses the browser HTML5 Pointer Lock API to capture mouse movement, but it does not request unadjusted (raw) input, so OS pointer settings can still apply. Turn off OS pointer acceleration so the same hand movement always turns the same distance."
         }
       }
     ]
@@ -231,15 +231,16 @@ export default function AwarenessDrillPage() {
   };
 
   const awarenessGuide = {
-    heading: "180° Awareness Drill Guide & Spatial Psychomotor Benchmarks",
+    heading: "What is a 180 aim trainer?",
     intro: [
+      "A 180 aim trainer is a practice tool for turning your view half a circle and hitting a target with a single swipe. In this drill targets spawn at the screen edges, you snap to each one and click before its timer runs out. It builds the 180 degree flick and awareness used in CS2 and Valorant.",
       "180° snap targeting is a multimodal sensorimotor task requiring seamless coordination between peripheral visual detection, ocular foveation, and ballistic limb biomechanics. In human neurobiology, peripheral retinal rods detect high-velocity luminance and motion changes across visual angles exceeding 90° from the central line of sight, triggering rapid orienting saccades via the superior colliculus (Rayner, 1998; Leigh & Zee, 2015).",
       "Translating peripheral detection into a 180° virtual reorientation requires a two-component motor impulse (Elliott et al., 2010). An open-loop ballistic forearm swipe propelled by the shoulder and elbow covers 80% to 90% of the required rotational arc, followed immediately by antagonistic muscular braking to eliminate crosshair overshoot (Schmidt et al., 1979). Under Fitts's Law (Fitts, 1954), large angular amplitudes inherently increase task Index of Difficulty (ID = log2(2D/W)), making stopping power and physical mousepad calibration paramount.",
       "Digital chronometry in this trainer is executed via performance.now() timestamps under the HTML5 Pointer Lock API. Browser timers are deliberately coarsened as a Spectre mitigation -- typically to about 1 ms -- so treat differences under roughly 5 ms as noise. Operating with 1000 Hz mouse polling (1.0 ms USB intervals) and high-refresh display synchronization eliminates cursor acceleration distortion and reduces input quantization jitter, providing an objective benchmark of spatial reaction mechanics (Woods et al., 2015).",
       "How this is measured: every event is timestamped with the browser's performance.now() high-resolution clock, entirely on your device -- no score is uploaded. Two things this cannot control: browser timers are deliberately coarsened as a Spectre mitigation (typically to about 1 ms), and your display quantizes the stimulus to its refresh interval -- about 16.7 ms per frame at 60 Hz, 6.9 ms at 144 Hz and 4.1 ms at 240 Hz (Woods et al., 2015). Mouse polling adds roughly 8 ms at 125 Hz versus 1 ms at 1000 Hz. So treat differences smaller than about 5 ms as measurement noise, and compare your own runs on the same hardware rather than against someone else's setup."
     ],
     benchmarks: {
-      title: "180° Turnaround & Spatial Re-Acquisition Benchmarks",
+      title: "How long should a 180 degree turn take?",
       headers: ["Turnaround Phase / Metric", "Typical Latency (ms)", "Biomechanical Motor Mechanism", "Psychomotor Classification"],
       rows: [
         ["Peripheral Detection & Saccade Trigger", "140 – 190 ms", "Retinal rod luminance change & superior colliculus", "Pre-attentive visual orienting (Rayner 1998)"],
@@ -252,7 +253,7 @@ export default function AwarenessDrillPage() {
       note: "Metrics synthesized from peer-reviewed sensorimotor and visual science literature (Rayner 1998; Fitts 1954; Schmidt et al. 1979; Elliott et al. 2010) and digital chronometry standards (Woods et al. 2015). Latency varies by mouse sensitivity (cm/360°), friction coefficient of the mousepad, and display refresh rate."
     },
     techniques: {
-      title: "Ergonomics & Mechanics for High-Speed Turnarounds",
+      title: "How do you flick 180 degrees accurately?",
       items: [
         {
           name: "Arm Swipe Mechanics & Pivot Geometry",
@@ -277,7 +278,7 @@ export default function AwarenessDrillPage() {
       ]
     },
     steps: [
-      "Click Start Drill to engage fullscreen mode and calibrate raw pointer lock.",
+      "Click Start Drill to engage fullscreen mode and engage pointer lock.",
       "Maintain a neutral center crosshair position and keep your visual attention wide.",
       "When a target spawns at the extreme left or right edge, execute an explosive horizontal swipe toward the target coordinate.",
       "Decelerate firmly as the crosshair nears the target, confirm foveal alignment, and click immediately.",
@@ -327,6 +328,7 @@ export default function AwarenessDrillPage() {
         copy={{
           h1Keyword: "180° Aim Trainer",
           h1Suffix: " — Snap Turn Awareness",
+          startSubtitle: "Pointer Lock Mouse Input • Endless Level Progression",
           subtitle: "Master rapid peripheral detection, large-angle flick transitions, and snap turn deceleration.",
           stageCaption: "Spot and snap to targets spawning at extreme screen edges before their timer expires.",
           rulesItems: [

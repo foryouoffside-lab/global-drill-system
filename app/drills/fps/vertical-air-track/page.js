@@ -5,8 +5,8 @@ import { getAlternateLanguages } from '@/lib/i18n/locales';
 import { pickSources } from '@/lib/drillSources';
 
 export const metadata = {
-  title: 'Vertical Aim Trainer – Y-Axis Air Tracking | SkillDrills',
-  description: "Free vertical aim trainer. Track targets on the Y-axis and predict falling arcs for airborne fights in Apex Legends, Overwatch 2 and Halo Infinite.",
+  title: "Vertical Aim Trainer: Y-Axis Air Tracking | SkillDrills",
+  description: "Free vertical aim trainer for Apex Legends, Overwatch 2 and Halo Infinite. Practice Y-axis mouse control and tracking falling arcs in your browser.",
   keywords: [
     'vertical aim trainer',
     'vertical aim training',
@@ -30,8 +30,8 @@ export const metadata = {
     follow: true,
   },
   openGraph: {
-    title: 'Vertical Aim Trainer – Y-Axis Air Tracking | SkillDrills',
-    description: "Improve your Y-axis mouse control, aerial target tracking, and parabolic arc prediction with our free Vertical Aim Trainer for Apex Legends, Overwatch 2, and Halo Infinite.",
+    title: "Vertical Aim Trainer: Y-Axis Air Tracking | SkillDrills",
+    description: "Free vertical aim trainer for Apex Legends, Overwatch 2 and Halo Infinite. Practice Y-axis mouse control and tracking falling arcs in your browser.",
     url: "https://skilldrills.online/drills/fps/vertical-air-track",
     siteName: 'SkillDrills',
     locale: 'en_US',
@@ -39,8 +39,8 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Vertical Aim Trainer – Y-Axis Air Tracking | SkillDrills',
-    description: "Improve your Y-axis mouse control, aerial target tracking, and parabolic arc prediction with our free Vertical Aim Trainer for Apex Legends, Overwatch 2, and Halo Infinite.",
+    title: "Vertical Aim Trainer: Y-Axis Air Tracking | SkillDrills",
+    description: "Free vertical aim trainer for Apex Legends, Overwatch 2 and Halo Infinite. Practice Y-axis mouse control and tracking falling arcs in your browser.",
   },
 };
 
@@ -61,7 +61,7 @@ export default function VerticalAirTrackPage() {
     "name": "Vertical Aim Trainer",
     "applicationCategory": "GameApplication",
     "operatingSystem": "Web Browser",
-    "dateModified": "2026-09-11",
+    "dateModified": "2026-10-08",
     "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
     "description": "A free browser FPS drill training vertical aim, aerial target tracking, Y-axis mouse control, and jump shot prediction for Apex Legends, Overwatch 2, and Halo Infinite.",
     "genre": "FPS Training / Vertical & Aerial Tracking",
@@ -79,7 +79,7 @@ export default function VerticalAirTrackPage() {
     "name": "Vertical Aim Trainer",
     "applicationCategory": "GameApplication",
     "operatingSystem": "Web Browser",
-    "dateModified": "2026-09-11",
+    "dateModified": "2026-10-08",
     "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
     "browserRequirements": "Requires Pointer Lock API, JavaScript, HTML5 Canvas",
     "description": "A free browser FPS drill training vertical aim, aerial target tracking, Y-axis mouse control, and jump shot prediction for Apex Legends, Overwatch 2, and Halo Infinite.",
@@ -92,7 +92,7 @@ export default function VerticalAirTrackPage() {
     "name": "Vertical Aim Trainer",
     "url": "https://skilldrills.online/drills/fps/vertical-air-track",
     "description": "A free browser FPS drill training vertical aim, aerial target tracking, Y-axis mouse control, and jump shot prediction for Apex Legends, Overwatch 2, and Halo Infinite.",
-    "dateModified": "2026-09-11",
+    "dateModified": "2026-10-08",
     "gamePlatform": "Web Browser",
     "genre": ["FPS Training", "Aim Trainer", "Vertical Tracking"],
     "playMode": "SinglePlayer",
@@ -104,7 +104,7 @@ export default function VerticalAirTrackPage() {
   const faqSchema = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
-    "dateModified": "2026-09-11",
+    "dateModified": "2026-10-08",
     "mainEntity": [
       {
         "@type": "Question",
@@ -183,7 +183,7 @@ export default function VerticalAirTrackPage() {
         "name": "Is this Vertical Air-Track aim trainer free to use?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Yes, this Vertical Aim Trainer is completely free, open-source, and runs directly in your web browser with zero downloads, installs, or account registrations required."
+          "text": "Yes, this Vertical Aim Trainer is completely free and runs directly in your web browser with zero downloads, installs, or account registrations required."
         }
       }
     ]
@@ -227,8 +227,9 @@ export default function VerticalAirTrackPage() {
   };
 
   const verticalAirTrackGuide = {
-    heading: "Vertical Aim Trainer Guide & Aerial Parabolic Tracking",
+    heading: "What is a vertical aim trainer?",
     intro: [
+      "A vertical aim trainer trains the up-and-down mouse control needed to track airborne targets. In this drill the target jumps and falls along arcs, and you follow it on the Y-axis while predicting where it will land. It helps with jump pads, grapples and aerial fights in Apex Legends, Overwatch 2 and Halo Infinite.",
       "Vertical Aim Trainer (Vertical Air-Track) is an advanced motor-control drill engineered to isolate and cultivate Y-axis tracking precision, gravitational arc prediction, and aerial target interception. In modern movement shooters—such as Apex Legends, Overwatch 2, Halo Infinite, and Destiny 2—opponents frequently exploit verticality via jump pads, grapple hooks, elevation lifts, and high-ground drops to disrupt horizontal crosshair placement.",
       "The neurobiology of vertical pursuit tracking differs fundamentally from horizontal tracking. Richard J. Krauzlis (2004) showed that vertical smooth pursuit engages distinct cerebellar vermis and brainstem pathways, showing higher susceptibility to motor jitter due to the asymmetry of upper-limb musculoskeletal biomechanics. Cyril Rashbass (1961) proved that smooth pursuit is driven by velocity error (retinal slip) rather than positional error, requiring continuous speed matching rather than static flicking.",
       "Tracking airborne entities requires internalizing gravitational physics ($g = 9.81\\text{ m/s}^2$). As established by Peter R. Cavanagh et al. (1984) and Michael F. Land & Peter McLeod (2000), human visual motor systems anticipate parabolic trajectory deceleration at the jump apex and rapid acceleration during descent. Players who fail to anticipate this velocity curvature consistently under-track falling targets.",
@@ -236,19 +237,19 @@ export default function VerticalAirTrackPage() {
       "How this is measured: every event is timestamped with the browser's performance.now() high-resolution clock, entirely on your device -- no score is uploaded. Two things this cannot control: browser timers are deliberately coarsened as a Spectre mitigation (typically to about 1 ms), and your display quantizes the stimulus to its refresh interval -- about 16.7 ms per frame at 60 Hz, 6.9 ms at 144 Hz and 4.1 ms at 240 Hz (Woods et al., 2015). Mouse polling adds roughly 8 ms at 125 Hz versus 1 ms at 1000 Hz. So treat differences smaller than about 5 ms as measurement noise, and compare your own runs on the same hardware rather than against someone else's setup."
     ],
     benchmarks: {
-      title: "Vertical Smooth Pursuit & Aerial Tracking Benchmarks",
+      title: "What is a good vertical tracking score?",
       headers: ["Performance Tier", "Airborne Uptime", "Directional Reversal Latency", "Competitive In-Game Implication"],
       rows: [
-        ["Tier 1 (Apex Predator / Grandmaster / Air Ace)", "> 82% Uptime", "Sub-180 ms", "Laser tracking on jump-padded and grappled enemies; near-perfect velocity matching across apex and descent transitions"],
-        ["Tier 2 (Competitive Master / Tier-2 Esports)", "70% – 82% Uptime", "180 – 230 ms", "Consistent Y-axis tracking; minor micro-jitters during explosive launch accelerations; reliably beams aerial targets"],
-        ["Tier 3 (High-Skill Diamond / Ascendant)", "56% – 70% Uptime", "230 – 290 ms", "Good vertical tracking on predictable parabolic arcs; struggles when aerial targets perform mid-air air-strafes"],
-        ["Tier 4 (Intermediate / Gold / Platinum)", "40% – 56% Uptime", "290 – 360 ms", "Noticeable tracking lag during gravitational descent; tends to lag behind fast-falling targets and over-compensate"],
+        ["Tier 1 (Elite)", "> 82% Uptime", "Sub-180 ms", "Laser tracking on jump-padded and grappled enemies; near-perfect velocity matching across apex and descent transitions"],
+        ["Tier 2 (Competitive)", "70% – 82% Uptime", "180 – 230 ms", "Consistent Y-axis tracking; minor micro-jitters during explosive launch accelerations; reliably beams aerial targets"],
+        ["Tier 3 (High-Skill)", "56% – 70% Uptime", "230 – 290 ms", "Good vertical tracking on predictable parabolic arcs; struggles when aerial targets perform mid-air air-strafes"],
+        ["Tier 4 (Intermediate)", "40% – 56% Uptime", "290 – 360 ms", "Noticeable tracking lag during gravitational descent; tends to lag behind fast-falling targets and over-compensate"],
         ["Tier 5 (Developing / Novice)", "Sub-40% Uptime", "360 ms+", "Severe Y-axis jitter; struggles to decouple wrist from arm; loses tracking contact completely during jump arc transitions"]
       ],
       note: "Airborne uptime measures the percentage of active target flight time that crosshairs remain within damage boundaries; directional reversal latency measures time to reverse Y-axis tracking direction at the jump apex (Woods et al., 2015)."
     },
     techniques: {
-      title: "Evidence-Based Protocols for Perfecting Vertical Aim",
+      title: "How do you track enemies in the air?",
       items: [
         {
           name: "Decoupled Wrist Extension & Fingertip Articulation",

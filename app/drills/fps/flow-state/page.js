@@ -4,8 +4,8 @@ import DrillFooter from '@/components/drill/DrillFooter';
 import { pickSources } from '@/lib/drillSources';
 import { getAlternateLanguages } from '@/lib/i18n/locales';
 export const metadata = {
-  title: "Flow State Aim Trainer – Focus and Tracking | SkillDrills",
-  description: "Free flow state aim trainer. Hold difficulty at your skill level to sustain focus and smooth tracking along continuous curves. No sign-up.",
+  title: "Flow State Aim Trainer: Focus and Tracking | SkillDrills",
+  description: "Free flow state aim trainer. Build sustained focus and smooth tracking on continuous curves that scale to your skill level. No sign-up, in your browser.",
   keywords: [
     "flow state aim trainer",
     "aim flow state trainer",
@@ -35,8 +35,8 @@ export const metadata = {
     follow: true,
   },
   openGraph: {
-    title: "Flow State Aim Trainer – Focus and Tracking | SkillDrills",
-    description: "Induce psychological flow state, build sustained attention endurance, and master smooth pursuit tracking for FPS gaming and deep work with raw pointer lock.",
+    title: "Flow State Aim Trainer: Focus and Tracking | SkillDrills",
+    description: "Free flow state aim trainer. Build sustained focus and smooth tracking on continuous curves that scale to your skill level. No sign-up, in your browser.",
     url: "https://skilldrills.online/drills/fps/flow-state",
     siteName: 'SkillDrills',
     locale: 'en_US',
@@ -44,8 +44,8 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: "Flow State Aim Trainer – Focus and Tracking | SkillDrills",
-    description: "Induce psychological flow state, build sustained attention endurance, and master smooth pursuit tracking for FPS gaming and deep work with raw pointer lock.",
+    title: "Flow State Aim Trainer: Focus and Tracking | SkillDrills",
+    description: "Free flow state aim trainer. Build sustained focus and smooth tracking on continuous curves that scale to your skill level. No sign-up, in your browser.",
   },
 };
 
@@ -82,7 +82,7 @@ export default function FlowStatePage() {
     "name": "Flow State Trainer",
     "applicationCategory": "GameApplication",
     "operatingSystem": "Web Browser",
-    "dateModified": "2026-09-05",
+    "dateModified": "2026-10-08",
     "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
     "description": "Train concentration endurance, sustained attention, and flow state tracking for FPS games.",
     "genre": "FPS Training / Flow State",
@@ -100,7 +100,7 @@ export default function FlowStatePage() {
     "name": "Flow State Trainer",
     "url": "https://skilldrills.online/drills/fps/flow-state",
     "description": "Train concentration endurance, sustained attention, and flow state tracking for FPS games.",
-    "dateModified": "2026-09-05",
+    "dateModified": "2026-10-08",
     "gamePlatform": "Web Browser",
     "genre": ["FPS Training", "Aim Trainer", "Cognitive Focus"],
     "playMode": "SinglePlayer",
@@ -112,7 +112,7 @@ export default function FlowStatePage() {
   const faqSchema = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
-    "dateModified": "2026-09-05",
+    "dateModified": "2026-10-08",
     "mainEntity": [
       {
         "@type": "Question",
@@ -213,8 +213,8 @@ export default function FlowStatePage() {
       {
         "@type": "HowToStep",
         "position": 2,
-        "name": "Engage Raw Pointer Lock",
-        "text": "Click 'Start Drill' to enter fullscreen mode with raw Pointer Lock API input and zero browser acceleration.",
+        "name": "Engage Pointer Lock",
+        "text": "Click 'Start Drill' to enter fullscreen mode with the Pointer Lock API. Turn off OS pointer acceleration first so movement stays consistent.",
         "url": "https://skilldrills.online/drills/fps/flow-state#step-2"
       },
       {
@@ -235,15 +235,16 @@ export default function FlowStatePage() {
   };
 
   const flowStateGuide = {
-    heading: "Flow State Induction Guide & Cognitive Focus Benchmarks",
+    heading: "What is a flow state aim trainer?",
     intro: [
+      "A flow state aim trainer is a tracking drill that adjusts its difficulty to your skill so the challenge stays just hard enough to hold your attention. Here you follow a target along continuous curves while speed scales with your performance, building sustained focus and smooth aim in FPS games.",
       "Flow State Trainer is engineered at the intersection of cognitive psychology and motor neuroscience to systematically induce psychological flow, sustained attention endurance, and smooth pursuit precision. Grounded in the seminal flow research of Mihaly Csikszentmihalyi (1975, 1990), flow represents the optimal state of immersion where perceived challenge dynamically equilibrates with motor capability, eliminating self-doubt, cognitive distraction, and conscious hesitation.",
       "Complementing this, Arne Dietrich's transient hypofrontality hypothesis (2004) explains the underlying neural state: selective downregulation of the dorsolateral prefrontal cortex (DLPFC) allows motor execution to be orchestrated effortlessly by the basal ganglia and cerebellum. In competitive first-person shooters, this downregulation frees player reflexes from conscious over-thinking, enabling lightning-fast micro-corrections and unbroken focus under pressure.",
       "Through high-frequency hardware chronometry using performance.now() (Woods et al., 2015) and continuous fluid Bezier curve trajectories (Krauzlis, 2004; Posner & Petersen, 1990), this drill provides an optimal, zero-install canvas for mastering cognitive focus, eliminating target slip, and sustaining elite mental stamina.",
       "How this is measured: every event is timestamped with the browser's performance.now() high-resolution clock, entirely on your device -- no score is uploaded. Two things this cannot control: browser timers are deliberately coarsened as a Spectre mitigation (typically to about 1 ms), and your display quantizes the stimulus to its refresh interval -- about 16.7 ms per frame at 60 Hz, 6.9 ms at 144 Hz and 4.1 ms at 240 Hz (Woods et al., 2015). Mouse polling adds roughly 8 ms at 125 Hz versus 1 ms at 1000 Hz. So treat differences smaller than about 5 ms as measurement noise, and compare your own runs on the same hardware rather than against someone else's setup."
     ],
     benchmarks: {
-      title: "Cognitive Flow Induction & Attentional Persistence Tiers",
+      title: "What is flow state in aiming and how do you reach it?",
       headers: ["Tier Level", "Flow State Dimension", "Physiological Indicator", "Cognitive Mechanism", "Operational Target"],
       rows: [
         ["Tier 1", "Attentional Alerting & Orienting", "Sensory Gating & Fixation", "Posner alerting network suppresses external environmental stimuli", "Initiate immediate foveal lock on trajectory onset within 200 ms"],
@@ -255,7 +256,7 @@ export default function FlowStatePage() {
       note: "Metrics synthesized from flow state psychology (Csikszentmihalyi, 1975, 1990), neurocognitive mechanisms of flow (Dietrich, 2004), smooth pursuit neurophysiology (Krauzlis, 2004), and attentional network theory (Posner & Petersen, 1990)."
     },
     techniques: {
-      title: "Evidence-Based Protocols for Inducing & Sustaining Gaming Flow",
+      title: "How do you stay focused and in flow while aiming?",
       items: [
         {
           name: "Tangent Gaze Leading Over Centroid Lagging",
@@ -281,7 +282,7 @@ export default function FlowStatePage() {
     },
     steps: [
       "Select your in-game sensitivity using the Universal Sensitivity Selector to guarantee 1:1 muscle memory transfer.",
-      "Click 'Start Drill' to engage fullscreen mode and enable raw Pointer Lock input without browser mouse acceleration.",
+      "Click 'Start Drill' to engage fullscreen mode and enable Pointer Lock mouse capture.",
       "Lock visual focus on the moving target as it navigates organic, continuous Bezier curves across the canvas.",
       "Maintain continuous crosshair dwell inside the target radius, entering the Flow Zone as the Flow Meter fills.",
       "Sustain unbroken concentration chains to amplify score multipliers and develop deep, fatigue-resistant attentional stamina."
@@ -326,6 +327,9 @@ export default function FlowStatePage() {
       />
       <FlowStateClient
         copy={{
+          h1Keyword: "Flow State Aim Trainer",
+          h1Suffix: " — Focus & Tracking",
+          startSubtitle: "Pointer Lock Mouse Input • Endless Level Progression",
           rulesItems: [
             { num: "1", text: "Tracking Alignment", highlight: "+10 PTS (+0.4s/s)", result: "Keep Locked on Target" },
             { num: "2", text: "Flow Multiplier", highlight: "Up to 3.0× Points", result: "Continuous Focus Chain" },

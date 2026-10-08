@@ -4,8 +4,8 @@ import { pickSources } from '@/lib/drillSources';
 import { getAlternateLanguages } from '@/lib/i18n/locales';
 import DrillFooter from '@/components/drill/DrillFooter';
 export const metadata = {
-  title: "Smooth Pursuit Aim Trainer – Curve Tracking | SkillDrills",
-  description: "Free smooth pursuit aim trainer. Train continuous target tracking and velocity matching against high-mobility targets in Apex and Overwatch 2.",
+  title: "Smooth Pursuit Aim Trainer: Curve Tracking | SkillDrills",
+  description: "Free smooth pursuit aim trainer for Apex and Overwatch 2. Practice smooth tracking and velocity matching on curved target paths in your browser.",
   keywords: [
     "smooth pursuit aim trainer",
     "smooth pursuit aim",
@@ -29,8 +29,8 @@ export const metadata = {
     follow: true,
   },
   openGraph: {
-    title: "Smooth Pursuit Aim Trainer – Curve Tracking | SkillDrills",
-    description: "Master continuous smooth pursuit, harmonic Lissajous curve tracking, and forearm motor stabilization for high-TTK FPS games like Apex Legends and Overwatch 2.",
+    title: "Smooth Pursuit Aim Trainer: Curve Tracking | SkillDrills",
+    description: "Free smooth pursuit aim trainer for Apex and Overwatch 2. Practice smooth tracking and velocity matching on curved target paths in your browser.",
     url: "https://skilldrills.online/drills/fps/pro-smooth-pursuit",
     siteName: 'SkillDrills',
     locale: 'en_US',
@@ -38,8 +38,8 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: "Smooth Pursuit Aim Trainer – Curve Tracking | SkillDrills",
-    description: "Master continuous smooth pursuit, harmonic Lissajous curve tracking, and forearm motor stabilization for high-TTK FPS games like Apex Legends and Overwatch 2.",
+    title: "Smooth Pursuit Aim Trainer: Curve Tracking | SkillDrills",
+    description: "Free smooth pursuit aim trainer for Apex and Overwatch 2. Practice smooth tracking and velocity matching on curved target paths in your browser.",
   },
 };
 
@@ -76,7 +76,7 @@ export default function ProSmoothPursuitPage() {
     "name": "Smooth Pursuit Aim Trainer",
     "applicationCategory": "GameApplication",
     "operatingSystem": "Web Browser",
-    "dateModified": "2026-09-05",
+    "dateModified": "2026-10-08",
     "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
     "description": "A free browser FPS drill training smooth pursuit aiming, harmonic Lissajous curve reading, and forearm motor stabilization for competitive games.",
     "genre": "FPS Training / Smooth Pursuit Aim",
@@ -94,7 +94,7 @@ export default function ProSmoothPursuitPage() {
     "name": "Smooth Pursuit Aim Trainer",
     "url": "https://skilldrills.online/drills/fps/pro-smooth-pursuit",
     "description": "A free browser FPS drill training smooth pursuit aiming, harmonic Lissajous curve reading, and forearm motor stabilization for competitive games.",
-    "dateModified": "2026-09-05",
+    "dateModified": "2026-10-08",
     "gamePlatform": "Web Browser",
     "genre": ["FPS Training", "Aim Trainer", "Smooth Pursuit"],
     "playMode": "SinglePlayer",
@@ -106,7 +106,7 @@ export default function ProSmoothPursuitPage() {
   const faqSchema = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
-    "dateModified": "2026-09-05",
+    "dateModified": "2026-10-08",
     "mainEntity": [
       {
         "@type": "Question",
@@ -207,8 +207,8 @@ export default function ProSmoothPursuitPage() {
       {
         "@type": "HowToStep",
         "position": 2,
-        "name": "Engage Raw Pointer Lock",
-        "text": "Click 'Start Drill' to enter fullscreen mode and lock the system cursor to bypass OS mouse acceleration.",
+        "name": "Engage Pointer Lock",
+        "text": "Click 'Start Drill' to enter fullscreen mode and lock the system cursor to the canvas. Turn off OS pointer acceleration first so movement stays consistent.",
         "url": "https://skilldrills.online/drills/fps/pro-smooth-pursuit#step-2"
       },
       {
@@ -229,8 +229,9 @@ export default function ProSmoothPursuitPage() {
   };
 
   const proSmoothPursuitGuide = {
-    heading: "Smooth Pursuit Aim Trainer Guide & Tracking Biomechanics",
+    heading: "What is a smooth pursuit aim trainer?",
     intro: [
+      "A smooth pursuit aim trainer teaches you to follow a moving target with steady, velocity-matched mouse movement instead of jerky corrections. In this drill the target moves along continuous curves and you score by staying on it. It builds smooth tracking for Apex Legends and Overwatch 2.",
       "Smooth Pursuit Aim Trainer is an empirical sensorimotor training drill engineered to cultivate continuous ocular target tracking, harmonic Lissajous curve reading, and jitter-free forearm motor stabilization. In high-TTK competitive shooters such as Apex Legends, Overwatch 2, and The Finals, combat outcomes are governed by damage uptime—demanding that players maintain sustained reticle connection throughout multi-second aerial and ground mobility maneuvers.",
       "The neurological basis of ocular pursuit was mapped by Richard J. Krauzlis (2004), demonstrating that smooth pursuit eye movements are regulated through recurrent cortical loops between the medial superior temporal area (MST), the frontal eye field (FEF), and the primary visual motion cortex (MT/V5). Rather than reacting passively, this neural circuit models target velocity vectors to continuously drive the oculomotor plant in real time.",
       "In a landmark series of psychophysical experiments, Cyril Rashbass (1961) proved that smooth pursuit and saccadic movements are anatomically and functionally dissociated: saccades respond to retinal position displacement, whereas smooth pursuit responds exclusively to retinal image velocity (slip). When players tense their hands or try to 'micro-flick' across a moving target, they disrupt smooth pursuit circuitry, triggering involuntary catch-up saccades that cause noticeable aim stutter.",
@@ -238,10 +239,10 @@ export default function ProSmoothPursuitPage() {
       "How this is measured: every event is timestamped with the browser's performance.now() high-resolution clock, entirely on your device -- no score is uploaded. Two things this cannot control: browser timers are deliberately coarsened as a Spectre mitigation (typically to about 1 ms), and your display quantizes the stimulus to its refresh interval -- about 16.7 ms per frame at 60 Hz, 6.9 ms at 144 Hz and 4.1 ms at 240 Hz (Woods et al., 2015). Mouse polling adds roughly 8 ms at 125 Hz versus 1 ms at 1000 Hz. So treat differences smaller than about 5 ms as measurement noise, and compare your own runs on the same hardware rather than against someone else's setup."
     ],
     benchmarks: {
-      title: "Tracking Uptime & Velocity Matching Performance Tiers",
+      title: "What is a good smooth tracking score?",
       headers: ["Performance Tier", "Target On-Time %", "Neuromuscular & Oculomotor State", "Competitive In-Game Implication"],
       rows: [
-        ["Tier 1 (Apex Beam)", "85% – 95%+", "Uninterrupted foveal lock; perfect velocity matching through Lissajous inflection points with zero catch-up saccades", "Lethal tracking beam in Apex Predator, Top 500 Overwatch, and Grandmaster tracking lobbies"],
+        ["Tier 1 (Elite Beam)", "85% – 95%+", "Uninterrupted foveal lock; perfect velocity matching through Lissajous inflection points with zero catch-up saccades", "Top of this drill's scale: a steady, uninterrupted tracking beam"],
         ["Tier 2 (Competitive Pro)", "72% – 85%", "Fluid forearm modulation; immediate velocity compensation when target reaches harmonic curvature apex", "Wins sustained high-TTK 1v1 duels against strafing and sliding opponents with high weapon efficiency"],
         ["Tier 3 (High-Skill FPS)", "58% – 72%", "Solid linear tracking; minor hesitation and 10–15% tracking loss during rapid non-linear direction inversions", "Competitive tracking capability; struggles slightly against erratic grapple or dash mechanics"],
         ["Tier 4 (Intermediate)", "42% – 58%", "Tendency to step or flick rather than glide; forearm tension creates periodic jitter and target overrun", "Vulnerable to high-mobility characters; frequently breaks continuous tracking beam during sprays"],
@@ -250,7 +251,7 @@ export default function ProSmoothPursuitPage() {
       note: "Tracking uptime percentages represent cumulative on-target duration divided by total active drill time, computed with performance.now() digital chronometry (Woods et al., 2015)."
     },
     techniques: {
-      title: "Evidence-Based Protocols for Perfecting Smooth Pursuit Aim",
+      title: "How do you get smoother tracking in FPS games?",
       items: [
         {
           name: "Foveal Gaze Leading Over Crosshair Fixation",

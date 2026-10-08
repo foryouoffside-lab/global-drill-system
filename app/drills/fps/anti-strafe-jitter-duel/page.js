@@ -4,8 +4,8 @@ import DrillFooter from '@/components/drill/DrillFooter';
 import { pickSources } from '@/lib/drillSources';
 import { getAlternateLanguages } from '@/lib/i18n/locales';
 export const metadata = {
-    title: "Anti-Strafe Jitter Trainer – Reactive Aim | SkillDrills",
-  description: "Free anti-strafe jitter trainer. Train reactive tracking and micro-corrections against fast ADAD strafes for Apex, Overwatch 2 and Warzone.",
+    title: "Anti-Strafe Jitter Trainer: ADAD Tracking | SkillDrills",
+  description: "Free anti-strafe jitter trainer for Apex, Overwatch 2 and Warzone. Practice tracking and micro-corrections against fast ADAD strafes in your browser.",
   keywords: [
     "anti strafe jitter trainer",
     "jitter aim trainer",
@@ -21,7 +21,7 @@ export const metadata = {
     "high ttk jitter tracking drill",
     "wrist jitter correction trainer",
     "continuous adad strafe tracking",
-    "hardware raw input jitter tracking",
+    "anti strafe aim trainer",
     "fine motor micro correction drill",
     "reactive direction change aim practice"
   ],
@@ -34,8 +34,8 @@ export const metadata = {
     follow: true,
   },
   openGraph: {
-      title: "Anti-Strafe Jitter Trainer – Reactive Aim | SkillDrills",
-    description: "Train reactive tracking, anti-strafe aim, and high-frequency ADAD jitter duel tracking for competitive games like Apex Legends, Overwatch 2 & Warzone with raw pointer lock.",
+      title: "Anti-Strafe Jitter Trainer: ADAD Tracking | SkillDrills",
+    description: "Free anti-strafe jitter trainer for Apex, Overwatch 2 and Warzone. Practice tracking and micro-corrections against fast ADAD strafes in your browser.",
     url: "https://skilldrills.online/drills/fps/anti-strafe-jitter-duel",
     siteName: 'SkillDrills',
     locale: 'en_US',
@@ -43,8 +43,8 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-      title: "Anti-Strafe Jitter Trainer – Reactive Aim | SkillDrills",
-    description: "Train reactive tracking, anti-strafe aim, and high-frequency ADAD jitter duel tracking for competitive games like Apex Legends, Overwatch 2 & Warzone with raw pointer lock.",
+      title: "Anti-Strafe Jitter Trainer: ADAD Tracking | SkillDrills",
+    description: "Free anti-strafe jitter trainer for Apex, Overwatch 2 and Warzone. Practice tracking and micro-corrections against fast ADAD strafes in your browser.",
   },
 };
 
@@ -81,9 +81,9 @@ export default function AntiStrafeJitterPage() {
     "name": "Anti-Strafe Jitter Trainer",
     "applicationCategory": "GameApplication",
     "operatingSystem": "Web Browser",
-    "dateModified": "2026-09-05",
+    "dateModified": "2026-10-08",
     "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
-    "description": "Improve reactive tracking, anti-strafe aim, and high-frequency ADAD jitter duel tracking with raw pointer lock.",
+    "description": "Improve reactive tracking, anti-strafe aim, and high-frequency ADAD jitter duel tracking with pointer lock mouse input.",
     "genre": "FPS Training / Anti-Strafe",
     "url": "https://skilldrills.online/drills/fps/anti-strafe-jitter-duel",
     "publisher": {
@@ -98,8 +98,8 @@ export default function AntiStrafeJitterPage() {
     "@type": "VideoGame",
     "name": "Anti-Strafe Jitter Trainer",
     "url": "https://skilldrills.online/drills/fps/anti-strafe-jitter-duel",
-    "description": "Improve reactive tracking, anti-strafe aim, and high-frequency ADAD jitter duel tracking with raw pointer lock.",
-    "dateModified": "2026-09-05",
+    "description": "Improve reactive tracking, anti-strafe aim, and high-frequency ADAD jitter duel tracking with pointer lock mouse input.",
+    "dateModified": "2026-10-08",
     "gamePlatform": "Web Browser",
     "genre": ["FPS Training", "Aim Trainer", "Reactive Tracking"],
     "playMode": "SinglePlayer",
@@ -111,7 +111,7 @@ export default function AntiStrafeJitterPage() {
   const faqSchema = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
-    "dateModified": "2026-09-05",
+    "dateModified": "2026-10-08",
     "mainEntity": [
       {
         "@type": "Question",
@@ -211,8 +211,8 @@ export default function AntiStrafeJitterPage() {
       {
         "@type": "HowToStep",
         "position": 2,
-        "name": "Engage Raw Pointer Lock",
-        "text": "Click 'Start Drill' to lock the system cursor and eliminate browser mouse acceleration curves."
+        "name": "Engage Pointer Lock",
+        "text": "Click 'Start Drill' to lock the system cursor to the canvas. Turn off OS pointer acceleration first so movement stays consistent."
       },
       {
         "@type": "HowToStep",
@@ -230,27 +230,28 @@ export default function AntiStrafeJitterPage() {
   };
 
   const antiStrafeGuide = {
-    heading: "Anti-Strafe Jitter Training Guide & Reactive Tracking Benchmarks",
+    heading: "What is an anti-strafe jitter trainer?",
     intro: [
+      "An anti-strafe jitter trainer teaches you to keep your crosshair on an opponent who rapidly strafes left and right and reverses direction. This drill sends a target on erratic ADAD paths while you hold your aim on it, then scores your tracking uptime. It suits Apex Legends, Overwatch 2 and Warzone close-range duels.",
       "In fast-paced close-quarters gunfights, duels are frequently decided in fractional seconds where opponents execute erratic ADAD strafes, crouch-spams, and instantaneous velocity reversals. Unlike predictable smooth pursuit tracking where an observer smoothly matches an object traveling along a continuous vector (Krauzlis, 2004), reactive tracking requires continuous closed-loop retinal error detection and rapid motor reversals (Rashbass, 1961). Action video game players demonstrate superior visual attention, contrast sensitivity, and temporal tracking bandwidth (Green & Bavelier, 2003), yet human neurophysiology imposes inescapable sensorimotor processing delays whenever an opponent changes direction.",
       "When an in-game target abruptly changes direction, the human visual system experiences retinal slip: the target image leaves the fovea, traveling across the retina. The brain cannot predict the reversal; it must detect target deceleration, initiate a cortical direction-swap command, decelerate the moving hand, and execute a corrective motor burst. In competitive shooters with high time-to-kill (TTK)—such as Apex Legends, Overwatch 2, and Call of Duty: Warzone—duels are determined by continuous crosshair uptime on moving hitboxes rather than single-frame click timing.",
-      "Anti-Strafe Jitter Trainer operates on the HTML5 Pointer Lock API with raw 1:1 hardware translation, high-resolution performance.now() chronometry, and zero mouse acceleration. By eliminating USB polling jitter and browser interpolation delays (Woods et al., 2015), this trainer provides real-time tracking accuracy and direction-swap reaction chronometry to condition smooth antagonist muscle control and eliminate over-flicking on erratic strafes.",
+      "Anti-Strafe Jitter Trainer uses the HTML5 Pointer Lock API and performance.now() timestamps (Woods et al., 2015). It does not request unadjusted input, so turn off OS pointer acceleration for consistent movement. This trainer provides real-time tracking accuracy and direction-swap reaction chronometry to condition smooth antagonist muscle control and eliminate over-flicking on erratic strafes.",
       "How this is measured: every event is timestamped with the browser's performance.now() high-resolution clock, entirely on your device -- no score is uploaded. Two things this cannot control: browser timers are deliberately coarsened as a Spectre mitigation (typically to about 1 ms), and your display quantizes the stimulus to its refresh interval -- about 16.7 ms per frame at 60 Hz, 6.9 ms at 144 Hz and 4.1 ms at 240 Hz (Woods et al., 2015). Mouse polling adds roughly 8 ms at 125 Hz versus 1 ms at 1000 Hz. So treat differences smaller than about 5 ms as measurement noise, and compare your own runs on the same hardware rather than against someone else's setup."
     ],
     benchmarks: {
-      title: "Reactive Tracking & Direction-Shift Latency Tiers",
+      title: "How fast can you react to a strafe direction change?",
       headers: ["Processing Stage / Latency Tier", "Typical Latency Range", "Neural Pathway & Biomechanical Function", "Combat Implication"],
       rows: [
         ["Direction-Change Visual Detection", "160 – 210 ms", "Retinal slip signals processed in primary visual cortex (V1) and Middle Temporal visual area (MT/V5)", "Initial latency before the player perceives target velocity reversal"],
         ["Motor Reversal Burst Latency", "80 – 130 ms", "Corticospinal transmission to forearm flexors/extensors; antagonist deceleration", "Physical time required to halt crosshair drift and reverse mouse vector"],
         ["Terminal Micro-Realignment", "60 – 100 ms", "Fine-motor foveal centering and sub-threshold corrective adjustment", "Eliminating overshoot and re-locking reticle to target hitbox"],
         ["Total Unprimed Re-Acquisition Window", "300 – 440 ms", "Cumulative sum of visual detection, motor reversal, and terminal centering", "Standard human latency penalty incurred on unpredicted direction changes"],
-        ["Elite Primed Reactive Tracking", "210 – 290 ms", "Anticipatory velocity damping and relaxed antagonist motor suppression", "Mastery level demonstrated by high-tier Apex Predators and Overwatch OWL pros"]
+        ["Elite Primed Reactive Tracking", "210 – 290 ms", "Anticipatory velocity damping and relaxed antagonist motor suppression", "Fast, well-primed reactive tracking on this drill's scale"]
       ],
       note: "Metrics synthesized from oculomotor research (Rashbass, 1961; Krauzlis, 2004), action video game cognitive science (Green & Bavelier, 2003), and digital chronometry benchmarks (Woods et al., 2015). Actual tracking performance varies with display refresh rate, hardware polling, and muscle tension."
     },
     techniques: {
-      title: "Evidence-Based Reactive Tracking & Anti-Strafe Techniques",
+      title: "How do you track an opponent who keeps strafing?",
       items: [
         {
           name: "Antagonist Muscle Relaxation (Eliminate Death Gripping)",
@@ -276,7 +277,7 @@ export default function AntiStrafeJitterPage() {
     },
     steps: [
       "Select your in-game sensitivity using the Universal Sensitivity Selector to guarantee exact 1:1 hardware muscle memory.",
-      "Click 'Start Drill' to engage fullscreen mode and enable raw Pointer Lock input without browser mouse smoothing.",
+      "Click 'Start Drill' to engage fullscreen mode and enable Pointer Lock mouse capture.",
       "Lock visual focus on the jittering target sphere as it executes high-frequency horizontal ADAD strafes.",
       "Maintain continuous crosshair contact, absorbing rapid direction flips with relaxed wrist micro-corrections.",
       "Chain tracking uptime to advance through dynamic difficulty levels and review your accuracy and streak multipliers on the scorecard."
@@ -325,6 +326,7 @@ export default function AntiStrafeJitterPage() {
         copy={{
           h1Keyword: "Anti-Strafe Jitter Trainer",
           h1Suffix: " - Reactive Tracking Aim",
+          startSubtitle: "Reactive Movement Reading • Endless Level Progression",
           rulesItems: [
             { num: "1", text: "Tracking Alignment", highlight: "+50 PTS (+0.4s/s)", result: "×Combo Mult" },
             { num: "2", text: "Continuous Combo", highlight: "Up to 3.0×", result: "Max Multiplier" },

@@ -5,8 +5,8 @@ import { getAlternateLanguages } from '@/lib/i18n/locales';
 import { pickSources } from '@/lib/drillSources';
 
 export const metadata = {
-  title: "Crosshair Placement & Angle Hold Trainer | SkillDrills",
-  description: "Master crosshair placement and reaction speed with our free angle hold trainer. Learn to counter peekers and hold tight corners in CS2 and Valorant.",
+  title: "Angle Hold Trainer: Crosshair Placement | SkillDrills",
+  description: "Free angle hold trainer for CS2 and Valorant. Practice crosshair placement, pre-aim and clicking when a peeker crosses your reticle. Runs in your browser.",
   keywords: [
     "angle hold aim trainer",
     "crosshair placement drill",
@@ -20,6 +20,7 @@ export const metadata = {
     "free angle holding trainer online",
     "how to punish jiggle peekers",
     "crosshair placement trainer",
+    "valorant angle hold",
     "pre aim training",
     "peeker advantage training"
   ],
@@ -32,8 +33,8 @@ export const metadata = {
     follow: true,
   },
   openGraph: {
-    title: "Crosshair Placement & Angle Hold Trainer | SkillDrills",
-    description: "Master crosshair placement and reaction speed with our free angle hold trainer. Learn to counter peekers and hold tight corners in CS2 and Valorant.",
+    title: "Angle Hold Trainer: Crosshair Placement | SkillDrills",
+    description: "Free angle hold trainer for CS2 and Valorant. Practice crosshair placement, pre-aim and clicking when a peeker crosses your reticle. Runs in your browser.",
     url: "https://skilldrills.online/drills/fps/angle-hold-trainer",
     siteName: 'SkillDrills',
     locale: 'en_US',
@@ -41,8 +42,8 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: "Crosshair Placement & Angle Hold Trainer | SkillDrills",
-    description: "Master crosshair placement and reaction speed with our free angle hold trainer. Learn to counter peekers and hold tight corners in CS2 and Valorant.",
+    title: "Angle Hold Trainer: Crosshair Placement | SkillDrills",
+    description: "Free angle hold trainer for CS2 and Valorant. Practice crosshair placement, pre-aim and clicking when a peeker crosses your reticle. Runs in your browser.",
   },
 };
 
@@ -67,7 +68,7 @@ export default function AngleHoldPage() {
     "description": "A free browser-based FPS trainer teaching crosshair placement discipline, corner pre-aiming, and defensive angle holding for competitive tactical shooters.",
     "genre": "FPS Training / Crosshair Placement",
     "url": "https://skilldrills.online/drills/fps/angle-hold-trainer",
-    "dateModified": "2026-09-11",
+    "dateModified": "2026-10-08",
     "publisher": {
       "@type": "Organization",
       "name": "SkillDrills",
@@ -85,7 +86,7 @@ export default function AngleHoldPage() {
     "description": "A free browser-based FPS trainer teaching crosshair placement discipline, corner pre-aiming, and defensive angle holding for competitive tactical shooters.",
     "genre": "FPS Training / Crosshair Placement",
     "url": "https://skilldrills.online/drills/fps/angle-hold-trainer",
-    "dateModified": "2026-09-11",
+    "dateModified": "2026-10-08",
     "publisher": {
       "@type": "Organization",
       "name": "SkillDrills",
@@ -104,14 +105,22 @@ export default function AngleHoldPage() {
     "playMode": "SinglePlayer",
     "applicationCategory": "Game",
     "operatingSystem": "Web Browser",
-    "dateModified": "2026-09-11"
+    "dateModified": "2026-10-08"
   };
 
   const faqSchema = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
-    "dateModified": "2026-09-11",
+    "dateModified": "2026-10-08",
     "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What is an angle hold trainer?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "An angle hold trainer is a practice tool where you stand still with your crosshair pre-aimed at a corner and click the instant an enemy crosses it. It trains crosshair placement, trigger discipline and peek reaction for CS2, Valorant and other tactical shooters."
+        }
+      },
       {
         "@type": "Question",
         "name": "What is crosshair placement?",
@@ -125,7 +134,7 @@ export default function AngleHoldPage() {
         "name": "What is peeker's advantage in tactical FPS games?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Peeker's advantage is an asymmetrical latency delay inherent to client-server networking. When an attacker rounds a corner, their client sends movement updates to the server before the stationary defender receives and renders the incoming opponent, granting the peeker a temporal window of 40 to 90 ms where they see the defender first."
+          "text": "Peeker's advantage is an asymmetrical latency delay inherent to client-server networking. When an attacker rounds a corner, their client sends movement updates to the server before the stationary defender receives and renders the incoming opponent, granting the peeker a short window, commonly cited in the tens of milliseconds, where they see the defender first."
         }
       },
       {
@@ -186,10 +195,10 @@ export default function AngleHoldPage() {
       },
       {
         "@type": "Question",
-        "name": "Does this angle hold trainer support raw hardware mouse input?",
+        "name": "Does this angle hold trainer use raw mouse input?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Yes. Angle Hold Pro operates on the HTML5 Pointer Lock API with 1:1 hardware translation, so clicks are timed with performance.now() and free of browser mouse acceleration. Browser clocks are coarsened to about 1 ms for security, so differences under roughly 5 ms are measurement noise."
+          "text": "Angle Hold Pro uses the HTML5 Pointer Lock API to capture mouse movement, and clicks are timed with performance.now(). It does not request unadjusted (raw) input, so your operating system pointer settings can still apply. Browser clocks are coarsened to about 1 ms for security, so differences under roughly 5 ms are measurement noise."
         }
       }
     ]
@@ -233,27 +242,28 @@ export default function AngleHoldPage() {
   };
 
   const angleHoldGuide = {
-    heading: "Crosshair Placement & Angle Hold Guide — Reaction Latency & Geometry",
+    heading: "What is an angle hold trainer and how does it work?",
     intro: [
+      "An angle hold trainer lets you practice the defensive skill of standing still with your crosshair pre-aimed at a corner and clicking the moment an enemy crosses it. Angle Hold Pro measures your reaction time and trigger discipline, so you can build crosshair placement habits for CS2, Valorant and other tactical shooters.",
       "Defensive angle holding is a foundational tactical shooter discipline governed by Donders' simple reaction time (Donders, 1868) and visual Go/No-Go cognitive discrimination. Unlike flick targeting which requires a dynamic two-component motor impulse (Woodworth, 1899; Meyer et al., 1988), holding an angle pre-aligns the crosshair along the horizontal head plane, transforming the challenge from a 2D spatial search into a 1D temporal click-timing execution.",
       "In online multiplayer netcode architectures (such as Valve's CS2 sub-tick system and Riot Games' Valorant infrastructure), network packet transit produces an asymmetrical latency delay known as peeker's advantage: T_advantage = (RTT_peeker / 2) + (RTT_holder / 2) + T_interp. An attacker swinging a corner sees the defender before the defender's client receives the update. To systematically neutralize this deficit, stationary defenders must offset their crosshair away from the corner wall by D_offset = v_peeker × T_reaction, allowing the swinging opponent to enter the crosshair focal point precisely as the human click fires.",
-      "Motor precision adheres to Fitts's Law (Fitts, 1954) and impulse variability principles: micro-flicks introduced while holding introduce motor noise. High-resolution digital chronometry in Angle Hold Pro is powered by performance.now() timestamps under 1000 Hz mouse polling and display refresh synchronization. This minimizes input quantization jitter (Woods et al., 2015), providing an accurate, laboratory-grade evaluation of trigger discipline, reaction latency, and bait-peek discrimination under time pressure (Hick, 1952).",
+      "Motor precision adheres to Fitts's Law (Fitts, 1954) and impulse variability principles: micro-flicks introduced while holding introduce motor noise. High-resolution digital chronometry in Angle Hold Pro is powered by performance.now() timestamps under 1000 Hz mouse polling and display refresh synchronization. This minimizes input quantization jitter (Woods et al., 2015), providing a useful relative measure of trigger discipline, reaction latency, and bait-peek discrimination under time pressure (Hick, 1952).",
       "How this is measured: every event is timestamped with the browser's performance.now() high-resolution clock, entirely on your device -- no score is uploaded. Two things this cannot control: browser timers are deliberately coarsened as a Spectre mitigation (typically to about 1 ms), and your display quantizes the stimulus to its refresh interval -- about 16.7 ms per frame at 60 Hz, 6.9 ms at 144 Hz and 4.1 ms at 240 Hz (Woods et al., 2015). Mouse polling adds roughly 8 ms at 125 Hz versus 1 ms at 1000 Hz. So treat differences smaller than about 5 ms as measurement noise, and compare your own runs on the same hardware rather than against someone else's setup."
     ],
     benchmarks: {
-      title: "Defensive Angle Hold & Peek Reaction Latency Benchmarks",
+      title: "How fast should you react when holding an angle?",
       headers: ["Engagement Phase / Metric", "Typical Latency (ms)", "Sensorimotor & Netcode Factor", "Performance Classification"],
       rows: [
         ["Simple Visual Trigger Latency", "150 – 190 ms", "Foveal retinal activation & motor cortex click", "Unconscious motor trigger on anticipated stimulus (Donders, 1868)"],
         ["Discrimination Latency (Fake/Jiggle Peek)", "210 – 280 ms", "Go/No-Go cognitive identification of real swing", "Trigger discipline under bait pressure (Hick, 1952)"],
         ["Peeker's Advantage Latency Deficit", "40 – 90 ms", "Client-server RTT packet transit + interpolation buffer", "Netcode transmission delay advantage for moving attacker"],
         ["Effective Net Defensive Response Window", "250 – 340 ms", "Combined visual latency + network deficit offset", "Standard baseline for competitive tactical FPS defenders"],
-        ["Elite Pre-Aim Hold Precision", "170 – 220 ms", "Optimal crosshair offset matching swing velocity", "High-tier Valorant Radiant / CS2 Faceit 10 defensive mastery"]
+        ["Elite Pre-Aim Hold Precision", "170 – 220 ms", "Optimal crosshair offset matching swing velocity", "Fast, well-calibrated pre-aim hold"]
       ],
       note: "Metrics synthesized from cognitive reaction chronometry (Donders, 1868; Hick, 1952; Woods et al., 2015) and tactical FPS netcode research (Riot Games engineering; Valve CS2 network analysis). Individual reaction times vary with display refresh rate, hardware polling, and cognitive alertness."
     },
     techniques: {
-      title: "Tactical Crosshair Placement & Geometric Offset Guidelines",
+      title: "How do you hold an angle in CS2 and Valorant?",
       items: [
         {
           name: "Corner Offset Distance Calibration",
@@ -297,7 +307,7 @@ export default function AngleHoldPage() {
 
   const copyEn = {
     h1Prefix: null,
-    h1Keyword: "Crosshair Placement & Angle Hold Trainer",
+    h1Keyword: "Angle Hold Trainer for Crosshair Placement",
     h1Suffix: null,
     subtitle: "Master crosshair placement, corner pre-aim discipline, and peeker's advantage defense.",
     rulesItems: [

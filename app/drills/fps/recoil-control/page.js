@@ -5,8 +5,8 @@ import { getAlternateLanguages } from '@/lib/i18n/locales';
 import { pickSources } from '@/lib/drillSources';
 
 export const metadata = {
-  title: "Recoil Control Trainer – Spray Practice | SkillDrills",
-  description: "Master weapon spray patterns, vertical mouse pull-down velocity, and horizontal recoil compensation for tactical shooters like CS2 and Valorant.",
+  title: "Recoil Control Trainer: Spray Practice | SkillDrills",
+  description: "Free recoil control trainer for CS2, Valorant and Apex Legends. Practice spray pull-down and horizontal compensation on moving targets in your browser.",
   keywords: [
     "recoil control trainer",
     "spray pattern practice",
@@ -30,8 +30,8 @@ export const metadata = {
     follow: true,
   },
   openGraph: {
-    title: "Recoil Control Trainer – Spray Practice | SkillDrills",
-    description: "Master weapon spray patterns, vertical mouse pull-down velocity, and horizontal recoil compensation for tactical shooters like CS2 and Valorant.",
+    title: "Recoil Control Trainer: Spray Practice | SkillDrills",
+    description: "Free recoil control trainer for CS2, Valorant and Apex Legends. Practice spray pull-down and horizontal compensation on moving targets in your browser.",
     url: "https://skilldrills.online/drills/fps/recoil-control",
     siteName: 'SkillDrills',
     locale: 'en_US',
@@ -39,8 +39,8 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: "Recoil Control Trainer – Spray Practice | SkillDrills",
-    description: "Master weapon spray patterns, vertical mouse pull-down velocity, and horizontal recoil compensation for tactical shooters like CS2 and Valorant.",
+    title: "Recoil Control Trainer: Spray Practice | SkillDrills",
+    description: "Free recoil control trainer for CS2, Valorant and Apex Legends. Practice spray pull-down and horizontal compensation on moving targets in your browser.",
   },
 };
 
@@ -77,7 +77,7 @@ export default function RecoilControlPage() {
     "name": "Recoil Control Trainer",
     "applicationCategory": "GameApplication",
     "operatingSystem": "Web Browser",
-    "dateModified": "2026-09-05",
+    "dateModified": "2026-10-08",
     "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
     "description": "A free browser FPS drill for mastering recoil control, spray patterns, and weapon compensation for CS2, Valorant, PUBG, and other shooters.",
     "genre": "FPS Training / Recoil & Spray Control",
@@ -95,7 +95,7 @@ export default function RecoilControlPage() {
     "name": "Recoil Control Trainer",
     "url": "https://skilldrills.online/drills/fps/recoil-control",
     "description": "A free browser FPS drill for mastering recoil control, spray patterns, and weapon compensation for CS2, Valorant, PUBG, and other shooters.",
-    "dateModified": "2026-09-05",
+    "dateModified": "2026-10-08",
     "gamePlatform": "Web Browser",
     "genre": ["FPS Training", "Aim Trainer", "Recoil Control"],
     "playMode": "SinglePlayer",
@@ -107,7 +107,7 @@ export default function RecoilControlPage() {
   const faqSchema = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
-    "dateModified": "2026-09-05",
+    "dateModified": "2026-10-08",
     "mainEntity": [
       {
         "@type": "Question",
@@ -230,8 +230,9 @@ export default function RecoilControlPage() {
   };
 
   const recoilControlGuide = {
-    heading: "Recoil Control Trainer Guide & Spray Biomechanics",
+    heading: "What is a recoil control trainer?",
     intro: [
+      "A recoil control trainer is a practice tool for learning to pull your mouse against a weapon's spray pattern. In this drill you hold fire at moving targets, pull down against the vertical climb and steer against horizontal sway, then review magazine accuracy and headshots. It suits CS2, Valorant and Apex Legends spray practice.",
       "Recoil Control Trainer is an empirical sensorimotor drill engineered to build the muscle memory required to counteract programmatic weapon spray patterns, vertical climb velocity, and horizontal sway in first-person shooters. In tactical and battle royale shooters such as Counter-Strike 2, VALORANT, Apex Legends, and PUBG, combat frequently extends beyond single-tap headshots. When targets execute erratic evasive maneuvers, sustained automatic fire with tight bullet grouping decides the gunfight.",
       "The motor learning framework governing rapid recoil compensation is defined by Richard A. Schmidt and Timothy D. Lee's Generalized Motor Program (GMP) theory (Schmidt & Lee, 2011). Because 10-round bursts occur in under 700 milliseconds—faster than human closed-loop visual feedback can process individual bullet impacts—elite players execute a pre-structured open-loop motor program containing invariant relative timing and force parameters.",
       "This motor process aligns with Robert S. Woodworth's classic two-component model of aiming (Woodworth, 1899) and David E. Meyer's optimized submovement model (Meyer et al., 1988): an initial ballistic open-loop pull-down of the mouse followed by fine corrective submovements to compensate for horizontal sway and dynamic target strafes.",
@@ -239,19 +240,19 @@ export default function RecoilControlPage() {
       "How this is measured: every event is timestamped with the browser's performance.now() high-resolution clock, entirely on your device -- no score is uploaded. Two things this cannot control: browser timers are deliberately coarsened as a Spectre mitigation (typically to about 1 ms), and your display quantizes the stimulus to its refresh interval -- about 16.7 ms per frame at 60 Hz, 6.9 ms at 144 Hz and 4.1 ms at 240 Hz (Woods et al., 2015). Mouse polling adds roughly 8 ms at 125 Hz versus 1 ms at 1000 Hz. So treat differences smaller than about 5 ms as measurement noise, and compare your own runs on the same hardware rather than against someone else's setup."
     ],
     benchmarks: {
-      title: "Magazine Accuracy & Recoil Control Skill Tiers",
+      title: "What is a good magazine accuracy for recoil control?",
       headers: ["Skill Tier", "Magazine Accuracy %", "Motor Control Characteristics", "In-Game Combat Implication"],
       rows: [
-        ["Tier 1 (Apex Laser)", "78% – 90%+", "Near-perfect vertical velocity matching; sub-pixel horizontal counter-steering across all 30 rounds with zero wasted bullets.", "Lethal multi-target spray transfers in CS2 Faceit Level 10, VALORANT Radiant, and Apex Predator lobbies."],
+        ["Tier 1 (Apex Laser)", "78% – 90%+", "Near-perfect vertical velocity matching; sub-pixel horizontal counter-steering across all 30 rounds with zero wasted bullets.", "Top of this drill's scale: spray transfers between targets stay tight through the magazine."],
         ["Tier 2 (Competitive Pro)", "62% – 78%", "Pinpoint first 10-round headshot grouping; rapid recentering during horizontal spray inversions on moving targets.", "Wins mid-range rifle duels reliably; consistently executes two-target spray transfers."],
         ["Tier 3 (High-Skill FPS)", "48% – 62%", "Solid vertical pull-down; minor over-compensation or delay during bullets 12–25 when horizontal recoil shifts.", "Reliable close-to-mid range sprays; struggles with long-range full-auto spray transfers."],
         ["Tier 4 (Intermediate)", "35% – 48%", "Inconsistent pull-down velocity; hesitates around bullet 7, allowing muzzle rise over the target's head.", "Loses spray duels frequently; forced to rely on single taps or short 3-round bursts."],
         ["Tier 5 (Developing / Jittery)", "Sub-35%", "Excessive hand tension causing erratic vertical jerks; bullets scatter across the full canvas.", "Fails the 40% magazine discipline threshold; wastes ammunition outside target hitbox."]
       ],
-      note: "Accuracy percentages represent confirmed target hits divided by total rounds fired per magazine cycle, measured via performance.now() chronometry (Woods et al., 2015)."
+      note: "Tiers are this drill's own scale, not an official rating from any game. Accuracy percentages represent confirmed target hits divided by total rounds fired per magazine cycle, measured via performance.now() chronometry (Woods et al., 2015)."
     },
     techniques: {
-      title: "Evidence-Based Protocols for Perfecting Recoil Control",
+      title: "How do you control recoil in CS2, Valorant and Apex?",
       items: [
         {
           name: "Open-Loop First 10-Bullet Commitment",
