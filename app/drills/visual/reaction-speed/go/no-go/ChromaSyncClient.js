@@ -19,6 +19,7 @@ import useUnexpectedExitGuard from '../../../../../../lib/useUnexpectedExitGuard
 import DrillFooter from '../../../../../../components/drill/DrillFooter';
 import DrillCountdown from '../../../../../../components/drill/DrillCountdown';
 import DrillAccordion from '../../../../../../components/drill/DrillAccordion';
+import { useTranslation } from '@/lib/i18n/useTranslation';
 import DrillFlashOverlay from '../../../../../../components/drill/DrillFlashOverlay';
 import DrillRuleItem from '../../../../../../components/drill/DrillRuleItem';
 import FpsStartCard from '../../../../../../components/drill/FpsStartCard';
@@ -110,6 +111,7 @@ const getLevelConfig = (level, combo = 0) => {
 };
 
 export default function ChromaSyncClient({ copy } = {}) {
+  const { locale } = useTranslation();
   const [gameState, setGameState] = useState('start'); // 'start' | 'countdown' | 'playing' | 'gameOver'
   const [isFullscreen, setIsFullscreen] = useState(false);
   useImmersiveMode(isFullscreen); // locks the page behind while the drill fills the screen
@@ -771,51 +773,53 @@ export default function ChromaSyncClient({ copy } = {}) {
               </div>
             </DrillAccordion>
 
-            <DrillAccordion
-              id="about"
-              title="About Go/No-Go Pro"
-              isOpen={openAccordion === 'about'}
-              onToggle={() => setOpenAccordion(openAccordion === 'about' ? null : 'about')}
-            >
-              <div className="space-y-8">
-                <section>
-                  <h3 className="text-base font-bold text-white mb-2 flex items-center gap-2">
-                    <Brain className="w-4 h-4 text-emerald-400" /> What Is Go/No-Go Response Inhibition?
-                  </h3>
-                  <p className="text-sm leading-relaxed mb-3">
-                    <strong>Go/No-Go Training</strong> is the gold standard neuroscientific task for measuring motor response inhibition and impulse control. The <strong>Go/No-Go drill</strong> requires you to react as quickly as possible to green target signals (&apos;Go&apos;) while suppressing motor actions when red distractor signals (&apos;No-Go&apos;) appear. Most trials call for a response, so responding becomes the habit and the rare no-go trial is what exposes control. The stop-signal literature treats going and stopping as a race between two processes, and whichever finishes first decides the outcome (Logan & Cowan, 1984). Simple visual reaction alone runs about 200–250 ms (Woods et al., 2015); inhibition has to beat that clock.
-                  </p>
-                  <p className="text-sm leading-relaxed">
-                    Training with this task strengthens prefrontal cortex executive control, reducing premature responses and trigger impulsivity in high-stakes environments.
-                  </p>
-                </section>
-
-                <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-                  <div className="p-4 rounded-xl border border-gray-800 bg-white/[0.02]">
-                    <div className="flex items-center gap-2.5 mb-2">
-                      <div className="w-7 h-7 rounded-lg bg-blue-600 flex items-center justify-center"><Users className="w-3.5 h-3.5 text-white" /></div>
-                      <h4 className="text-xs font-bold text-white">Who Should Use This?</h4>
+            {locale === 'en' && (
+              <DrillAccordion
+                id="about"
+                title="About Go/No-Go Pro"
+                isOpen={openAccordion === 'about'}
+                onToggle={() => setOpenAccordion(openAccordion === 'about' ? null : 'about')}
+              >
+                <div className="space-y-8">
+                  <section>
+                    <h3 className="text-base font-bold text-white mb-2 flex items-center gap-2">
+                      <Brain className="w-4 h-4 text-emerald-400" /> What Is Go/No-Go Response Inhibition?
+                    </h3>
+                    <p className="text-sm leading-relaxed mb-3">
+                      <strong>Go/No-Go Training</strong> is the gold standard neuroscientific task for measuring motor response inhibition and impulse control. The <strong>Go/No-Go drill</strong> requires you to react as quickly as possible to green target signals (&apos;Go&apos;) while suppressing motor actions when red distractor signals (&apos;No-Go&apos;) appear. Most trials call for a response, so responding becomes the habit and the rare no-go trial is what exposes control. The stop-signal literature treats going and stopping as a race between two processes, and whichever finishes first decides the outcome (Logan & Cowan, 1984). Simple visual reaction alone runs about 200–250 ms (Woods et al., 2015); inhibition has to beat that clock.
+                    </p>
+                    <p className="text-sm leading-relaxed">
+                      Training with this task strengthens prefrontal cortex executive control, reducing premature responses and trigger impulsivity in high-stakes environments.
+                    </p>
+                  </section>
+  
+                  <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                    <div className="p-4 rounded-xl border border-gray-800 bg-white/[0.02]">
+                      <div className="flex items-center gap-2.5 mb-2">
+                        <div className="w-7 h-7 rounded-lg bg-blue-600 flex items-center justify-center"><Users className="w-3.5 h-3.5 text-white" /></div>
+                        <h4 className="text-xs font-bold text-white">Who Should Use This?</h4>
+                      </div>
+                      <p className="text-xs text-gray-300 leading-relaxed">FPS gamers refining trigger discipline, pilots & drivers improving split-second decision making, and impulse control trainees.</p>
                     </div>
-                    <p className="text-xs text-gray-300 leading-relaxed">FPS gamers refining trigger discipline, pilots & drivers improving split-second decision making, and impulse control trainees.</p>
-                  </div>
-                  <div className="p-4 rounded-xl border border-gray-800 bg-white/[0.02]">
-                    <div className="flex items-center gap-2.5 mb-2">
-                      <div className="w-7 h-7 rounded-lg bg-emerald-600 flex items-center justify-center"><TrendingUp className="w-3.5 h-3.5 text-white" /></div>
-                      <h4 className="text-xs font-bold text-white">Skills Improved</h4>
+                    <div className="p-4 rounded-xl border border-gray-800 bg-white/[0.02]">
+                      <div className="flex items-center gap-2.5 mb-2">
+                        <div className="w-7 h-7 rounded-lg bg-emerald-600 flex items-center justify-center"><TrendingUp className="w-3.5 h-3.5 text-white" /></div>
+                        <h4 className="text-xs font-bold text-white">Skills Improved</h4>
+                      </div>
+                      <p className="text-xs text-gray-300 leading-relaxed">Response inhibition, impulse control, selective motor control, trigger discipline, and reaction speed.</p>
                     </div>
-                    <p className="text-xs text-gray-300 leading-relaxed">Response inhibition, impulse control, selective motor control, trigger discipline, and reaction speed.</p>
-                  </div>
-                  <div className="p-4 rounded-xl border border-gray-800 bg-white/[0.02]">
-                    <div className="flex items-center gap-2.5 mb-2">
-                      <div className="w-7 h-7 rounded-lg bg-purple-600 flex items-center justify-center"><Zap className="w-3.5 h-3.5 text-white" /></div>
-                      <h4 className="text-xs font-bold text-white">Trigger Control</h4>
+                    <div className="p-4 rounded-xl border border-gray-800 bg-white/[0.02]">
+                      <div className="flex items-center gap-2.5 mb-2">
+                        <div className="w-7 h-7 rounded-lg bg-purple-600 flex items-center justify-center"><Zap className="w-3.5 h-3.5 text-white" /></div>
+                        <h4 className="text-xs font-bold text-white">Trigger Control</h4>
+                      </div>
+                      <p className="text-xs text-gray-300 leading-relaxed">Restrain your thumb/finger from tapping instinctively when a red STOP target appears — every successful hold is worth points too.</p>
                     </div>
-                    <p className="text-xs text-gray-300 leading-relaxed">Restrain your thumb/finger from tapping instinctively when a red STOP target appears — every successful hold is worth points too.</p>
                   </div>
+  
                 </div>
-
-              </div>
-            </DrillAccordion>
+              </DrillAccordion>
+            )}
           </div>
         )}
 

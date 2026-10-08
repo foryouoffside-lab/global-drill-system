@@ -97,7 +97,7 @@ const RULES_ITEMS = [
 // MAIN COMPONENT
 // ============================================================
 export default function AimTrainerClient({ copy = {} } = {}) {
-  const { t } = useTranslation(AIM_TRAINER_I18N);
+  const { t, locale } = useTranslation(AIM_TRAINER_I18N);
   const [gameState, setGameState] = useState('start'); // 'start' | 'countdown' | 'playing' | 'gameOver'
   const [isFullscreen, setIsFullscreen] = useState(false);
   useImmersiveMode(isFullscreen); // locks the page behind while the drill fills the screen
@@ -821,53 +821,55 @@ export default function AimTrainerClient({ copy = {} } = {}) {
               </div>
             </DrillAccordion>
 
-            <DrillAccordion
-              id="about"
-              title={copy?.aboutTitle || t('aimTrainer.aboutTitle', 'About Aim Trainer Elite')}
-              isOpen={openAccordion === 'about'}
-              onToggle={() => setOpenAccordion(openAccordion === 'about' ? null : 'about')}
-            >
-              <div className="space-y-6">
-                <section>
-                  <h3 className="text-base font-bold text-white mb-2 flex items-center gap-2">
-                    <Target className="w-4 h-4 text-emerald-400" /> {t('aimTrainer.aboutHeading', 'What Is Aim Trainer Elite?')}
-                  </h3>
-                  <p className="text-sm leading-relaxed mb-3 text-slate-300">
-                    {t('aimTrainer.aboutP1', "An aim trainer measures how quickly and how accurately you can move a mouse cursor onto a target and click it. Fitts's Law describes the trade-off it exposes: movement time grows with the logarithm of the distance to a target divided by that target's width, so a target half the size costs about the same extra time as one twice as far away (Fitts, 1954; MacKenzie, 1992).")}
-                  </p>
-                  <p className="text-sm leading-relaxed mb-3 text-slate-300">
-                    {t('aimTrainer.aboutP2', "Aim Trainer Elite is a dynamic target acquisition drill engineered to isolate and refine your visual-motor latency, micro-flick precision, and click timing under accelerating difficulty. Grounded in Fitts's Law and two-component motor control theory, targets dynamically shrink, accelerate, and expire across the canvas.")}
-                  </p>
-                  <p className="text-sm leading-relaxed text-slate-400">
-                    {t('aimTrainer.aboutP3', "By balancing rapid ballistic cursor propulsion with terminal deceleration control, players train muscle memory and eliminate panic-clicking under intense competitive conditions.")}
-                  </p>
-                </section>
-
-                <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-                  <div className="p-4 rounded-xl border border-gray-800 bg-white/[0.02]">
-                    <div className="flex items-center gap-2.5 mb-2">
-                      <div className="w-7 h-7 rounded-lg bg-emerald-600 flex items-center justify-center"><Users className="w-3.5 h-3.5 text-white" /></div>
-                      <h4 className="text-xs font-bold text-white">{t('aimTrainer.card1Title', 'Who Should Use This?')}</h4>
+            {locale === 'en' && (
+              <DrillAccordion
+                id="about"
+                title={copy?.aboutTitle || t('aimTrainer.aboutTitle', 'About Aim Trainer Elite')}
+                isOpen={openAccordion === 'about'}
+                onToggle={() => setOpenAccordion(openAccordion === 'about' ? null : 'about')}
+              >
+                <div className="space-y-6">
+                  <section>
+                    <h3 className="text-base font-bold text-white mb-2 flex items-center gap-2">
+                      <Target className="w-4 h-4 text-emerald-400" /> {t('aimTrainer.aboutHeading', 'What Is Aim Trainer Elite?')}
+                    </h3>
+                    <p className="text-sm leading-relaxed mb-3 text-slate-300">
+                      {t('aimTrainer.aboutP1', "An aim trainer measures how quickly and how accurately you can move a mouse cursor onto a target and click it. Fitts's Law describes the trade-off it exposes: movement time grows with the logarithm of the distance to a target divided by that target's width, so a target half the size costs about the same extra time as one twice as far away (Fitts, 1954; MacKenzie, 1992).")}
+                    </p>
+                    <p className="text-sm leading-relaxed mb-3 text-slate-300">
+                      {t('aimTrainer.aboutP2', "Aim Trainer Elite is a dynamic target acquisition drill engineered to isolate and refine your visual-motor latency, micro-flick precision, and click timing under accelerating difficulty. Grounded in Fitts's Law and two-component motor control theory, targets dynamically shrink, accelerate, and expire across the canvas.")}
+                    </p>
+                    <p className="text-sm leading-relaxed text-slate-400">
+                      {t('aimTrainer.aboutP3', "By balancing rapid ballistic cursor propulsion with terminal deceleration control, players train muscle memory and eliminate panic-clicking under intense competitive conditions.")}
+                    </p>
+                  </section>
+  
+                  <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                    <div className="p-4 rounded-xl border border-gray-800 bg-white/[0.02]">
+                      <div className="flex items-center gap-2.5 mb-2">
+                        <div className="w-7 h-7 rounded-lg bg-emerald-600 flex items-center justify-center"><Users className="w-3.5 h-3.5 text-white" /></div>
+                        <h4 className="text-xs font-bold text-white">{t('aimTrainer.card1Title', 'Who Should Use This?')}</h4>
+                      </div>
+                      <p className="text-xs text-gray-300 leading-relaxed">{t('aimTrainer.card1Desc', 'Competitive tactical shooter players (Valorant, CS2, Apex Legends) and visual-motor athletes refining mouse precision.')}</p>
                     </div>
-                    <p className="text-xs text-gray-300 leading-relaxed">{t('aimTrainer.card1Desc', 'Competitive tactical shooter players (Valorant, CS2, Apex Legends) and visual-motor athletes refining mouse precision.')}</p>
-                  </div>
-                  <div className="p-4 rounded-xl border border-gray-800 bg-white/[0.02]">
-                    <div className="flex items-center gap-2.5 mb-2">
-                      <div className="w-7 h-7 rounded-lg bg-cyan-600 flex items-center justify-center"><TrendingUp className="w-3.5 h-3.5 text-white" /></div>
-                      <h4 className="text-xs font-bold text-white">{t('aimTrainer.card2Title', 'Skills Improved')}</h4>
+                    <div className="p-4 rounded-xl border border-gray-800 bg-white/[0.02]">
+                      <div className="flex items-center gap-2.5 mb-2">
+                        <div className="w-7 h-7 rounded-lg bg-cyan-600 flex items-center justify-center"><TrendingUp className="w-3.5 h-3.5 text-white" /></div>
+                        <h4 className="text-xs font-bold text-white">{t('aimTrainer.card2Title', 'Skills Improved')}</h4>
+                      </div>
+                      <p className="text-xs text-gray-300 leading-relaxed">{t('aimTrainer.card2Desc', 'Target acquisition speed, micro-flick accuracy, ballistic impulse control, and click timing synchronization.')}</p>
                     </div>
-                    <p className="text-xs text-gray-300 leading-relaxed">{t('aimTrainer.card2Desc', 'Target acquisition speed, micro-flick accuracy, ballistic impulse control, and click timing synchronization.')}</p>
-                  </div>
-                  <div className="p-4 rounded-xl border border-gray-800 bg-white/[0.02]">
-                    <div className="flex items-center gap-2.5 mb-2">
-                      <div className="w-7 h-7 rounded-lg bg-purple-600 flex items-center justify-center"><Zap className="w-3.5 h-3.5 text-white" /></div>
-                      <h4 className="text-xs font-bold text-white">{t('aimTrainer.card3Title', "Fitts's Law Tuning")}</h4>
+                    <div className="p-4 rounded-xl border border-gray-800 bg-white/[0.02]">
+                      <div className="flex items-center gap-2.5 mb-2">
+                        <div className="w-7 h-7 rounded-lg bg-purple-600 flex items-center justify-center"><Zap className="w-3.5 h-3.5 text-white" /></div>
+                        <h4 className="text-xs font-bold text-white">{t('aimTrainer.card3Title', "Fitts's Law Tuning")}</h4>
+                      </div>
+                      <p className="text-xs text-gray-300 leading-relaxed">{t('aimTrainer.card3Desc', 'Progressively trains high Index of Difficulty (ID) movements where target size contracts and distance scales.')}</p>
                     </div>
-                    <p className="text-xs text-gray-300 leading-relaxed">{t('aimTrainer.card3Desc', 'Progressively trains high Index of Difficulty (ID) movements where target size contracts and distance scales.')}</p>
                   </div>
                 </div>
-              </div>
-            </DrillAccordion>
+              </DrillAccordion>
+            )}
           </div>
         )}
       </main>

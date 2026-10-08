@@ -19,6 +19,7 @@ import useUnexpectedExitGuard from '../../../../../lib/useUnexpectedExitGuard';
 import DrillFooter from '../../../../../components/drill/DrillFooter';
 import DrillCountdown from '../../../../../components/drill/DrillCountdown';
 import DrillAccordion from '../../../../../components/drill/DrillAccordion';
+import { useTranslation } from '@/lib/i18n/useTranslation';
 import DrillFlashOverlay from '../../../../../components/drill/DrillFlashOverlay';
 import DrillRuleItem from '../../../../../components/drill/DrillRuleItem';
 import FpsStartCard from '../../../../../components/drill/FpsStartCard';
@@ -51,6 +52,7 @@ const getRandomChar = () => CHARS[Math.floor(Math.random() * CHARS.length)];
 const getRandomString = () => getRandomChar() + getRandomChar();
 
 export default function EntropicGridClient({ copy } = {}) {
+  const { locale } = useTranslation();
   const [gameState, setGameState] = useState('start'); // 'start' | 'countdown' | 'playing' | 'gameOver'
   const [isFullscreen, setIsFullscreen] = useState(false);
   useImmersiveMode(isFullscreen); // locks the page behind while the drill fills the screen
@@ -669,51 +671,53 @@ export default function EntropicGridClient({ copy } = {}) {
               </div>
             </DrillAccordion>
 
-            <DrillAccordion
-              id="about"
-              title="About Entropic Grid Pro"
-              isOpen={openAccordion === 'about'}
-              onToggle={() => setOpenAccordion(openAccordion === 'about' ? null : 'about')}
-            >
-              <div className="space-y-8">
-                <section>
-                  <h3 className="text-base font-bold text-white mb-2 flex items-center gap-2">
-                    <Brain className="w-4 h-4 text-blue-400" /> What Is Entropic Grid Training?
-                  </h3>
-                  <p className="text-sm leading-relaxed mb-3">
-                    <strong>Entropic Grid Training</strong> is an advanced visual search and concentration drill designed to measure visual noise suppression capacity. The <strong>Entropic Grid drill</strong> presents a 100-cell alphanumeric grid with dynamic entropy noise continuously regenerating background characters, testing your ability to isolate and click specific 2-character targets. How long that takes depends less on the number of items than on similarity — search slows as the target resembles its distractors and as the distractors differ from each other (Duncan &amp; Humphreys, 1989; Treisman &amp; Gelade, 1980). Here the background regenerates every 700 ms, so the display never settles into a pattern you can memorise.
-                  </p>
-                  <p className="text-sm leading-relaxed">
-                    By practicing <strong>peripheral visual noise filtering</strong>, you expand your visual search field and increase target recognition speed under high-distraction environments.
-                  </p>
-                </section>
-
-                <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-                  <div className="p-4 rounded-xl border border-gray-800 bg-white/[0.02]">
-                    <div className="flex items-center gap-2.5 mb-2">
-                      <div className="w-7 h-7 rounded-lg bg-blue-600 flex items-center justify-center"><Users className="w-3.5 h-3.5 text-white" /></div>
-                      <h4 className="text-xs font-bold text-white">Who Should Use This?</h4>
+            {locale === 'en' && (
+              <DrillAccordion
+                id="about"
+                title="About Entropic Grid Pro"
+                isOpen={openAccordion === 'about'}
+                onToggle={() => setOpenAccordion(openAccordion === 'about' ? null : 'about')}
+              >
+                <div className="space-y-8">
+                  <section>
+                    <h3 className="text-base font-bold text-white mb-2 flex items-center gap-2">
+                      <Brain className="w-4 h-4 text-blue-400" /> What Is Entropic Grid Training?
+                    </h3>
+                    <p className="text-sm leading-relaxed mb-3">
+                      <strong>Entropic Grid Training</strong> is an advanced visual search and concentration drill designed to measure visual noise suppression capacity. The <strong>Entropic Grid drill</strong> presents a 100-cell alphanumeric grid with dynamic entropy noise continuously regenerating background characters, testing your ability to isolate and click specific 2-character targets. How long that takes depends less on the number of items than on similarity — search slows as the target resembles its distractors and as the distractors differ from each other (Duncan &amp; Humphreys, 1989; Treisman &amp; Gelade, 1980). Here the background regenerates every 700 ms, so the display never settles into a pattern you can memorise.
+                    </p>
+                    <p className="text-sm leading-relaxed">
+                      By practicing <strong>peripheral visual noise filtering</strong>, you expand your visual search field and increase target recognition speed under high-distraction environments.
+                    </p>
+                  </section>
+  
+                  <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                    <div className="p-4 rounded-xl border border-gray-800 bg-white/[0.02]">
+                      <div className="flex items-center gap-2.5 mb-2">
+                        <div className="w-7 h-7 rounded-lg bg-blue-600 flex items-center justify-center"><Users className="w-3.5 h-3.5 text-white" /></div>
+                        <h4 className="text-xs font-bold text-white">Who Should Use This?</h4>
+                      </div>
+                      <p className="text-xs text-gray-300 leading-relaxed">Gamers improving visual scanning speed, pilots & drivers enhancing visual focus under noise, and professionals building concentration stamina.</p>
                     </div>
-                    <p className="text-xs text-gray-300 leading-relaxed">Gamers improving visual scanning speed, pilots & drivers enhancing visual focus under noise, and professionals building concentration stamina.</p>
-                  </div>
-                  <div className="p-4 rounded-xl border border-gray-800 bg-white/[0.02]">
-                    <div className="flex items-center gap-2.5 mb-2">
-                      <div className="w-7 h-7 rounded-lg bg-cyan-600 flex items-center justify-center"><TrendingUp className="w-3.5 h-3.5 text-white" /></div>
-                      <h4 className="text-xs font-bold text-white">Skills Improved</h4>
+                    <div className="p-4 rounded-xl border border-gray-800 bg-white/[0.02]">
+                      <div className="flex items-center gap-2.5 mb-2">
+                        <div className="w-7 h-7 rounded-lg bg-cyan-600 flex items-center justify-center"><TrendingUp className="w-3.5 h-3.5 text-white" /></div>
+                        <h4 className="text-xs font-bold text-white">Skills Improved</h4>
+                      </div>
+                      <p className="text-xs text-gray-300 leading-relaxed">Visual search speed, selective attention, visual noise filtering, target recognition, and sustained concentration stamina.</p>
                     </div>
-                    <p className="text-xs text-gray-300 leading-relaxed">Visual search speed, selective attention, visual noise filtering, target recognition, and sustained concentration stamina.</p>
-                  </div>
-                  <div className="p-4 rounded-xl border border-gray-800 bg-white/[0.02]">
-                    <div className="flex items-center gap-2.5 mb-2">
-                      <div className="w-7 h-7 rounded-lg bg-purple-600 flex items-center justify-center"><Zap className="w-3.5 h-3.5 text-white" /></div>
-                      <h4 className="text-xs font-bold text-white">Quadrant Scanning</h4>
+                    <div className="p-4 rounded-xl border border-gray-800 bg-white/[0.02]">
+                      <div className="flex items-center gap-2.5 mb-2">
+                        <div className="w-7 h-7 rounded-lg bg-purple-600 flex items-center justify-center"><Zap className="w-3.5 h-3.5 text-white" /></div>
+                        <h4 className="text-xs font-bold text-white">Quadrant Scanning</h4>
+                      </div>
+                      <p className="text-xs text-gray-300 leading-relaxed">Scan the 100-cell grid systematically in 4 quadrants to rapidly isolate target codes despite background noise.</p>
                     </div>
-                    <p className="text-xs text-gray-300 leading-relaxed">Scan the 100-cell grid systematically in 4 quadrants to rapidly isolate target codes despite background noise.</p>
                   </div>
+  
                 </div>
-
-              </div>
-            </DrillAccordion>
+              </DrillAccordion>
+            )}
           </div>
         )}
 

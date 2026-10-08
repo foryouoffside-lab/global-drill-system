@@ -23,6 +23,7 @@ import DrillAccordion from '../../../../../components/drill/DrillAccordion';
 import DrillRuleItem from '../../../../../components/drill/DrillRuleItem';
 import FpsStartCard from '../../../../../components/drill/FpsStartCard';
 import useImmersiveMode from '@/lib/useImmersiveMode';
+import { useTranslation } from '@/lib/i18n/useTranslation';
 
 // ============================================================
 // TUNING CONSTANTS
@@ -106,6 +107,7 @@ const getLevelConfig = (level, combo = 0) => {
 // MAIN COMPONENT
 // ============================================================
 export default function ComplexPatternClient({ copy = {} } = {}) {
+  const { locale } = useTranslation();
   const [gameState, setGameState] = useState('start'); // 'start' | 'countdown' | 'playing' | 'gameOver'
   const [isFullscreen, setIsFullscreen] = useState(false);
   useImmersiveMode(isFullscreen); // locks the page behind while the drill fills the screen
@@ -1037,29 +1039,31 @@ export default function ComplexPatternClient({ copy = {} } = {}) {
                   )}
                 </div>
 
-                <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-                  <div className="p-4 rounded-xl border border-white/10 bg-white/[0.02]">
-                    <div className="flex items-center gap-2.5 mb-2">
-                      <div className="w-7 h-7 rounded-lg bg-blue-600 flex items-center justify-center"><Users className="w-3.5 h-3.5 text-white" /></div>
-                      <h4 className="text-xs font-bold text-white">Target Audience</h4>
+                {(locale === 'en' || copy?.aboutCards) && (
+                  <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                    <div className="p-4 rounded-xl border border-white/10 bg-white/[0.02]">
+                      <div className="flex items-center gap-2.5 mb-2">
+                        <div className="w-7 h-7 rounded-lg bg-blue-600 flex items-center justify-center"><Users className="w-3.5 h-3.5 text-white" /></div>
+                        <h4 className="text-xs font-bold text-white">Target Audience</h4>
+                      </div>
+                      <p className="text-xs text-gray-300 leading-relaxed">Gamers mastering recoil compensation patterns, digital artists training freehand vector confidence, and cognitive athletes expanding spatial working memory.</p>
                     </div>
-                    <p className="text-xs text-gray-300 leading-relaxed">Gamers mastering recoil compensation patterns, digital artists training freehand vector confidence, and cognitive athletes expanding spatial working memory.</p>
-                  </div>
-                  <div className="p-4 rounded-xl border border-white/10 bg-white/[0.02]">
-                    <div className="flex items-center gap-2.5 mb-2">
-                      <div className="w-7 h-7 rounded-lg bg-emerald-600 flex items-center justify-center"><TrendingUp className="w-3.5 h-3.5 text-white" /></div>
-                      <h4 className="text-xs font-bold text-white">Cognitive Benefits</h4>
+                    <div className="p-4 rounded-xl border border-white/10 bg-white/[0.02]">
+                      <div className="flex items-center gap-2.5 mb-2">
+                        <div className="w-7 h-7 rounded-lg bg-emerald-600 flex items-center justify-center"><TrendingUp className="w-3.5 h-3.5 text-white" /></div>
+                        <h4 className="text-xs font-bold text-white">Cognitive Benefits</h4>
+                      </div>
+                      <p className="text-xs text-gray-300 leading-relaxed">Visuospatial memory retention, mental angle manipulation, serial motor sequencing, and rapid gesture reproduction speed.</p>
                     </div>
-                    <p className="text-xs text-gray-300 leading-relaxed">Visuospatial memory retention, mental angle manipulation, serial motor sequencing, and rapid gesture reproduction speed.</p>
-                  </div>
-                  <div className="p-4 rounded-xl border border-white/10 bg-white/[0.02]">
-                    <div className="flex items-center gap-2.5 mb-2">
-                      <div className="w-7 h-7 rounded-lg bg-purple-600 flex items-center justify-center"><Activity className="w-3.5 h-3.5 text-white" /></div>
-                      <h4 className="text-xs font-bold text-white">Adaptive Geometry</h4>
+                    <div className="p-4 rounded-xl border border-white/10 bg-white/[0.02]">
+                      <div className="flex items-center gap-2.5 mb-2">
+                        <div className="w-7 h-7 rounded-lg bg-purple-600 flex items-center justify-center"><Activity className="w-3.5 h-3.5 text-white" /></div>
+                        <h4 className="text-xs font-bold text-white">Adaptive Geometry</h4>
+                      </div>
+                      <p className="text-xs text-gray-300 leading-relaxed">Waypoints scale dynamically from 3 to 8 vertices, introducing acute hairpins, multi-axis loops, and rapid flash presentations.</p>
                     </div>
-                    <p className="text-xs text-gray-300 leading-relaxed">Waypoints scale dynamically from 3 to 8 vertices, introducing acute hairpins, multi-axis loops, and rapid flash presentations.</p>
                   </div>
-                </div>
+                )}
               </div>
             </DrillAccordion>
           </div>

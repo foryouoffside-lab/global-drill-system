@@ -19,6 +19,7 @@ import useUnexpectedExitGuard from '../../../../../lib/useUnexpectedExitGuard';
 import DrillFooter from '../../../../../components/drill/DrillFooter';
 import DrillCountdown from '../../../../../components/drill/DrillCountdown';
 import DrillAccordion from '../../../../../components/drill/DrillAccordion';
+import { useTranslation } from '@/lib/i18n/useTranslation';
 import DrillFlashOverlay from '../../../../../components/drill/DrillFlashOverlay';
 import DrillRuleItem from '../../../../../components/drill/DrillRuleItem';
 import FpsStartCard from '../../../../../components/drill/FpsStartCard';
@@ -65,6 +66,7 @@ const getLevelConfig = (level, combo = 0) => {
 };
 
 export default function KineticInterceptClient({ copy } = {}) {
+  const { locale } = useTranslation();
   const [gameState, setGameState] = useState('start'); // 'start' | 'countdown' | 'playing' | 'gameOver'
   const [isFullscreen, setIsFullscreen] = useState(false);
   useImmersiveMode(isFullscreen); // locks the page behind while the drill fills the screen
@@ -708,51 +710,53 @@ export default function KineticInterceptClient({ copy } = {}) {
               </div>
             </DrillAccordion>
 
-            <DrillAccordion
-              id="about"
-              title="About Moving Target Pro"
-              isOpen={openAccordion === 'about'}
-              onToggle={() => setOpenAccordion(openAccordion === 'about' ? null : 'about')}
-            >
-              <div className="space-y-8">
-                <section>
-                  <h3 className="text-base font-bold text-white mb-2 flex items-center gap-2">
-                    <Brain className="w-4 h-4 text-orange-400" /> What Is Kinetic Target Intercept Training?
-                  </h3>
-                  <p className="text-sm leading-relaxed mb-3">
-                    <strong>Kinetic Target Intercept Training</strong> is a high-speed smooth pursuit drill designed to test visual tracking and motor interception accuracy. The <strong>Moving Target drill</strong> renders bouncing target spheres traveling across a 2D bounding viewport at dynamic velocities. As opposed to the jumps the eye makes between stationary points, pursuit stays accurate up to roughly 30&deg;/s; past that the eye falls behind and has to catch up with saccades (Krauzlis, 2004; Rashbass, 1961). Intercepting a moving target adds a second problem on top: aiming where it is going rather than where it is.
-                  </p>
-                  <p className="text-sm leading-relaxed">
-                    By matching your eye gaze and motor cursor with moving targets, you build smooth pursuit eye movement coordination, crucial for aiming in esports and fast visual inspection.
-                  </p>
-                </section>
-
-                <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-                  <div className="p-4 rounded-xl border border-gray-800 bg-white/[0.02]">
-                    <div className="flex items-center gap-2.5 mb-2">
-                      <div className="w-7 h-7 rounded-lg bg-blue-600 flex items-center justify-center"><Users className="w-3.5 h-3.5 text-white" /></div>
-                      <h4 className="text-xs font-bold text-white">Who Should Use This?</h4>
+            {locale === 'en' && (
+              <DrillAccordion
+                id="about"
+                title="About Moving Target Pro"
+                isOpen={openAccordion === 'about'}
+                onToggle={() => setOpenAccordion(openAccordion === 'about' ? null : 'about')}
+              >
+                <div className="space-y-8">
+                  <section>
+                    <h3 className="text-base font-bold text-white mb-2 flex items-center gap-2">
+                      <Brain className="w-4 h-4 text-orange-400" /> What Is Kinetic Target Intercept Training?
+                    </h3>
+                    <p className="text-sm leading-relaxed mb-3">
+                      <strong>Kinetic Target Intercept Training</strong> is a high-speed smooth pursuit drill designed to test visual tracking and motor interception accuracy. The <strong>Moving Target drill</strong> renders bouncing target spheres traveling across a 2D bounding viewport at dynamic velocities. As opposed to the jumps the eye makes between stationary points, pursuit stays accurate up to roughly 30&deg;/s; past that the eye falls behind and has to catch up with saccades (Krauzlis, 2004; Rashbass, 1961). Intercepting a moving target adds a second problem on top: aiming where it is going rather than where it is.
+                    </p>
+                    <p className="text-sm leading-relaxed">
+                      By matching your eye gaze and motor cursor with moving targets, you build smooth pursuit eye movement coordination, crucial for aiming in esports and fast visual inspection.
+                    </p>
+                  </section>
+  
+                  <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                    <div className="p-4 rounded-xl border border-gray-800 bg-white/[0.02]">
+                      <div className="flex items-center gap-2.5 mb-2">
+                        <div className="w-7 h-7 rounded-lg bg-blue-600 flex items-center justify-center"><Users className="w-3.5 h-3.5 text-white" /></div>
+                        <h4 className="text-xs font-bold text-white">Who Should Use This?</h4>
+                      </div>
+                      <p className="text-xs text-gray-300 leading-relaxed">FPS gamers tracking moving opponents, athletes refining hand-eye motor speed, and visual tracking trainees.</p>
                     </div>
-                    <p className="text-xs text-gray-300 leading-relaxed">FPS gamers tracking moving opponents, athletes refining hand-eye motor speed, and visual tracking trainees.</p>
-                  </div>
-                  <div className="p-4 rounded-xl border border-gray-800 bg-white/[0.02]">
-                    <div className="flex items-center gap-2.5 mb-2">
-                      <div className="w-7 h-7 rounded-lg bg-orange-600 flex items-center justify-center"><TrendingUp className="w-3.5 h-3.5 text-white" /></div>
-                      <h4 className="text-xs font-bold text-white">Skills Improved</h4>
+                    <div className="p-4 rounded-xl border border-gray-800 bg-white/[0.02]">
+                      <div className="flex items-center gap-2.5 mb-2">
+                        <div className="w-7 h-7 rounded-lg bg-orange-600 flex items-center justify-center"><TrendingUp className="w-3.5 h-3.5 text-white" /></div>
+                        <h4 className="text-xs font-bold text-white">Skills Improved</h4>
+                      </div>
+                      <p className="text-xs text-gray-300 leading-relaxed">Smooth pursuit tracking, motor interception accuracy, hand-eye coordination, and velocity prediction.</p>
                     </div>
-                    <p className="text-xs text-gray-300 leading-relaxed">Smooth pursuit tracking, motor interception accuracy, hand-eye coordination, and velocity prediction.</p>
-                  </div>
-                  <div className="p-4 rounded-xl border border-gray-800 bg-white/[0.02]">
-                    <div className="flex items-center gap-2.5 mb-2">
-                      <div className="w-7 h-7 rounded-lg bg-purple-600 flex items-center justify-center"><Zap className="w-3.5 h-3.5 text-white" /></div>
-                      <h4 className="text-xs font-bold text-white">Smooth Pursuit</h4>
+                    <div className="p-4 rounded-xl border border-gray-800 bg-white/[0.02]">
+                      <div className="flex items-center gap-2.5 mb-2">
+                        <div className="w-7 h-7 rounded-lg bg-purple-600 flex items-center justify-center"><Zap className="w-3.5 h-3.5 text-white" /></div>
+                        <h4 className="text-xs font-bold text-white">Smooth Pursuit</h4>
+                      </div>
+                      <p className="text-xs text-gray-300 leading-relaxed">Lead the moving target slightly ahead of its trajectory vector to click cleanly with high accuracy.</p>
                     </div>
-                    <p className="text-xs text-gray-300 leading-relaxed">Lead the moving target slightly ahead of its trajectory vector to click cleanly with high accuracy.</p>
                   </div>
+  
                 </div>
-
-              </div>
-            </DrillAccordion>
+              </DrillAccordion>
+            )}
           </div>
         )}
 

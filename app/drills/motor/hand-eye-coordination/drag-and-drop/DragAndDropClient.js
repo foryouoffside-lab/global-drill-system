@@ -24,6 +24,7 @@ import FpsStartCard from '../../../../../components/drill/FpsStartCard';
 import DrillResultCard from '../../../../../components/drill/DrillResultCard';
 import useImmersiveMode from '@/lib/useImmersiveMode';
 import useUnexpectedExitGuard from '@/lib/useUnexpectedExitGuard';
+import { useTranslation } from '@/lib/i18n/useTranslation';
 
 /**
  * Draws a hollow tactical bucket target container with empty inside space.
@@ -143,6 +144,7 @@ As your score rises, target containers shrink and movement speed accelerates, co
 // MAIN COMPONENT
 // ============================================================
 export default function DragAndDropClient({ copy } = {}) {
+  const { locale } = useTranslation();
   const [gameState, setGameState] = useState('start'); // 'start' | 'countdown' | 'playing' | 'gameOver'
   const [isFullscreen, setIsFullscreen] = useState(false);
   useImmersiveMode(isFullscreen); // locks the page behind while the drill fills the screen
@@ -880,49 +882,51 @@ export default function DragAndDropClient({ copy } = {}) {
               </div>
             </DrillAccordion>
 
-            <DrillAccordion
-              id="about"
-              title={copy?.aboutTitle || "About Drag & Drop Mouse Trainer"}
-              isOpen={openAccordion === 'about'}
-              onToggle={() => setOpenAccordion(openAccordion === 'about' ? null : 'about')}
-            >
-              {copy?.aboutContent ? (
-                copy.aboutContent
-              ) : (
-                <div className="space-y-6">
-                  <div className="space-y-3">
-                    <h3 className="text-base font-bold text-white">Fine Motor Spatial Dragging &amp; Deceleration</h3>
-                    {ABOUT_TEXT.split('\n\n').map((para, i) => (
-                      <p key={i} className="text-sm leading-relaxed text-gray-300">{para}</p>
-                    ))}
+            {locale === 'en' && (
+              <DrillAccordion
+                id="about"
+                title={copy?.aboutTitle || "About Drag & Drop Mouse Trainer"}
+                isOpen={openAccordion === 'about'}
+                onToggle={() => setOpenAccordion(openAccordion === 'about' ? null : 'about')}
+              >
+                {copy?.aboutContent ? (
+                  copy.aboutContent
+                ) : (
+                  <div className="space-y-6">
+                    <div className="space-y-3">
+                      <h3 className="text-base font-bold text-white">Fine Motor Spatial Dragging &amp; Deceleration</h3>
+                      {ABOUT_TEXT.split('\n\n').map((para, i) => (
+                        <p key={i} className="text-sm leading-relaxed text-gray-300">{para}</p>
+                      ))}
+                    </div>
+  
+                    <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                      <div className="p-4 rounded-xl border border-white/10 bg-white/[0.02]">
+                        <div className="flex items-center gap-2.5 mb-2">
+                          <div className="w-7 h-7 rounded-lg bg-blue-600 flex items-center justify-center"><Users className="w-3.5 h-3.5 text-white" /></div>
+                          <h4 className="text-xs font-bold text-white">Target Audiences</h4>
+                        </div>
+                        <p className="text-xs text-gray-300 leading-relaxed">Graphic designers dragging nodes and layers, video editors placing timeline clips, FPS gamers refining inventory drags, and anyone wanting steadier cursor control.</p>
+                      </div>
+                      <div className="p-4 rounded-xl border border-white/10 bg-white/[0.02]">
+                        <div className="flex items-center gap-2.5 mb-2">
+                          <div className="w-7 h-7 rounded-lg bg-emerald-600 flex items-center justify-center"><TrendingUp className="w-3.5 h-3.5 text-white" /></div>
+                          <h4 className="text-xs font-bold text-white">Steering Dynamics</h4>
+                        </div>
+                        <p className="text-xs text-gray-300 leading-relaxed">Continuous cursor movement under sustained switch pressure tests Accot-Zhai steering law throughput and deceleration control.</p>
+                      </div>
+                      <div className="p-4 rounded-xl border border-white/10 bg-white/[0.02]">
+                        <div className="flex items-center gap-2.5 mb-2">
+                          <div className="w-7 h-7 rounded-lg bg-purple-600 flex items-center justify-center"><PenTool className="w-3.5 h-3.5 text-white" /></div>
+                          <h4 className="text-xs font-bold text-white">Release Timing Precision</h4>
+                        </div>
+                        <p className="text-xs text-gray-300 leading-relaxed">Decelerate your cursor smoothly and release inside the moving container boundary — releasing outside it breaks your combo chain.</p>
+                      </div>
+                    </div>
                   </div>
-
-                  <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-                    <div className="p-4 rounded-xl border border-white/10 bg-white/[0.02]">
-                      <div className="flex items-center gap-2.5 mb-2">
-                        <div className="w-7 h-7 rounded-lg bg-blue-600 flex items-center justify-center"><Users className="w-3.5 h-3.5 text-white" /></div>
-                        <h4 className="text-xs font-bold text-white">Target Audiences</h4>
-                      </div>
-                      <p className="text-xs text-gray-300 leading-relaxed">Graphic designers dragging nodes and layers, video editors placing timeline clips, FPS gamers refining inventory drags, and anyone wanting steadier cursor control.</p>
-                    </div>
-                    <div className="p-4 rounded-xl border border-white/10 bg-white/[0.02]">
-                      <div className="flex items-center gap-2.5 mb-2">
-                        <div className="w-7 h-7 rounded-lg bg-emerald-600 flex items-center justify-center"><TrendingUp className="w-3.5 h-3.5 text-white" /></div>
-                        <h4 className="text-xs font-bold text-white">Steering Dynamics</h4>
-                      </div>
-                      <p className="text-xs text-gray-300 leading-relaxed">Continuous cursor movement under sustained switch pressure tests Accot-Zhai steering law throughput and deceleration control.</p>
-                    </div>
-                    <div className="p-4 rounded-xl border border-white/10 bg-white/[0.02]">
-                      <div className="flex items-center gap-2.5 mb-2">
-                        <div className="w-7 h-7 rounded-lg bg-purple-600 flex items-center justify-center"><PenTool className="w-3.5 h-3.5 text-white" /></div>
-                        <h4 className="text-xs font-bold text-white">Release Timing Precision</h4>
-                      </div>
-                      <p className="text-xs text-gray-300 leading-relaxed">Decelerate your cursor smoothly and release inside the moving container boundary — releasing outside it breaks your combo chain.</p>
-                    </div>
-                  </div>
-                </div>
-              )}
-            </DrillAccordion>
+                )}
+              </DrillAccordion>
+            )}
           </div>
         )}
       </main>

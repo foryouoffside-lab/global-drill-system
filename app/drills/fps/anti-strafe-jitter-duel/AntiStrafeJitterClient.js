@@ -2,6 +2,7 @@
 import { isIdleFrameSkippable } from '@/lib/performance';
 
 import React, { useState, useEffect, useRef, useCallback } from 'react';
+import { useTranslation } from '@/lib/i18n/useTranslation';
 import Link from 'next/link';
 
 import {
@@ -108,6 +109,7 @@ const RELATED_DRILLS = [
 // MAIN COMPONENT
 // ============================================================
 export default function AntiStrafeJitterClient({ copy = null }) {
+  const { locale } = useTranslation();
   const [gameState, setGameState] = useState('start');
   const [countdownValue, setCountdownValue] = useState(3);
   const [isFullscreen, setIsFullscreen] = useState(false);
@@ -844,6 +846,7 @@ export default function AntiStrafeJitterClient({ copy = null }) {
               </div>
             </DrillAccordion>
 
+            {locale === 'en' && (
             <DrillAccordion
               id="about"
               singleLineTitle
@@ -890,6 +893,7 @@ export default function AntiStrafeJitterClient({ copy = null }) {
                 ))}
               </div>
             </DrillAccordion>
+            )}
           </div>
         )}
 

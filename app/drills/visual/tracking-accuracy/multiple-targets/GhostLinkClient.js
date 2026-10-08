@@ -12,6 +12,7 @@ import useUnexpectedExitGuard from '../../../../../lib/useUnexpectedExitGuard';
 import DrillFooter from '../../../../../components/drill/DrillFooter';
 import DrillCountdown from '../../../../../components/drill/DrillCountdown';
 import DrillAccordion from '../../../../../components/drill/DrillAccordion';
+import { useTranslation } from '@/lib/i18n/useTranslation';
 import DrillFlashOverlay from '../../../../../components/drill/DrillFlashOverlay';
 import DrillRuleItem from '../../../../../components/drill/DrillRuleItem';
 import { drillAudio } from '../../../../../lib/drillAudio';
@@ -75,6 +76,7 @@ class GameErrorBoundary extends React.Component {
 // MAIN COMPONENT
 // ==========================================
 export default function GhostLinkClient({ copy } = {}) {
+  const { locale } = useTranslation();
   // === UI State ===
   const [openAccordion, setOpenAccordion] = useState(null);
 
@@ -888,51 +890,53 @@ diagnostics = "Low target identification accuracy. Anchor your gaze centrally an
               </div>
             </DrillAccordion>
 
-            <DrillAccordion
-              id="about"
-              title="About Multiple Targets"
-              isOpen={openAccordion === 'about'}
-              onToggle={() => setOpenAccordion(openAccordion === 'about' ? null : 'about')}
-            >
-              <div className="space-y-8">
-                <section>
-                  <h3 className="text-base font-bold text-white mb-2 flex items-center gap-2">
-                    <Brain className="w-4 h-4 text-purple-400" /> What Is Multi-Object Tracking?
-                  </h3>
-                  <p className="text-sm leading-relaxed mb-3 text-slate-300">
-                    <strong>Multiple Object Tracking (MOT)</strong> forces the brain to isolate, store, and continuously update spatial coordinates of multiple identical moving objects in real time, even through chaotic bouncing collisions. Most people can track about four or five independent targets at once, and accuracy falls away sharply beyond that (Pylyshyn &amp; Storm, 1988). The limit is attentional rather than optical &mdash; the eyes cannot fixate five things at once, so the tracking is done by attention split across locations (Cavanagh &amp; Alvarez, 2005).
-                  </p>
-                  <p className="text-sm leading-relaxed text-slate-300">
-                    By expanding peripheral visual focus and maintaining tracking resolution, you sharpen divided attention required for esports, driving, and fast-paced sports.
-                  </p>
-                </section>
-
-                <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-                  <div className="p-4 rounded-xl border border-white/5 bg-white/[0.02]">
-                    <div className="flex items-center gap-2.5 mb-2">
-                      <div className="w-7 h-7 rounded-lg bg-purple-600 flex items-center justify-center"><GraduationCap className="w-3.5 h-3.5 text-white" /></div>
-                      <h4 className="text-xs font-bold text-white">Who Should Use This?</h4>
+            {locale === 'en' && (
+              <DrillAccordion
+                id="about"
+                title="About Multiple Targets"
+                isOpen={openAccordion === 'about'}
+                onToggle={() => setOpenAccordion(openAccordion === 'about' ? null : 'about')}
+              >
+                <div className="space-y-8">
+                  <section>
+                    <h3 className="text-base font-bold text-white mb-2 flex items-center gap-2">
+                      <Brain className="w-4 h-4 text-purple-400" /> What Is Multi-Object Tracking?
+                    </h3>
+                    <p className="text-sm leading-relaxed mb-3 text-slate-300">
+                      <strong>Multiple Object Tracking (MOT)</strong> forces the brain to isolate, store, and continuously update spatial coordinates of multiple identical moving objects in real time, even through chaotic bouncing collisions. Most people can track about four or five independent targets at once, and accuracy falls away sharply beyond that (Pylyshyn &amp; Storm, 1988). The limit is attentional rather than optical &mdash; the eyes cannot fixate five things at once, so the tracking is done by attention split across locations (Cavanagh &amp; Alvarez, 2005).
+                    </p>
+                    <p className="text-sm leading-relaxed text-slate-300">
+                      By expanding peripheral visual focus and maintaining tracking resolution, you sharpen divided attention required for esports, driving, and fast-paced sports.
+                    </p>
+                  </section>
+  
+                  <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                    <div className="p-4 rounded-xl border border-white/5 bg-white/[0.02]">
+                      <div className="flex items-center gap-2.5 mb-2">
+                        <div className="w-7 h-7 rounded-lg bg-purple-600 flex items-center justify-center"><GraduationCap className="w-3.5 h-3.5 text-white" /></div>
+                        <h4 className="text-xs font-bold text-white">Who Should Use This?</h4>
+                      </div>
+                      <p className="text-xs text-slate-400 leading-relaxed">MOBA & FPS players, tactical operators, and trainees seeking superior visual working memory capacity.</p>
                     </div>
-                    <p className="text-xs text-slate-400 leading-relaxed">MOBA & FPS players, tactical operators, and trainees seeking superior visual working memory capacity.</p>
-                  </div>
-                  <div className="p-4 rounded-xl border border-white/5 bg-white/[0.02]">
-                    <div className="flex items-center gap-2.5 mb-2">
-                      <div className="w-7 h-7 rounded-lg bg-blue-600 flex items-center justify-center"><TrendingUp className="w-3.5 h-3.5 text-white" /></div>
-                      <h4 className="text-xs font-bold text-white">Skills Improved</h4>
+                    <div className="p-4 rounded-xl border border-white/5 bg-white/[0.02]">
+                      <div className="flex items-center gap-2.5 mb-2">
+                        <div className="w-7 h-7 rounded-lg bg-blue-600 flex items-center justify-center"><TrendingUp className="w-3.5 h-3.5 text-white" /></div>
+                        <h4 className="text-xs font-bold text-white">Skills Improved</h4>
+                      </div>
+                      <p className="text-xs text-slate-400 leading-relaxed">Divided visual attention, working memory capacity, spatial tracking resolution, and motion prediction.</p>
                     </div>
-                    <p className="text-xs text-slate-400 leading-relaxed">Divided visual attention, working memory capacity, spatial tracking resolution, and motion prediction.</p>
-                  </div>
-                  <div className="p-4 rounded-xl border border-white/5 bg-white/[0.02]">
-                    <div className="flex items-center gap-2.5 mb-2">
-                      <div className="w-7 h-7 rounded-lg bg-pink-600 flex items-center justify-center"><Zap className="w-3.5 h-3.5 text-white" /></div>
-                      <h4 className="text-xs font-bold text-white">Pro Tip</h4>
+                    <div className="p-4 rounded-xl border border-white/5 bg-white/[0.02]">
+                      <div className="flex items-center gap-2.5 mb-2">
+                        <div className="w-7 h-7 rounded-lg bg-pink-600 flex items-center justify-center"><Zap className="w-3.5 h-3.5 text-white" /></div>
+                        <h4 className="text-xs font-bold text-white">Pro Tip</h4>
+                      </div>
+                      <p className="text-xs text-slate-400 leading-relaxed">Anchor your visual gaze near the centroid of all target balls rather than chasing individual balls with your eyes.</p>
                     </div>
-                    <p className="text-xs text-slate-400 leading-relaxed">Anchor your visual gaze near the centroid of all target balls rather than chasing individual balls with your eyes.</p>
                   </div>
+  
                 </div>
-
-              </div>
-            </DrillAccordion>
+              </DrillAccordion>
+            )}
           </div>
         )}
 

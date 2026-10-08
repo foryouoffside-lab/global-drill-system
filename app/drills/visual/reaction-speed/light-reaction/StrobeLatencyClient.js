@@ -19,6 +19,7 @@ import useUnexpectedExitGuard from '../../../../../lib/useUnexpectedExitGuard';
 import DrillFooter from '../../../../../components/drill/DrillFooter';
 import DrillCountdown from '../../../../../components/drill/DrillCountdown';
 import DrillAccordion from '../../../../../components/drill/DrillAccordion';
+import { useTranslation } from '@/lib/i18n/useTranslation';
 import DrillFlashOverlay from '../../../../../components/drill/DrillFlashOverlay';
 import DrillRuleItem from '../../../../../components/drill/DrillRuleItem';
 import FpsStartCard from '../../../../../components/drill/FpsStartCard';
@@ -104,6 +105,7 @@ function draw2dLightTarget(ctx, x, y, targetState) {
 }
 
 export default function StrobeLatencyClient({ copy } = {}) {
+  const { locale } = useTranslation();
   const [gameState, setGameState] = useState('start'); // 'start' | 'countdown' | 'playing' | 'gameOver'
   const [isFullscreen, setIsFullscreen] = useState(false);
   useImmersiveMode(isFullscreen); // locks the page behind while the drill fills the screen
@@ -740,51 +742,53 @@ export default function StrobeLatencyClient({ copy } = {}) {
               </div>
             </DrillAccordion>
 
-            <DrillAccordion
-              id="about"
-              title="About Light Reaction Pro"
-              isOpen={openAccordion === 'about'}
-              onToggle={() => setOpenAccordion(openAccordion === 'about' ? null : 'about')}
-            >
-              <div className="space-y-8">
-                <section>
-                  <h3 className="text-base font-bold text-white mb-2 flex items-center gap-2">
-                    <Brain className="w-4 h-4 text-amber-400" /> What Is Light Reaction Training?
-                  </h3>
-                  <p className="text-sm leading-relaxed mb-3">
-                    <strong>Light Reaction Training</strong> measures visual motor latency and raw reflex response speed. The <strong>Light Reaction drill</strong> presents a central target that flashes white at unpredictable millisecond intervals, challenging you to react instantly upon visual stimulus onset. Healthy adults typically land around 200–250 ms (Woods et al., 2015; Kosinski, 2008). It is not a reflex: a true spinal reflex runs in tens of milliseconds, while this involves the visual cortex and motor cortex, which is why it is roughly ten times slower.
-                  </p>
-                  <p className="text-sm leading-relaxed">
-                    By training with randomized strobe intervals, you reduce visual reaction latency and build millisecond-level reflex precision for athletics and competitive esports.
-                  </p>
-                </section>
-
-                <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-                  <div className="p-4 rounded-xl border border-gray-800 bg-white/[0.02]">
-                    <div className="flex items-center gap-2.5 mb-2">
-                      <div className="w-7 h-7 rounded-lg bg-blue-600 flex items-center justify-center"><Users className="w-3.5 h-3.5 text-white" /></div>
-                      <h4 className="text-xs font-bold text-white">Who Should Use This?</h4>
+            {locale === 'en' && (
+              <DrillAccordion
+                id="about"
+                title="About Light Reaction Pro"
+                isOpen={openAccordion === 'about'}
+                onToggle={() => setOpenAccordion(openAccordion === 'about' ? null : 'about')}
+              >
+                <div className="space-y-8">
+                  <section>
+                    <h3 className="text-base font-bold text-white mb-2 flex items-center gap-2">
+                      <Brain className="w-4 h-4 text-amber-400" /> What Is Light Reaction Training?
+                    </h3>
+                    <p className="text-sm leading-relaxed mb-3">
+                      <strong>Light Reaction Training</strong> measures visual motor latency and raw reflex response speed. The <strong>Light Reaction drill</strong> presents a central target that flashes white at unpredictable millisecond intervals, challenging you to react instantly upon visual stimulus onset. Healthy adults typically land around 200–250 ms (Woods et al., 2015; Kosinski, 2008). It is not a reflex: a true spinal reflex runs in tens of milliseconds, while this involves the visual cortex and motor cortex, which is why it is roughly ten times slower.
+                    </p>
+                    <p className="text-sm leading-relaxed">
+                      By training with randomized strobe intervals, you reduce visual reaction latency and build millisecond-level reflex precision for athletics and competitive esports.
+                    </p>
+                  </section>
+  
+                  <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                    <div className="p-4 rounded-xl border border-gray-800 bg-white/[0.02]">
+                      <div className="flex items-center gap-2.5 mb-2">
+                        <div className="w-7 h-7 rounded-lg bg-blue-600 flex items-center justify-center"><Users className="w-3.5 h-3.5 text-white" /></div>
+                        <h4 className="text-xs font-bold text-white">Who Should Use This?</h4>
+                      </div>
+                      <p className="text-xs text-gray-300 leading-relaxed">FPS gamers, sprinters, martial artists, and drivers building lightning-fast visual motor reaction speed.</p>
                     </div>
-                    <p className="text-xs text-gray-300 leading-relaxed">FPS gamers, sprinters, martial artists, and drivers building lightning-fast visual motor reaction speed.</p>
-                  </div>
-                  <div className="p-4 rounded-xl border border-gray-800 bg-white/[0.02]">
-                    <div className="flex items-center gap-2.5 mb-2">
-                      <div className="w-7 h-7 rounded-lg bg-amber-600 flex items-center justify-center"><TrendingUp className="w-3.5 h-3.5 text-white" /></div>
-                      <h4 className="text-xs font-bold text-white">Skills Improved</h4>
+                    <div className="p-4 rounded-xl border border-gray-800 bg-white/[0.02]">
+                      <div className="flex items-center gap-2.5 mb-2">
+                        <div className="w-7 h-7 rounded-lg bg-amber-600 flex items-center justify-center"><TrendingUp className="w-3.5 h-3.5 text-white" /></div>
+                        <h4 className="text-xs font-bold text-white">Skills Improved</h4>
+                      </div>
+                      <p className="text-xs text-gray-300 leading-relaxed">Visual reaction speed, motor latency, reflex speed, millisecond stimulus detection, and visual focus readiness.</p>
                     </div>
-                    <p className="text-xs text-gray-300 leading-relaxed">Visual reaction speed, motor latency, reflex speed, millisecond stimulus detection, and visual focus readiness.</p>
-                  </div>
-                  <div className="p-4 rounded-xl border border-gray-800 bg-white/[0.02]">
-                    <div className="flex items-center gap-2.5 mb-2">
-                      <div className="w-7 h-7 rounded-lg bg-purple-600 flex items-center justify-center"><Zap className="w-3.5 h-3.5 text-white" /></div>
-                      <h4 className="text-xs font-bold text-white">Reflex Readiness</h4>
+                    <div className="p-4 rounded-xl border border-gray-800 bg-white/[0.02]">
+                      <div className="flex items-center gap-2.5 mb-2">
+                        <div className="w-7 h-7 rounded-lg bg-purple-600 flex items-center justify-center"><Zap className="w-3.5 h-3.5 text-white" /></div>
+                        <h4 className="text-xs font-bold text-white">Reflex Readiness</h4>
+                      </div>
+                      <p className="text-xs text-gray-300 leading-relaxed">Maintain relaxed visual focus on the center reticle to respond immediately without anticipating or false-starting.</p>
                     </div>
-                    <p className="text-xs text-gray-300 leading-relaxed">Maintain relaxed visual focus on the center reticle to respond immediately without anticipating or false-starting.</p>
                   </div>
+  
                 </div>
-
-              </div>
-            </DrillAccordion>
+              </DrillAccordion>
+            )}
           </div>
         )}
 

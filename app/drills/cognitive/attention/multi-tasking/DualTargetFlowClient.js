@@ -16,6 +16,7 @@ import useDrillFlash from '../../../../../lib/useDrillFlash';
 import useUnexpectedExitGuard from '../../../../../lib/useUnexpectedExitGuard';
 import DrillCountdown from '../../../../../components/drill/DrillCountdown';
 import DrillAccordion from '../../../../../components/drill/DrillAccordion';
+import { useTranslation } from '@/lib/i18n/useTranslation';
 import DrillFlashOverlay from '../../../../../components/drill/DrillFlashOverlay';
 import FpsStartCard from '../../../../../components/drill/FpsStartCard';
 import DrillResultCard from '../../../../../components/drill/DrillResultCard';
@@ -92,6 +93,7 @@ By streaming distinct geometric shapes across left and right visual fields, the 
 As your score increases, stream velocity accelerates and target templates diverge, pushing your visual processing throughput to elite levels.`;
 
 export default function DualTargetFlowClient({ copy } = {}) {
+  const { locale } = useTranslation();
   const [gameState, setGameState] = useState('start'); // 'start' | 'countdown' | 'playing' | 'gameOver'
   const [isFullscreen, setIsFullscreen] = useState(false);
   useImmersiveMode(isFullscreen); // locks the page behind while the drill fills the screen
@@ -836,7 +838,7 @@ export default function DualTargetFlowClient({ copy } = {}) {
                     <p className="text-sm leading-relaxed text-gray-300">
                       {copy?.aboutLead || 'Human multitasking relies on rapid task switching rather than true simultaneous processing, incurring a measurable 100–300 ms switch penalty as cognitive goals alternate (Rogers & Monsell, 1995; Monsell, 2003). This dual-stream flow drill trains prefrontal executive control to manage concurrent target streams under escalating velocity (Pashler, 1994).'}
                     </p>
-                    {ABOUT_TEXT.split('\n\n').map((para, i) => (
+                    {(copy?.aboutText || (locale === 'en' ? ABOUT_TEXT : '')).split('\n\n').filter(Boolean).map((para, i) => (
                       <p key={i} className="text-sm leading-relaxed text-gray-300">{para}</p>
                     ))}
                   </div>

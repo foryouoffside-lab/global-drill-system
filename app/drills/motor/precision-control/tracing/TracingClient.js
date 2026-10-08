@@ -21,6 +21,7 @@ import DrillResultCard from '@/components/drill/DrillResultCard';
 import useImmersiveMode from '@/lib/useImmersiveMode';
 import { useIsTouchOnly, useTouchAim } from '@/lib/useTouchAim';
 import useUnexpectedExitGuard from '@/lib/useUnexpectedExitGuard';
+import { useTranslation } from '@/lib/i18n/useTranslation';
 
 // ============================================================
 // CORE DRILL LOGIC VARIABLES
@@ -75,6 +76,7 @@ const RULES_ITEMS = [
 // MAIN COMPONENT
 // ============================================================
 export default function TracingClient({ copy } = {}) {
+  const { locale } = useTranslation();
   // === UI & Viewport State ===
   const [gameState, setGameState] = useState('start'); 
   const [isFullscreen, setIsFullscreen] = useState(false);
@@ -833,50 +835,52 @@ export default function TracingClient({ copy } = {}) {
               </div>
             </DrillAccordion>
 
-            <DrillAccordion
-              id="about"
-              title={copy?.aboutTitle || "About Mouse Tracing Game"}
-              isOpen={openAccordion === 'about'}
-              onToggle={() => setOpenAccordion(openAccordion === 'about' ? null : 'about')}
-            >
-              <div className="space-y-6">
-                <div className="space-y-3">
-                  <h3 className="text-base font-bold text-white flex items-center gap-2">
-                    <Activity className="w-4 h-4 text-emerald-400" /> {copy?.aboutHeading || "Continuous Wave Tracking & Flow Endurance"}
-                  </h3>
-                  <p className="text-sm leading-relaxed text-gray-300">
-                    {copy?.aboutP1 || "The Mouse Tracing Game develops dynamic hand-eye coordination, fine motor path precision, and smooth pursuit visual tracking. By challenging you to guide your cursor along a continuously scrolling sinusoidal wave filament with a 22px tolerance band, it isolates the micro-stabilizing muscles in your wrist and forearm required for fluid tracking in tactical shooters and digital illustration."}
-                  </p>
-                  <p className="text-sm leading-relaxed text-gray-300">
-                    {copy?.aboutP2 || "Grounded in Johnny Accot & Shumin Zhai's (1997) Steering Law, dynamic trajectory navigation requires continuous velocity modulation. As scroll speed accelerates from 2.2 to 3.8+ px/frame over 45 seconds, the drill engages Robert Woodworth's (1899) closed-loop current control mechanism, demanding continuous visual-motor error correction and smooth pursuit eye movements (Krauzlis 2004, Rashbass 1961) to sustain peak flow integrity. The eye follows a smoothly moving target accurately up to roughly 30°/s; past that it falls behind and has to catch up with saccades (Krauzlis, 2004; Rashbass, 1961), and the hand can only stay on a line the eye is still tracking. The path itself is a Steering Law corridor: time to stay inside it scales with its length divided by its width (Accot & Zhai, 1997)."}
-                  </p>
+            {locale === 'en' && (
+              <DrillAccordion
+                id="about"
+                title={copy?.aboutTitle || "About Mouse Tracing Game"}
+                isOpen={openAccordion === 'about'}
+                onToggle={() => setOpenAccordion(openAccordion === 'about' ? null : 'about')}
+              >
+                <div className="space-y-6">
+                  <div className="space-y-3">
+                    <h3 className="text-base font-bold text-white flex items-center gap-2">
+                      <Activity className="w-4 h-4 text-emerald-400" /> {copy?.aboutHeading || "Continuous Wave Tracking & Flow Endurance"}
+                    </h3>
+                    <p className="text-sm leading-relaxed text-gray-300">
+                      {copy?.aboutP1 || "The Mouse Tracing Game develops dynamic hand-eye coordination, fine motor path precision, and smooth pursuit visual tracking. By challenging you to guide your cursor along a continuously scrolling sinusoidal wave filament with a 22px tolerance band, it isolates the micro-stabilizing muscles in your wrist and forearm required for fluid tracking in tactical shooters and digital illustration."}
+                    </p>
+                    <p className="text-sm leading-relaxed text-gray-300">
+                      {copy?.aboutP2 || "Grounded in Johnny Accot & Shumin Zhai's (1997) Steering Law, dynamic trajectory navigation requires continuous velocity modulation. As scroll speed accelerates from 2.2 to 3.8+ px/frame over 45 seconds, the drill engages Robert Woodworth's (1899) closed-loop current control mechanism, demanding continuous visual-motor error correction and smooth pursuit eye movements (Krauzlis 2004, Rashbass 1961) to sustain peak flow integrity. The eye follows a smoothly moving target accurately up to roughly 30°/s; past that it falls behind and has to catch up with saccades (Krauzlis, 2004; Rashbass, 1961), and the hand can only stay on a line the eye is still tracking. The path itself is a Steering Law corridor: time to stay inside it scales with its length divided by its width (Accot & Zhai, 1997)."}
+                    </p>
+                  </div>
+  
+                  <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                    <div className="p-4 rounded-xl border border-white/10 bg-white/[0.02]">
+                      <div className="flex items-center gap-2.5 mb-2">
+                        <div className="w-7 h-7 rounded-lg bg-blue-600 flex items-center justify-center"><Users className="w-3.5 h-3.5 text-white" /></div>
+                        <h4 className="text-xs font-bold text-white">{copy?.audienceTitle || "Target Audience"}</h4>
+                      </div>
+                      <p className="text-xs text-gray-300 leading-relaxed">{copy?.audienceText || "Esports athletes, graphic designers, digital artists, and individuals seeking to improve hand stability and reduce hand tremors."}</p>
+                    </div>
+                    <div className="p-4 rounded-xl border border-white/10 bg-white/[0.02]">
+                      <div className="flex items-center gap-2.5 mb-2">
+                        <div className="w-7 h-7 rounded-lg bg-emerald-600 flex items-center justify-center"><TrendingUp className="w-3.5 h-3.5 text-white" /></div>
+                        <h4 className="text-xs font-bold text-white">{copy?.benefitsTitle || "Mechanical Benefits"}</h4>
+                      </div>
+                      <p className="text-xs text-gray-300 leading-relaxed">{copy?.benefitsText || "Fine motor control, continuous hand stability, flow state endurance, and smooth pursuit tracking mastery."}</p>
+                    </div>
+                    <div className="p-4 rounded-xl border border-white/10 bg-white/[0.02]">
+                      <div className="flex items-center gap-2.5 mb-2">
+                        <div className="w-7 h-7 rounded-lg bg-purple-600 flex items-center justify-center"><BarChart3 className="w-3.5 h-3.5 text-white" /></div>
+                        <h4 className="text-xs font-bold text-white">{copy?.telemetryTitle || "Telemetry Tracked"}</h4>
+                      </div>
+                      <p className="text-xs text-gray-300 leading-relaxed">{copy?.telemetryText || "Flow Score, peak flow state percentage, and maximum survival tracking streak frames."}</p>
+                    </div>
+                  </div>
                 </div>
-
-                <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-                  <div className="p-4 rounded-xl border border-white/10 bg-white/[0.02]">
-                    <div className="flex items-center gap-2.5 mb-2">
-                      <div className="w-7 h-7 rounded-lg bg-blue-600 flex items-center justify-center"><Users className="w-3.5 h-3.5 text-white" /></div>
-                      <h4 className="text-xs font-bold text-white">{copy?.audienceTitle || "Target Audience"}</h4>
-                    </div>
-                    <p className="text-xs text-gray-300 leading-relaxed">{copy?.audienceText || "Esports athletes, graphic designers, digital artists, and individuals seeking to improve hand stability and reduce hand tremors."}</p>
-                  </div>
-                  <div className="p-4 rounded-xl border border-white/10 bg-white/[0.02]">
-                    <div className="flex items-center gap-2.5 mb-2">
-                      <div className="w-7 h-7 rounded-lg bg-emerald-600 flex items-center justify-center"><TrendingUp className="w-3.5 h-3.5 text-white" /></div>
-                      <h4 className="text-xs font-bold text-white">{copy?.benefitsTitle || "Mechanical Benefits"}</h4>
-                    </div>
-                    <p className="text-xs text-gray-300 leading-relaxed">{copy?.benefitsText || "Fine motor control, continuous hand stability, flow state endurance, and smooth pursuit tracking mastery."}</p>
-                  </div>
-                  <div className="p-4 rounded-xl border border-white/10 bg-white/[0.02]">
-                    <div className="flex items-center gap-2.5 mb-2">
-                      <div className="w-7 h-7 rounded-lg bg-purple-600 flex items-center justify-center"><BarChart3 className="w-3.5 h-3.5 text-white" /></div>
-                      <h4 className="text-xs font-bold text-white">{copy?.telemetryTitle || "Telemetry Tracked"}</h4>
-                    </div>
-                    <p className="text-xs text-gray-300 leading-relaxed">{copy?.telemetryText || "Flow Score, peak flow state percentage, and maximum survival tracking streak frames."}</p>
-                  </div>
-                </div>
-              </div>
-            </DrillAccordion>
+              </DrillAccordion>
+            )}
           </div>
         )}
       </main>

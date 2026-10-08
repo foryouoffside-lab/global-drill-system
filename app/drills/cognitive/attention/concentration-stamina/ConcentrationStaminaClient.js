@@ -15,6 +15,7 @@ import useDrillFlash from '../../../../../lib/useDrillFlash';
 import useUnexpectedExitGuard from '../../../../../lib/useUnexpectedExitGuard';
 import DrillCountdown from '../../../../../components/drill/DrillCountdown';
 import DrillAccordion from '../../../../../components/drill/DrillAccordion';
+import { useTranslation } from '@/lib/i18n/useTranslation';
 import DrillFlashOverlay from '../../../../../components/drill/DrillFlashOverlay';
 import FpsStartCard from '../../../../../components/drill/FpsStartCard';
 import generateShareCard, { shareScoreCard } from '../../../../../components/ShareScoreCard';
@@ -82,6 +83,7 @@ By requiring instantaneous categorization of incoming visual stimuli while perio
 // MAIN COMPONENT
 // ============================================================
 export default function ConcentrationStaminaClient({ copy } = {}) {
+  const { locale } = useTranslation();
   const [phase, setPhase] = useState('start'); // 'start' | 'countdown' | 'playing' | 'ended'
   const [soundEnabled, setSoundEnabled] = useState(true);
   const [flashEnabled, setFlashEnabled] = useState(true);
@@ -678,7 +680,7 @@ export default function ConcentrationStaminaClient({ copy } = {}) {
                 <p className="text-sm leading-relaxed text-gray-300">
                   {copy?.aboutLead || 'Sustained attention decays measurably the longer you watch for a rare signal: Mackworth (1948) found detection accuracy dropping within the first 30 minutes of a monitoring task, and the decline is steeper when the events come faster or the memory load is higher (Parasuraman, 1979). This drill compresses that vigilance decrement into a short session, evaluating cognitive endurance across alternating classification rules and scoring accuracy and misses rather than raw reaction speed.'}
                 </p>
-                {ABOUT_TEXT.split('\n\n').map((para, i) => (
+                {(copy?.aboutText || (locale === 'en' ? ABOUT_TEXT : '')).split('\n\n').filter(Boolean).map((para, i) => (
                   <p key={i} className="text-sm leading-relaxed text-gray-300">{para}</p>
                 ))}
               </div>

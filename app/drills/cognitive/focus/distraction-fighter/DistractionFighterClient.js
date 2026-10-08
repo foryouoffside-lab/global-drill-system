@@ -713,16 +713,18 @@ export default function DistractionFighterClient({ faqs, copy }) {
               onToggle={() => setOpenAccordion(openAccordion === 'about' ? null : 'about')}
             >
               <div className="space-y-8 font-sans">
-                <section>
-                  <div className="space-y-4">
-                    <p className="text-sm leading-relaxed text-gray-400">
-                      {locale === 'ja' ? 'ストループ効果とは、文字の意味とインクの色が異なる単語を提示された際、インク色の命名に遅延が生じる現象です。J.R.ストループが1935年に報告して以来、実験心理学で最も堅牢かつ再現性の高い認知的知見の一つとされています（Stroop, 1935; MacLeod, 1991）。' : 'The Stroop effect is the delay you get naming the ink colour of a word that spells a different colour. Stroop first measured it in 1935, and it is one of the most reliable findings in psychology — the interference shows up in essentially every healthy adult (Stroop, 1935; MacLeod, 1991). The interference between automatic reading and color identification measures cognitive inhibition strength.'}
-                    </p>
-                    <p className="text-sm leading-relaxed text-gray-400">
-                      {locale === 'ja' ? '人間にとって文字の読解は高度に自動化された処理です。色名単語が異なるインク色で提示された場合、前頭前野（DLPFC）や前帯状皮質（ACC）が「単語を読んでしまう自動的な衝動」を強力に能動抑制（Inhibition）しなければなりません。' : 'Reading is an automated implicit cognitive process. When a color word is printed in a non-matching ink color, your brain\'s anterior cingulate cortex and dorsolateral prefrontal cortex must actively suppress the word meaning to report the ink color.'}
-                    </p>
-                  </div>
-                </section>
+                {(locale === 'en' || locale === 'ja') && (
+                  <section>
+                    <div className="space-y-4">
+                      <p className="text-sm leading-relaxed text-gray-400">
+                        {locale === 'ja' ? 'ストループ効果とは、文字の意味とインクの色が異なる単語を提示された際、インク色の命名に遅延が生じる現象です。J.R.ストループが1935年に報告して以来、実験心理学で最も堅牢かつ再現性の高い認知的知見の一つとされています（Stroop, 1935; MacLeod, 1991）。' : 'The Stroop effect is the delay you get naming the ink colour of a word that spells a different colour. Stroop first measured it in 1935, and it is one of the most reliable findings in psychology — the interference shows up in essentially every healthy adult (Stroop, 1935; MacLeod, 1991). The interference between automatic reading and color identification measures cognitive inhibition strength.'}
+                      </p>
+                      <p className="text-sm leading-relaxed text-gray-400">
+                        {locale === 'ja' ? '人間にとって文字の読解は高度に自動化された処理です。色名単語が異なるインク色で提示された場合、前頭前野（DLPFC）や前帯状皮質（ACC）が「単語を読んでしまう自動的な衝動」を強力に能動抑制（Inhibition）しなければなりません。' : 'Reading is an automated implicit cognitive process. When a color word is printed in a non-matching ink color, your brain\'s anterior cingulate cortex and dorsolateral prefrontal cortex must actively suppress the word meaning to report the ink color.'}
+                      </p>
+                    </div>
+                  </section>
+                )}
 
                 <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
                   <div className="p-4 rounded-xl border border-white/[0.07] bg-white/[0.012]">

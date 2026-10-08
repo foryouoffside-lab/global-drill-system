@@ -23,6 +23,7 @@ import DrillFlashOverlay from '../../../../../components/drill/DrillFlashOverlay
 import DrillRuleItem from '../../../../../components/drill/DrillRuleItem';
 import FpsStartCard from '../../../../../components/drill/FpsStartCard';
 import useImmersiveMode from '@/lib/useImmersiveMode';
+import { useTranslation } from '@/lib/i18n/useTranslation';
 
 const DRILL_DURATION = 45; // 45 seconds duration
 const POINTS_PER_HIT = 150;
@@ -47,6 +48,7 @@ const saveData = (data) => {
 };
 
 export default function ObjectLocationClient({ copy = null }) {
+  const { locale } = useTranslation();
   const [gameState, setGameState] = useState('start'); // 'start' | 'countdown' | 'playing' | 'gameOver'
   const [isFullscreen, setIsFullscreen] = useState(false);
   useImmersiveMode(isFullscreen); // locks the page behind while the drill fills the screen
@@ -732,51 +734,53 @@ export default function ObjectLocationClient({ copy = null }) {
           </DrillAccordion>
 
           {/* ACCORDION 2: ABOUT OBJECT LOCATION PRO */}
-          <DrillAccordion
-            id="about"
-            title={copy?.aboutTitle || "About Object Location Pro"}
-            isOpen={openAccordion === 'about'}
-            onToggle={() => setOpenAccordion(openAccordion === 'about' ? null : 'about')}
-          >
-            <div className="space-y-8">
-              <section>
-                <h3 className="text-base font-bold text-white mb-2 flex items-center gap-2">
-                  <Brain className="w-4 h-4 text-emerald-400" /> What Is Object Location Training?
-                </h3>
-                <p className="text-sm leading-relaxed mb-3">
-                  <strong>Object Location Training</strong> is a core spatial position memory exercise designed to measure visual mapping capacity. The <strong>Object Location drill</strong> presents multiple emoji objects on 3x3 to 7x7 matrices, testing your ability to lock in object positions and identify specific target locations when the grid goes blank. Eals and Silverman (1994) measured object-location memory with object arrays much like this one, and it runs into the same ceiling of about four items as other visual working memory tasks (Luck & Lockhart, 1997).
-                </p>
-                <p className="text-sm leading-relaxed">
-                  By practicing <strong>spatial position anchoring</strong>, you expand your visual short-term memory buffer and increase your layout retrieval speed under time pressure.
-                </p>
-              </section>
-
-              <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-                <div className="p-4 rounded-xl border border-gray-800 bg-white/[0.02]">
-                  <div className="flex items-center gap-2.5 mb-2">
-                    <div className="w-7 h-7 rounded-lg bg-blue-600 flex items-center justify-center"><Users className="w-3.5 h-3.5 text-white" /></div>
-                    <h4 className="text-xs font-bold text-white">Who Should Use This?</h4>
+          {locale === 'en' && (
+            <DrillAccordion
+              id="about"
+              title={copy?.aboutTitle || "About Object Location Pro"}
+              isOpen={openAccordion === 'about'}
+              onToggle={() => setOpenAccordion(openAccordion === 'about' ? null : 'about')}
+            >
+              <div className="space-y-8">
+                <section>
+                  <h3 className="text-base font-bold text-white mb-2 flex items-center gap-2">
+                    <Brain className="w-4 h-4 text-emerald-400" /> What Is Object Location Training?
+                  </h3>
+                  <p className="text-sm leading-relaxed mb-3">
+                    <strong>Object Location Training</strong> is a core spatial position memory exercise designed to measure visual mapping capacity. The <strong>Object Location drill</strong> presents multiple emoji objects on 3x3 to 7x7 matrices, testing your ability to lock in object positions and identify specific target locations when the grid goes blank. Eals and Silverman (1994) measured object-location memory with object arrays much like this one, and it runs into the same ceiling of about four items as other visual working memory tasks (Luck & Lockhart, 1997).
+                  </p>
+                  <p className="text-sm leading-relaxed">
+                    By practicing <strong>spatial position anchoring</strong>, you expand your visual short-term memory buffer and increase your layout retrieval speed under time pressure.
+                  </p>
+                </section>
+  
+                <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                  <div className="p-4 rounded-xl border border-gray-800 bg-white/[0.02]">
+                    <div className="flex items-center gap-2.5 mb-2">
+                      <div className="w-7 h-7 rounded-lg bg-blue-600 flex items-center justify-center"><Users className="w-3.5 h-3.5 text-white" /></div>
+                      <h4 className="text-xs font-bold text-white">Who Should Use This?</h4>
+                    </div>
+                    <p className="text-xs text-gray-300 leading-relaxed">Gamers improving map awareness, STEM students strengthening spatial reasoning, and professionals wanting to enhance visual position retention.</p>
                   </div>
-                  <p className="text-xs text-gray-300 leading-relaxed">Gamers improving map awareness, STEM students strengthening spatial reasoning, and professionals wanting to enhance visual position retention.</p>
-                </div>
-                <div className="p-4 rounded-xl border border-gray-800 bg-white/[0.02]">
-                  <div className="flex items-center gap-2.5 mb-2">
-                    <div className="w-7 h-7 rounded-lg bg-emerald-600 flex items-center justify-center"><TrendingUp className="w-3.5 h-3.5 text-white" /></div>
-                    <h4 className="text-xs font-bold text-white">Skills Improved</h4>
+                  <div className="p-4 rounded-xl border border-gray-800 bg-white/[0.02]">
+                    <div className="flex items-center gap-2.5 mb-2">
+                      <div className="w-7 h-7 rounded-lg bg-emerald-600 flex items-center justify-center"><TrendingUp className="w-3.5 h-3.5 text-white" /></div>
+                      <h4 className="text-xs font-bold text-white">Skills Improved</h4>
+                    </div>
+                    <p className="text-xs text-gray-300 leading-relaxed">Spatial position memory, multiple object location recall, visual-spatial working memory, and layout mapping.</p>
                   </div>
-                  <p className="text-xs text-gray-300 leading-relaxed">Spatial position memory, multiple object location recall, visual-spatial working memory, and layout mapping.</p>
-                </div>
-                <div className="p-4 rounded-xl border border-gray-800 bg-white/[0.02]">
-                  <div className="flex items-center gap-2.5 mb-2">
-                    <div className="w-7 h-7 rounded-lg bg-purple-600 flex items-center justify-center"><Zap className="w-3.5 h-3.5 text-white" /></div>
-                    <h4 className="text-xs font-bold text-white">Spatial Anchoring</h4>
+                  <div className="p-4 rounded-xl border border-gray-800 bg-white/[0.02]">
+                    <div className="flex items-center gap-2.5 mb-2">
+                      <div className="w-7 h-7 rounded-lg bg-purple-600 flex items-center justify-center"><Zap className="w-3.5 h-3.5 text-white" /></div>
+                      <h4 className="text-xs font-bold text-white">Spatial Anchoring</h4>
+                    </div>
+                    <p className="text-xs text-gray-300 leading-relaxed">Associate specific icons with grid corners or edges to quickly locate targets when the grid resets.</p>
                   </div>
-                  <p className="text-xs text-gray-300 leading-relaxed">Associate specific icons with grid corners or edges to quickly locate targets when the grid resets.</p>
                 </div>
+  
               </div>
-
-            </div>
-          </DrillAccordion>
+            </DrillAccordion>
+          )}
           </div>
         )}
       </main>

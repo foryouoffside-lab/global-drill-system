@@ -23,6 +23,7 @@ import DrillAccordion from '../../../../../components/drill/DrillAccordion';
 import DrillRuleItem from '../../../../../components/drill/DrillRuleItem';
 import FpsStartCard from '../../../../../components/drill/FpsStartCard';
 import useImmersiveMode from '@/lib/useImmersiveMode';
+import { useTranslation } from '@/lib/i18n/useTranslation';
 
 // ============================================================
 // TUNING CONSTANTS
@@ -90,6 +91,7 @@ const RELATED_DRILLS = [
 // MAIN COMPONENT
 // ============================================================
 export default function StabilityChallengeClient({ copy = {} } = {}) {
+  const { locale } = useTranslation();
   const [gameState, setGameState] = useState('start'); // 'start' | 'countdown' | 'playing' | 'gameOver'
   const [isFullscreen, setIsFullscreen] = useState(false);
   useImmersiveMode(isFullscreen); // locks the page behind while the drill fills the screen
@@ -787,47 +789,49 @@ export default function StabilityChallengeClient({ copy = {} } = {}) {
               </div>
             </DrillAccordion>
 
-            <DrillAccordion
-              id="about"
-              title={copy?.aboutTitle || "About Stability Challenge"}
-              singleLineTitle
-              isOpen={openAccordion === 'about'}
-              onToggle={() => setOpenAccordion(openAccordion === 'about' ? null : 'about')}
-            >
-              <div className="space-y-6">
-                <div className="space-y-3">
-                  <h3 className="text-base font-bold text-white flex items-center gap-2">
-                    <Wind className="w-4 h-4 text-emerald-400" /> {copy?.aboutHeading || "Dynamic Force Counteraction & Postural Equilibrium"}
-                  </h3>
-                  <p className="text-sm leading-relaxed text-gray-300">
-                    {copy?.aboutIntro || "The Stability Challenge is a fine motor resistance tracking and postural equilibrium exercise. Dynamic wind force vectors continuously push your crosshair away from the center, requiring precise counter-directional mouse input to maintain central safe ring alignment."}
-                  </p>
-                  <p className="text-sm leading-relaxed text-gray-300">
-                    {copy?.aboutScience || "Grounded in Nashner & McCollum's (1985) postural synergy models and David A. Winter's (1995) perturbation balance principles, the drill forces your motor cortex to recruit closed-loop visual feedback corrections (Woodworth 1899). As your score rises, safe ring radii contract from 45px down to 20px while force magnitudes accelerate up to 850 strength units, testing high-frequency micro-adjustments and isometric stability under pressure. Standing balance works the same way: quiet standing is not motionless but a constant loop of small corrections around a drifting centre of pressure (Winter, 1995), organised into a few stereotyped strategies rather than improvised each time (Nashner & McCollum, 1985). Vision needs roughly 100–150 ms to influence a movement already under way (Woodworth, 1899), so the faster the disturbance, the more you have to anticipate instead of react. This drill runs that loop through a mouse cursor — it trains the correction habit, and does not measure physical balance."}
-                  </p>
-                </div>
-
-                <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-                  {(copy?.aboutCards || [
-                    { title: "Target Audience", icon: Users, color: "bg-blue-600", text: "FPS and tactical shooter players training recoil control, esports competitors building micro-stabilization under pressure, and athletes strengthening fine motor resistance to involuntary drift." },
-                    { title: "Mechanical Benefits", icon: TrendingUp, color: "bg-emerald-600", text: "Force vector counteraction, postural equilibrium, resistance tracking, central crosshair stabilization, and micro-adjustment precision." },
-                    { title: "Recoil Counteraction", icon: Activity, color: "bg-purple-600", text: "Continuously countering unpredictable wind push mirrors the smooth counter-pressure needed to hold a crosshair steady through weapon recoil climb and flinch displacement." }
-                  ]).map((card, idx) => {
-                    const IconComp = card.icon || [Users, TrendingUp, Activity][idx % 3];
-                    const color = card.color || ["bg-blue-600", "bg-emerald-600", "bg-purple-600"][idx % 3];
-                    return (
-                      <div key={idx} className="p-4 rounded-xl border border-white/10 bg-white/[0.02]">
-                        <div className="flex items-center gap-2.5 mb-2">
-                          <div className={`w-7 h-7 rounded-lg ${color} flex items-center justify-center`}><IconComp className="w-3.5 h-3.5 text-white" /></div>
-                          <h4 className="text-xs font-bold text-white">{card.title}</h4>
+            {locale === 'en' && (
+              <DrillAccordion
+                id="about"
+                title={copy?.aboutTitle || "About Stability Challenge"}
+                singleLineTitle
+                isOpen={openAccordion === 'about'}
+                onToggle={() => setOpenAccordion(openAccordion === 'about' ? null : 'about')}
+              >
+                <div className="space-y-6">
+                  <div className="space-y-3">
+                    <h3 className="text-base font-bold text-white flex items-center gap-2">
+                      <Wind className="w-4 h-4 text-emerald-400" /> {copy?.aboutHeading || "Dynamic Force Counteraction & Postural Equilibrium"}
+                    </h3>
+                    <p className="text-sm leading-relaxed text-gray-300">
+                      {copy?.aboutIntro || "The Stability Challenge is a fine motor resistance tracking and postural equilibrium exercise. Dynamic wind force vectors continuously push your crosshair away from the center, requiring precise counter-directional mouse input to maintain central safe ring alignment."}
+                    </p>
+                    <p className="text-sm leading-relaxed text-gray-300">
+                      {copy?.aboutScience || "Grounded in Nashner & McCollum's (1985) postural synergy models and David A. Winter's (1995) perturbation balance principles, the drill forces your motor cortex to recruit closed-loop visual feedback corrections (Woodworth 1899). As your score rises, safe ring radii contract from 45px down to 20px while force magnitudes accelerate up to 850 strength units, testing high-frequency micro-adjustments and isometric stability under pressure. Standing balance works the same way: quiet standing is not motionless but a constant loop of small corrections around a drifting centre of pressure (Winter, 1995), organised into a few stereotyped strategies rather than improvised each time (Nashner & McCollum, 1985). Vision needs roughly 100–150 ms to influence a movement already under way (Woodworth, 1899), so the faster the disturbance, the more you have to anticipate instead of react. This drill runs that loop through a mouse cursor — it trains the correction habit, and does not measure physical balance."}
+                    </p>
+                  </div>
+  
+                  <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                    {(copy?.aboutCards || [
+                      { title: "Target Audience", icon: Users, color: "bg-blue-600", text: "FPS and tactical shooter players training recoil control, esports competitors building micro-stabilization under pressure, and athletes strengthening fine motor resistance to involuntary drift." },
+                      { title: "Mechanical Benefits", icon: TrendingUp, color: "bg-emerald-600", text: "Force vector counteraction, postural equilibrium, resistance tracking, central crosshair stabilization, and micro-adjustment precision." },
+                      { title: "Recoil Counteraction", icon: Activity, color: "bg-purple-600", text: "Continuously countering unpredictable wind push mirrors the smooth counter-pressure needed to hold a crosshair steady through weapon recoil climb and flinch displacement." }
+                    ]).map((card, idx) => {
+                      const IconComp = card.icon || [Users, TrendingUp, Activity][idx % 3];
+                      const color = card.color || ["bg-blue-600", "bg-emerald-600", "bg-purple-600"][idx % 3];
+                      return (
+                        <div key={idx} className="p-4 rounded-xl border border-white/10 bg-white/[0.02]">
+                          <div className="flex items-center gap-2.5 mb-2">
+                            <div className={`w-7 h-7 rounded-lg ${color} flex items-center justify-center`}><IconComp className="w-3.5 h-3.5 text-white" /></div>
+                            <h4 className="text-xs font-bold text-white">{card.title}</h4>
+                          </div>
+                          <p className="text-xs text-gray-300 leading-relaxed">{card.text}</p>
                         </div>
-                        <p className="text-xs text-gray-300 leading-relaxed">{card.text}</p>
-                      </div>
-                    );
-                  })}
+                      );
+                    })}
+                  </div>
                 </div>
-              </div>
-            </DrillAccordion>
+              </DrillAccordion>
+            )}
           </div>
         )}
 

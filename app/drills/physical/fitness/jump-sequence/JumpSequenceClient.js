@@ -24,6 +24,7 @@ import DrillAccordion from '../../../../../components/drill/DrillAccordion';
 import DrillRuleItem from '../../../../../components/drill/DrillRuleItem';
 import FpsStartCard from '../../../../../components/drill/FpsStartCard';
 import useImmersiveMode from '@/lib/useImmersiveMode';
+import { useTranslation } from '@/lib/i18n/useTranslation';
 
 // ============================================================
 // TUNING CONSTANTS
@@ -108,6 +109,7 @@ const getLevelConfig = (level, combo = 0) => {
 // MAIN COMPONENT
 // ============================================================
 export default function JumpSequenceClient({ copy = {} } = {}) {
+  const { locale } = useTranslation();
   const [gameState, setGameState] = useState('start'); // 'start' | 'countdown' | 'playing' | 'gameOver'
   const [isFullscreen, setIsFullscreen] = useState(false);
   useImmersiveMode(isFullscreen); // locks the page behind while the drill fills the screen
@@ -911,28 +913,30 @@ export default function JumpSequenceClient({ copy = {} } = {}) {
               </div>
             </DrillAccordion>
 
-            <DrillAccordion
-              id="about"
-              title={copy?.aboutTitle || "About Jump Sequence Training"}
-              isOpen={openAccordion === 'about'}
-              onToggle={() => setOpenAccordion(openAccordion === 'about' ? null : 'about')}
-            >
-              <div className="space-y-4">
-                {(copy?.aboutSections || ABOUT_SECTIONS).map((sec, idx) => {
-                  const IconComp = sec.icon || Move;
-                  return (
-                    <div key={idx} className="bg-white/[0.02] border border-white/[0.06] rounded-xl p-4">
-                      <div className="flex items-center gap-2 mb-1.5">
-                        <IconComp className="w-4 h-4 text-cyan-400 shrink-0" />
-                        <h3 className="text-sm font-bold text-white tracking-wide">{sec.title}</h3>
+            {locale === 'en' && (
+              <DrillAccordion
+                id="about"
+                title={copy?.aboutTitle || "About Jump Sequence Training"}
+                isOpen={openAccordion === 'about'}
+                onToggle={() => setOpenAccordion(openAccordion === 'about' ? null : 'about')}
+              >
+                <div className="space-y-4">
+                  {(copy?.aboutSections || ABOUT_SECTIONS).map((sec, idx) => {
+                    const IconComp = sec.icon || Move;
+                    return (
+                      <div key={idx} className="bg-white/[0.02] border border-white/[0.06] rounded-xl p-4">
+                        <div className="flex items-center gap-2 mb-1.5">
+                          <IconComp className="w-4 h-4 text-cyan-400 shrink-0" />
+                          <h3 className="text-sm font-bold text-white tracking-wide">{sec.title}</h3>
+                        </div>
+                        <h4 className="text-xs font-semibold text-slate-400 mb-2">{sec.subtitle}</h4>
+                        <p className="text-xs leading-relaxed text-slate-300">{sec.content}</p>
                       </div>
-                      <h4 className="text-xs font-semibold text-slate-400 mb-2">{sec.subtitle}</h4>
-                      <p className="text-xs leading-relaxed text-slate-300">{sec.content}</p>
-                    </div>
-                  );
-                })}
-              </div>
-            </DrillAccordion>
+                    );
+                  })}
+                </div>
+              </DrillAccordion>
+            )}
           </div>
         )}
 

@@ -17,6 +17,7 @@ import useUnexpectedExitGuard from '../../../../../lib/useUnexpectedExitGuard';
 import DrillFooter from '../../../../../components/drill/DrillFooter';
 import DrillCountdown from '../../../../../components/drill/DrillCountdown';
 import DrillAccordion from '../../../../../components/drill/DrillAccordion';
+import { useTranslation } from '@/lib/i18n/useTranslation';
 import DrillFlashOverlay from '../../../../../components/drill/DrillFlashOverlay';
 import DrillRuleItem from '../../../../../components/drill/DrillRuleItem';
 import FpsStartCard from '../../../../../components/drill/FpsStartCard';
@@ -64,6 +65,7 @@ const SEARCH_PAIRS = [
 ];
 
 export default function VisualSearchClient({ copy } = {}) {
+  const { locale } = useTranslation();
   const [gameState, setGameState] = useState('start'); // 'start' | 'countdown' | 'playing' | 'gameOver'
   const [isFullscreen, setIsFullscreen] = useState(false);
   useImmersiveMode(isFullscreen); // locks the page behind while the drill fills the screen
@@ -645,54 +647,56 @@ export default function VisualSearchClient({ copy } = {}) {
               </div>
             </DrillAccordion>
 
-            <DrillAccordion
-              id="about"
-              title="About Visual Search Pro"
-              isOpen={openAccordion === 'about'}
-              onToggle={() => setOpenAccordion(openAccordion === 'about' ? null : 'about')}
-            >
-              <div className="space-y-8">
-                <section>
-                  <h3 className="text-base font-bold text-white mb-2 flex items-center gap-2">
-                    <Brain className="w-4 h-4 text-cyan-400" /> What Is Visual Search Training?
-                  </h3>
-                  <p className="text-sm leading-relaxed mb-3 text-gray-300">
-                    A conjunction search is looking for something that no single feature identifies &mdash; a red square among red circles and blue squares, where colour alone and shape alone both fail. Searches like that get slower roughly in proportion to the number of distractors on screen, while a target defined by one unique feature &quot;pops out&quot; in about the same time no matter how many distractors there are (Treisman &amp; Gelade, 1980; Wolfe, 1994).
-                  </p>
-                  <p className="text-sm leading-relaxed mb-3">
-                    <strong>Visual Search Training</strong> is an advanced selective attention drill based on classic conjunctive search paradigms. The <strong>Visual Search drill</strong> challenges you to locate a single target letter (&apos;C&apos;) hidden among rotated distractor letters (&apos;O&apos;).
-                  </p>
-                  <p className="text-sm leading-relaxed">
-                    Unlike simple feature search where targets pop out automatically, conjunctive search requires active serial scanning across rotated distractors, training visual processing speed and selective visual focus.
-                  </p>
-                </section>
-
-                <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-                  <div className="p-4 rounded-xl border border-gray-800 bg-white/[0.02]">
-                    <div className="flex items-center gap-2.5 mb-2">
-                      <div className="w-7 h-7 rounded-lg bg-blue-600 flex items-center justify-center"><Users className="w-3.5 h-3.5 text-white" /></div>
-                      <h4 className="text-xs font-bold text-white">Who Should Use This?</h4>
+            {locale === 'en' && (
+              <DrillAccordion
+                id="about"
+                title="About Visual Search Pro"
+                isOpen={openAccordion === 'about'}
+                onToggle={() => setOpenAccordion(openAccordion === 'about' ? null : 'about')}
+              >
+                <div className="space-y-8">
+                  <section>
+                    <h3 className="text-base font-bold text-white mb-2 flex items-center gap-2">
+                      <Brain className="w-4 h-4 text-cyan-400" /> What Is Visual Search Training?
+                    </h3>
+                    <p className="text-sm leading-relaxed mb-3 text-gray-300">
+                      A conjunction search is looking for something that no single feature identifies &mdash; a red square among red circles and blue squares, where colour alone and shape alone both fail. Searches like that get slower roughly in proportion to the number of distractors on screen, while a target defined by one unique feature &quot;pops out&quot; in about the same time no matter how many distractors there are (Treisman &amp; Gelade, 1980; Wolfe, 1994).
+                    </p>
+                    <p className="text-sm leading-relaxed mb-3">
+                      <strong>Visual Search Training</strong> is an advanced selective attention drill based on classic conjunctive search paradigms. The <strong>Visual Search drill</strong> challenges you to locate a single target letter (&apos;C&apos;) hidden among rotated distractor letters (&apos;O&apos;).
+                    </p>
+                    <p className="text-sm leading-relaxed">
+                      Unlike simple feature search where targets pop out automatically, conjunctive search requires active serial scanning across rotated distractors, training visual processing speed and selective visual focus.
+                    </p>
+                  </section>
+  
+                  <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                    <div className="p-4 rounded-xl border border-gray-800 bg-white/[0.02]">
+                      <div className="flex items-center gap-2.5 mb-2">
+                        <div className="w-7 h-7 rounded-lg bg-blue-600 flex items-center justify-center"><Users className="w-3.5 h-3.5 text-white" /></div>
+                        <h4 className="text-xs font-bold text-white">Who Should Use This?</h4>
+                      </div>
+                      <p className="text-xs text-gray-300 leading-relaxed">Gamers improving target detection speed, proofreaders & inspectors enhancing visual accuracy, and cognitive training enthusiasts.</p>
                     </div>
-                    <p className="text-xs text-gray-300 leading-relaxed">Gamers improving target detection speed, proofreaders & inspectors enhancing visual accuracy, and cognitive training enthusiasts.</p>
-                  </div>
-                  <div className="p-4 rounded-xl border border-gray-800 bg-white/[0.02]">
-                    <div className="flex items-center gap-2.5 mb-2">
-                      <div className="w-7 h-7 rounded-lg bg-cyan-600 flex items-center justify-center"><TrendingUp className="w-3.5 h-3.5 text-white" /></div>
-                      <h4 className="text-xs font-bold text-white">Skills Improved</h4>
+                    <div className="p-4 rounded-xl border border-gray-800 bg-white/[0.02]">
+                      <div className="flex items-center gap-2.5 mb-2">
+                        <div className="w-7 h-7 rounded-lg bg-cyan-600 flex items-center justify-center"><TrendingUp className="w-3.5 h-3.5 text-white" /></div>
+                        <h4 className="text-xs font-bold text-white">Skills Improved</h4>
+                      </div>
+                      <p className="text-xs text-gray-300 leading-relaxed">Conjunctive visual search speed, selective attention, feature discrimination, target isolation, and visual scanning stamina.</p>
                     </div>
-                    <p className="text-xs text-gray-300 leading-relaxed">Conjunctive visual search speed, selective attention, feature discrimination, target isolation, and visual scanning stamina.</p>
-                  </div>
-                  <div className="p-4 rounded-xl border border-gray-800 bg-white/[0.02]">
-                    <div className="flex items-center gap-2.5 mb-2">
-                      <div className="w-7 h-7 rounded-lg bg-purple-600 flex items-center justify-center"><Zap className="w-3.5 h-3.5 text-white" /></div>
-                      <h4 className="text-xs font-bold text-white">Z-Pattern Scanning</h4>
+                    <div className="p-4 rounded-xl border border-gray-800 bg-white/[0.02]">
+                      <div className="flex items-center gap-2.5 mb-2">
+                        <div className="w-7 h-7 rounded-lg bg-purple-600 flex items-center justify-center"><Zap className="w-3.5 h-3.5 text-white" /></div>
+                        <h4 className="text-xs font-bold text-white">Z-Pattern Scanning</h4>
+                      </div>
+                      <p className="text-xs text-gray-300 leading-relaxed">Scan the grid systematically in Z-pattern rows to locate the target &apos;C&apos; efficiently without missing cells.</p>
                     </div>
-                    <p className="text-xs text-gray-300 leading-relaxed">Scan the grid systematically in Z-pattern rows to locate the target &apos;C&apos; efficiently without missing cells.</p>
                   </div>
+  
                 </div>
-
-              </div>
-            </DrillAccordion>
+              </DrillAccordion>
+            )}
           </div>
         )}
 

@@ -21,6 +21,7 @@ import DrillFlashOverlay from '../../../../../components/drill/DrillFlashOverlay
 import DrillRuleItem from '../../../../../components/drill/DrillRuleItem';
 import FpsStartCard from '../../../../../components/drill/FpsStartCard';
 import useImmersiveMode from '@/lib/useImmersiveMode';
+import { useTranslation } from '@/lib/i18n/useTranslation';
 
 const DRILL_DURATION = 45; // 45 seconds duration
 const POINTS_PER_HIT = 150;
@@ -47,6 +48,7 @@ const saveData = (data) => {
 };
 
 export default function NBackClient({ copy = null }) {
+  const { locale } = useTranslation();
   const [gameState, setGameState] = useState('start'); // 'start' | 'countdown' | 'playing' | 'gameOver'
   const [isFullscreen, setIsFullscreen] = useState(false);
   useImmersiveMode(isFullscreen); // locks the page behind while the drill fills the screen
@@ -652,51 +654,53 @@ export default function NBackClient({ copy = null }) {
           </DrillAccordion>
 
           {/* ACCORDION 2: ABOUT N-BACK TRAINING */}
-          <DrillAccordion
-            id="about"
-            title="About N-Back Working Memory Test"
-            isOpen={openAccordion === 'about'}
-            onToggle={() => setOpenAccordion(openAccordion === 'about' ? null : 'about')}
-          >
-            <div className="space-y-8">
-              <section>
-                <h3 className="text-base font-bold text-white mb-2 flex items-center gap-2">
-                  <Brain className="w-4 h-4 text-cyan-400" /> What Is N-Back Training?
-                </h3>
-                <p className="text-sm leading-relaxed mb-3">
-                  <strong>N-Back Training</strong> is the gold-standard cognitive working memory paradigm used across neuroscientific research to measure fluid intelligence and memory updating capacity. The <strong>N-Back Working Memory Test</strong> presents continuous stimulus streams, requiring you to determine whether the current item matches the item presented &apos;N&apos; steps ago. You have to hold a short list and update it continuously at the same time, and that combination of storage plus manipulation is what working memory means in Baddeley and Hitch&apos;s (1974) model, with its capacity sitting near four items (Cowan, 2001).
-                </p>
-                <p className="text-sm leading-relaxed">
-                  By practicing <strong>working memory updating</strong>, you expand your executive control buffer and strengthen information manipulation speed under time pressure.
-                </p>
-              </section>
-
-              <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-                <div className="p-4 rounded-xl border border-gray-800 bg-white/[0.02]">
-                  <div className="flex items-center gap-2.5 mb-2">
-                    <div className="w-7 h-7 rounded-lg bg-blue-600 flex items-center justify-center"><Users className="w-3.5 h-3.5 text-white" /></div>
-                    <h4 className="text-xs font-bold text-white">Who Should Use This?</h4>
+          {locale === 'en' && (
+            <DrillAccordion
+              id="about"
+              title="About N-Back Working Memory Test"
+              isOpen={openAccordion === 'about'}
+              onToggle={() => setOpenAccordion(openAccordion === 'about' ? null : 'about')}
+            >
+              <div className="space-y-8">
+                <section>
+                  <h3 className="text-base font-bold text-white mb-2 flex items-center gap-2">
+                    <Brain className="w-4 h-4 text-cyan-400" /> What Is N-Back Training?
+                  </h3>
+                  <p className="text-sm leading-relaxed mb-3">
+                    <strong>N-Back Training</strong> is the gold-standard cognitive working memory paradigm used across neuroscientific research to measure fluid intelligence and memory updating capacity. The <strong>N-Back Working Memory Test</strong> presents continuous stimulus streams, requiring you to determine whether the current item matches the item presented &apos;N&apos; steps ago. You have to hold a short list and update it continuously at the same time, and that combination of storage plus manipulation is what working memory means in Baddeley and Hitch&apos;s (1974) model, with its capacity sitting near four items (Cowan, 2001).
+                  </p>
+                  <p className="text-sm leading-relaxed">
+                    By practicing <strong>working memory updating</strong>, you expand your executive control buffer and strengthen information manipulation speed under time pressure.
+                  </p>
+                </section>
+  
+                <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                  <div className="p-4 rounded-xl border border-gray-800 bg-white/[0.02]">
+                    <div className="flex items-center gap-2.5 mb-2">
+                      <div className="w-7 h-7 rounded-lg bg-blue-600 flex items-center justify-center"><Users className="w-3.5 h-3.5 text-white" /></div>
+                      <h4 className="text-xs font-bold text-white">Who Should Use This?</h4>
+                    </div>
+                    <p className="text-xs text-gray-300 leading-relaxed">Students improving focus, professionals maintaining mental agility, researchers studying working memory, and cognitive athletes.</p>
                   </div>
-                  <p className="text-xs text-gray-300 leading-relaxed">Students improving focus, professionals maintaining mental agility, researchers studying working memory, and cognitive athletes.</p>
-                </div>
-                <div className="p-4 rounded-xl border border-gray-800 bg-white/[0.02]">
-                  <div className="flex items-center gap-2.5 mb-2">
-                    <div className="w-7 h-7 rounded-lg bg-cyan-600 flex items-center justify-center"><TrendingUp className="w-3.5 h-3.5 text-white" /></div>
-                    <h4 className="text-xs font-bold text-white">Skills Improved</h4>
+                  <div className="p-4 rounded-xl border border-gray-800 bg-white/[0.02]">
+                    <div className="flex items-center gap-2.5 mb-2">
+                      <div className="w-7 h-7 rounded-lg bg-cyan-600 flex items-center justify-center"><TrendingUp className="w-3.5 h-3.5 text-white" /></div>
+                      <h4 className="text-xs font-bold text-white">Skills Improved</h4>
+                    </div>
+                    <p className="text-xs text-gray-300 leading-relaxed">Working memory capacity, cognitive control, sustained attention, information updating, and executive function.</p>
                   </div>
-                  <p className="text-xs text-gray-300 leading-relaxed">Working memory capacity, cognitive control, sustained attention, information updating, and executive function.</p>
-                </div>
-                <div className="p-4 rounded-xl border border-gray-800 bg-white/[0.02]">
-                  <div className="flex items-center gap-2.5 mb-2">
-                    <div className="w-7 h-7 rounded-lg bg-purple-600 flex items-center justify-center"><Zap className="w-3.5 h-3.5 text-white" /></div>
-                    <h4 className="text-xs font-bold text-white">Sub-Vocalization</h4>
+                  <div className="p-4 rounded-xl border border-gray-800 bg-white/[0.02]">
+                    <div className="flex items-center gap-2.5 mb-2">
+                      <div className="w-7 h-7 rounded-lg bg-purple-600 flex items-center justify-center"><Zap className="w-3.5 h-3.5 text-white" /></div>
+                      <h4 className="text-xs font-bold text-white">Sub-Vocalization</h4>
+                    </div>
+                    <p className="text-xs text-gray-300 leading-relaxed">Mentally repeat the last N items in order to keep your working memory buffer continuously updated.</p>
                   </div>
-                  <p className="text-xs text-gray-300 leading-relaxed">Mentally repeat the last N items in order to keep your working memory buffer continuously updated.</p>
                 </div>
+  
               </div>
-
-            </div>
-          </DrillAccordion>
+            </DrillAccordion>
+          )}
           </div>
         )}
 

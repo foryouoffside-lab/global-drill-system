@@ -23,6 +23,7 @@ import DrillAccordion from '../../../../../components/drill/DrillAccordion';
 import DrillRuleItem from '../../../../../components/drill/DrillRuleItem';
 import FpsStartCard from '../../../../../components/drill/FpsStartCard';
 import useImmersiveMode from '@/lib/useImmersiveMode';
+import { useTranslation } from '@/lib/i18n/useTranslation';
 
 // ============================================================
 // TUNING CONSTANTS
@@ -113,6 +114,7 @@ const getDistToSegment = (px, py, x1, y1, x2, y2) => {
 // MAIN COMPONENT
 // ============================================================
 export default function CrossBodyMovementClient({ copy = {} } = {}) {
+  const { locale } = useTranslation();
   const [gameState, setGameState] = useState('start'); // 'start' | 'countdown' | 'playing' | 'gameOver'
   const [isFullscreen, setIsFullscreen] = useState(false);
   useImmersiveMode(isFullscreen); // locks the page behind while the drill fills the screen
@@ -866,32 +868,34 @@ export default function CrossBodyMovementClient({ copy = {} } = {}) {
                   )}
                 </div>
 
-                <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-                  {(copy?.aboutCards || [
-                    {
-                      title: "Target Audience",
-                      desc: "Competitive gamers training large 180° flick resets, athletic coordination trainees building bilateral integration, and desk workers restoring upper-limb motor mobility."
-                    },
-                    {
-                      title: "Neurological Benefits",
-                      desc: "Interhemispheric neural activation, cross-midline spatial integration, agonist-antagonist deceleration control, and precision diagonal trajectory tracking."
-                    },
-                    {
-                      title: "Dynamic Difficulty",
-                      desc: "Corridor tolerance tightens from 10px down to 4px, target nodes shrink from 16px to 8px, and diagonal vectors span extreme screen corners."
-                    }
-                  ]).map((card, i) => (
-                    <div key={i} className="p-4 rounded-xl border border-white/10 bg-white/[0.02]">
-                      <div className="flex items-center gap-2.5 mb-2">
-                        <div className={`w-7 h-7 rounded-lg ${i === 0 ? 'bg-blue-600' : i === 1 ? 'bg-emerald-600' : 'bg-cyan-600'} flex items-center justify-center`}>
-                          {i === 0 ? <Users className="w-3.5 h-3.5 text-white" /> : i === 1 ? <TrendingUp className="w-3.5 h-3.5 text-white" /> : <Activity className="w-3.5 h-3.5 text-white" />}
+                {(locale === 'en' || copy?.aboutCards) && (
+                  <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                    {(copy?.aboutCards || [
+                      {
+                        title: "Target Audience",
+                        desc: "Competitive gamers training large 180° flick resets, athletic coordination trainees building bilateral integration, and desk workers restoring upper-limb motor mobility."
+                      },
+                      {
+                        title: "Neurological Benefits",
+                        desc: "Interhemispheric neural activation, cross-midline spatial integration, agonist-antagonist deceleration control, and precision diagonal trajectory tracking."
+                      },
+                      {
+                        title: "Dynamic Difficulty",
+                        desc: "Corridor tolerance tightens from 10px down to 4px, target nodes shrink from 16px to 8px, and diagonal vectors span extreme screen corners."
+                      }
+                    ]).map((card, i) => (
+                      <div key={i} className="p-4 rounded-xl border border-white/10 bg-white/[0.02]">
+                        <div className="flex items-center gap-2.5 mb-2">
+                          <div className={`w-7 h-7 rounded-lg ${i === 0 ? 'bg-blue-600' : i === 1 ? 'bg-emerald-600' : 'bg-cyan-600'} flex items-center justify-center`}>
+                            {i === 0 ? <Users className="w-3.5 h-3.5 text-white" /> : i === 1 ? <TrendingUp className="w-3.5 h-3.5 text-white" /> : <Activity className="w-3.5 h-3.5 text-white" />}
+                          </div>
+                          <h4 className="text-xs font-bold text-white">{card.title}</h4>
                         </div>
-                        <h4 className="text-xs font-bold text-white">{card.title}</h4>
+                        <p className="text-xs text-gray-300 leading-relaxed">{card.desc}</p>
                       </div>
-                      <p className="text-xs text-gray-300 leading-relaxed">{card.desc}</p>
-                    </div>
-                  ))}
-                </div>
+                    ))}
+                  </div>
+                )}
               </div>
             </DrillAccordion>
           </div>

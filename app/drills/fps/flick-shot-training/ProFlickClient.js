@@ -2,6 +2,7 @@
 import { isIdleFrameSkippable } from '@/lib/performance';
 
 import React, { useState, useEffect, useRef, useCallback } from 'react';
+import { useTranslation } from '@/lib/i18n/useTranslation';
 import Link from 'next/link';
 
 import {
@@ -186,6 +187,7 @@ const RELATED_DRILLS = [
 // MAIN COMPONENT
 // ============================================================
 export default function ProFlickClient({ copy = null }) {
+  const { locale } = useTranslation();
   const [gameState, setGameState] = useState('start'); // 'start' | 'countdown' | 'playing' | 'gameOver'
   const [isFullscreen, setIsFullscreen] = useState(false);
   const ensureNativeFullscreen = useImmersiveMode(isFullscreen); // locks the page behind while the drill fills the screen
@@ -991,11 +993,12 @@ export default function ProFlickClient({ copy = null }) {
                   <p className="text-sm leading-relaxed mb-3 text-gray-300">
                     {copy?.aboutText || "A flick is one ballistic mouse movement onto a target you have already seen. Its duration scales with the distance moved and the size of the target (Fitts, 1954), and most flicks end in a smaller corrective submovement rather than landing clean (Elliott et al., 2010)."}
                   </p>
-                  {ABOUT_INTRO.map((para, i) => (
+                  {locale === 'en' && ABOUT_INTRO.map((para, i) => (
                     <p key={i} className={`text-sm leading-relaxed text-gray-300 ${i < ABOUT_INTRO.length - 1 ? 'mb-3' : ''}`}>{para}</p>
                   ))}
                 </section>
 
+                {locale === 'en' && (
                 <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
                   {ABOUT_CARDS.map((card, i) => (
                     <div key={i} className="p-4 rounded-xl border border-gray-800 bg-white/[0.02]">
@@ -1009,8 +1012,9 @@ export default function ProFlickClient({ copy = null }) {
                     </div>
                   ))}
                 </div>
+                )}
 
-                {ABOUT_SECTIONS.map((section, i) => (
+                {locale === 'en' && ABOUT_SECTIONS.map((section, i) => (
                   <section key={i}>
                     <h3 className="text-base font-bold text-white mb-2 flex items-center gap-2">
                       <section.icon className="w-4 h-4 text-red-400" /> {section.title}

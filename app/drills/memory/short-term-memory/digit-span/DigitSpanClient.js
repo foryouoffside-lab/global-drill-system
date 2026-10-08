@@ -23,6 +23,7 @@ import DrillFlashOverlay from '../../../../../components/drill/DrillFlashOverlay
 import DrillRuleItem from '../../../../../components/drill/DrillRuleItem';
 import FpsStartCard from '../../../../../components/drill/FpsStartCard';
 import useImmersiveMode from '@/lib/useImmersiveMode';
+import { useTranslation } from '@/lib/i18n/useTranslation';
 
 const DRILL_DURATION = 45; // 45 seconds duration
 const ELITE_SCORE = 1300; // Target score for S+ rating (rebalanced after combo removal)
@@ -63,6 +64,7 @@ const saveData = (data) => {
 };
 
 export default function DigitSpanClient({ copy = null }) {
+  const { locale } = useTranslation();
   const [gameState, setGameState] = useState('start'); // 'start' | 'countdown' | 'playing' | 'gameOver'
   const [isFullscreen, setIsFullscreen] = useState(false);
   useImmersiveMode(isFullscreen); // locks the page behind while the drill fills the screen
@@ -737,54 +739,56 @@ export default function DigitSpanClient({ copy = null }) {
           </DrillAccordion>
 
           {/* ACCORDION 2: ABOUT DIGIT SPAN PRO */}
-          <DrillAccordion
-            id="about"
-            title="About Digit Span Pro"
-            isOpen={openAccordion === 'about'}
-            onToggle={() => setOpenAccordion(openAccordion === 'about' ? null : 'about')}
-          >
-            <div className="space-y-8">
-              <section>
-                <p className="text-sm leading-relaxed mb-3">
-                  Digit span is the longest string of numbers you can repeat back in order. Miller (1956) famously put the limit near seven items, but later work that blocks rehearsal and chunking puts genuine capacity closer to four (Cowan, 2001) &mdash; the gap is strategy, which is what this drill trains.
-                </p>
-                <h3 className="text-base font-bold text-white mb-2 flex items-center gap-2">
-                  <Brain className="w-4 h-4 text-purple-400" /> What Is Digit Span Training?
-                </h3>
-                <p className="text-sm leading-relaxed mb-3">
-                  <strong>Digit Span Training</strong> is a gold-standard cognitive exercise used in WAIS IQ and clinical memory evaluations to measure working memory capacity. The <strong>Digit Span drill</strong> presents random numerical sequences, testing your capacity to memorize and type back exact strings.
-                </p>
-                <p className="text-sm leading-relaxed">
-                  By practicing <strong>numerical recall chunking</strong>, you expand your short-term memory buffer and increase your visual processing speed under time pressure.
-                </p>
-              </section>
-
-              <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-                <div className="p-4 rounded-xl border border-gray-800 bg-white/[0.02]">
-                  <div className="flex items-center gap-2.5 mb-2">
-                    <div className="w-7 h-7 rounded-lg bg-blue-600 flex items-center justify-center"><Users className="w-3.5 h-3.5 text-white" /></div>
-                    <h4 className="text-xs font-bold text-white">Who Should Use This?</h4>
+          {locale === 'en' && (
+            <DrillAccordion
+              id="about"
+              title="About Digit Span Pro"
+              isOpen={openAccordion === 'about'}
+              onToggle={() => setOpenAccordion(openAccordion === 'about' ? null : 'about')}
+            >
+              <div className="space-y-8">
+                <section>
+                  <p className="text-sm leading-relaxed mb-3">
+                    Digit span is the longest string of numbers you can repeat back in order. Miller (1956) famously put the limit near seven items, but later work that blocks rehearsal and chunking puts genuine capacity closer to four (Cowan, 2001) &mdash; the gap is strategy, which is what this drill trains.
+                  </p>
+                  <h3 className="text-base font-bold text-white mb-2 flex items-center gap-2">
+                    <Brain className="w-4 h-4 text-purple-400" /> What Is Digit Span Training?
+                  </h3>
+                  <p className="text-sm leading-relaxed mb-3">
+                    <strong>Digit Span Training</strong> is a gold-standard cognitive exercise used in WAIS IQ and clinical memory evaluations to measure working memory capacity. The <strong>Digit Span drill</strong> presents random numerical sequences, testing your capacity to memorize and type back exact strings.
+                  </p>
+                  <p className="text-sm leading-relaxed">
+                    By practicing <strong>numerical recall chunking</strong>, you expand your short-term memory buffer and increase your visual processing speed under time pressure.
+                  </p>
+                </section>
+  
+                <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                  <div className="p-4 rounded-xl border border-gray-800 bg-white/[0.02]">
+                    <div className="flex items-center gap-2.5 mb-2">
+                      <div className="w-7 h-7 rounded-lg bg-blue-600 flex items-center justify-center"><Users className="w-3.5 h-3.5 text-white" /></div>
+                      <h4 className="text-xs font-bold text-white">Who Should Use This?</h4>
+                    </div>
+                    <p className="text-xs text-gray-300 leading-relaxed">Students expanding numerical retention, professionals needing strong number memory, and anyone wanting to benchmark working memory capacity.</p>
                   </div>
-                  <p className="text-xs text-gray-300 leading-relaxed">Students expanding numerical retention, professionals needing strong number memory, and anyone wanting to benchmark working memory capacity.</p>
-                </div>
-                <div className="p-4 rounded-xl border border-gray-800 bg-white/[0.02]">
-                  <div className="flex items-center gap-2.5 mb-2">
-                    <div className="w-7 h-7 rounded-lg bg-purple-600 flex items-center justify-center"><TrendingUp className="w-3.5 h-3.5 text-white" /></div>
-                    <h4 className="text-xs font-bold text-white">Skills Improved</h4>
+                  <div className="p-4 rounded-xl border border-gray-800 bg-white/[0.02]">
+                    <div className="flex items-center gap-2.5 mb-2">
+                      <div className="w-7 h-7 rounded-lg bg-purple-600 flex items-center justify-center"><TrendingUp className="w-3.5 h-3.5 text-white" /></div>
+                      <h4 className="text-xs font-bold text-white">Skills Improved</h4>
+                    </div>
+                    <p className="text-xs text-gray-300 leading-relaxed">Numerical short-term memory, working memory span, phone number encoding, and focus under pressure.</p>
                   </div>
-                  <p className="text-xs text-gray-300 leading-relaxed">Numerical short-term memory, working memory span, phone number encoding, and focus under pressure.</p>
-                </div>
-                <div className="p-4 rounded-xl border border-gray-800 bg-white/[0.02]">
-                  <div className="flex items-center gap-2.5 mb-2">
-                    <div className="w-7 h-7 rounded-lg bg-orange-600 flex items-center justify-center"><Zap className="w-3.5 h-3.5 text-white" /></div>
-                    <h4 className="text-xs font-bold text-white">Digit Chunking</h4>
+                  <div className="p-4 rounded-xl border border-gray-800 bg-white/[0.02]">
+                    <div className="flex items-center gap-2.5 mb-2">
+                      <div className="w-7 h-7 rounded-lg bg-orange-600 flex items-center justify-center"><Zap className="w-3.5 h-3.5 text-white" /></div>
+                      <h4 className="text-xs font-bold text-white">Digit Chunking</h4>
+                    </div>
+                    <p className="text-xs text-gray-300 leading-relaxed">Group digits into pairs or triplets (e.g. 472-913) to bypass standard memory limits and reach higher digit spans.</p>
                   </div>
-                  <p className="text-xs text-gray-300 leading-relaxed">Group digits into pairs or triplets (e.g. 472-913) to bypass standard memory limits and reach higher digit spans.</p>
                 </div>
+  
               </div>
-
-            </div>
-          </DrillAccordion>
+            </DrillAccordion>
+          )}
           </div>
         )}
       </main>

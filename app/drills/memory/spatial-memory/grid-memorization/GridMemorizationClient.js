@@ -21,6 +21,7 @@ import DrillFlashOverlay from '../../../../../components/drill/DrillFlashOverlay
 import DrillRuleItem from '../../../../../components/drill/DrillRuleItem';
 import FpsStartCard from '../../../../../components/drill/FpsStartCard';
 import useImmersiveMode from '@/lib/useImmersiveMode';
+import { useTranslation } from '@/lib/i18n/useTranslation';
 
 const DRILL_DURATION = 60;
 const POINTS_PER_HIT = 150;
@@ -44,6 +45,7 @@ const saveData = (data) => {
 };
 
 export default function GridMemorizationClient({ copy = null }) {
+  const { locale } = useTranslation();
   const [gameState, setGameState] = useState('start'); // 'start' | 'countdown' | 'playing' | 'gameOver'
   const [isFullscreen, setIsFullscreen] = useState(false);
   useImmersiveMode(isFullscreen); // locks the page behind while the drill fills the screen
@@ -681,51 +683,53 @@ export default function GridMemorizationClient({ copy = null }) {
           </DrillAccordion>
 
           {/* ACCORDION 2: ABOUT GRID MEMORIZATION PRO */}
-          <DrillAccordion
-            id="about"
-            title="About Grid Memorization Pro"
-            isOpen={openAccordion === 'about'}
-            onToggle={() => setOpenAccordion(openAccordion === 'about' ? null : 'about')}
-          >
-            <div className="space-y-8">
-              <section>
-                <h3 className="text-base font-bold text-white mb-2 flex items-center gap-2">
-                  <Brain className="w-4 h-4 text-purple-400" /> What Is Grid Memorization Training?
-                </h3>
-                <p className="text-sm leading-relaxed mb-3">
-                  <strong>Grid Memorization Training</strong> is a core spatial working memory exercise designed to measure visual pattern recall. The <strong>Grid Memorization drill</strong> presents illuminated cell patterns on 4x4 to 5x5 matrices, testing your ability to encode spatial maps and recreate them accurately. Visual working memory stores roughly four objects at once, and the limit is the number of objects rather than the detail in each (Luck & Vogel, 1997). Static grid patterns test the visual cache, the passive store for form and layout (Logie, 1995).
-                </p>
-                <p className="text-sm leading-relaxed">
-                  By practicing <strong>spatial shape chunking</strong>, you expand your visual short-term memory buffer and increase your pattern recognition speed under time pressure.
-                </p>
-              </section>
-
-              <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-                <div className="p-4 rounded-xl border border-gray-800 bg-white/[0.02]">
-                  <div className="flex items-center gap-2.5 mb-2">
-                    <div className="w-7 h-7 rounded-lg bg-blue-600 flex items-center justify-center"><Users className="w-3.5 h-3.5 text-white" /></div>
-                    <h4 className="text-xs font-bold text-white">Who Should Use This?</h4>
+          {locale === 'en' && (
+            <DrillAccordion
+              id="about"
+              title="About Grid Memorization Pro"
+              isOpen={openAccordion === 'about'}
+              onToggle={() => setOpenAccordion(openAccordion === 'about' ? null : 'about')}
+            >
+              <div className="space-y-8">
+                <section>
+                  <h3 className="text-base font-bold text-white mb-2 flex items-center gap-2">
+                    <Brain className="w-4 h-4 text-purple-400" /> What Is Grid Memorization Training?
+                  </h3>
+                  <p className="text-sm leading-relaxed mb-3">
+                    <strong>Grid Memorization Training</strong> is a core spatial working memory exercise designed to measure visual pattern recall. The <strong>Grid Memorization drill</strong> presents illuminated cell patterns on 4x4 to 5x5 matrices, testing your ability to encode spatial maps and recreate them accurately. Visual working memory stores roughly four objects at once, and the limit is the number of objects rather than the detail in each (Luck & Vogel, 1997). Static grid patterns test the visual cache, the passive store for form and layout (Logie, 1995).
+                  </p>
+                  <p className="text-sm leading-relaxed">
+                    By practicing <strong>spatial shape chunking</strong>, you expand your visual short-term memory buffer and increase your pattern recognition speed under time pressure.
+                  </p>
+                </section>
+  
+                <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                  <div className="p-4 rounded-xl border border-gray-800 bg-white/[0.02]">
+                    <div className="flex items-center gap-2.5 mb-2">
+                      <div className="w-7 h-7 rounded-lg bg-blue-600 flex items-center justify-center"><Users className="w-3.5 h-3.5 text-white" /></div>
+                      <h4 className="text-xs font-bold text-white">Who Should Use This?</h4>
+                    </div>
+                    <p className="text-xs text-gray-300 leading-relaxed">Gamers improving map awareness, STEM students strengthening spatial reasoning, and professionals wanting to enhance visual pattern retention.</p>
                   </div>
-                  <p className="text-xs text-gray-300 leading-relaxed">Gamers improving map awareness, STEM students strengthening spatial reasoning, and professionals wanting to enhance visual pattern retention.</p>
-                </div>
-                <div className="p-4 rounded-xl border border-gray-800 bg-white/[0.02]">
-                  <div className="flex items-center gap-2.5 mb-2">
-                    <div className="w-7 h-7 rounded-lg bg-purple-600 flex items-center justify-center"><TrendingUp className="w-3.5 h-3.5 text-white" /></div>
-                    <h4 className="text-xs font-bold text-white">Skills Improved</h4>
+                  <div className="p-4 rounded-xl border border-gray-800 bg-white/[0.02]">
+                    <div className="flex items-center gap-2.5 mb-2">
+                      <div className="w-7 h-7 rounded-lg bg-purple-600 flex items-center justify-center"><TrendingUp className="w-3.5 h-3.5 text-white" /></div>
+                      <h4 className="text-xs font-bold text-white">Skills Improved</h4>
+                    </div>
+                    <p className="text-xs text-gray-300 leading-relaxed">Spatial short-term memory, working memory span, pattern recognition, and visual precision under pressure.</p>
                   </div>
-                  <p className="text-xs text-gray-300 leading-relaxed">Spatial short-term memory, working memory span, pattern recognition, and visual precision under pressure.</p>
-                </div>
-                <div className="p-4 rounded-xl border border-gray-800 bg-white/[0.02]">
-                  <div className="flex items-center gap-2.5 mb-2">
-                    <div className="w-7 h-7 rounded-lg bg-indigo-600 flex items-center justify-center"><Zap className="w-3.5 h-3.5 text-white" /></div>
-                    <h4 className="text-xs font-bold text-white">Spatial Chunking</h4>
+                  <div className="p-4 rounded-xl border border-gray-800 bg-white/[0.02]">
+                    <div className="flex items-center gap-2.5 mb-2">
+                      <div className="w-7 h-7 rounded-lg bg-indigo-600 flex items-center justify-center"><Zap className="w-3.5 h-3.5 text-white" /></div>
+                      <h4 className="text-xs font-bold text-white">Spatial Chunking</h4>
+                    </div>
+                    <p className="text-xs text-gray-300 leading-relaxed">Group lit cells into familiar shapes (like an &apos;L&apos;, square, or line) to bypass standard visual memory limits and handle larger grids.</p>
                   </div>
-                  <p className="text-xs text-gray-300 leading-relaxed">Group lit cells into familiar shapes (like an &apos;L&apos;, square, or line) to bypass standard visual memory limits and handle larger grids.</p>
                 </div>
+  
               </div>
-
-            </div>
-          </DrillAccordion>
+            </DrillAccordion>
+          )}
           </div>
         )}
       </main>

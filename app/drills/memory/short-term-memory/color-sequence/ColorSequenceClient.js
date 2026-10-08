@@ -64,7 +64,7 @@ const saveData = (data) => {
 };
 
 export default function ColorSequenceClient({ copy = null }) {
-  const { t } = useTranslation();
+  const { t, locale } = useTranslation();
   const [gameState, setGameState] = useState('start'); // 'start' | 'countdown' | 'playing' | 'gameOver'
   const [isFullscreen, setIsFullscreen] = useState(false);
   useImmersiveMode(isFullscreen); // locks the page behind while the drill fills the screen
@@ -742,7 +742,7 @@ export default function ColorSequenceClient({ copy = null }) {
                   copy.aboutIntro.map((para, i) => (
                     <p key={i} className="text-sm leading-relaxed mb-3 text-gray-300">{para}</p>
                   ))
-                ) : (
+                ) : locale === 'en' ? (
                   <>
                     <p className="text-sm leading-relaxed mb-3">
                       <strong>Visual Memory Training</strong> isolates and exercises your ability to encode, hold, and manipulate short-term visual patterns. The <strong>Color Sequence drill</strong> presents progressive color strings, challenging your visual working memory capacity and recall speed.
@@ -751,7 +751,7 @@ export default function ColorSequenceClient({ copy = null }) {
                       By practicing <strong>pattern sequence recall</strong>, you strengthen memory chunking strategies and improve focus under time pressure.
                     </p>
                   </>
-                )}
+                ) : null}
               </section>
 
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
@@ -767,7 +767,7 @@ export default function ColorSequenceClient({ copy = null }) {
                       <p className="text-xs text-gray-300 leading-relaxed">{card.text}</p>
                     </div>
                   ))
-                ) : (
+                ) : locale === 'en' ? (
                   <>
                     <div className="p-4 rounded-xl border border-gray-800 bg-white/[0.02]">
                       <div className="flex items-center gap-2.5 mb-2">
@@ -791,7 +791,7 @@ export default function ColorSequenceClient({ copy = null }) {
                       <p className="text-xs text-gray-300 leading-relaxed">Group colors into sub-sequences (e.g. Red-Blue pair) to bypass standard short-term capacity limits and reach higher levels.</p>
                     </div>
                   </>
-                )}
+                ) : null}
               </div>
 
             </div>

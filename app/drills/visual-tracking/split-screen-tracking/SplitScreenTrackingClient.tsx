@@ -5,6 +5,7 @@ import Link from 'next/link';
 import { Play, RefreshCw, Timer, Share2, LogOut, Check, Sun, Moon, Volume2, VolumeX, Target, Trophy, TrendingUp, Zap } from 'lucide-react';
 
 import DrillAccordion from '../../../../components/drill/DrillAccordion';
+import { useTranslation } from '@/lib/i18n/useTranslation';
 import DrillCountdown from '../../../../components/drill/DrillCountdown';
 import ZigZagPathPursuitStartCard from '../../../../components/drill/ZigZagPathPursuitStartCard';
 import { drillAudio } from '../../../../lib/drillAudio';
@@ -41,6 +42,7 @@ const saveData = (data: { totalSessions: number }) => {
 };
 
 export default function SplitScreenTrackingClient({ copy }: { copy?: { title?: string; subtitle?: string; description?: string } } = {}) {
+  const { locale } = useTranslation();
   const [gameState, setGameState] = useState<'start' | 'countdown' | 'playing' | 'gameOver'>('start');
   const [isFullscreen, setIsFullscreen] = useState<boolean>(false);
   useImmersiveMode(isFullscreen); // locks the page behind while the drill fills the screen
@@ -707,9 +709,11 @@ export default function SplitScreenTrackingClient({ copy }: { copy?: { title?: s
                 ))}
               </div>
             </DrillAccordion>
-            <DrillAccordion id="about" title="About Split-Screen Tracking" isOpen={openAccordion === 'about'} onToggle={() => setOpenAccordion(openAccordion === 'about' ? null : 'about')}>
-              <p className="text-sm text-slate-300 leading-relaxed">{copy?.description || "Split-screen tracking conditions divided visual attention by training observers to monitor two independent targets moving along orthogonal vertical and horizontal axes simultaneously. By utilizing covert peripheral vision between hemifields, this drill strengthens parallel visual processing and reduces attentional tunneling (Pylyshyn & Storm, 1988; Alvarez & Cavanagh, 2005). Most people can track about four or five independent moving targets at once, with accuracy falling away sharply beyond that (Pylyshyn & Storm, 1988)."}</p>
-            </DrillAccordion>
+            {(locale === 'en' || copy?.description) && (
+              <DrillAccordion id="about" title="About Split-Screen Tracking" isOpen={openAccordion === 'about'} onToggle={() => setOpenAccordion(openAccordion === 'about' ? null : 'about')}>
+                <p className="text-sm text-slate-300 leading-relaxed">{copy?.description || "Split-screen tracking conditions divided visual attention by training observers to monitor two independent targets moving along orthogonal vertical and horizontal axes simultaneously. By utilizing covert peripheral vision between hemifields, this drill strengthens parallel visual processing and reduces attentional tunneling (Pylyshyn & Storm, 1988; Alvarez & Cavanagh, 2005). Most people can track about four or five independent moving targets at once, with accuracy falling away sharply beyond that (Pylyshyn & Storm, 1988)."}</p>
+              </DrillAccordion>
+            )}
           </div>
         )}
 

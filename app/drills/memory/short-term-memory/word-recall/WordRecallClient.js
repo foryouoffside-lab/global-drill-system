@@ -22,6 +22,7 @@ import DrillFlashOverlay from '../../../../../components/drill/DrillFlashOverlay
 import DrillRuleItem from '../../../../../components/drill/DrillRuleItem';
 import FpsStartCard from '../../../../../components/drill/FpsStartCard';
 import useImmersiveMode from '@/lib/useImmersiveMode';
+import { useTranslation } from '@/lib/i18n/useTranslation';
 
 const DRILL_DURATION = 45; // 45 seconds duration
 const ELITE_SCORE = 1100; // Target score for S+ rating (rebalanced after combo removal)
@@ -54,6 +55,7 @@ const saveData = (data) => {
 };
 
 export default function WordRecallClient({ copy = null }) {
+  const { locale } = useTranslation();
   const activeWordBank = (copy && Array.isArray(copy.wordBank) && copy.wordBank.length >= 20) ? copy.wordBank : WORD_BANK;
   const [gameState, setGameState] = useState('start'); // 'start' | 'countdown' | 'playing' | 'gameOver'
   const [isFullscreen, setIsFullscreen] = useState(false);
@@ -751,51 +753,53 @@ export default function WordRecallClient({ copy = null }) {
           </DrillAccordion>
 
           {/* ACCORDION 2: ABOUT WORD RECALL PRO */}
-          <DrillAccordion
-            id="about"
-            title={copy?.aboutTitle || "About Word Recall Pro"}
-            isOpen={openAccordion === 'about'}
-            onToggle={() => setOpenAccordion(openAccordion === 'about' ? null : 'about')}
-          >
-            <div className="space-y-8">
-              <section>
-                <h3 className="text-base font-bold text-white mb-2 flex items-center gap-2">
-                  <Brain className="w-4 h-4 text-pink-400" /> What Is Word Recall Training?
-                </h3>
-                <p className="text-sm leading-relaxed mb-3">
-                  <strong>Word Recall Training</strong> is a free recall verbal memory exercise used in cognitive psychology to evaluate short-term memory capacity. The <strong>Word Recall drill</strong> presents random word lists, testing your ability to memorize and type back exact words without order restrictions. Free recall of a word list is never flat: you remember the first few and the last few best and the middle worst, the serial position effect Murdock (1962) charted. How deeply you process each word matters more than how long you stare at it (Craik & Lockhart, 1972).
-                </p>
-                <p className="text-sm leading-relaxed">
-                  By practicing <strong>narrative story linking</strong>, you expand your verbal short-term memory buffer and increase your information retrieval speed under time pressure.
-                </p>
-              </section>
-
-              <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-                <div className="p-4 rounded-xl border border-gray-800 bg-white/[0.02]">
-                  <div className="flex items-center gap-2.5 mb-2">
-                    <div className="w-7 h-7 rounded-lg bg-blue-600 flex items-center justify-center"><Users className="w-3.5 h-3.5 text-white" /></div>
-                    <h4 className="text-xs font-bold text-white">Who Should Use This?</h4>
+          {locale === 'en' && (
+            <DrillAccordion
+              id="about"
+              title={copy?.aboutTitle || "About Word Recall Pro"}
+              isOpen={openAccordion === 'about'}
+              onToggle={() => setOpenAccordion(openAccordion === 'about' ? null : 'about')}
+            >
+              <div className="space-y-8">
+                <section>
+                  <h3 className="text-base font-bold text-white mb-2 flex items-center gap-2">
+                    <Brain className="w-4 h-4 text-pink-400" /> What Is Word Recall Training?
+                  </h3>
+                  <p className="text-sm leading-relaxed mb-3">
+                    <strong>Word Recall Training</strong> is a free recall verbal memory exercise used in cognitive psychology to evaluate short-term memory capacity. The <strong>Word Recall drill</strong> presents random word lists, testing your ability to memorize and type back exact words without order restrictions. Free recall of a word list is never flat: you remember the first few and the last few best and the middle worst, the serial position effect Murdock (1962) charted. How deeply you process each word matters more than how long you stare at it (Craik & Lockhart, 1972).
+                  </p>
+                  <p className="text-sm leading-relaxed">
+                    By practicing <strong>narrative story linking</strong>, you expand your verbal short-term memory buffer and increase your information retrieval speed under time pressure.
+                  </p>
+                </section>
+  
+                <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                  <div className="p-4 rounded-xl border border-gray-800 bg-white/[0.02]">
+                    <div className="flex items-center gap-2.5 mb-2">
+                      <div className="w-7 h-7 rounded-lg bg-blue-600 flex items-center justify-center"><Users className="w-3.5 h-3.5 text-white" /></div>
+                      <h4 className="text-xs font-bold text-white">Who Should Use This?</h4>
+                    </div>
+                    <p className="text-xs text-gray-300 leading-relaxed">Students enhancing study retention, professionals strengthening verbal recall, and anyone wanting to benchmark working memory capacity.</p>
                   </div>
-                  <p className="text-xs text-gray-300 leading-relaxed">Students enhancing study retention, professionals strengthening verbal recall, and anyone wanting to benchmark working memory capacity.</p>
-                </div>
-                <div className="p-4 rounded-xl border border-gray-800 bg-white/[0.02]">
-                  <div className="flex items-center gap-2.5 mb-2">
-                    <div className="w-7 h-7 rounded-lg bg-pink-600 flex items-center justify-center"><TrendingUp className="w-3.5 h-3.5 text-white" /></div>
-                    <h4 className="text-xs font-bold text-white">Skills Improved</h4>
+                  <div className="p-4 rounded-xl border border-gray-800 bg-white/[0.02]">
+                    <div className="flex items-center gap-2.5 mb-2">
+                      <div className="w-7 h-7 rounded-lg bg-pink-600 flex items-center justify-center"><TrendingUp className="w-3.5 h-3.5 text-white" /></div>
+                      <h4 className="text-xs font-bold text-white">Skills Improved</h4>
+                    </div>
+                    <p className="text-xs text-gray-300 leading-relaxed">Verbal short-term memory, working memory span, free recall, and focus under time pressure.</p>
                   </div>
-                  <p className="text-xs text-gray-300 leading-relaxed">Verbal short-term memory, working memory span, free recall, and focus under time pressure.</p>
-                </div>
-                <div className="p-4 rounded-xl border border-gray-800 bg-white/[0.02]">
-                  <div className="flex items-center gap-2.5 mb-2">
-                    <div className="w-7 h-7 rounded-lg bg-purple-600 flex items-center justify-center"><Zap className="w-3.5 h-3.5 text-white" /></div>
-                    <h4 className="text-xs font-bold text-white">Narrative Chunking</h4>
+                  <div className="p-4 rounded-xl border border-gray-800 bg-white/[0.02]">
+                    <div className="flex items-center gap-2.5 mb-2">
+                      <div className="w-7 h-7 rounded-lg bg-purple-600 flex items-center justify-center"><Zap className="w-3.5 h-3.5 text-white" /></div>
+                      <h4 className="text-xs font-bold text-white">Narrative Chunking</h4>
+                    </div>
+                    <p className="text-xs text-gray-300 leading-relaxed">Connect words into a mini-story (e.g., &quot;The eagle flew over the castle&quot;) to bypass standard short-term memory limits.</p>
                   </div>
-                  <p className="text-xs text-gray-300 leading-relaxed">Connect words into a mini-story (e.g., &quot;The eagle flew over the castle&quot;) to bypass standard short-term memory limits.</p>
                 </div>
+  
               </div>
-
-            </div>
-          </DrillAccordion>
+            </DrillAccordion>
+          )}
           </div>
         )}
       </main>

@@ -24,6 +24,7 @@ import FpsStartCard from '../../../../../components/drill/FpsStartCard';
 import DrillResultCard from '../../../../../components/drill/DrillResultCard';
 import useImmersiveMode from '@/lib/useImmersiveMode';
 import useUnexpectedExitGuard from '@/lib/useUnexpectedExitGuard';
+import { useTranslation } from '@/lib/i18n/useTranslation';
 
 // ============================================================
 // TUNING CONSTANTS
@@ -81,6 +82,7 @@ As your score rises, target hitboxes shrink and decay rates accelerate dynamical
 // MAIN COMPONENT
 // ============================================================
 export default function PrecisionFlickShotClient({ copy } = {}) {
+  const { locale } = useTranslation();
   const [gameState, setGameState] = useState('start'); // 'start' | 'countdown' | 'playing' | 'gameOver'
   const [isFullscreen, setIsFullscreen] = useState(false);
   useImmersiveMode(isFullscreen); // locks the page behind while the drill fills the screen
@@ -859,52 +861,54 @@ export default function PrecisionFlickShotClient({ copy } = {}) {
               </div>
             </DrillAccordion>
 
-            <DrillAccordion
-              id="about"
-              title={copy?.aboutTitle || "About Precision Flick Shot"}
-              isOpen={openAccordion === 'about'}
-              onToggle={() => setOpenAccordion(openAccordion === 'about' ? null : 'about')}
-            >
-              {copy?.aboutContent ? (
-                copy.aboutContent
-              ) : (
-                <div className="space-y-6">
-                  <div className="space-y-3">
-                    <h3 className="text-base font-bold text-white">Ballistic Flick Accuracy &amp; Submovement Optimization</h3>
-                    <p className="text-sm leading-relaxed text-gray-300">
-                      Precision Flick Shot is a high-speed motor coordination drill engineered to test and refine rapid mouse flicks, target acquisition speed, and center-click timing under extreme temporal pressure.
-                    </p>
-                    <p className="text-sm leading-relaxed text-gray-300">
-                      Target snapping is governed by the Stochastic Optimized Submovement Model (Meyer et al., 1988) and Woodworth&apos;s two-component hypothesis. Every flick begins with an open-loop ballistic motor impulse followed by a visual feedback deceleration phase. Training center-ring bulls-eyes forces the motor cortex to suppress endpoint distribution noise and minimize corrective secondary sub-movements. A movement that fast is made of two parts &mdash; a ballistic impulse that covers most of the distance, then a slower visually guided correction that closes what is left (Woodworth, 1899; Meyer et al., 1988) &mdash; which is why overshooting a target costs more time than starting the flick slightly slower. Your display bounds the measurement: at 60 Hz a new target can only appear every 16.7 ms, against 6.9 ms at 144 Hz (Woods et al., 2015).
-                    </p>
+            {locale === 'en' && (
+              <DrillAccordion
+                id="about"
+                title={copy?.aboutTitle || "About Precision Flick Shot"}
+                isOpen={openAccordion === 'about'}
+                onToggle={() => setOpenAccordion(openAccordion === 'about' ? null : 'about')}
+              >
+                {copy?.aboutContent ? (
+                  copy.aboutContent
+                ) : (
+                  <div className="space-y-6">
+                    <div className="space-y-3">
+                      <h3 className="text-base font-bold text-white">Ballistic Flick Accuracy &amp; Submovement Optimization</h3>
+                      <p className="text-sm leading-relaxed text-gray-300">
+                        Precision Flick Shot is a high-speed motor coordination drill engineered to test and refine rapid mouse flicks, target acquisition speed, and center-click timing under extreme temporal pressure.
+                      </p>
+                      <p className="text-sm leading-relaxed text-gray-300">
+                        Target snapping is governed by the Stochastic Optimized Submovement Model (Meyer et al., 1988) and Woodworth&apos;s two-component hypothesis. Every flick begins with an open-loop ballistic motor impulse followed by a visual feedback deceleration phase. Training center-ring bulls-eyes forces the motor cortex to suppress endpoint distribution noise and minimize corrective secondary sub-movements. A movement that fast is made of two parts &mdash; a ballistic impulse that covers most of the distance, then a slower visually guided correction that closes what is left (Woodworth, 1899; Meyer et al., 1988) &mdash; which is why overshooting a target costs more time than starting the flick slightly slower. Your display bounds the measurement: at 60 Hz a new target can only appear every 16.7 ms, against 6.9 ms at 144 Hz (Woods et al., 2015).
+                      </p>
+                    </div>
+  
+                    <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                      <div className="p-4 rounded-xl border border-white/10 bg-white/[0.02]">
+                        <div className="flex items-center gap-2.5 mb-2">
+                          <div className="w-7 h-7 rounded-lg bg-emerald-600 flex items-center justify-center"><Target className="w-3.5 h-3.5 text-white" /></div>
+                          <h4 className="text-xs font-bold text-white">Bulls-eye Center Accuracy</h4>
+                        </div>
+                        <p className="text-xs text-gray-300 leading-relaxed">Hitting the inner 8-pixel core awards double points (+200 PTS), rewarding pinpoint foveal alignment and tight motor stopping power.</p>
+                      </div>
+                      <div className="p-4 rounded-xl border border-white/10 bg-white/[0.02]">
+                        <div className="flex items-center gap-2.5 mb-2">
+                          <div className="w-7 h-7 rounded-lg bg-blue-600 flex items-center justify-center"><Users className="w-3.5 h-3.5 text-white" /></div>
+                          <h4 className="text-xs font-bold text-white">Competitive Tactical Utility</h4>
+                        </div>
+                        <p className="text-xs text-gray-300 leading-relaxed">Directly trains opening duel reaction in CS2, Valorant, and Apex Legends where first-bullet headshot precision determines round outcomes.</p>
+                      </div>
+                      <div className="p-4 rounded-xl border border-white/10 bg-white/[0.02]">
+                        <div className="flex items-center gap-2.5 mb-2">
+                          <div className="w-7 h-7 rounded-lg bg-purple-600 flex items-center justify-center"><TrendingUp className="w-3.5 h-3.5 text-white" /></div>
+                          <h4 className="text-xs font-bold text-white">Dynamic Decay Scaling</h4>
+                        </div>
+                        <p className="text-xs text-gray-300 leading-relaxed">As your score advances past 1,400-point level thresholds, target lifespans decay faster, requiring higher neuromuscular throughput.</p>
+                      </div>
+                    </div>
                   </div>
-
-                  <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-                    <div className="p-4 rounded-xl border border-white/10 bg-white/[0.02]">
-                      <div className="flex items-center gap-2.5 mb-2">
-                        <div className="w-7 h-7 rounded-lg bg-emerald-600 flex items-center justify-center"><Target className="w-3.5 h-3.5 text-white" /></div>
-                        <h4 className="text-xs font-bold text-white">Bulls-eye Center Accuracy</h4>
-                      </div>
-                      <p className="text-xs text-gray-300 leading-relaxed">Hitting the inner 8-pixel core awards double points (+200 PTS), rewarding pinpoint foveal alignment and tight motor stopping power.</p>
-                    </div>
-                    <div className="p-4 rounded-xl border border-white/10 bg-white/[0.02]">
-                      <div className="flex items-center gap-2.5 mb-2">
-                        <div className="w-7 h-7 rounded-lg bg-blue-600 flex items-center justify-center"><Users className="w-3.5 h-3.5 text-white" /></div>
-                        <h4 className="text-xs font-bold text-white">Competitive Tactical Utility</h4>
-                      </div>
-                      <p className="text-xs text-gray-300 leading-relaxed">Directly trains opening duel reaction in CS2, Valorant, and Apex Legends where first-bullet headshot precision determines round outcomes.</p>
-                    </div>
-                    <div className="p-4 rounded-xl border border-white/10 bg-white/[0.02]">
-                      <div className="flex items-center gap-2.5 mb-2">
-                        <div className="w-7 h-7 rounded-lg bg-purple-600 flex items-center justify-center"><TrendingUp className="w-3.5 h-3.5 text-white" /></div>
-                        <h4 className="text-xs font-bold text-white">Dynamic Decay Scaling</h4>
-                      </div>
-                      <p className="text-xs text-gray-300 leading-relaxed">As your score advances past 1,400-point level thresholds, target lifespans decay faster, requiring higher neuromuscular throughput.</p>
-                    </div>
-                  </div>
-                </div>
-              )}
-            </DrillAccordion>
+                )}
+              </DrillAccordion>
+            )}
           </div>
         )}
       </main>

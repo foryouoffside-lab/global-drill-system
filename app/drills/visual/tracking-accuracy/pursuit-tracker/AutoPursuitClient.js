@@ -19,6 +19,7 @@ import useUnexpectedExitGuard from '../../../../../lib/useUnexpectedExitGuard';
 import DrillFooter from '../../../../../components/drill/DrillFooter';
 import DrillCountdown from '../../../../../components/drill/DrillCountdown';
 import DrillAccordion from '../../../../../components/drill/DrillAccordion';
+import { useTranslation } from '@/lib/i18n/useTranslation';
 import DrillFlashOverlay from '../../../../../components/drill/DrillFlashOverlay';
 import DrillRuleItem from '../../../../../components/drill/DrillRuleItem';
 import FpsStartCard from '../../../../../components/drill/FpsStartCard';
@@ -75,6 +76,7 @@ class GameErrorBoundary extends React.Component {
 // MAIN COMPONENT
 // ==========================================
 export default function AutoPursuitClient({ copy } = {}) {
+  const { locale } = useTranslation();
   const [gameState, setGameState] = useState('start'); // 'start' | 'countdown' | 'playing' | 'gameOver'
   const [isFullscreen, setIsFullscreen] = useState(false);
   useImmersiveMode(isFullscreen); // locks the page behind while the drill fills the screen
@@ -728,50 +730,52 @@ export default function AutoPursuitClient({ copy } = {}) {
               </div>
             </DrillAccordion>
 
-            <DrillAccordion
-              id="about"
-              title="About Pursuit Tracker Pro"
-              isOpen={openAccordion === 'about'}
-              onToggle={() => setOpenAccordion(openAccordion === 'about' ? null : 'about')}
-            >
-              <div className="space-y-8">
-                <section>
-                  <h3 className="text-base font-bold text-white mb-2 flex items-center gap-2">
-                    <Brain className="w-4 h-4 text-emerald-400" /> What Is Smooth Pursuit Tracking?
-                  </h3>
-                  <p className="text-sm leading-relaxed mb-3">
-                    <strong>Smooth Pursuit Training</strong> measures how accurately your eyes and cursor can continuously follow a moving object, rather than reacting to a single discrete event. The <strong>Pursuit Tracker drill</strong> presents an orb that accelerates and changes direction unpredictably, requiring your cursor to stay locked onto it in real time over a <strong>45-second round</strong>. It tracks accurately up to about 30&deg;/s, and beyond that the eye lags and needs catch-up saccades (Krauzlis, 2004; Rashbass, 1961). Pursuit also cannot be produced voluntarily on a blank screen &mdash; it needs a moving stimulus to lock onto.
-                  </p>
-                  <p className="text-sm leading-relaxed">
-                    Unlike discrete reaction tests, this continuously scores how much of every second your cursor stays in contact with the target — building the sustained visual-motor coordination used in tracking moving objects, opponents, or vehicles.
-                  </p>
-                </section>
-
-                <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-                  <div className="p-4 rounded-xl border border-gray-800 bg-white/[0.02]">
-                    <div className="flex items-center gap-2.5 mb-2">
-                      <div className="w-7 h-7 rounded-lg bg-blue-600 flex items-center justify-center"><Users className="w-3.5 h-3.5 text-white" /></div>
-                      <h4 className="text-xs font-bold text-white">Who Should Use This?</h4>
+            {locale === 'en' && (
+              <DrillAccordion
+                id="about"
+                title="About Pursuit Tracker Pro"
+                isOpen={openAccordion === 'about'}
+                onToggle={() => setOpenAccordion(openAccordion === 'about' ? null : 'about')}
+              >
+                <div className="space-y-8">
+                  <section>
+                    <h3 className="text-base font-bold text-white mb-2 flex items-center gap-2">
+                      <Brain className="w-4 h-4 text-emerald-400" /> What Is Smooth Pursuit Tracking?
+                    </h3>
+                    <p className="text-sm leading-relaxed mb-3">
+                      <strong>Smooth Pursuit Training</strong> measures how accurately your eyes and cursor can continuously follow a moving object, rather than reacting to a single discrete event. The <strong>Pursuit Tracker drill</strong> presents an orb that accelerates and changes direction unpredictably, requiring your cursor to stay locked onto it in real time over a <strong>45-second round</strong>. It tracks accurately up to about 30&deg;/s, and beyond that the eye lags and needs catch-up saccades (Krauzlis, 2004; Rashbass, 1961). Pursuit also cannot be produced voluntarily on a blank screen &mdash; it needs a moving stimulus to lock onto.
+                    </p>
+                    <p className="text-sm leading-relaxed">
+                      Unlike discrete reaction tests, this continuously scores how much of every second your cursor stays in contact with the target — building the sustained visual-motor coordination used in tracking moving objects, opponents, or vehicles.
+                    </p>
+                  </section>
+  
+                  <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                    <div className="p-4 rounded-xl border border-gray-800 bg-white/[0.02]">
+                      <div className="flex items-center gap-2.5 mb-2">
+                        <div className="w-7 h-7 rounded-lg bg-blue-600 flex items-center justify-center"><Users className="w-3.5 h-3.5 text-white" /></div>
+                        <h4 className="text-xs font-bold text-white">Who Should Use This?</h4>
+                      </div>
+                      <p className="text-xs text-gray-300 leading-relaxed">FPS gamers tracking moving opponents, racket-sport athletes following a ball, and anyone training sustained visual-motor coordination.</p>
                     </div>
-                    <p className="text-xs text-gray-300 leading-relaxed">FPS gamers tracking moving opponents, racket-sport athletes following a ball, and anyone training sustained visual-motor coordination.</p>
-                  </div>
-                  <div className="p-4 rounded-xl border border-gray-800 bg-white/[0.02]">
-                    <div className="flex items-center gap-2.5 mb-2">
-                      <div className="w-7 h-7 rounded-lg bg-emerald-600 flex items-center justify-center"><TrendingUp className="w-3.5 h-3.5 text-white" /></div>
-                      <h4 className="text-xs font-bold text-white">Skills Improved</h4>
+                    <div className="p-4 rounded-xl border border-gray-800 bg-white/[0.02]">
+                      <div className="flex items-center gap-2.5 mb-2">
+                        <div className="w-7 h-7 rounded-lg bg-emerald-600 flex items-center justify-center"><TrendingUp className="w-3.5 h-3.5 text-white" /></div>
+                        <h4 className="text-xs font-bold text-white">Skills Improved</h4>
+                      </div>
+                      <p className="text-xs text-gray-300 leading-relaxed">Smooth pursuit eye movement, continuous cursor tracking, velocity prediction, and sustained visual attention.</p>
                     </div>
-                    <p className="text-xs text-gray-300 leading-relaxed">Smooth pursuit eye movement, continuous cursor tracking, velocity prediction, and sustained visual attention.</p>
-                  </div>
-                  <div className="p-4 rounded-xl border border-gray-800 bg-white/[0.02]">
-                    <div className="flex items-center gap-2.5 mb-2">
-                      <div className="w-7 h-7 rounded-lg bg-purple-600 flex items-center justify-center"><Zap className="w-3.5 h-3.5 text-white" /></div>
-                      <h4 className="text-xs font-bold text-white">Tracking Tip</h4>
+                    <div className="p-4 rounded-xl border border-gray-800 bg-white/[0.02]">
+                      <div className="flex items-center gap-2.5 mb-2">
+                        <div className="w-7 h-7 rounded-lg bg-purple-600 flex items-center justify-center"><Zap className="w-3.5 h-3.5 text-white" /></div>
+                        <h4 className="text-xs font-bold text-white">Tracking Tip</h4>
+                      </div>
+                      <p className="text-xs text-gray-300 leading-relaxed">Anticipate the orb&apos;s next direction rather than chasing its current position — it changes speed and heading without warning.</p>
                     </div>
-                    <p className="text-xs text-gray-300 leading-relaxed">Anticipate the orb&apos;s next direction rather than chasing its current position — it changes speed and heading without warning.</p>
                   </div>
                 </div>
-              </div>
-            </DrillAccordion>
+              </DrillAccordion>
+            )}
           </div>
         )}
 

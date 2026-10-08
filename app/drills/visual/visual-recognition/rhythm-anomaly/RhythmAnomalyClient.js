@@ -18,6 +18,7 @@ import useUnexpectedExitGuard from '../../../../../lib/useUnexpectedExitGuard';
 import DrillFooter from '../../../../../components/drill/DrillFooter';
 import DrillCountdown from '../../../../../components/drill/DrillCountdown';
 import DrillAccordion from '../../../../../components/drill/DrillAccordion';
+import { useTranslation } from '@/lib/i18n/useTranslation';
 import DrillFlashOverlay from '../../../../../components/drill/DrillFlashOverlay';
 import DrillRuleItem from '../../../../../components/drill/DrillRuleItem';
 import FpsStartCard from '../../../../../components/drill/FpsStartCard';
@@ -82,6 +83,7 @@ class GameErrorBoundary extends React.Component {
 // MAIN COMPONENT
 // ==========================================
 export default function RhythmAnomalyClient({ copy } = {}) {
+  const { locale } = useTranslation();
   const [gameState, setGameState] = useState('start'); // 'start' | 'countdown' | 'playing' | 'gameOver'
   const [isFullscreen, setIsFullscreen] = useState(false);
   useImmersiveMode(isFullscreen); // locks the page behind while the drill fills the screen
@@ -801,51 +803,53 @@ export default function RhythmAnomalyClient({ copy } = {}) {
               </div>
             </DrillAccordion>
 
-            <DrillAccordion
-              id="about"
-              title="About Rhythm Anomaly Pro"
-              isOpen={openAccordion === 'about'}
-              onToggle={() => setOpenAccordion(openAccordion === 'about' ? null : 'about')}
-            >
-              <div className="space-y-8">
-                <section>
-                  <h3 className="text-base font-bold text-white mb-2 flex items-center gap-2">
-                    <Brain className="w-4 h-4 text-purple-400" /> What Is Rhythm Anomaly Training?
-                  </h3>
-                  <p className="text-sm leading-relaxed mb-3">
-                    <strong>Rhythm Anomaly Training</strong> is a specialized visual temporal perception drill designed to test out-of-sync motion discrimination. The <strong>Rhythm Anomaly drill</strong> displays a 6x6 matrix of 36 pulsing cells, challenging your visual system to detect the single cell pulsing at a higher temporal frequency than the surrounding grid over a <strong>45-second session</strong>. Human sensitivity to flicker peaks somewhere around 10–20 Hz and falls away to nothing near 50–60 Hz, above which a flickering light simply looks steady (De Lange, 1958; Kelly, 1961). Judging whether two things pulse in phase is harder than detecting the flicker itself and breaks down at considerably lower rates, which is what this 6x6 matrix measures.
-                  </p>
-                  <p className="text-sm leading-relaxed">
-                    By practicing <strong>peripheral temporal discrimination</strong>, you improve your ability to spot micro-movements, flickers, and timing anomalies across wide visual fields.
-                  </p>
-                </section>
-
-                <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-                  <div className="p-4 rounded-xl border border-gray-800 bg-white/[0.02]">
-                    <div className="flex items-center gap-2.5 mb-2">
-                      <div className="w-7 h-7 rounded-lg bg-blue-600 flex items-center justify-center"><Users className="w-3.5 h-3.5 text-white" /></div>
-                      <h4 className="text-xs font-bold text-white">Who Should Use This?</h4>
+            {locale === 'en' && (
+              <DrillAccordion
+                id="about"
+                title="About Rhythm Anomaly Pro"
+                isOpen={openAccordion === 'about'}
+                onToggle={() => setOpenAccordion(openAccordion === 'about' ? null : 'about')}
+              >
+                <div className="space-y-8">
+                  <section>
+                    <h3 className="text-base font-bold text-white mb-2 flex items-center gap-2">
+                      <Brain className="w-4 h-4 text-purple-400" /> What Is Rhythm Anomaly Training?
+                    </h3>
+                    <p className="text-sm leading-relaxed mb-3">
+                      <strong>Rhythm Anomaly Training</strong> is a specialized visual temporal perception drill designed to test out-of-sync motion discrimination. The <strong>Rhythm Anomaly drill</strong> displays a 6x6 matrix of 36 pulsing cells, challenging your visual system to detect the single cell pulsing at a higher temporal frequency than the surrounding grid over a <strong>45-second session</strong>. Human sensitivity to flicker peaks somewhere around 10–20 Hz and falls away to nothing near 50–60 Hz, above which a flickering light simply looks steady (De Lange, 1958; Kelly, 1961). Judging whether two things pulse in phase is harder than detecting the flicker itself and breaks down at considerably lower rates, which is what this 6x6 matrix measures.
+                    </p>
+                    <p className="text-sm leading-relaxed">
+                      By practicing <strong>peripheral temporal discrimination</strong>, you improve your ability to spot micro-movements, flickers, and timing anomalies across wide visual fields.
+                    </p>
+                  </section>
+  
+                  <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                    <div className="p-4 rounded-xl border border-gray-800 bg-white/[0.02]">
+                      <div className="flex items-center gap-2.5 mb-2">
+                        <div className="w-7 h-7 rounded-lg bg-blue-600 flex items-center justify-center"><Users className="w-3.5 h-3.5 text-white" /></div>
+                        <h4 className="text-xs font-bold text-white">Who Should Use This?</h4>
+                      </div>
+                      <p className="text-xs text-gray-300 leading-relaxed">FPS gamers spotting subtle peripheral movements, pilots & drivers improving motion anomaly detection, and visual athletes.</p>
                     </div>
-                    <p className="text-xs text-gray-300 leading-relaxed">FPS gamers spotting subtle peripheral movements, pilots & drivers improving motion anomaly detection, and visual athletes.</p>
-                  </div>
-                  <div className="p-4 rounded-xl border border-gray-800 bg-white/[0.02]">
-                    <div className="flex items-center gap-2.5 mb-2">
-                      <div className="w-7 h-7 rounded-lg bg-purple-600 flex items-center justify-center"><TrendingUp className="w-3.5 h-3.5 text-white" /></div>
-                      <h4 className="text-xs font-bold text-white">Skills Improved</h4>
+                    <div className="p-4 rounded-xl border border-gray-800 bg-white/[0.02]">
+                      <div className="flex items-center gap-2.5 mb-2">
+                        <div className="w-7 h-7 rounded-lg bg-purple-600 flex items-center justify-center"><TrendingUp className="w-3.5 h-3.5 text-white" /></div>
+                        <h4 className="text-xs font-bold text-white">Skills Improved</h4>
+                      </div>
+                      <p className="text-xs text-gray-300 leading-relaxed">Visual temporal discrimination, peripheral motion perception, micro-flicker detection, and visual attention stamina.</p>
                     </div>
-                    <p className="text-xs text-gray-300 leading-relaxed">Visual temporal discrimination, peripheral motion perception, micro-flicker detection, and visual attention stamina.</p>
-                  </div>
-                  <div className="p-4 rounded-xl border border-gray-800 bg-white/[0.02]">
-                    <div className="flex items-center gap-2.5 mb-2">
-                      <div className="w-7 h-7 rounded-lg bg-indigo-600 flex items-center justify-center"><Zap className="w-3.5 h-3.5 text-white" /></div>
-                      <h4 className="text-xs font-bold text-white">Soft-Focus Technique</h4>
+                    <div className="p-4 rounded-xl border border-gray-800 bg-white/[0.02]">
+                      <div className="flex items-center gap-2.5 mb-2">
+                        <div className="w-7 h-7 rounded-lg bg-indigo-600 flex items-center justify-center"><Zap className="w-3.5 h-3.5 text-white" /></div>
+                        <h4 className="text-xs font-bold text-white">Soft-Focus Technique</h4>
+                      </div>
+                      <p className="text-xs text-gray-300 leading-relaxed">Avoid hard-focusing on individual cells. Soft-focus your eyes over the entire grid so temporal anomalies jump out automatically.</p>
                     </div>
-                    <p className="text-xs text-gray-300 leading-relaxed">Avoid hard-focusing on individual cells. Soft-focus your eyes over the entire grid so temporal anomalies jump out automatically.</p>
                   </div>
+  
                 </div>
-
-              </div>
-            </DrillAccordion>
+              </DrillAccordion>
+            )}
           </div>
         )}
 

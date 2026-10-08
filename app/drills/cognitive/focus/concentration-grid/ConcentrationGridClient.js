@@ -15,6 +15,7 @@ import useDrillFlash from '../../../../../lib/useDrillFlash';
 import useUnexpectedExitGuard from '../../../../../lib/useUnexpectedExitGuard';
 import DrillCountdown from '../../../../../components/drill/DrillCountdown';
 import DrillAccordion from '../../../../../components/drill/DrillAccordion';
+import { useTranslation } from '@/lib/i18n/useTranslation';
 import DrillFlashOverlay from '../../../../../components/drill/DrillFlashOverlay';
 import FpsStartCard from '../../../../../components/drill/FpsStartCard';
 import generateShareCard, { shareScoreCard } from '../../../../../components/ShareScoreCard';
@@ -81,6 +82,7 @@ Because the session runs on a single fixed 45-second clock with no time bonuses 
 // MAIN COMPONENT
 // ============================================================
 export default function ConcentrationGridClient({ copy = null }) {
+  const { locale } = useTranslation();
   const [phase, setPhase] = useState('start'); // 'start' | 'countdown' | 'playing' | 'ended'
   const [soundEnabled, setSoundEnabled] = useState(true);
   const [flashEnabled, setFlashEnabled] = useState(true);
@@ -644,7 +646,7 @@ export default function ConcentrationGridClient({ copy = null }) {
                 <p className="text-sm leading-relaxed text-gray-300">
                   {copy?.aboutLead || "The Schulte table is a psychodiagnostic visual search grid designed to widen the functional peripheral field and reduce fixation latency during sequential scanning (Lu et al., 2022; Rayner, 1998). This expanding grid drill trains rapid eye movements (saccades) and selective attention to locate numerical targets under progressive visual crowding (Treisman & Gelade, 1980; Wolfe, 2007), training visual search speed, broad peripheral span, and sustained focus stamina under time pressure."}
                 </p>
-                {(copy?.aboutText ? copy.aboutText.split('\n\n') : ABOUT_TEXT.split('\n\n')).map((para, i) => (
+                {(copy?.aboutText ? copy.aboutText.split('\n\n') : (locale === 'en' ? ABOUT_TEXT : '').split('\n\n').filter(Boolean)).map((para, i) => (
                   <p key={i} className="text-sm leading-relaxed text-gray-300">{para}</p>
                 ))}
               </div>

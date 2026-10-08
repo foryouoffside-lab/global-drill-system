@@ -2,6 +2,7 @@
 import { isIdleFrameSkippable } from '@/lib/performance';
 
 import React, { useState, useEffect, useRef, useCallback } from 'react';
+import { useTranslation } from '@/lib/i18n/useTranslation';
 import Link from 'next/link';
 
 import {
@@ -120,6 +121,7 @@ const RELATED_DRILLS = [
 ];
 
 export default function RecoilControlClient({ copy = null }) {
+  const { locale } = useTranslation();
   const [gameState, setGameState] = useState('start'); // 'start' | 'countdown' | 'playing' | 'gameOver'
   const [isFullscreen, setIsFullscreen] = useState(false);
   useImmersiveMode(isFullscreen); // locks the page behind while the drill fills the screen
@@ -1010,16 +1012,16 @@ export default function RecoilControlClient({ copy = null }) {
                   <h3 className="text-sm font-bold text-white mb-2 flex items-center gap-2">
                     <Crosshair className="w-4 h-4 text-emerald-400" /> {copy?.whyMattersTitle || "Why Recoil Control Matters"}
                   </h3>
-                  <p className="text-sm leading-relaxed text-gray-300 mb-3">
+                  {(copy?.whyMattersLead || locale === 'en') && <p className="text-sm leading-relaxed text-gray-300 mb-3">
                     {copy?.whyMattersLead || "Recoil control is a learned open-loop motor program: the spray pattern is fixed, so you can run the counter-movement without waiting to see where the bullets land. Motor output gets more variable as a movement gets faster and more forceful (Schmidt et al., 1979), which is why a smooth pull-down repeats better than a hard one."}
-                  </p>
-                  {(copy?.aboutIntro || ABOUT_INTRO).map((para, i, arr) => (
+                  </p>}
+                  {(copy?.aboutIntro || (locale === 'en' ? ABOUT_INTRO : [])).map((para, i, arr) => (
                     <p key={i} className={`text-sm leading-relaxed text-gray-300 ${i < arr.length - 1 ? "mb-3" : ""}`}>{para}</p>
                   ))}
                 </section>
 
                 <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-                  {(copy?.aboutCards || ABOUT_CARDS).map((card, i) => (
+                  {(copy?.aboutCards || (locale === 'en' ? ABOUT_CARDS : [])).map((card, i) => (
                     <div key={i} className="p-4 rounded-xl border border-gray-800 bg-white/[0.02]">
                       <div className="flex items-center gap-2.5 mb-2">
                         <div className={`w-7 h-7 rounded-lg ${card.iconBg || 'bg-emerald-600'} flex items-center justify-center`}>
@@ -1032,7 +1034,7 @@ export default function RecoilControlClient({ copy = null }) {
                   ))}
                 </div>
 
-                {(copy?.aboutSections || ABOUT_SECTIONS).map((section, i) => (
+                {(copy?.aboutSections || (locale === 'en' ? ABOUT_SECTIONS : [])).map((section, i) => (
                   <section key={i}>
                     <h3 className="text-sm font-bold text-white mb-2 flex items-center gap-2">
                       {section.icon ? <section.icon className="w-4 h-4 text-emerald-400" /> : <Eye className="w-4 h-4 text-emerald-400" />} {section.title}

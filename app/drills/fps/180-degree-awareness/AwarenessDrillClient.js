@@ -2,6 +2,7 @@
 import { isIdleFrameSkippable } from '@/lib/performance';
 
 import React, { useState, useEffect, useRef, useCallback } from 'react';
+import { useTranslation } from '@/lib/i18n/useTranslation';
 import Link from 'next/link';
 
 import {
@@ -96,6 +97,7 @@ const RELATED_DRILLS = [
 // MAIN COMPONENT
 // ============================================================
 export default function AwarenessDrillClient({ copy = null }) {
+  const { locale } = useTranslation();
   const [gameState, setGameState] = useState('start'); // 'start' | 'countdown' | 'playing' | 'gameOver'
   const [isFullscreen, setIsFullscreen] = useState(false);
   useImmersiveMode(isFullscreen); // locks the page behind while the drill fills the screen
@@ -915,6 +917,7 @@ export default function AwarenessDrillClient({ copy = null }) {
                   </p>
                 </section>
 
+                {locale === 'en' && (
                 <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
                   <div className="p-4 rounded-xl border border-gray-800 bg-white/[0.02]">
                     <div className="flex items-center gap-2.5 mb-2">
@@ -938,6 +941,7 @@ export default function AwarenessDrillClient({ copy = null }) {
                     <p className="text-xs text-gray-300 leading-relaxed">Chain rapid full-turn snaps onto edge-spawning targets to build the muscle memory for clean blind flicks under pressure.</p>
                   </div>
                 </div>
+                )}
               </div>
             </DrillAccordion>
           </div>

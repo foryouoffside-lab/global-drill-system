@@ -23,6 +23,7 @@ import DrillFlashOverlay from '../../../../../components/drill/DrillFlashOverlay
 import DrillRuleItem from '../../../../../components/drill/DrillRuleItem';
 import FpsStartCard from '../../../../../components/drill/FpsStartCard';
 import useImmersiveMode from '@/lib/useImmersiveMode';
+import { useTranslation } from '@/lib/i18n/useTranslation';
 
 const DRILL_DURATION = 60;
 const POINTS_PER_HIT = 150;
@@ -46,6 +47,7 @@ const saveData = (data) => {
 };
 
 export default function PathTracingClient({ copy = null }) {
+  const { locale } = useTranslation();
   const [gameState, setGameState] = useState('start'); // 'start' | 'countdown' | 'playing' | 'gameOver'
   const [isFullscreen, setIsFullscreen] = useState(false);
   useImmersiveMode(isFullscreen); // locks the page behind while the drill fills the screen
@@ -769,51 +771,53 @@ export default function PathTracingClient({ copy = null }) {
           </DrillAccordion>
 
           {/* ACCORDION 2: ABOUT PATH TRACING */}
-          <DrillAccordion
-            id="about"
-            title={copy?.aboutTitle || "About Path Tracing Memory Test"}
-            isOpen={openAccordion === 'about'}
-            onToggle={() => setOpenAccordion(openAccordion === 'about' ? null : 'about')}
-          >
-            <div className="space-y-8">
-              <section>
-                <h3 className="text-base font-bold text-white mb-2 flex items-center gap-2">
-                  <Brain className="w-4 h-4 text-amber-400" /> What Is Path Tracing Training?
-                </h3>
-                <p className="text-sm leading-relaxed mb-3">
-                  <strong>Path Tracing Training</strong> is an advanced spatial sequence memory drill designed to measure route tracing capacity. The <strong>Path Tracing drill</strong> demonstrates animated step paths on 3x3 to 7x7 matrices, testing your ability to lock in and retrace directional routes in exact order. The Corsi block-tapping task, the standard measure of spatial span, puts most adults around five to seven steps (Milner, 1971; Corsi, 1972), and it draws on a different store from verbal digit span (Logie, 1995).
-                </p>
-                <p className="text-sm leading-relaxed">
-                  By practicing <strong>sequential spatial chunking</strong>, you expand your visual short-term memory buffer and increase your route navigation speed under time pressure.
-                </p>
-              </section>
-
-              <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-                <div className="p-4 rounded-xl border border-gray-800 bg-white/[0.02]">
-                  <div className="flex items-center gap-2.5 mb-2">
-                    <div className="w-7 h-7 rounded-lg bg-blue-600 flex items-center justify-center"><Users className="w-3.5 h-3.5 text-white" /></div>
-                    <h4 className="text-xs font-bold text-white">Who Should Use This?</h4>
+          {locale === 'en' && (
+            <DrillAccordion
+              id="about"
+              title={copy?.aboutTitle || "About Path Tracing Memory Test"}
+              isOpen={openAccordion === 'about'}
+              onToggle={() => setOpenAccordion(openAccordion === 'about' ? null : 'about')}
+            >
+              <div className="space-y-8">
+                <section>
+                  <h3 className="text-base font-bold text-white mb-2 flex items-center gap-2">
+                    <Brain className="w-4 h-4 text-amber-400" /> What Is Path Tracing Training?
+                  </h3>
+                  <p className="text-sm leading-relaxed mb-3">
+                    <strong>Path Tracing Training</strong> is an advanced spatial sequence memory drill designed to measure route tracing capacity. The <strong>Path Tracing drill</strong> demonstrates animated step paths on 3x3 to 7x7 matrices, testing your ability to lock in and retrace directional routes in exact order. The Corsi block-tapping task, the standard measure of spatial span, puts most adults around five to seven steps (Milner, 1971; Corsi, 1972), and it draws on a different store from verbal digit span (Logie, 1995).
+                  </p>
+                  <p className="text-sm leading-relaxed">
+                    By practicing <strong>sequential spatial chunking</strong>, you expand your visual short-term memory buffer and increase your route navigation speed under time pressure.
+                  </p>
+                </section>
+  
+                <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                  <div className="p-4 rounded-xl border border-gray-800 bg-white/[0.02]">
+                    <div className="flex items-center gap-2.5 mb-2">
+                      <div className="w-7 h-7 rounded-lg bg-blue-600 flex items-center justify-center"><Users className="w-3.5 h-3.5 text-white" /></div>
+                      <h4 className="text-xs font-bold text-white">Who Should Use This?</h4>
+                    </div>
+                    <p className="text-xs text-gray-300 leading-relaxed">Strategy & MOBA gamers improving map route tracing, STEM students strengthening spatial navigation, and professionals enhancing sequential memory.</p>
                   </div>
-                  <p className="text-xs text-gray-300 leading-relaxed">Strategy & MOBA gamers improving map route tracing, STEM students strengthening spatial navigation, and professionals enhancing sequential memory.</p>
-                </div>
-                <div className="p-4 rounded-xl border border-gray-800 bg-white/[0.02]">
-                  <div className="flex items-center gap-2.5 mb-2">
-                    <div className="w-7 h-7 rounded-lg bg-amber-600 flex items-center justify-center"><TrendingUp className="w-3.5 h-3.5 text-white" /></div>
-                    <h4 className="text-xs font-bold text-white">Skills Improved</h4>
+                  <div className="p-4 rounded-xl border border-gray-800 bg-white/[0.02]">
+                    <div className="flex items-center gap-2.5 mb-2">
+                      <div className="w-7 h-7 rounded-lg bg-amber-600 flex items-center justify-center"><TrendingUp className="w-3.5 h-3.5 text-white" /></div>
+                      <h4 className="text-xs font-bold text-white">Skills Improved</h4>
+                    </div>
+                    <p className="text-xs text-gray-300 leading-relaxed">Spatial path memory, route tracing, sequential visual memory, and directional spatial navigation.</p>
                   </div>
-                  <p className="text-xs text-gray-300 leading-relaxed">Spatial path memory, route tracing, sequential visual memory, and directional spatial navigation.</p>
-                </div>
-                <div className="p-4 rounded-xl border border-gray-800 bg-white/[0.02]">
-                  <div className="flex items-center gap-2.5 mb-2">
-                    <div className="w-7 h-7 rounded-lg bg-purple-600 flex items-center justify-center"><Zap className="w-3.5 h-3.5 text-white" /></div>
-                    <h4 className="text-xs font-bold text-white">Path Chunking</h4>
+                  <div className="p-4 rounded-xl border border-gray-800 bg-white/[0.02]">
+                    <div className="flex items-center gap-2.5 mb-2">
+                      <div className="w-7 h-7 rounded-lg bg-purple-600 flex items-center justify-center"><Zap className="w-3.5 h-3.5 text-white" /></div>
+                      <h4 className="text-xs font-bold text-white">Path Chunking</h4>
+                    </div>
+                    <p className="text-xs text-gray-300 leading-relaxed">Group individual dot steps into directional vectors (e.g. Up-Right-Down) to memorize longer path lengths effortlessly.</p>
                   </div>
-                  <p className="text-xs text-gray-300 leading-relaxed">Group individual dot steps into directional vectors (e.g. Up-Right-Down) to memorize longer path lengths effortlessly.</p>
                 </div>
+  
               </div>
-
-            </div>
-          </DrillAccordion>
+            </DrillAccordion>
+          )}
           </div>
         )}
 

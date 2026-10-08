@@ -5,6 +5,7 @@ import Link from 'next/link';
 import { Play, RefreshCw, Timer, Share2, LogOut, Check, Sun, Moon, Volume2, VolumeX, Target, Trophy, TrendingUp, Zap } from 'lucide-react';
 
 import DrillAccordion from '../../../../components/drill/DrillAccordion';
+import { useTranslation } from '@/lib/i18n/useTranslation';
 import DrillCountdown from '../../../../components/drill/DrillCountdown';
 import ZigZagPathPursuitStartCard from '../../../../components/drill/ZigZagPathPursuitStartCard';
 import { drillAudio } from '../../../../lib/drillAudio';
@@ -41,6 +42,7 @@ const saveData = (data: { totalSessions: number }) => {
 };
 
 export default function StaircaseStepClient({ copy }: { copy?: { title?: string; subtitle?: string; description?: string } } = {}) {
+  const { locale } = useTranslation();
   const [gameState, setGameState] = useState<'start' | 'countdown' | 'playing' | 'gameOver'>('start');
   const [isFullscreen, setIsFullscreen] = useState<boolean>(false);
   useImmersiveMode(isFullscreen); // locks the page behind while the drill fills the screen
@@ -700,9 +702,11 @@ export default function StaircaseStepClient({ copy }: { copy?: { title?: string;
                 ))}
               </div>
             </DrillAccordion>
-            <DrillAccordion id="about" title="About Staircase Step" isOpen={openAccordion === 'about'} onToggle={() => setOpenAccordion(openAccordion === 'about' ? null : 'about')}>
-              <p className="text-sm text-slate-300 leading-relaxed">{copy?.description || "Staircase step tracking conditions vertical smooth pursuit and elevation gaze stability by guiding observers along a multi-segment vertical zig-zag polyline. By training acute direction reversals and diagonal velocity shifts without head movement, this drill strengthens specialized midbrain ocular motor pathways (Rottach et al., 1996; Ke et al., 2013). Vertical pursuit is measurably worse than horizontal in the same observers (Rottach et al., 1996), and pursuit takes roughly 100 ms to begin after a target starts moving (Lisberger, 2010)."}</p>
-            </DrillAccordion>
+            {(locale === 'en' || copy?.description) && (
+              <DrillAccordion id="about" title="About Staircase Step" isOpen={openAccordion === 'about'} onToggle={() => setOpenAccordion(openAccordion === 'about' ? null : 'about')}>
+                <p className="text-sm text-slate-300 leading-relaxed">{copy?.description || "Staircase step tracking conditions vertical smooth pursuit and elevation gaze stability by guiding observers along a multi-segment vertical zig-zag polyline. By training acute direction reversals and diagonal velocity shifts without head movement, this drill strengthens specialized midbrain ocular motor pathways (Rottach et al., 1996; Ke et al., 2013). Vertical pursuit is measurably worse than horizontal in the same observers (Rottach et al., 1996), and pursuit takes roughly 100 ms to begin after a target starts moving (Lisberger, 2010)."}</p>
+              </DrillAccordion>
+            )}
           </div>
         )}
 

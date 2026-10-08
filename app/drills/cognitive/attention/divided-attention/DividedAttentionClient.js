@@ -16,6 +16,7 @@ import useDrillFlash from '../../../../../lib/useDrillFlash';
 import useUnexpectedExitGuard from '../../../../../lib/useUnexpectedExitGuard';
 import DrillCountdown from '../../../../../components/drill/DrillCountdown';
 import DrillAccordion from '../../../../../components/drill/DrillAccordion';
+import { useTranslation } from '@/lib/i18n/useTranslation';
 import DrillFlashOverlay from '../../../../../components/drill/DrillFlashOverlay';
 import FpsStartCard from '../../../../../components/drill/FpsStartCard';
 import DrillResultCard from '../../../../../components/drill/DrillResultCard';
@@ -94,6 +95,7 @@ In fast-paced tactical environments (such as esports, aviation, high-frequency t
 By scaling target speeds and shrinking target dimensions as your score rises, the drill pushes prefrontal executive control networks to their absolute limit.`;
 
 export default function DividedAttentionClient({ copy } = {}) {
+  const { locale } = useTranslation();
   const [gameState, setGameState] = useState('start'); // 'start' | 'countdown' | 'playing' | 'gameOver'
   const [isFullscreen, setIsFullscreen] = useState(false);
   useImmersiveMode(isFullscreen); // locks the page behind while the drill fills the screen
@@ -848,7 +850,7 @@ export default function DividedAttentionClient({ copy } = {}) {
                 <p className="text-sm leading-relaxed text-gray-300">
                   {copy?.aboutLead || 'Test your split focus and dual-task processing capacity. When two concurrent tasks compete for central executive resources, performance suffers from psychological refractory bottlenecks and cross-talk interference (Pashler, 1994; Wickens, 2002).'}
                 </p>
-                {ABOUT_TEXT.split('\n\n').map((para, i) => (
+                {(copy?.aboutText || (locale === 'en' ? ABOUT_TEXT : '')).split('\n\n').filter(Boolean).map((para, i) => (
                   <p key={i} className="text-sm leading-relaxed text-gray-300">{para}</p>
                 ))}
               </div>

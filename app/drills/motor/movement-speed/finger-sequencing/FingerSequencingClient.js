@@ -24,6 +24,7 @@ import FpsStartCard from '@/components/drill/FpsStartCard';
 import DrillResultCard from '@/components/drill/DrillResultCard';
 import useImmersiveMode from '@/lib/useImmersiveMode';
 import useUnexpectedExitGuard from '@/lib/useUnexpectedExitGuard';
+import { useTranslation } from '@/lib/i18n/useTranslation';
 
 // ============================================================
 // TUNING CONSTANTS
@@ -83,6 +84,7 @@ const RULES_ITEMS = [
 ];
 
 export default function FingerSequencingClient({ copy } = {}) {
+  const { locale } = useTranslation();
   const [gameState, setGameState] = useState('start'); // 'start' | 'countdown' | 'playing' | 'gameOver'
   const [isFullscreen, setIsFullscreen] = useState(false);
   useImmersiveMode(isFullscreen); // locks the page behind while the drill fills the screen
@@ -1011,22 +1013,24 @@ export default function FingerSequencingClient({ copy } = {}) {
               </div>
             </DrillAccordion>
 
-            <DrillAccordion
-              id="about"
-              title={copy?.aboutTitle || "About Sequence Aim Trainer"}
-              isOpen={openAccordion === 'about'}
-              onToggle={() => setOpenAccordion(openAccordion === 'about' ? null : 'about')}
-            >
-              <div className="flex items-start gap-2 mb-3">
-                <Info className="w-4 h-4 text-emerald-400 mt-0.5 shrink-0" />
+            {locale === 'en' && (
+              <DrillAccordion
+                id="about"
+                title={copy?.aboutTitle || "About Sequence Aim Trainer"}
+                isOpen={openAccordion === 'about'}
+                onToggle={() => setOpenAccordion(openAccordion === 'about' ? null : 'about')}
+              >
+                <div className="flex items-start gap-2 mb-3">
+                  <Info className="w-4 h-4 text-emerald-400 mt-0.5 shrink-0" />
+                  <p className="text-sm leading-relaxed text-gray-300">
+                    {copy?.aboutP1 || "Sequential target switching means clicking a set of targets in a required order rather than whichever one is easiest to reach. An ordered sequence like that runs as a single pre-planned motor program instead of one fresh decision per target (Lashley, 1951; Keele, 1968)."}
+                  </p>
+                </div>
                 <p className="text-sm leading-relaxed text-gray-300">
-                  {copy?.aboutP1 || "Sequential target switching means clicking a set of targets in a required order rather than whichever one is easiest to reach. An ordered sequence like that runs as a single pre-planned motor program instead of one fresh decision per target (Lashley, 1951; Keele, 1968)."}
+                  {copy?.aboutP2 || "The time is spent in the transitions between targets, not in the clicks — each transition is itself a Fitts's Law movement, timed by the log of the gap between two targets divided by their width (Fitts, 1954)."}
                 </p>
-              </div>
-              <p className="text-sm leading-relaxed text-gray-300">
-                {copy?.aboutP2 || "The time is spent in the transitions between targets, not in the clicks — each transition is itself a Fitts's Law movement, timed by the log of the gap between two targets divided by their width (Fitts, 1954)."}
-              </p>
-            </DrillAccordion>
+              </DrillAccordion>
+            )}
           </div>
         )}
 
