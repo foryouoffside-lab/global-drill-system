@@ -13,11 +13,11 @@
 | /ko/drills/fps/angle-hold-trainer | done | 1db38e3b | docs/seo/research/ko/angle-hold-trainer.md | 프리에이밍 연습 primary, native About intro, remove invented rank benchmarks |
 | /ko/drills/fps/strafe-tracking | done | f7d8f882 | docs/seo/research/ko/strafe-tracking.md | 트래킹 에임 연습 primary, remove invented rank tiers and raw-input claims |
 | /ko/drills/fps/target-acquisition | done | 9f52a98f | docs/seo/research/ko/target-acquisition.md | remove Valorant-rank benchmark mapping and overclaims |
-| /ko/drills/motor-hub | done | 658c25e7 | docs/seo/research/ko/motor-hub.md | measured CPS/aim/keyboard head terms, remove sub-ms claims, default OG image |
-| /ko/drills/memory-hub | done | 105311f1 | docs/seo/research/ko/memory-hub.md | 기억력 테스트·기억력 게임 title/H1, default OG image |
-| /ko/drills/physical-hub | done | 1747be94 | docs/seo/research/ko/physical-hub.md | 순발력 테스트 in title, rewrite unsupported FAQ claims, default OG image |
-| /ko/drills/reaction-speed-hub | done | efdaa763 | docs/seo/research/ko/reaction-speed-hub.md | default OG image, research log |
-| /ko/drills/visual-hub | done | 1267c045 | docs/seo/research/ko/visual-hub.md | 동체시력 테스트 in title, rewrite unsupported FAQ claims, default OG image |
+| /ko/drills/motor | done | 658c25e7 | docs/seo/research/ko/motor-hub.md | measured CPS/aim/keyboard head terms, remove sub-ms claims, default OG image |
+| /ko/drills/memory | done | 105311f1 | docs/seo/research/ko/memory-hub.md | 기억력 테스트·기억력 게임 title/H1, default OG image |
+| /ko/drills/physical | done | 1747be94 | docs/seo/research/ko/physical-hub.md | 순발력 테스트 in title, rewrite unsupported FAQ claims, default OG image |
+| /ko/drills/reaction-speed | done | efdaa763 | docs/seo/research/ko/reaction-speed-hub.md | default OG image, research log |
+| /ko/drills/visual | done | 1267c045 | docs/seo/research/ko/visual-hub.md | 동체시력 테스트 in title, rewrite unsupported FAQ claims, default OG image |
 | /ko/drills/motor/hand-eye-coordination/aim-trainer | done | 197808fe | docs/seo/research/ko/aim-trainer.md | relabel invented rank tiers as reference bands, soften claims |
 | /ko/drills/motor/movement-speed/keyboard-recognition | done | 8d73f526 | docs/seo/research/ko/keyboard-recognition.md | remove invented percentile/rank claims, hedge FAQ |
 | /ko/drills/motor/precision-control/steady-hand | done | c31326c4 | docs/seo/research/ko/steady-hand.md | 마우스 정확도 테스트 title, native subtitle, remove medical-sounding tiers and percentiles |
