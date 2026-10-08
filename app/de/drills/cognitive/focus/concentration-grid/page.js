@@ -335,6 +335,11 @@ export default function ConcentrationGridPageDe() {
         copy={{
           h1Keyword: "Schulte-Tabelle",
           h1Suffix: " – Konzentrationsgitter Online",
+          subtitle: "Zahlen der Reihe nach finden: schneller visuell suchen und die Aufmerksamkeit fokussieren",
+          startTitle: "Schulte-Tabelle",
+          startSubtitle: "Zahlen der Reihe nach finden • wachsende Gitter",
+          startButtonText: "Training starten",
+          getReady: "BEREIT MACHEN",
           caption: "Finde fortlaufende Zahlen auf expandierenden Schulte-Gittern. Trainiere peripheres Sehen, Blickspanne und visuelle Suchgeschwindigkeit.",
           statScore: "Punkte",
           statTime: "Restzeit",

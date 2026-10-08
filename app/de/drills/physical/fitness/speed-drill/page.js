@@ -57,11 +57,11 @@ export const metadata = {
 };
 
 Object.assign(metadata, {
-  title: 'Reaktionstest | Klickgeschwindigkeit & Zieltrainer',
-  description: 'Kostenloser Reaktionstest im Browser: Klicken Sie schrumpfende Ziele schnell und trainieren Sie Reaktionszeit, Zielerfassung und Klickgeschwindigkeit.',
+  title: 'Klickgeschwindigkeit trainieren | Schrumpfende Ziele',
+  description: 'Kostenloses Klicktraining im Browser: Klicke schrumpfende Ziele schnell und trainiere Reaktionszeit, Zielerfassung und Klickgeschwindigkeit.',
   keywords: ['Reaktionstest', 'Reaktionszeit Test', 'Klickgeschwindigkeitstest', 'Klicks pro Sekunde Test', 'Ziel-Trainer', 'Reflex Test', 'Maus Klicktest', 'Klickgenauigkeit', 'schnelle Klicks', 'Reaktionsspiel'],
-  openGraph: { ...metadata.openGraph, title: 'Reaktionstest | Klickgeschwindigkeit & Zieltrainer', description: 'Kostenloser Reaktionstest im Browser: Klicken Sie schrumpfende Ziele schnell und trainieren Sie Reaktionszeit, Zielerfassung und Klickgeschwindigkeit.' },
-  twitter: { ...metadata.twitter, title: 'Reaktionstest | Klickgeschwindigkeit & Zieltrainer', description: 'Kostenloser Reaktionstest im Browser: Klicken Sie schrumpfende Ziele schnell und trainieren Sie Reaktionszeit, Zielerfassung und Klickgeschwindigkeit.' },
+  openGraph: { ...metadata.openGraph, title: 'Klickgeschwindigkeit trainieren | Schrumpfende Ziele', description: 'Kostenloses Klicktraining im Browser: Klicke schrumpfende Ziele schnell und trainiere Reaktionszeit, Zielerfassung und Klickgeschwindigkeit.' },
+  twitter: { ...metadata.twitter, title: 'Klickgeschwindigkeit trainieren | Schrumpfende Ziele', description: 'Kostenloses Klicktraining im Browser: Klicke schrumpfende Ziele schnell und trainiere Reaktionszeit, Zielerfassung und Klickgeschwindigkeit.' },
 });
 
 const breadcrumbSchema = {
@@ -375,7 +375,7 @@ export default function LocalizedSpeedDrillPageDe() {
       />
       <SpeedDrillClient
         copy={{
-          title: "Reaktionstest",
+          title: "Klickgeschwindigkeit trainieren",
           subtitle: "Schrumpfende Ziele schnell und präzise treffen",
           hudLabels: {
             score: "Punkte",

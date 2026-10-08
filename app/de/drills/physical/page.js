@@ -38,17 +38,17 @@ export const metadata = {
 };
 
 Object.assign(metadata, {
-  title: 'Reaktion & Agilität | Online-Drills | SkillDrills',
+  title: 'Reaktionstraining & Agilität trainieren | SkillDrills',
   description: '11 kostenlose Browser-Drills für Reaktionszeit, Fußarbeit, Gleichgewicht, Koordination und schnelle Zielentscheidungen.',
   keywords: ['Reaktionstest online', 'Agilitätstraining', 'Koordinationstraining', 'Gleichgewichtstraining', 'Fußarbeit Training', 'Reaktionsfähigkeit', 'Hand-Auge-Koordination', 'Ausweichspiel', 'Sporttraining online', 'kostenlose Fitnessübungen online'],
   openGraph: {
     ...metadata.openGraph,
-    title: 'Reaktion & Agilität | Online-Drills | SkillDrills',
+    title: 'Reaktionstraining & Agilität trainieren | SkillDrills',
     description: '11 kostenlose Browser-Drills für Reaktionszeit, Fußarbeit, Gleichgewicht und Koordination.',
   },
   twitter: {
     ...metadata.twitter,
-    title: 'Reaktion & Agilität | SkillDrills',
+    title: 'Reaktionstraining & Agilität trainieren | SkillDrills',
     description: 'Reaktionszeit, Agilität und Koordination mit 11 kostenlosen Browser-Drills trainieren.',
   },
   alternates: { ...metadata.alternates, languages: getAlternateLanguages('/drills/physical') },

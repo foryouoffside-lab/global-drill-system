@@ -234,7 +234,7 @@ const howToSchema = {
     {
       '@type': 'HowToStep',
       position: 4,
-      name: 'Durchschnitts-CPS und Peak analysieren',
+      name: 'Durchschnitt (CPS) und Peak analysieren',
       text: 'Prüfen Sie auf der Auswertungskarte Ihre durchschnittliche Klickrate (CPS), Spitzenbursts und Ermüdungsresistenz.',
       url: 'https://skilldrills.online/de/drills/motor/movement-speed/rapid-tapping#step-4'
     }
@@ -251,49 +251,49 @@ const guideProps = {
     ],
   },
   benchmark: {
-    title: 'Offizielle CPS-Rangliste & Perzentil-Tabelle',
-    description: 'Orientierungstabelle zur Einordnung eigener Ergebnisse. Einzelfinger-Werte basieren auf neuropsychologischen Normen (Halstead 1947; Todor & Kyprie 1980), fortgeschrittene Techniken auf Wettkampfdaten.',
-    columns: ['Rang-Stufe', 'Offizieller Titel', 'Durchschnitts-CPS', 'Spitzen-CPS (5s)', 'Klicktechnik', 'Einstufung'],
+    title: 'CPS-Richtwerte nach Technik',
+    description: 'Grobe Orientierung zur Einordnung eigener Ergebnisse, keine gemessene Bevölkerungsnorm. Einzelfinger-Werte stützen sich auf Finger-Tapping-Referenzwerte (Halstead 1947; Todor & Kyprie 1980); höhere Stufen sind Erfahrungswerte aus der Gaming-Community.',
+    columns: ['Stufe', 'Bezeichnung', 'Durchschnitt (CPS)', 'Spitze (5 s)', 'Technik', 'Einordnung'],
     rows: [
       {
-        tier: 'Tier 1',
-        rank: 'Apex Tapper',
+        tier: 'Stufe 1',
+        rank: 'Spitzenklasse',
         stat: '16.0+ CPS',
         level: '20.0+ CPS',
-        accuracy: 'Butterfly / Drag Clicking',
-        percentile: 'Top 0.1% Weltklasse',
+        accuracy: 'Butterfly- / Drag-Klicken',
+        percentile: 'Sehr selten',
       },
       {
-        tier: 'Tier 2',
-        rank: 'Pro Competitor',
+        tier: 'Stufe 2',
+        rank: 'Wettkampfniveau',
         stat: '12.0–15.9 CPS',
         level: '15.0–19.0 CPS',
-        accuracy: 'Jitter Clicking gemeistert',
-        percentile: 'Top 3% Fortgeschritten',
+        accuracy: 'Jitter-Klicken beherrscht',
+        percentile: 'Selten',
       },
       {
-        tier: 'Tier 3',
-        rank: 'Competitive Gamer',
+        tier: 'Stufe 3',
+        rank: 'Fortgeschritten',
         stat: '9.0–11.9 CPS',
         level: '11.0–14.0 CPS',
-        accuracy: 'Schneller Einzelfinger / Spannung',
-        percentile: 'Top 15% Stark',
+        accuracy: 'Schneller Einzelfinger mit Muskelspannung',
+        percentile: 'Überdurchschnittlich',
       },
       {
-        tier: 'Tier 4',
-        rank: 'Proficient Casual',
+        tier: 'Stufe 4',
+        rank: 'Solide Basis',
         stat: '6.0–8.9 CPS',
         level: '7.5–10.0 CPS',
         accuracy: 'Standard Einzelfinger',
-        percentile: 'Top 50% Durchschnitt',
+        percentile: 'Durchschnitt',
       },
       {
-        tier: 'Tier 5',
-        rank: 'Novice Tapper',
+        tier: 'Stufe 5',
+        rank: 'Einsteiger',
         stat: '< 6.0 CPS',
         level: '< 7.5 CPS',
         accuracy: 'Untrainierter Einzelfinger',
-        percentile: 'Basis 20% Einsteiger',
+        percentile: 'Untrainiert',
       },
     ],
   },
@@ -329,7 +329,8 @@ const guideProps = {
 };
 
 const deCopy = {
-  title: "CPS Test",
+  title: "CPS-Test",
+  subtitle: "Klickgeschwindigkeit messen und Klick-Ausdauer in 45 Sekunden trainieren",
   desc: "Ein CPS-Test misst, wie viele Klicks pro Sekunde Sie mit der Maustaste ausführen können. Normales Einzelfinger-Klicken erreicht typischerweise 5–7 Klicks pro Sekunde (Halstead Finger-Tapping-Norm: 50–55 Taps/10s). Höhere Werte basieren auf speziellen Techniken wie Jitter- oder Butterfly-Clicking.",
   score: "Punkte",
   timeLeft: "Verbleibende Zeit",
@@ -351,7 +352,7 @@ const deCopy = {
     { num: "1", text: "Schnelles Zielklicken", highlight: "Smaragdziel", result: "Klick vergrößert Radius & verhindert Schrumpfen" },
     { num: "2", text: "Punkte-Schwelle", highlight: "+1 Punkt pro 10 Klicks", result: "Erhöht die Gesamtsitzungspunktzahl" },
     { num: "3", text: "Dynamisches Schrumpfen", highlight: "Beschleunigt mit Punkten", result: "Fordert maximale Fingergeschwindigkeit" },
-    { num: "4", text: "Klicktechniken", highlight: "Jitter / Butterfly / Roh", result: "Maximiert die reine Klickrate" }
+    { num: "4", text: "Techniken", highlight: "Jitter / Butterfly / Roh", result: "Maximiert die reine Klickrate" }
   ],
 };
 

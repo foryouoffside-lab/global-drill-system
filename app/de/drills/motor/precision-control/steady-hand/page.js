@@ -10,8 +10,8 @@ import { pickSources } from '@/lib/drillSources';
 // ============================================================
 
 export const metadata = {
-  title: 'Maus-Präzisionstest | Ruhige Hand | SkillDrills',
-  description: 'Führe den Cursor durch einen enger werdenden Korridor und messe Feinmotorik, Spurtreue und ruhige Hand. Kostenlos im Browser.',
+  title: 'Ruhige Hand trainieren | Heißer Draht online | SkillDrills',
+  description: 'Ruhige Hand trainieren im Heißer-Draht-Spiel: Führe den Cursor durch einen engen Korridor und messe Feinmotorik und Spurtreue. Kostenlos im Browser.',
   keywords: [
     'Maus-Präzisionstest', 'Ruhige Hand Test', 'Cursor Präzision',
     'Maus Genauigkeit testen', 'Pfad folgen Maus', 'Feinmotorik Maus',
@@ -19,8 +19,8 @@ export const metadata = {
     'Maus Präzisionstraining', 'Cursor Kontrolle', 'Handzittern Maus',
   ],
   openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
-    title: 'Maus-Präzisionstest | Ruhige Hand | SkillDrills',
-    description: 'Führe den Cursor durch einen enger werdenden Korridor und messe Feinmotorik, Spurtreue und ruhige Hand. Kostenlos im Browser.',
+    title: 'Ruhige Hand trainieren | Heißer Draht online | SkillDrills',
+    description: 'Ruhige Hand trainieren im Heißer-Draht-Spiel: Führe den Cursor durch einen engen Korridor und messe Feinmotorik und Spurtreue. Kostenlos im Browser.',
     type: 'article',
     url: 'https://skilldrills.online/de/drills/motor/precision-control/steady-hand',
     siteName: 'SkillDrills',
@@ -28,8 +28,8 @@ export const metadata = {
   },
   twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: 'summary_large_image',
-    title: 'Maus-Präzisionstest | Ruhige Hand | SkillDrills',
-    description: 'Führe den Cursor durch einen enger werdenden Korridor und messe Feinmotorik, Spurtreue und ruhige Hand. Kostenlos im Browser.',
+    title: 'Ruhige Hand trainieren | Heißer Draht online | SkillDrills',
+    description: 'Ruhige Hand trainieren im Heißer-Draht-Spiel: Führe den Cursor durch einen engen Korridor und messe Feinmotorik und Spurtreue. Kostenlos im Browser.',
   },
   robots: { index: true, follow: true },
   alternates: {
@@ -307,8 +307,9 @@ const guideProps = {
 };
 
 const deCopy = {
-  h1Keyword: 'Maus-Präzisionstest',
-  h1Suffix: ' (Ruhige Hand)',
+  h1Keyword: 'Ruhige Hand trainieren',
+  h1Suffix: ' – Heißer Draht online',
+  subtitle: 'Cursor ohne Wandberührung durch enge Korridore führen und die Feinmotorik prüfen',
   caption: 'Das Heißer Draht Spiel misst deine feinmotorische Handruhe und Spurtreue: Führe den Cursor durch gewundene Kanäle, ohne die Begrenzungswand zu berühren. Geregelt durch das Accot-Zhai-Steuerungsgesetz (1997) und geschlossene visuelle Feedback-Korrekturen (Woodworth, 1899).',
   statLaps: 'Runden',
   statTime: 'Restzeit',

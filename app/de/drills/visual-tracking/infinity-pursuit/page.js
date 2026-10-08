@@ -15,7 +15,7 @@ import { pickSources } from '@/lib/drillSources';
 // ============================================================
 
 export const metadata = {
-  title: "Liegende Acht | Blickverfolgung | SkillDrills",
+  title: "Liegende Acht Augentraining | Blickverfolgung | SkillDrills",
   description: "Kostenlose Augenübung mit der liegenden Acht: übe Blickverfolgung, flüssige Augenfolge und das Überqueren der visuellen Mittellinie.",
   keywords: [
     "liegende acht augentraining",
@@ -32,7 +32,7 @@ export const metadata = {
     "sichtziel verfolgen übung"
   ],
   openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
-    title: "Liegende Acht | Blickverfolgung | SkillDrills",
+    title: "Liegende Acht Augentraining | Blickverfolgung | SkillDrills",
     description: "Kostenlose Augenübung mit der liegenden Acht: übe Blickverfolgung und das Überqueren der visuellen Mittellinie.",
     type: "website",
     url: "https://skilldrills.online/de/drills/visual-tracking/infinity-pursuit",

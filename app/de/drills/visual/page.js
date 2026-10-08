@@ -38,11 +38,11 @@ export const metadata = {
 };
 
 Object.assign(metadata, {
-  title: 'Dynamisches Sehen & visuelle Suche | SkillDrills',
+  title: 'Dynamisches Sehen & Wahrnehmung trainieren | SkillDrills',
   description: '9 kostenlose Browser-Drills für dynamisches Sehen, visuelle Suche, Reaktionszeit, Zielverfolgung und Tiefenwahrnehmung.',
   keywords: ['dynamisches Sehen', 'visuelle Suche Test', 'Reaktionstest online', 'peripheres Sehen Training', 'Augenbewegungen Training', 'Tiefenwahrnehmung Test', 'visuelle Reaktion', 'mehrere Objekte verfolgen', 'kostenloses Sehtraining online'],
-  openGraph: { ...metadata.openGraph, title: 'Dynamisches Sehen & visuelle Suche | SkillDrills', description: '9 kostenlose Browser-Drills für dynamisches Sehen, visuelle Suche, Reaktionszeit und Zielverfolgung.' },
-  twitter: { ...metadata.twitter, title: 'Dynamisches Sehen & visuelle Suche | SkillDrills', description: 'Dynamisches Sehen und visuelle Suche mit 9 kostenlosen Drills trainieren.' },
+  openGraph: { ...metadata.openGraph, title: 'Dynamisches Sehen & Wahrnehmung trainieren | SkillDrills', description: '9 kostenlose Browser-Drills für dynamisches Sehen, visuelle Suche, Reaktionszeit und Zielverfolgung.' },
+  twitter: { ...metadata.twitter, title: 'Dynamisches Sehen & Wahrnehmung trainieren | SkillDrills', description: 'Dynamisches Sehen und visuelle Suche mit 9 kostenlosen Drills trainieren.' },
   alternates: { ...metadata.alternates, languages: getAlternateLanguages('/drills/visual') },
 });
 

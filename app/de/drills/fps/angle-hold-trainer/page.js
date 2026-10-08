@@ -301,7 +301,7 @@ export default function GermanAngleHoldPage() {
     h1Prefix: null,
     h1Keyword: "Aim Trainer",
     h1Suffix: " – Crosshair Placement & Winkel halten",
-    subtitle: "FPS Pre-Aiming Training & Peeker's Advantage Verteidigung",
+    subtitle: "Winkel absichern, Peeks erkennen und den Abzug diszipliniert halten",
     caption: "Kostenloses Training für defensive Fadenkreuz-Platzierung und Reaktionszeit beim Halten von Winkeln. Optimiere deinen Wandabstand und dein Klick-Timing, um Peeker's Advantage in CS2 und Valorant mit wissenschaftlicher Präzision zu neutralisieren.",
     startTitle: "Aim Trainer - Crosshair Placement",
     startSubtitle: "Crosshair Placement • Wandabstand • Trigger-Disziplin",
@@ -346,7 +346,7 @@ export default function GermanAngleHoldPage() {
       {
         title: "Messmethodik und Sensor-Präzision",
         paragraphs: [
-          "Angle Hold Pro verwendet die HTML5 Pointer Lock API und performance.now() Zeitstempel, um Klick-Latenzen im Sub-Millisekunden-Bereich zu erfassen – ohne Browser-Mausbeschleunigung oder Glättungsfilter."
+          "Angle Hold Pro verwendet die HTML5 Pointer Lock API und performance.now() Zeitstempel, um Klick-Latenzen im Millisekundenbereich zu erfassen."
         ]
       }
     ]

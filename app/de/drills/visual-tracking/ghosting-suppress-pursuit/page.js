@@ -15,7 +15,7 @@ import { pickSources } from '@/lib/drillSources';
 // ============================================================
 
 export const metadata = {
-  title: "Monitor-Nachzieheffekt-Test | Blickstabilität | SkillDrills",
+  title: "Blickstabilität trainieren | Ghosting-Effekt | SkillDrills",
   description: "Beobachte Nachzieheffekte und helle Halos an einem bewegten Ziel und übe foveale Fixation, Bewegungsschärfe und Blickstabilität.",
   keywords: [
     "Monitor Nachzieheffekt Test",
@@ -32,7 +32,7 @@ export const metadata = {
     "Monitor Test kostenlos"
   ],
   openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
-    title: "Monitor-Nachzieheffekt-Test | Blickstabilität | SkillDrills",
+    title: "Blickstabilität trainieren | Ghosting-Effekt | SkillDrills",
     description: "Beobachte Nachzieheffekte und helle Halos an einem bewegten Ziel und übe foveale Fixation, Bewegungsschärfe und Blickstabilität.",
     type: "website",
     url: "https://skilldrills.online/de/drills/visual-tracking/ghosting-suppress-pursuit",
@@ -41,7 +41,7 @@ export const metadata = {
   },
   twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: "summary_large_image",
-    title: "Monitor-Nachzieheffekt-Test | Blickstabilität | SkillDrills",
+    title: "Blickstabilität trainieren | Ghosting-Effekt | SkillDrills",
     description: "Beobachte Nachzieheffekte und helle Halos an einem bewegten Ziel und übe foveale Fixation und Blickstabilität.",
   },
   robots: { index: true, follow: true },

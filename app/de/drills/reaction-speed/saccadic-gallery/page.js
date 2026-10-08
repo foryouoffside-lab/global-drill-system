@@ -222,7 +222,7 @@ const faqSchema = {
       name: 'Ist dieses Sehtraining kostenlos und im Browser nutzbar?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Ja, das Sakkaden-Training von SkillDrills ist zu 100 % kostenlos, läuft ohne Installationen im Browser und misst Reaktionszeiten mit Sub-Millisekunden-Präzision.',
+        text: 'Ja, das Sakkaden-Training von SkillDrills ist zu 100 % kostenlos, läuft ohne Installationen im Browser und misst Reaktionszeiten im Millisekundenbereich.',
       },
     },
   ],

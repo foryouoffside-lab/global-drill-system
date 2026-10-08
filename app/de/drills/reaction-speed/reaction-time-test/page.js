@@ -17,7 +17,7 @@ import { pickSources } from '@/lib/drillSources';
 export const metadata = {
   title: 'Reaktionstest online: Reaktionszeit in ms | SkillDrills',
   description:
-    'Kostenloser Reaktionstest für die visuelle Reaktionszeit: Miss deine Zeit in Millisekunden, werte mehrere Versuche aus und vergleiche deine Konstanz im Browser.',
+    'Kostenloser Reaktionstest im Browser: Miss deine visuelle Reaktionszeit in Millisekunden, werte mehrere Versuche aus und prüfe deine Konstanz.',
   keywords: [
     'reaktionstest',
     'reaktionszeit test',
@@ -164,7 +164,7 @@ const faqSchema = {
       name: 'Wie wird die Reaktionszeit online gemessen?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Die Zeitspanne zwischen dem Erscheinen des visuellen Reizes auf dem Monitor und dem Registrieren des Klicks wird über die hochauflösende performance.now() API des Browsers im Sub-Millisekundenbereich clientseitig erfasst (Woods et al., 2015).',
+        text: 'Die Zeitspanne zwischen dem Erscheinen des visuellen Reizes auf dem Monitor und dem Registrieren des Klicks wird über die hochauflösende performance.now() API des Browsers mit etwa 1 ms Zeitauflösung clientseitig erfasst (Woods et al., 2015).',
       },
     },
     {
@@ -289,7 +289,7 @@ const reactionGuide = {
   intro: [
     'Die visuelle Reaktionszeit beschreibt das Intervall zwischen dem Auftreten eines optischen Reizes und der Ausführung der entsprechenden Muskelbewegung (z. B. Mausklick).',
     'In kompetitiven Shootern wie Valorant und CS2 sowie im Motorsport entscheiden Millisekunden darüber, wer das Duell gewinnt oder Hindernissen rechtzeitig ausweicht.',
-    'Messmethode: Alle Zeitmessungen erfolgen lokal im Browser über die hochauflösende performance.now() API mit Sub-Millisekunden-Präzision. Es findet keine Verzögerung durch Server-Übertragungen statt.',
+    'Messmethode: Alle Zeitmessungen erfolgen lokal im Browser über die hochauflösende performance.now() API mit einer browserabhängigen Auflösung von etwa 1 ms. Es findet keine Verzögerung durch Server-Übertragungen statt.',
     'Hardware-Einfluss: Ein Standardmonitor mit 60 Hz fügt bis zu 16,7 ms Anzeigelatenz pro Frame hinzu, während 144 Hz (6,9 ms) oder 240 Hz (4,2 ms) Monitore und eine Gaming-Maus mit 1000 Hz Polling-Rate Messverfälschungen minimieren (Woods et al., 2015).',
   ],
   benchmarks: {
