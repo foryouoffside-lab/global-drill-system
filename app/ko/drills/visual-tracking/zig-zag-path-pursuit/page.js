@@ -4,41 +4,18 @@ import RelatedDrills from '@/components/drill/RelatedDrills';
 import { getAlternateLanguages } from '@/lib/i18n/locales';
 import { pickSources } from '@/lib/drillSources';
 
+const url = 'https://skilldrills.online/ko/drills/visual-tracking/zig-zag-path-pursuit';
+const title = "지그재그 시선 추적 훈련 | 급반전 추적 | SkillDrills";
+const description = "지그재그(톱니) 경로를 따라 급하게 방향을 바꾸는 표적을 눈으로 따라가는 무료 시선 추적 훈련. 속도와 시간을 조절하며 연습하세요.";
+
 export const metadata = {
-  title: "지그재그 시선 추적 훈련 | SkillDrills",
-  description: "지그재그 궤적 표적을 따라가는 무료 훈련. 안구 추적, 급격한 방향 전환, 시선 이탈을 확인합니다.",
-  keywords: [
-    "지그재그 시선 추적 훈련",
-    "지그재그 안구 운동 연습",
-    "동체시력 훈련 지그재그",
-    "급격한 방향 전환 시선 훈련",
-    "시선 따라가기 연습",
-    "지그재그 시각 훈련",
-    "안구 추적 운동",
-    "보정 단속운동 훈련",
-    "에임 방향 전환 연습",
-    "시각 운동 협응 훈련",
-    "시선 이탈 줄이기 연습",
-    "무료 동체시력 훈련"
-  ],
-  openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
-    title: "지그재그 시선 추적 훈련 | SkillDrills",
-    description: "지그재그 궤적 표적을 따라가는 무료 훈련. 안구 추적, 급격한 방향 전환, 시선 이탈을 확인합니다.",
-    url: 'https://skilldrills.online/ko/drills/visual-tracking/zig-zag-path-pursuit',
-    siteName: 'SkillDrills',
-    locale: 'ko_KR',
-    type: 'website',
-  },
-  twitter: { images: ["https://skilldrills.online/opengraph-image"],
-    card: 'summary_large_image',
-    title: "지그재그 시선 추적 훈련 | SkillDrills",
-    description: "지그재그 궤적 표적을 따라가는 무료 훈련. 안구 추적, 급격한 방향 전환, 시선 이탈을 확인합니다.",
-  },
+  title,
+  description,
+  keywords: ["지그재그 시선 추적", "지그재그 경로 추적", "시선 추적 훈련", "눈 운동 게임", "급반전 추적", "안구 운동 연습", "움직이는 표적 추적", "방향 전환 추적"],
+  alternates: { canonical: url, languages: getAlternateLanguages('/drills/visual-tracking/zig-zag-path-pursuit') },
+  openGraph: { images: [{ url: 'https://skilldrills.online/opengraph-image', width: 1200, height: 630 }], title, description, url, siteName: 'SkillDrills', locale: 'ko_KR', type: 'website' },
+  twitter: { images: ['https://skilldrills.online/opengraph-image'], card: 'summary_large_image', title, description },
   robots: { index: true, follow: true },
-  alternates: {
-    canonical: 'https://skilldrills.online/ko/drills/visual-tracking/zig-zag-path-pursuit',
-    languages: getAlternateLanguages('/drills/visual-tracking/zig-zag-path-pursuit'),
-  },
 };
 
 const breadcrumbSchema = {
@@ -66,316 +43,207 @@ const breadcrumbSchema = {
     {
       "@type": "ListItem",
       "position": 4,
-      "name": "지그재그 안구 추적 훈련",
+      "name": "지그재그 시선 추적 훈련",
       "item": "https://skilldrills.online/ko/drills/visual-tracking/zig-zag-path-pursuit"
     }
   ]
 };
 
 const softwareApplicationSchema = {
-  "@context": "https://schema.org",
-  "@type": "SoftwareApplication", "sameAs": ["https://en.wikipedia.org/wiki/Smooth_pursuit", "https://en.wikipedia.org/wiki/Saccade"],
-  "name": "지그재그 안구 추적 훈련・급반전 에임 정밀도 테스트",
-  "applicationCategory": "HealthApplication",
-  "operatingSystem": "All",
-  "offers": {
-    "@type": "Offer",
-    "price": "0",
-    "priceCurrency": "USD"
-  },
-  "description": "지그재그 연속 굴절 궤적을 왕복하는 표적을 추적하여 고빈도 급반전 꼭짓점에서의 보정 단속운동과 길항근 제동력을 단련하는 시각 운동 훈련.",
-  "url": "https://skilldrills.online/ko/drills/visual-tracking/zig-zag-path-pursuit",
-  "publisher": {
-    "@type": "Organization",
-    "name": "SkillDrills",
-    "url": "https://skilldrills.online"
-  },
-  "dateModified": "2026-09-20"
+  '@context': 'https://schema.org',
+  '@type': 'SoftwareApplication',
+  name: "지그재그 시선 추적 훈련",
+  applicationCategory: 'GameApplication',
+  operatingSystem: 'All',
+  offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
+  description,
+  url,
+  publisher: { '@type': 'Organization', name: 'SkillDrills', url: 'https://skilldrills.online/ko' },
+  inLanguage: 'ko',
+  dateModified: '2026-10-08',
 };
 
 const webAppSchema = {
-  "@context": "https://schema.org",
-  "@type": "WebApplication",
-  "name": "지그재그 안구 추적 훈련・급반전 에임 정밀도 테스트",
-  "applicationCategory": "EducationalApplication",
-  "operatingSystem": "All",
-  "browserRequirements": "HTML5 Canvas 및 JavaScript 지원 브라우저",
-  "offers": {
-    "@type": "Offer",
-    "price": "0",
-    "priceCurrency": "USD"
-  },
-  "url": "https://skilldrills.online/ko/drills/visual-tracking/zig-zag-path-pursuit",
-  "dateModified": "2026-09-20"
+  '@context': 'https://schema.org',
+  '@type': 'WebApplication',
+  name: "지그재그 시선 추적 훈련 웹 앱",
+  applicationCategory: 'GameApplication',
+  operatingSystem: 'All',
+  browserRequirements: 'HTML5 Canvas를 지원하는 최신 브라우저',
+  offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
+  url,
+  inLanguage: 'ko',
+  dateModified: '2026-10-08',
 };
 
 const videoGameSchema = {
-  "@context": "https://schema.org",
-  "@type": "VideoGame",
-  "name": "지그재그 안구 추적 훈련・급반전 에임 정밀도 테스트",
-  "url": "https://skilldrills.online/ko/drills/visual-tracking/zig-zag-path-pursuit",
-  "description": "지그재그 연속 굴절 궤적을 왕복하는 표적을 추적하여 고빈도 급반전 꼭짓점에서의 보정 단속운동과 길항근 제동력을 단련하는 시각 운동 훈련.",
-  "genre": [
-    "액션",
-    "동체시력 훈련",
-    "에임 트레이너"
-  ],
-  "gamePlatform": [
-    "웹 브라우저",
-    "데스크톱",
-    "모바일"
-  ],
-  "applicationCategory": "Game",
-  "dateModified": "2026-09-20",
-  "offers": {
-    "@type": "Offer",
-    "price": "0",
-    "priceCurrency": "USD"
-  }
+  '@context': 'https://schema.org',
+  '@type': 'VideoGame',
+  name: "지그재그 시선 추적 훈련",
+  url,
+  description,
+  genre: ['Action Game', 'Aim Trainer'],
+  gamePlatform: ['Web Browser', 'Desktop', 'Mobile'],
+  applicationCategory: 'Game',
+  inLanguage: 'ko',
+  dateModified: '2026-10-08',
+  offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
 };
 
 const howToSchema = {
-  "@context": "https://schema.org",
-  "@type": "HowTo",
-  "name": "지그재그 안구 추적 훈련 진행 방법",
-  "description": "연속 톱니형 지그재그 궤도 상에서 등속 대각선 추종과 고빈도 반전 꼭짓점에서의 외안근 제동을 연동하여 시각 운동 민첩성을 완성하는 4단계.",
-  "dateModified": "2026-09-20",
-  "step": [
-    {
-      "@type": "HowToStep",
-      "position": 1,
-      "name": "지그재그 세션 파라미터 구성",
-      "text": "훈련 시간(30~120초), 기준 속도 배율, 타깃 크기 및 색상을 지정합니다. 경로 예측 능력을 극대화하려면 '궤적 숨김'을 활성화합니다.",
-      "url": "https://skilldrills.online/ko/drills/visual-tracking/zig-zag-path-pursuit#step-1"
-    },
-    {
-      "@type": "HowToStep",
-      "position": 2,
-      "name": "대각선 선형 구간 고속 원활추종 유지",
-      "text": "지그재그 각 변을 주행하는 표적을 중심와로 포착하고, 수평·수직 외안근의 협응 장력을 균등히 유지하여 시선 흔들림을 차단합니다.",
-      "url": "https://skilldrills.online/ko/drills/visual-tracking/zig-zag-path-pursuit#step-2"
-    },
-    {
-      "@type": "HowToStep",
-      "position": 3,
-      "name": "변곡점 도달 시 선제적 감속 및 단속운동 착지",
-      "text": "진행 방향이 급변하는 코너 꼭짓점 직전 안구 관성을 제어(안티 오버슈트)하고, 정밀한 단일 보정 단속운동으로 다음 궤적을 낚아챕니다.",
-      "url": "https://skilldrills.online/ko/drills/visual-tracking/zig-zag-path-pursuit#step-3"
-    },
-    {
-      "@type": "HowToStep",
-      "position": 4,
-      "name": "고빈도 급반전 적응 및 가속 부하 훈련",
-      "text": "속도 배율을 단계적으로 올리고 '무작위 속도'를 적용하여 불규칙한 변곡점 주기에서도 망막 슬립 없는 안구 고정력을 구축합니다.",
-      "url": "https://skilldrills.online/ko/drills/visual-tracking/zig-zag-path-pursuit#step-4"
-    }
-  ]
+  '@context': 'https://schema.org',
+  '@type': 'HowTo',
+  name: "지그재그 경로 추적 훈련 하는 방법",
+  description: "지그재그(톱니) 경로를 따라 급하게 방향을 바꾸는 표적를 눈으로 따라가는 4단계 연습법입니다.",
+  step: [
+  {
+    "@type": "HowToStep",
+    "position": 1,
+    "name": "편한 자세 잡기",
+    "text": "화면에서 편한 거리를 두고 앉아 어깨와 손의 힘을 뺍니다."
+  },
+  {
+    "@type": "HowToStep",
+    "position": 2,
+    "name": "반전 확인",
+    "text": "표적이 반대 방향으로 꺾이는 순간을 확인하고 시선을 새 방향으로 맞춥니다."
+  },
+  {
+    "@type": "HowToStep",
+    "position": 3,
+    "name": "부드럽게 따라가기",
+    "text": "커서가 아닌 표적을 눈으로 부드럽게 따라가며 세션을 진행합니다."
+  },
+  {
+    "@type": "HowToStep",
+    "position": 4,
+    "name": "설정 조절",
+    "text": "편안해지면 속도를 올리거나 경로 숨기기를 하나씩 추가합니다."
+  }
+].map((st) => ({ ...st, url: `${url}#step-${st.position}` })),
 };
 
+const faqs = [
+  {
+    "q": "지그재그 경로 추적 훈련은 무엇인가요?",
+    "a": "지그재그(톱니) 경로를 따라 급하게 방향을 바꾸는 표적를 눈으로 따라가는 브라우저 훈련입니다. 연속된 급반전에서 시선을 놓치지 않는 연습이 목적이며, 속도·시간·경로 표시를 조절할 수 있습니다. 시력 검사나 치료가 아니라 연습 도구입니다."
+  },
+  {
+    "q": "눈의 움직임을 직접 측정하나요?",
+    "a": "아닙니다. 브라우저는 시선이 어디를 향하는지 알 수 없고, 표적을 그린 위치와 설정만 알고 있습니다. 포인터는 보조일 뿐 커서 위치가 시선을 증명하지 않으며, 결과는 반복 가능한 연습 기록입니다."
+  },
+  {
+    "q": "지그재그 경로는 왜 어려운가요?",
+    "a": "방향이 연속해서 급하게 바뀌므로 눈이 뒤처지고 다시 따라붙는 과정을 반복해야 합니다. 속도를 올릴수록 더 어려워집니다."
+  },
+  {
+    "q": "방향이 바뀔 때 눈을 크게 움직여야 하나요?",
+    "a": "크게 휘두르기보다 방향이 바뀐 것을 확인하고 부드럽게 따라붙는 편이 좋습니다. 매번 앞서 가려 하면 오히려 표적을 놓치기 쉽습니다."
+  },
+  {
+    "q": "삼각형 추적과 무엇이 다른가요?",
+    "a": "삼각형 추적은 세 꼭짓점을 도는 경로이고, 지그재그는 좌우로 연속해서 방향이 바뀌는 경로입니다. 방향 전환의 빈도와 리듬이 다릅니다."
+  },
+  {
+    "q": "처음에는 어떤 설정으로 시작하나요?",
+    "a": "30~60초의 짧은 세션, 느린 속도, 경로 표시 상태로 시작하세요. 편안하게 따라갈 수 있게 된 뒤 속도를 올리고, 경로 숨기기와 무작위 속도는 한 번에 하나씩 추가합니다."
+  },
+  {
+    "q": "시선은 어디에 두어야 하나요?",
+    "a": "표적의 중심을 보고, 커서를 따라가지 않도록 하세요. 어깨와 목, 마우스를 쥔 손의 힘을 빼고 자연스럽게 깜빡이며 편안한 거리에서 화면을 봅니다."
+  },
+  {
+    "q": "이 훈련으로 시력이나 게임 실력이 좋아지나요?",
+    "a": "보장할 수 없습니다. 이 훈련은 눈으로 표적을 따라가는 연습이며 시력 개선, 질환 치료, FPS 에임 향상을 약속하지 않습니다. 눈에 문제가 의심되면 전문가의 진료를 받으세요."
+  },
+  {
+    "q": "화면과 환경이 결과에 영향을 주나요?",
+    "a": "주사율, 밝기, 대비, 화면 크기와 거리, 브라우저가 표적이 보이는 방식을 바꿉니다. 입력 장치와 화면 지연도 영향을 줄 수 있으니(Woods et al., 2015) 같은 환경에서 비교하세요."
+  },
+  {
+    "q": "얼마나 연습해야 하나요?",
+    "a": "5~10분처럼 짧고 반복 가능한 블록으로 하고 쉬세요. 눈이 피로하거나 건조하면 멈추고 먼 곳을 보며 깜빡이세요. 통증, 어지럼, 메스꺼움, 두통이 있으면 중단합니다."
+  }
+];
+
 const faqSchema = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "dateModified": "2026-09-20",
-  "mainEntity": [
-    {
-      "@type": "Question",
-      "name": "지그재그 안구 추적 훈련이란 무엇인가요?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "연속적인 지그재그(톱니파·다절 꺾은선) 궤적을 따라 순환하는 표적을 중심와로 추적하는 훈련입니다. 대각선 직선 구간에서의 고속 원활추종과, 고빈도로 출현하는 예각 변곡점에서의 보정 단속운동 및 길항근 급제동을 동시 조율합니다 (de Brouwer et al., 2002)."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "단순 다각형(삼각형 등) 추적과 지그재그 추적의 결정적 차이는 무엇인가요?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "삼각형은 폐곡선으로 코너가 3개에 불과하지만, 지그재그는 좁은 간격으로 좌우·상하 급반전이 연속 폭격처럼 이어집니다. 외안근의 주동근과 길항근이 쉴 틈 없이 역할을 교대하므로 신경 피로 저항력과 제동 민첩성이 극대화됩니다 (Krauzlis, 2004)."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "연속된 꺾임 꼭짓점에서 시선이 바깥으로 튕겨 나가는 이유는?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "이전 직선 구간에서 축적된 안구 운동 관성과 약 100~150ms의 시각 피드백 지연 때문입니다. 표적이 꺾였다는 감각 정보가 뇌간에 도달하기 전에 시선이 관성으로 직진해 버립니다. 반복 훈련으로 소뇌가 코너 직전 선제적 브레이크를 걸도록 적응시킵니다 (Barnes, 2008)."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "코너를 돌 때 시선이 안쪽으로 가로지르는 숏컷의 원인은?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "뇌의 운동 예측 피질이 앞서나가 표적이 꼭짓점에 닿기도 전에 다음 경로로 플라잉 도약을 일으키기 때문입니다. 이 성급한 도약을 억제하고 표적이 변곡점 정점에 닿을 때까지 주시해야 진정한 에임 브레이킹 제어력이 길러집니다 (Heinen et al., 2005)."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "FPS 게임(발로란트, 카스2, 에이펙스 등)의 스트레이프 전에서 왜 결정적인가요?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "적 플레이어가 불규칙하게 좌우로 이동하는 AD 스트레이프(무빙 샷)나 지그재그 회피 기동을 펼칠 때, 조준선이 목표보다 뒤처지거나 반전 지점에서 덜컹거리는 현상을 완벽히 차단하여 지속적인 헤드샷 명중률을 확보합니다."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "구기 종목 및 격투기 등 현실 스포츠에는 어떻게 적용되나요?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "축구·농구의 지그재그 돌파 드리블, 배드민턴 셔틀콕의 급격한 궤적 꺾임, 복싱의 연속 위빙·더킹 회피 동작 등 예측 불가능하게 궤적을 연속 전환하는 대상을 시야의 중심와에 실시간 밀착시킵니다."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "하루 권장 훈련 시간과 세트 구성은?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "1세트당 45~60초씩 2~3세트를 수행하여 총 3~5분간 훈련합니다. 고빈도 반전 제동은 외안근 신경 중추에 피로가 빠르게 누적되므로, 시선이 흔들리기 시작하면 즉시 휴식을 취하는 것이 최적의 신경 학습을 보장합니다."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "궤적 숨김 모드를 켰을 때의 효과는?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "화면의 안내선 시각 자극에 대한 의존성을 끊고, 표적의 순간 각속도와 반전 간격만으로 뇌 속에 가상의 지그재그 3차원 좌표계를 자체 구축하게 만듭니다. 순수한 시각 운동 피드포워드 능력이 폭발적으로 성장합니다 (Orban de Xivry & Lefèvre, 2007)."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "고주사율(144Hz/240Hz) 게이밍 디스플레이가 왜 필수적인가요?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "60Hz(16.7ms) 환경의 잔상과 프레임 끊김을 144Hz(6.9ms), 240Hz(4.2ms)로 극복하여, 꺾임 정점의 미세한 위치 정보를 왜곡 없이 전달합니다 (Woods et al., 2015). 제동 단속운동 발화의 타이밍 오차를 0ms대로 수렴시킵니다."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "훈련을 지속하면 뇌의 어떤 신경 경로가 강화되나요?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "전두안야(FEF), 보완안야(SEF), 소뇌 충부(vermis lobules VI-VII)를 잇는 피질-소뇌 폐쇄 루프가 강화됩니다. 길항근 억제 타이밍이 정밀화되어 불수의적인 안구 진전(오큘러 지터)이 영구적으로 억제됩니다 (Krauzlis, 2004)."
-      }
-    }
-  ]
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  inLanguage: 'ko',
+  mainEntity: faqs.map((f) => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } })),
 };
 
 const guide = {
-  heading: "지그재그 안구 추적 훈련・급반전 에임 정밀도 테스트: 연속 변곡점에서의 길항근 제동과 시각 운동 적응",
-  intro: [
-    "연속적인 톱니파 및 다절 지그재그 궤적을 따라 순환하는 시각 표적을 주시하는 과제는, 안구 운동 시스템의 '선형 등속 추종'과 '고빈도 급반전 제동' 능력을 한계까지 시험합니다. 표적이 대각선 직선 구간을 주행할 때 망막 슬립을 최소화하기 위해 수평·수직 외안근군이 정밀한 협응으로 원활추종을 전개합니다. 그러나 예각 변곡점에 도달하는 순간, 이전까지 주동근으로 기능하던 근육들이 즉각 초강력 브레이크(제동근)로 전환되고 반대편 길항근이 폭발적으로 동원됩니다 (Krauzlis, 2004).",
-    "이러한 고빈도 방향 전환에서 발생하는 신경생리학적 병목은 약 100~150ms에 달하는 감각운동 피드백 전달 지연입니다. 표적이 꼭짓점에서 궤적을 꺾었다는 시각 신호가 망막을 거쳐 뇌간에 도달했을 때는 이미 안구의 운동 관성으로 인해 시선이 꼭짓점 바깥으로 튕겨 나가는 '오버슈트'가 발생합니다. de Brouwer et al. (2002)과 Orban de Xivry & Lefèvre (2007)의 연구에 따르면, 뇌는 이 지연을 극복하기 위해 전두안야(FEF) 및 소뇌 전정계로부터 보정 단속운동을 선제적으로 발화시켜 원활추종에서 고속 도약 모드로 즉각 전환합니다.",
-    "체계적인 지그재그 추적 훈련을 반복하면 소뇌의 내부 순모델(Internal Forward Model) 내에 정밀한 시공간 예측 맵이 형성됩니다 (Bennett & Barnes, 2006; Barnes, 2008). 이를 통해 안구 운동 시스템은 표적이 꼭짓점에 닿기 약 30~40ms 전에 외안근에 선제 감속 명령을 전달하여 꼭짓점 정점에 중심와를 흡착시키고, 직후 단 한 번의 날카로운 단속운동으로 다음 궤적 레그로 시선을 완벽히 안착시킵니다. 불안정한 미세 교정 사케드(지터)가 사라지고 시각 인지 해상도가 최고조로 유지됩니다.",
-    "본 '지그재그 안구 추적' 훈련은 웹 브라우저 상에서 이러한 고난도 운동 적응을 달성하도록 구축된 전문 도구입니다. 쉴 새 없이 반복되는 예각 코너를 오차 없이 추적함으로써 에임 전환 시의 떨림과 시선 밀림을 줄입니다. '궤적 숨김' 모드로 시각 보조선을 지운 채 공간 예측력을 단련하고, '무작위 속도'를 통해 변칙적인 템포에도 흔들리지 않는 적응력을 완성하십시오.",
-    "하드웨어 지연 시간 및 측정 환경 안내: 화면 갱신 주기는 디스플레이 주사율(60Hz 기준 약 16.7ms, 144Hz 기준 약 6.9ms, 240Hz 기준 약 4.1ms) 및 입력 기기의 폴링 레이트(125Hz 기준 약 8ms 대 1,000Hz 기준 약 1ms)에 의해 시간적 양자화가 발생합니다 (Woods et al., 2015). 본 훈련의 모든 점수와 반응 데이터는 사용자의 브라우저 로컬 저장소(localStorage)에만 안전하게 보관되며 외부 서버로 전송되지 않습니다."
+  "heading": "지그재그 경로 추적 훈련 가이드",
+  "intro": [
+    "지그재그 시선 추적 훈련은 지그재그(톱니) 경로를 따라 급하게 방향을 바꾸는 표적를 눈으로 따라가는 브라우저 훈련입니다. 연속된 급반전에서 시선을 놓치지 않는 연습을 반복해서 경험할 수 있고, 속도·시간·경로 표시를 조절할 수 있습니다.",
+    "움직이는 표적을 부드럽게 따라가는 눈의 움직임과 시선을 빠르게 옮기는 움직임은 서로 다른 움직임으로 설명됩니다. 이 훈련에서는 둘이 번갈아 쓰이는 상황을 연습할 수 있습니다.",
+    "브라우저는 표적을 그린 위치와 설정을 알 수 있지만 눈이 실제로 향한 위치는 기록하지 못합니다. 따라서 결과는 임상적 추적 능력이나 시력 수치가 아니라 반복 가능한 연습 기록으로 해석하세요.",
+    "편안한 거리와 자세에서, 같은 화면과 브라우저로 비교하세요. 주사율과 입력 장치도 영향을 줄 수 있습니다(Woods et al., 2015). 통증, 어지럼, 메스꺼움, 지속적인 흐림이나 이상 증상이 생기면 중단하세요."
   ],
-  benchmarks: {
-    title: "지그재그 경로 추적 퍼포먼스 벤치마크 (속도 배율・변곡점 착지 오차)",
-    headers: ["숙련도 등급", "권장 속도 배율", "변곡점 착지 오차", "전환 단속운동 잠복기", "예상 인구 백분위"],
-    rows: [
-      ["프로 / 반전 신경 완전 적응 (Elite)", "3.5x〜5.0x+", "오차 < 12px (꼭짓점에 완벽 흡착)", "잠복기 < 110ms (예측 브레이킹 완벽)", "상위 1.5%"],
-      ["마스터 / 고급 반전 제어 (Master)", "2.5x〜3.5x", "오차 < 22px (미세 교정만 발생)", "잠복기 < 140ms (매끄러운 코너 전환)", "상위 8%"],
-      ["어드밴스 / 실전 숙련 (Advanced)", "1.8x〜2.5x", "오차 < 38px (신속한 재고정)", "잠복기 < 180ms (일반 선수급)", "상위 25%"],
-      ["인터미디에이트 / 기초 (Intermediate)", "1.2x〜1.8x", "오차 38〜70px (외측 튕김 및 숏컷)", "잠복기 180〜240ms (복수 사케드 발생)", "중위 45%"],
-      ["노비스 / 미훈련 (Novice)", "0.5x〜1.2x", "오차 > 70px (표적 완전 이탈)", "잠복기 > 250ms (심각한 오버슈트)", "입문 수준"]
+  "benchmarks": {
+    "title": "연습 단계 참고표",
+    "headers": [
+      "단계",
+      "연습 목표"
     ],
-    note: "벤치마크 기준은 de Brouwer et al. (2002)의 보정 단속운동 슬립 속도 모델 및 Krauzlis (2004)의 원활추종 제동 잠복기 데이터를 토대로 산출되었습니다."
+    "rows": [
+      [
+        "1단계",
+        "느린 속도, 경로 표시"
+      ],
+      [
+        "2단계",
+        "반전 뒤 다시 따라붙기"
+      ],
+      [
+        "3단계",
+        "빠른 속도에서 리듬 유지"
+      ],
+      [
+        "4단계",
+        "경로 숨기기 추가"
+      ],
+      [
+        "5단계",
+        "무작위 속도 추가"
+      ]
+    ],
+    "note": "이 표는 SkillDrills의 연습 방향 안내입니다. 시각 기능 검사 기준, 사용자 통계, 백분위가 아닙니다."
   },
-  steps: [
-    { title: "표적을 중앙에서 잡기", text: "머리를 움직이지 않고 첫 번째 대각선 구간의 표적을 시선 중심으로 따라갑니다." },
-    { title: "직선 구간을 끝까지 추적하기", text: "각 구간을 가로지르지 말고 꺾이는 지점까지 부드럽게 시선을 이동합니다." },
-    { title: "꺾이기 전에 감속하기", text: "방향 전환 전에 시선의 관성을 줄여 모서리 바깥으로 튀지 않게 합니다." },
-    { title: "정확도가 안정된 뒤 속도 높이기", text: "표적 손실과 꺾임 지점 오차가 안정된 후에 속도 배율을 올립니다." }
-  ],
-  techniques: [
-    {
-      title: "직선 구간에서의 외안근 텐션 균등 유지와 이완",
-      description: "지그재그의 각 대각선 라인을 주행하는 동안 눈 주위 근육에 과도한 힘이 들어가면 다음 꼭짓점에서의 브레이크 반응이 늦어집니다. 긴장을 풀고 표적의 선두부에 중심와를 부드럽게 얹어놓습니다.",
-      tips: [
-        "표적이 나아가는 '진행 방향 앞쪽 끝'을 부드럽게 응시하며 직선을 긋듯 이동",
-        "목이나 턱에 힘을 빼고 머리를 고정한 채 안구 근육만을 분리 제어",
-        "직선 구간에서는 불필요한 깜빡임을 자제하고 안정적인 망막 피드백을 확보"
-      ]
-    },
-    {
-      title: "변곡점 직전 선제적 브레이킹 (안티 오버슈트)",
-      description: "표적이 꼭짓점에 닿기 직전 소뇌의 예측 제어를 가동하여 주행 속도를 미세하게 억제합니다. 관성에 끌려가지 않고 코너 정점에 시선을 멈추는 감각을 체득합니다.",
-      tips: [
-        "꼭짓점 도달 30ms 전 표적의 감속 및 방향 전환 조짐에 집중",
-        "코너 바깥으로 튕겨 나가지 않도록 '꼭짓점 노드에 핀을 꽂는다'는 느낌으로 정지",
-        "숨을 균등하고 얇게 내쉬며 코너를 통과하여 전신 근육 긴장을 차단"
-      ]
-    },
-    {
-      title: "급반전 직후 단일 캐치업 단속운동을 통한 즉시 재고정",
-      description: "방향이 바뀐 직후 시선이 뒤처졌다면 여러 번 떨리는 미세 사케드가 아니라 단 한 번의 샤프한 보정 단속운동으로 표적 중심을 재탈환합니다.",
-      tips: [
-        "코너 선회 직후 '시선을 표적 정중앙에 스냅하듯 안착시킨다'는 감각을 유지",
-        "코너 안쪽을 성급하게 가로지르지 말고 꼭짓점 정점 도달을 확인 후 도약",
-        "단속운동 착지 후 0.1초 이내에 다시 부드러운 원활추종 모드로 복귀"
-      ]
-    },
-    {
-      title: "궤적 숨김을 통한 내재적 기하학 리듬 체득",
-      description: "안내선을 지운 상태에서 보이지 않는 지그재그 패턴을 뇌 속에서 실시간 모델링합니다. 표적의 왕복 템포(좌, 우, 좌, 우)를 체득하여 능동적 예측 추적력을 극대화합니다.",
-      tips: [
-        "화면 좌우 폭과 전환 피치 간격을 파악하여 다음 변곡점의 공간 좌표를 선제 계산",
-        "표적의 일정 속도로부터 리듬을 체득하고 메트로놈처럼 박자에 맞춰 꼭짓점을 타격",
-        "안내선 숨김 모드에서도 코너 착지 오차가 20px 이하로 유지될 때까지 반복 숙달"
-      ]
-    }
-  ],
-  deviceCalibration: {
-    title: "지그재그 연속 추적 및 급반전 에임을 위한 하드웨어・인체공학 기준",
-    points: [
-      "디스플레이 주사율: 연속적인 예각 코너에서의 모션 블러와 입력 래그를 없애기 위해 144Hz 이상의 고주사율 모니터를 권장. 6.9ms 이하의 프레임 간격으로 정밀한 제동 시점을 시각화 (Woods et al., 2015).",
-      "픽셀 응답 속도 및 잔상 억제: 고빈도 전환 시 잔상(고스팅)이 발생하면 꼭짓점 위치 판독에 오차가 생기므로 1ms 이하의 초고속 게이밍 패널을 권장.",
-      "시야각 및 모니터 배치: 지그재그 전 폭이 시야각 35~40도 이내에 안정적으로 들어오도록 50~65cm의 시거리 유지. 모니터 상단을 눈높이에 맞춥니다.",
-      "명암 대비와 조명 환경: 칠흑 배경(#050508)과 표적(#ef4444) 간의 명암 대비를 최대로 확보하고, 주변 조명을 은은하게 조절하여 눈부심과 망막 피로를 방지."
+  "techniques": {
+    "title": "연습 요령 4가지",
+    "items": [
+      {
+        "name": "반전마다 리듬 만들기",
+        "desc": "지그재그에는 일정한 리듬이 있습니다. 반전을 쫓기보다 리듬을 익혀 매번 부드럽게 다시 따라붙으세요.",
+        "tips": "불편하면 속도를 낮추고 경로를 표시한 상태로 돌아가세요."
+      },
+      {
+        "name": "커서가 아닌 표적 보기",
+        "desc": "포인터는 보조일 뿐입니다. 커서가 아니라 표적을 눈으로 따라가며 어깨와 손의 힘을 빼세요.",
+        "tips": "목이나 머리를 같이 돌리지 않았는지 가끔 확인합니다."
+      },
+      {
+        "name": "한 번에 하나만 어렵게 하기",
+        "desc": "속도, 경로 숨기기, 무작위 속도를 각각 따로 올리세요. 편안함이 무너지면 이전 설정으로 돌아갑니다.",
+        "tips": "설정을 바꾸면 기록을 새로 시작합니다."
+      },
+      {
+        "name": "짧게 하고 쉬기",
+        "desc": "5~10분 단위로 하고 눈을 깜빡이며 먼 곳을 보세요. 오래 한다고 더 좋은 것은 아닙니다.",
+        "tips": "통증, 어지럼, 메스꺼움이 있으면 즉시 중단합니다."
+      }
     ]
   },
-  faqs: [
-    {
-      "q": "지그재그 안구 추적 훈련이란 무엇인가요?",
-      "a": "연속적인 지그재그(톱니파·다절 꺾은선) 궤적을 따라 순환하는 표적을 중심와로 추적하는 훈련입니다. 대각선 직선 구간에서의 고속 원활추종과, 고빈도로 출현하는 예각 변곡점에서의 보정 단속운동 및 길항근 급제동을 동시 조율합니다 (de Brouwer et al., 2002)."
-    },
-    {
-      "q": "단순 다각형(삼각형 등) 추적과 지그재그 추적의 결정적 차이는 무엇인가요?",
-      "a": "삼각형은 폐곡선으로 코너가 3개에 불과하지만, 지그재그는 좁은 간격으로 좌우·상하 급반전이 연속 폭격처럼 이어집니다. 외안근의 주동근과 길항근이 쉴 틈 없이 역할을 교대하므로 신경 피로 저항력과 제동 민첩성이 극대화됩니다 (Krauzlis, 2004)."
-    },
-    {
-      "q": "연속된 꺾임 꼭짓점에서 시선이 바깥으로 튕겨 나가는 이유는?",
-      "a": "이전 직선 구간에서 축적된 안구 운동 관성과 약 100~150ms의 시각 피드백 지연 때문입니다. 표적이 꺾였다는 감각 정보가 뇌간에 도달하기 전에 시선이 관성으로 직진해 버립니다. 반복 훈련으로 소뇌가 코너 직전 선제적 브레이크를 걸도록 적응시킵니다 (Barnes, 2008)."
-    },
-    {
-      "q": "코너를 돌 때 시선이 안쪽으로 가로지르는 숏컷의 원인은?",
-      "a": "뇌의 운동 예측 피질이 앞서나가 표적이 꼭짓점에 닿기도 전에 다음 경로로 플라잉 도약을 일으키기 때문입니다. 이 성급한 도약을 억제하고 표적이 변곡점 정점에 닿을 때까지 주시해야 진정한 에임 브레이킹 제어력이 길러집니다 (Heinen et al., 2005)."
-    },
-    {
-      "q": "FPS 게임(발로란트, 카스2, 에이펙스 등)의 스트레이프 전에서 왜 결정적인가요?",
-      "a": "적 플레이어가 불규칙하게 좌우로 이동하는 AD 스트레이프(무빙 샷)나 지그재그 회피 기동을 펼칠 때, 조준선이 목표보다 뒤처지거나 반전 지점에서 덜컹거리는 현상을 완벽히 차단하여 지속적인 헤드샷 명중률을 확보합니다."
-    },
-    {
-      "q": "구기 종목 및 격투기 등 현실 스포츠에는 어떻게 적용되나요?",
-      "a": "축구·농구의 지그재그 돌파 드리블, 배드민턴 셔틀콕의 급격한 궤적 꺾임, 복싱의 연속 위빙·더킹 회피 동작 등 예측 불가능하게 궤적을 연속 전환하는 대상을 시야의 중심와에 실시간 밀착시킵니다."
-    },
-    {
-      "q": "하루 권장 훈련 시간과 세트 구성은?",
-      "a": "1세트당 45~60초씩 2~3세트를 수행하여 총 3~5분간 훈련합니다. 고빈도 반전 제동은 외안근 신경 중추에 피로가 빠르게 누적되므로, 시선이 흔들리기 시작하면 즉시 휴식을 취하는 것이 최적의 신경 학습을 보장합니다."
-    },
-    {
-      "q": "궤적 숨김 모드를 켰을 때의 효과는?",
-      "a": "화면의 안내선 시각 자극에 대한 의존성을 끊고, 표적의 순간 각속도와 반전 간격만으로 뇌 속에 가상의 지그재그 3차원 좌표계를 자체 구축하게 만듭니다. 순수한 시각 운동 피드포워드 능력이 폭발적으로 성장합니다 (Orban de Xivry & Lefèvre, 2007)."
-    },
-    {
-      "q": "고주사율(144Hz/240Hz) 게이밍 디스플레이가 왜 필수적인가요?",
-      "a": "60Hz(16.7ms) 환경의 잔상과 프레임 끊김을 144Hz(6.9ms), 240Hz(4.2ms)로 극복하여, 꺾임 정점의 미세한 위치 정보를 왜곡 없이 전달합니다 (Woods et al., 2015). 제동 단속운동 발화의 타이밍 오차를 0ms대로 수렴시킵니다."
-    },
-    {
-      "q": "훈련을 지속하면 뇌의 어떤 신경 경로가 강화되나요?",
-      "a": "전두안야(FEF), 보완안야(SEF), 소뇌 충부(vermis lobules VI-VII)를 잇는 피질-소뇌 폐쇄 루프가 강화됩니다. 길항근 억제 타이밍이 정밀화되어 불수의적인 안구 진전(오큘러 지터)이 영구적으로 억제됩니다 (Krauzlis, 2004)."
-    }
+  "steps": [
+    "화면에서 편한 거리를 두고 앉아 어깨와 손의 힘을 뺍니다.",
+    "30~60초, 느린 속도, 경로 표시 상태로 시작합니다.",
+    "커서가 아닌 표적을 눈으로 부드럽게 따라갑니다.",
+    "편안해지면 속도를 올리거나 설정을 하나씩 추가합니다."
   ],
+  "audience": "지그재그 경로 추적를 가볍게 연습해 보고 싶은 사용자와, 눈으로 표적을 따라가는 감각을 게임처럼 연습하려는 사람.",
+  faqs,
   sources: pickSources('debrouwer2002', 'heinen2005', 'orbandexivry2007', 'krauzlis2004', 'barnes2008', 'woods2015'),
 };
 
@@ -409,8 +277,8 @@ export default function LocalizedPage() {
 
       <ZigZagPathPursuitClient copy={{
         title: "지그재그 시선 추적 훈련",
-        subtitle: "대각선 추적과 급격한 방향 전환",
-        description: "지그재그 궤적 표적을 따라가며 꺾임 지점의 시선 이탈과 표적 손실을 확인합니다."
+        subtitle: "급격한 방향 전환 따라가기",
+        description: "지그재그 시선 추적 훈련은 지그재그(톱니) 경로를 따라 급하게 방향을 바꾸는 표적를 눈으로 따라가는 연습입니다. 브라우저는 시선을 기록하지 않으며 포인터는 보조일 뿐이므로, 결과는 의료 검사가 아닌 연습 기록으로 보세요."
       }} />
       <DrillGuide guide={guide} />
       <RelatedDrills />
