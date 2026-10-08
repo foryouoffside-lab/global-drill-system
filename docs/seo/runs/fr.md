@@ -35,3 +35,4 @@
 - /fr/drills/physical/reflex-training/drop-catch | done | 3b1c1910 | docs/seo/research/fr/drop-catch.md | demand not verified (Bing 0); test de la regle collides with menstrual intent
 - /fr/drills/physical/reflex-training/peripheral-threat-sweeper | done | bb460e00 | docs/seo/research/fr/peripheral-threat-sweeper.md | demand not verified (Bing 0); Suggest exercice vision peripherique
 - /fr/drills/physical/reflex-training/quick-dodge | done | 6e094e3f | docs/seo/research/fr/quick-dodge.md | demand not verified (Bing 0); distinct from dynamic-grid-evasion jeu d'evitement
+- /fr/drills/physical/reflex-training/reaction-chain | done | 840459a8 | docs/seo/research/fr/reaction-chain.md | demand not verified (Bing overflick 0)
