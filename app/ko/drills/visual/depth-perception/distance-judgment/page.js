@@ -4,54 +4,18 @@ import RelatedDrills from '@/components/drill/RelatedDrills';
 import { getAlternateLanguages } from '@/lib/i18n/locales';
 import { pickSources } from '@/lib/drillSources';
 
-// ============================================================
-// SEO RESEARCH FINDINGS — distance-judgment (Korean native search)
-// PRIMARY:  "입체시 검사"                    — Clinical stereopsis term
-//           "심시력 검사"                    — Korean depth-distance term
-//           "깊이 지각 테스트"                — Plain-language depth-perception intent
-// SECONDARY / LSI:
-//           "심시력 검사"                    — Driver license / heavy machine test
-//           "거리 감각 테스트"                — Distance judgment query
-//           "심시력 검사 연습"                — Practical training intent
-//           "입체시 검사 온라인"              — Browser intent
-//           "원근감 테스트"                  — Secondary visual-language term
-//           "하워드 돌먼 테스트"              — Howard-Dolman test
-// ============================================================
+const url = 'https://skilldrills.online/ko/drills/visual/depth-perception/distance-judgment';
+const title = "거리감 테스트 게임 | 원근감·거리 판단 연습 | SkillDrills";
+const description = "다가오는 구체가 기준 링과 겹치는 순간 클릭하는 무료 거리감 테스트 게임. 원근감과 도달 타이밍을 연습하며, 의료용 입체시 검사는 아닙니다.";
 
 export const metadata = {
-  title: '입체시 검사 온라인 | 심시력·거리감 훈련 | SkillDrills',
-  description: '입체시 검사와 심시력 연습을 위한 무료 온라인 시각 드릴. 다가오는 목표물의 거리감과 도달 타이밍을 측정하며, 의료 진단용 검사는 아닙니다.',
-  keywords: [
-    '입체시 검사',
-    '심시력 검사',
-    '깊이 지각 테스트',
-    '심시력 검사 연습',
-    '입체시 검사 온라인',
-    '거리감 테스트',
-    '원근감 테스트',
-    '하워드 돌먼 테스트',
-    '운전면허 심시력 연습',
-    '양안시 입체시',
-    '시지각 공간 지각력',
-  ],
-  openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
-    title: '입체시 검사 온라인 | 심시력·거리감 훈련 | SkillDrills',
-    description: '입체시 검사와 심시력 연습을 위한 무료 온라인 시각 드릴. 다가오는 목표물의 거리감과 도달 타이밍을 측정하며, 의료 진단용 검사는 아닙니다.',
-    type: 'article',
-    url: 'https://skilldrills.online/ko/drills/visual/depth-perception/distance-judgment',
-    siteName: 'SkillDrills',
-    locale: 'ko_KR',
-  },
-  twitter: { images: ["https://skilldrills.online/opengraph-image"],
-    card: 'summary_large_image',
-    title: '입체시 검사 온라인 | 심시력·거리감 훈련 | SkillDrills',
-    description: '입체시 검사와 심시력 연습을 위한 무료 온라인 시각 드릴. 다가오는 목표물의 거리감과 도달 타이밍을 측정하며, 의료 진단용 검사는 아닙니다.',
-  },
+  title,
+  description,
+  keywords: ["거리감 테스트", "원근감 테스트", "거리감 테스트 게임", "거리 판단 연습", "입체시 검사 차이", "깊이 지각", "도달 시간 판단", "거리감 훈련"],
+  alternates: { canonical: url, languages: getAlternateLanguages('/drills/visual/depth-perception/distance-judgment') },
+  openGraph: { images: [{ url: 'https://skilldrills.online/opengraph-image', width: 1200, height: 630 }], title, description, url, siteName: 'SkillDrills', locale: 'ko_KR', type: 'website' },
+  twitter: { images: ['https://skilldrills.online/opengraph-image'], card: 'summary_large_image', title, description },
   robots: { index: true, follow: true },
-  alternates: {
-    canonical: 'https://skilldrills.online/ko/drills/visual/depth-perception/distance-judgment',
-    languages: getAlternateLanguages('/drills/visual/depth-perception/distance-judgment'),
-  },
 };
 
 const breadcrumbSchema = {
@@ -61,226 +25,212 @@ const breadcrumbSchema = {
     { '@type': 'ListItem', position: 1, name: '홈', item: 'https://skilldrills.online/ko' },
     { '@type': 'ListItem', position: 2, name: '시각 훈련', item: 'https://skilldrills.online/ko/drills/visual' },
     { '@type': 'ListItem', position: 3, name: '깊이 지각', item: 'https://skilldrills.online/ko/drills/visual/depth-perception' },
-    { '@type': 'ListItem', position: 4, name: '원근감 테스트', item: 'https://skilldrills.online/ko/drills/visual/depth-perception/distance-judgment' },
+    { '@type': 'ListItem', position: 4, name: '거리감 테스트 게임', item: 'https://skilldrills.online/ko/drills/visual/depth-perception/distance-judgment' },
   ],
 };
 
 const softwareApplicationSchema = {
   '@context': 'https://schema.org',
-  '@type': 'SoftwareApplication', "sameAs": ["https://en.wikipedia.org/wiki/Depth_perception"],
-  name: '원근감 및 입체시 거리 감각 측정기',
-  applicationCategory: 'HealthApplication',
+  '@type': 'SoftwareApplication',
+  name: "거리감 테스트 게임",
+  applicationCategory: 'GameApplication',
   operatingSystem: 'All',
-  offers: { '@type': 'Offer', price: '0', priceCurrency: 'KRW' },
-  description: '접근하는 물체의 팽창률과 도달 시간(Time-to-Contact)을 정밀 계산하여 공간 거리 감각을 평가하는 온라인 원근감 테스트 프로그램.',
-  url: 'https://skilldrills.online/ko/drills/visual/depth-perception/distance-judgment',
+  offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
+  description,
+  url,
   publisher: { '@type': 'Organization', name: 'SkillDrills', url: 'https://skilldrills.online/ko' },
-  dateModified: '2026-09-05',
+  inLanguage: 'ko',
+  dateModified: '2026-10-08',
 };
 
 const webAppSchema = {
   '@context': 'https://schema.org',
   '@type': 'WebApplication',
-  name: '원근감 입체시 시뮬레이터 온라인',
+  name: "거리감 테스트 게임 웹 앱",
   applicationCategory: 'GameApplication',
   operatingSystem: 'All',
-  browserRequirements: 'HTML5 Canvas 및 고속 포인터 이벤트를 지원하는 최신 웹 브라우저',
-  offers: { '@type': 'Offer', price: '0', priceCurrency: 'KRW' },
-  url: 'https://skilldrills.online/ko/drills/visual/depth-perception/distance-judgment',
-  dateModified: '2026-09-05',
+  browserRequirements: 'HTML5 Canvas를 지원하는 최신 브라우저',
+  offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
+  url,
+  inLanguage: 'ko',
+  dateModified: '2026-10-08',
 };
 
 const videoGameSchema = {
   '@context': 'https://schema.org',
   '@type': 'VideoGame',
-  name: '원근감 테스트 & 3D 공간 거리 측정 드릴',
-  url: 'https://skilldrills.online/ko/drills/visual/depth-perception/distance-judgment',
-  description: '접근하는 3D 타겟의 도달 시점을 정확히 가늠하여 거리 감각과 타이밍 능력을 향상시키는 훈련 게임.',
-  genre: ['Precision Game', 'Visual Training', 'Esports'],
+  name: "거리감 테스트 게임",
+  url,
+  description,
+  genre: ['Action Game', 'Aim Trainer'],
   gamePlatform: ['Web Browser', 'Desktop', 'Mobile'],
   applicationCategory: 'Game',
-  offers: { '@type': 'Offer', price: '0', priceCurrency: 'KRW' }
+  inLanguage: 'ko',
+  dateModified: '2026-10-08',
+  offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
 };
 
 const howToSchema = {
   '@context': 'https://schema.org',
   '@type': 'HowTo',
-  name: '원근감 및 입체시 거리 감각 훈련 방법',
-  description: '다가오는 물체의 광학적 팽창을 포착하고 기준면 도달 타이밍을 일치시키는 단계별 프로토콜.',
+  name: "거리감 테스트 게임 하는 방법",
+  description: "기준 링과 겹치는 순간을 맞히는 4단계 연습법입니다.",
   step: [
-    {
-      '@type': 'HowToStep',
-      position: 1,
-      name: '기준 링과 소실점 주시',
-      text: '가상 터널 중앙에 위치한 고정 기준 링에 시선을 고정합니다.',
-      url: 'https://skilldrills.online/ko/drills/visual/depth-perception/distance-judgment#step-1'
-    },
-    {
-      '@type': 'HowToStep',
-      position: 2,
-      name: '접근하는 구체의 크기 변화 관찰',
-      text: '화면 깊은 곳에서 다가오며 망막 상에서 점점 확대되는 타겟을 주시합니다.',
-      url: 'https://skilldrills.online/ko/drills/visual/depth-perception/distance-judgment#step-2'
-    },
-    {
-      '@type': 'HowToStep',
-      position: 3,
-      name: '정확한 교차 순간에 클릭',
-      text: '다가오는 구체의 외곽선이 기준 링과 완벽히 겹치는 순간 스페이스바 또는 마우스를 클릭합니다.',
-      url: 'https://skilldrills.online/ko/drills/visual/depth-perception/distance-judgment#step-3'
-    },
-    {
-      '@type': 'HowToStep',
-      position: 4,
-      name: '거리 오차율 분석 및 난이도 상승 대응',
-      text: '측정된 상대 오차율(%)을 확인하고, 속도가 빨라지는 다음 라운드에서 시간 예측 타이밍을 보정합니다.',
-      url: 'https://skilldrills.online/ko/drills/visual/depth-perception/distance-judgment#step-4'
-    }
-  ]
+  {
+    "@type": "HowToStep",
+    "position": 1,
+    "name": "기준 링 확인",
+    "text": "화면 가운데의 기준 링 크기를 확인합니다."
+  },
+  {
+    "@type": "HowToStep",
+    "position": 2,
+    "name": "구체 지켜보기",
+    "text": "깊은 곳에서 다가오는 구체가 커지는 속도를 지켜봅니다."
+  },
+  {
+    "@type": "HowToStep",
+    "position": 3,
+    "name": "겹치는 순간 클릭",
+    "text": "구체의 가장자리가 기준 링과 겹치는 순간 클릭하거나 화면을 터치합니다."
+  },
+  {
+    "@type": "HowToStep",
+    "position": 4,
+    "name": "오차 확인",
+    "text": "정확도를 확인하고 일찍 누르는 습관을 줄입니다."
+  }
+].map((st) => ({ ...st, url: `${url}#step-${st.position}` })),
 };
+
+const faqs = [
+  {
+    "q": "거리감 테스트 게임은 무엇을 하나요?",
+    "a": "터널 깊은 곳에서 다가오는 구체의 가장자리가 기준 링의 크기와 겹치는 순간에 클릭하는 게임입니다. 구체가 커지는 속도를 보고 도달 시점을 가늠하는 연습이며, 클릭 시점의 오차율이 점수로 계산됩니다. 의료용 검사가 아니라 브라우저 연습 도구입니다."
+  },
+  {
+    "q": "입체시 검사와 같은가요?",
+    "a": "아닙니다. 입체시 검사는 두 눈의 시차를 이용한 깊이 지각을 보는 의료 검사입니다. 이 게임은 평면 모니터에서 구체의 크기 변화로 도달 시점을 가늠하는 연습이라 입체시를 측정하거나 진단하지 않습니다. 입체시가 걱정되면 안과 검진을 받으세요."
+  },
+  {
+    "q": "운전면허 적성검사나 심시력 검사 연습이 되나요?",
+    "a": "공식 검사와 방식이 다르므로 대비용으로 쓸 수 없습니다. 공식 검사는 지정된 장비와 절차로 진행되고, 이 게임은 구체가 기준 링과 겹치는 시점을 맞히는 연습입니다. 결과는 합격 여부와 무관한 연습 기록입니다."
+  },
+  {
+    "q": "점수는 어떻게 계산되나요?",
+    "a": "구체가 기준 링과 겹치는 시점에서 깊이 오차가 5% 미만이면 150점, 12% 미만이면 100점을 얻습니다. 시간 초과나 빗나감에는 감점이 없고 점수 없이 다음 표적이 나옵니다. 세션은 45초이며 레벨이 오르면 구체 속도가 빨라집니다."
+  },
+  {
+    "q": "구체의 커지는 속도로 거리를 가늠할 수 있나요?",
+    "a": "다가오는 물체가 커지는 속도로 부딪히기까지 남은 시간을 가늠할 수 있다는 연구가 있습니다(Lee, 1976; Regan & Beverley, 1978). 이 게임은 그런 상황을 단순하게 만든 것이며 개인의 시각 능력을 평가하는 도구가 아닙니다."
+  },
+  {
+    "q": "어디를 보면서 해야 하나요?",
+    "a": "다가오는 구체만 쫓지 말고 기준 링의 가장자리에 시선을 두고, 구체의 경계가 링에 닿는 순간을 기다려 클릭해 보세요. 더 좋은 방법은 사람마다 다를 수 있으니 직접 비교해 보세요."
+  },
+  {
+    "q": "일찍 클릭하게 되는 건 왜 그런가요?",
+    "a": "속도가 빨라지면 긴장해서 미리 누르기 쉽습니다. 클릭 타이밍을 늦추는 연습을 하고, 한 번에 레벨을 올리기보다 현재 속도에서 오차율을 안정시키세요."
+  },
+  {
+    "q": "하워드-돌먼 검사와 관련이 있나요?",
+    "a": "하워드-돌먼 장치는 두 막대의 거리 차이를 맞히는 전통적인 깊이 판단 검사입니다(Howard, 1919). 이 게임은 그 검사가 아니며 원리도 다릅니다. 깊이 판단을 주제로 한 연습 게임이라는 점만 공통입니다."
+  },
+  {
+    "q": "모니터와 장비가 점수에 영향을 주나요?",
+    "a": "주사율과 입력 지연이 클릭 시점에 영향을 줄 수 있습니다(Woods et al., 2015). 모니터 크기와 거리도 구체의 크기 변화가 보이는 방식을 바꿉니다. 같은 환경에서 기록을 비교하세요."
+  },
+  {
+    "q": "기록은 어디에 저장되나요?",
+    "a": "점수와 최고 레벨은 브라우저의 로컬 저장소에 보관되며 이 드릴에서 서버로 올리지 않습니다. 브라우저 데이터를 삭제하면 기록도 사라집니다. 자세한 내용은 개인정보처리방침을 확인하세요."
+  }
+];
 
 const faqSchema = {
   '@context': 'https://schema.org',
   '@type': 'FAQPage',
-  mainEntity: [
-    {
-      '@type': 'Question',
-      name: '원근감 테스트란 무엇이며 어떤 능력을 측정하나요?',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: '원근감 테스트는 3차원 공간에서 물체의 위치, 거리 차이, 다가오는 속도를 정밀하게 인지하는 능력을 평가합니다. 망막에 투영되는 상의 팽창 속도(광학적 루밍)를 분석하여 충돌 시점(TTC)을 계산하는 신경 시각 능력을 측정합니다.',
-      },
-    },
-    {
-      '@type': 'Question',
-      name: '하워드-돌먼(Howard-Dolman) 테스트와는 어떻게 다른가요?',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: '하워드-돌먼 검사(1919)는 실물 막대 3개를 이용해 양안 시차에 의한 입체시를 측정합니다. 평면 2D 모니터에서는 양안 시차가 발생하지 않으므로, 본 테스트는 실제 주행과 구기 스포츠에서 가장 핵심적인 동적 광학 팽창률(Lee, 1976)을 활용합니다.',
-      },
-    },
-    {
-      '@type': 'Question',
-      name: '광학적 루밍(Optical Looming)과 도달 시간(TTC)이란 무엇인가요?',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: '물체가 눈앞으로 다가올 때 망막상의 크기는 지수 함수적으로 급격히 커집니다. 데이비드 리(David Lee, 1976)는 뇌가 물체의 절대적 크기를 몰라도 이 팽창 비율(타우 변수)을 통해 충돌까지 남은 시간을 직접 계산한다고 규명했습니다.',
-      },
-    },
-    {
-      '@type': 'Question',
-      name: '운전면허나 중장비 자격증에서 심시력 검사가 왜 필수인가요?',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: '대형 트럭, 버스, 지게차 등은 차간 거리와 회전 반경을 잘못 가늠할 경우 대형 사고로 이어집니다. 심시력(거리 감각)이 떨어지면 제동 타이밍과 추월 거리를 오판하기 쉽기 때문입니다.',
-      },
-    },
-    {
-      '@type': 'Question',
-      name: '평소 시력이 좋은 사람도 심시력 검사에서 떨어질 수 있나요?',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: '네. 양안 시력이 1.0 이상이어도 양안 시력 균형이 깨져 있거나(부동시), 미세 사시, 잦은 스마트폰 사용으로 인한 조절 근육 피로가 있으면 공간 내 거리 오차가 크게 발생하여 불합격할 수 있습니다.',
-      },
-    },
-    {
-      '@type': 'Question',
-      name: '거리 감각과 원근감은 훈련으로 개선될 수 있나요?',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: '선천적 시각 이상은 안과 치료가 필요하지만, 다가오는 물체의 팽창 속도를 인지하고 타이밍을 맞추는 대뇌 시각 피질의 신경 처리 속도는 반복적인 인지 훈련으로 크게 향상될 수 있습니다.',
-      },
-    },
-    {
-      '@type': 'Question',
-      name: '테스트의 오차율(%)은 어떻게 계산되나요?',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: '사용자가 클릭한 순간의 구체 지름과 기준 링 지름 사이의 상대적 백분율 오차로 계산됩니다. 오차가 5% 미만이면 완벽한 일치(퍼펙트)로 판정됩니다.',
-      },
-    },
-    {
-      '@type': 'Question',
-      name: '야구, 테니스, 축구 등 스포츠 선수에게 원근감이 왜 중요한가요?',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: '시속 150km의 야구공이나 테니스 서브는 0.4초 만에 타자에게 도달합니다. 선수는 공의 팽창 속도를 읽고 배트나 라켓을 휘두르는 타이밍을 밀리초 단위로 결정해야 하기 때문입니다.',
-      },
-    },
-    {
-      '@type': 'Question',
-      name: '모니터 주사율(Hz)이 테스트 정확도에 영향을 주나요?',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: '144Hz나 240Hz 모니터는 프레임 지연을 4~7ms 수준으로 줄여주어 60Hz(16.7ms) 환경보다 구체의 윤곽이 기준면에 닿는 순간을 훨씬 선명하게 포착할 수 있습니다.',
-      },
-    },
-    {
-      '@type': 'Question',
-      name: '검사 결과와 점수가 외부 서버로 전송되나요?',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: '아닙니다. SkillDrills의 모든 기록과 통계는 사용자의 브라우저 로컬 저장소(LocalStorage)에만 안전하게 보관되며 외부로 유출되지 않습니다.',
-      },
-    },
-  ],
+  inLanguage: 'ko',
+  mainEntity: faqs.map((f) => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } })),
 };
 
 const distanceGuideKo = {
-  heading: '입체시 검사와 심시력 거리감 훈련 기준',
-  intro: [
-    '원근감(깊이 지각 및 입체시)은 시각 피질과 안구 운동 신경계가 외부 공간을 3차원으로 통합하여 물체 간의 상대적 거리, 체적, 그리고 동적 이동 궤적을 밀리초 단위로 정확히 판단하는 고차원적 인지 능력입니다. 모터스포츠, 항공기 조종, 운전면허 적성검사(대형·특수면허 입체시 검사), 그리고 하이퍼 FPS e스포츠에서 찰나의 거리 판단은 성공적인 인터셉트와 치명적인 충돌 사고를 가르는 절대적 기준이 됩니다.',
-    '본 드릴은 Harvey J. Howard(1919)가 비행 적성 선별을 위해 개발한 하워드-돌먼 삼간법(Howard-Dolman apparatus)의 기하학적 원리와 David N. Lee(1976), David Regan & Kenneth I. Beverley(1978)의 생태학적 시각 팽창 이론(Optical Looming 및 접촉 여유시간 τ)을 정밀하게 웹 브라우저 상에 구현했습니다. 원경에서 다가오는 3D 타겟 구체가 중앙의 기준 심도 링과 완벽히 일치하는 순간을 낚아챔으로써 동적 거리 지각력과 반응 타이밍을 집중 훈련합니다.',
-    '측정 정밀도 및 하드웨어 환경 안내: 모든 인터셉트 오차는 브라우저의 performance.now() 고해상도 타이머를 통해 서브 밀리초 단위로 로컬에서 연산되며, 기준 링 직경 대비 상대 오차율(|실측 직경 - 기준 직경| / 기준 직경)로 산출됩니다. 디스플레이 주사율(60Hz 약 16.7ms, 144Hz 약 6.9ms, 240Hz 약 4.1ms)과 마우스 폴링레이트(125Hz vs 1000Hz)에 따른 물리적 양자화 지연이 발생합니다(Woods et al., 2015). 5ms 미만의 차이는 측정 노이즈로 간주하며, 동일한 기기 환경에서 종단적 훈련 추이를 비교하는 것이 가장 신뢰성 높습니다.',
-    '데이터 투명성 및 개인정보 보호: SkillDrills는 어떠한 개인정보, 안과적 진단 수치, 세션 로그도 외부 서버로 전송하거나 수집하지 않습니다. 달성한 모든 최고 기록, 오차율 및 레벨 진행 상태는 사용자의 웹 브라우저 로컬 저장소(LocalStorage)에만 안전하게 보관됩니다.'
+  "heading": "거리감 테스트 게임 가이드",
+  "intro": [
+    "이 드릴은 터널 깊은 곳에서 다가오는 3D 구체가 기준 링과 같은 크기로 보이는 순간에 클릭하는 거리감 연습 게임입니다. 구체가 커지는 속도를 보고 도달 시점을 가늠하는 판단과 클릭 타이밍을 함께 연습합니다.",
+    "다가오는 물체가 커지는 속도로 부딪히기까지 남은 시간을 가늠할 수 있다는 연구가 있습니다(Lee, 1976; Regan & Beverley, 1978). 하워드-돌먼 장치는 전통적인 깊이 판단 검사로 알려져 있지만(Howard, 1919), 이 게임은 그 검사가 아닙니다.",
+    "세션은 45초이며 깊이 오차가 5% 미만이면 150점, 12% 미만이면 100점을 얻습니다. 레벨이 오르면 구체 속도가 빨라지고, 빗나가도 감점은 없습니다.",
+    "결과는 연습 기록입니다. 입체시 검사나 운전면허 적성검사를 대신하지 않으며, 시력 문제가 의심되면 안과 진료를 받으세요. 주사율과 입력 장치도 클릭 시점에 영향을 줄 수 있으니(Woods et al., 2015) 같은 환경에서 비교하세요."
   ],
-  benchmarks: {
-    title: '입체시·거리감 판정 기준표 (연습용 가이드)',
-    headers: ['등급', '평균 오차율', '점수 및 레벨', '시각 운동 신경 프로필'],
-    rows: [
-      ['Tier 1: 최상위 입체시 마스터', '5.0% 미만 오차', '1,500점 이상 | 레벨 7+', '탁월한 루밍 감지력, 오차 없는 완벽한 타이밍 추출.'],
-      ['Tier 2: 우수한 공간 거리 감각', '5.0% – 9.9% 오차', '1,100 – 1,499점 | 레벨 5–6', '뛰어난 공간 예측력, 고속 접근 타겟에 대한 원활한 적응.'],
-      ['Tier 3: 안정적 표준 수준', '10.0% – 15.9% 오차', '750 – 1,099점 | 레벨 3–4', '건강한 성인 평균, 최고 속도 구간에서 약간의 지연 발생.'],
-      ['Tier 4: 보통 수준의 민감도', '16.0% – 25.0% 오차', '450 – 749점 | 레벨 2', '기준면에 도달하기 전 성급하게 조기 클릭하는 경향.'],
-      ['Tier 5: 훈련 시작 단계', '25.0% 초과 오차', '450점 미만 | 레벨 1', '상당한 시점 추정 오차, 반복적인 타이밍 보정 훈련 필요.'],
+  "benchmarks": {
+    "title": "연습 단계 참고표",
+    "headers": [
+      "단계",
+      "평균 오차율 참고",
+      "연습 포인트"
     ],
-  },
-  protocols: {
-    title: '심시력 검사 연습을 위한 거리감 훈련 수칙',
-    items: [
-      {
-        title: '수칙 1: 광학적 팽창률(루밍)과 도달 시점 계산 집중',
-        description: '구체의 중앙점보다 외곽선의 팽창 가속도를 주시하여 기준 링과 겹치는 찰나를 계산하세요.',
-      },
-      {
-        title: '수칙 2: 조기 클릭 충동 억제',
-        description: '속도가 빨라질 때 긴장감으로 인해 너무 일찍 클릭하는 실수를 줄이고 완전한 겹침을 기다리세요.',
-      },
-      {
-        title: '수칙 3: 목표 기준 링에 시선 닻 내리기',
-        description: '다가오는 공을 따라 시선이 흔들리지 않도록 고정된 기준 링 평면에 초점을 유지하세요.',
-      },
-      {
-        title: '수칙 4: 호흡 조절 및 안구 피로 완화',
-        description: '눈을 깜빡이지 않고 무리하게 부릅뜨면 눈물이 말라 거리감이 왜곡됩니다. 세트 간 가볍게 눈을 쉬어주세요.',
-      },
+    "rows": [
+      [
+        "1단계",
+        "25% 초과",
+        "구체가 링에 닿기 전에 누르는 습관 줄이기"
+      ],
+      [
+        "2단계",
+        "16 – 25%",
+        "링 가장자리를 기준으로 기다리기"
+      ],
+      [
+        "3단계",
+        "10 – 16%",
+        "일정한 리듬으로 클릭하기"
+      ],
+      [
+        "4단계",
+        "5 – 10%",
+        "빠른 속도에서도 타이밍 유지하기"
+      ],
+      [
+        "5단계",
+        "5% 미만",
+        "같은 오차율을 여러 판 유지하기"
+      ]
     ],
+    "note": "이 표는 SkillDrills의 연습 방향 안내입니다. 시각 검사 기준, 사용자 통계, 백분위가 아닙니다."
   },
-  steps: [
-    '훈련 시작 버튼을 눌러 45초간 진행되는 원근감 및 거리 판정 세션을 시작합니다.',
-    '가상 터널의 중간 심도 평면에 배치된 하늘색 기준 링에 양안의 초점을 고정합니다.',
-    '터널 깊은 곳에서 생성되어 시선 방향으로 가속하며 다가오는 3D 구체를 주시합니다.',
-    '팽창하는 구체의 외곽 경계선이 기준 링의 직경과 정확히 겹치는 순간 마우스 클릭 또는 화면 터치를 실행합니다.',
-    '각 회차별 정밀도 판정(<5% 오차: 퍼펙트 / +150점)을 확인하며 점진적으로 빨라지는 45초간의 접근 속도에 적응합니다.'
+  "techniques": {
+    "title": "거리감 연습 요령 4가지",
+    "items": [
+      {
+        "name": "링 가장자리에 시선 두기",
+        "desc": "다가오는 구체를 쫓지 말고 기준 링 가장자리에 시선을 둔 채 구체의 경계가 닿는 순간을 기다리세요.",
+        "tips": "시선이 흔들리면 속도를 한 단계 낮춥니다."
+      },
+      {
+        "name": "일찍 누르지 않기",
+        "desc": "속도가 빨라지면 긴장해서 미리 누르기 쉽습니다. 완전히 겹치는 순간까지 기다리는 연습을 하세요.",
+        "tips": "오차율이 늘면 이전 속도로 돌아가 안정시킵니다."
+      },
+      {
+        "name": "리듬 만들기",
+        "desc": "구체가 커지는 간격에 맞춰 일정한 리듬으로 클릭하면 판마다 오차가 줄어듭니다.",
+        "tips": "같은 손가락과 같은 클릭 방식으로 일정하게 누릅니다."
+      },
+      {
+        "name": "눈 쉬게 하기",
+        "desc": "화면을 오래 보면 깜빡임이 줄어 눈이 건조해집니다. 세트 사이에 깜빡이고 먼 곳을 보세요.",
+        "tips": "눈이 불편하면 중단합니다."
+      }
+    ]
+  },
+  "steps": [
+    "시작 버튼을 눌러 45초 세션을 시작합니다.",
+    "화면 가운데의 기준 링 가장자리에 시선을 둡니다.",
+    "터널 깊은 곳에서 다가오는 구체가 커지는 속도를 지켜봅니다.",
+    "구체의 가장자리가 기준 링과 겹치는 순간 클릭하거나 터치합니다.",
+    "판정을 확인하며 점점 빨라지는 속도에 적응합니다."
   ],
-  audience: '운전면허 적성검사(대형·트레일러·버스 입체시 삼간도 검사)를 준비하는 운전자, 중장비 조종사, 야구·테니스·배드민턴 등 구기 스포츠 선수, 항공 조종사 및 공간 거리 감각을 극대화하려는 게이머.',
-  faqs: {
-    title: '원근감 및 거리 측정에 관한 자주 묻는 질문(FAQ)',
-    items: faqSchema.mainEntity.map((q) => ({
-      q: q.name,
-      a: q.acceptedAnswer.text,
-    })),
-  },
+  "audience": "구체의 도달 시점을 가늠하는 거리 판단 게임을 해 보고 싶은 사용자와 구기 종목, 레이싱, FPS 게이머.",
+  faqs,
   sources: pickSources('howard1919', 'lee1976', 'regan1978', 'julesz1971', 'woods2015'),
   related: [
     { href: "/ko/drills/visual/tracking-accuracy/moving-target", label: "움직이는 타겟 인터셉트" },
@@ -289,18 +239,18 @@ const distanceGuideKo = {
     { href: "/ko/drills/visual/tracking-accuracy/pursuit-tracker", label: "활창 추종 안구 운동 트래커" },
     { href: "/ko/drills/visual/reaction-speed/go/no-go", label: "Go / No-Go 충동 제어 훈련" },
     { href: "/ko/drills/visual/visual-recognition/entropic-grid", label: "엔트로픽 시각 탐색 테스트" }
-  ]
+  ],
 };
 
 const copyKo = {
-  title: '입체시 검사 온라인',
-  subtitle: '심시력·거리감 훈련 드릴',
-  caption: '원근감은 물체가 얼마나 멀리 있는지, 앞뒤 관계를 판단하는 시각 기능입니다. 평면 모니터에서는 망막상의 크기 팽창 속도(Lee, 1976; Regan & Beverley, 1978)를 통해 물체의 실제 크기나 거리를 몰라도 도달 시간(TTC)을 정확히 계산하는 능력을 측정합니다.',
+  title: '거리감 테스트 게임',
+  subtitle: '원근감·거리 판단 연습',
+  caption: '다가오는 구체가 기준 링과 같은 크기로 보이는 순간을 맞혀 보세요. 구체가 커지는 속도로 도달 시점을 가늠하는 연습이며(Lee, 1976; Regan & Beverley, 1978) 의료 검사는 아닙니다.',
   statScore: '점수',
   statTime: '남은 시간',
   statLevel: '레벨',
   statBestScore: '최고 기록',
-  startTitle: '원근감 측정 프로',
+  startTitle: '거리감 테스트',
   startSubtitle: '다가오는 목표물의 거리감·타이밍 연습',
   startBtn: '테스트 시작',
   getReady: '준비하세요',
@@ -312,7 +262,7 @@ const copyKo = {
   playAgain: '다시 하기',
   shareScore: '점수 공유',
   returnOptions: '종료',
-  rulesTitle: '테스트 규칙 및 점수 산정',
+  rulesTitle: '규칙과 점수 계산',
   rule1Text: '완벽한 거리 일치',
   rule1Highlight: '+150점',
   rule1Result: '깊이 오차 5% 미만',
@@ -325,14 +275,14 @@ const copyKo = {
   rule4Text: '시간 초과 / 빗나감',
   rule4Highlight: '감점 없음',
   rule4Result: '점수 없이 다음 타겟 즉시 출현',
-  aboutTitle: '원근감 테스트 정보',
+  aboutTitle: '거리감 테스트 안내',
   overviewTitle: '이 테스트가 측정하는 핵심 능력',
-  overviewLead: '원근감은 다가오는 물체의 속도와 거리를 파악하여 완벽한 타이밍에 행동하도록 이끄는 능력입니다.',
-  overviewBody: '광학적 팽창률(Looming)을 기반으로 한 본 시뮬레이터는 야구, 테니스, 축구 등의 스포츠 선수와 정밀 운전을 요하는 운전자에게 탁월한 시각 반응성 훈련을 제공합니다.',
+  overviewLead: '다가오는 물체가 커지는 속도로 도달 시점을 가늠해 타이밍을 맞추는 연습입니다.',
+  overviewBody: '구체가 커지는 속도를 보고 기준 링과 겹치는 순간을 맞히는 단순한 게임입니다. 의료용 입체시 검사나 면허 검사를 대신하지 않습니다.',
   aboutCards: [
-    { iconBg: 'bg-blue-600', title: '추천 대상', text: '운전자, 구기 종목 선수, 레이싱/FPS 게이머 및 공간 감각을 기르고 싶은 모든 분.' },
-    { iconBg: 'bg-cyan-600', title: '훈련 효과', text: '동체 원근감, 충돌 도달 시간(TTC) 계산력, 눈과 손의 협응 타이밍.' },
-    { iconBg: 'bg-purple-600', title: '합격 팁', text: '다가오는 공보다 고정된 기준 링의 경계면에 시선을 두고 일치 순간에 클릭하세요.' }
+    { iconBg: 'bg-blue-600', title: '추천 대상', text: '거리 판단 게임을 해 보고 싶은 사용자와 구기 종목, 레이싱, FPS 게이머.' },
+    { iconBg: 'bg-cyan-600', title: '연습하는 것', text: '도달 시점 가늠, 클릭 타이밍, 눈과 손의 협응.' },
+    { iconBg: 'bg-purple-600', title: '요령', text: '다가오는 구체보다 기준 링의 경계면에 시선을 두고 겹치는 순간에 클릭하세요.' }
   ]
 };
 
