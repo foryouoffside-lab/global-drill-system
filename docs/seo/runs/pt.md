@@ -44,3 +44,4 @@
 | /pt/drills/visual-tracking/triangular-pursuit | done | TBD:triangular-pursuit | docs/seo/research/pt/triangular-pursuit.md | title kept; Top-% percentiles and rank names removed; demand not verified |
 | /pt/drills/visual-tracking/zig-zag-path-pursuit | done | TBD:zig-zag-path-pursuit | docs/seo/research/pt/zig-zag-path-pursuit.md | title kept; Top-% percentiles and rank names removed; demand not verified |
 | /pt/drills/reaction-speed/saccadic-gallery | done | TBD:saccadic-gallery | docs/seo/research/pt/saccadic-gallery.md | title kept (keeps bare head term, others deduped); rank labels removed; demand not verified |
+| /pt/drills/visual-tracking/constant-slow-pursuit | done | TBD:constant-slow-pursuit | docs/seo/research/pt/constant-slow-pursuit.md | audited, no change needed; demand not verified |
