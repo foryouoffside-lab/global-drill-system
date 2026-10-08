@@ -6,29 +6,29 @@ import { getLocalizedDrill } from '@/lib/i18n/drillNames';
 const motorDrills = DRILLS.filter((d) => d.category === 'motor');
 
 export const metadata = {
-  title: '마우스 정밀도 테스트 & 에임 연습 | SkillDrills',
-  description: '마우스 정확도, 에임 제어, CPS 클릭, 키보드 속도와 눈손 협응을 훈련하는 무료 브라우저 드릴 9종.',
+  title: 'CPS 측정·에임 연습 사이트·키보드 반응속도 | SkillDrills',
+  description: 'CPS 측정, 에임 연습 사이트, 마우스 정확도 테스트, 키보드 반응속도 테스트까지 모터 드릴 9종을 무료로 브라우저에서 해 보세요.',
   keywords: [
-    '마우스 정밀도 테스트', '마우스 정확도 테스트', '에임 연습',
+    'CPS 측정', '클릭속도 테스트', '에임 연습 사이트', '마우스 정확도 테스트', '키보드 반응속도 테스트', '에임 연습',
     '에임 트레이너 무료', 'CPS 테스트', '클릭 속도 테스트',
     '키보드 속도 테스트', '키보드 동시입력 테스트', '눈손 협응력 훈련',
     '마우스 미세 제어', '손 안정성 훈련', '게이밍 마우스 정확도',
     '손가락 민첩성 훈련', '무료 모터 스킬 드릴'
   ],
   openGraph: {
-    title: '마우스 정밀도 테스트 & 에임 연습 | SkillDrills',
-    description: '마우스 정확도, 에임 제어, CPS 클릭, 키보드 속도와 눈손 협응을 훈련하는 무료 브라우저 드릴 9종.',
+    title: 'CPS 측정·에임 연습 사이트·키보드 반응속도 | SkillDrills',
+    description: 'CPS 측정, 에임 연습 사이트, 마우스 정확도 테스트, 키보드 반응속도 테스트까지 모터 드릴 9종을 무료로 브라우저에서 해 보세요.',
     type: 'website',
     url: 'https://skilldrills.online/ko/drills/motor',
     siteName: 'SkillDrills',
     locale: 'ko_KR',
-    images: [{ url: 'https://skilldrills.online/icons/icon-512x512.png', width: 512, height: 512, alt: '마우스 정확도 및 소근육 모터 스킬 훈련 도감' }],
+    images: [{ url: 'https://skilldrills.online/opengraph-image', width: 1200, height: 630, alt: 'CPS 측정·에임 연습·마우스 정확도 테스트 | SkillDrills' }],
   },
   twitter: {
     card: 'summary_large_image',
-    title: '마우스 정밀도 테스트 & 에임 연습 | SkillDrills',
-    description: '마우스 정확도, 에임 제어, CPS 클릭, 키보드 속도와 눈손 협응을 훈련하는 무료 브라우저 드릴 9종.',
-    images: ['https://skilldrills.online/icons/icon-512x512.png'],
+    title: 'CPS 측정·에임 연습 사이트·키보드 반응속도 | SkillDrills',
+    description: 'CPS 측정, 에임 연습 사이트, 마우스 정확도 테스트, 키보드 반응속도 테스트까지 모터 드릴 9종을 무료로 브라우저에서 해 보세요.',
+    images: ['https://skilldrills.online/opengraph-image'],
   },
   robots: { index: true, follow: true },
   alternates: {
@@ -52,7 +52,7 @@ const collectionSchema = {
   "@type": "CollectionPage",
   "inLanguage": "ko-KR",
   "dateModified": "2026-09-20",
-  "name": "마우스 정밀도 테스트 & 에임 연습 (9종)",
+  "name": "CPS 측정·에임 연습·마우스 정확도 테스트 (9종)",
   "url": "https://skilldrills.online/ko/drills/motor",
   "description": "마우스 정확도, 에임 제어, CPS 클릭, 키보드 속도와 눈손 협응을 측정하는 무료 브라우저 드릴 9종.",
   "author": { "@type": "Organization", "name": "SkillDrills" },
@@ -81,7 +81,7 @@ const faqSchema = {
       "name": "온라인 모터 훈련 드릴은 어떻게 눈과 손의 협응력을 향상시키나요?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "모터 훈련 드릴은 시각 피질의 망막 이미지 인식, 소뇌의 운동 계획, 운동 피질의 신호 전달을 연결하는 시각-운동 피드백 루프를 강화합니다. 고주파 미세 조준, 빠른 마우스 클릭 및 경로 추적 훈련을 통해 신경계의 감각운동 지연을 줄여 180ms 미만으로 시각 표적 변화를 물리적 동작으로 변환합니다."
+        "text": "모터 훈련 드릴은 시각 피질의 망막 이미지 인식, 소뇌의 운동 계획, 운동 피질의 신호 전달을 연결하는 시각-운동 피드백 루프를 강화합니다. 고주파 미세 조준, 빠른 마우스 클릭 및 경로 추적 훈련을 통해 표적을 보고 손으로 반응하는 과정을 반복 연습하게 해 줍니다. 개선 폭에는 개인차가 있으며 같은 기기에서 본인의 기록 변화를 비교하는 것이 가장 정확합니다."
       }
     },
     {
@@ -113,7 +113,7 @@ const faqSchema = {
       "name": "게이밍과 타건 속도에서 키보드 동시입력과 민첩성이 중요한 이유는 무엇인가요?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "키보드 민첩성은 약지와 새끼손가락의 해부학적 힘줄 결합을 극복하는 독립적인 손가락 제어에 달려 있습니다. 키보드 테스트 및 인식 훈련은 손가락별 작동 패턴을 분리하여 키 전환 지연 시간을 줄이고 빠른 APM 상황에서 키 씹힘이나 오입력을 방지합니다."
+        "text": "키보드 민첩성은 약지와 새끼손가락의 해부학적 힘줄 결합을 극복하는 독립적인 손가락 제어에 달려 있습니다. 키보드 테스트 및 인식 훈련은 손가락별 작동 패턴을 분리하여 키 전환 지연 시간을 줄이고 빠른 APM 상황에서 키 씹힘이나 오입력을 줄이는 데 도움이 될 수 있습니다."
       }
     },
     {
@@ -121,7 +121,7 @@ const faqSchema = {
       "name": "브라우저 기반 마우스 및 키보드 테스트는 얼마나 정확한가요?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "브라우저 타이머는 performance.now()를 통해 0.1ms 정밀도를 지원합니다. 전체 측정은 디스플레이 주사율(120Hz 약 8ms, 60Hz 약 16ms)과 마우스/키보드 폴링레이트(1000Hz 약 1ms)의 하드웨어 한계 내에서 작동하며, 브라우저 환경에서 장치 성능 및 개인 기록 향상을 추적하기에 충분한 정밀도를 제공합니다."
+        "text": "브라우저 타이머는 performance.now()를 사용하며 값은 브라우저 보안 설정에 따라 반올림될 수 있습니다. 전체 측정은 디스플레이 주사율(120Hz 약 8ms, 60Hz 약 16ms)과 마우스/키보드 폴링레이트(1000Hz 약 1ms)의 하드웨어 한계 내에서 작동하며, 브라우저 환경에서 장치 성능 및 개인 기록 향상을 추적하기에 충분한 정밀도를 제공합니다."
       }
     },
     {
@@ -137,7 +137,7 @@ const faqSchema = {
       "name": "키보드 채터링(Chattering)과 고스팅(Ghosting) 현상은 타건 정확도에 어떤 문제를 일으키나요?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "채터링은 기계식 스위치의 접점 바운스 현상으로 단일 키 입력이 2회 이상 중복 인식되는 하드웨어 결함이며, 고스팅은 매트릭스 신호 간섭으로 누르지 않은 키가 오작동하거나 3개 이상의 동시 입력이 누락되는 문제입니다. SkillDrills의 키보드 테스트는 0.1ms 단위로 스위치의 접점 안정성과 무한 동시입력(NKRO) 상태를 실시간 진단하여, 하드웨어 지연이나 오작동 없는 최적의 모터 퍼포먼스를 보장합니다."
+        "text": "채터링은 기계식 스위치의 접점 바운스 현상으로 단일 키 입력이 2회 이상 중복 인식되는 하드웨어 결함이며, 고스팅은 매트릭스 신호 간섭으로 누르지 않은 키가 오작동하거나 3개 이상의 동시 입력이 누락되는 문제입니다. 키보드 반응 드릴은 키 입력이 인식되는 시점을 기록해 입력 지연을 확인하는 데 참고할 수 있지만, 스위치 불량 진단이나 NKRO 보증을 위한 전용 검사 도구는 아닙니다."
       }
     }
   ]

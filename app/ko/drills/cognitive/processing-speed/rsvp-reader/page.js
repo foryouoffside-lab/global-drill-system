@@ -6,12 +6,12 @@ import DrillFooter from '@/components/drill/DrillFooter';
 import { pickSources } from '@/lib/drillSources';
 
 export const metadata = {
-  title: "속독 테스트 | RSVP 읽기 훈련 | SkillDrills",
-  description: "무료 브라우저 속독 테스트에서 단어를 한 지점에 빠르게 표시합니다. WPM과 정확도를 확인하는 비임상 읽기 훈련입니다.",
-  keywords: ["속독 테스트", "속독 테스트 온라인", "속독 연습", "읽기 속도 측정", "독서 속도 테스트", "분당 단어수", "빠른 읽기 훈련", "RSVP 속독"],
+  title: "속독 훈련·속독 테스트 | RSVP 읽기 | SkillDrills",
+  description: "단어를 한 지점에 빠르게 보여 주는 무료 속독 훈련·속독 테스트입니다. WPM 단계를 올리며 표적 단어 검출 정확도를 확인하는 비임상 읽기 연습입니다.",
+  keywords: ["속독 훈련", "속독 테스트", "속독 훈련 사이트", "속독 테스트 온라인", "속독 연습", "읽기 속도 측정", "독서 속도 테스트", "분당 단어수", "빠른 읽기 훈련", "RSVP 속독"],
   openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
-    title: "속독 테스트 | RSVP 읽기 훈련 | SkillDrills",
-    description: "무료 브라우저 속독 테스트에서 단어를 한 지점에 빠르게 표시합니다. WPM과 정확도를 확인하는 비임상 읽기 훈련입니다.",
+    title: "속독 훈련·속독 테스트 | RSVP 읽기 | SkillDrills",
+    description: "단어를 한 지점에 빠르게 보여 주는 무료 속독 훈련·속독 테스트입니다. WPM 단계를 올리며 표적 단어 검출 정확도를 확인하는 비임상 읽기 연습입니다.",
     type: 'article',
     url: 'https://skilldrills.online/ko/drills/cognitive/processing-speed/rsvp-reader',
     siteName: 'SkillDrills',
@@ -19,8 +19,8 @@ export const metadata = {
   },
   twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: 'summary_large_image',
-    title: "속독 테스트 | RSVP 읽기 훈련 | SkillDrills",
-    description: "무료 브라우저 속독 테스트에서 단어를 한 지점에 빠르게 표시합니다. WPM과 정확도를 확인하는 비임상 읽기 훈련입니다.",
+    title: "속독 훈련·속독 테스트 | RSVP 읽기 | SkillDrills",
+    description: "단어를 한 지점에 빠르게 보여 주는 무료 속독 훈련·속독 테스트입니다. WPM 단계를 올리며 표적 단어 검출 정확도를 확인하는 비임상 읽기 연습입니다.",
   },
   robots: { index: true, follow: true },
   alternates: {
@@ -133,7 +133,7 @@ const faqSchema = {
       "name": "RSVP(Rapid Serial Visual Presentation) 속독이란?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "화면의 단일 지점에 단어를 한 번에 하나씩 연속 점멸 표시하여 안구 이동 시간 낭비를 제거하는 최첨단 속독 기법입니다."
+        "text": "화면의 단일 지점에 단어를 한 번에 하나씩 연속 점멸 표시하여 안구 이동을 줄여 읽는 연습을 하는 방식입니다. 읽기 이해도를 보장하는 방법은 아니므로 내용을 파악하는지 함께 확인해야 합니다."
       }
     },
     {
@@ -149,7 +149,7 @@ const faqSchema = {
       "name": "일반 독서 속도가 느린 근본적인 이유는?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "전체 독서 시간의 약 80%가 단어 사이를 뛰어넘는 안구 도약 운동(사카드)과 되돌아 읽기(회귀)에 소모되기 때문입니다(Rayner, 2016)."
+        "text": "읽는 동안 시선이 단어 사이를 뛰어넘는 도약 운동(사카드)과 되돌아 읽기(회귀)가 반복되기 때문입니다(Rayner, 2016). 이 드릴은 시선 이동을 없앤 제시 방식으로 단어 인식 속도를 연습합니다."
       }
     },
     {
@@ -157,7 +157,7 @@ const faqSchema = {
       "name": "성인의 평균 독서 속도(WPM)는?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "일반 성인의 평균 독서 속도는 200~250 WPM이며, 훈련된 속독가는 400~600 WPM에 달합니다."
+        "text": "영어 묵독 연구에서 성인의 평균은 분당 200~250단어(WPM) 안팎으로 보고됩니다(Rayner 외, 2016). 한국어는 단어 단위가 달라 WPM을 그대로 비교하기 어렵고, 이 드릴의 WPM은 화면에 단어를 보여 주는 속도 단계입니다."
       }
     },
     {
@@ -181,7 +181,7 @@ const faqSchema = {
       "name": "RSVP 훈련이 대뇌 정보 처리에 주는 이점은?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "시각 어휘 처리 영역(VWFA)의 활성도를 높이고 단기 작업기억 버퍼 용량을 비약적으로 증대시킵니다."
+        "text": "빠르게 제시되는 단어를 인식하는 연습을 제공합니다. 작업기억이나 독해력이 향상된다는 근거는 이 페이지에서 주장하지 않으며, 효과에는 개인차가 있습니다."
       }
     },
     {
@@ -189,7 +189,7 @@ const faqSchema = {
       "name": "모니터 주사율의 중요성은?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "144Hz 이상의 주사율은 초고속으로 단어가 바뀔 때 프레임 드랍 없이 깨끗한 가독성을 제공합니다(Woods et al., 2015)."
+        "text": "주사율이 높을수록 단어가 바뀌는 시점이 더 촘촘하게 표시됩니다. 60Hz는 한 프레임이 약 16.7ms이므로 빠른 단계에서는 화면 지연이 체감될 수 있습니다(Woods et al., 2015)."
       }
     },
     {
@@ -197,7 +197,7 @@ const faqSchema = {
       "name": "어떤 사람에게 가장 유용한가요?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "방대한 문서를 읽어야 하는 수험생, 연구원, 화면의 텍스트 브리핑을 신속히 파악해야 하는 게이머에게 탁월합니다."
+        "text": "많은 글을 읽는 수험생과 직장인, 빠른 텍스트 제시에 집중하는 연습을 하려는 사람에게 적합합니다."
       }
     },
     {
@@ -205,7 +205,7 @@ const faqSchema = {
       "name": "별도 가입이나 프로그램 설치가 필요한가요?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "아닙니다. SkillDrills는 웹 브라우저에서 100% 무료로 바로 작동합니다."
+        "text": "아닙니다. 회원가입이나 설치 없이 웹 브라우저에서 무료로 바로 시작할 수 있습니다."
       }
     }
   ]
@@ -253,21 +253,22 @@ const guideProps = {
   intro: {
     title: "속독 연습 RSVP・읽기 속도 테스트 – 분당 단어수 WPM 측정",
     paragraphs: [
-      "무료 온라인 RSVP 속독 연습 및 독서 속도 검사. 안구 이동을 없애고 단어 최적 인식점(ORP)에 텍스트를 초고속 제시하여 최대 850 WPM의 정보 처리 능력을 평가합니다.",
+      "무료 온라인 RSVP 속독 연습 및 독서 속도 검사. 안구 이동을 없애고 단어 최적 인식점(ORP)에 텍스트를 한 단어씩 제시합니다. 속독 훈련·속독 테스트로 250~850 WPM 단계의 단어 인식 속도와 표적 단어 검출 정확도를 연습합니다.",
       "단어의 철자 중 인간의 시각 피질이 가장 효율적으로 단어 전체를 해독할 수 있는 기준 글자 위치(보통 중심보다 약간 좌측)입니다(Rayner, 1998).",
-      "전체 독서 시간의 약 80%가 단어 사이를 뛰어넘는 안구 도약 운동(사카드)과 되돌아 읽기(회귀)에 소모되기 때문입니다(Rayner, 2016).",
+      "읽는 동안 시선이 단어 사이를 뛰어넘는 도약 운동(사카드)과 되돌아 읽기(회귀)가 반복되기 때문입니다(Rayner, 2016). 이 드릴은 시선 이동을 없앤 제시 방식으로 단어 인식 속도를 연습합니다.",
     ],
   },
   benchmarks: {
-    title: '인지 수행 능력 표준 평가 벤치마크',
-    headers: ['등급 (Tier)', '호칭 (Rank)', '평가 기준', '도달 수준', '정확도', '백분위'],
+    title: 'RSVP 읽기 수행 구간(참고용)',
+    headers: ['단계', '구간 이름', '해석', '도달 수준', '정확도 목표', '비고'],
     rows: [
-      { tier: 'Tier 1', rank: '그랜드마스터 / 초고속 정보처리 엘리트', stat: '상위 1%', level: '마스터리 (최상위)', accuracy: '98% 이상', percentile: '상위 1%' },
-      { tier: 'Tier 2', rank: '상급 속독 인지자', stat: '상위 5%', level: '다이아몬드 (우수)', accuracy: '94–97%', percentile: '상위 5%' },
-      { tier: 'Tier 3', rank: '숙련 정보 흡수자', stat: '상위 15%', level: '플래티넘 (숙련)', accuracy: '88–93%', percentile: '상위 15%' },
-      { tier: 'Tier 4', rank: '일반 성인 표준', stat: '상위 50%', level: '골드 (표준)', accuracy: '78–87%', percentile: '상위 50%' },
-      { tier: 'Tier 5', rank: '초보 / 입문 기준선', stat: '기준선 (기초)', level: '실버 (기초)', accuracy: '78% 미만', percentile: '기준선 (하위)' },
+      { tier: 'Tier 1', rank: '최상위 구간', stat: '매우 높음', level: '최상위', accuracy: '98% 이상', percentile: '정확도 유지가 핵심' },
+      { tier: 'Tier 2', rank: '상급', stat: '높음', level: '우수', accuracy: '94–97%', percentile: '속도 상승 시 오답 관리' },
+      { tier: 'Tier 3', rank: '숙련', stat: '평균 이상', level: '숙련', accuracy: '88–93%', percentile: '속도와 정확도 균형' },
+      { tier: 'Tier 4', rank: '일반 수준', stat: '평균 범위', level: '표준', accuracy: '78–87%', percentile: '기본 규칙 익히기' },
+      { tier: 'Tier 5', rank: '입문', stat: '기준선', level: '기초', accuracy: '78% 미만', percentile: '천천히 정확하게 시작' },
     ],
+    note: '구간은 SkillDrills가 정한 참고용 구분이며 사용자 통계, 백분위 또는 임상 기준이 아닙니다.',
   },
   protocols: {
     title: '두뇌 처리 속도와 집중력을 극대화하는 4대 훈련 프로토콜',
@@ -317,7 +318,7 @@ export default function LocalizedCognitivePage() {
       />
       <RSVPReaderClient
         copy={{
-          title: "속독 테스트",
+          title: "속독 훈련·속독 테스트",
           subtitle: "고정된 시선 위치에서 단어를 처리하며 읽기 속도와 정확도를 연습합니다",
           startTitle: "RSVP 속독 테스트",
           startSubtitle: "단어 인식 • ORP 집중",

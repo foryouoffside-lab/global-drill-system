@@ -4,30 +4,14 @@ import RelatedDrills from '@/components/drill/RelatedDrills';
 import { getAlternateLanguages } from '@/lib/i18n/locales';
 import { pickSources } from '@/lib/drillSources';
 
-// ============================================================
-// SEO RESEARCH FINDINGS — South Korea (KR / KO)
-// Primary Intent: 마우스 피하기 게임, 동체시력 테스트 게임, 동체시력 반응속도 테스트, 주변시 훈련
-// Context: Korean flash/LoL skill dodging culture (마우스 피하기, 롤 스킬 피하기) & tactical AOE evasion
-// Target Queries:
-//   - "마우스 피하기 게임" (High-intent gaming phrase)
-//   - "동체시력 테스트 게임" / "동체시력 테스트" (Core motion vision evaluation)
-//   - "동체시력 반응속도 테스트" (Reaction speed & visual acuity query)
-//   - "반응속도 테스트 게임" (Reaction speed game)
-//   - "주변시 훈련 게임" (Peripheral vision cognitive query)
-//   - "마우스 커서 피하기" (Cursor avoidance query)
-//   - "위험 회피 반응 훈련" (Hazard avoidance reflex drill)
-//   - "롤 스킬 피하기 훈련" (Gaming specific intent)
-// ============================================================
-
 export const metadata = {
-  title: "반응속도 테스트 게임 | 마우스 피하기 | SkillDrills",
-  description: "무료 반응속도 테스트 게임과 마우스 피하기 훈련. 3x3 격자의 위험 구역을 주변시로 감지하고 안전 칸으로 이동하며 반사신경을 단련합니다.",
+  title: "칸 피하기 반응 게임 | 주변시 회피 훈련 | SkillDrills",
+  description: "3x3 격자의 위험 구역을 주변시로 감지하고 안전한 칸으로 마우스를 옮기는 무료 칸 피하기 반응 게임입니다. 경고 시간이 줄어드는 15레벨로 회피 반응을 연습하세요.",
   keywords: [
-    "반응속도 테스트",
-    "반응속도 테스트 게임",
-    "동체시력 테스트",
-    "동체시력 테스트 게임",
+    "칸 피하기 게임",
+    "위험 구역 피하기 게임",
     "마우스 피하기 게임",
+    "반응속도 게임",
     "주변시 훈련",
     "주변시 훈련 게임",
     "롤 스킬 피하기 훈련",
@@ -39,8 +23,8 @@ export const metadata = {
     languages: getAlternateLanguages('/drills/physical/coordination/dynamic-grid-evasion'),
   },
   openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
-    title: "반응속도 테스트 게임 | 마우스 피하기 | SkillDrills",
-    description: "무료 반응속도 테스트 게임과 마우스 피하기 훈련. 3x3 격자의 위험 구역을 주변시로 감지하고 안전 칸으로 이동하며 반사신경을 단련합니다.",
+    title: "칸 피하기 반응 게임 | 주변시 회피 훈련 | SkillDrills",
+    description: "3x3 격자의 위험 구역을 주변시로 감지하고 안전한 칸으로 마우스를 옮기는 무료 칸 피하기 반응 게임입니다. 경고 시간이 줄어드는 15레벨로 회피 반응을 연습하세요.",
     url: 'https://skilldrills.online/ko/drills/physical/coordination/dynamic-grid-evasion',
     siteName: 'SkillDrills',
     locale: 'ko_KR',
@@ -48,8 +32,8 @@ export const metadata = {
   },
   twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: 'summary_large_image',
-    title: "반응속도 테스트 게임 | 마우스 피하기 | SkillDrills",
-    description: "무료 반응속도 테스트 게임과 마우스 피하기 훈련. 3x3 격자의 위험 구역을 주변시로 감지하고 안전 칸으로 이동하며 반사신경을 단련합니다.",
+    title: "칸 피하기 반응 게임 | 주변시 회피 훈련 | SkillDrills",
+    description: "3x3 격자의 위험 구역을 주변시로 감지하고 안전한 칸으로 마우스를 옮기는 무료 칸 피하기 반응 게임입니다. 경고 시간이 줄어드는 15레벨로 회피 반응을 연습하세요.",
   },
   robots: { index: true, follow: true },
 };
@@ -226,7 +210,7 @@ const faqSchema = {
       "name": "최정상 등급인 17,000점(Apex Grid Evader)을 달성하기 위한 플레이 팁은?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "45초 동안 단 한 번의 피격 없이 3.0배 콤보를 끝까지 유지하고, 0.45~0.60초의 초단기 경고 구간인 12레벨 이상을 완벽하게 통과해야 합니다. 각 웨이브가 끝난 직후 커서를 다시 격자 중앙 셀 근처로 부드럽게 복귀시키는 '센터링 습관'이 다음 회피 성공률을 50% 이상 높여줍니다."
+        "text": "45초 동안 단 한 번의 피격 없이 3.0배 콤보를 끝까지 유지하고, 0.45~0.60초의 초단기 경고 구간인 12레벨 이상을 통과해야 합니다. 각 웨이브가 끝난 직후 커서를 다시 격자 중앙 셀 근처로 복귀시키는 '센터링 습관'이 다음 회피에 도움이 될 수 있습니다."
       }
     },
     {
@@ -234,7 +218,7 @@ const faqSchema = {
       "name": "본 테스트는 별도의 다운로드나 설치 없이 무료로 이용할 수 있나요?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "네, SkillDrills의 모든 드릴은 100% 무료이며 웹 브라우저(HTML5 Canvas) 상에서 즉시 실행됩니다. 별도의 회원가입이나 앱 설치가 필요 없으며, 최고 점수와 플레이 기록은 개인 브라우저 내부 로컬에만 안전하게 암호화 보관됩니다."
+        "text": "네, 무료이며 웹 브라우저에서 바로 실행됩니다. 회원가입이나 앱 설치가 필요 없고, 최고 점수는 사용자의 브라우저 저장소에 보관됩니다."
       }
     }
   ]
@@ -283,20 +267,20 @@ const gridGuide = {
   intro: [
     "마우스 피하기 & 동체시력 격자 회피 드릴(Dynamic Grid Evasion)은 3x3 전술 매트릭스 상에서 무작위로 발생하는 폭발 위험 구역을 시야 전체로 포착하고, 찰나의 시간 안에 안전한 비위험 구역으로 커서를 신속하게 도피시키는 고강도 공간 반사 신경 훈련입니다. 단일 표적을 쫓는 추적 훈련과 달리, 9개 구역에서 동시다발적으로 주어지는 시각 위험 경고를 분석하여 최적의 탈출 벡터를 산출해야 하므로 고도의 인지-운동 전환 속도가 요구됩니다.",
     "시각 인지 심리학의 대가 앤 트리즈먼과 겔레이드(Treisman & Gelade, 1980)의 '특징 통합 이론(Feature Integration Theory)'에 따르면, 자극의 돌출된 원초적 특징(색상, 점멸 테두리)은 시각 피질의 사전 주의 단계(Pre-attentive stage)에서 병렬적으로 즉각 분리됩니다. 플레이어가 3x3 격자의 중심부에 시선을 고정하고 주변시(Peripheral Vision)를 활성화하면, 9개 셀 중 어느 곳이 안전한지 낱낱이 훑어보는 순차 탐색을 거치지 않고도 안전 셀을 한눈에 감지할 수 있습니다.",
-    "마이클 포스너(Posner, 1980)의 '공간 지향 패러다임(Spatial Orienting Paradigm)'은 시각 신호의 돌발 출현(Exogenous Cue)이 뇌의 암묵적 주의(Covert Attention)를 무의식적으로 이끈다는 점을 입증했습니다. 레벨이 올라갈수록 경고 노출 시간은 1.4초에서 0.45초로 붕괴하며 위험 구역은 7개까지 확대됩니다. 이때 로버트 우드워스(Woodworth, 1899)의 2단계 제어 모델에 따라, 초반의 폭발적인 탄도 플릭(Ballistic flick)과 안전 셀 경계선 안에서 즉시 멈추는 손끝 마찰 제동(Current-control deceleration)의 조화가 피격을 막는 절대적인 방벽이 됩니다.",
-    "측정 정밀도 및 하드웨어 안내: 본 드릴은 브라우저의 performance.now() 고해상도 타이머를 활용하여 클라이언트 기기 내부에서 밀리초 단위로 연산됩니다. 디스플레이 주사율(60Hz 16.7ms / 144Hz 6.9ms / 240Hz 4.1ms) 및 마우스 폴링레이트(125Hz vs 1000Hz)에 따라 물리적 지연 차이가 발생할 수 있으므로, 5ms 미만의 오차는 측정 노이즈로 감안하시기 바랍니다. 모든 기록은 브라우저에만 안전하게 저장됩니다."
+    "마이클 포스너(Posner, 1980)의 '공간 지향 패러다임(Spatial Orienting Paradigm)'은 시각 신호의 돌발 출현(Exogenous Cue)이 뇌의 암묵적 주의(Covert Attention)를 무의식적으로 이끈다는 점을 보고했습니다. 레벨이 올라갈수록 경고 노출 시간은 1.4초에서 0.45초로 붕괴하며 위험 구역은 7개까지 확대됩니다. 이때 로버트 우드워스(Woodworth, 1899)의 2단계 제어 모델에 따라, 초반의 폭발적인 탄도 플릭(Ballistic flick)과 안전 셀 경계선 안에서 즉시 멈추는 손끝 마찰 제동(Current-control deceleration)의 조화가 피격을 줄이는 데 도움이 됩니다.",
+    "측정 정밀도 및 하드웨어 안내: 본 드릴은 브라우저의 performance.now() 타이머를 활용하여 클라이언트 기기 내부에서 측정합니다. 디스플레이 주사율(60Hz 16.7ms / 144Hz 6.9ms / 240Hz 4.1ms) 및 마우스 폴링레이트(125Hz vs 1000Hz)에 따라 물리적 지연 차이가 발생할 수 있으므로, 5ms 미만의 오차는 측정 노이즈로 감안하시기 바랍니다. 기록은 브라우저 저장소에 보관됩니다."
   ],
   benchmarks: {
     title: "공간 반사신경 및 격자 위험 회피 5단계 표준 벤치마크",
-    headers: ["티어 및 등급", "칭호 (Rank Title)", "점수 기준치", "도달 레벨", "최소 경고 반응 한계", "신경인지 회피 반사 프로필"],
+    headers: ["티어 및 등급", "구간", "점수 기준치", "도달 레벨", "최소 경고 반응 한계", "신경인지 회피 반사 프로필"],
     rows: [
-      ["Tier 1: 최정상 그리드 회피자", "Apex Grid Evader", "17,000점 이상", "Level 12 – 15", "0.45 – 0.60초 생존", "상위 0.1% 수준의 초인적 주변시 병렬 탐색 및 0.45초 극한 구간에서의 무결점 플릭 탈출 완성 (Treisman 1980; Posner 1980)"],
-      ["Tier 2: 마스터 공간 스캐너", "Master Spatial Scanner", "13,000 – 16,999점", "Level 9 – 11", "0.65 – 0.80초 생존", "상위 3% 수준의 탁월한 포스너 암묵적 주의 전환, 5~6개 위험 셀 포위망에서의 침착한 탈출 궤적 구현"],
-      ["Tier 3: 숙련된 위험 회피자", "Proficient Hazard Dodger", "9,500 – 12,999점", "Level 6 – 8", "0.85 – 1.05초 생존", "경쟁전 상위권 게이머의 우수한 동체시력과 안정적인 탄도 플릭 제동력 (Woodworth 1899)"],
-      ["Tier 4: 중간 구역 생존자", "Intermediate Sector Evader", "6,000 – 9,499점", "Level 3 – 5", "1.10 – 1.25초 생존", "일반 성인의 평균 반응 속도, 경고 시간이 1.0초 미만으로 단축 시 인지 처리 병목으로 피격 빈발"],
-      ["Tier 5: 입문 피격 탈출자", "Novice Blast Survivor", "6,000점 미만", "Level 1 – 2", "> 1.25초 구간", "초점 고정으로 인한 주변부 위험 감지 지연 및 안전 셀 경계 오버슈트, 비집중 시선 훈련 권장"]
+      ["Tier 1: 최상위", "최상위 구간", "17,000점 이상", "Level 12 – 15", "0.45 – 0.60초 생존", "경고 시간이 매우 짧은 구간에서도 안전 칸으로 이동하는 단계 (Treisman 1980; Posner 1980)"],
+      ["Tier 2: 상급", "상급 구간", "13,000 – 16,999점", "Level 9 – 11", "0.65 – 0.80초 생존", "위험 칸이 5~6개로 늘어나도 침착하게 탈출 경로를 고르는 단계"],
+      ["Tier 3: 숙련", "숙련 구간", "9,500 – 12,999점", "Level 6 – 8", "0.85 – 1.05초 생존", "안정적으로 안전 칸을 찾고 이동 끝에서 멈추는 단계 (Woodworth 1899)"],
+      ["Tier 4: 중급", "중급 구간", "6,000 – 9,499점", "Level 3 – 5", "1.10 – 1.25초 생존", "경고 시간이 1.0초 미만으로 줄면 판단이 늦어 피격이 늘어나는 단계"],
+      ["Tier 5: 입문", "입문 구간", "6,000점 미만", "Level 1 – 2", "> 1.25초 구간", "한 곳만 보다가 주변 위험 감지가 늦거나 안전 칸 경계를 지나치는 단계"]
     ],
-    note: "특징 통합 이론(Treisman & Gelade 1980), 공간 지향 연구(Posner 1980), 우드워스 자발 운동 모델(Woodworth 1899)을 통합한 성능 척도입니다."
+    note: "구간은 SkillDrills가 정한 참고용 구분이며 사용자 통계나 게임 랭크와 무관합니다. 설명은 특징 통합 이론(Treisman & Gelade 1980), 공간 지향 연구(Posner 1980), 우드워스 운동 모델(Woodworth 1899)을 참고했습니다."
   },
   techniques: {
     title: "동체시력 및 격자 위험 구역 회피 실전 프로토콜",
@@ -308,7 +292,7 @@ const gridGuide = {
       },
       {
         name: "포스너 외인성 주의 반응 및 200ms 운동 지향 (Posner Exogenous Trigger)",
-        desc: "포스너(1980)가 입증한 외인성 주의 전환을 활용하여, 주황색 경고 테두리가 점멸하는 순간 뇌의 의식적 계산을 생략하고 불이 꺼진 셀로 손끝을 반사적으로 튕기세요.",
+        desc: "포스너(1980)가 연구한 외인성 주의 전환을 활용하여, 주황색 경고 테두리가 점멸하는 순간 뇌의 의식적 계산을 생략하고 불이 꺼진 셀로 손끝을 반사적으로 튕기세요.",
         tips: "경고가 켜진 셀을 보고 놀라지 말고, 빛이 없는 어두운 셀이 시야에 들어오는 즉시 최단 거리로 커서를 날려 보내세요."
       },
       {
@@ -329,7 +313,7 @@ const gridGuide = {
     "카운트다운이 끝나기 전 주황색 불이 들어오지 않은 안전 셀로 신속히 플릭 이동합니다.",
     "연속 생존으로 3.0배 최대 콤보를 유지하며 45초 동안 최고 득점을 기록합니다."
   ],
-  audience: "FPS 및 MOBA 게이머(롤 스킬 피하기, 발로란트, 오버워치, 배그, 에이펙스 레전드), 구기 종목 및 무도 선수, 주변시 및 공간 회피 반응속도를 극대화하고자 하는 모든 사용자.",
+  audience: "FPS 및 MOBA 게이머(롤 스킬 피하기, 발로란트, 오버워치, 배그, 에이펙스 레전드), 구기 종목 및 무도 선수, 주변시 및 공간 회피 반응을 연습하려는 모든 사용자.",
   faqs: faqSchema.mainEntity.map(e => ({ q: e.name, a: e.acceptedAnswer.text })),
   sources: pickSources('posner1980', 'treisman1980', 'woodworth1899', 'fitts1954', 'woods2015'),
 };
@@ -363,8 +347,17 @@ export default function DynamicGridEvasionPageKo() {
       />
       <DynamicGridEvasionClient
         copy={{
-          title: "반응속도 테스트 게임",
+          title: "칸 피하기 반응 게임",
           subtitle: "위험 구역을 피해 안전 칸으로 이동 • 15레벨",
+          hudLabels: { score: "점수", timeLeft: "남은 시간", bestScore: "최고 점수", bestCombo: "최고 콤보" },
+          aboutTitle: "칸 피하기 반응 게임이란?",
+          aboutHeading: "주변시 스캔과 위험 구역 회피",
+          aboutText: "칸 피하기 반응 게임은 3x3 격자에서 주황색으로 깜빡이는 위험 칸을 보고, 폭발 전에 안전한 칸으로 마우스를 옮기는 회피 반응 게임입니다. 레벨이 오를수록 경고 시간이 짧아지고 위험 칸이 늘어납니다. 한 곳만 보지 않고 9칸을 함께 훑는 주변시 스캔과 마우스 제동을 연습하는 용도이며, 반응 시간의 의학적 측정이 아닙니다.",
+          aboutCards: [
+            { title: "추천 대상", desc: "롤·발로란트 같은 게임의 광역 스킬 회피 감각을 연습하려는 플레이어와, 주변 시야를 훑는 반응 게임을 찾는 사용자에게 맞습니다." },
+            { title: "연습하는 능력", desc: "시각 병렬 탐색, 주의 이동, 짧은 경고 시간에서의 선택 반응, 마우스 급정지를 연습합니다." },
+            { title: "주변시 스캔", desc: "중앙 한 곳에 시선을 고정하지 않고 격자 전체를 훑는 습관을 들이도록 구성되어 있습니다. 효과에는 개인차가 있습니다." }
+          ],
           rulesTitle: "마우스 피하기 훈련 규칙 및 점수 체계",
           rules: [
             { title: "주황색 경고 펄스 감지", text: "매 웨이브마다 폭발이 임박한 위험 셀들이 주황색 테두리로 점멸합니다." },

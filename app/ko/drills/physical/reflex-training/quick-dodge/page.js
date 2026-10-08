@@ -4,55 +4,17 @@ import RelatedDrills from '@/components/drill/RelatedDrills';
 import { getAlternateLanguages } from '@/lib/i18n/locales';
 import { pickSources } from '@/lib/drillSources';
 
-// ============================================================
-// SEO RESEARCH FINDINGS — South Korea (KR / KO)
-// Primary Intent: 마우스 피하기 게임, 순발력 테스트 게임, 탄막 피하기 게임, 총알 피하기 게임
-// Korean Gaming Context: 플래시 마우스 피하기 게임 계승 및 리그 오브 레전드/FPS 무빙 회피 훈련
-// High-Demand, Low-Competition Target Keywords:
-//   - "마우스 피하기 게임" (Core legendary Korean browser reflex query)
-//   - "순발력 테스트 게임" (Agility & reaction speed test game)
-//   - "탄막 피하기 게임" (Bullet hell dodge challenge query)
-//   - "총알 피하기 게임" (Classic projectile evasion query)
-//   - "마우스 컨트롤 게임" (Mouse precision handling game)
-//   - "반응속도 피하기" (Reaction speed evasion query)
-//   - "동체시력 피하기 게임" (Dynamic visual acuity dodge game)
-//   - "마우스 무빙 연습" (Competitive gamer mouse movement drill)
-//   - "투사체 회피 훈련" (Kinetic projectile dodge training)
-//   - "에임 무빙 테스트" (Aim & evasion coordination test)
-// ============================================================
+const url = 'https://skilldrills.online/ko/drills/physical/reflex-training/quick-dodge';
+const title = "마우스 피하기 게임 | 탄막 피하기 순발력 테스트 | SkillDrills";
+const description = "날아오는 탄막을 마우스 커서로 피하는 무료 마우스 피하기 게임. 아슬아슬한 회피로 콤보를 쌓으며 순발력과 마우스 컨트롤을 연습하세요.";
 
 export const metadata = {
-  title: "마우스 피하기 게임 | 무료 순발력 테스트",
-  description: "무료 마우스 피하기 게임. 날아오는 탄막을 커서로 피하며 순발력과 마우스 컨트롤을 브라우저에서 연습하세요.",
-  keywords: [
-    "마우스 피하기 게임",
-    "순발력 테스트 게임",
-    "탄막 피하기 게임",
-    "총알 피하기 게임",
-    "마우스 컨트롤 게임",
-    "반응속도 피하기",
-    "동체시력 피하기 게임",
-    "마우스 무빙 연습",
-    "투사체 회피 훈련",
-    "에임 무빙 테스트"
-  ],
-  alternates: {
-    canonical: 'https://skilldrills.online/ko/drills/physical/reflex-training/quick-dodge',
-    languages: getAlternateLanguages('/drills/physical/reflex-training/quick-dodge'),
-  },
-  openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
-    title: "마우스 피하기 게임 | 무료 순발력 테스트",
-    description: "무료 마우스 피하기 게임. 날아오는 탄막을 커서로 피하며 순발력과 마우스 컨트롤을 브라우저에서 연습하세요.",
-    url: 'https://skilldrills.online/ko/drills/physical/reflex-training/quick-dodge',
-    siteName: 'SkillDrills',
-    locale: 'ko_KR',
-    type: 'website',
-  },
-  twitter: { images: ["https://skilldrills.online/opengraph-image"],
-    card: 'summary_large_image',
-    title: "마우스 피하기 게임 | 무료 순발력 테스트",
-    description: "무료 마우스 피하기 게임. 날아오는 탄막을 커서로 피하며 순발력과 마우스 컨트롤을 브라우저에서 연습하세요.",
-  },
+  title,
+  description,
+  keywords: ["마우스 피하기 게임", "탄막 피하기 게임", "총알 피하기 게임", "마우스 컨트롤 게임", "순발력 테스트 게임", "마우스 무빙 연습", "투사체 회피 훈련", "무료 피하기 게임"],
+  alternates: { canonical: url, languages: getAlternateLanguages('/drills/physical/reflex-training/quick-dodge') },
+  openGraph: { images: [{ url: 'https://skilldrills.online/opengraph-image', width: 1200, height: 630 }], title, description, url, siteName: 'SkillDrills', locale: 'ko_KR', type: 'website' },
+  twitter: { images: ['https://skilldrills.online/opengraph-image'], card: 'summary_large_image', title, description },
   robots: { index: true, follow: true },
 };
 
@@ -81,233 +43,214 @@ const breadcrumbSchema = {
     {
       "@type": "ListItem",
       "position": 4,
-      "name": "마우스 피하기 게임 & 탄막 회피",
+      "name": "마우스 피하기 게임",
       "item": "https://skilldrills.online/ko/drills/physical/reflex-training/quick-dodge"
     }
   ]
 };
 
 const softwareApplicationSchema = {
-  "@context": "https://schema.org",
-  "@type": "SoftwareApplication", "sameAs": ["https://en.wikipedia.org/wiki/Reaction_time"],
-  "name": "마우스 피하기 게임 및 순발력 탄막 회피 시뮬레이터",
-  "applicationCategory": "HealthApplication",
-  "operatingSystem": "All",
-  "url": "https://skilldrills.online/ko/drills/physical/reflex-training/quick-dodge",
-  "description": "날아오는 탄막을 커서로 피하며 순발력과 마우스 컨트롤을 연습하는 무료 게임입니다.",
-  "inLanguage": "ko",
-  "dateModified": "2026-09-20",
-  "offers": {
-    "@type": "Offer",
-    "price": "0",
-    "priceCurrency": "USD"
-  },
+  '@context': 'https://schema.org',
+  '@type': 'SoftwareApplication',
+  name: "퀵 닷지 마우스 피하기 게임",
+  applicationCategory: 'GameApplication',
+  operatingSystem: 'All',
+  offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
+  description,
+  url,
+  publisher: { '@type': 'Organization', name: 'SkillDrills', url: 'https://skilldrills.online/ko' },
+  inLanguage: 'ko',
+  dateModified: '2026-10-08',
 };
 
 const webApplicationSchema = {
-  "@context": "https://schema.org",
-  "@type": "WebApplication",
-  "name": "마우스 피하기 및 소뇌 순방향 예측 회피 드릴",
-  "url": "https://skilldrills.online/ko/drills/physical/reflex-training/quick-dodge",
-  "description": "브라우저에서 투사체를 피하고 예측적인 커서 무빙과 동체시력을 훈련하는 드릴입니다.",
-  "inLanguage": "ko",
-  "dateModified": "2026-09-20",
-  "browserRequirements": "Requires JavaScript and HTML5 Canvas support",
-  "genre": "Training, Reflex, Evasion, Esports"
+  '@context': 'https://schema.org',
+  '@type': 'WebApplication',
+  name: "퀵 닷지 마우스 피하기 게임 웹 앱",
+  applicationCategory: 'GameApplication',
+  operatingSystem: 'All',
+  browserRequirements: 'HTML5 Canvas를 지원하는 최신 브라우저',
+  offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
+  url,
+  inLanguage: 'ko',
+  dateModified: '2026-10-08',
 };
 
 const videoGameSchema = {
-  "@context": "https://schema.org",
-  "@type": "VideoGame",
-  "name": "마우스 피하기 게임·탄막 회피 테스트",
-  "gamePlatform": "Web Browser",
-  "url": "https://skilldrills.online/ko/drills/physical/reflex-training/quick-dodge",
-  "inLanguage": "ko",
-  "dateModified": "2026-09-20",
-  "applicationSubCategory": "Esports Psychomotor Evasion Simulator"
+  '@context': 'https://schema.org',
+  '@type': 'VideoGame',
+  name: "퀵 닷지 마우스 피하기 게임",
+  url,
+  description,
+  genre: ['Action Game', 'Aim Trainer'],
+  gamePlatform: ['Web Browser', 'Desktop', 'Mobile'],
+  applicationCategory: 'Game',
+  inLanguage: 'ko',
+  dateModified: '2026-10-08',
+  offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
 };
 
+const faqs = [
+  {
+    "q": "마우스 피하기 게임은 어떻게 하나요?",
+    "a": "마우스 커서를 움직여 사방에서 날아오는 붉은 투사체에 맞지 않고 최대한 오래 버티는 게임입니다. 1초 생존할 때마다 점수가 쌓이고, 투사체를 아슬아슬하게 스치면 보너스와 콤보가 붙습니다. 맞으면 콤보가 초기화됩니다."
+  },
+  {
+    "q": "공포 마우스 피하기 게임과 같은가요?",
+    "a": "아닙니다. 검색하면 귀신이 나오는 공포 플래시 게임이 많이 나오지만, 이 페이지는 놀라는 요소가 없는 탄막 회피 게임입니다. 투사체의 속도와 개수가 점점 늘어나는 점수형 연습입니다."
+  },
+  {
+    "q": "점수와 콤보는 어떻게 쌓이나요?",
+    "a": "1초 생존마다 점수가 쌓이고, 투사체를 아슬아슬하게 스치며 피하면(Close Shave) 추가 점수와 함께 콤보 배율이 오릅니다. 투사체에 맞으면 콤보가 1.0배로 돌아가고 붉은 경고 플래시가 나옵니다."
+  },
+  {
+    "q": "난이도는 어떻게 올라가나요?",
+    "a": "점수가 오를수록 투사체 속도가 최대 500px/s까지 빨라지고 생성 간격이 짧아집니다. 후반에는 투사체 수가 늘어 안전한 틈이 좁아집니다. 큰 동작으로 휘젓기보다 작은 움직임으로 틈을 찾는 편이 안정적입니다."
+  },
+  {
+    "q": "반응속도보다 예측이 중요한가요?",
+    "a": "빠른 투사체는 보고 나서 움직이면 늦기 쉽습니다. 시각 피드백을 반영하는 데는 100~150ms가 걸린다는 설명이 있고(Woodworth, 1899), 그래서 투사체가 갈 방향을 미리 가늠하고 움직이는 것이 도움이 됩니다. 이 게임의 결과가 개인의 예측 능력을 측정하는 것은 아닙니다."
+  },
+  {
+    "q": "후반에는 어떻게 움직이는 게 좋나요?",
+    "a": "커서를 크게 휘두르지 말고 투사체 사이의 틈으로 짧게 이동하세요. 작은 영역에서 미세하게 움직일수록 허용 오차가 좁아지므로(Fitts, 1954) 급하게 멈추고 방향을 바꾸는 연습이 필요합니다. 더 좋은 방법은 사람마다 다릅니다."
+  },
+  {
+    "q": "롤이나 발로란트 무빙 실력이 늘어나나요?",
+    "a": "보장할 수 없습니다. 마우스로 움직이는 대상을 피하는 연습이지만 게임의 조작, 화면, 규칙이 달라 같은 결과로 이어진다고 단정할 수 없습니다. 연습 기록을 비교하는 용도로 쓰세요."
+  },
+  {
+    "q": "어떤 마우스 파지법이 유리한가요?",
+    "a": "정해진 정답은 없습니다. 손목과 손가락으로 작게 움직이기 편한 평소 파지법을 쓰고, 설정을 바꿨다면 전후 점수를 같은 조건에서 비교하세요. 손목이나 손가락에 통증이 있으면 쉬거나 중단합니다."
+  },
+  {
+    "q": "모니터 주사율이 영향을 주나요?",
+    "a": "주사율이 높으면 빠른 투사체가 더 자주 갱신되어 보이고 입력 지연도 줄어드는 경향이 있습니다(Woods et al., 2015). 다만 이 게임에서 점수가 얼마나 달라지는지는 측정하지 않았습니다. 같은 환경에서 기록을 비교하세요."
+  },
+  {
+    "q": "기록은 어디에 저장되나요?",
+    "a": "점수와 최고 콤보는 브라우저의 로컬 저장소에 보관되며 이 드릴에서 서버로 올리지 않습니다. 브라우저 데이터를 삭제하면 기록도 사라집니다. 자세한 내용은 개인정보처리방침을 확인하세요."
+  }
+];
+
 const faqSchema = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-    {
-      "@type": "Question",
-      "name": "마우스 피하기 훈련에서 반응속도보다 '예측(Prediction)'이 더 결정적인 이유는?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "투사체가 400~600 px/s의 고속으로 돌진할 때 시각 피드백 루프(100~150ms)에만 의존하면 이미 충돌이 일어난 뒤에 반응하게 됩니다. 카와토 미츠오(Kawato, 1999)의 연구처럼 소뇌 내부 순방향 모델을 통해 투사체의 입사각과 속도를 사전에 시뮬레이션하고 개루프(Open-loop) 탄도성 마우스 궤적을 선제적으로 실행해야 안전지대를 선점할 수 있습니다."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "투사체 밀도가 급증하는 후반 레벨에서 마우스 커서를 움직이는 최적의 전략은?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "화면 구석이나 모서리로 도망치면 탈출 벡터가 90도로 차단되어 몰살당하기 쉽습니다. 화면 중앙 주변의 좁은 반경 내에서 미세한 마이크로 무빙(Micro-adjustments)으로 궤적을 흘려보내고, 투사체 간격이 벌어지는 빈 공간으로 순간적인 우드워스 플릭을 감행하는 것이 핵심입니다."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "점수 산정 체계와 콤보 배율은 어떻게 누적되나요?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "시간이 지남에 따라 매초 생존 점수가 누적되며, 투사체 스침 회피에 성공할 때마다 레벨과 콤보 배율(최대 3.0배)이 가산됩니다. 충돌 없이 45초 생존을 완주하고 높은 콤보를 유지해야 엘리트 등급인 24,000점 이상에 도달할 수 있습니다."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "충돌 판정(Hitbox)과 회피 판정의 정밀도는 어떻게 설계되어 있나요?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "마우스 커서의 피격 판정점은 중심 반경 4px의 정밀 코어 히트박스를 기준으로 연산됩니다. 투사체의 시각적 구체 반경(10~25px)과 커서 중심점 간의 유클리드 거리를 브라우저 고해상도 타이머(performance.now)를 통해 서브픽셀 단위로 측정합니다."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "투사체 충돌 시 어떤 페널티가 부여되나요?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "투사체에 피격되면 즉시 붉은 플래시 경고와 함께 누적 콤보 배율이 1.0배로 리셋되며, 세션 생존 생명력이 차감됩니다. 실수 없는 연속 회피만이 높은 콤보 가속도를 유지하는 유일한 길입니다."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "롤(LoL)이나 발로란트 등 실전 게임 무빙 실력 향상에 직접적인 도움이 되나요?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "네, 매우 큰 도움이 됩니다. 리그 오브 레전드의 논타깃 스킬 회피 및 카이팅, 오버워치/에이펙스의 날아오는 투사체 회피 시 요구되는 '시각적 탄도 해석 및 손목 미세 제동' 신경 회로를 집중 단련하므로 실전 교전 생존력이 비약적으로 상승합니다."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "마우스 파지법 중 회피에 가장 유리한 그립 방식은?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "손바닥 전체를 밀착시키는 팜 그립보다, 손가락 끝으로 마우스를 기민하게 제어할 수 있는 핑거팁 그립(Fingertip)이나 클로 그립(Claw)이 유리합니다. 미세한 반경(5~15px) 회피 시 손목 전체를 흔들지 않고 손가락 마디 굴곡만으로 즉각적인 방향 전환이 가능하기 때문입니다."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "144Hz 또는 240Hz 고주사율 모니터가 마우스 피하기에 미치는 영향은?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "60Hz 모니터에서는 500 px/s로 비행하는 투사체가 프레임당 약 8.3px씩 순간이동하듯 잔상을 남깁니다. 240Hz 모니터는 프레임 간격을 4.1ms(약 2.1px 이동)로 좁혀 궤적의 연속성을 완벽히 재현하므로 0.1초 앞의 안전 경로를 훨씬 뚜렷하게 판독할 수 있습니다."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "손목 터널 증후군이나 근육 피로를 예방하는 올바른 자세는?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "마우스를 쥐는 손에 과도한 악력을 주지 말고 달걀을 쥐듯 가볍게 지지하십시오. 팔꿈치는 책상에 편안히 거치하고, 회피 3세트마다 손목을 좌우로 가볍게 털어주는 60초간의 이완 루틴을 권장합니다."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "본 피하기 훈련의 회피 기록과 최고 점수는 외부에 전송되나요?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "아닙니다. SkillDrills의 모든 물리 엔진 연산과 시간 계측(performance.now)은 사용자 기기 브라우저 내부에서만 완결됩니다. 최고 점수와 플레이 기록은 브라우저 localStorage에만 로컬 저장되어 완벽한 개인정보 보안을 유지합니다."
-      }
-    }
-  ]
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  inLanguage: 'ko',
+  mainEntity: faqs.map((f) => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } })),
 };
 
 const howToSchema = {
-  "@context": "https://schema.org",
-  "@type": "HowTo",
-  "name": "마우스 피하기 및 탄막 궤적 회피 4단계 훈련 프로토콜",
-  "description": "사방에서 쇄도하는 고속 투사체를 소뇌 순방향 예측과 마이크로 무빙으로 완전 회피하는 단계별 훈련법.",
-  "step": [
-    {
-      "@type": "HowToStep",
-      "position": 1,
-      "name": "중앙 기준 위치 정렬 및 핑거팁 파지 (Center Calibration)",
-      "text": "마우스 커서를 경기장 중앙에 정렬하고 손가락 끝에 가볍게 탄성을 부여하여 전방위 탈출 준비 태세를 갖춥니다.",
-      "url": "https://skilldrills.online/ko/drills/physical/reflex-training/quick-dodge#step-1"
-    },
-    {
-      "@type": "HowToStep",
-      "position": 2,
-      "name": "카와토 순방향 모델 입사각 예측 (Kawato Trajectory Prediction)",
-      "text": "사방 가장자리에서 스폰되는 투사체의 속도와 각도를 주변 시야로 파악하고 교차 지점이 아닌 틈새 공간을 미리 선점합니다.",
-      "url": "https://skilldrills.online/ko/drills/physical/reflex-training/quick-dodge#step-2"
-    },
-    {
-      "@type": "HowToStep",
-      "position": 3,
-      "name": "초정밀 마이크로 스냅 및 잔류 회피 (Micro-Evasion Snapping)",
-      "text": "큰 원을 그리지 말고 투사체 궤적을 5~10px 차이로 아슬아슬하게 스쳐 지나가는 절제된 미세 무빙으로 공간을 보존합니다.",
-      "url": "https://skilldrills.online/ko/drills/physical/reflex-training/quick-dodge#step-3"
-    },
-    {
-      "@type": "HowToStep",
-      "position": 4,
-      "name": "연속 생존 및 3.0배 콤보 유지 (Streak Heat Maintenance)",
-      "text": "45초 동안 단 한 차례의 피격도 허용하지 않고 연속 회피를 성공시켜 3.0배 최대 콤보를 누적하고 24,000점 이상을 달성합니다.",
-      "url": "https://skilldrills.online/ko/drills/physical/reflex-training/quick-dodge#step-4"
-    }
-  ]
+  '@context': 'https://schema.org',
+  '@type': 'HowTo',
+  name: "마우스 피하기 게임 하는 방법",
+  description: "탄막을 피하며 점수와 콤보를 쌓는 4단계 연습법입니다.",
+  step: [
+  {
+    "@type": "HowToStep",
+    "position": 1,
+    "name": "중앙에서 시작",
+    "text": "커서를 화면 중앙 근처에 두고 사방을 넓게 봅니다."
+  },
+  {
+    "@type": "HowToStep",
+    "position": 2,
+    "name": "틈 찾기",
+    "text": "투사체가 가는 방향을 보고 비어 있는 틈을 찾습니다."
+  },
+  {
+    "@type": "HowToStep",
+    "position": 3,
+    "name": "작게 이동",
+    "text": "크게 휘두르지 말고 짧게 이동해 투사체를 스치며 피합니다."
+  },
+  {
+    "@type": "HowToStep",
+    "position": 4,
+    "name": "콤보 유지",
+    "text": "맞지 않고 이어서 피해 콤보 배율을 높입니다."
+  }
+].map((st) => ({ ...st, url: `${url}#step-${st.position}` })),
 };
 
 const dodgeGuide = {
-  heading: "마우스 탄막 피하기 게임 및 동체시력 신경생체역학 가이드",
-  intro: {
-    title: "소뇌 순방향 모델(Forward Models)과 탄도성 회피 무빙의 생체역학",
-    paragraphs: [
-      "마우스 피하기 훈련(Quick Dodge Drill)은 사방에서 마우스 커서를 향해 쇄도하는 고속 투사체 무리를 밀리초 단위의 판단력과 초정밀 커서 무빙으로 회피하는 최상위 지각-운동 통합 드릴입니다. 단순히 날아오는 물체를 보고 피하는 수동적 반응을 넘어, 복수의 물리 벡터가 교차하는 혼돈의 전장에서 안전 공간을 선제적으로 연산하는 능동적 공간 지각력을 요구합니다.",
-      "세계적인 신경과학자 카와토 미츠오(Kawato, 1999)의 '소뇌 내부 순방향 모델(Cerebellar Internal Forward Models)' 이론에 따르면, 시각 피드백의 신경 전도 지연(100~150ms)으로 인해 고속 투사체 회피는 실시간 시각 수정만으로는 불가능합니다. 뇌는 투사체의 초기 가속도와 비행 각도를 포착하는 즉시 소뇌에서 다음 200ms 동안의 궤적을 시뮬레이션하고, 이에 대응하는 모터 탈출 명령(개루프 탄도 제어)을 선제적으로 방출해야만 생존할 수 있습니다.",
-      "로버트 우드워스(Woodworth, 1899)의 2단계 운동 제어 모델에서 규명되었듯, 인간의 빠른 움직임은 초기 폭발적 임펄스와 종단 미세 제동으로 완결됩니다. 투사체 속도가 500 px/s를 상회하는 고난도 국면에서는 피츠의 법칙(Fitts, 1954)에 의해 공간 여유가 극도로 수축되므로, 불필요한 대형 선회를 배제하고 10px 이내의 최소 궤적으로 스쳐 지나가는 절제된 핑거팁 마이크로 무빙이 엘리트 스코어의 핵심입니다.",
-      "본 훈련 모듈은 브라우저의 performance.now() 고해상도 타이머를 활용하여 클라이언트 기기 내부에서 오차 없는 밀리초 단위 충전 및 서브픽셀 충돌 연산을 수행합니다. 144Hz/240Hz 고주사율 모니터와 1000Hz 폴링레이트 마우스를 활용하면 프레임 지연을 4ms 미만으로 압축하여 최적의 신경 반응성을 유지할 수 있습니다 (Woods et al., 2015). 모든 플레이 기록은 로컬 브라우저에만 안전하게 보관됩니다."
-    ]
-  },
-  benchmarks: {
-    title: "마우스 피하기 및 탄막 회피 5단계 공식 벤치마크",
-    headers: ["티어 및 등급", "칭호 (Rank Title)", "점수 기준치", "생존 정확도 및 피크 속도", "종합 등급", "신경생체역학 운동 프로필"],
-    rows: [
-      ["Tier 1: 궁극의 탄막 회피 마스터", "Apex Kinetic Evader", "24,000점 이상", "95% 이상 / 500+ px/s", "Grade S", "상위 0.1% 수준의 초인적 소뇌 순방향 예측력, 50개 이상의 고속 투사체 속에서 무결점 마이크로 무빙 달성 (Kawato 1999; Woodworth 1899)"],
-      ["Tier 2: 정밀 궤적 스트라이커", "Precision Trajectory Striker", "17,000 – 23,999점", "90 – 94% / 400 – 499 px/s", "Grade A", "상위 3% 수준의 프로게이머급 공간 인지력, 혼란스러운 투사체 다발 속에서도 침착한 중앙 반경 유지"],
-      ["Tier 3: 숙련된 기동 회피자", "Skilled Evasion Pilot", "11,000 – 16,999점", "82 – 89% / 300 – 399 px/s", "Grade B", "상위 15% 경쟁전 유저 수준, 안정적인 손목 탄도 제어와 우수한 초기 스폰 위험 예측"],
-      ["Tier 4: 발전하는 무빙 학습생", "Developing Dodger", "6,000 – 10,999점", "70 – 81% / 200 – 299 px/s", "Grade C", "일반 성인 평균치. 속도가 빨라지면 모서리로 몰려 피격당하는 경향이 있으며 중앙 회귀 무빙 훈련 요망"],
-      ["Tier 5: 입문 회피 훈련생", "Novice Evasion Trainee", "6,000점 미만", "< 70% / < 200 px/s", "Grade D", "시각 반응 지연으로 인한 잦은 피격, 과도한 손목 힘빼기 및 시선 주변부 확장 연습 필요"]
+  "heading": "마우스 피하기 게임 가이드",
+  "intro": [
+    "퀵 닷지는 사방에서 날아오는 붉은 투사체를 마우스 커서로 피하며 점수를 쌓는 브라우저 게임입니다. 반응 속도뿐 아니라 투사체가 갈 방향을 가늠하는 판단과 정밀한 마우스 움직임이 함께 쓰입니다.",
+    "시각 정보가 움직임에 반영되기까지 100~150ms가 걸린다는 설명이 있어(Woodworth, 1899), 빠른 투사체는 미리 방향을 예상해 움직이는 편이 유리합니다. 예측에 소뇌 내부 모델이 쓰인다는 이론이 있습니다(Kawato, 1999). 이 게임은 그런 상황을 단순하게 만든 연습입니다.",
+    "투사체가 늘어나면 안전한 틈이 좁아지고 정밀한 움직임이 더 어려워집니다(Fitts, 1954). 투사체 속도는 점수가 오르면 최대 500px/s까지 빨라집니다.",
+    "점수는 같은 마우스, 감도, 모니터에서 비교하세요. 주사율과 입력 장치도 지연에 영향을 줄 수 있습니다(Woods et al., 2015). 결과는 연습 기록이며 의학적 검사나 선수 등급이 아닙니다."
+  ],
+  "benchmarks": {
+    "title": "점수 구간 참고표",
+    "headers": [
+      "단계",
+      "연습 목표",
+      "연습 포인트"
     ],
-    note: "카와토 소뇌 예측 이론(1999), 우드워스 2단계 운동 모델(1899), 피츠의 난이도 법칙(1954)에 기반한 표준 척도입니다."
+    "rows": [
+      [
+        "1단계",
+        "투사체 맞지 않고 버티기",
+        "화면 중앙 근처에서 짧게 움직이기"
+      ],
+      [
+        "2단계",
+        "스침 회피 늘리기",
+        "투사체 사이의 틈 찾기"
+      ],
+      [
+        "3단계",
+        "콤보 이어가기",
+        "실수 후 침착하게 위치 회복하기"
+      ],
+      [
+        "4단계",
+        "빠른 투사체 대응",
+        "커서를 크게 휘두르지 않기"
+      ],
+      [
+        "5단계",
+        "긴 세션 유지",
+        "피로 전에 쉬고 같은 장비로 비교하기"
+      ]
+    ],
+    "note": "이 표는 SkillDrills의 연습 방향 안내입니다. 점수 기준, 사용자 통계, 백분위가 아닙니다."
   },
-  techniques: {
-    title: "마우스 탄막 회피 실전 테크닉 & 프로토콜",
-    items: [
+  "techniques": {
+    "title": "점수를 올리는 4가지 연습법",
+    "items": [
       {
-        name: "카와토 소뇌 순방향 예측 회피 (Kawato Cerebellar Anticipation)",
-        desc: "투사체가 이미 근접한 뒤에 반응하려 하지 마세요. 화면 모서리에서 스폰되는 순간 비행 각도를 포착하고, 투사체들이 교차하며 생기는 빈 공간으로 커서를 선제 배치하세요.",
-        tips: "투사체 자체를 보지 말고, 투사체 사이의 빈 틈(음각 공간)을 바라보세요."
+        "name": "작게 움직이기",
+        "desc": "커서를 크게 휘두르면 새 투사체와 부딪히기 쉽습니다. 투사체 사이의 틈으로 짧게 이동하세요.",
+        "tips": "큰 동작이 필요하면 투사체가 적은 쪽을 미리 정합니다."
       },
       {
-        name: "우드워스 마이크로 스냅 제어 (Woodworth Micro-Snap Steering)",
-        desc: "화면 전체를 가로지르는 큰 원을 그리지 마세요. 10~20px의 좁은 반경 내에서 손가락 관절로 짧게 끊어 치듯 궤적을 튕겨내며 공간 낭비를 최소화하세요.",
-        tips: "마우스 센서를 책상에 단단히 밀착시키고 손가락 끝 악력으로 미세 제동을 가하세요."
+        "name": "방향을 보고 미리 이동",
+        "desc": "투사체가 닿은 뒤에 움직이면 늦습니다. 날아오는 방향을 보고 비어 있는 곳으로 먼저 움직이세요.",
+        "tips": "가장 가까운 한두 개만 보기보다 전체 흐름을 봅니다."
       },
       {
-        name: "중앙 앵커링 및 구석 탈출 (Central Anchoring Discipline)",
-        desc: "벽이나 모서리로 도망치면 퇴로가 90도로 갇혀 사망합니다. 회피 직후에는 반드시 경기장 중앙 30% 영역으로 복귀하여 360도 탈출로를 상시 확보하세요.",
-        tips: "회피 후 즉각 중앙으로 마우스를 되돌리는 버릇을 무조건 습관화하세요."
+        "name": "스침 회피 노리기",
+        "desc": "투사체를 아슬아슬하게 스치면 보너스와 콤보가 붙습니다. 다만 무리하게 노리다 맞으면 콤보가 사라지니 안정이 먼저입니다.",
+        "tips": "후반 고속 구간에서는 안전한 회피부터 하세요."
       },
       {
-        name: "주변 시야 탄막 군집 스캐닝 (Peripheral Cluster Scanning)",
-        desc: "커서에만 시선을 고정하면 외곽에서 고속으로 날아오는 투사체를 놓칩니다. 시선은 화면 전체에 부드럽게 두고, 커서의 위치는 고유수용감각(Proprioception)으로 감지하세요.",
-        tips: "모니터 중심을 멍하니 바라보듯 시야를 넓히면 투사체의 흐름이 한눈에 읽힙니다."
+        "name": "편한 자세 유지",
+        "desc": "손목과 어깨에 힘을 빼고 팔을 편하게 두세요. 힘이 들어가면 작은 움직임이 어려워집니다.",
+        "tips": "통증이 있으면 중단하고 쉽니다."
       }
     ]
   },
-  steps: [
-    "자세를 바로잡고 커서를 경기장 중앙에 정렬합니다.",
-    "외곽에서 스폰되는 투사체의 궤적을 예측하고 안전한 빈 공간으로 마우스를 미세 이동합니다.",
-    "모서리로 몰리지 않도록 회피 즉시 중앙 영역으로 커서를 재배치합니다.",
-    "45초 동안 충돌 없이 콤보를 누적하여 최고 점수 24,000점 돌파를 달성합니다."
+  "steps": [
+    "마우스를 편하게 잡고 커서를 화면 중앙에 둡니다.",
+    "날아오는 투사체의 방향을 보고 비어 있는 틈을 찾습니다.",
+    "짧게 이동해 투사체를 피하고 스치면 보너스를 얻습니다.",
+    "맞지 않고 이어서 피해 콤보를 쌓습니다."
   ],
-  audience: "리그 오브 레전드, 배틀그라운드, 오버워치, 에이펙스 등 고난도 무빙과 논타깃 투사체 회피 능력을 극대화하려는 게이머 및 동체시력과 순발력을 기르고자 하는 모든 사용자.",
-  faqs: faqSchema.mainEntity.map(e => ({ q: e.name, a: e.acceptedAnswer.text })),
-  sources: pickSources('kawato1999', 'woodworth1899', 'fitts1954', 'woods2015')
+  "audience": "마우스 피하기 게임을 온라인에서 가볍게 즐기고 싶은 사용자와 마우스 컨트롤을 연습하려는 게이머.",
+  faqs,
+  sources: pickSources('kawato1999', 'woodworth1899', 'fitts1954', 'woods2015'),
 };
 
 export default function LocalizedQuickDodgePageKo() {
@@ -341,7 +284,7 @@ export default function LocalizedQuickDodgePageKo() {
         copy={{
           title: "마우스 피하기 게임",
           subtitle: "탄막을 마우스로 피하며 생존하기",
-          description: "날아오는 투사체를 피하는 것은 반응의 문제가 아닌 예측의 문제입니다. 시각 피드백이 움직임에 개입하는 데는 100~150ms가 걸리므로(Woodworth, 1899), 고속 투사체 회피는 소뇌의 사전 궤적 시뮬레이션(Kawato, 1999)을 통해 미리 계획된 탄도 제어로 완결됩니다. 속도가 빨라질수록 수정할 수 있는 시간 창은 사라지고 순수한 예측만이 남습니다.",
+          description: "시각 정보가 움직임에 반영되기까지 100~150ms가 걸린다는 설명이 있어(Woodworth, 1899), 빠른 투사체는 방향을 미리 가늠하고 움직이는 편이 유리합니다. 속도가 빨라질수록 보고 나서 움직일 시간이 줄어듭니다.",
           badge: "순발력 탄막 테스트",
           hudLabels: {
             score: "현재 점수",
@@ -359,34 +302,46 @@ export default function LocalizedQuickDodgePageKo() {
             peakLevel: "도달 레벨",
             playAgain: "다시 도전하기"
           },
-          rulesTitle: "드릴 규칙 및 점수 산정 방식",
+          rulesTitle: "진행 규칙과 점수 계산",
           rulesItems: [
-            { title: "투사체 회피 및 생존 점수", text: "사방에서 쇄도하는 붉은색 투사체와의 충돌을 피하십시오. 매 1초 생존할 때마다 점수가 누적됩니다." },
-            { title: "아슬아슬한 스침 회피 (Close Shave)", text: "투사체 근접 스침 회피 시 추가 보너스 점수와 함께 콤보 배율이 상승합니다." },
-            { title: "점진적 난이도 극대화", text: "점수가 올라갈수록 투사체 속도가 최대 500 px/s까지 가속되고 스폰 주기가 가팔라집니다." },
-            { title: "피격 페널티", text: "투사체와 충돌하면 콤보 배율이 1.0배로 초기화되며 붉은 경고 플래시가 발생합니다." }
+            {
+              "title": "투사체 회피와 생존 점수",
+              "text": "사방에서 날아오는 붉은 투사체에 맞지 않고 버티세요. 1초 생존할 때마다 점수가 쌓입니다."
+            },
+            {
+              "title": "아슬아슬한 스침 회피",
+              "text": "투사체를 근접해서 스치며 피하면 보너스 점수와 함께 콤보 배율이 오릅니다."
+            },
+            {
+              "title": "점진적 난이도 상승",
+              "text": "점수가 오를수록 투사체 속도가 최대 500px/s까지 빨라지고 생성 간격이 짧아집니다."
+            },
+            {
+              "title": "피격",
+              "text": "투사체에 맞으면 콤보 배율이 1.0배로 초기화되고 붉은 경고 플래시가 나옵니다."
+            }
           ],
-          aboutTitle: "마우스 탄막 피하기 게임 및 궤적 예측 생체역학",
+          aboutTitle: "마우스 피하기 게임 안내",
           aboutSections: [
             {
-              title: "키네틱 충돌 회피와 소뇌 순방향 궤적 예측",
-              subtitle: "카와토(Kawato, 1999) 소뇌 내부 모델을 통한 선제적 탄도 무빙",
-              content: "고속 투사체 회피는 시각 정보 전도 지연(100~150ms)을 극복하기 위해 소뇌의 사전 시뮬레이션에 의존합니다. 투사체 입사각을 즉각 파악하여 안전 공간으로 마우스를 선제 안착시킵니다."
+              "title": "보고 움직이면 늦는 이유",
+              "subtitle": "우드워스(Woodworth, 1899)와 카와토(Kawato, 1999)",
+              "content": "시각 정보가 움직임에 반영되기까지 100~150ms가 걸린다는 설명이 있습니다. 빠른 투사체는 방향을 미리 가늠해 움직이는 편이 유리합니다."
             },
             {
-              title: "우드워스 2단계 운동 제어와 종단 제동",
-              subtitle: "개루프 탄도성 스냅과 초정밀 마이크로 무빙의 조화",
-              content: "회피 동작은 초기 폭발적 임펄스와 종단 감속으로 구성됩니다(Woodworth, 1899). 최소 반경 내에서 손가락 관절로 절제된 제동을 거는 것이 공간 보존의 핵심입니다."
+              "title": "크게 이동하고 작게 보정하기",
+              "subtitle": "우드워스(Woodworth, 1899)의 두 단계 설명",
+              "content": "빠른 움직임은 먼저 크게 이동하고 마지막에 작게 보정하는 두 단계로 설명됩니다. 좁은 틈에서는 속도를 줄여 정확히 멈추는 것이 중요합니다."
             },
             {
-              title: "피츠의 법칙과 한계 공간 수축",
-              subtitle: "밀집 탄막 속 허용 오차 축소에 따른 난이도 지수 상승",
-              content: "투사체 수가 늘어날수록 안전 회피 구역의 폭(W)이 좁아져 난이도(ID)가 기하급수적으로 폭증합니다(Fitts, 1954). 대형 선회를 자제하고 틈새를 뚫어야 합니다."
+              "title": "좁아지는 틈",
+              "subtitle": "피츠(Fitts, 1954)의 속도-정확도 관계",
+              "content": "투사체가 늘어나면 안전한 틈이 좁아집니다. 목표가 작을수록 정밀하게 움직여야 한다는 관계가 이 게임의 후반 난이도를 설명합니다."
             },
             {
-              title: "밀리초 타이밍과 고주사율 디스플레이 최적화",
-              subtitle: "하드웨어 레이턴시 압축을 통한 4.1ms 궤적 분해능 구현",
-              content: "240Hz 고주사율 디스플레이와 1000Hz 마우스 환경은 초당 500px 투사체의 궤적 잔상을 지우고 정확한 프레임 정보를 뇌에 공급합니다(Woods et al., 2015)."
+              "title": "장비와 지연",
+              "subtitle": "우즈(Woods et al., 2015)의 입력 지연 연구",
+              "content": "주사율과 입력 장치는 지연에 영향을 줄 수 있습니다. 점수를 비교할 때는 같은 장비를 사용하세요."
             }
           ]
         }}

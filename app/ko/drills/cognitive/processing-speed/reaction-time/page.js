@@ -6,12 +6,12 @@ import DrillFooter from '@/components/drill/DrillFooter';
 import { pickSources } from '@/lib/drillSources';
 
 export const metadata = {
-  title: "반응속도 테스트 | 선택 반응 시간 훈련 | SkillDrills",
-  description: "무료 브라우저 반응속도 테스트: 바뀌는 규칙에 맞는 표적을 골라 선택 반응 시간과 판단 속도를 연습합니다. 임상 검사가 아닙니다.",
-  keywords: ["반응속도 테스트", "반응속도 테스트 무료", "반응속도 테스트 온라인", "선택 반응 시간", "선택 반응 테스트", "판단 속도", "반응속도 측정", "인지 처리 속도"],
+  title: "선택 반응 시간 테스트 | 색상 규칙 전환 훈련 | SkillDrills",
+  description: "색상 규칙이 바뀔 때 맞는 표적을 고르는 선택 반응 시간 테스트입니다. 판단 속도와 정확도를 연습하는 무료 브라우저 훈련이며 임상 검사가 아닙니다.",
+  keywords: ["선택 반응 시간 테스트", "선택 반응 시간", "선택 반응 테스트", "판단 속도 테스트", "색상 규칙 전환 훈련", "반응속도 테스트", "인지 처리 속도"],
   openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
-    title: "반응속도 테스트 | 선택 반응 시간 훈련 | SkillDrills",
-    description: "무료 브라우저 반응속도 테스트: 바뀌는 규칙에 맞는 표적을 골라 선택 반응 시간과 판단 속도를 연습합니다. 임상 검사가 아닙니다.",
+    title: "선택 반응 시간 테스트 | 색상 규칙 전환 훈련 | SkillDrills",
+    description: "색상 규칙이 바뀔 때 맞는 표적을 고르는 선택 반응 시간 테스트입니다. 판단 속도와 정확도를 연습하는 무료 브라우저 훈련이며 임상 검사가 아닙니다.",
     type: 'article',
     url: 'https://skilldrills.online/ko/drills/cognitive/processing-speed/reaction-time',
     siteName: 'SkillDrills',
@@ -19,8 +19,8 @@ export const metadata = {
   },
   twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: 'summary_large_image',
-    title: "반응속도 테스트 | 선택 반응 시간 훈련 | SkillDrills",
-    description: "무료 브라우저 반응속도 테스트: 바뀌는 규칙에 맞는 표적을 골라 선택 반응 시간과 판단 속도를 연습합니다. 임상 검사가 아닙니다.",
+    title: "선택 반응 시간 테스트 | 색상 규칙 전환 훈련 | SkillDrills",
+    description: "색상 규칙이 바뀔 때 맞는 표적을 고르는 선택 반응 시간 테스트입니다. 판단 속도와 정확도를 연습하는 무료 브라우저 훈련이며 임상 검사가 아닙니다.",
   },
   robots: { index: true, follow: true },
   alternates: {
@@ -140,7 +140,7 @@ const faqSchema = {
       "name": "단순 반응시간과의 차이점은?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "자극 출현 즉시 누르는 단순 반응(~200ms)과 달리, 대뇌 피질에서 자극 식별과 행동 선택 단계가 추가되어 50~100ms 더 소요됩니다(Donders, 1868)."
+        "text": "자극 출현 즉시 누르는 단순 반응(~200ms)과 달리, 자극 식별과 행동 선택 단계가 추가되어 반응 시간이 대체로 수십 ms 더 길어집니다(Donders, 1868)."
       }
     },
     {
@@ -252,21 +252,22 @@ const guideProps = {
   intro: {
     title: "선택 반응시간 테스트・판단 속도 측정 – 힉의 법칙 인지속도",
     paragraphs: [
-      "무료 브라우저 선택 반응시간(CRT) 측정 도구. 동적으로 뒤바뀌는 색상 규칙을 식별하고 올바른 표적을 타격하여 두뇌의 시지각 분별 속도와 의사결정 지연 시간을 밀리초 단위로 평가합니다.",
-      "자극 출현 즉시 누르는 단순 반응(~200ms)과 달리, 대뇌 피질에서 자극 식별과 행동 선택 단계가 추가되어 50~100ms 더 소요됩니다(Donders, 1868).",
+      "무료 브라우저 선택 반응시간(CRT) 측정 도구. 동적으로 뒤바뀌는 색상 규칙을 식별하고 올바른 표적을 눌러 시각 분별과 판단에 걸리는 시간을 연습합니다. 선택 반응 시간은 여러 자극 중 규칙에 맞는 반응을 고르는 데 걸리는 시간입니다. 사람과 기기에 따라 값이 크게 다르므로 같은 기기에서 본인의 기록 변화를 비교하세요.",
+      "자극 출현 즉시 누르는 단순 반응(~200ms)과 달리, 자극 식별과 행동 선택 단계가 추가되어 반응 시간이 대체로 수십 ms 더 길어집니다(Donders, 1868).",
       "선택지의 수가 늘어날수록 반응 시간이 로그 함수 형태로 길어진다는 인지공학의 기본 법칙입니다.",
     ],
   },
   benchmarks: {
-    title: '인지 수행 능력 표준 평가 벤치마크',
-    headers: ['등급 (Tier)', '호칭 (Rank)', '평가 기준', '도달 수준', '정확도', '백분위'],
+    title: '선택 반응 수행 구간(참고용)',
+    headers: ['단계', '구간 이름', '해석', '도달 수준', '정확도 목표', '비고'],
     rows: [
-      { tier: 'Tier 1', rank: '그랜드마스터 / 초고속 의사결정 엘리트', stat: '상위 1%', level: '마스터리 (최상위)', accuracy: '98% 이상', percentile: '상위 1%' },
-      { tier: 'Tier 2', rank: '상급 인지 분별자', stat: '상위 5%', level: '다이아몬드 (우수)', accuracy: '94–97%', percentile: '상위 5%' },
-      { tier: 'Tier 3', rank: '숙련 반응 조작자', stat: '상위 15%', level: '플래티넘 (숙련)', accuracy: '88–93%', percentile: '상위 15%' },
-      { tier: 'Tier 4', rank: '일반 성인 표준', stat: '상위 50%', level: '골드 (표준)', accuracy: '78–87%', percentile: '상위 50%' },
-      { tier: 'Tier 5', rank: '초보 / 입문 기준선', stat: '기준선 (기초)', level: '실버 (기초)', accuracy: '78% 미만', percentile: '기준선 (하위)' },
+      { tier: 'Tier 1', rank: '고속 의사결정', stat: '매우 높음', level: '최상위 구간', accuracy: '98% 이상', percentile: '정확도 유지가 핵심' },
+      { tier: 'Tier 2', rank: '상급 분별', stat: '높음', level: '우수', accuracy: '94–97%', percentile: '규칙 전환 직후 오답 관리' },
+      { tier: 'Tier 3', rank: '숙련 반응', stat: '평균 이상', level: '숙련', accuracy: '88–93%', percentile: '속도와 정확도 균형' },
+      { tier: 'Tier 4', rank: '일반 수준', stat: '평균 범위', level: '표준', accuracy: '78–87%', percentile: '기본 규칙 익히기' },
+      { tier: 'Tier 5', rank: '입문', stat: '기준선', level: '기초', accuracy: '78% 미만', percentile: '천천히 정확하게 시작' },
     ],
+    note: '구간은 SkillDrills가 정한 참고용 구분이며 사용자 통계, 백분위 또는 임상 기준이 아닙니다.',
   },
   protocols: {
     title: '두뇌 처리 속도와 집중력을 극대화하는 4대 훈련 프로토콜',
@@ -316,13 +317,13 @@ export default function LocalizedCognitivePage() {
       />
       <EliteNeuroSwitchClient
         copy={{
-          title: "반응속도 테스트",
+          title: "선택 반응 시간 테스트",
           subtitle: "색상 규칙 전환에 맞춰 표적을 고르는 선택 반응·판단 속도 훈련",
-          startTitle: "반응속도 테스트",
+          startTitle: "선택 반응 시간 테스트",
           startSubtitle: "선택 반응 • 판단 속도",
           stageCaption: "상단 규칙과 같은 색 표적을 빠르게 누르세요. 규칙과 색상이 계속 바뀝니다.",
           rulesTitle: "드릴 안내 및 점수 시스템",
-          aboutTitle: "반응속도 테스트란?",
+          aboutTitle: "선택 반응 시간 테스트란?",
           faqTitle: "자주 묻는 질문",
           labels: { score: "점수", time: "시간", level: "레벨", bestScore: "최고 점수", timeLeft: "남은 시간", rule: "규칙", ready: "준비", accuracy: "정확도", hits: "성공 횟수", peakLevel: "최고 레벨", maxCombo: "최대 콤보" },
           ruleBanner: { RED: "빨간 표적", BLUE: "파란 표적" },

@@ -10,17 +10,17 @@ import { pickSources } from '@/lib/drillSources';
 // ============================================================
 
 export const metadata = {
-  title: '마우스 정밀도 테스트 | 손 안정성 | SkillDrills',
-  description: '마우스 커서로 좁은 경로를 따라가며 정밀도와 손 안정성을 측정하는 무료 브라우저 테스트.',
+  title: '마우스 정확도 테스트 | 손 안정성 미로 | SkillDrills',
+  description: '마우스 정확도 테스트: 커서로 좁아지는 통로를 벽에 닿지 않고 따라가며 손 안정성과 경로 정밀도를 연습하는 무료 미로 게임입니다.',
   keywords: [
-    '마우스 정밀도 테스트', '커서 정확도 테스트', '손 안정성 테스트',
+    '마우스 정확도 테스트', '마우스 정밀도 테스트', '커서 정확도 테스트', '손 안정성 테스트',
     '마우스 경로 추적', '미세 운동 조절', '마우스 정밀 조작',
     '커서 제어 테스트', '마우스 미로 게임', '통로 따라가기',
     '손 떨림 제어', '게이밍 마우스 정밀도', '마우스 조작 연습',
   ],
   openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
-    title: '마우스 정밀도 테스트 | 손 안정성 | SkillDrills',
-    description: '마우스 커서로 좁은 경로를 따라가며 정밀도와 손 안정성을 측정하는 무료 브라우저 테스트.',
+    title: '마우스 정확도 테스트 | 손 안정성 미로 | SkillDrills',
+    description: '마우스 정확도 테스트: 커서로 좁아지는 통로를 벽에 닿지 않고 따라가며 손 안정성과 경로 정밀도를 연습하는 무료 미로 게임입니다.',
     type: 'article',
     url: 'https://skilldrills.online/ko/drills/motor/precision-control/steady-hand',
     siteName: 'SkillDrills',
@@ -28,8 +28,8 @@ export const metadata = {
   },
   twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: 'summary_large_image',
-    title: '마우스 정밀도 테스트 | 손 안정성 | SkillDrills',
-    description: '마우스 커서로 좁은 경로를 따라가며 정밀도와 손 안정성을 측정하는 무료 브라우저 테스트.',
+    title: '마우스 정확도 테스트 | 손 안정성 미로 | SkillDrills',
+    description: '마우스 정확도 테스트: 커서로 좁아지는 통로를 벽에 닿지 않고 따라가며 손 안정성과 경로 정밀도를 연습하는 무료 미로 게임입니다.',
   },
   robots: { index: true, follow: true },
   alternates: {
@@ -175,7 +175,7 @@ const faqSchema = {
       name: '트랙볼 마우스나 타블렛 펜(스타일러스)으로도 진행할 수 있나요?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: '네. W3C 포인터 이벤트 표준을 완벽히 지원하므로 고정밀 광학 마우스는 물론 트랙볼, 액정 타블렛 펜으로도 직접 조작하여 디바이스별 손떨림 안정성을 테스트할 수 있습니다.',
+        text: '네. 포인터 이벤트를 사용하므로 마우스뿐 아니라 트랙볼, 액정 타블렛 펜으로도 조작해 볼 수 있습니다. 기기마다 결과가 다르니 같은 기기에서 비교하세요. 이 게임은 의학적 손떨림 검사가 아닙니다.',
       },
     },
   ],
@@ -187,7 +187,7 @@ const howToSchema = {
   inLanguage: 'ko-KR',
   dateModified: '2026-09-20',
   name: '전기충격 미로게임으로 마우스 정밀도와 손떨림을 훈련하는 방법',
-  description: '좁아지는 코스를 벽 접촉 없이 완주하고 스티어링 효율을 극대화하는 단계별 프로토콜.',
+  description: '좁아지는 코스를 벽 접촉 없이 완주하고 스티어링 효율을 높이는 단계별 프로토콜.',
   step: [
     {
       '@type': 'HowToStep',
@@ -235,31 +235,31 @@ const guideProps = {
     rows: [
       {
         tier: 'Tier 1',
-        rank: '신경외과 전문의 (Apex Surgeon)',
+        rank: '최상위',
         stat: '레벨 12+',
         level: '12–15 px',
         accuracy: '2.5 px 미만',
-        percentile: '초인적 정밀도 (상위 1%)',
+        percentile: '최상위 참고 구간',
       },
       {
         tier: 'Tier 2',
-        rank: '마스터 내비게이터',
+        rank: '상급',
         stat: '레벨 9–11',
         level: '16–22 px',
         accuracy: '4.0 px 미만',
-        percentile: '프로급 안정성 (상위 5%)',
+        percentile: '상급 참고 구간',
       },
       {
         tier: 'Tier 3',
-        rank: '숙련된 조타수',
+        rank: '숙련',
         stat: '레벨 6–8',
         level: '23–32 px',
         accuracy: '6.5 px 미만',
-        percentile: '우수한 제어력 (상위 25%)',
+        percentile: '숙련 참고 구간',
       },
       {
         tier: 'Tier 4',
-        rank: '일반 커서 조작',
+        rank: '일반',
         stat: '레벨 3–5',
         level: '33–42 px',
         accuracy: '9.0 px 미만',
@@ -267,7 +267,7 @@ const guideProps = {
       },
       {
         tier: 'Tier 5',
-        rank: '초보 및 진전 감지',
+        rank: '입문',
         stat: '레벨 1–2',
         level: '43–50 px',
         accuracy: '9.0 px 초과',
@@ -277,7 +277,7 @@ const guideProps = {
   },
   protocols: {
     title: '손떨림 억제 및 미세 조타 훈련 프로토콜',
-    description: '생리적 진전을 억제하고 좁은 통로에서 속도와 정확성을 극대화하기 위한 전문 지침입니다.',
+    description: '좁은 통로에서 속도와 정확성을 함께 연습하기 위한 지침입니다.',
     items: [
       {
         title: '프로토콜 1: 아콧-자이 스티어링 법칙 속도 조절 (통로 폭 페이싱)',
@@ -307,7 +307,8 @@ const guideProps = {
 };
 
 const koCopy = {
-  h1Keyword: '마우스 정밀도 테스트',
+  h1Keyword: '마우스 정확도 테스트',
+  subtitle: '벽에 닿지 않고 좁아지는 통로를 따라가며 손 안정성과 경로 정밀도를 연습합니다',
   h1Suffix: ' (손 안정성 & 경로 추적)',
   caption: '전기충격 미로게임은 벽에 단 한 번도 닿지 않고 좁아지는 발광 통로를 따라 커서를 골인 지점까지 인도하여 마우스 미세 운동 조절력과 손떨림 안정성을 측정합니다. 아콧-자이 스티어링 법칙(1997)과 우드워스 폐루프 피드백 모델(1899)에 기반합니다.',
   statLaps: '클리어 랩',
@@ -348,12 +349,12 @@ const koCopy = {
   rule4Result: '1:1 원본 마우스 입력 반영',
   aboutTitle: '전기충격 미로게임(Steady Hand Drill) 정보',
   aboutHeading: '연속 궤적 추종 정밀도와 생리적 손떨림 억제',
-  aboutP1: '전기충격 미로게임은 눈과 손의 협응력, 손가락의 정밀한 미세 운동 제어, 부드러운 포인터 트래킹 안정성을 극대화하는 전문 트레이닝 툴입니다. 좁아지는 미로 통로를 벽 접촉 없이 통과함으로써 마우스 에이밍에 핵심적인 전완근과 손목의 미세 안정화 근육을 강화합니다.',
+  aboutP1: '마우스 정확도 테스트(전기충격 미로게임)는 커서를 벽에 닿지 않게 좁아지는 통로 끝까지 옮기는 게임입니다. 랩을 클리어할 때마다 통로가 좁아지고 급커브가 늘어나며, 벽에 닿으면 시작 지점으로 돌아갑니다. 눈과 손의 협응, 느리지만 안정적인 커서 제어를 연습하는 용도이며 의학적 손떨림 검사는 아닙니다.',
   aboutP2: 'Johnny Accot & Shumin Zhai(1997)의 스티어링 법칙에 따르면 터널 통과 시간은 경로 길이를 폭으로 나눈 적분값에 비례합니다. 50px에서 12px까지 좁아지는 통로에서 실시간 시각 피드백(Woodworth, 1899)과 손떨림 억제 능력을 극한까지 시험하세요.',
   aboutCard1Title: '추천 대상',
   aboutCard1Text: 'FPS/MOBA 게이머, 디지털 일러스트레이터, 외과의사 및 마우스 에임 시 손떨림과 커서 떨림을 교정하고 싶은 모든 분.',
   aboutCard2Title: '훈련 효과',
-  aboutCard2Text: '미세 운동 협응력 향상, 손 떨림 억제, 코너 구간 속도 제어 및 불필요한 근육 긴장 완화.',
+  aboutCard2Text: '미세 운동 협응, 커서 안정성, 코너 구간 속도 제어를 연습합니다. 효과에는 개인차가 있습니다.',
   aboutCard3Title: '동적 협소화 시스템',
   aboutCard3Text: '랩을 완료할 때마다 통로 폭이 밀리미터 단위로 축소되며 급격한 굴곡이 추가되어 한계 수준의 마우스 정밀도를 요구합니다.',
   gradeLabels: {
