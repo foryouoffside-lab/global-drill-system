@@ -12,7 +12,7 @@ import { pickSources } from '@/lib/drillSources';
 // ============================================================
 
 export const metadata = {
-  title: "Treino de mira online | Aim Trainer grátis | SkillDrills",
+  title: "Treino de Mira e Aim Trainer Online Grátis | SkillDrills",
   description: "Treine mira no navegador e teste a precisão do mouse. Meça reflexos, aquisição de alvo e velocidade de clique para jogos FPS.",
   keywords: ['treino de mira online', 'aim trainer grátis', 'teste de mira', 'precisão do mouse', 'treino de mira FPS', 'treino de flick', 'aquecer a mira', 'teste de reflexo', 'mira no Valorant', 'melhorar a mira no CS2'],
   alternates: {
@@ -20,7 +20,7 @@ export const metadata = {
     languages: getAlternateLanguages('/drills/motor/hand-eye-coordination/aim-trainer'),
   },
   openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
-    title: 'Treino de mira online | Aim Trainer grátis | SkillDrills',
+    title: 'Treino de Mira e Aim Trainer Online Grátis | SkillDrills',
     description: 'Treino de mira e teste de reflexos FPS grátis. Acerte alvos móveis e refine a precisão do mouse.',
     url: 'https://skilldrills.online/pt/drills/motor/hand-eye-coordination/aim-trainer',
     siteName: 'SkillDrills',
@@ -29,7 +29,7 @@ export const metadata = {
   },
   twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: 'summary_large_image',
-    title: 'Treino de mira online | Aim Trainer grátis | SkillDrills',
+    title: 'Treino de Mira e Aim Trainer Online Grátis | SkillDrills',
     description: 'Treino de mira FPS no navegador para aprimorar micro-flicks, reflexos e precisão.',
   },
   robots: { index: true, follow: true },
@@ -255,7 +255,7 @@ export default function AimTrainerPortuguesePage() {
           shareText: 'Compartilhar Pontuação',
           exitText: 'Sair',
           rulesTitle: 'Instruções & Sistema de Pontuação',
-          aboutTitle: 'Sobre o Aim Trainer Elite',
+          aboutTitle: 'Sobre o Aim Trainer',
           rulesItems: [
             {
               num: "1",
@@ -307,7 +307,7 @@ export default function AimTrainerPortuguesePage() {
 
         <h3>O Modelo de Dois Componentes do Movimento de Mira (Woodworth 1899; Elliott et al. 2010)</h3>
         <p>
-          O ato de mirar não é um movimento isolado e uniforme. Estudos comprovam que ele se divide em duas etapas neurofisiológicas:
+          O ato de mirar não é um movimento isolado e uniforme. Estudos indicam que ele se divide em duas etapas neurofisiológicas:
         </p>
         <ol className="list-decimal pl-5 space-y-2 my-3 text-slate-300">
           <li>
@@ -328,7 +328,7 @@ export default function AimTrainerPortuguesePage() {
 
         <h3>Tabela de Desempenho e Classificação no Treino de Mira</h3>
         <p>
-          Confira sua faixa de desempenho para uma sessão de 45 segundos:
+          Faixas editoriais para comparar suas próprias sessões de 45 segundos, não percentis de população:
         </p>
         <div className="overflow-x-auto my-4">
           <table className="w-full text-left border-collapse border border-white/10 text-xs sm:text-sm">
@@ -343,35 +343,35 @@ export default function AimTrainerPortuguesePage() {
             </thead>
             <tbody className="divide-y divide-white/5 text-slate-300">
               <tr>
-                <td className="p-2.5 border border-white/10 font-bold text-emerald-400">Tier 1 (Elite)</td>
+                <td className="p-2.5 border border-white/10 font-bold text-emerald-400">Faixa 1 (Muito alta)</td>
                 <td className="p-2.5 border border-white/10">&gt; 48.000 PTS</td>
                 <td className="p-2.5 border border-white/10">Level 12+</td>
                 <td className="p-2.5 border border-white/10">&gt; 95% (Combo 25+)</td>
-                <td className="p-2.5 border border-white/10">Nível Profissional / Mira Cirúrgica</td>
+                <td className="p-2.5 border border-white/10">Pontuação muito alta no treino</td>
               </tr>
               <tr>
-                <td className="p-2.5 border border-white/10 font-bold text-cyan-400">Tier 2 (Avançado)</td>
+                <td className="p-2.5 border border-white/10 font-bold text-cyan-400">Faixa 2 (Alta)</td>
                 <td className="p-2.5 border border-white/10">32.000 – 47.999 PTS</td>
                 <td className="p-2.5 border border-white/10">Level 9–11</td>
                 <td className="p-2.5 border border-white/10">88% – 94% (Combo 18–24)</td>
-                <td className="p-2.5 border border-white/10">Competitivo de Alto Nível / Fragger</td>
+                <td className="p-2.5 border border-white/10">Pontuação alta</td>
               </tr>
               <tr>
-                <td className="p-2.5 border border-white/10 font-bold text-blue-400">Tier 3 (Intermediário)</td>
+                <td className="p-2.5 border border-white/10 font-bold text-blue-400">Faixa 3 (Boa)</td>
                 <td className="p-2.5 border border-white/10">18.000 – 31.999 PTS</td>
                 <td className="p-2.5 border border-white/10">Level 6–8</td>
                 <td className="p-2.5 border border-white/10">78% – 87% (Combo 12–17)</td>
-                <td className="p-2.5 border border-white/10">Jogador Regular / Mira Estável</td>
+                <td className="p-2.5 border border-white/10">Pontuação boa</td>
               </tr>
               <tr>
-                <td className="p-2.5 border border-white/10 font-bold text-amber-400">Tier 4 (Básico)</td>
+                <td className="p-2.5 border border-white/10 font-bold text-amber-400">Faixa 4 (Intermediária)</td>
                 <td className="p-2.5 border border-white/10">8.000 – 17.999 PTS</td>
                 <td className="p-2.5 border border-white/10">Level 3–5</td>
                 <td className="p-2.5 border border-white/10">65% – 77% (Combo 6–11)</td>
-                <td className="p-2.5 border border-white/10">Em Desenvolvimento / Oscilações</td>
+                <td className="p-2.5 border border-white/10">Em desenvolvimento</td>
               </tr>
               <tr>
-                <td className="p-2.5 border border-white/10 font-bold text-rose-400">Tier 5 (Iniciante)</td>
+                <td className="p-2.5 border border-white/10 font-bold text-rose-400">Faixa 5 (Inicial)</td>
                 <td className="p-2.5 border border-white/10">&lt; 8.000 PTS</td>
                 <td className="p-2.5 border border-white/10">Level 1–2</td>
                 <td className="p-2.5 border border-white/10">&lt; 65% (Combo &lt; 6)</td>
