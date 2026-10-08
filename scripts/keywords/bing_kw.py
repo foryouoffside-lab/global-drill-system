@@ -8,7 +8,7 @@
 Every process shares one lock file and one global minimum gap between calls,
 so many agents can use the one API key without being throttled. Output is one
 JSON object per line: phrase, cc, lang, exact, broad, status. status is "ok",
-"nodata" (API returned nothing: UNKNOWN, not zero) or "error".
+"nodata" (API returned nothing: UNKNOWN, not zero), "throttled" (key rate-limited: UNKNOWN) or "error:...".
 """
 import json
 import os
@@ -22,7 +22,7 @@ import bing
 if hasattr(sys.stdout, "reconfigure"):
     sys.stdout.reconfigure(encoding="utf-8", errors="replace")
 
-GAP = float(os.environ.get("BING_GAP", "3.5"))
+GAP = float(os.environ.get("BING_GAP", "8"))
 LOCK = os.path.join(tempfile.gettempdir(), "skilldrills-bing.lock")
 STAMP = os.path.join(tempfile.gettempdir(), "skilldrills-bing.stamp")
 
@@ -82,12 +82,19 @@ def lookup(phrase, cc, lang=None, with_trend=False):
     try:
         wait_gap()
         try:
-            v = bing.keyword_volume(phrase, cc, lang)
             c, l = bing.market(cc, lang)
+            start, end = bing.month_range()
+            r = bing.call("GetKeyword", {"q": phrase, "country": c, "language": l,
+                                         "startDate": start, "endDate": end})
             out = {"phrase": phrase, "cc": c, "lang": l}
-            if v is None:
+            d = r.get("d") if isinstance(r, dict) else None
+            if isinstance(r, dict) and "__error" in r:
+                throttled = "Throttle" in (r.get("body") or "")
+                out.update(exact=None, broad=None, status="throttled" if throttled else "error:" + r["__error"][:60])
+            elif not d:
                 out.update(exact=None, broad=None, status="nodata")
             else:
+                v = {"exact": d.get("Impressions"), "broad": d.get("BroadImpressions")}
                 out.update(exact=v["exact"], broad=v["broad"], status="ok")
                 if with_trend and (v["exact"] or 0) >= 30:
                     time.sleep(GAP)
@@ -105,12 +112,17 @@ def main():
     a = sys.argv[1:]
     wt = "--trend" in a
     a = [x for x in a if x != "--trend"]
+    strikes = 0
     if a and a[0] == "--file":
         for line in open(a[1], encoding="utf-8"):
             p = line.rstrip("\n").split("\t")
             if len(p) < 2 or not p[0]:
                 continue
-            print(json.dumps(lookup(p[0], p[1], p[2] if len(p) > 2 and p[2] else None, wt), ensure_ascii=False), flush=True)
+            res = lookup(p[0], p[1], p[2] if len(p) > 2 and p[2] else None, wt)
+            print(json.dumps(res, ensure_ascii=False), flush=True)
+            strikes = strikes + 1 if res["status"] == "throttled" else 0
+            if strikes >= 3:
+                sys.exit("Bing API is throttling this key (ThrottleUser). Stop; wait for it to clear (retry with one canary call every 30 min) and rerun only the phrases whose status is not ok.")
     elif len(a) >= 2:
         print(json.dumps(lookup(a[0], a[1], a[2] if len(a) > 2 else None, wt), ensure_ascii=False))
     else:

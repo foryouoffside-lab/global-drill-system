@@ -38,22 +38,28 @@ Everything else from the SEO run is DONE and LIVE (section 2). The only unfinish
 
 Measured today (Bing US exact): keyboard tester 17,184 (trend -2%, flat). Prior baselines: see section 6 and `INTERNATIONAL_STRATEGY.md`.
 
-## 4. PARTIAL DATA ON DISK (reuse it; do not re-measure)
+## 4. PARTIAL DATA ON DISK - READ THIS: MOST BING ROWS ARE THROTTLED, NOT MEASURED
 
-`docs/seo/research/demand-2026-10/_work-<market>/` holds raw outputs. Rough contents at the stop:
+The 8 agents plus the lock still overloaded the Bing keyword API: the key returns `HTTP 400 {"ErrorCode":4,"Message":"ERROR!!! ThrottleUser"}` (verified 2026-10-08 evening; even `cps test` US failed). Every row saved while throttled has `status:"nodata"` (old wrapper) = UNKNOWN, not zero. Counts of REAL measured (`ok`) vs unknown rows in `docs/seo/research/demand-2026-10/_work-*/*.jsonl`:
 
-| Market | Measured Bing rows | SERP probes | Notes |
+| Market | ok (real volume) | nodata/error (unknown) | SERP probes saved |
 |---|---|---|---|
-| en | 17 | 37 | volume pass barely started; SERPs mostly done |
-| ja | 87 | 24 | most advanced; has autocomplete json + 3 SERP batches |
-| ko | 70 | 19 | volumes + SERPs done for batch 1 |
-| de | 70 | 0 | volumes only, SERP not started |
-| fr | 136 | 0 | two volume batches, SERP not started |
-| es | 140 | 13 | volumes + first probe batch |
-| pt | 70 | 13 | volumes + first probe batch |
-| emerging | 71 | 18 | over budget batch, id/tr/pl/it/ru/vi/th/ph/in |
+| ja | 85 | 2 | 24 |
+| emerging | 64 | 7 | 18 |
+| es | 34 | 106 | 13 |
+| de | 0 | 70 | 0 |
+| fr | 0 | 136 | 0 |
+| ko | 0 | 70 | 19 |
+| pt | 0 | 70 | 13 |
+| en | 0 | 17 | 37 |
 
-Formats: `*.jsonl` Bing rows (one JSON per line, see tool 1) and SERP rows (`organic` array); `*.tsv` query/phrase inputs. Some `.err` files are stderr logs (ignore). A same-named `_work-*` dir per market, all uncommitted.
+So: ja and emerging volumes are usable; es partly; de/fr/ko/pt/en volumes must be re-measured. The SERP competition data (Playwright, not the API) is valid wherever probes exist. Autocomplete files are valid proxies.
+
+Rules for the new chat:
+1. Before anything, send ONE canary: `python scripts/keywords/bing_kw.py "cps test" us`. Expect exact about 13,000+. If it returns `status:"throttled"` the key is still locked: wait (try again every 30 minutes; it clears in hours, sometimes next day) and do competition/SERP work meanwhile.
+2. `scripts/keywords/bing_kw.py` was fixed: default gap is now 8 s, it reports `status:"throttled"` (not "nodata") and aborts a `--file` run after 3 consecutive throttles. A shared lock does NOT make parallel agents safe: the API throttles on total volume, so measure Bing volumes from ONE process/agent at a time (or in the coordinator), at most about 150 calls per hour, and run `--trend` only on the best 20 terms.
+3. Only phrases whose status is not `ok` need re-measuring. Parallel agents should do discovery (autocomplete), SERP probes (Playwright), classification and writing, NOT Bing volume calls. Give each agent a phrase file and have the coordinator (or one dedicated agent) run all the Bing volume batches sequentially, then hand the results back.
+4. Never report a `nodata`/`throttled` row as zero demand.
 
 ## 5. WHAT TO DO IN THE NEW CHAT (in order)
 
@@ -64,7 +70,7 @@ Step 1 - Check the account limit has reset (it resets 9:30pm IST). Launch at mos
 Step 2 - Resume the 8 markets as NEW general-purpose agents (agents are not resumable across chats). Each prompt = "Read `docs/seo/research/demand-2026-10/_BRIEF.md` and follow it; your market is X; existing raw data is in `_work-X/` - reuse it, finish only what is missing". Suggested waves:
 - Wave 1: ja, ko, en, pt (most data / most value).
 - Wave 2: de, fr, es, emerging.
-Per agent remaining work: finish Bing volumes to the 70-phrase budget (only phrases not already in the jsonl), `--trend` on the best 20, SERP probe the top 25 + 10 mid-volume terms (skip the ones already probed), classify competition, compute opportunity, write `<market>.md` + `<market>.csv` into `docs/seo/research/demand-2026-10/`. Tell each to write its two deliverables EARLY (draft after the first measured batch) and update them as it goes, so a session cutoff never loses the report again. Tell each to save progress after every batch.
+Per agent remaining work: discovery + SERP probe + classification (Bing volumes are measured centrally, see section 4 rule 3); SERP probe the top 25 + 10 mid-volume terms (skip the ones already probed), classify competition, compute opportunity, write `<market>.md` + `<market>.csv` into `docs/seo/research/demand-2026-10/`. Tell each to write its two deliverables EARLY (draft after the first measured batch) and update them as it goes, so a session cutoff never loses the report again. Tell each to save progress after every batch.
 
 Step 3 - Coordinator synthesis (you): merge all `<market>.csv` into `docs/seo/research/demand-2026-10/MASTER.csv` and write `SUMMARY.md`: the global top-30 high-demand/low-competition opportunities (native keyword, market, exact, trend, competition + evidence hosts, intent, feasibility, existing route or "new tool"), a market verdict table (localize / English page only / ignore), a kill list (terms the site targets that have no demand), and the AEO/GEO playbook per market (question H2s, 40-60 word direct answers, FAQPage/HowTo/SoftwareApplication schema, entity terms, Naver/Yahoo-Japan/Bing/Copilot notes, hreflang with x-default, no hard IP redirects).
 
