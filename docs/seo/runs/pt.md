@@ -42,3 +42,4 @@
 | /pt/drills/visual-tracking/spatial-shift-pursuit | done | TBD:spatial-shift-pursuit | docs/seo/research/pt/spatial-shift-pursuit.md | title kept; schema/FAQ/intro rewritten as accented pt-BR (was unaccented pt-PT); overclaims removed; demand not verified |
 | /pt/drills/visual-tracking/strobe-prediction-pursuit | done | TBD:strobe-prediction-pursuit | docs/seo/research/pt/strobe-prediction-pursuit.md | title kept; invented percentiles/tiers removed; strobe-research claims softened; demand not verified |
 | /pt/drills/visual-tracking/triangular-pursuit | done | TBD:triangular-pursuit | docs/seo/research/pt/triangular-pursuit.md | title kept; Top-% percentiles and rank names removed; demand not verified |
+| /pt/drills/visual-tracking/zig-zag-path-pursuit | done | TBD:zig-zag-path-pursuit | docs/seo/research/pt/zig-zag-path-pursuit.md | title kept; Top-% percentiles and rank names removed; demand not verified |
