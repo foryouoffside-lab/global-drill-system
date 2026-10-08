@@ -5,14 +5,14 @@ import DrillFooter from '@/components/drill/DrillFooter';
 import { pickSources } from '@/lib/drillSources';
 
 export const metadata = {
-  title: "Symbol Matching Test | SDMT-Style Processing Speed Drill",
+  title: "SDMT-Style Symbol Digit Test Online | SkillDrills",
   description: "Free symbol matching test online inspired by SDMT: practise visual scanning, symbol-to-digit lookup, and processing speed in your browser. Non-clinical.",
   keywords: ["symbol matching test online", "symbol matching test", "symbol digit modalities test", "sdmt test online", "digit symbol substitution test", "dsst test online", "processing speed test", "cognitive processing speed", "visual scanning test", "associative memory test",
     "sdmt cognitive assessment",
     "symbol matching speed game",
     "free neuropsychological test online"],
   openGraph: {
-    title: "Symbol Matching Test | SDMT-Style Processing Speed Drill",
+    title: "SDMT-Style Symbol Digit Test Online | SkillDrills",
     description: "Free symbol matching test online inspired by SDMT: practise visual scanning, symbol-to-digit lookup, and processing speed in your browser. Non-clinical.",
     type: 'article',
     url: 'https://skilldrills.online/drills/cognitive/processing-speed/symbol-matching',
@@ -21,7 +21,7 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: "Symbol Matching Test | SDMT-Style Processing Speed Drill",
+    title: "SDMT-Style Symbol Digit Test Online | SkillDrills",
     description: "Free symbol matching test online inspired by SDMT: practise visual scanning, symbol-to-digit lookup, and processing speed in your browser. Non-clinical.",
   },
   robots: { index: true, follow: true },
@@ -191,7 +191,7 @@ const faqSchema = {
       "name": "Does cognitive processing speed decline with age?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Yes, processing speed peaks in early adulthood and shows gradual deceleration, which can be partially mitigated through regular cognitive training."
+        "text": "Processing speed tends to be highest in early adulthood and to slow gradually with age. Whether practice on a task like this offsets that is not settled, so use the drill for practice and for tracking your own runs, not as a health measure."
       }
     },
     {
@@ -264,10 +264,10 @@ const guideProps = {
     title: 'Cognitive Performance Standards & Benchmarks',
     headers: ['Tier', 'Rank', 'Rating', 'Accuracy', 'Percentile'],
     rows: [
-      { tier: 'Tier 1', rank: 'Grandmaster / Elite', stat: 'Top 1%', level: 'Mastery', accuracy: '98%+', percentile: 'Top 1%' },
-      { tier: 'Tier 2', rank: 'Advanced Focus', stat: 'Top 5%', level: 'Diamond', accuracy: '94-97%', percentile: 'Top 5%' },
-      { tier: 'Tier 3', rank: 'Proficient Operator', stat: 'Top 15%', level: 'Platinum', accuracy: '88-93%', percentile: 'Top 15%' },
-      { tier: 'Tier 4', rank: 'Standard Adult', stat: 'Top 50%', level: 'Gold', accuracy: '78-87%', percentile: 'Top 50%' },
+      { tier: 'Tier 1', rank: 'Grandmaster / Elite', stat: 'Highest tier', level: 'Mastery', accuracy: '98%+', percentile: 'Highest tier' },
+      { tier: 'Tier 2', rank: 'Advanced Focus', stat: 'Upper tier', level: 'Diamond', accuracy: '94-97%', percentile: 'Upper tier' },
+      { tier: 'Tier 3', rank: 'Proficient Operator', stat: 'Above-average tier', level: 'Platinum', accuracy: '88-93%', percentile: 'Above-average tier' },
+      { tier: 'Tier 4', rank: 'Standard Adult', stat: 'Mid tier', level: 'Gold', accuracy: '78-87%', percentile: 'Mid tier' },
       { tier: 'Tier 5', rank: 'Novice Baseline', stat: 'Base', level: 'Silver', accuracy: '<78%', percentile: 'Baseline' },
     ],
   },
@@ -317,7 +317,7 @@ export default function EnhancedPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(howToSchema) }}
       />
-      <SymbolMatchingClient copy={{ title: "Symbol Matching Test", subtitle: "SDMT-style symbol matching for processing speed, visual scanning, and associative working memory" }} />
+      <SymbolMatchingClient copy={{ title: "Symbol Digit Test (SDMT-Style)", subtitle: "SDMT-style symbol matching for processing speed, visual scanning, and associative working memory" }} />
       <DrillGuide {...guideProps} />
       <DrillFooter />
     </>

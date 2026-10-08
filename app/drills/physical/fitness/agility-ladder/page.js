@@ -161,10 +161,10 @@ const faqSchema = {
     },
     {
       '@type': 'Question',
-      name: 'How does this agility ladder drill transfer to tactical FPS games and counter-strafing?',
+      name: 'Does this agility ladder drill help with counter-strafing in FPS games?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'In tactical shooters like Counter-Strike 2 and Valorant, counter-strafing requires rhythmic alternating finger and wrist coordination. The alternating Left-Right sweeps condition the neuromuscular timing necessary for clearing corners and jiggle-peeking angles smoothly.',
+        text: 'Counter-strafing in shooters relies on rhythmic alternating inputs, and the left-right rungs here practise a similar rhythm. This is a browser timing drill, not a physical ladder workout, and no study cited on this site shows a transfer to a specific game.',
       },
     },
     {
@@ -258,7 +258,7 @@ const guideProps = {
     title: 'Agility Ladder Drills & Motor Sequencing 5-Tier Performance Benchmarks',
     headers: ['Performance Tier', 'Mastery Rank Title', 'Score Threshold', 'Level Reached', 'Scroll Velocity', 'Neuromotor Sequencing Profile'],
     rows: [
-      ['Tier 1: Apex Agility Master', 'Apex Agility Master', '17,000+ pts', 'Level 12 – 15', '650 – 750 px/s', 'Top 0.1% serialized motor programming efficiency; flawless high-frequency alternating tapping under 750 px/s scroll stress (Lashley 1951; Schmidt 1975)'],
+      ['Tier 1: Apex Agility Master', 'Apex Agility Master', '17,000+ pts', 'Level 12 – 15', '650 – 750 px/s', 'Serialized motor programming efficiency; flawless high-frequency alternating tapping under 750 px/s scroll stress (Lashley 1951; Schmidt 1975)'],
       ['Tier 2: Elite Rhythm Sweeper', 'Elite Rhythm Sweeper', '13,000 – 16,999 pts', 'Level 9 – 11', '500 – 625 px/s', 'High-level neuromuscular cadence with seamless left-right motor transitions and minimal ballistic correction overshoot (Fitts 1954)'],
       ['Tier 3: Advanced Sequence Stepper', 'Advanced Sequence Stepper', '9,500 – 12,999 pts', 'Level 6 – 8', '375 – 475 px/s', 'Strong athletic and competitive baseline; consistent rung contact with minor rhythm variance at intermediate scroll velocities'],
       ['Tier 4: Intermediate Rung Tracker', 'Intermediate Rung Tracker', '6,000 – 9,499 pts', 'Level 3 – 5', '250 – 350 px/s', 'Recreational motor coordination; occasional missed rungs when cadence exceeds 300 px/s due to delayed motor plan switching'],

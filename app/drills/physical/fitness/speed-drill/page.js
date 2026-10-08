@@ -37,7 +37,7 @@ import { pickSources } from '@/lib/drillSources';
 // ============================================================
 
 export const metadata = {
-  title: 'Click Speed Test | Target Acquisition Drill | SkillDrills',
+  title: 'Click Speed Drill | Shrinking Target Game | SkillDrills',
   description:
     'Free click speed and reaction drill online. Hit moving, shrinking targets to train rapid clicking, accuracy, and target acquisition.',
   keywords: [
@@ -58,7 +58,7 @@ export const metadata = {
   },
   robots: { index: true, follow: true },
   openGraph: {
-    title: 'Click Speed Test | Target Acquisition Drill | SkillDrills',
+    title: 'Click Speed Drill | Shrinking Target Game | SkillDrills',
     description:
       'Test target acquisition speed and rapid tapping in Speed Drill. Click moving, shrinking targets in this free reflex training game.',
     url: 'https://skilldrills.online/drills/physical/fitness/speed-drill',
@@ -117,7 +117,7 @@ const softwareApplicationSchema = {
 const webApplicationSchema = {
   '@context': 'https://schema.org',
   '@type': 'WebApplication',
-  name: 'Click Speed Test - Shrinking Target Drill',
+  name: 'Click Speed Drill - Shrinking Target Game',
   url: 'https://skilldrills.online/drills/physical/fitness/speed-drill',
   description:
     'Interactive click-speed and target-acquisition drill. Hit moving targets before their shrinking windows expire.',
@@ -140,6 +140,14 @@ const faqSchema = {
   inLanguage: 'en',
   dateModified: '2026-09-20',
   mainEntity: [
+    {
+      '@type': 'Question',
+      name: 'Is this a CPS (clicks per second) test?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'No. A CPS test counts how many times you click in a fixed time. This drill instead measures how quickly and accurately you hit moving targets that shrink and disappear, and clicking without hitting a target resets your combo. It is a reaction and aiming drill, not a clicks-per-second counter.',
+      },
+    },
     {
       '@type': 'Question',
       name: 'What is the Speed Drill reflex exercise?',
@@ -193,7 +201,7 @@ const faqSchema = {
       name: 'How does session time extension work with the +0.6s reward?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Each clean target hit awards a +0.6 second clock extension. High-cadence players who execute sub-500ms acquisitions outpace clock expiration, prolonging sessions to achieve astronomical combo scores.',
+        text: 'Each clean target hit awards a +0.6 second clock extension. Players who acquire targets quickly can keep extending the clock and sustain longer sessions.',
       },
     },
     {
@@ -201,7 +209,7 @@ const faqSchema = {
       name: 'Does Speed Drill improve competitive gaming and FPS flick aim?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Yes. Rapid target acquisition, micro-burst clicking, and instantaneous spatial correction directly translate to lower time-to-kill (TTK) and razor-sharp flick accuracy in competitive shooters like Valorant, CS2, and Apex Legends.',
+        text: 'It may help as practice. The drill rehearses fast target acquisition and clicking, skills shooters also use, but this site has no study showing a transfer to time-to-kill or flick accuracy in any specific game.',
       },
     },
     {
@@ -217,7 +225,7 @@ const faqSchema = {
       name: 'What hardware is required to train Speed Drill?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'No special hardware is required. Any standard computer mouse with 1:1 raw input support works ideally with our pointer lock system. Mobile touch screens are also fully supported with multi-touch tap tracking.',
+        text: 'No special hardware is required. Any standard computer mouse works. Mobile touch screens are also fully supported with multi-touch tap tracking.',
       },
     },
   ],
@@ -288,9 +296,9 @@ const guideProps = {
     title: 'Speed Drill Training & Target Acquisition 5-Tier Performance Benchmarks',
     headers: ['Performance Tier', 'Mastery Rank Title', 'Score Threshold', 'Accuracy & Speed Multiplier', 'Performance Grade', 'Neuromotor Tapping Profile'],
     rows: [
-      ['Tier 1: Apex Speed Master', 'Apex Speed Master', '24,000+ pts', '90%+ Acc / 3.0x+ Speed', 'Grade S (Top 0.1%)', 'Exceptional ballistic open-loop flick efficiency; near-zero latency terminal deceleration on rapidly decaying targets (Woodworth 1899; Fitts 1954)'],
-      ['Tier 2: Precision Flick Striker', 'Precision Flick Striker', '17,000 – 23,999 pts', '82 – 89% Acc / 2.4 – 2.9x Speed', 'Grade A (Top 5%)', 'Advanced visual search and rapid motor planning; reliable clock extension chaining with high accuracy under high speed multipliers'],
-      ['Tier 3: Rapid Target Acquirer', 'Rapid Target Acquirer', '11,000 – 16,999 pts', '74 – 81% Acc / 1.8 – 2.3x Speed', 'Grade B (Top 20%)', 'Competitive baseline; consistent acquisition of peripheral targets with minor overshoots on shrinking boundaries'],
+      ['Tier 1: Apex Speed Master', 'Apex Speed Master', '24,000+ pts', '90%+ Acc / 3.0x+ Speed', 'Grade S', 'Exceptional ballistic open-loop flick efficiency; near-zero latency terminal deceleration on rapidly decaying targets (Woodworth 1899; Fitts 1954)'],
+      ['Tier 2: Precision Flick Striker', 'Precision Flick Striker', '17,000 – 23,999 pts', '82 – 89% Acc / 2.4 – 2.9x Speed', 'Grade A', 'Advanced visual search and rapid motor planning; reliable clock extension chaining with high accuracy under high speed multipliers'],
+      ['Tier 3: Rapid Target Acquirer', 'Rapid Target Acquirer', '11,000 – 16,999 pts', '74 – 81% Acc / 1.8 – 2.3x Speed', 'Grade B', 'Competitive baseline; consistent acquisition of peripheral targets with minor overshoots on shrinking boundaries'],
       ['Tier 4: Developing Reflex Tapper', 'Developing Reflex Tapper', '6,000 – 10,999 pts', '65 – 73% Acc / 1.3 – 1.7x Speed', 'Grade C (Average)', 'Standard recreational speed; struggles to sustain combo extensions when decay rates accelerate beyond 2.0x'],
       ['Tier 5: Novice Target Pursuer', 'Novice Target Pursuer', '< 6,000 pts', '< 65% Acc / < 1.3x Speed', 'Grade D (Novice)', 'Early motor training phase; excessive correction loops and low click timing coordination resulting in premature timer expiration']
     ],
@@ -354,7 +362,7 @@ export default function SpeedDrillPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(howToSchema) }}
       />
-      <SpeedDrillClient copy={{ title: 'Click Speed Test', subtitle: 'Hit shrinking targets quickly and accurately' }} />
+      <SpeedDrillClient copy={{ title: 'Click Speed Drill', subtitle: 'Hit shrinking targets quickly and accurately' }} />
       <DrillGuide {...guideProps} />
       
     </>

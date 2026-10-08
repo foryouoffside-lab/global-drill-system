@@ -152,10 +152,10 @@ const faqSchema = {
     },
     {
       '@type': 'Question',
-      name: 'How does this cross-body drill transfer to FPS aiming and mouse control?',
+      name: 'Can this cross-body drill help FPS aiming and mouse control?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Large diagonal sweeps cross physical desk zones that require forearm and shoulder engagement rather than isolated wrist movement. Practicing cross-body trajectories conditions the arm muscles for wide 180° flick resets, target switching across ultrawide monitors, and consistent mouse recentering.',
+        text: 'Large diagonal sweeps need forearm and shoulder movement rather than wrist-only movement, which is similar to wide flicks and mouse recentering in games. This site has no study showing a transfer, so treat it as arm-movement practice and judge it by your own results.',
       },
     },
     {
@@ -249,7 +249,7 @@ const guideProps = {
     title: 'Hand-Eye Coordination & Midline Crossing 5-Tier Performance Benchmarks',
     headers: ['Performance Tier', 'Mastery Rank Title', 'Score Threshold', 'Level Reached', 'Vector Accuracy', 'Neuromotor Profile'],
     rows: [
-      ['Tier 1: Apex Bilateral Master', 'Apex Bilateral Master', '17,000+ pts', 'Level 12 – 15', '≥ 92% accuracy', 'Top 0.1% caliber interhemispheric transfer efficiency; flawless forearm-driven diagonal tracking within narrow 4px corridors (Ayres 1972; Fitts 1954)'],
+      ['Tier 1: Apex Bilateral Master', 'Apex Bilateral Master', '17,000+ pts', 'Level 12 – 15', '≥ 92% accuracy', 'Caliber interhemispheric transfer efficiency; flawless forearm-driven diagonal tracking within narrow 4px corridors (Ayres 1972; Fitts 1954)'],
       ['Tier 2: Elite Midline Sweeper', 'Elite Midline Sweeper', '13,000 – 16,999 pts', 'Level 9 – 11', '85 – 91% accuracy', 'Zero-latency contralateral acceleration paired with millisecond Woodworth terminal deceleration control onto 8px peripheral nodes (Carey et al. 1996)'],
       ['Tier 3: Advanced Vector Tracer', 'Advanced Vector Tracer', '9,500 – 12,999 pts', 'Level 6 – 8', '76 – 84% accuracy', 'Competitive FPS benchmark: consistent diagonal flick control and smooth midline crossing without wrist-angle motor drift'],
       ['Tier 4: Intermediate Node Connector', 'Intermediate Node Connector', '6,000 – 9,499 pts', 'Level 3 – 5', '65 – 75% accuracy', 'Standard recreational baseline; corridor violations occur when width drops below 6px due to rigid wrist-pivoting mechanics'],

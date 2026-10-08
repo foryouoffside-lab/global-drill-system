@@ -36,9 +36,9 @@ import { pickSources } from '@/lib/drillSources';
 // ============================================================
 
 export const metadata = {
-  title: 'Peripheral Vision Test | Free Visual Attention Drill',
+  title: 'Peripheral Vision Test | Free Drill | SkillDrills',
   description:
-    'Free peripheral vision test in your browser. Keep your gaze centered, spot threats at the edge of view, and train useful field of view (UFOV).',
+    'Free peripheral vision test game: keep your gaze centered and spot threats at the edge of view. Practice only, not a medical visual field test.',
   keywords: [
     'peripheral vision test',
     'peripheral vision training',
@@ -57,7 +57,7 @@ export const metadata = {
   },
   robots: { index: true, follow: true },
   openGraph: {
-    title: 'Peripheral Vision Test | Free Visual Attention Drill',
+    title: 'Peripheral Vision Test | Free Drill | SkillDrills',
     description:
       'Keep your gaze centered, detect threats at the edge of view, and train peripheral attention in a free browser drill.',
     url: 'https://skilldrills.online/drills/physical/reflex-training/peripheral-threat-sweeper',
@@ -75,7 +75,7 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Peripheral Vision Test | Free Visual Attention Drill',
+    title: 'Peripheral Vision Test | Free Drill | SkillDrills',
     description:
       'Detect edge-of-view threats while keeping your gaze centered in this free peripheral attention drill.',
     images: ['https://skilldrills.online/icons/icon-512x512.png'],
@@ -111,7 +111,7 @@ const softwareApplicationSchema = {
     priceCurrency: 'USD',
   },
   description:
-    'Radial visual-motor integration and covert attentional orienting drill designed to expand the Useful Field of View (UFOV) and condition peripheral threat detection.',
+    'Radial visual-motor integration and covert attentional orienting drill for practising peripheral threat detection.',
 };
 
 const webApplicationSchema = {
@@ -143,7 +143,7 @@ const faqSchema = {
       name: 'What is peripheral vision training?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Peripheral vision training consists of structured visual exercises designed to expand your active Useful Field of View (UFOV), enabling your visual cortex to detect, process, and react to off-center stimuli without breaking foveal fixation.',
+        text: 'Peripheral vision training means structured exercises in which you keep your gaze fixed and respond to things that appear off-center. This drill is a browser game for practice and is not a medical visual field test or a diagnostic for any eye condition.',
       },
     },
     {
@@ -215,7 +215,7 @@ const faqSchema = {
       name: 'What equipment is recommended for peripheral training?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'A desktop monitor positioned 50–70cm away with a standard optical mouse set to 1:1 raw input is ideal. The drill also supports touch input on tablet devices.',
+        text: 'A desktop monitor at a comfortable viewing distance with a standard mouse works well. The drill also supports touch input on tablet devices.',
       },
     },
   ],
@@ -226,7 +226,7 @@ const videoGameSchema = {
   '@type': 'VideoGame',
   name: 'Peripheral Threat Sweeper',
   url: 'https://skilldrills.online/drills/physical/reflex-training/peripheral-threat-sweeper',
-  description: 'Free online peripheral vision test. Train spatial awareness, useful field of view (UFOV), and radial threat detection.',
+  description: 'Free online peripheral vision test game. Practise spotting threats at the edge of view while keeping your gaze centered. Not a medical test.',
   genre: ['Action', 'Brain Game', 'Reflex Game', 'Coordination'],
   gamePlatform: ['Web Browser', 'Desktop', 'Mobile'],
   applicationCategory: 'Game',

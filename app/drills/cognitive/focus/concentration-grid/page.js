@@ -169,10 +169,18 @@ const faqSchema = {
     },
     {
       "@type": "Question",
+      "name": "What is a good Schulte table time?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Printed Schulte tables are usually timed on a single 5x5 grid, and published norms vary by age and source. This drill is different: it runs one continuous 45-second clock across growing grids, so classic completion-time norms do not map onto it. Compare your own score on the same device and input method over repeated runs."
+      }
+    },
+    {
+      "@type": "Question",
       "name": "How is the performance score calculated?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Score is awarded for each correct sequential tap with dynamic latency bonuses for sub-300ms reaction times. In addition, completing an entire grid awards a substantial clear bonus scaled by the grid dimension (e.g., 3x3, 4x4, 5x5...)."
+        "text": "Score is awarded for each correct sequential tap, with faster taps earning a larger latency bonus. In addition, completing an entire grid awards a substantial clear bonus scaled by the grid dimension (e.g., 3x3, 4x4, 5x5...)."
       }
     },
     {
@@ -204,7 +212,7 @@ const faqSchema = {
       "name": "Who uses Schulte tables and concentration grids in real-world training?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Aviation academies, cosmonaut and military flight programs, Formula 1 drivers, tennis players, and esports competitors utilize grid scanning drills to sharpen rapid visual information processing, micro-saccadic precision, and mental focus under competitive pressure."
+        "text": "Concentration grids are described in sports psychology (Harris & Harris, 1984) as a focus exercise for athletes, and Schulte tables are widely used by speed-reading and attention-training hobbyists. Treat them as practice for visual scanning and focus, not as proof of any real-world performance gain."
       }
     },
     {
@@ -220,7 +228,7 @@ const faqSchema = {
       "name": "Is the Schulte Table Trainer free to play?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Yes. The Schulte Table Trainer on SkillDrills is 100% free with no registration, subscription fees, or software downloads required. It runs directly in any modern desktop or mobile browser with 60 FPS hardware acceleration."
+        "text": "Yes. The Schulte Table Trainer on SkillDrills is 100% free with no registration, subscription fees, or software downloads required. It runs directly in any modern desktop or mobile browser."
       }
     }
   ]
@@ -231,6 +239,7 @@ const faqSchema = {
 const concentrationGridGuide = {
   heading: "Schulte Table Trainer Guide & Visual Search Benchmarks",
   intro: [
+    "A Schulte table is a grid of shuffled numbers that you tap in ascending order as fast as you can, a classic test of visual search speed and attention. This free online version expands from 3x3 to 8x8 inside one continuous 45-second run, so you practise scanning, not just one fixed grid.",
     "The Schulte table is a seminal psychodiagnostic paradigm developed by German psychiatrist Walter Schulte (1962) to measure visual search efficiency, selective attention allocation, and mental fatigue resistance. In its traditional implementation, numbers from 1 to 25 are randomly dispersed across a 5x5 grid, requiring the subject to locate each numeral in strict ascending sequence while attempting to hold visual fixation near the grid center.",
     "In applied sports psychology, the exercise evolved into the 'concentration grid' (Harris & Harris, 1984), widely used by elite coaches in tennis, baseball, and motor sports to train visual scanning velocity and present-moment cognitive discipline under timed stress. An event-related potential study of 27 children aged 8-11 searching Schulte grids found that searching for numbers in sequence took longer than locating a single target, and that adding a second colour slowed both, with matching differences in the recorded ERP signal (Lu et al., 2022).",
     "The SkillDrills Schulte Table Trainer elevates this classic protocol into a modern dynamic continuous performance task. Rather than presenting an isolated static matrix, the drill dynamically expands the grid architecture from 3x3 up to 8x8 as each stage is completed, while introducing rotational perturbations from 5x5 onward. This tests the outer limits of your perceptual span and foveal-parafoveal coordination within a fixed 45-second window.",
@@ -313,8 +322,8 @@ const videoGameSchema = {
 };
 
 const copyEn = {
-  h1Keyword: "Concentration Grid",
-  h1Suffix: " — Schulte Table Trainer Online",
+  h1Keyword: "Schulte Table",
+  h1Suffix: " Online — Concentration Grid Trainer",
   subtitle: "Schulte table concentration test for faster visual scanning, number search, and focused attention",
 };
 

@@ -36,7 +36,7 @@ import { pickSources } from '@/lib/drillSources';
 // ============================================================
 
 export const metadata = {
-  title: 'Drop Catch Reflex Test | Free Reaction Drill',
+  title: 'Drop Catch Reflex Test | Free Drill | SkillDrills',
   description:
     'Free drop-catch reflex test online. Catch falling targets, avoid red decoys, and practise visual reaction timing in your browser.',
   keywords: [
@@ -65,7 +65,7 @@ export const metadata = {
   },
   robots: { index: true, follow: true },
   openGraph: {
-    title: 'Drop Catch Reflex Test | Free Reaction Drill',
+    title: 'Drop Catch Reflex Test | Free Drill | SkillDrills',
     description:
       'Catch falling green targets and avoid red decoys in a free browser reflex drill for reaction timing and visual discrimination.',
     url: 'https://skilldrills.online/drills/physical/reflex-training/drop-catch',
@@ -83,7 +83,7 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Drop Catch Reflex Test | Free Reaction Drill',
+    title: 'Drop Catch Reflex Test | Free Drill | SkillDrills',
     description:
       'Catch falling green targets and avoid red decoys in a free browser reflex drill for reaction timing and visual discrimination.',
     images: ['https://skilldrills.online/icons/icon-512x512.png'],
@@ -204,7 +204,7 @@ const faqSchema = {
       name: 'Does drop catch training improve competitive gaming and esports performance?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Yes. In tactical shooters like CS2 and Valorant, players must avoid friendly fire, ignore decoy grenades, and snap only to authentic hostiles. Training impulse inhibition reduces misclicks, trigger impatience, and premature firing.',
+        text: 'It may help as practice. The drill rewards catching real targets and ignoring red decoys, which resembles holding fire in shooters, but this site has no study showing it reduces misclicks or premature firing in any game.',
       },
     },
     {
@@ -220,7 +220,7 @@ const faqSchema = {
       name: 'What equipment is needed to perform Drop Catch training?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'No specialized hardware is required. The drill functions on any modern desktop or mobile browser. For precision mouse flicks, a desktop optical mouse set to 1:1 raw input is recommended.',
+        text: 'No specialized hardware is required. The drill functions on any modern desktop or mobile browser. For precision mouse flicks, a desktop mouse is recommended.',
       },
     },
   ],
@@ -289,10 +289,10 @@ const guideProps = {
     title: 'Drop Catch Reflex & Gravitational Interception Benchmarks',
     headers: ['Tier', 'Rank Title', 'Score Benchmark', 'Accuracy & Latency', 'Grade', 'Editorial Band'],
     rows: [
-      ['Tier 1', 'Apex Interceptor', '24,000+ pts', '90%+ Acc / < 200ms Latency', 'Grade S', 'Top 5% (Elite)'],
-      ['Tier 2', 'Precision Reflex Catcher', '17,000–23,999 pts', '82–89% Acc / 200–240ms Latency', 'Grade A', 'Top 20% (Advanced)'],
-      ['Tier 3', 'Skilled Target Acquirer', '11,000–16,999 pts', '74–81% Acc / 241–290ms Latency', 'Grade B', 'Top 50% (Competent)'],
-      ['Tier 4', 'Developing Reflex Trainee', '6,000–10,999 pts', '65–73% Acc / 291–350ms Latency', 'Grade C', 'Top 75% (Developing)'],
+      ['Tier 1', 'Apex Interceptor', '24,000+ pts', '90%+ Acc / < 200ms Latency', 'Grade S', 'Elite'],
+      ['Tier 2', 'Precision Reflex Catcher', '17,000–23,999 pts', '82–89% Acc / 200–240ms Latency', 'Grade A', 'Advanced'],
+      ['Tier 3', 'Skilled Target Acquirer', '11,000–16,999 pts', '74–81% Acc / 241–290ms Latency', 'Grade B', 'Competent'],
+      ['Tier 4', 'Developing Reflex Trainee', '6,000–10,999 pts', '65–73% Acc / 291–350ms Latency', 'Grade C', 'Developing'],
       ['Tier 5', 'Novice Decoy Vulnerable', '< 6,000 pts', '< 65% Acc / > 350ms Latency', 'Grade D', 'Below Average (Novice)'],
     ],
     note: 'Empirical standards derived from time-to-contact psychophysics (Lee 1976), stop-signal response inhibition (Logan et al. 1984), and Donders Type C mental chronometry (Donders 1868). Evaluates total points, catch accuracy, discrimination reaction latency, and decoy suppression rate.',

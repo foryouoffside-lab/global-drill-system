@@ -33,7 +33,7 @@ import { pickSources } from '@/lib/drillSources';
 // ============================================================
 
 export const metadata = {
-  title: 'Flick Stop Aim Trainer | Mouse Precision Drill',
+  title: 'Flick Stop Aim Trainer | Overflick Drill | SkillDrills',
   description:
     'Free browser aim trainer for flick-and-stop control. Hit moving targets, stop your cursor cleanly, and correct overflick with live feedback.',
   keywords: [
@@ -54,7 +54,7 @@ export const metadata = {
   },
   robots: { index: true, follow: true },
   openGraph: {
-    title: 'Flick Stop Aim Trainer | Mouse Precision Drill',
+    title: 'Flick Stop Aim Trainer | Overflick Drill | SkillDrills',
     description:
       'Hit moving targets, stop your cursor cleanly, and correct overflick in a free browser aim trainer.',
     url: 'https://skilldrills.online/drills/physical/reflex-training/reaction-chain',
@@ -72,7 +72,7 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Flick Stop Aim Trainer | Mouse Precision Drill',
+    title: 'Flick Stop Aim Trainer | Overflick Drill | SkillDrills',
     description:
       'Practice flick-and-stop control, reaction speed, and precise cursor braking with live feedback.',
     images: ['https://skilldrills.online/icons/icon-512x512.png'],
@@ -161,10 +161,10 @@ const faqSchema = {
     },
     {
       '@type': 'Question',
-      name: 'How does kinetic braking eliminate over-flicking in tactical shooters?',
+      name: 'What is overflicking and how does this drill practise stopping?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'In tactical shooters like Counter-Strike 2 and Valorant, first-shot accuracy requires instantaneous weapon stabilization. Training kinetic arrest conditions the antagonist forearm muscles to clamp down immediately on target acquisition.',
+        text: 'Overflicking means the cursor travels past the target during a fast flick. This drill has you hit a target and then stop cleanly on it, which practises the braking half of a flick. No study cited here shows that it removes overflicking in any game.',
       },
     },
     {
@@ -282,10 +282,10 @@ const guideProps = {
     title: 'Reaction Chain & Motor Inhibition Benchmarks',
     headers: ['Tier', 'Rank Title', 'Score Benchmark', 'Accuracy & Velocity', 'Grade', 'Editorial Band'],
     rows: [
-      ['Tier 1', 'Apex Kinetic Stopper', '20,000+ pts', '95%+ Acc / 1500+ px/s', 'Grade S', 'Top 5% (Elite)'],
-      ['Tier 2', 'Precision Braking Master', '14,000–19,999 pts', '88–94% Acc / 1200–1499 px/s', 'Grade A', 'Top 20% (Advanced)'],
-      ['Tier 3', 'Kinetic Interceptor', '9,000–13,999 pts', '80–87% Acc / 900–1199 px/s', 'Grade B', 'Top 50% (Competent)'],
-      ['Tier 4', 'Developing Stopper', '5,000–8,999 pts', '70–79% Acc / 600–899 px/s', 'Grade C', 'Top 75% (Developing)'],
+      ['Tier 1', 'Apex Kinetic Stopper', '20,000+ pts', '95%+ Acc / 1500+ px/s', 'Grade S', 'Elite'],
+      ['Tier 2', 'Precision Braking Master', '14,000–19,999 pts', '88–94% Acc / 1200–1499 px/s', 'Grade A', 'Advanced'],
+      ['Tier 3', 'Kinetic Interceptor', '9,000–13,999 pts', '80–87% Acc / 900–1199 px/s', 'Grade B', 'Competent'],
+      ['Tier 4', 'Developing Stopper', '5,000–8,999 pts', '70–79% Acc / 600–899 px/s', 'Grade C', 'Developing'],
       ['Tier 5', 'Novice Inertia Vulnerable', '< 5,000 pts', '< 70% Acc / < 600 px/s', 'Grade D', 'Below Average (Novice)'],
     ],
     note: 'Empirical standards derived from horse-race response inhibition models (Logan et al. 1984), two-component motor control (Woodworth 1899), discrimination reaction chronometry (Donders 1868/1969), and speed-accuracy constraints (Fitts 1954). Evaluates total points, arrest success percentage, peak target velocity, and streak retention.',
@@ -348,7 +348,7 @@ export default function ReactionChainPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(howToSchema) }}
       />
-      <ReactionChainClient copy={{ title: 'Mouse Aim Braking Game', subtitle: 'Hit the target, then stop cleanly' }}>
+      <ReactionChainClient copy={{ title: 'Flick Stop Aim Trainer', subtitle: 'Hit the target, then stop cleanly to fix overflicking' }}>
         <DrillGuide {...guideProps} />
       </ReactionChainClient>
     </>

@@ -187,7 +187,7 @@ const faqSchema = {
       "name": "Does input latency affect multitasking evaluation?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Yes, low-latency mouse input and 144Hz+ monitors reduce motion blur (Woods et al., 2015), clarifying shape borders as flow velocity climbs."
+        "text": "A high-refresh monitor and low-latency mouse can make moving shapes easier to see, and display timing limits what a browser test can resolve (Woods et al., 2015). Neither is required; compare your own runs on one setup."
       }
     },
     {
@@ -260,10 +260,10 @@ const guideProps = {
     title: 'Cognitive Performance Standards & Benchmarks',
     headers: ['Tier', 'Rank', 'Rating', 'Accuracy', 'Percentile'],
     rows: [
-      { tier: 'Tier 1', rank: 'Grandmaster / Elite', stat: 'Top 1%', level: 'Mastery', accuracy: '98%+', percentile: 'Top 1%' },
-      { tier: 'Tier 2', rank: 'Advanced Focus', stat: 'Top 5%', level: 'Diamond', accuracy: '94-97%', percentile: 'Top 5%' },
-      { tier: 'Tier 3', rank: 'Proficient Operator', stat: 'Top 15%', level: 'Platinum', accuracy: '88-93%', percentile: 'Top 15%' },
-      { tier: 'Tier 4', rank: 'Standard Adult', stat: 'Top 50%', level: 'Gold', accuracy: '78-87%', percentile: 'Top 50%' },
+      { tier: 'Tier 1', rank: 'Grandmaster / Elite', stat: 'Highest tier', level: 'Mastery', accuracy: '98%+', percentile: 'Highest tier' },
+      { tier: 'Tier 2', rank: 'Advanced Focus', stat: 'Upper tier', level: 'Diamond', accuracy: '94-97%', percentile: 'Upper tier' },
+      { tier: 'Tier 3', rank: 'Proficient Operator', stat: 'Above-average tier', level: 'Platinum', accuracy: '88-93%', percentile: 'Above-average tier' },
+      { tier: 'Tier 4', rank: 'Standard Adult', stat: 'Mid tier', level: 'Gold', accuracy: '78-87%', percentile: 'Mid tier' },
       { tier: 'Tier 5', rank: 'Novice Baseline', stat: 'Base', level: 'Silver', accuracy: '<78%', percentile: 'Baseline' },
     ],
   },

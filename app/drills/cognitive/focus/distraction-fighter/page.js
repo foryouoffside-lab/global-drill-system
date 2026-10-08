@@ -108,7 +108,7 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "Can distraction-resistance training help with open-office productivity?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Yes. Workers in open offices face continuous visual and auditory distractors. Training inhibitory control makes it cognitively cheaper to suppress peripheral visual movement (colleagues walking), auditory interruptions, and environmental noise, allowing deeper sustained focus during critical work intervals." }
+      "acceptedAnswer": { "@type": "Answer", "text": "This drill practises ignoring a distracting word while you respond to the ink colour, which is one form of inhibitory control. Whether that practice carries over to noisy open offices has not been established by this site, so use it as practice for selective attention, not as a proven fix for workplace distraction." }
     },
     {
       "@type": "Question",
