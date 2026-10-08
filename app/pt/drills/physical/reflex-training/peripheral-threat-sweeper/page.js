@@ -22,7 +22,7 @@ import { pickSources } from '@/lib/drillSources';
 // ============================================================
 
 export const metadata = {
-  title: "Treino de Visão Periférica | Teste Online",
+  title: "Defesa Radial: Treino de Visão Periférica",
   description: "Teste grátis de visão periférica no navegador. Fixe o olhar no centro, detecte ameaças nas bordas e treine seu campo visual útil (UFOV).",
   keywords: [
     "treinar visão periférica",
@@ -41,7 +41,7 @@ export const metadata = {
     languages: getAlternateLanguages('/drills/physical/reflex-training/peripheral-threat-sweeper'),
   },
   openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
-    title: "Treino de Visão Periférica | Teste Online",
+    title: "Defesa Radial: Treino de Visão Periférica",
     description: "Teste grátis de visão periférica no navegador. Fixe o olhar no centro, detecte ameaças nas bordas e treine seu campo visual útil (UFOV).",
     url: 'https://skilldrills.online/pt/drills/physical/reflex-training/peripheral-threat-sweeper',
     siteName: 'SkillDrills',
@@ -50,7 +50,7 @@ export const metadata = {
   },
   twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: 'summary_large_image',
-    title: "Treino de Visão Periférica | Teste Online",
+    title: "Defesa Radial: Treino de Visão Periférica",
     description: "Teste grátis de visão periférica no navegador. Fixe o olhar no centro, detecte ameaças nas bordas e treine seu campo visual útil (UFOV).",
   },
   robots: { index: true, follow: true },
@@ -334,7 +334,7 @@ export default function LocalizedPeripheralThreatSweeperPagePt() {
       />
       <PeripheralThreatSweeperClient
         copy={{
-          title: "Treino de Visão Periférica",
+          title: "Defesa Radial: Treino de Visão Periférica",
           subtitle: "Fixe o centro e detecte ameaças nas bordas",
           description: "A visão periférica é aquilo que você consegue detectar sem olhar diretamente. Os detalhes diminuem acentuadamente a partir do centro do olhar, mas a atenção pode ser direcionada para um ponto periférico enquanto os olhos permanecem parados, acelerando a resposta motora (Posner, 1980). Uma característica única como a cor é localizada quase no mesmo tempo independentemente de distrações, enquanto alvos que combinam traços exigem busca atencional ativa (Treisman & Gelade, 1980) — o que torna algumas ameaças fáceis de interceptar na borda e outras desafiadoras.",
           hudLabels: {

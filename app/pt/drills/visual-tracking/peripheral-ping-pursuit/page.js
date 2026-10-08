@@ -15,7 +15,7 @@ import { pickSources } from '@/lib/drillSources';
 // ============================================================
 
 export const metadata = {
-  title: "Treino de visão periférica | SkillDrills",
+  title: "Visão Periférica e Fixação Central | SkillDrills",
   description: "Siga o alvo central e responda a sinais laterais sem desviar o olhar. Exercício gratuito no navegador com tempo de reação e estabilidade da fixação.",
   keywords: [
     "treino de visão periférica",
@@ -30,7 +30,7 @@ export const metadata = {
     "exercício visual online"
   ],
   openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
-    title: "Treino de visão periférica | SkillDrills",
+    title: "Visão Periférica e Fixação Central | SkillDrills",
     description: "Siga o alvo central e responda a sinais laterais sem desviar o olhar. Exercício gratuito no navegador.",
     type: "website",
     url: "https://skilldrills.online/pt/drills/visual-tracking/peripheral-ping-pursuit",
@@ -39,7 +39,7 @@ export const metadata = {
   },
   twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: "summary_large_image",
-    title: "Treino de visão periférica | SkillDrills",
+    title: "Visão Periférica e Fixação Central | SkillDrills",
     description: "Pratique fixação central e percepção de sinais laterais em uma sessão curta no navegador.",
   },
   robots: { index: true, follow: true },

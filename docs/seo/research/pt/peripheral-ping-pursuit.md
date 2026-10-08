@@ -11,3 +11,5 @@ Date: 2026-10-08 - Market: Brazil, pt-BR (gl=br, hl=pt). Agent: pt.
 
 ## Decision / changes
 - Title kept (Treino de visão periférica; shared head term with physical/peripheral-threat-sweeper and saccadic-gallery - cannibalisation noted, no measured alternative). 'Garantindo privacidade completa' and sympathetic-stress physiology claim softened; benchmark labels neutral.
+
+- Follow-up: three pt pages shared the head title Treino de visão periférica (saccadic-gallery, peripheral-threat-sweeper, this one); no measured demand for it (Bing 0). Metadata title changed to Visão Periférica e Fixação Central (H1 was already Treino de visão periférica e fixação central) so only saccadic-gallery keeps the bare head term.

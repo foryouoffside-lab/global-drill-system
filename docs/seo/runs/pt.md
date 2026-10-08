@@ -18,7 +18,7 @@
 | /pt/drills/physical/coordination/dynamic-grid-evasion | done | TBD:dynamic-grid-evasion | docs/seo/research/pt/dynamic-grid-evasion.md | title kept (teste de reflexo 180); tiers/top 0,1%/sub-ms removed; shares keyword with reaction-time-test |
 | /pt/drills/physical/fitness/speed-drill | done | TBD:speed-drill | docs/seo/research/pt/speed-drill.md | title cliques por segundo 68 Bing BR; dedup from rapid-tapping; top-% tiers removed |
 | /pt/drills/physical/reflex-training/drop-catch | done | TBD:drop-catch | docs/seo/research/pt/drop-catch.md | title kept; demand not verified; top-% tiers removed |
-| /pt/drills/physical/reflex-training/peripheral-threat-sweeper | done | TBD:peripheral-threat-sweeper | docs/seo/research/pt/peripheral-threat-sweeper.md | title kept; demand not verified; tiers neutralised |
+| /pt/drills/physical/reflex-training/peripheral-threat-sweeper | done | TBD:peripheral-threat-sweeper | docs/seo/research/pt/peripheral-threat-sweeper.md | title kept; demand not verified; tiers neutralised; title+H1 deduped: Defesa Radial: Treino de Visão Periférica |
 | /pt/drills/physical/reflex-training/quick-dodge | done | TBD:quick-dodge | docs/seo/research/pt/quick-dodge.md | title kept; demand not verified; tiers neutralised |
 | /pt/drills/physical/reflex-training/reaction-chain | done | TBD:reaction-chain | docs/seo/research/pt/reaction-chain.md | title kept; demand not verified; tiers neutralised |
 | /pt/drills | done | TBD:drills-directory | docs/seo/research/pt/drills-directory.md | H1 Treinos Online Grátis (dictionaries.js pt); FAQ fabricated claims removed; Session preferences H2 remains (D2) |
@@ -36,7 +36,7 @@
 | /pt/drills/visual-tracking/ghosting-suppress-pursuit | done | TBD:ghosting-suppress-pursuit | docs/seo/research/pt/ghosting-suppress-pursuit.md | title kept (teste de ghosting 134 Bing BR); elite tiers/transfer claims removed |
 | /pt/drills/visual-tracking/infinity-pursuit | done | TBD:infinity-pursuit | docs/seo/research/pt/infinity-pursuit.md | title kept; benchmark labels neutral; demand not verified |
 | /pt/drills/visual-tracking/momentum-teleport-pursuit | done | TBD:momentum-teleport-pursuit | docs/seo/research/pt/momentum-teleport-pursuit.md | title kept; elite tier and FPS-benefit wording removed; demand not verified |
-| /pt/drills/visual-tracking/peripheral-ping-pursuit | done | TBD:peripheral-ping-pursuit | docs/seo/research/pt/peripheral-ping-pursuit.md | title kept; privacy absolute and physiology claims softened; demand not verified |
+| /pt/drills/visual-tracking/peripheral-ping-pursuit | done | TBD:peripheral-ping-pursuit | docs/seo/research/pt/peripheral-ping-pursuit.md | title kept; privacy absolute and physiology claims softened; demand not verified; title deduped from saccadic-gallery/threat-sweeper |
 | /pt/drills/visual-tracking/predictive-pursuit | done | TBD:predictive-pursuit | docs/seo/research/pt/predictive-pursuit.md | title kept; elite tier, plasticity and cerebellum claims removed; demand not verified |
 | /pt/drills/visual-tracking/sine-wave-pursuit | done | TBD:sine-wave-pursuit | docs/seo/research/pt/sine-wave-pursuit.md | title kept; schema/FAQ/intro rewritten as accented pt-BR (was unaccented pt-PT); overclaims removed; demand not verified |
 | /pt/drills/visual-tracking/spatial-shift-pursuit | done | TBD:spatial-shift-pursuit | docs/seo/research/pt/spatial-shift-pursuit.md | title kept; schema/FAQ/intro rewritten as accented pt-BR (was unaccented pt-PT); overclaims removed; demand not verified |

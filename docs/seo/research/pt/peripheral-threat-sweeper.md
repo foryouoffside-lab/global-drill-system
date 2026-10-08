@@ -11,3 +11,5 @@ Date: 2026-10-08 - Market: Brazil, pt-BR (gl=br, hl=pt). Agent: pt.
 ## Decision / changes
 - Title kept; demand not verified.
 - Rank-named tiers (Apex Peripheral Guardian...) and Top 1/10/30% labels replaced by neutral bands; laboratory-precision wording removed.
+
+- Follow-up: title and H1 changed to Defesa Radial: Treino de Visão Periférica to stop three pt pages sharing the same head title (no measured demand for the head term).
