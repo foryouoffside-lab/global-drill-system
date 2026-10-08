@@ -68,7 +68,7 @@ const softwareApplicationSchema = {
   "name": "Treino de Rastreamento de Alvo Teleportado com Inércia",
   "dateModified": "2026-09-20",
   "operatingSystem": "Navegador Web",
-  "applicationCategory": "HealthApplication",
+  "applicationCategory": "GameApplication",
   "offers": {
     "@type": "Offer",
     "price": "0.00",
@@ -156,10 +156,10 @@ const faqSchema = {
     },
     {
       "@type": "Question",
-      "name": "Como este exercício melhora o desempenho em jogos de tiro (FPS)?",
+      "name": "Como este exercício se relaciona com jogos de tiro (FPS)?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Em jogos como Valorant, Overwatch e Apex Legends, oponentes usam deslocamentos bruscos e teletransportes. Treinar a reaquisição imediata reduz a hesitação visual ao reenquadrar a mira."
+        "text": "Em jogos como Valorant, Overwatch e Apex Legends, oponentes usam deslocamentos bruscos e teletransportes. Praticar a reaquisição imediata pode ajudar a reduzir a hesitação ao reenquadrar a mira, sem garantia de transferência."
       }
     },
     {
@@ -212,10 +212,10 @@ const faqSchema = {
     },
     {
       "@type": "Question",
-      "name": "Como o treino frequente estimula a neuroplasticidade ocular?",
+      "name": "Como o treino frequente estimula a conforto visual ocular?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "A repetição pode ajudar a familiarizar você com a tarefa, mas esta página não mede neuroplasticidade nem comprova melhora de acuidade ou velocidade de reação. Compare sessões nas mesmas condições e pare se houver desconforto."
+        "text": "A repetição pode ajudar a familiarizar você com a tarefa, mas esta página não mede conforto visual nem comprova melhora de acuidade ou velocidade de reação. Compare sessões nas mesmas condições e pare se houver desconforto."
       }
     }
   ]
@@ -232,13 +232,13 @@ const guideProps = {
     title: "Métricas de Reaquisição de Alvo e Sincronização de Inércia",
     headers: ["Nível", "Tempo para reencontrar o alvo", "Erro ao chegar", "Sincronização do movimento", "Leitura prática"],
     rows: [
-      ["Elite (Atletas e esportistas)", "< 140 ms", "< 3% (bloqueio milimétrico)", "97%+", "Precisão balística impecável. Conexão imediata à perseguição suave sem hesitações ou busca oscilatória."],
-      ["Avançado (Nível Competitivo)", "140 – 180 ms", "3% – 6%", "91% – 96%", "Reaquisição espacial veloz. Micro-sacada corretiva mínima com alta fidelidade de vetor de velocidade."],
-      ["Competente (Adulto Saudável)", "181 – 240 ms", "7% – 14%", "80% – 90%", "Padrão de referência saudável. Pequeno intervalo refratário após a sacada seguido de condução estável."],
-      ["Em Desenvolvimento", "241 – 320 ms", "15% – 24%", "68% – 79%", "Atraso perceptível na deflagração do salto ocular. Erros por excesso frequentes exigindo múltiplas correções."],
-      ["Iniciante / Necessita Treino", "> 320 ms", "> 24%", "< 68%", "Dificuldade severa em saltos de grande amplitude. Presença de compensação cervical indesejada."]
+      ["Faixa 1 (Muito alta)", "< 140 ms", "< 3% (bloqueio milimétrico)", "97%+", "Precisão balística impecável. Conexão imediata à perseguição suave sem hesitações ou busca oscilatória."],
+      ["Faixa 2 (Alta)", "140 – 180 ms", "3% – 6%", "91% – 96%", "Reaquisição espacial veloz. Micro-sacada corretiva mínima com alta fidelidade de vetor de velocidade."],
+      ["Faixa 3 (Boa)", "181 – 240 ms", "7% – 14%", "80% – 90%", "Padrão de referência saudável. Pequeno intervalo refratário após a sacada seguido de condução estável."],
+      ["Faixa 4 (Intermediária)", "241 – 320 ms", "15% – 24%", "68% – 79%", "Atraso perceptível na deflagração do salto ocular. Erros por excesso frequentes exigindo múltiplas correções."],
+      ["Faixa 5 (Inicial)", "> 320 ms", "> 24%", "< 68%", "Dificuldade severa em saltos de grande amplitude. Presença de compensação cervical indesejada."]
     ],
-    note: "※ Valores de referência obtidos em testes a 50–70 cm de distância com velocidades de 1,0x a 2,0x ao longo de 60 segundos. A latência de reaquisição afere o intervalo entre o teletransporte e o reenquadramento estável da fóvea."
+    note: "Faixas editoriais para comparar suas próprias sessões, não percentis de população nem normas clínicas. ※ Valores de referência obtidos em testes a 50–70 cm de distância com velocidades de 1,0x a 2,0x ao longo de 60 segundos. A latência de reaquisição afere o intervalo entre o teletransporte e o reenquadramento estável da fóvea."
   },
   techniques: {
     title: "Quatro Princípios Essenciais para Reaquisição Visual Instantânea",
@@ -272,7 +272,7 @@ const guideProps = {
     "Ao ocorrer o teletransporte súbito, lance uma sacada direta para a nova localização.",
     "Ao pousar, engate imediatamente a perseguição suave acompanhando a inércia contínua do alvo."
   ],
-  audience: "Jogadores de FPS (Valorant, CS2, Apex Legends, Overwatch), atletas de esportes com bola sujeitos a desvios rápidos e praticantes que buscam otimizar a velocidade dos movimentos sacádicos.",
+  audience: "Jogadores de FPS (Valorant, CS2, Apex Legends, Overwatch), e quem quer praticar o acompanhamento visual de alvos que saltam, sem substituir avaliação profissional.",
   faqs: faqSchema.mainEntity.map(item => ({
     q: item.name,
     a: item.acceptedAnswer.text
