@@ -258,20 +258,20 @@ const dropGuide = {
       "O Drop Catch é um sistema avançado de cronometria motora e controle inibitório que transpõe o consagrado teste da régua para o ecossistema digital de alta performance. Em vez de simplesmente fechar os dedos sobre um objeto em queda livre, o atleta é submetido a uma tarefa de escolha Tipo C de Donders (1868): capturar com precisão alvos válidos em aceleração contínua enquanto suprime totalmente a resposta motora diante de iscas enganosas.",
       "Sob o efeito da aceleração gravitacional (s = 1/2gt²), a velocidade dos objetos salta de 400 px/s para até 1250 px/s. De acordo com a teoria do tau óptico (τ) de David N. Lee (1976), o córtex visual humano calcula a janela de contato (Time-to-Contact) a partir da taxa de dilatação retiniana do estímulo. Tentar calcular conscientemente a velocidade causa atraso perceptivo; a mestria reside em posicionar o cursor de forma antecipada sobre o vetor de descida.",
       "O desafio neurológico mais complexo reside nas iscas vermelhas imprevisíveis. Segundo o modelo de corrida de cavalos (Horse-Race Model) de Gordon D. Logan (1984), instauram-se no sistema nervoso central dois processos concorrentes: o comando de disparo prepotente ('Go') e o sinal de cancelamento inibitório ('Stop'). Apenas quando a inibição pré-frontal supera a urgência motora inicial evita-se o erro de disparo, habilidade crítica para atletas de elite e atiradores competitivos.",
-      "Para assegurar rigor laboratorial e ausência de desvios, o simulador opera por meio da API performance.now() do navegador. Em telas gamer de 144Hz ou 240Hz, o arrasto visual de objetos a 1250 px/s é eliminado, garantindo uma discriminação óptica sem latência de quadro (Woods et al., 2015). Seus recordes permanecem salvos unicamente na memória local do seu computador."
+      "O simulador opera por meio da API performance.now() do navegador. Em telas gamer de 144Hz ou 240Hz, o arrasto visual de objetos a 1250 px/s é eliminado, reduzindo o atraso visual (Woods et al., 2015). Seus recordes permanecem salvos unicamente na memória local do seu computador."
     ]
   },
   benchmarks: {
     title: "Tabela de 5 Níveis de Desempenho para Tempo de Reação de Escolha e Captura",
     headers: ["Nível e Categoria", "Título (Rank Title)", "Meta de Pontuação", "Tempo de Reação e Precisão", "Classificação", "Perfil Neuromuscular"],
     rows: [
-      ["Tier 1: Interceptador Gravitacional Ápice", "Apex Gravitational Interceptor", "24.000+ pontos", "< 190 ms / > 95%", "Grade S", "Top 0,1% da elite de eSports e pilotos de caça. Inibição perfeita de Logan e captura impecável a 1250 px/s (Lee 1976; Logan 1984)"],
-      ["Tier 2: Atacante Reflexivo de Precisão", "Precision Reflex Striker", "17.000 – 23.999 pontos", "195 – 240 ms / 90 – 94%", "Grade A", "Top 10% nível semiprofissional. Excelente antecipação visual e racha de 3.0x consolidada com 45% de iscas em alta velocidade"],
-      ["Tier 3: Praticante Ágil de Drop Catch", "Skilled Drop Catcher", "11.000 – 16.999 pontos", "245 – 310 ms / 82 – 89%", "Grade B", "Top 35% jogadores regulares. Boa coordenação óculo-manual e aproveitamento inteligente do bônus de +0,6s para sobrevida"],
-      ["Tier 4: Aprendiz em Desenvolvimento", "Developing Reflex Trainee", "6.000 – 10.999 pontos", "311 – 370 ms / 70 – 81%", "Grade C", "Nível médio populacional. Acima de 800 px/s ocorrem cliques precipitados em iscas vermelhas e perda de sequência"],
-      ["Tier 5: Iniciante em Controle Inibitório", "Novice Decoy Learner", "< 6.000 pontos", "> 370 ms / < 70%", "Grade D", "Fase inicial. Dificuldade de discriminação de cores em velocidade; recomenda-se fixar a visão no terço superior da tela"]
+      ["Faixa 1", "Muito alta", "24.000+ pontos", "< 190 ms / > 95%", "Grade S", "Inibição perfeita de Logan e captura impecável a 1250 px/s (Lee 1976; Logan 1984)"],
+      ["Faixa 2", "Alta", "17.000 – 23.999 pontos", "195 – 240 ms / 90 – 94%", "Grade A", "Excelente antecipação visual e racha de 3.0x consolidada com 45% de iscas em alta velocidade"],
+      ["Faixa 3", "Boa", "11.000 – 16.999 pontos", "245 – 310 ms / 82 – 89%", "Grade B", "Boa coordenação óculo-manual e aproveitamento inteligente do bônus de +0,6s para sobrevida"],
+      ["Faixa 4", "Intermediária", "6.000 – 10.999 pontos", "311 – 370 ms / 70 – 81%", "Grade C", "Nível médio populacional. Acima de 800 px/s ocorrem cliques precipitados em iscas vermelhas e perda de sequência"],
+      ["Faixa 5", "Inicial", "< 6.000 pontos", "> 370 ms / < 70%", "Grade D", "Fase inicial. Dificuldade de discriminação de cores em velocidade; recomenda-se fixar a visão no terço superior da tela"]
     ],
-    note: "Critérios de avaliação fundamentados na cronometria de Donders (1868), teoria do tau de Lee (1976) e modelo inibitório de Logan (1984)."
+    note: "Faixas editoriais para comparar suas próprias sessões, não percentis de população nem normas clínicas. Critérios de avaliação fundamentados na cronometria de Donders (1868), teoria do tau de Lee (1976) e modelo inibitório de Logan (1984)."
   },
   techniques: {
     title: "4 Protocolos Práticos para Reflexos de Queda e Supressão de Erros",

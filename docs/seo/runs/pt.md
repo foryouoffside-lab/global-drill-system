@@ -17,3 +17,4 @@
 | /pt/drills/physical/fitness/agility-ladder | done | TBD:agility-ladder | docs/seo/research/pt/agility-ladder.md | description no longer claims footwork training; tiers/top 0,1% removed; demand not verified |
 | /pt/drills/physical/coordination/dynamic-grid-evasion | done | TBD:dynamic-grid-evasion | docs/seo/research/pt/dynamic-grid-evasion.md | title kept (teste de reflexo 180); tiers/top 0,1%/sub-ms removed; shares keyword with reaction-time-test |
 | /pt/drills/physical/fitness/speed-drill | done | TBD:speed-drill | docs/seo/research/pt/speed-drill.md | title cliques por segundo 68 Bing BR; dedup from rapid-tapping; top-% tiers removed |
+| /pt/drills/physical/reflex-training/drop-catch | done | TBD:drop-catch | docs/seo/research/pt/drop-catch.md | title kept; demand not verified; top-% tiers removed |
