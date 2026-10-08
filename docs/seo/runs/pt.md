@@ -30,3 +30,4 @@
 | /pt/drills/reaction-speed/fps-tracking-trainer | done | TBD:fps-tracking-trainer | docs/seo/research/pt/fps-tracking-trainer.md | title Treino de Mira Tracking: Alvos Móveis (suggest proxy); demand not verified; lib/i18n/drills/fpsTrackingTrainer.js pt title |
 | /pt/drills/reaction-speed/barrier-sequence-pursuit | done | TBD:barrier-sequence-pursuit | docs/seo/research/pt/barrier-sequence-pursuit.md | title Treino de Reflexo FPS: Peek e Ângulos (suggest proxy); demand not verified; lib/i18n/drills/barrierSequencePursuit.js pt title |
 | /pt/drills/reaction-speed/market-doors-pursuit | done | TBD:market-doors-pursuit | docs/seo/research/pt/market-doors-pursuit.md | audited, title kept, no change needed |
+| /pt/drills/reaction-speed/visual-tracking-speed-test | done | TBD:visual-tracking-speed-test | docs/seo/research/pt/visual-tracking-speed-test.md | audited, no change needed; demand not verified |
