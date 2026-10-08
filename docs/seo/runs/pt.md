@@ -22,3 +22,4 @@
 | /pt/drills/physical/reflex-training/quick-dodge | done | TBD:quick-dodge | docs/seo/research/pt/quick-dodge.md | title kept; demand not verified; tiers neutralised |
 | /pt/drills/physical/reflex-training/reaction-chain | done | TBD:reaction-chain | docs/seo/research/pt/reaction-chain.md | title kept; demand not verified; tiers neutralised |
 | /pt/drills | done | TBD:drills-directory | docs/seo/research/pt/drills-directory.md | H1 Treinos Online Grátis (dictionaries.js pt); FAQ fabricated claims removed; Session preferences H2 remains (D2) |
+| /pt/drills/motor | done | TBD:motor-hub | docs/seo/research/pt/motor-hub.md | title kept; FAQ overclaims softened |
