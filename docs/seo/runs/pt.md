@@ -23,3 +23,4 @@
 | /pt/drills/physical/reflex-training/reaction-chain | done | TBD:reaction-chain | docs/seo/research/pt/reaction-chain.md | title kept; demand not verified; tiers neutralised |
 | /pt/drills | done | TBD:drills-directory | docs/seo/research/pt/drills-directory.md | H1 Treinos Online Grátis (dictionaries.js pt); FAQ fabricated claims removed; Session preferences H2 remains (D2) |
 | /pt/drills/motor | done | TBD:motor-hub | docs/seo/research/pt/motor-hub.md | title kept; FAQ overclaims softened |
+| /pt/drills/physical | done | TBD:physical-hub | docs/seo/research/pt/physical-hub.md | title kept; fabricated 280->190 ms and transfer claims removed |
