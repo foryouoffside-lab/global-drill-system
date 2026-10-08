@@ -28,3 +28,4 @@
 | /pt/drills/memory | done | TBD:memory-hub | docs/seo/research/pt/memory-hub.md | audited, no change needed; teste de memoria 147 / jogo da memória 516 Bing BR |
 | /pt/drills/reaction-speed | done | TBD:reaction-speed-hub | docs/seo/research/pt/reaction-speed-hub.md | audited, no change needed; teste de reação 183, tempo de reação 100 Bing BR |
 | /pt/drills/reaction-speed/fps-tracking-trainer | done | TBD:fps-tracking-trainer | docs/seo/research/pt/fps-tracking-trainer.md | title Treino de Mira Tracking: Alvos Móveis (suggest proxy); demand not verified; lib/i18n/drills/fpsTrackingTrainer.js pt title |
+| /pt/drills/reaction-speed/barrier-sequence-pursuit | done | TBD:barrier-sequence-pursuit | docs/seo/research/pt/barrier-sequence-pursuit.md | title Treino de Reflexo FPS: Peek e Ângulos (suggest proxy); demand not verified; lib/i18n/drills/barrierSequencePursuit.js pt title |
