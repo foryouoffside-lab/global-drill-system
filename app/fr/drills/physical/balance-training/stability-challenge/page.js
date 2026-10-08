@@ -22,8 +22,8 @@ import { pickSources } from '@/lib/drillSources';
 // ============================================================
 
 export const metadata = {
-  title: 'Stabilité de visée | Test de précision souris | SkillDrills',
-  description: 'Entraînement gratuit de visée au navigateur. Gardez le réticule centré malgré les forces mobiles et pratiquez la stabilité, le recul et la précision.',
+  title: 'Jeu de précision souris : stabilité de visée | SkillDrills',
+  description: 'Jeu de précision souris gratuit : gardez le réticule dans l’anneau malgré les rafales de vent et mesurez votre stabilité de visée dans le navigateur.',
   keywords: [
     "test de précision souris",
     "entraînement visée en ligne gratuit",
@@ -41,8 +41,8 @@ export const metadata = {
     languages: getAlternateLanguages('/drills/physical/balance-training/stability-challenge'),
   },
   openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
-    title: 'Stabilité de visée | Test de précision souris | SkillDrills',
-    description: 'Gardez le réticule centré et pratiquez la stabilité, le contrôle du recul et la précision souris dans un entraînement gratuit au navigateur.',
+    title: 'Jeu de précision souris : stabilité de visée | SkillDrills',
+    description: 'Gardez le réticule dans l’anneau malgré le vent : jeu gratuit de stabilité et de précision souris dans le navigateur.',
     url: 'https://skilldrills.online/fr/drills/physical/balance-training/stability-challenge',
     siteName: 'SkillDrills',
     locale: 'fr_FR',
@@ -50,8 +50,8 @@ export const metadata = {
   },
   twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: 'summary_large_image',
-    title: 'Stabilité de visée | Test de précision souris | SkillDrills',
-    description: 'Gardez le réticule centré et pratiquez la stabilité, le contrôle du recul et la précision souris dans un entraînement gratuit au navigateur.',
+    title: 'Jeu de précision souris : stabilité de visée | SkillDrills',
+    description: 'Gardez le réticule dans l’anneau malgré le vent : jeu gratuit de stabilité et de précision souris dans le navigateur.',
   },
   robots: { index: true, follow: true },
 };
@@ -98,7 +98,7 @@ const softwareApplicationSchema = {
     "price": "0",
     "priceCurrency": "USD"
   },
-  "description": "Application biomécanique en ligne pour éliminer les tremblements de visée à la souris, renforcer l'équilibre neuromusculaire et optimiser le contrôle du recul.",
+  "description": "Jeu en ligne de précision souris : gardez le réticule dans un anneau face à des rafales de vent et mesurez votre stabilité de visée.",
   "url": "https://skilldrills.online/fr/drills/physical/balance-training/stability-challenge",
   "inLanguage": "fr-FR",
   "dateModified": "2026-09-20"
@@ -149,10 +149,10 @@ const faqSchema = {
     },
     {
       "@type": "Question",
-      "name": "Comment cet exercice aide-t-il à éliminer les tremblements de souris dans Valorant ou CS2 ?",
+      "name": "Cet exercice peut-il aider à stabiliser sa souris dans un jeu de tir ?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Les tremblements involontaires lors de la visée résultent souvent d'une co-contraction excessive des muscles fléchisseurs et extenseurs de l'avant-bras sous tension. En confrontant le système nerveux à une poussée continue plutôt qu'à des à-coups, l'exercice active les boucles de régulation visuelle en circuit fermé (Woodworth, 1899), favorisant un tonus musculaire fluide indispensable au contrôle du recul (recoil)."
+        "text": "Il fait travailler des corrections fines face à une poussée continue, ce qui ressemble à la stabilisation du réticule en jeu (Woodworth, 1899). Il ne supprime pas les tremblements et ne reproduit pas le recul d'une arme : le transfert reste à vérifier dans votre propre jeu."
       }
     },
     {
@@ -176,15 +176,15 @@ const faqSchema = {
       "name": "Quelle est la durée exacte d'une session d'entraînement ?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Chaque session dure précisément 45 secondes fixes. Le compte à rebours s'écoule de manière homogène de 45s à 0s, fournissant un cadre scientifique standardisé et reproductible pour suivre avec exactitude votre progression personnelle."
+        "text": "Chaque session dure 45 secondes. Le compte à rebours est identique à chaque essai, ce qui vous permet de comparer vos séances entre elles."
       }
     },
     {
       "@type": "Question",
-      "name": "Quel score correspond à une performance de niveau élite (Tier 1) ?",
+      "name": "Quel score correspond au palier le plus haut ?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Atteindre 17 000 points ou plus avec un taux de stabilité supérieur à 92 % dans l'anneau réduit de 20 px (Niveaux 12 à 15) vous classe dans le Tier 1 : Apex Stability Master (Note S+), un rang obtenu par moins de 0,5 % des pratiquants. La moyenne des joueurs se situe entre 6 000 et 9 499 points (Tier 4)."
+        "text": "Le palier 1 correspond à 17 000 points ou plus avec une stabilité supérieure à 92 % dans l'anneau réduit de 20 px (niveaux 12 à 15). Ces paliers sont des repères propres à l'exercice, sans statistique de population : ils servent à situer votre progression."
       }
     },
     {
@@ -192,7 +192,7 @@ const faqSchema = {
       "name": "Quelle prise de souris (Palm, Claw ou Fingertip) optimise la résistance ?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Les prises Palm ou Claw, combinées à un appui franc de l'avant-bras sur le bureau, offrent la base isométrique la plus stable contre des forces de dérive soutenues. La prise Fingertip permet d'excellentes micro-corrections mais fatigue plus rapidement les petits muscles intrinsèques de la main face aux rafales violentes."
+        "text": "Aucune prise n'est démontrée comme la meilleure. Beaucoup de joueurs trouvent la prise Palm ou Claw, avec l'avant-bras posé sur le bureau, plus stable face à une poussée continue ; la prise Fingertip permet des micro-corrections fines mais peut fatiguer les doigts. Gardez celle de votre jeu."
       }
     },
     {
@@ -200,7 +200,7 @@ const faqSchema = {
       "name": "Quelle sensibilité de souris (DPI) est recommandée pour stabiliser sa visée ?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Une sensibilité modérée à basse (entre 800 et 1200 DPI natifs sous Windows 1:1, ou 200 à 350 eDPI dans les FPS tactiques) est fortement conseillée pour éviter que les micro-vibrations physiologiques de la main ne propulsent le curseur hors de l'anneau de 20 px."
+        "text": "Il n'y a pas de valeur universelle. Une sensibilité plus basse rend le curseur moins sensible aux petites vibrations de la main, mais ralentit les grandes corrections. Gardez la sensibilité de votre jeu et comparez vos séances avec le même réglage."
       }
     },
     {
@@ -208,7 +208,7 @@ const faqSchema = {
       "name": "En quoi la posture corporelle influe-t-elle sur la stabilité du curseur ?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Comme l'ont démontré Nashner & McCollum (1985), le contrôle moteur des extrémités dépend de la stabilité proximale (épaules et tronc). Une mauvaise assise ou un coude suspendu dans le vide transmet les oscillations respiratoires directement au capteur optique de la souris."
+        "text": "Nashner & McCollum (1985) décrivent le lien entre stabilité du tronc et contrôle des membres. En pratique, une bonne assise et un avant-bras posé sur le bureau limitent les mouvements parasites transmis à la souris."
       }
     },
     {
@@ -225,35 +225,35 @@ const faqSchema = {
 const howToSchema = {
   "@context": "https://schema.org",
   "@type": "HowTo",
-  "name": "Comment Développer la Stabilité et le Contrôle de la Souris en 4 Étapes",
-  "description": "Méthode biomécanique en 4 étapes pour contrer les perturbations externes et éliminer les tremblements de visée.",
+  "name": "Quatre points de technique pour rester dans l’anneau",
+  "description": "Des réglages simples pour stabiliser le réticule face au vent.",
   "step": [
     {
       "@type": "HowToStep",
       "position": 1,
-      "name": "Centrage et Verrouillage du Pointeur (Pointer Lock)",
-      "text": "Placez le réticule exactement au cœur de l'anneau émeraude avant le lancement et cliquez pour verrouiller le curseur dans le navigateur.",
+      "name": "Centrer avant de partir",
+      "text": "Placez le réticule au centre de l’anneau avant le lancement et cliquez pour verrouiller le curseur dans le navigateur.",
       "url": "https://skilldrills.online/fr/drills/physical/balance-training/stability-challenge#step-1"
     },
     {
       "@type": "HowToStep",
       "position": 2,
-      "name": "Perception du Vecteur de Dérive",
-      "text": "Identifiez visuellement la direction de la force du vent dès que le trait directionnel commence à déplacer le réticule vers l'extérieur.",
+      "name": "Lire la direction de la poussée",
+      "text": "Repérez d’où vient la force dès que le réticule commence à dériver, puis opposez-lui une contre-pression douce et continue.",
       "url": "https://skilldrills.online/fr/drills/physical/balance-training/stability-challenge#step-2"
     },
     {
       "@type": "HowToStep",
       "position": 3,
-      "name": "Application d'une Contre-pression Isométrique Continue",
-      "text": "Exercez une force opposée fluide et mesurée pour maintenir le curseur au centre et faire grimper le multiplicateur de combo jusqu'à 3.0x.",
+      "name": "Corriger petit, corriger tôt",
+      "text": "Mieux vaut de petites corrections répétées qu’un grand geste tardif : un grand geste vous fait sortir de l’anneau de l’autre côté.",
       "url": "https://skilldrills.online/fr/drills/physical/balance-training/stability-challenge#step-3"
     },
     {
       "@type": "HowToStep",
       "position": 4,
-      "name": "Maîtrise des Micro-ajustements dans l'Anneau de 20 px",
-      "text": "Dans les niveaux ultimes (Lv. 10 à 15), absorbez les violentes accélérations du vent à l'aide de la pulpe des doigts sans décoller l'avant-bras.",
+      "name": "Stabiliser le bras",
+      "text": "Posez l’avant-bras sur le bureau et gardez une prise détendue. Dans les niveaux élevés, faites les micro-corrections avec les doigts sans lever le bras.",
       "url": "https://skilldrills.online/fr/drills/physical/balance-training/stability-challenge#step-4"
     }
   ]
@@ -262,50 +262,50 @@ const howToSchema = {
 const guideProps = {
   sources: pickSources('woodworth1899', 'fitts1954', 'woods2015'),
   intro: {
-    title: 'Stabilité de Visée – Test Précision Souris | SkillDrills',
+    title: 'Jeu de précision souris : comment fonctionne la stabilité de visée',
     paragraphs: [
-      "La stabilité du curseur de la souris sous l'effet de perturbations dynamiques est une traduction directe de la capacité du système neuromusculaire à fusionner proprioception kinesthésique et rétroaction visuelle continue. Contrairement à un tir réflexe balistique (flick shot), la stabilisation réclame un ajustement isométrique permanent entre les groupes musculaires agonistes et antagonistes de l'avant-bras et des doigts. Cet exercice quantifie la finesse avec laquelle le cortex moteur primaire et le cervelet régulent cette micro-pression face à des forces d'arrachement imprévisibles (Nashner & McCollum, 1985).",
-      "Selon le modèle fondateur de contrôle moteur à deux phases de Robert S. Woodworth (1899), tout mouvement manuel se compose d'une phase d'impulsion initiale en boucle ouverte, suivie d'une phase de contrôle continu en boucle fermée basée sur le retour sensoriel (Current Control Phase). Dans cet exercice de stabilité, l'utilisateur opère en permanence dans cette seconde phase : le vent simulant la dérive verticale et latérale du recul des armes, le système oculaire identifie l'écart par rapport au centre et commande des micro-ajustements correctifs instantanés.",
-      "La progression de la difficulté applique les règles d'équilibre sous perturbation décrites par David A. Winter (1995) et la Loi de Fitts (1954). Lorsque le rayon de l'anneau protecteur diminue de 45 px à 20 px dans les niveaux avancés, la tolérance spatiale s'effondre, amplifiant de manière exponentielle l'indice de difficulté motrice. Tout retard de compensation supérieur à 50 millisecondes provoque la sortie de zone et l'interruption immédiate de la série de combo.",
-      "Rigueur de mesure et latence matérielle : Le calcul du pourcentage de stabilité et la détection des limites s'appuient sur l'horloge haute précision performance.now() du navigateur, offrant une précision de l'ordre de la microseconde. Néanmoins, les écrans standards à 60 Hz imposent une quantification de rafraîchissement d'environ 16,7 ms, alors que les dalles 144 Hz et 240 Hz réduisent cet intervalle à 6,9 ms et 4,1 ms (Woods et al., 2015). Les souris gaming cadencées à 1000 Hz limitent le retard d'entrée à moins de 1 ms. L'ensemble des calculs s'effectue en temps réel sur la machine de l'utilisateur, garantissant une absence totale de latence réseau et une confidentialité absolue."
+      "Ce jeu de précision souris vous demande de garder le réticule dans un anneau central pendant que des forces de « vent » le poussent vers l’extérieur. Vous mesurez votre stabilité, vos sorties d’anneau et votre meilleure série. Ce n’est pas un test médical de tremblement : c’est un exercice de contrôle fin de la souris.",
+      "Selon le modèle à deux phases de Woodworth (1899), un mouvement manuel comprend une impulsion initiale puis une phase de contrôle continu guidée par la vue. Ici, seule la seconde phase compte : vous corrigez sans cesse la position du curseur face à une poussée qui ne s’arrête pas, au lieu de viser un point fixe comme dans un flick.",
+      "La difficulté augmente par niveaux : l’anneau passe de 45 px à 20 px et la force du vent croît. Plus la zone est étroite, plus l’erreur se voit vite, ce qui rejoint la loi de Fitts (1954) sur le compromis entre précision et vitesse.",
+      "Le chronométrage s’appuie sur l’horloge performance.now() du navigateur, dont la résolution est limitée. Un écran à 60 Hz affiche une image environ toutes les 16,7 ms (Woods et al., 2015) : comparez vos séances sur le même matériel."
     ]
   },
   benchmarks: {
-    title: "Normes Officielles et Paliers de Stabilité Motrice",
-    headers: ["Palier", "Titre du Rang", "Score Référence", "Stabilité & Niveau", "Note", "Percentile Global"],
+    title: "Paliers de stabilité de visée",
+    headers: ["Palier", "Score de référence", "Stabilité et niveau", "Lecture"],
     rows: [
-      ["Tier 1", "Maître Absolu de la Stabilité", "17 000+ points", "Niveau 12–15 / Stabilité >92%", "Note S+", "Top 0,5% (Contrôle Chirurgical)"],
-      ["Tier 2", "Spécialiste de la Compensation", "13 000 à 16 999 pts", "Niveau 9–11 / Stabilité 85–91%", "Note A", "Top 5% (Niveau Compétitif)"],
-      ["Tier 3", "Stabilisateur de Terrain Avancé", "9 500 à 12 999 pts", "Niveau 6–8 / Stabilité 76–84%", "Note B", "Top 20% (Fermeté Établie)"],
-      ["Tier 4", "Pratiquant en Développement", "6 000 à 9 499 pts", "Niveau 3–5 / Stabilité 65–75%", "Note C", "50% (Moyenne des Joueurs)"],
-      ["Tier 5", "Débutant Sujet aux Tremblements", "< 6 000 points", "Niveau 1–2 / Stabilité <65%", "Note D", "Débutant (Entraînement Recommandé)"],
+      ["Palier 1 (Très stable)", "17 000+ points", "Niveau 12–15 / stabilité supérieure à 92 %", "Contrôle fin dans l’anneau réduit"],
+      ["Palier 2 (Stable)", "13 000 à 16 999 pts", "Niveau 9–11 / stabilité 85–91 %", "Bonne compensation des rafales"],
+      ["Palier 3 (Correct)", "9 500 à 12 999 pts", "Niveau 6–8 / stabilité 76–84 %", "Fermeté établie, quelques sorties d’anneau"],
+      ["Palier 4 (En progression)", "6 000 à 9 499 pts", "Niveau 3–5 / stabilité 65–75 %", "Base à consolider"],
+      ["Palier 5 (Débutant)", "Moins de 6 000 points", "Niveau 1–2 / stabilité inférieure à 65 %", "Entraînement recommandé aux niveaux lents"]
     ],
-    note: "Le classement évalue le temps cumulé dans le cercle de sécurité, la dissipation des perturbations de vent et le score brut.",
+    note: "Repères éditoriaux propres à cet exercice, établis sur le temps passé dans l’anneau, la compensation des rafales et le score brut. Ce ne sont ni des normes cliniques ni un classement de population."
   },
   protocols: {
-    title: 'Stabilité de Visée – Test Précision Souris | SkillDrills',
-    description: 'Test de stabilité de visée et précision souris en ligne. Résistez aux forces dynamiques pour garder le réticule centré et éliminer les tremblements.',
+    title: 'Quatre points de technique pour rester dans l’anneau',
+    description: 'Des réglages simples pour stabiliser le réticule face au vent.',
     items: [
       {
-        title: 'Stabilité de Visée – Test Précision Souris | SkillDrills',
-        description: 'Test de stabilité de visée et précision souris en ligne. Résistez aux forces dynamiques pour garder le réticule centré et éliminer les tremblements.'
+        title: 'Centrer avant de partir',
+        description: 'Placez le réticule au centre de l’anneau avant le lancement et cliquez pour verrouiller le curseur dans le navigateur.'
       },
       {
-        title: 'Stabilité de Visée – Test Précision Souris | SkillDrills',
-        description: 'Test de stabilité de visée et précision souris en ligne. Résistez aux forces dynamiques pour garder le réticule centré et éliminer les tremblements.'
+        title: 'Lire la direction de la poussée',
+        description: 'Repérez d’où vient la force dès que le réticule commence à dériver, puis opposez-lui une contre-pression douce et continue.'
       },
       {
-        title: 'Stabilité de Visée – Test Précision Souris | SkillDrills',
-        description: 'Test de stabilité de visée et précision souris en ligne. Résistez aux forces dynamiques pour garder le réticule centré et éliminer les tremblements.'
+        title: 'Corriger petit, corriger tôt',
+        description: 'Mieux vaut de petites corrections répétées qu’un grand geste tardif : un grand geste vous fait sortir de l’anneau de l’autre côté.'
       },
       {
-        title: 'Stabilité de Visée – Test Précision Souris | SkillDrills',
-        description: 'Test de stabilité de visée et précision souris en ligne. Résistez aux forces dynamiques pour garder le réticule centré et éliminer les tremblements.'
+        title: 'Stabiliser le bras',
+        description: 'Posez l’avant-bras sur le bureau et gardez une prise détendue. Dans les niveaux élevés, faites les micro-corrections avec les doigts sans lever le bras.'
       }
     ]
   },
   faqs: {
-    title: 'Stabilité de Visée – Test Précision Souris | SkillDrills',
+    title: 'Questions fréquentes',
     items: faqSchema.mainEntity.map(q => ({
       q: q.name,
       a: q.acceptedAnswer.text
@@ -342,8 +342,8 @@ export default function StabilityChallengeFrPage() {
       />
       <StabilityChallengeClient
         copy={{
-          title: 'Stabilité de visée',
-          subtitle: 'Gardez le réticule centré malgré les forces',
+          title: 'Jeu de précision souris',
+          subtitle: 'Stabilité de visée : gardez le réticule centré malgré le vent',
           hudLabels: {
             score: "Points",
             time: "Temps",
@@ -357,19 +357,19 @@ export default function StabilityChallengeFrPage() {
           },
           rulesTitle: "Règles de l'Exercice et Barème des Scores",
           rulesItems: [
-            { title: 'Stabilité de Visée – Test Précision Souris | SkillDrills', text: "Gardez le réticule centré dans l'anneau de sécurité contre les forces de résistance du vent." },
-            { title: 'Stabilité de Visée – Test Précision Souris | SkillDrills', text: "Maintenez une stabilisation ininterrompue pour faire grimper le combo jusqu'à 3.0x." },
-            { title: 'Stabilité de Visée – Test Précision Souris | SkillDrills', text: "Tous les 250 points, le niveau s'élève. L'anneau passe de 45px à 20px et les vents s'accélèrent." },
-            { title: 'Stabilité de Visée – Test Précision Souris | SkillDrills', text: "Quitter l'anneau remet le multiplicateur à 1.0x immédiatement, sans pénalité de score ni de temps." }
+            { title: 'Rester dans l’anneau', text: "Gardez le réticule centré dans l'anneau de sécurité contre les forces de résistance du vent." },
+            { title: 'Combo de stabilité', text: "Maintenez une stabilisation ininterrompue pour faire grimper le combo jusqu'à 3.0x." },
+            { title: 'Niveaux', text: "Tous les 250 points, le niveau s'élève. L'anneau passe de 45px à 20px et les vents s'accélèrent." },
+            { title: 'Sortie d’anneau', text: "Quitter l'anneau remet le multiplicateur à 1.0x immédiatement, sans pénalité de score ni de temps." }
           ],
           aboutTitle: "À Propos du Défi de Stabilité",
           aboutHeading: "Compensation Dynamique des Forces et Équilibre Postural",
           aboutIntro: "Le Défi de Stabilité est un entraînement biomécanique de précision motrice et de stabilisation posturale. Les vecteurs de vent chassent votre curseur en continu, exigeant une contre-pression douce et millimétrée.",
           aboutScience: "Inspiré des synergies posturales de Nashner & McCollum (1985) et des principes d'équilibre de David A. Winter (1995), l'exercice mobilise le contrôle visuel en boucle fermée (Woodworth, 1899). Avec la montée du score, l'anneau rétrécit à 20px et la force accélère jusqu'à 850 unités.",
           aboutCards: [
-            { title: 'Stabilité de Visée – Test Précision Souris | SkillDrills', text: "Joueurs de jeux de tir compétitifs (Valorant, CS2, Apex Legends) cherchant à éliminer les tremblements de souris et à dompter le recul des armes." },
-            { title: 'Stabilité de Visée – Test Précision Souris | SkillDrills', text: "Compensation vectorielle, équilibre postural, suivi sous contrainte, stabilisation du réticule et micro-ajustements digitaux." },
-            { title: 'Stabilité de Visée – Test Précision Souris | SkillDrills', text: "La résistance continue opposée au vent reproduit exactement la pression descendante fluide nécessaire pour stabiliser le recul d'une arme automatique." }
+            { title: 'Pour qui ?', text: "Joueurs de jeux de tir et toute personne qui veut travailler la stabilité de la souris et la régularité des petites corrections." },
+            { title: 'Ce qui est travaillé', text: "Compensation d'une poussée continue, stabilité du bras, stabilisation du réticule et micro-ajustements des doigts." },
+            { title: 'Lien avec le recul', text: "La contre-pression continue ressemble à la compensation du recul d'une arme, sans la reproduire : vérifiez le transfert dans votre jeu." }
           ]
         }}
       />
