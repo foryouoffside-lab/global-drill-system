@@ -27,3 +27,11 @@
 | /ko/drills/physical/reflex-training/peripheral-threat-sweeper | done | f8390ef4 | docs/seo/research/ko/peripheral-threat-sweeper.md | 주변시야 훈련 게임 title, drop shared 동체시력 테스트 keyword, remove invented percentile tiers and clinical claims |
 | /ko/drills/physical/reflex-training/quick-dodge | done | 0faa8a5a | docs/seo/research/ko/quick-dodge.md | 마우스 피하기 게임 vs 공포 게임 FAQ, remove unsupported neuro and transfer claims |
 | /ko/drills/physical/reflex-training/reaction-chain | done | 846df6c3 | docs/seo/research/ko/reaction-chain.md | 오버에임 교정 title (Suggest-supported), remove unsupported neuro and transfer claims, pointer-lock honest FAQ |
+| /ko/drills/reaction-speed/fps-tracking-trainer | done | 8f83181d | docs/seo/research/ko/fps-tracking-trainer.md | retitle away from the aim-trainer page's 에임 트레이너 target |
+| /ko/drills/reaction-speed/reaction-game | done | 3135d32f | docs/seo/research/ko/reaction-game.md | 반응속도 게임 (measured) replaces spaced 반응 속도 테스트 게임 title |
+| /ko/drills/reaction-speed/visual-tracking-speed-test | done | e251bb1e | docs/seo/research/ko/visual-tracking-speed-test.md | 동체시력 테스트 게임 title to stop duplicating the visual hub, non-medical description |
+| /ko/drills/physical/reflex-training/drop-catch | done | fea258dc | docs/seo/research/ko/drop-catch.md | distinct 자 떨어뜨리기 반응속도 게임 title vs reaction-game |
+| /ko/drills/reaction-speed/market-doors-pursuit | done | c7f91fab | docs/seo/research/ko/market-doors-pursuit.md | research log, audited, no page change needed |
+| /ko/drills/visual-tracking/constant-slow-pursuit | done | dc7f85c8 | docs/seo/research/ko/constant-slow-pursuit.md | research log, audited, no page change needed |
+| /ko/drills/reaction-speed/saccadic-gallery | done | 2ec322a4 | docs/seo/research/ko/saccadic-gallery.md | 시선 이동 훈련 게임 title, remove invented latency tiers and gaze-measurement claims |
+| /ko/drills/visual/depth-perception/distance-judgment | done | 259380c2 | docs/seo/research/ko/distance-judgment.md | stop presenting the looming game as an 입체시 검사/면허 검사, honest 거리감 테스트 게임 title and FAQ |
