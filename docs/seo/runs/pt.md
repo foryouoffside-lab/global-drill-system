@@ -38,3 +38,4 @@
 | /pt/drills/visual-tracking/momentum-teleport-pursuit | done | TBD:momentum-teleport-pursuit | docs/seo/research/pt/momentum-teleport-pursuit.md | title kept; elite tier and FPS-benefit wording removed; demand not verified |
 | /pt/drills/visual-tracking/peripheral-ping-pursuit | done | TBD:peripheral-ping-pursuit | docs/seo/research/pt/peripheral-ping-pursuit.md | title kept; privacy absolute and physiology claims softened; demand not verified |
 | /pt/drills/visual-tracking/predictive-pursuit | done | TBD:predictive-pursuit | docs/seo/research/pt/predictive-pursuit.md | title kept; elite tier, plasticity and cerebellum claims removed; demand not verified |
+| /pt/drills/visual-tracking/sine-wave-pursuit | done | TBD:sine-wave-pursuit | docs/seo/research/pt/sine-wave-pursuit.md | title kept; schema/FAQ/intro rewritten as accented pt-BR (was unaccented pt-PT); overclaims removed; demand not verified |

@@ -77,13 +77,13 @@ const softwareApplicationSchema = {
   "dateModified": "2026-09-20",
   "name": "Treino de Movimento Ocular Senoidal",
   "operatingSystem": "Navegador Web",
-  "applicationCategory": "HealthApplication",
+  "applicationCategory": "GameApplication",
   "offers": {
     "@type": "Offer",
     "price": "0.00",
     "priceCurrency": "USD"
   },
-  "description": "Aplicacao de rastreamento visual harmonico para condicionar o ganho de velocidade e a sincronizacao cerebelar ao longo de trajetorias senoidais."
+  "description": "Exercício de rastreamento visual em onda senoidal no navegador para praticar o acompanhamento de um alvo com velocidade variável."
 };
 
 const webAppSchema = {
@@ -92,7 +92,7 @@ const webAppSchema = {
   "dateModified": "2026-09-20",
   "name": "Exercício de Rastreamento Senoidal",
   "url": "https://skilldrills.online/pt/drills/visual-tracking/sine-wave-pursuit",
-  "applicationCategory": "SportsApplication",
+  "applicationCategory": "GameApplication",
   "operatingSystem": "Todos os navegadores modernos",
   "browserRequirements": "Requer suporte a JavaScript e HTML5 Canvas"
 };
@@ -102,7 +102,7 @@ const videoGameSchema = {
   "@type": "VideoGame",
   "dateModified": "2026-09-20",
   "name": "Sine Wave Pursuit",
-  "description": "Exercicio de fixacao visual continua onde os utilizadores acompanham alvos em oscilacao harmonica de velocidade.",
+  "description": "Exercício de acompanhamento visual contínuo em que o jogador segue um alvo em oscilação senoidal.",
   "genre": ["Treino Visual", "Seguimento Ocular", "Treino de Reflexos"],
   "playMode": "SinglePlayer",
   "gamePlatform": "Navegador Web"
@@ -112,32 +112,32 @@ const howToSchema = {
   "@context": "https://schema.org",
   "@type": "HowTo",
   "dateModified": "2026-09-20",
-  "name": "Como Treinar o Rastreamento Harmonico com Onda Senoidal",
-  "description": "Protocolo passo a passo para condicionar o bloqueio de fase cerebelar e eliminar o atraso sensorial em curvas oscilatorias.",
+  "name": "Como Treinar o Rastreamento em Onda Senoidal",
+  "description": "Passo a passo para acompanhar um alvo em curvas de oscilação sem perder o ritmo.",
   "step": [
     {
       "@type": "HowToStep",
       "position": 1,
-      "name": "Calibre a Frequencia de Oscilacao",
-      "text": "Posicione-se a 50-70 cm do ecra. Observe os ciclos iniciais da onda para interiorizar o ritmo e a frequencia da oscilacao."
+      "name": "Observe a Frequência da Oscilação",
+      "text": "Posicione-se a 50-70 cm da tela. Observe os ciclos iniciais da onda para perceber o ritmo e a frequência da oscilação."
     },
     {
       "@type": "HowToStep",
       "position": 2,
-      "name": "Acelere no Cruzamento Central",
-      "text": "Aumente a velocidade ocular ao atravessar o eixo central, onde a velocidade tangencial do alvo atinge o valor maximo."
+      "name": "Acompanhe o Cruzamento Central",
+      "text": "Acompanhe o alvo ao atravessar o eixo central, onde a velocidade dele é maior."
     },
     {
       "@type": "HowToStep",
       "position": 3,
-      "name": "Amortece a Desaceleracao nos Vertices",
-      "text": "Reduza suavemente a tensao muscular ocular quando o alvo se aproximar das cristas e vales da onda para evitar desvios."
+      "name": "Desacelere nos Pontos de Retorno",
+      "text": "Reduza o ritmo com suavidade quando o alvo se aproximar das cristas e vales da onda, para não passar do ponto de retorno."
     },
     {
       "@type": "HowToStep",
       "position": 4,
-      "name": "Suprima Sacadas Corretivas",
-      "text": "Mantenha uma velocidade continua de seguimento motor em vez de recorrer a saltos sacadicos de recuperacao."
+      "name": "Evite Saltos Corretivos",
+      "text": "Tente manter um acompanhamento contínuo em vez de recorrer a saltos rápidos de recuperação."
     }
   ]
 };
@@ -149,82 +149,82 @@ const faqSchema = {
   "mainEntity": [
     {
       "@type": "Question",
-      "name": "O que e o exercicio Sine Wave Pursuit?",
+      "name": "O que é o exercício de rastreamento em onda senoidal?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "O Sine Wave Pursuit treina o seguimento ocular suave ao longo de curvas de ondas senoidais, condicionando o cerebro a eliminar o atraso sensorial atraves da antecipacao cerebelar (Robinson, 1965)."
+        "text": "É um exercício em que você acompanha com os olhos um alvo que se move em onda senoidal. Em trajetórias periódicas, o sistema visual consegue antecipar parte do movimento (Robinson, 1965); a página mede apenas a tarefa na tela."
       }
     },
     {
       "@type": "Question",
-      "name": "Como o rastreamento senoidal difere do seguimento a velocidade constante?",
+      "name": "Como o rastreamento senoidal difere do acompanhamento em velocidade constante?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Em trajetorias senoidais, a velocidade e a aceleracao variam continuamente: o pico de velocidade ocorre no centro, enquanto nos extremos a velocidade cai a zero antes de inverter a direcao (Stark et al., 1962)."
+        "text": "Em trajetórias senoidais, a velocidade e a aceleração variam continuamente: o pico de velocidade ocorre no centro, enquanto nos extremos a velocidade cai a zero antes de inverter a direção (Stark et al., 1962)."
       }
     },
     {
       "@type": "Question",
-      "name": "O que e a latencia de fase zero?",
+      "name": "O que é a latência de fase?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Ocorre quando o relogio interno cerebelar sincroniza com a frequencia do alvo, permitindo que os olhos acompanhem o movimento em tempo real sem o habitual atraso sensorial de 130 a 150 ms."
+        "text": "É a diferença de tempo entre o movimento do alvo e o do olhar. Em movimentos periódicos o olhar pode acompanhar com atraso menor do que em trajetórias imprevisíveis, mas o valor medido aqui depende da tela e do navegador."
       }
     },
     {
       "@type": "Question",
-      "name": "O que causa as sacadas de recuperacao durante o treino?",
+      "name": "O que causa as sacadas de recuperação durante o treino?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Quando o ganho de velocidade de seguimento cai abaixo de 1.0, o olhar fica atras do alvo. O cerebro dispara uma sacada rapida de recuperacao para focar novamente o centro foveal (Bahill et al., 1980)."
+        "text": "Quando o ganho de velocidade do acompanhamento cai abaixo de 1.0, o olhar fica atrás do alvo e um salto rápido de recuperação o reposiciona (Bahill et al., 1980)."
       }
     },
     {
       "@type": "Question",
-      "name": "Como este exercicio beneficia a mira em jogos FPS?",
+      "name": "Este exercício ajuda na mira em jogos FPS?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Em jogos competitivos como Apex Legends e Overwatch, os adversarios realizam saltos e deslocamentos ritmicos. O treino harmonico evita disparos atrasados ou avancados nos pontos de inflexao."
+        "text": "Em jogos como Apex Legends e Overwatch, os adversários fazem deslocamentos rítmicos. O exercício pratica acompanhar um movimento periódico, mas não há garantia de transferência para a mira no jogo."
       }
     },
     {
       "@type": "Question",
-      "name": "Qual o beneficio para desportos de bola?",
+      "name": "Serve para esportes de bola?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "No tenis, voleibol e futebol, as bolas descrevem arcos e curvas oscilantes. O seguimento suave permite manter a nitidez visual durante toda a trajetoria parabolica."
+        "text": "No tênis, vôlei e futebol, as bolas descrevem arcos. O exercício pratica o acompanhamento visual de um alvo em movimento na tela; não substitui treino esportivo nem garante ganho em campo."
       }
     },
     {
       "@type": "Question",
-      "name": "Por que a cabeca deve permanecer imovel durante o treino?",
+      "name": "Por que a cabeça deve ficar imóvel durante o treino?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Movimentos involuntarios do pescoco ativam o reflexo vestibulo-ocular (VOR), gerando contra-rotacoes que desestabilizam o foco suave e o ganho visual (Leigh & Zee, 2015)."
+        "text": "Movimentos do pescoço ativam o reflexo vestíbulo-ocular (VOR), que gera contrarrotações dos olhos e mistura o esforço da cabeça com o dos olhos (Leigh & Zee, 2015)."
       }
     },
     {
       "@type": "Question",
-      "name": "A taxa de atualizacao do monitor influencia o exercicio?",
+      "name": "A taxa de atualização do monitor influencia o exercício?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Monitores de alta frequencia (144Hz ou mais) desenham curvas perfeitamente fluidas sem saltos de fotogramas, proporcionando estimulos visuais ideais para o cortex motor (Woods et al., 2015)."
+        "text": "Monitores de 144 Hz ou mais desenham a curva com mais quadros por segundo, o que torna o movimento mais fluido (Woods et al., 2015). Compare sessões apenas no mesmo equipamento."
       }
     },
     {
       "@type": "Question",
-      "name": "Este treino senoidal e gratuito?",
+      "name": "Este treino senoidal é gratuito?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Sim, o SkillDrills disponibiliza esta ferramenta gratuitamente no navegador, sem necessidade de registo ou instalacao de programas."
+        "text": "Sim, o SkillDrills disponibiliza esta ferramenta gratuitamente no navegador, sem necessidade de cadastro ou instalação."
       }
     },
     {
       "@type": "Question",
-      "name": "Com que frequencia devo praticar este exercicio?",
+      "name": "Com que frequência devo praticar este exercício?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Sessoes curtas de 5 a 10 minutos praticadas 3 a 5 vezes por semana promovem ganhos substanciais na estabilidade do foco e reduzem sacadas involuntarias em poucas semanas (Barnes, 2008)."
+        "text": "Comece com sessões curtas de 5 a 10 minutos, faça pausas e compare os próprios resultados ao longo do tempo. Não há um prazo fixo de melhora; pare se sentir desconforto."
       }
     }
   ]
@@ -233,28 +233,28 @@ const faqSchema = {
 const guideProps = {
   heading: "Fundamentos Científicos do Rastreamento em Onda Senoidal e Coordenação Ocular",
   intro: [
-    "A precisao do sistema de seguimento ocular continuo (Smooth Pursuit) e desafiada ao maximo quando os olhos acompanham trajetorias de oscilacao harmonica, em vez de percursos lineares previsiveis. Ao longo de uma curva senoidal, a velocidade e a aceleracao variam segundo leis trigonometricas: a velocidade atinge a magnitude maxima ao cruzar o eixo central de equilibrio, desacelerando gradualmente ate parar momentaneamente nos vertices antes de inverter o sentido (Stark et al., 1962; Robinson, 1965).",
-    "Estudos neurofisiologicos seminais de David Robinson (1965) e Barnes (2008) demonstraram que percursos imprevisiveis geram um atraso fisiologico compulsorio de 130 a 150 milissegundos. Contudo, perante movimentos harmonicos periodicos, os circuitos cerebelares aprendem a frequencia da onda em poucos ciclos, emitindo comandos motores antecipatorios que eliminam completamente a latencia sensorial, atingindo a condicao de fase zero.",
-    "Quando a velocidade angular ultrapassa os limites fisiologicos ou ocorre cansaco visual, o ganho de seguimento entra em deficit. Conforme documentado por Rashbass (1961) e Bahill et al. (1980), a quebra de velocidade obriga o cortex a introduzir sacadas de correcao bruscas, durante as quais ocorre supressao visual passageira. Este exercicio treina a musculatura extraocular para sustentar um ganho unitario constante sem sobressaltos."
+    "O acompanhamento ocular contínuo (smooth pursuit) é desafiado quando o alvo segue uma oscilação harmônica em vez de um percurso linear previsível. Ao longo de uma curva senoidal, velocidade e aceleração variam: a velocidade é máxima ao cruzar o eixo central e cai a zero nos pontos de retorno, antes de inverter o sentido (Stark et al., 1962; Robinson, 1965).",
+    "Estudos clássicos de Robinson (1965) e Barnes (2008) descrevem que o sistema de acompanhamento ocular tem um atraso em trajetórias imprevisíveis e que, em movimentos periódicos, consegue usar a repetição para antecipar parte do trajeto. Neste exercício, esse efeito aparece como menor atraso de fase quando você acompanha o ritmo da onda.",
+    "Quando a velocidade do alvo passa do que o acompanhamento consegue seguir, ou quando há cansaço visual, o ganho de velocidade cai. Segundo Rashbass (1961) e Bahill et al. (1980), o olhar então usa saltos corretivos (sacadas), durante os quais a visão fica momentaneamente suprimida. O exercício pratica manter o acompanhamento o mais contínuo possível."
   ],
   benchmarks: {
-    title: "Tabela de Classificação do Rastreamento Senoidal e Ganho de Velocidade",
+    title: "Faixas de Referência do Rastreamento Senoidal e Ganho de Velocidade",
     headers: ["Nível de Desempenho", "Ganho de Velocidade", "Latência de Fase", "Sacadas por Ciclo", "Perfil Oculomotor"],
     rows: [
-      ["Elite (Esports / Atletas Pro)", "0.96 – 1.02", "< 15 ms (Sincronização Total)", "0 – 1 (Fluxo Perfeito)", "Sincronização rítmica cerebelar perfeita sem atraso de fase e fixação foveal impecável."],
-      ["Avançado (Competitivo)", "0.90 – 0.95", "15 – 30 ms", "2 – 3", "Elevada fidelidade de trajetória e mínimas micro-sacadas nos vértices de inversão."],
-      ["Competente (Adulto Saudável)", "0.82 – 0.89", "31 – 50 ms", "4 – 5", "Bom rastreamento harmônico com ligeira dispersão em oscilações de alta frequência."],
-      ["Em Desenvolvimento (Latência)", "0.70 – 0.81", "51 – 80 ms", "6 – 8", "Instabilidade nos vértices com frequentes sacadas corretivas para recuperar o alvo."],
-      ["Iniciante (Ajuste Motor)", "< 0.70", "> 80 ms", "> 9", "Dificuldade em antecipar o ritmo harmônico com seguimento estritamente reativo."]
+      ["Faixa 1 (Muito alta)", "0.96 – 1.02", "< 15 ms (Sincronização Total)", "0 – 1 (Fluxo Perfeito)", "Acompanhamento muito sincronizado, com pouco atraso de fase."],
+      ["Faixa 2 (Alta)", "0.90 – 0.95", "15 – 30 ms", "2 – 3", "Elevada fidelidade de trajetória e mínimas micro-sacadas nos vértices de inversão."],
+      ["Faixa 3 (Boa)", "0.82 – 0.89", "31 – 50 ms", "4 – 5", "Bom rastreamento harmônico com ligeira dispersão em oscilações de alta frequência."],
+      ["Faixa 4 (Intermediária)", "0.70 – 0.81", "51 – 80 ms", "6 – 8", "Instabilidade nos vértices com frequentes sacadas corretivas para recuperar o alvo."],
+      ["Faixa 5 (Inicial)", "< 0.70", "> 80 ms", "> 9", "Dificuldade em antecipar o ritmo harmônico com seguimento estritamente reativo."]
     ],
-    note: "※ Medições efetuadas em ecrãs 1080p a uma distância de 50–70 cm com velocidades de 1.0x a 1.5x. Avaliado pelo rácio de ganho angular e ausência de sacadas corretivas."
+    note: "Faixas editoriais para comparar suas próprias sessões, não percentis de população nem normas clínicas. ※ Referência para telas 1080p a uma distância de 50–70 cm com velocidades de 1.0x a 1.5x. Avaliado pelo razão de ganho angular e ausência de sacadas corretivas."
   },
   techniques: {
     title: "Quatro Técnicas Fundamentais para o Rastreamento Senoidal Harmónico",
     items: [
       {
         name: "Bloqueio de Fase Harmónica",
-        desc: "Utilize os primeiros ciclos da onda para absorver a cadência do movimento. Ative o relógio cerebelar interno para impulsionar os olhos no ritmo exato da oscilação (Robinson, 1965).",
+        desc: "Utilize os primeiros ciclos da onda para absorver a cadência do movimento. Tente seguir o ritmo da oscilação (Robinson, 1965).",
         tips: "Mantenha uma contagem rítmica mental ('um-dois, um-dois') para eliminar o atraso visual."
       },
       {
@@ -269,7 +269,7 @@ const guideProps = {
       },
       {
         name: "Supressão Disciplinada de Sacadas",
-        desc: "Evite disparar pequenos saltos oculares reflexos quando houver pequenas defasagens. Corrija a posição acelerando a velocidade contínua (Bahill et al., 1980).",
+        desc: "Evite pequenos saltos oculares reflexos quando houver pequenas defasagens. Corrija a posição acelerando a velocidade contínua (Bahill et al., 1980).",
         tips: "Conserve os músculos dos olhos relaxados e elásticos como um fluido contínuo."
       }
     ]
