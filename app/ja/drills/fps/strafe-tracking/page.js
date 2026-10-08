@@ -22,8 +22,8 @@ import { pickSources } from '@/lib/drillSources';
 // ============================================================
 
 export const metadata = {
-  title: "追いエイム練習 | FPSトラッキング | SkillDrills",
-  description: "無料ブラウザの追いエイム練習でADADストレイフ、切り返し、Apex・OW2のトラッキング精度を鍛えます。",
+  title: "ストレイフ追いエイム練習｜ADAD切り返し | SkillDrills",
+  description: "無料のストレイフ追いエイム練習。ADADで左右に切り返す標的へ照準を合わせ続け、Apex・OW2向けのトラッキング精度をブラウザで確認できます。",
   keywords: [
     "追いエイム 練習",
     "追いエイム 練習 ブラウザ",
@@ -47,8 +47,8 @@ export const metadata = {
     follow: true,
   },
   openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
-    title: "追いエイム練習 | FPSトラッキング | SkillDrills",
-    description: "無料ブラウザの追いエイム練習でADADストレイフ、切り返し、Apex・OW2のトラッキング精度を鍛えます。",
+    title: "ストレイフ追いエイム練習｜ADAD切り返し | SkillDrills",
+    description: "無料のストレイフ追いエイム練習。ADADで左右に切り返す標的へ照準を合わせ続け、Apex・OW2向けのトラッキング精度をブラウザで確認できます。",
     url: "https://skilldrills.online/ja/drills/fps/strafe-tracking",
     siteName: 'SkillDrills',
     locale: 'ja_JP',
@@ -56,8 +56,8 @@ export const metadata = {
   },
   twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: 'summary_large_image',
-    title: "追いエイム練習 | FPSトラッキング | SkillDrills",
-    description: "無料ブラウザの追いエイム練習でADADストレイフ、切り返し、Apex・OW2のトラッキング精度を鍛えます。",
+    title: "ストレイフ追いエイム練習｜ADAD切り返し | SkillDrills",
+    description: "無料のストレイフ追いエイム練習。ADADで左右に切り返す標的へ照準を合わせ続け、Apex・OW2向けのトラッキング精度をブラウザで確認できます。",
   },
 };
 
@@ -246,10 +246,10 @@ export default function StrafeTrackingPageJa() {
     heading: "追いエイム練習とFPSトラッキングガイド",
     intro: [
       "追いエイム練習は、ADADで左右に切り返す標的へ照準を合わせ続けるFPSトレーニングです。Apex LegendsやOverwatch 2では、一瞬のフリックだけでなく、数秒間ターゲットを追い続けるトラッキング精度が重要になります。",
-      "人間の眼球および手の運動追従メカニズムは、 Cyril Rashbass（1961）の「独立二重視覚制御機構」および Richard J. Krauzlis（2004）の「スムーズパシュートとサッケード統合モデル」によって解明されています。人間がターゲットを滑らかに追従できるのは角速度約30°/秒までであり、標的が不規則に反転した瞬間には約100〜130ミリ秒の認知・神経伝達遅延が発生します。この遅延を最小化し、生じたズレを素早い追いつきサッケード（Catch-up Saccade）で再センタリングする能力がプロレベルの追いエイムを支えています。",
+      "滑らかな追従（スムーズパシュート）は標的の速度が上がりすぎると追いつけず、追いつきサッケードで補う必要があります（Krauzlis, 2004; Rashbass, 1961）。標的が不意に反転した直後には、認知と反応の遅れが生じます。この遅れで生じたズレをすばやく戻す練習が追いエイムの土台になります。",
       "視覚誘導型ハンドコントロールにおいては、 Michael F. Land & David N. Horwood（1995）の二重注視点モデルおよび C.S. Green & D. Bavelier（2003）のアクションビデオゲーム視覚認知理論が適用されます。視線はターゲットの輪郭そのものだけでなく、進行方向のわずかな予備動作や速度変化（速度シグナル）を先読み知覚し、前頭眼野および小脳を通じて滑らかな手の連続補正動作を生成します。",
-      "運動計測クロノメトリー：本ドリルでは、ブラウザの超高精度タイマーAPI（performance.now()）を用いて全フレーム（毎秒60〜240回）の照準位置と標的ヒットボックスの重なりをミリ秒単位でリアルタイム追跡します。スコアや個人データは一切外部サーバーへ送信されず、端末内で安全に完結処理されます（Woods et al., 2015）。",
-      "ディスプレイと入力環境の最適化について：通常の60Hzモニターでは約16.7msのフレーム遅延が生じ、高速な反転時にターゲットの像が不連続に飛んで見えます。144Hz（約6.9ms）や240Hz（約4.1ms）の高リフレッシュレートモニターとポーリングレート1000Hz以上のゲーミングマウスを併用することで、標的の切り返しを鮮明に捉え、微細なハンドコントロールを確実に反映させることができます（Woods et al., 2015）。"
+      "計測について：このドリルは、ブラウザのperformance.now()タイマーでフレームごとの照準位置と標的の重なりを記録し、計算は端末内で行います（Woods et al., 2015）。表示のリフレッシュレートや入力機器の遅延で結果は変わるため、同じ環境での自己記録の推移を見てください。",
+      "ディスプレイと入力環境の最適化について：通常の60Hzモニターでは約16.7msのフレーム遅延が生じ、高速な反転時にターゲットの像が不連続に飛んで見えます。144Hz（約6.9ms）や240Hz（約4.1ms）の高リフレッシュレートモニターとポーリングレート1000Hz以上のゲーミングマウスを併用することで、標的の切り返しを鮮明に捉え、微細なハンドコントロールを反映しやすくなります（Woods et al., 2015）。"
     ],
     benchmarks: {
       title: "追いエイム（トラッキング）精度ランク＆パフォーマンス階層基準",
@@ -308,8 +308,8 @@ export default function StrafeTrackingPageJa() {
   };
 
   const copyJa = {
-    h1Keyword: "追いエイム 練習",
-    h1Suffix: " - FPSトラッキング",
+    h1Keyword: "ストレイフ追いエイム練習",
+    h1Suffix: " - ADAD切り返し",
     caption: "追いエイム（トラッキング）は不規則に動く敵に照準を合わせ続ける運動視覚制御です。人間の滑らかな追従は約30°/秒が上限であり、急な切り返しには約100〜130msの認識遅延が伴います（Rashbass, 1961; Krauzlis, 2004）。冷静な速度同期と素早いリカバリーを鍛えましょう。",
     statStatus: "ステータス",
     statusTracking: "追従中",

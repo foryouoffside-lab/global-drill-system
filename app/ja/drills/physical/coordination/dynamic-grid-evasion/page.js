@@ -20,8 +20,8 @@ import { pickSources } from '@/lib/drillSources';
 // ============================================================
 
 export const metadata = {
-  title: "反射神経テスト｜無料ブラウザゲーム | SkillDrills",
-  description: "無料の反射神経テスト・ブラウザゲーム。3×3グリッドの危険マスを周辺視野で見つけ、安全マスへ移動して反応速度と危機回避を鍛えます。",
+  title: "危険マス回避ゲーム｜周辺視野で避ける反射神経トレーニング | SkillDrills",
+  description: "無料の危険マス回避ブラウザゲーム。3×3グリッドの危険マスを周辺視野で見つけ、安全マスへ移動して反応速度と危機回避を鍛えます。",
   keywords: [
     "反射神経テスト",
     "反応速度テスト",
@@ -39,8 +39,8 @@ export const metadata = {
     languages: getAlternateLanguages('/drills/physical/coordination/dynamic-grid-evasion'),
   },
   openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
-    title: "反射神経テスト｜無料ブラウザゲーム | SkillDrills",
-    description: "無料の反射神経テスト・ブラウザゲーム。3×3グリッドの危険マスを周辺視野で見つけ、安全マスへ移動して反応速度と危機回避を鍛えます。",
+    title: "危険マス回避ゲーム｜周辺視野で避ける反射神経トレーニング | SkillDrills",
+    description: "無料の危険マス回避ブラウザゲーム。3×3グリッドの危険マスを周辺視野で見つけ、安全マスへ移動して反応速度と危機回避を鍛えます。",
     url: 'https://skilldrills.online/ja/drills/physical/coordination/dynamic-grid-evasion',
     siteName: 'SkillDrills',
     locale: 'ja_JP',
@@ -48,8 +48,8 @@ export const metadata = {
   },
   twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: 'summary_large_image',
-    title: "反射神経テスト｜無料ブラウザゲーム | SkillDrills",
-    description: "無料の反射神経テスト・ブラウザゲーム。3×3グリッドの危険マスを周辺視野で見つけ、安全マスへ移動して反応速度と危機回避を鍛えます。",
+    title: "危険マス回避ゲーム｜周辺視野で避ける反射神経トレーニング | SkillDrills",
+    description: "無料の危険マス回避ブラウザゲーム。3×3グリッドの危険マスを周辺視野で見つけ、安全マスへ移動して反応速度と危機回避を鍛えます。",
   },
   robots: { index: true, follow: true },
 };
@@ -281,6 +281,7 @@ const gridGuide = {
   heading: "空間反射神経と視覚的危険回避の認知神経バイオメカニクス",
   subtitle: "トリーズマン並列探索理論、ポズナー空間定位パラダイム、ウッドワース弾道制御に基づく危機回避論",
   intro: [
+    "危険マス回避ゲームとは、3×3のマスのうち危険になるマスを周辺視野で見つけ、安全なマスへ素早く移動するゲームです。このページではレベルが上がるごとに判断の時間が短くなり、反応の速さと危険の見極めを練習できます。",
     "ダイナミックグリッド回避ドリル（Dynamic Grid Evasion）は、3×3の戦術マトリクス上でランダムに発生する爆発予兆を周辺視野で捉え、瞬時に安全な無傷セクターへカーソルを滑り込ませる高負荷な空間反射神経トレーニングです。単一のターゲットを追尾するトラッキングとは異なり、9つのマスから発信される視覚警告を並列処理して瞬時に脱出ベクトルを決定する必要があるため、脳の視覚・運動変換速度が極限まで試されます。",
     "認知心理学者アン・トリーズマン（Treisman & Gelade, 1980）の「特徴統合理論（Feature Integration Theory）」によれば、突発的な色の変化や点滅といった低次視覚特徴は、大脳皮質の事前注意段階（Pre-attentive stage）において並列的に瞬時知覚されます。プレイヤーがグリッド中央部に視線を緩やかに置く「脱焦点注視（Decentralized Fixation）」を採用することで、各マスを順番に確認する逐次探索を省略し、視野全体から安全地帯を直観的に一括抽出できます。",
     "マイケル・ポズナー（Posner, 1980）の「空間定位パラダイム」が証明したように、外因性の突発シグナル（Exogenous Cue）は意識を介さずに潜在的注意（Covert Attention）を無条件に引き寄せます。難易度が上がるにつれて警告猶予時間は1.4秒から0.45秒へと激減し、危険マスは最大7箇所に達します。ロバート・ウッドワース（Woodworth, 1899）の二相性モデルに従い、安全マスへの初動の弾道フリック（Ballistic impulse）と、マス境界内での指先摩擦による終端急停止（Current-control deceleration）を高次元で両立させることが被弾を防ぐ防壁となります。",
@@ -290,9 +291,9 @@ const gridGuide = {
     title: "空間反射神経＆グリッド危険回避 5段階標準ベンチマーク",
     headers: ["階層 / ティア", "称号 (Rank Title)", "スコア基準値", "到達レベル", "最小警告猶予限界", "神経認知・回避反射プロファイル"],
     rows: [
-      ["Tier 1: 頂点グリッドイベイダー", "Apex Grid Evader", "17,000点以上", "Level 12 – 15", "0.45 – 0.60秒生存", "上位0.1%水準の超人的な周辺視野並列探索力、0.45秒極限下での完全な弾道フリック脱出（Treisman 1980; Posner 1980）"],
-      ["Tier 2: マスタースパシャルスキャナー", "Master Spatial Scanner", "13,000 – 16,999点", "Level 9 – 11", "0.65 – 0.80秒生存", "上位3%水準の卓越したポズナー潜在的注意シフト、5〜6個の危険セル包囲網からの冷静な離脱"],
-      ["Tier 3: 熟練ハザードドッジャー", "Proficient Hazard Dodger", "9,500 – 12,999点", "Level 6 – 8", "0.85 – 1.05秒生存", "競技ゲーマー上位水準の優れた動体視力と安定したウッドワース弾道フリック急制動制御（Woodworth 1899）"],
+      ["Tier 1: 頂点グリッドイベイダー", "Apex Grid Evader", "17,000点以上", "Level 12 – 15", "0.45 – 0.60秒生存", "非常に高い周辺視野並列探索力、0.45秒極限下での完全な弾道フリック脱出（Treisman 1980; Posner 1980）"],
+      ["Tier 2: マスタースパシャルスキャナー", "Master Spatial Scanner", "13,000 – 16,999点", "Level 9 – 11", "0.65 – 0.80秒生存", "卓越したポズナー潜在的注意シフト、5〜6個の危険セル包囲網からの冷静な離脱"],
+      ["Tier 3: 熟練ハザードドッジャー", "Proficient Hazard Dodger", "9,500 – 12,999点", "Level 6 – 8", "0.85 – 1.05秒生存", "競技ゲーマー水準の優れた動体視力と安定したウッドワース弾道フリック急制動制御（Woodworth 1899）"],
       ["Tier 4: 中級セクターサバイバー", "Intermediate Sector Evader", "6,000 – 9,499点", "Level 3 – 5", "1.10 – 1.25秒生存", "成人の標準反応速度、警告が1秒未満になると視覚情報処理のボトルネックにより被弾が増加"],
       ["Tier 5: 入門ブラストサバイバー", "Novice Blast Survivor", "6,000点未満", "Level 1 – 2", "> 1.25秒区間", "中心視野の凝視による周辺危険の見落とし、脱出時のオーバーシュート頻発（脱焦点注視の訓練推奨）"]
     ],
@@ -363,7 +364,7 @@ export default function DynamicGridEvasionPageJa() {
       />
       <DynamicGridEvasionClient
         copy={{
-          title: "反射神経テスト",
+          title: "危険マス回避ゲーム",
           subtitle: "危険マスを見つけて安全へ移動 • 15段階",
           rulesTitle: "反射神経＆グリッド回避ドリルのルール・採点基準",
           rules: [

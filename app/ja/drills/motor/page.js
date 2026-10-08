@@ -7,7 +7,7 @@ const motorDrills = DRILLS.filter((d) => d.category === 'motor');
 
 export const metadata = {
   title: 'マウス精度テスト・エイム練習 | SkillDrills',
-  description: 'マウス精度、エイム操作、CPS、キーボード速度、手眼協調を測る無料ブラウザドリル9種。',
+  description: '連打測定・CPSテスト、エイム練習、マウス精度、キーボード入力、手眼協調を練習できる無料ブラウザドリル9種。登録不要。',
   keywords: [
     'マウス精度テスト', 'エイム練習', 'エイム練習 無料', 'CPSテスト',
     'マウス操作 練習', 'マウス 手ブレ テスト', 'キーボード 反応速度 テスト',
@@ -17,7 +17,7 @@ export const metadata = {
   ],
   openGraph: {
     title: 'マウス精度テスト・エイム練習 | SkillDrills',
-    description: 'マウス精度、エイム操作、CPS、キーボード速度、手眼協調を測る無料ブラウザドリル9種。',
+    description: '連打測定・CPSテスト、エイム練習、マウス精度、キーボード入力、手眼協調を練習できる無料ブラウザドリル9種。登録不要。',
     type: 'website',
     url: 'https://skilldrills.online/ja/drills/motor',
     siteName: 'SkillDrills',
@@ -27,7 +27,7 @@ export const metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'マウス精度テスト・エイム練習 | SkillDrills',
-    description: 'マウス精度、エイム操作、CPS、キーボード速度、手眼協調を測る無料ブラウザドリル9種。',
+    description: '連打測定・CPSテスト、エイム練習、マウス精度、キーボード入力、手眼協調を練習できる無料ブラウザドリル9種。登録不要。',
     images: ['https://skilldrills.online/icons/icon-512x512.png'],
   },
   robots: { index: true, follow: true },
@@ -121,7 +121,7 @@ const faqSchema = {
       "name": "ブラウザ上で動作するマウスやキーボードの測定精度はどの程度ですか？",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "SkillDrillsはWebブラウザ標準のperformance.now() APIを活用し、サブミリ秒（0.1ms単位）の高分解能タイマーで入力を計測します。測定結果はディスプレイのリフレッシュレート（144Hzなら約6.9ms、240Hzなら約4.1ms）やマウス/キーボードのポーリングレート（1000Hzなら1ms）の物理制約を忠実に反映しており、ハードウェア検証や実力向上に十分な信頼性を提供します。"
+        "text": "SkillDrillsはWebブラウザ標準のperformance.now() APIで時間を記録します。ブラウザの仕様でタイマーの分解能は丸められ、結果はディスプレイのリフレッシュレート（144Hzなら約6.9ms、240Hzなら約4.1ms）やマウス/キーボードのポーリングレート（1000Hzなら約1ms）の影響を受けます。数ミリ秒の差は誤差として扱い、同じ環境での自己記録の推移を見る使い方をおすすめします。"
       }
     },
     {
