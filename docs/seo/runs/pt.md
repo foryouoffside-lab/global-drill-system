@@ -11,3 +11,4 @@
 | /pt/drills/fps/strafe-tracking | done | TBD:strafe-tracking | docs/seo/research/pt/strafe-tracking.md | title +Online; benchmark ranks relabelled; raw-input/1:1 claims removed; demand not verified |
 | /pt/drills/fps/target-acquisition | done | TBD:target-acquisition | docs/seo/research/pt/target-acquisition.md | title kept (treino de mira valorant 241 Bing BR); rank tiers + raw input claims removed |
 | /pt/drills/motor/hand-eye-coordination/aim-trainer | done | TBD:aim-trainer | docs/seo/research/pt/aim-trainer.md | title: treino de mira 385 + aim trainer 581 (Bing BR); rank labels neutralised |
+| /pt/drills/motor/movement-speed/keyboard-recognition | done | TBD:keyboard-recognition | docs/seo/research/pt/keyboard-recognition.md | title kept; teste de teclado 13,118 not adopted (tester intent); percentiles removed; demand not verified |
