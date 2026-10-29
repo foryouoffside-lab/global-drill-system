@@ -1,3 +1,5 @@
+import { drillSensitivity } from './drillSensitivity';
+
 let virtualTarget: Element | null = null;
 
 function install(): void {
@@ -48,6 +50,28 @@ function install(): void {
     }
     return result as Promise<void>;
   } as typeof Element.prototype.requestPointerLock;
+
+  window.addEventListener('mousemove', (event) => {
+    if (!event.isTrusted || !virtualTarget || realLock() || !virtualTarget.isConnected) return;
+    event.stopImmediatePropagation();
+    const rect = virtualTarget.getBoundingClientRect();
+    const sens = drillSensitivity.get() || 1;
+    const relay = (movementX: number, movementY: number) => {
+      (event.target || document).dispatchEvent(new MouseEvent('mousemove', {
+        bubbles: true,
+        cancelable: true,
+        clientX: event.clientX,
+        clientY: event.clientY,
+        screenX: event.screenX,
+        screenY: event.screenY,
+        buttons: event.buttons,
+        movementX,
+        movementY,
+      }));
+    };
+    relay(-1e7, -1e7);
+    relay((event.clientX - rect.left) / sens, (event.clientY - rect.top) / sens);
+  }, true);
 
   Document.prototype.exitPointerLock = function (this: Document) {
     if (virtualTarget && !realLock()) {
