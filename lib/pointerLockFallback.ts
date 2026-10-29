@@ -20,10 +20,10 @@ function install(): void {
     get: () => realLock() || (virtualTarget && virtualTarget.isConnected ? virtualTarget : null),
   });
 
-  const fallBack = (target: Element, error: unknown) => {
+  const fallBack = (target: Element, error: unknown, wasFullscreen: boolean) => {
     if (realLock() || virtualTarget || !target.isConnected) return;
     const name = (error as DOMException | undefined)?.name;
-    if (name === 'NotAllowedError' && !document.fullscreenElement && !deferred.has(target)) {
+    if (name === 'NotAllowedError' && !wasFullscreen && !deferred.has(target)) {
       deferred.add(target);
       return;
     }
@@ -32,18 +32,18 @@ function install(): void {
   };
 
   Element.prototype.requestPointerLock = function (this: Element, ...args: unknown[]) {
-    const target = this;
+    const wasFullscreen = Boolean(document.fullscreenElement);
     let result: unknown;
     try {
-      result = (nativeRequest as (...a: unknown[]) => unknown).apply(target, args);
+      result = (nativeRequest as (...a: unknown[]) => unknown).apply(this, args);
     } catch (error) {
-      fallBack(target, error);
+      fallBack(this, error, wasFullscreen);
       return Promise.resolve();
     }
     if (result && typeof (result as Promise<void>).then === 'function') {
       return (result as Promise<void>).then(
-        () => { deferred.delete(target); },
-        (error) => { fallBack(target, error); },
+        () => { deferred.delete(this); },
+        (error) => { fallBack(this, error, wasFullscreen); },
       );
     }
     return result as Promise<void>;
