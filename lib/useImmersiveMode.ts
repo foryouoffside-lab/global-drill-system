@@ -1,6 +1,7 @@
 'use client';
 
 import { useCallback, useEffect, useRef } from 'react';
+import './pointerLockFallback';
 
 /**
  * Immersive mode — the full-viewport layout a drill switches into when it starts.
