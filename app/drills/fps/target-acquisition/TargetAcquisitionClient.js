@@ -418,13 +418,15 @@ export default function TargetAcquisitionClient({ copy = null }) {
       gameActiveRef.current = true;
       startingRef.current = false;
       setGameState('playing');
+      if (canvasRef.current && !document.pointerLockElement) {
+        canvasRef.current.requestPointerLock().catch(() => {});
+      }
     }, 2450);
 
     countdownTimeoutsRef.current = [t1, t2, t3, t4];
 
-    // Pointer lock must be requested from the original user gesture. A delayed
-    // request inside the countdown is rejected by browsers and leaves the run
-    // without input or a ticking timer.
+    // The Start click's activation is usually consumed by the native fullscreen
+    // request, so this can be rejected; the retry above runs once fullscreen is up.
     if (canvasRef.current && !document.pointerLockElement) {
       try { await canvasRef.current.requestPointerLock(); } catch (e) {}
     }

@@ -618,6 +618,9 @@ export default function RapidTappingClient({ copy } = {}) {
 
     const t4 = setTimeout(() => {
       startingRef.current = false;
+      if (canvasRef.current && !isTouchOnlyDevice && !document.pointerLockElement) {
+        canvasRef.current.requestPointerLock().catch(() => {});
+      }
       startActualDrill();
     }, 2600);
 

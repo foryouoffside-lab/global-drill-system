@@ -320,6 +320,9 @@ export default function TargetSwitchingSwarmClient({ copy = null }) {
     const t4 = setTimeout(() => {
       startingRef.current = false;
       setGameState('playing');
+      if (canvasRef.current && !document.pointerLockElement) {
+        canvasRef.current.requestPointerLock().catch(() => {});
+      }
     }, 2450);
 
     countdownTimeoutsRef.current = [t1, t2, t3, t4];

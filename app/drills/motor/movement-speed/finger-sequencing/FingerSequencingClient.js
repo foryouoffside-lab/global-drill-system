@@ -741,6 +741,9 @@ export default function FingerSequencingClient({ copy } = {}) {
     const t3 = setTimeout(() => {
       drillAudio.playGo();
       startingRef.current = false;
+      if (canvasRef.current && !isTouchOnlyDevice && !document.pointerLockElement) {
+        canvasRef.current.requestPointerLock().catch(() => {});
+      }
       startActualDrill();
     }, 3000);
 

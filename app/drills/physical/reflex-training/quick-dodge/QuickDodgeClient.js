@@ -302,9 +302,8 @@ export default function QuickDodgeClient({ copy = {} } = {}) {
 
     setIsFullscreen(true);
 
-    // Request pointer lock from the Start button gesture. Waiting until the
-    // countdown finishes can be rejected by the browser, leaving the player
-    // reticle in its fallback color and making it look missing.
+    // The Start click's activation is usually consumed by the native fullscreen
+    // request, so this can be rejected; t4 retries once fullscreen is up.
     if (canvasRef.current && !document.pointerLockElement && !isTouchOnlyDevice) {
       canvasRef.current.requestPointerLock().catch(() => {});
     }
@@ -320,6 +319,9 @@ export default function QuickDodgeClient({ copy = {} } = {}) {
       gameActiveRef.current = true;
       startingRef.current = false;
       setGameState('playing');
+      if (canvasRef.current && !document.pointerLockElement && !isTouchOnlyDevice) {
+        canvasRef.current.requestPointerLock().catch(() => {});
+      }
     }, 2450);
 
     countdownTimeoutsRef.current = [t1, t2, t3, t4];
