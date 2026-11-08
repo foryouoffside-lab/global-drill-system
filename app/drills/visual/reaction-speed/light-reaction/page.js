@@ -155,7 +155,7 @@ const howToSchema = {
       "@type": "HowToStep",
       "position": 3,
       "name": "Execute Instant Motor Click on Flash Onset",
-      "text": "Click the canvas or press the Spacebar immediately upon the first photon flash (+150 PTS × Combo × Level multiplier).",
+      "text": "Click or tap the canvas immediately upon the first photon flash (+150 PTS × Combo × Level multiplier).",
       "url": "https://skilldrills.online/drills/visual/reaction-speed/light-reaction#step-3"
     },
     {
@@ -306,7 +306,7 @@ const lightReactionGuide = {
     "Click Start Drill to initialize the 45-second Light Reaction session.",
     "Fixate your eyes solidly on the dark circular target at the center of the canvas.",
     "Wait patiently across randomized delay intervals (300 ms to 2,500 ms) without anticipating.",
-    "Tap the screen, click your mouse, or press Spacebar the instant the target flashes bright white (+150 PTS × Multiplier).",
+    "Tap the screen or click your mouse the instant the target flashes bright white (+150 PTS × Multiplier).",
     "Review your final average reaction time, peak level, and accuracy grade at the end of the run."
   ],
   audience: "FPS and tactical esports players, martial artists, track and field sprinters, motorsports drivers, pilots, and individuals seeking to train visual motor reflex speed.",

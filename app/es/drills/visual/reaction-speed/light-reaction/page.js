@@ -5,26 +5,25 @@ import RelatedDrills from '@/components/drill/RelatedDrills';
 import { pickSources } from '@/lib/drillSources';
 
 export const metadata = {
-  title: "Test de reacción online | Tiempo de reacción visual",
-  description: "Test de reacción online gratis: mide tu tiempo de reacción visual en milisegundos ante una señal luminosa. Depende de la pantalla; no es diagnóstico médico.",
+  title: "Test de Reacción Online: Mide tus Reflejos en ms",
+  description: "Test de reacción gratis: haz clic cuando se encienda la luz y mide tu tiempo de reacción en milisegundos. Compáralo con el promedio; no es prueba médica.",
   keywords: [
     "test de reacción",
+    "test de reacción online",
     "test de reflejos",
     "test de reflejos online",
+    "tiempo de reacción",
+    "tiempo de reacción promedio",
     "test de tiempo de reacción",
-    "tiempo de reacción visual",
+    "test de velocidad de reacción",
     "test de reacción visual",
-    "tiempo de reacción en milisegundos",
-    "test de reflejos gratis",
-    "test de reacción online",
-    "reflejos visuales para gaming",
-    "reacción ante señal luminosa",
-    "tiempo de reacción simple SRT",
-    "entrenar velocidad de reacción"
+    "test de reflejos f1",
+    "test de reacción valorant",
+    "tiempo de reacción en milisegundos"
   ],
   openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
-    title: "Test de reacción online | Tiempo de reacción visual",
-    description: "Mide el intervalo entre una señal luminosa y tu clic en milisegundos, con varias rondas para comparar tu consistencia.",
+    title: "Test de Reacción Online: Mide tus Reflejos en ms",
+    description: "Test de reacción gratis: espera la luz, haz clic y mira tu tiempo de reacción en milisegundos, con media y constancia.",
     type: 'article',
     url: 'https://skilldrills.online/es/drills/visual/reaction-speed/light-reaction',
     siteName: 'SkillDrills',
@@ -32,8 +31,8 @@ export const metadata = {
   },
   twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: 'summary_large_image',
-    title: "Test de reacción online | Tiempo de reacción visual",
-    description: "Entrena tus reflejos visuales con un estímulo luminoso imprevisible y sigue tus tiempos dentro del navegador.",
+    title: "Test de Reacción Online: Mide tus Reflejos en ms",
+    description: "Test de reflejos online: reacciona a una luz imprevisible y compara tu tiempo de reacción entre sesiones.",
   },
   robots: { index: true, follow: true },
   alternates: {
@@ -127,7 +126,7 @@ const howToSchema = {
       "@type": "HowToStep",
       "position": 3,
       "name": "Haz Clic Inmediatamente al Encenderse la Luz",
-      "text": "Pulsa el ratón o la Barra Espaciadora en el preciso instante en que el blanco destelle en blanco intenso (+150 PTS × Multiplicador).",
+      "text": "Haz clic o toca la pantalla en el preciso instante en que el blanco destelle en blanco intenso (+150 PTS × Multiplicador).",
       "url": "https://skilldrills.online/es/drills/visual/reaction-speed/light-reaction#step-3"
     },
     {
@@ -143,62 +142,54 @@ const howToSchema = {
 const faqSchema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
-  "dateModified": "2026-09-05",
+  "dateModified": "2026-11-07",
   "mainEntity": [
     {
       "@type": "Question",
-      "name": "¿Qué es el test de reflejos de reacción a la luz?",
+      "name": "¿Qué es un buen resultado en el test de reacción?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "El test de reacción a la luz es una prueba psicofísica de alta exactitud para evaluar el tiempo de reacción simple (SRT). Mide los milisegundos exactos que transcurren desde que un círculo destella en blanco hasta que el usuario acciona el clic mecánico."
+        "text": "Un buen resultado es el que puedes repetir. En un test de reacción online, la pantalla, el navegador y el ratón suman retraso a tu tiempo real, así que compara tus medias en el mismo dispositivo en lugar de un número suelto. Los tiempos bajos con clics anticipados no cuentan: el test bloquea los clics antes de la luz."
       }
     },
     {
       "@type": "Question",
-      "name": "¿Cuál es el tiempo promedio de reacción visual simple en milisegundos?",
+      "name": "¿Cuál es el tiempo de reacción promedio de una persona?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "En personas jóvenes y sanas, la media oscila entre 200 ms y 250 ms. Marcas de entre 160 ms y 190 ms son poco habituales y dependen del dispositivo y de la anticipación."
+        "text": "No hay una cifra única: cambia con la edad, la atención, el tipo de estímulo y el equipo. Para una reacción simple a una luz, la revisión de Kosinski (2008) cita medias cercanas a 190 ms en estudiantes universitarios, y la reacción a sonidos suele ser algo más rápida. Pasada la juventud, el tiempo de reacción tiende a aumentar poco a poco."
       }
     },
     {
       "@type": "Question",
-      "name": "¿Qué etapas fisiológicas suceden entre percibir la luz y hacer clic?",
+      "name": "¿Cómo funciona este test de reflejos online?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "El proceso transcurre en 4 fases: (1) fototransducción retiniana (~20–40 ms), (2) transporte por el nervio óptico y tálamo a la corteza visual V1 (~30–50 ms), (3) decisión motora y procesamiento en cortezas parietal y motora (~50–80 ms), y (4) orden eferente por la vía corticoespinal hacia la musculatura del dedo (~30–50 ms)."
+        "text": "Fija la mirada en el círculo central y haz clic, o toca la pantalla, en cuanto se ilumine en blanco. La espera antes de la luz es aleatoria para que no puedas adivinar el momento. El navegador cronometra cada respuesta en milisegundos y al final ves tu tiempo medio de reacción, el combo y la nota de precisión."
       }
     },
     {
       "@type": "Question",
-      "name": "¿Qué es la Ley de Piéron y cómo influye el brillo en el tiempo de reacción?",
+      "name": "¿Sirve como test de reacción para Valorant o juegos FPS?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "La Ley de Piéron (1952) establece que el tiempo de reacción decrece de forma hiperbólica conforme la luminancia del estímulo supera el umbral del fondo. Un destello blanco puro sobre fondo oscuro produce el mínimo retraso de transducción sensorial."
+        "text": "Mide la reacción simple a una señal luminosa, que es solo una parte de un duelo. En Valorant, CS2 y otros FPS también cuentan la lectura de la partida, la colocación de la mira y la precisión del ratón. Úsalo como referencia y los ejercicios de puntería del sitio para el apuntado; no garantiza subir de rango."
       }
     },
     {
       "@type": "Question",
-      "name": "¿Por qué la reacción auditiva es más rápida que la reacción visual?",
+      "name": "¿Es igual que el test de reflejos de la F1?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "El estímulo auditivo se procesa entre 30 y 50 ms más rápido (140–160 ms frente a 200–250 ms). La activación mecánica en los cilios cocleares toma de 1 a 3 ms, mientras que la fototransducción química en la retina demanda de 20 a 40 ms."
+        "text": "No del todo. El reto de salida de la F1 enciende cinco luces rojas y reaccionas cuando se apagan. Aquí la señal es un único destello blanco tras una espera aleatoria. Ambos miden reacción simple ante un estímulo visual, pero las cifras no son comparables entre sí ni con los tiempos de salida de los pilotos."
       }
     },
     {
       "@type": "Question",
-      "name": "¿Se puede mejorar el tiempo de reacción visual simple con entrenamiento?",
+      "name": "¿Cómo influye la tasa de refresco del monitor en el resultado?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Sí. El entrenamiento estimula la neuroplasticidad, elevando la excitabilidad corticoespinal y agilizando la atención visual encubierta (Posner, 1980). Jugadores habituales presentan reflejos más rápidos con idéntica precisión motora (Dye et al., 2009)."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "¿Cómo influye la tasa de refresco del monitor en la puntuación de reflejos?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Una pantalla de 60 Hz añade hasta 16,7 ms de demora de visualización. Los monitores de 144 Hz y 240 Hz la reducen a 6,9 ms y 4,1 ms. Sumado a un ratón de 1.000 Hz de sondeo, se elimina prácticamente el retardo artificial."
+        "text": "Un monitor de 60 Hz muestra un fotograma nuevo cada 16,7 ms, así que la luz puede aparecer hasta ese tiempo después de la señal. A 144 Hz y 240 Hz el intervalo entre fotogramas baja a unos 6,9 ms y 4,2 ms. Un ratón con sondeo de 1.000 Hz envía el clic en intervalos de 1 ms."
       }
     },
     {
@@ -211,18 +202,26 @@ const faqSchema = {
     },
     {
       "@type": "Question",
-      "name": "¿De qué manera afectan el sueño, la cafeína y la fatiga a la latencia de respuesta?",
+      "name": "¿El sueño, el cansancio y la cafeína cambian el tiempo de reacción?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "El insomnio y el agotamiento mental ralentizan la respuesta entre 30 ms y 80 ms por reducción de la alerta prefrontal. La cafeína en dosis moderadas (100–200 mg) contrarresta la adenosina, recortando la latencia en 10 a 20 ms."
+        "text": "Sí. Dormir poco, la fatiga y las distracciones suelen hacer las respuestas más lentas e irregulares, y la cafeína puede tener un efecto pequeño y variable. Para comparar sesiones de forma justa, haz el test a una hora parecida, descansado y con la misma pantalla, el mismo ratón y el mismo navegador."
       }
     },
     {
       "@type": "Question",
-      "name": "¿Es este test de reacción a la luz gratuito y totalmente privado?",
+      "name": "¿Se pueden mejorar los reflejos con entrenamiento?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Sí. El test de SkillDrills es 100% gratuito y no requiere crear cuentas ni suscribirse. Todos los resultados y promedios se conservan exclusivamente en el almacenamiento local de tu navegador web."
+        "text": "La práctica suele hacer los tiempos más constantes y reducir los clics anticipados, porque aprendes a mantener la atención y la mano preparadas. Las mejoras en la reacción simple suelen ser pequeñas; el descanso y un equipo con menos latencia a menudo cambian más la cifra. La transferencia a juegos o deportes no está garantizada."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿El test de reacción es gratis? ¿Es una prueba médica?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Es gratis, funciona sin registro y los resultados se guardan en el almacenamiento local de tu navegador. No es una prueba médica ni una evaluación neurológica: es una herramienta de práctica. Si notas lentitud o falta de coordinación fuera de lo habitual, consulta con un profesional sanitario."
       }
     }
   ]
@@ -231,10 +230,10 @@ const faqSchema = {
 const lightReactionGuide = {
   heading: "Test de reflejos online: entiende tu tiempo de reacción visual",
   intro: [
-    "El tiempo de reacción simple (SRT) cuantifica el retardo psicomotor elemental que separa la presentación de un estímulo visual imprevisto de la activación motora inmediata. En el atletismo de pista, el automovilismo, las artes marciales y el esport competitivo, diferencias de escasos milisegundos determinan fintas defensivas, salidas fulgurantes y contragolpes letales.",
-    "La respuesta neuromuscular encadena cuatro fases fisiológicas cardinales: (1) fototransducción retiniana (~20–40 ms por isomerización de la rodopsina), (2) propagación aferente por el tracto óptico hacia el córtex visual primario V1 (~30–50 ms), (3) preparación perceptiva y motriz en áreas parietales y motoras suplementarias (~50–80 ms), y (4) descarga eferente por el haz corticoespinal para contraer los flexores digitales (~30–50 ms), configurando el rango biológico estándar de 200–250 ms (Kosinski, 2008; Jain et al., 2015; Shelton & Kumar, 2010).",
-    "Conforme a la Ley de Piéron (1952; Pins & Bonnet, 1996), la latencia decrece de modo hiperbólico al aumentar la luminancia sobre el fondo. Este drill explota ese mecanismo proyectando un destello blanco estroboscópico de gran intensidad sobre un lienzo oscuro absorbente, generando una despolarización ganglionar inmediata. Los estudios de atención encubierta (Posner, 1980) y gaming (Dye et al., 2009) demuestran que la fijación espacial disminuye la demora en la corteza motora.",
-    "Metodología y Estándares de Medición: Los estímulos y las pulsaciones se cronometran con la API de alta resolución performance.now(). Las tolerancias por tasa de refresco del display y el sondeo USB (Woods et al., 2015) se compensan para acercar los resultados a la realidad con tratamiento local."
+    "Este test de reacción online mide tu tiempo de reacción visual: espera a que el círculo central se ilumine en blanco y haz clic lo más rápido que puedas. La espera cambia en cada ronda, así que adivinar no sirve. Es el mismo tipo de test de reacción simple que se usa en estudios de cronometría mental, pero aquí el resultado también incluye el retraso de la pantalla, el navegador y el ratón.",
+    "La respuesta neuromuscular encadena cuatro fases fisiológicas cardinales: (1) fototransducción retiniana (~20–40 ms por isomerización de la rodopsina), (2) propagación aferente por el tracto óptico hacia el córtex visual primario V1 (~30–50 ms), (3) preparación perceptiva y motriz en áreas parietales y motoras suplementarias (~50–80 ms), y (4) descarga eferente por el haz corticoespinal para contraer los flexores digitales (~30–50 ms) (Kosinski, 2008; Jain et al., 2015; Shelton & Kumar, 2010).",
+    "Conforme a la Ley de Piéron (1952; Pins & Bonnet, 1996), la latencia decrece de modo hiperbólico al aumentar la luminancia sobre el fondo. Este drill explota ese mecanismo proyectando un destello blanco estroboscópico de gran intensidad sobre un lienzo oscuro absorbente, generando una despolarización ganglionar inmediata. Los estudios de atención encubierta (Posner, 1980) y gaming (Dye et al., 2009) sugieren que la atención dirigida puede acortar la preparación de la respuesta.",
+    "Metodología y Estándares de Medición: Los estímulos y las pulsaciones se cronometran con la API de alta resolución performance.now(). La cuantización de fotogramas de la pantalla y el sondeo USB (Woods et al., 2015) siguen sumando unos milisegundos al resultado, así que compara sesiones con el mismo equipo. Los datos se quedan en tu navegador."
   ],
   benchmarks: {
     title: "Referencia del tiempo de reacción visual en navegador",
@@ -253,7 +252,7 @@ const lightReactionGuide = {
     items: [
       {
         name: "Preactivación Foveal y Fijación Central",
-        desc: "Mantener la fóvea visual inmóvil en el centro elimina la pérdida de 20 a 30 ms debida a saltos atencionales periféricos (Posner, 1980).",
+        desc: "Mantener la fóvea visual inmóvil en el centro evita el retraso extra de los saltos atencionales periféricos (Posner, 1980).",
         tips: "Fija la mirada directamente en el círculo central oscuro; no dejes que los ojos recorran el marcador o los bordes de la pantalla."
       },
       {
@@ -268,7 +267,7 @@ const lightReactionGuide = {
       },
       {
         name: "Calibración y Pantallas de Alta Frecuencia",
-        desc: "Un monitor de 60 Hz introduce hasta 16,7 ms de retardo, mientras que a 240 Hz este lapso baja a 4,1 ms (Woods et al., 2015).",
+        desc: "Un monitor de 60 Hz introduce hasta 16,7 ms de retardo, mientras que a 240 Hz este lapso baja a unos 4,2 ms (Woods et al., 2015).",
         tips: "Utiliza monitores de 144 Hz o 240 Hz con ratones a 1.000 Hz de sondeo para medir reflejos puros sin barreras técnicas."
       }
     ]
@@ -277,7 +276,7 @@ const lightReactionGuide = {
     "Haz clic en Iniciar Drill para arrancar la sesión de 45 segundos de reacción a la luz.",
     "Fija la mirada en el círculo oscuro situado en el centro de la pantalla.",
     "Aguarda con paciencia a lo largo de los intervalos aleatorios (300 ms a 2.500 ms) sin apresurarte.",
-    "Pulsa la pantalla o la Barra Espaciadora en cuanto el objetivo brille en blanco intenso (+150 PTS × Multiplicador).",
+    "Haz clic o toca la pantalla en cuanto el objetivo brille en blanco intenso (+150 PTS × Multiplicador).",
     "Consulta al concluir tu latencia media, nivel máximo y categoría de precisión lograda."
   ],
   audience: "Competidores de esports tácticos, atletas de combate, velocistas de velocidad, pilotos y cualquier persona interesada en afinar la rapidez de sus reflejos ópticos.",
@@ -302,7 +301,7 @@ export default function StrobeLatencyPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(howToSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(videoGameSchema) }} />
-      <StrobeLatencyClient copy={{ title: "Test de reacción (reflejos visuales)", startCardTitle: "Test de reacción", startCardSubtitle: "Responde al destello en milisegundos" }} />
+      <StrobeLatencyClient copy={{ title: "Test de Reacción Online (Test de Reflejos)", startCardTitle: "Test de reacción", startCardSubtitle: "Haz clic cuando se encienda la luz y mira tu tiempo en ms" }} />
       <DrillGuide guide={lightReactionGuide} />
       <RelatedDrills />
     </>

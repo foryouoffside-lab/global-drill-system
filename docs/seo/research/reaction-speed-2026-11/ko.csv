@@ -1,0 +1,51 @@
+﻿phrase,cc,lang,exact,broad,status,trend_pct,competition,top5_hosts,intent,target_route,gsc_pos,gsc_impr
+반응속도 테스트,kr,ko-KR,10032,10542,"ok (2026-09-04 Bing exact, reused)",,MEDIUM,simritest.com;humanbenchmark.com;m.blog.naver.com;testmoa.com;aiselftest.com,tool,/ko/drills/visual/reaction-speed/light-reaction,8.8,918
+반응속도테스트,kr,ko-KR,642,642,"ok (2026-09-04 Bing exact, reused)",,UNKNOWN,,tool,/ko/drills/visual/reaction-speed/light-reaction,8.8,97
+순발력 테스트,kr,ko-KR,170,170,"ok (2026-09-04 Bing exact, reused)",,LOW,simritest.com;aiselftest.com;arealme.com;exysoft.net;humanbenchmark.com,tool,/ko/drills/reaction-speed/reflex-training-drill,11.3,15
+반속 테스트,kr,ko-KR,282,726,"ok (2026-09-04 Bing exact, reused)",,MEDIUM,simritest.com;humanbenchmark.com;testmoa.com;aiselftest.com;game-ability-test.com,tool,/ko/drills/visual/reaction-speed/light-reaction,7.0,184
+반속테스트,kr,ko-KR,316,425,"ok (2026-09-04 Bing exact, reused)",,UNKNOWN,,tool,/ko/drills/visual/reaction-speed/light-reaction,7.3,295
+동체시력 테스트,kr,ko-KR,56,56,"ok (2026-09-04 Bing exact, reused)",,LOW,vidkidz.tistory.com;blog.naver.com;arealme.com;contents.premium.naver.com;jiraksil.com,tool,/ko/drills/reaction-speed/visual-tracking-speed-test,4.2,650
+반응속도 키우기,kr,ko-KR,84,84,"ok (2026-09-04 Bing exact, reused)",,UNKNOWN,,tool,/ko/drills/visual/reaction-speed/light-reaction,34,2
+반응속도 훈련,kr,ko-KR,0,0,"ok (2026-09-04 Bing exact, reused)",,UNKNOWN,,tool/hub-browse,/ko/drills/reaction-speed,6.1,443
+반응속도 게임,kr,ko-KR,0,0,"ok (2026-09-04 Bing exact, reused)",,LOW,simritest.com;blog.naver.com;giwa-game.tistory.com;blog.naver.com;simplegame.tistory.com,tool,/ko/drills/reaction-speed/reaction-game,8.1,397
+반응속도 측정,kr,ko-KR,0,0,"ok (2026-09-04 Bing exact, reused)",,UNKNOWN,,tool,/ko/drills/visual/reaction-speed/light-reaction,8.0,43
+반응속도,kr,ko-KR,1241,14932,ok (2026-11-08 Bing exact),,UNKNOWN,,tool,/ko/drills/visual/reaction-speed/light-reaction,7.9,171
+반응속도 테스트 평균,kr,ko-KR,0,0,ok (2026-11-08 Bing exact),,UNKNOWN,,tool,/ko/drills/visual/reaction-speed/light-reaction,,
+반응속도 평균,kr,ko-KR,0,0,ok (2026-11-08 Bing exact),,UNKNOWN,,tool,/ko/drills/visual/reaction-speed/light-reaction,,
+반응속도 평균 ms,kr,ko-KR,0,0,ok (2026-11-08 Bing exact),,UNKNOWN,,tool,/ko/drills/visual/reaction-speed/light-reaction,,
+반속 테스트 평균,kr,ko-KR,0,0,ok (2026-11-08 Bing exact),,UNKNOWN,,tool,/ko/drills/visual/reaction-speed/light-reaction,,
+반응속도 테스트 발로란트,kr,ko-KR,0,0,ok (2026-11-08 Bing exact),,UNKNOWN,,tool,/ko/drills/visual/reaction-speed/light-reaction,6.9,25
+발로란트 반응속도 테스트,kr,ko-KR,22,22,ok (2026-11-08 Bing exact),,UNKNOWN,,tool,/ko/drills/visual/reaction-speed/light-reaction,5.7,48
+반응속도 테스트 모바일,kr,ko-KR,0,0,ok (2026-11-08 Bing exact),,UNKNOWN,,tool,/ko/drills/visual/reaction-speed/light-reaction,8.2,4
+반응속도 테스트 사이트,kr,ko-KR,0,0,ok (2026-11-08 Bing exact),,UNKNOWN,,tool,/ko/drills/visual/reaction-speed/light-reaction,,
+반응속도 훈련 사이트,kr,ko-KR,0,0,ok (2026-11-08 Bing exact),,UNKNOWN,,tool/hub-browse,/ko/drills/reaction-speed,7,9
+반응속도 훈련 게임,kr,ko-KR,0,0,ok (2026-11-08 Bing exact),,UNKNOWN,,tool/hub-browse,/ko/drills/reaction-speed,,
+반응속도 빨라지는법,kr,ko-KR,0,0,ok (2026-11-08 Bing exact),,UNKNOWN,,tool/hub-browse,/ko/drills/reaction-speed,,
+반응속도 올리는 게임,kr,ko-KR,0,0,ok (2026-11-08 Bing exact),,UNKNOWN,,tool,/ko/drills/reaction-speed/reaction-game,,
+반응속도 연습,kr,ko-KR,0,0,ok (2026-11-08 Bing exact),,UNKNOWN,,tool/hub-browse,/ko/drills/reaction-speed,8.2,441
+반사신경 테스트,kr,ko-KR,31,31,ok (2026-11-08 Bing exact),,MEDIUM,humanbenchmark.com;simritest.com;simritest.com;xn--yq5bk9r.com;testharo.com,tool/hub-browse,/ko/drills/reaction-speed,5.4,248
+반사신경 테스트 게임,kr,ko-KR,0,0,ok (2026-11-08 Bing exact),,UNKNOWN,,tool/hub-browse,/ko/drills/reaction-speed,,
+반사신경 훈련,kr,ko-KR,0,0,ok (2026-11-08 Bing exact),,UNKNOWN,,tool/hub-browse,/ko/drills/reaction-speed,7.1,32
+반사신경 게임,kr,ko-KR,0,0,ok (2026-11-08 Bing exact),,UNKNOWN,,tool,/ko/drills/reaction-speed/reflex-training-drill,10,1
+순발력 테스트 게임,kr,ko-KR,0,0,ok (2026-11-08 Bing exact),,UNKNOWN,,tool,/ko/drills/reaction-speed/reflex-training-drill,,
+동체시력,kr,ko-KR,0,0,ok (2026-11-08 Bing exact),,UNKNOWN,,tool,/ko/drills/reaction-speed/visual-tracking-speed-test,9.9,25
+동체시력 테스트 사이트,kr,ko-KR,0,0,ok (2026-11-08 Bing exact),,UNKNOWN,,tool,/ko/drills/reaction-speed/visual-tracking-speed-test,4.0,67
+동체시력 훈련,kr,ko-KR,0,0,ok (2026-11-08 Bing exact),,UNKNOWN,,tool,/ko/drills/reaction-speed/visual-tracking-speed-test,8.5,11
+동체시력 게임,kr,ko-KR,0,0,ok (2026-11-08 Bing exact),,UNKNOWN,,tool,/ko/drills/reaction-speed/visual-tracking-speed-test,2.6,14
+동체시력 훈련 사이트,kr,ko-KR,0,0,ok (2026-11-08 Bing exact),,UNKNOWN,,tool,/ko/drills/reaction-speed/visual-tracking-speed-test,5.7,66
+고노고 테스트,kr,ko-KR,0,0,ok (2026-11-08 Bing exact),,UNKNOWN,,tool,/ko/drills/visual/reaction-speed/go/no-go,,
+go no go 테스트,kr,ko-KR,0,0,ok (2026-11-08 Bing exact),,UNKNOWN,,tool,/ko/drills/visual/reaction-speed/go/no-go,,
+시간 맞추기 게임,kr,ko-KR,0,0,ok (2026-11-08 Bing exact),,UNKNOWN,,tool,/ko/drills/reaction-speed/reaction-time-test,,
+초 맞추기 게임,kr,ko-KR,0,0,ok (2026-11-08 Bing exact),,UNKNOWN,,tool,/ko/drills/reaction-speed/reaction-time-test,,
+10초 맞추기 게임,kr,ko-KR,0,0,ok (2026-11-08 Bing exact),,UNKNOWN,,tool,/ko/drills/reaction-speed/reaction-time-test,,
+스톱워치 게임,kr,ko-KR,0,0,ok (2026-11-08 Bing exact),,UNKNOWN,,tool,/ko/drills/reaction-speed/reaction-time-test,,
+타이밍 맞추기 게임,kr,ko-KR,0,0,ok (2026-11-08 Bing exact),,UNKNOWN,,tool,/ko/drills/reaction-speed/reaction-time-test,,
+fps 반응속도 테스트,kr,ko-KR,0,0,ok (2026-11-08 Bing exact),,UNKNOWN,,tool,/ko/drills/visual/reaction-speed/light-reaction,9,1
+롤 반응속도 테스트,kr,ko-KR,0,0,ok (2026-11-08 Bing exact),,UNKNOWN,,tool,/ko/drills/visual/reaction-speed/light-reaction,,
+에임 트래킹 연습,kr,ko-KR,0,0,ok (2026-11-08 Bing exact),,UNKNOWN,,tool,/ko/drills/reaction-speed/fps-tracking-trainer,7.9,8
+트래킹 에임 연습,kr,ko-KR,0,0,ok (2026-11-08 Bing exact),,UNKNOWN,,tool,/ko/drills/reaction-speed/fps-tracking-trainer,,
+발로란트 피킹 연습,kr,ko-KR,0,0,ok (2026-11-08 Bing exact),,UNKNOWN,,tool,/ko/drills/reaction-speed/barrier-sequence-pursuit,,
+나이별 평균 반응속도,kr,ko-KR,0,0,ok (2026-11-08 Bing exact),,UNKNOWN,,tool,/ko/drills/visual/reaction-speed/light-reaction,,
+반응속도 측정 사이트,kr,ko-KR,0,0,ok (2026-11-08 Bing exact),,UNKNOWN,,tool,/ko/drills/visual/reaction-speed/light-reaction,,
+안구 운동,kr,ko-KR,0,0,ok (2026-11-08 Bing exact),,UNKNOWN,,tool,/ko/drills/reaction-speed/saccadic-gallery,,
+시선 이동 훈련,kr,ko-KR,0,0,ok (2026-11-08 Bing exact),,UNKNOWN,,tool,/ko/drills/reaction-speed/saccadic-gallery,,

@@ -1,0 +1,76 @@
+bra	https://skilldrills.online/drills/reaction-speed	reflex drill	0	1	7.0
+bra	https://skilldrills.online/es/drills	exercicios online	0	1	49.0
+bra	https://skilldrills.online/pt/drills/fps	aim drills	0	1	4.0
+bra	https://skilldrills.online/pt/drills/fps/flick-shot-training	aim flick	0	5	8.2
+bra	https://skilldrills.online/pt/drills/fps/flick-shot-training	aim flick trainer	0	2	9.0
+bra	https://skilldrills.online/pt/drills/fps/flick-shot-training	aim trainer flick	0	1	9.0
+bra	https://skilldrills.online/pt/drills/fps/flick-shot-training	aplicativo	0	1	7.0
+bra	https://skilldrills.online/pt/drills/fps/flick-shot-training	flick aim	0	1	10.0
+bra	https://skilldrills.online/pt/drills/fps/flick-shot-training	flick fps	0	1	8.0
+bra	https://skilldrills.online/pt/drills/fps/flick-shot-training	flick training	0	2	8.0
+bra	https://skilldrills.online/pt/drills/fps/instant-response	mira teste	0	1	59.0
+bra	https://skilldrills.online/pt/drills/fps/instant-response	tempo de reação teste	0	1	11.0
+bra	https://skilldrills.online/pt/drills/fps/instant-response	teste de reflexo para fps	0	10	9.0
+bra	https://skilldrills.online/pt/drills/reaction-speed	treino de reflexo	0	1	9.0
+bra	https://skilldrills.online/pt/drills/reaction-speed/reaction-time-test	tempo de reação	0	1	52.0
+bra	https://skilldrills.online/pt/drills/reaction-speed/reaction-time-test	tempo de reação teste	0	1	17.0
+bra	https://skilldrills.online/pt/drills/reaction-speed/reaction-time-test	teste de ms monitor	0	1	2.0
+bra	https://skilldrills.online/pt/drills/reaction-speed/reaction-time-test	teste de reacao	0	1	54.0
+bra	https://skilldrills.online/pt/drills/reaction-speed/reaction-time-test	teste de reação	0	3	21.0
+bra	https://skilldrills.online/pt/drills/reaction-speed/reaction-time-test	teste de reflexo	0	1	30.0
+bra	https://skilldrills.online/pt/drills/reaction-speed/reaction-time-test	teste de velocidade de reação	0	1	82.0
+bra	https://skilldrills.online/pt/drills/reaction-speed/reaction-time-test	teste tempo de reação	0	1	18.0
+bra	https://skilldrills.online/pt/drills/reaction-speed/reaction-time-test	treino de reflexo	0	1	59.0
+bra	https://skilldrills.online/pt/drills/visual-tracking/spatial-shift-pursuit	shift pursuit	0	1	8.0
+bra	https://skilldrills.online/pt/drills/visual/depth-perception/distance-judgment	estereopsia teste	0	1	26.0
+bra	https://skilldrills.online/pt/drills/visual/depth-perception/distance-judgment	teste de estereopsia	0	1	7.0
+bra	https://skilldrills.online/pt/drills/visual/depth-perception/distance-judgment	teste de estereopsia online	0	1	1.0
+prt	https://skilldrills.online/pt/drills/fps	skilldrills	1	1	1.0
+prt	https://skilldrills.online/pt/drills/visual/depth-perception/distance-judgment	teste de estereopsia online	1	2	3.0
+prt	https://skilldrills.online/pt/drills/fps/180-degree-awareness	skilldrills	0	1	6.0
+prt	https://skilldrills.online/pt/drills/fps/instant-response	teste reflexo	0	2	9.0
+prt	https://skilldrills.online/pt/drills/visual/depth-perception/distance-judgment	teste de visão online	0	2	9.0
+prt	https://skilldrills.online/pt/drills/visual/depth-perception/distance-judgment	teste visão online	0	13	8.2
+esp	https://skilldrills.online/drills/reaction-speed	reflex training	1	1	4.0
+esp	https://skilldrills.online/es/drills/visual-tracking/strobe-prediction-pursuit	entrenamiento estroboscópico	1	6	2.5
+esp	https://skilldrills.online/drills/reaction-speed	reflex practice	0	1	10.0
+esp	https://skilldrills.online/drills/reaction-speed	reflexes training	0	1	3.0
+esp	https://skilldrills.online/es/drills	ejercicios online	0	1	6.0
+esp	https://skilldrills.online/es/drills	skill drills online	0	1	1.0
+esp	https://skilldrills.online/es/drills/cognitive	ejercicios cognitivos online	0	1	44.0
+esp	https://skilldrills.online/es/drills/memory	ejercicios de memoria online	0	2	29.0
+esp	https://skilldrills.online/es/drills/memory	ejercicios memoria online	0	1	23.0
+esp	https://skilldrills.online/es/drills/memory	test de memoria	0	2	66.0
+esp	https://skilldrills.online/es/drills/memory	test de memoria a corto plazo	0	1	28.0
+esp	https://skilldrills.online/es/drills/memory	test memoria a corto plazo	0	2	25.0
+esp	https://skilldrills.online/es/drills/motor	test de cliqueo	0	1	1.0
+esp	https://skilldrills.online/es/drills/motor	test de puntería	0	1	4.0
+esp	https://skilldrills.online/es/drills/visual/depth-perception/distance-judgment	percepción profunda test	0	2	6.0
+mex	https://skilldrills.online/es/drills/memory	memory drill	0	1	6.0
+mex	https://skilldrills.online/es/drills/visual-tracking/strobe-prediction-pursuit	entrenamiento estroboscópico	0	4	5.0
+mex	https://skilldrills.online/es/drills/visual/depth-perception/distance-judgment	percepción de profundidad test	0	1	8.0
+mex	https://skilldrills.online/es/drills/visual/depth-perception/distance-judgment	test de profundidad visual online	0	1	2.0
+arg	https://skilldrills.online/drills/reaction-speed/saccadic-gallery	saccadic eye movement training	0	1	9.0
+arg	https://skilldrills.online/es/drills	skilldrills online	0	2	1.0
+arg	https://skilldrills.online/es/drills/cognitive	skilldrills online	0	2	1.0
+arg	https://skilldrills.online/es/drills/cognitive/processing-speed/symbol-matching	sdmt test online	0	2	5.0
+arg	https://skilldrills.online/es/drills/cognitive/processing-speed/symbol-matching	test digito simbolo	0	1	9.0
+arg	https://skilldrills.online/es/drills/visual	skilldrills online	0	2	1.0
+arg	https://skilldrills.online/es/drills/visual-tracking/strobe-prediction-pursuit	entrenamiento estroboscópico	0	1	8.0
+arg	https://skilldrills.online/es/drills/visual/depth-perception/distance-judgment	percepción de profundidad test	0	3	7.7
+arg	https://skilldrills.online/ja/drills/reaction-speed	反応速度テスト	0	1	8.0
+arg	https://skilldrills.online/ja/drills/reaction-speed/reaction-time-test	反応速度テスト	0	1	1.0
+col	https://skilldrills.online/es/drills/motor/hand-eye-coordination/aim-trainer	mejorar aim online	1	1	8.0
+col	https://skilldrills.online/es/drills/memory	memory drill	0	1	8.0
+col	https://skilldrills.online/es/drills/memory	test de memoria online	0	1	17.0
+col	https://skilldrills.online/es/drills/motor	prueba de cliqueo	0	1	1.0
+col	https://skilldrills.online/es/drills/visual-tracking/strobe-prediction-pursuit	entrenamiento estroboscópico	0	2	3.5
+col	https://skilldrills.online/es/drills/visual-tracking/strobe-prediction-pursuit	skilldrills online	0	1	1.0
+chl	https://skilldrills.online/drills/reaction-speed	reflex training	1	2	7.0
+chl	https://skilldrills.online/es/drills/memory	memory drill	0	1	1.0
+chl	https://skilldrills.online/es/drills/motor/hand-eye-coordination/aim-trainer	aim training	0	1	9.0
+chl	https://skilldrills.online/es/drills/visual-tracking/strobe-prediction-pursuit	entrenamiento estroboscópico	0	3	9.7
+per	https://skilldrills.online/drills/reaction-speed	reflex training	0	1	8.0
+per	https://skilldrills.online/es/drills/fps/flick-shot-training	mejorar aim valorant online	0	1	7.0
+per	https://skilldrills.online/es/drills/visual-tracking/strobe-prediction-pursuit	entrenamiento estroboscópico	0	2	3.5
+per	https://skilldrills.online/ko/drills/reaction-speed/visual-tracking-speed-test	동체시력 테스트	0	1	7.0

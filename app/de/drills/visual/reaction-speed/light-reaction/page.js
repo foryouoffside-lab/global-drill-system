@@ -5,25 +5,22 @@ import RelatedDrills from '@/components/drill/RelatedDrills';
 import { pickSources } from '@/lib/drillSources';
 
 export const metadata = {
-  title: "Reaktionstest online | Visuelle Reaktionszeit | SkillDrills",
-  description: "Kostenloser Reaktionstest online: Miss deine visuelle Reaktionszeit in Millisekunden bei einem Lichtsignal. Browserwert, kein medizinischer Test.",
+  title: "Reaktionstest online: Reaktionszeit in ms messen",
+  description: "Kostenloser Reaktionstest: Klicke, sobald das Licht aufblitzt, und miss deine Reaktionszeit in Millisekunden. Zum Üben, kein MPU- oder medizinischer Test.",
   keywords: [
     "Reaktionstest",
-    "Reaktionszeit Test",
     "Reaktionstest online",
-    "visuelle Reaktionszeit",
-    "Reaktionszeit messen",
-    "Reaktionszeit in Millisekunden",
     "Reaktionstest kostenlos",
-    "visueller Reaktionstest",
-    "einfache Reaktionszeit",
-    "Lichtsignal Reaktion",
-    "Reflexe testen",
-    "Reaktionsgeschwindigkeit trainieren"
+    "Reaktionstest üben",
+    "Reaktionszeit Test",
+    "Reaktionszeit messen",
+    "reaction time test",
+    "reaction test",
+    "Reaktionszeit in Millisekunden"
   ],
   openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
-    title: "Reaktionstest online | Visuelle Reaktionszeit | SkillDrills",
-    description: "Miss deine einfache visuelle Reaktionszeit in Millisekunden bei einem unvorhersehbaren Lichtsignal. Online-Training mit transparenter Hardware-Grenze.",
+    title: "Reaktionstest online: Reaktionszeit in ms messen",
+    description: "Kostenloser Reaktionstest im Browser: Warte auf das Lichtsignal, klicke sofort und vergleiche deine Reaktionszeit in Millisekunden.",
     type: 'article',
     url: 'https://skilldrills.online/de/drills/visual/reaction-speed/light-reaction',
     siteName: 'SkillDrills',
@@ -31,8 +28,8 @@ export const metadata = {
   },
   twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: 'summary_large_image',
-    title: "Reaktionstest online | Visuelle Reaktionszeit | SkillDrills",
-    description: "Reagiere auf ein Lichtsignal und vergleiche deine visuelle Reaktionszeit in Millisekunden über mehrere Versuche.",
+    title: "Reaktionstest online: Reaktionszeit in ms messen",
+    description: "Reaktionstest kostenlos: Reagiere auf ein Lichtsignal und vergleiche deine Reaktionszeit in Millisekunden über mehrere Versuche.",
   },
   robots: { index: true, follow: true },
   alternates: {
@@ -126,7 +123,7 @@ const howToSchema = {
       "@type": "HowToStep",
       "position": 3,
       "name": "Blitzschnell beim ersten Photonenimpuls klicken",
-      "text": "Klicke oder drücke die Leertaste in dem Moment, in dem der Kreis schneeweiß aufblitzt (+150 Pkt. × Combo × Level).",
+      "text": "Klicke oder tippe in dem Moment, in dem der Kreis schneeweiß aufblitzt (+150 Pkt. × Combo × Level).",
       "url": "https://skilldrills.online/de/drills/visual/reaction-speed/light-reaction#step-3"
     },
     {
@@ -142,95 +139,55 @@ const howToSchema = {
 const faqSchema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
-  "dateModified": "2026-09-05",
+  "dateModified": "2026-11-08",
   "mainEntity": [
     {
       "@type": "Question",
-      "name": "Was ist der Lichtreaktionstest und was misst er?",
+      "name": "Wie funktioniert der Reaktionstest?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Der Lichtreaktionstest ist ein hochpräzises Verfahren zur Erfassung der einfachen visuellen Reaktionszeit (Simple Reaction Time, SRT). Er misst die exakte Latenzzeit in Millisekunden vom Aufblitzen eines optischen Reizes bis zum Auslösen des motorischen Tastendrucks."
+        "text": "Klicke auf Start und schau auf den Kreis in der Mitte. Nach einer zufälligen Wartezeit blitzt er kurz weiß auf; klicke oder tippe dann sofort. Gemessen wird die Zeit vom Lichtsignal bis zu deinem Klick in Millisekunden. Wer vor dem Blitz klickt, bekommt eine kurze Sperre, damit Raten keinen Vorteil bringt."
       }
     },
     {
       "@type": "Question",
-      "name": "Was gilt als normale visuelle Reaktionszeit in Millisekunden?",
+      "name": "Was ist eine gute Reaktionszeit?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Bei gesunden jungen Erwachsenen liegt die einfache visuelle Reaktionszeit im Mittel zwischen 200 ms und 250 ms. Trainierte E-Sportler, Sprinter und Kampfsportler erreichen regelmäßig Latenzen von 160 ms bis 190 ms."
+        "text": "Für die einfache Reaktion auf ein Lichtsignal nennt die Übersicht von Kosinski (2008) Mittelwerte um 190 ms bei Studierenden. Online liegt dein Wert meist höher, weil Bildschirm, Browser und Maus Verzögerung hinzufügen. Vergleiche deshalb den Durchschnitt mehrerer Versuche auf demselben Gerät statt eines einzelnen Bestwerts mit fremden Zahlen."
       }
     },
     {
       "@type": "Question",
-      "name": "Welche physiologischen Schritte laufen zwischen Lichtreiz und Klick ab?",
+      "name": "Ist das ein Reaktionstest für MPU oder Führerschein?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Die Reaktionskette umfasst vier Phasen: (1) retinale Fototransduktion (~20–40 ms), (2) afferente Übertragung über Sehnerv und Thalamus zum primären visuellen Kortex V1 (~30–50 ms), (3) motorische Handlungsinitiierung im Kortex (~50–80 ms), und (4) efferente Übertragung via Pyramidenbahn zur Fingermuskulatur (~30–50 ms)."
+        "text": "Nein. Bei der MPU und bei Eignungsuntersuchungen für Fahrerlaubnisse werden standardisierte, computergestützte Verfahren unter Aufsicht eingesetzt. Dieser kostenlose Online-Test misst nur eine einfache Reaktion auf ein Lichtsignal im Browser. Du kannst damit die Aufgabe kennenlernen und üben, aber er ersetzt keine offizielle Testung und sagt kein Ergebnis voraus."
       }
     },
     {
       "@type": "Question",
-      "name": "Was besagt das Piéron-Gesetz über Lichtstärke und Reaktionszeit?",
+      "name": "Kann man die Reaktionszeit trainieren?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Das Piéron-Gesetz (Piéron, 1952; Pins & Bonnet, 1996) besagt, dass die Reaktionszeit hyperbolisch abnimmt, je stärker die Leuchtdichte des Reizes den Hintergrundkontrast übersteigt. Ein harter weißer Blitz erzeugt maximale retinale Entladungsfrequenz."
+        "text": "Teilweise. Mit Übung werden viele Menschen bei derselben Aufgabe schneller und gleichmäßiger, vor allem weil Aufmerksamkeit und Fingerhaltung ruhiger werden. Ausgeschlafen und ohne Ablenkung zu testen hilft am meisten. Action-Videospieler reagieren in Studien bei manchen Aufgaben schneller (Dye et al., 2009); ein Transfer auf Sport oder Straßenverkehr ist damit nicht belegt."
       }
     },
     {
       "@type": "Question",
-      "name": "Warum ist die akustische Reaktion schneller als die visuelle?",
+      "name": "Warum ist mein Ergebnis am Handy oder Laptop langsamer?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Akustische Reaktionszeiten sind 30 bis 50 ms schneller (140–160 ms gegenüber 200–250 ms). Die mechanische Transduktion in der Cochlea dauert nur 1–3 ms, während die fotochemische Umwandlung in der Netzhaut 20–40 ms beansprucht."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Kann die einfache visuelle Reaktionszeit trainiert werden?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Ja. Gezieltes Reaktionstraining steigert die neuronale Erregbarkeit der Pyramidenbahn und optimiert die verdeckte räumliche Aufmerksamkeit (Posner, 1980). E-Sportler reagieren signifikant schneller als Nicht-Spieler (Dye et al., 2009)."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Welchen Einfluss hat die Monitor-Bildwiederholrate auf das Ergebnis?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Ein 60-Hz-Monitor verursacht bis zu 16,7 ms Bildverzögerung, während ein 240-Hz-Bildschirm diesen Puffer auf 4,1 ms reduziert. In Kombination mit einer 1000-Hz-Gaming-Maus (~1 ms Polling) wird die technische Latenz minimiert."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Was löst die Anti-Spam-Abkühlphase in diesem Drill aus?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Wer vor dem Blitz klickt oder mehr als 3 Mal pro Sekunde ungezielt tippt, aktiviert die automatische Sperre für 1,2 Sekunden. Dies verhindert spekulatives Raten und erzwingt authentische Reflexe."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Wie beeinflussen Schlaf, Koffein und Müdigkeit die Reaktionszeit?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Schlafmangel und mentale Ermüdung verschlechtern die Latenz um 30 ms bis 80 ms. Moderater Koffeinkonsum (100–200 mg) blockiert Adenosin-Rezeptoren und kann die einfache visuelle Reaktionszeit temporär um 10 bis 20 ms beschleunigen."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Ist dieser Lichtreaktionstest kostenlos und datenschutzsicher?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Ja. Der Test auf SkillDrills ist zu 100 % kostenlos, ohne Benutzerkonto oder Bezahlung nutzbar. Alle gemessenen Reaktionszeiten und Bestwerte verbleiben rein lokal in deinem Browser."
+        "text": "Der Wert enthält auch die Technik: Ein 60-Hz-Bildschirm zeigt nur alle 16,7 ms ein neues Bild, dazu kommen Browser, Touchscreen- oder Mauslatenz. Am Smartphone ist diese Verzögerung oft größer. Für vergleichbare Ergebnisse nutze immer dasselbe Gerät, denselben Browser und dieselbe Eingabe, am besten eine Maus am Desktop."
       }
     }
   ]
 };
 
 const lightReactionGuide = {
-  heading: "Reaktionstest online: Visuelle Reaktionszeit in Millisekunden verstehen",
+  heading: "Reaktionstest online: So misst du deine Reaktionszeit",
   intro: [
-    "Die einfache visuelle Reaktionszeit (Simple Reaction Time, SRT) definiert das elementare psychomotorische Zeitintervall zwischen dem plötzlichen Auftreten eines einzelnen optischen Reizes und der Auslösung einer unkonditionierten motorischen Bewegung. In der Leichtathletik, im Motorsport, in Kampfsportarten und im professionellen E-Sport bestimmen Millisekunden über Ausweichen, Startblockablösung und erfolgreichen Konter.",
+    "Dieser Reaktionstest misst, wie schnell du auf ein Lichtsignal reagierst: Der Kreis in der Mitte blitzt nach einer zufälligen Wartezeit weiß auf, und du klickst oder tippst so schnell wie möglich. Das Ergebnis ist deine einfache visuelle Reaktionszeit in Millisekunden, gemessen im Browser. Mehrere Versuche hintereinander zeigen deinen Durchschnitt und wie gleichmäßig du reagierst. Der Test ist kostenlos, braucht keine Anmeldung und ist ein Übungswerkzeug, kein MPU- oder medizinischer Test.",
     "Die neuromuskuläre Kaskade umfasst vier distinkte physiologische Phasen: (1) retinale Fototransduktion (~20–40 ms für Rhodopsin-Isomerisierung), (2) afferente Weiterleitung über die Sehbahn zum primären visuellen Kortex V1 (~30–50 ms), (3) kortikale Wahrnehmungs- und Bewegungsvorbereitung im motorischen Kortex (~50–80 ms), und (4) efferente Weiterleitung über die Pyramidenbahn zur Fingermuskulatur (~30–50 ms), was den typischen gesunden Standardbereich von 200–250 ms begründet (Kosinski, 2008; Jain et al., 2015; Shelton & Kumar, 2010).",
     "Gemäß dem Piéron-Gesetz (Piéron, 1952; Pins & Bonnet, 1996) verkürzt sich die Reaktionszeit als hyperbolische Funktion der Stimulus-Leuchtdichte über den Hintergrundkontrast. Dieser Drill maximiert den Effekt durch einen schneeweißen Strobe-Blitz vor tiefschwarzem Hintergrund, um die maximale Ganglienzellen-Depolarisation zu erzeugen. Erkenntnisse zur räumlichen Aufmerksamkeit (Posner, 1980) und E-Sport-Reaktionsstudien (Dye et al., 2009) belegen die Trainierbarkeit dieses Systems.",
     "Messmethodik & Hardware-Standardisierung: Alle Reize und Tastenfreigaben werden hochpräzise mit der browserinternen performance.now() API erfasst. Hardware-Latenzen durch Monitor-Quantisierung und USB-Abtastung werden nach Woods et al. (2015) berücksichtigt, während alle Daten ausschließlich lokal auf dem Endgerät gespeichert werden."
@@ -301,7 +258,7 @@ export default function StrobeLatencyPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(howToSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(videoGameSchema) }} />
-      <StrobeLatencyClient copy={{ title: "Reaktionstest: Visuelle Reaktionszeit", startCardTitle: "Reaktionstest", startCardSubtitle: "Auf ein Lichtsignal reagieren" }} />
+      <StrobeLatencyClient copy={{ title: "Reaktionstest: Reaktionszeit in Millisekunden", startCardTitle: "Reaktionstest", startCardSubtitle: "Klicke, sobald das Licht aufblitzt" }} />
       <DrillGuide guide={lightReactionGuide} />
       <RelatedDrills />
     </>

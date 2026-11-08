@@ -354,7 +354,7 @@ const reactionGuide = {
   "related": [
     {
       "href": "/es/drills/visual/reaction-speed/light-reaction",
-      "label": "Test de reacción (señal luminosa)"
+      "label": "Test de reacción online (tiempo de reacción)"
     },
     {
       "href": "/es/drills/reaction-speed",

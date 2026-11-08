@@ -1,0 +1,104 @@
+phrase,cc,lang,exact,broad,status,trend_pct,competition,top5_hosts,intent,target_route,gsc_pos,gsc_impr
+反射神経テスト,jp,ja-JP,3487,3682,"ok (Bing exact, 2026-10)",,LOW (thin tools),reaction.html.xdomain.jp;tps.game-tansaku.net;mmcafe.com;tps.game-tansaku.net;gamewith.jp,test (head),/ja/drills/visual/reaction-speed/light-reaction,13.0,201
+反応速度テスト,jp,ja-JP,2091,2091,"ok (Bing exact, 2026-10)",,LOW (thin tools),reaction.html.xdomain.jp;tps.game-tansaku.net;cps-check.com;webtools-oasis.com;cps-tests.com,test (head),/ja/drills/visual/reaction-speed/light-reaction,12.4,54
+ビジョントレーニング,jp,ja-JP,1527,2559,"ok (Bing exact, 2026-11-08)",,UNKNOWN,,vision training (kids/therapy-heavy),/ja/drills/reaction-speed/saccadic-gallery (secondary only),,
+反射神経ゲーム,jp,ja-JP,1054,1088,"ok (Bing exact, 2026-10)",,LOW-MED (thin tools + arealme),arealme.com;reflexes.weclo.net;reaction.html.xdomain.jp;webtools-oasis.com;tps.game-tansaku.net,game,/ja/drills/reaction-speed/reflex-training-drill,,
+反射神経,jp,ja-JP,518,734,"ok (Bing exact, 2026-10)",,UNKNOWN,,,,13.9,33
+動体視力トレーニング,jp,ja-JP,353,353,"ok (Bing exact, 2026-11-08)",,MED (clinics/gyms + small games),dt1.shindans.com;opt.senrido.co.jp;sportsgym-fc.com;activel.jp;game.weclo.net,training,/ja/drills/reaction-speed/visual-tracking-speed-test,,
+動体視力テスト,jp,ja-JP,254,254,"ok (Bing exact, 2026-10)",,LOW-MED (small games + blogs),game.weclo.net;safetyaction.tokyo;curazy.com;kineticvsn-lab.com;sports-crowd.net,test,/ja/drills/reaction-speed/visual-tracking-speed-test,8.1,7
+反応速度測定,jp,ja-JP,203,203,"ok (Bing exact, 2026-09-04)",,LOW (thin tools),reaction.html.xdomain.jp;tps.game-tansaku.net;webtools-oasis.com;cpstest.click;cps-check.com,test,/ja/drills/visual/reaction-speed/light-reaction,13.1,14
+反射神経測定,jp,ja-JP,181,181,"ok (Bing exact, 2026-09-04)",,UNKNOWN,,test,/ja/drills/visual/reaction-speed/light-reaction,14.5,4
+反射神経テスト fps,jp,ja-JP,172,172,"ok (Bing exact, 2026-10)",,UNKNOWN,,"test, gamer",/ja/drills/visual/reaction-speed/light-reaction,18.3,3
+反射神経 鍛える,jp,ja-JP,165,165,"ok (Bing exact, 2026-10)",,"MED (content/blogs: wikihow, cocoiro)",wikihow.jp;cocoiro.me;motion-base.jp;vanillaice-fps.com;kinnikutetugaku.com,train reflexes (category),/ja/drills/reaction-speed,9.8,41
+動体視力,jp,ja-JP,152,152,"ok (Bing exact, 2026-10)",,MED (blogs + wikipedia),kineticvsn-lab.com;output-now.com;ishamachi.com;game.weclo.net;ja.wikipedia.org,concept/test,/ja/drills/reaction-speed/visual-tracking-speed-test,,
+目の体操,jp,ja-JP,25,25,"ok (Bing exact, 2026-09-04)",,UNKNOWN,,eye exercise,/ja/drills/reaction-speed/saccadic-gallery,,
+眼球運動,jp,ja-JP,23,23,"ok (Bing exact, 2026-09-04)",,UNKNOWN,,concept,/ja/drills/reaction-speed/saccadic-gallery,,
+タイミングゲーム,jp,ja-JP,21,21,"ok (Bing exact, 2026-11-08)",,UNKNOWN (Bing SERP off-topic),,timing game,/ja/drills/reaction-speed/reaction-time-test,,
+眼球運動 トレーニング,jp,ja-JP,21,21,"ok (Bing exact, 2026-11-08)",,UNKNOWN,,eye movement training,/ja/drills/reaction-speed/saccadic-gallery,,
+反応速度トレーニング,jp,ja-JP,0,0,"ok (Bing exact, 2026-09-04)",,UNKNOWN,,reaction training,/ja/drills/reaction-speed,6.7,11
+human benchmark 日本語,jp,ja-JP,0,0,"ok (Bing exact, 2026-09-04)",,UNKNOWN,,,,,
+無料 反応速度テスト,jp,ja-JP,0,0,"ok (Bing exact, 2026-09-04)",,UNKNOWN,,,,,
+反応速度 テスト,jp,ja-JP,0,0,"ok (Bing exact, 2026-09-04)",,UNKNOWN,,,,13.5,11
+反射神経 トレーニング,jp,ja-JP,0,0,"ok (Bing exact, 2026-09-04)",,UNKNOWN,,,,24.5,2
+反応速度 練習,jp,ja-JP,0,0,"ok (Bing exact, 2026-09-04)",,UNKNOWN,,,,,
+反射神経 練習,jp,ja-JP,0,0,"ok (Bing exact, 2026-09-04)",,UNKNOWN,,,,,
+サッケード,jp,ja-JP,0,0,"ok (Bing exact, 2026-09-04)",,UNKNOWN,,,,,
+跳躍性眼球運動,jp,ja-JP,0,0,"ok (Bing exact, 2026-09-04)",,UNKNOWN,,,,,
+サッケード トレーニング,jp,ja-JP,0,0,"ok (Bing exact, 2026-09-04)",,UNKNOWN,,,,,
+動体視力測定,jp,ja-JP,0,0,"ok (Bing exact, 2026-09-04)",,UNKNOWN,,,,,
+動体視力 トレーニング,jp,ja-JP,0,0,"ok (Bing exact, 2026-10)",,UNKNOWN,,training,/ja/drills/reaction-speed/visual-tracking-speed-test,,
+動体視力 鍛える,jp,ja-JP,0,0,"ok (Bing exact, 2026-09-04)",,UNKNOWN,,,,,
+反応シミュレーター,jp,ja-JP,0,0,"ok (Bing exact, 2026-09-04)",,UNKNOWN,,,,,
+反射神経シミュレーター,jp,ja-JP,0,0,"ok (Bing exact, 2026-09-04)",,UNKNOWN,,,,,
+反射ゲーム,jp,ja-JP,0,0,"ok (Bing exact, 2026-09-04)",,UNKNOWN,,,,,
+反応速度 ゲーム,jp,ja-JP,0,0,"ok (Bing exact, 2026-09-04)",,UNKNOWN,,game,/ja/drills/reaction-speed/reaction-game,,
+fps トラッキング,jp,ja-JP,0,0,"ok (Bing exact, 2026-09-04)",,UNKNOWN,,,,,
+エイム トラッキング,jp,ja-JP,0,0,"ok (Bing exact, 2026-09-04)",,UNKNOWN,,,,,
+トラッキング 練習,jp,ja-JP,0,0,"ok (Bing exact, 2026-09-04)",,UNKNOWN,,,,,
+apex トラッキング,jp,ja-JP,0,0,"ok (Bing exact, 2026-09-04)",,UNKNOWN,,,,,
+ピーク 練習,jp,ja-JP,0,0,"ok (Bing exact, 2026-09-04)",,UNKNOWN,,,,,
+飛び出し 練習,jp,ja-JP,0,0,"ok (Bing exact, 2026-09-04)",,UNKNOWN,,,,,
+ジグルピーク,jp,ja-JP,0,0,"ok (Bing exact, 2026-09-04)",,UNKNOWN,,,,,
+valorant ピーク 練習,jp,ja-JP,0,0,"ok (Bing exact, 2026-09-04)",,UNKNOWN,,,,,
+クリアリング 練習,jp,ja-JP,0,0,"ok (Bing exact, 2026-09-04)",,UNKNOWN,,,,,
+コーナー クリアリング,jp,ja-JP,0,0,"ok (Bing exact, 2026-09-04)",,UNKNOWN,,,,,
+角待ち 対策,jp,ja-JP,0,0,"ok (Bing exact, 2026-09-04)",,UNKNOWN,,,,,
+プリエイム 練習,jp,ja-JP,0,0,"ok (Bing exact, 2026-09-04)",,UNKNOWN,,,,,
+動体視力 ゲーム,jp,ja-JP,0,0,"ok (Bing exact, 2026-10)",,UNKNOWN,,,,,
+動体視力 テスト fps,jp,ja-JP,0,0,"ok (Bing exact, 2026-10)",,UNKNOWN,,,,,
+周辺視野 トレーニング,jp,ja-JP,0,0,"ok (Bing exact, 2026-10)",,UNKNOWN,,,,,
+定規 キャッチ 反射神経,jp,ja-JP,0,0,"ok (Bing exact, 2026-10)",,UNKNOWN,,,,,
+キーボード 反応速度,jp,ja-JP,0,0,"ok (Bing exact, 2026-10)",,UNKNOWN,,,,,
+視野 テスト,jp,ja-JP,0,0,"ok (Bing exact, 2026-10)",,UNKNOWN,,,,,
+反射神経 測定,jp,ja-JP,0,0,"ok (Bing exact, 2026-10)",,UNKNOWN,,,,,
+反射神経 鍛える ゲーム,jp,ja-JP,0,0,"ok (Bing exact, 2026-11-08)",,UNKNOWN,,game to train,/ja/drills/reaction-speed/reaction-game,,
+反射神経 鍛える サイト,jp,ja-JP,0,0,"ok (Bing exact, 2026-11-08)",,UNKNOWN (Bing SERP returned off-topic parking results),,site to train reflexes,/ja/drills/reaction-speed,6.4,85
+反射神経ゲームサイト,jp,ja-JP,0,0,"ok (Bing exact, 2026-11-08)",,UNKNOWN,,game site,/ja/drills/reaction-speed/reflex-training-drill,7.4,57
+反射神経 平均,jp,ja-JP,0,0,"ok (Bing exact, 2026-11-08)",,UNKNOWN (Bing SERP off-topic),,norms,/ja/drills/visual/reaction-speed/light-reaction,,
+反応速度 平均,jp,ja-JP,0,0,"ok (Bing exact, 2026-11-08)",,UNKNOWN,,norms,/ja/drills/visual/reaction-speed/light-reaction,,
+反射神経テスト 平均,jp,ja-JP,0,0,"ok (Bing exact, 2026-11-08)",,UNKNOWN,,,,69.0,1
+反応速度 鍛える,jp,ja-JP,0,0,"ok (Bing exact, 2026-11-08)",,UNKNOWN,,train reaction speed,/ja/drills/reaction-speed,7.7,35
+反射神経トレーニング,jp,ja-JP,0,0,"ok (Bing exact, 2026-11-08)",,UNKNOWN,,reflex training,/ja/drills/reaction-speed,,
+反応速度 測定,jp,ja-JP,0,0,"ok (Bing exact, 2026-11-08)",,UNKNOWN,,,,,
+反射速度,jp,ja-JP,0,0,"ok (Bing exact, 2026-11-08)",,UNKNOWN,,,,9.8,26
+反射神経 診断,jp,ja-JP,0,0,"ok (Bing exact, 2026-11-08)",,UNKNOWN,,,,8.7,6
+動体視力 鍛え方,jp,ja-JP,0,0,"ok (Bing exact, 2026-11-08)",,UNKNOWN,,how-to,/ja/drills/reaction-speed/visual-tracking-speed-test,5.0,1
+動体視力ゲーム,jp,ja-JP,0,0,"ok (Bing exact, 2026-11-08)",,UNKNOWN (Bing SERP off-topic),,game,/ja/drills/reaction-speed/visual-tracking-speed-test,13.0,1
+動体視力検査,jp,ja-JP,0,0,"ok (Bing exact, 2026-11-08)",,UNKNOWN,,,,,
+動体視力テスト fps,jp,ja-JP,0,0,"ok (Bing exact, 2026-11-08)",,UNKNOWN,,,,9.9,11
+動体視力 トレーニング ゲーム,jp,ja-JP,0,0,"ok (Bing exact, 2026-11-08)",,UNKNOWN,,,,,
+動体視力年齢テスト,jp,ja-JP,0,0,"ok (Bing exact, 2026-11-08)",,UNKNOWN,,,,,
+体内時計ゲーム,jp,ja-JP,0,0,"ok (Bing exact, 2026-11-08)",,UNKNOWN,,timing game,/ja/drills/reaction-speed/reaction-time-test,,
+ストップウォッチ ゲーム,jp,ja-JP,0,0,"ok (Bing exact, 2026-11-08)",,UNKNOWN,,timing game,/ja/drills/reaction-speed/reaction-time-test,,
+10秒 ストップウォッチ ゲーム,jp,ja-JP,0,0,"ok (Bing exact, 2026-11-08)",,UNKNOWN,,,,,
+ストップウォッチ 10秒,jp,ja-JP,0,0,"ok (Bing exact, 2026-11-08)",,UNKNOWN,,,,,
+go no-go課題,jp,ja-JP,0,0,"ok (Bing exact, 2026-11-08)",,UNKNOWN,,go/no-go,/ja/drills/visual/reaction-speed/go/no-go,,
+ゴーノーゴー課題,jp,ja-JP,0,0,"ok (Bing exact, 2026-11-08)",,UNKNOWN,,go/no-go,/ja/drills/visual/reaction-speed/go/no-go,,
+眼球トレーニング,jp,ja-JP,0,0,"ok (Bing exact, 2026-11-08)",,UNKNOWN,,,,,
+目のトレーニング ゲーム,jp,ja-JP,0,0,"ok (Bing exact, 2026-11-08)",,UNKNOWN,,,,,
+ビジョントレーニング 無料,jp,ja-JP,0,0,"ok (Bing exact, 2026-11-08)",,UNKNOWN,,,,,
+反応速度 fps,jp,ja-JP,0,0,"ok (Bing exact, 2026-11-08)",,UNKNOWN,,,,,
+fps 反応速度 鍛える,jp,ja-JP,0,0,"ok (Bing exact, 2026-11-08)",,UNKNOWN,,,,10.0,5
+valorant 反応速度,jp,ja-JP,0,0,"ok (Bing exact, 2026-11-08)",,UNKNOWN,,,,,
+反射神経 ゲーム 無料,jp,ja-JP,0,0,"ok (Bing exact, 2026-11-08)",,UNKNOWN,,game free,/ja/drills/reaction-speed/reflex-training-drill,,
+反応速度 上げる方法,jp,ja-JP,0,0,"ok (Bing exact, 2026-11-08)",,UNKNOWN,,how-to,/ja/drills/reaction-speed,10.5,4
+反射神経 鍛え方,jp,ja-JP,0,0,"ok (Bing exact, 2026-11-08)",,UNKNOWN,,how-to,/ja/drills/reaction-speed,9.6,7
+反射神経テスト スマホ,jp,ja-JP,0,0,"ok (Bing exact, 2026-11-08)",,UNKNOWN,,test mobile,/ja/drills/visual/reaction-speed/light-reaction,,
+反応速度テスト 平均,jp,ja-JP,0,0,"ok (Bing exact, 2026-11-08)",,UNKNOWN,,norms,/ja/drills/visual/reaction-speed/light-reaction,,
+トラッキングエイム,jp,ja-JP,0,0,"ok (Bing exact, 2026-11-08)",,UNKNOWN,,fps tracking,/ja/drills/reaction-speed/fps-tracking-trainer,,
+反射神経 年齢,jp,ja-JP,0,0,"ok (Bing exact, 2026-11-08)",,UNKNOWN,,age norms,/ja/drills/visual/reaction-speed/light-reaction,,
+反応時間テスト,jp,ja-JP,0,0,"ok (Bing exact, 2026-11-08)",,UNKNOWN,,,,,
+ゴーノーゴー,jp,ja-JP,0,0,"ok (Bing exact, 2026-11-08)",,UNKNOWN,,,,,
+動体視力 診断,jp,ja-JP,0,0,"ok (Bing exact, 2026-11-08)",,UNKNOWN,,,,11.0,1
+反射神経鍛えるサイト,jp,ja-JP,,,UNKNOWN (not Bing-measured; GSC only),,,,,/ja/drills/reaction-speed,6.2,24
+反射神経 鍛えるサイト,jp,ja-JP,,,UNKNOWN (not Bing-measured; GSC only),,,,,/ja/drills/reaction-speed,6.7,18
+動体視力 反射神経テスト,jp,ja-JP,,,UNKNOWN (not Bing-measured; GSC only),,,,,/ja/drills/reaction-speed,9.1,17
+反射神経を鍛えるサイト,jp,ja-JP,,,UNKNOWN (not Bing-measured; GSC only),,,,,/ja/drills/reaction-speed,5.2,15
+反射神経 鍛える ゲーム サイト,jp,ja-JP,,,UNKNOWN (not Bing-measured; GSC only),,,,,/ja/drills/reaction-speed,8.6,10
+反応速度テスト fps,jp,ja-JP,,,UNKNOWN (not Bing-measured; GSC only),,,,,/ja/drills/reaction-speed,12.8,9
+反射神経 テスト,jp,ja-JP,,,UNKNOWN (not Bing-measured; GSC only),,,,,/ja/drills/reaction-speed,11.7,9
+反射神経診断,jp,ja-JP,,,UNKNOWN (not Bing-measured; GSC only),,,,,/ja/drills/reaction-speed,8.4,9
+反射神経トレーニング サイト,jp,ja-JP,,,UNKNOWN (not Bing-measured; GSC only),,,,,/ja/drills/reaction-speed,5.6,8
+反応速度 鍛える サイト,jp,ja-JP,,,UNKNOWN (not Bing-measured; GSC only),,,,,/ja/drills/reaction-speed,7.5,8
+反射 神経 テスト,jp,ja-JP,,,UNKNOWN (not Bing-measured; GSC only),,,,,/ja/drills/reaction-speed,78.5,8
+反射神経テスト ゲーム,jp,ja-JP,,,UNKNOWN (not Bing-measured; GSC only),,,,,/ja/drills/reaction-speed,20.1,8

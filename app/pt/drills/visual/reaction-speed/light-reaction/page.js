@@ -5,26 +5,25 @@ import RelatedDrills from '@/components/drill/RelatedDrills';
 import { pickSources } from '@/lib/drillSources';
 
 export const metadata = {
-  title: "Teste de reação online | Tempo de reação visual",
-  description: "Teste de reação online grátis: meça seu tempo de reação visual em milissegundos diante de um sinal luminoso. Resultado depende da tela; não é exame médico.",
+  title: "Teste de Reflexo Online: Meça seu Tempo de Reação",
+  description: "Teste de reflexo online grátis: clique quando a luz acender e veja seu tempo de reação em milissegundos. Compare com a média humana; não é exame médico.",
   keywords: [
-    "teste de reação",
     "teste de reflexo",
     "teste de reflexo online",
-    "teste de tempo de reação",
-    "tempo de reação visual",
-    "teste de reação visual",
-    "tempo de reação em milissegundos",
-    "teste de reflexo grátis",
+    "teste de reação",
     "teste de reação online",
-    "reflexo visual para jogos",
-    "reação a sinal luminoso",
-    "tempo de reação simples SRT",
-    "treino de velocidade de reação"
+    "tempo de reação",
+    "tempo de reação médio",
+    "teste de tempo de reação",
+    "teste de reflexo para fps",
+    "teste de reflexo valorant",
+    "teste de reflexo f1",
+    "teste de reflexo grátis",
+    "tempo de reação em milissegundos"
   ],
   openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
-    title: "Teste de reação online | Tempo de reação visual",
-    description: "Meça o tempo entre o sinal luminoso e o clique em milissegundos, com várias tentativas para comparar sua consistência.",
+    title: "Teste de Reflexo Online: Meça seu Tempo de Reação",
+    description: "Teste de reflexo grátis: espere a luz, clique e veja seu tempo de reação em milissegundos, com média e consistência.",
     type: 'article',
     url: 'https://skilldrills.online/pt/drills/visual/reaction-speed/light-reaction',
     siteName: 'SkillDrills',
@@ -32,8 +31,8 @@ export const metadata = {
   },
   twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: 'summary_large_image',
-    title: "Teste de reação online | Tempo de reação visual",
-    description: "Treine o reflexo visual com um estímulo luminoso imprevisível e acompanhe seus tempos no navegador.",
+    title: "Teste de Reflexo Online: Meça seu Tempo de Reação",
+    description: "Teste de reflexo online: reaja a uma luz imprevisível e compare seu tempo de reação entre sessões.",
   },
   robots: { index: true, follow: true },
   alternates: {
@@ -127,7 +126,7 @@ const howToSchema = {
       "@type": "HowToStep",
       "position": 3,
       "name": "Clique Imediatamente no Primeiro Fóton",
-      "text": "Pressione o mouse ou a barra de espaço no instante exato em que o alvo piscar em branco puro (+150 PTS × Multiplicador).",
+      "text": "Clique ou toque na tela no instante exato em que o alvo piscar em branco puro (+150 PTS × Multiplicador).",
       "url": "https://skilldrills.online/pt/drills/visual/reaction-speed/light-reaction#step-3"
     },
     {
@@ -143,62 +142,54 @@ const howToSchema = {
 const faqSchema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
-  "dateModified": "2026-09-05",
+  "dateModified": "2026-11-07",
   "mainEntity": [
     {
       "@type": "Question",
-      "name": "O que é o teste de reflexo de reação à luz?",
+      "name": "Qual é um bom resultado no teste de reflexo?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "O teste de reação à luz é um protocolo de alta precisão para aferir o tempo de reação visual simples (SRT). Ele calcula o tempo exato decorrido em milissegundos desde o momento em que um estímulo luminoso pisca na tela até o início da resposta motora do usuário."
+        "text": "Um bom resultado é aquele que você consegue repetir. Num teste de reflexo online, tela, navegador e mouse somam atraso ao seu tempo real, então compare suas médias no mesmo aparelho em vez de um número isolado. Tempos baixos com muitos cliques antecipados não contam: o teste bloqueia cliques antes da luz."
       }
     },
     {
       "@type": "Question",
-      "name": "Qual é a média de tempo de reação visual simples em milissegundos?",
+      "name": "Qual é o tempo de reação médio do ser humano?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Em adultos jovens saudáveis, o tempo médio de reação visual simples situa-se entre 200 ms e 250 ms. Marcas de 160 ms a 190 ms são pouco comuns e dependem do dispositivo e da antecipação."
+        "text": "Não existe um número único: ele muda com idade, atenção, tipo de estímulo e equipamento. Para reação simples a uma luz, a revisão de Kosinski (2008) cita médias perto de 190 ms em universitários, e a reação a sons costuma ser um pouco mais rápida. Depois da juventude, o tempo de reação tende a aumentar devagar com a idade."
       }
     },
     {
       "@type": "Question",
-      "name": "Quais estágios fisiológicos ocorrem entre ver a luz e clicar?",
+      "name": "Como funciona este teste de reação online?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "O processo abrange 4 fases fisiológicas: (1) fototransdução retiniana (~20–40 ms), (2) transmissão aferente pelo nervo óptico até o córtex visual primário V1 (~30–50 ms), (3) processamento cortical de decisão motora no córtex parietal e motor (~50–80 ms), e (4) condução eferente pela via corticoespinhal até os músculos flexores dos dedos (~30–50 ms)."
+        "text": "Você fixa o olhar no círculo central e clica, ou toca na tela, assim que ele acende em branco. A espera antes da luz é aleatória para impedir que você adivinhe o momento. Cada resposta é cronometrada pelo navegador em milissegundos e, no fim, você vê o tempo médio de reação, o combo e a nota de precisão."
       }
     },
     {
       "@type": "Question",
-      "name": "O que é a Lei de Piéron e como a luminosidade afeta o tempo de reação?",
+      "name": "Serve como teste de reflexo para FPS e Valorant?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "A Lei de Piéron (1952) é um princípio psicofísico que determina que o tempo de reação diminui de forma hiperbólica conforme a luminância do estímulo aumenta sobre o contraste de fundo. Um clarão branco sobre fundo escuro gera o menor atraso fisiológico sensorial."
+        "text": "Ele mede a reação simples a um sinal luminoso, que é só uma parte de um duelo. Em Valorant, CS2 e outros FPS também contam leitura de jogo, posição da mira e precisão do movimento do mouse. Use este teste como linha de base e os treinos de mira do site para a parte de pontaria; não há garantia de melhora de rank."
       }
     },
     {
       "@type": "Question",
-      "name": "Por que a reação auditiva é mais rápida do que a reação visual?",
+      "name": "É igual ao teste de reflexo da F1?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "A reação a estímulos sonoros é 30 a 50 ms mais veloz do que a visual (140–160 ms vs 200–250 ms). A transdução mecânica nas células ciliadas da cóclea leva de 1 a 3 ms, enquanto a transdução fotoquímica na retina requer de 20 a 40 ms."
+        "text": "Não exatamente. O desafio de largada da F1 acende cinco luzes vermelhas e você reage quando elas se apagam. Aqui o sinal é um único clarão branco depois de uma espera aleatória. Os dois medem reação simples a um estímulo visual, mas os números não são comparáveis entre si nem com os tempos de largada dos pilotos."
       }
     },
     {
       "@type": "Question",
-      "name": "O tempo de reação visual simples pode ser aprimorado com treino?",
+      "name": "Como a taxa de atualização do monitor afeta o resultado?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Sim. Exercícios de neuroplasticidade elevam a excitabilidade das vias corticoespinhais e refinam a atenção espacial encoberta (Posner, 1980). Praticantes frequentes apresentam tempos de reação visual comprovadamente menores sem perda de precisão (Dye et al., 2009)."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Como a taxa de atualização do monitor afeta a pontuação de reflexos?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Monitores comuns de 60 Hz adicionam até 16,7 ms de atraso de quadro antes do clarão ser exibido. Monitores de 144 Hz e 240 Hz baixam esse atraso para 6,9 ms e 4,1 ms. Um mouse com taxa de 1.000 Hz reduz ainda mais a oscilação para ~1 ms."
+        "text": "Um monitor de 60 Hz mostra um novo quadro a cada 16,7 ms, então a luz pode aparecer até esse tempo depois do sinal. Em 144 Hz e 240 Hz, o intervalo entre quadros cai para cerca de 6,9 ms e 4,2 ms. Um mouse com polling de 1.000 Hz envia o clique em intervalos de 1 ms."
       }
     },
     {
@@ -206,23 +197,31 @@ const faqSchema = {
       "name": "O que dispara o aviso de cliques repetidos (anti-spam) neste teste?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Clicar antes do flash branco ou realizar múltiplos cliques por segundo aciona o bloqueio de 1,2 segundo. Isso elimina suposições aleatórias e assegura que os resultados representem reflexos biológicos verdadeiros."
+        "text": "Clicar antes do clarão branco ou disparar vários cliques seguidos ativa uma pausa de 1,2 segundo. Isso impede que tentativas de adivinhar o momento entrem na sua média e mantém o resultado ligado a respostas ao sinal real."
       }
     },
     {
       "@type": "Question",
-      "name": "Como o sono, a cafeína e a fadiga afetam a latência em milissegundos?",
+      "name": "Sono, cansaço e cafeína mudam o tempo de reação?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "A privação de sono e a fadiga mental podem piorar o tempo de reação em 30 ms a 80 ms. O consumo moderado de cafeína (100–200 mg) antagoniza os receptores de adenosina, encurtando o tempo de reação temporariamente em 10 a 20 ms."
+        "text": "Sim. Dormir pouco, cansaço e distração costumam deixar as respostas mais lentas e mais irregulares, e a cafeína pode ter um efeito pequeno e variável. Para comparar sessões de forma justa, teste em horário parecido, descansado, com a mesma tela, o mesmo mouse e o mesmo navegador."
       }
     },
     {
       "@type": "Question",
-      "name": "O teste de reação à luz é gratuito e meus dados são privados?",
+      "name": "Dá para melhorar o reflexo com treino?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Sim. O teste de reação à luz do SkillDrills é 100% gratuito, sem anúncios invasivos ou necessidade de cadastro. Todos os dados permanecem estritamente no armazenamento local do seu navegador."
+        "text": "A prática costuma deixar os tempos mais consistentes e reduzir cliques antecipados, porque você aprende a manter a atenção e a mão prontas. Ganhos na reação simples tendem a ser pequenos; descanso e um equipamento com menos latência muitas vezes mudam mais o número. A transferência para jogos ou esportes não é garantida."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "O teste de reflexo é grátis? É um exame médico?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "É grátis, funciona sem cadastro e os resultados ficam no armazenamento local do seu navegador. Não é exame médico nem avaliação neurológica: é uma ferramenta de prática. Se você notar lentidão ou falta de coordenação fora do comum, procure um profissional de saúde."
       }
     }
   ]
@@ -231,10 +230,10 @@ const faqSchema = {
 const lightReactionGuide = {
   heading: "Teste de reflexo online: como entender seu tempo de reação visual",
   intro: [
-    "O tempo de reação simples (SRT) representa a latência psicomotora elementar entre a apresentação repentina de um único estímulo visual e a execução de uma liberação motora reflexa. Em provas de corrida, esportes de luta, automobilismo e e-sports de tiro tático, frações de milissegundo determinam esquivas defensivas, largadas e contragolpes.",
-    "A cascata neuromuscular subjacente envolve quatro estágios fisiológicos sequenciais: (1) fototransdução retiniana (~20–40 ms pela isomerização da rodopsina), (2) condução aferente ao longo do trato óptico via núcleo geniculado lateral até o córtex visual primário V1 (~30–50 ms), (3) preparação perceptiva e motora no córtex parietal e motor suplementar (~50–80 ms), e (4) condução eferente pela via corticoespinhal para contrair a musculatura flexora dos dedos (~30–50 ms), consolidando a faixa média humana saudável de 200–250 ms (Kosinski, 2008; Jain et al., 2015; Shelton & Kumar, 2010).",
-    "Segundo a Lei de Piéron (1952; Pins & Bonnet, 1996), a latência de reação decresce de forma hiperbólica com o contraste e a luminância do estímulo sobre o fundo. Este drill utiliza um clarão branco de altíssimo contraste contra um fundo escuro absorvente, produzindo máxima despolarização nas células ganglionares da retina. Pesquisas de atenção encoberta (Posner, 1980) e jogos de ação (Dye et al., 2009) comprovam que o foco intencional comprime a fase de planejamento cortical.",
-    "Metodologia e Precisão Temporal: As exibições de luz e os cliques do usuário são capturados pela API de alta resolução performance.now(). Latências de quantização de tela e varredura USB (Woods et al., 2015) são calibradas para oferecer leitura confiável com retenção exclusivamente local."
+    "Este teste de reflexo online mede seu tempo de reação visual: espere o círculo central acender em branco e clique o mais rápido possível. A espera muda a cada rodada, então adivinhar não ajuda. É o mesmo tipo de teste de reação simples usado em estudos de cronometria mental, mas aqui o resultado também inclui o atraso da tela, do navegador e do mouse.",
+    "A cascata neuromuscular subjacente envolve quatro estágios fisiológicos sequenciais: (1) fototransdução retiniana (~20–40 ms pela isomerização da rodopsina), (2) condução aferente ao longo do trato óptico via núcleo geniculado lateral até o córtex visual primário V1 (~30–50 ms), (3) preparação perceptiva e motora no córtex parietal e motor suplementar (~50–80 ms), e (4) condução eferente pela via corticoespinhal para contrair a musculatura flexora dos dedos (~30–50 ms) (Kosinski, 2008; Jain et al., 2015; Shelton & Kumar, 2010).",
+    "Segundo a Lei de Piéron (1952; Pins & Bonnet, 1996), a latência de reação decresce de forma hiperbólica com o contraste e a luminância do estímulo sobre o fundo. Este drill utiliza um clarão branco de altíssimo contraste contra um fundo escuro absorvente, produzindo máxima despolarização nas células ganglionares da retina. Pesquisas de atenção encoberta (Posner, 1980) e jogos de ação (Dye et al., 2009) sugerem que a atenção dirigida pode encurtar a fase de preparação da resposta.",
+    "Metodologia e Precisão Temporal: As exibições de luz e os cliques do usuário são capturados pela API de alta resolução performance.now(). A quantização de quadros da tela e a varredura USB (Woods et al., 2015) continuam somando alguns milissegundos ao resultado, por isso compare sessões no mesmo equipamento. Os dados ficam só no seu navegador."
   ],
   benchmarks: {
     title: "Referência de tempo de reação visual no navegador",
@@ -253,7 +252,7 @@ const lightReactionGuide = {
     items: [
       {
         name: "Pré-Ativação Foveal e Fixação Central",
-        desc: "Travar a fóvea visual estritamente no centro suprime a perda de 20 a 30 ms demandada por mudanças de foco (Posner, 1980).",
+        desc: "Travar a fóvea visual estritamente no centro evita o atraso extra das mudanças de foco (Posner, 1980).",
         tips: "Fixe os olhos no círculo escuro central; não desvie o olhar para o relógio ou para os pontos do placar enquanto espera."
       },
       {
@@ -268,7 +267,7 @@ const lightReactionGuide = {
       },
       {
         name: "Calibração e Monitores de Alta Frequência",
-        desc: "Um display de 60 Hz adiciona até 16,7 ms de atraso de quadro, enquanto um monitor de 240 Hz reduz esse tempo para 4,1 ms (Woods et al., 2015).",
+        desc: "Um display de 60 Hz adiciona até 16,7 ms de atraso de quadro, enquanto um monitor de 240 Hz reduz esse tempo para cerca de 4,2 ms (Woods et al., 2015).",
         tips: "Execute o drill em telas de 144 Hz ou 240 Hz com mouse de 1.000 Hz para registrar seus reflexos sem gargalos técnicos."
       }
     ]
@@ -277,7 +276,7 @@ const lightReactionGuide = {
     "Clique em Iniciar Drill para iniciar a sessão de 45 segundos de reação à luz.",
     "Fixe a visão de forma firme no círculo escuro localizado no centro da tela.",
     "Aguarde pacientemente pelos intervalos aleatórios (300 ms a 2.500 ms) sem precipitação.",
-    "Clique na tela ou na Barra de Espaço no momento exato em que o alvo brilhar em branco puro (+150 PTS × Multiplicador).",
+    "Clique ou toque na tela no momento exato em que o alvo brilhar em branco puro (+150 PTS × Multiplicador).",
     "Analise seu tempo médio de reação, melhor combo e graduação de precisão ao fim do teste."
   ],
   audience: "Jogadores de e-sports táticos, lutadores, corredores de velocidade, pilotos de corrida e todos que desejam desenvolver a velocidade do reflexo visual.",
@@ -302,7 +301,7 @@ export default function StrobeLatencyPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(howToSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(videoGameSchema) }} />
-      <StrobeLatencyClient copy={{ title: "Teste de reação (reflexos visuais)", startCardTitle: "Teste de reação", startCardSubtitle: "Reaja ao sinal luminoso em milissegundos" }} />
+      <StrobeLatencyClient copy={{ title: "Teste de Reflexo Online (Tempo de Reação)", startCardTitle: "Teste de reflexo", startCardSubtitle: "Clique quando a luz acender e veja seu tempo em ms" }} />
       <DrillGuide guide={lightReactionGuide} />
       <RelatedDrills />
     </>

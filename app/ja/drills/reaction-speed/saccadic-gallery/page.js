@@ -12,28 +12,27 @@ import { pickSources } from '@/lib/drillSources';
 // ============================================================
 
 export const metadata = {
-  title: '動体視力トレーニング・視線移動ゲーム | SkillDrills',
+  title: '眼球運動トレーニング・視線移動ゲーム | SkillDrills',
   description:
-    '無料の動体視力トレーニングゲーム。画面のターゲットへ視線を素早く移し、反応速度と捕捉精度をブラウザで鍛えます。',
+    '無料の眼球運動トレーニング。画面に現れるターゲットへ視線を素早く移す、ビジョントレーニング向けの視線移動ゲームです。捕捉精度と反応をブラウザで記録します。',
   keywords: [
-    '動体視力テスト',
-    '動体視力 トレーニング',
-    '動体視力ゲーム',
-    '動体視力 鍛える',
-    '動体視力 トレーニング ゲーム',
     '眼球運動 トレーニング',
+    '眼球運動トレーニング',
+    'ビジョントレーニング',
     '視線移動 トレーニング',
-    '周辺視野 練習',
+    '眼球運動 トレーニング 遊び',
+    '目の体操',
     'サッケード トレーニング',
+    '跳躍性眼球運動',
   ],
   alternates: {
     canonical: 'https://skilldrills.online/ja/drills/reaction-speed/saccadic-gallery',
     languages: getAlternateLanguages('/drills/reaction-speed/saccadic-gallery'),
   },
   openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
-    title: '動体視力トレーニング・視線移動ゲーム | SkillDrills',
+    title: '眼球運動トレーニング・視線移動ゲーム | SkillDrills',
     description:
-      'ターゲットへ視線を素早く移して捕捉精度と反応速度を鍛える、無料の動体視力ブラウザゲーム。',
+      'ターゲットへ視線を素早く移す、無料の眼球運動トレーニング・視線移動ゲーム。',
     type: 'article',
     url: 'https://skilldrills.online/ja/drills/reaction-speed/saccadic-gallery',
     siteName: 'SkillDrills',
@@ -41,9 +40,9 @@ export const metadata = {
   },
   twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: 'summary_large_image',
-    title: '動体視力トレーニング・視線移動ゲーム | SkillDrills',
+    title: '眼球運動トレーニング・視線移動ゲーム | SkillDrills',
     description:
-      '無料の動体視力ゲーム。視線を素早く移してターゲットを正確に捉えよう。',
+      '無料の眼球運動トレーニング。視線を素早く移してターゲットを正確に捉えよう。',
   },
   robots: { index: true, follow: true },
 };
@@ -55,15 +54,15 @@ const breadcrumbSchema = {
     { '@type': 'ListItem', position: 1, name: 'SkillDrills ホーム', item: 'https://skilldrills.online/ja' },
     { '@type': 'ListItem', position: 2, name: 'ドリル一覧', item: 'https://skilldrills.online/ja/drills' },
     { '@type': 'ListItem', position: 3, name: '反応速度', item: 'https://skilldrills.online/ja/drills/reaction-speed' },
-    { '@type': 'ListItem', position: 4, name: '動体視力トレーニング・視線移動ゲーム', item: 'https://skilldrills.online/ja/drills/reaction-speed/saccadic-gallery' },
+    { '@type': 'ListItem', position: 4, name: '眼球運動トレーニング・視線移動ゲーム', item: 'https://skilldrills.online/ja/drills/reaction-speed/saccadic-gallery' },
   ],
 };
 
 const softwareApplicationSchema = {
   '@context': 'https://schema.org',
   '@type': 'SoftwareApplication', "sameAs": ["https://en.wikipedia.org/wiki/Saccade"],
-  name: '動体視力トレーニング・視線移動ゲーム',
-  alternateName: ['動体視力テスト', '動体視力ゲーム', '動体視力 鍛える', '眼球運動 トレーニング'],
+  name: '眼球運動トレーニング・視線移動ゲーム',
+  alternateName: ['眼球運動 トレーニング', '視線移動 トレーニング', 'サッケード トレーニング'],
   applicationCategory: 'HealthApplication',
   operatingSystem: 'All',
   offers: { '@type': 'Offer', price: '0', priceCurrency: 'JPY' },
@@ -76,7 +75,7 @@ const softwareApplicationSchema = {
 const webAppSchema = {
   '@context': 'https://schema.org',
   '@type': 'WebApplication',
-  name: '動体視力トレーニング・視線移動ゲーム | SkillDrills',
+  name: '眼球運動トレーニング・視線移動ゲーム | SkillDrills',
   url: 'https://skilldrills.online/ja/drills/reaction-speed/saccadic-gallery',
   description:
     '無料オンラインサッケードトレーニング。跳躍性眼球運動速度と周辺視野の捕捉能力を高めるブラウザリアクションゲーム。',
@@ -93,7 +92,7 @@ const webAppSchema = {
 const videoGameSchema = {
   '@context': 'https://schema.org',
   '@type': 'VideoGame',
-  name: '動体視力トレーニング - 視線移動ゲーム',
+  name: '眼球運動トレーニング - 視線移動ゲーム',
   url: 'https://skilldrills.online/ja/drills/reaction-speed/saccadic-gallery',
   description: 'ブラウザで手軽に跳躍性眼球運動の速度と精度を鍛えるリアクショントレーニング。',
   genre: ['Vision Training', 'Action', 'Esports Training'],
@@ -146,10 +145,10 @@ const faqSchema = {
   mainEntity: [
     {
       '@type': 'Question',
-      name: 'サッケード眼球運動（跳躍性眼球運動）トレーニングとは何ですか？',
+      name: '眼球運動トレーニング（視線移動トレーニング）とは何ですか？',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: '視野内の特定の固視点から別の目標へと視線を瞬間的にジャンプさせる能力（サッケード）の速度、精度、潜時を鍛える眼球運動トレーニングです。',
+        text: '視線をある点から別の目標へ素早く移す動き（サッケード、跳躍性眼球運動）を繰り返す練習です。ビジョントレーニングでもよく使われる種類の課題で、このゲームでは画面のあちこちに現れるターゲットへ視線を移し、クリックの速さと正確さを記録します。ブラウザは眼球そのものの動きは測りません。',
       },
     },
     {
@@ -173,7 +172,7 @@ const faqSchema = {
       name: 'サッケードトレーニングはFPSゲームにどう役立ちますか？',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'VALORANTやCS2において、クリアリングやミニマップ確認、突発的に現れた敵への視線合わせにおいて視覚抑制時間を最小化し、初弾着弾を早めます。',
+        text: 'VALORANTやCS2では、クリアリングやミニマップ確認、急に現れた敵へ視線を合わせる場面があり、この練習はそれに似た画面課題を繰り返せます。ただし実際の撃ち合いは立ち回りやエイム、機器設定にも左右されるため、ゲーム内の成績が上がることを保証するものではありません。',
       },
     },
     {
@@ -202,10 +201,10 @@ const faqSchema = {
     },
     {
       '@type': 'Question',
-      name: 'サッケード運動は読書速度や集中力にも良い影響がありますか？',
+      name: '眼球運動トレーニングで読書速度や集中力は上がりますか？',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'はい。正確なサッケード制御は行から行への視線移動をスムーズにし、読み戻り（リグレッション）を減らして文章認識速度を高めます。',
+        text: '読書では行から行へ視線を移す眼球運動を使いますが、この画面上の練習で読書速度や集中力が上がるとは言い切れません。読みにくさや目の疲れが続く場合は、眼科や視能訓練士などの専門家に相談してください。このゲームは診断や治療のためのものではありません。',
       },
     },
     {
@@ -319,7 +318,7 @@ export default function JapaneseSaccadicGalleryPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
-      <SaccadicGalleryWrapper copy={{ title: '動体視力トレーニング・視線移動ゲーム', subtitle: '視線の跳躍 · 視覚ターゲット捕捉', caption: 'ターゲット間へ視線を素早く移し、正確にクリックします。' }} />
+      <SaccadicGalleryWrapper copy={{ title: '眼球運動トレーニング・視線移動ゲーム', subtitle: '視線の跳躍 · 視覚ターゲット捕捉', caption: 'ターゲット間へ視線を素早く移し、正確にクリックします。' }} />
       <DrillGuide guide={saccadicGuide} />
       <RelatedDrills />
       <DrillFooter />

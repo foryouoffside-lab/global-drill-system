@@ -1,0 +1,5 @@
+{"query":"reaktionsspiel online","cc":"de","lang":"de-DE","error":"page.waitForSelector: Timeout 15000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('#b_results li.b_algo') to be visi"}
+{"query":"reflexe testen","cc":"de","lang":"de-DE","error":"page.waitForSelector: Timeout 15000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('#b_results li.b_algo') to be visi"}
+{"query":"augentraining online","cc":"de","lang":"de-DE","error":"page.waitForSelector: Timeout 15000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('#b_results li.b_algo') to be visi"}
+{"query":"go no go test","cc":"de","lang":"de-DE","error":"page.goto: net::ERR_INTERNET_DISCONNECTED at https://www.bing.com/search?q=go%20no%20go%20test&cc=de&setlang=de-DE&mkt=d"}
+{"query":"tester ses réflexes","cc":"fr","lang":"fr-FR","error":"page.goto: net::ERR_NETWORK_CHANGED at https://www.bing.com/search?q=tester%20ses%20r%C3%A9flexes&cc=fr&setlang=fr-FR&mk"}

@@ -1,0 +1,15 @@
+{"query":"반응속도 훈련","cc":"kr","lang":"ko","error":"page.waitForSelector: Timeout 15000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('#b_results li.b_algo') to be visi"}
+{"query":"반응속도 게임","cc":"kr","lang":"ko","error":"page.goto: net::ERR_CONNECTION_CLOSED at https://www.bing.com/search?q=%EB%B0%98%EC%9D%91%EC%86%8D%EB%8F%84%20%EA%B2%8C%"}
+{"query":"반사신경 테스트","cc":"kr","lang":"ko","error":"page.goto: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - navigating to \"https://www.bing.com/search?q=%EB%B0%98%EC%82%AC%E"}
+{"query":"반속 테스트","cc":"kr","lang":"ko","error":"page.goto: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - navigating to \"https://www.bing.com/search?q=%EB%B0%98%EC%86%8D%2"}
+{"query":"반응속도 평균","cc":"kr","lang":"ko","error":"page.goto: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - navigating to \"https://www.bing.com/search?q=%EB%B0%98%EC%9D%91%E"}
+{"query":"발로란트 반응속도 테스트","cc":"kr","lang":"ko","error":"page.goto: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - navigating to \"https://www.bing.com/search?q=%EB%B0%9C%EB%A1%9C%E"}
+{"query":"반응속도 빨라지는법","cc":"kr","lang":"ko","error":"page.goto: net::ERR_CONNECTION_CLOSED at https://www.bing.com/search?q=%EB%B0%98%EC%9D%91%EC%86%8D%EB%8F%84%20%EB%B9%A8%"}
+{"query":"동체시력 훈련","cc":"kr","lang":"ko","error":"page.goto: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - navigating to \"https://www.bing.com/search?q=%EB%8F%99%EC%B2%B4%E"}
+{"query":"동체시력 테스트 사이트","cc":"kr","lang":"ko","error":"page.waitForSelector: Timeout 15000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('#b_results li.b_algo') to be visi"}
+{"query":"고노고 테스트","cc":"kr","lang":"ko","error":"page.waitForSelector: Timeout 15000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('#b_results li.b_algo') to be visi"}
+{"query":"10초 맞추기 게임","cc":"kr","lang":"ko","error":"page.waitForSelector: Timeout 15000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('#b_results li.b_algo') to be visi"}
+{"query":"시간 맞추기 게임","cc":"kr","lang":"ko","error":"page.waitForSelector: Timeout 15000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('#b_results li.b_algo') to be visi"}
+{"query":"순발력 테스트 게임","cc":"kr","lang":"ko","error":"page.waitForSelector: Timeout 15000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('#b_results li.b_algo') to be visi"}
+{"query":"에임 트래킹 연습","cc":"kr","lang":"ko","error":"page.waitForSelector: Timeout 15000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('#b_results li.b_algo') to be visi"}
+{"query":"반사신경 훈련","cc":"kr","lang":"ko","error":"page.waitForSelector: Timeout 15000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('#b_results li.b_algo') to be visi"}

@@ -5,26 +5,21 @@ import RelatedDrills from '@/components/drill/RelatedDrills';
 import { pickSources } from '@/lib/drillSources';
 
 export const metadata = {
-  title: "Test de réaction en ligne | Temps de réaction visuelle",
-  description: "Test de réaction gratuit : mesurez votre temps de réaction en millisecondes face à un signal lumineux. Dépend de l’écran, pas un diagnostic médical.",
+  title: "Test de réaction en ligne : temps de réaction en ms",
+  description: "Test de réaction gratuit : cliquez dès que la lumière s'allume et mesurez votre temps de réaction en millisecondes. Outil d'entraînement, pas un test médical.",
   keywords: [
     "test de réaction",
     "test de réaction en ligne",
+    "test temps de réaction",
     "test de temps de réaction",
-    "temps de réaction visuelle",
-    "test de réflexes",
-    "test de réflexes en ligne",
-    "test de réaction visuelle",
+    "reaction time test",
+    "test reaction",
+    "test de réaction gratuit",
     "temps de réaction en millisecondes",
-    "test de réflexe gratuit",
-    "test de vitesse de réaction",
-    "réflexes visuels gaming",
-    "réaction à un signal lumineux",
-    "temps de réaction simple SRT",
-    "entraînement de la vitesse de réaction"
+    "test de réactivité"
   ],
   openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
-    title: "Test de réaction en ligne | Temps de réaction visuelle",
+    title: "Test de réaction en ligne : temps de réaction en ms",
     description: "Mesurez en millisecondes l’intervalle entre un signal lumineux et votre clic, avec plusieurs essais pour suivre votre régularité.",
     type: 'article',
     url: 'https://skilldrills.online/fr/drills/visual/reaction-speed/light-reaction',
@@ -33,7 +28,7 @@ export const metadata = {
   },
   twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: 'summary_large_image',
-    title: "Test de réaction en ligne | Temps de réaction visuelle",
+    title: "Test de réaction en ligne : temps de réaction en ms",
     description: "Entraînez vos réflexes visuels avec un signal lumineux imprévisible et comparez vos temps dans le navigateur.",
   },
   robots: { index: true, follow: true },
@@ -128,7 +123,7 @@ const howToSchema = {
       "@type": "HowToStep",
       "position": 3,
       "name": "Cliquer Aussitôt sur le Premier Flash",
-      "text": "Enfoncez la souris ou la barre d'espace dès que le disque flashe en blanc étincelant (+150 PTS × Multiplicateur).",
+      "text": "Cliquez ou touchez l'écran dès que le disque flashe en blanc étincelant (+150 PTS × Multiplicateur).",
       "url": "https://skilldrills.online/fr/drills/visual/reaction-speed/light-reaction#step-3"
     },
     {
@@ -148,10 +143,10 @@ const faqSchema = {
   "mainEntity": [
     {
       "@type": "Question",
-      "name": "Qu'est-ce que le test de réflexe de réaction à la lumière ?",
+      "name": "Comment fonctionne ce test de réaction en ligne ?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Le test de temps de réaction à la lumière est un protocole psychophysique rigoureux mesurant le temps de réaction simple (SRT). Il chronomètre avec une précision milliseconde le délai entre l'illumination blanche d'un repère visuel et la contraction motrice du doigt."
+        "text": "Fixez le disque au centre de l'écran. Après une attente aléatoire, il s'allume brièvement en blanc : cliquez ou touchez l'écran aussitôt. Le test mesure en millisecondes le délai entre la lumière et votre clic. Un clic avant le flash déclenche une courte pause, pour que deviner ne rapporte rien. Faites plusieurs essais et regardez la moyenne."
       }
     },
     {
@@ -212,10 +207,10 @@ const faqSchema = {
     },
     {
       "@type": "Question",
-      "name": "Quel est l'impact du sommeil, de la caféine et de la fatigue sur la latence en millisecondes ?",
+      "name": "Le sommeil et la fatigue changent-ils le temps de réaction ?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Le manque de sommeil et la fatigue cérébrale ralentissent la réaction de 30 ms à 80 ms. À dose modérée (100–200 mg), la caféine bloque les récepteurs à adénosine, réduisant temporairement la latence de 10 à 20 ms."
+        "text": "Le manque de sommeil, la fatigue et la distraction ralentissent nettement la réaction et la rendent plus irrégulière. Pour comparer vos résultats, faites le test reposé, au même moment de la journée, sur le même appareil, et regardez la moyenne de plusieurs essais plutôt qu'un seul meilleur temps."
       }
     },
     {
@@ -230,7 +225,7 @@ const faqSchema = {
 };
 
 const lightReactionGuide = {
-  heading: "Test de réflexes en ligne : comprendre son temps de réaction visuelle",
+  heading: "Test de réaction en ligne : mesurer son temps de réaction",
   intro: [
     "Le temps de réaction simple (SRT) mesure la latence sensorimotrice élémentaire s'écoulant entre la survenue impromptue d'un stimulus visuel unique et l'exécution d'un mouvement réflexe non conditionné. En sprint, en sports de combat, en compétition automobile et dans l'esport tactique, quelques infimes millisecondes déterminent l'esquive salvatrice, l'impulsion du starting-block ou le contre décisif.",
     "La cascade neuromusculaire sollicite quatre étages physiologiques ordonnés : (1) phototransduction rétinienne (~20–40 ms par isomérisation de la rhodopsine), (2) acheminement afférent par le tractus optique vers le cortex visuel primaire V1 (~30–50 ms), (3) programmation motrice dans les aires pariétales et motrices supplémentaires (~50–80 ms), et (4) décharge descendante le long du faisceau pyramidal pour contracter les fléchisseurs digitaux (~30–50 ms), établissant la fenêtre humaine saine de 200–250 ms (Kosinski, 2008 ; Jain et al., 2015 ; Shelton & Kumar, 2010).",
@@ -303,7 +298,7 @@ export default function StrobeLatencyPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(howToSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(videoGameSchema) }} />
-      <StrobeLatencyClient copy={{ title: "Test de réaction (réflexes visuels)", startCardTitle: "Test de réaction", startCardSubtitle: "Réagissez au signal lumineux en ms" }} />
+      <StrobeLatencyClient copy={{ title: "Test de réaction : temps de réaction en ms", startCardTitle: "Test de réaction", startCardSubtitle: "Cliquez dès que la lumière s'allume" }} />
       <DrillGuide guide={lightReactionGuide} />
       <RelatedDrills />
     </>

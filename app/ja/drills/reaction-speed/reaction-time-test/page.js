@@ -15,7 +15,7 @@ export const metadata = {
     "ストップウォッチ ゲーム",
     "時間感覚 トレーニング",
     "タイミング練習",
-    "クリックタイミング"
+    "体内時計ゲーム サイト"
   ],
   "alternates": {
     "canonical": "https://skilldrills.online/ja/drills/reaction-speed/reaction-time-test",
