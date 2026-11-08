@@ -6,7 +6,7 @@ import { pickSources } from '@/lib/drillSources';
 
 export const metadata = {
   "title": "Zeitgefühl-Test: Zielzeit treffen | SkillDrills",
-  "description": "Zeitgefühl-Test: Eine Zielzeit erscheint, du klickst, wenn sie verstrichen ist. Ein Timing-Spiel, kein Reaktionstest. Dafür: Reaktionstest (Lichtsignal).",
+  "description": "Zeitgefühl-Test: Merke dir eine Zielzeit von 1–8 s und klicke, wenn sie verstrichen ist. Fehler in ms. Kein Reaktionstest, dafür gibt es den Lichtreaktionstest.",
   "keywords": [
     "Zeitgefühl Test",
     "Zeitschätzung Spiel",
@@ -189,7 +189,7 @@ const howToSchema = {
 const faqSchema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
-  "dateModified": "2026-10-08",
+  "dateModified": "2026-11-08",
   "mainEntity": [
     {
       "@type": "Question",
@@ -204,7 +204,7 @@ const faqSchema = {
       "name": "Wie funktioniert das Spiel?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Eine Zielzeit erscheint kurz und verschwindet dann. Ein leuchtender Orb ohne Zahlenanzeige läuft, während im Hintergrund die Uhr zählt, und du klickst, wenn du die Zielzeit für verstrichen hältst. Danach zeigt der Drill deine genaue Klickzeit und deinen Fehler."
+        "text": "Eine Zielzeit erscheint kurz und verschwindet dann. In der Mitte steht ein leuchtender Orb ohne Zahlenanzeige, um ihn drehen sich Ringe, während im Hintergrund die Uhr zählt, und du klickst, wenn du die Zielzeit für verstrichen hältst. Danach zeigt der Drill deine genaue Klickzeit und deinen Fehler."
       }
     },
     {
@@ -236,7 +236,7 @@ const faqSchema = {
       "name": "Darf ich im Kopf mitzählen?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Ja, Zählen ist deine eigene Strategie. Der Orb hat keine Zahlenanzeige, seine Ringe pulsieren einmal pro Sekunde, was du als Takt nutzen kannst. Probiere Methoden aus und behalte die mit dem kleinsten durchschnittlichen Fehler."
+        "text": "Ja, Zählen ist deine eigene Strategie. Der Orb hat keine Zahlenanzeige, ein Ring um ihn pulsiert einmal pro Sekunde, was du als Takt nutzen kannst. Probiere Methoden aus und behalte die mit dem kleinsten durchschnittlichen Fehler."
       }
     },
     {
@@ -260,7 +260,7 @@ const faqSchema = {
       "name": "Ist das dasselbe wie die 10-Sekunden-Challenge?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Die Idee ist ähnlich, ein Intervall ohne sichtbare Uhr einzuschätzen, aber das Ziel ändert sich jede Runde und ist nicht auf 10 Sekunden festgelegt. Bewertet wird außerdem die Größe deines Fehlers statt nur bestanden oder nicht bestanden."
+        "text": "Die Idee ist ähnlich, ein Intervall ohne sichtbare Uhr einzuschätzen, aber das Ziel liegt zwischen 1 und 8 Sekunden, ändert sich jede Runde und ist nicht auf 10 Sekunden festgelegt. Bewertet wird außerdem die Größe deines Fehlers statt nur bestanden oder nicht bestanden."
       }
     },
     {
@@ -332,7 +332,7 @@ const reactionGuide = {
       },
       {
         "name": "Den Sekundenpuls nutzen",
-        "desc": "Die Ringe um den Orb pulsieren einmal pro Sekunde. Wenn du jeden Puls als Tick zählst, addierst du ganze Sekunden und schätzt nur den Rest.",
+        "desc": "Ein Ring um den Orb pulsiert einmal pro Sekunde. Wenn du jeden Puls als Tick zählst, addierst du ganze Sekunden und schätzt nur den Rest.",
         "tips": "Bei Zielzeiten mit Nachkommastellen wie 3,250 s fällt der letzte Klick zwischen zwei Pulse."
       },
       {

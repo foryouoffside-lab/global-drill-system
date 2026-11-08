@@ -736,8 +736,8 @@ export default function StrobeLatencyClient({ copy } = {}) {
                 <DrillRuleItem 
                   num="4" 
                   text="False Start / Missed Flash" 
-                  highlight={penaltyEnabled ? "-0.8s Penalty" : "Zero Penalties (Default)"} 
-                  result={penaltyEnabled ? "Deducts 0.8s & resets combo" : "Resets combo. Time penalty is opt-in via settings"} 
+                  highlight={penaltyEnabled ? "-1s Penalty" : "Zero Penalties (Default)"} 
+                  result={penaltyEnabled ? "Deducts 1s & resets combo" : "Resets combo. Time penalty is opt-in via settings"} 
                 />
               </div>
             </DrillAccordion>

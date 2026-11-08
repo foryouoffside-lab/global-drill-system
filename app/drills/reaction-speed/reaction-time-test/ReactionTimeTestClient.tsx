@@ -629,49 +629,6 @@ export default function ReactionTimeTestClient({ copy }: ReactionTimeTestClientP
       }
       ctx.globalAlpha = 1.0;
 
-      // Tactical Pro White Crosshair (R5)
-      if (mousePosRef.current) {
-        const mx = mousePosRef.current.x;
-        const my = mousePosRef.current.y;
-        ctx.save();
-        ctx.strokeStyle = '#ffffff';
-        ctx.lineWidth = 1.5;
-        ctx.shadowColor = 'rgba(0, 0, 0, 0.9)';
-        ctx.shadowBlur = 3;
-
-        // Top
-        ctx.beginPath();
-        ctx.moveTo(mx, my - 4);
-        ctx.lineTo(mx, my - 14);
-        ctx.stroke();
-
-        // Bottom
-        ctx.beginPath();
-        ctx.moveTo(mx, my + 4);
-        ctx.lineTo(mx, my + 14);
-        ctx.stroke();
-
-        // Left
-        ctx.beginPath();
-        ctx.moveTo(mx - 4, my);
-        ctx.lineTo(mx - 14, my);
-        ctx.stroke();
-
-        // Right
-        ctx.beginPath();
-        ctx.moveTo(mx + 4, my);
-        ctx.lineTo(mx + 14, my);
-        ctx.stroke();
-
-        // Center dot
-        ctx.fillStyle = '#ffffff';
-        ctx.beginPath();
-        ctx.arc(mx, my, 1, 0, Math.PI * 2);
-        ctx.fill();
-
-        ctx.restore();
-      }
-
       ctx.restore();
       animationRef.current = requestAnimationFrame(loop);
     };
@@ -720,8 +677,8 @@ export default function ReactionTimeTestClient({ copy }: ReactionTimeTestClientP
           <div className="flex flex-col gap-1">
             <h1 className="text-2xl sm:text-3xl font-black tracking-tight text-white">
               <span data-seo-kw="1">{copy?.title || t('reactionTimeTest.title', 'Stop the Timer Game')}</span>
-              <span className="block text-sm font-semibold text-slate-400 mt-1">{copy?.subtitle || t('reactionTimeTest.subtitle', 'Time-estimation drill: memorize the target time, click when it elapses and review your timing error in milliseconds')}</span>
             </h1>
+            <p className="text-sm font-semibold text-slate-400 mt-1">{copy?.subtitle || t('reactionTimeTest.subtitle', 'Time-estimation drill: memorize the target time, click when it elapses and review your timing error in milliseconds')}</p>
           </div>
         )}
 
@@ -834,7 +791,7 @@ export default function ReactionTimeTestClient({ copy }: ReactionTimeTestClientP
             onPointerLeave={() => {
               mousePosRef.current = null;
             }}
-            className={`block absolute top-0 left-0 w-full h-full z-10 touch-none ${gameState === 'playing' ? 'cursor-crosshair' : 'cursor-pointer'}`}
+            className="block absolute top-0 left-0 w-full h-full z-10 touch-none cursor-default"
           />
 
           {/* START CARD */}

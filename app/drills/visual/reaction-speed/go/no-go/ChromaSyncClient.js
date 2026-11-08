@@ -765,8 +765,8 @@ export default function ChromaSyncClient({ copy } = {}) {
                 <DrillRuleItem 
                   num="3" 
                   text="Wrong Click (False Alarm)" 
-                  highlight={penaltyEnabled ? "-1 Life & -0.8s" : "-1 Life"} 
-                  result={penaltyEnabled ? "Costs 1 life, deducts 0.8s, resets combo" : "Costs 1 life & resets combo. No time loss (default)"} 
+                  highlight={penaltyEnabled ? "-1 Life & -1s" : "-1 Life"} 
+                  result={penaltyEnabled ? "Costs 1 life, deducts 1s, resets combo" : "Costs 1 life & resets combo. No time loss (default)"} 
                 />
                 <DrillRuleItem num="4" text="Missed GO (Timeout)" highlight="Streak Reset" result="No life lost. Resets combo multiplier" />
                 <DrillRuleItem num="5" text="Wrong NO-GO Click" highlight="Combo reset" result="Costs your combo — the run always lasts the full clock" />

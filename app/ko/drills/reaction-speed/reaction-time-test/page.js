@@ -189,7 +189,7 @@ const howToSchema = {
 const faqSchema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
-  "dateModified": "2026-10-08",
+  "dateModified": "2026-11-08",
   "mainEntity": [
     {
       "@type": "Question",
@@ -204,7 +204,7 @@ const faqSchema = {
       "name": "게임은 어떻게 진행되나요?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "목표 시간이 잠깐 표시되었다가 사라집니다. 이후 숫자가 없는 빛나는 구체가 움직이고 뒤에서 시계가 흐르며, 목표 시간이 지났다고 느낄 때 클릭하면 클릭한 정확한 시점과 오차가 표시됩니다."
+        "text": "목표 시간이 잠깐 표시되었다가 사라집니다. 이후 화면 가운데 숫자 없는 빛나는 구체 주위로 링이 돌고 뒤에서 시계가 흐르며, 목표 시간이 지났다고 느낄 때 클릭하면 클릭한 정확한 시점과 오차가 표시됩니다."
       }
     },
     {

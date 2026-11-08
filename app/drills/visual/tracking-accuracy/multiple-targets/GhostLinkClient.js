@@ -731,7 +731,7 @@ diagnostics = "Low target identification accuracy. Anchor your gaze centrally an
             )}
 
             {/* CANVAS LAYER */}
-            <canvas ref={canvasRef} className="absolute inset-0 w-full h-full cursor-crosshair z-0" />
+            <canvas ref={canvasRef} className="absolute inset-0 w-full h-full cursor-default z-0" />
 
             <DrillFlashOverlay flashes={flashes} />
 

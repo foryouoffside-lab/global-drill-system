@@ -5,46 +5,39 @@ import DrillFooter from '@/components/drill/DrillFooter';
 import RelatedDrills from '@/components/drill/RelatedDrills';
 import { pickSources } from '@/lib/drillSources';
 
-// ============================================================
-// SEO RESEARCH FINDINGS — de-DE (reaction-speed / saccadic-gallery)
-// PRIMARY DOMESTIC: Google Suggest expands "Augentraining" into Übungen and online
-// Secondary native phrasing: "Blicksprünge trainieren"; specialist Sakkaden terms remain supporting entities
-// ============================================================
+const url = 'https://skilldrills.online/de/drills/reaction-speed/saccadic-gallery';
+const title = 'Augentraining Online · Blicksprünge trainieren | SkillDrills';
+const description =
+  'Kostenloses Augentraining online: Trainiere Blicksprünge zwischen Zielpunkten und klicke jedes Ziel präzise an. Treffer und Klickzeit im Browser.';
 
 export const metadata = {
-  title: 'Augentraining Online · Blicksprünge trainieren | SkillDrills',
-  description:
-    'Kostenloses Augentraining online: Trainiere Blicksprünge zwischen Zielpunkten für schnellere visuelle Zielerfassung im Browser.',
+  title,
+  description,
   keywords: [
+    'augentraining',
     'augentraining online',
-    'augentraining übungen',
     'blicksprünge trainieren',
     'augenbewegungen trainieren',
     'sakkadentraining',
     'sakkadische augenbewegungen',
-    'sehtraining online',
-    'visuelles training',
     'zielerfassung trainieren',
-    'augenkoordination',
   ],
   alternates: {
-    canonical: 'https://skilldrills.online/de/drills/reaction-speed/saccadic-gallery',
+    canonical: url,
     languages: getAlternateLanguages('/drills/reaction-speed/saccadic-gallery'),
   },
-  openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
-    title: 'Augentraining Online · Blicksprünge trainieren | SkillDrills',
-    description:
-      'Trainiere Blicksprünge zwischen Zielpunkten und verbessere visuelle Zielerfassung mit einem kostenlosen Browser-Drill.',
+  openGraph: { images: [{ url: 'https://skilldrills.online/opengraph-image', width: 1200, height: 630 }],
+    title,
+    description: 'Trainiere Blicksprünge zwischen Zielpunkten mit einem kostenlosen Augentraining im Browser.',
     type: 'article',
-    url: 'https://skilldrills.online/de/drills/reaction-speed/saccadic-gallery',
+    url,
     siteName: 'SkillDrills',
     locale: 'de_DE',
   },
-  twitter: { images: ["https://skilldrills.online/opengraph-image"],
+  twitter: { images: ['https://skilldrills.online/opengraph-image'],
     card: 'summary_large_image',
-    title: 'Augentraining Online · Blicksprünge trainieren | SkillDrills',
-    description:
-      'Kostenloses Augentraining im Browser: Blicksprünge üben und Ziele schneller erfassen.',
+    title,
+    description: 'Kostenloses Augentraining im Browser: Blicksprünge üben und Ziele präzise anklicken.',
   },
   robots: { index: true, follow: true },
 };
@@ -56,234 +49,158 @@ const breadcrumbSchema = {
     { '@type': 'ListItem', position: 1, name: 'SkillDrills Startseite', item: 'https://skilldrills.online/de' },
     { '@type': 'ListItem', position: 2, name: 'Drills Übersicht', item: 'https://skilldrills.online/de/drills' },
     { '@type': 'ListItem', position: 3, name: 'Reaktionsschnelligkeit', item: 'https://skilldrills.online/de/drills/reaction-speed' },
-    { '@type': 'ListItem', position: 4, name: 'Augentraining Online · Blicksprünge trainieren', item: 'https://skilldrills.online/de/drills/reaction-speed/saccadic-gallery' },
+    { '@type': 'ListItem', position: 4, name: 'Augentraining Online · Blicksprünge trainieren', item: url },
   ],
 };
 
 const softwareApplicationSchema = {
   '@context': 'https://schema.org',
-  '@type': 'SoftwareApplication', "sameAs": ["https://en.wikipedia.org/wiki/Saccade"],
+  '@type': 'SoftwareApplication',
+  sameAs: ['https://en.wikipedia.org/wiki/Saccade'],
   name: 'Augentraining Online · Blicksprünge trainieren',
-  alternateName: ['Augentraining online', 'Blicksprünge trainieren', 'Sakkadentraining', 'Visuelles Training'],
-  applicationCategory: 'HealthApplication',
+  alternateName: ['Augentraining online', 'Blicksprünge trainieren', 'Sakkadentraining'],
+  applicationCategory: 'GameApplication',
   operatingSystem: 'All',
   offers: { '@type': 'Offer', price: '0', priceCurrency: 'EUR' },
-  description:
-    'Wissenschaftliches Sehtraining zur Steigerung von Blicksprung-Geschwindigkeit, peripherer Zielerfassung und visueller Reaktionsfähigkeit.',
+  description: 'Browser-Drill: Ziele erscheinen nacheinander an festen Rasterpunkten; du springst mit dem Blick hin und klickst. Gemessen werden Treffer und Zeit bis zum Klick.',
   browserRequirements: 'Moderner Webbrowser mit HTML5 Canvas und JavaScript-Unterstützung',
-  softwareVersion: '2.0',
+  inLanguage: 'de',
+  dateModified: '2026-11-08',
 };
 
 const webAppSchema = {
   '@context': 'https://schema.org',
   '@type': 'WebApplication',
   name: 'Augentraining Online · Blicksprünge trainieren | SkillDrills',
-  url: 'https://skilldrills.online/de/drills/reaction-speed/saccadic-gallery',
-  description:
-    'Kostenloses Reaktionsspiel zum Training sakkadischer Augenbewegungen, peripherer Wahrnehmung und fovealer Fixierung im Browser.',
-  applicationCategory: 'EducationalApplication',
+  url,
+  description: 'Kostenloses Augentraining im Browser: Blicksprünge zwischen Zielpunkten üben und Ziele präzise anklicken.',
+  applicationCategory: 'GameApplication',
   operatingSystem: 'All',
   browserRequirements: 'Erfordert einen modernen Webbrowser mit JavaScript.',
   offers: { '@type': 'Offer', price: '0', priceCurrency: 'EUR' },
   author: { '@type': 'Organization', name: 'SkillDrills', url: 'https://skilldrills.online' },
   isAccessibleForFree: true,
-  learningResourceType: 'Educational Game',
-  teaches: 'Sakkaden, Blicksprünge, Periphere Wahrnehmung, Foveale Fixierung, Reaktionszeit',
+  inLanguage: 'de',
+  dateModified: '2026-11-08',
 };
 
 const videoGameSchema = {
   '@context': 'https://schema.org',
   '@type': 'VideoGame',
   name: 'Augentraining - Blicksprünge trainieren',
-  url: 'https://skilldrills.online/de/drills/reaction-speed/saccadic-gallery',
-  description: 'Trainieren von schnellen Augenbewegungen und präziser Zielerfassung im Browser.',
-  genre: ['Vision Training', 'Action', 'Esports Training'],
-  gamePlatform: ['Web Browser', 'Desktop'],
+  url,
+  description: 'Schnelle Blickwechsel zwischen Zielen üben und jedes Ziel präzise anklicken, direkt im Browser.',
+  genre: ['Action', 'Aim Trainer'],
+  gamePlatform: ['Web Browser', 'Desktop', 'Mobile'],
   applicationCategory: 'Game',
+  inLanguage: 'de',
+  dateModified: '2026-11-08',
   offers: { '@type': 'Offer', price: '0', priceCurrency: 'EUR' },
 };
 
 const howToSchema = {
   '@context': 'https://schema.org',
   '@type': 'HowTo',
-  name: 'Anleitung: Sakkadische Augenbewegungen und Blicksprünge trainieren',
-  description: 'Schritt-für-Schritt-Anleitung zur Steigerung der visuellen Scan-Geschwindigkeit.',
+  name: 'Anleitung: Blicksprünge im Augentraining üben',
+  description: 'Vier Schritte, um Blicksprünge zu Zielen zu üben und sie präzise anzuklicken.',
   step: [
-    {
-      '@type': 'HowToStep',
-      position: 1,
-      name: 'Sitzposition einnehmen und Blick zentrieren',
-      text: 'Setzen Sie sich in ca. 50–70 cm Abstand mittig vor den Bildschirm und fixieren Sie das zentrale Kreuz.',
-      url: 'https://skilldrills.online/de/drills/reaction-speed/saccadic-gallery#step-1',
-    },
-    {
-      '@type': 'HowToStep',
-      position: 2,
-      name: 'Periphere Zielblitze wahrnehmen',
-      text: 'Erfassen Sie im peripheren Blickfeld aufblitzende Zielscheiben, ohne den Kopf zu drehen.',
-      url: 'https://skilldrills.online/de/drills/reaction-speed/saccadic-gallery#step-2',
-    },
-    {
-      '@type': 'HowToStep',
-      position: 3,
-      name: 'Ballistischen Blicksprung ausführen',
-      text: 'Schnellen Sie mit beiden Augen blitzartig auf die Zielkoordinaten, ohne Zwischenkorrekturen.',
-      url: 'https://skilldrills.online/de/drills/reaction-speed/saccadic-gallery#step-3',
-    },
-    {
-      '@type': 'HowToStep',
-      position: 4,
-      name: 'Foveal erfassen und Treffer bestätigen',
-      text: 'Fixieren Sie das Ziel im fovealen Zentrum und klicken Sie präzise zur Latenzerfassung.',
-      url: 'https://skilldrills.online/de/drills/reaction-speed/saccadic-gallery#step-4',
-    },
-  ],
+    { '@type': 'HowToStep', position: 1, name: 'Sitzposition einnehmen', text: 'Setz dich in etwa 50–70 cm Abstand vor den Bildschirm und richte den Blick auf die Bildschirmmitte.' },
+    { '@type': 'HowToStep', position: 2, name: 'Ziel bemerken', text: 'Halte den Kopf ruhig und bemerke das rote Ziel, sobald es an einem Rasterpunkt erscheint.' },
+    { '@type': 'HowToStep', position: 3, name: 'Blick springen lassen', text: 'Führe den Blick in einem Sprung zum Ziel, bevor die Hand nachzieht.' },
+    { '@type': 'HowToStep', position: 4, name: 'Präzise klicken', text: 'Klicke das Ziel an (auf dem Handy antippen) und prüfe danach dein Ergebnis.' },
+  ].map((st) => ({ ...st, url: `${url}#step-${st.position}` })),
 };
+
+const faqs = [
+  {
+    q: 'Was macht dieses Augentraining genau?',
+    a: 'Ziele erscheinen einzeln an festen Rasterpunkten (am PC 4×3, auf dem Handy 3×3), nie zweimal hintereinander am selben Punkt. Du springst mit dem Blick hin und klickst. Geübt werden schnelle Blickwechsel (Sakkaden) und das Anklicken. Es ist ein Browser-Spiel, kein Sehtest und keine Therapie.',
+  },
+  {
+    q: 'Wie funktionieren Zeit und Punkte?',
+    a: 'Du startest mit 45 Sekunden; jeder Treffer gibt 2 Sekunden dazu (maximal 60). Ein Treffer bringt 100 Punkte mal Combo-Multiplikator (bis 3,0x) und Levelbonus. Mit steigendem Level werden die Ziele kleiner und bleiben kürzer sichtbar. Ein Fehlklick setzt die Combo zurück; 1 Sekunde Abzug gibt es nur, wenn du die Zeitstrafe in den Einstellungen einschaltest. Gespielt wird mit Maus oder Touch.',
+  },
+  {
+    q: 'Was ist eine Sakkade?',
+    a: 'Eine Sakkade ist ein schneller Blicksprung beider Augen von einem Fixationspunkt zum nächsten. Sie dauert nur einige zehn Millisekunden; bei großen Sprüngen erreicht die Spitzengeschwindigkeit mehrere hundert Grad pro Sekunde (Leigh & Zee, 2015). Beim Lesen und beim Absuchen eines Bildschirms passieren Sakkaden ständig (Rayner, 1998).',
+  },
+  {
+    q: 'Was sind Express-Sakkaden?',
+    a: 'Unter bestimmten Bedingungen treten Sakkaden mit sehr kurzer Latenz um etwa 100 ms auf; sie werden Express-Sakkaden genannt (Fischer & Weber, 1993). Dieser Drill misst keine Augenlatenz und kann Express-Sakkaden daher nicht erkennen.',
+  },
+  {
+    q: 'Misst der Drill meine Augenbewegungen?',
+    a: 'Nein. Der Browser kennt deine Blickposition nicht, er erfasst nur Zeitpunkt und Ort des Klicks. Im Ergebnis stecken neben dem Blicksprung auch Handbewegung, Mausverzögerung und Bildwiederholrate. Es ist keine Sakkadenlatenz.',
+  },
+  {
+    q: 'Hilft das Training in Shootern?',
+    a: 'Das Absuchen von Ecken, der Blick auf die Minimap und das Erfassen plötzlich auftauchender Gegner ähneln dieser Aufgabe. Ob sich deine Leistung im Spiel verbessert, hängt aber auch von Aim, Spielverständnis und Hardware ab und ist nicht garantiert.',
+  },
+  {
+    q: 'Welche Rolle spielt die Bildwiederholrate des Monitors?',
+    a: 'Der Abstand zwischen zwei Bildern beträgt 1000 geteilt durch die Bildwiederholrate: bei 60 Hz etwa 16,7 ms, bei 144 Hz etwa 6,9 ms, bei 240 Hz etwa 4,2 ms. Dadurch kann sich der Zeitpunkt, an dem ein Ziel sichtbar wird, leicht verschieben (Woods et al., 2015). Wie stark das deine Punktzahl hier beeinflusst, wurde nicht gemessen; vergleiche daher nur Durchgänge am selben Gerät.',
+  },
+  {
+    q: 'Kann das Training die Lesegeschwindigkeit steigern?',
+    a: 'Beim Lesen springt der Blick zwar von Wort zu Wort, aber ein Bildschirmspiel ist keine Leseübung. Eine schnellere Lesegeschwindigkeit ist nicht belegt. Bei anhaltenden Leseproblemen oder Augenbeschwerden wende dich an eine augenärztliche Praxis.',
+  },
+  {
+    q: 'Wie oft sollte ich üben?',
+    a: 'Kurze Blöcke von 5 bis 10 Minuten mit Pausen reichen. Wenn die Augen müde oder trocken werden, hör auf, blinzle bewusst und schau in die Ferne. Länger ist nicht automatisch besser.',
+  },
+  {
+    q: 'Ist das Augentraining kostenlos? Wo werden Ergebnisse gespeichert?',
+    a: 'Ja, kostenlos, ohne Installation und ohne Konto. Dein Highscore liegt im lokalen Speicher deines Browsers und wird von diesem Drill nicht an einen Server gesendet. Löschst du die Browserdaten, ist auch der Highscore weg.',
+  },
+];
 
 const faqSchema = {
   '@context': 'https://schema.org',
   '@type': 'FAQPage',
-  dateModified: '2026-09-20',
-  mainEntity: [
-    {
-      '@type': 'Question',
-      name: 'Was sind sakkadische Augenübungen (Sakkadentraining)?',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: 'Sakkadische Augenübungen sind strukturierte Sehtrainingsdrills, welche die Geschwindigkeit, Präzision und Latenz schneller Blicksprünge (Sakkaden) zwischen Fixationspunkten im Gesichtsfeld schulen.',
-      },
-    },
-    {
-      '@type': 'Question',
-      name: 'Was genau ist eine Sakkade im menschlichen Sehsystem?',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: 'Eine Sakkade ist eine schnelle, synchrone Bewegung beider Augen von einem Fixationspunkt zum nächsten. Mit Spitzengeschwindigkeiten von 200 bis 700 Grad pro Sekunde ist sie eine der schnellsten biologischen Bewegungen überhaupt (Rayner, 1998).',
-      },
-    },
-    {
-      '@type': 'Question',
-      name: 'Was versteht man unter Express-Sakkaden (Fischer & Boch, 1984)?',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: 'Express-Sakkaden sind extrem kurzlatente Blicksprünge (~100–120 ms), die über subkortikale Schaltkreise im Colliculus superior ausgelöst werden, wenn die Fixationshemmung kurz vor Reizauftritt aufgehoben wird.',
-      },
-    },
-    {
-      '@type': 'Question',
-      name: 'Welchen Vorteil bringt Sakkadentraining in Shooter-Spielen und Sport?',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: 'Schnellere Sakkaden ermöglichen es Spielern, Ecken abzusuchen, die Minikarte zu erfassen und plötzlich auftauchende Gegner mit minimaler visueller Unterdrückungslatenz anzuvisieren.',
-      },
-    },
-    {
-      '@type': 'Question',
-      name: 'Was ist die sogenannte sakkadische Unterdrückung (Saccadic Suppression)?',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: 'Während des 20–40 ms dauernden Blicksprungs schaltet das Gehirn die bewusste visuelle Wahrnehmung kurzzeitig stumm, um ein Verwischen des Bildes bei hohen Geschwindigkeiten zu verhindern.',
-      },
-    },
-    {
-      '@type': 'Question',
-      name: 'Was versteht man unter Sakkadendysmetrie?',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: 'Sakkadendysmetrie bezeichnet das Zu-Kurz-Springen (Hypometrie) oder Über-das-Ziel-Hinausschießen (Hypermetrie) der Augen, was korrigierende Mikrosakkaden erfordert und Zeit kostet.',
-      },
-    },
-    {
-      '@type': 'Question',
-      name: 'Welche Rolle spielt die Bildwiederholrate des Monitors beim Sakkadentest?',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: 'Ein 144Hz- oder 240Hz-Monitor aktualisiert das Bild alle 4 bis 7 ms (Woods et al., 2015), wodurch Zielwechsel früher wahrgenommen werden und das Auge rascher reagieren kann.',
-      },
-    },
-    {
-      '@type': 'Question',
-      name: 'Kann Sakkadentraining auch die Lesegeschwindigkeit steigern?',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: 'Ja. Präzise Sakkadenkontrolle sorgt für flüssige Zeilensprünge und reduziert zeitraubende Regressionen (Rücksprünge) beim schnellen Lesen von Texten.',
-      },
-    },
-    {
-      '@type': 'Question',
-      name: 'Wie oft sollte man Sakkaden-Übungen durchführen?',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: 'Täglich 5 bis 10 Minuten genügen vollkommen. Eine Überlastung der Augenmuskulatur führt zu Asthenopie; kurze, hochkonzentrierte Serien sind am effektivsten.',
-      },
-    },
-    {
-      '@type': 'Question',
-      name: 'Ist dieses Sehtraining kostenlos und im Browser nutzbar?',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: 'Ja, das Sakkaden-Training von SkillDrills ist zu 100 % kostenlos, läuft ohne Installationen im Browser und misst Reaktionszeiten im Millisekundenbereich.',
-      },
-    },
-  ],
+  inLanguage: 'de',
+  dateModified: '2026-11-08',
+  mainEntity: faqs.map((f) => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } })),
 };
 
-faqSchema.mainEntity = faqSchema.mainEntity.slice(0, 10);
 const saccadicGuide = {
-  heading: 'Leitfaden: Sakkadische Augenbewegungen & Visuelles Scan-Training',
+  heading: 'Leitfaden: Augentraining mit Blicksprüngen',
   intro: [
-    'Sakkaden sind rasche, ballistische Blicksprünge, die den Brennpunkt des Auges von einem Fixationspunkt zum nächsten katapultieren. In der Kognitionspsychologie und der Sportophthalmologie gelten sie als fundamentale Grundlage für rasche Orientierung und Reaktionsschnelligkeit (Rayner, 1998; Fischer & Boch, 1984).',
-    'Mit Winkelgeschwindigkeiten von bis zu 700°/s stellen Sakkaden das menschliche Sehsystem vor besondere Herausforderungen: Um Bewegungsunschärfe zu vermeiden, unterdrückt das Gehirn während des Sprungs die Bildverarbeitung (sakkadische Suppression). Treffen die Augen das Ziel ungenau (Sakkadendysmetrie), müssen zeitaufwendige Korrektursakkaden nachgeschoben werden. Dieses Training trainiert präzise Zielansteuerung und minimiert die Reaktionslatenz.',
-    'Messmethodik im Browser: Sämtliche Durchläufe werden clientseitig über die High Resolution Time API (performance.now()) gemessen. Zu beachten sind hardwarebedingte Latenzen des Displays (~16,7 ms bei 60 Hz, ~6,9 ms bei 144 Hz und ~4,1 ms bei 240 Hz; Woods et al., 2015) sowie die Abfragerate der Maus (~1 ms bei 1000 Hz). Unterschiede unter 5 ms stellen messtechnisches Grundrauschen dar.',
-    'Führen Sie das Training regelmäßig auf demselben Bildschirm durch, um echte neurophysiologische Fortschritte bei der Augensteuerung zu erzielen.',
+    'Bei diesem Augentraining erscheinen Ziele nacheinander an verschiedenen Stellen des Bildschirms. Du führst den Blick in einem Sprung zum Ziel und klickst es an. Solche schnellen Blicksprünge heißen Sakkaden; sie passieren ständig beim Lesen und beim Absuchen eines Bildes (Rayner, 1998).',
+    'Während einer Sakkade wird die visuelle Verarbeitung abgeschwächt, und landet der Blick neben dem Ziel, folgt eine kleine Korrektur (Leigh & Zee, 2015). Deshalb lohnt es sich, zuerst auf eine saubere Landung statt auf reines Tempo zu achten.',
+    'Grenzen der Messung: Der Browser kennt deine Blickposition nicht und erfasst nur Zeitpunkt und Ort des Klicks. Im Ergebnis stecken Handbewegung, Mausverzögerung und Bildintervall (etwa 16,7 ms bei 60 Hz, 6,9 ms bei 144 Hz, 4,2 ms bei 240 Hz; Woods et al., 2015). Es ist keine Sakkadenlatenz und keine Aussage über die Augengesundheit.',
+    'Übe am selben Gerät, mit gleichem Abstand und gleicher Haltung und vergleiche nur deine eigenen Durchgänge. Bei Schmerzen oder Sehstörungen lass dich augenärztlich untersuchen.',
   ],
   benchmarks: {
-    title: 'Referenztabelle: Sakkaden-Latenz und Blicksprung-Präzision',
-    headers: ['Sakkaden-Latenz', 'Leistungsstufe', 'Sakkadische Dynamik', 'Funktionale Einstufung', 'Empfohlener Trainingsfokus'],
+    title: 'Übungsstufen zur Orientierung',
+    headers: ['Stufe', 'Übungsziel', 'Worauf achten'],
     rows: [
-      ['< 130 ms', 'Stufe 5 (Express-Sakkaden)', 'Subkortikale Direktauslösung (Colliculus Superior); minimale Hemmung', 'Express-Sakkaden (Fischer & Boch, 1984)', 'Maximale Blicksprung-Weite trainieren'],
-      ['130 – 170 ms', 'Stufe 4', 'Extrem schnelle kortikale Initiierung; kaum Fixationsverzögerung', 'Fokus: Zielstopp und Fixation', 'Zielstopp-Präzision (kein Overshoot) festigen'],
-      ['171 – 220 ms', 'Tier 3 (Fortgeschritten)', 'Normative gesunde Blicksprung-Latenz', 'Durchschnittlicher gesunder Erwachsener (Rayner, 1998)', 'Peripheren Wahrnehmungsradius erweitern'],
-      ['221 – 280 ms', 'Tier 4 (Mittelstufe)', 'Verlängerte Fixationshemmung; spürbare Suchverzögerung', 'Gelegentliche Ermüdung oder unvollständige Erholung', '20-20-20 Augenpausen einlegen'],
-      ['> 280 ms', 'Tier 5 (Basis / Dysmetrie)', 'Deutliche Sakkadendysmetrie mit korrigierenden Mikrosakkaden', 'Übermüdete Augenmuskeln oder Bildschirmüberlastung', 'Zunächst auf Treffergenauigkeit vor Schnelligkeit achten'],
+      ['Stufe 1', 'Kein Ziel verpassen', 'Ein Gefühl für präzise Klicks bekommen'],
+      ['Stufe 2', 'Blick in einem Sprung führen', 'Sofort nach dem Erscheinen hinschauen'],
+      ['Stufe 3', 'Klickrhythmus halten', 'Ruhiges, gleichmäßiges Tempo statt Hektik'],
+      ['Stufe 4', 'Schneller bei gleicher Genauigkeit', 'Überschießen und Nachkorrigieren reduzieren'],
+      ['Stufe 5', 'Längere Durchgänge halten', 'Vor der Ermüdung pausieren, gleiche Bedingungen vergleichen'],
     ],
-    note: 'Klassifikation basierend auf okulomotorischen Studien (Rayner, 1998; Fischer & Boch, 1984; Leigh & Zee, 2015) angepasst an digitale Monitore (Woods et al., 2015).',
+    note: 'Diese Tabelle ist eine Übungsorientierung von SkillDrills. Sie enthält keine Reaktionszeit-Normen, Nutzerstatistiken, Perzentile oder klinischen Werte.',
   },
   techniques: {
-    title: 'Techniken zur Optimierung der Blicksprung-Geschwindigkeit',
+    title: 'Tipps für sauberere Blicksprünge',
     items: [
-      {
-        name: 'Kopfbewegungen isolieren',
-        desc: 'Bewegen Sie ausschließlich die Augenäpfel und halten Sie Kopf und Nacken stabil. Reine Augenbewegungen sind mehr als doppelt so schnell wie kombinierte Kopf-Auge-Drehungen.',
-        tips: 'Legen Sie das Kinn bei Bedarf locker auf die Hand, um unbewusste Kopfdrehungen zu bemerken.',
-      },
-      {
-        name: 'Periphere Reizdetektion schärfen',
-        desc: 'Nutzen Sie die periphere Netzhaut, um den Zielpunkt im Augenwinkel zu orten, bevor der bewusste Blicksprung gestartet wird.',
-        tips: 'Halten Sie einen weichen Blick auf der Bildschirmmitte.',
-      },
-      {
-        name: 'Punktgenaue Fovealisierung ohne Überschießen',
-        desc: 'Vermeiden Sie Sakkadendysmetrie: Bremsen Sie den Blicksprung direkt auf dem Zielzentrum ab, um Korrektursakkaden zu vermeiden.',
-        tips: 'Präzision hat Vorrang vor blinder Hast.',
-      },
-      {
-        name: 'Augenentspannung & Befeuchtung',
-        desc: 'Konzentriertes Arbeiten am Bildschirm reduziert die Blinzelfrequenz um bis zu 60 %. Trockene Augen verschlechtern die motorische Steuerungsgenauigkeit.',
-        tips: 'Regelmäßig bewusst blinzeln und Pausen einlegen.',
-      },
+      { name: 'Kopf ruhig, nur die Augen bewegen', desc: 'Dreh den Kopf nicht mit, sondern lass nur die Augen springen. Eine feste Haltung macht Durchgänge auch besser vergleichbar.', tips: 'Prüf zwischendurch, ob sich der Kopf unbemerkt mitbewegt.' },
+      { name: 'Weicher Blick auf die Mitte', desc: 'Starr nicht auf einen Punkt, sondern lass den Blick locker auf der Bildschirmmitte ruhen, dann fällt ein neues Ziel schneller auf.', tips: 'Den ganzen Bildschirm im Blick behalten.' },
+      { name: 'In einem Sprung landen', desc: 'Springt der Blick zu kurz oder zu weit, musst du nachkorrigieren. Ziel ist eine Landung direkt auf dem Zielzentrum.', tips: 'Präzision geht vor Hast.' },
+      { name: 'Augen entspannen', desc: 'Bei konzentrierter Bildschirmarbeit blinzelt man seltener, die Augen werden trocken.', tips: 'Zwischen den Durchgängen bewusst blinzeln und in die Ferne schauen.' },
     ],
   },
   steps: [
-    'Setzen Sie sich mittig in circa 60 cm Distanz vor den Bildschirm.',
-    'Starten Sie den Drill und fokussieren Sie den zentralen Startpunkt.',
-    'Sobald im Gesichtsfeld ein Ziel aufblitzt, richten Sie die Augen blitzartig darauf.',
-    'Erfassen Sie das Ziel scharf im Blickzentrum und klicken Sie es sofort an.',
-    'Wiederholen Sie die Durchgänge und analysieren Sie Ihre durchschnittliche Blicksprung-Latenz.',
+    'Setz dich in etwa 50–70 cm Abstand mittig vor den Bildschirm.',
+    'Starte den Drill und richte den Blick auf die Bildschirmmitte.',
+    'Erscheint ein Ziel, springst du zuerst mit den Augen hin.',
+    'Klicke das Ziel an (auf dem Handy antippen).',
+    'Nach Ablauf der Zeit Genauigkeit, durchschnittliche Reaktion, höchstes Level und maximale Combo prüfen.',
   ],
-  audience: 'Esports-Athleten (FPS, MOBA), Rennfahrer, Sportler in temporeichen Disziplinen und alle, die ihre visuelle Reaktionsfähigkeit und Augenbeweglichkeit steigern wollen.',
-  faqs: faqSchema.mainEntity.map((q) => ({ q: q.name, a: q.acceptedAnswer.text })),
-  sources: pickSources('rayner1998', 'fischer1984', 'leigh2015', 'woods2015'),
+  audience: 'Für alle, die schnelle Blickwechsel spielerisch üben wollen, für FPS-Spieler und Ballsport-Fans.',
+  faqs,
+  sources: pickSources('rayner1998', 'fischer1993', 'leigh2015', 'woods2015'),
   related: [
     { href: '/de/drills/reaction-speed', label: 'Reaktionsschnelligkeit Hub' },
     { href: '/de/drills/visual/reaction-speed/light-reaction', label: 'Reaktionstest (Reaktionszeit Test)' },

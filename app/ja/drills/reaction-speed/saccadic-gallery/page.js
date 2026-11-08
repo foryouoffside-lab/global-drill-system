@@ -5,44 +5,39 @@ import DrillFooter from '@/components/drill/DrillFooter';
 import RelatedDrills from '@/components/drill/RelatedDrills';
 import { pickSources } from '@/lib/drillSources';
 
-// ============================================================
-// SEO RESEARCH FINDINGS — ja-JP (reaction-speed / saccadic-gallery)
-// PRIMARY DOMESTIC: Google Suggest expands "動体視力" into テスト, トレーニング, 鍛える, ゲーム
-// Live Japanese SERPs lead with free 動体視力 test/training games; specialist サッケード remains supporting language
-// ============================================================
+const url = 'https://skilldrills.online/ja/drills/reaction-speed/saccadic-gallery';
+const title = '眼球運動トレーニング・視線移動ゲーム | SkillDrills';
+const description =
+  '無料の眼球運動トレーニング。画面に現れるターゲットへ視線を素早く移す、ビジョントレーニング向けの視線移動ゲームです。捕捉精度と反応をブラウザで記録します。';
 
 export const metadata = {
-  title: '眼球運動トレーニング・視線移動ゲーム | SkillDrills',
-  description:
-    '無料の眼球運動トレーニング。画面に現れるターゲットへ視線を素早く移す、ビジョントレーニング向けの視線移動ゲームです。捕捉精度と反応をブラウザで記録します。',
+  title,
+  description,
   keywords: [
     '眼球運動 トレーニング',
     '眼球運動トレーニング',
     'ビジョントレーニング',
     '視線移動 トレーニング',
-    '眼球運動 トレーニング 遊び',
     '目の体操',
     'サッケード トレーニング',
     '跳躍性眼球運動',
   ],
   alternates: {
-    canonical: 'https://skilldrills.online/ja/drills/reaction-speed/saccadic-gallery',
+    canonical: url,
     languages: getAlternateLanguages('/drills/reaction-speed/saccadic-gallery'),
   },
-  openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
-    title: '眼球運動トレーニング・視線移動ゲーム | SkillDrills',
-    description:
-      'ターゲットへ視線を素早く移す、無料の眼球運動トレーニング・視線移動ゲーム。',
+  openGraph: { images: [{ url: 'https://skilldrills.online/opengraph-image', width: 1200, height: 630 }],
+    title,
+    description: 'ターゲットへ視線を素早く移す、無料の眼球運動トレーニング・視線移動ゲーム。',
     type: 'article',
-    url: 'https://skilldrills.online/ja/drills/reaction-speed/saccadic-gallery',
+    url,
     siteName: 'SkillDrills',
     locale: 'ja_JP',
   },
-  twitter: { images: ["https://skilldrills.online/opengraph-image"],
+  twitter: { images: ['https://skilldrills.online/opengraph-image'],
     card: 'summary_large_image',
-    title: '眼球運動トレーニング・視線移動ゲーム | SkillDrills',
-    description:
-      '無料の眼球運動トレーニング。視線を素早く移してターゲットを正確に捉えよう。',
+    title,
+    description: '無料の眼球運動トレーニング。視線を素早く移してターゲットを正確に捉えよう。',
   },
   robots: { index: true, follow: true },
 };
@@ -54,235 +49,158 @@ const breadcrumbSchema = {
     { '@type': 'ListItem', position: 1, name: 'SkillDrills ホーム', item: 'https://skilldrills.online/ja' },
     { '@type': 'ListItem', position: 2, name: 'ドリル一覧', item: 'https://skilldrills.online/ja/drills' },
     { '@type': 'ListItem', position: 3, name: '反応速度', item: 'https://skilldrills.online/ja/drills/reaction-speed' },
-    { '@type': 'ListItem', position: 4, name: '眼球運動トレーニング・視線移動ゲーム', item: 'https://skilldrills.online/ja/drills/reaction-speed/saccadic-gallery' },
+    { '@type': 'ListItem', position: 4, name: '眼球運動トレーニング・視線移動ゲーム', item: url },
   ],
 };
 
 const softwareApplicationSchema = {
   '@context': 'https://schema.org',
-  '@type': 'SoftwareApplication', "sameAs": ["https://en.wikipedia.org/wiki/Saccade"],
+  '@type': 'SoftwareApplication',
+  sameAs: ['https://en.wikipedia.org/wiki/Saccade'],
   name: '眼球運動トレーニング・視線移動ゲーム',
   alternateName: ['眼球運動 トレーニング', '視線移動 トレーニング', 'サッケード トレーニング'],
-  applicationCategory: 'HealthApplication',
+  applicationCategory: 'GameApplication',
   operatingSystem: 'All',
   offers: { '@type': 'Offer', price: '0', priceCurrency: 'JPY' },
-  description:
-    '視野周辺部で点滅する標的へ視線を素早くジャンプさせ、中心窩捕捉の潜時と着弾精度を測定する専門トレーニングツール。',
+  description: '画面の決まった位置に1つずつ現れるターゲットへ視線を移してクリックし、命中率と出現からクリックまでの時間を記録するブラウザゲーム。',
   browserRequirements: '最新のウェブブラウザ（Chrome, Edge, Safari, Firefox）',
-  softwareVersion: '2.0',
+  inLanguage: 'ja',
+  dateModified: '2026-11-08',
 };
 
 const webAppSchema = {
   '@context': 'https://schema.org',
   '@type': 'WebApplication',
   name: '眼球運動トレーニング・視線移動ゲーム | SkillDrills',
-  url: 'https://skilldrills.online/ja/drills/reaction-speed/saccadic-gallery',
-  description:
-    '無料オンラインサッケードトレーニング。跳躍性眼球運動速度と周辺視野の捕捉能力を高めるブラウザリアクションゲーム。',
-  applicationCategory: 'EducationalApplication',
+  url,
+  description: '無料の眼球運動トレーニング。ターゲットへ視線を素早く移してクリックする視線移動ゲームです。',
+  applicationCategory: 'GameApplication',
   operatingSystem: 'All',
   browserRequirements: 'JavaScript対応の最新ブラウザが必要。',
   offers: { '@type': 'Offer', price: '0', priceCurrency: 'JPY' },
   author: { '@type': 'Organization', name: 'SkillDrills', url: 'https://skilldrills.online' },
   isAccessibleForFree: true,
-  learningResourceType: 'Educational Game',
-  teaches: 'サッケード, 跳躍性眼球運動, 視線移動速度, 中心窩捕捉, 動体視力',
+  inLanguage: 'ja',
+  dateModified: '2026-11-08',
 };
 
 const videoGameSchema = {
   '@context': 'https://schema.org',
   '@type': 'VideoGame',
   name: '眼球運動トレーニング - 視線移動ゲーム',
-  url: 'https://skilldrills.online/ja/drills/reaction-speed/saccadic-gallery',
-  description: 'ブラウザで手軽に跳躍性眼球運動の速度と精度を鍛えるリアクショントレーニング。',
-  genre: ['Vision Training', 'Action', 'Esports Training'],
-  gamePlatform: ['Web Browser', 'Desktop'],
+  url,
+  description: 'ブラウザで手軽に遊べる、ターゲットへ視線を移してクリックする視線移動ゲーム。',
+  genre: ['Action', 'Aim Trainer'],
+  gamePlatform: ['Web Browser', 'Desktop', 'Mobile'],
   applicationCategory: 'Game',
+  inLanguage: 'ja',
+  dateModified: '2026-11-08',
   offers: { '@type': 'Offer', price: '0', priceCurrency: 'JPY' },
 };
 
 const howToSchema = {
   '@context': 'https://schema.org',
   '@type': 'HowTo',
-  name: 'サッケード眼球運動と視線移動速度のトレーニング手順',
-  description: '周辺視野の標的へ素早く視線を飛ばし中心窩で捕捉するステップバイステップガイド。',
+  name: '眼球運動トレーニング（視線移動ゲーム）の進め方',
+  description: 'ターゲットへ視線を素早く移してクリックする4ステップの練習手順です。',
   step: [
-    {
-      '@type': 'HowToStep',
-      position: 1,
-      name: '姿勢調整と中央への注視',
-      text: '画面から約50〜70cm離れて着席し、中央の基準マークに視線を置きます。',
-      url: 'https://skilldrills.online/ja/drills/reaction-speed/saccadic-gallery#step-1',
-    },
-    {
-      '@type': 'HowToStep',
-      position: 2,
-      name: '周辺視野での点滅知覚',
-      text: '頭を動かさず、周辺視野のどこかで点滅するターゲットを即座に感知します。',
-      url: 'https://skilldrills.online/ja/drills/reaction-speed/saccadic-gallery#step-2',
-    },
-    {
-      '@type': 'HowToStep',
-      position: 3,
-      name: '弾道的な視線ジャンプ（サッケード）の実行',
-      text: '迷いなく視軸をターゲット中心座標へ一瞬で跳躍させます。',
-      url: 'https://skilldrills.online/ja/drills/reaction-speed/saccadic-gallery#step-3',
-    },
-    {
-      '@type': 'HowToStep',
-      position: 4,
-      name: '中心窩捕捉とクリック確認',
-      text: '標的中心を鮮明に捉えてクリックし、反応潜時を記録します。',
-      url: 'https://skilldrills.online/ja/drills/reaction-speed/saccadic-gallery#step-4',
-    },
-  ],
+    { '@type': 'HowToStep', position: 1, name: '姿勢を整える', text: '画面から約50〜70cm離れて座り、視線を画面中央に置きます。' },
+    { '@type': 'HowToStep', position: 2, name: 'ターゲットに気づく', text: '頭を大きく動かさず、画面に現れた赤いターゲットに気づきます。' },
+    { '@type': 'HowToStep', position: 3, name: '視線を移す', text: '目で先にターゲットへ一度で視線を移します。' },
+    { '@type': 'HowToStep', position: 4, name: '正確にクリック', text: 'ターゲットを捉えてクリック（スマホはタップ）し、結果を確認します。' },
+  ].map((st) => ({ ...st, url: `${url}#step-${st.position}` })),
 };
+
+const faqs = [
+  {
+    q: '眼球運動トレーニング（視線移動トレーニング）とは何ですか？',
+    a: '視線をある点から別の目標へ素早く移す動き（サッケード、跳躍性眼球運動）を繰り返す練習です。このゲームでは画面の決まった位置（PCは4×3、スマホは3×3）に1つずつ現れるターゲットへ視線を移し、クリックの速さと正確さを記録します。ブラウザは眼球そのものの動きは測りません。',
+  },
+  {
+    q: 'ルールと制限時間はどうなっていますか？',
+    a: '持ち時間45秒で始まり、ターゲットに当てるたびに2秒加算されます（上限60秒）。1ヒットは100点に連続ヒットのコンボ倍率（最大3.0倍）とレベル補正がかかります。レベルが上がるとターゲットは小さくなり、表示時間も短くなります。空振りはコンボをリセットし、1秒減算は設定でオンにした場合だけです。操作はマウスかタップです。',
+  },
+  {
+    q: 'サッケードはどれくらい速い動きですか？',
+    a: 'サッケードは数十ミリ秒で終わる非常に速い眼球運動で、大きな視線移動では最高速度が毎秒数百度に達します（Leigh & Zee, 2015）。読書や画面を見渡すときにも絶えず起きています（Rayner, 1998）。',
+  },
+  {
+    q: 'エクスプレス・サッケードとは何ですか？',
+    a: '条件によっては、通常より短い潜時（およそ100ミリ秒前後）で起きるサッケードが観察され、エクスプレス・サッケードと呼ばれます（Fischer & Weber, 1993）。このゲームは眼球の潜時を測らないため、エクスプレス・サッケードかどうかは判定できません。',
+  },
+  {
+    q: 'FPSゲームに役立ちますか？',
+    a: 'VALORANTやCS2では、クリアリングやミニマップ確認、急に現れた敵へ視線を合わせる場面があり、この練習はそれに似た画面課題を繰り返せます。ただし実際の撃ち合いは立ち回りやエイム、機器設定にも左右されるため、ゲーム内の成績が上がることを保証するものではありません。',
+  },
+  {
+    q: 'サッケード抑制とは何ですか？',
+    a: '視線が素早く動いている間、画面の流れやブレをほとんど意識しない現象です。眼球運動中は視覚情報の処理が弱まる傾向があると報告されています（Leigh & Zee, 2015）。このゲームで抑制の程度は測定しません。',
+  },
+  {
+    q: 'モニターのリフレッシュレートは結果に影響しますか？',
+    a: '1フレームの間隔は1000をリフレッシュレートで割った値です。60Hzでは約16.7ms、144Hzでは約6.9ms、240Hzでは約4.2msごとに画面が更新されるため、ターゲットが表示されるタイミングに差が出ることがあります（Woods et al., 2015）。このゲームでスコアがどれだけ変わるかは測定していないので、同じ環境で比べてください。',
+  },
+  {
+    q: '眼球運動トレーニングで読書速度や集中力は上がりますか？',
+    a: '読書では行から行へ視線を移す眼球運動を使いますが、この画面上の練習で読書速度や集中力が上がるとは言い切れません。読みにくさや目の疲れが続く場合は、眼科や視能訓練士などの専門家に相談してください。このゲームは診断や治療のためのものではありません。',
+  },
+  {
+    q: '1日にどれくらい練習すればいいですか？',
+    a: '1回5〜10分ほどの短いセットにして、間に休憩を入れてください。目が疲れたり乾いたりしたら中断し、遠くを見てまばたきしましょう。長くやるほど良いわけではありません。',
+  },
+  {
+    q: 'この眼球運動トレーニングは無料で使えますか？記録はどこに保存されますか？',
+    a: 'はい、無料でインストールやアカウントは不要です。ベストスコアはブラウザのローカルストレージに保存され、このドリルからサーバーへは送信されません。ブラウザのデータを消すと記録も消えます。',
+  },
+];
 
 const faqSchema = {
   '@context': 'https://schema.org',
   '@type': 'FAQPage',
-  dateModified: '2026-09-20',
-  mainEntity: [
-    {
-      '@type': 'Question',
-      name: '眼球運動トレーニング（視線移動トレーニング）とは何ですか？',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: '視線をある点から別の目標へ素早く移す動き（サッケード、跳躍性眼球運動）を繰り返す練習です。ビジョントレーニングでもよく使われる種類の課題で、このゲームでは画面のあちこちに現れるターゲットへ視線を移し、クリックの速さと正確さを記録します。ブラウザは眼球そのものの動きは測りません。',
-      },
-    },
-    {
-      '@type': 'Question',
-      name: '人間の眼球運動においてサッケードの速度はどれくらいですか？',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: 'サッケードの最大角速度は毎秒200〜700度に達し、人体で最も高速な生体運動の一つとして知られています（Rayner, 1998）。',
-      },
-    },
-    {
-      '@type': 'Question',
-      name: 'エクスプレス・サッケード（Express Saccades）とは何ですか？',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: 'エクスプレス・サッケード（Fischer & Boch, 1984）は約100〜120ミリ秒という極めて短い潜時で発動する超高速ジャンプで、大脳皮質を迂回して中脳上丘の直接経路から引き起こされます。',
-      },
-    },
-    {
-      '@type': 'Question',
-      name: 'サッケードトレーニングはFPSゲームにどう役立ちますか？',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: 'VALORANTやCS2では、クリアリングやミニマップ確認、急に現れた敵へ視線を合わせる場面があり、この練習はそれに似た画面課題を繰り返せます。ただし実際の撃ち合いは立ち回りやエイム、機器設定にも左右されるため、ゲーム内の成績が上がることを保証するものではありません。',
-      },
-    },
-    {
-      '@type': 'Question',
-      name: 'サッケード抑制（Saccadic Suppression）とは何ですか？',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: '眼球が高速移動する20〜40ミリ秒の間、脳が視覚情報処理を一時停止し、視界のブレやモーションブラーを感じさせないようにする神経防御現象です。',
-      },
-    },
-    {
-      '@type': 'Question',
-      name: 'サッケード測定異常（Saccadic Dysmetria）とは何ですか？',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: '目標の手前で視線が止まる「過小跳躍」や目標を行き過ぎる「過大跳躍」を起こし、焦点を合わせるために余分な修正サッケードが必要になる状態です。',
-      },
-    },
-    {
-      '@type': 'Question',
-      name: 'モニターのリフレッシュレートはサッケード測定に影響しますか？',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: '大きく影響します。144Hzや240Hzの高リフレッシュレート環境ではフレーム遅延が4〜7msに抑えられ（Woods et al., 2015）、標的の出現をいち早く網膜で捉えられます。',
-      },
-    },
-    {
-      '@type': 'Question',
-      name: '眼球運動トレーニングで読書速度や集中力は上がりますか？',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: '読書では行から行へ視線を移す眼球運動を使いますが、この画面上の練習で読書速度や集中力が上がるとは言い切れません。読みにくさや目の疲れが続く場合は、眼科や視能訓練士などの専門家に相談してください。このゲームは診断や治療のためのものではありません。',
-      },
-    },
-    {
-      '@type': 'Question',
-      name: '1日にどれくらい練習するのが効果的ですか？',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: '1回5〜10分程度の集中練習が最適です。目の外眼筋の疲労を防ぐため、長時間のやりすぎを避け、短時間で鋭いセッションを重ねることが推奨されます。',
-      },
-    },
-    {
-      '@type': 'Question',
-      name: 'この眼球運動トレーニングは無料で使えますか？',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: 'はい。SkillDrillsのサッケードトレーニングは完全無料です。インストール不要でブラウザ上で動作し、High Resolution Time API（performance.now()）による高精度測定を行います。',
-      },
-    },
-  ],
+  inLanguage: 'ja',
+  dateModified: '2026-11-08',
+  mainEntity: faqs.map((f) => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } })),
 };
 
-faqSchema.mainEntity = faqSchema.mainEntity.slice(0, 10);
 const saccadicGuide = {
-  heading: 'サッケード（跳躍性眼球運動）解説：高速視線移動と捕捉精度の科学',
+  heading: '眼球運動トレーニング（視線移動ゲーム）ガイド',
   intro: [
-    '視線移動ゲームとは、画面に次々に現れる標的へ視線を素早く移し、見つけてクリックするまでの反応と正確さを練習するゲームです。視線を一点から次の点へ飛ばす眼球運動はサッケードと呼ばれます。このページでは標的の捕捉の速さと命中率を確認でき、視力や眼の検査ではありません。',
-    'サッケード（跳躍性眼球運動）は、視線の固視点をある目標から次の目標へと瞬時に弾道式にジャンプさせる極めて重要な視覚機能です（Rayner, 1998; Fischer & Boch, 1984）。',
-    '最大角速度が毎秒700度にも達するサッケードの最中、脳は視覚情報処理を一時停止して像のブレを防ぐ「サッケード抑制」を発動しています。視線が目標へ正確に着弾しないと、修正サッケードが発生して決定的な遅延が生じます。本ドリルは修正サッケードを最小化し、一撃で目標の中心窩に焦点を合わせる精度を鍛えます。',
-    '測定精度とハードウェア要因：測定はすべてブラウザ上でローカルに行われます。セキュリティ上のタイマー丸め（約1ms）やモニター更新間隔（60Hzで約16.7ms、240Hzで約4.1ms；Woods et al., 2015）、マウスポーリングレートが加わります。5ms未満の微細な差は計測ノイズとして扱ってください。',
-    '同一の表示環境下で継続してトレーニングし、眼球制御の敏捷性と反応時間の向上を定期的に確認してください。',
+    '視線移動ゲームとは、画面に次々に現れる標的へ視線を素早く移し、見つけてクリックするまでの反応と正確さを練習するゲームです。視線を一点から次の点へ飛ばす眼球運動はサッケード（跳躍性眼球運動）と呼ばれ、読書や画面の探索中にも絶えず起きています（Rayner, 1998）。このページは視力や眼の検査ではありません。',
+    'ターゲットは画面上の決まった位置（PCは4×3、スマホは3×3の点）のどこかに1つずつ現れ、直前と同じ位置には続けて出ません。視線が目標から外れると小さな修正の動きが必要になるため、速さよりも一度で正確に捉えることを意識すると練習の質が上がります。',
+    '測定の限界：ブラウザは視線の位置を知ることができず、記録されるのはクリックの時刻と位置だけです。結果には目の動きのほか、手の動き、マウスの入力遅延、画面の更新間隔（60Hzで約16.7ms、240Hzで約4.2ms；Woods et al., 2015）が含まれます。サッケードの潜時として解釈しないでください。',
+    '同じ機器・距離・姿勢で練習し、自分の記録の推移を比べてください。目が疲れたら休み、痛みや見え方の異常があれば眼科を受診してください。',
   ],
   benchmarks: {
-    title: '跳躍性眼球運動（サッケード）潜時ベンチマーク表',
-    headers: ['サッケード潜時（反応時間）', 'ランク区分', '跳躍メカニズム特性', '実戦での適応分野', '推奨トレーニング着眼点'],
+    title: '練習ステップの目安',
+    headers: ['ステップ', '練習の目標', '意識するポイント'],
     rows: [
-      ['< 130 ms', '非常に速い (Express)', '中脳上丘直結のサブコーティカル跳躍；固視抑制遅延極小', '非常に速い反応が求められる場面 (Fischer & Boch, 1984)', '広角跳躍時の着弾安定性維持'],
-      ['130 – 170 ms', '非常に速い (Fast)', '極めて素早い皮質発動；固視解除の淀みほぼゼロ', '素早い視線移動が求められる場面', '着弾時のオーバーシュート抑止練習'],
-      ['171 – 220 ms', '上級者・標準 (Advanced)', '健康な成人の標準的な跳躍性眼球運動潜時', '健常成人の基準レベル (Rayner, 1998)', '周辺視野の認識可能範囲の拡張'],
-      ['221 – 280 ms', '中級者 (Intermediate)', '固視抑制の解除遅延；わずかな探索の迷いが発生', '一時的な眼精疲労や集中低下', '20-20-20ルールで適度な眼球休憩を導入'],
-      ['> 280 ms', '初級 (Developing)', '二次修正サッケードが増えやすい段階', '疲れや集中の低下の影響を受けやすい', 'スピードよりも一発着弾の正確性を最優先'],
+      ['ステップ1', 'ターゲットを逃さずクリックする', '正確に当てる感覚をつかむ'],
+      ['ステップ2', '視線を一度で移す', 'ターゲットを見たらすぐに視線を動かす'],
+      ['ステップ3', 'クリックのリズムを保つ', '焦らず一定のテンポをつくる'],
+      ['ステップ4', '精度を保ったまま速くする', '行き過ぎと修正を減らす'],
+      ['ステップ5', '長めのセッションを続ける', '疲れる前に休み、同じ条件で比べる'],
     ],
-    note: '本基準は神経眼科学の文献（Rayner, 1998; Fischer & Boch, 1984; Leigh & Zee, 2015）を基に、デジタル画面の表示遅延（Woods et al., 2015）を考慮して参考にして編集した目安であり、診断基準ではありません。',
+    note: 'この表はSkillDrillsの練習の進め方の目安です。反応時間の基準値、利用者の統計、パーセンタイル、医学的な基準ではありません。',
   },
   techniques: {
-    title: '視線跳躍速度を極限まで高める実践テクニック',
+    title: '視線移動の練習のコツ',
     items: [
-      {
-        name: '頭部の固定と純粋な眼球運動',
-        desc: '頭を動かさず眼球だけを独立して素早く動かします。眼球のみの跳躍は頭部連動より2倍以上高速です。',
-        tips: '必要に応じて顎に軽く手を添え、頭部が動いていないか確認しましょう。',
-      },
-      {
-        name: '周辺視野による事前位置察知',
-        desc: '画面中央をぼんやり視野に入れつつ、網膜周辺部でターゲットの点滅を素早く察知してから跳躍を開始します。',
-        tips: '視野を狭めず、全体を柔らかく見渡す意識を持ちましょう。',
-      },
-      {
-        name: '一発着弾の制動力（Stopping Power）',
-        desc: 'ターゲットを行き過ぎたり手前で止まったりせず、中心座標にピタリと視線を止める制動力が反応速度を劇的に縮めます。',
-        tips: '無駄な修正動作を省くため、正確な着弾を意識してください。',
-      },
-      {
-        name: '目のリラックスと意識的なまばたき',
-        desc: '集中しすぎて瞬きが減るとドライアイになり、眼筋の微細運動が低下します。',
-        tips: 'セッションの間隔ごとに意識的にまばたきし、遠くを眺めて目を休めましょう。',
-      },
+      { name: '頭は固定して目だけ動かす', desc: '頭を回さず目だけで視線を移す練習をします。姿勢を一定にすると記録も比べやすくなります。', tips: 'ときどき頭が動いていないか確認しましょう。' },
+      { name: '画面全体をやわらかく見る', desc: '一点を凝視せず画面中央をぼんやり見ておくと、新しく現れたターゲットに気づきやすくなります。', tips: '視野を狭めず、全体を見渡す意識を持ちましょう。' },
+      { name: '一度で止める', desc: 'ターゲットを行き過ぎたり手前で止まったりすると修正が必要になります。一度で正確に止めることを目標にしてください。', tips: 'スピード競争より正確な着地を優先します。' },
+      { name: '目を休める', desc: '画面に集中するとまばたきが減り、目が乾きやすくなります。', tips: 'セットの合間に意識してまばたきし、遠くを眺めて目を休めましょう。' },
     ],
   },
   steps: [
-    '画面中央から約60cm離れて正面に座ります。',
-    'ドリルを開始し、中央のスタートマーカーを注視します。',
-    '画面のどこかで標的が点滅した瞬間、目だけを素早く飛ばします。',
-    '標的中心に焦点を合わせ、即座にクリックして反応を記録します。',
-    '制限時間終了後、平均サッケード潜時と着弾精度を確認します。',
+    '画面から約50〜70cm離れて正面に座ります。',
+    'ドリルを開始し、視線を画面中央に置きます。',
+    'ターゲットが現れたら、まず目で素早く視線を移します。',
+    'ターゲットを捉えてクリック（スマホはタップ）します。',
+    '時間切れの後、命中率・平均反応・最高レベル・最大コンボを確認します。',
   ],
-  audience: 'FPSプレイヤー、球技系スポーツ選手、モータースポーツ選手、および視覚探索速度や読書速度を向上させたいすべての方。',
-  faqs: faqSchema.mainEntity.map((e) => ({ q: e.name, a: e.acceptedAnswer.text })),
-  sources: pickSources('rayner1998', 'fischer1984', 'leigh2015', 'woods2015'),
+  audience: '画面の探索や視線移動をゲーム感覚で練習したい方、FPSプレイヤー、球技ファン。',
+  faqs,
+  sources: pickSources('rayner1998', 'fischer1993', 'leigh2015', 'woods2015'),
   related: [
     { href: '/ja/drills/reaction-speed', label: '反応速度 ハブ' },
     { href: '/ja/drills/visual/reaction-speed/light-reaction', label: '反応速度テスト' },

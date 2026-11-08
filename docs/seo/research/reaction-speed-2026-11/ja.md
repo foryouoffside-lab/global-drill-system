@@ -51,3 +51,12 @@ Labels: **Bing** = Bing Webmaster exact monthly volume, using the newest measure
 - No Google-side volume (Yahoo! JAPAN uses Google results). No Google/Yahoo SERP was viewed manually in this run.
 - `--trend` was not run.
 - Competition is unknown for 平均, 鍛える サイト, 動体視力ゲーム and timing-game terms (Bing SERP garbage or timeouts).
+
+## Pass 2
+
+Mode changed 2026-11-08: owner asked for ONE page x ONE country per step (sequential, coordinator-reviewed).
+
+| page | primary | demand evidence | competition | status |
+|---|---|---|---|---|
+| go/no-go | Go/No-Go課題 | Bing 0 (exact+broad); Google-JP autocomplete: `go/no-go課題` is #1 suggestion for "go/no-go", plus `go/no-go課題 アプリ` (proxy only) | UNKNOWN (all 5 Bing SERP probes timed out) | DONE 2026-11-08: title/desc/H1/FAQ/schema retargeted; fabricated claims removed (rIFC "measurement", 240Hz "dramatic" claim, physiology tier labels, "1-2x/day" routine); tier table relabelled as SkillDrills practice guide; all mechanic claims verified vs ChromaSyncClient.js (45 s, +2 s cap 60, 70/30, 600->100 ms, idle-click + spam penalty, no keyboard). Render audit: 1 h1, 9/9 FAQ visible, no noindex. |
+| remaining ja pages | - | - | - | pending, one per step |

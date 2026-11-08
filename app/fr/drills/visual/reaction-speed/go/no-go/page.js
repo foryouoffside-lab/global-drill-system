@@ -5,25 +5,20 @@ import RelatedDrills from '@/components/drill/RelatedDrills';
 import { pickSources } from '@/lib/drillSources';
 
 export const metadata = {
-  title: "Test Go/No-Go | Inhibition de la réponse | SkillDrills",
-  description: "Test Go/No-Go gratuit : réagissez au vert et retenez-vous au rouge. Entraînez l’inhibition de la réponse ; pas un diagnostic.",
+  title: "Test Go/No-Go en ligne gratuit | Inhibition de la réponse | SkillDrills",
+  description: "Test Go/No-Go gratuit dans le navigateur : cliquez vite sur le vert, ne touchez à rien sur le rouge. Entraîne l’inhibition de la réponse et compte les erreurs. Pas un diagnostic.",
   keywords: [
-    "test Go/No-Go",
-    "test d'inhibition de la réponse",
-    "contrôle inhibiteur",
-    "contrôle de l'impulsivité test",
-    "test d'impulsivité",
-    "inhibition motrice",
+    "test go no go",
     "test Go/No-Go en ligne",
-    "erreur de commission",
-    "fonctions exécutives test",
-    "attention soutenue SART",
-    "signal Go et No-Go",
-    "entraînement contrôle inhibiteur"
+    "tâche Go/No-Go",
+    "inhibition de la réponse",
+    "contrôle inhibiteur",
+    "jeu d’impulsivité",
+    "erreurs de commission omission"
   ],
   openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
-    title: "Test Go/No-Go | Inhibition de la réponse | SkillDrills",
-    description: "Réagissez au vert et retenez-vous au rouge pour observer l’inhibition de la réponse et les erreurs de commission.",
+    title: "Test Go/No-Go en ligne gratuit | Inhibition de la réponse | SkillDrills",
+    description: "Cliquez sur le vert, retenez-vous sur le rouge. Test Go/No-Go gratuit dans le navigateur pour travailler l’inhibition de la réponse. Pas un diagnostic.",
     type: 'article',
     url: 'https://skilldrills.online/fr/drills/visual/reaction-speed/go/no-go',
     siteName: 'SkillDrills',
@@ -31,8 +26,8 @@ export const metadata = {
   },
   twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: 'summary_large_image',
-    title: "Test Go/No-Go | Inhibition de la réponse | SkillDrills",
-    description: "Entraînement en ligne du contrôle inhibiteur : réagissez au vert, retenez-vous au rouge.",
+    title: "Test Go/No-Go en ligne gratuit | Inhibition de la réponse | SkillDrills",
+    description: "Vert : cliquez. Rouge : ne touchez à rien. Test Go/No-Go gratuit dans le navigateur."
   },
   robots: { index: true, follow: true },
   alternates: {
@@ -49,52 +44,52 @@ const breadcrumbSchema = {
     { "@type": "ListItem", "position": 2, "name": "Catalogue des Drills", "item": "https://skilldrills.online/fr/drills" },
     { "@type": "ListItem", "position": 3, "name": "Entraînement Visuel", "item": "https://skilldrills.online/fr/drills/visual" },
     { "@type": "ListItem", "position": 4, "name": "Vitesse de Réaction", "item": "https://skilldrills.online/fr/drills/visual/reaction-speed" },
-    { "@type": "ListItem", "position": 5, "name": "Test Go/No-Go Contrôle de l'Impulsion", "item": "https://skilldrills.online/fr/drills/visual/reaction-speed/go/no-go" }
+    { "@type": "ListItem", "position": 5, "name": "Test Go/No-Go", "item": "https://skilldrills.online/fr/drills/visual/reaction-speed/go/no-go" }
   ]
 };
 
 const softwareApplicationSchema = {
   "@context": "https://schema.org",
   "@type": "SoftwareApplication", "sameAs": ["https://en.wikipedia.org/wiki/Inhibitory_control"],
-  "name": "Test Go/No-Go d'Inhibition de Réponse",
-  "applicationCategory": "HealthApplication",
+  "name": "Test Go/No-Go (inhibition de la réponse)",
+  "applicationCategory": "GameApplication",
   "operatingSystem": "Web Browser",
   "url": "https://skilldrills.online/fr/drills/visual/reaction-speed/go/no-go",
   "offers": { "@type": "Offer", "price": "0", "priceCurrency": "EUR" },
-  "description": "Test neurocognitif Go/No-Go interactif pour évaluer le frein moteur préfrontal, les erreurs de commission et la discipline de tir.",
+  "description": "Version navigateur de la tâche Go/No-Go : cliquer sur le signal vert Go, ne rien faire sur le signal rouge No-Go. Compte les erreurs de commission, les omissions et le temps de réaction. Outil d’entraînement, pas un examen médical.",
   "featureList": [
-    "Chronométrie en millisecondes via l'API performance.now()",
-    "Rétrécissement dynamique de la fenêtre d'affichage pour sonder la retenue motrice",
-    "Mesure différentielle des erreurs de commission (faux positifs) et d'omission",
-    "Enregistrement 100% local dans le navigateur sans téléométrie externe"
+    "Temps de réaction mesuré en millisecondes avec performance.now()",
+    "Durée d’affichage qui passe d’environ 600 ms à 100 ms minimum avec le niveau",
+    "Erreurs de commission et omissions comptées séparément",
+    "Résultats conservés localement dans le navigateur (LocalStorage)"
   ],
-  "dateModified": "2026-09-20"
+  "dateModified": "2026-11-08"
 };
 
 const webAppSchema = {
   "@context": "https://schema.org",
   "@type": "WebApplication",
-  "name": "Test Go/No-Go d'Inhibition de Réponse | SkillDrills",
+  "name": "Test Go/No-Go en ligne gratuit | Inhibition de la réponse | SkillDrills",
   "alternateName": "Go/No-Go Pro",
   "url": "https://skilldrills.online/fr/drills/visual/reaction-speed/go/no-go",
-  "dateModified": "2026-09-20",
-  "description": "Test Go/No-Go gratuit en ligne. Réagissez aux disques verts et retenez votre clic sur les disques rouges No-Go.",
+  "dateModified": "2026-11-08",
+  "description": "Test Go/No-Go gratuit en ligne : cliquer sur le vert, se retenir sur le rouge.",
   "applicationCategory": "EducationalApplication",
   "operatingSystem": "All",
-  "browserRequirements": "Navigateur moderne supportant HTML5 Canvas.",
+  "browserRequirements": "Navigateur récent compatible HTML5 Canvas.",
   "offers": { "@type": "Offer", "price": "0", "priceCurrency": "EUR" },
   "author": { "@type": "Organization", "name": "SkillDrills", "url": "https://skilldrills.online" },
   "isAccessibleForFree": true,
   "learningResourceType": "Educational Game",
-  "teaches": "Inhibition de Réponse, Frein Moteur, Contrôle de l'Impulsivité, Discipline de Tir, Fonctions Exécutives"
+  "teaches": "Inhibition de la réponse, moins d’erreurs de commission, vérifier la couleur avant de cliquer"
 };
 
 const videoGameSchema = {
   "@context": "https://schema.org",
   "@type": "VideoGame",
-  "name": "Drill Go/No-Go d'Inhibition Motrice",
+  "name": "Test Go/No-Go (entraînement à l’inhibition)",
   "url": "https://skilldrills.online/fr/drills/visual/reaction-speed/go/no-go",
-  "description": "Jeu neurocognitif pour fortifier le frein moteur et la discipline de tir réflexe.",
+  "description": "Jeu de navigateur : cliquer sur le vert, s’arrêter sur le rouge.",
   "genre": ["Action", "Brain Game", "Reaction Speed"],
   "gamePlatform": ["Web Browser", "Desktop", "Mobile"],
   "applicationCategory": "Game",
@@ -104,36 +99,36 @@ const videoGameSchema = {
 const howToSchema = {
   "@context": "https://schema.org",
   "@type": "HowTo",
-  "name": "Comment Réaliser le Test Go/No-Go d'Inhibition de Réponse",
-  "dateModified": "2026-09-20",
-  "description": "Protocole en 4 étapes pour évaluer et optimiser l'inhibition motrice et la maîtrise des impulsions selon le modèle Go/No-Go.",
+  "name": "Comment faire le test Go/No-Go",
+  "dateModified": "2026-11-08",
+  "description": "La version navigateur de la tâche Go/No-Go en quatre étapes.",
   "step": [
     {
       "@type": "HowToStep",
       "position": 1,
-      "name": "Fixer le Regard sur le Réticule Central",
-      "text": "Placez vos yeux sur le point central de l'écran où jaillissent les disques cibles, en adoptant une posture visuelle posée.",
+      "name": "Regarder le centre de l’écran",
+      "text": "Fixez le centre, où les cercles apparaissent, et gardez le doigt et la souris détendus.",
       "url": "https://skilldrills.online/fr/drills/visual/reaction-speed/go/no-go#step-1"
     },
     {
       "@type": "HowToStep",
       "position": 2,
-      "name": "Cliquer au Plus Vite sur les Cibles Vertes GO",
-      "text": "Appuyez sur la souris ou la barre d'espace dès que le disque vert émeraude clignote (+150 PTS × Combo).",
+      "name": "Signal vert Go : cliquer tout de suite",
+      "text": "Quand un cercle vert apparaît, cliquez ou touchez l’écran avant qu’il disparaisse (+150 points × combo). Le clavier n’est pas pris en charge.",
       "url": "https://skilldrills.online/fr/drills/visual/reaction-speed/go/no-go#step-2"
     },
     {
       "@type": "HowToStep",
       "position": 3,
-      "name": "Bloquer Instantanément le Geste sur les Cibles Rouges NO-GO",
-      "text": "Immobilisez votre doigt et retenez toute impulsion dès que le disque rouge rubis apparaît (+100 PTS pour la retenue).",
+      "name": "Signal rouge No-Go : ne rien faire",
+      "text": "Quand un cercle rouge apparaît, attendez qu’il disparaisse sans cliquer (+100 points). Un clic sans cercle ou des clics répétés comptent aussi comme erreur.",
       "url": "https://skilldrills.online/fr/drills/visual/reaction-speed/go/no-go#step-3"
     },
     {
       "@type": "HowToStep",
       "position": 4,
-      "name": "Maintenir la Discipline de Tir à Cadence Élevée",
-      "text": "Au fil de votre série, le délai d'affichage se réduit à 100 ms, sollicitant au maximum votre frein moteur préfrontal.",
+      "name": "Vérifier la couleur même quand ça accélère",
+      "text": "Avec le niveau et le combo, la durée d’affichage descend jusqu’à 100 ms. Gardez l’habitude de reconnaître la couleur avant de cliquer.",
       "url": "https://skilldrills.online/fr/drills/visual/reaction-speed/go/no-go#step-4"
     }
   ]
@@ -142,152 +137,144 @@ const howToSchema = {
 const faqSchema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
-  "dateModified": "2026-09-20",
+  "dateModified": "2026-11-08",
   "mainEntity": [
     {
       "@type": "Question",
-      "name": "Qu'est-ce que le test Go/No-Go et que mesure-t-il sur le plan neurocognitif ?",
+      "name": "Qu’est-ce que le test Go/No-Go ?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Le test Go/No-Go est une épreuve neurocognitive standardisée évaluant l'inhibition de réponse motrice, l'attention sélective et le contrôle de l'impulsivité. Il demande de réagir rapidement à des stimuli fréquents (Go) tout en retenant activement son geste face à des stimuli rares (No-Go)."
+        "text": "C’est une tâche où l’on répond vite à un signal fréquent (Go) et où l’on retient sa réponse face à un signal rare (No-Go). La psychologie l’utilise pour étudier l’inhibition de la réponse. Cette page en propose une version d’entraînement dans le navigateur : on clique sur le cercle vert et on ne touche à rien sur le rouge."
       }
     },
     {
       "@type": "Question",
-      "name": "Quelle est la différence entre une erreur de commission et une erreur d'omission ?",
+      "name": "Comment se déroule le test Go/No-Go ?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Une erreur de commission (faux positif) survient lorsqu'on clique par mégarde sur une cible rouge No-Go, signalant une défaillance du frein inhibiteur. Une erreur d'omission survient lorsqu'on rate une cible verte Go, révélant une baisse de l'attention soutenue."
+        "text": "Après « Démarrer l’entraînement », la partie commence avec 45 secondes. Un cercle vert au centre : cliquez ou touchez. Un cercle rouge : attendez qu’il disparaisse. Chaque bonne réponse ajoute 2 secondes (60 au maximum). Environ 70 % des signaux sont verts et 30 % rouges. Souris ou écran tactile uniquement, pas de clavier."
       }
     },
     {
       "@type": "Question",
-      "name": "Qu'est-ce que le modèle de la course de chevaux (Horse-Race Model) de Logan ?",
+      "name": "Quelle différence entre erreur de commission et omission ?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Développé par Logan et collaborateurs (1984), ce modèle envisage l'inhibition comme une course entre deux flux cérébraux distincts : le processus Go (excitation motrice) et le processus Stop (freinage préfrontal). Si le processus Stop franchit le seuil le premier, le geste est bloqué."
+        "text": "Une erreur de commission, c’est cliquer sur le rouge No-Go ou quand aucun cercle n’est affiché. Une omission, c’est laisser disparaître un cercle vert Go sans cliquer. La première renseigne sur la capacité à s’arrêter, la seconde plutôt sur les baisses d’attention ou la lenteur."
       }
     },
     {
       "@type": "Question",
-      "name": "Pourquoi clique-t-on impulsivement sur le rouge malgré la consigne d'arrêt ?",
+      "name": "Pourquoi je clique sur le rouge alors que je le vois ?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Ce phénomène provient de l'amorçage moteur prépotent. La succession des cibles Go surchauffe le cortex moteur. La luminance du stimulus atteignant le cortex visuel avant la couleur dans l'aire V4, le doigt s'active avant que le cortex frontal ne freine le geste."
+        "text": "Comme le vert revient beaucoup plus souvent, cliquer devient un automatisme. Selon le modèle de Logan et Cowan (1984), un processus de départ et un processus d’arrêt font la course ; la réponse n’est bloquée que si l’arrêt arrive en premier. Plus l’affichage est court, moins il reste de temps pour s’arrêter."
       }
     },
     {
       "@type": "Question",
-      "name": "Quels sont les bénéfices de l'entraînement Go/No-Go pour les jeux de tir tactiques (FPS) ?",
+      "name": "Est-ce utile pour les FPS comme Valorant ou CS2 ?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Dans des jeux tels que Valorant, CS2 ou Rainbow Six Siege, la discipline de tir prévient les tirs réflexes sur des alliés ou des fumigènes, préservant votre placement. L'exercice découple la détection visuelle brute du déclenchement mécanique du doigt."
+        "text": "Vérifier la couleur avant de cliquer ressemble au moment où l’on distingue un allié d’un ennemi avant de tirer. Mais la tâche ne contient ni visée, ni déplacement, ni son, ni lecture de la carte. Aucun progrès en jeu n’est promis."
       }
     },
     {
       "@type": "Question",
-      "name": "Quelles structures cérébrales pilotent le frein moteur inhibiteur ?",
+      "name": "Peut-on dépister un TDAH ou l’impulsivité avec ce test ?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Ce freinage s'exécute par la voie hyperdirecte connectant le cortex frontal inférieur droit (rIFC), l'aire motrice pré-supplémentaire (preSMA) et le noyau sous-thalamique (STN) au sein des ganglions de la base (Aron et al., 2014)."
+        "text": "Non. C’est un jeu d’entraînement dans le navigateur, pas un examen médical ni un diagnostic. Le résultat dépend aussi de l’écran, de la souris, de la fatigue et de la concentration. En cas d’inquiétude sur l’attention ou l’impulsivité, consultez un professionnel de santé."
       }
     },
     {
       "@type": "Question",
-      "name": "La capacité d'inhibition de la réponse peut-elle être développée par l'entraînement ?",
+      "name": "L’inhibition de la réponse s’améliore-t-elle avec l’entraînement ?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Oui. La recherche en neuroplasticité démontre que des sessions ciblées renforcent les circuits fronto-striataux, réduisant le temps de réaction au signal d'arrêt (SSRT) et accroissant l'autocontrôle."
+        "text": "On progresse en général sur la tâche que l’on répète. Le transfert à la vie quotidienne ou à d’autres jeux n’est pas établi de façon constante par la recherche et varie selon les personnes. Comparez vos scores dans les mêmes conditions."
       }
     },
     {
       "@type": "Question",
-      "name": "Quel est l'impact de la fréquence de rafraîchissement de l'écran et du polling de la souris ?",
+      "name": "La fréquence de l’écran change-t-elle le résultat ?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Un écran 60 Hz engendre jusqu'à 16,7 ms de latence d'affichage, alors qu'un écran 144 Hz ou 240 Hz l'abaisse à 6,9 ms et 4,1 ms. Jumelé à une souris 1 000 Hz, cela offre un délai précieux pour identifier la couleur et stopper le tir."
+        "text": "Oui. Un écran 60 Hz n’affiche une nouvelle image que toutes les 16,7 ms environ, un écran 240 Hz toutes les 4,2 ms, et les périphériques ajoutent leur propre délai (Woods et al., 2015). Comparez vos propres scores sur le même appareil et le même navigateur."
       }
     },
     {
       "@type": "Question",
-      "name": "Quel est le protocole d'entraînement quotidien idéal pour aiguiser le contrôle des impulsions ?",
+      "name": "Mes résultats sont-ils envoyés quelque part ?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Deux à trois séances courtes de 3 à 5 minutes par jour suffisent. Des entraînements trop prolongés induisent une fatigue des transmetteurs préfrontaux, augmentant les fautes d'impulsivité."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Mes données de temps de réaction et de taux d'erreur sont-elles enregistrées sur un serveur externe ?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Non. L'ensemble des métriques de temps, combos et scores demeure strictement cantonné à la mémoire locale de votre navigateur, sans aucun suivi ni transfert de données."
+        "text": "Les scores et l’historique sont enregistrés dans votre navigateur (LocalStorage). Effacer les données du navigateur peut supprimer les anciens résultats."
       }
     }
   ]
 };
 
 const goNoGoGuide = {
-  heading: "Test Go/No-Go : inhibition de la réponse et contrôle inhibiteur",
+  heading: "S’entraîner à l’inhibition de la réponse avec le test Go/No-Go",
   intro: [
-    "L'inhibition de réponse constitue la fonction exécutive maîtresse permettant d'interrompre, de différer ou de suspendre des actes moteurs devenus inadaptés ou risqués. Dans les sports de combat, l'esport tactique et la conduite d'urgence, la faculté d'endiguer un geste réflexe prépotent est bien plus capitale que la vitesse brute d'exécution.",
-    "Ce paradigme s'enracine dans les travaux de Franciscus Cornelis Donders (1868) sur la méthode soustractive de la 'Réaction-C'. Donders démontra qu'identifier deux stimuli et ne répondre qu'à un seul mobilise un délai cognitif distinct par rapport au temps de réaction simple.",
-    "En 1984, Gordon D. Logan et ses collaborateurs formulèrent le modèle de la course de chevaux ('Horse-Race Model'), décrivant l'inhibition comme un duel entre un flux d'activation Go et un flux d'arrêt Stop. Les recherches en IRMf (Aron et al., 2014) prouvent que cette retenue est commandée par la voie hyperdirecte liant le cortex frontal inférieur droit (rIFC) au noyau sous-thalamique (STN).",
-    "Précision Chronométrique et Étalonnage : L'apparition des stimuli et les clics sont horodatés via l'API haute précision performance.now(). Les délais d'affichage et d'interrogation USB sont pris en compte selon les préconisations scientifiques (Woods et al., 2015), tout en assurant un traitement exclusivement local."
+    "Le test Go/No-Go consiste à répondre aux signaux fréquents et à se retenir face aux signaux rares. Il ne s’agit pas seulement de cliquer vite, mais de savoir ne pas cliquer au bon moment, ce qui le distingue d’un simple test de réaction.",
+    "Dans cette version navigateur, un cercle vert (Go) ou rouge (No-Go) apparaît au centre. Vert : cliquez ou touchez. Rouge : attendez. Un clic sans cercle ou des clics en rafale comptent aussi comme erreur. La durée d’affichage passe d’environ 600 ms à 100 ms minimum au fil des niveaux.",
+    "L’idée des tâches de choix remonte aux travaux de Donders (1868) sur le temps de réaction ; la course entre départ et arrêt a été modélisée par Logan et Cowan (1984). Le score obtenu ici reste un résultat d’entraînement qui inclut l’écran, la souris et le navigateur, pas un examen médical.",
+    "La mesure utilise performance.now() dans le navigateur. Le rafraîchissement de l’écran et le délai des périphériques s’ajoutent au résultat (Woods et al., 2015) : comparez vos scores sur le même appareil. Les données restent dans le navigateur de cet appareil."
   ],
   benchmarks: {
-    title: "Repères de contrôle inhibiteur et d'erreurs de commission",
-    headers: ["Palier de Performance", "Taux d'Erreurs de Commission (CER)", "Score & Seuil de Combo", "Profil Neuromusculaire et Exécutif"],
+    title: "Repères d’entraînement sur le taux d’erreurs (échelle propre à ce drill)",
+    headers: ["Palier", "Taux d’erreurs", "Score et combo", "Lecture"],
     rows: [
-      ["Tier 1: Freinage Exécutif Apex", "< 2.0% CER", "16 000+ PTS | Combo 30x+", "Inhibition motrice hyperdirecte rIFC-STN parfaite ; découplage absolu entre flash visuel et déclenchement moteur."],
-      ["Tier 2: Inhibition de Réponse Supérieure", "2.0% – 4.9% CER", "11 000 – 15 999 PTS | Combo 20x+", "Excellente discipline de tir ; rétablissement immédiat lors des changements de couleur avec anticipation minimale."],
-      ["Tier 3: Standard Adulte Équilibré", "5.0% – 9.9% CER", "6 500 – 10 999 PTS | Combo 12x+", "Traitement fiable des cibles Go avec faux positifs sporadiques sous cadence soutenue."],
-      ["Tier 4: Impulsivité Modérée", "10.0% – 18.0% CER", "3 000 – 6 499 PTS | Combo 6x+", "Amorçage moteur prepotent marqué ; réflexe d'enclencher le doigt dès l'apparition visuelle avant identification de la couleur."],
-      ["Tier 5: Prépondérance Prepotente (Base)", "> 18.0% CER", "< 3 000 PTS | Combo < 6x", "Impulsivité comportementale prononcée ; incapacité à bloquer les tirs balistiques face aux cibles rouges No-Go."]
+      ["Avancé", "moins de 2,0 %", "16 000 pts et plus / combo 30+", "Vérifie la couleur même quand l’affichage est très court"],
+      ["Solide", "2,0 – 4,9 %", "11 000 – 15 999 pts / combo 20+", "Peu d’erreurs, on peut accélérer peu à peu"],
+      ["Moyen", "5,0 – 9,9 %", "6 500 – 10 999 pts / combo 12+", "Clique parfois sur le rouge quand le rythme monte"],
+      ["En progrès", "10,0 – 18,0 %", "3 000 – 6 499 pts / combo 6+", "Clique souvent avant de voir la couleur ; viser la précision avant la vitesse"],
+      ["Débutant", "plus de 18,0 %", "moins de 3 000 pts / combo < 6", "D’abord s’arrêter sur le rouge et ne pas cliquer en rafale"]
     ],
-    note: "Ces paliers constituent des repères établis à partir des publications sur la chronométrie mentale et l'inhibition motrice (Donders, 1868 ; Logan et al., 1984 ; Robertson et al., 1997 ; Aron et al., 2014). Les scores varient selon la fatigue, les stimulants et l'écran."
+    note: "Ce tableau est une échelle d’entraînement de SkillDrills, pas une norme scientifique ni une moyenne par âge. Fatigue, concentration et écran font varier les résultats."
   },
   techniques: {
-    title: "Comment entraîner l'inhibition avec un test Go/No-Go",
+    title: "Conseils pour faire moins d’erreurs au test Go/No-Go",
     items: [
       {
-        name: "Validation Chromatique Avant Déclenchement",
-        desc: "Les signaux de luminance et de mouvement parviennent au cortex visuel primaire avant que la couleur ne soit résolue dans l'aire V4 (Donders, 1868).",
-        tips: "Ne contractez pas le muscle à la simple apparition du flash ; habituez votre cortex moteur à attendre la confirmation du vert émeraude."
+        name: "Voir la couleur, puis cliquer",
+        desc: "Le signal, c’est la couleur, pas l’apparition du cercle. Cliquer dès le premier flash fait cliquer aussi sur le rouge.",
+        tips: "Au début, acceptez d’être un peu plus lent et ne cliquez qu’une fois le vert reconnu. Accélérez quand les erreurs baissent."
       },
       {
-        name: "Réinitialisation du Frein selon le Horse-Race Model",
-        desc: "Si le processus Stop s'enclenche avant que le potentiel Go n'atteigne le seuil critique, la commande est neutralisée dans la moelle (Logan et al., 1984).",
-        tips: "Conservez le doigt souple au-dessus de la souris. Un avant-bras détendu permet au frein nerveux d'agir sans résistance mécanique."
+        name: "Garder le doigt détendu",
+        desc: "Attendre avec le bouton à moitié enfoncé empêche de s’arrêter à temps.",
+        tips: "Posez le doigt légèrement sur la souris ou l’écran, sans appuyer."
       },
       {
-        name: "Rupture de l'Automatisme Rhythmique",
-        desc: "La répétition de cibles Go plonge le cerveau dans un rythme mécanique involontaire, démultipliant les faux pas sur les cibles No-Go (Robertson et al., 1997).",
-        tips: "Abordez chaque apparition comme un stimulus totalement isolé et fixez attentivement le réticule central entre chaque cycle."
+        name: "Ne pas cliquer en rythme",
+        desc: "Une série de verts installe un rythme de clic, et les erreurs augmentent quand le rouge arrive (Robertson et al., 1997).",
+        tips: "Traitez chaque signal comme nouveau. Ne cliquez pas sans cercle ; en cas de clics répétés, le cercle n’apparaît plus."
       },
       {
-        name: "Optimisation du Matériel et Faible Latence",
-        desc: "Sur des créneaux de 160 ms, un moniteur 60 Hz gaspille jusqu'à 16,7 ms de temps précieux de décision (Woods et al., 2015).",
-        tips: "Privilégiez un écran 144 Hz ou 240 Hz et une souris réglée à 1 000 Hz pour éliminer tout retard parasite."
+        name: "Garder les mêmes conditions",
+        desc: "Quand l’affichage est très court, le rafraîchissement de l’écran et le délai de la souris se voient dans le score (Woods et al., 2015).",
+        tips: "Même écran, même navigateur, même souris, même moment de la journée, puis comparez taux d’erreurs et moyenne."
       }
     ]
   },
   steps: [
-    "Cliquez sur Démarrer le Drill pour lancer la session de 45 secondes de Go/No-Go.",
-    "Fixez votre regard sur le réticule central où apparaissent les cibles lumineuses.",
-    "Cliquez aussitôt que le disque vert GO surgit pour engranger points et combo.",
-    "Bloquez tout clic et demeurez immobile dès que le disque rouge NO-GO se manifeste pour marquer les points de retenue.",
-    "Consultez votre taux d'erreurs de commission, votre latence moyenne et votre grade final à la fin du chrono."
+    "Cliquez sur « Démarrer l’entraînement » : la partie commence avec 45 secondes.",
+    "Regardez le centre de l’écran.",
+    "Cercle vert Go : cliquez ou touchez avant qu’il disparaisse.",
+    "Cercle rouge No-Go : attendez qu’il disparaisse sans cliquer.",
+    "À la fin, regardez le taux d’erreurs, la réaction moyenne et le niveau atteint."
   ],
-  audience: "Joueurs de FPS tactiques (Valorant, CS2, Siege) cherchant à perfectionner leur discipline de tir, pilotes, combattants d'arts martiaux et toute personne désireuse de muscler son frein moteur et son contrôle préfrontal.",
+  audience: "Pour tester la tâche Go/No-Go en ligne et travailler, en plus de la vitesse, la capacité à ne pas cliquer : joueurs, sportifs et curieux. Ne convient pas à une évaluation médicale.",
   faqs: faqSchema.mainEntity.map(e => ({ q: e.name, a: e.acceptedAnswer.text })),
-  sources: pickSources('donders1868', 'logan1984', 'robertson1997', 'aron2014', 'woods2015'),
+  sources: pickSources('donders1868', 'logan1984', 'robertson1997', 'woods2015'),
   related: [
-    { href: "/fr/drills/visual/reaction-speed/light-reaction", label: "Test de Réaction Lumineuse" },
+    { href: "/fr/drills/visual/reaction-speed/light-reaction", label: "Test de réaction" },
+    { href: "/fr/drills/reaction-speed/reflex-training-drill", label: "Test de réflexe" },
     { href: "/fr/drills/visual/depth-perception/distance-judgment", label: "Jugement de Distance et Perception de Profondeur" },
     { href: "/fr/drills/visual/tracking-accuracy/moving-target", label: "Interception de Cible Mobile" },
     { href: "/fr/drills/visual/tracking-accuracy/multiple-targets", label: "Poursuite d'Objets Multiples" },
-    { href: "/fr/drills/visual/tracking-accuracy/pursuit-tracker", label: "Traqueur de Poursuite Oculaire Lente" },
     { href: "/fr/drills/visual/visual-recognition/entropic-grid", label: "Recherche sur Grille Entropique" }
   ]
 };
@@ -301,7 +288,7 @@ export default function ChromaSyncPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(howToSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(videoGameSchema) }} />
-      <ChromaSyncClient copy={{ title: "Test Go/No-Go (contrôle inhibiteur)", subtitle: "Réagissez au vert, retenez-vous au rouge" }} />
+      <ChromaSyncClient copy={{ title: "Test Go/No-Go (inhibition de la réponse)", subtitle: "Cercle vert : cliquez. Cercle rouge : ne touchez à rien. Gratuit dans le navigateur." }} />
       <DrillGuide guide={goNoGoGuide} />
       <RelatedDrills />
     </>

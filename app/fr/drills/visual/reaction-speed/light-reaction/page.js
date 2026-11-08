@@ -162,7 +162,7 @@ const faqSchema = {
       "name": "Quelles étapes physiologiques se déroulent entre la vue de l'éclair et le clic ?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Le circuit mobilise 4 paliers : (1) phototransduction rétinienne (~20–40 ms), (2) transmission le long du nerf optique jusqu'au cortex visuel V1 (~30–50 ms), (3) programmation motrice dans les cortex pariétaux et moteurs (~50–80 ms), et (4) décharge descendante le long du faisceau cortico-spinal jusqu'aux muscles fléchisseurs (~30–50 ms)."
+        "text": "Le signal passe par la rétine, les voies visuelles, la préparation du mouvement puis la commande motrice vers la main. La durée de chaque étape varie selon les études et les personnes ; un test dans le navigateur ne mesure que le total, auquel s'ajoutent le délai de l'écran et celui de la souris (Kosinski, 2008)."
       }
     },
     {
@@ -186,7 +186,7 @@ const faqSchema = {
       "name": "Peut-on améliorer son temps de réaction visuel simple par l'entraînement ?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Oui. La neuroplasticité permet d'augmenter l'excitabilité des voies cortico-spinales et de perfectionner l'attention spatiale implicite (Posner, 1980). Les joueurs de jeux d'action démontrent des temps de réaction plus rapides sans dégradation de précision (Dye et al., 2009)."
+        "text": "Un peu, surtout au début : on s'habitue à la tâche et au rythme des signaux. Les joueurs de jeux d'action réagissent souvent plus vite sans perdre en précision (Dye et al., 2009), mais cela ne prouve pas qu'un entraînement court donne le même effet. Comparez vos scores dans les mêmes conditions."
       }
     },
     {
@@ -233,16 +233,16 @@ const lightReactionGuide = {
     "Rigueur Métrologique et Calibration Matérielle : Les flashs et les clics sont relevés par l'API haute résolution performance.now(). Les délais d'affichage d'écran et d'interrogation USB (Woods et al., 2015) sont pris en considération pour assurer des scores rigoureux et conservés sur votre appareil."
   ],
   benchmarks: {
-    title: "Repères du temps de réaction visuelle dans le navigateur",
-    headers: ["Palier de Performance", "Latence Moyenne (ms)", "Score & Seuil de Combo", "Profil Neuromusculaire et Réflexe"],
+    title: "Repères pour le test de réaction (échelle propre à ce drill)",
+    headers: ["Palier", "Temps de réaction moyen (ms)", "Score et combo", "À vérifier"],
     rows: [
-      ["Tier 1: Réflexe Neural Apex", "< 180 ms", "15 000+ PTS | Combo 28x+", "Excitabilité motrice maximale ; vitesse de conduction cortico-spinale exceptionnelle propre aux sprinteurs olympiques et pros de l'esport."],
-      ["Tier 2: Réflexe Visuel Supérieur", "180 – 219 ms", "10 500 – 14 999 PTS | Combo 18x+", "Couplage optico-moteur remarquable ; régularité sous 220 ms avec dispersion temporelle minime."],
-      ["Tier 3: Standard Adulte Équilibré", "220 – 259 ms", "6 000 – 10 499 PTS | Combo 10x+", "Valeur de référence pour un adulte en bonne santé ; réponse visuelle normale avec légères fluctuations sous fatigue."],
-      ["Tier 4: Retard Modéré de Réponse", "260 – 319 ms", "2 500 – 5 999 PTS | Combo 5x+", "Traitement central étiré ; sensibilité accrue au retard d'affichage d'écran, à la fatigue oculaire ou aux baisses de vigilance."],
-      ["Tier 5: Latence Étendue / Base", "> 320 ms", "< 2 500 PTS | Combo < 5x", "Délai sensoriel prononcé ; surcharge d'interprétation ou retard lié à un moniteur 60 Hz non calibré."]
+      ["Palier 1 : très rapide", "< 180 ms", "15 000+ PTS | Combo 28x+", "Vérifiez qu'il n'y a pas de faux départs (clics anticipés)."],
+      ["Palier 2 : rapide", "180 – 219 ms", "10 500 – 14 999 PTS | Combo 18x+", "Gardez la vitesse et réduisez l'écart entre les essais."],
+      ["Palier 3 : moyen", "220 – 259 ms", "6 000 – 10 499 PTS | Combo 10x+", "Plage fréquente pour une mesure dans le navigateur ; varie selon la forme du jour."],
+      ["Palier 4 : un peu lent", "260 – 319 ms", "2 500 – 5 999 PTS | Combo 5x+", "Vérifiez le délai de l'écran, la fatigue des yeux et la concentration."],
+      ["Palier 5 : débutant", "> 320 ms", "< 2 500 PTS | Combo < 5x", "Un écran 60 Hz, le délai du tactile ou la fatigue peuvent jouer."]
     ],
-    note: "Ces critères reposent sur la chronométrie mentale et la psychophysique de la vision (Kosinski, 2008 ; Woods et al., 2015 ; Pins & Bonnet, 1996 ; Jain et al., 2015). Les scores évoluent selon le rythme circadien, la caféine et le moniteur."
+    note: "Ce tableau est une échelle d'entraînement de SkillDrills, pas une norme scientifique, ni une moyenne par âge, ni un percentile d'utilisateurs. L'écran, la souris et la forme du jour font varier les résultats."
   },
   techniques: {
     title: "Entraîner ses réflexes sans confondre latence de l’appareil",
@@ -265,7 +265,7 @@ const lightReactionGuide = {
       {
         name: "Calibration d'Écran et Taux de Rafraîchissement",
         desc: "Un écran 60 Hz engendre jusqu'à 16,7 ms de latence d'affichage, contre 4,1 ms pour une dalle 240 Hz (Woods et al., 2015).",
-        tips: "Privilégiez une dalle 144 Hz ou 240 Hz ainsi qu'une souris réglée à 1 000 Hz pour éliminer les retards matériels."
+        tips: "Privilégiez une dalle 144 Hz ou 240 Hz ainsi qu'une souris réglée à 1 000 Hz pour réduire les retards matériels."
       }
     ]
   },

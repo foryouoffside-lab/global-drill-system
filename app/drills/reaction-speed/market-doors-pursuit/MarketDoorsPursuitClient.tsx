@@ -23,6 +23,7 @@ import DrillFlashOverlay from '../../../../components/drill/DrillFlashOverlay';
 import FpsStartCard from '../../../../components/drill/FpsStartCard';
 import DrillResultCard from '../../../../components/drill/DrillResultCard';
 import useImmersiveMode from '@/lib/useImmersiveMode';
+import { setTargetCursor } from '@/lib/canvasCursor';
 
 // ============================================================
 // TUNING CONSTANTS
@@ -59,7 +60,7 @@ const RULES_ITEMS = [
     num: "4",
     title: "Miss / Timeout",
     detail: "Penalty",
-    badge: "Resets Combo (-0.8s)",
+    badge: "Resets Combo (-1s)",
   },
 ];
 
@@ -675,51 +676,7 @@ export default function MarketDoorsPursuitClient({ copy }: { copy?: Record<strin
       }
       ctx.globalAlpha = 1.0;
 
-      // Tactical Pro White Crosshair
-      if (mousePosRef.current) {
-        const { x: mx, y: my } = mousePosRef.current;
-        ctx.save();
-        ctx.strokeStyle = '#ffffff';
-        ctx.lineWidth = 1.5;
-        ctx.shadowColor = 'rgba(0, 0, 0, 0.9)';
-        ctx.shadowBlur = 3;
-
-        const gap = 4;
-        const len = 14;
-
-        // Top
-        ctx.beginPath();
-        ctx.moveTo(mx, my - gap);
-        ctx.lineTo(mx, my - gap - len);
-        ctx.stroke();
-
-        // Bottom
-        ctx.beginPath();
-        ctx.moveTo(mx, my + gap);
-        ctx.lineTo(mx, my + gap + len);
-        ctx.stroke();
-
-        // Left
-        ctx.beginPath();
-        ctx.moveTo(mx - gap, my);
-        ctx.lineTo(mx - gap - len, my);
-        ctx.stroke();
-
-        // Right
-        ctx.beginPath();
-        ctx.moveTo(mx + gap, my);
-        ctx.lineTo(mx + gap + len, my);
-        ctx.stroke();
-
-        // Center dot
-        ctx.fillStyle = '#ffffff';
-        ctx.beginPath();
-        ctx.arc(mx, my, 2, 0, Math.PI * 2);
-        ctx.fill();
-
-        ctx.restore();
-      }
-
+      setTargetCursor(cvs, gameState === 'playing' ? mousePosRef.current : null, [e.target]);
       ctx.restore();
       animationRef.current = requestAnimationFrame(draw);
     };
@@ -869,7 +826,7 @@ export default function MarketDoorsPursuitClient({ copy }: { copy?: Record<strin
             onPointerLeave={() => {
               mousePosRef.current = null;
             }}
-            className="block absolute top-0 left-0 w-full h-full z-10 touch-none cursor-crosshair"
+            className="block absolute top-0 left-0 w-full h-full z-10 touch-none cursor-default"
           />
 
           {/* START CARD */}

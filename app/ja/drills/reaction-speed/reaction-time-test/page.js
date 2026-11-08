@@ -15,7 +15,7 @@ export const metadata = {
     "ストップウォッチ ゲーム",
     "時間感覚 トレーニング",
     "タイミング練習",
-    "体内時計ゲーム サイト"
+    "10秒チャレンジ"
   ],
   "alternates": {
     "canonical": "https://skilldrills.online/ja/drills/reaction-speed/reaction-time-test",
@@ -189,7 +189,7 @@ const howToSchema = {
 const faqSchema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
-  "dateModified": "2026-10-08",
+  "dateModified": "2026-11-08",
   "mainEntity": [
     {
       "@type": "Question",
@@ -204,7 +204,7 @@ const faqSchema = {
       "name": "ゲームの仕組みを教えてください。",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "目標タイムがしばらく表示されて消えます。その後、数字のない光る球体が動き、裏で時計が進みます。目標タイムが経ったと思った瞬間にクリックすると、クリックした正確な時刻と誤差が表示されます。"
+        "text": "目標タイムがしばらく表示されて消えます。その後、画面中央の数字のない光る球体の周りでリングが回り、裏で時計が進みます。目標タイムが経ったと思った瞬間にクリックすると、クリックした正確な時刻と誤差が表示されます。"
       }
     },
     {
@@ -260,7 +260,7 @@ const faqSchema = {
       "name": "「10秒チャレンジ」と同じですか？",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "秒数を時計なしで見積もる点は似ていますが、目標はラウンドごとに変わり、10秒固定ではありません。また、成功か失敗かではなく誤差の大きさで採点します。"
+        "text": "秒数を時計なしで見積もる点は似ていますが、目標は1〜8秒の範囲でラウンドごとに変わり、10秒固定ではありません。また、成功か失敗かではなく誤差の大きさで採点します。"
       }
     },
     {

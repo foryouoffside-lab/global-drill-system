@@ -193,16 +193,16 @@ const lightReactionGuide = {
     "Messmethodik & Hardware-Standardisierung: Alle Reize und Tastenfreigaben werden hochpräzise mit der browserinternen performance.now() API erfasst. Hardware-Latenzen durch Monitor-Quantisierung und USB-Abtastung werden nach Woods et al. (2015) berücksichtigt, während alle Daten ausschließlich lokal auf dem Endgerät gespeichert werden."
   ],
   benchmarks: {
-    title: "Orientierungswerte für visuelle Reaktionszeit im Browser",
-    headers: ["Leistungsklasse", "Mittlere Latenzzeit (ms)", "Score- & Combo-Schwelle", "Neuromuskuläres & Reflex-Profil"],
+    title: "Richtwerte für den Reaktionstest (Übungsskala dieses Drills)",
+    headers: ["Stufe", "Mittlere Reaktionszeit (ms)", "Punkte & Combo", "Worauf achten"],
     rows: [
-      ["Tier 1: Spitzenklasse / Apex-Reflex", "< 180 ms", "15.000+ Punkte | Combo 28x+", "Außergewöhnliche kortikospinale Erregbarkeit und minimale synaptische Verzögerung;."],
-      ["Tier 2: Überdurchschnittlich / Superior", "180 – 219 ms", "10.500 – 14.999 Punkte | Combo 18x+", "Exzellente optomotorische Kopplung; gleichmäßige sub-220ms Latenzen mit minimaler Streuung über lange Sitzungen."],
-      ["Tier 3: Solider Standard / Baseline", "220 – 259 ms", "6.000 – 10.499 Punkte | Combo 10x+", "Gesunder Erwachsenen-Standard; typische unvorbereitete motorische Antwort mit leichter Varianz bei Ermüdung."],
-      ["Tier 4: Moderate Verzögerung", "260 – 319 ms", "2.500 – 5.999 Punkte | Combo 5x+", "Verlängerte zentrale Signalverarbeitung; anfällig für Monitor-Latenz, Augenmüdigkeit oder Konzentrationsschwankungen."],
-      ["Tier 5: Verlängerte Latenz (Basis)", "> 320 ms", "< 2.500 Punkte | Combo < 5x", "Deutliche sensorische Verzögerung; unkalibrierte Hardware, 60-Hz-Display-Latenzen oder starke kognitive Ermüdung."]
+      ["Stufe 1: sehr schnell", "< 180 ms", "15.000+ Punkte | Combo 28x+", "Prüfe, ob Fehlstarts (zu frühe Klicks) dabei waren."],
+      ["Stufe 2: schnell", "180 – 219 ms", "10.500 – 14.999 Punkte | Combo 18x+", "Tempo halten und die Streuung verringern."],
+      ["Stufe 3: mittel", "220 – 259 ms", "6.000 – 10.499 Punkte | Combo 10x+", "Häufiger Bereich bei Messungen im Browser; schwankt mit der Tagesform."],
+      ["Stufe 4: etwas langsamer", "260 – 319 ms", "2.500 – 5.999 Punkte | Combo 5x+", "Bildschirmverzögerung, müde Augen oder Konzentration prüfen."],
+      ["Stufe 5: Einstieg", "> 320 ms", "< 2.500 Punkte | Combo < 5x", "Ein 60-Hz-Bildschirm, Touch-Verzögerung oder Müdigkeit können mitspielen."]
     ],
-    note: "Diese Richtwerte basieren auf klassischer Chronometrie und Reaktionspsychophysik (Kosinski, 2008; Woods et al., 2015; Pins & Bonnet, 1996; Jain et al., 2015). Ergebnisse variieren je nach Tageszeit, Koffein und Bildschirmlatenz."
+    note: "Diese Tabelle ist eine Übungsskala von SkillDrills, keine wissenschaftliche Norm, kein Altersdurchschnitt und kein Perzentil anderer Nutzer. Bildschirm, Eingabegerät und Tagesform verändern die Werte."
   },
   techniques: {
     title: "Reaktionszeit testen und unter gleichen Bedingungen trainieren",

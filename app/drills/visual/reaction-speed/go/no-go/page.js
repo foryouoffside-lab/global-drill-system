@@ -149,7 +149,7 @@ const howToSchema = {
       "@type": "HowToStep",
       "position": 2,
       "name": "Execute Rapid Motor Response on Green GO Targets",
-      "text": "Click the canvas or press the Spacebar as fast as possible whenever the emerald green GO stimulus flashes (+150 PTS × Combo).",
+      "text": "Click or tap the canvas as fast as possible whenever the green GO circle appears (+150 PTS × Combo). Keyboard input is not supported.",
       "url": "https://skilldrills.online/drills/visual/reaction-speed/go/no-go#step-2"
     },
     {

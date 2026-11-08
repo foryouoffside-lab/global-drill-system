@@ -22,7 +22,8 @@ import FpsStartCard from '../../../../components/drill/FpsStartCard';
 import DrillResultCard from '../../../../components/drill/DrillResultCard';
 import { drawTacticalTarget, createHitRing, drawHitRings } from '@/lib/canvasFx';
 import useImmersiveMode from '@/lib/useImmersiveMode';
-import { getReflexTrainingDrillUi } from '@/lib/i18n/drills/reflexTrainingDrillNative';
+import { getReflexTrainingDrillUi } from '@/lib/i18n/drills/reflexTrainingDrillNative';
+import { setTargetCursor } from '@/lib/canvasCursor';
 // ============================================================
 // TUNING CONSTANTS
 // ============================================================
@@ -602,49 +603,7 @@ export default function ReflexTrainingDrillClient({ copy }: ReflexTrainingDrillC
       }
       ctx.globalAlpha = 1.0;
 
-      // Tactical Pro White Crosshair (R5)
-      if (mousePosRef.current && mousePosRef.current.active) {
-        const mx = mousePosRef.current.x;
-        const my = mousePosRef.current.y;
-        ctx.save();
-        ctx.strokeStyle = '#ffffff';
-        ctx.lineWidth = 1.5;
-        ctx.shadowColor = 'rgba(0, 0, 0, 0.9)';
-        ctx.shadowBlur = 3;
-
-        // Top
-        ctx.beginPath();
-        ctx.moveTo(mx, my - 4);
-        ctx.lineTo(mx, my - 14);
-        ctx.stroke();
-
-        // Bottom
-        ctx.beginPath();
-        ctx.moveTo(mx, my + 4);
-        ctx.lineTo(mx, my + 14);
-        ctx.stroke();
-
-        // Left
-        ctx.beginPath();
-        ctx.moveTo(mx - 4, my);
-        ctx.lineTo(mx - 14, my);
-        ctx.stroke();
-
-        // Right
-        ctx.beginPath();
-        ctx.moveTo(mx + 4, my);
-        ctx.lineTo(mx + 14, my);
-        ctx.stroke();
-
-        // Center dot
-        ctx.fillStyle = '#ffffff';
-        ctx.beginPath();
-        ctx.arc(mx, my, 1, 0, Math.PI * 2);
-        ctx.fill();
-
-        ctx.restore();
-      }
-
+      setTargetCursor(cvs, gameState === 'playing' ? mousePosRef.current : null, e.targets);
       ctx.restore();
       animationRef.current = requestAnimationFrame(draw);
     };
@@ -798,7 +757,7 @@ export default function ReflexTrainingDrillClient({ copy }: ReflexTrainingDrillC
             onPointerLeave={() => {
               mousePosRef.current.active = false;
             }}
-            className="block absolute top-0 left-0 w-full h-full z-10 touch-none cursor-crosshair"
+            className="block absolute top-0 left-0 w-full h-full z-10 touch-none cursor-default"
           />
 
           {/* START CARD */}

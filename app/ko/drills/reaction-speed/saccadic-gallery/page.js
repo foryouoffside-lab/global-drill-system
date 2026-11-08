@@ -12,7 +12,7 @@ const description = "화면에 나타나는 표적으로 시선을 빠르게 옮
 export const metadata = {
   title,
   description,
-  keywords: ["시선 이동 훈련", "시선 이동 훈련 게임", "사케드 안구 운동", "단속성 안구운동", "눈 운동 게임", "시각 포착 연습", "동체시력 게임", "눈-손 협응 게임"],
+  keywords: ["시선 이동 훈련", "시선 이동 훈련 게임", "사케드 안구 운동", "단속성 안구운동", "눈 운동 게임", "시각 포착 연습", "눈-손 협응 게임"],
   alternates: { canonical: url, languages: getAlternateLanguages('/drills/reaction-speed/saccadic-gallery') },
   openGraph: { images: [{ url: 'https://skilldrills.online/opengraph-image', width: 1200, height: 630 }], title, description, url, siteName: 'SkillDrills', locale: 'ko_KR', type: 'website' },
   twitter: { images: ['https://skilldrills.online/opengraph-image'], card: 'summary_large_image', title, description },
@@ -41,7 +41,7 @@ const softwareApplicationSchema = {
   url,
   publisher: { '@type': 'Organization', name: 'SkillDrills', url: 'https://skilldrills.online/ko' },
   inLanguage: 'ko',
-  dateModified: '2026-10-08',
+  dateModified: '2026-11-08',
 };
 
 const webAppSchema = {
@@ -54,7 +54,7 @@ const webAppSchema = {
   offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
   url,
   inLanguage: 'ko',
-  dateModified: '2026-10-08',
+  dateModified: '2026-11-08',
 };
 
 const videoGameSchema = {
@@ -67,7 +67,7 @@ const videoGameSchema = {
   gamePlatform: ['Web Browser', 'Desktop', 'Mobile'],
   applicationCategory: 'Game',
   inLanguage: 'ko',
-  dateModified: '2026-10-08',
+  dateModified: '2026-11-08',
   offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
 };
 
@@ -107,7 +107,7 @@ const howToSchema = {
 const faqs = [
   {
     "q": "시선 이동 훈련 게임은 무엇을 하나요?",
-    "a": "화면의 여러 위치에 나타나는 표적으로 시선을 빠르게 옮기고 클릭하는 게임입니다. 한 점에서 다른 점으로 시선을 옮기는 눈의 움직임(사케드)과 클릭 타이밍을 함께 연습합니다. 시력 검사나 치료가 아니라 브라우저 연습 도구입니다."
+    "a": "화면의 고정된 위치(PC 4×3, 모바일 3×3)에 하나씩 나타나는 표적으로 시선을 빠르게 옮기고 클릭하는 게임입니다. 45초로 시작하고 적중마다 2초가 늘어납니다(최대 60초). 한 점에서 다른 점으로 시선을 옮기는 눈의 움직임(사케드)과 클릭 타이밍을 함께 연습합니다. 시력 검사나 치료가 아니라 브라우저 연습 도구입니다."
   },
   {
     "q": "사케드(단속성 안구운동)란 무엇인가요?",
@@ -135,7 +135,7 @@ const faqs = [
   },
   {
     "q": "모니터 주사율이 영향을 주나요?",
-    "a": "주사율이 높으면 화면이 더 자주 갱신되어 표시 지연이 줄어드는 경향이 있습니다(Woods et al., 2015). 다만 이 게임에서 점수가 얼마나 달라지는지는 측정하지 않았습니다. 같은 환경에서 비교하세요."
+    "a": "한 프레임의 간격은 1000을 주사율로 나눈 값입니다. 60Hz는 약 16.7ms, 144Hz는 약 6.9ms마다 화면이 갱신되므로 표적이 화면에 그려지는 시점이 달라질 수 있습니다(Woods et al., 2015). 이 게임에서 점수가 얼마나 달라지는지는 측정하지 않았으니 같은 환경에서 비교하세요."
   },
   {
     "q": "하루에 얼마나 연습해야 하나요?",
@@ -158,7 +158,7 @@ faqSchema.mainEntity = faqSchema.mainEntity.slice(0, 10);
 const saccadicGuide = {
   "heading": "시선 이동 훈련 게임 가이드",
   "intro": [
-    "사케드 갤러리는 화면에 나타나는 표적으로 시선을 빠르게 옮기고 클릭하는 브라우저 게임입니다. 한 곳에서 다른 곳으로 시선을 옮기는 눈의 움직임을 단속성 안구운동(사케드)이라고 부르며, 읽기나 화면 탐색 중에 계속 일어납니다(Rayner, 1998; Fischer & Boch, 1984).",
+    "사케드 갤러리는 화면에 나타나는 표적으로 시선을 빠르게 옮기고 클릭하는 브라우저 게임입니다. 한 곳에서 다른 곳으로 시선을 옮기는 눈의 움직임을 단속성 안구운동(사케드)이라고 부르며, 읽기나 화면 탐색 중에 계속 일어납니다(Rayner, 1998).",
     "눈이 빠르게 움직이는 동안에는 시각 정보 처리가 줄어드는 경향이 있고(Leigh & Zee, 2015), 도착 위치가 어긋나면 다시 작은 교정 움직임이 일어납니다. 이 게임은 표적이 나타난 뒤 클릭할 때까지의 시간과 정확도를 연습 기록으로 보여 줍니다.",
     "측정 한계: 브라우저는 시선 위치를 알 수 없습니다. 기록에는 시선 이동뿐 아니라 손 움직임, 화면 주사율, 마우스 입력 지연이 함께 들어 있습니다(Woods et al., 2015). 사케드 지연 시간이나 눈 건강을 측정한 값이 아닙니다.",
     "같은 기기, 거리, 자세에서 꾸준히 연습하며 기록의 흐름을 비교하세요. 눈이 피로하면 멈추고, 통증이나 이상이 있으면 안과 진료를 받으세요."
@@ -233,7 +233,7 @@ const saccadicGuide = {
   ],
   "audience": "화면 탐색과 시선 이동을 게임으로 연습해 보고 싶은 사용자와 FPS 게이머, 구기 종목 팬.",
   faqs,
-  sources: pickSources('rayner1998', 'fischer1984', 'leigh2015', 'woods2015'),
+  sources: pickSources('rayner1998', 'leigh2015', 'woods2015'),
   related: [
     { href: '/ko/drills/reaction-speed', label: '반응 속도 허브' },
     { href: '/ko/drills/visual/reaction-speed/light-reaction', label: '반응속도 테스트' },

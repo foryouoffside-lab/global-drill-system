@@ -24,6 +24,7 @@ import DrillResultCard from '../../../../components/drill/DrillResultCard';
 import useImmersiveMode from '@/lib/useImmersiveMode';
 import { useTranslation } from '@/lib/i18n/useTranslation';
 import { BARRIER_SEQUENCE_PURSUIT_I18N } from '@/lib/i18n/drills/barrierSequencePursuit';
+import { setTargetCursor } from '@/lib/canvasCursor';
 
 // ============================================================
 // TUNING CONSTANTS
@@ -91,7 +92,7 @@ export default function BarrierSequencePursuitClient({ copy }: { copy?: { title?
     { num: '1', text: t('barrierSequencePursuit.rule1Text', 'Peeking target hit'), highlight: t('barrierSequencePursuit.rule1Highlight', '+100 PTS (+2s, max 60s)'), result: t('barrierSequencePursuit.rule1Result', 'Combo multiplier') },
     { num: '2', text: t('barrierSequencePursuit.rule2Text', 'Streak & heat'), highlight: t('barrierSequencePursuit.rule2Highlight', 'Up to 3.0×'), result: t('barrierSequencePursuit.rule2Result', 'Faster peeks') },
     { num: '3', text: t('barrierSequencePursuit.rule3Text', 'Level progression'), highlight: t('barrierSequencePursuit.rule3Highlight', '+1 level / 1750 PTS'), result: t('barrierSequencePursuit.rule3Result', 'Adaptive scaling') },
-    { num: '4', text: t('barrierSequencePursuit.rule4Text', 'Miss / timeout'), highlight: penaltyEnabled ? t('barrierSequencePursuit.rule4HighlightPenalty', 'Penalty') : t('barrierSequencePursuit.rule4HighlightZero', 'No time penalty'), result: penaltyEnabled ? t('barrierSequencePursuit.rule4ResultPenalty', 'Resets combo and removes 0.8s') : t('barrierSequencePursuit.rule4ResultZero', 'Resets combo; time penalty is opt-in') },
+    { num: '4', text: t('barrierSequencePursuit.rule4Text', 'Miss / timeout'), highlight: penaltyEnabled ? t('barrierSequencePursuit.rule4HighlightPenalty', 'Penalty') : t('barrierSequencePursuit.rule4HighlightZero', 'No time penalty'), result: penaltyEnabled ? t('barrierSequencePursuit.rule4ResultPenalty', 'Resets combo and removes 1s') : t('barrierSequencePursuit.rule4ResultZero', 'Resets combo; time penalty is opt-in') },
   ];
   const [openAccordion, setOpenAccordion] = useState<string | null>(null);
   const [isMobile, setIsMobile] = useState<boolean>(false);
@@ -648,32 +649,7 @@ export default function BarrierSequencePursuitClient({ copy }: { copy?: { title?
       }
       ctx.globalAlpha = 1.0;
 
-      // Tactical Pro White Crosshair
-      if (gameState === 'playing' && mousePosRef.current.active && !isMobile) {
-        const mx = mousePosRef.current.x;
-        const my = mousePosRef.current.y;
-        ctx.save();
-        ctx.strokeStyle = '#ffffff';
-        ctx.fillStyle = '#ffffff';
-        ctx.lineWidth = 1.5;
-        ctx.shadowColor = 'rgba(0, 0, 0, 0.9)';
-        ctx.shadowBlur = 3;
-
-        // Center dot
-        ctx.beginPath();
-        ctx.arc(mx, my, 2, 0, Math.PI * 2);
-        ctx.fill();
-
-        // Crosshair lines: gap 4px, length 10px (radius 14px)
-        ctx.beginPath();
-        ctx.moveTo(mx, my - 14); ctx.lineTo(mx, my - 4);
-        ctx.moveTo(mx, my + 4); ctx.lineTo(mx, my + 14);
-        ctx.moveTo(mx - 14, my); ctx.lineTo(mx - 4, my);
-        ctx.moveTo(mx + 4, my); ctx.lineTo(mx + 14, my);
-        ctx.stroke();
-        ctx.restore();
-      }
-
+      setTargetCursor(cvs, gameState === 'playing' ? mousePosRef.current : null, [e.target]);
       ctx.restore();
       animationRef.current = requestAnimationFrame(draw);
     };
@@ -829,7 +805,7 @@ export default function BarrierSequencePursuitClient({ copy }: { copy?: { title?
             onPointerLeave={() => {
               mousePosRef.current.active = false;
             }}
-            className="block absolute top-0 left-0 w-full h-full z-10 touch-none cursor-crosshair"
+            className="block absolute top-0 left-0 w-full h-full z-10 touch-none cursor-default"
           />
 
           {/* START CARD */}

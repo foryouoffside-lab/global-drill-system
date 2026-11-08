@@ -24,6 +24,7 @@ import useImmersiveMode from '@/lib/useImmersiveMode';
 import { drawTacticalTarget, createHitRing, drawHitRings } from '@/lib/canvasFx';
 import { useTranslation } from '@/lib/i18n/useTranslation';
 import { SACCADIC_GALLERY_I18N } from '@/lib/i18n/drills/saccadicGallery';
+import { setTargetCursor } from '@/lib/canvasCursor';
 
 // ============================================================
 // TUNING CONSTANTS
@@ -616,31 +617,7 @@ export default function SaccadicGalleryClient({ copy }: { copy?: { title?: strin
       }
       ctx.globalAlpha = 1.0;
 
-      // Tactical Pro White Crosshair
-      if (mousePosRef.current.active && gameState === 'playing') {
-        const { x: mx, y: my } = mousePosRef.current;
-        ctx.save();
-        ctx.shadowColor = 'rgba(0, 0, 0, 0.9)';
-        ctx.shadowBlur = 3;
-        ctx.strokeStyle = '#ffffff';
-        ctx.lineWidth = 1.5;
-
-        // 4 crosshair arms: 14px outer, 4px inner gap
-        ctx.beginPath();
-        ctx.moveTo(mx, my - 14); ctx.lineTo(mx, my - 4);
-        ctx.moveTo(mx, my + 4);  ctx.lineTo(mx, my + 14);
-        ctx.moveTo(mx - 14, my); ctx.lineTo(mx - 4, my);
-        ctx.moveTo(mx + 4, my);  ctx.lineTo(mx + 14, my);
-        ctx.stroke();
-
-        // Center dot
-        ctx.fillStyle = '#ffffff';
-        ctx.beginPath();
-        ctx.arc(mx, my, 2, 0, Math.PI * 2);
-        ctx.fill();
-        ctx.restore();
-      }
-
+      setTargetCursor(cvs, gameState === 'playing' ? mousePosRef.current : null, [e.target]);
       ctx.restore();
       animationRef.current = requestAnimationFrame(draw);
     };
@@ -790,7 +767,7 @@ export default function SaccadicGalleryClient({ copy }: { copy?: { title?: strin
             onPointerLeave={() => {
               mousePosRef.current.active = false;
             }}
-            className="block absolute top-0 left-0 w-full h-full z-10 touch-none cursor-crosshair"
+            className="block absolute top-0 left-0 w-full h-full z-10 touch-none cursor-default"
           />
 
           {/* START CARD */}
@@ -847,8 +824,8 @@ export default function SaccadicGalleryClient({ copy }: { copy?: { title?: strin
                     key={item.num}
                     num={item.num}
                     text={t(item.textKey, item.text)}
-                    highlight={item.num === '4' && penaltyEnabled ? t('saccadicGallery.rule4HighlightPenalty', '-0.8s Penalty') : t(item.highlightKey, item.highlight)}
-                    result={item.num === '4' && penaltyEnabled ? t('saccadicGallery.rule4ResultPenalty', 'Deducts 0.8s & resets combo') : t(item.resultKey, item.result)}
+                    highlight={item.num === '4' && penaltyEnabled ? t('saccadicGallery.rule4HighlightPenalty', '-1s Penalty') : t(item.highlightKey, item.highlight)}
+                    result={item.num === '4' && penaltyEnabled ? t('saccadicGallery.rule4ResultPenalty', 'Deducts 1s & resets combo') : t(item.resultKey, item.result)}
                   />
                 ))}
               </div>

@@ -231,21 +231,21 @@ const lightReactionGuide = {
   heading: "Teste de reflexo online: como entender seu tempo de reação visual",
   intro: [
     "Este teste de reflexo online mede seu tempo de reação visual: espere o círculo central acender em branco e clique o mais rápido possível. A espera muda a cada rodada, então adivinhar não ajuda. É o mesmo tipo de teste de reação simples usado em estudos de cronometria mental, mas aqui o resultado também inclui o atraso da tela, do navegador e do mouse.",
-    "A cascata neuromuscular subjacente envolve quatro estágios fisiológicos sequenciais: (1) fototransdução retiniana (~20–40 ms pela isomerização da rodopsina), (2) condução aferente ao longo do trato óptico via núcleo geniculado lateral até o córtex visual primário V1 (~30–50 ms), (3) preparação perceptiva e motora no córtex parietal e motor suplementar (~50–80 ms), e (4) condução eferente pela via corticoespinhal para contrair a musculatura flexora dos dedos (~30–50 ms) (Kosinski, 2008; Jain et al., 2015; Shelton & Kumar, 2010).",
-    "Segundo a Lei de Piéron (1952; Pins & Bonnet, 1996), a latência de reação decresce de forma hiperbólica com o contraste e a luminância do estímulo sobre o fundo. Este drill utiliza um clarão branco de altíssimo contraste contra um fundo escuro absorvente, produzindo máxima despolarização nas células ganglionares da retina. Pesquisas de atenção encoberta (Posner, 1980) e jogos de ação (Dye et al., 2009) sugerem que a atenção dirigida pode encurtar a fase de preparação da resposta.",
+    "Entre ver a luz e clicar entram a retina, as vias visuais, a preparação do movimento e o comando motor para a mão. Quanto dura cada etapa varia conforme o estudo e a pessoa; um teste no navegador mede só o total, somado ao atraso da tela e do mouse (Kosinski, 2008; Jain et al., 2015).",
+    "Segundo a Lei de Piéron (1952; Pins & Bonnet, 1996), quanto mais forte o estímulo em relação ao fundo, mais rápida tende a ser a reação. Por isso o drill usa um clarão branco sobre fundo escuro. Pesquisas de atenção encoberta (Posner, 1980) e jogos de ação (Dye et al., 2009) sugerem que a atenção dirigida pode encurtar a fase de preparação da resposta.",
     "Metodologia e Precisão Temporal: As exibições de luz e os cliques do usuário são capturados pela API de alta resolução performance.now(). A quantização de quadros da tela e a varredura USB (Woods et al., 2015) continuam somando alguns milissegundos ao resultado, por isso compare sessões no mesmo equipamento. Os dados ficam só no seu navegador."
   ],
   benchmarks: {
-    title: "Referência de tempo de reação visual no navegador",
-    headers: ["Nível de Desempenho", "Latência Média (ms)", "Pontuação e Combo Limiar", "Perfil Neuromuscular e de Reflexo"],
+    title: "Referências do teste de reflexo (escala própria deste drill)",
+    headers: ["Nível", "Tempo de reação médio (ms)", "Pontos e combo", "O que conferir"],
     rows: [
-      ["Tier 1: Reflexo Neural Apex", "< 180 ms", "15.000+ PTS | Combo 28x+", "Reação visual muito rápida; o resultado depende do dispositivo e da antecipação."],
-      ["Tier 2: Reflexo Visual Superior", "180 – 219 ms", "10.500 – 14.999 PTS | Combo 18x+", "Excelente acoplamento óptico-motor; latências constantes abaixo de 220 ms com oscilação temporal mínima."],
-      ["Tier 3: Padrão Adulto Consolidado", "220 – 259 ms", "6.000 – 10.499 PTS | Combo 10x+", "Faixa padrão para adultos saudáveis; resposta motora típica com pequenas variações causadas por cansaço natural."],
-      ["Tier 4: Retardo Moderado de Resposta", "260 – 319 ms", "2.500 – 5.999 PTS | Combo 5x+", "Processamento central estendido; sensível a atrasos de monitor, fadiga ocular ou lapsos leves de vigília."],
-      ["Tier 5: Latência Estendida / Em Evolução", "> 320 ms", "< 2.500 PTS | Combo < 5x", "Hesitação sensorial perceptível; sobrecarga de processamento sensorial ou atrasos causados por tela de 60 Hz."]
+      ["Nível 1: muito rápido", "< 180 ms", "15.000+ PTS | Combo 28x+", "Confira se não houve queimada de largada (clique antes da luz)."],
+      ["Nível 2: rápido", "180 – 219 ms", "10.500 – 14.999 PTS | Combo 18x+", "Mantenha a velocidade e reduza a variação entre tentativas."],
+      ["Nível 3: médio", "220 – 259 ms", "6.000 – 10.499 PTS | Combo 10x+", "Faixa comum em medições no navegador; muda com o cansaço e o dia."],
+      ["Nível 4: um pouco lento", "260 – 319 ms", "2.500 – 5.999 PTS | Combo 5x+", "Confira atraso da tela, cansaço visual e concentração."],
+      ["Nível 5: começando", "> 320 ms", "< 2.500 PTS | Combo < 5x", "Tela de 60 Hz, atraso do toque ou cansaço podem pesar."]
     ],
-    note: "Estes parâmetros baseiam-se na literatura clássica de cronometria mental humana e psicofísica visual (Kosinski, 2008; Woods et al., 2015; Pins & Bonnet, 1996; Jain et al., 2015). Variações decorrem de fatores circadianos, cafeína e frequência do monitor."
+    note: "Esta tabela é uma escala de treino da SkillDrills, não um padrão científico, nem média por idade, nem percentil de usuários. Tela, mouse e disposição mudam os resultados."
   },
   techniques: {
     title: "Como treinar o tempo de reação sem confundir latência do aparelho",

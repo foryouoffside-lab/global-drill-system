@@ -13,6 +13,7 @@ import { drawTacticalTarget } from '../../../../lib/canvasFx';
 import { createBackdropCache, isFrameSkippable } from '../trackingCanvas';
 import useUnexpectedExitGuard from '../../../../lib/useUnexpectedExitGuard';
 import useImmersiveMode from '@/lib/useImmersiveMode';
+import { setTargetCursor } from '@/lib/canvasCursor';
 
 const STORAGE_KEY = 'skilldrills_visual_tracking_staircase_step_v2';
 
@@ -406,6 +407,7 @@ export default function StaircaseStepClient({ copy }: { copy?: { title?: string;
         }
 
         drawTacticalTarget(ctx, targetX, targetY, targetSize, targetColor, glowEffect);
+        setTargetCursor(canvasRef.current, gameState === 'playing' ? mousePosRef.current : null, [{ x: targetX, y: targetY, radius: targetSize }]);
       }
 
       // CRT Scanlines Overlay
@@ -414,36 +416,6 @@ export default function StaircaseStepClient({ copy }: { copy?: { title?: string;
         for (let i = 0; i < H; i += 4) {
           ctx.fillRect(0, i, W, 1.5);
         }
-      }
-
-      // Tactical Pro White Crosshair (R5)
-      if (mousePosRef.current.active && gameState === 'playing') {
-        const mx = mousePosRef.current.x;
-        const my = mousePosRef.current.y;
-        ctx.save();
-        ctx.strokeStyle = '#ffffff';
-        ctx.lineWidth = 1.5;
-        ctx.shadowColor = 'rgba(0, 0, 0, 0.9)';
-        ctx.shadowBlur = 3;
-
-        // Crosshair arms (14px outer radius, 4px gap)
-        ctx.beginPath();
-        ctx.moveTo(mx, my - 4);
-        ctx.lineTo(mx, my - 14);
-        ctx.moveTo(mx, my + 4);
-        ctx.lineTo(mx, my + 14);
-        ctx.moveTo(mx - 4, my);
-        ctx.lineTo(mx - 14, my);
-        ctx.moveTo(mx + 4, my);
-        ctx.lineTo(mx + 14, my);
-        ctx.stroke();
-
-        // Center dot (2px radius)
-        ctx.fillStyle = '#ffffff';
-        ctx.beginPath();
-        ctx.arc(mx, my, 2, 0, Math.PI * 2);
-        ctx.fill();
-        ctx.restore();
       }
 
       animationRef.current = requestAnimationFrame(draw);
@@ -573,7 +545,7 @@ export default function StaircaseStepClient({ copy }: { copy?: { title?: string;
                 active: true,
               };
             }}
-            className={`block absolute top-0 left-0 w-full h-full z-10 ${gameState === 'playing' ? 'cursor-none' : 'cursor-default'}`} 
+            className={`block absolute top-0 left-0 w-full h-full z-10 cursor-default`} 
           />
 
           {/* START CARD */}

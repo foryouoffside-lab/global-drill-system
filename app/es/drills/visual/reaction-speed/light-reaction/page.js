@@ -231,21 +231,21 @@ const lightReactionGuide = {
   heading: "Test de reflejos online: entiende tu tiempo de reacción visual",
   intro: [
     "Este test de reacción online mide tu tiempo de reacción visual: espera a que el círculo central se ilumine en blanco y haz clic lo más rápido que puedas. La espera cambia en cada ronda, así que adivinar no sirve. Es el mismo tipo de test de reacción simple que se usa en estudios de cronometría mental, pero aquí el resultado también incluye el retraso de la pantalla, el navegador y el ratón.",
-    "La respuesta neuromuscular encadena cuatro fases fisiológicas cardinales: (1) fototransducción retiniana (~20–40 ms por isomerización de la rodopsina), (2) propagación aferente por el tracto óptico hacia el córtex visual primario V1 (~30–50 ms), (3) preparación perceptiva y motriz en áreas parietales y motoras suplementarias (~50–80 ms), y (4) descarga eferente por el haz corticoespinal para contraer los flexores digitales (~30–50 ms) (Kosinski, 2008; Jain et al., 2015; Shelton & Kumar, 2010).",
-    "Conforme a la Ley de Piéron (1952; Pins & Bonnet, 1996), la latencia decrece de modo hiperbólico al aumentar la luminancia sobre el fondo. Este drill explota ese mecanismo proyectando un destello blanco estroboscópico de gran intensidad sobre un lienzo oscuro absorbente, generando una despolarización ganglionar inmediata. Los estudios de atención encubierta (Posner, 1980) y gaming (Dye et al., 2009) sugieren que la atención dirigida puede acortar la preparación de la respuesta.",
+    "Entre ver la luz y hacer clic intervienen la retina, las vías visuales, la preparación del movimiento y la orden motora a la mano. Cuánto dura cada fase varía según el estudio y la persona; un test en el navegador solo mide el total, más el retraso de la pantalla y del ratón (Kosinski, 2008; Jain et al., 2015).",
+    "Según la ley de Piéron (Pins & Bonnet, 1996), cuanto más intenso es un estímulo respecto al fondo, más rápida suele ser la respuesta; por eso el drill usa un destello blanco sobre fondo oscuro. Los estudios de atención encubierta (Posner, 1980) y gaming (Dye et al., 2009) sugieren que la atención dirigida puede acortar la preparación de la respuesta.",
     "Metodología y Estándares de Medición: Los estímulos y las pulsaciones se cronometran con la API de alta resolución performance.now(). La cuantización de fotogramas de la pantalla y el sondeo USB (Woods et al., 2015) siguen sumando unos milisegundos al resultado, así que compara sesiones con el mismo equipo. Los datos se quedan en tu navegador."
   ],
   benchmarks: {
-    title: "Referencia del tiempo de reacción visual en navegador",
-    headers: ["Banda de Rendimiento", "Latencia Media (ms)", "Puntuación y Umbral Combo", "Perfil Neuromuscular y de Reflejo"],
+    title: "Referencias del test de reacción (escala propia de este drill)",
+    headers: ["Nivel", "Tiempo de reacción medio (ms)", "Puntos y combo", "Qué revisar"],
     rows: [
-      ["Tier 1: Reflejo Neural Apex", "< 180 ms", "15.000+ PTS | Combo 28x+", "Reacción visual muy rápida; el resultado depende del dispositivo y de la anticipación."],
-      ["Tier 2: Reflejo Visual Superior", "180 – 219 ms", "10.500 – 14.999 PTS | Combo 18x+", "Coordinación óptico-motora excelente; latencias regulares por debajo de 220 ms con escasa dispersión en sesiones largas."],
-      ["Tier 3: Rendimiento Adulto Estándar", "220 – 259 ms", "6.000 – 10.499 PTS | Combo 10x+", "Promedio de adultos saludables; respuesta visual espontánea correcta con oscilaciones normales derivadas del cansancio."],
-      ["Tier 4: Retardo Moderado de Respuesta", "260 – 319 ms", "2.500 – 5.999 PTS | Combo 5x+", "Procesamiento central dilatado; sensible a la fatiga visual, lapsos de vigilia o pantallas lentas de 60 Hz."],
-      ["Tier 5: Latencia Extendida / Base", "> 320 ms", "< 2.500 PTS | Combo < 5x", "Retraso sensorial pronunciado; sobrecarga en la interpretación del estímulo o equipos sin calibrar de baja frecuencia."]
+      ["Nivel 1: muy rápido", "< 180 ms", "15.000+ PTS | Combo 28x+", "Comprueba que no haya salidas en falso (clics antes de la luz)."],
+      ["Nivel 2: rápido", "180 – 219 ms", "10.500 – 14.999 PTS | Combo 18x+", "Mantén la velocidad y reduce la variación entre intentos."],
+      ["Nivel 3: medio", "220 – 259 ms", "6.000 – 10.499 PTS | Combo 10x+", "Rango habitual en mediciones en el navegador; cambia con el cansancio y el día."],
+      ["Nivel 4: algo lento", "260 – 319 ms", "2.500 – 5.999 PTS | Combo 5x+", "Revisa el retardo de la pantalla, la fatiga visual y la concentración."],
+      ["Nivel 5: empezando", "> 320 ms", "< 2.500 PTS | Combo < 5x", "Una pantalla de 60 Hz, el retardo táctil o el cansancio pueden influir."]
     ],
-    note: "Estos baremos se fundamentan en la cronometría clásica y la psicofísica del tiempo de reacción (Kosinski, 2008; Woods et al., 2015; Pins & Bonnet, 1996; Jain et al., 2015). Las marcas varían por biorritmos circadianos, cafeína y características de la pantalla."
+    note: "Esta tabla es una escala de práctica de SkillDrills, no una norma científica, ni una media por edad, ni un percentil de usuarios. La pantalla, el ratón y el día cambian los resultados."
   },
   techniques: {
     title: "Cómo entrenar reflejos sin confundir la latencia del dispositivo",
@@ -268,7 +268,7 @@ const lightReactionGuide = {
       {
         name: "Calibración y Pantallas de Alta Frecuencia",
         desc: "Un monitor de 60 Hz introduce hasta 16,7 ms de retardo, mientras que a 240 Hz este lapso baja a unos 4,2 ms (Woods et al., 2015).",
-        tips: "Utiliza monitores de 144 Hz o 240 Hz con ratones a 1.000 Hz de sondeo para medir reflejos puros sin barreras técnicas."
+        tips: "Utiliza monitores de 144 Hz o 240 Hz con ratones a 1.000 Hz de sondeo para reducir el retardo del equipo técnicas."
       }
     ]
   },

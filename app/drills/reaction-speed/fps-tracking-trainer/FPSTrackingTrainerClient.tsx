@@ -24,6 +24,7 @@ import DrillResultCard from '../../../../components/drill/DrillResultCard';
 import useImmersiveMode from '@/lib/useImmersiveMode';
 import { useTranslation } from '@/lib/i18n/useTranslation';
 import { FPS_TRACKING_TRAINER_I18N } from '@/lib/i18n/drills/fpsTrackingTrainer';
+import { setTargetCursor } from '@/lib/canvasCursor';
 
 // ============================================================
 // TUNING CONSTANTS
@@ -41,7 +42,7 @@ const RULES_ITEMS = [
   { num: '1', text: 'Moving Target Hit', highlight: '+100 PTS (+2s, max 60s)', result: '×Combo Mult' },
   { num: '2', text: 'Streak & Heat', highlight: 'Up to 3.0×', result: 'Faster Strafes' },
   { num: '3', text: 'Level Progression', highlight: '+1 Level / 1750 PTS', result: 'Adaptive Scaling' },
-  { num: '4', text: 'Miss / Timeout', highlight: 'Penalty', result: 'Resets Combo (-0.8s)' },
+  { num: '4', text: 'Miss / Timeout', highlight: 'Penalty', result: 'Resets Combo (-1s)' },
 ];
 
 const RELATED_DRILLS = [
@@ -98,7 +99,7 @@ export default function FPSTrackingTrainerClient({ copy }: { copy?: { title?: st
     { num: '1', text: t('fpsTrackingTrainer.rule1Text', 'Moving target hit'), highlight: t('fpsTrackingTrainer.rule1Highlight', '+100 PTS (+2s, max 60s)'), result: t('fpsTrackingTrainer.rule1Result', 'Combo multiplier') },
     { num: '2', text: t('fpsTrackingTrainer.rule2Text', 'Streak & heat'), highlight: t('fpsTrackingTrainer.rule2Highlight', 'Up to 3.0×'), result: t('fpsTrackingTrainer.rule2Result', 'Faster movement') },
     { num: '3', text: t('fpsTrackingTrainer.rule3Text', 'Level progression'), highlight: t('fpsTrackingTrainer.rule3Highlight', '+1 level / 1750 PTS'), result: t('fpsTrackingTrainer.rule3Result', 'Adaptive scaling') },
-    { num: '4', text: t('fpsTrackingTrainer.rule4Text', 'Miss / timeout'), highlight: penaltyEnabled ? t('fpsTrackingTrainer.rule4HighlightPenalty', 'Penalty') : t('fpsTrackingTrainer.rule4HighlightZero', 'No time penalty'), result: penaltyEnabled ? t('fpsTrackingTrainer.rule4ResultPenalty', 'Resets combo and removes 0.8s') : t('fpsTrackingTrainer.rule4ResultZero', 'Resets combo; time penalty is opt-in') },
+    { num: '4', text: t('fpsTrackingTrainer.rule4Text', 'Miss / timeout'), highlight: penaltyEnabled ? t('fpsTrackingTrainer.rule4HighlightPenalty', 'Penalty') : t('fpsTrackingTrainer.rule4HighlightZero', 'No time penalty'), result: penaltyEnabled ? t('fpsTrackingTrainer.rule4ResultPenalty', 'Resets combo and removes 1s') : t('fpsTrackingTrainer.rule4ResultZero', 'Resets combo; time penalty is opt-in') },
   ];
   const [openAccordion, setOpenAccordion] = useState<string | null>(null);
   const [isMobile, setIsMobile] = useState<boolean>(false);
@@ -626,32 +627,7 @@ export default function FPSTrackingTrainerClient({ copy }: { copy?: { title?: st
       }
       ctx.globalAlpha = 1.0;
 
-      // Tactical Pro White Crosshair
-      if (gameState === 'playing' && mousePosRef.current.active && !isMobile) {
-        const mx = mousePosRef.current.x;
-        const my = mousePosRef.current.y;
-        ctx.save();
-        ctx.strokeStyle = '#ffffff';
-        ctx.fillStyle = '#ffffff';
-        ctx.lineWidth = 1.5;
-        ctx.shadowColor = 'rgba(0, 0, 0, 0.9)';
-        ctx.shadowBlur = 3;
-
-        // Center dot
-        ctx.beginPath();
-        ctx.arc(mx, my, 2, 0, Math.PI * 2);
-        ctx.fill();
-
-        // Crosshair lines: gap 4px, length 10px (radius 14px)
-        ctx.beginPath();
-        ctx.moveTo(mx, my - 14); ctx.lineTo(mx, my - 4);
-        ctx.moveTo(mx, my + 4); ctx.lineTo(mx, my + 14);
-        ctx.moveTo(mx - 14, my); ctx.lineTo(mx - 4, my);
-        ctx.moveTo(mx + 4, my); ctx.lineTo(mx + 14, my);
-        ctx.stroke();
-        ctx.restore();
-      }
-
+      setTargetCursor(cvs, gameState === 'playing' ? mousePosRef.current : null, [e.target]);
       ctx.restore();
       animationRef.current = requestAnimationFrame(draw);
     };
@@ -807,7 +783,7 @@ export default function FPSTrackingTrainerClient({ copy }: { copy?: { title?: st
             onPointerLeave={() => {
               mousePosRef.current.active = false;
             }}
-            className="block absolute top-0 left-0 w-full h-full z-10 touch-none cursor-crosshair"
+            className="block absolute top-0 left-0 w-full h-full z-10 touch-none cursor-default"
           />
 
           {/* START CARD */}

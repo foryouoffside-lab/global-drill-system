@@ -5,47 +5,38 @@ import DrillFooter from '@/components/drill/DrillFooter';
 import RelatedDrills from '@/components/drill/RelatedDrills';
 import { pickSources } from '@/lib/drillSources';
 
-// ============================================================
-// SEO RESEARCH FINDINGS — es-ES / LATAM (reaction-speed / saccadic-gallery)
-// PRIMARY DOMESTIC: Google Suggest expands "entrenamiento visual" into deportivo, cognitivo and por ordenador
-// Specialist "sacádico" terms remain supporting entities; the title follows native visual-training intent
-// ============================================================
+const url = 'https://skilldrills.online/es/drills/reaction-speed/saccadic-gallery';
+const title = 'Ejercicios Sacádicos Online: Saltos Oculares | SkillDrills';
+const description =
+  'Ejercicios sacádicos gratis en el navegador: lleva la mirada de un objetivo a otro y pulsa cada uno con precisión. Practica saltos oculares y coordinación.';
 
 export const metadata = {
-  title: 'Entrenamiento Visual Online · Saltos Oculares | SkillDrills',
-  description:
-    'Entrenamiento visual online gratis: mueve la mirada entre objetivos para practicar escaneo visual, reacción y coordinación ojo-mano.',
+  title,
+  description,
   keywords: [
-    'entrenamiento visual',
-    'entrenamiento visual deportivo',
-    'entrenamiento visual por ordenador',
-    'entrenamiento visual cognitivo',
-    'escaneo visual',
     'ejercicios sacádicos',
     'movimientos sacádicos',
-    'saltos oculares rápidos',
-    'agilidad visual',
-    'velocidad de reaccion visual',
+    'ejercicios sacádicos online',
+    'saltos oculares',
+    'escaneo visual',
     'coordinación ojo-mano',
   ],
   alternates: {
-    canonical: 'https://skilldrills.online/es/drills/reaction-speed/saccadic-gallery',
+    canonical: url,
     languages: getAlternateLanguages('/drills/reaction-speed/saccadic-gallery'),
   },
-  openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
-    title: 'Entrenamiento Visual Online · Saltos Oculares | SkillDrills',
-    description:
-      'Mueve la mirada entre objetivos y practica escaneo visual, reacción y coordinación ojo-mano con este drill gratuito.',
+  openGraph: { images: [{ url: 'https://skilldrills.online/opengraph-image', width: 1200, height: 630 }],
+    title,
+    description: 'Lleva la mirada de un objetivo a otro y pulsa con precisión: ejercicios sacádicos gratis en el navegador.',
     type: 'article',
-    url: 'https://skilldrills.online/es/drills/reaction-speed/saccadic-gallery',
+    url,
     siteName: 'SkillDrills',
     locale: 'es_ES',
   },
-  twitter: { images: ["https://skilldrills.online/opengraph-image"],
+  twitter: { images: ['https://skilldrills.online/opengraph-image'],
     card: 'summary_large_image',
-    title: 'Entrenamiento Visual Online · Saltos Oculares | SkillDrills',
-    description:
-      'Entrenamiento visual gratis: alterna la mirada entre objetivos y mejora tu reacción visual.',
+    title,
+    description: 'Ejercicios sacádicos gratis: salta con la mirada entre objetivos y pulsa con precisión.',
   },
   robots: { index: true, follow: true },
 };
@@ -57,234 +48,158 @@ const breadcrumbSchema = {
     { '@type': 'ListItem', position: 1, name: 'SkillDrills Inicio', item: 'https://skilldrills.online/es' },
     { '@type': 'ListItem', position: 2, name: 'Panel de Ejercicios', item: 'https://skilldrills.online/es/drills' },
     { '@type': 'ListItem', position: 3, name: 'Velocidad de Reacción', item: 'https://skilldrills.online/es/drills/reaction-speed' },
-    { '@type': 'ListItem', position: 4, name: 'Entrenamiento Visual Online · Saltos Oculares', item: 'https://skilldrills.online/es/drills/reaction-speed/saccadic-gallery' },
+    { '@type': 'ListItem', position: 4, name: 'Ejercicios Sacádicos Online', item: url },
   ],
 };
 
 const softwareApplicationSchema = {
   '@context': 'https://schema.org',
-  '@type': 'SoftwareApplication', "sameAs": ["https://en.wikipedia.org/wiki/Saccade"],
-  name: 'Entrenamiento Visual Online · Saltos Oculares',
-  alternateName: ['Entrenamiento visual', 'Entrenamiento visual deportivo', 'Entrenamiento visual por ordenador', 'Ejercicios sacádicos'],
-  applicationCategory: 'HealthApplication',
+  '@type': 'SoftwareApplication',
+  sameAs: ['https://en.wikipedia.org/wiki/Saccade'],
+  name: 'Ejercicios Sacádicos Online: Saltos Oculares',
+  alternateName: ['Ejercicios sacádicos', 'Movimientos sacádicos', 'Saltos oculares'],
+  applicationCategory: 'GameApplication',
   operatingSystem: 'All',
   offers: { '@type': 'Offer', price: '0', priceCurrency: 'EUR' },
-  description:
-    'Herramienta científica interactiva para entrenar la velocidad de los saltos oculares (sacadas), fijación foveal y escaneo periférico en pantalla.',
+  description: 'Juego en el navegador: los objetivos aparecen de uno en uno en puntos fijos de una cuadrícula; llevas la mirada hasta ellos y pulsas. Registra aciertos y el tiempo hasta el clic.',
   browserRequirements: 'Navegador moderno con soporte para HTML5 Canvas y JavaScript',
-  softwareVersion: '2.0',
+  inLanguage: 'es',
+  dateModified: '2026-11-08',
 };
 
 const webAppSchema = {
   '@context': 'https://schema.org',
   '@type': 'WebApplication',
-  name: 'Entrenamiento Visual Online · Saltos Oculares | SkillDrills',
-  url: 'https://skilldrills.online/es/drills/reaction-speed/saccadic-gallery',
-  description:
-    'Entrenamiento sacádico gratuito en el navegador para aumentar la velocidad de salto ocular y la puntería foveal.',
-  applicationCategory: 'EducationalApplication',
+  name: 'Ejercicios Sacádicos Online | SkillDrills',
+  url,
+  description: 'Ejercicios sacádicos gratis en el navegador para practicar saltos oculares entre objetivos.',
+  applicationCategory: 'GameApplication',
   operatingSystem: 'All',
   browserRequirements: 'Requiere navegador moderno con JavaScript activado.',
   offers: { '@type': 'Offer', price: '0', priceCurrency: 'EUR' },
   author: { '@type': 'Organization', name: 'SkillDrills', url: 'https://skilldrills.online' },
   isAccessibleForFree: true,
-  learningResourceType: 'Educational Game',
-  teaches: 'Movimientos sacádicos, Saltos oculares, Fijación foveal, Escaneo visual, Tiempo de reacción',
+  inLanguage: 'es',
+  dateModified: '2026-11-08',
 };
 
 const videoGameSchema = {
   '@context': 'https://schema.org',
   '@type': 'VideoGame',
-  name: 'Entrenamiento Visual - Juego de Saltos Oculares',
-  url: 'https://skilldrills.online/es/drills/reaction-speed/saccadic-gallery',
-  description: 'Juego interactivo para medir y afilar la velocidad de saltos oculares y reflejos visuales en el navegador.',
-  genre: ['Vision Training', 'Action', 'Esports Training'],
-  gamePlatform: ['Web Browser', 'Desktop'],
+  name: 'Ejercicios Sacádicos - Saltos Oculares',
+  url,
+  description: 'Lleva la mirada rápidamente de un objetivo a otro y pulsa cada uno, directamente en el navegador.',
+  genre: ['Action', 'Aim Trainer'],
+  gamePlatform: ['Web Browser', 'Desktop', 'Mobile'],
   applicationCategory: 'Game',
+  inLanguage: 'es',
+  dateModified: '2026-11-08',
   offers: { '@type': 'Offer', price: '0', priceCurrency: 'EUR' },
 };
 
 const howToSchema = {
   '@context': 'https://schema.org',
   '@type': 'HowTo',
-  name: 'Cómo realizar ejercicios sacádicos y acelerar los saltos oculares',
-  description: 'Guía paso a paso para mejorar la transición de la mirada entre blancos y reducir la latencia sacádica.',
+  name: 'Cómo hacer los ejercicios sacádicos',
+  description: 'Cuatro pasos para llevar la mirada a cada objetivo y pulsarlo con precisión.',
   step: [
-    {
-      '@type': 'HowToStep',
-      position: 1,
-      name: 'Posicionamiento y fijación central',
-      text: 'Siéntate a unos 50–70 cm de la pantalla y centra la vista en el punto de partida inicial.',
-      url: 'https://skilldrills.online/es/drills/reaction-speed/saccadic-gallery#step-1',
-    },
-    {
-      '@type': 'HowToStep',
-      position: 2,
-      name: 'Detectar el destello periférico',
-      text: 'Mantén la cabeza quieta y percibe la aparición de la diana en la visión periférica sin mover el cuello.',
-      url: 'https://skilldrills.online/es/drills/reaction-speed/saccadic-gallery#step-2',
-    },
-    {
-      '@type': 'HowToStep',
-      position: 3,
-      name: 'Disparar el salto sacádico',
-      text: 'Mueve ambos ojos de forma balística y rectilínea hacia las coordenadas del blanco.',
-      url: 'https://skilldrills.online/es/drills/reaction-speed/saccadic-gallery#step-3',
-    },
-    {
-      '@type': 'HowToStep',
-      position: 4,
-      name: 'Fijación foveal y clic de confirmación',
-      text: 'Centra la fóvea con nitidez en el blanco y pulsa de inmediato para registrar la latencia.',
-      url: 'https://skilldrills.online/es/drills/reaction-speed/saccadic-gallery#step-4',
-    },
-  ],
+    { '@type': 'HowToStep', position: 1, name: 'Colócate', text: 'Siéntate a unos 50–70 cm de la pantalla y deja la mirada en el centro de la pantalla.' },
+    { '@type': 'HowToStep', position: 2, name: 'Detecta el objetivo', text: 'Mantén la cabeza quieta y detecta el objetivo rojo en cuanto aparezca en uno de los puntos de la cuadrícula.' },
+    { '@type': 'HowToStep', position: 3, name: 'Salta con la mirada', text: 'Lleva la mirada al objetivo de un solo salto, antes que la mano.' },
+    { '@type': 'HowToStep', position: 4, name: 'Pulsa con precisión', text: 'Haz clic en el objetivo (en el móvil, tócalo) y revisa el resultado al final.' },
+  ].map((st) => ({ ...st, url: `${url}#step-${st.position}` })),
 };
+
+const faqs = [
+  {
+    q: '¿Qué son los ejercicios sacádicos?',
+    a: 'Son ejercicios que repiten los saltos rápidos de la mirada (sacadas) de un punto a otro. Aquí los objetivos aparecen de uno en uno en puntos fijos de una cuadrícula (4×3 en ordenador, 3×3 en móvil), nunca dos veces seguidas en el mismo punto, y llevas la mirada hasta ellos y pulsas. Es un juego de navegador, no una revisión de la vista ni un tratamiento.',
+  },
+  {
+    q: '¿Cómo funcionan el tiempo y los puntos?',
+    a: 'Empiezas con 45 segundos y cada acierto suma 2 segundos (máximo 60). Cada acierto vale 100 puntos multiplicados por la racha (hasta 3,0x) y por un bonus de nivel. Al subir de nivel, los objetivos se hacen más pequeños y duran menos en pantalla. Un clic fallado reinicia la racha; la penalización de 1 segundo solo se aplica si la activas en los ajustes. Se juega con ratón o pantalla táctil.',
+  },
+  {
+    q: '¿A qué velocidad se mueven los ojos en una sacada?',
+    a: 'Una sacada dura unas pocas decenas de milisegundos y, en saltos grandes, la velocidad máxima llega a varios cientos de grados por segundo (Leigh & Zee, 2015). Ocurren constantemente al leer y al recorrer una pantalla (Rayner, 1998).',
+  },
+  {
+    q: '¿Qué son las sacadas exprés?',
+    a: 'En ciertas condiciones aparecen sacadas con una latencia muy corta, alrededor de 100 ms, llamadas sacadas exprés (Fischer & Weber, 1993). Este ejercicio no mide la latencia de los ojos, así que no puede detectarlas.',
+  },
+  {
+    q: '¿El ejercicio mide mis movimientos oculares?',
+    a: 'No. El navegador no sabe hacia dónde miras; solo registra el momento y la posición del clic. El resultado incluye el salto de la mirada, el movimiento de la mano, el retraso del ratón y la frecuencia de la pantalla. No es una latencia sacádica.',
+  },
+  {
+    q: '¿Ayuda en shooters como Valorant o CS2?',
+    a: 'Revisar esquinas, mirar el minimapa y localizar a un enemigo que aparece de repente se parecen a esta tarea. Pero el rendimiento en partida depende también de la puntería, el posicionamiento y el equipo, así que no hay mejora garantizada.',
+  },
+  {
+    q: '¿Influye la tasa de refresco del monitor?',
+    a: 'El intervalo entre dos fotogramas es 1000 dividido por la tasa de refresco: unos 16,7 ms a 60 Hz, 6,9 ms a 144 Hz y 4,2 ms a 240 Hz. Eso puede desplazar ligeramente el momento en que aparece el objetivo (Woods et al., 2015). No se ha medido cuánto cambia la puntuación de este juego; compara sesiones en la misma pantalla.',
+  },
+  {
+    q: '¿Pueden estos ejercicios mejorar la velocidad de lectura?',
+    a: 'Al leer la mirada salta de palabra en palabra, pero un juego en pantalla no es un ejercicio de lectura y no está demostrado que acelere la lectura. Si tienes dificultades de lectura o molestias oculares persistentes, consulta a un oftalmólogo u óptico-optometrista.',
+  },
+  {
+    q: '¿Con qué frecuencia debo practicar?',
+    a: 'Bastan bloques cortos de 5 a 10 minutos con descansos. Si notas los ojos cansados o secos, para, parpadea y mira a lo lejos. Entrenar más tiempo no es necesariamente mejor.',
+  },
+  {
+    q: '¿Es gratis? ¿Dónde se guardan mis resultados?',
+    a: 'Sí, es gratis, sin instalación y sin cuenta. Tu récord se guarda en el almacenamiento local del navegador y este ejercicio no lo envía a ningún servidor. Si borras los datos del navegador, el récord desaparece.',
+  },
+];
 
 const faqSchema = {
   '@context': 'https://schema.org',
   '@type': 'FAQPage',
-  dateModified: '2026-09-20',
-  mainEntity: [
-    {
-      '@type': 'Question',
-      name: '¿Qué son los ejercicios sacádicos?',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: 'Son entrenamientos visuales dirigidos a incrementar la velocidad, la precisión y la reactividad de los saltos balísticos de los ojos (sacadas) entre puntos de fijación en el campo visual.',
-      },
-    },
-    {
-      '@type': 'Question',
-      name: '¿A qué velocidad se mueven los ojos durante una sacada?',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: 'La velocidad angular de una sacada puede superar los 200 a 700 grados por segundo, convirtiéndose en uno de los movimientos biológicos más veloces del cuerpo humano (Rayner, 1998).',
-      },
-    },
-    {
-      '@type': 'Question',
-      name: '¿Qué son las sacadas exprés (Fischer & Boch, 1984)?',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: 'Son saltos oculares de latencia hiperreducida (~100–120 ms) generados a través de vías subcorticales del colículo superior cuando se libera la inhibición de la fijación previa.',
-      },
-    },
-    {
-      '@type': 'Question',
-      name: '¿Cómo beneficia el entrenamiento sacádico a los jugadores de FPS?',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: 'En juegos como Valorant y CS2, sacadas más rápidas permiten explorar esquinas, leer el minimapa y apuntar a enemigos imprevistos con el menor tiempo posible de supresión visual.',
-      },
-    },
-    {
-      '@type': 'Question',
-      name: '¿Qué es la supresión sacádica?',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: 'Es un mecanismo protector cerebral que interrumpe temporalmente la captación visual consciente durante el salto del ojo (20–40 ms) para impedir imágenes borrosas y mareos.',
-      },
-    },
-    {
-      '@type': 'Question',
-      name: '¿Qué se entiende por dismetría sacádica?',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: 'Ocurre cuando el ojo frena antes de tiempo (hipometría) o sobrepasa el objetivo (hipermetría), requiriendo micro-sacadas de corrección que restan valiosas milésimas de segundo.',
-      },
-    },
-    {
-      '@type': 'Question',
-      name: '¿Influye la tasa de refresco del monitor en el entrenamiento?',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: 'Sí. Monitores de 144 Hz o 240 Hz renderizan estímulos con solo 4 a 7 ms de desfase (Woods et al., 2015), facilitando una detección retiniana más temprana.',
-      },
-    },
-    {
-      '@type': 'Question',
-      name: '¿Pueden estos ejercicios mejorar la velocidad de lectura?',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: 'Sí. Un control sacádico fluido optimiza el paso de renglón a renglón y reduce regresiones involuntarias de la mirada al procesar texto.',
-      },
-    },
-    {
-      '@type': 'Question',
-      name: '¿Con qué frecuencia se debe entrenar?',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: 'De 5 a 10 minutos al día es lo óptimo. Series breves pero sumamente concentradas estimulan la plasticidad neuronal sin fatigar la musculatura ocular.',
-      },
-    },
-    {
-      '@type': 'Question',
-      name: '¿Este simulador sacádico es gratuito y en el navegador?',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: 'Sí. La herramienta de SkillDrills es 100 % gratuita, se ejecuta directamente en el navegador y registra los tiempos mediante la API High Resolution Time (performance.now()).',
-      },
-    },
-  ],
+  inLanguage: 'es',
+  dateModified: '2026-11-08',
+  mainEntity: faqs.map((f) => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } })),
 };
 
-faqSchema.mainEntity = faqSchema.mainEntity.slice(0, 10);
 const saccadicGuide = {
-  heading: 'Guía de Ejercicios Sacádicos: Velocidad de Saltos Oculares y Fijación Foveal',
+  heading: 'Guía de los ejercicios sacádicos',
   intro: [
-    'Los movimientos sacádicos son desplazamientos balísticos hiperveloces que trasladan el centro de la mirada de un punto de fijación a otro (Rayner, 1998; Fischer & Boch, 1984).',
-    'Con velocidades que alcanzan los 700°/s, el cerebro activa la supresión sacádica para neutralizar el desenfoque en la retina. Si la mirada no frena exactamente en el blanco (dismetria sacádica), se requerirán micro-sacadas correctoras que añadirán retrasos sensibles. Este ejercicio busca afinar la frenada ocular en un único salto definitivo.',
-    'Metodología en navegador: todos los cálculos se realizan localmente mediante la High Resolution Time API (performance.now()). Se deben tener en cuenta las latencias del monitor (~16,7 ms a 60 Hz, ~6,9 ms a 144 Hz y ~4,1 ms a 240 Hz; Woods et al., 2015) y el sondeo del ratón. Variaciones por debajo de 5 ms corresponden a ruido estadístico.',
-    'Entrena de forma continuada en el mismo entorno para monitorizar fielmente tus avances en agilidad visual y reflejos oculares.',
+    'En estos ejercicios sacádicos los objetivos aparecen de uno en uno en distintos puntos de la pantalla. Llevas la mirada hasta el objetivo de un salto y pulsas. Esos saltos rápidos de la mirada se llaman movimientos sacádicos y ocurren constantemente al leer y al recorrer una imagen (Rayner, 1998).',
+    'Durante la sacada el procesamiento visual se reduce, y si la mirada cae al lado del objetivo aparece una pequeña corrección (Leigh & Zee, 2015). Por eso conviene priorizar una llegada precisa antes que la velocidad.',
+    'Límites de la medición: el navegador no conoce la posición de tu mirada y solo registra el momento y el lugar del clic. El resultado incluye el movimiento de la mano, el retraso del ratón y el intervalo de la pantalla (unos 16,7 ms a 60 Hz, 6,9 ms a 144 Hz, 4,2 ms a 240 Hz; Woods et al., 2015). No es una latencia sacádica ni una evaluación de la salud ocular.',
+    'Practica en el mismo dispositivo, con la misma distancia y postura, y compara solo tus propias sesiones. Si notas dolor o cambios en la visión, acude a un oftalmólogo.',
   ],
   benchmarks: {
-    title: 'Tabla de Rendimiento en Latencia Sacádica y Precisión',
-    headers: ['Latencia Sacádica', 'Clasificación', 'Dinámica del Salto Ocular', 'Contexto Funcional', 'Foco Recomendado'],
+    title: 'Etapas de práctica',
+    headers: ['Etapa', 'Objetivo', 'En qué fijarse'],
     rows: [
-      ['< 130 ms', 'Nivel 1 (Sacadas Exprés)', 'Disparo subcortical vía colículo superior; mínima inhibición', 'Rango poco habitual; depende del dispositivo y de la anticipación', 'Entrenar amplitud máxima de salto visual'],
-      ['130 – 170 ms', 'Nivel 2 (Avanzado)', 'Activación cortical veloz; sin titubeos de fijación', 'Rango rápido; depende del dispositivo', 'Consolidar precisión de parada sin sobrepasar el blanco'],
-      ['171 – 220 ms', 'Nivel 3 (Avanzado / Estándar)', 'Latencia saludable de referencia para adultos', 'Promedio esperado en adultos sanos (Rayner, 1998)', 'Expandir el radio de percepción periférica'],
-      ['221 – 280 ms', 'Nivel 4 (Intermedio)', 'Demora al soltar la fijación previa; leve retraso', 'Fatiga ocasional o recuperación incompleta', 'Hacer pausas 20-20-20 para descansar la vista'],
-      ['> 280 ms', 'Nivel 5 (Base / Dismetría)', 'Dismetría sacádica visible con múltiples correcciones', 'Músculos oculares fatigados o distracciones en pantalla', 'Priorizar aterrizaje exacto antes que acelerar'],
+      ['Etapa 1', 'No dejar escapar objetivos', 'Coger el tacto a los clics precisos'],
+      ['Etapa 2', 'Llevar la mirada de un salto', 'Mirar en cuanto aparece el objetivo'],
+      ['Etapa 3', 'Mantener el ritmo de clics', 'Tempo constante, sin prisas'],
+      ['Etapa 4', 'Más rápido con la misma precisión', 'Menos pasadas y correcciones'],
+      ['Etapa 5', 'Sesiones más largas', 'Descansar antes de cansarse y comparar en las mismas condiciones'],
     ],
-    note: 'Clasificación basada en estudios de oculomotricidad (Rayner, 1998; Fischer & Boch, 1984; Leigh & Zee, 2015) adaptada para monitores digitales (Woods et al., 2015).',
+    note: 'Esta tabla es una orientación de práctica de SkillDrills. No contiene normas de tiempo de reacción, estadísticas de usuarios, percentiles ni valores clínicos.',
   },
   techniques: {
-    title: 'Técnicas para Maximizar la Velocidad de los Saltos Oculares',
+    title: 'Consejos para saltos oculares más limpios',
     items: [
-      {
-        name: 'Aislar el Movimiento de la Cabeza',
-        desc: 'Mueve exclusivamente los globos oculares, manteniendo cabeza y cuello inmóviles. Los saltos puramente oculares son dos veces más veloces que girar la cabeza.',
-        tips: 'Apoya el mentón sobre la mano si notas que giras la cara sin darte cuenta.',
-      },
-      {
-        name: 'Percepción Periférica Anticipada',
-        desc: 'Usa la retina periférica para ubicar la posición del blanco antes de lanzar el desplazamiento foveal.',
-        tips: 'Mantén una mirada suave y abierta sobre el centro de la pantalla.',
-      },
-      {
-        name: 'Freno Ocular Preciso (Stopping Power)',
-        desc: 'Evita sobrepasar el blanco o frenar antes: anclar la mirada en el centro exacto elimina sacadas de ajuste.',
-        tips: 'Afinar la frenada ahorra más tiempo que precipitarse con torpeza.',
-      },
-      {
-        name: 'Hidratación y Descanso Ocular',
-        desc: 'La concentración fija ante el monitor reduce el parpadeo hasta un 60 %, causando sequedad y lentitud muscular.',
-        tips: 'Parpadea conscientemente entre series y mira hacia el horizonte.',
-      },
+      { name: 'Cabeza quieta, solo los ojos', desc: 'No gires la cabeza; deja que solo salten los ojos. Una postura fija también hace las sesiones más comparables.', tips: 'Comprueba de vez en cuando que la cabeza no acompaña el movimiento.' },
+      { name: 'Mirada suave en el centro', desc: 'No claves la vista en un punto; deja la mirada relajada en el centro de la pantalla para notar antes el objetivo nuevo.', tips: 'Mantén toda la pantalla en tu campo de visión.' },
+      { name: 'Llegar de un salto', desc: 'Si la mirada se queda corta o se pasa, hay que corregir. El objetivo es frenar justo en el centro del objetivo.', tips: 'Precisión antes que prisa.' },
+      { name: 'Descansar la vista', desc: 'Concentrado en la pantalla parpadeas menos y los ojos se secan.', tips: 'Parpadea a propósito entre series y mira a lo lejos.' },
     ],
   },
   steps: [
-    'Siéntate alineado al centro del monitor a unos 60 cm de distancia.',
-    'Comienza el ejercicio y fija la vista en el marcador inicial central.',
-    'En cuanto un blanco destelle en el campo visual, lanza los ojos rápidamente sobre él.',
-    'Centra la fóvea en el centro de la diana y pulsa para registrar la latencia.',
-    'Completa la sesión y consulta tu latencia sacádica media.',
+    'Siéntate a unos 50–70 cm, frente al centro de la pantalla.',
+    'Inicia el ejercicio y deja la mirada en el centro de la pantalla.',
+    'Cuando aparezca un objetivo, lleva primero los ojos hasta él.',
+    'Haz clic en el objetivo (en el móvil, tócalo).',
+    'Al acabar el tiempo, revisa precisión, reacción media, nivel máximo y racha máxima.',
   ],
-  audience: 'Jugadores de shooters (Valorant, CS2, Apex Legends), pilotos, deportistas de reacción y cualquier persona interesada en entrenar su agudeza visual y reflejos oculares.',
-  faqs: faqSchema.mainEntity.map((e) => ({ q: e.name, a: e.acceptedAnswer.text })),
-  sources: pickSources('rayner1998', 'fischer1984', 'leigh2015', 'woods2015'),
+  audience: 'Quien quiera practicar saltos oculares de forma lúdica, jugadores de shooters (Valorant, CS2) y aficionados a los deportes de pelota.',
+  faqs,
+  sources: pickSources('rayner1998', 'fischer1993', 'leigh2015', 'woods2015'),
   related: [
     { href: '/es/drills/reaction-speed', label: 'Panel de Velocidad de Reacción' },
     { href: '/es/drills/visual/reaction-speed/light-reaction', label: 'Test de Tiempo de Reacción' },
@@ -320,7 +235,7 @@ export default function SpanishSaccadicGalleryPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
-      <SaccadicGalleryWrapper copy={{ title: 'Entrenamiento Visual Online · Saltos Oculares', subtitle: 'Saltos Oculares · Adquisición Visual', caption: 'Desplaza la mirada entre objetivos y pulsa cada uno con precisión.' }} />
+      <SaccadicGalleryWrapper copy={{ title: 'Ejercicios Sacádicos Online: Saltos Oculares', subtitle: 'Saltos Oculares · Adquisición Visual', caption: 'Desplaza la mirada entre objetivos y pulsa cada uno con precisión.' }} />
       <DrillGuide guide={saccadicGuide} />
       <RelatedDrills />
       <DrillFooter />

@@ -22,7 +22,8 @@ import FpsStartCard from '../../../../components/drill/FpsStartCard';
 import DrillResultCard from '../../../../components/drill/DrillResultCard';
 import useImmersiveMode from '@/lib/useImmersiveMode';
 import { getVisualTrackingSpeedTestUi } from '@/lib/i18n/drills/visualTrackingSpeedTestNative';
-import { drawTacticalTarget, createHitRing, drawHitRings } from '@/lib/canvasFx';
+import { drawTacticalTarget, createHitRing, drawHitRings } from '@/lib/canvasFx';
+import { setTargetCursor } from '@/lib/canvasCursor';
 
 // ============================================================
 // TUNING CONSTANTS
@@ -624,31 +625,7 @@ export default function VisualTrackingSpeedTestClient({ copy }: VisualTrackingSp
       }
       ctx.globalAlpha = 1.0;
 
-      // Tactical Pro White Crosshair
-      if (mousePosRef.current.active && gameState === 'playing') {
-        const { x: mx, y: my } = mousePosRef.current;
-        ctx.save();
-        ctx.shadowColor = 'rgba(0, 0, 0, 0.9)';
-        ctx.shadowBlur = 3;
-        ctx.strokeStyle = '#ffffff';
-        ctx.lineWidth = 1.5;
-
-        // 4 crosshair arms: 14px outer, 4px inner gap
-        ctx.beginPath();
-        ctx.moveTo(mx, my - 14); ctx.lineTo(mx, my - 4);
-        ctx.moveTo(mx, my + 4);  ctx.lineTo(mx, my + 14);
-        ctx.moveTo(mx - 14, my); ctx.lineTo(mx - 4, my);
-        ctx.moveTo(mx + 4, my);  ctx.lineTo(mx + 14, my);
-        ctx.stroke();
-
-        // Center dot
-        ctx.fillStyle = '#ffffff';
-        ctx.beginPath();
-        ctx.arc(mx, my, 2, 0, Math.PI * 2);
-        ctx.fill();
-        ctx.restore();
-      }
-
+      setTargetCursor(cvs, gameState === 'playing' ? mousePosRef.current : null, [e.target]);
       ctx.restore();
       animationRef.current = requestAnimationFrame(draw);
     };
@@ -798,7 +775,7 @@ export default function VisualTrackingSpeedTestClient({ copy }: VisualTrackingSp
             onPointerLeave={() => {
               mousePosRef.current.active = false;
             }}
-            className="block absolute top-0 left-0 w-full h-full z-10 touch-none cursor-crosshair"
+            className="block absolute top-0 left-0 w-full h-full z-10 touch-none cursor-default"
           />
 
           {/* START CARD */}

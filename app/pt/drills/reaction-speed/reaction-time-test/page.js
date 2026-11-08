@@ -6,7 +6,7 @@ import { pickSources } from '@/lib/drillSources';
 
 export const metadata = {
   "title": "Jogo de noção de tempo: acerte o tempo-alvo | SkillDrills",
-  "description": "Jogo de noção de tempo: um tempo-alvo aparece e você clica quando ele passa. Não é um teste de reação: para isso, veja o Teste de reação (sinal luminoso).",
+  "description": "Jogo de noção de tempo: memorize um tempo-alvo de 1 a 8 s, clique quando ele passar e veja seu erro em milissegundos. Não é um teste de reação.",
   "keywords": [
     "jogo de noção de tempo",
     "jogo de estimativa de tempo",
@@ -189,7 +189,7 @@ const howToSchema = {
 const faqSchema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
-  "dateModified": "2026-10-08",
+  "dateModified": "2026-11-08",
   "mainEntity": [
     {
       "@type": "Question",
@@ -204,7 +204,7 @@ const faqSchema = {
       "name": "Como o jogo funciona?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Um tempo-alvo aparece por um instante e some. Um orbe luminoso sem leitura numérica continua ativo enquanto o relógio conta ao fundo, e você clica quando acha que o tempo-alvo passou. Depois o drill mostra o momento exato do seu clique e o seu erro."
+        "text": "Um tempo-alvo aparece por um instante e some. No centro, um orbe luminoso sem leitura numérica fica parado, com anéis girando ao redor, enquanto o relógio conta ao fundo, e você clica quando acha que o tempo-alvo passou. Depois o drill mostra o momento exato do seu clique e o seu erro."
       }
     },
     {
@@ -236,7 +236,7 @@ const faqSchema = {
       "name": "Posso contar de cabeça?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Sim, contar é a sua própria estratégia. O orbe não tem leitura numérica e seus anéis pulsam uma vez por segundo, o que você pode usar como batida. Teste métodos diferentes e fique com o que der o menor erro médio."
+        "text": "Sim, contar é a sua própria estratégia. O orbe não tem leitura numérica e um anel ao redor dele pulsa uma vez por segundo, o que você pode usar como batida. Teste métodos diferentes e fique com o que der o menor erro médio."
       }
     },
     {
@@ -260,7 +260,7 @@ const faqSchema = {
       "name": "É o mesmo que o desafio dos 10 segundos?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "A ideia é parecida, julgar um intervalo sem relógio visível, mas o alvo muda a cada rodada e não é fixo em 10 segundos. O drill também pontua o tamanho do seu erro, em vez de apenas passar ou falhar."
+        "text": "A ideia é parecida, julgar um intervalo sem relógio visível, mas o alvo fica entre 1 e 8 segundos, muda a cada rodada e não é fixo em 10 segundos. O drill também pontua o tamanho do seu erro, em vez de apenas passar ou falhar."
       }
     },
     {
@@ -332,7 +332,7 @@ const reactionGuide = {
       },
       {
         "name": "Usar o pulso de um segundo",
-        "desc": "Os anéis ao redor do orbe pulsam uma vez por segundo. Se você contar cada pulso como um tique, soma segundos inteiros e estima apenas o restante.",
+        "desc": "Um anel ao redor do orbe pulsa uma vez por segundo. Se você contar cada pulso como um tique, soma segundos inteiros e estima apenas o restante.",
         "tips": "Com alvos decimais, como 3,250 s, o último clique cai entre dois pulsos."
       },
       {

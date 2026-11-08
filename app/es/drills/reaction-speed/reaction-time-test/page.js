@@ -5,16 +5,18 @@ import { getAlternateLanguages } from '@/lib/i18n/locales';
 import { pickSources } from '@/lib/drillSources';
 
 export const metadata = {
-  "title": "Juego de sentido del tiempo: acierta el tiempo | SkillDrills",
-  "description": "Juego de sentido del tiempo: ves un tiempo objetivo y haces clic cuando pasa. No es un test de reacción; para eso, Test de reacción (señal luminosa).",
+  "title": "Juego de Parar el Cronómetro a Ciegas | SkillDrills",
+  "description": "Juego de parar el cronómetro a ciegas: memoriza un tiempo de 1 a 8 s, haz clic cuando creas que ha pasado y mira tu error en ms. No es un test de reacción.",
   "keywords": [
+    "juego de parar el cronómetro",
+    "parar el cronómetro a ciegas",
+    "juego del cronómetro online",
     "juego de sentido del tiempo",
     "juego de estimación del tiempo",
     "juego de timing",
     "acertar el tiempo objetivo",
     "reloj interno juego",
     "entrenar sentido del tiempo",
-    "juego parar el cronómetro",
     "practicar timing de clic"
   ],
   "alternates": {
@@ -29,8 +31,8 @@ export const metadata = {
         "height": 630
       }
     ],
-    "title": "Juego de sentido del tiempo: acierta el tiempo | SkillDrills",
-    "description": "Estima un tiempo objetivo de entre 1 y 8 segundos, haz clic en el momento justo y mira tu error en milisegundos.",
+    "title": "Juego de Parar el Cronómetro a Ciegas | SkillDrills",
+    "description": "Para el cronómetro a ciegas: estima un tiempo objetivo de entre 1 y 8 segundos, haz clic en el momento justo y mira tu error en milisegundos.",
     "url": "https://skilldrills.online/es/drills/reaction-speed/reaction-time-test",
     "siteName": "SkillDrills",
     "locale": "es_ES",
@@ -41,8 +43,8 @@ export const metadata = {
       "https://skilldrills.online/opengraph-image"
     ],
     "card": "summary_large_image",
-    "title": "Juego de sentido del tiempo: acierta el tiempo | SkillDrills",
-    "description": "Juego de estimación del tiempo: memoriza el tiempo objetivo, haz clic cuando pase y ve tu desviación en milisegundos."
+    "title": "Juego de Parar el Cronómetro a Ciegas | SkillDrills",
+    "description": "Juego de parar el cronómetro a ciegas: memoriza el tiempo objetivo, haz clic cuando pase y ve tu desviación en milisegundos."
   },
   "robots": {
     "index": true,
@@ -201,7 +203,7 @@ const faqSchema = {
     },
     {
       "@type": "Question",
-      "name": "¿Cómo funciona el juego?",
+      "name": "¿Cómo se juega a parar el cronómetro a ciegas?",
       "acceptedAnswer": {
         "@type": "Answer",
         "text": "Un tiempo objetivo aparece un instante y desaparece. Un orbe luminoso sin lectura numérica sigue activo mientras el reloj cuenta en segundo plano, y haces clic cuando crees que ha pasado el tiempo objetivo. Después el drill muestra el momento exacto de tu clic y tu error."
@@ -236,7 +238,7 @@ const faqSchema = {
       "name": "¿Puedo contar mentalmente?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Sí, contar es tu propia estrategia. El orbe no tiene lectura numérica y sus anillos pulsan una vez por segundo, algo que puedes usar como pulso. Prueba métodos distintos y quédate con el que dé el menor error medio."
+        "text": "Sí, contar es tu propia estrategia. El orbe no tiene lectura numérica y uno de sus anillos pulsa una vez por segundo, algo que puedes usar como pulso. Prueba métodos distintos y quédate con el que dé el menor error medio."
       }
     },
     {
@@ -275,9 +277,9 @@ const faqSchema = {
 };
 
 const reactionGuide = {
-  "heading": "Juego de sentido del tiempo: cómo funciona el drill de estimación",
+  "heading": "Juego de parar el cronómetro a ciegas: cómo funciona",
   "intro": [
-    "Es un juego de estimación del tiempo, no un test de reacción. Se muestra brevemente un tiempo objetivo de entre uno y ocho segundos, desaparece y haces clic cuando crees que ha pasado. El drill indica la diferencia entre tu clic y el objetivo en milisegundos. Para comprobar la rapidez con la que reaccionas a una señal visual, usa el Test de reacción (señal luminosa).",
+    "Es un juego de parar el cronómetro a ciegas, no un test de reacción. Se muestra brevemente un tiempo objetivo de entre uno y ocho segundos, desaparece y haces clic cuando crees que ha pasado. El drill indica la diferencia entre tu clic y el objetivo en milisegundos. Para comprobar la rapidez con la que reaccionas a una señal visual, usa el Test de reacción (señal luminosa).",
     "Cada clic se marca con el reloj performance.now() del navegador, íntegramente en tu dispositivo. Tu pantalla cuantiza lo que ves a su intervalo de refresco: unos 16,7 ms por fotograma a 60 Hz, 6,9 ms a 144 Hz y 4,2 ms a 240 Hz (Woods et al., 2015). El sondeo del ratón añade unos 8 ms a 125 Hz frente a 1 ms a 1000 Hz.",
     "Considera ruido de medición las diferencias de menos de unos 5 ms y compara tus propias sesiones con el mismo equipo, no con el de otra persona. Es una herramienta de práctica, no una medición clínica."
   ],
@@ -332,7 +334,7 @@ const reactionGuide = {
       },
       {
         "name": "Usar el pulso de un segundo",
-        "desc": "Los anillos alrededor del orbe pulsan una vez por segundo. Si cuentas cada pulso como un tic, sumas segundos enteros y solo estimas el resto.",
+        "desc": "Uno de los anillos alrededor del orbe pulsa una vez por segundo. Si cuentas cada pulso como un tic, sumas segundos enteros y solo estimas el resto.",
         "tips": "Con objetivos con decimales, como 3,250 s, el último clic cae entre dos pulsos."
       },
       {
@@ -404,7 +406,7 @@ export default function SpanishReactionTimeTestPage() {
       />
       <ReactionTimeTestWrapper
         copy={{
-          title: "Juego de sentido del tiempo: acierta el tiempo",
+          title: "Juego de parar el cronómetro a ciegas",
           subtitle: "Estimación del tiempo: memoriza el tiempo objetivo, haz clic en el momento justo y mira tu error en milisegundos",
           caption: "Aparece un tiempo objetivo y desaparece. Haz clic cuando creas que ha pasado ese tiempo.",
         }}

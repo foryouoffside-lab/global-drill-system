@@ -5,25 +5,21 @@ import RelatedDrills from '@/components/drill/RelatedDrills';
 import { pickSources } from '@/lib/drillSources';
 
 export const metadata = {
-  title: "Go/No-Go-Test online | Impulskontrolle üben | SkillDrills",
-  description: "Kostenloser Go/No-Go-Test für Reaktionshemmung: bei Grün klicken, bei Rot zurückhalten. Kein Diagnosetest.",
+  title: "Go/No-Go-Test online kostenlos | Reaktionshemmung üben | SkillDrills",
+  description: "Go/No-Go-Test kostenlos im Browser: bei Grün sofort klicken, bei Rot nicht drücken. Übt die Reaktionshemmung und zählt Fehlreaktionen und Auslassungen. Kein Diagnosetest.",
   keywords: [
     "Go/No-Go-Test",
-    "Impulskontrolltest",
+    "Go/No-Go-Test online",
+    "Go/No-Go-Aufgabe",
     "Reaktionshemmung",
     "Reaktionshemmung Test",
-    "Impulskontrolle testen",
-    "Go No-Go online",
-    "Reaktionshemmung üben",
-    "Inhibitionstest",
-    "Fehlalarme messen",
-    "motorische Hemmung",
-    "exekutive Funktionen testen",
-    "Go-Signal No-Go-Signal"
+    "Inhibitionskontrolle",
+    "Impulskontrolle Spiel",
+    "Fehlreaktionen Auslassungen"
   ],
   openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
-    title: "Go/No-Go-Test online | Impulskontrolle üben | SkillDrills",
-    description: "Bei Grün reagieren, bei Rot zurückhalten: kostenloser Go/No-Go-Test für Reaktionshemmung und Fehlalarme.",
+    title: "Go/No-Go-Test online kostenlos | Reaktionshemmung üben | SkillDrills",
+    description: "Bei Grün sofort klicken, bei Rot stillhalten. Kostenloser Go/No-Go-Test im Browser für Reaktionshemmung und Fehlreaktionen. Kein Diagnosetest.",
     type: 'article',
     url: 'https://skilldrills.online/de/drills/visual/reaction-speed/go/no-go',
     siteName: 'SkillDrills',
@@ -31,8 +27,8 @@ export const metadata = {
   },
   twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: 'summary_large_image',
-    title: "Go/No-Go-Test online | Impulskontrolle üben | SkillDrills",
-    description: "Go/No-Go-Übung für Reaktionshemmung: bei Grün klicken, bei Rot zurückhalten.",
+    title: "Go/No-Go-Test online kostenlos | Reaktionshemmung üben | SkillDrills",
+    description: "Bei Grün klicken, bei Rot stillhalten: kostenloser Go/No-Go-Test im Browser."
   },
   robots: { index: true, follow: true },
   alternates: {
@@ -49,52 +45,52 @@ const breadcrumbSchema = {
     { "@type": "ListItem", "position": 2, "name": "Trainingskatalog", "item": "https://skilldrills.online/de/drills" },
     { "@type": "ListItem", "position": 3, "name": "Visuelles Training", "item": "https://skilldrills.online/de/drills/visual" },
     { "@type": "ListItem", "position": 4, "name": "Reaktionsschnelligkeit", "item": "https://skilldrills.online/de/drills/visual/reaction-speed" },
-    { "@type": "ListItem", "position": 5, "name": "Go/No-Go Impulskontrolle", "item": "https://skilldrills.online/de/drills/visual/reaction-speed/go/no-go" }
+    { "@type": "ListItem", "position": 5, "name": "Go/No-Go-Test", "item": "https://skilldrills.online/de/drills/visual/reaction-speed/go/no-go" }
   ]
 };
 
 const softwareApplicationSchema = {
   "@context": "https://schema.org",
   "@type": "SoftwareApplication", "sameAs": ["https://en.wikipedia.org/wiki/Inhibitory_control"],
-  "name": "Go/No-Go Reaktionshemmungs-Test",
-  "applicationCategory": "HealthApplication",
+  "name": "Go/No-Go-Test (Reaktionshemmung)",
+  "applicationCategory": "GameApplication",
   "operatingSystem": "Web Browser",
   "url": "https://skilldrills.online/de/drills/visual/reaction-speed/go/no-go",
   "offers": { "@type": "Offer", "price": "0", "priceCurrency": "EUR" },
-  "description": "Interaktiver neuropsychologischer Go/No-Go Test zur Messung präfrontaler Reaktionshemmung, motorischer Notbremsung und Trigger-Disziplin.",
+  "description": "Browser-Version der Go/No-Go-Aufgabe: Bei grünem Go-Signal klicken, bei rotem No-Go-Signal nicht drücken. Zählt Fehlreaktionen, Auslassungen und Reaktionszeit. Übungswerkzeug, kein medizinischer Test.",
   "featureList": [
-    "Millisekundengenaue Latenzerfassung via performance.now() API",
-    "Dynamische Stimulus-Verkürzung zur Messung des Abbruchzeitpunkts",
-    "Differenzierte Erfassung von Commission Errors (Fehlalarmen) und Omission Errors",
-    "Vollständig lokale Speicherung im Browser ohne Server-Telemetrie"
+    "Reaktionszeitmessung in Millisekunden mit performance.now()",
+    "Signaldauer sinkt mit dem Level von etwa 600 ms auf mindestens 100 ms",
+    "Fehlreaktionen (Commission-Fehler) und Auslassungen (Omission-Fehler) getrennt gezählt",
+    "Ergebnisse bleiben lokal im Browser (LocalStorage)"
   ],
-  "dateModified": "2026-09-20"
+  "dateModified": "2026-11-08"
 };
 
 const webAppSchema = {
   "@context": "https://schema.org",
   "@type": "WebApplication",
-  "name": "Go/No-Go Reaktionshemmungs-Test | SkillDrills",
+  "name": "Go/No-Go-Test online kostenlos | Reaktionshemmung üben | SkillDrills",
   "alternateName": "Go/No-Go Pro",
   "url": "https://skilldrills.online/de/drills/visual/reaction-speed/go/no-go",
-  "dateModified": "2026-09-20",
-  "description": "Kostenloses neurokognitives Online-Training zur Reaktionshemmung: Reagiere auf grüne Go-Ziele und stoppe die Fingerbewegung bei roten No-Go-Reizen.",
+  "dateModified": "2026-11-08",
+  "description": "Kostenloser Go/No-Go-Test online: bei grünem Signal klicken, bei rotem Signal stillhalten.",
   "applicationCategory": "EducationalApplication",
   "operatingSystem": "All",
-  "browserRequirements": "HTML5-fähiger Browser mit Canvas-Unterstützung.",
+  "browserRequirements": "Moderner Browser mit HTML5-Canvas.",
   "offers": { "@type": "Offer", "price": "0", "priceCurrency": "EUR" },
   "author": { "@type": "Organization", "name": "SkillDrills", "url": "https://skilldrills.online" },
   "isAccessibleForFree": true,
   "learningResourceType": "Educational Game",
-  "teaches": "Reaktionshemmung, Impulskontrolle, präfrontale motorische Bremsung, Trigger-Disziplin"
+  "teaches": "Reaktionshemmung, weniger Fehlreaktionen, erst Farbe prüfen, dann reagieren"
 };
 
 const videoGameSchema = {
   "@context": "https://schema.org",
   "@type": "VideoGame",
-  "name": "Go/No-Go Impulskontroll-Drill",
+  "name": "Go/No-Go-Test (Reaktionshemmung trainieren)",
   "url": "https://skilldrills.online/de/drills/visual/reaction-speed/go/no-go",
-  "description": "Online-Reaktionsspiel zur Förderung der motorischen Impulskontrolle und Entscheidungspräzision.",
+  "description": "Browserspiel zur Reaktionshemmung: bei Grün klicken, bei Rot stoppen.",
   "genre": ["Action", "Brain Game", "Reaction Speed"],
   "gamePlatform": ["Web Browser", "Desktop", "Mobile"],
   "applicationCategory": "Game",
@@ -104,36 +100,36 @@ const videoGameSchema = {
 const howToSchema = {
   "@context": "https://schema.org",
   "@type": "HowTo",
-  "name": "So absolvierst du den Go/No-Go Test",
-  "dateModified": "2026-09-20",
-  "description": "Schritt-für-Schritt-Anleitung zur Messung und Optimierung deiner motorischen Reaktionshemmung im Go/No-Go Paradigma.",
+  "name": "So funktioniert der Go/No-Go-Test",
+  "dateModified": "2026-11-08",
+  "description": "Die Browser-Version der Go/No-Go-Aufgabe in vier Schritten.",
   "step": [
     {
       "@type": "HowToStep",
       "position": 1,
-      "name": "Blickpunkt auf das Zentrum fixieren",
-      "text": "Richte deine Augen ruhig auf das Fadenkreuz in der Mitte des Canvas-Fensters, wo die Farbsignale aufblitzen.",
+      "name": "Blick auf die Bildschirmmitte",
+      "text": "Schau auf die Mitte, wo die Kreise erscheinen, und lass Finger und Maus locker.",
       "url": "https://skilldrills.online/de/drills/visual/reaction-speed/go/no-go#step-1"
     },
     {
       "@type": "HowToStep",
       "position": 2,
-      "name": "Blitzschnell auf grüne Go-Ziele klicken",
-      "text": "Sobald das smaragdgrüne Go-Signal erscheint, klicke oder drücke die Leertaste so schnell wie möglich (+150 Pkt. × Combo).",
+      "name": "Bei grünem Go-Signal sofort klicken",
+      "text": "Erscheint ein grüner Kreis, klicke oder tippe, bevor er verschwindet (+150 Punkte × Combo). Tastatureingaben werden nicht unterstützt.",
       "url": "https://skilldrills.online/de/drills/visual/reaction-speed/go/no-go#step-2"
     },
     {
       "@type": "HowToStep",
       "position": 3,
-      "name": "Motorische Bewegung bei roten No-Go-Zielen abbrechen",
-      "text": "Erscheint das rubinrote No-Go-Signal, halte den Finger regungslos zurück (+100 Pkt. für erfolgreiche Zurückhaltung).",
+      "name": "Bei rotem No-Go-Signal stillhalten",
+      "text": "Erscheint ein roter Kreis, drücke nicht, bis er verschwindet. Dafür gibt es +100 Punkte. Klicks ohne Kreis und schnelles Dauerklicken zählen ebenfalls als Fehlreaktion.",
       "url": "https://skilldrills.online/de/drills/visual/reaction-speed/go/no-go#step-3"
     },
     {
       "@type": "HowToStep",
       "position": 4,
-      "name": "Trigger-Disziplin bei steigender Frequenz wahren",
-      "text": "Mit wachsender Serie verkürzt sich das Zeitfenster auf bis zu 100 ms, was höchste frontostriatale Bremsleistung erfordert.",
+      "name": "Auch bei hohem Tempo erst die Farbe prüfen",
+      "text": "Mit Level und Combo sinkt die Anzeigedauer bis auf 100 ms. Behalte die Gewohnheit bei, erst die Farbe zu erkennen und dann zu klicken.",
       "url": "https://skilldrills.online/de/drills/visual/reaction-speed/go/no-go#step-4"
     }
   ]
@@ -142,152 +138,144 @@ const howToSchema = {
 const faqSchema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
-  "dateModified": "2026-09-20",
+  "dateModified": "2026-11-08",
   "mainEntity": [
     {
       "@type": "Question",
-      "name": "Was misst der Go/No-Go Test aus neurowissenschaftlicher Sicht?",
+      "name": "Was ist ein Go/No-Go-Test?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Der Go/No-Go Test evaluiert die exekutive Reaktionshemmung (Response Inhibition) und Verhaltenskontrolle. Er quantifiziert die Fähigkeit des Gehirns, einen bereits aktivierten motorischen Befehl selektiv abzubrechen, wenn sich die sensorischen Bedingungen ändern."
+        "text": "Eine Aufgabe, bei der man auf häufige Go-Signale schnell reagiert und bei seltenen No-Go-Signalen die Reaktion zurückhält. In der Psychologie wird sie genutzt, um die Reaktionshemmung zu untersuchen. Diese Seite ist eine Übungsversion für den Browser: bei Grün klicken, bei Rot nicht drücken."
       }
     },
     {
       "@type": "Question",
-      "name": "Was unterscheidet einen Commission Error (Fehlalarm) von einem Omission Error?",
+      "name": "Wie läuft der Go/No-Go-Test ab?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Ein Commission Error (Fehlalarm) entsteht, wenn du bei einem roten No-Go-Signal fälschlicherweise klickst – ein Versagen der Impulskontrolle. Ein Omission Error liegt vor, wenn du ein grünes Go-Ziel verpasst, was auf Lücken in der Daueraufmerksamkeit hinweist."
+        "text": "Nach „Übung starten“ beginnt die Runde mit 45 Sekunden. Erscheint in der Mitte ein grüner Kreis, klickst oder tippst du; bei einem roten Kreis wartest du, bis er verschwindet. Jede richtige Antwort bringt 2 Sekunden dazu (maximal 60). Etwa 70 % der Signale sind grün, 30 % rot. Eingabe nur per Maus oder Touch, nicht per Tastatur."
       }
     },
     {
       "@type": "Question",
-      "name": "Was besagt das Horse-Race-Modell (Wettlauf-Modell) der Reaktionshemmung?",
+      "name": "Was ist der Unterschied zwischen Fehlreaktion und Auslassung?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Das von Logan und Cowan (1984) formulierte Modell beschreibt motorische Kontrolle als Wettlauf zwischen einem initiierenden Go-Prozess und einem inhibitorischen Stopp-Prozess. Überquert der Stopp-Prozess die neuronale Schwelle zuerst, wird die Handlung erfolgreich gehemmt."
+        "text": "Eine Fehlreaktion (Commission-Fehler) ist ein Klick bei rotem No-Go-Signal oder wenn gar kein Kreis zu sehen ist. Eine Auslassung (Omission-Fehler) bedeutet, dass ein grünes Go-Signal verschwunden ist, bevor du geklickt hast. Das Erste zeigt, wie gut du stoppst, das Zweite eher Aufmerksamkeitslücken oder zu langsame Reaktionen."
       }
     },
     {
       "@type": "Question",
-      "name": "Warum klickt der Finger oft unwillkürlich, obwohl man das rote Signal sieht?",
+      "name": "Warum klicke ich bei Rot, obwohl ich es sehe?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Dies liegt an motorischer Voraktivierung (Prepotent Priming). Da Go-Ziele überwiegen, feuert der motorische Kortex bei Reizbeginn reflexartig los, noch bevor die parvozelluläre Farberkennung im visuellen Areal V4 abgeschlossen ist."
+        "text": "Weil Grün viel häufiger kommt, wird das Drücken zur Gewohnheit. Nach dem Modell von Logan & Cowan (1984) laufen ein Start- und ein Stopp-Prozess gegeneinander; nur wenn der Stopp-Prozess zuerst ankommt, wird die Reaktion verhindert. Je kürzer das Signal, desto weniger Zeit bleibt zum Stoppen."
       }
     },
     {
       "@type": "Question",
-      "name": "Welchen Nutzen bringt Go/No-Go-Training für Shooter wie Valorant oder CS2?",
+      "name": "Hilft der Test bei Shootern wie Valorant oder CS2?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "In taktischen E-Sport-Titeln ist Trigger-Disziplin spielentscheidend. Wer voreilig auf Teamkameraden oder verfallende Rauchgranaten schießt, gibt seine Position preis. Der Drill trainiert das Gehirn, sensorische Reizerfassung von reflexartiger Fingerkontraktion zu entkoppeln."
+        "text": "Erst die Farbe prüfen und dann klicken ähnelt dem Moment, in dem man Freund und Feind unterscheidet, bevor man schießt. Die Aufgabe enthält aber kein Zielen, keine Bewegung, keine Geräusche und kein Absuchen der Karte. Eine Verbesserung im Spiel ist nicht garantiert."
       }
     },
     {
       "@type": "Question",
-      "name": "Welche Areale des Gehirns steuern die motorische Notbremse?",
+      "name": "Kann man damit ADHS oder Impulsivität feststellen?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Die motorische Bremsung wird über eine hyperdirekte neuronale Bahn gesteuert, die den rechten unteren Frontallappen (rIFC), das prä-supplementär-motorische Areal (preSMA) und den Nucleus subthalamicus (STN) in den Basalganglien verbindet (Aron et al., 2014)."
+        "text": "Nein. Das ist ein Übungsspiel im Browser, kein medizinischer Test und keine Diagnose. Ergebnisse hängen auch von Bildschirm, Eingabegerät, Müdigkeit und Konzentration ab. Wer sich wegen Impulsivität oder Aufmerksamkeit Sorgen macht, sollte fachlichen Rat einholen."
       }
     },
     {
       "@type": "Question",
-      "name": "Lässt sich die Impulskontrolle und Reaktionshemmung gezielt verbessern?",
+      "name": "Wird die Reaktionshemmung durch Üben besser?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Ja. Neuroplastizitätsstudien belegen, dass regelmäßiges Go/No-Go-Training die funktionelle Konnektivität des präfrontalen Bremsnetzwerks stärkt und die Stopp-Signal-Reaktionszeit (SSRT) signifikant verkürzt."
+        "text": "Wer dieselbe Aufgabe wiederholt, wird darin meist besser. Ob sich das auf den Alltag oder andere Spiele überträgt, ist in der Forschung nicht einheitlich belegt und von Person zu Person verschieden. Vergleiche deine Werte am besten unter gleichen Bedingungen."
       }
     },
     {
       "@type": "Question",
-      "name": "Welchen Einfluss haben Monitor-Bildwiederholrate und Maus-Pollingrate?",
+      "name": "Beeinflusst die Bildwiederholrate das Ergebnis?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Ein 60-Hz-Monitor fügt bis zu 16,7 ms Frame-Latenz hinzu, während 240-Hz-Displays diesen Verzug auf 4,1 ms senken. Zusammen mit 1000-Hz-Gaming-Mäusen liefert das Setup frühere visuelle Farbdaten, was Fehlalarme nachweislich reduziert."
+        "text": "Ja. Ein Bildschirm zeigt bei 60 Hz nur etwa alle 16,7 ms ein neues Bild, bei 240 Hz etwa alle 4,2 ms, und auch Eingabegeräte haben Verzögerungen (Woods et al., 2015). Vergleiche eigene Werte auf demselben Gerät und Browser statt mit anderen."
       }
     },
     {
       "@type": "Question",
-      "name": "Was ist das ideale tägliche Trainingspensum für maximale frontale Kontrolle?",
+      "name": "Werden meine Ergebnisse gesendet?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Zwei bis drei fokussierte Einheiten à 3 bis 5 Minuten genügen. Übermäßiges Training führt zu kognitiver Ermüdung der präfrontalen Transmitter, was die Fehlerrate steigen lässt."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Werden meine Reaktionszeiten und Klickdaten auf externen Servern gespeichert?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Nein. Alle Auswertungen und Bestwerte werden ausschließlich lokal im Speicher deines Browsers abgelegt. Es findet keinerlei Tracking oder Datenübertragung an externe Server statt."
+        "text": "Punkte und Verlauf werden in deinem Browser (LocalStorage) gespeichert. Wenn du die Browserdaten löschst, können frühere Ergebnisse verloren gehen."
       }
     }
   ]
 };
 
 const goNoGoGuide = {
-  heading: "Go/No-Go-Test: Reaktionshemmung und Impulskontrolle",
+  heading: "Reaktionshemmung üben mit dem Go/No-Go-Test",
   intro: [
-    "Reaktionshemmung (Response Inhibition) ist die fundamentale exekutive Kontrollfunktion des menschlichen Gehirns, die es gestattet, bereits vorbereitete motorische Handlungen blitzschnell zu stoppen, wenn sie unvorteilhaft oder fehlerhaft sind. In dynamischen Sportarten, beim Autofahren und im kompetitiven E-Sport entscheidet die Fähigkeit zur Verhaltensbremsung oft über Sieg oder Niederlage.",
-    "Die psychophysikalischen Grundlagen gehen auf Franciscus Cornelis Donders (1868) zurück, der mit der 'C-Reaktion' nachwies, dass die selektive Unterdrückung einer Reaktion im Vergleich zur reinen Reaktionszeit zusätzliche kognitive Diskriminationszeit beansprucht.",
-    "1984 formulierten Logan und Cowan das 'Horse-Race-Modell', das die Handlungshemmung als algorithmischen Wettlauf zwischen einem exzitatorischen Go-Prozess und einem inhibitorischen Stopp-Prozess beschreibt. Moderne fMRT-Studien (Aron et al., 2014) belegen, dass diese Bremsung über den rechten unteren Frontalkortex (rIFC) und den subthalamischen Nukleus (STN) realisiert wird.",
-    "Methodik & Latenz-Standardisierung: Alle Reizpräsentationen und Klickeingaben werden hochpräzise über die browserinterne performance.now() API erfasst. Hardware-Latenzen durch Monitor-Quantisierung und USB-Abtastung werden nach Woods et al. (2015) minimiert, während alle Messwerte rein lokal verarbeitet werden."
+    "Beim Go/No-Go-Test reagiert man auf häufige Signale und hält sich bei seltenen Signalen zurück. Es geht also nicht nur ums schnelle Klicken, sondern darum, im richtigen Moment nicht zu drücken. Das unterscheidet ihn von einem einfachen Reaktionstest.",
+    "In dieser Browser-Version erscheint in der Mitte ein grüner Kreis (Go) oder ein roter Kreis (No-Go). Bei Grün klicken oder tippen, bei Rot warten. Klicks ohne Kreis und schnelles Dauerklicken zählen ebenfalls als Fehlreaktion. Mit steigendem Level sinkt die Anzeigedauer von etwa 600 ms auf mindestens 100 ms.",
+    "Die Idee von Wahlreaktionsaufgaben geht auf die Reaktionszeitstudien von Donders (1868) zurück; den Wettlauf zwischen Start- und Stopp-Prozess haben Logan & Cowan (1984) als Modell beschrieben. Die Punktzahl hier ist trotzdem ein Übungsergebnis inklusive Bildschirm, Eingabegerät und Browser und kein medizinischer Test.",
+    "Gemessen wird mit performance.now() im Browser. Bildwiederholrate und Eingabeverzögerung fließen ins Ergebnis ein (Woods et al., 2015), daher Werte nur auf demselben Gerät vergleichen. Die Daten bleiben im Browser dieses Geräts."
   ],
   benchmarks: {
-    title: "Orientierungswerte für Reaktionshemmung und Fehlalarme",
-    headers: ["Leistungsband", "Fehlalarmquote (CER)", "Punkte & Combo-Schwelle", "Neuromuskuläres & Exekutives Profil"],
+    title: "Richtwerte für Fehlreaktionen (Übungsskala dieses Drills)",
+    headers: ["Stufe", "Fehlreaktionsrate", "Punkte & Combo", "Bedeutung"],
     rows: [
-      ["Tier 1: Apex Executive Bremsung", "< 2.0% CER", "16.000+ Pkt. | Combo 30x+", "Perfekte rIFC-STN Hyperdirekt-Hemmung; vollständige Entkopplung von Reizaufblitzung und Muskelkontraktion."],
-      ["Tier 2: Fortgeschrittene Hemmung", "2.0% – 4.9% CER", "11.000 – 15.999 Pkt. | Combo 20x+", "Herausragende Trigger-Disziplin; blitzschnelle Erholung von Farbumschaltungen mit minimaler Antizipation."],
-      ["Tier 3: Solider Erwachsenenstandard", "5.0% – 9.9% CER", "6.500 – 10.999 Pkt. | Combo 12x+", "Zuverlässige Go-Zieldurchführung mit gelegentlichen Fehlalarmen unter hohem Frequenztakt."],
-      ["Tier 4: Moderate Impulsivität", "10.0% – 18.0% CER", "3.000 – 6.499 Pkt. | Combo 6x+", "Erhöhte motorische Voraktivierung; Tendenz zum unwillkürlichen Klick bei Reizbeginn vor Farbüberprüfung."],
-      ["Tier 5: Hohe Voraktivierung (Basis)", "> 18.0% CER", "< 3.000 Pkt. | Combo < 6x", "Deutliche Verhaltensimpulsivität; Unfähigkeit, ballistische Fingerbewegungen bei roten No-Go-Signalen zu stoppen."]
+      ["Fortgeschritten", "unter 2,0 %", "ab 16.000 Pkt. / Combo ab 30", "Prüft auch bei kurzer Anzeige erst die Farbe"],
+      ["Sicher", "2,0–4,9 %", "11.000–15.999 Pkt. / Combo ab 20", "Wenige Fehlreaktionen, Tempo kann steigen"],
+      ["Mittel", "5,0–9,9 %", "6.500–10.999 Pkt. / Combo ab 12", "Bei hohem Tempo gelegentlich Klick auf Rot"],
+      ["Im Aufbau", "10,0–18,0 %", "3.000–6.499 Pkt. / Combo ab 6", "Oft Klick vor dem Erkennen der Farbe; Genauigkeit vor Tempo"],
+      ["Einstieg", "über 18,0 %", "unter 3.000 Pkt. / Combo unter 6", "Zuerst bei Rot stoppen und nicht dauerklicken"]
     ],
-    note: "Diese Richtwerte basieren auf klassischer mentaler Chronometrie und Hemmungsliteratur (Donders, 1868; Logan et al., 1984; Robertson et al., 1997; Aron et al., 2014). Tagesform, Koffeinkonsum und Bildschirmlatenz beeinflussen die Resultate."
+    note: "Diese Tabelle ist eine Übungsskala von SkillDrills, keine wissenschaftliche Norm und kein Altersdurchschnitt. Müdigkeit, Konzentration und Bildschirm verändern die Werte."
   },
   techniques: {
-    title: "Impulskontrolle im Go/No-Go-Test trainieren",
+    title: "Tipps gegen Fehlreaktionen im Go/No-Go-Test",
     items: [
       {
-        name: "Farberkennung vor motorischer Voraktivierung",
-        desc: "Helligkeits- und Bewegungssignale erreichen das Sehzentrum vor der vollständigen Farbverarbeitung im Areal V4 (Donders, 1868).",
-        tips: "Löse keinen Klick bei bloßer Helligkeitsveränderung aus, sondern warte den Sekundenbruchteil bis zur Bestätigung des grünen Farbtons ab."
+        name: "Erst Farbe erkennen, dann klicken",
+        desc: "Das Signal ist die Farbe, nicht das Auftauchen des Kreises. Wer schon beim ersten Aufblitzen klickt, drückt auch bei Rot.",
+        tips: "Anfangs ruhig etwas langsamer klicken und erst bei sicherem Grün reagieren. Tempo erst erhöhen, wenn die Fehler sinken."
       },
       {
-        name: "Der Horse-Race Hemmungs-Reset",
-        desc: "Wird der Stopp-Prozess initiiert, bevor das Go-Potenzial den Schwellenwert überschreitet, wird die Kontraktion im Rückenmark abgefangen (Logan et al., 1984).",
-        tips: "Halte die Handmuskulatur locker und entspannt. Verspannte Beugemuskeln behindern die neuronale Notbremse mechanisch."
+        name: "Finger locker lassen",
+        desc: "Wer mit halb gedrückter Taste wartet, kann nicht mehr rechtzeitig stoppen.",
+        tips: "Finger nur leicht auf Maus oder Bildschirm legen, ohne Druck."
       },
       {
-        name: "Überwindung automatischer Rhythmen",
-        desc: "Serien gleichförmiger Go-Reize verleiten das Gehirn in einen rhythmischen Autopiloten, was zu drastisch erhöhten Fehlalarmen führt (Robertson et al., 1997).",
-        tips: "Betrachte jedes Stimulussignal als isoliertes, neues Ereignis und fixiere das Zentrum aufmerksam zwischen den Runden."
+        name: "Nicht im Rhythmus klicken",
+        desc: "Viele grüne Signale hintereinander erzeugen einen Klickrhythmus, und beim seltenen Rot steigen die Fehler (Robertson et al., 1997).",
+        tips: "Jedes Signal als neues Ereignis behandeln. Ohne Kreis nicht klicken; bei Dauerklicken erscheint kein Kreis mehr."
       },
       {
-        name: "Hardware-Optimierung für minimale Latenz",
-        desc: "Bei engen Zeitfenstern von 160 ms verbraucht ein 60-Hz-Display wertvolle Reaktionszeit durch Bildverzögerung (Woods et al., 2015).",
-        tips: "Nutze einen 144-Hz- oder 240-Hz-Monitor sowie eine Gaming-Maus mit 1000 Hz Abtastrate, um Bildverzögerungen zu eliminieren."
+        name: "Gleiche Bedingungen nutzen",
+        desc: "Bei kurzer Anzeigedauer machen sich Bildwiederholrate und Eingabeverzögerung bemerkbar (Woods et al., 2015).",
+        tips: "Gleicher Monitor, Browser, gleiches Eingabegerät und ähnliche Tageszeit, dann Fehlreaktionsrate und Durchschnitt vergleichen."
       }
     ]
   },
   steps: [
-    "Klicke auf Drill Starten, um die 45-Sekunden-Go/No-Go-Sitzung zu aktivieren.",
-    "Fixiere deinen Blick auf das zentrale Fadenkreuz, wo die Zielscheiben aufblitzen.",
-    "Klicke blitzschnell, wenn die grüne Go-Scheibe erscheint, um Punkte und Combo zu sammeln.",
-    "Halte den Finger regungslos zurück, wenn die rote No-Go-Scheibe aufleuchtet, um Restraint-Punkte zu sichern.",
-    "Analysiere nach Rundenende deine Fehlalarmquote, Reaktionszeit und die erreichte Bewertungsstufe."
+    "Auf „Übung starten“ klicken; die Runde beginnt mit 45 Sekunden.",
+    "Den Blick auf die Bildschirmmitte richten.",
+    "Bei grünem Go-Kreis klicken oder tippen, bevor er verschwindet.",
+    "Bei rotem No-Go-Kreis warten, bis er verschwindet.",
+    "Am Ende Fehlreaktionsrate, Durchschnittsreaktion und erreichtes Level ansehen."
   ],
-  audience: "Taktische FPS-Spieler (Valorant, CS2, Rainbow Six Siege) zur Verfeinerung der Trigger-Disziplin, Kraftfahrer, Kampfsportler und alle Personen, die ihre exekutive Impulskontrolle stärken möchten.",
+  audience: "Für alle, die einen Go/No-Go-Test online ausprobieren und neben Tempo auch das bewusste Nicht-Drücken üben wollen, etwa Gamer und Sportler. Nicht geeignet für medizinische Abklärungen.",
   faqs: faqSchema.mainEntity.map(e => ({ q: e.name, a: e.acceptedAnswer.text })),
-  sources: pickSources('donders1868', 'logan1984', 'robertson1997', 'aron2014', 'woods2015'),
+  sources: pickSources('donders1868', 'logan1984', 'robertson1997', 'woods2015'),
   related: [
-    { href: "/de/drills/visual/reaction-speed/light-reaction", label: "Licht-Reaktionstest" },
+    { href: "/de/drills/visual/reaction-speed/light-reaction", label: "Reaktionstest" },
+    { href: "/de/drills/reaction-speed", label: "Reaktionstraining" },
     { href: "/de/drills/visual/depth-perception/distance-judgment", label: "Tiefenwahrnehmung & Distanzurteil" },
     { href: "/de/drills/visual/tracking-accuracy/moving-target", label: "Bewegungsziel-Interzeption" },
     { href: "/de/drills/visual/tracking-accuracy/multiple-targets", label: "Multi-Objekt-Tracking" },
-    { href: "/de/drills/visual/tracking-accuracy/pursuit-tracker", label: "Kontinuierlicher Blickfolge-Tracker" },
     { href: "/de/drills/visual/visual-recognition/entropic-grid", label: "Entropisches Gitter-Suchspiel" }
   ]
 };
@@ -301,7 +289,7 @@ export default function ChromaSyncPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(howToSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(videoGameSchema) }} />
-      <ChromaSyncClient copy={{ title: "Go/No-Go-Test (Impulskontrolle)", subtitle: "Bei Grün reagieren, bei Rot zurückhalten" }} />
+      <ChromaSyncClient copy={{ title: "Go/No-Go-Test (Reaktionshemmung)", subtitle: "Grüner Kreis: sofort klicken. Roter Kreis: nicht drücken. Kostenlos im Browser." }} />
       <DrillGuide guide={goNoGoGuide} />
       <RelatedDrills />
     </>

@@ -5,6 +5,16 @@ Trigger for a new chat: `Continue docs/seo/HANDOFF_LOCAL_SEO_CATEGORY.md`
 Read this file first, then `docs/seo/HANDOFF_DEMAND_RESEARCH.md` (tooling + rules), `docs/seo/GLOBAL_PAGE_SEO_AEO_GEO_STANDARD.md`, `docs/seo/NO_TRANSLATION_NATIVE_SEARCH_MANDATE.md`.
 Update the LOG section at the end of every step. Never leave work only in chat.
 
+## >>> RESUME HERE (state as of 2026-11-08) <<<
+
+1. Pass 1 (reaction-speed, 6 locales) = DONE, built, audited, COMMITTED LOCALLY as `68fb8560`. NOT PUSHED (owner must OK push = production deploy).
+2. Pass 2 = RUNNING/maybe interrupted: 6 agents (ko, ja, de, fr, pt, es) retargeting the pages pass 1 left unchanged. Brief: `docs/seo/research/reaction-speed-2026-11/_AGENT_BRIEF_PASS2.md`.
+   - Done check: a market is finished when its `<market>.md` has a `## Pass 2` section. Uncommitted edits since 68fb8560 = `git diff --stat`.
+   - If interrupted: relaunch ONLY markets missing `## Pass 2`, same brief + "resume: reuse existing files, finish what is missing".
+3. OWNER RULE: no spam/ban risk. NO Google/Naver/Yahoo searches in the owner's Chrome. Per agent max 1 bing_kw.py run, 5 serp_probe queries, 10 autocomplete calls, no retry loops.
+4. After pass 2: review diffs (grep spacebar/aggregateRating/sub-millisecond/made-up ms ranges) -> `npx next build` (never `npm run build`) -> render audit (title, 1 h1, FAQ JSON-LD == visible, no noindex) -> commit -> ask owner to push -> after deploy: Bing URL submit, GSC sitemap resubmit, GSC "Request indexing" for ko/ja/en light-reaction + ko go.
+5. Open owner decisions: (a) clean EN light-reaction fabricated claims; (b) DE cognitive reaction-time page cannibalization; (c) hub itemList schema URLs non-locale in all locales; (d) noindex/remove zero-demand locale pages; (e) editorial tier tables; (f) ja visual hub ビジョントレーニング. Pending follow-up: drop 반응속도 테스트 from KR hub title once ko light-reaction is indexed.
+
 ## User goal (2026-11-07)
 
 1. Find why some pages are still not indexed (Google) and fix the causes.
@@ -65,3 +75,10 @@ Known prior decisions to respect:
 - 2026-11-08: KO agent DONE -> ko.md/.csv, `_work-ko/`. light-reaction = 반응속도 테스트 (10,032); visual-tracking title PROTECTED (동체시력 테스트 pos 4.2); reflex-training = 순발력 테스트 (170); hub = 반응속도 훈련. Bing kw tool needs lang `ko-KR` (plain `ko` -> HTTP 400; re-measure 2026-10 KR nodata rows). Coordinator HEDGE: KR hub ranks 8.8 / 918 impr for 반응속도 테스트 and ko light-reaction is "URL unknown to Google" -> kept 반응속도 테스트 in hub title/desc/keywords as secondary until light-reaction is indexed (then drop it). Priority Request-Indexing: ko light-reaction, ko go, ja light-reaction, en light-reaction.
 - ALL 4 AGENTS DONE. Next: npx next build -> render audit -> commit -> (owner OK) push.
 - 2026-11-08: `npx next build` exit 0. Render audit (16 pages: 7 light-reaction, 5 locale hubs, 4 drills): 1 h1 each, FAQ JSON-LD == visible FAQ, 0 spacebar, no noindex. Committed locally. NOT pushed - awaiting owner OK (push = production deploy). After push: Bing submit changed URLs + GSC sitemap resubmit + Request Indexing (ko/ja/en light-reaction, ko go).
+- 2026-11-08: OWNER asked pass 2: every remaining unchanged reaction-speed page per language, native high-demand/low-competition keywords, Google SERP via Chrome allowed. Brief = `_AGENT_BRIEF_PASS2.md`; 6 agents (ko, ja, de, fr, pt, es). Recovery: check for `## Pass 2` in each <market>.md.
+- 2026-11-08: OWNER: no spam/ban risk -> Chrome Google SERPs cancelled for all pass-2 agents; caps 1 bing_kw run / 5 serp_probe / 10 autocomplete per agent.
+- 2026-11-08: Pass-2 parallel agents died (no `## Pass 2` anywhere; Bing kw run got 1 row, serp probes timed out). OWNER: switch to ONE page x ONE country per step, coordinator does it inline. Done: ja go/no-go (see ja.md Pass 2). Next: es reaction-time-test (partial uncommitted edit exists - verify vs ReactionTimeTestClient = timing game), then remaining pages per market one at a time.
+- 2026-11-08: OWNER asked again for "SEO/AEO/GEO repos". Answer on file: vetted 2026-09-10 (docs/seo/AGENCY_PLAN_AUDIT.md) - only seo-skills/seo-audit-skill + Auriti-Labs/geo-optimizer-skill survived; no free repo gives live volume (Bing API + autocomplete + GSC already are the live sources). AI bots already allowed in app/robots.js, llms.txt exists. Indexing is not per-country: Google has one index; non-KR traffic gap = ranking/authority + crawl budget (see index audit above), not a technical block.
+- 2026-11-08: Cursor fix (not SEO): removed canvas-drawn `+` crosshair + OS crosshair in 8 reaction-speed + 12 visual-tracking drills + GhostLink; canvas now `cursor-pointer` (hand, like cognitive). FPS/motor/physical pointer-lock aim drills left unchanged on purpose.
+- 2026-11-08: PASS 3 started (sequential, one page x one locale). Progress checklist = docs/seo/research/reaction-speed-2026-11/PASS3_PROGRESS.md (resume from first unticked line).
+- 2026-11-08: go/no-go done in all 6 locales (spacebar claim + fabricated rIFC/tier physiology removed, native titles, start-button names match dictionaries.js ui.start). Timing-game h1 fixed. Then OWNER asked for parallel agents: 8 launched, one per drill (see PASS3_PROGRESS.md for relaunch rule). After they finish: coordinator does fr hub, reviews diffs, full 66-page audit, npx next build, commit, ask owner to push.

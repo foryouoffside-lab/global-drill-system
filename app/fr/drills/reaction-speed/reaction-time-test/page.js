@@ -7,7 +7,7 @@ import { pickSources } from '@/lib/drillSources';
 
 export const metadata = {
   "title": "Jeu de perception du temps : temps cible | SkillDrills",
-  "description": "Jeu de perception du temps : cliquez quand le temps cible s’est écoulé. Pas un test de réaction : voir le Test de réaction (signal lumineux).",
+  "description": "Jeu de perception du temps : mémorisez un temps cible de 1 à 8 s, cliquez quand il s’est écoulé et voyez votre erreur en ms. Ce n’est pas un test de réaction.",
   "keywords": [
     "jeu de perception du temps",
     "jeu d’estimation du temps",
@@ -190,7 +190,7 @@ const howToSchema = {
 const faqSchema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
-  "dateModified": "2026-10-08",
+  "dateModified": "2026-11-08",
   "mainEntity": [
     {
       "@type": "Question",
@@ -205,7 +205,7 @@ const faqSchema = {
       "name": "Comment fonctionne le jeu ?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Un temps cible apparaît un instant puis disparaît. Un orbe lumineux sans affichage numérique reste actif pendant que le chrono tourne en arrière-plan, et vous cliquez quand vous pensez que le temps cible est écoulé. L’exercice affiche ensuite l’instant exact de votre clic et votre erreur."
+        "text": "Un temps cible apparaît un instant puis disparaît. Au centre, un orbe lumineux sans affichage numérique reste fixe, entouré d’anneaux qui tournent, pendant que le chrono tourne en arrière-plan, et vous cliquez quand vous pensez que le temps cible est écoulé. L’exercice affiche ensuite l’instant exact de votre clic et votre erreur."
       }
     },
     {
@@ -237,7 +237,7 @@ const faqSchema = {
       "name": "Puis-je compter dans ma tête ?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Oui, compter est votre propre stratégie. L’orbe n’a pas d’affichage numérique et ses anneaux pulsent une fois par seconde, ce que vous pouvez utiliser comme repère. Essayez plusieurs méthodes et gardez celle qui donne la plus petite erreur moyenne."
+        "text": "Oui, compter est votre propre stratégie. L’orbe n’a pas d’affichage numérique et un anneau autour de lui pulse une fois par seconde, ce que vous pouvez utiliser comme repère. Essayez plusieurs méthodes et gardez celle qui donne la plus petite erreur moyenne."
       }
     },
     {
@@ -261,7 +261,7 @@ const faqSchema = {
       "name": "Est-ce la même chose que le défi des 10 secondes ?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "L’idée est proche, estimer un intervalle sans chrono visible, mais la cible change à chaque manche et n’est pas fixée à 10 secondes. L’exercice note aussi la taille de votre erreur plutôt qu’une simple réussite ou un échec."
+        "text": "L’idée est proche, estimer un intervalle sans chrono visible, mais la cible, comprise entre 1 et 8 secondes, change à chaque manche et n’est pas fixée à 10 secondes. L’exercice note aussi la taille de votre erreur plutôt qu’une simple réussite ou un échec."
       }
     },
     {
@@ -333,7 +333,7 @@ const reactionGuide = {
       },
       {
         "name": "Utiliser la pulsation d’une seconde",
-        "desc": "Les anneaux autour de l’orbe pulsent une fois par seconde. En comptant chaque pulsation comme un tic, vous additionnez des secondes entières et n’estimez que le reste.",
+        "desc": "Un anneau autour de l’orbe pulse une fois par seconde. En comptant chaque pulsation comme un tic, vous additionnez des secondes entières et n’estimez que le reste.",
         "tips": "Avec des cibles à décimales comme 3,250 s, le dernier clic tombe entre deux pulsations."
       },
       {
