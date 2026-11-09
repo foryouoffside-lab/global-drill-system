@@ -5,7 +5,25 @@ Trigger for a new chat: `Continue docs/seo/HANDOFF_LOCAL_SEO_CATEGORY.md`
 Read this file first, then `docs/seo/HANDOFF_DEMAND_RESEARCH.md` (tooling + rules), `docs/seo/GLOBAL_PAGE_SEO_AEO_GEO_STANDARD.md`, `docs/seo/NO_TRANSLATION_NATIVE_SEARCH_MANDATE.md`.
 Update the LOG section at the end of every step. Never leave work only in chat.
 
-## >>> RESUME HERE (state as of 2026-11-09) <<<
+## >>> RESUME HERE (state as of 2026-11-09 night) <<<
+
+A. REACTION-SPEED = DONE + PUSHED (20f78d79).
+B. FPS = DONE + PUSHED + LIVE (228d9b77). 96/96 locale audit OK, runtime QA PASS on all 15 drills + hub.
+   - Bing: 34 submitted (ko+ja FPS + en hub + en recoil). PENDING: submit docs/seo/research/fps-2026-11/_bing_pending_day2.txt (79 URLs) when Bing quota resets: `python scripts/bing/bing.py submit <urls...>`.
+   - Owner GSC Request-Indexing list given in chat (ko angle-hold, ko target-acquisition, en recoil-control, ko/ja hubs, flick ja/ko/pt, de target-acquisition, ko strafe).
+C. MOTOR + KEYBOARD TESTER = COMMITTED LOCALLY 5cb6d03a, NOT PUSHED. Audit 70/70 OK (hub + 9 pages x 7 langs).
+   To finish:
+   1. Verify keyboard-recognition stale-closure fix at runtime (ref spawnNextPromptRef in KeyboardRecognitionClient.js): select "Long Sequences", let prompts time out -> must stay 5-key. Use a debug-runtime agent; make it debugger_disconnect at the end (a lingering debugger blocks dev-server restarts).
+   2. Quick browser check of the keyboard tester in 1-2 locales (keys light, counters, no scroll).
+   3. Push (owner rule: push each category when done) -> wait deploy (cache-busted curl) -> Bing submit motor + keyboard-tester URLs (quota!) -> GSC list for owner: pt/ja/ko/en keyboard-tester first, then es/ja rapid-tapping, ko/pt motor hub.
+   Minor leftovers: EN keyboard-recognition title still "Keyboard Speed Test", EN finger-sequencing title "Sequence Aim Trainer" (both EN-only, not retargeted this pass).
+D. NOT OURS: middleware.js has an uncommitted edit (comment removed) from someone else - left untouched; ask owner.
+E. Owner decisions open: physical speed-drill (de/fr/ja) falsely claims CPS -> fix in physical pass (agreed direction, not confirmed).
+F. Category order next: physical -> visual -> cognitive -> memory. Same pattern: Phase A research agents (caps!), Phase B one agent per 1-2 drills, coordinator queue file, audit, runtime QA, commit, push.
+   Brief templates: docs/seo/research/motor-2026-11/_AGENT_BRIEF_RESEARCH.md + _AGENT_BRIEF_PHASE_B.md.
+G. Dev server: `NODE_OPTIONS='--inspect=9555' npx next dev -p 3000`. Audit: `bash docs/seo/tools/aud.sh <loc>/drills/...` wraps `python docs/seo/research/reaction-speed-2026-11/_audit.py` with retries (dev server 404/500s during recompiles are noise).
+
+## (older) RESUME block of 2026-11-09 day
 
 A. REACTION-SPEED = DONE + PUSHED + DEPLOYED (20f78d79). Bing submitted 66 URLs. GSC sitemap resubmitted. Owner does GSC Request Indexing by hand (Day1-3 lists in LOG 2026-11-09).
 B. FPS Phase A (keyword maps) = DONE: docs/seo/research/fps-2026-11/{de,ko,ja,pt,es,fr}.md.
@@ -138,3 +156,8 @@ Known prior decisions to respect:
 - 2026-11-09: OWNER OK keyboard tester ('if beneficial and simple'). Agent building EN page app/drills/motor/movement-speed/keyboard-tester (event.code based, pressed/tested states, rollover max, no fake stats). Registrations (hub card, sitemap, drillSeo, drillNames) + 6 locales after motor agents finish. Native primaries: pt teste de teclado, ja キーボードテスト, ko 키보드 테스트, fr test clavier, es (see es.md), de (see de.md).
 - 2026-11-09: MOTOR finger-sequencing + keyboard-recognition DONE 12/12 OK (pt finger mechanics-only). Queue updated.
 - 2026-11-09: MOTOR hub + aim-trainer DONE 12/12 OK (ko/pt full retarget). Remaining motor agent: steady+tracing. Then coordinator queue (motor-2026-11/_COORDINATOR_QUEUE.md).
+- 2026-11-09: FPS COMMITTED 228d9b77 + PUSHED (20f78d79..228d9b77). Excluded: motor WIP, keyboard-tester + its registrations, middleware.js (unknown edit, comment removed - not ours). Waiting deploy -> Bing submit C:/Users/sangmesh/AppData/Local/Temp/claude/e80b4d31fb2efaa6/c8bef510-c370-48fe-8f9d-fb3f2d2d4141/scratchpad/fps_urls.txt
+- 2026-11-09: FPS deploy LIVE. Bing quota only 34 today -> submitted ko+ja FPS (32) + en recoil + en hub. Remaining 79 in docs/seo/research/fps-2026-11/_bing_pending_day2.txt (submit tomorrow). MOTOR: client fixes done (subtitle out of h1 x8, rules, keyboard-recognition getLayoutMap labels); shared i18n sync done (drillNames 54 repl, hubs.motor); coordinator fixed lib/i18n/drills/aimTrainer.js timings (+2s/-1s) + MotorDrillsClient false focus text + keyboard-tester hub card; keyboard-tester client got copy prop + h1 fix. Running: EN motor honesty pass, keyboard-tester locales (ko/ja/pt, de/fr/es), debug-runtime on keyboard-recognition stale-closure. Coordinator TODO: register keyboard-tester in lib/i18n/locales.js LOCALIZED_ROUTES + route map, motor audit, commit motor+keyboard-tester, push, Bing (quota), GSC list.
+- 2026-11-09: keyboard-tester 6 locales DONE (ko 키보드 테스트, ja キーボードテスト, pt Teste de Teclado Online, de Tastatur Test & Keyboard Tester, fr Test clavier en ligne AZERTY, es Test de teclado online). Registered in LOCALIZED_ROUTES (both lists); hreflang 8 alternates verified; sitemap includes; legacy /<loc>/drills/motor/keyboard-tester + /pt/teste-de-teclado redirects repointed to the tester. Waiting: EN motor honesty agent, keyboard-recognition debug agent -> then motor audit + commit + push.
+- 2026-11-09: EN motor honesty pass DONE (9 pages; 8 audited OK, hub audit pending - dev server hung). Coordinator fixed EN aimTrainer.aboutP2 'shrink' -> 'each level spawns smaller, faster targets'. Dev server is restarting after the next.config.js change but blocked on 'Waiting for the debugger to disconnect' (keyboard-recognition debug agent attached) -> after that agent: confirm server back, audit all motor + keyboard-tester pages (63), commit, push.
+- 2026-11-09: keyboard-recognition stale-closure: debug agent confirmed mechanism statically (runtime inconclusive, server hung). Coordinator applied ref fix (spawnNextPromptRef). Killed hung dev server (was blocked on debugger disconnect after next.config change), restarted :3000 --inspect=9555. Running: verify agent for the fix + motor/keyboard-tester audit (7 locales x 10 pages) -> scratchpad motor_audit.txt.
