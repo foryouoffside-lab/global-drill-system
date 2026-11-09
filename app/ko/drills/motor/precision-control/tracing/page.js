@@ -7,11 +7,11 @@ import { pickSources } from '@/lib/drillSources';
 
 export const metadata = {
   title: '마우스 트레이싱 게임 | 커서 추적 테스트 | SkillDrills',
-  description: '움직이는 파형을 커서로 따라가며 마우스 추적과 미세 제어를 연습하는 무료 브라우저 테스트.',
-  keywords: ['마우스 트레이싱 게임', '마우스 선 따라가기', '커서 추적 테스트', '마우스 트래킹 연습', '정밀 마우스 제어', '마우스 궤적 테스트', '연속 트래킹 연습', '미세 운동 조절', 'FPS 트래킹 에임', '마우스 움직임 연습', '커서 경로 추적', '손목 컨트롤 연습'],
+  description: '마우스 트레이싱 게임: 화면을 흐르는 파형 위에 45초 동안 커서를 유지하며 마우스 추적과 미세 제어를 연습하는 무료 브라우저 테스트. 파형은 점점 빨라지고 커집니다.',
+  keywords: ['마우스 트레이싱 게임', '마우스 선 따라가기', '커서 추적 테스트', '마우스 트래킹 연습', '정밀 마우스 제어', '마우스 궤적 테스트', '연속 트래킹 연습', '미세 운동 조절', '마우스 움직임 연습', '커서 경로 추적', '손목 컨트롤 연습'],
   openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
     title: '마우스 트레이싱 게임 | 커서 추적 테스트 | SkillDrills',
-    description: '움직이는 파형을 커서로 따라가며 마우스 추적과 미세 제어를 연습하는 무료 브라우저 테스트.',
+    description: '마우스 트레이싱 게임: 화면을 흐르는 파형 위에 45초 동안 커서를 유지하며 마우스 추적과 미세 제어를 연습하는 무료 브라우저 테스트. 파형은 점점 빨라지고 커집니다.',
     type: 'article',
     url: 'https://skilldrills.online/ko/drills/motor/precision-control/tracing',
     siteName: 'SkillDrills',
@@ -20,7 +20,7 @@ export const metadata = {
   twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: 'summary_large_image',
     title: '마우스 트레이싱 게임 | 커서 추적 테스트 | SkillDrills',
-    description: '움직이는 파형을 커서로 따라가며 마우스 추적과 미세 제어를 연습하는 무료 브라우저 테스트.',
+    description: '마우스 트레이싱 게임: 화면을 흐르는 파형 위에 45초 동안 커서를 유지하며 마우스 추적과 미세 제어를 연습하는 무료 브라우저 테스트. 파형은 점점 빨라지고 커집니다.',
   },
   robots: { index: true, follow: true },
   alternates: {
@@ -71,7 +71,7 @@ const softwareApplicationSchema = {
     "price": "0",
     "priceCurrency": "KRW"
   },
-  "description": "움직이는 파형 곡선을 벗어나지 않고 따라가는 무료 브라우저 마우스 트레이싱 게임. 마우스 궤적 정밀도와 미세 손목 제어, 연속 트래킹 안정성을 정밀 평가합니다.",
+  "description": "움직이는 파형 곡선을 벗어나지 않고 따라가는 무료 브라우저 마우스 트레이싱 게임. 파형 위아래 22픽셀 안에 커서를 유지하는 동안 점수가 쌓입니다.",
   "url": "https://skilldrills.online/ko/drills/motor/precision-control/tracing",
   "publisher": {
     "@type": "Organization",
@@ -79,7 +79,7 @@ const softwareApplicationSchema = {
     "url": "https://skilldrills.online"
   },
   "inLanguage": "ko-KR",
-  "dateModified": "2026-09-20"
+  "dateModified": "2026-11-09"
 };
 
 const webApplicationSchema = {
@@ -96,7 +96,7 @@ const webApplicationSchema = {
   },
   "url": "https://skilldrills.online/ko/drills/motor/precision-control/tracing",
   "inLanguage": "ko-KR",
-  "dateModified": "2026-09-20"
+  "dateModified": "2026-11-09"
 };
 
 const videoGameSchema = {
@@ -105,7 +105,7 @@ const videoGameSchema = {
   "inLanguage": "ko-KR",
   "name": "마우스 트레이싱 게임 – 연속 파형 궤적 추적 및 제어 게임",
   "url": "https://skilldrills.online/ko/drills/motor/precision-control/tracing",
-  "description": "움직이는 파형 곡선을 벗어나지 않고 따라가는 무료 브라우저 마우스 트레이싱 게임. 마우스 궤적 정밀도와 미세 손목 제어, 연속 트래킹 안정성을 정밀 평가합니다.",
+  "description": "움직이는 파형 곡선을 벗어나지 않고 따라가는 무료 브라우저 마우스 트레이싱 게임. 파형 위아래 22픽셀 안에 커서를 유지하는 동안 점수가 쌓입니다.",
   "genre": [
     "Action",
     "Aim Trainer",
@@ -121,21 +121,21 @@ const videoGameSchema = {
     "price": "0",
     "priceCurrency": "KRW"
   },
-  "dateModified": "2026-09-20"
+  "dateModified": "2026-11-09"
 };
 
 const faqSchema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
   "inLanguage": "ko-KR",
-  "dateModified": "2026-09-20",
+  "dateModified": "2026-11-09",
   "mainEntity": [
     {
       "@type": "Question",
       "name": "마우스 트레이싱 게임(Mouse Tracing Game)이란?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "화면을 가로질러 흐르는 사인파 곡선 위로 마우스 포인터를 계속 유지하여 미세한 선로 이탈 방지 능력을 측정하는 정밀 제어 훈련입니다."
+        "text": "화면을 가로질러 흐르는 파형 곡선 위에 45초 동안 커서를 계속 유지하는 정밀 제어 훈련입니다. 커서가 선에서 위아래 22픽셀 안에 있으면 프레임마다 1점, 4초 연속 유지마다 +5점, 이탈 후 다시 선에 올라오면 +10점을 얻습니다."
       }
     },
     {
@@ -175,7 +175,7 @@ const faqSchema = {
       "name": "경로를 벗어났을 때(Off-Path) 어떤 현상이 발생하나요?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "라인을 벗어나는 즉시 플로우 점수가 감점되고 빨간색 경고 플래시와 함께 연속 콤보가 중단됩니다."
+        "text": "벗어난 동안에는 점수가 쌓이지 않고, 연속 프레임이 0이 되며 플로우 안정도가 초당 25%씩 떨어집니다(선 위에서는 초당 15%씩 회복). 이탈 순간 빨간 경고 플래시와 효과음이 나옵니다. 이미 얻은 점수는 깎이지 않습니다."
       }
     },
     {
@@ -188,10 +188,10 @@ const faqSchema = {
     },
     {
       "@type": "Question",
-      "name": "배틀로얄 및 하이퍼 FPS 게임에 어떤 도움이 되나요?",
+      "name": "FPS 게임 트래킹 연습에 도움이 되나요?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "에이펙스 레전드나 오버워치 등 지속적인 화력 투사가 필요한 상황에서 적의 회피 기동을 끝까지 따라붙는 트래킹 에임 능력을 향상시킵니다."
+        "text": "에이펙스 레전드나 오버워치처럼 움직이는 적을 계속 따라가야 하는 게임을 하는 분에게 비슷한 손 동작을 연습할 기회가 됩니다. 실제 게임 실력에 얼마나 옮겨지는지는 사람마다 다릅니다."
       }
     },
     {
@@ -207,7 +207,7 @@ const faqSchema = {
       "name": "점수와 통계는 어디에 보관되나요?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "모든 세션 데이터는 사용자의 로컬 브라우저에만 암호화 저장되어 프라이버시가 안전하게 보호됩니다."
+        "text": "최고 점수는 브라우저의 로컬 저장소(localStorage)에만 저장되며 서버로 전송되지 않습니다."
       }
     }
   ]
@@ -217,15 +217,15 @@ const howToSchema = {
   "@context": "https://schema.org",
   "@type": "HowTo",
   "inLanguage": "ko-KR",
-  "dateModified": "2026-09-20",
+  "dateModified": "2026-11-09",
   "name": "마우스 트레이싱 게임・정밀 궤적 추적 테스트 – 마우스 미세 제어 능력 측정",
-  "description": "움직이는 파형 곡선을 벗어나지 않고 따라가는 무료 브라우저 마우스 트레이싱 게임. 마우스 궤적 정밀도와 미세 손목 제어, 연속 트래킹 안정성을 정밀 평가합니다.",
+  "description": "움직이는 파형 곡선을 벗어나지 않고 따라가는 무료 브라우저 마우스 트레이싱 게임. 파형 위아래 22픽셀 안에 커서를 유지하는 동안 점수가 쌓입니다.",
   "step": [
     {
       "@type": "HowToStep",
       "position": 1,
       "name": "포인터 락 활성화 및 곡선 정렬",
-      "text": "화면을 클릭하여 마우스 포인터를 고정하고 파형 라인의 도입부에 커서를 정확히 맞춥니다.",
+      "text": "훈련 시작을 누르면 3초 카운트다운 뒤 포인터가 고정되고(터치 기기는 손가락으로 조작) 커서가 화면 왼쪽 4분의 1 지점에 놓입니다. 바로 파형 위로 커서를 옮기세요. Esc로 종료합니다.",
       "url": "https://skilldrills.online/ko/drills/motor/precision-control/tracing#step-1"
     },
     {
@@ -246,7 +246,7 @@ const howToSchema = {
       "@type": "HowToStep",
       "position": 4,
       "name": "슈퍼 플로우 스트릭 유지",
-      "text": "선로 이탈 없이 높은 일치도를 연속 유지하여 최대 플로우 점수와 랭크를 획득합니다.",
+      "text": "4초 연속으로 선 위에 머물 때마다 +5점과 플로우 +10%를 얻습니다. 45초 동안 파형은 2.2에서 3.8 px/프레임으로 빨라지고 진폭도 커지니 끝까지 리듬을 유지하세요.",
       "url": "https://skilldrills.online/ko/drills/motor/precision-control/tracing#step-4"
     }
   ]
@@ -257,31 +257,31 @@ const guideProps = {
   intro: {
     title: "마우스 트레이싱 게임・정밀 궤적 추적 테스트 – 마우스 미세 제어 능력 측정",
     paragraphs: [
-      "움직이는 파형 곡선을 벗어나지 않고 따라가는 무료 브라우저 마우스 트레이싱 게임. 마우스 궤적 정밀도와 미세 손목 제어, 연속 트래킹 안정성을 정밀 평가합니다.",
+      "마우스 트레이싱 게임은 움직이는 파형 곡선을 벗어나지 않고 45초 동안 따라가는 무료 브라우저 게임입니다. 파형은 오른쪽에서 왼쪽으로 흐르며 시간이 갈수록 빨라지고 위아래로 더 크게 흔들립니다.",
       "일회성 타격 속도가 아니라, 목표물의 지속적인 움직임에 손의 속도를 일정하게 동기화시키는 연속 폐루프 신경 피드백 제어를 훈련합니다.",
       "시야 내에서 움직이는 대상을 놓치지 않고 망막 중심와로 매끄럽게 뒤쫓는 눈의 생리학적 추적 기전입니다.",
     ],
   },
   benchmarks: {
-    title: '운동 제어 능력 표준 평가 벤치마크',
-    note: '단계는 SkillDrills가 정한 연습용 참고 구분이며 인구 통계나 백분위가 아닙니다.',
-    headers: ['등급 (Tier)', '호칭 (Rank)', '평가 기준', '도달 수준', '정확도', '연습 단계'],
+    title: '마우스 트레이싱 게임 SkillDrills 연습 구간',
+    note: '연구 기준이나 사용자 통계가 아닌 SkillDrills 연습 구간이며, 결과 화면 등급 기준(세션 종료 시 플로우 안정도와 점수)과 같습니다. 점수는 프레임당 1점이라 모니터 주사율이 높을수록 커지므로 같은 기기끼리 비교하세요.',
+    headers: ['등급', '칭호', '종료 시 플로우 안정도', '점수 조건', '구간'],
     rows: [
-      { tier: 'Tier 1', rank: '초정밀 궤적 조작자', stat: '최상위 단계', level: '최상위 (극한)', accuracy: '98% 이상', percentile: '최상위 단계' },
-      { tier: 'Tier 2', rank: '마스터 / 정밀 추적자', stat: '상급 단계', level: '다이아몬드 (우수)', accuracy: '94–97%', percentile: '상급 단계' },
-      { tier: 'Tier 3', rank: '프로 / 숙련 제어자', stat: '중상급 단계', level: '플래티넘 (숙련)', accuracy: '88–93%', percentile: '중상급 단계' },
-      { tier: 'Tier 4', rank: '일반 / 중급 조작자', stat: '표준 단계', level: '골드 (표준)', accuracy: '78–87%', percentile: '표준 단계' },
-      { tier: 'Tier 5', rank: '입문 / 기초 기준선', stat: '기준선 (기초)', level: '실버 (기초)', accuracy: '78% 미만', percentile: '기준선 (하위)' },
+      { tier: 'S+', rank: '그랜드마스터 플로우', flow: '90% 이상', score: '1,400점 이상', band: 'SkillDrills 연습 구간' },
+      { tier: 'S', rank: '피크 플로우', flow: '80% 이상', score: '-', band: 'SkillDrills 연습 구간' },
+      { tier: 'A', rank: '안정적 고정 추적', flow: '60% 이상', score: '-', band: 'SkillDrills 연습 구간' },
+      { tier: 'B', rank: '꾸준한 추적', flow: '35% 이상', score: '-', band: 'SkillDrills 연습 구간' },
+      { tier: 'C', rank: '트레이싱 완료', flow: '35% 미만', score: '-', band: 'SkillDrills 연습 구간' },
     ],
   },
   protocols: {
     title: '마우스 조작 제어력을 극대화하는 4대 훈련 프로토콜',
     description: '스티어링 법칙(Accot-Zhai, 1997) 및 부드러운 안구 추적(Smooth Pursuit, Krauzlis, 2004)에 기반한, 연속 궤적 일치도와 손목 미세 제어를 최적화하는 과학적 모터 훈련 프로토콜입니다.',
     items: [
-      { title: "포인터 락 활성화 및 곡선 정렬", description: "화면을 클릭하여 마우스 포인터를 고정하고 파형 라인의 도입부에 커서를 정확히 맞춥니다." },
+      { title: "시작 직후 곡선 정렬", description: "카운트다운이 끝나면 커서가 화면 왼쪽 4분의 1 지점에 놓입니다. 곧바로 파형 위로 옮겨 첫 점수를 쌓으세요." },
       { title: "일정한 속도로 파형 추종 유지", description: "곡선이 이동하는 속도에 맞춰 손목을 부드럽게 글라이딩하며 선 중앙을 유지합니다." },
       { title: "변곡점 미세 감속 제어", description: "곡선의 최고점과 최저점 굴곡 구간에서 순간적인 미세 브레이킹을 통해 바깥쪽 이탈을 방지합니다." },
-      { title: "슈퍼 플로우 스트릭 유지", description: "선로 이탈 없이 높은 일치도를 연속 유지하여 최대 플로우 점수와 랭크를 획득합니다." },
+      { title: "슈퍼 플로우 스트릭 유지", description: "4초 연속 유지마다 +5점과 플로우 +10%가 붙습니다. 등급은 세션이 끝날 때의 플로우 안정도로 정해지므로 마지막 몇 초가 특히 중요합니다." },
     ],
   },
   faqs: {
@@ -297,6 +297,7 @@ const koCopy = {
   title: "커서 추적 테스트",
   subtitle: "연속 커서 추적 • 45초",
   startButtonText: "훈련 시작",
+  startBtn: "훈련 시작",
   trainAgain: "다시 훈련",
   shareTitle: "결과 공유",
   exitTitle: "나가기",
@@ -305,14 +306,14 @@ const koCopy = {
   statFlowIntegrity: "플로우 안정도",
   statBestScore: "최고 점수",
   maxStreakLabel: "최대 연속 프레임",
-  peakFlowLabel: "피크 플로우 상태",
+  peakFlowLabel: "종료 시 플로우 안정도",
   bestScoreLabel: "개인 최고 점수",
   rulesTitle: "훈련 가이드 및 점수 규칙",
   rulesItems: [
     { num: "1", text: "궤적 추종", highlight: "에메랄드 파형", result: "경로 유지 시 프레임당 +1점" },
     { num: "2", text: "속도 가속", highlight: "점진적 가속", result: "45초간 2.2 → 3.8 px/f 증속" },
     { num: "3", text: "플로우 보너스", highlight: "슈퍼 플로우", result: "4초 연속 유지 시 +5점 추가" },
-    { num: "4", text: "정밀 제어", highlight: "데스크톱 전용", result: "마우스 입력 지원" }
+    { num: "4", text: "이탈", highlight: "허용 범위 ±22px", result: "연속 초기화, 플로우 감소" }
   ],
 };
 

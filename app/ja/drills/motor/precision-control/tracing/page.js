@@ -6,12 +6,12 @@ import DrillFooter from '@/components/drill/DrillFooter';
 import { pickSources } from '@/lib/drillSources';
 
 export const metadata = {
-  title: 'マウストレースゲーム | カーソル追従テスト | SkillDrills',
-  description: '動く波形をカーソルでなぞり、マウスの追従精度と手の滑らかな操作を測る無料テスト。',
-  keywords: ['マウス トレース ゲーム', 'マウス 軌跡 なぞり 練習', '精密マウス操作 テスト', 'マウストラッキング 練習', 'カーソル 追従 測定', 'スムーズ追従 練習', 'マウス 手首 コントロール', 'マウス 精密 制御', 'FPS トラッキング 練習', 'カーソル軌跡 テスト', 'マウス操作 なめらか', '連続追従 トレーニング'],
+  title: 'カーソル追従テスト｜マウストレースゲーム | SkillDrills',
+  description: '無料のカーソル追従テスト。流れる波形の上に45秒間カーソルを乗せ続けるマウストレースゲームで、追従精度と滑らかな手の操作を練習。波は徐々に速く大きくなります。',
+  keywords: ['マウス トレース ゲーム', 'マウス 軌跡 なぞり 練習', '精密マウス操作 テスト', 'マウストラッキング 練習', 'カーソル 追従 測定', 'スムーズ追従 練習', 'マウス 手首 コントロール', 'マウス 精密 制御', 'カーソル軌跡 テスト', 'マウス操作 なめらか', '連続追従 トレーニング'],
   openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
-    title: 'マウストレースゲーム | カーソル追従テスト | SkillDrills',
-    description: '動く波形をカーソルでなぞり、マウスの追従精度と手の滑らかな操作を測る無料テスト。',
+    title: 'カーソル追従テスト｜マウストレースゲーム | SkillDrills',
+    description: '無料のカーソル追従テスト。流れる波形の上に45秒間カーソルを乗せ続けるマウストレースゲームで、追従精度と滑らかな手の操作を練習。波は徐々に速く大きくなります。',
     type: 'article',
     url: 'https://skilldrills.online/ja/drills/motor/precision-control/tracing',
     siteName: 'SkillDrills',
@@ -19,8 +19,8 @@ export const metadata = {
   },
   twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: 'summary_large_image',
-    title: 'マウストレースゲーム | カーソル追従テスト | SkillDrills',
-    description: '動く波形をカーソルでなぞり、マウスの追従精度と手の滑らかな操作を測る無料テスト。',
+    title: 'カーソル追従テスト｜マウストレースゲーム | SkillDrills',
+    description: '無料のカーソル追従テスト。流れる波形の上に45秒間カーソルを乗せ続けるマウストレースゲームで、追従精度と滑らかな手の操作を練習。波は徐々に速く大きくなります。',
   },
   robots: { index: true, follow: true },
   alternates: {
@@ -71,7 +71,7 @@ const softwareApplicationSchema = {
     "price": "0",
     "priceCurrency": "JPY"
   },
-  "description": "動くライン軌跡にマウスカーソルを沿わせ続けるマウストレースゲーム。スムーズパシュート眼球運動と手の協調、微細な手首コントロールと脱線防止精度を測定。",
+  "description": "流れる波形ラインにカーソルを沿わせ続けるカーソル追従テスト（マウストレースゲーム）。ラインの上下22ピクセル以内にいる間だけスコアが加算されます。",
   "url": "https://skilldrills.online/ja/drills/motor/precision-control/tracing",
   "publisher": {
     "@type": "Organization",
@@ -79,7 +79,7 @@ const softwareApplicationSchema = {
     "url": "https://skilldrills.online"
   },
   "inLanguage": "ja-JP",
-  "dateModified": "2026-09-20"
+  "dateModified": "2026-11-09"
 };
 
 const webApplicationSchema = {
@@ -96,7 +96,7 @@ const webApplicationSchema = {
   },
   "url": "https://skilldrills.online/ja/drills/motor/precision-control/tracing",
   "inLanguage": "ja-JP",
-  "dateModified": "2026-09-20"
+  "dateModified": "2026-11-09"
 };
 
 const videoGameSchema = {
@@ -105,7 +105,7 @@ const videoGameSchema = {
   "inLanguage": "ja-JP",
   "name": "マウストレースゲーム – 連続波形ライン精密追従ゲーム",
   "url": "https://skilldrills.online/ja/drills/motor/precision-control/tracing",
-  "description": "動くライン軌跡にマウスカーソルを沿わせ続けるマウストレースゲーム。スムーズパシュート眼球運動と手の協調、微細な手首コントロールと脱線防止精度を測定。",
+  "description": "流れる波形ラインにカーソルを沿わせ続けるカーソル追従テスト（マウストレースゲーム）。ラインの上下22ピクセル以内にいる間だけスコアが加算されます。",
   "genre": [
     "Action",
     "Aim Trainer",
@@ -121,21 +121,21 @@ const videoGameSchema = {
     "price": "0",
     "priceCurrency": "JPY"
   },
-  "dateModified": "2026-09-20"
+  "dateModified": "2026-11-09"
 };
 
 const faqSchema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
   "inLanguage": "ja-JP",
-  "dateModified": "2026-09-20",
+  "dateModified": "2026-11-09",
   "mainEntity": [
     {
       "@type": "Question",
       "name": "マウストレースゲーム（Mouse Tracing Game）とは何ですか？",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "リアルタイムに動く連続した波形ラインの上にマウスカーソルを脱線させず乗せ続け、連続的な微細運動制御能力（トラッキング精度）を測定するゲームです。"
+        "text": "右から左へ流れる波形ラインの上に45秒間カーソルを乗せ続けるゲームです。ラインの上下22ピクセル以内にいる間は1フレームごとに1点、4秒連続で乗り続けるごとに+5点、外れた後にラインへ戻ると+10点が入ります。"
       }
     },
     {
@@ -175,7 +175,7 @@ const faqSchema = {
       "name": "ラインから脱線（Off-Path）した際のスコアペナルティは？",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "ラインを外れるとフロー状態ゲージが急減し、画面が警告点滅してスコア加算が一時停止します。"
+        "text": "外れている間はスコアが加算されず、継続フレームが0になり、フロー安定度が毎秒25%ずつ下がります（ライン上では毎秒15%ずつ回復）。外れた瞬間に赤い警告フラッシュと効果音が出ますが、獲得済みのスコアは減りません。"
       }
     },
     {
@@ -191,7 +191,7 @@ const faqSchema = {
       "name": "競技FPSにおけるトラッキングエイム向上に役立ちますか？",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "はい、Apex LegendsやOverwatchなど、高速移動する敵に照準を合わせ続ける「追いエイム（Tracking Aim）」の基礎体力作りに役立つ可能性があります。"
+        "text": "Apex LegendsやOverwatchのように動く敵を追い続けるゲームをする人にとって、似た手の動きの練習になります。実際のゲームの腕前にどの程度生きるかは人によって異なります。"
       }
     },
     {
@@ -207,7 +207,7 @@ const faqSchema = {
       "name": "完全無料で測定できますか？",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "はい、一切の料金や会員登録なしで、いつでもウェブブラウザ上ですぐに診断・練習を行うことができます。"
+        "text": "はい、料金も会員登録も不要です。ハイスコアはブラウザのlocalStorageにだけ保存され、サーバーには送信されません。"
       }
     }
   ]
@@ -217,15 +217,15 @@ const howToSchema = {
   "@context": "https://schema.org",
   "@type": "HowTo",
   "inLanguage": "ja-JP",
-  "dateModified": "2026-09-20",
+  "dateModified": "2026-11-09",
   "name": "マウストレースゲーム・精密軌跡追従テスト – スムーストラッキング診断",
-  "description": "動くライン軌跡にマウスカーソルを沿わせ続けるマウストレースゲーム。スムーズパシュート眼球運動と手の協調、微細な手首コントロールと脱線防止精度を測定。",
+  "description": "流れる波形ラインにカーソルを沿わせ続けるカーソル追従テスト（マウストレースゲーム）。ラインの上下22ピクセル以内にいる間だけスコアが加算されます。",
   "step": [
     {
       "@type": "HowToStep",
       "position": 1,
       "name": "カーソルのポインターロックと初期位置合わせ",
-      "text": "画面をクリックしてマウスカーソルをロックし、動く波形ラインの先頭に照準を合わせます。",
+      "text": "訓練開始を押すと3秒のカウントダウン後にカーソルがロックされ（タッチ端末は指で操作）、画面左から4分の1の位置に置かれます。すぐに波形の上へ移動しましょう。Escで終了します。",
       "url": "https://skilldrills.online/ja/drills/motor/precision-control/tracing#step-1"
     },
     {
@@ -246,7 +246,7 @@ const howToSchema = {
       "@type": "HowToStep",
       "position": 4,
       "name": "スーパーフローストリークの維持",
-      "text": "脱線ゼロのパーフェクトトラッキングを長時間持続し、連続ボーナス加点と最高フロー評価を獲得します。",
+      "text": "4秒連続でライン上にいるごとに+5点とフロー+10%が入ります。45秒の間に波は2.2から3.8 px/フレームへ加速し振れ幅も大きくなるので、最後までリズムを保ちましょう。",
       "url": "https://skilldrills.online/ja/drills/motor/precision-control/tracing#step-4"
     }
   ]
@@ -257,31 +257,31 @@ const guideProps = {
   intro: {
     title: "マウストレースゲーム・精密軌跡追従テスト – スムーストラッキング診断",
     paragraphs: [
-      "動くライン軌跡にマウスカーソルを沿わせ続けるマウストレースゲーム。スムーズパシュート眼球運動と手の協調、微細な手首コントロールと脱線防止精度を測定。",
+      "カーソル追従テストは、流れる波形ラインからカーソルを外さずに45秒間たどり続けるマウストレースゲームです。波は右から左へ流れ、時間とともに速く、上下に大きくなります。",
       "クリック測定が瞬間的な位置合わせであるのに対し、トラッキングは時々刻々と変化する目標速度に合わせて手の速度を同調させ続ける連続閉ループ制御です。",
       "動く物体を滑らかに網膜の中心（中心窩）に捉え続ける目の追従運動です。秒間約30度を超える速度になると目が追いつかなくなり、衝動性サッカードが発生します。",
     ],
   },
   benchmarks: {
-    title: '運動制御パフォーマンス標準評価（ベンチマーク）',
-    note: '段階は SkillDrills が設けた練習用の目安であり、人口統計やパーセンタイルではありません。',
-    headers: ['等級 (Tier)', '称号 (Rank)', '評価基準', '到達ランク', '正答率', '練習段階'],
+    title: 'カーソル追従テスト SkillDrills練習目安',
+    note: '研究上の基準値やユーザー統計ではなく、結果画面のランク判定（終了時のフロー安定度とスコア）と同じSkillDrillsの練習目安です。スコアは1フレーム1点のため、リフレッシュレートが高いモニターほど大きくなります。同じ機器同士で比べてください。',
+    headers: ['ランク', '称号', '終了時フロー安定度', 'スコア条件', '区分'],
     rows: [
-      { tier: 'Tier 1', rank: '超精密軌跡オペレーター', stat: '最上位段階', level: '最上位（極限）', accuracy: '98% 以上', percentile: '最上位段階' },
-      { tier: 'Tier 2', rank: 'マスター / 精密追従スペシャリスト', stat: '上級段階', level: 'ダイヤモンド（優秀）', accuracy: '94–97%', percentile: '上級段階' },
-      { tier: 'Tier 3', rank: 'プロ / 熟練トラッカー', stat: '中上級段階', level: 'プラチナ（熟練）', accuracy: '88–93%', percentile: '中上級段階' },
-      { tier: 'Tier 4', rank: '一般 / 中級オペレーター', stat: '標準段階', level: 'ゴールド（標準）', accuracy: '78–87%', percentile: '標準段階' },
-      { tier: 'Tier 5', rank: '入門・初期基準値', stat: '基準値（基礎）', level: 'シルバー（基礎）', accuracy: '78% 未満', percentile: '基準値（下位）' },
+      { tier: 'S+', rank: 'グランドマスターフロー', flow: '90%以上', score: '1,400点以上', band: 'SkillDrills練習目安' },
+      { tier: 'S', rank: 'ピークフロー', flow: '80%以上', score: '-', band: 'SkillDrills練習目安' },
+      { tier: 'A', rank: '安定した追従', flow: '60%以上', score: '-', band: 'SkillDrills練習目安' },
+      { tier: 'B', rank: '着実な追従', flow: '35%以上', score: '-', band: 'SkillDrills練習目安' },
+      { tier: 'C', rank: 'トレース完了', flow: '35%未満', score: '-', band: 'SkillDrills練習目安' },
     ],
   },
   protocols: {
     title: 'マウス操作精度を高める4大トレーニングプロトコル',
     description: 'ステアリングの法則（Accot-Zhai, 1997）および滑動性眼球運動（Smooth Pursuit, Krauzlis, 2004）に基づく、連続軌跡一致度と手首の微細筋協調を最適化する科学的運動制御プロトコルです。',
     items: [
-      { title: "カーソルのポインターロックと初期位置合わせ", description: "画面をクリックしてマウスカーソルをロックし、動く波形ラインの先頭に照準を合わせます。" },
+      { title: "開始直後の位置合わせ", description: "カウントダウン後、カーソルは画面左から4分の1の位置に置かれます。すぐに波形の上へ移動して最初の得点を稼ぎましょう。" },
       { title: "波形速度に合わせた同調トラッキング", description: "ラインの進行速度とカーソル速度を一致させ、線の中心帯から逸脱しないよう滑らかに手首を動かします。" },
       { title: "急激なカーブでの微細速度調整", description: "波の頂点や谷の急峻なカーブでは前腕と指先の筋肉を繊細にコントロールし、オーバーシュートを防ぎます。" },
-      { title: "スーパーフローストリークの維持", description: "脱線ゼロのパーフェクトトラッキングを長時間持続し、連続ボーナス加点と最高フロー評価を獲得します。" },
+      { title: "スーパーフローストリークの維持", description: "4秒連続維持ごとに+5点とフロー+10%。ランクはセッション終了時のフロー安定度で決まるので、最後の数秒が特に重要です。" },
     ],
   },
   faqs: {
@@ -297,6 +297,7 @@ const jaCopy = {
   title: "カーソル追従テスト",
   subtitle: "カーソル追従トレーニング • 45秒",
   startButtonText: "訓練開始",
+  startBtn: "訓練開始",
   trainAgain: "もう一度プレイ",
   shareTitle: "スコアを共有",
   exitTitle: "終了",
@@ -305,14 +306,14 @@ const jaCopy = {
   statFlowIntegrity: "フロー安定度",
   statBestScore: "ハイスコア",
   maxStreakLabel: "最大継続フレーム",
-  peakFlowLabel: "最高フロー状態",
+  peakFlowLabel: "終了時フロー安定度",
   bestScoreLabel: "自己最高記録",
   rulesTitle: "訓練手順とスコアシステム",
   rulesItems: [
     { num: "1", text: "軌跡追従", highlight: "エメラルド波形", result: "経路維持で1フレームあたり+1pt" },
     { num: "2", text: "速度上昇", highlight: "漸進的加速", result: "45秒で2.2 → 3.8 px/fに加速" },
     { num: "3", text: "フローボーナス", highlight: "スーパーフロー", result: "4秒連続維持で+5ptボーナス" },
-    { num: "4", text: "精密制御", highlight: "デスクトップ専用", result: "マウス入力対応" }
+    { num: "4", text: "脱線", highlight: "許容範囲 ±22px", result: "継続リセット・フロー低下" }
   ],
 };
 

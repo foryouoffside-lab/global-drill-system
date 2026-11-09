@@ -81,6 +81,12 @@ const ALL_KEYS = [
   { label: '▼', code: 'ArrowDown', category: 'advanced_arrow' }, { label: '▶', code: 'ArrowRight', category: 'advanced_arrow' }
 ];
 
+let layoutMap = null;
+const keyLabel = (k) => {
+  const v = (k.category === 'letter' || k.category === 'symbol') && layoutMap?.get(k.code);
+  return v ? v.toUpperCase() : k.label;
+};
+
 const PRESETS_ANNOTATED = {
   Valorant: {
     Movement: ['KeyW', 'KeyA', 'KeyS', 'KeyD', 'Space', 'ShiftLeft', 'ControlLeft'],
@@ -175,6 +181,7 @@ export default function KeyboardRecognitionClient({ copy = null }) {
   const [difficultySetting, setDifficultySetting] = useState('adaptive');
   const [enabledKeys, setEnabledKeys] = useState(Object.values(PRESETS_ANNOTATED.Valorant).flat());
   const [selectedProfile, setSelectedProfile] = useState('Valorant');
+  const [, setLayoutLoaded] = useState(false);
 
   const [uiScore, setUiScore] = useState(0);
   const [uiTimeLeft, setUiTimeLeft] = useState(DRILL_DURATION);
@@ -191,6 +198,7 @@ export default function KeyboardRecognitionClient({ copy = null }) {
 
   const containerRef = useRef(null);
   const animationRef = useRef(null);
+  const spawnNextPromptRef = useRef(null);
   const lastTimeRef = useRef(DRILL_DURATION);
   const gameActiveRef = useRef(false);
   const startingRef = useRef(false);
@@ -224,6 +232,7 @@ export default function KeyboardRecognitionClient({ copy = null }) {
 
       const saved = getSavedData();
       setBestScore(saved.bestScore || 0);
+      navigator.keyboard?.getLayoutMap?.().then((m) => { layoutMap = m; setLayoutLoaded(true); }).catch(() => {});
     }
   }, []);
 
@@ -337,7 +346,7 @@ export default function KeyboardRecognitionClient({ copy = null }) {
       const trapKey = trapPool[Math.floor(Math.random() * trapPool.length)];
       return {
         type: 'fake',
-        text: trapKey.label,
+        text: keyLabel(trapKey),
         code: trapKey.code,
         duration: Math.round(baseDuration * 0.95),
         expectedKeys: []
@@ -352,8 +361,8 @@ export default function KeyboardRecognitionClient({ copy = null }) {
       }
       return {
         type: 'sequence',
-        textList: seqKeys.map(k => k.label),
-        text: seqKeys.map(k => k.label).join(' '),
+        textList: seqKeys.map(keyLabel),
+        text: seqKeys.map(keyLabel).join(' '),
         expectedKeys: seqKeys.map(k => k.code),
         duration: baseDuration + (seqLen - 1) * 600,
         typedCount: 0
@@ -368,8 +377,8 @@ export default function KeyboardRecognitionClient({ copy = null }) {
       }
       return {
         type: 'memory',
-        textList: memKeys.map(k => k.label),
-        text: memKeys.map(k => k.label).join(' '),
+        textList: memKeys.map(keyLabel),
+        text: memKeys.map(keyLabel).join(' '),
         expectedKeys: memKeys.map(k => k.code),
         duration: baseDuration + 1400,
         typedCount: 0,
@@ -381,7 +390,7 @@ export default function KeyboardRecognitionClient({ copy = null }) {
     const keyObj = pool[Math.floor(Math.random() * pool.length)];
     return {
       type: 'single',
-      text: keyObj.label,
+      text: keyLabel(keyObj),
       code: keyObj.code,
       expectedKeys: [keyObj.code],
       duration: baseDuration
@@ -414,7 +423,7 @@ export default function KeyboardRecognitionClient({ copy = null }) {
       drillAudio.playPenalty();
     }
 
-    spawnNextPrompt();
+    spawnNextPromptRef.current?.();
   }, [triggerFlash]);
 
   const spawnNextPrompt = useCallback(() => {
@@ -454,6 +463,7 @@ export default function KeyboardRecognitionClient({ copy = null }) {
       }, nextP.duration);
     }
   }, [generateNextPrompt, handlePromptTimeout]);
+  spawnNextPromptRef.current = spawnNextPrompt;
 
   const endGame = useCallback(() => {
     gameActiveRef.current = false;
@@ -715,11 +725,11 @@ export default function KeyboardRecognitionClient({ copy = null }) {
         {!isFullscreen && (
           <div className="flex flex-col gap-1">
             <h1 className="text-2xl sm:text-3xl font-black tracking-tight text-white">
-              {copy?.title || t('keyboardRecognition.title', 'Keyboard Speed Test')}
-              <span data-seo-kw="1" className="block text-sm font-semibold text-slate-400 mt-1">
-                {copy?.subtitle || t('keyboardRecognition.subtitle', 'Keybind Reaction Trainer & Speed Test')}
-              </span>
+              <span data-seo-kw="1">{copy?.title || t('keyboardRecognition.title', 'Keyboard Speed Test')}</span>
             </h1>
+            <p className="text-sm font-semibold text-slate-400 mt-1">
+              {copy?.subtitle || t('keyboardRecognition.subtitle', 'Keybind Reaction Trainer & Speed Test')}
+            </p>
           </div>
         )}
 
@@ -1011,7 +1021,7 @@ export default function KeyboardRecognitionClient({ copy = null }) {
                       {group.list.map(key => {
                         const isEnabled = enabledKeys.includes(key.code);
                         return (
-                          <button key={key.code} onClick={() => { setSelectedProfile('Custom'); setEnabledKeys(prev => prev.includes(key.code) ? (prev.length > 1 ? prev.filter(k => k !== key.code) : prev) : [...prev, key.code]); }} className={`py-1.5 px-1 rounded font-mono text-[11px] font-bold border transition-colors ${isEnabled ? 'border-emerald-500 bg-emerald-500/10 text-emerald-400' : 'border-white/5 bg-[#080811] text-slate-500 hover:border-white/15'}`}>{key.label}</button>
+                          <button key={key.code} onClick={() => { setSelectedProfile('Custom'); setEnabledKeys(prev => prev.includes(key.code) ? (prev.length > 1 ? prev.filter(k => k !== key.code) : prev) : [...prev, key.code]); }} className={`py-1.5 px-1 rounded font-mono text-[11px] font-bold border transition-colors ${isEnabled ? 'border-emerald-500 bg-emerald-500/10 text-emerald-400' : 'border-white/5 bg-[#080811] text-slate-500 hover:border-white/15'}`}>{keyLabel(key)}</button>
                         );
                       })}
                     </div>

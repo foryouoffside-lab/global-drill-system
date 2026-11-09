@@ -10,17 +10,16 @@ import { pickSources } from '@/lib/drillSources';
 // ============================================================
 
 export const metadata = {
-  title: 'Teste de precisão do mouse | Mão firme | SkillDrills',
-  description: 'Siga um caminho que se estreita e meça precisão do cursor, controle motor fino e firmeza da mão. Teste grátis no navegador.',
+  title: 'Jogo da Mão Firme: Labirinto com o Mouse | SkillDrills',
+  description: 'Jogo da mão firme online: leve o cursor pela linha luminosa até a chegada sem encostar na borda. Cada volta em sequência deixa o trajeto mais sinuoso. Grátis.',
   keywords: [
-    'teste de precisão do mouse', 'mão firme', 'precisão do cursor',
-    'seguir o caminho mouse', 'controle motor fino', 'teste de coordenação mão olho',
-    'precisão de mouse online', 'jogo de labirinto mouse', 'controle do cursor',
-    'treino de precisão mouse', 'estabilidade da mão', 'caminho estreito mouse',
+    'jogo da mão firme', 'labirinto com o mouse', 'mão firme no mouse',
+    'sem encostar na parede', 'mão firme', 'controle motor fino',
+    'jogo de labirinto mouse', 'controle do cursor', 'estabilidade da mão',
   ],
   openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
-    title: 'Teste de precisão do mouse | Mão firme | SkillDrills',
-    description: 'Siga um caminho que se estreita e meça precisão do cursor, controle motor fino e firmeza da mão. Teste grátis no navegador.',
+    title: 'Jogo da Mão Firme: Labirinto com o Mouse | SkillDrills',
+    description: 'Jogo da mão firme online: leve o cursor pela linha luminosa até a chegada sem encostar na borda. Cada volta em sequência deixa o trajeto mais sinuoso. Grátis.',
     type: 'article',
     url: 'https://skilldrills.online/pt/drills/motor/precision-control/steady-hand',
     siteName: 'SkillDrills',
@@ -28,8 +27,8 @@ export const metadata = {
   },
   twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: 'summary_large_image',
-    title: 'Teste de precisão do mouse | Mão firme | SkillDrills',
-    description: 'Siga um caminho que se estreita e meça precisão do cursor, controle motor fino e firmeza da mão. Teste grátis no navegador.',
+    title: 'Jogo da Mão Firme: Labirinto com o Mouse | SkillDrills',
+    description: 'Jogo da mão firme online: leve o cursor pela linha luminosa até a chegada sem encostar na borda. Cada volta em sequência deixa o trajeto mais sinuoso. Grátis.',
   },
   robots: { index: true, follow: true },
   alternates: {
@@ -55,14 +54,14 @@ const softwareApplicationSchema = {
   '@context': 'https://schema.org',
   '@type': 'SoftwareApplication', "sameAs": ["https://en.wikipedia.org/wiki/Fine_motor_skill"],
   inLanguage: 'pt-BR',
-  name: 'Jogo da Mão Firme – Teste de Precisão e Tremor do Mouse',
+  name: 'Jogo da Mão Firme – Labirinto com o Mouse',
   applicationCategory: 'HealthApplication',
   operatingSystem: 'All',
   offers: { '@type': 'Offer', price: '0', priceCurrency: 'BRL' },
-  description: 'Jogo da mão firme e teste de precisão motora fina gratuito para navegador. Guie o cursor por trajetórias que se estreitam e avalie seu controle de tremor fisiológico.',
+  description: 'Jogo da mão firme gratuito para navegador. Desviar mais de 2,5 pixels da linha central manda o cursor de volta ao início, e cada volta em sequência deixa o próximo trajeto mais sinuoso.',
   url: 'https://skilldrills.online/pt/drills/motor/precision-control/steady-hand',
   publisher: { '@type': 'Organization', name: 'SkillDrills', url: 'https://skilldrills.online/pt' },
-  dateModified: '2026-09-20',
+  dateModified: '2026-11-09',
 };
 
 const webApplicationSchema = {
@@ -72,10 +71,10 @@ const webApplicationSchema = {
   name: 'Jogo da Mão Firme Online',
   applicationCategory: 'GameApplication',
   operatingSystem: 'All',
-  browserRequirements: 'Navegador moderno com suporte a HTML5 Canvas e Pointer Events de alta taxa',
+  browserRequirements: 'Navegador moderno com HTML5 Canvas e Pointer Lock API',
   offers: { '@type': 'Offer', price: '0', priceCurrency: 'BRL' },
   url: 'https://skilldrills.online/pt/drills/motor/precision-control/steady-hand',
-  dateModified: '2026-09-20',
+  dateModified: '2026-11-09',
 };
 
 const videoGameSchema = {
@@ -84,26 +83,26 @@ const videoGameSchema = {
   inLanguage: 'pt-BR',
   name: 'Jogo da Mão Firme e Precisão Motora',
   url: 'https://skilldrills.online/pt/drills/motor/precision-control/steady-hand',
-  description: 'Desafio interativo de controle de cursor em corredores estreitos com base na Lei de Accot-Zhai.',
+  description: 'Desafio interativo de controle de cursor sobre uma linha sinuosa, inspirado na Lei de Accot-Zhai.',
   genre: ['Precision Game', 'Action', 'Esports Training'],
   gamePlatform: ['Web Browser', 'Desktop', 'Mobile'],
   applicationCategory: 'Game',
   offers: { '@type': 'Offer', price: '0', priceCurrency: 'BRL' },
-  dateModified: '2026-09-20',
+  dateModified: '2026-11-09',
 };
 
 const faqSchema = {
   '@context': 'https://schema.org',
   '@type': 'FAQPage',
   inLanguage: 'pt-BR',
-  dateModified: '2026-09-20',
+  dateModified: '2026-11-09',
   mainEntity: [
     {
       '@type': 'Question',
-      name: 'O que é o Jogo da Mão Firme e o que ele mede no controle motor?',
+      name: 'O que é o Jogo da Mão Firme e o que ele treina?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'O Jogo da Mão Firme é uma avaliação neuromotora interativa na qual o usuário guia o cursor por um corredor sinuoso sem colidir com as paredes. Mede a estabilidade de trajetória, a eficiência do feedback visual contínuo e a amplitude do tremor fisiológico sob estreitamento progressivo.',
+        text: 'No Jogo da Mão Firme você leva o cursor da área de largada à esquerda até a área de chegada à direita seguindo uma linha luminosa sinuosa, sem sair dela. Não é teste de reflexo: treina o controle lento e estável do mouse com correção visual contínua. A pontuação é o número de voltas concluídas antes de o cronômetro de 45 segundos zerar.',
       },
     },
     {
@@ -119,15 +118,15 @@ const faqSchema = {
       name: 'Por que o cursor retorna ao início ao encostar na borda da pista?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'O motor calcula em tempo real a distância euclidiana entre as coordenadas do ponteiro e a linha central do trajeto. Ao ultrapassar a tolerância da meia-largura, ocorre violação de fronteira, resetando o cursor para impor rigorosa disciplina de tolerância zero.',
+        text: 'A cada quadro o motor calcula a distância entre o cursor e a linha central. Entre as áreas de largada e chegada, um desvio maior que 2,5 pixels conta como toque na borda: o cursor volta ao início, os erros sobem 1 e a sequência zera. O cronômetro não para.',
       },
     },
     {
       '@type': 'Question',
-      name: 'Como a largura da pista se estreita a cada volta concluída?',
+      name: 'Como a dificuldade aumenta a cada volta?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'A pista começa com uma margem ampla de 50 pixels na volta 1 e vai se estreitando a cada volta concluída até atingir 12 pixels no nível 12, exigindo coordenação motora de nível cirúrgico.',
+        text: 'A tolerância (±2,5 pixels em torno da linha) nunca muda. O que muda é o traçado: a cada volta concluída em sequência, o próximo trajeto ganha mais segmentos (de 15 até 120) e oscilações verticais maiores. Um toque zera a sequência e o trajeto seguinte volta a ser suave. Cada volta concluída reinicia o cronômetro em 45 segundos.',
       },
     },
     {
@@ -156,10 +155,10 @@ const faqSchema = {
     },
     {
       '@type': 'Question',
-      name: 'O treino de mão firme beneficia jogadores de FPS, desenhistas e cirurgiões?',
+      name: 'O treino de mão firme ajuda jogadores de FPS e desenhistas?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Sim. Tanto na mira de rastreamento (tracking) em jogos de tiro quanto na precisão de traço na ilustração digital e na instrumentação laparoscópica na cirurgia, a capacidade de guiar pontas finas sem oscilações é essencial.',
+        text: 'O movimento se parece com o tracking em jogos de tiro e com o traço na ilustração digital, em que o ponteiro precisa ficar numa trajetória estreita. O ganho varia de pessoa para pessoa, e o jogo não é um exame médico de tremor.',
       },
     },
     {
@@ -172,10 +171,10 @@ const faqSchema = {
     },
     {
       '@type': 'Question',
-      name: 'O teste funciona com trackball e mesa digitalizadora com caneta stylus?',
+      name: 'O jogo funciona com trackball ou tela de toque?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Sim. Graças à API de Pointer Events, o jogo responde perfeitamente a mouses ópticos, trackballs e canetas digitais, permitindo avaliar a firmeza em múltiplos dispositivos.',
+        text: 'No computador o jogo lê o movimento do mouse via Pointer Lock, então mouse e trackball funcionam. Em aparelhos só de toque, arraste o dedo. Canetas de mesa digitalizadora se comportam de forma diferente conforme o equipamento. Compare resultados no mesmo aparelho.',
       },
     },
   ],
@@ -185,23 +184,23 @@ const howToSchema = {
   '@context': 'https://schema.org',
   '@type': 'HowTo',
   inLanguage: 'pt-BR',
-  dateModified: '2026-09-20',
+  dateModified: '2026-11-09',
   name: 'Como treinar firmeza manual e precisão no mouse',
-  description: 'Guia passo a passo para conduzir o cursor por corredores estreitos com mínimo tremor.',
+  description: 'Guia passo a passo para conduzir o cursor por trajetos cada vez mais sinuosos.',
   step: [
     {
       '@type': 'HowToStep',
       position: 1,
       url: 'https://skilldrills.online/pt/drills/motor/precision-control/steady-hand#step-1',
       name: 'Posicionar cursor na área de largada',
-      text: 'Clique em „Iniciar Treino“ e posicione o ponteiro na área verde à esquerda para ligar o trajeto e o cronômetro de 45 segundos.',
+      text: 'Clique em „Iniciar Treino“. Após a contagem de 3 segundos, o cursor fica na área verde à esquerda e o cronômetro de 45 segundos começa. No PC o ponteiro é travado (Pointer Lock); Esc encerra.',
     },
     {
       '@type': 'HowToStep',
       position: 2,
       url: 'https://skilldrills.online/pt/drills/motor/precision-control/steady-hand#step-2',
       name: 'Manter velocidade constante e suave',
-      text: 'Deslize com suavidade pela linha azul fluorescente, equilibrando avanço com controle para não estourar o tempo.',
+      text: 'Deslize com suavidade pela linha verde luminosa, equilibrando avanço com controle para não estourar o tempo.',
     },
     {
       '@type': 'HowToStep',
@@ -214,8 +213,8 @@ const howToSchema = {
       '@type': 'HowToStep',
       position: 4,
       url: 'https://skilldrills.online/pt/drills/motor/precision-control/steady-hand#step-4',
-      name: 'Atingir a meta para estreitamento dinâmico',
-      text: 'Entre na zona verde final para fechar a volta. O tempo reseta e o trajeto fica mais estreito para o nível seguinte.',
+      name: 'Atingir a chegada para a próxima volta',
+      text: 'Entre na zona verde à direita para fechar a volta. O cronômetro volta a 45 segundos e, quanto maior a sequência, mais sinuoso fica o próximo trajeto.',
     },
   ],
 };
@@ -229,59 +228,24 @@ const guideProps = {
     ],
   },
   benchmark: {
-    title: 'Faixas de Referência no Jogo da Mão Firme',
-    description: 'Faixas editoriais de prática para comparar suas próprias sessões; não são estatísticas de população nem normas clínicas. Faixas editoriais, não percentis de população, para interpretar seus resultados com base na Lei de Accot & Zhai (1997). As faixas avaliam nível alcançado, largura da trilha e desvio médio.',
-    columns: ['Nível', 'Classificação', 'Nível Concluído', 'Largura da Pista', 'Desvio Médio', 'Faixa Editorial'],
+    title: 'Jogo da Mão Firme: faixas de prática SkillDrills',
+    description: 'Faixas de prática SkillDrills para comparar suas próprias sessões; não são normas de pesquisa nem dados de usuários. Seguem a nota da tela de resultado: voltas concluídas e toques na borda em uma sessão.',
+    columns: ['Nota', 'Classificação', 'Voltas', 'Toques', 'Faixa'],
     rows: [
-      {
-        tier: 'Tier 1',
-        rank: 'Muito firme',
-        stat: 'Nível 12+',
-        level: '12–15 px',
-        accuracy: 'Abaixo de 2,5 px',
-        marker: 'Faixa 1',
-      },
-      {
-        tier: 'Tier 2',
-        rank: 'Firme',
-        stat: 'Nível 9–11',
-        level: '16–22 px',
-        accuracy: 'Abaixo de 4,0 px',
-        marker: 'Faixa 2',
-      },
-      {
-        tier: 'Tier 3',
-        rank: 'Preciso',
-        stat: 'Nível 6–8',
-        level: '23–32 px',
-        accuracy: 'Abaixo de 6,5 px',
-        marker: 'Faixa 3',
-      },
-      {
-        tier: 'Tier 4',
-        rank: 'Intermediário',
-        stat: 'Nível 3–5',
-        level: '33–42 px',
-        accuracy: 'Abaixo de 9,0 px',
-        marker: 'Faixa 4',
-      },
-      {
-        tier: 'Tier 5',
-        rank: 'Inicial',
-        stat: 'Nível 1–2',
-        level: '43–50 px',
-        accuracy: 'Acima de 9,0 px',
-        marker: 'Faixa 5',
-      },
+      { tier: 'S+', rank: 'Estabilidade de grão-mestre', stat: '8+ voltas', errors: '0', band: 'Faixa de prática SkillDrills' },
+      { tier: 'S', rank: 'Condução de mestre', stat: '6+ voltas', errors: 'até 1', band: 'Faixa de prática SkillDrills' },
+      { tier: 'A', rank: 'Controle preciso', stat: '4+ voltas', errors: 'até 2', band: 'Faixa de prática SkillDrills' },
+      { tier: 'B', rank: 'Boa firmeza', stat: '2+ voltas', errors: 'sem limite', band: 'Faixa de prática SkillDrills' },
+      { tier: 'C', rank: 'Controle básico', stat: 'menos de 2 voltas', errors: 'sem limite', band: 'Faixa de prática SkillDrills' },
     ],
   },
   protocols: {
     title: 'Protocolos de Treino para Estabilidade e Firmeza',
-    description: 'Instruções práticas para reduzir o tremor na mão e dominar trajetórias sinuosas no mouse.',
+    description: 'Instruções práticas para um movimento mais calmo e trajetórias sinuosas no mouse.',
     items: [
       {
         title: 'Protocolo 1: Ritmo de Velocidade por Accot-Zhai (Controle em Túneis)',
-        description: 'Conforme a Lei de Accot-Zhai (1997), a velocidade segura de travessia é inversamente proporcional ao estreitamento do túnel. Acelere em trechos retos para poupar tempo e reduza 40% da velocidade ao entrar em cotovelos apertados.',
+        description: 'Conforme a Lei de Accot-Zhai (1997), o tempo para atravessar um túnel cresce com o comprimento e cai com a largura. Acelere nos trechos suaves para poupar tempo e reduza bem a velocidade antes das quebras bruscas do trajeto.',
       },
       {
         title: 'Protocolo 2: Antecipação Visual de Woodworth (Feedforward)',
@@ -293,7 +257,7 @@ const guideProps = {
       },
       {
         title: 'Protocolo 4: Abordagem pelo Ápice da Curva',
-        description: 'A partir do nível 6 (menos de 30 px), prefira precisão a velocidade. Fazer a tangência pelo lado de dentro da curva oferece margem máxima de segurança contra desvios centrífugos.',
+        description: 'Quando a sequência cresce e o trajeto fica cheio de zigue-zagues, prefira o centro da linha à velocidade. Mirar levemente o lado de dentro da curva reduz a deriva do cursor para fora.',
       },
     ],
   },
@@ -307,9 +271,10 @@ const guideProps = {
 };
 
 const ptCopy = {
-  h1Keyword: 'Teste de Precisão do Mouse',
-  h1Suffix: ' (Mão Firme)',
-  caption: 'O jogo da mão firme mede a estabilidade e a precisão motora fina ao guiar o cursor por um trajeto luminoso sem encostar nas bordas. Fundamentado na Lei de Accot-Zhai (1997) e no controle motor em circuito fechado de Woodworth (1899).',
+  h1Keyword: 'Jogo da Mão Firme',
+  h1Suffix: ' (Labirinto com o Mouse)',
+  subtitle: 'Leve o cursor pela linha luminosa até a chegada sem sair dela',
+  caption: 'O jogo da mão firme treina a estabilidade e a precisão motora fina: guie o cursor por uma linha luminosa sem sair dela. Fundamentado na Lei de Accot-Zhai (1997) e no controle motor em circuito fechado de Woodworth (1899).',
   statLaps: 'Voltas',
   statTime: 'Tempo Restante',
   statStreak: 'Sequência',
@@ -330,32 +295,32 @@ const ptCopy = {
   rulesTitle: 'Instruções e Regras de Pontuação',
   rulesItems: [
     { num: '1', text: 'Siga a linha esmeralda', highlight: 'fluorescente com exatidão', result: 'Chegar ao fim reseta o tempo para 45s' },
-    { num: '2', text: 'Volta completa', highlight: 'Dificuldade progressiva', result: 'Pista mais estreita e curvas fechadas' },
-    { num: '3', text: 'Toque na borda', highlight: 'Retorno ao início', result: 'Penalidade de volta e erro somado' },
-    { num: '4', text: 'Controle de mouse', highlight: 'Recomendado para desktop', result: 'Sem aceleração do mouse, se possível' },
+    { num: '2', text: 'Volta completa', highlight: 'Dificuldade progressiva', result: 'Mais quebras e oscilação' },
+    { num: '3', text: 'Toque na borda', highlight: 'Retorno ao início', result: 'Erro +1, sequência zera' },
+    { num: '4', text: 'Mouse (Pointer Lock)', highlight: 'Toque suportado', result: 'Esc encerra' },
   ],
   rule1Text: 'Siga a linha esmeralda',
   rule1Highlight: 'fluorescente com exatidão',
   rule1Result: 'Chegar ao fim reseta o tempo para 45s',
   rule2Text: 'Volta completa',
   rule2Highlight: 'Dificuldade progressiva',
-  rule2Result: 'Pista mais estreita e curvas fechadas',
+  rule2Result: 'Mais quebras e oscilação',
   rule3Text: 'Toque na borda',
   rule3Highlight: 'Retorno ao início',
-  rule3Result: 'Penalidade de volta e erro somado',
-  rule4Text: 'Controle de mouse',
-  rule4Highlight: 'Recomendado para desktop',
-  rule4Result: 'Sem aceleração do mouse, se possível',
+  rule3Result: 'Erro +1, sequência zera',
+  rule4Text: 'Mouse (Pointer Lock)',
+  rule4Highlight: 'Toque suportado',
+  rule4Result: 'Esc encerra',
   aboutTitle: 'Sobre o Jogo da Mão Firme',
   aboutHeading: 'Rastreamento de Trajetória e Redução do Tremor Manual',
-  aboutP1: 'O Jogo da Mão Firme é uma ferramenta especializada para aperfeiçoar a coordenação olho-mão, o controle motor fino dos dedos e a estabilidade do cursor. Conduzir o ponteiro por passagens cada vez mais estreitas exige estabilidade do punho e do antebraço.',
-  aboutP2: 'Segundo a Lei de Direção de Accot & Zhai (1997), a dificuldade cresce exponencialmente com a redução da largura. De 50 px a 12 px, o teste exige feedback visual contínuo (Woodworth, 1899) e boa estabilidade da mão.',
+  aboutP1: 'O Jogo da Mão Firme é uma ferramenta especializada para aperfeiçoar a coordenação olho-mão, o controle motor fino dos dedos e a estabilidade do cursor. Seguir uma linha estreita que fica mais sinuosa a cada sequência exige pequenas correções do punho e do antebraço.',
+  aboutP2: 'Segundo a Lei de Direção de Accot & Zhai (1997), o tempo de condução cresce quando o caminho fica mais estreito e mais longo. Aqui a tolerância fica fixa em ±2,5 px, mas o trajeto ganha zigue-zagues a cada sequência e exige feedback visual contínuo (Woodworth, 1899).',
   aboutCard1Title: 'Público-alvo',
   aboutCard1Text: 'Gamers de FPS/MOBA, ilustradores digitais e quem quer treinar a estabilidade do ponteiro.',
   aboutCard2Title: 'Benefícios Motores',
   aboutCard2Text: 'Coordenação motora fina, firmeza de mão, controle de velocidade em curvas e consciência da fadiga muscular.',
-  aboutCard3Title: 'Estreitamento Dinâmico',
-  aboutCard3Text: 'A pista encolhe a cada volta e os ângulos ficam mais agudos, demandando controle milimétrico do mouse.',
+  aboutCard3Title: 'Trajeto cada vez mais sinuoso',
+  aboutCard3Text: 'A tolerância (±2,5 px) não muda; cada volta em sequência adiciona quebras e oscilação ao próximo trajeto.',
   gradeLabels: {
     'S+': 'Firmeza Excelente',
     'S': 'Controle Muito Bom',
@@ -365,7 +330,7 @@ const ptCopy = {
   },
   shareDrillName: 'Jogo da Mão Firme',
   shareUrl: 'https://skilldrills.online/pt/drills/motor/precision-control/steady-hand',
-  shareTextTemplate: '🖐️ Completei {laps} voltas no {drillName} com precisão de {acc}! Meça sua firmeza e precisão no mouse de graça no skilldrills.online!',
+  shareTextTemplate: '🖐️ Completei {laps} voltas no {drillName} com precisão de {acc}! Experimente de graça no skilldrills.online!',
   copiedAlert: 'Cartão de pontuação copiado!',
 };
 

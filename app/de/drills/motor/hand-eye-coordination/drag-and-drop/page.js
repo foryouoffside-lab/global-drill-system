@@ -7,15 +7,14 @@ import { pickSources } from '@/lib/drillSources';
 
 export const metadata = {
   title: 'Maus-Ziehtest | Drag-and-Drop-Präzision | SkillDrills',
-  description: 'Kostenloser Maus-Ziehtest im Browser: Prüfe Ziehgenauigkeit, Tastenhalt und präzises Loslassen für Drag-and-Drop ohne Download.',
+  description: 'Kostenloser Maus-Ziehtest im Browser: 45 Sekunden lang Bälle per Drag-and-Drop in einen beweglichen Behälter ziehen. Genauigkeit, Combo und Level messen.',
   keywords: [
-    'Maus-Ziehtest', 'Maus-Drag-Test', 'Drag-and-Drop-Test', 'Mauspräzision testen',
-    'Maussteuerung üben', 'Ziehen und Ablegen üben', 'Maus Ziehgenauigkeit', 'Maus-Taste halten Test',
-    'Cursor-Kontrolle Training', 'Drag-and-Drop-Präzision', 'Mausbedienung Test', 'Feinmotorik Maus Test',
+    'Maus-Ziehtest', 'Drag-and-Drop-Test', 'Ziehen und Ablegen üben', 'Drag and Drop Spiel',
+    'Maus-Drag-Test', 'Maus Ziehgenauigkeit', 'Drag-and-Drop-Präzision', 'Maussteuerung üben',
   ],
   openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
     title: 'Maus-Ziehtest | Drag-and-Drop-Präzision | SkillDrills',
-    description: 'Kostenloser Maus-Ziehtest im Browser: Prüfe Ziehgenauigkeit, Tastenhalt und präzises Loslassen für Drag-and-Drop ohne Download.',
+    description: 'Kostenloser Maus-Ziehtest im Browser: 45 Sekunden lang Bälle per Drag-and-Drop in einen beweglichen Behälter ziehen. Genauigkeit, Combo und Level messen.',
     type: 'article',
     url: 'https://skilldrills.online/de/drills/motor/hand-eye-coordination/drag-and-drop',
     siteName: 'SkillDrills',
@@ -24,7 +23,7 @@ export const metadata = {
   twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: 'summary_large_image',
     title: 'Maus-Ziehtest | Drag-and-Drop-Präzision | SkillDrills',
-    description: 'Kostenloser Maus-Ziehtest im Browser: Prüfe Ziehgenauigkeit, Tastenhalt und präzises Loslassen für Drag-and-Drop ohne Download.',
+    description: 'Kostenloser Maus-Ziehtest im Browser: 45 Sekunden lang Bälle per Drag-and-Drop in einen beweglichen Behälter ziehen. Genauigkeit, Combo und Level messen.',
   },
   robots: { index: true, follow: true },
   alternates: {
@@ -71,11 +70,11 @@ const softwareApplicationSchema = {
   applicationCategory: 'HealthApplication',
   operatingSystem: 'All',
   offers: { '@type': 'Offer', price: '0', priceCurrency: 'EUR' },
-  description: 'Kostenloses Browsertool zur Messung von Drag-and-Drop-Geschwindigkeit, Cursor-Führung und Abwurftiming.',
+  description: 'Kostenloser Maus-Ziehtest im Browser: Ball greifen, ziehen und im beweglichen Behälter ablegen.',
   url: 'https://skilldrills.online/de/drills/motor/hand-eye-coordination/drag-and-drop',
   publisher: { '@type': 'Organization', name: 'SkillDrills', url: 'https://skilldrills.online' },
   inLanguage: 'de-DE',
-  dateModified: '2026-09-20',
+  dateModified: '2026-11-09',
 };
 
 const webApplicationSchema = {
@@ -86,7 +85,7 @@ const webApplicationSchema = {
   url: 'https://skilldrills.online/de/drills/motor/hand-eye-coordination/drag-and-drop',
   applicationCategory: 'EducationalApplication',
   inLanguage: 'de-DE',
-  dateModified: '2026-09-20',
+  dateModified: '2026-11-09',
 };
 
 const videoGameSchema = {
@@ -106,14 +105,14 @@ const faqSchema = {
   '@context': 'https://schema.org',
   '@type': 'FAQPage',
   inLanguage: 'de-DE',
-  dateModified: '2026-09-20',
+  dateModified: '2026-11-09',
   mainEntity: [
     {
       '@type': 'Question',
       name: 'Was wird im Drag and Drop Maus-Trainer genau gemessen?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Der Test quantifiziert die sensomotorische Koordination: Transportzeit, Pfadtreue entlang der Trajektorie, Abbremskontrolle vor der Zielzone und das exakte Timing beim Loslassen der Maustaste.',
+        text: 'Im Maus-Ziehtest greifen Sie 45 Sekunden lang einen Ball mit gedrückter linker Maustaste, ziehen ihn zu einem beweglichen runden Behälter und lassen ihn darin los. Das Ergebnis zeigt Punkte, Genauigkeit (Anteil gelungener Ablagen), Anzahl der Ablagen, maximale Combo und erreichtes Level.',
       },
     },
     {
@@ -129,7 +128,7 @@ const faqSchema = {
       name: 'Was fanden MacKenzie et al. (1991) über Drag-and-Drop heraus?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Ihre Studien belegen, dass Zieh-Operationen im Vergleich zu einfachen Klicks signifikant langsamer sind und eine um 15 bis 25 Prozent reduzierte motorische Bandbreite aufweisen.',
+        text: 'Ihre Studie zeigte, dass Ziehen mit demselben Eingabegerät deutlich langsamer und fehleranfälliger ist als bloßes Zeigen auf dasselbe Ziel.',
       },
     },
     {
@@ -137,7 +136,7 @@ const faqSchema = {
       name: 'Welche Bedeutung hat das Steering Law (Accot und Zhai, 1997)?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Es beschreibt mathematisch die Bewegungszeit in begrenzten Pfaden: Je enger die Toleranzbreite des Zielkorridors, desto mehr kontinuierliche visuelle Rückkopplungsschleifen benötigt das Nervensystem.',
+        text: 'Es beschreibt die Bewegungszeit in begrenzten Pfaden: Sie wächst mit der Länge des Korridors geteilt durch seine Breite. Ein halb so breiter Korridor dauert also etwa doppelt so lange, wenn man ihn sauber durchqueren will.',
       },
     },
     {
@@ -169,7 +168,7 @@ const faqSchema = {
       name: 'Wie skaliert die Schwierigkeit im Verlauf des Tests?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Höhere Stufen verkleinern die Zielbehälter, beschleunigen deren Bewegungsmuster und verkürzen das Zeitfenster für den erfolgreichen Abwurf.',
+        text: 'Alle 250 Punkte (plus Bonusstufen für jede 4er-Combo) steigt das Level: Ball und Behälter werden kleiner, der Behälter bewegt sich schneller und wechselt öfter die Richtung. Ist die Zeitlimit-Option aktiv, wird auch die Zeit pro Ball kürzer. Eine Runde dauert fest 45 Sekunden.',
       },
     },
     {
@@ -185,7 +184,7 @@ const faqSchema = {
       name: 'Kostet die Nutzung auf SkillDrills etwas?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Nein, das Tool ist völlig kostenlos, läuft direkt im Browser und erfordert keinerlei Registrierung oder Installation.',
+        text: 'Nein, der Maus-Ziehtest ist kostenlos, läuft im Browser und braucht keine Registrierung oder Installation. Nötig sind eine Maus und Pointer Lock; reine Touch-Geräte werden nicht unterstützt.',
       },
     },
   ],
@@ -223,7 +222,7 @@ const howToSchema = {
       '@type': 'HowToStep',
       position: 4,
       name: 'Präzises Loslassen (Release)',
-      text: 'Geben Sie die Maustaste frei, sobald sich das Objekt vollständig im Slot befindet, um maximale Bonuspunkte zu erzielen.',
+      text: 'Lassen Sie die Maustaste los, sobald der Ball im Behälter ist: Das zählt als Treffer und bringt 100 Punkte × Combo-Multiplikator. Außerhalb loslassen setzt die Combo zurück.',
       url: 'https://skilldrills.online/de/drills/motor/hand-eye-coordination/drag-and-drop#step-4',
     },
   ],
@@ -234,38 +233,35 @@ const guideProps = {
   intro: {
     title: 'Biomechanik des Ziehens, Führens und sensorimotorischen Abbremsens',
     paragraphs: [
-      'In der Mensch-Computer-Interaktion stellt das kontinuierliche Ziehen und Ablegen (Drag and Drop) eine grundlegend andere neuromuskuläre Herausforderung dar als einfache Klick-Aktionen. Während diskretes Zeigen durch das Fitts-Gesetz (Fitts, 1954) modelliert wird, verlangt das Ziehen eine anhaltende isometrische Ko-Kontraktion der Beugemuskulatur im Zeigefinger bei gleichzeitiger multi-axialer Translation der Gliedmaße über die Unterlage.',
-      'In ihrer empirischen Pionierstudie zeigten MacKenzie, Sellen und Buxton (1991), dass Zieh-Aufgaben gegenüber einfachen Klicks einen typischen Durchsatzverlust von 15 bis 25 Prozent aufweisen. Der permanente Anpressdruck verändert den Reibungskoeffizienten der Mausgleiter auf dem Mauspad, schränkt feine Fingerartikulationen ein und erhöht motorisches Rauschen.',
+      'Dieser Maus-Ziehtest trainiert Ziehen und Ablegen mit der Maus. In der Mensch-Computer-Interaktion stellt das kontinuierliche Ziehen und Ablegen (Drag and Drop) eine grundlegend andere neuromuskuläre Herausforderung dar als einfache Klick-Aktionen. Während diskretes Zeigen durch das Fitts-Gesetz (Fitts, 1954) modelliert wird, verlangt das Ziehen eine anhaltende isometrische Ko-Kontraktion der Beugemuskulatur im Zeigefinger bei gleichzeitiger multi-axialer Translation der Gliedmaße über die Unterlage.',
+      'MacKenzie, Sellen und Buxton (1991) zeigten, dass Ziehen mit demselben Gerät deutlich langsamer und fehleranfälliger ist als bloßes Zeigen auf dasselbe Ziel. Die gedrückte Taste schränkt feine Finger- und Handgelenkskorrekturen ein.',
       'Darüber hinaus formulierten Johnny Accot und Shumin Zhai (1997) das Steering Law zur mathematischen Beschreibung pfadbegrenzter Motorik. Bei dynamischen Ziehaufgaben müssen Nutzer Beschleunigungsimpulse und antagonistische Bremsungen (Elliott et al., 2010) exakt koordinieren, um ein Überschwingen der Zielzone zu verhindern.',
-      'Messgenauigkeit und Grenzen: Die Zeitnahme basiert auf dem browserinternen performance.now()-Takt. Hardware-Latenzen wie Display-Aktualisierungsraten (16,7 ms bei 60 Hz, 6,9 ms bei 144 Hz) und Polling-Raten beeinflussen die Messwerte (Woods et al., 2015). Vergleichen Sie Ihre Resultate primär mit früheren eigenen Sitzungen am identischen System.',
+      'Ablauf: 45 Sekunden lang Ball greifen, ziehen und im beweglichen Behälter ablegen. Display-Bildrate und Polling-Rate der Maus beeinflussen das Eingabegefühl (Woods et al., 2015). Vergleichen Sie Ihre Ergebnisse daher vor allem mit eigenen früheren Runden am selben System.',
     ],
   },
   benchmarks: {
-    title: 'Empirische Leistungsstufen für Drag and Drop Präzision',
-    caption: 'Klassifizierung basierend auf Steering-Modellen nach Accot und Zhai (1997) sowie MacKenzie, Sellen und Buxton (1991). SkillDrills speichert Daten ausschließlich lokal im Browser.',
-    headers: ['Stufe', 'Klassifizierung', 'Level & Combo', 'Mittlere Transportzeit', 'Abwurf-Genauigkeit', 'Neuromuskuläres Profil'],
+    title: 'Übungsstufen für den Maus-Ziehtest (SkillDrills)',
+    caption: 'SkillDrills-Übungsbänder: keine Forschungsnormen und keine Nutzerstatistik, sondern Richtwerte des Drill-Autors, um Level, Combo und Genauigkeit aus dem eigenen Ergebnis einzuordnen. SkillDrills speichert Daten ausschließlich lokal im Browser.',
+    headers: ['Stufe', 'Klassifizierung', 'Level & Combo', 'Abwurf-Genauigkeit', 'Typisches Spielbild'],
     rows: [
       [
         'Tier 1',
         'Höchste Übungsstufe',
         'Lv. 12–15 (Combo > 18x)',
-        '< 420 ms',
         '≥ 98,0%',
-        'Perfekt glockenförmiges Geschwindigkeitsprofil, punktgenaue Abbremsung, keine verfrühten Abwürfe.',
+        'Weiches Abbremsen auch bei schnellen Behältern, kaum Ablagen außerhalb.',
       ],
       [
         'Tier 2',
         'Fortgeschritten / Kompetitiv',
         'Lv. 9–11 (Combo 12–17x)',
-        '420–510 ms',
         '94,0%–97,9%',
-        'Kontrollierte Dezeleration, saubere Korridorfuhrung, minimale terminale Mikro-Korrekturen (< 35 ms).',
+        'Kontrolliertes Abbremsen, auch kleine Behälter mit kurzen Mikro-Korrekturen getroffen.',
       ],
       [
         'Tier 3',
         'Geübt / Mittelfeld',
         'Lv. 6–8 (Combo 7–11x)',
-        '511–640 ms',
         '87,0%–93,9%',
         'Gelegentliches Überschwingen in der Beschleunigungsphase, spürbare Tempoverluste kurz vor dem Zielslot.',
       ],
@@ -273,17 +269,15 @@ const guideProps = {
         'Tier 4',
         'Einsteiger / In Entwicklung',
         'Lv. 3–5 (Combo 3–6x)',
-        '641–800 ms',
         '78,0%–86,9%',
-        'Ruckartige Mehrfachimpulse, zu hohe Griffspannung führt zu Mauspad-Verkantung und Randfehlern.',
+        'Ruckartige Mehrfachkorrekturen, zu hohe Griffspannung führt zu Ablagen am Rand.',
       ],
       [
         'Tier 5',
         'Basisniveau / Anfänger',
         'Lv. 1–2 (Combo < 3x)',
-        '> 800 ms',
         '< 78,0%',
-        'Zögerliche Transportbewegung, häufiges Loslassen außerhalb der Behälterbegrenzung, Ermüdung.',
+        'Zögerlicher Transport, häufiges Loslassen außerhalb des Behälters.',
       ],
     ],
   },
@@ -300,7 +294,7 @@ const guideProps = {
       },
       {
         title: 'Protokoll 3: Antagonistische Dezeleration und Bremsung (Level 9–12)',
-        description: 'Aktivieren Sie die Unterarm-Streckmuskeln etwa 50 ms vor dem Erreichen des Zielbehälters, um den Bewegungsschwung punktgenau abzufangen und sauberes Loslassen zu ermöglichen.',
+        description: 'Beginnen Sie kurz vor dem Zielbehälter abzubremsen, um den Schwung abzufangen, und lassen Sie los, sobald der Ball im Behälter ist.',
       },
       {
         title: 'Protokoll 4: Dynamischer Vorhaltewinkel bei bewegten Zielen (Level 13–15)',
@@ -318,8 +312,8 @@ const guideProps = {
 };
 
 const copyDe = {
-  title: "Drag and Drop Test – Maus Präzision Training",
-  subtitle: "Ziehgenauigkeit · Zielablage messen",
+  title: "Maus-Ziehtest: Drag-and-Drop-Präzision",
+  subtitle: "Ball ziehen und im beweglichen Behälter ablegen · 45 Sekunden",
   startButtonText: "DRILL STARTEN",
   playAgainText: "Nochmal spielen",
   shareText: "Ergebnis teilen",

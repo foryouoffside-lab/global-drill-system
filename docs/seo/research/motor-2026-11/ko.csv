@@ -1,0 +1,41 @@
+market,phrase,cc,lang,bing_exact,bing_broad,status,source
+ko,에임 테스트,kr,ko-KR,90,90,ok,bing_kw 2026-11-09
+ko,마우스 에임 테스트,kr,ko-KR,0,0,ok,bing_kw 2026-11-09
+ko,에임 정확도 테스트,kr,ko-KR,0,0,ok,bing_kw 2026-11-09
+ko,마우스 정확도 테스트,kr,ko-KR,0,0,ok,bing_kw 2026-11-09
+ko,마우스 정확도 연습,kr,ko-KR,0,0,ok,bing_kw 2026-11-09
+ko,마우스 정확도 측정,kr,ko-KR,0,0,ok,bing_kw 2026-11-09
+ko,cps 측정,kr,ko-KR,1512,1512,ok,bing_kw 2026-11-09
+ko,cps 측정기,kr,ko-KR,158,158,ok,bing_kw 2026-11-09
+ko,cps 측정 사이트,kr,ko-KR,0,0,ok,bing_kw 2026-11-09
+ko,마우스 cps 측정,kr,ko-KR,0,0,ok,bing_kw 2026-11-09
+ko,cps 테스트,kr,ko-KR,256,256,ok,bing_kw 2026-11-09
+ko,클릭속도 테스트,kr,ko-KR,1134,1134,ok,bing_kw 2026-11-09
+ko,마우스 클릭 테스트,kr,ko-KR,1009,1009,ok,bing_kw 2026-11-09
+ko,마우스 연타 테스트,kr,ko-KR,0,0,ok,bing_kw 2026-11-09
+ko,클릭 속도 측정,kr,ko-KR,0,0,ok,bing_kw 2026-11-09
+ko,클릭 테스트,kr,ko-KR,91,1100,ok,bing_kw 2026-11-09
+ko,키보드 반응속도 테스트,kr,ko-KR,79,79,ok,bing_kw 2026-11-09
+ko,키보드 반응속도 측정,kr,ko-KR,0,0,ok,bing_kw 2026-11-09
+ko,키보드 입력 테스트,kr,ko-KR,248,248,ok,bing_kw 2026-11-09
+ko,키보드 테스트,kr,ko-KR,3445,3779,ok,bing_kw 2026-11-09
+ko,자리연습,kr,ko-KR,0,0,ok,bing_kw 2026-11-09
+ko,키보드 자리연습,kr,ko-KR,0,0,ok,bing_kw 2026-11-09
+ko,영타 자리연습,kr,ko-KR,0,0,ok,bing_kw 2026-11-09
+ko,영어 자리연습,kr,ko-KR,0,0,ok,bing_kw 2026-11-09
+ko,숫자 자리연습,kr,ko-KR,0,0,ok,bing_kw 2026-11-09
+ko,자판연습,kr,ko-KR,23,908,ok,bing_kw 2026-11-09
+ko,마우스 연습,kr,ko-KR,208,361,ok,bing_kw 2026-11-09
+ko,마우스 연습 게임,kr,ko-KR,153,153,ok,bing_kw 2026-11-09
+ko,마우스 연습 사이트,kr,ko-KR,0,0,ok,bing_kw 2026-11-09
+ko,마우스 드래그 연습,kr,ko-KR,0,0,ok,bing_kw 2026-11-09
+ko,드래그 연습,kr,ko-KR,0,0,ok,bing_kw 2026-11-09
+ko,드래그 앤 드롭 연습,kr,ko-KR,0,0,ok,bing_kw 2026-11-09
+ko,마우스 미로 게임,kr,ko-KR,0,0,ok,bing_kw 2026-11-09
+ko,마우스 미로,kr,ko-KR,0,0,ok,bing_kw 2026-11-09
+ko,마우스 트래킹 테스트,kr,ko-KR,0,0,ok,bing_kw 2026-11-09
+ko,마우스 트래킹 연습,kr,ko-KR,0,0,ok,bing_kw 2026-11-09
+ko,마우스 트레이싱,kr,ko-KR,0,0,ok,bing_kw 2026-11-09
+ko,순서대로 클릭,kr,ko-KR,0,0,ok,bing_kw 2026-11-09
+ko,타겟 전환 연습,kr,ko-KR,0,0,ok,bing_kw 2026-11-09
+ko,마우스 테스트,kr,ko-KR,305,305,ok,bing_kw 2026-11-09

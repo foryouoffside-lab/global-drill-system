@@ -6,16 +6,15 @@ import RelatedDrills from '@/components/drill/RelatedDrills';
 import { pickSources } from '@/lib/drillSources';
 
 export const metadata = {
-  title: 'Entraînement flick | Test de visée souris | SkillDrills',
-  description: 'Entraînez votre flick en ligne et mesurez la précision de votre souris, le temps d’acquisition et les tirs au centre pour les FPS.',
+  title: 'Test de précision souris : flicks au centre | SkillDrills',
+  description: 'Test de précision souris gratuit : touchez deux cibles qui rétrécissent, un tir dans le centre de 8 px vaut double. Précision de clic, tirs au centre et niveau.',
   keywords: [
-    'entraînement à la visée', 'test précision souris', 'test de visée FPS', 'entraînement flick',
-    'précision souris', 'acquisition de cible', 'tir réflexe souris', 'micro-ajustement visée',
-    'aim trainer gratuit', 'entraînement CS2', 'entraînement Valorant', 'test de visée en ligne',
+    'test de précision souris', 'test précision souris', 'précision souris', 'précision de clic',
+    'tirs au centre de la cible', 'jeu précision souris',
   ],
   openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
-    title: 'Entraînement flick | Test de visée souris | SkillDrills',
-    description: 'Entraînez votre flick en ligne et mesurez la précision de votre souris, le temps d’acquisition et les tirs au centre pour les FPS.',
+    title: 'Test de précision souris : flicks au centre | SkillDrills',
+    description: 'Test de précision souris gratuit : touchez deux cibles qui rétrécissent, un tir dans le centre de 8 px vaut double. Précision de clic, tirs au centre et niveau.',
     type: 'article',
     url: 'https://skilldrills.online/fr/drills/motor/hand-eye-coordination/precision-flick-shot',
     siteName: 'SkillDrills',
@@ -23,8 +22,8 @@ export const metadata = {
   },
   twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: 'summary_large_image',
-    title: 'Entraînement flick | Test de visée souris | SkillDrills',
-    description: 'Entraînez votre flick en ligne et mesurez la précision de votre souris, le temps d’acquisition et les tirs au centre pour les FPS.',
+    title: 'Test de précision souris : flicks au centre | SkillDrills',
+    description: 'Test de précision souris gratuit : touchez deux cibles qui rétrécissent, un tir dans le centre de 8 px vaut double. Précision de clic, tirs au centre et niveau.',
   },
   robots: { index: true, follow: true },
   alternates: {
@@ -67,15 +66,15 @@ const breadcrumbSchema = {
 const softwareApplicationSchema = {
   '@context': 'https://schema.org',
   '@type': 'SoftwareApplication', "sameAs": ["https://en.wikipedia.org/wiki/Fitts%27s_law", "https://en.wikipedia.org/wiki/Hand%E2%80%93eye_coordination"],
-  name: 'Test de Flick Shot et Précision Souris',
+  name: 'Test de précision souris : flicks au centre',
   applicationCategory: 'HealthApplication',
   operatingSystem: 'All',
   offers: { '@type': 'Offer', price: '0', priceCurrency: 'EUR' },
-  description: 'Outil en ligne gratuit d entraînement au flick shot. Évaluez la vitesse de déplacement balistique, le freinage moteur et les tirs plein centre.',
+  description: 'Test de précision souris gratuit dans le navigateur : touchez des cibles qui rétrécissent et comptez vos tirs plein centre.',
   url: 'https://skilldrills.online/fr/drills/motor/hand-eye-coordination/precision-flick-shot',
   publisher: { '@type': 'Organization', name: 'SkillDrills', url: 'https://skilldrills.online' },
   inLanguage: 'fr-FR',
-  dateModified: '2026-09-20',
+  dateModified: '2026-11-09',
 };
 
 const webApplicationSchema = {
@@ -86,15 +85,15 @@ const webApplicationSchema = {
   url: 'https://skilldrills.online/fr/drills/motor/hand-eye-coordination/precision-flick-shot',
   applicationCategory: 'EducationalApplication',
   inLanguage: 'fr-FR',
-  dateModified: '2026-09-20',
+  dateModified: '2026-11-09',
 };
 
 const videoGameSchema = {
   '@context': 'https://schema.org',
   '@type': 'VideoGame',
-  name: 'Jeu de Tir Flick Shot et Précision FPS',
+  name: 'Jeu de précision souris : flicks au centre',
   url: 'https://skilldrills.online/fr/drills/motor/hand-eye-coordination/precision-flick-shot',
-  description: 'Améliorez vos réflexes et la précision de vos tirs instantanés sur cibles dynamiques.',
+  description: 'Touchez des cibles qui rétrécissent, si possible en plein centre.',
   genre: ['Tir', 'Réflexes', 'Esport'],
   gamePlatform: ['Web Browser', 'Desktop'],
   applicationCategory: 'Game',
@@ -106,7 +105,7 @@ const faqSchema = {
   '@context': 'https://schema.org',
   '@type': 'FAQPage',
   inLanguage: 'fr-FR',
-  dateModified: '2026-09-20',
+  dateModified: '2026-11-09',
   mainEntity: [
     {
       '@type': 'Question',
@@ -145,7 +144,7 @@ const faqSchema = {
       name: 'Cet entraînement aide-t-il directement sur CS2 et Valorant ?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Absolument. La réussite des duels repose sur la précision du premier coup ; un micro-flick net élimine les tremblements lors des prises de ligne.',
+        text: 'Les joueurs de Valorant ou CS2 peuvent s en servir pour travailler l arrêt net après un flick. Aucun progrès en jeu n est garanti ; réglez la même sensibilité que dans votre jeu.',
       },
     },
     {
@@ -153,7 +152,7 @@ const faqSchema = {
       name: 'Comment réagir face à deux cibles simultanées ?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Utilisez votre vision périphérique pour identifier la cible dont le cercle de vie expire le plus vite et détruisez-la avant d enchaîner sur la seconde.',
+        text: 'Deux cibles sont toujours affichées ; les deux rétrécissent, mais la cible active plus vite. Touchez d abord la plus petite. Si une cible disparaît, le combo est remis à zéro et 1 seconde est retirée.',
       },
     },
     {
@@ -169,7 +168,7 @@ const faqSchema = {
       name: 'Comment sont calculés les scores et les grades ?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Le système compile le taux de précision au clic, la proportion de tirs plein centre, la série de combo et le temps d acquisition pour attribuer un rang de D à S+.',
+        text: 'Chaque touche rapporte des points de base (100, ou 200 dans le centre de 8 px) × le combo (jusqu à 3,0x) × un bonus de niveau, plus 2 secondes (max. 60). Un clic raté ou une cible expirée coûte 1 seconde et le combo. Le rang dépend uniquement du score final ; aucun temps d acquisition n est mesuré.',
       },
     },
     {
@@ -177,7 +176,7 @@ const faqSchema = {
       name: 'Quels réglages matériels optimisent la vitesse de flick ?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Un écran 144 Hz ou plus, la désactivation de l accélération Windows et une souris légère (moins de 65 g) pour diminuer l inertie physique.',
+        text: 'Un écran à haute fréquence, l option Windows « Améliorer la précision du pointeur » désactivée et une souris légère. Ce test mesure la précision de vos clics, pas ce réglage Windows.',
       },
     },
     {
@@ -185,7 +184,7 @@ const faqSchema = {
       name: 'Combien de temps faut-il s entraîner par jour ?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Une session de 10 à 15 minutes en pré-échauffement stimule les synapses motrices sans risquer de tendinite ou de fatigue du poignet.',
+        text: 'Quelques parties en échauffement avant de jouer suffisent. Faites une pause en cas de gêne au poignet et comparez-vous surtout à vos propres parties.',
       },
     },
   ],
@@ -234,41 +233,38 @@ const guideProps = {
   intro: {
     title: 'Biomécanique des Micro-Flicks Balistiques et Optimisation des Mouvements',
     paragraphs: [
-      'Dans le tir compétitif et les interactions homme-machine, le flick shot est un mouvement manuel rapide et discontinu produit sous contrainte temporelle extrême. Robert S. Woodworth (1899) a mis en évidence le fait que les actions orientées vers un but obéissent à un contrôle en deux étapes : une impulsion balistique initiale qui projette le membre vers la cible, suivie d une phase de contrôle continu visuel pour ajuster la position terminale.',
-      'Dans leur modèle théorique majeur (Stochastic Optimized Submovement Model), David E. Meyer et al. (1988) ont démontré que la commande motrice humaine est sujette à un bruit neuronal proportionnel à la vitesse. Une accélération excessive élargit la dispersion finale. Si le premier élan manque la zone cible, un sous-mouvement correctif secondaire (latence de 150 à 200 ms) est inévitable.',
+      'Ce test de précision souris vous demande de toucher des cibles qui rétrécissent, au plus près de leur centre. Dans le tir compétitif et les interactions homme-machine, le flick shot est un mouvement manuel rapide et discontinu produit sous contrainte temporelle extrême. Robert S. Woodworth (1899) a mis en évidence le fait que les actions orientées vers un but obéissent à un contrôle en deux étapes : une impulsion balistique initiale qui projette le membre vers la cible, suivie d une phase de contrôle continu visuel pour ajuster la position terminale.',
+      'Dans leur modèle théorique majeur (Stochastic Optimized Submovement Model), David E. Meyer et al. (1988) ont démontré que la commande motrice humaine est sujette à un bruit neuronal proportionnel à la vitesse. Une accélération excessive élargit la dispersion finale. Si le premier élan manque la zone cible, un sous-mouvement correctif supplémentaire est nécessaire et coûte du temps.',
       'Pour maximiser l efficacité de visée (MacKenzie, 1992), les tireurs doivent ajuster la vitesse de l impulsion principale afin que la trajectoire atteigne directement la cible. La bonification des impacts plein centre (bulls-eye) conditionne le système nerveux à réduire la dispersion et à perfectionner le freinage antagoniste.',
       'Le compromis distance-taille répond à la loi de Fitts (Fitts, 1954), avec des éclairages biomécaniques récents issus des travaux d Elliott et al. (2010).',
-      'Précision de mesure du navigateur : Les temps sont relevés avec performance.now(). Le rafraîchissement d écran (16,7 ms à 60 Hz, 6,9 ms à 144 Hz) et la fréquence de scrutation de la souris quantifient les données (Woods et al., 2015). Vos performances sont conservées localement dans votre navigateur.',
+      'Déroulement : départ à 45 secondes, +2 secondes par touche (max. 60), -1 seconde par clic raté ou cible expirée. Une souris et le verrouillage du pointeur sont requis ; les appareils uniquement tactiles ne sont pas pris en charge. La fréquence d écran et de scrutation influencent la sensation (Woods et al., 2015). Vos performances restent dans votre navigateur.',
     ],
   },
   benchmarks: {
-    title: 'Niveaux de Performance en Flick Shot et Précision Souris',
-    caption: 'Échelle d évaluation inspirée des études de Woodworth (1899) et Meyer et al. (1988). SkillDrills n effectue aucune collecte externe de données.',
-    headers: ['Palier (Tier)', 'Classification', 'Niveau et Combo', 'Latence Moyenne', 'Précision au Clic', 'Ratio Plein Centre', 'Profil Neuromoteur'],
+    title: 'Paliers d\'entraînement du test de précision souris (SkillDrills)',
+    caption: 'Paliers d\'entraînement SkillDrills : ni normes scientifiques ni statistiques d\'utilisateurs, mais des repères fixés par l\'auteur du drill pour lire votre niveau, combo, précision de clic et ratio plein centre. SkillDrills n\'effectue aucune collecte externe de données.',
+    headers: ['Palier (Tier)', 'Classification', 'Niveau et Combo', 'Précision au Clic', 'Ratio Plein Centre', 'Profil de jeu'],
     rows: [
       [
         'Tier 1',
         'Maître du Flick Apex',
         'Nv. 15+ (Combo > 20x)',
-        '< 340 ms',
         '≥ 96,0%',
         '> 65%',
-        'Trajectoires balistiques pures à impulsion unique, absence de mouvements secondaires, freinage < 10 ms.',
+        'Un seul flick arrive au centre, presque aucune correction.',
       ],
       [
         'Tier 2',
         'Tireur d Élite',
         'Nv. 11–14 (Combo 14–19x)',
-        '340–420 ms',
         '91,0%–95,9%',
         '45%–64%',
-        'Contrôle fovéal percutant, micro-ajustement sous 30 ms, dérive de trajectoire négligeable.',
+        'Centre bien visé, micro-ajustements courts.',
       ],
       [
         'Tier 3',
         'Tireur Confirmé',
         'Nv. 7–10 (Combo 8–13x)',
-        '421–520 ms',
         '84,0%–90,9%',
         '25%–44%',
         'Impacts fréquents en périphérie, légers dépassements lors des enchaînements rapides de cibles.',
@@ -277,7 +273,6 @@ const guideProps = {
         'Tier 4',
         'Fragger en Progression',
         'Nv. 4–6 (Combo 4–7x)',
-        '521–660 ms',
         '74,0%–83,9%',
         '10%–24%',
         'Corrections saccadées, dispersion accrue par suraccélération, hésitation avant le tir.',
@@ -286,10 +281,9 @@ const guideProps = {
         'Tier 5',
         'Base / Novice',
         'Nv. 1–3 (Combo < 4x)',
-        '> 660 ms',
         '< 74,0%',
         '< 10%',
-        'Flicks trop courts, tirs manqués réguliers, réacquisition lente, coordination poignet-bras instable.',
+        'Flicks trop courts, tirs manqués fréquents.',
       ],
     ],
   },
@@ -324,8 +318,8 @@ const guideProps = {
 };
 
 const copyFr = {
-  title: "Flick Shot de Précision – Test de Visée et Précision Souris",
-  subtitle: "Précision du flick · tirs au centre",
+  title: "Test de précision souris : flicks au centre de la cible",
+  subtitle: "Deux cibles qui rétrécissent · le centre vaut double · +2 s par touche",
   startButtonText: "DÉMARRER LE DRILL",
   playAgainText: "Rejouer",
   shareText: "Partager le score",
@@ -336,10 +330,10 @@ const copyFr = {
   peakLevelLabel: "Niveau Max",
   rulesTitle: "Instructions du Drill & Système de Score",
   rulesItems: [
-    { num: "1", text: "Tir Plein Centre", highlight: "+200 PTS / +0,6s", result: "Précision millimétrique du noyau" },
-    { num: "2", text: "Tir Standard", highlight: "+100 PTS / +0,6s", result: "Acquisition périphérique rapide" },
+    { num: "1", text: "Tir Plein Centre", highlight: "+200 PTS / +2s (max. 60s)", result: "Précision millimétrique du noyau" },
+    { num: "2", text: "Tir Standard", highlight: "+100 PTS / +2s (max. 60s)", result: "Acquisition périphérique rapide" },
     { num: "3", text: "Progression de Niveau", highlight: "+1 Niveau / 1400 PTS", result: "Les cibles rétrécissent et expirent plus vite" },
-    { num: "4", text: "Tir Manqué / Expiration", highlight: "Combo réinitialisé", result: "Pénalité de temps : -0,8s" }
+    { num: "4", text: "Tir Manqué / Expiration", highlight: "Combo réinitialisé", result: "Pénalité de temps : -1s" }
   ],
 };
 

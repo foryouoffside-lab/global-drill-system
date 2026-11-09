@@ -6,28 +6,25 @@ import { getLocalizedDrill } from '@/lib/i18n/drillNames';
 const motorDrills = DRILLS.filter((d) => d.category === 'motor');
 
 export const metadata = {
-  title: 'Precisión del ratón y puntería | SkillDrills',
-  description: '9 ejercicios gratis en el navegador para precisión del ratón, puntería, CPS, velocidad del teclado y coordinación mano-ojo.',
+  title: 'Ejercicios de ratón: precisión, clics y control | SkillDrills',
+  description: '8 ejercicios de ratón gratis en el navegador: objetivos móviles, clics al centro, test de CPS, arrastrar y soltar, pulso firme, seguimiento y teclado.',
   keywords: [
-    'test de precisión del ratón', 'entrenamiento de puntería', 'test CPS', 'coordinación mano-ojo',
-    'velocidad del teclado', 'control del cursor', 'entrenador de puntería gratis',
-    'precisión del ratón', 'clics por segundo', 'ejercicios de coordinación motora',
-    'entrenamiento de mano firme', 'test de seguimiento del ratón', 'puntería FPS',
-    'velocidad de escritura', 'ejercicios motores gratis'
+    'ejercicios de ratón', 'ejercicios de ratón online', 'ejercicios de mouse', 'practicar ratón',
+    'precisión del ratón', 'coordinación mano-ojo', 'control del cursor', 'ejercicios motores gratis'
   ],
   openGraph: {
-    title: 'Precisión del ratón y puntería | SkillDrills',
-    description: '9 ejercicios gratis en el navegador para precisión del ratón, puntería, CPS, velocidad del teclado y coordinación mano-ojo.',
+    title: 'Ejercicios de ratón: precisión, clics y control | SkillDrills',
+    description: '8 ejercicios de ratón gratis en el navegador: objetivos móviles, clics al centro, test de CPS, arrastrar y soltar, pulso firme, seguimiento y teclado.',
     type: 'website',
     url: 'https://skilldrills.online/es/drills/motor',
     siteName: 'SkillDrills',
     locale: 'es_ES',
-    images: [{ url: 'https://skilldrills.online/icons/icon-512x512.png', width: 512, height: 512, alt: 'Precisión de Ratón y Entrenamiento Motor en SkillDrills' }],
+    images: [{ url: 'https://skilldrills.online/icons/icon-512x512.png', width: 512, height: 512, alt: 'Ejercicios de ratón en SkillDrills' }],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Precisión del ratón y puntería | SkillDrills',
-    description: '9 ejercicios gratis en el navegador para precisión del ratón, puntería, CPS, velocidad del teclado y coordinación mano-ojo.',
+    title: 'Ejercicios de ratón: precisión, clics y control | SkillDrills',
+    description: '8 ejercicios de ratón gratis en el navegador: objetivos móviles, clics al centro, test de CPS, arrastrar y soltar, pulso firme, seguimiento y teclado.',
     images: ['https://skilldrills.online/icons/icon-512x512.png'],
   },
   robots: { index: true, follow: true },
@@ -51,10 +48,10 @@ const collectionSchema = {
   "@context": "https://schema.org",
   "@type": "CollectionPage",
   "inLanguage": "es-ES",
-  "dateModified": "2026-09-20",
-  "name": "Test de precisión del ratón y entrenamiento de puntería (9 ejercicios)",
+  "dateModified": "2026-11-09",
+  "name": "Ejercicios de ratón: precisión, clics y control (8 ejercicios)",
   "url": "https://skilldrills.online/es/drills/motor",
-  "description": "9 ejercicios gratis en el navegador para precisión del ratón, puntería, CPS, velocidad del teclado y coordinación mano-ojo.",
+  "description": "8 ejercicios de ratón gratis en el navegador: objetivos móviles, clics al centro, test de CPS, arrastrar y soltar, pulso firme, seguimiento y teclado.",
   "author": { "@type": "Organization", "name": "SkillDrills" },
   "hasPart": motorDrills.map((drill) => {
     const loc = getLocalizedDrill(drill.href, 'es', drill.name);
@@ -70,77 +67,27 @@ const collectionSchema = {
   })
 };
 
+const faqs = [
+  { q: "¿Qué son estos ejercicios de ratón y qué entrenan?", a: "Son 8 ejercicios de ratón gratis en el navegador: clicar objetivos en movimiento (Aim Trainer), acertar el centro de la diana, clicar objetivos en orden, arrastrar y soltar, un test de CPS de 45 segundos, pulso firme por un pasillo estrecho, seguir un punto en movimiento y reaccionar a las teclas que aparecen en pantalla. Entrenan la coordinación mano-ojo y el control del cursor; la mejora varía según la persona." },
+  { q: "¿Cuál es el promedio de CPS (clics por segundo) y qué técnicas de clic existen?", a: "No hay un promedio oficial: el CPS depende mucho del ratón, la técnica y la duración de la prueba. Las técnicas habituales son el clic normal, el jitter clicking (tensar el antebrazo para que el dedo vibre) y el butterfly clicking (alternar dos dedos). El test de CPS de SkillDrills cuenta los clics del ratón durante 45 segundos y muestra tu promedio; compáralo con tus propios resultados en el mismo equipo." },
+  { q: "¿Ayudan los ejercicios de pulso firme y seguimiento contra el temblor del ratón?", a: "Ambos exigen mantener el cursor en un espacio reducido: en el pasillo, tocar la pared te devuelve al inicio; en el seguimiento debes acompañar un punto en movimiento a lo largo de un recorrido. Es práctica de control del cursor; no se garantiza ningún efecto sobre el temblor." },
+  { q: "¿Qué establece la Ley de Fitts sobre velocidad y precisión?", a: "La Ley de Fitts describe el tiempo de movimiento como función logarítmica de la distancia y el ancho del objetivo (MT = a + b * log2(2D/W)). Los movimientos de apuntado suelen dividirse en una fase balística rápida y una fase final de corrección visual; cuanto más pequeño el objetivo, más pesa la corrección." },
+  { q: "¿El ejercicio de teclado mide la velocidad de escritura?", a: "No. En pantalla aparecen teclas (letras, números, símbolos, flechas) que debes pulsar lo más rápido y correctamente posible durante 60 segundos, ignorando los avisos falsos. No mide palabras por minuto ni es un probador de teclado para detectar teclas defectuosas." },
+  { q: "¿Qué precisión tienen las mediciones de ratón y teclado en el navegador?", a: "SkillDrills usa performance.now(), cuya resolución el navegador redondea por seguridad. La tasa de refresco del monitor (p. ej., ~4,1 ms a 240 Hz) y el polling rate del periférico (1 ms a 1000 Hz) también limitan la medición. Sirve para comparar tus propios resultados en el mismo equipo, no para diagnósticos de hardware." },
+  { q: "¿Cómo influyen el DPI, la sensibilidad y el eDPI?", a: "El eDPI (DPI por sensibilidad) determina cuánto se mueve el cursor por cada movimiento de la mano. Valores altos permiten recorridos rápidos pero hacen más visible el temblor; valores bajos son más estables pero exigen más movimiento del brazo. Para comparar resultados, mantén la misma configuración." },
+  { q: "¿Puedo comprobar aquí el chattering o el ghosting del teclado?", a: "No. El chattering (una pulsación registrada varias veces) y el ghosting (teclas no pulsadas que se activan o pulsaciones simultáneas que se pierden) son fallos de hardware que requieren un probador de teclado específico. El ejercicio de teclado de SkillDrills solo mide tu reacción a las teclas mostradas." },
+];
+
 const faqSchema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
   "inLanguage": "es-ES",
-  "dateModified": "2026-09-20",
-  "mainEntity": [
-    {
-      "@type": "Question",
-      "name": "¿Cómo mejoran los ejercicios motores online la coordinación óculo-manual (mano-ojo)?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Los ejercicios motores fortalecen el bucle de retroalimentación sensoriomotor entre la detección retiniana en la corteza visual, la planificación del movimiento en el cerebelo y la transmisión sináptica a través de la corteza motora primaria hacia los músculos de la mano. Las microcorrecciones de alta frecuencia y el ajuste continuo del cursor minimizan la latencia neuromuscular, permitiendo ejecutar acciones motoras de alta precisión en menos de 180 ms."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "¿Cuál es el promedio normal de CPS (clics por segundo) y qué técnicas de cliqueo existen?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Con la técnica estándar de golpeo con un solo dedo, el promedio poblacional se sitúa entre 6 y 8 CPS. En el ámbito competitivo y los eSports se emplean técnicas avanzadas: Jitter Clicking (vibración controlada de los músculos del antebrazo, 10–14 CPS) y Butterfly Clicking (golpeo alterno con dos dedos sobre el pulsador, 15–22 CPS). Para prevenir lesiones por esfuerzo repetitivo (tendinitis), se recomienda priorizar la relajación muscular y un ritmo cadencioso sostenido."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "¿Cómo ayudan el trazado de trayectorias y los ejercicios de pulso firme a eliminar el temblor del ratón?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "El sobrepasamiento del objetivo (overshooting) y las microvibraciones erráticas se deben a una capacidad de frenado insuficiente en los grupos musculares antagonistas. Desplazarse por pasillos estrechos y trazar curvas sinusoidales obliga a estabilizar el cursor a nivel subpíxel, fortaleciendo las fibras musculares estabilizadoras de muñeca y antebrazo para suprimir temblores involuntarios."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "¿Qué establece la Ley de Fitts y cómo optimiza la relación entre velocidad y puntería?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "La Ley de Fitts es un principio ergonómico fundamental que postula que el tiempo necesario para alcanzar un objetivo depende logarítmicamente de la distancia y del ancho del blanco (MT = a + b * log2(2D/W)). Una puntería de élite combina una fase balística inicial rápida (cubriendo el 80–90 % de la trayectoria) con una fase final de desaceleración y microajuste visual guiado para posarse exactamente en el centro sin perder cadencia."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "¿Por qué es fundamental la independencia digital de los dedos para la velocidad en el teclado?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Anatómicamente, el dedo anular y el meñique comparten conexiones tendinosas en los flexores profundos, lo que dificulta su articulación autónoma. El entrenamiento de velocidad y reconocimiento de teclas segrega los patrones motores corticales en el cerebro, reduciendo la latencia de transición interdigital y evitando bloqueos o pulsaciones fantasmas en situaciones de alta tasa de acciones por minuto (APM)."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "¿Qué nivel de precisión ofrecen los tests de ratón y teclado ejecutados en el navegador?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "SkillDrills emplea la API estándar de alta resolución performance.now(), que ofrece una precisión temporal de hasta 0,1 milisegundos. Los límites físicos de la medición quedan determinados por la tasa de refresco del monitor (p. ej., ~4,1 ms a 240 Hz) y la tasa de sondeo (polling rate) del periférico (1 ms a 1000 Hz), proporcionando una exactitud idéntica a la de un laboratorio de biomecánica."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "¿Cómo influyen el DPI, la sensibilidad del juego y el eDPI en el control neuromuscular?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "El eDPI (DPI del sensor multiplicado por la sensibilidad en el juego) determina la proporción de unidades motoras reclutadas entre la musculatura fina (dedos y muñeca) y la gruesa (antebrazo y hombro). Una sensibilidad alta permite giros veloces pero amplifica el temblor, mientras que una sensibilidad baja aporta mayor consistencia balística. Mantener un eDPI uniforme es crucial para que el cerebelo consolide mapas motores fiables."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "¿Qué impacto tienen el chattering y el ghosting del teclado en el rendimiento del jugador?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "El chattering es un fallo de rebote en los contactos de los interruptores mecánicos que genera dobles pulsaciones involuntarias, mientras que el ghosting surge por interferencias en la matriz del circuito impreso que anulan pulsaciones múltiples o registran teclas no deseadas. Nuestro test de teclado evalúa el N-Key Rollover (NKRO) y la estabilidad de contacto en tiempo real para descartar cuellos de botella de hardware."
-      }
-    }
-  ]
+  "dateModified": "2026-11-09",
+  "mainEntity": faqs.map((f) => ({
+    "@type": "Question",
+    "name": f.q,
+    "acceptedAnswer": { "@type": "Answer", "text": f.a }
+  }))
 };
 
 export default function SpanishMotorHubPage() {

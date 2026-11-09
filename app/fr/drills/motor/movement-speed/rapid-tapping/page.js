@@ -7,14 +7,15 @@ import { pickSources } from '@/lib/drillSources';
 
 export const metadata = {
   title: 'Test CPS en ligne : clics par seconde | SkillDrills',
-  description: 'Test CPS gratuit : comptez vos clics par seconde sur 45 s dans le navigateur, avec CPS moyen, pic de 5 s et endurance. Sans inscription.',
+  description: 'Test CPS gratuit (CPS test) : ce test de clic et compteur de clic mesure vos clics par seconde sur 45 s dans le navigateur, avec CPS moyen et en direct.',
   keywords: [
     'test CPS',
-    'test de vitesse de clic',
+    'CPS test',
+    'test de clic',
+    'compteur de clic',
     'clics par seconde',
     'test de clic souris',
     'vitesse de clic',
-    'compteur de clics',
     'jitter click',
     'butterfly click',
     'CPS Minecraft',
@@ -61,10 +62,10 @@ const softwareApplicationSchema = {
   applicationCategory: 'HealthApplication',
   operatingSystem: 'All',
   offers: { '@type': 'Offer', price: '0', priceCurrency: 'EUR' },
-  description: 'Test de CPS en ligne gratuit. Évaluez votre fréquence de clics par seconde (CPS), votre endurance musculaire et vos pics d’accélération sur 45 secondes.',
+  description: 'Test de CPS en ligne gratuit. Mesurez vos clics par seconde (CPS) et votre endurance de clic sur 45 secondes.',
   url: 'https://skilldrills.online/fr/drills/motor/movement-speed/rapid-tapping',
   publisher: { '@type': 'Organization', name: 'SkillDrills', url: 'https://skilldrills.online' },
-  dateModified: '2026-09-20',
+  dateModified: '2026-11-09',
 };
 
 const webApplicationSchema = {
@@ -77,7 +78,7 @@ const webApplicationSchema = {
   browserRequirements: 'Nécessite le support HTML5 Canvas et JavaScript',
   offers: { '@type': 'Offer', price: '0', priceCurrency: 'EUR' },
   url: 'https://skilldrills.online/fr/drills/motor/movement-speed/rapid-tapping',
-  dateModified: '2026-09-20',
+  dateModified: '2026-11-09',
 };
 
 const videoGameSchema = {
@@ -97,14 +98,14 @@ const faqSchema = {
   '@context': 'https://schema.org',
   '@type': 'FAQPage',
   inLanguage: 'fr-FR',
-  dateModified: '2026-09-20',
+  dateModified: '2026-11-09',
   mainEntity: [
     {
       '@type': 'Question',
       name: 'Qu’est-ce qu’un test de CPS (clics par seconde) ?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Un test de CPS mesure le nombre de clics de souris effectués en une seconde. Il évalue la fréquence d’activation des unités motrices, la rapidité neuromusculaire et l’endurance des fléchisseurs de l’avant-bras.',
+        text: 'Un test de CPS (CPS test) mesure le nombre de clics de souris effectués en une seconde. Ici, vous cliquez 45 secondes sur la boule au centre ; seuls les clics sur la boule comptent, et votre CPS moyen est le total de clics divisé par les secondes écoulées.',
       },
     },
     {
@@ -112,7 +113,7 @@ const faqSchema = {
       name: 'Quel est le score de CPS moyen pour un joueur ?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Avec un seul doigt régulier, un utilisateur adulte standard atteint 6 à 8 CPS. Les joueurs expérimentés oscillent entre 9 et 12 CPS, tandis que les adeptes du jitter ou butterfly clicking dépassent régulièrement les 15 à 20 CPS.',
+        text: 'Il n’existe pas de statistique officielle ; à titre indicatif, le clic à un doigt se situe vers 5 à 7 CPS, et les joueurs entraînés atteignent 8 à 10 CPS. Le jitter clicking permet souvent 12 CPS et plus, le butterfly clicking 16 CPS et plus.',
       },
     },
     {
@@ -173,10 +174,10 @@ const faqSchema = {
     },
     {
       '@type': 'Question',
-      name: 'Comment le score de pic (Burst CPS) est-il mesuré ?',
+      name: 'Comment le CPS est-il calculé dans ce test de clic ?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Le pic de burst correspond à la meilleure fenêtre glissante de 5 secondes enregistrée durant la session, reflétant votre potentiel neuromoteur maximal avant fatigue.',
+        text: 'Le CPS moyen correspond aux clics sur la boule divisés par les secondes écoulées. Le compteur en direct affiche les clics des 2 dernières secondes divisés par 2, et « Meilleur CPS » reprend votre meilleure moyenne enregistrée dans ce navigateur. Chaque clic agrandit la boule, 10 clics donnent 1 point et la boule rétrécit plus vite tous les 5 points ; seuls la souris et le tactile comptent, pas le clavier.',
       },
     },
   ],
@@ -186,7 +187,7 @@ const howToSchema = {
   '@context': 'https://schema.org',
   '@type': 'HowTo',
   inLanguage: 'fr-FR',
-  dateModified: '2026-09-20',
+  dateModified: '2026-11-09',
   name: 'Comment Développer sa Vitesse de Clic (CPS) et son Endurance',
   description: 'Guide méthodologique pour augmenter votre cadence de frappe et maîtriser les techniques de clic avancées.',
   step: [
@@ -201,7 +202,7 @@ const howToSchema = {
       '@type': 'HowToStep',
       position: 2,
       name: 'Lancer la Première Salve de Clics',
-      text: 'Cliquez dans la zone centrale pour amorcer le compte à rebours et amorcez immédiatement votre cadence de pointe.',
+      text: 'Lancez l’exercice avec le bouton de démarrage, puis cliquez sur la boule centrale dès la fin du compte à rebours.',
       url: 'https://skilldrills.online/fr/drills/motor/movement-speed/rapid-tapping#step-2',
     },
     {
@@ -215,7 +216,7 @@ const howToSchema = {
       '@type': 'HowToStep',
       position: 4,
       name: 'Analyser le Rapport de Performance et d’Endurance',
-      text: 'Consultez votre CPS global, votre pic de burst sur 5 secondes et la courbe d’endurance sur le tableau final.',
+      text: 'Consultez sur le tableau final votre CPS moyen, vos clics totaux, votre score, la vitesse de rétrécissement atteinte et votre meilleur CPS.',
       url: 'https://skilldrills.online/fr/drills/motor/movement-speed/rapid-tapping#step-4',
     },
   ],
@@ -226,15 +227,15 @@ const guideProps = {
   intro: {
     title: 'Fondements Physiologiques de la Fréquence de Clic',
     paragraphs: [
-      'Un test CPS compte vos clics de souris par seconde. Ici, la mesure dure 45 secondes et donne votre CPS moyen, votre pic sur 5 secondes et votre endurance. Avec un seul doigt, la cadence soutenue se situe autour de 5 à 7 clics par seconde chez l’adulte (Halstead, 1947 ; Todor & Kyprie, 1980).',
+      'Un test CPS compte vos clics de souris par seconde. Ici, ce compteur de clic mesure pendant 45 secondes et affiche votre CPS moyen ainsi que le CPS en direct sur les 2 dernières secondes. Avec un seul doigt, la cadence soutenue se situe autour de 5 à 7 clics par seconde chez l’adulte (Halstead, 1947 ; Todor & Kyprie, 1980).',
       'Les salves plus rapides relèvent de programmes moteurs en boucle ouverte (Keele, 1968).',
       'Facteurs de mesure : L’horloge interne performance.now() et la fréquence d’échantillonnage de la souris déterminent la résolution. Comparez toujours vos scores sur le même équipement.',
     ],
   },
   benchmark: {
-    title: 'Tableau des Niveaux de CPS et Baremage Officiel',
-    description: 'Paliers éditoriaux de pratique pour comparer vos propres séances ; ce ne sont pas des statistiques de population ni des normes cliniques. Baremage basé sur la fréquence moyenne de clics par seconde, le pic de salve sur 5 secondes et la technique mobilisée.',
-    columns: ['Tier', 'Rang', 'CPS Moyen', 'Pic de Burst (5s)', 'Technique Mobilisée', 'Catégorie'],
+    title: 'Paliers de pratique CPS (SkillDrills)',
+    description: 'Paliers de pratique définis par SkillDrills pour comparer vos propres séances ; ce ne sont ni des normes de recherche ni des données d’utilisateurs.',
+    columns: ['Tier', 'Rang', 'CPS Moyen', 'CPS en direct (2 s)', 'Technique Mobilisée', 'Catégorie'],
     rows: [
       {
         tier: 'Tier 1',
@@ -311,7 +312,7 @@ const guideProps = {
 
 const frCopy = {
   title: "Test CPS en ligne",
-  subtitle: "Comptez vos clics par seconde pendant 45 secondes",
+  subtitle: "CPS test et compteur de clic : vos clics par seconde sur 45 secondes",
   desc: "Un test de CPS mesure le nombre de clics par seconde réalisables avec une souris. Le clic standard à un doigt atteint environ 5 à 7 clics par seconde (norme de tapping de Halstead, 50–55 frappes/10s). Les scores supérieurs reposent sur des techniques avancées comme le jitter clicking ou le butterfly clicking.",
   score: "Score",
   timeLeft: "Temps Restant",
@@ -326,7 +327,7 @@ const frCopy = {
   avgCps: "CPS Moyen",
   totalClicks: "Clics Totaux",
   maxDifficulty: "Difficulté Max",
-  peakCps: "Pic de CPS",
+  peakCps: "Meilleur CPS",
   newBest: "NOUVEAU RECORD",
   rulesTitle: "Instructions de l'Exercice et Système de Points",
   rulesItems: [

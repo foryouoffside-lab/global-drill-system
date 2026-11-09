@@ -11,16 +11,16 @@ import { pickSources } from '@/lib/drillSources';
 
 export const metadata = {
   title: 'Test de suivi souris | Tracé du curseur | SkillDrills',
-  description: 'Suivez une onde en mouvement avec le curseur pour entraîner le suivi fluide, la précision du tracé et la motricité fine. Gratuit dans le navigateur.',
+  description: 'Test de suivi souris gratuit : gardez le curseur 45 secondes sur une onde de plus en plus rapide et entraînez la précision du tracé et la motricité fine.',
   keywords: [
     'test de suivi de souris', 'suivre une ligne avec la souris', 'jeu de tracé souris',
     'test de précision de tracé', 'suivi de curseur', 'motricité fine souris',
-    'entraînement poursuite oculaire fluide', 'stabilité du tracé', 'jeu suivre la ligne',
-    'tracking souris entraînement', 'coordination visuo-motrice', 'fluidité du mouvement souris',
+    'test de suivi souris', 'stabilité du tracé', 'jeu suivre la ligne',
+    'coordination visuo-motrice', 'fluidité du mouvement souris',
   ],
   openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
     title: 'Test de suivi souris | Tracé du curseur | SkillDrills',
-    description: 'Suivez une onde en mouvement avec le curseur pour entraîner le suivi fluide, la précision du tracé et la motricité fine. Gratuit dans le navigateur.',
+    description: 'Test de suivi souris gratuit : gardez le curseur 45 secondes sur une onde de plus en plus rapide et entraînez la précision du tracé et la motricité fine.',
     type: 'article',
     url: 'https://skilldrills.online/fr/drills/motor/precision-control/tracing',
     siteName: 'SkillDrills',
@@ -29,7 +29,7 @@ export const metadata = {
   twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: 'summary_large_image',
     title: 'Test de suivi souris | Tracé du curseur | SkillDrills',
-    description: 'Suivez une onde en mouvement avec le curseur pour entraîner le suivi fluide, la précision du tracé et la motricité fine. Gratuit dans le navigateur.',
+    description: 'Test de suivi souris gratuit : gardez le curseur 45 secondes sur une onde de plus en plus rapide et entraînez la précision du tracé et la motricité fine.',
   },
   robots: { index: true, follow: true },
   alternates: {
@@ -53,14 +53,14 @@ const softwareApplicationSchema = {
   '@context': 'https://schema.org',
   '@type': 'SoftwareApplication', "sameAs": ["https://en.wikipedia.org/wiki/Fine_motor_skill", "https://en.wikipedia.org/wiki/Hand%E2%80%93eye_coordination"],
   inLanguage: 'fr-FR',
-  name: 'Jeu de Tracé à la Souris – Test de Précision Motrice',
+  name: 'Test de suivi souris – Jeu de tracé',
   applicationCategory: 'HealthApplication',
   operatingSystem: 'All',
   offers: { '@type': 'Offer', price: '0', priceCurrency: 'EUR' },
-  description: 'Outil d\'évaluation interactif pour maintenir le curseur sur une onde sinusoïdale continue sans dévier.',
+  description: 'Test de suivi souris : maintenez le curseur sur une onde qui défile. Les points ne s\'accumulent que si le curseur reste à 22 pixels ou moins au-dessus ou au-dessous de la ligne.',
   url: 'https://skilldrills.online/fr/drills/motor/precision-control/tracing',
   publisher: { '@type': 'Organization', name: 'SkillDrills', url: 'https://skilldrills.online/fr' },
-  dateModified: '2026-09-20',
+  dateModified: '2026-11-09',
 };
 
 const webApplicationSchema = {
@@ -70,10 +70,10 @@ const webApplicationSchema = {
   name: 'Jeu de Poursuite Continue en Ligne',
   applicationCategory: 'GameApplication',
   operatingSystem: 'All',
-  browserRequirements: 'Navigateur moderne avec prise en charge HTML5 Canvas et Pointer Events',
+  browserRequirements: 'Navigateur moderne avec HTML5 Canvas et Pointer Lock API',
   offers: { '@type': 'Offer', price: '0', priceCurrency: 'EUR' },
   url: 'https://skilldrills.online/fr/drills/motor/precision-control/tracing',
-  dateModified: '2026-09-20',
+  dateModified: '2026-11-09',
 };
 
 const videoGameSchema = {
@@ -82,26 +82,26 @@ const videoGameSchema = {
   inLanguage: 'fr-FR',
   name: 'Entraînement de Tracé et Fluidité Souris',
   url: 'https://skilldrills.online/fr/drills/motor/precision-control/tracing',
-  description: 'Jeu d\'adresse cinétique renforçant la poursuite visuo-motrice fluide et supprimant les saccades parasites.',
+  description: 'Jeu d\'adresse où l\'on garde le curseur sur une onde qui défile pendant 45 secondes.',
   genre: ['Precision Game', 'Action', 'Esports Training'],
   gamePlatform: ['Web Browser', 'Desktop', 'Mobile'],
   applicationCategory: 'Game',
   offers: { '@type': 'Offer', price: '0', priceCurrency: 'EUR' },
-  dateModified: '2026-09-20',
+  dateModified: '2026-11-09',
 };
 
 const faqSchema = {
   '@context': 'https://schema.org',
   '@type': 'FAQPage',
   inLanguage: 'fr-FR',
-  dateModified: '2026-09-20',
+  dateModified: '2026-11-09',
   mainEntity: [
     {
       '@type': 'Question',
-      name: 'Qu\'est-ce que le Jeu de Tracé à la Souris et que mesure-t-il ?',
+      name: 'Qu\'est-ce que ce test de suivi souris et comment marque-t-on des points ?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'C\'est un test neuromoteur interactif où l\'utilisateur doit maintenir son curseur sur une onde sinusoïdale en défilement continu dans un chenal de 22 pixels. Il évalue la stabilité manuelle, la vitesse de poursuite oculaire (smooth pursuit) et la régularité du guidage pendant 45 secondes.',
+        text: 'Vous gardez le curseur pendant 45 secondes sur une onde qui défile de droite à gauche. Tant que le curseur reste à 22 pixels ou moins de la ligne (au-dessus ou au-dessous), vous gagnez 1 point par image, +5 toutes les 4 secondes sans interruption, et +10 quand vous revenez sur la ligne après l\'avoir quittée.',
       },
     },
     {
@@ -117,7 +117,7 @@ const faqSchema = {
       name: 'Qu\'est-ce que l\'Intégrité de Flux (Flow Integrity) et comment est-elle notée ?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'L\'Intégrité de Flux mesure la constance du tracé en direct (0 à 100%). Elle progresse tant que le pointeur reste centré dans le chenal de 22 px et décroît progressivement lors des sorties de trajectoire.',
+        text: 'L\'Intégrité de Flux (0 à 100 %) démarre à 100 %. Elle monte de 15 % par seconde tant que le curseur est sur la ligne (±22 px), gagne 10 % à chaque bonus de 4 secondes et baisse de 25 % par seconde hors de la ligne. La note finale dépend de sa valeur à la fin de la séance. Sortir de la ligne ne retire aucun point déjà gagné.',
       },
     },
     {
@@ -125,7 +125,7 @@ const faqSchema = {
       name: 'Comment la vitesse et l\'amplitude augmentent-elles au fil des 45 secondes ?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Le test démarre à 2,2 px/image avec une amplitude de 90 px, puis grimpe à plus de 4,5 px/image avec des harmoniques atteignant 125 px, sollicitant une synchronisation neuromusculaire de plus en plus fine.',
+        text: 'L\'onde démarre à 2,2 px par image et accélère régulièrement jusqu\'à 3,8 px par image à 45 secondes. L\'amplitude principale passe de 90 à 125 px et une seconde ondulation passe de 8 à 32 px, ce qui rend la courbe plus haute et plus irrégulière.',
       },
     },
     {
@@ -149,7 +149,7 @@ const faqSchema = {
       name: 'Comment cet exercice favorise-t-il les performances dans les jeux FPS ?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Dans les jeux à temps d\'élimination long (TTK), il est crucial de garder le réticule collé sur un adversaire en mouvement. Cet exercice élimine les à-coups parasites, fluidifie le glissement du bras et facilite les inversions de sens.',
+        text: 'Dans les jeux à temps d\'élimination long (TTK), il faut garder le réticule sur un adversaire en mouvement. Cet exercice travaille un geste proche : glissement régulier du bras et inversions de sens. Le transfert en jeu varie selon les joueurs.',
       },
     },
     {
@@ -170,10 +170,10 @@ const faqSchema = {
     },
     {
       '@type': 'Question',
-      name: 'Peut-on s\'entraîner avec une tablette graphique ou un trackball ?',
+      name: 'Peut-on s\'entraîner avec un trackball ou un écran tactile ?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Oui. Grâce au protocole Pointer Events, les graphistes peuvent affûter la régularité du tracé au stylet sur tablette, tout comme les utilisateurs de trackballs de précision.',
+        text: 'Sur ordinateur, le test lit le mouvement de la souris via le verrouillage du pointeur (Pointer Lock) : souris et trackball fonctionnent. Sur un appareil uniquement tactile, on glisse le doigt. Les stylets de tablette graphique se comportent différemment selon le matériel.',
       },
     },
   ],
@@ -183,15 +183,15 @@ const howToSchema = {
   '@context': 'https://schema.org',
   '@type': 'HowTo',
   inLanguage: 'fr-FR',
-  dateModified: '2026-09-20',
+  dateModified: '2026-11-09',
   name: 'Comment s\'entraîner au tracé et au suivi continu à la souris',
-  description: 'Protocole structuré pour perfectionner la poursuite fluide et éliminer les saccades parasites.',
+  description: 'Protocole structuré pour rester plus longtemps sur l\'onde.',
   step: [
     {
       '@type': 'HowToStep',
       position: 1,
       name: 'Placer le curseur sur le point d\'origine',
-      text: 'Positionnez votre pointeur sur l\'amorce lumineuse de l\'onde avant le déclenchement du chronomètre.',
+      text: 'Après le compte à rebours de 3 secondes, le pointeur est verrouillé (au doigt sur écran tactile) et placé au quart gauche de l\'écran. Amenez-le aussitôt sur l\'onde. Échap quitte l\'exercice.',
       url: 'https://skilldrills.online/fr/drills/motor/precision-control/tracing#step-1'
     },
     {
@@ -212,7 +212,7 @@ const howToSchema = {
       '@type': 'HowToStep',
       position: 4,
       name: 'Consulter son score d\'Intégrité de Flux',
-      text: 'Analysez votre score de fluidité, votre temps passé sur la trajectoire et votre constance après 45 secondes.',
+      text: 'Après 45 secondes, consultez votre score, votre plus longue série d\'images sur la ligne et votre Intégrité de Flux en fin de séance.',
       url: 'https://skilldrills.online/fr/drills/motor/precision-control/tracing#step-4'
     },
   ],
@@ -223,59 +223,25 @@ const guideProps = {
   intro: {
     title: 'Comment le suivi continu est mesuré',
     paragraphs: [
+      'Ce test de suivi souris vous demande de garder le curseur sur une onde qui défile de droite à gauche pendant 45 secondes, en accélérant et en s\'amplifiant. Les points s\'accumulent image par image tant que vous restez sur la ligne.',
       'Fiabilité des mesures et contraintes matérielles : Le chronométrage repose sur l\'API performance.now() du navigateur (~1 ms pour des impératifs de sécurité). L\'affichage dépend du taux de rafraîchissement de l\'écran — ~16,7 ms à 60 Hz, ~6,9 ms à 144 Hz et ~4,1 ms à 240 Hz (Woods et al., 2015). Le taux de transfert de la souris introduit ~8 ms à 125 Hz contre ~1 ms à 1000 Hz. Tout écart inférieur à 5 ms relève du bruit de mesure. SkillDrills n\'enregistre aucune donnée sur des serveurs distants.',
     ],
   },
   benchmark: {
-    title: 'Barème de Référence en Tracé et Poursuite Fluide',
-    description: 'Paliers éditoriaux de pratique pour comparer vos propres séances ; ce ne sont pas des statistiques de population ni des normes cliniques. Grille d\'évaluation fondée sur les travaux de Krauzlis (2004) et Rashbass (1961). Analyse le score global, l\'intégrité maximale de flux et la séquence continue de maintien sur la courbe pendant 45 secondes.',
-    columns: ['Niveau', 'Titre de Rang', 'Score Global', 'Pic de Flux', 'Série d\'Images', 'Niveau de Maîtrise'],
+    title: 'Test de suivi souris : paliers de pratique SkillDrills',
+    description: 'Paliers de pratique SkillDrills, ni normes de recherche ni données d\'utilisateurs. Ils reprennent la note de l\'écran de résultat (Intégrité de Flux en fin de séance et score). Le score compte 1 point par image : un écran à fréquence plus élevée en donne davantage, comparez donc sur le même appareil.',
+    columns: ['Note', 'Titre de Rang', 'Flux en fin de séance', 'Condition de score', 'Palier'],
     rows: [
-      {
-        tier: 'Palier 1',
-        rank: 'Très avancé',
-        stat: '1400+ pts',
-        level: '95–100%',
-        accuracy: '600+ frames',
-        marker: 'Rythme très élevé et précis',
-      },
-      {
-        tier: 'Palier 2',
-        rank: 'Avancé',
-        stat: '1100–1399 pts',
-        level: '85–94%',
-        accuracy: '400–599 frames',
-        marker: 'Rythme élevé et régulier',
-      },
-      {
-        tier: 'Palier 3',
-        rank: 'Solide',
-        stat: '800–1099 pts',
-        level: '70–84%',
-        accuracy: '250–399 frames',
-        marker: 'Rythme stable avec quelques erreurs',
-      },
-      {
-        tier: 'Palier 4',
-        rank: 'En progression',
-        stat: '500–799 pts',
-        level: '50–69%',
-        accuracy: '120–249 frames',
-        marker: 'Rythme moyen avec marge de progression',
-      },
-      {
-        tier: 'Palier 5',
-        rank: 'Initial',
-        stat: 'Moins de 500 pts',
-        level: 'Moins de 50%',
-        accuracy: 'Moins de 120 frames',
-        marker: 'Point de départ',
-      },
+      { tier: 'S+', rank: 'Flux de grand maître', flow: '90 % ou plus', score: '1 400 points ou plus', band: 'Palier de pratique SkillDrills' },
+      { tier: 'S', rank: 'Flux maximal', flow: '80 % ou plus', score: '-', band: 'Palier de pratique SkillDrills' },
+      { tier: 'A', rank: 'Suivi verrouillé', flow: '60 % ou plus', score: '-', band: 'Palier de pratique SkillDrills' },
+      { tier: 'B', rank: 'Suivi régulier', flow: '35 % ou plus', score: '-', band: 'Palier de pratique SkillDrills' },
+      { tier: 'C', rank: 'Tracé terminé', flow: 'moins de 35 %', score: '-', band: 'Palier de pratique SkillDrills' },
     ],
   },
   protocols: {
     title: 'Protocoles d\'Entraînement pour le Suivi Continu',
-    description: 'Directives pour développer la poursuite oculaire fluide, supprimer les saccades imprévues et stabiliser le geste.',
+    description: 'Directives pour garder l\'onde des yeux et stabiliser le geste.',
     items: [
       {
         title: 'Protocole 1 : Fixation Anticipée et Poursuite Feedforward (Krauzlis 2004)',
@@ -308,6 +274,7 @@ const frCopy = {
   title: "Test de Suivi de Souris",
   subtitle: "Suivi continu • 45 s",
   startButtonText: "Démarrer l'Entraînement",
+  startBtn: "Démarrer l'Entraînement",
   trainAgain: "Recommencer",
   shareTitle: "Partager le Score",
   exitTitle: "Quitter",
@@ -316,14 +283,14 @@ const frCopy = {
   statFlowIntegrity: "Intégrité du Flux",
   statBestScore: "Meilleur Score",
   maxStreakLabel: "Série Max d'Images",
-  peakFlowLabel: "Pic d'État de Flux",
+  peakFlowLabel: "Flux en fin de séance",
   bestScoreLabel: "Record Personnel",
   rulesTitle: "Instructions de l'Exercice et Système de Points",
   rulesItems: [
     { num: "1", text: "Tracer la Trajectoire", highlight: "Onde Émeraude", result: "+1 PT / image sur la trajectoire" },
     { num: "2", text: "Vitesse Progressive", highlight: "Onde Dynamique", result: "2,2 → 3,8 px/img sur 45s" },
     { num: "3", text: "Intégrité du Flux", highlight: "Super Flux", result: "4s de verrouillage = +5 Bonus" },
-    { num: "4", text: "Suivi Précis", highlight: "Exclusif Bureau", result: "Souris sur ordinateur" }
+    { num: "4", text: "Sortie de ligne", highlight: "Tolérance ±22 px", result: "Série à 0, flux en baisse" }
   ],
 };
 

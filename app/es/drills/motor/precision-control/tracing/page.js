@@ -11,16 +11,16 @@ import { pickSources } from '@/lib/drillSources';
 
 export const metadata = {
   title: 'Test de seguimiento del ratón | Trazado | SkillDrills',
-  description: 'Sigue una onda en movimiento con el cursor y entrena seguimiento suave, precisión del trazado y control motor fino. Gratis en el navegador.',
+  description: 'Test de seguimiento del ratón gratis: mantén el cursor 45 segundos sobre una onda cada vez más rápida y entrena la precisión del trazado y el control motor.',
   keywords: [
     'test de seguimiento del ratón', 'seguir una línea con el ratón', 'juego de trazado con ratón',
     'prueba de trazado y precisión', 'seguimiento de cursor', 'control motor fino',
-    'entrenamiento de puntería suave', 'precisión del trazado', 'juego de seguir la línea',
-    'tracking ratón fps', 'coordinación visomotora', 'trazado de onda con ratón',
+    'seguir la ruta con el cursor', 'precisión del trazado', 'juego de seguir la línea',
+    'coordinación visomotora', 'trazado de onda con ratón',
   ],
   openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
     title: 'Test de seguimiento del ratón | Trazado | SkillDrills',
-    description: 'Sigue una onda en movimiento con el cursor y entrena seguimiento suave, precisión del trazado y control motor fino. Gratis en el navegador.',
+    description: 'Test de seguimiento del ratón gratis: mantén el cursor 45 segundos sobre una onda cada vez más rápida y entrena la precisión del trazado y el control motor.',
     type: 'article',
     url: 'https://skilldrills.online/es/drills/motor/precision-control/tracing',
     siteName: 'SkillDrills',
@@ -29,7 +29,7 @@ export const metadata = {
   twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: 'summary_large_image',
     title: 'Test de seguimiento del ratón | Trazado | SkillDrills',
-    description: 'Sigue una onda en movimiento con el cursor y entrena seguimiento suave, precisión del trazado y control motor fino. Gratis en el navegador.',
+    description: 'Test de seguimiento del ratón gratis: mantén el cursor 45 segundos sobre una onda cada vez más rápida y entrena la precisión del trazado y el control motor.',
   },
   robots: { index: true, follow: true },
   alternates: {
@@ -57,10 +57,10 @@ const softwareApplicationSchema = {
   applicationCategory: 'HealthApplication',
   operatingSystem: 'All',
   offers: { '@type': 'Offer', price: '0', priceCurrency: 'EUR' },
-  description: 'Herramienta interactiva de evaluación motora para guiar el cursor sobre una onda sinuosa en movimiento constante.',
+  description: 'Test de seguimiento del ratón: mantén el cursor sobre una onda que se desplaza. Los puntos solo suman mientras el cursor está a 22 píxeles o menos por encima o por debajo de la línea.',
   url: 'https://skilldrills.online/es/drills/motor/precision-control/tracing',
   publisher: { '@type': 'Organization', name: 'SkillDrills', url: 'https://skilldrills.online/es' },
-  dateModified: '2026-09-20',
+  dateModified: '2026-11-09',
 };
 
 const webApplicationSchema = {
@@ -70,10 +70,10 @@ const webApplicationSchema = {
   name: 'Juego de Seguimiento Continuo Online',
   applicationCategory: 'GameApplication',
   operatingSystem: 'All',
-  browserRequirements: 'Navegador moderno con soporte para HTML5 Canvas y Pointer Events',
+  browserRequirements: 'Navegador moderno con HTML5 Canvas y Pointer Lock API',
   offers: { '@type': 'Offer', price: '0', priceCurrency: 'EUR' },
   url: 'https://skilldrills.online/es/drills/motor/precision-control/tracing',
-  dateModified: '2026-09-20',
+  dateModified: '2026-11-09',
 };
 
 const videoGameSchema = {
@@ -82,26 +82,26 @@ const videoGameSchema = {
   inLanguage: 'es-ES',
   name: 'Entrenamiento de Trazado y Fluidez con Ratón',
   url: 'https://skilldrills.online/es/drills/motor/precision-control/tracing',
-  description: 'Juego de precisión cinética que potencia el seguimiento suave y suprime microtemblores involuntarios.',
+  description: 'Juego de precisión en el que mantienes el cursor sobre una onda en movimiento durante 45 segundos.',
   genre: ['Precision Game', 'Action', 'Esports Training'],
   gamePlatform: ['Web Browser', 'Desktop', 'Mobile'],
   applicationCategory: 'Game',
   offers: { '@type': 'Offer', price: '0', priceCurrency: 'EUR' },
-  dateModified: '2026-09-20',
+  dateModified: '2026-11-09',
 };
 
 const faqSchema = {
   '@context': 'https://schema.org',
   '@type': 'FAQPage',
   inLanguage: 'es-ES',
-  dateModified: '2026-09-20',
+  dateModified: '2026-11-09',
   mainEntity: [
     {
       '@type': 'Question',
-      name: '¿Qué es el Juego de Trazado con Ratón y qué evalúa?',
+      name: '¿Qué es este test de seguimiento del ratón y cómo se puntúa?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Es una prueba neuromotora interactiva en la que el usuario sigue con el cursor una onda senoidal en desplazamiento continuo dentro de un canal de 22 píxeles. Evalúa la estabilidad manual, la velocidad de seguimiento suave (smooth pursuit) y la rapidez de corrección durante 45 segundos.',
+        text: 'Mantienes el cursor durante 45 segundos sobre una onda que se desplaza de derecha a izquierda. Mientras el cursor esté a 22 píxeles o menos de la línea (por encima o por debajo), sumas 1 punto por fotograma, +5 cada 4 segundos sin interrupción y +10 al volver a la línea tras salirte.',
       },
     },
     {
@@ -117,7 +117,7 @@ const faqSchema = {
       name: '¿Qué es la Integridad de Flujo (Flow Integrity) y cómo se calcula?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'La Integridad de Flujo mide la regularidad del seguimiento en tiempo real (0–100%). Sube mientras el cursor se mantiene dentro del margen de 22 px y desciende gradualmente al salir de la trayectoria.',
+        text: 'La Integridad de Flujo (0–100 %) empieza en 100 %. Sube un 15 % por segundo mientras el cursor está en la línea (±22 px), gana un 10 % con cada bonus de 4 segundos y baja un 25 % por segundo fuera de la línea. La nota final depende de su valor al terminar la sesión. Salirte no resta puntos ya ganados.',
       },
     },
     {
@@ -125,7 +125,7 @@ const faqSchema = {
       name: '¿Cómo evolucionan la velocidad y la amplitud a lo largo del ejercicio?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'El test inicia a 2,2 px/fotograma con una amplitud de 90 px y progresa hasta 4,5+ px/fotograma con armónicos de hasta 125 px, exigiendo una coordinación neuromuscular superior a medida que transcurren los 45 segundos.',
+        text: 'La onda empieza a 2,2 px por fotograma y acelera de forma continua hasta 3,8 px por fotograma a los 45 segundos. La amplitud principal pasa de 90 a 125 px y una ondulación secundaria de 8 a 32 px, lo que hace la curva más alta e irregular.',
       },
     },
     {
@@ -149,7 +149,7 @@ const faqSchema = {
       name: '¿De qué manera beneficia este entrenamiento en videojuegos competitivos de disparos (FPS)?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Los títulos con tiempo de eliminación alto (TTK) requieren mantener la mira sobre rivales esquivos. Este ejercicio elimina tirones espasmódicos, suaviza el deslizamiento del antebrazo y perfecciona los cambios de sentido.',
+        text: 'Los títulos con tiempo de eliminación alto (TTK) requieren mantener la mira sobre rivales en movimiento. Este ejercicio practica un gesto parecido: deslizamiento regular del antebrazo y cambios de sentido. Cuánto se transfiere al juego varía según la persona.',
       },
     },
     {
@@ -170,10 +170,10 @@ const faqSchema = {
     },
     {
       '@type': 'Question',
-      name: '¿Se puede entrenar con tabletas gráficas o ratones trackball?',
+      name: '¿Se puede entrenar con trackball o pantalla táctil?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Sí. Al utilizar la API estándar de Pointer Events, los ilustradores pueden practicar la continuidad del trazo con lápiz digital en tabletas, al igual que los usuarios de trackballs de precisión.',
+        text: 'En ordenador el test lee el movimiento del ratón mediante Pointer Lock, así que funcionan ratón y trackball. En dispositivos solo táctiles se arrastra el dedo. Los lápices de tableta gráfica se comportan distinto según el equipo.',
       },
     },
   ],
@@ -183,15 +183,15 @@ const howToSchema = {
   '@context': 'https://schema.org',
   '@type': 'HowTo',
   inLanguage: 'es-ES',
-  dateModified: '2026-09-20',
+  dateModified: '2026-11-09',
   name: 'Cómo entrenar el trazado y el seguimiento continuo con ratón',
-  description: 'Protocolo metódico para perfeccionar el seguimiento suave y suprimir sacudidas del cursor.',
+  description: 'Protocolo metódico para mantenerte más tiempo sobre la onda.',
   step: [
     {
       '@type': 'HowToStep',
       position: 1,
       name: 'Situar el cursor en el punto inicial',
-      text: 'Coloca el puntero sobre el inicio iluminado de la onda antes de que se inicie el temporizador.',
+      text: 'Tras la cuenta atrás de 3 segundos, el puntero se bloquea (en táctil, usa el dedo) y aparece a un cuarto del ancho de la pantalla. Llévalo enseguida a la onda. Esc sale.',
       url: 'https://skilldrills.online/es/drills/motor/precision-control/tracing#step-1'
     },
     {
@@ -212,7 +212,7 @@ const howToSchema = {
       '@type': 'HowToStep',
       position: 4,
       name: 'Comprobar puntuación e Integridad de Flujo',
-      text: 'Revisa tu porcentaje de fluidez, tiempo dentro del canal y estabilidad al concluir los 45 segundos.',
+      text: 'Al acabar los 45 segundos, revisa tu puntuación, tu racha más larga de fotogramas en la línea y la Integridad de Flujo al final de la sesión.',
       url: 'https://skilldrills.online/es/drills/motor/precision-control/tracing#step-4'
     },
   ],
@@ -223,59 +223,25 @@ const guideProps = {
   intro: {
     title: 'Cómo se evalúa el seguimiento continuo',
     paragraphs: [
+      'Este test de seguimiento del ratón te pide mantener el cursor sobre una onda que avanza de derecha a izquierda durante 45 segundos, cada vez más rápida y más alta. Los puntos se acumulan fotograma a fotograma mientras sigas la ruta con el cursor.',
       'Precisión de la medición y consideraciones técnicas: El registro del tiempo proviene del reloj performance.now() del navegador (~1 ms por seguridad). La pantalla refresca las imágenes según su frecuencia nativa — unos 16,7 ms a 60 Hz, 6,9 ms a 144 Hz y 4,1 ms a 240 Hz (Woods et al., 2015). El muestreo del ratón aporta ~8 ms a 125 Hz frente a 1 ms a 1000 Hz. Variaciones menores a 5 ms representan ruido técnico. SkillDrills no almacena datos en servidores externos.',
     ],
   },
   benchmark: {
-    title: 'Baremos de Rendimiento en Trazado y Seguimiento Suave',
-    description: 'Etapas editoriales de práctica para comparar tus propias sesiones; no son estadísticas de población ni normas clínicas. Guía de referencia inspirada en Krauzlis (2004) y Rashbass (1961). Pondera la puntuación global, el pico de integridad de flujo y la racha máxima de fotogramas sin salirse del trazado en 45 segundos.',
-    columns: ['Categoría', 'Rango', 'Puntuación', 'Pico de Flujo', 'Racha de Fotogramas', 'Nivel Editorial'],
+    title: 'Test de seguimiento del ratón: niveles de práctica SkillDrills',
+    description: 'Niveles de práctica SkillDrills, no normas de investigación ni datos de usuarios. Siguen la nota de la pantalla de resultados (Integridad de Flujo al final de la sesión y puntuación). La puntuación es 1 punto por fotograma: los monitores con más hercios suman más, así que compara en el mismo dispositivo.',
+    columns: ['Nota', 'Rango', 'Flujo al final', 'Condición de puntos', 'Nivel'],
     rows: [
-      {
-        tier: 'Etapa 1',
-        rank: 'Muy avanzada',
-        stat: '1400+ pts',
-        level: '95–100%',
-        accuracy: '600+ frames',
-        marker: 'Ritmo muy alto con alta precisión',
-      },
-      {
-        tier: 'Etapa 2',
-        rank: 'Avanzada',
-        stat: '1100–1399 pts',
-        level: '85–94%',
-        accuracy: '400–599 frames',
-        marker: 'Ritmo alto y regular',
-      },
-      {
-        tier: 'Etapa 3',
-        rank: 'Sólida',
-        stat: '800–1099 pts',
-        level: '70–84%',
-        accuracy: '250–399 frames',
-        marker: 'Ritmo estable con algunos errores',
-      },
-      {
-        tier: 'Etapa 4',
-        rank: 'En desarrollo',
-        stat: '500–799 pts',
-        level: '50–69%',
-        accuracy: '120–249 frames',
-        marker: 'Ritmo medio con margen de mejora',
-      },
-      {
-        tier: 'Etapa 5',
-        rank: 'Inicial',
-        stat: 'Menos de 500 pts',
-        level: 'Menos de 50%',
-        accuracy: 'Menos de 120 frames',
-        marker: 'Punto de partida',
-      },
+      { tier: 'S+', rank: 'Flujo de gran maestro', flow: '90 % o más', score: '1.400 puntos o más', band: 'Nivel de práctica SkillDrills' },
+      { tier: 'S', rank: 'Flujo máximo', flow: '80 % o más', score: '-', band: 'Nivel de práctica SkillDrills' },
+      { tier: 'A', rank: 'Seguimiento fijado', flow: '60 % o más', score: '-', band: 'Nivel de práctica SkillDrills' },
+      { tier: 'B', rank: 'Seguimiento estable', flow: '35 % o más', score: '-', band: 'Nivel de práctica SkillDrills' },
+      { tier: 'C', rank: 'Trazado completado', flow: 'menos de 35 %', score: '-', band: 'Nivel de práctica SkillDrills' },
     ],
   },
   protocols: {
     title: 'Protocolos de Entrenamiento para Seguimiento Continuo',
-    description: 'Instrucciones para optimizar el seguimiento visual suave, reducir movimientos sacádicos imprevistos y asentar el pulso.',
+    description: 'Instrucciones para seguir la onda con la vista y asentar el pulso.',
     items: [
       {
         title: 'Protocolo 1: Enfoque Anticipado y Seguimiento Feedforward (Krauzlis 2004)',
@@ -308,6 +274,7 @@ const esCopy = {
   title: "Test de Seguimiento del Ratón",
   subtitle: "Seguimiento continuo • 45 s",
   startButtonText: "Comenzar Entrenamiento",
+  startBtn: "Comenzar Entrenamiento",
   trainAgain: "Entrenar de Nuevo",
   shareTitle: "Compartir Puntuación",
   exitTitle: "Salir",
@@ -316,14 +283,14 @@ const esCopy = {
   statFlowIntegrity: "Integridad de Flujo",
   statBestScore: "Mejor Puntuación",
   maxStreakLabel: "Racha Máxima de Frames",
-  peakFlowLabel: "Estado de Flujo Pico",
+  peakFlowLabel: "Flujo al Final de la Sesión",
   bestScoreLabel: "Récord Personal",
   rulesTitle: "Instrucciones del Ejercicio y Sistema de Puntos",
   rulesItems: [
     { num: "1", text: "Trazar Trayectoria", highlight: "Onda Esmeralda", result: "+1 PT / frame dentro de ruta" },
     { num: "2", text: "Velocidad Progresiva", highlight: "Onda Dinámica", result: "2.2 → 3.8 px/f en 45s" },
     { num: "3", text: "Integridad de Flujo", highlight: "Súper Flujo", result: "4s seguidos otorgan +5 Bonus" },
-    { num: "4", text: "Control Estricto", highlight: "Exclusivo de Escritorio", result: "Ratón en escritorio" }
+    { num: "4", text: "Salida de la línea", highlight: "Tolerancia ±22 px", result: "Racha a 0, el flujo baja" }
   ],
 };
 

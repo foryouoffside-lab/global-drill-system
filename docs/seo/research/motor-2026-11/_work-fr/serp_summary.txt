@@ -1,0 +1,25 @@
+## test cps  answers: 0
+   1 speedtest.net | Speedtest by Ookla - The Global Broadband Speed Test
+   2 speedtest.net | Speedtest d’Ookla – le test de vitesse de connexion global
+   3 fast.com | Internet Speed Test | Fast.com
+   4 en.wikipedia.org | Test - Wikipedia
+   5 speed.cloudflare.com | Internet Speed Test - Measure Network Performance | Cloudflare
+   6 fast.com | Test de vitesse Internet | Fast.com
+   7 nperf.com | Test de débit - Speed test : testez la vitesse de votre connexion ...
+   8 nperf.com | Internet Speed test : Test your broadband connection (speedtest ...
+   9 highspeedinternet.com | Internet Speed Test | Check Download & Upload Speeds
+   10 fr.wikipedia.org | Test — Wikipédia
+## test clavier  answers: 0
+   1 speedtest.net | Speedtest by Ookla - The Global Broadband Speed Test
+   2 speedtest.net | Speedtest d’Ookla – le test de vitesse de connexion global
+   3 fast.com | Internet Speed Test | Fast.com
+   4 en.wikipedia.org | Test - Wikipedia
+   5 speed.cloudflare.com | Internet Speed Test - Measure Network Performance | Cloudflare
+   6 fast.com | Test de vitesse Internet | Fast.com
+   7 nperf.com | Test de débit - Speed test : testez la vitesse de votre connexion ...
+   8 nperf.com | Internet Speed test : Test your broadband connection (speedtest ...
+   9 highspeedinternet.com | Internet Speed Test | Check Download & Upload Speeds
+   10 fr.wikipedia.org | Test — Wikipédia
+## jeu précision souris page.waitForSelector: Timeout 15000ms exceeded.
+Call log:
+[2m  - waiting for locator('#b_results li.b_algo') to be visi answers: 0

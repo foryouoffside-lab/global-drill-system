@@ -84,6 +84,7 @@ const UPDATED_OVERRIDES = {
   '/drills/visual-tracking/zig-zag-path-pursuit': '2026-09-20',
   '/drills/visual/tracking-accuracy/moving-target': '2026-09-20',
   '/drills/motor/movement-speed/rapid-tapping': '2026-08-25',
+  '/drills/motor/movement-speed/keyboard-tester': '2026-11-09',
   '/drills/motor/movement-speed/keyboard-recognition': '2026-08-25',
   '/drills/motor/hand-eye-coordination/precision-flick-shot': '2026-08-25',
   '/drills/cognitive/focus/distraction-fighter': '2026-08-25',

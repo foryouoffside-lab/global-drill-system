@@ -6,16 +6,15 @@ import RelatedDrills from '@/components/drill/RelatedDrills';
 import { pickSources } from '@/lib/drillSources';
 
 export const metadata = {
-  title: 'フリックエイム練習｜マウス精度テスト | SkillDrills',
-  description: '無料のブラウザ型エイム練習。フリック精度、ターゲット捕捉時間、着弾率を測定し、FPSの初弾エイムを鍛えます。',
+  title: 'マウス精度テスト｜的の中心を狙う精密フリック | SkillDrills',
+  description: '無料のマウス精度テスト。縮んでいく2つの的をフリックで撃ち、中心8pxのブルズアイは2倍得点。命中率・ブルズアイ数・到達レベルでマウス精度をチェックできます。',
   keywords: [
-    'フリックエイム練習', 'エイム練習', 'エイムテスト', 'マウス精度テスト',
-    'フリックショット練習', 'FPS エイム練習', '初弾命中テスト', 'ターゲット切り替え練習',
-    'フリック速度測定', 'マウスエイム練習', 'マイクロフリック', '着弾精度テスト',
+    'マウス精度テスト', 'マウス 精度 チェック', 'マウス 精度 測定', '中心を狙う精密クリック',
+    '精度 テスト', 'クリック精度テスト', '着弾精度テスト',
   ],
   openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
-    title: 'フリックエイム練習｜マウス精度テスト | SkillDrills',
-    description: '無料のブラウザ型エイム練習。フリック精度、ターゲット捕捉時間、着弾率を測定し、FPSの初弾エイムを鍛えます。',
+    title: 'マウス精度テスト｜的の中心を狙う精密フリック | SkillDrills',
+    description: '無料のマウス精度テスト。縮んでいく2つの的をフリックで撃ち、中心8pxのブルズアイは2倍得点。命中率・ブルズアイ数・到達レベルでマウス精度をチェックできます。',
     type: 'article',
     url: 'https://skilldrills.online/ja/drills/motor/hand-eye-coordination/precision-flick-shot',
     siteName: 'SkillDrills',
@@ -23,8 +22,8 @@ export const metadata = {
   },
   twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: 'summary_large_image',
-    title: 'フリックエイム練習｜マウス精度テスト | SkillDrills',
-    description: '無料のブラウザ型エイム練習。フリック精度、ターゲット捕捉時間、着弾率を測定し、FPSの初弾エイムを鍛えます。',
+    title: 'マウス精度テスト｜的の中心を狙う精密フリック | SkillDrills',
+    description: '無料のマウス精度テスト。縮んでいく2つの的をフリックで撃ち、中心8pxのブルズアイは2倍得点。命中率・ブルズアイ数・到達レベルでマウス精度をチェックできます。',
   },
   robots: { index: true, follow: true },
   alternates: {
@@ -67,15 +66,15 @@ const breadcrumbSchema = {
 const softwareApplicationSchema = {
   '@context': 'https://schema.org',
   '@type': 'SoftwareApplication', "sameAs": ["https://en.wikipedia.org/wiki/Fitts%27s_law", "https://en.wikipedia.org/wiki/Hand%E2%80%93eye_coordination"],
-  name: 'フリックエイム練習・マウス精度テストツール',
+  name: 'マウス精度テスト・精密フリックショット',
   applicationCategory: 'HealthApplication',
   operatingSystem: 'All',
   offers: { '@type': 'Offer', price: '0', priceCurrency: 'JPY' },
-  description: 'ブラウザ上で完結する無料フリックエイム測定ツール。弾道的スナップ速度、ブルズアイ中心着弾率、減速ブレーキ制御を解析。',
+  description: 'ブラウザで動く無料のマウス精度テスト。縮んでいく的を撃ち、命中率と中心（ブルズアイ）命中数を記録します。',
   url: 'https://skilldrills.online/ja/drills/motor/hand-eye-coordination/precision-flick-shot',
   publisher: { '@type': 'Organization', name: 'SkillDrills', url: 'https://skilldrills.online' },
   inLanguage: 'ja-JP',
-  dateModified: '2026-09-20',
+  dateModified: '2026-11-09',
 };
 
 const webApplicationSchema = {
@@ -86,15 +85,15 @@ const webApplicationSchema = {
   url: 'https://skilldrills.online/ja/drills/motor/hand-eye-coordination/precision-flick-shot',
   applicationCategory: 'EducationalApplication',
   inLanguage: 'ja-JP',
-  dateModified: '2026-09-20',
+  dateModified: '2026-11-09',
 };
 
 const videoGameSchema = {
   '@context': 'https://schema.org',
   '@type': 'VideoGame',
-  name: 'フリックエイム・マウス精度ゲーム',
+  name: 'マウス精度テスト・精密フリックゲーム',
   url: 'https://skilldrills.online/ja/drills/motor/hand-eye-coordination/precision-flick-shot',
-  description: '瞬時のカーソルスナップと中心命中を競うFPS向け反射エイムトレーニングゲーム。',
+  description: '縮んでいく的の中心を素早く正確にクリックするマウス精度ゲーム。',
   genre: ['射撃ゲーム', 'アクション', 'eスポーツトレーニング'],
   gamePlatform: ['Web Browser', 'Desktop'],
   applicationCategory: 'Game',
@@ -106,11 +105,11 @@ const faqSchema = {
   '@context': 'https://schema.org',
   '@type': 'FAQPage',
   inLanguage: 'ja-JP',
-  dateModified: '2026-09-20',
+  dateModified: '2026-11-09',
   mainEntity: [
     {
       '@type': 'Question',
-      name: 'フリックエイム（Flick Shot）とは何ですか？',
+      name: '精密フリック（Flick Shot）とは何ですか？',
       acceptedAnswer: {
         '@type': 'Answer',
         text: 'ターゲットが出現した瞬間に、弾道的な単一インパルスの筋肉運動でカーソルを瞬時にスナップ移動させて撃ち抜く高速エイム技術です。',
@@ -129,7 +128,7 @@ const faqSchema = {
       name: 'フリックショットで中心（Bulls-eye）に当てるためのコツは？',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: '外側の円ではなく中心の8ピクセル核を仮想ターゲットとして意識することで、運動皮質の神経ノイズが抑制され、着弾のばらつきが大幅に縮小します。',
+        text: '的の中心から8ピクセル以内をクリックするとブルズアイ判定で基本200点（通常命中は100点）になります。外側の円ではなく中心の小さな点を狙う意識が、着弾のばらつきを抑える助けになります。',
       },
     },
     {
@@ -145,7 +144,7 @@ const faqSchema = {
       name: '同時に2つのターゲットが現れた場合の対処法は？',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: '周辺視野で縮小リングを確認し、消滅までの残り時間が短いターゲットを最優先で破壊してから、反動で次のターゲットへ素早く視線を飛ばします。',
+        text: '2つの的はどちらも縮みますが、アクティブな的のほうが速く小さくなります。小さくなった方から撃ち、もう一方へ切り替えましょう。的が消えるまで縮むとコンボがリセットされ、1秒減ります。',
       },
     },
     {
@@ -153,7 +152,7 @@ const faqSchema = {
       name: 'VALORANTやCS2の実戦に効果はありますか？',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: '置きエイムからの飛び出し処理やマイクロフリックによる初弾ヘッドショット精度が安定しやすくなり、撃ち合いでの精度向上に役立つ可能性があります。',
+        text: 'VALORANTやCS2のプレイヤーが、フリック後にピタッと止める感覚を練習する用途に使えます。ゲーム内の上達を保証するものではないので、ゲームと同じ感度に合わせて使ってください。',
       },
     },
     {
@@ -169,7 +168,7 @@ const faqSchema = {
       name: 'セッション評価やスコアはどのように算出されますか？',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: '総命中率、中心部（ブルズアイ）的中率、最大コンボ数、到達レベルを総合的に解析し、DからS+までのランク判定が行われます。',
+        text: '命中ごとに基本点（通常100点、ブルズアイ200点）にコンボ倍率（最大3.0倍）とレベル補正が掛かります。命中で+2秒（最大60秒）、空振りや的の消滅で-1秒、コンボはリセット。ランクは最終スコアで決まり、結果画面に命中率・命中数・ブルズアイ数・到達レベルが表示されます。',
       },
     },
     {
@@ -177,7 +176,7 @@ const faqSchema = {
       name: 'フリックの反応速度を最大限引き出すPC設定は？',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: '144Hz以上の高リフレッシュレートモニター、Windowsのポインター精度向上オフ、65g以下の軽量マウスによる慣性低減が効果的です。',
+        text: '高リフレッシュレートのモニターや軽いマウスが扱いやすく、Windowsの「ポインターの精度を高める」はオフを推奨します。このマウス精度テストはそのWindows設定ではなく、クリックの正確さを練習するドリルです。',
       },
     },
     {
@@ -185,7 +184,7 @@ const faqSchema = {
       name: '上達のための理想的な練習頻度は？',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'マッチ前の10〜15分間に4〜6回集中して行うのが最適です。腱や手首の疲労を避けながら続けられます。',
+        text: '試合前のウォームアップとして数回プレイする程度で十分です。手首に違和感があれば休み、同じ環境での自己記録の推移を見てください。',
       },
     },
   ],
@@ -234,41 +233,38 @@ const guideProps = {
   intro: {
     title: '弾道的マイクロフリックと下位運動最適化のバイオメカニクス',
     paragraphs: [
-      '競技シューティングにおいて、フリックショットは極度の時間的制約のもとで実行される高速度の不連続目標指向運動です。Robert S. Woodworth（1899）は、自発的運動が「初期弾道インパルス」と視覚フィードバックによる「現在制御相」の二相制御アーキテクチャで構成されることを最初に解明しました。',
-      'David E. Meyerら（1988）が提唱した「確率的最適化下位運動モデル（Stochastic Optimized Submovement Model）」によると、人間の運動出力は移動速度に比例した神経ノイズを伴います。過度に素早くフリックすると1次運動の着弾散布界が拡大し、標的を逸脱した場合、約150〜200msの遅延を伴う修正下位運動が強制的に発生します。',
+      'このマウス精度テストは、画面に出る的の中心を素早く正確にクリックする精密フリックのドリルです。競技シューティングにおいて、フリックショットは極度の時間的制約のもとで実行される高速度の不連続目標指向運動です。Robert S. Woodworth（1899）は、自発的運動が「初期弾道インパルス」と視覚フィードバックによる「現在制御相」の二相制御アーキテクチャで構成されることを最初に解明しました。',
+      'David E. Meyerら（1988）が提唱した「確率的最適化下位運動モデル（Stochastic Optimized Submovement Model）」によると、人間の運動出力は移動速度に比例した神経ノイズを伴います。過度に素早くフリックすると1次運動の着弾のばらつきが大きくなり、標的を外すと追加の修正動作が必要になって時間がかかります。',
       '最高峰のエイムスループット（MacKenzie, 1992）に到達するには、1次インパルスだけで標的の中心核に着弾できるよう速度を適正化する必要があります。中心核（ブルズアイ）へのボーナス加点は、散布界を狭小化し修正減速運動を最小化するよう運動系を条件付けます。',
       '距離とサイズのトレードオフはフィッツの法則（Fitts, 1954）に基づき、終末減速における拮抗筋の動員はElliottら（2010）の現代モデルにより立証されています。',
-      '計測精度とブラウザの特性：時間はperformance.now()高精度クロックで測定されます。画面のリフレッシュレート（60Hzで16.7ms、144Hzで6.9ms）やポーリングレートによる時間量子化が存在します（Woods et al., 2015）。自身の同一環境における記録推移の把握にご活用ください。',
+      'ドリルの流れ：持ち時間45秒で開始し、命中ごとに+2秒（最大60秒）、空振りや的の消滅で-1秒。マウスとポインターロックが必要で、タッチ操作のみの端末では開始できません。リフレッシュレートやポーリングレートで操作感が変わるため（Woods et al., 2015）、同じ環境での自己記録の推移を見てください。',
     ],
   },
   benchmarks: {
-    title: 'フリックショットおよびマウス精度標準ベンチマーク',
-    caption: 'Woodworth（1899）およびMeyer et al.（1988）の運動モデルに基づく判定基準。SkillDrillsは外部集計を行いません。',
-    headers: ['段階 (Tier)', '分類・評価ランク', '到達レベル・コンボ', '平均捕捉潜時', 'クリック命中率', 'ブルズアイ率', '神経運動プロファイル'],
+    title: 'マウス精度テストの目安（SkillDrills練習バンド）',
+    caption: 'SkillDrillsの練習バンドです。研究の基準値やユーザー統計ではなく、結果画面のレベル・コンボ・命中率・ブルズアイ率を自分で読み取るための作者による目安です。SkillDrillsは記録を外部に収集しません。',
+    headers: ['段階 (Tier)', '分類・評価ランク', '到達レベル・コンボ', 'クリック命中率', 'ブルズアイ率', 'プレイの特徴'],
     rows: [
       [
         'Tier 1',
         'エイペックス・フリックマスター',
         'Lv. 15+ (コンボ > 20回)',
-        '< 340 ms',
         '≥ 96.0%',
         '> 65%',
-        '純粋な単一インパルス弾道、修正運動ほぼゼロ、10ms未満の完璧な拮抗筋ブレーキング。',
+        '1回のフリックで中心に収まり、追加の修正がほとんどない。',
       ],
       [
         'Tier 2',
         '上級ガンファイター',
         'Lv. 11–14 (コンボ 14–19回)',
-        '340–420 ms',
         '91.0%–95.9%',
         '45%–64%',
-        '鋭い中心窩確認、30ms未満の超微小2次修正、軌道ブレの最小化。',
+        '中心をしっかり確認し、短い微調整で仕留める。',
       ],
       [
         'Tier 3',
         '熟練マークスマン',
         'Lv. 7–10 (コンボ 8–13回)',
-        '421–520 ms',
         '84.0%–90.9%',
         '25%–44%',
         '外周リング着弾が散見、高速ターゲット遷移時に若干のオーバーシュート発生。',
@@ -277,7 +273,6 @@ const guideProps = {
         'Tier 4',
         '初級フラッガー',
         'Lv. 4–6 (コンボ 4–7回)',
-        '521–660 ms',
         '74.0%–83.9%',
         '10%–24%',
         '多段階のぎこちない修正、加速超過による散布界拡大、発射前の迷い。',
@@ -286,7 +281,6 @@ const guideProps = {
         'Tier 5',
         '入門 / ビギナー',
         'Lv. 1–3 (コンボ < 4回)',
-        '> 660 ms',
         '< 74.0%',
         '< 10%',
         'アンダーフリック（届かない）、頻繁な空振り、遅い再捕捉、手首と腕の連動不足。',
@@ -324,8 +318,8 @@ const guideProps = {
 };
 
 const copyJa = {
-  title: "フリックエイム練習・マウス精度テスト",
-  subtitle: "フリック精度 · 初弾命中率を測定",
+  title: "マウス精度テスト｜的の中心を狙う精密フリック",
+  subtitle: "縮む的2つ · 中心ブルズアイは2倍得点 · 命中で+2秒",
   startButtonText: "訓練開始",
   playAgainText: "もう一度挑戦",
   shareText: "スコアを共有",
@@ -336,10 +330,10 @@ const copyJa = {
   peakLevelLabel: "到達レベル",
   rulesTitle: "操作方法・スコア獲得ルール",
   rulesItems: [
-    { num: "1", text: "ブルズアイ命中", highlight: "+200点 / +0.6秒", result: "中心核へのピンポイント着弾" },
-    { num: "2", text: "通常ターゲット撃破", highlight: "+100点 / +0.6秒", result: "周辺視野の瞬時捕捉とクリック" },
+    { num: "1", text: "ブルズアイ命中", highlight: "+200点 / +2秒（最大60秒）", result: "中心核へのピンポイント着弾" },
+    { num: "2", text: "通常ターゲット撃破", highlight: "+100点 / +2秒（最大60秒）", result: "周辺視野の瞬時捕捉とクリック" },
     { num: "3", text: "レベル難易度進行", highlight: "1400点毎に+1レベル", result: "ターゲット縮小と生存時間短縮" },
-    { num: "4", text: "ミス・時間切れ", highlight: "コンボリセット", result: "ペナルティ有効時 -0.8秒" }
+    { num: "4", text: "ミス・時間切れ", highlight: "コンボリセット", result: "空振り・的の消滅で -1秒" }
   ],
 };
 

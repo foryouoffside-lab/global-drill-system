@@ -2,42 +2,38 @@ import KeyboardRecognitionClient from '@/app/drills/motor/movement-speed/keyboar
 import { getAlternateLanguages } from '@/lib/i18n/locales';
 import DrillGuide from '@/components/drill/DrillGuide';
 import RelatedDrills from '@/components/drill/RelatedDrills';
-import DrillFooter from '@/components/drill/DrillFooter';
 import { pickSources } from '@/lib/drillSources';
 
+const PAGE_URL = 'https://skilldrills.online/de/drills/motor/movement-speed/keyboard-recognition';
+const TITLE = 'Tastatur-Reaktionszeit testen | Keybind Test | SkillDrills';
+const DESCRIPTION = 'Tastatur-Reaktionszeit testen: Drücke die angezeigte Taste vor Ablauf des Timers und ignoriere Fake-Prompts. 60 s, mit Reaktionszeit, Genauigkeit und KPM.';
+
 export const metadata = {
-  title: 'Tastatur Reaktionszeit | Keybind Test | SkillDrills',
-  description: 'Drücke die angezeigte Taste und messe Reaktionszeit, Genauigkeit und Keybind-Tempo. Kostenlos im Browser, ohne Download.',
+  title: TITLE,
+  description: DESCRIPTION,
   keywords: [
+    'Tastatur-Reaktionszeit',
     'Tastatur Reaktionszeit Test',
-    'Tastatur Latenztest',
-    'Tasten Reaktionszeit messen',
-    'WASD Trainer',
-    'Keybind Training',
-    'Tastatur Reflex Test',
-    'Wahlreaktionszeit Tastatur',
-    'Tastatur Klickgeschwindigkeit',
-    'Gaming Tastatur Reaktion',
-    'Tastatur Anschlaggeschwindigkeit',
-    'Keybind Muskelgedächtnis',
-    'Tastatur Reaktion online',
+    'Keybind Test',
+    'WASD Training',
+    'Tasten erkennen',
   ],
   openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
-    title: 'Tastatur Reaktionszeit | Keybind Test | SkillDrills',
-    description: 'Messe Reaktionszeit, Genauigkeit und Keybind-Tempo mit einer angezeigten Taste direkt im Browser.',
+    title: TITLE,
+    description: DESCRIPTION,
     type: 'article',
-    url: 'https://skilldrills.online/de/drills/motor/movement-speed/keyboard-recognition',
+    url: PAGE_URL,
     siteName: 'SkillDrills',
     locale: 'de_DE',
   },
   twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: 'summary_large_image',
-    title: 'Tastatur Reaktionszeit | Keybind Test | SkillDrills',
-    description: 'Kostenloser Test für Tastatur-Reaktion und Keybind-Tempo im Browser.',
+    title: TITLE,
+    description: DESCRIPTION,
   },
   robots: { index: true, follow: true },
   alternates: {
-    canonical: 'https://skilldrills.online/de/drills/motor/movement-speed/keyboard-recognition',
+    canonical: PAGE_URL,
     languages: getAlternateLanguages('/drills/motor/movement-speed/keyboard-recognition'),
   },
 };
@@ -49,7 +45,7 @@ const breadcrumbSchema = {
     { '@type': 'ListItem', position: 1, name: 'SkillDrills', item: 'https://skilldrills.online/de' },
     { '@type': 'ListItem', position: 2, name: 'Motorik Training', item: 'https://skilldrills.online/de/drills/motor' },
     { '@type': 'ListItem', position: 3, name: 'Bewegungsgeschwindigkeit', item: 'https://skilldrills.online/de/drills/motor/movement-speed' },
-    { '@type': 'ListItem', position: 4, name: 'Tastatur Reaktionszeit', item: 'https://skilldrills.online/de/drills/motor/movement-speed/keyboard-recognition' },
+    { '@type': 'ListItem', position: 4, name: 'Tastatur-Reaktionszeit', item: PAGE_URL },
   ],
 };
 
@@ -57,36 +53,36 @@ const softwareApplicationSchema = {
   '@context': 'https://schema.org',
   '@type': 'SoftwareApplication', "sameAs": ["https://en.wikipedia.org/wiki/Computer_keyboard", "https://en.wikipedia.org/wiki/Reaction_time"],
   inLanguage: 'de-DE',
-  name: 'Tastatur Reaktionszeit – Keybind Test',
-  applicationCategory: 'HealthApplication',
+  name: 'Tastatur-Reaktionszeit testen',
+  applicationCategory: 'GameApplication',
   operatingSystem: 'All',
   offers: { '@type': 'Offer', price: '0', priceCurrency: 'EUR' },
-  description: 'Kostenloser browserbasierter Tastatur-Reaktionszeit-Test und Keybind-Trainer. Messe Wahlreaktionszeit, Tasten-Reflexe und inhibitorische Kontrolle.',
-  url: 'https://skilldrills.online/de/drills/motor/movement-speed/keyboard-recognition',
+  description: DESCRIPTION,
+  url: PAGE_URL,
   publisher: { '@type': 'Organization', name: 'SkillDrills', url: 'https://skilldrills.online' },
-  dateModified: '2026-09-20',
+  dateModified: '2026-11-09',
 };
 
 const webApplicationSchema = {
   '@context': 'https://schema.org',
   '@type': 'WebApplication',
   inLanguage: 'de-DE',
-  name: 'Tastatur Reaktionszeit',
+  name: 'Tastatur-Reaktionszeit testen',
   applicationCategory: 'GameApplication',
   operatingSystem: 'All',
-  browserRequirements: 'Benötigt HTML5 Canvas und JavaScript-Unterstützung',
+  browserRequirements: 'Browser mit JavaScript und physische Tastatur',
   offers: { '@type': 'Offer', price: '0', priceCurrency: 'EUR' },
-  url: 'https://skilldrills.online/de/drills/motor/movement-speed/keyboard-recognition',
-  dateModified: '2026-09-20',
+  url: PAGE_URL,
+  dateModified: '2026-11-09',
 };
 
 const videoGameSchema = {
   '@context': 'https://schema.org',
   '@type': 'VideoGame',
   inLanguage: 'de-DE',
-  name: 'Tastatur Reaktionszeit – Keybind Test',
-  url: 'https://skilldrills.online/de/drills/motor/movement-speed/keyboard-recognition',
-  description: 'Messe, wie schnell du die richtige Taste auf einen visuellen Reiz hin drückst, basierend auf Hicks Gesetz der Wahlreaktionszeit.',
+  name: 'Tastatur-Reaktionszeit testen',
+  url: PAGE_URL,
+  description: '60-Sekunden-Tastenspiel: angezeigte Tasten (einzeln, als Folge von 2–5 Tasten oder aus dem Gedächtnis) vor Ablauf des Timers drücken und Fake-Prompts ignorieren.',
   genre: ['Keyboard Game', 'Action', 'Esports Training'],
   gamePlatform: ['Web Browser', 'Desktop'],
   applicationCategory: 'Game',
@@ -97,86 +93,62 @@ const faqSchema = {
   '@context': 'https://schema.org',
   '@type': 'FAQPage',
   inLanguage: 'de-DE',
-  dateModified: '2026-09-20',
+  dateModified: '2026-11-09',
   mainEntity: [
     {
       '@type': 'Question',
-      name: 'Was misst ein Tastatur-Reaktionszeit-Test?',
+      name: 'Was misst der Test der Tastatur-Reaktionszeit?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Er misst die Latenz zwischen dem Erscheinen eines Tastensymbols auf dem Bildschirm und dem Auslösen der physischen Taste. Dies prüft Wahlreaktionszeit, räumliche Tastaturorientierung und motorische Impulskontrolle.',
+        text: 'Die Zeit zwischen dem Erscheinen einer Taste auf dem Bildschirm und deinem richtigen Tastendruck. Im Ergebnis stehen durchschnittliche Reaktionszeit (ms), Genauigkeit, KPM (Tastendrücke pro Minute), maximale Combo und Rang. Gemessen wird deine Reaktion, nicht die Latenz der Tastatur und nicht deine Tippgeschwindigkeit.',
       },
     },
     {
       '@type': 'Question',
-      name: 'Wie verbessert Keybind-Training das Gameplay in Shooter-Spielen?',
+      name: 'Welche Prompts gibt es?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'In taktischen Shootern wie CS2 oder Valorant muss das Wechseln von Waffen und der Einsatz von Fähigkeiten ohne Blick auf die Tastatur erfolgen. Das Training automatisiert motorische Pfade und eliminiert Zögern in Drucksituationen.',
+        text: 'Einzelne Tasten, Folgen aus 2–3 Tasten (im Modus „Lange Sequenzen“ 5), einen Gedächtnismodus, der 3 Tasten 1 Sekunde zeigt und dann ausblendet, und Fake-Prompts, bei denen du nichts drücken darfst. Abgefragt werden A–Z, 0–9, Space, Shift, Strg, Alt, Tab, Enter, Sonderzeichen, F1–F6 und Pfeiltasten.',
       },
     },
     {
       '@type': 'Question',
-      name: 'Was besagt Hicks Gesetz über die Wahlreaktionszeit?',
+      name: 'Wie werden Punkte vergeben?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Hicks Gesetz (Hick 1952) besagt, dass die Reaktionszeit logarithmisch mit der Anzahl der Entscheidungsmöglichkeiten ansteigt. Gelerntes Muskelgedächtnis reduziert diese kognitive Wahlstufe und nähert die Reaktionszeit einem einfachen Reflex an.',
+        text: 'Richtige Eingabe: 120 Punkte × Combo-Multiplikator, Folgen ×1,4, Gedächtnismodus ×1,8. Einen Fake-Prompt bis zum Ende auszuhalten bringt +200. Falsche Taste, Reaktion auf einen Fake oder abgelaufene Zeit setzen die Combo zurück. Eine Runde dauert immer 60 Sekunden.',
       },
     },
     {
       '@type': 'Question',
-      name: 'Welchen Zweck erfüllen Schein-Befehle (Fake Prompts)?',
+      name: 'Wie funktionieren Schwierigkeit und Zeitlimit?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Fake Prompts prüfen die inhibitorische Verhaltenskontrolle (Stop-Signal-Paradigma nach Logan 1984). Der präfrontale Kortex muss einen bereits vorbereiteten Tastendruck aktiv unterdrücken, wenn ein Köder-Reiz aufleuchtet.',
+        text: 'Im Standardmodus „Adaptiv“ startet jeder Prompt mit etwa 1,8 Sekunden, wird bei Treffern kürzer (minimal ca. 0,8 s) und nach Fehlern wieder länger. Feste Stufen: Easy 1,5×, Medium 1,0×, Hard 0,75×, Expert 0,55× der Zeit.',
       },
     },
     {
       '@type': 'Question',
-      name: 'Was ist eine normale Reaktionszeit für einzelne Tasten?',
+      name: 'Kann ich mit Valorant- oder CS2-Keybinds üben?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Untrainierte Nutzer erreichen typischerweise 380 bis 480 ms. Geübte Spieler erzielen 240 bis 300 ms, während Latenzen unter 240 ms bei minimaler Fehlerquote eine fortgeschrittene Übungsstufe markieren.',
+        text: 'Ja. Die Presets für Valorant, CS2, Fortnite, Minecraft, League of Legends und Apex Legends fragen nur die Standardbelegung des jeweiligen Spiels ab. Es ist kein offizielles Tool dieser Spiele.',
       },
     },
     {
       '@type': 'Question',
-      name: 'Wie fordert der Sequenz-Modus das Gehirn heraus?',
+      name: 'Funktioniert der Test mit QWERTZ-Tastaturen?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Der Sequenz-Modus fordert das motorische Chunking und Arbeitsgedächtnis (Sternberg 1966). Tastenkombinationen werden nicht Taste für Taste gedacht, sondern als eine geschlossene motorische Geste abgefeuert.',
+        text: 'Tasten werden nach ihrer physischen Position erkannt und mit US-QWERTY-Beschriftung angezeigt. Auf QWERTZ sind deshalb Y und Z vertauscht, und einige Sonderzeichen liegen anders als aufgedruckt. Buchstaben außer Y/Z, Zahlen und Spieltasten wie WASD passen.',
       },
     },
     {
       '@type': 'Question',
-      name: 'Welche Tastatur liefert die besten Messergebnisse?',
+      name: 'Ist das ein Tastatur-Tester oder Tipptest?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Mechanische Tastaturen mit linearen Schaltern, optischer Auslösung oder magnetischen Hall-Effekt-Schaltern (Rapid Trigger) und mindestens 1000 Hz USB-Polling bieten minimale Signalverzögerung.',
-      },
-    },
-    {
-      '@type': 'Question',
-      name: 'Wie oft und wie lange sollte man Keybinds trainieren?',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: 'Täglich 10 bis 15 Minuten in 3 bis 4 konzentrierten Blöcken sind ideal. Die neuronale Anpassung erfolgt schnell, während Übermüdung zu Schlampigkeit bei der Tastenunterdrückung führt.',
-      },
-    },
-    {
-      '@type': 'Question',
-      name: 'Hilft das Training auch in MOBA-Spielen wie League of Legends oder Dota 2?',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: 'Ja. Präzise Fähigkeitskombinationen (Q-W-E-R) und schnelle Item-Aktivierungen verlangen blindes Tastenvertrauen und unabhängige Fingerbeweglichkeit.',
-      },
-    },
-    {
-      '@type': 'Question',
-      name: 'Wie werden KPM (Tasten pro Minute) und Genauigkeit berechnet?',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: 'KPM ist die Gesamtzahl richtiger Anschläge geteilt durch die Testzeit in Minuten. Die Genauigkeit stellt das Verhältnis von Treffern zu allen Tastendrücken inklusive Fehleingaben und ausgelöster Fallen dar.',
+        text: 'Nein. Er prüft nicht, ob alle Tasten funktionieren, und misst keine Wörter pro Minute. Es ist ein Reaktionstraining für Spieltasten und braucht eine physische Tastatur; reine Touch-Geräte können nicht starten.',
       },
     },
   ],
@@ -186,126 +158,93 @@ const howToSchema = {
   '@context': 'https://schema.org',
   '@type': 'HowTo',
   inLanguage: 'de-DE',
-  dateModified: '2026-09-20',
-  name: 'Tastatur-Reaktionszeit und Keybind-Reflexe trainieren',
-  description: 'Schritt-für-Schritt-Anleitung zur Steigerung von Tastenschnelligkeit und Reaktionshemmung.',
+  dateModified: '2026-11-09',
+  name: 'So testest du deine Tastatur-Reaktionszeit',
+  description: 'In 60 Sekunden auf angezeigte Tasten reagieren und bei Fake-Prompts stoppen.',
   step: [
     {
       '@type': 'HowToStep',
       position: 1,
-      name: 'Ausgangsposition einnehmen',
-      text: 'Lege die Finger der linken Hand auf dein gewohntes Gaming-Tastencluster (z. B. WASD) und halte die Hand entspannt.',
-      url: 'https://skilldrills.online/de/drills/motor/movement-speed/keyboard-recognition#step-1',
+      name: 'Modus und Preset wählen',
+      text: 'Modus, Schwierigkeit und bei Bedarf ein Spiel-Preset wählen, linke Hand in Grundstellung legen.',
+      url: `${PAGE_URL}#step-1`,
     },
     {
       '@type': 'HowToStep',
       position: 2,
-      name: 'Tasten-Reiz fixieren und identifizieren',
-      text: 'Richte deinen Blick fest auf die Bildschirmmitte. Sobald die Taste erscheint, löse den Anschlag blind aus.',
-      url: 'https://skilldrills.online/de/drills/motor/movement-speed/keyboard-recognition#step-2',
+      name: 'Auf den Bildschirm schauen',
+      text: 'Nicht auf die Tastatur sehen, sondern die Taste in der Mitte des Bildschirms erkennen.',
+      url: `${PAGE_URL}#step-2`,
     },
     {
       '@type': 'HowToStep',
       position: 3,
-      name: 'Präziser Anschlag oder Impulsstopp',
-      text: 'Drücke die geforderte Taste sauber durch. Erscheint ein Schein-Befehl (Fake Prompt), stoppe den Anschlag rechtzeitig.',
-      url: 'https://skilldrills.online/de/drills/motor/movement-speed/keyboard-recognition#step-3',
+      name: 'Drücken oder stoppen',
+      text: 'Echte Prompts vor Ablauf drücken, bei Fake-Prompts nichts drücken, bis sie verschwinden.',
+      url: `${PAGE_URL}#step-3`,
     },
     {
       '@type': 'HowToStep',
       position: 4,
-      name: 'Latenz und Fehlerquote auswerten',
-      text: 'Prüfe deine durchschnittliche Wahlreaktionszeit, KPM-Geschwindigkeit und Hemmungsrate auf der Auswertungskarte.',
-      url: 'https://skilldrills.online/de/drills/motor/movement-speed/keyboard-recognition#step-4',
+      name: 'Ergebnis prüfen',
+      text: 'Nach 60 Sekunden Reaktionszeit, Genauigkeit, KPM und maximale Combo ansehen.',
+      url: `${PAGE_URL}#step-4`,
     },
   ],
 };
 
 const guideProps = {
-  sources: pickSources('donders1868', 'hick1952', 'logan1984', 'sternberg1966', 'woods2015'),
+  sources: pickSources('donders1868', 'hick1952', 'logan1984', 'sternberg1966'),
   intro: {
-    title: 'Wissenschaftliche Messung der Tastatur-Reaktionszeit',
+    title: 'Tastatur-Reaktionszeit: worum es geht',
     paragraphs: [
-      'Die Messung von Tastengeschwindigkeit basiert auf der Wahlreaktionszeit (Donders, 1868; Hick, 1952). Die visuelle Reizverarbeitung benötigt physiologisch rund 200–250 ms, während jede zusätzliche Tastenoption die neuronale Verarbeitungszeit vergrößert. Gezieltes Training automatisiert die Reiz-Reaktions-Verknüpfung, sodass der Entscheidungsschritt minimiert wird.',
-      'Browserbasierte Messgenauigkeit: Die Zeiterfassung über performance.now() unterliegt einer hardwarebedingten Diskretisierung und der Bildwiederholrate deines Monitors. Vergleiche deine Ergebnisse stets auf demselben Setup.',
+      'Beim Test der Tastatur-Reaktionszeit wählst du aus vielen Tasten die eine, die gerade angezeigt wird: eine Wahlreaktion (Donders, 1868). Je mehr Tasten möglich sind, desto langsamer die Reaktion (Hick, 1952); bei Fake-Prompts stillzuhalten trainiert Reaktionshemmung (Logan, 1984).',
+      'Die Werte hängen von Browser-Timer, Bildwiederholrate und Tastatur ab. Vergleiche deine Ergebnisse auf demselben Gerät.',
     ],
   },
   benchmark: {
-    title: 'Tastatur-Geschwindigkeit & Keybind-Reaktionsbenchmarks',
-    description: 'Orientierungswerte zur Leistungsbeurteilung. Beurteilt werden Wahlreaktionszeit bei Einzeltasten, Sequenz-Tipptempo und Fallen-Inhibition. Die Bereiche sind redaktionelle Übungsmarken, keine Bevölkerungsstatistik.',
-    columns: ['Tier', 'Rang', 'Einzeltasten-Latenz', 'Sequenz KPM', 'Hemmungs-Genauigkeit', 'Kategorie'],
+    title: 'Ränge im Drill',
+    description: 'Der Rang ergibt sich aus den im Drill-Code festgelegten Grenzen für Punkte und Genauigkeit. Keine Forschungsnormen, keine Nutzerstatistik, keine Perzentile.',
+    columns: ['Rang', 'Punkte', 'Genauigkeit'],
     rows: [
-      {
-        tier: 'Tier 1',
-        rank: 'Apex Keybinder',
-        stat: 'Unter 240 ms',
-        level: '320+ KPM',
-        accuracy: '98–100%',
-        category: 'Stufe 1',
-      },
-      {
-        tier: 'Tier 2',
-        rank: 'Master Tactician',
-        stat: '240–300 ms',
-        level: '260–319 KPM',
-        accuracy: '95–97%',
-        category: 'Stufe 2',
-      },
-      {
-        tier: 'Tier 3',
-        rank: 'Proficient Operator',
-        stat: '300–380 ms',
-        level: '200–259 KPM',
-        accuracy: '90–94%',
-        category: 'Stufe 3',
-      },
-      {
-        tier: 'Tier 4',
-        rank: 'Intermediate Typist',
-        stat: '380–480 ms',
-        level: '140–199 KPM',
-        accuracy: '80–89%',
-        category: 'Stufe 4',
-      },
-      {
-        tier: 'Tier 5',
-        rank: 'Novice Keybinder',
-        stat: 'Über 480 ms',
-        level: 'Unter 140 KPM',
-        accuracy: 'Unter 80%',
-        category: 'Stufe 5',
-      },
+      { grade: 'S+', score: '3.500+', accuracy: '95 %+' },
+      { grade: 'S', score: '2.200+', accuracy: '90 %+' },
+      { grade: 'A', score: '1.400+', accuracy: '85 %+' },
+      { grade: 'B', score: '700+', accuracy: '80 %+' },
+      { grade: 'C', score: '300+', accuracy: '75 %+' },
+      { grade: 'D', score: '100+', accuracy: '65 %+' },
     ],
   },
   protocols: {
-    title: 'Strukturierte Trainingsprotokolle',
-    description: 'Gezielte Methoden zur Reduktion von Entscheidungsentropie und Steigerung der Tastenreaktion.',
+    title: 'Trainingstipps',
+    description: 'Weniger Fehler, bessere Werte.',
     items: [
       {
-        title: 'Protokoll 1: Kompression der Wahlreaktionszeit (Donders 1868)',
-        description: 'Blicke strikt auf den Bildschirm ohne Blickkontakt zur Tastatur. Zwinge das Nervensystem zur rein propriozeptiven Tastenansteuerung.',
+        title: 'Tasten in Zonen denken',
+        description: 'Bewegung (WASD), Fähigkeiten (Q, E, C, X) und Zahlenreihe (1–4) als Zonen merken. So findest du den richtigen Finger schneller.',
       },
       {
-        title: 'Protokoll 2: Zonale Tastenorganisation (Hick 1952)',
-        description: 'Unterteile dein Tastenfeld mental in Funktionszonen (Bewegung WASD, Taktik QECX, Zahlenreihe 1-4), um Entscheidungsentropie zu senken.',
+        title: 'Bei Fakes stoppen',
+        description: 'Wer drückt, bevor er hinsieht, verliert ständig die Combo. Erst die Art des Prompts erkennen, dann drücken.',
       },
       {
-        title: 'Protokoll 3: Impulsstopp & Stop-Signal-Hemmung (Logan 1984)',
-        description: 'Trainiere das gezielte Abbremsen des Fingers bei Schein-Reizen, bevor der Schaltkontakt mechanisch betätigt wird.',
-      },
-      {
-        title: 'Protokoll 4: Sequenz-Chunking (Sternberg 1966)',
-        description: 'Fasse mehrstellige Tastenabfolgen als eine einzige zusammenhängende motorische Geste auf, anstatt Tasten isoliert zu tippen.',
+        title: 'Folgen als Block tippen',
+        description: 'Eine Folge aus 2–5 Tasten als ein Muster merken und am Stück drücken (Sternberg, 1966).',
       },
     ],
   },
   faqs: {
-    title: 'Häufig gestellte Fragen (FAQ)',
+    title: 'Häufige Fragen',
     items: faqSchema.mainEntity.map((q) => ({
       q: q.name,
       a: q.acceptedAnswer.text,
     })),
   },
+};
+
+const deCopy = {
+  title: 'Tastatur-Reaktionszeit testen',
+  subtitle: 'Angezeigte Tasten drücken: Keybind-Reaktionstraining für Spieler',
 };
 
 export default function GermanKeyboardRecognitionPage() {
@@ -335,10 +274,9 @@ export default function GermanKeyboardRecognitionPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(howToSchema) }}
       />
-      <KeyboardRecognitionClient />
+      <KeyboardRecognitionClient copy={deCopy} />
       <DrillGuide {...guideProps} />
       <RelatedDrills />
-      <DrillFooter />
     </>
   );
 }

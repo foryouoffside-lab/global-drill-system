@@ -7,15 +7,14 @@ import { pickSources } from '@/lib/drillSources';
 
 export const metadata = {
   title: 'Test glisser-déposer | Précision souris | SkillDrills',
-  description: 'Entraînez le glisser-déposer dans votre navigateur. Mesurez la précision de la souris, le temps de déplacement et le lâcher au bon endroit.',
+  description: 'Test glisser-déposer gratuit en ligne : pendant 45 secondes, attrapez la balle à la souris et lâchez-la dans un conteneur mobile. Précision, combo et niveau.',
   keywords: [
-    'test glisser-déposer', 'test de glissement souris', 'contrôle de la souris', 'précision du glissement',
-    'entraînement glisser-déposer', 'test glisser déposer en ligne', 'précision souris test', 'contrôle du curseur',
-    'coordination main-œil souris', 'test de glissement du curseur', 'entraînement souris', 'motricité fine souris test',
+    'test glisser-déposer', 'glisser-déposer en ligne', 'contrôle de la souris', 'jeu glisser-déposer',
+    'entraînement glisser-déposer', 'test glisser déposer en ligne', 'précision du glissement', 'contrôle du curseur',
   ],
   openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
     title: 'Test glisser-déposer | Précision souris | SkillDrills',
-    description: 'Entraînez le glisser-déposer dans votre navigateur. Mesurez la précision de la souris, le temps de déplacement et le lâcher au bon endroit.',
+    description: 'Test glisser-déposer gratuit en ligne : pendant 45 secondes, attrapez la balle à la souris et lâchez-la dans un conteneur mobile. Précision, combo et niveau.',
     type: 'article',
     url: 'https://skilldrills.online/fr/drills/motor/hand-eye-coordination/drag-and-drop',
     siteName: 'SkillDrills',
@@ -24,7 +23,7 @@ export const metadata = {
   twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: 'summary_large_image',
     title: 'Test glisser-déposer | Précision souris | SkillDrills',
-    description: 'Entraînez le glisser-déposer dans votre navigateur. Mesurez la précision de la souris, le temps de déplacement et le lâcher au bon endroit.',
+    description: 'Test glisser-déposer gratuit en ligne : pendant 45 secondes, attrapez la balle à la souris et lâchez-la dans un conteneur mobile. Précision, combo et niveau.',
   },
   robots: { index: true, follow: true },
   alternates: {
@@ -71,11 +70,11 @@ const softwareApplicationSchema = {
   applicationCategory: 'HealthApplication',
   operatingSystem: 'All',
   offers: { '@type': 'Offer', price: '0', priceCurrency: 'EUR' },
-  description: 'Outil web gratuit pour évaluer et travailler la précision de glisser-déposer, la décélération du curseur et le relâchement.',
+  description: 'Test glisser-déposer gratuit dans le navigateur : attraper la balle, la glisser et la lâcher dans un conteneur mobile.',
   url: 'https://skilldrills.online/fr/drills/motor/hand-eye-coordination/drag-and-drop',
   publisher: { '@type': 'Organization', name: 'SkillDrills', url: 'https://skilldrills.online' },
   inLanguage: 'fr-FR',
-  dateModified: '2026-09-20',
+  dateModified: '2026-11-09',
 };
 
 const webApplicationSchema = {
@@ -86,7 +85,7 @@ const webApplicationSchema = {
   url: 'https://skilldrills.online/fr/drills/motor/hand-eye-coordination/drag-and-drop',
   applicationCategory: 'EducationalApplication',
   inLanguage: 'fr-FR',
-  dateModified: '2026-09-20',
+  dateModified: '2026-11-09',
 };
 
 const videoGameSchema = {
@@ -94,7 +93,7 @@ const videoGameSchema = {
   '@type': 'VideoGame',
   name: 'Jeu de Précision Drag and Drop',
   url: 'https://skilldrills.online/fr/drills/motor/hand-eye-coordination/drag-and-drop',
-  description: 'Transportez des orbes vers des conteneurs mobiles en temps limité pour affiner votre motricité fine.',
+  description: 'Glissez une balle vers un conteneur mobile et lâchez-la dedans, en 45 secondes.',
   genre: ['Précision', 'Coordination Motrice', 'Esport'],
   gamePlatform: ['Web Browser', 'Desktop'],
   applicationCategory: 'Game',
@@ -106,14 +105,14 @@ const faqSchema = {
   '@context': 'https://schema.org',
   '@type': 'FAQPage',
   inLanguage: 'fr-FR',
-  dateModified: '2026-09-20',
+  dateModified: '2026-11-09',
   mainEntity: [
     {
       '@type': 'Question',
       name: 'Que mesure le test de Drag and Drop à la souris ?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Il évalue la motricité fine continue : saisie de la cible, transport rectiligne sous contraction isométrique, freinage moteur et synchronisation exacte du relâchement du clic.',
+        text: 'Pendant 45 secondes, vous attrapez une balle bouton gauche enfoncé, la glissez vers un conteneur rond qui se déplace et la lâchez à l intérieur. Le résultat affiche le score, la précision (part des dépôts réussis), le nombre de dépôts, le meilleur combo et le niveau atteint.',
       },
     },
     {
@@ -121,7 +120,7 @@ const faqSchema = {
       name: 'Pourquoi glisser-déposer est plus difficile qu un simple clic ?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Maintenir le bouton enfoncé impose une tension musculaire continue sur les fléchisseurs de l index. Cela accroît le frottement sur le tapis et réduit le débit moteur de 15% à 25% (MacKenzie et al., 1991).',
+        text: 'Maintenir le bouton enfoncé impose une tension continue à l index et limite les micro-corrections du poignet. MacKenzie et al. (1991) ont montré que glisser est nettement plus lent et plus sujet aux erreurs que simplement pointer la même cible avec le même périphérique.',
       },
     },
     {
@@ -129,7 +128,7 @@ const faqSchema = {
       name: 'Qu est-ce que la loi de pilotage d Accot-Zhai (Steering Law) ?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Formulée en 1997 par Johnny Accot et Shumin Zhai, elle démontre que le temps de déplacement dans un corridor restreint est proportionnel à la distance divisée par la largeur du passage.',
+        text: 'Formulée en 1997 par Johnny Accot et Shumin Zhai, elle montre que le temps pour traverser un corridor étroit est proportionnel à sa longueur divisée par sa largeur : un couloir deux fois plus étroit prend environ deux fois plus de temps.',
       },
     },
     {
@@ -137,7 +136,7 @@ const faqSchema = {
       name: 'Comment éviter de dépasser (overshoot) le conteneur en mouvement ?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Engagez les muscles extenseurs de l avant-bras environ 40 à 50 ms avant d entrer dans la cible pour amortir l élan cinétique avant de relâcher le switch.',
+        text: 'Commencez à freiner juste avant le conteneur, en visant sa trajectoire plutôt que sa position actuelle, et relâchez dès que la balle est à l intérieur. Un lâcher hors zone compte comme un raté et remet le combo à zéro.',
       },
     },
     {
@@ -161,7 +160,7 @@ const faqSchema = {
       name: 'Les graphistes et monteurs vidéo tirent-ils profit de cet exercice ?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Oui. Monteurs vidéo et infographistes 3D effectuent des milliers d opérations de glisser-déposer par jour sur la timeline ; entraîner la décélération prévient les troubles musculosquelettiques.',
+        text: 'Le même geste sert sur une timeline de montage ou dans un logiciel de graphisme. Ce drill est un exercice de contrôle de la souris, pas un programme de prévention médicale.',
       },
     },
     {
@@ -169,7 +168,7 @@ const faqSchema = {
       name: 'Comment sont calculés les combos et les points ?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Chaque dépôt réussi dans le récepteur alimente un multiplicateur de combo progressif pouvant atteindre 3.0x. Un relâchement hors zone réinitialise la série.',
+        text: 'Chaque dépôt réussi rapporte 100 points × le multiplicateur de combo (jusqu à 3,0x) × un bonus de niveau. Le niveau monte tous les 250 points (plus des niveaux bonus par série de 4) : balle et conteneur rétrécissent, le conteneur accélère. Un relâchement hors zone réinitialise la série. La partie dure 45 secondes ; une souris et le verrouillage du pointeur sont requis.',
       },
     },
     {
@@ -185,7 +184,7 @@ const faqSchema = {
       name: 'Quel temps d entraînement quotidien est recommandé ?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Une session quotidienne de 10 à 15 minutes comprenant 4 à 6 séries de 45 secondes stabilise les schémas moteurs sans fatiguer les tendons du poignet.',
+        text: 'Quelques parties de 45 secondes par jour suffisent comme routine ; arrêtez-vous en cas de gêne au poignet. Comparez vos scores avec vos propres parties précédentes sur la même configuration.',
       },
     },
   ],
@@ -223,7 +222,7 @@ const howToSchema = {
       '@type': 'HowToStep',
       position: 4,
       name: 'Relâchez avec précision au centre de la zone',
-      text: 'Ouvrez les doigts dès que l orbe est aligné avec le conteneur pour valider le dépôt parfait.',
+      text: 'Relâchez le clic dès que la balle est dans le conteneur pour valider le dépôt (100 points × combo).',
       url: 'https://skilldrills.online/fr/drills/motor/hand-eye-coordination/drag-and-drop#step-4',
     },
   ],
@@ -234,38 +233,35 @@ const guideProps = {
   intro: {
     title: 'Biomécanique du Glisser-Déposer, Guidage et Décélération Motrice',
     paragraphs: [
-      'En interaction homme-machine, le glisser-déposer continu (drag and drop) présente un défi sensorimoteur fondamentalement distinct du simple pointage avec clic. Alors que le ciblage discret est décrit par la loi de Fitts (Fitts, 1954), le glisser-déposer exige une co-contraction isométrique prolongée des fléchisseurs digitaux pour maintenir le commutateur enfoncé tout en assurant une translation dynamique et fluide sur le tapis.',
-      'Dans leur étude empirique de référence, MacKenzie, Sellen et Buxton (1991) ont mis en évidence que les tâches de glisser-déposer subissent une perte de débit moteur de 15% à 25% par rapport au simple clic. La pression d appui vertical altère le coefficient de friction des patins de la souris, restreint l articulation fine des phalanges et amplifie le bruit moteur.',
+      'Ce test glisser-déposer entraîne le contrôle de la souris en continu. En interaction homme-machine, le glisser-déposer continu (drag and drop) présente un défi sensorimoteur fondamentalement distinct du simple pointage avec clic. Alors que le ciblage discret est décrit par la loi de Fitts (Fitts, 1954), le glisser-déposer exige une co-contraction isométrique prolongée des fléchisseurs digitaux pour maintenir le commutateur enfoncé tout en assurant une translation dynamique et fluide sur le tapis.',
+      'MacKenzie, Sellen et Buxton (1991) ont montré que glisser est nettement plus lent et plus sujet aux erreurs que simplement pointer la même cible avec le même périphérique. Le bouton maintenu limite les ajustements fins des doigts et du poignet.',
       'Par ailleurs, Johnny Accot et Shumin Zhai (1997) ont formulé la loi de pilotage (Steering Law) modélisant les déplacements dans des corridors contraints. Lors de tâches de glisser-déposer dynamiques, l utilisateur doit constamment contrebalancer l élan d accélération par une décélération antagoniste (Elliott et al., 2010) pour éviter tout dépassement de la zone de réception.',
-      'Précision d échantillonnage du navigateur : Le chronométrage repose sur l horloge performance.now() du navigateur. Le taux de rafraîchissement de l écran (16,7 ms à 60 Hz, 6,9 ms à 144 Hz) et la fréquence de scrutation de la souris quantifient les mesures temporelles (Woods et al., 2015). SkillDrills conserve tous vos scores localement dans votre navigateur.',
+      'Déroulement : 45 secondes pour attraper la balle, la glisser et la lâcher dans le conteneur mobile. Le taux de rafraîchissement de l écran et la fréquence de scrutation de la souris influencent la sensation (Woods et al., 2015) ; comparez-vous surtout à vos propres parties sur la même machine. SkillDrills conserve vos scores localement dans votre navigateur.',
     ],
   },
   benchmarks: {
-    title: 'Niveaux de Performance et Barèmes de Drag and Drop',
-    caption: 'Échelle d évaluation inspirée des modèles d Accot & Zhai (1997) et des travaux de MacKenzie et al. (1991). SkillDrills ne collecte aucune donnée externe.',
-    headers: ['Palier (Tier)', 'Classification', 'Niveau et Combo', 'Temps Moyen de Transport', 'Taux de Réussite', 'Profil Neuromoteur'],
+    title: 'Paliers d\'entraînement du test glisser-déposer (SkillDrills)',
+    caption: 'Paliers d\'entraînement SkillDrills : ni normes scientifiques ni statistiques d\'utilisateurs, mais des repères fixés par l\'auteur du drill pour lire votre niveau, votre combo et votre précision. SkillDrills ne collecte aucune donnée externe.',
+    headers: ['Palier (Tier)', 'Classification', 'Niveau et Combo', 'Taux de Réussite', 'Profil de jeu'],
     rows: [
       [
         'Tier 1',
         'Élite / Pro Designer',
         'Nv. 12–15 (Combo > 18x)',
-        '< 420 ms',
         '≥ 98,0%',
-        'Profil de vitesse en cloche parfait, freinage immédiat, aucun relâchement prématuré.',
+        'Freinage fluide même sur conteneurs rapides, presque aucun lâcher hors zone.',
       ],
       [
         'Tier 2',
         'Avancé / Compétitif',
         'Nv. 9–11 (Combo 12–17x)',
-        '420–510 ms',
         '94,0%–97,9%',
-        'Décélération maîtrisée, guidage rectiligne rigoureux, micro-ajustements terminaux sous 35 ms.',
+        'Décélération maîtrisée, petits conteneurs atteints avec de courts micro-ajustements.',
       ],
       [
         'Tier 3',
         'Compétent / Intermédiaire',
         'Nv. 6–8 (Combo 7–11x)',
-        '511–640 ms',
         '87,0%–93,9%',
         'Léger dépassement en phase d accélération, ralentissement visible avant l entrée dans le récepteur.',
       ],
@@ -273,7 +269,6 @@ const guideProps = {
         'Tier 4',
         'Débutant / En Progression',
         'Nv. 3–5 (Combo 3–6x)',
-        '641–800 ms',
         '78,0%–86,9%',
         'Guidage saccadé en plusieurs à-coups, tension digitale trop forte provoquant des décrochages.',
       ],
@@ -281,9 +276,8 @@ const guideProps = {
         'Tier 5',
         'Base / Novice',
         'Nv. 1–2 (Combo < 3x)',
-        '> 800 ms',
         '< 78,0%',
-        'Déplacement lent, relâchements fréquents hors récepteur, fatigue rapide des fléchisseurs.',
+        'Déplacement lent, relâchements fréquents hors récepteur.',
       ],
     ],
   },
@@ -300,7 +294,7 @@ const guideProps = {
       },
       {
         title: 'Protocole 3 : Décélération Antagoniste et Freinage (Niveaux 9–12)',
-        description: 'Contractez les muscles extenseurs de l avant-bras 50 ms avant d atteindre le récepteur mobile pour stopper la course pile à l apex spatial.',
+        description: 'Commencez à freiner juste avant le récepteur mobile pour stopper la course à l intérieur, puis relâchez.',
       },
       {
         title: 'Protocole 4 : Interception Dynamique par Anticipation (Niveaux 13–15)',
@@ -318,8 +312,8 @@ const guideProps = {
 };
 
 const copyFr = {
-  title: "Test Drag and Drop – Précision de Souris",
-  subtitle: "Précision du glissement · cible bien déposée",
+  title: "Test glisser-déposer : contrôle de la souris",
+  subtitle: "Glissez la balle et lâchez-la dans le conteneur mobile · 45 secondes",
   startButtonText: "DÉMARRER LE DRILL",
   playAgainText: "Rejouer",
   shareText: "Partager le score",

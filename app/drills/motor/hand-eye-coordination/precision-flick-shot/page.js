@@ -83,7 +83,7 @@ const softwareApplicationSchema = {
   applicationCategory: 'HealthApplication',
   operatingSystem: 'All',
   offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
-  description: 'Free browser-based flick aim trainer and mouse accuracy test. Test ballistic snapping velocity, center bulls-eye precision, and deceleration control with dynamic level progression.',
+  description: 'Free browser-based flick aim trainer and mouse accuracy test. Two shrinking targets are on screen at once; click them before they vanish, and land within 8 px of the centre for double points.',
   url: 'https://skilldrills.online/drills/motor/hand-eye-coordination/precision-flick-shot',
   publisher: { '@type': 'Organization', name: 'SkillDrills', url: 'https://skilldrills.online' },
   dateModified: '2026-09-16',
@@ -121,7 +121,7 @@ const faqSchema = {
       name: 'What is the Precision Flick Shot drill and how does it test mouse accuracy?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Precision Flick Shot is an interactive motor psychophysics drill measuring ballistic cursor flick velocity, target acquisition latency, and center bulls-eye accuracy. Observers acquire rapidly decaying circular targets across an expansive canvas, requiring immediate target prioritization and precise cursor braking.',
+        text: 'Precision Flick Shot is a mouse accuracy drill. Two circular targets are on screen at once and shrink over time (while Target Timeouts is on); the active one shrinks fastest. Click a target before it shrinks away: a hit within 8 px of its centre is a bulls-eye. You start with 45 seconds, every hit adds 2 seconds (up to 60) and the run ends when the clock reaches zero.',
       },
     },
     {
@@ -129,7 +129,7 @@ const faqSchema = {
       name: 'What is the Stochastic Optimized Submovement Model in flick aiming?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Formulated by David E. Meyer et al. (1988), the model states that rapid aimed movements consist of an initial ballistic primary submovement followed by optional feedback-guided corrective submovements. If neuromuscular noise in the primary stroke causes the cursor to miss the target region, a secondary submovement is executed, dramatically increasing total movement time.',
+        text: 'Formulated by David E. Meyer et al. (1988), the model states that rapid aimed movements consist of an initial ballistic primary submovement followed by optional feedback-guided corrective submovements. If noise in the primary stroke makes the cursor miss the target region, a secondary corrective submovement is needed, which adds to the total movement time.',
       },
     },
     {
@@ -137,7 +137,7 @@ const faqSchema = {
       name: 'How does bulls-eye scoring improve aiming mechanics?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Standard aim trainers reward any contact within the outer target perimeter, reinforcing sloppy endpoint distributions. Awarding double bonus points (+200 PTS) for landing within the 8-pixel center core forces the motor system to minimize endpoint variance, translating directly to consistent headshot accuracy.',
+        text: 'A normal hit scores 100 base points; a hit within 8 pixels of the target centre scores 200 base points, both multiplied by your combo and level bonus. Rewarding the centre encourages you to aim for a smaller point inside the target rather than settling for any contact with the edge.',
       },
     },
     {
@@ -145,23 +145,23 @@ const faqSchema = {
       name: 'Why do players over-flick or under-flick targets in tactical shooters?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Over-flicking occurs when antagonist braking muscle groups fail to arrest limb momentum before the target boundary. Under-flicking occurs when players decelerate prematurely due to visual uncertainty. Consistent training under fixed sensitivity calibrates open-loop ballistic motor programs.',
+        text: 'Over-flicking occurs when antagonist braking muscle groups fail to arrest limb momentum before the target boundary. Under-flicking occurs when players decelerate prematurely due to visual uncertainty. Practising with a fixed sensitivity makes the size of the flick more consistent.',
       },
     },
     {
       '@type': 'Question',
-      name: 'How does target decay rate challenge visual prioritization?',
+      name: 'Why are there two targets at once?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'With two targets concurrently active on screen, players must execute rapid visual saccades to assess relative expiration timers. Prioritizing the target with the least remaining lifespan trains divided attention and cognitive task switching under strict temporal deadlines.',
+        text: 'Both targets shrink, but the active one shrinks faster (the other at about 58% of the rate). When one shrinks away it counts as a timeout and the other becomes the active target. Taking the smaller, closer-to-vanishing target first avoids timeouts.',
       },
     },
     {
       '@type': 'Question',
-      name: 'Does flick shot training transfer directly to CS2 and Valorant?',
+      name: 'Does flick shot training help in CS2 and Valorant?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Yes. First-shot accuracy in tactical shooters relies on rapid micro-flicks from pre-aimed angles to enemy head hitboxes. Conditioning single-impulse ballistic snaps eliminates secondary corrective jitter during critical opening duels.',
+        text: 'First-shot accuracy in tactical shooters relies on quick, accurate flicks onto a small target, which is what this drill practises. How much it transfers to a specific game varies from player to player.',
       },
     },
     {
@@ -169,7 +169,7 @@ const faqSchema = {
       name: 'What is the ideal mouse sensitivity and DPI for flick training?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'A sensitivity ranging between 30 cm and 45 cm per 360-degree rotation (equivalent to 800 DPI with 0.35–0.50 in Valorant or 1.1–1.6 in CS2) offers the optimal biomechanical balance between large forearm sweeping speed and fine wrist micro-flick precision.',
+        text: 'Use the sensitivity you play with and keep it the same between runs so your results stay comparable. There is no single correct value; what matters is that large moves come from the arm and the final stop from the wrist and fingers.',
       },
     },
     {
@@ -177,7 +177,7 @@ const faqSchema = {
       name: 'How is flick accuracy and session grading calculated?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Accuracy represents total target hits divided by total clicks attempted. The system also tracks total bulls-eye center hits, peak combo streak, and highest level attained, assigning a comprehensive letter grade from D to S+ based on standardized throughput curves.',
+        text: 'Accuracy is target hits divided by clicks. The results screen also shows bulls-eye hits, target hits and peak level. The letter grade (F to S+) is based on your final score alone.',
       },
     },
     {
@@ -185,7 +185,7 @@ const faqSchema = {
       name: 'What hardware optimizations improve flick shot responsiveness?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Use a high-refresh monitor (144 Hz or higher) to minimize display quantization delays (Woods et al., 2015), disable Windows Enhance Pointer Precision to reduce pointer-speed variation, and select an ultra-lightweight gaming mouse (under 65g) to reduce physical limb inertia.',
+        text: 'Use a high-refresh monitor (144 Hz or higher) to minimize display quantization delays (Woods et al., 2015), disable Windows Enhance Pointer Precision to reduce pointer-speed variation, and keep the same mouse and settings between runs.',
       },
     },
     {
@@ -193,7 +193,7 @@ const faqSchema = {
       name: 'How often should I train precision flicking for optimal gains?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'A 10 to 15 minute daily routine prior to competitive play provides peak neural priming. Brief, highly focused sessions prevent neuromuscular fatigue and tendon strain while reinforcing long-term potentiation in motor cortex synapses.',
+        text: 'A few short, focused runs before you play is a sensible routine. Stop when your wrist or forearm feels tense or tired, because fatigue makes flicks less accurate.',
       },
     },
   ],
@@ -216,7 +216,7 @@ const howToSchema = {
       '@type': 'HowToStep',
       position: 2,
       name: 'Identify and Prioritize Spawning Target',
-      text: 'Scan the canvas for target emergence, evaluating decay rings to engage the target closest to expiration first.',
+      text: 'Watch both targets and take the one that is closer to shrinking away first.',
       url: 'https://skilldrills.online/drills/motor/hand-eye-coordination/precision-flick-shot#step-2'
     },
     {
@@ -230,7 +230,7 @@ const howToSchema = {
       '@type': 'HowToStep',
       position: 4,
       name: 'Brake Firmly and Eliminate Residual Drift',
-      text: 'Recruit antagonist wrist muscles to arrest mouse momentum dead on the bulls-eye before clicking to help register center-mass hits.',
+      text: 'Stop the mouse on the target centre before clicking; a hit within 8 px of the centre scores double.',
       url: 'https://skilldrills.online/drills/motor/hand-eye-coordination/precision-flick-shot#step-4'
     },
   ],
@@ -241,64 +241,26 @@ const guideProps = {
   intro: {
     title: `What Is a Flick Shot Mouse Accuracy Test? Micro-Flicks and Submovements`,
     paragraphs: [
-      `A flick shot mouse accuracy test measures how precisely you can snap your cursor onto a target in one fast movement. In this free drill the targets shrink and decay, and a bulls-eye hit scores more than an edge hit, so it rewards precision as well as speed.`,
+      `A flick shot mouse accuracy test measures how precisely you can snap your cursor onto a target in one fast movement. In this free drill two targets shrink until they vanish, each hit adds 2 seconds to the clock, and a bulls-eye hit (within 8 px of the centre) scores double, so it rewards precision as well as speed.`,
       'In competitive marksmanship and human-computer interaction, a flick shot is a high-velocity, discrete manual aiming movement executed under extreme time constraints. Robert S. Woodworth (1899) first established that goal-directed movements operate via a dual-phase control architecture: an initial ballistic impulse that propels the limb toward the target, followed by a current control phase where visual feedback guides terminal adjustments.',
-      'In their seminal theoretical framework, David E. Meyer et al. (1988) formulated the Stochastic Optimized Submovement Model. They proved that human motor output is subject to neural noise proportional to movement velocity. When players flick too fast, primary movement endpoint scatter increases. If the primary impulse lands outside the target boundaries, a costly secondary corrective submovement (~150–200 ms latency) must be triggered.',
+      'In their seminal theoretical framework, David E. Meyer et al. (1988) formulated the Stochastic Optimized Submovement Model. They proved that human motor output is subject to neural noise proportional to movement velocity. When players flick too fast, primary movement endpoint scatter increases. If the primary impulse lands outside the target, a secondary corrective submovement has to follow, which costs time.',
       'To achieve elite flicking throughput (MacKenzie, 1992), aimers must calibrate their ballistic impulse velocity so that the primary movement distribution falls reliably within target confines. By rewarding inner bulls-eye center hits, this drill trains the sensorimotor system to tighten endpoint distribution dispersion and minimize corrective deceleration submovements.',
       'The distance-versus-size trade-off behind a flick is Fitts\'s Law: movement time grows with the log of the distance to a target divided by its width (Fitts, 1954). The modern synthesis of the two-phase account — one ballistic impulse followed by visually guided correction, and the many processes that feed it — is Elliott et al. (2010).',
       'How this is measured, and what it cannot resolve: timing comes from the browser\'s performance.now() clock, which is deliberately coarsened to roughly 1 ms as a Spectre mitigation, and the display quantizes every target to its own refresh interval — about 16.7 ms at 60 Hz, 6.9 ms at 144 Hz and 4.1 ms at 240 Hz (Woods et al., 2015). Mouse polling adds roughly 8 ms at 125 Hz against about 1 ms at 1000 Hz. Treat any difference under about 5 ms as measurement noise, and compare your own runs on the same mouse and display rather than against someone else\'s setup. SkillDrills stores every score in your browser and collects no aggregate data, so nothing here is a population norm.',
     ],
   },
   benchmarks: {
-    title: 'Empirical Flick Shot and Mouse Accuracy Performance Tiers',
-    caption: 'An editorial guide to reading your own result, not measured population norms — SkillDrills collects no aggregate data. The two-phase movement model follows Woodworth (1899) and Meyer et al. (1988); the band boundaries are the drill author\'s own judgement.',
-    headers: ['Tier', 'Classification', 'Level / Combo Streak', 'Mean Acquisition Latency', 'Click Accuracy', 'Bulls-eye Ratio', 'Neuromuscular Profile'],
+    title: 'Precision Flick Shot: SkillDrills Practice Bands',
+    caption: 'SkillDrills practice bands, not research norms or user data: SkillDrills collects no aggregate data. They match the grade on the results screen, which is set by your final score.',
+    headers: ['Grade', 'Label', 'Final Score', 'Band'],
     rows: [
-      [
-        'Tier 1',
-        'Apex Flick Master',
-        'Lv. 15+ (Combo > 20x)',
-        '< 340 ms',
-        '≥ 96.0%',
-        '> 65%',
-        'Pure single-impulse ballistic trajectories, near-zero secondary submovements, sub-10 ms antagonist braking.',
-      ],
-      [
-        'Tier 2',
-        'Elite Gunfighter',
-        'Lv. 11–14 (Combo 14–19x)',
-        '340–420 ms',
-        '91.0%–95.9%',
-        '45%–64%',
-        'Sharp foveal verification, micro-corrective secondary submovement < 30 ms, minimal trajectory drift.',
-      ],
-      [
-        'Tier 3',
-        'Competent Marksman',
-        'Lv. 7–10 (Combo 8–13x)',
-        '421–520 ms',
-        '84.0%–90.9%',
-        '25%–44%',
-        'Frequent outer-ring hits, slight overshooting during rapid target transitions, occasional double-clicking.',
-      ],
-      [
-        'Tier 4',
-        'Developing Fragger',
-        'Lv. 4–6 (Combo 4–7x)',
-        '521–660 ms',
-        '74.0%–83.9%',
-        '10%–24%',
-        'Multi-impulse jerky corrections, elevated endpoint variance from over-accelerating, hesitation before release.',
-      ],
-      [
-        'Tier 5',
-        'Baseline / Novice',
-        'Lv. 1–3 (Combo < 4x)',
-        '> 660 ms',
-        '< 74.0%',
-        '< 10%',
-        'Under-shooting, frequent misses, slow target reacquisition latency, uncoordinated wrist-arm transitions.',
-      ],
+      ['S+', 'Legendary', '46,028+ PTS', 'SkillDrills practice band'],
+      ['S', 'Elite', '36,848+ PTS', 'SkillDrills practice band'],
+      ['A', 'Excellent', '28,688+ PTS', 'SkillDrills practice band'],
+      ['B', 'Great', '18,360+ PTS', 'SkillDrills practice band'],
+      ['C', 'Good', '10,328+ PTS', 'SkillDrills practice band'],
+      ['D', 'Keep Going', '4,590+ PTS', 'SkillDrills practice band'],
+      ['F', 'Needs Practice', 'under 4,590 PTS', 'SkillDrills practice band'],
     ],
   },
   protocols: {
@@ -306,19 +268,19 @@ const guideProps = {
     items: [
       {
         title: 'Protocol 1: Primary Ballistic Impulse Calibration (Levels 1–4)',
-        description: 'Prioritize a single smooth flick over rushing. Eliminate stuttering hesitation or mid-flight pauses. Commit to your primary ballistic trajectory and rely on open-loop motor memory to land within the outer target perimeter.',
+        description: 'Prioritize a single smooth flick over rushing. Avoid hesitation or mid-flight pauses. Commit to your primary ballistic trajectory and rely on open-loop motor memory to land within the outer target perimeter.',
       },
       {
         title: 'Protocol 2: Meyer Stochastic Submovement Minimization (Levels 5–8)',
-        description: 'Consciously aim for the inner 8-pixel center bulls-eye core. Aiming for a smaller virtual target forces the motor cortex to suppress motor noise, narrowing your overall shot distribution and preventing near-miss edge clicks.',
+        description: 'Aim for the bulls-eye: anything within 8 pixels of the centre scores double. Aiming at a smaller point inside the target also reduces near-miss edge clicks.',
       },
       {
         title: 'Protocol 3: Dual-Target Priority Sequencing (Levels 9–12)',
-        description: 'When two targets spawn simultaneously, utilize rapid peripheral vision to evaluate expiration timers. Acquire and eliminate the older, higher-decay target first before snapping across the screen to the newly spawned target.',
+        description: 'Two targets are always on screen. Take the active, faster-shrinking target first, then flick across to the other one before it becomes active.',
       },
       {
         title: 'Protocol 4: Antagonist Deceleration & Overflick Braking (Levels 13–15)',
-        description: 'At extreme speeds, actively recruit antagonist wrist extensor muscles to brake the mouse precisely over the target center. Practice hard stops on target coordinates to prevent momentum over-sliding.',
+        description: 'At high levels targets start smaller and shrink faster. Practise clean stops on the target centre so the mouse does not slide past it.',
       },
     ],
   },
@@ -344,10 +306,10 @@ const copyEn = {
   peakLevelLabel: "Peak Level",
   rulesTitle: "Drill Instructions & Scoring System",
   rulesItems: [
-    { num: "1", text: "Bullseye Hit", highlight: "+200 PTS / +0.6s", result: "Inner Core Shot Precision" },
-    { num: "2", text: "Standard Hit", highlight: "+100 PTS / +0.6s", result: "Rapid Peripheral Target Acquisition" },
-    { num: "3", text: "Level Progression", highlight: "+1 Level / 1400 PTS", result: "Targets Shrink & Decay Faster" },
-    { num: "4", text: "Miss & Timeout", highlight: "Combo Reset", result: "Penalty Deducts -0.8s" }
+    { num: "1", text: "Bullseye Hit", highlight: "+200 PTS / +2s (max 60s)", result: "Within 8 px of centre" },
+    { num: "2", text: "Standard Hit", highlight: "+100 PTS / +2s (max 60s)", result: "×Combo Mult" },
+    { num: "3", text: "Level Progression", highlight: "+1 Level / 1400 PTS", result: "Smaller targets, faster shrink" },
+    { num: "4", text: "Miss & Timeout", highlight: "Combo Reset", result: "-1s Clock" }
   ],
 };
 

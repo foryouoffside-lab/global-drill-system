@@ -24,12 +24,12 @@ import { pickSources } from '@/lib/drillSources';
 export const metadata = {
   title: '連打測定・CPSテスト｜クリック速度を45秒計測 | SkillDrills',
   description:
-    'マウスやタップを連打して、秒間クリック数（CPS）と45秒間の連打持久力を測定。登録不要でブラウザからすぐ使える無料の連打ツールです。',
+    '連打測定・CPS測定の無料ツール。マウスクリックやタップを45秒間連打して、秒間クリック数（CPS）と連打持久力を計測します。登録不要でブラウザからすぐ使えます。',
   keywords: [
     'CPSテスト',
     'クリック速度 テスト',
     '連打測定',
-    '連打ツール',
+    'CPS測定',
     'クリック連打',
     'クリック数 測定',
     'マウス 連打',
@@ -78,16 +78,16 @@ const softwareApplicationSchema = {
   '@context': 'https://schema.org',
   '@type': 'SoftwareApplication', "sameAs": ["https://en.wikipedia.org/wiki/Fine_motor_skill"],
   name: '連打測定・CPSテスト – クリック速度測定＆連打持久力診断ツール',
-  alternateName: ['連打測定', 'CPSテスト', 'クリック速度測定', '連打ツール', '秒間クリック数測定'],
+  alternateName: ['連打測定', 'CPSテスト', 'CPS測定', 'クリック速度測定', '秒間クリック数測定'],
   applicationCategory: 'HealthApplication',
   operatingSystem: 'All',
   offers: { '@type': 'Offer', price: '0', priceCurrency: 'JPY' },
   description:
-    'ブラウザ完結の無料連打測定・CPSテストツール。1本指単打、ジッタークリック、バタフライクリックの秒間連打速度と、加速するターゲット縮小に対する神経筋持久力を45秒間で精密測定します。',
+    'ブラウザ完結の無料連打測定・CPS測定ツール。1本指単打、ジッタークリック、バタフライクリックの秒間クリック数（CPS）と、加速して縮むターゲットを45秒間連打し続ける持久力を計測します。',
   url: 'https://skilldrills.online/ja/drills/motor/movement-speed/rapid-tapping',
   publisher: { '@type': 'Organization', name: 'SkillDrills', url: 'https://skilldrills.online' },
   inLanguage: 'ja-JP',
-  dateModified: '2026-09-20',
+  dateModified: '2026-11-09',
 };
 
 const webApplicationSchema = {
@@ -101,7 +101,7 @@ const webApplicationSchema = {
   offers: { '@type': 'Offer', price: '0', priceCurrency: 'JPY' },
   url: 'https://skilldrills.online/ja/drills/motor/movement-speed/rapid-tapping',
   inLanguage: 'ja-JP',
-  dateModified: '2026-09-20',
+  dateModified: '2026-11-09',
 };
 
 const videoGameSchema = {
@@ -122,7 +122,7 @@ const faqSchema = {
   '@context': 'https://schema.org',
   '@type': 'FAQPage',
   inLanguage: 'ja-JP',
-  dateModified: '2026-09-20',
+  dateModified: '2026-11-09',
   mainEntity: [
     {
       '@type': 'Question',
@@ -137,7 +137,7 @@ const faqSchema = {
       name: 'ゲーマーの平均CPS（連打速度）の基準値はどれくらいですか？',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: '一般的なPCユーザーやカジュアルゲーマーが人差し指で普通にクリックした場合の平均値は5.0〜6.5 CPSです。ゲーム操作に熟練したプレイヤーは単打で8.0〜10.5 CPSに達し、マインクラフトPvPや競技音ゲーマーはジッタークリックで12.0〜16.0+ CPS、バタフライクリックで16.0〜20.0+ CPSを記録します。',
+        text: '公的な統計ではなく練習の目安ですが、人差し指で普通にクリックした場合はおおむね5〜7 CPS、慣れたプレイヤーの単打で8〜10 CPS前後です。ジッタークリックでは12 CPS以上、バタフライクリックでは16 CPS以上の記録が出ることもあります。',
       },
     },
     {
@@ -185,7 +185,7 @@ const faqSchema = {
       name: '当サイトの45秒連打測定ドリルはどのように難易度が上がりますか？',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: '一般的な5秒間の短時間クリック測定とは異なり、本ドリルは45秒間の持久力テストです。クリックするたびにターゲット球が拡大しますが、スコアが上がるにつれて加速しながら球が自動で縮小します。球が消滅（半径0）するとペナルティが発生するため、瞬間的な連打力だけでなく持続的なペース配分が試されます。',
+        text: '一般的な5秒間の短時間クリック測定とは異なり、本ドリルは45秒間の持久力テストです。球の内側をクリックした回数だけがカウントされ、1クリックごとに球が拡大し、10クリックごとに1点が入ります。球は常に縮小し、5点ごとに縮む速度が上がります。球が消えるとペナルティ演出とともに小さいサイズに戻る（スコアは減りません）ため、瞬間的な連打力だけでなく持続的なペース配分が試されます。',
       },
     },
     {
@@ -201,7 +201,7 @@ const faqSchema = {
       name: 'スマートフォンやタブレットのタッチパネルでも測定できますか？',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'はい、本ツールはPointer Events APIによるマルチタッチ入力に対応しており、スマートフォンやタブレットの画面を直接指で連打してタップ速度を測定できます。タッチデバイスでの2本指交互タップやモバイル音ゲーの打鍵速度テストにも最適です。',
+        text: 'はい、タッチ操作に対応しており、スマートフォンやタブレットの画面中央の球を指で連打してタップ速度（CPS）を測定できます。2本指の交互タップも1回ずつカウントされます。キーボードのキー入力はカウントされません（Escキーは終了のみ）。',
       },
     },
   ],
@@ -211,7 +211,7 @@ const howToSchema = {
   '@context': 'https://schema.org',
   '@type': 'HowTo',
   inLanguage: 'ja-JP',
-  dateModified: '2026-09-20',
+  dateModified: '2026-11-09',
   name: 'CPSテスト – 秒間クリック数測定・連打速度測定ツール',
   description: 'CPSテスト – 秒間クリック数測定・連打速度測定ツール',
   step: [
@@ -240,7 +240,7 @@ const howToSchema = {
       '@type': 'HowToStep',
       position: 4,
       name: '平均CPSと最高連打速度の分析',
-      text: '終了画面で平均CPS（秒間クリック回数）、5秒ピーク連打速度、疲労耐性スコアを分析します。',
+      text: '終了画面で平均CPS（総クリック数÷経過秒数）、総クリック数、スコア、到達した縮小速度、自己ベストCPSを確認します。',
       url: 'https://skilldrills.online/ja/drills/motor/movement-speed/rapid-tapping#step-4'
     }
   ],
@@ -251,15 +251,15 @@ const guideProps = {
   intro: {
     title: 'クリック速度（CPS）の測定原理と科学的背景',
     paragraphs: [
-      '連打測定とは、1秒間に何回クリックやタップできるか（CPS）を測るテストです。このページでは45秒間、クリックするたびに大きくなり時間とともに縮むターゲットを連打して、平均CPSとピークCPSを確認できます。一般的な人差し指の単打は秒間5〜7回が目安で、10回を超える記録はジッタークリックやバタフライクリックなどの技術によるものです。',
+      '連打測定とは、1秒間に何回クリックやタップできるか（CPS）を測るテストです。このページでは45秒間、クリックするたびに大きくなり時間とともに縮むターゲットを連打して、平均CPSと直近2秒のライブCPSを確認できます。一般的な人差し指の単打は秒間5〜7回が目安で、10回を超える記録はジッタークリックやバタフライクリックなどの技術によるものです。',
       'CPSテスト（Clicks Per Second）は、1秒間にマウスボタンをクリックできる回数を測定する指標です。1本指による持続的な単独タップは約5〜7 CPSが上限となり、これは健康な成人の利き手人差し指における標準タッピング試験の基準値（10秒あたり約50〜55回）に一致します（Halstead, 1947; Todor & Kyprie, 1980）。これを超える高い数値は1打ごとに意識的な筋指令を出すのではなく、事前プログラムされた運動連鎖（オープンループ制御）として実行されます（Keele, 1968）。',
       '測定精度と表示の量子化について：ブラウザ内の計時はperformance.now()クロックに基づいており、Spectre脆弱性対策として約1ミリ秒に丸められています。またディスプレイはリフレッシュレートに応じて画面を更新します（60Hzで約16.7ms、144Hzで約6.9ms、240Hzで約4.1ms、Woods et al., 2015）。マウスのポーリングレートは125Hzで約8ms、1000Hzで約1msの遅延を生じさせます。そのため約5ms未満の微小な差異は測定ノイズとして扱い、他者の環境と比較するよりも、同一のハードウェア環境における自身の成長記録を重視してください。SkillDrillsはすべての記録をブラウザ内にローカル保存し、外部収集は行いません。',
     ],
   },
   benchmark: {
-    title: '連打測定・CPSランク判定表（目安）',
-    description: '自分の測定結果を振り返るための目安表です。公的な統計ではありません。単打基準は神経心理学の運動生理データ（Halstead 1947; Todor & Kyprie 1980）に基づいており、ジッター・バタフライ行は競技ゲーマーの打鍵データに基づきます。瞬間バースト速度と45秒持続CPSを総合評価しています。',
-    columns: ['ランク階層', '公式称号', '平均CPS', '瞬間最高CPS (5秒)', '推奨連打技術', '競技評価'],
+    title: '連打測定・CPS練習目安表（SkillDrills）',
+    description: 'SkillDrillsが練習の目安として設定した帯域です。研究上の基準値やユーザーデータではありません。単打の上限の考え方のみ指タッピング研究（Halstead 1947; Todor & Kyprie 1980）を参考にしています。',
+    columns: ['ランク階層', '公式称号', '平均CPS', 'ライブCPS目安（直近2秒）', '推奨連打技術', '競技評価'],
     rows: [
       {
         tier: 'Tier 1',
@@ -336,7 +336,7 @@ const guideProps = {
 
 const jaCopy = {
   title: "連打測定・CPSテスト",
-  subtitle: "秒間クリック数を測り、45秒の連打持久力を鍛える",
+  subtitle: "CPS測定：秒間クリック数と45秒の連打持久力を計測",
   desc: "1秒あたりのクリック数（CPS）を測定するオンライン連打テスト。標準的な1本指の連打は秒間約5〜7回（ハルステッド指タッピング基準、50〜55回/10秒）であり、ネット上で見られる10+ CPS以上の高記録はジッタークリックやバタフライクリックなどの特殊技術によるものです。",
   score: "スコア",
   timeLeft: "残り時間",
@@ -351,7 +351,7 @@ const jaCopy = {
   avgCps: "平均CPS",
   totalClicks: "総クリック数",
   maxDifficulty: "最高難易度",
-  peakCps: "ピークCPS",
+  peakCps: "自己ベストCPS",
   newBest: "新記録",
   rulesTitle: "訓練手順とスコアシステム",
   rulesItems: [

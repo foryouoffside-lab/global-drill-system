@@ -671,8 +671,8 @@ export default function TracingClient({ copy } = {}) {
           <div className="flex flex-col gap-1">
             <h1 className="text-2xl sm:text-3xl font-black tracking-tight text-white">
               <span data-seo-kw="1">{copy?.title || "Mouse Tracing Game"}</span>
-              <span className="block text-sm font-semibold text-slate-400 mt-1">{copy?.subtitle || "Mouse tracing accuracy drill for following a moving path, improving cursor control, and building steady hand precision"}</span>
             </h1>
+            <p className="text-sm font-semibold text-slate-400 mt-1">{copy?.subtitle || "Mouse tracing accuracy drill for following a moving path, improving cursor control, and building steady hand precision"}</p>
           </div>
         )}
 

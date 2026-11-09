@@ -1,0 +1,40 @@
+{"phrase": "test de cps", "cc": "es", "lang": "es-ES", "exact": 40, "broad": 40, "status": "ok"}
+{"phrase": "cps test", "cc": "es", "lang": "es-ES", "exact": 685, "broad": 713, "status": "ok"}
+{"phrase": "test de clics", "cc": "es", "lang": "es-ES", "exact": 22, "broad": 22, "status": "ok"}
+{"phrase": "test de clicks", "cc": "es", "lang": "es-ES", "exact": 49, "broad": 49, "status": "ok"}
+{"phrase": "clicks por segundo", "cc": "es", "lang": "es-ES", "exact": 343, "broad": 420, "status": "ok"}
+{"phrase": "clics por segundo", "cc": "es", "lang": "es-ES", "exact": 28, "broad": 28, "status": "ok"}
+{"phrase": "test de clicks por segundo", "cc": "es", "lang": "es-ES", "exact": 0, "broad": 0, "status": "ok"}
+{"phrase": "test de clics por segundo", "cc": "es", "lang": "es-ES", "exact": 0, "broad": 0, "status": "ok"}
+{"phrase": "contador de clicks por segundo", "cc": "es", "lang": "es-ES", "exact": 17, "broad": 17, "status": "ok"}
+{"phrase": "medir clicks por segundo", "cc": "es", "lang": "es-ES", "exact": 0, "broad": 0, "status": "ok"}
+{"phrase": "test de velocidad de clicks", "cc": "es", "lang": "es-ES", "exact": 0, "broad": 0, "status": "ok"}
+{"phrase": "test de cliqueo", "cc": "es", "lang": "es-ES", "exact": 0, "broad": 0, "status": "ok"}
+{"phrase": "test de velocidad de cliqueo", "cc": "es", "lang": "es-ES", "exact": 31, "broad": 31, "status": "ok"}
+{"phrase": "test de click raton", "cc": "es", "lang": "es-ES", "exact": 0, "broad": 0, "status": "ok"}
+{"phrase": "test de teclado", "cc": "es", "lang": "es-ES", "exact": 370, "broad": 400, "status": "ok"}
+{"phrase": "test de teclado online", "cc": "es", "lang": "es-ES", "exact": 27, "broad": 27, "status": "ok"}
+{"phrase": "keyboard test", "cc": "es", "lang": "es-ES", "exact": 525, "broad": 576, "status": "ok"}
+{"phrase": "keyboard tester", "cc": "es", "lang": "es-ES", "exact": 213, "broad": 222, "status": "ok"}
+{"phrase": "probar teclado", "cc": "es", "lang": "es-ES", "exact": 233, "broad": 260, "status": "ok"}
+{"phrase": "test de reaccion con teclado", "cc": "es", "lang": "es-ES", "exact": 0, "broad": 0, "status": "ok"}
+{"phrase": "test de reacción teclado", "cc": "es", "lang": "es-ES", "exact": 0, "broad": 0, "status": "ok"}
+{"phrase": "test de teclas", "cc": "es", "lang": "es-ES", "exact": 0, "broad": 0, "status": "ok"}
+{"phrase": "test de ratón", "cc": "es", "lang": "es-ES", "exact": 0, "broad": 0, "status": "ok"}
+{"phrase": "test de raton online", "cc": "es", "lang": "es-ES", "exact": 0, "broad": 0, "status": "ok"}
+{"phrase": "test precision raton", "cc": "es", "lang": "es-ES", "exact": 0, "broad": 0, "status": "ok"}
+{"phrase": "test de precisión del ratón", "cc": "es", "lang": "es-ES", "exact": 0, "broad": 0, "status": "ok"}
+{"phrase": "test punteria raton", "cc": "es", "lang": "es-ES", "exact": 0, "broad": 0, "status": "ok"}
+{"phrase": "ejercicios de raton", "cc": "es", "lang": "es-ES", "exact": 0, "broad": 0, "status": "ok"}
+{"phrase": "ejercicios con el raton", "cc": "es", "lang": "es-ES", "exact": 0, "broad": 0, "status": "ok"}
+{"phrase": "ejercicios de mouse", "cc": "es", "lang": "es-ES", "exact": 0, "broad": 0, "status": "ok"}
+{"phrase": "ejercicios raton online", "cc": "es", "lang": "es-ES", "exact": 0, "broad": 0, "status": "ok"}
+{"phrase": "juegos de ratón", "cc": "es", "lang": "es-ES", "exact": 0, "broad": 0, "status": "ok"}
+{"phrase": "juego del pulso", "cc": "es", "lang": "es-ES", "exact": 0, "broad": 0, "status": "ok"}
+{"phrase": "juego de pulso", "cc": "es", "lang": "es-ES", "exact": 0, "broad": 0, "status": "ok"}
+{"phrase": "juego de pulso online", "cc": "es", "lang": "es-ES", "exact": null, "broad": null, "status": "error:<urlopen error [Errno 11001] getaddrinfo failed>"}
+{"phrase": "juego de pulso firme", "cc": "es", "lang": "es-ES", "exact": 0, "broad": 0, "status": "ok"}
+{"phrase": "juegos de arrastrar y soltar", "cc": "es", "lang": "es-ES", "exact": 0, "broad": 0, "status": "ok"}
+{"phrase": "ejercicios de arrastrar y soltar", "cc": "es", "lang": "es-ES", "exact": 0, "broad": 0, "status": "ok"}
+{"phrase": "test de seguimiento del ratón", "cc": "es", "lang": "es-ES", "exact": 0, "broad": 0, "status": "ok"}
+{"phrase": "clic en orden", "cc": "es", "lang": "es-ES", "exact": 0, "broad": 0, "status": "ok"}

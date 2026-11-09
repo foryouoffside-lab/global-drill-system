@@ -88,7 +88,7 @@ const RULES_ITEMS = [
   { num: "1", text: "Target Hit", highlight: "+100 PTS (+2s, max 60s)", result: "×Combo Mult" },
   { num: "2", text: "Continuous Combo", highlight: "Up to 3.0× PTS", result: "Maintains Flow" },
   { num: "3", text: "Level Up", highlight: "+1 / 1750 PTS", result: "Shrink & Accelerate" },
-  { num: "4", text: "Miss / Timeout", highlight: "Penalty", result: "Resets Combo (-0.8s)" }
+  { num: "4", text: "Miss / Timeout", highlight: "Penalty", result: "Resets Combo (-1s)" }
 ];
 
 
@@ -660,8 +660,8 @@ export default function AimTrainerClient({ copy = {} } = {}) {
             {copy?.h1Prefix || null}
             <span data-seo-kw="1">{copy?.h1Keyword || copy?.title || t('aimTrainer.title', 'Aim Trainer Elite')}</span>
             {copy?.h1Suffix || null}
-            <span className="block text-sm font-semibold text-slate-400 mt-1">{copy?.subtitle || 'Online aim trainer for mouse accuracy, target acquisition, reaction speed, and precision click timing'}</span>
           </h1>
+          <p className="text-sm font-semibold text-slate-400 mt-1">{copy?.subtitle || 'Online aim trainer for mouse accuracy, target acquisition, reaction speed, and precision click timing'}</p>
           </div>
         )}
 

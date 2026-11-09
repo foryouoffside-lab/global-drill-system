@@ -1,0 +1,20 @@
+## cps test answers=3 captcha=False 
+1 cpstest.org | CPS Test - Check Clicks per Second
+2 cps-test.click | Click Speed Test game | Clicks counter | CPS Test
+3 clickspeedtest.com | Click speed test - Check Clicks per Second
+4 arealme.com | Klicks Pro Sekunde Test - Schaffst du mehr als 9 Klicks ...
+5 cpstester.com | Click Speed Test - Test your clicks per second - …
+6 cpstest.net | Check Click Per Second Test | CPS Test
+7 clickspeedtest.net | Click Speed test - Click per second
+8 clickspeedtester.com | Click Speed Test | CPS Counter | Check Clicks …
+9 cookie.riimu.net | Clicking Speed Test - Riimu's Cookie Clicker …
+## tastatur test answers=None captcha=None page.evaluate: Execution context was destroyed, most likely because of a navigat
+## feinmotorik übungen answers=0 captcha=False 
+1 meineschulkinder.de | Feinmotorik fördern - einfach spielerisch mit 17 Ideen - Meine Schulkinder
+2 ergotherapie-trauernicht.de | Spielideen zur Förderung der Feinmotorik - ergotherapie-trauernicht.de
+3 erzieherin-ausbildung.de | Feinmotorik fördern – Übungen und Spiele für Kita-Kinder - Erzieherin
+4 grundschule-aktuell.de | Spielerische Übungen für die Feinmotorik - Grundschule aktuell
+5 blog.eibe.de | Feinmotorik fördern Spaßige Übungen für Kinder | eibe Blog ♥
+6 schuelerhilfe.de | Feinmotorik fördern: Die besten Feinmotorik-Übungen & Spiele für Ihr ...
+7 kita.de | Feinmotorik fördern: Tipps für Alltag und Kindergarten
+8 praxistipps.focus.de | Feinmotorik trainieren: Mit diesen Übungen funktioniert's

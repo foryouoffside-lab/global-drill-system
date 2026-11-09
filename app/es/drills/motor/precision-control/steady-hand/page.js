@@ -11,16 +11,16 @@ import { pickSources } from '@/lib/drillSources';
 
 export const metadata = {
   title: 'Juego del Pulso Online | Test de Mano Firme | SkillDrills',
-  description: 'Juego del pulso online: sigue un trazado cada vez más estrecho y mide la precisión del cursor y la estabilidad de la mano. Gratis.',
+  description: 'Juego del pulso online gratis: lleva el cursor por la línea iluminada hasta la meta sin salirte. Cada racha vuelve el trazado más sinuoso. Entrena la mano firme.',
   keywords: [
-    'test de precisión del ratón', 'test de mano firme', 'precisión del cursor',
-    'seguir un trazado', 'control motor fino', 'coordinación ojo mano ratón',
+    'juego del pulso online', 'test de mano firme', 'precisión del cursor',
+    'juego de pulso firme', 'control motor fino', 'mano firme',
     'juego de laberinto del ratón', 'control del cursor', 'entrenamiento de precisión',
-    'estabilidad de la mano', 'camino estrecho ratón', 'prueba de precisión del mouse',
+    'estabilidad de la mano', 'juego del pulso',
   ],
   openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
     title: 'Juego del Pulso Online | Test de Mano Firme | SkillDrills',
-    description: 'Juego del pulso online: sigue un trazado cada vez más estrecho y mide la precisión del cursor y la estabilidad de la mano. Gratis.',
+    description: 'Juego del pulso online gratis: lleva el cursor por la línea iluminada hasta la meta sin salirte. Cada racha vuelve el trazado más sinuoso. Entrena la mano firme.',
     type: 'article',
     url: 'https://skilldrills.online/es/drills/motor/precision-control/steady-hand',
     siteName: 'SkillDrills',
@@ -29,7 +29,7 @@ export const metadata = {
   twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: 'summary_large_image',
     title: 'Juego del Pulso Online | Test de Mano Firme | SkillDrills',
-    description: 'Juego del pulso online: sigue un trazado cada vez más estrecho y mide la precisión del cursor y la estabilidad de la mano. Gratis.',
+    description: 'Juego del pulso online gratis: lleva el cursor por la línea iluminada hasta la meta sin salirte. Cada racha vuelve el trazado más sinuoso. Entrena la mano firme.',
   },
   robots: { index: true, follow: true },
   alternates: {
@@ -55,14 +55,14 @@ const softwareApplicationSchema = {
   '@context': 'https://schema.org',
   '@type': 'SoftwareApplication', "sameAs": ["https://en.wikipedia.org/wiki/Fine_motor_skill"],
   inLanguage: 'es-ES',
-  name: 'Juego del Pulso – Test de Precisión de Ratón',
+  name: 'Juego del Pulso Online – Test de Mano Firme',
   applicationCategory: 'HealthApplication',
   operatingSystem: 'All',
   offers: { '@type': 'Offer', price: '0', priceCurrency: 'EUR' },
-  description: 'Juego del pulso y test de control motor fino gratuito para navegador. Conduce el cursor a través de un pasillo que se estrecha y evalúa tu estabilidad de mano y temblor.',
+  description: 'Juego del pulso gratuito para navegador. Desviarte más de 2,5 píxeles de la línea central te devuelve al inicio, y cada vuelta en racha hace más sinuoso el siguiente trazado.',
   url: 'https://skilldrills.online/es/drills/motor/precision-control/steady-hand',
   publisher: { '@type': 'Organization', name: 'SkillDrills', url: 'https://skilldrills.online/es' },
-  dateModified: '2026-09-20',
+  dateModified: '2026-11-09',
 };
 
 const webApplicationSchema = {
@@ -72,10 +72,10 @@ const webApplicationSchema = {
   name: 'Juego del Pulso Online',
   applicationCategory: 'GameApplication',
   operatingSystem: 'All',
-  browserRequirements: 'Navegador moderno con compatibilidad HTML5 Canvas y Pointer Events',
+  browserRequirements: 'Navegador moderno con HTML5 Canvas y Pointer Lock API',
   offers: { '@type': 'Offer', price: '0', priceCurrency: 'EUR' },
   url: 'https://skilldrills.online/es/drills/motor/precision-control/steady-hand',
-  dateModified: '2026-09-20',
+  dateModified: '2026-11-09',
 };
 
 const videoGameSchema = {
@@ -84,26 +84,26 @@ const videoGameSchema = {
   inLanguage: 'es-ES',
   name: 'Juego del Pulso y Precisión Motora',
   url: 'https://skilldrills.online/es/drills/motor/precision-control/steady-hand',
-  description: 'Juego de habilidad que evalúa el temblor fisiológico y la precisión de trazado en el ratón.',
+  description: 'Juego de habilidad para practicar el pulso y la precisión de trazado con el ratón.',
   genre: ['Precision Game', 'Action', 'Esports Training'],
   gamePlatform: ['Web Browser', 'Desktop', 'Mobile'],
   applicationCategory: 'Game',
   offers: { '@type': 'Offer', price: '0', priceCurrency: 'EUR' },
-  dateModified: '2026-09-20',
+  dateModified: '2026-11-09',
 };
 
 const faqSchema = {
   '@context': 'https://schema.org',
   '@type': 'FAQPage',
   inLanguage: 'es-ES',
-  dateModified: '2026-09-20',
+  dateModified: '2026-11-09',
   mainEntity: [
     {
       '@type': 'Question',
-      name: '¿Qué es el Juego del Pulso y qué habilidades motoras mide?',
+      name: '¿Qué es el Juego del Pulso y qué entrena?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'El Juego del Pulso es una prueba neuromotora interactiva que consiste en guiar el cursor por un pasillo serpenteante sin tocar las paredes. Evalúa la estabilidad de la trayectoria, la retroalimentación visual en tiempo real y el temblor fisiológico bajo una restricción de espacio progresiva.',
+        text: 'En el Juego del Pulso llevas el cursor desde la zona de salida a la izquierda hasta la meta a la derecha siguiendo una línea iluminada y serpenteante, sin salirte. No mide reflejos: entrena un control lento y estable del ratón con corrección visual continua. La puntuación son las vueltas completadas antes de que se agote el reloj de 45 segundos.',
       },
     },
     {
@@ -119,15 +119,15 @@ const faqSchema = {
       name: '¿Por qué se reinicia el cursor al inicio al rozar la pared?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'El motor analiza de forma continua la distancia euclidiana entre las coordenadas del cursor y la línea central. Al superar la mitad del ancho permitido, se registra una falta inmediata que devuelve el puntero al inicio, exigiendo una precisión absoluta sin concesiones.',
+        text: 'En cada fotograma el motor calcula la distancia entre el cursor y la línea central. Entre la salida y la meta, un desvío de más de 2,5 píxeles cuenta como toque: el cursor vuelve al inicio, los fallos suben 1 y la racha vuelve a 0. El reloj sigue corriendo.',
       },
     },
     {
       '@type': 'Question',
-      name: '¿Cómo se reduce el ancho del pasillo en cada vuelta?',
+      name: '¿Cómo aumenta la dificultad en cada vuelta?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'El circuito comienza con una holgura de 50 píxeles en la vuelta 1 y se estrecha progresivamente con cada vuelta superada hasta quedar reducido a un canal de solo 12 píxeles en el nivel 12 o superior.',
+        text: 'La tolerancia (±2,5 píxeles alrededor de la línea) nunca cambia. Lo que cambia es el trazado: con cada vuelta completada en racha, el siguiente recorrido tiene más segmentos (de 15 hasta 120) y oscilaciones verticales más amplias. Un toque pone la racha a 0 y el trazado siguiente vuelve a ser suave. Cada vuelta completada reinicia el reloj a 45 segundos.',
       },
     },
     {
@@ -156,10 +156,10 @@ const faqSchema = {
     },
     {
       '@type': 'Question',
-      name: '¿Resulta útil este entrenamiento para cirujanos, dibujantes y jugadores de FPS?',
+      name: '¿Resulta útil este entrenamiento para dibujantes y jugadores de FPS?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Sí. Tanto la cirugía laparoscópica como el entintado digital y la puntería de seguimiento en videojuegos competitivos exigen un pulso impecable, supresión del temblor y un control milimétrico del puntero.',
+        text: 'El gesto se parece al entintado digital y a la puntería de seguimiento en shooters, donde el puntero debe mantenerse en una trayectoria estrecha. La mejora varía de una persona a otra y el juego no es una prueba médica de temblor.',
       },
     },
     {
@@ -172,10 +172,10 @@ const faqSchema = {
     },
     {
       '@type': 'Question',
-      name: '¿Se puede jugar con ratones trackball o lápices de tabletas gráficas?',
+      name: '¿Se puede jugar con trackball o pantalla táctil?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Sí. La aplicación emplea la API Pointer Events del navegador y es plenamente funcional con ratones convencionales, trackballs y lápices ópticos para evaluar el pulso en diferentes periféricos.',
+        text: 'En ordenador el juego lee el movimiento del ratón mediante Pointer Lock, así que funcionan ratón y trackball. En dispositivos solo táctiles se arrastra el dedo. Los lápices de tableta gráfica se comportan distinto según el equipo. Compara resultados en el mismo dispositivo.',
       },
     },
   ],
@@ -185,16 +185,16 @@ const howToSchema = {
   '@context': 'https://schema.org',
   '@type': 'HowTo',
   inLanguage: 'es-ES',
-  dateModified: '2026-09-20',
+  dateModified: '2026-11-09',
   name: 'Cómo entrenar el pulso y la precisión con el ratón',
-  description: 'Protocolo de entrenamiento para recorrer curvas estrechas y dominar la Ley de Accot-Zhai.',
+  description: 'Protocolo de entrenamiento para recorrer trazados cada vez más sinuosos y dominar la Ley de Accot-Zhai.',
   step: [
     {
       '@type': 'HowToStep',
       position: 1,
       url: 'https://skilldrills.online/es/drills/motor/precision-control/steady-hand#step-1',
       name: 'Colocar el cursor en la zona de inicio',
-      text: 'Haz clic en „Iniciar Drill“ y sitúa el cursor en la casilla verde de salida para activar el recorrido y el temporizador de 45 segundos.',
+      text: 'Haz clic en „Iniciar Drill“. Tras una cuenta atrás de 3 segundos, el cursor aparece en la zona verde de salida a la izquierda y arranca el temporizador de 45 segundos. En PC el puntero se bloquea (Pointer Lock); Esc sale.',
     },
     {
       '@type': 'HowToStep',
@@ -214,8 +214,8 @@ const howToSchema = {
       '@type': 'HowToStep',
       position: 4,
       url: 'https://skilldrills.online/es/drills/motor/precision-control/steady-hand#step-4',
-      name: 'Entrar en la meta para aumentar la dificultad',
-      text: 'Alcanza la zona de llegada verde para completar la vuelta. El tiempo se restablecerá y el canal se estrechará para la siguiente vuelta.',
+      name: 'Entrar en la meta para la siguiente vuelta',
+      text: 'Alcanza la zona de llegada verde a la derecha para completar la vuelta. El reloj vuelve a 45 segundos y, cuanto más larga sea tu racha, más sinuoso será el siguiente trazado.',
     },
   ],
 };
@@ -225,63 +225,29 @@ const guideProps = {
   intro: {
     title: 'Cómo se mide el pulso y la estabilidad manual',
     paragraphs: [
+      'El juego del pulso online funciona como el clásico de feria: llevas el cursor por una línea iluminada hasta la meta y cualquier desvío te devuelve al inicio. Cuentan las vueltas que completes antes de que se agote el reloj de 45 segundos. No es una prueba médica de temblor.',
       'Precisión de la medición y consideraciones técnicas: El registro del tiempo proviene del reloj performance.now() del navegador, limitado a aproximadamente 1 ms por motivos de seguridad. La pantalla muestra los fotogramas según su tasa de refresco — unos 16,7 ms a 60 Hz, 6,9 ms a 144 Hz y 4,1 ms a 240 Hz (Woods et al., 2015). La tasa de sondeo del ratón aporta unos 8 ms a 125 Hz frente a 1 ms a 1000 Hz. Cualquier variación inferior a 5 ms debe considerarse ruido experimental. SkillDrills guarda tus puntuaciones únicamente en tu navegador.',
     ],
   },
   benchmark: {
-    title: 'Baremos de Rendimiento en el Juego del Pulso',
-    description: 'Etapas editoriales de práctica para comparar tus propias sesiones; no son estadísticas de población ni normas clínicas. Guía orientativa basada en la Ley de Accot & Zhai (1997) para analizar tu destreza. Las categorías valoran el nivel máximo superado, el ancho del pasillo y la desviación media.',
-    columns: ['Categoría', 'Rango', 'Nivel Superado', 'Ancho del Pasillo', 'Desviación Media', 'Nivel de Habilidad'],
+    title: 'Juego del Pulso: niveles de práctica SkillDrills',
+    description: 'Niveles de práctica SkillDrills para comparar tus propias sesiones; no son normas de investigación ni datos de usuarios. Siguen la nota de la pantalla de resultados: vueltas completadas y toques en una sesión.',
+    columns: ['Nota', 'Rango', 'Vueltas', 'Toques', 'Nivel'],
     rows: [
-      {
-        tier: 'Etapa 1',
-        rank: 'Muy avanzada',
-        stat: 'Nivel 12+',
-        level: '12–15 px',
-        accuracy: 'Menos de 2,5 px',
-        marker: 'Ritmo muy alto con alta precisión',
-      },
-      {
-        tier: 'Etapa 2',
-        rank: 'Avanzada',
-        stat: 'Nivel 9–11',
-        level: '16–22 px',
-        accuracy: 'Menos de 4,0 px',
-        marker: 'Ritmo alto y regular',
-      },
-      {
-        tier: 'Etapa 3',
-        rank: 'Sólida',
-        stat: 'Nivel 6–8',
-        level: '23–32 px',
-        accuracy: 'Menos de 6,5 px',
-        marker: 'Ritmo estable con algunos errores',
-      },
-      {
-        tier: 'Etapa 4',
-        rank: 'En desarrollo',
-        stat: 'Nivel 3–5',
-        level: '33–42 px',
-        accuracy: 'Menos de 9,0 px',
-        marker: 'Ritmo medio con margen de mejora',
-      },
-      {
-        tier: 'Etapa 5',
-        rank: 'Inicial',
-        stat: 'Nivel 1–2',
-        level: '43–50 px',
-        accuracy: 'Más de 9,0 px',
-        marker: 'Punto de partida',
-      },
+      { tier: 'S+', rank: 'Estabilidad de gran maestro', stat: '8+ vueltas', errors: '0', band: 'Nivel de práctica SkillDrills' },
+      { tier: 'S', rank: 'Conducción de maestro', stat: '6+ vueltas', errors: 'máx. 1', band: 'Nivel de práctica SkillDrills' },
+      { tier: 'A', rank: 'Control preciso', stat: '4+ vueltas', errors: 'máx. 2', band: 'Nivel de práctica SkillDrills' },
+      { tier: 'B', rank: 'Buen pulso', stat: '2+ vueltas', errors: 'sin límite', band: 'Nivel de práctica SkillDrills' },
+      { tier: 'C', rank: 'Control básico', stat: 'menos de 2 vueltas', errors: 'sin límite', band: 'Nivel de práctica SkillDrills' },
     ],
   },
   protocols: {
     title: 'Protocolos de Entrenamiento para Mejorar el Pulso',
-    description: 'Directrices prácticas para atenuar el temblor involuntario y optimizar la navegación en pasillos angostos.',
+    description: 'Directrices prácticas para un movimiento más calmado y trazados sinuosos.',
     items: [
       {
         title: 'Protocolo 1: Regulación de Velocidad por Accot-Zhai (Ritmo en Pasillos)',
-        description: 'Según la Ley de Accot-Zhai (1997), circular por túneles estrechos requiere graduar la velocidad en proporción inversa a la anchura. Aprovecha los tramos rectos para ganar segundos y frena un 40% al llegar a horquillas estrechas.',
+        description: 'Según la Ley de Accot-Zhai (1997), el tiempo para cruzar un túnel crece con su longitud y baja con su anchura. Aprovecha los tramos suaves para ganar segundos y frena claramente antes de los quiebres bruscos del trazado.',
       },
       {
         title: 'Protocolo 2: Enfoque Visual Anticipado de Woodworth',
@@ -293,7 +259,7 @@ const guideProps = {
       },
       {
         title: 'Protocolo 4: Trazado por el Vértice en Curvas Cerradas',
-        description: 'A partir del nivel 6 (menos de 30 px de anchura), prioriza la trayectoria sobre la rapidez. Ceñirse al interior de la curva proporciona el mayor margen de maniobra ante la inercia centrífuga.',
+        description: 'Cuando la racha crece y el trazado se llena de zigzags, prioriza el centro de la línea sobre la rapidez. Apuntar ligeramente al interior de la curva reduce la deriva del cursor hacia fuera.',
       },
     ],
   },
@@ -309,8 +275,8 @@ const guideProps = {
 const esCopy = {
   h1Keyword: 'Juego del Pulso Online',
   h1Suffix: ' (Test de Mano Firme)',
-  subtitle: 'Sigue un trazado estrecho y mejora el control del cursor',
-  caption: 'El Juego del Pulso evalúa la firmeza de tu mano y tu precisión motora fina al guiar el cursor por un sendero iluminado sin tocar las paredes. Basado en la Ley de Accot-Zhai (1997) y en el control en bucle cerrado de Woodworth (1899).',
+  subtitle: 'Lleva el cursor por la línea iluminada hasta la meta sin salirte',
+  caption: 'El Juego del Pulso entrena la firmeza de tu mano y tu precisión motora fina: guía el cursor por una línea iluminada sin salirte. Basado en la Ley de Accot-Zhai (1997) y en el control en bucle cerrado de Woodworth (1899).',
   statLaps: 'Vueltas',
   statTime: 'Tiempo Restante',
   statStreak: 'Racha',
@@ -331,32 +297,32 @@ const esCopy = {
   rulesTitle: 'Instrucciones y Sistema de Puntos',
   rulesItems: [
     { num: '1', text: 'Sigue el sendero esmeralda', highlight: 'iluminado con precisión', result: 'Llegar a la meta reinicia a 45s' },
-    { num: '2', text: 'Vuelta completada', highlight: 'Escalado continuo', result: 'Pasillos más estrechos y cerrados' },
-    { num: '3', text: 'Toque de pared', highlight: 'Reinicio al comienzo', result: 'Penalización de vuelta y fallo sumado' },
-    { num: '4', text: 'Control de ratón', highlight: 'Recomendado para PC', result: 'Sin aceleración del ratón, si es posible' },
+    { num: '2', text: 'Vuelta completada', highlight: 'Escalado continuo', result: 'Más quiebres y oscilación' },
+    { num: '3', text: 'Toque de pared', highlight: 'Reinicio al comienzo', result: 'Fallo +1, racha a 0' },
+    { num: '4', text: 'Ratón (Pointer Lock)', highlight: 'Táctil compatible', result: 'Esc para salir' },
   ],
   rule1Text: 'Sigue el sendero esmeralda',
   rule1Highlight: 'iluminado con precisión',
   rule1Result: 'Llegar a la meta reinicia a 45s',
   rule2Text: 'Vuelta completada',
   rule2Highlight: 'Escalado continuo',
-  rule2Result: 'Pasillos más estrechos y cerrados',
+  rule2Result: 'Más quiebres y oscilación',
   rule3Text: 'Toque de pared',
   rule3Highlight: 'Reinicio al comienzo',
-  rule3Result: 'Penalización de vuelta y fallo sumado',
-  rule4Text: 'Control de ratón',
-  rule4Highlight: 'Recomendado para PC',
-  rule4Result: 'Sin aceleración del ratón, si es posible',
+  rule3Result: 'Fallo +1, racha a 0',
+  rule4Text: 'Ratón (Pointer Lock)',
+  rule4Highlight: 'Táctil compatible',
+  rule4Result: 'Esc para salir',
   aboutTitle: 'Acerca del Juego del Pulso',
   aboutHeading: 'Trazado Continuo de Trayectorias y Control del Temblor',
-  aboutP1: 'El Juego del Pulso es una herramienta de entrenamiento diseñada para perfeccionar la coordinación mano-ojo, la motricidad fina de los dedos y la estabilidad del puntero. Guiar el ratón por pasos estrechos activa la musculatura estabilizadora del antebrazo y la muñeca.',
-  aboutP2: 'Siguiendo la Ley de Accot & Zhai (1997), el tiempo necesario para cruzar un túnel se multiplica al reducirse el ancho. De 50 px a 12 px, el reto exige una corrección visual permanente (Woodworth, 1899) y una firmeza total en la mano.',
+  aboutP1: 'El Juego del Pulso es una herramienta de entrenamiento diseñada para perfeccionar la coordinación mano-ojo, la motricidad fina de los dedos y la estabilidad del puntero. Seguir una línea estrecha que se vuelve más sinuosa en cada racha exige pequeñas correcciones de muñeca y antebrazo.',
+  aboutP2: 'Siguiendo la Ley de Accot & Zhai (1997), el tiempo necesario para cruzar un túnel aumenta al reducirse el ancho. Aquí la tolerancia se mantiene en ±2,5 px, pero el trazado gana zigzags en cada racha y exige una corrección visual permanente (Woodworth, 1899).',
   aboutCard1Title: 'Público Recomendado',
-  aboutCard1Text: 'Jugadores de FPS/MOBA, diseñadores digitales, cirujanos y cualquier persona interesada en eliminar el temblor involuntario del ratón.',
+  aboutCard1Text: 'Jugadores de FPS/MOBA, diseñadores digitales y cualquier persona que quiera un cursor más estable.',
   aboutCard2Title: 'Beneficios Motores',
   aboutCard2Text: 'Coordinación motriz fina, control del pulso, dosificación de la velocidad en giros y prevención de contracturas.',
-  aboutCard3Title: 'Estrechamiento Progresivo',
-  aboutCard3Text: 'El pasillo se comprime en cada vuelta y los ángulos se vuelven más pronunciados para forzar una precisión milimétrica.',
+  aboutCard3Title: 'Trazado cada vez más sinuoso',
+  aboutCard3Text: 'La tolerancia (±2,5 px) no cambia; cada vuelta en racha añade quiebres y oscilación al siguiente trazado.',
   gradeLabels: {
     'S+': 'Pulso de Cirujano (Grandmaster)',
     'S': 'Control Maestro (Master)',
@@ -366,7 +332,7 @@ const esCopy = {
   },
   shareDrillName: 'Juego del Pulso',
   shareUrl: 'https://skilldrills.online/es/drills/motor/precision-control/steady-hand',
-  shareTextTemplate: '🖐️ ¡He superado {laps} vueltas en el {drillName} con una precisión de {acc}! Pon a prueba tu pulso y estabilidad con el ratón gratis en skilldrills.online',
+  shareTextTemplate: '🖐️ ¡He superado {laps} vueltas en el {drillName} con una precisión de {acc}! Pruébalo gratis en skilldrills.online',
   copiedAlert: '¡Puntuación copiada al portapapeles!',
 };
 

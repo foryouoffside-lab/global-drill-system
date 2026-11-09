@@ -131,7 +131,7 @@ const RULES_ITEMS = [
   { num: "1", text: "Target Drop", highlight: "+100 PTS", result: "×Combo Mult" },
   { num: "2", text: "Continuous Combo", highlight: "Up to 3.0× PTS", result: "Maintains Flow" },
   { num: "3", text: "Level Up", highlight: "+1 / 250 PTS", result: "Shrink & Accelerate" },
-  { num: "4", text: "Miss / Timeout", highlight: "Penalty", result: "Resets Combo (-0.8s)" }
+  { num: "4", text: "Miss / Timeout", highlight: "Penalty", result: "Resets Combo" }
 ];
 
 const ABOUT_TEXT = `Drag & Drop Precision Training is a mechanical motor drill designed to refine raw cursor control, spatial dragging accuracy, and deceleration release timing. Dragging is measurably slower and more error-prone than simply pointing at the same target with the same device (MacKenzie, Sellen & Buxton, 1991), and the carry obeys the Steering Law: the time to stay inside a corridor scales with its length divided by its width, so a lane half as wide takes about twice as long to cross cleanly (Accot & Zhai, 1997).
@@ -733,8 +733,8 @@ export default function DragAndDropClient({ copy } = {}) {
           <div className="flex flex-col gap-1">
             <h1 className="text-2xl sm:text-3xl font-black tracking-tight text-white">
               <span data-seo-kw="1">{copy?.title || "Drag & Drop Mouse Trainer"}</span>
-              <span className="block text-sm font-semibold text-slate-400 mt-1">{copy?.subtitle || "Drag and drop mouse accuracy drill for placing targets precisely and improving cursor coordination"}</span>
             </h1>
+            <p className="text-sm font-semibold text-slate-400 mt-1">{copy?.subtitle || "Drag and drop mouse accuracy drill for placing targets precisely and improving cursor coordination"}</p>
           </div>
         )}
 

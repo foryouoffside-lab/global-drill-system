@@ -6,16 +6,15 @@ import RelatedDrills from '@/components/drill/RelatedDrills';
 import { pickSources } from '@/lib/drillSources';
 
 export const metadata = {
-  title: 'Prueba de arrastre | Precisión del ratón | SkillDrills',
-  description: 'Practica arrastrar y soltar en el navegador. Mide la precisión del ratón, el tiempo de movimiento y el momento de soltar el objetivo.',
+  title: 'Prueba de arrastrar y soltar con el ratón | SkillDrills',
+  description: 'Prueba de arrastrar y soltar gratis: durante 45 segundos agarra la bola con el ratón y suéltala dentro de un contenedor móvil. Mide precisión, combo y nivel.',
   keywords: [
-    'prueba de arrastre del ratón', 'arrastrar y soltar', 'precisión del ratón', 'control del cursor',
-    'test de arrastre', 'prueba de arrastrar y soltar', 'entrenamiento de arrastre', 'arrastre del ratón online',
-    'test de control del ratón', 'coordinación mano-ojo ratón', 'test de motricidad fina ratón', 'juego de precisión ratón',
+    'prueba de arrastrar y soltar', 'juego de arrastrar y soltar con el ratón', 'arrastrar y soltar', 'prueba de arrastre del ratón',
+    'test de arrastre', 'entrenamiento de arrastre', 'arrastre del ratón online', 'control del cursor',
   ],
   openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
-    title: 'Prueba de arrastre | Precisión del ratón | SkillDrills',
-    description: 'Practica arrastrar y soltar en el navegador. Mide la precisión del ratón, el tiempo de movimiento y el momento de soltar el objetivo.',
+    title: 'Prueba de arrastrar y soltar con el ratón | SkillDrills',
+    description: 'Prueba de arrastrar y soltar gratis: durante 45 segundos agarra la bola con el ratón y suéltala dentro de un contenedor móvil. Mide precisión, combo y nivel.',
     type: 'article',
     url: 'https://skilldrills.online/es/drills/motor/hand-eye-coordination/drag-and-drop',
     siteName: 'SkillDrills',
@@ -23,8 +22,8 @@ export const metadata = {
   },
   twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: 'summary_large_image',
-    title: 'Prueba de arrastre | Precisión del ratón | SkillDrills',
-    description: 'Practica arrastrar y soltar en el navegador. Mide la precisión del ratón, el tiempo de movimiento y el momento de soltar el objetivo.',
+    title: 'Prueba de arrastrar y soltar con el ratón | SkillDrills',
+    description: 'Prueba de arrastrar y soltar gratis: durante 45 segundos agarra la bola con el ratón y suéltala dentro de un contenedor móvil. Mide precisión, combo y nivel.',
   },
   robots: { index: true, follow: true },
   alternates: {
@@ -71,11 +70,11 @@ const softwareApplicationSchema = {
   applicationCategory: 'HealthApplication',
   operatingSystem: 'All',
   offers: { '@type': 'Offer', price: '0', priceCurrency: 'EUR' },
-  description: 'Herramienta online gratuita para evaluar y perfeccionar el arrastre, desaceleración y sincronización de soltado del ratón.',
+  description: 'Prueba de arrastrar y soltar gratuita en el navegador: agarra la bola, arrástrala y suéltala dentro de un contenedor móvil.',
   url: 'https://skilldrills.online/es/drills/motor/hand-eye-coordination/drag-and-drop',
   publisher: { '@type': 'Organization', name: 'SkillDrills', url: 'https://skilldrills.online' },
   inLanguage: 'es-ES',
-  dateModified: '2026-09-20',
+  dateModified: '2026-11-09',
 };
 
 const webApplicationSchema = {
@@ -86,7 +85,7 @@ const webApplicationSchema = {
   url: 'https://skilldrills.online/es/drills/motor/hand-eye-coordination/drag-and-drop',
   applicationCategory: 'EducationalApplication',
   inLanguage: 'es-ES',
-  dateModified: '2026-09-20',
+  dateModified: '2026-11-09',
 };
 
 const videoGameSchema = {
@@ -94,7 +93,7 @@ const videoGameSchema = {
   '@type': 'VideoGame',
   name: 'Juego de Precisión Drag and Drop',
   url: 'https://skilldrills.online/es/drills/motor/hand-eye-coordination/drag-and-drop',
-  description: 'Agarra y transporta objetos a receptáculos móviles con control motor y frenado dinámico.',
+  description: 'Juego de arrastrar y soltar con el ratón: lleva la bola a un contenedor móvil y suéltala dentro, en 45 segundos.',
   genre: ['Precisión', 'Coordinación Motora', 'Esports'],
   gamePlatform: ['Web Browser', 'Desktop'],
   applicationCategory: 'Game',
@@ -106,14 +105,14 @@ const faqSchema = {
   '@context': 'https://schema.org',
   '@type': 'FAQPage',
   inLanguage: 'es-ES',
-  dateModified: '2026-09-20',
+  dateModified: '2026-11-09',
   mainEntity: [
     {
       '@type': 'Question',
       name: '¿Qué mide el entrenador de Drag and Drop con ratón?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Evalúa la coordinación sensoriomotora continua: adquisición del objetivo, transporte rectilíneo bajo presión isométrica, frenado antes de la meta y precisión temporal al soltar.',
+        text: 'Durante 45 segundos agarras una bola con el botón izquierdo, la arrastras hasta un contenedor redondo que se mueve y la sueltas dentro. El resultado muestra puntuación, precisión (porcentaje de entregas logradas), número de entregas, combo máximo y nivel alcanzado.',
       },
     },
     {
@@ -121,7 +120,7 @@ const faqSchema = {
       name: '¿Por qué arrastrar es más exigente que hacer clic simple?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Porque mantener presionado el botón impone una co-contracción continua en los flexores del dedo índice. Esto altera la fricción sobre la alfombrilla y reduce el rendimiento motor entre 15% y 25% (MacKenzie et al., 1991).',
+        text: 'Mantener el botón pulsado exige tensión continua en el dedo índice y limita las microcorrecciones de la muñeca. MacKenzie et al. (1991) mostraron que arrastrar es claramente más lento y produce más errores que solo apuntar al mismo objetivo con el mismo dispositivo.',
       },
     },
     {
@@ -129,7 +128,7 @@ const faqSchema = {
       name: '¿Qué establece la Ley de Pilotaje de Accot-Zhai (Steering Law)?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Formulada en 1997 por Accot y Zhai, demuestra matemáticamente que el tiempo de movimiento en túneles restringidos depende de la longitud de la trayectoria dividida por la anchura del objetivo.',
+        text: 'Formulada en 1997 por Accot y Zhai, demuestra que el tiempo para recorrer un túnel estrecho es proporcional a su longitud dividida por su anchura: un túnel la mitad de ancho tarda aproximadamente el doble.',
       },
     },
     {
@@ -137,7 +136,7 @@ const faqSchema = {
       name: '¿Cómo evitar sobrepasar (overshoot) el contenedor móvil?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Inicie el frenado con los extensores del antebrazo unos 40 a 50 ms antes de entrar en la zona objetivo, amortiguando la inercia antes de liberar el interruptor.',
+        text: 'Empieza a frenar un poco antes del contenedor, apuntando a su trayectoria y no a su posición actual, y suelta cuando la bola esté dentro. Soltar fuera cuenta como fallo y reinicia el combo.',
       },
     },
     {
@@ -161,7 +160,7 @@ const faqSchema = {
       name: '¿En qué beneficia este test a diseñadores gráficos y editores?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Editores de vídeo y diseñadores CAD arrastran miles de fotogramas clave y manejadores bezier al día. Entrenar la desaceleración motora disminuye la tensión muscular repetitiva.',
+        text: 'Editores de vídeo y diseñadores CAD arrastran miles de fotogramas clave y manejadores bezier al día. El gesto es el mismo, pero este drill es un ejercicio de control del ratón, no una prevención de lesiones.',
       },
     },
     {
@@ -169,7 +168,7 @@ const faqSchema = {
       name: '¿Cómo se calculan la precisión y las rachas de combo?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'La precisión es el porcentaje de depósitos exitosos sobre el total de intentos. Encadenar aciertos consecutivos activa multiplicadores de combo de hasta 3.0x.',
+        text: 'La precisión es el porcentaje de entregas logradas sobre el total de soltados. Cada entrega vale 100 puntos × multiplicador de combo (hasta 3,0x) × bono de nivel. El nivel sube cada 250 puntos (más niveles extra por cada 4 de combo): bola y contenedor se reducen y el contenedor acelera. La partida dura 45 segundos y requiere ratón con bloqueo de puntero.',
       },
     },
     {
@@ -185,7 +184,7 @@ const faqSchema = {
       name: '¿Cuánto tiempo de práctica diaria se aconseja para fijar la memoria motora?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Una rutina estructurada de 10 a 15 minutos diarios con 4 a 6 rondas de 45 segundos previene la fatiga tendinosa y consolida las conexiones neuromotoras.',
+        text: 'Unas pocas partidas de 45 segundos al día bastan como rutina; para si notas molestias en la muñeca. Compara tus resultados con tus propias partidas anteriores en el mismo equipo.',
       },
     },
   ],
@@ -223,7 +222,7 @@ const howToSchema = {
       '@type': 'HowToStep',
       position: 4,
       name: 'Suelte con precisión dentro de los límites',
-      text: 'Libere el botón justamente cuando el orbe esté concéntrico con el contenedor para sumar el máximo puntaje.',
+      text: 'Suelte el botón cuando la bola esté dentro del contenedor: cuenta como entrega y suma 100 puntos × combo.',
       url: 'https://skilldrills.online/es/drills/motor/hand-eye-coordination/drag-and-drop#step-4',
     },
   ],
@@ -234,38 +233,35 @@ const guideProps = {
   intro: {
     title: 'Biomecánica del Arrastre, Dirección de Cursor y Frenado Sensoriomotor',
     paragraphs: [
-      'En la interacción persona-ordenador, la operación continua de arrastrar y soltar (drag and drop) impone una exigencia neuromuscular muy superior a la del simple apuntar y cliquear. Mientras que el apuntamiento discreto se rige por la Ley de Fitts (Fitts, 1954), arrastrar requiere una co-contracción isométrica prolongada de los flexores digitales mientras se coordina la traslación multiaxial del brazo sobre la superficie de apoyo.',
-      'En un estudio empírico fundamental, MacKenzie, Sellen y Buxton (1991) demostraron que las tareas de arrastre presentan una penalización intrínseca de rendimiento de entre 15% y 25% frente al clic simple. La presión descendente altera el coeficiente de rozamiento de los deslizadores del ratón, coarta la destreza articular de los dedos e introduce ruido motor neuromuscular.',
+      'Esta prueba de arrastrar y soltar entrena el control del ratón en movimiento continuo. En la interacción persona-ordenador, la operación continua de arrastrar y soltar (drag and drop) impone una exigencia neuromuscular muy superior a la del simple apuntar y cliquear. Mientras que el apuntamiento discreto se rige por la Ley de Fitts (Fitts, 1954), arrastrar requiere una co-contracción isométrica prolongada de los flexores digitales mientras se coordina la traslación multiaxial del brazo sobre la superficie de apoyo.',
+      'MacKenzie, Sellen y Buxton (1991) mostraron que arrastrar es claramente más lento y produce más errores que solo apuntar al mismo objetivo con el mismo dispositivo. El botón pulsado limita los ajustes finos de dedos y muñeca.',
       'Posteriormente, Johnny Accot y Shumin Zhai (1997) desarrollaron la Ley de Pilotaje (Steering Law) para modelar movimientos en trayectorias acotadas. En arrastres dinámicos, el usuario debe equilibrar la aceleración inicial con un frenado antagonista oportuno (Elliott et al., 2010), amortiguando el impulso para no sobrepasar el límite del receptáculo.',
-      'Resolución temporal y variables del navegador: El cronometraje proviene del reloj performance.now() del navegador. La tasa de refresco del monitor (16,7 ms a 60 Hz, 6,9 ms a 144 Hz) y la tasa de sondeo del ratón determinan la discretización de las lecturas (Woods et al., 2015). SkillDrills almacena sus datos localmente sin enviarlos a servidores externos.',
+      'Cómo funciona: 45 segundos para agarrar la bola, arrastrarla y soltarla dentro del contenedor móvil. La tasa de refresco del monitor y el sondeo del ratón cambian la sensación (Woods et al., 2015), así que compárate sobre todo con tus partidas anteriores en el mismo equipo. SkillDrills almacena tus datos solo en tu navegador.',
     ],
   },
   benchmarks: {
-    title: 'Baremos de Rendimiento en Precisión de Drag and Drop',
-    caption: 'Clasificación orientativa basada en los modelos de pilotaje de Accot & Zhai (1997) y análisis de arrastre de MacKenzie et al. (1991). SkillDrills no efectúa recopilación masiva de datos.',
-    headers: ['Nivel (Tier)', 'Clasificación', 'Fase / Racha Combo', 'Tiempo Medio de Arrastre', 'Porcentaje de Acierto', 'Perfil Neuromotor'],
+    title: 'Bandas de práctica de la prueba de arrastrar y soltar (SkillDrills)',
+    caption: 'Bandas de práctica de SkillDrills: no son normas científicas ni estadísticas de usuarios, sino referencias del autor del drill para interpretar tu nivel, combo y precisión. SkillDrills no recopila datos de usuarios.',
+    headers: ['Nivel (Tier)', 'Clasificación', 'Fase / Racha Combo', 'Porcentaje de Acierto', 'Perfil de juego'],
     rows: [
       [
         'Tier 1',
         'Élite / Diseñador Pro',
         'Nv. 12–15 (Combo > 18x)',
-        '< 420 ms',
         '≥ 98,0%',
-        'Curva de velocidad simétrica acampanada, frenado óptimo sin desprendimientos prematuros.',
+        'Frenado suave incluso con contenedores rápidos, casi ningún soltado fuera.',
       ],
       [
         'Tier 2',
         'Avanzado / Competitivo',
         'Nv. 9–11 (Combo 12–17x)',
-        '420–510 ms',
         '94,0%–97,9%',
-        'Desaceleración controlada, guía precisa en el corredor y microajustes finales por debajo de 35 ms.',
+        'Desaceleración controlada, contenedores pequeños acertados con microajustes cortos.',
       ],
       [
         'Tier 3',
         'Competente / Intermedio',
         'Nv. 6–8 (Combo 7–11x)',
-        '511–640 ms',
         '87,0%–93,9%',
         'Ligeras desviaciones en fase de aceleración con desaceleración tardía antes del marco del contenedor.',
       ],
@@ -273,7 +269,6 @@ const guideProps = {
         'Tier 4',
         'Inicial / En Desarrollo',
         'Nv. 3–5 (Combo 3–6x)',
-        '641–800 ms',
         '78,0%–86,9%',
         'Múltiples impulsos bruscos, rigidez en los dedos con rozamiento excesivo y fallos en el borde.',
       ],
@@ -281,9 +276,8 @@ const guideProps = {
         'Tier 5',
         'Principiante / Base',
         'Nv. 1–2 (Combo < 3x)',
-        '> 800 ms',
         '< 78,0%',
-        'Desplazamiento lento, aperturas fuera de zona y pronta fatiga de los tendones de la mano.',
+        'Desplazamiento lento y soltados frecuentes fuera de zona.',
       ],
     ],
   },
@@ -300,7 +294,7 @@ const guideProps = {
       },
       {
         title: 'Protocolo 3: Frenado Antagonista y Soltado Oportuno (Niveles 9–12)',
-        description: 'Active los extensores del antebrazo 50 ms antes de alcanzar el contenedor móvil para neutralizar el impulso de inercia antes de soltar el interruptor.',
+        description: 'Empiece a frenar poco antes del contenedor móvil para detener el movimiento dentro de él y luego suelte.',
       },
       {
         title: 'Protocolo 4: Intercepción Dinámica con Ángulo de Adelanto (Niveles 13–15)',
@@ -318,8 +312,8 @@ const guideProps = {
 };
 
 const copyEs = {
-  title: "Test de Drag and Drop – Precisión con el Ratón",
-  subtitle: "Precisión al arrastrar · objetivo en su sitio",
+  title: "Prueba de arrastrar y soltar con el ratón",
+  subtitle: "Arrastra la bola y suéltala en el contenedor móvil · 45 segundos",
   startButtonText: "INICIAR DRILL",
   playAgainText: "Jugar de nuevo",
   shareText: "Compartir resultado",

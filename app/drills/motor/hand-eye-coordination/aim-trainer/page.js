@@ -27,7 +27,7 @@ import { pickSources } from '@/lib/drillSources';
 
 export const metadata = {
   title: 'Aim Trainer – Mouse Precision and Flick Shot | SkillDrills',
-  description: 'Train mouse accuracy, micro-flicks, and reaction speed with this free FPS aim trainer, grounded in Fitts Law with dynamic score-based difficulty scaling.',
+  description: 'Train mouse accuracy, micro-flicks, and reaction speed with this free FPS aim trainer, grounded in Fitts Law with score-based difficulty scaling.',
   keywords: [
     'aim trainer',
     'fps aim trainer',
@@ -83,7 +83,7 @@ const softwareApplicationSchema = {
   applicationCategory: 'HealthApplication',
   operatingSystem: 'All',
   offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
-  description: 'Free browser-based FPS aim trainer. Sharpen mouse accuracy, ballistic micro-flicks, and target acquisition latency with adaptive difficulty scaling.',
+  description: 'Free browser-based FPS aim trainer. Click two moving targets before they expire; each hit adds 2 seconds and your score raises the level, which makes new targets smaller, faster and shorter-lived.',
   url: 'https://skilldrills.online/drills/motor/hand-eye-coordination/aim-trainer',
   publisher: { '@type': 'Organization', name: 'SkillDrills', url: 'https://skilldrills.online' },
   dateModified: '2026-09-05',
@@ -109,7 +109,7 @@ const faqSchema = {
       name: 'What is Aim Trainer Elite and how does it work?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Aim Trainer Elite is an interactive motor coordination drill engineered to test and enhance raw mouse precision, target acquisition speed, and click timing. Observers acquire moving targets that shrink and accelerate dynamically across a canvas stage.',
+        text: 'Aim Trainer Elite is a mouse precision drill. Two targets drift across the stage, bouncing off the edges, and each one expires after a short lifetime (while Target Timeouts is on). Click them before they disappear. You start with 45 seconds; every hit adds 2 seconds (up to 60) and the run ends when the clock reaches zero.',
       },
     },
     {
@@ -117,7 +117,7 @@ const faqSchema = {
       name: "How does Fitts's Law apply to FPS aim training?",
       acceptedAnswer: {
         '@type': 'Answer',
-        text: "Fitts's Law states that the movement time required to hit a target is a logarithmic function of the ratio between target distance and target width. As targets shrink and spawn further away, the movement's Index of Difficulty (ID) increases, requiring tighter neuromuscular control.",
+        text: "Fitts's Law states that the movement time required to hit a target is a logarithmic function of the ratio between target distance and target width. As your level rises, new targets spawn smaller and move faster, so the Index of Difficulty (ID) of each click increases.",
       },
     },
     {
@@ -133,7 +133,7 @@ const faqSchema = {
       name: 'Does training micro-flicks transfer to games like Valorant and CS2?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Yes. First-shot headshot accuracy in tactical shooters heavily depends on micro-flick precision—making small, rapid 5 to 15-degree ballistic adjustments to center crosshairs on moving opponent hitboxes.',
+        text: 'The drill practises the same kind of small, fast corrections onto a moving target that first-shot accuracy in tactical shooters relies on. How much it transfers to a specific game varies from player to player.',
       },
     },
     {
@@ -141,7 +141,7 @@ const faqSchema = {
       name: 'What is a good score on Aim Trainer Elite?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Novice performers typically score below 8,000 PTS (Level 1–2). Competent intermediate aimers achieve 18,000 to 31,999 PTS (Level 6–8), while elite competitive FPS athletes reach 48,000+ PTS (Level 12+) with accuracy above 95%.',
+        text: 'SkillDrills collects no player data, so there are no population norms. The results screen grades your final score: S+ from 43,320 points, S from 34,680, A from 27,000, B from 17,280, C from 9,720 and D from 4,320. The most useful comparison is your own personal best on the same mouse and display.',
       },
     },
     {
@@ -149,15 +149,15 @@ const faqSchema = {
       name: 'How does score-based difficulty scaling function in this drill?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'For every 1,750 points scored, your difficulty level advances. Target radius shrinks from 26px down to 8px, velocity increases from 80px/s to 370px/s, and target time-to-live drops from 2.8s down to 0.40s.',
+        text: 'Your level rises by 1 for every 1,750 points, with no cap. Each new target spawns according to the current level: its radius goes from 26 px toward 12 px (as low as 8 px on a long combo), its speed from 80 toward 370 px/s, and its lifetime from 2.8 s toward 0.4 s. A target does not shrink while it is on screen.',
       },
     },
     {
       '@type': 'Question',
-      name: 'Why do missed clicks penalize score and streak?',
+      name: 'What happens when I miss or a target expires?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Missing shots or allowing targets to expire resets your combo multiplier back to 1.0x. This enforces trigger discipline, discouraging uncontrolled spam-clicking and rewarding deliberate, centered precision.',
+        text: 'A missed click or an expired target resets your combo multiplier to 1.0× and costs 1 second of clock time. Points already scored are never taken away. This discourages spam-clicking and rewards deliberate, centered clicks.',
       },
     },
     {
@@ -173,7 +173,7 @@ const faqSchema = {
       name: 'How does display refresh rate and mouse polling rate impact aim performance?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Higher refresh rates (144 Hz / 240 Hz) and high mouse polling rates (1000 Hz+) reduce frame rendering lag and cursor motion jitter, allowing the visual cortex to receive real-time target feedback 10–12 ms earlier per movement.',
+        text: 'A 60 Hz display updates every 16.7 ms, a 144 Hz display every 6.9 ms and a 240 Hz display every 4.1 ms, and a 1000 Hz mouse reports every 1 ms against 8 ms at 125 Hz. Faster hardware shows target positions more smoothly; compare your runs on the same setup.',
       },
     },
     {
@@ -181,7 +181,7 @@ const faqSchema = {
       name: 'What warmup routine yields the fastest motor coordination gains?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'A structured 10 to 15-minute daily warmup focusing on smooth ballistic initial impulses and gradual speed acceleration primes motor cortex excitability and enhances hand-eye coordination before competitive matches.',
+        text: 'A short warmup of a few runs, starting smooth and controlled and only then pushing speed, is a sensible routine before matches. Stop when your hand or forearm feels tense or tired.',
       },
     },
   ],
@@ -240,7 +240,7 @@ const howToSchema = {
       "url": "https://skilldrills.online/drills/motor/hand-eye-coordination/aim-trainer#step-4",
       
       name: 'Build and Sustain Combo Multipliers',
-      text: 'Chain consecutive hits without misses or timeouts to compound combo multipliers up to 3.0x bonus points.',
+      text: 'Chain consecutive hits without misses or timeouts to raise the combo multiplier up to 3.0× points.',
     },
   ],
 };
@@ -250,10 +250,10 @@ const copyEn = {
   h1Suffix: null,
   subtitle: "Free mouse accuracy, target acquisition, and click-timing drill",
   rulesItems: [
-    { num: "1", text: "Target Hit", highlight: "+100 PTS / +0.6s", result: "Acquire & Click Moving Targets" },
+    { num: "1", text: "Target Hit", highlight: "+100 PTS / +2s (max 60s)", result: "Click Moving Targets" },
     { num: "2", text: "Continuous Combo", highlight: "Up to 3.0× Points", result: "Chain Consecutive Hits" },
-    { num: "3", text: "Level Progression", highlight: "+1 Level / 1750 PTS", result: "Targets Shrink & Accelerate" },
-    { num: "4", text: "Miss & Timeout", highlight: "Combo Reset", result: "Penalty Deducts -0.8s" }
+    { num: "3", text: "Level Progression", highlight: "+1 Level / 1750 PTS", result: "New Targets Smaller & Faster" },
+    { num: "4", text: "Miss & Timeout", highlight: "Combo Reset", result: "-1s Clock" }
   ],
 };
 
@@ -263,8 +263,8 @@ const guideProps = {
   intro: {
     title: `What Is an Aim Trainer? Fitts's Law and Mouse Precision`,
     paragraphs: [
-      `An aim trainer is a browser drill where you click moving targets as fast and accurately as you can to train mouse control. This free one scores each hit and miss, scales difficulty with your score, and tracks accuracy and streak, so you can see whether your aim improves between sessions.`,
-      "Target acquisition with a computer mouse is among the most demanding fine motor coordination tasks evaluated in human-computer interaction (HCI) and sports psychophysics. Whether clearing corners in tactical first-person shooters, operating surgical robotic interfaces, or conducting rapid visual-motor inspection, the human neuromuscular system must translate two-dimensional visual coordinates into rapid, sub-millimeter physical contractions of the hand, wrist, and forearm (Fitts, 1954; MacKenzie, 1992).",
+      `An aim trainer is a browser drill where you click moving targets as fast and accurately as you can to train mouse control. In this free one two targets drift across the screen and expire after a short lifetime; each hit adds 2 seconds to the clock, and your score raises the level, which makes new targets smaller, faster and shorter-lived. It tracks accuracy and streak, so you can compare your own sessions.`,
+      "Target acquisition with a computer mouse is among the most demanding fine motor coordination tasks evaluated in human-computer interaction (HCI) and sports psychophysics. Each click requires translating a target position on screen into a fast, accurate movement of the hand, wrist and forearm (Fitts, 1954; MacKenzie, 1992).",
     ],
   },
   science: {
@@ -272,37 +272,39 @@ const guideProps = {
     items: [
       {
         title: "Fitts's Law & the Index of Difficulty (ID)",
-        body: "In his foundational 1954 treatise, Paul M. Fitts proved that the movement time (MT = a + b · log₂(2D / W) = a + b · ID) required to rapidly move to a target area is mathematically modeled by the distance to the target (D) and the target width or diameter (W). The logarithmic component is termed the Index of Difficulty (ID), measured in bits. In Aim Trainer Elite, as your score level advances, target diameter (W) contracts from 26 pixels down to 8 pixels, while targets move and disperse across greater distances (D). This causes the Index of Difficulty to scale exponentially, directly taxing your motor system's information capacity (Fitts, 1954; MacKenzie, 1992).",
+        body: "In his foundational 1954 treatise, Paul M. Fitts proved that the movement time (MT = a + b · log₂(2D / W) = a + b · ID) required to rapidly move to a target area is mathematically modeled by the distance to the target (D) and the target width or diameter (W). The logarithmic component is termed the Index of Difficulty (ID), measured in bits. In Aim Trainer Elite, as your level advances, new targets spawn with a smaller radius (26 px toward 12 px, as low as 8 px on a long combo) and move faster, so the Index of Difficulty of each click rises (Fitts, 1954; MacKenzie, 1992).",
       },
       {
         title: "The two-component model of goal-directed aiming (Woodworth 1899; Elliott et al. 2010)",
-        body: "High-speed mouse aiming is not a single continuous movement. Pioneering work by Woodworth (1899) and modern neuromuscular synthesis by Elliott et al. (2010) established that goal-directed aiming comprises two distinct sub-movements: an initial ballistic impulse (open-loop phase), where the central nervous system issues a pre-programmed neuromuscular burst that propels the mouse across 80% to 90% of the trajectory in roughly 120–180 milliseconds — too fast for visual feedback to modify the flight path — followed by current control and terminal deceleration (closed-loop phase), where the visual system processes retinal slip error and sends rapid sensory corrections via the cerebellum and motor cortex to make sub-millimeter adjustments before the click. Untrained players frequently suffer from over-flicking (excessive ballistic force requiring back-and-forth correction) or under-flicking (premature deceleration causing sluggish creep); elite marksmen minimize movement variance by optimizing the ballistic impulse to terminate right on the target edge (Elliott et al., 2010; Woods et al., 2015).",
+        body: "High-speed mouse aiming is not a single continuous movement. Pioneering work by Woodworth (1899) and modern neuromuscular synthesis by Elliott et al. (2010) established that goal-directed aiming comprises two distinct sub-movements: an initial ballistic impulse (open-loop phase) that covers most of the distance, followed by a slower closed-loop phase in which vision guides the final corrections before the click. Common errors are over-flicking (too much force, then back-and-forth correction) and under-flicking (stopping early and creeping onto the target) (Elliott et al., 2010).",
       },
       {
         title: "Input polling, refresh quantization & sensory delays",
-        body: "Precise click timing requires minimizing system latency. Human motor reaction times are bounded by neurosensory conduction (retinal transmission ~30–50 ms, visual cortex processing ~60–80 ms, corticospinal motor execution ~40–60 ms). At 60 Hz display refresh, frames are quantized in 16.7 ms intervals; at 144 Hz or 240 Hz, this delay drops to 6.9 ms or 4.1 ms, providing clearer retinal feedback that significantly reduces trajectory error in the closed-loop aiming phase (Woods et al., 2015).",
+        body: "Your hardware adds delay of its own. At 60 Hz the display updates in 16.7 ms steps; at 144 Hz or 240 Hz that drops to 6.9 ms or 4.1 ms, and mouse polling adds roughly 8 ms at 125 Hz against about 1 ms at 1000 Hz (Woods et al., 2015). Treat differences under about 5 ms as noise and compare runs on the same setup.",
       },
     ],
   },
   benchmark: {
-    title: "Empirical Aim Precision Benchmarks",
-    description: "The bands below are an editorial guide to reading your own 45-second session score, accuracy and peak combo. They are set by SkillDrills to make the numbers legible, not measured population norms: this site collects no aggregate data, and neither Fitts (1954) nor MacKenzie (1992) publishes percentiles for this task.",
-    columns: ['Tier', 'Session Score', 'Peak Level', 'Hit Accuracy', 'Classification'],
+    title: "Aim Trainer: SkillDrills Practice Bands",
+    description: "SkillDrills practice bands, not research norms or user data: this site collects no aggregate data. They match the grade on the results screen, which is set by your final score.",
+    columns: ['Grade', 'Label', 'Final Score', 'Band'],
     rows: [
-      { tier: 'Tier 1', score: '> 48,000 PTS', level: 'Level 12+', accuracy: '> 95% (Combo 25+)', classification: 'Apex Marksman / Tactical Tier 1' },
-      { tier: 'Tier 2', score: '32,000 – 47,999 PTS', level: 'Level 9–11', accuracy: '88% – 94% (Combo 18–24)', classification: 'Precision Fragger / Competitive FPS' },
-      { tier: 'Tier 3', score: '18,000 – 31,999 PTS', level: 'Level 6–8', accuracy: '78% – 87% (Combo 12–17)', classification: 'Proficient Gunfighter / Intermediate' },
-      { tier: 'Tier 4', score: '8,000 – 17,999 PTS', level: 'Level 3–5', accuracy: '65% – 77% (Combo 6–11)', classification: 'Developing Aimer / Baseline Recreational' },
-      { tier: 'Tier 5', score: '< 8,000 PTS', level: 'Level 1–2', accuracy: '< 65% (Combo < 6)', classification: 'High Tracking Jitter / Over-Flicker' },
+      { tier: 'S+', label: 'Legendary', score: '43,320+ PTS', band: 'SkillDrills practice band' },
+      { tier: 'S', label: 'Elite', score: '34,680+ PTS', band: 'SkillDrills practice band' },
+      { tier: 'A', label: 'Excellent', score: '27,000+ PTS', band: 'SkillDrills practice band' },
+      { tier: 'B', label: 'Great', score: '17,280+ PTS', band: 'SkillDrills practice band' },
+      { tier: 'C', label: 'Good', score: '9,720+ PTS', band: 'SkillDrills practice band' },
+      { tier: 'D', label: 'Keep Going', score: '4,320+ PTS', band: 'SkillDrills practice band' },
+      { tier: 'F', label: 'Needs Practice', score: 'under 4,320 PTS', band: 'SkillDrills practice band' },
     ],
   },
   protocols: {
     title: "How to Train Mouse Aim",
-    description: "To systematically compress target acquisition latency and elevate micro-flick precision, apply these four evidence-based motor protocols during training.",
+    description: "Coaching guidance based on the models cited above.",
     items: [
-      { title: "Ballistic Initial Impulse Calibration (Woodworth, 1899; Elliott et al., 2010)", description: "Train your primary flick movement to cover 90% of the target distance in a single clean motor burst. Avoid multiple hesitations during flight; commit fully to the ballistic impulse." },
+      { title: "Ballistic Initial Impulse Calibration (Woodworth, 1899; Elliott et al., 2010)", description: "Train your primary flick to cover most of the distance in a single clean movement. Avoid multiple hesitations during flight; commit fully to the ballistic impulse." },
       { title: "Terminal Deceleration & Micro-Correction (Fitts, 1954)", description: "As crosshairs enter the target perimeter, transition to fine wrist/finger control. Smoothly decelerate to absorb cursor momentum rather than snapping past the hitbox." },
-      { title: "Universal Sensitivity & Motor Memory Calibration (MacKenzie, 1992)", description: "Calibrate your physical mouse cm/360 so that an identical physical hand displacement produces consistent crosshair translation across all games and drills, eliminating neuromuscular interference." },
+      { title: "Universal Sensitivity & Motor Memory Calibration (MacKenzie, 1992)", description: "Calibrate your physical mouse cm/360 so that an identical physical hand displacement produces consistent crosshair translation across all games and drills." },
       { title: "Rhythmic Decoupling & Click Discipline (Woods et al., 2015)", description: "Maintain a relaxed grip on the mouse chassis. Ensure the physical finger actuation of the mouse click button does not cause downward or lateral torque that pulls the reticle off target." },
     ],
   },

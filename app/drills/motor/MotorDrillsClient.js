@@ -55,7 +55,7 @@ const MOTOR_METADATA = {
   'finger-sequencing': {
     discipline: 'speed',
     disciplineName: 'Movement Speed',
-    focus: 'Scale-Ordered Node Tap',
+    focus: 'Click Targets in Order',
     skills: ['Finger Dexterity', 'Cognitive Rhythm'],
     icon: Hand,
   },
@@ -66,18 +66,25 @@ const MOTOR_METADATA = {
     skills: ['Key Speed', 'Spatial Layout'],
     icon: Keyboard,
   },
+  'keyboard-tester': {
+    discipline: 'speed',
+    disciplineName: 'Movement Speed',
+    focus: 'Test Every Key',
+    skills: ['Key Check', 'Ghosting & Rollover'],
+    icon: Keyboard,
+  },
   'rapid-tapping': {
     discipline: 'speed',
     disciplineName: 'Movement Speed',
     focus: 'CPS Click Cadence',
-    skills: ['CPS Burst', 'Tapping Endurance'],
+    skills: ['Clicks per Second', 'Click Speed'],
     icon: Gauge,
   },
   'steady-hand': {
     discipline: 'precision',
     disciplineName: 'Precision Control',
-    focus: 'Narrow Corridor Traversal',
-    skills: ['Tremor Suppression', 'Path Tracing'],
+    focus: 'Mouse Maze Path',
+    skills: ['Steady Mouse Control', 'Path Tracing'],
     icon: Compass,
   },
   'tracing': {

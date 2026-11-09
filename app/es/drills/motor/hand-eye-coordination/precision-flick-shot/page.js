@@ -6,16 +6,15 @@ import RelatedDrills from '@/components/drill/RelatedDrills';
 import { pickSources } from '@/lib/drillSources';
 
 export const metadata = {
-  title: 'Entrenamiento de flick | Test de puntería | SkillDrills',
-  description: 'Entrena flick en el navegador y mide tu puntería con ratón: tiempo de adquisición, precisión y aciertos en el centro para FPS.',
+  title: 'Test de precisión del ratón: acierta en el centro | SkillDrills',
+  description: 'Test de precisión del ratón gratis: acierta a dos objetivos que se encogen; el centro de 8 px vale el doble. Muestra precisión de clic, aciertos al centro y nivel.',
   keywords: [
-    'entrenamiento de puntería', 'prueba de puntería', 'precisión del ratón', 'entrenamiento de flick',
-    'test de puntería FPS', 'adquisición de objetivos', 'microajustes de mira', 'puntería para Valorant',
-    'puntería para CS2', 'disparo rápido con ratón', 'test de precisión del ratón', 'flick shot gratis',
+    'test de precisión del ratón', 'test precision raton', 'precisión del ratón', 'precisión al centro del objetivo',
+    'precisión de clic', 'test de ratón',
   ],
   openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
-    title: 'Entrenamiento de flick | Test de puntería | SkillDrills',
-    description: 'Entrena flick en el navegador y mide tu puntería con ratón: tiempo de adquisición, precisión y aciertos en el centro para FPS.',
+    title: 'Test de precisión del ratón: acierta en el centro | SkillDrills',
+    description: 'Test de precisión del ratón gratis: acierta a dos objetivos que se encogen; el centro de 8 px vale el doble. Muestra precisión de clic, aciertos al centro y nivel.',
     type: 'article',
     url: 'https://skilldrills.online/es/drills/motor/hand-eye-coordination/precision-flick-shot',
     siteName: 'SkillDrills',
@@ -23,8 +22,8 @@ export const metadata = {
   },
   twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: 'summary_large_image',
-    title: 'Entrenamiento de flick | Test de puntería | SkillDrills',
-    description: 'Entrena flick en el navegador y mide tu puntería con ratón: tiempo de adquisición, precisión y aciertos en el centro para FPS.',
+    title: 'Test de precisión del ratón: acierta en el centro | SkillDrills',
+    description: 'Test de precisión del ratón gratis: acierta a dos objetivos que se encogen; el centro de 8 px vale el doble. Muestra precisión de clic, aciertos al centro y nivel.',
   },
   robots: { index: true, follow: true },
   alternates: {
@@ -67,15 +66,15 @@ const breadcrumbSchema = {
 const softwareApplicationSchema = {
   '@context': 'https://schema.org',
   '@type': 'SoftwareApplication', "sameAs": ["https://en.wikipedia.org/wiki/Fitts%27s_law", "https://en.wikipedia.org/wiki/Hand%E2%80%93eye_coordination"],
-  name: 'Test de Flick Shot y Precisión con Ratón',
+  name: 'Test de precisión del ratón: acierta en el centro',
   applicationCategory: 'HealthApplication',
   operatingSystem: 'All',
   offers: { '@type': 'Offer', price: '0', priceCurrency: 'EUR' },
-  description: 'Herramienta online gratuita para evaluar puntería balística, tiempo de adquisición y aciertos en la diana con progresión adaptativa.',
+  description: 'Test de precisión del ratón gratis en el navegador: acierta a objetivos que se encogen y cuenta tus aciertos al centro.',
   url: 'https://skilldrills.online/es/drills/motor/hand-eye-coordination/precision-flick-shot',
   publisher: { '@type': 'Organization', name: 'SkillDrills', url: 'https://skilldrills.online' },
   inLanguage: 'es-ES',
-  dateModified: '2026-09-20',
+  dateModified: '2026-11-09',
 };
 
 const webApplicationSchema = {
@@ -86,15 +85,15 @@ const webApplicationSchema = {
   url: 'https://skilldrills.online/es/drills/motor/hand-eye-coordination/precision-flick-shot',
   applicationCategory: 'EducationalApplication',
   inLanguage: 'es-ES',
-  dateModified: '2026-09-20',
+  dateModified: '2026-11-09',
 };
 
 const videoGameSchema = {
   '@context': 'https://schema.org',
   '@type': 'VideoGame',
-  name: 'Juego de Flick Shot y Precisión de Puntería',
+  name: 'Juego de precisión del ratón: acierta en el centro',
   url: 'https://skilldrills.online/es/drills/motor/hand-eye-coordination/precision-flick-shot',
-  description: 'Pon a prueba tus reflejos y puntería rápida con snaps balísticos sobre blancos dinámicos.',
+  description: 'Acierta a objetivos que se encogen, a ser posible en pleno centro.',
   genre: ['Tiro', 'Reflejos', 'Esports'],
   gamePlatform: ['Web Browser', 'Desktop'],
   applicationCategory: 'Game',
@@ -106,7 +105,7 @@ const faqSchema = {
   '@context': 'https://schema.org',
   '@type': 'FAQPage',
   inLanguage: 'es-ES',
-  dateModified: '2026-09-20',
+  dateModified: '2026-11-09',
   mainEntity: [
     {
       '@type': 'Question',
@@ -145,7 +144,7 @@ const faqSchema = {
       name: '¿Se traslada este entrenamiento a juegos como CS2 y Valorant?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Sí, decisivamente. En shooters tácticos la efectividad del primer tiro tras un micro-flick suele resolver el duelo antes de entrar en ráfagas prolongadas.',
+        text: 'Los jugadores de Valorant o CS2 pueden usarlo para practicar la parada firme tras un flick. No garantiza mejoras en el juego; usa la misma sensibilidad que en tu juego.',
       },
     },
     {
@@ -153,7 +152,7 @@ const faqSchema = {
       name: '¿Cómo actuar cuando aparecen varios blancos a la vez?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'La visión periférica debe evaluar los anillos de vida de los objetivos, eliminando primero el blanco a punto de caducar antes de cambiar al nuevo.',
+        text: 'Siempre hay dos objetivos; ambos se encogen, pero el activo más rápido. Acierta primero al más pequeño. Si un objetivo desaparece, el combo se reinicia y se resta 1 segundo.',
       },
     },
     {
@@ -169,7 +168,7 @@ const faqSchema = {
       name: '¿Cómo se determinan las calificaciones y rangos de la prueba?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Se ponderan precisión por clic, aciertos en la diana central, racha de combo y tiempo medio de adquisición para asignar calificaciones de D a S+.',
+        text: 'Cada acierto da puntos base (100, o 200 en el centro de 8 px) × combo (hasta 3,0x) × bono de nivel, más 2 segundos (máx. 60). Un clic fallado o un objetivo caducado cuesta 1 segundo y el combo. La calificación depende solo de la puntuación final; no se mide tiempo de adquisición.',
       },
     },
     {
@@ -177,7 +176,7 @@ const faqSchema = {
       name: '¿Qué configuraciones técnicas favorecen la respuesta del ratón?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Pantalla de 144 Hz o superior, la aceleración de puntero de Windows desactivada y un ratón ligero que reduzca la inercia del movimiento.',
+        text: 'Una pantalla de alta frecuencia, la opción de Windows "Mejorar la precisión del puntero" desactivada y un ratón ligero. Este test mide la precisión de tus clics, no ese ajuste de Windows.',
       },
     },
     {
@@ -185,7 +184,7 @@ const faqSchema = {
       name: '¿Cuánto tiempo se recomienda entrenar antes de competir?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Una rutina de 10 a 15 minutos con 4 a 6 repeticiones focalizadas activa las conexiones neuromusculares sin sobrecargar las articulaciones de la mano.',
+        text: 'Unas pocas partidas como calentamiento antes de jugar bastan. Para si notas molestias en la muñeca y compárate con tus propias partidas anteriores.',
       },
     },
   ],
@@ -234,41 +233,38 @@ const guideProps = {
   intro: {
     title: 'Biomecánica de Micro-Flicks Balísticos y Optimización de Submovimientos',
     paragraphs: [
-      'En el marco del deporte electrónico y la ergonomía de interfaces, el flick shot es una acción manual de alta velocidad y carácter discreto ejecutada bajo fuerte presión temporal. Robert S. Woodworth (1899) postuló que los movimientos orientados a un fin se gestionan mediante una arquitectura de control en dos fases: un impulso balístico inicial que proyecta la extremidad hacia la meta, y una fase de control continuo para el ajuste ocular.',
-      'En su formulación matemática, David E. Meyer et al. (1988) desarrollaron el Modelo de Submovimientos Estocásticos Optimizados, probando que la acción motriz humana conlleva ruido neuromuscular correlacionado con la velocidad. Si se acelera en demasía, aumenta la dispersión del punto final. Fallar el área diana obliga a un costoso submovimiento corrector secundario (~150–200 ms de latencia).',
+      'Este test de precisión del ratón te pide acertar a objetivos que se encogen, lo más cerca posible del centro. En el marco del deporte electrónico y la ergonomía de interfaces, el flick shot es una acción manual de alta velocidad y carácter discreto ejecutada bajo fuerte presión temporal. Robert S. Woodworth (1899) postuló que los movimientos orientados a un fin se gestionan mediante una arquitectura de control en dos fases: un impulso balístico inicial que proyecta la extremidad hacia la meta, y una fase de control continuo para el ajuste ocular.',
+      'En su formulación matemática, David E. Meyer et al. (1988) desarrollaron el Modelo de Submovimientos Estocásticos Optimizados, probando que la acción motriz humana conlleva ruido neuromuscular correlacionado con la velocidad. Si se acelera en demasía, aumenta la dispersión del punto final. Fallar el área diana obliga a un submovimiento corrector adicional que cuesta tiempo.',
       'Para conseguir el rendimiento de puntería más alto (MacKenzie, 1992), el jugador debe modular la velocidad del impulso primario de tal modo que coincida con el blanco. La recompensa adicional en el centro (bulls-eye) estrecha la distribución de los impactos y perfecciona el control de frenada.',
       'El compromiso clásico entre distancia y tamaño responde a la Ley de Fitts (Fitts, 1954), con bases neuromotoras complementarias en Elliott et al. (2010).',
-      'Precisión del navegador y consideraciones: La medición temporal se apoya en performance.now(). La frecuencia de actualización del monitor (16,7 ms a 60 Hz, 6,9 ms a 144 Hz) y la tasa de sondeo del periférico marcan los límites de resolución física (Woods et al., 2015). SkillDrills almacena sus puntuaciones de forma local.',
+      'Cómo funciona: empieza con 45 segundos, +2 segundos por acierto (máx. 60), -1 segundo por clic fallado u objetivo caducado. Requiere ratón con bloqueo de puntero; los dispositivos solo táctiles no son compatibles. La frecuencia del monitor y el sondeo del ratón cambian la sensación (Woods et al., 2015). SkillDrills guarda tus puntuaciones solo en tu navegador.',
     ],
   },
   benchmarks: {
-    title: 'Baremos de Rendimiento en Flick Shot y Precisión de Ratón',
-    caption: 'Clasificación basada en las investigaciones de Woodworth (1899) y Meyer et al. (1988). SkillDrills no efectúa recopilación masiva de datos.',
-    headers: ['Nivel (Tier)', 'Clasificación', 'Fase y Racha Combo', 'Latencia Media', 'Precisión de Clic', 'Ratio Bulls-Eye', 'Perfil Neuromotor'],
+    title: 'Bandas de práctica del test de precisión del ratón (SkillDrills)',
+    caption: 'Bandas de práctica de SkillDrills: no son normas científicas ni estadísticas de usuarios, sino referencias del autor del drill para interpretar nivel, combo, precisión de clic y tasa de aciertos al centro. SkillDrills no recopila datos de usuarios.',
+    headers: ['Nivel (Tier)', 'Clasificación', 'Fase y Racha Combo', 'Precisión de Clic', 'Ratio Bulls-Eye', 'Perfil de juego'],
     rows: [
       [
         'Tier 1',
         'Maestro del Flick Apex',
         'Nv. 15+ (Combo > 20x)',
-        '< 340 ms',
         '≥ 96,0%',
         '> 65%',
-        'Trayectorias balísticas directas de impulso único, ausencia de submovimientos secundarios, frenado < 10 ms.',
+        'Un solo flick llega al centro, casi sin correcciones.',
       ],
       [
         'Tier 2',
         'Tirador de Élite',
         'Nv. 11–14 (Combo 14–19x)',
-        '340–420 ms',
         '91,0%–95,9%',
         '45%–64%',
-        'Verificación visual rápida, microcorrecciones por debajo de 30 ms, desviación de línea insignificante.',
+        'Centro bien apuntado, microcorrecciones cortas.',
       ],
       [
         'Tier 3',
         'Tirador Competente',
         'Nv. 7–10 (Combo 8–13x)',
-        '421–520 ms',
         '84,0%–90,9%',
         '25%–44%',
         'Aciertos reiterados en el anillo exterior, ligeras sobrecargas en transiciones rápidas de blanco.',
@@ -277,7 +273,6 @@ const guideProps = {
         'Tier 4',
         'Fragger en Formación',
         'Nv. 4–6 (Combo 4–7x)',
-        '521–660 ms',
         '74,0%–83,9%',
         '10%–24%',
         'Movimientos entrecortados en múltiples impulsos, dispersión alta por sobreacelerar, vacilación al tirar.',
@@ -286,10 +281,9 @@ const guideProps = {
         'Tier 5',
         'Principiante / Base',
         'Nv. 1–3 (Combo < 4x)',
-        '> 660 ms',
         '< 74,0%',
         '< 10%',
-        'Tiros cortos que no alcanzan, fallos continuos, reacquisición lenta y falta de sincronía muñeca-brazo.',
+        'Tiros cortos que no alcanzan y fallos frecuentes.',
       ],
     ],
   },
@@ -324,8 +318,8 @@ const guideProps = {
 };
 
 const copyEs = {
-  title: "Flick Shot de Precisión – Test de Puntería con Ratón",
-  subtitle: "Precisión del flick · aciertos al centro",
+  title: "Test de precisión del ratón: acierta en el centro",
+  subtitle: "Dos objetivos que se encogen · el centro vale el doble · +2 s por acierto",
   startButtonText: "INICIAR DRILL",
   playAgainText: "Jugar de nuevo",
   shareText: "Compartir resultado",
@@ -336,10 +330,10 @@ const copyEs = {
   peakLevelLabel: "Nivel Máximo",
   rulesTitle: "Instrucciones del Drill y Sistema de Puntuación",
   rulesItems: [
-    { num: "1", text: "Impacto al Centro (Diana)", highlight: "+200 PTS / +0.6s", result: "Precisión milimétrica en el núcleo" },
-    { num: "2", text: "Impacto Estándar", highlight: "+100 PTS / +0.6s", result: "Adquisición periférica rápida" },
+    { num: "1", text: "Impacto al Centro (Diana)", highlight: "+200 PTS / +2s (máx. 60s)", result: "Precisión milimétrica en el núcleo" },
+    { num: "2", text: "Impacto Estándar", highlight: "+100 PTS / +2s (máx. 60s)", result: "Adquisición periférica rápida" },
     { num: "3", text: "Progresión de Nivel", highlight: "+1 Nivel / 1400 PTS", result: "Objetivos se reducen y expiran más rápido" },
-    { num: "4", text: "Fallo o Expiración", highlight: "Reinicio de combo", result: "Penalización resta -0.8s" }
+    { num: "4", text: "Fallo o Expiración", highlight: "Reinicio de combo", result: "Penalización resta -1s" }
   ],
 };
 

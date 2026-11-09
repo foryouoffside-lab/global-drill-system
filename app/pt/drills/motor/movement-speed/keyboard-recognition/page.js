@@ -4,39 +4,36 @@ import DrillGuide from '@/components/drill/DrillGuide';
 import RelatedDrills from '@/components/drill/RelatedDrills';
 import { pickSources } from '@/lib/drillSources';
 
+const PAGE_URL = 'https://skilldrills.online/pt/drills/motor/movement-speed/keyboard-recognition';
+const TITLE = 'Teste de reação do teclado | Keybinds | SkillDrills';
+const DESCRIPTION = 'Teste de reação do teclado grátis: aperte a tecla exibida antes do tempo acabar e ignore os sinais falsos. 60 s com tempo de reação, precisão e KPM.';
+
 export const metadata = {
-  title: 'Teste de reação do teclado | Keybinds | SkillDrills',
-  description: 'Pressione a tecla exibida para medir reação, precisão e velocidade de keybinds. Teste gratuito no navegador, sem download.',
+  title: TITLE,
+  description: DESCRIPTION,
   keywords: [
-    'teste de velocidade de teclado',
     'teste de reação teclado',
+    'teste de tempo de reação teclado',
     'tempo de reação das teclas',
-    'teste de reflexo no teclado',
     'keybinds FPS',
-    'velocidade de resposta do teclado',
-    'teste de teclado gamer',
-    'treino de teclas de atalho',
     'teclas WASD treino',
-    'memória muscular teclado',
-    'teste de reação de teclas',
-    'agilidade motora no teclado',
   ],
   openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
-    title: 'Teste de reação do teclado | Keybinds | SkillDrills',
-    description: 'Meça reação, precisão e velocidade de keybinds pressionando a tecla exibida no navegador.',
+    title: TITLE,
+    description: DESCRIPTION,
     type: 'article',
-    url: 'https://skilldrills.online/pt/drills/motor/movement-speed/keyboard-recognition',
+    url: PAGE_URL,
     siteName: 'SkillDrills',
     locale: 'pt_BR',
   },
   twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: 'summary_large_image',
-    title: 'Teste de reação do teclado | Keybinds | SkillDrills',
-    description: 'Teste gratuito de reação do teclado e keybinds no navegador.',
+    title: TITLE,
+    description: DESCRIPTION,
   },
   robots: { index: true, follow: true },
   alternates: {
-    canonical: 'https://skilldrills.online/pt/drills/motor/movement-speed/keyboard-recognition',
+    canonical: PAGE_URL,
     languages: getAlternateLanguages('/drills/motor/movement-speed/keyboard-recognition'),
   },
 };
@@ -48,7 +45,7 @@ const breadcrumbSchema = {
     { '@type': 'ListItem', position: 1, name: 'SkillDrills', item: 'https://skilldrills.online/pt' },
     { '@type': 'ListItem', position: 2, name: 'Treinamento Motor', item: 'https://skilldrills.online/pt/drills/motor' },
     { '@type': 'ListItem', position: 3, name: 'Velocidade de Movimento', item: 'https://skilldrills.online/pt/drills/motor/movement-speed' },
-    { '@type': 'ListItem', position: 4, name: 'Teste de Reação do Teclado', item: 'https://skilldrills.online/pt/drills/motor/movement-speed/keyboard-recognition' },
+    { '@type': 'ListItem', position: 4, name: 'Teste de Reação do Teclado', item: PAGE_URL },
   ],
 };
 
@@ -56,14 +53,14 @@ const softwareApplicationSchema = {
   '@context': 'https://schema.org',
   '@type': 'SoftwareApplication', "sameAs": ["https://en.wikipedia.org/wiki/Computer_keyboard", "https://en.wikipedia.org/wiki/Reaction_time"],
   inLanguage: 'pt-BR',
-  name: 'Teste de Reação do Teclado – Keybinds',
-  applicationCategory: 'HealthApplication',
+  name: 'Teste de Reação do Teclado',
+  applicationCategory: 'GameApplication',
   operatingSystem: 'All',
   offers: { '@type': 'Offer', price: '0', priceCurrency: 'BRL' },
-  description: 'Treinador de velocidade de teclado e reflexos de teclas gratuito no navegador. Avalie tempo de reação de escolha, memória muscular e inibição de resposta.',
-  url: 'https://skilldrills.online/pt/drills/motor/movement-speed/keyboard-recognition',
+  description: DESCRIPTION,
+  url: PAGE_URL,
   publisher: { '@type': 'Organization', name: 'SkillDrills', url: 'https://skilldrills.online' },
-  dateModified: '2026-09-20',
+  dateModified: '2026-11-09',
 };
 
 const webApplicationSchema = {
@@ -73,19 +70,19 @@ const webApplicationSchema = {
   name: 'Teste de Reação do Teclado',
   applicationCategory: 'GameApplication',
   operatingSystem: 'All',
-  browserRequirements: 'Requer suporte a Canvas HTML5 e JavaScript',
+  browserRequirements: 'Navegador com JavaScript e teclado físico',
   offers: { '@type': 'Offer', price: '0', priceCurrency: 'BRL' },
-  url: 'https://skilldrills.online/pt/drills/motor/movement-speed/keyboard-recognition',
-  dateModified: '2026-09-20',
+  url: PAGE_URL,
+  dateModified: '2026-11-09',
 };
 
 const videoGameSchema = {
   '@context': 'https://schema.org',
   '@type': 'VideoGame',
   inLanguage: 'pt-BR',
-  name: 'Teste de Reação do Teclado – Keybinds',
-  url: 'https://skilldrills.online/pt/drills/motor/movement-speed/keyboard-recognition',
-  description: 'Meça a rapidez com que você pressiona a tecla correta em resposta a estímulos, com base na Lei de Hick para tempo de reação de escolha.',
+  name: 'Teste de Reação do Teclado',
+  url: PAGE_URL,
+  description: 'Jogo de teclas de 60 segundos: apertar as teclas exibidas (sozinhas, em sequências de 2 a 5 ou de memória) antes do tempo acabar e ignorar os sinais falsos.',
   genre: ['Keyboard Game', 'Action', 'Esports Training'],
   gamePlatform: ['Web Browser', 'Desktop'],
   applicationCategory: 'Game',
@@ -96,86 +93,62 @@ const faqSchema = {
   '@context': 'https://schema.org',
   '@type': 'FAQPage',
   inLanguage: 'pt-BR',
-  dateModified: '2026-09-20',
+  dateModified: '2026-11-09',
   mainEntity: [
     {
       '@type': 'Question',
-      name: 'O que é um teste de velocidade de teclado?',
+      name: 'O que o teste de reação do teclado mede?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'É um teste que avalia o intervalo de tempo entre o aparecimento de uma tecla na tela e o seu acionamento físico no teclado. Mede o tempo de reação de escolha, a familiaridade espacial com o layout do teclado e a capacidade de inibição motora.',
+        text: 'O tempo entre a tecla aparecer na tela e você apertá-la corretamente. A tela final mostra tempo médio de reação (ms), precisão, KPM (teclas por minuto), combo máximo e rank. É a sua reação que é medida, não a latência do teclado nem a velocidade de digitação.',
       },
     },
     {
       '@type': 'Question',
-      name: 'Como o treino de keybinds melhora o desempenho em jogos FPS?',
+      name: 'Que tipos de sinal aparecem?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Em jogos táticos como Valorant ou CS2, usar habilidades, granadas ou trocar de arma sob fogo inimigo exige zero hesitação. O treino de teclas automatiza o circuito motor no cérebro, evitando que você olhe para o teclado ou erre a tecla em situações decisivas.',
+        text: 'Teclas sozinhas, sequências de 2 a 3 teclas (5 no modo de sequências longas), um modo de memória que mostra 3 teclas por 1 segundo e depois esconde, e sinais falsos em que você não deve apertar nada. As teclas possíveis: A–Z, 0–9, Space, Shift, Ctrl, Alt, Tab, Enter, símbolos, F1–F6 e setas.',
       },
     },
     {
       '@type': 'Question',
-      name: 'O que é tempo de reação de escolha e o que diz a Lei de Hick?',
+      name: 'Como funciona a pontuação?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'A Lei de Hick (Hick 1952) estabelece que o tempo de reação aumenta logaritmicamente conforme o número de opções disponíveis. A prática constante automatiza as respostas musculares, reduzindo a sobrecarga cognitiva e aproximando a velocidade de um reflexo simples.',
+        text: 'Acerto: 120 pontos × multiplicador de combo, ×1,4 em sequências e ×1,8 no modo de memória. Deixar um sinal falso passar sem apertar vale +200. Tecla errada, reagir a um sinal falso ou deixar o tempo acabar zera o combo. A partida dura sempre 60 segundos.',
       },
     },
     {
       '@type': 'Question',
-      name: 'Para que serve a função de comandos falsos (Fake Prompts)?',
+      name: 'Como funcionam a dificuldade e o tempo por sinal?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Testa a inibição de resposta (paradigma de sinal de parada de Logan 1984). Quando surge um comando armadilha, o córtex pré-frontal precisa cancelar o movimento preparado antes que a tecla seja acionada, prevenindo erros involuntários em partidas competitivas.',
+        text: 'No modo adaptativo (padrão) cada sinal começa com cerca de 1,8 segundo, encurta quando você acerta em sequência (até cerca de 0,8 s) e aumenta depois de erros. Níveis fixos: Easy 1,5×, Medium 1,0×, Hard 0,75× e Expert 0,55× do tempo.',
       },
     },
     {
       '@type': 'Question',
-      name: 'Qual é o tempo de reação médio para teclas de jogos?',
+      name: 'Dá para treinar com as teclas do Valorant ou do Minecraft?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Usuários comuns registram entre 380 e 480 ms. Jogadores competitivos atingem médias entre 240 e 300 ms, e tempos abaixo de 240 ms são pouco comuns.',
+        text: 'Sim. Os presets de Valorant, CS2, Fortnite, Minecraft, League of Legends e Apex Legends usam só as teclas padrão de cada jogo. Não é uma ferramenta oficial desses jogos.',
       },
     },
     {
       '@type': 'Question',
-      name: 'Como o modo de digitação sequencial desafia a coordenação motora?',
+      name: 'Serve como teste de teclado ou teste de digitação?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Ao exigir sequências de 3 a 5 teclas seguidas, ele exercita a memória de trabalho e o agrupamento motor (Sternberg 1966). O jogador aprende a disparar combinações inteiras como um único bloco coordenado.',
+        text: 'Não. Ele não verifica se todas as teclas funcionam e não mede palavras por minuto. É um treino de reação nas teclas de jogo. As teclas são lidas pela posição física com rótulos do padrão americano, então alguns símbolos no ABNT2 ficam em outro lugar; letras e números batem.',
       },
     },
     {
       '@type': 'Question',
-      name: 'Qual tipo de teclado oferece a menor latência de entrada para os testes?',
+      name: 'Funciona no celular?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Teclados mecânicos lineares, ópticos ou com sensores magnéticos Hall-Effect (com Rapid Trigger) e polling rate de 1000 Hz ou mais tendem a reduzir o atraso de entrada.',
-      },
-    },
-    {
-      '@type': 'Question',
-      name: 'Quantos minutos por dia devo praticar reações no teclado?',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: 'De 10 a 15 minutos diários em 3 ou 4 blocos curtos. O cérebro assimila o mapeamento espacial rapidamente, mas a fadiga mental reduz a precisão e a capacidade de frear impulsos errados.',
-      },
-    },
-    {
-      '@type': 'Question',
-      name: 'O treino ajuda em jogos MOBA como League of Legends e Dota 2?',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: 'Sim. Lançar combos rápidos de habilidades (Q-W-E-R) e ativar itens no momento exato exige independência dos dedos e confiança cega na posição das teclas.',
-      },
-    },
-    {
-      '@type': 'Question',
-      name: 'Como o KPM (teclas por minuto) e a precisão são calculados?',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: 'KPM representa o total de teclas corretas dividido pelo tempo do teste em minutos. A precisão é a razão entre acertos e o total de tentativas, penalizando toques errados e falhas em armadilhas.',
+        text: 'Precisa de teclado físico. Aparelhos só com toque não conseguem iniciar; em tablets, conecte um teclado Bluetooth.',
       },
     },
   ],
@@ -185,116 +158,78 @@ const howToSchema = {
   '@context': 'https://schema.org',
   '@type': 'HowTo',
   inLanguage: 'pt-BR',
-  dateModified: '2026-09-20',
-  name: 'Como Treinar Velocidade de Teclado e Memória Muscular de Keybinds',
-  description: 'Instruções para aprimorar tempo de reação, reflexo nos atalhos e controle motor inibitório.',
+  dateModified: '2026-11-09',
+  name: 'Como fazer o teste de reação do teclado',
+  description: 'Reagir às teclas exibidas por 60 segundos e parar nos sinais falsos.',
   step: [
     {
       '@type': 'HowToStep',
       position: 1,
-      name: 'Posicionar a Mão na Posição Base',
-      text: 'Coloque a mão esquerda sobre a sua configuração padrão de jogo (como o cluster WASD) com os dedos relaxados sobre as teclas.',
-      url: 'https://skilldrills.online/pt/drills/motor/movement-speed/keyboard-recognition#step-1',
+      name: 'Escolher modo e preset',
+      text: 'Escolha o modo, a dificuldade e, se quiser, um preset de jogo, com a mão esquerda na posição de sempre.',
+      url: `${PAGE_URL}#step-1`,
     },
     {
       '@type': 'HowToStep',
       position: 2,
-      name: 'Identificar o Estímulo sem Olhar para as Mãos',
-      text: 'Mantenha o olhar fixo no centro da tela. Ao surgir o caractere do alvo, processe a tecla necessária sem desviar a visão.',
-      url: 'https://skilldrills.online/pt/drills/motor/movement-speed/keyboard-recognition#step-2',
+      name: 'Olhar para a tela',
+      text: 'Sem olhar o teclado, identifique a tecla no centro da tela.',
+      url: `${PAGE_URL}#step-2`,
     },
     {
       '@type': 'HowToStep',
       position: 3,
-      name: 'Pressionar com Firmeza ou Inibir o Toque',
-      text: 'Pressione a tecla com precisão. Caso apareça uma armadilha (Fake Prompt), recrute a inibição pré-frontal para não tocar na tecla.',
-      url: 'https://skilldrills.online/pt/drills/motor/movement-speed/keyboard-recognition#step-3',
+      name: 'Apertar ou segurar',
+      text: 'Aperte os sinais verdadeiros antes do tempo acabar; num sinal falso, não aperte nada até ele sumir.',
+      url: `${PAGE_URL}#step-3`,
     },
     {
       '@type': 'HowToStep',
       position: 4,
-      name: 'Avaliar a Latência e o Ritmo de Digitação',
-      text: 'Verifique no relatório final seu tempo de reação individual, o ritmo de KPM e o índice de controle de armadilhas.',
-      url: 'https://skilldrills.online/pt/drills/motor/movement-speed/keyboard-recognition#step-4',
+      name: 'Ver o resultado',
+      text: 'Depois de 60 segundos, confira tempo de reação, precisão, KPM e combo máximo.',
+      url: `${PAGE_URL}#step-4`,
     },
   ],
 };
 
 const guideProps = {
-  sources: pickSources('donders1868', 'hick1952', 'logan1984', 'sternberg1966', 'woods2015'),
+  sources: pickSources('donders1868', 'hick1952', 'logan1984', 'sternberg1966'),
   intro: {
-    title: 'Fundamentos Científicos da Velocidade de Teclado',
+    title: 'O que é o teste de reação do teclado',
     paragraphs: [
-      'A velocidade de acionamento de teclas é fundamentada no tempo de reação de escolha (Donders, 1868; Hick, 1952). A transdução do estímulo visual consome cerca de 200–250 ms, e cada alternativa adicional aumenta a complexidade de processamento. O treino constante automatiza o mapeamento estímulo-resposta, encurtando a fase deliberativa.',
-      'Condições de medição no navegador: O relógio performance.now() e a taxa de atualização da tela (16,7 ms a 60 Hz; 4,1 ms a 240 Hz) determinam a resolução temporal. Pequenas variações abaixo de 5 ms são normais e fazem parte do ambiente técnico.',
+      'O teste de reação do teclado pede que você escolha, entre muitas teclas, a que aparece na tela: uma tarefa de reação de escolha (Donders, 1868). Quanto mais teclas possíveis, mais lenta a reação (Hick, 1952); segurar o dedo num sinal falso treina a inibição de resposta (Logan, 1984).',
+      'Os valores dependem do timer do navegador, da taxa de atualização do monitor e do teclado: compare seus resultados no mesmo aparelho.',
     ],
   },
   benchmark: {
-    title: 'Faixas de Referência de Velocidade e Reflexo de Teclas',
-    description: 'Faixas editoriais de prática para comparar suas próprias sessões; não são estatísticas de população nem normas clínicas. Faixas editoriais para comparar suas próprias sessões, não percentis de população nem normas clínicas. Abrange tempo de reação em tecla única, ritmo de sequências (KPM) e precisão inibitória.',
-    columns: ['Tier', 'Classificação', 'Latência de Tecla Única', 'Velocidade KPM', 'Precisão Inibitória', 'Faixa'],
+    title: 'Ranks do exercício',
+    description: 'O rank vem dos limites de pontos e precisão definidos no código do exercício. Não são normas científicas, estatísticas de usuários nem percentis.',
+    columns: ['Rank', 'Pontos', 'Precisão'],
     rows: [
-      {
-        tier: 'Tier 1',
-        rank: 'Muito rápida',
-        stat: 'Abaixo de 240 ms',
-        level: '320+ KPM',
-        accuracy: '98–100%',
-        marker: 'Faixa 1',
-      },
-      {
-        tier: 'Tier 2',
-        rank: 'Rápida',
-        stat: '240–300 ms',
-        level: '260–319 KPM',
-        accuracy: '95–97%',
-        marker: 'Faixa 2',
-      },
-      {
-        tier: 'Tier 3',
-        rank: 'Boa',
-        stat: '300–380 ms',
-        level: '200–259 KPM',
-        accuracy: '90–94%',
-        marker: 'Faixa 3',
-      },
-      {
-        tier: 'Tier 4',
-        rank: 'Intermediária',
-        stat: '380–480 ms',
-        level: '140–199 KPM',
-        accuracy: '80–89%',
-        marker: 'Faixa 4',
-      },
-      {
-        tier: 'Tier 5',
-        rank: 'Inicial',
-        stat: 'Acima de 480 ms',
-        level: 'Abaixo de 140 KPM',
-        accuracy: 'Abaixo de 80%',
-        marker: 'Faixa 5',
-      },
+      { grade: 'S+', score: '3.500+', accuracy: '95%+' },
+      { grade: 'S', score: '2.200+', accuracy: '90%+' },
+      { grade: 'A', score: '1.400+', accuracy: '85%+' },
+      { grade: 'B', score: '700+', accuracy: '80%+' },
+      { grade: 'C', score: '300+', accuracy: '75%+' },
+      { grade: 'D', score: '100+', accuracy: '65%+' },
     ],
   },
   protocols: {
-    title: 'Protocolos Estruturados de Treinamento',
-    description: 'Metodologias focadas na aceleração da transmissão corticoespinhal e fortalecimento da inibição motora.',
+    title: 'Dicas de treino',
+    description: 'Menos erros, resultados melhores.',
     items: [
       {
-        title: 'Protocolo 1: Compressão de Latência de Escolha (Donders 1868)',
-        description: 'Mantenha o foco absoluto na tela sem olhar para o teclado. Force o cérebro a localizar as teclas apenas pela memória proprioceptiva das mãos.',
+        title: 'Pense em zonas',
+        description: 'Guarde movimento (WASD), habilidades (Q, E, C, X) e a fileira de números (1–4) como zonas: você acha o dedo certo mais rápido.',
       },
       {
-        title: 'Protocolo 2: Organização por Zonas Funcionais (Hick 1952)',
-        description: 'Subdivida mentalmente o teclado em blocos funcionais (movimento WASD, utilitários QECX, numerais 1-4) para reduzir a entropia decisória.',
+        title: 'Pare nos sinais falsos',
+        description: 'Apertar antes de olhar quebra o combo. Primeiro identifique o tipo de sinal, depois aperte.',
       },
       {
-        title: 'Protocolo 3: Treino de Inibição por Sinal de Parada (Logan 1984)',
-        description: 'Pratique a contenção ativa do impulso motor diante de comandos decoy, impedindo o acionamento mecânico do switch.',
-      },
-      {
-        title: 'Protocolo 4: Agrupamento Sequencial em Bloco (Sternberg 1966)',
-        description: 'Encare sequências de teclas como uma palavra fluida em vez de caracteres isolados, disparando toques em ondas motoras contínuas.',
+        title: 'Digite sequências em bloco',
+        description: 'Memorize uma sequência de 2 a 5 teclas como um só padrão e aperte de uma vez (Sternberg, 1966).',
       },
     ],
   },
@@ -305,6 +240,11 @@ const guideProps = {
       a: q.acceptedAnswer.text,
     })),
   },
+};
+
+const ptCopy = {
+  title: 'Teste de Reação do Teclado',
+  subtitle: 'Aperte a tecla exibida: reação nas teclas e keybinds de jogo',
 };
 
 export default function PortugueseKeyboardRecognitionPage() {
@@ -334,7 +274,7 @@ export default function PortugueseKeyboardRecognitionPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(howToSchema) }}
       />
-      <KeyboardRecognitionClient />
+      <KeyboardRecognitionClient copy={ptCopy} />
       <DrillGuide {...guideProps} />
       <RelatedDrills />
     </>

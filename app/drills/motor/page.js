@@ -3,11 +3,11 @@ import { getAlternateLanguages } from '@/lib/i18n/locales';
 
 export const metadata = {
   title: 'CPS Test, Aim Trainer & Mouse Precision Drills | SkillDrills',
-  description: 'Free CPS test, aim trainer and mouse precision drills for click speed, accuracy, steady-hand control and keyboard speed. 8 drills, no sign-up.',
+  description: 'Free CPS test, aim trainer and mouse precision drills for click speed, accuracy, steady-hand control and key-press reaction. No sign-up.',
   keywords: [
     'mouse precision training', 'mouse accuracy test', 'aim trainer online',
     'motor skills drills', 'hand eye coordination training', 'click speed test',
-    'cps test online', 'keyboard speed test', 'fine motor skills training',
+    'cps test online', 'keybind reaction trainer', 'fine motor skills training',
     'flick training', 'finger dexterity test', 'steady hand game',
     'mouse tracing game', 'drag and drop game', 'reaction time training',
     'FPS aim practice', 'esports aim training', 'precision control drills',
@@ -16,7 +16,7 @@ export const metadata = {
   ],
   openGraph: {
     title: 'CPS Test, Aim Trainer & Mouse Precision Drills | SkillDrills',
-    description: 'Free CPS test, aim trainer and mouse precision drills for click speed, accuracy, steady-hand control and keyboard speed. 8 drills, no sign-up.',
+    description: 'Free CPS test, aim trainer and mouse precision drills for click speed, accuracy, steady-hand control and key-press reaction. No sign-up.',
     type: 'website',
     url: 'https://skilldrills.online/drills/motor',
     siteName: 'SkillDrills',
@@ -31,7 +31,7 @@ export const metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'CPS Test, Aim Trainer & Mouse Precision Drills | SkillDrills',
-    description: 'Free CPS test, aim trainer and mouse precision drills for click speed, accuracy, steady-hand control and keyboard speed. 8 drills, no sign-up.',
+    description: 'Free CPS test, aim trainer and mouse precision drills for click speed, accuracy, steady-hand control and key-press reaction. No sign-up.',
     images: ['https://skilldrills.online/icons/icon-512x512.png'],
   },
   robots: { index: true, follow: true },
@@ -84,7 +84,7 @@ const faqSchema = {
       "name": "Which motor drill should I start with?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Start with CPS Test for click speed, Aim Trainer for mouse accuracy, Steady Hand Game for fine control, and Keyboard Speed Test or Sequence Aim Trainer for input sequencing. Precision Flick Shot and Drag and Drop Test add fast movements and cursor timing."
+        "text": "Start with CPS Test for click speed, Aim Trainer for mouse accuracy, Steady Hand Game for fine control, and the Keybind Reaction Trainer or Sequence Aim Trainer for input sequencing. Precision Flick Shot and Drag and Drop Test add fast movements and cursor timing."
       }
     },
     {
@@ -108,7 +108,7 @@ const faqSchema = {
       "name": "Do the motor drills work on phones and tablets?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "They are designed for a desktop browser with a mouse and keyboard. Touchscreens change the task, so scores from a phone are not comparable with mouse scores."
+        "text": "CPS Test, Steady Hand Game, Mouse Tracing Game and Sequence Aim Trainer accept touch input; Drag and Drop Test needs a mouse, and the keybind trainer needs a physical keyboard. Touch changes the task, so scores from a phone are not comparable with mouse scores."
       }
     }
   ]
@@ -130,7 +130,7 @@ const collectionSchema = {
   "dateModified": "2026-09-20",
   "name": "CPS Test, Aim Trainer & Mouse Precision Drills",
   "url": "https://skilldrills.online/drills/motor",
-  "description": "Free CPS test, aim trainer and mouse precision drills for click speed, accuracy, steady-hand control and keyboard speed. 8 drills, no sign-up.",
+  "description": "Free CPS test, aim trainer and mouse precision drills for click speed, accuracy, steady-hand control and key-press reaction. No sign-up.",
   "author": { "@type": "Organization", "name": "SkillDrills", "url": "https://skilldrills.online" },
   "hasPart": [
     // Hand-Eye Coordination (3 Drills)
@@ -138,11 +138,11 @@ const collectionSchema = {
     { "@type": "WebApplication", "name": "Drag and Drop - Cursor Grip & Spatial Timing Interception", "url": "https://skilldrills.online/drills/motor/hand-eye-coordination/drag-and-drop" },
     { "@type": "WebApplication", "name": "Precision Flick Shot - Aperture Centering & Target Snap Drill", "url": "https://skilldrills.online/drills/motor/hand-eye-coordination/precision-flick-shot" },
     // Movement Speed (3 Drills)
-    { "@type": "WebApplication", "name": "Finger Sequencing - Scale-Ordered Node Dexterity Test", "url": "https://skilldrills.online/drills/motor/movement-speed/finger-sequencing" },
-    { "@type": "WebApplication", "name": "Keyboard Recognition - Keybind Muscle Memory Speed Trainer", "url": "https://skilldrills.online/drills/motor/movement-speed/keyboard-recognition" },
-    { "@type": "WebApplication", "name": "Rapid Tapping - CPS Click Cadence & Burst Speed Test", "url": "https://skilldrills.online/drills/motor/movement-speed/rapid-tapping" },
+    { "@type": "WebApplication", "name": "Sequence Aim Trainer - Ordered Target Switching Drill", "url": "https://skilldrills.online/drills/motor/movement-speed/finger-sequencing" },
+    { "@type": "WebApplication", "name": "Keyboard Recognition - Keybind Reaction Trainer", "url": "https://skilldrills.online/drills/motor/movement-speed/keyboard-recognition" },
+    { "@type": "WebApplication", "name": "CPS Test - Clicks Per Second Over 45 Seconds", "url": "https://skilldrills.online/drills/motor/movement-speed/rapid-tapping" },
     // Precision Control (2 Drills)
-    { "@type": "WebApplication", "name": "Steady Hand Trainer - Micro-Tremor Suppression & Path Tracing", "url": "https://skilldrills.online/drills/motor/precision-control/steady-hand" },
+    { "@type": "WebApplication", "name": "Steady Hand Game - Winding Path Tracing Drill", "url": "https://skilldrills.online/drills/motor/precision-control/steady-hand" },
     { "@type": "WebApplication", "name": "Mouse Tracing - Continuous Wave Tracking & Path Guidance Drill", "url": "https://skilldrills.online/drills/motor/precision-control/tracing" }
   ]
 };

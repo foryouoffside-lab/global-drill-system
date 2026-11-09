@@ -119,7 +119,7 @@ const faqSchema = {
       name: 'What is a keyboard speed test?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'A keyboard speed test measures the latency between seeing a key prompt on screen and depressing the corresponding physical key on your keyboard. It evaluates choice reaction time, spatial keyboard layout familiarity, and motor response inhibition.',
+        text: 'Here it means a keybind reaction drill: a key prompt appears on screen and you press that key as fast as you can, for 60 seconds. It is not a typing test (no words or WPM). It practises choice reaction time, finding keys without looking, and holding back on fake prompts.',
       },
     },
     {
@@ -127,7 +127,7 @@ const faqSchema = {
       name: 'How does keybind training improve FPS performance in Valorant and CS2?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'In tactical shooters, executing weapon switches, utility deployment (smokes, flashes), and ability casts under fire demands zero hesitation. Keybind training automates stimulus-response mapping in the motor cortex, eliminating glance-down delays and mispresses in high-pressure clutch rounds.',
+        text: 'In tactical shooters, executing weapon switches, utility deployment (smokes, flashes), and ability casts under fire demands zero hesitation. Practising key prompts helps you find binds without glancing down. How much that transfers to a specific game varies from player to player.',
       },
     },
     {
@@ -135,7 +135,7 @@ const faqSchema = {
       name: "What is choice reaction time and how does Hick's Law apply here?",
       acceptedAnswer: {
         '@type': 'Answer',
-        text: "Choice reaction time (Donders 1868) measures decision latency when selecting among multiple stimuli. Hick's Law states that reaction time increases logarithmically as the number of possible stimulus-response alternatives grows. Keybind muscle memory minimizes cognitive choice overhead, compressing reaction time toward simple reflex latencies.",
+        text: "Choice reaction time (Donders 1868) measures decision latency when selecting among multiple stimuli. Hick's Law states that reaction time increases logarithmically as the number of possible stimulus-response alternatives grows. Well-practised key mappings reduce the time spent choosing.",
       },
     },
     {
@@ -143,23 +143,23 @@ const faqSchema = {
       name: 'What does the Fake Prompt / trap mechanism test?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'The Fake Prompt feature tests response inhibition (Logan 1984 stop-signal paradigm). When an invalid prompt or decoy key appears, your prefrontal cortex must actively suppress the prepared motor discharge. Resisting false triggers prevents catastrophic miscasts in competitive gaming.',
+        text: 'Fake prompts (shown in amber) practise response inhibition, the ability studied with the stop-signal paradigm (Logan 1984). When one appears, press nothing: letting it expire scores +200 points. Pressing any key on a fake prompt resets your combo and counts as a wrong keypress.',
       },
     },
     {
       '@type': 'Question',
-      name: 'What is an average single-key reaction time for gaming keybinds?',
+      name: 'Is there an average score or reaction time?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Untrained keyboard users average 380–480 ms for single-key choice reactions. Competitive FPS and MOBA players achieve 240–300 ms through automated muscle memory. Elite esports athletes operate under 240 ms with near-flawless trap inhibition.',
+        text: 'SkillDrills collects no player data, so there are no population norms. The results screen shows your average reaction time, keys per minute, accuracy and max combo, and grades you on score plus accuracy. Compare against your own earlier sessions on the same keyboard and settings.',
       },
     },
     {
       '@type': 'Question',
-      name: 'How does sequence typing mode challenge motor programming?',
+      name: 'How do sequence prompts work?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Sequence mode presents multi-key combos (e.g. 3–5 keys in rapid succession) testing motor chunking and short-term working memory (Sternberg 1966). Instead of processing keys individually, expert typists fire pre-compiled kinematic motor bursts.',
+        text: 'Sequence prompts show 2 to 5 keys (depending on mode and difficulty) to press in order before the prompt timer runs out. Memory prompts show 3 keys briefly, then hide them, so you press them from short-term memory (Sternberg 1966). Reading the whole sequence as one chunk is faster than handling each key separately.',
       },
     },
     {
@@ -167,7 +167,7 @@ const faqSchema = {
       name: 'What keyboard type provides the lowest input latency for testing?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Mechanical keyboards with linear switches, optical actuation, or magnetic Hall-effect sensors (with Rapid Trigger enabled) and 1000 Hz+ USB polling keep hardware input delay low (a 1000 Hz poll rate reports every 1 ms), so more of the measured latency reflects your own reaction rather than the keyboard.',
+        text: 'A keyboard with a high USB polling rate (1000 Hz reports every 1 ms) adds less delay, so more of the measured time reflects your own reaction. This drill does not test the keyboard itself; use the same keyboard between runs so your results stay comparable.',
       },
     },
     {
@@ -175,7 +175,7 @@ const faqSchema = {
       name: 'How many minutes per day should I practice keybind reactions?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Practice 10–15 minutes daily across 3–4 focused blocks. Neural adaptation for spatial key recognition occurs rapidly during deliberate practice, but mental fatigue quickly degrades response inhibition accuracy.',
+        text: 'A few focused 60-second sessions with short breaks is a sensible routine. When you start falling for fake prompts more often, you are probably tired.',
       },
     },
     {
@@ -183,7 +183,7 @@ const faqSchema = {
       name: 'Does keybind training benefit MOBA games like League of Legends and Dota 2?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Yes. Rapid ability combos (Q-W-E-R-D-F) and instant item actives require precise finger sequencing and spatial finger independence without looking down at the keyboard.',
+        text: 'The drill includes a League of Legends key preset (Q, W, E, R, D, F, item keys and more), so you can practise those binds without looking down. How much it helps in-game varies from player to player.',
       },
     },
     {
@@ -191,7 +191,7 @@ const faqSchema = {
       name: 'How are KPM (Keys Per Minute) and accuracy calculated?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'KPM is computed as total correct key presses divided by active session duration in minutes. Accuracy reflects correct presses divided by total attempts (including incorrect key hits and triggered traps).',
+        text: 'KPM is all your key presses divided by the session length in minutes. Accuracy is correct key presses divided by all key presses, including wrong keys and presses on fake prompts.',
       },
     },
   ],
@@ -201,7 +201,7 @@ const howToSchema = {
   '@context': 'https://schema.org',
   '@type': 'HowTo',
   name: 'How to Train Keyboard Speed & Keybind Muscle Memory',
-  description: 'Step-by-step methodology to sharpen key recognition, choice reaction speed, and tactical gaming reflex responses.',
+  description: 'Step-by-step guide to practising key recognition and choice reaction speed.',
   step: [
     {
       '@type': 'HowToStep',
@@ -221,14 +221,14 @@ const howToSchema = {
       '@type': 'HowToStep',
       position: 3,
       name: 'Actuate the Key with Ballistic Precision',
-      text: 'Depress the target key crisply through its actuation point. If a Fake Prompt trap appears, recruit executive inhibition to hold finger position.',
+      text: 'Press the prompted key. If an amber fake prompt appears, press nothing and let it expire.',
       url: 'https://skilldrills.online/drills/motor/movement-speed/keyboard-recognition#step-3',
     },
     {
       '@type': 'HowToStep',
       position: 4,
       name: 'Evaluate Reaction Latency & Inhibition Rates',
-      text: 'Review average decision latency, KPM typing velocity, and trap resistance accuracy on the final session scorecard to identify weak fingers.',
+      text: 'Review your average reaction time, keys per minute, accuracy and max combo on the results screen.',
       url: 'https://skilldrills.online/drills/motor/movement-speed/keyboard-recognition#step-4',
     },
   ],
@@ -239,76 +239,43 @@ const guideProps = {
   intro: {
     title: `What Is a Keyboard Speed Test, and How Is It Measured?`,
     paragraphs: [
-      `This keyboard speed test measures how fast you press the right key after a prompt appears, not how many words you type. It shows a key, times your press, and adds fake prompts you must ignore plus a sequence-typing mode, so it tests choice reaction time and keybind recall.`,
-      'How this is measured, and what it cannot resolve: timing comes from the browser\'s performance.now() clock, which is deliberately coarsened to roughly 1 ms as a Spectre mitigation, and the display quantizes every target to its own refresh interval — about 16.7 ms at 60 Hz, 6.9 ms at 144 Hz and 4.1 ms at 240 Hz (Woods et al., 2015). Mouse polling adds roughly 8 ms at 125 Hz against about 1 ms at 1000 Hz. Treat any difference under about 5 ms as measurement noise, and compare your own runs on the same mouse and display rather than against someone else\'s setup. SkillDrills stores every score in your browser and collects no aggregate data, so nothing here is a population norm.',
+      `This keyboard speed test measures how fast you press the right key after a prompt appears, not how many words you type. It shows a key, times your press, and mixes in fake prompts you must ignore plus multi-key sequence and memory prompts, so it practises choice reaction time and keybind recall. It is not a typing test.`,
+      'How this is measured, and what it cannot resolve: timing comes from the browser\'s performance.now() clock, which is deliberately coarsened to roughly 1 ms as a Spectre mitigation, and the display quantizes every target to its own refresh interval — about 16.7 ms at 60 Hz, 6.9 ms at 144 Hz and 4.1 ms at 240 Hz (Woods et al., 2015). Keyboard polling adds roughly 8 ms at 125 Hz against about 1 ms at 1000 Hz. Treat any difference under about 5 ms as measurement noise, and compare your own runs on the same keyboard and display rather than against someone else\'s setup. SkillDrills stores every score in your browser and collects no aggregate data, so nothing here is a population norm.',
     ],
   },
   benchmark: {
-    title: 'Keyboard Speed & Keybind Reaction Benchmarks',
-    description: 'An editorial guide to reading your own result, not measured population norms — SkillDrills collects no aggregate data. The choice-reaction framing follows Donders (1868), Hick (1952) and Logan (1984); the band boundaries are the drill author\'s own judgement. Columns evaluate single-key choice latency, sequence typing rhythm, and trap inhibition accuracy.',
-    columns: ['Tier', 'Rank Title', 'Single-Key Latency', 'Sequence KPM', 'Trap Accuracy', 'Editorial band'],
+    title: 'Keybind Reaction Trainer: SkillDrills Practice Bands',
+    description: 'SkillDrills practice bands, not research norms or user data: SkillDrills collects no aggregate data. They match the grade on the results screen, which needs both the score and the accuracy shown for a 60-second session.',
+    columns: ['Grade', 'Rank Title', 'Score', 'Accuracy', 'Band'],
     rows: [
-      {
-        tier: 'Tier 1',
-        rank: 'Apex Keybinder',
-        stat: 'Under 240 ms',
-        level: '320+ KPM',
-        accuracy: '98–100%',
-        percentile: 'Exceptional',
-      },
-      {
-        tier: 'Tier 2',
-        rank: 'Master Tactician',
-        stat: '240–300 ms',
-        level: '260–319 KPM',
-        accuracy: '95–97%',
-        percentile: 'Advanced',
-      },
-      {
-        tier: 'Tier 3',
-        rank: 'Proficient Operator',
-        stat: '300–380 ms',
-        level: '200–259 KPM',
-        accuracy: '90–94%',
-        percentile: 'Strong',
-      },
-      {
-        tier: 'Tier 4',
-        rank: 'Intermediate Typist',
-        stat: '380–480 ms',
-        level: '140–199 KPM',
-        accuracy: '80–89%',
-        percentile: 'Typical',
-      },
-      {
-        tier: 'Tier 5',
-        rank: 'Novice Keybinder',
-        stat: 'Over 480 ms',
-        level: 'Under 140 KPM',
-        accuracy: 'Under 80%',
-        percentile: 'Starting out',
-      },
+      { tier: 'S+', rank: 'Grandmaster', score: '3,500+', accuracy: '95%+', band: 'SkillDrills practice band' },
+      { tier: 'S', rank: 'Master', score: '2,200+', accuracy: '90%+', band: 'SkillDrills practice band' },
+      { tier: 'A', rank: 'Diamond', score: '1,400+', accuracy: '85%+', band: 'SkillDrills practice band' },
+      { tier: 'B', rank: 'Platinum', score: '700+', accuracy: '80%+', band: 'SkillDrills practice band' },
+      { tier: 'C', rank: 'Gold', score: '300+', accuracy: '75%+', band: 'SkillDrills practice band' },
+      { tier: 'D', rank: 'Silver', score: '100+', accuracy: '65%+', band: 'SkillDrills practice band' },
+      { tier: 'F', rank: 'Bronze', score: 'below D', accuracy: 'below D', band: 'SkillDrills practice band' },
     ],
   },
   protocols: {
     title: 'How to train keybind speed',
-    description: 'Structured training methodologies designed to accelerate corticospinal motor transmission, reduce decision entropy, and strengthen executive motor inhibition.',
+    description: 'Practice guidance based on the models cited above.',
     items: [
       {
         title: 'Protocol 1: Donders Choice Latency Compression (Stimulus-Response Mapping)',
-        description: 'Focus your gaze strictly on the screen center without glancing downward at your keyboard. Force the pre-motor cortex to resolve the mapping purely through proprioceptive finger position, progressively compressing decision latency from 350 ms toward the 240 ms physiological threshold.',
+        description: 'Focus your gaze strictly on the screen center without glancing downward at your keyboard. Find each key by feel from your finger position, which gets faster with practice.',
       },
       {
         title: 'Protocol 2: Hick’s Law Alternative Reduction (Sub-Cluster Zoning)',
-        description: 'Mentally partition your active keyboard into functional sub-clusters (movement home keys WASD, tactical perimeter QECX, and upper numeral row 1-4). Organizing choices into hierarchical spatial zones reduces Hickian decision entropy compared to treating all keys as an unstructured set.',
+        description: 'Mentally partition your active keyboard into functional sub-clusters (movement home keys WASD, tactical perimeter QECX, and upper numeral row 1-4). Grouping keys into zones can make each choice feel smaller than treating all keys as one unstructured set.',
       },
       {
         title: 'Protocol 3: Logan Countermanding & Stop-Signal Inhibition (Trap Pacing)',
-        description: 'During Fake Prompt mode, cultivate deliberate input gating. When an invalid command is recognized, actively recruit prefrontal inhibitory networks to cancel motor discharge before the mechanical switch actuation point is reached.',
+        description: 'Check the prompt colour before you press. When you see an amber fake prompt, stop the press and let it expire for +200 points.',
       },
       {
-        title: 'Protocol 4: Sternberg Working-Memory Chunking (Multi-Key Sequence Blasts)',
-        description: 'When tackling 3- to 5-key sequences, do not type each key in isolation. Read the full sequence as a unified cognitive chunk, allowing the motor cortex to fire the consecutive keystrokes in a single coordinated ballistic wave.',
+        title: 'Protocol 4: Sternberg Working-Memory Chunking (Multi-Key Sequences)',
+        description: 'When tackling 3- to 5-key sequences, do not type each key in isolation. Read the full sequence as a unified cognitive chunk, and press the keys as one smooth run.',
       },
     ],
   },

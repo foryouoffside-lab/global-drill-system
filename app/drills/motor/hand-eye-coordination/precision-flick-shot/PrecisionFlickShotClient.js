@@ -69,7 +69,7 @@ const RULES_ITEMS = [
   { num: "1", text: "Bullseye Core", highlight: "+200 PTS (+2s, max 60s)", result: "×Combo Mult" },
   { num: "2", text: "Standard Hit", highlight: "+100 PTS (+2s, max 60s)", result: "Maintains Streak" },
   { num: "3", text: "Level Up", highlight: "+1 / 1400 PTS", result: "Shrink & Faster Decay" },
-  { num: "4", text: "Miss / Timeout", highlight: "Penalty", result: "Resets Combo (-0.8s)" }
+  { num: "4", text: "Miss / Timeout", highlight: "Penalty", result: "Resets Combo (-1s)" }
 ];
 
 const ABOUT_TEXT = `Precision Flick Shot Training is a high-speed motor drill engineered to refine mouse flick accuracy, target acquisition speed, and center-click timing.
@@ -712,8 +712,8 @@ export default function PrecisionFlickShotClient({ copy } = {}) {
           <div className="flex flex-col gap-1">
             <h1 className="text-2xl sm:text-3xl font-black tracking-tight text-white">
               <span data-seo-kw="1">{copy?.title || "Precision Flick Shot"}</span>
-              <span className="block text-sm font-semibold text-slate-400 mt-1">{copy?.subtitle || "Precision flick aim drill for hitting shrinking targets, improving micro-corrections, and building accurate mouse control"}</span>
             </h1>
+            <p className="text-sm font-semibold text-slate-400 mt-1">{copy?.subtitle || "Precision flick aim drill for hitting shrinking targets, improving micro-corrections, and building accurate mouse control"}</p>
           </div>
         )}
 

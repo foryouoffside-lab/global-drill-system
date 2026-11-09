@@ -27,8 +27,8 @@ const DRILL_DURATION = 45; // Fixed 45-second session
 // ACCORDION DATA
 // ============================================================
 const RULES_ITEMS = [
-  { num: "1", text: "Trace Corridor", highlight: "Lap Clear", result: "+45s Reset" },
-  { num: "2", text: "Reach Goal", highlight: "Endless Scaling", result: "Narrows Path" },
+  { num: "1", text: "Trace Corridor", highlight: "Lap Clear", result: "Clock Resets to 45s" },
+  { num: "2", text: "Reach Goal", highlight: "Endless Scaling", result: "More Turns, Taller Swings" },
   { num: "3", text: "Wall Collision", highlight: "Mistake", result: "Resets to Start" },
   { num: "4", text: "Mouse Input", highlight: "Desktop", result: "1:1 Raw Tracking" }
 ];
@@ -641,8 +641,8 @@ export default function SteadyHandClient({ copy = null }) {
               {copy?.h1Prefix || null}
               <span data-seo-kw="1">{copy?.h1Keyword || "Steady Hand Game"}</span>
               {copy?.h1Suffix || null}
-              <span className="block text-sm font-semibold text-slate-400 mt-1">{copy?.subtitle || "Steady hand mouse control drill for tracing narrow paths and improving cursor precision"}</span>
             </h1>
+            <p className="text-sm font-semibold text-slate-400 mt-1">{copy?.subtitle || "Steady hand mouse control drill for tracing narrow paths and improving cursor precision"}</p>
           </div>
         )}
 

@@ -11,7 +11,7 @@ export const metadata = {
   keywords: [
     'teste de arrastar e soltar', 'teste de arrastar mouse', 'controle do mouse', 'precisão ao arrastar',
     'treino de arrastar e soltar', 'teste de mouse online', 'coordenação olho-mão mouse', 'velocidade de arrastar e soltar',
-    'teste de precisão do mouse', 'arrastar e soltar no navegador', 'controle de cursor', 'treino de mouse',
+    'arrastar e soltar no navegador', 'controle de cursor', 'treino de mouse',
   ],
   openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
     title: 'Teste de arrastar e soltar | Precisão do mouse | SkillDrills',
@@ -75,7 +75,7 @@ const softwareApplicationSchema = {
   url: 'https://skilldrills.online/pt/drills/motor/hand-eye-coordination/drag-and-drop',
   publisher: { '@type': 'Organization', name: 'SkillDrills', url: 'https://skilldrills.online' },
   inLanguage: 'pt-BR',
-  dateModified: '2026-09-20',
+  dateModified: '2026-11-09',
 };
 
 const webApplicationSchema = {
@@ -86,7 +86,7 @@ const webApplicationSchema = {
   url: 'https://skilldrills.online/pt/drills/motor/hand-eye-coordination/drag-and-drop',
   applicationCategory: 'EducationalApplication',
   inLanguage: 'pt-BR',
-  dateModified: '2026-09-20',
+  dateModified: '2026-11-09',
 };
 
 const videoGameSchema = {
@@ -106,14 +106,14 @@ const faqSchema = {
   '@context': 'https://schema.org',
   '@type': 'FAQPage',
   inLanguage: 'pt-BR',
-  dateModified: '2026-09-20',
+  dateModified: '2026-11-09',
   mainEntity: [
     {
       '@type': 'Question',
       name: 'O que avalia o teste de Drag and Drop no mouse?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'O teste avalia a coordenação sensório-motora contínua: capacidade de capturar o objeto, transportá-lo em linha reta sob pressão isométrica e desacelerar no timing exato para soltá-lo no recipiente receptor.',
+        text: 'Durante 45 segundos você agarra uma bola com o botão esquerdo, arrasta até um recipiente redondo que se move e solta dentro dele. O resultado mostra pontuação, precisão (proporção de entregas certas), número de entregas, combo máximo e nível alcançado.',
       },
     },
     {
@@ -121,7 +121,7 @@ const faqSchema = {
       name: 'Por que arrastar e soltar é mais difícil do que apenas clicar?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Porque segurar o botão pressionado exige contração isométrica constante dos músculos flexores dos dedos, o que aumenta o atrito contra o mousepad e reduz a largura de banda motora em 15% a 25% (MacKenzie et al., 1991).',
+        text: 'Segurar o botão exige tensão constante no dedo e limita os microajustes do punho. MacKenzie et al. (1991) mostraram que arrastar é bem mais lento e gera mais erros do que apenas apontar para o mesmo alvo com o mesmo dispositivo.',
       },
     },
     {
@@ -129,7 +129,7 @@ const faqSchema = {
       name: 'O que é a Lei de Pilotagem de Accot-Zhai (Steering Law)?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Formulada por Johnny Accot e Shumin Zhai em 1997, ela estende a Lei de Fitts para trajetórias restritas, demonstrando que o tempo de transporte é proporcional à distância dividida pela largura do corredor alvo.',
+        text: 'Formulada por Johnny Accot e Shumin Zhai em 1997, ela estende a Lei de Fitts para trajetórias restritas, demonstrando que o tempo de travessia é proporcional ao comprimento dividido pela largura do corredor: um corredor com metade da largura leva cerca do dobro do tempo.',
       },
     },
     {
@@ -137,7 +137,7 @@ const faqSchema = {
       name: 'Como evitar passar direto (overshoot) do alvo ao arrastar rápido?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Inicie a frenagem motora com os músculos extensores do antebraço cerca de 40 a 50 milissegundos antes de alcançar o recipiente, garantindo estabilidade antes de soltar o clique.',
+        text: 'Comece a frear um pouco antes do recipiente, mirando na trajetória dele e não na posição atual, e solte quando a bola estiver dentro. Soltar fora conta como erro e zera o combo.',
       },
     },
     {
@@ -161,7 +161,7 @@ const faqSchema = {
       name: 'Profissionais de design e edição de vídeo se beneficiam deste exercício?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Sim. Designers, editores de vídeo e modeladores 3D realizam milhares de movimentos de arrasto diários em linhas do tempo e curvas bezier; treinar desaceleração reduz fadiga por esforço repetitivo.',
+        text: 'Sim. Designers, editores de vídeo e modeladores 3D realizam milhares de movimentos de arrasto diários em linhas do tempo e curvas bezier; o gesto treinado aqui é o mesmo, mas este drill é um exercício de controle do mouse, não uma prevenção de lesões.',
       },
     },
     {
@@ -169,7 +169,7 @@ const faqSchema = {
       name: 'Como funcionam os multiplicadores de combo e a pontuação?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Acertos consecutivos dentro dos limites do recipiente concedem multiplicadores de combo de até 3.0x. Soltar o objeto fora da borda ou deixar o tempo do recipiente expirar zera a sequência.',
+        text: 'Cada entrega vale 100 pontos × multiplicador de combo (até 3,0x) × bônus de nível. O nível sobe a cada 250 pontos (mais níveis bônus a cada 4 de combo): bola e recipiente encolhem e o recipiente acelera. Soltar fora da borda, ou deixar o tempo da bola expirar com a opção de tempo limite ligada, zera a sequência. A partida dura 45 segundos e exige mouse com bloqueio de ponteiro.',
       },
     },
     {
@@ -185,7 +185,7 @@ const faqSchema = {
       name: 'Qual é o tempo de treino diário recomendado para fixar a memória muscular?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Sessões curtas de 10 a 15 minutos diários com 4 a 6 repetições de 45 segundos são ideais para estabilização neural sem sobrecarregar tendões do punho.',
+        text: 'Algumas partidas de 45 segundos por dia bastam como rotina; pare se sentir desconforto no punho. Compare seus resultados com suas próprias partidas anteriores no mesmo equipamento.',
       },
     },
   ],
@@ -235,37 +235,34 @@ const guideProps = {
     title: 'Biomecânica do Arrasto, Pilotagem e Desaceleração Sensório-Motora',
     paragraphs: [
       'Na interação humano-computador, a ação contínua de arrastar e soltar (drag and drop) impõe demandas neuromusculares nitidamente superiores ao simples apontar e clicar. Enquanto o clique pontual obedece à Lei de Fitts (Fitts, 1954), o ato de arrastar exige co-contração isométrica sustentada dos músculos flexores dos dedos para manter o switch acionado durante a translação dinâmica do membro superior.',
-      'Na célebre avaliação de MacKenzie, Sellen e Buxton (1991), constatou-se que tarefas de arrasto sofrem uma redução de throughput de 15% a 25% em relação ao apontamento simples. A força descendente altera o atrito das sapatilhas do mouse sobre o mousepad, restringe a flexibilidade dos dedos e amplifica ruídos motores neuromusculares.',
+      'MacKenzie, Sellen e Buxton (1991) mostraram que arrastar é bem mais lento e gera mais erros do que apenas apontar para o mesmo alvo com o mesmo dispositivo. O botão pressionado limita os ajustes finos dos dedos e do punho.',
       'Além disso, Johnny Accot e Shumin Zhai (1997) desenvolveram a Lei de Pilotagem (Steering Law) para modelar trajetórias espacialmente confinadas. Ao arrastar sob tempo restrito, o indivíduo deve equilibrar a aceleração de transporte com a desaceleração terminal (Elliott et al., 2010), recrutando músculos antagonistas para evitar o overshoot na borda do recipiente.',
-      'Limites de amostragem no navegador: A medição temporal utiliza performance.now() com precisão de milissegundos. A taxa de atualização da tela (16,7 ms em 60 Hz, 6,9 ms em 144 Hz) e a taxa de varredura do mouse introduzem pequenas quantizações (Woods et al., 2015). O SkillDrills processa e guarda suas estatísticas estritamente no seu navegador.',
+      'Como funciona: 45 segundos para agarrar a bola, arrastar e soltar dentro do recipiente móvel. A taxa de atualização da tela e o polling do mouse mudam a sensação (Woods et al., 2015), então compare-se principalmente com suas partidas anteriores no mesmo equipamento. O SkillDrills guarda suas estatísticas apenas no seu navegador.',
     ],
   },
   benchmarks: {
-    title: 'Níveis de Desempenho e Precisão em Drag and Drop',
-    caption: 'Classificação orientativa baseada no modelo de pilotagem de Accot & Zhai (1997) e nos parâmetros de arrasto de MacKenzie et al. (1991). O SkillDrills não coleta dados populacionais.',
-    headers: ['Nível (Tier)', 'Classificação', 'Fase / Combo', 'Tempo Médio de Transporte', 'Precisão de Acerto', 'Perfil Neuromotor'],
+    title: 'Faixas de treino do teste de arrastar e soltar (SkillDrills)',
+    caption: 'Faixas de treino do SkillDrills: não são normas científicas nem estatísticas de usuários, e sim referências do autor do drill para interpretar seu nível, combo e precisão. O SkillDrills não coleta dados populacionais.',
+    headers: ['Nível (Tier)', 'Classificação', 'Fase / Combo', 'Precisão de Acerto', 'Perfil de jogo'],
     rows: [
       [
         'Tier 1',
         'Elite / Pro Gamer',
         'Nv. 12–15 (Combo > 18x)',
-        '< 420 ms',
         '≥ 98,0%',
-        'Perfil de velocidade em sino perfeito, frenagem precisa e ausência total de solturas precoces.',
+        'Frenagem suave mesmo com recipientes rápidos, quase nenhuma soltura fora.',
       ],
       [
         'Tier 2',
         'Avançado / Competitivo',
         'Nv. 9–11 (Combo 12–17x)',
-        '420–510 ms',
         '94,0%–97,9%',
-        'Desaceleração controlada, condução firme de trajetória e microajustes terminais abaixo de 35 ms.',
+        'Desaceleração controlada, recipientes pequenos acertados com microajustes curtos.',
       ],
       [
         'Tier 3',
         'Intermediário / Habilidoso',
         'Nv. 6–8 (Combo 7–11x)',
-        '511–640 ms',
         '87,0%–93,9%',
         'Pequenas oscilações laterais durante a aceleração e ligeira perda de velocidade antes da borda.',
       ],
@@ -273,7 +270,6 @@ const guideProps = {
         'Tier 4',
         'Básico / Em Desenvolvimento',
         'Nv. 3–5 (Combo 3–6x)',
-        '641–800 ms',
         '78,0%–86,9%',
         'Múltiplos impulsos de correção, tensão excessiva nos dedos provocando atrito elevado e erros de soltura.',
       ],
@@ -281,9 +277,8 @@ const guideProps = {
         'Tier 5',
         'Iniciante / Entrada',
         'Nv. 1–2 (Combo < 3x)',
-        '> 800 ms',
         '< 78,0%',
-        'Velocidade lenta de condução, liberação frequente fora do recipiente e fadiga muscular no punho.',
+        'Condução lenta e liberação frequente fora do recipiente.',
       ],
     ],
   },
@@ -300,7 +295,7 @@ const guideProps = {
       },
       {
         title: 'Protocolo 3: Desaceleração com Músculos Antagonistas (Níveis 9–12)',
-        description: 'Ative os músculos extensores do antebraço 50 ms antes de entrar no recipiente móvel para estancar o movimento antes de abrir os dedos no centro exato.',
+        description: 'Comece a frear pouco antes do recipiente móvel para parar o movimento dentro dele e então solte.',
       },
       {
         title: 'Protocolo 4: Interceptação Dinâmica por Ângulo de Lead (Níveis 13–15)',

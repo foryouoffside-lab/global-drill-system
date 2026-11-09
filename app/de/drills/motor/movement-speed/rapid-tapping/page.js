@@ -19,9 +19,11 @@ import { pickSources } from '@/lib/drillSources';
 
 export const metadata = {
   title: 'CPS-Test | Klickgeschwindigkeit messen | SkillDrills',
-  description: 'Teste deine Klicks pro Sekunde (CPS) und deine Klick-Ausdauer 45 Sekunden lang – kostenlos im Browser, ohne Download.',
+  description: 'CPS Test und Klicktest im Browser: Miss deine Klicks pro Sekunde (CPS) und deine Klick-Ausdauer 45 Sekunden lang – kostenlos, ohne Download.',
   keywords: [
+    'CPS Test',
     'CPS-Test',
+    'Klicktest',
     'Klickgeschwindigkeit Test',
     'Klicks pro Sekunde',
     'Maus Klick Test',
@@ -31,7 +33,7 @@ export const metadata = {
     'Minecraft CPS',
     'Klick-Ausdauer trainieren',
     'schnell klicken üben',
-    'Klicktest online',
+    'Klicktest Maus',
     'CPS Klicktest',
   ],
   openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
@@ -82,7 +84,7 @@ const softwareApplicationSchema = {
   url: 'https://skilldrills.online/de/drills/motor/movement-speed/rapid-tapping',
   publisher: { '@type': 'Organization', name: 'SkillDrills', url: 'https://skilldrills.online' },
   inLanguage: 'de-DE',
-  dateModified: '2026-09-20',
+  dateModified: '2026-11-09',
 };
 
 const webApplicationSchema = {
@@ -96,7 +98,7 @@ const webApplicationSchema = {
   offers: { '@type': 'Offer', price: '0', priceCurrency: 'EUR' },
   url: 'https://skilldrills.online/de/drills/motor/movement-speed/rapid-tapping',
   inLanguage: 'de-DE',
-  dateModified: '2026-09-20',
+  dateModified: '2026-11-09',
 };
 
 const videoGameSchema = {
@@ -117,14 +119,14 @@ const faqSchema = {
   '@context': 'https://schema.org',
   '@type': 'FAQPage',
   inLanguage: 'de-DE',
-  dateModified: '2026-09-20',
+  dateModified: '2026-11-09',
   mainEntity: [
     {
       '@type': 'Question',
       name: 'Was ist ein CPS Test (Clicks Per Second)?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Ein CPS-Test ist eine digitale motorische Messung der Häufigkeit von Mausklicks oder Touchscreen-Tipps pro Sekunde. Er bewertet die neuromuskuläre Impulsrate, Sehnen-Oszillationsgeschwindigkeit und Fingerausdauer.',
+        text: 'Ein CPS Test (Klicktest) zählt, wie viele Mausklicks oder Touchscreen-Tipps du pro Sekunde schaffst. Hier klickst du 45 Sekunden lang auf eine Kugel in der Bildmitte; nur Klicks auf die Kugel zählen, und dein Ergebnis ist die Gesamtzahl der Klicks geteilt durch die vergangenen Sekunden.',
       },
     },
     {
@@ -132,7 +134,7 @@ const faqSchema = {
       name: 'Was ist ein durchschnittlicher CPS-Wert für normale Spieler und E-Sportler?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Gelegenheitsspieler erreichen bei normalem Einzelfinger-Klicken durchschnittlich 5,0 bis 6,5 CPS. Erfahrene Spieler erzielen 8,0 bis 10,5 CPS, während Spezialisten in Minecraft PvP mit Jitter-Clicking 12,0 bis 16,0+ CPS und mit Butterfly-Clicking 16,0 bis 20,0+ CPS erreichen.',
+        text: 'Es gibt keine offizielle Statistik; als grobe Orientierung liegen normale Einzelfinger-Klicks bei etwa 5 bis 7 CPS, geübte Spieler kommen auf 8 bis 10 CPS. Mit Jitter-Clicking sind 12+ CPS, mit Butterfly-Clicking 16+ CPS möglich.',
       },
     },
     {
@@ -180,7 +182,7 @@ const faqSchema = {
       name: 'Wie skaliert der 45-Sekunden-Test im Schwierigkeitsgrad?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Anders als statische 5-Sekunden-Tests fordert diese Übung Ausdauer: Jeder Klick vergrößert den Zielkreis, während eine dynamische Schrumpfung von bis zu 600 Pixel/Sekunde gegensteuert. Schrumpft die Kugel auf Null, gibt es einen Straf-Reset.',
+        text: 'Anders als kurze 5-Sekunden-Tests fordert diese Übung Ausdauer: Jeder Klick auf die Kugel vergrößert sie, alle 10 Klicks gibt es 1 Punkt, und alle 5 Punkte schrumpft die Kugel schneller. Schrumpft sie auf Null, springt sie mit Strafsignal auf eine kleine Größe zurück; Punkte werden dabei nicht abgezogen.',
       },
     },
     {
@@ -196,7 +198,7 @@ const faqSchema = {
       name: 'Funktioniert der CPS Test auch auf Smartphones und Tablets?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Ja. Das Tool nutzt Pointer Events, die Multitouch auf Touchscreens unterstützen, sodass auch mobile Spieler ihre Zwei-Finger-Tippfrequenz testen können.',
+        text: 'Ja. Auf Touchscreens tippst du direkt auf die Kugel, auch abwechselnd mit zwei Fingern; jeder Tipp zählt einzeln. Tastatureingaben zählen nicht; die Esc-Taste beendet nur die Runde.',
       },
     },
   ],
@@ -206,7 +208,7 @@ const howToSchema = {
   '@context': 'https://schema.org',
   '@type': 'HowTo',
   inLanguage: 'de-DE',
-  dateModified: '2026-09-20',
+  dateModified: '2026-11-09',
   name: 'CPS Test – Kostenloser Klickgeschwindigkeitstest (Klicks pro Sekunde)',
   description: 'CPS Test – Kostenloser Klickgeschwindigkeitstest (Klicks pro Sekunde)',
   step: [
@@ -234,8 +236,8 @@ const howToSchema = {
     {
       '@type': 'HowToStep',
       position: 4,
-      name: 'Durchschnitt (CPS) und Peak analysieren',
-      text: 'Prüfen Sie auf der Auswertungskarte Ihre durchschnittliche Klickrate (CPS), Spitzenbursts und Ermüdungsresistenz.',
+      name: 'Durchschnitt (CPS) und Bestwert analysieren',
+      text: 'Prüfen Sie auf der Auswertungskarte Ihre durchschnittliche Klickrate (CPS), Gesamtklicks, Punkte, die erreichte Schrumpfgeschwindigkeit und Ihre bisher beste CPS.',
       url: 'https://skilldrills.online/de/drills/motor/movement-speed/rapid-tapping#step-4'
     }
   ],
@@ -246,14 +248,14 @@ const guideProps = {
   intro: {
     title: 'Messprinzipien und wissenschaftliche Grundlagen der Klickgeschwindigkeit',
     paragraphs: [
-      'Ein CPS-Test zählt die ausgeführten Mausklicks in einer Sekunde. Kontinuierliches Einzelfinger-Klicken erreicht typischerweise 5 bis 7 Klicks pro Sekunde, basierend auf dem publizierten Finger-Tapping-Referenzwert von etwa 50 bis 55 Taps in 10 Sekunden für den dominanten Zeigefinger gesunder Erwachsener (Halstead, 1947; Todor & Kyprie, 1980). Höhere Werte werden über offene motorische Bewegungsprogramme gesteuert (Keele, 1968).',
+      'Ein CPS Test zählt die ausgeführten Mausklicks pro Sekunde; dieser Klicktest misst 45 Sekunden lang und zeigt live die CPS der letzten 2 Sekunden. Kontinuierliches Einzelfinger-Klicken erreicht typischerweise 5 bis 7 Klicks pro Sekunde, basierend auf dem publizierten Finger-Tapping-Referenzwert von etwa 50 bis 55 Taps in 10 Sekunden für den dominanten Zeigefinger gesunder Erwachsener (Halstead, 1947; Todor & Kyprie, 1980). Höhere Werte werden über offene motorische Bewegungsprogramme gesteuert (Keele, 1968).',
       'Messgenauigkeit und Display-Quantisierung: Die Zeitmessung basiert auf der performance.now()-Uhr des Browsers (ca. 1 ms Auflösung). Bildschirme aktualisieren je nach Frequenz alle 16,7 ms (60 Hz), 6,9 ms (144 Hz) oder 4,1 ms (240 Hz, Woods et al., 2015), während Maus-Polling 1 bis 8 ms Latenz hinzufügt. Unterschiede unter 5 ms sind als Messrauschen zu betrachten. SkillDrills speichert alle Ergebnisse lokal im Browser.',
     ],
   },
   benchmark: {
-    title: 'CPS-Richtwerte nach Technik',
-    description: 'Grobe Orientierung zur Einordnung eigener Ergebnisse, keine gemessene Bevölkerungsnorm. Einzelfinger-Werte stützen sich auf Finger-Tapping-Referenzwerte (Halstead 1947; Todor & Kyprie 1980); höhere Stufen sind Erfahrungswerte aus der Gaming-Community.',
-    columns: ['Stufe', 'Bezeichnung', 'Durchschnitt (CPS)', 'Spitze (5 s)', 'Technik', 'Einordnung'],
+    title: 'CPS-Übungsstufen (SkillDrills)',
+    description: 'Von SkillDrills festgelegte Übungsstufen zur Einordnung eigener Ergebnisse, keine Forschungsnorm und keine Nutzerdaten. Nur die Obergrenze für Einzelfinger-Klicken orientiert sich an Finger-Tapping-Studien (Halstead 1947; Todor & Kyprie 1980).',
+    columns: ['Stufe', 'Bezeichnung', 'Durchschnitt (CPS)', 'Live-CPS (letzte 2 s)', 'Technik', 'Einordnung'],
     rows: [
       {
         tier: 'Stufe 1',
@@ -329,8 +331,8 @@ const guideProps = {
 };
 
 const deCopy = {
-  title: "CPS-Test",
-  subtitle: "Klickgeschwindigkeit messen und Klick-Ausdauer in 45 Sekunden trainieren",
+  title: "CPS Test",
+  subtitle: "Klicktest: Klickgeschwindigkeit messen – Klicks pro Sekunde über 45 Sekunden",
   desc: "Ein CPS-Test misst, wie viele Klicks pro Sekunde Sie mit der Maustaste ausführen können. Normales Einzelfinger-Klicken erreicht typischerweise 5–7 Klicks pro Sekunde (Halstead Finger-Tapping-Norm: 50–55 Taps/10s). Höhere Werte basieren auf speziellen Techniken wie Jitter- oder Butterfly-Clicking.",
   score: "Punkte",
   timeLeft: "Verbleibende Zeit",
@@ -345,7 +347,7 @@ const deCopy = {
   avgCps: "Durchschnittliche CPS",
   totalClicks: "Gesamtklicks",
   maxDifficulty: "Max. Schwierigkeit",
-  peakCps: "Spitzen-CPS",
+  peakCps: "Beste CPS",
   newBest: "NEUER REKORD",
   rulesTitle: "Trainingsanleitung & Bewertungssystem",
   rulesItems: [

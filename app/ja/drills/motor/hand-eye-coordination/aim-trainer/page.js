@@ -13,8 +13,8 @@ import { pickSources } from '@/lib/drillSources';
 
 export const metadata = {
   title: 'エイム練習｜無料ブラウザエイムトレーナー | SkillDrills',
-  description: '無料のブラウザ型エイム練習。縮みながら動く標的をクリックして、マウス精度・フリック速度・初弾の捕捉を測定。Apex・VALORANT・CS2向け、登録不要。',
-  keywords: ['エイム練習', '無料 ブラウザ エイム練習', 'エイムトレーナー', 'マウス精度テスト', 'フリックエイム練習', '置きエイム練習', '追いエイム', '初弾命中率', 'ターゲット切り替え', 'VALORANT エイム練習'],
+  description: '無料のブラウザ型エイム練習。動き回る標的をクリックして、マウス精度・フリック速度・初弾の捕捉を測定。Apex・VALORANT・CS2向け、登録不要。',
+  keywords: ['エイム練習', '無料 ブラウザ エイム練習', 'エイムトレーナー', 'エイムテスト', 'マウス エイム練習', '置きエイム練習', '追いエイム', '初弾命中率', 'ターゲット切り替え', 'VALORANT エイム練習'],
   alternates: {
     canonical: 'https://skilldrills.online/ja/drills/motor/hand-eye-coordination/aim-trainer',
     languages: getAlternateLanguages('/drills/motor/hand-eye-coordination/aim-trainer'),
@@ -54,7 +54,7 @@ const softwareApplicationSchema = {
   '@type': 'SoftwareApplication', "sameAs": ["https://en.wikipedia.org/wiki/Fitts%27s_law", "https://en.wikipedia.org/wiki/Hand%E2%80%93eye_coordination"],
   inLanguage: 'ja-JP',
   name: 'エイム練習 – 無料ブラウザFPSエイムトレーナー',
-  alternateName: ['エイム練習', 'FPSエイムトレーナー', 'マウス精度テスト', 'Aim Trainer Online'],
+  alternateName: ['エイム練習', 'エイムトレーナー', 'エイムテスト', 'Aim Trainer Online'],
   applicationCategory: 'HealthApplication',
   operatingSystem: 'All',
   offers: { '@type': 'Offer', price: '0', priceCurrency: 'JPY' },
@@ -71,7 +71,7 @@ const webAppSchema = {
   name: 'エイム練習 — 無料オンラインFPSエイムトレーナー | SkillDrills',
   url: 'https://skilldrills.online/ja/drills/motor/hand-eye-coordination/aim-trainer',
   description:
-    '無料ブラウザFPSエイム練習ツール。動くターゲットを正確に捉え、フィッツの法則に基づいた難易度上昇でエイム力を極限まで引き上げます。',
+    '無料ブラウザFPSエイム練習ツール。動くターゲットを正確に捉え、レベルごとに小さく速くなる標的でマウス操作の精度を練習します。',
   applicationCategory: 'EducationalApplication',
   operatingSystem: 'All',
   browserRequirements: 'JavaScriptおよびPointer Lock API対応の最新ブラウザ。',
@@ -90,9 +90,9 @@ const videoGameSchema = {
   "name": "エイム練習 (Aim Trainer)",
   "url": "https://skilldrills.online/ja/drills/motor/hand-eye-coordination/aim-trainer",
   "description": "ブラウザでマウス精度、ターゲット捕捉、クリックタイミングを鍛える無料の2Dエイム練習ツールです。",
-  "dateModified": "2026-09-20",
+  "dateModified": "2026-11-09",
   "gamePlatform": "Web Browser",
-  "genre": ["Aim Trainer", "FPS Training", "Hand-Eye Coordination", "Reaction Speed"],
+  "genre": ["Aim Trainer", "FPS Training", "Hand-Eye Coordination"],
   "playMode": "SinglePlayer",
   "applicationCategory": "Game",
   "operatingSystem": "Web Browser",
@@ -112,7 +112,7 @@ const howToSchema = {
       "url": "https://skilldrills.online/ja/drills/motor/hand-eye-coordination/aim-trainer#step-1",
       
       name: 'エイム練習の開始',
-      text: '「トレーニング開始」をクリックして全画面のエイム測定ステージに入り、マウスカーソルを固定します。',
+      text: '「訓練開始」をクリックするとマウスポインターがロックされ、3秒のカウントダウン後に45秒の制限時間が始まります。Escでいつでも終了できます。',
     },
     {
       '@type': 'HowToStep',
@@ -120,7 +120,7 @@ const howToSchema = {
       "url": "https://skilldrills.online/ja/drills/motor/hand-eye-coordination/aim-trainer#step-2",
       
       name: '出現したターゲットの視認',
-      text: '画面内に出現して移動・縮小するターゲットへ素早く視線を合わせます。',
+      text: '画面には常に2つのターゲットがランダムな方向へ動き、壁で跳ね返ります。各ターゲットは一定時間で消えます。',
     },
     {
       '@type': 'HowToStep',
@@ -128,7 +128,7 @@ const howToSchema = {
       "url": "https://skilldrills.online/ja/drills/motor/hand-eye-coordination/aim-trainer#step-3",
       
       name: '初期弾道フリックと微小減速クリック',
-      text: 'マウスをターゲット方向へ素早く移動させ、消滅する前に目標中心を正確にクリックします。',
+      text: 'クロスヘアをターゲットに合わせてクリックします。命中で得点と+2秒（最大60秒）、空振りや見逃しでコンボがリセットされ1秒減ります。',
     },
     {
       '@type': 'HowToStep',
@@ -136,98 +136,60 @@ const howToSchema = {
       "url": "https://skilldrills.online/ja/drills/motor/hand-eye-coordination/aim-trainer#step-4",
       
       name: 'コンボの継続とレベルアップ',
-      text: 'ミスを避け連続で撃破し、3.0倍のコンボボーナスと高難易度レベルへの到達を目指します。',
+      text: '連続命中でコンボ倍率（最大3.0倍）を上げます。1,750点ごとにレベルが上がり、時間が0になると終了です。',
     },
   ],
 };
+
+const faqs = [
+  {
+    q: "エイム練習（Aim Trainer）とはどのようなツールですか？",
+    a: "動き回る2つのターゲットをマウスでクリックする無料のブラウザ版エイム練習です。制限時間は45秒から始まり、命中ごとに+2秒（最大60秒）、空振りや見逃しごとに-1秒され、0になると終了します。登録やインストールは不要です。",
+  },
+  {
+    q: "スコアはどのように計算されますか？",
+    a: "1回の命中で100点に、コンボ倍率（3連続で1.1倍から50連続で3.0倍まで）とレベル倍率を掛けた点数が入ります。空振りや見逃しでコンボは0に戻ります。",
+  },
+  {
+    q: "難易度はどのように上がっていきますか？",
+    a: "1,750点ごとにレベルが1上がり、上限はありません。レベル15までにターゲットの半径は26pxから12px（高コンボ時はさらに小さく最小8px）、移動速度は80px/sから370px/s、表示時間は2.8秒から0.4秒へ変化します。",
+  },
+  {
+    q: "クリックを空振りしたり見逃すとどうなりますか？",
+    a: "コンボ倍率が1.0倍にリセットされ、残り時間から1秒が引かれます。やみくもな連打よりも、確実に当てるほうがスコアと時間の両方で有利です。",
+  },
+  {
+    q: "フィッツの法則（Fitts’s Law）はエイム練習にどう関係していますか？",
+    a: "フィッツの法則は、目標までの距離と目標の大きさの比から移動時間を予測するモデルです。このドリルではレベルが上がるとターゲットが小さくなるため、難易度指数（ID）が上がり、より細かなマウス操作が必要になります。",
+  },
+  {
+    q: "このエイム練習はVALORANTやApex Legendsに役立ちますか？",
+    a: "補助的な練習として使えます。2Dの動く標的を素早くクリックする練習なので、ゲーム内の3Dエイムとは異なり、実戦での上達は保証されません。",
+  },
+  {
+    q: "エイム練習で良いスコアの目安はどれくらいですか？",
+    a: "SkillDrillsの練習用の目安では、入門8,000点未満、初級8,000〜17,999点、中級18,000〜31,999点、上級32,000〜47,999点、最上位48,000点以上です。ユーザー統計やゲームのランクではありません。",
+  },
+  {
+    q: "ゲームのマウス感度と合わせられますか？",
+    a: "ドリル設定の感度倍率でクロスヘアの移動速度を調整できます。ただしゲーム内の振り向きcm数を自動で換算する機能はないため、近い感覚になるよう手動で合わせてください。",
+  },
+  {
+    q: "スマホやタッチ操作でもできますか？",
+    a: "できません。マウスのポインターロック（Pointer Lock）を使うため、マウスを接続したPCのブラウザで遊んでください。",
+  },
+];
 
 const faqSchema = {
   '@context': 'https://schema.org',
   '@type': 'FAQPage',
   inLanguage: 'ja-JP',
-  dateModified: '2026-09-20',
-  mainEntity: [
-    {
-      '@type': 'Question',
-      name: 'エイム練習（Aim Trainer）とはどのようなツールですか？',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: 'エイム練習は、マウスカーソルを画面上のターゲットへ素早く正確に移動させ、クリックする能力を測定・強化するブラウザツールです。動的ターゲットの縮小と移動速度上昇により、実戦のFPSに必要な初弾精度を鍛えます。',
-      },
-    },
-    {
-      '@type': 'Question',
-      name: 'フィッツの法則（Fitts\'s Law）はエイム練習にどう関係していますか？',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: 'フィッツの法則は、目標に到達する移動時間が目標までの距離と目標サイズの比率に対数比例することを示します。ターゲットが小さくなるほど難易度指数（ID）が急上昇し、高度な微細運動制御が求められます。',
-      },
-    },
-    {
-      '@type': 'Question',
-      name: '2成分モデル（弾道移動とフィードバック制御）とは何ですか？',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: 'エイム動作は、距離の80〜90%を一気に詰める「初期弾道インパルス（オープンループ）」と、着弾直前に視覚情報を使って微調整する「終末減速制御（クローズドループ）」の2段階で構成されます。',
-      },
-    },
-    {
-      '@type': 'Question',
-      name: 'このエイム練習はVALORANTやApex Legendsの実戦に役立ちますか？',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: 'はい。VALORANTにおけるヘッドショット初弾精度や、Apex Legendsにおける近接戦闘でのマイクロフリックは、まさにこのドリルが鍛える10〜15度の微小弾道修正能力に役立つ可能性があります。',
-      },
-    },
-    {
-      '@type': 'Question',
-      name: 'エイム練習で良いスコアの目安はどれくらいですか？',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: '初級者は8,000点未満、中級者は18,000〜31,999点（レベル6〜8）、上級競技者は32,000点以上、さらに上の段階は48,000点以上（レベル12以上、精度95%超）が目安です。',
-      },
-    },
-    {
-      '@type': 'Question',
-      name: '難易度はどのように上がっていきますか？',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: '1,750ポイント獲得ごとにレベルが上昇します。ターゲットの半径が26pxから8pxまで縮小し、移動速度が80px/sから370px/sへ加速し、消滅までの猶予時間が2.8秒から0.40秒まで短縮されます。',
-      },
-    },
-    {
-      '@type': 'Question',
-      name: 'クリックを空振りしたり見逃すとどうなりますか？',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: '空振りや消滅見逃しが発生すると、コンボ倍率が1.0倍にリセットされます。これにより、やみくもな連打を防ぎ、一撃必中の丁寧なマウスコントロールが習慣化されます。',
-      },
-    },
-    {
-      '@type': 'Question',
-      name: 'ゲームごとのマウス感度と一致させることはできますか？',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: 'はい。Pointer Lock APIに対応しており、訓練ハブ共通のマウス感度設定と連動して普段のゲームと同じ振り向きcm数で練習できます。',
-      },
-    },
-    {
-      '@type': 'Question',
-      name: 'モニターのリフレッシュレートやポーリングレートは影響しますか？',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: '大きく影響します。144Hzや240Hzの高リフレッシュレートモニターと1000Hz以上のマウスを使用すると、視覚遅延が大幅に短縮され、終末減速フェーズでの修正が格段に正確になります。',
-      },
-    },
-    {
-      '@type': 'Question',
-      name: '効果的な毎日のウォームアップ方法は？',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: '試合前に10〜15分間、無理に急がず確実な初弾命中（精度90%以上）を意識して練習することで、運動皮質の興奮性が高まり、試合中のエイムが劇的に安定します。',
-      },
-    },
-  ],
+  dateModified: '2026-11-09',
+  mainEntity: faqs.map((f) => ({
+    '@type': 'Question',
+    name: f.q,
+    acceptedAnswer: { '@type': 'Answer', text: f.a },
+  })),
 };
 
 export default function AimTrainerJapanesePage() {
@@ -249,7 +211,7 @@ export default function AimTrainerJapanesePage() {
         copy={{
           title: 'エイム練習',
           subtitle: '動く標的へのエイム・マウス精度・フリック練習',
-          caption: '小さくなりながら移動するターゲットを消滅前に素早く正確にクリック。フィッツの法則に基づく動的難易度調整。',
+          caption: '動き回る2つのターゲットを消える前に正確にクリック。命中+2秒、空振り・見逃し-1秒。',
           startButtonText: '訓練開始',
           playAgainText: 'もう一度挑戦',
           shareText: '結果を共有',
@@ -260,8 +222,8 @@ export default function AimTrainerJapanesePage() {
             {
               num: "1",
               text: "ターゲット命中",
-              highlight: "+100 PTS / +0.6秒",
-              result: "動くターゲットを素早く捕捉してクリック"
+              highlight: "+100 PTS / +2秒（最大60秒）",
+              result: "コンボ倍率を適用"
             },
             {
               num: "2",
@@ -279,7 +241,7 @@ export default function AimTrainerJapanesePage() {
               num: "4",
               text: "ミス & 消滅",
               highlight: "コンボリセット",
-              result: "ペナルティ有効時は-0.8秒減算"
+              result: "-1秒減算"
             }
           ]
         }}
@@ -291,7 +253,7 @@ export default function AimTrainerJapanesePage() {
         sources={sources}
       >
         <p>
-          エイム練習とは、画面上の標的にマウスカーソルを素早く正確に合わせてクリックする練習です。このページでは縮みながら動く標的を消える前にクリックし、命中率とスコアでマウス精度とフリックの安定を確認できます。Apex、VALORANT、CS2などのFPS向けに、ブラウザだけで登録なしで始められます。
+          エイム練習とは、画面上の標的にマウスカーソルを素早く正確に合わせてクリックする練習です。このページでは動き回る標的を消える前にクリックし、命中率とスコアでマウス精度とフリックの安定を確認できます。Apex、VALORANT、CS2などのFPS向けに、ブラウザだけで登録なしで始められます。
         </p>
         <p>
           マウスを用いたターゲット捕捉（Aiming）は、人間とコンピュータの相互作用（HCI）およびスポーツ精神物理学において最も過酷な微細運動協調課題の一つです。タクティカルFPSでの交戦や外科手術ロボットの操作、精密な視覚運動検査において、ヒトの神経筋システムは2次元の視覚座標を、手・手首・前腕のごく小さな急速な筋収縮へと変換しなければなりません（Fitts, 1954; MacKenzie, 1992）。
@@ -305,7 +267,7 @@ export default function AimTrainerJapanesePage() {
           MT = a + b · log₂(2D / W) = a + b · ID
         </div>
         <p>
-          この対数項は<strong>難易度指数（ID: Index of Difficulty）</strong>と呼ばれ、ビット単位で表されます。SkillDrillsの<em>エイム練習</em>では、スコアレベルが上昇するにつれてターゲットの直径（\(W\)）が26ピクセルから8ピクセルへと縮小し、かつ広範な距離（\(D\)）へ高速移動します。これにより難易度指数が急激に上昇し、プレイヤーの情報処理能力と運動制御能力に最大負荷をかけます（Fitts, 1954; MacKenzie, 1992）。
+          この対数項は<strong>難易度指数（ID: Index of Difficulty）</strong>と呼ばれ、ビット単位で表されます。SkillDrillsの<em>エイム練習</em>では、レベルが上がるにつれてターゲットの半径が26ピクセルから12ピクセル（レベル15時点、高コンボ時は最小8ピクセル）へ小さくなり、目標幅（\(W\)）の縮小によって難易度指数が上がります（Fitts, 1954; MacKenzie, 1992）。
         </p>
 
         <h3>目標志向型エイムの2成分モデル（Woodworth 1899; Elliott et al. 2010）</h3>
@@ -331,7 +293,7 @@ export default function AimTrainerJapanesePage() {
 
         <h3>エイム練習 パフォーマンス指標・実力目安表</h3>
         <p>
-          以下のテーブルは、SkillDrillsにおける45秒間セッションスコア、命中精度、最大コンボに基づく実力指標です。日々の練習成果の判定にご活用ください。
+          以下のテーブルは、45秒から始まるセッション（命中で+2秒、最大60秒）のスコア、命中精度、最大コンボをもとにSkillDrillsが設定した練習用の目安です。ユーザー統計やゲームのランクではありません。
         </p>
         <div className="overflow-x-auto my-4">
           <table className="w-full text-left border-collapse border border-white/10 text-xs sm:text-sm">
@@ -341,7 +303,7 @@ export default function AimTrainerJapanesePage() {
                 <th className="p-2.5 border border-white/10 font-bold">セッションスコア</th>
                 <th className="p-2.5 border border-white/10 font-bold">到達レベル</th>
                 <th className="p-2.5 border border-white/10 font-bold">命中精度</th>
-                <th className="p-2.5 border border-white/10 font-bold">競技クラス判定</th>
+                <th className="p-2.5 border border-white/10 font-bold">練習の目安</th>
               </tr>
             </thead>
             <tbody className="divide-y divide-white/5 text-slate-300">
@@ -357,14 +319,14 @@ export default function AimTrainerJapanesePage() {
                 <td className="p-2.5 border border-white/10">32,000 – 47,999 PTS</td>
                 <td className="p-2.5 border border-white/10">Level 9–11</td>
                 <td className="p-2.5 border border-white/10">88% – 94% (コンボ18–24)</td>
-                <td className="p-2.5 border border-white/10">上級ランク常連・高精度フラッガー</td>
+                <td className="p-2.5 border border-white/10">上級の目安</td>
               </tr>
               <tr>
                 <td className="p-2.5 border border-white/10 font-bold text-blue-400">Tier 3 (中級)</td>
                 <td className="p-2.5 border border-white/10">18,000 – 31,999 PTS</td>
                 <td className="p-2.5 border border-white/10">Level 6–8</td>
                 <td className="p-2.5 border border-white/10">78% – 87% (コンボ12–17)</td>
-                <td className="p-2.5 border border-white/10">一般的なFPS愛好者・安定したエイム力</td>
+                <td className="p-2.5 border border-white/10">安定した中間段階</td>
               </tr>
               <tr>
                 <td className="p-2.5 border border-white/10 font-bold text-amber-400">Tier 4 (初級)</td>
@@ -405,66 +367,12 @@ export default function AimTrainerJapanesePage() {
 
         <h3>よくある質問（FAQ）</h3>
         <div className="space-y-4 my-4">
-          <div className="border-b border-white/10 pb-3">
-            <h4 className="font-bold text-white text-sm mb-1">エイム練習（Aim Trainer）とはどのようなツールですか？</h4>
-            <p className="text-xs sm:text-sm text-slate-300">
-              エイム練習は、マウスカーソルを画面上のターゲットへ素早く正確に移動させ、クリックする能力を測定・強化するブラウザツールです。動的ターゲットの縮小と移動速度上昇により、実戦のFPSに必要な初弾精度を鍛えます。
-            </p>
-          </div>
-          <div className="border-b border-white/10 pb-3">
-            <h4 className="font-bold text-white text-sm mb-1">フィッツの法則（Fitts&apos;s Law）はエイム練習にどう関係していますか？</h4>
-            <p className="text-xs sm:text-sm text-slate-300">
-              フィッツの法則は、目標に到達する移動時間が目標までの距離と目標サイズの比率に対数比例することを示します。ターゲットが小さくなるほど難易度指数（ID）が急上昇し、高度な微細運動制御が求められます。
-            </p>
-          </div>
-          <div className="border-b border-white/10 pb-3">
-            <h4 className="font-bold text-white text-sm mb-1">2成分モデル（弾道移動とフィードバック制御）とは何ですか？</h4>
-            <p className="text-xs sm:text-sm text-slate-300">
-              エイム動作は、距離の80〜90%を一気に詰める「初期弾道インパルス（オープンループ）」と、着弾直前に視覚情報を使って微調整する「終末減速制御（クローズドループ）」の2段階で構成されます。
-            </p>
-          </div>
-          <div className="border-b border-white/10 pb-3">
-            <h4 className="font-bold text-white text-sm mb-1">このエイム練習はVALORANTやApex Legendsの実戦に役立ちますか？</h4>
-            <p className="text-xs sm:text-sm text-slate-300">
-              はい。VALORANTにおけるヘッドショット初弾精度や、Apex Legendsにおける近接戦闘でのマイクロフリックは、まさにこのドリルが鍛える10〜15度の微小弾道修正能力に役立つ可能性があります。
-            </p>
-          </div>
-          <div className="border-b border-white/10 pb-3">
-            <h4 className="font-bold text-white text-sm mb-1">エイム練習で良いスコアの目安はどれくらいですか？</h4>
-            <p className="text-xs sm:text-sm text-slate-300">
-              初級者は8,000点未満、中級者は18,000〜31,999点（レベル6〜8）、上級競技者は32,000点以上、さらに上の段階は48,000点以上（レベル12以上、精度95%超）が目安です。
-            </p>
-          </div>
-          <div className="border-b border-white/10 pb-3">
-            <h4 className="font-bold text-white text-sm mb-1">難易度はどのように上がっていきますか？</h4>
-            <p className="text-xs sm:text-sm text-slate-300">
-              1,750ポイント獲得ごとにレベルが上昇します。ターゲットの半径が26pxから8pxまで縮小し、移動速度が80px/sから370px/sへ加速し、消滅までの猶予時間が2.8秒から0.40秒まで短縮されます。
-            </p>
-          </div>
-          <div className="border-b border-white/10 pb-3">
-            <h4 className="font-bold text-white text-sm mb-1">クリックを空振りしたり見逃すとどうなりますか？</h4>
-            <p className="text-xs sm:text-sm text-slate-300">
-              空振りや消滅見逃しが発生すると、コンボ倍率が1.0倍にリセットされます。これにより、やみくもな連打を防ぎ、一撃必中の丁寧なマウスコントロールが習慣化されます。
-            </p>
-          </div>
-          <div className="border-b border-white/10 pb-3">
-            <h4 className="font-bold text-white text-sm mb-1">ゲームごとのマウス感度と一致させることはできますか？</h4>
-            <p className="text-xs sm:text-sm text-slate-300">
-              はい。Pointer Lock APIに対応しており、訓練ハブ共通のマウス感度設定と連動して普段のゲームと同じ振り向きcm数で練習できます。
-            </p>
-          </div>
-          <div className="border-b border-white/10 pb-3">
-            <h4 className="font-bold text-white text-sm mb-1">モニターのリフレッシュレートやポーリングレートは影響しますか？</h4>
-            <p className="text-xs sm:text-sm text-slate-300">
-              大きく影響します。144Hzや240Hzの高リフレッシュレートモニターと1000Hz以上のマウスを使用すると、視覚遅延が大幅に短縮され、終末減速フェーズでの修正が格段に正確になります。
-            </p>
-          </div>
-          <div className="border-b border-white/10 pb-3">
-            <h4 className="font-bold text-white text-sm mb-1">効果的な毎日のウォームアップ方法は？</h4>
-            <p className="text-xs sm:text-sm text-slate-300">
-              試合前に10〜15分間、無理に急がず確実な初弾命中（精度90%以上）を意識して練習することで、運動皮質の興奮性が高まり、試合中のエイムが劇的に安定します。
-            </p>
-          </div>
+          {faqs.map((f) => (
+            <div key={f.q} className="border-b border-white/10 pb-3">
+              <h4 className="font-bold text-white text-sm mb-1">{f.q}</h4>
+              <p className="text-xs sm:text-sm text-slate-300">{f.a}</p>
+            </div>
+          ))}
         </div>
       </DrillGuide>
       <RelatedDrills />

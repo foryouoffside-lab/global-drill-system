@@ -6,18 +6,16 @@ import { getLocalizedDrill } from '@/lib/i18n/drillNames';
 const motorDrills = DRILLS.filter((d) => d.category === 'motor');
 
 export const metadata = {
-  title: 'Maus-Präzisionstest & Aim-Training | SkillDrills',
-  description: 'Kostenlose Browser-Drills für Mausgenauigkeit, Aim-Kontrolle, CPS-Test, Tastaturtempo und Hand-Auge-Koordination. Ohne Anmeldung.',
+  title: 'Maus-Präzisionstest & Feinmotorik-Übungen | SkillDrills',
+  description: 'Kostenloser Maus-Präzisionstest mit 8 Browser-Übungen: Zielklicks, CPS über 45 Sekunden, Drag & Drop, heißer Draht, Nachfahren und Tasten-Reaktion.',
   keywords: [
-    'Maus-Präzisionstest', 'Aim-Training', 'CPS-Test', 'Mausgenauigkeit',
-    'Hand-Auge-Koordination', 'Tastatur Geschwindigkeit', 'Maus Präzisionstraining',
-    'Cursor Kontrolle', 'Feinmotorik Maus', 'ruhige Hand Training',
-    'Klickgeschwindigkeit testen', 'Fingerfertigkeit Training', 'Maus Tracking Test',
-    'Aim Trainer Browser', 'Maus Sensitivität'
+    'Maus-Präzisionstest', 'Mausgenauigkeit', 'Hand-Auge-Koordination',
+    'Feinmotorik Maus', 'Maus Präzisionstraining', 'Cursor Kontrolle',
+    'ruhige Hand Training', 'Maus Übungen'
   ],
   openGraph: {
-    title: 'Maus-Präzisionstest & Aim-Training | SkillDrills',
-    description: 'Kostenlose Browser-Drills für Mausgenauigkeit, Aim-Kontrolle, CPS-Test, Tastaturtempo und Hand-Auge-Koordination. Ohne Anmeldung.',
+    title: 'Maus-Präzisionstest & Feinmotorik-Übungen | SkillDrills',
+    description: 'Kostenloser Maus-Präzisionstest mit 8 Browser-Übungen: Zielklicks, CPS über 45 Sekunden, Drag & Drop, heißer Draht, Nachfahren und Tasten-Reaktion.',
     type: 'website',
     url: 'https://skilldrills.online/de/drills/motor',
     siteName: 'SkillDrills',
@@ -26,8 +24,8 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Maus-Präzisionstest & Aim-Training | SkillDrills',
-    description: 'Kostenlose Browser-Drills für Mausgenauigkeit, Aim-Kontrolle, CPS-Test, Tastaturtempo und Hand-Auge-Koordination. Ohne Anmeldung.',
+    title: 'Maus-Präzisionstest & Feinmotorik-Übungen | SkillDrills',
+    description: 'Kostenloser Maus-Präzisionstest mit 8 Browser-Übungen: Zielklicks, CPS über 45 Sekunden, Drag & Drop, heißer Draht, Nachfahren und Tasten-Reaktion.',
     images: ['https://skilldrills.online/icons/icon-512x512.png'],
   },
   robots: { index: true, follow: true },
@@ -51,10 +49,10 @@ const collectionSchema = {
   "@context": "https://schema.org",
   "@type": "CollectionPage",
   "inLanguage": "de-DE",
-  "dateModified": "2026-09-20",
-  "name": "Maus-Präzisionstest & Aim-Training (9 Übungen)",
+  "dateModified": "2026-11-09",
+  "name": "Maus-Präzisionstest & Feinmotorik-Übungen (8 Übungen)",
   "url": "https://skilldrills.online/de/drills/motor",
-  "description": "Kostenlose Browser-Drills für Mausgenauigkeit, Aim-Kontrolle, CPS, Tastaturtempo und Hand-Auge-Koordination.",
+  "description": "8 kostenlose Browser-Übungen für Mausgenauigkeit, Zielklicks, CPS, Tasten-Reaktion und Hand-Auge-Koordination.",
   "author": { "@type": "Organization", "name": "SkillDrills" },
   "hasPart": motorDrills.map((drill) => {
     const loc = getLocalizedDrill(drill.href, 'de', drill.name);
@@ -70,77 +68,27 @@ const collectionSchema = {
   })
 };
 
+const faqs = [
+  { q: "Was misst der Maus-Präzisionstest auf dieser Seite?", a: "Die Seite bündelt 8 kostenlose Browser-Übungen: wandernde Ziele anklicken (Aim Trainer), Treffer ins Zentrum (Präzisions-Flicks), Ziele in Reihenfolge klicken, Drag & Drop, CPS über 45 Sekunden, einen schmalen Korridor ohne Wandberührung (heißer Draht), einem bewegten Punkt entlang einer Bahn folgen und angezeigte Tasten schnell drücken." },
+  { q: "Wie hoch ist ein durchschnittlicher CPS-Wert und welche Klicktechniken gibt es?", a: "Einen offiziellen Durchschnitt gibt es nicht: CPS hängt stark von Maus, Technik und Messdauer ab. Übliche Techniken sind normales Klicken, Jitter-Clicking (Unterarm anspannen, Finger vibrieren lassen) und Butterfly-Clicking (zwei Finger abwechselnd). Der SkillDrills CPS-Test zählt 45 Sekunden lang Mausklicks und zeigt deinen Durchschnitt; vergleiche ihn am besten mit deinen eigenen Werten auf demselben Gerät." },
+  { q: "Helfen Nachfahr- und Heißer-Draht-Übungen gegen Maus-Zittern?", a: "Beide Übungen verlangen, den Cursor in einem schmalen Bereich zu halten: im Korridor setzt jede Wandberührung dich an den Start zurück, beim Nachfahren musst du einem bewegten Punkt entlang einer Bahn folgen. Das ist gezieltes Üben von Cursorkontrolle; eine bestimmte Wirkung auf Tremor ist nicht garantiert." },
+  { q: "Was besagt das Fitts’sche Gesetz für Geschwindigkeit und Zielgenauigkeit?", a: "Das Fitts’sche Gesetz beschreibt die Bewegungszeit als logarithmische Funktion aus Distanz und Zielbreite (MT = a + b * log2(2D/W)). Zielbewegungen werden meist in eine schnelle ballistische Anfangsphase und eine visuell gesteuerte Korrekturphase zerlegt; je kleiner das Ziel, desto wichtiger die Korrektur." },
+  { q: "Was trainiert die Tasten-Erkennungsübung?", a: "Auf dem Bildschirm erscheinen Tasten (Buchstaben, Zahlen, Sonderzeichen, Pfeiltasten), die du 60 Sekunden lang so schnell und korrekt wie möglich drückst; Fake-Anzeigen musst du ignorieren. Es ist weder ein Tippgeschwindigkeitstest noch ein Tastaturtester für Hardware." },
+  { q: "Wie genau sind browserbasierte Maus- und Tastaturmessungen?", a: "SkillDrills nutzt performance.now(), dessen Auflösung der Browser aus Sicherheitsgründen rundet. Bildwiederholrate (z. B. ~4,1 ms bei 240 Hz) und Polling-Rate von Maus oder Tastatur (1 ms bei 1000 Hz) begrenzen die Messung zusätzlich. Für den Vergleich eigener Werte auf demselben Gerät reicht das; für Hardware-Diagnosen ist es nicht gedacht." },
+  { q: "Welchen Einfluss haben DPI, In-Game-Sensitivität und eDPI?", a: "eDPI (DPI mal Sensitivität) bestimmt, wie weit sich der Cursor pro Handbewegung bewegt. Hohe Werte erlauben schnelle Wege, machen aber kleines Zittern sichtbarer; niedrige Werte wirken ruhiger, brauchen aber mehr Armbewegung. Für vergleichbare Ergebnisse solltest du beim Üben dieselbe Einstellung behalten." },
+  { q: "Kann ich hier Tastatur-Chattering oder Ghosting prüfen?", a: "Nein. Chattering (ein Anschlag wird mehrfach registriert) und Ghosting (nicht gedrückte Tasten lösen aus oder gleichzeitige Eingaben fehlen) sind Hardwarefehler, für die ein eigener Tastaturtester nötig ist. Die SkillDrills-Tastenübung misst nur deine Reaktion auf angezeigte Tasten." },
+];
+
 const faqSchema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
   "inLanguage": "de-DE",
-  "dateModified": "2026-09-20",
-  "mainEntity": [
-    {
-      "@type": "Question",
-      "name": "Wie stärken motorische Trainingsdrills die neuronale Hand-Auge-Koordination?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Motorische Drills festigen den sensomotorischen Regelkreis zwischen retinaler Bilderkennung im visuellen Kortex, motorischer Bewegungsplanung im Kleinhirn und präziser Signalübertragung über den primären motorischen Kortex an die Handmuskulatur. Durch hochfrequente Mikrojjustierungen und Feedback-Iterationen wird die neuromuskuläre Latenzzeit minimiert, wodurch Reaktionsbewegungen unter 180 ms präzise ausgeführt werden können."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Wie hoch ist ein durchschnittlicher CPS-Wert und welche Klicktechniken gibt es?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Beim normalen Einzelfinger-Klicken liegt die durchschnittliche Klickgeschwindigkeit bei 6 bis 8 Klicks pro Sekunde (CPS). Im E-Sport und Gaming kommen spezialisierte Techniken zum Einsatz: Jitter-Clicking (bewusst erzeugte Muskelvibration im Unterarm, 10–14 CPS) und Butterfly-Clicking (abwechselndes Anschlagen mit zwei Fingern, 15–22 CPS). Zur Vermeidung von Sehnenscheidenentzündungen empfiehlt sich ein kontrolliertes, entspanntes Klicktraining mit Pausen."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Wie eliminieren Pfadverfolgung und ruhige Hand-Übungen das gefürchtete Maus-Zittern?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Ungewolltes Überschießen (Overshooting) und feines Handzittern entstehen meist durch eine unzureichende Bremskraft der antagonistischen Muskelgruppen. Schmale Korridor-Übungen ('Heißer Draht') und Wellen-Tracing zwingen zu subpixelgenauer Cursorführung. Dadurch werden die stabilisierenden Muskelfasern in Handgelenk und Unterarm gestärkt, was unwillkürliche Mikrotremore spürbar dämpft."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Was besagt das Fitts'sche Gesetz (Fitts's Law) für Geschwindigkeit und Zielgenauigkeit?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Das Fitts'sche Gesetz besagt, dass die für eine Zielbewegung benötigte Zeit logarithmisch vom Verhältnis zwischen Distanz und Zielbreite abhängt (MT = a + b * log2(2D/W)). Präzise Zielerfassung gliedert sich in eine ballistische Anfangsphase (schnelles Überbrücken von 80–90 % der Strecke) und eine visuell kontrollierte Korrekturphase zum exakten Einloggen ins Zentrum ohne Geschwindigkeitsverlust."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Warum ist die Unabhängigkeit einzelner Finger für Tastaturgeschwindigkeit entscheidend?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Anatomisch teilen sich Ring- und kleiner Finger gemeinsame Sehnenstränge, was eine unabhängige Ansteuerung erschwert. Gezieltes Tastatur-Geschwindigkeitstraining differenziert die kortikalen motorischen Repräsentationen der einzelnen Finger. Dadurch verringern sich Umschaltverzögerungen und Tastenklemmer bei hohen Anschlagzahlen (APM) in dynamischen Spielsituationen."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Wie zuverlässig und genau sind browserbasierte Maus- und Tastaturtests?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "SkillDrills nutzt moderne Web-APIs wie performance.now() mit einer browserabhängigen Auflösung von etwa 1 ms. Die Messgrenzen werden primär durch die Hardware bestimmt: die Bildwiederholrate des Monitors (z. B. ~4,1 ms bei 240 Hz) und die Abfragerate (Polling-Rate) der Maus oder Tastatur (1 ms bei 1000 Hz). Die Genauigkeit reicht vollkommen aus, um zuverlässige Benchmark-Vergleiche und Hardwaretests durchzuführen."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Welchen Einfluss haben DPI, In-Game-Sensitivität und eDPI auf das Muskelgedächtnis?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Die effektive Sensitivität (eDPI = DPI * Sensor-Multiplikator) entscheidet, ob primär die Feinmotorik aus den Fingern und dem Handgelenk oder die Grobmotorik aus Unterarm und Schulter beansprucht wird. High-Sensitivität ermöglicht schnelle Drehungen bei höherem Tremor-Risiko, während Low-Sensitivität gleichmäßigere Flugbahnen begünstigt. Ein konsistenter eDPI-Wert ist essenziell, damit das Kleinhirn verlässliche interne Bewegungsmuster verankern kann."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Was bedeuten Tastatur-Chattering und Ghosting für die Eingabepräzision?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Chattering bezeichnet einen mechanischen Prellfehler der Tastenkontakte, bei dem ein einzelner Tastenanschlag fälschlich mehrfach registriert wird. Ghosting tritt auf, wenn durch Matrix-Fehlschaltungen nicht gedrückte Tasten ausgelöst oder gleichzeitige Eingaben verschluckt werden. Unser integrierter Tastaturtester prüft N-Key-Rollover (NKRO) und Prellstabilität in Echtzeit, um Hardwarefehler zuverlässig aufzudecken."
-      }
-    }
-  ]
+  "dateModified": "2026-11-09",
+  "mainEntity": faqs.map((f) => ({
+    "@type": "Question",
+    "name": f.q,
+    "acceptedAnswer": { "@type": "Answer", "text": f.a }
+  }))
 };
 
 export default function GermanMotorHubPage() {

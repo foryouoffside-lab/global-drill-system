@@ -178,17 +178,15 @@ const nextConfig = {
       { source: '/drills/fps/reactive-tracking', destination: '/drills/fps/strafe-tracking', permanent: true },
       { source: '/drills/cognitive/problem-solving/logic-puzzles', destination: '/drills/cognitive', permanent: true },
 
-      // keyboard-tester was a stale duplicate of the keyboard-recognition drill
-      // component under a second URL. keyboard-recognition is the maintained,
-      // fully localized version (2026-09-20); consolidate onto it rather than
-      // leaving two near-identical drills live.
-      { source: '/drills/motor/keyboard-tester', destination: '/drills/motor/movement-speed/keyboard-recognition', permanent: true },
-      { source: '/de/drills/motor/keyboard-tester', destination: '/de/drills/motor/movement-speed/keyboard-recognition', permanent: true },
-      { source: '/es/drills/motor/keyboard-tester', destination: '/es/drills/motor/movement-speed/keyboard-recognition', permanent: true },
-      { source: '/fr/drills/motor/keyboard-tester', destination: '/fr/drills/motor/movement-speed/keyboard-recognition', permanent: true },
-      { source: '/ja/drills/motor/keyboard-tester', destination: '/ja/drills/motor/movement-speed/keyboard-recognition', permanent: true },
-      { source: '/ko/drills/motor/keyboard-tester', destination: '/ko/drills/motor/movement-speed/keyboard-recognition', permanent: true },
-      { source: '/pt/teste-de-teclado', destination: '/pt/drills/motor/movement-speed/keyboard-recognition', permanent: true },
+      // Legacy keyboard-tester URLs point at the real keyboard tester tool
+      // (2026-11-09), which replaced the old keyboard-recognition duplicate.
+      { source: '/drills/motor/keyboard-tester', destination: '/drills/motor/movement-speed/keyboard-tester', permanent: true },
+      { source: '/de/drills/motor/keyboard-tester', destination: '/de/drills/motor/movement-speed/keyboard-tester', permanent: true },
+      { source: '/es/drills/motor/keyboard-tester', destination: '/es/drills/motor/movement-speed/keyboard-tester', permanent: true },
+      { source: '/fr/drills/motor/keyboard-tester', destination: '/fr/drills/motor/movement-speed/keyboard-tester', permanent: true },
+      { source: '/ja/drills/motor/keyboard-tester', destination: '/ja/drills/motor/movement-speed/keyboard-tester', permanent: true },
+      { source: '/ko/drills/motor/keyboard-tester', destination: '/ko/drills/motor/movement-speed/keyboard-tester', permanent: true },
+      { source: '/pt/teste-de-teclado', destination: '/pt/drills/motor/movement-speed/keyboard-tester', permanent: true },
 
       // Re-slugged drill: reaction-simulator -> reaction-game (retargeted to "reaction game")
       {

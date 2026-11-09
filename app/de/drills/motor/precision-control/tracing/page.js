@@ -7,11 +7,11 @@ import { pickSources } from '@/lib/drillSources';
 
 export const metadata = {
   title: 'Maus-Tracking-Test | Pfad folgen | SkillDrills',
-  description: 'Folge einer bewegten Welle mit dem Cursor und trainiere Spurtreue, flüssige Mausbewegung und Feinmotorik. Kostenlos im Browser.',
-  keywords: ['Maus-Tracking-Test', 'Maus Pfad verfolgen', 'Maus-Tracing-Spiel', 'Feinmotorik Maus', 'Maus Spurtreue', 'Maus Tracking Trainer', 'Cursor verfolgen', 'Hand-Auge-Koordination Maus', 'Maus Präzisionstraining', 'FPS Tracking Aim', 'flüssige Mausbewegung', 'Mausbewegung üben'],
+  description: 'Maus-Tracking-Test: Halte den Cursor 45 Sekunden lang auf einer fließenden Welle, die immer schneller wird, und trainiere Spurtreue und Feinmotorik. Kostenlos.',
+  keywords: ['Maus-Tracking-Test', 'Maus Pfad verfolgen', 'Maus-Tracing-Spiel', 'Feinmotorik Maus', 'Maus Spurtreue', 'Maus Tracking Trainer', 'Cursor verfolgen', 'Hand-Auge-Koordination Maus', 'Maus Präzisionstraining', 'Linie mit der Maus folgen', 'flüssige Mausbewegung', 'Mausbewegung üben'],
   openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
     title: 'Maus-Tracking-Test | Pfad folgen | SkillDrills',
-    description: 'Folge einer bewegten Welle mit dem Cursor und trainiere Spurtreue, flüssige Mausbewegung und Feinmotorik. Kostenlos im Browser.',
+    description: 'Maus-Tracking-Test: Halte den Cursor 45 Sekunden lang auf einer fließenden Welle, die immer schneller wird, und trainiere Spurtreue und Feinmotorik. Kostenlos.',
     type: 'article',
     url: 'https://skilldrills.online/de/drills/motor/precision-control/tracing',
     siteName: 'SkillDrills',
@@ -20,7 +20,7 @@ export const metadata = {
   twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: 'summary_large_image',
     title: 'Maus-Tracking-Test | Pfad folgen | SkillDrills',
-    description: 'Folge einer bewegten Welle mit dem Cursor und trainiere Spurtreue, flüssige Mausbewegung und Feinmotorik. Kostenlos im Browser.',
+    description: 'Maus-Tracking-Test: Halte den Cursor 45 Sekunden lang auf einer fließenden Welle, die immer schneller wird, und trainiere Spurtreue und Feinmotorik. Kostenlos.',
   },
   robots: { index: true, follow: true },
   alternates: {
@@ -71,7 +71,7 @@ const softwareApplicationSchema = {
     "price": "0",
     "priceCurrency": "EUR"
   },
-  "description": "Kostenloses Maus-Tracing-Spiel zur Schulung der Feinmotorik. Halte den Mauszeiger kontinuierlich auf der sich bewegenden Spur, um Handruhe, Pfadtreue und Tracking-Stabilität zu messen.",
+  "description": "Kostenloser Maus-Tracking-Test: Halte den Mauszeiger auf der fließenden Welle. Punkte gibt es nur, solange der Cursor höchstens 22 Pixel über oder unter der Linie liegt.",
   "url": "https://skilldrills.online/de/drills/motor/precision-control/tracing",
   "publisher": {
     "@type": "Organization",
@@ -79,7 +79,7 @@ const softwareApplicationSchema = {
     "url": "https://skilldrills.online"
   },
   "inLanguage": "de-DE",
-  "dateModified": "2026-09-20"
+  "dateModified": "2026-11-09"
 };
 
 const webApplicationSchema = {
@@ -96,7 +96,7 @@ const webApplicationSchema = {
   },
   "url": "https://skilldrills.online/de/drills/motor/precision-control/tracing",
   "inLanguage": "de-DE",
-  "dateModified": "2026-09-20"
+  "dateModified": "2026-11-09"
 };
 
 const videoGameSchema = {
@@ -105,7 +105,7 @@ const videoGameSchema = {
   "inLanguage": "de-DE",
   "name": "Maus-Tracing-Spiel – Dynamische Pfadverfolgung und Feinmotorik-Game",
   "url": "https://skilldrills.online/de/drills/motor/precision-control/tracing",
-  "description": "Kostenloses Maus-Tracing-Spiel zur Schulung der Feinmotorik. Halte den Mauszeiger kontinuierlich auf der sich bewegenden Spur, um Handruhe, Pfadtreue und Tracking-Stabilität zu messen.",
+  "description": "Kostenloser Maus-Tracking-Test: Halte den Mauszeiger auf der fließenden Welle. Punkte gibt es nur, solange der Cursor höchstens 22 Pixel über oder unter der Linie liegt.",
   "genre": [
     "Action",
     "Aim Trainer",
@@ -121,21 +121,21 @@ const videoGameSchema = {
     "price": "0",
     "priceCurrency": "EUR"
   },
-  "dateModified": "2026-09-20"
+  "dateModified": "2026-11-09"
 };
 
 const faqSchema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
   "inLanguage": "de-DE",
-  "dateModified": "2026-09-20",
+  "dateModified": "2026-11-09",
   "mainEntity": [
     {
       "@type": "Question",
       "name": "Was ist das Maus-Tracing-Spiel (Mouse Tracing)?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Ein interaktiver Prazisionstest, bei dem der Mauszeiger unterbrechungsfrei auf einer kontinuierlich fliessenden Wellenlinie gehalten werden muss, um feinmotorische Spurtreue zu messen."
+        "text": "Ein Präzisionsspiel, bei dem du den Mauszeiger 45 Sekunden lang auf einer von rechts nach links fließenden Wellenlinie hältst. Solange der Cursor höchstens 22 Pixel über oder unter der Linie liegt, gibt es 1 Punkt pro Frame, +5 für jeweils 4 Sekunden ohne Unterbrechung und +10, wenn du nach einem Abrutschen wieder auf die Linie kommst."
       }
     },
     {
@@ -175,7 +175,7 @@ const faqSchema = {
       "name": "Was geschieht beim Verlassen des Pfades (Off-Path)?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Sobald der Zeiger die Spur verlasst, fallt der Flow-Wert drastisch ab und ein visueller Warnblitz signalisiert den Prazisionsverlust."
+        "text": "Neben der Linie gibt es keine Punkte, die Serie fällt auf 0 und die Flow-Stabilität sinkt um 25 % pro Sekunde (auf der Linie steigt sie um 15 % pro Sekunde). Beim Abrutschen gibt es einen roten Warnblitz und einen Ton. Bereits erzielte Punkte werden nicht abgezogen."
       }
     },
     {
@@ -191,7 +191,7 @@ const faqSchema = {
       "name": "Wie hilft dieser Drill in FPS-Titeln?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Er verbessert das Tracking-Aiming in Games wie Apex Legends, CS2 oder Overwatch, bei denen das Fadenkreuz kontinuierlich auf ausweichenden Gegnern bleiben muss."
+        "text": "Für Spieler von Apex Legends, CS2 oder Overwatch, die Gegnern mit dem Fadenkreuz folgen müssen, übt er eine ähnliche Handbewegung. Wie viel davon im Spiel ankommt, ist individuell verschieden."
       }
     },
     {
@@ -207,7 +207,7 @@ const faqSchema = {
       "name": "Funktioniert das Tool ohne Registrierung?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Ja, der Drill lauft sofort im Webbrowser, ist 100% kostenfrei und verlangt keine Installation."
+        "text": "Ja, der Drill läuft sofort im Browser, ist kostenlos und braucht keine Installation. Der Bestwert wird nur im localStorage deines Browsers gespeichert."
       }
     }
   ]
@@ -217,15 +217,15 @@ const howToSchema = {
   "@context": "https://schema.org",
   "@type": "HowTo",
   "inLanguage": "de-DE",
-  "dateModified": "2026-09-20",
+  "dateModified": "2026-11-09",
   "name": "Maus-Tracing-Spiel – Pfad-Verfolgung & Feinmotorik-Präzisionstest",
-  "description": "Kostenloses Maus-Tracing-Spiel zur Schulung der Feinmotorik. Halte den Mauszeiger kontinuierlich auf der sich bewegenden Spur, um Handruhe, Pfadtreue und Tracking-Stabilität zu messen.",
+  "description": "Kostenloser Maus-Tracking-Test: Halte den Mauszeiger auf der fließenden Welle. Punkte gibt es nur, solange der Cursor höchstens 22 Pixel über oder unter der Linie liegt.",
   "step": [
     {
       "@type": "HowToStep",
       "position": 1,
       "name": "Pointer-Lock aktivieren und Kurs aufnehmen",
-      "text": "Klicken Sie in das Feld, um die Maus zu sperren, und setzen Sie den Cursor prazise auf den Beginn der Welle.",
+      "text": "Nach „Training Starten“ und 3 Sekunden Countdown wird der Mauszeiger gesperrt (auf Touch-Geräten steuerst du mit dem Finger) und steht bei einem Viertel der Bildschirmbreite. Bring ihn sofort auf die Welle. Esc beendet den Drill.",
       "url": "https://skilldrills.online/de/drills/motor/precision-control/tracing#step-1"
     },
     {
@@ -246,7 +246,7 @@ const howToSchema = {
       "@type": "HowToStep",
       "position": 4,
       "name": "Aufrechterhaltung des Super-Flows",
-      "text": "Bleiben Sie ohne Spurverlass auf der Linie, um den hochsten Flow-Score und beste Platzierungen zu erzielen.",
+      "text": "Je 4 Sekunden ohne Abrutschen bringen +5 Punkte und +10 % Flow. Die Welle beschleunigt in 45 Sekunden von 2,2 auf 3,8 px pro Frame und schwingt stärker aus, also halte den Rhythmus bis zum Ende.",
       "url": "https://skilldrills.online/de/drills/motor/precision-control/tracing#step-4"
     }
   ]
@@ -257,31 +257,31 @@ const guideProps = {
   intro: {
     title: "Maus-Tracing-Spiel – Pfad-Verfolgung & Feinmotorik-Präzisionstest",
     paragraphs: [
-      "Kostenloses Maus-Tracing-Spiel zur Schulung der Feinmotorik. Halte den Mauszeiger kontinuierlich auf der sich bewegenden Spur, um Handruhe, Pfadtreue und Tracking-Stabilität zu messen.",
+      "Der Maus-Tracking-Test ist ein kostenloses Browserspiel: Du hältst den Cursor 45 Sekunden lang auf einer Wellenlinie, die von rechts nach links fließt und dabei schneller und höher wird.",
       "Tracing erfordert eine kontinuierliche Regelung im geschlossenen Regelkreis (Closed-Loop), bei der Handgeschwindigkeit und Zielgeschwindigkeit standig synchronisiert werden.",
       "Die Fahigkeit der Augen, sich kontinuierlich bewegenden Zielen glatt zu folgen, ohne standig ruckartige Korrektursakkaden ausfuhren zu mussen.",
     ],
   },
   benchmarks: {
-    title: 'Standardisierte Leistungs-Benchmarks',
-    headers: ['Übungsstufe', 'Bezeichnung', 'Leistungsbereich', 'Erreichte Stufe', 'Genauigkeit', 'Einordnung'],
-    note: 'Die Bereiche sind redaktionelle Übungsmarken und keine Bevölkerungsstatistik.',
+    title: 'Maus-Tracking-Test: SkillDrills-Übungsstufen',
+    headers: ['Note', 'Bezeichnung', 'Flow-Stabilität am Ende', 'Punkte-Bedingung', 'Einordnung'],
+    note: 'SkillDrills-Übungsstufen, keine Forschungsnormen und keine Nutzerdaten. Sie entsprechen der Note auf dem Ergebnisbildschirm (Flow-Stabilität zum Sitzungsende und Punktzahl). Es gibt 1 Punkt pro Frame, Monitore mit höherer Bildrate erzielen also mehr Punkte; vergleiche nur auf demselben Gerät.',
     rows: [
-      { tier: 'Stufe 1', rank: 'Sehr sicher', stat: 'Stufe 1 von 5', level: 'Stufe 1 (Exzellent)', accuracy: '98%+', category: 'Übungsmarke' },
-      { tier: 'Stufe 2', rank: 'Sicher', stat: 'Stufe 2 von 5', level: 'Diamant (Sehr gut)', accuracy: '94–97%', category: 'Übungsmarke' },
-      { tier: 'Stufe 3', rank: 'Solide', stat: 'Stufe 3 von 5', level: 'Platin (Kompetent)', accuracy: '88–93%', category: 'Übungsmarke' },
-      { tier: 'Stufe 4', rank: 'Aufbau', stat: 'Stufe 4 von 5', level: 'Gold (Standard)', accuracy: '78–87%', category: 'Übungsmarke' },
-      { tier: 'Stufe 5', rank: 'Einstieg', stat: 'Stufe 5 von 5', level: 'Silber (Basis)', accuracy: '< 78%', category: 'Übungsmarke' },
+      { tier: 'S+', rank: 'Grandmaster-Flow', flow: 'ab 90 %', score: 'ab 1.400 Punkten', band: 'SkillDrills-Übungsstufe' },
+      { tier: 'S', rank: 'Spitzen-Flow', flow: 'ab 80 %', score: '-', band: 'SkillDrills-Übungsstufe' },
+      { tier: 'A', rank: 'Sicheres Tracking', flow: 'ab 60 %', score: '-', band: 'SkillDrills-Übungsstufe' },
+      { tier: 'B', rank: 'Stetiges Tracking', flow: 'ab 35 %', score: '-', band: 'SkillDrills-Übungsstufe' },
+      { tier: 'C', rank: 'Tracing beendet', flow: 'unter 35 %', score: '-', band: 'SkillDrills-Übungsstufe' },
     ],
   },
   protocols: {
     title: '4 wissenschaftliche Trainingsprotokolle zur Steigerung der Feinmotorik',
     description: 'Wissenschaftlich kalibriertes Feinmotorik-Protokoll auf Basis des Steering Law (Accot & Zhai, 1997) und der Blickfolgebewegung (Smooth Pursuit) zur Maximierung von Kurventreue und Zeigerstabilität.',
     items: [
-      { title: "Pointer-Lock aktivieren und Kurs aufnehmen", description: "Klicken Sie in das Feld, um die Maus zu sperren, und setzen Sie den Cursor prazise auf den Beginn der Welle." },
+      { title: "Direkt nach dem Start auf die Welle", description: "Nach dem Countdown steht der Cursor bei einem Viertel der Bildschirmbreite. Bring ihn sofort auf die Welle, um die ersten Punkte zu sammeln." },
       { title: "Geschwindigkeitssynchrones Tracking", description: "Passen Sie die Gleitgeschwindigkeit der Maus exakt an die Wellenbewegung an, um die Spurmitte zu halten." },
       { title: "Sanfte Feinjustierung in Kurvenscheiteln", description: "Bremsen und lenken Sie an den Scheitelpunkten gefuhlvoll mit den Fingermuskeln, um Uberschwinger zu verhindern." },
-      { title: "Aufrechterhaltung des Super-Flows", description: "Bleiben Sie ohne Spurverlass auf der Linie, um den hochsten Flow-Score und beste Platzierungen zu erzielen." },
+      { title: "Aufrechterhaltung des Super-Flows", description: "Je 4 Sekunden ohne Abrutschen gibt es +5 Punkte und +10 % Flow. Die Note hängt von der Flow-Stabilität am Sitzungsende ab, die letzten Sekunden zählen also besonders." },
     ],
   },
   faqs: {
@@ -297,6 +297,7 @@ const deCopy = {
   title: "Maus-Tracking-Test",
   subtitle: "Kontinuierliches Tracking • 45 s",
   startButtonText: "Training Starten",
+  startBtn: "Training Starten",
   trainAgain: "Erneut Trainieren",
   shareTitle: "Ergebnis Teilen",
   exitTitle: "Beenden",
@@ -305,14 +306,14 @@ const deCopy = {
   statFlowIntegrity: "Flow-Stabilität",
   statBestScore: "Bestergebnis",
   maxStreakLabel: "Max. Streak-Frames",
-  peakFlowLabel: "Spitzen-Flow-Zustand",
+  peakFlowLabel: "Flow-Stabilität am Ende",
   bestScoreLabel: "Persönliche Bestleistung",
   rulesTitle: "Trainingsanleitung & Bewertungssystem",
   rulesItems: [
     { num: "1", text: "Pfad Verfolgen", highlight: "Smaragdwelle", result: "+1 Punkt / Frame auf Pfad" },
     { num: "2", text: "Geschwindigkeit", highlight: "Dynamische Welle", result: "2,2 → 3,8 px/f über 45s" },
     { num: "3", text: "Flow-Bonus", highlight: "Super Flow", result: "4s Pfadtreue bringt +5 Punkte" },
-    { num: "4", text: "Präzises Tracking", highlight: "Desktop Exklusiv", result: "Pointer-Lock-Mauserfassung" }
+    { num: "4", text: "Abrutschen", highlight: "Toleranz ±22 px", result: "Serie 0, Flow sinkt" }
   ],
 };
 

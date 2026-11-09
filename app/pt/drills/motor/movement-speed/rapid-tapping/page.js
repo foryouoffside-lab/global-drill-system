@@ -84,7 +84,7 @@ const softwareApplicationSchema = {
   url: 'https://skilldrills.online/pt/drills/motor/movement-speed/rapid-tapping',
   publisher: { '@type': 'Organization', name: 'SkillDrills', url: 'https://skilldrills.online' },
   inLanguage: 'pt-BR',
-  dateModified: '2026-09-20',
+  dateModified: '2026-11-09',
 };
 
 const webApplicationSchema = {
@@ -98,7 +98,7 @@ const webApplicationSchema = {
   offers: { '@type': 'Offer', price: '0', priceCurrency: 'BRL' },
   url: 'https://skilldrills.online/pt/drills/motor/movement-speed/rapid-tapping',
   inLanguage: 'pt-BR',
-  dateModified: '2026-09-20',
+  dateModified: '2026-11-09',
 };
 
 const videoGameSchema = {
@@ -119,7 +119,7 @@ const faqSchema = {
   '@context': 'https://schema.org',
   '@type': 'FAQPage',
   inLanguage: 'pt-BR',
-  dateModified: '2026-09-20',
+  dateModified: '2026-11-09',
   mainEntity: [
     {
       '@type': 'Question',
@@ -134,7 +134,7 @@ const faqSchema = {
       name: 'Qual é uma pontuação média de CPS para jogadores comuns e competitivos?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Usuários comuns alcançam entre 5,0 e 6,5 CPS com toque padrão de dedo único. Jogadores habituados atingem entre 8,0 e 10,5 CPS com mecânica rápida, enquanto especialistas de Minecraft PvP e jogos de ritmo chegam a 12,0–16,0+ CPS com jitter clicking e 16,0–20,0+ CPS com butterfly clicking.',
+        text: 'Não existe estatística oficial; como referência, o clique padrão com um dedo fica perto de 5 a 7 CPS e jogadores treinados chegam a 8 a 10 CPS. Com jitter clicking é comum passar de 12 CPS, e com butterfly clicking de 16 CPS.',
       },
     },
     {
@@ -182,7 +182,7 @@ const faqSchema = {
       name: 'Como o teste de 45 segundos da SkillDrills desafia a resistência?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Ao contrário de contadores estáticos de 5 segundos, este treino dura 45 segundos e avalia a resistência contínua: clicar expande o raio do alvo, mas o motor de encolhimento dinâmico contrai a esfera em até 600 pixels/segundo, exigindo cadência estável e controle de fadiga.',
+        text: 'Ao contrário de contadores estáticos de 5 segundos, este treino dura 45 segundos e avalia a resistência contínua: clicar expande o raio do alvo, mas o motor de encolhimento dinâmico contrai a esfera em até 600 pixels/segundo, exigindo cadência estável e controle de fadiga. Só contam os cliques dentro da esfera; a cada 10 cliques você ganha 1 ponto e a cada 5 pontos a esfera encolhe mais rápido. Se ela some, volta a um tamanho pequeno com aviso de penalidade, sem perder pontos.',
       },
     },
     {
@@ -198,7 +198,7 @@ const faqSchema = {
       name: 'Posso fazer o teste de velocidade de clique em celulares e tablets?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Sim. O treino utiliza eventos de ponteiro multitoque que detectam toques rápidos diretamente em telas capacitivas, permitindo que jogadores mobile testem cadência de dois ou mais dedos.',
+        text: 'Sim. Na tela de toque você toca direto na esfera central, inclusive alternando dois dedos; cada toque conta uma vez. O teclado não conta cliques (a tecla Esc apenas encerra a rodada).',
       },
     },
   ],
@@ -208,7 +208,7 @@ const howToSchema = {
   '@context': 'https://schema.org',
   '@type': 'HowTo',
   inLanguage: 'pt-BR',
-  dateModified: '2026-09-20',
+  dateModified: '2026-11-09',
   name: 'Teste de CPS – Teste de Velocidade de Clique e Cliques por Segundo',
   description: 'Teste de CPS – Teste de Velocidade de Clique e Cliques por Segundo',
   step: [
@@ -236,8 +236,8 @@ const howToSchema = {
     {
       '@type': 'HowToStep',
       position: 4,
-      name: 'Analisar média de CPS e pico',
-      text: 'Analise seus cliques por segundo (CPS), pico em rajada e resistência muscular na pontuação final.',
+      name: 'Analisar média de CPS e melhor CPS',
+      text: 'Confira no cartão final sua média de cliques por segundo (CPS), total de cliques, pontos, a velocidade de encolhimento alcançada e seu melhor CPS.',
       url: 'https://skilldrills.online/pt/drills/motor/movement-speed/rapid-tapping#step-4'
     }
   ],
@@ -254,8 +254,8 @@ const guideProps = {
   },
   benchmark: {
     title: 'Tabela de CPS: faixas de referência por técnica',
-    description: 'Faixas editoriais de prática para comparar suas próprias sessões; não são estatísticas de população nem normas clínicas. Faixas editoriais para comparar suas próprias sessões, sem percentis de população medidos. As linhas de dedo único baseiam-se em referências da neuropsicologia motora (Halstead 1947; Todor & Kyprie 1980), enquanto as linhas de jitter e butterfly refletem dados empíricos de jogadores de alto rendimento.',
-    columns: ['Nível', 'Título de Rango', 'CPS Médio', 'Pico (5s)', 'Técnica de Clique', 'Faixa'],
+    description: 'Faixas de prática definidas pela SkillDrills para comparar suas próprias sessões; não são normas de pesquisa nem dados de usuários. Só o teto do clique com um dedo se inspira em estudos de tapping (Halstead 1947; Todor & Kyprie 1980).',
+    columns: ['Nível', 'Título de Rango', 'CPS Médio', 'CPS ao vivo (2 s)', 'Técnica de Clique', 'Faixa'],
     rows: [
       {
         tier: 'Tier 1',
@@ -332,6 +332,7 @@ const guideProps = {
 
 const ptCopy = {
   title: "Teste de CPS",
+  subtitle: "Meça seus cliques por segundo (CPS) e a resistência de clique em 45 segundos",
   desc: "O teste de CPS mede quantos cliques por segundo você consegue realizar com o botão do mouse. O clique padrão com um único dedo atinge cerca de 5 a 7 cliques por segundo (norma de tapping de Halstead, 50–55 toques/10s). Pontuações mais altas vêm de técnicas como jitter clicking e butterfly clicking.",
   score: "Pontos",
   timeLeft: "Tempo Restante",
@@ -346,7 +347,7 @@ const ptCopy = {
   avgCps: "CPS Médio",
   totalClicks: "Total de Cliques",
   maxDifficulty: "Dificuldade Máx.",
-  peakCps: "Pico de CPS",
+  peakCps: "Melhor CPS",
   newBest: "NOVO RECORDE",
   rulesTitle: "Instruções do Treino e Sistema de Pontuação",
   rulesItems: [

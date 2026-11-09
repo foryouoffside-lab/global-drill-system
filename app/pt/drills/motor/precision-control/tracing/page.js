@@ -11,16 +11,16 @@ import { pickSources } from '@/lib/drillSources';
 
 export const metadata = {
   title: 'Teste de rastreamento do mouse | Seguir linha | SkillDrills',
-  description: 'Siga uma onda em movimento com o cursor e treine rastreamento contínuo, precisão do traçado e controle motor fino. Grátis no navegador.',
+  description: 'Teste de rastreamento do mouse grátis: mantenha o cursor por 45 segundos sobre uma onda cada vez mais rápida e treine precisão do traçado e controle motor fino.',
   keywords: [
     'teste de rastreamento do mouse', 'seguir linha com mouse', 'jogo de traçar com mouse',
-    'teste de precisão de traçado', 'treino de mira contínua', 'controle motor fino',
+    'teste de precisão de traçado', 'controle motor fino',
     'rastreamento do cursor', 'precisão do traçado', 'exercício de mira suave',
     'teste de fluidez motora mouse', 'jogo de seguir a linha', 'coordenação visomotora',
   ],
   openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
     title: 'Teste de rastreamento do mouse | Seguir linha | SkillDrills',
-    description: 'Siga uma onda em movimento com o cursor e treine rastreamento contínuo, precisão do traçado e controle motor fino. Grátis no navegador.',
+    description: 'Teste de rastreamento do mouse grátis: mantenha o cursor por 45 segundos sobre uma onda cada vez mais rápida e treine precisão do traçado e controle motor fino.',
     type: 'article',
     url: 'https://skilldrills.online/pt/drills/motor/precision-control/tracing',
     siteName: 'SkillDrills',
@@ -29,7 +29,7 @@ export const metadata = {
   twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: 'summary_large_image',
     title: 'Teste de rastreamento do mouse | Seguir linha | SkillDrills',
-    description: 'Siga uma onda em movimento com o cursor e treine rastreamento contínuo, precisão do traçado e controle motor fino. Grátis no navegador.',
+    description: 'Teste de rastreamento do mouse grátis: mantenha o cursor por 45 segundos sobre uma onda cada vez mais rápida e treine precisão do traçado e controle motor fino.',
   },
   robots: { index: true, follow: true },
   alternates: {
@@ -57,10 +57,10 @@ const softwareApplicationSchema = {
   applicationCategory: 'HealthApplication',
   operatingSystem: 'All',
   offers: { '@type': 'Offer', price: '0', priceCurrency: 'BRL' },
-  description: 'Ferramenta interativa de avaliação motora para manter o cursor sobre uma onda em movimento contínuo sem desvios.',
+  description: 'Teste de rastreamento do mouse: mantenha o cursor sobre uma onda que rola pela tela. Os pontos só contam enquanto o cursor fica a até 22 pixels acima ou abaixo da linha.',
   url: 'https://skilldrills.online/pt/drills/motor/precision-control/tracing',
   publisher: { '@type': 'Organization', name: 'SkillDrills', url: 'https://skilldrills.online/pt' },
-  dateModified: '2026-09-20',
+  dateModified: '2026-11-09',
 };
 
 const webApplicationSchema = {
@@ -70,10 +70,10 @@ const webApplicationSchema = {
   name: 'Jogo de Rastreamento Contínuo Online',
   applicationCategory: 'GameApplication',
   operatingSystem: 'All',
-  browserRequirements: 'Navegador moderno com suporte a HTML5 Canvas e Pointer Events',
+  browserRequirements: 'Navegador moderno com HTML5 Canvas e Pointer Lock API',
   offers: { '@type': 'Offer', price: '0', priceCurrency: 'BRL' },
   url: 'https://skilldrills.online/pt/drills/motor/precision-control/tracing',
-  dateModified: '2026-09-20',
+  dateModified: '2026-11-09',
 };
 
 const videoGameSchema = {
@@ -82,26 +82,26 @@ const videoGameSchema = {
   inLanguage: 'pt-BR',
   name: 'Treino de Traçado e Fluidez de Cursor',
   url: 'https://skilldrills.online/pt/drills/motor/precision-control/tracing',
-  description: 'Jogo de precisão cinética para desenvolver rastreamento contínuo suave e eliminar microtremores involuntários.',
+  description: 'Jogo de precisão em que você mantém o cursor sobre uma onda em movimento por 45 segundos.',
   genre: ['Precision Game', 'Action', 'Esports Training'],
   gamePlatform: ['Web Browser', 'Desktop', 'Mobile'],
   applicationCategory: 'Game',
   offers: { '@type': 'Offer', price: '0', priceCurrency: 'BRL' },
-  dateModified: '2026-09-20',
+  dateModified: '2026-11-09',
 };
 
 const faqSchema = {
   '@context': 'https://schema.org',
   '@type': 'FAQPage',
   inLanguage: 'pt-BR',
-  dateModified: '2026-09-20',
+  dateModified: '2026-11-09',
   mainEntity: [
     {
       '@type': 'Question',
-      name: 'O que é o Jogo de Traçado do Mouse e o que ele avalia?',
+      name: 'O que é este teste de rastreamento do mouse e como se pontua?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'É uma avaliação neuromotora interativa onde o usuário deve manter o cursor sobre uma onda senoidal em rolagem contínua dentro de uma margem de 22 pixels. Mede a fluidez motora, a velocidade de rastreamento (smooth pursuit) e o tempo de reação corretivo ao longo de 45 segundos.',
+        text: 'Você mantém o cursor por 45 segundos sobre uma onda que corre da direita para a esquerda. Enquanto o cursor fica a até 22 pixels da linha (acima ou abaixo), ganha 1 ponto por quadro, +5 a cada 4 segundos sem interrupção e +10 ao voltar para a linha depois de sair dela.',
       },
     },
     {
@@ -117,7 +117,7 @@ const faqSchema = {
       name: 'O que é a Integridade do Fluxo (Flow Integrity) e como é pontuada?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'A Integridade do Fluxo representa a consistência de rastreamento em tempo real (0 a 100%). Ela aumenta continuamente enquanto o cursor permanece centrado na margem de 22 px e cai gradativamente ao sair da linha.',
+        text: 'A Integridade do Fluxo (0 a 100%) começa em 100%. Sobe 15% por segundo enquanto o cursor está na linha (±22 px), ganha 10% a cada bônus de 4 segundos e cai 25% por segundo fora da linha. A nota final depende do valor no fim da sessão. Sair da linha não tira pontos já ganhos.',
       },
     },
     {
@@ -125,7 +125,7 @@ const faqSchema = {
       name: 'Como a velocidade e a amplitude aumentam durante os 45 segundos?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'O teste começa a 2,2 px/frame com amplitude de 90 px e escala até 4,5+ px/frame com oscilações secundárias de até 125 px, exigindo maior sincronização neuromuscular à medida que o tempo avança.',
+        text: 'A onda começa a 2,2 px por quadro e acelera de forma contínua até 3,8 px por quadro aos 45 segundos. A amplitude principal vai de 90 a 125 px e uma oscilação secundária vai de 8 a 32 px, deixando a curva mais alta e irregular.',
       },
     },
     {
@@ -149,7 +149,7 @@ const faqSchema = {
       name: 'Como esse treino ajuda em jogos de tiro competitivo (FPS)?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Jogos com alto tempo para matar (TTK) exigem mira estável sobre alvos que se movem de forma imprevisível. O treino de traçado elimina solavancos bruscos, melhora o deslize do antebraço e suaviza a transição nas mudanças de direção.',
+        text: 'Jogos com alto tempo para matar (TTK) exigem mira estável sobre alvos em movimento. Este exercício pratica um gesto parecido: deslize regular do antebraço e mudanças de direção. O quanto isso se transfere para o jogo varia de pessoa para pessoa.',
       },
     },
     {
@@ -170,10 +170,10 @@ const faqSchema = {
     },
     {
       '@type': 'Question',
-      name: 'É possível treinar usando mesa digitalizadora ou trackball?',
+      name: 'É possível treinar com trackball ou tela de toque?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Sim. O sistema utiliza a API de Pointer Events, permitindo que ilustradores treinem a pressão e a continuidade do traço com caneta digital, além de suportar testes ergonômicos com trackball.',
+        text: 'No computador o teste lê o movimento do mouse via Pointer Lock, então mouse e trackball funcionam. Em aparelhos só de toque, arraste o dedo. Canetas de mesa digitalizadora se comportam de forma diferente conforme o equipamento.',
       },
     },
   ],
@@ -183,15 +183,15 @@ const howToSchema = {
   '@context': 'https://schema.org',
   '@type': 'HowTo',
   inLanguage: 'pt-BR',
-  dateModified: '2026-09-20',
+  dateModified: '2026-11-09',
   name: 'Como treinar traçado e rastreamento contínuo no mouse',
-  description: 'Guia passo a passo para aprimorar perseguição suave e eliminar solavancos no cursor.',
+  description: 'Guia passo a passo para ficar mais tempo sobre a onda.',
   step: [
     {
       '@type': 'HowToStep',
       position: 1,
       name: 'Posicionar o cursor na origem da onda',
-      text: 'Passe o ponteiro sobre o ponto inicial iluminado antes do início da contagem regressiva.',
+      text: 'Após a contagem de 3 segundos, o ponteiro é travado (no toque, use o dedo) e fica a um quarto da largura da tela. Leve-o logo para a onda. Esc encerra.',
       url: 'https://skilldrills.online/pt/drills/motor/precision-control/tracing#step-1'
     },
     {
@@ -212,7 +212,7 @@ const howToSchema = {
       '@type': 'HowToStep',
       position: 4,
       name: 'Analisar pontuação e consistência de fluxo',
-      text: 'Verifique a pontuação de integridade de fluxo, tempo de contato e estabilidade ao final dos 45 segundos.',
+      text: 'Ao fim dos 45 segundos, veja sua pontuação, a maior sequência de quadros na linha e a Integridade do Fluxo no fim da sessão.',
       url: 'https://skilldrills.online/pt/drills/motor/precision-control/tracing#step-4'
     },
   ],
@@ -223,59 +223,25 @@ const guideProps = {
   intro: {
     title: 'Como o rastreamento contínuo é mensurado',
     paragraphs: [
+      'Este teste de rastreamento do mouse pede que você mantenha o cursor sobre uma onda que corre da direita para a esquerda por 45 segundos, ficando mais rápida e mais alta. Os pontos se acumulam quadro a quadro enquanto você está na linha.',
       'Precisão da medição e limites do sistema: A cronometragem utiliza a API performance.now() do navegador (resolução de ~1 ms por segurança). A exibição visual é quantizada pela frequência do monitor — ~16,7 ms a 60 Hz, ~6,9 ms a 144 Hz e ~4,1 ms a 240 Hz (Woods et al., 2015). A taxa de varredura do mouse adiciona ~8 ms a 125 Hz contra ~1 ms a 1000 Hz. Diferenças abaixo de 5 ms constituem ruído de medição. O SkillDrills não coleta dados externos.',
     ],
   },
   benchmark: {
-    title: 'Baremos de Desempenho em Traçado e Rastreamento Suave',
-    description: 'Faixas editoriais de prática para comparar suas próprias sessões; não são estatísticas de população nem normas clínicas. Tabela editorial para interpretar seus resultados com base nos estudos de Krauzlis (2004) e Rashbass (1961). Avalia pontuação total, integridade máxima de fluxo e maior sequência de quadros sem desvio em 45 segundos.',
-    columns: ['Nível', 'Classificação', 'Pontuação', 'Pico de Fluxo', 'Maior Sequência', 'Faixa Editorial'],
+    title: 'Teste de rastreamento do mouse: faixas de prática SkillDrills',
+    description: 'Faixas de prática SkillDrills, não normas de pesquisa nem dados de usuários. Seguem a nota da tela de resultado (Integridade do Fluxo no fim da sessão e pontuação). A pontuação é 1 ponto por quadro: monitores com taxa maior somam mais, então compare no mesmo aparelho.',
+    columns: ['Nota', 'Classificação', 'Fluxo no fim', 'Condição de pontos', 'Faixa'],
     rows: [
-      {
-        tier: 'Faixa 1',
-        rank: 'Muito avançada',
-        stat: '1400+ pts',
-        level: '95–100%',
-        accuracy: '600+ frames',
-        marker: 'Ritmo muito alto com alta precisão',
-      },
-      {
-        tier: 'Faixa 2',
-        rank: 'Avançada',
-        stat: '1100–1399 pts',
-        level: '85–94%',
-        accuracy: '400–599 frames',
-        marker: 'Ritmo alto e regular',
-      },
-      {
-        tier: 'Faixa 3',
-        rank: 'Sólida',
-        stat: '800–1099 pts',
-        level: '70–84%',
-        accuracy: '250–399 frames',
-        marker: 'Ritmo estável com alguns erros',
-      },
-      {
-        tier: 'Faixa 4',
-        rank: 'Em desenvolvimento',
-        stat: '500–799 pts',
-        level: '50–69%',
-        accuracy: '120–249 frames',
-        marker: 'Ritmo médio com margem de melhora',
-      },
-      {
-        tier: 'Faixa 5',
-        rank: 'Inicial',
-        stat: 'Abaixo de 500 pts',
-        level: 'Abaixo de 50%',
-        accuracy: 'Abaixo de 120 frames',
-        marker: 'Ponto de partida',
-      },
+      { tier: 'S+', rank: 'Fluxo de grão-mestre', flow: '90% ou mais', score: '1.400 pontos ou mais', band: 'Faixa de prática SkillDrills' },
+      { tier: 'S', rank: 'Fluxo máximo', flow: '80% ou mais', score: '-', band: 'Faixa de prática SkillDrills' },
+      { tier: 'A', rank: 'Rastreamento travado', flow: '60% ou mais', score: '-', band: 'Faixa de prática SkillDrills' },
+      { tier: 'B', rank: 'Rastreamento estável', flow: '35% ou mais', score: '-', band: 'Faixa de prática SkillDrills' },
+      { tier: 'C', rank: 'Traçado concluído', flow: 'menos de 35%', score: '-', band: 'Faixa de prática SkillDrills' },
     ],
   },
   protocols: {
     title: 'Protocolos de Treino para Rastreamento Contínuo',
-    description: 'Recomendações técnicas para aprimorar perseguição suave ocular, suprimir sacadas involuntárias e estabilizar a mão.',
+    description: 'Recomendações para acompanhar a onda com os olhos e estabilizar a mão.',
     items: [
       {
         title: 'Protocolo 1: Fixação Antecipada e Rastreamento Feedforward (Krauzlis 2004)',
@@ -308,6 +274,7 @@ const ptCopy = {
   title: "Teste de Rastreamento do Mouse",
   subtitle: "Rastreamento contínuo • 45 s",
   startButtonText: "Iniciar Treino",
+  startBtn: "Iniciar Treino",
   trainAgain: "Treinar Novamente",
   shareTitle: "Compartilhar Pontuação",
   exitTitle: "Sair",
@@ -316,14 +283,14 @@ const ptCopy = {
   statFlowIntegrity: "Integridade do Fluxo",
   statBestScore: "Melhor Pontuação",
   maxStreakLabel: "Sequência Máxima de Frames",
-  peakFlowLabel: "Pico de Estado de Fluxo",
+  peakFlowLabel: "Fluxo no Fim da Sessão",
   bestScoreLabel: "Recorde Pessoal",
   rulesTitle: "Instruções do Treino e Sistema de Pontuação",
   rulesItems: [
     { num: "1", text: "Traçar a Trajetória", highlight: "Onda Esmeralda", result: "+1 PT / frame dentro da linha" },
     { num: "2", text: "Velocidade Progressiva", highlight: "Onda Dinâmica", result: "2.2 → 3.8 px/f em 45s" },
     { num: "3", text: "Integridade de Fluxo", highlight: "Super Fluxo", result: "4s seguidos dão +5 Bônus" },
-    { num: "4", text: "Rastreamento Estrito", highlight: "Exclusivo Desktop", result: "Mouse no desktop" }
+    { num: "4", text: "Saída da linha", highlight: "Tolerância ±22 px", result: "Sequência zera, fluxo cai" }
   ],
 };
 

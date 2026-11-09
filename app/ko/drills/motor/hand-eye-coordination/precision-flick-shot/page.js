@@ -6,16 +6,15 @@ import RelatedDrills from '@/components/drill/RelatedDrills';
 import { pickSources } from '@/lib/drillSources';
 
 export const metadata = {
-  title: '플릭샷 에임 연습 | 마우스 정확도 테스트 | SkillDrills',
-  description: '무료 브라우저 플릭샷 에임 연습. 타깃 포착 시간, 명중률, 불스아이 비율을 측정하고 발로란트·오버워치 에임을 연습하세요.',
+  title: '마우스 정확도 테스트 | 과녁 중심 정밀 플릭 | SkillDrills',
+  description: '무료 마우스 정확도 테스트. 줄어드는 과녁 2개를 플릭으로 맞히고 중심 8px 불스아이는 2배 점수. 명중률·불스아이·레벨을 기록합니다.',
   keywords: [
-    '플릭샷 에임 연습', '에임 테스트', '마우스 에임 연습', '마우스 정확도 테스트',
-    '조준 연습', '플릭샷 정확도 테스트', '발로란트 에임 연습', '표적 전환 연습',
-    '끌어치기 연습', '에임 정밀도', 'FPS 에임 트레이너', '중심 명중률',
+    '마우스 정확도 테스트', '마우스 정확도 연습', '마우스 정확도 측정', '마우스 정확도 게임',
+    '정밀 클릭 연습', '과녁 중심 맞히기', '중심 명중률',
   ],
   openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
-    title: '플릭샷 에임 연습 | 마우스 정확도 테스트 | SkillDrills',
-    description: '무료 브라우저 플릭샷 에임 연습. 타깃 포착 시간, 명중률, 불스아이 비율을 측정하고 발로란트·오버워치 에임을 연습하세요.',
+    title: '마우스 정확도 테스트 | 과녁 중심 정밀 플릭 | SkillDrills',
+    description: '무료 마우스 정확도 테스트. 줄어드는 과녁 2개를 플릭으로 맞히고 중심 8px 불스아이는 2배 점수. 명중률·불스아이·레벨을 기록합니다.',
     type: 'article',
     url: 'https://skilldrills.online/ko/drills/motor/hand-eye-coordination/precision-flick-shot',
     siteName: 'SkillDrills',
@@ -23,8 +22,8 @@ export const metadata = {
   },
   twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: 'summary_large_image',
-    title: '플릭샷 에임 연습 | 마우스 정확도 테스트 | SkillDrills',
-    description: '무료 브라우저 플릭샷 에임 연습. 타깃 포착 시간, 명중률, 불스아이 비율을 측정하고 발로란트·오버워치 에임을 연습하세요.',
+    title: '마우스 정확도 테스트 | 과녁 중심 정밀 플릭 | SkillDrills',
+    description: '무료 마우스 정확도 테스트. 줄어드는 과녁 2개를 플릭으로 맞히고 중심 8px 불스아이는 2배 점수. 명중률·불스아이·레벨을 기록합니다.',
   },
   robots: { index: true, follow: true },
   alternates: {
@@ -67,15 +66,15 @@ const breadcrumbSchema = {
 const softwareApplicationSchema = {
   '@context': 'https://schema.org',
   '@type': 'SoftwareApplication', "sameAs": ["https://en.wikipedia.org/wiki/Fitts%27s_law", "https://en.wikipedia.org/wiki/Hand%E2%80%93eye_coordination"],
-  name: '플릭 에임 연습・마우스 정확도 테스트',
+  name: '마우스 정확도 테스트・정밀 플릭 샷',
   applicationCategory: 'HealthApplication',
   operatingSystem: 'All',
   offers: { '@type': 'Offer', price: '0', priceCurrency: 'KRW' },
-  description: '브라우저 기반 무료 플릭 에임 트레이너. 탄도학적 스냅 속도, 불스아이 중심 타격률, 감속 제어 능력을 측정합니다.',
+  description: '브라우저 기반 무료 마우스 정확도 테스트. 줄어드는 과녁을 맞히고 중심 불스아이 명중 수와 명중률을 기록합니다.',
   url: 'https://skilldrills.online/ko/drills/motor/hand-eye-coordination/precision-flick-shot',
   publisher: { '@type': 'Organization', name: 'SkillDrills', url: 'https://skilldrills.online' },
   inLanguage: 'ko-KR',
-  dateModified: '2026-09-20',
+  dateModified: '2026-11-09',
 };
 
 const webApplicationSchema = {
@@ -86,7 +85,7 @@ const webApplicationSchema = {
   url: 'https://skilldrills.online/ko/drills/motor/hand-eye-coordination/precision-flick-shot',
   applicationCategory: 'EducationalApplication',
   inLanguage: 'ko-KR',
-  dateModified: '2026-09-20',
+  dateModified: '2026-11-09',
 };
 
 const videoGameSchema = {
@@ -106,7 +105,7 @@ const faqSchema = {
   '@context': 'https://schema.org',
   '@type': 'FAQPage',
   inLanguage: 'ko-KR',
-  dateModified: '2026-09-20',
+  dateModified: '2026-11-09',
   mainEntity: [
     {
       '@type': 'Question',
@@ -129,7 +128,7 @@ const faqSchema = {
       name: '불스아이(중심 명중) 비율을 높이는 비결은 무엇인가요?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: '타깃의 겉 테두리 전체가 아닌 중심 8픽셀 핵을 의도적으로 조준하면 신경근 노이즈가 억제되어 샷 분산도가 좁아지고 헤드샷 정확도가 크게 상승합니다.',
+        text: '과녁 중심에서 8픽셀 이내를 클릭하면 불스아이로 판정되어 기본 200점(일반 명중 100점)을 받습니다. 과녁 전체가 아닌 중심의 작은 점을 노리는 습관이 탄착 분산을 줄이는 데 도움이 될 수 있습니다.',
       },
     },
     {
@@ -145,7 +144,7 @@ const faqSchema = {
       name: '화면에 2개의 타깃이 동시에 뜰 때 대처법은?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: '주변시로 수명 링을 신속히 스캔하여 잔여 시간이 적은 타깃을 우선 격파한 후, 반동을 이용해 새로 스폰된 타깃으로 빠르게 화면을 가로질러 전환합니다.',
+        text: '두 과녁 모두 줄어들지만 활성 과녁이 더 빨리 작아집니다. 더 작아진 과녁을 먼저 맞히고 나머지로 전환하세요. 과녁이 완전히 줄어들면 콤보가 초기화되고 1초가 차감됩니다.',
       },
     },
     {
@@ -153,7 +152,7 @@ const faqSchema = {
       name: '발로란트나 CS2 실력 향상에 직접 도움이 되나요?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: '네. 택티컬 슈터의 킬 결정력은 적 헤드를 향한 단일 임펄스 마이크로 플릭 속도에 의해 좌우되며, 불필요한 미세 떨림을 완전히 제거해 줍니다.',
+        text: '발로란트·CS2 플레이어가 플릭 후 정지하는 감각을 연습하는 용도로 쓸 수 있습니다. 다만 게임 내 실력 향상을 보장하지는 않으며, 게임과 같은 감도로 맞춰 두는 것이 좋습니다.',
       },
     },
     {
@@ -169,7 +168,7 @@ const faqSchema = {
       name: '세션 등급과 점수는 어떻게 산출되나요?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: '총 타깃 적중률, 불스아이 명중 비율, 콤보 연계 기록 및 최고 도달 레벨을 종합 연산하여 D부터 S+까지 세분화된 랭크를 매깁니다.',
+        text: '명중 시 기본 점수(일반 100점, 불스아이 200점)에 콤보 배율(최대 3.0배)과 레벨 보너스가 곱해집니다. 명중할 때마다 +2초(최대 60초), 빗맞힘이나 과녁 소멸 시 -1초이며 콤보가 초기화됩니다. 등급은 최종 점수로 매겨지고, 결과 화면에 명중률·명중 수·불스아이 수·최고 레벨이 표시됩니다.',
       },
     },
     {
@@ -177,7 +176,7 @@ const faqSchema = {
       name: '플릭 반응 속도를 극대화하는 하드웨어 세팅은?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: '144Hz 이상 고주사율 모니터, 윈도우 포인터 정확도 향상 해제, 65g 이하 초경량 마우스로 물리 관성을 줄이는 것이 이상적입니다.',
+        text: '고주사율 모니터와 가벼운 마우스가 편할 수 있으며, 윈도우의 "포인터 정확도 향상" 옵션은 끄는 것을 권장합니다. 이 테스트는 그 윈도우 설정이 아니라 클릭 정확도를 연습하는 드릴입니다.',
       },
     },
     {
@@ -234,41 +233,38 @@ const guideProps = {
   intro: {
     title: '탄도학적 마이크로 플릭과 하위 운동 최적화의 생체역학',
     paragraphs: [
-      '사격 스포츠와 HCI 인터랙션에서 플릭 샷(Flick Shot)은 극도의 시간 제약 하에서 구동되는 고속 이산 조준 운동입니다. Robert S. Woodworth(1899)는 목표 지향적 운동이 이단계 제어 구조를 취함을 밝혔습니다. 첫째는 사지를 목표로 가속하는 초기 탄도 임펄스이며, 둘째는 시각 피드백으로 미세 조정을 수행하는 현재 제어 단계입니다.',
-      'David E. Meyer 등(1988)의 확률 최적화 하위운동 모델(Stochastic Optimized Submovement Model)에 따르면, 인간의 운동 출력은 운동 속도에 비례하는 신경 잡음을 동반합니다. 너무 빠르게 플릭하면 1차 운동의 종단 산포가 급증하며, 타깃 영역을 벗어날 경우 약 150~200ms가 소요되는 교정 하위운동이 강제되어 치명적인 시간 손실이 발생합니다.',
+      '이 마우스 정확도 테스트는 화면에 뜨는 과녁의 중심을 빠르게 맞히는 정밀 플릭 드릴입니다. 사격 스포츠와 HCI 인터랙션에서 플릭 샷(Flick Shot)은 극도의 시간 제약 하에서 구동되는 고속 이산 조준 운동입니다. Robert S. Woodworth(1899)는 목표 지향적 운동이 이단계 제어 구조를 취함을 밝혔습니다. 첫째는 사지를 목표로 가속하는 초기 탄도 임펄스이며, 둘째는 시각 피드백으로 미세 조정을 수행하는 현재 제어 단계입니다.',
+      'David E. Meyer 등(1988)의 확률 최적화 하위운동 모델(Stochastic Optimized Submovement Model)에 따르면, 인간의 운동 출력은 운동 속도에 비례하는 신경 잡음을 동반합니다. 너무 빠르게 플릭하면 1차 운동의 종단 산포가 커지고, 타깃을 벗어나면 추가 교정 동작이 필요해 시간이 늘어납니다.',
       '최상위권 플릭 스루풋(MacKenzie, 1992)에 도달하려면 1차 탄도 임펄스만으로 타깃 내에 정확히 안착하도록 속도를 정밀 보정해야 합니다. 불스아이 중심 타격에 보너스 점수를 부여하는 이 훈련은 종단 오차 분산을 압축하고 브레이킹을 정밀화하도록 신경계를 훈련시킵니다.',
       '플릭 뒤에 자리 잡은 거리-크기 교환 원리는 피츠의 법칙(Fitts, 1954)에 해당하며, 브레이킹 시 길항근 동원의 중요성은 Elliott et al.(2010)의 최신 연구에서 확립되었습니다.',
-      '브라우저 측정 정밀도 및 한계: 시간 측정은 브라우저 performance.now() 시계를 기반으로 합니다. 디스플레이 재생률(60Hz 16.7ms, 144Hz 6.9ms)과 마우스 폴링레이트에 의한 양자화 간격이 존재하므로(Woods et al., 2015), 외부와의 절대 비교보다는 동일 시스템 내에서의 개인 성장 추이에 집중하세요.',
+      '드릴 진행 방식: 45초로 시작해 명중할 때마다 +2초(최대 60초), 빗맞힘이나 과녁 소멸 시 -1초입니다. 마우스와 포인터 잠금이 필요하며 터치 전용 기기에서는 시작할 수 없습니다. 디스플레이 재생률과 마우스 폴링레이트가 입력 감각에 영향을 주므로(Woods et al., 2015) 같은 환경에서의 개인 기록 추이에 집중하세요.',
     ],
   },
   benchmarks: {
-    title: '플릭 샷 및 마우스 정확도 표준 벤치마크',
-    caption: 'Woodworth(1899) 및 Meyer et al.(1988)의 운동학 모델에 기초한 숙련도 지표. SkillDrills는 일체의 개인 데이터를 수집하지 않습니다.',
-    headers: ['등급 (Tier)', '숙련도 분류', '도달 레벨 / 콤보', '평균 포착 소요시간', '클릭 정확도', '불스아이 비율', '신경운동 특성 프로필'],
+    title: '마우스 정확도 테스트 연습 구간 (SkillDrills 기준)',
+    caption: 'SkillDrills 연습 구간입니다. 연구 기준치나 사용자 통계가 아니라, 결과 화면의 레벨·콤보·명중률·불스아이 비율을 스스로 해석하기 위한 드릴 제작자의 참고값입니다. SkillDrills는 개인 데이터를 수집하지 않습니다.',
+    headers: ['등급 (Tier)', '숙련도 분류', '도달 레벨 / 콤보', '클릭 정확도', '불스아이 비율', '플레이 특징'],
     rows: [
       [
         'Tier 1',
         '에이펙스 플릭 마스터',
         'Lv. 15+ (콤보 > 20회)',
-        '< 340 ms',
         '≥ 96.0%',
         '> 65%',
-        '순수 단일 임펄스 탄도 궤적, 2차 수정 운동 전무, 10ms 미만의 완벽한 길항근 브레이킹.',
+        '한 번의 플릭으로 중심에 안착, 추가 수정 동작이 거의 없음.',
       ],
       [
         'Tier 2',
         '상급 건파이터',
         'Lv. 11–14 (콤보 14–19회)',
-        '340–420 ms',
         '91.0%–95.9%',
         '45%–64%',
-        '예리한 중심 시각 확인, 30ms 미만의 초미세 2차 교정, 궤적 흔들림 최소화.',
+        '중심을 정확히 확인하고 짧은 미세 교정으로 마무리.',
       ],
       [
         'Tier 3',
         '숙련 마크스맨',
         'Lv. 7–10 (콤보 8–13회)',
-        '421–520 ms',
         '84.0%–90.9%',
         '25%–44%',
         '외곽 링 타격 빈번, 고속 타깃 전환 시 약간의 오버슈트 및 이중 클릭 관찰.',
@@ -277,7 +273,6 @@ const guideProps = {
         'Tier 4',
         '발달 단계 프래거',
         'Lv. 4–6 (콤보 4–7회)',
-        '521–660 ms',
         '74.0%–83.9%',
         '10%–24%',
         '다단계 덜컥거림 교정, 과가속으로 인한 분산도 증가, 발사 직전 주저함 발생.',
@@ -286,7 +281,6 @@ const guideProps = {
         'Tier 5',
         '입문 / 초보자',
         'Lv. 1–3 (콤보 < 4회)',
-        '> 660 ms',
         '< 74.0%',
         '< 10%',
         '거리 미달(언더플릭), 잦은 빗맞음, 느린 타깃 재포착 속도, 손목-팔 협응 미흡.',
@@ -324,8 +318,8 @@ const guideProps = {
 };
 
 const copyKo = {
-  title: "플릭 에임 연습・마우스 정확도 테스트",
-  subtitle: "플릭 정확도 · 중심 명중률 측정",
+  title: "마우스 정확도 테스트・과녁 중심 정밀 플릭",
+  subtitle: "줄어드는 과녁 2개 · 중심 불스아이 2배 점수 · 명중 시 +2초",
   startButtonText: "훈련 시작",
   playAgainText: "다시 도전",
   shareText: "결과 공유",
@@ -336,10 +330,10 @@ const copyKo = {
   peakLevelLabel: "최고 레벨",
   rulesTitle: "드릴 조작법 & 점수 획득 규칙",
   rulesItems: [
-    { num: "1", text: "불스아이 명중", highlight: "+200점 / +0.6초", result: "중심 핵 정밀 타격" },
-    { num: "2", text: "일반 타깃 격파", highlight: "+100점 / +0.6초", result: "주변부 신속 포착 및 격발" },
+    { num: "1", text: "불스아이 명중", highlight: "+200점 / +2초 (최대 60초)", result: "중심 핵 정밀 타격" },
+    { num: "2", text: "일반 타깃 격파", highlight: "+100점 / +2초 (최대 60초)", result: "주변부 신속 포착 및 격발" },
     { num: "3", text: "레벨 난이도 상승", highlight: "1400점마다 +1 레벨", result: "타깃 축소 및 생존 시간 단축" },
-    { num: "4", text: "빗맞힘 / 시간 초과", highlight: "콤보 초기화", result: "패널티 적용 시 -0.8초 차감" }
+    { num: "4", text: "빗맞힘 / 시간 초과", highlight: "콤보 초기화", result: "빗맞힘·과녁 소멸 시 -1초" }
   ],
 };
 

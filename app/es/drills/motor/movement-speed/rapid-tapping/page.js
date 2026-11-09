@@ -23,26 +23,24 @@ import { pickSources } from '@/lib/drillSources';
 // ============================================================
 
 export const metadata = {
-  title: 'Test de CPS | Clics por segundo | SkillDrills',
-  description: 'Mide tus clics por segundo (CPS) y tu resistencia durante 45 segundos. Test gratuito en el navegador, sin registro.',
+  title: 'CPS Test: Clicks por Segundo en 45 s | SkillDrills',
+  description: 'CPS Test gratis: mide tus clicks por segundo durante 45 segundos con este test de clicks en el navegador. CPS promedio y en directo, sin registro ni descarga.',
   keywords: [
+    'CPS Test',
+    'clicks por segundo',
+    'test de clicks',
     'test de CPS',
-    'test de velocidad de clics',
-    'clics por segundo',
-    'test de clic rápido',
+    'test de velocidad de cliqueo',
+    'contador de clicks por segundo',
     'velocidad de clic del ratón',
-    'contador de clics',
     'jitter click',
     'butterfly click',
     'Minecraft PvP CPS',
-    'resistencia de clic',
-    'prueba de clics por segundo',
-    'entrenamiento de clics rápidos',
   ],
   openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
-    title: 'Test de CPS | Clics por segundo | SkillDrills',
+    title: 'CPS Test: Clicks por Segundo en 45 s | SkillDrills',
     description:
-      'Test gratuito de CPS y resistencia de clic durante 45 segundos en el navegador.',
+      'CPS Test gratis: clicks por segundo y resistencia de clic durante 45 segundos en el navegador.',
     type: 'article',
     url: 'https://skilldrills.online/es/drills/motor/movement-speed/rapid-tapping',
     siteName: 'SkillDrills',
@@ -50,9 +48,9 @@ export const metadata = {
   },
   twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: 'summary_large_image',
-    title: 'Test de CPS | Clics por segundo | SkillDrills',
+    title: 'CPS Test: Clicks por Segundo en 45 s | SkillDrills',
     description:
-      'Mide tus clics por segundo y tu resistencia con un test gratuito.',
+      'Mide tus clicks por segundo con un CPS Test gratuito de 45 segundos.',
   },
   robots: { index: true, follow: true },
   alternates: {
@@ -70,47 +68,47 @@ const breadcrumbSchema = {
     { '@type': 'ListItem', position: 1, name: 'SkillDrills Inicio', item: 'https://skilldrills.online/es' },
     { '@type': 'ListItem', position: 2, name: 'Centro de Drills', item: 'https://skilldrills.online/es/drills' },
     { '@type': 'ListItem', position: 3, name: 'Entrenamiento Motor', item: 'https://skilldrills.online/es/drills/motor' },
-    { '@type': 'ListItem', position: 4, name: 'Test de CPS (Clicks Por Segundo)', item: 'https://skilldrills.online/es/drills/motor/movement-speed/rapid-tapping' },
+    { '@type': 'ListItem', position: 4, name: 'CPS Test (Clicks por Segundo)', item: 'https://skilldrills.online/es/drills/motor/movement-speed/rapid-tapping' },
   ],
 };
 
 const softwareApplicationSchema = {
   '@context': 'https://schema.org',
   '@type': 'SoftwareApplication', "sameAs": ["https://en.wikipedia.org/wiki/Fine_motor_skill"],
-  name: 'Test de CPS – Medidor de Clicks Por Segundo y Velocidad de Clic',
-  alternateName: ['Test de CPS', 'CPS Test', 'Contador de Clics', 'Clicks Por Segundo Test', 'Velocidad de Clic'],
+  name: 'CPS Test – Medidor de Clicks por Segundo',
+  alternateName: ['CPS Test', 'Test de CPS', 'Test de clicks', 'Contador de clicks por segundo'],
   applicationCategory: 'HealthApplication',
   operatingSystem: 'All',
   offers: { '@type': 'Offer', price: '0', priceCurrency: 'EUR' },
   description:
-    'Herramienta web interactiva y gratuita para medir clicks por segundo (CPS) y cadencia muscular. Evalúa pulsación de un solo dedo, jitter clicking y butterfly clicking contra una tasa de encogimiento dinámico en 45 segundos.',
+    'CPS Test web gratuito para medir clicks por segundo (CPS) durante 45 segundos. Sirve para pulsación de un solo dedo, jitter clicking y butterfly clicking contra una esfera que se encoge cada vez más rápido.',
   url: 'https://skilldrills.online/es/drills/motor/movement-speed/rapid-tapping',
   publisher: { '@type': 'Organization', name: 'SkillDrills', url: 'https://skilldrills.online' },
   inLanguage: 'es-ES',
-  dateModified: '2026-09-20',
+  dateModified: '2026-11-09',
 };
 
 const webApplicationSchema = {
   '@context': 'https://schema.org',
   '@type': 'WebApplication',
-  name: 'Test de CPS Online',
-  alternateName: ['Test de CPS', 'Contador de Clics', 'Clicks Por Segundo'],
+  name: 'CPS Test Online',
+  alternateName: ['Test de CPS', 'Test de clicks', 'Clicks por segundo'],
   applicationCategory: 'GameApplication',
   operatingSystem: 'All',
   browserRequirements: 'Navegador moderno compatible con HTML5 Canvas y eventos de puntero de alta frecuencia',
   offers: { '@type': 'Offer', price: '0', priceCurrency: 'EUR' },
   url: 'https://skilldrills.online/es/drills/motor/movement-speed/rapid-tapping',
   inLanguage: 'es-ES',
-  dateModified: '2026-09-20',
+  dateModified: '2026-11-09',
 };
 
 const videoGameSchema = {
   '@context': 'https://schema.org',
   '@type': 'VideoGame',
   inLanguage: 'es-ES',
-  name: 'Test de CPS – Test de Velocidad de Clics y Clics por Segundo',
+  name: 'CPS Test – Test de clicks por segundo',
   url: 'https://skilldrills.online/es/drills/motor/movement-speed/rapid-tapping',
-  description: 'Test de CPS – Test de Velocidad de Clics y Clics por Segundo',
+  description: 'CPS Test – Test de clicks por segundo',
   genre: ['Clicker Game', 'Action', 'Esports Training'],
   gamePlatform: ['Web Browser', 'Desktop', 'Mobile'],
   applicationCategory: 'Game',
@@ -122,14 +120,14 @@ const faqSchema = {
   '@context': 'https://schema.org',
   '@type': 'FAQPage',
   inLanguage: 'es-ES',
-  dateModified: '2026-09-20',
+  dateModified: '2026-11-09',
   mainEntity: [
     {
       '@type': 'Question',
-      name: '¿Qué es un test de CPS (Clicks Por Segundo)?',
+      name: '¿Qué es un CPS Test (clicks por segundo)?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Un test de CPS es una prueba motora digital que mide la cantidad exacta de clics de ratón o pulsaciones en pantalla ejecutadas en un segundo. Evalúa la velocidad de disparo neuromuscular de la corteza motora, la frecuencia oscilatoria de los tendones de los dedos y la resistencia muscular del antebrazo.',
+        text: 'Un CPS Test (o test de CPS) mide cuántos clicks de ratón o toques en pantalla haces por segundo. Aquí haces clic durante 45 segundos sobre la esfera central; solo cuentan los clicks sobre la esfera, y tu CPS promedio es el total de clicks dividido entre los segundos transcurridos.',
       },
     },
     {
@@ -137,7 +135,7 @@ const faqSchema = {
       name: '¿Cuál es el promedio normal de CPS para jugadores casuales y competitivos?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Un usuario casual promedio alcanza entre 5,0 y 6,5 CPS con pulsación estándar de un solo dedo. Jugadores experimentados registran entre 8,0 y 10,5 CPS con buena técnica, y técnicas como jitter clicking o butterfly clicking permiten registrar valores más altos, que dependen del dispositivo y de la técnica.',
+        text: 'No hay una estadística oficial; como referencia orientativa, la pulsación estándar de un solo dedo ronda 5 a 7 CPS. Jugadores experimentados registran entre 8,0 y 10,5 CPS con buena técnica, y técnicas como jitter clicking o butterfly clicking permiten registrar valores más altos, que dependen del dispositivo y de la técnica.',
       },
     },
     {
@@ -198,10 +196,10 @@ const faqSchema = {
     },
     {
       '@type': 'Question',
-      name: '¿Cómo calcula este test de CPS la tasa y la dificultad dinámica?',
+      name: '¿Cómo calcula este CPS Test los clicks por segundo y la dificultad?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'El drill muestrea cada clic registrado mediante event.timeStamp de alta resolución (performance.now()). La tasa de encogimiento se acelera conforme aumenta tu puntuación hasta +600 píxeles/segundo, exigiendo una cadencia constante para mantener la esfera inflada.',
+        text: 'Cada click sobre la esfera se registra con performance.now(). El CPS promedio es clicks ÷ segundos transcurridos, y el contador en directo muestra los clicks de los últimos 2 segundos ÷ 2. Cada click agranda la esfera, cada 10 clicks suman 1 punto y cada 5 puntos la esfera se encoge más rápido (hasta 600 píxeles/segundo). Si se encoge del todo, vuelve a un tamaño pequeño con aviso de penalización, sin restar puntos. Solo cuentan ratón y toques: el teclado no suma clicks.',
       },
     },
   ],
@@ -211,9 +209,9 @@ const howToSchema = {
   '@context': 'https://schema.org',
   '@type': 'HowTo',
   inLanguage: 'es-ES',
-  dateModified: '2026-09-20',
-  name: 'Test de CPS – Test de Velocidad de Clics y Clics por Segundo',
-  description: 'Test de CPS – Test de Velocidad de Clics y Clics por Segundo',
+  dateModified: '2026-11-09',
+  name: 'CPS Test – Test de clicks por segundo',
+  description: 'CPS Test – Test de clicks por segundo',
   step: [
     {
       '@type': 'HowToStep',
@@ -239,8 +237,8 @@ const howToSchema = {
     {
       '@type': 'HowToStep',
       position: 4,
-      name: 'Analizar CPS promedio y ráfaga máxima',
-      text: 'Comprueba tu promedio de clics por segundo (CPS), ráfaga de 5 segundos y consistencia en la tarjeta de resultados.',
+      name: 'Analizar CPS promedio y mejor CPS',
+      text: 'Comprueba en la tarjeta de resultados tu promedio de clicks por segundo (CPS), el total de clicks, la puntuación, la velocidad de encogimiento alcanzada y tu mejor CPS.',
       url: 'https://skilldrills.online/es/drills/motor/movement-speed/rapid-tapping#step-4'
     }
   ],
@@ -251,14 +249,14 @@ const guideProps = {
   intro: {
     title: 'Medición de la velocidad de clic y fundamentación científica',
     paragraphs: [
-      'El test de CPS (Clicks Por Segundo) mide cuántos clics de ratón puedes ejecutar en un segundo. La pulsación sostenida con un solo dedo alcanza típicamente entre 5 y 7 clics por segundo, respaldado en la norma neuropsicológica de 50 a 55 pulsaciones en 10 segundos para el dedo índice dominante en adultos saludables (Halstead, 1947; Todor & Kyprie, 1980). Las ráfagas rápidas que superan este umbral funcionan como secuencias motoras preprogramadas en circuito abierto (Keele, 1968).',
+      'El CPS Test mide cuántos clicks por segundo puedes hacer con el ratón; este test de clicks dura 45 segundos y muestra tu CPS promedio y el CPS en directo de los últimos 2 segundos. La pulsación sostenida con un solo dedo alcanza típicamente entre 5 y 7 clics por segundo, respaldado en la norma neuropsicológica de 50 a 55 pulsaciones en 10 segundos para el dedo índice dominante en adultos saludables (Halstead, 1947; Todor & Kyprie, 1980). Las ráfagas rápidas que superan este umbral funcionan como secuencias motoras preprogramadas en circuito abierto (Keele, 1968).',
       'Precisión de la medición y sincronización de pantalla: el temporizador utiliza performance.now() del navegador con resolución de ~1 ms. Los monitores actualizan fotogramas a 16,7 ms (60 Hz), 6,9 ms (144 Hz) o 4,1 ms (240 Hz, Woods et al., 2015), mientras que la tasa de sondeo del ratón (polling rate) introduce entre 1 y 8 ms. Variaciones inferiores a 5 ms son ruido de muestreo instrumental. SkillDrills almacena todos los registros localmente en el navegador.',
     ],
   },
   benchmark: {
-    title: 'Clasificación de CPS & Tabla de Etapas de Práctica',
-    description: 'Etapas editoriales de práctica para comparar tus propias sesiones; no son estadísticas de población ni normas clínicas. Baremos objetivos para interpretar tu velocidad de pulsación. Las categorías de un solo dedo se basan en la literatura de motricidad neurofisiológica (Halstead 1947; Todor & Kyprie 1980), mientras que los rangos de jitter y butterfly reflejan datos empíricos de competidores de esports.',
-    columns: ['Nivel', 'Título de Rango', 'CPS Promedio', 'Pico (5s)', 'Técnica de Clic', 'Clasificación'],
+    title: 'Etapas de práctica de CPS (SkillDrills)',
+    description: 'Etapas de práctica definidas por SkillDrills para comparar tus propias sesiones; no son normas de investigación ni datos de usuarios. Solo el techo de un solo dedo se inspira en estudios de tapping (Halstead 1947; Todor & Kyprie 1980).',
+    columns: ['Nivel', 'Título de Rango', 'CPS Promedio', 'CPS en directo (2 s)', 'Técnica de Clic', 'Clasificación'],
     rows: [
       {
         tier: 'Etapa 1',
@@ -334,8 +332,8 @@ const guideProps = {
 };
 
 const esCopy = {
-  title: "Test de CPS",
-  subtitle: "Mide tus clics por segundo y tu resistencia de clic",
+  title: "CPS Test",
+  subtitle: "Test de clicks por segundo durante 45 segundos",
   desc: "Un test de CPS mide cuántas veces puedes pulsar el botón del ratón en un segundo. El cliqueo estándar con un solo dedo suele rondar los 5–7 clics por segundo (norma de tapping de Halstead, 50–55 golpes/10s). Las puntuaciones superiores provienen de técnicas avanzadas como jitter o butterfly clicking.",
   score: "Puntuación",
   timeLeft: "Tiempo Restante",
@@ -350,7 +348,7 @@ const esCopy = {
   avgCps: "CPS Promedio",
   totalClicks: "Total de Clics",
   maxDifficulty: "Dificultad Máx.",
-  peakCps: "CPS Máximo",
+  peakCps: "Mejor CPS",
   newBest: "NUEVO RÉCORD",
   rulesTitle: "Instrucciones del Ejercicio y Sistema de Puntos",
   rulesItems: [

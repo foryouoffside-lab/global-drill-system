@@ -12,16 +12,16 @@ import { pickSources } from '@/lib/drillSources';
 // ============================================================
 
 export const metadata = {
-  title: "Aim Trainer Online Grátis | Precisão do Mouse | SkillDrills",
-  description: "Aim trainer grátis no navegador: teste a precisão do mouse, a aquisição de alvos e a velocidade de clique para jogos FPS.",
-  keywords: ['aim trainer', 'aim trainer online', 'aim trainer grátis', 'precisão do mouse', 'aquecer a mira', 'mira no Valorant', 'melhorar a mira no CS2'],
+  title: "Aim Trainer Online Grátis | Clique nos Alvos | SkillDrills",
+  description: "Aim trainer grátis no navegador: clique em dois alvos em movimento antes que sumam, acumule combos e veja sua taxa de acerto. Sem download e sem cadastro.",
+  keywords: ['aim trainer', 'aim trainer online', 'aim trainer grátis', 'aim trainer no navegador', 'aquecer a mira'],
   alternates: {
     canonical: 'https://skilldrills.online/pt/drills/motor/hand-eye-coordination/aim-trainer',
     languages: getAlternateLanguages('/drills/motor/hand-eye-coordination/aim-trainer'),
   },
   openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
-    title: 'Aim Trainer Online Grátis | Precisão do Mouse | SkillDrills',
-    description: 'Aim trainer grátis: acerte alvos móveis e refine a precisão do mouse no navegador.',
+    title: 'Aim Trainer Online Grátis | Clique nos Alvos | SkillDrills',
+    description: 'Aim trainer grátis: clique em dois alvos em movimento antes que sumam e veja sua taxa de acerto.',
     url: 'https://skilldrills.online/pt/drills/motor/hand-eye-coordination/aim-trainer',
     siteName: 'SkillDrills',
     locale: 'pt_BR',
@@ -29,8 +29,8 @@ export const metadata = {
   },
   twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: 'summary_large_image',
-    title: 'Aim Trainer Online Grátis | Precisão do Mouse | SkillDrills',
-    description: 'Aim trainer FPS no navegador para aprimorar micro-flicks e precisão do mouse.',
+    title: 'Aim Trainer Online Grátis | Clique nos Alvos | SkillDrills',
+    description: 'Aim trainer online no navegador: alvos que ficam menores e mais rápidos a cada nível.',
   },
   robots: { index: true, follow: true },
 };
@@ -45,7 +45,7 @@ const breadcrumbSchema = {
     { '@type': 'ListItem', position: 2, name: 'Central de Treinos', item: 'https://skilldrills.online/pt/drills' },
     { '@type': 'ListItem', position: 3, name: 'Controle Motor & Precisão', item: 'https://skilldrills.online/pt/drills/motor' },
     { '@type': 'ListItem', position: 4, name: 'Coordenação Olho-Mão', item: 'https://skilldrills.online/pt/drills/motor' },
-    { '@type': 'ListItem', position: 5, name: 'Treino de Mira', item: 'https://skilldrills.online/pt/drills/motor/hand-eye-coordination/aim-trainer' },
+    { '@type': 'ListItem', position: 5, name: 'Aim Trainer', item: 'https://skilldrills.online/pt/drills/motor/hand-eye-coordination/aim-trainer' },
   ],
 };
 
@@ -53,13 +53,13 @@ const softwareApplicationSchema = {
   '@context': 'https://schema.org',
   '@type': 'SoftwareApplication', "sameAs": ["https://en.wikipedia.org/wiki/Fitts%27s_law", "https://en.wikipedia.org/wiki/Hand%E2%80%93eye_coordination"],
   inLanguage: 'pt-BR',
-  name: 'Treino de Mira Online – Aim Trainer Grátis FPS',
-  alternateName: ['Treino de Mira', 'Aim Trainer', 'Teste de Mira', 'Aim Trainer Online'],
+  name: 'Aim Trainer Online Grátis',
+  alternateName: ['Aim Trainer', 'Aim Trainer Online', 'Aim Trainer Grátis'],
   applicationCategory: 'HealthApplication',
   operatingSystem: 'All',
   offers: { '@type': 'Offer', price: '0', priceCurrency: 'BRL' },
   description:
-    'Ferramenta gratuita de treino de mira e precisão de mouse direto no navegador, projetada para jogadores competitivos de FPS.',
+    'Aim trainer gratuito no navegador: clique em dois alvos em movimento antes que desapareçam.',
   browserRequirements: 'Navegador web moderno com suporte a JavaScript e Pointer Lock (Chrome, Edge, Safari, Firefox)',
   softwareVersion: '2.0',
 };
@@ -68,10 +68,10 @@ const webAppSchema = {
   '@context': 'https://schema.org',
   '@type': 'WebApplication',
   inLanguage: 'pt-BR',
-  name: 'Treino de Mira Online — Aim Trainer Grátis FPS | SkillDrills',
+  name: 'Aim Trainer Online Grátis | SkillDrills',
   url: 'https://skilldrills.online/pt/drills/motor/hand-eye-coordination/aim-trainer',
   description:
-    'Simulador dinâmico de treino de mira para jogos de tiro. Elimine alvos móveis com progressão contínua de dificuldade.',
+    'Aim trainer com alvos em movimento que ficam menores e mais rápidos a cada nível.',
   applicationCategory: 'EducationalApplication',
   operatingSystem: 'All',
   browserRequirements: 'Requer navegador moderno com suporte a JavaScript e Pointer Lock.',
@@ -87,12 +87,12 @@ const videoGameSchema = {
   "@context": "https://schema.org",
   "@type": "VideoGame",
   "inLanguage": "pt-BR",
-  "name": "Treino de Mira Online (Aim Trainer)",
+  "name": "Aim Trainer Online",
   "url": "https://skilldrills.online/pt/drills/motor/hand-eye-coordination/aim-trainer",
   "description": "Aim trainer 2D gratuito no navegador para jogos FPS: treine aquisição de alvo, precisão do mouse e velocidade de clique.",
   "dateModified": "2026-11-09",
   "gamePlatform": "Web Browser",
-  "genre": ["Aim Trainer", "FPS Training", "Hand-Eye Coordination", "Reaction Speed"],
+  "genre": ["Aim Trainer", "FPS Training", "Hand-Eye Coordination"],
   "playMode": "SinglePlayer",
   "applicationCategory": "Game",
   "operatingSystem": "Web Browser",
@@ -112,7 +112,7 @@ const howToSchema = {
       "url": "https://skilldrills.online/pt/drills/motor/hand-eye-coordination/aim-trainer#step-1",
       
       name: 'Iniciar o Treino',
-      text: 'Clique em "Iniciar Treino" para ativar a tela cheia e travar o cursor do mouse no centro da tela.',
+      text: 'Clique em "Iniciar Treino": o cursor é travado (Pointer Lock) e, após 3 segundos de contagem, o cronômetro começa em 45 segundos. Esc encerra a qualquer momento.',
     },
     {
       '@type': 'HowToStep',
@@ -120,7 +120,7 @@ const howToSchema = {
       "url": "https://skilldrills.online/pt/drills/motor/hand-eye-coordination/aim-trainer#step-2",
       
       name: 'Identificar o Alvo',
-      text: 'Localize visualmente o alvo móvel recém-gerado no menor tempo possível.',
+      text: 'Sempre há dois alvos na tela. Eles se movem em direções aleatórias, quicam nas bordas e somem depois de pouco tempo.',
     },
     {
       '@type': 'HowToStep',
@@ -128,7 +128,7 @@ const howToSchema = {
       "url": "https://skilldrills.online/pt/drills/motor/hand-eye-coordination/aim-trainer#step-3",
       
       name: 'Flick Rápido e Clique Central',
-      text: 'Desloque o mouse em direção ao alvo e desacelere sobre o centro antes que ele expire.',
+      text: 'Coloque a mira sobre um alvo e clique. Acerto dá pontos e +2 s (máximo 60 s); clique no vazio ou alvo perdido zera o combo e tira 1 s.',
     },
     {
       '@type': 'HowToStep',
@@ -136,98 +136,60 @@ const howToSchema = {
       "url": "https://skilldrills.online/pt/drills/motor/hand-eye-coordination/aim-trainer#step-4",
       
       name: 'Acumular Combos e Subir de Nível',
-      text: 'Acerte alvos sucessivos para alcançar o multiplicador máximo de 3.0x e avançar de fase.',
+      text: 'Acertos seguidos sobem o multiplicador até 3,0×. O nível sobe a cada 1.750 pontos e a partida termina quando o tempo chega a 0.',
     },
   ],
 };
+
+const faqs = [
+  {
+    q: "O que é um Aim Trainer e como funciona este?",
+    a: "Um aim trainer mede a rapidez e a precisão com que você clica em alvos com o mouse. Aqui sempre há dois alvos em movimento na tela. O tempo começa em 45 segundos: cada acerto soma +2 s (máximo 60 s), cada clique errado ou alvo perdido tira 1 s, e a partida acaba em 0. Grátis, sem download e sem cadastro.",
+  },
+  {
+    q: "Como a pontuação é calculada?",
+    a: "Cada acerto vale 100 pontos multiplicados pelo combo (1,1× a partir de 3 acertos seguidos até 3,0× a partir de 50) e por um bônus de nível. Clique errado ou alvo perdido zera o combo.",
+  },
+  {
+    q: "Como a dificuldade aumenta?",
+    a: "O nível sobe a cada 1.750 pontos, sem limite. Até o nível 15, o raio dos alvos cai de 26 px para 12 px (até 8 px com combo alto), a velocidade sobe de 80 px/s para 370 px/s e o tempo de vida de cada alvo cai de 2,8 s para 0,4 s.",
+  },
+  {
+    q: "O que acontece quando eu erro?",
+    a: "O combo volta para 1,0× e você perde 1 segundo. Clicar sem parar não compensa.",
+  },
+  {
+    q: "Como a Lei de Fitts se aplica a este aim trainer?",
+    a: "A Lei de Fitts relaciona o tempo de movimento à razão entre distância e tamanho do alvo (Índice de Dificuldade). Como os alvos ficam menores a cada nível, o índice sobe e o mouse precisa de controle mais fino.",
+  },
+  {
+    q: "Este aim trainer ajuda no Valorant ou no CS2?",
+    a: "Pode servir como aquecimento complementar. Ele treina cliques rápidos em alvos 2D em movimento, não a mira 3D de um jogo; não há garantia de melhora dentro do jogo.",
+  },
+  {
+    q: "Qual é uma boa pontuação no Aim Trainer?",
+    a: "Pelas faixas editoriais da SkillDrills: menos de 8.000 pontos iniciante, 8.000–17.999 em desenvolvimento, 18.000–31.999 boa, 32.000–47.999 alta e 48.000 ou mais muito alta. São referências de treino, não estatísticas de usuários.",
+  },
+  {
+    q: "Posso ajustar a sensibilidade do mouse?",
+    a: "Sim, pelo multiplicador de sensibilidade nas configurações dos treinos. Não existe conversão automática do seu cm/360 do jogo; ajuste pela sensação.",
+  },
+  {
+    q: "Funciona no celular ou em tela touch?",
+    a: "Não. O aim trainer usa Pointer Lock e precisa de um mouse em um navegador de computador.",
+  },
+];
 
 const faqSchema = {
   '@context': 'https://schema.org',
   '@type': 'FAQPage',
   inLanguage: 'pt-BR',
   dateModified: '2026-11-09',
-  mainEntity: [
-    {
-      '@type': 'Question',
-      name: 'O que é um Aim Trainer e como funciona o treino de mira?',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: 'Um Aim Trainer é um simulador que mede e treina a rapidez e precisão com que você desloca a mira até um alvo e atira. Conforme seu desempenho melhora, os alvos diminuem e aceleram.',
-      },
-    },
-    {
-      '@type': 'Question',
-      name: 'Como a Lei de Fitts se aplica ao treino de mira?',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: 'A Lei de Fitts determina que o tempo de movimento depende do equilíbrio entre a distância e a largura do alvo. Alvos menores impõem maior dificuldade e exigem refinamento motor fino.',
-      },
-    },
-    {
-      '@type': 'Question',
-      name: 'O que é o modelo bifásico do movimento de mira?',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: 'Todo movimento de mira veloz é composto por uma fase inicial balística rápida (80–90% da distância) e uma fase terminal de desaceleração guiada por feedback visual para o clique exato.',
-      },
-    },
-    {
-      '@type': 'Question',
-      name: 'Este treino melhora a mira no Valorant e CS2?',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: 'Sim. Tiros na cabeça e trocas de tiro competitivas dependem fortemente de micro-ajustes rápidos de 5 a 15 graus, habilidade motora isolada e calibrada neste exercício.',
-      },
-    },
-    {
-      '@type': 'Question',
-      name: 'Qual é uma boa pontuação no Treino de Mira?',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: 'Iniciantes costumam marcar até 8.000 pontos. Jogadores intermediários alcançam entre 18.000 e 31.999 pontos, e atletas competitivos de alto nível superam 48.000 pontos com precisão acima de 95%.',
-      },
-    },
-    {
-      '@type': 'Question',
-      name: 'Como funciona a progressão contínua de dificuldade?',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: 'A cada 1.750 pontos você sobe de nível. O raio dos alvos cai de 26px para 8px, a velocidade sobe de 80px/s para 370px/s e o tempo de vida do alvo diminui de 2,8s para 0,40s.',
-      },
-    },
-    {
-      '@type': 'Question',
-      name: 'Tiros errados causam penalidade?',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: 'Erros e alvos perdidos resetam a sequência de combo para 1.0x, incentivando disparos calculados em vez de cliques desenfreados.',
-      },
-    },
-    {
-      '@type': 'Question',
-      name: 'Posso usar a mesma sensibilidade do meu jogo?',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: 'Sim. O treino utiliza entrada raw com Pointer Lock e se integra ao controle global de sensibilidade, permitindo treinar com o mesmo cm/360 do seu jogo favorito.',
-      },
-    },
-    {
-      '@type': 'Question',
-      name: 'Monitores com alta taxa de atualização fazem diferença?',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: 'Sim. Monitores de 144Hz ou 240Hz reduzem a defasagem entre o movimento físico e a imagem em tela em cerca de 10–12 ms, facilitando correções visuais precisas.',
-      },
-    },
-    {
-      '@type': 'Question',
-      name: 'Qual rotina de aquecimento traz melhores resultados?',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: 'Um aquecimento de 10 a 15 minutos diários mantendo precisão acima de 90% antes das partidas ranqueadas estimula o córtex motor e proporciona consistência de mira.',
-      },
-    },
-  ],
+  mainEntity: faqs.map((f) => ({
+    '@type': 'Question',
+    name: f.q,
+    acceptedAnswer: { '@type': 'Answer', text: f.a },
+  })),
 };
 
 export default function AimTrainerPortuguesePage() {
@@ -248,8 +210,8 @@ export default function AimTrainerPortuguesePage() {
       <AimTrainerClient
         copy={{
           title: 'Aim Trainer Online Grátis',
-          subtitle: 'Alvos móveis • Precisão do mouse • Treino de flick',
-          caption: 'Mire e acerte os alvos em movimento o mais rápido e preciso possível antes que desapareçam. Baseado na Lei de Fitts.',
+          subtitle: 'Dois alvos em movimento • Taxa de acerto • Combos',
+          caption: 'Clique nos dois alvos em movimento antes que sumam. Acerto +2 s, erro ou alvo perdido -1 s.',
           startButtonText: 'INICIAR TREINO',
           playAgainText: 'Jogar Novamente',
           shareText: 'Compartilhar Pontuação',
@@ -260,8 +222,8 @@ export default function AimTrainerPortuguesePage() {
             {
               num: "1",
               text: "Acerto no Alvo",
-              highlight: "+100 PTS / +0,6s",
-              result: "Detecte e clique nos alvos móveis"
+              highlight: "+100 PTS / +2 s (máx. 60 s)",
+              result: "× multiplicador de combo"
             },
             {
               num: "2",
@@ -279,7 +241,7 @@ export default function AimTrainerPortuguesePage() {
               num: "4",
               text: "Erro e Expiração",
               highlight: "Reset de Combo",
-              result: "Penalidade deduz -0,8s"
+              result: "-1 s no cronômetro"
             }
           ]
         }}
@@ -287,11 +249,11 @@ export default function AimTrainerPortuguesePage() {
 
       <DrillGuide
         eyebrow="Psicofísica do Controle Motor & Interação Humano-Computador (IHC)"
-        title="A Ciência do Treino de Mira: Lei de Fitts e Precisão Motora Visuomotora"
+        title="A Ciência do Aim Trainer: Lei de Fitts e Controle do Mouse"
         sources={sources}
       >
         <p>
-          A aquisição de alvos com mouse é uma das tarefas de coordenação motora fina mais exigentes estudadas na interação humano-computador (IHC) e na psicofísica esportiva. Seja para dominar ângulos em jogos de tiro tático ou em cirurgias guiadas por vídeo, o sistema neuromuscular humano precisa converter estímulos visuais bidimensionais em contrações físicas rápidas e submilimétricas do punho e antebraço (Fitts, 1954; MacKenzie, 1992).
+          O <strong>Aim Trainer</strong> da SkillDrills é grátis e roda no navegador: dois alvos em movimento para clicar antes que sumam. A aquisição de alvos com mouse é uma das tarefas de coordenação motora fina mais exigentes estudadas na interação humano-computador (IHC) e na psicofísica esportiva. Seja para dominar ângulos em jogos de tiro tático ou em cirurgias guiadas por vídeo, o sistema neuromuscular humano precisa converter estímulos visuais bidimensionais em contrações físicas rápidas e submilimétricas do punho e antebraço (Fitts, 1954; MacKenzie, 1992).
         </p>
 
         <h3>A Lei de Fitts e o Índice de Dificuldade (ID)</h3>
@@ -302,7 +264,7 @@ export default function AimTrainerPortuguesePage() {
           MT = a + b · log₂(2D / W) = a + b · ID
         </div>
         <p>
-          O componente logarítmico é denominado <strong>Índice de Dificuldade (ID)</strong>. No <em>Treino de Mira</em> da SkillDrills, conforme você progride, o tamanho dos alvos diminui de 26 para 8 pixels enquanto as distâncias e velocidades aumentam, exigindo respostas motoras de altíssima fidelidade (Fitts, 1954; MacKenzie, 1992).
+          O componente logarítmico é denominado <strong>Índice de Dificuldade (ID)</strong>. No <em>Aim Trainer</em> da SkillDrills, o raio dos alvos cai de 26 para 12 pixels até o nível 15 (até 8 pixels com combo alto) e a velocidade aumenta; a largura menor (\(W\)) eleva o ID (Fitts, 1954; MacKenzie, 1992).
         </p>
 
         <h3>O Modelo de Dois Componentes do Movimento de Mira (Woodworth 1899; Elliott et al. 2010)</h3>
@@ -323,12 +285,12 @@ export default function AimTrainerPortuguesePage() {
 
         <h3>Latenência de Entrada e Frequência de Atualização</h3>
         <p>
-          Para o clique perfeito, a latência do sistema deve ser mínima. Conforme documentado por Woods et al. (2015), os atrasos neurosensoriais somam entre 130 e 190 ms. Monitores de 144Hz ou 240Hz reduzem o tempo de exibição para 6,9 ms ou 4,1 ms, proporcionando retornos visuais muito mais rápidos na fase crítica de finalização da mira.
+          Para o clique perfeito, a latência do sistema deve ser mínima. Conforme documentado por Woods et al. (2015), os atrasos neurosensoriais somam entre 130 e 190 ms. Monitores de 144Hz ou 240Hz reduzem o tempo de exibição para 6,9 ms ou 4,1 ms. Compare suas partidas sempre no mesmo equipamento e com as mesmas configurações.
         </p>
 
-        <h3>Tabela de Desempenho e Classificação no Treino de Mira</h3>
+        <h3>Faixas de Pontuação no Aim Trainer (referência SkillDrills)</h3>
         <p>
-          Faixas editoriais para comparar suas próprias sessões de 45 segundos, não percentis de população:
+          Faixas editoriais da SkillDrills para comparar suas próprias partidas, que começam com 45 segundos (+2 s por acerto, máximo 60 s). Não são percentis de população nem ranks de jogos:
         </p>
         <div className="overflow-x-auto my-4">
           <table className="w-full text-left border-collapse border border-white/10 text-xs sm:text-sm">
@@ -402,66 +364,12 @@ export default function AimTrainerPortuguesePage() {
 
         <h3>Perguntas Frequentes (FAQ)</h3>
         <div className="space-y-4 my-4">
-          <div className="border-b border-white/10 pb-3">
-            <h4 className="font-bold text-white text-sm mb-1">O que é um Aim Trainer e como funciona o treino de mira?</h4>
-            <p className="text-xs sm:text-sm text-slate-300">
-              Um Aim Trainer é um simulador que mede e treina a rapidez e precisão com que você desloca a mira até um alvo e atira. Conforme seu desempenho melhora, os alvos diminuem e aceleram.
-            </p>
-          </div>
-          <div className="border-b border-white/10 pb-3">
-            <h4 className="font-bold text-white text-sm mb-1">Como a Lei de Fitts se aplica ao treino de mira?</h4>
-            <p className="text-xs sm:text-sm text-slate-300">
-              A Lei de Fitts determina que o tempo de movimento depende do equilíbrio entre a distância e a largura do alvo. Alvos menores impõem maior dificuldade e exigem refinamento motor fino.
-            </p>
-          </div>
-          <div className="border-b border-white/10 pb-3">
-            <h4 className="font-bold text-white text-sm mb-1">O que é o modelo bifásico do movimento de mira?</h4>
-            <p className="text-xs sm:text-sm text-slate-300">
-              Todo movimento de mira veloz é composto por uma fase inicial balística rápida (80–90% da distância) e uma fase terminal de desaceleração guiada por feedback visual para o clique exato.
-            </p>
-          </div>
-          <div className="border-b border-white/10 pb-3">
-            <h4 className="font-bold text-white text-sm mb-1">Este treino melhora a mira no Valorant e CS2?</h4>
-            <p className="text-xs sm:text-sm text-slate-300">
-              Sim. Tiros na cabeça e trocas de tiro competitivas dependem fortemente de micro-ajustes rápidos de 5 a 15 graus, habilidade motora isolada e calibrada neste exercício.
-            </p>
-          </div>
-          <div className="border-b border-white/10 pb-3">
-            <h4 className="font-bold text-white text-sm mb-1">Qual é uma boa pontuação no Treino de Mira?</h4>
-            <p className="text-xs sm:text-sm text-slate-300">
-              Iniciantes costumam marcar até 8.000 pontos. Jogadores intermediários alcançam entre 18.000 e 31.999 pontos, e atletas competitivos de alto nível superam 48.000 pontos com precisão acima de 95%.
-            </p>
-          </div>
-          <div className="border-b border-white/10 pb-3">
-            <h4 className="font-bold text-white text-sm mb-1">Como funciona a progressão contínua de dificuldade?</h4>
-            <p className="text-xs sm:text-sm text-slate-300">
-              A cada 1.750 pontos você sobe de nível. O raio dos alvos cai de 26px para 8px, a velocidade sobe de 80px/s para 370px/s e o tempo de vida do alvo diminui de 2,8s para 0,40s.
-            </p>
-          </div>
-          <div className="border-b border-white/10 pb-3">
-            <h4 className="font-bold text-white text-sm mb-1">Tiros errados causam penalidade?</h4>
-            <p className="text-xs sm:text-sm text-slate-300">
-              Erros e alvos perdidos resetam a sequência de combo para 1.0x, incentivando disparos calculados em vez de cliques desenfreados.
-            </p>
-          </div>
-          <div className="border-b border-white/10 pb-3">
-            <h4 className="font-bold text-white text-sm mb-1">Posso usar a mesma sensibilidade do meu jogo?</h4>
-            <p className="text-xs sm:text-sm text-slate-300">
-              Sim. O treino utiliza entrada raw com Pointer Lock e se integra ao controle global de sensibilidade, permitindo treinar com o mesmo cm/360 do seu jogo favorito.
-            </p>
-          </div>
-          <div className="border-b border-white/10 pb-3">
-            <h4 className="font-bold text-white text-sm mb-1">Monitores com alta taxa de atualização fazem diferença?</h4>
-            <p className="text-xs sm:text-sm text-slate-300">
-              Sim. Monitores de 144Hz ou 240Hz reduzem a defasagem entre o movimento físico e a imagem em tela em cerca de 10–12 ms, facilitando correções visuais precisas.
-            </p>
-          </div>
-          <div className="border-b border-white/10 pb-3">
-            <h4 className="font-bold text-white text-sm mb-1">Qual rotina de aquecimento traz melhores resultados?</h4>
-            <p className="text-xs sm:text-sm text-slate-300">
-              Um aquecimento de 10 a 15 minutos diários mantendo precisão acima de 90% antes das partidas ranqueadas estimula o córtex motor e proporciona consistência de mira.
-            </p>
-          </div>
+          {faqs.map((f) => (
+            <div key={f.q} className="border-b border-white/10 pb-3">
+              <h4 className="font-bold text-white text-sm mb-1">{f.q}</h4>
+              <p className="text-xs sm:text-sm text-slate-300">{f.a}</p>
+            </div>
+          ))}
         </div>
       </DrillGuide>
       <RelatedDrills />

@@ -91,7 +91,7 @@ const softwareApplicationSchema = {
   url: 'https://skilldrills.online/ko/drills/motor/movement-speed/rapid-tapping',
   publisher: { '@type': 'Organization', name: 'SkillDrills', url: 'https://skilldrills.online' },
   inLanguage: 'ko-KR',
-  dateModified: '2026-09-20',
+  dateModified: '2026-11-09',
 };
 
 const webApplicationSchema = {
@@ -105,7 +105,7 @@ const webApplicationSchema = {
   offers: { '@type': 'Offer', price: '0', priceCurrency: 'KRW' },
   url: 'https://skilldrills.online/ko/drills/motor/movement-speed/rapid-tapping',
   inLanguage: 'ko-KR',
-  dateModified: '2026-09-20',
+  dateModified: '2026-11-09',
 };
 
 const videoGameSchema = {
@@ -126,14 +126,14 @@ const faqSchema = {
   '@context': 'https://schema.org',
   '@type': 'FAQPage',
   inLanguage: 'ko-KR',
-  dateModified: '2026-09-20',
+  dateModified: '2026-11-09',
   mainEntity: [
     {
       '@type': 'Question',
       name: 'CPS 측정(초당 클릭 수 테스트)이란 무엇인가요?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'CPS(Clicks Per Second) 측정은 1초 동안 마우스 버튼이나 터치스크린을 몇 번 클릭했는지 재는 테스트입니다. 클릭속도는 손가락 근육의 반복 수축 속도와 지구력에 좌우되며, 이 드릴은 45초 동안의 평균 CPS와 최고 CPS를 보여 줍니다.',
+        text: 'CPS(Clicks Per Second) 측정은 1초 동안 마우스 버튼이나 터치스크린을 몇 번 클릭했는지 재는 테스트입니다. 클릭속도는 손가락 근육의 반복 수축 속도와 지구력에 좌우되며, 이 드릴은 45초 동안의 평균 CPS와 개인 최고 CPS를 보여 줍니다.',
       },
     },
     {
@@ -141,7 +141,7 @@ const faqSchema = {
       name: '일반 사용자와 숙련자의 평균 CPS 기준은 어떻게 되나요?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: '일반 사용자가 편안하게 검지 손가락으로 클릭할 때의 평균 속도는 5.0~6.5 CPS입니다. 게임 숙련자는 단일 클릭으로 8.0~10.5 CPS에 달하며, 마인크래프트 PvP 및 리듬 게임 전문가는 지터 클릭으로 12.0~16.0+ CPS, 버터플라이 클릭으로 16.0~20.0+ CPS를 기록합니다.',
+        text: '공식 통계는 없으며 참고용 기준입니다. 검지로 편하게 클릭하면 대체로 5~7 CPS, 익숙한 게이머는 단일 클릭으로 8~10 CPS 정도입니다. 지터 클릭은 12 CPS 이상, 버터플라이 클릭은 16 CPS 이상이 나오기도 합니다.',
       },
     },
     {
@@ -189,7 +189,7 @@ const faqSchema = {
       name: 'SkillDrills의 45초 CPS 테스트는 어떻게 난이도가 상승하나요?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: '단순 5초 측정기와 달리, 본 훈련은 45초 동안 진행되는 지속력 평가입니다. 타겟 구체를 클릭할 때마다 크기가 커지지만, 점수가 높아질수록 초당 최대 600픽셀까지 타겟이 급격히 축소됩니다. 타겟이 완전히 소멸하면 페널티가 부여되므로 일정한 광클 리듬과 근지구력이 요구됩니다.',
+        text: '단순 5초 측정기와 달리, 본 훈련은 45초 동안 진행되는 지속력 평가입니다. 타겟 구체를 클릭할 때마다 크기가 커지지만, 점수가 높아질수록 초당 최대 600픽셀까지 타겟이 급격히 축소됩니다. 구체 안을 클릭한 횟수만 집계되며, 10번 클릭마다 1점이 오르고 5점마다 축소 속도가 빨라집니다. 타겟이 완전히 사라지면 페널티 효과와 함께 작은 크기로 돌아가지만 점수는 깎이지 않습니다. 그래서 일정한 광클 리듬과 근지구력이 요구됩니다.',
       },
     },
     {
@@ -205,7 +205,7 @@ const faqSchema = {
       name: '스마트폰이나 태블릿 터치스크린에서도 CPS 테스트가 가능한가요?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: '네, 본 드릴은 Pointer Events API를 통해 멀티터치 입력을 완벽히 지원하므로 모바일 기기 화면을 직접 두드려 탭 속도를 측정할 수 있습니다. 모바일 리듬 게임이나 모바일 슈팅 게임을 위한 2핑거 교차 연타 훈련에도 적합합니다.',
+        text: '네, 터치 입력을 지원하므로 모바일 화면 가운데 구체를 직접 두드려 탭 속도(CPS)를 측정할 수 있고, 두 손가락 교차 탭도 한 번씩 집계됩니다. 키보드 입력은 클릭으로 집계되지 않습니다(Esc는 종료만).',
       },
     },
   ],
@@ -215,7 +215,7 @@ const howToSchema = {
   '@context': 'https://schema.org',
   '@type': 'HowTo',
   inLanguage: 'ko-KR',
-  dateModified: '2026-09-20',
+  dateModified: '2026-11-09',
   name: 'CPS 테스트 – 무료 마우스 클릭 속도 측정기 (초당 클릭수)',
   description: 'CPS 테스트 – 무료 마우스 클릭 속도 측정기 (초당 클릭수)',
   step: [
@@ -243,8 +243,8 @@ const howToSchema = {
     {
       '@type': 'HowToStep',
       position: 4,
-      name: '평균 CPS 및 피크 속도 분석',
-      text: '세션 종료 후 평균 CPS(초당 클릭수), 최고 버스트 속도와 등급을 확인합니다.',
+      name: '평균 CPS 및 최고 기록 확인',
+      text: '세션 종료 후 평균 CPS(총 클릭 수 ÷ 경과 초), 총 클릭 수, 점수, 도달한 축소 속도, 등급과 개인 최고 CPS를 확인합니다.',
       url: 'https://skilldrills.online/ko/drills/motor/movement-speed/rapid-tapping#step-4'
     }
   ],
@@ -261,8 +261,8 @@ const guideProps = {
   },
   benchmark: {
     title: 'CPS 등급 기준표(참고용)',
-    description: '본인의 클릭 속도를 가늠하는 참고용 구간입니다. 단일 손가락 기준은 손가락 두드리기 규준(Halstead 1947; Todor & Kyprie 1980)을 따르고, 지터·버터플라이 구간은 일반적으로 알려진 온라인 기록대를 어림잡은 값입니다. SkillDrills 사용자 통계가 아닙니다.',
-    columns: ['등급 티어', '공식 타이틀', '평균 CPS', '순간 최고 CPS (5초)', '타건 기술', '경쟁력 평가'],
+    description: 'SkillDrills가 연습 기준으로 정한 구간입니다. 연구 규준이나 사용자 통계가 아니며, 단일 손가락 상한의 개념만 손가락 두드리기 연구(Halstead 1947; Todor & Kyprie 1980)를 참고했습니다.',
+    columns: ['등급 티어', '공식 타이틀', '평균 CPS', '실시간 CPS (최근 2초)', '타건 기술', '경쟁력 평가'],
     rows: [
       {
         tier: 'Tier 1',
@@ -340,7 +340,7 @@ const guideProps = {
 const koCopy = {
   title: "CPS 측정",
   subtitle: "클릭속도 테스트: 초당 클릭 수(CPS)와 45초 연타 지구력 측정",
-  aboutP1: "CPS 측정은 1초 동안 마우스를 몇 번 클릭하는지 재는 클릭속도 테스트입니다. 이 드릴은 45초 동안 줄어드는 표적을 계속 눌러 평균 CPS와 최고 CPS를 보여 줍니다. 한 손가락 일반 클릭은 대체로 초당 5~7회이고, 지터 클릭이나 버터플라이 클릭 같은 기술을 쓰면 더 높은 수치가 나옵니다. 기록은 같은 마우스와 같은 기기에서 비교하세요.",
+  aboutP1: "CPS 측정은 1초 동안 마우스를 몇 번 클릭하는지 재는 클릭속도 테스트입니다. 이 드릴은 45초 동안 줄어드는 표적을 계속 눌러 평균 CPS와 최근 2초의 실시간 CPS를 보여 줍니다. 한 손가락 일반 클릭은 대체로 초당 5~7회이고, 지터 클릭이나 버터플라이 클릭 같은 기술을 쓰면 더 높은 수치가 나옵니다. 기록은 같은 마우스와 같은 기기에서 비교하세요.",
   desc: "초당 마우스 클릭 수(CPS)를 측정하는 온라인 테스트입니다. 일반적인 단일 손가락 연타는 초당 약 5~7회(할스테드 손가락 두드리기 규준, 50~55회/10초)를 기록하며, 온라인상의 10+ 고득점은 지터 클릭이나 버터플라이 클릭 같은 특수 테크닉을 활용합니다.",
   score: "점수",
   timeLeft: "남은 시간",
@@ -355,7 +355,7 @@ const koCopy = {
   avgCps: "평균 CPS",
   totalClicks: "총 클릭 수",
   maxDifficulty: "최대 난이도",
-  peakCps: "최고 CPS",
+  peakCps: "개인 최고 CPS",
   newBest: "신기록",
   rulesTitle: "훈련 가이드 및 점수 규칙",
   rulesItems: [

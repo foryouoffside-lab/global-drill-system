@@ -7,19 +7,13 @@ import { pickSources } from '@/lib/drillSources';
 
 export const metadata = {
   title: "Aim trainer en ligne | Précision souris | SkillDrills",
-  description: "Entraînez votre visée avec un aim trainer gratuit. Mesurez la précision de la souris, l’acquisition de cible et le rythme des clics.",
+  description: "Aim trainer gratuit en ligne : cliquez deux cibles mobiles avant qu’elles disparaissent et mesurez votre précision souris. Sans téléchargement.",
   keywords: [
+    "aim trainer",
     "aim trainer en ligne",
-    "entraînement à la visée",
-    "test de visée souris",
+    "aim trainer gratuit",
     "précision souris",
-    "entraînement FPS",
-    "exercice de flick",
-    "acquisition de cible",
-    "réflexes souris",
-    "échauffement aim FPS",
-    "visée Valorant",
-    "visée CS2"
+    "échauffement aim"
   ],
   alternates: {
     canonical: "https://skilldrills.online/fr/drills/motor/hand-eye-coordination/aim-trainer",
@@ -31,7 +25,7 @@ export const metadata = {
   },
   openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
     title: "Aim trainer en ligne | Précision souris | SkillDrills",
-    description: "Aim trainer gratuit dans le navigateur pour travailler la visée, les flicks et la précision de souris.",
+    description: "Aim trainer gratuit dans le navigateur : deux cibles mobiles, précision souris et taux de réussite.",
     url: "https://skilldrills.online/fr/drills/motor/hand-eye-coordination/aim-trainer",
     siteName: 'SkillDrills',
     locale: 'fr_FR',
@@ -40,7 +34,7 @@ export const metadata = {
   twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: 'summary_large_image',
     title: "Aim trainer en ligne | Précision souris | SkillDrills",
-    description: "Entraînement FPS dans le navigateur pour améliorer la visée, les micro-flicks et les réflexes.",
+    description: "Aim trainer en ligne : cliquez les cibles mobiles avant leur disparition et mesurez votre précision souris.",
   },
 };
 
@@ -88,7 +82,7 @@ const softwareApplicationSchema = {
     "price": "0",
     "priceCurrency": "USD"
   },
-  "dateModified": "2026-09-20",
+  "dateModified": "2026-11-09",
   "author": {
     "@type": "Organization",
     "name": "SkillDrills"
@@ -101,7 +95,7 @@ const webApplicationSchema = {
   "inLanguage": "fr-FR",
   "name": "Aim Trainer en Ligne",
   "url": "https://skilldrills.online/fr/drills/motor/hand-eye-coordination/aim-trainer",
-  "description": "Entraineur de visee et de precision de souris gratuit dans le navigateur avec difficulte adaptative selon la loi de Fitts.",
+  "description": "Aim trainer gratuit dans le navigateur : des cibles qui deviennent plus petites et plus rapides à chaque niveau.",
   "applicationCategory": "GameApplication",
   "operatingSystem": "All",
   "browserRequirements": "Requires JavaScript. Requires HTML5 Canvas.",
@@ -115,7 +109,7 @@ const webApplicationSchema = {
     "name": "SkillDrills"
   },
   "isAccessibleForFree": true,
-  "dateModified": "2026-09-20"
+  "dateModified": "2026-11-09"
 };
 
 const videoGameSchema = {
@@ -124,8 +118,8 @@ const videoGameSchema = {
   "inLanguage": "fr-FR",
   "name": "Aim Trainer en Ligne",
   "url": "https://skilldrills.online/fr/drills/motor/hand-eye-coordination/aim-trainer",
-  "description": "Jeu de tir et d entrainement a la precision de la souris mesurant la coordination motrice oeil-main et les micro-flicks.",
-  "dateModified": "2026-09-20",
+  "description": "Aim trainer 2D gratuit : cliquez deux cibles mobiles avant leur disparition pour travailler la précision de la souris.",
+  "dateModified": "2026-11-09",
   "gamePlatform": "Web Browser",
   "genre": ["Aim Trainer", "FPS Training", "Hand-Eye Coordination", "Motor Control"],
   "playMode": "SinglePlayer",
@@ -143,132 +137,94 @@ const howToSchema = {
   "@type": "HowTo",
   "inLanguage": "fr-FR",
   "name": "Comment s entrainer a la precision de souris avec Aim Trainer",
-  "description": "Protocole en 4 etapes pour ameliorer la vitesse d acquisition de cibles et la precision des micro-flicks selon la loi de Fitts.",
+  "description": "Comment se déroule une partie de l’aim trainer SkillDrills, en 4 étapes.",
   "step": [
     {
       "@type": "HowToStep",
       "position": 1,
       "url": "https://skilldrills.online/fr/drills/motor/hand-eye-coordination/aim-trainer#step-1",
-      "name": "Verrouiller la saisie de souris",
-      "text": "Cliquez pour activer le verrouillage de pointeur (pointer-lock) et calibrez votre sensibilite physique en cm/360."
+      "name": "Lancer la partie",
+      "text": "Cliquez sur « Lancer » : le pointeur est verrouillé (Pointer Lock), puis après 3 secondes de décompte le chrono démarre à 45 secondes. Échap arrête la partie."
     },
     {
       "@type": "HowToStep",
       "position": 2,
       "url": "https://skilldrills.online/fr/drills/motor/hand-eye-coordination/aim-trainer#step-2",
-      "name": "Executer l impulsion balistique initiale",
-      "text": "Effectuez un flick franc du poignet couvrant 90% de la distance jusqu a la cible sans hesiter."
+      "name": "Repérer les deux cibles",
+      "text": "Deux cibles se déplacent en permanence dans des directions aléatoires, rebondissent sur les bords et disparaissent après un court délai."
     },
     {
       "@type": "HowToStep",
       "position": 3,
       "url": "https://skilldrills.online/fr/drills/motor/hand-eye-coordination/aim-trainer#step-3",
-      "name": "Appliquer la micro-correction terminale",
-      "text": "Ralentissez fluidement aux abords de la cible pour caler le reticule sur le centre exact du cercle."
+      "name": "Viser et cliquer",
+      "text": "Placez le réticule sur une cible et cliquez. Un tir réussi rapporte des points et +2 s (60 s maximum) ; un clic dans le vide ou une cible manquée remet le combo à zéro et coûte 1 s."
     },
     {
       "@type": "HowToStep",
       "position": 4,
       "url": "https://skilldrills.online/fr/drills/motor/hand-eye-coordination/aim-trainer#step-4",
       "name": "Maintenir la serie de combos",
-      "text": "Enchainez les clics nets sans tir dans le vide pour faire grimper le multiplicateur de score jusqu a 3,0x."
+      "text": "Enchaînez les tirs réussis pour monter le multiplicateur jusqu’à 3,0×. Le niveau monte tous les 1 750 points ; la partie s’arrête quand le chrono atteint 0."
     }
   ]
 };
 
+const faqs = [
+  {
+    q: "Qu’est-ce que cet aim trainer en ligne et comment fonctionne-t-il ?",
+    a: "Un aim trainer mesure la vitesse et la précision avec lesquelles vous cliquez des cibles à la souris. Ici, deux cibles mobiles sont toujours à l’écran. Le chrono démarre à 45 secondes : chaque cible touchée ajoute 2 s (60 s maximum), chaque clic raté ou cible manquée retire 1 s, et la partie s’arrête à 0. Gratuit, sans téléchargement ni compte.",
+  },
+  {
+    q: "Comment le score est-il calculé ?",
+    a: "Chaque cible touchée vaut 100 points multipliés par le combo (1,1× dès 3 tirs réussis d’affilée, jusqu’à 3,0× à partir de 50) et par un bonus de niveau. Un clic raté ou une cible manquée remet le combo à zéro.",
+  },
+  {
+    q: "Comment la difficulté augmente-t-elle ?",
+    a: "Le niveau monte tous les 1 750 points, sans limite. Jusqu’au niveau 15, le rayon des cibles passe de 26 px à 12 px (jusqu’à 8 px avec un gros combo), leur vitesse de 80 px/s à 370 px/s et leur durée de vie de 2,8 s à 0,4 s.",
+  },
+  {
+    q: "Que se passe-t-il quand je rate ?",
+    a: "Le combo retombe à 1,0× et vous perdez 1 seconde. Spammer les clics ne paie donc pas.",
+  },
+  {
+    q: "Comment la loi de Fitts s’applique-t-elle à cet aim trainer ?",
+    a: "La loi de Fitts (1954) relie le temps de mouvement au rapport entre la distance et la taille de la cible (Indice de Difficulté). Comme les cibles rétrécissent à chaque niveau, l’indice augmente et la souris doit être contrôlée plus finement.",
+  },
+  {
+    q: "Cet aim trainer aide-t-il pour Valorant ou CS2 ?",
+    a: "Il peut servir d’échauffement complémentaire. Il entraîne des clics rapides sur des cibles 2D mobiles, pas la visée 3D d’un jeu ; aucune progression en jeu n’est garantie.",
+  },
+  {
+    q: "Qu’est-ce qu’un bon score sur cet aim trainer ?",
+    a: "Selon les repères SkillDrills : moins de 8 000 points débutant, 8 000–17 999 en développement, 18 000–31 999 compétent, 32 000–47 999 avancé, 48 000 et plus palier maître. Ce sont des repères d’entraînement, pas des statistiques d’utilisateurs.",
+  },
+  {
+    q: "Puis-je régler la sensibilité de la souris ?",
+    a: "Oui, avec le multiplicateur de sensibilité dans les réglages des exercices. Il n’y a pas de conversion automatique de votre cm/360 en jeu : réglez-le à la sensation.",
+  },
+  {
+    q: "L’aim trainer fonctionne-t-il sur mobile ou écran tactile ?",
+    a: "Non. Il utilise le verrouillage du pointeur (Pointer Lock) et nécessite une souris sur un navigateur d’ordinateur.",
+  },
+];
+
 const faqSchema = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "inLanguage": "fr-FR",
-  "dateModified": "2026-09-20",
-  "mainEntity": [
-    {
-      "@type": "Question",
-      "name": "Qu'est-ce que l'Aim Trainer en ligne et comment fonctionne-t-il ?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "L'Aim Trainer en ligne est un exercice interactif de coordination motrice conçu pour entraîner la vitesse d'acquisition de cible, la précision du clic et la régularité gestuelle de la souris sur des cibles dynamiques rétrécissantes."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Comment la loi de Fitts s'applique-t-elle à la visée FPS ?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "La loi de Paul M. Fitts (1954) établit que le temps de mouvement nécessaire pour atteindre une cible dépend logarithmiquement du ratio entre la distance et la taille de la cible (Indice de Difficulté). Plus la cible est petite et éloignée, plus le contrôle neuromusculaire doit être affiné."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Qu'est-ce que le modèle à deux composantes de Woodworth ?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Robert S. Woodworth (1899) et Elliott et al. (2010) ont démontré qu'un mouvement de visée rapide comprend une première impulsion balistique en boucle ouverte (couvrant la majeure partie du trajet), suivie d'une phase de contrôle terminal en boucle fermée utilisant le retour visuel."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "L'entraînement aux micro-flicks se transfère-t-il à Valorant et CS2 ?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Oui, les duels dans les jeux de tir tactiques reposent sur des micro-ajustements balistiques de 5 à 15 degrés pour ajuster la tête d'un adversaire. Cet exercice entraîne précisément ces mouvements de haute précision."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Qu'est-ce qu'un bon score sur cet Aim Trainer ?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Un joueur débutant se situe généralement en dessous de 8 000 points (Niveaux 1–2). Un joueur régulier atteint 18 000 à 31 999 points (Niveaux 6–8), tandis qu'un compétiteur esport dépasse 48 000 points avec plus de 95 % de précision."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Comment fonctionne la difficulté adaptative dans cet exercice ?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Tous les 1 750 points marqués, le niveau augmente : le rayon de la cible diminue de 26px à 8px, la vitesse augmente de 80px/s à 370px/s, et la durée de vie de la cible chute de 2,8s à 0,40s."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Pourquoi les tirs ratés pénalisent-ils le multiplicateur de combo ?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Cliquer dans le vide ou laisser une cible disparaître réinitialise le combo à 1,0x. Cela sanctionne le spam compulsif et encourage une visée délibérée et maîtrisée."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Cet exercice prend-il en charge la sensibilité universelle de la souris ?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Oui, il utilise l'API Pointer Lock du navigateur web pour capturer le mouvement de la souris, en respectant votre réglage cm/360 habituel."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Quel est l'impact du taux de rafraîchissement de l'écran sur la visée ?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Un écran à 144 Hz ou 240 Hz et une souris à 1 000 Hz réduisent le délai d'affichage et les saccades visuelles, permettant au cortex visuel de recevoir l'information de position 10 à 12 ms plus tôt par mouvement."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Quelle routine d'échauffement produit les meilleurs gains de précision ?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Une session quotidienne de 10 à 15 minutes axée sur la précision des micro-flicks et une accélération progressive active le cortex moteur et stabilise la tenue de mire sous pression."
-      }
-    }
-  ]
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  inLanguage: 'fr-FR',
+  dateModified: '2026-11-09',
+  mainEntity: faqs.map((f) => ({
+    '@type': 'Question',
+    name: f.q,
+    acceptedAnswer: { '@type': 'Answer', text: f.a },
+  })),
 };
 
 const copyFr = {
   title: "Aim Trainer en Ligne",
-  subtitle: "Acquisition de cible • Précision souris • Entraînement flick",
-  caption: "Visez et cliquez sur les cibles mobiles aussi rapidement et précisément que possible avant leur disparition. Fondé sur la loi de Fitts.",
+  subtitle: "Deux cibles mobiles • Précision souris • Taux de réussite",
+  caption: "Cliquez les deux cibles mobiles avant leur disparition. Touché +2 s, clic raté ou cible manquée -1 s.",
   startButtonText: "LANCER L'ENTRAÎNEMENT",
   playAgainText: "Rejouer",
   shareText: "Partager le Score",
@@ -279,8 +235,8 @@ const copyFr = {
     {
       num: "1",
       text: "Cible Touchée",
-      highlight: "+100 PTS / +0,6s",
-      result: "Acquérir et cliquer sur les cibles mobiles"
+      highlight: "+100 PTS / +2 s (max 60 s)",
+      result: "× multiplicateur de combo"
     },
     {
       num: "2",
@@ -298,7 +254,7 @@ const copyFr = {
       num: "4",
       text: "Tir Raté & Expiration",
       highlight: "Combo Réinitialisé",
-      result: "Pénalité active déduit -0,8s"
+      result: "-1 s au chrono"
     }
   ]
 };
@@ -323,7 +279,7 @@ export default function AimTrainerFrenchPage() {
         sources={sources}
       >
         <p>
-          L acquisition de cible a l aide d une souris d ordinateur figure parmi les taches de coordination motrice fine les plus exigeantes etudiees en interaction homme-machine (IHM) et en psychophysique sportive. Qu il s agisse de tenir une ligne dans un jeu de tir tactique a la premiere personne ou de manoeuvrer une interface robotisee de haute precision, le systeme neuromusculaire doit traduire des coordonnees visuelles bidimensionnelles en contractions physiques sous-millimetriques de la main, du poignet et de l avant-bras (Fitts, 1954; MacKenzie, 1992).
+          L’<strong>aim trainer</strong> SkillDrills est gratuit et tourne dans le navigateur : deux cibles mobiles à cliquer avant qu’elles disparaissent. L acquisition de cible a l aide d une souris d ordinateur figure parmi les taches de coordination motrice fine les plus exigeantes etudiees en interaction homme-machine (IHM) et en psychophysique sportive. Qu il s agisse de tenir une ligne dans un jeu de tir tactique a la premiere personne ou de manoeuvrer une interface robotisee de haute precision, le systeme neuromusculaire doit traduire des coordonnees visuelles bidimensionnelles en contractions physiques sous-millimetriques de la main, du poignet et de l avant-bras (Fitts, 1954; MacKenzie, 1992).
         </p>
 
         <h3>Loi de Fitts &amp; Indice de Difficulté (ID)</h3>
@@ -334,7 +290,7 @@ export default function AimTrainerFrenchPage() {
           MT = a + b · log₂(2D / W) = a + b · ID
         </div>
         <p>
-          Cette composante logarithmique est appelee l <strong>Indice de Difficulte (ID)</strong>, exprimee en bits d information. Dans cet Aim Trainer, a mesure que votre score progresse, le diametre des cibles (\(W\)) retrecit de 26 pixels a seulement 8 pixels, tandis que les cibles se deplacent et apparaissent sur de plus grandes distances (\(D\)). Cette dynamique augmente exponentiellement l Indice de Difficulte, sollicitant au maximum la bande passante neuromusculaire de votre systeme moteur (Fitts, 1954; MacKenzie, 1992).
+          Cette composante logarithmique est appelee l <strong>Indice de Difficulte (ID)</strong>, exprimee en bits d information. Dans cet aim trainer, le rayon des cibles passe de 26 à 12 pixels au niveau 15 (jusqu’à 8 pixels avec un gros combo). La largeur de cible (\(W\)) diminue, donc l’Indice de Difficulté augmente (Fitts, 1954; MacKenzie, 1992).
         </p>
 
         <h3>Le Modèle à Deux Composantes du Mouvement Visé (Woodworth 1899; Elliott et al. 2010)</h3>
@@ -355,12 +311,12 @@ export default function AimTrainerFrenchPage() {
 
         <h3>Taux de Rafraîchissement, Quantisation &amp; Délais Neuro-sensoriels</h3>
         <p>
-          Un timing de clic chirurgical exige de minimiser la latence du système. Comme documenté par Woods et al. (2015), les temps de réaction motrice humains sont limités par la conduction neurosensorielle (transmission rétinienne ~30–50 ms, traitement cortical visuel ~60–80 ms, transmission corticospinale motrice ~40–60 ms). Sur un moniteur à 60 Hz, les images sont quantisées par pas de 16,7 ms ; à 144 Hz ou 240 Hz, ce délai chute à 6,9 ms ou 4,1 ms, offrant une rétroaction visuelle plus fluide qui réduit drastiquement l&apos;erreur de trajectoire lors de la phase de visée en boucle fermée.
+          Un timing de clic chirurgical exige de minimiser la latence du système. Comme documenté par Woods et al. (2015), les temps de réaction motrice humains sont limités par la conduction neurosensorielle (transmission rétinienne ~30–50 ms, traitement cortical visuel ~60–80 ms, transmission corticospinale motrice ~40–60 ms). Sur un moniteur à 60 Hz, les images sont quantisées par pas de 16,7 ms ; à 144 Hz ou 240 Hz, ce délai chute à 6,9 ms ou 4,1 ms. Comparez vos scores sur le même matériel et les mêmes réglages.
         </p>
 
         <h3>Paliers de Référence : Vitesse &amp; Précision d Acquisition de Cible</h3>
         <p>
-          Les paliers suivants reposent sur l analyse de sessions de tir de 45 secondes, croisant le score brut, le niveau de difficulte atteint et la regularite du combo :
+          Ces paliers sont des repères d’entraînement fixés par SkillDrills pour une partie qui démarre à 45 secondes (+2 s par cible touchée, 60 s maximum). Ce ne sont ni des données d’utilisateurs ni des rangs de jeu :
         </p>
         <div className="overflow-x-auto my-4">
           <table className="w-full text-xs sm:text-sm border-collapse border border-white/10 text-left">
@@ -370,7 +326,7 @@ export default function AimTrainerFrenchPage() {
                 <th className="p-2.5 border border-white/10 font-semibold">Score Brut</th>
                 <th className="p-2.5 border border-white/10 font-semibold">Niveau Atteint</th>
                 <th className="p-2.5 border border-white/10 font-semibold">Précision &amp; Combo</th>
-                <th className="p-2.5 border border-white/10 font-semibold">Classification Neuro-motrice</th>
+                <th className="p-2.5 border border-white/10 font-semibold">Repère</th>
               </tr>
             </thead>
             <tbody className="text-slate-300 divide-y divide-white/5">
@@ -400,7 +356,7 @@ export default function AimTrainerFrenchPage() {
                 <td className="p-2.5 border border-white/10">8 000 – 17 999 PTS</td>
                 <td className="p-2.5 border border-white/10">Niveau 3–5</td>
                 <td className="p-2.5 border border-white/10">65 % – 77 % (Combo 6–11)</td>
-                <td className="p-2.5 border border-white/10">Niveau récréatif standard : hésitations fréquentes sur micro-flicks</td>
+                <td className="p-2.5 border border-white/10">En progression : hésitations fréquentes</td>
               </tr>
               <tr>
                 <td className="p-2.5 border border-white/10 font-bold text-rose-400">Palier 5 : Débutant</td>
@@ -434,66 +390,12 @@ export default function AimTrainerFrenchPage() {
 
         <h3>Foire Aux Questions (FAQ)</h3>
         <div className="space-y-4 my-4">
-          <div className="border-b border-white/10 pb-3">
-            <h4 className="font-bold text-white text-sm mb-1">Qu&apos;est-ce que l&apos;Aim Trainer en ligne et comment fonctionne-t-il ?</h4>
-            <p className="text-xs sm:text-sm text-slate-300">
-              L&apos;Aim Trainer en ligne est un exercice interactif de coordination motrice conçu pour entraîner la vitesse d&apos;acquisition de cible, la précision du clic et la régularité gestuelle de la souris sur des cibles dynamiques rétrécissantes.
-            </p>
-          </div>
-          <div className="border-b border-white/10 pb-3">
-            <h4 className="font-bold text-white text-sm mb-1">Comment la loi de Fitts s&apos;applique-t-elle à la visée FPS ?</h4>
-            <p className="text-xs sm:text-sm text-slate-300">
-              La loi de Paul M. Fitts (1954) établit que le temps de mouvement nécessaire pour atteindre une cible dépend logarithmiquement du ratio entre la distance et la taille de la cible (Indice de Difficulté). Plus la cible est petite et éloignée, plus le contrôle neuromusculaire doit être affiné.
-            </p>
-          </div>
-          <div className="border-b border-white/10 pb-3">
-            <h4 className="font-bold text-white text-sm mb-1">Qu&apos;est-ce que le modèle à deux composantes de Woodworth ?</h4>
-            <p className="text-xs sm:text-sm text-slate-300">
-              Robert S. Woodworth (1899) et Elliott et al. (2010) ont démontré qu&apos;un mouvement de visée rapide comprend une première impulsion balistique en boucle ouverte (couvrant la majeure partie du trajet), suivie d&apos;une phase de contrôle terminal en boucle fermée utilisant le retour visuel.
-            </p>
-          </div>
-          <div className="border-b border-white/10 pb-3">
-            <h4 className="font-bold text-white text-sm mb-1">L&apos;entraînement aux micro-flicks se transfère-t-il à Valorant et CS2 ?</h4>
-            <p className="text-xs sm:text-sm text-slate-300">
-              Oui, les duels dans les jeux de tir tactiques reposent sur des micro-ajustements balistiques de 5 à 15 degrés pour ajuster la tête d&apos;un adversaire. Cet exercice entraîne précisément ces mouvements de haute précision.
-            </p>
-          </div>
-          <div className="border-b border-white/10 pb-3">
-            <h4 className="font-bold text-white text-sm mb-1">Qu&apos;est-ce qu&apos;un bon score sur cet Aim Trainer ?</h4>
-            <p className="text-xs sm:text-sm text-slate-300">
-              Un joueur débutant se situe généralement en dessous de 8 000 points (Niveaux 1–2). Un joueur régulier atteint 18 000 à 31 999 points (Niveaux 6–8), tandis qu&apos;un compétiteur esport dépasse 48 000 points avec plus de 95 % de précision.
-            </p>
-          </div>
-          <div className="border-b border-white/10 pb-3">
-            <h4 className="font-bold text-white text-sm mb-1">Comment fonctionne la difficulté adaptative dans cet exercice ?</h4>
-            <p className="text-xs sm:text-sm text-slate-300">
-              Tous les 1 750 points marqués, le niveau augmente : le rayon de la cible diminue de 26px à 8px, la vitesse augmente de 80px/s à 370px/s, et la durée de vie de la cible chute de 2,8s à 0,40s.
-            </p>
-          </div>
-          <div className="border-b border-white/10 pb-3">
-            <h4 className="font-bold text-white text-sm mb-1">Pourquoi les tirs ratés pénalisent-ils le multiplicateur de combo ?</h4>
-            <p className="text-xs sm:text-sm text-slate-300">
-              Cliquer dans le vide ou laisser une cible disparaître réinitialise le combo à 1,0x. Cela sanctionne le spam compulsif et encourage une visée délibérée et maîtrisée.
-            </p>
-          </div>
-          <div className="border-b border-white/10 pb-3">
-            <h4 className="font-bold text-white text-sm mb-1">Cet exercice prend-il en charge la sensibilité universelle de la souris ?</h4>
-            <p className="text-xs sm:text-sm text-slate-300">
-              Oui, il utilise l&apos;API Pointer Lock du navigateur web pour capturer le mouvement de la souris, en respectant votre réglage cm/360 habituel.
-            </p>
-          </div>
-          <div className="border-b border-white/10 pb-3">
-            <h4 className="font-bold text-white text-sm mb-1">Quel est l&apos;impact du taux de rafraîchissement de l&apos;écran sur la visée ?</h4>
-            <p className="text-xs sm:text-sm text-slate-300">
-              Un écran à 144 Hz ou 240 Hz et une souris à 1 000 Hz réduisent le délai d&apos;affichage et les saccades visuelles, permettant au cortex visuel de recevoir l&apos;information de position 10 à 12 ms plus tôt par mouvement.
-            </p>
-          </div>
-          <div className="border-b border-white/10 pb-3">
-            <h4 className="font-bold text-white text-sm mb-1">Quelle routine d&apos;échauffement produit les meilleurs gains de précision ?</h4>
-            <p className="text-xs sm:text-sm text-slate-300">
-              Une session quotidienne de 10 à 15 minutes axée sur la précision des micro-flicks et une accélération progressive active le cortex moteur et stabilise la tenue de mire sous pression.
-            </p>
-          </div>
+          {faqs.map((f) => (
+            <div key={f.q} className="border-b border-white/10 pb-3">
+              <h4 className="font-bold text-white text-sm mb-1">{f.q}</h4>
+              <p className="text-xs sm:text-sm text-slate-300">{f.a}</p>
+            </div>
+          ))}
         </div>
       </DrillGuide>
 

@@ -81,7 +81,7 @@ const softwareApplicationSchema = {
   applicationCategory: 'HealthApplication',
   operatingSystem: 'All',
   offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
-  description: 'Free browser-based drag and drop precision trainer. Refine mouse cursor deceleration, continuous spatial transport, and release timing with adaptive difficulty scaling.',
+  description: 'Free browser-based drag and drop precision trainer. Drag a ball into a moving container and release it inside; your score raises the level, which shrinks the ball and container and speeds the container up.',
   url: 'https://skilldrills.online/drills/motor/hand-eye-coordination/drag-and-drop',
   publisher: { '@type': 'Organization', name: 'SkillDrills', url: 'https://skilldrills.online' },
   dateModified: '2026-09-16',
@@ -119,7 +119,7 @@ const faqSchema = {
       name: 'What is the Drag and Drop Mouse Trainer and how does it test motor control?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'The Drag and Drop Mouse Trainer is an interactive sensorimotor drill designed to evaluate and train fine cursor steering, continuous spatial dragging accuracy, and release timing under time pressure. Users acquire a dynamic payload orb, transport it along an unconstrained trajectory, and deposit it cleanly inside a moving container.',
+        text: 'For 45 seconds you grab a ball by holding the left mouse button, drag it to a moving round container and release it inside. The results show score, accuracy (share of successful drops), number of drops, max combo and level reached. The clock is fixed: drops do not add time and misses do not remove any.',
       },
     },
     {
@@ -127,7 +127,7 @@ const faqSchema = {
       name: 'Why is dragging significantly more difficult than simple pointing or clicking?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'As demonstrated by MacKenzie, Sellen, and Buxton (1991), dragging imposes continuous isometric depression of the primary mouse switch while navigating spatial trajectories. This constant muscular co-contraction increases friction between the hand and mousepad, alters biomechanical finger posture, and reduces motor throughput by 15% to 25% compared to pointing.',
+        text: 'MacKenzie, Sellen and Buxton (1991) found that dragging with the same device is measurably slower and more error-prone than simply pointing at the same target. Your finger has to keep the button pressed while the wrist and arm move the mouse, which makes the movement harder to control.',
       },
     },
     {
@@ -143,7 +143,7 @@ const faqSchema = {
       name: 'Why do players overshoot moving target containers during rapid dragging?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Overshooting occurs when the neuromuscular braking impulse is mistimed relative to the target container velocity vector. Elliott et al. (2010) identified that deceleration requires antagonist muscle recruitment to arrest limb momentum. Excessive acceleration during the primary impulse phase overloads closed-loop feedback latency (~100–150 ms), causing release outside the container rim.',
+        text: 'Overshooting occurs when the neuromuscular braking impulse is mistimed relative to the target container velocity vector. Aimed movements end with a visually guided slowing phase (Elliott et al., 2010). If you accelerate too hard, there is not enough time to correct before release, so the ball lands outside the container rim.',
       },
     },
     {
@@ -159,7 +159,7 @@ const faqSchema = {
       name: 'Does drag and drop training help competitive FPS and MOBA gamers?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Yes. In tactical FPS titles (e.g., CS2, Valorant, Apex Legends), rapid inventory management, shield-swapping, and weapon looting demand sub-300 ms drag-and-drop precision. In MOBAs and RTS titles (e.g., League of Legends, StarCraft II), precise marquee box selection and minimap steering dictate operational APM.',
+        text: 'Dragging shows up in games as inventory management and looting (e.g. Apex Legends, PUBG) and as box selection in RTS titles. This drill practises controlled click-hold movement and accurate release; how much it transfers to a specific game varies from player to player.',
       },
     },
     {
@@ -167,7 +167,7 @@ const faqSchema = {
       name: 'How do professional UI/UX designers and video editors benefit from dragging drills?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Digital artists, CAD engineers, and video editors perform thousands of dragging operations daily—adjusting timeline playheads, trimming keyframes, and manipulating bezier curve anchor handles. Training cursor deceleration and release accuracy reduces repetitive strain and eliminates tedious micro-corrections.',
+        text: 'Digital artists, CAD users and video editors drag constantly: timeline playheads, keyframes and bezier handles. The drill practises the same controlled carry and accurate release. It is a practice game, not an ergonomic or medical intervention.',
       },
     },
     {
@@ -175,7 +175,7 @@ const faqSchema = {
       name: 'How is drag accuracy and combo multiplier calculated in this drill?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Accuracy is computed in real time as the total successful container drops divided by total drop attempts. Sustaining consecutive on-target drops increments an active combo multiplier up to 3.0x bonus points. Dropping outside the moving bucket boundary or letting the container timer expire resets the combo streak to zero.',
+        text: 'Accuracy is successful drops divided by drop attempts. Each drop scores 100 points × your combo multiplier (up to 3.0×) × a level bonus. Your level rises every 250 points, plus a bonus level for every 4 drops in a row: the ball and container get smaller, and the container moves faster and changes direction more often. Releasing outside the container, or letting the container timer run out (while Target Timeouts is on), resets the combo to zero.',
       },
     },
     {
@@ -183,7 +183,7 @@ const faqSchema = {
       name: 'What hardware settings optimize cursor deceleration and dragging precision?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Disable Windows mouse acceleration (Enhance Pointer Precision), use a consistent 800–1600 DPI, utilize a control-oriented cloth mousepad that provides predictable dynamic friction, and maintain a 1000 Hz+ mouse polling rate to eliminate position quantization jitter.',
+        text: 'Disable Windows mouse acceleration (Enhance Pointer Precision), keep the same DPI and sensitivity between runs, use a mousepad with predictable glide, and a 1000 Hz polling rate if your mouse supports it. The drill needs a mouse and Pointer Lock; touch-only devices are not supported.',
       },
     },
     {
@@ -191,7 +191,7 @@ const faqSchema = {
       name: 'How much daily drag and drop practice is recommended for muscle memory?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'A structured 10 to 15 minute daily routine consisting of 4 to 6 continuous 45-second sessions is optimal. Focused brief training prevents neuromuscular forearm fatigue and tunnel syndrome while inducing neuroplastic stabilization of fine motor pathways.',
+        text: 'A few 45-second runs with short breaks is a sensible routine. Stop when your hand or forearm feels tense or tired, because holding the button while fatigued makes drops less accurate.',
       },
     },
   ],
@@ -207,28 +207,28 @@ const howToSchema = {
       '@type': 'HowToStep',
       position: 1,
       name: 'Align Crosshair Over Pickup Node',
-      text: 'Position your mouse pointer directly over the source target orb highlighted on the arena canvas.',
+      text: 'Move the crosshair onto the green ball.',
       url: 'https://skilldrills.online/drills/motor/hand-eye-coordination/drag-and-drop#step-1'
     },
     {
       '@type': 'HowToStep',
       position: 2,
       name: 'Depress and Hold Primary Mouse Button',
-      text: 'Engage continuous isometric pressure on the left click switch to clamp the payload object.',
+      text: 'Press and hold the left mouse button to pick the ball up.',
       url: 'https://skilldrills.online/drills/motor/hand-eye-coordination/drag-and-drop#step-2'
     },
     {
       '@type': 'HowToStep',
       position: 3,
-      name: 'Traverse the Steering Law Corridor',
-      text: 'Carry the dragged object smoothly across the screen toward the destination receptor zone, minimizing deviation from the center line.',
+      name: 'Carry the Ball to the Container',
+      text: 'Move the ball smoothly toward the moving container, aiming where it is heading rather than where it was.',
       url: 'https://skilldrills.online/drills/motor/hand-eye-coordination/drag-and-drop#step-3'
     },
     {
       '@type': 'HowToStep',
       position: 4,
       name: 'Release Cleanly Within Destination Bounds',
-      text: 'Release the mouse button exactly when the object is concentric with the drop target to score maximum precision points.',
+      text: 'Release the button when the ball centre is inside the container rim. A clean drop raises your combo; a release outside resets it.',
       url: 'https://skilldrills.online/drills/motor/hand-eye-coordination/drag-and-drop#step-4'
     },
   ],
@@ -239,58 +239,25 @@ const guideProps = {
   intro: {
     title: `What Is a Drag and Drop Test? Dragging, Steering and Deceleration`,
     paragraphs: [
-      `A drag and drop test measures how accurately you can pick up an item with the mouse and release it on a target. This free browser drill has you drag items to their target containers, and your accuracy and a combo multiplier set the score, so it trains controlled dragging rather than simple clicking.`,
+      `A drag and drop test measures how accurately you can pick up an item with the mouse and release it on a target. In this free browser drill you drag a ball into a moving container for 45 seconds; every clean drop scores points multiplied by your combo, and your score raises the level, which shrinks both and speeds the container up. It trains controlled dragging rather than simple clicking.`,
       'In human-computer interaction, continuous dragging represents a fundamentally distinct neuromuscular challenge compared to point-and-click targeting. While discrete pointing is governed by Fitts\'s Law (Fitts, 1954), dragging requires sustained isometric co-contraction of digit flexor muscles to keep the mouse switch depressed while simultaneously coordinating multiaxial limb translation across a physical surface.',
-      'In their seminal empirical evaluation, MacKenzie, Sellen, and Buxton (1991) proved that dragging tasks suffer an inherent throughput penalty of 15% to 25% relative to discrete pointing. The continuous downward force alters the frictional coefficient between mouse skate skates and the mousepad, restricts fine finger articulation, and elevates neuromuscular motor noise.',
+      'MacKenzie, Sellen and Buxton (1991) found that dragging is measurably slower and more error-prone than pointing at the same target with the same device. Holding the button down while moving restricts fine finger movement and makes the carry harder to control.',
       'Furthermore, Johnny Accot and Shumin Zhai (1997) formulated the Steering Law to mathematically describe trajectory-constrained motor performance: movement time scales with the integral of distance over tunnel width along the entire trajectory. In dynamic dragging tasks, users must continually balance forward momentum against the necessity of decelerating within a moving terminal boundary (Elliott et al., 2010), engaging antagonistic muscle groups to prevent overshooting.',
       'How this is measured, and what it cannot resolve: timing comes from the browser\'s performance.now() clock, which is deliberately coarsened to roughly 1 ms as a Spectre mitigation, and the display quantizes every target to its own refresh interval — about 16.7 ms at 60 Hz, 6.9 ms at 144 Hz and 4.1 ms at 240 Hz (Woods et al., 2015). Mouse polling adds roughly 8 ms at 125 Hz against about 1 ms at 1000 Hz. Treat any difference under about 5 ms as measurement noise, and compare your own runs on the same mouse and display rather than against someone else\'s setup. SkillDrills stores every score in your browser and collects no aggregate data, so nothing here is a population norm.',
     ],
   },
   benchmarks: {
-    title: 'Empirical Dragging and Deceleration Performance Tiers',
-    caption: 'An editorial guide to reading your own result, not measured population norms — SkillDrills collects no aggregate data. The steering model follows Accot & Zhai (1997) and the pointing-vs-dragging comparison follows MacKenzie, Sellen & Buxton (1991); the band boundaries are the drill author\'s own judgement.',
-    headers: ['Tier', 'Classification', 'Completion Rate / Combo', 'Mean Steering Time', 'Release Accuracy', 'Neuromuscular Profile'],
+    title: 'Drag and Drop Test: SkillDrills Practice Bands',
+    caption: 'SkillDrills practice bands, not research norms or user data: SkillDrills collects no aggregate data. They match the grade on the results screen, which is set by your final score.',
+    headers: ['Grade', 'Label', 'Final Score', 'Band'],
     rows: [
-      [
-        'Tier 1',
-        'Elite / Pro Designer',
-        'Lv. 12–15 (Combo > 18x)',
-        '< 420 ms',
-        '≥ 98.0%',
-        'Smooth bell-shaped velocity profile, optimal deceleration braking, zero premature releases under high velocity.',
-      ],
-      [
-        'Tier 2',
-        'Advanced / Competitive',
-        'Lv. 9–11 (Combo 12–17x)',
-        '420–510 ms',
-        '94.0%–97.9%',
-        'Controlled deceleration, tight boundary tracking, minor terminal micro-adjustments (< 35 ms).',
-      ],
-      [
-        'Tier 3',
-        'Competent / Intermediate',
-        'Lv. 6–8 (Combo 7–11x)',
-        '511–640 ms',
-        '87.0%–93.9%',
-        'Slight trajectory overshooting during acceleration phase, noticeable velocity dips prior to container alignment.',
-      ],
-      [
-        'Tier 4',
-        'Novice / Developing',
-        'Lv. 3–5 (Combo 3–6x)',
-        '641–800 ms',
-        '78.0%–86.9%',
-        'Jerky multi-impulse steering, excessive finger grip tension causing mousepad drag and boundary clip errors.',
-      ],
-      [
-        'Tier 5',
-        'Baseline / Novice',
-        'Lv. 1–2 (Combo < 3x)',
-        '> 800 ms',
-        '< 78.0%',
-        'Sluggish transport velocity, frequent releases outside container rims, uncoordinated click-hold muscle fatigue.',
-      ],
+      ['S+', 'Legendary', '14,440+ PTS', 'SkillDrills practice band'],
+      ['S', 'Elite', '11,560+ PTS', 'SkillDrills practice band'],
+      ['A', 'Excellent', '9,000+ PTS', 'SkillDrills practice band'],
+      ['B', 'Great', '5,760+ PTS', 'SkillDrills practice band'],
+      ['C', 'Good', '3,240+ PTS', 'SkillDrills practice band'],
+      ['D', 'Keep Going', '1,440+ PTS', 'SkillDrills practice band'],
+      ['F', 'Needs Practice', 'under 1,440 PTS', 'SkillDrills practice band'],
     ],
   },
   protocols: {
@@ -306,11 +273,11 @@ const guideProps = {
       },
       {
         title: 'Protocol 3: Antagonist Deceleration & Release Braking (Levels 9–12)',
-        description: 'Train deliberate cursor deceleration by engaging forearm extensor muscles 50 ms before crossing into the moving container boundary. Coordinate the mechanical switch release with the exact spatial apex of container transit to avoid trailing drops.',
+        description: 'Start slowing the cursor before you reach the moving container instead of sliding in at full speed, and release once the ball is settled inside the rim.',
       },
       {
-        title: 'Protocol 4: Dynamic Lead-Angle Velocity Interception (Levels 13–15)',
-        description: 'When target containers accelerate at high levels, steer your cursor toward the predicted interception intercept rather than the container\'s instantaneous position. Calculate a predictive lead angle to drop the payload smoothly into the container\'s future path.',
+        title: 'Protocol 4: Lead the Moving Container (Higher Levels)',
+        description: 'At higher levels the container moves faster and changes direction more often. Steer toward where it is heading rather than where it is now, and drop the ball into its path.',
       },
     ],
   },
@@ -338,8 +305,8 @@ const copyEn = {
   rulesItems: [
     { num: "1", text: "Target Drop", highlight: "+100 PTS × Combo", result: "Clean Drag & Release in Container" },
     { num: "2", text: "Continuous Combo", highlight: "Up to 3.0× Multiplier", result: "Chain Consecutive Drops" },
-    { num: "3", text: "Level Progression", highlight: "+1 Level / 250 PTS", result: "Containers Shrink & Accelerate" },
-    { num: "4", text: "Miss & Timeout", highlight: "Combo Reset", result: "Off-Target Drops Reset Multiplier" }
+    { num: "3", text: "Level Progression", highlight: "+1 Level / 250 PTS", result: "Smaller ball & container, faster moves" },
+    { num: "4", text: "Miss & Timeout", highlight: "Combo Reset", result: "No time penalty; clock fixed at 45s" }
   ],
 };
 

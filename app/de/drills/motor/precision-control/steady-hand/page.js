@@ -11,16 +11,16 @@ import { pickSources } from '@/lib/drillSources';
 
 export const metadata = {
   title: 'Ruhige Hand trainieren | Heißer Draht online | SkillDrills',
-  description: 'Ruhige Hand trainieren im Heißer-Draht-Spiel: Führe den Cursor durch einen engen Korridor und messe Feinmotorik und Spurtreue. Kostenlos im Browser.',
+  description: 'Ruhige Hand trainieren im Heißer-Draht-Spiel: Führe den Cursor über die Leuchtlinie ins Ziel, ohne Abrutschen. Jede Serie macht die Strecke kurviger. Gratis.',
   keywords: [
-    'Maus-Präzisionstest', 'Ruhige Hand Test', 'Cursor Präzision',
+    'Ruhige Hand trainieren', 'Ruhige Hand Test', 'Heißer Draht Spiel', 'Cursor Präzision',
     'Maus Genauigkeit testen', 'Pfad folgen Maus', 'Feinmotorik Maus',
-    'Hand-Auge-Koordination Maus', 'Maus Spurtreue', 'Korridor Spiel',
+    'Hand-Auge-Koordination Maus', 'Maus Spurtreue', 'Heißer Draht online',
     'Maus Präzisionstraining', 'Cursor Kontrolle', 'Handzittern Maus',
   ],
   openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
     title: 'Ruhige Hand trainieren | Heißer Draht online | SkillDrills',
-    description: 'Ruhige Hand trainieren im Heißer-Draht-Spiel: Führe den Cursor durch einen engen Korridor und messe Feinmotorik und Spurtreue. Kostenlos im Browser.',
+    description: 'Ruhige Hand trainieren im Heißer-Draht-Spiel: Führe den Cursor über die Leuchtlinie ins Ziel, ohne Abrutschen. Jede Serie macht die Strecke kurviger. Gratis.',
     type: 'article',
     url: 'https://skilldrills.online/de/drills/motor/precision-control/steady-hand',
     siteName: 'SkillDrills',
@@ -29,7 +29,7 @@ export const metadata = {
   twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: 'summary_large_image',
     title: 'Ruhige Hand trainieren | Heißer Draht online | SkillDrills',
-    description: 'Ruhige Hand trainieren im Heißer-Draht-Spiel: Führe den Cursor durch einen engen Korridor und messe Feinmotorik und Spurtreue. Kostenlos im Browser.',
+    description: 'Ruhige Hand trainieren im Heißer-Draht-Spiel: Führe den Cursor über die Leuchtlinie ins Ziel, ohne Abrutschen. Jede Serie macht die Strecke kurviger. Gratis.',
   },
   robots: { index: true, follow: true },
   alternates: {
@@ -55,14 +55,14 @@ const softwareApplicationSchema = {
   '@context': 'https://schema.org',
   '@type': 'SoftwareApplication', "sameAs": ["https://en.wikipedia.org/wiki/Fine_motor_skill"],
   inLanguage: 'de-DE',
-  name: 'Heißer Draht – Maus-Präzision & Feinmotorik-Test',
+  name: 'Heißer Draht – Ruhige Hand trainieren',
   applicationCategory: 'HealthApplication',
   operatingSystem: 'All',
   offers: { '@type': 'Offer', price: '0', priceCurrency: 'EUR' },
-  description: 'Kostenloses browserbasiertes Heißer Draht Spiel und Maus-Präzisionstest. Bewege den Cursor durch dynamisch enger werdende Kurven und messe Handruhe sowie Steuerungsdurchsatz.',
+  description: 'Kostenloses Heißer-Draht-Spiel im Browser. Wer mehr als 2,5 Pixel von der Mittellinie abweicht, muss zurück zum Start; jede Runde in Serie macht die nächste Strecke kurviger.',
   url: 'https://skilldrills.online/de/drills/motor/precision-control/steady-hand',
   publisher: { '@type': 'Organization', name: 'SkillDrills', url: 'https://skilldrills.online/de' },
-  dateModified: '2026-09-20',
+  dateModified: '2026-11-09',
 };
 
 const webApplicationSchema = {
@@ -72,10 +72,10 @@ const webApplicationSchema = {
   name: 'Heißer Draht Online Parcours',
   applicationCategory: 'GameApplication',
   operatingSystem: 'All',
-  browserRequirements: 'Moderner Webbrowser mit HTML5 Canvas und Pointer Events API Unterstützung',
+  browserRequirements: 'Moderner Webbrowser mit HTML5 Canvas und Pointer Lock API',
   offers: { '@type': 'Offer', price: '0', priceCurrency: 'EUR' },
   url: 'https://skilldrills.online/de/drills/motor/precision-control/steady-hand',
-  dateModified: '2026-09-20',
+  dateModified: '2026-11-09',
 };
 
 const videoGameSchema = {
@@ -84,26 +84,26 @@ const videoGameSchema = {
   inLanguage: 'de-DE',
   name: 'Heißer Draht Feinmotorik-Drill',
   url: 'https://skilldrills.online/de/drills/motor/precision-control/steady-hand',
-  description: 'Online-Geschicklichkeitsspiel zum Testen von Mauspräzision, physiologischer Handruhe und Lenkgeschwindigkeit.',
+  description: 'Online-Geschicklichkeitsspiel zum Üben von Mauspräzision, Handruhe und Lenkgeschwindigkeit.',
   genre: ['Precision Game', 'Action', 'Esports Training'],
   gamePlatform: ['Web Browser', 'Desktop', 'Mobile'],
   applicationCategory: 'Game',
   offers: { '@type': 'Offer', price: '0', priceCurrency: 'EUR' },
-  dateModified: '2026-09-20',
+  dateModified: '2026-11-09',
 };
 
 const faqSchema = {
   '@context': 'https://schema.org',
   '@type': 'FAQPage',
   inLanguage: 'de-DE',
-  dateModified: '2026-09-20',
+  dateModified: '2026-11-09',
   mainEntity: [
     {
       '@type': 'Question',
-      name: 'Was ist das Online-Spiel „Heißer Draht“ und welche Fähigkeiten misst es?',
+      name: 'Was ist das Online-Spiel „Heißer Draht“ und was trainiert es?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Das Heißer-Draht-Spiel ist eine neuromotorische Präzisionsprüfung, bei der ein Cursor kontinuierlich entlang eines gewundenen Pfades gesteuert werden muss, ohne die Begrenzungswände zu berühren. Es misst Handruhe, visuelles Feedback in Echtzeit und die Dämpfung des physiologischen Zitters unter zunehmender Verengung.',
+        text: 'Im Heißer-Draht-Spiel führst du den Cursor von der Startzone links über eine gewundene Leuchtlinie bis in die Zielzone rechts, ohne von der Linie abzurutschen. Es geht nicht um Reaktionszeit, sondern um ruhige, gleichmäßige Mausführung mit laufender visueller Korrektur. Gewertet werden die Runden, die du schaffst, bevor die 45-Sekunden-Uhr abläuft.',
       },
     },
     {
@@ -119,15 +119,15 @@ const faqSchema = {
       name: 'Warum setzt sich der Cursor bei Wandkontakt sofort an den Start zurück?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Die Spiel-Engine berechnet in jedem Frame die euklidische Distanz zwischen Mausposition und Pfadmittellinie. Übersteigt die Abweichung die halbe Kanalbreite, erfolgt ein sofortiger Abbruch, um kompromisslose Null-Toleranz-Präzision zu fordern.',
+        text: 'Die Engine berechnet in jedem Frame den Abstand zwischen Cursor und Pfadmittellinie. Liegt er zwischen Start- und Zielzone über 2,5 Pixel, zählt das als Wandberührung: Der Cursor springt zurück an den Start, der Fehlerzähler steigt um 1 und die Serie fällt auf 0. Die Uhr läuft weiter.',
       },
     },
     {
       '@type': 'Question',
-      name: 'Wie skaliert die Kanalbreite bei aufeinanderfolgenden Runden?',
+      name: 'Wie wird es mit jeder Runde schwieriger?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Der Korridor beginnt in Runde 1 mit einer großzügigen Breite von 50 Pixeln und verengt sich mit jeder fehlerfreien Runde stufenweise bis auf extrem schmale 12 Pixel ab Level 12, was höchste neuromuskuläre Kontrolle erfordert.',
+        text: 'Die Toleranz (±2,5 Pixel um die Mittellinie) bleibt immer gleich. Mit jeder Runde in Serie bekommt die nächste Strecke mehr Knicke (15 bis maximal 120 Segmente) und größere Ausschläge nach oben und unten. Eine Wandberührung setzt die Serie auf 0, die nächste Strecke wird dann wieder flacher. Jede geschaffte Runde setzt die Uhr auf 45 Sekunden zurück.',
       },
     },
     {
@@ -156,10 +156,10 @@ const faqSchema = {
     },
     {
       '@type': 'Question',
-      name: 'Können Chirurgen, Grafiker und E-Sportler vom Heißen Draht profitieren?',
+      name: 'Hilft der Heiße Draht Grafikern und E-Sportlern?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Ja. Sowohl die minimalinvasive Laparoskopie als auch digitale Vektorillustration und präzises Tracking im E-Sport erfordern exzellente Tremordämpfung und kontinuierliche feinmotorische Pfadführung unter Zeitdruck.',
+        text: 'Die Übung ähnelt Bewegungen aus digitaler Illustration und Tracking im E-Sport, bei denen der Zeiger ruhig auf einer schmalen Bahn bleiben muss. Wie stark sich das überträgt, ist individuell verschieden. Das Spiel ist kein medizinischer Tremor-Test.',
       },
     },
     {
@@ -172,10 +172,10 @@ const faqSchema = {
     },
     {
       '@type': 'Question',
-      name: 'Funktioniert der Heißer Draht Test auch mit Trackballs oder Grafiktabletts?',
+      name: 'Funktioniert der Heiße Draht auch mit Trackball oder Touchscreen?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Ja. Die Plattform nutzt standardisierte Pointer Events und unterstützt optische Gaming-Mäuse, Trackballs sowie Stift-Tabletts zur individuellen Analyse der Handruhe.',
+        text: 'Am PC liest der Drill über Pointer Lock die Mausbewegung, daher funktionieren Maus und Trackball. Auf reinen Touch-Geräten steuerst du per Fingerziehen. Grafiktablett-Stifte verhalten sich je nach Gerät unterschiedlich. Vergleiche Ergebnisse nur auf demselben Gerät.',
       },
     },
   ],
@@ -185,16 +185,16 @@ const howToSchema = {
   '@context': 'https://schema.org',
   '@type': 'HowTo',
   inLanguage: 'de-DE',
-  dateModified: '2026-09-20',
+  dateModified: '2026-11-09',
   name: 'Anleitung zur Steigerung der Handruhe und Mauspräzision',
-  description: 'Schritt-für-Schritt-Protokoll zur Bewältigung enger Parcours-Kurven und Beherrschung des Steuerungsgesetzes.',
+  description: 'Schritt-für-Schritt-Protokoll für immer kurvigere Strecken und das Steuerungsgesetz.',
   step: [
     {
       '@type': 'HowToStep',
       position: 1,
       url: 'https://skilldrills.online/de/drills/motor/precision-control/steady-hand#step-1',
       name: 'Cursor in der Startzone platzieren',
-      text: 'Klicke auf „Drill starten“ und platziere den Mauszeiger in der grünen Startzone, um die Zeitmessung und den Leuchtpfad zu aktivieren.',
+      text: 'Klicke auf „Drill starten“. Nach 3 Sekunden Countdown steht der Cursor in der grünen Startzone links und die 45-Sekunden-Uhr läuft. Am PC wird der Mauszeiger fixiert (Pointer Lock), Esc beendet den Drill.',
     },
     {
       '@type': 'HowToStep',
@@ -214,8 +214,8 @@ const howToSchema = {
       '@type': 'HowToStep',
       position: 4,
       url: 'https://skilldrills.online/de/drills/motor/precision-control/steady-hand#step-4',
-      name: 'Zielzone erreichen für höhere Schwierigkeit',
-      text: 'Erreiche die grüne Endzone, um die Runde abzuschließen. Die Zeit wird zurückgesetzt und der Korridor verengt sich für die nächste Runde.',
+      name: 'Zielzone erreichen für die nächste Runde',
+      text: 'Erreiche die grüne Zielzone rechts, um die Runde abzuschließen. Die Uhr springt auf 45 Sekunden zurück, und je länger deine Serie, desto mehr Knicke und Ausschläge hat die nächste Strecke.',
     },
   ],
 };
@@ -225,63 +225,29 @@ const guideProps = {
   intro: {
     title: 'Wie Handruhe und Feinmotorik gemessen werden',
     paragraphs: [
+      'Ruhige Hand trainieren funktioniert hier wie beim klassischen Heißen Draht: Du führst den Cursor über eine schmale Leuchtlinie ins Ziel, und jedes Abrutschen schickt dich zurück an den Start. Gewertet wird, wie viele Runden du schaffst, bevor die 45-Sekunden-Uhr abläuft.',
       'Messgenauigkeit und Hardware-Einflüsse: Die Zeitmessung basiert auf der performance.now() API des Browsers, die zur Abwehr von Seitenkanalangriffen auf etwa 1 ms gerundet wird. Die optische Anzeige ist an die Bildwiederholrate des Monitors gebunden — ca. 16,7 ms bei 60 Hz, 6,9 ms bei 144 Hz und 4,1 ms bei 240 Hz (Woods et al., 2015). Die USB-Abfragerate der Maus fügt bei 125 Hz ca. 8 ms Verzögerung hinzu, gegenüber ca. 1 ms bei 1000 Hz. Abweichungen unter 5 ms stellen messtechnisches Rauschen dar. SkillDrills speichert alle Ergebnisse lokal in deinem Browser und sammelt keine aggregierten Daten.',
     ],
   },
   benchmark: {
-    title: 'Heißer Draht Steuerungs-Benchmarks',
-    description: 'Redaktionelle Richtwerte zur Einordnung deiner eigenen Leistung. Das Korridormodell folgt Accot & Zhai (1997). Die Stufen bewerten maximal erreichtes Level, Spurbreite und mittlere Abweichung von der Pfadmitte.',
-    columns: ['Stufe', 'Rang-Titel', 'Parcours-Level', 'Kanalbreite', 'Mittlere Abweichung', 'Leistungsbereich'],
+    title: 'Heißer Draht: SkillDrills-Übungsstufen',
+    description: 'SkillDrills-Übungsstufen, keine Forschungsnormen und keine Nutzerdaten. Sie entsprechen der Bewertung auf dem Ergebnisbildschirm: geschaffte Runden und Wandberührungen in einer Sitzung.',
+    columns: ['Note', 'Rang-Titel', 'Runden', 'Wandberührungen', 'Einordnung'],
     rows: [
-      {
-        tier: 'Tier 1',
-        rank: 'Neurochirurg (Apex Surgeon)',
-        stat: 'Level 12+',
-        level: '12–15 px',
-        accuracy: 'Unter 2,5 px',
-        category: 'Stufe 1',
-      },
-      {
-        tier: 'Tier 2',
-        rank: 'Meister-Navigator',
-        stat: 'Level 9–11',
-        level: '16–22 px',
-        accuracy: 'Unter 4,0 px',
-        category: 'Stufe 2',
-      },
-      {
-        tier: 'Tier 3',
-        rank: 'Geübter Steuermann',
-        stat: 'Level 6–8',
-        level: '23–32 px',
-        accuracy: 'Unter 6,5 px',
-        category: 'Stufe 3',
-      },
-      {
-        tier: 'Tier 4',
-        rank: 'Standard-Cursor',
-        stat: 'Level 3–5',
-        level: '33–42 px',
-        accuracy: 'Unter 9,0 px',
-        category: 'Stufe 4',
-      },
-      {
-        tier: 'Tier 5',
-        rank: 'Zitternder Einsteiger',
-        stat: 'Level 1–2',
-        level: '43–50 px',
-        accuracy: 'Über 9,0 px',
-        category: 'Stufe 5',
-      },
+      { tier: 'S+', rank: 'Höchste Stabilitätsstufe', stat: '8+ Runden', errors: '0', band: 'SkillDrills-Übungsstufe' },
+      { tier: 'S', rank: 'Meisterhafte Führung', stat: '6+ Runden', errors: 'höchstens 1', band: 'SkillDrills-Übungsstufe' },
+      { tier: 'A', rank: 'Präziser Steuermann', stat: '4+ Runden', errors: 'höchstens 2', band: 'SkillDrills-Übungsstufe' },
+      { tier: 'B', rank: 'Gute Handruhe', stat: '2+ Runden', errors: 'beliebig', band: 'SkillDrills-Übungsstufe' },
+      { tier: 'C', rank: 'Basis-Kontrolle', stat: 'unter 2 Runden', errors: 'beliebig', band: 'SkillDrills-Übungsstufe' },
     ],
   },
   protocols: {
     title: 'Trainingsprotokolle für maximale Handruhe',
-    description: 'Wissenschaftlich fundierte Übungsanleitungen zur Zitterdämpfung und Beherrschung dynamischer Engpässe.',
+    description: 'Übungsanleitungen auf Basis der zitierten Modelle für ruhigere Mausführung in engen Kurven.',
     items: [
       {
         title: 'Protokoll 1: Geschwindigkeitsregulierung nach Accot-Zhai (Tunnel-Pacing)',
-        description: 'Gemäß dem Steuerungsgesetz von Accot & Zhai (1997) erfordert ein schmalerer Kanal eine antiproportionale Drosselung des Tempos. Nutze breite Abschnitte zum schnellen Zeitgewinn und drossle vor engen Schikanen um 40 %, um Wandkollisionen zu vermeiden.',
+        description: 'Gemäß dem Steuerungsgesetz von Accot & Zhai (1997) dauert das Durchfahren eines Pfads umso länger, je schmaler und länger er ist. Nutze flache Abschnitte zum Zeitgewinn und bremse vor scharfen Knicken deutlich ab, um Wandberührungen zu vermeiden.',
       },
       {
         title: 'Protokoll 2: Blickantizipation nach Woodworth (Feedback-Vorlauf)',
@@ -293,7 +259,7 @@ const guideProps = {
       },
       {
         title: 'Protokoll 4: Apex-Navigation in scharfen Haarnadelkurven',
-        description: 'Ab Level 6 (unter 30 px Breite) steht geometrische Präzision vor Geschwindigkeit. Schneide Kurven am inneren Scheitelpunkt (Apex) leicht an, um beim Richtungswechsel maximale Reserve gegen die Zentrifugaldrift zu behalten.',
+        description: 'Wenn die Strecke mit wachsender Serie dicht geknickt ist, steht die Mittellinie vor Geschwindigkeit. Ziele in Kurven leicht auf den inneren Scheitelpunkt (Apex), damit der Cursor beim Richtungswechsel nicht nach außen driftet.',
       },
     ],
   },
@@ -309,8 +275,8 @@ const guideProps = {
 const deCopy = {
   h1Keyword: 'Ruhige Hand trainieren',
   h1Suffix: ' – Heißer Draht online',
-  subtitle: 'Cursor ohne Wandberührung durch enge Korridore führen und die Feinmotorik prüfen',
-  caption: 'Das Heißer Draht Spiel misst deine feinmotorische Handruhe und Spurtreue: Führe den Cursor durch gewundene Kanäle, ohne die Begrenzungswand zu berühren. Geregelt durch das Accot-Zhai-Steuerungsgesetz (1997) und geschlossene visuelle Feedback-Korrekturen (Woodworth, 1899).',
+  subtitle: 'Cursor über die Leuchtlinie ins Ziel führen, ohne abzurutschen',
+  caption: 'Mit dem Heißer-Draht-Spiel übst du Handruhe und Spurtreue: Führe den Cursor über eine gewundene Leuchtlinie, ohne abzurutschen. Geregelt durch das Accot-Zhai-Steuerungsgesetz (1997) und geschlossene visuelle Feedback-Korrekturen (Woodworth, 1899).',
   statLaps: 'Runden',
   statTime: 'Restzeit',
   statStreak: 'Serie',
@@ -331,32 +297,32 @@ const deCopy = {
   rulesTitle: 'Spielregeln & Steuerung',
   rulesItems: [
     { num: '1', text: 'Folge dem leuchtenden', highlight: 'Smaragd-Parcours exakt', result: 'Ziel setzt Timer auf 45s' },
-    { num: '2', text: 'Rundenerfolg', highlight: 'Endlose Steigerung', result: 'Engere Pfade & schärfere Kurven' },
-    { num: '3', text: 'Wandberührung', highlight: 'Sofortiger Reset', result: 'Startposition & Fehlerzählung' },
-    { num: '4', text: 'Echte Mausführung', highlight: 'Desktop empfohlen', result: 'Pointer-Lock-Mauserfassung' },
+    { num: '2', text: 'Rundenerfolg', highlight: 'Endlose Steigerung', result: 'Mehr Knicke & Ausschläge' },
+    { num: '3', text: 'Wandberührung', highlight: 'Sofortiger Reset', result: 'Start, Fehler +1, Serie 0' },
+    { num: '4', text: 'Maus mit Pointer Lock', highlight: 'Touch möglich', result: 'Esc beendet' },
   ],
   rule1Text: 'Folge dem leuchtenden',
   rule1Highlight: 'Smaragd-Parcours exakt',
   rule1Result: 'Ziel setzt Timer auf 45s',
   rule2Text: 'Rundenerfolg',
   rule2Highlight: 'Endlose Steigerung',
-  rule2Result: 'Engere Pfade & schärfere Kurven',
+  rule2Result: 'Mehr Knicke & Ausschläge',
   rule3Text: 'Wandberührung',
   rule3Highlight: 'Sofortiger Reset',
-  rule3Result: 'Startposition & Fehlerzählung',
-  rule4Text: 'Echte Mausführung',
-  rule4Highlight: 'Desktop empfohlen',
-  rule4Result: 'Pointer-Lock-Mauserfassung',
+  rule3Result: 'Start, Fehler +1, Serie 0',
+  rule4Text: 'Maus mit Pointer Lock',
+  rule4Highlight: 'Touch möglich',
+  rule4Result: 'Esc beendet',
   aboutTitle: 'Über das Heißer Draht Spiel',
   aboutHeading: 'Feinmotorische Spurtreue & Unterdrückung von Handzittern',
-  aboutP1: 'Heißer Draht (Steady Hand Game) trainiert die Hand-Auge-Koordination, präzise Mikrobewegungen und die Stabilität der Handführung. Durch das Steuern entlang immer schmaler werdender Bahnen werden die stabilisierenden Muskeln in Handgelenk und Unterarm gezielt gefordert.',
-  aboutP2: 'Basierend auf dem Steuerungsgesetz von Johnny Accot & Shumin Zhai (1997) verdoppelt eine Halbierung der Pfadbreite die erforderliche Führungszeit. Mit steigender Rundenzahl schrumpft der Kanal von 50 px auf 12 px und erfordert perfekte Zitterdämpfung.',
+  aboutP1: 'Heißer Draht (Steady Hand Game) trainiert die Hand-Auge-Koordination, präzise Mikrobewegungen und die Stabilität der Handführung. Du steuerst entlang einer schmalen Leuchtlinie, die mit wachsender Serie immer kurviger wird, und übst so feine Korrekturen aus Handgelenk und Unterarm.',
+  aboutP2: 'Basierend auf dem Steuerungsgesetz von Johnny Accot & Shumin Zhai (1997) verdoppelt eine Halbierung der Pfadbreite die erforderliche Führungszeit. In diesem Drill bleibt die Toleranz bei ±2,5 px, doch mit wachsender Serie wird die Strecke länger und kurviger, sodass ständige visuelle Korrektur nötig ist.',
   aboutCard1Title: 'Zielgruppe',
-  aboutCard1Text: 'E-Sportler, Grafikdesigner, Chirurgen und alle, die ihre Handruhe und Mausgenauigkeit nachhaltig verbessern möchten.',
+  aboutCard1Text: 'E-Sportler, Grafikdesigner und alle, die eine ruhigere Hand und genauere Mausführung üben möchten.',
   aboutCard2Title: 'Trainierte Fähigkeiten',
   aboutCard2Text: 'Feinmotorische Koordination, Handstabilität, Kurvengeschwindigkeitskontrolle und Vermeidung von Muskelverkrampfung.',
-  aboutCard3Title: 'Dynamische Verengung',
-  aboutCard3Text: 'Mit jeder Runde schrumpft die Spurbreite, während Kurvenradien schärfer werden für kompromisslose Millimeterarbeit.',
+  aboutCard3Title: 'Immer kurvigere Strecken',
+  aboutCard3Text: 'Die Toleranz (±2,5 px) bleibt gleich; mit jeder Runde in Serie bekommt die nächste Strecke mehr Knicke und größere Ausschläge.',
   gradeLabels: {
     'S+': 'Höchste Stabilitätsstufe',
     'S': 'Meisterhafte Führung (Master)',
@@ -366,7 +332,7 @@ const deCopy = {
   },
   shareDrillName: 'Heißer Draht',
   shareUrl: 'https://skilldrills.online/de/drills/motor/precision-control/steady-hand',
-  shareTextTemplate: '🖐️ {drillName}: {laps} Runden fehlerfrei absolviert (Genauigkeit: {acc})! Teste deine Handruhe und Feinmotorik kostenlos auf skilldrills.online!',
+  shareTextTemplate: '🖐️ {drillName}: {laps} Runden geschafft (Genauigkeit: {acc})! Kostenlos ausprobieren auf skilldrills.online!',
   copiedAlert: 'Ergebniskarte in die Zwischenablage kopiert!',
 };
 

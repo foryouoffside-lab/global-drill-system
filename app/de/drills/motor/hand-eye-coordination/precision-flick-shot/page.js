@@ -6,16 +6,15 @@ import RelatedDrills from '@/components/drill/RelatedDrills';
 import { pickSources } from '@/lib/drillSources';
 
 export const metadata = {
-  title: 'Flick Aim Trainer | Mausgenauigkeit testen | SkillDrills',
-  description: 'Kostenloser Flick-Aim-Trainer im Browser: Teste Mausgenauigkeit, Zielerfassung und Trefferquote für FPS, CS2 und VALORANT ohne Download.',
+  title: 'Mausgenauigkeit testen: Präzisions-Flicks ins Zentrum | SkillDrills',
+  description: 'Mausgenauigkeit testen im Browser: zwei schrumpfende Ziele per Flick treffen, Treffer im 8-px-Zentrum zählen doppelt. Trefferquote, Volltreffer und Level.',
   keywords: [
-    'Flick Aim Trainer', 'Mausgenauigkeit testen', 'Mauspräzision', 'Aim Trainer kostenlos',
-    'Zielgenauigkeit testen', 'Flick Shot Training', 'FPS Aim Training', 'Zielerfassung trainieren',
-    'Klickgenauigkeit Maus', 'CS2 Aim Training', 'Valorant Aim Training', 'Micro Flick Trainer',
+    'Mausgenauigkeit testen', 'Maus Genauigkeit Test', 'Zielgenauigkeit testen', 'Treffer ins Zentrum',
+    'Klickgenauigkeit Maus', 'Präzisions-Flicks',
   ],
   openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
-    title: 'Flick Aim Trainer | Mausgenauigkeit testen | SkillDrills',
-    description: 'Kostenloser Flick-Aim-Trainer im Browser: Teste Mausgenauigkeit, Zielerfassung und Trefferquote für FPS, CS2 und VALORANT ohne Download.',
+    title: 'Mausgenauigkeit testen: Präzisions-Flicks ins Zentrum | SkillDrills',
+    description: 'Mausgenauigkeit testen im Browser: zwei schrumpfende Ziele per Flick treffen, Treffer im 8-px-Zentrum zählen doppelt. Trefferquote, Volltreffer und Level.',
     type: 'article',
     url: 'https://skilldrills.online/de/drills/motor/hand-eye-coordination/precision-flick-shot',
     siteName: 'SkillDrills',
@@ -23,8 +22,8 @@ export const metadata = {
   },
   twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: 'summary_large_image',
-    title: 'Flick Aim Trainer | Mausgenauigkeit testen | SkillDrills',
-    description: 'Kostenloser Flick-Aim-Trainer im Browser: Teste Mausgenauigkeit, Zielerfassung und Trefferquote für FPS, CS2 und VALORANT ohne Download.',
+    title: 'Mausgenauigkeit testen: Präzisions-Flicks ins Zentrum | SkillDrills',
+    description: 'Mausgenauigkeit testen im Browser: zwei schrumpfende Ziele per Flick treffen, Treffer im 8-px-Zentrum zählen doppelt. Trefferquote, Volltreffer und Level.',
   },
   robots: { index: true, follow: true },
   alternates: {
@@ -67,15 +66,15 @@ const breadcrumbSchema = {
 const softwareApplicationSchema = {
   '@context': 'https://schema.org',
   '@type': 'SoftwareApplication', "sameAs": ["https://en.wikipedia.org/wiki/Fitts%27s_law", "https://en.wikipedia.org/wiki/Hand%E2%80%93eye_coordination"],
-  name: 'Flick Aim Trainer und Maus-Genauigkeitstest',
+  name: 'Mausgenauigkeit testen: Präzisions-Flick-Shot',
   applicationCategory: 'HealthApplication',
   operatingSystem: 'All',
   offers: { '@type': 'Offer', price: '0', priceCurrency: 'EUR' },
-  description: 'Kostenloses Browsertool zur Messung von ballistischer Flick-Geschwindigkeit, Bulls-Eye-Trefferrate und Stopp-Kontrolle.',
+  description: 'Kostenloser Browsertest der Mausgenauigkeit: schrumpfende Ziele treffen, Trefferquote und Volltreffer im Zentrum zählen.',
   url: 'https://skilldrills.online/de/drills/motor/hand-eye-coordination/precision-flick-shot',
   publisher: { '@type': 'Organization', name: 'SkillDrills', url: 'https://skilldrills.online' },
   inLanguage: 'de-DE',
-  dateModified: '2026-09-20',
+  dateModified: '2026-11-09',
 };
 
 const webApplicationSchema = {
@@ -86,7 +85,7 @@ const webApplicationSchema = {
   url: 'https://skilldrills.online/de/drills/motor/hand-eye-coordination/precision-flick-shot',
   applicationCategory: 'EducationalApplication',
   inLanguage: 'de-DE',
-  dateModified: '2026-09-20',
+  dateModified: '2026-11-09',
 };
 
 const videoGameSchema = {
@@ -94,7 +93,7 @@ const videoGameSchema = {
   '@type': 'VideoGame',
   name: 'Präzisions-Flick-Shot-Spiel',
   url: 'https://skilldrills.online/de/drills/motor/hand-eye-coordination/precision-flick-shot',
-  description: 'Trainiere blitzschnelle Zielerfassung, ballistische Flicks und punktgenaues Abbremsen im interaktiven FPS-Aim-Test.',
+  description: 'Schrumpfende Ziele per Flick treffen und dabei möglichst das Zentrum erwischen.',
   genre: ['Shooter-Training', 'Reaktion', 'Esports'],
   gamePlatform: ['Web Browser', 'Desktop'],
   applicationCategory: 'Game',
@@ -106,7 +105,7 @@ const faqSchema = {
   '@context': 'https://schema.org',
   '@type': 'FAQPage',
   inLanguage: 'de-DE',
-  dateModified: '2026-09-20',
+  dateModified: '2026-11-09',
   mainEntity: [
     {
       '@type': 'Question',
@@ -145,7 +144,7 @@ const faqSchema = {
       name: 'Wie hilft dieses Training in CS2, Valorant oder Apex Legends?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Im taktischen Gefecht entscheidet der erste Treffer. Geübte Micro-Flicks ermöglichen Kopfschusstreffer direkt aus der Vorziel-Position ohne Verzögerung.',
+        text: 'Spieler von CS2, Valorant oder Apex Legends können damit das saubere Abstoppen nach einem Flick üben. Eine Verbesserung im Spiel ist nicht garantiert; stellen Sie am besten dieselbe Empfindlichkeit wie im Spiel ein.',
       },
     },
     {
@@ -153,7 +152,7 @@ const faqSchema = {
       name: 'Welche Rolle spielt die visuelle Priorisierung bei mehreren Zielen?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Erscheinen zwei Ziele parallel, schult der Verfallstimer schnelle Sakkaden und Entscheidungsfindung: Das kurz vor dem Ablauf stehende Ziel muss zuerst gelöscht werden.',
+        text: 'Es sind immer zwei Ziele sichtbar; beide schrumpfen, das aktive aber schneller. Treffen Sie zuerst das kleinere Ziel. Schrumpft ein Ziel ganz weg, wird die Combo zurückgesetzt und 1 Sekunde abgezogen.',
       },
     },
     {
@@ -169,7 +168,7 @@ const faqSchema = {
       name: 'Wie wird die Treffgenauigkeit und Bewertung berechnet?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Die Genauigkeit misst erfolgreiche Treffer pro Klickversuch. Zusammen mit Bulls-Eye-Quote, Combo-Streak und Reaktionszeit wird ein Leistungsrang von D bis S+ vergeben.',
+        text: 'Die Genauigkeit misst Treffer pro Klick. Jeder Treffer bringt Grundpunkte (100, im 8-px-Zentrum 200) × Combo-Multiplikator (bis 3,0×) × Level-Bonus, dazu +2 Sekunden (max. 60). Fehlklick oder abgelaufenes Ziel kosten 1 Sekunde und die Combo. Der Rang ergibt sich allein aus der Endpunktzahl; eine Reaktionszeit wird nicht gemessen.',
       },
     },
     {
@@ -177,7 +176,7 @@ const faqSchema = {
       name: 'Welche Hardware-Einstellungen optimieren das Flick-Training?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Ein 144Hz+ Monitor für geringste Anzeigeverzögerung, deaktivierte Zeigerbeschleunigung und eine leichte Gaming-Maus mit reibungsarmem Pad.',
+        text: 'Ein Monitor mit hoher Bildrate, deaktivierte Zeigerbeschleunigung (Windows: „Zeigerbeschleunigung verbessern“ aus) und eine leichte Maus. Dieser Test prüft Ihre Klickgenauigkeit, nicht die Windows-Einstellung.',
       },
     },
     {
@@ -185,7 +184,7 @@ const faqSchema = {
       name: 'Wie oft sollte man Flick Shots trainieren?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Eine tägliche 10- bis 15-minütige Aufwärmroutine vor Wettkampfmatches schärft die neuromuskuläre Reaktionsbereitschaft optimal, ohne Ermüdung zu verursachen.',
+        text: 'Ein paar Runden als Aufwärmen vor dem Spielen reichen. Bei Beschwerden im Handgelenk pausieren und Ergebnisse vor allem mit eigenen früheren Runden vergleichen.',
       },
     },
   ],
@@ -234,41 +233,38 @@ const guideProps = {
   intro: {
     title: 'Biomechanik ballistischer Micro-Flicks und Submovement-Optimierung',
     paragraphs: [
-      'Im wettkampforientierten E-Sport und der Mensch-Computer-Interaktion ist der Flick Shot eine hochdynamische, diskrete Zielbewegung unter extremem Zeitdruck. Robert S. Woodworth (1899) beschrieb als Erster die Zwei-Phasen-Steuerung zielgerichteter Bewegungen: ein primärer ballistischer Bewegungsimpuls schleudert das Glied zum Ziel, gefolgt von einer Kontrollphase zur visuellen Feinjustierung.',
-      'In ihrem richtungsweisenden Modell (Stochastic Optimized Submovement Model) zeigten David E. Meyer et al. (1988), dass menschliche Muskelbewegungen geschwindigkeitsabhängigem neuronalen Rauschen unterliegen. Wer zu hastig flicked, riskiert eine hohe Streuung der Endpunkte. Liegt der erste Impuls außerhalb der Zielzone, muss eine korrektive Zweitbewegung (150 bis 200 ms Latenz) eingeleitet werden.',
+      'Mit diesem Test können Sie Ihre Mausgenauigkeit testen: Ziele erscheinen, schrumpfen und müssen möglichst im Zentrum getroffen werden. Im wettkampforientierten E-Sport und der Mensch-Computer-Interaktion ist der Flick Shot eine hochdynamische, diskrete Zielbewegung unter extremem Zeitdruck. Robert S. Woodworth (1899) beschrieb als Erster die Zwei-Phasen-Steuerung zielgerichteter Bewegungen: ein primärer ballistischer Bewegungsimpuls schleudert das Glied zum Ziel, gefolgt von einer Kontrollphase zur visuellen Feinjustierung.',
+      'In ihrem richtungsweisenden Modell (Stochastic Optimized Submovement Model) zeigten David E. Meyer et al. (1988), dass menschliche Muskelbewegungen geschwindigkeitsabhängigem neuronalen Rauschen unterliegen. Wer zu hastig flicked, riskiert eine hohe Streuung der Endpunkte. Liegt der erste Impuls außerhalb der Zielzone, muss eine zusätzliche Korrekturbewegung folgen, die Zeit kostet.',
       'Für herausragende Trefferleistungen (MacKenzie, 1992) müssen Schützen die Geschwindigkeit des Primärimpulses so tarieren, dass der Endpunkt zuverlässig im Kern liegt. Die Belohnung von Bulls-Eye-Zentrumstreffern trainiert das sensorimotorische System, Zielstreuung zu minimieren und Nachkorrekturen komplett zu eliminieren.',
       'Das Verhältnis zwischen Zieldistanz und Zielgröße gehorcht dem Fitts-Gesetz (Fitts, 1954). Die moderne Synthese von Elliott et al. (2010) belegt zudem die zentrale Rolle antagonistischer Muskelaktivierung beim Abbremsen.',
-      'Messgenauigkeit im Browser: Gemessen wird mit performance.now(). Bildschirmaktualisierungsraten (16,7 ms bei 60 Hz, 6,9 ms bei 144 Hz) und Polling-Raten setzen physikalische Grenzen (Woods et al., 2015). Vergleichen Sie Ihre Resultate primär mit eigenen Werten am selben Setup.',
+      'Ablauf: Start mit 45 Sekunden, +2 Sekunden pro Treffer (max. 60), -1 Sekunde bei Fehlklick oder abgelaufenem Ziel. Nötig sind Maus und Pointer Lock; reine Touch-Geräte werden nicht unterstützt. Bildrate und Polling-Rate beeinflussen das Eingabegefühl (Woods et al., 2015), vergleichen Sie daher vor allem mit eigenen Werten am selben Setup.',
     ],
   },
   benchmarks: {
-    title: 'Empirische Leistungsstufen für Flick Shot Präzision',
-    caption: 'Klassifizierung basierend auf dem Modell von Woodworth (1899) und Meyer et al. (1988). SkillDrills speichert Daten ausschließlich lokal im Browser.',
-    headers: ['Stufe', 'Klassifizierung', 'Level & Combo', 'Mittlere Latenz', 'Klick-Genauigkeit', 'Bulls-Eye-Quote', 'Neuromuskuläres Profil'],
+    title: 'Übungsstufen: Mausgenauigkeit testen (SkillDrills)',
+    caption: 'SkillDrills-Übungsbänder: keine Forschungsnormen und keine Nutzerstatistik, sondern Richtwerte des Drill-Autors, um Level, Combo, Trefferquote und Volltreffer-Anteil einzuordnen. SkillDrills speichert Daten ausschließlich lokal im Browser.',
+    headers: ['Stufe', 'Klassifizierung', 'Level & Combo', 'Klick-Genauigkeit', 'Bulls-Eye-Quote', 'Typisches Spielbild'],
     rows: [
       [
         'Tier 1',
         'Apex Flick Meister',
         'Lv. 15+ (Combo > 20x)',
-        '< 340 ms',
         '≥ 96,0%',
         '> 65%',
-        'Reine Ein-Impuls-Ballistik, nahezu keine Zweitbewegungen, blitzschnelles Abbremsen unter 10 ms.',
+        'Ein Flick landet im Zentrum, kaum Nachkorrekturen.',
       ],
       [
         'Tier 2',
         'Elite Gunfighter',
         'Lv. 11–14 (Combo 14–19x)',
-        '340–420 ms',
         '91,0%–95,9%',
         '45%–64%',
-        'Scharfe visuelle Verifikation, minimale Mikrokorrektur unter 30 ms, kaum Trajektorienabweichung.',
+        'Sicheres Zentrum, kurze Mikrokorrekturen.',
       ],
       [
         'Tier 3',
         'Sicherer Schütze',
         'Lv. 7–10 (Combo 8–13x)',
-        '421–520 ms',
         '84,0%–90,9%',
         '25%–44%',
         'Häufige Treffer im Außenring, leichtes Überschwingen bei schnellen Zielwechseln.',
@@ -277,7 +273,6 @@ const guideProps = {
         'Tier 4',
         'Aufstrebender Fragger',
         'Lv. 4–6 (Combo 4–7x)',
-        '521–660 ms',
         '74,0%–83,9%',
         '10%–24%',
         'Ruckartige Mehrfachkorrekturen, erhöhte Streuung durch Überbeschleunigung, zögerliches Auslösen.',
@@ -286,10 +281,9 @@ const guideProps = {
         'Tier 5',
         'Basisniveau / Anfänger',
         'Lv. 1–3 (Combo < 4x)',
-        '> 660 ms',
         '< 74,0%',
         '< 10%',
-        'Zu kurze Flicks, häufige Fehlschüsse, langsame Re-Akquisitionszeit, unkoordinierte Bewegung.',
+        'Zu kurze Flicks, häufige Fehlschüsse.',
       ],
     ],
   },
@@ -324,8 +318,8 @@ const guideProps = {
 };
 
 const copyDe = {
-  title: "Flick Aim Trainer – Maus Zielgenauigkeit Test",
-  subtitle: "Flick-Präzision · Zielerfassung messen",
+  title: "Mausgenauigkeit testen: Präzisions-Flicks ins Zentrum",
+  subtitle: "Zwei schrumpfende Ziele · Zentrum zählt doppelt · +2 s pro Treffer",
   startButtonText: "DRILL STARTEN",
   playAgainText: "Nochmal spielen",
   shareText: "Ergebnis teilen",
@@ -336,10 +330,10 @@ const copyDe = {
   peakLevelLabel: "Höchste Stufe",
   rulesTitle: "Drill-Anleitung & Punktesystem",
   rulesItems: [
-    { num: "1", text: "Volltreffer (Kern)", highlight: "+200 PKT / +0,6s", result: "Präziser Schuss ins Zentrum" },
-    { num: "2", text: "Standardtreffer", highlight: "+100 PKT / +0,6s", result: "Schnelle periphere Zielerfassung" },
+    { num: "1", text: "Volltreffer (Kern)", highlight: "+200 PKT / +2s (max. 60s)", result: "Präziser Schuss ins Zentrum" },
+    { num: "2", text: "Standardtreffer", highlight: "+100 PKT / +2s (max. 60s)", result: "Schnelle periphere Zielerfassung" },
     { num: "3", text: "Stufenaufstieg", highlight: "+1 Stufe / 1400 PKT", result: "Ziele schrumpfen & verfallen schneller" },
-    { num: "4", text: "Fehlschuss & Zeitablauf", highlight: "Combo-Reset", result: "Strafabzug von -0,8s" }
+    { num: "4", text: "Fehlschuss & Zeitablauf", highlight: "Combo-Reset", result: "Abzug von -1s" }
   ],
 };
 

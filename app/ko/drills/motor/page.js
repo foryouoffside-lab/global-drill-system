@@ -6,28 +6,27 @@ import { getLocalizedDrill } from '@/lib/i18n/drillNames';
 const motorDrills = DRILLS.filter((d) => d.category === 'motor');
 
 export const metadata = {
-  title: 'CPS 측정·에임 연습 사이트·키보드 반응속도 | SkillDrills',
-  description: 'CPS 측정, 에임 연습 사이트, 마우스 정확도 테스트, 키보드 반응속도 테스트까지 모터 드릴 9종을 무료로 브라우저에서 해 보세요.',
+  title: '마우스 연습 | 에임·클릭속도·정확도 무료 훈련 | SkillDrills',
+  description: '무료 마우스 연습 게임 8종. 움직이는 타겟 클릭, 과녁 중앙 맞히기, 45초 CPS 측정, 드래그 앤 드롭, 좁은 통로 통과, 경로 따라가기, 키 인식 반응까지 브라우저에서 바로 기록하세요.',
   keywords: [
-    'CPS 측정', '클릭속도 테스트', '에임 연습 사이트', '마우스 정확도 테스트', '키보드 반응속도 테스트', '에임 연습',
-    '에임 트레이너 무료', 'CPS 테스트', '클릭 속도 테스트',
-    '키보드 속도 테스트', '키보드 동시입력 테스트', '눈손 협응력 훈련',
+    '마우스 연습', '마우스 연습 게임', '마우스 연습 사이트', '마우스 컨트롤 훈련',
+    '눈손 협응력 훈련',
     '마우스 미세 제어', '손 안정성 훈련', '게이밍 마우스 정확도',
     '손가락 민첩성 훈련', '무료 모터 스킬 드릴'
   ],
   openGraph: {
-    title: 'CPS 측정·에임 연습 사이트·키보드 반응속도 | SkillDrills',
-    description: 'CPS 측정, 에임 연습 사이트, 마우스 정확도 테스트, 키보드 반응속도 테스트까지 모터 드릴 9종을 무료로 브라우저에서 해 보세요.',
+    title: '마우스 연습 | 에임·클릭속도·정확도 무료 훈련 | SkillDrills',
+    description: '무료 마우스 연습 게임 8종. 움직이는 타겟 클릭, 과녁 중앙 맞히기, 45초 CPS 측정, 드래그 앤 드롭, 좁은 통로 통과, 경로 따라가기, 키 인식 반응까지 브라우저에서 바로 기록하세요.',
     type: 'website',
     url: 'https://skilldrills.online/ko/drills/motor',
     siteName: 'SkillDrills',
     locale: 'ko_KR',
-    images: [{ url: 'https://skilldrills.online/opengraph-image', width: 1200, height: 630, alt: 'CPS 측정·에임 연습·마우스 정확도 테스트 | SkillDrills' }],
+    images: [{ url: 'https://skilldrills.online/opengraph-image', width: 1200, height: 630, alt: '마우스 연습 게임 | SkillDrills' }],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'CPS 측정·에임 연습 사이트·키보드 반응속도 | SkillDrills',
-    description: 'CPS 측정, 에임 연습 사이트, 마우스 정확도 테스트, 키보드 반응속도 테스트까지 모터 드릴 9종을 무료로 브라우저에서 해 보세요.',
+    title: '마우스 연습 | 에임·클릭속도·정확도 무료 훈련 | SkillDrills',
+    description: '무료 마우스 연습 게임 8종. 움직이는 타겟 클릭, 과녁 중앙 맞히기, 45초 CPS 측정, 드래그 앤 드롭, 좁은 통로 통과, 경로 따라가기, 키 인식 반응까지 브라우저에서 바로 기록하세요.',
     images: ['https://skilldrills.online/opengraph-image'],
   },
   robots: { index: true, follow: true },
@@ -51,10 +50,10 @@ const collectionSchema = {
   "@context": "https://schema.org",
   "@type": "CollectionPage",
   "inLanguage": "ko-KR",
-  "dateModified": "2026-09-20",
-  "name": "CPS 측정·에임 연습·마우스 정확도 테스트 (9종)",
+  "dateModified": "2026-11-09",
+  "name": "마우스 연습 게임 (8종)",
   "url": "https://skilldrills.online/ko/drills/motor",
-  "description": "마우스 정확도, 에임 제어, CPS 클릭, 키보드 속도와 눈손 협응을 측정하는 무료 브라우저 드릴 9종.",
+  "description": "마우스 정확도, 에임 제어, CPS 클릭, 키 인식 반응과 눈손 협응을 연습하는 무료 브라우저 드릴 8종.",
   "author": { "@type": "Organization", "name": "SkillDrills" },
   "hasPart": motorDrills.map((drill) => {
     const loc = getLocalizedDrill(drill.href, 'ko', drill.name);
@@ -74,14 +73,14 @@ const faqSchema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
   "inLanguage": "ko-KR",
-  "dateModified": "2026-09-20",
+  "dateModified": "2026-11-09",
   "mainEntity": [
     {
       "@type": "Question",
-      "name": "온라인 모터 훈련 드릴은 어떻게 눈과 손의 협응력을 향상시키나요?",
+      "name": "이 마우스 연습 게임들은 무엇을 훈련하나요?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "모터 훈련 드릴은 시각 피질의 망막 이미지 인식, 소뇌의 운동 계획, 운동 피질의 신호 전달을 연결하는 시각-운동 피드백 루프를 강화합니다. 고주파 미세 조준, 빠른 마우스 클릭 및 경로 추적 훈련을 통해 표적을 보고 손으로 반응하는 과정을 반복 연습하게 해 줍니다. 개선 폭에는 개인차가 있으며 같은 기기에서 본인의 기록 변화를 비교하는 것이 가장 정확합니다."
+        "text": "움직이는 타겟 클릭(에임 연습), 과녁 중앙 맞히기, 순서대로 클릭, 드래그 앤 드롭, 45초 CPS 측정, 벽에 닿지 않고 좁은 통로 통과, 움직이는 점 따라가기, 화면에 나온 키 누르기까지 8가지 마우스 연습입니다. 눈과 손의 협응과 커서 조작을 반복 연습하며, 개선 폭은 개인차가 있으니 같은 기기에서 본인 기록을 비교하세요."
       }
     },
     {
@@ -89,7 +88,7 @@ const faqSchema = {
       "name": "평균적인 CPS(초당 클릭 수)는 얼마이며, 주요 클릭 기술은 무엇인가요?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "일반적인 표준 핑거 태핑 방식의 평균 CPS는 초당 6~8회입니다. e스포츠 게이머들은 지터 클릭(전완근을 수축시켜 손가락을 진동시키는 방식, 10~14 CPS)이나 버터플라이 클릭(검지와 중지를 번갈아 두 번 치는 방식, 15~22 CPS)을 사용합니다. 장기적인 손목 건강과 조준 정밀도를 위해 제어된 지터 또는 규칙적인 리듬 클릭이 권장됩니다."
+        "text": "CPS는 기기, 클릭 방식, 측정 시간에 따라 크게 달라지므로 공인된 평균값은 없습니다. 흔히 쓰이는 방식은 일반 클릭, 지터 클릭(팔 근육을 긴장시켜 손가락을 빠르게 떨게 하는 방식), 버터플라이 클릭(두 손가락으로 번갈아 누르는 방식)입니다. SkillDrills CPS 측정은 45초 동안 마우스 클릭을 세어 평균 CPS를 보여 주며, 같은 기기에서 본인 기록을 비교하는 용도로 쓰는 것이 좋습니다."
       }
     },
     {
@@ -110,10 +109,10 @@ const faqSchema = {
     },
     {
       "@type": "Question",
-      "name": "게이밍과 타건 속도에서 키보드 동시입력과 민첩성이 중요한 이유는 무엇인가요?",
+      "name": "키보드 키 인식 드릴은 무엇을 연습하나요?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "키보드 민첩성은 약지와 새끼손가락의 해부학적 힘줄 결합을 극복하는 독립적인 손가락 제어에 달려 있습니다. 키보드 테스트 및 인식 훈련은 손가락별 작동 패턴을 분리하여 키 전환 지연 시간을 줄이고 빠른 APM 상황에서 키 씹힘이나 오입력을 줄이는 데 도움이 될 수 있습니다."
+        "text": "화면에 표시되는 키(영문, 숫자, WASD, 방향키 등)를 보고 60초 동안 빠르고 정확하게 누르는 반응 드릴입니다. 가짜 프롬프트는 누르지 않아야 합니다. 타자 속도(타수) 측정이나 키보드 하드웨어 검사 도구는 아닙니다."
       }
     },
     {

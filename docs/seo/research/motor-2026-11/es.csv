@@ -1,0 +1,46 @@
+phrase,cc,lang,bing_exact,bing_broad,status,assigned_page,role
+test de cps,es,es-ES,40,40,ok,motor/movement-speed/rapid-tapping,secondary (current title; personality-test noise)
+cps test,es,es-ES,685,713,ok,motor/movement-speed/rapid-tapping,primary
+test de clics,es,es-ES,22,22,ok,motor/movement-speed/rapid-tapping,secondary (watch physical speed-drill 'Test de Clic Rápido')
+test de clicks,es,es-ES,49,49,ok,motor/movement-speed/rapid-tapping,secondary
+clicks por segundo,es,es-ES,343,420,ok,motor/movement-speed/rapid-tapping,secondary
+clics por segundo,es,es-ES,28,28,ok,motor/movement-speed/rapid-tapping,secondary
+test de clicks por segundo,es,es-ES,0,0,ok,none,KILL
+test de clics por segundo,es,es-ES,0,0,ok,none,KILL
+contador de clicks por segundo,es,es-ES,17,17,ok,motor/movement-speed/rapid-tapping,secondary
+medir clicks por segundo,es,es-ES,0,0,ok,none,KILL
+test de velocidad de clicks,es,es-ES,0,0,ok,none,KILL
+test de cliqueo,es,es-ES,0,0,ok,none,KILL
+test de velocidad de cliqueo,es,es-ES,31,31,ok,motor/movement-speed/rapid-tapping,secondary (move off hub; GSC hub 1 clk pos 2)
+test de click raton,es,es-ES,0,0,ok,none,KILL
+test de teclado,es,es-ES,370,400,ok,none,skip: key-checker/typing intent; decision
+test de teclado online,es,es-ES,27,27,ok,none,skip: key-checker intent
+keyboard test,es,es-ES,525,576,ok,none,skip: key-checker intent; decision
+keyboard tester,es,es-ES,213,222,ok,none,skip: key-checker intent; decision
+probar teclado,es,es-ES,233,260,ok,none,skip: key-checker intent; decision
+test de reaccion con teclado,es,es-ES,0,0,ok,none,KILL
+test de reacción teclado,es,es-ES,0,0,ok,none,KILL
+test de teclas,es,es-ES,0,0,ok,none,KILL
+test de ratón,es,es-ES,0,0,ok,none,KILL
+test de raton online,es,es-ES,0,0,ok,none,KILL
+test precision raton,es,es-ES,0,0,ok,none,KILL
+test de precisión del ratón,es,es-ES,0,0,ok,none,KILL
+test punteria raton,es,es-ES,0,0,ok,none,KILL
+ejercicios de raton,es,es-ES,0,0,ok,none,KILL
+ejercicios con el raton,es,es-ES,0,0,ok,none,KILL
+ejercicios de mouse,es,es-ES,0,0,ok,none,KILL
+ejercicios raton online,es,es-ES,0,0,ok,none,KILL
+juegos de ratón,es,es-ES,0,0,ok,none,KILL
+juego del pulso,es,es-ES,0,0,ok,none,KILL
+juego de pulso,es,es-ES,0,0,ok,none,KILL
+juego de pulso online,es,es-ES,,,error,motor/precision-control/steady-hand,"UNKNOWN (API error, not retried)"
+juego de pulso firme,es,es-ES,0,0,ok,none,KILL
+juegos de arrastrar y soltar,es,es-ES,0,0,ok,none,KILL
+ejercicios de arrastrar y soltar,es,es-ES,0,0,ok,none,KILL
+test de seguimiento del ratón,es,es-ES,0,0,ok,none,KILL
+clic en orden,es,es-ES,0,0,ok,none,KILL
+aim trainer,es,es-ES,487,685,ok (prior run),motor/hand-eye-coordination/aim-trainer,primary (fps run 2026-11)
+aim trainer online,es,es-ES,7,9,ok (prior run),motor/hand-eye-coordination/aim-trainer,secondary (fps run)
+aim test,es,es-ES,43,47,ok (prior run),fps/flick-shot-training,TAKEN (fps)
+test de puntería,es,es-ES,29,29,ok (prior run),fps/flick-shot-training,TAKEN (fps secondary)
+test de reacción,es,es-ES,125,125,ok (prior run),visual/reaction-speed/light-reaction,TAKEN (reaction)

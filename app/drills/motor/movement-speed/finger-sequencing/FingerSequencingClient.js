@@ -77,10 +77,10 @@ const getLevelConfig = (level, combo = 0) => {
 // ACCORDION DATA
 // ============================================================
 const RULES_ITEMS = [
-  { num: "1", text: "Ordered Node", highlight: "+150 PTS (+2s, max 60s)", result: "×Combo Mult" },
-  { num: "2", text: "Chain Streak", highlight: "Up to 3.0× PTS", result: "Maintains Flow" },
+  { num: "1", text: "Ordered Node", highlight: "+2s (max 60s)", result: "Next Node" },
+  { num: "2", text: "Chain Complete", highlight: "+150 PTS", result: "×Combo Mult (up to 3.0×)" },
   { num: "3", text: "Level Up", highlight: "+1 / 1750 PTS", result: "Shrink & Speed" },
-  { num: "4", text: "Miss / Timeout", highlight: "Penalty", result: "Resets Combo (-0.8s)" }
+  { num: "4", text: "Miss / Trap / Timeout", highlight: "Penalty", result: "Resets Combo (-1s)" }
 ];
 
 export default function FingerSequencingClient({ copy } = {}) {
@@ -863,8 +863,8 @@ export default function FingerSequencingClient({ copy } = {}) {
           <div className="flex flex-col gap-1">
             <h1 className="text-2xl sm:text-3xl font-black tracking-tight text-white">
               <span data-seo-kw="1">{copy?.title || "Sequence Aim Trainer"}</span>
-              <span className="block text-sm font-semibold text-slate-400 mt-1">{copy?.subtitle || "Finger sequencing aim drill for clicking targets in order while improving motor speed and visual coordination"}</span>
             </h1>
+            <p className="text-sm font-semibold text-slate-400 mt-1">{copy?.subtitle || "Finger sequencing aim drill for clicking targets in order while improving motor speed and visual coordination"}</p>
           </div>
         )}
 

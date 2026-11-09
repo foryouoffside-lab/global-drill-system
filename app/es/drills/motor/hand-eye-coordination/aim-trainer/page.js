@@ -13,15 +13,15 @@ import { pickSources } from '@/lib/drillSources';
 
 export const metadata = {
   title: "Aim Trainer Online Gratis | Precisión del Ratón | SkillDrills",
-  description: "Entrena tu puntería con un aim trainer gratuito en el navegador. Mide precisión del ratón, adquisición de objetivos y velocidad de clic.",
-  keywords: ['aim trainer', 'aim trainer online', 'aim trainer gratis', 'precisión del ratón', 'entrenamiento de flick', 'puntería FPS', 'calentamiento de puntería', 'adquisición de objetivos', 'puntería Valorant', 'puntería CS2'],
+  description: "Aim trainer online gratis: haz clic en dos objetivos en movimiento antes de que desaparezcan y mide la precisión del ratón y tu tasa de acierto. Sin descargas.",
+  keywords: ['aim trainer', 'aim trainer online', 'aim trainer gratis', 'precisión del ratón', 'calentamiento de puntería'],
   alternates: {
     canonical: 'https://skilldrills.online/es/drills/motor/hand-eye-coordination/aim-trainer',
     languages: getAlternateLanguages('/drills/motor/hand-eye-coordination/aim-trainer'),
   },
   openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
     title: 'Aim Trainer Online Gratis | Precisión del Ratón | SkillDrills',
-    description: 'Aim trainer gratis en el navegador para entrenar la precisión del ratón, los flicks y la reacción.',
+    description: 'Aim trainer gratis en el navegador: dos objetivos en movimiento, precisión del ratón y tasa de acierto.',
     url: 'https://skilldrills.online/es/drills/motor/hand-eye-coordination/aim-trainer',
     siteName: 'SkillDrills',
     locale: 'es_ES',
@@ -30,7 +30,7 @@ export const metadata = {
   twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: 'summary_large_image',
     title: 'Aim Trainer Online Gratis | Precisión del Ratón | SkillDrills',
-    description: 'Aim trainer FPS en el navegador para mejorar precisión, flicks y reflejos.',
+    description: 'Aim trainer online: haz clic en los objetivos antes de que desaparezcan y mide tu precisión.',
   },
   robots: { index: true, follow: true },
 };
@@ -53,13 +53,13 @@ const softwareApplicationSchema = {
   '@context': 'https://schema.org',
   '@type': 'SoftwareApplication', "sameAs": ["https://en.wikipedia.org/wiki/Fitts%27s_law", "https://en.wikipedia.org/wiki/Hand%E2%80%93eye_coordination"],
   inLanguage: 'es-ES',
-  name: 'Aim Trainer Online – Precisión de Mouse y Flick Shots FPS',
+  name: 'Aim Trainer Online Gratis',
   alternateName: ['Aim Trainer', 'Aim Trainer Online', 'Test de Puntería'],
   applicationCategory: 'HealthApplication',
   operatingSystem: 'All',
   offers: { '@type': 'Offer', price: '0', priceCurrency: 'EUR' },
   description:
-    'Herramienta web gratuita para mejorar la puntería, micro-flicks y coordinación visomotora con el ratón en juegos FPS.',
+    'Aim trainer gratuito en el navegador: haz clic en dos objetivos en movimiento antes de que desaparezcan.',
   browserRequirements: 'Navegador moderno con soporte para JavaScript y Pointer Lock (Chrome, Firefox, Safari, Edge)',
   softwareVersion: '2.0',
 };
@@ -68,10 +68,10 @@ const webAppSchema = {
   '@context': 'https://schema.org',
   '@type': 'WebApplication',
   inLanguage: 'es-ES',
-  name: 'Aim Trainer Online — Precisión de Mouse y Flick Shots FPS | SkillDrills',
+  name: 'Aim Trainer Online Gratis | SkillDrills',
   url: 'https://skilldrills.online/es/drills/motor/hand-eye-coordination/aim-trainer',
   description:
-    'Entrena puntería y reflejos para juegos de disparos con objetivos dinámicos y dificultad adaptativa.',
+    'Aim trainer con objetivos en movimiento que se vuelven más pequeños y rápidos en cada nivel.',
   applicationCategory: 'EducationalApplication',
   operatingSystem: 'All',
   browserRequirements: 'Navegador moderno con soporte para JavaScript y Pointer Lock.',
@@ -87,12 +87,12 @@ const videoGameSchema = {
   "@context": "https://schema.org",
   "@type": "VideoGame",
   "inLanguage": "es-ES",
-  "name": "Aim Trainer Online (Precisión de Mouse FPS)",
+  "name": "Aim Trainer Online",
   "url": "https://skilldrills.online/es/drills/motor/hand-eye-coordination/aim-trainer",
-  "description": "Aim trainer 2D gratuito en el navegador para FPS: entrena la adquisición de objetivos, la precisión del ratón y la velocidad de clic.",
+  "description": "Aim trainer 2D gratuito en el navegador: haz clic en objetivos en movimiento y mide tu precisión con el ratón.",
   "dateModified": "2026-11-09",
   "gamePlatform": "Web Browser",
-  "genre": ["Aim Trainer", "FPS Training", "Hand-Eye Coordination", "Reaction Speed"],
+  "genre": ["Aim Trainer", "FPS Training", "Hand-Eye Coordination"],
   "playMode": "SinglePlayer",
   "applicationCategory": "Game",
   "operatingSystem": "Web Browser",
@@ -112,7 +112,7 @@ const howToSchema = {
       "url": "https://skilldrills.online/es/drills/motor/hand-eye-coordination/aim-trainer#step-1",
       
       name: 'Iniciar el Entrenamiento',
-      text: 'Pulsa en "Iniciar Entrenamiento" para entrar al modo pantalla completa y bloquear el cursor.',
+      text: 'Pulsa "Iniciar Entrenamiento": el cursor se bloquea (Pointer Lock) y, tras 3 segundos de cuenta atrás, el reloj arranca en 45 segundos. Esc termina la partida en cualquier momento.',
     },
     {
       '@type': 'HowToStep',
@@ -120,7 +120,7 @@ const howToSchema = {
       "url": "https://skilldrills.online/es/drills/motor/hand-eye-coordination/aim-trainer#step-2",
       
       name: 'Adquisición Visual del Objetivo',
-      text: 'Localiza con la vista el objetivo dinámico en cuanto aparezca en el escenario.',
+      text: 'Siempre hay dos objetivos en pantalla. Se mueven en direcciones aleatorias, rebotan en los bordes y desaparecen al poco tiempo.',
     },
     {
       '@type': 'HowToStep',
@@ -128,7 +128,7 @@ const howToSchema = {
       "url": "https://skilldrills.online/es/drills/motor/hand-eye-coordination/aim-trainer#step-3",
       
       name: 'Micro-Flick y Disparo Preciso',
-      text: 'Desplaza el ratón velozmente y frena sobre el centro del objetivo antes de que desaparezca.',
+      text: 'Pon la mira sobre un objetivo y haz clic. Un acierto da puntos y +2 s (máximo 60 s); un clic fallido o un objetivo perdido reinicia el combo y resta 1 s.',
     },
     {
       '@type': 'HowToStep',
@@ -136,98 +136,60 @@ const howToSchema = {
       "url": "https://skilldrills.online/es/drills/motor/hand-eye-coordination/aim-trainer#step-4",
       
       name: 'Mantener Combo y Superar Niveles',
-      text: 'Encadena aciertos sucesivos para alcanzar el multiplicador de 3.0x y enfrentar niveles más veloces.',
+      text: 'Los aciertos seguidos suben el multiplicador hasta 3,0×. El nivel sube cada 1.750 puntos y la partida termina cuando el reloj llega a 0.',
     },
   ],
 };
+
+const faqs = [
+  {
+    q: "¿Qué es un Aim Trainer y cómo funciona este?",
+    a: "Un aim trainer mide la rapidez y precisión con que haces clic en objetivos con el ratón. Aquí siempre hay dos objetivos en movimiento. El reloj empieza en 45 segundos: cada acierto suma +2 s (máximo 60 s), cada clic fallido u objetivo perdido resta 1 s, y la partida termina en 0. Gratis, sin descargas ni registro.",
+  },
+  {
+    q: "¿Cómo se calcula la puntuación?",
+    a: "Cada acierto vale 100 puntos multiplicados por el combo (1,1× desde 3 aciertos seguidos hasta 3,0× desde 50) y por un bonus de nivel. Un clic fallido o un objetivo perdido reinicia el combo.",
+  },
+  {
+    q: "¿Cómo aumenta la dificultad?",
+    a: "El nivel sube cada 1.750 puntos, sin límite. Hasta el nivel 15, el radio del objetivo baja de 26 px a 12 px (hasta 8 px con combo alto), la velocidad sube de 80 px/s a 370 px/s y el tiempo de vida de cada objetivo baja de 2,8 s a 0,4 s.",
+  },
+  {
+    q: "¿Qué pasa cuando fallo?",
+    a: "El combo vuelve a 1,0× y pierdes 1 segundo. Hacer clic sin parar no compensa.",
+  },
+  {
+    q: "¿Cómo se aplica la Ley de Fitts a este aim trainer?",
+    a: "La Ley de Fitts relaciona el tiempo de movimiento con la razón entre distancia y tamaño del objetivo (Índice de Dificultad). Como los objetivos se hacen más pequeños en cada nivel, el índice sube y el ratón necesita un control más fino.",
+  },
+  {
+    q: "¿Este aim trainer ayuda en Valorant o CS2?",
+    a: "Puede servir como calentamiento complementario. Entrena clics rápidos sobre objetivos 2D en movimiento, no la puntería 3D de un juego; no se garantiza mejora dentro del juego.",
+  },
+  {
+    q: "¿Qué es una buena puntuación en el Aim Trainer?",
+    a: "Según los rangos editoriales de SkillDrills: menos de 8.000 puntos inicial, 8.000–17.999 en proceso, 18.000–31.999 estable, 32.000–47.999 alto y 48.000 o más el rango más alto. Son referencias de práctica, no estadísticas de usuarios.",
+  },
+  {
+    q: "¿Puedo ajustar la sensibilidad del ratón?",
+    a: "Sí, con el multiplicador de sensibilidad en los ajustes de los ejercicios. No hay conversión automática de tu cm/360 del juego; ajústala a tu sensación.",
+  },
+  {
+    q: "¿Funciona en el móvil o en pantallas táctiles?",
+    a: "No. El aim trainer usa Pointer Lock y necesita un ratón en un navegador de ordenador.",
+  },
+];
 
 const faqSchema = {
   '@context': 'https://schema.org',
   '@type': 'FAQPage',
   inLanguage: 'es-ES',
   dateModified: '2026-11-09',
-  mainEntity: [
-    {
-      '@type': 'Question',
-      name: '¿Qué es un Aim Trainer y cómo mejora la puntería?',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: 'Un Aim Trainer es un simulador que mide y perfecciona la rapidez y precisión con la que mueves el cursor del ratón hacia un objetivo. Permite aislar los micro-flicks y el timing de disparo.',
-      },
-    },
-    {
-      '@type': 'Question',
-      name: '¿Cómo influye la Ley de Fitts en el entrenamiento de puntería?',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: 'La Ley de Fitts describe cómo el tiempo de movimiento depende de la distancia y el tamaño del objetivo. Objetivos más pequeños exigen un control motor fino superior.',
-      },
-    },
-    {
-      '@type': 'Question',
-      name: '¿Qué es el modelo de dos fases de la puntería?',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: 'Consta de un impulso balístico inicial que cubre el 80–90% de la distancia sin corrección visual, y una fase terminal de desaceleración guiada por la vista para fijar el tiro exacto.',
-      },
-    },
-    {
-      '@type': 'Question',
-      name: '¿Ayuda a mejorar en shooters como Valorant y CS2?',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: 'Sí, de forma directa. La precisión del primer disparo a la cabeza depende de micro-flicks de 5 a 15 grados, exactamente el patrón neuromuscular que calibra este ejercicio.',
-      },
-    },
-    {
-      '@type': 'Question',
-      name: '¿Qué puntuación se considera buena en el Aim Trainer?',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: 'Los principiantes suelen puntuar por debajo de 8.000. Jugadores intermedios logran de 18.000 a 31.999 puntos, y jugadores de nivel competitivo superan los 48.000 puntos con más del 95% de precisión.',
-      },
-    },
-    {
-      '@type': 'Question',
-      name: '¿Cómo escala la dificultad durante el ejercicio?',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: 'Cada 1.750 puntos se sube de nivel. El radio de los objetivos disminuye de 26px a 8px, la velocidad aumenta de 80px/s a 370px/s y el tiempo de vida del objetivo baja de 2,8s a 0,40s.',
-      },
-    },
-    {
-      '@type': 'Question',
-      name: '¿Los fallos tienen penalización?',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: 'Errar disparos o dejar expirar objetivos reinicia el combo a 1.0x, premiando el disparo deliberado y castigando el spam apresurado.',
-      },
-    },
-    {
-      '@type': 'Question',
-      name: '¿Puedo sincronizar la sensibilidad de mi juego?',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: 'Sí. El ejercicio utiliza entrada directa de ratón con Pointer Lock y se conecta con el ajuste global de sensibilidad para mantener los mismos cm/360 de tu juego habitual.',
-      },
-    },
-    {
-      '@type': 'Question',
-      name: '¿Afecta la tasa de refresco del monitor al rendimiento?',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: 'Sí. Pantallas de 144Hz o 240Hz reducen el retardo visual en 10–12 ms, permitiendo correcciones visuales más nítidas y seguras en la fase terminal del movimiento.',
-      },
-    },
-    {
-      '@type': 'Question',
-      name: '¿Cuál es la mejor rutina de calentamiento diaria?',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: 'Un calentamiento de 10 a 15 minutos al día priorizando una precisión superior al 90% activa la corteza motora y aporta consistencia en partidas competitivas.',
-      },
-    },
-  ],
+  mainEntity: faqs.map((f) => ({
+    '@type': 'Question',
+    name: f.q,
+    acceptedAnswer: { '@type': 'Answer', text: f.a },
+  })),
 };
 
 export default function AimTrainerSpanishPage() {
@@ -247,9 +209,9 @@ export default function AimTrainerSpanishPage() {
 
       <AimTrainerClient
         copy={{
-          title: 'Aim Trainer Online (Precisión de Mouse FPS)',
-          subtitle: 'Adquisición de objetivos • Precisión del ratón • Entrenamiento de flick',
-          caption: 'Apunta y haz clic en los objetivos en movimiento lo más rápido y preciso posible antes de que expiren. Basado en la Ley de Fitts.',
+          title: 'Aim Trainer Online',
+          subtitle: 'Dos objetivos en movimiento • Precisión del ratón • Tasa de acierto',
+          caption: 'Haz clic en los dos objetivos en movimiento antes de que desaparezcan. Acierto +2 s, fallo u objetivo perdido -1 s.',
           startButtonText: 'INICIAR ENTRENAMIENTO',
           playAgainText: 'Jugar de Nuevo',
           shareText: 'Compartir Puntuación',
@@ -260,8 +222,8 @@ export default function AimTrainerSpanishPage() {
             {
               num: "1",
               text: "Impacto al Blanco",
-              highlight: "+100 PTS / +0,6s",
-              result: "Detecta y haz clic en blancos móviles"
+              highlight: "+100 PTS / +2 s (máx. 60 s)",
+              result: "× multiplicador de combo"
             },
             {
               num: "2",
@@ -279,7 +241,7 @@ export default function AimTrainerSpanishPage() {
               num: "4",
               text: "Fallo y Expiración",
               highlight: "Reinicio de Combo",
-              result: "Penalización activa resta -0,8s"
+              result: "-1 s al reloj"
             }
           ]
         }}
@@ -291,7 +253,7 @@ export default function AimTrainerSpanishPage() {
         sources={sources}
       >
         <p>
-          La adquisición de objetivos con ratón de ordenador es una de las tareas psicomotoras de coordinación fina más complejas investigadas en ergonomía e interacción persona-ordenador (IPO). Tanto al despejar esquinas en shooters tácticos como en simulaciones de precisión, el sistema neuromuscular humano debe traducir coordenadas visuales en microcontracciones físicas instantáneas de la mano, muñeca y antebrazo (Fitts, 1954; MacKenzie, 1992).
+          El <strong>Aim Trainer</strong> de SkillDrills es gratis y funciona en el navegador: dos objetivos en movimiento que debes clicar antes de que desaparezcan. La adquisición de objetivos con ratón de ordenador es una de las tareas psicomotoras de coordinación fina más complejas investigadas en ergonomía e interacción persona-ordenador (IPO). Tanto al despejar esquinas en shooters tácticos como en simulaciones de precisión, el sistema neuromuscular humano debe traducir coordenadas visuales en microcontracciones físicas instantáneas de la mano, muñeca y antebrazo (Fitts, 1954; MacKenzie, 1992).
         </p>
 
         <h3>La Ley de Fitts y el Índice de Dificultad (ID)</h3>
@@ -302,7 +264,7 @@ export default function AimTrainerSpanishPage() {
           MT = a + b · log₂(2D / W) = a + b · ID
         </div>
         <p>
-          Este factor logarítmico se denomina <strong>Índice de Dificultad (ID)</strong>. En el <em>Aim Trainer</em> de SkillDrills, a medida que avanzas, el tamaño del objetivo disminuye de 26 a 8 píxeles mientras la distancia y velocidad aumentan exponencialmente, poniendo a prueba tu capacidad visomotora (Fitts, 1954; MacKenzie, 1992).
+          Este factor logarítmico se denomina <strong>Índice de Dificultad (ID)</strong>. En el <em>Aim Trainer</em> de SkillDrills, el radio del objetivo baja de 26 a 12 píxeles hasta el nivel 15 (hasta 8 píxeles con un combo alto) y la velocidad aumenta; el menor ancho (\(W\)) eleva el ID (Fitts, 1954; MacKenzie, 1992).
         </p>
 
         <h3>El Modelo de Dos Fases del Disparo Guiado (Woodworth 1899; Elliott et al. 2010)</h3>
@@ -323,12 +285,12 @@ export default function AimTrainerSpanishPage() {
 
         <h3>Frecuencia de Muestreo, Refresco y Latencia Sensorial</h3>
         <p>
-          La precisión milimétrica exige minimizar el retraso de hardware. Como señalaron Woods et al. (2015), los retrasos neuronales biológicos suman entre 130 y 190 ms. Pantallas de 144Hz o 240Hz reducen el tiempo entre cuadros a 6,9 ms o 4,1 ms, facilitando lecturas visuales claras durante la fase crítica de frenado.
+          La precisión milimétrica exige minimizar el retraso de hardware. Como señalaron Woods et al. (2015), los retrasos neuronales biológicos suman entre 130 y 190 ms. Pantallas de 144Hz o 240Hz reducen el tiempo entre cuadros a 6,9 ms o 4,1 ms. Compara tus partidas siempre con el mismo equipo y la misma configuración.
         </p>
 
-        <h3>Baremos de Puntuación y Clasificación (Test de 45 Segundos)</h3>
+        <h3>Rangos de Puntuación del Aim Trainer (referencia SkillDrills)</h3>
         <p>
-          Compara tus resultados con esta escala de rendimiento:
+          Rangos editoriales de SkillDrills para comparar tus propias partidas, que empiezan con 45 segundos (+2 s por acierto, máximo 60 s). No son datos de usuarios ni rangos de juegos:
         </p>
         <div className="overflow-x-auto my-4">
           <table className="w-full text-left border-collapse border border-white/10 text-xs sm:text-sm">
@@ -347,21 +309,21 @@ export default function AimTrainerSpanishPage() {
                 <td className="p-2.5 border border-white/10">&gt; 48.000 PTS</td>
                 <td className="p-2.5 border border-white/10">Level 12+</td>
                 <td className="p-2.5 border border-white/10">&gt; 95% (Combo 25+)</td>
-                <td className="p-2.5 border border-white/10">Nivel E-Sports / Tirador de Élite</td>
+                <td className="p-2.5 border border-white/10">Rango más alto de práctica</td>
               </tr>
               <tr>
                 <td className="p-2.5 border border-white/10 font-bold text-cyan-400">Tier 2 (Experto)</td>
                 <td className="p-2.5 border border-white/10">32.000 – 47.999 PTS</td>
                 <td className="p-2.5 border border-white/10">Level 9–11</td>
                 <td className="p-2.5 border border-white/10">88% – 94% (Combo 18–24)</td>
-                <td className="p-2.5 border border-white/10">Competitivo Alto / Fragger Preciso</td>
+                <td className="p-2.5 border border-white/10">Rango alto</td>
               </tr>
               <tr>
                 <td className="p-2.5 border border-white/10 font-bold text-blue-400">Tier 3 (Medio)</td>
                 <td className="p-2.5 border border-white/10">18.000 – 31.999 PTS</td>
                 <td className="p-2.5 border border-white/10">Level 6–8</td>
                 <td className="p-2.5 border border-white/10">78% – 87% (Combo 12–17)</td>
-                <td className="p-2.5 border border-white/10">Jugador Habitual / Puntería Estable</td>
+                <td className="p-2.5 border border-white/10">Puntería estable</td>
               </tr>
               <tr>
                 <td className="p-2.5 border border-white/10 font-bold text-amber-400">Tier 4 (Básico)</td>
@@ -402,66 +364,12 @@ export default function AimTrainerSpanishPage() {
 
         <h3>Preguntas Frecuentes (FAQ)</h3>
         <div className="space-y-4 my-4">
-          <div className="border-b border-white/10 pb-3">
-            <h4 className="font-bold text-white text-sm mb-1">¿Qué es un Aim Trainer y cómo mejora la puntería?</h4>
-            <p className="text-xs sm:text-sm text-slate-300">
-              Un Aim Trainer es un simulador que mide y perfecciona la rapidez y precisión con la que mueves el cursor del ratón hacia un objetivo. Permite aislar los micro-flicks y el timing de disparo.
-            </p>
-          </div>
-          <div className="border-b border-white/10 pb-3">
-            <h4 className="font-bold text-white text-sm mb-1">¿Cómo influye la Ley de Fitts en el entrenamiento de puntería?</h4>
-            <p className="text-xs sm:text-sm text-slate-300">
-              La Ley de Fitts describe cómo el tiempo de movimiento depende de la distancia y el tamaño del objetivo. Objetivos más pequeños exigen un control motor fino superior.
-            </p>
-          </div>
-          <div className="border-b border-white/10 pb-3">
-            <h4 className="font-bold text-white text-sm mb-1">¿Qué es el modelo de dos fases de la puntería?</h4>
-            <p className="text-xs sm:text-sm text-slate-300">
-              Consta de un impulso balístico inicial que cubre el 80–90% de la distancia sin corrección visual, y una fase terminal de desaceleración guiada por la vista para fijar el tiro exacto.
-            </p>
-          </div>
-          <div className="border-b border-white/10 pb-3">
-            <h4 className="font-bold text-white text-sm mb-1">¿Ayuda a mejorar en shooters como Valorant y CS2?</h4>
-            <p className="text-xs sm:text-sm text-slate-300">
-              Sí, de forma directa. La precisión del primer disparo a la cabeza depende de micro-flicks de 5 a 15 grados, exactamente el patrón neuromuscular que calibra este ejercicio.
-            </p>
-          </div>
-          <div className="border-b border-white/10 pb-3">
-            <h4 className="font-bold text-white text-sm mb-1">¿Qué puntuación se considera buena en el Aim Trainer?</h4>
-            <p className="text-xs sm:text-sm text-slate-300">
-              Los principiantes suelen puntuar por debajo de 8.000. Jugadores intermedios logran de 18.000 a 31.999 puntos, y jugadores de nivel competitivo superan los 48.000 puntos con más del 95% de precisión.
-            </p>
-          </div>
-          <div className="border-b border-white/10 pb-3">
-            <h4 className="font-bold text-white text-sm mb-1">¿Cómo escala la dificultad durante el ejercicio?</h4>
-            <p className="text-xs sm:text-sm text-slate-300">
-              Cada 1.750 puntos se sube de nivel. El radio de los objetivos disminuye de 26px a 8px, la velocidad aumenta de 80px/s a 370px/s y el tiempo de vida del objetivo baja de 2,8s a 0,40s.
-            </p>
-          </div>
-          <div className="border-b border-white/10 pb-3">
-            <h4 className="font-bold text-white text-sm mb-1">¿Los fallos tienen penalización?</h4>
-            <p className="text-xs sm:text-sm text-slate-300">
-              Errar disparos o dejar expirar objetivos reinicia el combo a 1.0x, premiando el disparo deliberado y castigando el spam apresurado.
-            </p>
-          </div>
-          <div className="border-b border-white/10 pb-3">
-            <h4 className="font-bold text-white text-sm mb-1">¿Puedo sincronizar la sensibilidad de mi juego?</h4>
-            <p className="text-xs sm:text-sm text-slate-300">
-              Sí. El ejercicio utiliza entrada directa de ratón con Pointer Lock y se conecta con el ajuste global de sensibilidad para mantener los mismos cm/360 de tu juego habitual.
-            </p>
-          </div>
-          <div className="border-b border-white/10 pb-3">
-            <h4 className="font-bold text-white text-sm mb-1">¿Afecta la tasa de refresco del monitor al rendimiento?</h4>
-            <p className="text-xs sm:text-sm text-slate-300">
-              Sí. Pantallas de 144Hz o 240Hz reducen el retardo visual en 10–12 ms, permitiendo correcciones visuales más nítidas y seguras en la fase terminal del movimiento.
-            </p>
-          </div>
-          <div className="border-b border-white/10 pb-3">
-            <h4 className="font-bold text-white text-sm mb-1">¿Cuál es la mejor rutina de calentamiento diaria?</h4>
-            <p className="text-xs sm:text-sm text-slate-300">
-              Un calentamiento de 10 a 15 minutos al día priorizando una precisión superior al 90% activa la corteza motora y aporta consistencia en partidas competitivas.
-            </p>
-          </div>
+          {faqs.map((f) => (
+            <div key={f.q} className="border-b border-white/10 pb-3">
+              <h4 className="font-bold text-white text-sm mb-1">{f.q}</h4>
+              <p className="text-xs sm:text-sm text-slate-300">{f.a}</p>
+            </div>
+          ))}
         </div>
       </DrillGuide>
       <RelatedDrills />

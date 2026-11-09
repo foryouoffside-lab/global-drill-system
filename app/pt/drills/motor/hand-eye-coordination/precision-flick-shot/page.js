@@ -6,16 +6,15 @@ import RelatedDrills from '@/components/drill/RelatedDrills';
 import { pickSources } from '@/lib/drillSources';
 
 export const metadata = {
-  title: 'Treino de mira Flick | Precisão do mouse | SkillDrills',
-  description: 'Treine flick e teste a precisão do mouse no navegador. Meça tempo de aquisição, taxa de acerto e tiros no centro para FPS.',
+  title: 'Teste de precisão do mouse: flicks no centro | SkillDrills',
+  description: 'Teste de precisão do mouse grátis: acerte dois alvos que encolhem; tiro no centro de 8 px vale o dobro. Mostra taxa de acerto, tiros no centro e nível.',
   keywords: [
-    'treino de mira', 'treino de flick', 'teste de precisão do mouse', 'teste de mira',
-    'mira FPS', 'treino de mira Valorant', 'treino de mira CS2', 'precisão do mouse',
-    'aquisição de alvo', 'micro ajuste de mira', 'tiro na cabeça', 'flick shot grátis',
+    'teste de precisão do mouse', 'precisão do mouse', 'jogo de precisão do mouse', 'testar precisão do mouse',
+    'precisão de clique', 'tiro no centro do alvo',
   ],
   openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
-    title: 'Treino de mira Flick | Precisão do mouse | SkillDrills',
-    description: 'Treine flick e teste a precisão do mouse no navegador. Meça tempo de aquisição, taxa de acerto e tiros no centro para FPS.',
+    title: 'Teste de precisão do mouse: flicks no centro | SkillDrills',
+    description: 'Teste de precisão do mouse grátis: acerte dois alvos que encolhem; tiro no centro de 8 px vale o dobro. Mostra taxa de acerto, tiros no centro e nível.',
     type: 'article',
     url: 'https://skilldrills.online/pt/drills/motor/hand-eye-coordination/precision-flick-shot',
     siteName: 'SkillDrills',
@@ -23,8 +22,8 @@ export const metadata = {
   },
   twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: 'summary_large_image',
-    title: 'Treino de mira Flick | Precisão do mouse | SkillDrills',
-    description: 'Treine flick e teste a precisão do mouse no navegador. Meça tempo de aquisição, taxa de acerto e tiros no centro para FPS.',
+    title: 'Teste de precisão do mouse: flicks no centro | SkillDrills',
+    description: 'Teste de precisão do mouse grátis: acerte dois alvos que encolhem; tiro no centro de 8 px vale o dobro. Mostra taxa de acerto, tiros no centro e nível.',
   },
   robots: { index: true, follow: true },
   alternates: {
@@ -67,15 +66,15 @@ const breadcrumbSchema = {
 const softwareApplicationSchema = {
   '@context': 'https://schema.org',
   '@type': 'SoftwareApplication', "sameAs": ["https://en.wikipedia.org/wiki/Fitts%27s_law", "https://en.wikipedia.org/wiki/Hand%E2%80%93eye_coordination"],
-  name: 'Treinador de Flick Shot e Precisão de Mouse',
+  name: 'Teste de precisão do mouse: flicks no centro',
   applicationCategory: 'HealthApplication',
   operatingSystem: 'All',
   offers: { '@type': 'Offer', price: '0', priceCurrency: 'BRL' },
-  description: 'Treinador de flick shot e precisão de mira online gratuito. Avalie velocidade de snap balístico, frenagem motora e acertos no centro.',
+  description: 'Teste de precisão do mouse grátis no navegador: acerte alvos que encolhem e conte seus tiros no centro.',
   url: 'https://skilldrills.online/pt/drills/motor/hand-eye-coordination/precision-flick-shot',
   publisher: { '@type': 'Organization', name: 'SkillDrills', url: 'https://skilldrills.online' },
   inLanguage: 'pt-BR',
-  dateModified: '2026-09-20',
+  dateModified: '2026-11-09',
 };
 
 const webApplicationSchema = {
@@ -86,15 +85,15 @@ const webApplicationSchema = {
   url: 'https://skilldrills.online/pt/drills/motor/hand-eye-coordination/precision-flick-shot',
   applicationCategory: 'EducationalApplication',
   inLanguage: 'pt-BR',
-  dateModified: '2026-09-20',
+  dateModified: '2026-11-09',
 };
 
 const videoGameSchema = {
   '@context': 'https://schema.org',
   '@type': 'VideoGame',
-  name: 'Jogo de Flick Shot e Precisão FPS',
+  name: 'Jogo de precisão do mouse: flicks no centro',
   url: 'https://skilldrills.online/pt/drills/motor/hand-eye-coordination/precision-flick-shot',
-  description: 'Aprimore reflexos e tiros de precisão com snaps rápidos e paradas perfeitas sobre o alvo.',
+  description: 'Acerte alvos que encolhem, de preferência bem no centro.',
   genre: ['Tiro', 'Reflexos', 'Esports'],
   gamePlatform: ['Web Browser', 'Desktop'],
   applicationCategory: 'Game',
@@ -106,7 +105,7 @@ const faqSchema = {
   '@context': 'https://schema.org',
   '@type': 'FAQPage',
   inLanguage: 'pt-BR',
-  dateModified: '2026-09-20',
+  dateModified: '2026-11-09',
   mainEntity: [
     {
       '@type': 'Question',
@@ -145,7 +144,7 @@ const faqSchema = {
       name: 'Esse treino melhora o desempenho no CS2 e no Valorant?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Sim. Em tiroteios táticos, a precisão do primeiro disparo após um micro-flick decide o duelo antes que o recuo da arma comece.',
+        text: 'Jogadores de Valorant ou CS2 podem usar o drill para treinar a parada firme depois de um flick. Não há garantia de melhora no jogo; use a mesma sensibilidade do seu jogo.',
       },
     },
     {
@@ -153,7 +152,7 @@ const faqSchema = {
       name: 'Como lidar com múltiplos alvos aparecendo ao mesmo tempo?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Use a visão periférica para identificar qual anel de vida está expirando primeiro, destruindo o alvo mais urgente antes de saltar para o próximo.',
+        text: 'Sempre há dois alvos na tela; os dois encolhem, mas o ativo encolhe mais rápido. Acerte primeiro o menor. Se um alvo some, o combo zera e 1 segundo é descontado.',
       },
     },
     {
@@ -169,7 +168,7 @@ const faqSchema = {
       name: 'Como a pontuação e as patentes são calculadas?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'O sistema combina taxa de acerto por clique, proporção de acertos bulls-eye, sequência de combo e tempo médio de aquisição para atribuir notas de D a S+.',
+        text: 'Cada acerto vale pontos base (100, ou 200 no centro de 8 px) × combo (até 3,0x) × bônus de nível, mais 2 segundos (máx. 60). Clique errado ou alvo expirado custa 1 segundo e o combo. A nota depende só da pontuação final; não há medição de tempo de aquisição.',
       },
     },
     {
@@ -177,7 +176,7 @@ const faqSchema = {
       name: 'Quais ajustes de equipamento otimizam o flick?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Monitor com 144 Hz ou superior para menor atraso visual, desativação da aceleração de ponteiro no Windows e um mouse leve para diminuir a inércia física.',
+        text: 'Monitor de alta taxa de atualização, a opção do Windows "Aumentar a precisão do ponteiro" desativada e um mouse leve. Este teste mede a precisão dos seus cliques, não essa configuração do Windows.',
       },
     },
     {
@@ -185,7 +184,7 @@ const faqSchema = {
       name: 'Quantos minutos por dia são indicados para aquecimento?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'De 10 a 15 minutos diários antes de entrar nas partidas ranqueadas são ideais para despertar os reflexos sem gerar cansaço muscular.',
+        text: 'Algumas partidas como aquecimento antes de jogar bastam. Pare se sentir desconforto no punho e compare-se com suas próprias partidas anteriores.',
       },
     },
   ],
@@ -234,41 +233,38 @@ const guideProps = {
   intro: {
     title: 'Biomecânica de Micro-Flicks Balísticos e Otimização de Submovimentos',
     paragraphs: [
-      'Em jogos competitivos de tiro e ergonomia computacional, o flick shot é um movimento manual rápido e discreto realizado sob severo limite de tempo. Robert S. Woodworth (1899) estabeleceu que movimentos voluntários funcionam por arquitetura de controle bifásico: um impulso balístico inicial que lança o membro rumo ao objetivo, seguido por uma fase de controle visual para correções terminais.',
-      'No influente Modelo de Submovimentos Estocásticos Otimizados de David E. Meyer et al. (1988), provou-se que o sistema motor humano está sujeito a ruído neural proporcional à velocidade. Movimentar-se excessivamente rápido eleva a dispersão dos pontos de parada. Se o impulso inicial errar o alvo, dispara-se um submovimento corretivo secundário (150–200 ms de latência), arruinando o tempo de resposta.',
+      'Este teste de precisão do mouse pede que você acerte alvos que encolhem, o mais perto possível do centro. Em jogos competitivos de tiro e ergonomia computacional, o flick shot é um movimento manual rápido e discreto realizado sob severo limite de tempo. Robert S. Woodworth (1899) estabeleceu que movimentos voluntários funcionam por arquitetura de controle bifásico: um impulso balístico inicial que lança o membro rumo ao objetivo, seguido por uma fase de controle visual para correções terminais.',
+      'No influente Modelo de Submovimentos Estocásticos Otimizados de David E. Meyer et al. (1988), provou-se que o sistema motor humano está sujeito a ruído neural proporcional à velocidade. Movimentar-se excessivamente rápido eleva a dispersão dos pontos de parada. Se o impulso inicial errar o alvo, é preciso um submovimento corretivo extra, que custa tempo.',
       'Para atingir rendimento de elite (MacKenzie, 1992), o jogador deve calibrar a velocidade do impulso primário para que sua distribuição atinja com segurança o perímetro do alvo. A bonificação por acertos bulls-eye estreita a dispersão de impacto e treina a frenagem antagonista imediata.',
       'A relação de compromisso entre distância e tamanho segue a Lei de Fitts (Fitts, 1954), com fundamentação motora atualizada em Elliott et al. (2010).',
-      'Resolução de medição no navegador: A cronometragem decorre de performance.now(). Taxas de atualização de monitor (16,7 ms em 60 Hz, 6,9 ms em 144 Hz) e amostragem do mouse impõem quantizações mínimas (Woods et al., 2015). Seus registros permanecem guardados localmente no seu computador.',
+      'Como funciona: começa com 45 segundos, +2 segundos por acerto (máx. 60), -1 segundo por clique errado ou alvo expirado. Exige mouse com bloqueio de ponteiro; aparelhos só com toque não são suportados. A taxa de atualização e o polling do mouse mudam a sensação (Woods et al., 2015). Seus registros ficam apenas no seu navegador.',
     ],
   },
   benchmarks: {
-    title: 'Níveis de Desempenho em Flick Shot e Precisão',
-    caption: 'Barem baseado nos modelos de Woodworth (1899) e Meyer et al. (1988). O SkillDrills não coleta dados externos.',
-    headers: ['Nível (Tier)', 'Classificação', 'Fase e Combo', 'Latência Média', 'Precisão de Clique', 'Taxa Bulls-Eye', 'Perfil Neuromotor'],
+    title: 'Faixas de treino do teste de precisão do mouse (SkillDrills)',
+    caption: 'Faixas de treino do SkillDrills: não são normas científicas nem estatísticas de usuários, e sim referências do autor do drill para interpretar nível, combo, precisão de clique e taxa de tiros no centro. O SkillDrills não coleta dados externos.',
+    headers: ['Nível (Tier)', 'Classificação', 'Fase e Combo', 'Precisão de Clique', 'Taxa Bulls-Eye', 'Perfil de jogo'],
     rows: [
       [
         'Tier 1',
         'Mestre do Flick Apex',
         'Nv. 15+ (Combo > 20x)',
-        '< 340 ms',
         '≥ 96,0%',
         '> 65%',
-        'Trajetórias balísticas puras em impulso único, quase zero correções secundárias, frenagem < 10 ms.',
+        'Um único flick chega ao centro, quase sem correções.',
       ],
       [
         'Tier 2',
         'Atirador de Elite',
         'Nv. 11–14 (Combo 14–19x)',
-        '340–420 ms',
         '91,0%–95,9%',
         '45%–64%',
-        'Confirmação visual ágil, microcorreções abaixo de 30 ms, desvio de linha desprezível.',
+        'Centro bem visado, microcorreções curtas.',
       ],
       [
         'Tier 3',
         'Atirador Competente',
         'Nv. 7–10 (Combo 8–13x)',
-        '421–520 ms',
         '84,0%–90,9%',
         '25%–44%',
         'Acertos frequentes no anel externo, ligeiro overshoot em trocas rápidas de alvo.',
@@ -277,7 +273,6 @@ const guideProps = {
         'Tier 4',
         'Fragger em Evolução',
         'Nv. 4–6 (Combo 4–7x)',
-        '521–660 ms',
         '74,0%–83.9%',
         '10%–24%',
         'Múltiplos impulsos truncados, dispersão alta por excesso de aceleração, hesitação antes do tiro.',
@@ -286,10 +281,9 @@ const guideProps = {
         'Tier 5',
         'Iniciante / Entrada',
         'Nv. 1–3 (Combo < 4x)',
-        '> 660 ms',
         '< 74,0%',
         '< 10%',
-        'Flicks curtos (under-flick), erros repetidos, reaquisição lenta, falta de sincronia punho-braço.',
+        'Flicks curtos (under-flick) e erros frequentes.',
       ],
     ],
   },
@@ -324,8 +318,8 @@ const guideProps = {
 };
 
 const copyPt = {
-  title: "Flick Shot de Precisão – Teste de Precisão do Mouse",
-  subtitle: "Precisão do flick · acertos no centro",
+  title: "Teste de precisão do mouse: flicks no centro",
+  subtitle: "Dois alvos que encolhem · centro vale o dobro · +2 s por acerto",
   startButtonText: "INICIAR DRILL",
   playAgainText: "Jogar novamente",
   shareText: "Compartilhar resultado",
@@ -336,10 +330,10 @@ const copyPt = {
   peakLevelLabel: "Nível Máximo",
   rulesTitle: "Instruções do Drill e Sistema de Pontuação",
   rulesItems: [
-    { num: "1", text: "Tiro no Centro (Alvo)", highlight: "+200 PTS / +0.6s", result: "Precisão cirúrgica no núcleo" },
-    { num: "2", text: "Tiro Padrão", highlight: "+100 PTS / +0.6s", result: "Aquisição periférica rápida" },
+    { num: "1", text: "Tiro no Centro (Alvo)", highlight: "+200 PTS / +2s (máx. 60s)", result: "Precisão cirúrgica no núcleo" },
+    { num: "2", text: "Tiro Padrão", highlight: "+100 PTS / +2s (máx. 60s)", result: "Aquisição periférica rápida" },
     { num: "3", text: "Progressão de Nivel", highlight: "+1 Nível / 1400 PTS", result: "Alvos encolhem e decaem mais rápido" },
-    { num: "4", text: "Erro ou Tempo Esgotado", highlight: "Reset de combo", result: "Penalidade deduz -0.8s" }
+    { num: "4", text: "Erro ou Tempo Esgotado", highlight: "Reset de combo", result: "Penalidade deduz -1s" }
   ],
 };
 

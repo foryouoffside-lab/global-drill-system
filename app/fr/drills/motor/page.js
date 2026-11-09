@@ -6,28 +6,26 @@ import { getLocalizedDrill } from '@/lib/i18n/drillNames';
 const motorDrills = DRILLS.filter((d) => d.category === 'motor');
 
 export const metadata = {
-  title: 'Test CPS et précision souris : exercices | SkillDrills',
-  description: `${motorDrills.length} exercices gratuits dans le navigateur : test CPS, précision de la souris, visée, réaction au clavier et coordination œil-main.`,
+  title: 'Coordination œil-main à la souris : exercices | SkillDrills',
+  description: `${motorDrills.length} exercices gratuits de coordination œil-main à la souris : cibles mobiles, clic précis, CPS, glisser-déposer, tracé, fil électrique, réaction clavier.`,
   keywords: [
-    'test de précision souris', 'entraînement de visée', 'test CPS', 'coordination œil-main',
-    'vitesse de frappe', 'contrôle du curseur', 'entraîneur de visée gratuit',
-    'précision de la souris', 'clics par seconde', 'exercices de motricité',
-    'entraînement main sûre', 'test de suivi souris', 'visée FPS',
-    'vitesse clavier', 'exercices moteurs gratuits'
+    'coordination œil-main', 'coordination œil-main souris', 'exercices de motricité fine souris',
+    'contrôle du curseur', 'précision de la souris', 'exercices de motricité',
+    'entraînement main sûre', 'exercices moteurs gratuits'
   ],
   openGraph: {
-    title: 'Test CPS et précision souris : exercices | SkillDrills',
-    description: `${motorDrills.length} exercices gratuits dans le navigateur : test CPS, précision de la souris, visée, réaction au clavier et coordination œil-main.`,
+    title: 'Coordination œil-main à la souris : exercices | SkillDrills',
+    description: `${motorDrills.length} exercices gratuits de coordination œil-main à la souris : cibles mobiles, clic précis, CPS, glisser-déposer, tracé, fil électrique, réaction clavier.`,
     type: 'website',
     url: 'https://skilldrills.online/fr/drills/motor',
     siteName: 'SkillDrills',
     locale: 'fr_FR',
-    images: [{ url: 'https://skilldrills.online/icons/icon-512x512.png', width: 512, height: 512, alt: 'Test CPS et précision souris sur SkillDrills' }],
+    images: [{ url: 'https://skilldrills.online/icons/icon-512x512.png', width: 512, height: 512, alt: 'Exercices de coordination œil-main à la souris sur SkillDrills' }],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Test CPS et précision souris : exercices | SkillDrills',
-    description: `${motorDrills.length} exercices gratuits dans le navigateur : test CPS, précision de la souris, visée, réaction au clavier et coordination œil-main.`,
+    title: 'Coordination œil-main à la souris : exercices | SkillDrills',
+    description: `${motorDrills.length} exercices gratuits de coordination œil-main à la souris : cibles mobiles, clic précis, CPS, glisser-déposer, tracé, fil électrique, réaction clavier.`,
     images: ['https://skilldrills.online/icons/icon-512x512.png'],
   },
   robots: { index: true, follow: true },
@@ -51,10 +49,10 @@ const collectionSchema = {
   "@context": "https://schema.org",
   "@type": "CollectionPage",
   "inLanguage": "fr-FR",
-  "dateModified": "2026-09-20",
-  "name": `Test CPS et précision souris : ${motorDrills.length} exercices moteurs`,
+  "dateModified": "2026-11-09",
+  "name": `Coordination œil-main à la souris : ${motorDrills.length} exercices`,
   "url": "https://skilldrills.online/fr/drills/motor",
-  "description": `${motorDrills.length} exercices gratuits dans le navigateur : test CPS, précision de la souris, visée, réaction au clavier et coordination œil-main.`,
+  "description": `${motorDrills.length} exercices gratuits de coordination œil-main à la souris : cibles mobiles, clic précis, CPS, glisser-déposer, tracé, fil électrique, réaction clavier.`,
   "author": { "@type": "Organization", "name": "SkillDrills" },
   "hasPart": motorDrills.map((drill) => {
     const loc = getLocalizedDrill(drill.href, 'fr', drill.name);
@@ -74,7 +72,7 @@ const faqSchema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
   "inLanguage": "fr-FR",
-  "dateModified": "2026-09-20",
+  "dateModified": "2026-11-09",
   "mainEntity": [
     {
       "@type": "Question",

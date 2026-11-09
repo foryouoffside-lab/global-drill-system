@@ -10,17 +10,17 @@ import { pickSources } from '@/lib/drillSources';
 // ============================================================
 
 export const metadata = {
-  title: '마우스 정확도 테스트 | 손 안정성 미로 | SkillDrills',
-  description: '마우스 정확도 테스트: 커서로 좁아지는 통로를 벽에 닿지 않고 따라가며 손 안정성과 경로 정밀도를 연습하는 무료 미로 게임입니다.',
+  title: '마우스 미로 게임 | 손 안정성 테스트 | SkillDrills',
+  description: '마우스 미로 게임: 빛나는 선에서 벗어나지 않고 커서를 골인 지점까지 옮기는 무료 전기충격 미로. 랩을 깨면 시간이 45초로 돌아가고 다음 길은 더 구불구불해집니다.',
   keywords: [
-    '마우스 정확도 테스트', '마우스 정밀도 테스트', '커서 정확도 테스트', '손 안정성 테스트',
+    '마우스 미로 게임', '마우스 미로', '손 떨림 미로', '손 안정성 테스트',
     '마우스 경로 추적', '미세 운동 조절', '마우스 정밀 조작',
-    '커서 제어 테스트', '마우스 미로 게임', '통로 따라가기',
+    '커서 제어 테스트', '전기충격 미로게임',
     '손 떨림 제어', '게이밍 마우스 정밀도', '마우스 조작 연습',
   ],
   openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
-    title: '마우스 정확도 테스트 | 손 안정성 미로 | SkillDrills',
-    description: '마우스 정확도 테스트: 커서로 좁아지는 통로를 벽에 닿지 않고 따라가며 손 안정성과 경로 정밀도를 연습하는 무료 미로 게임입니다.',
+    title: '마우스 미로 게임 | 손 안정성 테스트 | SkillDrills',
+    description: '마우스 미로 게임: 빛나는 선에서 벗어나지 않고 커서를 골인 지점까지 옮기는 무료 전기충격 미로. 랩을 깨면 시간이 45초로 돌아가고 다음 길은 더 구불구불해집니다.',
     type: 'article',
     url: 'https://skilldrills.online/ko/drills/motor/precision-control/steady-hand',
     siteName: 'SkillDrills',
@@ -28,8 +28,8 @@ export const metadata = {
   },
   twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: 'summary_large_image',
-    title: '마우스 정확도 테스트 | 손 안정성 미로 | SkillDrills',
-    description: '마우스 정확도 테스트: 커서로 좁아지는 통로를 벽에 닿지 않고 따라가며 손 안정성과 경로 정밀도를 연습하는 무료 미로 게임입니다.',
+    title: '마우스 미로 게임 | 손 안정성 테스트 | SkillDrills',
+    description: '마우스 미로 게임: 빛나는 선에서 벗어나지 않고 커서를 골인 지점까지 옮기는 무료 전기충격 미로. 랩을 깨면 시간이 45초로 돌아가고 다음 길은 더 구불구불해집니다.',
   },
   robots: { index: true, follow: true },
   alternates: {
@@ -55,14 +55,14 @@ const softwareApplicationSchema = {
   '@context': 'https://schema.org',
   '@type': 'SoftwareApplication', "sameAs": ["https://en.wikipedia.org/wiki/Fine_motor_skill"],
   inLanguage: 'ko-KR',
-  name: '전기충격 미로게임 – 마우스 정밀도 및 손떨림 측정기',
+  name: '전기충격 미로게임 – 마우스 정밀도 연습',
   applicationCategory: 'HealthApplication',
   operatingSystem: 'All',
   offers: { '@type': 'Offer', price: '0', priceCurrency: 'KRW' },
-  description: '브라우저에서 바로 즐기는 무료 온라인 전기충격 미로게임. 좁아지는 통로를 벽에 닿지 않고 통과하여 생리적 손떨림 억제력과 마우스 미세 운동 정밀도를 측정합니다.',
+  description: '브라우저에서 바로 즐기는 무료 온라인 전기충격 미로게임. 선 중심에서 2.5픽셀 넘게 벗어나면 출발점으로 돌아가며, 랩을 이어 갈수록 길이 더 구불구불해집니다.',
   url: 'https://skilldrills.online/ko/drills/motor/precision-control/steady-hand',
   publisher: { '@type': 'Organization', name: 'SkillDrills', url: 'https://skilldrills.online/ko' },
-  dateModified: '2026-09-20',
+  dateModified: '2026-11-09',
 };
 
 const webApplicationSchema = {
@@ -75,7 +75,7 @@ const webApplicationSchema = {
   browserRequirements: 'HTML5 Canvas 및 고속 포인터 이벤트를 지원하는 최신 웹 브라우저',
   offers: { '@type': 'Offer', price: '0', priceCurrency: 'KRW' },
   url: 'https://skilldrills.online/ko/drills/motor/precision-control/steady-hand',
-  dateModified: '2026-09-20',
+  dateModified: '2026-11-09',
 };
 
 const videoGameSchema = {
@@ -84,26 +84,26 @@ const videoGameSchema = {
   inLanguage: 'ko-KR',
   name: '전기충격 미로게임 & 마우스 정밀 제어 드릴',
   url: 'https://skilldrills.online/ko/drills/motor/precision-control/steady-hand',
-  description: '벽에 닿지 않고 커서를 통과시키는 온라인 미로 게임. 미세 운동 조절력과 손떨림 저항성을 측정 및 단련합니다.',
+  description: '선에서 벗어나지 않고 커서를 골인 지점까지 옮기는 온라인 미로 게임. 미세한 마우스 조절과 손 안정성을 연습합니다.',
   genre: ['Precision Game', 'Action', 'Esports Training'],
   gamePlatform: ['Web Browser', 'Desktop', 'Mobile'],
   applicationCategory: 'Game',
   offers: { '@type': 'Offer', price: '0', priceCurrency: 'KRW' },
-  dateModified: '2026-09-20',
+  dateModified: '2026-11-09',
 };
 
 const faqSchema = {
   '@context': 'https://schema.org',
   '@type': 'FAQPage',
   inLanguage: 'ko-KR',
-  dateModified: '2026-09-20',
+  dateModified: '2026-11-09',
   mainEntity: [
     {
       '@type': 'Question',
       name: '전기충격 미로게임이란 무엇이며 어떤 운동 능력을 측정하나요?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: '전기충격 미로게임(Steady Hand Game)은 구불구불한 좁은 통로의 벽에 닿지 않고 커서를 골인 지점까지 조작하는 신경 운동 정밀도 테스트입니다. 단순 반사 신경이 아닌, 시각 피드포워드 제어, 8~12Hz 생리적 손떨림 억제력, 통로 협소화에 따른 미세 궤적 유지력을 측정합니다.',
+        text: '전기충격 미로게임(Steady Hand Game)은 구불구불하게 빛나는 선을 벗어나지 않고 커서를 왼쪽 출발 영역에서 오른쪽 골인 영역까지 옮기는 마우스 정밀도 게임입니다. 반사 신경이 아니라 느리고 안정적인 커서 제어와 시각 피드백에 따른 미세 보정을 연습합니다. 점수는 45초 안에 클리어한 랩 수입니다.',
       },
     },
     {
@@ -119,15 +119,15 @@ const faqSchema = {
       name: '통로 벽에 닿으면 커서가 왜 시작 지점으로 즉시 리셋되나요?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: '엔진은 포인터 좌표와 통로 중심선 사이의 유클리드 거리를 밀리초 단위로 계산합니다. 허용 반폭을 벗어나는 즉시 경계 충돌로 판정되어 시작점으로 강제 초기화되며, 이를 통해 타협 없는 제로 톨러런스 미세 제어 능력을 훈련합니다.',
+        text: '엔진은 매 프레임 커서와 경로 중심선 사이의 거리를 계산합니다. 출발 영역과 골인 영역 사이에서 중심선에서 2.5픽셀 넘게 벗어나면 벽 충돌로 판정되어 커서가 출발점으로 돌아가고, 벽 충돌이 1회 늘며 연속 랩이 0이 됩니다. 타이머는 멈추지 않습니다.',
       },
     },
     {
       '@type': 'Question',
-      name: '랩을 클리어할수록 난이도와 통로 폭은 어떻게 변화하나요?',
+      name: '랩을 클리어할수록 난이도는 어떻게 변화하나요?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: '1단계는 50픽셀의 여유로운 통로 폭으로 시작하지만, 매 랩을 완주할 때마다 통로 폭이 점진적으로 좁아져 레벨 12 이상에서는 12픽셀의 극도로 좁은 슬릿 통로로 압축됩니다. 굴곡의 각도 또한 급격해집니다.',
+        text: '허용 오차(중심선 ±2.5픽셀)는 처음부터 끝까지 같습니다. 대신 랩을 연속으로 클리어할수록 다음 경로의 꺾임 수(15개에서 최대 120개)와 위아래 진폭이 커져 길이 더 구불구불해집니다. 벽에 닿으면 연속 랩이 0으로 돌아가므로 다음 경로는 다시 완만해집니다.',
       },
     },
     {
@@ -156,10 +156,10 @@ const faqSchema = {
     },
     {
       '@type': 'Question',
-      name: '손떨림 억제 훈련이 게이머, 일러스트레이터, 의사에게 실질적인 도움이 되나요?',
+      name: '손 안정성 연습이 게이머와 일러스트레이터에게 도움이 되나요?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: '그렇습니다. FPS 게임의 미세 트래킹 에임, 디지털 펜 드로잉의 깔끔한 선화 작업, 복강경 및 미세 수술 집도 등 미세한 손떨림을 억제하고 좁은 궤적을 유지해야 하는 모든 정밀 작업과 비슷한 동작을 연습할 수 있습니다.',
+        text: 'FPS 게임의 미세 트래킹 에임이나 디지털 펜 드로잉의 선화 작업처럼 좁은 궤적을 안정적으로 유지해야 하는 작업과 비슷한 동작을 연습할 수 있습니다. 효과에는 개인차가 있으며 의학적 손떨림 검사나 치료가 아닙니다.',
       },
     },
     {
@@ -175,7 +175,7 @@ const faqSchema = {
       name: '트랙볼 마우스나 타블렛 펜(스타일러스)으로도 진행할 수 있나요?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: '네. 포인터 이벤트를 사용하므로 마우스뿐 아니라 트랙볼, 액정 타블렛 펜으로도 조작해 볼 수 있습니다. 기기마다 결과가 다르니 같은 기기에서 비교하세요. 이 게임은 의학적 손떨림 검사가 아닙니다.',
+        text: 'PC에서는 포인터 잠금으로 마우스 이동량을 읽으므로 마우스와 트랙볼로 조작할 수 있고, 터치스크린에서는 손가락을 끌어 조작합니다. 타블렛 펜은 기기에 따라 동작이 다를 수 있습니다. 기기마다 결과가 다르니 같은 기기에서 비교하세요. 이 게임은 의학적 손떨림 검사가 아닙니다.',
       },
     },
   ],
@@ -185,23 +185,23 @@ const howToSchema = {
   '@context': 'https://schema.org',
   '@type': 'HowTo',
   inLanguage: 'ko-KR',
-  dateModified: '2026-09-20',
+  dateModified: '2026-11-09',
   name: '전기충격 미로게임으로 마우스 정밀도와 손떨림을 훈련하는 방법',
-  description: '좁아지는 코스를 벽 접촉 없이 완주하고 스티어링 효율을 높이는 단계별 프로토콜.',
+  description: '점점 구불구불해지는 코스를 벽 접촉 없이 완주하고 스티어링 효율을 높이는 단계별 프로토콜.',
   step: [
     {
       '@type': 'HowToStep',
       position: 1,
       url: 'https://skilldrills.online/ko/drills/motor/precision-control/steady-hand#step-1',
       name: '시작 존에 커서 위치',
-      text: '「훈련 시작」을 누른 뒤 좌측의 녹색 출발 영역에 마우스 포인터를 올려 45초 타이머와 발광 통로를 활성화합니다.',
+      text: '「훈련 시작」을 누르면 3초 카운트다운 뒤 커서가 왼쪽 녹색 출발 영역에 놓이고 45초 타이머가 시작됩니다. PC에서는 포인터 잠금이 걸리며 Esc로 종료합니다.',
     },
     {
       '@type': 'HowToStep',
       position: 2,
       url: 'https://skilldrills.online/ko/drills/motor/precision-control/steady-hand#step-2',
       name: '등속의 매끄러운 궤적으로 전진',
-      text: '발광하는 청색 통로를 따라 커서를 부드럽게 미끄러뜨립니다. 제한 시간과 벽 충돌 위험 사이의 균형을 유지합니다.',
+      text: '빛나는 녹색 선을 따라 커서를 부드럽게 미끄러뜨립니다. 제한 시간과 벽 충돌 위험 사이의 균형을 유지합니다.',
     },
     {
       '@type': 'HowToStep',
@@ -214,8 +214,8 @@ const howToSchema = {
       '@type': 'HowToStep',
       position: 4,
       url: 'https://skilldrills.online/ko/drills/motor/precision-control/steady-hand#step-4',
-      name: '골인 존 도달로 폭 협소화 단계 진입',
-      text: '우측 녹색 골인 영역에 도달하면 랩이 완료되고 타이머가 리셋되며, 통로 폭이 12픽셀까지 축소되는 고난도 스테이지로 전환됩니다.',
+      name: '골인 존 도달로 다음 랩 진입',
+      text: '오른쪽 녹색 골인 영역에 도달하면 랩이 완료되고 타이머가 45초로 리셋됩니다. 연속 랩이 늘수록 다음 경로의 꺾임과 진폭이 커집니다.',
     },
   ],
 };
@@ -229,50 +229,15 @@ const guideProps = {
     ],
   },
   benchmark: {
-    title: '전기충격 미로게임 스티어링 기준치',
-    description: '자신의 결과를 객관적으로 분석하기 위한 기준표입니다. 인구 통계 데이터가 아닌 Accot & Zhai(1997)의 스티어링 모델에 근거한 기준입니다. 클리어 레벨, 통로 폭, 중심선 평균 편차를 바탕으로 손의 안정성을 등급화합니다.',
-    columns: ['티어', '칭호', '클리어 레벨', '통로 폭', '평균 편차', '판정 구간'],
+    title: '전기충격 미로게임 SkillDrills 연습 구간',
+    description: '연구 기준이나 사용자 통계가 아닌 SkillDrills 연습 구간입니다. 결과 화면의 등급 기준(한 세션의 클리어 랩 수와 벽 충돌 횟수)과 같습니다.',
+    columns: ['등급', '칭호', '클리어 랩', '벽 충돌', '구간'],
     rows: [
-      {
-        tier: 'Tier 1',
-        rank: '최상위',
-        stat: '레벨 12+',
-        level: '12–15 px',
-        accuracy: '2.5 px 미만',
-        percentile: '최상위 참고 구간',
-      },
-      {
-        tier: 'Tier 2',
-        rank: '상급',
-        stat: '레벨 9–11',
-        level: '16–22 px',
-        accuracy: '4.0 px 미만',
-        percentile: '상급 참고 구간',
-      },
-      {
-        tier: 'Tier 3',
-        rank: '숙련',
-        stat: '레벨 6–8',
-        level: '23–32 px',
-        accuracy: '6.5 px 미만',
-        percentile: '숙련 참고 구간',
-      },
-      {
-        tier: 'Tier 4',
-        rank: '일반',
-        stat: '레벨 3–5',
-        level: '33–42 px',
-        accuracy: '9.0 px 미만',
-        percentile: '평균 수준',
-      },
-      {
-        tier: 'Tier 5',
-        rank: '입문',
-        stat: '레벨 1–2',
-        level: '43–50 px',
-        accuracy: '9.0 px 초과',
-        percentile: '훈련 시작 단계',
-      },
+      { tier: 'S+', rank: '신의 손 안정성', stat: '8랩 이상', errors: '0회', band: 'SkillDrills 연습 구간' },
+      { tier: 'S', rank: '달인급 조타력', stat: '6랩 이상', errors: '1회 이하', band: 'SkillDrills 연습 구간' },
+      { tier: 'A', rank: '정밀 컨트롤', stat: '4랩 이상', errors: '2회 이하', band: 'SkillDrills 연습 구간' },
+      { tier: 'B', rank: '안정적 컨트롤', stat: '2랩 이상', errors: '제한 없음', band: 'SkillDrills 연습 구간' },
+      { tier: 'C', rank: '기초 완주', stat: '2랩 미만', errors: '제한 없음', band: 'SkillDrills 연습 구간' },
     ],
   },
   protocols: {
@@ -281,7 +246,7 @@ const guideProps = {
     items: [
       {
         title: '프로토콜 1: 아콧-자이 스티어링 법칙 속도 조절 (통로 폭 페이싱)',
-        description: 'Accot-Zhai(1997) 법칙에 따르면 제한된 터널 주행 속도는 통로 폭에 반비례해야 합니다. 넓은 구간에서는 신속히 이동하여 시간을 비축하고, 좁은 헤어핀 구간 진입 시 속도를 40% 이상 감속하여 벽 충돌을 방지하세요.',
+        description: 'Accot-Zhai(1997) 법칙에 따르면 제한된 터널을 지나는 시간은 경로가 좁고 길수록 늘어납니다. 완만한 구간에서는 빠르게 이동해 시간을 아끼고, 급하게 꺾이는 구간 직전에는 속도를 크게 줄여 벽 충돌을 막으세요.',
       },
       {
         title: '프로토콜 2: 우드워스 시선 선행 피드포워드 추종',
@@ -292,13 +257,13 @@ const guideProps = {
         description: '완만한 곡선은 팔꿈치와 전완근의 글라이딩으로 그리고, 손가락은 중심선 미세 보정에만 국한합니다. 마우스를 너무 꽉 쥐면 주동근과 길항근이 동시 수축하여 8~12Hz 생리적 진전이 증폭되므로 의식적으로 힘을 빼야 합니다.',
       },
       {
-        title: '프로토콜 4: 협소 구간 에이펙스(인코스) 코너링',
-        description: '레벨 6 이후(통로 폭 30px 미만)에서는 속도보다 기하학적 중심 유지가 최우선입니다. 코너 회전 시 살짝 인코스 안쪽 정점(Apex)을 타면 급회전 시 커서가 원심력으로 바깥쪽 벽에 부딪히는 현상을 완벽히 방어할 수 있습니다.',
+        title: '프로토콜 4: 급커브 구간 에이펙스(인코스) 코너링',
+        description: '연속 랩이 쌓여 꺾임이 촘촘해지면 속도보다 선 중심 유지가 최우선입니다. 코너를 돌 때 살짝 안쪽 정점(Apex)을 노리면 급회전에서 커서가 바깥쪽으로 밀려나는 실수를 줄일 수 있습니다.',
       },
     ],
   },
   faqs: {
-    title: '전기충격 미로게임 및 손떨림 측정에 관한 자주 묻는 질문(FAQ)',
+    title: '전기충격 미로게임에 관한 자주 묻는 질문(FAQ)',
     items: faqSchema.mainEntity.map((q) => ({
       q: q.name,
       a: q.acceptedAnswer.text,
@@ -307,10 +272,10 @@ const guideProps = {
 };
 
 const koCopy = {
-  h1Keyword: '마우스 정확도 테스트',
-  subtitle: '벽에 닿지 않고 좁아지는 통로를 따라가며 손 안정성과 경로 정밀도를 연습합니다',
+  h1Keyword: '마우스 미로 게임',
+  subtitle: '빛나는 선에서 벗어나지 않고 골인까지 커서를 옮기며 손 안정성과 경로 정밀도를 연습합니다',
   h1Suffix: ' (손 안정성 & 경로 추적)',
-  caption: '전기충격 미로게임은 벽에 단 한 번도 닿지 않고 좁아지는 발광 통로를 따라 커서를 골인 지점까지 인도하여 마우스 미세 운동 조절력과 손떨림 안정성을 측정합니다. 아콧-자이 스티어링 법칙(1997)과 우드워스 폐루프 피드백 모델(1899)에 기반합니다.',
+  caption: '전기충격 미로게임은 빛나는 선에서 벗어나지 않고 커서를 골인 지점까지 옮기며 마우스 미세 조절과 손 안정성을 연습하는 게임입니다. 아콧-자이 스티어링 법칙(1997)과 우드워스 폐루프 피드백 모델(1899)을 참고했습니다.',
   statLaps: '클리어 랩',
   statTime: '남은 시간',
   statStreak: '연속 통과',
@@ -331,32 +296,32 @@ const koCopy = {
   rulesTitle: '조작 방법 및 스코어 판정',
   rulesItems: [
     { num: '1', text: '발광하는 에메랄드', highlight: '미로 통로를 정확히 추종', result: '골인 도달 시 45초로 시간 리셋' },
-    { num: '2', text: '랩 클리어', highlight: '무한 난이도 상승', result: '통로 폭 축소 및 급커브 증가' },
-    { num: '3', text: '벽 접촉 시', highlight: '시작 지점 즉시 리셋', result: '랩 무효화 및 에러 카운트 증가' },
-    { num: '4', text: '정밀 마우스 조작', highlight: 'PC 환경 권장', result: '마우스 입력 반영' },
+    { num: '2', text: '랩 클리어', highlight: '무한 난이도 상승', result: '꺾임과 진폭 증가' },
+    { num: '3', text: '벽 접촉 시', highlight: '시작 지점 즉시 리셋', result: '연속 랩 초기화, 충돌 +1' },
+    { num: '4', text: '마우스 (포인터 잠금)', highlight: '터치 지원', result: 'Esc로 종료' },
   ],
   rule1Text: '발광하는 에메랄드',
   rule1Highlight: '미로 통로를 정확히 추종',
   rule1Result: '골인 도달 시 45초로 시간 리셋',
   rule2Text: '랩 클리어',
   rule2Highlight: '무한 난이도 상승',
-  rule2Result: '통로 폭 축소 및 급커브 증가',
+  rule2Result: '꺾임과 진폭 증가',
   rule3Text: '벽 접촉 시',
   rule3Highlight: '시작 지점 즉시 리셋',
-  rule3Result: '랩 무효화 및 에러 카운트 증가',
-  rule4Text: '정밀 마우스 조작',
-  rule4Highlight: 'PC 환경 권장',
-  rule4Result: '마우스 입력 반영',
+  rule3Result: '연속 랩 초기화, 충돌 +1',
+  rule4Text: '마우스 (포인터 잠금)',
+  rule4Highlight: '터치 지원',
+  rule4Result: 'Esc로 종료',
   aboutTitle: '전기충격 미로게임(Steady Hand Drill) 정보',
   aboutHeading: '연속 궤적 추종 정밀도와 생리적 손떨림 억제',
-  aboutP1: '마우스 정확도 테스트(전기충격 미로게임)는 커서를 벽에 닿지 않게 좁아지는 통로 끝까지 옮기는 게임입니다. 랩을 클리어할 때마다 통로가 좁아지고 급커브가 늘어나며, 벽에 닿으면 시작 지점으로 돌아갑니다. 눈과 손의 협응, 느리지만 안정적인 커서 제어를 연습하는 용도이며 의학적 손떨림 검사는 아닙니다.',
-  aboutP2: 'Johnny Accot & Shumin Zhai(1997)의 스티어링 법칙에 따르면 터널 통과 시간은 경로 길이를 폭으로 나눈 적분값에 비례합니다. 50px에서 12px까지 좁아지는 통로에서 실시간 시각 피드백(Woodworth, 1899)과 손떨림 억제 능력을 극한까지 시험하세요.',
+  aboutP1: '마우스 미로 게임(전기충격 미로게임)은 커서를 빛나는 선에서 벗어나지 않게 골인 지점까지 옮기는 게임입니다. 랩을 연속으로 클리어할수록 다음 길의 꺾임과 진폭이 커지고, 선에서 2.5픽셀 넘게 벗어나면 시작 지점으로 돌아갑니다. 눈과 손의 협응, 느리지만 안정적인 커서 제어를 연습하는 용도이며 의학적 손떨림 검사는 아닙니다.',
+  aboutP2: 'Johnny Accot & Shumin Zhai(1997)의 스티어링 법칙에 따르면 터널 통과 시간은 경로 길이를 폭으로 나눈 적분값에 비례합니다. 허용 폭이 좁고 경로가 길고 구불구불할수록 실시간 시각 피드백(Woodworth, 1899)에 따른 미세 보정이 더 많이 필요합니다.',
   aboutCard1Title: '추천 대상',
-  aboutCard1Text: 'FPS/MOBA 게이머, 디지털 일러스트레이터, 외과의사 및 마우스 에임 시 손떨림과 커서 떨림을 교정하고 싶은 모든 분.',
+  aboutCard1Text: 'FPS/MOBA 게이머, 디지털 일러스트레이터 등 커서 떨림을 줄이고 마우스를 안정적으로 다루고 싶은 분.',
   aboutCard2Title: '훈련 효과',
   aboutCard2Text: '미세 운동 협응, 커서 안정성, 코너 구간 속도 제어를 연습합니다. 효과에는 개인차가 있습니다.',
-  aboutCard3Title: '동적 협소화 시스템',
-  aboutCard3Text: '랩을 완료할 때마다 통로 폭이 밀리미터 단위로 축소되며 급격한 굴곡이 추가되어 한계 수준의 마우스 정밀도를 요구합니다.',
+  aboutCard3Title: '점점 구불구불해지는 경로',
+  aboutCard3Text: '허용 폭(±2.5픽셀)은 그대로이고, 연속 랩이 늘 때마다 다음 경로의 꺾임 수와 위아래 진폭이 커집니다.',
   gradeLabels: {
     'S+': '신의 손 안정성 (Grandmaster)',
     'S': '달인급 조타력 (Master)',
@@ -366,7 +331,7 @@ const koCopy = {
   },
   shareDrillName: '전기충격 미로게임',
   shareUrl: 'https://skilldrills.online/ko/drills/motor/precision-control/steady-hand',
-  shareTextTemplate: '🖐️ {drillName}에서 {laps}랩 완주 (정밀도: {acc}) 달성! 마우스 손떨림 측정과 미세 정밀도 테스트를 skilldrills.online에서 무료로 진단해보세요!',
+  shareTextTemplate: '🖐️ {drillName}에서 {laps}랩 완주 (정밀도: {acc}) 달성! skilldrills.online에서 무료로 도전해보세요!',
   copiedAlert: '점수 카드가 클립보드에 복사되었습니다!',
 };
 

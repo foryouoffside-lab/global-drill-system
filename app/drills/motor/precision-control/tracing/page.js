@@ -100,7 +100,7 @@ const faqSchema = {
       name: 'What is the Mouse Tracing Game and how does it evaluate motor control?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'The Mouse Tracing Game is an interactive neuromotor tracking assessment where users follow a continuously scrolling sinusoidal wave filament with their cursor within a 22-pixel tolerance corridor. It evaluates dynamic hand steadiness, smooth pursuit velocity matching, closed-loop error correction latency, and flow state endurance over a 45-second test.',
+        text: 'You keep your cursor on a wave that scrolls continuously across the screen for 45 seconds. Every frame your cursor is within 22 pixels (vertically) of the line earns 1 point; staying on it for 4 seconds in a row adds a +5 bonus, and getting back on after drifting off adds +10. It practises smooth, steady cursor tracking rather than reaction time.',
       },
     },
     {
@@ -108,15 +108,15 @@ const faqSchema = {
       name: 'Why does the wave continuously scroll instead of waiting for user input?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Continuous motion forces active kinematic engagement. In static drills, users can freeze to regain composure; in the Mouse Tracing Game, the wave never halts, demanding continuous forward prediction, smooth pursuit ocular tracking, and immediate micro-corrections whenever the cursor drifts off-line.',
+        text: 'Continuous motion forces active kinematic engagement. In static drills, users can freeze to regain composure; in the Mouse Tracing Game, the wave never halts, demanding continuous forward prediction, smooth pursuit ocular tracking, and immediate small corrections whenever the cursor drifts off the line.',
       },
     },
     {
       '@type': 'Question',
-      name: 'What is Flow Integrity and how is the 0–100% metric calculated?',
+      name: 'What is Flow Integrity and how is the 0–100% meter calculated?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Flow Integrity represents your real-time tracking consistency. It increases continuously during frames where your crosshair remains centered within the 22px tolerance zone and decays progressively when off-path. Maintaining a high percentage reflects sustained neuromuscular lock-on.',
+        text: 'Flow Integrity is a 0–100% meter that starts at 100%. While your cursor is within 22 px of the line it rises by 15 points per second (plus 10 on each 4-second bonus); while you are off the line it falls by 25 points per second. Being off the line never takes points from your score, it only drains this meter and resets your streak. The highest value you reach (Peak Flow) sets your grade.',
       },
     },
     {
@@ -124,7 +124,7 @@ const faqSchema = {
       name: 'How does scroll speed and wave amplitude ramp up during the 45-second drill?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'The session initiates at a baseline scroll velocity of 2.2 px/frame with a 90px vertical amplitude. Over the 45-second duration, velocity accelerates up to 4.5+ px/frame while secondary harmonic oscillations increase vertical displacement to 125px, testing higher motor unit firing rates.',
+        text: 'The wave starts scrolling at 2.2 px per frame with a 90 px main swing. Over the 45 seconds the speed rises smoothly to 3.8 px per frame, the main swing grows to 125 px and a second, faster ripple grows from 8 px to 32 px, so the curve gets steeper and less regular toward the end.',
       },
     },
     {
@@ -132,7 +132,7 @@ const faqSchema = {
       name: 'What scientific models explain continuous trajectory tracking in HCI?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: "Dynamic corridor following is modeled by the Accot-Zhai Steering Law (Accot & Zhai, 1997) and Robert Woodworth's (1899) two-component motor model. Steering through narrow, shifting corridors requires uninterrupted closed-loop current control where visual feedback corrects submovements every 150 to 200 ms.",
+        text: "Dynamic corridor following is modeled by the Accot-Zhai Steering Law (Accot & Zhai, 1997) and Robert Woodworth's (1899) two-component motor model. Staying inside a moving band is a closed-loop task: vision keeps correcting the hand while the movement is still under way.",
       },
     },
     {
@@ -140,15 +140,15 @@ const faqSchema = {
       name: 'How do smooth pursuit eye movements differ from corrective saccades during tracking?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'As demonstrated by Krauzlis (2004) and Rashbass (1961), smooth pursuit eye movements match target velocity continuously, while saccades are rapid ballistic jumps. When drifting off the wave, the visual cortex initiates a catch-up saccade followed by deceleration to re-engage smooth pursuit without overshooting the 22px boundary.',
+        text: 'As demonstrated by Krauzlis (2004) and Rashbass (1961), smooth pursuit eye movements match target velocity continuously, while saccades are rapid ballistic jumps. When you drift off the wave, the eyes make a quick catch-up saccade and then settle back into smooth pursuit; the hand has to follow without overshooting the 22 px band.',
       },
     },
     {
       '@type': 'Question',
-      name: 'How does mouse tracing transfer to competitive FPS games like Apex Legends and Overwatch?',
+      name: 'How does mouse tracing relate to tracking in FPS games like Apex Legends and Overwatch?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'High-TTK (time-to-kill) tracking in tactical shooters requires continuous crosshair contact on erratically strafing opponents. Tracing drills eliminate jerky micro-flicks, train forearm muscle gliding, and smooth out mouse friction transitions between directional reversals.',
+        text: 'Tracking in high time-to-kill shooters means keeping the crosshair on a moving opponent for a sustained period. This drill practises the same kind of smooth, continuous mouse movement and direction changes. How much it transfers to a specific game varies from player to player.',
       },
     },
     {
@@ -156,7 +156,7 @@ const faqSchema = {
       name: 'What mouse sensitivity and DPI settings are best for wave tracing drills?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Medium-to-low sensitivities (800 DPI with 25–45 cm/360°) provide greater physical resistance and arm engagement, suppressing involuntary high-frequency hand tremors. Ensure your mouse polling rate is set to 1000 Hz or higher to prevent spatial cursor micro-stutter.',
+        text: 'Many players find a medium-to-low sensitivity easier for smooth tracking because it lets the forearm do the large movements and keeps small hand shakes from moving the cursor much. A 1000 Hz polling rate gives smoother cursor updates than 125 Hz. Keep the same settings between runs so your results stay comparable.',
       },
     },
     {
@@ -169,10 +169,10 @@ const faqSchema = {
     },
     {
       '@type': 'Question',
-      name: 'Can I train with graphics tablets or trackballs on this tracing drill?',
+      name: 'Can I use a trackball or touchscreen on this tracing drill?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Yes. The drill supports the standard Pointer Events API, enabling digital artists to practice stylus pressure and stroke continuity on graphic drawing tablets, as well as ergonomics testing with high-precision trackballs.',
+        text: 'On a computer the drill reads mouse movement through Pointer Lock, so mice and trackballs work; Esc ends the drill. On touch-only devices you steer by dragging your finger. Graphics tablet pens behave differently depending on the device, and pen pressure is not used. Only compare results from the same device.',
       },
     },
   ],
@@ -184,13 +184,13 @@ const howToSchema = {
   inLanguage: 'en-US',
   dateModified: '2026-09-20',
   name: 'How to Train Mouse Tracing and Smooth Tracking Precision',
-  description: 'Step-by-step training protocol for developing continuous smooth pursuit and eliminating corrective micro-jitter.',
+  description: 'Step-by-step protocol for smoother continuous cursor tracking.',
   step: [
     {
       '@type': 'HowToStep',
       position: 1,
-      name: 'Place Pointer on the Filament Origin',
-      text: 'Hover your cursor over the highlighted origin point of the sinus wave before the trial clock activates.',
+      name: 'Start the Drill and Find the Wave',
+      text: 'Click Start Drill. After the countdown your cursor appears at the left of the screen and the 45-second clock starts; move it onto the scrolling wave. On a computer the pointer is locked (Pointer Lock).',
       url: 'https://skilldrills.online/drills/motor/precision-control/tracing#step-1'
     },
     {
@@ -210,8 +210,8 @@ const howToSchema = {
     {
       '@type': 'HowToStep',
       position: 4,
-      name: 'Review Flow Integrity & Smoothness Score',
-      text: 'Check your flow integrity percentage, on-target dwell ratio, and steering stability across all frequency bands.',
+      name: 'Review Your Flow Score and Peak Flow',
+      text: 'Check your Flow Score, longest streak in frames, Peak Flow percentage and personal best on the results screen.',
       url: 'https://skilldrills.online/drills/motor/precision-control/tracing#step-4'
     },
   ],
@@ -222,68 +222,33 @@ const guideProps = {
   intro: {
     title: `What Is a Mouse Tracing Game, and How Is Tracking Measured?`,
     paragraphs: [
-      `A mouse tracing game asks you to keep your cursor on a wave that scrolls across the screen. This free browser drill speeds the wave up and widens its swings over 45 seconds and scores how well you stay on it, a measure called flow integrity, so it trains smooth cursor tracking.`,
+      `A mouse tracing game asks you to keep your cursor on a wave that scrolls across the screen. This free browser drill speeds the wave up (2.2 to 3.8 px per frame) and widens its swings over 45 seconds. You earn a point for every frame you stay within 22 px of the line, and a flow meter tracks how consistently you stay on it, so it trains smooth cursor tracking.`,
       'How this is measured, and what it cannot resolve: timing comes from the browser\'s performance.now() clock, which is deliberately coarsened to roughly 1 ms as a Spectre mitigation, and the display quantizes every target to its own refresh interval — about 16.7 ms at 60 Hz, 6.9 ms at 144 Hz and 4.1 ms at 240 Hz (Woods et al., 2015). Mouse polling adds roughly 8 ms at 125 Hz against about 1 ms at 1000 Hz. Treat any difference under about 5 ms as measurement noise, and compare your own runs on the same mouse and display rather than against someone else\'s setup. SkillDrills stores every score in your browser and collects no aggregate data, so nothing here is a population norm.',
     ],
   },
   benchmark: {
-    title: 'Mouse Tracing & Smooth Pursuit Performance Benchmarks',
-    description: 'An editorial guide to reading your own result, not measured population norms — SkillDrills collects no aggregate data. The pursuit figures follow Krauzlis (2004) and Rashbass (1961); the band boundaries are the drill author\'s own judgement. Columns evaluates overall flow score, peak flow state integrity, and continuous tracking frame streaks over 45 seconds.',
-    columns: ['Tier', 'Rank Title', 'Flow Score', 'Peak Flow', 'Max Streak Frames', 'Editorial band'],
+    title: 'Mouse Tracing Game: SkillDrills Practice Bands',
+    description: 'SkillDrills practice bands, not research norms or user data. They match the grade on the results screen, which is set by your Peak Flow (the highest the flow meter reached) and, for S+, your total Flow Score.',
+    columns: ['Grade', 'Rank Title', 'Peak Flow', 'Flow Score', 'Band'],
     rows: [
-      {
-        tier: 'Tier 1',
-        rank: 'Advanced Tracer',
-        stat: '1400+ pts',
-        level: '95–100%',
-        accuracy: '600+ frames',
-        percentile: 'Exceptional',
-      },
-      {
-        tier: 'Tier 2',
-        rank: 'Master Tracker',
-        stat: '1100–1399 pts',
-        level: '85–94%',
-        accuracy: '400–599 frames',
-        percentile: 'Advanced',
-      },
-      {
-        tier: 'Tier 3',
-        rank: 'Proficient Follower',
-        stat: '800–1099 pts',
-        level: '70–84%',
-        accuracy: '250–399 frames',
-        percentile: 'Strong',
-      },
-      {
-        tier: 'Tier 4',
-        rank: 'Intermediate Cursor',
-        stat: '500–799 pts',
-        level: '50–69%',
-        accuracy: '120–249 frames',
-        percentile: 'Typical',
-      },
-      {
-        tier: 'Tier 5',
-        rank: 'Novice Tracer',
-        stat: '< 500 pts',
-        level: '< 50%',
-        accuracy: '< 120 frames',
-        percentile: 'Starting out',
-      },
+      { tier: 'S+', rank: 'Grandmaster Flow', peak: '90%+', score: '1400+ pts', band: 'SkillDrills practice band' },
+      { tier: 'S', rank: 'Peak Flow State', peak: '80%+', score: 'any', band: 'SkillDrills practice band' },
+      { tier: 'A', rank: 'Locked-In Tracking', peak: '60%+', score: 'any', band: 'SkillDrills practice band' },
+      { tier: 'B', rank: 'Steady Tracking', peak: '35%+', score: 'any', band: 'SkillDrills practice band' },
+      { tier: 'C', rank: 'Tracing Complete', peak: 'under 35%', score: 'any', band: 'SkillDrills practice band' },
     ],
   },
   protocols: {
     title: 'How to train continuous tracking',
-    description: 'Coaching guidance from the models cited above, intended to cultivate smooth pursuit ocular control, suppress involuntary saccades, and optimize kinematic hand stability.',
+    description: 'Coaching guidance from the models cited above, for smoother eye-hand tracking and steadier cursor movement.',
     items: [
       {
         title: 'Protocol 1: Smooth Pursuit Gaze-Centering & Predictive Feedforward',
-        description: 'As demonstrated by Krauzlis (2004), smooth pursuit requires anchoring visual foveation 15 to 25 pixels downstream on the oncoming wave rather than directly under the crosshair. This feedforward tracking enables the premotor cortex to compute anticipatory acceleration curves before inflection points occur.',
+        description: 'As demonstrated by Krauzlis (2004), smooth pursuit works best when the eyes are already following the motion. Look slightly ahead on the oncoming wave rather than directly under the cursor, so you can prepare for each turn before it arrives.',
       },
       {
         title: 'Protocol 2: Rashbass Dual-Mode Tracking (Decoupling Saccades from Pursuit)',
-        description: 'When drifting outside the 22px tolerance band, execute a single swift ballistic catch-up saccade (Rashbass 1961), then instantly relax muscle tension back into smooth pursuit mode. Avoid erratic multi-flick oscillations that trigger boundary bounces.',
+        description: 'When you drift outside the 22 px band, make one quick correction back to the line (like a catch-up saccade, Rashbass 1961), then relax back into smooth following. Avoid repeated jerky flicks that bounce you on and off the line.',
       },
       {
         title: 'Protocol 3: Accot-Zhai Curvature Modulation (Crest & Trough Deceleration)',
@@ -291,7 +256,7 @@ const guideProps = {
       },
       {
         title: 'Protocol 4: Forearm Glide Ergonomics & Kinetic Friction Neutralization',
-        description: 'Rest your forearm lightly on a smooth mousepad without anchoring the wrist heel into the desk. Pivot smoothly from the elbow to absorb large vertical sinusoidal oscillations, reserving finger flexion purely for fine 1–2 px micro-adjustments.',
+        description: 'Rest your forearm lightly on a smooth mousepad without anchoring the wrist heel into the desk. Pivot smoothly from the elbow for the large vertical swings and keep finger movement for small adjustments.',
       },
     ],
   },
@@ -323,8 +288,10 @@ const copyEn = {
     { num: "1", text: "Trace Corridor", highlight: "Emerald Wave", result: "+1 PT / frame locked-on" },
     { num: "2", text: "Speed Ramps", highlight: "Progressive Wave", result: "2.2 → 3.8 px/f over 45s" },
     { num: "3", text: "Flow Integrity", highlight: "Super Flow", result: "4s Lock-on yields +5 Bonus" },
-    { num: "4", text: "Strict Tracking", highlight: "Desktop Exclusive", result: "Pointer Lock Mouse Capture" }
+    { num: "4", text: "Mouse with Pointer Lock", highlight: "Touch works too", result: "Off-path: streak 0, flow drains" }
   ],
+  aboutP1: "The Mouse Tracing Game practises hand-eye coordination, fine cursor control and smooth visual tracking. You keep your cursor within a 22 px band around a wave that scrolls continuously across the screen, which trains steady, continuous movement from the wrist and forearm.",
+  aboutP2: "Grounded in Accot & Zhai's (1997) Steering Law, staying inside a moving band needs constant speed adjustment. The scroll speed rises from 2.2 to 3.8 px per frame over 45 seconds and the swings grow, so you rely on closed-loop visual correction (Woodworth, 1899) and smooth pursuit eye movements (Krauzlis 2004, Rashbass 1961). Drifting off never costs points; it resets your streak and drains the flow meter.",
 };
 
 export default function TracingPage() {

@@ -5,39 +5,36 @@ import RelatedDrills from '@/components/drill/RelatedDrills';
 import DrillFooter from '@/components/drill/DrillFooter';
 import { pickSources } from '@/lib/drillSources';
 
+const PAGE_URL = 'https://skilldrills.online/ja/drills/motor/movement-speed/keyboard-recognition';
+const TITLE = 'キーボード反応速度テスト｜表示キーへの反応 | SkillDrills';
+const DESCRIPTION = '無料のキーボード反応速度テスト。画面に表示されたキーを制限時間内に押し、フェイクは押さずに我慢。60秒で平均反応時間・正確さ・KPMを記録。VALORANTなどのキー配置プリセット付き。';
+
 export const metadata = {
-  title: 'キーボード反応速度テスト | キー入力測定 | SkillDrills',
-  description: '表示されたキーを押して反応時間と入力の正確さを測る無料テスト。ブラウザですぐ始められます。',
+  title: TITLE,
+  description: DESCRIPTION,
   keywords: [
-    'キーボード 反応速度 テスト',
-    'キー反応 テスト',
-    '反応速度測定 キー版',
-    'WASD トレーナー',
+    'キーボード反応速度テスト',
+    'キーボード 反応速度 測定',
+    'キー配置 練習',
+    'valorant キーボード 反応速度',
     'キーバインド 練習',
-    '打鍵 速度 測定',
-    'タイピング 反応速度',
-    'キーボード レイテンシ テスト',
-    'キー入力 正確さ',
-    'ゲーミング キーボード 反応',
-    '選択反応時間 テスト',
-    '指先 運動制御',
   ],
   openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
-    title: 'キーボード反応速度テスト | キー入力測定 | SkillDrills',
-    description: '表示されたキーを押して反応時間と正確さを測る無料テスト。',
+    title: TITLE,
+    description: DESCRIPTION,
     type: 'article',
-    url: 'https://skilldrills.online/ja/drills/motor/movement-speed/keyboard-recognition',
+    url: PAGE_URL,
     siteName: 'SkillDrills',
     locale: 'ja_JP',
   },
   twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: 'summary_large_image',
-    title: 'キーボード反応速度テスト | キー入力測定 | SkillDrills',
-    description: '表示されたキーへの反応速度を測る無料のブラウザテスト。',
+    title: TITLE,
+    description: DESCRIPTION,
   },
   robots: { index: true, follow: true },
   alternates: {
-    canonical: 'https://skilldrills.online/ja/drills/motor/movement-speed/keyboard-recognition',
+    canonical: PAGE_URL,
     languages: getAlternateLanguages('/drills/motor/movement-speed/keyboard-recognition'),
   },
 };
@@ -49,7 +46,7 @@ const breadcrumbSchema = {
     { '@type': 'ListItem', position: 1, name: 'SkillDrills', item: 'https://skilldrills.online/ja' },
     { '@type': 'ListItem', position: 2, name: '運動制御トレーニング', item: 'https://skilldrills.online/ja/drills/motor' },
     { '@type': 'ListItem', position: 3, name: '動作速度', item: 'https://skilldrills.online/ja/drills/motor/movement-speed' },
-    { '@type': 'ListItem', position: 4, name: 'キーボード反応速度テスト', item: 'https://skilldrills.online/ja/drills/motor/movement-speed/keyboard-recognition' },
+    { '@type': 'ListItem', position: 4, name: 'キーボード反応速度テスト', item: PAGE_URL },
   ],
 };
 
@@ -57,14 +54,14 @@ const softwareApplicationSchema = {
   '@context': 'https://schema.org',
   '@type': 'SoftwareApplication', "sameAs": ["https://en.wikipedia.org/wiki/Computer_keyboard", "https://en.wikipedia.org/wiki/Reaction_time"],
   inLanguage: 'ja-JP',
-  name: 'キーボード反応速度テスト – キー入力測定',
-  applicationCategory: 'HealthApplication',
+  name: 'キーボード反応速度テスト',
+  applicationCategory: 'GameApplication',
   operatingSystem: 'All',
   offers: { '@type': 'Offer', price: '0', priceCurrency: 'JPY' },
-  description: 'ブラウザで動作する無料のキーボード反応速度測定・キーバインド練習ツール。選択反応時間（Choice RT）、空間認識、誤打鍵抑制能力を測定。',
-  url: 'https://skilldrills.online/ja/drills/motor/movement-speed/keyboard-recognition',
+  description: DESCRIPTION,
+  url: PAGE_URL,
   publisher: { '@type': 'Organization', name: 'SkillDrills', url: 'https://skilldrills.online' },
-  dateModified: '2026-09-20',
+  dateModified: '2026-11-09',
 };
 
 const webApplicationSchema = {
@@ -74,19 +71,19 @@ const webApplicationSchema = {
   name: 'キーボード反応速度テスト',
   applicationCategory: 'GameApplication',
   operatingSystem: 'All',
-  browserRequirements: 'HTML5 CanvasおよびJavaScriptのサポートが必要',
+  browserRequirements: 'JavaScript対応ブラウザと物理キーボードが必要',
   offers: { '@type': 'Offer', price: '0', priceCurrency: 'JPY' },
-  url: 'https://skilldrills.online/ja/drills/motor/movement-speed/keyboard-recognition',
-  dateModified: '2026-09-20',
+  url: PAGE_URL,
+  dateModified: '2026-11-09',
 };
 
 const videoGameSchema = {
   '@context': 'https://schema.org',
   '@type': 'VideoGame',
   inLanguage: 'ja-JP',
-  name: 'キーボード反応速度 – キーバインドテスト',
-  url: 'https://skilldrills.online/ja/drills/motor/movement-speed/keyboard-recognition',
-  description: 'ヒックの法則に基づき、プロンプトに対応する選択打鍵反応速度を測定します。',
+  name: 'キーボード反応速度テスト',
+  url: PAGE_URL,
+  description: '画面に表示されたキー（単発、2〜5キーの連続、記憶モード）を制限時間内に押し、フェイク表示は無視する60秒のキー反応ゲーム。',
   genre: ['Keyboard Game', 'Action', 'Esports Training'],
   gamePlatform: ['Web Browser', 'Desktop'],
   applicationCategory: 'Game',
@@ -97,86 +94,62 @@ const faqSchema = {
   '@context': 'https://schema.org',
   '@type': 'FAQPage',
   inLanguage: 'ja-JP',
-  dateModified: '2026-09-20',
+  dateModified: '2026-11-09',
   mainEntity: [
     {
       '@type': 'Question',
-      name: 'キーボード反応速度テストとは何ですか？',
+      name: 'キーボード反応速度テストは何を測りますか？',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: '画面に表示されたキーのプロンプトを視認してから、手元の対応する物理キーを押し切るまでの所要時間（遅延）をミリ秒単位で測定するツールです。キーボード配列の把握力、選択反応速度、誤打鍵の抑制能力を総合診断します。',
+        text: '画面にキーが表示されてから、そのキーを正しく押すまでの時間を測ります。結果画面には平均反応時間（ms）、正確さ、KPM（1分あたりのキー入力数）、最大コンボ、ランクが表示されます。キーボード本体の入力遅延（デバイスのレイテンシー）やタイピング速度を測るツールではなく、表示されたキーに対する人の反応を練習するものです。',
       },
     },
     {
       '@type': 'Question',
-      name: 'FPSなどのゲームでキーバインド練習が重要な理由は何ですか？',
+      name: 'どんな表示が出ますか？',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Apex LegendsやVALORANTなどの対戦シューターでは、射撃中のアビリティ発動や武器切り替えを手元を見ずに瞬時に行う必要があります。運動野の筋肉記憶を鍛えることで、乱戦時の迷いや誤打鍵をなくせます。',
+        text: '単発キー、2〜3キーを順番に押すシーケンス（ロングシーケンスモードは5キー）、3キーを1秒見せてから隠す記憶モード、そして押してはいけないフェイク表示が混ざって出ます。キーはA〜Z、0〜9、Space、Shift、Ctrl、Alt、Tab、Enter、記号、F1〜F6、矢印キーです。',
       },
     },
     {
       '@type': 'Question',
-      name: '選択反応時間（Choice RT）とヒックの法則とは？',
+      name: 'スコアの仕組みは？',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'ヒックの法則（Hick 1952）によれば、選択肢の数が増えるほど反応時間は対数的に長くなります。キーバインドの反復練習によって判断プロセスが自動化され、単純反射に近い速度まで短縮されます。',
+        text: '正しく入力すると120点 × コンボ倍率、シーケンスは1.4倍、記憶モードは1.8倍です。フェイク表示を最後まで押さなければ+200点。違うキーを押す、フェイクに反応する、制限時間を過ぎるとコンボがリセットされます。セッションは60秒固定です。',
       },
     },
     {
       '@type': 'Question',
-      name: 'トラップ（偽プロンプト）機能は何を訓練するものですか？',
+      name: '難易度と制限時間は？',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'ローガン（Logan 1984）の停止信号課題に基づく運動抑制能力の訓練です。偽の指令に対して反射的にキーを押してしまうのを前頭葉で抑制し、冷静な入力判断力を養成します。',
+        text: '初期設定のアダプティブでは1表示あたり約1.8秒から始まり、連続正解で短く（最短約0.8秒）、ミスで長くなります。固定難易度はEasy 1.5倍、Medium 1.0倍、Hard 0.75倍、Expert 0.55倍の時間です。',
       },
     },
     {
       '@type': 'Question',
-      name: 'ゲーマーの平均的な単一キー反応速度はどれくらいですか？',
+      name: 'VALORANTやLoLのキー配置で練習できますか？',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: '一般的なPCユーザーの選択反応速度は380〜480ミリ秒程度ですが、練習を重ねると240〜300ミリ秒程度になることもあります。数値は目安で、機器や個人によって異なります。',
+        text: 'はい。Valorant、CS2、Fortnite、Minecraft、League of Legends、Apex Legendsのプリセットを選ぶと、そのゲームの初期キー配置だけが出題されます。各ゲームの公式ツールではありません。',
       },
     },
     {
       '@type': 'Question',
-      name: 'シーケンス打鍵モードのメリットは何ですか？',
+      name: 'キーボードテストやタイピング練習として使えますか？',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: '3〜5個の連続キーを素早く入力するモードで、ワーキングメモリと運動チャンキングを鍛えます。各キーを個別に入力するのではなく、一連の流れとして一括処理する脳の回路を活性化します。',
+        text: 'いいえ。すべてのキーが反応するか確かめるキーボードテスターでも、文章を打つタイピングテストでもありません。キーは物理的な位置で判定され、記号キーはUS配列の位置で表示されるため、JIS配列では刻印と異なる記号があります。',
       },
     },
     {
       '@type': 'Question',
-      name: '正確なテストに適した推奨キーボードは？',
+      name: 'スマホでもできますか？',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'リニアタイプのメカニカルスイッチ、光学式、または磁気ホールエフェクトスイッチ（ラピッドトリガー対応）を搭載し、1000Hz以上のUSBポーリングレートを持つモデルが最適です。',
-      },
-    },
-    {
-      '@type': 'Question',
-      name: '1日の推奨トレーニング時間はどれくらいですか？',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: '1日10〜15分程度、休憩を挟みながら3〜4セット行うのが効果的です。精神的な疲労が溜まると抑制能力が落ちて誤入力が増えるため、短時間集中が推奨されます。',
-      },
-    },
-    {
-      '@type': 'Question',
-      name: 'MOBAや格闘ゲームなど他のジャンルにも効果はありますか？',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: 'はい。LoLのスキルコンボや格闘ゲームのコマンド入力など、手元を見ずに正確なキーを打鍵する全てのゲームにおいて即座に恩恵があります。',
-      },
-    },
-    {
-      '@type': 'Question',
-      name: 'KPM（1分間あたりのキー数）と正確度はどう計算されますか？',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: 'KPMは有効な正打数を分単位の経過時間で割った値です。正確度はミス打鍵やトラップ失敗を含む全打鍵数に対する正しい打鍵の割合（％）です。',
+        text: '物理キーボードが必要です。タッチ操作だけの端末では開始できません。タブレットはBluetoothキーボードをつなげば遊べます。',
       },
     },
   ],
@@ -186,117 +159,78 @@ const howToSchema = {
   '@context': 'https://schema.org',
   '@type': 'HowTo',
   inLanguage: 'ja-JP',
-  dateModified: '2026-09-20',
-  name: 'キーボード反応速度とキーバインド反射のトレーニング方法',
-  description: 'キーボードの打鍵速度、手元を見ないブラインド操作、および反応抑制力を高める手順。',
+  dateModified: '2026-11-09',
+  name: 'キーボード反応速度テストのやり方',
+  description: '表示されたキーに反応し、フェイクでは止まる60秒の練習手順。',
   step: [
     {
       '@type': 'HowToStep',
       position: 1,
-      name: 'ホームポジションの確保',
-      text: '左手を普段のゲーム基本ポジション（WASDなど）に軽く置き、指先を各キートップに待機させます。',
-      url: 'https://skilldrills.online/ja/drills/motor/movement-speed/keyboard-recognition#step-1',
+      name: 'モードとプリセットを選ぶ',
+      text: 'モード、難易度、必要ならゲームのプリセットを選び、左手をいつものキー位置に置きます。',
+      url: `${PAGE_URL}#step-1`,
     },
     {
       '@type': 'HowToStep',
       position: 2,
-      name: 'プロンプトの視覚的認識',
-      text: '手元を見ずに画面中央の表示を注視し、出現したキーの文字を瞬間的に認識します。',
-      url: 'https://skilldrills.online/ja/drills/motor/movement-speed/keyboard-recognition#step-2',
+      name: '画面の表示を見る',
+      text: 'キーボードを見ずに、画面中央に出るキーを確認します。',
+      url: `${PAGE_URL}#step-2`,
     },
     {
       '@type': 'HowToStep',
       position: 3,
-      name: '弾道的打鍵またはブレーキ制動',
-      text: '指示されたキーを素早く底まで押し込みます。偽のトラップが表示された場合は指先を直前で静止させます。',
-      url: 'https://skilldrills.online/ja/drills/motor/movement-speed/keyboard-recognition#step-3',
+      name: '押すか、我慢するか',
+      text: '本物の表示は制限時間内に押し、フェイク表示は消えるまで何も押しません。',
+      url: `${PAGE_URL}#step-3`,
     },
     {
       '@type': 'HowToStep',
       position: 4,
-      name: '反応時間とKPMのスコア診断',
-      text: '終了画面で単一キー反応時間、打鍵速度KPM、トラップ抑制精度を確認し、自分の弱点を把握します。',
-      url: 'https://skilldrills.online/ja/drills/motor/movement-speed/keyboard-recognition#step-4',
+      name: '結果を確認',
+      text: '60秒後に平均反応時間、正確さ、KPM、最大コンボを確認します。',
+      url: `${PAGE_URL}#step-4`,
     },
   ],
 };
 
 const guideProps = {
-  sources: pickSources('donders1868', 'hick1952', 'logan1984', 'sternberg1966', 'woods2015'),
+  sources: pickSources('donders1868', 'hick1952', 'logan1984', 'sternberg1966'),
   intro: {
-    title: 'キーボード反応速度測定の科学的根拠',
+    title: 'キーボード反応速度テストとは',
     paragraphs: [
-      'キーボード反応速度テストとは、画面に表示されたキーを素早く押し、反応時間と打鍵の正確さを測るテストです。このページでは表示されるキーに対応するキーを手元を見ずに押し、60秒間の反応の速さと誤打鍵の少なさを確認できます。ゲームのキーバインド操作やブラインドタッチの練習にも使えます。',
-      'キーボード打鍵速度はドンデルス（1868）の選択反応時間理論およびヒック（1952）の選択肢対数法則に基づきます。視覚刺激の受容から運動野への指令伝達には約200〜250msを要しますが、反復練習によって刺激と運動の結びつきが自動化され、迷いによる遅れが減る可能性があります。',
-      'ブラウザ環境における注意点: performance.now() タイマーやモニターの垂直同期（60Hz=16.7ms、240Hz=4.1ms）による時間量子化を受けます。5ms未満のブレは測定誤差として扱い、同一環境での成長を比較してください。',
+      'キーボード反応速度テストは、複数のキーの中から画面に出たひとつを選んで押す選択反応の課題です（Donders, 1868）。選べるキーが多いほど反応は遅くなり（Hick, 1952）、フェイク表示で止まるのは反応抑制の練習です（Logan, 1984）。',
+      '反応時間はブラウザのタイマー、モニターのリフレッシュレート、キーボードによって変わるので、同じ機器で自分の記録の変化を比べてください。',
     ],
   },
   benchmark: {
-    title: 'キーボード打鍵速度＆キーバインド反応ベンチマーク',
-    description: '単一キー選択反応時間、シーケンス分間打鍵数（KPM）、トラップ抑制精度に基づく総合評価基準です。',
-    columns: ['ランク帯', '呼称', '単一キー反応速度', 'シーケンス打鍵速度', '誤打鍵抑制率', '評価レベル'],
+    title: 'ドリルのランク基準',
+    description: '結果のランクは、このドリルのコードで決められたスコアと正確さの基準で決まります。研究上の基準、ユーザー統計、パーセンタイルではありません。',
+    columns: ['ランク', 'スコア', '正確さ'],
     rows: [
-      {
-        tier: 'Tier 1',
-        rank: 'Apex Keybinder',
-        stat: '240 ms未満',
-        level: '320+ KPM',
-        accuracy: '98–100%',
-        percentile: '高度なマッスルメモリー',
-      },
-      {
-        tier: 'Tier 2',
-        rank: 'Master Tactician',
-        stat: '240–300 ms',
-        level: '260–319 KPM',
-        accuracy: '95–97%',
-        percentile: '上級オペレーター',
-      },
-      {
-        tier: 'Tier 3',
-        rank: 'Proficient Operator',
-        stat: '300–380 ms',
-        level: '200–259 KPM',
-        accuracy: '90–94%',
-        percentile: '実力派ゲーマー',
-      },
-      {
-        tier: 'Tier 4',
-        rank: 'Intermediate Typist',
-        stat: '380–480 ms',
-        level: '140–199 KPM',
-        accuracy: '80–89%',
-        percentile: '一般的な平均値',
-      },
-      {
-        tier: 'Tier 5',
-        rank: 'Novice Keybinder',
-        stat: '480 ms超過',
-        level: '140 KPM未満',
-        accuracy: '80%未満',
-        percentile: 'ビギナー水準',
-      },
+      { grade: 'S+', score: '3,500+', accuracy: '95%+' },
+      { grade: 'S', score: '2,200+', accuracy: '90%+' },
+      { grade: 'A', score: '1,400+', accuracy: '85%+' },
+      { grade: 'B', score: '700+', accuracy: '80%+' },
+      { grade: 'C', score: '300+', accuracy: '75%+' },
+      { grade: 'D', score: '100+', accuracy: '65%+' },
     ],
   },
   protocols: {
-    title: '打鍵スピード向上トレーニングプロトコル',
-    description: '皮質脊髄路の伝達効率を高め、判断遅延を圧縮するための実践手法。',
+    title: '練習のコツ',
+    description: 'ミスを減らして記録を伸ばすポイント。',
     items: [
       {
-        title: 'プロトコル 1: 視線固定ブラインド打鍵 (Donders 1868)',
-        description: '手元を見ずに画面中央だけを見つめ、固有感覚のみを頼りに目的キーを打鍵します。目視確認の遅れを排除します。',
+        title: 'キーをエリアで覚える',
+        description: '移動（WASD）、スキル（Q、E、C、X）、数字列（1〜4）のようにエリアで覚えると、表示を見てから指を選ぶ時間が減ります。',
       },
       {
-        title: 'プロトコル 2: キー配置の機能的ゾーン化 (Hick 1952)',
-        description: 'キーボードを移動系（WASD）、アビリティ系（QECX）、数字列（1〜4）などのゾーンに脳内で分類し、選択肢を整理します。',
+        title: 'フェイクで止まる',
+        description: '確認する前に押すクセがあるとコンボがすぐ切れます。表示の種類を見てから押しましょう。',
       },
       {
-        title: 'プロトコル 3: トラップ停止信号の抑制制御 (Logan 1984)',
-        description: '偽のプロンプトが現れた瞬間に、指の押し込み動作を脳の前頭前野で即座にキャンセルする訓練を重ねます。',
-      },
-      {
-        title: 'プロトコル 4: 連続シーケンスのチャンキング (Sternberg 1966)',
-        description: '複数キーの連続入力を個別の打鍵として認識せず、1つの統合された指の波としてまとめて実行します。',
+        title: 'シーケンスはまとめて入力',
+        description: '2〜5キーのシーケンスは1キーずつ読まず、ひとまとまりで覚えて続けて押します（Sternberg, 1966）。',
       },
     ],
   },
@@ -307,6 +241,11 @@ const guideProps = {
       a: q.acceptedAnswer.text,
     })),
   },
+};
+
+const jaCopy = {
+  title: 'キーボード反応速度テスト',
+  subtitle: '画面に表示されたキーを押すゲーム向けキー配置の反応練習',
 };
 
 export default function JapaneseKeyboardRecognitionPage() {
@@ -336,7 +275,7 @@ export default function JapaneseKeyboardRecognitionPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(howToSchema) }}
       />
-      <KeyboardRecognitionClient />
+      <KeyboardRecognitionClient copy={jaCopy} />
       <DrillGuide {...guideProps} />
       <RelatedDrills />
       <DrillFooter />

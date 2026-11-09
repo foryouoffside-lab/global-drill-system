@@ -1,0 +1,51 @@
+phrase,cc,lang,bing_exact,bing_broad,status,assigned_page,role
+連打測定,jp,ja-JP,2555,2652,ok,motor/movement-speed/rapid-tapping,primary
+連打測定 サイト,jp,ja-JP,0,0,ok,none,KILL
+連打測定 マウス,jp,ja-JP,0,0,ok,none,KILL
+マウス 連打 測定,jp,ja-JP,0,0,ok,none,KILL
+クリック 連打,jp,ja-JP,54,54,ok,motor/movement-speed/rapid-tapping,secondary
+連打 テスト,jp,ja-JP,0,0,ok,none,KILL
+cps 測定,jp,ja-JP,1410,1452,ok,motor/movement-speed/rapid-tapping,secondary
+cpsテスト,jp,ja-JP,229,229,ok,motor/movement-speed/rapid-tapping,secondary
+クリック速度 測定,jp,ja-JP,0,0,ok,none,KILL
+クリック速度チェック,jp,ja-JP,0,0,ok,none,KILL
+マウス連打ゲーム,jp,ja-JP,0,0,ok,none,KILL
+マウス 連打 練習,jp,ja-JP,0,0,ok,none,KILL
+キーボード 反応速度 テスト,jp,ja-JP,0,0,ok,none,KILL
+キーボード 反応速度 測定,jp,ja-JP,0,0,ok,none,KILL
+キー入力 練習,jp,ja-JP,0,0,ok,none,KILL
+キー入力練習,jp,ja-JP,0,0,ok,none,KILL
+キーボード 練習,jp,ja-JP,97,97,ok,motor/movement-speed/keyboard-recognition,secondary (mixed typing intent; frame as key-position/keybind practice)
+キーボード 入力 練習,jp,ja-JP,0,0,ok,none,KILL
+キーマウ 練習,jp,ja-JP,0,0,ok,none,KILL
+キーマウ 練習 ブラウザ,jp,ja-JP,0,0,ok,none,KILL
+キー マウス 練習 ゲーム,jp,ja-JP,0,0,ok,none,KILL
+イライラ棒,jp,ja-JP,278,278,ok,motor/precision-control/steady-hand,secondary (bare term = toy/TV intent)
+イライラ棒 ゲーム 無料,jp,ja-JP,0,0,ok,none,KILL
+イライラ棒 ブラウザ,jp,ja-JP,0,0,ok,none,KILL
+イライラ棒 マウス,jp,ja-JP,0,0,ok,none,KILL
+マウス 迷路,jp,ja-JP,0,0,ok,none,KILL
+ドラッグ 練習,jp,ja-JP,0,0,ok,none,KILL
+マウス ドラッグ 練習,jp,ja-JP,0,0,ok,none,KILL
+ドラッグ アンド ドロップ 練習,jp,ja-JP,0,0,ok,none,KILL
+マウス精度テスト,jp,ja-JP,0,0,ok,none,KILL
+マウス 精度 測定,jp,ja-JP,0,0,ok,none,KILL
+マウス 操作 練習,jp,ja-JP,0,0,ok,none,KILL
+マウス 練習 ゲーム,jp,ja-JP,0,0,ok,none,KILL
+マウス 練習 サイト,jp,ja-JP,0,0,ok,none,KILL
+マウス練習,jp,ja-JP,209,209,ok,motor (hub),primary
+マウス エイム 練習,jp,ja-JP,0,0,ok,none,KILL
+マウス トラッキング 練習,jp,ja-JP,0,0,ok,none,KILL
+マウス カーソル 練習,jp,ja-JP,0,0,ok,none,KILL
+順番にクリック,jp,ja-JP,0,0,ok,none,KILL
+マウス 練習 クリック,jp,ja-JP,0,0,ok,none,KILL
+連打ツール,jp,ja-JP,2070,2441,ok (prior run),none,skip: auto-clicker tool intent (2026-10)
+連打ゲーム,jp,ja-JP,1252,1335,ok (prior run),motor/movement-speed/rapid-tapping,secondary (2026-10)
+クリック速度測定,jp,ja-JP,388,388,ok (prior run),motor/movement-speed/rapid-tapping,secondary; move OFF physical/speed-drill (2026-10)
+クリック速度テスト,jp,ja-JP,40,40,ok (prior run),motor/movement-speed/rapid-tapping,secondary (2026-10)
+連打測定 スペースキー,jp,ja-JP,43,43,ok (prior run),none,skip: drill ignores keys (2026-10)
+キーボードテスト,jp,ja-JP,7968,8372,ok (prior run),none,skip: hardware key-tester intent; decision (2026-10)
+タイピングテスト,jp,ja-JP,949,1049,ok (prior run),none,skip: drill does not measure typing (2026-10)
+マウステスト,jp,ja-JP,317,317,ok (prior run),none,skip: hardware-checker intent (2026-10)
+イライラ棒 ゲーム,jp,ja-JP,21,21,ok (prior run),motor/precision-control/steady-hand,primary (2026-10)
+エイム練習,jp,ja-JP,3098,4010,ok (prior run),motor/hand-eye-coordination/aim-trainer,primary PROTECT (fps run 2026-11-09)
