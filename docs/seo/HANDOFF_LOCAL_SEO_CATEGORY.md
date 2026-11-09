@@ -5,7 +5,21 @@ Trigger for a new chat: `Continue docs/seo/HANDOFF_LOCAL_SEO_CATEGORY.md`
 Read this file first, then `docs/seo/HANDOFF_DEMAND_RESEARCH.md` (tooling + rules), `docs/seo/GLOBAL_PAGE_SEO_AEO_GEO_STANDARD.md`, `docs/seo/NO_TRANSLATION_NATIVE_SEARCH_MANDATE.md`.
 Update the LOG section at the end of every step. Never leave work only in chat.
 
-## >>> RESUME HERE (2026-11-10, parallel run) <<<
+## >>> RESUME HERE (2026-11-11 start) - do these in order <<<
+
+1. Bing submit (quota resets daily): `python scripts/bing/bing.py quota` -> `python scripts/bing/bing.py submit $(cat docs/seo/research/motor-2026-11/_bing_submit_p1.txt)` -> then fps `_bing_pending_day2.txt` (79) with what quota is left; move leftovers to a new pending file.
+2. PHYSICAL Phase A research: stopped PARTIAL at end of 2026-11-10 (chat ended while agents ran).
+   State at save: ko.md 38 lines, de.md 36, pt.md 20, ja.md 14, fr.md 13, es.md MISSING; none had the final 12-row table / kill list.
+   Resume = relaunch 3 agents in parallel (owner wants multiple agents), same brief
+   docs/seo/research/physical-2026-11/_AGENT_BRIEF_RESEARCH.md + "RESUME: reuse <market>.md and _work-<market>/ raw output; do NOT re-run Bing/autocomplete/serp calls already logged in _work-<market>/ (caps count across both days); finish the table + kill list".
+   Pairs: ko+ja, de+fr, pt+es.
+3. Coordinator: merge 6 maps, check no primary collides with FPS/motor/reaction primaries, write docs/seo/research/physical-2026-11/_COORDINATOR_QUEUE.md.
+4. Phase B: copy docs/seo/research/motor-2026-11/_AGENT_BRIEF_PHASE_B.md -> physical-2026-11, adapt drill list (hub + 11 drills), one agent per 1-2 drills, then audit (`bash docs/seo/tools/aud.sh`), runtime QA, commit, push, Bing, GSC list.
+   Must fix in this pass: physical speed-drill de/fr/ja falsely claims CPS.
+5. Owner still to decide: uncommitted middleware.js edit (comment removed) - not ours, never commit it.
+6. Owner GSC Request-Indexing list for motor (given in chat 2026-11-10): keyboard-tester pt/ja/ko/en, rapid-tapping es/ja, motor hub ko/pt.
+
+## (older) 2026-11-10 parallel run
 
 Running in parallel (owner asked for multiple agents):
 1. DONE: C1+C2 verified at runtime (long_seq stays 5-key across 11 timeouts; keyboard tester ko/pt OK, no scroll, no errors). MOTOR PUSHED 2026-11-10 (3d573596). DEPLOY CONFIRMED LIVE (skilldrills.online pt/ko keyboard-tester 200, new titles). Bing daily quota was 0 on 2026-11-10 -> NEXT DAY: `python scripts/bing/bing.py quota`, then submit docs/seo/research/motor-2026-11/_bing_submit_p1.txt (15 URLs) first, then fps _bing_pending_day2.txt. TODO: Bing submit motor + keyboard-tester URLs + the 79 pending FPS URLs (_bing_pending_day2.txt) within quota, give owner GSC list.
