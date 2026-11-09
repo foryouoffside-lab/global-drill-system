@@ -12,15 +12,15 @@ import { pickSources } from '@/lib/drillSources';
 // ============================================================
 
 export const metadata = {
-  title: "Entrenamiento de puntería | Aim Trainer | SkillDrills",
+  title: "Aim Trainer Online Gratis | Precisión del Ratón | SkillDrills",
   description: "Entrena tu puntería con un aim trainer gratuito en el navegador. Mide precisión del ratón, adquisición de objetivos y velocidad de clic.",
-  keywords: ['entrenamiento de puntería', 'aim trainer online', 'entrenador de puntería', 'test de puntería', 'precisión del ratón', 'entrenamiento de flick', 'puntería FPS', 'calentamiento de puntería', 'adquisición de objetivos', 'puntería Valorant', 'puntería CS2'],
+  keywords: ['aim trainer', 'aim trainer online', 'aim trainer gratis', 'precisión del ratón', 'entrenamiento de flick', 'puntería FPS', 'calentamiento de puntería', 'adquisición de objetivos', 'puntería Valorant', 'puntería CS2'],
   alternates: {
     canonical: 'https://skilldrills.online/es/drills/motor/hand-eye-coordination/aim-trainer',
     languages: getAlternateLanguages('/drills/motor/hand-eye-coordination/aim-trainer'),
   },
   openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
-    title: 'Entrenamiento de puntería | Aim Trainer | SkillDrills',
+    title: 'Aim Trainer Online Gratis | Precisión del Ratón | SkillDrills',
     description: 'Aim trainer gratis en el navegador para entrenar la precisión del ratón, los flicks y la reacción.',
     url: 'https://skilldrills.online/es/drills/motor/hand-eye-coordination/aim-trainer',
     siteName: 'SkillDrills',
@@ -29,8 +29,8 @@ export const metadata = {
   },
   twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: 'summary_large_image',
-    title: 'Entrenamiento de puntería | Aim Trainer | SkillDrills',
-    description: 'Entrenamiento de puntería FPS en el navegador para mejorar precisión, flicks y reflejos.',
+    title: 'Aim Trainer Online Gratis | Precisión del Ratón | SkillDrills',
+    description: 'Aim trainer FPS en el navegador para mejorar precisión, flicks y reflejos.',
   },
   robots: { index: true, follow: true },
 };
@@ -90,7 +90,7 @@ const videoGameSchema = {
   "name": "Aim Trainer Online (Precisión de Mouse FPS)",
   "url": "https://skilldrills.online/es/drills/motor/hand-eye-coordination/aim-trainer",
   "description": "Aim trainer 2D gratuito en el navegador para FPS: entrena la adquisición de objetivos, la precisión del ratón y la velocidad de clic.",
-  "dateModified": "2026-09-20",
+  "dateModified": "2026-11-09",
   "gamePlatform": "Web Browser",
   "genre": ["Aim Trainer", "FPS Training", "Hand-Eye Coordination", "Reaction Speed"],
   "playMode": "SinglePlayer",
@@ -145,7 +145,7 @@ const faqSchema = {
   '@context': 'https://schema.org',
   '@type': 'FAQPage',
   inLanguage: 'es-ES',
-  dateModified: '2026-09-20',
+  dateModified: '2026-11-09',
   mainEntity: [
     {
       '@type': 'Question',

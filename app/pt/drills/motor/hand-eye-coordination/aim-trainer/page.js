@@ -12,16 +12,16 @@ import { pickSources } from '@/lib/drillSources';
 // ============================================================
 
 export const metadata = {
-  title: "Treino de Mira e Aim Trainer Online Grátis | SkillDrills",
-  description: "Treine mira no navegador e teste a precisão do mouse. Meça reflexos, aquisição de alvo e velocidade de clique para jogos FPS.",
-  keywords: ['treino de mira online', 'aim trainer grátis', 'teste de mira', 'precisão do mouse', 'treino de mira FPS', 'treino de flick', 'aquecer a mira', 'teste de reflexo', 'mira no Valorant', 'melhorar a mira no CS2'],
+  title: "Aim Trainer Online Grátis | Precisão do Mouse | SkillDrills",
+  description: "Aim trainer grátis no navegador: teste a precisão do mouse, a aquisição de alvos e a velocidade de clique para jogos FPS.",
+  keywords: ['aim trainer', 'aim trainer online', 'aim trainer grátis', 'precisão do mouse', 'aquecer a mira', 'mira no Valorant', 'melhorar a mira no CS2'],
   alternates: {
     canonical: 'https://skilldrills.online/pt/drills/motor/hand-eye-coordination/aim-trainer',
     languages: getAlternateLanguages('/drills/motor/hand-eye-coordination/aim-trainer'),
   },
   openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
-    title: 'Treino de Mira e Aim Trainer Online Grátis | SkillDrills',
-    description: 'Treino de mira e teste de reflexos FPS grátis. Acerte alvos móveis e refine a precisão do mouse.',
+    title: 'Aim Trainer Online Grátis | Precisão do Mouse | SkillDrills',
+    description: 'Aim trainer grátis: acerte alvos móveis e refine a precisão do mouse no navegador.',
     url: 'https://skilldrills.online/pt/drills/motor/hand-eye-coordination/aim-trainer',
     siteName: 'SkillDrills',
     locale: 'pt_BR',
@@ -29,8 +29,8 @@ export const metadata = {
   },
   twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: 'summary_large_image',
-    title: 'Treino de Mira e Aim Trainer Online Grátis | SkillDrills',
-    description: 'Treino de mira FPS no navegador para aprimorar micro-flicks, reflexos e precisão.',
+    title: 'Aim Trainer Online Grátis | Precisão do Mouse | SkillDrills',
+    description: 'Aim trainer FPS no navegador para aprimorar micro-flicks e precisão do mouse.',
   },
   robots: { index: true, follow: true },
 };
@@ -90,7 +90,7 @@ const videoGameSchema = {
   "name": "Treino de Mira Online (Aim Trainer)",
   "url": "https://skilldrills.online/pt/drills/motor/hand-eye-coordination/aim-trainer",
   "description": "Aim trainer 2D gratuito no navegador para jogos FPS: treine aquisição de alvo, precisão do mouse e velocidade de clique.",
-  "dateModified": "2026-09-20",
+  "dateModified": "2026-11-09",
   "gamePlatform": "Web Browser",
   "genre": ["Aim Trainer", "FPS Training", "Hand-Eye Coordination", "Reaction Speed"],
   "playMode": "SinglePlayer",
@@ -145,7 +145,7 @@ const faqSchema = {
   '@context': 'https://schema.org',
   '@type': 'FAQPage',
   inLanguage: 'pt-BR',
-  dateModified: '2026-09-20',
+  dateModified: '2026-11-09',
   mainEntity: [
     {
       '@type': 'Question',
@@ -247,7 +247,7 @@ export default function AimTrainerPortuguesePage() {
 
       <AimTrainerClient
         copy={{
-          title: 'Treino de Mira Online (Aim Trainer)',
+          title: 'Aim Trainer Online Grátis',
           subtitle: 'Alvos móveis • Precisão do mouse • Treino de flick',
           caption: 'Mire e acerte os alvos em movimento o mais rápido e preciso possível antes que desapareçam. Baseado na Lei de Fitts.',
           startButtonText: 'INICIAR TREINO',

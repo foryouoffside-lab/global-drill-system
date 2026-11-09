@@ -1,0 +1,41 @@
+phrase,cc,lang,bing_exact,bing_broad,status,assigned_page,role
+aim trainer,de,de-DE,1563,2428,ok,motor/hand-eye-coordination/aim-trainer,primary (outside FPS)
+aim training,de,de-DE,168,203,ok,fps (hub),primary
+aim trainer online,de,de-DE,22,42,ok,motor/hand-eye-coordination/aim-trainer,secondary
+aim trainer browser,de,de-DE,0,0,ok,none,kill (0)
+aim trainer kostenlos,de,de-DE,0,0,ok,none,kill (0)
+aim trainieren,de,de-DE,0,0,ok,none,kill (0)
+aim verbessern,de,de-DE,0,0,ok,none,kill (0)
+aim üben,de,de-DE,0,0,ok,none,kill (0)
+fps training,de,de-DE,0,0,ok,none,kill (0)
+fps trainer,de,de-DE,3,3,ok,fps (hub),secondary
+aim test,de,de-DE,117,122,ok,fps/flick-shot-training,primary
+flick training,de,de-DE,0,0,ok,none,kill (0)
+flick aim trainer,de,de-DE,0,0,ok,none,kill (0)
+flick shot,de,de-DE,0,0,ok,none,kill (0)
+tracking aim trainer,de,de-DE,0,0,ok,fps/strafe-tracking,secondary (0)
+tracking aim,de,de-DE,0,0,ok,fps/strafe-tracking,secondary (0)
+crosshair placement,de,de-DE,0,0,ok,fps/angle-hold-trainer,secondary (0)
+crosshair placement trainer,de,de-DE,0,0,ok,none,kill (0)
+pre aim,de,de-DE,0,0,ok,none,kill (0)
+rückstoßkontrolle,de,de-DE,0,0,ok,fps/recoil-control,"primary (0, descriptive)"
+spray control,de,de-DE,0,0,ok,fps/recoil-control,secondary (0)
+recoil control,de,de-DE,0,0,ok,fps/recoil-control,secondary (0)
+aim trainer valorant,de,de-DE,52,53,ok,fps/target-acquisition,secondary
+valorant aim trainer,de,de-DE,149,166,ok,fps/target-acquisition,primary
+aim trainer cs2,de,de-DE,12,12,ok,fps/angle-hold-trainer,secondary
+cs2 aim training,de,de-DE,16,16,ok,fps/angle-hold-trainer,primary
+valorant aim training,de,de-DE,6,6,ok,fps/target-acquisition,secondary
+aim trainer apex,de,de-DE,0,0,ok,none,kill (0)
+aimlabs,de,de-DE,276,362,ok,none,competitor brand - do not target
+180 flick,de,de-DE,0,0,ok,none,kill (0)
+target switching,de,de-DE,0,0,ok,none,kill (0)
+micro flicks,de,de-DE,0,0,ok,none,kill (0)
+smooth tracking,de,de-DE,0,3,ok,fps/pro-smooth-pursuit,"primary (0 exact, 3 broad)"
+strafe aim,de,de-DE,0,0,ok,none,kill (0)
+headshot training,de,de-DE,0,0,ok,none,kill (0)
+reaktionszeit gaming,de,de-DE,0,0,ok,none,kill (0)
+gaming reaktionstest,de,de-DE,0,0,ok,none,kill (0)
+zielen üben,de,de-DE,0,0,ok,none,kill (0)
+maus training,de,de-DE,0,0,ok,none,kill (0)
+aim game,de,de-DE,6,6,ok,fps (hub),secondary

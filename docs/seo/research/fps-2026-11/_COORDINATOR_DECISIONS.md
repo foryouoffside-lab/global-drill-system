@@ -1,0 +1,2 @@
+# FPS phase A - coordinator decisions (2026-11-08)
+- de: motor aim-trainer owns `aim trainer` (1,563; ranks 7.1); fps hub = `aim training` (168); target-acquisition = `valorant aim trainer` (149); flick-shot = `aim test` (117) and remove `aim test` from motor keywords; angle-hold = `cs2 aim training`; drop "Aim Trainer" prefix from 10 de FPS titles; instant-response -> "FPS-Reflextest". Phase B: trim reaction fps-tracking-trainer de keywords that overlap hub/target-acquisition/angle-hold.

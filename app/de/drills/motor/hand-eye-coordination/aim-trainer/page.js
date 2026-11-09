@@ -14,7 +14,7 @@ import { pickSources } from '@/lib/drillSources';
 export const metadata = {
   title: "Aim Trainer online | Mauspräzision testen | SkillDrills",
   description: "Kostenloser Aim Trainer im Browser: Teste Mauspräzision, Zielerfassung und Klicktempo für FPS, CS2 und VALORANT ohne Download.",
-  keywords: ['aim trainer online', 'aim trainer kostenlos', 'mauspräzision testen', 'fps aim training', 'zielerfassung', 'micro-flick training', 'aim test', 'reaktionstest maus', 'valorant aim training', 'cs2 aim trainer'],
+  keywords: ['aim trainer online', 'aim trainer kostenlos', 'mauspräzision testen', 'zielerfassung', 'micro-flick training', 'reaktionstest maus', 'valorant aim training', 'cs2 aim trainer'],
   alternates: {
     canonical: 'https://skilldrills.online/de/drills/motor/hand-eye-coordination/aim-trainer',
     languages: getAlternateLanguages('/drills/motor/hand-eye-coordination/aim-trainer'),
@@ -53,7 +53,7 @@ const softwareApplicationSchema = {
   '@context': 'https://schema.org',
   '@type': 'SoftwareApplication', "sameAs": ["https://en.wikipedia.org/wiki/Fitts%27s_law", "https://en.wikipedia.org/wiki/Hand%E2%80%93eye_coordination"],
   inLanguage: 'de-DE',
-  name: 'Aim Trainer Online – Kostenloser FPS Aim Test',
+  name: 'Aim Trainer Online – Kostenloser Mauspräzisionstest',
   alternateName: ['Aim Trainer', 'FPS Aim Trainer', 'Maus Präzisionstest', 'Aim Trainer Online'],
   applicationCategory: 'HealthApplication',
   operatingSystem: 'All',
@@ -90,7 +90,7 @@ const videoGameSchema = {
   "name": "Aim Trainer Online",
   "url": "https://skilldrills.online/de/drills/motor/hand-eye-coordination/aim-trainer",
   "description": "Kostenloser browserbasierter 2D-Aim-Trainer für FPS-Spieler: Trainiere Zielerfassung, Mauspräzision und Klicktempo.",
-  "dateModified": "2026-09-20",
+  "dateModified": "2026-11-09",
   "gamePlatform": "Web Browser",
   "genre": ["Aim Trainer", "FPS Training", "Hand-Eye Coordination", "Reaction Speed"],
   "playMode": "SinglePlayer",
@@ -145,7 +145,7 @@ const faqSchema = {
   '@context': 'https://schema.org',
   '@type': 'FAQPage',
   inLanguage: 'de-DE',
-  dateModified: '2026-09-20',
+  dateModified: '2026-11-09',
   mainEntity: [
     {
       '@type': 'Question',
