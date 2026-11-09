@@ -5,7 +5,14 @@ Trigger for a new chat: `Continue docs/seo/HANDOFF_LOCAL_SEO_CATEGORY.md`
 Read this file first, then `docs/seo/HANDOFF_DEMAND_RESEARCH.md` (tooling + rules), `docs/seo/GLOBAL_PAGE_SEO_AEO_GEO_STANDARD.md`, `docs/seo/NO_TRANSLATION_NATIVE_SEARCH_MANDATE.md`.
 Update the LOG section at the end of every step. Never leave work only in chat.
 
-## >>> RESUME HERE (state as of 2026-11-09 night) <<<
+## >>> RESUME HERE (2026-11-10, parallel run) <<<
+
+Running in parallel (owner asked for multiple agents):
+1. DONE: C1+C2 verified at runtime (long_seq stays 5-key across 11 timeouts; keyboard tester ko/pt OK, no scroll, no errors). MOTOR PUSHED 2026-11-10 (3d573596). TODO: confirm deploy (cache-busted curl of /pt/drills/motor/movement-speed/keyboard-tester), Bing submit motor + keyboard-tester URLs + the 79 pending FPS URLs (_bing_pending_day2.txt) within quota, give owner GSC list.
+2. PHYSICAL Phase A research: 3 agents (ko+ja, de+fr, pt+es), brief docs/seo/research/physical-2026-11/_AGENT_BRIEF_RESEARCH.md. Done check: physical-2026-11/<market>.md has a full 12-row table + kill list. Relaunch missing markets with same brief + "resume".
+3. After 1 passes: push motor (C3). Then physical Phase B (adapt motor-2026-11/_AGENT_BRIEF_PHASE_B.md).
+
+## (older) RESUME block of 2026-11-09 night
 
 A. REACTION-SPEED = DONE + PUSHED (20f78d79).
 B. FPS = DONE + PUSHED + LIVE (228d9b77). 96/96 locale audit OK, runtime QA PASS on all 15 drills + hub.
