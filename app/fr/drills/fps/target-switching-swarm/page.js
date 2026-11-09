@@ -6,19 +6,17 @@ import { getAlternateLanguages } from '@/lib/i18n/locales';
 import { pickSources } from '@/lib/drillSources';
 
 export const metadata = {
-  title: 'Aim Trainer Valorant - Changement de cible | SkillDrills',
-  description: "Aim trainer gratuit dans le navigateur : entraînez les changements rapides de cible, les transitions et le spray transfer sur Valorant et CS2.",
+  title: 'Changement de cible : entraînement multi-cibles | SkillDrills',
+  description: "Entraînement gratuit au changement de cible dans le navigateur : touchez 2 à 5 cibles mobiles à la suite. +2 s par touche (max 60 s), -1 s par clic manqué.",
   keywords: [
-    'aim trainer Valorant',
+    'changement de cible',
     'changement de cible FPS',
     'target switching',
     'changement rapide de cible',
-    'spray transfer Valorant',
     'entraînement de visée FPS',
     'transition de cible',
     'flick enchaîné',
     'visée multi cibles',
-    'aim trainer gratuit',
     'vitesse de changement de cible',
     'précision souris gaming'
   ],
@@ -31,8 +29,8 @@ export const metadata = {
     follow: true,
   },
   openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
-    title: 'Aim Trainer Valorant - Changement de cible | SkillDrills',
-    description: "Aim trainer gratuit dans le navigateur : entraînez les changements rapides de cible, les transitions et le spray transfer sur Valorant et CS2.",
+    title: 'Changement de cible : entraînement multi-cibles | SkillDrills',
+    description: "Entraînement gratuit au changement de cible dans le navigateur : touchez 2 à 5 cibles mobiles à la suite. +2 s par touche (max 60 s), -1 s par clic manqué.",
     url: 'https://skilldrills.online/fr/drills/fps/target-switching-swarm',
     siteName: 'SkillDrills',
     locale: 'fr_FR',
@@ -40,8 +38,8 @@ export const metadata = {
   },
   twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: 'summary_large_image',
-    title: 'Aim Trainer Valorant - Changement de cible | SkillDrills',
-    description: "Aim trainer gratuit dans le navigateur : entraînez les changements rapides de cible, les transitions et le spray transfer sur Valorant et CS2.",
+    title: 'Changement de cible : entraînement multi-cibles | SkillDrills',
+    description: "Entraînement gratuit au changement de cible dans le navigateur : touchez 2 à 5 cibles mobiles à la suite. +2 s par touche (max 60 s), -1 s par clic manqué.",
   },
 };
 
@@ -59,7 +57,7 @@ export default function TargetSwitchingSwarmFrPage() {
   const softwareSchema = {
     "@context": "https://schema.org",
     "@type": "SoftwareApplication", "sameAs": ["https://en.wikipedia.org/wiki/Saccade", "https://en.wikipedia.org/wiki/Hand%E2%80%93eye_coordination"],
-    "name": "Aim Trainer Valorant - Changement de cible",
+    "name": "Changement de cible : entraînement multi-cibles",
     "applicationCategory": "GameApplication",
     "operatingSystem": "Any (Web Browser)",
     "offers": {
@@ -67,13 +65,13 @@ export default function TargetSwitchingSwarmFrPage() {
       "price": "0",
       "priceCurrency": "USD"
     },
-    "description": "Outil d'entraînement en ligne gratuit au target switching et aux transitions rapides pour les joueurs de CS2, Valorant et Apex Legends."
+    "description": "Entraînement gratuit au changement de cible dans le navigateur : 2 à 5 cibles mobiles qui rebondissent, à toucher les unes après les autres."
   };
 
   const webAppSchema = {
     "@context": "https://schema.org",
     "@type": "WebApplication",
-    "name": "Aim Trainer Valorant - Changement de cible",
+    "name": "Changement de cible : entraînement multi-cibles",
     "url": "https://skilldrills.online/fr/drills/fps/target-switching-swarm",
     "browserRequirements": "Requires Pointer Lock API and WebGL support",
     "applicationCategory": "ShooterTraining",
@@ -86,8 +84,8 @@ export default function TargetSwitchingSwarmFrPage() {
   const videoGameSchema = {
     "@context": "https://schema.org",
     "@type": "VideoGame",
-    "name": "Aim Trainer Valorant - Changement de cible",
-    "description": "Simulateur d'essaim de cibles dynamiques pour développer la vitesse d'enchaînement, le spray transfer et supprimer l'hésitation cognitive post-élimination.",
+    "name": "Changement de cible : entraînement multi-cibles",
+    "description": "Drill gratuit de changement de cible : un essaim de 2 à 5 cibles mobiles qui réapparaissent dès qu'elles sont touchées, pour travailler l'enchaînement.",
     "genre": ["First-Person Shooter", "Aim Trainer", "Reaction Training"],
     "playMode": "SinglePlayer",
     "gamePlatform": ["PC", "Web Browser"]
@@ -115,10 +113,10 @@ export default function TargetSwitchingSwarmFrPage() {
       },
       {
         "@type": "Question",
-        "name": "Comment le format d'essaim (swarm) améliore-t-il les éliminations multiples (multi-kills) ?",
+        "name": "Quelles sont les règles de cet entraînement au changement de cible ?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "L'apparition simultanée de plusieurs cibles à durée de vie limitée contraint le regard périphérique à pré-calculer la trajectoire suivante pendant que la main finalise le tir actuel, développant l'indexation visuelle rapide."
+          "text": "Le chrono démarre à 45 secondes. Selon le niveau, 2 à 5 cibles mobiles qui rebondissent restent à l'écran. Une touche rapporte +100 points multipliés par le combo et le niveau, et ajoute 2 secondes (60 maximum). Un clic dans le vide retire 1 seconde et remet le combo à zéro. Si l'option d'expiration des cibles est activée, une cible non touchée à temps (environ 2,8 secondes au début, moins aux niveaux supérieurs) disparaît et retire aussi 1 seconde. Le niveau monte tous les 2 100 points ; les cibles deviennent plus petites et plus rapides. Le drill se joue à la souris avec verrouillage du pointeur ; Échap le quitte."
         }
       },
       {
@@ -126,15 +124,15 @@ export default function TargetSwitchingSwarmFrPage() {
         "name": "Pourquoi observe-t-on souvent une hésitation après avoir éliminé un adversaire ?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Cette pause de 100 à 250 ms survient quand le cerveau attend le son ou l'animation de confirmation de mort avant de chercher la cible suivante. L'entraînement sépare l'analyse du kill de l'engagement sacadique vers le prochain ennemi."
+          "text": "Cette pause survient quand on attend le son ou l'animation de confirmation avant de chercher la cible suivante. Dans ce drill, une cible touchée disparaît aussitôt et une nouvelle apparaît : vous répétez le passage direct du regard et de la souris à la cible suivante."
         }
       },
       {
         "@type": "Question",
-        "name": "Le target switching facilite-t-il les spray transfers sur CS2 et Valorant ?",
+        "name": "Le changement de cible aide-t-il pour les spray transfers sur CS2 ?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Absolument. Réussir un spray transfer nécessite de transférer une rafale continue d'un ennemi à l'autre en quelques millisecondes. Cet exercice automatise la décélération précise sur la nouvelle cible sans perdre le contrôle du recul."
+          "text": "En partie seulement. Ce drill compte des clics isolés et ne simule ni le recul ni le tir en rafale. Déplacer le réticule d'une cible à l'autre et s'arrêter net reste toutefois la base d'un spray transfer ; il sert donc d'exercice complémentaire."
         }
       },
       {
@@ -142,7 +140,7 @@ export default function TargetSwitchingSwarmFrPage() {
         "name": "Quels jeux compétitifs tirent le plus grand bénéfice du target switching ?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Counter-Strike 2, Valorant, Apex Legends, Overwatch 2 et Call of Duty. Dans les FPS tactiques, il permet d'enchaîner des têtes en 1vX ; dans les battle royales, il permet de basculer de tir dès qu'un blindage est brisé."
+          "text": "Counter-Strike 2, Apex Legends, Overwatch 2 et Call of Duty, entre autres. Dans les FPS tactiques, il permet d'enchaîner des têtes en 1vX ; dans les battle royales, il permet de basculer de tir dès qu'un blindage est brisé."
         }
       },
       {
@@ -166,7 +164,7 @@ export default function TargetSwitchingSwarmFrPage() {
         "name": "À quelle fréquence convient-il de s'entraîner au target switching ?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Une routine de 10 à 15 minutes par jour en guise d'échauffement avant vos parties compétitives réveille la coordination œil-main et l'acuité sacadique sans provoquer de fatigue musculaire excessive."
+          "text": "Il n'existe pas de durée idéale prouvée. Quelques sessions concentrées en échauffement avant vos parties sont un bon point de départ ; comparez vos résultats sur le même matériel. Aucun progrès en match n'est garanti."
         }
       },
       {
@@ -174,7 +172,7 @@ export default function TargetSwitchingSwarmFrPage() {
         "name": "Cet entraîneur de target switching en ligne est-il gratuit et fluide ?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Oui, 100% gratuit et sans téléchargement. Il tourne directement dans votre navigateur via la Pointer Lock API, sans latence artificielle et avec votre sensibilité souris habituelle."
+          "text": "Oui, gratuit et sans téléchargement. Il tourne dans votre navigateur avec une souris et le verrouillage du pointeur ; il n'est pas jouable sur un appareil uniquement tactile."
         }
       }
     ]
@@ -189,7 +187,7 @@ export default function TargetSwitchingSwarmFrPage() {
         "@type": "HowToStep",
         "position": 1,
         "name": "Régler la Sensibilité et Verrouiller le Curseur",
-        "text": "Configurez vos DPI et votre sensibilité identique à votre jeu principal dans les paramètres et cliquez pour capturer la souris."
+        "text": "Réglez la sensibilité sur la page /drills selon votre sensibilité en jeu, puis lancez ; le pointeur est verrouillé automatiquement."
       },
       {
         "@type": "HowToStep",
@@ -201,7 +199,7 @@ export default function TargetSwitchingSwarmFrPage() {
         "@type": "HowToStep",
         "position": 3,
         "name": "Détruire la Première Cible et Prolonger le Temps",
-        "text": "Éliminez la première cible pour remporter +100 points et ajouter +0,35s au compte à rebours."
+        "text": "Touchez la première cible pour gagner +100 points et ajouter 2 secondes au chrono (60 secondes maximum)."
       },
       {
         "@type": "HowToStep",
@@ -219,36 +217,36 @@ export default function TargetSwitchingSwarmFrPage() {
   };
 
   const targetSwitchingGuide = {
-    heading: "Aim Trainer Valorant : changement de cible et spray transfer",
+    heading: "Changement de cible : enchaîner plusieurs cibles mobiles",
     intro: [
-      "Pour qui cherche un aim trainer Valorant, ce drill mesure le passage d'une cible éliminée à la suivante sans pause de confirmation. Il entraîne les changements rapides entre plusieurs cibles, le spray transfer et le flick enchaîné pour Valorant, CS2 et Apex Legends.",
-      "La psychophysique du target switching repose sur la loi de Fitts (Fitts, 1954) et sur le modèle stochastique des sous-mouvements optimisés de David E. Meyer et al. (1988). Selon cette approche, un mouvement de visée comprend un sous-mouvement balistique primaire couvrant environ 90% de la trajectoire, suivi de micro-ajustements secondaires guidés par la rétroaction visuelle. Les joueurs novices perdent 100 à 250 ms immobiles après chaque tir pour s'assurer que l'ennemi est bien tombé. Les joueurs d'élite déclenchent la saccade oculaire vers la cible suivante avant même la fin de l'impact précédent.",
-      "L'indexation visuelle dans un groupe dense fait appel aux mécanismes d'intégration des caractéristiques et de recherche visuelle préattentionnelle (Anne M. Treisman & Garry Gelade, 1980 ; Jeremy M. Wolfe, 2007). Le cortex visuel humain suit plusieurs repères spatiaux simultanément (théorie FINST), permettant d'organiser des trajets optimisés entre cibles adjacentes afin de minimiser la distance angulaire parcourue par le poignet.",
-      "Mesure de vos performances : chaque clic est horodaté à l'aide de l'horloge haute résolution performance.now() du navigateur, localement sur votre machine — aucune donnée n'est envoyée vers l'extérieur. Précision matérielle : les navigateurs arrondissent les minuteurs (~1 ms) pour bloquer les failles Spectre, et les écrans affichent l'image à intervalles fixes (16,7 ms à 60 Hz, 6,9 ms à 144 Hz, 4,1 ms à 240 Hz ; Woods et al., 2015). Le taux de rafraîchissement de la souris induit environ 8 ms à 125 Hz contre 1 ms à 1000 Hz. Les écarts sous 5 ms relèvent de la marge de mesure."
+      "Cet entraînement gratuit au changement de cible garde en permanence 2 à 5 cibles mobiles qui rebondissent à l'écran. Dès que vous en touchez une, une autre apparaît : vous répétez le passage du réticule à la cible suivante sans pause de confirmation. Le chrono démarre à 45 secondes, chaque touche ajoute 2 secondes (60 maximum) et chaque clic manqué en retire 1 ; tant que vous touchez proprement, la session continue.",
+      "La psychophysique du target switching repose sur la loi de Fitts (Fitts, 1954) et sur le modèle stochastique des sous-mouvements optimisés de David E. Meyer et al. (1988). Selon cette approche, un mouvement de visée comprend un sous-mouvement primaire rapide couvrant l'essentiel de la trajectoire, suivi de micro-ajustements secondaires guidés par la rétroaction visuelle. Beaucoup de joueurs marquent une courte pause après chaque tir pour vérifier que l'ennemi est tombé. Ce drill vise à déplacer le regard vers la cible suivante dès le clic pour raccourcir cette pause.",
+      "L'indexation visuelle dans un groupe dense fait appel aux mécanismes d'intégration des caractéristiques et de recherche visuelle préattentionnelle (Anne M. Treisman & Garry Gelade, 1980 ; Jeremy M. Wolfe, 2007). On peut suivre quelques objets mobiles en même temps ; prévoir un ordre de passage court entre cibles proches rend les changements plus fluides.",
+      "À propos des résultats : l'écran de fin affiche le score, la précision (touches ÷ clics totaux), les cibles détruites, le combo max et le niveau atteint. Votre meilleur score est enregistré uniquement dans ce navigateur. Ce drill ne mesure pas de temps de transition en millisecondes. La fréquence de l'écran et le polling rate de la souris changent les sensations : comparez-vous sur la même configuration."
     ],
     benchmarks: {
-      title: "Barème de Performance : Target Switching et Vitesse de Transition",
-      headers: ["Palier de Compétence", "Temps de Transition", "Cadence d'Élimination (Cibles/Min)", "Impact en Partie Classée"],
+      title: "Paliers d'entraînement de précision au changement de cible",
+      headers: ["Palier", "Précision", "Signification"],
       rows: [
-        ["Tier 1 (Palier Avancé)", "Moins de 210 ms", "110+ Cibles/min", "Spray transfers parfaits ; zéro hésitation ; clutches 1v3 remportés avec assurance"],
-        ["Tier 2 (Palier Intermédiaire-Haut)", "210 – 260 ms", "92 – 110 Cibles/min", "Excellente régularité d'enchaînement ; légères oscillations sur les grands angles ; multi-kills réguliers"],
-        ["Tier 3 (Ascendant / Diamant / Avancé)", "260 – 320 ms", "74 – 92 Cibles/min", "Solide sur cibles regroupées ; difficultés sur les bascules traversant l'écran"],
-        ["Tier 4 (Platine / Or / Intermédiaire)", "320 – 400 ms", "56 – 74 Cibles/min", "Hésitation nette après chaque élimination (100+ ms) ; dépassements fréquents par freinage tardif"],
-        ["Tier 5 (Argent / Bronze / Débutant)", "Plus de 400 ms", "Moins de 56 Cibles/min", "Replace la souris entre chaque tir ; recherche visuelle repartant de zéro ; crispation musculaire"]
+        ["Palier 1", "95 % et plus", "Presque aucun clic dans le vide, même à haut niveau"],
+        ["Palier 2", "88 – 95 %", "Quelques ratés sur les cibles rapides, le rythme d'enchaînement tient"],
+        ["Palier 3", "80 – 88 %", "Dépassements lors des changements vers des cibles éloignées"],
+        ["Palier 4", "70 – 80 %", "Les clics précipités font souvent perdre du temps"],
+        ["Palier 5", "moins de 70 %", "Ralentir et sécuriser l'arrêt avant de chercher la vitesse"]
       ],
-      note: "Le temps de transition mesure l'intervalle entre la destruction d'une cible et l'arrivée du réticule sur la suivante ; la cadence d'élimination mesure le volume continu sur la session (Woods et al., 2015)."
+      note: "La précision est la valeur de l'écran de fin (touches ÷ clics totaux). Ces paliers sont des repères d'entraînement SkillDrills, pas des normes scientifiques, des rangs de jeu ni des statistiques d'utilisateurs."
     },
     techniques: {
       title: "Protocoles Scientifiques pour Perfectionner le Changement de Cible",
       items: [
         {
           name: "Pré-Routage Saccadique et Indexation Visuelle",
-          desc: "Dirigez votre regard vers la cible suivante pendant que votre main finalise le tir sur la cible courante (Treisman & Gelade, 1980 ; Wolfe, 2007). Les yeux précèdent la main de 50 à 80 ms.",
+          desc: "Dirigez votre regard vers la cible suivante pendant que votre main finalise le tir sur la cible courante (Treisman & Gelade, 1980 ; Wolfe, 2007). En général, le regard atteint la cible avant la main.",
           tips: "Ne fixez jamais une cible après avoir tiré ; laissez la vision périphérique valider la destruction tandis que votre fovéa verrouille la prochaine cible."
         },
         {
           name: "Freinage Terminal et Contrôle des Sous-Mouvements",
-          desc: "Appliquez une fermeté musculaire de contre-tension dans les 10% finaux du mouvement pour immobiliser la souris au centre sans rebond (Meyer et al., 1988).",
+          desc: "Appliquez une fermeté musculaire de contre-tension en fin de mouvement pour immobiliser la souris au centre sans rebond (Meyer et al., 1988).",
           tips: "Voyez votre souris comme un bolide avec des freins hydrauliques : accélérez fort au départ, puis bloquez net au centre du prochain blanc."
         },
         {
@@ -264,13 +262,13 @@ export default function TargetSwitchingSwarmFrPage() {
       ]
     },
     steps: [
-      "Ajustez vos DPI et votre sensibilité à l'identique de votre FPS compétitif favori et verrouillez le curseur.",
+      "Réglez la sensibilité sur la page /drills selon votre jeu, puis lancez (verrouillage du pointeur automatique).",
       "Identifiez les grappes de cibles proches afin de définir l'ordre d'élimination le plus court.",
-      "Détruisez la première cible pour obtenir +100 points et +0,35s au compte à rebours.",
+      "Touchez la première cible pour obtenir +100 points × multiplicateurs de combo et de niveau et +2 s au chrono (60 s max).",
       "Transférez immédiatement votre visée sur la cible voisine sans marquer de temps de validation.",
-      "Enchaînez les cibles consécutives pour accroître le multiplicateur de combo et franchir les paliers de score."
+      "Évitez les clics manqués (-1 s), enchaînez pour accroître le combo et atteignez des niveaux aux cibles plus petites et rapides."
     ],
-    audience: "Joueurs compétitifs de Valorant, CS2, Apex Legends et Overwatch souhaitant accélérer la prise de cible, maîtriser les spray transfers et éliminer toute hésitation en combat.",
+    audience: "Joueurs de CS2, Apex Legends et Overwatch 2 qui veulent travailler à part le changement de cible entre plusieurs adversaires. Une souris est nécessaire.",
     faqs: faqSchema.mainEntity.map(e => ({ q: e.name, a: e.acceptedAnswer.text })),
     sources: pickSources('woods2015', 'fitts1954', 'meyer1988', 'treisman1980', 'wolfe2007'),
     related: [
@@ -293,9 +291,9 @@ export default function TargetSwitchingSwarmFrPage() {
 
       <TargetSwitchingSwarmClient
         copy={{
-          h1Keyword: "Aim Trainer Valorant",
-          h1Suffix: " – Changement de cible",
-          subtitle: "Entraînez les changements rapides entre cibles et le spray transfer sans perdre la précision.",
+          h1Keyword: "Changement de cible",
+          h1Suffix: " : entraînement multi-cibles",
+          subtitle: "Enchaînez rapidement et précisément plusieurs cibles mobiles, gratuitement dans le navigateur.",
           statScore: "Score",
           statTime: "Temps",
           statAccuracy: "Précision",
@@ -305,13 +303,13 @@ export default function TargetSwitchingSwarmFrPage() {
           statPeakLevel: "Niveau Max",
           startTitle: "Target Switching Swarm",
           startSubtitle: "Pointer Lock • Progression Continue",
-          stageCaption: "Enchaînez les tirs rapidement entre les cibles avant la fin de leur chronomètre. Évitez les tirs manqués pour maximiser le combo !",
+          stageCaption: "Touchez les cibles mobiles à la suite avant qu'elles disparaissent. Un clic manqué coûte 1 seconde et le combo.",
           rulesTitle: "Règles d'Entraînement & Système de Score",
           aboutTitle: "À Propos du Target Switching dans les FPS",
           rulesItems: [
-            { num: "1", text: "Destruction de Cible", highlight: "Cibles Cyan (+100 PTS / +0,35s)", result: "+100 PTS / +0,35s" },
-            { num: "2", text: "Essaim Dynamique", highlight: "Réapparition Immédiate", result: "Essaim Continu" },
-            { num: "3", text: "Pénalité d'Échec", highlight: "Tir Manqué / Expiration", result: "Reset de Combo" },
+            { num: "1", text: "Cible Touchée", highlight: "+100 PTS (+2s, max 60s)", result: "×Multiplicateur Combo" },
+            { num: "2", text: "Essaim Continu", highlight: "Réapparition Immédiate", result: "2 à 5 cibles actives" },
+            { num: "3", text: "Tir Manqué / Expiration", highlight: "Pénalité", result: "Reset de Combo (-1s)" },
             { num: "4", text: "Progression de Niveau", highlight: "+1 Niveau / 2 100 PTS", result: "Plus Rapide & Petit" }
           ]
         }}

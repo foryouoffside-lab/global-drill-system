@@ -68,18 +68,18 @@ const getLevelConfig = (level, combo = 0) => {
 // ACCORDION DATA
 // ============================================================
 const RULES_ITEMS = [
-  { num: "1", text: "Tracking Alignment", highlight: "+50 PTS (+0.4s/s)", result: "×Combo Mult" },
+  { num: "1", text: "Tracking Alignment", highlight: "+10 PTS / 0.25s (+0.4s/s)", result: "×Combo Mult" },
   { num: "2", text: "Target Elimination", highlight: "+25 Bonus PTS", result: "Reset HP & Respawn" },
   { num: "3", text: "Level Progression", highlight: "+1 Level / 1400 PTS", result: "Adaptive Zigzag" },
-  { num: "4", text: "Target Escape", highlight: "Lifespan Expiry", result: "Resets Combo (-0.6s)" }
+  { num: "4", text: "Target Escape / 1.0s Off-Target", highlight: "Penalty", result: "Resets Combo" }
 ];
 
 const ABOUT_INTRO = [
-  "Anti-zigzag tracking trains your ability to maintain continuous crosshair contact on targets that abuse erratic direction changes, slide-cancels, crouch spamming, and burst strafes. Unlike smooth pursuit training, this drill forces reactive corrections against unpredictable V-shaped snap reversals."
+  "Anti-zigzag tracking trains your ability to keep continuous crosshair contact on a target that snaps between directions in V-shaped reversals. Unlike smooth pursuit training, the path is not a smooth curve, so you have to correct after each reversal."
 ];
 
 const ABOUT_CARDS = [
-  { icon: Users, iconBg: "bg-blue-600", title: "Who Should Use This?", text: "Apex Legends, Warzone, and Call of Duty Mobile players facing opponents who zigzag to desync their hitbox from their visual model." },
+  { icon: Users, iconBg: "bg-blue-600", title: "Who Should Use This?", text: "Apex Legends, Warzone, and Call of Duty Mobile players facing opponents who zigzag to make themselves harder to track." },
   { icon: TrendingUp, iconBg: "bg-emerald-600", title: "Skills Improved", text: "Reactive tracking, direction-change correction, and the muscle memory needed to chase V-shaped snap reversals under pressure." },
   { icon: Target, iconBg: "bg-purple-600", title: "V-Crossover Targeting", text: "Avoid chasing outer sweeps. Aim at the V-crossover center, wait for the direction change, and maintain lock through the reversal." },
 ];
@@ -89,7 +89,7 @@ const ABOUT_SECTIONS = [
     icon: Activity,
     title: "Why Enemies Zigzag In High-TTK Games",
     paragraphs: [
-      "In high-TTK games like Apex Legends, Warzone, and Call of Duty Mobile, opponents use aggressive zigzag movement to desync their hitbox from their visual model. This drill replicates that exact momentum shift to build your reactive tracking muscle memory."
+      "In high-TTK games like Apex Legends, Warzone, and Call of Duty Mobile, a fight lasts long enough that opponents zigzag to break your tracking. This drill gives you a target that reverses direction abruptly so you can practice holding contact through the change."
     ]
   }
 ];
@@ -108,7 +108,7 @@ const RELATED_DRILLS = [
 // MAIN COMPONENT
 // ============================================================
 export default function AntiZigzagClient({ copy = null }) {
-  const { locale } = useTranslation();
+  const { locale, t } = useTranslation();
   const [gameState, setGameState] = useState('start');
   const [countdownValue, setCountdownValue] = useState(3);
   const [isFullscreen, setIsFullscreen] = useState(false);
@@ -872,10 +872,10 @@ export default function AntiZigzagClient({ copy = null }) {
               score={score}
               isNewBest={isNewBest}
               stats={[
-                { value: analytics.accuracy, suffix: "%", label: "Tracking Accuracy" },
-                { value: analytics.targetsDestroyed, label: "Targets Destroyed" },
-                { value: `${analytics.bestCombo}x`, label: "Max Combo" },
-                { value: `Lv. ${analytics.levelReached}`, label: "Peak Level" },
+                { value: analytics.accuracy, suffix: "%", label: t('ui.resultTrackingAccuracy', 'Tracking Accuracy') },
+                { value: analytics.targetsDestroyed, label: t('ui.resultTargetsDestroyed', 'Targets Destroyed') },
+                { value: `${analytics.bestCombo}x`, label: t('ui.resultMaxCombo', 'Max Combo') },
+                { value: `Lv. ${analytics.levelReached}`, label: t('ui.resultPeakLevel', 'Peak Level') },
               ]}
               onPlayAgain={enterDrill}
               onBeforeShare={() => setIsFullscreen(false)}

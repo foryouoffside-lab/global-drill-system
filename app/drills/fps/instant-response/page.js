@@ -330,12 +330,6 @@ export default function InstantResponsePage() {
           h1Keyword: "FPS Reaction Time Test",
           h1Suffix: " — Gaming Reflex Trainer",
           subtitle: "FPS reaction time test for visual reflex speed, click latency, and trigger discipline in competitive gaming",
-          rulesItems: [
-            { num: "1", text: "Flash Reaction Hit", highlight: "+100 PTS (+0.6s)", result: "×Combo Mult" },
-            { num: "2", text: "Speed Bonus", highlight: "Sub-150ms Hit", result: "Up to +150 PTS" },
-            { num: "3", text: "Level Progression", highlight: "+1 Level / 1400 PTS", result: "Adaptive Windows" },
-            { num: "4", text: "Miss / Pre-fire", highlight: "Failure Penalty", result: "Resets Combo (-0.8s)" }
-          ]
         }}
       />
       <DrillGuide guide={instantResponseGuide} singleLineTitles />

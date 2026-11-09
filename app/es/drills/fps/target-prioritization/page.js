@@ -6,19 +6,16 @@ import { getAlternateLanguages } from '@/lib/i18n/locales';
 import { pickSources } from '@/lib/drillSources';
 
 export const metadata = {
-  title: "Aim Trainer | Selección de Objetivos | SkillDrills",
-  description: "Aim trainer gratis en navegador: elige el objetivo más peligroso y practica el orden de objetivos, la decisión táctica y el control del disparo.",
+  title: "Prioridad de Objetivos: Selección en FPS | SkillDrills",
+  description: "Prioridad de objetivos gratis: acierta los rojos antes que los amarillos y nunca dispares a los aliados verdes. Selección de objetivos y control del disparo.",
   keywords: [
-    "aim trainer",
-    "aim trainer online",
-    "aim trainer valorant",
+    "prioridad de objetivos",
     "selección de objetivos",
     "selección de objetivos Valorant",
     "priorización de objetivos FPS",
     "evaluación de amenazas",
     "decisión táctica FPS",
-    "disciplina de gatillo",
-    "entrenamiento de puntería Valorant"
+    "disciplina de gatillo"
   ],
   alternates: {
     canonical: "https://skilldrills.online/es/drills/fps/target-prioritization",
@@ -29,8 +26,8 @@ export const metadata = {
     follow: true,
   },
   openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
-    title: "Aim Trainer | Selección de Objetivos | SkillDrills",
-    description: "Aim trainer gratis en navegador: elige el objetivo más peligroso y practica el orden de objetivos, la decisión táctica y el control del disparo.",
+    title: "Prioridad de Objetivos: Selección en FPS | SkillDrills",
+    description: "Prioridad de objetivos gratis: acierta los rojos antes que los amarillos y nunca dispares a los aliados verdes. Selección de objetivos y control del disparo.",
     url: "https://skilldrills.online/es/drills/fps/target-prioritization",
     siteName: 'SkillDrills',
     locale: 'es_ES',
@@ -38,8 +35,8 @@ export const metadata = {
   },
   twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: 'summary_large_image',
-    title: "Aim Trainer | Selección de Objetivos | SkillDrills",
-    description: "Aim trainer gratis en navegador: elige el objetivo más peligroso y practica el orden de objetivos, la decisión táctica y el control del disparo.",
+    title: "Prioridad de Objetivos: Selección en FPS | SkillDrills",
+    description: "Prioridad de objetivos gratis: acierta los rojos antes que los amarillos y nunca dispares a los aliados verdes. Selección de objetivos y control del disparo.",
   },
 };
 
@@ -50,19 +47,19 @@ export default function TargetPrioritizationEsPage() {
     "itemListElement": [
       { "@type": "ListItem", "position": 1, "name": "SkillDrills", "item": "https://skilldrills.online/es" },
       { "@type": "ListItem", "position": 2, "name": "Ejercicios FPS", "item": "https://skilldrills.online/es/drills/fps" },
-      { "@type": "ListItem", "position": 3, "name": "Aim Trainer - selección de objetivos", "item": "https://skilldrills.online/es/drills/fps/target-prioritization" }
+      { "@type": "ListItem", "position": 3, "name": "Prioridad de objetivos - selección en FPS", "item": "https://skilldrills.online/es/drills/fps/target-prioritization" }
     ]
   };
 
   const softwareSchema = {
     "@context": "https://schema.org",
     "@type": "SoftwareApplication", "sameAs": ["https://en.wikipedia.org/wiki/Visual_search", "https://en.wikipedia.org/wiki/Reaction_time"],
-    "name": "Aim Trainer - selección de objetivos",
+    "name": "Prioridad de objetivos - selección en FPS",
     "applicationCategory": "GameApplication",
     "operatingSystem": "Web Browser",
-    "dateModified": "2026-09-20",
+    "dateModified": "2026-11-09",
     "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
-    "description": "Entrenador cognitivo de priorización de blancos, toma de decisiones y control de inhibición de disparo (Go/No-Go) para shooters tácticos.",
+    "description": "Drill gratis de prioridad de objetivos con blancos rojos, amarillos y verdes: evaluación de amenazas y control del disparo (Go/No-Go) para shooters.",
     "genre": "Entrenamiento FPS / Puntería Cognitiva y Toma de Decisiones",
     "url": "https://skilldrills.online/es/drills/fps/target-prioritization",
     "publisher": {
@@ -75,22 +72,22 @@ export default function TargetPrioritizationEsPage() {
   const webAppSchema = {
     "@context": "https://schema.org",
     "@type": "WebApplication",
-    "name": "Aim Trainer - selección de objetivos",
+    "name": "Prioridad de objetivos - selección en FPS",
     "url": "https://skilldrills.online/es/drills/fps/target-prioritization",
-    "description": "Entrenador cognitivo de priorización de blancos, toma de decisiones y control de inhibición de disparo (Go/No-Go) para shooters tácticos.",
+    "description": "Drill gratis de prioridad de objetivos con blancos rojos, amarillos y verdes: evaluación de amenazas y control del disparo (Go/No-Go) para shooters.",
     "applicationCategory": "Game",
     "operatingSystem": "Web Browser",
     "browserRequirements": "Requiere soporte de HTML5 Canvas y Pointer Lock API",
-    "dateModified": "2026-09-20"
+    "dateModified": "2026-11-09"
   };
 
   const videoGameSchema = {
     "@context": "https://schema.org",
     "@type": "VideoGame",
-    "name": "Aim Trainer - selección de objetivos",
+    "name": "Prioridad de objetivos - selección en FPS",
     "url": "https://skilldrills.online/es/drills/fps/target-prioritization",
-    "description": "Entrenador cognitivo de priorización de blancos, toma de decisiones y control de inhibición de disparo (Go/No-Go) para shooters tácticos.",
-    "dateModified": "2026-09-20",
+    "description": "Drill gratis de prioridad de objetivos con blancos rojos, amarillos y verdes: evaluación de amenazas y control del disparo (Go/No-Go) para shooters.",
+    "dateModified": "2026-11-09",
     "gamePlatform": "Web Browser",
     "genre": ["Entrenamiento FPS", "Aim Trainer", "Priorización de Objetivos"],
     "playMode": "SinglePlayer",
@@ -102,7 +99,7 @@ export default function TargetPrioritizationEsPage() {
   const faqSchema = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
-    "dateModified": "2026-09-20",
+    "dateModified": "2026-11-09",
     "mainEntity": [
       {
         "@type": "Question",
@@ -114,10 +111,18 @@ export default function TargetPrioritizationEsPage() {
       },
       {
         "@type": "Question",
+        "name": "¿Cómo funciona este drill de prioridad de objetivos?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Al empezar se activan la pantalla completa y el Pointer Lock, y el reloj arranca en 45 segundos. De 2 a 4 objetivos se mueven a la vez y rebotan en los bordes. El rojo (amenaza alta) vale 100 puntos y el amarillo (amenaza media) 50, multiplicados por el combo y el nivel, y cada acierto suma 2 segundos (máximo 60). El amarillo se vuelve rojo pasado un tiempo; el verde (aliado) no se debe disparar y desaparece a los 3 segundos aproximadamente. Acertar un amarillo mientras aún hay un rojo en pantalla es un error de prioridad: sin puntos y combo a cero. El fuego amigo y los fallos también reinician el combo y restan 1 segundo. Cada 1400 puntos sube el nivel, con más objetivos, más velocidad y más rojos."
+        }
+      },
+      {
+        "@type": "Question",
         "name": "¿Por qué los jugadores disparan en pánico al blanco equivocado?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Bajo niveles intensos de adrenalina, el sistema visual prioriza estímulos visuales primarios disparando al elemento más cercano en vez del más letal. El entrenamiento de inhibición ejecutiva entrena al cerebro para mantener el control bajo tensión."
+          "text": "Bajo estrés es habitual reaccionar al elemento más cercano o al primer movimiento en lugar de a la amenaza más peligrosa, antes de comprobar qué es. Practicar contener el disparo ayuda a mantener ese control."
         }
       },
       {
@@ -133,15 +138,15 @@ export default function TargetPrioritizationEsPage() {
         "name": "¿Qué es el Tiempo de Reacción de Señal de Parada (SSRT)?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "El SSRT (Logan & Cowan, 1984) mide el tiempo que toma frenar una acción motora ya activada. En shooters, los tiradores profesionales cancelan el disparo en unos 200–240 ms al percatarse de que el cursor apunta hacia un aliado o señuelo."
+          "text": "El SSRT (Logan & Cowan, 1984) mide el tiempo que toma frenar una acción motora ya activada. Cuanto más corto, antes se puede cancelar un disparo hacia un aliado o señuelo. Este drill no mide el SSRT directamente; entrena a no disparar a los objetivos verdes."
         }
       },
       {
         "@type": "Question",
-        "name": "¿Cómo ordenan las amenazas los jugadores profesionales en las entradas?",
+        "name": "¿Cómo ordenar las amenazas cuando entran varios enemigos?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Los profesionales clasifican los objetivos por línea de visión directa, letalidad del armamento rival y tiempo hasta el primer disparo. Los enemigos que ya están apuntando hacia ti se abaten con prioridad sobre rivales en movimiento de espaldas."
+          "text": "Los criterios habituales son la línea de visión directa, la letalidad del arma rival y el tiempo hasta el primer disparo: quien ya te está apuntando va antes que quien se mueve de espaldas. Este drill lo simplifica en un orden fijo, rojo antes que amarillo."
         }
       },
       {
@@ -157,7 +162,7 @@ export default function TargetPrioritizationEsPage() {
         "name": "¿Cuál es el coste de disparar a aliados o señuelos en Valorant y CS2?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Disparar a señuelos (como clones de Yoru o granadas señuelo) delata tu posición acústica, gasta munición y desvía la mira del oponente real, ocasionando la pérdida directa del asalto."
+          "text": "Disparar a señuelos (como clones de Yoru o granadas señuelo) delata tu posición acústica, gasta munición y desvía la mira del oponente real, lo que da una ventana al rival real."
         }
       },
       {
@@ -165,7 +170,7 @@ export default function TargetPrioritizationEsPage() {
         "name": "¿Qué sensibilidad de ratón optimiza la toma de decisiones en tiroteos?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Una sensibilidad equilibrada a media-baja (30 a 42 cm por 360°) proporciona excelente poder de frenado en la alfombrilla, evitando que la retícula se desplace involuntariamente al blanco erróneo en zonas pobladas."
+          "text": "Una sensibilidad muy alta dificulta frenar en el objetivo y una muy baja ralentiza el cambio a blancos lejanos. Usa preferiblemente tu sensibilidad habitual de juego, con la que frenas con seguridad."
         }
       },
       {
@@ -181,7 +186,7 @@ export default function TargetPrioritizationEsPage() {
         "name": "¿Con qué frecuencia se debe practicar la priorización táctica?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Dedicar 10 minutos a ejercicios de priorización y disciplina de gatillo antes de competir afianza la toma de decisiones y el autocontrol del clic sin agotar los tendones de la mano."
+          "text": "No hay una regla fija. Unos 10 minutos antes de jugar son un formato razonable; compara tu precisión y tu número de fuego amigo en el mismo equipo a lo largo de los días."
         }
       }
     ]
@@ -197,7 +202,7 @@ export default function TargetPrioritizationEsPage() {
         "@type": "HowToStep",
         "position": 1,
         "name": "Calibrar Sensibilidad",
-        "text": "Establece tus DPI y sensibilidad idénticos a los del juego de referencia para practicar con memoria neuromuscular familiar.",
+        "text": "Ajusta la sensibilidad para que se parezca a la de tu juego habitual.",
         "url": "https://skilldrills.online/es/drills/fps/target-prioritization#step-1"
       },
       {
@@ -225,25 +230,24 @@ export default function TargetPrioritizationEsPage() {
   };
 
   const targetPrioritizationGuide = {
-    heading: "Aim Trainer y Selección de Objetivos bajo Presión",
+    heading: "Prioridad de objetivos en FPS: selección de objetivos y control del disparo",
     intro: [
-      "Un aim trainer con selección de objetivos practica la decisión de elegir al enemigo más peligroso antes de disparar. Este drill mide la evaluación de amenazas, el filtrado de la atención y el control del tiro cuando aparecen varios adversarios en Valorant y CS2.",
-      "La base neuropsicológica de la inhibición motora fue explicada por Gordon D. Logan y William B. Cowan (1984) con el modelo horse-race: cuando aparece una señal de detención, la orden inhibitoria compite contra la orden motora que ya está en curso. Abortar un clic en proceso exige circuitos dedicados en la corteza prefrontal, explicando por qué los disparos involuntarios son el error más habitual en rangos intermedios.",
+      "Este drill de prioridad de objetivos practica la decisión de elegir al enemigo más peligroso antes de disparar: primero los objetivos rojos en movimiento (amenaza alta), después los amarillos y nunca los aliados verdes. Entrenas la evaluación de amenazas, el filtrado de la atención y el control del tiro, por ejemplo para tiroteos con varios rivales en Valorant y CS2.",
+      "La base neuropsicológica de la inhibición motora fue explicada por Gordon D. Logan y William B. Cowan (1984) con el modelo horse-race: cuando aparece una señal de detención, la orden inhibitoria compite contra la orden motora que ya está en curso. Bajo presión, el clic suele ganar antes de comprobar el objetivo: es el disparo por pánico.",
       "Integrando la cronometría mental de Franciscus Cornelis Donders (1868/1969) para tiempos de reacción de elección y la teoría de integración de rasgos de Anne Treisman y Garry Gelade (1980), esta práctica obliga al sistema visual a clasificar los blancos por su nivel de peligro antes de autorizar el clic.",
-      "Al combinar el modelo de atención orientada de Michael I. Posner (1990), los paradigmas espaciales de C. Shawn Green y Daphne Bavelier (2003) y la medición digital precisa (Woods et al., 2015), el ejercicio erradica el tiro impulsivo y afianza reflejos analíticos bajo fuego enemigo.",
+      "Al combinar el modelo de atención orientada de Michael I. Posner (1990), los paradigmas espaciales de C. Shawn Green y Daphne Bavelier (2003) y la medición digital precisa (Woods et al., 2015), el ejercicio practica la puntería selectiva y el control del disparo con límite de tiempo.",
       "Cómo se evalúa: cada disparo se cronometra en milisegundos mediante performance.now() en el navegador de manera local sin transferencia externa. Factores del equipo: los relojes web presentan 1 ms de granularidad típica, y las pantallas actualizan en ciclos de 16,7 ms (60 Hz), 6,9 ms (144 Hz) y 4,1 ms (240 Hz). El polling rate del ratón suma cerca de 8 ms a 125 Hz frente a 1 ms a 1000 Hz (Woods et al., 2015). Evalúa tus registros siempre con la misma configuración."
     ],
     benchmarks: {
-      title: "Baremos Científicos de Evaluación de Amenazas y Latencia de Decisión",
-      headers: ["Nivel de Rendimiento", "Latencia de Resolución", "Precisión de Prioridad", "Impacto Competitivo en Partida"],
+      title: "Cómo leer la pantalla de resultados",
+      headers: ["Valor", "Cómo lo cuenta el drill", "Significado", "Cómo mejorar"],
       rows: [
-        ["Tier 1 (Etapa Avanzada)", "<280 ms", "96% – 99%+", "Evaluación intachable de amenazas; eliminación instantánea del peligro crítico con 0% de fuego amigo en entradas caóticas"],
-        ["Tier 2 (Etapa Intermedia-Alta)", "280 – 340 ms", "90% – 96%", "Rapidez de decisión excepcional; pronta recuperación tras escaladas de blancos; menos del 1% de disparos errados"],
-        ["Tier 3 (Diamante / Ascendente)", "340 – 420 ms", "82% – 90%", "Fijación consistente de prioridades; duda sutil de 60 a 90 ms cuando coinciden amenazas rojas y amarillas contiguas"],
-        ["Tier 4 (Intermedio / Oro / Platino)", "420 – 520 ms", "72% – 82%", "Propenso al disparo por pánico; en ocasiones impacta en verdes aliados o dispara a amarillos antes de despejar rojos"],
-        ["Tier 5 (Iniciación / Disparo por Impulso)", ">520 ms", "<72%", "Frecuentes fallos de impulsividad; elevado fuego amigo; dificultad para filtrar elementos visuales en retakes"]
+        ["Precisión", "(aciertos rojos + amarillos) ÷ todos los clics", "Parte de los disparos con la prioridad correcta", "Compara tus propios valores en el mismo dispositivo"],
+        ["Amenazas resueltas", "Aciertos en objetivos rojos y amarillos", "Cuántas amenazas resolviste en el tiempo", "Aumentarlas manteniendo el combo"],
+        ["Fuego amigo / error de prioridad", "Disparo al verde, o al amarillo con un rojo visible", "Fallo al contener el disparo o al evaluar la amenaza", "Buscar el rojo primero"],
+        ["Combo máximo · nivel máximo", "Aciertos seguidos sin error, 1 nivel cada 1400 puntos", "Constancia y dificultad alcanzada", "Reducir errores antes que ganar velocidad"]
       ],
-      note: "La latencia de resolución registra el tiempo desde que surge el blanco rojo de alta amenaza hasta el impacto validado; la precisión de prioridad divide los aciertos válidos entre los clics totales (Woods et al., 2015)."
+      note: "Esta tabla describe los valores que este drill registra de verdad; no son rangos, tiers ni estadísticas de usuarios."
     },
     techniques: {
       title: "Protocolos Respaldados por Evidencia para Dominar la Priorización",
@@ -271,11 +275,11 @@ export default function TargetPrioritizationEsPage() {
       ]
     },
     steps: [
-      "Ajusta tu juego de referencia, DPI y sensibilidad en las opciones para mantener una escala cercana a la de tu juego habitual.",
+      "Ajusta la sensibilidad para que se parezca a la de tu juego habitual e inicia el drill.",
       "Dirige la vista al centro de la pantalla y aguarda la salida simultánea de blancos rojos, amarillos y verdes.",
-      "Detecta y neutraliza los objetivos rojos de alta prioridad con disparos veloces (+100 PTS / +0,4s de tiempo añadido).",
-      "Elimina los blancos amarillos secundarios (+50 PTS / +0,4s) antes de que cambien a color rojo.",
-      "Contén por completo el disparo ante objetivos verdes aliados; dispararles o fallar reinicia de inmediato tu multiplicador de combo."
+      "Detecta y neutraliza los objetivos rojos de alta prioridad con disparos veloces (+100 PTS / +2 s de tiempo, máximo 60 s).",
+      "Elimina los blancos amarillos (+50 PTS / +2 s) solo cuando no quede ningún rojo en pantalla, antes de que cambien a rojo.",
+      "Contén por completo el disparo ante objetivos verdes aliados; dispararles, acertar un amarillo con un rojo visible o fallar reinicia tu combo."
     ],
     audience: "Jugadores competitivos de Valorant, Counter-Strike 2, Rainbow Six Siege y Apex Legends que buscan erradicar el clic por impulso, perfeccionar la disciplina de disparo y resolver tiroteos con múltiples blancos.",
     faqs: faqSchema.mainEntity.map(e => ({ q: e.name, a: e.acceptedAnswer.text })),
@@ -290,8 +294,8 @@ export default function TargetPrioritizationEsPage() {
   };
 
   const copyEs = {
-    h1Keyword: "Aim Trainer",
-    h1Suffix: " – Selección de Objetivos FPS",
+    h1Keyword: "Prioridad de objetivos",
+    h1Suffix: " – selección de objetivos en FPS",
     subtitle: "Elige el objetivo más peligroso y controla el disparo bajo presión directamente en el navegador.",
     statScore: "Puntuación",
     statTime: "Tiempo",
@@ -300,7 +304,7 @@ export default function TargetPrioritizationEsPage() {
     statThreatsCleared: "Amenazas Resueltas",
     statMaxCombo: "Combo Máximo",
     statPeakLevel: "Nivel Máximo",
-    startTitle: "Aim Trainer - selección de objetivos",
+    startTitle: "Prioridad de objetivos",
     startSubtitle: "Evaluación de Amenazas · Filtrado Cognitivo · Dificultad Dinámica",
     getReady: "PREPÁRATE",
     toggleFlash: "Alternar Flash de Fallo",
@@ -310,14 +314,14 @@ export default function TargetPrioritizationEsPage() {
     stageCaption: "Elimina primero los objetivos rojos de alta amenaza y luego los amarillos. ¡Contén el disparo ante aliados verdes!",
     rulesTitle: "Instrucciones del Ejercicio y Puntuación",
     rulesItems: [
-      { num: "1", text: "Diana de Alta Amenaza", highlight: "Rojo (+100 PTS / +0,4s)", result: "Prioridad Máxima" },
-      { num: "2", text: "Amenaza Media", highlight: "Amarillo (+50 PTS / +0,4s)", result: "Escala a Rojo tras tiempo" },
-      { num: "3", text: "Unidad Aliada", highlight: "Verde (NO DISPARAR)", result: "Fallo o fuego amigo reinicia combo" },
+      { num: "1", text: "Diana de Alta Amenaza", highlight: "Rojo (+100 PTS / +2s, máx. 60s)", result: "Prioridad Máxima" },
+      { num: "2", text: "Amenaza Media", highlight: "Amarillo (+50 PTS / +2s)", result: "Puntúa solo sin rojo visible; pasa a rojo tras un tiempo" },
+      { num: "3", text: "Unidad Aliada", highlight: "Verde (NO DISPARAR)", result: "Fuego amigo, error de prioridad o fallo reinicia combo (-1s)" },
       { num: "4", text: "Subida de Nivel", highlight: "+1 / 1400 PTS", result: "Escalado Dinámico Continuo" }
     ],
-    aboutTitle: "Sobre el aim trainer y la selección de objetivos",
+    aboutTitle: "Sobre este drill de prioridad de objetivos",
     aboutHeading: "¿Qué es la Priorización de Objetivos?",
-    aboutText: "La priorización de objetivos es la habilidad ejecutiva de elegir en milisegundos qué amenaza abatir primero mientras se frena el tiro ante el resto de estímulos. Detener una acción motora ya emprendida es un proceso neurológico propio que compite con la orden de disparo (Logan & Cowan, 1984) — motivo por el cual retener el tiro resulta más exigente que disparar."
+    aboutText: "La prioridad de objetivos es la habilidad de elegir rápidamente qué amenaza abatir primero mientras se frena el tiro ante el resto de estímulos. Detener una acción ya emprendida es un proceso propio que compite con la orden de disparo (Logan & Cowan, 1984) — por eso retener el tiro cuesta más que disparar. Este drill lo entrena con la regla rojo antes que amarillo y ningún disparo al verde."
   };
 
   return (

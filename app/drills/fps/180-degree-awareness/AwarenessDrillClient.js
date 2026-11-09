@@ -79,7 +79,7 @@ const RULES_ITEMS = [
   { num: "1", text: "Edge Target Hit", highlight: "+100 PTS (+2s, max 60s)", result: "×Combo Mult" },
   { num: "2", text: "180° Spawns", highlight: "Extreme Peripheral", result: "Faster & Smaller" },
   { num: "3", text: "Level Progression", highlight: "+1 Level / 1750 PTS", result: "Adaptive Scaling" },
-  { num: "4", text: "Miss / Timeout", highlight: "Penalty", result: "Resets Combo (-0.8s)" }
+  { num: "4", text: "Miss / Timeout", highlight: "Penalty", result: "Resets Combo (-1s)" }
 ];
 
 
@@ -97,7 +97,7 @@ const RELATED_DRILLS = [
 // MAIN COMPONENT
 // ============================================================
 export default function AwarenessDrillClient({ copy = null }) {
-  const { locale } = useTranslation();
+  const { locale, t } = useTranslation();
   const [gameState, setGameState] = useState('start'); // 'start' | 'countdown' | 'playing' | 'gameOver'
   const [isFullscreen, setIsFullscreen] = useState(false);
   useImmersiveMode(isFullscreen); // locks the page behind while the drill fills the screen
@@ -856,10 +856,10 @@ export default function AwarenessDrillClient({ copy = null }) {
               score={uiScore}
               isNewBest={isNewBest}
               stats={[
-                { value: analytics.accuracy, suffix: '%', label: 'Accuracy' },
-                { value: analytics.avgReactionTime, suffix: 'ms', label: 'Avg Reaction' },
-                { value: `${analytics.maxCombo}x`, label: 'Max Combo' },
-                { value: `Lv. ${analytics.finalLevel}`, label: 'Peak Level' },
+                { value: analytics.accuracy, suffix: '%', label: t('ui.resultAccuracy', 'Accuracy') },
+                { value: analytics.avgReactionTime, suffix: 'ms', label: t('ui.resultAvgReaction', 'Avg Reaction') },
+                { value: `${analytics.maxCombo}x`, label: t('ui.resultMaxCombo', 'Max Combo') },
+                { value: `Lv. ${analytics.finalLevel}`, label: t('ui.resultPeakLevel', 'Peak Level') },
               ]}
               onPlayAgain={enterDrill}
               onBeforeShare={() => setIsFullscreen(false)}

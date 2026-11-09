@@ -128,7 +128,7 @@ export default function AntiStrafeJitterEsPage() {
         "name": "¿Qué pasa si pierdo el objetivo?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Tras más de 1 segundo fuera del objetivo, el combo vuelve a 0. Si activaste la penalización de tiempo en los ajustes de los drills, también se restan 0,6 segundos. Viene desactivada por defecto."
+          "text": "Tras más de 1 segundo fuera del objetivo, el combo vuelve a 0."
         }
       },
       {
@@ -294,7 +294,7 @@ export default function AntiStrafeJitterEsPage() {
             { num: "1", text: "Estar sobre el objetivo", highlight: "10 pts / 0,25 s (+0,1 s)", result: "×Combo" },
             { num: "2", text: "Sostener 1 s seguido", highlight: "Combo +1", result: "Hasta 3,0×" },
             { num: "3", text: "Progresión", highlight: "+1 nivel / 1400 pts", result: "Más pequeño y rápido" },
-            { num: "4", text: "Más de 1 s fuera", highlight: "Combo a 0", result: "-0,6 s con penalización" }
+            { num: "4", text: "Más de 1 s fuera", highlight: "Penalización", result: "Combo a 0" }
           ],
           aboutTitle: "Sobre el tracking contra strafe ADAD"
         }}

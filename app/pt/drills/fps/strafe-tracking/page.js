@@ -191,7 +191,7 @@ export default function StrafeTrackingPtPage() {
         "name": "Como funcionam a pontuação, o combo e o tempo neste treino de tracking?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Enquanto a mira está sobre o alvo, você ganha 50 pontos base a cada 0,25 s (multiplicados pelo combo e pelo nível) e +0,1 s no relógio (máximo de 60 s restantes). Cada segundo sem perder o alvo soma 1 ao combo, cujo multiplicador vai até 3,0×. Ao sair do alvo, o combo volta a 0 na hora; com a penalidade de tempo ativada, cada segundo fora custa 0,6 s. A rodada começa com 45 s e termina em 0. Não há clique: só o movimento do mouse conta."
+          "text": "Enquanto a mira está sobre o alvo, você ganha 50 pontos base a cada 0,25 s (multiplicados pelo combo e pelo nível) e +0,1 s no relógio (máximo de 60 s restantes). Cada segundo sem perder o alvo soma 1 ao combo, cujo multiplicador vai até 3,0×. Ao sair do alvo, o combo volta a 0 na hora. A rodada começa com 45 s e termina em 0. Não há clique: só o movimento do mouse conta."
         }
       }
     ]
@@ -330,7 +330,7 @@ export default function StrafeTrackingPtPage() {
       { num: "1", text: "Mira no Alvo", highlight: "+50 PTS / 0,25s (+0,4s/s)", result: "×Mult de Combo" },
       { num: "2", text: "1s Sem Perder", highlight: "Combo +1, até 3,0×", result: "Multiplicador Máx" },
       { num: "3", text: "Progressão de Nível", highlight: "+1 Nível / 1400 PTS", result: "Strafe Adaptativo" },
-      { num: "4", text: "Fora do Alvo", highlight: "Combo zera na hora", result: "-0,6s / s (penalidade ON)" }
+      { num: "4", text: "Fora do Alvo", highlight: "Penalidade", result: "Combo zera na hora" }
     ],
     aboutTitle: "Sobre Tracking e Mira em Movimento",
     whatIsTitle: "O que é o Treino de Strafe Tracking?",

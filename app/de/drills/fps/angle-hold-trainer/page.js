@@ -128,7 +128,7 @@ export default function GermanAngleHoldPage() {
         "name": "Wie läuft dieses CS2 Aim Training ab?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Nach dem Start laufen Vollbild und Pointer Lock, die Uhr beginnt bei 45 Sekunden. Ziele peeken in zufälliger Höhe an der linken oder rechten Wandkante hervor und ziehen sich wieder zurück. Ein Treffer gibt 100 Punkte mal Combo- und Level-Multiplikator und +2 Sekunden (maximal 60). Alle 1400 Punkte steigt das Level, Peeks werden kürzer und Ziele kleiner, und ab höheren Levels mischen sich orange Fake-Peeks dazu. Fehlschüsse, Frühschüsse ohne Ziel und Schüsse auf Fake-Peeks setzen die Combo zurück und kosten mit aktivierter Zeitstrafe 1 Sekunde. Bei 0 Sekunden endet der Lauf."
+          "text": "Nach dem Start laufen Vollbild und Pointer Lock, die Uhr beginnt bei 45 Sekunden. Ziele peeken in zufälliger Höhe an der linken oder rechten Wandkante hervor und ziehen sich wieder zurück. Ein Treffer gibt 100 Punkte mal Combo- und Level-Multiplikator und +2 Sekunden (maximal 60). Alle 1400 Punkte steigt das Level, Peeks werden kürzer und Ziele kleiner, und ab höheren Levels mischen sich orange Fake-Peeks dazu. Fehlschüsse, Frühschüsse ohne Ziel und Schüsse auf Fake-Peeks setzen die Combo zurück und kosten 1 Sekunde. Bei 0 Sekunden endet der Lauf."
         }
       },
       {
@@ -334,7 +334,7 @@ export default function GermanAngleHoldPage() {
       { num: "1", text: "Zieltreffer", highlight: "+100 PTS (+2s, max. 60s)", result: "×Combo-Mult" },
       { num: "2", text: "Peek-Spawns", highlight: "Linke/rechte Wandkante", result: "Kürzer & kleiner" },
       { num: "3", text: "Level-Aufstieg", highlight: "+1 Level / 1400 PTS", result: "Adaptive Skalierung" },
-      { num: "4", text: "Fehlschuss / Frühschuss / Fake-Peek", highlight: "Fehler-Strafe", result: "Combo-Reset (-1s mit Zeitstrafe)" }
+      { num: "4", text: "Fehlschuss / Frühschuss / Fake-Peek", highlight: "Fehler-Strafe", result: "Combo-Reset (-1s)" }
     ],
     aboutCards: [
       { iconBg: "bg-blue-600", title: "Empfohlen für", text: "Verteidiger (Site-Anchors) in Valorant, CS2-Holders, R6-Siege-Spieler und alle Schützen, die Ecken diszipliniert absichern wollen." },

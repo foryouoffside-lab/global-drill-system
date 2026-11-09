@@ -130,7 +130,7 @@ export default function AntiStrafeJitterJaPage() {
         "name": "ターゲットから外れるとどうなりますか？",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "1秒以上外れるとコンボが0に戻ります。ドリル設定でタイムペナルティをオンにしている場合は、このとき残り時間が0.6秒減ります。初期設定はオフです。"
+          "text": "1秒以上外れるとコンボが0に戻ります。"
         }
       },
       {
@@ -296,7 +296,7 @@ export default function AntiStrafeJitterJaPage() {
             { num: "1", text: "ターゲットに重ねる", highlight: "0.25秒ごとに10点 (+0.1秒)", result: "×コンボ倍率" },
             { num: "2", text: "1秒連続で維持", highlight: "コンボ +1", result: "最大 3.0×" },
             { num: "3", text: "レベル進行", highlight: "+1 レベル / 1400点", result: "小さく速いターゲット" },
-            { num: "4", text: "1秒以上外れる", highlight: "コンボリセット", result: "ペナルティ設定時 -0.6秒" }
+            { num: "4", text: "外れペナルティ", highlight: "1秒以上外れる", result: "コンボリセット" }
           ],
           aboutTitle: "レレレ撃ち対策とトラッキングについて",
           aboutHeading: "リアクティブトラッキングとは？"

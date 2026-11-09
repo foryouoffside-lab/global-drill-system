@@ -6,8 +6,8 @@ import { getAlternateLanguages } from '@/lib/i18n/locales';
 import { pickSources } from '@/lib/drillSources';
 
 export const metadata = {
-  title: 'Entrenador de Puntería Vertical - Tracking | SkillDrills',
-  description: 'Entrena puntería vertical y tracking aéreo en el navegador. Practica el eje Y y predice caídas en Apex Legends y Overwatch 2.',
+  title: 'Puntería Vertical: Tracking Aéreo FPS | SkillDrills',
+  description: 'Puntería vertical gratis en el navegador: mantén el clic sobre blancos aéreos que suben y caen en parábola y practica tracking aéreo en el eje Y para Apex y Overwatch 2.',
   keywords: [
     'puntería vertical FPS',
     'tracking aéreo',
@@ -17,7 +17,6 @@ export const metadata = {
     'vertical aim trainer',
     'puntería parabólica Overwatch',
     'smooth pursuit vertical',
-    'entrenador de mira gratis',
     'precisión vertical FPS',
     'sensibilidad de ratón vertical',
     'ejercicios de puntería'
@@ -31,8 +30,8 @@ export const metadata = {
     follow: true,
   },
   openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
-    title: 'Entrenador de Puntería Vertical - Tracking | SkillDrills',
-    description: 'Entrena puntería vertical y tracking aéreo en el navegador. Practica el eje Y y predice caídas en Apex Legends y Overwatch 2.',
+    title: 'Puntería Vertical: Tracking Aéreo FPS | SkillDrills',
+    description: 'Puntería vertical gratis en el navegador: mantén el clic sobre blancos aéreos que suben y caen en parábola y practica tracking aéreo en el eje Y para Apex y Overwatch 2.',
     url: 'https://skilldrills.online/es/drills/fps/vertical-air-track',
     siteName: 'SkillDrills',
     locale: 'es_ES',
@@ -40,8 +39,8 @@ export const metadata = {
   },
   twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: 'summary_large_image',
-    title: 'Entrenador de Puntería Vertical - Tracking | SkillDrills',
-    description: 'Entrena puntería vertical y tracking aéreo en el navegador. Practica el eje Y y predice caídas en Apex Legends y Overwatch 2.',
+    title: 'Puntería Vertical: Tracking Aéreo FPS | SkillDrills',
+    description: 'Puntería vertical gratis en el navegador: mantén el clic sobre blancos aéreos que suben y caen en parábola y practica tracking aéreo en el eje Y para Apex y Overwatch 2.',
   },
 };
 
@@ -59,7 +58,7 @@ export default function VerticalAirTrackEsPage() {
   const softwareSchema = {
     "@context": "https://schema.org",
     "@type": "SoftwareApplication", "sameAs": ["https://en.wikipedia.org/wiki/Smooth_pursuit", "https://en.wikipedia.org/wiki/Hand%E2%80%93eye_coordination"],
-    "name": "Entrenador de Puntería Vertical - Tracking Aéreo",
+    "name": "Puntería Vertical - Tracking Aéreo",
     "applicationCategory": "GameApplication",
     "operatingSystem": "Any (Web Browser)",
     "offers": {
@@ -73,7 +72,7 @@ export default function VerticalAirTrackEsPage() {
   const webAppSchema = {
     "@context": "https://schema.org",
     "@type": "WebApplication",
-    "name": "Entrenador de Puntería Vertical - Tracking Aéreo",
+    "name": "Puntería Vertical - Tracking Aéreo",
     "url": "https://skilldrills.online/es/drills/fps/vertical-air-track",
     "browserRequirements": "Requires Pointer Lock API and WebGL support",
     "applicationCategory": "ShooterTraining",
@@ -86,7 +85,7 @@ export default function VerticalAirTrackEsPage() {
   const videoGameSchema = {
     "@context": "https://schema.org",
     "@type": "VideoGame",
-    "name": "Entrenador de Puntería Vertical - Tracking Aéreo",
+    "name": "Puntería Vertical - Tracking Aéreo",
     "description": "Simulador de blancos aéreos en arco parabólico para perfeccionar la sincronización motora en el eje Y y anticipación de caídas.",
     "genre": ["First-Person Shooter", "Aim Trainer", "Reaction Training"],
     "playMode": "SinglePlayer",
@@ -118,7 +117,7 @@ export default function VerticalAirTrackEsPage() {
         "name": "¿Cómo beneficia la puntería vertical en Apex Legends?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Apex Legends cuenta con trampolines de Octane, ascensores de Horizon y tirolinas de Pathfinder. Dominar el eje Y permite castigar con ráfagas limpias a enemigos en el aire sin perder el control del retroceso."
+          "text": "Apex Legends cuenta con trampolines de Octane, ascensores de Horizon y tirolinas de Pathfinder. Este ejercicio aísla el seguimiento de esas trayectorias en el eje Y para repetirlo por separado."
         }
       },
       {
@@ -126,7 +125,7 @@ export default function VerticalAirTrackEsPage() {
         "name": "¿Qué es un 'elevator peek' en shooters competitivos?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Ocurre cuando un rival asciende por una cuerda o desnivel de terreno para asomarse repentinamente sobre tu retícula. El ejercicio entrena la subida rápida de mira y la fijación sobre la cabeza del enemigo."
+          "text": "Ocurre cuando un rival asciende por una cuerda o desnivel de terreno para asomarse repentinamente sobre tu retícula. El ejercicio entrena a seguir blancos que salen desde abajo de la pantalla y cambian de altura de golpe."
         }
       },
       {
@@ -142,7 +141,7 @@ export default function VerticalAirTrackEsPage() {
         "name": "¿Cómo entrenan los jugadores de Overwatch 2 contra héroes voladores?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Practican el seguimiento continuo sobre Pharah, Echo, Mercy o saltos de Winston y Doomfist, desarrollando una sincronización de velocidad milimétrica en el eje Y sin dar tirones."
+          "text": "Practican el seguimiento continuo sobre Pharah, Echo, Mercy o saltos de Winston y Doomfist, igualando la velocidad en el eje Y sin dar tirones. Este ejercicio reproduce ese tipo de seguimiento vertical, no las hitboxes ni los movimientos exactos del juego."
         }
       },
       {
@@ -150,7 +149,7 @@ export default function VerticalAirTrackEsPage() {
         "name": "¿Tiene impacto el entrenamiento vertical en Halo Infinite?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Sí, Halo Infinite incluye cañones de impulsión, saltos de repulsor y ganchos. Mantener el seguimiento vertical permite conectar ráfagas completas de cuatro disparos con el Battle Rifle."
+          "text": "Sí, Halo Infinite incluye cañones de impulsión, saltos de repulsor y ganchos. El ejercicio trabaja el seguimiento vertical de un blanco en el aire; funciona con el clic mantenido y no reproduce las ráfagas del Battle Rifle."
         }
       },
       {
@@ -158,7 +157,7 @@ export default function VerticalAirTrackEsPage() {
         "name": "¿Cómo se penalizan los fallos en Vertical Air-Track?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Perder el contacto con la esfera reinicia el multiplicador de racha. Si activas la penalización de tiempo opcional, dejar caer un objetivo al suelo sin destruirlo resta 0,6s de la ronda."
+          "text": "Mientras mantienes el clic izquierdo con la mira dentro del blanco, este pierde vida (100); en 0 se destruye. Cada destrucción da 100 puntos más bonus de altura (+25/+50/+75 por encima del 25 %/50 %/75 % de la altura de pantalla), multiplicados por combo y nivel, y suma 2 s al reloj (máx. 60 s). El reloj empieza en 45 s. Si un blanco sale por la parte inferior de la pantalla, se reinicia el combo y pierdes 1 s (con la opción Timeout desactivada, rebota). Salirte del blanco un instante no rompe el combo, pero baja el porcentaje de tracking. Cada 1.400 puntos sube el nivel: más gravedad y esquivas, blancos más pequeños y, desde el nivel 5, dos blancos a la vez."
         }
       },
       {
@@ -166,15 +165,15 @@ export default function VerticalAirTrackEsPage() {
         "name": "¿Con qué frecuencia se debe practicar la puntería vertical?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Sesiones de 10 a 15 minutos, 3 a 4 veces por semana, incrementan la resistencia de los músculos extensores de la muñeca y erradican sacudidas involuntarias en duelos aéreos."
+          "text": "No hay cifra mágica; sesiones de 10 a 15 minutos, 3 a 4 veces por semana, son un buen ritmo. Sigue tu porcentaje de tracking y el nivel alcanzado con el mismo equipo."
         }
       },
       {
         "@type": "Question",
-        "name": "¿Este entrenador de seguimiento vertical es gratis?",
+        "name": "¿Este ejercicio de puntería vertical es gratis?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Totalmente gratis, sin descargas ni registros. Funciona en cualquier navegador mediante la Pointer Lock API, replicando la sensibilidad de ratón de tu juego favorito sin latencia añadida."
+          "text": "Sí, es gratis y funciona en un navegador de PC sin descargas ni registro. Necesitas ratón: al empezar, el cursor se bloquea (Pointer Lock), y Esc o la pérdida del bloqueo terminan la sesión. No funciona en dispositivos solo táctiles."
         }
       }
     ]
@@ -189,7 +188,7 @@ export default function VerticalAirTrackEsPage() {
         "@type": "HowToStep",
         "position": 1,
         "name": "Sincronizar Sensibilidad y Bloquear el Cursor",
-        "text": "Configura tus DPI y sensibilidad idénticos a los de tu FPS favorito en los ajustes y bloquea el ratón."
+        "text": "Ajusta la sensibilidad global en la página /drills (1,00x = 30 cm/360) y pulsa Iniciar para bloquear el cursor."
       },
       {
         "@type": "HowToStep",
@@ -213,31 +212,31 @@ export default function VerticalAirTrackEsPage() {
         "@type": "HowToStep",
         "position": 5,
         "name": "Mantener la Racha y Subir de Nivel",
-        "text": "Sostén el contacto para sumar bonificaciones de altitud (+75) y superar niveles con mayor velocidad y gravedad."
+        "text": "Destruye los blancos en lo alto de la pantalla para el bonus de altura (hasta +75) y antes de que salgan por abajo."
       }
     ]
   };
 
   const verticalAirTrackGuide = {
-    heading: "Entrenador de Puntería Vertical: tracking aéreo y eje Y",
+    heading: "Puntería Vertical: tracking aéreo y eje Y",
     intro: [
-      "Para quien busca un entrenador de puntería vertical, este drill mide el tiempo y la precisión al seguir objetivos aéreos por el eje Y. Practica tracking suave, predicción de caídas parabólicas y control vertical del ratón para Apex Legends y Overwatch 2 desde el navegador.",
-      "La neurobiología del seguimiento visual de persecución vertical difiere sustancialmente del plano horizontal. Richard J. Krauzlis (2004) demostró que el seguimiento suave (smooth pursuit) vertical activa vías neuronales específicas en el vermis cerebeloso y el tronco encefálico, mostrando una mayor vulnerabilidad al temblor motor debido a la asimetría biomecánica del sistema musculoesquelético del brazo. Cyril Rashbass (1961) probó que el smooth pursuit está impulsado por el error de velocidad retiniana (retinal slip) y no por un simple error de posición estática, exigiendo una igualación continua de la velocidad visual.",
-      "Seguir y abatir entidades suspendidas en el aire exige internalizar la física de la aceleración gravitatoria (g = 9,81 m/s²). Tal como establecieron Peter R. Cavanagh et al. (1984) y Michael F. Land & Peter McLeod (2000), el sistema visomotor humano anticipa la deceleración de la trayectoria parabólica en la cúspide (ápice) del salto y su subsiguiente aceleración durante el descenso. Los jugadores que no anticipan esta curvatura cinemática sufren un desfase constante, quedando rezagados al rastrear caídas libres.",
-      "Al eliminar el apoyo en movimientos horizontales y aislar la trayectoria pura en el eje vertical mediante cronometría digital de alta precisión con performance.now() (Woods et al., 2015), este entrenamiento cierra la brecha entre la memoria muscular bidimensional y el dominio del combate tridimensional en 360 grados.",
+      "Este ejercicio gratis de puntería vertical funciona en el navegador: los blancos aéreos se lanzan desde la parte inferior de la pantalla, esquivan en el aire (saltos, dashes laterales, picados) y caen por la gravedad. Mantienes el clic izquierdo y sigues el blanco en el eje Y hasta destruirlo. La precisión es la parte del tiempo de disparo en que la mira está sobre un blanco. Un calentamiento de tracking aéreo para Apex Legends y Overwatch 2.",
+      "La neurobiología del seguimiento visual de persecución vertical difiere sustancialmente del plano horizontal. Krauzlis (2004) señala que el seguimiento suave (smooth pursuit) es preciso hasta unos 30°/s, y Rashbass (1961) probó que el smooth pursuit está impulsado por el error de velocidad retiniana (retinal slip) y no por un simple error de posición estática, exigiendo una igualación continua de la velocidad visual.",
+      "Seguir y abatir entidades suspendidas en el aire exige internalizar la física de la aceleración gravitatoria (g = 9,81 m/s²). Land & McLeod (2000) muestran que los interceptores expertos predicen dónde estará el blanco en lugar de perseguirlo, y anticipan la deceleración de la trayectoria parabólica en la cúspide (ápice) del salto y su subsiguiente aceleración durante el descenso. Los jugadores que no anticipan esta curvatura cinemática sufren un desfase constante, quedando rezagados al rastrear caídas libres.",
+      "Los blancos también tienen velocidad lateral y dashes, pero lo principal del movimiento es el eje Y: subida, vértice y caída. Si sueles entrenar tracking horizontal, este ejercicio cubre la parte vertical.",
       "Cómo se mide el rendimiento: cada evento e interacción se registra directamente con el reloj de alta resolución performance.now() del navegador, ejecutándose de forma estrictamente local en tu dispositivo — ninguna puntuación se envía al exterior. Dos variables físicas no pueden controlarse: los temporizadores web sufren una atenuación deliberada para mitigar vulnerabilidades Spectre (típicamente a 1 ms) y los monitores cuantizan la señal al intervalo de su tasa de refresco — unos 16,7 ms por cuadro a 60 Hz, 6,9 ms a 144 Hz y 4,1 ms a 240 Hz (Woods et al., 2015). El polling rate del ratón añade unos 8 ms a 125 Hz frente a 1 ms a 1000 Hz. Por ello, las variaciones menores a 5 ms constituyen ruido de medición y conviene comparar series de rendimiento en el mismo equipo."
     ],
     benchmarks: {
-      title: "Tablas de Rendimiento: Rastreo Vertical y Tiempo de Contacto Aéreo",
-      headers: ["Nivel Competitivo", "Tiempo de Contacto Útil", "Latencia de Inversión", "Impacto en Partida Real"],
+      title: "Niveles de práctica SkillDrills: porcentaje de tracking",
+      headers: ["Nivel", "Porcentaje de tracking", "Perfil típico"],
       rows: [
-        ["Tier 1 (Etapa Avanzada)", "> 82% Uptime", "Menos de 180 ms", "Rastreo milimétrico en tirolinas y planeos; transición suave en la cúspide del arco"],
-        ["Tier 2 (Etapa Intermedia-Alta)", "70% – 82% Uptime", "180 – 230 ms", "Seguimiento estable; leves correcciones retardadas cuando el rival invierte la dirección"],
-        ["Tier 3 (Diamante / Avanzado)", "58% – 70% Uptime", "230 – 290 ms", "Sólido en la subida; pierde el contacto con frecuencia en la aceleración de descenso"],
-        ["Tier 4 (Platino / Oro / Intermedio)", "45% – 58% Uptime", "290 – 360 ms", "Usa micro-flicks espasmódicos en lugar de un desplazamiento uniforme en el eje Y"],
-        ["Tier 5 (Plata / Bronce / Principiante)", "< 45% Uptime", "Más de 360 ms", "Bloqueo de muñeca; la mira se queda sistemáticamente por detrás de las caídas"]
+        ["Nivel 1", "> 82 %", "Transición suave en el vértice; las esquivas apenas sacan la mira del blanco"],
+        ["Nivel 2", "70 % – 82 %", "Seguimiento estable; leves dudas tras una esquiva"],
+        ["Nivel 3", "58 % – 70 %", "Sólido en la subida; pierde el blanco en la caída acelerada"],
+        ["Nivel 4", "45 % – 58 %", "Micro-flicks espasmódicos en lugar de un movimiento continuo en el eje Y"],
+        ["Nivel 5", "< 45 %", "Muñeca rígida; la mira se queda por detrás de los blancos en caída"]
       ],
-      note: "El tiempo de contacto evalúa el porcentaje de permanencia de la mira en el blanco durante el vuelo; la latencia de inversión mide la reacción en el vértice (Woods et al., 2015)."
+      note: "Porcentaje de tracking = parte del tiempo con el clic mantenido en que la mira está sobre un blanco. Niveles propios de SkillDrills, no normas científicas, estadísticas de usuarios ni rangos de juegos."
     },
     techniques: {
       title: "Protocolos Clínicos para Maximizar la Puntería Vertical",
@@ -265,13 +264,13 @@ export default function VerticalAirTrackEsPage() {
       ]
     },
     steps: [
-      "Configura tu sensibilidad y DPI exactos a los de tu FPS principal y bloquea el cursor.",
+      "Ajusta la sensibilidad global en la página /drills y pulsa Iniciar para bloquear el cursor.",
       "Detecta el lanzamiento del blanco e intercepta su trayectoria ascendente de inmediato.",
       "Sigue la curvatura parabólica manteniendo la retícula sobre el centro de la diana.",
-      "Ajusta el ritmo al frenar en el vértice para cobrar el bônus de altura.",
-      "Acelera hacia abajo durante la caída libre hasta desintegrar el blanco."
+      "Ajusta el ritmo al frenar en el vértice para cobrar el bonus de altura.",
+      "Acelera hacia abajo durante la caída y vacía la vida del blanco antes de que salga por la parte inferior de la pantalla."
     ],
-    audience: "Jugadores de Apex Legends, Overwatch 2, Halo y Destiny 2 que desean dominar el seguimiento aéreo, ganchos, saltos parabólicos y eliminar la asimetría del eje Y.",
+    audience: "Jugadores de Apex Legends, Overwatch 2, Halo y Destiny 2 que quieren practicar la puntería vertical contra blancos aéreos desde el navegador.",
     faqs: faqSchema.mainEntity.map(e => ({ q: e.name, a: e.acceptedAnswer.text })),
     sources: pickSources('woods2015', 'krauzlis2004', 'rashbass1961', 'land2000'),
     related: [
@@ -294,8 +293,8 @@ export default function VerticalAirTrackEsPage() {
 
       <VerticalAirTrackClient
         copy={{
-          h1Keyword: "Entrenador de Puntería Vertical",
-          h1Suffix: " - Tracking Aéreo FPS",
+          h1Keyword: "Puntería Vertical",
+          h1Suffix: ": Tracking Aéreo FPS",
           statScore: "Puntos",
           statTime: "Tiempo",
           statAccuracy: "Precisión",
@@ -304,19 +303,19 @@ export default function VerticalAirTrackEsPage() {
           statMaxCombo: "Combo Máximo",
           statPeakLevel: "Nivel Máximo",
           startTitle: "Vertical Air-Track",
-          startSubtitle: "Entrada Raw de Hardware • Progresión Dinámica de Niveles",
+          startSubtitle: "Pointer Lock • Progresión Dinámica de Niveles",
           startButtonText: "Iniciar Ejercicio",
           playAgainText: "Jugar de Nuevo",
           shareText: "Compartir Puntuación",
           exitText: "Salir",
-          stageCaption: "Rastrea blancos en trayectorias parabólicas en el eje Y con gravedad para afinar tu precisión vertical.",
+          stageCaption: "Puntería vertical: mantén el clic sobre los blancos aéreos hasta vaciar su vida antes de que salgan por abajo.",
           rulesTitle: "Instrucciones del Ejercicio y Sistema de Puntos",
-          aboutTitle: "Sobre el Entrenador Vertical Air-Track",
+          aboutTitle: "Sobre la Puntería Vertical (Vertical Air-Track)",
           rulesItems: [
             {
               num: "1",
               text: "Rastrear Blanco Aéreo",
-              highlight: "+100 PTS / +0,4s al destruir",
+              highlight: "+100 PTS / +2s al destruir (máx. 60s)",
               result: "Sigue la curva parabólica de forma continua"
             },
             {
@@ -328,14 +327,14 @@ export default function VerticalAirTrackEsPage() {
             {
               num: "3",
               text: "Regla de Penalización",
-              highlight: "Reinicio de combo al perder contacto",
-              result: "Tocar el suelo anula la racha (-0,6s con penalización activa)"
+              highlight: "Reinicio de combo / -1s",
+              result: "Cuando un blanco sale por abajo (opción Timeout)"
             },
             {
               num: "4",
               text: "Progresión de Nivel",
               highlight: "Cada 1.400 PTS +1 Nivel",
-              result: "La velocidad vertical y la gravedad aumentan progresivamente"
+              result: "Más gravedad y esquivas, blancos más pequeños, 2 blancos desde el nivel 5"
             }
           ]
         }}

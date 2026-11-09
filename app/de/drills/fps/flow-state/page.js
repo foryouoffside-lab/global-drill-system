@@ -6,8 +6,8 @@ import { getAlternateLanguages } from '@/lib/i18n/locales';
 import RelatedDrills from '@/components/drill/RelatedDrills';
 
 export const metadata = {
-  title: "FPS Fokus Training | Flow Aim Trainer | SkillDrills",
-  description: "Kostenloses FPS-Fokus-Training im Browser: Übe Konzentrationsausdauer und ruhiges Tracking mit einer Schwierigkeit, die zu deinem Aim passt.",
+  title: "FPS Fokus Training | Flow State & Konzentration | SkillDrills",
+  description: "Kostenloses FPS Fokus Training: Halte das Fadenkreuz auf einem Ziel auf Kurvenbahnen. 1 s daneben beendet die Combo, jedes Level macht das Ziel kleiner.",
   keywords: [
     "FPS Fokus Training",
     "Flow-Zustand Gaming",
@@ -15,9 +15,9 @@ export const metadata = {
     "Smooth Pursuit Tracking",
     "Aim Ausdauer",
     "Flow Zustand erreichen Gaming",
-    "Aim Training Routine",
+    "Flow State Training",
     "Fokus Training Valorant",
-    "Aim Trainer online",
+    "Konzentration Tracking",
     "Konzentration Shooter"
   ],
   alternates: {
@@ -29,8 +29,8 @@ export const metadata = {
     follow: true,
   },
   openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
-    title: "FPS Fokus Training | Flow Aim Trainer | SkillDrills",
-    description: "Übe Konzentrationsausdauer und ruhiges Tracking im kostenlosen Browser-Trainer für FPS. Stelle die Schwierigkeit passend zu deinem Aim ein.",
+    title: "FPS Fokus Training | Flow State & Konzentration | SkillDrills",
+    description: "Kostenloses FPS Fokus Training: Halte das Fadenkreuz auf einem Ziel auf Kurvenbahnen. 1 s daneben beendet die Combo, jedes Level macht das Ziel kleiner.",
     url: "https://skilldrills.online/de/drills/fps/flow-state",
     siteName: 'SkillDrills',
     locale: 'de_DE',
@@ -38,8 +38,8 @@ export const metadata = {
   },
   twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: 'summary_large_image',
-    title: "FPS Fokus Training | Flow Aim Trainer | SkillDrills",
-    description: "Übe Konzentrationsausdauer und ruhiges Tracking im kostenlosen Browser-Trainer für FPS. Stelle die Schwierigkeit passend zu deinem Aim ein.",
+    title: "FPS Fokus Training | Flow State & Konzentration | SkillDrills",
+    description: "Kostenloses FPS Fokus Training: Halte das Fadenkreuz auf einem Ziel auf Kurvenbahnen. 1 s daneben beendet die Combo, jedes Level macht das Ziel kleiner.",
   },
 };
 
@@ -68,7 +68,7 @@ export default function GermanFlowStatePage() {
       "price": "0",
       "priceCurrency": "EUR"
     },
-    "description": "Kostenloser browserbasierter Flow-State-Aim-Trainer. Erreiche tiefe Konzentration, transiente Hypofrontalität und meistere Smooth Pursuit Tracking für FPS-Gaming."
+    "description": "Kostenloses FPS Fokus Training im Browser: ein Ziel auf Bézier-Kurven ohne Unterbrechung verfolgen und Konzentration beim Zielen üben."
   };
 
   const softwareSchema = {
@@ -77,7 +77,7 @@ export default function GermanFlowStatePage() {
     "name": "FPS Fokus Training",
     "applicationCategory": "GameApplication",
     "operatingSystem": "Web Browser",
-    "dateModified": "2026-09-20",
+    "dateModified": "2026-11-09",
     "inLanguage": "de",
     "offers": { "@type": "Offer", "price": "0", "priceCurrency": "EUR" },
     "description": "Trainiere Konzentrationsausdauer, Daueraufmerksamkeit und Flow-Zustand-Tracking für kompetitive Shooter.",
@@ -96,7 +96,7 @@ export default function GermanFlowStatePage() {
     "name": "FPS Fokus Training",
     "url": "https://skilldrills.online/de/drills/fps/flow-state",
     "description": "Trainiere Konzentrationsausdauer, Daueraufmerksamkeit und Flow-Zustand-Tracking für kompetitive Shooter.",
-    "dateModified": "2026-09-20",
+    "dateModified": "2026-11-09",
     "inLanguage": "de",
     "gamePlatform": "Web Browser",
     "genre": ["FPS Training", "Aim Trainer", "Cognitive Focus"],
@@ -109,7 +109,7 @@ export default function GermanFlowStatePage() {
   const faqSchema = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
-    "dateModified": "2026-09-20",
+    "dateModified": "2026-11-09",
     "mainEntity": [
       {
         "@type": "Question",
@@ -124,7 +124,7 @@ export default function GermanFlowStatePage() {
         "name": "Wie gelangt man beim kompetitiven Spielen gezielt in den Flow-Zustand?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Vier Voraussetzungen sind erforderlich: klare Nahziele (Zielverfolgung ohne Abriss), unmittelbares Feedback, Ausschalten von Ablenkungen und die Balance zwischen Anforderung und Können. Ein 5–10-minütiges Aufwärmen mit stufenlosem Smooth-Pursuit-Tracking bereitet das Gehirn optimal auf den Flow vor."
+          "text": "Vier Voraussetzungen sind erforderlich: klare Nahziele (Zielverfolgung ohne Abriss), unmittelbares Feedback, Ausschalten von Ablenkungen und die Balance zwischen Anforderung und Können. Ein kurzes Tracking-Aufwärmen vor dem Match kann helfen, Hand und Aufmerksamkeit einzustimmen, garantiert aber keinen Flow."
         }
       },
       {
@@ -140,7 +140,7 @@ export default function GermanFlowStatePage() {
         "name": "Wie wichtig ist das Challenge-Skill-Gleichgewicht für den Flow?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Ist eine Trainingsaufgabe zu leicht, droht Langeweile; übersteigt sie das Können, führt dies zu Frustration und Muskelspannung. Der Flow-Korridor liegt dort, wo die Herausforderung die eigenen Fähigkeiten um ca. 5–10 % übersteigt, sodass eine Erfolgsquote von 70–80 % stabil gehalten wird."
+          "text": "Ist eine Trainingsaufgabe zu leicht, droht Langeweile; übersteigt sie das Können, führt dies zu Frustration und Muskelspannung. Csikszentmihalyi beschreibt Flow als wahrscheinlicher, wenn Anforderung und Können zueinander passen. In diesem Drill steigt das Level mit der Punktzahl, das Ziel wird kleiner und schneller, und eine laufende Combo erhöht die Schwierigkeit leicht."
         }
       },
       {
@@ -148,7 +148,7 @@ export default function GermanFlowStatePage() {
         "name": "Warum eignet sich Smooth Pursuit Tracking ideal zur Flow-Induktion?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Das Verfolgen kontinuierlicher Bézier-Kurven erfordert ständigen Abgleich zwischen Netzhautbild und motorischem Input (Krauzlis, 2004). Da keine Pausen zwischen diskreten Klicks entstehen, bindet die stetige foveale Fixation die gesamte Aufmerksamkeitsbandbreite und verdrängt störende Gedanken."
+          "text": "Das Verfolgen kontinuierlicher Bézier-Kurven erfordert ständigen Abgleich zwischen Netzhautbild und motorischem Input (Krauzlis, 2004). Da es kaum Pausen zwischen einzelnen Klicks gibt, übst du, die Aufmerksamkeit ununterbrochen beim Ziel zu halten."
         }
       },
       {
@@ -156,7 +156,7 @@ export default function GermanFlowStatePage() {
         "name": "Wie lange sollte man Flow-State-Aiming trainieren?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Zur mentalen Einstimmung vor Matches sind 5 bis 10 Minuten optimal. Zum Ausbau der Konzentrationsausdauer empfehlen sich 15-minütige Trainingsblöcke mit anschließenden 5-minütigen Pausen, um neuromuskuläre Ermüdung zu vermeiden."
+          "text": "Eine feste Regel gibt es nicht. Zum Aufwärmen vor Matches reichen ein paar Runden (etwa 5 bis 10 Minuten); längere Sessions teilst du am besten in Blöcke von rund 15 Minuten mit kurzen Pausen. Hör auf, wenn die Hand ermüdet oder die Präzision sinkt."
         }
       },
       {
@@ -164,7 +164,7 @@ export default function GermanFlowStatePage() {
         "name": "Welche Rolle spielt Dopamin beim Erreichen des Flow-Zustands?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Dopamin und Noradrenalin modulieren das Striatum, schärfen die visuelle Signalverarbeitung und verstärken das Belohnungsgefühl bei erfolgreichen Tracking-Ketten, was die Immersion vertieft."
+          "text": "Dopamin wird allgemein mit Belohnung und Motivation in Verbindung gebracht, seine genaue Rolle im Flow ist aber nicht geklärt. Dieser Drill misst keine Neurochemie; er gibt nur sofortiges Feedback über Punkte und Combo."
         }
       },
       {
@@ -172,7 +172,7 @@ export default function GermanFlowStatePage() {
         "name": "Warum verschlechtert mentale Ermüdung das Zielen und Tracking?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Lange Gaming-Sessions erschöpfen Neurotransmitter im fronto-parietalen Aufmerksamkeitsnetzwerk (Posner & Petersen, 1990). Mit zunehmender mentaler Ermüdung steigen Reaktionszeiten und unruhige Korrektursakkaden ersetzen flüssiges Tracking."
+          "text": "Nach langer Konzentration fällt es schwerer, die Aufmerksamkeit auf einem Punkt zu halten. Dann folgst du dem Ziel weniger flüssig und korrigierst häufiger spät und ruckartig. Fokus-Abbrüche und Tracking-Präzision in diesem Drill zeigen diese Veränderung."
         }
       },
       {
@@ -188,7 +188,7 @@ export default function GermanFlowStatePage() {
         "name": "Lässt sich durch Flow-Aiming auch die Konzentration bei der Arbeit verbessern?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Ja. Daueraufmerksamkeit ist eine domänenübergreifende kognitive Fähigkeit. Das Training ununterbrochener visueller Fixation stärkt exekutive Kontrollfunktionen, die auch bei Deep Work, Programmieren oder konzentriertem Lernen gefordert sind."
+          "text": "Vielleicht. Ob sich Tracking-Übungen auf Deep Work, Programmieren oder Lernen übertragen, ist nicht belegt; als kurze Konzentrationsübung kann der Drill trotzdem nützlich sein."
         }
       }
     ]
@@ -204,14 +204,14 @@ export default function GermanFlowStatePage() {
         "@type": "HowToStep",
         "position": 1,
         "name": "Sensitivität anpassen",
-        "text": "Passe die Mausempfindlichkeit an dein gewohntes Shooter-Profil an, um einheitliches Muskelgedächtnis zu wahren.",
+        "text": "Stelle die Mausempfindlichkeit einmal in den Einstellungen auf der Seite /drills ein; sie gilt für alle Maus-Drills. Wähle ein Gefühl, das deinem Shooter ähnelt.",
         "url": "https://skilldrills.online/de/drills/fps/flow-state#step-1"
       },
       {
         "@type": "HowToStep",
         "position": 2,
         "name": "Hardware Pointer Lock aktivieren",
-        "text": "Klicke auf 'Start', um den Vollbildmodus mit nativer Pointer Lock API ohne künstliche Beschleunigung zu starten.",
+        "text": "Klicke auf 'Start', um den Vollbildmodus mit Pointer Lock zu starten. Eine Maus ist erforderlich, Touch-Geräte werden nicht unterstützt.",
         "url": "https://skilldrills.online/de/drills/fps/flow-state#step-2"
       },
       {
@@ -225,7 +225,7 @@ export default function GermanFlowStatePage() {
         "@type": "HowToStep",
         "position": 4,
         "name": "Kontinuierliche Flow-Ketten halten",
-        "text": "Verbleibe ohne Unterbrechung auf dem Ziel, um das Flow-Meter aufzuladen und maximale Punktemultiplikatoren zu erreichen.",
+        "text": "Jede volle Sekunde auf dem Ziel erhöht die Combo um 1, der Punktemultiplikator steigt bis 3,0x. Nach 1 Sekunde daneben wird die Combo zurückgesetzt.",
         "url": "https://skilldrills.online/de/drills/fps/flow-state#step-4"
       }
     ]
@@ -234,29 +234,29 @@ export default function GermanFlowStatePage() {
   const flowStateGuide = {
     heading: "FPS-Fokus-Training und Flow-State-Benchmarks",
     intro: [
-      "FPS-Fokus-Training bedeutet, ein Ziel über mehrere Durchgänge ruhig zu verfolgen, Ablenkungen zu reduzieren und die Schwierigkeit an das eigene Aim anzupassen. Dieser Drill misst Tracking-Genauigkeit und Konzentrationsausdauer; er verspricht keinen erzwungenen Flow, sondern zeigt, wann deine Aufmerksamkeit und Bewegungskontrolle nachlassen.",
-      "Ergänzend hierzu erklärt Arne Dietrichs Hypothese der transienten Hypofrontalität (2004) den zugrundeliegenden neurobiologischen Zustand: Durch die selektive Herunterregulierung des dorsolateralen präfrontalen Kortex (DLPFC) wird die motorische Steuerung primär an Basalganglien und Kleinhirn übergeben. In kompetitiven Ego-Shootern befreit dieser Zustand die Reflexe von analytischem Überdenken und ermöglicht instinktive Mikrokorrekturen unter Höchstgeschwindigkeit.",
-      "Unterstützt durch hochauflösende Zeitmessung via performance.now() (Woods et al., 2015) und organisch fließende Bézier-Kurventrajektorien (Krauzlis, 2004; Posner & Petersen, 1990) bietet diese Übung die optimale, installationsfreie Grundlage zur Festigung mentaler Ausdauer und Auslöschung von Zielfehlern.",
+      "FPS-Fokus-Training bedeutet, ein Ziel ruhig zu verfolgen und Ablenkungen zu reduzieren. Der Drill startet mit 45 Sekunden, verlängert die Zeit, solange du auf dem Ziel bleibst, und wird mit Punktzahl und Combo schwieriger. Er misst Tracking-Genauigkeit und Konzentrationsausdauer; er verspricht keinen erzwungenen Flow, sondern zeigt, wann deine Aufmerksamkeit und Bewegungskontrolle nachlassen.",
+      "Arne Dietrichs Hypothese der transienten Hypofrontalität (2004) versucht zu erklären, warum bewusste Selbstkontrolle im Flow nachlässt. Ob dieser Drill einen solchen Zustand auslöst, lässt sich nicht garantieren; er hilft aber, ununterbrochenes Tracking zu üben und zu sehen, wann deine Konzentration abreißt.",
+      "Das Ziel bewegt sich auf quadratischen Bézier-Kurven; mit jedem Level wird sein Radius kleiner und die Kurven werden enger. Gesteuert wird mit der Maus im Pointer Lock, ohne Installation direkt im Browser.",
       "Messmethodik: Jedes Ereignis wird mit dem hochauflösenden performance.now()-Zeitstempel deines Browsers lokal erfasst – es werden keine Spieldaten hochgeladen. Zu beachten: Aus Sicherheitsgründen (Spectre-Schutz) runden Browser Zeitmessungen auf rund 1 ms. Bildschirme quantisieren die Darstellung auf Bildintervalle (~16,7 ms bei 60 Hz, 6,9 ms bei 144 Hz und 4,1 ms bei 240 Hz nach Woods et al., 2015). Unterschiede unter 5 ms stellen messtechnisches Rauschen dar. Vergleiche deine Ergebnisse daher primär auf derselben Hardware."
     ],
     benchmarks: {
       title: "Kognitive Flow-Induktions- & Aufmerksamkeitsstufen",
       headers: ["Stufe", "Flow-Dimension", "Physiologischer Indikator", "Kognitiver Mechanismus", "Zielvorgabe"],
       rows: [
-        ["Stufe 1", "Aufmerksamkeits-Orientierung", "Sensorisches Gating & Fixation", "Posner-Netzwerk blendet externe Umgebungsreize aus", "Sofortige foveale Zielerfassung innerhalb von 200 ms"],
+        ["Stufe 1", "Aufmerksamkeits-Orientierung", "Sensorisches Gating & Fixation", "Posner-Netzwerk blendet externe Umgebungsreize aus", "Eine Runde mit mindestens 50 % Tracking-Präzision"],
         ["Stufe 2", "Herausforderung-Fähigkeit-Balance", "Dynamische Geschwindigkeits-Kalibrierung", "Csikszentmihalyi-Kanal: Zieltempo passt sich motorischer Leistung an", "70–80 % kontinuierliche Verweildauer halten"],
         ["Stufe 3", "Foveale Smooth-Pursuit-Dauer", "Kontinuierlicher Geschwindigkeitsabgleich", "Krauzlis-Kortikostriatale Bahnen eliminieren Korrektur-Sakkaden", ">85 % kontinuierliches Tracking auf komplexen Bézier-Kurven"],
         ["Stufe 4", "Transiente Hypofrontalität", "DLPFC-Herunterregulierung", "Dietrich-Hypothese: Bewusste Selbstkontrolle pausiert zugunsten von Reflex-Automation", ">30 Sekunden ununterbrochene Flow-Serie ohne Zweifel"],
-        ["Stufe 5", "Maximale Konzentrationsausdauer", "Ermüdungsresistenz", "Exekutive Ausdauer verhindert Latenzdegradation und Fokusverlust", "60+ Sekunden Flow-Ketten bei maximalem Combo-Multiplikator"]
+        ["Stufe 5", "Maximale Konzentrationsausdauer", "Ermüdungsresistenz", "Exekutive Ausdauer verhindert Latenzdegradation und Fokusverlust", "Combo 50 erreichen (maximaler Multiplikator 3,0x)"]
       ],
-      note: "Metriken synthetisiert aus Flow-Psychologie (Csikszentmihalyi, 1975, 1990), Neurobiologie des Flow-Zustands (Dietrich, 2004), Blickfolgebewegungs-Forschung (Krauzlis, 2004) und Netzwerktheorien der Aufmerksamkeit (Posner & Petersen, 1990)."
+      note: "Die Zielwerte sind SkillDrills-Übungsstufen, keine Forschungsnormen und keine Nutzerdaten. Die Stufennamen lehnen sich an Konzepte aus Csikszentmihalyi (1975, 1990), Dietrich (2004), Krauzlis (2004) und Posner & Petersen (1990) an."
     },
     techniques: {
       title: "Wissenschaftlich fundierte Protokolle für Gaming-Flow",
       items: [
         {
           name: "Tangentiales Blick-Voraus-Führen (Predictive Pursuit)",
-          desc: "Lassen Sie Ihren Blick nicht hinter dem Zentrum des Zielpunkts herhinken, sondern fixieren Sie die Aufmerksamkeit 2–3 Grad voraus entlang des Geschwindigkeitsvektors. Diese vorausgreifende Projektion aktiviert prädiktive Blickfolgebewegungen (Krauzlis, 2004) und reduziert Augenermüdung.",
+          desc: "Lassen Sie Ihren Blick nicht hinter dem Zentrum des Zielpunkts herhinken, sondern schauen Sie ein Stück in die Richtung, in die sich die Kurve bewegt.",
           tips: "Blicken Sie durch das Ziel hindurch in die geplante Flugbahn und lassen Sie periphere Reize minimale Korrekturen steuern."
         },
         {
@@ -266,8 +266,8 @@ export default function GermanFlowStatePage() {
         },
         {
           name: "Dynamische Abstimmung von Anspruch und Können",
-          desc: "Der Flow-Zustand reißt ab, wenn die Übung entweder unterfordert (Langeweile) oder überfordert (Anspannung). Passen Sie Ihre Spieleinstellungen so an, dass Ihre Tracking-Präzision zwischen 70 % und 80 % liegt – der von Csikszentmihalyi (1990) definierte Idealbereich.",
-          tips: "Wenn der Fokus nach wenigen Sekunden abreißt, reduzieren Sie das Tempo, bis Sie 20-Sekunden-Serien stabil halten."
+          desc: "Der Flow-Zustand reißt ab, wenn die Übung entweder unterfordert (Langeweile) oder überfordert (Anspannung). Als Übungsziel empfiehlt SkillDrills eine Tracking-Präzision von etwa 70 bis 80 %.",
+          tips: "Wenn der Fokus oft abreißt, arbeiten Sie zuerst an der Präzision statt an hohen Levels. Nach einem Combo-Reset wird das Ziel wieder etwas größer und langsamer."
         },
         {
           name: "Lösen von Muskel-Mikrospannungen im Unterarm",
@@ -277,44 +277,44 @@ export default function GermanFlowStatePage() {
       ]
     },
     steps: [
-      "Wählen Sie Ihre gewohnte Ingame-Sensitivität, um dein Muskelgedächtnis konsistent zu halten.",
-      "Klicken Sie auf 'Start', um den Vollbildmodus mit direkter Mauszeigersperre ohne Beschleunigung zu starten.",
+      "Stellen Sie die Mausempfindlichkeit einmal in den Einstellungen auf /drills ein; der Wert gilt für alle Maus-Drills.",
+      "Klicken Sie auf 'Start', um den Vollbildmodus mit Pointer Lock zu starten.",
       "Verfolgen Sie das Ziel fokussiert auf seinen organischen, fließenden Bézier-Kurven.",
-      "Bleiben Sie kontinuierlich im Zielradius, um das Flow-Meter zu füllen und den Flow-Zustand zu erreichen.",
-      "Halten Sie lange Fokus-Serien, um Multiplikatoren zu steigern und ausdauernde Konzentration aufzubauen."
+      "Bleiben Sie im Zielradius: Jede volle Sekunde erhöht die Combo, 1 Sekunde daneben setzt sie zurück.",
+      "Halten Sie die Combo, um den Multiplikator zu steigern, und vergleichen Sie danach Präzision und Fokus-Abbrüche mit Ihren früheren Runden."
     ],
     audience: "Kompetitive FPS-Spieler in CS2, Valorant, Apex Legends und Overwatch 2 sowie E-Sportler und Wissensarbeiter, die anhaltende Konzentration, Ablenkungsresistenz und Zielsicherheit trainieren wollen.",
     faqs: faqSchema.mainEntity.map(e => ({ q: e.name, a: e.acceptedAnswer.text })),
     sources: pickSources('woods2015', 'krauzlis2004', 'posner1990', 'green2003', 'dietrich2004'),
     related: [
-      { href: "/de/drills/reaction-speed/fps-tracking-trainer", label: "FPS Tracking Trainer" },
-      { href: "/de/drills/fps/anti-zigzag-movement-trainer", label: "Anti-Zigzag Aim Trainer" },
-      { href: "/de/drills/fps/anti-strafe-jitter-duel", label: "Anti-Strafe Jitter Trainer" },
-      { href: "/de/drills/fps/flick-shot-training", label: "Flick Shot Trainer" },
+      { href: "/de/drills/reaction-speed/fps-tracking-trainer", label: "Bewegliche Ziele treffen" },
+      { href: "/de/drills/fps/anti-zigzag-movement-trainer", label: "Zickzack-Tracking" },
+      { href: "/de/drills/fps/anti-strafe-jitter-duel", label: "ADAD-Tracking" },
+      { href: "/de/drills/fps/flick-shot-training", label: "Aim Test: Flick-Training" },
       { href: "/de/drills/reaction-speed/visual-tracking-speed-test", label: "Visual Tracking Speed Test" }
     ]
   };
 
   const copyDe = {
     h1Keyword: "FPS Fokus Training",
-    h1Suffix: " – Flow Aim Trainer",
+    h1Suffix: " – Flow State & Konzentration beim Zielen",
     statScore: "Punkte",
     statTime: "Verbleibende Zeit",
     statAccuracy: "Tracking-Präzision",
     statBestScore: "Highscore",
-    startTitle: "Flow State Aim Trainer",
-    startSubtitle: "Hardware Raw Input • Stufenlose Flow-Progression",
+    startTitle: "FPS Fokus Training",
+    startSubtitle: "Pointer Lock • Endlose Level-Progression",
     pausedTitle: "Fokus Pausiert",
     pausedSubtitle: "Klicken zum Fortsetzen – Mauszeiger wird gesperrt.",
     stageCaption: "Halte deinen Rhythmus und verfolge kontinuierliche Bewegungen entlang fließender Kurven ohne Fokusverlust.",
     rulesTitle: "Trainingsanleitung & Punktesystem",
     rulesItems: [
-      { num: "1", text: "Ziel-Tracking", highlight: "+10 PTS (+0,4s/s)", result: "Ziel kontinuierlich im Fokus" },
+      { num: "1", text: "Ziel-Tracking", highlight: "+10 PTS / 0,25 s", result: "Auf dem Ziel +0,4 s/s Zeit (max. 60 s)" },
       { num: "2", text: "Flow-Multiplikator", highlight: "Bis zu 3,0x Punkte", result: "Ununterbrochene Kette halten" },
       { num: "3", text: "Level-Progression", highlight: "+1 Level / 1400 PTS", result: "Adaptive Kurvengeschwindigkeit" },
-      { num: "4", text: "Fokus-Abbruch", highlight: "1,0s Zielverlust", result: "Multiplikator-Reset (-0,6s)" }
+      { num: "4", text: "Fokus-Abbruch", highlight: "1,0s Zielverlust", result: "Combo-Reset" }
     ],
-    aboutTitle: "Über den Flow State Aim Trainer"
+    aboutTitle: "Über das FPS Fokus Training"
   };
 
   return (

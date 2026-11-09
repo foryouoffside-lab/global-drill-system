@@ -109,7 +109,7 @@ export default function TargetAcquisitionEsPage() {
         "name": "¿Cómo funciona este aim trainer para Valorant de adquisición de objetivos?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Cada sesión dura 60 segundos. Aparecen grupos de 3 a 8 objetivos con distinto brillo y hay que acertarlos del más claro al más oscuro. Un objetivo correcto vale +100 puntos multiplicados por el combo y el nivel; limpiar el grupo suma +400 puntos multiplicados por el nivel y genera un grupo nuevo. Acertar el objetivo equivocado o hacer clic en el vacío reinicia el combo y resta 0,6 segundos si la penalización de tiempo está activada. Se juega con ratón y bloqueo del puntero; Esc termina el drill. SkillDrills es una herramienta independiente, sin relación con Riot Games."
+          "text": "Cada sesión dura 60 segundos. Aparecen grupos de 3 a 8 objetivos con distinto brillo y hay que acertarlos del más claro al más oscuro. Un objetivo correcto vale +100 puntos multiplicados por el combo y el nivel; limpiar el grupo suma +400 puntos multiplicados por el nivel y genera un grupo nuevo. Acertar el objetivo equivocado o hacer clic en el vacío reinicia el combo. Se juega con ratón y bloqueo del puntero; Esc termina el drill. SkillDrills es una herramienta independiente, sin relación con Riot Games."
         }
       },
       {
@@ -321,7 +321,7 @@ export default function TargetAcquisitionEsPage() {
       { num: "1", text: "Impacto en Diana", highlight: "+100 PTS × Nivel", result: "×Multiplicador Combo" },
       { num: "2", text: "Serie Despejada", highlight: "+400 PTS × Nivel", result: "Nuevo Grupo" },
       { num: "3", text: "Subida de Nivel", highlight: "+1 / 1400 PTS", result: "Escalado Dinámico Continuo" },
-      { num: "4", text: "Blanco Erróneo / Fallo", highlight: "Penalización", result: "Reinicio Combo (-0,6s con penalización activa)" }
+      { num: "4", text: "Blanco Erróneo / Fallo", highlight: "Penalización", result: "Reinicio Combo" }
     ],
     aboutTitle: "Acerca del Entrenamiento de Adquisición",
     aboutHeading: "¿Qué es la Adquisición de Objetivos?",

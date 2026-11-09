@@ -93,7 +93,7 @@ export const viewport = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" className="scroll-smooth font-sans">
+    <html lang="en" className="scroll-smooth font-sans" suppressHydrationWarning>
       <head>
         {/* Corrects <html lang> before first paint. This is the only root
             layout Next emits, so it hardcodes lang="en" below and a localized

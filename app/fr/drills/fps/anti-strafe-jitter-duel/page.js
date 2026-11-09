@@ -128,7 +128,7 @@ export default function AntiStrafeJitterFrPage() {
         "name": "Que se passe-t-il si je perds la cible ?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Après plus d'une seconde hors de la cible, le combo retombe à 0. Si vous avez activé la pénalité de temps dans les réglages des drills, 0,6 seconde est aussi retirée du chrono. Elle est désactivée par défaut."
+          "text": "Après plus d'une seconde hors de la cible, le combo retombe à 0."
         }
       },
       {
@@ -291,10 +291,10 @@ export default function AntiStrafeJitterFrPage() {
           stageCaption: "Gardez le réticule sur la cible qui change de sens au hasard. Aucun clic nécessaire.",
           rulesTitle: "Règles et points",
           rulesItems: [
-            { num: "1", text: "Rester sur la cible", highlight: "10 pts / 0,25 s (+0,1 s)", result: "×Combo" },
+            { num: "1", text: "Rester sur la cible", highlight: "10 pts / 0,25 s (+0,4 s/s)", result: "×Combo" },
             { num: "2", text: "Tenir 1 s d'affilée", highlight: "Combo +1", result: "Jusqu'à 3,0×" },
             { num: "3", text: "Progression", highlight: "+1 niveau / 1400 pts", result: "Plus petite, plus rapide" },
-            { num: "4", text: "Plus d'1 s hors cible", highlight: "Combo remis à 0", result: "-0,6 s si pénalité activée" }
+            { num: "4", text: "Plus d'1 s hors cible", highlight: "Combo remis à 0", result: "Combo à reconstruire" }
           ],
           aboutTitle: "À propos du tracking anti-strafe ADAD"
         }}

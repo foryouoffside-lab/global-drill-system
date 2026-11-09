@@ -76,10 +76,10 @@ const getLevelConfig = (level, combo = 0) => {
 // ACCORDION DATA
 // ============================================================
 const RULES_ITEMS = [
-  { num: "1", text: "Hit Anchor Target", highlight: "+10 PTS (+0.2s)", result: "Unlocks Micro" },
-  { num: "2", text: "Micro Target Hit", highlight: "Up To +585 PTS", result: "Precision × Combo" },
+  { num: "1", text: "Hit Anchor Target", highlight: "+10 PTS (+1s)", result: "Unlocks Micro" },
+  { num: "2", text: "Micro Target Hit", highlight: "+100–150 PTS (+1s)", result: "Precision × Combo" },
   { num: "3", text: "Level Progression", highlight: "+1 Level / 1400 PTS", result: "Adaptive Scaling" },
-  { num: "4", text: "Miss / Timeout", highlight: "Penalty", result: "Resets Combo (-0.6s)" }
+  { num: "4", text: "Miss / Timeout", highlight: "Penalty", result: "Resets Combo (-1s)" }
 ];
 
 const ABOUT_INTRO = [
@@ -119,7 +119,7 @@ const FAQ_ITEMS = [
   { q: "How do CS2 players train precision?", a: "CS2 players train precision using tactical aim drills, practicing counter-strafing timing, refining their crosshair micro-adjustments, and repeating click-timing patterns on static micro-targets." },
   { q: "Can micro-correction drills improve aim?", a: "Yes. Most players miss targets because their initial flick is slightly off. Micro-correction drills train the brain and hand muscles to automatically adjust and hit the target center, increasing hit consistency." },
   { q: "Why do I miss easy headshots?", a: "Missing headshots is usually due to clicking before your crosshair has fully stopped on the target's center (poor click-timing) or failing to correct a near-miss flick." },
-  { q: "Why does missing or timing out reset my combo and how are penalties applied?", a: "By default, missing a shot or allowing a target to expire resets your combo multiplier without reducing your time or score. If you want a more punishing tactical challenge, you can enable Time Penalty in the session settings to deduct 0.6s per error." },
+  { q: "Why does missing or timing out reset my combo and how are penalties applied?", a: "Missing a shot or letting a target expire resets your combo multiplier and deducts 1 second from the clock. Target expiry only counts while Target Timeouts are on." },
   { q: "What is target confirmation?", a: "Target confirmation is the cognitive split-second where your visual cortex registers that the crosshair is locked onto the target model before you trigger your index finger to click/shoot." },
   { q: "What is precision aiming?", a: "Precision aiming is the mechanical capacity to hit extremely small targets consistently. It depends on fine motor control of the wrist and fingers, low-friction mouse movements, and disciplined click timing." },
   { q: "How often should I train micro-corrections?", a: "We recommend training micro-corrections for 10–15 minutes daily as part of your FPS warm-up routine, or up to 30 minutes for a dedicated mechanical accuracy training session." },
@@ -142,7 +142,7 @@ const RELATED_DRILLS = [
 // MAIN COMPONENT
 // ============================================================
 export default function MicroCorrectionClient({ copy = null }) {
-  const { locale } = useTranslation();
+  const { locale, t } = useTranslation();
   const [gameState, setGameState] = useState('start'); // start | countdown | playing | gameOver
   const [countdownValue, setCountdownValue] = useState(3);
   const [isFullscreen, setIsFullscreen] = useState(false);
@@ -946,10 +946,10 @@ export default function MicroCorrectionClient({ copy = null }) {
               score={score}
               isNewBest={isNewBest}
               stats={[
-                { value: analytics.accuracy, suffix: "%", label: copy?.statAccuracy || "Accuracy" },
-                { value: analytics.avgCorrectionTime, suffix: "ms", label: copy?.statAvgCorrection || "Avg Correction" },
-                { value: `${analytics.bestCombo}x`, label: copy?.statMaxCombo || "Max Combo" },
-                { value: `Lv. ${analytics.levelReached}`, label: copy?.statPeakLevel || "Peak Level" },
+                { value: analytics.accuracy, suffix: "%", label: copy?.statAccuracy || t('ui.resultAccuracy', 'Accuracy') },
+                { value: analytics.avgCorrectionTime, suffix: "ms", label: copy?.statAvgCorrection || t('ui.resultAvgCorrection', 'Avg Correction') },
+                { value: `${analytics.bestCombo}x`, label: copy?.statMaxCombo || t('ui.resultMaxCombo', 'Max Combo') },
+                { value: `Lv. ${analytics.levelReached}`, label: copy?.statPeakLevel || t('ui.resultPeakLevel', 'Peak Level') },
               ]}
               onPlayAgain={enterDrill}
               onBeforeShare={() => setIsFullscreen(false)}

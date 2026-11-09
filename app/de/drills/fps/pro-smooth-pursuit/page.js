@@ -6,19 +6,15 @@ import RelatedDrills from '@/components/drill/RelatedDrills';
 import DrillFooter from '@/components/drill/DrillFooter';
 
 export const metadata = {
-  title: "Aim Trainer | Smooth-Tracking üben | SkillDrills",
-  description: "Kostenloser Aim Trainer im Browser: Übe flüssiges Tracking bewegter Ziele für Apex, Overwatch 2 und FPS.",
+  title: "Smooth Tracking üben: Kurvenziele verfolgen | SkillDrills",
+  description: "Smooth Tracking üben im Browser: Halte das Fadenkreuz mit der Maus auf einem Ziel, das auf Lissajous-Kurven gleitet – kostenlos, für Apex und Overwatch 2.",
   keywords: [
-    "Aim Trainer",
-    "aim trainer valorant",
-    "aim trainer browser",
-    "aim tracking trainer",
     "Smooth Tracking",
+    "Smooth Tracking üben",
+    "flüssiges Tracking",
+    "Kurvenziele verfolgen",
     "Tracking üben",
-    "FPS Aim Training",
-    "Aim Trainer CS2",
-    "bewegte Ziele aim",
-    "Aim Trainer online"
+    "Smooth Pursuit"
   ],
   alternates: {
     canonical: "https://skilldrills.online/de/drills/fps/pro-smooth-pursuit",
@@ -29,8 +25,8 @@ export const metadata = {
     follow: true,
   },
   openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
-    title: "Aim Trainer | Smooth-Tracking üben | SkillDrills",
-    description: "Flüssiges Tracking bewegter Ziele trainieren: kostenloser Aim Trainer für Apex, Overwatch 2 und FPS im Browser.",
+    title: "Smooth Tracking üben: Kurvenziele verfolgen | SkillDrills",
+    description: "Smooth Tracking üben im Browser: Halte das Fadenkreuz mit der Maus auf einem Ziel, das auf Lissajous-Kurven gleitet – kostenlos, für Apex und Overwatch 2.",
     url: "https://skilldrills.online/de/drills/fps/pro-smooth-pursuit",
     siteName: 'SkillDrills',
     locale: 'de_DE',
@@ -38,8 +34,8 @@ export const metadata = {
   },
   twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: 'summary_large_image',
-    title: "Aim Trainer | Smooth-Tracking üben | SkillDrills",
-    description: "Flüssiges Tracking bewegter Ziele trainieren: kostenloser Aim Trainer für Apex, Overwatch 2 und FPS im Browser.",
+    title: "Smooth Tracking üben: Kurvenziele verfolgen | SkillDrills",
+    description: "Smooth Tracking üben im Browser: Halte das Fadenkreuz mit der Maus auf einem Ziel, das auf Lissajous-Kurven gleitet – kostenlos, für Apex und Overwatch 2.",
   },
 };
 
@@ -50,14 +46,14 @@ export default function GermanProSmoothPursuitPage() {
     "itemListElement": [
       { "@type": "ListItem", "position": 1, "name": "SkillDrills", "item": "https://skilldrills.online/de" },
       { "@type": "ListItem", "position": 2, "name": "FPS Training", "item": "https://skilldrills.online/de/drills/fps" },
-      { "@type": "ListItem", "position": 3, "name": "Aim Trainer - Smooth-Tracking", "item": "https://skilldrills.online/de/drills/fps/pro-smooth-pursuit" }
+      { "@type": "ListItem", "position": 3, "name": "Smooth Tracking üben", "item": "https://skilldrills.online/de/drills/fps/pro-smooth-pursuit" }
     ]
   };
 
   const webAppSchema = {
     "@context": "https://schema.org",
     "@type": "WebApplication",
-    "name": "Aim Trainer - Smooth-Tracking",
+    "name": "Smooth Tracking üben",
     "url": "https://skilldrills.online/de/drills/fps/pro-smooth-pursuit",
     "applicationCategory": "GameApplication",
     "operatingSystem": "All",
@@ -68,16 +64,16 @@ export default function GermanProSmoothPursuitPage() {
       "price": "0",
       "priceCurrency": "EUR"
     },
-    "description": "Kostenloser browserbasierter Smooth-Pursuit-Aim-Trainer. Trainiere kontinuierliches Kurven-Tracking, harmonische Lissajous-Muster und zitterfreie Mausführung."
+    "description": "Kostenloses Smooth Tracking im Browser. Trainiere kontinuierliches Kurven-Tracking, harmonische Lissajous-Muster und zitterfreie Mausführung."
   };
 
   const softwareSchema = {
     "@context": "https://schema.org",
     "@type": "SoftwareApplication", "sameAs": ["https://en.wikipedia.org/wiki/Smooth_pursuit"],
-    "name": "Aim Trainer - Smooth-Tracking",
+    "name": "Smooth Tracking üben",
     "applicationCategory": "GameApplication",
     "operatingSystem": "Web Browser",
-    "dateModified": "2026-09-20",
+    "dateModified": "2026-11-09",
     "inLanguage": "de",
     "offers": { "@type": "Offer", "price": "0", "priceCurrency": "EUR" },
     "description": "Kostenlose Trainingssoftware für kontinuierliche Blickfolgebewegungen, Kurven-Tracking und Unterarm-Stabilisierung für kompetitive Shooter.",
@@ -93,10 +89,10 @@ export default function GermanProSmoothPursuitPage() {
   const videoGameSchema = {
     "@context": "https://schema.org",
     "@type": "VideoGame",
-    "name": "Aim Trainer - Smooth-Tracking",
+    "name": "Smooth Tracking üben",
     "url": "https://skilldrills.online/de/drills/fps/pro-smooth-pursuit",
     "description": "Kostenlose Trainingssoftware für kontinuierliche Blickfolgebewegungen, Kurven-Tracking und Unterarm-Stabilisierung für kompetitive Shooter.",
-    "dateModified": "2026-09-20",
+    "dateModified": "2026-11-09",
     "inLanguage": "de",
     "gamePlatform": "Web Browser",
     "genre": ["FPS Training", "Aim Trainer", "Smooth Pursuit"],
@@ -109,7 +105,7 @@ export default function GermanProSmoothPursuitPage() {
   const faqSchema = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
-    "dateModified": "2026-09-20",
+    "dateModified": "2026-11-09",
     "mainEntity": [
       {
         "@type": "Question",
@@ -140,7 +136,7 @@ export default function GermanProSmoothPursuitPage() {
         "name": "Was versteht man unter fovealem Blick-Voraus-Führen (Gaze Leading)?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Nach Land & McLeod (2000) blicken geübte Schützen nicht starr auf das Zentrum, sondern richten den fovealen Blick 2–5 Pixel vor die führende Kante des Zielobjekts. Dieses vorausschauende Führen erlaubt dem motorischen Kortex, bevorstehende Richtungsänderungen vorab zu planen."
+          "text": "Gemeint ist, das Ziel und seine Bewegungsrichtung anzuschauen statt das eigene Fadenkreuz. Land & McLeod (2000) beschreiben, dass der Blick geübter Personen der nächsten Handlung vorausläuft; wer dem Ziel mit den Augen folgt, kann sich leichter auf Kurvenwechsel einstellen."
         }
       },
       {
@@ -164,7 +160,7 @@ export default function GermanProSmoothPursuitPage() {
         "name": "Wie beeinflussen Monitor-Bildwiederholrate und Maus-Polling das Tracking?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Monitore mit 144 bis 360 Hz liefern kontinuierliche Bewegungsinformationen ohne störende Bewegungsunschärfe (Woods et al., 2015). Eine Mausabfragerate von 1000 Hz oder mehr kann die Sensorübertragung glatter und gleichmäßiger machen."
+          "text": "Höhere Bildwiederholraten verkürzen das Bildintervall (60 Hz ≈ 16,7 ms, 144 Hz ≈ 6,9 ms), sodass Kurvenbewegungen feiner dargestellt werden. Eine Mausabfragerate von 1000 Hz kann die Eingabe gleichmäßiger machen. Für den Score zählen Übung und individuelle Unterschiede aber oft mehr als die Hardware."
         }
       },
       {
@@ -180,7 +176,7 @@ export default function GermanProSmoothPursuitPage() {
         "name": "Wie oft sollte Smooth Pursuit trainiert werden?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Tägliche Einheiten von 10 bis 15 Minuten vor kompetitiven Matches wärmen die Unterarmmuskulatur auf und synchronisieren die Augenfolgebewegung. Länger als 30 Minuten sollte nicht am Stück geübt werden, um Sehnenermüdung zu vermeiden."
+          "text": "Tägliche Einheiten von 10 bis 15 Minuten vor kompetitiven Matches wärmen die Unterarmmuskulatur auf und synchronisieren die Augenfolgebewegung. Mach Pausen, sobald Unterarm oder Handgelenk ermüden oder schmerzen."
         }
       },
       {
@@ -188,7 +184,7 @@ export default function GermanProSmoothPursuitPage() {
         "name": "Warum setzt das Verlassen des Ziels den Multiplikator zurück?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Das Zurücksetzen der Combo belohnt kontinuierliche Treffer-Uptime und disziplinierte Strahlführung. Wer die Zielzone für 1,0 Sekunde verlässt, verliert seinen Multiplikator und erhält bei aktiver Zeitstrafe einen Abzug von 0,6 Sekunden."
+          "text": "Das Zurücksetzen der Combo belohnt ununterbrochenes Tracking. Solange das Fadenkreuz auf dem Ziel liegt, gibt es alle 0,25 Sekunden 50 Basispunkte (mal Combo- und Level-Multiplikator) und 0,1 Sekunden Zusatzzeit (maximal 60 Sekunden); jede volle Sekunde erhöht die Combo um 1, bis 3,0×. Wer das Ziel 1,0 Sekunde am Stück verlässt, verliert die Combo. Die Runde startet mit 45 Sekunden."
         }
       }
     ]
@@ -204,14 +200,14 @@ export default function GermanProSmoothPursuitPage() {
         "@type": "HowToStep",
         "position": 1,
         "name": "Sensitivität präzise einstellen",
-        "text": "Stelle DPI und Spielsensitivität in den Session-Optionen ein, um dein Muskelgedächtnis konsistent zu halten.",
+        "text": "Stelle den Sensitivitäts-Multiplikator in den Einstellungen auf /drills so ein, dass er sich wie dein Spiel anfühlt.",
         "url": "https://skilldrills.online/de/drills/fps/pro-smooth-pursuit#step-1"
       },
       {
         "@type": "HowToStep",
         "position": 2,
         "name": "Pointer Lock aktivieren",
-        "text": "Starte den Drill im Vollbildmodus, um den Mauszeiger hardwarenah ohne Windows-Beschleunigung zu binden.",
+        "text": "Klicke auf Start: Der Drill wechselt in den Vollbildmodus und sperrt den Mauszeiger nach dem Countdown (Pointer Lock). Die Windows-Zeigerbeschleunigung solltest du selbst ausschalten.",
         "url": "https://skilldrills.online/de/drills/fps/pro-smooth-pursuit#step-2"
       },
       {
@@ -232,53 +228,53 @@ export default function GermanProSmoothPursuitPage() {
   };
 
   const proSmoothPursuitGuide = {
-    heading: "Aim Trainer für Smooth-Tracking und bewegte Ziele",
+    heading: "Smooth Tracking üben: Leitfaden für Kurvenziele",
     intro: [
-      "Ein Aim Trainer für Smooth-Tracking trainiert die ruhige, kontinuierliche Führung des Fadenkreuzes auf bewegten Zielen. Dieser Drill nutzt Lissajous-Kurven, um die Tracking-Stabilität und Treffer-Uptime in Apex, Overwatch 2 und anderen FPS zu messen.",
+      "Smooth Tracking üben heißt, das Fadenkreuz ruhig und ohne Unterbrechung auf einem bewegten Ziel zu führen. Dieser Drill lässt ein rundes Ziel auf Lissajous-Kurven gleiten und misst, wie viel Prozent der Zeit dein Fadenkreuz darauf liegt – nützlich als Übung für Apex, Overwatch 2 und andere Shooter mit langer TTK.",
       "Die neurobiologischen Grundlagen der Blickfolgebewegung wurden maßgeblich von Richard J. Krauzlis (2004) entschlüsselt: Oszillierende Augenbewegungen werden über kortikale Rückkopplungsschleifen zwischen dem medialen superioren temporalen Areal (MST), dem frontalen Augenfeld (FEF) und dem primären visuellen Bewegungskortex (MT/V5) reguliert. Statt bloß passiv zu reagieren, modelliert dieser neuronale Schaltkreis Geschwindigkeitsvektoren voraus, um die Augenmuskulatur in Echtzeit anzusteuern.",
       "Bereits 1961 bewies Cyril Rashbass in wegweisenden psychophysischen Experimenten, dass Blickfolgebewegungen und Sakkaden anatomisch wie funktional getrennt agieren: Sakkaden springen auf Positionsfehler an, während Smooth Pursuit rein auf visuelle Geschwindigkeitsdifferenzen (Netzhaut-Schlupf) reagiert. Versuchen Spieler, einem bewegten Ziel mit ruckartigen Mini-Flicks hinterherzujagen, unterbrechen sie diesen geschlossenen Regelkreis und provozieren unfreiwillige Korrektursakkaden, die das Fadenkreuz unruhig zucken lassen.",
-      "Durch die Verbindung harmonischer Lissajous-Koordinaten mit den Prinzipien des fovealen Blick-Voraus-Führens (Land & McLeod, 2000), dynamischer Aufmerksamkeits-Erweiterung (Green & Bavelier, 2003) und digitaler Hochfrequenz-Chronometrie (Woods et al., 2015) schult dieser Trainer das vollständige Lösen von Unterarmverkrampfungen und das Führen eines lasergleichen Trefferstrahls.",
+      "Durch die Verbindung harmonischer Lissajous-Koordinaten mit den Prinzipien des fovealen Blick-Voraus-Führens (Land & McLeod, 2000), dynamischer Aufmerksamkeits-Erweiterung (Green & Bavelier, 2003) und browserbasierter Zeitmessung (Woods et al., 2015) zielt dieser Drill darauf ab, Unterarmspannung abzubauen und das Fadenkreuz ruhig entlang der Kurve zu führen.",
       "Messmethodik: Jedes Ereignis wird mit dem hochauflösenden performance.now()-Zeitstempel deines Browsers lokal erfasst – es werden keine Daten hochgeladen. Zu beachten: Aus Sicherheitsgründen (Spectre-Schutz) runden Browser Zeitmessungen auf etwa 1 ms. Bildschirme quantisieren die Darstellung auf Bildintervalle (~16,7 ms bei 60 Hz, 6,9 ms bei 144 Hz und 4,1 ms bei 240 Hz nach Woods et al., 2015). Differenzen unter 5 ms stellen messtechnisches Rauschen dar. Vergleiche deine Ergebnisse daher primär auf demselben Setup."
     ],
     benchmarks: {
-      title: "Tracking-Verweildauer & Geschwindigkeits-Kompensations-Stufen",
-      headers: ["Leistungsstufe", "Ziel-Verweildauer %", "Neuromuskulärer & Okulomotorischer Zustand", "Kompetitive Ingame-Bedeutung"],
+      title: "Smooth Tracking: SkillDrills-Übungsstufen",
+      headers: ["Übungsstufe", "Ziel-Verweildauer %", "Typisches Bild", "Übungsfokus"],
       rows: [
-        ["Stufe 1 (Apex Beam)", "85 % – 95 %+", "Lückenlose foveale Fixation; perfekter Geschwindigkeitsabgleich in Wendepunkten ohne Korrektursakkaden", "Fokus: gleichmäßiges Strahl-Tracking ohne Korrektursakkaden"],
-        ["Stufe 2 (Kompetitiver Pro)", "72 % – 85 %", "Flüssige Unterarm-Modulation; sofortige Geschwindigkeitskompensation am Scheitelpunkt", "Gewinnt ausgedehnte High-TTK-1v1-Duelle gegen strafende Gegner mit hoher Waffen-Effizienz"],
-        ["Stufe 3 (Fortgeschritten)", "58 % – 72 %", "Solides lineares Tracking; leichtes Zögern und 10–15 % Trackingverlust bei schnellen Richtungswechseln", "Kompetitive Tracking-Leistung; leichte Defizite bei extrem erratischen Mobility-Manövern"],
-        ["Stufe 4 (Mittelstufe)", "42 % – 58 %", "Neigung zum Nachflicken statt Gleiten; Unterarm-Anspannung erzeugt Ruckler und Übersteuern", "Anfällig für agile Charaktere; häufige Abrisse des Trefferstrahls während des Sprays"],
-        ["Stufe 5 (Basis / Zittrig)", "Unter 42 %", "Hohe okulomotorische Latenz; Fadenkreuz hinkt hinterher und erfordert weite korrigierende Flicks", "Verfehlt Großteil der Schüsse; zu hohe Mausreibung oder Muskelkrampf verursacht Stottern"]
+        ["Stufe 1", "85 % – 95 %+", "Fadenkreuz bleibt auch in Wendepunkten fast durchgehend auf dem Ziel", "Verweildauer auch auf hohen Levels halten"],
+        ["Stufe 2", "72 % – 85 %", "Bremst am Scheitelpunkt sauber mit dem Ziel ab", "Im schnellen Mittelteil nicht zurückfallen"],
+        ["Stufe 3", "58 % – 72 %", "Gerade Abschnitte stabil, kurze Abrisse bei Richtungswechseln", "Vor dem Wendepunkt früher abbremsen"],
+        ["Stufe 4", "42 % – 58 %", "Nachflicken statt Gleiten; Ruckler und Übersteuern", "Griff lockern, aus dem Unterarm führen"],
+        ["Stufe 5", "Unter 42 %", "Fadenkreuz hinkt hinterher, häufige große Korrektur-Flicks", "Auf niedrigen Levels das Draufbleiben lernen"]
       ],
-      note: "Tracking-Uptime-Prozentsätze spiegeln die kumulierte Verweildauer auf dem Ziel geteilt durch die Gesamtlaufzeit wider, gemessen via performance.now() (Woods et al., 2015)."
+      note: "Die Verweildauer ist der Anteil der Frames, in denen das Fadenkreuz auf dem Ziel lag. Die Stufen sind SkillDrills-Übungsstufen zur Selbsteinschätzung – keine Forschungsnormen und keine Nutzerstatistik."
     },
     techniques: {
-      title: "Evidenzbasierte Protokolle für perfektes Smooth Pursuit Aiming",
+      title: "Vier Ansätze für ruhiges Smooth Tracking",
       items: [
         {
           name: "Foveales Blick-Voraus-Führen statt Fadenkreuz-Fixierung",
-          desc: "Schauen Sie niemals direkt auf Ihr Fadenkreuz während des Trackings. Wie Land & McLeod (2000) bewiesen, stört das Fokussieren des Werkzeugs die visuelle Geschwindigkeitsvorhersage. Richten Sie Ihren Blick 2–5 Pixel vor die vordere Zielkante – Hand und Fadenkreuz folgen der fovealen Führung automatisch.",
+          desc: "Schauen Sie niemals direkt auf Ihr Fadenkreuz während des Trackings. Land & McLeod (2000) beschreiben, wie der Blick der Handlung vorausläuft. Richten Sie den Blick auf das Ziel und seine Bewegungsrichtung, damit Hand und Fadenkreuz leichter folgen.",
           tips: "Wenn sich das Zielen ruckelig anfühlt, richten Sie die Augen bewusst ganz auf die Zieloberfläche und atmen Sie langsam aus."
         },
         {
           name: "Lösen von Muskel-Mikrospannungen & Gelenkentkopplung",
           desc: "Muskelanspannung ist die Hauptursache für Zitterbewegungen. Ein verkrampfter Unterarm aktiviert antagonistische Muskelgruppen und erzeugt Zittern. Legen Sie den Unterarm entspannt auf das Mauspad auf und führen Sie weite Kurven aus dem Ellbogengelenk statt aus dem Handgelenk.",
-          tips: "Halten Sie die Maus mit nur 30–40 % der maximalen Griffkraft – eine lockere Hand führt zu flüssigem Tracking."
+          tips: "Halten Sie die Maus nur so fest wie nötig – eine lockere Hand erleichtert flüssiges Tracking."
         },
         {
           name: "Harmonische Kurvengeschwindigkeit antizipieren",
-          desc: "Lissajous-Kurven folgen sinusförmigen Bewegungsgesetzen: Sie verlangsamen sich an den Wendepunkten und beschleunigen im Zentrum. Das Kleinhirn kann diese Harmonik erlernen (Krauzlis, 2004), sodass Sie vor der Kurve sanft abbremsen und danach beschleunigen, ohne den Anschluss zu verlieren.",
+          desc: "Lissajous-Kurven folgen sinusförmigen Bewegungsgesetzen: Sie verlangsamen sich an den Wendepunkten und beschleunigen im Zentrum. Mit Übung lernen Sie diesen Rhythmus, sodass Sie vor der Kurve sanft abbremsen und danach beschleunigen, ohne den Anschluss zu verlieren.",
           tips: "Achten Sie auf den Rhythmus der Zielbewegung und antizipieren Sie die Kurvenumkehr."
         },
         {
           name: "Unterdrückung von Korrektur-Sakkaden",
-          desc: "Wenn Sie vom Ziel abrutschen, widerstehen Sie dem Drang, ruckartig zurückzuflicken. Rashbass (1961) wies nach, dass abrupte Sakkaden die visuelle Informationsverarbeitung für 20–50 ms lähmen. Beschleunigen Sie Ihre Gleitbewegung stattdessen geschmeidig, um das Ziel wieder einzufangen.",
+          desc: "Wenn Sie vom Ziel abrutschen, widerstehen Sie dem Drang, ruckartig zurückzuflicken. Hektisches Zurückreißen führt leicht zum Übersteuern auf die andere Seite. Beschleunigen Sie Ihre Gleitbewegung stattdessen geschmeidig, um das Ziel wieder einzufangen.",
           tips: "Betrachten Sie Tracking wie das Steuern eines Wagens auf nasser Fahrbahn – weiches Nachlenken schlägt hektisches Reißen."
         }
       ]
     },
     steps: [
-      "Stelle deine gewohnte Ingame-Sensitivität und DPI ein, um deine Hand-zu-Cursor-Zuordnung konsistent zu halten, und sperre den Zeiger.",
+      "Stelle den Sensitivitäts-Multiplikator auf /drills ein und klicke auf Start; nach dem Countdown wird der Zeiger gesperrt.",
       "Fixiere das leuchtende Zielmodell, sobald es seine harmonische Lissajous-Bahn über den Bildschirm beginnt.",
       "Gleite mit entspanntem Unterarm aus dem Ellbogen heraus und passe deine Geschwindigkeit nahtlos an die Kurven an.",
       "Baue deine kontinuierliche Trefferzeit auf, um den Combo-Multiplikator auf bis zu 3,0x zu steigern und alle 1400 Punkte aufzusteigen.",
@@ -289,7 +285,8 @@ export default function GermanProSmoothPursuitPage() {
     sources: pickSources('woods2015', 'krauzlis2004', 'green2003', 'rashbass1961', 'land2000'),
     related: [
       { href: "/de/drills/fps/anti-zigzag-movement-trainer", label: "Anti-Zigzag Aim Trainer" },
-      { href: "/de/drills/fps/anti-strafe-jitter-duel", label: "Anti-Strafe Jitter Trainer" },
+      { href: "/de/drills/fps/anti-strafe-jitter-duel", label: "ADAD-Tracking (Anti-Strafe)" },
+      { href: "/de/drills/fps/strafe-tracking", label: "Tracking Aim Training (Strafe-Übung)" },
       { href: "/de/drills/reaction-speed/fps-tracking-trainer", label: "FPS Tracking Trainer" },
       { href: "/de/drills/fps/flick-shot-training", label: "Flick Shot Trainer" },
       { href: "/de/drills/reaction-speed/visual-tracking-speed-test", label: "Visual Tracking Speed Test" }
@@ -297,24 +294,24 @@ export default function GermanProSmoothPursuitPage() {
   };
 
   const copyDe = {
-    h1Keyword: "Aim Trainer",
-    h1Suffix: " – Smooth-Tracking üben",
+    h1Keyword: "Smooth Tracking üben",
+    h1Suffix: ": Kurvenziele verfolgen",
     statScore: "Punkte",
     statTime: "Verbleibende Zeit",
     statAccuracy: "Tracking-Präzision",
     statBestScore: "Highscore",
-    startTitle: "Aim Trainer",
-    startSubtitle: "Lissajous-Kurven Smooth Pursuit • Stufenlose Progression",
+    startTitle: "Smooth Tracking",
+    startSubtitle: "Lissajous-Kurven • Pointer Lock • Stufenlose Progression",
     getReady: "BEREIT MACHEN",
     stageCaption: "Führe dein Fadenkreuz kontinuierlich und ohne Ruckeln auf dem oszillierenden Ziel entlang flüssiger Kurvenbahnen.",
     rulesTitle: "Trainingsanleitung & Punktesystem",
     rulesItems: [
-      { num: "1", text: "Ziel-Tracking", highlight: "+50 PTS (+0.4s/s)", result: "×Combo-Multiplikator" },
-      { num: "2", text: "Kontinuierliche Combo", highlight: "Bis zu 3.0×", result: "Max. Multiplikator" },
+      { num: "1", text: "Auf dem Ziel", highlight: "+50 PTS je 0,25s (+0,4s/s)", result: "×Combo-Multiplikator" },
+      { num: "2", text: "1s ununterbrochen", highlight: "Combo +1, bis 3,0×", result: "Max. Multiplikator" },
       { num: "3", text: "Levelaufstieg", highlight: "+1 Level / 1400 PTS", result: "Adaptive Kurven" },
-      { num: "4", text: "Zielverlust-Strafe", highlight: "1.0s Zielverlust", result: "Combo-Reset (-0.6s)" }
+      { num: "4", text: "Zielverlust", highlight: "1,0s am Stück daneben", result: "Combo-Reset" }
     ],
-    aboutTitle: "Über den Aim Trainer und Smooth-Tracking"
+    aboutTitle: "Über Smooth Tracking"
   };
 
   return (

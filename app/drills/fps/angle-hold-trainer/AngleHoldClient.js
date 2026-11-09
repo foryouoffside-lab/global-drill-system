@@ -79,7 +79,7 @@ const RULES_ITEMS = [
   { num: "1", text: "Successful Peek Hit", highlight: "+100 PTS (+2s, max 60s)", result: "×Combo Mult" },
   { num: "2", text: "Peeking Spawns", highlight: "Corner Outcrops", result: "Faster & Shorter" },
   { num: "3", text: "Level Progression", highlight: "+1 Level / 1400 PTS", result: "Adaptive Scaling" },
-  { num: "4", text: "Miss / Pre-fire", highlight: "Failure Penalty", result: "Resets Combo (-0.8s)" }
+  { num: "4", text: "Miss / Pre-fire", highlight: "Failure Penalty", result: "Resets Combo (-1s)" }
 ];
 
 const ABOUT_INTRO = [
@@ -758,12 +758,12 @@ export default function AngleHoldClient({ copy = null }) {
               {copy?.h1Prefix || null}
               <span data-seo-kw="1">{copy?.h1Keyword || copy?.title || t('angleHold.title', 'Crosshair Placement & Angle Hold Trainer')}</span>
               {copy?.h1Suffix || null}
-              {(copy?.subtitle || t('angleHold.subtitle', null)) && (
-                <span className="block text-sm font-semibold text-slate-400 mt-1">
-                  {copy?.subtitle || t('angleHold.subtitle', '')}
-                </span>
-              )}
             </h1>
+            {(copy?.subtitle || t('angleHold.subtitle', null)) && (
+              <p className="text-sm font-semibold text-slate-400 mt-1">
+                {copy?.subtitle || t('angleHold.subtitle', '')}
+              </p>
+            )}
           </div>
         )}
 

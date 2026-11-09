@@ -6,18 +6,16 @@ import { pickSources } from '@/lib/drillSources';
 import DrillFooter from '@/components/drill/DrillFooter';
 
 export const metadata = {
-  title: "Teste de Reflexo | Tempo de Reação FPS | SkillDrills",
-  description: "Teste de reflexo grátis no navegador: meça o tempo entre o estímulo visual e o clique para treinar reações em FPS.",
+  title: "Teste de Reflexo para FPS: Reação no Clique | SkillDrills",
+  description: "Teste de reflexo para FPS grátis: clique quando o alvo central ficar verde e veja seu tempo de reação no clique em ms. Esperas aleatórias e fintas. Requer mouse.",
   keywords: [
-    "teste de reflexo",
-    "teste de reflexo click",
     "teste de reflexo para fps",
-    "teste de reflexo mouse",
-    "teste de tempo de reação",
+    "teste de reflexo fps",
+    "tempo de reação no clique",
+    "reação no clique",
     "tempo de reação fps",
     "reflexo gamer",
-    "reação rápida fps",
-    "teste reflexo online"
+    "reação rápida fps"
   ],
   alternates: {
     canonical: "https://skilldrills.online/pt/drills/fps/instant-response",
@@ -28,8 +26,8 @@ export const metadata = {
     follow: true,
   },
   openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
-    title: "Teste de Reflexo | Tempo de Reação FPS | SkillDrills",
-    description: "Teste de reflexo grátis no navegador: meça o tempo entre o estímulo visual e o clique para treinar reações em FPS.",
+    title: "Teste de Reflexo para FPS: Reação no Clique | SkillDrills",
+    description: "Teste de reflexo para FPS grátis: clique quando o alvo central ficar verde e veja seu tempo de reação no clique em ms. Esperas aleatórias e fintas. Requer mouse.",
     url: "https://skilldrills.online/pt/drills/fps/instant-response",
     siteName: 'SkillDrills',
     locale: 'pt_BR',
@@ -37,8 +35,8 @@ export const metadata = {
   },
   twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: 'summary_large_image',
-    title: "Teste de Reflexo | Tempo de Reação FPS | SkillDrills",
-    description: "Teste de reflexo grátis no navegador: meça o tempo entre o estímulo visual e o clique para treinar reações em FPS.",
+    title: "Teste de Reflexo para FPS: Reação no Clique | SkillDrills",
+    description: "Teste de reflexo para FPS grátis: clique quando o alvo central ficar verde e veja seu tempo de reação no clique em ms. Esperas aleatórias e fintas. Requer mouse.",
   },
 };
 
@@ -49,14 +47,14 @@ export default function InstantResponsePtPage() {
     "itemListElement": [
       { "@type": "ListItem", "position": 1, "name": "SkillDrills", "item": "https://skilldrills.online/pt" },
       { "@type": "ListItem", "position": 2, "name": "Treinos de FPS", "item": "https://skilldrills.online/pt/drills/fps" },
-      { "@type": "ListItem", "position": 3, "name": "Teste de reflexo - reação FPS", "item": "https://skilldrills.online/pt/drills/fps/instant-response" }
+      { "@type": "ListItem", "position": 3, "name": "Teste de Reflexo para FPS", "item": "https://skilldrills.online/pt/drills/fps/instant-response" }
     ]
   };
 
   const webAppSchema = {
     "@context": "https://schema.org",
     "@type": "WebApplication",
-    "name": "Teste de reflexo para FPS",
+    "name": "Teste de Reflexo para FPS: Reação no Clique",
     "url": "https://skilldrills.online/pt/drills/fps/instant-response",
     "applicationCategory": "GameApplication",
     "operatingSystem": "All",
@@ -66,20 +64,20 @@ export default function InstantResponsePtPage() {
       "price": "0",
       "priceCurrency": "USD"
     },
-    "description": "Treinador de reflexos e teste de latência de clique para FPS no navegador. Meça milissegundos reais e elimine disparos precipitados em fintas."
+    "description": "Teste de reflexo para FPS no navegador: mede o tempo de reação no clique em milissegundos e penaliza disparos antecipados e cliques em fintas."
   };
 
   const softwareSchema = {
     "@context": "https://schema.org",
     "@type": "SoftwareApplication", "sameAs": ["https://en.wikipedia.org/wiki/Reaction_time", "https://en.wikipedia.org/wiki/Mental_chronometry"],
-    "name": "Teste de reflexo SkillDrills",
+    "name": "Teste de Reflexo para FPS - SkillDrills",
     "applicationCategory": "GameApplication",
     "operatingSystem": "Web Browser",
     "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
     "description": "Ferramenta psicomotora para medição da latência de estímulo visual e resposta de clique em shooters competitivos.",
     "genre": "Treino FPS / Reflexos",
     "url": "https://skilldrills.online/pt/drills/fps/instant-response",
-    "dateModified": "2026-09-20",
+    "dateModified": "2026-11-09",
     "publisher": {
       "@type": "Organization",
       "name": "SkillDrills",
@@ -90,28 +88,28 @@ export default function InstantResponsePtPage() {
   const videoGameSchema = {
     "@context": "https://schema.org",
     "@type": "VideoGame",
-    "name": "Teste de reflexo - reação FPS",
+    "name": "Teste de Reflexo para FPS",
     "url": "https://skilldrills.online/pt/drills/fps/instant-response",
-    "description": "Exercício de reflexo com alvos estroboscópicos e fintas visuais para treinar contenção de disparo e retenção de ângulos.",
+    "description": "Alvo central que acende após uma espera aleatória, com fintas curtas a partir dos níveis intermediários, para treinar contenção de disparo e retenção de ângulos.",
     "gamePlatform": "Web Browser",
-    "genre": ["Treino FPS", "Teste de Reação"],
+    "genre": ["Treino FPS", "Reação no clique"],
     "playMode": "SinglePlayer",
     "applicationCategory": "Game",
     "operatingSystem": "Web Browser",
-    "dateModified": "2026-09-20"
+    "dateModified": "2026-11-09"
   };
 
   const faqSchema = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
-    "dateModified": "2026-09-20",
+    "dateModified": "2026-11-09",
     "mainEntity": [
       {
         "@type": "Question",
-        "name": "Qual é o tempo de reação médio de um jogador de FPS?",
+        "name": "Que tempo de reação no clique devo buscar neste teste?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "A média de adultos saudáveis em monitores comuns gira em torno de 220 a 250 ms. Marcas entre 150 e 190 ms são pouco comuns e dependem do monitor e da antecipação."
+          "text": "Não publicamos médias de jogadores. A tabela abaixo traz faixas de prática SkillDrills tiradas da pontuação: há bônus de velocidade abaixo de 500 ms, completo com 150 ms ou menos. Compare-se principalmente consigo mesmo, no mesmo aparelho."
         }
       },
       {
@@ -127,7 +125,7 @@ export default function InstantResponsePtPage() {
         "name": "Qual é a diferença entre tempo de reação simples e de escolha?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "O tempo de reação simples (Donders Tipo A) exige apenas um clique rápido ao ver o sinal. A reação de escolha (Lei de Hick) exige decidir entre atirar ou não (como evitar atirar em uma finta), adicionando de 60 a 100 ms de processamento cortical."
+          "text": "O tempo de reação simples (Donders Tipo A) exige apenas um clique rápido ao ver o sinal. A reação de escolha (Lei de Hick) exige decidir entre atirar ou não (como evitar atirar em uma finta), o que adiciona tempo de decisão."
         }
       },
       {
@@ -159,7 +157,7 @@ export default function InstantResponsePtPage() {
         "name": "A cafeína realmente melhora o tempo de reação?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Em doses moderadas (100 a 200 mg), a cafeína estimula o sistema nervoso central e pode reduzir de 10 a 15 ms a latência motora. No entanto, o excesso gera tremores que prejudicam a precisão fina."
+          "text": "Não damos números: o efeito varia de pessoa para pessoa, e o excesso causa tremores que prejudicam a precisão. Compare sessões feitas em condições parecidas."
         }
       },
       {
@@ -167,7 +165,7 @@ export default function InstantResponsePtPage() {
         "name": "Por que o tempo de reação piora à noite?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "A fadiga mental e a queda circadiana diminuem a velocidade de transmissão nas sinapses visuais e motoras, aumentando a latência em até 40 a 60 ms em comparação ao estado de pleno descanso."
+          "text": "Cansaço e falta de sono podem deixar seus cliques mais lentos. Compare as sessões cansadas separadamente das sessões normais."
         }
       },
       {
@@ -183,7 +181,7 @@ export default function InstantResponsePtPage() {
         "name": "Por quanto tempo devo treinar reflexos diariamente?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Sessões intensivas de 10 a 15 minutos são ideais. Exercícios de reação exigem foco neuromuscular máximo; praticar por períodos mais longos gera esgotamento e consolida vícios de antecipação errônea."
+          "text": "Sessões de 10 a 15 minutos costumam bastar. Treinos de reação exigem muito foco; sessões longas cansam e favorecem cliques antecipados."
         }
       }
     ]
@@ -220,63 +218,63 @@ export default function InstantResponsePtPage() {
         "@type": "HowToStep",
         "position": 4,
         "name": "Disparar Instantaneamente ao Sinal Verde",
-        "text": "Pressione o botão no instante exato da mudança de cor para registrar sua latência neuromuscular líquida.",
+        "text": "Pressione o botão no instante da mudança de cor para registrar seu tempo de reação no clique (inclui a latência do monitor e do mouse).",
         "url": "https://skilldrills.online/pt/drills/fps/instant-response#step-4"
       }
     ]
   };
 
   const copyPt = {
-    h1Keyword: "Teste de Reflexo",
-    h1Suffix: " — tempo de reação FPS",
-    subtitle: "Meça e treine a latência de reação visual, a velocidade do clique e a disciplina de gatilho",
+    h1Keyword: "Teste de Reflexo para FPS",
+    h1Suffix: " — reação no clique",
+    subtitle: "Meça seu tempo de reação no clique em ms e treine a disciplina de gatilho contra fintas",
     statScore: "Pontuação",
     statTime: "Tempo Restante",
     statAccuracy: "Precisão",
     statBestScore: "Recorde Pessoal",
-    startTitle: "Teste de Reflexo",
-    startSubtitle: "Latência visual & reflexo de clique • Dificuldade adaptativa",
+    startTitle: "Teste de Reflexo para FPS",
+    startSubtitle: "Mouse + Pointer Lock • Início com 45 s • Níveis infinitos",
     getReady: "Preparar",
     pausedTitle: "Pausado",
     pausedSubtitle: "Clique para retomar (a trava de cursor será reativada)",
     stageCaption: "Clique imediatamente quando o alvo central acender em verde. Evite disparos antecipados em fintas.",
     rulesTitle: "Regras de Treino e Sistema de Pontos",
     rulesItems: [
-      { num: "1", text: "Acerto no Flash", highlight: "+100 PTS (+0.6s)", result: "×Mult de Combo" },
-      { num: "2", text: "Bônus de Velocidade", highlight: "Tiro Sub-150ms", result: "Até +150 PTS" },
+      { num: "1", text: "Acerto no Flash", highlight: "+100 PTS (+2 s, máx. 60 s)", result: "×Mult de Combo" },
+      { num: "2", text: "Bônus de Velocidade", highlight: "Tiro abaixo de 500 ms", result: "Até +150 PTS (≤150 ms)" },
       { num: "3", text: "Progressão de Nível", highlight: "+1 Nível / 1400 PTS", result: "Janelas Adaptativas" },
-      { num: "4", text: "Disparo Antecipado", highlight: "Penalidade", result: "Reset de Combo (-0.8s)" }
+      { num: "4", text: "Disparo Antecipado", highlight: "Inclui fintas, erros e tempo esgotado", result: "Reset de Combo (-1 s)" }
     ],
-    aboutTitle: "Sobre o teste de reflexo e reação FPS",
+    aboutTitle: "Sobre o Teste de Reflexo para FPS",
     aboutHeading: "Como funciona o teste de reflexo para FPS?"
   };
 
   const instantResponseGuide = {
-    heading: "Teste de Reflexo para Reações FPS",
+    heading: "Teste de Reflexo para FPS: guia e faixas de prática",
     intro: [
-      "O teste de reflexo mede o intervalo entre um estímulo visual e o clique do jogador. Este drill registra a latência em milissegundos para comparar reações em duelos de CS2, Valorant e outros FPS.",
-      "A atenção espacial focalizada desempenha papel determinante na redução desse atraso. De acordo com os experimentos de Michael Posner (1990), ancorar a atenção no ponto de expectativa reduz em até 20 a 30 ms o tempo de processamento cortical em relação a uma observação periférica dispersa. Em termos competitivos no Valorant e no CS2, essa diferença define quem ganha a troca de tiros ao segurar um ângulo.",
-      "A latência da cadeia de hardware e o relógio digital do sistema impõem limites à medição prática. Este teste emprega o temporizador de alta precisão performance.now() da API do navegador (Woods et al., 2015). Em um ecossistema competitivo moderno com monitor de 240 Hz (4,17 ms por quadro) e mouse de 1000 Hz (1,0 ms por relatório USB), o atraso instrumental é reduzido ao mínimo para avaliar o tempo biológico puro.",
+      "O teste de reflexo para FPS mede o intervalo entre o alvo central ficar verde e o seu clique. O drill mostra o tempo de reação no clique em milissegundos e penaliza cliques antecipados, para treinar a retenção de ângulos em CS2, Valorant e outros FPS.",
+      "A atenção espacial focalizada desempenha papel determinante na redução desse atraso. De acordo com os experimentos de Michael Posner (1990), direcionar a atenção ao ponto esperado pode acelerar a resposta em relação a uma observação dispersa. No Valorant e no CS2, é o motivo para manter o olhar no ângulo que você segura.",
+      "A latência da cadeia de hardware e o relógio digital do sistema impõem limites à medição prática. Este teste emprega o temporizador de alta precisão performance.now() da API do navegador (Woods et al., 2015). Em um ecossistema competitivo moderno com monitor de 240 Hz (4,17 ms por quadro) e mouse de 1000 Hz (1,0 ms por relatório USB), o atraso instrumental diminui, mas continua incluído em cada medição.",
       "Medição técnica no seu navegador: todos os eventos de clique são cronometrados localmente sem transmissão para servidores de rede. Por razões de mitigação de vulnerabilidades Spectre, navegadores discretizam o relógio em ~1 ms, e telas operam em frequências fixas (16,7 ms a 60 Hz contra 4,1 ms a 240 Hz). Para comparações rigorosas, avalie sua evolução em condições de hardware idênticas."
     ],
     benchmarks: {
-      title: "Benchmarks de Tempo de Reação Simples e Níveis de Desempenho",
-      headers: ["Nível / Categoria", "Latência Típica (ms)", "Mecanismo Neuromuscular e Hardware", "Impacto Prático em Partidas FPS"],
+      title: "Faixas de prática SkillDrills por tempo de reação no clique",
+      headers: ["Faixa SkillDrills", "Medição no drill (ms)", "Pontos base por acerto (antes dos multiplicadores de combo e nível)", "Observação"],
       rows: [
-        ["Nível 1 (Reflexo Sobre-Humano)", "< 165 ms", "Estado de alerta máximo, 240Hz+ e disparo automatizado", "Vitórias instantâneas em qualquer duelo de abertura angular"],
-        ["Nível 2 (Faixa Avançada)", "165 – 195 ms", "Excelente coordenação sensoriomotora em monitor de 240Hz", "Objetivo: manter um tempo estável e repetível"],
-        ["Nível 3 (Competitivo Avançado)", "195 – 225 ms", "Reflexo condicionado limpo em equipamentos de 144Hz", "Excelente retenção de ângulo com posicionamento correto de mira"],
-        ["Nível 4 (Média dos Jogadores)", "225 – 265 ms", "Tempo padrão de adultos não treinados em telas de 60Hz a 144Hz", "Vulnerável a aberturas rápidas caso o ângulo não esteja ajustado"],
-        ["Nível 5 (Fadiga / Input Lag)", "265 – 330+ ms", "Fadiga acumulada, sono inadequado ou atraso de entrada no PC", "Atraso perceptível entre avistar o inimigo e conseguir atirar"]
+        ["Faixa A", "≤ 150 ms", "100 + bônus de velocidade 150", "Bônus completo. Se for frequente, verifique se não está antecipando."],
+        ["Faixa B", "150 – 250 ms", "100 + aprox. 107–150", "A maior parte do bônus se mantém."],
+        ["Faixa C", "250 – 350 ms", "100 + aprox. 64–107", "Bônus cai para cerca da metade."],
+        ["Faixa D", "350 – 500 ms", "100 + 0–64", "Bônus perto de 0."],
+        ["Faixa E", "> 500 ms", "100 (sem bônus)", "No nível 1 o alvo fica aceso cerca de 550 ms; depois fica mais curto e o tempo esgota."]
       ],
-      note: "Valores sintetizados a partir dos modelos cronométricos de Donders (1868) e benchmarks de latência digital de Woods et al. (2015)."
+      note: "Estas faixas de prática SkillDrills vêm da pontuação do drill. Não são normas de pesquisa nem dados de usuários; as medições incluem a latência do monitor, do mouse e do navegador."
     },
     techniques: {
-      title: "Técnicas Comprovadas para Reduzir a Latência de Reação",
+      title: "Técnicas para Reduzir a Latência de Reação",
       items: [
         {
           name: "Eliminação do Pré-Curso do Switch",
-          desc: "Mantenha o indicador repousando levemente sobre o botão do mouse, no limiar exato do clique. Eliminar o deslocamento mecânico inicial economiza entre 20 e 35 ms.",
+          desc: "Mantenha o indicador repousando levemente sobre o botão do mouse, no limiar exato do clique. Eliminar o deslocamento mecânico inicial encurta o movimento do clique.",
           tips: "Não tensione o braço todo; mantenha a mão relaxada para não endurecer o reflexo."
         },
         {
@@ -318,7 +316,7 @@ export default function InstantResponsePtPage() {
       "Clique em 'Iniciar Treino' para ativar o modo de tela cheia e o bloqueio de cursor (Pointer Lock).",
       "Concentre a atenção visual na retícula central com o dedo indicador encostado levemente no gatilho.",
       "Clique instantaneamente ao detectar o sinal verde, evitando atirar antes da hora durante o atraso aleatório.",
-      "Analise seu tempo médio de reação, desvio padrão de consistência e sequências de combo ao longo dos níveis."
+      "Cada acerto soma 2 s (máx. 60 s); cada disparo antecipado, erro ou tempo esgotado tira 1 s. A partida começa com 45 s e termina em 0; depois veja tempo médio de reação, precisão, maior combo e nível alcançado."
     ],
     audience: "Jogadores competitivos de FPS e shooters táticos (Valorant, CS2, Rainbow Six Siege, Apex Legends, Overwatch 2), atletas de esportes eletrônicos e qualquer um treinando velocidade de reflexo.",
     faqs: faqSchema.mainEntity.map(e => ({ q: e.name, a: e.acceptedAnswer.text })),

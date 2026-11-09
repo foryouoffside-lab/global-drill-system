@@ -6,12 +6,11 @@ import { getAlternateLanguages } from '@/lib/i18n/locales';
 import RelatedDrills from '@/components/drill/RelatedDrills';
 
 export const metadata = {
-  title: "エイム練習 | マイクロフリック微調整 | SkillDrills",
-  description: "無料ブラウザのエイム練習で、初弾フリック後の微調整と指先の減速を鍛えます。VALORANT・CS2のヘッドショット精度を記録。",
+  title: "マイクロフリック練習｜エイム微調整 | SkillDrills",
+  description: "マイクロフリック練習をブラウザで。大きなアンカーターゲットを撃つと近くに小さなマイクロターゲットが出現し、中心に近いほど高得点。命中ごとに+1秒、ミスは-1秒。VALORANT・CS2のヘッドショット精度とエイム微調整を無料で練習できます。",
   keywords: [
-    "エイム練習",
-    "エイム練習 ブラウザ",
-    "エイム練習 valorant",
+    "マイクロフリック練習",
+    "エイム マイクロ フリック",
     "マイクロフリック",
     "エイム 微調整",
     "ヘッドショット 精度 練習",
@@ -29,8 +28,8 @@ export const metadata = {
     follow: true,
   },
   openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
-    title: "エイム練習 | マイクロフリック微調整 | SkillDrills",
-    description: "無料ブラウザのエイム練習で、初弾フリック後の微調整と指先の減速を鍛えます。VALORANT・CS2のヘッドショット精度を記録。",
+    title: "マイクロフリック練習｜エイム微調整 | SkillDrills",
+    description: "マイクロフリック練習をブラウザで。大きなアンカーターゲットを撃つと近くに小さなマイクロターゲットが出現し、中心に近いほど高得点。命中ごとに+1秒、ミスは-1秒。VALORANT・CS2のヘッドショット精度とエイム微調整を無料で練習できます。",
     url: "https://skilldrills.online/ja/drills/fps/micro-correction-precision",
     siteName: 'SkillDrills',
     locale: 'ja_JP',
@@ -38,8 +37,8 @@ export const metadata = {
   },
   twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: 'summary_large_image',
-    title: "エイム練習 | マイクロフリック微調整 | SkillDrills",
-    description: "無料ブラウザのエイム練習で、初弾フリック後の微調整と指先の減速を鍛えます。VALORANT・CS2のヘッドショット精度を記録。",
+    title: "マイクロフリック練習｜エイム微調整 | SkillDrills",
+    description: "マイクロフリック練習をブラウザで。大きなアンカーターゲットを撃つと近くに小さなマイクロターゲットが出現し、中心に近いほど高得点。命中ごとに+1秒、ミスは-1秒。VALORANT・CS2のヘッドショット精度とエイム微調整を無料で練習できます。",
   },
 };
 
@@ -50,19 +49,19 @@ export default function MicroCorrectionJaPage() {
     "itemListElement": [
       { "@type": "ListItem", "position": 1, "name": "SkillDrills", "item": "https://skilldrills.online/ja" },
       { "@type": "ListItem", "position": 2, "name": "FPSエイム練習", "item": "https://skilldrills.online/ja/drills/fps" },
-      { "@type": "ListItem", "position": 3, "name": "エイム練習 - マイクロフリック微調整", "item": "https://skilldrills.online/ja/drills/fps/micro-correction-precision" }
+      { "@type": "ListItem", "position": 3, "name": "マイクロフリック練習 - エイム微調整", "item": "https://skilldrills.online/ja/drills/fps/micro-correction-precision" }
     ]
   };
 
   const softwareSchema = {
     "@context": "https://schema.org",
     "@type": "SoftwareApplication", "sameAs": ["https://en.wikipedia.org/wiki/Fitts%27s_law", "https://en.wikipedia.org/wiki/Fine_motor_skill"],
-    "name": "エイム練習 - マイクロフリック微調整",
+    "name": "マイクロフリック練習 - エイム微調整",
     "applicationCategory": "GameApplication",
     "operatingSystem": "Web Browser",
-    "dateModified": "2026-09-20",
+    "dateModified": "2026-11-09",
     "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
-    "description": "初期フリック後の微小な位置ズレ修正、指先減速制御、ヘッドショット精度を鍛える無料ブラウザFPSエイムトレーナー。",
+    "description": "アンカーの次に出る小さなマイクロターゲットを正確に撃ち、微修正時間と精度を記録する無料ブラウザのマイクロフリック練習。",
     "genre": "FPS Training / Micro-Correction",
     "url": "https://skilldrills.online/ja/drills/fps/micro-correction-precision",
     "publisher": {
@@ -75,7 +74,7 @@ export default function MicroCorrectionJaPage() {
   const webAppSchema = {
     "@context": "https://schema.org",
     "@type": "WebApplication",
-    "name": "エイム練習 - マイクロフリック微調整",
+    "name": "マイクロフリック練習 - エイム微調整",
     "url": "https://skilldrills.online/ja/drills/fps/micro-correction-precision",
     "applicationCategory": "GameApplication",
     "operatingSystem": "All",
@@ -85,16 +84,16 @@ export default function MicroCorrectionJaPage() {
       "price": "0",
       "priceCurrency": "USD"
     },
-    "description": "初期フリック後の微小な位置ズレ修正、指先減速制御、ヘッドショット精度を鍛える無料ブラウザFPSエイムトレーナー。"
+    "description": "アンカーの次に出る小さなマイクロターゲットを正確に撃ち、微修正時間と精度を記録する無料ブラウザのマイクロフリック練習。"
   };
 
   const videoGameSchema = {
     "@context": "https://schema.org",
     "@type": "VideoGame",
-    "name": "エイム練習 - マイクロフリック微調整",
+    "name": "マイクロフリック練習 - エイム微調整",
     "url": "https://skilldrills.online/ja/drills/fps/micro-correction-precision",
-    "description": "初期フリック後の微小な位置ズレ修正、指先減速制御、ヘッドショット精度を鍛える無料ブラウザFPSエイムトレーナー。",
-    "dateModified": "2026-09-20",
+    "description": "アンカーの次に出る小さなマイクロターゲットを正確に撃ち、微修正時間と精度を記録する無料ブラウザのマイクロフリック練習。",
+    "dateModified": "2026-11-09",
     "gamePlatform": "Web Browser",
     "genre": ["FPS Training", "Aim Trainer", "Micro Correction"],
     "playMode": "SinglePlayer",
@@ -106,7 +105,7 @@ export default function MicroCorrectionJaPage() {
   const faqSchema = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
-    "dateModified": "2026-09-20",
+    "dateModified": "2026-11-09",
     "mainEntity": [
       {
         "@type": "Question",
@@ -134,10 +133,10 @@ export default function MicroCorrectionJaPage() {
       },
       {
         "@type": "Question",
-        "name": "VALORANTやCS2のプロ選手はマイクロフリックをどのように練習していますか？",
+        "name": "VALORANTやCS2向けにマイクロフリックはどう練習すればいいですか？",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "プロ選手はプリエイムからの数ピクセル〜数十ピクセルの微小なズレを指先（つまみ持ち・つかみ持ち）の関節屈伸のみで瞬時に補正する高密度なマイクロアジャスト訓練を日常的に行っています。"
+          "text": "プリエイム位置と実際の頭の位置との数ピクセルのズレを、指先と手首の小さな動きで合わせる動作を繰り返します。このドリルでは、アンカーを撃った後に55〜90px（レベルが上がると最大145px）離れた位置に出る小さなマイクロターゲットへ照準を移す動作がその練習になります。"
         }
       },
       {
@@ -153,7 +152,7 @@ export default function MicroCorrectionJaPage() {
         "name": "マイクロフリック訓練でヘッドショット率は向上しますか？",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "向上に役立つ可能性があります。実戦の撃ち合いで初弾フリックが頭部から数ミリずれた際、即座に修正してワンタップをねじ込むリカバリー率が劇的に上がります。"
+          "text": "役立つ可能性があります。初弾フリックが頭から少しずれたときに照準を頭の中心へ戻す修正動作を繰り返し練習するためです。効果には個人差と練習量による差があり、保証されるものではありません。"
         }
       },
       {
@@ -185,7 +184,15 @@ export default function MicroCorrectionJaPage() {
         "name": "このドリルでミスやタイムアウトになるとコンボがリセットされるのはなぜですか？",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "スピードだけでなく極限の正確性を強制するためです。ミスにペナルティを課すことで、実戦さながらの緊張感の中で冷静に照準を合わせる神経規律を養います。"
+          "text": "スピードより確認してから撃つ正確さを練習するためです。アンカーやマイクロを外したり、ターゲットが消えるまで撃てなかったりするとコンボが0に戻り、残り時間が1秒減ります。コンボはマイクロ命中時にだけ増え、コンボ倍率は最大3.0倍です。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "マイクロフリック練習は何秒続き、スコアはどう計算されますか？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "開始時は45秒で、アンカー命中とマイクロ命中ごとにそれぞれ+1秒されます（最大60秒）。残り時間が0になると終了です。アンカー命中は10点、マイクロ命中は中心に近いほど100〜150点で、これにコンボ倍率とレベル倍率が掛かります。1,400点ごとにレベルが1上がり上限はなく、レベルが上がるほどターゲットが小さくなり表示時間（1.8秒から開始）が短くなります。"
         }
       }
     ]
@@ -225,26 +232,26 @@ export default function MicroCorrectionJaPage() {
   };
 
   const microCorrectionGuide = {
-    heading: "エイム練習とマイクロフリック微調整ガイド",
+    heading: "マイクロフリック練習とエイム微調整ガイド",
     subtitle: "一次フリック直後の微小な位置ズレ修正、終末摩擦減速、そしてヘッドショット精度を科学的プロトコルで極める",
     intro: [
-      "エイム練習は、初弾フリックで目標付近へ移動したあと、照準を短く止めて中心へ合わせる動作を反復する練習です。このドリルは小さな標的への最後の微調整時間と命中率を記録し、VALORANT・CS2でのオーバーフリックと遅い補正を減らします。",
+      "マイクロフリック練習は、初弾フリックで目標付近へ移動したあと、照準を短く止めて中心へ合わせる動作を反復する練習です。このドリルは小さな標的への最後の微調整時間と命中率を記録し、VALORANT・CS2でのオーバーフリックと遅い補正を減らします。",
       "急速な目標指向運動を支配する理論的枠組みは、Robert S. Woodworth（1899）が提唱した二段階モデルに端を発します。目標へ向けて四肢を急加速させる初期の開ループ弾道インパルス（Open-loop ballistic impulse）と、連続的な感覚フィードバックによって精密誘導される終末閉ループ制御フェーズ（Closed-loop control）の組み合わせです。この速度と精度のトレードオフはPaul M. Fitts（1954）のフィッツの法則によって数学的に定式化され、移動時間は目標距離と標的幅の比率に応じて対数関数的に増大します（ID = log2(2D / W)）。",
       "その後、David E. Meyerら（1988）が提唱した確率的最適化サブムーブメントモデル（Stochastic Optimized Submovement Model）により、人間の運動制御系は過度な慣性オーバーシュートを防ぐため、一次動作を標的境界のわずかに手前または近傍に着地させ、その直後に極めて迅速な二次微修正動作（Submovement）を繰り出して座標誤差を解消するよう運動計画を構築することが実証されました。",
       "終末固視フェーズにおいて、人間の眼球運動系はマイクロサッカード（振幅1度未満の不随意微小跳躍運動）を展開し、網膜の神経受容を更新して中心窩を高周波の視覚標的に正確に位置合わせします（Rolfs, 2009; Martinez-Conde et al., 2004）。本ドリルはポインターロックによるマウス入力と performance.now() によるデジタル時間測定（Woods et al., 2015）を組み合わせ、終末の照準振動や行き過ぎ（オーバーフリック）を抑える練習を支援します。",
       "測定精度とハードウェア遅延について：すべての判定イベントはブラウザの performance.now() 高分解能クロックを用いてデバイス内でリアルタイムにタイムスタンプが記録され、外部へスコアが送信されることはありません。ブラウザ仕様としてSpectre対策のためタイマー分解能が約1msに丸められている点、およびディスプレイのリフレッシュレート（60Hzで約16.7ms、144Hzで約6.9ms、240Hzで約4.1ms; Woods et al., 2015）による物理的表示量子化が存在します。さらにマウスのポーリングレート（125Hzで約8ms、1000Hzで1ms）も加わるため、5ms未満の微小な差異は測定ノイズとして扱い、他者の環境ではなく同一ハードウェア環境での自己記録比較を行ってください。"
     ],
     benchmarks: {
-      title: "マイクロ補正レイテンシ & 微調整精度 ベンチマーク基準",
-      headers: ["スキル帯", "平均微修正時間", "マイクロ命中率", "実戦における競技的影響"],
+      title: "SkillDrills マイクロフリック練習の目安（参考）",
+      headers: ["練習段階", "平均微修正時間", "マイクロ命中率", "練習のポイント"],
       rows: [
-        ["Tier 1（最上位段階）", "140 ms 未満", "95% – 99%+", "フリックと一体化した無意識の指先微修正；初弾ヘッドショット率の極大化"],
-        ["Tier 2（上級段階）", "140 – 190 ms", "88% – 95%", "卓越した減速制御；ズレたエイムを即座にリカバーして撃ち合いを制す"],
-        ["Tier 3（中上級段階）", "190 – 250 ms", "80% – 88%", "堅実な微調整；手首の余計な力みにより数回に一度オーバーシュートが発生"],
-        ["Tier 4（ゴールド・プラチナ級）", "250 – 340 ms", "70% – 80%", "減速が甘く目標を行き過ぎてから戻す「二重修正」による撃ち負け"],
-        ["Tier 5（シルバー以下ビギナー）", "340 ms 以上", "70% 未満", "指先を使えず腕だけで微調整しようとするため微小ターゲットを外しやすい"]
+        ["段階 1", "140 ms 未満", "95% – 99%+", "フリックと微修正が一つの動作につながる段階"],
+        ["段階 2", "140 – 190 ms", "88% – 95%", "減速制御が安定している段階"],
+        ["段階 3", "190 – 250 ms", "80% – 88%", "手首の力みでときどきオーバーシュートする段階"],
+        ["段階 4", "250 – 340 ms", "70% – 80%", "行き過ぎてから戻す「二重修正」が多い段階"],
+        ["段階 5", "340 ms 以上", "70% 未満", "腕だけで微調整しようとする練習初期の段階"]
       ],
-      note: "平均微修正時間はアンカー着弾から二次マイクロターゲット有効打までの経過時間を示します（Woods et al., 2015）。"
+      note: "SkillDrillsの練習用の目安で、研究上の基準値・ゲームのランク・ユーザーデータではありません。平均微修正時間はアンカー命中からマイクロターゲット命中までの時間です。"
     },
     techniques: {
       title: "マイクロフリック精度を最大化する生体力学テクニック",
@@ -278,7 +285,7 @@ export default function MicroCorrectionJaPage() {
       "中心点に合致したことを確認してクリックし、高得点ボーナスを獲得します。",
       "ミスによるコンボ途切れを防ぎながら、レベル進行による極小ターゲットへの対応力を磨きましょう。"
     ],
-    audience: "VALORANT、Counter-Strike 2、Rainbow Six Siege、Apex Legendsなどで、ヘッドショット率を劇的に引き上げたいすべての競技FPSプレイヤー。",
+    audience: "VALORANT、Counter-Strike 2、Rainbow Six Siege、Apex Legendsなどで、ヘッドショットの微調整を練習したいFPSプレイヤー。",
     faqs: faqSchema.mainEntity.map(e => ({ q: e.name, a: e.acceptedAnswer.text })),
     sources: pickSources('woods2015', 'fitts1954', 'meyer1988', 'martinezConde2004', 'rolfs2009', 'woodworth1899'),
     related: [
@@ -329,9 +336,9 @@ export default function MicroCorrectionJaPage() {
 
       <MicroCorrectionClient
         copy={{
-          h1Keyword: "エイム練習",
-          h1Suffix: " - マイクロフリック・微調整トレーナー",
-          subtitle: "初弾フリック後の微小なエイムズレを即時修正し、指先の終末減速とヘッドショット精度を強化します。",
+          h1Keyword: "マイクロフリック練習",
+          h1Suffix: "｜エイム微調整",
+          subtitle: "マイクロフリック練習：アンカーターゲットを撃った直後、すぐ近くに出る小さなマイクロターゲットへ照準を移して中心を撃ち抜きます。VALORANT・CS2のヘッドショット精度の練習に。",
           statScore: "スコア",
           statTime: "残り時間",
           statAccuracy: "命中率",
@@ -339,7 +346,7 @@ export default function MicroCorrectionJaPage() {
           statAvgCorrection: "平均微修正",
           statMaxCombo: "最大コンボ",
           statPeakLevel: "最高レベル",
-          startTitle: "エイム練習 - マイクロフリック微調整",
+          startTitle: "マイクロフリック練習",
           startSubtitle: "入力キャリブレーション • エンドレス難易度進行",
           getReady: "準備完了",
           toggleFlash: "ミスフラッシュ切替",
@@ -347,12 +354,12 @@ export default function MicroCorrectionJaPage() {
           stageCaption: "アンカーターゲットをクリック後、瞬時に微小ターゲットへ照準を微調整して射撃してください。",
           rulesTitle: "ドリル手順 & スコアリングシステム",
           rulesItems: [
-            { num: "1", text: "アンカー命中", highlight: "+10点 (+0.2秒)", result: "マイクロ解除" },
-            { num: "2", text: "マイクロ命中", highlight: "最大+585点", result: "微調整 × コンボ" },
+            { num: "1", text: "アンカー命中", highlight: "+10点 (+1.0秒)", result: "マイクロ解除" },
+            { num: "2", text: "マイクロ命中", highlight: "100〜150点 (+1.0秒)", result: "精度 × コンボ × レベル" },
             { num: "3", text: "レベル進行", highlight: "+1Lv / 1,400点", result: "連続縮小適応" },
-            { num: "4", text: "ミス / 制限時間", highlight: "ペナルティ", result: "コンボリセット (-0.6秒)" }
+            { num: "4", text: "ミス / 制限時間", highlight: "ペナルティ", result: "コンボリセット (-1.0秒)" }
           ],
-          aboutTitle: "エイム練習とマイクロフリック微調整について",
+          aboutTitle: "マイクロフリック練習について",
           aboutHeading: "マイクロフリック（微調整エイム）とは？",
           aboutText: "ほとんどのエイム動作は単一ではなく二段階で構成されます。初速の素早い弾道フリックと、着弾直前の微小な減速・位置修正動作です（Woodworth, 1899; Meyer et al., 1988）。本ドリルはこの勝敗を決定づける「第2フェーズ（微調整）」を集中的に鍛え上げます。"
         }}

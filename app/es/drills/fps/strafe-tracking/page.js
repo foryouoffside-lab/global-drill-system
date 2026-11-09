@@ -190,7 +190,7 @@ export default function StrafeTrackingEsPage() {
         "name": "¿Cómo se calculan los puntos, el combo y el tiempo?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Mientras la mira está sobre el objetivo ganas 50 puntos base cada 0,25 s (multiplicados por el combo y el nivel) y +0,1 s de reloj (máximo 60 s restantes). Cada segundo sin perder el objetivo suma 1 al combo, cuyo multiplicador llega a 3,0×. Al salir del objetivo el combo vuelve a 0 al instante; con la penalización de tiempo activada, cada segundo fuera resta 0,6 s. La ronda empieza con 45 s y termina en 0. No se hace clic: solo cuenta el movimiento del ratón."
+          "text": "Mientras la mira está sobre el objetivo ganas 50 puntos base cada 0,25 s (multiplicados por el combo y el nivel) y +0,1 s de reloj (máximo 60 s restantes). Cada segundo sin perder el objetivo suma 1 al combo, cuyo multiplicador llega a 3,0×. Al salir del objetivo el combo vuelve a 0 al instante. La ronda empieza con 45 s y termina en 0. No se hace clic: solo cuenta el movimiento del ratón."
         }
       }
     ]
@@ -329,7 +329,7 @@ export default function StrafeTrackingEsPage() {
       { num: "1", text: "Mira en el Blanco", highlight: "+50 PTS / 0,25s (+0,4s/s)", result: "×Mult de Combo" },
       { num: "2", text: "1s Sin Perderlo", highlight: "Combo +1, hasta 3,0×", result: "Multiplicador Máx" },
       { num: "3", text: "Progresión de Nivel", highlight: "+1 Nivel / 1400 PTS", result: "Strafe Adaptativo" },
-      { num: "4", text: "Fuera del Blanco", highlight: "Combo a 0 al instante", result: "-0,6s / s (penalización ON)" }
+      { num: "4", text: "Fuera del Blanco", highlight: "Penalización", result: "Combo a 0 al instante" }
     ],
     aboutTitle: "Sobre Tracking y Puntería en Movimiento",
     whatIsTitle: "¿Qué es el Tracking de Strafe?",

@@ -110,7 +110,7 @@ export default function TargetAcquisitionFrPage() {
         "name": "Comment fonctionne cet aim trainer Valorant d'acquisition de cibles ?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Une session dure 60 secondes. Des groupes de 3 à 8 cibles de luminosité différente apparaissent et il faut les toucher de la plus claire à la plus sombre. Une bonne cible rapporte +100 points multipliés par le combo et le niveau ; vider un groupe ajoute +400 points multipliés par le niveau et fait apparaître un nouveau groupe. Toucher la mauvaise cible ou cliquer dans le vide remet le combo à zéro et retire 0,6 seconde si la pénalité de temps est activée. Le drill se joue à la souris avec verrouillage du pointeur ; Échap le quitte. SkillDrills est un outil indépendant, non affilié à Riot Games."
+          "text": "Une session dure 60 secondes. Des groupes de 3 à 8 cibles de luminosité différente apparaissent et il faut les toucher de la plus claire à la plus sombre. Une bonne cible rapporte +100 points multipliés par le combo et le niveau ; vider un groupe ajoute +400 points multipliés par le niveau et fait apparaître un nouveau groupe. Toucher la mauvaise cible ou cliquer dans le vide remet le combo à zéro. Le drill se joue à la souris avec verrouillage du pointeur ; Échap le quitte. SkillDrills est un outil indépendant, non affilié à Riot Games."
         }
       },
       {
@@ -322,7 +322,7 @@ export default function TargetAcquisitionFrPage() {
       { num: "1", text: "Cible Touchée", highlight: "+100 PTS × Niveau", result: "×Multiplicateur Combo" },
       { num: "2", text: "Série Neutralisée", highlight: "+400 PTS × Niveau", result: "Nouvelle Grappe" },
       { num: "3", text: "Niveau Supérieur", highlight: "+1 / 1400 PTS", result: "Progression Dynamique Continue" },
-      { num: "4", text: "Tir Erroné / Manqué", highlight: "Pénalité", result: "Réinitialise Combo (-0,6s si pénalité active)" }
+      { num: "4", text: "Tir Erroné / Manqué", highlight: "Pénalité", result: "Réinitialise Combo" }
     ],
     aboutTitle: "À Propos de l'Acquisition de Cibles",
     aboutHeading: "Qu'est-ce que l'Acquisition de Cibles ?",

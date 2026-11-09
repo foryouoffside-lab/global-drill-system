@@ -34,6 +34,9 @@ export default function DrillResultCard({
   if (!grade) return null;
   const theme = ACCENTS[accent] || ACCENTS.emerald;
   const tiles = stats.slice(0, 4);
+  const gradeLabel = grade.label
+    ? t('ui.grade' + grade.label.toLowerCase().replace(/(^|\s+)(\w)/g, (_, __, c) => c.toUpperCase()), grade.label)
+    : grade.label;
 
   const handleNativeOrModalShare = async () => {
     // Leave both the browser's native fullscreen and the drill's CSS fullscreen
@@ -113,11 +116,11 @@ export default function DrillResultCard({
         >
           {isNewBest && (
             <span className="text-[9.5px] font-bold text-yellow-400 bg-yellow-500/10 border border-yellow-500/25 px-2.5 py-0.5 rounded-full mb-1 animate-pulse">
-              NEW BEST
+              {t('ui.newBest', 'New Best')}
             </span>
           )}
           <div className={`text-5xl sm:text-6xl font-black leading-none ${grade.color}`}>{grade.letter}</div>
-          <div className="text-[10px] uppercase tracking-widest text-slate-500 text-center font-bold mt-1">{grade.label}</div>
+          <div className="text-[10px] uppercase tracking-widest text-slate-500 text-center font-bold mt-1">{gradeLabel}</div>
           <div className="text-3xl sm:text-4xl font-black text-white mt-2 tabular-nums">{score}</div>
           <div className="text-[9px] uppercase tracking-widest text-slate-500">{t('ui.points', 'Points')}</div>
 

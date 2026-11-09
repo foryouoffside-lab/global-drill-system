@@ -204,7 +204,7 @@ export default function RecoilControlPageJa() {
         "name": "なぜマガジン命中率が40%を下回るとコンボがリセットされるのですか？",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "無秩序にマガジンを撃ち尽くす「スプレーパニック」を防ぎ、ターゲットへ弾を集中させる射撃規律を養うためです。30発中の命中が40%未満だとコンボがリセットされます（タイムペナルティ設定時は残り時間も0.6秒減算）。"
+          "text": "無秩序にマガジンを撃ち尽くす「スプレーパニック」を防ぎ、ターゲットへ弾を集中させる射撃規律を養うためです。30発中の命中が40%未満だとコンボがリセットされます。"
         }
       },
       {
@@ -348,7 +348,7 @@ export default function RecoilControlPageJa() {
       { num: "1", text: "ヘッドショット命中", highlight: "+100 PTS（時間ボーナスなし）", result: "×コンボ倍率" },
       { num: "2", text: "胴体・四肢ヒット", highlight: "+40 / +20 PTS", result: "コンボ継続" },
       { num: "3", text: "レベル進行", highlight: "+1レベル / 1400 PTS", result: "標的速度 & 反動倍率上昇" },
-      { num: "4", text: "マガジン規律", highlight: "命中率40%未満ペナルティ", result: "コンボ喪失（ペナルティ設定時 -0.6秒）" }
+      { num: "4", text: "マガジン規律", highlight: "ミス / 命中率40%未満", result: "コンボ喪失" }
     ],
     aboutTitle: "リコイル練習と反動制御について",
     whyMattersTitle: "なぜリコイル制御（反動補正）が重要なのか",

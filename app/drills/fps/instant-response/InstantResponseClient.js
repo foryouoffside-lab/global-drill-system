@@ -77,7 +77,7 @@ const RULES_ITEMS = [
   { num: "1", text: "Flash Reaction Hit", highlight: "+100 PTS (+2s, max 60s)", result: "×Combo Mult" },
   { num: "2", text: "Speed Bonus", highlight: "Sub-150ms Hit", result: "Up to +150 PTS" },
   { num: "3", text: "Level Progression", highlight: "+1 Level / 1400 PTS", result: "Adaptive Windows" },
-  { num: "4", text: "Miss / Pre-fire", highlight: "Failure Penalty", result: "Resets Combo (-0.8s)" }
+  { num: "4", text: "Miss / Pre-fire", highlight: "Failure Penalty", result: "Resets Combo (-1s)" }
 ];
 
 const ABOUT_INTRO = [
@@ -115,7 +115,7 @@ const FAQ_ITEMS = [
   { q: "Does this drill help in CS2?", a: "Absolutely. CS2 gunfights are won in milliseconds. Improving visual stimulus response speed directly translates to winning quick-peek engagements." },
   { q: "What is raw reflex latency?", a: "Raw reflex latency is the speed at which your motor reflex fires upon seeing a visual color/light change on screen, independent of cursor movement." },
   { q: "How often should I train my reflexes?", a: "We recommend daily 10-15 minute reflex sessions as a warm-up before queueing up competitive matches." },
-  { q: "Why does missing reset my combo instead of penalizing my time or score?", a: "By default, pre-firing, missing, or timing out only resets your combo multiplier to keep baseline training accessible. If you want a stricter challenge with clock deductions (-0.8s per error), you can enable Time Penalty in the session settings." },
+  { q: "What happens when I miss or pre-fire?", a: "Pre-firing, missing, clicking a feint, or letting a flash expire resets your combo multiplier and deducts 1 second from the clock. Flash expiry only counts while Target Timeouts are on." },
   { q: "What is click timing consistency?", a: "Consistency measures the deviation between your reaction times. Lower deviation means highly stable and predictable in-game reflexes." },
   { q: "Does sleep affect my reaction time?", a: "Yes, fatigue and sleep deprivation can degrade reaction time by 50ms or more, heavily impacting gaming performance." },
   { q: "What games benefit from reflex training?", a: "All fast-paced shooters like Apex Legends, Call of Duty, Overwatch 2, CS2, Valorant, and Spectre Divide." },
@@ -138,7 +138,7 @@ const RELATED_DRILLS = [
 // MAIN COMPONENT
 // ============================================================
 export default function InstantResponseClient({ copy = null }) {
-  const { locale } = useTranslation();
+  const { locale, t } = useTranslation();
   const [gameState, setGameState] = useState('start'); // 'start' | 'countdown' | 'playing' | 'gameOver'
   const [isFullscreen, setIsFullscreen] = useState(false);
   useImmersiveMode(isFullscreen); // locks the page behind while the drill fills the screen
@@ -414,6 +414,8 @@ export default function InstantResponseClient({ copy = null }) {
     }, 2100);
 
     const t4 = setTimeout(() => {
+      engine.current.crosshair.x = engine.current.logicalWidth / 2;
+      engine.current.crosshair.y = engine.current.logicalHeight / 2;
       gameActiveRef.current = true;
       startingRef.current = false;
       setGameState('playing');
@@ -776,8 +778,8 @@ export default function InstantResponseClient({ copy = null }) {
             <h1 className="text-2xl sm:text-3xl font-black tracking-tight text-white">
               <span data-seo-kw="1">{copy?.h1Keyword || "FPS Reaction Time Test"}</span>
               {copy?.h1Suffix !== undefined ? copy.h1Suffix : " — Gaming Reflex Trainer"}
-              <span className="block text-sm font-semibold text-slate-400 mt-1">{copy?.subtitle || "FPS reaction time test for visual reflex speed, click latency, and trigger discipline in competitive gaming"}</span>
             </h1>
+            <p className="text-sm font-semibold text-slate-400 mt-1">{copy?.subtitle || "FPS reaction time test for visual reflex speed, click latency, and trigger discipline in competitive gaming"}</p>
           </div>
         )}
 
@@ -892,10 +894,10 @@ export default function InstantResponseClient({ copy = null }) {
               score={uiScore}
               isNewBest={isNewBest}
               stats={[
-                { value: analytics.accuracy, suffix: "%", label: "Accuracy" },
-                { value: analytics.avgReactionMs, suffix: "ms", label: "Avg Reaction" },
-                { value: `${analytics.maxCombo}x`, label: "Max Combo" },
-                { value: `Lv. ${analytics.finalLevel}`, label: "Peak Level" },
+                { value: analytics.accuracy, suffix: "%", label: t('ui.resultAccuracy', 'Accuracy') },
+                { value: analytics.avgReactionMs, suffix: "ms", label: t('ui.resultAvgReaction', 'Avg Reaction') },
+                { value: `${analytics.maxCombo}x`, label: t('ui.resultMaxCombo', 'Max Combo') },
+                { value: `Lv. ${analytics.finalLevel}`, label: t('ui.resultPeakLevel', 'Peak Level') },
               ]}
               onPlayAgain={enterDrill}
               onBeforeShare={() => setIsFullscreen(false)}

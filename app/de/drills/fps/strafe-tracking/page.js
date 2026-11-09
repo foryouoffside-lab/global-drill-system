@@ -208,7 +208,7 @@ export default function StrafeTrackingDePage() {
         "name": "Wie werden Punkte, Combo und Zeit in diesem Tracking Aim Training berechnet?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Solange das Fadenkreuz auf der Kapsel liegt, gibt es alle 0,25 Sekunden 50 Basispunkte (mal Combo- und Level-Multiplikator) und 0,1 Sekunden Zusatzzeit (maximal 60 Sekunden Restzeit). Jede volle Sekunde ohne Unterbrechung erhöht die Combo um 1, der Multiplikator steigt bis 3,0×. Sobald du das Ziel verlässt, fällt die Combo auf 0; mit aktivierter Zeitstrafe kostet jede Sekunde außerhalb 0,6 Sekunden. Die Runde startet mit 45 Sekunden und endet bei 0. Geklickt wird nicht – nur die Maus zählt."
+          "text": "Solange das Fadenkreuz auf der Kapsel liegt, gibt es alle 0,25 Sekunden 50 Basispunkte (mal Combo- und Level-Multiplikator) und 0,1 Sekunden Zusatzzeit (maximal 60 Sekunden Restzeit). Jede volle Sekunde ohne Unterbrechung erhöht die Combo um 1, der Multiplikator steigt bis 3,0×. Sobald du das Ziel verlässt, fällt die Combo sofort auf 0. Die Runde startet mit 45 Sekunden und endet bei 0. Geklickt wird nicht – nur die Maus zählt."
         }
       }
     ]
@@ -342,7 +342,7 @@ export default function StrafeTrackingDePage() {
       { num: "1", text: "Auf dem Ziel", highlight: "+50 PKT je 0,25s (+0,4s/s)", result: "×Combo-Multiplikator" },
       { num: "2", text: "1s ununterbrochen", highlight: "Combo +1, bis 3,0×", result: "Maximal-Multiplikator" },
       { num: "3", text: "Levelprogression", highlight: "+1 Stufe / 1400 PKT", result: "Adaptives Strafing" },
-      { num: "4", text: "Ziel verlassen", highlight: "Combo sofort auf 0", result: "-0,6s je 1s (Strafe AN)" }
+      { num: "4", text: "Ziel verlassen", highlight: "Combo sofort auf 0", result: "Combo neu aufbauen" }
     ],
     aboutTitle: "Über Tracking Aim und Strafe-Training",
     whatIsTitle: "Was ist Strafe Tracking (Aim Tracking)?",

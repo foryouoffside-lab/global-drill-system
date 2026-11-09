@@ -6,20 +6,18 @@ import { getAlternateLanguages } from '@/lib/i18n/locales';
 import { pickSources } from '@/lib/drillSources';
 
 export const metadata = {
-  title: 'Aim Trainer Valorant - Cambio de objetivos | SkillDrills',
-  description: 'Aim trainer gratis en el navegador: practica cambios rápidos de objetivo, transiciones continuas y spray transfer en Valorant y CS2.',
+  title: 'Cambio de Objetivos: Target Switching en FPS | SkillDrills',
+  description: 'Practica el cambio de objetivos gratis en el navegador: acierta de 2 a 5 objetivos en movimiento seguidos. +2 s por acierto (máx. 60 s) y -1 s por clic fallado.',
   keywords: [
-    'aim trainer Valorant',
-    'cambio de objetivos Valorant',
+    'cambio de objetivos',
     'cambio de objetivo FPS',
+    'varios objetivos',
     'target switching',
     'spray transfer CS2',
-    'entrenamiento de puntería FPS',
     'cambio rápido de blancos',
     'transición de objetivos',
     'flick continuo',
     'puntería multiobjetivo',
-    'entrenador de mira gratis',
     'velocidad de cambio de objetivo'
   ],
   alternates: {
@@ -31,8 +29,8 @@ export const metadata = {
     follow: true,
   },
   openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
-    title: 'Aim Trainer Valorant - Cambio de objetivos | SkillDrills',
-    description: 'Aim trainer gratis en el navegador: practica cambios rápidos de objetivo, transiciones continuas y spray transfer en Valorant y CS2.',
+    title: 'Cambio de Objetivos: Target Switching en FPS | SkillDrills',
+    description: 'Practica el cambio de objetivos gratis en el navegador: acierta de 2 a 5 objetivos en movimiento seguidos. +2 s por acierto (máx. 60 s) y -1 s por clic fallado.',
     url: 'https://skilldrills.online/es/drills/fps/target-switching-swarm',
     siteName: 'SkillDrills',
     locale: 'es_ES',
@@ -40,8 +38,8 @@ export const metadata = {
   },
   twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: 'summary_large_image',
-    title: 'Aim Trainer Valorant - Cambio de objetivos | SkillDrills',
-    description: 'Aim trainer gratis en el navegador: practica cambios rápidos de objetivo, transiciones continuas y spray transfer en Valorant y CS2.',
+    title: 'Cambio de Objetivos: Target Switching en FPS | SkillDrills',
+    description: 'Practica el cambio de objetivos gratis en el navegador: acierta de 2 a 5 objetivos en movimiento seguidos. +2 s por acierto (máx. 60 s) y -1 s por clic fallado.',
   },
 };
 
@@ -59,7 +57,7 @@ export default function TargetSwitchingSwarmEsPage() {
   const softwareSchema = {
     "@context": "https://schema.org",
     "@type": "SoftwareApplication", "sameAs": ["https://en.wikipedia.org/wiki/Saccade", "https://en.wikipedia.org/wiki/Hand%E2%80%93eye_coordination"],
-    "name": "Aim Trainer Valorant - Cambio de objetivos",
+    "name": "Cambio de Objetivos: Target Switching en FPS",
     "applicationCategory": "GameApplication",
     "operatingSystem": "Any (Web Browser)",
     "offers": {
@@ -67,13 +65,13 @@ export default function TargetSwitchingSwarmEsPage() {
       "price": "0",
       "priceCurrency": "USD"
     },
-    "description": "Herramienta online gratuita de target switching y cambio de blancos en ráfaga para jugadores competitivos de Valorant, CS2 y Apex Legends."
+    "description": "Entrenamiento gratuito de cambio de objetivos en el navegador: 2 a 5 objetivos en movimiento que rebotan por la pantalla, para acertar uno tras otro."
   };
 
   const webAppSchema = {
     "@context": "https://schema.org",
     "@type": "WebApplication",
-    "name": "Aim Trainer Valorant - Cambio de objetivos",
+    "name": "Cambio de Objetivos: Target Switching en FPS",
     "url": "https://skilldrills.online/es/drills/fps/target-switching-swarm",
     "browserRequirements": "Requires Pointer Lock API and WebGL support",
     "applicationCategory": "ShooterTraining",
@@ -86,8 +84,8 @@ export default function TargetSwitchingSwarmEsPage() {
   const videoGameSchema = {
     "@context": "https://schema.org",
     "@type": "VideoGame",
-    "name": "Aim Trainer Valorant - Cambio de objetivos",
-    "description": "Simulador de enjambre de objetivos dinámicos para perfeccionar la velocidad de transición motora, spray transfer y erradicar pausas cognitivas.",
+    "name": "Cambio de Objetivos: Target Switching en FPS",
+    "description": "Drill gratuito de cambio de objetivos: un enjambre de 2 a 5 objetivos en movimiento que reaparecen al acertarlos, para practicar el encadenamiento.",
     "genre": ["First-Person Shooter", "Aim Trainer", "Reaction Training"],
     "playMode": "SinglePlayer",
     "gamePlatform": ["PC", "Web Browser"]
@@ -115,10 +113,10 @@ export default function TargetSwitchingSwarmEsPage() {
       },
       {
         "@type": "Question",
-        "name": "¿Por qué el formato de enjambre (swarm) mejora las jugadas de multi-kill?",
+        "name": "¿Cuáles son las reglas de este entrenamiento de cambio de objetivos?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Al aparecer múltiples blancos al mismo tiempo con tiempo de vida limitado, el cerebro se ve obligado a utilizar la visión periférica para planificar la siguiente trayectoria mientras la mano dispara al objetivo actual, acelerando el enrutamiento espacial."
+          "text": "El cronómetro empieza en 45 segundos. Según el nivel, hay de 2 a 5 objetivos en movimiento que rebotan por la pantalla. Cada acierto vale +100 puntos multiplicados por el combo y el nivel y suma 2 segundos (máximo 60). Un clic en el vacío resta 1 segundo y reinicia el combo. Con la opción de tiempo límite de objetivos activada, un objetivo que no aciertas a tiempo (unos 2,8 segundos al principio, menos en niveles altos) desaparece y también resta 1 segundo. Cada 2.100 puntos subes de nivel y los objetivos se vuelven más pequeños y rápidos. Se juega con ratón y bloqueo del puntero; Esc termina el drill."
         }
       },
       {
@@ -126,15 +124,15 @@ export default function TargetSwitchingSwarmEsPage() {
         "name": "¿Por qué los jugadores tienden a dudar o congelarse tras conseguir una baja?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Esa pausa involuntaria de 100 a 250 ms ocurre cuando el jugador espera el sonido o animación de confirmación de baja antes de buscar un nuevo enemigo. El entrenamiento condiciona a iniciar el movimiento sacádico sin esperar retroalimentación."
+          "text": "Esa pausa ocurre cuando esperas el sonido o la animación de confirmación de la baja antes de buscar un nuevo enemigo. En este drill, el objetivo acertado desaparece al instante y aparece otro, así que repites el paso directo de la mirada y el ratón al siguiente objetivo."
         }
       },
       {
         "@type": "Question",
-        "name": "¿Cómo beneficia el target switching a los spray transfers en CS2 y Valorant?",
+        "name": "¿Ayuda el cambio de objetivos con los spray transfers en CS2?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "El spray transfer requiere redirigir el retroceso continuo de un enemigo a otro en una fracción de segundo. El target switching entrena la memoria motriz para frenar con exactitud sobre el nuevo objetivo sin desviar el patrón de ráfaga."
+          "text": "Solo en parte. Este drill cuenta clics sueltos y no simula retroceso ni ráfagas. Aun así, llevar la mira de un objetivo al siguiente y frenar con precisión es la base del spray transfer, por lo que sirve como práctica complementaria."
         }
       },
       {
@@ -142,7 +140,7 @@ export default function TargetSwitchingSwarmEsPage() {
         "name": "¿Qué títulos competitivos requieren mayor habilidad en cambio de blanco?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Counter-Strike 2, Valorant, Apex Legends, Overwatch 2 y Call of Duty Warzone. En shooters tácticos asegura ganar duelos en desventaja numérica (1vX); en battle royales permite cambiar de foco al derribar escudos."
+          "text": "Counter-Strike 2, Apex Legends, Overwatch 2 y Call of Duty Warzone, entre otros. En shooters tácticos ayuda en duelos contra varios rivales seguidos; en battle royales permite cambiar de foco al derribar escudos."
         }
       },
       {
@@ -158,7 +156,7 @@ export default function TargetSwitchingSwarmEsPage() {
         "name": "¿Cómo se aplica la Ley de Fitts al cambio de objetivos?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "La Ley de Fitts (Fitts, 1954) relaciona el tiempo de movimiento con la distancia y tamaño del objetivo. En target switching, aprender a elegir objetivos cercanos minimiza la distancia angular, recortando drásticamente el tiempo total por baja."
+          "text": "La Ley de Fitts (Fitts, 1954) relaciona el tiempo de movimiento con la distancia y tamaño del objetivo. En target switching, aprender a elegir objetivos cercanos minimiza la distancia angular, lo que acorta el tiempo de cada cambio."
         }
       },
       {
@@ -166,7 +164,7 @@ export default function TargetSwitchingSwarmEsPage() {
         "name": "¿Con qué frecuencia se debe practicar target switching?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Se recomiendan sesiones de 10 a 15 minutos al día como calentamiento antes de jugar partidas clasificatorias. Esto activa los circuitos sacádicos y la coordinación ojo-mano sin fatigar la musculatura del brazo."
+          "text": "No hay una duración ideal demostrada. Unas cuantas sesiones concentradas como calentamiento antes de jugar son un buen punto de partida; compara tus resultados en el mismo equipo. No se garantiza una mejora en partida."
         }
       },
       {
@@ -174,7 +172,7 @@ export default function TargetSwitchingSwarmEsPage() {
         "name": "¿Es gratis y compatible este entrenador de cambio de objetivos?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Totalmente gratis, sin descargas ni registros. Funciona en cualquier navegador moderno mediante la Pointer Lock API, replicando la sensibilidad de ratón de tu juego favorito sin latencia artificial."
+          "text": "Sí, es gratis y sin descargas ni registros. Funciona en el navegador con ratón y bloqueo del puntero; no se puede jugar en dispositivos solo táctiles."
         }
       }
     ]
@@ -189,7 +187,7 @@ export default function TargetSwitchingSwarmEsPage() {
         "@type": "HowToStep",
         "position": 1,
         "name": "Configurar la Sensibilidad y Bloquear el Cursor",
-        "text": "Sincroniza tus DPI y sensibilidad idénticos a los de tu shooter principal en los ajustes y bloquea el cursor con un clic."
+        "text": "Ajusta la sensibilidad en la página /drills para que coincida con la de tu juego y empieza; el puntero se bloquea automáticamente."
       },
       {
         "@type": "HowToStep",
@@ -201,7 +199,7 @@ export default function TargetSwitchingSwarmEsPage() {
         "@type": "HowToStep",
         "position": 3,
         "name": "Disparar al Primer Blanco y Ganar Bonificación de Tiempo",
-        "text": "Elimina el blanco inicial para obtener +100 puntos y sumar +0,35s al cronómetro de supervivencia."
+        "text": "Acierta el primer objetivo para obtener +100 puntos y sumar 2 segundos al cronómetro (máximo 60)."
       },
       {
         "@type": "HowToStep",
@@ -219,36 +217,36 @@ export default function TargetSwitchingSwarmEsPage() {
   };
 
   const targetSwitchingGuide = {
-    heading: "Aim Trainer Valorant: cambio de objetivos y spray transfer",
+    heading: "Cambio de objetivos: encadenar varios objetivos en movimiento",
     intro: [
-      "Para quien busca un aim trainer Valorant, este drill mide el cambio de la mira desde un enemigo recién abatido hacia el siguiente objetivo sin pausa de confirmación. Practica cambios rápidos entre varios blancos, spray transfer y flick continuo para Valorant, CS2 y Apex Legends.",
-      "La psicofísica del cambio de objetivo está fundamentada en la Ley de Fitts (Fitts, 1954) y en el modelo estocástico de submovimientos optimizados de David E. Meyer et al. (1988). Según estos principios, un movimiento de puntería consta de una fase balística inicial que recorre cerca del 90% de la distancia, continuada por microajustes correctivos guiados visualmente. Los jugadores aficionados pierden de 100 a 250 ms tras cada baja observando la animación del impacto. Los tiradores de élite ya han iniciado el movimiento ocular sacádico hacia el siguiente objetivo antes de finalizar el disparo anterior.",
-      "El procesamiento de enjambres poblados depende de la integración de características y de la búsqueda visual preatencional (Anne M. Treisman & Garry Gelade, 1980; Jeremy M. Wolfe, 2007). El córtex visual humano registra múltiples marcadores espaciales en paralelo (teoría FINST), lo que permite estructurar rutas cinemáticas eficientes entre blancos vecinos, optimizando la trayectoria angular del ratón.",
-      "Metodología de medición: todos los clics y transiciones se cronometran con el reloj de alta resolución performance.now() del navegador, ejecutándose íntegramente de manera local en tu equipo. Consideraciones técnicas: los navegadores redondean los temporizadores (~1 ms) por mitigación de Spectre y los monitores actualizan la imagen a intervalos fijos (16,7 ms a 60 Hz, 6,9 ms a 144 Hz, 4,1 ms a 240 Hz; Woods et al., 2015). El polling rate del ratón añade unos 8 ms a 125 Hz frente a 1 ms a 1000 Hz. Diferencias inferiores a 5 ms corresponden al margen normal de hardware."
+      "Este entrenamiento gratuito de cambio de objetivos mantiene siempre de 2 a 5 objetivos en movimiento rebotando por la pantalla. En cuanto aciertas uno aparece otro, así que repites el paso de la mira al siguiente objetivo sin pausa de confirmación. El cronómetro empieza en 45 segundos, cada acierto suma 2 segundos (máximo 60) y cada clic fallado resta 1; mientras aciertes con precisión, la sesión sigue.",
+      "La psicofísica del cambio de objetivo está fundamentada en la Ley de Fitts (Fitts, 1954) y en el modelo estocástico de submovimientos optimizados de David E. Meyer et al. (1988). Según estos principios, un movimiento de puntería consta de una fase inicial rápida que recorre la mayor parte de la distancia, continuada por microajustes correctivos guiados visualmente. Muchos jugadores hacen una pausa breve tras cada baja para confirmarla. Este drill busca llevar la mirada al siguiente objetivo ya en el clic para acortar esa pausa.",
+      "El procesamiento de enjambres poblados depende de la integración de características y de la búsqueda visual preatencional (Anne M. Treisman & Garry Gelade, 1980; Jeremy M. Wolfe, 2007). Podemos seguir unos pocos objetos en movimiento a la vez; planear un orden corto entre objetivos cercanos hace los cambios más fluidos.",
+      "Sobre los resultados: la pantalla final muestra puntuación, precisión (aciertos ÷ clics totales), objetivos destruidos, combo máximo y nivel alcanzado. Tu récord se guarda solo en este navegador. Este drill no mide tiempos de transición en milisegundos. La tasa de refresco del monitor y el polling rate del ratón cambian la sensación, así que compárate en el mismo equipo."
     ],
     benchmarks: {
-      title: "Tablas de Rendimiento: Target Switching y Latencia de Transición",
-      headers: ["Nivel Competitivo", "Tiempo de Transición", "Tasa de Eliminación (Blancos/Min)", "Impacto en Partida Real"],
+      title: "Rangos de práctica de precisión en cambio de objetivos",
+      headers: ["Rango", "Precisión", "Qué indica"],
       rows: [
-        ["Tier 1 (Etapa Avanzada)", "Menos de 210 ms", "110+ Blancos/min", "Spray transfers perfectos; cero pausa de confirmación; resolución fluida de situaciones 1v3"],
-        ["Tier 2 (Etapa Intermedia-Alta)", "210 – 260 ms", "92 – 110 Blancos/min", "Excelente fluidez en el encadenamiento; leve temblor en transiciones muy amplias; sólida tasa de bajas"],
-        ["Tier 3 (Ascendant / Diamante / Avanzado)", "260 – 320 ms", "74 – 92 Blancos/min", "Eficaz en blancos agrupados; sufre cuando el siguiente objetivo está al otro extremo del monitor"],
-        ["Tier 4 (Platino / Oro / Intermedio)", "320 – 400 ms", "56 – 74 Blancos/min", "Pausa evidente tras cada baja (100+ ms de retraso); tiende a pasarse del objetivo por frenado tardío"],
-        ["Tier 5 (Plata / Bronce / Principiante)", "Más de 400 ms", "Menos de 56 Blancos/min", "Reubica la mano desde cero tras cada tiro; búsqueda visual lenta; tensión excesiva en la muñeca"]
+        ["Rango 1", "95% o más", "Casi ningún clic en el vacío, incluso en niveles altos"],
+        ["Rango 2", "88% – 95%", "Fallos ocasionales con objetivos rápidos, pero el ritmo de cambio se mantiene"],
+        ["Rango 3", "80% – 88%", "Te pasas del objetivo al cambiar a objetivos lejanos"],
+        ["Rango 4", "70% – 80%", "Los clics precipitados te hacen perder tiempo a menudo"],
+        ["Rango 5", "menos de 70%", "Baja la velocidad y asegura el frenado antes de acelerar"]
       ],
-      note: "El tiempo de transición evalúa el lapso entre la destrucción de un blanco y la llegada al siguiente; la tasa de eliminación mide la cadencia de bajas por minuto a lo largo de la ronda (Woods et al., 2015)."
+      note: "La precisión es el valor de la pantalla final (aciertos ÷ clics totales). Los rangos son referencias de práctica de SkillDrills, no normas científicas, rangos de juego ni estadísticas de usuarios."
     },
     techniques: {
       title: "Protocolos Clínicos para Maximizar el Target Switching",
       items: [
         {
           name: "Planificación Sacádica e Indexación Visual",
-          desc: "Dirige la vista al siguiente blanco mientras la mano todavía asienta el microajuste en el blanco presente (Treisman & Gelade, 1980; Wolfe, 2007). El ojo se anticipa a la mano entre 50 y 80 ms.",
+          desc: "Dirige la vista al siguiente blanco mientras la mano todavía asienta el microajuste en el blanco presente (Treisman & Gelade, 1980; Wolfe, 2007). Normalmente la mirada llega al objetivo antes que la mano.",
           tips: "No te quedes mirando el objetivo que acabas de destruir; permite que la visión periférica verifique la baja mientras la fóvea visual enfoca el próximo blanco."
         },
         {
           name: "Frenado Terminal y Control Submovimental",
-          desc: "Ejerce una tensión muscular controlada en el 10% final del flick para detener el ratón en seco sobre el centro de la diana sin rebotar (Meyer et al., 1988).",
+          desc: "Ejerce una tensión muscular controlada al final del flick para detener el ratón en seco sobre el centro de la diana sin rebotar (Meyer et al., 1988).",
           tips: "Imagina que tu ratón tiene frenos de alto rendimiento: acelera con potencia saliendo del objetivo anterior y afianza el freno al llegar al siguiente."
         },
         {
@@ -264,13 +262,13 @@ export default function TargetSwitchingSwarmEsPage() {
       ]
     },
     steps: [
-      "Ajusta tus DPI y sensibilidad exactamente a los valores de tu shooter competitivo preferido y bloquea el ratón.",
+      "Ajusta la sensibilidad en la página /drills igual a la de tu juego y empieza (puntero bloqueado automáticamente).",
       "Localiza rápidamente las agrupaciones de blancos con menor separación angular en la pantalla.",
-      "Elimina el primer blanco para sumar +100 puntos y +0,35s adicionales al temporizador.",
+      "Acierta el primer objetivo para sumar +100 puntos × multiplicadores de combo y nivel y +2 s al cronómetro (máx. 60 s).",
       "Transfiere el movimiento de inmediato al siguiente blanco sin detenerte a verificar el impacto anterior.",
-      "Encadena bajas sucesivas para acumular multiplicadores de combo y alcanzar rangos de maestría."
+      "Evita los clics fallados (-1 s), encadena aciertos para subir el combo y llega a niveles con objetivos más pequeños y rápidos."
     ],
-    audience: "Jugadores de Valorant, CS2, Apex Legends y Overwatch que buscan mayor velocidad al alternar de objetivo, spray transfers limpios y cero pausas en duelos multitudinarios.",
+    audience: "Jugadores de CS2, Apex Legends y Overwatch 2 que quieren practicar por separado el cambio de objetivo entre varios rivales. Se necesita ratón.",
     faqs: faqSchema.mainEntity.map(e => ({ q: e.name, a: e.acceptedAnswer.text })),
     sources: pickSources('woods2015', 'fitts1954', 'meyer1988', 'treisman1980', 'wolfe2007'),
     related: [
@@ -293,9 +291,9 @@ export default function TargetSwitchingSwarmEsPage() {
 
       <TargetSwitchingSwarmClient
         copy={{
-          h1Keyword: "Aim Trainer Valorant",
-          h1Suffix: " - Cambio de objetivos",
-          subtitle: "Practica cambios rápidos entre objetivos y spray transfer sin perder precisión en el navegador.",
+          h1Keyword: "Cambio de Objetivos",
+          h1Suffix: ": Target Switching en FPS",
+          subtitle: "Practica cambios rápidos y precisos entre varios objetivos en movimiento, gratis en el navegador.",
           statScore: "Puntos",
           statTime: "Tiempo",
           statAccuracy: "Precisión",
@@ -305,13 +303,13 @@ export default function TargetSwitchingSwarmEsPage() {
           statPeakLevel: "Nivel Máximo",
           startTitle: "Target Switching Swarm",
           startSubtitle: "Entrada Raw de Hardware • Progresión Continua",
-          stageCaption: "Cambia rápidamente entre blancos y elimina el enjambre antes de que expire el temporizador. ¡No falles para encadenar combos!",
+          stageCaption: "Acierta los objetivos en movimiento uno tras otro antes de que desaparezcan. Cada clic fallado cuesta 1 segundo y el combo.",
           rulesTitle: "Reglas del Ejercicio y Sistema de Puntos",
           aboutTitle: "Sobre el Target Switching en Juegos FPS",
           rulesItems: [
-            { num: "1", text: "Destrucción de Blanco", highlight: "Blancos Cian (+100 PTS / +0,35s)", result: "+100 PTS / +0,35s" },
-            { num: "2", text: "Enjambre Dinámico", highlight: "Reaparición Inmediata", result: "Enjambre Continuo" },
-            { num: "3", text: "Penalización por Fallo", highlight: "Tiro Fallido / Tiempo Agotado", result: "Reinicio de Combo" },
+            { num: "1", text: "Objetivo Acertado", highlight: "+100 PTS (+2s, máx. 60s)", result: "×Multiplicador Combo" },
+            { num: "2", text: "Enjambre Continuo", highlight: "Reaparición Inmediata", result: "2 a 5 objetivos activos" },
+            { num: "3", text: "Tiro Fallido / Tiempo Agotado", highlight: "Penalización", result: "Reinicio de Combo (-1s)" },
             { num: "4", text: "Progresión de Nivel", highlight: "+1 Nivel / 2.100 PTS", result: "Más Rápido y Pequeño" }
           ]
         }}

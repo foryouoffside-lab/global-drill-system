@@ -20,12 +20,12 @@ import RelatedDrills from '@/components/drill/RelatedDrills';
 // ============================================================
 
 export const metadata = {
-  title: "Aim Trainer | Mikrokorrektur & Headshots | SkillDrills",
-  description: "Kostenloser Aim Trainer im Browser: Übe Mikrokorrekturen nach dem Flick, saubere Bremskontrolle und Headshot-Präzision für Valorant und CS2.",
+  title: "Mikrokorrekturen trainieren: Headshot-Präzision | SkillDrills",
+  description: "Mikrokorrekturen trainieren: Nach dem Treffer aufs Ankerziel erscheint daneben ein kleines Mikroziel. Je näher am Zentrum, desto mehr Punkte. Valorant und CS2.",
   keywords: [
-    "Aim Trainer",
-    "Aim Trainer Browser",
-    "Aim Trainer Valorant",
+    "Mikrokorrekturen",
+    "Mikrokorrekturen trainieren",
+    "Micro Flicks",
     "Mikrokorrektur Aiming",
     "Micro Adjustment FPS",
     "Headshot Feinjustierung",
@@ -47,8 +47,8 @@ export const metadata = {
     follow: true,
   },
   openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
-    title: "Aim Trainer | Mikrokorrektur & Headshots | SkillDrills",
-    description: "Kostenloser Aim Trainer im Browser: Übe Mikrokorrekturen nach dem Flick, saubere Bremskontrolle und Headshot-Präzision für Valorant und CS2.",
+    title: "Mikrokorrekturen trainieren: Headshot-Präzision | SkillDrills",
+    description: "Mikrokorrekturen trainieren: Nach dem Treffer aufs Ankerziel erscheint daneben ein kleines Mikroziel. Je näher am Zentrum, desto mehr Punkte. Valorant und CS2.",
     url: "https://skilldrills.online/de/drills/fps/micro-correction-precision",
     siteName: 'SkillDrills',
     locale: 'de_DE',
@@ -56,8 +56,8 @@ export const metadata = {
   },
   twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: 'summary_large_image',
-    title: "Aim Trainer | Mikrokorrektur & Headshots | SkillDrills",
-    description: "Kostenloser Aim Trainer im Browser: Übe Mikrokorrekturen nach dem Flick, saubere Bremskontrolle und Headshot-Präzision für Valorant und CS2.",
+    title: "Mikrokorrekturen trainieren: Headshot-Präzision | SkillDrills",
+    description: "Mikrokorrekturen trainieren: Nach dem Treffer aufs Ankerziel erscheint daneben ein kleines Mikroziel. Je näher am Zentrum, desto mehr Punkte. Valorant und CS2.",
   },
 };
 
@@ -68,14 +68,14 @@ export default function MicroCorrectionDePage() {
     "itemListElement": [
       { "@type": "ListItem", "position": 1, "name": "SkillDrills", "item": "https://skilldrills.online/de" },
       { "@type": "ListItem", "position": 2, "name": "FPS Aim Training", "item": "https://skilldrills.online/de/drills/fps" },
-      { "@type": "ListItem", "position": 3, "name": "Aim Trainer - Mikrokorrektur", "item": "https://skilldrills.online/de/drills/fps/micro-correction-precision" }
+      { "@type": "ListItem", "position": 3, "name": "Mikrokorrekturen trainieren", "item": "https://skilldrills.online/de/drills/fps/micro-correction-precision" }
     ]
   };
 
   const softwareSchema = {
     "@context": "https://schema.org",
     "@type": "SoftwareApplication", "sameAs": ["https://en.wikipedia.org/wiki/Fitts%27s_law", "https://en.wikipedia.org/wiki/Fine_motor_skill"],
-    "name": "Aim Trainer - Mikrokorrektur & Headshots",
+    "name": "Mikrokorrekturen trainieren - Headshot-Präzision",
     "applicationCategory": "GameApplication",
     "operatingSystem": "Web Browser",
     "offers": { "@type": "Offer", "price": "0", "priceCurrency": "EUR" }
@@ -84,7 +84,7 @@ export default function MicroCorrectionDePage() {
   const webAppSchema = {
     "@context": "https://schema.org",
     "@type": "WebApplication",
-    "name": "Aim Trainer - Mikrokorrektur & Headshots",
+    "name": "Mikrokorrekturen trainieren - Headshot-Präzision",
     "url": "https://skilldrills.online/de/drills/fps/micro-correction-precision",
     "applicationCategory": "Trainer",
     "browserRequirements": "Requires Pointer Lock API, modern web browser, 60Hz+ monitor recommended"
@@ -93,7 +93,7 @@ export default function MicroCorrectionDePage() {
   const videoGameSchema = {
     "@context": "https://schema.org",
     "@type": "VideoGame",
-    "name": "Aim Trainer - Mikrokorrektur & Headshots",
+    "name": "Mikrokorrekturen trainieren - Headshot-Präzision",
     "playMode": "SinglePlayer",
     "applicationCategory": "Game",
     "operatingSystem": "Web Browser",
@@ -103,7 +103,7 @@ export default function MicroCorrectionDePage() {
   const faqSchema = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
-    "dateModified": "2026-09-20",
+    "dateModified": "2026-11-09",
     "mainEntity": [
       {
         "@type": "Question",
@@ -131,10 +131,10 @@ export default function MicroCorrectionDePage() {
       },
       {
         "@type": "Question",
-        "name": "Wie trainieren professionelle Valorant- und CS2-Spieler ihre Feinjustierung?",
+        "name": "Wie trainiert man die Feinjustierung für Valorant und CS2?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Profis trainieren eine saubere Zweiteilung: Sie führen den ersten groben Flick mit Unterarm oder Handgelenk aus, stoppen die Bewegung über das Mauspad ab und nutzen für die verbleibenden 5 bis 15 Pixel ausschließlich die Fingerkuppen (Fingertip-Micro-Adjustment), um das Fadenkreuz pixelgenau auf die Kopflinie zu setzen."
+          "text": "Mit einer sauberen Zweiteilung: Man führt den ersten groben Flick mit Unterarm oder Handgelenk aus, stoppt die Bewegung über das Mauspad ab und korrigiert die restlichen wenigen Pixel mit Fingern und Handgelenk. In diesem Drill erscheint das Mikroziel nach dem Ankertreffer 55 bis 90 px entfernt (mit steigendem Level bis 145 px)."
         }
       },
       {
@@ -150,7 +150,7 @@ export default function MicroCorrectionDePage() {
         "name": "Verbessert regelmäßiges Mikro-Flick-Training die Headshot-Trefferquote messbar?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Ja, signifikant. In taktischen Shootern gelingt der initiale Flick selten zu 100 % perfekt auf der Stirn des Gegners. Spieler mit geschulter Mikrokorrektur verwandeln unvollständige Flicks innerhalb von 120 bis 180 ms in tödliche One-Taps, anstatt in unkontrollierte Spray-Duelle abzugleiten."
+          "text": "Es kann helfen. Der erste Flick landet selten exakt auf dem Kopf, und dieser Drill wiederholt genau die Korrektur danach. Wie stark sich das im Spiel auswirkt, hängt von Person und Trainingsumfang ab und ist nicht garantiert."
         }
       },
       {
@@ -182,7 +182,15 @@ export default function MicroCorrectionDePage() {
         "name": "Warum führen Fehlklicks oder Zeitüberschreitungen in diesem Trainer zum Combo-Reset?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Der Combo-Reset erzwingt Schussdisziplin (Shot Discipline). Reines unkontrolliertes Schnellfeuern ohne optische Zielbestätigung wird konsequent bestraft, um ein biomechanisch sauberes Zusammenspiel aus Bremsung, Feinjustierung und Klick zu etablieren."
+          "text": "Der Combo-Reset belohnt Schussdisziplin statt Schnellfeuer. Ein Fehlklick auf Anker- oder Mikroziel oder ein abgelaufenes Ziel setzt die Combo auf 0 und kostet 1 Sekunde. Die Combo steigt nur bei Mikrotreffern, der Combo-Multiplikator geht bis 3,0×."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Wie lange dauert ein Durchgang und wie werden Punkte berechnet?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Der Durchgang startet mit 45 Sekunden. Jeder Anker- und jeder Mikrotreffer gibt +1 Sekunde (maximal 60 Sekunden), bei 0 endet der Durchgang. Ein Ankertreffer bringt 10 Punkte, ein Mikrotreffer je nach Nähe zum Zentrum 100 bis 150 Punkte, multipliziert mit Combo- und Level-Multiplikator. Alle 1.400 Punkte steigt das Level um 1, ohne Obergrenze; die Ziele werden kleiner und ihre Lebensdauer (Start 1,8 s) kürzer."
         }
       }
     ]
@@ -222,26 +230,26 @@ export default function MicroCorrectionDePage() {
   };
 
   const microCorrectionGuideDe = {
-    heading: "Aim Trainer und Mikrokorrektur – wissenschaftlicher Leitfaden",
+    heading: "Mikrokorrekturen trainieren – Leitfaden",
     subtitle: "Meistere Bremskontrolle, Endphasen-Verzögerung und Fingerkuppen-Feinjustierung für maximale Headshot-Präzision in taktischen Shootern",
     intro: [
-      "Ein Aim Trainer für Mikrokorrekturen übt den letzten kurzen Stopp nach dem ersten Flick: Das Fadenkreuz erreicht die Zielzone, bremst sauber und landet für den Kopfschuss im Zentrum. Dieser Drill misst Korrekturzeit und Trefferquote, damit du Overflicks und verspätete Doppelkorrekturen in Valorant und CS2 gezielt reduzierst.",
+      "Wer Mikrokorrekturen trainieren will, übt den letzten kurzen Stopp nach dem ersten Flick: Das Fadenkreuz erreicht die Zielzone, bremst sauber und landet für den Kopfschuss im Zentrum. Dieser Drill misst Korrekturzeit und Trefferquote, damit du Overflicks und verspätete Doppelkorrekturen in Valorant und CS2 gezielt reduzierst.",
       "Das theoretische Fundament zielgerichteter Schnellbewegungen legte Robert S. Woodworth (1899) mit seinem klassischen Zwei-Komponenten-Modell: Ein primärer, offener ballistischer Impuls (Open-Loop) beschleunigt die Hand in Richtung des visuellen Reizes, gefolgt von einer geschlossenen Kontrollphase (Closed-Loop) unter ständiger sensorischer Rückkopplung. Diese Geschwindigkeits-Genauigkeits-Abwägung wurde von Paul M. Fitts (1954) im Fitts’schen Gesetz mathematisch quantifiziert: Die Bewegungszeit skaliert logarithmisch mit der Zieldistanz und umgekehrt proportional zur Zielbreite (ID = log2(2D / W)).",
       "Spätere neurowissenschaftliche Modellierungen von David E. Meyer et al. (1988) etablierten das Stochastic Optimized Submovement Model. Dieses belegt, dass die menschliche Motorik primäre Bewegungen strategisch so plant, dass sie kurz vor oder am Rand des Zielbereichs landen, um verbleibende Koordinatendifferenzen durch blitzschnelle Korrektur-Subbewegungen ohne kinetisches Überschwingen (Overshoot) aufzulösen.",
       "In der hochauflösenden Endphase der fovealen Fixation nutzt das okulomotorische System Mikrosakkaden – unwillkürliche, hochfrequente Foveaverschiebungen von unter 1 Grad –, um retinale Signale aufzufrischen und das Sehzentrum auf mikroskopischen Trefferflächen zu zentrieren (Rolfs, 2009; Martinez-Conde et al., 2004). Dieser Trainer koppelt Raw-Pointer-Lock-Hardwareeingaben mit digitaler Hochpräzisions-Chronometrie via performance.now() (Woods et al., 2015), um Endphasen-Oszillationen und Overflick-Drift zu eliminieren.",
       "Messpräzision & Hardware-Latenz: Jedes Ereignis wird clientseitig mit der hochauflösenden Systemuhr performance.now() erfasst – es findet kein Upload von Daten statt. Zwei physikalische Grenzwerte sind zu beachten: Browser-Timer werden zum Schutz vor Spectre-Angriffen auf rund 1 ms gerundet, und der Monitor quantisiert Bildreize auf sein Bildwiederholintervall (~16,7 ms bei 60 Hz, 6,9 ms bei 144 Hz und 4,1 ms bei 240 Hz; Woods et al., 2015). Die USB-Abtastrate (Polling Rate) addiert etwa 8 ms bei 125 Hz gegenüber 1 ms bei 1000 Hz. Zeitunterschiede unter 5 ms stellen messtechnisches Rauschen dar; vergleiche daher deine Messreihen auf identischer Hardware."
     ],
     benchmarks: {
-      title: "Mikrokorrektur-Latenz & Präzisions-Benchmarks (Millisekunden & Trefferquote)",
-      headers: ["Leistungsstufe (Skill-Tier)", "Korrekturzeit (ms)", "Mikro-Trefferquote", "Taktischer Nutzen im Match"],
+      title: "SkillDrills-Übungsbereiche für Mikrokorrekturen (Richtwerte)",
+      headers: ["Übungsbereich", "Korrekturzeit (ms)", "Mikro-Trefferquote", "Übungsfokus"],
       rows: [
-        ["Stufe 5: Sehr hohe Präzision", "< 140 ms", "95% – 99%+", "Fokus: Flick und Feinjustierung zu einer Bewegung verbinden."],
-        ["Stufe 4: Hohe Präzision", "140 – 190 ms", "88% – 95%", "Fokus: Bremskontrolle und schnelle Korrektur verfehlter Initial-Flicks."],
-        ["Tier 3 (Erfahren / Diamant & Ascendant)", "190 – 250 ms", "80% – 88%", "Solide Feinkorrektur; leichte Handgelenksanspannung führt gelegentlich zu minimalem Overshoot."],
-        ["Tier 4 (Fortgeschritten / Gold & Platin)", "250 – 340 ms", "70% – 80%", "Verzögerte Bremsung; Ziel wird oft überrissen, was zeitraubende Doppelkorrekturen erzwingt."],
-        ["Tier 5 (Einsteiger / Silber & Bronze)", "> 340 ms", "< 70%", "Fehlende Fingergelenk-Nutzung; Korrekturen erfolgen mit dem ganzen Arm, was zu Fehlschüssen führt."]
+        ["Bereich 1", "< 140 ms", "95% – 99%+", "Fokus: Flick und Feinjustierung zu einer Bewegung verbinden."],
+        ["Bereich 2", "140 – 190 ms", "88% – 95%", "Fokus: Bremskontrolle und schnelle Korrektur verfehlter Initial-Flicks."],
+        ["Bereich 3", "190 – 250 ms", "80% – 88%", "Fokus: Handgelenk locker halten, um gelegentlichen Overshoot zu vermeiden."],
+        ["Bereich 4", "250 – 340 ms", "70% – 80%", "Fokus: früher bremsen, um Doppelkorrekturen nach dem Überreißen zu vermeiden."],
+        ["Bereich 5", "> 340 ms", "< 70%", "Einstieg: Korrekturen noch mit dem ganzen Arm statt mit den Fingern."]
       ],
-      note: "Die durchschnittliche Korrekturzeit bemisst das Intervall zwischen dem Klick auf das Ankerziel und dem präzisen Treffer auf das nachfolgende Mikro-Ziel (Woods et al., 2015)."
+      note: "SkillDrills-Übungsrichtwerte, keine Forschungsnormen, keine Spiel-Ränge und keine Nutzerdaten. Die durchschnittliche Korrekturzeit ist das Intervall zwischen dem Ankertreffer und dem Treffer auf das Mikroziel."
     },
     techniques: {
       title: "Biomechanische Kerntechniken für fehlerfreie Mikrokorrekturen",
@@ -275,7 +283,7 @@ export default function MicroCorrectionDePage() {
       "Justiere das Fadenkreuz mit den Fingerkuppen nach und löse bei Zielbestätigung den Schuss aus.",
       "Halte deine Trefferserie aufrecht, um hohe Combo-Boni zu erzielen und immer kleinere Zielradien zu meistern."
     ],
-    audience: "Wettkampfspieler in Counter-Strike 2, Valorant, Rainbow Six Siege und Apex Legends, die ihre Kopfschuss-Quote maximieren und verfehlte Flicks blitzschnell korrigieren wollen.",
+    audience: "Spieler von Counter-Strike 2, Valorant, Rainbow Six Siege und Apex Legends, die die Korrektur nach einem knapp verfehlten Flick üben wollen.",
     faqs: faqSchema.mainEntity.map(e => ({ q: e.name, a: e.acceptedAnswer.text })),
     sources: pickSources('woods2015', 'fitts1954', 'meyer1988', 'martinezConde2004', 'rolfs2009', 'woodworth1899'),
     related: [
@@ -287,9 +295,9 @@ export default function MicroCorrectionDePage() {
   };
 
   const copyDe = {
-    h1Keyword: "Aim Trainer",
-    h1Suffix: " – Mikrokorrektur & Headshot-Präzision",
-    subtitle: "Trainiere Endphasen-Bremskontrolle und unmittelbare Micro-Adjustments für tödliche Headshot-Präzision.",
+    h1Keyword: "Mikrokorrekturen trainieren",
+    h1Suffix: ": Headshot-Präzision",
+    subtitle: "Mikrokorrekturen trainieren: Triff das Ankerziel und zieh das Fadenkreuz sofort auf das kleine Mikroziel daneben. Für Valorant- und CS2-Spieler.",
     statScore: "Punkte",
     statTime: "Zeit",
     statAccuracy: "Präzision",
@@ -297,7 +305,7 @@ export default function MicroCorrectionDePage() {
     statAvgCorrection: "Korrekturzeit",
     statMaxCombo: "Max Combo",
     statPeakLevel: "Level",
-    startTitle: "Aim Trainer - Mikrokorrektur & Headshots",
+    startTitle: "Mikrokorrekturen trainieren",
     startSubtitle: "Pointer Lock • Endlose Levelprogression & Bremskontrolle",
     getReady: "BEREITMACHEN",
     toggleFlash: "Fehlschuss-Aufleuchten umschalten",
@@ -305,12 +313,12 @@ export default function MicroCorrectionDePage() {
     stageCaption: "Klicke das Ankerziel an und korrigiere dein Fadenkreuz sofort mit feiner Fingerbewegung auf das Mikroziel.",
     rulesTitle: "Trainingsregeln & Punktesystem",
     rulesItems: [
-      { num: "1", text: "Ankerziel treffen", highlight: "+10 Pkt (+0,2s)", result: "Mikroziel aktiv" },
-      { num: "2", text: "Mikroziel treffen", highlight: "bis +585 Pkt", result: "Präzision × Combo" },
+      { num: "1", text: "Ankerziel treffen", highlight: "+10 Pkt (+1,0s)", result: "Mikroziel aktiv" },
+      { num: "2", text: "Mikroziel treffen", highlight: "100–150 Pkt (+1,0s)", result: "Präzision × Combo × Level" },
       { num: "3", text: "Levelaufstieg", highlight: "+1 Level / 1.400 Pkt", result: "Adaptive Skalierung" },
-      { num: "4", text: "Fehlschuss / Timeout", highlight: "Strafe", result: "Combo-Reset (-0,6s)" }
+      { num: "4", text: "Fehlschuss / Timeout", highlight: "Strafe", result: "Combo-Reset (-1,0s)" }
     ],
-    aboutTitle: "Über Aim Trainer und Mikrokorrektur",
+    aboutTitle: "Über das Mikrokorrektur-Training",
     aboutHeading: "Was ist Mikrokorrektur-Aiming?",
     aboutText: "Gezielte Zielbewegungen bestehen aus zwei Phasen: einem schnellen ballistischen Schwung und einer feinen, visuell geführten Korrekturbewegung nahe dem Ziel (Woodworth, 1899; Meyer et al., 1988). Dieser Trainer schult die zweite Phase, in der über Treffer oder Vorbeischuss entschieden wird."
   };

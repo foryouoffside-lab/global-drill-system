@@ -6,19 +6,17 @@ import RelatedDrills from '@/components/drill/RelatedDrills';
 import DrillFooter from '@/components/drill/DrillFooter';
 
 export const metadata = {
-  title: "反応速度テスト | FPSクリック反応測定 | SkillDrills",
-  description: "無料ブラウザの反応速度テストで、視覚刺激からクリックまでの時間を測り、FPSの撃ち合いに必要な反応を確認します。",
+  title: "FPS反応速度測定｜クリック反応をms表示 | SkillDrills",
+  description: "FPS反応速度測定：画面中央の的が緑に光った瞬間にクリックし、クリック反応をms表示。ランダムな待機とフェイントでヤマ張りを防ぐ無料ブラウザドリル。マウス必須。",
   keywords: [
-    "反応速度テスト",
-    "反応速度 テスト",
-    "反応速度 テスト 無料",
-    "反応速度 テスト fps",
-    "クリック 反応速度 テスト",
-    "マウス 反応速度 テスト",
-    "反射神経テスト",
-    "FPS 反応速度",
-    "プロゲーマー 反応速度",
-    "反応速度 テスト ブラウザ"
+    "FPS 反応速度 測定",
+    "fps 反応速度",
+    "fps 反応速度 平均",
+    "クリック反応",
+    "クリック 反応速度",
+    "置きエイム 反応",
+    "VALORANT 反応速度",
+    "CS2 反応速度"
   ],
   alternates: {
     canonical: "https://skilldrills.online/ja/drills/fps/instant-response",
@@ -29,8 +27,8 @@ export const metadata = {
     follow: true,
   },
   openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
-    title: "反応速度テスト | FPSクリック反応測定 | SkillDrills",
-    description: "視覚刺激からクリックまでの反応時間をミリ秒で測定。置きエイムと飛び出し反応を確認できる無料ブラウザドリル。",
+    title: "FPS反応速度測定｜クリック反応をms表示 | SkillDrills",
+    description: "FPS反応速度測定：中央の的が緑に光った瞬間のクリック反応をmsで記録。置きエイムの反応練習に使える無料ブラウザドリル。",
     url: "https://skilldrills.online/ja/drills/fps/instant-response",
     siteName: 'SkillDrills',
     locale: 'ja_JP',
@@ -38,8 +36,8 @@ export const metadata = {
   },
   twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: 'summary_large_image',
-    title: "反応速度テスト | FPSクリック反応測定 | SkillDrills",
-    description: "視覚刺激からクリックまでの反応時間をミリ秒で測定。置きエイムと飛び出し反応を確認できる無料ブラウザドリル。",
+    title: "FPS反応速度測定｜クリック反応をms表示 | SkillDrills",
+    description: "FPS反応速度測定：中央の的が緑に光った瞬間のクリック反応をmsで記録。置きエイムの反応練習に使える無料ブラウザドリル。",
   },
 };
 
@@ -50,19 +48,19 @@ export default function InstantResponseJaPage() {
     "itemListElement": [
       { "@type": "ListItem", "position": 1, "name": "SkillDrills", "item": "https://skilldrills.online/ja" },
       { "@type": "ListItem", "position": 2, "name": "FPSエイム練習", "item": "https://skilldrills.online/ja/drills/fps" },
-      { "@type": "ListItem", "position": 3, "name": "反応速度テスト - FPSクリック反応", "item": "https://skilldrills.online/ja/drills/fps/instant-response" }
+      { "@type": "ListItem", "position": 3, "name": "FPS反応速度測定", "item": "https://skilldrills.online/ja/drills/fps/instant-response" }
     ]
   };
 
   const softwareSchema = {
     "@context": "https://schema.org",
     "@type": "SoftwareApplication", "sameAs": ["https://en.wikipedia.org/wiki/Reaction_time", "https://en.wikipedia.org/wiki/Mental_chronometry"],
-    "name": "反応速度テスト - FPSクリック反応",
+    "name": "FPS反応速度測定",
     "applicationCategory": "GameApplication",
     "operatingSystem": "Web Browser",
-    "dateModified": "2026-09-20",
+    "dateModified": "2026-11-09",
     "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
-    "description": "視覚刺激認知、神経伝達潜時、クリック反射速度をミリ秒単位で高精度測定・訓練する無料ブラウザFPS反射神経ドリル。",
+    "description": "中央の的が光ってからクリックするまでの時間をミリ秒単位で記録する無料ブラウザのFPS反応速度測定ドリル。",
     "genre": "FPS Training / Reaction Speed",
     "url": "https://skilldrills.online/ja/drills/fps/instant-response",
     "publisher": {
@@ -75,7 +73,7 @@ export default function InstantResponseJaPage() {
   const webAppSchema = {
     "@context": "https://schema.org",
     "@type": "WebApplication",
-    "name": "反応速度テスト - FPSクリック反応",
+    "name": "FPS反応速度測定",
     "url": "https://skilldrills.online/ja/drills/fps/instant-response",
     "applicationCategory": "GameApplication",
     "operatingSystem": "All",
@@ -85,16 +83,16 @@ export default function InstantResponseJaPage() {
       "price": "0",
       "priceCurrency": "USD"
     },
-    "description": "ブラウザ上で動作する高精度FPS反応速度測定テスト。フェイント刺激を見極めつつ最速クリック反応を鍛えます。"
+    "description": "ブラウザで動くFPS反応速度測定。ランダムな待機後に緑に光る的をクリックし、中盤レベルから出るフェイントには反応しない練習です。"
   };
 
   const videoGameSchema = {
     "@context": "https://schema.org",
     "@type": "VideoGame",
-    "name": "反応速度テスト - FPSクリック反応",
+    "name": "FPS反応速度測定",
     "url": "https://skilldrills.online/ja/drills/fps/instant-response",
-    "description": "視覚刺激認知、神経伝達潜時、クリック反射速度をミリ秒単位で高精度測定・訓練する無料ブラウザFPS反射神経ドリル。",
-    "dateModified": "2026-09-20",
+    "description": "中央の的が光ってからクリックするまでの時間をミリ秒単位で記録する無料ブラウザのFPS反応速度測定ドリル。",
+    "dateModified": "2026-11-09",
     "gamePlatform": "Web Browser",
     "genre": ["FPS Training", "Reaction Trainer", "Aim Trainer"],
     "playMode": "SinglePlayer",
@@ -106,7 +104,7 @@ export default function InstantResponseJaPage() {
   const faqSchema = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
-    "dateModified": "2026-09-20",
+    "dateModified": "2026-11-09",
     "mainEntity": [
       {
         "@type": "Question",
@@ -129,7 +127,7 @@ export default function InstantResponseJaPage() {
         "name": "反応速度はトレーニングによって短縮できますか？",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "はい。生来の神経伝達速度そのものは大きく変わりませんが、練習で判断の迷いが減ると、この練習画面での反応時間が短くなることがあります。短縮幅には個人差があります。"
+          "text": "ある程度は可能です。生来の神経伝達速度そのものは大きく変わりませんが、練習で判断の迷いが減ると、この練習画面での反応時間が短くなることがあります。短縮幅には個人差があります。"
         }
       },
       {
@@ -145,7 +143,7 @@ export default function InstantResponseJaPage() {
         "name": "人間の視覚反応速度の生物学的限界は何ミリ秒ですか？",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "網膜光受容（30〜50ms）、皮質刺激評価（50〜70ms）、皮質脊髄伝達（20〜30ms）、筋肉の電気機械遅延（約30ms）の生理学的制約により、無予測状態での人間の生物学的限界は約130〜150msとされています。"
+          "text": "光を見てクリックするまでには目・脳・指の筋肉を通る処理時間が必要なため、予測なしで100msより速い記録はまれです。このドリルでそれより速い記録が頻繁に出る場合はヤマ張りを疑ってください。記録には機器の遅延も含まれます。"
         }
       },
       {
@@ -153,7 +151,7 @@ export default function InstantResponseJaPage() {
         "name": "モニターのリフレッシュレートやマウスポーリングレートは影響しますか？",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "極めて大きく影響します。60Hzモニターのフレーム表示間隔は約16.7msですが、240Hzでは約4.16msとなりハードウェア遅延が12.5ms短縮されます。また、1000Hzのマウスは1msごとに座標更新を行うため、入力ジッターが最小限に抑えられます (Woods et al., 2015)。"
+          "text": "影響します。60Hzモニターのフレーム表示間隔は約16.7msですが、240Hzでは約4.16msとなりハードウェア遅延が12.5ms短縮されます。また、1000Hzのマウスは1msごとに座標更新を行うため、入力ジッターが最小限に抑えられます (Woods et al., 2015)。"
         }
       },
       {
@@ -161,7 +159,7 @@ export default function InstantResponseJaPage() {
         "name": "早期射撃（ヤマ張り・プリファイア）はなぜ減点されるのですか？",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "視覚認知を待たずにタイミング予測だけでクリックすると、実戦で敵のフェイントや飛び出しのタイミングのズレに対応できなくなります。本ドリルではランダムな待機時間と薄いフェイント光を導入し、確実な視認後クリックを徹底させています。"
+          "text": "視覚認知を待たずにタイミング予測だけでクリックすると、実戦で敵のフェイントや飛び出しのタイミングのズレに対応できなくなります。本ドリルではランダムな待機時間と（中盤レベルから）薄いフェイント光を導入し、確実な視認後クリックを徹底させています。"
         }
       },
       {
@@ -169,7 +167,7 @@ export default function InstantResponseJaPage() {
         "name": "睡眠不足や疲労は反応速度にどれほど悪影響を及ぼしますか？",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "睡眠不足や認知疲労はノルアドレナリン神経系を鈍化させ、反応潜時を40〜80ms程度悪化させます。これは中程度の飲酒状態に匹敵するパフォーマンス低下です。"
+          "text": "睡眠不足や疲労は反応時間を長くすることがあります。疲れているときの記録は、普段の記録と分けて比較してください。"
         }
       },
       {
@@ -185,7 +183,7 @@ export default function InstantResponseJaPage() {
         "name": "試合前の最も効果的な反射神経ウォーミングアップは？",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "指先と手首の軽いストレッチ3分、本ドリルでの単純反射刺激ウォームアップ5分、その後の実戦マイクロフリック2分という10分間のルーティンが最も神経系を目覚めさせます。"
+          "text": "指先と手首の軽いストレッチ3分、本ドリルでの単純反射刺激ウォームアップ5分、その後の実戦マイクロフリック2分という10分間のルーティンが一例です。"
         }
       }
     ]
@@ -225,36 +223,36 @@ export default function InstantResponseJaPage() {
   };
 
   const instantResponseGuide = {
-    heading: "反応速度テストとFPSクリック反応ガイド",
+    heading: "FPS反応速度測定とクリック反応ガイド",
     intro: [
-      "反応速度テストは、画面の合図を認識してクリックするまでの感覚運動時間を測る練習です。このドリルは視覚刺激から最初のクリックまでを記録し、Apex・VALORANTなどFPSの撃ち合いに必要な反応を確認します。",
+      "FPS反応速度測定は、画面中央の的が緑に光ってからクリックするまでの時間を測る練習です。このドリルはクリック反応をms表示し、ランダムな待機とフェイントでヤマ張りを防ぎながら、VALORANT・CS2の置きエイムに必要な反応を確認します。",
       "精神時間測定学の基礎はオランダの眼科医フランシスクス・ドンデルス (1868) の減算法によって確立されました。単一の刺激に対して反射的に指を動かす「単純反応時間（Type A）」は、人間の大脳皮質および中枢神経系が持つ純粋な情報伝達帯域幅をダイレクトに反映します。",
-      "本ドリルはHTML5 Pointer Lock API配下でブラウザの performance.now() 高精度タイムスタンプを用いて計測されます (Woods et al., 2015)。照準の移動距離を伴うフリック練習とは異なり、純粋な視覚検知から運動出力までの神経潜時を単離し、ランダム待機時間とフェイント刺激によってヤマ張り（プリファイア）を徹底的に排除します。",
+      "本ドリルはHTML5 Pointer Lock API配下でブラウザの performance.now() 高精度タイムスタンプを用いて計測されます (Woods et al., 2015)。的は画面中央に固定され照準も中央から始まるため、フリック練習と違い大きな移動なしでクリック反応だけを記録します。ランダム待機時間とフェイント刺激でヤマ張り（プリファイア）を減点します。記録にはモニター・マウス・ブラウザの遅延が含まれます。",
       "測定仕様について：すべてのイベントはお使いの端末の performance.now() 高分解能クロックによって完全にローカルで記録され、外部へスコアが送信されることはありません。ブラウザのタイマー解像度制限（Spectre対策で通常約1ms）およびディスプレイのリフレッシュ間隔（60Hzで約16.7ms、144Hzで約6.9ms、240Hzで約4.1ms）による量子化誤差が生じるため、5ms未満の微小な差異は測定誤差として扱い、他者の環境との比較よりも同一環境での自己記録の推移を重視してください (Woods et al., 2015)。"
     ],
     benchmarks: {
-      title: "反応速度 & 感覚運動潜時パフォーマンスティア",
-      headers: ["パフォーマンスティア", "測定反応速度 (ms)", "神経筋・生理学的状態", "競技FPSにおける実戦的影響"],
+      title: "クリック反応時間別のSkillDrills練習ゾーン",
+      headers: ["SkillDrills練習ゾーン", "ドリル計測値 (ms)", "1ヒットの基本点（コンボ・レベル倍率前）", "メモ"],
       rows: [
-        ["ティア 1 (頂点反射神経)", "130 – 165 ms", "生物学的限界水準：網膜光受容最適化、準備電位の完全確立、超低遅延機器", "角待ち・置きエイムの場面を想定した最上位段階の目安"],
-        ["ティア 2 (上級段階)", "165 – 195 ms", "研ぎ澄まされた覚醒水準、高リフレッシュレート環境（240Hz+）、自動化された運動射撃", "反応と射撃の自動化を重点的に練習する段階"],
-        ["ティア 3 (上級FPSゲーマー)", "195 – 225 ms", "安定した感覚運動協調、一般的なゲーミング機器（144Hz）、迷いのないクリック判断", "適切なクロスヘア配置により中距離〜遠距離の防衛戦で高いキルレートを維持"],
-        ["ティア 4 (平均的ゲーマー)", "225 – 265 ms", "訓練されていない一般成人の基準値、60Hz〜144Hz環境、わずかな認知躊躇", "飛び出し側有利（Peeker's Advantage）に対して角を狭く取らないと撃ち負けやすい"],
-        ["ティア 5 (疲労 / 入力遅延)", "265 – 330+ ms", "累積疲労、睡眠不足、高い入力遅延、または不適切な筋緊張", "敵の視認からクリックまでの遅れが目立ち、実戦で先に撃ち抜かれる場面が増加"]
+        ["ゾーン A", "≤ 150 ms", "100 + スピードボーナス 150", "ボーナス最大。頻発する場合はヤマ張りでないか確認"],
+        ["ゾーン B", "150 – 250 ms", "100 + 約107〜150", "ボーナスが大きく残るゾーン"],
+        ["ゾーン C", "250 – 350 ms", "100 + 約64〜107", "ボーナスが半分前後まで減るゾーン"],
+        ["ゾーン D", "350 – 500 ms", "100 + 0〜64", "ボーナスが0に近づくゾーン"],
+        ["ゾーン E", "> 500 ms", "100（ボーナスなし）", "レベル1の表示時間は約550msで、レベルが上がるほど短くなりタイムアウトになります"]
       ],
-      note: "数値はドンデルスの単純反応時間モデル（1868）およびデジタルクロノメトリー基準（Woods et al., 2015）に基づく客観的データです。"
+      note: "この表はドリルの得点ルールから導いたSkillDrillsの練習ゾーンです。研究上の基準値やユーザーデータではなく、計測値にはモニター・マウス・ブラウザの遅延が含まれます。"
     },
     techniques: {
       title: "トリガー反応速度を極限まで高めるための実践プロトコル",
       items: [
         {
           name: "視線集中と中心視野アンカー",
-          desc: "画面周辺を漫然と眺めるのではなく、刺激が現れる中央のレティクルへ視線をピンポイントで集中させます。ポズナーの研究 (1990) によれば、空間的注意を集中させることで視覚野の信号統合が15〜25ms高速化します。",
+          desc: "画面周辺を漫然と眺めるのではなく、刺激が現れる中央のレティクルへ視線をピンポイントで集中させます。刺激が出る位置に前もって注意を向けると反応が速くなりうるという注意研究（Posner系）があります。",
           tips: "目のピントをガチガチに固めず、リラックスした状態で中心を見つめるのがコツです。"
         },
         {
           name: "人差し指のプリトラベル（遊び）除去",
-          desc: "クリックする前に人差し指をマウスマイクロスイッチの作動点ギリギリまであらかじめ軽く押し当てておきます。物理的な指の空走距離をなくすことで、20〜35msの機械的遅延を削減できます。",
+          desc: "クリックする前に人差し指をマウスマイクロスイッチの作動点ギリギリまであらかじめ軽く押し当てておきます。指の空走距離をなくすと、クリックにかかる時間を縮める助けになります。",
           tips: "前腕全体に力を入れると逆に初動が遅れるため、指先の第1関節のみを脱力して準備してください。"
         },
         {
@@ -274,9 +272,9 @@ export default function InstantResponseJaPage() {
       "「ドリル開始」をクリックして全画面表示とPointer Lockを有効化します。",
       "中央の照準レティクルへ集中を保ちながら、指先をスイッチ作動点へ軽く構えます。",
       "緑色フラッシュを視認した瞬間に電光石火のクリックを行い、ランダムな待機時間中の早期射撃を抑えます。",
-      "ドリル終了後に平均反応速度（ms）、標準偏差、コンボ継続数を確認し、自己ベストの更新を目指します。"
+      "命中ごとに2秒加算（最大60秒）、早撃ち・ミス・タイムアウトごとに1秒減少します。残り時間0で終了し、平均反応速度（ms）、命中率、最大コンボ、最高レベルを確認します。"
     ],
-    audience: "VALORANTやCS2などで置きエイムの勝率を上げたいプレイヤー、自身の反射神経をミリ秒単位で正確に計測したいゲーマー、そして神経系の瞬発力を磨きたいすべてのシューター競技者。",
+    audience: "VALORANTやCS2などで置きエイムの勝率を上げたいプレイヤー、自身の反射神経をミリ秒単位で正確に計測したいゲーマー、そしてクリック反応を練習したいすべてのFPSプレイヤー。",
     faqs: faqSchema.mainEntity.map(e => ({ q: e.name, a: e.acceptedAnswer.text })),
     sources: pickSources('woods2015', 'posner1990', 'donders1969', 'hick1952'),
     related: [
@@ -316,27 +314,27 @@ export default function InstantResponseJaPage() {
       />
       <InstantResponseClient
         copy={{
-          h1Keyword: "反応速度テスト",
-          h1Suffix: " - FPSクリック反応",
+          h1Keyword: "FPS反応速度測定",
+          h1Suffix: " - クリック反応をms表示",
           subtitle: "視覚反応の遅れ、クリック速度、発砲の規律を計測・練習します",
           statScore: "スコア",
           statTime: "残り時間",
           statAccuracy: "命中率",
           statBestScore: "自己ベスト",
-          startTitle: "反応速度テスト",
-          startSubtitle: "視覚反射潜時 & トリガー速度 • エンドレス難易度進行",
+          startTitle: "FPS反応速度測定",
+          startSubtitle: "マウス + ポインターロック • 45秒スタート • エンドレス難易度",
           getReady: "準備完了",
           pausedTitle: "一時停止中",
           pausedSubtitle: "クリックして再開 — カーソルロックが再適用されます",
           stageCaption: "中央ターゲットが緑色にフラッシュした瞬間にクリックしてください。フェイントを見極める自制心が求められます。",
           rulesTitle: "ドリル手順 & スコアリングシステム",
           rulesItems: [
-            { num: "1", text: "フラッシュ反応命中", highlight: "+100 PTS (+0.6s)", result: "×コンボ倍率" },
-            { num: "2", text: "スピードボーナス", highlight: "150ms未満ヒット", result: "最大 +150 PTS" },
+            { num: "1", text: "フラッシュ反応命中", highlight: "+100 PTS (+2秒、最大60秒)", result: "×コンボ倍率" },
+            { num: "2", text: "スピードボーナス", highlight: "500ms未満ヒット", result: "最大 +150 PTS（150ms以下）" },
             { num: "3", text: "レベル難易度進行", highlight: "+1 レベル / 1400 PTS", result: "適応型露出時間" },
-            { num: "4", text: "早期射撃 / ミス", highlight: "失敗ペナルティ", result: "コンボリセット (-0.8s)" }
+            { num: "4", text: "早期射撃 / ミス", highlight: "フェイント・タイムアウト含む", result: "コンボリセット (-1秒)" }
           ],
-          aboutTitle: "反応速度テストとFPS反応について",
+          aboutTitle: "FPS反応速度測定について",
           aboutHeading: "FPS反応速度トレーニングとは？"
         }}
       />

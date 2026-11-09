@@ -303,12 +303,6 @@ export default function StrafeTrackingPage() {
       { iconBg: "bg-fuchsia-600", title: "Skills Trained", text: "Reactive tracking, aim smoothness, counter-strafe reading, directional transition speed, and wrist glide control." },
       { iconBg: "bg-orange-600", title: "Pointer Lock Mouse Input", text: "Mouse movement is captured with the browser Pointer Lock API so the cursor stays on the canvas. Turn off OS pointer acceleration to keep movement consistent." }
     ],
-    rulesItems: [
-      { num: "1", text: "Tracking Alignment", highlight: "+50 PTS (+0.4s/s)", result: "×Combo Mult" },
-      { num: "2", text: "Continuous Combo", highlight: "Up to 3.0×", result: "Max Multiplier" },
-      { num: "3", text: "Level Progression", highlight: "+1 Level / 1400 PTS", result: "Adaptive Strafe" },
-      { num: "4", text: "Off-Target Penalty", highlight: "1.0s Off-Target", result: "Resets Combo (-0.6s)" }
-    ]
   };
 
   return (

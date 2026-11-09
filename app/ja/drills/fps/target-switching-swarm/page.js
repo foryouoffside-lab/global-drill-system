@@ -20,15 +20,15 @@ import { pickSources } from '@/lib/drillSources';
 // ============================================================
 
 export const metadata = {
-  title: "VALORANT ターゲット切り替え - エイム練習 | SkillDrills",
-  description: "ブラウザで無料のVALORANTターゲット切り替え練習。複数の敵を素早く渡り、スプレートランスファーと連続フリックの精度を測定します。",
+  title: "ターゲットスイッチ練習｜複数の的を素早く切り替える | SkillDrills",
+  description: "ブラウザで無料のターゲットスイッチ練習。画面を動き回る2〜5個の的を次々に撃ち、複数ターゲットの切り替えを鍛えます。命中で+2秒（最大60秒）、ミスで-1秒のエンドレスドリルです。",
   keywords: [
-    'VALORANT ターゲット切り替え',
+    'ターゲットスイッチ練習',
     'ターゲットスイッチング',
+    '複数ターゲット 切り替え',
     'スイッチング エイム',
     'マルチターゲット エイム練習',
     'ターゲット切り替え FPS',
-    'マルチターゲット エイム練習',
     'スプレートランスファー',
     '切り替え速度',
     'フリック エイム 移行',
@@ -46,8 +46,8 @@ export const metadata = {
     follow: true,
   },
   openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
-    title: 'VALORANT ターゲット切り替え - エイム練習 | SkillDrills',
-    description: "ブラウザで無料のVALORANTターゲット切り替え練習。複数の敵を素早く渡り、スプレートランスファーと連続フリックの精度を測定します。",
+    title: 'ターゲットスイッチ練習｜複数の的を素早く切り替える | SkillDrills',
+    description: "ブラウザで無料のターゲットスイッチ練習。画面を動き回る2〜5個の的を次々に撃ち、複数ターゲットの切り替えを鍛えます。命中で+2秒（最大60秒）、ミスで-1秒のエンドレスドリルです。",
     url: "https://skilldrills.online/ja/drills/fps/target-switching-swarm",
     siteName: 'SkillDrills',
     locale: 'ja_JP',
@@ -55,8 +55,8 @@ export const metadata = {
   },
   twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: 'summary_large_image',
-    title: 'VALORANT ターゲット切り替え - エイム練習 | SkillDrills',
-    description: "ブラウザで無料のVALORANTターゲット切り替え練習。複数の敵を素早く渡り、スプレートランスファーと連続フリックの精度を測定します。",
+    title: 'ターゲットスイッチ練習｜複数の的を素早く切り替える | SkillDrills',
+    description: "ブラウザで無料のターゲットスイッチ練習。画面を動き回る2〜5個の的を次々に撃ち、複数ターゲットの切り替えを鍛えます。命中で+2秒（最大60秒）、ミスで-1秒のエンドレスドリルです。",
   },
 };
 
@@ -74,12 +74,12 @@ export default function TargetSwitchingSwarmPageJa() {
   const softwareSchema = {
     "@context": "https://schema.org",
     "@type": "SoftwareApplication", "sameAs": ["https://en.wikipedia.org/wiki/Saccade", "https://en.wikipedia.org/wiki/Hand%E2%80%93eye_coordination"],
-    "name": "VALORANT ターゲット切り替え - エイム練習",
+    "name": "ターゲットスイッチ練習｜複数の的を素早く切り替える",
     "applicationCategory": "GameApplication",
     "operatingSystem": "Web Browser",
-    "dateModified": "2026-09-20",
+    "dateModified": "2026-11-09",
     "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
-    "description": "無料のブラウザFPSターゲットスイッチング練習アプリ。連続出現するスワームターゲットへの瞬時フリックとスプレーツランスファーを鍛えます。",
+    "description": "無料のブラウザ用ターゲットスイッチ練習。画面を跳ね回る2〜5個の的を連続で撃ち、複数ターゲットの切り替えを練習します。",
     "genre": "FPS Training / Target Switching",
     "url": "https://skilldrills.online/ja/drills/fps/target-switching-swarm",
     "publisher": {
@@ -92,23 +92,23 @@ export default function TargetSwitchingSwarmPageJa() {
   const webAppSchema = {
     "@context": "https://schema.org",
     "@type": "WebApplication",
-    "name": "VALORANT ターゲット切り替え - エイム練習",
+    "name": "ターゲットスイッチ練習｜複数の的を素早く切り替える",
     "applicationCategory": "GameApplication",
     "operatingSystem": "Web Browser",
-    "dateModified": "2026-09-20",
+    "dateModified": "2026-11-09",
     "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
     "browserRequirements": "Pointer Lock API、JavaScript、HTML5 Canvas対応ブラウザ",
-    "description": "無料のブラウザFPSターゲットスイッチング練習アプリ。連続出現するスワームターゲットへの瞬時フリックとスプレーツランスファーを鍛えます。",
+    "description": "無料のブラウザ用ターゲットスイッチ練習。画面を跳ね回る2〜5個の的を連続で撃ち、複数ターゲットの切り替えを練習します。",
     "url": "https://skilldrills.online/ja/drills/fps/target-switching-swarm"
   };
 
   const videoGameSchema = {
     "@context": "https://schema.org",
     "@type": "VideoGame",
-    "name": "VALORANT ターゲット切り替え - エイム練習",
+    "name": "ターゲットスイッチ練習｜複数の的を素早く切り替える",
     "url": "https://skilldrills.online/ja/drills/fps/target-switching-swarm",
-    "description": "無料のブラウザFPSターゲットスイッチング練習アプリ。連続出現するスワームターゲットへの瞬時フリックとスプレーツランスファーを鍛えます。",
-    "dateModified": "2026-09-20",
+    "description": "無料のブラウザ用ターゲットスイッチ練習。画面を跳ね回る2〜5個の的を連続で撃ち、複数ターゲットの切り替えを練習します。",
+    "dateModified": "2026-11-09",
     "gamePlatform": "Web Browser",
     "genre": ["FPS Training", "Aim Trainer", "Target Switching"],
     "playMode": "SinglePlayer",
@@ -120,7 +120,7 @@ export default function TargetSwitchingSwarmPageJa() {
   const faqSchema = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
-    "dateModified": "2026-09-20",
+    "dateModified": "2026-11-09",
     "mainEntity": [
       {
         "@type": "Question",
@@ -140,10 +140,10 @@ export default function TargetSwitchingSwarmPageJa() {
       },
       {
         "@type": "Question",
-        "name": "スワーム（群れ）形式の練習はマルチキル能力にどう貢献しますか？",
+        "name": "このターゲットスイッチ練習はどんなルールですか？",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "1体の敵を倒しながら周辺視野で次の敵の位置を無意識に計算（視覚事前ルーティング）する動きを練習でき、実戦のサイト防衛やリテイク時における連続キル速度の向上に役立つ可能性があります。"
+          "text": "開始時の制限時間は45秒で、画面を跳ね回る的がレベルに応じて2〜5個表示され続けます。的に当てると+100点にコンボ倍率とレベル倍率が掛かり、時間が2秒増えます（最大60秒）。何もない場所をクリックすると1秒減り、コンボがリセットされます。ターゲットのタイムアウト設定がオンの場合、一定時間（序盤は約2.8秒、レベルが上がるほど短く）以内に当てられなかった的は消え、1秒減ります。2100点ごとにレベルが上がり、的は小さく速くなります。マウスとポインターロックで操作し、Escキーで終了します。"
         }
       },
       {
@@ -151,15 +151,15 @@ export default function TargetSwitchingSwarmPageJa() {
         "name": "敵を倒した後に次の標的へエイムが遅れる（躊躇する）のはなぜですか？",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "敵が倒れたかどうかの「キル確認（視覚・聴覚フィードバック）」を無意識に待ってから次の動作を始めるためです。本ドリルを反復することで、クリック完了と同時に眼球サッケードを次の標的に飛ばす運動習慣が身につきます。"
+          "text": "敵が倒れたかどうかの「キル確認（視覚・聴覚フィードバック）」を無意識に待ってから次の動作を始めるためです。このドリルでは当てた的がすぐに消えて新しい的が出るため、確認を待たずに次の的へ視線とマウスを移す流れを繰り返し練習できます。"
         }
       },
       {
         "@type": "Question",
-        "name": "CS2やVALORANTのスプレーツランスファー（リコイル移行）に役立ちますか？",
+        "name": "CS2などのスプレートランスファー（リコイル移行）に役立ちますか？",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "はい、極めて役立ちます。フルオート射撃中に隣接する敵へ素早くクロスヘアを移動させてピタッと止めるブレーキ制動力（終末減速）が鍛えられます。"
+          "text": "部分的にです。このドリルはクリック単位の判定で、リコイルや連射は再現しません。ただし、ある的から次の的へクロスヘアを移して正確に止める動作はスプレートランスファーの土台になるため、補助練習として使えます。"
         }
       },
       {
@@ -167,7 +167,7 @@ export default function TargetSwitchingSwarmPageJa() {
         "name": "ターゲットスイッチングが最も重要となるゲームタイトルは何ですか？",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "VALORANT、Counter-Strike 2、Apex Legends、Overwatch 2など、複数人が同時にエントリーしてくる状況で瞬時に連続ヘッドショットや確殺が求められるすべての競技シューターです。"
+          "text": "Counter-Strike 2、Apex Legends、Overwatch 2のように、複数の敵を続けて相手にする場面が多いFPSで特に役立ちます。"
         }
       },
       {
@@ -183,7 +183,7 @@ export default function TargetSwitchingSwarmPageJa() {
         "name": "フィッツの法則（Fitts' Law）と弾道運動はどう関係していますか？",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "フィッツの法則では距離と標的サイズで移動時間が決まりますが、スイッチングは最初の高速な弾道運動（主移動で90%接近）と、直後の精密微修正（副移動）の最適組み合わせによって最速化されます（Meyer et al., 1988）。"
+          "text": "フィッツの法則では距離と標的サイズで移動時間が決まりますが、確率的最適化サブムーブメントモデル（Meyer et al., 1988）によれば、照準は距離の大半を詰める速い主移動と、短い修正移動で構成されます。的が小さく速いほど修正移動が多く必要になります。"
         }
       },
       {
@@ -191,7 +191,7 @@ export default function TargetSwitchingSwarmPageJa() {
         "name": "ターゲットスイッチングの練習頻度はどれくらいが理想ですか？",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "1回あたり10〜15分、週に3〜4回または試合前のウォームアップルーティンとして取り入れることで、キル後の確認遅延が完全に排除されます。"
+          "text": "決まった正解はありません。試合前のウォームアップとして短く集中したセッションを数回行い、同じ環境で自己記録の変化を比べるのがおすすめです。実戦での上達を保証するものではありません。"
         }
       },
       {
@@ -199,7 +199,7 @@ export default function TargetSwitchingSwarmPageJa() {
         "name": "このターゲットスイッチングエイム練習は無料で利用できますか？",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "はい、登録不要・インストール不要・完全無料です。PCブラウザ上でポインターロック入力により即座に練習できます。"
+          "text": "はい、登録不要・インストール不要で無料です。PCブラウザでマウスとポインターロックを使って練習します。タッチ専用端末ではプレイできません。"
         }
       }
     ]
@@ -209,20 +209,20 @@ export default function TargetSwitchingSwarmPageJa() {
     "@context": "https://schema.org",
     "@type": "HowTo",
     "name": "ターゲット スイッチング エイムの練習手順",
-    "description": "多目標スワームに対して高速フリックと瞬時移行を習得する4ステップ。",
+    "description": "動き回る複数の的を連続で撃ち、ターゲットの切り替えを練習する4ステップ。",
         "step": [
       {
         "@type": "HowToStep",
         "position": 1,
         "name": "感度設定とポインターロックの有効化",
-        "text": "主力の競技FPSと同じDPIと感度を設定し、スタートボタンをクリックしてカーソルを固定します。",
+        "text": "/drills ページの感度設定を普段のゲーム感度に合わせて開始します。開始するとポインターロックが自動でかかります。",
         "url": "https://skilldrills.online/ja/drills/fps/target-switching-swarm#step-1"
       },
       {
         "@type": "HowToStep",
         "position": 2,
         "name": "最寄りのスワームターゲットを素早く捕捉",
-        "text": "出現したシアン色のターゲットの中で最も近く角度差の小さい標的に向けて素早くフリックし、クリックして破壊します。",
+        "text": "動いている的の中で最も近いものへフリックし、クリックして破壊して+2秒（最大60秒）を得ます。",
         "url": "https://skilldrills.online/ja/drills/fps/target-switching-swarm#step-2"
       },
       {
@@ -236,38 +236,38 @@ export default function TargetSwitchingSwarmPageJa() {
         "@type": "HowToStep",
         "position": 4,
         "name": "脱力したフローリズムで連続キルストリークを維持",
-        "text": "手首の緊張を解いて滑らかな運動連鎖を保ち、タイムリングが切れる前に連続撃破して高難度スワームを攻略します。",
+        "text": "手首の力を抜いてリズムを保ち、的がタイムアウトで消える前に連続で撃ってコンボとレベルを積み上げます。",
         "url": "https://skilldrills.online/ja/drills/fps/target-switching-swarm#step-4"
       }
     ]
   };
 
   const targetSwitchingGuide = {
-    heading: "VALORANT ターゲット切り替え：連続フリックとスプレートランスファー",
+    heading: "ターゲットスイッチ練習：複数の的を素早く切り替えるガイド",
     intro: [
-      "VALORANT ターゲット切り替え練習を探しているFPSプレイヤー向けに、このドリルは一つの敵を倒した直後に次の敵へ照準を移す時間と命中率を測定します。複数ターゲットの連続フリック、確認のための停止、スプレートランスファーの遅れをまとめて改善できます。",
-      "ターゲットスイッチングの心理物理学は、フィッツの法則（Fitts, 1954）およびDavid E. Meyerら（1988）が提唱した「確率的最適化サブムーブメントモデル」に基づいています。照準動作は最初の高速弾道運動（主移動：距離の約90%をカバー）と、視覚フィードバックによる微修正（副移動）から構成されます。初心者は1キルごとに100〜250msもの時間を「倒せたかどうかの確認」に無駄遣いしますが、一流のエイマーは1体目の標的が弾け飛ぶ前に次の標的へ視覚サッケードを開始しています。",
-      "密集したスワーム群からの標的選択には、特徴統合理論と前注意的視覚探索（Treisman & Gelade, 1980; Wolfe, 2007）が深く関与します。人間の視覚皮質は「視覚インデックス（FINST理論）」によって複数の空間位置を並列追跡可能であり、最短の角度移動で済む効率的な撃破ルートを瞬時に構築できます。",
-      "測定精度について：すべてのイベントはブラウザのperformance.now()高精度クロックを使用し、外部サーバー通信なしで端末内でミリ秒単位で処理されます。Spectre緩和策により一般的なブラウザタイマーは約1msに丸められ、画面リフレッシュレート（60Hzで約16.7ms、144Hzで約6.9ms、240Hzで約4.1ms）に応じた量子化が発生します。5ms以内の微小な数値差は測定誤差として扱い、他者の異なるPC環境と比較するのではなく、ご自身の同一ハードウェア環境での成長指標として活用してください。"
+      "ターゲットスイッチ練習を探しているFPSプレイヤー向けの無料ブラウザドリルです。画面を跳ね回る2〜5個の的が常に表示され、1つ当てるとすぐ新しい的が出るため、複数ターゲットの切り替えを休まず繰り返せます。45秒から始まり、命中ごとに2秒増え（最大60秒）、ミスで1秒減るので、正確に当て続ける限りセッションが続きます。",
+      "ターゲットスイッチングの心理物理学は、フィッツの法則（Fitts, 1954）およびDavid E. Meyerら（1988）が提唱した「確率的最適化サブムーブメントモデル」に基づいています。照準動作は距離の大半を詰める最初の高速弾道運動（主移動）と、視覚フィードバックによる微修正（副移動）から構成されます。多くのプレイヤーは当てた後に「倒せたかどうか」を確認して一瞬止まりますが、このドリルはクリックと同時に視線を次の的へ移す練習でその停止を減らすことに焦点を当てています。",
+      "密集したスワーム群からの標的選択には、特徴統合理論と前注意的視覚探索（Treisman & Gelade, 1980; Wolfe, 2007）が深く関与します。人は少数の動く対象の位置を同時に追えるため、近い的から短い経路で処理する順番をあらかじめ決めておくと切り替えが滑らかになります。",
+      "記録について：結果画面にはスコア、命中精度（命中数 ÷ 総クリック数）、破壊ターゲット数、最大コンボ、最高到達レベルが表示され、自己ベストはこのブラウザ内にのみ保存されます。的と的の間の移行時間（ms）は計測しません。モニターのリフレッシュレートやマウスのポーリングレートで体感が変わるため、同じ環境で自分の記録の変化を比べてください。"
     ],
     benchmarks: {
-      title: "ターゲットスイッチング & 連続移行ベンチマーク基準",
-      headers: ["パフォーマンス階層", "標的間移行時間", "毎分撃破ペース", "競技シーンにおける実戦力"],
+      title: "ターゲットスイッチ 命中精度の練習目安",
+      headers: ["練習帯", "命中精度", "目安"],
       rows: [
-        ["Tier 1（最上位段階）", "210 ms 未満", "110+ 標的/分", "完璧なスプレーツランスファー。確認遅延ゼロ。1v3のサイト防衛やリテイクを単独で打開可能"],
-        ["Tier 2（上級段階）", "210 – 260 ms", "92 – 110 標的/分", "極めてシャープな連続移行。広角スイッチ時にわずかな減速ブレがあるが、マルチキルを高い確率で成立"],
-        ["Tier 3（中上級段階）", "260 – 320 ms", "74 – 92 標的/分", "密集した標的群では素早い。画面の反対側へのワイドスイッチになると初動が遅れる"],
-        ["Tier 4（プラチナ / ゴールド帯）", "320 – 400 ms", "56 – 74 標的/分", "キル後に100ms以上の確認躊躇が発生。次の標的に急激にフリックして行き過ぎるオーバーシュートが頻発"],
-        ["Tier 5（開始段階の範囲 / 初級者）", "400 ms 以上", "56 標的/分 未満", "標的を倒すたびにマウスを完全に停止。手首が力んでおり、連続的な運動連鎖が成立しない"]
+        ["帯 1", "95% 以上", "高レベルでも空撃ちがほとんどない状態"],
+        ["帯 2", "88% – 95%", "速い的で時々外すが、切り替えの流れは保てている状態"],
+        ["帯 3", "80% – 88%", "離れた的へ切り替えるときにオーバーシュートが出る状態"],
+        ["帯 4", "70% – 80%", "焦って空撃ちが増え、時間がよく減る状態"],
+        ["帯 5", "70% 未満", "速さを落として正確に止めることから固めたい状態"]
       ],
-      note: "標的間移行時間は前の標的破壊から次の標的にクロスヘアが到達するまでのミリ秒間隔、毎分撃破ペースは制限時間内の継続的破壊処理レートを指します（Woods et al., 2015）。"
+      note: "命中精度は結果画面の値（命中数 ÷ 総クリック数）です。帯はSkillDrillsが定めた練習用の目安で、研究上の基準、ゲームのランク、ユーザー統計とは関係ありません。"
     },
     techniques: {
       title: "ターゲットスイッチングを極めるエビデンスベースのプロトコル",
       items: [
         {
           name: "サッケード先行ルーティングと視覚インデックス",
-          desc: "1体目の標的の微調整が終わる直前、視線（中心視）だけを一足先に次の標的へとジャンプさせます（Treisman & Gelade, 1980; Wolfe, 2007）。眼球運動は手の運動より50〜80ms先行します。",
+          desc: "1体目の標的の微調整が終わる直前、視線（中心視）だけを一足先に次の標的へとジャンプさせます（Treisman & Gelade, 1980; Wolfe, 2007）。通常、視線は手より先に目標へ到達します。",
           tips: "クリックした後の標的を見つめ続けないでください。周辺視野で破壊を感知し、中心視は次の獲物に固定します。"
         },
         {
@@ -288,13 +288,13 @@ export default function TargetSwitchingSwarmPageJa() {
       ]
     },
     steps: [
-      "ゲーム内感度とマウスDPIを設定で普段のFPSと一致させ、キャンバスをクリックしてカーソルを固定。",
+      "/drills ページの感度設定を普段のゲーム感度に合わせて開始（ポインターロックは自動）。",
       "出現したスワーム全体を視野に入れ、角度差の小さいターゲットの塊を素早く認識。",
-      "最寄りの標的へ素早くフリックしてクリック破壊し、スコアと時間ボーナスを獲得。",
+      "最寄りの的へフリックして破壊し、+100点×コンボ・レベル倍率と+2秒（最大60秒）を獲得。",
       "倒したかどうかの確認停止を入れず、即座に次の標的へ向かってマウスを滑らかに飛ばす。",
-      "手首を力ませずに連続撃破を繋ぎ、コンボ倍率を高めて最高難度のスワーム密度に挑戦する。"
+      "空撃ち（-1秒）を減らしながら連続撃破を繋ぎ、的が小さく速くなる高レベルに挑戦する。"
     ],
-    audience: "VALORANT、Counter-Strike 2、Apex Legends、Overwatch 2などで複数人へのスプレーツランスファーや確殺速度を高め、クラッチ勝率を上げたいFPS競技ゲーマー。",
+    audience: "Counter-Strike 2、Apex Legends、Overwatch 2などで、複数の敵を続けて相手にするターゲット切り替えを個別に練習したいFPSプレイヤー。マウスが必要です。",
     faqs: faqSchema.mainEntity.map(e => ({ q: e.name, a: e.acceptedAnswer.text })),
     sources: pickSources('woods2015', 'fitts1954', 'meyer1988', 'treisman1980', 'wolfe2007'),
     related: [
@@ -334,9 +334,9 @@ export default function TargetSwitchingSwarmPageJa() {
       />
       <TargetSwitchingSwarmClient
         copy={{
-          h1Keyword: "VALORANT ターゲット切り替え",
-          h1Suffix: " - マルチターゲット エイム練習",
-          subtitle: "複数の敵へ素早く照準を切り替え、連続フリックとスプレートランスファーの精度を測定できます。",
+          h1Keyword: "ターゲットスイッチ練習",
+          h1Suffix: "｜複数の的を素早く切り替える",
+          subtitle: "動き回る複数の的の間で素早く正確に照準を切り替える練習を、ブラウザで無料で。",
           statScore: "スコア",
           statTime: "制限時間",
           statAccuracy: "命中精度",
@@ -346,13 +346,13 @@ export default function TargetSwitchingSwarmPageJa() {
           statPeakLevel: "最高到達レベル",
           startTitle: "Target Switching Swarm",
           startSubtitle: "ポインターロック入力 • エンドレス難易度進行",
-          stageCaption: "制限時間が終了する前に、出現するターゲット群を高速フリックで連続破壊。",
+          stageCaption: "動き回る的が消える前に、高速フリックで連続破壊。",
           rulesTitle: "ドリル操作方法 & スコア計算システム",
           aboutTitle: "ターゲット スイッチング（Target Switching）について",
           rulesItems: [
-            { num: "1", text: "ターゲット即時破壊", highlight: "シアン標的 (+100 PTS / +0.35秒)", result: "+100 PTS / +0.35秒" },
-            { num: "2", text: "動的スワーム移行", highlight: "即時リスポーン", result: "持続スワーム" },
-            { num: "3", text: "失敗ペナルティ", highlight: "ミス / 制限時間超過", result: "コンボリセット" },
+            { num: "1", text: "ターゲット命中", highlight: "+100 PTS (+2秒, 最大60秒)", result: "×コンボ倍率" },
+            { num: "2", text: "持続スワーム", highlight: "即時リスポーン", result: "2〜5個の的を維持" },
+            { num: "3", text: "ミス / タイムアウト", highlight: "ペナルティ", result: "コンボリセット (-1秒)" },
             { num: "4", text: "レベル難易度上昇", highlight: "+1 レベル / 2100 PTS", result: "小型化 & 高速化" }
           ]
         }}

@@ -300,12 +300,6 @@ export default function RecoilControlPage() {
     h1Prefix: null,
     h1Keyword: "Recoil Control",
     h1Suffix: null,
-    rulesItems: [
-      { num: "1", text: "Headshot Precision", highlight: "+100 PTS / +0.25s", result: "Top Priority Target Zone" },
-      { num: "2", text: "Chest & Limb Hits", highlight: "+40 / +20 PTS", result: "Maintains Combo Streak" },
-      { num: "3", text: "Level Progression", highlight: "+1 Level / 1400 PTS", result: "Speed & Recoil Scale" },
-      { num: "4", text: "Magazine Discipline", highlight: "<40% Mag Penalty", result: "Resets Combo (-0.6s)" }
-    ]
   };
 
   return (

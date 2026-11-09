@@ -6,12 +6,13 @@ import RelatedDrills from '@/components/drill/RelatedDrills';
 import DrillFooter from '@/components/drill/DrillFooter';
 
 export const metadata = {
-  title: "エイム練習 | ターゲット選択・脅威判定 | SkillDrills",
-  description: "無料ブラウザのエイム練習で、複数の敵から危険な相手を先に選び、撃たない判断の速さを測定します。",
+  title: "ターゲット優先順位の判断練習｜脅威判定・撃たない判断 | SkillDrills",
+  description: "無料のターゲット優先順位の判断練習。動き回る赤（高脅威）・黄（中脅威）の中から赤を先に撃ち、緑（味方）は撃たない。脅威判定と撃たない判断をインストール不要のブラウザ上でマウスを使って練習します。",
   keywords: [
-    "エイム練習",
-    "エイム練習 ブラウザ",
-    "エイム練習 valorant",
+    "ターゲット優先順位の判断",
+    "ターゲット優先順位 練習",
+    "脅威判定",
+    "撃たない判断",
     "ターゲット選択",
     "ターゲット優先度",
     "脅威判定 練習",
@@ -27,8 +28,8 @@ export const metadata = {
     follow: true,
   },
   openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
-    title: "エイム練習 | ターゲット選択・脅威判定 | SkillDrills",
-    description: "無料ブラウザのエイム練習で、複数の敵から危険な相手を先に選び、撃たない判断の速さを測定します。",
+    title: "ターゲット優先順位の判断練習｜脅威判定・撃たない判断 | SkillDrills",
+    description: "無料のターゲット優先順位の判断練習。動き回る赤（高脅威）・黄（中脅威）の中から赤を先に撃ち、緑（味方）は撃たない。脅威判定と撃たない判断をインストール不要のブラウザ上でマウスを使って練習します。",
     url: "https://skilldrills.online/ja/drills/fps/target-prioritization",
     siteName: 'SkillDrills',
     locale: 'ja_JP',
@@ -36,8 +37,8 @@ export const metadata = {
   },
   twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: 'summary_large_image',
-    title: "エイム練習 | ターゲット選択・脅威判定 | SkillDrills",
-    description: "無料ブラウザのエイム練習で、複数の敵から危険な相手を先に選び、撃たない判断の速さを測定します。",
+    title: "ターゲット優先順位の判断練習｜脅威判定・撃たない判断 | SkillDrills",
+    description: "無料のターゲット優先順位の判断練習。動き回る赤（高脅威）・黄（中脅威）の中から赤を先に撃ち、緑（味方）は撃たない。脅威判定と撃たない判断をインストール不要のブラウザ上でマウスを使って練習します。",
   },
 };
 
@@ -48,19 +49,19 @@ export default function TargetPrioritizationJaPage() {
     "itemListElement": [
       { "@type": "ListItem", "position": 1, "name": "SkillDrills", "item": "https://skilldrills.online/ja" },
       { "@type": "ListItem", "position": 2, "name": "FPSエイム練習", "item": "https://skilldrills.online/ja/drills/fps" },
-      { "@type": "ListItem", "position": 3, "name": "エイム練習 - ターゲット選択", "item": "https://skilldrills.online/ja/drills/fps/target-prioritization" }
+      { "@type": "ListItem", "position": 3, "name": "ターゲット優先順位の判断練習", "item": "https://skilldrills.online/ja/drills/fps/target-prioritization" }
     ]
   };
 
   const softwareSchema = {
     "@context": "https://schema.org",
     "@type": "SoftwareApplication", "sameAs": ["https://en.wikipedia.org/wiki/Visual_search", "https://en.wikipedia.org/wiki/Reaction_time"],
-    "name": "エイム練習 - ターゲット選択と脅威判定",
+    "name": "ターゲット優先順位の判断練習 - 脅威判定・撃たない判断",
     "applicationCategory": "GameApplication",
     "operatingSystem": "Web Browser",
-    "dateModified": "2026-09-20",
+    "dateModified": "2026-11-09",
     "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
-    "description": "乱戦時の脅威評価スピード、味方誤射の抑制、優先ターゲット選択能力を高める無料ブラウザFPSエイムトレーナー。",
+    "description": "動き回る赤・黄・緑のターゲットで脅威判定、味方誤射の抑制、優先ターゲットの撃破を練習する無料ブラウザFPSドリル。",
     "genre": "FPS Training / Target Prioritization",
     "url": "https://skilldrills.online/ja/drills/fps/target-prioritization",
     "publisher": {
@@ -73,7 +74,7 @@ export default function TargetPrioritizationJaPage() {
   const webAppSchema = {
     "@context": "https://schema.org",
     "@type": "WebApplication",
-    "name": "エイム練習 - ターゲット選択と脅威判定",
+    "name": "ターゲット優先順位の判断練習 - 脅威判定・撃たない判断",
     "url": "https://skilldrills.online/ja/drills/fps/target-prioritization",
     "applicationCategory": "GameApplication",
     "operatingSystem": "All",
@@ -83,16 +84,16 @@ export default function TargetPrioritizationJaPage() {
       "price": "0",
       "priceCurrency": "USD"
     },
-    "description": "乱戦時の脅威評価スピード、味方誤射の抑制、優先ターゲット選択能力を高める無料ブラウザFPSエイムトレーナー。"
+    "description": "動き回る赤・黄・緑のターゲットで脅威判定、味方誤射の抑制、優先ターゲットの撃破を練習する無料ブラウザFPSドリル。"
   };
 
   const videoGameSchema = {
     "@context": "https://schema.org",
     "@type": "VideoGame",
-    "name": "エイム練習 - ターゲット選択と脅威判定",
+    "name": "ターゲット優先順位の判断練習 - 脅威判定・撃たない判断",
     "url": "https://skilldrills.online/ja/drills/fps/target-prioritization",
-    "description": "乱戦時の脅威評価スピード、味方誤射の抑制、優先ターゲット選択能力を高める無料ブラウザFPSエイムトレーナー。",
-    "dateModified": "2026-09-20",
+    "description": "動き回る赤・黄・緑のターゲットで脅威判定、味方誤射の抑制、優先ターゲットの撃破を練習する無料ブラウザFPSドリル。",
+    "dateModified": "2026-11-09",
     "gamePlatform": "Web Browser",
     "genre": ["FPS Training", "Aim Trainer", "Target Prioritization"],
     "playMode": "SinglePlayer",
@@ -104,7 +105,7 @@ export default function TargetPrioritizationJaPage() {
   const faqSchema = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
-    "dateModified": "2026-09-20",
+    "dateModified": "2026-11-09",
     "mainEntity": [
       {
         "@type": "Question",
@@ -116,10 +117,18 @@ export default function TargetPrioritizationJaPage() {
       },
       {
         "@type": "Question",
+        "name": "このターゲット優先順位の判断練習はどう進みますか？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "開始するとフルスクリーンとポインターロックが有効になり、45秒のタイマーで始まります。画面には同時に2〜4個のターゲットが動き回り、壁で跳ね返ります。赤（高脅威）は100点、黄（中脅威）は50点にコンボ倍率とレベル倍率が掛かり、命中ごとに時間が2秒延長されます（最大60秒）。黄は一定時間が経つと赤に変わり、緑（味方）は撃ってはいけず約3秒で消えます。赤が画面に残っている間に黄を撃つと優先順位ミスとなり、得点なしでコンボがリセットされます。緑への誤射と外しもコンボをリセットし、ミスごとに1秒減ります。1400点ごとにレベルが上がり、ターゲット数・速度・赤の割合が増えます。"
+        }
+      },
+      {
+        "@type": "Question",
         "name": "集団戦でパニック射撃を起こして誤った目標を撃ってしまうのはなぜですか？",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "視覚的過負荷と交戦ストレスにより、前頭前野の抑制制御機能が低下するためです。認知訓練を行っていないプレイヤーは、最も危険な敵ではなく、視野内で最も近くまたは大きく動いたオブジェクトに無意識に反応してしまいます。"
+          "text": "見える情報が多く緊張が高いと、撃つべきでない瞬間にクリックを止めにくくなるためです。その結果、最も危険な敵ではなく、近いものや大きく動いたものに先に反応しがちです。"
         }
       },
       {
@@ -135,15 +144,15 @@ export default function TargetPrioritizationJaPage() {
         "name": "FPSにおける停止信号反応時間（SSRT: Stop-Signal Reaction Time）とは何ですか？",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "SSRTとは、すでに準備または開始された運動動作（マウスクリックなど）を途中でキャンセルするのに要する潜時です。Logan & Cowan（1984）のレースモデルに基づき、SSRTが短いプレイヤーほど直前の状況変化に応じて射撃を瞬時にキャンセルできます。"
+          "text": "SSRTとは、すでに準備または開始された運動動作（マウスクリックなど）を途中でキャンセルするのに要する潜時です。Logan & Cowan（1984）のレースモデルに基づき、SSRTが短いほど直前の状況変化に応じて射撃を早く取り消せます。このドリルはSSRTを直接測定するものではなく、緑の味方を撃たない習慣を練習するためのものです。"
         }
       },
       {
         "@type": "Question",
-        "name": "プロ選手はサイトラッシュ時に複数の敵の脅威度をどのようにランク付けしていますか？",
+        "name": "複数の敵がサイトに入ってきたとき、脅威の順番はどう決めますか？",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "プロ選手は①自分にクロスヘアを向けている敵、②射撃中の敵や近接オフェンス役、③スキル発動中のサポート役、の順で瞬時にトリアージ（優先度判定）を行い、被弾リスクを最小化しながら撃破を進めます。"
+          "text": "よく使われる目安は①自分にクロスヘアを向けている敵、②射撃中の敵やエントリー役、③スキルを使っているサポート役の順です。状況によって変わりますが、このドリルでは赤→黄の順に固定して判断の習慣をシンプルに練習します。"
         }
       },
       {
@@ -151,7 +160,7 @@ export default function TargetPrioritizationJaPage() {
         "name": "認知視覚科学における「妨害刺激抑制（Distractor Suppression）」とは何ですか？",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "注意を必要としないデコイや味方、環境エフェクトなどの非脅威視覚シグナルを脳内でアクティブに抑制・無視するメカニズムです。これにより限られた注意リソースを致命的脅威だけに集中させられます。"
+          "text": "注意を必要としないデコイや味方、環境エフェクトなどの非脅威の視覚シグナルを無視する働きです。これにより注意を本当の脅威に集中させやすくなります。"
         }
       },
       {
@@ -159,7 +168,7 @@ export default function TargetPrioritizationJaPage() {
         "name": "VALORANTやCS2で味方やデコイを誤射するとラウンド勝率にどう影響しますか？",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "誤射は弾薬と時間を浪費するだけでなく、リコイルや次弾ディレイを発生させて真の脅威に対する反撃チャンスを失わせ、1vXシチュエーションでのラウンド勝率を致命的に低下させます。"
+          "text": "誤射は弾薬と時間を浪費するだけでなく、リコイルや次弾ディレイを発生させて本当の脅威への反撃が遅れる原因になります。1vXのように一発が重要な場面ほど損失が大きくなります。"
         }
       },
       {
@@ -175,7 +184,7 @@ export default function TargetPrioritizationJaPage() {
         "name": "アドレナリンの高まりは戦術的判断スピードをなぜ低下させるのですか？",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "過剰な覚醒状態は「トンネルビジョン（視野狭窄）」を引き起こし、視野周辺の状況把握や多角的判断を司る前頭葉機能を阻害するため、衝動的なパニック射撃を誘発します。"
+          "text": "強い緊張は「トンネルビジョン（視野狭窄）」を起こし、周辺の状況把握が遅れるため、確認せずに撃つパニック射撃につながりやすくなります。"
         }
       },
       {
@@ -183,7 +192,7 @@ export default function TargetPrioritizationJaPage() {
         "name": "ターゲット優先度ドリルはどのくらいの頻度で練習すべきですか？",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "週に4〜5回、各セッション10〜15分間の集中訓練が理想的です。短時間の高負荷認知ドリルを継続することで、実戦の極度のプレッシャー下でも自動化された脅威トリアージを実行できるようになります。"
+          "text": "決まった正解はありませんが、1回10〜15分ほど短く行い、同じ端末で命中率と誤射の回数を比べる使い方をおすすめします。疲れてくると記録がぶれるため、長時間よりも短く頻繁に行うほうが向いています。"
         }
       }
     ]
@@ -227,26 +236,25 @@ export default function TargetPrioritizationJaPage() {
   };
 
   const targetPrioritizationGuide = {
-    heading: "エイム練習とターゲット選択・脅威判定ガイド",
-    subtitle: "乱戦時の脅威評価スピード、妨害刺激抑制、そして冷静な射撃抑制制御を科学的プロトコルで極限まで高める",
+    heading: "ターゲット優先順位の判断練習ガイド：脅威判定と撃たない判断",
+    subtitle: "乱戦時の脅威評価、妨害刺激の抑制、射撃の抑制を練習する方法",
     intro: [
-      "エイム練習は、複数の敵が見える場面で最も危険な相手を先に選び、撃たない対象へのクリックを止める練習です。このドリルは脅威判定と射撃抑制を測定し、VALORANT・CS2の乱戦で判断を安定させます。",
-      "運動抑制と意思決定制御の神経基盤は、Logan and Cowan（1984）のストップシグナルパラダイムによって確立されました。彼らの『競馬モデル（Horse-Race Model）』は、行動実行プロセス（Go）と行動抑制プロセス（Stop）が前頭葉—大脳基底核ネットワークにおいて互いに独立して速度を競い合っていることを実証しました。射撃抑制の訓練を欠くプレイヤーはプレッシャー下でパニック射撃に陥り、標的の敵味方識別が完了する前に反射的に人差し指を動かしてしまいます。",
+      "ターゲット優先順位の判断練習は、複数の敵が見える場面で最も危険な相手を先に選び、撃たない対象へのクリックを止める練習です。このドリルでは動き回る赤（高脅威）を先に、黄（中脅威）を次に撃ち、緑（味方）は撃ちません。VALORANT・CS2のような乱戦で必要な脅威判定の習慣づくりに使えます。",
+      "運動抑制と意思決定制御の神経基盤は、Logan and Cowan（1984）のストップシグナルパラダイムによって確立されました。彼らの『競馬モデル（Horse-Race Model）』は、行動実行プロセス（Go）と行動抑制プロセス（Stop）が前頭葉—大脳基底核ネットワークにおいて互いに独立して速度を競い合っていることを実証しました。そのため、敵味方の確認が終わる前にクリックが出てしまうパニック射撃が起こりやすくなります。",
       "視覚的フィルタリングの生体力学的メカニズムは、Donald E. Broadbent（1958）およびAnne Treisman（1964）の選択的注意フィルター／減衰モデルによって定式化されました。複数の視覚刺激が網膜の処理リソースを巡って競合する際、脳はトップダウンの注意ゲーティング機構（Posner & Petersen, 1990）を作動させ、非脅威的な周辺運動を抑制しつつ、最も差し迫った脅威ベクトルへと中心窩の注意を集中させます。",
-      "本ドリルは、F.C. Donders（1868）のGo/No-Go弁別反応時間モデルとperformance.now()高精度デジタルクロノメトリ（Woods et al., 2015）を統合し、単なるマウス操作と競技プレッシャー下でのリアルタイムな戦術的意思決定速度との間のギャップを完璧に架橋します。",
+      "本ドリルは、F.C. Donders（1868）のGo/No-Go弁別反応時間モデルとperformance.now()高精度デジタルクロノメトリ（Woods et al., 2015）を統合し、マウス操作と時間制限下での判断を同時に練習できるようにしています。",
       "測定方法とハードウェア遅延について：すべての判定イベントはブラウザのperformance.now()高解像度クロックを用いて端末内でのみミリ秒単位で記録され、外部サーバーへのスコア送信は一切行われません。ブラウザタイマーはSpectre対策により約1ms単位に丸められており、ディスプレイは垂直走査周波数に応じて視覚フレームを量子化します（60Hzで約16.7ms、144Hzで6.9ms、240Hzで4.1ms、Woods et al., 2015）。マウスのポーリングレートは125Hzで約8ms、1000Hzで約1msの遅延差を生じさせます。5ms未満の差異は測定ノイズとして扱い、同一のハードウェア環境で継続的に自己記録を比較してください。"
     ],
     benchmarks: {
-      title: "ターゲット優先度・脅威評価レイテンシ ベンチマーク基準",
-      headers: ["スキル帯", "脅威評価反応時間", "抑制成功率（No-Go）", "実戦における競技的影響"],
+      title: "結果画面の指標の読み方",
+      headers: ["指標", "ドリルでの数え方", "意味", "伸ばし方"],
       rows: [
-        ["Tier 1（最上位段階）", "280 ms 未満", "98% – 100%", "瞬時かつ完璧な脅威トリアージ；味方誤射ゼロで複数敵ラッシュを単独制圧"],
-        ["Tier 2（上級段階）", "280 – 340 ms", "92% – 98%", "優れた判断力；混戦でも高脅威敵へ迷わず初弾を叩き込む"],
-        ["Tier 3（中上級段階）", "340 – 420 ms", "85% – 92%", "堅実なターゲット選択；高密度な交戦時に50ms前後の判断躊躇が生じる"],
-        ["Tier 4（ゴールド・プラチナ級）", "420 – 520 ms", "75% – 85%", "直近の敵に視線が引きずられ、奥の高脅威敵を放置して反撃を受ける傾向"],
-        ["Tier 5（シルバー以下ビギナー）", "520 ms 以上", "75% 未満", "パニック射撃の頻発；味方やデコイへの無駄撃ちによるデスが多い"]
+        ["命中率", "（赤＋黄の命中）÷ 全クリック", "正しい順番で脅威を処理できた割合", "同じ端末で自己記録と比較"],
+        ["撃破脅威数", "赤・黄ターゲットの命中数", "時間内に処理できた脅威の量", "コンボを切らさずに増やす"],
+        ["誤射・優先順位ミス", "緑への射撃、赤が残っている間の黄への射撃", "撃たない判断と脅威判定の失敗", "まず赤を確認する習慣"],
+        ["最大コンボ・最高レベル", "ミスなしで続いた命中数、1400点ごとに1レベル", "判断の安定度と到達難易度", "速さよりミスを減らすことを優先"]
       ],
-      note: "脅威評価反応時間は刺激出現から正しい高脅威目標への射撃入力までの所要時間を示します（Woods et al., 2015）。"
+      note: "この表はドリルが実際に記録する指標を説明したもので、ランクやティア、ユーザー統計とは関係ありません。"
     },
     techniques: {
       title: "ターゲット優先度を高めるための科学的実践テクニック",
@@ -269,15 +277,15 @@ export default function TargetPrioritizationJaPage() {
         {
           name: "終末制動と素早いターゲット移行",
           desc: "赤ターゲット撃破後、マウスパッドの摩擦を活用して余計なオーバーシュートなく次の黄色目標へ鋭くフリックします。",
-          tips: "撃破の手応えと同時に次の目標座標へ跳躍眼球運動（サッカード）を先行させます。"
+          tips: "撃った瞬間に、視線を次の赤または黄のターゲットへ先に移します。"
         }
       ]
     },
     steps: [
       "感度設定を確認し、ポインターロックを有効化してドリルを開始します。",
       "出現するターゲット群の中から、最優先の「赤（高脅威）」を瞬時に見つけ出します。",
-      "赤ターゲットを素早くフリック射撃して+100点（時間+0.4秒）を獲得します。",
-      "続いて「黄（中脅威）」を処理し、赤への昇格を防ぎます。",
+      "赤ターゲットを素早く撃って+100点（時間+2秒・最大60秒）を獲得します。",
+      "赤がいなくなったら「黄（中脅威）」を処理し、赤への昇格を防ぎます。赤が残っている間に黄を撃つと優先順位ミスです。",
       "「緑（味方）」への射撃は絶対に控え、高い命中率とコンボ倍率を維持しましょう。"
     ],
     audience: "VALORANT、CS2、Apex Legends、Overwatch 2などで、集団戦の混乱下でも冷静に優先ターゲットを識別・撃破したいすべての競技FPSプレイヤー。",
@@ -320,8 +328,8 @@ export default function TargetPrioritizationJaPage() {
       />
       <TargetPrioritizationClient
         copy={{
-          h1Keyword: "エイム練習",
-          h1Suffix: " - ターゲット選択・脅威判定",
+          h1Keyword: "ターゲット優先順位の判断",
+          h1Suffix: " - 脅威判定・撃たない判断の練習",
           subtitle: "複数の敵から優先目標を選び、撃たない判断をブラウザで測定・練習できます。",
           statScore: "スコア",
           statTime: "残り時間",
@@ -330,7 +338,7 @@ export default function TargetPrioritizationJaPage() {
           statThreatsCleared: "撃破脅威数",
           statMaxCombo: "最大コンボ",
           statPeakLevel: "最高レベル",
-          startTitle: "エイム練習 - ターゲット選択",
+          startTitle: "ターゲット優先順位の判断",
           startSubtitle: "脅威評価 & 認知フィルタリング • エンドレス難易度進行",
           getReady: "準備完了",
           toggleFlash: "ミスフラッシュ切替",
@@ -340,14 +348,14 @@ export default function TargetPrioritizationJaPage() {
           stageCaption: "最優先の赤ターゲットを即座に撃破し、次に黄ターゲットを排除。味方（緑）への誤射は厳禁です。",
           rulesTitle: "ドリル手順 & スコアリングシステム",
           rulesItems: [
-            { num: "1", text: "高脅威ターゲット", highlight: "赤 (+100点 / +0.4秒)", result: "最優先で撃破" },
-            { num: "2", text: "中脅威ターゲット", highlight: "黄 (+50点 / +0.4秒)", result: "時間経過で赤へ昇格" },
-            { num: "3", text: "味方ユニット", highlight: "緑 (射撃禁止)", result: "誤射・ミスでコンボリセット" },
+            { num: "1", text: "高脅威ターゲット", highlight: "赤 (+100点 / +2秒・最大60秒)", result: "最優先で撃破" },
+            { num: "2", text: "中脅威ターゲット", highlight: "黄 (+50点 / +2秒)", result: "赤がいない時のみ得点、時間経過で赤へ昇格" },
+            { num: "3", text: "味方ユニット", highlight: "緑 (射撃禁止)", result: "誤射・優先順位ミス・外しでコンボリセット（-1秒）" },
             { num: "4", text: "レベル進行", highlight: "+1 / 1400点", result: "スポーン密度・速度の継続増加" }
           ],
-          aboutTitle: "エイム練習とターゲット選択について",
+          aboutTitle: "ターゲット優先順位の判断練習について",
           aboutHeading: "ターゲット優先度（Target Prioritization）とは？",
-          aboutText: "ターゲット優先度とは、視界内の複数の目標から脅威度や役割に基づいて瞬時に撃つべき敵を選択し、同時に味方や不要なオブジェクトへの射撃を抑制する高度な認知運動能力です。開始した運動を途中で止める抑制制御は独自のレースモデル（Logan & Cowan, 1984）に基づき、射撃を実行すること以上に精密な神経制御が求められます。"
+          aboutText: "ターゲット優先度とは、視界内の複数の目標から脅威度や役割に基づいて瞬時に撃つべき敵を選択し、同時に味方や不要なオブジェクトへの射撃を抑制する能力です。開始した動作を途中で止める過程は、動作を始める過程と競争するように別々に進むため（Logan & Cowan, 1984）、撃つことより撃たないことのほうが難しくなります。このドリルは赤→黄の順番と緑への射撃禁止ルールで、その判断を繰り返し練習します。"
         }}
       />
       <DrillGuide guide={targetPrioritizationGuide} />

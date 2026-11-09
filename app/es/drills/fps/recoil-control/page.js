@@ -269,7 +269,7 @@ export default function RecoilControlPage() {
       { num: "1", text: "Disparo a la Cabeza", highlight: "+100 PTS (sin bonus de tiempo)", result: "×Multiplicador de Combo" },
       { num: "2", text: "Tiro a Pecho y Extremidades", highlight: "+40 / +20 PTS", result: "Mantiene Racha de Combo" },
       { num: "3", text: "Progresión de Nivel", highlight: "+1 Nivel / 1400 PTS", result: "Escala Velocidad y Retroceso" },
-      { num: "4", text: "Disciplina de Cargador", highlight: "<40% Penalización", result: "Reinicia Combo (-0.6s si la penalización está activa)" }
+      { num: "4", text: "Disciplina de Cargador", highlight: "<40% Penalización", result: "Reinicia Combo" }
     ],
     aboutTitle: "Sobre el Control de Retroceso y Spray",
     aboutHeading: "¿Qué es el Control de Retroceso (Recoil)?",

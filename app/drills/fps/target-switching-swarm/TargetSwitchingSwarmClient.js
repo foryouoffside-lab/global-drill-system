@@ -74,7 +74,7 @@ const RULES_ITEMS = [
   { num: "1", text: "Target Hit", highlight: "+100 PTS (+2s, max 60s)", result: "×Combo Mult" },
   { num: "2", text: "Persistent Swarm", highlight: "Instant Respawns", result: "Continuous Multi-Kill" },
   { num: "3", text: "Level Up", highlight: "+1 / 2100 PTS", result: "Adaptive Scaling" },
-  { num: "4", text: "Miss / Timeout", highlight: "Penalty", result: "Resets Combo (-0.8s)" }
+  { num: "4", text: "Miss / Timeout", highlight: "Penalty", result: "Resets Combo (-1s)" }
 ];
 
 const ABOUT_INTRO = [
@@ -111,7 +111,7 @@ const ABOUT_SECTIONS = [
 // MAIN COMPONENT
 // ============================================================
 export default function TargetSwitchingSwarmClient({ copy = null }) {
-  const { locale } = useTranslation();
+  const { locale, t } = useTranslation();
   const [gameState, setGameState] = useState('start');
   const [countdownValue, setCountdownValue] = useState(3);
   const [isFullscreen, setIsFullscreen] = useState(false);
@@ -870,10 +870,10 @@ export default function TargetSwitchingSwarmClient({ copy = null }) {
               score={score}
               isNewBest={isNewBest}
               stats={[
-                { value: analytics.accuracy, suffix: "%", label: copy?.statAccuracy || "Accuracy" },
-                { value: analytics.successfulHits, label: copy?.statTargetsDestroyed || "Targets Destroyed" },
-                { value: `${analytics.bestCombo}x`, label: copy?.statMaxCombo || "Max Combo" },
-                { value: `Lv. ${analytics.levelReached}`, label: copy?.statPeakLevel || "Peak Level" },
+                { value: analytics.accuracy, suffix: "%", label: copy?.statAccuracy || t('ui.resultAccuracy', 'Accuracy') },
+                { value: analytics.successfulHits, label: copy?.statTargetsDestroyed || t('ui.resultTargetsDestroyed', 'Targets Destroyed') },
+                { value: `${analytics.bestCombo}x`, label: copy?.statMaxCombo || t('ui.resultMaxCombo', 'Max Combo') },
+                { value: `Lv. ${analytics.levelReached}`, label: copy?.statPeakLevel || t('ui.resultPeakLevel', 'Peak Level') },
               ]}
               onPlayAgain={enterDrill}
               onBeforeShare={() => setIsFullscreen(false)}

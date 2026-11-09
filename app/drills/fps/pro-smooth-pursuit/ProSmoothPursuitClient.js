@@ -88,10 +88,10 @@ function RuleItem({ num, text, highlight = '', result }) {
 }
 
 const RULES_ITEMS = [
-  { num: "1", text: "Tracking Alignment", highlight: "+50 PTS (+0.4s/s)", result: "×Combo Mult" },
+  { num: "1", text: "Tracking Alignment", highlight: "+50 PTS / 0.25s (+0.4s/s)", result: "×Combo Mult" },
   { num: "2", text: "Continuous Combo", highlight: "Up to 3.0×", result: "Max Multiplier" },
   { num: "3", text: "Level Progression", highlight: "+1 Level / 1400 PTS", result: "Adaptive Curves" },
-  { num: "4", text: "Off-Target Penalty", highlight: "1.0s Off-Target", result: "Resets Combo (-0.6s)" }
+  { num: "4", text: "Off-Target Penalty", highlight: "1.0s Off-Target", result: "Resets Combo" }
 ];
 
 
@@ -108,7 +108,7 @@ const RELATED_DRILLS = [
 // MAIN COMPONENT
 // ============================================================
 export default function ProSmoothPursuitClient({ copy = null }) {
-  const { locale } = useTranslation();
+  const { locale, t } = useTranslation();
   const [gameState, setGameState] = useState('start');
   const [countdownValue, setCountdownValue] = useState(3);
   const [isFullscreen, setIsFullscreen] = useState(false);
@@ -790,10 +790,10 @@ export default function ProSmoothPursuitClient({ copy = null }) {
               score={score}
               isNewBest={isNewBest}
               stats={[
-                { value: analytics.accuracy, suffix: "%", label: "Tracking Accuracy" },
-                { value: `${analytics.offTargetTime}s`, label: "Off-Target Time" },
-                { value: `${analytics.bestCombo}s`, label: "Max Combo" },
-                { value: `Lv. ${analytics.levelReached}`, label: "Peak Level" },
+                { value: analytics.accuracy, suffix: "%", label: t('ui.resultTrackingAccuracy', 'Tracking Accuracy') },
+                { value: `${analytics.offTargetTime}s`, label: t('ui.resultOffTargetTime', 'Off-Target Time') },
+                { value: `${analytics.bestCombo}s`, label: t('ui.resultMaxCombo', 'Max Combo') },
+                { value: `Lv. ${analytics.levelReached}`, label: t('ui.resultPeakLevel', 'Peak Level') },
               ]}
               onPlayAgain={enterDrill}
               onBeforeShare={() => setIsFullscreen(false)}

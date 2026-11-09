@@ -275,7 +275,7 @@ export default function TargetAcquisitionPage() {
       "Configure your exact game, DPI, and in-game sensitivity in Session Settings to keep your hand-to-cursor mapping consistent, then lock the pointer.",
       "Anchor your eyes in a centered soft gaze, awaiting the multi-target cluster spawn across the display.",
       "Visually identify the brightest, highest-priority target in the set using parallel contrast pre-filtering.",
-      "Execute a crisp ballistic flick to the target centroid and click to score +100 PTS (+0.4s bonus timer).",
+      "Execute a crisp ballistic flick to the target centroid and click to score +100 PTS; hits do not extend the fixed 60s clock.",
       "Clear remaining targets in descending luminance order to trigger the +400 PTS set cleared bonus and level progression."
     ],
     audience: "Competitive FPS players in Valorant, Counter-Strike 2, Apex Legends, and Overwatch 2 seeking faster threat spotting, superior first-shot headshot precision, and reduced visual clutter distraction.",
@@ -339,12 +339,6 @@ export default function TargetAcquisitionPage() {
           pausedSubtitle: "Click to resume — cursor lock will re-engage.",
           stageCaption: "Identify and click the brightest target in each cluster as quickly and accurately as possible.",
           rulesTitle: "Drill Instructions & Scoring System",
-          rulesItems: [
-            { num: "1", text: "Target Hit", highlight: "+100 PTS (+0.4s)", result: "×Combo Mult" },
-            { num: "2", text: "Set Cleared", highlight: "+400 PTS × Level", result: "Cluster Spawn" },
-            { num: "3", text: "Level Progression", highlight: "+1 Level / 1400 PTS", result: "Continuous Dynamic Scaling" },
-            { num: "4", text: "Wrong Target / Miss", highlight: "Penalty", result: "Resets Combo (-0.6s)" }
-          ],
           aboutTitle: "About Target Acquisition Aim Trainer",
           aboutHeading: "What Is Target Acquisition?",
           aboutText: "Target acquisition is finding the right target and moving onto it. Basic visual features like colour and orientation are processed in parallel across the whole visual field before attention binds them into an object (Treisman & Gelade, 1980) — which is why a high-contrast target is found faster than a camouflaged one."

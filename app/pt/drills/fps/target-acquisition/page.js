@@ -110,7 +110,7 @@ export default function TargetAcquisitionPtPage() {
         "name": "Como funciona este drill para treinar mira no Valorant?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Cada sessão dura 60 segundos. Aparecem grupos de 3 a 8 alvos com brilhos diferentes, e você precisa acertá-los do mais claro ao mais escuro. Um alvo correto vale +100 pontos multiplicados pelo combo e pelo nível; limpar o grupo soma +400 pontos multiplicados pelo nível e gera um novo grupo. Acertar o alvo errado ou clicar no vazio zera o combo e tira 0,6 segundo se a penalidade de tempo estiver ativada. Joga-se com mouse e travamento do ponteiro; Esc encerra o drill. O SkillDrills é uma ferramenta independente, sem vínculo com a Riot Games."
+          "text": "Cada sessão dura 60 segundos. Aparecem grupos de 3 a 8 alvos com brilhos diferentes, e você precisa acertá-los do mais claro ao mais escuro. Um alvo correto vale +100 pontos multiplicados pelo combo e pelo nível; limpar o grupo soma +400 pontos multiplicados pelo nível e gera um novo grupo. Acertar o alvo errado ou clicar no vazio zera o combo. Joga-se com mouse e travamento do ponteiro; Esc encerra o drill. O SkillDrills é uma ferramenta independente, sem vínculo com a Riot Games."
         }
       },
       {
@@ -322,7 +322,7 @@ export default function TargetAcquisitionPtPage() {
       { num: "1", text: "Alvo Atingido", highlight: "+100 PTS × Nível", result: "×Multiplicador Combo" },
       { num: "2", text: "Conjunto Limpo", highlight: "+400 PTS × Nível", result: "Novo Agrupamento" },
       { num: "3", text: "Subir de Nível", highlight: "+1 / 1400 PTS", result: "Escalonamento Contínuo" },
-      { num: "4", text: "Alvo Incorreto / Erro", highlight: "Penalidade", result: "Zera Combo (-0,6s com penalidade ativa)" }
+      { num: "4", text: "Alvo Incorreto / Erro", highlight: "Penalidade", result: "Zera Combo" }
     ],
     aboutTitle: "Sobre o Treino de Aquisição de Alvos",
     aboutHeading: "O que é Aquisição de Alvos?",

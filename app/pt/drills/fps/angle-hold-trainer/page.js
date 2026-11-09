@@ -122,7 +122,7 @@ export default function PortugueseAngleHoldPage() {
         "name": "Como funciona este treino de posicionamento de mira?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Ao iniciar, a tela cheia e o Pointer Lock são ativados e o relógio começa em 45 segundos. Os alvos saem da borda esquerda ou direita da parede em altura aleatória e voltam a se esconder. Cada acerto vale 100 pontos multiplicados pelo combo e pelo nível e soma 2 segundos (máximo de 60). A cada 1400 pontos o nível sobe: os peeks ficam mais curtos e os alvos menores, e em níveis altos surgem fake peeks laranja. Errar, atirar sem alvo ou atirar em um fake peek zera o combo e tira 1 segundo se a penalidade de tempo estiver ativada. A rodada termina quando o tempo chega a 0."
+          "text": "Ao iniciar, a tela cheia e o Pointer Lock são ativados e o relógio começa em 45 segundos. Os alvos saem da borda esquerda ou direita da parede em altura aleatória e voltam a se esconder. Cada acerto vale 100 pontos multiplicados pelo combo e pelo nível e soma 2 segundos (máximo de 60). A cada 1400 pontos o nível sobe: os peeks ficam mais curtos e os alvos menores, e em níveis altos surgem fake peeks laranja. Errar, atirar sem alvo ou atirar em um fake peek zera o combo e tira 1 segundo. A rodada termina quando o tempo chega a 0."
         }
       },
       {
@@ -313,7 +313,7 @@ export default function PortugueseAngleHoldPage() {
       { num: "1", text: "Acerto no Peek", highlight: "+100 PTS (+2s, máx. 60s)", result: "×Multiplicador" },
       { num: "2", text: "Surgimento em Cantos", highlight: "Borda esquerda/direita da parede", result: "Mais curto e menor" },
       { num: "3", text: "Progressão de Nível", highlight: "+1 Nível / 1400 PTS", result: "Escala Adaptativa" },
-      { num: "4", text: "Erro / Pre-Fire / Fake Peek", highlight: "Penalidade", result: "Reset Combo (-1s com penalidade de tempo)" }
+      { num: "4", text: "Erro / Pre-Fire / Fake Peek", highlight: "Penalidade", result: "Reset Combo (-1s)" }
     ],
     aboutCards: [
       { iconBg: "bg-blue-600", title: "Recomendado para", text: "Defensores de bombsite em Valorant, âncoras de CS2, operadores de R6 Siege e quem deseja cravar mira com disciplina." },

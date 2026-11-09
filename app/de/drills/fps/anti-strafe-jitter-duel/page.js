@@ -129,7 +129,7 @@ export default function AntiStrafeJitterDePage() {
         "name": "Was passiert, wenn ich das Ziel verliere?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Bist du länger als 1 Sekunde vom Ziel weg, fällt die Combo auf 0. Wenn du in den Drill-Einstellungen die Zeitstrafe aktiviert hast, werden dabei zusätzlich 0,6 Sekunden abgezogen. Standardmäßig ist sie aus."
+          "text": "Bist du länger als 1 Sekunde vom Ziel weg, fällt die Combo auf 0."
         }
       },
       {
@@ -292,10 +292,10 @@ export default function AntiStrafeJitterDePage() {
           stageCaption: "Halte das Fadenkreuz auf dem Ziel, das zufällig links und rechts die Richtung wechselt. Klicken ist nicht nötig.",
           rulesTitle: "Regeln & Punktesystem",
           rulesItems: [
-            { num: "1", text: "Auf dem Ziel bleiben", highlight: "10 Pkt. / 0,25 s (+0,1 s)", result: "×Combo-Multiplikator" },
+            { num: "1", text: "Auf dem Ziel bleiben", highlight: "10 Pkt. / 0,25 s (+0,4 s/s)", result: "×Combo-Multiplikator" },
             { num: "2", text: "1 s am Stück halten", highlight: "Combo +1", result: "Bis 3,0×" },
             { num: "3", text: "Level-Aufstieg", highlight: "+1 Level / 1400 Pkt.", result: "Kleiner & schneller" },
-            { num: "4", text: "Über 1 s daneben", highlight: "Combo-Reset", result: "Mit Zeitstrafe -0,6 s" }
+            { num: "4", text: "Über 1 s daneben", highlight: "Combo-Reset", result: "Combo neu aufbauen" }
           ],
           aboutTitle: "Über ADAD-Tracking und Anti-Strafe",
           aboutHeading: "Was ist reaktives Tracking?"

@@ -6,12 +6,10 @@ import RelatedDrills from '@/components/drill/RelatedDrills';
 import DrillFooter from '@/components/drill/DrillFooter';
 
 export const metadata = {
-  title: "Aim Trainer | Zielauswahl & Bedrohung | SkillDrills",
-  description: "Kostenloser Aim Trainer im Browser: Wähle in Valorant und CS2 das gefährlichste Ziel, trainiere Zielauswahl und Schusshemmung.",
+  title: "Zielpriorisierung im FPS: Zielauswahl üben | SkillDrills",
+  description: "Zielpriorisierung im Browser üben: Triff rote Ziele vor gelben, schieße nie auf grüne Verbündete. Kostenloses Training für Zielauswahl und Schusshemmung.",
   keywords: [
-    "Aim Trainer",
-    "Aim Trainer Valorant",
-    "Aim Trainer Browser",
+    "Zielpriorisierung",
     "Zielauswahl",
     "Zielpriorisierung FPS",
     "Bedrohungseinschätzung Shooter",
@@ -28,8 +26,8 @@ export const metadata = {
     follow: true,
   },
   openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
-    title: "Aim Trainer | Zielauswahl & Bedrohung | SkillDrills",
-    description: "Kostenloser Aim Trainer im Browser: Wähle in Valorant und CS2 das gefährlichste Ziel, trainiere Zielauswahl und Schusshemmung.",
+    title: "Zielpriorisierung im FPS: Zielauswahl üben | SkillDrills",
+    description: "Zielpriorisierung im Browser üben: Triff rote Ziele vor gelben, schieße nie auf grüne Verbündete. Kostenloses Training für Zielauswahl und Schusshemmung.",
     url: "https://skilldrills.online/de/drills/fps/target-prioritization",
     siteName: 'SkillDrills',
     locale: 'de_DE',
@@ -37,8 +35,8 @@ export const metadata = {
   },
   twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: 'summary_large_image',
-    title: "Aim Trainer | Zielauswahl & Bedrohung | SkillDrills",
-    description: "Kostenloser Aim Trainer im Browser: Wähle in Valorant und CS2 das gefährlichste Ziel, trainiere Zielauswahl und Schusshemmung.",
+    title: "Zielpriorisierung im FPS: Zielauswahl üben | SkillDrills",
+    description: "Zielpriorisierung im Browser üben: Triff rote Ziele vor gelben, schieße nie auf grüne Verbündete. Kostenloses Training für Zielauswahl und Schusshemmung.",
   },
 };
 
@@ -49,19 +47,19 @@ export default function TargetPrioritizationDePage() {
     "itemListElement": [
       { "@type": "ListItem", "position": 1, "name": "SkillDrills", "item": "https://skilldrills.online/de" },
       { "@type": "ListItem", "position": 2, "name": "FPS Drills", "item": "https://skilldrills.online/de/drills/fps" },
-      { "@type": "ListItem", "position": 3, "name": "Aim Trainer - Zielauswahl", "item": "https://skilldrills.online/de/drills/fps/target-prioritization" }
+      { "@type": "ListItem", "position": 3, "name": "Zielpriorisierung - Zielauswahl üben", "item": "https://skilldrills.online/de/drills/fps/target-prioritization" }
     ]
   };
 
   const softwareSchema = {
     "@context": "https://schema.org",
     "@type": "SoftwareApplication", "sameAs": ["https://en.wikipedia.org/wiki/Visual_search", "https://en.wikipedia.org/wiki/Reaction_time"],
-    "name": "Aim Trainer - Zielauswahl und Bedrohung",
+    "name": "Zielpriorisierung - Zielauswahl und Schusshemmung",
     "applicationCategory": "GameApplication",
     "operatingSystem": "Web Browser",
-    "dateModified": "2026-09-20",
+    "dateModified": "2026-11-09",
     "offers": { "@type": "Offer", "price": "0", "priceCurrency": "EUR" },
-    "description": "Kostenloses Browsertraining zur Optimierung von Bedrohungseinschätzung, visueller Filterung und Trigger-Disziplin in taktischen Ego-Shootern.",
+    "description": "Kostenloses Browsertraining mit roten, gelben und grünen Zielen für Bedrohungseinschätzung, visuelle Filterung und Trigger-Disziplin in taktischen Shootern.",
     "genre": "FPS Training / Target Prioritization",
     "url": "https://skilldrills.online/de/drills/fps/target-prioritization",
     "publisher": {
@@ -74,7 +72,7 @@ export default function TargetPrioritizationDePage() {
   const webAppSchema = {
     "@context": "https://schema.org",
     "@type": "WebApplication",
-    "name": "Aim Trainer - Zielauswahl und Bedrohung",
+    "name": "Zielpriorisierung - Zielauswahl und Schusshemmung",
     "url": "https://skilldrills.online/de/drills/fps/target-prioritization",
     "applicationCategory": "GameApplication",
     "operatingSystem": "All",
@@ -84,16 +82,16 @@ export default function TargetPrioritizationDePage() {
       "price": "0",
       "priceCurrency": "EUR"
     },
-    "description": "Kostenloses Browsertraining zur Optimierung von Bedrohungseinschätzung, visueller Filterung und Trigger-Disziplin in taktischen Ego-Shootern."
+    "description": "Kostenloses Browsertraining mit roten, gelben und grünen Zielen für Bedrohungseinschätzung, visuelle Filterung und Trigger-Disziplin in taktischen Shootern."
   };
 
   const videoGameSchema = {
     "@context": "https://schema.org",
     "@type": "VideoGame",
-    "name": "Aim Trainer - Zielauswahl und Bedrohung",
+    "name": "Zielpriorisierung - Zielauswahl und Schusshemmung",
     "url": "https://skilldrills.online/de/drills/fps/target-prioritization",
-    "description": "Kostenloses Browsertraining zur Optimierung von Bedrohungseinschätzung, visueller Filterung und Trigger-Disziplin in taktischen Ego-Shootern.",
-    "dateModified": "2026-09-20",
+    "description": "Kostenloses Browsertraining mit roten, gelben und grünen Zielen für Bedrohungseinschätzung, visuelle Filterung und Trigger-Disziplin in taktischen Shootern.",
+    "dateModified": "2026-11-09",
     "gamePlatform": "Web Browser",
     "genre": ["FPS Training", "Aim Trainer", "Target Prioritization"],
     "playMode": "SinglePlayer",
@@ -105,7 +103,7 @@ export default function TargetPrioritizationDePage() {
   const faqSchema = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
-    "dateModified": "2026-09-20",
+    "dateModified": "2026-11-09",
     "mainEntity": [
       {
         "@type": "Question",
@@ -117,10 +115,18 @@ export default function TargetPrioritizationDePage() {
       },
       {
         "@type": "Question",
+        "name": "Wie läuft dieses Zielpriorisierungs-Training ab?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Nach dem Start laufen Vollbild und Pointer Lock, die Uhr beginnt bei 45 Sekunden. Gleichzeitig bewegen sich 2 bis 4 Ziele über das Feld und prallen an den Rändern ab. Rot (hohe Bedrohung) gibt 100 Punkte, Gelb (mittlere Bedrohung) 50 Punkte, jeweils mal Combo- und Level-Multiplikator, und jeder Treffer bringt +2 Sekunden (maximal 60). Gelb wird nach kurzer Zeit zu Rot; Grün (Verbündete) darf nicht beschossen werden und verschwindet nach etwa 3 Sekunden. Wer Gelb trifft, solange noch ein rotes Ziel sichtbar ist, macht einen Prioritätsfehler: keine Punkte, Combo weg. Auch Friendly Fire und Fehlschüsse setzen die Combo zurück; jeder Fehler kostet 1 Sekunde. Alle 1400 Punkte steigt das Level und mit ihm Zielanzahl, Tempo und Rot-Anteil."
+        }
+      },
+      {
+        "@type": "Question",
         "name": "Warum neigen Spieler in Teamkämpfen zu reflexartigem Panikfeuer?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Unter akutem Adrenalinanstieg neigt das menschliche Sehsystem dazu, motorische Aktionen reflexartig auf die nächstbeste sichtbare Bewegung auszulösen. Ohne trainierte exekutive Hemmung entfällt die Bedrohungsdifferenzierung, was zu Fehlschüssen auf Attrappen oder Friendly Fire führt."
+          "text": "Unter Stress reagiert man leicht auf die nächstbeste sichtbare Bewegung, bevor geprüft ist, ob sie überhaupt eine Bedrohung ist. Das führt zu Schüssen auf Attrappen oder zu Friendly Fire."
         }
       },
       {
@@ -128,7 +134,7 @@ export default function TargetPrioritizationDePage() {
         "name": "Wie funktioniert das Go/No-Go-Prinzip bei der Schusshemmung im Shooter?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Basierend auf den Forschungen von Franciscus Cornelis Donders (1868) erfordert das Go/No-Go-Paradigma, dass der motorische Kortex einen bereits vorbereiteten Klick sofort unterdrückt, sobald prohibitive Merkmale erkannt werden – wie etwa grüne Team-Outlines oder Decoy-Projektile."
+          "text": "Basierend auf den Forschungen von Franciscus Cornelis Donders (1868) verlangt das Go/No-Go-Paradigma, einen vorbereiteten Klick zu unterdrücken, sobald prohibitive Merkmale erkannt werden – wie etwa grüne Team-Outlines oder Decoy-Projektile."
         }
       },
       {
@@ -136,15 +142,15 @@ export default function TargetPrioritizationDePage() {
         "name": "Was besagt die Stop-Signal Reaction Time (SSRT) nach Logan & Cowan?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Die Stop-Signal Reaction Time (SSRT) beziffert die Latenz, die das Gehirn benötigt, um einen bereits initiierten motorischen Impuls abzublasen. Das Horse-Race-Modell von Logan und Cowan (1984) belegt, dass Handlungsausführung und Handlungsstopp als zwei konkurrierende neuronale Pfade um die Vorherrschaft ringen."
+          "text": "Die Stop-Signal Reaction Time (SSRT) beziffert die Latenz, die das Gehirn benötigt, um einen bereits initiierten motorischen Impuls abzublasen. Im Horse-Race-Modell von Logan und Cowan (1984) laufen Handlungsausführung und Handlungsstopp wie zwei konkurrierende Prozesse gegeneinander. Dieser Drill misst die SSRT nicht direkt; er übt, auf grüne Ziele nicht zu schießen."
         }
       },
       {
         "@type": "Question",
-        "name": "Nach welchen Kriterien stufen professionelle Spieler Bedrohungen beim Site-Push ein?",
+        "name": "Nach welchen Kriterien stuft man Bedrohungen beim Site-Push ein?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Profis gewichten Bedrohungen nach Sichtlinienexposition, Waffenletalität auf die gegebene Distanz (z. B. Schrotflinte im Nahkampf vs. Gewehr auf Distanz), Crosshair Placement des Gegners und Verbleib von Teamressourcen, um stets den gefährlichsten Winkel zuerst zu neutralisieren."
+          "text": "Übliche Kriterien sind Sichtlinienexposition, Waffenletalität auf die gegebene Distanz (z. B. Schrotflinte im Nahkampf vs. Gewehr auf Distanz), Crosshair Placement des Gegners und Verbleib von Teamressourcen, damit der gefährlichste Winkel zuerst bekämpft wird. Dieser Drill vereinfacht das auf eine feste Reihenfolge: Rot vor Gelb."
         }
       },
       {
@@ -152,7 +158,7 @@ export default function TargetPrioritizationDePage() {
         "name": "Was bewirkt die Ablenkungsunterdrückung (Distractor Suppression) im Gehirn?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Die von Broadbent (1958) und Treisman (1964) postulierte Aufmerksamkeitsfilterung ermöglicht es dem visuellen Kortex, aufgabenirrelevante Reize wie kreuzende Teamkollegen aktiv abzuschwächen, sodass kognitive Kapazitäten vollständig für die Prioritätsbekämpfung reserviert bleiben."
+          "text": "Die von Broadbent (1958) und Treisman (1964) postulierte Aufmerksamkeitsfilterung hilft, aufgabenirrelevante Reize wie kreuzende Teamkollegen abzuschwächen, damit die Aufmerksamkeit bei den echten Bedrohungen bleibt."
         }
       },
       {
@@ -160,7 +166,7 @@ export default function TargetPrioritizationDePage() {
         "name": "Wie wirkt sich das Beschießen von Attrappen auf die Runden-Siegquote in CS2 und Valorant aus?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Das Verschwenden von Munition oder das Verraten der Fadenkreuzposition an Attrappen (z. B. Yoru-Klone oder Mirage-Illusionen) verschafft echten Gegnern ein ungestraftes Timing-Fenster, was die Clutch-Gewinnchance im 1vX um mehr als 45% mindert."
+          "text": "Das Verschwenden von Munition oder das Verraten der Fadenkreuzposition an Attrappen (z. B. Yoru-Klone oder Mirage-Illusionen) verschafft echten Gegnern ein Zeitfenster. Gerade im 1vX, wo jeder Schuss zählt, ist das teuer."
         }
       },
       {
@@ -168,7 +174,7 @@ export default function TargetPrioritizationDePage() {
         "name": "Welcher Einfluss hat die Mausempfindlichkeit auf präzise Zielwechsel und Stoppkraft?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Eine mittlere bis niedrige Mausempfindlichkeit (30–42 cm/360°) bietet überlegene mechanische Bremskraft (Antagonisten-Kontraktion), wodurch ein Überziehen über die Primärbedrohung hinaus auf benachbarte Ablenkungsziele zuverlässig verhindert wird."
+          "text": "Sehr hohe Empfindlichkeit erschwert sauberes Abbremsen auf dem Ziel, sehr niedrige verlangsamt Wechsel zu weit entfernten Zielen. Nutze am besten deine gewohnte Spiel-Empfindlichkeit, mit der du zuverlässig stoppen kannst."
         }
       },
       {
@@ -176,7 +182,7 @@ export default function TargetPrioritizationDePage() {
         "name": "Warum verringert starker Adrenalinausstoß die taktische Entscheidungsgeschwindigkeit?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Starke sympathische Erregung führt zu sogenanntem Tunnelblick und hemmt die präfrontale Kortexaktivität zugunsten schneller subkortikaler Fluchtreflexe, was zu unüberlegten Klicks auf erstbeste visuelle Kontraste verleitet."
+          "text": "Starke Anspannung kann zu Tunnelblick führen: Das Umfeld wird später wahrgenommen, und es kommt eher zu unüberlegten Klicks auf den erstbesten Reiz."
         }
       },
       {
@@ -184,7 +190,7 @@ export default function TargetPrioritizationDePage() {
         "name": "Wie oft sollte kognitive Zielpriorisierung trainiert werden?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Ein tägliches 10-minütiges Warm-up mit strukturiertem Zielpriorisierungs- und Go/No-Go-Training konditioniert die präfrontalen Hemmungsbahnen, schärft die Schussdisziplin und beugt Panikfeuer in Ranglistenspielen wirksam vor."
+          "text": "Eine feste Regel gibt es nicht. Ein kurzes Warm-up von etwa 10 Minuten ist ein sinnvoller Rahmen; vergleiche Präzision und Friendly-Fire-Anzahl auf derselben Hardware über mehrere Tage."
         }
       }
     ]
@@ -228,37 +234,36 @@ export default function TargetPrioritizationDePage() {
   };
 
   const targetPrioritizationGuide = {
-    heading: "Aim Trainer für Zielauswahl und Bedrohungspriorität",
+    heading: "Zielpriorisierung im FPS: Zielauswahl und Schusshemmung üben",
     intro: [
-      "Ein Aim Trainer für Zielauswahl übt die Entscheidung, welches Ziel in Valorant und CS2 zuerst bekämpft werden muss. Dieser Drill misst Bedrohungseinschätzung, Ablenkungsfilterung und Schusshemmung, damit der Mausklick gegenüber falschen oder nicht priorisierten Zielen kontrolliert bleibt.",
-      "Die neurophysiologische Grundlage motorischer Hemmungsprozesse wurde von Gordon D. Logan und William B. Cowan (1984) im wegweisenden Stop-Signal-Paradigma formuliert. Ihr 'Horse-Race'-Modell belegt, dass Handlungsausführung (Go-Prozess) und Handlungsunterdrückung (Stop-Prozess) als zwei unabhängige neuronale Netzwerke im fronto-basalgangliären Kreislauf um die Vorherrschaft konkurrieren. Spieler ohne gezieltes Schusshemmungstraining unterliegen unter Wettkampfdruck reflexartigem Panikfeuer, indem sie den Zeigefinger krümmen, bevor die visuelle Zielverifikation abgeschlossen ist.",
+      "Dieses Zielpriorisierungs-Training übt die Entscheidung, welches Ziel zuerst bekämpft werden muss: Bewegte rote Ziele (hohe Bedrohung) zuerst, dann gelbe, und grüne Verbündete nie. So übst du Bedrohungseinschätzung, Ablenkungsfilterung und Schusshemmung, etwa für Gefechte in Valorant und CS2.",
+      "Die neurophysiologische Grundlage motorischer Hemmungsprozesse wurde von Gordon D. Logan und William B. Cowan (1984) im wegweisenden Stop-Signal-Paradigma formuliert. In ihrem 'Horse-Race'-Modell laufen Handlungsausführung (Go-Prozess) und Handlungsunterdrückung (Stop-Prozess) unabhängig gegeneinander. Unter Druck gewinnt oft der Klick, bevor das Ziel geprüft ist: Panikfeuer.",
       "Die Mechanismen der visuellen Reizfilterung wurden durch Donald E. Broadbent (1958) und Anne Treisman (1964) in den Modellen der selektiven Aufmerksamkeit begründet. Treffen mehrere konkurrierende Reize auf die Netzhaut ein, aktiviert das Gehirn Top-Down-Aufmerksamkeitsfilter (Posner & Petersen, 1990), um irrelevante Bewegungen peripher abzuschwächen und foveale Ressourcen voll auf die gefährlichste Bedrohungsachse zu lenken.",
-      "Durch die Verknüpfung von Franciscus Cornelis Donders' (1868) Go/No-Go-Diskriminationsmodellen mit hochauflösender digitaler Chronometrie via performance.now() (Woods et al., 2015) schließt dieses Trainingssystem die Lücke zwischen reinem Mausempfinden und taktischer Entscheidungspräzision unter realem Wettkampfdruck.",
+      "Durch die Verknüpfung von Franciscus Cornelis Donders' (1868) Go/No-Go-Diskriminationsmodellen mit hochauflösender digitaler Chronometrie via performance.now() (Woods et al., 2015) verbindet dieser Drill Mausführung mit schnellen Entscheidungen unter Zeitdruck.",
       "Messmethodik: Jedes Ereignis wird clientseitig über die hochpräzise performance.now()-Uhr deines Browsers erfasst – ohne Serververzögerung oder Datenübertragung. Zu beachten: Browser-Timer werden aus Sicherheitsgründen (Spectre-Schutz) auf ca. 1 ms gerundet; Bildschirme quantisieren visuelle Reize über die Bildwiederholrate (16,7 ms bei 60 Hz, 6,9 ms bei 144 Hz, 4,1 ms bei 240 Hz). Die USB-Abfragerate der Maus fügt ca. 1 ms bei 1000 Hz bzw. 8 ms bei 125 Hz hinzu. Latenzunterschiede unter 5 ms stellen messtechnisches Rauschen dar; vergleiche deine Trainingsläufe daher stets auf identischer Hardware."
     ],
     benchmarks: {
-      title: "Benchmarks für Bedrohungseinschätzung & Reaktionshemmung",
-      headers: ["Leistungsstufe", "Entscheidungslatenz", "Prioritäts-Genauigkeit", "Wettkampf-Implikation (In-Game)"],
+      title: "So liest du die Ergebnisanzeige",
+      headers: ["Wert", "So zählt der Drill", "Bedeutung", "Verbessern"],
       rows: [
-        ["Stufe 5", "Unter 280 ms", "96% – 99%+", "Fehlerfreie Bedrohungsauswahl; sofortige Ausschaltung roter Gefahren ohne Friendly Fire bei Mehrfach-Pushes"],
-        ["Tier 2 (Master / Tier-2 Esports)", "280 – 340 ms", "90% – 96%", "Außergewöhnliche Entscheidungsgeschwindigkeit; blitzschnelle Korrektur nach Zieleskalation; unter 1% Fehlschussquote auf Verbündete"],
-        ["Tier 3 (Diamond / Ascendant)", "340 – 420 ms", "82% – 90%", "Zuverlässige Priorisierung; 60–90 ms Zögern, wenn rote und gelbe Bedrohungen in engem Sichtfeld erscheinen"],
-        ["Tier 4 (Gold / Platin)", "420 – 520 ms", "72% – 82%", "Anfällig für reflexartiges Panikfeuer; feuert gelegentlich auf grüne Einheiten oder voreilig auf gelbe Ziele"],
-        ["Tier 5 (Einsteiger / Panikschütze)", "Über 520 ms", "Unter 72%", "Häufige impulsive Fehlbedienungen; hohe Friendly-Fire-Quote; Überforderung bei visueller Reizüberflutung"]
+        ["Präzision", "(rote + gelbe Treffer) ÷ alle Klicks", "Anteil korrekt priorisierter Treffer", "Eigene Werte auf demselben Gerät vergleichen"],
+        ["Gefahren neutralisiert", "Treffer auf rote und gelbe Ziele", "Wie viele Bedrohungen du in der Zeit geschafft hast", "Mit gehaltener Combo steigern"],
+        ["Friendly Fire / Prioritätsfehler", "Schuss auf Grün oder auf Gelb, solange Rot sichtbar ist", "Fehler bei Schusshemmung und Bedrohungseinschätzung", "Erst nach Rot suchen"],
+        ["Max Combo · Höchstlevel", "Treffer ohne Fehler am Stück, 1 Level pro 1400 Punkte", "Konstanz und erreichte Schwierigkeit", "Fehler vor Tempo reduzieren"]
       ],
-      note: "Die Entscheidungslatenz misst das Zeitintervall vom Erscheinen der Hochrisiko-Bedrohung bis zum validen Klick; die Prioritäts-Genauigkeit spiegelt korrekte Zielentscheidungen im Verhältnis zu gesamten Schussaktionen wider (Woods et al., 2015)."
+      note: "Die Tabelle erklärt die Werte, die dieser Drill tatsächlich erfasst; sie ist keine Rang-, Tier- oder Nutzerstatistik."
     },
     techniques: {
       title: "Evidenzbasierte Protokolle für perfekte Zielpriorisierung",
       items: [
         {
           name: "Exekutive Reaktionshemmung (Go/No-Go Trigger-Disziplin)",
-          desc: "Konditioniere den präfrontalen Kortex darauf, vorbereitete Klickbewegungen bei Erkennen grüner Verbündetenmerkmale augenblicklich zu stoppen (Logan & Cowan, 1984). Trainiere bewusste Fingerentspannung statt reflexartigem Abdrücken auf jede Bewegung.",
+          desc: "Übe, vorbereitete Klicks zu stoppen, sobald du ein grünes Ziel erkennst (Logan & Cowan, 1984). Trainiere bewusste Fingerentspannung statt reflexartigem Abdrücken auf jede Bewegung.",
           tips: "Lass deinen Zeigefinger locker ohne Muskelvorspannung auf der Maustaste ruhen, bis der Status des Ziels zweifelsfrei verifiziert ist."
         },
         {
           name: "Dynamisches Bedrohungshierarchie-Scanning",
-          desc: "Fokussiere deine primäre visuelle Suche auf aktive rote Hochrisiko-Ziele und betrachte gelbe Ziele als sekundäre Bereitstellungsphase. Das Ausschalten des Gegners mit direkter Schusslinie maximiert die Runden-Siegwahrscheinlichkeit.",
+          desc: "Fokussiere deine primäre visuelle Suche auf aktive rote Hochrisiko-Ziele und betrachte gelbe Ziele als sekundäre Bereitstellungsphase. Im Spiel entspricht das dem Gegner mit direkter Schusslinie.",
           tips: "Befindet sich ein gelbes Ziel näher am Fadenkreuz, aber ein rotes Ziel ist aktiv, ziehe das Fadenkreuz zwingend zuerst zum roten Ziel."
         },
         {
@@ -268,16 +273,16 @@ export default function TargetPrioritizationDePage() {
         },
         {
           name: "Kadenzierte ballistische Zielentscheidung",
-          desc: "Vermeide unkontrolliertes Dauerfeuer. Halte eine zweistufige Kadenz ein: Nutze die ersten 30–50 ms zur kognitiven Bedrohungsprüfung, bevor du den 120–160 ms Flick ausführst, damit nur validierte Befehle an die Hand gesendet werden.",
-          tips: "Eine minimale Pause von 40 ms zur visuellen Zielbestätigung verhindert verhängnisvolle Fehlschüsse und Combo-Verluste."
+          desc: "Vermeide unkontrolliertes Klicken. Prüfe zuerst kurz die Farbe des Ziels und führe erst dann den Flick aus.",
+          tips: "Eine kurze Bestätigung vor dem Klick verhindert Fehlschüsse und Combo-Verluste."
         }
       ]
     },
     steps: [
       "Passe In-Game-Sensitivität und DPI in den Session-Einstellungen für eine konsistente Hand-zu-Cursor-Zuordnung an und aktiviere die Mauszeigersperre.",
       "Überwache das Zielfeld kontinuierlich auf das Auftauchen roter Hochrisiko-Bedrohungen.",
-      "Schalte vorrangig aktive rote Ziele aus (+100 Punkte, +0,4s Bonuszeit auf die Runden-Uhr).",
-      "Neutralisiere gelbe Sekundärziele, bevor deren Timer abläuft und sie zu roten Bedrohungen eskalieren.",
+      "Schalte vorrangig aktive rote Ziele aus (+100 Punkte, +2 s auf die Uhr, maximal 60 s).",
+      "Neutralisiere gelbe Sekundärziele erst, wenn kein rotes Ziel mehr sichtbar ist, und bevor sie zu Rot eskalieren.",
       "Wahre strikte Trigger-Disziplin und ignoriere grüne Einheiten vollständig, um deine Combo-Multiplikatoren aufzubauen."
     ],
     audience: "Ambitionierte FPS-Spieler in Counter-Strike 2, Valorant, Rainbow Six Siege und Apex Legends, die exzellente Bedrohungsdifferenzierung, reduzierte Panikschüsse und überlegene Entscheidungsgeschwindigkeit in Clutch-Situationen anstreben.",
@@ -320,8 +325,8 @@ export default function TargetPrioritizationDePage() {
       />
       <TargetPrioritizationClient
         copy={{
-          h1Keyword: "Aim Trainer",
-          h1Suffix: " – Zielauswahl & Bedrohungspriorität",
+          h1Keyword: "Zielpriorisierung",
+          h1Suffix: " – Zielauswahl & Schusshemmung üben",
           subtitle: "Trainiere Zielauswahl, Bedrohungseinschätzung und kontrollierte Schusshemmung direkt im Browser.",
           statScore: "Punkte",
           statTime: "Zeit",
@@ -330,7 +335,7 @@ export default function TargetPrioritizationDePage() {
           statThreatsCleared: "Gefahren neutralisiert",
           statMaxCombo: "Max Combo",
           statPeakLevel: "Höchstlevel",
-          startTitle: "Aim Trainer - Zielauswahl",
+          startTitle: "Zielpriorisierung",
           startSubtitle: "Bedrohungseinschätzung & Kognitives Filtern • Endlose Levelprogression",
           getReady: "BEREIT MACHEN",
           toggleFlash: "Fehlschuss-Blitz an/aus",
@@ -340,14 +345,14 @@ export default function TargetPrioritizationDePage() {
           stageCaption: "Eliminiere zuerst rote Primärbedrohungen und anschließend gelbe Sekundärziele. Schieße niemals auf grüne Verbündete!",
           rulesTitle: "Trainingsregeln & Punktesystem",
           rulesItems: [
-            { num: "1", text: "Hohe Bedrohung", highlight: "Rot (+100 PTS / +0,4s)", result: "Höchste Priorität" },
-            { num: "2", text: "Mittlere Bedrohung", highlight: "Gelb (+50 PTS / +0,4s)", result: "Eskaliert nach Timer zu Rot" },
-            { num: "3", text: "Eigene Einheiten", highlight: "Grün (NICHT SCHIESSEN)", result: "Fehlschuss/Friendly Fire setzt Combo zurück" },
+            { num: "1", text: "Hohe Bedrohung", highlight: "Rot (+100 PTS / +2s, max. 60s)", result: "Höchste Priorität" },
+            { num: "2", text: "Mittlere Bedrohung", highlight: "Gelb (+50 PTS / +2s)", result: "Punkte nur ohne sichtbares Rot; wird nach Timer zu Rot" },
+            { num: "3", text: "Eigene Einheiten", highlight: "Grün (NICHT SCHIESSEN)", result: "Friendly Fire, Prioritätsfehler oder Fehlschuss: Combo-Reset (-1s)" },
             { num: "4", text: "Levelaufstieg", highlight: "+1 / 1400 PTS", result: "Dynamische Dichte & Tempo" }
           ],
-          aboutTitle: "Über Aim Trainer und Zielauswahl",
+          aboutTitle: "Über dieses Zielpriorisierungs-Training",
           aboutHeading: "Was ist Zielpriorisierung (Target Prioritization)?",
-          aboutText: "Zielpriorisierung beschreibt die exekutive Fähigkeit, in komplexen Kampfsituationen mehrere sichtbare Gegner blitzschnell nach ihrer unmittelbaren Gefährlichkeit zu gewichten und den tödlichsten Kontrahenten zuerst auszuschalten. Gleichzeitig erfordert dies Schusshemmung (Trigger-Disziplin), um nicht reflexartig auf Verbündete oder harmlose Attrappen zu feuern. Logan und Cowan (1984) wiesen nach, dass das Abbrechen einer bereits vorbereiteten Schussbewegung einem eigenständigen neurologischen Hemmungsprozess unterliegt."
+          aboutText: "Zielpriorisierung beschreibt die Fähigkeit, mehrere sichtbare Gegner nach ihrer unmittelbaren Gefährlichkeit zu gewichten und den tödlichsten Kontrahenten zuerst auszuschalten. Gleichzeitig erfordert dies Schusshemmung (Trigger-Disziplin), um nicht reflexartig auf Verbündete oder harmlose Attrappen zu feuern. Nach Logan und Cowan (1984) ist das Abbrechen einer vorbereiteten Bewegung ein eigener Prozess, der gegen den Start der Bewegung läuft. Dieser Drill übt das mit der Regel Rot vor Gelb und keinem Schuss auf Grün."
         }}
       />
       <DrillGuide guide={targetPrioritizationGuide} />

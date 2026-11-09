@@ -331,12 +331,6 @@ export default function AwarenessDrillPage() {
           startSubtitle: "Pointer Lock Mouse Input • Endless Level Progression",
           subtitle: "Master rapid peripheral detection, large-angle flick transitions, and snap turn deceleration.",
           stageCaption: "Spot and snap to targets spawning at extreme screen edges before their timer expires.",
-          rulesItems: [
-            { num: "1", text: "Edge Target Hit", highlight: "+100 PTS (+0.6s)", result: "×Combo Mult" },
-            { num: "2", text: "180° Spawns", highlight: "Extreme Peripheral", result: "Faster & Smaller" },
-            { num: "3", text: "Level Progression", highlight: "+1 Level / 1750 PTS", result: "Adaptive Scaling" },
-            { num: "4", text: "Miss / Timeout", highlight: "Penalty", result: "Resets Combo (-0.8s)" }
-          ]
         }}
       />
       <DrillGuide guide={awarenessGuide} singleLineTitles />

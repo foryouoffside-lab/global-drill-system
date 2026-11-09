@@ -6,18 +6,14 @@ import RelatedDrills from '@/components/drill/RelatedDrills';
 import DrillFooter from '@/components/drill/DrillFooter';
 
 export const metadata = {
-  title: "Treino de Mira | Tracking FPS Suave | SkillDrills",
-  description: "Treino de mira grátis no navegador: pratique tracking suave em alvos móveis para Apex, Overwatch 2 e outros FPS.",
+  title: "Tracking Suave: Siga Alvos em Curva | SkillDrills",
+  description: "Tracking Suave grátis no navegador: mantenha a mira com o mouse em um alvo que desliza em curvas de Lissajous. Rastreamento contínuo para Apex e Overwatch 2.",
   keywords: [
-    "treino de mira",
-    "treino de mira online",
-    "treino de mira fps",
-    "treino de mira com mouse",
-    "treino de tracking",
     "tracking suave",
-    "mira FPS",
-    "treino de mira valorant",
-    "treino de mira cs2"
+    "rastreamento contínuo",
+    "smooth tracking",
+    "alvos em curva",
+    "tracking com mouse"
   ],
   alternates: {
     canonical: "https://skilldrills.online/pt/drills/fps/pro-smooth-pursuit",
@@ -28,8 +24,8 @@ export const metadata = {
     follow: true,
   },
   openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
-    title: "Treino de Mira | Tracking FPS Suave | SkillDrills",
-    description: "Pratique tracking suave em alvos móveis: treino de mira FPS grátis no navegador para Apex e Overwatch 2.",
+    title: "Tracking Suave: Siga Alvos em Curva | SkillDrills",
+    description: "Tracking Suave grátis no navegador: mantenha a mira com o mouse em um alvo que desliza em curvas de Lissajous. Rastreamento contínuo para Apex e Overwatch 2.",
     url: "https://skilldrills.online/pt/drills/fps/pro-smooth-pursuit",
     siteName: 'SkillDrills',
     locale: 'pt_BR',
@@ -37,8 +33,8 @@ export const metadata = {
   },
   twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: 'summary_large_image',
-    title: "Treino de Mira | Tracking FPS Suave | SkillDrills",
-    description: "Pratique tracking suave em alvos móveis: treino de mira FPS grátis no navegador para Apex e Overwatch 2.",
+    title: "Tracking Suave: Siga Alvos em Curva | SkillDrills",
+    description: "Tracking Suave grátis no navegador: mantenha a mira com o mouse em um alvo que desliza em curvas de Lissajous. Rastreamento contínuo para Apex e Overwatch 2.",
   },
 };
 
@@ -62,7 +58,7 @@ export default function ProSmoothPursuitPage() {
       {
         "@type": "ListItem",
         "position": 3,
-        "name": "Treino de Mira - Tracking FPS Suave",
+        "name": "Tracking Suave: Siga Alvos em Curva",
         "item": "https://skilldrills.online/pt/drills/fps/pro-smooth-pursuit"
       }
     ]
@@ -71,7 +67,7 @@ export default function ProSmoothPursuitPage() {
   const webAppSchema = {
     "@context": "https://schema.org",
     "@type": "WebApplication",
-    "name": "Treino de Mira - Tracking FPS Suave",
+    "name": "Tracking Suave: Siga Alvos em Curva",
     "url": "https://skilldrills.online/pt/drills/fps/pro-smooth-pursuit",
     "applicationCategory": "GameApplication",
     "operatingSystem": "Any",
@@ -86,7 +82,7 @@ export default function ProSmoothPursuitPage() {
   const softwareSchema = {
     "@context": "https://schema.org",
     "@type": "SoftwareApplication", "sameAs": ["https://en.wikipedia.org/wiki/Smooth_pursuit"],
-    "name": "Treino de Mira com Tracking Suave",
+    "name": "Tracking Suave - rastreamento contínuo",
     "applicationCategory": "GameApplication",
     "operatingSystem": "Web Browser",
     "offers": {
@@ -104,7 +100,7 @@ export default function ProSmoothPursuitPage() {
   const videoGameSchema = {
     "@context": "https://schema.org",
     "@type": "VideoGame",
-    "name": "Treino de Mira - Tracking em Curva",
+    "name": "Tracking Suave - alvos em curva",
     "description": "Simulador de rastreamento contínuo em curvas harmônicas de Lissajous com ponteiro bruto.",
     "genre": ["Action", "Esports Trainer", "Aim Trainer"],
     "playMode": "SinglePlayer",
@@ -114,7 +110,7 @@ export default function ProSmoothPursuitPage() {
   const faqSchema = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
-    "dateModified": "2026-09-20",
+    "dateModified": "2026-11-09",
     "mainEntity": [
       {
         "@type": "Question",
@@ -145,7 +141,7 @@ export default function ProSmoothPursuitPage() {
         "name": "O que é antecipação visual foveal (Foveal Gaze Leading) no tracking?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "É a técnica em que o olhar do jogador se posiciona ligeiramente à frente do centro da hitbox do alvo móvel. Esse pequeno avanço perceptivo fornece ao cérebro o vetor direcional necessário para antecipar inflexões de velocidade com latência reduzida."
+          "text": "É olhar para o alvo e para a direção em que ele se move, em vez de olhar para a própria retícula. O olhar costuma anteceder o gesto, o que ajuda a se preparar para as mudanças de curva."
         }
       },
       {
@@ -161,7 +157,7 @@ export default function ProSmoothPursuitPage() {
         "name": "O que é uma curva de Lissajous e por que ela é utilizada neste exercício?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "As curvas de Lissajous são trajetórias matemáticas harmônicas bidimensionais com variação senoidal contínua nos eixos X e Y. Elas forçam a musculatura da mão e do braço a calibrar aceleração e desaceleração simultâneas em ângulos diagonais, simulando movimentações avançadas de esquiva."
+          "text": "As curvas de Lissajous são trajetórias matemáticas harmônicas bidimensionais com variação senoidal contínua nos eixos X e Y. Elas obrigam a ajustar aceleração e desaceleração nos dois eixos ao mesmo tempo, sem uma trajetória reta para decorar."
         }
       },
       {
@@ -169,7 +165,7 @@ export default function ProSmoothPursuitPage() {
         "name": "Como a taxa de atualização do monitor e o polling rate influenciam o tracking suave?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Monitores de alta taxa de quadros (144Hz a 360Hz) eliminam a descontinuidade visual entre posições sucessivas do alvo, reduzindo o esforço do córtex visual para interpolar o movimento. Polling rates de 1000Hz ou mais oferecem atualização de sinal a cada milissegundo, garantindo suavidade absoluta no cursor."
+          "text": "Taxas de atualização maiores encurtam o intervalo entre quadros (60 Hz ≈ 16,7 ms, 144 Hz ≈ 6,9 ms), mostrando as curvas com mais detalhe. Um polling rate de 1000 Hz atualiza a posição do mouse cerca de uma vez por milissegundo. Ainda assim, prática e diferenças individuais costumam pesar mais que o equipamento."
         }
       },
       {
@@ -193,7 +189,7 @@ export default function ProSmoothPursuitPage() {
         "name": "Por que sair do alvo zera o multiplicador de combo neste treinador?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "O multiplicador de combo premia o tempo de contato ininterrupto. Em tiroteios competitivos de alto TTK, perder o contato com a hitbox por frações de segundo interrompe o dano e permite a recuperação de escudos do adversário."
+          "text": "O multiplicador premia o contato ininterrupto. Sobre o alvo, você ganha 50 pontos base a cada 0,25 s (multiplicados pelo combo e pelo nível) e +0,1 s no relógio (máximo de 60 s); cada segundo sem perder o alvo soma 1 ao combo, até 3,0×. Se ficar 1 s seguido fora do alvo, o combo zera. A rodada começa com 45 s."
         }
       }
     ]
@@ -209,7 +205,7 @@ export default function ProSmoothPursuitPage() {
         "@type": "HowToStep",
         "position": 1,
         "name": "Calibração e Ativação do Ponteiro",
-        "text": "Defina seus parâmetros idênticos de sensibilidade e DPI e clique no centro da tela para ativar o bloqueio de ponteiro."
+        "text": "Ajuste o multiplicador de sensibilidade nas configurações de /drills e clique em iniciar; o ponteiro é travado ao fim da contagem regressiva."
       },
       {
         "@type": "HowToStep",
@@ -233,53 +229,53 @@ export default function ProSmoothPursuitPage() {
   };
 
   const copyPt = {
-    h1Keyword: "Treino de Mira",
-    h1Suffix: " – Tracking FPS Suave",
+    h1Keyword: "Tracking Suave",
+    h1Suffix: ": Siga Alvos em Curva",
     statScore: "Pontuação",
     statTime: "Tempo",
     statAccuracy: "Precisão",
     statBestScore: "Recorde",
     pausedTitle: "Jogo Pausado",
     pausedSubtitle: "Clique na tela para reengajar a trava do cursor do mouse.",
-    startTitle: "Treino de Mira",
-    startSubtitle: "Rastreamento em Curva de Lissajous • Progressão Contínua",
+    startTitle: "Tracking Suave",
+    startSubtitle: "Curvas de Lissajous • Pointer Lock • Progressão Contínua",
     getReady: "PREPARE-SE",
     stageCaption: "Acompanhe continuamente o alvo em movimento oscilatório pelas curvas suaves da tela sem perder o contato visual.",
     rulesTitle: "Instruções do Treino e Sistema de Pontos",
     rulesItems: [
-      { num: "1", text: "Rastreamento no Alvo", highlight: "+50 PTS (+0.4s/s)", result: "×Mult de Combo" },
-      { num: "2", text: "Sequência Contínua", highlight: "Até 3.0×", result: "Multiplicador Máx" },
+      { num: "1", text: "Rastreamento no Alvo", highlight: "+50 PTS / 0,25s (+0,4s/s)", result: "×Mult de Combo" },
+      { num: "2", text: "1s Sem Perder", highlight: "Combo +1, até 3,0×", result: "Multiplicador Máx" },
       { num: "3", text: "Progressão de Nível", highlight: "+1 Nível / 1400 PTS", result: "Curvas Adaptativas" },
-      { num: "4", text: "Perda de Contato", highlight: "1.0s Fora do Alvo", result: "Reset de Combo (-0.6s)" }
+      { num: "4", text: "Perda de Contato", highlight: "1,0s seguido fora", result: "Reset de Combo" }
     ],
-    aboutTitle: "Sobre o treino de mira e tracking suave",
+    aboutTitle: "Sobre o Tracking Suave",
     aboutHeading: "O que é o Rastreamento Suave (Smooth Pursuit)?",
     aboutText: "O rastreamento suave (Smooth Pursuit) é a capacidade neuro-ocular de manter o olhar fixo em um objeto em movimento contínuo através da modulação da velocidade dos músculos oculares e da coordenação motora do antebraço (Krauzlis, 2004; Barnes, 2008). Este exercício elimina os micro-flicks corretivos desnecessários e transforma sua mira em um feixe constante e fluido."
   };
 
   const smoothPursuitGuide = {
-    heading: "Treino de Mira para Tracking Suave e Alvos Móveis",
+    heading: "Tracking Suave: guia para seguir alvos em curva",
     intro: [
-      "O treino de mira com tracking suave mede a capacidade de manter o retículo sobre um alvo móvel sem movimentos bruscos. Este drill usa curvas de Lissajous para desenvolver estabilidade e tempo sobre o alvo em Apex, Overwatch 2 e outros FPS.",
+      "O Tracking Suave é a capacidade de manter o retículo sobre um alvo móvel sem movimentos bruscos. Este drill faz um alvo redondo deslizar em curvas de Lissajous e mede a porcentagem de tempo com a mira sobre ele, como prática de rastreamento contínuo para Apex, Overwatch 2 e outros FPS de TTK longo.",
       "Diferente dos flicks balísticos instantâneos regidos pela Lei de Fitts (1954), o rastreamento suave mobiliza redes neurais corticais especializadas na área temporal média (MT/V5) e no cerebelo (Krauzlis, 2004; Lisberger et al., 1987). Esses circuitos analisam vetores de fluxo óptico e ajustam continuamente o ganho de velocidade neuromuscular para coincidir com a aceleração do adversário.",
       "A trajetória utilizada neste exercício baseia-se em curvas harmônicas de Lissajous, combinando frequências senoidais interdependentes nos eixos X e Y. Essa dinâmica elimina trajetórias lineares previsíveis, estimulando o planejamento motor antecipatório (Barnes, 2008) sem recorrer a correções abruptas por sobressaltos sacádicos.",
-      "Ao utilizar a API de Pointer Lock aliada à cronometria de alta resolução via performance.now() (Woods et al., 2015), o exercício mede com precisão o tempo real de permanência sobre a hitbox, permitindo erradicar tremores do mouse e construir uma mira estável e implacável.",
+      "Ao utilizar a API de Pointer Lock aliada à cronometria de alta resolução via performance.now() (Woods et al., 2015), o exercício mede o tempo de permanência sobre a hitbox para você acompanhar sua regularidade entre sessões.",
       "Como é medido: o tempo de contato na hitbox e a estabilidade angular são computados localmente a cada quadro. Pequenas variações de medição menores a 5 ms correspondem a latências de hardware normais de tela e taxa de polling de periféricos."
     ],
     benchmarks: {
-      title: "Tiers de Desempenho de Tracking Contínuo e Sincronização de Velocidade",
-      headers: ["Nível de Desempenho", "Tempo em Alvo (%)", "Estado Neuromuscular e Oculomotor", "Implicação Competitiva no Jogo"],
+      title: "Tracking Suave: faixas de prática SkillDrills",
+      headers: ["Faixa", "Tempo em Alvo (%)", "O que costuma acontecer", "Foco de treino"],
       rows: [
-        ["Tier 1 (Feixe Perfeito)", "85% – 95%+", "Fixação foveal sem interrupções; correspondência de velocidade perfeita nas inflexões de curva sem micro-flicks", "Treina o acompanhamento contínuo de curvas fechadas sem perder a fixação"],
-        ["Tier 2 (Faixa Intermediária-Alta)", "72% – 85%", "Modulação fluida pelo antebraço; compensação de velocidade imediata ao atingir o ápice das curvas", "Prática de duelos 1v1 prolongados contra alvos em esquiva"],
-        ["Tier 3 (Alto Nível FPS)", "58% – 72%", "Tracking linear sólido; pequenas hesitações de 10 a 15% durante inversões rápidas de trajetória", "Alto rendimento geral; ligeira perda de contato contra adversários com mobilidade aérea extrema"],
-        ["Tier 4 (Intermediário)", "42% – 58%", "Tendência de usar micro-flicks sucessivos em vez de deslizar; tensão no punho provocando tremor", "Dificuldade em acompanhar personagens ágeis; desperdício considerável de munição"],
-        ["Tier 5 (Em Desenvolvimento)", "Abaixo de 42%", "Arrasto constante atrás do alvo; incapacidade de sincronizar velocidade em mudanças de direção", "Perda frequente de duelos diretos; retícula frequentemente desalinhada da hitbox"]
+        ["Faixa 1", "85% – 95%+", "A mira fica no alvo mesmo nas inflexões da curva", "Manter a taxa em níveis altos"],
+        ["Faixa 2", "72% – 85%", "Desacelera junto com o alvo no ápice das curvas", "Não ficar para trás no trecho central rápido"],
+        ["Faixa 3", "58% – 72%", "Estável nos trechos retos, perde o alvo por instantes nas inversões", "Reduzir antes do vértice"],
+        ["Faixa 4", "42% – 58%", "Micro-flicks em vez de deslizar; tremor por tensão no punho", "Soltar a pegada e guiar pelo antebraço"],
+        ["Faixa 5", "Abaixo de 42%", "Mira sempre atrás do alvo, correções grandes frequentes", "Aprender a ficar sobre o alvo nos primeiros níveis"]
       ],
-      note: "Os tiers avaliam a porcentagem de tempo em que a retícula permanece dentro do alvo em curvas de Lissajous contínuas medidas via performance.now() (Woods et al., 2015)."
+      note: "O tempo em alvo é a fração de quadros com a retícula sobre o alvo. Faixas de prática da SkillDrills para autoavaliação, não ranks de jogo, normas de pesquisa ou estatísticas de usuários."
     },
     techniques: {
-      title: "Protocolos Baseados em Evidências para Aperfeiçoar o Tracking Suave",
+      title: "Quatro ajustes para um Tracking Suave",
       items: [
         {
           name: "Deslizamento Pelo Antebraço e Relaxamento do Punho",
@@ -288,7 +284,7 @@ export default function ProSmoothPursuitPage() {
         },
         {
           name: "Fixação Foveal com Antecipação (Gaze Leading)",
-          desc: "Foque o olhar 1 a 2 milímetros à frente do centro do alvo na direção da curvatura. Essa pré-ativação visual instrui os circuitos motores com a aceleração futura necessária.",
+          desc: "Olhe para o alvo e para a direção da curva, não para a retícula, para antecipar melhor as mudanças de velocidade.",
           tips: "Evite fixar os olhos na retícula; seu foco primário deve estar na borda frontal da esfera móvel."
         },
         {
@@ -304,7 +300,7 @@ export default function ProSmoothPursuitPage() {
       ]
     },
     steps: [
-      "Ajuste sua sensibilidade real de jogo e DPI para garantir correspondência neuromuscular idêntica de cm/360 e trave o cursor.",
+      "Ajuste o multiplicador de sensibilidade nas configurações de /drills e clique em iniciar; o cursor é travado após a contagem regressiva.",
       "Quando o alvo em curva surgir, posicione a retícula no centro sem movimentos abruptos.",
       "Acompanhe o movimento da curva de Lissajous deslizando o antebraço com velocidade constante correspondente ao alvo.",
       "Mantenha contato contínuo na trajetória para acumular o multiplicador de combo e progredir para níveis com alvos menores."
@@ -314,7 +310,8 @@ export default function ProSmoothPursuitPage() {
     sources: pickSources('woods2015', 'fitts1954', 'barnes2008', 'krauzlis2004', 'lisberger1987'),
     related: [
       { href: "/pt/drills/fps/anti-zigzag-movement-trainer", label: "Treinador de Movimento Anti-Zigue-Zague" },
-      { href: "/pt/drills/fps/anti-strafe-jitter-duel", label: "Duelo Anti-Strafe Jitter" },
+      { href: "/pt/drills/fps/anti-strafe-jitter-duel", label: "Tracking contra Strafe ADAD" },
+      { href: "/pt/drills/fps/strafe-tracking", label: "Treino de Tracking: mira em movimento" },
       { href: "/pt/drills/fps/flick-shot-training", label: "Treino de Flick Shot" },
       { href: "/pt/drills/fps/micro-correction-precision", label: "Micro Correção de Mira" }
     ]

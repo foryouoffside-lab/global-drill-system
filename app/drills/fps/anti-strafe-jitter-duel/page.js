@@ -327,12 +327,6 @@ export default function AntiStrafeJitterPage() {
           h1Keyword: "Anti-Strafe Jitter Trainer",
           h1Suffix: " - Reactive Tracking Aim",
           startSubtitle: "Reactive Movement Reading • Endless Level Progression",
-          rulesItems: [
-            { num: "1", text: "Tracking Alignment", highlight: "+50 PTS (+0.4s/s)", result: "×Combo Mult" },
-            { num: "2", text: "Continuous Combo", highlight: "Up to 3.0×", result: "Max Multiplier" },
-            { num: "3", text: "Level Progression", highlight: "+1 Level / 1400 PTS", result: "Adaptive Jitter" },
-            { num: "4", text: "Off-Target Penalty", highlight: "1.0s Off-Target", result: "Resets Combo (-0.6s)" }
-          ]
         }}
       />
       <DrillGuide guide={antiStrafeGuide} singleLineTitles />

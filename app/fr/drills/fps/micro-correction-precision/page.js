@@ -6,13 +6,11 @@ import { getAlternateLanguages } from '@/lib/i18n/locales';
 import RelatedDrills from '@/components/drill/RelatedDrills';
 
 export const metadata = {
-  title: "Aim Trainer | Micro-ajustements de visée | SkillDrills",
-  description: "Aim trainer gratuit dans le navigateur : travaillez les micro-ajustements après le flick, le freinage et la précision headshot sur Valorant et CS2.",
+  title: "Micro-ajustements de visée : précision headshot | SkillDrills",
+  description: "Micro-ajustements de visée : touchez la cible ancre, puis la petite micro-cible qui apparaît à côté. Plus le tir est centré, plus il rapporte. Valorant et CS2.",
   keywords: [
-    "aim trainer",
-    "aim trainer en ligne",
-    "aim trainer gratuit",
     "micro-ajustements de visée",
+    "micro flick",
     "micro-correction de visée",
     "micro flicks cs2",
     "précision micro ajustement souris",
@@ -21,8 +19,7 @@ export const metadata = {
     "contrôle micro mouvements souris",
     "freinage de visée",
     "précision headshot FPS",
-    "entraînement de visée Valorant",
-    "aim trainer Valorant"
+    "micro-ajustements Valorant"
   ],
   alternates: {
     canonical: "https://skilldrills.online/fr/drills/fps/micro-correction-precision",
@@ -33,8 +30,8 @@ export const metadata = {
     follow: true,
   },
   openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
-    title: "Aim Trainer | Micro-ajustements de visée | SkillDrills",
-    description: "Aim trainer gratuit dans le navigateur : travaillez les micro-ajustements après le flick, le freinage et la précision headshot sur Valorant et CS2.",
+    title: "Micro-ajustements de visée : précision headshot | SkillDrills",
+    description: "Micro-ajustements de visée : touchez la cible ancre, puis la petite micro-cible qui apparaît à côté. Plus le tir est centré, plus il rapporte. Valorant et CS2.",
     url: "https://skilldrills.online/fr/drills/fps/micro-correction-precision",
     siteName: 'SkillDrills',
     locale: 'fr_FR',
@@ -42,8 +39,8 @@ export const metadata = {
   },
   twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: 'summary_large_image',
-    title: "Aim Trainer | Micro-ajustements de visée | SkillDrills",
-    description: "Aim trainer gratuit dans le navigateur : travaillez les micro-ajustements après le flick, le freinage et la précision headshot sur Valorant et CS2.",
+    title: "Micro-ajustements de visée : précision headshot | SkillDrills",
+    description: "Micro-ajustements de visée : touchez la cible ancre, puis la petite micro-cible qui apparaît à côté. Plus le tir est centré, plus il rapporte. Valorant et CS2.",
   },
 };
 
@@ -67,7 +64,7 @@ export default function MicroCorrectionPage() {
       {
         "@type": "ListItem",
         "position": 3,
-         "name": "Aim Trainer - micro-ajustements de visée",
+         "name": "Micro-ajustements de visée",
         "item": "https://skilldrills.online/fr/drills/fps/micro-correction-precision"
       }
     ]
@@ -76,7 +73,7 @@ export default function MicroCorrectionPage() {
   const webAppSchema = {
     "@context": "https://schema.org",
     "@type": "WebApplication",
-    "name": "Aim Trainer - micro-ajustements et headshots",
+    "name": "Micro-ajustements de visée et headshots",
     "url": "https://skilldrills.online/fr/drills/fps/micro-correction-precision",
     "applicationCategory": "GameApplication",
     "operatingSystem": "Any",
@@ -91,7 +88,7 @@ export default function MicroCorrectionPage() {
   const softwareSchema = {
     "@context": "https://schema.org",
     "@type": "SoftwareApplication", "sameAs": ["https://en.wikipedia.org/wiki/Fitts%27s_law", "https://en.wikipedia.org/wiki/Fine_motor_skill"],
-    "name": "Aim Trainer - micro-ajustements et headshots",
+    "name": "Micro-ajustements de visée et headshots",
     "applicationCategory": "GameApplication",
     "operatingSystem": "Web Browser",
     "offers": {
@@ -119,7 +116,7 @@ export default function MicroCorrectionPage() {
   const faqSchema = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
-    "dateModified": "2026-09-20",
+    "dateModified": "2026-11-09",
     "mainEntity": [
       {
         "@type": "Question",
@@ -147,10 +144,10 @@ export default function MicroCorrectionPage() {
       },
       {
         "@type": "Question",
-        "name": "Comment les joueurs professionnels de CS2 et Valorant perfectionnent-ils leurs micro-ajustements ?",
+        "name": "Comment travailler ses micro-ajustements pour CS2 et Valorant ?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Les joueurs professionnels associent un placement de réticule chirurgical à des exercices d'ajustements millimétriques. Ils s'exercent à ne tirer qu'après confirmation visuelle de l'alignement sur la tête, en guidant la souris par de légères flexions du bout des doigts."
+          "text": "Associez un bon placement du réticule à des exercices de petits ajustements, et ne tirez qu'après avoir vu le réticule aligné sur la tête. Dans ce drill, la micro-cible apparaît à 55 à 90 px de la cible ancre (jusqu'à 145 px quand le niveau monte), ce qui reproduit cette petite correction."
         }
       },
       {
@@ -166,7 +163,7 @@ export default function MicroCorrectionPage() {
         "name": "L'entraînement aux micro-corrections augmente-t-il directement le pourcentage de headshots ?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Oui. Dans les jeux de tir tactiques, la tête de l'adversaire occupe un angle visuel très réduit. La faculté d'effectuer un micro-ajustement réflexe de 5 à 20 pixels après le flick principal transforme instantanément des tirs de corps en éliminations nettes."
+          "text": "Cela peut aider. Le premier flick tombe rarement pile sur la tête, et ce drill répète justement la petite correction qui suit. L'effet en jeu dépend de chacun et du volume d'entraînement, il n'est pas garanti."
         }
       },
       {
@@ -198,7 +195,15 @@ export default function MicroCorrectionPage() {
         "name": "Pourquoi les tirs manqués ou les dépassements de temps réinitialisent-ils le combo ?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "La remise à zéro du combo simule l'exigence d'une manche réelle en tournoi, où un tir manqué trahit votre position et provoque votre élimination. Cette règle conditionne les joueurs à privilégier une précision absolue sur des clics précipités."
+          "text": "Pour récompenser la précision plutôt que les clics précipités. Un tir manqué sur l'ancre ou la micro-cible, ou une cible qui expire, remet le combo à 0 et retire 1 seconde. Le combo n'augmente que sur les touches de micro-cible, et son multiplicateur va jusqu'à 3,0×."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Combien de temps dure une partie et comment le score est-il calculé ?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "La partie commence avec 45 secondes. Chaque touche d'ancre et chaque touche de micro-cible ajoute 1 seconde (60 secondes maximum), et la partie s'arrête à 0. Une ancre rapporte 10 points, une micro-cible 100 à 150 points selon la distance au centre, multipliés par le combo et le niveau. Le niveau monte de 1 tous les 1 400 points, sans plafond : les cibles rétrécissent et leur durée de vie (1,8 s au départ) raccourcit."
         }
       }
     ]
@@ -238,9 +243,9 @@ export default function MicroCorrectionPage() {
   };
 
   const copyFr = {
-    h1Keyword: "Aim Trainer",
-    h1Suffix: " – Micro-ajustements de Visée FPS",
-    subtitle: "Maîtrisez la décélération terminale et les micro-ajustements immédiats pour une précision headshot létale.",
+    h1Keyword: "Micro-ajustements de visée",
+    h1Suffix: " : précision headshot",
+    subtitle: "Micro-ajustements de visée : touchez la cible ancre puis ramenez aussitôt le réticule sur la petite micro-cible juste à côté. Pour les joueurs de Valorant et CS2.",
     statScore: "Score",
     statTime: "Temps",
     statAccuracy: "Précision",
@@ -248,7 +253,7 @@ export default function MicroCorrectionPage() {
     statAvgCorrection: "Correction Moyenne",
     statMaxCombo: "Combo Max",
     statPeakLevel: "Niveau Max",
-    startTitle: "Aim Trainer - micro-ajustements et headshots",
+    startTitle: "Micro-ajustements de visée",
     startSubtitle: "Pointer Lock • Progression Continue et Décélération",
     getReady: "PRÊT ?",
     toggleFlash: "Flash de tir manqué",
@@ -256,36 +261,36 @@ export default function MicroCorrectionPage() {
     stageCaption: "Cliquez sur la cible ancre puis ajustez instantanément votre réticule avec les doigts pour toucher la micro-cible.",
     rulesTitle: "Consignes d'Entraînement et Barème",
     rulesItems: [
-      { num: "1", text: "Toucher l'Ancre", highlight: "+10 pts (+0,2s)", result: "Active la micro-cible" },
-      { num: "2", text: "Toucher la Micro", highlight: "jusqu'à +585 pts", result: "Précision × Combo" },
+      { num: "1", text: "Toucher l'Ancre", highlight: "+10 pts (+1,0s)", result: "Active la micro-cible" },
+      { num: "2", text: "Toucher la Micro", highlight: "100–150 pts (+1,0s)", result: "Précision × Combo × Niveau" },
       { num: "3", text: "Montée de Niveau", highlight: "+1 Niveau / 1 400 pts", result: "Échelle adaptative" },
-      { num: "4", text: "Tir Manqué", highlight: "Pénalité", result: "Reset combo (-0,6s)" }
+      { num: "4", text: "Tir Manqué / Expiration", highlight: "Pénalité", result: "Reset combo (-1,0s)" }
     ],
-    aboutTitle: "À propos de l'aim trainer et des micro-ajustements",
+    aboutTitle: "À propos des micro-ajustements de visée",
     aboutHeading: "Qu'est-ce que la Micro-Correction de Visée ?",
     aboutText: "La majorité des mouvements de visée ne sont pas un geste unique mais deux : une poussée balistique initiale rapide, suivie d'un micro-ajustement visuel de précision (Woodworth, 1899 ; Meyer et al., 1988). Cet exercice isole et perfectionne la seconde moitié du geste, là où se joue l'issue du duel."
   };
 
   const microCorrectionGuide = {
-    heading: "Guide d'Aim Trainer et de Micro-ajustements de Visée",
+    heading: "Guide des micro-ajustements de visée",
     intro: [
-      "Un aim trainer avec micro-ajustements travaille la phase finale d'un mouvement balistique : après être arrivé près de la cible, vous freinez et effectuez un petit ajustement pour centrer le réticule. Ce drill isole cette phase, mesure le temps entre la cible ancre et la micro-cible et révèle quand la vitesse provoque une seconde correction.",
+      "Les micro-ajustements de visée sont la phase finale d'un mouvement balistique : après être arrivé près de la cible, vous freinez et effectuez un petit ajustement pour centrer le réticule. Ce drill isole cette phase, mesure le temps entre la cible ancre et la micro-cible et révèle quand la vitesse provoque une seconde correction.",
       "Le cadre théorique des mouvements dirigés rapides a été établi par Robert S. Woodworth (1899) avec son modèle en deux composantes : une impulsion balistique initiale en boucle ouverte propulsant la main vers le stimulus, suivie d'une phase de contrôle continu en boucle fermée guidée par le retour sensoriel. Ce compromis vitesse-précision a été formalisé par la loi de Fitts (1954), où le temps de mouvement évolue avec la distance et la taille de la cible.",
       "Les avancées de David E. Meyer et al. (1988) avec le modèle stochastique des sous-mouvements optimisés ont démontré que le système nerveux planifie le déplacement initial pour atterrir légèrement avant la cible, comptant sur de micro-ajustements rapides pour absorber l'inertie sans dépassement chaotique.",
       "Pendant la fixation fovéale terminale, l'œil humain active des microsaccades (Rolfs, 2009 ; Martinez-Conde et al., 2004) — de minuscules mouvements involontaires à haute fréquence — pour stabiliser la rétine sur les cibles critiques. Cet entraîneur associe le Pointer Lock à une chronométrie haute précision via performance.now() (Woods et al., 2015) pour éliminer les oscillations terminales et garantir des headshots constants.",
       "Mode de mesure : chaque tir et chaque micro-ajustement sont horodatés localement dans votre navigateur en temps réel. Les variations inférieures à 5 ms relèvent des tolérances matérielles normales (fréquence de l'écran et variations de capture du capteur de souris)."
     ],
     benchmarks: {
-      title: "Paliers de Latence de Micro-Correction et Acquisition de Cible",
-      headers: ["Niveau de Performance", "Fenêtre de Latence de Correction", "Mécanique de Contrôle Moteur", "Impact Compétitif en Match"],
+      title: "Plages d'entraînement SkillDrills pour les micro-ajustements (repères)",
+      headers: ["Plage", "Fenêtre de Latence de Correction", "Mécanique de Contrôle Moteur", "Point à travailler"],
       rows: [
-        ["Tier 1 (Précision Avancée)", "Moins de 280 ms", "Décélération quasi instantanée ; micro-ajustements aux doigts exécutés sans aucune oscillation", "Entraîne le premier tir avec décélération contrôlée, sans dépasser la cible"],
-        ["Tier 2 (Palier Intermédiaire-Haut)", "280 – 340 ms", "Freinage musculaire discipliné ; transition fluide du flick primaire au micro-ajustement", "Entraîne les duels contre les lignes agressives avec des headshots réguliers"],
-        ["Tier 3 (Haut Niveau FPS)", "340 – 420 ms", "Bonne acquisition de cible ; léger dépassement occasionnel de 10 à 15px demandant un double ajustement", "Efficacité tactique solide ; légère hésitation sur les décalages verticaux"],
-        ["Tier 4 (Intermédiaire)", "420 – 520 ms", "Décélération hésitante ; tendance à glisser au-delà de la hitbox avant de corriger la visée", "Vulnérable aux contre-strafes rapides ; difficultés lors des transferts de tirs"],
-        ["Tier 5 (En Progression)", "520 ms+", "Inertie balistique excessive avec overflick régulier ; retard de confirmation visuelle", "Dépasse fréquemment la cible en duel direct ; nécessité de réajustements amples"]
+        ["Plage 1", "Moins de 280 ms", "Décélération quasi instantanée ; micro-ajustements aux doigts exécutés sans aucune oscillation", "Entraîne le premier tir avec décélération contrôlée, sans dépasser la cible"],
+        ["Plage 2", "280 – 340 ms", "Freinage musculaire discipliné ; transition fluide du flick primaire au micro-ajustement", "Entraîne les duels contre les lignes agressives avec des headshots réguliers"],
+        ["Plage 3", "340 – 420 ms", "Bonne acquisition de cible ; léger dépassement occasionnel de 10 à 15px demandant un double ajustement", "Efficacité tactique solide ; légère hésitation sur les décalages verticaux"],
+        ["Plage 4", "420 – 520 ms", "Décélération hésitante ; tendance à glisser au-delà de la hitbox avant de corriger la visée", "Vulnérable aux contre-strafes rapides ; difficultés lors des transferts de tirs"],
+        ["Plage 5", "520 ms+", "Inertie balistique excessive avec overflick régulier ; retard de confirmation visuelle", "Dépasse fréquemment la cible en duel direct ; nécessité de réajustements amples"]
       ],
-      note: "Les latences correspondent au temps cumulé de freinage, de confirmation visuelle, de micro-ajustement et de clic mesuré via performance.now() (Woods et al., 2015)."
+      note: "Repères d'entraînement SkillDrills, pas des normes de recherche, des rangs de jeu ni des données d'utilisateurs. Les latences correspondent au temps entre la touche sur l'ancre et la touche sur la micro-cible, mesuré via performance.now()."
     },
     techniques: {
       title: "Protocoles Scientifiques pour Perfectionner Décélération et Micro-Visée",
@@ -318,7 +323,7 @@ export default function MicroCorrectionPage() {
       "Freinez net près de la bordure, effectuez un micro-ajustement précis au bout des doigts vers le centre, confirmez visuellement et cliquez.",
       "Conservez une cadence régulière sans tirs précipités pour maintenir votre combo et relever les paliers aux cibles toujours plus réduites."
     ],
-    audience: "Compétiteurs FPS sur Valorant, CS2 et Rainbow Six Siege visant une létalité maximale dès la première balle, l'élimination de l'overflick et un contrôle moteur sub-degré.",
+    audience: "Joueurs de Valorant, CS2 et Rainbow Six Siege qui veulent travailler la correction après un flick légèrement à côté et réduire l'overflick.",
     faqs: faqSchema.mainEntity.map(e => ({ q: e.name, a: e.acceptedAnswer.text })),
     sources: pickSources('woods2015', 'fitts1954', 'meyer1988', 'martinezConde2004', 'rolfs2009', 'woodworth1899'),
     related: [

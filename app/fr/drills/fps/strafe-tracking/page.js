@@ -191,7 +191,7 @@ export default function StrafeTrackingFrPage() {
         "name": "Comment sont calculés les points, le combo et le temps ?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Tant que le réticule est sur la cible, vous gagnez 50 points de base toutes les 0,25 s (multipliés par le combo et le niveau) et 0,1 s de temps (60 s restantes au maximum). Chaque seconde sans décrocher ajoute 1 au combo, dont le multiplicateur monte jusqu'à 3,0×. Dès que vous quittez la cible, le combo retombe à 0 ; si la pénalité de temps est activée, chaque seconde hors cible retire 0,6 s. La partie démarre à 45 s et s'arrête à 0. Aucun clic : seule la souris compte."
+          "text": "Tant que le réticule est sur la cible, vous gagnez 50 points de base toutes les 0,25 s (multipliés par le combo et le niveau) et 0,1 s de temps (60 s restantes au maximum). Chaque seconde sans décrocher ajoute 1 au combo, dont le multiplicateur monte jusqu'à 3,0×. Dès que vous quittez la cible, le combo retombe à 0. La partie démarre à 45 s et s'arrête à 0. Aucun clic : seule la souris compte."
         }
       }
     ]
@@ -330,7 +330,7 @@ export default function StrafeTrackingFrPage() {
       { num: "1", text: "Sur la Cible", highlight: "+50 PTS / 0,25s (+0,4s/s)", result: "×Mult de Combo" },
       { num: "2", text: "1s Sans Décrocher", highlight: "Combo +1, jusqu'à 3,0×", result: "Multiplicateur Max" },
       { num: "3", text: "Progression de Niveau", highlight: "+1 Niveau / 1400 PTS", result: "Strafe Adaptatif" },
-      { num: "4", text: "Hors Cible", highlight: "Combo remis à 0", result: "-0,6s / s (pénalité ON)" }
+      { num: "4", text: "Hors Cible", highlight: "Combo remis à 0", result: "Instantanément" }
     ],
     aboutTitle: "À propos du Tracking et de la Visée en Mouvement",
     whatIsTitle: "Qu'est-ce que l'Entraînement au Strafe Tracking ?",

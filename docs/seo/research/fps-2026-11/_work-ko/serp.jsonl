@@ -1,0 +1,3 @@
+{"query":"대기샷 연습","cc":"kr","lang":"ko","error":"page.waitForSelector: Timeout 15000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('#b_results li.b_algo') to be visi"}
+{"query":"플릭샷 연습","cc":"kr","lang":"ko","error":"page.waitForSelector: Timeout 15000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('#b_results li.b_algo') to be visi"}
+{"query":"반동 연습 사이트","cc":"kr","lang":"ko","error":"page.waitForSelector: Timeout 15000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('#b_results li.b_algo') to be visi"}

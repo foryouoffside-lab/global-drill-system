@@ -269,7 +269,7 @@ export default function RecoilControlPage() {
       { num: "1", text: "Tiro na Cabeça Preciso", highlight: "+100 PTS (sem bônus de tempo)", result: "×Multiplicador de Combo" },
       { num: "2", text: "Acertos em Tronco e Membros", highlight: "+40 / +20 PTS", result: "Mantém Sequência de Combo" },
       { num: "3", text: "Progressão de Nível", highlight: "+1 Nível / 1400 PTS", result: "Escala Velocidade e Recoil" },
-      { num: "4", text: "Disciplina de Carregador", highlight: "<40% Penalidade", result: "Zera Combo (-0,6s se a penalidade estiver ativa)" }
+      { num: "4", text: "Disciplina de Carregador", highlight: "<40% Penalidade", result: "Zera Combo" }
     ],
     aboutTitle: "Sobre o Controle de Recoil e Spray",
     aboutHeading: "O que é o Controle de Recoil (Recuo)?",

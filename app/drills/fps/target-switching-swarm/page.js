@@ -323,12 +323,6 @@ export default function TargetSwitchingSwarmPage() {
           h1Suffix: " - Free Multi-Target Drill",
           subtitle: "Train rapid sequential target transitions, spray transfers, and visual indexing without reset delay.",
           stageCaption: "Rapidly flick and eliminate spawning targets across the screen before their timer expires.",
-          rulesItems: [
-            { num: "1", text: "Target Destruction", highlight: "Cyan Targets (+100 PTS / +0.35s)", result: "+100 PTS / +0.35s" },
-            { num: "2", text: "Dynamic Swarm", highlight: "Instant Respawns", result: "Persistent Swarm" },
-            { num: "3", text: "Failure Penalty", highlight: "Miss or Timer Expiry", result: "Resets Combo" },
-            { num: "4", text: "Level Progression", highlight: "+1 Level / 2100 PTS", result: "Faster & Smaller" }
-          ]
         }}
       />
       <DrillGuide guide={targetSwitchingGuide} singleLineTitles />

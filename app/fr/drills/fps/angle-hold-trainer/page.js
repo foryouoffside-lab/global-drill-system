@@ -123,7 +123,7 @@ export default function FrenchAngleHoldPage() {
         "name": "Comment se déroule ce drill de placement du viseur ?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Au départ, le plein écran et le verrouillage du pointeur s'activent et le chrono démarre à 45 secondes. Les cibles sortent du bord gauche ou droit du mur à une hauteur aléatoire puis se retirent. Un tir réussi rapporte 100 points multipliés par le combo et le niveau, et ajoute 2 secondes (60 maximum). Tous les 1400 points, le niveau monte : les peeks durent moins longtemps et les cibles rétrécissent, et des faux peeks orange apparaissent aux niveaux élevés. Un tir raté, un tir sans cible ou un tir sur un faux peek remet le combo à zéro et coûte 1 seconde si la pénalité de temps est activée. La partie s'arrête à 0 seconde."
+          "text": "Au départ, le plein écran et le verrouillage du pointeur s'activent et le chrono démarre à 45 secondes. Les cibles sortent du bord gauche ou droit du mur à une hauteur aléatoire puis se retirent. Un tir réussi rapporte 100 points multipliés par le combo et le niveau, et ajoute 2 secondes (60 maximum). Tous les 1400 points, le niveau monte : les peeks durent moins longtemps et les cibles rétrécissent, et des faux peeks orange apparaissent aux niveaux élevés. Un tir raté, un tir sans cible ou un tir sur un faux peek remet le combo à zéro et coûte 1 seconde. La partie s'arrête à 0 seconde."
         }
       },
       {
@@ -314,7 +314,7 @@ export default function FrenchAngleHoldPage() {
       { num: "1", text: "Tir Réussi", highlight: "+100 PTS (+2s, max 60s)", result: "×Combo Mult" },
       { num: "2", text: "Apparitions d'Angle", highlight: "Bord gauche/droit du mur", result: "Plus court, plus petit" },
       { num: "3", text: "Progression de Niveau", highlight: "+1 Niveau / 1400 PTS", result: "Échelle Adaptative" },
-      { num: "4", text: "Tir Raté / Précipité / Faux Peek", highlight: "Pénalité", result: "Reset Combo (-1s si pénalité de temps)" }
+      { num: "4", text: "Tir Raté / Précipité / Faux Peek", highlight: "Pénalité", result: "Reset Combo (-1s)" }
     ],
     aboutCards: [
       { iconBg: "bg-blue-600", title: "Recommandé pour", text: "Les défenseurs de site sur Valorant, les anchors sur CS2, les joueurs de R6 Siege et quiconque veut tenir une ligne avec rigueur." },

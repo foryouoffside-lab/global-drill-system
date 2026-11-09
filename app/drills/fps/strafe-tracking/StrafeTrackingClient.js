@@ -26,6 +26,7 @@ import DrillAccordion from '../../../../components/drill/DrillAccordion';
 import FpsStartCard from '../../../../components/drill/FpsStartCard';
 import DrillResultCard from '../../../../components/drill/DrillResultCard';
 import useImmersiveMode from '@/lib/useImmersiveMode';
+import { useTranslation } from '@/lib/i18n/useTranslation';
 import useUnexpectedExitGuard from '@/lib/useUnexpectedExitGuard';
 
 // ============================================================
@@ -50,10 +51,10 @@ function RuleItem({ num, text, highlight = '', result }) {
 }
 
 const RULES_ITEMS = [
-  { num: "1", text: "Tracking Alignment", highlight: "+50 PTS (+0.4s/s)", result: "×Combo Mult" },
+  { num: "1", text: "Tracking Alignment", highlight: "+50 PTS / 0.25s (+0.4s/s)", result: "×Combo Mult" },
   { num: "2", text: "Continuous Combo", highlight: "Up to 3.0×", result: "Max Multiplier" },
   { num: "3", text: "Level Progression", highlight: "+1 Level / 1400 PTS", result: "Adaptive Strafe" },
-  { num: "4", text: "Off-Target Penalty", highlight: "1.0s Off-Target", result: "Resets Combo (-0.6s)" }
+  { num: "4", text: "Off-Target Penalty", highlight: "Off-Target", result: "Resets Combo Instantly" }
 ];
 
 // ============================================================
@@ -94,6 +95,7 @@ const getLevelConfig = (level, combo = 0) => {
 };
 
 export default function StrafeTrackingClient({ copy = null }) {
+  const { t } = useTranslation();
   const [gameState, setGameState] = useState('start');
   const [countdownValue, setCountdownValue] = useState(3);
   const [isFullscreen, setIsFullscreen] = useState(false);
@@ -847,10 +849,10 @@ export default function StrafeTrackingClient({ copy = null }) {
               score={score}
               isNewBest={isNewBest}
               stats={[
-                { value: analytics.accuracy, suffix: "%", label: copy?.statAccuracy || "Tracking Accuracy" },
-                { value: `${analytics.bestCombo}s`, label: copy?.statLockStreak || "Max Lock Streak" },
-                { value: `Lv. ${analytics.levelReached}`, label: copy?.statPeakLevel || "Peak Level" },
-                { value: `${analytics.offTargetTime}s`, label: copy?.statOffTarget || "Off-Target Time" },
+                { value: analytics.accuracy, suffix: "%", label: copy?.statAccuracy || t('ui.resultTrackingAccuracy', 'Tracking Accuracy') },
+                { value: `${analytics.bestCombo}s`, label: copy?.statLockStreak || t('ui.resultMaxLockStreak', 'Max Lock Streak') },
+                { value: `Lv. ${analytics.levelReached}`, label: copy?.statPeakLevel || t('ui.resultPeakLevel', 'Peak Level') },
+                { value: `${analytics.offTargetTime}s`, label: copy?.statOffTarget || t('ui.resultOffTargetTime', 'Off-Target Time') },
               ]}
               playAgainText={copy?.playAgainText}
               shareText={copy?.shareText}

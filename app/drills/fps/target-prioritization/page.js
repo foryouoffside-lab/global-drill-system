@@ -278,7 +278,7 @@ export default function TargetPrioritizationPage() {
     steps: [
       "Configure your matching in-game sensitivity and DPI in Session Settings to keep your hand-to-cursor mapping consistent, then lock the pointer.",
       "Survey the target arena, actively monitoring for the appearance of High-Threat (Red) combatants.",
-      "Snap directly to eliminate active red threats first to score +100 PTS and extend the session clock by +0.4s.",
+      "Snap directly to eliminate active red threats first to score +100 PTS and extend the session clock by +2s (max 60s).",
       "Transition to clear Medium-Threat (Yellow) targets before their timers expire and escalate into red threats.",
       "Maintain strict trigger discipline to ignore Friendly (Green) units entirely, building decision streak combos toward elite score tiers."
     ],
@@ -343,12 +343,6 @@ export default function TargetPrioritizationPage() {
           pausedSubtitle: "Click to resume — cursor lock will re-engage.",
           stageCaption: "Eliminate highest-threat red targets first and intermediate yellow targets while holding fire on green friendlies.",
           rulesTitle: "Drill Instructions & Scoring System",
-          rulesItems: [
-            { num: "1", text: "High Threat Target", highlight: "Red (+100 PTS / +0.4s)", result: "Must be eliminated first" },
-            { num: "2", text: "Medium Threat Target", highlight: "Yellow (+50 PTS / +0.4s)", result: "Escalates to Red after timer" },
-            { num: "3", text: "Friendly Unit", highlight: "Green (HOLD FIRE)", result: "Miss or friendly hit resets combo" },
-            { num: "4", text: "Level Progression", highlight: "+1 Level / 1400 PTS", result: "Continuous Dynamic Scaling" }
-          ],
           aboutTitle: "About Target Prioritization",
           aboutHeading: "What Is Target Prioritization?",
           aboutText: "Target prioritization is choosing which threat to shoot while holding fire on everything else. Stopping an action you have already started is its own process, racing the one that launched it (Logan & Cowan, 1984) — which is why cancelling a shot is harder than taking one."

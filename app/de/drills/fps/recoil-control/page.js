@@ -340,7 +340,7 @@ export default function RecoilControlDePage() {
       { num: "1", text: "Kopftreffer-Präzision", highlight: "+100 PKT (kein Zeitbonus)", result: "×Kombo-Faktor" },
       { num: "2", text: "Brust- & Beintreffer", highlight: "+40 / +20 PKT", result: "Hält Kombo-Serie" },
       { num: "3", text: "Level-Progression", highlight: "+1 Level / 1400 PKT", result: "Tempo & Rückstoß steigen" },
-      { num: "4", text: "Magazin-Disziplin", highlight: "<40% Treffer-Strafe", result: "Setzt Kombo zurück (-0,6s bei aktivierter Strafe)" }
+      { num: "4", text: "Fehlschuss / Magazin-Disziplin", highlight: "<40% Treffer-Strafe", result: "Setzt Kombo zurück" }
     ],
     aboutTitle: "Über Rückstoßkontrolle und Spray Control",
     whyMattersTitle: "Warum Rückstoßkontrolle über den Duellausgang entscheidet",

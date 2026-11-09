@@ -6,19 +6,14 @@ import RelatedDrills from '@/components/drill/RelatedDrills';
 import DrillFooter from '@/components/drill/DrillFooter';
 
 export const metadata = {
-  title: "Entrenamiento de Puntería | Tracking FPS | SkillDrills",
-  description: "Entrenamiento de puntería gratis en navegador: practica tracking suave sobre objetivos móviles para Apex, Overwatch 2 y FPS.",
+  title: "Smooth Tracking: Seguimiento Suave en FPS | SkillDrills",
+  description: "Smooth tracking gratis en el navegador: mantén la mira con el ratón sobre un objetivo que se desliza en curvas de Lissajous. Seguimiento suave para Apex y OW2.",
   keywords: [
-    "aim trainer",
-    "entrenamiento de puntería",
-    "entrenamiento de aim online",
-    "tracking de puntería",
-    "tracking FPS",
-    "entrenamiento de tracking",
-    "puntería FPS",
-    "aim trainer online",
+    "smooth tracking",
+    "seguimiento suave",
     "tracking suave",
-    "entrenamiento de puntería valorant"
+    "seguimiento en curva",
+    "tracking con ratón"
   ],
   alternates: {
     canonical: "https://skilldrills.online/es/drills/fps/pro-smooth-pursuit",
@@ -29,8 +24,8 @@ export const metadata = {
     follow: true,
   },
   openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
-    title: "Entrenamiento de Puntería | Tracking FPS | SkillDrills",
-    description: "Practica tracking suave sobre objetivos móviles: entrenamiento de puntería FPS gratis en navegador.",
+    title: "Smooth Tracking: Seguimiento Suave en FPS | SkillDrills",
+    description: "Smooth tracking gratis en el navegador: mantén la mira con el ratón sobre un objetivo que se desliza en curvas de Lissajous. Seguimiento suave para Apex y OW2.",
     url: "https://skilldrills.online/es/drills/fps/pro-smooth-pursuit",
     siteName: 'SkillDrills',
     locale: 'es_ES',
@@ -38,8 +33,8 @@ export const metadata = {
   },
   twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: 'summary_large_image',
-    title: "Entrenamiento de Puntería | Tracking FPS | SkillDrills",
-    description: "Practica tracking suave sobre objetivos móviles: entrenamiento de puntería FPS gratis en navegador.",
+    title: "Smooth Tracking: Seguimiento Suave en FPS | SkillDrills",
+    description: "Smooth tracking gratis en el navegador: mantén la mira con el ratón sobre un objetivo que se desliza en curvas de Lissajous. Seguimiento suave para Apex y OW2.",
   },
 };
 
@@ -63,7 +58,7 @@ export default function ProSmoothPursuitPage() {
       {
         "@type": "ListItem",
         "position": 3,
-        "name": "Entrenamiento de Puntería - Tracking FPS",
+        "name": "Smooth Tracking: Seguimiento Suave en FPS",
         "item": "https://skilldrills.online/es/drills/fps/pro-smooth-pursuit"
       }
     ]
@@ -72,7 +67,7 @@ export default function ProSmoothPursuitPage() {
   const webAppSchema = {
     "@context": "https://schema.org",
     "@type": "WebApplication",
-    "name": "Entrenamiento de Puntería - Tracking FPS",
+    "name": "Smooth Tracking: Seguimiento Suave en FPS",
     "url": "https://skilldrills.online/es/drills/fps/pro-smooth-pursuit",
     "applicationCategory": "GameApplication",
     "operatingSystem": "Any",
@@ -87,7 +82,7 @@ export default function ProSmoothPursuitPage() {
   const softwareSchema = {
     "@context": "https://schema.org",
     "@type": "SoftwareApplication", "sameAs": ["https://en.wikipedia.org/wiki/Smooth_pursuit"],
-    "name": "Entrenamiento de Puntería con Tracking Suave",
+    "name": "Smooth Tracking - seguimiento suave",
     "applicationCategory": "GameApplication",
     "operatingSystem": "Web Browser",
     "offers": {
@@ -105,7 +100,7 @@ export default function ProSmoothPursuitPage() {
   const videoGameSchema = {
     "@context": "https://schema.org",
     "@type": "VideoGame",
-    "name": "Entrenamiento de Tracking en Curva",
+    "name": "Smooth Tracking - seguimiento en curva",
     "description": "Simulador de seguimiento continuo en curvas armónicas de Lissajous con bloqueo de cursor.",
     "genre": ["Action", "Esports Trainer", "Aim Trainer"],
     "playMode": "SinglePlayer",
@@ -115,7 +110,7 @@ export default function ProSmoothPursuitPage() {
   const faqSchema = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
-    "dateModified": "2026-09-20",
+    "dateModified": "2026-11-09",
     "mainEntity": [
       {
         "@type": "Question",
@@ -146,7 +141,7 @@ export default function ProSmoothPursuitPage() {
         "name": "¿Qué es la anticipación visual foveal (Foveal Gaze Leading) en el tracking?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Consiste en fijar la mirada milimétricamente por delante de la silueta del blanco en movimiento. Este adelanto perceptivo alimenta al córtex premotor con la información de trayectoria necesaria para modular la velocidad con mínima latencia de reacción."
+          "text": "Consiste en mirar al objetivo y su dirección de movimiento en lugar de tu propia retícula. La mirada suele adelantarse al gesto, lo que ayuda a prepararse para los cambios de curva."
         }
       },
       {
@@ -154,7 +149,7 @@ export default function ProSmoothPursuitPage() {
         "name": "¿Por qué el Smooth Pursuit es crucial en juegos de alto TTK como Apex Legends y Overwatch 2?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "En títulos con prolongado Time-to-Kill, abatir a un rival requiere mantener fuego efectivo durante varios segundos mientras el enemigo maniobra o salta. Una puntería de seguimiento continua optimiza el daño por segundo (DPS) de forma letal."
+          "text": "En títulos con prolongado Time-to-Kill, abatir a un rival requiere mantener fuego efectivo durante varios segundos mientras el enemigo maniobra o salta. Un seguimiento continuo ayuda a mantener el daño por segundo (DPS)."
         }
       },
       {
@@ -162,7 +157,7 @@ export default function ProSmoothPursuitPage() {
         "name": "¿Qué es una curva de Lissajous y por qué se emplea en este ejercicio?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Las curvas de Lissajous son figuras armónicas bidimensionales generadas por oscilaciones sinusoidales en los ejes X e Y. Obligan a la mano y al brazo a modular aceleraciones complejas en diagonales variables, replicando maniobras de evasión avanzadas."
+          "text": "Las curvas de Lissajous son figuras armónicas bidimensionales generadas por oscilaciones sinusoidales en los ejes X e Y. Obligan a ajustar aceleración y desaceleración en ambos ejes a la vez, sin una trayectoria recta que memorizar."
         }
       },
       {
@@ -170,7 +165,7 @@ export default function ProSmoothPursuitPage() {
         "name": "¿Cómo afectan los hercios del monitor y el polling rate del ratón al tracking?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Monitores de alta tasa de refresco (144Hz a 360Hz) proporcionan una transición visual ininterrumpida de la posición del blanco. Polling rates de 1000Hz o superiores brindan reportes del sensor cada milisegundo, permitiendo un seguimiento sub-pixel totalmente fluido."
+          "text": "Una tasa de refresco mayor acorta el intervalo entre fotogramas (60 Hz ≈ 16,7 ms, 144 Hz ≈ 6,9 ms) y muestra las curvas con más detalle. Un polling rate de 1000 Hz actualiza la posición del ratón cada milisegundo aproximadamente. Aun así, la práctica y las diferencias individuales suelen pesar más que el equipo."
         }
       },
       {
@@ -194,7 +189,7 @@ export default function ProSmoothPursuitPage() {
         "name": "¿Por qué perder contacto con la diana reinicia el combo en este entrenador?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "El multiplicador de racha premia la consistencia temporal absoluta. En tiroteos reales de alto TTK, perder de vista el objetivo permite que el rival recupere coberturas o escudos, desaprovechando la ventaja táctica del enfrentamiento."
+          "text": "El multiplicador premia el contacto ininterrumpido. Sobre el objetivo ganas 50 puntos base cada 0,25 s (multiplicados por el combo y el nivel) y +0,1 s de reloj (máximo 60 s); cada segundo sin perderlo suma 1 al combo, hasta 3,0×. Si pasas 1 s seguido fuera del objetivo, el combo vuelve a 0. La ronda empieza con 45 s."
         }
       }
     ]
@@ -210,7 +205,7 @@ export default function ProSmoothPursuitPage() {
         "@type": "HowToStep",
         "position": 1,
         "name": "Configuración y Bloqueo de Puntero",
-        "text": "Configura tus parámetros habituales de DPI y sensibilidad para mantener correspondencia de cm/360 y activa el Pointer Lock."
+        "text": "Ajusta el multiplicador de sensibilidad en la configuración de /drills y pulsa iniciar; el puntero se bloquea (Pointer Lock) al terminar la cuenta atrás."
       },
       {
         "@type": "HowToStep",
@@ -234,53 +229,53 @@ export default function ProSmoothPursuitPage() {
   };
 
   const copyEs = {
-    h1Keyword: "Entrenamiento de Puntería",
-    h1Suffix: " – Tracking FPS",
+    h1Keyword: "Smooth Tracking",
+    h1Suffix: ": Seguimiento Suave en FPS",
     statScore: "Puntuación",
     statTime: "Tiempo",
     statAccuracy: "Precisión",
     statBestScore: "Récord",
     pausedTitle: "Juego Pausado",
     pausedSubtitle: "Haz clic en la pantalla para reactivar el bloqueo de cursor.",
-    startTitle: "Entrenamiento de Puntería",
-    startSubtitle: "Seguimiento en Curva de Lissajous • Progresión Continua",
+    startTitle: "Smooth Tracking",
+    startSubtitle: "Curvas de Lissajous • Pointer Lock • Progresión Continua",
     getReady: "PREPÁRATE",
     stageCaption: "Sigue continuamente el objetivo en movimiento oscilatorio por las curvas de la pantalla sin perder contacto visual.",
     rulesTitle: "Instrucciones de Entrenamiento y Puntuación",
     rulesItems: [
-      { num: "1", text: "Seguimiento en Objetivo", highlight: "+50 PTS (+0.4s/s)", result: "×Multiplicador Combo" },
-      { num: "2", text: "Racha Continua", highlight: "Hasta 3.0×", result: "Multiplicador Máx" },
+      { num: "1", text: "Seguimiento en Objetivo", highlight: "+50 PTS / 0,25s (+0,4s/s)", result: "×Multiplicador Combo" },
+      { num: "2", text: "1s Sin Perderlo", highlight: "Combo +1, hasta 3,0×", result: "Multiplicador Máx" },
       { num: "3", text: "Subida de Nivel", highlight: "+1 Nivel / 1400 PTS", result: "Curvas Adaptativas" },
-      { num: "4", text: "Pérdida de Contacto", highlight: "1.0s Fuera de Diana", result: "Reinicio Combo (-0.6s)" }
+      { num: "4", text: "Pérdida de Contacto", highlight: "1,0s seguido fuera", result: "Reinicio Combo" }
     ],
-    aboutTitle: "Sobre el entrenamiento de puntería y tracking suave",
+    aboutTitle: "Sobre el smooth tracking",
     aboutHeading: "¿Qué es el Seguimiento Suave (Smooth Pursuit)?",
     aboutText: "El seguimiento suave (Smooth Pursuit) es la facultad oculomotora de mantener el foco visual sobre un objeto en movimiento continuo mediante la modulación de velocidad de los músculos oculares y el antebrazo (Krauzlis, 2004; Barnes, 2008). Este ejercicio erradica micro flicks innecesarios transformando tu puntería en un trazo fluido y constante."
   };
 
   const smoothPursuitGuide = {
-    heading: "Entrenamiento de Puntería para Tracking FPS",
+    heading: "Smooth Tracking: guía de seguimiento suave en FPS",
     intro: [
-      "El entrenamiento de puntería con tracking suave mide la capacidad de mantener la retícula sobre un objetivo móvil sin movimientos bruscos. Este drill usa curvas de Lissajous para mejorar la estabilidad y el tiempo sobre el objetivo en Apex, Overwatch 2 y otros FPS.",
+      "El smooth tracking es mantener la retícula sobre un objetivo móvil sin movimientos bruscos. Este drill desliza un objetivo redondo por curvas de Lissajous y mide el porcentaje de tiempo con la mira encima, como práctica de seguimiento suave para Apex, Overwatch 2 y otros FPS de TTK largo.",
       "A diferencia de los flicks balísticos gobernados por la Ley de Fitts (1954), el seguimiento suave involucra estructuras corticales especializadas en el área temporal medial (MT/V5) y en el cerebelo (Krauzlis, 2004; Lisberger et al., 1987). Estos centros procesan vectores ópticos continuos y calibran el tono neuromuscular para igualar la velocidad del blanco.",
       "La cinemática del ejercicio emplea trayectorias armónicas de Lissajous generadas por funciones sinusoidales en ambos ejes. Esta configuración imposibilita patrones lineales previsibles y estimula el control predictivo (Barnes, 2008) sin provocar sobresaltos sacádicos intermitentes.",
-      "Mediante la integración de la API Pointer Lock y cronometría de alta resolución con performance.now() (Woods et al., 2015), la aplicación monitoriza el tiempo exacto de permanencia en la diana, facilitando la eliminación progresiva de temblores para consolidar una puntería fluida y consistente.",
+      "Mediante la integración de la API Pointer Lock y cronometría de alta resolución con performance.now() (Woods et al., 2015), la aplicación registra el tiempo de permanencia en la diana para que sigas tu regularidad entre sesiones.",
       "Cómo se mide: el porcentaje de permanencia y la estabilidad del cursor se registran localmente en tiempo real. Diferencias menores a 5 ms corresponden a tolerancias naturales de refresco de pantalla y muestreo del sensor."
     ],
     benchmarks: {
-      title: "Niveles de Rendimiento de Tracking Continuo y Ajuste de Velocidad",
-      headers: ["Nivel de Rendimiento", "Tiempo en Diana (%)", "Estado Neuromuscular y Oculomotor", "Impacto Competitivo en Juego"],
+      title: "Smooth tracking: franjas de práctica SkillDrills",
+      headers: ["Franja", "Tiempo en Diana (%)", "Lo que se suele ver", "Qué practicar"],
       rows: [
-        ["Tier 1 (Trazo Perfecto)", "85% – 95%+", "Fijación foveal ininterrumpida; sincronización exacta en inflexiones de curvatura sin micro sacadas", "Práctica de seguimiento continuo de curvas cerradas sin perder la fijación"],
-        ["Tier 2 (Etapa Intermedia-Alta)", "72% – 85%", "Modulación fluida del antebrazo; adaptación inmediata al alcanzar los vértices de curva", "Práctica de duelos prolongados 1v1 contra rivales con movilidad compleja"],
-        ["Tier 3 (Nivel Avanzado FPS)", "58% – 72%", "Tracking lineal consistente; ligeras vacilaciones de 10 a 15% en cambios súbitos de trayectoria", "Excelente rendimiento general; pequeña pérdida de contacto frente a impulsos verticales o ganchos"],
-        ["Tier 4 (Intermedio)", "42% – 58%", "Tendencia a emplear micro flicks en vez de un desplazamiento continuo; rigidez muscular que produce temblor", "Dificultad contra personajes ágiles; alto gasto de munición sin impacto efectivo"],
-        ["Tier 5 (En Desarrollo)", "Menos de 42%", "Arrastre constante retrasado respecto a la diana; incapacidad de sincronizar velocidad en curvas", "Pérdida habitual de enfrentamientos directos; la retícula se descuelga continuamente"]
+        ["Franja 1", "85% – 95%+", "La mira sigue en el objetivo incluso en las inflexiones", "Mantener el porcentaje en niveles altos"],
+        ["Franja 2", "72% – 85%", "Frena junto al objetivo en los vértices", "No quedarse atrás en el tramo central rápido"],
+        ["Franja 3", "58% – 72%", "Estable en tramos rectos, pierde el objetivo un instante en las inversiones", "Reducir antes del vértice"],
+        ["Franja 4", "42% – 58%", "Micro flicks en vez de deslizar; temblor por rigidez", "Soltar el agarre y guiar desde el antebrazo"],
+        ["Franja 5", "Menos de 42%", "La mira va siempre detrás, con correcciones grandes", "Aprender a quedarse sobre el objetivo en los primeros niveles"]
       ],
-      note: "Los niveles reflejan el porcentaje de tiempo con la retícula sobre el objetivo en curvas sinusoidales de Lissajous medido mediante performance.now() (Woods et al., 2015)."
+      note: "El tiempo en diana es la fracción de fotogramas con la retícula sobre el objetivo. Franjas de práctica de SkillDrills para autoevaluarte, no rangos de juego, normas de investigación ni estadísticas de usuarios."
     },
     techniques: {
-      title: "Protocolos Basados en Evidencia para Optimizar el Tracking Suave",
+      title: "Cuatro claves para un seguimiento suave",
       items: [
         {
           name: "Deslizamiento con el Antebrazo y Muñeca Neutra",
@@ -289,7 +284,7 @@ export default function ProSmoothPursuitPage() {
         },
         {
           name: "Anticipación Visual Foveal (Gaze Leading)",
-          desc: "Orienta tu mirada 1 o 2 milímetros por delante del centro del objetivo en la dirección del movimiento. Esta anticipación nutre a los centros motores con el vector direcional futuro.",
+          desc: "Mira al objetivo y a la dirección de la curva, no a tu retícula, para anticipar mejor los cambios de velocidad.",
           tips: "No fijes la vista en tu propia retícula; concéntrate en el borde frontal del blanco en movimiento."
         },
         {
@@ -305,7 +300,7 @@ export default function ProSmoothPursuitPage() {
       ]
     },
     steps: [
-      "Configura tu sensibilidad y DPI habituales para preservar correspondencia motriz de cm/360 exacta y activa el Pointer Lock.",
+      "Ajusta el multiplicador de sensibilidad en la configuración de /drills y pulsa iniciar; el cursor se bloquea tras la cuenta atrás.",
       "Al generarse la esfera en movimiento, acopla la retícula al centro con un movimiento gradual.",
       "Acompaña la trayectoria de Lissajous deslizando el antebrazo a la misma velocidad que describe la diana.",
       "Conserva la retícula sobre el objetivo para prolongar el multiplicador de combo y superar niveles más veloces."
@@ -315,7 +310,8 @@ export default function ProSmoothPursuitPage() {
     sources: pickSources('woods2015', 'fitts1954', 'barnes2008', 'krauzlis2004', 'lisberger1987'),
     related: [
       { href: "/es/drills/fps/anti-zigzag-movement-trainer", label: "Entrenador de Movimiento Anti-Zigzag" },
-      { href: "/es/drills/fps/anti-strafe-jitter-duel", label: "Duelo Anti-Strafe Jitter" },
+      { href: "/es/drills/fps/anti-strafe-jitter-duel", label: "Tracking contra Strafe ADAD" },
+      { href: "/es/drills/fps/strafe-tracking", label: "Tracking de Strafe: puntería en movimiento" },
       { href: "/es/drills/fps/flick-shot-training", label: "Entrenamiento de Flick Shot" },
       { href: "/es/drills/fps/micro-correction-precision", label: "Micro Corrección de Puntería" }
     ]

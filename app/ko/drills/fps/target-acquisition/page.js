@@ -115,7 +115,7 @@ export default function TargetAcquisitionKoPage() {
         "name": "이 발로란트 에임 연습 사이트의 타겟 포착 드릴은 어떻게 진행되나요?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "60초 동안 밝기가 서로 다른 타겟 3~8개가 한 세트로 나타나며, 가장 밝은 타겟부터 어두운 순서대로 맞혀야 합니다. 올바른 타겟은 +100점에 콤보·레벨 배수가 붙고, 세트를 모두 지우면 +400점 × 레벨 배수 보너스와 함께 새 세트가 생성됩니다. 순서가 틀린 타겟이나 빈 공간을 클릭하면 콤보가 초기화되고, 페널티 옵션을 켠 경우 0.6초가 차감됩니다. 마우스와 포인터 락으로 플레이하며 Esc로 종료합니다. SkillDrills는 Riot Games와 무관한 독립 연습 도구입니다."
+          "text": "60초 동안 밝기가 서로 다른 타겟 3~8개가 한 세트로 나타나며, 가장 밝은 타겟부터 어두운 순서대로 맞혀야 합니다. 올바른 타겟은 +100점에 콤보·레벨 배수가 붙고, 세트를 모두 지우면 +400점 × 레벨 배수 보너스와 함께 새 세트가 생성됩니다. 순서가 틀린 타겟이나 빈 공간을 클릭하면 콤보가 초기화됩니다. 마우스와 포인터 락으로 플레이하며 Esc로 종료합니다. SkillDrills는 Riot Games와 무관한 독립 연습 도구입니다."
         }
       },
       {
@@ -349,7 +349,7 @@ export default function TargetAcquisitionKoPage() {
             { num: "1", text: "타겟 명중", highlight: "+100점 × 레벨 배수", result: "콤보 배수 적용" },
             { num: "2", text: "세트 클리어", highlight: "+400점 × 레벨", result: "클러스터 즉시 생성" },
             { num: "3", text: "레벨 상승", highlight: "+1 / 1400점", result: "적응형 난이도 진행" },
-            { num: "4", text: "오클릭 / 미스", highlight: "페널티", result: "콤보 초기화 (페널티 옵션 시 -0.6초)" }
+            { num: "4", text: "오클릭 / 미스", highlight: "페널티", result: "콤보 초기화" }
           ],
           aboutTitle: "타겟 포착 드릴 소개",
           aboutHeading: "타겟 획득(Target Acquisition)이란?",

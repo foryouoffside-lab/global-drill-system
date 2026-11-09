@@ -167,7 +167,7 @@ export default function VerticalAirTrackPage() {
         "name": "How are errors penalised in Vertical Air-Track?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Losing tracking contact resets your active combo streak multiplier. When the optional Time Penalty setting is enabled, letting an airborne target drop past the bottom boundary without destroying it deducts 0.6s from your session timer."
+          "text": "Letting an airborne target drop past the bottom boundary without destroying it resets your combo streak multiplier and deducts 1s from your session timer. With Target Timeouts off, dropped targets bounce back up instead."
         }
       },
       {
@@ -322,12 +322,6 @@ export default function VerticalAirTrackPage() {
         copy={{
           h1Keyword: "Vertical Aim Trainer",
           h1Suffix: " - Free Airborne Tracking Drill",
-          rulesItems: [
-            { num: "1", text: "Airborne Target", highlight: "+100 PTS / +0.4s", result: "Track Parabolic Trajectory" },
-            { num: "2", text: "Height Bonus", highlight: "Up to +75 PTS", result: "Apex Destructions Award More" },
-            { num: "3", text: "Failure Rule", highlight: "Combo Reset", result: "Target Drop Penalty (-0.6s)" },
-            { num: "4", text: "Level Progression", highlight: "+1 Level / 1400 PTS", result: "Continuous Dynamic Gravity & Speed" }
-          ]
         }}
       />
       <DrillGuide guide={verticalAirTrackGuide} singleLineTitles />

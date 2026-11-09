@@ -1,2 +1,6 @@
 ko | 지그재그 무빙 트래킹 | no measured term; map: no-demand descriptive | dropped 에임 연습 lead; title/H1/desc rebuilt; removed latency table, fake measurement/polling note, 'top rankers' claims; FAQ+rules rewritten to code (HP 65/s ~1.5s kill, +25xcombo, lifespan 4.2->1.8s, escape resets combo) | audit OK
 ja | ジグザグ移動の敵に当てる | AC ジグザグ エイム = 0 gaming; GSC 15 impr; map: no-demand descriptive | dropped エイム練習 lead; title/H1/desc rebuilt; removed latency table/measurement note/pro claims; FAQ+rules rewritten to code | audit OK
+de | Zickzack-Tracking | not measured (cap), GSC 1 impr; map: no-demand descriptive | dropped Aim Trainer prefix; title/H1/desc rebuilt; removed latency table/research claims; slide-cancel framed as game context only (drill has no slides); FAQ+rules rewritten to code | audit OK
+fr | Tracking en zigzag | 0 measured; map: drop lead | dropped Aim Trainer lead; title/H1/desc rebuilt; removed latency table/research claims; FAQ+rules rewritten to code | audit OK
+pt | Tracking em Zigue-Zague | 0 measured; map: drop lead (hub owns Treino de Mira) | dropped Treino de Mira lead; title/H1/desc rebuilt; removed latency table/research claims; FAQ+rules rewritten to code | audit OK
+es | Tracking en Zigzag | 0 measured; map: drop lead | dropped Aim Trainer lead; title/H1/desc rebuilt; removed latency table/research claims; FAQ+rules rewritten to code | audit OK

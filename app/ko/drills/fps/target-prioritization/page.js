@@ -6,12 +6,12 @@ import RelatedDrills from '@/components/drill/RelatedDrills';
 import DrillFooter from '@/components/drill/DrillFooter';
 
 export const metadata = {
-  title: "에임 연습 | 타겟 선택·위협 판단 | SkillDrills",
-  description: "무료 브라우저 에임 연습으로 여러 적 중 위험한 타겟을 먼저 고르고 불필요한 사격을 멈추는 판단력을 측정하세요.",
+  title: "타겟 우선순위 판단 연습 | 위협 판단·사격 억제 | SkillDrills",
+  description: "무료 타겟 우선순위 판단 연습: 움직이는 빨강(고위협)·노랑(중위협) 타겟 중 빨강을 먼저 쏘고, 초록 아군은 쏘지 마세요. 위협 판단과 사격 억제를 설치 없이 브라우저에서 마우스로 훈련합니다.",
   keywords: [
-    "에임 연습",
-    "에임 연습 발로란트",
-    "에임 연습 게임",
+    "타겟 우선순위 판단",
+    "타겟 우선순위 판단 연습",
+    "위협 판단",
     "타겟 선택",
     "타겟 우선순위",
     "사격 억제 훈련",
@@ -27,8 +27,8 @@ export const metadata = {
     follow: true,
   },
   openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
-    title: "에임 연습 | 타겟 선택·위협 판단 | SkillDrills",
-    description: "무료 브라우저 에임 연습으로 여러 적 중 위험한 타겟을 먼저 고르고 불필요한 사격을 멈추는 판단력을 측정하세요.",
+    title: "타겟 우선순위 판단 연습 | 위협 판단·사격 억제 | SkillDrills",
+    description: "무료 타겟 우선순위 판단 연습: 움직이는 빨강(고위협)·노랑(중위협) 타겟 중 빨강을 먼저 쏘고, 초록 아군은 쏘지 마세요. 위협 판단과 사격 억제를 설치 없이 브라우저에서 마우스로 훈련합니다.",
     url: "https://skilldrills.online/ko/drills/fps/target-prioritization",
     siteName: 'SkillDrills',
     locale: 'ko_KR',
@@ -36,8 +36,8 @@ export const metadata = {
   },
   twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: 'summary_large_image',
-    title: "에임 연습 | 타겟 선택·위협 판단 | SkillDrills",
-    description: "무료 브라우저 에임 연습으로 여러 적 중 위험한 타겟을 먼저 고르고 불필요한 사격을 멈추는 판단력을 측정하세요.",
+    title: "타겟 우선순위 판단 연습 | 위협 판단·사격 억제 | SkillDrills",
+    description: "무료 타겟 우선순위 판단 연습: 움직이는 빨강(고위협)·노랑(중위협) 타겟 중 빨강을 먼저 쏘고, 초록 아군은 쏘지 마세요. 위협 판단과 사격 억제를 설치 없이 브라우저에서 마우스로 훈련합니다.",
   },
 };
 
@@ -48,19 +48,19 @@ export default function TargetPrioritizationKoPage() {
     "itemListElement": [
       { "@type": "ListItem", "position": 1, "name": "SkillDrills", "item": "https://skilldrills.online/ko" },
       { "@type": "ListItem", "position": 2, "name": "FPS 에임 훈련", "item": "https://skilldrills.online/ko/drills/fps" },
-      { "@type": "ListItem", "position": 3, "name": "에임 연습 - 타겟 선택", "item": "https://skilldrills.online/ko/drills/fps/target-prioritization" }
+      { "@type": "ListItem", "position": 3, "name": "타겟 우선순위 판단 연습", "item": "https://skilldrills.online/ko/drills/fps/target-prioritization" }
     ]
   };
 
   const softwareSchema = {
     "@context": "https://schema.org",
     "@type": "SoftwareApplication", "sameAs": ["https://en.wikipedia.org/wiki/Visual_search", "https://en.wikipedia.org/wiki/Reaction_time"],
-    "name": "에임 연습 - 타겟 선택과 위협 판단",
+    "name": "타겟 우선순위 판단 연습 - 위협 판단·사격 억제",
     "applicationCategory": "GameApplication",
     "operatingSystem": "Web Browser",
-    "dateModified": "2026-09-20",
+    "dateModified": "2026-11-09",
     "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
-    "description": "난전 상황에서의 신속한 위협 평가, 아군 오사 방지, 우선순위 타겟 격파 능력을 극대화하는 무료 브라우저 FPS 에임 트레이너.",
+    "description": "움직이는 빨강·노랑·초록 타겟으로 위협 판단, 아군 오사 방지, 우선순위 타겟 격파를 연습하는 무료 브라우저 FPS 드릴.",
     "genre": "FPS Training / Target Prioritization",
     "url": "https://skilldrills.online/ko/drills/fps/target-prioritization",
     "publisher": {
@@ -73,7 +73,7 @@ export default function TargetPrioritizationKoPage() {
   const webAppSchema = {
     "@context": "https://schema.org",
     "@type": "WebApplication",
-    "name": "에임 연습 - 타겟 선택과 위협 판단",
+    "name": "타겟 우선순위 판단 연습 - 위협 판단·사격 억제",
     "url": "https://skilldrills.online/ko/drills/fps/target-prioritization",
     "applicationCategory": "GameApplication",
     "operatingSystem": "All",
@@ -83,16 +83,16 @@ export default function TargetPrioritizationKoPage() {
       "price": "0",
       "priceCurrency": "USD"
     },
-    "description": "난전 상황에서의 신속한 위협 평가, 아군 오사 방지, 우선순위 타겟 격파 능력을 극대화하는 무료 브라우저 FPS 에임 트레이너."
+    "description": "움직이는 빨강·노랑·초록 타겟으로 위협 판단, 아군 오사 방지, 우선순위 타겟 격파를 연습하는 무료 브라우저 FPS 드릴."
   };
 
   const videoGameSchema = {
     "@context": "https://schema.org",
     "@type": "VideoGame",
-    "name": "에임 연습 - 타겟 선택과 위협 판단",
+    "name": "타겟 우선순위 판단 연습 - 위협 판단·사격 억제",
     "url": "https://skilldrills.online/ko/drills/fps/target-prioritization",
-    "description": "난전 상황에서의 신속한 위협 평가, 아군 오사 방지, 우선순위 타겟 격파 능력을 극대화하는 무료 브라우저 FPS 에임 트레이너.",
-    "dateModified": "2026-09-20",
+    "description": "움직이는 빨강·노랑·초록 타겟으로 위협 판단, 아군 오사 방지, 우선순위 타겟 격파를 연습하는 무료 브라우저 FPS 드릴.",
+    "dateModified": "2026-11-09",
     "gamePlatform": "Web Browser",
     "genre": ["FPS Training", "Aim Trainer", "Target Prioritization"],
     "playMode": "SinglePlayer",
@@ -104,7 +104,7 @@ export default function TargetPrioritizationKoPage() {
   const faqSchema = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
-    "dateModified": "2026-09-20",
+    "dateModified": "2026-11-09",
     "mainEntity": [
       {
         "@type": "Question",
@@ -116,10 +116,18 @@ export default function TargetPrioritizationKoPage() {
       },
       {
         "@type": "Question",
+        "name": "이 타겟 우선순위 판단 연습은 어떻게 진행되나요?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "시작하면 전체화면과 마우스 고정(Pointer Lock)이 켜지고 45초 타이머로 시작합니다. 화면에는 동시에 2~4개의 타겟이 움직이며 벽에 튕깁니다. 빨강(고위협)은 100점, 노랑(중위협)은 50점에 콤보·레벨 배율이 곱해지고, 적중할 때마다 2초가 늘어납니다(최대 60초). 노랑은 일정 시간이 지나면 빨강으로 바뀌고, 초록(아군)은 쏘면 안 되며 약 3초 뒤 사라집니다. 빨강이 화면에 남아 있는데 노랑을 쏘면 우선순위 실수로 점수 없이 콤보가 초기화되고, 초록 사격과 빗나감도 콤보를 초기화합니다. 실수마다 1초가 차감되며, 1400점마다 레벨이 올라 타겟 수·속도·빨강 비율이 늘어납니다."
+        }
+      },
+      {
+        "@type": "Question",
         "name": "한타 교전에서 왜 패닉 사격을 하며 엉뚱한 대상을 쏘게 되나요?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "시각 정보의 과부하와 급격한 교전 스트레스로 인해 전두엽의 반응 억제 기능이 저하되기 때문입니다. 훈련되지 않은 유저는 가장 위험한 적 대신 화면에서 가장 크게 움직이거나 가까운 오브젝트에 무의식적으로 반응하게 됩니다."
+          "text": "시각 정보가 많고 긴장감이 높으면 쏘지 말아야 할 순간에 클릭을 멈추기 어려워지기 때문입니다. 그래서 가장 위험한 적 대신 화면에서 크게 움직이거나 가까운 대상에 먼저 반응하기 쉽습니다."
         }
       },
       {
@@ -135,15 +143,15 @@ export default function TargetPrioritizationKoPage() {
         "name": "FPS 게임에서 정지 신호 반응 시간(SSRT: Stop-Signal Reaction Time)이란 무엇인가요?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "SSRT는 이미 시작되었거나 준비된 운동 동작(마우스 클릭 등)을 중간에 취소하는 데 걸리는 시간입니다. Logan & Cowan(1984)의 경주 모델에 따르면, SSRT가 짧을수록 돌발 상황에서 사격을 번개처럼 취소하고 안전을 확보할 수 있습니다."
+          "text": "SSRT는 이미 시작되었거나 준비된 운동 동작(마우스 클릭 등)을 중간에 취소하는 데 걸리는 시간입니다. Logan & Cowan(1984)의 경주 모델에 따르면, SSRT가 짧을수록 돌발 상황에서 사격을 더 빨리 취소할 수 있습니다. 이 드릴은 SSRT를 직접 측정하지는 않으며, 초록 아군을 쏘지 않는 습관을 연습하게 해 줍니다."
         }
       },
       {
         "@type": "Question",
-        "name": "프로 선수들은 적들이 사이트로 진입할 때 다중 타겟의 위협 순위를 어떻게 정하나요?",
+        "name": "적 여러 명이 사이트로 진입할 때 위협 순위는 어떻게 정하나요?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "프로들은 ①자신을 직접 조준하고 있는 적, ②사격 중인 딜러/엔트리, ③스킬을 전개 중인 서포터 순서로 찰나의 순간에 트리아지(위협 분류)를 완료하여 피격 피해를 최소화하며 각개격파합니다."
+          "text": "흔히 쓰는 기준은 ①자신을 직접 조준하고 있는 적, ②사격 중인 엔트리, ③스킬을 쓰는 서포터 순서입니다. 상황마다 달라지지만, 이 드릴에서는 빨강 → 노랑 순서로 고정해 판단 습관을 단순하게 연습합니다."
         }
       },
       {
@@ -151,7 +159,7 @@ export default function TargetPrioritizationKoPage() {
         "name": "시각 인지 과학에서의 '방해물 억제(Distractor Suppression)'란 무엇인가요?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "주의를 기울일 필요가 없는 디코이, 아군, 주변 이펙트 등의 비위협 시각 자극을 뇌에서 능동적으로 무시하는 메커니즘입니다. 이를 통해 소중한 인지 자원을 진짜 적에게만 집중할 수 있습니다."
+          "text": "주의를 기울일 필요가 없는 디코이, 아군, 주변 이펙트 등의 비위협 시각 자극을 무시하는 과정입니다. 이를 통해 주의를 진짜 적에게 집중할 수 있습니다."
         }
       },
       {
@@ -159,7 +167,7 @@ export default function TargetPrioritizationKoPage() {
         "name": "발로란트나 CS2에서 아군이나 디코이에 헛사격하면 라운드 승률에 어떤 영향을 주나요?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "헛사격은 탄약과 시간을 소모할 뿐 아니라 반동 회복 딜레이를 유발하여 진짜 적에게 먼저 제압당하게 만들며, 특히 1vX 클러치 상황에서 라운드 승률을 치명적으로 떨어뜨립니다."
+          "text": "헛사격은 탄약과 시간을 소모할 뿐 아니라 반동 회복 시간을 만들어 진짜 적에게 먼저 맞을 위험을 키웁니다. 특히 1vX 클러치처럼 한 발이 중요한 상황에서 손해가 큽니다."
         }
       },
       {
@@ -175,7 +183,7 @@ export default function TargetPrioritizationKoPage() {
         "name": "아드레날린 분비가 전술적 판단 속도를 왜 저하시키나요?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "극도의 긴장은 시야가 좁아지는 '터널 비전' 현상을 일으키고 주변 상황 파악과 다각적 판단을 관장하는 전두엽 기능을 억제하여, 충동적인 패닉 사격을 유발합니다."
+          "text": "강한 긴장은 시야가 좁아지는 '터널 비전'을 일으켜 주변 상황 파악이 늦어지고, 확인 없이 쏘는 패닉 사격으로 이어지기 쉽습니다."
         }
       },
       {
@@ -183,7 +191,7 @@ export default function TargetPrioritizationKoPage() {
         "name": "타겟 우선순위 훈련은 얼마나 자주 해야 하나요?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "주 4~5회, 회당 10~15분의 집중 세션이 가장 이상적입니다. 짧고 밀도 높은 인지 훈련을 반복하면 실전의 극한 긴장 속에서도 무의식적으로 자동화된 위협 판단을 실행하게 됩니다."
+          "text": "정해진 정답은 없지만, 회당 10~15분 정도 짧게 하고 같은 기기에서 정확도와 오사 횟수를 비교하는 방식을 권장합니다. 피로가 쌓이면 기록이 흔들리므로 길게 몰아서 하기보다 짧게 자주 하는 편이 좋습니다."
         }
       }
     ]
@@ -227,26 +235,25 @@ export default function TargetPrioritizationKoPage() {
   };
 
   const targetPrioritizationGuide = {
-    heading: "에임 연습과 타겟 선택·위협 판단 가이드",
-    subtitle: "난전 상황에서의 위협 평가 속도, 방해 자극 억제, 그리고 냉철한 사격 충동 제어를 완성하는 과학적 방법론",
+    heading: "타겟 우선순위 판단 연습 가이드: 위협 판단과 사격 억제",
+    subtitle: "난전 상황에서의 위협 평가, 방해 자극 억제, 사격 충동 제어를 연습하는 방법",
     intro: [
-      "에임 연습은 여러 적이 보일 때 가장 위험한 타겟을 먼저 고르고, 쏘지 말아야 할 대상에는 클릭을 억제하는 훈련입니다. 이 드릴은 위협 평가와 시각적 방해물 필터링을 함께 측정해 발로란트·CS2의 혼전 판단을 안정화합니다.",
-      "운동 억제와 의사결정 통제의 신경학적 기반은 Logan and Cowan(1984)의 정지 신호 패러다임(Stop-Signal Paradigm)으로 설명됩니다. 그들의 연구에 따르면 인간의 행동 실행(Go 프로세스)과 행동 억제(Stop 프로세스)는 전두엽-기저핵 네트워크에서 두 마리의 말이 결승선을 향해 달리는 '경주 모델(Horse-Race Model)'처럼 상호 독립적으로 속도 경쟁을 벌입니다. 사격 억제 훈련을 받지 않은 플레이어는 위협 수준을 검증하기도 전에 검지 손가락을 까딱이는 패닉 사격을 범하게 됩니다.",
+      "타겟 우선순위 판단 연습은 여러 적이 보일 때 가장 위험한 타겟을 먼저 고르고, 쏘지 말아야 할 대상에는 클릭을 억제하는 훈련입니다. 이 드릴에서는 움직이는 빨강(고위협)을 먼저, 노랑(중위협)을 다음으로 쏘고 초록(아군)은 쏘지 않으며, 발로란트·CS2 같은 혼전에서 필요한 위협 판단 습관을 연습합니다.",
+      "운동 억제와 의사결정 통제의 신경학적 기반은 Logan and Cowan(1984)의 정지 신호 패러다임(Stop-Signal Paradigm)으로 설명됩니다. 그들의 연구에 따르면 인간의 행동 실행(Go 프로세스)과 행동 억제(Stop 프로세스)는 전두엽-기저핵 네트워크에서 두 마리의 말이 결승선을 향해 달리는 '경주 모델(Horse-Race Model)'처럼 상호 독립적으로 속도 경쟁을 벌입니다. 그래서 위협을 확인하기 전에 클릭이 먼저 나가는 패닉 사격이 생기기 쉽습니다.",
       "선택적 시각 필터링 기전은 Donald E. Broadbent(1958)와 Anne Treisman(1964)의 초기 여과 및 감쇄 모델로 정립되었습니다. 여러 시각 자극이 망막의 인지 자원을 두고 경쟁할 때, 뇌는 하향식 주의 게이팅(Top-Down Attentional Gating; Posner & Petersen, 1990)을 작동시켜 비위협적인 아군 및 배경 무빙을 주변시에서 걸러내고 가장 치명적인 위협 벡터에 중심와 시각을 집중시킵니다.",
       "본 드릴은 F.C. Donders(1868)의 Go/No-Go 식별 반응시간 모델에 performance.now() 디지털 정밀 크로노메트리(Woods et al., 2015)를 결합하여, 단순한 마우스 조준 감각과 실전 교전 압박 하에서의 즉각적인 전술적 의사결정 속도를 하나로 연결합니다.",
       "측정 기준 및 하드웨어 지연 시간 안내: 모든 판정 이벤트는 브라우저 내장 performance.now() 고해상도 시계를 통해 로컬 기기 내에서만 정밀 측정되며 외부 서버로 데이터가 전송되지 않습니다. 브라우저 타이머는 스펙터(Spectre) 완화 조치로 약 1ms 단위로 양자화되며, 모니터 디스플레이는 주사율에 맞춰 시각 프레임을 양자화합니다(60Hz=약 16.7ms, 144Hz=약 6.9ms, 240Hz=약 4.1ms, Woods et al., 2015). 마우스 폴링레이트는 125Hz에서 약 8ms, 1000Hz에서 약 1ms의 지연 편차를 추가합니다. 따라서 약 5ms 미만의 차이는 기술적 측정 노이즈로 간주되며, 타인의 장비와 단순 비교하기보다는 동일한 하드웨어 환경에서 본인의 지연 시간 및 억제 성공률 개선도를 추적하십시오."
     ],
     benchmarks: {
-      title: "타겟 우선순위 및 위협 평가 레이턴시 벤치마크 기준",
-      headers: ["스킬 티어", "위협 평가 반응시간", "사격 억제 성공률 (No-Go)", "실전 인게임 교전 영향"],
+      title: "결과 화면 지표 읽는 법",
+      headers: ["지표", "드릴에서 세는 방식", "의미", "개선 방향"],
       rows: [
-        ["Tier 1 (최상위 단계)", "280 ms 미만", "98% – 100%", "완벽하고 즉각적인 위협 트리아지; 아군 오사 0%로 다중 러시 단독 제압"],
-        ["Tier 2 (상급 단계)", "280 – 340 ms", "92% – 98%", "우수한 전술적 판단력; 혼전 속에서도 최고 위협 적에게 단번에 초탄 적중"],
-        ["Tier 3 (중상급 단계)", "340 – 420 ms", "85% – 92%", "안정적인 타겟 선별; 복잡한 다중 교전 시 50ms 수준의 미세한 판단 지체"],
-        ["Tier 4 (골드 / 플래티넘급)", "420 – 520 ms", "75% – 85%", "가장 가까운 적에게 시선이 쏠려 후방의 고위협 딜러에게 반격 허용"],
-        ["Tier 5 (실버 이하 초심자)", "520 ms 이상", "75% 미만", "빈번한 패닉 사격; 아군이나 디코이에 헛방을 쏘며 잦은 데스 발생"]
+        ["정확도", "(빨강 + 노랑 적중) ÷ 전체 클릭", "올바른 순서로 위협을 처리한 비율", "같은 기기에서 본인 기록과 비교"],
+        ["격파한 위협", "빨강·노랑 타겟 적중 수", "시간 안에 처리한 위협의 양", "콤보를 유지하며 늘리기"],
+        ["오사 / 우선순위 실수", "초록 사격, 빨강이 남아 있을 때 노랑 사격", "사격 억제와 위협 판단의 실패", "빨강을 먼저 확인하는 습관"],
+        ["최대 콤보 · 최고 레벨", "실수 없이 이어진 적중 수, 1400점당 1레벨", "판단의 일관성과 도달 난이도", "속도보다 실수 줄이기 우선"]
       ],
-      note: "위협 평가 반응시간은 타겟 스폰 순간부터 올바른 고위협 목표에 유효 사격이 들어갈 때까지의 시간입니다(Woods et al., 2015)."
+      note: "이 표는 이 드릴이 실제로 기록하는 지표를 설명한 것이며, 랭크·티어나 사용자 통계와는 관계가 없습니다."
     },
     techniques: {
       title: "타겟 우선순위를 극대화하는 실전 테크닉",
@@ -269,15 +276,15 @@ export default function TargetPrioritizationKoPage() {
         {
           name: "종단 브레이킹과 번개 같은 타겟 전환",
           desc: "빨간색 목표 격파 후 패드 마찰력을 활용하여 불필요한 오버슈트 없이 다음 노란색 타겟으로 예리하게 플릭합니다.",
-          tips: "타겟이 파괴되는 순간 눈(사카드)을 다음 목표 좌표로 0.05초 먼저 이동시키세요."
+          tips: "타겟을 쏘는 순간 시선을 다음 빨강 또는 노랑 타겟으로 먼저 옮기세요."
         }
       ]
     },
     steps: [
       "인게임 감도를 확인하고 포인터 락을 활성화하여 훈련을 시작합니다.",
       "스폰되는 다중 타겟 중에서 최우선 목표인 '빨간색(고위협)'을 순간 포착합니다.",
-      "빨간색 타겟을 신속히 플릭 사격하여 +100점(+0.4초 추가 시간)을 획득합니다.",
-      "이어서 '노란색(중위협)'을 타격하여 빨간색으로 위험도가 승격하는 것을 차단합니다.",
+      "빨간색 타겟을 신속히 사격하여 +100점(+2초, 최대 60초)을 획득합니다.",
+      "빨간색이 모두 사라진 뒤 '노란색(중위협)'을 타격해 빨간색으로 승격되기 전에 처리합니다. 빨간색이 남아 있을 때 노란색을 쏘면 우선순위 실수입니다.",
       "초록색(아군) 유닛에 대한 사격은 철저히 억제하여 높은 정확도와 콤보 배율을 사수하세요."
     ],
     audience: "발로란트, 오버워치 2, 카운터스트라이크 2, 에이펙스 레전드에서 한타 난전 시 침착하게 우선순위 타겟을 식별하고 제압하고자 하는 모든 FPS 게이머.",
@@ -320,8 +327,8 @@ export default function TargetPrioritizationKoPage() {
       />
       <TargetPrioritizationClient
         copy={{
-          h1Keyword: "에임 연습",
-          h1Suffix: " - 타겟 선택·위협 판단 트레이너",
+          h1Keyword: "타겟 우선순위 판단",
+          h1Suffix: " - 위협 판단·사격 억제 트레이너",
           subtitle: "여러 적의 위험도를 판단하고 쏘지 말아야 할 순간을 브라우저에서 훈련하세요.",
           statScore: "점수",
           statTime: "남은 시간",
@@ -330,7 +337,7 @@ export default function TargetPrioritizationKoPage() {
           statThreatsCleared: "격파한 위협",
           statMaxCombo: "최대 콤보",
           statPeakLevel: "최고 레벨",
-          startTitle: "에임 연습 - 타겟 선택",
+          startTitle: "타겟 우선순위 판단",
           startSubtitle: "위협 평가 & 인지 필터링 • 무한 레벨 난이도 진행",
           getReady: "준비",
           toggleFlash: "미스 플래시 켜기/끄기",
@@ -340,14 +347,14 @@ export default function TargetPrioritizationKoPage() {
           stageCaption: "최고 위협인 붉은색 타겟을 최우선 사격하고 노란색 타겟을 처리하세요. 아군(초록색)은 절대 사격하지 마세요.",
           rulesTitle: "훈련 규칙 및 점수 산정 방식",
           rulesItems: [
-            { num: "1", text: "고위협 타겟", highlight: "빨강 (+100점 / +0.4초)", result: "최우선 격파" },
-            { num: "2", text: "중위협 타겟", highlight: "노랑 (+50점 / +0.4초)", result: "시간 만료 시 빨강 승격" },
-            { num: "3", text: "아군 유닛", highlight: "초록 (사격 금지)", result: "오사/미스 시 콤보 초기화" },
+            { num: "1", text: "고위협 타겟", highlight: "빨강 (+100점 / +2초, 최대 60초)", result: "최우선 격파" },
+            { num: "2", text: "중위협 타겟", highlight: "노랑 (+50점 / +2초)", result: "빨강이 없을 때만 득점, 시간이 지나면 빨강 승격" },
+            { num: "3", text: "아군 유닛", highlight: "초록 (사격 금지)", result: "오사·우선순위 실수·미스 시 콤보 초기화 (-1초)" },
             { num: "4", text: "레벨 상승", highlight: "+1 / 1400점", result: "밀도 및 속도 지속 증가" }
           ],
-          aboutTitle: "에임 연습과 타겟 선택 소개",
+          aboutTitle: "타겟 우선순위 판단 연습 소개",
           aboutHeading: "타겟 우선순위(Target Prioritization)란?",
-          aboutText: "타겟 우선순위는 시야 내 다수의 목표 중 위협 긴급도에 따라 사격할 대상을 즉시 선별하고, 동시에 아군이나 방해물에 대한 사격을 억제하는 고차원 인지-운동 능력입니다. 이미 시작된 동작을 멈추는 억제 통제는 별도의 뇌 신경 레이스 모델(Logan & Cowan, 1984)에 의해 작동하므로, 방아쇠를 당기는 것보다 멈추는 훈련이 더욱 필수적입니다."
+          aboutText: "타겟 우선순위 판단은 시야 안의 여러 목표 중 위협 긴급도에 따라 쏠 대상을 고르고, 동시에 아군이나 방해물에 대한 사격을 참는 능력입니다. 이미 시작된 동작을 멈추는 과정은 동작을 시작하는 과정과 경주하듯 따로 진행되므로(Logan & Cowan, 1984), 쏘는 것보다 쏘지 않는 것이 더 어렵습니다. 이 드릴은 빨강 → 노랑 순서와 초록 사격 금지 규칙으로 그 판단을 반복 연습하게 합니다."
         }}
       />
       <DrillGuide guide={targetPrioritizationGuide} />

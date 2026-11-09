@@ -6,15 +6,13 @@ import { pickSources } from '@/lib/drillSources';
 import DrillFooter from '@/components/drill/DrillFooter';
 
 export const metadata = {
-  title: "Test de Reflejos | Tiempo de Reacción FPS | SkillDrills",
-  description: "Test de reflejos gratis en navegador: mide el tiempo entre el estímulo visual y el clic para entrenar reacciones FPS.",
+  title: "Tiempo de Reacción en FPS: Test de Clic | SkillDrills",
+  description: "Tiempo de reacción en FPS, gratis: haz clic cuando la diana central se ponga verde y mira tu reacción al clic en ms. Esperas aleatorias y fintas. Requiere ratón.",
   keywords: [
-    "test de reflejos",
-    "test de reflejos online",
-    "test de reflejos gaming",
-    "test de tiempo de reacción",
+    "tiempo de reacción en FPS",
     "tiempo de reacción FPS",
-    "test reacción click",
+    "reacción al clic",
+    "test de clic FPS",
     "reflejos gamer",
     "reacción rápida FPS"
   ],
@@ -27,8 +25,8 @@ export const metadata = {
     follow: true,
   },
   openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
-    title: "Test de Reflejos | Tiempo de Reacción FPS | SkillDrills",
-    description: "Test de reflejos gratis en navegador: mide el tiempo entre el estímulo visual y el clic para entrenar reacciones FPS.",
+    title: "Tiempo de Reacción en FPS: Test de Clic | SkillDrills",
+    description: "Tiempo de reacción en FPS, gratis: haz clic cuando la diana central se ponga verde y mira tu reacción al clic en ms. Esperas aleatorias y fintas. Requiere ratón.",
     url: "https://skilldrills.online/es/drills/fps/instant-response",
     siteName: 'SkillDrills',
     locale: 'es_ES',
@@ -36,8 +34,8 @@ export const metadata = {
   },
   twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: 'summary_large_image',
-    title: "Test de Reflejos | Tiempo de Reacción FPS | SkillDrills",
-    description: "Test de reflejos gratis en navegador: mide el tiempo entre el estímulo visual y el clic para entrenar reacciones FPS.",
+    title: "Tiempo de Reacción en FPS: Test de Clic | SkillDrills",
+    description: "Tiempo de reacción en FPS, gratis: haz clic cuando la diana central se ponga verde y mira tu reacción al clic en ms. Esperas aleatorias y fintas. Requiere ratón.",
   },
 };
 
@@ -48,14 +46,14 @@ export default function InstantResponseEsPage() {
     "itemListElement": [
       { "@type": "ListItem", "position": 1, "name": "SkillDrills", "item": "https://skilldrills.online/es" },
       { "@type": "ListItem", "position": 2, "name": "Entrenamientos FPS", "item": "https://skilldrills.online/es/drills/fps" },
-      { "@type": "ListItem", "position": 3, "name": "Test de reflejos - reacción FPS", "item": "https://skilldrills.online/es/drills/fps/instant-response" }
+      { "@type": "ListItem", "position": 3, "name": "Tiempo de Reacción en FPS", "item": "https://skilldrills.online/es/drills/fps/instant-response" }
     ]
   };
 
   const webAppSchema = {
     "@context": "https://schema.org",
     "@type": "WebApplication",
-    "name": "Test de reflejos para FPS",
+    "name": "Tiempo de Reacción en FPS: Test de Clic",
     "url": "https://skilldrills.online/es/drills/fps/instant-response",
     "applicationCategory": "GameApplication",
     "operatingSystem": "All",
@@ -65,20 +63,20 @@ export default function InstantResponseEsPage() {
       "price": "0",
       "priceCurrency": "USD"
     },
-    "description": "Herramienta online para medir y entrenar el tiempo de reacción en shooters. Evalúa milisegundos reales y mejora la disciplina de disparo."
+    "description": "Herramienta online para medir tu tiempo de reacción en FPS al clic, en milisegundos, y practicar la disciplina de disparo frente a fintas."
   };
 
   const softwareSchema = {
     "@context": "https://schema.org",
     "@type": "SoftwareApplication", "sameAs": ["https://en.wikipedia.org/wiki/Reaction_time", "https://en.wikipedia.org/wiki/Mental_chronometry"],
-    "name": "Test de reflejos SkillDrills",
+    "name": "Tiempo de Reacción en FPS - SkillDrills",
     "applicationCategory": "GameApplication",
     "operatingSystem": "Web Browser",
     "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
-    "description": "Entrenador científico de reflejos y latencia de clic para jugadores de shooters tácticos competitivos.",
+    "description": "Drill de reacción al clic y latencia de clic para jugadores de shooters tácticos.",
     "genre": "Entrenamiento FPS / Reflejos",
     "url": "https://skilldrills.online/es/drills/fps/instant-response",
-    "dateModified": "2026-09-20",
+    "dateModified": "2026-11-09",
     "publisher": {
       "@type": "Organization",
       "name": "SkillDrills",
@@ -89,28 +87,28 @@ export default function InstantResponseEsPage() {
   const videoGameSchema = {
     "@context": "https://schema.org",
     "@type": "VideoGame",
-    "name": "Test de reflejos - reacción FPS",
+    "name": "Tiempo de Reacción en FPS",
     "url": "https://skilldrills.online/es/drills/fps/instant-response",
-    "description": "Simulador dinámico con estímulos visuales y fintas diseñado para optimizar el aguante de ángulos y el clic reflejo.",
+    "description": "Diana central que se enciende tras una espera aleatoria, con fintas breves desde niveles intermedios, para practicar el aguante de ángulos.",
     "gamePlatform": "Web Browser",
-    "genre": ["Entrenamiento FPS", "Test de Reacción"],
+    "genre": ["Entrenamiento FPS", "Reacción al clic"],
     "playMode": "SinglePlayer",
     "applicationCategory": "Game",
     "operatingSystem": "Web Browser",
-    "dateModified": "2026-09-20"
+    "dateModified": "2026-11-09"
   };
 
   const faqSchema = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
-    "dateModified": "2026-09-20",
+    "dateModified": "2026-11-09",
     "mainEntity": [
       {
         "@type": "Question",
-        "name": "¿Cuál es el tiempo de reacción promedio de un jugador de FPS?",
+        "name": "¿Qué tiempo de reacción al clic conviene buscar en este drill?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "La media general en pantallas estándar oscila entre 220 y 250 ms. Jugadores competitivos de Valorant y CS2 con monitores de 240 Hz alcanzan registros de 150 a 190 ms."
+          "text": "No publicamos promedios de jugadores. La tabla de abajo muestra rangos de práctica SkillDrills sacados de la puntuación: hay bonus de velocidad por debajo de 500 ms, completo con 150 ms o menos. Compárate sobre todo contigo mismo, en el mismo equipo."
         }
       },
       {
@@ -126,7 +124,7 @@ export default function InstantResponseEsPage() {
         "name": "¿Qué diferencia hay entre reacción simple y de elección?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "La reacción simple consiste en hacer clic ante cualquier señal. La reacción de elección (Ley de Hick) requiere confirmar si el estímulo es válido o una trampa, añadiendo entre 60 y 100 ms de análisis cerebral."
+          "text": "La reacción simple consiste en hacer clic ante cualquier señal. La reacción de elección (Ley de Hick) requiere confirmar si el estímulo es válido o una trampa, lo que añade tiempo de decisión."
         }
       },
       {
@@ -158,7 +156,7 @@ export default function InstantResponseEsPage() {
         "name": "¿Mejora la cafeína el tiempo de reacción en partidas?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "En cantidades prudentes (100 a 200 mg), la cafeína acelera la neurotransmisión y puede recortar entre 10 y 15 ms la latencia, aunque el exceso provoca temblores que restan puntería."
+          "text": "No damos cifras: el efecto varía según la persona, y el exceso provoca temblores que restan puntería. Compara sesiones hechas en condiciones parecidas."
         }
       },
       {
@@ -166,7 +164,7 @@ export default function InstantResponseEsPage() {
         "name": "¿Por qué empeoran los reflejos a medida que avanza la noche?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "El cansancio acumulado y el ciclo circadiano reducen la velocidad de las sinapsis motoras, incrementando el tiempo de respuesta entre 40 y 60 ms respecto al estado de descanso."
+          "text": "El cansancio y la falta de sueño pueden hacer más lentos tus clics. Compara las sesiones con cansancio aparte de las habituales."
         }
       },
       {
@@ -191,7 +189,7 @@ export default function InstantResponseEsPage() {
   const howToSchema = {
     "@context": "https://schema.org",
     "@type": "HowTo",
-    "name": "Cómo Medir y Entrenar el Tiempo de Reacción en Shooters",
+    "name": "Cómo Medir y Entrenar el Tiempo de Reacción en FPS",
     "description": "Pasos detallados para evaluar la latencia neuromuscular y desarrollar reflejos limpios de clic.",
     "step": [
       {
@@ -219,67 +217,67 @@ export default function InstantResponseEsPage() {
         "@type": "HowToStep",
         "position": 4,
         "name": "Pulsar al Instante ante la Señal Verde",
-        "text": "Haz clic en el milisegundo exacto en que la diana cambie de color para registrar tu tiempo neto.",
+        "text": "Haz clic en cuanto la diana cambie de color para registrar tu reacción al clic (incluye la latencia del monitor y del ratón).",
         "url": "https://skilldrills.online/es/drills/fps/instant-response#step-4"
       }
     ]
   };
 
   const copyEs = {
-    h1Keyword: "Test de Reflejos",
-    h1Suffix: " — tiempo de reacción FPS",
-    subtitle: "Mide y entrena la latencia de reacción visual, la velocidad de clic y la disciplina de gatillo",
+    h1Keyword: "Tiempo de Reacción en FPS",
+    h1Suffix: " — test de clic",
+    subtitle: "Mide tu reacción al clic en ms y entrena la disciplina de gatillo frente a fintas",
     statScore: "Puntuación",
     statTime: "Tiempo Restante",
     statAccuracy: "Precisión",
     statBestScore: "Récord Personal",
-    startTitle: "Test de Reflejos",
-    startSubtitle: "Latencia visual y velocidad de clic • Progresión dinámica",
+    startTitle: "Tiempo de Reacción en FPS",
+    startSubtitle: "Ratón + Pointer Lock • 45 s iniciales • Niveles infinitos",
     getReady: "Prepararse",
     pausedTitle: "Pausado",
     stageCaption: "Haz clic en cuanto la diana central cambie a color verde. Evita disparos anticipados en fintas.",
     rulesTitle: "Reglas de Entrenamiento y Puntuación",
     rulesItems: [
-      { num: "1", text: "Acierto en Flash", highlight: "+100 PTS (+0.6s)", result: "×Multiplicador Combo" },
-      { num: "2", text: "Bonus de Rapidez", highlight: "Tiro Sub-150ms", result: "Hasta +150 PTS" },
+      { num: "1", text: "Acierto en Flash", highlight: "+100 PTS (+2 s, máx. 60 s)", result: "×Multiplicador Combo" },
+      { num: "2", text: "Bonus de Rapidez", highlight: "Tiro por debajo de 500 ms", result: "Hasta +150 PTS (≤150 ms)" },
       { num: "3", text: "Subida de Nivel", highlight: "+1 Nivel / 1400 PTS", result: "Ventanas Adaptativas" },
-      { num: "4", text: "Fallo / Pre-disparo", highlight: "Penalización", result: "Reinicio Combo (-0.8s)" }
+      { num: "4", text: "Fallo / Pre-disparo", highlight: "Incluye fintas y tiempo agotado", result: "Reinicio Combo (-1 s)" }
     ],
-    aboutTitle: "Sobre el test de reflejos y la reacción FPS",
+    aboutTitle: "Sobre el tiempo de reacción en FPS",
     aboutHeading: "¿Cómo funciona la medición de reflejos en shooters?"
   };
 
   const instantResponseGuide = {
-    heading: "Test de Reflejos para Reacciones FPS",
+    heading: "Tiempo de Reacción en FPS: guía y rangos de práctica",
     intro: [
-      "Un test de reflejos mide el intervalo entre un estímulo visual y el clic del jugador. Este drill registra la latencia en milisegundos para comparar reacciones en duelos de CS2, Valorant y otros FPS.",
-      "La concentración espacial focalizada desempeña un rol crucial para minimizar dicho retraso. Según los trabajos experimentales de Michael Posner (1990), pre-activar la atención sobre el punto exacto de aparición reduce entre 20 y 30 ms el tiempo de procesamiento cortical frente a una visión periférica desenfocada. En duelos cerrados de Valorant y CS2, esa franja temporal determina la victoria en el primer intercambio de balas.",
-      "La latencia de los periféricos y la sincronización del software imponen limitaciones cuantitativas. Esta herramienta se fundamenta en performance.now() para registrar marcas de alta fidelidad (Woods et al., 2015). En un entorno competitivo con panel de 240 Hz (4.17 ms por cuadro) y ratón a 1000 Hz (1.0 ms de respuesta USB), el retraso técnico se reduce al mínimo imprescindible para evaluar el tiempo reflejo puro.",
+      "Este test de clic mide tu tiempo de reacción en FPS: el intervalo entre que la diana central se pone verde y tu clic. El drill muestra tu reacción al clic en milisegundos y penaliza los clics anticipados, para practicar el aguante de ángulos en CS2, Valorant y otros FPS.",
+      "La concentración espacial focalizada desempeña un rol crucial para minimizar dicho retraso. Según los trabajos experimentales de Michael Posner (1990), dirigir la atención al punto de aparición esperado puede acelerar la respuesta frente a una visión dispersa. En Valorant y CS2, es la razón para mantener la mirada en el ángulo que aguantas.",
+      "La latencia de los periféricos y la sincronización del software imponen limitaciones cuantitativas. Esta herramienta se fundamenta en performance.now() para registrar marcas de alta fidelidad (Woods et al., 2015). En un entorno competitivo con panel de 240 Hz (4.17 ms por cuadro) y ratón a 1000 Hz (1.0 ms de respuesta USB), el retraso técnico disminuye, pero sigue incluido en cada medición.",
       "Metodología en tu equipo: los clics se miden de forma local en tu navegador sin transferir registros a servidores remotos. Los navegadores introducen una discretización temporal de ~1 ms por seguridad contra ataques Spectre, y los monitores muestran fotogramas a cadencias fijas (16.7 ms a 60 Hz frente a 4.1 ms a 240 Hz). Para analizar tu progreso, realiza las pruebas en un mismo equipo de trabajo."
     ],
     benchmarks: {
-      title: "Puntos de Referencia de Tiempo de Reacción y Niveles de Habilidad",
-      headers: ["Nivel / Categoría", "Latencia Típica (ms)", "Mecanismo Neuromuscular y Hardware", "Impacto Práctico en Partidas"],
+      title: "Rangos de práctica SkillDrills según la reacción al clic",
+      headers: ["Rango SkillDrills", "Medición en el drill (ms)", "Puntos base por acierto (antes de multiplicadores de combo y nivel)", "Nota"],
       rows: [
-        ["Nivel 1 (Reflejo Sobrehumano)", "< 165 ms", "Máxima activación sensorial, monitor de 240Hz+ y respuesta instintiva", "Ventaja decisiva en aperturas angulares y duelos rápidos"],
-        ["Nivel 2 (Etapa Avanzada)", "165 – 195 ms", "Gran sincronización motora en monitores competitivos de 240Hz", "Objetivo: mantener una sincronización estable y repetible"],
-        ["Nivel 3 (Competitivo Alto)", "195 – 225 ms", "Reflejo limpio en pantallas estándar de 144Hz", "Sólida retención de esquinas combinada con buena colocación de mira"],
-        ["Nivel 4 (Media General)", "225 – 265 ms", "Media de jugadores sin entrenamiento en paneles de 60Hz a 144Hz", "Vulnerable ante aperturas agresivas si el ángulo está muy cerrado"],
-        ["Nivel 5 (Fatiga / Latencia)", "265 – 330+ ms", "Cansancio muscular, falta de descanso o retraso por hardware", "Retardo evidente entre divisar al oponente y lograr disparar"]
+        ["Rango A", "≤ 150 ms", "100 + bonus de velocidad 150", "Bonus completo. Si es frecuente, comprueba que no estés anticipando."],
+        ["Rango B", "150 – 250 ms", "100 + aprox. 107–150", "Se conserva la mayor parte del bonus."],
+        ["Rango C", "250 – 350 ms", "100 + aprox. 64–107", "El bonus baja a cerca de la mitad."],
+        ["Rango D", "350 – 500 ms", "100 + 0–64", "Bonus cercano a 0."],
+        ["Rango E", "> 500 ms", "100 (sin bonus)", "En el nivel 1 la diana queda encendida unos 550 ms; luego menos, y se agota el tiempo."]
       ],
-      note: "Datos extraídos de los modelos de cronometría de Donders (1868) y estudios de respuesta digital de Woods et al. (2015)."
+      note: "Estos rangos de práctica SkillDrills salen de la puntuación del drill. No son normas de investigación ni datos de usuarios; las mediciones incluyen la latencia del monitor, el ratón y el navegador."
     },
     techniques: {
       title: "Métodos Efectivos para Disminuir la Latencia de Disparo",
       items: [
         {
           name: "Eliminación del Recorrido Muerto del Interruptor",
-          desc: "Apoya el dedo suavemente sobre la carcasa del ratón en el punto exacto de activación. Anular el movimiento en vacío recorta entre 20 y 35 ms mecánicos.",
+          desc: "Apoya el dedo suavemente sobre la carcasa del ratón en el punto exacto de activación. Anular el movimiento en vacío acorta el gesto del clic.",
           tips: "No pongas rígido el brazo; relaja la muñeca para no frenar la reacción muscular."
         },
         {
           name: "Anclaje Visual Foveal Preciso",
-          desc: "Coloca la mirada en el punto exacto por el que se asomará el rival. Los estudios de Posner (1990) prueban que fijar la atención espacial acelera la llegada del estímulo.",
+          desc: "Coloca la mirada en el punto exacto por el que se asomará el rival. Los estudios de Posner (1990) sugieren que fijar la atención espacial puede acelerar la respuesta.",
           tips: "Evita desviar los ojos hacia el minimapa cuando esperas un asomo inminente."
         },
         {
@@ -316,7 +314,7 @@ export default function InstantResponseEsPage() {
       "Haz clic en 'Iniciar Entrenamiento' para activar la pantalla completa y el Pointer Lock del navegador.",
       "Fija la atención visual en la retícula central con el dedo índice en tensión ligera sobre el botón del ratón.",
       "Haz clic al instante al detectar el cambio de color, controlando el impulso de disparo antes de tiempo.",
-      "Analiza tu tiempo medio de reacción, la desviación típica y tus rachas de combo en cada nivel."
+      "Cada acierto suma 2 s (máx. 60 s); cada pre-disparo, fallo o tiempo agotado resta 1 s. La partida empieza con 45 s y termina en 0; después revisa tu tiempo medio de reacción, precisión, mejor combo y nivel alcanzado."
     ],
     audience: "Jugadores competitivos de FPS y shooters tácticos (Valorant, CS2, Rainbow Six Siege, Apex Legends, Overwatch 2), jugadores de eSports y deportistas que entrenan su velocidad de reacción visual.",
     faqs: faqSchema.mainEntity.map(e => ({ q: e.name, a: e.acceptedAnswer.text })),

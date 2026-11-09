@@ -6,21 +6,19 @@ import { getAlternateLanguages } from '@/lib/i18n/locales';
 import { pickSources } from '@/lib/drillSources';
 
 export const metadata = {
-  title: 'Treino de Mira - Troca de Alvos Valorant | SkillDrills',
-  description: 'Treino de mira grátis no navegador: pratique troca rápida de alvos, transições contínuas e spray transfer no Valorant e CS2.',
+  title: 'Troca de Alvos: Vários Alvos Rápidos | SkillDrills',
+  description: 'Treine troca de alvos grátis no navegador: acerte de 2 a 5 alvos em movimento em sequência. +2 s por acerto (máx. 60 s) e -1 s por clique errado.',
   keywords: [
-    'troca de alvos Valorant',
+    'troca de alvos',
     'troca de alvos FPS',
-    'target switching aim trainer',
-    'treino de mira Valorant',
+    'target switching',
+    'múltiplos alvos',
     'spray transfer CS2',
     'mira multi alvos',
     'flick contínuo FPS',
-    'treino de pontaria online',
     'troca rápida de alvos',
     'transição de mira',
-    'troca de alvos sob pressão',
-    'treinador de mira grátis'
+    'troca de alvos sob pressão'
   ],
   alternates: {
     canonical: 'https://skilldrills.online/pt/drills/fps/target-switching-swarm',
@@ -31,8 +29,8 @@ export const metadata = {
     follow: true,
   },
   openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
-    title: 'Treino de Mira - Troca de Alvos Valorant | SkillDrills',
-    description: 'Treino de mira grátis no navegador: pratique troca rápida de alvos, transições contínuas e spray transfer no Valorant e CS2.',
+    title: 'Troca de Alvos: Vários Alvos Rápidos | SkillDrills',
+    description: 'Treine troca de alvos grátis no navegador: acerte de 2 a 5 alvos em movimento em sequência. +2 s por acerto (máx. 60 s) e -1 s por clique errado.',
     url: 'https://skilldrills.online/pt/drills/fps/target-switching-swarm',
     siteName: 'SkillDrills',
     locale: 'pt_BR',
@@ -40,8 +38,8 @@ export const metadata = {
   },
   twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: 'summary_large_image',
-    title: 'Treino de Mira - Troca de Alvos Valorant | SkillDrills',
-    description: 'Treino de mira grátis no navegador: pratique troca rápida de alvos, transições contínuas e spray transfer no Valorant e CS2.',
+    title: 'Troca de Alvos: Vários Alvos Rápidos | SkillDrills',
+    description: 'Treine troca de alvos grátis no navegador: acerte de 2 a 5 alvos em movimento em sequência. +2 s por acerto (máx. 60 s) e -1 s por clique errado.',
   },
 };
 
@@ -59,7 +57,7 @@ export default function TargetSwitchingSwarmPtPage() {
   const softwareSchema = {
     "@context": "https://schema.org",
     "@type": "SoftwareApplication", "sameAs": ["https://en.wikipedia.org/wiki/Saccade", "https://en.wikipedia.org/wiki/Hand%E2%80%93eye_coordination"],
-    "name": "Treino de Mira - Troca de Alvos Valorant",
+    "name": "Troca de Alvos: Vários Alvos Rápidos",
     "applicationCategory": "GameApplication",
     "operatingSystem": "Any (Web Browser)",
     "offers": {
@@ -67,13 +65,13 @@ export default function TargetSwitchingSwarmPtPage() {
       "price": "0",
       "priceCurrency": "USD"
     },
-    "description": "Treinador online gratuito de target switching e troca rápida de alvos para jogos de tiro competitivo (CS2, Valorant, Apex Legends)."
+    "description": "Treino gratuito de troca de alvos no navegador: 2 a 5 alvos em movimento que quicam pela tela, para acertar um após o outro."
   };
 
   const webAppSchema = {
     "@context": "https://schema.org",
     "@type": "WebApplication",
-    "name": "Treino de Mira - Troca de Alvos Valorant",
+    "name": "Troca de Alvos: Vários Alvos Rápidos",
     "url": "https://skilldrills.online/pt/drills/fps/target-switching-swarm",
     "browserRequirements": "Requires Pointer Lock API and WebGL support",
     "applicationCategory": "ShooterTraining",
@@ -86,8 +84,8 @@ export default function TargetSwitchingSwarmPtPage() {
   const videoGameSchema = {
     "@context": "https://schema.org",
     "@type": "VideoGame",
-    "name": "Treino de Mira - Troca de Alvos Valorant",
-    "description": "Simulador dinâmico de enxame de alvos para treinar velocidade de transição motora, mitigação de hesitação e spray transfers.",
+    "name": "Troca de Alvos: Vários Alvos Rápidos",
+    "description": "Drill gratuito de troca de alvos: um enxame de 2 a 5 alvos em movimento que reaparecem assim que são acertados, para treinar a sequência.",
     "genre": ["First-Person Shooter", "Aim Trainer", "Reaction Training"],
     "playMode": "SinglePlayer",
     "gamePlatform": ["PC", "Web Browser"]
@@ -102,7 +100,7 @@ export default function TargetSwitchingSwarmPtPage() {
         "name": "O que é target switching no treino de mira para FPS?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Target switching (troca de alvos) é a habilidade mecânica de eliminar um alvo e transitar instantaneamente a mira para o próximo alvo hostil sem pausa perceptiva ou retorno ao ponto neutro. É essencial para vencer confrontos 1vX e situações de clutch."
+          "text": "Target switching (troca de alvos) é a habilidade mecânica de eliminar um alvo e transitar instantaneamente a mira para o próximo alvo hostil sem pausa perceptiva ou retorno ao ponto neutro. É útil em confrontos contra vários adversários seguidos."
         }
       },
       {
@@ -115,10 +113,10 @@ export default function TargetSwitchingSwarmPtPage() {
       },
       {
         "@type": "Question",
-        "name": "Como o formato de enxame (swarm) melhora a taxa de multi-kills?",
+        "name": "Quais são as regras deste treino de troca de alvos?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "No formato swarm, múltiplos alvos aparecem simultaneamente com tempos de vida limitados. Isso condiciona a visão periférica a pré-rotear a próxima trajetória antes do tiro atual terminar, desenvolvendo indexação visual e eliminação em cadeia."
+          "text": "O cronômetro começa em 45 segundos. Conforme o nível, 2 a 5 alvos em movimento que quicam pela tela ficam ativos. Cada acerto vale +100 pontos multiplicados pelo combo e pelo nível e soma 2 segundos (máximo de 60). Um clique no vazio tira 1 segundo e zera o combo. Com a opção de tempo limite dos alvos ativada, um alvo não acertado a tempo (cerca de 2,8 segundos no início, menos nos níveis altos) some e também tira 1 segundo. A cada 2.100 pontos o nível sobe e os alvos ficam menores e mais rápidos. Joga-se com mouse e travamento do ponteiro; Esc encerra o drill."
         }
       },
       {
@@ -126,15 +124,15 @@ export default function TargetSwitchingSwarmPtPage() {
         "name": "Por que muitos jogadores hesitam após eliminar um inimigo?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Essa hesitação de 100 a 250 ms ocorre quando o cérebro aguarda o feedback visual ou sonoro de confirmação da eliminação antes de iniciar a busca visual do próximo alvo. O treino repetitivo desacopla a confirmação do início do próximo movimento sacádico."
+          "text": "Essa hesitação ocorre quando você espera o retorno visual ou sonoro da eliminação antes de procurar o próximo alvo. Neste drill, o alvo acertado some na hora e outro aparece, então você repete a passagem direta do olhar e do mouse para o próximo alvo."
         }
       },
       {
         "@type": "Question",
-        "name": "O target switching auxilia no spray transfer de CS2 e Valorant?",
+        "name": "A troca de alvos ajuda no spray transfer do CS2?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Sim, diretamente. O spray transfer exige transferir a rajada de tiros entre dois adversários em fração de segundo. O target switching automatiza a cinemática muscular necessária para redirecionar a mira no ângulo exato do segundo oponente sem interrupção."
+          "text": "Só em parte. Este drill conta cliques isolados e não simula recuo nem rajadas. Mas levar a mira de um alvo ao próximo e parar com precisão é a base do spray transfer, então ele serve como treino complementar."
         }
       },
       {
@@ -142,7 +140,7 @@ export default function TargetSwitchingSwarmPtPage() {
         "name": "Quais jogos competitivos mais exigem excelência em troca de alvos?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Counter-Strike 2, Valorant, Apex Legends, Overwatch 2 e Call of Duty Warzone. Em jogos táticos, decide clutches com disparos únicos; em jogos com alto time-to-kill (TTK), permite alternar o fogo imediatamente após a quebra de escudo."
+          "text": "Counter-Strike 2, Apex Legends, Overwatch 2 e Call of Duty Warzone, entre outros. Em jogos táticos, decide clutches com disparos únicos; em jogos com alto time-to-kill (TTK), permite alternar o fogo imediatamente após a quebra de escudo."
         }
       },
       {
@@ -166,7 +164,7 @@ export default function TargetSwitchingSwarmPtPage() {
         "name": "Com que frequência devo praticar o exercício de target switching?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Sessões diárias de 10 a 15 minutos são ideais. Praticar antes das partidas competitivas ativa a coordenação neuromotora e a prontidão sacádica dos olhos, garantindo reflexos afiados sem gerar fadiga no antebraço."
+          "text": "Não há uma duração ideal comprovada. Algumas sessões focadas como aquecimento antes das partidas são um bom começo; compare seus resultados no mesmo equipamento. Não há garantia de melhora nas partidas."
         }
       },
       {
@@ -174,7 +172,7 @@ export default function TargetSwitchingSwarmPtPage() {
         "name": "Este treinador de target switching é gratuito e seguro?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Sim, é 100% gratuito, sem download e roda diretamente no navegador via Pointer Lock API com suporte total a sensibilidade de jogos competitivos. Nenhuma métrica privada ou dado pessoal é coletado."
+          "text": "Sim, é gratuito e sem download, rodando no navegador com mouse e travamento do ponteiro; não funciona em aparelhos só com toque. Seu recorde fica salvo apenas neste navegador."
         }
       }
     ]
@@ -189,7 +187,7 @@ export default function TargetSwitchingSwarmPtPage() {
         "@type": "HowToStep",
         "position": 1,
         "name": "Configurar Sensibilidade e Travar o Cursor",
-        "text": "Ajuste o DPI e a sensibilidade idêntica à do seu jogo principal nas configurações e clique para bloquear o cursor do mouse."
+        "text": "Ajuste a sensibilidade na página /drills para ficar igual à do seu jogo e comece; o ponteiro é travado automaticamente."
       },
       {
         "@type": "HowToStep",
@@ -201,7 +199,7 @@ export default function TargetSwitchingSwarmPtPage() {
         "@type": "HowToStep",
         "position": 3,
         "name": "Eliminar o Primeiro Alvo e Ganhar Tempo Bônus",
-        "text": "Dispare com precisão no primeiro alvo para somar +100 pontos e adicionar +0,35s ao temporizador de sobrevivência."
+        "text": "Acerte o primeiro alvo para somar +100 pontos e adicionar 2 segundos ao cronômetro (máximo de 60)."
       },
       {
         "@type": "HowToStep",
@@ -219,36 +217,36 @@ export default function TargetSwitchingSwarmPtPage() {
   };
 
   const targetSwitchingGuide = {
-    heading: "Treino de Mira: troca de alvos e spray transfer no FPS",
+    heading: "Troca de alvos: encadear vários alvos rápidos",
     intro: [
-      "Para quem procura treino de mira com troca de alvos, este drill mede a transição entre vários inimigos sem a pausa de confirmação após cada eliminação. Ele treina flick contínuo, indexação visual e spray transfer para Valorant, Counter-Strike 2 e Apex Legends, onde a próxima ameaça aparece antes de o duelo terminar.",
-      "A psicofísica da troca de alvos é regida pela Lei de Fitts (Fitts, 1954) e pelo modelo estocástico de submovimentos otimizados desenvolvido por David E. Meyer et al. (1988). Sob essa ótica biomecânica, um movimento de mira compõe-se de um submovimento balístico primário que cobre aproximadamente 90% da distância, seguido por microcorreções secundárias guiadas por feedback visual. Jogadores iniciantes desperdiçam entre 100 e 250 ms paralisados após cada abate esperando a animação de morte sumir. Jogadores de elite iniciam a sacada ocular para o próximo alvo antes mesmo que o clique do alvo anterior seja completamente processado pelo monitor.",
-      "A indexação visual em enxames densos apoia-se em mecanismos de integração de características e busca visual pré-atencional (Anne M. Treisman & Garry Gelade, 1980; Jeremy M. Wolfe, 2007). O córtex visual humano consegue rastrear múltiplos pontos espaciais concorrentes por meio da indexação visual (teoria FINST), permitindo que você trace rotas cinemáticas otimizadas entre agrupamentos de alvos, minimizando o esforço muscular e a distância angular percorrida pela mão.",
-      "Como medimos seu desempenho: cada evento é registrado com o relógio de alta resolução performance.now() do navegador, inteiramente local no seu dispositivo — nenhum dado pessoal é transmitido. Fatores de hardware: os temporizadores dos navegadores possuem arredondamento intencional de proteção contra o Spectre (~1 ms) e monitores quantizam os quadros (16,7 ms a 60 Hz, 6,9 ms a 144 Hz, 4,1 ms a 240 Hz; Woods et al., 2015). O polling rate do mouse adiciona cerca de 8 ms a 125 Hz contra 1 ms a 1000 Hz. Diferenças inferiores a 5 ms devem ser interpretadas como margem de hardware."
+      "Este treino gratuito de troca de alvos mantém sempre de 2 a 5 alvos em movimento quicando pela tela. Assim que você acerta um, outro aparece, e você repete a passagem da mira para o próximo alvo sem pausa de confirmação. O cronômetro começa em 45 segundos, cada acerto soma 2 segundos (máximo de 60) e cada clique errado tira 1; enquanto você acerta com precisão, a sessão continua.",
+      "A psicofísica da troca de alvos é regida pela Lei de Fitts (Fitts, 1954) e pelo modelo estocástico de submovimentos otimizados desenvolvido por David E. Meyer et al. (1988). Sob essa ótica biomecânica, um movimento de mira compõe-se de um submovimento primário rápido que cobre a maior parte da distância, seguido por microcorreções secundárias guiadas por feedback visual. Muitos jogadores fazem uma pausa curta após cada abate para confirmar a eliminação. Este drill busca levar o olhar ao próximo alvo já no clique para encurtar essa pausa.",
+      "A indexação visual em enxames densos apoia-se em mecanismos de integração de características e busca visual pré-atencional (Anne M. Treisman & Garry Gelade, 1980; Jeremy M. Wolfe, 2007). Conseguimos acompanhar alguns objetos em movimento ao mesmo tempo; planejar uma ordem curta entre alvos próximos deixa as trocas mais fluidas.",
+      "Sobre os resultados: a tela final mostra pontuação, precisão (acertos ÷ total de cliques), alvos destruídos, combo máximo e nível alcançado. Seu recorde fica salvo apenas neste navegador. Este drill não mede tempo de transição em milissegundos. A taxa de atualização do monitor e o polling rate do mouse mudam a sensação, então compare-se no mesmo equipamento."
     ],
     benchmarks: {
-      title: "Padrões de Referência: Target Switching e Latenência de Transição",
-      headers: ["Nível de Habilidade", "Tempo de Transição", "Taxa de Eliminação (Alvos/Min)", "Impacto Prático Competitivo"],
+      title: "Faixas de treino de precisão na troca de alvos",
+      headers: ["Faixa", "Precisão", "O que indica"],
       rows: [
-        ["Tier 1 (Faixa Avançada)", "Abaixo de 210 ms", "110+ Alvos/min", "Spray transfers impecáveis; zero atraso de confirmação; clutches 1v3 resolvidos com facilidade"],
-        ["Tier 2 (Faixa Intermediária-Alta)", "210 – 260 ms", "92 – 110 Alvos/min", "Sequenciamento de alvos limpo; leve oscilação em ângulos extremos; excelente taxa de trade de abates"],
-        ["Tier 3 (Ascendente / Diamante / Avançado)", "260 – 320 ms", "74 – 92 Alvos/min", "Bom chaveamento em grupos próximos; perde precisão ao transferir a mira de um lado ao outro da tela"],
-        ["Tier 4 (Platina / Ouro / Intermediário)", "320 – 400 ms", "56 – 74 Alvos/min", "Hesitação perceptível pós-abate (100+ ms); tendência a ultrapassar o alvo por frenagem tardia"],
-        ["Tier 5 (Prata / Bronze / Iniciante)", "Acima de 400 ms", "Abaixo de 56 Alvos/min", "Reinicia a postura do braço entre cada alvo; busca visual começa do zero a cada kill; tensão muscular excessiva"]
+        ["Faixa 1", "95% ou mais", "Quase nenhum clique no vazio, mesmo em níveis altos"],
+        ["Faixa 2", "88% – 95%", "Erros ocasionais em alvos rápidos, mas o ritmo de troca se mantém"],
+        ["Faixa 3", "80% – 88%", "Passa do alvo ao trocar para alvos distantes"],
+        ["Faixa 4", "70% – 80%", "Cliques apressados fazem perder tempo com frequência"],
+        ["Faixa 5", "abaixo de 70%", "Reduza a velocidade e firme a parada antes de acelerar"]
       ],
-      note: "O tempo de transição afere o intervalo entre a destruição do alvo e a chegada do retículo ao próximo alvo; a taxa de eliminação reflete o rendimento sustentado ao longo da rodada (Woods et al., 2015)."
+      note: "Precisão é o valor da tela final (acertos ÷ total de cliques). As faixas são referências de treino do SkillDrills, não normas científicas, ranques de jogo nem estatísticas de usuários."
     },
     techniques: {
       title: "Protocolos Científicos para Dominar a Troca de Alvos",
       items: [
         {
           name: "Pré-Roteamento Sacádico e Indexação Visual",
-          desc: "Desloque o foco visual para o alvo secundário enquanto a mão ainda conclui a microcorreção final do primeiro alvo (Treisman & Gelade, 1980; Wolfe, 2007). Os olhos antecipam a mão em 50 a 80 ms.",
+          desc: "Desloque o foco visual para o alvo secundário enquanto a mão ainda conclui a microcorreção final do primeiro alvo (Treisman & Gelade, 1980; Wolfe, 2007). Em geral, o olhar chega ao alvo antes da mão.",
           tips: "Nunca encare um alvo após atirar nele; confie na visão periférica para registrar a destruição enquanto a fóvea ocular já mira o próximo candidato."
         },
         {
           name: "Frenagem Terminal e Otimização Submovimental",
-          desc: "Aplique controtensão muscular firme nos últimos 10% do flick para cessar o movimento bruscamente no centro do alvo sem oscilações (Meyer et al., 1988).",
+          desc: "Aplique controtensão muscular firme no final do flick para cessar o movimento bruscamente no centro do alvo sem oscilações (Meyer et al., 1988).",
           tips: "Pense no mouse como se tivesse freios hidráulicos: acelere velozmente saindo do alvo anterior e trave com firmeza sobre o próximo."
         },
         {
@@ -264,13 +262,13 @@ export default function TargetSwitchingSwarmPtPage() {
       ]
     },
     steps: [
-      "Configure o DPI e a sensibilidade idênticos aos do seu FPS competitivo e trave o cursor do mouse.",
+      "Ajuste a sensibilidade na página /drills igual à do seu jogo e comece (ponteiro travado automaticamente).",
       "Identifique visualmente os agrupamentos de alvos mais próximos para traçar sua rota de disparos.",
-      "Destrua o primeiro alvo para somar +100 pontos e ganhar +0,35s no cronômetro da rodada.",
+      "Acerte o primeiro alvo para somar +100 pontos × multiplicadores de combo e nível e +2 s no cronômetro (máx. 60 s).",
       "Redirecione o impulso do retículo imediatamente ao próximo alvo vizinho sem esperar confirmação visual.",
-      "Encadeie múltiplos abates sem errar para sustentar multiplicadores de combo e atingir pontuações mais altas."
+      "Evite cliques errados (-1 s), encadeie acertos para subir o combo e chegue a níveis com alvos menores e mais rápidos."
     ],
-    audience: "Jogadores competitivos de Valorant, CS2, Apex Legends e Overwatch que desejam acelerar a troca de alvos, dominar spray transfers e extinguir pausas hesitantes em tiroteios caóticos.",
+    audience: "Jogadores de CS2, Apex Legends e Overwatch 2 que querem treinar separadamente a troca de alvos entre vários adversários. É preciso usar mouse.",
     faqs: faqSchema.mainEntity.map(e => ({ q: e.name, a: e.acceptedAnswer.text })),
     sources: pickSources('woods2015', 'fitts1954', 'meyer1988', 'treisman1980', 'wolfe2007'),
     related: [
@@ -293,9 +291,9 @@ export default function TargetSwitchingSwarmPtPage() {
 
       <TargetSwitchingSwarmClient
         copy={{
-          h1Keyword: "Treino de Mira - Troca de Alvos",
-          h1Suffix: " – Spray Transfer FPS",
-          subtitle: "Pratique transições rápidas entre alvos e spray transfer sem perder o controle da mira.",
+          h1Keyword: "Troca de Alvos",
+          h1Suffix: ": Vários Alvos Rápidos",
+          subtitle: "Treine trocas rápidas e precisas entre vários alvos em movimento, grátis no navegador.",
           statScore: "Pontos",
           statTime: "Tempo",
           statAccuracy: "Precisão",
@@ -305,13 +303,13 @@ export default function TargetSwitchingSwarmPtPage() {
           statPeakLevel: "Nível Máximo",
           startTitle: "Target Switching Swarm",
           startSubtitle: "Entrada Raw de Hardware • Progressão Contínua",
-          stageCaption: "Mude rapidamente de alvo e elimine os alvos em enxame antes que o temporizador expire. Evite tiros perdidos para maximizar combos!",
+          stageCaption: "Acerte os alvos em movimento em sequência antes que sumam. Cada clique errado custa 1 segundo e o combo.",
           rulesTitle: "Regras de Treino e Sistema de Pontuação",
           aboutTitle: "Sobre Target Switching em Jogos de Tiro (FPS)",
           rulesItems: [
-            { num: "1", text: "Destruição de Alvo", highlight: "Alvos Ciano (+100 PTS / +0,35s)", result: "+100 PTS / +0,35s" },
-            { num: "2", text: "Enxame Dinâmico", highlight: "Respawn Imediato", result: "Enxame Contínuo" },
-            { num: "3", text: "Penalidade por Erro", highlight: "Tiro Errado / Tempo Esgotado", result: "Reset de Combo" },
+            { num: "1", text: "Alvo Atingido", highlight: "+100 PTS (+2s, máx. 60s)", result: "×Multiplicador Combo" },
+            { num: "2", text: "Enxame Contínuo", highlight: "Respawn Imediato", result: "2 a 5 alvos ativos" },
+            { num: "3", text: "Tiro Errado / Tempo Esgotado", highlight: "Penalidade", result: "Reset de Combo (-1s)" },
             { num: "4", text: "Progressão de Nível", highlight: "+1 Nivel / 2.100 PTS", result: "Mais Rápido & Menor" }
           ]
         }}

@@ -1,24 +1,22 @@
 import AntiZigzagClient from '@/app/drills/fps/anti-zigzag-movement-trainer/AntiZigzagClientLoader';
 import DrillGuide from '@/components/drill/DrillGuide';
 import DrillFooter from '@/components/drill/DrillFooter';
-import { pickSources } from '@/lib/drillSources';
 import { getAlternateLanguages } from '@/lib/i18n/locales';
 import RelatedDrills from '@/components/drill/RelatedDrills';
 
+const TITLE = "ジグザグ移動の敵に当てる練習｜トラッキング | SkillDrills";
+const DESCRIPTION = "ジグザグ移動の敵に当てるための無料トラッキング練習。不規則に向きを変えるターゲットに照準を重ねてHPを削り切ります。逃がすとコンボが切れ、レベルに上限はありません。マウスとポインターロックでブラウザから練習。";
+const NAME = "ジグザグ移動の敵に当てる練習";
+
 export const metadata = {
-  title: "エイム練習 | ジグザグ移動・トラッキング | SkillDrills",
-  description: "無料ブラウザのエイム練習で、ジグザグ移動やスライディングの切り返しを追い、照準の行き過ぎを測定します。",
+  title: TITLE,
+  description: DESCRIPTION,
   keywords: [
-    "エイム練習",
-    "エイム練習 ブラウザ",
-    "エイム練習 apex",
-    "エイム練習 valorant",
-    "ジグザグ移動",
-    "キャラコン",
-    "スライディングキャンセル",
-    "トラッキング エイム 練習",
-    "不規則移動 エイム",
-    "オーバーシュート 改善"
+    "ジグザグ移動の敵に当てる",
+    "ジグザグ移動 エイム",
+    "不規則な動き 追従",
+    "切り返し トラッキング",
+    "リアクティブ トラッキング"
   ],
   alternates: {
     canonical: "https://skilldrills.online/ja/drills/fps/anti-zigzag-movement-trainer",
@@ -29,8 +27,8 @@ export const metadata = {
     follow: true,
   },
   openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
-    title: "エイム練習 | ジグザグ移動・トラッキング | SkillDrills",
-    description: "無料ブラウザのエイム練習で、ジグザグ移動やスライディングの切り返しを追い、照準の行き過ぎを測定します。",
+    title: TITLE,
+    description: DESCRIPTION,
     url: "https://skilldrills.online/ja/drills/fps/anti-zigzag-movement-trainer",
     siteName: 'SkillDrills',
     locale: 'ja_JP',
@@ -38,8 +36,8 @@ export const metadata = {
   },
   twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: 'summary_large_image',
-    title: "エイム練習 | ジグザグ移動・トラッキング | SkillDrills",
-    description: "無料ブラウザのエイム練習で、ジグザグ移動やスライディングの切り返しを追い、照準の行き過ぎを測定します。",
+    title: TITLE,
+    description: DESCRIPTION,
   },
 };
 
@@ -50,20 +48,20 @@ export default function AntiZigzagJaPage() {
     "itemListElement": [
       { "@type": "ListItem", "position": 1, "name": "SkillDrills", "item": "https://skilldrills.online/ja" },
       { "@type": "ListItem", "position": 2, "name": "FPSエイム練習", "item": "https://skilldrills.online/ja/drills/fps" },
-      { "@type": "ListItem", "position": 3, "name": "エイム練習 - ジグザグ移動", "item": "https://skilldrills.online/ja/drills/fps/anti-zigzag-movement-trainer" }
+      { "@type": "ListItem", "position": 3, "name": NAME, "item": "https://skilldrills.online/ja/drills/fps/anti-zigzag-movement-trainer" }
     ]
   };
 
   const softwareSchema = {
     "@context": "https://schema.org",
-    "@type": "SoftwareApplication", "sameAs": ["https://en.wikipedia.org/wiki/Smooth_pursuit"],
-    "name": "エイム練習 - ジグザグ移動",
+    "@type": "SoftwareApplication",
+    "name": NAME,
     "applicationCategory": "GameApplication",
     "operatingSystem": "Web Browser",
-    "dateModified": "2026-09-20",
-    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
-    "description": "急激なジグザグ方向転換やスライディング移動に照準を合わせ続ける無料ブラウザFPSリアクティブトラッキングドリル。",
-    "genre": "FPS Training / Anti-Zigzag",
+    "dateModified": "2026-11-09",
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "JPY" },
+    "description": "不規則に向きを変えるターゲットに照準を重ねて倒す、無料ブラウザのジグザグ移動トラッキング練習。",
+    "genre": "FPS Training / Reactive Tracking",
     "url": "https://skilldrills.online/ja/drills/fps/anti-zigzag-movement-trainer",
     "publisher": {
       "@type": "Organization",
@@ -75,117 +73,93 @@ export default function AntiZigzagJaPage() {
   const webAppSchema = {
     "@context": "https://schema.org",
     "@type": "WebApplication",
-    "name": "エイム練習 - ジグザグ移動",
+    "name": NAME,
     "url": "https://skilldrills.online/ja/drills/fps/anti-zigzag-movement-trainer",
     "applicationCategory": "GameApplication",
     "operatingSystem": "All",
-    "browserRequirements": "Requires JavaScript and HTML5 Canvas support",
+    "browserRequirements": "Requires JavaScript, HTML5 Canvas, a mouse and Pointer Lock support",
     "offers": {
       "@type": "Offer",
       "price": "0",
-      "priceCurrency": "USD"
+      "priceCurrency": "JPY"
     },
-    "description": "ブラウザで動作する無料ジグザグエイム練習。急激な斜め移動やスライディングキャンセルに対するトラッキング追従力を強化します。"
+    "description": "ブラウザで動く無料のトラッキング練習。ジグザグに向きを変えるターゲットを追いかけて倒します。"
   };
 
   const videoGameSchema = {
     "@context": "https://schema.org",
     "@type": "VideoGame",
-    "name": "エイム練習 - ジグザグ移動",
+    "name": NAME,
     "url": "https://skilldrills.online/ja/drills/fps/anti-zigzag-movement-trainer",
-    "description": "急激なジグザグ方向転換やスライディング移動に照準を合わせ続ける無料ブラウザFPSリアクティブトラッキングドリル。",
-    "dateModified": "2026-09-20",
+    "description": "不規則に向きを変えるターゲットに照準を重ねて倒す、無料ブラウザのジグザグ移動トラッキング練習。",
+    "dateModified": "2026-11-09",
     "gamePlatform": "Web Browser",
-    "genre": ["FPS Training", "Aim Trainer", "Reactive Tracking"],
+    "genre": ["FPS Training", "Reactive Tracking"],
     "playMode": "SinglePlayer",
     "applicationCategory": "Game",
     "operatingSystem": "Web Browser",
-    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "JPY" }
   };
 
   const faqSchema = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
-    "dateModified": "2026-09-20",
+    "dateModified": "2026-11-09",
     "mainEntity": [
       {
         "@type": "Question",
-        "name": "なぜFPSの対人戦で敵はジグザグに動くのですか？",
+        "name": "このジグザグ移動の練習はどう遊ぶのですか？",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "ジグザグ移動（スラロームやスライディング切り返し）は、照準の追従軸を破壊し、人間の反応遅延（約160〜220ms）を突いて弾を外させるためです。また、オンライン対戦特有のネットコード遅延により、急激な切り返し時にヒットボックスと描画モデルにズレが生じやすくなります。"
+          "text": "ターゲットが画面のランダムな位置に現れ、左右に走りながら上下にも少し揺れ、決まっていない間隔で向きを変えます。クリックは不要で、マウスで照準を重ねている間ターゲット上のHPバーが減ります。開始時の残り時間は45秒です。"
         }
       },
       {
         "@type": "Question",
-        "name": "ApexやWarzoneの激しいジグザグ移動にエイムを合わせるコツは？",
+        "name": "ターゲットはどうやって倒すのですか？",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "敵が移動の端（ピーク）に達した瞬間を無理に追うのではなく、中央の『V字交差ライン』に照準の軸を固定する意識を持ちます。敵は方向転換するために必ず中央を通過するため、余計な大振りのフリックを抑えてスムーズに追従できます。"
+          "text": "照準が重なっている間、HPが毎秒65ずつ減り、合計約1.5秒重ね続けると倒せます。倒すと25点×コンボ倍率のボーナスが入り、新しいターゲットが出現します。一度外れても削ったHPはそのまま残ります。"
         }
       },
       {
         "@type": "Question",
-        "name": "V字交差ライン（V-Crossover）トラッキングとは何ですか？",
+        "name": "スコアとコンボの仕組みは？",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "ジグザグ移動の軌道が描くV字の中央回廊にクロスヘアを配置する技術です。外側の頂点までマウスを振ると急停止時にオーバーシュートが起きますが、中央軸で待ち受けて速度を同調させると、最小限のマウス移動量で命中率を維持できます。"
+          "text": "ターゲットに重なっていると0.25秒ごとに10点×コンボ倍率×レベル補正が入り、残り時間が0.1秒増えます（上限60秒）。1秒連続で重ね続けるたびにコンボが1増え、倍率はコンボ50で最大3.0倍です。"
         }
       },
       {
         "@type": "Question",
-        "name": "スライディングキャンセルを多用する敵への対処法は？",
+        "name": "ターゲットが消えてしまうのはなぜ？",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "スライディングは横方向の加速と急激な視高低下（しゃがみ）が複合します。予測して下を撃ちすぎず、スライディングモーションの姿勢が確定した瞬間を見てから滑らかに胸元へ照準を微小下降させる練習が有効です。"
+          "text": "各ターゲットには寿命があり、レベル1では約4.2秒、レベルが上がると約1.8秒まで短くなります。その間に倒せないとターゲットが逃げてコンボが0になり、新しいターゲットが出ます。1秒以上外れた場合もコンボはリセットされます。"
         }
       },
       {
         "@type": "Question",
-        "name": "敵が急に切り返したとき、エイムが通り過ぎてしまう原因は？",
+        "name": "難易度はどう上がりますか？",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "過度な力み（デスグリップ）と予測撃ちが主な原因です。前腕の筋肉が過度に収縮していると、マウスの減速が効かずに目標を行き過ぎてしまいます（オーバーシュート）。脱力したグリップを維持することが重要です。"
+          "text": "1400点ごとにレベルが1上がり、上限はありません。レベルが上がるほどターゲットは小さく速くなり、向きを変える間隔も約1.2秒から短くなっていきます。"
         }
       },
       {
         "@type": "Question",
-        "name": "ジグザグ回避の追従に適したマウス感度（センシ）は？",
+        "name": "ジグザグ移動の敵に当てるコツは？",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "振り向き28cm〜42cm程度の中感度が最適です。近距離の急激な角度変化にマウスを持ち上げず追いつけ、かつ切り返し時の微細な照準ブレを抑える安定性を両立できます。"
+          "text": "向きが変わるたびに大きくフリックすると反対側へ行き過ぎます。ターゲットの中心を見て、切り返した直後に短く減速し、新しい方向の速さに合わせて重ね直しましょう。Apex Legends、VALORANT、Overwatch 2などで不規則な動きの敵を追い切れない人の反復練習に使えます。効果には個人差があります。"
         }
       },
       {
         "@type": "Question",
-        "name": "高リフレッシュレートモニター（144Hz/240Hz）はジグザグ追従に有利ですか？",
+        "name": "スマホやタッチ画面でも使えますか？",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "極めて有利です。60Hz（フレーム更新16.7ms）に対して240Hz（4.1ms）はモーションブラーを劇的に軽減し、敵が減速して切り返す瞬間を数フレーム早く視認できるため、脳の運動指令が格段に早くなります。"
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "オンライン対戦のラグ（ディレイ）とジグザグ移動の関係は？",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "クライアント補間（Interpolation）を行うネットコードでは、急激なベクトル反転時にサーバー判定とローカル画面の表示に一瞬の誤差が生じます。胴体中心を捉え続けることがヒットボックス認識の鍵となります。"
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "ドウェル（追従持続）精度を高めるにはどうすれば良いですか？",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "クロスヘアの点を見るのではなく、敵キャラクターのモデル中心（胸・腰）に視線を完全にロックし、視覚的な滑らかな追従運動（Smooth Pursuit）を脳の眼球運動中枢に任せることで持続精度が上がります。"
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "このドリルは近距離SMGやショットガン戦の勝率向上に役立ちますか？",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "はい。近距離の撃ち合いは画面上の目標角速度が最も高くなります。不規則なジグザグ移動に対してパニックを起こさず滑らかに追従する練習を重ねることで、至近距離での追従の安定に役立ちます。"
+          "text": "いいえ。ポインターロックでマウスの移動量を読むため、マウスが必要です。タッチ専用端末ではスタートボタンの代わりに案内が表示されます。プレイ中はEscキーで終了できます。"
         }
       }
     ]
@@ -194,120 +168,79 @@ export default function AntiZigzagJaPage() {
   const howToSchema = {
     "@context": "https://schema.org",
     "@type": "HowTo",
-    "name": "ジグザグ移動・スライディング追従エイムの練習手順",
-    "description": "不規則なジグザグステップやスライディング回避に照準を合わせ続けるステップバイステップ練習法。",
+    "name": "ジグザグ移動の敵に当てる練習の手順",
+    "description": "向きを変えるターゲットに照準を重ねて倒すトラッキング練習の手順。",
     "step": [
       {
         "@type": "HowToStep",
         "position": 1,
-        "name": "マウス感度を同期する",
-        "text": "感度セレクターでプレイ中のゲーム感度とFOVを合わせ、マッスルメモリーの定着に役立てます。",
-        "url": "https://skilldrills.online/ja/drills/fps/anti-zigzag-movement-trainer#step-1"
+        "name": "感度を合わせる",
+        "text": "ドリル一覧ページの共通マウス感度を普段の感覚に近づけます。"
       },
       {
         "@type": "HowToStep",
         "position": 2,
-        "name": "フルスクリーンとポインターロックを有効化",
-        "text": "開始ボタンを押して画面を最大化し、ポインターロックを有効にします。",
-        "url": "https://skilldrills.online/ja/drills/fps/anti-zigzag-movement-trainer#step-2"
+        "name": "スタート",
+        "text": "スタートを押すと全画面になり、カウントダウン後にポインターロックがかかります。"
       },
       {
         "@type": "HowToStep",
         "position": 3,
-        "name": "中央V字交差軸を意識して追従する",
-        "text": "ターゲットの極端な外側へフリックするのではなく、中央ラインを意識して滑らかに速度を合わせます。",
-        "url": "https://skilldrills.online/ja/drills/fps/anti-zigzag-movement-trainer#step-3"
+        "name": "重ね続ける",
+        "text": "向きを変えるターゲットに照準を重ね、HPバーを削ります。"
       },
       {
         "@type": "HowToStep",
         "position": 4,
-        "name": "連続追従でHPを削り切る",
-        "text": "ターゲットが消滅する制限時間内に照準を乗せ続け、コンボ倍率を獲得しながら次のレベルへ進みます。",
-        "url": "https://skilldrills.online/ja/drills/fps/anti-zigzag-movement-trainer#step-4"
+        "name": "寿命内に倒す",
+        "text": "ターゲットが逃げる前に倒してボーナスを取り、コンボをつなぎます。"
       }
     ]
   };
 
-  const copy = {
-    h1Keyword: "エイム練習",
-    h1Suffix: " - ジグザグ移動・トラッキング",
-    statScore: "スコア",
-    statTime: "残り時間",
-    statAccuracy: "トラッキング精度",
-    statBestScore: "自己ベスト",
-    startTitle: "エイム練習 - ジグザグ移動",
-    startSubtitle: "急激な切り返し反応 • スライディング追従 • エンドレス難易度",
-    getReady: "準備完了",
-    pausedTitle: "一時停止",
-    pausedSubtitle: "クリックして再開（マウスロックが再有効化されます）",
-    stageCaption: "不規則なジグザグステップやスライディング、ジャンプを行う敵に対して照準を吸い付かせ続けます。",
-    rulesTitle: "トレーニングルール & スコアリング",
-    rulesItems: [
-      { num: "1", text: "照準のアライメント", highlight: "+50 PTS (+0.4秒/秒)", result: "×コンボ倍率" },
-      { num: "2", text: "ターゲット撃破", highlight: "+25 ボーナスPTS", result: "HPリセット & 再出現" },
-      { num: "3", text: "レベル進行", highlight: "+1 レベル / 1400 PTS", result: "可変ジグザグ加速" },
-      { num: "4", text: "ターゲット喪失", highlight: "生存時間終了", result: "コンボリセット (-0.6秒)" }
-    ],
-    aboutTitle: "エイム練習とジグザグ移動について",
-  };
-
   const jaGuide = {
-    heading: "エイム練習とジグザグ移動・リアクティブトラッキングガイド",
+    heading: "ジグザグ移動の敵に当てる練習ガイド",
     intro: [
-      "エイム練習の中でもジグザグ移動対策は、スライディングの切り返しを追いながらレティクルを敵に保つ練習です。このドリルは不規則な方向反転と照準の行き過ぎを測定し、Apex・Warzoneのリアクティブトラッキングを安定させます。",
-      "回避運動に対して初級者が犯す最大の機械的エラーは、ターゲットが描く外側の折り返し頂点（Apex）を無理にフリックで追い越してしまう『オーバーフリック（過剰エイム）』です。敵がV字パターンでジグザグに動く際、進行方向の最外殻頂点で瞬間速度はゼロに減速し、直後に逆方向の中央回廊へ向けて急加速します。外側の極限を力任せに追跡すると深刻なオーバーシュートと拮抗筋の反発・硬直が発生します。トッププロは中央の『V字交差回廊アンカリング』を駆使し、視覚の焦点を中央軸に維持しながら、敵が照準を横切るタイミングに合わせて速度同調型の滑らかな微調整を実行します。",
-      "Anti-Zigzag Aim Trainer（アンチジグザグ・エイムトレーナー）は、HTML5 Pointer Lock APIによる相対移動量の取得とperformance.now()高精度クロノメトリーのもとで動作します。USBポーリングジッターを抑制し（Woods et al., 2015）、段階的に周波数が上昇するジグザグ運動に対して連続滞留時間（Dwell Time）判定を行うことで、パニックフリックを抑制し、高難度の回避銃撃戦を制するための純粋な感覚運動抑制能力を鍛え上げます。",
-      "測定方法とハードウェア遅延について：すべてのトラッキングイベントはブラウザのperformance.now()高解像度クロックによって端末内でのみタイムスタンプされ、外部サーバーへのスコア送信は一切行われません。ブラウザタイマーはSpectre緩和策により約1ms単位に丸められており、ディスプレイはリフレッシュレートに応じて視覚変化を量子化します（60Hzで約16.7ms、144Hzで6.9ms、240Hzで4.1ms、Woods et al., 2015）。マウスのポーリングレートは125Hzで約8ms、1000Hzで約1msの遅延を加えます。そのため5ms未満の差異は測定ノイズとして扱い、他者の環境と比較するのではなく、同一ハードウェア環境での自己記録の推移を追跡してください。"
+      "SkillDrillsのこのドリルは、ジグザグ移動の敵に当てるためのトラッキング練習です。不規則に向きを変えるターゲットに照準を重ね、HPバーを削り切って倒します。クリックは不要で、重ねている時間がそのままダメージになります。",
+      "ターゲットはランダムな位置に現れ、左右に走りながら上下にも揺れ、壁に当たると跳ね返ります。向きを変える間隔はレベル1で約1.2秒、レベルが上がるほど短くなります。ターゲットごとに寿命があり、長く外すと逃げられます。",
+      "セッションは45秒から始まり、重ねている間は1秒あたり0.4秒ずつ延びます（上限60秒）。スコアとレベルに上限はありません。"
     ],
-    benchmarks: {
-      title: "ジグザグ切り返し反応・トラッキング遅延段階",
-      headers: ["追従フェーズ / 運動制御段階", "標準的な所要時間", "神経伝達経路と生体力学", "実戦における影響"],
-      rows: [
-        ["斜めベクトル反転の視覚検知", "160 – 210 ms", "網膜受容体から一次視覚野（V1）および有線外MT野（運動視中枢）への情報到達", "敵が切り返しを開始したことを脳が認識するまでの絶対遅延"],
-        ["前腕筋群の制動と逆方向出力", "85 – 135 ms", "皮質脊髄路から前腕屈筋・手内筋への運動指令：マウス慣性の停止と反転", "マウスの勢いを止め、反対方向へ加速させ始める物理時間"],
-        ["中心視野への再捕捉（微小サッカード）", "65 – 105 ms", "照準の中心と敵モデルの誤差を埋める微調整跳躍眼球運動", "ヒットボックス内にクロスヘアを再接触させダメージを再開"],
-        ["完全な非予測切り返し再捕捉時間", "310 – 450 ms", "予期せぬジグザグステップから照準復帰までの合計時間", "通常プレイヤーで弾が外れてしまう無防備なタイムラグ"],
-        ["プロ・熟練者の予測同調捕捉", "215 – 295 ms", "中央交差軸での減速予測とリラックスした手首制御による早期同期", "追従の維持率を重点的に練習する段階"]
-      ],
-      note: "眼球運動研究（Rashbass, 1961; Krauzlis, 2004）および運動制御法則（Fitts, 1954; Accot & Zhai, 1997; Woods et al., 2015）を基に算出。個人のマウス設定やモニター性能により変動します。"
-    },
     techniques: {
-      title: "ジグザグ移動を捉え続ける実践的エイムテクニック",
+      title: "ジグザグ移動を追うコツ",
       items: [
         {
-          name: "V字交差回廊アンカリング（Center-Line Anchoring）",
-          desc: "敵が外側に切り返す限界点まで無理にクロスヘアを振り回さず、移動の中心軸付近に照準の意識を留めます。",
-          tips: "敵が中心軸へ戻ってくる瞬間に照準の速度を合わせることで、大振りのブレをゼロにできます。"
+          name: "切り返しでフリックしすぎない",
+          desc: "向きが変わった瞬間に大きく振ると反対側へ行き過ぎ、HPを削る時間を失います。",
+          tips: "切り返した直後に短く減速し、新しい方向の速さに合わせて重ね直してください。"
         },
         {
-          name: "前腕の脱力と手首のダンピング（リラックスグリップ）",
-          desc: "切り返しに対応しようとしてマウスを強く握りしめると（力み）、拮抗筋が反発してマウスがガクガクと震えます。",
-          tips: "指先と手首の力を抜き、マウスが滑らかに滑る感触を保つことで急激な方向転換にも吸い付くように対応できます。"
+          name: "軌跡を見る",
+          desc: "ターゲットの後ろに直近の移動経路が短い線で描かれます。",
+          tips: "線の向きで、今どちらへ動いているかを確認しましょう。"
         },
         {
-          name: "モデル中心への視覚固定（Target-Centric Focus）",
-          desc: "クロスヘアのドットを見つめるのではなく、敵モデルの胸部や腰に視線を強く固定します。",
-          tips: "脳の運動視システムが目標の進行方向と速度変化を自動的に検出し、より正確な手の運動を誘発します。"
+          name: "倒し切りを優先",
+          desc: "寿命が切れるとコンボが消えるため、重ねる時間を集めて早めに倒すことが大切です。",
+          tips: "HPが半分以下になるとバーの色が変わります。最後まで外さないようにしましょう。"
         },
         {
-          name: "減速フレームとキャラの傾きの察知",
-          desc: "慣性物理が働くゲームでは、方向転換する直前にキャラクターの姿勢が傾き、瞬間的な減速フレームが存在します。",
-          tips: "切り返しの30〜50ms前に現れる傾きモーションを視覚的に捉える訓練を重ねましょう。"
+          name: "軽く握る",
+          desc: "力が入ると上下左右の細かい修正がカクつきます。",
+          tips: "指先と手首が自由に動く程度の力で握ってください。"
         }
       ]
     },
     steps: [
-      "ゲーム内感度セレクターで現在使用している感度を設定し、マッスルメモリーの定着に役立てます。",
-      "「ドリル開始」をクリックしてポインターロックを有効化します。",
-      "高速で斜めジグザグ移動を繰り返すターゲットの胴体中心に視線を固定します。",
-      "中央の交差軸を意識しながら、クロスヘアをターゲット内に維持し続けます。",
-      "消滅制限時間内にHPを削り切り、コンボ倍率を高めて次のレベルを目指します。"
+      "ドリル一覧ページで共通マウス感度を合わせます。",
+      "スタートを押して全画面とポインターロックを有効にします。",
+      "向きを変えるターゲットに照準を重ねてHPバーを削ります。",
+      "寿命内に倒して25点×コンボのボーナスを取り、次のターゲットへ進みます。",
+      "終了後、追従精度、最大コンボ、到達レベルを確認します。"
     ],
-    audience: "Apex Legends、Warzone、Overwatch 2、The Finals、CODMなどで近距離の激しいキャラコンやスライディング回避にエイムを外されがちなすべてのFPSプレイヤー。",
+    audience: "Apex Legends、VALORANT、Overwatch 2などでジグザグ移動の敵に当てられないプレイヤー、ブラウザで無料でトラッキングを練習したいPCゲーマー。",
     faqs: faqSchema.mainEntity.map(e => ({ q: e.name, a: e.acceptedAnswer.text })),
-    sources: pickSources('woods2015', 'krauzlis2004', 'fitts1954', 'green2003', 'rashbass1961', 'accotZhai1997'),
     related: [
-      { href: "/ja/drills/fps/anti-strafe-jitter-duel", label: "レレレ撃ち 練習 (ジッタートラッキング)" },
+      { href: "/ja/drills/fps/anti-strafe-jitter-duel", label: "レレレ撃ち対策" },
       { href: "/ja/drills/fps/flick-shot-training", label: "フリック エイム 練習" },
       { href: "/ja/drills/fps/180-degree-awareness", label: "180度 振り向き 練習" },
       { href: "/ja/drills/fps/instant-response", label: "FPS 反応速度 テスト" },
@@ -323,11 +256,11 @@ export default function AntiZigzagJaPage() {
       />
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(webAppSchema) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(softwareSchema) }}
       />
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(softwareSchema) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(webAppSchema) }}
       />
       <script
         type="application/ld+json"
@@ -341,7 +274,28 @@ export default function AntiZigzagJaPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(howToSchema) }}
       />
-      <AntiZigzagClient copy={copy} />
+      <AntiZigzagClient
+        copy={{
+          h1Keyword: "ジグザグ移動の敵に当てる練習",
+          h1Suffix: "｜トラッキング",
+          statScore: "スコア",
+          statTime: "残り時間",
+          statAccuracy: "追従精度",
+          statBestScore: "自己ベスト",
+          startTitle: NAME,
+          startSubtitle: "向きを変えるターゲットを追従 • エンドレスレベル",
+          getReady: "準備",
+          stageCaption: "不規則に向きを変えるターゲットに照準を重ね、HPバーを削ってください。クリックは不要です。",
+          rulesTitle: "ドリル手順 & スコアリング",
+          rulesItems: [
+            { num: "1", text: "ターゲットに重ねる", highlight: "0.25秒ごとに10点 (+0.1秒)", result: "×コンボ倍率" },
+            { num: "2", text: "ターゲット撃破", highlight: "25点 × コンボ ボーナス", result: "新ターゲット出現" },
+            { num: "3", text: "レベル進行", highlight: "+1 レベル / 1400点", result: "小さく速いターゲット" },
+            { num: "4", text: "寿命切れ / 1秒外れ", highlight: "ペナルティ", result: "コンボリセット" }
+          ],
+          aboutTitle: "ジグザグ移動トラッキングについて"
+        }}
+      />
       <DrillGuide guide={jaGuide} />
       <RelatedDrills />
       <DrillFooter />

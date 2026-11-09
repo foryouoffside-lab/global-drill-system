@@ -1,0 +1,23 @@
+key | en
+newBest | New Best
+gradeLegendary | Legendary
+gradeElite | Elite
+gradeExcellent | Excellent
+gradeGreat | Great
+gradeGood | Good
+gradeKeepGoing | Keep Going
+gradeNeedsPractice | Needs Practice
+resultAccuracy | Accuracy
+resultAvgReaction | Avg Reaction
+resultMaxCombo | Max Combo
+resultPeakLevel | Peak Level
+resultTrackingAccuracy | Tracking Accuracy
+resultOffTargetTime | Off-Target Time
+resultTargetsDestroyed | Targets Destroyed
+resultFocusBreaks | Focus Breaks
+resultAvgFlick | Avg Flick
+resultAvgCorrection | Avg Correction
+resultHeadshots | Headshots
+resultMaxLockStreak | Max Lock Streak
+resultSetsCleared | Sets Cleared
+resultThreatsCleared | Threats Cleared

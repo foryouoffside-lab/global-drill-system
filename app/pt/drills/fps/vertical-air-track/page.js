@@ -6,10 +6,10 @@ import { getAlternateLanguages } from '@/lib/i18n/locales';
 import { pickSources } from '@/lib/drillSources';
 
 export const metadata = {
-  title: 'Treino de Mira Vertical - Tracking Aéreo | SkillDrills',
-  description: 'Treine mira vertical e tracking aéreo no navegador. Pratique o eixo Y e a previsão de quedas no Apex Legends e Overwatch 2.',
+  title: 'Mira Vertical: Tracking Aéreo no FPS | SkillDrills',
+  description: 'Mira vertical no navegador, grátis: segure o clique em alvos aéreos que sobem e caem em parábola e treine tracking aéreo no eixo Y para Apex e Overwatch 2.',
   keywords: [
-    'treino de mira vertical',
+    'mira vertical',
     'mira vertical fps',
     'tracking aéreo FPS',
     'rastreamento aéreo',
@@ -19,7 +19,6 @@ export const metadata = {
     'mira vertical FPS',
     'treino de pontaria aérea',
     'smooth pursuit vertical',
-    'treino de mira Valorant',
     'sensibilidade vertical mouse',
     'treinador de mira grátis'
   ],
@@ -32,8 +31,8 @@ export const metadata = {
     follow: true,
   },
   openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
-    title: 'Treino de Mira Vertical - Tracking Aéreo | SkillDrills',
-    description: 'Treine mira vertical e tracking aéreo no navegador. Pratique o eixo Y e a previsão de quedas no Apex Legends e Overwatch 2.',
+    title: 'Mira Vertical: Tracking Aéreo no FPS | SkillDrills',
+    description: 'Mira vertical no navegador, grátis: segure o clique em alvos aéreos que sobem e caem em parábola e treine tracking aéreo no eixo Y para Apex e Overwatch 2.',
     url: 'https://skilldrills.online/pt/drills/fps/vertical-air-track',
     siteName: 'SkillDrills',
     locale: 'pt_BR',
@@ -41,8 +40,8 @@ export const metadata = {
   },
   twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: 'summary_large_image',
-    title: 'Treino de Mira Vertical - Tracking Aéreo | SkillDrills',
-    description: 'Treine mira vertical e tracking aéreo no navegador. Pratique o eixo Y e a previsão de quedas no Apex Legends e Overwatch 2.',
+    title: 'Mira Vertical: Tracking Aéreo no FPS | SkillDrills',
+    description: 'Mira vertical no navegador, grátis: segure o clique em alvos aéreos que sobem e caem em parábola e treine tracking aéreo no eixo Y para Apex e Overwatch 2.',
   },
 };
 
@@ -53,14 +52,14 @@ export default function VerticalAirTrackPtPage() {
     "itemListElement": [
       { "@type": "ListItem", "position": 1, "name": "SkillDrills", "item": "https://skilldrills.online/pt" },
       { "@type": "ListItem", "position": 2, "name": "Treinos FPS", "item": "https://skilldrills.online/pt/drills/fps" },
-      { "@type": "ListItem", "position": 3, "name": "Treino de Mira Vertical", "item": "https://skilldrills.online/pt/drills/fps/vertical-air-track" }
+      { "@type": "ListItem", "position": 3, "name": "Mira Vertical", "item": "https://skilldrills.online/pt/drills/fps/vertical-air-track" }
     ]
   };
 
   const softwareSchema = {
     "@context": "https://schema.org",
     "@type": "SoftwareApplication", "sameAs": ["https://en.wikipedia.org/wiki/Smooth_pursuit", "https://en.wikipedia.org/wiki/Hand%E2%80%93eye_coordination"],
-    "name": "Treino de Mira Vertical - Tracking Aéreo",
+    "name": "Mira Vertical - Tracking Aéreo",
     "applicationCategory": "GameApplication",
     "operatingSystem": "Any (Web Browser)",
     "offers": {
@@ -74,7 +73,7 @@ export default function VerticalAirTrackPtPage() {
   const webAppSchema = {
     "@context": "https://schema.org",
     "@type": "WebApplication",
-    "name": "Treino de Mira Vertical - Tracking Aéreo",
+    "name": "Mira Vertical - Tracking Aéreo",
     "url": "https://skilldrills.online/pt/drills/fps/vertical-air-track",
     "browserRequirements": "Requires Pointer Lock API and WebGL support",
     "applicationCategory": "ShooterTraining",
@@ -87,7 +86,7 @@ export default function VerticalAirTrackPtPage() {
   const videoGameSchema = {
     "@context": "https://schema.org",
     "@type": "VideoGame",
-    "name": "Treino de Mira Vertical - Tracking Aéreo",
+    "name": "Mira Vertical - Tracking Aéreo",
     "description": "Simulador de rastreamento de alvos em arco parabólico no ar para aprimorar precisão motora vertical e velocidade de resposta anti-aérea.",
     "genre": ["First-Person Shooter", "Aim Trainer", "Reaction Training"],
     "playMode": "SinglePlayer",
@@ -100,10 +99,10 @@ export default function VerticalAirTrackPtPage() {
     "mainEntity": [
       {
         "@type": "Question",
-        "name": "O que é o treino de mira vertical em jogos FPS?",
+        "name": "O que é treinar a mira vertical em jogos FPS?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "O treino de mira vertical isola o movimento do mouse no eixo Y (para cima e para baixo), um plano motor subtreinado em comparação ao eixo horizontal. É essencial para rastrear alvos voando, pulando ou caindo em jogos como Apex Legends e Overwatch 2."
+          "text": "Treinar a mira vertical isola o movimento do mouse no eixo Y (para cima e para baixo), um plano motor subtreinado em comparação ao eixo horizontal. É essencial para rastrear alvos voando, pulando ou caindo em jogos como Apex Legends e Overwatch 2."
         }
       },
       {
@@ -119,7 +118,7 @@ export default function VerticalAirTrackPtPage() {
         "name": "Como o treino vertical auxilia jogadores de Apex Legends?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Apex Legends apresenta intensa mobilidade vertical: jump pads do Octane, elevadores gravitacionais da Horizon, tirolesas e ganchos do Pathfinder. Treinar o eixo Y permite disparar rajadas completas sem perder o alinhamento da retícula."
+          "text": "Apex Legends apresenta intensa mobilidade vertical: jump pads do Octane, elevadores gravitacionais da Horizon, tirolesas e ganchos do Pathfinder. Este exercício isola o acompanhamento dessas trajetórias no eixo Y para repetir à parte."
         }
       },
       {
@@ -127,7 +126,7 @@ export default function VerticalAirTrackPtPage() {
         "name": "O que é um 'elevator peek' e como puni-lo?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "O elevator peek ocorre quando o adversário aproveita cordas, tirolesas ou desníveis de terreno para surgir de repente acima da sua mira. Este exercício treina a puxada rápida para cima e a sustentação do rastreamento na cabeça do inimigo."
+          "text": "O elevator peek ocorre quando o adversário aproveita cordas, tirolesas ou desníveis de terreno para surgir de repente acima da sua mira. Este exercício treina seguir alvos que surgem da parte de baixo da tela e mudam de altura de repente."
         }
       },
       {
@@ -143,7 +142,7 @@ export default function VerticalAirTrackPtPage() {
         "name": "Como jogadores de Overwatch 2 treinam contra heróis aéreos?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Praticam perseguição vertical contra heróis como Pharah, Echo e Mercy, além de mergulhos rápidos de Winston ou Doomfist, desenvolvendo igualação de velocidade contínua no eixo Y."
+          "text": "Praticam perseguição vertical contra heróis como Pharah, Echo e Mercy, além de mergulhos rápidos de Winston ou Doomfist, igualando a velocidade no eixo Y. Este exercício reproduz esse tipo de tracking vertical, não as hitboxes nem os movimentos exatos do jogo."
         }
       },
       {
@@ -151,7 +150,7 @@ export default function VerticalAirTrackPtPage() {
         "name": "O treino vertical tem impacto em Halo Infinite?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Sim, Halo Infinite utiliza man cannons, ganchos (grappleshot) e saltos com propulsores. O treino vertical ajuda a praticar o acerto de rajadas completas de Battle Rifle em Spartans no ar."
+          "text": "Sim, Halo Infinite utiliza man cannons, ganchos (grappleshot) e saltos com propulsores. O exercício treina o tracking vertical de um alvo no ar; funciona com o clique segurado e não reproduz as rajadas do Battle Rifle."
         }
       },
       {
@@ -159,7 +158,7 @@ export default function VerticalAirTrackPtPage() {
         "name": "Como os erros são penalizados no Vertical Air-Track?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Perder o contato de rastreamento zera o multiplicador de combo ativo. Se a penalidade de tempo opcional estiver ativada, deixar um alvo atingir o chão sem destruí-lo desconta 0,6s do cronômetro."
+          "text": "Enquanto você segura o clique esquerdo com a mira dentro do alvo, ele perde vida (100); em 0, é destruído. Cada destruição vale 100 pontos mais bônus de altura (+25/+50/+75 acima de 25 %/50 %/75 % da altura da tela), multiplicados por combo e nível, e soma 2 s ao tempo (máx. 60 s). O tempo começa em 45 s. Se um alvo sair pela parte de baixo da tela, o combo zera e você perde 1 s (com a opção Timeout desligada, ele quica de volta). Sair do alvo por um instante não quebra o combo, mas reduz a taxa de tracking. A cada 1.400 pontos o nível sobe: mais gravidade e esquivas, alvos menores e, a partir do nível 5, dois alvos ao mesmo tempo."
         }
       },
       {
@@ -167,15 +166,15 @@ export default function VerticalAirTrackPtPage() {
         "name": "Qual é a frequência semanal recomendada para treinos verticais?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Sessões de 10 a 15 minutos, 3 a 4 vezes por semana, aumentam a resistência dos extensores do pulso e eliminam tremuras durante combates com desníveis acentuados."
+          "text": "Não há número mágico; sessões de 10 a 15 minutos, 3 a 4 vezes por semana, são um bom ritmo. Acompanhe a taxa de tracking e o nível atingido no mesmo equipamento."
         }
       },
       {
         "@type": "Question",
-        "name": "Este treinador de mira vertical é gratuito?",
+        "name": "Este exercício de mira vertical é gratuito?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Sim, é 100% gratuito e open-source, rodando diretamente no navegador com tecnologia Pointer Lock e suporte nativo a sensibilidade de jogos competitivos sem instalações."
+          "text": "Sim, é gratuito e roda no navegador do PC sem instalação nem conta. Exige mouse: ao começar, o cursor é travado (Pointer Lock), e Esc ou a perda da trava encerra a sessão. Aparelhos só de toque não são suportados."
         }
       }
     ]
@@ -190,7 +189,7 @@ export default function VerticalAirTrackPtPage() {
         "@type": "HowToStep",
         "position": 1,
         "name": "Ajustar Sensibilidade e Travar o Cursor",
-        "text": "Defina o DPI e a sensibilidade idênticos aos do seu jogo principal e trave o ponteiro do mouse."
+        "text": "Ajuste a sensibilidade global na página /drills (1,00x = 30 cm/360) e clique em Iniciar para travar o cursor."
       },
       {
         "@type": "HowToStep",
@@ -214,31 +213,31 @@ export default function VerticalAirTrackPtPage() {
         "@type": "HowToStep",
         "position": 5,
         "name": "Sustentar o Combo e Destruir Alvos",
-        "text": "Mantenha o rastreamento ininterrupto para somar bônus de altura (+75) e atingir níveis com alvos mais velozes."
+        "text": "Destrua os alvos no alto da tela para o bônus de altura (até +75) e antes que saiam pela parte de baixo."
       }
     ]
   };
 
   const verticalAirTrackGuide = {
-    heading: "Treino de Mira Vertical: tracking aéreo e eixo Y",
+    heading: "Mira Vertical: tracking aéreo e eixo Y",
     intro: [
-      "Para quem busca treino de mira vertical, este drill mede o tempo e a precisão para acompanhar alvos aéreos no eixo Y. Você pratica tracking suave, previsão de quedas parabólicas e controle de mouse vertical para Apex Legends e Overwatch 2 em uma sessão no navegador.",
-      "A neurobiologia do rastreamento de perseguição vertical difere fundamentalmente do plano horizontal. Richard J. Krauzlis (2004) demonstrou que a perseguição suave (smooth pursuit) vertical recruta circuitos específicos no vermis cerebelar e no tronco encefálico, apresentando maior vulnerabilidade ao tremor motor devido à assimetria biomecânica da musculatura do membro superior. Cyril Rashbass (1961) comprovou que a perseguição contínua é impulsionada pelo erro de velocidade retiniana (retinal slip) e não por mero erro de posição estática, demandando correspondência contínua de velocidade angular.",
-      "Rastrear entidades em suspensão aérea exige internalizar a física da aceleração gravitacional (g = 9,81 m/s²). Conforme documentado por Peter R. Cavanagh et al. (1984) e Michael F. Land & Peter McLeod (2000), o sistema motor visual humano antecipa a desaceleração parabólica no ápice do salto e a aceleração brusca durante a trajetória de descida. Jogadores que não antecipam essa curvatura de velocidade perdem o alvo repetidamente em momentos de queda livre.",
-      "Ao eliminar apoios em movimentos horizontais e isolar com rigor a movimentação pura do eixo Y com o auxílio da cronometria digital de alta resolução performance.now() (Woods et al., 2015), este exercício preenche a lacuna entre a memória muscular bidimensional e o domínio pleno do combate tridimensional em 360 graus.",
+      "Este exercício grátis de mira vertical roda no navegador: alvos aéreos são lançados da parte de baixo da tela, se esquivam no ar (saltos, dashes laterais, mergulhos) e caem pela gravidade. Você segura o clique esquerdo e acompanha o alvo no eixo Y até destruí-lo. A precisão é a parte do tempo de disparo em que a mira está sobre um alvo. Um aquecimento de tracking aéreo para Apex Legends e Overwatch 2.",
+      "A neurobiologia do rastreamento de perseguição vertical difere fundamentalmente do plano horizontal. Krauzlis (2004) relata que a perseguição suave (smooth pursuit) é precisa até cerca de 30°/s, e Rashbass (1961) comprovou que a perseguição contínua é impulsionada pelo erro de velocidade retiniana (retinal slip) e não por mero erro de posição estática, demandando correspondência contínua de velocidade angular.",
+      "Rastrear entidades em suspensão aérea exige internalizar a física da aceleração gravitacional (g = 9,81 m/s²). Land & McLeod (2000) mostram que interceptadores experientes preveem onde o alvo vai estar em vez de persegui-lo, e antecipam a desaceleração parabólica no ápice do salto e a aceleração brusca durante a trajetória de descida. Jogadores que não antecipam essa curvatura de velocidade perdem o alvo repetidamente em momentos de queda livre.",
+      "Os alvos também têm velocidade lateral e dashes, mas o essencial do movimento é no eixo Y: subida, ápice e queda. Se você treina mais tracking horizontal, este exercício cobre a parte vertical.",
       "Como medimos o desempenho e latência de hardware: cada evento e alteração de trajetória é registrado em tempo real pelo relógio de alta resolução performance.now() do navegador, funcionando exclusivamente de forma local no seu computador — nenhum dado é enviado para servidores externos. Duas limitações físicas do ambiente web: temporizadores de navegadores sofrem quantização deliberada contra brechas Spectre (tipicamente em torno de 1 ms) e o monitor projeta quadros de acordo com sua taxa de atualização — cerca de 16,7 ms por quadro a 60 Hz, 6,9 ms a 144 Hz e 4,1 ms a 240 Hz (Woods et al., 2015). A taxa de varredura (polling rate) do mouse adiciona cerca de 8 ms a 125 Hz contra 1 ms a 1000 Hz. Diferenças menores que 5 ms constituem ruído de medição; analise sua evolução em um mesmo conjunto de periféricos."
     ],
     benchmarks: {
-      title: "Padrões de Referência: Rastreamento Vertical e Tempo de Contato no Ar",
-      headers: ["Nível Competitivo", "Tempo de Contato Útil", "Latência de Inversão", "Impacto em Partida Real"],
+      title: "Faixas de treino SkillDrills: taxa de tracking",
+      headers: ["Faixa", "Taxa de tracking", "Perfil típico"],
       rows: [
-        ["Tier 1 (Faixa Avançada)", "> 82% Uptime", "Abaixo de 180 ms", "Rastreamento laser em alvos em tirolesas e voo; transição perfeita no ápice da parábola"],
-        ["Tier 2 (Faixa Intermediária-Alta)", "70% – 82% Uptime", "180 – 230 ms", "Rastreamento constante; pequenas correções atrasadas quando o alvo inverte de direção"],
-        ["Tier 3 (Diamante / Avançado)", "58% – 70% Uptime", "230 – 290 ms", "Bom controle na subida; perde o alvo com frequência na aceleração da queda livre"],
-        ["Tier 4 (Platina / Ouro / Intermediário)", "45% – 58% Uptime", "290 – 360 ms", "Recorre a micro-flicks espasmódicos em vez de movimento suave contínuo no eixo Y"],
-        ["Tier 5 (Prata / Bronze / Iniciante)", "< 45% Uptime", "Acima de 360 ms", "Bloqueio do pulso; retícula fica para trás de qualquer alvo em queda livre acelerada"]
+        ["Faixa 1", "> 82 %", "Transição suave no ápice; as esquivas raramente tiram a mira do alvo"],
+        ["Faixa 2", "70 % – 82 %", "Tracking constante; pequenas hesitações depois de uma esquiva"],
+        ["Faixa 3", "58 % – 70 %", "Bom controle na subida; perde o alvo na queda acelerada"],
+        ["Faixa 4", "45 % – 58 %", "Micro-flicks espasmódicos em vez de movimento contínuo no eixo Y"],
+        ["Faixa 5", "< 45 %", "Pulso travado; a mira fica para trás dos alvos em queda"]
       ],
-      note: "O tempo de contato útil afere a porcentagem de permanência da mira dentro do raio do alvo durante o voo; a latência de inversão afere a resposta na mudança do ápice (Woods et al., 2015)."
+      note: "Taxa de tracking = parte do tempo com o clique segurado em que a mira está sobre um alvo. Faixas próprias do SkillDrills, não normas científicas, estatísticas de usuários nem ranks de jogos."
     },
     techniques: {
       title: "Protocolos Clínicos para Dominar a Mira Vertical",
@@ -266,13 +265,13 @@ export default function VerticalAirTrackPtPage() {
       ]
     },
     steps: [
-      "Sincronize o DPI e a sensibilidade idênticos aos do seu jogo favorito e bloqueie o cursor com um clique.",
+      "Ajuste a sensibilidade global na página /drills e clique em Iniciar para travar o cursor.",
       "Acompanhe o lançamento do alvo aéreo na tela e posicione o retículo no centro do círculo.",
       "Mantenha a mira alinhada durante a fase ascendente para acumular multiplicadores de combo.",
       "Equalize a desaceleração no topo da parábola para capitalizar no bônus de pontuação no ápice.",
-      "Acelere a puxada para baixo durante a descida livre até que o alvo seja completamente neutralizado."
+      "Acelere a puxada para baixo durante a queda e zere a vida do alvo antes que ele saia pela parte de baixo da tela."
     ],
-    audience: "Jogadores competitivos de Apex Legends, Overwatch 2, Halo e Destiny 2 que buscam dominar alvos aéreos, ganchos, saltos parabólicos e eliminar a assimetria no eixo Y.",
+    audience: "Jogadores competitivos de Apex Legends, Overwatch 2, Halo e Destiny 2 que querem treinar a mira vertical contra alvos aéreos no navegador.",
     faqs: faqSchema.mainEntity.map(e => ({ q: e.name, a: e.acceptedAnswer.text })),
     sources: pickSources('woods2015', 'krauzlis2004', 'rashbass1961', 'land2000'),
     related: [
@@ -295,8 +294,8 @@ export default function VerticalAirTrackPtPage() {
 
       <VerticalAirTrackClient
         copy={{
-          h1Keyword: "Treino de Mira Vertical",
-          h1Suffix: " - Tracking Aéreo FPS",
+          h1Keyword: "Mira Vertical",
+          h1Suffix: ": Tracking Aéreo no FPS",
           statScore: "Pontos",
           statTime: "Tempo",
           statAccuracy: "Precisão",
@@ -305,19 +304,19 @@ export default function VerticalAirTrackPtPage() {
           statMaxCombo: "Combo Máximo",
           statPeakLevel: "Nível Máximo",
           startTitle: "Vertical Air-Track",
-          startSubtitle: "Entrada Raw de Hardware • Progressão Dinâmica de Níveis",
+          startSubtitle: "Pointer Lock • Progressão Dinâmica de Níveis",
           startButtonText: "Iniciar Treino",
           playAgainText: "Jogar Novamente",
           shareText: "Compartilhar Pontuação",
           exitText: "Sair",
-          stageCaption: "Rastreie alvos em trajetórias parabólicas no eixo Y sob efeito gravitacional para máxima precisão vertical.",
+          stageCaption: "Mira vertical: segure o clique nos alvos aéreos até zerar a vida deles antes que saiam pela parte de baixo da tela.",
           rulesTitle: "Instruções do Exercício e Sistema de Pontos",
           aboutTitle: "Sobre o Treinador Vertical Air-Track",
           rulesItems: [
             {
               num: "1",
               text: "Rastrear Alvo Aéreo",
-              highlight: "+100 PTS / +0,4s ao destruir",
+              highlight: "+100 PTS / +2s ao destruir (máx. 60s)",
               result: "Acompanhe a curva parabólica de forma contínua"
             },
             {
@@ -329,14 +328,14 @@ export default function VerticalAirTrackPtPage() {
             {
               num: "3",
               text: "Regra de Penalidade",
-              highlight: "Reset de combo ao perder contato",
-              result: "Tocar o chão zera o combo (-0,6s se penalidade ativa)"
+              highlight: "Reset de combo / -1s",
+              result: "Quando um alvo sai pela parte de baixo (opção Timeout)"
             },
             {
               num: "4",
               text: "Progressão de Nivel",
               highlight: "A cada 1.400 PTS +1 Nível",
-              result: "Velocidade vertical e gravidade aumentam gradualmente"
+              result: "Mais gravidade e esquivas, alvos menores, 2 alvos a partir do nível 5"
             }
           ]
         }}

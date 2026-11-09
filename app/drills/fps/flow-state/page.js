@@ -330,12 +330,6 @@ export default function FlowStatePage() {
           h1Keyword: "Flow State Aim Trainer",
           h1Suffix: " — Focus & Tracking",
           startSubtitle: "Pointer Lock Mouse Input • Endless Level Progression",
-          rulesItems: [
-            { num: "1", text: "Tracking Alignment", highlight: "+10 PTS (+0.4s/s)", result: "Keep Locked on Target" },
-            { num: "2", text: "Flow Multiplier", highlight: "Up to 3.0× Points", result: "Continuous Focus Chain" },
-            { num: "3", text: "Level Progression", highlight: "+1 Level / 1400 PTS", result: "Adaptive Bezier Speed" },
-            { num: "4", text: "Focus Break Rule", highlight: "1.0s Off-Target", result: "Resets Combo (-0.6s)" }
-          ]
         }}
       />
       <DrillGuide guide={flowStateGuide} singleLineTitles />

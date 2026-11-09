@@ -130,7 +130,7 @@ export default function AntiStrafeJitterKoPage() {
         "name": "표적을 놓치면 어떻게 되나요?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "표적에서 1초 이상 벗어나면 콤보가 0으로 초기화됩니다. 드릴 설정에서 시간 페널티를 켠 경우에는 이때 0.6초가 추가로 차감됩니다. 기본값은 꺼져 있습니다."
+          "text": "표적에서 1초 이상 벗어나면 콤보가 0으로 초기화됩니다."
         }
       },
       {
@@ -296,7 +296,7 @@ export default function AntiStrafeJitterKoPage() {
             { num: "1", text: "표적 위 유지", highlight: "0.25초마다 10점 (+0.1초)", result: "콤보 배율 적용" },
             { num: "2", text: "1초 연속 유지", highlight: "콤보 +1", result: "최대 3.0배" },
             { num: "3", text: "레벨 상승", highlight: "+1 레벨 / 1400점", result: "더 작고 빠른 표적" },
-            { num: "4", text: "1초 이상 이탈", highlight: "콤보 초기화", result: "페널티 설정 시 -0.6초" }
+            { num: "4", text: "이탈 페널티", highlight: "1초 이상 이탈", result: "콤보 초기화" }
           ],
           aboutTitle: "트래킹 연습과 ADAD 무빙 대응",
           aboutHeading: "반응 트래킹이란 무엇인가요?"

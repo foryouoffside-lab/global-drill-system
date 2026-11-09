@@ -269,7 +269,7 @@ export default function RecoilControlPage() {
       { num: "1", text: "Tir à la Tête Précis", highlight: "+100 PTS (sans bonus de temps)", result: "×Multiplicateur de Combo" },
       { num: "2", text: "Tirs Poitrine & Membres", highlight: "+40 / +20 PTS", result: "Maintient la Série de Combo" },
       { num: "3", text: "Progression de Niveau", highlight: "+1 Niveau / 1400 PTS", result: "Accélère Vitesse & Recul" },
-      { num: "4", text: "Discipline de Chargeur", highlight: "<40% Pénalité", result: "Réinitialise le Combo (-0,6s si pénalité activée)" }
+      { num: "4", text: "Tir Manqué / Discipline de Chargeur", highlight: "<40% Pénalité", result: "Réinitialise le Combo" }
     ],
     aboutTitle: "À propos du Contrôle du Recul et du Spray",
     aboutHeading: "Qu'est-ce que le Contrôle du Recul (Recoil) ?",

@@ -115,7 +115,7 @@ const RULES_ITEMS = [
   { num: "1", text: "Target Hit", highlight: "+100 PTS (+2.0s)", result: "×Combo Mult" },
   { num: "2", text: "Combo Streak", highlight: "Up to 3.0×", result: "Faster Targets" },
   { num: "3", text: "Level Up", highlight: "+1 / 1800 PTS", result: "Adaptive Scaling" },
-  { num: "4", text: "Miss / Timeout", highlight: "Penalty", result: "Resets Combo (-0.8s)" }
+  { num: "4", text: "Miss / Timeout", highlight: "Penalty", result: "Resets Combo (-1s)" }
 ];
 
 const ABOUT_INTRO = [
@@ -126,7 +126,7 @@ const ABOUT_INTRO = [
 const ABOUT_CARDS = [
   { icon: Users, iconBg: 'bg-blue-600', title: "Who Should Use This?", text: "CS2, Valorant, and Apex Legends players sharpening off-angle duels, plus any FPS player chasing first-shot accuracy without hardware acceleration." },
   { icon: TrendingUp, iconBg: 'bg-emerald-600', title: "Skills Improved", text: "Macro flicking, stopping deceleration, muscle memory, and first-shot accuracy under pressure." },
-  { icon: Zap, iconBg: 'bg-purple-600', title: "Heat & Difficulty", text: "Targets shrink and speed up across 15 levels, plus a live combo 'heat' system that tightens further the longer your streak runs." },
+  { icon: Zap, iconBg: 'bg-purple-600', title: "Heat & Difficulty", text: "Targets shrink and speed up as your level climbs, with no level cap, plus a live combo 'heat' system that tightens further the longer your streak runs." },
 ];
 
 const ABOUT_SECTIONS = [
@@ -157,7 +157,7 @@ const ABOUT_SECTIONS = [
 const FAQ_ITEMS = [
   { q: "What is flick aim?", a: "Flick aim is the mechanical ability to quickly snap your crosshair to a target outside of your immediate focus area using a single, swift mouse movement." },
   { q: "How do I improve flick aim?", a: "Improve flick aim by practicing raw input drills that penalize misses and reward speed, forcing you to map the physical mousepad space to your monitor accurately." },
-  { q: "What is a good flick accuracy?", a: "A good baseline flick accuracy is around 70%. Advanced players aim for 80%+, while professional esports players maintain 90%+ precision during high-speed target acquisition." },
+  { q: "What is a good flick accuracy?", a: "There is no published standard for flick accuracy, and it depends on target size and speed. Compare your own accuracy here across sessions: holding it steady while your level climbs is a better sign of progress than any single number." },
   { q: "Does flick training help Valorant?", a: "Yes, Valorant heavily relies on crosshair placement and first-shot accuracy. Flick training improves your ability to react and snap to off-angle enemies instantly." },
   { q: "Does flick training help CS2?", a: "Absolutely. Counter-Strike requires immense micro and macro flicking, especially with AWPing or reacting to unexpected peekers." },
   { q: "Can flick aim be learned?", a: "Yes, flick aim is a physical motor skill. Through repetitive practice with zero hardware acceleration, you develop muscle memory that makes flicking subconscious." },
@@ -187,7 +187,7 @@ const RELATED_DRILLS = [
 // MAIN COMPONENT
 // ============================================================
 export default function ProFlickClient({ copy = null }) {
-  const { locale } = useTranslation();
+  const { locale, t } = useTranslation();
   const [gameState, setGameState] = useState('start'); // 'start' | 'countdown' | 'playing' | 'gameOver'
   const [isFullscreen, setIsFullscreen] = useState(false);
   const ensureNativeFullscreen = useImmersiveMode(isFullscreen); // locks the page behind while the drill fills the screen
@@ -938,10 +938,10 @@ export default function ProFlickClient({ copy = null }) {
               score={uiScore}
               isNewBest={isNewBest}
               stats={[
-                { value: analytics.accuracy, suffix: '%', label: copy?.statAccuracy || 'Accuracy' },
-                { value: analytics.avgFlickMs, suffix: 'ms', label: copy?.statAvgFlick || 'Avg Flick' },
-                { value: `${analytics.maxCombo}x`, label: copy?.statMaxCombo || 'Max Combo' },
-                { value: `Lv. ${analytics.finalLevel}`, label: copy?.statPeakLevel || 'Peak Level' },
+                { value: analytics.accuracy, suffix: '%', label: copy?.statAccuracy || t('ui.resultAccuracy', 'Accuracy') },
+                { value: analytics.avgFlickMs, suffix: 'ms', label: copy?.statAvgFlick || t('ui.resultAvgFlick', 'Avg Flick') },
+                { value: `${analytics.maxCombo}x`, label: copy?.statMaxCombo || t('ui.resultMaxCombo', 'Max Combo') },
+                { value: `Lv. ${analytics.finalLevel}`, label: copy?.statPeakLevel || t('ui.resultPeakLevel', 'Peak Level') },
               ]}
               onPlayAgain={enterDrill}
               onBeforeShare={() => setIsFullscreen(false)}

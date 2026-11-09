@@ -70,10 +70,10 @@ const getLevelConfig = (level, combo = 0) => {
 // ACCORDION DATA
 // ============================================================
 const RULES_ITEMS = [
-  { num: "1", text: "Tracking Alignment", highlight: "+10 PTS (+0.4s/s)", result: "Keep Locked on Target" },
+  { num: "1", text: "Tracking Alignment", highlight: "+10 PTS / 0.25s (+0.4s/s)", result: "Keep Locked on Target" },
   { num: "2", text: "Flow Multiplier", highlight: "Up to 3.0× Points", result: "Continuous Focus Chain" },
   { num: "3", text: "Level Progression", highlight: "+1 Level / 1400 PTS", result: "Adaptive Bezier Speed" },
-  { num: "4", text: "Focus Break Rule", highlight: "1.0s Off-Target", result: "Resets Combo (-0.6s)" }
+  { num: "4", text: "Focus Break Rule", highlight: "1.0s Off-Target", result: "Resets Combo" }
 ];
 
 const ABOUT_INTRO = [
@@ -117,7 +117,7 @@ const RELATED_DRILLS = [
 // MAIN COMPONENT
 // ============================================================
 export default function FlowStateClient({ copy = null }) {
-  const { locale } = useTranslation();
+  const { locale, t } = useTranslation();
   const [gameState, setGameState] = useState('start');
   const [countdownValue, setCountdownValue] = useState(3);
   const [isFullscreen, setIsFullscreen] = useState(false);
@@ -825,10 +825,10 @@ export default function FlowStateClient({ copy = null }) {
               score={score}
               isNewBest={isNewBest}
               stats={[
-                { value: analytics.accuracy, suffix: "%", label: "Tracking Accuracy" },
-                { value: analytics.focusBreaks, label: "Focus Breaks" },
-                { value: `${analytics.bestCombo}x`, label: "Max Combo" },
-                { value: `Lv. ${analytics.levelReached}`, label: "Peak Level" },
+                { value: analytics.accuracy, suffix: "%", label: t('ui.resultTrackingAccuracy', 'Tracking Accuracy') },
+                { value: analytics.focusBreaks, label: t('ui.resultFocusBreaks', 'Focus Breaks') },
+                { value: `${analytics.bestCombo}x`, label: t('ui.resultMaxCombo', 'Max Combo') },
+                { value: `Lv. ${analytics.levelReached}`, label: t('ui.resultPeakLevel', 'Peak Level') },
               ]}
               onPlayAgain={enterDrill}
               onBeforeShare={() => setIsFullscreen(false)}

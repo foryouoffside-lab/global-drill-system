@@ -254,7 +254,7 @@ export default function RecoilControlKoPage() {
       { num: "1", text: "헤드샷 정밀 타격", highlight: "+100 PTS (시간 보너스 없음)", result: "×콤보 배율" },
       { num: "2", text: "가슴 및 팔다리 적중", highlight: "+40 / +20 PTS", result: "콤보 스트릭 유지" },
       { num: "3", text: "레벨 상승 메커니즘", highlight: "1400점당 +1 레벨", result: "속도 및 반동 증가" },
-      { num: "4", text: "탄창 사격 규율", highlight: "명중률 40% 미만 시", result: "콤보 초기화 (페널티 설정 시 -0.6초)" }
+      { num: "4", text: "탄창 사격 규율", highlight: "미스 / 명중률 40% 미만 시", result: "콤보 초기화" }
     ],
     aboutTitle: "반동 제어와 스프레이 컨트롤 정보",
     aboutIntro: [

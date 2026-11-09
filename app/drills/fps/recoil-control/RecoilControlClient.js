@@ -85,7 +85,7 @@ const RULES_ITEMS = [
   { num: "1", text: "Headshot Hit", highlight: "+100 PTS (No Time Bonus)", result: "×Combo Mult" },
   { num: "2", text: "Chest / Limb Hit", highlight: "+40 / +20 PTS", result: "Maintains Streak" },
   { num: "3", text: "Level Up", highlight: "+1 / 1400 PTS", result: "Adaptive Recoil" },
-  { num: "4", text: "Empty Mag / Miss", highlight: "Penalty", result: "Resets Combo (-0.6s)" }
+  { num: "4", text: "Miss / Mag Under 40% Hits", highlight: "Penalty", result: "Resets Combo" }
 ];
 
 const ABOUT_INTRO = [
@@ -121,7 +121,7 @@ const RELATED_DRILLS = [
 ];
 
 export default function RecoilControlClient({ copy = null }) {
-  const { locale } = useTranslation();
+  const { locale, t } = useTranslation();
   const [gameState, setGameState] = useState('start'); // 'start' | 'countdown' | 'playing' | 'gameOver'
   const [isFullscreen, setIsFullscreen] = useState(false);
   useImmersiveMode(isFullscreen); // locks the page behind while the drill fills the screen
@@ -960,10 +960,10 @@ export default function RecoilControlClient({ copy = null }) {
               score={uiScore}
               isNewBest={isNewBest}
               stats={[
-                { value: analytics.accuracy, suffix: "%", label: copy?.statAccuracy || "Accuracy" },
-                { value: analytics.headshots, label: copy?.statHeadshots || "Headshots" },
-                { value: `${analytics.maxCombo}x`, label: copy?.statMaxCombo || "Max Combo" },
-                { value: `Lv. ${analytics.finalLevel}`, label: copy?.statPeakLevel || "Peak Level" },
+                { value: analytics.accuracy, suffix: "%", label: copy?.statAccuracy || t('ui.resultAccuracy', 'Accuracy') },
+                { value: analytics.headshots, label: copy?.statHeadshots || t('ui.resultHeadshots', 'Headshots') },
+                { value: `${analytics.maxCombo}x`, label: copy?.statMaxCombo || t('ui.resultMaxCombo', 'Max Combo') },
+                { value: `Lv. ${analytics.finalLevel}`, label: copy?.statPeakLevel || t('ui.resultPeakLevel', 'Peak Level') },
               ]}
               playAgainText={copy?.playAgainText}
               shareText={copy?.shareText}

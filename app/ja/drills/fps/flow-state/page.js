@@ -7,7 +7,7 @@ import RelatedDrills from '@/components/drill/RelatedDrills';
 
 export const metadata = {
   title: "FPS 集中力トレーニング | フローエイム | SkillDrills",
-  description: "無料ブラウザでFPSの集中力とエイムのリズムを練習。難易度を調整し、追いエイムの安定と集中の持続を記録します。",
+  description: "FPS 集中力トレーニング：曲線で動くターゲットに照準を乗せ続ける無料ブラウザ追いエイムドリル。1秒以上外すとコンボが途切れ、スコアが上がるほど的が小さく速くなるフロー状態の練習です。",
   keywords: [
     "FPS 集中力 トレーニング",
     "ゲーム 集中力",
@@ -17,7 +17,7 @@ export const metadata = {
     "リズム エイム 練習",
     "Valorant 集中力 練習",
     "Apex 集中力 エイム",
-    "エイム練習 無料 ブラウザ",
+    "フロー状態 練習",
     "無心 エイム 練習"
   ],
   alternates: {
@@ -30,7 +30,7 @@ export const metadata = {
   },
   openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
     title: "FPS 集中力トレーニング | フローエイム | SkillDrills",
-    description: "雑念を減らしてエイムのリズムを保つ無料FPS集中力トレーニング。難易度を合わせ、追いエイムの持続力を確認できます。",
+    description: "FPS 集中力トレーニング：曲線で動くターゲットに照準を乗せ続ける無料ブラウザ追いエイムドリル。1秒以上外すとコンボが途切れ、スコアが上がるほど的が小さく速くなるフロー状態の練習です。",
     url: "https://skilldrills.online/ja/drills/fps/flow-state",
     siteName: 'SkillDrills',
     locale: 'ja_JP',
@@ -39,7 +39,7 @@ export const metadata = {
   twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: 'summary_large_image',
     title: "FPS 集中力トレーニング | フローエイム | SkillDrills",
-    description: "雑念を減らしてエイムのリズムを保つ無料FPS集中力トレーニング。難易度を合わせ、追いエイムの持続力を確認できます。",
+    description: "FPS 集中力トレーニング：曲線で動くターゲットに照準を乗せ続ける無料ブラウザ追いエイムドリル。1秒以上外すとコンボが途切れ、スコアが上がるほど的が小さく速くなるフロー状態の練習です。",
   },
 };
 
@@ -60,9 +60,9 @@ export default function FlowStateJaPage() {
     "name": "FPS 集中力トレーニング",
     "applicationCategory": "GameApplication",
     "operatingSystem": "Web Browser",
-    "dateModified": "2026-09-20",
+    "dateModified": "2026-11-09",
     "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
-    "description": "心理学的フロー理論に基づき集中力持続と滑らかなベジェ曲線トラッキングを鍛える無料ブラウザFPSエイムドリル。",
+    "description": "フロー理論から着想し、曲線軌道のターゲットを途切れずに追って集中の持続を練習する無料ブラウザFPSトラッキングドリル。",
     "genre": "FPS Training / Flow State",
     "url": "https://skilldrills.online/ja/drills/fps/flow-state",
     "publisher": {
@@ -85,7 +85,7 @@ export default function FlowStateJaPage() {
       "price": "0",
       "priceCurrency": "USD"
     },
-    "description": "ブラウザで動作する無料フロー状態エイム練習。集中力持続と滑らかな眼球追従運動を同時に強化します。"
+    "description": "ブラウザで動作する無料のフロー状態練習。曲線で動くターゲットを追い、集中の維持と滑らかなトラッキングを練習します。"
   };
 
   const videoGameSchema = {
@@ -93,8 +93,8 @@ export default function FlowStateJaPage() {
     "@type": "VideoGame",
     "name": "FPS 集中力トレーニング",
     "url": "https://skilldrills.online/ja/drills/fps/flow-state",
-    "description": "心理学的フロー理論に基づき集中力持続と滑らかなベジェ曲線トラッキングを鍛える無料ブラウザFPSエイムドリル。",
-    "dateModified": "2026-09-20",
+    "description": "フロー理論から着想し、曲線軌道のターゲットを途切れずに追って集中の持続を練習する無料ブラウザFPSトラッキングドリル。",
+    "dateModified": "2026-11-09",
     "gamePlatform": "Web Browser",
     "genre": ["FPS Training", "Aim Trainer", "Cognitive Focus"],
     "playMode": "SinglePlayer",
@@ -106,7 +106,7 @@ export default function FlowStateJaPage() {
   const faqSchema = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
-    "dateModified": "2026-09-20",
+    "dateModified": "2026-11-09",
     "mainEntity": [
       {
         "@type": "Question",
@@ -121,7 +121,7 @@ export default function FlowStateJaPage() {
         "name": "対戦ゲーム中に意図してフロー状態へ入るにはどうすれば良いですか？",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "明確な短期目標の設定（クロスヘアの乗せ続け）、即時で明確な視覚・音響フィードバック、外乱の排除、そして自身の腕前に適した挑戦度の調整が必要です。試合前に5〜10分間、難易度が滑らかに上昇する連続トラッキングドリルを行うことで脳の同調が整います。"
+          "text": "明確な短期目標の設定（クロスヘアの乗せ続け）、即時で明確な視覚・音響フィードバック、外乱の排除、そして自身の腕前に適した挑戦度の調整が必要です。試合前の短い連続トラッキングは手を温め注意を画面に集めるルーティンとして使えますが、フローに入れることを保証するものではありません。"
         }
       },
       {
@@ -137,7 +137,7 @@ export default function FlowStateJaPage() {
         "name": "フローに入るために必要な「挑戦とスキルのバランス」とは？",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "タスクが簡単すぎると退屈が生じ、難しすぎると不安や力みが生じます。フローチャンネルは、現在の実力を約5〜10%引き伸ばす難易度（成功率70〜80%程度）で最も安定して発生します。"
+          "text": "タスクが簡単すぎると退屈が生じ、難しすぎると不安や力みが生じます。チクセントミハイは、挑戦の水準とスキルが釣り合うときにフローが起こりやすいと説明しています。このドリルではスコアが上がるとレベルが上がり、的が小さく速くなります。コンボが続くと難易度もわずかに上がります。"
         }
       },
       {
@@ -145,7 +145,7 @@ export default function FlowStateJaPage() {
         "name": "なぜ連続した曲線トラッキングがフロー誘導に効果的なのですか？",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "フリック射撃は標的ごとに思考の休止が挟まりますが、連続的な曲線追従は網膜スリップと手の運動を途切れなく同期させ続ける必要があります（Krauzlis, 2004）。脳の注意帯域を100%占有するため、雑念が入り込む余地が自然に消滅します。"
+          "text": "フリック射撃は標的ごとに思考の休止が挟まりますが、連続的な曲線追従は網膜スリップと手の運動を途切れなく同期させ続ける必要があります（Krauzlis, 2004）。止まる瞬間がほとんどないため、注意をターゲットに置き続ける練習になります。"
         }
       },
       {
@@ -153,7 +153,7 @@ export default function FlowStateJaPage() {
         "name": "フロー状態の練習時間は1回どのくらいが適切ですか？",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "試合前の集中ウォーミングアップとしては5〜10分が最適です。集中持久力の養成を目的とする場合は、15分の集中ブロックの後に5分の休息を挟むルーティンが神経筋疲労を防ぎます。"
+          "text": "決まった正解はありません。試合前のウォーミングアップなら数回（5〜10分程度）で十分で、長く練習する場合は15分ほどで区切って休憩を挟むのが無難です。手が疲れたり精度が落ちたりしたら終えましょう。"
         }
       },
       {
@@ -161,7 +161,7 @@ export default function FlowStateJaPage() {
         "name": "eスポーツにおける「一時的前頭葉低下」のメリットは？",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "意識的なエゴの介入をなくすことで、マウス操作が直感的かつ最速の神経伝達速度で行われます。判断の迷いがゼロになり、ミリ秒単位の切り返しにも体が勝手に反応するようになります。"
+          "text": "この考え方はまだ仮説であり、eスポーツでの利点が直接証明されているわけではありません。ただ、反復で慣れた動作ほど意識的な確認が少なくて済むという点は、一般的な運動学習の経験と一致します。"
         }
       },
       {
@@ -169,7 +169,7 @@ export default function FlowStateJaPage() {
         "name": "精神的な疲労がエイムに悪影響を及ぼすメカニズムは？",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "長時間のプレイは前頭頭頂ネットワークの神経伝達物質を消耗させます（Posner & Petersen, 1990）。疲労が蓄積すると滑走性眼球運動が維持できず、粗い修正サッカードに置き換わるためエイムが急激にブレ始めます。"
+          "text": "長く集中し続けると、注意を一点に保つことが次第に難しくなります。すると的を滑らかに追えず、遅れて大きく修正する回数が増えてエイムがガタつきます。このドリルの集中途切れ回数とトラッキング精度でその変化を確認できます。"
         }
       },
       {
@@ -201,7 +201,7 @@ export default function FlowStateJaPage() {
         "@type": "HowToStep",
         "position": 1,
         "name": "マウス感度を調整する",
-        "text": "プレイ中のメインFPSゲームと同じ感度を設定し、マッスルメモリーの定着に役立てます。",
+        "text": "/drills ページの設定でマウス感度を一度合わせると、すべてのマウスドリルに適用されます。普段のゲームに近い感覚に合わせましょう。",
         "url": "https://skilldrills.online/ja/drills/fps/flow-state#step-1"
       },
       {
@@ -222,7 +222,7 @@ export default function FlowStateJaPage() {
         "@type": "HowToStep",
         "position": 4,
         "name": "集中チェーンを維持してゾーンに突入",
-        "text": "ターゲットから照準を外さず連続追従を維持し、フローメーターを満たして倍率ブーストを獲得します。",
+        "text": "1秒連続でターゲット内に留まるたびにコンボが1増え、スコア倍率は最大3.0倍まで上がります。1秒以上外れるとコンボがリセットされます。",
         "url": "https://skilldrills.online/ja/drills/fps/flow-state#step-4"
       }
     ]
@@ -230,7 +230,7 @@ export default function FlowStateJaPage() {
 
   const copy = {
     h1Keyword: "FPS 集中力トレーニング",
-    h1Suffix: " - フローエイムトレーナー",
+    h1Suffix: " - フロー状態の練習",
     statScore: "スコア",
     statTime: "残り時間",
     statAccuracy: "トラッキング精度",
@@ -243,10 +243,10 @@ export default function FlowStateJaPage() {
     stageCaption: "連続して出現・移動するベジェ曲線ターゲットに照準を合わせ続け、エイムのリズムを維持します。",
     rulesTitle: "トレーニングルール & スコアリング",
     rulesItems: [
-      { num: "1", text: "追従アライメント", highlight: "+10 PTS (+0.4秒/秒)", result: "クロスヘアをターゲットに維持" },
+      { num: "1", text: "追従アライメント", highlight: "+10 PTS / 0.25秒", result: "的の上にいる間は時間 +0.4秒/秒（最大60秒）" },
       { num: "2", text: "フロー倍率", highlight: "最大3.0×倍率", result: "連続集中チェーンを維持" },
       { num: "3", text: "レベル進行", highlight: "+1 レベル / 1400 PTS", result: "適応型ベジェ軌道が加速" },
-      { num: "4", text: "集中途切れペナルティ", highlight: "1.0秒ロスト", result: "コンボ初期化 (-0.6秒)" }
+      { num: "4", text: "集中途切れペナルティ", highlight: "1.0秒ロスト", result: "コンボ初期化" }
     ],
     aboutTitle: "フロー状態トレーニング・ゾーン誘導について",
   };
@@ -254,29 +254,29 @@ export default function FlowStateJaPage() {
   const jaGuide = {
     heading: "FPS集中力トレーニングとフロー状態ベンチマーク",
     intro: [
-      "FPSの集中力トレーニングは、標的を追いながら雑念を減らし、一定のエイムリズムを保つ練習です。このドリルは現在の実力に合わせて難易度を調整し、追いエイムの精度と集中の持続を記録します。フローを保証するのではなく、集中が崩れる地点を見つけて再現性を高める設計です。",
-      "Dietrich（2004）の一時的前頭葉低下仮説（Transient Hypofrontality）が説明するように、背外側前頭前野の過剰な自己監視が静まることで、大脳基底核と小脳が洗練されたエイム運動を完全に自動化します。FPSの撃ち合いにおいて、この状態は判断の躊躇をなくし、光のような超速マイクロ修正を可能にします。",
-      "本ツールは高精度ハードウェアクロノメトリ（performance.now()）と滑らかなベジェ曲線生成（Krauzlis, 2004; Posner & Petersen, 1990）を搭載し、インストール不要でブラウザから即座に最高峰のメンタル持久力を養成できます。",
+      "FPSの集中力トレーニングは、標的を追いながら雑念を減らし、一定のエイムリズムを保つ練習です。このドリルは45秒から始まり、的の上にいる間は残り時間が増え、スコアとコンボに応じて難易度が上がりながら、追いエイムの精度と集中の持続を記録します。フローを保証するのではなく、集中が崩れる地点を見つけて再現性を高める設計です。",
+      "Dietrich（2004）の一時的前頭葉低下仮説（Transient Hypofrontality）は、フロー中に自己監視が弱まる現象を説明しようとする仮説です。このドリルがその状態を作ると保証することはできませんが、途切れないトラッキングを繰り返し、集中が崩れるタイミングを確認するのに役立ちます。",
+      "ターゲットは2次ベジェ曲線に沿って動き、レベルが上がるほど半径が小さく、曲線が急になります。入力はポインターロックのマウスで、タッチ専用端末ではプレイできません。インストール不要でブラウザからすぐに始められます。",
       "測定精度およびハードウェア環境について: 本ドリルはブラウザの performance.now() API（ミリ秒未満の分解能）を用いてすべてのイベントをローカルで計測します。計測値は外部サーバーへ送信されず、お使いの端末内でのみ処理されます。ブラウザのタイマーはSpectre対策のため約1msに粗視化されており、ディスプレイのリフレッシュレート（60Hzで約16.7ms、144Hzで約6.9ms、240Hzで約4.1ms、Woods et al., 2015）やマウスのポーリングレート（125Hzで約8ms、1000Hzで約1ms）による量子化誤差が生じます。5ms未満の微細な差はハードウェアの測定ノイズとして扱い、他者のスコアとの単純比較ではなく、同一環境での自己記録推移の指標としてご活用ください。"
     ],
     benchmarks: {
       title: "フロー誘導段階と集中力持続ティア",
       headers: ["ティア", "フロー状態の次元", "生理的指標", "認知メカニズム", "実践目標"],
       rows: [
-        ["ティア1", "注意の覚醒と定位", "感覚ゲーティング・視線固定", "Posner覚醒ネットワークが外部環境刺激を遮断", "目標出現から200ms以内に即座の中心窩ロックを開始"],
+        ["ティア1", "注意の覚醒と定位", "感覚ゲーティング・視線固定", "Posner覚醒ネットワークが外部環境刺激を遮断", "トラッキング精度50%以上で1回完走"],
         ["ティア2", "挑戦とスキルの均衡", "動的スピード適応", "チクセントミハイ・チャンネル：能力に応じた目標速度", "退屈と不安を避け70〜80%の追従時間を維持"],
         ["ティア3", "中心窩追従の持続", "速度同調の連続性", "Krauzlis皮質線条体経路がサッカードを排除", "複雑なベジェ曲線上で85%以上の連続追従を達成"],
         ["ティア4", "一時的前頭葉低下", "背外側前頭前野の沈静化", "Dietrich仮説：無駄な自己監視が消え運動が自動化", "躊躇なく30秒以上の無我の集中チェーンを維持"],
-        ["ティア5", "極限の集中持久力", "精神的疲労への耐性", "実行ネットワーク持久力により反応劣化を防止", "最大コンボ倍率を維持しながら60秒以上のセッションを完遂"]
+        ["ティア5", "極限の集中持久力", "精神的疲労への耐性", "実行ネットワーク持久力により反応劣化を防止", "コンボ50に到達（最大3.0×倍率）"]
       ],
-      note: "フロー心理学（Csikszentmihalyi, 1975, 1990）、神経認知機構（Dietrich, 2004）、滑走運動神経学（Krauzlis, 2004）、注意ネットワーク理論（Posner & Petersen, 1990）に基づく指標。"
+      note: "目標値はSkillDrillsの練習目安であり、研究上の基準値やユーザーデータではありません。段階名はフロー心理学（Csikszentmihalyi, 1975, 1990）、Dietrich（2004）、Krauzlis（2004）、Posner & Petersen（1990）の概念を参考にしています。"
     },
     techniques: {
       title: "ゲーム中のフロー状態を誘導・維持する4大プロトコル",
       items: [
         {
           name: "接線方向への視線先読み（Tangent Gaze Leading）",
-          desc: "目標の中心を後追いするのではなく、曲線の瞬間速度ベクトルの2〜3度前方に視線を固定します（Krauzlis, 2004）。",
+          desc: "目標の中心を後追いするのではなく、曲線が向かう方向の少し先を見るようにします。",
           tips: "ターゲットの進行方向の空間を見る意識を持ち、周辺視覚で微調整を行います。"
         },
         {
@@ -286,8 +286,8 @@ export default function FlowStateJaPage() {
         },
         {
           name: "動的挑戦度の最適チューニング",
-          desc: "簡単すぎると退屈し、難しすぎると緊張します。追従精度が70〜80%に収まる難易度を保つことが心理的スイートスポットです（Csikszentmihalyi, 1990）。",
-          tips: "5秒以内に集中が切れてしまう場合は、20秒以上追従できる設定まで一旦戻しましょう。"
+          desc: "簡単すぎると退屈し、難しすぎると緊張します。SkillDrillsでは、トラッキング精度が70〜80%程度に収まる状態を練習の目安としておすすめしています。",
+          tips: "集中が頻繁に途切れる場合は、高いレベルを追うより先に精度を上げましょう。コンボが途切れると的は少し大きく遅くなります。"
         },
         {
           name: "前腕の微小緊張リセットとエルゴノミクス",
@@ -297,11 +297,11 @@ export default function FlowStateJaPage() {
       ]
     },
     steps: [
-      "ゲーム内感度セレクターで普段使用している感度を設定し、マッスルメモリーの定着に役立てます。",
+      "/drills ページの設定でマウス感度を一度合わせます。すべてのマウスドリルに同じ値が使われます。",
       "「ドリル開始」をクリックしてフルスクリーンのポインターロック状態に入ります。",
       "滑らかなベジェ曲線を描いて移動するターゲットの進行方向に視線を合わせます。",
-      "ターゲット内に照準を維持し続け、フローメーターを満たしてゾーン状態へ突入します。",
-      "途切れない集中チェーンを維持してスコア倍率を高め、疲れにくい強固な集中力を養います。"
+      "照準をターゲットの半径内に保ちます。1秒連続で追うごとにコンボが増え、1秒以上外れるとリセットされます。",
+      "コンボをつないでスコア倍率を高め、終了後は精度と集中途切れ回数を前回の記録と比べましょう。"
     ],
     audience: "Valorant、CS2、Apex Legends、Overwatch 2などの競技シューターで、試合終盤や連戦時に集中力が切れてエイムが崩れてしまうすべてのプレイヤー。",
     faqs: faqSchema.mainEntity.map(e => ({ q: e.name, a: e.acceptedAnswer.text })),
@@ -310,7 +310,7 @@ export default function FlowStateJaPage() {
       { href: "/ja/drills/fps/pro-smooth-pursuit", label: "スムーズ トラッキング 練習" },
       { href: "/ja/drills/fps/anti-zigzag-movement-trainer", label: "ジグザグ移動 練習 (スライディング追従)" },
       { href: "/ja/drills/fps/anti-strafe-jitter-duel", label: "レレレ撃ち 練習 (ジッタートラッキング)" },
-      { href: "/ja/drills/fps/instant-response", label: "FPS 反応速度 テスト" },
+      { href: "/ja/drills/fps/instant-response", label: "FPS 反応速度 測定" },
       { href: "/ja/drills/visual/reaction-speed/light-reaction", label: "反射神経テスト" }
     ]
   };

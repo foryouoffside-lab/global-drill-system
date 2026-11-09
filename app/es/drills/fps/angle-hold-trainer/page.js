@@ -123,7 +123,7 @@ export default function SpanishAngleHoldPage() {
         "name": "¿Cómo funciona este drill de colocación de mira?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Al empezar se activan la pantalla completa y el Pointer Lock, y el reloj arranca en 45 segundos. Los objetivos asoman por el borde izquierdo o derecho de la pared a una altura aleatoria y vuelven a esconderse. Cada impacto vale 100 puntos multiplicados por el combo y el nivel y suma 2 segundos (máximo 60). Cada 1400 puntos sube el nivel: los asomos duran menos y los objetivos son más pequeños, y en niveles altos aparecen asomos falsos naranjas. Fallar, disparar sin objetivo o disparar a un asomo falso reinicia el combo y resta 1 segundo si la penalización de tiempo está activada. La partida termina cuando el tiempo llega a 0."
+          "text": "Al empezar se activan la pantalla completa y el Pointer Lock, y el reloj arranca en 45 segundos. Los objetivos asoman por el borde izquierdo o derecho de la pared a una altura aleatoria y vuelven a esconderse. Cada impacto vale 100 puntos multiplicados por el combo y el nivel y suma 2 segundos (máximo 60). Cada 1400 puntos sube el nivel: los asomos duran menos y los objetivos son más pequeños, y en niveles altos aparecen asomos falsos naranjas. Fallar, disparar sin objetivo o disparar a un asomo falso reinicia el combo y resta 1 segundo. La partida termina cuando el tiempo llega a 0."
         }
       },
       {
@@ -314,7 +314,7 @@ export default function SpanishAngleHoldPage() {
       { num: "1", text: "Impacto en Objetivo", highlight: "+100 PTS (+2s, máx. 60s)", result: "×Multiplicador" },
       { num: "2", text: "Spawns en Esquinas", highlight: "Borde izquierdo/derecho de la pared", result: "Más breve y más pequeño" },
       { num: "3", text: "Progresión de Nivel", highlight: "+1 Nivel / 1400 PTS", result: "Escalado Adaptativo" },
-      { num: "4", text: "Fallo / Prefire / Asomo Falso", highlight: "Penalización", result: "Reinicio Combo (-1s con penalización de tiempo)" }
+      { num: "4", text: "Fallo / Prefire / Asomo Falso", highlight: "Penalización", result: "Reinicio Combo (-1s)" }
     ],
     aboutCards: [
       { iconBg: "bg-blue-600", title: "Recomendado para", text: "Defensores de zonas en Valorant, anclajes de CS2, jugadores de R6 Siege y quienes quieran dominar esquinas con disciplina." },

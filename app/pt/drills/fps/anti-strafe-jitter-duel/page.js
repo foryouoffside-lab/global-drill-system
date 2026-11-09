@@ -128,7 +128,7 @@ export default function AntiStrafeJitterPtPage() {
         "name": "O que acontece se eu perder o alvo?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Depois de mais de 1 segundo fora do alvo, o combo volta a 0. Se você ativou a penalidade de tempo nas configurações dos treinos, também perde 0,6 segundo. Ela vem desligada por padrão."
+          "text": "Depois de mais de 1 segundo fora do alvo, o combo volta a 0."
         }
       },
       {
@@ -294,7 +294,7 @@ export default function AntiStrafeJitterPtPage() {
             { num: "1", text: "Ficar no alvo", highlight: "10 pts / 0,25 s (+0,1 s)", result: "×Combo" },
             { num: "2", text: "Manter 1 s seguido", highlight: "Combo +1", result: "Até 3,0×" },
             { num: "3", text: "Progressão", highlight: "+1 nível / 1400 pts", result: "Menor e mais rápido" },
-            { num: "4", text: "Mais de 1 s fora", highlight: "Combo zera", result: "-0,6 s com penalidade" }
+            { num: "4", text: "Mais de 1 s fora", highlight: "Penalidade", result: "Combo zera" }
           ],
           aboutTitle: "Sobre o tracking contra strafe ADAD"
         }}

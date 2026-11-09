@@ -24,6 +24,7 @@ import DrillAccordion from '../../../../components/drill/DrillAccordion';
 import FpsStartCard from '../../../../components/drill/FpsStartCard';
 import DrillResultCard from '../../../../components/drill/DrillResultCard';
 import useImmersiveMode from '@/lib/useImmersiveMode';
+import { useTranslation } from '@/lib/i18n/useTranslation';
 import useUnexpectedExitGuard from '@/lib/useUnexpectedExitGuard';
 
 // ============================================================
@@ -92,12 +93,13 @@ const getLevelConfig = (level, combo = 0) => {
 // ============================================================
 const DEFAULT_RULES_ITEMS = [
   { num: "1", text: "Target Hit", highlight: "+100 PTS", result: "×Combo Mult" },
-  { num: "2", text: "Set Cleared", highlight: "+400 PTS × Level", result: "Cluster Spawn" },
+  { num: "2", text: "Set Cleared", highlight: "+400 PTS × Level Mult", result: "Cluster Spawn" },
   { num: "3", text: "Level Progression", highlight: "+1 Level / 1400 PTS", result: "Continuous Dynamic Scaling" },
-  { num: "4", text: "Wrong Target / Miss", highlight: "Penalty", result: "Resets Combo (-0.6s)" }
+  { num: "4", text: "Wrong Target / Miss", highlight: "Penalty", result: "Resets Combo" }
 ];
 
 export default function TargetAcquisitionClient({ copy = null }) {
+  const { t } = useTranslation();
   const [gameState, setGameState] = useState('start'); // 'start' | 'countdown' | 'playing' | 'gameOver'
   const [isFullscreen, setIsFullscreen] = useState(false);
   useImmersiveMode(isFullscreen); // locks the page behind while the drill fills the screen
@@ -892,10 +894,10 @@ export default function TargetAcquisitionClient({ copy = null }) {
               score={uiScore}
               isNewBest={isNewBest}
               stats={[
-                { value: analytics.accuracy, suffix: "%", label: copy?.statAccuracy || "Accuracy" },
-                { value: analytics.setsCleared, label: copy?.statSetsCleared || "Sets Cleared" },
-                { value: `${analytics.maxCombo}x`, label: copy?.statMaxCombo || "Max Combo" },
-                { value: `Lv. ${analytics.finalLevel}`, label: copy?.statPeakLevel || "Peak Level" },
+                { value: analytics.accuracy, suffix: "%", label: copy?.statAccuracy || t('ui.resultAccuracy', 'Accuracy') },
+                { value: analytics.setsCleared, label: copy?.statSetsCleared || t('ui.resultSetsCleared', 'Sets Cleared') },
+                { value: `${analytics.maxCombo}x`, label: copy?.statMaxCombo || t('ui.resultMaxCombo', 'Max Combo') },
+                { value: `Lv. ${analytics.finalLevel}`, label: copy?.statPeakLevel || t('ui.resultPeakLevel', 'Peak Level') },
               ]}
               onPlayAgain={enterDrill}
               onBeforeShare={() => setIsFullscreen(false)}

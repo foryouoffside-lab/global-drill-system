@@ -22,7 +22,7 @@ import { pickSources } from '@/lib/drillSources';
 
 export const metadata = {
   title: "수직 에임 연습 - 공중 트래킹 | SkillDrills",
-  description: "브라우저에서 무료로 수직 에임과 공중 타겟 트래킹을 훈련하세요. Y축 마우스 제어와 낙하 궤적 예측을 측정합니다.",
+  description: "브라우저에서 무료로 하는 수직 에임 연습. 아래에서 튀어 올라 포물선으로 떨어지는 공중 타겟을 좌클릭을 누른 채 따라가며 공중 트래킹과 Y축 마우스 제어를 훈련하세요.",
   keywords: [
     '수직 에임 연습',
     '수직 트래킹 에임',
@@ -31,7 +31,6 @@ export const metadata = {
     '공중 타겟 트래킹',
     'FPS 수직 에임',
     'Y축 에임',
-    '에임 연습 사이트',
     '에이펙스 수직 에임',
     '오버워치 공중 에임',
     '무료 에임 트레이너',
@@ -47,7 +46,7 @@ export const metadata = {
   },
   openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
     title: "수직 에임 연습 - 공중 트래킹 | SkillDrills",
-    description: "브라우저에서 무료로 수직 에임과 공중 타겟 트래킹을 훈련하세요. Y축 마우스 제어와 낙하 궤적 예측을 측정합니다.",
+    description: "브라우저에서 무료로 하는 수직 에임 연습. 아래에서 튀어 올라 포물선으로 떨어지는 공중 타겟을 좌클릭을 누른 채 따라가며 공중 트래킹과 Y축 마우스 제어를 훈련하세요.",
     url: "https://skilldrills.online/ko/drills/fps/vertical-air-track",
     siteName: 'SkillDrills',
     locale: 'ko_KR',
@@ -56,7 +55,7 @@ export const metadata = {
   twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: 'summary_large_image',
     title: "수직 에임 연습 - 공중 트래킹 | SkillDrills",
-    description: "브라우저에서 무료로 수직 에임과 공중 타겟 트래킹을 훈련하세요. Y축 마우스 제어와 낙하 궤적 예측을 측정합니다.",
+    description: "브라우저에서 무료로 하는 수직 에임 연습. 아래에서 튀어 올라 포물선으로 떨어지는 공중 타겟을 좌클릭을 누른 채 따라가며 공중 트래킹과 Y축 마우스 제어를 훈련하세요.",
   },
 };
 
@@ -77,7 +76,7 @@ export default function VerticalAirTrackPageKo() {
     "name": "수직 에임 연습 - 공중 트래킹",
     "applicationCategory": "GameApplication",
     "operatingSystem": "Web Browser",
-    "dateModified": "2026-09-20",
+    "dateModified": "2026-11-09",
     "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
     "description": "설치 없이 웹 브라우저에서 실행되는 무료 FPS 수직 트래킹 에임 연습 도구. 중력 가속도로 낙하하는 공중 타겟의 포물선 궤적 예측과 Y축 마우스 조작을 단련합니다.",
     "genre": "FPS Training / Vertical Tracking",
@@ -95,7 +94,7 @@ export default function VerticalAirTrackPageKo() {
     "name": "수직 에임 연습 - 공중 트래킹",
     "applicationCategory": "GameApplication",
     "operatingSystem": "Web Browser",
-    "dateModified": "2026-09-20",
+    "dateModified": "2026-11-09",
     "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
     "browserRequirements": "Pointer Lock API, JavaScript, HTML5 Canvas 지원 브라우저",
     "description": "설치 없이 웹 브라우저에서 실행되는 무료 FPS 수직 트래킹 에임 연습 도구. 중력 가속도로 낙하하는 공중 타겟의 포물선 궤적 예측과 Y축 마우스 조작을 단련합니다.",
@@ -108,7 +107,7 @@ export default function VerticalAirTrackPageKo() {
     "name": "수직 에임 연습 - 공중 트래킹",
     "url": "https://skilldrills.online/ko/drills/fps/vertical-air-track",
     "description": "설치 없이 웹 브라우저에서 실행되는 무료 FPS 수직 트래킹 에임 연습 도구. 중력 가속도로 낙하하는 공중 타겟의 포물선 궤적 예측과 Y축 마우스 조작을 단련합니다.",
-    "dateModified": "2026-09-20",
+    "dateModified": "2026-11-09",
     "gamePlatform": "Web Browser",
     "genre": ["FPS Training", "Aim Trainer", "Vertical Tracking"],
     "playMode": "SinglePlayer",
@@ -120,7 +119,7 @@ export default function VerticalAirTrackPageKo() {
   const faqSchema = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
-    "dateModified": "2026-09-20",
+    "dateModified": "2026-11-09",
     "mainEntity": [
       {
         "@type": "Question",
@@ -135,7 +134,7 @@ export default function VerticalAirTrackPageKo() {
         "name": "팝콘 트래킹이란 무엇이며, 이 드릴로 연습할 수 있나요?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "팝콘 트래킹은 팝콘이 튀어 오르듯 공중으로 높이 발사된 후 중력에 의해 포물선을 그리며 떨어지는 타겟을 매끄럽게 추적하는 기술입니다. 본 드릴은 중력 가속도 물리 엔진을 적용하여 공중 팝콘 궤적 추적을 정밀하게 훈련합니다."
+          "text": "팝콘 트래킹은 팝콘이 튀어 오르듯 공중으로 높이 발사된 후 중력에 의해 포물선을 그리며 떨어지는 타겟을 매끄럽게 추적하는 기술입니다. 이 드릴의 타겟도 화면 아래에서 발사되어 중력에 따라 포물선으로 떨어지므로 팝콘 트래킹 연습에 쓸 수 있습니다."
         }
       },
       {
@@ -143,7 +142,7 @@ export default function VerticalAirTrackPageKo() {
         "name": "에이펙스 레전드(Apex Legends)에서 수직 에임이 중요한 이유는 무엇인가요?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "에이펙스 레전드는 옥테인의 점프 패드, 호라이즌의 중력 리프트, 패스파인더의 그래플링 훅, 발키리의 제트팩 등 공중 입체 기동이 매우 빈번합니다. 수직 에임을 단련하면 공중으로 도주하거나 강습하는 적을 놓치지 않고 레이저 트래킹할 수 있습니다."
+          "text": "에이펙스 레전드는 옥테인의 점프 패드, 호라이즌의 중력 리프트, 패스파인더의 그래플링 훅, 발키리의 제트팩 등 공중 입체 기동이 매우 빈번합니다. 수직 에임 연습은 이런 공중 기동 중인 적을 따라가는 Y축 트래킹을 따로 반복하는 데 도움이 됩니다."
         }
       },
       {
@@ -167,7 +166,7 @@ export default function VerticalAirTrackPageKo() {
         "name": "오버워치 2(Overwatch 2) 대공 트래킹에 실질적인 도움이 되나요?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "매우 큰 도움이 됩니다. 공중에 체공하는 파라, 에코, 메르시를 요격하거나 진입하는 윈스턴과 둠피스트의 포물선 도약 궤적에 크로스헤어를 완벽하게 일치시킬 수 있습니다."
+          "text": "공중 트래킹 감각을 따로 연습하는 웜업으로 쓸 수 있습니다. 파라, 에코, 메르시처럼 체공하는 영웅이나 윈스턴, 둠피스트의 포물선 도약을 따라가는 상황과 비슷한 Y축 추적을 반복합니다. 실제 게임 속 히트박스나 이동을 그대로 재현하지는 않습니다."
         }
       },
       {
@@ -175,7 +174,7 @@ export default function VerticalAirTrackPageKo() {
         "name": "헤일로 인피니트 같은 하이퍼 슈터에서도 유용한가요?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "네. 그래플샷, 리펄서 도약, 맨 캐논 발사 등으로 체공하는 스파르탄을 상대로 BR 4점사를 침착하게 적중시키는 Y축 마우스 컨트롤이 향상됩니다."
+          "text": "그래플샷, 리펄서 도약, 맨 캐논 등으로 체공하는 상대를 따라가는 Y축 마우스 컨트롤을 연습하는 용도로 쓸 수 있습니다. 이 드릴은 버튼을 누른 채 연속 트래킹하는 방식이며 점사 사격은 구현하지 않습니다."
         }
       },
       {
@@ -183,7 +182,7 @@ export default function VerticalAirTrackPageKo() {
         "name": "Vertical Air-Track 드릴의 점수 체계와 페널티는 어떻게 작동하나요?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "타겟을 조준선에서 놓치면 활성 콤보 배율이 초기화됩니다. 시간 페널티 설정을 활성화한 상태에서 타겟을 파괴하지 못하고 바닥으로 떨어뜨릴 경우 세션 타이머가 0.6초 차감됩니다."
+          "text": "좌클릭을 누른 채 조준선이 타겟 안에 있으면 체력(100)이 깎이고, 0이 되면 타겟이 파괴됩니다. 파괴할 때마다 100점에 고도 보너스(화면 높이 25%/50%/75% 이상에서 +25/+50/+75)를 더한 뒤 콤보와 레벨 배율을 곱하고, 시간이 +2초(최대 60초) 늘어납니다. 시작 시간은 45초입니다. 타겟을 놓쳐 화면 아래로 떨어뜨리면 콤보가 초기화되고 1초가 차감됩니다(타임아웃 설정이 꺼져 있으면 타겟이 다시 튀어 오릅니다). 조준선이 잠깐 벗어나는 것만으로는 콤보가 끊기지 않지만 트래킹 적중률이 떨어집니다. 1400점마다 레벨이 올라 중력과 회피가 강해지고 타겟이 작아지며, 5레벨부터는 타겟 2개가 동시에 나옵니다."
         }
       },
       {
@@ -191,7 +190,7 @@ export default function VerticalAirTrackPageKo() {
         "name": "수직 에임 연습은 일주일에 몇 번 하는 것이 좋은가요?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "회당 10~15분씩 주 3~4회 꾸준히 연습하면 손목 신전근의 근지구력이 향상되어 교전 중 발생하는 미세한 마우스 상하 떨림(지터)이 눈에 띄게 줄어듭니다."
+          "text": "정해진 횟수는 없지만 회당 10~15분, 주 3~4회 정도의 짧고 꾸준한 연습을 권장합니다. 같은 기기와 감도에서 트래킹 적중률과 최고 레벨 변화를 기록해 보세요."
         }
       },
       {
@@ -199,7 +198,7 @@ export default function VerticalAirTrackPageKo() {
         "name": "이 수직 에임 트레이너는 무료로 이용할 수 있나요?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "네, 완전 무료이며 별도의 다운로드나 회원가입 없이 PC 브라우저에서 포인터 락 입력으로 즉시 실행됩니다."
+          "text": "네, 무료이며 다운로드나 회원가입 없이 PC 브라우저에서 실행됩니다. 마우스가 필요하고 시작하면 포인터 락이 걸립니다. Esc를 누르거나 포인터 락이 풀리면 세션이 종료되며, 터치 전용 기기에서는 플레이할 수 없습니다."
         }
       }
     ]
@@ -215,7 +214,7 @@ export default function VerticalAirTrackPageKo() {
         "@type": "HowToStep",
         "position": 1,
         "name": "감도 일치 및 포인터 락 활성화",
-        "text": "자신이 플레이하는 주력 FPS 게임의 감도와 DPI를 설정하고, 화면을 클릭하여 마우스 포인터를 고정합니다.",
+        "text": "/drills 페이지의 공통 마우스 감도 슬라이더(1.00x = 30cm/360)를 맞추고 시작을 눌러 포인터 락을 활성화합니다.",
         "url": "https://skilldrills.online/ko/drills/fps/vertical-air-track#step-1"
       },
       {
@@ -245,23 +244,23 @@ export default function VerticalAirTrackPageKo() {
   const verticalAirTrackGuide = {
     heading: "수직 에임 연습: 공중 타겟 트래킹과 낙하 궤적",
     intro: [
-      "수직 에임 연습을 찾는 FPS 플레이어라면, 이 드릴은 위아래로 움직이는 공중 타겟을 따라가는 Y축 조준 정확도와 낙하 궤적 예측을 측정합니다. 에이펙스 레전드와 오버워치 2에서 필요한 공중 타겟 트래킹, 부드러운 추적, 수직 마우스 제어를 한 세션에서 훈련합니다.",
-      "상하(수직) 부드러운 안구 추종(Smooth Pursuit)의 신경생리학적 메커니즘은 좌우 수평 추적과 근본적으로 다릅니다. Richard J. Krauzlis(2004)의 연구에 따르면 수직 시각 추적은 소뇌 충부와 뇌간의 고유 경로를 활성화하며, 상지 골격 구조의 비대칭성으로 인해 모터 지터(떨림)에 더 취약합니다. 또한 Cyril Rashbass(1961)가 입증했듯 매끄러운 추적 운동은 위치 오차가 아닌 '속도 오차(망막 슬립)'에 의해 구동되므로, 딱딱 끊어 치는 플릭이 아닌 연속적인 속도 동기화가 필수적입니다.",
-      "공중에 뜬 적을 명중시키려면 중력 가속도(g = 9.81 m/s²)의 물리 법칙을 직관적으로 내면화해야 합니다. Peter R. Cavanagh 등(1984)과 Michael F. Land & Peter McLeod(2000)의 분석에 따르면 숙련된 요격자는 도약 정점에서의 감속과 이후의 급격한 낙하 가속을 미리 예측하고 시선과 손목을 선행 연동시킵니다.",
-      "본 드릴은 수평 방향의 타성을 배제하고 순수한 Y축 운동만을 분리 훈련합니다. performance.now() 고해상도 디지털 시간 측정(Woods et al., 2015)을 통해 수평 머슬 메모리와 진정한 360도 3D 입체 트래킹 숙련도 사이의 격차를 완벽하게 메워줍니다.",
+      "SkillDrills 수직 에임 연습은 화면 아래에서 튀어 올라 중력에 따라 포물선으로 떨어지는 공중 타겟을 좌클릭을 누른 채 따라가며 파괴하는 무료 브라우저 드릴입니다. 타겟은 공중에서 갑자기 위로 솟거나 옆으로 대시하거나 아래로 내리꽂히고, 측정값은 사격 버튼을 누른 시간 중 조준선이 타겟 위에 있던 비율(트래킹 적중률)입니다. 에이펙스 레전드와 오버워치 2에서 필요한 공중 트래킹과 수직 마우스 제어를 연습할 수 있습니다.",
+      "상하(수직) 부드러운 안구 추종(Smooth Pursuit)의 신경생리학적 메커니즘은 좌우 수평 추적과 근본적으로 다릅니다. Krauzlis(2004)는 부드러운 추종 운동이 약 30°/s까지 정확하다고 정리했고, Rashbass(1961)가 보였듯 매끄러운 추적 운동은 위치 오차가 아닌 '속도 오차(망막 슬립)'에 의해 구동되므로, 딱딱 끊어 치는 플릭이 아닌 연속적인 속도 동기화가 필수적입니다.",
+      "공중에 뜬 적을 명중시키려면 중력 가속도(g = 9.81 m/s²)의 물리 법칙을 직관적으로 내면화해야 합니다. Land & McLeod(2000)에 따르면 숙련된 요격자는 공의 현재 위치를 쫓기보다 도약 정점에서의 감속과 이후의 급격한 낙하 가속을 미리 예측하고 시선과 손목을 선행 연동시킵니다.",
+      "타겟에도 좌우 속도와 옆 대시가 있지만 움직임의 중심은 상승·정점·낙하의 Y축입니다. 평소 좌우 트래킹 위주로 연습했다면 부족한 수직 추적을 따로 보충하는 용도로 쓰세요.",
       "측정 정확도 안내: 모든 이벤트는 브라우저의 performance.now() 고정밀 클록을 사용해 사용자 기기 내에서 밀리초 단위로 안전하게 처리됩니다. 브라우저 보안 완화책으로 타이머는 약 1ms 단위로 반올림되며, 디스플레이 주사율(60Hz 기준 약 16.7ms, 144Hz 기준 약 6.9ms, 240Hz 기준 약 4.1ms)에 따른 양자화가 발생합니다. 5ms 미만의 차이는 측정 편차로 간주하고 다른 사람의 PC 환경과 단순 비교하기보다는 동일한 기기 환경에서의 개인 성취도 향상 지표로 활용하시기 바랍니다."
     ],
     benchmarks: {
-      title: "수직 부드러운 안구 추종 및 공중 트래킹 벤치마크",
-      headers: ["퍼포먼스 티어", "공중 타겟 체공 적중률", "정점 방향 전환 지연시간", "게임 내 실전 교전력"],
+      title: "트래킹 적중률 연습 구간 (SkillDrills 기준)",
+      headers: ["연습 구간", "트래킹 적중률", "주로 보이는 모습"],
       rows: [
-        ["Tier 1 (최상위 단계)", "82% 이상", "180 ms 미만", "점프 패드 및 그래플로 날아가는 적을 완벽하게 레이저 트래킹. 정점 감속 및 낙하 가속 전환이 무결점"],
-        ["Tier 2 (상급 단계)", "70% – 82%", "180 – 230 ms", "안정적인 Y축 트래킹. 돌발 발사 순간에 미세한 흔들림이 있으나 공중 타겟을 안정적으로 처치함"],
-        ["Tier 3 (중상급 단계)", "56% – 70%", "230 – 290 ms", "예측 가능한 포물선 궤적은 양호하게 추적함. 공중에서 에어 스트레이프가 섞일 때 반응이 지연됨"],
-        ["Tier 4 (골드 / 플래티넘 구간)", "40% – 56%", "290 – 360 ms", "낙하 가속 시 크로스헤어가 타겟 뒤로 처지며, 이를 만회하려다 과도하게 지나쳐버리는 현상 발생"],
-        ["Tier 5 (초심자 / 비기너)", "40% 미만", "360 ms 이상", "심한 Y축 손목 떨림. 손목과 팔에 과도한 힘이 들어가 정점을 지나면 타겟을 완전히 시야에서 놓침"]
+        ["구간 1", "82% 이상", "정점 감속과 낙하 가속 전환이 매끄럽고 회피 동작에도 조준선이 거의 떨어지지 않음"],
+        ["구간 2", "70% – 82%", "안정적인 Y축 트래킹. 갑작스러운 회피 직후 잠깐 흔들림"],
+        ["구간 3", "56% – 70%", "예측 가능한 포물선은 잘 따라가지만 옆 대시가 섞이면 늦어짐"],
+        ["구간 4", "40% – 56%", "낙하 가속 때 조준선이 타겟 뒤로 처지고, 만회하려다 지나침"],
+        ["구간 5", "40% 미만", "손목과 팔에 힘이 들어가 정점 이후 타겟을 놓치는 경우가 많음"]
       ],
-      note: "체공 적중률은 타겟의 총 공중 비행 시간 중 조준선이 유효 타격 범위 내에 머무른 비율을 뜻하며, 방향 전환 지연시간은 최고 정점에서 Y축 이동 방향을 반전시키는 데 걸린 시간을 의미합니다 (Woods et al., 2015)."
+      note: "트래킹 적중률 = 사격 버튼을 누르고 있던 시간 중 조준선이 타겟 위에 있던 비율. 이 구간은 SkillDrills 자체 연습 기준이며 연구 기준치, 사용자 통계, 게임 랭크와 무관합니다."
     },
     techniques: {
       title: "수직 에임 정밀도를 극대화하는 신경 운동 프로토콜",
@@ -289,13 +288,13 @@ export default function VerticalAirTrackPageKo() {
       ]
     },
     steps: [
-      "설정에서 인게임 감도와 마우스 DPI를 평소 플레이하는 FPS 환경과 일치시키고 클릭하여 포인터 고정.",
+      "/drills 페이지의 공통 마우스 감도를 맞추고 시작을 눌러 포인터 락 활성화.",
       "화면 하단의 타겟 발사 위치 부근에 크로스헤어를 미리 배치하고 돌발 수직 사출에 대비.",
       "공중으로 솟구치는 상승 궤적을 부드럽게 추종하며 손가락 신전을 이용해 상승 속도와 일치.",
       "정점에서의 감속 타이밍에 맞춰 마우스 호흡을 가다듬고 체공 시간 동안 집중 타격.",
-      "중력으로 가속 낙하하는 타겟에 맞춰 마우스를 수직 아래로 가속하며 바닥에 닿기 전에 완전 격추."
+      "중력으로 가속 낙하하는 타겟에 맞춰 마우스를 아래로 가속하며 화면 아래로 떨어지기 전에 체력을 모두 깎아 격추."
     ],
-    audience: "에이펙스 레전드, 오버워치 2, 헤일로 인피니트, 발로란트 등에서 공중 기동 및 엘리베이터 피크, 입체전 교전 승률을 끌어올리고자 하는 FPS 게이머.",
+    audience: "에이펙스 레전드, 오버워치 2, 헤일로 인피니트 등에서 공중 기동하는 적을 따라가는 수직 에임을 따로 연습하고 싶은 PC FPS 게이머.",
     faqs: faqSchema.mainEntity.map(e => ({ q: e.name, a: e.acceptedAnswer.text })),
     sources: pickSources('woods2015', 'krauzlis2004', 'fitts1954', 'rashbass1961', 'land2000'),
     related: [
@@ -350,14 +349,14 @@ export default function VerticalAirTrackPageKo() {
           playAgainText: "다시 도전",
           shareText: "결과 공유",
           exitText: "나가기",
-          stageCaption: "중력 가속도로 포물선을 그리며 낙하하는 공중 타겟을 추적하여 매끄러운 Y축 트래킹 정밀도를 훈련합니다.",
+          stageCaption: "수직 에임 연습: 포물선으로 떨어지는 공중 타겟을 좌클릭을 누른 채 따라가 체력을 깎아 파괴하세요.",
           rulesTitle: "드릴 조작법 & 점수 획득 규칙",
           aboutTitle: "수직 에임 연습(Vertical Air-Track)에 대하여",
           rulesItems: [
             {
               num: "1",
               text: "공중 타겟 추적",
-              highlight: "파괴 시 +100점 / +0.4초",
+              highlight: "파괴 시 +100점 / +2초 (최대 60초)",
               result: "중력 포물선 낙하 궤적을 부드럽게 추종"
             },
             {
@@ -368,15 +367,15 @@ export default function VerticalAirTrackPageKo() {
             },
             {
               num: "3",
-              text: "미스 및 낙하 페널티",
-              highlight: "콤보 초기화",
-              result: "조준선 이탈 시 콤보 리셋 (페널티 활성화 시 -0.6초)"
+              text: "타겟 낙하 페널티",
+              highlight: "콤보 초기화 / -1초",
+              result: "타겟이 화면 아래로 떨어지면 적용 (타임아웃 설정 시)"
             },
             {
               num: "4",
               text: "레벨 상승 시스템",
               highlight: "1400점마다 레벨업",
-              result: "중력 가속도와 비행 속도가 점진적으로 증가"
+              result: "중력·회피 증가, 타겟 축소, 5레벨부터 타겟 2개"
             }
           ]
         }}

@@ -185,7 +185,7 @@ export default function MicroCorrectionPage() {
         "name": "Why does missing or timing out reset my combo in this drill?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "By default, missing a shot or allowing a target to expire resets your combo multiplier to enforce click discipline and penalize hasty, unconfirmed shooting. Players seeking higher tactical stakes can enable the optional Time Penalty in session settings to deduct 0.6 seconds per error."
+          "text": "Missing a shot or allowing a target to expire resets your combo multiplier and deducts 1 second from the clock, to enforce click discipline and penalize hasty, unconfirmed shooting. Target expiry only counts while Target Timeouts are on."
         }
       }
     ]
@@ -347,12 +347,6 @@ export default function MicroCorrectionPage() {
           toggleSound: "Toggle Sound",
           stageCaption: "Click the anchor target then instantly adjust your crosshair to hit the small micro-target.",
           rulesTitle: "Drill Instructions & Scoring System",
-          rulesItems: [
-            { num: "1", text: "Hit Anchor Target", highlight: "+10 PTS (+0.2s)", result: "Unlocks Micro" },
-            { num: "2", text: "Micro Target Hit", highlight: "Up To +585 PTS", result: "Precision × Combo" },
-            { num: "3", text: "Level Progression", highlight: "+1 Level / 1400 PTS", result: "Adaptive Scaling" },
-            { num: "4", text: "Miss / Timeout", highlight: "Penalty", result: "Resets Combo (-0.6s)" }
-          ],
           aboutTitle: "About Micro-Correction Aim Trainer",
           aboutHeading: "What Is Micro-Correction Aiming?",
           aboutText: "Most aimed movements are not one motion but two: a fast ballistic launch, then a slower corrective submovement near the target — the two-component pattern Woodworth described in 1899 and Meyer et al. (1988) later formalised. This drill trains the second half, where accuracy is actually decided."

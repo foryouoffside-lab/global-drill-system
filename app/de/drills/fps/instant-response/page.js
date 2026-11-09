@@ -21,18 +21,16 @@ import DrillFooter from '@/components/drill/DrillFooter';
 // ============================================================
 
 export const metadata = {
-  title: "Reaktionszeit Test | FPS-Reflexe messen | SkillDrills",
-  description: "Kostenloser Reaktionszeit Test im Browser: Miss Klicklatenz und visuelle Reflexe in Millisekunden für CS2 und Valorant.",
+  title: "FPS-Reflextest: Klick-Reaktion in ms | SkillDrills",
+  description: "FPS-Reflextest im Browser: Klicke, sobald das Ziel in der Mitte grün aufleuchtet, und miss deine Klick-Reaktion in ms. Zufällige Wartezeit und Feints. Maus nötig.",
   keywords: [
-    "Reaktionszeit Test",
-    "Reaktionstest",
-    "reaktionszeit test online",
-    "reaktionszeit test kostenlos",
-    "Reaktionszeit Gaming",
-    "FPS Reaktionszeit",
+    "FPS-Reflextest",
+    "Klick-Reaktion",
+    "Klicklatenz messen",
+    "FPS Reflexe",
     "Klick Reaktionszeit",
-    "Reflexe testen",
-    "CS2 Reaktionszeit"
+    "CS2 Reflextest",
+    "Valorant Reflextest"
   ],
   alternates: {
     canonical: "https://skilldrills.online/de/drills/fps/instant-response",
@@ -43,8 +41,8 @@ export const metadata = {
     follow: true,
   },
   openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
-    title: "Reaktionszeit Test | FPS-Reflexe messen | SkillDrills",
-    description: "Kostenloser Reaktionszeit Test im Browser: Miss Klicklatenz und visuelle Reflexe in Millisekunden für CS2 und Valorant.",
+    title: "FPS-Reflextest: Klick-Reaktion in ms | SkillDrills",
+    description: "FPS-Reflextest im Browser: Klicke, sobald das Ziel in der Mitte grün aufleuchtet, und miss deine Klick-Reaktion in ms. Zufällige Wartezeit und Feints. Maus nötig.",
     url: "https://skilldrills.online/de/drills/fps/instant-response",
     siteName: 'SkillDrills',
     locale: 'de_DE',
@@ -52,8 +50,8 @@ export const metadata = {
   },
   twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: 'summary_large_image',
-    title: "Reaktionszeit Test | FPS-Reflexe messen | SkillDrills",
-    description: "Kostenloser Reaktionszeit Test im Browser: Miss Klicklatenz und visuelle Reflexe in Millisekunden für CS2 und Valorant.",
+    title: "FPS-Reflextest: Klick-Reaktion in ms | SkillDrills",
+    description: "FPS-Reflextest im Browser: Klicke, sobald das Ziel in der Mitte grün aufleuchtet, und miss deine Klick-Reaktion in ms. Zufällige Wartezeit und Feints. Maus nötig.",
   },
 };
 
@@ -64,14 +62,14 @@ export default function InstantResponseDePage() {
     "itemListElement": [
       { "@type": "ListItem", "position": 1, "name": "SkillDrills", "item": "https://skilldrills.online/de" },
       { "@type": "ListItem", "position": 2, "name": "FPS Aim Training", "item": "https://skilldrills.online/de/drills/fps" },
-      { "@type": "ListItem", "position": 3, "name": "Reaktionszeit Test - FPS-Reflexe", "item": "https://skilldrills.online/de/drills/fps/instant-response" }
+      { "@type": "ListItem", "position": 3, "name": "FPS-Reflextest", "item": "https://skilldrills.online/de/drills/fps/instant-response" }
     ]
   };
 
   const softwareSchema = {
     "@context": "https://schema.org",
     "@type": "SoftwareApplication", "sameAs": ["https://en.wikipedia.org/wiki/Reaction_time", "https://en.wikipedia.org/wiki/Mental_chronometry"],
-    "name": "Reaktionszeit Test für FPS-Reflexe",
+    "name": "FPS-Reflextest: Klick-Reaktion in ms",
     "applicationCategory": "GameApplication",
     "operatingSystem": "Web Browser",
     "offers": { "@type": "Offer", "price": "0", "priceCurrency": "EUR" }
@@ -80,7 +78,7 @@ export default function InstantResponseDePage() {
   const webAppSchema = {
     "@context": "https://schema.org",
     "@type": "WebApplication",
-    "name": "Reaktionszeit Test - FPS-Reflexe",
+    "name": "FPS-Reflextest",
     "url": "https://skilldrills.online/de/drills/fps/instant-response",
     "applicationCategory": "Trainer",
     "browserRequirements": "Requires Pointer Lock API, modern web browser, 60Hz+ monitor recommended"
@@ -89,7 +87,7 @@ export default function InstantResponseDePage() {
   const videoGameSchema = {
     "@context": "https://schema.org",
     "@type": "VideoGame",
-    "name": "Reaktionszeit Test - FPS-Reflexe",
+    "name": "FPS-Reflextest",
     "playMode": "SinglePlayer",
     "applicationCategory": "Game",
     "operatingSystem": "Web Browser",
@@ -99,22 +97,22 @@ export default function InstantResponseDePage() {
   const faqSchema = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
-    "dateModified": "2026-09-20",
+    "dateModified": "2026-11-09",
     "mainEntity": [
       {
         "@type": "Question",
         "name": "Was ist der Unterschied zwischen einfacher visueller Reaktionszeit und FPS-In-Game-Reaktionszeit?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Die einfache visuelle Reaktionszeit (Donders, 1969) misst lediglich die Latenz auf einen simplen Farbumschlag (ca. 160–220 ms). In einem FPS wie CS2 oder Valorant kommen Entscheidungszeiten (Hick, 1952), räumliche Zielidentifikation und Fadenkreuz-Ausrichtung hinzu, wodurch Ingame-Reaktionen meist zwischen 200 und 350 ms liegen."
+          "text": "Die einfache visuelle Reaktionszeit (Donders, 1969) misst lediglich die Latenz auf einen simplen Farbumschlag. In einem FPS wie CS2 oder Valorant kommen Entscheidungszeiten (Hick, 1952), räumliche Zielidentifikation und Fadenkreuz-Ausrichtung hinzu, wodurch Ingame-Reaktionen länger dauern."
         }
       },
       {
         "@type": "Question",
-        "name": "Welche Reaktionszeit gilt unter professionellen CS2- und Valorant-Spielern als Richtwert?",
+        "name": "Gibt es einen Richtwert für die Klick-Reaktion in diesem Drill?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Professionelle Esportler erreichen bei einfachen visuellen Stimuli Reaktionszeiten von 140 bis 180 ms. In echten Wettkampf-Peeks und beim Verteidigen enger Blickwinkel (Angle Holding) liegen ihre Reaktionswerte typischerweise zwischen 180 und 230 ms."
+          "text": "Wir veröffentlichen keine Profi- oder Nutzerwerte. Die Tabelle unten zeigt SkillDrills-Übungsbereiche, die direkt aus der Punktewertung stammen: Unter 500 ms gibt es einen Tempobonus, ab 150 ms abwärts den vollen Bonus. Vergleiche deine Werte am besten mit dir selbst auf demselben Gerät."
         }
       },
       {
@@ -122,7 +120,7 @@ export default function InstantResponseDePage() {
         "name": "Wie setzt sich die menschliche neuromuskuläre Kette bis zum Klick zusammen?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Die Kette umfasst vier Stationen: 1. Photoneneinfall auf die Netzhaut (ca. 20–40 ms), 2. Signalübertragung über Sehnerv zum visuellen Kortex (ca. 30–50 ms), 3. Kortikale Reizverarbeitung und Signal an den Motorkortex (ca. 40–70 ms), 4. Efferente Nervenleitung in die Zeigefingermuskulatur und Schalterauslösung (ca. 30–50 ms)."
+          "text": "Vereinfacht: Licht trifft auf die Netzhaut, das Signal läuft über den Sehnerv zum visuellen Kortex, wird verarbeitet und an den Motorkortex weitergegeben, und schließlich löst der Zeigefinger den Mausschalter aus. Jede Station kostet Zeit; in diesem Drill kommt noch die Latenz von Monitor, Maus und Browser hinzu."
         }
       },
       {
@@ -130,7 +128,7 @@ export default function InstantResponseDePage() {
         "name": "Warum bestraft dieser Trainer verfrühtes Klicken (Pre-Firing)?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Klicken auf Verdacht ohne echten visuellen Reiz (Anticipation) führt im echten Shooter zu fehlerhaftem Sprühen, Positionsverrat und sofortigem Duellverlust. Der Trainer erzwingt strikte Schussdisziplin, indem er Täuschungsreize einstreut und Fehlstarts mit Combo-Verlust ahndet."
+          "text": "Klicken auf Verdacht ohne echten visuellen Reiz (Anticipation) führt im echten Shooter zu fehlerhaftem Sprühen, Positionsverrat und sofortigem Duellverlust. Der Trainer erzwingt strikte Schussdisziplin, indem er ab mittleren Levels Täuschungsreize einstreut und Fehlstarts mit Combo-Verlust und 1 s Zeitabzug ahndet."
         }
       },
       {
@@ -146,7 +144,7 @@ export default function InstantResponseDePage() {
         "name": "Kann man seine Reaktionszeit durch gezieltes Training dauerhaft verkürzen?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Ja. Während die reine Leitungsgeschwindigkeit der Nervenbahnen biologisch begrenzt ist, lässt sich die kortikale Verarbeitungszeit und motorische Reaktionsbereitschaft durch regelmäßiges Training um 15 bis 40 Millisekunden optimieren."
+          "text": "Teilweise. Die Leitungsgeschwindigkeit der Nerven ist biologisch begrenzt, aber mit Übung zögerst du weniger, und deine Werte in diesem Drill können sinken. Wie stark, ist individuell verschieden."
         }
       },
       {
@@ -154,7 +152,7 @@ export default function InstantResponseDePage() {
         "name": "Welchen Einfluss haben Schlaf, Koffein und Ermüdung auf die Klicklatenz?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Schlafmangel und kognitive Erschöpfung verlangsamen die Reaktionszeit messbar um 30 bis 80 ms. Mäßiger Koffeinkonsum kann die Wachheit kurzfristig um 10 bis 20 ms steigern, führt bei Überdosierung jedoch zu Zittern und Fehlklicks."
+          "text": "Schlafmangel und Ermüdung können die Reaktionszeit verlängern. Vergleiche Werte aus müden Sessions daher getrennt von deinen normalen Werten."
         }
       },
       {
@@ -162,7 +160,7 @@ export default function InstantResponseDePage() {
         "name": "Was unterscheidet diesen Trainer von einfachen Online-Ampel-Tests?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Dieser Trainer läuft in einer 3D-Canvas-Umgebung mit hardwarenahem Pointer-Lock, dynamisch skalierenden Zeitfenstern, visuellen Täuschungsreizen (Feints) und einer progressiven Schwierigkeitskurve – exakt abgestimmt auf Wettkampf-Shooter."
+          "text": "Der Drill läuft auf einem 2D-Canvas mit Pointer Lock und Fadenkreuz. Er hat zufällige Wartezeiten, ein mit dem Level schrumpfendes Anzeigefenster, ab mittleren Levels kurze Täuschungsreize (Feints), Combo-Punkte und eine Uhr, die mit 45 s startet und pro Treffer um 2 s wächst."
         }
       },
       {
@@ -218,32 +216,32 @@ export default function InstantResponseDePage() {
   };
 
   const instantResponseGuideDe = {
-    heading: "Reaktionszeit Test für FPS-Reflexe und Klicklatenz",
+    heading: "FPS-Reflextest: Klick-Reaktion und Klicklatenz messen",
     subtitle: "Messung und Steigerung von visueller Reaktionslatenz, Klickgeschwindigkeit und Schussdisziplin für CS2 und Valorant",
     intro: [
-      "Ein Reaktionszeit Test misst die Zeit zwischen einem visuellen Signal und deinem Klick. Dieser Drill erfasst die visuelle Latenz und Klickreaktion in Millisekunden für CS2-, Valorant- und FPS-Duelle.",
-      "Die sensorische Latenzkette gliedert sich in vier präzise Abschnitte: Zunächst treffen Photonen auf die Photorezeptoren der Netzhaut (Transduktion: 20–40 ms). Das Signal wandert über den Nervus opticus zum primären visuellen Kortex (30–50 ms). Dort erfolgt die Reizerkennung und die Weiterleitung an den Motorkortex (Posner, 1990; Hick, 1952). Schließlich feuert das pyramidale motorische System ein efferentes Aktionspotenzial über das Rückenmark in die Beugemuskeln des Zeigefingers (Flexor digitorum: 30–50 ms).",
-      "Zu dieser biologischen Latenzkette addiert sich die physikalische Hardware-Verzögerung deines Gaming-Setups (Woods et al., 2015). Ein Standard-60-Hz-Monitor zeigt Bilder nur alle 16,6 Millisekunden an. Ein 240-Hz-Display reduziert diese Anzeigelatenz auf 4,1 Millisekunden. In Kombination mit einer 1000-Hz-Maus (1 ms Abfrageintervall) und optischen Mikroschaltern (unter 0,2 ms Debounce) wird sichergestellt, dass deine physiologische Reaktionsfähigkeit verlustfrei im Spiel ankommt.",
-      "Messpräzision & Transparenz: Dieser Trainer erfasst Klickzeiten über die hochpräzise performance.now()-Schnittstelle deines Browsers . Abweichungen im Bereich von 3 bis 7 ms spiegeln das Hardware-Frame-Intervall deines Monitors wider. Ein systematisches Training stärkt die synaptische Plastizität und stabilisiert deine Reflexe auch in nervenaufreibenden Clutch-Runden."
+      "Der FPS-Reflextest misst die Zeit zwischen dem grünen Aufleuchten des Ziels in der Bildschirmmitte und deinem Klick. Der Drill zeigt deine Klick-Reaktion in Millisekunden und bestraft verfrühte Klicks, damit du für CS2- und Valorant-Duelle auf das Signal statt auf den Rhythmus reagierst.",
+      "Die sensorische Latenzkette gliedert sich in vier präzise Abschnitte: Zunächst treffen Photonen auf die Photorezeptoren der Netzhaut (Transduktion). Das Signal wandert über den Nervus opticus zum primären visuellen Kortex. Dort erfolgt die Reizerkennung und die Weiterleitung an den Motorkortex (Posner, 1990; Hick, 1952). Schließlich feuert das pyramidale motorische System ein efferentes Aktionspotenzial über das Rückenmark in die Beugemuskeln des Zeigefingers (Flexor digitorum).",
+      "Zu dieser biologischen Latenzkette addiert sich die physikalische Hardware-Verzögerung deines Gaming-Setups (Woods et al., 2015). Ein Standard-60-Hz-Monitor zeigt Bilder nur alle 16,6 Millisekunden an. Ein 240-Hz-Display reduziert diese Anzeigelatenz auf 4,1 Millisekunden. In Kombination mit einer 1000-Hz-Maus (1 ms Abfrageintervall) und optischen Mikroschaltern (unter 0,2 ms Debounce) sinkt dieser Hardware-Anteil, verschwindet aber nie ganz.",
+      "Messpräzision & Transparenz: Dieser Trainer erfasst Klickzeiten über die hochpräzise performance.now()-Schnittstelle deines Browsers . Abweichungen im Bereich von 3 bis 7 ms spiegeln das Hardware-Frame-Intervall deines Monitors wider. Vergleiche deine Werte deshalb immer auf demselben Gerät."
     ],
     benchmarks: {
-      title: "FPS-Reaktionszeit & Klick-Latenz-Benchmarks (Millisekunden)",
-      headers: ["Leistungsstufe (Tier)", "Reaktionszeit (ms)", "Neurologische Klassifikation", "Wettkampf-Einfluss im Spiel"],
+      title: "SkillDrills-Übungsbereiche nach Klick-Reaktion (ms)",
+      headers: ["SkillDrills-Übungsbereich", "Messwert im Drill (ms)", "Grundpunkte pro Treffer (vor Combo- und Level-Multiplikator)", "Hinweis"],
       rows: [
-        ["Stufe 5: Sehr schnelle Reaktion", "< 160 ms", "Sehr kurze Reiz-Reaktions-Zeit unter vorbereiteten Bedingungen", "Fokus: Vorbereitung und Reizerwartung halten, ohne zu früh zu klicken."],
-        ["Stufe 4: Schnelle Reaktion", "160 – 190 ms", "Schnelle Reizverarbeitung und Motorantwort", "Fokus: Crosshair-Placement sauber halten, um Korrekturen zu sparen."],
-        ["Tier 3 (Erfahren / Diamant & Ascendant)", "190 – 225 ms", "Überdurchschnittliche Reaktionsfähigkeit ambitionierter Gamer", "Solide Klickgeschwindigkeit; verliert nur gegen Spitzenreaktionen."],
-        ["Tier 4 (Fortgeschritten / Gold & Platin)", "225 – 265 ms", "Durchschnittliche visuelle Reaktionszeit gesunder Erwachsener", "Gute Reaktionszeit; erfordert exzellentes Crosshair Placement als Ausgleich."],
-        ["Tier 5 (Einsteiger / Silber & Casual)", "> 265 ms", "Verzögerte Reiz-Reaktions-Kopplung oder Hardware-Latenzen", "Häufiges Unterliegen in Reaktionsduellen; Schüsse fallen spürbar zu spät."]
+        ["Bereich A", "≤ 150 ms", "100 + 150 Tempobonus", "Voller Bonus. Tritt das oft auf, prüfe, ob du vorab klickst."],
+        ["Bereich B", "150 – 250 ms", "100 + ca. 107–150", "Großer Teil des Bonus bleibt."],
+        ["Bereich C", "250 – 350 ms", "100 + ca. 64–107", "Bonus etwa halbiert."],
+        ["Bereich D", "350 – 500 ms", "100 + 0–64", "Bonus nähert sich 0."],
+        ["Bereich E", "> 500 ms", "100 (kein Bonus)", "Auf Level 1 leuchtet das Ziel ca. 550 ms; mit steigendem Level kürzer, dann folgt ein Timeout."]
       ],
-      note: "Die Werte umfassen die vollständige Kette aus sensorischer Reizleitung, kortikaler Verarbeitung, motorischer Impulsauslösung und Display-/Maus-Hardwarelatenz (Donders, 1969; Posner, 1990; Hick, 1952; Woods et al., 2015)."
+      note: "Diese Tabelle leitet SkillDrills-Übungsbereiche aus der Punktewertung des Drills ab. Sie sind keine Forschungsnormen und keine Nutzerdaten; Messwerte enthalten die Latenz von Monitor, Maus und Browser."
     },
     techniques: {
       title: "Biomechanische & kognitive Methoden zur Reaktionszeitverkürzung",
       items: [
         {
           name: "Fingerkuppen-Vorspannung am Mausschalter",
-          desc: "Halte den Zeigefinger in permanentem, leichtem Kontakt mit dem Auslösepunkt der Maustaste. Das Voraktivieren des motorischen Kortex eliminiert den mechanischen Leerweg und spart 20 bis 35 Millisekunden Auslöseverzögerung.",
+          desc: "Halte den Zeigefinger in permanentem, leichtem Kontakt mit dem Auslösepunkt der Maustaste. Das beseitigt den mechanischen Leerweg vor dem Auslösen.",
           tips: "Halte das Handgelenk entspannt, sodass ausschließlich das vorderste Fingerglied den Schalter betätigt."
         },
         {
@@ -268,7 +266,7 @@ export default function InstantResponseDePage() {
       "Klicke auf Training starten, um den Vollbildmodus und die Pointer-Lock-API zu aktivieren.",
       "Fokussiere das zentrale Fadenkreuz, während dein Zeigefinger spielfrei auf der Maustaste aufliegt.",
       "Klicke blitzartig im exakten Moment des grünen Farbumschlags und widerstehe verfrühten Täuschungsreizen.",
-      "Analysiere nach Rundenende deine Durchschnittsreaktionszeit in Millisekunden und optimiere deine Klickdisziplin."
+      "Jeder Treffer gibt +2 s (max. 60 s), jeder Frühstart, Fehlklick oder Timeout kostet 1 s. Bei 0 endet die Runde; danach siehst du Durchschnittsreaktion (ms), Präzision, höchste Combo und erreichtes Level."
     ],
     audience: "Wettkampfspieler in Counter-Strike 2, Valorant, Rainbow Six Siege, Apex Legends und Call of Duty, die ihre Klickreaktionszeit auf Millisekunden-Niveau trimmen wollen.",
     faqs: faqSchema.mainEntity.map(e => ({ q: e.name, a: e.acceptedAnswer.text })),
@@ -282,27 +280,27 @@ export default function InstantResponseDePage() {
   };
 
   const copyDe = {
-    h1Keyword: "Reaktionszeit Test",
-    h1Suffix: " – FPS-Reflexe messen",
-    subtitle: "Visuelle Reaktionslatenz, Klickgeschwindigkeit und Schussdisziplin messen und trainieren",
+    h1Keyword: "FPS-Reflextest",
+    h1Suffix: " – Klick-Reaktion in ms",
+    subtitle: "Klicklatenz messen und Schussdisziplin gegen Frühstarts und Feints trainieren",
     statScore: "Punkte",
     statTime: "Zeit",
     statAccuracy: "Präzision",
     statBestScore: "Highscore",
-    startTitle: "Reaktionszeit Test",
-    startSubtitle: "Visuelle Reaktionslatenz & Reflexe • Endlose Levelprogression",
+    startTitle: "FPS-Reflextest",
+    startSubtitle: "Maus + Pointer Lock • Start mit 45 s • Endlose Levelprogression",
     getReady: "BEREITMACHEN",
     pausedTitle: "Spiel Pausiert",
     pausedSubtitle: "Klicke in das Spielfeld, um die Mauszeiger-Sperre zu reaktivieren",
     stageCaption: "Klicke im exakten Moment des grünen Aufleuchtens. Halte strikte Disziplin gegen verfrühte Täuschungsreize.",
     rulesTitle: "Trainingsregeln & Punktesystem",
     rulesItems: [
-      { num: "1", text: "Reflex-Treffer", highlight: "+100 PTS (+0.6s)", result: "×Combo-Multiplikator" },
-      { num: "2", text: "Geschwindigkeits-Bonus", highlight: "Treffer <150ms", result: "Bis zu +150 PTS" },
+      { num: "1", text: "Reflex-Treffer", highlight: "+100 PTS (+2 s, max. 60 s)", result: "×Combo-Multiplikator" },
+      { num: "2", text: "Geschwindigkeits-Bonus", highlight: "Treffer <500 ms", result: "Bis zu +150 PTS (≤150 ms)" },
       { num: "3", text: "Levelaufstieg", highlight: "+1 Level / 1400 PTS", result: "Adaptive Zeitfenster" },
-      { num: "4", text: "Fehlklick / Frühstart", highlight: "Fehlerstrafe", result: "Combo-Reset (-0.8s)" }
+      { num: "4", text: "Fehlklick / Frühstart", highlight: "Auch Feints & Timeouts", result: "Combo-Reset (-1 s)" }
     ],
-    aboutTitle: "Über den Reaktionszeit Test und FPS-Reflexe",
+    aboutTitle: "Über den FPS-Reflextest",
     aboutHeading: "Was ist das FPS-Reaktionszeit-Training?",
     aboutText1: "Die FPS-Reaktionszeit bezeichnet das zeitliche Intervall vom ersten optischen Erfassen eines Gegners bis zum physischen Mausklick. Bei gesunden Erwachsenen liegt dieser Wert bei 200 bis 250 Millisekunden (Donders, 1969; Woods et al., 2015).",
     aboutText2: "Dieser Trainer isoliert deine visuelle Klickreaktion und schult dein Nervensystem darauf, Reize im zentralen Sichtfeld mit minimaler synaptischer Verzögerung in motorische Impulse umzusetzen.",

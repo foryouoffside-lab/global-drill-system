@@ -185,7 +185,7 @@ export default function ProSmoothPursuitPage() {
         "name": "Why does falling off-target reset my combo multiplier in this drill?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Falling off-target resets your combo multiplier to reward continuous tracking uptime and beam discipline. If optional Time Penalty is enabled in Session Settings, being off-target for a cumulative 1.0 second will also deduct 0.6 seconds from your remaining round timer."
+          "text": "Staying off-target for 1.0 continuous second resets your combo multiplier, to reward continuous tracking uptime and beam discipline."
         }
       }
     ]
@@ -327,12 +327,6 @@ export default function ProSmoothPursuitPage() {
         copy={{
           h1Keyword: "Smooth Pursuit Aim Trainer",
           h1Suffix: " — Curve Tracking",
-          rulesItems: [
-            { num: "1", text: "Tracking Alignment", highlight: "+50 PTS (+0.4s/s)", result: "×Combo Mult" },
-            { num: "2", text: "Continuous Combo", highlight: "Up to 3.0×", result: "Max Multiplier" },
-            { num: "3", text: "Level Progression", highlight: "+1 Level / 1400 PTS", result: "Adaptive Curves" },
-            { num: "4", text: "Off-Target Penalty", highlight: "1.0s Off-Target", result: "Resets Combo (-0.6s)" }
-          ]
         }}
       />
 

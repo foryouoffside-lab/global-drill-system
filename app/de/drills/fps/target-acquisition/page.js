@@ -93,7 +93,7 @@ export default function TargetAcquisitionDePage() {
         "name": "Wie funktioniert dieser Valorant Aim Trainer für Zielerfassung?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Ein Durchgang dauert 60 Sekunden. Es erscheinen Sets aus 3 bis 8 unterschiedlich hellen Zielen, die du vom hellsten zum dunkelsten treffen musst. Ein richtiger Treffer bringt +100 Punkte mal Combo- und Level-Multiplikator, ein geräumtes Set +400 Punkte mal Level-Multiplikator und ein neues Set. Ein Klick auf das falsche Ziel oder ins Leere setzt die Combo zurück und kostet 0,6 Sekunden, wenn die Zeitstrafe aktiviert ist. Gespielt wird mit Maus und Pointer Lock, Esc beendet den Drill. SkillDrills ist ein unabhängiges Übungstool ohne Verbindung zu Riot Games."
+          "text": "Ein Durchgang dauert 60 Sekunden. Es erscheinen Sets aus 3 bis 8 unterschiedlich hellen Zielen, die du vom hellsten zum dunkelsten treffen musst. Ein richtiger Treffer bringt +100 Punkte mal Combo- und Level-Multiplikator, ein geräumtes Set +400 Punkte mal Level-Multiplikator und ein neues Set. Ein Klick auf das falsche Ziel oder ins Leere setzt die Combo zurück. Gespielt wird mit Maus und Pointer Lock, Esc beendet den Drill. SkillDrills ist ein unabhängiges Übungstool ohne Verbindung zu Riot Games."
         }
       },
       {
@@ -173,7 +173,7 @@ export default function TargetAcquisitionDePage() {
         "name": "Warum führt ein Klick auf das falsche Ziel in diesem Trainer zum Combo-Verlust?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Der Trainer belohnt Zielpriorisierung: Das Ziel mit der höchsten Helligkeit symbolisiert die unmittelbare Bedrohung. Unkontrolliertes Klicken ohne visuelle Unterscheidung setzt deshalb die Combo zurück; mit aktivierter Zeitstrafe kostet es zusätzlich 0,6 Sekunden."
+          "text": "Der Trainer belohnt Zielpriorisierung: Das Ziel mit der höchsten Helligkeit symbolisiert die unmittelbare Bedrohung. Unkontrolliertes Klicken ohne visuelle Unterscheidung setzt deshalb die Combo zurück."
         }
       }
     ]
@@ -301,7 +301,7 @@ export default function TargetAcquisitionDePage() {
       { num: "1", text: "Zieltreffer", highlight: "+100 PKT × Level", result: "×Combo-Multiplikator" },
       { num: "2", text: "Set geräumt", highlight: "+400 PKT × Level", result: "Neues Cluster" },
       { num: "3", text: "Levelaufstieg", highlight: "+1 / 1400 PKT", result: "Dynamische Dichte & Tempo" },
-      { num: "4", text: "Fehlklick / Miss", highlight: "Strafe", result: "Combo-Reset (mit Zeitstrafe -0,6s)" }
+      { num: "4", text: "Fehlklick / Miss", highlight: "Strafe", result: "Combo-Reset" }
     ],
     aboutTitle: "Über das Zielerfassungs-Training",
     aboutHeading: "Was bedeutet Zielerfassung (Target Acquisition) im Shooter?",

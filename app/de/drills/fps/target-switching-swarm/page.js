@@ -6,15 +6,15 @@ import { getAlternateLanguages } from '@/lib/i18n/locales';
 import { pickSources } from '@/lib/drillSources';
 
 export const metadata = {
-  title: "Aim Trainer Zielwechsel - Multi-Target | SkillDrills",
-  description: "Kostenloser Aim Trainer im Browser: Übe schnelle Zielwechsel, Multi-Target-Aiming und Spray Transfers für CS2 und Valorant.",
+  title: "Zielwechsel-Training: Multi-Target im Browser | SkillDrills",
+  description: "Kostenloses Zielwechsel-Training im Browser: Triff 2–5 bewegte Ziele nacheinander. Jeder Treffer gibt +2 s (max. 60 s), jeder Fehlklick kostet 1 s.",
   keywords: [
-    "Aim Trainer Zielwechsel",
-    "Target Switching Aim Trainer",
-    "Zielwechsel FPS Training",
+    "Zielwechsel-Training",
+    "Zielwechsel Training",
+    "Target Switching",
+    "Multi-Target Training",
     "Multi-Target Aiming CS2",
     "Spray Transfer Training",
-    "Zielwechsel Übung Valorant",
     "Target Switching Übungen",
     "Flick Übergang FPS",
     "Multikill Aiming FPS",
@@ -31,8 +31,8 @@ export const metadata = {
     follow: true,
   },
   openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
-    title: "Aim Trainer Zielwechsel - Multi-Target | SkillDrills",
-    description: "Kostenloser Aim Trainer im Browser: Übe schnelle Zielwechsel, Multi-Target-Aiming und Spray Transfers für CS2 und Valorant.",
+    title: "Zielwechsel-Training: Multi-Target im Browser | SkillDrills",
+    description: "Kostenloses Zielwechsel-Training im Browser: Triff 2–5 bewegte Ziele nacheinander. Jeder Treffer gibt +2 s (max. 60 s), jeder Fehlklick kostet 1 s.",
     url: "https://skilldrills.online/de/drills/fps/target-switching-swarm",
     siteName: 'SkillDrills',
     locale: 'de_DE',
@@ -40,8 +40,8 @@ export const metadata = {
   },
   twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: 'summary_large_image',
-    title: "Aim Trainer Zielwechsel - Multi-Target | SkillDrills",
-    description: "Kostenloser Aim Trainer im Browser: Übe schnelle Zielwechsel, Multi-Target-Aiming und Spray Transfers für CS2 und Valorant.",
+    title: "Zielwechsel-Training: Multi-Target im Browser | SkillDrills",
+    description: "Kostenloses Zielwechsel-Training im Browser: Triff 2–5 bewegte Ziele nacheinander. Jeder Treffer gibt +2 s (max. 60 s), jeder Fehlklick kostet 1 s.",
   },
 };
 
@@ -59,12 +59,12 @@ export default function TargetSwitchingSwarmDePage() {
   const softwareSchema = {
     "@context": "https://schema.org",
     "@type": "SoftwareApplication", "sameAs": ["https://en.wikipedia.org/wiki/Saccade", "https://en.wikipedia.org/wiki/Hand%E2%80%93eye_coordination"],
-    "name": "Aim Trainer Zielwechsel - Multi-Target",
+    "name": "Zielwechsel-Training: Multi-Target im Browser",
     "applicationCategory": "GameApplication",
     "operatingSystem": "Web Browser",
-    "dateModified": "2026-09-20",
+    "dateModified": "2026-11-09",
     "offers": { "@type": "Offer", "price": "0", "priceCurrency": "EUR" },
-    "description": "Kostenloses Browsertraining für Multi-Target-Flicks, Spray Transfers und kognitive Zielwechsel in dynamischen Target Swarms.",
+    "description": "Kostenloses Zielwechsel-Training im Browser: 2–5 abprallende Ziele nacheinander treffen und schnelle Multi-Target-Wechsel üben.",
     "genre": "FPS Training / Target Switching",
     "url": "https://skilldrills.online/de/drills/fps/target-switching-swarm",
     "publisher": {
@@ -77,23 +77,23 @@ export default function TargetSwitchingSwarmDePage() {
   const webAppSchema = {
     "@context": "https://schema.org",
     "@type": "WebApplication",
-    "name": "Aim Trainer Zielwechsel - Multi-Target",
+    "name": "Zielwechsel-Training: Multi-Target im Browser",
     "applicationCategory": "GameApplication",
     "operatingSystem": "Web Browser",
-    "dateModified": "2026-09-20",
+    "dateModified": "2026-11-09",
     "offers": { "@type": "Offer", "price": "0", "priceCurrency": "EUR" },
     "browserRequirements": "Erfordert Pointer Lock API, JavaScript, HTML5 Canvas",
-    "description": "Kostenloses Browsertraining für Multi-Target-Flicks, Spray Transfers und kognitive Zielwechsel in dynamischen Target Swarms.",
+    "description": "Kostenloses Zielwechsel-Training im Browser: 2–5 abprallende Ziele nacheinander treffen und schnelle Multi-Target-Wechsel üben.",
     "url": "https://skilldrills.online/de/drills/fps/target-switching-swarm"
   };
 
   const videoGameSchema = {
     "@context": "https://schema.org",
     "@type": "VideoGame",
-    "name": "Aim Trainer Zielwechsel - Multi-Target",
+    "name": "Zielwechsel-Training: Multi-Target im Browser",
     "url": "https://skilldrills.online/de/drills/fps/target-switching-swarm",
-    "description": "Kostenloses Browsertraining für Multi-Target-Flicks, Spray Transfers und kognitive Zielwechsel in dynamischen Target Swarms.",
-    "dateModified": "2026-09-20",
+    "description": "Kostenloses Zielwechsel-Training im Browser: 2–5 abprallende Ziele nacheinander treffen und schnelle Multi-Target-Wechsel üben.",
+    "dateModified": "2026-11-09",
     "gamePlatform": "Web Browser",
     "genre": ["FPS Training", "Aim Trainer", "Target Switching"],
     "playMode": "SinglePlayer",
@@ -105,7 +105,7 @@ export default function TargetSwitchingSwarmDePage() {
   const faqSchema = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
-    "dateModified": "2026-09-20",
+    "dateModified": "2026-11-09",
     "mainEntity": [
       {
         "@type": "Question",
@@ -125,10 +125,10 @@ export default function TargetSwitchingSwarmDePage() {
       },
       {
         "@type": "Question",
-        "name": "Wie verbessert das Target-Swarm-Format Multikill-Mechaniken in Gefechten?",
+        "name": "Nach welchen Regeln läuft dieses Zielwechsel-Training ab?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Das Swarm-Format zwingt den motorischen Kortex dazu, die ballistische Flick-Trajektorie zum nächsten Ziel bereits während der sensorischen Rückmeldung des aktuellen Treffers vorzubereiten. Dies spiegelt Multi-Enemy-Pushes in CS2 und Valorant wider, bei denen mehrere Gegner binnen Millisekunden fallen müssen."
+          "text": "Die Uhr startet bei 45 Sekunden. Je nach Level bleiben 2 bis 5 abprallende, bewegte Ziele auf dem Bildschirm. Ein Treffer bringt +100 Punkte mal Combo- und Level-Multiplikator und +2 Sekunden (maximal 60). Ein Klick ins Leere kostet 1 Sekunde und setzt die Combo zurück. Ist die Ziel-Zeitbegrenzung aktiv, verschwinden Ziele, die nicht rechtzeitig getroffen werden (anfangs nach etwa 2,8 Sekunden, auf höheren Leveln schneller), und kosten ebenfalls 1 Sekunde. Alle 2.100 Punkte steigt das Level, die Ziele werden kleiner und schneller. Gespielt wird mit Maus und Pointer Lock, Esc beendet den Drill."
         }
       },
       {
@@ -136,15 +136,15 @@ export default function TargetSwitchingSwarmDePage() {
         "name": "Warum zögern viele Spieler zwischen Zielen nach einem erfolgreichen Kill?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Dieses Zögern (Confirmation Hesitation) entsteht, wenn Spieler auf visuelle oder akustische Kill-Bestätigungen warten, bevor sie die nächste Augen- und Mausbewegung starten. Strukturiertes Switching-Training konditioniert das Vertrauen in ballistische Subbewegungen, sodass die Sakkade bereits vor Schussabschluss einsetzt."
+          "text": "Dieses Zögern (Confirmation Hesitation) entsteht, wenn Spieler auf visuelle oder akustische Kill-Bestätigungen warten, bevor sie die nächste Augen- und Mausbewegung starten. In diesem Drill verschwindet ein getroffenes Ziel sofort und ein neues erscheint, sodass du übst, ohne Bestätigung direkt mit Blick und Maus zum nächsten Ziel zu wechseln."
         }
       },
       {
         "@type": "Question",
-        "name": "Wie unterstützt Target Switching Spray Transfers in CS2 und Valorant?",
+        "name": "Hilft Zielwechsel-Training bei Spray Transfers in CS2?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Ein Spray Transfer verlangt eine winkelstabile Fadenkreuzverlagerung unter laufendem Rückstoß. Target Switching trainiert die neuromuskuläre Beschleunigungs- und Bremskraft, die notwendig ist, um das Fadenkreuz über Bildschirmquadranten hinweg präzise auf den nächsten Kopf zu ziehen."
+          "text": "Nur teilweise. Dieser Drill wertet einzelne Klicks und simuliert weder Rückstoß noch Dauerfeuer. Das Verlagern des Fadenkreuzes von einem Ziel zum nächsten und das saubere Abstoppen sind aber die Grundlage eines Spray Transfers, daher eignet er sich als Ergänzung."
         }
       },
       {
@@ -152,7 +152,7 @@ export default function TargetSwitchingSwarmDePage() {
         "name": "Welche Spieletitel verlangen die ausgeprägtesten Target-Switching-Fähigkeiten?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Target Switching ist unverzichtbar in taktischen Hero-Shootern wie Valorant und Overwatch 2, schnellen Battle Royales wie Apex Legends und Warzone sowie klassischen Taktik-Shootern wie Counter-Strike 2 bei schnellen Site-Retakes."
+          "text": "Zielwechsel sind besonders wichtig in Shootern, in denen du oft mehrere Gegner nacheinander bekämpfst, etwa Overwatch 2, Apex Legends, Warzone oder Counter-Strike 2 bei Retakes."
         }
       },
       {
@@ -168,7 +168,7 @@ export default function TargetSwitchingSwarmDePage() {
         "name": "Welcher Zusammenhang besteht zwischen Target Switching und dem Fitts'schen Gesetz?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Nach Fitts' Gesetz (1954) und dem stochastischen Modell optimierter Subbewegungen (Meyer et al. 1988) besteht ein Zielwechsel aus einem ballistischen Hauptimpuls über 90% der Distanz gefolgt von abrupter terminaler Bremsung. Profis minimieren den Bremsweg durch optimal getimte Muskelantagonisten."
+          "text": "Nach Fitts' Gesetz (1954) und dem stochastischen Modell optimierter Subbewegungen (Meyer et al. 1988) besteht ein Zielwechsel aus einem schnellen Hauptimpuls über den größten Teil der Distanz und kurzen Korrekturbewegungen. Je kleiner und schneller das Ziel, desto mehr Korrektur ist nötig."
         }
       },
       {
@@ -176,7 +176,7 @@ export default function TargetSwitchingSwarmDePage() {
         "name": "Wie oft sollten ambitionierte Gamer Target-Switching-Szenarien trainieren?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "10 bis 15 Minuten hochintensives Target-Switching 3 bis 4 Mal pro Woche oder als integraler Bestandteil der Pre-Match-Warmup-Routine liefern optimale Reize zur Eliminierung mentaler Verzögerungen und für flüssiges Flick-Chaining."
+          "text": "Es gibt keine belegte Ideal-Dauer. Ein paar konzentrierte Durchgänge als Aufwärmen vor dem Match sind ein guter Start. Vergleiche deine Werte auf derselben Hardware; eine Verbesserung im Match ist nicht garantiert."
         }
       },
       {
@@ -184,7 +184,7 @@ export default function TargetSwitchingSwarmDePage() {
         "name": "Ist dieses Target Switching Swarm Trainingsprogramm komplett kostenlos?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Ja, der Target Switching Aim Trainer ist vollständig kostenlos, werbefrei im Trainingscanvas nutzbar und läuft ohne Download oder Registrierung direkt im modernen Webbrowser über native HTML5 Canvas- und Pointer-Lock-Schnittstellen."
+          "text": "Ja, das Zielwechsel-Training ist kostenlos und läuft ohne Download oder Registrierung im Browser. Du brauchst eine Maus und Pointer Lock; auf reinen Touch-Geräten ist es nicht spielbar."
         }
       }
     ]
@@ -194,20 +194,20 @@ export default function TargetSwitchingSwarmDePage() {
     "@context": "https://schema.org",
     "@type": "HowTo",
     "name": "Target Switching und Multi-Target-Flicks trainieren",
-    "description": "Schritt-für-Schritt-Anleitung zur Beherrschung schneller Zielwechsel, visueller Pfadfindung und flüssiger Multikill-Kinematik.",
+    "description": "Vier Schritte, um mit bewegten Mehrfachzielen schnelle Zielwechsel zu üben.",
     "step": [
       {
         "@type": "HowToStep",
         "position": 1,
         "name": "Mausempfindlichkeit kalibrieren",
-        "text": "Stimme DPI und In-Game-Sensitivität in den Einstellungen ab, klicke Start und sperre den Hardware-Mauszeiger im Canvas.",
+        "text": "Stelle die Sensitivität auf der /drills-Seite auf deine Ingame-Sensitivität ein und starte; Pointer Lock wird automatisch aktiviert.",
         "url": "https://skilldrills.online/de/drills/fps/target-switching-swarm#step-1"
       },
       {
         "@type": "HowToStep",
         "position": 2,
         "name": "Erstes Schwarmziel erfassen",
-        "text": "Flicke blitzschnell auf das nächstgelegene Ziel im Schwarm und eliminiere es für +100 Punkte und einen Zeitbonus.",
+        "text": "Flicke auf das nächstgelegene bewegte Ziel und triff es für +100 Punkte und +2 Sekunden (maximal 60).",
         "url": "https://skilldrills.online/de/drills/fps/target-switching-swarm#step-2"
       },
       {
@@ -221,43 +221,43 @@ export default function TargetSwitchingSwarmDePage() {
         "@type": "HowToStep",
         "position": 4,
         "name": "Flüssigen Wechsel-Rhythmus aufrechterhalten",
-        "text": "Löse Muskelverspannungen im Handgelenk, um saubere Zielwechselketten aufzubauen und höhere Schwierigkeitsstufen freizuschalten.",
+        "text": "Halte das Handgelenk locker, triff Ziele, bevor sie ablaufen, und baue so Combos und höhere Level auf.",
         "url": "https://skilldrills.online/de/drills/fps/target-switching-swarm#step-4"
       }
     ]
   };
 
   const targetSwitchingGuide = {
-    heading: "Aim Trainer Zielwechsel: Multi-Target und Spray Transfer",
+    heading: "Zielwechsel-Training: schnelle Wechsel zwischen mehreren Zielen",
     intro: [
-      "Wer einen Aim Trainer für Zielwechsel sucht, trainiert hier den Wechsel des Fadenkreuzes vom gerade getroffenen Gegner zum nächsten Ziel ohne Bestätigungspause. Das Drill misst Übergangslatenz und Trefferquote für Multi-Target-Aiming, Spray Transfer und schnelle Duelle in CS2 und Valorant.",
-      "Die Psychophysik schneller Zielwechsel gehorcht dem Fitts'schen Gesetz (Fitts, 1954) und dem stochastischen Modell optimierter Subbewegungen von David E. Meyer et al. (1988). Eine gezielte Mausbewegung besteht aus einem ballistischen Primärschub über rund 90% der Flugbahn und einer sensomotorisch geführten terminalen Mikrokontraktion. Unerfahrene Spieler verlieren 100–250 ms durch passives Abwarten der Kill-Bestätigung. Profi-Schützen hingegen leiten die primäre Augensakkade zum nächsten Ziel bereits ein, während der vorherige Treffer registriert wird.",
-      "Die visuelle Orientierung in dichten Zielschwärmen beruht auf der Feature Integration Theory und präattentiver visueller Suche (Anne M. Treisman & Garry Gelade, 1980; Jeremy M. Wolfe, 2007). Das menschliche Sehzentrum kann räumliche Bezugspunkte über Visual Indexing (FINST-Theorie) simultan erfassen. Dadurch optimieren erfahrene Spieler ihre Flick-Pfade durch Ziel-Cluster nach dem Prinzip der kürzesten Winkelabstände.",
-      "Messmethodik: Jedes Ereignis wird clientseitig über die hochauflösende performance.now()-Uhr deines Browsers registriert – absolut latenzfrei ohne Server-Roundtrip. Zu beachten: Browser-Timer werden aus Sicherheitsgründen (Spectre-Schutz) auf ca. 1 ms gerundet; Displays quantisieren visuelle Reize über ihre Bildwiederholrate (16,7 ms bei 60 Hz, 6,9 ms bei 144 Hz, 4,1 ms bei 240 Hz). Die USB-Abfragerate der Maus fügt ca. 1 ms bei 1000 Hz hinzu. Differenzen unter 5 ms stellen messtechnisches Rauschen dar; vergleiche Trainingsläufe stets auf demselben Setup."
+      "Dieses kostenlose Zielwechsel-Training im Browser hält ständig 2 bis 5 bewegte, abprallende Ziele auf dem Bildschirm. Sobald du eines triffst, erscheint ein neues, sodass du den Wechsel des Fadenkreuzes zum nächsten Ziel ohne Bestätigungspause übst. Die Uhr startet bei 45 Sekunden, jeder Treffer gibt 2 Sekunden dazu (maximal 60), jeder Fehlklick kostet 1 Sekunde – solange du sauber triffst, läuft der Durchgang weiter.",
+      "Die Psychophysik schneller Zielwechsel gehorcht dem Fitts'schen Gesetz (Fitts, 1954) und dem stochastischen Modell optimierter Subbewegungen von David E. Meyer et al. (1988). Eine gezielte Mausbewegung besteht aus einem schnellen Primärschub über den größten Teil der Strecke und einer sensomotorisch geführten terminalen Mikrokontraktion. Viele Spieler warten nach einem Treffer kurz auf die Kill-Bestätigung. Dieser Drill zielt darauf, den Blick schon beim Klick zum nächsten Ziel zu lenken und diese Pause zu verkürzen.",
+      "Die visuelle Orientierung in dichten Zielschwärmen beruht auf der Feature Integration Theory und präattentiver visueller Suche (Anne M. Treisman & Garry Gelade, 1980; Jeremy M. Wolfe, 2007). Menschen können einige bewegte Objekte gleichzeitig verfolgen. Wer sich vorab eine Reihenfolge mit kurzen Wegen zwischen nahen Zielen zurechtlegt, wechselt flüssiger.",
+      "Hinweis zu den Werten: Der Ergebnisbildschirm zeigt Punkte, Präzision (Treffer ÷ alle Klicks), zerstörte Ziele, maximale Combo und erreichtes Level. Dein Highscore wird nur in diesem Browser gespeichert. Wechselzeiten in Millisekunden misst dieser Drill nicht. Bildwiederholrate und Maus-Abtastrate beeinflussen das Spielgefühl, vergleiche deine Werte deshalb auf demselben Setup."
     ],
     benchmarks: {
-      title: "Benchmarks für Target Switching & Übergangslatenz",
-      headers: ["Leistungsstufe", "Wechsel-Latenz", "Eliminationsrate (Ziele/Min)", "Wettkampf-Implikation (In-Game)"],
+      title: "Präzisions-Übungsbereiche im Zielwechsel-Training",
+      headers: ["Übungsbereich", "Präzision", "Bedeutung"],
       rows: [
-        ["Stufe 5", "Unter 210 ms", "110+ Ziele/min", "Perfekte Multi-Target Spray Transfers; 0 ms Kill-Bestätigungs-Zögern; mühelose 1v3 Site-Verteidigungen"],
-        ["Stufe 4", "210 – 260 ms", "92 – 110 Ziele/min", "Messerscharfe Zielsequenzierung; minimale Bremswobbler bei weiten Diagonal-Switches; zuverlässige Multikills"],
-        ["Tier 3 (Ascendant / Diamond / Fortgeschritten)", "260 – 320 ms", "74 – 92 Ziele/min", "Solide Zielwechsel in engen Clustern; spürbarer Zeitverlust bei Weitwinkel-Transfers über die Bildschirmmitte"],
-        ["Tier 4 (Platin / Gold / Erfahren)", "320 – 400 ms", "56 – 74 Ziele/min", "Deutliche Bestätigungspause (über 100 ms Zögern nach Kills); häufiges Überschießen durch mangelnde Bremskraft"],
-        ["Tier 5 (Silber / Bronze / Einsteiger)", "Über 400 ms", "Unter 56 Ziele/min", "Stoppt die Maus zwischen Zielen vollständig ab; visuelle Suche startet nach jedem Schuss neu; verkrampfte Hand"]
+        ["Bereich 1", "ab 95 %", "Kaum Klicks ins Leere, auch auf hohen Leveln"],
+        ["Bereich 2", "88 – 95 %", "Gelegentliche Fehlklicks bei schnellen Zielen, Wechselrhythmus bleibt"],
+        ["Bereich 3", "80 – 88 %", "Überschießen bei Wechseln zu weit entfernten Zielen"],
+        ["Bereich 4", "70 – 80 %", "Hektische Fehlklicks kosten häufig Zeit"],
+        ["Bereich 5", "unter 70 %", "Tempo drosseln und zuerst sauberes Abstoppen sichern"]
       ],
-      note: "Die Wechsel-Latenz beziffert die Zeitspanne von der Zerstörung eines Ziels bis zum validen Eintreffen des Fadenkreuzes auf dem nächsten Ziel; die Eliminationsrate misst die Trefferdichte über die Trainingsdauer (Woods et al., 2015)."
+      note: "Präzision ist der Wert auf dem Ergebnisbildschirm (Treffer ÷ alle Klicks). Die Bereiche sind SkillDrills-Übungsbereiche, keine Forschungsnormen, Spielränge oder Nutzerstatistiken."
     },
     techniques: {
       title: "Evidenzbasierte Protokolle zur Perfektionierung von Target Switching",
       items: [
         {
           name: "Sakkadische Pfadplanung & Visual Indexing",
-          desc: "Verschiebe deinen Blick auf das sekundäre Ziel, während deine Hand noch die finale Mikro-Anpassung auf dem primären Ziel ausführt (Treisman & Gelade, 1980; Wolfe, 2007). Augenbewegungen gehen Handbewegungen um 50–80 ms voraus.",
+          desc: "Verschiebe deinen Blick auf das sekundäre Ziel, während deine Hand noch die finale Mikro-Anpassung auf dem primären Ziel ausführt (Treisman & Gelade, 1980; Wolfe, 2007). Meist erreicht der Blick das Ziel vor der Hand.",
           tips: "Starre niemals auf ein Ziel, nachdem du geklickt hast; lass die Zerstörung im peripheren Sehen ablaufen, während die Fovea bereits das nächste Ziel fokussiert."
         },
         {
           name: "Terminale Muskelbremsung & Subbewegungs-Optimierung",
-          desc: "Aktiviere antagonistische Muskelgruppen auf den letzten 10% der Flick-Strecke, um die Maus abrupt über dem Zielzentrum zu stoppen, ohne nachzuschwingen (Meyer et al., 1988).",
+          desc: "Bremse auf dem letzten Stück der Flick-Strecke bewusst ab, um die Maus abrupt über dem Zielzentrum zu stoppen, ohne nachzuschwingen (Meyer et al., 1988).",
           tips: "Stelle dir deine Maus wie mit hydraulischen Bremsen vor: Explosiv beschleunigen, dann direkt über dem Ziel zupacken."
         },
         {
@@ -273,13 +273,13 @@ export default function TargetSwitchingSwarmDePage() {
       ]
     },
     steps: [
-      "Stimme In-Game-Sensitivität und DPI in den Einstellungen ab und aktiviere die Hardware-Mauszeigersperre.",
+      "Stelle die Sensitivität auf der /drills-Seite auf deine Ingame-Sensitivität ein und starte (Pointer Lock automatisch).",
       "Überblicke den Zielschwarm, um dichte Gruppierungen mit minimalen Abständen zu identifizieren.",
-      "Flicke explosiv auf das erste Ziel (+100 Punkte, +0,35s Bonuszeit auf die Runden-Uhr).",
+      "Flicke auf das erste Ziel (+100 Punkte × Combo- und Level-Multiplikator, +2 s auf die Uhr, maximal 60 s).",
       "Leite den Mausimpuls unmittelbar zum nächsten Ziel weiter, ohne auf visuelle Bestätigung zu warten.",
-      "Halte den Rhythmus aufrecht, um Multiplikator-Combos aufzubauen und höhere Zieldichten zu meistern."
+      "Vermeide Fehlklicks (-1 s), halte den Rhythmus und erreiche höhere Level mit kleineren, schnelleren Zielen."
     ],
-    audience: "Wettkampforientierte FPS-Spieler in Counter-Strike 2, Valorant, Apex Legends und Overwatch 2, die überragende Multi-Target-Geschwindigkeit, präzise Spray Transfers und zögerungsfreie Multikills anstreben.",
+    audience: "FPS-Spieler in Counter-Strike 2, Apex Legends und Overwatch 2, die Zielwechsel zwischen mehreren Gegnern gezielt üben wollen. Eine Maus wird benötigt.",
     faqs: faqSchema.mainEntity.map(e => ({ q: e.name, a: e.acceptedAnswer.text })),
     sources: pickSources('woods2015', 'fitts1954', 'meyer1988', 'treisman1980', 'wolfe2007'),
     related: [
@@ -319,9 +319,9 @@ export default function TargetSwitchingSwarmDePage() {
       />
       <TargetSwitchingSwarmClient
         copy={{
-    h1Keyword: "Aim Trainer Zielwechsel",
-    h1Suffix: " – Multi-Target & Spray Transfer",
-    subtitle: "Trainiere schnelle Übergänge zwischen mehreren Zielen und kontrollierte Spray Transfers direkt im Browser.",
+    h1Keyword: "Zielwechsel-Training",
+    h1Suffix: ": Multi-Target im Browser",
+    subtitle: "Übe schnelle, saubere Wechsel zwischen mehreren bewegten Zielen – kostenlos im Browser.",
           statScore: "Punkte",
           statTime: "Zeit",
           statAccuracy: "Präzision",
@@ -331,13 +331,13 @@ export default function TargetSwitchingSwarmDePage() {
           statPeakLevel: "Höchstlevel",
           startTitle: "Target Switching Swarm",
           startSubtitle: "Hardware Raw Input • Endlose Levelprogression",
-          stageCaption: "Flicke rasant zwischen Zielen hin und her, bevor deren Timer abläuft. Vermeide Fehlschüsse für maximale Combo-Boni!",
+          stageCaption: "Triff die bewegten Ziele nacheinander, bevor sie verschwinden. Fehlklicks kosten 1 Sekunde und die Combo.",
           rulesTitle: "Trainingsregeln & Punktesystem",
           aboutTitle: "Über Target Switching im FPS-Gaming",
           rulesItems: [
-            { num: "1", text: "Zielzerstörung", highlight: "Cyan-Ziele (+100 PKT / +0,35s)", result: "+100 PKT / +0,35s" },
-            { num: "2", text: "Dynamischer Schwarm", highlight: "Sofortiger Respawn", result: "Dauerhafter Schwarm" },
-            { num: "3", text: "Fehlerstrafe", highlight: "Fehlschuss / Zeitablauf", result: "Combo-Reset" },
+            { num: "1", text: "Zieltreffer", highlight: "+100 PKT (+2s, max. 60s)", result: "×Combo-Multiplikator" },
+            { num: "2", text: "Dauerhafter Schwarm", highlight: "Sofortiger Respawn", result: "2–5 Ziele aktiv" },
+            { num: "3", text: "Fehlklick / Zeitablauf", highlight: "Strafe", result: "Combo-Reset (-1s)" },
             { num: "4", text: "Level-Progression", highlight: "+1 Level / 2.100 PKT", result: "Schneller & Kleiner" }
           ]
         }}

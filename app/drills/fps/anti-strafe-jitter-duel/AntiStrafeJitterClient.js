@@ -68,14 +68,14 @@ const getLevelConfig = (level, combo = 0) => {
 // ACCORDION DATA
 // ============================================================
 const RULES_ITEMS = [
-  { num: "1", text: "Tracking Alignment", highlight: "+50 PTS (+0.4s/s)", result: "×Combo Mult" },
+  { num: "1", text: "Tracking Alignment", highlight: "+10 PTS / 0.25s (+0.4s/s)", result: "×Combo Mult" },
   { num: "2", text: "Continuous Combo", highlight: "Up to 3.0×", result: "Max Multiplier" },
   { num: "3", text: "Level Progression", highlight: "+1 Level / 1400 PTS", result: "Adaptive Jitter" },
-  { num: "4", text: "Off-Target Penalty", highlight: "1.0s Off-Target", result: "Resets Combo (-0.6s)" }
+  { num: "4", text: "Off-Target Penalty", highlight: "1.0s Off-Target", result: "Resets Combo" }
 ];
 
 const ABOUT_INTRO = [
-  "Reactive tracking is the core mechanical skill in shooters where a player continuously matches their crosshair position to an unpredictably moving target. Unlike click timing or predictive tracking, reactive tracking relies entirely on visual reflexes to detect sudden velocity changes, micro-accelerations, and ADAD reversals."
+  "Reactive tracking means keeping your crosshair on a target whose movement you cannot predict. In this drill the target jitters left and right with sudden reversals, so you have to see each direction change and correct after it happens."
 ];
 
 const ABOUT_CARDS = [
@@ -89,8 +89,7 @@ const ABOUT_SECTIONS = [
     icon: Activity,
     title: "Why Reactive Tracking Matters",
     paragraphs: [
-      "By training reactive tracking, players learn to suppress panic responses during close-quarters engagements, building smooth wrist control and minimizing micro-hesitation delays.",
-      "Close-quarters duels are won by the player who maintains longer crosshair contact during rapid direction shifts."
+      "Score only accrues while the crosshair is on the sphere, and the combo only grows with each unbroken second on target, so the drill rewards staying in contact through reversals rather than recovering after them."
     ]
   }
 ];
@@ -109,7 +108,7 @@ const RELATED_DRILLS = [
 // MAIN COMPONENT
 // ============================================================
 export default function AntiStrafeJitterClient({ copy = null }) {
-  const { locale } = useTranslation();
+  const { locale, t } = useTranslation();
   const [gameState, setGameState] = useState('start');
   const [countdownValue, setCountdownValue] = useState(3);
   const [isFullscreen, setIsFullscreen] = useState(false);
@@ -809,10 +808,10 @@ export default function AntiStrafeJitterClient({ copy = null }) {
               score={score}
               isNewBest={isNewBest}
               stats={[
-                { value: analytics.accuracy, suffix: "%", label: "Tracking Accuracy" },
-                { value: `${analytics.offTargetTime}s`, label: "Off-Target Time" },
-                { value: `${analytics.bestCombo}x`, label: "Max Combo" },
-                { value: `Lv. ${analytics.levelReached}`, label: "Peak Level" },
+                { value: analytics.accuracy, suffix: "%", label: t('ui.resultTrackingAccuracy', 'Tracking Accuracy') },
+                { value: `${analytics.offTargetTime}s`, label: t('ui.resultOffTargetTime', 'Off-Target Time') },
+                { value: `${analytics.bestCombo}x`, label: t('ui.resultMaxCombo', 'Max Combo') },
+                { value: `Lv. ${analytics.levelReached}`, label: t('ui.resultPeakLevel', 'Peak Level') },
               ]}
               onPlayAgain={enterDrill}
               onBeforeShare={() => setIsFullscreen(false)}

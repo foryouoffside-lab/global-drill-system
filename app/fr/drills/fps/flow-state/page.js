@@ -7,7 +7,7 @@ import RelatedDrills from '@/components/drill/RelatedDrills';
 
 export const metadata = {
   title: "Concentration FPS | Entraînement de Flow | SkillDrills",
-  description: "Entraînement gratuit de concentration FPS : gardez un rythme de visée stable, adaptez le défi et mesurez votre tracking fluide.",
+  description: "Concentration FPS gratuite : gardez le réticule sur une cible qui suit des courbes. 1 s hors cible casse le combo, et chaque niveau rend la cible plus petite.",
   keywords: [
     "entraînement concentration FPS",
     "état de flow jeu",
@@ -18,7 +18,7 @@ export const metadata = {
     "garder son focus sur CS2",
     "routine mentale gaming",
     "endurance mentale FPS",
-    "aim trainer flow gratuit"
+    "état de flow FPS"
   ],
   alternates: {
     canonical: "https://skilldrills.online/fr/drills/fps/flow-state",
@@ -30,7 +30,7 @@ export const metadata = {
   },
   openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
     title: "Concentration FPS | Entraînement de Flow | SkillDrills",
-    description: "Gardez un rythme de visée stable et réduisez les distractions dans cet entraînement FPS gratuit. Adaptez le défi et mesurez votre tracking.",
+    description: "Concentration FPS gratuite : gardez le réticule sur une cible qui suit des courbes. 1 s hors cible casse le combo, et chaque niveau rend la cible plus petite.",
     url: "https://skilldrills.online/fr/drills/fps/flow-state",
     siteName: 'SkillDrills',
     locale: 'fr_FR',
@@ -39,7 +39,7 @@ export const metadata = {
   twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: 'summary_large_image',
     title: "Concentration FPS | Entraînement de Flow | SkillDrills",
-    description: "Gardez un rythme de visée stable et réduisez les distractions dans cet entraînement FPS gratuit. Adaptez le défi et mesurez votre tracking.",
+    description: "Concentration FPS gratuite : gardez le réticule sur une cible qui suit des courbes. 1 s hors cible casse le combo, et chaque niveau rend la cible plus petite.",
   },
 };
 
@@ -67,7 +67,7 @@ export default function FlowStateFrPage() {
       "price": "0",
       "priceCurrency": "USD"
     },
-    "description": "Simulateur gratuit d'attention soutenue et d'état de flow. Perfectionnez le tracking continu de souris et éliminez les doutes en jeu."
+    "description": "Exercice gratuit de concentration FPS : suivre sans interruption une cible sur des courbes de Bézier pour travailler l'attention soutenue et le tracking."
   };
 
   const softwareSchema = {
@@ -77,10 +77,10 @@ export default function FlowStateFrPage() {
     "applicationCategory": "GameApplication",
     "operatingSystem": "Web Browser",
     "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
-    "description": "Outil d'évaluation psychomotrice et d'induction de concentration profonde pour les joueurs compétitifs de jeux de tir.",
+    "description": "Exercice de tracking continu dans le navigateur pour travailler la concentration des joueurs de FPS.",
     "genre": "Entraînement FPS / Focus Mental",
     "url": "https://skilldrills.online/fr/drills/fps/flow-state",
-    "dateModified": "2026-09-20",
+    "dateModified": "2026-11-09",
     "publisher": {
       "@type": "Organization",
       "name": "SkillDrills",
@@ -99,13 +99,13 @@ export default function FlowStateFrPage() {
     "playMode": "SinglePlayer",
     "applicationCategory": "Game",
     "operatingSystem": "Web Browser",
-    "dateModified": "2026-09-20"
+    "dateModified": "2026-11-09"
   };
 
   const faqSchema = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
-    "dateModified": "2026-09-20",
+    "dateModified": "2026-11-09",
     "mainEntity": [
       {
         "@type": "Question",
@@ -128,7 +128,7 @@ export default function FlowStateFrPage() {
         "name": "Qu'est-ce que l'hypofrontalité transitoire lors du tir ?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "C'est la mise en sommeil temporaire du cortex préfrontal dorsolatéral en pleine action (Dietrich, 2004), confiant la gestion motrice aux ganglions de la base et au cervelet sans censure consciente."
+          "text": "C'est une hypothèse de Dietrich (2004) : pendant le flow, l'activité du cortex préfrontal dorsolatéral baisserait temporairement, ce qui réduirait le contrôle conscient des gestes. Elle reste discutée et ce drill ne la mesure pas."
         }
       },
       {
@@ -168,7 +168,7 @@ export default function FlowStateFrPage() {
         "name": "Pourquoi perd-on en précision après plusieurs heures de jeu ?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "L'effort cognitif prolongé épuise les ressources du réseau attentionnel fronto-pariétal (Posner & Petersen, 1990), dégradant le suivi continu en saccades de rattrapage imprécises."
+          "text": "Après une longue concentration, il devient plus difficile de garder l'attention sur un point : le suivi devient moins fluide et les corrections tardives se multiplient. Les ruptures de focus et la précision de suivi de ce drill montrent ce changement."
         }
       },
       {
@@ -184,7 +184,7 @@ export default function FlowStateFrPage() {
         "name": "Cet exercice aide-t-il la concentration au travail ou aux études ?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Oui. La faculté d'ignorer les signaux perturbateurs et de maintenir une attention focalisée est une fonction exécutive transférable à la programmation, à l'analyse et à la lecture soutenue."
+          "text": "Ce n'est pas démontré. Le transfert d'un exercice de tracking vers le travail ou les études n'est pas prouvé, mais le drill peut servir de courte pause de concentration."
         }
       }
     ]
@@ -200,14 +200,14 @@ export default function FlowStateFrPage() {
         "@type": "HowToStep",
         "position": 1,
         "name": "Aligner la Sensibilité en Jeu",
-        "text": "Sélectionnez votre jeu compétitif et appliquez votre sensibilité exacte pour garantir une parfaite mémoire motrice.",
+        "text": "Réglez une fois la sensibilité de la souris dans les paramètres de la page /drills ; elle s'applique à tous les exercices à la souris.",
         "url": "https://skilldrills.online/fr/drills/fps/flow-state#step-1"
       },
       {
         "@type": "HowToStep",
         "position": 2,
         "name": "Verrouiller le Curseur en Mode Plein Écran",
-        "text": "Cliquez sur démarrer pour capturer le curseur sans aucune accélération logicielle du système d'exploitation.",
+        "text": "Cliquez sur démarrer pour passer en plein écran avec verrouillage du pointeur (Pointer Lock). Une souris est nécessaire, le tactile n'est pas pris en charge.",
         "url": "https://skilldrills.online/fr/drills/fps/flow-state#step-2"
       },
       {
@@ -221,7 +221,7 @@ export default function FlowStateFrPage() {
         "@type": "HowToStep",
         "position": 4,
         "name": "Maintenir la Série dans la Zone de Flow",
-        "text": "Gardez le réticule dans le rayon de la cible pour charger la jauge de flow et débloquer les multiplicateurs.",
+        "text": "Chaque seconde complète sur la cible ajoute 1 au combo et le multiplicateur monte jusqu'à 3,0x. Après 1 seconde hors cible, le combo repart à zéro.",
         "url": "https://skilldrills.online/fr/drills/fps/flow-state#step-4"
       }
     ]
@@ -235,17 +235,17 @@ export default function FlowStateFrPage() {
     statAccuracy: "Précision de Suivi",
     statBestScore: "Meilleur Score",
     startTitle: "Entraînement Focus FPS et État de Flow",
-    startSubtitle: "Entrée RAW de la souris • Endurance attentionnelle • Difficulté progressive",
+    startSubtitle: "Pointer Lock • Endurance attentionnelle • Difficulté progressive",
     getReady: "Prêt",
     pausedTitle: "Concentration en Pause",
     pausedSubtitle: "Cliquez pour reprendre (le verrouillage de souris sera réactivé)",
     stageCaption: "Suivez la trajectoire des courbes de Bézier avec régularité et gardez un rythme de visée constant.",
     rulesTitle: "Règles d'Entraînement et Attribution des Points",
     rulesItems: [
-      { num: "1", text: "Alignement Continu", highlight: "+10 PTS (+0,4s/s)", result: "Verrouillage constant sur la cible" },
+      { num: "1", text: "Alignement Continu", highlight: "+10 PTS / 0,25 s", result: "Sur la cible : +0,4 s/s de temps (60 s max)" },
       { num: "2", text: "Multiplicateur de Flow", highlight: "Jusqu'à 3,0x points", result: "Chaîne de focus ininterrompue" },
       { num: "3", text: "Progression en Niveaux", highlight: "+1 Niveau / 1400 PTS", result: "Vitesse Bézier adaptative" },
-      { num: "4", text: "Rupture de Focus", highlight: "1,0s hors cible", result: "Réinitialisation combo (-0,6s)" }
+      { num: "4", text: "Rupture de Focus", highlight: "1,0s hors cible", result: "Combo remis à zéro" }
     ],
     aboutTitle: "À Propos de l'Entraîneur d'État de Flow FPS"
   };
@@ -253,29 +253,29 @@ export default function FlowStateFrPage() {
   const flowStateGuide = {
     heading: "Guide de Concentration FPS et Benchmarks de l'État de Flow",
     intro: [
-      "L'entraînement de concentration FPS consiste à suivre une cible avec un rythme stable, réduire les distractions et adapter le défi à son niveau réel. Ce drill mesure la précision du tracking et l'endurance attentionnelle ; il ne promet pas de créer le flow à volonté, mais révèle quand le focus et le contrôle diminuent.",
-      "L'hypothèse d'hypofrontalité transitoire de Dietrich (2004) détaille la dynamique cérébrale de cet état : en atténuant temporairement le contrôle analytique du cortex préfrontal dorsolatéral (DLPFC), le cerveau délègue la visée aux ganglions de la base et au cervelet. Dans les jeux de tir, ce mécanisme libère les gestes de l'hésitation et autorise des micro-corrections réflexes instantanées.",
-      "S'appuyant sur l'horloge performance.now() du navigateur à haute précision temporelle (Woods et al., 2015) et des trajectoires continues en courbes de Bézier (Krauzlis, 2004; Posner & Petersen, 1990), cet outil développe l'endurance de visée sans installation requise.",
+      "L'entraînement de concentration FPS consiste à suivre une cible avec un rythme stable et à réduire les distractions. Le drill commence avec 45 secondes, ajoute du temps tant que vous restez sur la cible et devient plus difficile avec le score et le combo. Il mesure la précision du tracking et l'endurance attentionnelle ; il ne promet pas de créer le flow à volonté, mais révèle quand le focus et le contrôle diminuent.",
+      "L'hypothèse d'hypofrontalité transitoire de Dietrich (2004) tente d'expliquer pourquoi le contrôle conscient diminue pendant le flow. Ce drill ne garantit pas cet état, mais il permet de répéter un suivi sans interruption et de voir à quel moment la concentration lâche.",
+      "La cible suit des courbes de Bézier quadratiques ; à chaque niveau son rayon diminue et les courbes se resserrent. Le contrôle se fait à la souris en Pointer Lock, sans installation, directement dans le navigateur.",
       "Mesure technique sur votre appareil : chaque événement est horodaté localement via le navigateur sans transmission de métriques vers des serveurs distants. Rappelez-vous que les navigateurs appliquent une discrétisation de ~1 ms pour contrer les failles de temporisation et que les écrans actualisent l'image par pas réguliers (16,7 ms à 60 Hz contre 4,1 ms à 240 Hz). Mesurez vos progrès en comparant vos performances sur le même poste."
     ],
     benchmarks: {
       title: "Paliers d'Induction du Flow et Niveaux d'Endurance Attentionnelle",
       headers: ["Niveau", "Dimension du Flow", "Indicateur Physiologique", "Mécanisme Cognitif", "Objectif Pratique"],
       rows: [
-        ["Niveau 1", "Orientation Attentionnelle", "Filtrage sensoriel et fixation fovéale", "Le réseau d'alerte de Posner inhibe les bruits ambiants", "Alignement fovéal sur la cible en moins de 200 ms"],
+        ["Niveau 1", "Orientation Attentionnelle", "Filtrage sensoriel et fixation fovéale", "Le réseau d'alerte de Posner inhibe les bruits ambiants", "Terminer une partie avec au moins 50 % de précision de suivi"],
         ["Niveau 2", "Équilibre Défi-Compétence", "Calibration dynamique de la vitesse", "Canal de Csikszentmihalyi : vitesse calée sur la motricité", "Maintenir 70% à 80% de contact régulier sur la cible"],
         ["Niveau 3", "Poursuite Visuelle Lente", "Synchronisation de vitesse fovéale", "Les voies cortico-striées de Krauzlis suppriment les saccades", "Plus de 85% de maintien stable sur courbes de Bézier"],
         ["Niveau 4", "Hypofrontalité Transitoire", "Mise en retrait relative du DLPFC", "Hypothèse de Dietrich : motricité réflexe sans doute conscient", "Plus de 30 secondes d'immersion ininterrompue sans hésiter"],
-        ["Niveau 5", "Endurance Maximale de Focus", "Résistance à la fatigue exécutive", "Le réseau exécutif empêche la dégradation du temps de réaction", "Maintenir plus de 60 secondes au multiplicateur maximal"]
+        ["Niveau 5", "Endurance Maximale de Focus", "Résistance à la fatigue exécutive", "Le réseau exécutif empêche la dégradation du temps de réaction", "Atteindre un combo de 50 (multiplicateur max 3,0x)"]
       ],
-      note: "Synthèse issue de la psychologie du flow (Csikszentmihalyi, 1975, 1990), des neurosciences cognitives (Dietrich, 2004), de la poursuite oculaire (Krauzlis, 2004) et des réseaux d'attention (Posner & Petersen, 1990)."
+      note: "Les objectifs sont des paliers d'entraînement SkillDrills, pas des normes de recherche ni des données d'utilisateurs. Les noms des paliers s'inspirent de Csikszentmihalyi (1975, 1990), Dietrich (2004), Krauzlis (2004) et Posner & Petersen (1990)."
     },
     techniques: {
       title: "Protocoles Pratiques pour Stimuler le Flow en Jeu",
       items: [
         {
           name: "Guidage Prédictif Tangentiel",
-          desc: "Au lieu de regarder en retard le centre de la cible, placez votre attention 2 à 3 degrés en avant sur le vecteur de déplacement. Ce guidage prédictif diminue la fatigue des yeux.",
+          desc: "Au lieu de regarder en retard le centre de la cible, regardez un peu en avant, dans la direction où la courbe se dirige.",
           tips: "Restez attentif aux infimes variations de courbure du tracé."
         },
         {
@@ -290,7 +290,7 @@ export default function FlowStateFrPage() {
         },
         {
           name: "Gestion des Pauses et Hydratation",
-          desc: "Une concentration soutenue mobilise beaucoup de glucose cérébral. Boire quelques gorgées d'eau et s'accorder 60 secondes d'arrêt préserve la lucidité.",
+          desc: "Une concentration soutenue fatigue. Boire un peu d'eau et s'accorder une courte pause aide à repartir plus frais.",
           tips: "Prenez une pause toutes les 45 à 60 minutes de session classée intense."
         }
       ]
@@ -308,25 +308,25 @@ export default function FlowStateFrPage() {
         },
         {
           name: "Efficience Motrice Sous-Corticale",
-          desc: "En délaissant l'analyse consciente pour un schéma moteur automatique, le système nerveux économise son énergie et agit à sa vitesse biologique maximale."
+          desc: "Un geste bien répété demande moins de contrôle conscient, ce qui laisse plus d'attention pour le jeu."
         }
       ]
     },
     steps: [
-      "Sélectionnez votre sensibilité de jeu habituelle via le sélecteur universel pour vous entraîner avec une sensibilité familière.",
+      "Réglez une fois la sensibilité de la souris dans les paramètres de la page /drills ; la valeur s'applique à tous les exercices à la souris.",
       "Cliquez sur 'Lancer' pour activer le plein écran avec verrouillage du pointeur (Pointer Lock).",
       "Fixez votre attention visuelle sur la cible en mouvement le long de courbes de Bézier continues et fluides.",
-      "Maintenez le réticule au centre de la cible pour charger la jauge de Flow et entrer dans la Zone.",
-      "Enchaînez des séries de concentration ininterrompues pour multiplier vos points et forger une endurance mentale résistante à la fatigue.",
+      "Gardez le réticule dans le rayon de la cible : chaque seconde complète augmente le combo, 1 seconde hors cible le remet à zéro.",
+      "Prolongez le combo pour augmenter le multiplicateur, puis comparez la précision et les ruptures de focus avec vos parties précédentes.",
     ],
     audience: "Joueurs compétitifs de FPS et de jeux de tir tactiques (Valorant, CS2, Apex Legends, Overwatch 2, Warzone), athlètes eSport en échauffement de tournoi et passionnés de performance cognitive souhaitant développer l'attention soutenue.",
     faqs: faqSchema.mainEntity.map(e => ({ q: e.name, a: e.acceptedAnswer.text })),
     sources: pickSources('woods2015', 'krauzlis2004', 'posner1990', 'green2003', 'dietrich2004'),
     related: [
       { href: "/fr/drills/reaction-speed/fps-tracking-trainer", label: "Entraîneur de Tracking FPS" },
-      { href: "/fr/drills/fps/anti-zigzag-movement-trainer", label: "Entraîneur Anti-Zigzag" },
-      { href: "/fr/drills/fps/anti-strafe-jitter-duel", label: "Duel Anti-Strafe Jitter" },
-      { href: "/fr/drills/fps/flick-shot-training", label: "Entraînement au Flick Shot" },
+      { href: "/fr/drills/fps/anti-zigzag-movement-trainer", label: "Tracking en zigzag" },
+      { href: "/fr/drills/fps/anti-strafe-jitter-duel", label: "Tracking anti-strafe ADAD" },
+      { href: "/fr/drills/fps/flick-shot-training", label: "Aim Test : flicks et précision" },
       { href: "/fr/drills/reaction-speed/visual-tracking-speed-test", label: "Test de Vitesse de Tracking Visuel" }
     ]
   };

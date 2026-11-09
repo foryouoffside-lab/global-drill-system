@@ -6,13 +6,11 @@ import { getAlternateLanguages } from '@/lib/i18n/locales';
 import { pickSources } from '@/lib/drillSources';
 
 export const metadata = {
-  title: "Aim Trainer | Priorisation des Cibles | SkillDrills",
-  description: "Aim trainer gratuit dans le navigateur : choisissez la cible la plus dangereuse et entraînez l'ordre des cibles, la décision et le contrôle du tir.",
+  title: "Priorisation des Cibles FPS : Choix de Cible | SkillDrills",
+  description: "Priorisation des cibles gratuite : touchez les cibles rouges avant les jaunes, ne tirez jamais sur les alliés verts. Choix de cible et contrôle du tir.",
   keywords: [
-    "aim trainer",
-    "aim trainer en ligne",
-    "aim trainer gratuit",
     "priorisation des cibles",
+    "choix de cible",
     "sélection de cibles Valorant",
     "évaluation des menaces FPS",
     "décision tactique FPS",
@@ -28,8 +26,8 @@ export const metadata = {
     follow: true,
   },
   openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
-    title: "Aim Trainer | Priorisation des Cibles | SkillDrills",
-    description: "Aim trainer gratuit dans le navigateur : choisissez la cible la plus dangereuse et entraînez l'ordre des cibles, la décision et le contrôle du tir.",
+    title: "Priorisation des Cibles FPS : Choix de Cible | SkillDrills",
+    description: "Priorisation des cibles gratuite : touchez les cibles rouges avant les jaunes, ne tirez jamais sur les alliés verts. Choix de cible et contrôle du tir.",
     url: "https://skilldrills.online/fr/drills/fps/target-prioritization",
     siteName: 'SkillDrills',
     locale: 'fr_FR',
@@ -37,8 +35,8 @@ export const metadata = {
   },
   twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: 'summary_large_image',
-    title: "Aim Trainer | Priorisation des Cibles | SkillDrills",
-    description: "Aim trainer gratuit dans le navigateur : choisissez la cible la plus dangereuse et entraînez l'ordre des cibles, la décision et le contrôle du tir.",
+    title: "Priorisation des Cibles FPS : Choix de Cible | SkillDrills",
+    description: "Priorisation des cibles gratuite : touchez les cibles rouges avant les jaunes, ne tirez jamais sur les alliés verts. Choix de cible et contrôle du tir.",
   },
 };
 
@@ -49,19 +47,19 @@ export default function TargetPrioritizationFrPage() {
     "itemListElement": [
       { "@type": "ListItem", "position": 1, "name": "SkillDrills", "item": "https://skilldrills.online/fr" },
       { "@type": "ListItem", "position": 2, "name": "Entraînement FPS", "item": "https://skilldrills.online/fr/drills/fps" },
-      { "@type": "ListItem", "position": 3, "name": "Aim Trainer - priorisation des cibles", "item": "https://skilldrills.online/fr/drills/fps/target-prioritization" }
+      { "@type": "ListItem", "position": 3, "name": "Priorisation des cibles - choix de cible FPS", "item": "https://skilldrills.online/fr/drills/fps/target-prioritization" }
     ]
   };
 
   const softwareSchema = {
     "@context": "https://schema.org",
     "@type": "SoftwareApplication", "sameAs": ["https://en.wikipedia.org/wiki/Visual_search", "https://en.wikipedia.org/wiki/Reaction_time"],
-    "name": "Aim Trainer - priorisation des cibles",
+    "name": "Priorisation des cibles - choix de cible FPS",
     "applicationCategory": "GameApplication",
     "operatingSystem": "Web Browser",
-    "dateModified": "2026-09-20",
+    "dateModified": "2026-11-09",
     "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
-    "description": "Entraîneur cognitif de priorisation de cibles, évaluation des menaces et contrôle d'inhibition motrice (Go/No-Go) pour shooters compétitifs.",
+    "description": "Drill gratuit de priorisation des cibles avec cibles rouges, jaunes et vertes : évaluation des menaces et retenue du tir (Go/No-Go) pour les jeux de tir.",
     "genre": "Entraînement FPS / Visée Cognitive et Prise de Décision",
     "url": "https://skilldrills.online/fr/drills/fps/target-prioritization",
     "publisher": {
@@ -74,22 +72,22 @@ export default function TargetPrioritizationFrPage() {
   const webAppSchema = {
     "@context": "https://schema.org",
     "@type": "WebApplication",
-    "name": "Aim Trainer - priorisation des cibles",
+    "name": "Priorisation des cibles - choix de cible FPS",
     "url": "https://skilldrills.online/fr/drills/fps/target-prioritization",
-    "description": "Entraîneur cognitif de priorisation de cibles, évaluation des menaces et contrôle d'inhibition motrice (Go/No-Go) pour shooters compétitifs.",
+    "description": "Drill gratuit de priorisation des cibles avec cibles rouges, jaunes et vertes : évaluation des menaces et retenue du tir (Go/No-Go) pour les jeux de tir.",
     "applicationCategory": "Game",
     "operatingSystem": "Web Browser",
     "browserRequirements": "Nécessite le support HTML5 Canvas et Pointer Lock API",
-    "dateModified": "2026-09-20"
+    "dateModified": "2026-11-09"
   };
 
   const videoGameSchema = {
     "@context": "https://schema.org",
     "@type": "VideoGame",
-    "name": "Aim Trainer - priorisation des cibles",
+    "name": "Priorisation des cibles - choix de cible FPS",
     "url": "https://skilldrills.online/fr/drills/fps/target-prioritization",
-    "description": "Entraîneur cognitif de priorisation de cibles, évaluation des menaces et contrôle d'inhibition motrice (Go/No-Go) pour shooters compétitifs.",
-    "dateModified": "2026-09-20",
+    "description": "Drill gratuit de priorisation des cibles avec cibles rouges, jaunes et vertes : évaluation des menaces et retenue du tir (Go/No-Go) pour les jeux de tir.",
+    "dateModified": "2026-11-09",
     "gamePlatform": "Web Browser",
     "genre": ["Entraînement FPS", "Aim Trainer", "Priorisation des Cibles"],
     "playMode": "SinglePlayer",
@@ -101,7 +99,7 @@ export default function TargetPrioritizationFrPage() {
   const faqSchema = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
-    "dateModified": "2026-09-20",
+    "dateModified": "2026-11-09",
     "mainEntity": [
       {
         "@type": "Question",
@@ -113,10 +111,18 @@ export default function TargetPrioritizationFrPage() {
       },
       {
         "@type": "Question",
+        "name": "Comment se déroule ce drill de priorisation des cibles ?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Au départ, le plein écran et le verrouillage du pointeur s'activent et le chrono démarre à 45 secondes. De 2 à 4 cibles se déplacent en même temps et rebondissent sur les bords. Une rouge (menace haute) rapporte 100 points, une jaune (menace moyenne) 50 points, multipliés par le combo et le niveau, et chaque touche ajoute 2 secondes (60 maximum). Une jaune devient rouge au bout d'un moment ; une verte (alliée) ne doit pas être touchée et disparaît après environ 3 secondes. Toucher une jaune alors qu'une rouge est encore visible est une erreur de priorité : aucun point et combo perdu. Le tir allié et les tirs manqués remettent aussi le combo à zéro, et coûtent 1 seconde. Tous les 1400 points, le niveau monte avec plus de cibles, plus de vitesse et plus de rouges."
+        }
+      },
+      {
+        "@type": "Question",
         "name": "Pourquoi les joueurs tirent-ils en panique sur la mauvaise cible ?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Sous l'effet de l'adrénaline, le système visuel réagit par réflexe en ciblant le premier objet en mouvement plutôt que le joueur le plus dangereux. L'entraînement d'inhibition exécutive apprend au cortex préfrontal à garder le contrôle sous stress intense."
+          "text": "Sous stress, on réagit facilement au premier objet en mouvement plutôt qu'au joueur le plus dangereux, avant d'avoir vérifié s'il s'agit d'une menace. S'entraîner à retenir son tir aide à garder ce contrôle."
         }
       },
       {
@@ -124,7 +130,7 @@ export default function TargetPrioritizationFrPage() {
         "name": "Comment le paradigme Go/No-Go s'applique-t-il au tir tactique ?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Créé par Franciscus Donders (1868), le protocole Go/No-Go mesure l'aptitude à tirer sans délai sur les cibles valides et à bloquer le geste devant les éléments neutres ou alliés, empêchant ainsi le tir ami et les pertes d'avantage tactique."
+          "text": "Décrit par Franciscus Donders (1868), le protocole Go/No-Go mesure l'aptitude à tirer sans délai sur les cibles valides et à bloquer le geste devant les éléments neutres ou alliés, empêchant ainsi le tir ami et les pertes d'avantage tactique."
         }
       },
       {
@@ -132,15 +138,15 @@ export default function TargetPrioritizationFrPage() {
         "name": "Qu'est-ce que le Temps de Réaction au Signal d'Arrêt (SSRT) ?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Le SSRT (Logan & Cowan, 1984) chiffre le délai pour annuler un ordre moteur déjà enclenché. En match, les professionnels stoppent leur tir en 200 à 240 ms lorsqu'ils s'aperçoivent que leur curseur dérive vers un coéquipier ou un leurre."
+          "text": "Le SSRT (Logan & Cowan, 1984) chiffre le délai pour annuler un ordre moteur déjà enclenché. Plus il est court, plus on peut annuler vite un tir vers un coéquipier ou un leurre. Ce drill ne mesure pas le SSRT directement ; il entraîne à ne pas tirer sur les cibles vertes."
         }
       },
       {
         "@type": "Question",
-        "name": "Comment les professionnels hiérarchisent-ils les menaces en duel multiple ?",
+        "name": "Comment hiérarchiser les menaces face à plusieurs adversaires ?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Les joueurs d'élite évaluent la ligne de vue directe, l'armement et l'imminence de la riposte. Un opposant qui a déjà son viseur sur vous doit être abattu avant un joueur en plein déplacement de profil."
+          "text": "Les critères courants sont la ligne de vue directe, l'armement et l'imminence de la riposte : un adversaire qui a déjà son viseur sur vous passe avant un joueur qui se déplace de profil. Ce drill simplifie cela en un ordre fixe, rouge avant jaune."
         }
       },
       {
@@ -156,7 +162,7 @@ export default function TargetPrioritizationFrPage() {
         "name": "Quel est le coût d'un tir sur un allié ou un leurre dans Valorant et CS2 ?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Tirer sur un clone (comme un leurre de Yoru) révèle votre position sonore, gaspille vos balles et écarte le viseur du danger authentique, ce qui conduit presque toujours à l'élimination de votre agent."
+          "text": "Tirer sur un clone (comme un leurre de Yoru) révèle votre position sonore, gaspille vos balles et écarte le viseur du danger authentique, ce qui laisse une fenêtre au vrai adversaire."
         }
       },
       {
@@ -164,7 +170,7 @@ export default function TargetPrioritizationFrPage() {
         "name": "Quelle sensibilité de souris facilite la sélection rapide de cibles ?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Une sensibilité moyenne à modérément basse (30 à 42 cm par 360°) offre une adhérence mécanique supérieure sur le tapis, évitant que le curseur ne déborde vers une mauvaise cible lors de grappes compactes."
+          "text": "Une sensibilité très élevée rend l'arrêt net sur la cible plus difficile, une très basse ralentit les changements vers des cibles éloignées. Utilisez plutôt votre sensibilité de jeu habituelle, avec laquelle vous vous arrêtez proprement."
         }
       },
       {
@@ -180,7 +186,7 @@ export default function TargetPrioritizationFrPage() {
         "name": "Combien de temps faut-il consacrer à la priorisation de cibles chaque jour ?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Consacrer 10 minutes à cet exercice avant vos parties compétitives affûte la vitesse de discernement et la discipline de tir sans occasionner de fatigue musculaire."
+          "text": "Il n'y a pas de règle fixe. Une dizaine de minutes avant de jouer est un format raisonnable ; comparez votre précision et votre nombre de tirs alliés sur le même matériel d'un jour à l'autre."
         }
       }
     ]
@@ -196,7 +202,7 @@ export default function TargetPrioritizationFrPage() {
         "@type": "HowToStep",
         "position": 1,
         "name": "Calibrer sa Sensibilité",
-        "text": "Ajustez vos DPI et votre sensibilité conformément à votre jeu favori pour maintenir une mémoire musculaire parfaite.",
+        "text": "Ajustez la sensibilité pour qu'elle soit proche de votre jeu habituel.",
         "url": "https://skilldrills.online/fr/drills/fps/target-prioritization#step-1"
       },
       {
@@ -224,25 +230,24 @@ export default function TargetPrioritizationFrPage() {
   };
 
   const targetPrioritizationGuide = {
-    heading: "Aim Trainer et Priorisation des Cibles sous Pression",
+    heading: "Priorisation des cibles en FPS : choix de cible et retenue du tir",
     intro: [
-      "Un aim trainer avec priorisation des cibles travaille la décision de choisir l'ennemi le plus dangereux avant de tirer. Ce drill mesure l'évaluation des menaces, le filtrage de l'attention et le contrôle du tir lorsque plusieurs adversaires apparaissent dans Valorant et CS2.",
-      "Le mécanisme neurobiologique de l'inhibition motrice a été documenté par Gordon D. Logan et William B. Cowan (1984) au travers du modèle horse-race : quand un signal d'arrêt se manifeste, l'ordre d'inhibition entre en compétition avec la commande motrice déjà initiée. Interrompre un geste en cours requiert des circuits spécifiques au niveau du cortex préfrontal, ce qui explique la fréquence des tirs réflexes désastreux chez les débutants.",
+      "Ce drill de priorisation des cibles travaille la décision de choisir l'ennemi le plus dangereux avant de tirer : cibles rouges mobiles (menace haute) d'abord, puis jaunes, et jamais les alliés verts. Vous y entraînez l'évaluation des menaces, le filtrage de l'attention et la retenue du tir, par exemple pour les combats à plusieurs adversaires sur Valorant et CS2.",
+      "Le mécanisme neurobiologique de l'inhibition motrice a été documenté par Gordon D. Logan et William B. Cowan (1984) au travers du modèle horse-race : quand un signal d'arrêt se manifeste, l'ordre d'inhibition entre en compétition avec la commande motrice déjà initiée. Sous pression, le clic l'emporte souvent avant que la cible soit vérifiée : c'est le tir de panique.",
       "En combinant la chronométrie mentale de Franciscus Cornelis Donders (1868/1969) relative aux temps de réaction de choix et la théorie d'intégration des traits d'Anne Treisman et Garry Gelade (1980), cet entraînement force le système visuel à hiérarchiser les cibles selon leur dangerosité avant d'autoriser la pression sur la souris.",
-      "En associant le modèle attentionnel de Michael I. Posner (1990), les recherches spatiales de C. Shawn Green et Daphne Bavelier (2003) et la mesure numérique à haute résolution (Woods et al., 2015), l'exercice éradique les tirs de panique pour instaurer une visée sélective et clinique en compétition.",
+      "En associant le modèle attentionnel de Michael I. Posner (1990), les recherches spatiales de C. Shawn Green et Daphne Bavelier (2003) et la mesure numérique à haute résolution (Woods et al., 2015), l'exercice vous fait pratiquer une visée sélective et la retenue du tir sous contrainte de temps.",
       "Protocole de mesure : chaque action est mesurée en millisecondes avec performance.now() localement dans votre navigateur sans aucune fuite de données. Contraintes matérielles : les minuteurs web intègrent une précision de 1 ms, et les écrans se rafraîchissent par paliers de 16,7 ms (60 Hz), 6,9 ms (144 Hz) et 4,1 ms (240 Hz). Le taux de rafraîchissement de la souris génère 8 ms à 125 Hz contre 1 ms à 1000 Hz (Woods et al., 2015). Évaluez votre évolution sur un équipement identique."
     ],
     benchmarks: {
-      title: "Barèmes Scientifiques de Priorisation des Menaces et Temps de Décision",
-      headers: ["Niveau de Performance", "Latence de Résolution", "Précision de Priorité", "Impact Compétitif en Match"],
+      title: "Lire l'écran de résultats",
+      headers: ["Valeur", "Comment le drill la compte", "Signification", "Progresser"],
       rows: [
-        ["Tier 1 (Palier Avancé)", "<280 ms", "96% – 99%+", "Évaluation des menaces infaillible ; élimination immédiate du danger majeur avec 0% de tir ami lors d'assauts frénétiques"],
-        ["Tier 2 (Palier Intermédiaire-Haut)", "280 – 340 ms", "90% – 96%", "Vitesse de décision remarquable ; reprise rapide après escalade des cibles ; moins de 1% d'erreurs de tir"],
-        ["Tier 3 (Diamant / Ascendant)", "340 – 420 ms", "82% – 90%", "Sélection solide des priorités ; brève hésitation de 60 à 90 ms lorsque des cibles rouges et jaunes apparaissent proches"],
-        ["Tier 4 (Intermédiaire / Or / Platine)", "420 – 520 ms", "72% – 82%", "Sujet aux tirs de panique ; touche parfois des alliés verts ou vise les jaunes avant de neutraliser les rouges"],
-        ["Tier 5 (Débutant / Tir Réflexe)", ">520 ms", "<72%", "Multiples erreurs d'impulsion ; taux de tir ami élevé ; difficulté à traiter la surcharge visuelle lors des reprises de site"]
+        ["Précision", "(touches rouges + jaunes) ÷ tous les clics", "Part des tirs correctement priorisés", "Comparer ses propres valeurs sur le même appareil"],
+        ["Menaces éliminées", "Touches sur cibles rouges et jaunes", "Quantité de menaces traitées dans le temps", "Augmenter en gardant le combo"],
+        ["Tir allié / erreur de priorité", "Tir sur un vert, ou sur un jaune quand un rouge est visible", "Échec de retenue ou d'évaluation des menaces", "Chercher le rouge en premier"],
+        ["Combo max · niveau record", "Touches sans erreur d'affilée, 1 niveau par 1400 points", "Régularité et difficulté atteinte", "Réduire les erreurs avant la vitesse"]
       ],
-      note: "La latence de résolution chronomètre l'intervalle entre l'apparition de la menace rouge et le tir validé ; la précision de priorité rapporte les éliminations valides au nombre total de clics (Woods et al., 2015)."
+      note: "Ce tableau décrit les valeurs que ce drill enregistre réellement ; il ne s'agit ni de rangs, ni de paliers, ni de statistiques d'utilisateurs."
     },
     techniques: {
       title: "Protocoles Fondés sur la Science pour Perfectionner la Priorisation",
@@ -270,11 +275,11 @@ export default function TargetPrioritizationFrPage() {
       ]
     },
     steps: [
-      "Indiquez votre jeu de référence, votre sensibilité et vos DPI dans les réglages pour rester proche de votre jeu habituel.",
+      "Réglez la sensibilité pour rester proche de votre jeu habituel, puis lancez le drill.",
       "Concentrez votre regard au centre sans forcer et attendez l'apparition simultanée de cibles rouges, jaunes et vertes.",
-      "Repérez et neutralisez les cibles rouges d'urgence avec des tirs nets (+100 PTS / +0,4s de bonus au chronomètre).",
-      "Éliminez les cibles jaunes secondaires (+50 PTS / +0,4s) avant qu'elles ne virent au rouge.",
-      "Retenez impérativement votre tir face aux cibles vertes alliées ; tirer dessus ou rater une cible remet le combo à zéro."
+      "Repérez et neutralisez les cibles rouges d'urgence avec des tirs nets (+100 PTS / +2 s au chronomètre, 60 s maximum).",
+      "Éliminez les cibles jaunes secondaires (+50 PTS / +2 s) seulement quand aucune rouge n'est visible, avant qu'elles ne virent au rouge.",
+      "Retenez impérativement votre tir face aux cibles vertes alliées ; tirer dessus, toucher une jaune quand une rouge est visible ou rater remet le combo à zéro."
     ],
     audience: "Joueurs compétitifs sur Valorant, Counter-Strike 2, Rainbow Six Siege et Apex Legends cherchant à éliminer les tirs réflexes, à maîtriser la discipline de tir et à dominer les combats à cibles multiples.",
     faqs: faqSchema.mainEntity.map(e => ({ q: e.name, a: e.acceptedAnswer.text })),
@@ -289,8 +294,8 @@ export default function TargetPrioritizationFrPage() {
   };
 
   const copyFr = {
-    h1Keyword: "Aim Trainer",
-    h1Suffix: " – Priorisation des Cibles FPS",
+    h1Keyword: "Priorisation des cibles",
+    h1Suffix: " – choix de cible en FPS",
     subtitle: "Choisissez la cible la plus dangereuse et contrôlez votre tir sous pression dans le navigateur.",
     statScore: "Score",
     statTime: "Temps",
@@ -299,7 +304,7 @@ export default function TargetPrioritizationFrPage() {
     statThreatsCleared: "Menaces Éliminées",
     statMaxCombo: "Combo Max",
     statPeakLevel: "Niveau Record",
-    startTitle: "Aim Trainer - priorisation des cibles",
+    startTitle: "Priorisation des cibles",
     startSubtitle: "Évaluation des Menaces · Filtrage Cognitif · Niveaux Dynamiques",
     getReady: "PRÉPAREZ-VOUS",
     toggleFlash: "Basculer le Flash d'Échec",
@@ -309,14 +314,14 @@ export default function TargetPrioritizationFrPage() {
     stageCaption: "Neutralisez d'abord les cibles rouges prioritaires puis les jaunes. Retenez votre tir sur les alliés verts !",
     rulesTitle: "Consignes de l'Exercice et Barème",
     rulesItems: [
-      { num: "1", text: "Cible Haute Menace", highlight: "Rouge (+100 PTS / +0,4s)", result: "Priorité Absolue" },
-      { num: "2", text: "Menace Moyenne", highlight: "Jaune (+50 PTS / +0,4s)", result: "Devient Rouge après expiration" },
-      { num: "3", text: "Unité Alliée", highlight: "Vert (NE PAS TIRER)", result: "Tir allié ou manqué réinitialise combo" },
+      { num: "1", text: "Cible Haute Menace", highlight: "Rouge (+100 PTS / +2s, max 60s)", result: "Priorité Absolue" },
+      { num: "2", text: "Menace Moyenne", highlight: "Jaune (+50 PTS / +2s)", result: "Points seulement sans rouge visible ; devient rouge après un délai" },
+      { num: "3", text: "Unité Alliée", highlight: "Vert (NE PAS TIRER)", result: "Tir allié, erreur de priorité ou tir manqué : reset combo (-1s)" },
       { num: "4", text: "Niveau Supérieur", highlight: "+1 / 1400 PTS", result: "Progression Dynamique Continue" }
     ],
-    aboutTitle: "À propos de l'aim trainer et de la priorisation des cibles",
+    aboutTitle: "À propos de ce drill de priorisation des cibles",
     aboutHeading: "Qu'est-ce que la Priorisation des Cibles ?",
-    aboutText: "La priorisation des cibles est la compétence exécutive qui permet de sélectionner en une fraction de seconde la menace à abattre tout en retenant son tir sur le reste de la scène. Interrompre un geste déjà enclenché constitue un processus neurobiologique indépendant qui rivalise avec l'ordre de tir (Logan & Cowan, 1984) — c'est pourquoi retenir son tir est bien plus difficile que presser la détente."
+    aboutText: "La priorisation des cibles est la capacité de sélectionner rapidement la menace à abattre tout en retenant son tir sur le reste de la scène. Interrompre un geste déjà enclenché est un processus distinct qui fait la course avec l'ordre de tir (Logan & Cowan, 1984) — c'est pourquoi retenir son tir est plus difficile que presser la détente. Ce drill l'entraîne avec la règle rouge avant jaune et aucun tir sur le vert."
   };
 
   return (

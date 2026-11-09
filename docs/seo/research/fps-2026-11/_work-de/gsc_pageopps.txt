@@ -1,0 +1,16 @@
+
+Page-level quick wins - last 90 days
+ranking well but under-clicked; sorted by clicks left on the table
+
+page                                                                     clicks     impr     ctr    pos
+------------------------------------------------------------------------------------------------------
+https://skilldrills.online/ko/drills/reaction-speed/reaction-time-test       35     1893   1.85%    7.1
+https://skilldrills.online/drills/academic                                    3      193   1.55%    1.8
+https://skilldrills.online/drills/fps/target-acquisition                      1       94   1.06%    6.3
+https://skilldrills.online/delete-account                                     0       53   0.00%    6.1
+https://skilldrills.online/es/drills/visual-tracking/strobe-prediction        2       76   2.63%    5.5
+https://skilldrills.online/ko/drills/fps/180-degree-awareness                 1      110   0.91%    8.9
+https://skilldrills.online/ko/drills/reaction-speed/market-doors-pursu        0       50   0.00%    8.3
+https://skilldrills.online/fr/drills/physical/fitness/agility-ladder          0       41   0.00%    7.4
+------------------------------------------------------------------------------------------------------
+TOTAL (8 rows)                                                               42     2510

@@ -1,24 +1,23 @@
 import AntiZigzagClient from '@/app/drills/fps/anti-zigzag-movement-trainer/AntiZigzagClientLoader';
 import DrillGuide from '@/components/drill/DrillGuide';
 import DrillFooter from '@/components/drill/DrillFooter';
-import { pickSources } from '@/lib/drillSources';
 import { getAlternateLanguages } from '@/lib/i18n/locales';
 import RelatedDrills from '@/components/drill/RelatedDrills';
 
+const TITLE = "Zickzack-Tracking: ausweichende Ziele treffen | SkillDrills";
+const DESCRIPTION = "Kostenloses Zickzack-Tracking im Browser: Halte das Fadenkreuz auf einem Ziel mit abrupten Richtungswechseln und leere seine HP-Leiste, bevor es entkommt.";
+const NAME = "Zickzack-Tracking";
+
 export const metadata = {
-  title: "Aim Trainer | Zickzack-Tracking | SkillDrills",
-  description: "Kostenloser Aim Trainer im Browser: Trainiere Tracking gegen Zickzack-Bewegungen und Slide-Cancels in Apex, Valorant und Warzone.",
+  title: TITLE,
+  description: DESCRIPTION,
   keywords: [
-    "Aim Trainer",
-    "aim trainer valorant",
-    "aim trainer browser",
-    "Zickzack Tracking",
-    "Ausweichbewegung Tracking",
-    "Slide-Cancel Tracking",
+    "Zickzack-Tracking",
+    "Zickzack Tracking Training",
+    "ausweichende Ziele",
     "reaktives Tracking",
-    "Fadenkreuz Überschwingen",
-    "Richtungswechsel Aiming",
-    "Aim Training online"
+    "Richtungswechsel Tracking",
+    "Slide-Cancel Tracking"
   ],
   alternates: {
     canonical: "https://skilldrills.online/de/drills/fps/anti-zigzag-movement-trainer",
@@ -29,8 +28,8 @@ export const metadata = {
     follow: true,
   },
   openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
-    title: "Aim Trainer | Zickzack-Tracking | SkillDrills",
-    description: "Kostenloser Aim Trainer im Browser: Trainiere Tracking gegen Zickzack-Bewegungen und Slide-Cancels in Apex, Valorant und Warzone.",
+    title: TITLE,
+    description: DESCRIPTION,
     url: "https://skilldrills.online/de/drills/fps/anti-zigzag-movement-trainer",
     siteName: 'SkillDrills',
     locale: 'de_DE',
@@ -38,8 +37,8 @@ export const metadata = {
   },
   twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: 'summary_large_image',
-    title: "Aim Trainer | Zickzack-Tracking | SkillDrills",
-    description: "Kostenloser Aim Trainer im Browser: Trainiere Tracking gegen Zickzack-Bewegungen und Slide-Cancels in Apex, Valorant und Warzone.",
+    title: TITLE,
+    description: DESCRIPTION,
   },
 };
 
@@ -50,20 +49,20 @@ export default function AntiZigzagDePage() {
     "itemListElement": [
       { "@type": "ListItem", "position": 1, "name": "SkillDrills", "item": "https://skilldrills.online/de" },
       { "@type": "ListItem", "position": 2, "name": "FPS Drills", "item": "https://skilldrills.online/de/drills/fps" },
-      { "@type": "ListItem", "position": 3, "name": "Aim Trainer - Zickzack-Tracking", "item": "https://skilldrills.online/de/drills/fps/anti-zigzag-movement-trainer" }
+      { "@type": "ListItem", "position": 3, "name": NAME, "item": "https://skilldrills.online/de/drills/fps/anti-zigzag-movement-trainer" }
     ]
   };
 
   const softwareSchema = {
     "@context": "https://schema.org",
-    "@type": "SoftwareApplication", "sameAs": ["https://en.wikipedia.org/wiki/Smooth_pursuit"],
-    "name": "Aim Trainer - Zickzack-Tracking",
+    "@type": "SoftwareApplication",
+    "name": NAME,
     "applicationCategory": "GameApplication",
     "operatingSystem": "Web Browser",
-    "dateModified": "2026-09-20",
+    "dateModified": "2026-11-09",
     "offers": { "@type": "Offer", "price": "0", "priceCurrency": "EUR" },
-    "description": "Kostenloses Browsertraining zur Beherrschung reaktiven Trackings gegen unberechenbare Zickzack-Ausweichmanöver und Slide-Cancels.",
-    "genre": "FPS Training / Anti-Zigzag",
+    "description": "Kostenloses Zickzack-Tracking im Browser: Halte das Fadenkreuz auf einem ausweichenden Ziel, bis seine HP-Leiste leer ist.",
+    "genre": "FPS Training / Reactive Tracking",
     "url": "https://skilldrills.online/de/drills/fps/anti-zigzag-movement-trainer",
     "publisher": {
       "@type": "Organization",
@@ -75,28 +74,28 @@ export default function AntiZigzagDePage() {
   const webAppSchema = {
     "@context": "https://schema.org",
     "@type": "WebApplication",
-    "name": "Aim Trainer - Zickzack-Tracking",
+    "name": NAME,
     "url": "https://skilldrills.online/de/drills/fps/anti-zigzag-movement-trainer",
     "applicationCategory": "GameApplication",
     "operatingSystem": "All",
-    "browserRequirements": "Erfordert Pointer Lock API, JavaScript und HTML5 Canvas Unterstützung",
+    "browserRequirements": "Requires JavaScript, HTML5 Canvas, a mouse and Pointer Lock support",
     "offers": {
       "@type": "Offer",
       "price": "0",
       "priceCurrency": "EUR"
     },
-    "description": "Kostenloses Browsertraining zur Beherrschung reaktiven Trackings gegen unberechenbare Zickzack-Ausweichmanöver und Slide-Cancels."
+    "description": "Reaktives Tracking im Browser gegen ausweichende Ziele, die im Zickzack die Richtung wechseln."
   };
 
   const videoGameSchema = {
     "@context": "https://schema.org",
     "@type": "VideoGame",
-    "name": "Aim Trainer - Zickzack-Tracking",
+    "name": NAME,
     "url": "https://skilldrills.online/de/drills/fps/anti-zigzag-movement-trainer",
-    "description": "Kostenloses Browsertraining zur Beherrschung reaktiven Trackings gegen unberechenbare Zickzack-Ausweichmanöver und Slide-Cancels.",
-    "dateModified": "2026-09-20",
+    "description": "Kostenloses Zickzack-Tracking im Browser: Halte das Fadenkreuz auf einem ausweichenden Ziel, bis seine HP-Leiste leer ist.",
+    "dateModified": "2026-11-09",
     "gamePlatform": "Web Browser",
-    "genre": ["FPS Training", "Aim Trainer", "Reactive Tracking"],
+    "genre": ["FPS Training", "Reactive Tracking"],
     "playMode": "SinglePlayer",
     "applicationCategory": "Game",
     "operatingSystem": "Web Browser",
@@ -106,86 +105,62 @@ export default function AntiZigzagDePage() {
   const faqSchema = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
-    "dateModified": "2026-09-20",
+    "dateModified": "2026-11-09",
     "mainEntity": [
       {
         "@type": "Question",
-        "name": "Warum nutzen Spieler in FPS-Spielen unberechenbare Zickzack-Bewegungen?",
+        "name": "Wie funktioniert das Zickzack-Tracking?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Spieler nutzen Zickzack-Muster, um die Fadenkreuz-Ausrichtung des Gegners zu brechen, Richtungswechsel jenseits der menschlichen Reaktionszeit zu erzwingen und Netcode-Desynchronisation auszunutzen, bei der Hitbox und gerendertes Modell bei extremen Wendungen kurzzeitig auseinanderdriften."
+          "text": "Ein Ziel erscheint an einer zufälligen Stelle, läuft nach links oder rechts, driftet dabei leicht nach oben oder unten und wechselt in unregelmäßigen Abständen die Richtung. Du klickst nicht: Solange das Fadenkreuz auf dem Ziel liegt, sinkt seine HP-Leiste. Eine Runde startet mit 45 Sekunden."
         }
       },
       {
         "@type": "Question",
-        "name": "Wie verfolgt man erratische Zickzack-Bewegungen in Apex Legends und Warzone?",
+        "name": "Wie zerstöre ich ein Ziel?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Zickzack-Bewegungen tracked man, indem man das Fadenkreuz auf der zentralen V-Crossover-Achse verankert, statt den äußeren Wendepunkten hinterherzujagen. Die Unterarmmuskulatur bleibt entspannt, der Blick ruht auf dem Torso des Gegners und die Geschwindigkeit wird beim Kreuzen des Zentrums angepasst."
+          "text": "Auf dem Ziel verliert es 65 HP pro Sekunde, nach insgesamt etwa 1,5 Sekunden ist es zerstört. Dafür gibt es 25 Punkte mal Combo-Multiplikator als Bonus, danach erscheint ein neues Ziel. Abgezogene HP bleiben erhalten, auch wenn du zwischendurch danebenliegst."
         }
       },
       {
         "@type": "Question",
-        "name": "Was versteht man unter der V-Crossover Tracking-Technik?",
+        "name": "Wie werden Punkte und Combo berechnet?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Die V-Crossover-Technik verankert das Fadenkreuz im zentralen Korridor der gegnerischen Strafe-Bahn. Da ausweichende Ziele zwingend durch die Mitte kreuzen müssen, um die Richtung zu wechseln, minimiert dies den Mausweg und verhindert verhängnisvolles Überschießen an den Wendepunkten."
+          "text": "Auf dem Ziel gibt es alle 0,25 Sekunden 10 Punkte mal Combo-Multiplikator und Level-Bonus, und die Restzeit steigt um 0,1 Sekunden (maximal 60 Sekunden). Jede am Stück gehaltene Sekunde erhöht die Combo um 1; der Multiplikator erreicht bei Combo 50 maximal 3,0x."
         }
       },
       {
         "@type": "Question",
-        "name": "Wie tracked man Gegner, die Slide Canceling einsetzen?",
+        "name": "Warum verschwindet das Ziel?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Slide-Canceling kombiniert horizontale Beschleunigung mit plötzlichem Höhenabfall. Um dies zu meistern, trainiert man diagonale Mehrachsen-Verfolgung und wartet den Beginn der Rutsch-Animation ab, bevor das Fadenkreuz auf Brusthöhe nachjustiert wird."
+          "text": "Jedes Ziel hat eine Lebensdauer: etwa 4,2 Sekunden auf Level 1, mit steigendem Level bis etwa 1,8 Sekunden. Zerstörst du es nicht rechtzeitig, entkommt es, die Combo fällt auf 0 und ein neues Ziel erscheint. Auch mehr als 1 Sekunde neben dem Ziel setzt die Combo zurück."
         }
       },
       {
         "@type": "Question",
-        "name": "Warum überschwingt das Fadenkreuz bei abrupten Richtungswechseln?",
+        "name": "Wie steigt die Schwierigkeit?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Überschwingen (Overshoot) entsteht durch übermäßige Muskelanspannung (Death Gripping) und prädiktives Rucken. Bei abrupten Wendepunkten verhindert die Co-Kontraktion von Antagonistenmuskeln eine weiche Abbremsung, wodurch die Hand über das Ziel hinausschießt."
+          "text": "Alle 1400 Punkte steigt das Level um 1, ohne Obergrenze. Mit jedem Level wird das Ziel kleiner und schneller, und der Abstand zwischen den Richtungswechseln schrumpft von etwa 1,2 Sekunden immer weiter."
         }
       },
       {
         "@type": "Question",
-        "name": "Welche Mausempfindlichkeit ist optimal für das Verfolgen von Ausweichbewegungen?",
+        "name": "Wie treffe ich ausweichende Ziele besser?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Eine mittlere Sensitivität zwischen 28 cm und 42 cm pro 360° bietet die ideale Balance: Schnell genug, um diagonale Nahkampf-Swipes ohne Umsetzen der Maus abzufedern, und stabil genug für jitterfreie Mikrokontrolle."
+          "text": "Ein großer Flick bei jedem Richtungswechsel schießt meist über das Ziel hinaus. Schau auf die Zielmitte, brems nach dem Wechsel kurz ab und passe dich dann dem neuen Tempo an. Der Drill bildet keine Slides nach, sondern abrupte Zickzack-Wechsel – nützlich etwa für Apex Legends, Valorant oder Call of Duty, wenn Gegner ausweichend laufen. Wie viel davon ins Spiel übergeht, ist individuell."
         }
       },
       {
         "@type": "Question",
-        "name": "Hilft eine höhere Bildschirm-Bildwiederholrate beim Zickzack-Tracking?",
+        "name": "Funktioniert das auf Handy oder Touchscreen?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Ja. 144-Hz- oder 240-Hz-Monitore aktualisieren Frames alle 4,1 bis 6,9 ms (statt 16,7 ms bei 60 Hz), reduzieren Bewegungsunschärfe drastisch und stellen Vektoränderungen früher dar, sodass das visuelle Sehzentrum Umkehrimpulse schneller verarbeiten kann."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Wie führen Zickzack-Bewegungen zu Hitbox-Desynchronisation im Online-Multiplayer?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Bei clientseitiger Interpolation und Lag-Kompensation erzeugen schnelle Richtungswechsel minimale Latenz-Diskrepanzen zwischen der serverseitig berechneten Hitbox und dem auf dem Bildschirm dargestellten Charaktermodell."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Wie verbessere ich meine Dwell-Tracking-Präzision?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Dwell-Tracking (Halte-Präzision) verbessert sich durch den Verzicht auf spekulatives Raten, dauerhafte Fixierung des Blicks auf die Zielmitte und kontinuierliche, weiche Gleitanpassungen anstelle abgehackter Klick-Flicks."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Können Anti-Zigzag-Drills Nahkampfduelle mit SMGs und Schrotflinten verbessern?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Ja. Im extremen Nahkampf treten die höchsten Winkelgeschwindigkeiten auf dem Monitor auf. Das Training reaktiven Zickzack-Trackings baut die neuromuskuläre Feinkontrolle auf, die für lückenlosen Dauerschaden gegen ausweichende Kontrahenten nötig ist."
+          "text": "Nein. Der Drill liest Mausbewegungen über Pointer Lock und braucht deshalb eine Maus. Auf reinen Touch-Geräten erscheint statt des Start-Buttons ein Hinweis. Mit Esc beendest du den Drill jederzeit."
         }
       }
     ]
@@ -194,97 +169,79 @@ export default function AntiZigzagDePage() {
   const howToSchema = {
     "@context": "https://schema.org",
     "@type": "HowTo",
-    "name": "Anti-Zigzag Strafe Tracking trainieren",
-    "description": "Schritt-für-Schritt-Anleitung zur Beherrschung reaktiven Trackings gegen unberechenbare Zickzack-Ausweichmanöver.",
+    "name": "Zickzack-Tracking trainieren",
+    "description": "Schritte, um ein ausweichendes Ziel im Zickzack zu verfolgen und zu zerstören.",
     "step": [
       {
         "@type": "HowToStep",
         "position": 1,
-        "name": "Mausempfindlichkeit kalibrieren",
-        "text": "Stimme deine Spiel-Sensitivität in den Session-Einstellungen ab, um deine Hand-zu-Cursor-Zuordnung für dein Muskelgedächtnis konsistent zu halten.",
-        "url": "https://skilldrills.online/de/drills/fps/anti-zigzag-movement-trainer#step-1"
+        "name": "Sensitivität einstellen",
+        "text": "Stelle auf der Drill-Übersicht die gemeinsame Maus-Sensitivität so ein, dass sie sich wie gewohnt anfühlt."
       },
       {
         "@type": "HowToStep",
         "position": 2,
-        "name": "Mauszeigersperre im Vollbild aktivieren",
-        "text": "Klicke auf Start, um den Vollbildmodus zu starten und den Mauszeiger ohne Windows-Beschleunigungskurven direkt im Canvas zu sperren.",
-        "url": "https://skilldrills.online/de/drills/fps/anti-zigzag-movement-trainer#step-2"
+        "name": "Starten",
+        "text": "Klicke auf Start: Der Drill geht in den Vollbildmodus und aktiviert nach dem Countdown Pointer Lock."
       },
       {
         "@type": "HowToStep",
         "position": 3,
-        "name": "Im zentralen V-Korridor verankern",
-        "text": "Fokussiere deine visuelle Aufmerksamkeit auf den Mittelkorridor des Bewegungspfads, statt den unberechenbaren Außenpunkten hinterherzuflicken.",
-        "url": "https://skilldrills.online/de/drills/fps/anti-zigzag-movement-trainer#step-3"
+        "name": "Dranbleiben",
+        "text": "Halte das Fadenkreuz auf dem Ziel, um seine HP-Leiste zu leeren."
       },
       {
         "@type": "HowToStep",
         "position": 4,
-        "name": "Kontinuierlichen Dwell-Kontakt halten",
-        "text": "Halte das Fadenkreuz stabil im Zielkörper, um die Gesundheit des Ziels vor Ablauf des Timers abzubauen und Combos aufzubauen.",
-        "url": "https://skilldrills.online/de/drills/fps/anti-zigzag-movement-trainer#step-4"
+        "name": "Rechtzeitig zerstören",
+        "text": "Zerstöre das Ziel, bevor es entkommt, um den Bonus zu holen und die Combo zu halten."
       }
     ]
   };
 
   const antiZigzagGuide = {
-    heading: "Aim Trainer für Zickzack-Tracking und Ausweichbewegungen",
+    heading: "Zickzack-Tracking: Anleitung gegen ausweichende Ziele",
     intro: [
-      "Ein Aim Trainer für Zickzack-Tracking übt, das Fadenkreuz bei unberechenbaren Ausweichbewegungen und Slide-Cancels auf dem Ziel zu halten. Dieser Drill misst Richtungswechsel, Overshoot-Kontrolle und Tracking-Uptime für Apex, Valorant und Warzone.",
-      "Der fundamentale mechanische Fehler ungeübter Schützen bei Ausweichbewegungen ist das Über-Flicken hinter den äußeren Scheitelpunkten der gegnerischen Kurve. Führt ein Gegner ein Zickzack-Muster in V-Form aus, fällt seine Geschwindigkeit am äußeren Umkehrpunkt für einen Sekundenbruchteil auf null ab, bevor er beschleunigt zurück durch die Mitte zieht. Wer versucht, den Wendepunkt hektisch zu jagen, überschießt unweigerlich und gerät in antagonistische Muskelblockaden. Geübte Tracker nutzen stattdessen das 'V-Crossover-Anchoring': Sie verankern ihren visuellen Fokus nahe der Mittelachse und vollziehen feine, geschwindigkeitsangepasste Mikro-Korrekturen, während der Gegner durch das Fadenkreuz zurückkehrt.",
-      "Der Anti-Zigzag Aim Trainer läuft direkt im modernen Webbrowser über die HTML5 Pointer Lock API zur Mauserfassung und performance.now()-Chronometrie; unbeschleunigte Eingabe wird nicht angefordert, daher solltest du die Zeigerbeschleunigung des Betriebssystems ausschalten. Durch die Minimierung von USB-Abfrage-Jitter (Woods et al., 2015) und das Trainieren kontinuierlicher Dwell-Time-Schadensmechaniken gegen steigende Zickzack-Frequenzen konditioniert diese Übung die notwendige sensomotorische Ruhe, um Panik-Flicks abzubauen und Ausweichduelle souverän zu dominieren.",
-      "Messmethodik: Alle Tracking-Ereignisse werden clientseitig über die performance.now()-Hochpräzisionsuhr deines Browsers erfasst – absolut verzögerungsfrei ohne Server-Latenzen. Zu berücksichtigen: Browser runden Zeitstempel aus Sicherheitsgründen (Spectre-Schutz) auf ca. 1 ms; Bildschirme quantisieren visuelle Reize über die Bildwiederholrate (16,7 ms bei 60 Hz, 6,9 ms bei 144 Hz, 4,1 ms bei 240 Hz). Die USB-Abfragerate fügt bei 1000 Hz ca. 1 ms hinzu. Latenzunterschiede unter 5 ms stellen messtechnisches Rauschen dar; vergleiche Trainingsläufe stets auf identischer Hardware."
+      "Beim Zickzack-Tracking von SkillDrills hältst du das Fadenkreuz auf einem Ziel, das abrupt die Richtung wechselt, und leerst so seine HP-Leiste. Klicken ist nicht nötig – die Zeit auf dem Ziel ist der Schaden.",
+      "Das Ziel erscheint zufällig, läuft seitlich mit leichter Auf- und Abbewegung und prallt an den Rändern ab. Auf Level 1 wechselt es etwa alle 1,2 Sekunden die Richtung, mit steigendem Level immer öfter. Jedes Ziel hat eine begrenzte Lebensdauer und entkommt, wenn du zu lange brauchst.",
+      "Eine Runde beginnt mit 45 Sekunden; auf dem Ziel kommen pro Sekunde 0,4 Sekunden dazu (maximal 60 Sekunden). Punkte und Level haben keine Obergrenze."
     ],
-    benchmarks: {
-      title: "Benchmarks für Ausweichbewegungen & Zickzack-Umkehrlatenz",
-      headers: ["Tracking-Phase / Sensomotorische Stufe", "Typischer Latenzbereich", "Neuronale Bahn & Biomechanische Funktion", "Wettkampf-Implikation"],
-      rows: [
-        ["Lateral-zu-Diagonal Crossover Erkennung", "160 – 210 ms", "Retinaler Schlupf verarbeitet in V1 und MT/V5 Bewegungsarealen", "Latenzspanne, bis das Auge die Richtungsänderung des Gegners erfasst"],
-        ["Antagonistische Bremsung & Umvektorierung", "85 – 135 ms", "Kortikospinaler Impuls an Unterarm-Beuger/Thenarmuskeln; Stoppen der Trägheit", "Physische Zeit zum Abstoppen des Mausvektors und Einleiten der Gegenrichtung"],
-        ["Foveale Re-Zentrierung & Korridor-Ausrichtung", "65 – 105 ms", "Korrektive Mikro-Sakkade und Handgelenksartikulation zur Fadenkreuz-Bindung", "Wiederherstellen des Dwell-Kontakts auf der Hitbox zur Schadensreaktivierung"],
-        ["Unvorbereitetes Gesamtreaktionsfenster", "310 – 450 ms", "Gesamtdauer vom unvorhersehbaren Zickzack-Flip bis zum bestätigten Dwell-Lock", "Natürlicher Latenzverlust, in dem Projektilschaden bei Ausweichbewegungen einbricht"],
-        ["Stufe 4: Reaktives Ausweichtracking", "215 – 295 ms", "Antizipatorische Geschwindigkeitsanpassung & entspannte Muskelkontrolle im V-Korridor", "Fokus: Geschwindigkeitswechsel im V-Korridor früh antizipieren"]
-      ],
-      note: "Metriken synthetisiert aus okulomotorischer Forschung (Rashbass, 1961; Krauzlis, 2004), Lenkgesetzen (Accot & Zhai, 1997; Fitts, 1954) und digitaler Chronometrie (Woods et al., 2015)."
-    },
     techniques: {
-      title: "Evidenzbasierte Protokolle für Ausweichtracking & Anti-Zigzag",
+      title: "Tipps für Zickzack-Tracking",
       items: [
         {
-          name: "Zentrierte V-Crossover Verankerung",
-          desc: "Jage erratischen Zielen nicht zu ihren äußeren Wendepunkten hinterher, an denen unberechenbare Richtungswechsel stattfinden. Verankere dein Fadenkreuz näher am zentralen Achsenkorridor, den der Gegner wiederholt durchqueren muss.",
-          tips: "Lass das Ziel kontrolliert in dein Fadenkreuz zurückkreuzen und passe die Geschwindigkeit weich an, statt panisch nachzureißen."
+          name: "Nicht überflicken",
+          desc: "Ein weiter Flick beim Richtungswechsel landet auf der anderen Seite und kostet Schadenszeit.",
+          tips: "Nach dem Wechsel kurz abbremsen und dann ins neue Tempo einsteigen."
         },
         {
-          name: "Dämpfung der Unterarmmuskeln (Lockerer Griff)",
-          desc: "Das Verkrampfen der Unterarmmuskulatur (Death Gripping) führt dazu, dass Antagonisten gegeneinander arbeiten, was bei schrägen Richtungswechseln zu eckigen, abgehackten Trackinglinien führt.",
-          tips: "Halte die Maus mit leichtem Fingertip- oder entspanntem Claw-Grip, damit Finger und Handgelenk Richtungswechsel ohne Unterarm-Trägheit absorbieren."
+          name: "Die Spur lesen",
+          desc: "Hinter dem Ziel wird seine letzte Bewegung als kurze Linie gezeichnet.",
+          tips: "Die Richtung der Linie zeigt dir, wohin das Ziel gerade läuft."
         },
         {
-          name: "Fokussierung auf das gegnerische Modell",
-          desc: "Fixiere deinen Blick direkt auf den Rumpf des gegnerischen Charakters statt auf das eigene Fadenkreuz. Das visuelle Sehzentrum extrahiert Geschwindigkeits- und Richtungssignale automatisch über retinale Bewegung.",
-          tips: "Hinkt dein Fadenkreuz hinterher, verlagere 100% deiner visuellen Aufmerksamkeit auf Hüfte und Torso des Gegners."
+          name: "Zerstören hat Vorrang",
+          desc: "Läuft die Lebensdauer ab, ist die Combo weg – sammle Zeit auf dem Ziel und mach es schnell kaputt.",
+          tips: "Unter halben HP färbt sich die Leiste rot. Jetzt nicht loslassen."
         },
         {
-          name: "Verzögerungs-Frames und Körperneigung lesen",
-          desc: "In Shootern mit physikalischer Trägheit (wie Warzone und Apex Legends) neigen sich Spielfiguren vor einer Richtungsumkehr leicht in die Kurve und zeigen minimale Verzögerungs-Frames.",
-          tips: "Achte auf Modellneigungen, um den motorischen Kortex 30–50 ms vor dem eigentlichen Vektorwechsel vorzubereiten."
+          name: "Locker greifen",
+          desc: "Mit verkrampfter Hand werden die kleinen Korrekturen in alle Richtungen ruckelig.",
+          tips: "Nur so fest greifen, dass Finger und Handgelenk frei arbeiten."
         }
       ]
     },
     steps: [
-      "Stimme In-Game-Sensitivität und DPI in den Session-Einstellungen ab, um deine Hand-zu-Cursor-Zuordnung konsistent zu halten.",
-      "Klicke auf Start, um den Vollbildmodus zu aktivieren und den Hardware-Mauszeiger ohne Glättung zu sperren.",
-      "Fixiere deinen Blick auf der Zielkugel, während sie schnelle, mehrachsige Zickzack-Muster ausführt.",
-      "Halte dauerhaften Fadenkreuzkontakt auf dem Zielkörper und konzentriere dich auf die zentrale V-Achse.",
-      "Eliminiere Ziele vor Ablauf ihrer Lebensdauer, um Combo-Multiplikatoren aufzubauen und höhere Level zu erreichen."
+      "Gemeinsame Maus-Sensitivität auf der Drill-Übersicht einstellen.",
+      "Start klicken, um Vollbild und Pointer Lock zu aktivieren.",
+      "Das Fadenkreuz auf dem Zickzack-Ziel halten und die HP-Leiste leeren.",
+      "Das Ziel vor Ablauf seiner Lebensdauer zerstören, um 25 Punkte × Combo zu holen.",
+      "Nach der Runde Tracking-Genauigkeit, beste Combo und Level vergleichen."
     ],
-    audience: "Wettkampforientierte FPS-Spieler in Apex Legends, Call of Duty: Warzone, Overwatch 2, The Finals und CODM, die Ausweichmanöver, Slide-Cancels und zittriges Über-Flicken überwinden möchten.",
+    audience: "Spieler, die in Apex Legends, Valorant oder Call of Duty ausweichende Gegner aus dem Fadenkreuz verlieren, und alle, die Zickzack-Tracking kostenlos im Browser üben wollen.",
     faqs: faqSchema.mainEntity.map(e => ({ q: e.name, a: e.acceptedAnswer.text })),
-    sources: pickSources('woods2015', 'krauzlis2004', 'fitts1954', 'green2003', 'rashbass1961', 'accotZhai1997'),
     related: [
-      { href: "/de/drills/fps/anti-strafe-jitter-duel", label: "Anti-Strafe Jitter Trainer" },
+      { href: "/de/drills/fps/anti-strafe-jitter-duel", label: "ADAD-Tracking" },
       { href: "/de/drills/fps/target-switching-swarm", label: "Target Switching Aim Trainer" },
       { href: "/de/drills/fps/pro-smooth-pursuit", label: "Smooth Pursuit Aim Trainer" },
       { href: "/de/drills/fps/flick-shot-training", label: "Flick Shot Training" },
@@ -300,11 +257,11 @@ export default function AntiZigzagDePage() {
       />
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(webAppSchema) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(softwareSchema) }}
       />
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(softwareSchema) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(webAppSchema) }}
       />
       <script
         type="application/ld+json"
@@ -320,26 +277,24 @@ export default function AntiZigzagDePage() {
       />
       <AntiZigzagClient
         copy={{
-          h1Keyword: "Aim Trainer",
-          h1Suffix: " – Zickzack-Tracking & Ausweichen",
+          h1Keyword: "Zickzack-Tracking",
+          h1Suffix: " – ausweichende Ziele treffen",
           statScore: "Punkte",
           statTime: "Zeit",
-          statAccuracy: "Präzision",
-          statBestScore: "Highscore",
-          startTitle: "Aim Trainer - Zickzack-Tracking",
-          startSubtitle: "Reaktives Tracking • Endlose Levelprogression",
-          getReady: "BEREIT MACHEN",
-          pausedTitle: "PAUSIERT",
-          pausedSubtitle: "Klicken zum Fortsetzen — Mauszeiger wird wieder gesperrt.",
-          stageCaption: "Halte dein Fadenkreuz auf ausweichenden Zielen mit unberechenbaren Zickzack-Mustern. Konzentriere dich auf den Mittelkorridor!",
-          rulesTitle: "Trainingsregeln & Punktesystem",
+          statAccuracy: "Genauigkeit",
+          statBestScore: "Bestwert",
+          startTitle: NAME,
+          startSubtitle: "Reaktives Tracking gegen Richtungswechsel • Endlose Level",
+          getReady: "BEREIT",
+          stageCaption: "Halte das Fadenkreuz auf dem Zickzack-Ziel und leere seine HP-Leiste. Klicken ist nicht nötig.",
+          rulesTitle: "Regeln & Punktesystem",
           rulesItems: [
-            { num: "1", text: "Zielerfassung", highlight: "+50 PKT (+0,4s/s)", result: "×Combo-Multiplikator" },
-            { num: "2", text: "Zielzerstörung", highlight: "+25 Bonus-PKT", result: "HP-Reset & Respawn" },
-            { num: "3", text: "Levelprogression", highlight: "+1 Stufe / 1400 PKT", result: "Adaptives Zickzack-Tempo" },
-            { num: "4", text: "Zielverlust", highlight: "Lebensdauer abgelaufen", result: "Setzt Combo zurück (-0,6s)" }
+            { num: "1", text: "Auf dem Ziel bleiben", highlight: "10 Pkt. / 0,25 s (+0,4 s/s)", result: "×Combo-Multiplikator" },
+            { num: "2", text: "Ziel zerstört", highlight: "25 Pkt. × Combo", result: "Neues Ziel" },
+            { num: "3", text: "Level-Aufstieg", highlight: "+1 Level / 1400 Pkt.", result: "Kleiner & schneller" },
+            { num: "4", text: "Ziel entkommt / 1 s daneben", highlight: "Combo-Reset", result: "Combo neu aufbauen" }
           ],
-          aboutTitle: "Über Aim Trainer und Zickzack-Tracking"
+          aboutTitle: "Über Zickzack-Tracking"
         }}
       />
       <DrillGuide guide={antiZigzagGuide} />

@@ -76,7 +76,7 @@ const getLevelConfig = (level, combo = 0) => {
 const RULES_ITEMS = [
   { num: "1", text: "High Threat Target", highlight: "Red (+100 PTS / +2s, max 60s)", result: "Must be eliminated first" },
   { num: "2", text: "Medium Threat Target", highlight: "Yellow (+50 PTS / +2s, max 60s)", result: "Escalates to Red after timer" },
-  { num: "3", text: "Friendly Unit", highlight: "Green (DO NOT SHOOT)", result: "Friendly hit, wrong target, or miss resets combo (-0.6s with Time Penalty enabled)" },
+  { num: "3", text: "Friendly Unit", highlight: "Green (DO NOT SHOOT)", result: "Friendly hit, wrong target, or miss resets combo (-1s)" },
   { num: "4", text: "Level Progression", highlight: "+1 Level / 1400 PTS", result: "Continuous Dynamic Density & Speed" }
 ];
 
@@ -114,7 +114,7 @@ const ABOUT_SECTIONS = [
 // MAIN COMPONENT
 // ============================================================
 export default function TargetPrioritizationClient({ copy = null }) {
-  const { locale } = useTranslation();
+  const { locale, t } = useTranslation();
   const [gameState, setGameState] = useState('start'); // 'start' | 'countdown' | 'playing' | 'gameOver'
   const [countdownValue, setCountdownValue] = useState(3);
   const [isFullscreen, setIsFullscreen] = useState(false);
@@ -915,10 +915,10 @@ export default function TargetPrioritizationClient({ copy = null }) {
               score={score}
               isNewBest={isNewBest}
               stats={[
-                { value: analytics.accuracy, suffix: "%", label: copy?.statAccuracy || "Accuracy" },
-                { value: analytics.redHits + analytics.yellowHits, label: copy?.statThreatsCleared || "Threats Cleared" },
-                { value: `${analytics.bestCombo}x`, label: copy?.statMaxCombo || "Max Combo" },
-                { value: `Lv. ${analytics.levelReached}`, label: copy?.statPeakLevel || "Peak Level" },
+                { value: analytics.accuracy, suffix: "%", label: copy?.statAccuracy || t('ui.resultAccuracy', 'Accuracy') },
+                { value: analytics.redHits + analytics.yellowHits, label: copy?.statThreatsCleared || t('ui.resultThreatsCleared', 'Threats Cleared') },
+                { value: `${analytics.bestCombo}x`, label: copy?.statMaxCombo || t('ui.resultMaxCombo', 'Max Combo') },
+                { value: `Lv. ${analytics.levelReached}`, label: copy?.statPeakLevel || t('ui.resultPeakLevel', 'Peak Level') },
               ]}
               onPlayAgain={enterDrill}
               onBeforeShare={() => setIsFullscreen(false)}

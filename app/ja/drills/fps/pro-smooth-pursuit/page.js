@@ -6,18 +6,15 @@ import RelatedDrills from '@/components/drill/RelatedDrills';
 import DrillFooter from '@/components/drill/DrillFooter';
 
 export const metadata = {
-  title: "エイム練習 | トラッキングFPSトレーナー | SkillDrills",
-  description: "無料ブラウザのエイム練習で動くターゲットを滑らかに追い、Apex・VALORANT・OW2のトラッキング精度を鍛えます。",
+  title: "トラッキングエイム練習｜なめらかに追い続ける | SkillDrills",
+  description: "無料のトラッキングエイム練習。画面上を曲線で動き続けるターゲットにマウスで照準を乗せ続け、Apex・OW2向けのなめらかな追従をブラウザで練習できます。",
   keywords: [
-    "エイム練習",
-    "エイム練習 ブラウザ",
-    "エイム練習 サイト",
-    "エイム練習ゲーム 無料",
-    "エイム トラッキング 練習",
-    "追いエイム",
-    "トラッキング エイム",
-    "トラッキング エイム valorant",
-    "エイム練習 apex",
+    "トラッキングエイム練習",
+    "トラッキング エイム 練習",
+    "トラッキング エイム 練習 ブラウザ",
+    "トラッキング エイム 練習 サイト",
+    "トラッキング エイム コツ",
+    "なめらかな追従",
     "スムーズトラッキング"
   ],
   alternates: {
@@ -29,8 +26,8 @@ export const metadata = {
     follow: true,
   },
   openGraph: { images: [{ url: "https://skilldrills.online/opengraph-image", width: 1200, height: 630 }],
-    title: "エイム練習 | トラッキングFPSトレーナー | SkillDrills",
-    description: "動くターゲットを滑らかに追い、FPSのトラッキング精度を鍛える無料ブラウザドリル。",
+    title: "トラッキングエイム練習｜なめらかに追い続ける | SkillDrills",
+    description: "無料のトラッキングエイム練習。画面上を曲線で動き続けるターゲットにマウスで照準を乗せ続け、Apex・OW2向けのなめらかな追従をブラウザで練習できます。",
     url: "https://skilldrills.online/ja/drills/fps/pro-smooth-pursuit",
     siteName: 'SkillDrills',
     locale: 'ja_JP',
@@ -38,8 +35,8 @@ export const metadata = {
   },
   twitter: { images: ["https://skilldrills.online/opengraph-image"],
     card: 'summary_large_image',
-    title: "エイム練習 | トラッキングFPSトレーナー | SkillDrills",
-    description: "動くターゲットを滑らかに追い、FPSのトラッキング精度を鍛える無料ブラウザドリル。",
+    title: "トラッキングエイム練習｜なめらかに追い続ける | SkillDrills",
+    description: "無料のトラッキングエイム練習。画面上を曲線で動き続けるターゲットにマウスで照準を乗せ続け、Apex・OW2向けのなめらかな追従をブラウザで練習できます。",
   },
 };
 
@@ -50,14 +47,14 @@ export default function ProSmoothPursuitJaPage() {
     "itemListElement": [
       { "@type": "ListItem", "position": 1, "name": "SkillDrills", "item": "https://skilldrills.online/ja" },
       { "@type": "ListItem", "position": 2, "name": "FPSエイム練習", "item": "https://skilldrills.online/ja/drills/fps" },
-      { "@type": "ListItem", "position": 3, "name": "エイム練習 - FPSトラッキング", "item": "https://skilldrills.online/ja/drills/fps/pro-smooth-pursuit" }
+      { "@type": "ListItem", "position": 3, "name": "トラッキングエイム練習", "item": "https://skilldrills.online/ja/drills/fps/pro-smooth-pursuit" }
     ]
   };
 
   const webAppSchema = {
     "@context": "https://schema.org",
     "@type": "WebApplication",
-    "name": "エイム練習 - FPSトラッキング",
+    "name": "トラッキングエイム練習",
     "url": "https://skilldrills.online/ja/drills/fps/pro-smooth-pursuit",
     "applicationCategory": "GameApplication",
     "operatingSystem": "All",
@@ -73,10 +70,10 @@ export default function ProSmoothPursuitJaPage() {
   const softwareSchema = {
     "@context": "https://schema.org",
     "@type": "SoftwareApplication", "sameAs": ["https://en.wikipedia.org/wiki/Smooth_pursuit"],
-    "name": "エイム練習 - FPSトラッキング",
+    "name": "トラッキングエイム練習",
     "applicationCategory": "GameApplication",
     "operatingSystem": "Web Browser",
-    "dateModified": "2026-09-20",
+    "dateModified": "2026-11-09",
     "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
     "description": "不規則な曲線移動に滑らかに照準を同期させる無料ブラウザFPSスムーズトラッキング・エイムドリル。",
     "genre": "FPS Training / Smooth Pursuit Aim",
@@ -91,10 +88,10 @@ export default function ProSmoothPursuitJaPage() {
   const videoGameSchema = {
     "@context": "https://schema.org",
     "@type": "VideoGame",
-    "name": "エイム練習 - FPSトラッキング",
+    "name": "トラッキングエイム練習",
     "url": "https://skilldrills.online/ja/drills/fps/pro-smooth-pursuit",
     "description": "不規則な曲線移動に滑らかに照準を同期させる無料ブラウザFPSスムーズトラッキング・エイムドリル。",
-    "dateModified": "2026-09-20",
+    "dateModified": "2026-11-09",
     "gamePlatform": "Web Browser",
     "genre": ["FPS Training", "Aim Trainer", "Smooth Pursuit"],
     "playMode": "SinglePlayer",
@@ -106,14 +103,14 @@ export default function ProSmoothPursuitJaPage() {
   const faqSchema = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
-    "dateModified": "2026-09-20",
+    "dateModified": "2026-11-09",
     "mainEntity": [
       {
         "@type": "Question",
-        "name": "FPSにおけるスムーズパシュート（滑走性眼球運動）訓練とは何ですか？",
+        "name": "このトラッキングエイム練習はどんなドリルですか？",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "スムーズパシュート訓練は、不規則な微小フリック（跳躍眼球運動）に頼ることなく、滑らかに移動する目標に対して視線とクロスヘアの速度を完全に同期させる神経筋トレーニングです。"
+          "text": "画面上をリサジュー曲線でなめらかに動き続ける円形ターゲットに、マウスで照準を乗せ続けるドリルです。クリックは不要で、照準がターゲットに重なっている時間だけスコアが増えます。"
         }
       },
       {
@@ -137,7 +134,7 @@ export default function ProSmoothPursuitJaPage() {
         "name": "中心窩視線の先読み（Foveal Gaze Leading）とは？",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Land & McLeod（2000）が発見したように、熟練者は目標の現在位置ではなく、進行方向のわずか前方（2〜5ピクセル先）に視線を固定します。これにより運動皮質が方向転換を先読みし、滑らかな追従が可能になります。"
+          "text": "照準ではなく、動くターゲットとその進行方向を見る意識のことです。Land & McLeod（2000）は熟練者の視線が次の動作に先行する傾向を報告しており、ターゲットを見て追うと曲線の切り返しに備えやすくなります。"
         }
       },
       {
@@ -161,7 +158,7 @@ export default function ProSmoothPursuitJaPage() {
         "name": "モニターのリフレッシュレートやマウスのポーリングレートは影響しますか？",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "極めて大きく影響します。144Hz〜360Hzの高リフレッシュレートは網膜上の運動残像をなくし、1000Hz以上のポーリングレートは座標の飛び（カクつき）を排除して滑らかな入力伝達を実現します（Woods et al., 2015）。"
+          "text": "影響する場合があります。リフレッシュレートが高いほどフレーム間隔が短く（60Hzで約16.7ms、144Hzで約6.9ms）曲線の動きが細かく表示され、ポーリングレートが高いほど入力の更新も細かくなります。ただしスコア差は機材より練習量や個人差の影響が大きいこともあります。"
         }
       },
       {
@@ -177,15 +174,15 @@ export default function ProSmoothPursuitJaPage() {
         "name": "スムーズトラッキング練習はどのくらいの頻度で行うべきですか？",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "ランク戦前のウォーミングアップとして毎日10〜15分程度行うのが理想的です。前腕伸筋群の疲労を防ぐため、1回につき30分以上の連続練習は避けて休憩を挟んでください。"
+          "text": "ランク戦前のウォーミングアップとして10〜15分程度がおすすめです。腕が疲れたり手首が痛む場合は休憩してください。"
         }
       },
       {
         "@type": "Question",
-        "name": "ターゲットから外れるとコンボがリセットされる理由は？",
+        "name": "スコア・コンボ・残り時間はどう計算されますか？",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "途切れない照準維持（ビーム規律）に高い報酬を与えるためです。設定で時間ペナルティを有効にしている場合、外れた時間に応じてラウンド制限時間も削られるため実戦さながらの集中力が鍛えられます。"
+          "text": "照準がターゲットに重なっている間、0.25秒ごとに基本50点（コンボ倍率とレベル倍率を適用）と0.1秒が加算されます（残り時間の上限は60秒）。1秒途切れずに追うとコンボが1上がり、倍率は最大3.0倍です。ターゲットから1秒続けて外れるとコンボが0に戻ります。45秒から始まり、0秒で終了です。"
         }
       }
     ]
@@ -201,14 +198,14 @@ export default function ProSmoothPursuitJaPage() {
         "@type": "HowToStep",
         "position": 1,
         "name": "ゲーム感度を合わせる",
-        "text": "セッション設定でプレイ中のゲーム感度とDPIを統一し、マッスルメモリーの定着に役立てます。",
+        "text": "ドリル一覧（/drills）の設定でマウス感度倍率を普段のゲームに近づけます。",
         "url": "https://skilldrills.online/ja/drills/fps/pro-smooth-pursuit#step-1"
       },
       {
         "@type": "HowToStep",
         "position": 2,
         "name": "ポインターロックを有効化",
-        "text": "開始ボタンを押してフルスクリーン化し、ポインターロックを有効にします。",
+        "text": "開始ボタンを押すとフルスクリーンになり、カウントダウン後にポインターロックがかかります。",
         "url": "https://skilldrills.online/ja/drills/fps/pro-smooth-pursuit#step-2"
       },
       {
@@ -229,61 +226,61 @@ export default function ProSmoothPursuitJaPage() {
   };
 
   const copy = {
-    h1Keyword: "エイム練習",
-    h1Suffix: " - トラッキングFPSトレーナー",
+    h1Keyword: "トラッキングエイム練習",
+    h1Suffix: "｜なめらかに追い続ける",
     statScore: "スコア",
     statTime: "残り時間",
     statAccuracy: "トラッキング精度",
     statBestScore: "自己ベスト",
-    startTitle: "エイム練習",
-    startSubtitle: "リサジュー曲線追従 • 滑走性眼球運動 • エンドレス難易度",
+    startTitle: "トラッキングエイム練習",
+    startSubtitle: "リサジュー曲線追従 • ポインターロック • エンドレス難易度",
     getReady: "準備完了",
     pausedTitle: "一時停止",
     pausedSubtitle: "クリックして再開（マウスロックが再有効化されます）",
     stageCaption: "画面上を滑らかに周回・振動するリサジュー曲線のターゲットに照準を乗せ続けます。",
     rulesTitle: "トレーニングルール & スコアリング",
     rulesItems: [
-      { num: "1", text: "追従照準維持", highlight: "+50 PTS (+0.4s/s)", result: "×コンボ倍率" },
-      { num: "2", text: "連続コンボ蓄積", highlight: "最大 3.0×", result: "最大倍率" },
+      { num: "1", text: "ターゲットに重ねる", highlight: "0.25秒ごと +50 PTS (+0.4s/s)", result: "×コンボ倍率" },
+      { num: "2", text: "1秒連続追従", highlight: "コンボ+1・最大 3.0×", result: "最大倍率" },
       { num: "3", text: "レベル難易度進行", highlight: "+1 レベル / 1400 PTS", result: "適応型曲線" },
-      { num: "4", text: "オフターゲット", highlight: "1.0秒離脱", result: "コンボリセット (-0.6s)" }
+      { num: "4", text: "オフターゲット", highlight: "1.0秒連続で離脱", result: "コンボリセット" }
     ],
-    aboutTitle: "エイム練習とFPSトラッキングについて",
+    aboutTitle: "トラッキングエイム練習について",
   };
 
   const jaGuide = {
-    heading: "エイム練習とFPSトラッキングの性能ガイド",
+    heading: "トラッキングエイム練習ガイド：なめらかな追従のコツ",
     intro: [
-      "エイム練習のトラッキング課題は、動くターゲットに照準を滑らかに合わせ続ける感覚運動トレーニングです。このドリルはリサジュー曲線を使い、Apex・VALORANT・OW2の継続ダメージに必要な追いエイムの安定性を測ります。",
+      "トラッキングエイム練習は、動くターゲットに照準をなめらかに合わせ続けるトレーニングです。このドリルはリサジュー曲線で動く円形ターゲットを使い、Apex・OW2のような撃ち合いで必要な照準維持を練習し、追従精度（%）として記録します。",
       "滑走性眼球運動の神経基盤はKrauzlis（2004）によって解明されており、内側上側頭野（MST）、前頭眼野（FEF）、視覚運動野（MT/V5）の反復性皮質ループが目標の速度ベクトルをリアルタイムに計算して眼球筋を連続駆動します。この神経回路は受動的に反応するのではなく、標的の速度と位相を予測モデル化して眼球運動系を同期させます。",
       "Cyril Rashbass（1961）の古典的実験では、位置ズレに反応するサッカード（跳躍眼球運動）と速度変化（網膜スリップ）に反応するスムーズパシュートが解剖学的・機能的に独立した神経機構であることが証明されました。力んでフリックしようとしたり、マウスを握りしめすぎるとスムーズパシュート回路が破綻し、不随意の補正サッカードが混入してエイムの目立つカクつき（Aim Stutter）を引き起こします。",
-      "本ドリルでは、リサジュー曲線による調和振動座標生成に、中心窩視線の先読み理論（Land & McLeod, 2000）、動的注意視覚の拡張（Green & Bavelier, 2003）、および高分解能デジタルクロノメトリ（Woods et al., 2015）を統合し、前腕の筋緊張を完全に排除して非線形曲線を氷上のように滑らかに追従するレーザービームエイムを確立します。",
+      "本ドリルでは、リサジュー曲線による調和振動座標生成に、中心窩視線の先読み理論（Land & McLeod, 2000）、動的注意視覚の拡張（Green & Bavelier, 2003）、およびブラウザ計測の考え方（Woods et al., 2015）を参考に、前腕の力を抜いて曲線に沿って照準を保つ練習に絞っています。",
       "測定方法とハードウェア遅延について：すべての追従判定はブラウザ内蔵のperformance.now()高精度クロックによってローカル環境でのみ計測され、外部へのデータ送信は一切行われません。ブラウザのタイマーはSpectre対策により約1ms単位で丸められており、モニターの垂直同期はフレームごとに視覚情報を量子化します（60Hzで約16.7ms、144Hzで6.9ms、240Hzで4.1ms、Woods et al., 2015）。マウスのポーリングレートは125Hzで約8ms、1000Hzで約1msの遅延差を生じさせます。5ms未満の差異は測定ノイズとして扱い、同一のハードウェア環境で継続的に自己記録の変化を追跡してください。"
     ],
     benchmarks: {
-      title: "トラッキング維持率（Uptime）と実力ティア",
-      headers: ["実力ランク", "目標追従率（%）", "神経筋・眼球運動の状態", "実戦ゲームでの戦闘力"],
+      title: "トラッキング維持率の目安（SkillDrills練習基準）",
+      headers: ["目安", "追従率（%）", "よく見られる状態", "練習のポイント"],
       rows: [
-        ["ティア1（最上位段階）", "85% – 95%+", "完全な中心窩ロック：曲線の変曲点でもサッカードを起こさず吸い付くビームエイム", "曲線軌道でのトラッキング精度を重点的に練習する段階"],
-        ["ティア2（上級段階）", "72% – 85%", "流暢な前腕制御：目標が軌道頂点で減速するタイミングを即座に補正して追従", "スライディングや遮蔽間移動を行う敵に対しても安定して高DPSを叩き出す"],
-        ["ティア3（上級FPSプレイヤー）", "58% – 72%", "安定した直線追従：急激な非線形ベクトル反転時にわずかな遅延と10〜15%の脱落", "一般的な撃ち合いでは十分強力だが、グラップル等の立体高速機動相手に僅かに弾を外す"],
-        ["ティア4（中級者）", "42% – 58%", "滑走ではなくフリックで追う傾向：力みによって定期的にマウスが震え目標を行き過ぎる", "高機動キャラクターに翻弄されやすく、マガジン全弾ヒットを維持できない"],
-        ["ティア5（初級・エイムブレ）", "42%未満", "視覚処理の遅延が大きく、常に敵の後方を追いかけて大振りの修正フリックを連発", "近距離・中距離のトラッキングで弾が外れやすく、手首の緊張でエイムがガタつく"]
+        ["目安1", "85% – 95%+", "曲線の変曲点でも照準がほとんど外れない", "高レベルでも維持率を保つ"],
+        ["目安2", "72% – 85%", "軌道の頂点での減速に合わせて追従できる", "中央を通る速い区間で遅れない"],
+        ["目安3", "58% – 72%", "直線に近い区間は安定、曲がる瞬間に少し外れる", "頂点の手前で減速する"],
+        ["目安4", "42% – 58%", "フリックで追う傾向、力みで震えや行き過ぎ", "握りを緩めて腕全体で動かす"],
+        ["目安5", "42%未満", "常にターゲットの後ろを追い、大きな修正フリックを繰り返す", "低レベルで重なり続ける感覚をつかむ"]
       ],
-      note: "追従維持率は累計オンターゲット時間をセッション時間で除算して算出（Woods et al., 2015）。"
+      note: "追従率はセッションのフレームのうち照準がターゲット内にあった割合です。区分はSkillDrillsの練習用の目安で、研究基準やユーザー統計ではありません。"
     },
     techniques: {
-      title: "滑走性スムーズエイムを極める4つの実証プロトコル",
+      title: "なめらかなトラッキングのための4つのポイント",
       items: [
         {
           name: "中心窩視線の先読み（Foveal Gaze Leading）",
-          desc: "クロスヘア自体を見るのをやめ、動くターゲットの進行方向前端（2〜5ピクセル先）に視線を固定します（Land & McLeod, 2000）。",
-          tips: "エイムがカクついたら深呼吸し、ターゲットの表面に意識を100%集中させてください。"
+          desc: "クロスヘア自体を見るのをやめ、動くターゲットとその進行方向に視線を置きます（Land & McLeod, 2000）。",
+          tips: "エイムがカクついたら息を吐いて力を抜き、ターゲットに意識を戻してください。"
         },
         {
           name: "前腕の脱力と肘支点のストローク",
           desc: "手首を固めて指先だけで追おうとすると拮抗筋が反発して震えが生じます。前腕をマウスパッドに軽く預け、肘から滑らかに旋回させます。",
-          tips: "マウスの握り込みの強さは最大握力の30〜40%程度に保ちます。"
+          tips: "マウスは落とさない程度に軽く持ちます。"
         },
         {
           name: "リサジュー曲線の減速リズム予見",
@@ -292,13 +289,13 @@ export default function ProSmoothPursuitJaPage() {
         },
         {
           name: "修正サッカードの抑制（慌てて振らない）",
-          desc: "照準が少し外れた際、パニックになって勢いよくマウスを振るとサッカード抑制によって視覚が一瞬遮断されます（Rashbass, 1961）。",
+          desc: "照準が少し外れた際に勢いよくマウスを振ると、反対側へ行き過ぎやすくなります。小さな修正で戻しましょう。",
           tips: "急激に振るのではなく、滑らかに速度を上げて自然に目標の輪郭へ照準を戻します。"
         }
       ]
     },
     steps: [
-      "セッション設定でゲーム感度とDPIを合わせ、ポインターロックを有効にします。",
+      "/drillsの設定でマウス感度倍率を合わせ、開始ボタンを押します（カウントダウン後にポインターロック）。",
       "画面上をリサジュー軌道で巡回する光るターゲットに視線を合わせます。",
       "肘を支点にリラックスしてマウスを滑らせ、滑走速度を同調させます。",
       "連続追従時間を維持してコンボ倍率を最大3.0倍まで高め、1400点ごとにレベルアップします。",
@@ -309,7 +306,8 @@ export default function ProSmoothPursuitJaPage() {
     sources: pickSources('woods2015', 'krauzlis2004', 'green2003', 'rashbass1961', 'land2000'),
     related: [
       { href: "/ja/drills/fps/anti-zigzag-movement-trainer", label: "ジグザグ移動 練習 (スライディング追従)" },
-      { href: "/ja/drills/fps/anti-strafe-jitter-duel", label: "レレレ撃ち 練習 (ジッタートラッキング)" },
+      { href: "/ja/drills/fps/anti-strafe-jitter-duel", label: "レレレ撃ち対策" },
+      { href: "/ja/drills/fps/strafe-tracking", label: "ストレイフ追いエイム練習" },
       { href: "/ja/drills/fps/flick-shot-training", label: "フリック エイム 練習" },
       { href: "/ja/drills/fps/micro-correction-precision", label: "マイクロフリック 練習" },
       { href: "/ja/drills/visual/reaction-speed/light-reaction", label: "反射神経テスト" }
