@@ -8,7 +8,7 @@ Update the LOG section at the end of every step. Never leave work only in chat.
 ## >>> RESUME HERE (2026-11-10, parallel run) <<<
 
 Running in parallel (owner asked for multiple agents):
-1. DONE: C1+C2 verified at runtime (long_seq stays 5-key across 11 timeouts; keyboard tester ko/pt OK, no scroll, no errors). MOTOR PUSHED 2026-11-10 (3d573596). TODO: confirm deploy (cache-busted curl of /pt/drills/motor/movement-speed/keyboard-tester), Bing submit motor + keyboard-tester URLs + the 79 pending FPS URLs (_bing_pending_day2.txt) within quota, give owner GSC list.
+1. DONE: C1+C2 verified at runtime (long_seq stays 5-key across 11 timeouts; keyboard tester ko/pt OK, no scroll, no errors). MOTOR PUSHED 2026-11-10 (3d573596). DEPLOY CONFIRMED LIVE (skilldrills.online pt/ko keyboard-tester 200, new titles). Bing daily quota was 0 on 2026-11-10 -> NEXT DAY: `python scripts/bing/bing.py quota`, then submit docs/seo/research/motor-2026-11/_bing_submit_p1.txt (15 URLs) first, then fps _bing_pending_day2.txt. TODO: Bing submit motor + keyboard-tester URLs + the 79 pending FPS URLs (_bing_pending_day2.txt) within quota, give owner GSC list.
 2. PHYSICAL Phase A research: 3 agents (ko+ja, de+fr, pt+es), brief docs/seo/research/physical-2026-11/_AGENT_BRIEF_RESEARCH.md. Done check: physical-2026-11/<market>.md has a full 12-row table + kill list. Relaunch missing markets with same brief + "resume".
 3. After 1 passes: push motor (C3). Then physical Phase B (adapt motor-2026-11/_AGENT_BRIEF_PHASE_B.md).
 
